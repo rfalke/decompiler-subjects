@@ -289,21 +289,18 @@ ulong FUN_004006c3(uint param_1,ulong param_2)
       if (bVar4 == 10) {
         pbVar11 = (byte *)(ulong)(uVar7 + iVar5);
       }
+      else if (bVar4 == 0xd) {
+        *(ulong *)(uVar8 - 0x10) = uVar3;
+        param_2 = (long)((ulong)pbVar11 & 0xffffffff) / (long)iVar5 & 0xffffffff;
+        pbVar11 = (byte *)(ulong)(uVar7 - (int)((long)((ulong)pbVar11 & 0xffffffff) % (long)iVar5));
+        uVar3 = *(ulong *)(uVar8 - 0x10);
+      }
       else {
-        if (bVar4 == 0xd) {
-          *(ulong *)(uVar8 - 0x10) = uVar3;
-          param_2 = (long)((ulong)pbVar11 & 0xffffffff) / (long)iVar5 & 0xffffffff;
-          pbVar11 = (byte *)(ulong)(uVar7 - (int)((long)((ulong)pbVar11 & 0xffffffff) % (long)iVar5)
-                                   );
-          uVar3 = *(ulong *)(uVar8 - 0x10);
-        }
-        else {
-          pbVar10 = pbVar11 + (ulong)bVar12 * -2 + 1;
-          *pbVar11 = bVar4;
-          param_2 = CONCAT71((int7)(uVar1 >> 8),7);
-          pbVar11 = pbVar10 + (ulong)bVar12 * -2 + 1;
-          *pbVar10 = 7;
-        }
+        pbVar10 = pbVar11 + (ulong)bVar12 * -2 + 1;
+        *pbVar11 = bVar4;
+        param_2 = CONCAT71((int7)(uVar1 >> 8),7);
+        pbVar11 = pbVar10 + (ulong)bVar12 * -2 + 1;
+        *pbVar10 = 7;
       }
     }
     uVar7 = (int)uVar2 - 1;
@@ -526,46 +523,45 @@ undefined8 FUN_0040134d(void)
 undefined8 FUN_00401907(long param_1,undefined8 param_2,undefined8 param_3)
 
 {
-  code *pcVar1;
+  uint *puVar1;
   uint *puVar2;
   uint uVar3;
-  uint *puVar4;
+  ulong uVar4;
   uint uVar5;
-  uint uVar6;
   
+  puVar1 = DAT_00403040;
   puVar2 = DAT_00403040;
-  puVar4 = DAT_00403040;
 joined_r0x00401921:
   do {
-    DAT_00403040 = puVar4;
-    if (puVar2 == (uint *)0x0) {
+    DAT_00403040 = puVar2;
+    if (puVar1 == (uint *)0x0) {
       return param_3;
     }
-    uVar5 = *puVar2;
+    uVar3 = *puVar1;
     do {
       do {
-        if (uVar5 == 0) {
-          puVar2 = *(uint **)(puVar2 + 2);
-          puVar4 = puVar2;
+        if (uVar3 == 0) {
+          puVar1 = *(uint **)(puVar1 + 2);
+          puVar2 = puVar1;
           if (param_1 != 0) {
-            puVar4 = DAT_00403040;
+            puVar2 = DAT_00403040;
           }
           goto joined_r0x00401921;
         }
-        uVar3 = 0;
-        if (uVar5 != 0) {
-          for (; (uVar5 >> uVar3 & 1) == 0; uVar3 = uVar3 + 1) {
+        uVar5 = 0;
+        if (uVar3 != 0) {
+          for (; (uVar3 >> uVar5 & 1) == 0; uVar5 = uVar5 + 1) {
           }
         }
-        uVar6 = ~(1 << ((byte)uVar3 & 0x1f));
-        uVar5 = uVar5 & uVar6;
-      } while ((param_1 != 0) && (*(long *)(puVar2 + (ulong)uVar3 * 6 + 8) != param_1));
-      *puVar2 = *puVar2 & uVar6;
-      pcVar1 = *(code **)(puVar2 + (ulong)uVar3 * 6 + 4);
-    } while (pcVar1 == (code *)0x0);
-    (*pcVar1)(*(undefined8 *)(puVar2 + (ulong)uVar3 * 6 + 6));
+        uVar4 = (ulong)uVar5;
+        uVar5 = ~(1 << ((byte)uVar5 & 0x1f));
+        uVar3 = uVar3 & uVar5;
+      } while ((param_1 != 0) && (*(long *)(puVar1 + uVar4 * 6 + 8) != param_1));
+      *puVar1 = *puVar1 & uVar5;
+    } while (*(code **)(puVar1 + uVar4 * 6 + 4) == (code *)0x0);
+    (**(code **)(puVar1 + uVar4 * 6 + 4))(*(undefined8 *)(puVar1 + uVar4 * 6 + 6));
+    puVar1 = DAT_00403040;
     puVar2 = DAT_00403040;
-    puVar4 = DAT_00403040;
   } while( true );
 }
 

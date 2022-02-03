@@ -1,7 +1,7 @@
 
 struct s0 {
     signed char[88] pad88;
-    int32_t f88;
+    int32_t f58;
 };
 
 void fun_0(struct s0* a1, int32_t a2, int32_t a3, struct s0* a4, uint32_t a5, int32_t a6);
@@ -78,7 +78,7 @@ void fun_410000(signed char* ecx) {
         v35 = reinterpret_cast<int32_t>(ebx33) + 100;
         fun_0(ebx33, v35, 56, ebx33, v29, __return_address());
         fun_1e(ebx33, v35, 56, ebx33, v29, __return_address());
-        v36 = ebx33->f88;
+        v36 = ebx33->f58;
         goto v36;
     }
 }
@@ -254,15 +254,13 @@ void fun_4101c7(int32_t ecx) {
     unsigned char al4;
     uint1_t less5;
     unsigned char al6;
-    int32_t* edi7;
-    int32_t* esi8;
-    struct s1* edi9;
-    struct s2* edi10;
-    struct s3* esi11;
-    struct s4* esi12;
-    signed char* edi13;
-    uint16_t cs14;
-    int32_t ebx15;
+    struct s1* edi7;
+    struct s2* edi8;
+    struct s3* esi9;
+    struct s4* esi10;
+    signed char* edi11;
+    uint16_t cs12;
+    int32_t ebx13;
 
     if (sf2) 
         goto 0x4101ba;
@@ -277,15 +275,14 @@ void fun_4101c7(int32_t ecx) {
     if (sf3) 
         goto 0x41015f;
     __asm__("in al, 0x49");
-    *edi7 = *esi8;
-    edi9 = reinterpret_cast<struct s1*>(&edi10->f4);
-    esi11 = reinterpret_cast<struct s3*>(&esi12->f4);
-    edi9->f0 = esi11->f0;
-    edi13 = &edi9->f1;
-    *reinterpret_cast<uint32_t*>(edi13 - 94) = cs14;
+    edi7 = reinterpret_cast<struct s1*>(&edi8->f4);
+    esi9 = reinterpret_cast<struct s3*>(&esi10->f4);
+    edi7->f0 = esi9->f0;
+    edi11 = &edi7->f1;
+    *reinterpret_cast<uint32_t*>(edi11 - 94) = cs12;
     __asm__("les ebp, [esi+0xe05496cb]");
-    *edi13 = esi11->f1;
-    g6b1e19dc = ebx15;
+    *edi11 = esi9->f1;
+    g6b1e19dc = ebx13;
     if (!ecx) 
         goto addr_4101f8_18;
     addr_4101f8_18:
@@ -294,7 +291,7 @@ void fun_4101c7(int32_t ecx) {
 struct s5 {
     unsigned char f0;
     signed char[917516] pad917517;
-    signed char f917517;
+    signed char fe000d;
 };
 
 void fun_410049(unsigned char* ecx) {
@@ -326,7 +323,7 @@ void fun_410049(unsigned char* ecx) {
     *ecx = reinterpret_cast<unsigned char>(*ecx + *reinterpret_cast<unsigned char*>(&eax11));
     *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(eax11) + reinterpret_cast<int32_t>(eax11) + 0x780001) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(eax11) + reinterpret_cast<int32_t>(eax11) + 0x780001) + dl14);
     eax11->f0 = reinterpret_cast<unsigned char>(eax11->f0 + reinterpret_cast<int32_t>(eax11));
-    *reinterpret_cast<int16_t*>(&eax15) = reinterpret_cast<int16_t>(*reinterpret_cast<signed char*>(&eax11) * eax11->f917517);
+    *reinterpret_cast<int16_t*>(&eax15) = reinterpret_cast<int16_t>(*reinterpret_cast<signed char*>(&eax11) * eax11->fe000d);
     *eax15 = reinterpret_cast<unsigned char>(*eax15 + *reinterpret_cast<unsigned char*>(&eax15));
     esi16 = reinterpret_cast<signed char*>(esi17 ^ *eax15);
     *eax15 = reinterpret_cast<unsigned char>(*eax15 + *reinterpret_cast<unsigned char*>(&eax15));
@@ -354,7 +351,7 @@ void fun_410196(int32_t ecx) {
 struct s6 {
     signed char f0;
     signed char[969641219] pad969641220;
-    signed char f969641220;
+    signed char f39cb8d04;
 };
 
 struct s7 {

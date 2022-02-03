@@ -330,7 +330,7 @@ void fun_1400019c2(int64_t rcx, int64_t rdx) {
 struct s0 {
     int16_t f0;
     signed char[58] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 uint32_t fun_140001900(struct s0* rcx);
@@ -338,14 +338,14 @@ uint32_t fun_140001900(struct s0* rcx);
 struct s1 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
     signed char[20] pad36;
-    uint32_t f36;
+    uint32_t f24;
 };
 
 struct s2 {
     signed char[60] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 struct s1* fun_140001930(struct s2* rcx, uint64_t rdx);
@@ -355,7 +355,7 @@ uint32_t fun_140001980(int64_t rcx, int64_t rdx) {
 
     *reinterpret_cast<uint32_t*>(&rax3) = fun_140001900(0x140000000);
     if (*reinterpret_cast<uint32_t*>(&rax3) && (rax3 = fun_140001930(0x140000000, rcx - 0x140000000), !!rax3)) {
-        *reinterpret_cast<uint32_t*>(&rax3) = ~(rax3->f36 >> 31) & 1;
+        *reinterpret_cast<uint32_t*>(&rax3) = ~(rax3->f24 >> 31) & 1;
     }
     return *reinterpret_cast<uint32_t*>(&rax3);
 }
@@ -386,7 +386,7 @@ struct s3 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 struct s1* fun_140001930(struct s2* rcx, uint64_t rdx) {
@@ -401,8 +401,8 @@ struct s1* fun_140001930(struct s2* rcx, uint64_t rdx) {
 
     r9d3 = 0;
     r10_4 = rdx;
-    r8_5 = reinterpret_cast<struct s3*>(rcx->f60 + reinterpret_cast<int64_t>(rcx));
-    *reinterpret_cast<uint32_t*>(&rax6) = r8_5->f20;
+    r8_5 = reinterpret_cast<struct s3*>(rcx->f3c + reinterpret_cast<int64_t>(rcx));
+    *reinterpret_cast<uint32_t*>(&rax6) = r8_5->f14;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax6) + 4) = 0;
     r11d7 = r8_5->f6;
     rcx8 = reinterpret_cast<struct s1*>(rax6 + reinterpret_cast<int64_t>(r8_5) + 24);
@@ -411,7 +411,7 @@ struct s1* fun_140001930(struct s2* rcx, uint64_t rdx) {
         return 0;
     } else {
         do {
-            *reinterpret_cast<int32_t*>(&rdx9) = rcx8->f12;
+            *reinterpret_cast<int32_t*>(&rdx9) = rcx8->fc;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx9) + 4) = 0;
             if (r10_4 < rdx9) 
                 continue;
@@ -430,7 +430,7 @@ struct s1* fun_140001930(struct s2* rcx, uint64_t rdx) {
 struct s4 {
     int32_t f0;
     signed char[20] pad24;
-    int16_t f24;
+    int16_t f18;
 };
 
 uint32_t fun_140001900(struct s0* rcx) {
@@ -438,10 +438,10 @@ uint32_t fun_140001900(struct s0* rcx) {
     uint32_t eax3;
 
     if (rcx->f0 == 0x5a4d) {
-        rcx2 = reinterpret_cast<struct s4*>(rcx->f60 + reinterpret_cast<int64_t>(rcx));
+        rcx2 = reinterpret_cast<struct s4*>(rcx->f3c + reinterpret_cast<int64_t>(rcx));
         eax3 = 0;
         if (rcx2->f0 == 0x4550) {
-            *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<uint1_t>(rcx2->f24 == 0x20b);
+            *reinterpret_cast<unsigned char*>(&eax3) = reinterpret_cast<uint1_t>(rcx2->f18 == 0x20b);
         }
         return eax3;
     } else {
@@ -650,7 +650,7 @@ struct s6 {
 struct s5 {
     signed char[8] pad8;
     int64_t f8;
-    struct s6* f16;
+    struct s6* f10;
 };
 
 struct s7 {
@@ -693,7 +693,7 @@ int32_t fun_140001ab4(void* rcx, struct s5* rdx, struct s7* r8) {
     if (r8->f0 & 4) {
         r10_5 = reinterpret_cast<void*>(r8->f4 + reinterpret_cast<uint64_t>(rcx) & reinterpret_cast<uint64_t>(static_cast<int64_t>(-r8->f8)));
     }
-    rax6 = rdx->f16;
+    rax6 = rdx->f10;
     *reinterpret_cast<int32_t*>(&rcx7) = rax6->f8;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx7) + 4) = 0;
     rcx8 = reinterpret_cast<struct s8*>(rcx7 + rdx->f8);
@@ -892,13 +892,13 @@ int64_t fun_140001385() {
 struct s10 {
     int32_t f0;
     signed char[20] pad24;
-    int32_t f24;
+    int32_t f18;
     signed char[4] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 int64_t fun_140001750(struct s10** rcx) {
-    if ((*rcx)->f0 == 0xe06d7363 && ((*rcx)->f24 == 4 && ((*rcx)->f32 == 0x19930520 || ((*rcx)->f32 == 0x19930521 || ((*rcx)->f32 == 0x19930522 || (*rcx)->f32 == 0x1994000))))) {
+    if ((*rcx)->f0 == 0xe06d7363 && ((*rcx)->f18 == 4 && ((*rcx)->f20 == 0x19930520 || ((*rcx)->f20 == 0x19930521 || ((*rcx)->f20 == 0x19930522 || (*rcx)->f20 == 0x1994000))))) {
         fun_140001a8e();
     }
     return 0;
@@ -945,15 +945,15 @@ int32_t g14000003c;
 struct s11 {
     int32_t f0;
     signed char[20] pad24;
-    uint16_t f24;
+    uint16_t f18;
     signed char[90] pad116;
-    uint32_t f116;
+    uint32_t f74;
     signed char[12] pad132;
-    uint32_t f132;
+    uint32_t f84;
     signed char[96] pad232;
-    int32_t f232;
+    int32_t fe8;
     signed char[12] pad248;
-    int32_t f248;
+    int32_t ff8;
 };
 
 int64_t __set_app_type = 0x2668;
@@ -996,10 +996,10 @@ int64_t fun_140001508() {
     rcx3 = reinterpret_cast<struct s11*>(rcx2 + 0x140000000);
     if (rcx3->f0 != 0x4550) 
         goto addr_14000151a_2;
-    eax4 = rcx3->f24;
+    eax4 = rcx3->f18;
     if (eax4 == 0x10b) {
         eax5 = 0;
-        if (rcx3->f116 <= 14) {
+        if (rcx3->f74 <= 14) {
             addr_14000156d_6:
             g140003024 = eax5;
             __set_app_type();
@@ -1019,7 +1019,7 @@ int64_t fun_140001508() {
                 __setusermatherr();
             }
         } else {
-            zf12 = rcx3->f232 == 0;
+            zf12 = rcx3->fe8 == 0;
             goto addr_14000156a_9;
         }
     } else {
@@ -1029,9 +1029,9 @@ int64_t fun_140001508() {
             goto addr_14000156d_6;
         } else {
             eax5 = 0;
-            if (rcx3->f132 <= 14) 
+            if (rcx3->f84 <= 14) 
                 goto addr_14000156d_6;
-            zf12 = rcx3->f248 == 0;
+            zf12 = rcx3->ff8 == 0;
             goto addr_14000156a_9;
         }
     }
@@ -1079,7 +1079,7 @@ int64_t fun_140001794() {
 
 struct s12 {
     signed char[56] pad56;
-    struct s7* f56;
+    struct s7* f38;
 };
 
 int64_t fun_140001b18() {
@@ -1088,7 +1088,7 @@ int64_t fun_140001b18() {
     void* rdx3;
     struct s5* r9_4;
 
-    r8_1 = r9_2->f56;
+    r8_1 = r9_2->f38;
     fun_140001ab4(rdx3, r9_4, r8_1);
     return 1;
 }

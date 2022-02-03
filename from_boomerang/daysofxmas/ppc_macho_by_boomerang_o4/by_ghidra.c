@@ -386,59 +386,55 @@ ulonglong _main(longlong param_1,longlong param_2,char *param_3)
   uchar *puVar2;
   undefined *puVar3;
   int iVar7;
-  uint uVar8;
-  int iVar9;
+  int iVar8;
   longlong lVar4;
   ulonglong uVar5;
   undefined8 uVar6;
-  int iVar10;
-  FILE *pFVar11;
-  char *pcVar12;
+  int iVar9;
+  FILE *pFVar10;
+  char *pcVar11;
   
   puVar3 = __nl_symbol_ptr::___sF;
-  iVar9 = (int)param_1;
-  iVar10 = (int)param_2;
-  if (iVar9 < 2) {
-    if (iVar9 < 0) {
-      if (iVar9 < -0x48) {
-        pcVar12 = 
+  iVar8 = (int)param_1;
+  iVar9 = (int)param_2;
+  if (iVar8 < 2) {
+    if (iVar8 < 0) {
+      if (iVar8 < -0x48) {
+        pcVar11 = 
         "@n\'+,#\'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l,+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/\'r :\'d*\'3,}{w+K w\'K:\'+}e#\';dq#\'l q#\'+d\'K#!/+k#;q#\'r}eKK#}w\'r}eKK{nl]\'/#;#q#n\'){)#}w\'){){nl]\'/+#n\';d}rw\' i;# ){nl]!/n{n#\'; r{#w\'r nc{nl]\'/#{l,+\'K {rw\' iK{;[{nl]\'/w#q#n\'wk nw\' iwk{KK{nl]!/w{%\'l##w#\' i; :{nl]\'/*{q#\'ld;r\'}{nlwb!/*de}\'c ;;{nl\'-{}rw]\'/+,}##\'*}#nc,\',#nw]\'/+kd\'+e}+;#\'rdq#w! nr\'/ \') }+}{rl#\'{n\' \')# }\'+}##(!!/"
         ;
         lVar4 = param_2;
         param_2 = param_1;
       }
-      else {
-        if (iVar9 < -0x32) {
-          if (iVar10 == *param_3) {
-            uVar1 = param_3[0x1f];
-            pFVar11 = (FILE *)(__nl_symbol_ptr::___sF + 0x58);
-            iVar9 = *(int *)(__nl_symbol_ptr::___sF + 0x60) + -1;
-            *(int *)(__nl_symbol_ptr::___sF + 0x60) = iVar9;
-            uVar8 = SEXT14((char)uVar1);
-            if ((iVar9 < 0) && ((iVar9 < *(int *)(puVar3 + 0x70) || (uVar8 == 10)))) {
-              iVar9 = __picsymbol_stub::___swbuf(uVar8,pFVar11);
-              return (longlong)iVar9;
-            }
-            puVar2 = pFVar11->_p;
-            *puVar2 = uVar1;
-            pFVar11->_p = puVar2 + 1;
-            return (ulonglong)(uVar8 & 0xff);
+      else if (iVar8 < -0x32) {
+        if (iVar9 == *param_3) {
+          uVar1 = param_3[0x1f];
+          pFVar10 = (FILE *)(__nl_symbol_ptr::___sF + 0x58);
+          iVar8 = *(int *)(__nl_symbol_ptr::___sF + 0x60) + -1;
+          *(int *)(__nl_symbol_ptr::___sF + 0x60) = iVar8;
+          if ((iVar8 < 0) && ((iVar8 < *(int *)(puVar3 + 0x70) || ((char)uVar1 == 10)))) {
+            iVar8 = __picsymbol_stub::___swbuf((int)(char)uVar1,pFVar10);
+            return (longlong)iVar8;
           }
-          pcVar12 = param_3 + 1;
-          lVar4 = -0x41;
+          puVar2 = pFVar10->_p;
+          *puVar2 = uVar1;
+          pFVar10->_p = puVar2 + 1;
+          return (longlong)(char)uVar1 & 0xff;
         }
-        else {
-          pcVar12 = param_3 + 1;
-          lVar4 = param_1 + (ulonglong)(*param_3 == '/');
-        }
+        pcVar11 = param_3 + 1;
+        lVar4 = -0x41;
+      }
+      else {
+        pcVar11 = param_3 + 1;
+        lVar4 = param_1 + (ulonglong)(*param_3 == '/');
       }
     }
     else {
-      if (iVar9 < 1) {
+      if (iVar8 < 1) {
         if (*param_3 != '/') {
           uVar6 = _main(0xffffffffffffffc3,*param_3,0x1fc0);
-          iVar9 = _main(0,uVar6,param_3 + 1);
-          if (iVar9 == 0) {
+          iVar8 = _main(0,uVar6,param_3 + 1);
+          if (iVar8 == 0) {
             return 0;
           }
         }
@@ -446,30 +442,30 @@ ulonglong _main(longlong param_1,longlong param_2,char *param_3)
       }
       lVar4 = 2;
       param_2 = 2;
-      pcVar12 = "%s";
+      pcVar11 = "%s";
     }
   }
   else {
-    if (iVar9 < 3) {
+    if (iVar8 < 3) {
       iVar7 = _main(0xffffffffffffffaa,0,param_3 + 1);
       iVar7 = _main(0xffffffffffffffa9,1 - param_2,param_3 + iVar7);
       _main(0xffffffffffffffb1,0xfffffffffffffff3,param_3 + iVar7);
     }
-    if (iVar9 < iVar10) {
+    if (iVar8 < iVar9) {
       _main(param_1 + 1,param_2,param_3);
     }
     iVar7 = _main(0xffffffffffffffa2,param_1 + -0x1b,param_3);
-    if ((iVar7 == 0) || (iVar9 != 2)) {
+    if ((iVar7 == 0) || (iVar8 != 2)) {
       return 0x10;
     }
-    if (0xc < iVar10) {
+    if (0xc < iVar9) {
       return 9;
     }
-    pcVar12 = "%s %d %d\n";
+    pcVar11 = "%s %d %d\n";
     lVar4 = 2;
     param_2 = param_2 + 1;
   }
-  uVar5 = _main(lVar4,param_2,pcVar12);
+  uVar5 = _main(lVar4,param_2,pcVar11);
   return uVar5;
 }
 

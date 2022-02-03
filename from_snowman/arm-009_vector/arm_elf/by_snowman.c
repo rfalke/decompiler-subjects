@@ -1093,10 +1093,10 @@ struct s0* _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorI
     if (r0_7) {
         r0_8 = _ZSt8distanceIN9__gnu_cxx17__normal_iteratorIPKiSt6vectorIiSaIiEEEEENSt15iterator_traitsIT_E15difference_typeES9_S9_(r2, r3);
         if (reinterpret_cast<uint32_t>(reinterpret_cast<int32_t>(reinterpret_cast<uint32_t>(r0->f8) - reinterpret_cast<uint32_t>(r0->f4)) >> 2) >= reinterpret_cast<uint32_t>(r0_8)) {
-            r0_9 = _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(r0, r0_8, 0xa130);
-            r0_10 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(r0, r0_9, 0xa130);
-            r0_11 = _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv(reinterpret_cast<int32_t>(r11_6) - 60, r0_9, 0xa130);
-            r0_12 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(r0, r0_9, 0xa130);
+            r0_9 = _ZNKSt6vectorIiSaIiEE12_M_check_lenEjPKc(r0, r0_8, "vector::_M_range_insert");
+            r0_10 = _ZNSt12_Vector_baseIiSaIiEE11_M_allocateEj(r0, r0_9, "vector::_M_range_insert");
+            r0_11 = _ZNK9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEE4baseEv(reinterpret_cast<int32_t>(r11_6) - 60, r0_9, "vector::_M_range_insert");
+            r0_12 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(r0, r0_9, "vector::_M_range_insert");
             r1_13 = r0_11->f0;
             r0_14 = _ZSt34__uninitialized_move_if_noexcept_aIPiS0_SaIiEET0_T_S3_S2_RT1_(r0->f0, r1_13, r0_10, r0_12);
             r0_15 = _ZNSt12_Vector_baseIiSaIiEE19_M_get_Tp_allocatorEv(r0, r1_13, r0_10);

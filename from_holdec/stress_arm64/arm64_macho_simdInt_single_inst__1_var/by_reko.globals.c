@@ -4,8 +4,9 @@
 
 #include "subject.h"
 
-<anonymous> * g_ptr44000; // 0000000000044000
-<anonymous> * g_ptr44008; // 0000000000044008
+<anonymous> * __imp__dyld_stub_binder; // 0000000000040000
+<anonymous> * __imp____assert_rtn; // 0000000000044000
+<anonymous> * __imp__puts; // 0000000000044008
 int64 g_qw44018; // 0000000000044018
-Eq_4 g_t44020;
-Eq_810 g_t44028;
+word64 g_qw44020; // 0000000000044020
+Eq_245 g_t44028;

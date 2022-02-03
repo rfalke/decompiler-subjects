@@ -169,26 +169,26 @@ void** load_rc(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     ebp9 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax10 = g14;
     v11 = eax10;
-    v12 = reinterpret_cast<void**>(0x8071918);
-    eax19 = fun_8048f84(0x8071918, v13, v14, v15, v16, v17, v18);
-    if (!eax19 || (v20 = eax19, v21 = reinterpret_cast<void**>(1), fun_8049224(ecx, 0x8082f40, 0x1000, 1, 0x1000, 0x807192b, v20, 0x807191d), v22 = reinterpret_cast<void**>(0x80729f4), v12 = reinterpret_cast<void**>(0x8082f40), eax23 = fun_80490d4(0x8082f40, 0x80729f4, 1, 0x1000, 0x807192b, v20, 0x807191d), edi24 = eax23, eax23 == 0)) {
+    v12 = reinterpret_cast<void**>("HOME");
+    eax19 = fun_8048f84("HOME", v13, v14, v15, v16, v17, v18);
+    if (!eax19 || (v20 = eax19, v21 = reinterpret_cast<void**>(1), fun_8049224(ecx, 0x8082f40, 0x1000, 1, 0x1000, "%s/%s", v20, ".mathomaticrc"), v22 = reinterpret_cast<void**>("r"), v12 = reinterpret_cast<void**>(0x8082f40), eax23 = fun_80490d4(0x8082f40, "r", 1, 0x1000, "%s/%s", v20, ".mathomaticrc"), edi24 = eax23, eax23 == 0)) {
         esi25 = reinterpret_cast<void**>(1);
     } else {
         esi25 = reinterpret_cast<void**>(1);
-        while (v21 = edi24, v22 = reinterpret_cast<void**>(0x1000), eax26 = fun_8048fb4(reinterpret_cast<int32_t>(ebp9) + 0xffffefe4, 0x1000, v21, 0x1000, 0x807192b, v20, 0x807191d), !!eax26) {
-            set_error_level(eax26, 0x1000, v21, 0x1000, 0x807192b, v20, 0x807191d);
-            eax27 = set_options(ecx, eax26, 0x1000, v21, 0x1000, 0x807192b, v20, 0x807191d);
+        while (v21 = edi24, v22 = reinterpret_cast<void**>(0x1000), eax26 = fun_8048fb4(reinterpret_cast<int32_t>(ebp9) + 0xffffefe4, 0x1000, v21, 0x1000, "%s/%s", v20, ".mathomaticrc"), !!eax26) {
+            set_error_level(eax26, 0x1000, v21, 0x1000, "%s/%s", v20, ".mathomaticrc");
+            eax27 = set_options(ecx, eax26, 0x1000, v21, 0x1000, "%s/%s", v20, ".mathomaticrc");
             if (eax27) 
                 continue;
             esi25 = reinterpret_cast<void**>(0);
         }
         v12 = edi24;
-        fun_80490a4(v12, 0x1000, v21, 0x1000, 0x807192b, v20, 0x807191d);
+        fun_80490a4(v12, 0x1000, v21, 0x1000, "%s/%s", v20, ".mathomaticrc");
     }
     eax28 = esi25;
     edx29 = v11 ^ g14;
     if (edx29) {
-        eax28 = fun_8049184(ecx, v12, v22, v21, 0x1000, 0x807192b, v20, 0x807191d, v30, v31, v32);
+        eax28 = fun_8049184(ecx, v12, v22, v21, 0x1000, "%s/%s", v20, ".mathomaticrc", v30, v31, v32);
     }
     return eax28;
 }
@@ -305,24 +305,24 @@ void main_io_loop(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     v9 = esi10;
     v11 = ebx12;
     while (1) {
-        default_color(ecx, v13, v14, 1, 80, 0x8071942, v15, v16);
+        default_color(ecx, v13, v14, 1, 80, "%d%s", v15, v16);
         zf17 = html_flag == 0;
-        eax18 = reinterpret_cast<void**>(0x8071931);
+        eax18 = reinterpret_cast<void**>("-> ");
         if (!zf17) {
-            eax18 = reinterpret_cast<void**>(0x8071935);
+            eax18 = reinterpret_cast<void**>("&mdash;&gt; ");
         }
         v16 = eax18;
         eax19 = cur_equation;
         v15 = eax19 + 1;
-        fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8071942, v15, v16);
+        fun_8049224(ecx, 0x80795a0, 80, 1, 80, "%d%s", v15, v16);
         eax20 = n_tokens;
         v14 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax20) << 4);
         eax21 = tlhs;
-        eax23 = get_string(eax21, v14, 1, 80, 0x8071942, v15, v16, v22, v11, v9);
+        eax23 = get_string(eax21, v14, 1, 80, "%d%s", v15, v16, v22, v11, v9);
         if (!eax23) 
             break;
         v13 = eax23;
-        process(ecx, v13, v14, 1, 80, 0x8071942, v15, v16);
+        process(ecx, v13, v14, 1, 80, "%d%s", v15, v16);
     }
     return;
 }
@@ -479,7 +479,7 @@ void** get_string(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     if (zf19) {
         zf20 = echo_input == 0;
         if (zf20) {
-            fun_8048f34(1, 0x8075e74, 0x80795a0, v21, v22, v23, v24, v25, v26, v27, v28, v11);
+            fun_8048f34(1, "%s", 0x80795a0, v21, v22, v23, v24, v25, v26, v27, v28, v11);
             goto addr_804a741_9;
         }
     } else {
@@ -493,8 +493,8 @@ void** get_string(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (!eax37) {
                 zf38 = quiet_mode == 0;
                 if (zf38) {
-                    v32 = reinterpret_cast<void**>(0x807207f);
-                    fun_8048f34(1, 0x807207f, v31, v39, v40, v41, v42, v43, v44, v45, v46, v11);
+                    v32 = reinterpret_cast<void**>("\nEnd of input.\n");
+                    fun_8048f34(1, "\nEnd of input.\n", v31, v39, v40, v41, v42, v43, v44, v45, v46, v11);
                 }
                 exit_program(ecx18, 0, v32, v31, v47, v48, v49, v50);
             }
@@ -503,9 +503,9 @@ void** get_string(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
             if (!eax51) {
                 zf52 = quiet_mode == 0;
                 if (zf52) {
-                    fun_8048f34(1, 0x807207f, v53, v54, v55, v56, v57, v58, v59, v60, v61, v11);
+                    fun_8048f34(1, "\nEnd of input.\n", v53, v54, v55, v56, v57, v58, v59, v60, v61, v11);
                 }
-                exit_program(ecx18, 0, 0x807207f, v62, v63, v64, v65, v66);
+                exit_program(ecx18, 0, "\nEnd of input.\n", v62, v63, v64, v65, v66);
             }
             v31 = esi14;
             v32 = eax51;
@@ -534,9 +534,9 @@ void** get_string(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
         zf91 = eax90 == stdout;
         if (!zf91 && (zf92 = eax90 == stderr, !zf92) || (zf93 = echo_input == 0, !zf93)) {
             v94 = ebx13;
-            v31 = reinterpret_cast<void**>(0x807208f);
+            v31 = reinterpret_cast<void**>("%s%s\n");
             v32 = reinterpret_cast<void**>(1);
-            fun_8048f04(ecx89, eax90, 1, 0x807208f, 0x80795a0, v94, v95, v96, v97, v98, v99, v100, v11);
+            fun_8048f04(ecx89, eax90, 1, "%s%s\n", 0x80795a0, v94, v95, v96, v97, v98, v99, v100, v11);
         }
         set_error_level(ebx13, v32, v31, 0x80795a0, v94, v101, v102);
         abort_flag = 0;
@@ -793,7 +793,7 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                         ebx40 = v36;
                         edx41 = esi39;
                         if (*reinterpret_cast<signed char*>(&edx41)) {
-                            eax46 = fun_8049084(v26, 0x80727e9, 6, v42, v43, v10, v22, v23, v44, v45);
+                            eax46 = fun_8049084(v26, "repeat", 6, v42, v43, v10, v22, v23, v44, v45);
                             edx47 = esi39;
                             do {
                                 if (*reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(eax46) + *reinterpret_cast<signed char*>(&edx47) * 2) + 1) & 32) 
@@ -807,13 +807,13 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                         if (!reinterpret_cast<int1_t>(esi48 == 6)) 
                             break;
                         v19 = reinterpret_cast<void**>(6);
-                        v18 = reinterpret_cast<void**>(0x80727e9);
+                        v18 = reinterpret_cast<void**>("repeat");
                         v26 = v36;
-                        eax51 = strncasecmp(v26, 0x80727e9, 6, v49, v50, v10);
+                        eax51 = strncasecmp(v26, "repeat", 6, v49, v50, v10);
                         if (eax51) 
                             break;
                         v26 = ebx40;
-                        eax56 = skip_space(v26, 0x80727e9, 6, v52, v53, v10, v22, v23, v54, v55);
+                        eax56 = skip_space(v26, "repeat", 6, v52, v53, v10, v22, v23, v54, v55);
                         v36 = eax56;
                         v23 = reinterpret_cast<void**>(1);
                     }
@@ -890,9 +890,9 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                     goto addr_804f42d_2;
                 }
             } else {
-                eax84 = fun_8048f84(0x80727db, v79, v80, v81, v82, v10, v83);
+                eax84 = fun_8048f84("SHELL", v79, v80, v81, v82, v10, v83);
                 if (!eax84) {
-                    eax84 = reinterpret_cast<void**>(0x80727e1);
+                    eax84 = reinterpret_cast<void**>("/bin/sh");
                 }
                 v18 = reinterpret_cast<void**>(1);
                 eax85 = fun_8049044(eax84, 1);
@@ -906,8 +906,8 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                     ebx14 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax98 == 0))));
                     goto addr_804f42d_2;
                 } else {
-                    v17 = reinterpret_cast<void**>(0x8072cc4);
-                    error(ecx, 0x8072cc4, 1, v99, v100, v101, v10, v102, v103, v104, v105, v106);
+                    v17 = reinterpret_cast<void**>("Shell not found or not executable, check SHELL environment variable.");
+                    error(ecx, "Shell not found or not executable, check SHELL environment variable.", 1, v99, v100, v101, v10, v102, v103, v104, v105, v106);
                     ebx14 = reinterpret_cast<void**>(0);
                     goto addr_804f42d_2;
                 }
@@ -930,8 +930,8 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
             ebx14 = reinterpret_cast<void**>(1);
             if (edi107 != v115) {
                 if (reinterpret_cast<signed char>(esi112) < reinterpret_cast<signed char>(0) || (less116 = reinterpret_cast<signed char>(esi112) < reinterpret_cast<signed char>(n_equations), !less116)) {
-                    v17 = reinterpret_cast<void**>(0x80727c5);
-                    error(ecx, 0x80727c5, v18, v117, v118, v119, v10, v120, v121, v122, v123, v124);
+                    v17 = reinterpret_cast<void**>("Equation not defined.");
+                    error(ecx, "Equation not defined.", v18, v117, v118, v119, v10, v120, v121, v122, v123, v124);
                     ebx14 = reinterpret_cast<void**>(0);
                     goto addr_804f42d_2;
                 } else {
@@ -992,8 +992,8 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
                 goto addr_804f206_57;
         }
     } else {
-        v17 = reinterpret_cast<void**>(0x80727f0);
-        error(ecx, 0x80727f0, v18, 0x1000, v151, v21, v10, v22, v23, v24, v25, v58);
+        v17 = reinterpret_cast<void**>("Command line too long.");
+        error(ecx, "Command line too long.", v18, 0x1000, v151, v21, v10, v22, v23, v24, v25, v58);
         ebx14 = reinterpret_cast<void**>(0);
         goto addr_804f42d_2;
     }
@@ -1001,9 +1001,9 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     if (!ebx14 && (sf152 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0), !sf152)) {
         v20 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v58) * 24 + 0x8074d8c);
         v19 = esi139;
-        v18 = reinterpret_cast<void**>(0x8072807);
+        v18 = reinterpret_cast<void**>("Command usage: %s %s\n");
         v17 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8072807, v19, v20, v21, v10, v22, v23, v24, v25, v58, v36);
+        fun_8048f34(1, "Command usage: %s %s\n", v19, v20, v21, v10, v22, v23, v24, v25, v58, v36);
         goto addr_804f42d_2;
     }
     addr_804f206_57:
@@ -1030,12 +1030,12 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp9) + reinterpret_cast<unsigned char>(edx157) + 0xffffefe4) = 0;
     if (eax156) {
         if (!ecx) {
-            v18 = reinterpret_cast<void**>(0x80779f1);
-            eax159 = fun_80490d4(eax156, 0x80779f1, 0x1000, v158, v21, v10, v22);
+            v18 = reinterpret_cast<void**>("w");
+            eax159 = fun_80490d4(eax156, "w", 0x1000, v158, v21, v10, v22);
             ebx14 = eax159;
         } else {
-            v18 = reinterpret_cast<void**>(0x8072a7b);
-            eax161 = fun_80490d4(eax156, 0x8072a7b, 0x1000, v160, v21, v10, v22);
+            v18 = reinterpret_cast<void**>("a");
+            eax161 = fun_80490d4(eax156, "a", 0x1000, v160, v21, v10, v22);
             ebx14 = eax161;
         }
         if (!ebx14) 
@@ -1072,8 +1072,8 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
         goto addr_804f38f_59;
     }
     addr_804f29c_72:
-    v17 = reinterpret_cast<void**>(0x8072d0c);
-    error(ecx, 0x8072d0c, v18, 0x1000, v175, v21, v10, v22, v23, v24, v25, v58);
+    v17 = reinterpret_cast<void**>("Can't open redirected output file for writing.");
+    error(ecx, "Can't open redirected output file for writing.", v18, 0x1000, v175, v21, v10, v22, v23, v24, v25, v58);
     goto addr_804f42d_2;
     addr_804f3e6_25:
     if (!v23) {
@@ -1086,8 +1086,8 @@ void** process(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
         ebx14 = eax179;
         goto addr_804f42d_2;
     } else {
-        v17 = reinterpret_cast<void**>(0x807281d);
-        error(ecx, 0x807281d, v18, v19, v180, v21, v10, v22, v23, v24, v25, v58);
+        v17 = reinterpret_cast<void**>("Expecting command to repeat.");
+        error(ecx, "Expecting command to repeat.", v18, v19, v180, v21, v10, v22, v23, v24, v25, v58);
         ebx14 = reinterpret_cast<void**>(0);
         goto addr_804f42d_2;
     }
@@ -1177,8 +1177,8 @@ void** error(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, 
 
     error_str = a2;
     set_color(2, v13, v14, v15, v16, ebx17);
-    fun_8048f34(1, 0x807277d, a2, v18, v19, ebx17, ebp20, __return_address(), a2, a3, a4, a5);
-    eax23 = default_color(ecx, 1, 0x807277d, a2, v21, v22, ebx17, ebp20);
+    fun_8048f34(1, "%s\n", a2, v18, v19, ebx17, ebp20, __return_address(), a2, a3, a4, a5);
+    eax23 = default_color(ecx, 1, "%s\n", a2, v21, v22, ebx17, ebp20);
     return eax23;
 }
 
@@ -1438,24 +1438,24 @@ void** exit_program(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     reset_attr(v9, v10, v11, v12);
     zf13 = html_flag == 0;
     if (!zf13) {
-        v14 = reinterpret_cast<void**>(0x80718e8);
-        fun_8048f34(1, 0x80718e8, v15, v16, v17, v18, v19, v20, v21, ebx22, ebp23, __return_address());
+        v14 = reinterpret_cast<void**>("</pre>\n");
+        fun_8048f34(1, "</pre>\n", v15, v16, v17, v18, v19, v20, v21, ebx22, ebp23, __return_address());
     }
     zf24 = readline_enabled == 0;
-    if (!zf24 && (eax25 = history_filename, eax26 = fun_8048ee4(eax25, 0x80718e8), !!eax26)) {
+    if (!zf24 && (eax25 = history_filename, eax26 = fun_8048ee4(eax25, "</pre>\n"), !!eax26)) {
         eax27 = history_filename;
         v28 = eax27;
         eax29 = prog_name;
         v30 = eax29;
         v14 = reinterpret_cast<void**>(1);
         eax31 = stderr;
-        fun_8048f04(ecx, eax31, 1, 0x8071a1c, v30, v28, v32, v33, v34, v35, ebx22, ebp23, __return_address());
+        fun_8048f04(ecx, eax31, 1, "%s: Unable to save readline history into file \"%s\".\n", v30, v28, v32, v33, v34, v35, ebx22, ebp23, __return_address());
     }
     if (!a2 && ((zf36 = quiet_mode == 0, zf36) && (zf37 = html_flag == 0, zf37))) {
-        v14 = reinterpret_cast<void**>(0x8071a54);
-        fun_8048f34(1, 0x8071a54, 0x8071a1c, v30, v28, v38, v39, v40, v41, ebx22, ebp23, __return_address());
+        v14 = reinterpret_cast<void**>("Thank you for using Mathomatic!\n");
+        fun_8048f34(1, "Thank you for using Mathomatic!\n", "%s: Unable to save readline history into file \"%s\".\n", v30, v28, v38, v39, v40, v41, ebx22, ebp23, __return_address());
     }
-    fun_8049294(a2, v14, 0x8071a1c, v30, v28);
+    fun_8049294(a2, v14, "%s: Unable to save readline history into file \"%s\".\n", v30, v28);
     exit_program(ecx, 1, v42, v43, v44, v45, v46, reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     goto a2;
 }
@@ -1652,7 +1652,7 @@ uint32_t is_all(void** a1, void** a2, void** a3) {
     void** v7;
     uint32_t eax8;
 
-    eax8 = strcmp_tospace(a1, 0x807207b, v4, v5, v6, v7);
+    eax8 = strcmp_tospace(a1, "all", v4, v5, v6, v7);
     return static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax8 == 0)));
 }
 
@@ -2058,11 +2058,11 @@ void** parse_expr(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                 ebx33 = eax35 + 0xffffffff;
             }
             if (esi27 == v36 || *reinterpret_cast<void***>(v36)) {
-                error(ecx, 0x8075480, v29, v37, v38, v39, v40, v41, v42, v43, v44, v45);
+                error(ecx, "Error parsing equation space number.", v29, v37, v38, v39, v40, v41, v42, v43, v44, v45);
                 ebx9 = reinterpret_cast<void**>(0);
             } else {
                 if (reinterpret_cast<signed char>(ebx33) < reinterpret_cast<signed char>(0) || ((less46 = reinterpret_cast<signed char>(ebx33) < reinterpret_cast<signed char>(n_equations), !less46) || reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx33) * 4 + 0x8082d80) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(*reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(ebx33) * 4 + 0x8082d80) == 0)))) {
-                    error(ecx, 0x80754a8, v29, v47, v48, v49, v50, v51, v52, v53, v54, v55);
+                    error(ecx, "No expression available in specified equation space.", v29, v47, v48, v49, v50, v51, v52, v53, v54, v55);
                     ebx9 = reinterpret_cast<void**>(0);
                 } else {
                     if (!*reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(ebx33) * 4 + 0x8079940)) {
@@ -2079,7 +2079,7 @@ void** parse_expr(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                     v78 = *reinterpret_cast<void***>(a3);
                     list_proc(ecx, a2, v78, 0, v79, v80, v81, v82, v83);
                     eax84 = gfp;
-                    fun_8048f04(ecx, eax84, 1, 0x80757fd, v85, v86, v87, v88, v89, v90, v91, v92, ebx66);
+                    fun_8048f04(ecx, eax84, 1, "\n", v85, v86, v87, v88, v89, v90, v91, v92, ebx66);
                     ebx9 = v93;
                 }
             }
@@ -2274,8 +2274,8 @@ void** warning(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
     sf11 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
     if (!sf11) {
         set_color(1, v12, v13, v14, v15, ebx16);
-        fun_8048f34(1, 0x8072095, a2, v17, v18, ebx16, ebp19, __return_address(), a2, a3, a4, a5);
-        eax22 = default_color(ecx, 1, 0x8072095, a2, v20, v21, ebx16, ebp19);
+        fun_8048f34(1, "Warning: %s\n", a2, v17, v18, ebx16, ebp19, __return_address(), a2, a3, a4, a5);
+        eax22 = default_color(ecx, 1, "Warning: %s\n", a2, v20, v21, ebx16, ebp19);
     }
     return eax22;
 }
@@ -2318,22 +2318,22 @@ void** set_color(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
         if (zf10) {
             edx11 = __intrinsic() - (reinterpret_cast<signed char>(a1) >> 31);
             eax12 = edx11 + edx11 * 2;
-            v13 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(a1) - (eax12 + eax12)) * 4 + 0x8077c28);
+            v13 = *reinterpret_cast<void***>(" " + (reinterpret_cast<unsigned char>(a1) - (eax12 + eax12)) * 4);
             eax14 = bold_colors;
             eax7 = fun_8048f34(1, 0x8077a47, eax14, v13, v15, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
         } else {
             if (reinterpret_cast<signed char>(eax7) >= reinterpret_cast<signed char>(0)) {
-                fun_8048f34(1, 0x8077a2d, v18, v19, v20, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
+                fun_8048f34(1, "</font>", v18, v19, v20, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
             }
             zf21 = bold_colors == 0;
             if (zf21) {
                 edx22 = (reinterpret_cast<int32_t>(reinterpret_cast<int32_t>(__intrinsic()) + reinterpret_cast<unsigned char>(a1)) >> 2) - reinterpret_cast<uint32_t>(reinterpret_cast<signed char>(a1) >> 31);
                 v23 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(a1) - (edx22 * 8 - edx22)) * 4 + 0x8077c0c);
-                eax7 = fun_8048f34(1, 0x8077a35, v23, v24, v25, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
+                eax7 = fun_8048f34(1, "<font color=\"%s\">", v23, v24, v25, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
             } else {
                 edx26 = (reinterpret_cast<int32_t>(reinterpret_cast<int32_t>(__intrinsic()) + reinterpret_cast<unsigned char>(a1)) >> 2) - reinterpret_cast<uint32_t>(reinterpret_cast<signed char>(a1) >> 31);
                 v27 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(a1) - (edx26 * 8 - edx26)) * 4 + 0x8077bf0);
-                eax7 = fun_8048f34(1, 0x8077a35, v27, v28, v29, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
+                eax7 = fun_8048f34(1, "<font color=\"%s\">", v27, v28, v29, ebx16, ebp17, __return_address(), a1, a2, a3, a4);
             }
         }
         cur_color = a1;
@@ -2368,7 +2368,7 @@ int32_t check_divide_by_zero(void** ecx, void** a2, void** a3, void** a4, void**
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (!(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 24) && !__intrinsic()) {
-        warning(ecx, 0x80720a2, v13, v14, v15, v16, v17, ebp18, __return_address(), a2);
+        warning(ecx, "Division by zero.", v13, v14, v15, v16, v17, ebp18, __return_address(), a2);
         eax12 = 1;
     }
     return eax12;
@@ -2422,7 +2422,7 @@ void** extra_characters(void** ecx, void** a2, void** a3, void** a4, void** a5, 
     if (!a2 || (eax14 = skip_space(a2, v8, v9, v10, v11, v12, ebp13, __return_address(), a2, a3), *reinterpret_cast<void***>(eax14) == 0)) {
         eax15 = reinterpret_cast<void**>(0);
     } else {
-        error(ecx, 0x8072160, v16, v17, v18, v19, v20, ebp13, __return_address(), a2, a3, a4);
+        error(ecx, "Extra characters or unrecognized argument.", v16, v17, v18, v19, v20, ebp13, __return_address(), a2, a3, a4);
         eax15 = reinterpret_cast<void**>(1);
     }
     return eax15;
@@ -2441,7 +2441,7 @@ int32_t current_not_defined(void** ecx, void** a2, void** a3, void** a4) {
 
     edx5 = cur_equation;
     if (reinterpret_cast<signed char>(edx5) < reinterpret_cast<signed char>(0) || ((less6 = reinterpret_cast<signed char>(edx5) < reinterpret_cast<signed char>(n_equations), !less6) || (eax7 = 0, *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(edx5) * 4 + 0x8082d80) <= 0))) {
-        error(ecx, 0x807218c, v8, v9, v10, v11, v12, ebp13, __return_address(), a2, a3, a4);
+        error(ecx, "No current equation or expression.", v8, v9, v10, v11, v12, ebp13, __return_address(), a2, a3, a4);
         eax7 = 1;
     }
     return eax7;
@@ -2579,7 +2579,7 @@ int32_t get_range(void** a1, void** a2, void** a3) {
             esi53 = *reinterpret_cast<void***>(ebx6);
             if (reinterpret_cast<signed char>(esi53) < reinterpret_cast<signed char>(edx52)) {
                 addr_804b120_11:
-                error(ecx54, 0x80721b0, v32, 10, v55, v56, v57, v58, v51, v59, v60, v61);
+                error(ecx54, "No equations defined in specified range.", v32, 10, v55, v56, v57, v58, v51, v59, v60, v61);
                 eax62 = 0;
                 goto addr_804b131_12;
             } else {
@@ -2611,7 +2611,7 @@ int32_t get_range(void** a1, void** a2, void** a3) {
         }
     }
     addr_804b026_6:
-    error(ecx30, 0x80720da, v32, 10, v65, v66, v67, v68, eax17, v69, v70, v71);
+    error(ecx30, "Invalid equation number.", v32, 10, v65, v66, v67, v68, eax17, v69, v70, v71);
     eax62 = 0;
     addr_804b131_12:
     return eax62;
@@ -2646,7 +2646,7 @@ int32_t get_range(void** a1, void** a2, void** a3) {
         }
     }
     addr_804b0be_26:
-    error(ecx54, 0x80720da, v32, 10, v85, v86, v87, v88, v41, v89, v90, v91);
+    error(ecx54, "Invalid equation number.", v32, 10, v85, v86, v87, v88, v41, v89, v90, v91);
     eax62 = 0;
     goto addr_804b131_12;
     addr_804b0d1_28:
@@ -2686,12 +2686,12 @@ int32_t not_defined(void** ecx, void** a2, void** a3, void** a4) {
     void** v17;
 
     if (reinterpret_cast<signed char>(a2) < reinterpret_cast<signed char>(0) || (less5 = reinterpret_cast<signed char>(a2) < reinterpret_cast<signed char>(n_equations), !less5)) {
-        error(ecx, 0x80720da, v6, v7, v8, v9, v10, ebp11, __return_address(), a2, a3, a4);
+        error(ecx, "Invalid equation number.", v6, v7, v8, v9, v10, ebp11, __return_address(), a2, a3, a4);
         eax12 = 1;
     } else {
         eax12 = 0;
         if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) <= 0) {
-            error(ecx, 0x80720f3, v13, v14, v15, v16, v17, ebp11, __return_address(), a2, a3, a4);
+            error(ecx, "Equation space is empty.", v13, v14, v15, v16, v17, ebp11, __return_address(), a2, a3, a4);
             eax12 = 1;
         }
     }
@@ -2722,8 +2722,8 @@ void** next_espace(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
 
     eax11 = alloc_next_espace(v8, v9, v10);
     if (reinterpret_cast<signed char>(eax11) < reinterpret_cast<signed char>(0)) {
-        error(ecx, 0x807210c, v12, v13, v14, v15, v16, ebp17, __return_address(), a2, a3, a4);
-        fun_8048f34(1, 0x80721dc, v18, v19, v20, v21, ebp17, __return_address(), a2, a3, a4, a5);
+        error(ecx, "Out of free equation spaces.", v12, v13, v14, v15, v16, ebp17, __return_address(), a2, a3, a4);
+        fun_8048f34(1, "Use the clear command on unnecessary equations and try again.\n", v18, v19, v20, v21, ebp17, __return_address(), a2, a3, a4, a5);
         eax11 = fun_8048ef4(0x8079600, 3, v22, v23, v24, v25, ebp17, __return_address());
     }
     return eax11;
@@ -2772,7 +2772,7 @@ void** check_err(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         *reinterpret_cast<void***>(eax19) = reinterpret_cast<void**>(0);
         zf20 = domain_check == 0;
         if (zf20) {
-            error(ecx, 0x8072129, v21, v22, v23, v24, v25, ebp18, __return_address(), a2, a3, a4);
+            error(ecx, "Domain error in constant.", v21, v22, v23, v24, v25, ebp18, __return_address(), a2, a3, a4);
             eax19 = fun_8048ef4(0x8079600, 2, v26, v27, v28, v29, ebp18, __return_address());
         } else {
             domain_check = 0;
@@ -2785,7 +2785,7 @@ void** check_err(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         }
     }
     *reinterpret_cast<void***>(eax19) = reinterpret_cast<void**>(0);
-    error(ecx, 0x8072143, 2, v30, v31, v32, v33, ebp18, __return_address(), a2, a3, a4);
+    error(ecx, "Overflow error in constant.", 2, v30, v31, v32, v33, ebp18, __return_address(), a2, a3, a4);
     eax19 = fun_8048ef4(0x8079600, 2, v34, v35, v36, v37, ebp18, __return_address());
     goto addr_804b23b_5;
 }
@@ -2918,7 +2918,7 @@ void** alloc_next_espace(void** a1, void** a2, void** a3) {
             n_equations = tmp32_11;
             edx8 = edi9;
         } else {
-            warning(ecx12, 0x80720b4, v13, v14, v15, v16, v17, v18, v6, v4);
+            warning(ecx12, "Memory is exhausted.", v13, v14, v15, v16, v17, v18, v6, v4);
             eax19 = n_equations;
             if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(eax19) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(eax19 == 0)) {
                 addr_804ad3f_5:
@@ -3473,12 +3473,12 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
         less_or_equal28 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (less_or_equal28) 
             goto addr_804c1a5_5;
-        v29 = reinterpret_cast<void**>(0x80722f8);
-        v30 = reinterpret_cast<void**>(0x807277d);
+        v29 = reinterpret_cast<void**>("Infinite loop aborted in solve routine.");
+        v30 = reinterpret_cast<void**>("%s\n");
         v31 = reinterpret_cast<void**>(1);
         eax32 = gfp;
         v33 = eax32;
-        fun_8048f04(0, v33, 1, 0x807277d, 0x80722f8, v34, v35, v36, v37, v38, v39, v40, v41);
+        fun_8048f04(0, v33, 1, "%s\n", "Infinite loop aborted in solve routine.", v34, v35, v36, v37, v38, v39, v40, v41);
         eax42 = reinterpret_cast<void**>(0);
         goto addr_804c1aa_8;
     }
@@ -3522,27 +3522,27 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
                 switch (v11) {
                 case 1:
                     eax78 = gfp;
-                    fun_8048f04(ecx21, eax78, 1, 0x807262d, v79, v80, v81, v82, v83, v84, v85, v86, v87);
+                    fun_8048f04(ecx21, eax78, 1, "Subtracting", v79, v80, v81, v82, v83, v84, v85, v86, v87);
                     break;
                 case 2:
                     eax88 = gfp;
-                    fun_8048f04(ecx21, eax88, 1, 0x8072639, v89, v90, v91, v92, v93, v94, v95, v96, v97);
+                    fun_8048f04(ecx21, eax88, 1, "Adding", v89, v90, v91, v92, v93, v94, v95, v96, v97);
                     break;
                 case 3:
                     eax98 = gfp;
-                    fun_8048f04(ecx21, eax98, 1, 0x8072370, v99, v100, v101, v102, v103, v104, v105, v106, v107);
+                    fun_8048f04(ecx21, eax98, 1, "Dividing both sides of the equation by", v99, v100, v101, v102, v103, v104, v105, v106, v107);
                     break;
                 case 4:
                     eax108 = gfp;
-                    fun_8048f04(ecx21, eax108, 1, 0x8072398, v109, v110, v111, v112, v113, v114, v115, v116, v117);
+                    fun_8048f04(ecx21, eax108, 1, "Multiplying both sides of the equation by", v109, v110, v111, v112, v113, v114, v115, v116, v117);
                     break;
                 case 5:
                     eax118 = gfp;
-                    fun_8048f04(ecx21, eax118, 1, 0x8072640, v119, v120, v121, v122, v123, v124, v125, v126, v127);
+                    fun_8048f04(ecx21, eax118, 1, "Applying inverse modulus of", v119, v120, v121, v122, v123, v124, v125, v126, v127);
                     break;
                 case 6:
                     eax128 = gfp;
-                    fun_8048f04(ecx21, eax128, 1, 0x80723c4, v129, v130, v131, v132, v133, v134, v135, v136, v137);
+                    fun_8048f04(ecx21, eax128, 1, "Raising both sides of the equation to the power of", v129, v130, v131, v132, v133, v134, v135, v136, v137);
                 case 12:
                     goto 0x804bdbc;
                 case 10:
@@ -3563,10 +3563,10 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
             }
             if (!v49 || (!reinterpret_cast<int1_t>(v47 == 1) || (ecx21 = v13, !!*reinterpret_cast<void***>(ecx21)))) {
                 eax138 = gfp;
-                fun_8048f04(ecx21, eax138, 1, 0x8072702, v139, v140, v141, v142, v143, v144, v145, v146, v147);
+                fun_8048f04(ecx21, eax138, 1, " \"", v139, v140, v141, v142, v143, v144, v145, v146, v147);
                 if (v49) {
                     eax148 = gfp;
-                    fun_8048f04(ecx21, eax148, 1, 0x8072664, v149, v150, v151, v152, v153, v154, v155, v156, v157);
+                    fun_8048f04(ecx21, eax148, 1, "1/(", v149, v150, v151, v152, v153, v154, v155, v156, v157);
                 }
                 list_proc(ecx21, v13, v47, 0, v158, v159, v160, v161, v162);
                 if (v11 == 2) 
@@ -3580,17 +3580,17 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
                 __asm__("fstp qword [esp+0x10]");
                 eax163 = precision;
                 v29 = eax163;
-                v30 = reinterpret_cast<void**>(0x807265c);
+                v30 = reinterpret_cast<void**>(" %.*g:\n");
                 v31 = reinterpret_cast<void**>(1);
                 eax164 = gfp;
                 v50 = eax164;
-                fun_8048f04(ecx21, v50, 1, 0x807265c, v29, v165, v166, v167, v168, v169, v170, v171, v172);
+                fun_8048f04(ecx21, v50, 1, " %.*g:\n", v29, v165, v166, v167, v168, v169, v170, v171, v172);
                 goto addr_804bd04_22;
             }
         }
     } else {
-        v33 = reinterpret_cast<void**>(0x807234c);
-        error(ecx21, 0x807234c, v31, v30, v173, v174, v175, v176, v177, v178, v179, v180);
+        v33 = reinterpret_cast<void**>("There are no possible solutions.");
+        error(ecx21, "There are no possible solutions.", v31, v30, v173, v174, v175, v176, v177, v178, v179, v180);
         eax42 = reinterpret_cast<void**>(0);
         goto addr_804c1aa_8;
     }
@@ -3618,7 +3618,7 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
         v30 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx21)) - reinterpret_cast<unsigned char>(v23) << 4);
         v31 = edi43;
         v33 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(*esi18) << 4) + reinterpret_cast<unsigned char>(v17));
-        fun_80491c4(ecx21, v33, v31, v30, v29, 0x8072674, 0x807266c, v189, v190, v191, v192, v193, v194, v195);
+        fun_80491c4(ecx21, v33, v31, v30, v29, "%s%.0d", "integer", v189, v190, v191, v192, v193, v194, v195);
         *esi18 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*esi18) + (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v16)) - reinterpret_cast<unsigned char>(v23)));
         if (!v49 || (!reinterpret_cast<int1_t>(v47 == 1) || (ecx21 = v13, !!*reinterpret_cast<void***>(ecx21)))) {
             addr_804c171_50:
@@ -3633,7 +3633,7 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
             v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xffffff78);
             __asm__("fld qword [ecx+0x8]");
             __asm__("fstp qword [esp]");
-            f_to_fraction(ecx21, v33, v31, v30, v29, 0x8072674, 0x807266c, v189, v196);
+            f_to_fraction(ecx21, v33, v31, v30, v29, "%s%.0d", "integer", v189, v196);
             __asm__("fld qword [ebp+0xffffff78]");
             __asm__("fld dword [0x8072058]");
             __asm__("fld st1");
@@ -3686,15 +3686,15 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
             *reinterpret_cast<void***>(ebx235) = reinterpret_cast<void**>(1);
             eax236 = last_int_var;
             v189 = eax236;
-            v237 = reinterpret_cast<void**>(0x807266c);
-            v238 = reinterpret_cast<void**>(0x8072674);
+            v237 = reinterpret_cast<void**>("integer");
+            v238 = reinterpret_cast<void**>("%s%.0d");
             v29 = reinterpret_cast<void**>(100);
             v30 = reinterpret_cast<void**>(1);
-            fun_8049224(ecx21, reinterpret_cast<int32_t>(ebp10) + 0xffffff80, 100, 1, 100, 0x8072674, 0x807266c, v189);
+            fun_8049224(ecx21, reinterpret_cast<int32_t>(ebp10) + 0xffffff80, 100, 1, 100, "%s%.0d", "integer", v189);
             ecx21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp10) + 0xffffff80);
             v31 = ecx21;
             v33 = edi43 + 24;
-            eax239 = parse_var(ecx21, v33, v31, 1, 100, 0x8072674, 0x807266c, v189);
+            eax239 = parse_var(ecx21, v33, v31, 1, 100, "%s%.0d", "integer", v189);
             if (!eax239) {
                 addr_804c1a5_5:
                 eax42 = reinterpret_cast<void**>(0);
@@ -3711,7 +3711,7 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
                 *reinterpret_cast<void***>(eax243 + 4) = reinterpret_cast<void**>(2);
                 *reinterpret_cast<void***>(eax243) = reinterpret_cast<void**>(2);
                 *reinterpret_cast<void***>(eax243 + 8) = reinterpret_cast<void**>(3);
-                fun_80491c4(ecx21, ebx235 + 32, v13, v46, 100, 0x8072674, 0x807266c, v189, v244, v245, v246, v247, v248, v249);
+                fun_80491c4(ecx21, ebx235 + 32, v13, v46, 100, "%s%.0d", "integer", v189, v244, v245, v246, v247, v248, v249);
                 *reinterpret_cast<void***>(v16) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v47) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v16)) + 3);
                 break;
             }
@@ -3747,7 +3747,7 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
     __asm__("fld dword [0x8072058]");
     __asm__("fstp qword [esp+0x8]");
     __asm__("fstp qword [esp]");
-    fun_8048e94(ecx21, v33, v31, v30, v29, 0x8072674, 0x807266c, v189, v265, v266, v267, v268, v269, v270);
+    fun_8048e94(ecx21, v33, v31, v30, v29, "%s%.0d", "integer", v189, v265, v266, v267, v268, v269, v270);
     addr_804c0fa_70:
     __asm__("fldz ");
     __asm__("fxch st0, st1");
@@ -3772,7 +3772,7 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
         *reinterpret_cast<void***>(eax274) = reinterpret_cast<void**>(1);
         ecx21 = ecx273 + 24;
         v33 = ecx21;
-        next_sign(v33, v31, v30, v29, 0x8072674, 0x807266c, v189);
+        next_sign(v33, v31, v30, v29, "%s%.0d", "integer", v189);
         *esi18 = *esi18 + 2;
         goto addr_804c171_50;
     }
@@ -3787,34 +3787,34 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
     addr_804bc78_38:
     if (v11 == 5) {
         addr_804bcab_36:
-        v30 = reinterpret_cast<void**>(0x807241c);
+        v30 = reinterpret_cast<void**>("\" to both sides of the equation:\n");
         v31 = reinterpret_cast<void**>(1);
         eax275 = gfp;
         v50 = eax275;
-        fun_8048f04(ecx21, v50, 1, 0x807241c, v276, v277, v278, v279, v280, v281, v282, v283, v284);
+        fun_8048f04(ecx21, v50, 1, "\" to both sides of the equation:\n", v276, v277, v278, v279, v280, v281, v282, v283, v284);
         goto addr_804bd04_22;
     } else {
         if (v11 == 6) {
             eax285 = gfp;
-            fun_8048f04(ecx21, eax285, 1, 0x80779a8, v286, v287, v288, v289, v290, v291, v292, v293, v294);
+            fun_8048f04(ecx21, eax285, 1, ")", v286, v287, v288, v289, v290, v291, v292, v293, v294);
             goto addr_804bce7_80;
         }
     }
     addr_804bc6d_39:
     if (v11 != 1) {
         addr_804bce7_80:
-        v30 = reinterpret_cast<void**>(0x8072668);
+        v30 = reinterpret_cast<void**>("\":\n");
         v31 = reinterpret_cast<void**>(1);
         eax295 = gfp;
         v50 = eax295;
-        fun_8048f04(ecx21, v50, 1, 0x8072668, v296, v297, v298, v299, v300, v301, v302, v303, v304);
+        fun_8048f04(ecx21, v50, 1, "\":\n", v296, v297, v298, v299, v300, v301, v302, v303, v304);
         goto addr_804bd04_22;
     } else {
-        v30 = reinterpret_cast<void**>(0x80723f8);
+        v30 = reinterpret_cast<void**>("\" from both sides of the equation:\n");
         v31 = reinterpret_cast<void**>(1);
         eax305 = gfp;
         v50 = eax305;
-        fun_8048f04(ecx21, v50, 1, 0x80723f8, v306, v307, v308, v309, v310, v311, v312, v313, v314);
+        fun_8048f04(ecx21, v50, 1, "\" from both sides of the equation:\n", v306, v307, v308, v309, v310, v311, v312, v313, v314);
         goto addr_804bd04_22;
     }
     addr_804b796_20:
@@ -3833,13 +3833,13 @@ void** g_of_f(void** ecx, void** a2, void** a3, void*** a4, void** a5, void** a6
         goto addr_804c1a5_5;
     less_or_equal331 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
     if (!less_or_equal331) {
-        v30 = reinterpret_cast<void**>(0x807277d);
+        v30 = reinterpret_cast<void**>("%s\n");
         v31 = reinterpret_cast<void**>(1);
         eax332 = gfp;
         v33 = eax332;
-        fun_8048f04(ecx21, v33, 1, 0x807277d, 0x8072320, v333, v334, v335, v336, v337, v338, v339, v340);
+        fun_8048f04(ecx21, v33, 1, "%s\n", "Taking logarithm of both equation sides:", v333, v334, v335, v336, v337, v338, v339, v340);
     }
-    eax347 = fun_8048ea4(v33, v31, v30, 0x8072320, v341, v342, v343, v344, v345, v346);
+    eax347 = fun_8048ea4(v33, v31, v30, "Taking logarithm of both equation sides:", v341, v342, v343, v344, v345, v346);
     *reinterpret_cast<void***>(eax347) = reinterpret_cast<void**>(0);
     complex_log(reinterpret_cast<int32_t>(ebp10) + 0xffffff30, v348, v349, v350, v351);
     complex_log(reinterpret_cast<int32_t>(ebp10) + 0xffffff20, v352, v353, v354, v355);
@@ -4182,7 +4182,7 @@ uint32_t get_constant(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
     ebp12 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     esi13 = a3;
     if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi13) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi13 == 0) || !(reinterpret_cast<unsigned char>(esi13) & 1)) {
-        error_bug(ecx, 0x80777b0, v14, v15, v16);
+        error_bug(ecx, "Call to get_constant() has invalid expression length.", v14, v15, v16);
     }
     if (!reinterpret_cast<int1_t>(esi13 == 1)) {
         if (reinterpret_cast<signed char>(esi13) <= reinterpret_cast<signed char>(2)) 
@@ -4331,8 +4331,8 @@ void** list_debug(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
 
 struct s5 {
     signed char[134715391] pad134715391;
-    void** f134715391;
-    void** f134715392;
+    void** f80797ff;
+    void** f8079800;
 };
 
 struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11);
@@ -4831,7 +4831,7 @@ int32_t quad_solve(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
     __asm__("fstp qword [esp+0x10]");
     eax63 = precision;
     eax64 = gfp;
-    fun_8048f04(ecx, eax64, 1, 0x8072440, eax63, v34, v65, 0x8079800, v66, v67, v68, v69, v49);
+    fun_8048f04(ecx, eax64, 1, "Equation is a degree %.*g polynomial in (%s).\n", eax63, v34, v65, 0x8079800, v66, v67, v68, v69, v49);
     cf70 = reinterpret_cast<unsigned char>(trhs) < reinterpret_cast<unsigned char>(v51);
     pf71 = __intrinsic();
     zf72 = trhs == v51;
@@ -5242,7 +5242,7 @@ int32_t quad_solve(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
         sf287 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
         if (!sf287) {
             eax288 = gfp;
-            fun_8048f04(v124, eax288, 1, 0x807277d, 0x8072470, eax281, v289, 0x8079800, v290, v291, v73, v145, v49);
+            fun_8048f04(v124, eax288, 1, "%s\n", "Equation was solved with the quadratic formula.", eax281, v289, 0x8079800, v290, v291, v73, v145, v49);
             eax251 = 1;
         }
     }
@@ -5280,15 +5280,15 @@ void** list_debug(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     less11 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(eax10);
     if (!less11) {
         eax12 = gfp;
-        fun_8048f04(ecx, eax12, 1, 0x8077a85, eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, eax12, 1, "level %d: ", eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
         list_proc(ecx, a3, a4, 0, eax10, ebx13, esi14, ebp15, __return_address());
         if (a5 && !(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(a6) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(a6 == 0))) {
             eax16 = gfp;
-            fun_8048f04(ecx, eax16, 1, 0x80759cf, eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, eax16, 1, " = ", eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
             list_proc(ecx, a5, a6, 0, eax10, ebx13, esi14, ebp15, __return_address());
         }
         eax17 = gfp;
-        eax10 = fun_8048f04(ecx, eax17, 1, 0x80757fd, eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
+        eax10 = fun_8048f04(ecx, eax17, 1, "\n", eax10, ebx13, esi14, ebp15, __return_address(), a2, a3, a4, a5);
     }
     return eax10;
 }
@@ -5810,51 +5810,51 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             ++edi18;
         } while (*edi18);
         eax20 = reinterpret_cast<struct s5*>(~ecx19 + 0xffffffff);
-        break;
+        goto addr_806de2e_9;
     case 1:
         switch (edi15 + 3) {
         default:
-            eax16 = reinterpret_cast<void**>(0x80779ab);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("e");
+            goto addr_806de3b_13;
         case 0:
             ebx17 = 0;
-            eax16 = reinterpret_cast<void**>(0x80779a1);
+            eax16 = reinterpret_cast<void**>("exp(1.0)");
             goto addr_806dd5c_4;
         case 2:
-            eax16 = reinterpret_cast<void**>(0x80779aa);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("%e");
+            goto addr_806de3b_13;
         case 3:
-            eax16 = reinterpret_cast<void**>(0x80751c4);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("e#");
+            goto addr_806de3b_13;
         case 4:
-            eax16 = reinterpret_cast<void**>(0x80779ad);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("M_E");
+            goto addr_806de3b_13;
         case 5:
-            eax16 = reinterpret_cast<void**>(0x80779b1);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("Math.E");
+            goto addr_806de3b_13;
         case 6:
-            eax16 = reinterpret_cast<void**>(0x80779b8);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("math.e");
+            goto addr_806de3b_13;
             ebx17 = 0;
-            eax16 = reinterpret_cast<void**>(0x80779bf);
+            eax16 = reinterpret_cast<void**>("%pi");
             goto addr_806dd5c_4;
-            eax16 = reinterpret_cast<void**>(0x80751c7);
-            goto addr_806de3b_12;
-            eax16 = reinterpret_cast<void**>(0x80779e5);
-            goto addr_806de3b_12;
-            eax16 = reinterpret_cast<void**>(0x80779c3);
-            goto addr_806de3b_12;
-            eax16 = reinterpret_cast<void**>(0x80779cb);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("pi#");
+            goto addr_806de3b_13;
+            eax16 = reinterpret_cast<void**>("M_PI");
+            goto addr_806de3b_13;
+            eax16 = reinterpret_cast<void**>("Math.PI");
+            goto addr_806de3b_13;
+            eax16 = reinterpret_cast<void**>("math.pi");
+            goto addr_806de3b_13;
             while (1) {
-                eax21 = reinterpret_cast<void**>(0x8077a0f);
+                eax21 = reinterpret_cast<void**>("(unknown operator)");
                 while (1) {
                     v22 = eax21;
-                    v23 = reinterpret_cast<void**>(0x8075e74);
+                    v23 = reinterpret_cast<void**>("%s");
                     v24 = reinterpret_cast<void**>(1);
                     eax25 = gfp;
                     v26 = eax25;
-                    eax33 = fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, 15, v28, v29, v30, v31, v32, v13);
+                    eax33 = fun_8048f04(ecx, v26, 1, "%s", v22, v27, 15, v28, v29, v30, v31, v32, v13);
                     v34 = v34 + reinterpret_cast<unsigned char>(eax33);
                     while (++v35, reinterpret_cast<signed char>(*v36) > reinterpret_cast<signed char>(v35)) {
                         eax37 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(v35) << 4) + reinterpret_cast<uint32_t>(v38));
@@ -5877,12 +5877,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 if (reinterpret_cast<int32_t>(v42) <= reinterpret_cast<int32_t>(0)) {
                                     ++v41;
                                     if (reinterpret_cast<signed char>(v47) >= reinterpret_cast<signed char>(*v55) || reinterpret_cast<signed char>(v41) > reinterpret_cast<signed char>(*reinterpret_cast<void***>(v49 + 4))) {
-                                        addr_806e11b_31:
-                                        v23 = reinterpret_cast<void**>(0x8075ad6);
+                                        addr_806e11b_32:
+                                        v23 = reinterpret_cast<void**>("(");
                                         v24 = reinterpret_cast<void**>(1);
                                         eax56 = gfp;
                                         v26 = eax56;
-                                        eax62 = fun_8048f04(ecx, v26, 1, 0x8075ad6, v22, v27, 15, v57, v58, v59, v60, v61, v13);
+                                        eax62 = fun_8048f04(ecx, v26, 1, "(", v22, v27, 15, v57, v58, v59, v60, v61, v13);
                                         v34 = v34 + reinterpret_cast<unsigned char>(eax62);
                                         continue;
                                     } else {
@@ -5896,23 +5896,23 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             do {
                                                 eax65 = eax65 + 2;
                                                 if (reinterpret_cast<signed char>(v66) <= reinterpret_cast<signed char>(eax65)) 
-                                                    goto addr_806e11b_31;
+                                                    goto addr_806e11b_32;
                                                 edi15 = eax65;
                                                 esi63 = edx64;
                                                 ecx = *reinterpret_cast<void***>(edx64 + 4);
                                                 if (reinterpret_cast<signed char>(ebx67) > reinterpret_cast<signed char>(ecx)) 
-                                                    goto addr_806e11b_31;
+                                                    goto addr_806e11b_32;
                                                 edx64 = edx64 + 32;
                                             } while (ebx67 != ecx);
                                         }
                                     }
                                 } else {
                                     --v41;
-                                    v23 = reinterpret_cast<void**>(0x80779a8);
+                                    v23 = reinterpret_cast<void**>(")");
                                     v24 = reinterpret_cast<void**>(1);
                                     eax68 = gfp;
                                     v26 = eax68;
-                                    eax74 = fun_8048f04(ecx, v26, 1, 0x80779a8, v22, v27, 15, v69, v70, v71, v72, v73, v13);
+                                    eax74 = fun_8048f04(ecx, v26, 1, ")", v22, v27, 15, v69, v70, v71, v72, v73, v13);
                                     v34 = v34 + reinterpret_cast<unsigned char>(eax74);
                                     continue;
                                 }
@@ -5924,15 +5924,15 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                         if (!a5) {
                                             if (a4 == 1) {
                                                 eax81 = gfp;
-                                                eax87 = fun_8048f04(ecx, eax81, 1, 0x80779ef, v22, v27, 15, v82, v83, v84, v85, v86, v13);
+                                                eax87 = fun_8048f04(ecx, eax81, 1, "pow", v22, v27, 15, v82, v83, v84, v85, v86, v13);
                                                 v34 = v34 + reinterpret_cast<unsigned char>(eax87);
-                                                goto addr_806e11b_31;
+                                                goto addr_806e11b_32;
                                             } else {
                                                 if (reinterpret_cast<int1_t>(a4 == 2)) {
                                                     eax88 = gfp;
-                                                    eax94 = fun_8048f04(ecx, eax88, 1, 0x80779ea, v22, v27, 15, v89, v90, v91, v92, v93, v13);
+                                                    eax94 = fun_8048f04(ecx, eax88, 1, "Math.pow", v22, v27, 15, v89, v90, v91, v92, v93, v13);
                                                     v34 = v34 + reinterpret_cast<unsigned char>(eax94);
-                                                    goto addr_806e11b_31;
+                                                    goto addr_806e11b_32;
                                                 }
                                             }
                                         }
@@ -5947,14 +5947,14 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             edi15 = edi15 + 4;
                                             esi63 = esi63 + 4;
                                         }
-                                        goto addr_806e11b_31;
+                                        goto addr_806e11b_32;
                                     }
                                 } else {
                                     if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(esi63 + 8) == 7)) {
                                         eax95 = gfp;
-                                        eax101 = fun_8048f04(ecx, eax95, 1, 0x80779f3, v22, v27, 15, v96, v97, v98, v99, v100, v13);
+                                        eax101 = fun_8048f04(ecx, eax95, 1, "fact", v22, v27, 15, v96, v97, v98, v99, v100, v13);
                                         v34 = v34 + reinterpret_cast<unsigned char>(eax101);
-                                        goto addr_806e11b_31;
+                                        goto addr_806e11b_32;
                                     }
                                 }
                                 ++v51;
@@ -5965,18 +5965,18 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 v103 = *reinterpret_cast<void***>(v39 + 8);
                                 list_var(ecx, v103, a4, v23, v22, v27, 15, v104, v105, v106, v107);
                                 v22 = reinterpret_cast<void**>(0x8079800);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v23 = reinterpret_cast<void**>("%s");
                                 v24 = reinterpret_cast<void**>(1);
                                 eax108 = gfp;
                                 v26 = eax108;
-                                eax114 = fun_8048f04(ecx, v26, 1, 0x8075e74, 0x8079800, v27, 15, v109, v110, v111, v112, v113, v13);
+                                eax114 = fun_8048f04(ecx, v26, 1, "%s", 0x8079800, v27, 15, v109, v110, v111, v112, v113, v13);
                                 v34 = v34 + reinterpret_cast<unsigned char>(eax114);
                             } else {
-                                v23 = reinterpret_cast<void**>(0x8077a08);
+                                v23 = reinterpret_cast<void**>("1i");
                                 v24 = reinterpret_cast<void**>(1);
                                 eax115 = gfp;
                                 v26 = eax115;
-                                eax121 = fun_8048f04(ecx, v26, 1, 0x8077a08, v22, v27, 15, v116, v117, v118, v119, v120, v13);
+                                eax121 = fun_8048f04(ecx, v26, 1, "1i", v22, v27, 15, v116, v117, v118, v119, v120, v13);
                                 v34 = v34 + reinterpret_cast<unsigned char>(eax121);
                             }
                         } else {
@@ -5996,15 +5996,15 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                     __asm__("fld qword [ecx+0x8]");
                                     __asm__("fstp qword [esp+0x18]");
                                     v122 = reinterpret_cast<void**>(15);
-                                    v27 = reinterpret_cast<void**>(0x80779fd);
+                                    v27 = reinterpret_cast<void**>("%#.*g");
                                     v123 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                    fun_8049224(ecx, v123, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v124);
-                                    trim_zeros(ecx, v123, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+                                    fun_8049224(ecx, v123, 0x1f4, 1, 0x1f4, "%#.*g", 15, v124);
+                                    trim_zeros(ecx, v123, 0x1f4, 1, 0x1f4, "%#.*g", 15);
                                 } else {
                                     __asm__("fld qword [eax+0x8]");
                                     __asm__("fstp qword [esp+0x14]");
-                                    v27 = reinterpret_cast<void**>(0x80779f8);
-                                    fun_8049224(ecx, reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0, 0x1f4, 1, 0x1f4, 0x80779f8, 15, v125);
+                                    v27 = reinterpret_cast<void**>("%.0f");
+                                    fun_8049224(ecx, reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0, 0x1f4, 1, 0x1f4, "%.0f", 15, v125);
                                 }
                                 __asm__("fld qword [eax+0x8]");
                                 __asm__("fldz ");
@@ -6013,57 +6013,57 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 if (reinterpret_cast<unsigned char>(a5) <= reinterpret_cast<unsigned char>(0)) {
                                     ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
                                     v22 = ecx;
-                                    v23 = reinterpret_cast<void**>(0x8075e74);
+                                    v23 = reinterpret_cast<void**>("%s");
                                     v24 = reinterpret_cast<void**>(1);
                                     eax126 = gfp;
                                     v26 = eax126;
-                                    eax132 = fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, 15, v127, v128, v129, v130, v131, v13);
+                                    eax132 = fun_8048f04(ecx, v26, 1, "%s", v22, v27, 15, v127, v128, v129, v130, v131, v13);
                                     v34 = v34 + reinterpret_cast<unsigned char>(eax132);
                                 } else {
                                     v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                    v23 = reinterpret_cast<void**>(0x8077a03);
+                                    v23 = reinterpret_cast<void**>("(%s)");
                                     v24 = reinterpret_cast<void**>(1);
                                     eax133 = gfp;
                                     v26 = eax133;
-                                    eax139 = fun_8048f04(ecx, v26, 1, 0x8077a03, v22, v27, 15, v134, v135, v136, v137, v138, v13);
+                                    eax139 = fun_8048f04(ecx, v26, 1, "(%s)", v22, v27, 15, v134, v135, v136, v137, v138, v13);
                                     v34 = v34 + reinterpret_cast<unsigned char>(eax139);
                                 }
                             } else {
                                 if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(v39) == 2)) 
-                                    goto addr_806e176_69;
+                                    goto addr_806e176_70;
                             }
                         }
                     }
-                    goto addr_806e3ca_70;
-                    addr_806e176_69:
+                    goto addr_806e3ca_71;
+                    addr_806e176_70:
                     ecx = v39;
                     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 8)) > reinterpret_cast<unsigned char>(9)) 
                         break;
                     switch (*reinterpret_cast<void***>(ecx + 8)) {
                     case 1:
-                        eax21 = reinterpret_cast<void**>(0x8077a0b);
+                        eax21 = reinterpret_cast<void**>(" + ");
                         break;
                     case 2:
-                        eax21 = reinterpret_cast<void**>(0x8077a22);
+                        eax21 = reinterpret_cast<void**>(" - ");
                         break;
                     case 3:
-                        eax21 = reinterpret_cast<void**>(0x8077a2b);
+                        eax21 = reinterpret_cast<void**>("*");
                         break;
                     case 4:
                     case 9:
-                        eax21 = reinterpret_cast<void**>(0x8077a7f);
+                        eax21 = reinterpret_cast<void**>("/");
                         break;
                     case 5:
-                        eax21 = reinterpret_cast<void**>(0x8077a26);
+                        eax21 = reinterpret_cast<void**>(" % ");
                         break;
                     case 6:
                         if (a5) 
-                            goto addr_806e375_79;
-                        eax21 = reinterpret_cast<void**>(0x8075f0e);
+                            goto addr_806e375_80;
+                        eax21 = reinterpret_cast<void**>(", ");
                         if (!reinterpret_cast<int1_t>(a4 == 3)) 
                             break;
-                        addr_806e375_79:
-                        eax21 = reinterpret_cast<void**>(0x8077a2a);
+                        addr_806e375_80:
+                        eax21 = reinterpret_cast<void**>("**");
                         break;
                     case 7:
                         ++v35;
@@ -6112,14 +6112,14 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     }
                 }
             }
-            addr_806e3ca_70:
+            addr_806e3ca_71:
             ebx140 = reinterpret_cast<unsigned char>(v41) - v141;
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx140) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx140 == 0))) {
                 do {
-                    v23 = reinterpret_cast<void**>(0x80779a8);
+                    v23 = reinterpret_cast<void**>(")");
                     eax142 = gfp;
                     v26 = eax142;
-                    fun_8048f04(ecx, v26, 1, 0x80779a8, v22, v27, 15, v143, v144, v145, v146, v147, v13);
+                    fun_8048f04(ecx, v26, 1, ")", v22, v27, 15, v143, v144, v145, v146, v147, v13);
                     --ebx140;
                 } while (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx140) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx140 == 0)));
             }
@@ -6129,7 +6129,7 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             }
             goto v154;
             while (1) {
-                edi155 = reinterpret_cast<void**>(0x8077a0f);
+                edi155 = reinterpret_cast<void**>("(unknown operator)");
                 while (1) {
                     if (v156) {
                         v24 = edi155;
@@ -6138,11 +6138,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     }
                     if (a4) {
                         v22 = edi155;
-                        v23 = reinterpret_cast<void**>(0x8075e74);
+                        v23 = reinterpret_cast<void**>("%s");
                         v24 = reinterpret_cast<void**>(1);
                         eax159 = gfp;
                         v26 = eax159;
-                        fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, v122, v160, v161, v162, v163, v164, v13);
+                        fun_8048f04(ecx, v26, 1, "%s", v22, v27, v122, v160, v161, v162, v163, v164, v13);
                     }
                     ecx165 = -1;
                     do {
@@ -6176,12 +6176,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                         *edi176 = 40;
                                     }
                                     if (a4) {
-                                        v22 = reinterpret_cast<void**>(0x8075ad6);
-                                        v23 = reinterpret_cast<void**>(0x8075e74);
+                                        v22 = reinterpret_cast<void**>("(");
+                                        v23 = reinterpret_cast<void**>("%s");
                                         v24 = reinterpret_cast<void**>(1);
                                         eax182 = gfp;
                                         v26 = eax182;
-                                        fun_8048f04(ecx, v26, 1, 0x8075e74, 0x8075ad6, v27, v122, v183, v184, v185, v186, v187, v13);
+                                        fun_8048f04(ecx, v26, 1, "%s", "(", v27, v122, v183, v184, v185, v186, v187, v13);
                                     }
                                     v158 = esi63;
                                 } else {
@@ -6190,12 +6190,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                         *edi176 = 41;
                                     }
                                     if (a4) {
-                                        v22 = reinterpret_cast<void**>(0x80779a8);
-                                        v23 = reinterpret_cast<void**>(0x8075e74);
+                                        v22 = reinterpret_cast<void**>(")");
+                                        v23 = reinterpret_cast<void**>("%s");
                                         v24 = reinterpret_cast<void**>(1);
                                         eax189 = gfp;
                                         v26 = eax189;
-                                        fun_8048f04(ecx, v26, 1, 0x8075e74, 0x80779a8, v27, v122, v190, v191, v192, v193, v194, v13);
+                                        fun_8048f04(ecx, v26, 1, "%s", ")", v27, v122, v190, v191, v192, v193, v194, v13);
                                     }
                                     v158 = esi63;
                                     if (v195) {
@@ -6219,11 +6219,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                             }
                             if (a4) {
                                 v22 = reinterpret_cast<void**>(0x8079800);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v23 = reinterpret_cast<void**>("%s");
                                 v24 = reinterpret_cast<void**>(1);
                                 eax204 = gfp;
                                 v26 = eax204;
-                                fun_8048f04(ecx, v26, 1, 0x8075e74, 0x8079800, v27, v122, v205, v206, v207, v208, v209, v13);
+                                fun_8048f04(ecx, v26, 1, "%s", 0x8079800, v27, v122, v205, v206, v207, v208, v209, v13);
                             }
                             edi210 = reinterpret_cast<signed char*>(0x8079800);
                             ecx211 = -1;
@@ -6253,12 +6253,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                         __asm__("fld qword [eax+0x8]");
                                         __asm__("fstp qword [esp+0x18]");
                                         v122 = v214;
-                                        v27 = reinterpret_cast<void**>(0x80759b8);
+                                        v27 = reinterpret_cast<void**>("%.*g");
                                         v22 = reinterpret_cast<void**>(0x1f4);
                                         v23 = reinterpret_cast<void**>(1);
                                         v24 = reinterpret_cast<void**>(0x1f4);
                                         v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                        fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x80759b8, v122, v215);
+                                        fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%.*g", v122, v215);
                                     } else {
                                         eax216 = finance_option;
                                         zf217 = reinterpret_cast<uint1_t>(eax216 == 0);
@@ -6271,22 +6271,22 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                                 __asm__("fstp qword [esp+0x18]");
                                                 eax219 = precision;
                                                 v122 = eax219;
-                                                v27 = reinterpret_cast<void**>(0x80759b8);
+                                                v27 = reinterpret_cast<void**>("%.*g");
                                                 v22 = reinterpret_cast<void**>(0x1f4);
                                                 v23 = reinterpret_cast<void**>(1);
                                                 v24 = reinterpret_cast<void**>(0x1f4);
                                                 v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                                fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x80759b8, v122, v220);
+                                                fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%.*g", v122, v220);
                                             } else {
                                                 __asm__("fstp qword [esp+0x18]");
                                                 eax221 = precision;
                                                 v122 = eax221;
-                                                v27 = reinterpret_cast<void**>(0x8077a64);
+                                                v27 = reinterpret_cast<void**>("(%.*g)");
                                                 v22 = reinterpret_cast<void**>(0x1f4);
                                                 v23 = reinterpret_cast<void**>(1);
                                                 v24 = reinterpret_cast<void**>(0x1f4);
                                                 v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                                fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a64, v122, v222);
+                                                fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "(%.*g)", v122, v222);
                                             }
                                             if (v223) {
                                                 v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
@@ -6295,11 +6295,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             }
                                             if (a4) {
                                                 v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                                v23 = reinterpret_cast<void**>("%s");
                                                 v24 = reinterpret_cast<void**>(1);
                                                 eax225 = gfp;
                                                 v26 = eax225;
-                                                fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, v122, v226, v227, v228, v229, v230, v13);
+                                                fun_8048f04(ecx, v26, 1, "%s", v22, v27, v122, v226, v227, v228, v229, v230, v13);
                                             }
                                             ecx231 = -1;
                                             edi232 = v233;
@@ -6316,25 +6316,25 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                             __asm__("fld qword [edx+0x8]");
                                             __asm__("fstp qword [esp+0x18]");
                                             v122 = eax216;
-                                            v27 = reinterpret_cast<void**>(0x8077a5f);
+                                            v27 = reinterpret_cast<void**>("%.*f");
                                             v22 = reinterpret_cast<void**>(0x1f4);
                                             v23 = reinterpret_cast<void**>(1);
                                             v24 = reinterpret_cast<void**>(0x1f4);
                                             v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                            fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a5f, v122, v234);
+                                            fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%.*f", v122, v234);
                                         }
                                     }
                                 } else {
                                     __asm__("fld qword [eax+0x8]");
                                     __asm__("fstp qword [esp+0x18]");
                                     v122 = reinterpret_cast<void**>(15);
-                                    v27 = reinterpret_cast<void**>(0x80779fd);
+                                    v27 = reinterpret_cast<void**>("%#.*g");
                                     v22 = reinterpret_cast<void**>(0x1f4);
                                     v23 = reinterpret_cast<void**>(1);
                                     v24 = reinterpret_cast<void**>(0x1f4);
                                     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                    fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v235);
-                                    trim_zeros(ecx, v26, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+                                    fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%#.*g", 15, v235);
+                                    trim_zeros(ecx, v26, 0x1f4, 1, 0x1f4, "%#.*g", 15);
                                 }
                                 __asm__("fld qword [edx+0x8]");
                                 __asm__("fldz ");
@@ -6348,11 +6348,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                     }
                                     if (a4) {
                                         v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                        v23 = reinterpret_cast<void**>(0x8075e74);
+                                        v23 = reinterpret_cast<void**>("%s");
                                         v24 = reinterpret_cast<void**>(1);
                                         eax238 = gfp;
                                         v26 = eax238;
-                                        fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, v122, v239, v240, v241, v242, v243, v13);
+                                        fun_8048f04(ecx, v26, 1, "%s", v22, v27, v122, v239, v240, v241, v242, v243, v13);
                                     }
                                     ecx244 = -1;
                                     edi245 = v246;
@@ -6366,24 +6366,24 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                     v158 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v158) + reinterpret_cast<unsigned char>(ecx) + 0xffffffff);
                                 } else {
                                     v122 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                                    v27 = reinterpret_cast<void**>(0x8077a03);
+                                    v27 = reinterpret_cast<void**>("(%s)");
                                     v22 = reinterpret_cast<void**>(0x1f4);
                                     v23 = reinterpret_cast<void**>(1);
                                     v24 = reinterpret_cast<void**>(0x1f4);
                                     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffbfc);
-                                    fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a03, v122, v247);
+                                    fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "(%s)", v122, v247);
                                     if (v248) {
                                         v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffbfc);
                                         v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v249) + reinterpret_cast<unsigned char>(v158));
-                                        fun_8049114(v26, v24, 1, 0x1f4, 0x8077a03, v122);
+                                        fun_8049114(v26, v24, 1, 0x1f4, "(%s)", v122);
                                     }
                                     if (a4) {
                                         v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffbfc);
-                                        v23 = reinterpret_cast<void**>(0x8075e74);
+                                        v23 = reinterpret_cast<void**>("%s");
                                         v24 = reinterpret_cast<void**>(1);
                                         eax250 = gfp;
                                         v26 = eax250;
-                                        fun_8048f04(ecx, v26, 1, 0x8075e74, v22, 0x8077a03, v122, v251, v252, v253, v254, v255, v13);
+                                        fun_8048f04(ecx, v26, 1, "%s", v22, "(%s)", v122, v251, v252, v253, v254, v255, v13);
                                     }
                                     ecx256 = -1;
                                     do {
@@ -6396,53 +6396,53 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 }
                             } else {
                                 if (v169->f0 == 2) 
-                                    goto addr_806f3aa_162;
+                                    goto addr_806f3aa_163;
                             }
                         }
                     }
-                    goto addr_806f89f_163;
-                    addr_806f3aa_162:
+                    goto addr_806f89f_164;
+                    addr_806f3aa_163:
                     if (reinterpret_cast<unsigned char>(v169->f8) > reinterpret_cast<unsigned char>(9)) 
                         break;
                     switch (v169->f8) {
                     case 1:
-                        edi155 = reinterpret_cast<void**>(0x8077a0b);
+                        edi155 = reinterpret_cast<void**>(" + ");
                         break;
                     case 2:
-                        edi155 = reinterpret_cast<void**>(0x8077a22);
+                        edi155 = reinterpret_cast<void**>(" - ");
                         break;
                     case 3:
-                        edi155 = reinterpret_cast<void**>(0x8077a2b);
+                        edi155 = reinterpret_cast<void**>("*");
                         break;
                     case 4:
-                        edi155 = reinterpret_cast<void**>(0x8077a7f);
+                        edi155 = reinterpret_cast<void**>("/");
                         break;
                     case 5:
-                        edi155 = reinterpret_cast<void**>(0x8077a26);
+                        edi155 = reinterpret_cast<void**>(" % ");
                         break;
                     case 6:
                         zf258 = power_starstar == 0;
                         if (!zf258) 
-                            goto addr_806f810_172;
-                        edi155 = reinterpret_cast<void**>(0x8077a81);
+                            goto addr_806f810_173;
+                        edi155 = reinterpret_cast<void**>("^");
                         if (!reinterpret_cast<int1_t>(a6 == 3)) 
                             break;
-                        addr_806f810_172:
-                        edi155 = reinterpret_cast<void**>(0x8077a2a);
+                        addr_806f810_173:
+                        edi155 = reinterpret_cast<void**>("**");
                         break;
                     case 7:
                         ++v166;
-                        edi155 = reinterpret_cast<void**>(0x8077a83);
+                        edi155 = reinterpret_cast<void**>("!");
                         break;
                     case 9:
-                        edi155 = reinterpret_cast<void**>(0x8077a7e);
+                        edi155 = reinterpret_cast<void**>("//");
                     case 0:
                     case 8:
                         goto 0x806f7d2;
                     }
                 }
             }
-            addr_806f89f_163:
+            addr_806f89f_164:
             edi259 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v171) - v260);
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edi259) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edi259 == 0))) {
                 esi261 = reinterpret_cast<int16_t*>(reinterpret_cast<int32_t>(v262) + reinterpret_cast<unsigned char>(v158));
@@ -6453,12 +6453,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                         *esi261 = 41;
                     }
                     if (a4) {
-                        v22 = reinterpret_cast<void**>(0x80779a8);
-                        v23 = reinterpret_cast<void**>(0x8075e74);
+                        v22 = reinterpret_cast<void**>(")");
+                        v23 = reinterpret_cast<void**>("%s");
                         v24 = reinterpret_cast<void**>(1);
                         eax266 = gfp;
                         v26 = eax266;
-                        fun_8048f04(ecx, v26, 1, 0x8075e74, 0x80779a8, v27, v122, v267, v268, v269, v270, v271, v13);
+                        fun_8048f04(ecx, v26, 1, "%s", ")", v27, v122, v267, v268, v269, v270, v271, v13);
                     }
                     --ebx263;
                     if (v272) {
@@ -6476,50 +6476,47 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         }
     case 2:
         edx280 = edi15 + 1;
-        eax16 = reinterpret_cast<void**>(0x80779c0);
+        eax16 = reinterpret_cast<void**>("pi");
         if (reinterpret_cast<unsigned char>(edx280) <= reinterpret_cast<unsigned char>(4)) {
             goto *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(edx280) * 4 + 0x8077b64);
         }
     case 3:
         switch (edi15 + 3) {
         default:
-            eax16 = reinterpret_cast<void**>(0x807799c);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("1.0i");
+            goto addr_806de3b_13;
         case 0:
             ebx17 = 0;
-            eax16 = reinterpret_cast<void**>(0x8077993);
+            eax16 = reinterpret_cast<void**>("{0,1}");
             goto addr_806dd5c_4;
         case 1:
-            eax16 = reinterpret_cast<void**>(0x8077991);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("i");
+            goto addr_806de3b_13;
         case 2:
-            eax16 = reinterpret_cast<void**>(0x8077990);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("%i");
+            goto addr_806de3b_13;
         case 3:
-            eax16 = reinterpret_cast<void**>(0x80751c8);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("i#");
+            goto addr_806de3b_13;
         case 6:
-            eax16 = reinterpret_cast<void**>(0x8077999);
-            goto addr_806de3b_12;
+            eax16 = reinterpret_cast<void**>("1j");
+            goto addr_806de3b_13;
         }
     case 4:
         ebx17 = 0;
-        eax16 = reinterpret_cast<void**>(0x80751bf);
+        eax16 = reinterpret_cast<void**>("sign");
         goto addr_806dd5c_4;
     case 5:
-        eax16 = reinterpret_cast<void**>(0x807207b);
-        goto addr_806de3b_12;
+        eax16 = reinterpret_cast<void**>("all");
     }
-    addr_806de2e_200:
-    return eax20;
-    addr_806de3b_12:
+    addr_806de3b_13:
     ebx17 = 0;
     goto addr_806dd60_201;
     addr_806dd5c_4:
     if (!eax16) {
         v281 = reinterpret_cast<void**>(0xb4);
-        v282 = reinterpret_cast<void**>(0x80779d8);
-        my_strlcpy(0x8079800, 0x80779d8, 0xb4, v283, v284, v285, v286, v287, v288, v289);
+        v282 = reinterpret_cast<void**>("bad_variable");
+        my_strlcpy(0x8079800, "bad_variable", 0xb4, v283, v284, v285, v286, v287, v288, v289);
     } else {
         addr_806dd60_201:
         esi63 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(reinterpret_cast<signed char>(a2) >> 14) & 63);
@@ -6533,13 +6530,13 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             v298 = eax16;
             v281 = reinterpret_cast<void**>(1);
             v282 = reinterpret_cast<void**>(0xb4);
-            fun_8049224(ecx, 0x8079800, 0xb4, 1, 0xb4, 0x80779d3, v298, v297);
+            fun_8049224(ecx, 0x8079800, 0xb4, 1, 0xb4, "%s%d", v298, v297);
         }
     }
     if (ebx17 && (edi15 && (ebx299 = var_str, !!*reinterpret_cast<signed char*>(&ebx299)))) {
         esi63 = reinterpret_cast<void**>(0);
         do {
-            if (*reinterpret_cast<signed char*>(&ebx299) != 95 && (eax303 = fun_8049084(0x8079800, v282, v281, 0xb4, 0x80779d3, v298, v297, v300, v301, v302), !(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(eax303) + *reinterpret_cast<signed char*>(&ebx299) * 2)) & 8))) {
+            if (*reinterpret_cast<signed char*>(&ebx299) != 95 && (eax303 = fun_8049084(0x8079800, v282, v281, 0xb4, "%s%d", v298, v297, v300, v301, v302), !(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(eax303) + *reinterpret_cast<signed char*>(&ebx299) * 2)) & 8))) {
                 *reinterpret_cast<unsigned char*>(esi63 + 0x8079800) = 95;
             }
             ++esi63;
@@ -6555,7 +6552,8 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         ++edi304;
     } while (*edi304);
     eax20 = reinterpret_cast<struct s5*>(~ecx305 + 0xffffffff);
-    goto addr_806de2e_200;
+    addr_806de2e_9:
+    return eax20;
     addr_806ed14_214:
     addr_806f0f3_215:
     ebx306 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(edi15) - reinterpret_cast<unsigned char>(a4));
@@ -6579,15 +6577,15 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx306) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx306 == 0))) 
                     goto addr_806f148_224;
             } else {
-                v23 = reinterpret_cast<void**>(0x80779a8);
+                v23 = reinterpret_cast<void**>(")");
                 v24 = reinterpret_cast<void**>(1);
                 eax315 = gfp;
                 v26 = eax315;
-                fun_8048f04(ecx, v26, 1, 0x80779a8, v22, v27, v122, v316, v317, v318, v319, v320, v13);
+                fun_8048f04(ecx, v26, 1, ")", v22, v27, v122, v316, v317, v318, v319, v320, v13);
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx306) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx306 == 0)) 
                     goto addr_806f15d_226;
                 v26 = edi313;
-                set_color(v26, 1, 0x80779a8, v22, v27, v122);
+                set_color(v26, 1, ")", v22, v27, v122);
             }
             --edi313;
         }
@@ -6631,11 +6629,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 v51 = esi63;
                                 if (v34) {
                                     set_color(edi15, v24, v23, v22, v27, v122);
-                                    v23 = reinterpret_cast<void**>(0x8075ad6);
+                                    v23 = reinterpret_cast<void**>("(");
                                     v24 = reinterpret_cast<void**>(1);
                                     eax335 = gfp;
                                     v26 = eax335;
-                                    fun_8048f04(ecx326, v26, 1, 0x8075ad6, v22, v27, v122, v336, v337, v338, v339, v340, v13);
+                                    fun_8048f04(ecx326, v26, 1, "(", v22, v27, v122, v336, v337, v338, v339, v340, v13);
                                     edi15 = eax334;
                                 } else {
                                     edi15 = eax334;
@@ -6644,12 +6642,12 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                                 --edi15;
                                 v51 = esi63;
                                 if (v34) {
-                                    v23 = reinterpret_cast<void**>(0x80779a8);
+                                    v23 = reinterpret_cast<void**>(")");
                                     v24 = reinterpret_cast<void**>(1);
                                     eax341 = gfp;
-                                    fun_8048f04(ecx326, eax341, 1, 0x80779a8, v22, v27, v122, v342, v343, v344, v345, v346, v13);
+                                    fun_8048f04(ecx326, eax341, 1, ")", v22, v27, v122, v342, v343, v344, v345, v346, v13);
                                     v26 = edi15 + 0xffffffff;
-                                    set_color(v26, 1, 0x80779a8, v22, v27, v122);
+                                    set_color(v26, 1, ")", v22, v27, v122);
                                 }
                             }
                             ++ebx333;
@@ -6716,15 +6714,15 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                             edi386 = v366;
                             do {
                                 if (!esi384) {
-                                    v371 = reinterpret_cast<void**>(0x807295b);
+                                    v371 = reinterpret_cast<void**>("-");
                                     v372 = reinterpret_cast<void**>(1);
                                     eax387 = gfp;
-                                    fun_8048f04(ecx379, eax387, 1, 0x807295b, v370, v369, v122, v388, v389, v390, v391, v392, v13);
+                                    fun_8048f04(ecx379, eax387, 1, "-", v370, v369, v122, v388, v389, v390, v391, v392, v13);
                                 } else {
-                                    v371 = reinterpret_cast<void**>(0x8077a50);
+                                    v371 = reinterpret_cast<void**>("&minus;");
                                     v372 = reinterpret_cast<void**>(1);
                                     eax393 = gfp;
-                                    fun_8048f04(ecx379, eax393, 1, 0x8077a50, v370, v369, v122, v394, v395, v396, v397, v398, v13);
+                                    fun_8048f04(ecx379, eax393, 1, "&minus;", v370, v369, v122, v394, v395, v396, v397, v398, v13);
                                 }
                                 ++ebx381;
                             } while (reinterpret_cast<signed char>(edi386) > reinterpret_cast<signed char>(ebx381));
@@ -6797,11 +6795,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                     if (!v34) 
                         goto addr_806f0d8_230;
                     v22 = reinterpret_cast<void**>(0x8079800);
-                    v23 = reinterpret_cast<void**>(0x8075e74);
+                    v23 = reinterpret_cast<void**>("%s");
                     v24 = reinterpret_cast<void**>(1);
                     eax421 = gfp;
                     v26 = eax421;
-                    fun_8048f04(ecx, v26, 1, 0x8075e74, 0x8079800, v27, v122, v422, v423, v424, v425, v426, v13);
+                    fun_8048f04(ecx, v26, 1, "%s", 0x8079800, v27, v122, v422, v423, v424, v425, v426, v13);
                     ebx323 = v45;
                     continue;
                 }
@@ -6835,24 +6833,24 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                             __asm__("fstp qword [esp+0x18]");
                             eax435 = precision;
                             v122 = eax435;
-                            v27 = reinterpret_cast<void**>(0x80759b8);
+                            v27 = reinterpret_cast<void**>("%.*g");
                             v22 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                            eax437 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x80759b8, v122, v436);
+                            eax437 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%.*g", v122, v436);
                             v51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v51) + reinterpret_cast<uint32_t>(eax437));
                             ebx323 = v45;
                         } else {
                             __asm__("fstp qword [esp+0x18]");
                             eax438 = precision;
                             v122 = eax438;
-                            v27 = reinterpret_cast<void**>(0x8077a64);
+                            v27 = reinterpret_cast<void**>("(%.*g)");
                             v22 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                            eax440 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a64, v122, v439);
+                            eax440 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "(%.*g)", v122, v439);
                             v51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v51) + reinterpret_cast<uint32_t>(eax440));
                             ebx323 = v45;
                         }
@@ -6862,46 +6860,46 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
                         if (below_or_equal433) {
                             __asm__("fstp qword [esp+0x18]");
                             v122 = eax431;
-                            v27 = reinterpret_cast<void**>(0x8077a5f);
+                            v27 = reinterpret_cast<void**>("%.*f");
                             v22 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v24 = reinterpret_cast<void**>(0x1f4);
                             ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
                             v26 = ecx;
-                            eax442 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a5f, v122, v441);
+                            eax442 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "%.*f", v122, v441);
                             v51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v51) + reinterpret_cast<uint32_t>(eax442));
                             ebx323 = v45;
                         } else {
                             __asm__("fstp qword [esp+0x18]");
                             v122 = eax431;
-                            v27 = reinterpret_cast<void**>(0x8077a58);
+                            v27 = reinterpret_cast<void**>("(%.*f)");
                             v22 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                            eax444 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x8077a58, v122, v443);
+                            eax444 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "(%.*f)", v122, v443);
                             v51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v51) + reinterpret_cast<uint32_t>(eax444));
                             ebx323 = v45;
                         }
                     }
                 } else {
                     __asm__("fstp st0");
-                    v27 = reinterpret_cast<void**>(0x807295b);
+                    v27 = reinterpret_cast<void**>("-");
                     v22 = reinterpret_cast<void**>(0x1f4);
                     v23 = reinterpret_cast<void**>(1);
                     v24 = reinterpret_cast<void**>(0x1f4);
                     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                    eax446 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, 0x807295b, v122, v445);
+                    eax446 = fun_8049224(ecx, v26, 0x1f4, 1, 0x1f4, "-", v122, v445);
                     v51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v51) + reinterpret_cast<uint32_t>(eax446));
                 }
                 if (!v34) 
                     continue;
                 v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp12) + 0xfffffdf0);
-                v23 = reinterpret_cast<void**>(0x8075e74);
+                v23 = reinterpret_cast<void**>("%s");
                 v24 = reinterpret_cast<void**>(1);
                 eax447 = gfp;
                 v26 = eax447;
-                fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, v122, v448, v449, v450, v451, v452, v13);
+                fun_8048f04(ecx, v26, 1, "%s", v22, v27, v122, v448, v449, v450, v451, v452, v13);
                 continue;
                 addr_806ed5c_291:
                 __asm__("fstp st0");
@@ -6920,53 +6918,53 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             case 0:
             case 8:
                 v51 = v51 + 18;
-                eax453 = reinterpret_cast<void**>(0x8077a0f);
+                eax453 = reinterpret_cast<void**>("(unknown operator)");
                 break;
             case 1:
                 v51 = v51 + 3;
-                eax453 = reinterpret_cast<void**>(0x8077a0b);
+                eax453 = reinterpret_cast<void**>(" + ");
                 break;
             case 2:
-                eax453 = reinterpret_cast<void**>(0x8077a6b);
+                eax453 = reinterpret_cast<void**>(" &minus; ");
                 if (!v454) {
-                    eax453 = reinterpret_cast<void**>(0x8077a22);
+                    eax453 = reinterpret_cast<void**>(" - ");
                 }
                 v51 = v51 + 3;
                 break;
             case 3:
-                eax453 = reinterpret_cast<void**>(0x8077a75);
+                eax453 = reinterpret_cast<void**>("&middot;");
                 if (!v455) {
-                    eax453 = reinterpret_cast<void**>(0x8077a2b);
+                    eax453 = reinterpret_cast<void**>("*");
                 }
                 ++v51;
                 break;
             case 4:
                 ++v51;
-                eax453 = reinterpret_cast<void**>(0x8077a7f);
+                eax453 = reinterpret_cast<void**>("/");
                 break;
             case 5:
                 v51 = v51 + 3;
-                eax453 = reinterpret_cast<void**>(0x8077a26);
+                eax453 = reinterpret_cast<void**>(" % ");
                 break;
             case 6:
                 zf456 = power_starstar == 0;
                 if (zf456) {
                     ++v51;
-                    eax453 = reinterpret_cast<void**>(0x8077a81);
+                    eax453 = reinterpret_cast<void**>("^");
                     break;
                 } else {
                     v51 = v51 + 2;
-                    eax453 = reinterpret_cast<void**>(0x8077a2a);
+                    eax453 = reinterpret_cast<void**>("**");
                     break;
                 }
             case 7:
                 ++v51;
                 ++v45;
-                eax453 = reinterpret_cast<void**>(0x8077a83);
+                eax453 = reinterpret_cast<void**>("!");
                 break;
             case 9:
                 v51 = v51 + 2;
-                eax453 = reinterpret_cast<void**>(0x8077a7e);
+                eax453 = reinterpret_cast<void**>("//");
             case 19:
                 goto 0x806f7ee;
             case 16:
@@ -6990,11 +6988,11 @@ struct s5* list_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             if (!v34) 
                 break;
             v22 = eax453;
-            v23 = reinterpret_cast<void**>(0x8075e74);
+            v23 = reinterpret_cast<void**>("%s");
             v24 = reinterpret_cast<void**>(1);
             eax457 = gfp;
             v26 = eax457;
-            fun_8048f04(ecx, v26, 1, 0x8075e74, v22, v27, v122, v458, v459, v460, v461, v462, v13);
+            fun_8048f04(ecx, v26, 1, "%s", v22, v27, v122, v458, v459, v460, v461, v462, v13);
             ebx323 = v45;
         }
     }
@@ -7448,11 +7446,11 @@ int32_t flip(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, 
     if (!less_or_equal19) {
         eax20 = gfp;
         v21 = eax20;
-        fun_8048f04(ecx, v21, 1, 0x807277d, 0x80722c0, v22, v23, v24, v25, v26, v27, v28, v12);
+        fun_8048f04(ecx, v21, 1, "%s\n", "Taking the reciprocal of both sides of the equation...", v22, v23, v24, v25, v26, v27, v28, v12);
     }
     eax29 = n_tokens;
     if (reinterpret_cast<signed char>(*edi16 + 2) > reinterpret_cast<signed char>(eax29) || (ecx = a2, reinterpret_cast<signed char>(eax29) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx) + 2))) {
-        error_huge(ecx, v21, 1, 0x807277d, 0x80722c0, v30, v31, v32, v33, v34, v35, v36, v12, v10);
+        error_huge(ecx, v21, 1, "%s\n", "Taking the reciprocal of both sides of the equation...", v30, v31, v32, v33, v34, v35, v36, v12, v10);
     }
     edx37 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx14) + (reinterpret_cast<unsigned char>(*edi16) << 4));
     if (reinterpret_cast<unsigned char>(ebx14) < reinterpret_cast<unsigned char>(edx37)) {
@@ -7471,10 +7469,10 @@ int32_t flip(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, 
         } while (reinterpret_cast<unsigned char>(edx39) > reinterpret_cast<unsigned char>(eax40));
     }
     v41 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*edi16) << 4);
-    fun_80491c4(ecx, ebx14 + 32, ebx14, v41, 0x80722c0, v42, v43, v44, v45, v46, v47, v48, v12, v10);
+    fun_80491c4(ecx, ebx14 + 32, ebx14, v41, "Taking the reciprocal of both sides of the equation...", v42, v43, v44, v45, v46, v47, v48, v12, v10);
     *edi16 = *edi16 + 2;
     v49 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2)) << 4);
-    fun_80491c4(ecx, esi18 + 32, esi18, v49, 0x80722c0, v50, v51, v52, v53, v54, v55, v56, v12, v10);
+    fun_80491c4(ecx, esi18 + 32, esi18, v49, "Taking the reciprocal of both sides of the equation...", v50, v51, v52, v53, v54, v55, v56, v12, v10);
     *reinterpret_cast<void***>(a2) = *reinterpret_cast<void***>(a2) + 2;
     eax57 = one_token;
     *reinterpret_cast<void***>(ebx14) = eax57;
@@ -7556,19 +7554,19 @@ int32_t shell_out(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
 
     zf9 = security_level == 0;
     if (!zf9) {
-        error_bug(ecx, 0x807278f, v10, v11, v12);
+        error_bug(ecx, "Shelling out disabled.", v10, v11, v12);
     }
-    reset_attr(0x807278f, v13, v14, v15);
-    eax22 = fun_8048ea4(0x807278f, v16, v17, v18, v19, ebx20, ebp21, __return_address(), a2, a3);
+    reset_attr("Shelling out disabled.", v13, v14, v15);
+    eax22 = fun_8048ea4("Shelling out disabled.", v16, v17, v18, v19, ebx20, ebp21, __return_address(), a2, a3);
     *reinterpret_cast<void***>(eax22) = reinterpret_cast<void**>(0);
     eax23 = fun_8048f94(a2);
     v24 = reinterpret_cast<void**>(1);
-    fun_8048f34(1, 0x80757fd, v25, v26, v27, ebx20, ebp21, __return_address(), a2, a3, a4, a5);
+    fun_8048f34(1, "\n", v25, v26, v27, ebx20, ebp21, __return_address(), a2, a3, a4, a5);
     if (eax23 < 0) {
-        v24 = reinterpret_cast<void**>(0x80727a6);
-        fun_8048ff4(0x80727a6, 0x80757fd);
+        v24 = reinterpret_cast<void**>("system(3) call failed");
+        fun_8048ff4("system(3) call failed", "\n");
     }
-    default_color(ecx, v24, 0x80757fd, v28, v29, v30, ebx20, ebp21);
+    default_color(ecx, v24, "\n", v28, v29, v30, ebx20, ebp21);
     return eax23;
 }
 
@@ -7611,9 +7609,9 @@ void error_bug(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     uint32_t ecx41;
 
     error(ecx, a2, v6, v7, v8, v9, v10, ebp11, __return_address(), a2, a3, a4);
-    fun_8048f34(1, 0x807221c, v12, v13, v14, v15, ebp11, __return_address(), a2, a3, a4, a5);
-    fun_8048f34(1, 0x8072248, v16, v17, v18, v19, ebp11, __return_address(), a2, a3, a4, a5);
-    fun_8048f34(1, 0x8072278, v20, v21, v22, v23, ebp11, __return_address(), a2, a3, a4, a5);
+    fun_8048f34(1, "Please report this bug to the maintainers,\n", v12, v13, v14, v15, ebp11, __return_address(), a2, a3, a4, a5);
+    fun_8048f34(1, "along with the entry sequence that caused it.\n", v16, v17, v18, v19, ebp11, __return_address(), a2, a3, a4, a5);
+    fun_8048f34(1, "Type \"help bugs\" for info on how to report bugs found in this program.\n", v20, v21, v22, v23, ebp11, __return_address(), a2, a3, a4, a5);
     fun_8048ef4(0x8079600, 13, v24, v25, v26, v27, ebp11, __return_address());
     cur_equation = reinterpret_cast<void**>(0);
     ecx28 = 100;
@@ -7695,14 +7693,14 @@ void reset_attr(void** a1, void** a2, void** a3, void** a4) {
             v8 = reinterpret_cast<void**>(0x8077a96);
             fun_8048f34(1, 0x8077a96, v9, v10, v11, v12, ebp13, __return_address(), a1, a2, a3, a4);
         } else {
-            v8 = reinterpret_cast<void**>(0x8077a2d);
-            fun_8048f34(1, 0x8077a2d, v14, v15, v16, v17, ebp13, __return_address(), a1, a2, a3, a4);
+            v8 = reinterpret_cast<void**>("</font>");
+            fun_8048f34(1, "</font>", v14, v15, v16, v17, ebp13, __return_address(), a1, a2, a3, a4);
         }
     }
     cur_color = reinterpret_cast<void**>(0xffffffff);
     eax18 = fun_8049054(0, v8);
     if (eax18) {
-        fun_8048ff4(0x8077a9b, v8);
+        fun_8048ff4("fflush(3) call failed", v8);
     }
     return;
 }
@@ -7727,18 +7725,18 @@ void fun_8048ff4(void** a1, void** a2) {
 
 struct s13 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12);
 
 struct s14 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 uint32_t solve_espace(void** ecx, void** a2, void** a3, void** a4) {
@@ -7776,10 +7774,10 @@ uint32_t solve_espace(void** ecx, void** a2, void** a3, void** a4) {
     edx5 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80);
     if (!edx5) {
         edx6 = reinterpret_cast<struct s13*>(reinterpret_cast<unsigned char>(a3) * 4);
-        v7 = reinterpret_cast<void**>(&edx6->f134753664);
+        v7 = reinterpret_cast<void**>(&edx6->f8082d80);
         ecx8 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a3) * 4 + 0x8082a40);
         v9 = ecx8;
-        v10 = reinterpret_cast<void**>(&edx6->f134715712);
+        v10 = reinterpret_cast<void**>(&edx6->f8079940);
         v11 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(a3) * 4);
         v12 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940);
         v13 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(a2) * 4);
@@ -7788,15 +7786,15 @@ uint32_t solve_espace(void** ecx, void** a2, void** a3, void** a4) {
     } else {
         if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940)) {
             ecx21 = reinterpret_cast<struct s14*>(reinterpret_cast<unsigned char>(a3) * 4);
-            v7 = reinterpret_cast<void**>(&ecx21->f134715712);
+            v7 = reinterpret_cast<void**>(&ecx21->f8079940);
             v9 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a3) * 4 + 0x8082be0);
-            v10 = reinterpret_cast<void**>(&ecx21->f134753664);
+            v10 = reinterpret_cast<void**>(&ecx21->f8082d80);
             v11 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(0x8082a40) + reinterpret_cast<unsigned char>(a3) * 4);
             v22 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(0x8082a40) + reinterpret_cast<unsigned char>(a2) * 4);
             eax25 = solve_sub(0x8082a40, v22, edx5, v11, v10, v9, v7, v23, v24, ebx16, esi17, ebp18);
             esi20 = eax25;
         } else {
-            error(ecx, 0x80724a0, v26, v27, v28, v29, v30, v31, v32, ebx16, esi17, ebp18);
+            error(ecx, "This program will only solve for a single variable or for zero.", v26, v27, v28, v29, v30, v31, v32, ebx16, esi17, ebp18);
             *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) = 0;
             *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940) = 0;
             esi20 = 0;
@@ -7810,7 +7808,7 @@ uint32_t solve_espace(void** ecx, void** a2, void** a3, void** a4) {
         return static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(esi20 < 0) | reinterpret_cast<uint1_t>(esi20 == 0)))));
     } else {
         addr_804e786_6:
-        fun_8048f34(1, 0x807272d, v11, v10, v9, v7, v33, v34, ebx16, esi17, ebp18, __return_address());
+        fun_8048f34(1, "Solve failed.\n", v11, v10, v9, v7, v33, v34, ebx16, esi17, ebp18, __return_address());
         goto addr_804e79a_8;
     }
 }
@@ -7845,7 +7843,7 @@ struct s15 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
 };
 
 void** parse(void** ecx, void** a2, void** a3) {
@@ -7884,7 +7882,7 @@ void** parse(void** ecx, void** a2, void** a3) {
                 edx10 = g807991c;
                 eax7->f8 = edx10;
                 edx11 = g8079920;
-                eax7->f12 = edx11;
+                eax7->fc = edx11;
             }
         }
         cur_equation = a2;
@@ -8409,22 +8407,22 @@ void** help_cmd(void** ecx, void** a2) {
     if (!*reinterpret_cast<signed char*>(&ebx4)) {
         addr_8050097_2:
         eax5 = gfp;
-        fun_8048f04(ecx, eax5, 1, 0x807277d, 0x8073708, v6, v7, v8, v9, v10, v11, v12, v13);
+        fun_8048f04(ecx, eax5, 1, "%s\n", "Mathomatic is a Computer Algebra System (CAS) and calculator program.", v6, v7, v8, v9, v10, v11, v12, v13);
         eax14 = gfp;
-        fun_8048f04(ecx, eax14, 1, 0x807277d, 0x8073750, v15, v16, v17, v18, v10, v11, v19, v20);
+        fun_8048f04(ecx, eax14, 1, "%s\n", "To see helpful interactive examples, type \"help examples\".", v15, v16, v17, v18, v10, v11, v19, v20);
         eax21 = gfp;
-        fun_8048f04(ecx, eax21, 1, 0x807277d, 0x807378c, v22, v23, v24, v25, v10, v11, v26, v27);
+        fun_8048f04(ecx, eax21, 1, "%s\n", "Type \"help equations\" for help with entering expressions and equations.", v22, v23, v24, v25, v10, v11, v26, v27);
         eax28 = gfp;
-        fun_8048f04(ecx, eax28, 1, 0x807277d, 0x80737d4, v29, v30, v31, v32, v10, v11, v33, v34);
+        fun_8048f04(ecx, eax28, 1, "%s\n", "Type \"help all\" for a summary and syntax of all commands.", v29, v30, v31, v32, v10, v11, v33, v34);
         eax35 = gfp;
-        fun_8048f04(ecx, eax35, 1, 0x807277d, 0x8073810, v36, v37, v38, v39, v10, v11, v40, v41);
+        fun_8048f04(ecx, eax35, 1, "%s\n", "Type \"help usage\" to display the syntax of all commands.", v36, v37, v38, v39, v10, v11, v40, v41);
         eax42 = gfp;
-        fun_8048f04(ecx, eax42, 1, 0x807277d, 0x807384c, v43, v44, v45, v46, v10, v11, v47, v48);
+        fun_8048f04(ecx, eax42, 1, "%s\n", "\"help\" or \"?\" followed by a command name will give info on that command.", v43, v44, v45, v46, v10, v11, v47, v48);
         eax49 = gfp;
-        fun_8048f04(ecx, eax49, 1, 0x807277d, 0x8073898, v50, v51, v52, v53, v10, v11, v54, v55);
+        fun_8048f04(ecx, eax49, 1, "%s\n", "Other help keywords: constants, geometry, copyright, license, bugs.\n", v50, v51, v52, v53, v10, v11, v54, v55);
         v56 = reinterpret_cast<void**>(42);
         eax57 = gfp;
-        fun_8048f04(ecx, eax57, 1, 0x807295d, 42, v58, v59, v60, v61, v10, v11, v62, v63);
+        fun_8048f04(ecx, eax57, 1, "These are the %d commands:\n", 42, v58, v59, v60, v61, v10, v11, v62, v63);
         edi64 = reinterpret_cast<void***>(0x8074d80);
         esi65 = 0;
     } else {
@@ -8447,16 +8445,16 @@ void** help_cmd(void** ecx, void** a2) {
         edx79 = (__intrinsic() >> 1) - (esi65 >> 31);
         if (esi65 == edx79 + edx79 * 4) {
             eax80 = gfp;
-            fun_8048f04(ecx, eax80, 1, 0x80757fd, v56, v81, v82, v83, v84, v10, v11, v85, v86);
+            fun_8048f04(ecx, eax80, 1, "\n", v56, v81, v82, v83, v84, v10, v11, v85, v86);
         }
         v56 = *edi64;
         eax87 = gfp;
-        eax94 = fun_8048f04(ecx, eax87, 1, 0x8075e74, v56, v88, v89, v90, v91, v10, v11, v92, v93);
+        eax94 = fun_8048f04(ecx, eax87, 1, "%s", v56, v88, v89, v90, v91, v10, v11, v92, v93);
         ebx95 = 15 - reinterpret_cast<unsigned char>(eax94);
         if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx95) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx95 == 0))) {
             do {
                 eax96 = gfp;
-                fun_8048f04(ecx, eax96, 1, 0x8077a28, v56, v97, v98, v99, v100, v10, v11, v101, v102);
+                fun_8048f04(ecx, eax96, 1, " ", v56, v97, v98, v99, v100, v10, v11, v101, v102);
                 --ebx95;
             } while (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx95) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx95 == 0)));
         }
@@ -8464,9 +8462,9 @@ void** help_cmd(void** ecx, void** a2) {
         edi64 = edi64 + 24;
     } while (esi65 != 42);
     eax103 = gfp;
-    fun_8048f04(ecx, eax103, 1, 0x807277d, 0x80738e0, v104, v105, v106, v107, v10, v11, v108, v109);
+    fun_8048f04(ecx, eax103, 1, "%s\n", "\n\nTo select an equation space, type the equation number at the main prompt.", v104, v105, v106, v107, v10, v11, v108, v109);
     eax110 = gfp;
-    fun_8048f04(ecx, eax110, 1, 0x807277d, 0x807392c, v111, v112, v113, v114, v10, v11, v115, v116);
+    fun_8048f04(ecx, eax110, 1, "%s\n", "To solve the current equation, type the variable name at the main prompt.", v111, v112, v113, v114, v10, v11, v115, v116);
     eax117 = reinterpret_cast<void**>(1);
     addr_80502bb_14:
     return eax117;
@@ -8507,80 +8505,80 @@ void** help_cmd(void** ecx, void** a2) {
         v11 = ecx144;
     } while (ecx144 != edi3);
     goto addr_804f67f_26;
-    eax148 = strncasecmp(edi3, 0x807284b, ebx135, v145, v146, v147);
+    eax148 = strncasecmp(edi3, "examples", ebx135, v145, v146, v147);
     if (eax148) {
-        eax152 = strncasecmp(edi3, 0x8072854, ebx135, v149, v150, v151);
-        if (!eax152 || (eax156 = strncasecmp(edi3, 0x807285e, ebx135, v153, v154, v155), !eax156)) {
+        eax152 = strncasecmp(edi3, "copyright", ebx135, v149, v150, v151);
+        if (!eax152 || (eax156 = strncasecmp(edi3, "license", ebx135, v153, v154, v155), !eax156)) {
             eax157 = gfp;
-            fun_8048f04(ecx121, eax157, 1, 0x807277d, 0x8072d3c, v158, v159, v160, v161, v10, v11, v118, v122);
+            fun_8048f04(ecx121, eax157, 1, "%s\n", "Copyright and License for Mathomatic", v158, v159, v160, v161, v10, v11, v118, v122);
             eax162 = gfp;
-            fun_8048f04(ecx121, eax162, 1, 0x807277d, 0x8072d64, v163, v164, v165, v166, v10, v11, v118, v122);
+            fun_8048f04(ecx121, eax162, 1, "%s\n", "------------------------------------\n", v163, v164, v165, v166, v10, v11, v118, v122);
             eax167 = license_string;
             eax168 = gfp;
-            fun_8048f04(ecx121, eax168, 1, 0x8075e74, eax167, v169, v170, v171, v172, v10, v11, v118, v122);
+            fun_8048f04(ecx121, eax168, 1, "%s", eax167, v169, v170, v171, v172, v10, v11, v118, v122);
             eax117 = reinterpret_cast<void**>(1);
             goto addr_80502bb_14;
         } else {
-            eax176 = strncasecmp(edi3, 0x8072866, ebx135, v173, v174, v175);
+            eax176 = strncasecmp(edi3, "bugs", ebx135, v173, v174, v175);
             if (eax176) {
-                eax180 = strncasecmp(edi3, 0x807286b, ebx135, v177, v178, v179);
+                eax180 = strncasecmp(edi3, "usage", ebx135, v177, v178, v179);
                 if (eax180) {
-                    eax184 = strncasecmp(edi3, 0x8072871, ebx135, v181, v182, v183);
+                    eax184 = strncasecmp(edi3, "geometry", ebx135, v181, v182, v183);
                     if (eax184) {
-                        eax188 = strncasecmp(edi3, 0x80728d0, ebx135, v185, v186, v187);
-                        if (!eax188 || (eax192 = strncasecmp(edi3, 0x80728dc, ebx135, v189, v190, v191), !eax192)) {
+                        eax188 = strncasecmp(edi3, "expressions", ebx135, v185, v186, v187);
+                        if (!eax188 || (eax192 = strncasecmp(edi3, "equations", ebx135, v189, v190, v191), !eax192)) {
                             eax193 = gfp;
-                            fun_8048f04(ecx121, eax193, 1, 0x807277d, 0x8073134, v194, v195, v196, v197, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax193, 1, "%s\n", "To enter an expression or equation, simply type it in at the prompt.", v194, v195, v196, v197, v10, v11, v118, v122);
                             eax198 = gfp;
-                            fun_8048f04(ecx121, eax198, 1, 0x807277d, 0x807317c, v199, v200, v201, v202, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax198, 1, "%s\n", "Operators have precedence decreasing as indicated:\n", v199, v200, v201, v202, v10, v11, v118, v122);
                             eax203 = gfp;
-                            fun_8048f04(ecx121, eax203, 1, 0x807277d, 0x80731b0, v204, v205, v206, v207, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax203, 1, "%s\n", "    - negate (highest precedence)", v204, v205, v206, v207, v10, v11, v118, v122);
                             eax208 = gfp;
-                            fun_8048f04(ecx121, eax208, 1, 0x807277d, 0x80731d4, v209, v210, v211, v212, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax208, 1, "%s\n", "    ! factorial (gamma function)", v209, v210, v211, v212, v10, v11, v118, v122);
                             eax213 = gfp;
-                            fun_8048f04(ecx121, eax213, 1, 0x807277d, 0x80731f8, v214, v215, v216, v217, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax213, 1, "%s\n", "    ** or ^ power (exponentiation)", v214, v215, v216, v217, v10, v11, v118, v122);
                             eax218 = gfp;
-                            fun_8048f04(ecx121, eax218, 1, 0x807277d, 0x807321c, v219, v220, v221, v222, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax218, 1, "%s\n", "    * multiply      / divide        % modulus       // integral divide", v219, v220, v221, v222, v10, v11, v118, v122);
                             eax223 = gfp;
-                            fun_8048f04(ecx121, eax223, 1, 0x807277d, 0x8073264, v224, v225, v226, v227, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax223, 1, "%s\n", "    + add           - subtract", v224, v225, v226, v227, v10, v11, v118, v122);
                             eax228 = gfp;
-                            fun_8048f04(ecx121, eax228, 1, 0x807277d, 0x8073284, v229, v230, v231, v232, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax228, 1, "%s\n", "    = equate (lowest precedence)\n", v229, v230, v231, v232, v10, v11, v118, v122);
                             eax233 = gfp;
-                            fun_8048f04(ecx121, eax233, 1, 0x807277d, 0x80732a8, v234, v235, v236, v237, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax233, 1, "%s\n", "Variables consist of any combination of letters, digits, and underscores (_).", v234, v235, v236, v237, v10, v11, v118, v122);
                             eax238 = gfp;
-                            fun_8048f04(ecx121, eax238, 1, 0x807277d, 0x80728e6, v239, v240, v241, v242, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax238, 1, "%s\n", "Predefined variables follow:\n", v239, v240, v241, v242, v10, v11, v118, v122);
                             eax243 = gfp;
-                            fun_8048f04(ecx121, eax243, 1, 0x807277d, 0x80732f8, v244, v245, v246, v247, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax243, 1, "%s\n", "    sign, sign1, sign2, ... - may only be +1 or -1", v244, v245, v246, v247, v10, v11, v118, v122);
                             eax248 = gfp;
-                            fun_8048f04(ecx121, eax248, 1, 0x807277d, 0x807332c, v249, v250, v251, v252, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax248, 1, "%s\n", "    integer, integer1, ... - may only be an integer value\n", v249, v250, v251, v252, v10, v11, v118, v122);
                             eax253 = gfp;
-                            fun_8048f04(ecx121, eax253, 1, 0x807277d, 0x8073368, v254, v255, v256, v257, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax253, 1, "%s\n", "Absolute value notation \"|x|\" and dual polarity \"+/-x\" are understood.", v254, v255, v256, v257, v10, v11, v118, v122);
                             eax258 = gfp;
-                            fun_8048f04(ecx121, eax258, 1, 0x807277d, 0x80733b0, v259, v260, v261, v262, v10, v11, v118, v122);
+                            fun_8048f04(ecx121, eax258, 1, "%s\n", "Type \"help constants\" for information on entering constants.", v259, v260, v261, v262, v10, v11, v118, v122);
                             eax117 = reinterpret_cast<void**>(1);
                             goto addr_80502bb_14;
                         } else {
-                            eax266 = strncasecmp(edi3, 0x8072904, ebx135, v263, v264, v265);
+                            eax266 = strncasecmp(edi3, "constants", ebx135, v263, v264, v265);
                             if (eax266) {
-                                eax267 = is_all(edi3, 0x8072904, ebx135);
+                                eax267 = is_all(edi3, "constants", ebx135);
                                 if (!eax267) {
-                                    error(ecx121, 0x80736e4, 0x8072904, ebx135, v268, v269, v270, v271, v272, v10, v11, v118);
+                                    error(ecx121, "Unrecognized help topic or command.", "constants", ebx135, v268, v269, v270, v271, v272, v10, v11, v118);
                                     eax117 = reinterpret_cast<void**>(0);
                                     goto addr_80502bb_14;
                                 } else {
                                     eax273 = gfp;
-                                    fun_8048f04(ecx121, eax273, 1, 0x807277d, 0x8072927, v274, v275, v276, v277, v10, v11, v118, v122);
+                                    fun_8048f04(ecx121, eax273, 1, "%s\n", "Mathomatic Command Summary", v274, v275, v276, v277, v10, v11, v118, v122);
                                     eax278 = gfp;
-                                    fun_8048f04(ecx121, eax278, 1, 0x807277d, 0x8072942, v279, v280, v281, v282, v10, v11, v118, v122);
+                                    fun_8048f04(ecx121, eax278, 1, "%s\n", "--------------------------", v279, v280, v281, v282, v10, v11, v118, v122);
                                     ebx283 = 3;
                                     esi284 = reinterpret_cast<void**>(0);
                                     do {
-                                        eax285 = display_command(ecx121, esi284, 1, 0x807277d, 0x8072942);
+                                        eax285 = display_command(ecx121, esi284, 1, "%s\n", "--------------------------");
                                         ebx283 = ebx283 + eax285;
                                         eax286 = gfp;
                                         zf287 = eax286 == stdout;
                                         if (zf287 && ((eax288 = screen_rows, !!eax288) && (eax289 = screen_rows, reinterpret_cast<int32_t>(ebx283) >= reinterpret_cast<int32_t>(eax289 - 5)))) {
-                                            eax293 = pause_cmd(ecx121, 0x80757fe, 1, 0x807277d, 0x8072942, v290, v291, v292);
+                                            eax293 = pause_cmd(ecx121, 0x80757fe, 1, "%s\n", "--------------------------", v290, v291, v292);
                                             if (!eax293) 
                                                 goto addr_80502b6_41;
                                             ebx283 = 1;
@@ -8590,92 +8588,92 @@ void** help_cmd(void** ecx, void** a2) {
                                 }
                             } else {
                                 eax294 = gfp;
-                                fun_8048f04(ecx121, eax294, 1, 0x807277d, 0x80733f0, v295, v296, v297, v298, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax294, 1, "%s\n", "Constants are double precision floating point values with up to", v295, v296, v297, v298, v10, v11, v118, v122);
                                 eax299 = gfp;
-                                fun_8048f04(ecx121, eax299, 1, 0x807277d, 0x8073430, v300, v301, v302, v303, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax299, 1, "%s\n", "14 decimal digits accuracy.  They can be entered in standard, scientific,", v300, v301, v302, v303, v10, v11, v118, v122);
                                 eax304 = gfp;
-                                fun_8048f04(ecx121, eax304, 1, 0x807277d, 0x807347c, v305, v306, v307, v308, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax304, 1, "%s\n", "or hexadecimal notation.  Excepting named constants, constants always", v305, v306, v307, v308, v10, v11, v118, v122);
                                 eax309 = gfp;
-                                fun_8048f04(ecx121, eax309, 1, 0x807277d, 0x80734c4, v310, v311, v312, v313, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax309, 1, "%s\n", "start with a decimal digit (0..9) or a period.\n", v310, v311, v312, v313, v10, v11, v118, v122);
                                 eax314 = gfp;
-                                fun_8048f04(ecx121, eax314, 1, 0x807277d, 0x807290e, v315, v316, v317, v318, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax314, 1, "%s\n", "Named constants follow:\n", v315, v316, v317, v318, v10, v11, v118, v122);
                                 eax319 = gfp;
-                                fun_8048f04(ecx121, eax319, 1, 0x807277d, 0x80734f4, v320, v321, v322, v323, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax319, 1, "%s\n", "    e or e# - the universal constant e (2.7182818284...)", v320, v321, v322, v323, v10, v11, v118, v122);
                                 eax324 = gfp;
-                                fun_8048f04(ecx121, eax324, 1, 0x807277d, 0x8073530, v325, v326, v327, v328, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax324, 1, "%s\n", "    pi or pi# - the universal constant pi (3.1415926535...)", v325, v326, v327, v328, v10, v11, v118, v122);
                                 eax329 = gfp;
-                                fun_8048f04(ecx121, eax329, 1, 0x807277d, 0x807356c, v330, v331, v332, v333, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax329, 1, "%s\n", "    i or i# - the imaginary unit (square root of -1)", v330, v331, v332, v333, v10, v11, v118, v122);
                                 eax334 = gfp;
-                                fun_8048f04(ecx121, eax334, 1, 0x807277d, 0x80735a4, v335, v336, v337, v338, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax334, 1, "%s\n", "The above constants may also be used anywhere variables are required.", v335, v336, v337, v338, v10, v11, v118, v122);
                                 eax339 = gfp;
-                                fun_8048f04(ecx121, eax339, 1, 0x807277d, 0x80735ec, v340, v341, v342, v343, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax339, 1, "%s\n", "    inf - floating point infinity constant", v340, v341, v342, v343, v10, v11, v118, v122);
                                 eax344 = gfp;
-                                fun_8048f04(ecx121, eax344, 1, 0x807277d, 0x8073618, v345, v346, v347, v348, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax344, 1, "%s\n", "    nan - invalid floating point result (not enterable)\n", v345, v346, v347, v348, v10, v11, v118, v122);
                                 __asm__("fld qword [0x8075178]");
                                 __asm__("fstp qword [esp+0xc]");
                                 eax349 = gfp;
-                                fun_8048f04(ecx121, eax349, 1, 0x8073654, 0x8073618, v350, v351, v352, v353, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax349, 1, "The largest value of a constant is +/-%g\n", "    nan - invalid floating point result (not enterable)\n", v350, v351, v352, v353, v10, v11, v118, v122);
                                 __asm__("fld qword [0x8075180]");
                                 __asm__("fstp qword [esp+0xc]");
                                 eax354 = gfp;
-                                fun_8048f04(ecx121, eax354, 1, 0x8073680, 0x8073618, v355, v356, v357, v358, v10, v11, v118, v122);
+                                fun_8048f04(ecx121, eax354, 1, "The smallest value of a constant is +/-%g\n", "    nan - invalid floating point result (not enterable)\n", v355, v356, v357, v358, v10, v11, v118, v122);
                                 eax117 = reinterpret_cast<void**>(1);
                                 goto addr_80502bb_14;
                             }
                         }
                     } else {
                         eax359 = gfp;
-                        fun_8048f04(ecx121, eax359, 1, 0x807277d, 0x8072e78, v360, v361, v362, v363, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax359, 1, "%s\n", "Commonly used standard (Euclidean) geometric formulas", v360, v361, v362, v363, v10, v11, v118, v122);
                         eax364 = gfp;
-                        fun_8048f04(ecx121, eax364, 1, 0x807277d, 0x8072eb0, v365, v366, v367, v368, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax364, 1, "%s\n", "-----------------------------------------------------", v365, v366, v367, v368, v10, v11, v118, v122);
                         eax369 = gfp;
-                        fun_8048f04(ecx121, eax369, 1, 0x807277d, 0x8072ee8, v370, v371, v372, v373, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax369, 1, "%s\n", "Triangle of base \"b\" and height \"h\":", v370, v371, v372, v373, v10, v11, v118, v122);
                         eax374 = gfp;
-                        fun_8048f04(ecx121, eax374, 1, 0x807277d, 0x807287a, v375, v376, v377, v378, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax374, 1, "%s\n", "    area = b*h/2\n", v375, v376, v377, v378, v10, v11, v118, v122);
                         eax379 = gfp;
-                        fun_8048f04(ecx121, eax379, 1, 0x807277d, 0x8072f10, v380, v381, v382, v383, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax379, 1, "%s\n", "Rectangle of length \"l\" and width \"w\":", v380, v381, v382, v383, v10, v11, v118, v122);
                         eax384 = gfp;
-                        fun_8048f04(ecx121, eax384, 1, 0x807277d, 0x8072f38, v385, v386, v387, v388, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax384, 1, "%s\n", "    area = l*w                    perimeter = 2*l + 2*w\n", v385, v386, v387, v388, v10, v11, v118, v122);
                         eax389 = gfp;
-                        fun_8048f04(ecx121, eax389, 1, 0x807277d, 0x8072f74, v390, v391, v392, v393, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax389, 1, "%s\n", "Trapezoid of parallel sides \"a\" and \"b\", and \"d\" distance between them:", v390, v391, v392, v393, v10, v11, v118, v122);
                         eax394 = gfp;
-                        fun_8048f04(ecx121, eax394, 1, 0x807277d, 0x807288c, v395, v396, v397, v398, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax394, 1, "%s\n", "    area = d*(a + b)/2\n", v395, v396, v397, v398, v10, v11, v118, v122);
                         eax399 = gfp;
-                        fun_8048f04(ecx121, eax399, 1, 0x807277d, 0x80728a4, v400, v401, v402, v403, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax399, 1, "%s\n", "Circle of radius \"r\":", v400, v401, v402, v403, v10, v11, v118, v122);
                         eax404 = gfp;
-                        fun_8048f04(ecx121, eax404, 1, 0x807277d, 0x8072fbc, v405, v406, v407, v408, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax404, 1, "%s\n", "    area = pi*r^2                 perimeter = 2*pi*r\n", v405, v406, v407, v408, v10, v11, v118, v122);
                         eax409 = gfp;
-                        fun_8048f04(ecx121, eax409, 1, 0x807277d, 0x8072ff4, v410, v411, v412, v413, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax409, 1, "%s\n", "Rectangular solid of length \"l\", width \"w\", and height \"h\":", v410, v411, v412, v413, v10, v11, v118, v122);
                         eax414 = gfp;
-                        fun_8048f04(ecx121, eax414, 1, 0x807277d, 0x8073030, v415, v416, v417, v418, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax414, 1, "%s\n", "    volume = l*w*h                surface_area = 2*l*w + 2*l*h + 2*w*h\n", v415, v416, v417, v418, v10, v11, v118, v122);
                         eax419 = gfp;
-                        fun_8048f04(ecx121, eax419, 1, 0x807277d, 0x80728ba, v420, v421, v422, v423, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax419, 1, "%s\n", "Sphere of radius \"r\":", v420, v421, v422, v423, v10, v11, v118, v122);
                         eax424 = gfp;
-                        fun_8048f04(ecx121, eax424, 1, 0x807277d, 0x8073078, v425, v426, v427, v428, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax424, 1, "%s\n", "    volume = 4/3*pi*r^3           surface_area = 4*pi*r^2\n", v425, v426, v427, v428, v10, v11, v118, v122);
                         eax429 = gfp;
-                        fun_8048f04(ecx121, eax429, 1, 0x807277d, 0x80730b4, v430, v431, v432, v433, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax429, 1, "%s\n", "Convex polygon of \"n\" sides, sum of all interior angles formula:", v430, v431, v432, v433, v10, v11, v118, v122);
                         eax434 = gfp;
-                        fun_8048f04(ecx121, eax434, 1, 0x807277d, 0x80730f8, v435, v436, v437, v438, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax434, 1, "%s\n", "    sum = (n - 2)*180 degrees     sum = (n - 2)*pi radians", v435, v436, v437, v438, v10, v11, v118, v122);
                         eax117 = reinterpret_cast<void**>(1);
                         goto addr_80502bb_14;
                     }
                 } else {
                     eax439 = gfp;
-                    fun_8048f04(ecx121, eax439, 1, 0x807277d, 0x8072e38, v440, v441, v442, v443, v10, v11, v118, v122);
+                    fun_8048f04(ecx121, eax439, 1, "%s\n", "Mathomatic Command Usage Syntax", v440, v441, v442, v443, v10, v11, v118, v122);
                     eax444 = gfp;
-                    fun_8048f04(ecx121, eax444, 1, 0x807277d, 0x8072e58, v445, v446, v447, v448, v10, v11, v118, v122);
+                    fun_8048f04(ecx121, eax444, 1, "%s\n", "-------------------------------", v445, v446, v447, v448, v10, v11, v118, v122);
                     ebx449 = 0;
                     esi450 = reinterpret_cast<void**>(3);
                     do {
                         v451 = *reinterpret_cast<void***>(ebx449 + 0x8074d8c);
                         v452 = *reinterpret_cast<void***>(ebx449 + 0x8074d80);
                         eax453 = gfp;
-                        fun_8048f04(ecx121, eax453, 1, 0x8072788, v452, v451, v454, v455, v456, v10, v11, v118, v122);
+                        fun_8048f04(ecx121, eax453, 1, "%s %s\n", v452, v451, v454, v455, v456, v10, v11, v118, v122);
                         ++esi450;
                         eax457 = gfp;
                         zf458 = eax457 == stdout;
                         if (zf458 && ((eax459 = screen_rows, !!eax459) && (eax460 = screen_rows, reinterpret_cast<signed char>(esi450) >= reinterpret_cast<signed char>(eax460 - 2)))) {
-                            eax463 = pause_cmd(ecx121, 0x80757fe, 1, 0x8072788, v452, v451, v461, v462);
+                            eax463 = pause_cmd(ecx121, 0x80757fe, 1, "%s %s\n", v452, v451, v461, v462);
                             if (!eax463) 
                                 goto addr_80502b6_41;
                             esi450 = reinterpret_cast<void**>(1);
@@ -8686,21 +8684,21 @@ void** help_cmd(void** ecx, void** a2) {
                 }
             } else {
                 eax464 = gfp;
-                fun_8048f04(ecx121, eax464, 1, 0x807277d, 0x8072d8c, v465, v466, v467, v468, v10, v11, v118, v122);
+                fun_8048f04(ecx121, eax464, 1, "%s\n", "Report bugs on the Launchpad support website for Mathomatic:", v465, v466, v467, v468, v10, v11, v118, v122);
                 eax469 = gfp;
-                fun_8048f04(ecx121, eax469, 1, 0x807277d, 0x8072dcc, v470, v471, v472, v473, v10, v11, v118, v122);
+                fun_8048f04(ecx121, eax469, 1, "%s\n", "http://launchpad.net/mathomatic\n", v470, v471, v472, v473, v10, v11, v118, v122);
                 eax474 = gfp;
-                fun_8048f04(ecx121, eax474, 1, 0x807277d, 0x8072df0, v475, v476, v477, v478, v10, v11, v118, v122);
-                eax117 = version_report(ecx121, eax474, 1, 0x807277d, 0x8072df0);
+                fun_8048f04(ecx121, eax474, 1, "%s\n", "Please include the following information (from the version command):\n", v475, v476, v477, v478, v10, v11, v118, v122);
+                eax117 = version_report(ecx121, eax474, 1, "%s\n", "Please include the following information (from the version command):\n");
                 goto addr_80502bb_14;
             }
         }
     } else {
-        eax117 = read_examples(ecx121, 0x80792e0, 0x807284b, ebx135);
+        eax117 = read_examples(ecx121, 0x80792e0, "examples", ebx135);
         goto addr_80502bb_14;
     }
     eax479 = gfp;
-    fun_8048f04(ecx121, eax479, 1, 0x80736ac, 42, v480, v481, v482, v483, v10, v11, v118, v122);
+    fun_8048f04(ecx121, eax479, 1, "End of command list.  Total of %d different commands.\n", 42, v480, v481, v482, v483, v10, v11, v118, v122);
     eax117 = reinterpret_cast<void**>(1);
     goto addr_80502bb_14;
     addr_80502b6_41:
@@ -8809,23 +8807,23 @@ void** display_process(void** ecx, void** a2, void** a3, void** a4) {
     if (a2) {
         default_color(ecx, v6, v7, v8, v9, v10, v11, v12);
         zf13 = html_flag == 0;
-        eax14 = reinterpret_cast<void**>(0x8071931);
+        eax14 = reinterpret_cast<void**>("-> ");
         if (!zf13) {
-            eax14 = reinterpret_cast<void**>(0x8071935);
+            eax14 = reinterpret_cast<void**>("&mdash;&gt; ");
         }
         v15 = eax14;
         eax16 = cur_equation;
-        eax24 = fun_8048f34(1, 0x8071942, eax16 + 1, v15, v17, v18, v19, v20, v21, ebx22, ebp23, __return_address());
+        eax24 = fun_8048f34(1, "%d%s", eax16 + 1, v15, v17, v18, v19, v20, v21, ebx22, ebp23, __return_address());
         input_column = eax24;
         zf25 = html_flag == 0;
         if (zf25) {
             v26 = a2;
-            v27 = reinterpret_cast<void**>(0x8075e74);
-            fun_8048f34(1, 0x8075e74, v26, v15, v28, v29, v30, v31, v32, ebx22, ebp23, __return_address());
+            v27 = reinterpret_cast<void**>("%s");
+            fun_8048f34(1, "%s", v26, v15, v28, v29, v30, v31, v32, ebx22, ebp23, __return_address());
         } else {
             v26 = a2;
-            v27 = reinterpret_cast<void**>(0x807283a);
-            fun_8048f34(1, 0x807283a, v26, v15, v33, v34, v35, v36, v37, ebx22, ebp23, __return_address());
+            v27 = reinterpret_cast<void**>("<b>%s</b>");
+            fun_8048f34(1, "<b>%s</b>", v26, v15, v33, v34, v35, v36, v37, ebx22, ebp23, __return_address());
         }
         eax38 = gfp;
         zf39 = eax38 == stdout;
@@ -8833,12 +8831,12 @@ void** display_process(void** ecx, void** a2, void** a3, void** a4) {
             v41 = a2;
             edx42 = cur_equation;
             v15 = edx42 + 1;
-            v26 = reinterpret_cast<void**>(0x8072844);
+            v26 = reinterpret_cast<void**>("%d%s%s");
             v27 = reinterpret_cast<void**>(1);
-            fun_8048f04(ecx, eax38, 1, 0x8072844, v15, 0x8071931, v41, v43, v44, v45, ebx22, ebp23, __return_address());
+            fun_8048f04(ecx, eax38, 1, "%d%s%s", v15, "-> ", v41, v43, v44, v45, ebx22, ebp23, __return_address());
         }
-        set_error_level(a2, v27, v26, v15, 0x8071931, v41, v46);
-        eax5 = process(ecx, a2, v27, v26, v15, 0x8071931, v41, v47);
+        set_error_level(a2, v27, v26, v15, "-> ", v41, v46);
+        eax5 = process(ecx, a2, v27, v26, v15, "-> ", v41, v47);
     }
     return eax5;
 }
@@ -8896,26 +8894,26 @@ uint32_t display_command(void** ecx, void** a2, void** a3, void** a4, void** a5)
     v7 = *reinterpret_cast<void***>(0x8074d80 + (reinterpret_cast<uint32_t>(edi6) + reinterpret_cast<unsigned char>(a2)) * 8);
     v8 = *reinterpret_cast<void***>((reinterpret_cast<uint32_t>(edi6) + reinterpret_cast<unsigned char>(a2)) * 8 + 0x8074d90);
     eax9 = gfp;
-    fun_8048f04(ecx, eax9, 1, 0x8072778, v7, v8, v10, v11, v12, v13, v14, v15, v7);
+    fun_8048f04(ecx, eax9, 1, "%s - %s\n", v7, v8, v10, v11, v12, v13, v14, v15, v7);
     v16 = *reinterpret_cast<void***>(0x8074d80 + (reinterpret_cast<uint32_t>(edi6) + reinterpret_cast<unsigned char>(a2)) * 8 + 12);
     v17 = v7;
     eax18 = gfp;
-    fun_8048f04(ecx, eax18, 1, 0x8072781, v17, v16, v19, v20, v21, v22, v23, v24, v7);
+    fun_8048f04(ecx, eax18, 1, "Usage: %s %s\n", v17, v16, v19, v20, v21, v22, v23, v24, v7);
     esi25 = 3;
     if (*reinterpret_cast<void***>(0x8074d80 + (reinterpret_cast<uint32_t>(edi6) + reinterpret_cast<unsigned char>(a2)) * 8 + 4)) {
         v17 = *reinterpret_cast<void***>(0x8074d80 + (reinterpret_cast<uint32_t>(edi6) + reinterpret_cast<unsigned char>(a2)) * 8 + 4);
         eax26 = gfp;
-        fun_8048f04(ecx, eax26, 1, 0x8072c6c, v17, v16, v27, v28, v29, v30, v31, v32, v7);
+        fun_8048f04(ecx, eax26, 1, "Alternate name for this command: %s\n", v17, v16, v27, v28, v29, v30, v31, v32, v7);
         *reinterpret_cast<int16_t*>(&esi25) = 4;
     }
     if (*reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a2 + reinterpret_cast<unsigned char>(a2) * 2) * 8 + 0x8074d94)) {
         v17 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(a2 + reinterpret_cast<unsigned char>(a2) * 2) * 8 + 0x8074d94);
         eax33 = gfp;
-        fun_8048f04(ecx, eax33, 1, 0x807277d, v17, v16, v34, v35, v36, v37, v38, v39, v7);
+        fun_8048f04(ecx, eax33, 1, "%s\n", v17, v16, v34, v35, v36, v37, v38, v39, v7);
         ++esi25;
     }
     eax40 = gfp;
-    fun_8048f04(ecx, eax40, 1, 0x80757fd, v17, v16, v41, v42, v43, v44, v45, v46, v7);
+    fun_8048f04(ecx, eax40, 1, "\n", v17, v16, v41, v42, v43, v44, v45, v46, v7);
     return esi25;
 }
 
@@ -8983,21 +8981,21 @@ void** version_report(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     void** v29;
 
     eax6 = gfp;
-    fun_8048f04(ecx, eax6, 1, 0x8075819, 0x8071907, v7, v8, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax6, 1, "Mathomatic version %s\n", "15.1.1", v7, v8, ebp9, __return_address(), a2, a3, a4, a5);
     eax10 = gfp;
-    fun_8048f04(ecx, eax10, 1, 0x8075830, 0x8071907, v11, v12, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax10, 1, "Compile-time defines used: ", "15.1.1", v11, v12, ebp9, __return_address(), a2, a3, a4, a5);
     eax13 = gfp;
-    fun_8048f04(ecx, eax13, 1, 0x807584c, 0x8071907, v14, v15, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax13, 1, "UNIX ", "15.1.1", v14, v15, ebp9, __return_address(), a2, a3, a4, a5);
     eax16 = gfp;
-    fun_8048f04(ecx, eax16, 1, 0x8075852, 0x8071907, v17, v18, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax16, 1, "READLINE ", "15.1.1", v17, v18, ebp9, __return_address(), a2, a3, a4, a5);
     eax19 = n_tokens;
     eax20 = gfp;
-    fun_8048f04(ecx, eax20, 1, 0x80760e8, eax19, v21, v22, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax20, 1, "\n\nThe current expression array size is %d tokens,\n", eax19, v21, v22, ebp9, __return_address(), a2, a3, a4, a5);
     eax23 = gfp;
-    fun_8048f04(ecx, eax23, 1, 0x807611c, __intrinsic() >> 6, v24, v25, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax23, 1, "making the maximum memory usage %ld kilobytes.\n", __intrinsic() >> 6, v24, v25, ebp9, __return_address(), a2, a3, a4, a5);
     eax26 = security_level;
     eax27 = gfp;
-    fun_8048f04(ecx, eax27, 1, 0x807614c, eax26, v28, v29, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax27, 1, "The current security level is %d.\n", eax26, v28, v29, ebp9, __return_address(), a2, a3, a4, a5);
     return 1;
 }
 
@@ -9036,27 +9034,27 @@ void** pause_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         eax14 = reinterpret_cast<void**>(1);
     } else {
         if (!*reinterpret_cast<void***>(ebx9)) {
-            ebx9 = reinterpret_cast<void**>(0x8075b45);
+            ebx9 = reinterpret_cast<void**>("Please press the Enter key");
         }
         v15 = ebx9;
         v16 = reinterpret_cast<void**>(1);
-        fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8075b60, v15, v17);
+        fun_8049224(ecx, 0x80795a0, 80, 1, 80, " ==== %s ==== ", v15, v17);
         v18 = reinterpret_cast<void**>(0x1000);
         v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffeff4);
-        eax23 = get_string(v12, 0x1000, 1, 80, 0x8075b60, v15, v19, v20, v21, v22);
-        if (!eax23 || (v16 = reinterpret_cast<void**>(4), v18 = reinterpret_cast<void**>(0x8072b7a), v12 = eax23, eax24 = strncasecmp(v12, 0x8072b7a, 4, 80, 0x8075b60, v15), eax24 == 0)) {
+        eax23 = get_string(v12, 0x1000, 1, 80, " ==== %s ==== ", v15, v19, v20, v21, v22);
+        if (!eax23 || (v16 = reinterpret_cast<void**>(4), v18 = reinterpret_cast<void**>("quit"), v12 = eax23, eax24 = strncasecmp(v12, "quit", 4, 80, " ==== %s ==== ", v15), eax24 == 0)) {
             eax14 = reinterpret_cast<void**>(0);
         } else {
             v16 = reinterpret_cast<void**>(4);
-            v18 = reinterpret_cast<void**>(0x8072b7f);
+            v18 = reinterpret_cast<void**>("exit");
             v12 = eax23;
-            eax25 = strncasecmp(v12, 0x8072b7f, 4, 80, 0x8075b60, v15);
+            eax25 = strncasecmp(v12, "exit", 4, 80, " ==== %s ==== ", v15);
             eax14 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(!!eax25))));
         }
     }
     edx26 = eax10 ^ g14;
     if (edx26) {
-        eax14 = fun_8049184(ecx, v12, v18, v16, 80, 0x8075b60, v15, v27, v28, v29, v30);
+        eax14 = fun_8049184(ecx, v12, v18, v16, 80, " ==== %s ==== ", v15, v27, v28, v29, v30);
     }
     return eax14;
 }
@@ -9228,7 +9226,7 @@ void binary_parenthesize(void** ecx, void** a2, void** a3, void** a4, void** a5,
 
     ebx7 = a3;
     if (reinterpret_cast<signed char>(ebx7 + 0xffffffff) <= reinterpret_cast<signed char>(a4) || (!(*reinterpret_cast<unsigned char*>(&ebx7) & 1) || !(*reinterpret_cast<unsigned char*>(&a4) & 1))) {
-        error_bug(ecx, 0x8075210, v8, v9, v10);
+        error_bug(ecx, "Internal error in arguments to binary_parenthesize().", v8, v9, v10);
     }
     v11 = a4;
     eax12 = reinterpret_cast<struct s18*>((reinterpret_cast<unsigned char>(a4) << 4) + reinterpret_cast<unsigned char>(a2));
@@ -9392,10 +9390,10 @@ uint32_t isvarchar(void** a1, void** a2, void** a3, void** a4, void** a5, void**
     void** ebp15;
     void** eax16;
 
-    if (a1 == 95 || a1 && (v7 = a1, eax9 = fun_8048f74(0x8079180, v7, v8), !!eax9)) {
+    if (a1 == 95 || a1 && (v7 = a1, eax9 = fun_8048f74("'\\", v7, v8), !!eax9)) {
         eax10 = 1;
     } else {
-        eax16 = fun_8049084(0x8079180, v7, v11, v12, v13, ebx14, ebp15, __return_address(), a1, a2);
+        eax16 = fun_8049084("'\\", v7, v11, v12, v13, ebx14, ebp15, __return_address(), a1, a2);
         eax10 = static_cast<uint32_t>(reinterpret_cast<uint16_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(eax16) + reinterpret_cast<unsigned char>(a1) * 2))) >> 10 & 1;
     }
     return eax10;
@@ -9447,14 +9445,14 @@ void** put_up_arrow(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(tmp32_17) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(tmp32_17 == 0))) {
             ebx18 = reinterpret_cast<void*>(0);
             do {
-                fun_8048f34(1, 0x8077a28, v19, v20, v11, v9, v7, v6, a2, a3, a4, a5);
+                fun_8048f34(1, " ", v19, v20, v11, v9, v7, v6, a2, a3, a4, a5);
                 ebx18 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(ebx18) + 1);
                 tmp32_21 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi13) + reinterpret_cast<unsigned char>(input_column));
             } while (reinterpret_cast<int32_t>(tmp32_21) > reinterpret_cast<int32_t>(ebx18));
         }
-        fun_8048f34(1, 0x80751cb, v22, v23, v11, v9, v7, v6, a2, a3, a4, a5);
+        fun_8048f34(1, "^ ", v22, v23, v11, v9, v7, v6, a2, a3, a4, a5);
     }
-    eax26 = error(ecx, a3, 0x80751cb, v24, v25, v11, v9, v7, v6, a2, a3, a4);
+    eax26 = error(ecx, a3, "^ ", v24, v25, v11, v9, v7, v6, a2, a3, a4);
     return eax26;
 }
 
@@ -9475,12 +9473,12 @@ uint32_t organize(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     eax7 = *reinterpret_cast<void***>(a3);
     if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(eax7) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(eax7 == 0) || !(*reinterpret_cast<unsigned char*>(&eax7) & 1)) {
         v8 = eax7;
-        fun_8048f34(1, 0x8076d83, v8, v9, v10, ebx11, ebp12, __return_address(), a2, a3, a4, a5);
-        error_bug(ecx, 0x8076c90, 0x8076d83, v8, v13);
+        fun_8048f34(1, "Bad expression size = %d.\n", v8, v9, v10, ebx11, ebp12, __return_address(), a2, a3, a4, a5);
+        error_bug(ecx, "Internal error: organize() called with bad expression size.", "Bad expression size = %d.\n", v8, v13);
     }
     less_or_equal14 = reinterpret_cast<signed char>(*reinterpret_cast<void***>(a3)) <= reinterpret_cast<signed char>(n_tokens);
     if (!less_or_equal14) {
-        error_bug(ecx, 0x8076ccc, 0x8076d83, v8, v15);
+        error_bug(ecx, "Internal error: expression array overflow detected in organize().", "Bad expression size = %d.\n", v8, v15);
     }
     eax16 = org_recurse(0, 1, 0, v8);
     return eax16;
@@ -9494,9 +9492,9 @@ int32_t** fun_80491d4() {
 
 struct s23 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** parse_equation(void** ecx, void** a2, void** a3, void** a4) {
@@ -9520,9 +9518,9 @@ void** parse_equation(void** ecx, void** a2, void** a3, void** a4) {
         }
         edi8 = reinterpret_cast<struct s23*>(reinterpret_cast<unsigned char>(a2) * 4);
         v9 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40);
-        eax10 = parse_section(v9, &edi8->f134753664, ebx5, 1);
+        eax10 = parse_section(v9, &edi8->f8082d80, ebx5, 1);
         ebx5 = eax10;
-        if (eax10 && ((v11 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0), eax12 = parse_section(v11, &edi8->f134715712, eax10, 1), ebx5 = eax12, !!eax12) && (eax15 = extra_characters(ecx, eax12, &edi8->f134715712, eax10, 1, v13, v14), !!eax15))) {
+        if (eax10 && ((v11 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0), eax12 = parse_section(v11, &edi8->f8079940, eax10, 1), ebx5 = eax12, !!eax12) && (eax15 = extra_characters(ecx, eax12, &edi8->f8079940, eax10, 1, v13, v14), !!eax15))) {
             ebx5 = reinterpret_cast<void**>(0);
         }
     }
@@ -9877,8 +9875,8 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
                 if (v9) 
                     goto addr_80513c2_39;
                 if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(eax21 + 1) == 33) && *reinterpret_cast<void***>(eax21 + 2) != 33) {
-                    v14 = reinterpret_cast<void**>(0x80753e4);
-                    warning(ecx13, 0x80753e4, v15, 3, v24, v25, v26, v27, v8, v6);
+                    v14 = reinterpret_cast<void**>("Multifactorial not implemented, using x!! = (x!)!");
+                    warning(ecx13, "Multifactorial not implemented, using x!! = (x!)!", v15, 3, v24, v25, v26, v27, v8, v6);
                 }
                 eax28 = reinterpret_cast<struct s25*>((reinterpret_cast<unsigned char>(v11) << 4) + reinterpret_cast<unsigned char>(a1));
                 eax28->f4 = v10;
@@ -9979,9 +9977,9 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
                     ++v11;
                     v9 = reinterpret_cast<void**>(1);
                 }
-                v15 = reinterpret_cast<void**>(0x80751b7);
-                eax38 = strncasecmp(a3, 0x80751b7, 3, v35, v36, v37);
-                if (eax38 || (v14 = reinterpret_cast<void**>(static_cast<int32_t>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(a3 + 3)))), eax42 = isvarchar(v14, 0x80751b7, 3, v39, v40, v41), !!eax42)) {
+                v15 = reinterpret_cast<void**>("inf");
+                eax38 = strncasecmp(a3, "inf", 3, v35, v36, v37);
+                if (eax38 || (v14 = reinterpret_cast<void**>(static_cast<int32_t>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(a3 + 3)))), eax42 = isvarchar(v14, "inf", 3, v39, v40, v41), !!eax42)) {
                     eax43 = reinterpret_cast<struct s28*>((reinterpret_cast<unsigned char>(v11) << 4) + reinterpret_cast<unsigned char>(a1));
                     eax43->f0 = reinterpret_cast<void**>(1);
                     v15 = a3;
@@ -10052,16 +10050,17 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
                     below_or_equal55 = reinterpret_cast<uint1_t>(cf54 | reinterpret_cast<uint1_t>(v11 == 0));
                 }
                 esi58 = a3;
-                edi59 = reinterpret_cast<void***>(0x80751ce);
+                edi59 = reinterpret_cast<void***>("+/-");
                 ecx13 = reinterpret_cast<void**>(3);
-                while (ecx13) {
+                do {
+                    if (!ecx13) 
+                        break;
                     --ecx13;
                     cf54 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi58)) < reinterpret_cast<unsigned char>(*edi59));
                     below_or_equal55 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi58)) <= reinterpret_cast<unsigned char>(*edi59));
-                    *edi59 = *reinterpret_cast<void***>(esi58);
                     ++edi59;
                     ++esi58;
-                }
+                } while (*reinterpret_cast<void***>(esi58) == *edi59);
                 if (static_cast<unsigned char>(reinterpret_cast<uint1_t>(!below_or_equal55)) != static_cast<unsigned char>(cf54)) {
                     if (!v9) {
                         addr_8051317_25:
@@ -10207,7 +10206,7 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
     addr_80513e4_92:
     return eax7;
     addr_8050d96_8:
-    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(eax21) - reinterpret_cast<unsigned char>(v6), 0x807539c, 3, v95);
+    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(eax21) - reinterpret_cast<unsigned char>(v6), "Unmatched parenthesis: too many )", 3, v95);
     eax7 = reinterpret_cast<void**>(0);
     goto addr_80513e4_92;
     addr_8050dbd_31:
@@ -10215,12 +10214,12 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
     addr_8051320_21:
     if (v8 || (zf96 = v11 == 0, *reinterpret_cast<unsigned char*>(&ecx13) = reinterpret_cast<uint1_t>(!zf96), !zf96) && !v9) {
         addr_80513c2_39:
-        put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), 0x8075201, 3, v97);
+        put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), "Syntax error.", 3, v97);
         eax7 = reinterpret_cast<void**>(0);
         goto addr_80513e4_92;
     } else {
         if (!reinterpret_cast<int1_t>(v10 == 1)) {
-            put_up_arrow(ecx13, reinterpret_cast<unsigned char>(eax21) - reinterpret_cast<unsigned char>(v6), 0x807545c, 3, v98);
+            put_up_arrow(ecx13, reinterpret_cast<unsigned char>(eax21) - reinterpret_cast<unsigned char>(v6), "Unmatched parenthesis: missing )", 3, v98);
             eax7 = reinterpret_cast<void**>(0);
             goto addr_80513e4_92;
         } else {
@@ -10243,11 +10242,11 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
         }
     }
     addr_8051212_43:
-    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), 0x80751e9, 3, v102);
+    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), "Unrecognized character.", 3, v102);
     eax7 = reinterpret_cast<void**>(0);
     goto addr_80513e4_92;
     addr_80512e0_50:
-    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), 0x8075418, 3, v103);
+    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), "Named functions currently not implemented, except when using m4.", 3, v103);
     eax7 = reinterpret_cast<void**>(0);
     goto addr_80513e4_92;
     addr_80513c0_86:
@@ -10255,11 +10254,11 @@ void** parse_section(void** a1, void** a2, void** a3, void** a4) {
     goto addr_80513c2_39;
     addr_80511bf_88:
     __asm__("fstp st0");
-    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), 0x80751d2, 3, v104);
+    put_up_arrow(ecx13, reinterpret_cast<unsigned char>(a3) - reinterpret_cast<unsigned char>(v6), "Constant out of range.", 3, v104);
     eax7 = reinterpret_cast<void**>(0);
     goto addr_80513e4_92;
     addr_8050e0c_81:
-    error(ecx13, 0x80753c0, v15, 3, v105, v106, v107, v108, v8, v6, v9, v10);
+    error(ecx13, "Too many nested absolute values.", v15, 3, v105, v106, v107, v108, v8, v6, v9, v10);
     eax7 = reinterpret_cast<void**>(0);
     goto addr_80513e4_92;
     addr_8050d26_91:
@@ -10391,7 +10390,7 @@ uint32_t strcmp_tospace(void** a1, void** a2, void** a3, void** a4, void** a5, v
 
 int32_t subst_constants(void** a1, void** a2, void** a3);
 
-void** simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
+void simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7);
 
 uint32_t calc_simp(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11) {
     void** v12;
@@ -10524,25 +10523,25 @@ int32_t save_set_options(void** ecx, void** a2, void** a3, void** a4, void** a5)
 
     zf6 = rc_file == 0;
     if (!zf6) {
-        eax12 = fun_80490d4(0x8082f40, 0x80779f1, v7, v8, v9, ebx10, ebp11);
+        eax12 = fun_80490d4(0x8082f40, "w", v7, v8, v9, ebx10, ebp11);
         if (eax12) {
-            fun_8048f04(ecx, eax12, 1, 0x807608c, v13, v14, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
-            fun_8048f04(ecx, eax12, 1, 0x80757e2, v15, v16, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
-            output_options(ecx, eax12, 1, 0x80757e2, v17);
-            eax20 = fun_80490a4(eax12, 1, 0x80757e2, v18, v19, ebx10, ebp11);
+            fun_8048f04(ecx, eax12, 1, "; Mathomatic set options loaded at startup.\n", v13, v14, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, eax12, 1, "; This file can be edited.\n\n", v15, v16, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
+            output_options(ecx, eax12, 1, "; This file can be edited.\n\n", v17);
+            eax20 = fun_80490a4(eax12, 1, "; This file can be edited.\n\n", v18, v19, ebx10, ebp11);
             if (eax20) {
-                error(ecx, 0x80757ff, 1, 0x80757e2, v21, v22, ebx10, ebp11, __return_address(), a2, a3, a4);
+                error(ecx, "Error saving set options.", 1, "; This file can be edited.\n\n", v21, v22, ebx10, ebp11, __return_address(), a2, a3, a4);
                 eax23 = 0;
             } else {
-                fun_8048f34(1, 0x80760bc, 0x8082f40, v24, v25, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
+                fun_8048f34(1, "All options saved in startup file \"%s\".\n", 0x8082f40, v24, v25, ebx10, ebp11, __return_address(), a2, a3, a4, a5);
                 eax23 = 1;
             }
         } else {
-            error(ecx, 0x807605c, 0x80779f1, v26, v27, v28, ebx10, ebp11, __return_address(), a2, a3, a4);
+            error(ecx, "Unable to write to set options startup file.", "w", v26, v27, v28, ebx10, ebp11, __return_address(), a2, a3, a4);
             eax23 = 0;
         }
     } else {
-        error(ecx, 0x8076034, v29, v30, v31, v32, ebx10, ebp11, __return_address(), a2, a3, a4);
+        error(ecx, "Set options startup file name not set.", v29, v30, v31, v32, ebx10, ebp11, __return_address(), a2, a3, a4);
         eax23 = 0;
     }
     return eax23;
@@ -10663,9 +10662,9 @@ void** subst_var_with_exp(void** a1, void** a2, void** a3, void** a4, void** a5,
 
 struct s45 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 int32_t simp_equation(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
@@ -10681,9 +10680,9 @@ int32_t simp_equation(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
     void** v17;
     void** v18;
 
-    if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) > 0 && (esi8 = reinterpret_cast<struct s45*>(reinterpret_cast<unsigned char>(a2) * 4), v9 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40), eax15 = simp_loop(ecx, v9, &esi8->f134753664, v10, v11, ebx12, esi13, ebp14, __return_address()), !!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940))) {
+    if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) > 0 && (esi8 = reinterpret_cast<struct s45*>(reinterpret_cast<unsigned char>(a2) * 4), v9 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40), eax15 = simp_loop(ecx, v9, &esi8->f8082d80, v10, v11, ebx12, esi13, ebp14, __return_address()), !!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940))) {
         v16 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0);
-        eax15 = simp_loop(ecx, v16, &esi8->f134715712, v17, v18, ebx12, esi13, ebp14, __return_address());
+        eax15 = simp_loop(ecx, v16, &esi8->f8079940, v17, v18, ebx12, esi13, ebp14, __return_address());
     }
     return eax15;
 }
@@ -10882,9 +10881,9 @@ int32_t simp_i(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6
 
 struct s48 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** make_fractions_and_group(void** ecx, void** a2, void** a3, void** a4) {
@@ -10909,7 +10908,7 @@ void** make_fractions_and_group(void** ecx, void** a2, void** a3, void** a4) {
     void** eax23;
 
     esi5 = reinterpret_cast<void**>(0);
-    if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) > 0 && ((edi6 = reinterpret_cast<struct s48*>(reinterpret_cast<unsigned char>(a2) * 4), v7 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40), eax16 = fractions_and_group(ecx, v7, &edi6->f134753664, v8, v9, v10, v11, v12, ebx13, esi14, edi15), esi5 = eax16, !!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940)) && (v17 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0), eax23 = fractions_and_group(ecx, v17, &edi6->f134715712, v18, v19, v20, v21, v22, ebx13, esi14, edi15), !!eax23))) {
+    if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80) > 0 && ((edi6 = reinterpret_cast<struct s48*>(reinterpret_cast<unsigned char>(a2) * 4), v7 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40), eax16 = fractions_and_group(ecx, v7, &edi6->f8082d80, v8, v9, v10, v11, v12, ebx13, esi14, edi15), esi5 = eax16, !!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940)) && (v17 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0), eax23 = fractions_and_group(ecx, v17, &edi6->f8079940, v18, v19, v20, v21, v22, ebx13, esi14, edi15), !!eax23))) {
         esi5 = reinterpret_cast<void**>(1);
     }
     return esi5;
@@ -11073,7 +11072,7 @@ void** list1_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         } else {
             v11 = a2 + 1;
             eax12 = gfp;
-            eax21 = fun_8048f04(ecx, eax12, 1, 0x8077a90, v11, v13, v14, v15, v16, v17, v18, v19, ebx20);
+            eax21 = fun_8048f04(ecx, eax12, 1, "#%d: ", v11, v13, v14, v15, v16, v17, v18, v19, ebx20);
             esi10 = eax21;
         }
         v22 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082d80);
@@ -11082,7 +11081,7 @@ void** list1_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         esi8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax28) + reinterpret_cast<unsigned char>(esi10));
         if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940)) {
             eax29 = gfp;
-            eax37 = fun_8048f04(ecx, eax29, 1, 0x80759cf, v11, v30, v31, v32, v33, v34, v35, v36, ebx20);
+            eax37 = fun_8048f04(ecx, eax29, 1, " = ", v11, v30, v31, v32, v33, v34, v35, v36, ebx20);
             v38 = eax37;
             v39 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940);
             v40 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0);
@@ -11091,11 +11090,11 @@ void** list1_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         }
         if (reinterpret_cast<int1_t>(a3 == 1)) {
             eax45 = gfp;
-            eax52 = fun_8048f04(ecx, eax45, 1, 0x8077a56, v11, v46, v47, v48, v38, v49, v50, v51, ebx20);
+            eax52 = fun_8048f04(ecx, eax45, 1, ";", v11, v46, v47, v48, v38, v49, v50, v51, ebx20);
             esi8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi8) + reinterpret_cast<unsigned char>(eax52));
         }
         eax53 = gfp;
-        fun_8048f04(ecx, eax53, 1, 0x80757fd, v11, v54, v55, v56, v38, v57, v58, v59, ebx20);
+        fun_8048f04(ecx, eax53, 1, "\n", v11, v54, v55, v56, v38, v57, v58, v59, ebx20);
     }
     return esi8;
 }
@@ -11149,7 +11148,7 @@ int32_t display_fraction(void** ecx, void** a2, void** a3, void** a4, void** a5,
     eax19 = precision;
     v20 = eax19;
     eax21 = gfp;
-    fun_8048f04(ecx, eax21, 1, 0x80759b8, v20, v22, v23, v24, v25, v26, v27, v28, v29);
+    fun_8048f04(ecx, eax21, 1, "%.*g", v20, v22, v23, v24, v25, v26, v27, v28, v29);
     __asm__("fld qword [ebp-0x18]");
     ebx30 = 0;
     __asm__("fld1 ");
@@ -11164,13 +11163,13 @@ int32_t display_fraction(void** ecx, void** a2, void** a3, void** a4, void** a5,
         __asm__("fstp qword [esp+0x10]");
         v20 = eax31;
         eax33 = gfp;
-        fun_8048f04(ecx, eax33, 1, 0x807597e, v20, v34, v35, v32, v36, v37, v38, v39, v40);
+        fun_8048f04(ecx, eax33, 1, " = %.*g/%.*g", v20, v34, v35, v32, v36, v37, v38, v39, v40);
         *reinterpret_cast<signed char*>(&ebx30) = 1;
     } else {
         __asm__("fstp st0");
     }
     eax41 = gfp;
-    fun_8048f04(ecx, eax41, 1, 0x80757fd, v20, v42, v43, v32, v44, v45, v46, v47, v48);
+    fun_8048f04(ecx, eax41, 1, "\n", v20, v42, v43, v32, v44, v45, v46, v47, v48);
     return ebx30;
 }
 
@@ -11478,7 +11477,7 @@ int32_t factor_one(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (pf23 || !zf24) {
-        error_bug(ecx, 0x8077c80, v38, v39, v40);
+        error_bug(ecx, "Internal error factoring integers.", v38, v39, v40);
         eax33 = 1;
         goto addr_8071575_21;
     }
@@ -11566,27 +11565,27 @@ void** display_unique(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
     multiply_out_unique(ecx, v14, v15, v16);
     __asm__("fstp qword [esp+0xc]");
     eax17 = gfp;
-    fun_8048f04(ecx, eax17, 1, 0x8077c70, v18, v19, v20, v21, v22, v23, v24, v25, v12);
+    fun_8048f04(ecx, eax17, 1, "%.0f = ", v18, v19, v20, v21, v22, v23, v24, v25, v12);
     ebx26 = reinterpret_cast<void**>(0);
     while (less27 = reinterpret_cast<signed char>(ebx26) < reinterpret_cast<signed char>(uno), less27) {
         __asm__("fld qword [esi+ebx*8]");
         __asm__("fstp qword [esp+0xc]");
         eax28 = gfp;
-        fun_8048f04(ecx, eax28, 1, 0x80779f8, v29, v30, v31, v32, v33, v34, v35, v36, v12);
+        fun_8048f04(ecx, eax28, 1, "%.0f", v29, v30, v31, v32, v33, v34, v35, v36, v12);
         if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(0x80796e0 + reinterpret_cast<unsigned char>(ebx26) * 4)) > reinterpret_cast<signed char>(1)) {
             v29 = *reinterpret_cast<void***>(0x80796e0 + reinterpret_cast<unsigned char>(ebx26) * 4);
             eax37 = gfp;
-            fun_8048f04(ecx, eax37, 1, 0x8077c78, v29, v38, v39, v40, v41, v42, v43, v44, v12);
+            fun_8048f04(ecx, eax37, 1, "^%d", v29, v38, v39, v40, v41, v42, v43, v44, v12);
         }
         ++ebx26;
         less45 = reinterpret_cast<signed char>(ebx26) < reinterpret_cast<signed char>(uno);
         if (!less45) 
             continue;
         eax46 = gfp;
-        fun_8048f04(ecx, eax46, 1, 0x8077c7c, v29, v47, v48, v49, v50, v51, v52, v53, v12);
+        fun_8048f04(ecx, eax46, 1, " * ", v29, v47, v48, v49, v50, v51, v52, v53, v12);
     }
     eax54 = gfp;
-    eax62 = fun_8048f04(ecx, eax54, 1, 0x80757fd, v29, v55, v56, v57, v58, v59, v60, v61, v12);
+    eax62 = fun_8048f04(ecx, eax54, 1, "\n", v29, v55, v56, v57, v58, v59, v60, v61, v12);
     return eax62;
 }
 
@@ -11847,7 +11846,7 @@ void** poly_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
                 less_or_equal67 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
                 if (!less_or_equal67) {
                     eax68 = gfp;
-                    fun_8048f04(ecx, eax68, 1, 0x807277d, 0x8076e54, v51, v69, v70, v71, v72, v73, v74, ebx22);
+                    fun_8048f04(ecx, eax68, 1, "%s\n", "poly_gcd() successful.", v51, v69, v70, v71, v72, v73, v74, ebx22);
                     goto addr_8067058_9;
                 }
             }
@@ -11882,7 +11881,7 @@ void** poly_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
     if (less_or_equal100) 
         goto addr_8067053_2;
     eax101 = gfp;
-    fun_8048f04(ecx, eax101, 1, 0x807277d, 0x8076f4c, v51, v102, v103, v104, v105, v106, v107, ebx22);
+    fun_8048f04(ecx, eax101, 1, "%s\n", "Polynomial GCD found, but larger divide failed in poly_gcd().", v51, v102, v103, v104, v105, v106, v107, ebx22);
     ebx46 = reinterpret_cast<void**>(0);
     goto addr_8067058_9;
 }
@@ -12157,10 +12156,10 @@ void** simpa_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
             fun_80491c4(ecx, a2, eax73, v72, 1, 1, 0, 1, 6, v74, v75, v76, v77, v78);
             less_or_equal79 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
             if (!less_or_equal79) {
-                v13 = reinterpret_cast<void**>(0x8076d10);
-                v72 = reinterpret_cast<void**>(0x807277d);
+                v13 = reinterpret_cast<void**>("Simplify not expanding fully, due to oversized expression.");
+                v72 = reinterpret_cast<void**>("%s\n");
                 eax80 = gfp;
-                fun_8048f04(ecx, eax80, 1, 0x807277d, 0x8076d10, 1, 0, 1, 6, v81, v82, v83, v84);
+                fun_8048f04(ecx, eax80, 1, "%s\n", "Simplify not expanding fully, due to oversized expression.", 1, 0, 1, 6, v81, v82, v83, v84);
             }
             partial_flag = reinterpret_cast<void**>(1);
             uf_tsimp(ecx, a2, a3, v72, v13, 1, 0, 1, 6);
@@ -12170,7 +12169,7 @@ void** simpa_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         less_or_equal85 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (!less_or_equal85) {
             eax86 = gfp;
-            fun_8048f04(ecx, eax86, 1, 0x807277d, 0x8076d4c, 2, 0, 1, 6, v87, v88, v89, v90);
+            fun_8048f04(ecx, eax86, 1, "%s\n", "Simplify result before applying polynomial operations:", 2, 0, 1, 6, v87, v88, v89, v90);
         }
         v91 = reinterpret_cast<void**>(0);
         v92 = reinterpret_cast<void**>(0);
@@ -12297,7 +12296,7 @@ void** compare_rhs(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
     eax10 = *reinterpret_cast<void***>(eax11 * 4 + 0x8082be0);
     eax22 = se_compare(ecx, eax10, edx8, eax10, edx8, ecx, v12, v13, v14, v15, v16, v17, ebx18, esi19, edi20, ebp21, __return_address());
     if (!eax22 || *reinterpret_cast<void***>(ecx)) {
-        error(ecx, 0x8076570, edx8, eax10, edx8, ecx, v23, v24, v25, v26, v27, v28);
+        error(ecx, "Error in compare function or too many terms to compare.", edx8, eax10, edx8, ecx, v23, v24, v25, v26, v27, v28);
         eax29 = reinterpret_cast<void**>(0);
     } else {
         sign_cmp_flag = 1;
@@ -12796,13 +12795,13 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     if (a3 == 1) {
         less_or_equal40 = reinterpret_cast<signed char>(n_tlhs) <= reinterpret_cast<signed char>(0);
         if (less_or_equal40 || (eax41 = n_trhs, reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(eax41) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(eax41 == 0)))) {
-            error(ecx15, 0x80724e0, a6, v28, v42, v43, v44, v45, v46, v47, v48, v49);
+            error(ecx15, "Please enter an equation or a command like \"help\".", a6, v28, v42, v43, v44, v45, v46, v47, v48, v49);
             v50 = 0;
         } else {
             if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(a2) == 1)) {
                 zf51 = *reinterpret_cast<void***>(a2) == 0;
                 if (!zf51 || (!zf51 || __intrinsic())) {
-                    error(ecx15, 0x80724a0, a6, v28, v52, v53, v54, v55, v56, v57, v58, v59);
+                    error(ecx15, "This program will only solve for a single variable or for zero.", a6, v28, v52, v53, v54, v55, v56, v57, v58, v59);
                     v50 = 0;
                 } else {
                     v60 = reinterpret_cast<void**>(1);
@@ -12819,13 +12818,13 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                     v60 = reinterpret_cast<void**>(0);
                     goto addr_804d169_8;
                 } else {
-                    error(ecx15, 0x807267b, eax70, v28, v78, v79, v80, v81, v82, v83, v84, v85);
+                    error(ecx15, "Variable not found.", eax70, v28, v78, v79, v80, v81, v82, v83, v84, v85);
                     v50 = 0;
                 }
             }
         }
     } else {
-        error(ecx15, 0x80724a0, a6, v28, v86, v87, v88, v89, v90, v91, v92, v93);
+        error(ecx15, "This program will only solve for a single variable or for zero.", a6, v28, v86, v87, v88, v89, v90, v91, v92, v93);
         v50 = 0;
     }
     addr_804e680_13:
@@ -13041,10 +13040,10 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                     } else {
                         less_or_equal172 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
                         if (!less_or_equal172) {
-                            v138 = reinterpret_cast<void**>(0x80726d8);
-                            v140 = reinterpret_cast<void**>(0x807277d);
+                            v138 = reinterpret_cast<void**>("Unfactoring...");
+                            v140 = reinterpret_cast<void**>("%s\n");
                             eax173 = gfp;
-                            fun_8048f04(ecx15, eax173, 1, 0x807277d, 0x80726d8, v136, v114, 1, v115, v174, v175, v176, v145);
+                            fun_8048f04(ecx15, eax173, 1, "%s\n", "Unfactoring...", v136, v114, 1, v115, v174, v175, v176, v145);
                         }
                         partial_flag = reinterpret_cast<void**>(0);
                         eax177 = tlhs;
@@ -13336,9 +13335,9 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                     goto addr_804e679_92;
                 less_or_equal246 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
                 if (!less_or_equal246) {
-                    v138 = reinterpret_cast<void**>(0x8072719);
+                    v138 = reinterpret_cast<void**>("Solving for zero...");
                     eax247 = gfp;
-                    fun_8048f04(ecx15, eax247, 1, 0x807277d, 0x8072719, v136, v114, 1, v115, v248, v249, v250, v145);
+                    fun_8048f04(ecx15, eax247, 1, "%s\n", "Solving for zero...", v136, v114, 1, v115, v248, v249, v250, v145);
                 }
                 eax251 = n_tlhs;
                 *reinterpret_cast<void***>(a5) = eax251;
@@ -13477,9 +13476,9 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         v109 = 1;
         less_or_equal298 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (!less_or_equal298) {
-            v138 = reinterpret_cast<void**>(0x807270d);
+            v138 = reinterpret_cast<void**>("Juggling...");
             eax299 = gfp;
-            fun_8048f04(ecx15, eax299, 1, 0x807277d, 0x807270d, v136, v114, 1, v115, v300, v301, v302, v145);
+            fun_8048f04(ecx15, eax299, 1, "%s\n", "Juggling...", v136, v114, 1, v115, v300, v301, v302, v145);
             v109 = 1;
             continue;
         }
@@ -13493,12 +13492,12 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         eax303 = precision;
         v304 = eax303;
         eax305 = gfp;
-        fun_8048f04(ecx15, eax305, 1, 0x80725e8, v304, v136, v114, 1, v115, v306, v307, v308, v145);
+        fun_8048f04(ecx15, eax305, 1, "Raising both equation sides to the power of %.*g and unfactoring...\n", v304, v136, v114, 1, v115, v306, v307, v308, v145);
         __asm__("fld qword [ebx+0x8]");
         __asm__("fstp qword [ebp-0x48]");
         partial_flag = reinterpret_cast<void**>(0);
         eax309 = tlhs;
-        ufactor(ecx15, eax309, 0x80796b8, 0x80725e8, v304, v136, v114, 1, v115);
+        ufactor(ecx15, eax309, 0x80796b8, "Raising both equation sides to the power of %.*g and unfactoring...\n", v304, v136, v114, 1, v115);
         partial_flag = reinterpret_cast<void**>(1);
         eax310 = symblify;
         symb_flag = eax310;
@@ -13693,10 +13692,10 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         goto addr_804d1d6_14;
         addr_804df8a_138:
         eax358 = gfp;
-        fun_8048f04(ecx15, eax358, 1, 0x80726e7, v138, v136, v114, 1, v115, v359, v360, v361, v145);
+        fun_8048f04(ecx15, eax358, 1, "Removing possible solution: \"", v138, v136, v114, 1, v115, v359, v360, v361, v145);
         list_proc(ecx15, ebx214, 1, 0, v138, v136, v114, 1, v115);
         eax362 = gfp;
-        fun_8048f04(ecx15, eax362, 1, 0x8072705, v138, v136, v114, 1, v115, v363, v364, v365, v145);
+        fun_8048f04(ecx15, eax362, 1, " = 0\".\n", v138, v136, v114, 1, v115, v363, v364, v365, v145);
         v50 = 2;
         v108 = 0;
         continue;
@@ -13772,7 +13771,7 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         goto addr_804e680_13;
     } else {
         eax379 = gfp;
-        fun_8048f04(ecx15, eax379, 1, 0x807277d, 0x8072514, v122, v114, 1, v115, v380, v381, v382, v145);
+        fun_8048f04(ecx15, eax379, 1, "%s\n", "Solve variable moved back to RHS, quitting solve routine.", v122, v114, 1, v115, v380, v381, v382, v145);
         v50 = 0;
         goto addr_804e680_13;
     }
@@ -13808,8 +13807,8 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                 eax408 = eax408 + 32;
             }
         } else {
-            error(ecx158, 0x80726ba, v398, v396, v394, v392, v114, 1, v115, v410, v411, v412);
-            fun_8048f34(1, 0x8072550, v396, v394, v392, v114, 1, v115, v413, v414, v415, v145);
+            error(ecx158, "This equation is an identity.", v398, v396, v394, v392, v114, 1, v115, v410, v411, v412);
+            fun_8048f34(1, "That is, the LHS is identical to the RHS.\n", v396, v394, v392, v114, 1, v115, v413, v414, v415, v145);
             v50 = -1;
             goto addr_804e680_13;
         }
@@ -13818,7 +13817,7 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         if (less_or_equal416) 
             goto addr_804e679_92;
         eax417 = gfp;
-        fun_8048f04(ecx158, eax417, 1, 0x807277d, 0x8072514, v136, v114, 1, v115, v418, v419, v420, v145);
+        fun_8048f04(ecx158, eax417, 1, "%s\n", "Solve variable moved back to RHS, quitting solve routine.", v136, v114, 1, v115, v418, v419, v420, v145);
         v50 = 0;
         goto addr_804e680_13;
     }
@@ -13837,12 +13836,12 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
         eax423 = eax423 + 32;
     }
     if (!ecx421) {
-        error(ecx421, 0x80725b0, v398, v396, v394, v392, v114, 1, v115, v425, v426, v427);
+        error(ecx421, "There are no possible values for the solve variable.", v398, v396, v394, v392, v114, 1, v115, v425, v426, v427);
         v50 = -2;
         goto addr_804e680_13;
     } else {
         addr_804db74_307:
-        error(ecx421, 0x807257c, v398, v396, v394, v392, v114, 1, v115, v428, v429, v430);
+        error(ecx421, "This equation is independent of the solve variable.", v398, v396, v394, v392, v114, 1, v115, v428, v429, v430);
         v50 = -2;
         goto addr_804e680_13;
     }
@@ -13853,7 +13852,7 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     less_or_equal431 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
     if (!less_or_equal431) {
         eax432 = gfp;
-        fun_8048f04(ecx15, eax432, 1, 0x807277d, 0x80726a9, v136, v114, 1, v115, v433, v434, v435, v145);
+        fun_8048f04(ecx15, eax432, 1, "%s\n", "Solve completed:", v136, v114, 1, v115, v433, v434, v435, v145);
     }
     addr_804d752_311:
     eax436 = n_trhs;
@@ -13877,7 +13876,7 @@ int32_t solve_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     less_or_equal454 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
     if (!less_or_equal454) {
         eax455 = gfp;
-        fun_8048f04(ecx15, eax455, 1, 0x807277d, 0x807268f, v122, 0, 1, 0, v456, v457, v458, v145);
+        fun_8048f04(ecx15, eax455, 1, "%s\n", "Solve for zero completed:", v122, 0, 1, 0, v456, v457, v458, v145);
         goto addr_804d752_311;
     }
     addr_804e057_289:
@@ -13934,12 +13933,12 @@ void** output_current_directory(void** ecx, void** a2, void** a3, void** a4, voi
         v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffeff4);
         v9 = reinterpret_cast<void**>(1);
         v10 = a2;
-        fun_8048f04(ecx, v10, 1, 0x8075b6f, v13, v14, v15, v16, v17, v18, v19, v20, v21);
+        fun_8048f04(ecx, v10, 1, "directory = %s\n", v13, v14, v15, v16, v17, v18, v19, v20, v21);
         eax12 = reinterpret_cast<void**>(1);
     }
     edx22 = eax7 ^ g14;
     if (edx22) {
-        eax12 = fun_8049184(ecx, v10, v9, 0x8075b6f, v13, v23, v24, v25, v26, v27, v28);
+        eax12 = fun_8049184(ecx, v10, v9, "directory = %s\n", v13, v23, v24, v25, v26, v27, v28);
     }
     return eax12;
 }
@@ -14248,8 +14247,8 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         if (!less_or_equal22) 
             goto addr_8055957_4;
         v13 = reinterpret_cast<void**>(3);
-        v12 = reinterpret_cast<void**>(0x8075b7f);
-        eax26 = strncasecmp(eax21, 0x8075b7f, 3, v23, v24, v25);
+        v12 = reinterpret_cast<void**>("dir");
+        eax26 = strncasecmp(eax21, "dir", 3, v23, v24, v25);
         if (!eax26) 
             goto addr_80558f5_6;
         addr_8055957_4:
@@ -14257,24 +14256,24 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         eax31 = skip_param(eax21, v12, v13, v28, v29, v30);
         a2 = eax31;
         v13 = reinterpret_cast<void**>(5);
-        v12 = reinterpret_cast<void**>(0x8075b9d);
-        eax35 = strncasecmp(eax21, 0x8075b9d, 5, v32, v33, v34);
+        v12 = reinterpret_cast<void**>("debug");
+        eax35 = strncasecmp(eax21, "debug", 5, v32, v33, v34);
         if (!eax35) 
             goto addr_8055990_7;
-        eax39 = strncasecmp(eax21, 0x8075ba3, 7, v36, v37, v38);
+        eax39 = strncasecmp(eax21, "special", 7, v36, v37, v38);
         if (!eax39) 
             goto addr_80559fb_9;
         v13 = reinterpret_cast<void**>(6);
-        v12 = reinterpret_cast<void**>(0x8075bab);
-        eax43 = strncasecmp(eax21, 0x8075bab, 6, v40, v41, v42);
+        v12 = reinterpret_cast<void**>("columns");
+        eax43 = strncasecmp(eax21, "columns", 6, v40, v41, v42);
         if (!eax43) 
             goto addr_8055a4b_11;
         v13 = reinterpret_cast<void**>(4);
-        v12 = reinterpret_cast<void**>(0x8075bb3);
-        eax47 = strncasecmp(eax21, 0x8075bb3, 4, v44, v45, v46);
+        v12 = reinterpret_cast<void**>("wide");
+        eax47 = strncasecmp(eax21, "wide", 4, v44, v45, v46);
         if (!eax47) {
             if (eax27) {
-                get_screen_size(eax21, 0x8075bb3, 4, v48, v49, v50, v51);
+                get_screen_size(eax21, "wide", 4, v48, v49, v50, v51);
                 continue;
             } else {
                 screen_columns = reinterpret_cast<void**>(0);
@@ -14283,104 +14282,104 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
             }
         }
         v13 = reinterpret_cast<void**>(4);
-        eax55 = strncasecmp(eax21, 0x8075bb8, 4, v52, v53, v54);
+        eax55 = strncasecmp(eax21, "precision", 4, v52, v53, v54);
         if (!eax55) 
             goto addr_8055afb_17;
-        v12 = reinterpret_cast<void**>(0x8075bc2);
-        eax59 = strcmp_tospace(eax21, 0x8075bc2, 4, v56, v57, v58);
+        v12 = reinterpret_cast<void**>("auto");
+        eax59 = strcmp_tospace(eax21, "auto", 4, v56, v57, v58);
         if (!eax59) 
             goto addr_8055b50_19;
         v13 = reinterpret_cast<void**>(9);
-        v12 = reinterpret_cast<void**>(0x8075bc7);
-        eax63 = strncasecmp(eax21, 0x8075bc7, 9, v60, v61, v62);
+        v12 = reinterpret_cast<void**>("autosolve");
+        eax63 = strncasecmp(eax21, "autosolve", 9, v60, v61, v62);
         if (!eax63) {
             autosolve = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(8);
-        v12 = reinterpret_cast<void**>(0x8075bd1);
-        eax67 = strncasecmp(eax21, 0x8075bd1, 8, v64, v65, v66);
+        v12 = reinterpret_cast<void**>("autocalc");
+        eax67 = strncasecmp(eax21, "autocalc", 8, v64, v65, v66);
         if (!eax67) {
             autocalc = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(10);
-        v12 = reinterpret_cast<void**>(0x8075bda);
-        eax71 = strncasecmp(eax21, 0x8075bda, 10, v68, v69, v70);
+        v12 = reinterpret_cast<void**>("autoselect");
+        eax71 = strncasecmp(eax21, "autoselect", 10, v68, v69, v70);
         if (!eax71) {
             autoselect = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(4);
-        v12 = reinterpret_cast<void**>(0x8075be5);
-        eax75 = strncasecmp(eax21, 0x8075be5, 4, v72, v73, v74);
+        v12 = reinterpret_cast<void**>("case");
+        eax75 = strncasecmp(eax21, "case", 4, v72, v73, v74);
         if (!eax75) {
             case_sensitive_flag = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(7);
-        v12 = reinterpret_cast<void**>(0x8075bea);
-        eax79 = strncasecmp(eax21, 0x8075bea, 7, v76, v77, v78);
+        v12 = reinterpret_cast<void**>("display2d");
+        eax79 = strncasecmp(eax21, "display2d", 7, v76, v77, v78);
         if (!eax79) {
             display2d = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(6);
-        v12 = reinterpret_cast<void**>(0x8075bf4);
-        eax83 = strncasecmp(eax21, 0x8075bf4, 6, v80, v81, v82);
+        v12 = reinterpret_cast<void**>("prompt");
+        eax83 = strncasecmp(eax21, "prompt", 6, v80, v81, v82);
         if (!eax83) {
             quiet_mode = eax27;
             continue;
         }
         v13 = reinterpret_cast<void**>(8);
-        v12 = reinterpret_cast<void**>(0x8075bfb);
-        eax87 = strncasecmp(eax21, 0x8075bfb, 8, v84, v85, v86);
+        v12 = reinterpret_cast<void**>("preserve");
+        eax87 = strncasecmp(eax21, "preserve", 8, v84, v85, v86);
         if (!eax87) {
             preserve_surds = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(11);
-        v12 = reinterpret_cast<void**>(0x8075c04);
-        eax91 = strncasecmp(eax21, 0x8075c04, 11, v88, v89, v90);
+        v12 = reinterpret_cast<void**>("rationalize");
+        eax91 = strncasecmp(eax21, "rationalize", 11, v88, v89, v90);
         if (!eax91) {
             rationalize_denominators = reinterpret_cast<uint1_t>(eax27 == 0);
             continue;
         }
         v13 = reinterpret_cast<void**>(3);
-        v12 = reinterpret_cast<void**>(0x8075c10);
-        eax95 = strncasecmp(eax21, 0x8075c10, 3, v92, v93, v94);
+        v12 = reinterpret_cast<void**>("modulus_mode");
+        eax95 = strncasecmp(eax21, "modulus_mode", 3, v92, v93, v94);
         if (!eax95) 
             goto addr_8055cf5_37;
         v13 = reinterpret_cast<void**>(5);
-        v12 = reinterpret_cast<void**>(0x8075c33);
-        eax99 = strncasecmp(eax21, 0x8075c33, 5, v96, v97, v98);
+        v12 = reinterpret_cast<void**>("color");
+        eax99 = strncasecmp(eax21, "color", 5, v96, v97, v98);
         if (!eax99) 
             goto addr_8055dc3_39;
         v13 = reinterpret_cast<void**>(4);
-        v12 = reinterpret_cast<void**>(0x8071994);
-        eax103 = strncasecmp(eax21, 0x8071994, 4, v100, v101, v102);
+        v12 = reinterpret_cast<void**>("bold");
+        eax103 = strncasecmp(eax21, "bold", 4, v100, v101, v102);
         if (!eax103) {
-            reset_attr(eax21, 0x8071994, 4, v104);
+            reset_attr(eax21, "bold", 4, v104);
             bold_colors = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax27 == 0))));
             continue;
         }
         v13 = reinterpret_cast<void**>(7);
-        v12 = reinterpret_cast<void**>(0x8075c39);
-        eax108 = strncasecmp(eax21, 0x8075c39, 7, v105, v106, v107);
+        v12 = reinterpret_cast<void**>("finance");
+        eax108 = strncasecmp(eax21, "finance", 7, v105, v106, v107);
         if (!eax108) 
             goto addr_8055e29_43;
         v13 = reinterpret_cast<void**>(6);
-        v12 = reinterpret_cast<void**>(0x8075c5e);
-        eax112 = strncasecmp(eax21, 0x8075c5e, 6, v109, v110, v111);
+        v12 = reinterpret_cast<void**>("factor_integers");
+        eax112 = strncasecmp(eax21, "factor_integers", 6, v109, v110, v111);
         if (!eax112) 
             goto addr_8055ebc_45;
         v13 = reinterpret_cast<void**>(5);
-        v12 = reinterpret_cast<void**>(0x8075c6e);
-        eax116 = strncasecmp(eax21, 0x8075c6e, 5, v113, v114, v115);
+        v12 = reinterpret_cast<void**>("right_associative_power");
+        eax116 = strncasecmp(eax21, "right_associative_power", 5, v113, v114, v115);
         if (eax116) {
             v13 = reinterpret_cast<void**>(6);
-            v12 = reinterpret_cast<void**>(0x8075c86);
-            eax120 = strncasecmp(eax21, 0x8075c86, 6, v117, v118, v119);
+            v12 = reinterpret_cast<void**>("negate_highest_precedence");
+            eax120 = strncasecmp(eax21, "negate_highest_precedence", 6, v117, v118, v119);
             if (eax120) 
                 goto addr_8055f2a_48;
             negate_highest_precedence = reinterpret_cast<uint1_t>(eax27 == 0);
@@ -14393,7 +14392,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         factor_int_flag = reinterpret_cast<uint1_t>(eax27 == 0);
         continue;
         addr_8055dc3_39:
-        reset_attr(eax21, 0x8075c33, 5, v121);
+        reset_attr(eax21, "color", 5, v121);
         color_flag = reinterpret_cast<uint1_t>(eax27 == 0);
         continue;
         addr_8055b50_19:
@@ -14406,19 +14405,19 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     addr_8055fcd_52:
     return eax39;
     addr_80558f5_6:
-    eax126 = skip_param(eax21, 0x8075b7f, 3, v123, v124, v125);
+    eax126 = skip_param(eax21, "dir", 3, v123, v124, v125);
     v127 = eax126;
-    if (!*reinterpret_cast<void***>(eax126) && (eax132 = fun_8048f84(0x8071918, 0x8075b7f, 3, v128, v129, v130, v131), v133 = eax132, !!eax132)) {
+    if (!*reinterpret_cast<void***>(eax126) && (eax132 = fun_8048f84("HOME", "dir", 3, v128, v129, v130, v131), v133 = eax132, !!eax132)) {
         v127 = eax132;
     }
-    eax134 = fun_8049124(v127, 0x8075b7f, 3);
+    eax134 = fun_8049124(v127, "dir", 3);
     if (!eax134) {
         eax135 = stdout;
-        output_current_directory(ecx, eax135, 0x8075b7f, 3, v136);
+        output_current_directory(ecx, eax135, "dir", 3, v136);
         eax39 = 1;
         goto addr_8055fcd_52;
     } else {
-        error(ecx, 0x8075b83, 0x8075b7f, 3, v137, v138, v139, v140, v133, v141, v142, v143);
+        error(ecx, "Error changing directory.", "dir", 3, v137, v138, v139, v140, v133, v141, v142, v143);
         eax39 = 0;
         goto addr_8055fcd_52;
     }
@@ -14431,7 +14430,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
             debug_level = eax144;
             goto addr_8055fba_59;
         } else {
-            error(ecx, 0x807667c, v12, 5, v146, v147, v148, v149, v150, v151, v152, v153);
+            error(ecx, "Please specify the debug level number.", v12, 5, v146, v147, v148, v149, v150, v151, v152, v153);
             eax39 = 0;
             goto addr_8055fcd_52;
         }
@@ -14441,7 +14440,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     }
     addr_80559fb_9:
     if (!eax27) {
-        my_strlcpy(0x8079180, eax31, 0x100, v154, v155, v156, v157, v158, v159, v160);
+        my_strlcpy("'\\", eax31, 0x100, v154, v155, v156, v157, v158, v159, v160);
         eax39 = 1;
         goto addr_8055fcd_52;
     } else {
@@ -14454,7 +14453,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffffe4);
         eax161 = decstrtol(eax31, v12, 6);
         if (reinterpret_cast<signed char>(eax161) < reinterpret_cast<signed char>(0) || a2 == v162) {
-            error(ecx, 0x80766a4, v12, 6, v163, v164, v165, v166, v167, v168, v169, v170);
+            error(ecx, "Please specify how wide the screen is; 0 = infinite columns.", v12, 6, v163, v164, v165, v166, v167, v168, v169, v170);
             eax39 = 0;
             goto addr_8055fcd_52;
         } else {
@@ -14470,7 +14469,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     v171 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffffe4);
     eax172 = decstrtol(eax31, v171, 4);
     if (reinterpret_cast<unsigned char>(eax172) > reinterpret_cast<unsigned char>(14) || a2 == v173) {
-        error(ecx, 0x80766e4, v171, 4, v174, v175, v176, v177, v178, v179, v180, v181);
+        error(ecx, "Please specify a display precision between 0 and 14 digits.", v171, 4, v174, v175, v176, v177, v178, v179, v180, v181);
         eax39 = 0;
         goto addr_8055fcd_52;
     } else {
@@ -14483,12 +14482,12 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffffe4);
         eax182 = decstrtol(a2, v12, 3);
         if (a2 == v183 || (reinterpret_cast<signed char>(eax182) < reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(eax182) > reinterpret_cast<signed char>(2))) {
-            error(ecx, 0x8076720, v12, 3, v184, v185, v186, v187, v188, v189, v190, v191);
-            fun_8048f34(1, 0x8076758, 3, v192, v193, v194, v195, v196, v197, v198, v199, v10);
-            fun_8048f34(1, 0x807679c, 3, v200, v201, v202, v203, v204, v205, v206, v207, v10);
-            fun_8048f34(1, 0x80767dc, 3, v208, v209, v210, v211, v212, v213, v214, v215, v10);
+            error(ecx, "Please specify the modulus mode number (0, 1, or 2).", v12, 3, v184, v185, v186, v187, v188, v189, v190, v191);
+            fun_8048f34(1, "0 means modulus operator (%%) result has same sign as dividend,\n", 3, v192, v193, v194, v195, v196, v197, v198, v199, v10);
+            fun_8048f34(1, "1 means computed result always has same sign as the divisor,\n", 3, v200, v201, v202, v203, v204, v205, v206, v207, v10);
+            fun_8048f34(1, "2 means the result is always positive or zero.\n", 3, v208, v209, v210, v211, v212, v213, v214, v215, v10);
             eax216 = modulus_mode;
-            fun_8048f34(1, 0x8075c1d, eax216, v217, v218, v219, v220, v221, v222, v223, v224, v10);
+            fun_8048f34(1, "Current value is %d.\n", eax216, v217, v218, v219, v220, v221, v222, v223, v224, v10);
             eax39 = 0;
             goto addr_8055fcd_52;
         } else {
@@ -14512,7 +14511,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                 finance_option = eax225;
                 goto addr_8055fba_59;
             } else {
-                error(ecx, 0x8075c41, v12, 7, v227, v228, v229, v230, v231, v232, v233, v234);
+                error(ecx, "Minimum is 0, maximum is 14.", v12, 7, v227, v228, v229, v230, v231, v232, v233, v234);
                 eax39 = 0;
                 goto addr_8055fcd_52;
             }
@@ -14520,7 +14519,7 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
             eax225 = reinterpret_cast<void**>(2);
             if (!*reinterpret_cast<void***>(ecx)) 
                 goto addr_8055e93_76;
-            error(ecx, 0x807680c, v12, 7, v235, v236, v237, v238, v239, v240, v241, v242);
+            error(ecx, "Please specify the number of digits.", v12, 7, v235, v236, v237, v238, v239, v240, v241, v242);
             eax39 = 0;
             goto addr_8055fcd_52;
         }
@@ -14530,15 +14529,15 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     }
     addr_8055f2a_48:
     less_or_equal243 = reinterpret_cast<signed char>(security_level) <= reinterpret_cast<signed char>(1);
-    if (!less_or_equal243 || (v12 = reinterpret_cast<void**>(0x8072be2), eax247 = strcmp_tospace(eax21, 0x8072be2, 6, v244, v245, v246), !!eax247)) {
-        error(ecx, 0x8075ca0, v12, 6, v248, v249, v250, v251, v252, v253, v254, v255);
+    if (!less_or_equal243 || (v12 = reinterpret_cast<void**>("save"), eax247 = strcmp_tospace(eax21, "save", 6, v244, v245, v246), !!eax247)) {
+        error(ecx, "Unknown set option.", v12, 6, v248, v249, v250, v251, v252, v253, v254, v255);
         eax39 = 0;
         goto addr_8055fcd_52;
     } else {
         zf256 = rc_file == 0;
         if (!zf256) {
             if (!eax27) {
-                eax258 = save_set_options(ecx, eax21, 0x8072be2, 6, v257);
+                eax258 = save_set_options(ecx, eax21, "save", 6, v257);
                 eax39 = 0;
                 if (eax258) {
                     addr_8055fba_59:
@@ -14549,16 +14548,16 @@ uint32_t set_options(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                     goto addr_8055fcd_52;
                 }
             } else {
-                eax263 = fun_80490f4(0x8082f40, 0x8072be2, 6);
+                eax263 = fun_80490f4(0x8082f40, "save", 6);
                 if (!eax263) {
                     v13 = reinterpret_cast<void**>(0x8082f40);
-                    v12 = reinterpret_cast<void**>(0x8076834);
-                    fun_8048f34(1, 0x8076834, 0x8082f40, v264, v265, v266, v267, v268, v269, v270, v271, v10);
+                    v12 = reinterpret_cast<void**>("Set options startup file \"%s\" removed.\n");
+                    fun_8048f34(1, "Set options startup file \"%s\" removed.\n", 0x8082f40, v264, v265, v266, v267, v268, v269, v270, v271, v10);
                     goto addr_8055fba_59;
                 }
             }
         } else {
-            error(ecx, 0x8076034, 0x8072be2, 6, v272, v273, v274, v275, v276, v277, v278, v279);
+            error(ecx, "Set options startup file name not set.", "save", 6, v272, v273, v274, v275, v276, v277, v278, v279);
             eax39 = 0;
             goto addr_8055fcd_52;
         }
@@ -14623,74 +14622,74 @@ void** output_options(void** ecx, void** a2, void** a3, void** a4, void** a5) {
 
     if (a2) {
         eax6 = precision;
-        fun_8048f04(ecx, a2, 1, 0x80756d5, eax6, v7, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "precision = %d digits\n", eax6, v7, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf10 = autosolve == 0;
         if (zf10) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax6, v11, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax6, v11, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x80756f0, eax6, v12, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "autosolve\n", eax6, v12, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf13 = autocalc == 0;
         if (zf13) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax6, v14, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax6, v14, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x80756fb, eax6, v15, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "autocalc\n", eax6, v15, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf16 = autoselect == 0;
         if (zf16) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax6, v17, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax6, v17, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075705, eax6, v18, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "autoselect\n", eax6, v18, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         eax19 = debug_level;
-        fun_8048f04(ecx, a2, 1, 0x8075711, eax19, v20, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "debug_level = %d\n", eax19, v20, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf21 = case_sensitive_flag == 0;
         if (zf21) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v22, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v22, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075723, eax19, v23, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "case_sensitive\n", eax19, v23, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf24 = color_flag == 0;
         if (zf24) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v25, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v25, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075733, eax19, v26, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "color\n", eax19, v26, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf27 = bold_colors == 0;
         if (zf27) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v28, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v28, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x807573a, eax19, v29, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "bold_colors\n", eax19, v29, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf30 = display2d == 0;
         if (zf30) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v31, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v31, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075747, eax19, v32, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "display2d\n", eax19, v32, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf33 = preserve_surds == 0;
         if (zf33) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v34, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v34, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075752, eax19, v35, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "preserve_surds\n", eax19, v35, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf36 = rationalize_denominators == 0;
         if (zf36) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax19, v37, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax19, v37, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x8075762, eax19, v38, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "rationalize_denominators\n", eax19, v38, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         eax39 = modulus_mode;
-        fun_8048f04(ecx, a2, 1, 0x807577c, eax39, v40, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "modulus_mode = %d\n", eax39, v40, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         eax41 = finance_option;
-        fun_8048f04(ecx, a2, 1, 0x807578f, eax41, v42, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "finance = %d\n", eax41, v42, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf43 = factor_int_flag == 0;
         if (zf43) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax41, v44, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax41, v44, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x807579d, eax41, v45, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "factor_integers\n", eax41, v45, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf46 = right_associative_power == 0;
         if (zf46) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax41, v47, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax41, v47, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x80757ae, eax41, v48, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "right_associative_power\n", eax41, v48, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         zf49 = negate_highest_precedence == 0;
         if (zf49) {
-            fun_8048f04(ecx, a2, 1, 0x80756ec, eax41, v50, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+            fun_8048f04(ecx, a2, 1, "no ", eax41, v50, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
         }
-        fun_8048f04(ecx, a2, 1, 0x80757c7, eax41, v51, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
-        eax53 = fun_8048f04(ecx, a2, 1, 0x8076010, 0x8079180, v52, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, a2, 1, "negate_highest_precedence\n", eax41, v51, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
+        eax53 = fun_8048f04(ecx, a2, 1, "special_variable_characters = %s\n", "'\\", v52, ebx8, ebp9, __return_address(), a2, a3, a4, a5);
     }
     return eax53;
 }
@@ -14786,7 +14785,7 @@ void** list_equation(void** ecx, void** a2, void** a3) {
                 *reinterpret_cast<int16_t*>(reinterpret_cast<unsigned char>(esi6) + ~ecx24 - 1) = 59;
             }
         } else {
-            error(ecx, 0x8077c40, v8, 0, v7, v25, v26, v27, ebx28, esi29, edi30, ebp31);
+            error(ecx, "Out of memory (can't malloc(3)).", v8, 0, v7, v25, v26, v27, ebx28, esi29, edi30, ebp31);
         }
     }
     return esi6;
@@ -14811,7 +14810,7 @@ int32_t push_en(void** ecx, void** a2, void** a3, void** a4) {
 
 struct s53 {
     signed char[65] pad65;
-    void** f65;
+    void** f41;
 };
 
 void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8) {
@@ -14985,30 +14984,30 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         if (!*reinterpret_cast<signed char*>(&eax25)) {
             addr_80507fe_5:
             *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp9) + reinterpret_cast<uint32_t>(ebx26) - 0x81) = 0;
-            v27 = reinterpret_cast<void**>(0x80751b7);
-            eax28 = strcasecmp(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, 0x80751b7);
+            v27 = reinterpret_cast<void**>("inf");
+            eax28 = strcasecmp(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, "inf");
             if (eax28) {
-                v27 = reinterpret_cast<void**>(0x80751bb);
-                eax29 = strcasecmp(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, 0x80751bb);
+                v27 = reinterpret_cast<void**>("nan");
+                eax29 = strcasecmp(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, "nan");
                 if (eax29) {
-                    v27 = reinterpret_cast<void**>(0x80751bf);
+                    v27 = reinterpret_cast<void**>("sign");
                     v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
-                    eax31 = reinterpret_cast<int32_t>(v16(v30, 0x80751bf));
+                    eax31 = reinterpret_cast<int32_t>(v16(v30, "sign"));
                     if (eax31) {
                         v32 = reinterpret_cast<void**>(2);
-                        v27 = reinterpret_cast<void**>(0x80751c8);
+                        v27 = reinterpret_cast<void**>("i#");
                         v30 = edi11;
-                        eax36 = strncasecmp(v30, 0x80751c8, 2, v33, v34, v35);
+                        eax36 = strncasecmp(v30, "i#", 2, v33, v34, v35);
                         if (eax36) {
                             v32 = reinterpret_cast<void**>(2);
-                            v27 = reinterpret_cast<void**>(0x80751c4);
+                            v27 = reinterpret_cast<void**>("e#");
                             v30 = edi11;
-                            eax40 = strncasecmp(v30, 0x80751c4, 2, v37, v38, v39);
+                            eax40 = strncasecmp(v30, "e#", 2, v37, v38, v39);
                             if (eax40) {
                                 v32 = reinterpret_cast<void**>(3);
-                                v27 = reinterpret_cast<void**>(0x80751c7);
+                                v27 = reinterpret_cast<void**>("pi#");
                                 v30 = edi11;
-                                eax44 = strncasecmp(v30, 0x80751c7, 3, v41, v42, v43);
+                                eax44 = strncasecmp(v30, "pi#", 3, v41, v42, v43);
                                 if (eax44) {
                                     v24 = edi11;
                                     eax45 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi11));
@@ -15016,22 +15015,22 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
                                     if (!*reinterpret_cast<signed char*>(&eax45)) {
                                         addr_80509ae_12:
                                         *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp9) + reinterpret_cast<uint32_t>(ebx46) - 0x81) = 0;
-                                        v27 = reinterpret_cast<void**>(0x8077991);
+                                        v27 = reinterpret_cast<void**>("i");
                                         v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
-                                        eax47 = reinterpret_cast<int32_t>(v16(v30, 0x8077991, 3));
+                                        eax47 = reinterpret_cast<int32_t>(v16(v30, "i", 3));
                                         if (eax47) {
-                                            v27 = reinterpret_cast<void**>(0x80779ab);
+                                            v27 = reinterpret_cast<void**>("e");
                                             v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
-                                            eax48 = reinterpret_cast<int32_t>(v16(v30, 0x80779ab, 3));
+                                            eax48 = reinterpret_cast<int32_t>(v16(v30, "e", 3));
                                             if (eax48) {
-                                                v27 = reinterpret_cast<void**>(0x80779c0);
+                                                v27 = reinterpret_cast<void**>("pi");
                                                 v30 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
-                                                eax49 = reinterpret_cast<int32_t>(v16(v30, 0x80779c0, 3));
+                                                eax49 = reinterpret_cast<int32_t>(v16(v30, "pi", 3));
                                                 if (eax49) {
-                                                    eax50 = is_all(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, 0x80779c0, 3);
+                                                    eax50 = is_all(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f, "pi", 3);
                                                     if (eax50) {
-                                                        v30 = reinterpret_cast<void**>(0x80752a0);
-                                                        error(ecx, 0x80752a0, 0x80779c0, 3, v51, v52, v53, v10, v16, v24, v54, v55);
+                                                        v30 = reinterpret_cast<void**>("\"all\" is a reserved word and may not be used as a variable name.");
+                                                        error(ecx, "\"all\" is a reserved word and may not be used as a variable name.", "pi", 3, v51, v52, v53, v10, v16, v24, v54, v55);
                                                         eax56 = reinterpret_cast<void**>(0);
                                                     } else {
                                                         eax57 = var_names;
@@ -15069,10 +15068,10 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
                                         esi59 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
                                         do {
                                             v61 = reinterpret_cast<void**>(static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax45)));
-                                            eax65 = isvarchar(v61, 0x80751c7, 3, v62, v63, v64);
+                                            eax65 = isvarchar(v61, "pi#", 3, v62, v63, v64);
                                             if (eax65) 
                                                 goto addr_8050974_30;
-                                            eax70 = fun_8049084(v61, 0x80751c7, 3, v66, v67, v68, v10, v16, v24, v69);
+                                            eax70 = fun_8049084(v61, "pi#", 3, v66, v67, v68, v10, v16, v24, v69);
                                             if (!(*reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(eax70) + reinterpret_cast<signed char>(*reinterpret_cast<void***>(v24)) * 2) + 1) & 8)) 
                                                 goto addr_80509ae_12;
                                             addr_8050974_30:
@@ -15100,7 +15099,7 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
                             eax56 = edi11 + 2;
                         }
                     } else {
-                        eax78 = fun_8049084(v30, 0x80751bf, v73, v74, v75, v76, v10, v16, v24, v77);
+                        eax78 = fun_8049084(v30, "sign", v73, v74, v75, v76, v10, v16, v24, v77);
                         ecx = *reinterpret_cast<void***>(eax78);
                         eax79 = reinterpret_cast<void**>(4);
                         if (!(*reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(ecx + reinterpret_cast<signed char>(*reinterpret_cast<void***>(v24)) * 2) + 1) & 8)) {
@@ -15118,13 +15117,13 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
                         }
                     }
                 } else {
-                    v30 = reinterpret_cast<void**>(0x8075270);
-                    error(ecx, 0x8075270, 0x80751bb, v81, v82, v83, v84, v10, v16, v24, v85, v86);
+                    v30 = reinterpret_cast<void**>("NaN (Not a Number) cannot be directly entered.");
+                    error(ecx, "NaN (Not a Number) cannot be directly entered.", "nan", v81, v82, v83, v84, v10, v16, v24, v85, v86);
                     eax56 = reinterpret_cast<void**>(0);
                 }
             } else {
-                v30 = reinterpret_cast<void**>(0x8075248);
-                error(ecx, 0x8075248, 0x80751b7, v87, v88, v89, v90, v10, v16, v24, v91, v92);
+                v30 = reinterpret_cast<void**>("Infinity cannot be used as a variable.");
+                error(ecx, "Infinity cannot be used as a variable.", "inf", v87, v88, v89, v90, v10, v16, v24, v91, v92);
                 eax56 = reinterpret_cast<void**>(0);
             }
         } else {
@@ -15145,8 +15144,8 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
             goto addr_80507fe_5;
         }
     } else {
-        v30 = reinterpret_cast<void**>(0x807518d);
-        error(ecx, 0x807518d, v101, v102, v103, v104, v105, v10, v16, v106, v107, v108);
+        v30 = reinterpret_cast<void**>("Invalid variable.");
+        error(ecx, "Invalid variable.", v101, v102, v103, v104, v105, v10, v16, v106, v107, v108);
         eax56 = reinterpret_cast<void**>(0);
     }
     addr_8050bb1_51:
@@ -15156,7 +15155,7 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     }
     return eax56;
     addr_8050aa3_20:
-    eax114 = reinterpret_cast<void**>(&ebx58->f65);
+    eax114 = reinterpret_cast<void**>(&ebx58->f41);
     if (eax114) {
         addr_8050b51_55:
         *reinterpret_cast<void***>(v10) = eax114;
@@ -15177,10 +15176,10 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         if (!eax116) 
             goto addr_8050b17_61;
     } else {
-        error(ecx, 0x80752e4, v27, 3, v117, v118, v119, v10, v16, v24, v120, v121);
-        v27 = reinterpret_cast<void**>(0x8075310);
+        error(ecx, "Maximum number of variable names reached.", v27, 3, v117, v118, v119, v10, v16, v24, v120, v121);
+        v27 = reinterpret_cast<void**>("Please restart or use \"clear all\".\n");
         v30 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8075310, 3, v122, v123, v124, v10, v16, v24, v125, v126, v127);
+        fun_8048f34(1, "Please restart or use \"clear all\".\n", 3, v122, v123, v124, v10, v16, v24, v125, v126, v127);
         eax56 = reinterpret_cast<void**>(0);
         goto addr_8050bb1_51;
     }
@@ -15188,17 +15187,17 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffff7f);
     v30 = eax116;
     fun_80491c4(ecx, v30, v27, v32, v128, v129, v130, v10, v16, v24, v131, v132, v133, v134);
-    eax114 = reinterpret_cast<void**>(&ebx58->f65);
+    eax114 = reinterpret_cast<void**>(&ebx58->f41);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebx58) * 4 + 0x8079ae4) = 0;
     goto addr_8050b51_55;
     addr_8050b17_61:
-    v30 = reinterpret_cast<void**>(0x8075334);
-    error(ecx, 0x8075334, v27, 3, v135, v136, v137, v10, v16, v24, v138, v139);
+    v30 = reinterpret_cast<void**>("Out of memory (can't malloc(3) variable name).");
+    error(ecx, "Out of memory (can't malloc(3) variable name).", v27, 3, v135, v136, v137, v10, v16, v24, v138, v139);
     eax56 = reinterpret_cast<void**>(0);
     goto addr_8050bb1_51;
     addr_8050979_32:
-    v30 = reinterpret_cast<void**>(0x807519f);
-    error(ecx, 0x807519f, 0x80751c7, 3, v140, v141, v142, v10, v16, v24, v143, v144);
+    v30 = reinterpret_cast<void**>("Variable name too long.");
+    error(ecx, "Variable name too long.", "pi#", 3, v140, v141, v142, v10, v16, v24, v143, v144);
     eax56 = reinterpret_cast<void**>(0);
     goto addr_8050bb1_51;
     addr_8050b93_41:
@@ -15207,13 +15206,13 @@ void** parse_var(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     eax79 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(eax145) << 14) + 4);
     goto addr_8050ba3_38;
     addr_8050b80_42:
-    v30 = reinterpret_cast<void**>(0x8075364);
-    error(ecx, 0x8075364, v27, 10, v146, v147, v148, v10, v16, v24, v149, v150);
+    v30 = reinterpret_cast<void**>("Maximum subscript exceeded in special variable name.");
+    error(ecx, "Maximum subscript exceeded in special variable name.", v27, 10, v146, v147, v148, v10, v16, v24, v149, v150);
     eax56 = reinterpret_cast<void**>(0);
     goto addr_8050bb1_51;
     addr_80507c9_48:
-    v30 = reinterpret_cast<void**>(0x807519f);
-    error(ecx, 0x807519f, v151, v152, v153, v154, v155, v10, v16, v24, v156, v157);
+    v30 = reinterpret_cast<void**>("Variable name too long.");
+    error(ecx, "Variable name too long.", v151, v152, v153, v154, v155, v10, v16, v24, v156, v157);
     eax56 = reinterpret_cast<void**>(0);
     goto addr_8050bb1_51;
 }
@@ -15587,14 +15586,14 @@ void** opt_es(void** ecx, void** a2, void** a3, void** a4) {
     v45 = esi21;
     eax46 = last_temp_var;
     v47 = eax46;
-    v29 = reinterpret_cast<void**>(0x8075ced);
+    v29 = reinterpret_cast<void**>("temp%.0d");
     v30 = reinterpret_cast<void**>(100);
     v31 = reinterpret_cast<void**>(1);
     ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffff80);
-    fun_8049224(ecx, ecx, 100, 1, 100, 0x8075ced, v47, v48);
+    fun_8049224(ecx, ecx, 100, 1, 100, "temp%.0d", v47, v48);
     v32 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffff80);
     v33 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffff78);
-    eax50 = parse_var(ecx, v33, v32, 1, 100, 0x8075ced, v47, v49);
+    eax50 = parse_var(ecx, v33, v32, 1, 100, "temp%.0d", v47, v49);
     if (!eax50) {
         addr_8056687_2:
         eax51 = reinterpret_cast<void**>(0);
@@ -15606,23 +15605,23 @@ void** opt_es(void** ecx, void** a2, void** a3, void** a4) {
             eax54 = edx53;
         }
         last_temp_var = eax54;
-        eax55 = next_espace(ecx, v33, v32, 1, 100, 0x8075ced, v47);
+        eax55 = next_espace(ecx, v33, v32, 1, 100, "temp%.0d", v47);
         v56 = eax55;
         (*reinterpret_cast<struct s57**>(0x8082a40 + reinterpret_cast<unsigned char>(eax55) * 4))->f4 = 1;
         (*reinterpret_cast<struct s57**>(0x8082a40 + reinterpret_cast<unsigned char>(eax55) * 4))->f0 = 1;
         (*reinterpret_cast<struct s57**>(0x8082a40 + reinterpret_cast<unsigned char>(eax55) * 4))->f8 = v57;
         *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax55) * 4 + 0x8082d80) = 1;
         v58 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax55) * 4 + 0x8082be0);
-        fun_80491c4(eax55, v58, v20, reinterpret_cast<unsigned char>(v19) << 4, 100, 0x8075ced, v47, v59, v60, v61, v45, v13, v15, v56);
+        fun_80491c4(eax55, v58, v20, reinterpret_cast<unsigned char>(v19) << 4, 100, "temp%.0d", v47, v59, v60, v61, v45, v13, v15, v56);
         *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v56) * 4 + 0x8079940) = v19;
         if (!v62) {
             v63 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v8)) - reinterpret_cast<unsigned char>(ebx25) << 4);
-            fun_80491c4(v19, (reinterpret_cast<unsigned char>(edi24) << 4) + reinterpret_cast<unsigned char>(v6), (reinterpret_cast<unsigned char>(ebx25) << 4) + reinterpret_cast<unsigned char>(v6), v63, 100, 0x8075ced, v47, v64, v65, v66, v45, v13, v15, v56);
+            fun_80491c4(v19, (reinterpret_cast<unsigned char>(edi24) << 4) + reinterpret_cast<unsigned char>(v6), (reinterpret_cast<unsigned char>(ebx25) << 4) + reinterpret_cast<unsigned char>(v6), v63, 100, "temp%.0d", v47, v64, v65, v66, v45, v13, v15, v56);
             ecx67 = v8;
             *reinterpret_cast<void***>(ecx67) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx67)) + (reinterpret_cast<unsigned char>(edi24) - reinterpret_cast<unsigned char>(ebx25)));
         } else {
             v68 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v8)) - reinterpret_cast<unsigned char>(ebx25) << 4);
-            fun_80491c4(v19, (reinterpret_cast<unsigned char>(edi24) << 4) + reinterpret_cast<unsigned char>(v6) + 32, (reinterpret_cast<unsigned char>(ebx25) << 4) + reinterpret_cast<unsigned char>(v6), v68, 100, 0x8075ced, v47, v69, v70, v71, v45, v13, v15, v56);
+            fun_80491c4(v19, (reinterpret_cast<unsigned char>(edi24) << 4) + reinterpret_cast<unsigned char>(v6) + 32, (reinterpret_cast<unsigned char>(ebx25) << 4) + reinterpret_cast<unsigned char>(v6), v68, 100, "temp%.0d", v47, v69, v70, v71, v45, v13, v15, v56);
             *reinterpret_cast<void***>(v8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edi24) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v8)) + 2 - reinterpret_cast<unsigned char>(ebx25));
             esi21 = v45 + 1;
             ecx67 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(v27) << 4) + reinterpret_cast<unsigned char>(v6));
@@ -15644,19 +15643,19 @@ void** opt_es(void** ecx, void** a2, void** a3, void** a4) {
         v31 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v8)) - reinterpret_cast<unsigned char>(v16) << 4);
         v75 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(v16) << 4) + reinterpret_cast<unsigned char>(v6));
         v76 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(v15) << 4) + reinterpret_cast<unsigned char>(v6));
-        fun_80491c4(ecx67, v76, v75, v31, 100, 0x8075ced, v47, v77, v78, v79, v45, v13, v15, v56);
+        fun_80491c4(ecx67, v76, v75, v31, 100, "temp%.0d", v47, v77, v78, v79, v45, v13, v15, v56);
         *reinterpret_cast<void***>(v8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v8)) + (reinterpret_cast<unsigned char>(v15) - reinterpret_cast<unsigned char>(v16)));
         *reinterpret_cast<void***>(v20 + 4) = v13;
         *reinterpret_cast<void***>(v20) = reinterpret_cast<void**>(1);
         *reinterpret_cast<void***>(v20 + 8) = v80;
         do {
-            eax81 = find_more(v56, v76, v75, v31, 100, 0x8075ced, v47);
+            eax81 = find_more(v56, v76, v75, v31, 100, "temp%.0d", v47);
         } while (eax81);
         v82 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v56) * 4 + 0x8082be0);
-        simp_loop(v56, v82, reinterpret_cast<unsigned char>(v56) * 4 + 0x8079940, v31, 100, 0x8075ced, v47, v83, v84);
+        simp_loop(v56, v82, reinterpret_cast<unsigned char>(v56) * 4 + 0x8079940, v31, 100, "temp%.0d", v47, v83, v84);
         v32 = v8;
         v33 = v6;
-        simp_loop(v56, v33, v32, v31, 100, 0x8075ced, v47, v85, v86);
+        simp_loop(v56, v33, v32, v31, 100, "temp%.0d", v47, v85, v86);
         eax87 = 0;
         sf88 = opt_en < 0;
         if (!sf88) {
@@ -15717,7 +15716,7 @@ void** prompt_var(void** ecx, void** a2, void** a3, void** a4) {
     v7 = eax6;
     ebx8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffeff4);
     do {
-        my_strlcpy(0x80795a0, 0x80720c9, 80, v9, v10, v11, v12, v13, v14, v15);
+        my_strlcpy(0x80795a0, "Enter variable: ", 80, v9, v10, v11, v12, v13, v14, v15);
         v16 = reinterpret_cast<void**>(0x1000);
         v17 = ebx8;
         eax25 = get_string(v17, 0x1000, 80, v18, v19, v20, v21, v22, v23, v24);
@@ -15804,7 +15803,7 @@ void** list_expression(void** ecx, void** a2, void** a3, void** a4) {
         if (eax7) {
             list_string(a2, a3, eax7, a4);
         } else {
-            error(ecx, 0x8077c40, a3, 0, a4, v8, v9, v10, ebx11, esi12, edi13, ebp14);
+            error(ecx, "Out of memory (can't malloc(3)).", a3, 0, a4, v8, v9, v10, ebx11, esi12, edi13, ebp14);
         }
     }
     return ebx5;
@@ -15871,50 +15870,50 @@ void** read_file(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         esi12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffefe4);
         v13 = ebx10;
         v14 = reinterpret_cast<void**>(1);
-        fun_8049224(ecx, esi12, 0x1000, 1, 0x1000, 0x8075e17, v13, v15);
-        v16 = reinterpret_cast<void**>(0x80729f4);
-        eax18 = fun_80490d4(esi12, 0x80729f4, 1, 0x1000, 0x8075e17, v13, v17);
+        fun_8049224(ecx, esi12, 0x1000, 1, 0x1000, "%s.in", v13, v15);
+        v16 = reinterpret_cast<void**>("r");
+        eax18 = fun_80490d4(esi12, "r", 1, 0x1000, "%s.in", v13, v17);
         esi19 = eax18;
         if (eax18) {
             ebx10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp9) + 0xffffefe4);
             goto addr_8057a25_4;
         }
-        v16 = reinterpret_cast<void**>(0x80729f4);
-        eax21 = fun_80490d4(ebx10, 0x80729f4, 1, 0x1000, 0x8075e17, v13, v20);
+        v16 = reinterpret_cast<void**>("r");
+        eax21 = fun_80490d4(ebx10, "r", 1, 0x1000, "%s.in", v13, v20);
         esi19 = eax21;
         if (eax21) {
             addr_8057a25_4:
-            eax22 = read_sub(ecx, esi19, 0x80729f4, 1, 0x1000, 0x8075e17, v13);
+            eax22 = read_sub(ecx, esi19, "r", 1, 0x1000, "%s.in", v13);
             if (!eax22) {
                 zf23 = quiet_mode == 0;
                 if (zf23) {
                     v14 = ebx10;
-                    v16 = reinterpret_cast<void**>(0x8075e4d);
-                    fun_8048f34(1, 0x8075e4d, v14, 0x1000, 0x8075e17, v13, v24, v25, v26, v27, v28, v29);
+                    v16 = reinterpret_cast<void**>("Finished reading file \"%s\".\n");
+                    fun_8048f34(1, "Finished reading file \"%s\".\n", v14, 0x1000, "%s.in", v13, v24, v25, v26, v27, v28, v29);
                 }
             } else {
-                v16 = reinterpret_cast<void**>(0x8075e34);
-                fun_8048f34(1, 0x8075e34, 1, 0x1000, 0x8075e17, v13, v30, v31, v32, v33, v34, v35);
+                v16 = reinterpret_cast<void**>("Read operation aborted.\n");
+                fun_8048f34(1, "Read operation aborted.\n", 1, 0x1000, "%s.in", v13, v30, v31, v32, v33, v34, v35);
             }
         } else {
-            v36 = reinterpret_cast<void**>(0x8075e1d);
-            error(ecx, 0x8075e1d, 0x80729f4, 1, 0x1000, 0x8075e17, v13, v37, v38, v39, v40, v41);
+            v36 = reinterpret_cast<void**>("Can't open input file.");
+            error(ecx, "Can't open input file.", "r", 1, 0x1000, "%s.in", v13, v37, v38, v39, v40, v41);
             eax42 = reinterpret_cast<void**>(0);
             goto addr_8057a7a_10;
         }
     } else {
-        v36 = reinterpret_cast<void**>(0x8075946);
-        error(ecx, 0x8075946, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52);
+        v36 = reinterpret_cast<void**>("No file name specified.");
+        error(ecx, "No file name specified.", v43, v44, v45, v46, v47, v48, v49, v50, v51, v52);
         eax42 = reinterpret_cast<void**>(0);
         goto addr_8057a7a_10;
     }
     v36 = esi19;
-    fun_80490a4(v36, v16, v14, 0x1000, 0x8075e17, v13, v53);
+    fun_80490a4(v36, v16, v14, 0x1000, "%s.in", v13, v53);
     eax42 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax22 == 0))));
     addr_8057a7a_10:
     edx54 = eax11 ^ g14;
     if (edx54) {
-        eax42 = fun_8049184(ecx, v36, v16, v14, 0x1000, 0x8075e17, v13, v55, v56, v57, v58);
+        eax42 = fun_8049184(ecx, v36, v16, v14, 0x1000, "%s.in", v13, v55, v56, v57, v58);
     }
     return eax42;
 }
@@ -15938,7 +15937,7 @@ void** read_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
     if (less_or_equal9) {
         eax16 = read_file(ecx, a2, v10, v11, v12, v13, v14, ebp15);
     } else {
-        error(ecx, 0x8075934, v17, v18, v19, v20, v21, ebp15, __return_address(), a2, a3, a4);
+        error(ecx, "Command disabled.", v17, v18, v19, v20, v21, ebp15, __return_address(), a2, a3, a4);
         eax16 = reinterpret_cast<void**>(0);
     }
     return eax16;
@@ -15964,9 +15963,9 @@ void** fun_80490b4(void** a1, void** a2, void** a3, void** a4, void** a5, void**
 
 struct s60 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** factor_int_sub(void** a1, void** a2, void** a3) {
@@ -15978,9 +15977,9 @@ void** factor_int_sub(void** a1, void** a2, void** a3) {
     if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a1) * 4 + 0x8082d80) > 0) {
         esi4 = reinterpret_cast<struct s60*>(reinterpret_cast<unsigned char>(a1) * 4);
         v5 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a1) * 4 + 0x8082a40);
-        factor_int(v5, &esi4->f134753664);
+        factor_int(v5, &esi4->f8082d80);
         v6 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a1) * 4 + 0x8082be0);
-        eax7 = factor_int(v6, &esi4->f134715712);
+        eax7 = factor_int(v6, &esi4->f8079940);
     }
     return eax7;
 }
@@ -15997,9 +15996,9 @@ struct s62 {
 
 struct s63 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 int32_t elim_sub(void** ecx, void** a2, void** a3, void** a4) {
@@ -16082,12 +16081,12 @@ int32_t elim_sub(void** ecx, void** a2, void** a3, void** a4) {
         eax12 = solved_equation(eax7, v8, v9, v10, v11);
         if (!eax12 || (eax13 = (*reinterpret_cast<struct s62**>(reinterpret_cast<int32_t>(eax14) * 4 + 0x8082a40))->f8, eax13 != edx15)) {
             list_var(ecx, edx15, 0, v16, v17, v18, v19, v20, v21, v22, v23);
-            fun_8048f34(1, 0x807643c, &eax14->f1, 0x8079800, v24, v25, v26, v27, v28, v29, v30, v31);
+            fun_8048f34(1, "Solving equation #%d for (%s) and substituting into the current equation...\n", &eax14->f1, 0x8079800, v24, v25, v26, v27, v28, v29, v30, v31);
             eax32 = reinterpret_cast<struct s63*>(reinterpret_cast<int32_t>(eax14) * 4);
-            v33 = reinterpret_cast<void**>(&eax32->f134715712);
+            v33 = reinterpret_cast<void**>(&eax32->f8079940);
             v34 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(eax14) * 4 + 0x8082be0);
             v35 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(eax14) * 4 + 0x8082a40);
-            eax38 = solve_sub(ecx, reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffd8, 1, v35, &eax32->f134753664, v34, v33, v36, v37, 1, 1, edx15);
+            eax38 = solve_sub(ecx, reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffd8, 1, v35, &eax32->f8082d80, v34, v33, v36, v37, 1, 1, edx15);
             if (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(eax38 < 0) | reinterpret_cast<uint1_t>(eax38 == 0))) {
                 addr_8053a40_4:
                 eax39 = cur_equation;
@@ -16105,16 +16104,16 @@ int32_t elim_sub(void** ecx, void** a2, void** a3, void** a4) {
                 simp_equation(ecx, eax48, v46, v45, v44, edx15, v33);
                 eax49 = 1;
             } else {
-                error(ecx, 0x8075970, 1, v35, &eax32->f134753664, v34, v33, v50, v51, 1, 1, edx15);
+                error(ecx, "Solve failed.", 1, v35, &eax32->f8082d80, v34, v33, v50, v51, 1, 1, edx15);
                 eax49 = 0;
             }
         } else {
             list_var(ecx, eax13, 0, v52, v53, v54, v55, v56, v57, v58, v59);
-            fun_8048f34(1, 0x80763e4, &eax14->f1, 0x8079800, v60, v61, v62, v63, v64, v65, v66, v67);
+            fun_8048f34(1, "Substituting the RHS of equation #%d into the current equation for variable (%s)...\n", &eax14->f1, 0x8079800, v60, v61, v62, v63, v64, v65, v66, v67);
             goto addr_8053a40_4;
         }
     } else {
-        error(ecx, 0x80763b8, v68, v69, v70, v71, v72, v73, v74, v75, v76, v77);
+        error(ecx, "Error: source and destination are the same.", v68, v69, v70, v71, v72, v73, v74, v75, v76, v77);
         eax49 = 0;
     }
     return eax49;
@@ -16436,11 +16435,11 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
         goto addr_80594ce_2;
     v13 = reinterpret_cast<void**>(0);
     while (1) {
-        v14 = reinterpret_cast<void**>(0x8072c49);
-        eax19 = strcmp_tospace(v6, 0x8072c49, v15, v16, v17, v18);
+        v14 = reinterpret_cast<void**>("factor");
+        eax19 = strcmp_tospace(v6, "factor", v15, v16, v17, v18);
         if (eax19) {
-            v14 = reinterpret_cast<void**>(0x80727e9);
-            eax24 = strcmp_tospace(v6, 0x80727e9, v20, v21, v22, v23);
+            v14 = reinterpret_cast<void**>("repeat");
+            eax24 = strcmp_tospace(v6, "repeat", v20, v21, v22, v23);
             if (eax24) 
                 break;
             repeat_flag = reinterpret_cast<void**>(1);
@@ -16511,7 +16510,7 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
                 v64 = ebx63;
                 if (reinterpret_cast<int1_t>(ebx63 == 0xffffffff)) 
                     break;
-                if (reinterpret_cast<int32_t>(reinterpret_cast<unsigned char>(v64) & 0x3fff) > reinterpret_cast<int32_t>(4) && (v64 && (list_var(ecx, v64, 0, v50, v52, v53, 0x8079800, v65, v66, v67, v36), v53 = reinterpret_cast<void**>(0x8075897), v52 = reinterpret_cast<void**>(80), v50 = reinterpret_cast<void**>(1), fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8075897, 0x8079800, v68), eax69 = tlhs, eax73 = get_expr(ecx, eax69, 0x80796b8, 1, 80, 0x8075897, 0x8079800, v70, v71, v72, v36), !!eax73))) {
+                if (reinterpret_cast<int32_t>(reinterpret_cast<unsigned char>(v64) & 0x3fff) > reinterpret_cast<int32_t>(4) && (v64 && (list_var(ecx, v64, 0, v50, v52, v53, 0x8079800, v65, v66, v67, v36), v53 = reinterpret_cast<void**>("Enter %s: "), v52 = reinterpret_cast<void**>(80), v50 = reinterpret_cast<void**>(1), fun_8049224(ecx, 0x80795a0, 80, 1, 80, "Enter %s: ", 0x8079800, v68), eax69 = tlhs, eax73 = get_expr(ecx, eax69, 0x80796b8, 1, 80, "Enter %s: ", 0x8079800, v70, v71, v72, v36), !!eax73))) {
                     edx74 = n_tlhs;
                     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edx74) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edx74 == 0))) {
                         eax75 = reinterpret_cast<void**>(0);
@@ -16557,23 +16556,23 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
             ecx87 = 16;
         } else {
             list_var(ecx, 0, 0, v50, v52, v53, 0x8079800, v88, v89, v90, v36);
-            v53 = reinterpret_cast<void**>(0x8075f7b);
+            v53 = reinterpret_cast<void**>("Enter initial %s: ");
             v52 = reinterpret_cast<void**>(80);
             v43 = reinterpret_cast<void**>(1);
-            fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8075f7b, 0x8079800, v91);
+            fun_8049224(ecx, 0x80795a0, 80, 1, 80, "Enter initial %s: ", 0x8079800, v91);
             v38 = reinterpret_cast<void**>(0x80795f4);
             eax92 = tes;
             v39 = eax92;
-            eax96 = get_expr(ecx, v39, 0x80795f4, 1, 80, 0x8075f7b, 0x8079800, v93, v94, v95, v36);
+            eax96 = get_expr(ecx, v39, 0x80795f4, 1, 80, "Enter initial %s: ", 0x8079800, v93, v94, v95, v36);
             if (!eax96) 
                 goto addr_8058ef2_47;
             eax97 = tes;
-            calc_simp(ecx, eax97, 0x80795f4, 1, 80, 0x8075f7b, 0x8079800, v98, v99, v100, v36);
+            calc_simp(ecx, eax97, 0x80795f4, 1, 80, "Enter initial %s: ", 0x8079800, v98, v99, v100, v36);
             eax101 = n_trhs;
             v50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax101) << 4);
             eax102 = trhs;
             eax103 = tlhs;
-            fun_80491c4(ecx, eax103, eax102, v50, 80, 0x8075f7b, 0x8079800, v104, v105, v106, v36, v34, v35, v57);
+            fun_80491c4(ecx, eax103, eax102, v50, 80, "Enter initial %s: ", 0x8079800, v104, v105, v106, v36, v34, v35, v57);
             eax107 = n_trhs;
             n_tlhs = eax107;
             if (reinterpret_cast<signed char>(v35) <= reinterpret_cast<signed char>(0)) 
@@ -16609,17 +16608,17 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
         v115 = eax114;
         if (!eax114) {
             eax116 = gfp;
-            fun_8048f04(ecx, eax116, 1, 0x80757fd, v52, v53, 0x8079800, v117, v118, v119, v36, v34, v35);
+            fun_8048f04(ecx, eax116, 1, "\n", v52, v53, 0x8079800, v117, v118, v119, v36, v34, v35);
             goto addr_8059505_62;
         }
         v52 = ecx;
         eax120 = gfp;
-        fun_8048f04(ecx, eax120, 1, 0x8075f8e, v52, v53, 0x8079800, v121, v122, v123, v36, v34, v35);
-        v43 = reinterpret_cast<void**>(0x80757fd);
+        fun_8048f04(ecx, eax120, 1, "There are %ld solutions.\n", v52, v53, 0x8079800, v121, v122, v123, v36, v34, v35);
+        v43 = reinterpret_cast<void**>("\n");
         v38 = reinterpret_cast<void**>(1);
         eax124 = gfp;
         v39 = eax124;
-        fun_8048f04(ecx, v39, 1, 0x80757fd, v52, v53, 0x8079800, v125, v126, v127, v36, v34, v35);
+        fun_8048f04(ecx, v39, 1, "\n", v52, v53, 0x8079800, v125, v126, v127, v36, v34, v35);
         if (reinterpret_cast<signed char>(v115) >= reinterpret_cast<signed char>(0)) {
             addr_8059505_62:
             v128 = reinterpret_cast<void**>(0);
@@ -16674,36 +16673,36 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
                 if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(esi37) + reinterpret_cast<int32_t>(ebx143))) {
                     if (!eax142) {
                         v52 = v144;
-                        v145 = reinterpret_cast<void**>(0x8075f11);
+                        v145 = reinterpret_cast<void**>("Solution number %ld with ");
                         eax146 = gfp;
-                        fun_8048f04(ecx, eax146, 1, 0x8075f11, v52, v53, 0x8079800, v147, v148, v149, v36, v34, v35);
+                        fun_8048f04(ecx, eax146, 1, "Solution number %ld with ", v52, v53, 0x8079800, v147, v148, v149, v36, v34, v35);
                     } else {
-                        v145 = reinterpret_cast<void**>(0x8075f0e);
+                        v145 = reinterpret_cast<void**>(", ");
                         eax150 = gfp;
-                        fun_8048f04(ecx, eax150, 1, 0x8075f0e, v52, v53, 0x8079800, v151, v152, v153, v36, v34, v35);
+                        fun_8048f04(ecx, eax150, 1, ", ", v52, v53, 0x8079800, v151, v152, v153, v36, v34, v35);
                     }
                     list_var(ecx, (reinterpret_cast<int32_t>(ebx143) << 14) + 4, 0, v145, v52, v53, 0x8079800, v154, v155, v156, v36);
                     v52 = reinterpret_cast<void**>(0x8079800);
                     eax157 = gfp;
-                    fun_8048f04(ecx, eax157, 1, 0x8075cf6, 0x8079800, v53, 0x8079800, v158, v159, v160, v36, v34, v35);
+                    fun_8048f04(ecx, eax157, 1, "%s = ", 0x8079800, v53, 0x8079800, v158, v159, v160, v36, v34, v35);
                     if (!*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp5) + reinterpret_cast<int32_t>(ebx143) - 0x9c)) {
-                        v130 = reinterpret_cast<void**>(0x8075f2c);
+                        v130 = reinterpret_cast<void**>("1");
                         eax161 = gfp;
-                        fun_8048f04(ecx, eax161, 1, 0x8075f2c, 0x8079800, v53, 0x8079800, v162, v163, v164, v36, v34, v35);
+                        fun_8048f04(ecx, eax161, 1, "1", 0x8079800, v53, 0x8079800, v162, v163, v164, v36, v34, v35);
                         eax142 = 1;
                     } else {
-                        v130 = reinterpret_cast<void**>(0x8075f2b);
+                        v130 = reinterpret_cast<void**>("-1");
                         eax165 = gfp;
-                        fun_8048f04(ecx, eax165, 1, 0x8075f2b, 0x8079800, v53, 0x8079800, v166, v167, v168, v36, v34, v35);
+                        fun_8048f04(ecx, eax165, 1, "-1", 0x8079800, v53, 0x8079800, v166, v167, v168, v36, v34, v35);
                         eax142 = 1;
                     }
                 }
                 ebx143 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx143) + 1);
             } while (!reinterpret_cast<int1_t>(ebx143 == 64));
             if (eax142) {
-                v130 = reinterpret_cast<void**>(0x8072669);
+                v130 = reinterpret_cast<void**>(":\n");
                 eax169 = gfp;
-                fun_8048f04(ecx, eax169, 1, 0x8072669, v52, v53, 0x8079800, v170, v171, v172, v36, v34, v35);
+                fun_8048f04(ecx, eax169, 1, ":\n", v52, v53, 0x8079800, v170, v171, v172, v36, v34, v35);
             }
             eax173 = tlhs;
             calc_simp(ecx, eax173, 0x80796b8, v130, v52, v53, 0x8079800, v174, v175, v176, v36);
@@ -16712,13 +16711,13 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
                 simp_side(ecx, eax177, 0x80796b8, v130, v52, v53, 0x8079800);
             }
             eax178 = gfp;
-            fun_8048f04(ecx, eax178, 1, 0x8077a28, v52, v53, 0x8079800, v179, v180, v181, v36, v34, v35);
+            fun_8048f04(ecx, eax178, 1, " ", v52, v53, 0x8079800, v179, v180, v181, v36, v34, v35);
             if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(v31) * 4 + 0x8079940)) {
                 v182 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v31) * 4 + 0x8082d80);
                 v183 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v31) * 4 + 0x8082a40);
                 list_proc(ecx, v183, v182, 0, v52, v53, 0x8079800, v184, v185);
                 eax186 = gfp;
-                fun_8048f04(ecx, eax186, 1, 0x80759cf, v52, v53, 0x8079800, v187, v188, v189, v36, v34, v35);
+                fun_8048f04(ecx, eax186, 1, " = ", v52, v53, 0x8079800, v187, v188, v189, v36, v34, v35);
             }
             eax190 = tlhs;
             list_factor(ecx, eax190, 0x80796b8, v13, v52, v53, 0x8079800, v191, v192, v193, v36);
@@ -16727,15 +16726,15 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
                 eax199 = tlhs;
                 group_proc(eax199, 0x80796b8, v13, v52, v53, 0x8079800);
                 eax200 = gfp;
-                fun_8048f04(ecx, eax200, 1, 0x80759cf, v52, v53, 0x8079800, v201, v202, v203, v36, v34, v35);
+                fun_8048f04(ecx, eax200, 1, " = ", v52, v53, 0x8079800, v201, v202, v203, v36, v34, v35);
                 eax204 = tlhs;
                 list_factor(ecx, eax204, 0x80796b8, v13, v52, v53, 0x8079800, v205, v206, v207, v36);
             }
-            v43 = reinterpret_cast<void**>(0x80757fc);
+            v43 = reinterpret_cast<void**>("\n\n");
             v38 = reinterpret_cast<void**>(1);
             eax208 = gfp;
             v39 = eax208;
-            fun_8048f04(ecx, v39, 1, 0x80757fc, v52, v53, 0x8079800, v209, v210, v211, v36, v34, v35);
+            fun_8048f04(ecx, v39, 1, "\n\n", v52, v53, 0x8079800, v209, v210, v211, v36, v34, v35);
             ++v128;
         } while (reinterpret_cast<signed char>(v115) >= reinterpret_cast<signed char>(v128));
         addr_80594b6_65:
@@ -16783,9 +16782,9 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
         } while (reinterpret_cast<signed char>(ebx212) < reinterpret_cast<signed char>(edi213));
         goto addr_805906d_49;
         v52 = ebx212 + 1;
-        v50 = reinterpret_cast<void**>(0x8076b1c);
+        v50 = reinterpret_cast<void**>("Convergence reached after %ld iterations.\n");
         eax244 = gfp;
-        fun_8048f04(ecx, eax244, 1, 0x8076b1c, v52, v53, 0x8079800, v245, v246, v247, v36, v34, v35);
+        fun_8048f04(ecx, eax244, 1, "Convergence reached after %ld iterations.\n", v52, v53, 0x8079800, v245, v246, v247, v36, v34, v35);
         v57 = reinterpret_cast<void**>(1);
         goto addr_8059077_45;
         zf248 = repeat_flag == 0;
@@ -16805,18 +16804,18 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
     eax249 = repeat_flag;
     goto addr_80594da_103;
     addr_8058be0_16:
-    if (*reinterpret_cast<void***>(v42) || (v43 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, 0x8075f2e, 80, v254, v255, v256, v257, v258, v259, v260), v38 = reinterpret_cast<void**>(0x1000), v39 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffef64), eax268 = get_string(v39, 0x1000, 80, v261, v262, v263, v264, v265, v266, v267), v42 = eax268, !!eax268)) {
+    if (*reinterpret_cast<void***>(v42) || (v43 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, "Enter number of iterations: ", 80, v254, v255, v256, v257, v258, v259, v260), v38 = reinterpret_cast<void**>(0x1000), v39 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffef64), eax268 = get_string(v39, 0x1000, 80, v261, v262, v263, v264, v265, v266, v267), v42 = eax268, !!eax268)) {
         v38 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffef54);
         eax269 = decstrtol(v42, v38, v43);
         v35 = eax269;
         if (*reinterpret_cast<void***>(v42) || reinterpret_cast<signed char>(v35) < reinterpret_cast<signed char>(0)) {
-            v39 = reinterpret_cast<void**>(0x8075f4b);
-            error(ecx, 0x8075f4b, v38, v43, v270, v271, v272, v273, v274, v275, v276, v34);
+            v39 = reinterpret_cast<void**>("Positive integer required.");
+            error(ecx, "Positive integer required.", v38, v43, v270, v271, v272, v273, v274, v275, v276, v34);
             eax249 = reinterpret_cast<void**>(0);
             goto addr_80594da_103;
         } else {
             if (!v35) {
-                warning(ecx, 0x8075f66, v38, v43, v277, v278, v279, v280, v281, v282);
+                warning(ecx, "Infinite iterations.", v38, v43, v277, v278, v279, v280, v281, v282);
                 v35 = reinterpret_cast<void**>(0x7ffffffe);
                 goto addr_8058c92_13;
             }
@@ -16827,8 +16826,8 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
         goto addr_80594da_103;
     }
     addr_8058bca_17:
-    v39 = reinterpret_cast<void**>(0x8076af4);
-    error(ecx, 0x8076af4, v38, 0, v283, v284, v285, v286, v287, v288, v289, v34);
+    v39 = reinterpret_cast<void**>("Specified iteration variable not found.");
+    error(ecx, "Specified iteration variable not found.", v38, 0, v283, v284, v285, v286, v287, v288, v289, v34);
     eax249 = reinterpret_cast<void**>(0);
     goto addr_80594da_103;
     addr_8058b36_10:
@@ -16836,15 +16835,14 @@ void** calculate_cmd(void** ecx, void** a2, void** a3, void** a4) {
     goto addr_8058b6b_12;
 }
 
-void** simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
+void simp_side(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
     void** v8;
     void** v9;
-    void** eax10;
 
     __asm__("fld1 ");
     __asm__("fstp qword [esp+0xc]");
-    eax10 = simp_ssub(ecx, a2, a3, 0, v8, v9, 1, 1, 6);
-    return eax10;
+    simp_ssub(ecx, a2, a3, 0, v8, v9, 1, 1, 6);
+    return;
 }
 
 struct s67 {
@@ -17614,7 +17612,7 @@ uint32_t order_recurse(void** ecx, void** a2) {
     addr_805a68b_29:
     if (!(*reinterpret_cast<unsigned char*>(&ebx10) & 1)) {
         addr_805a970_3:
-        error_bug(ecx, 0x8076b7c, v23, v24, v25);
+        error_bug(ecx, "Internal representation of expression is corrupt!", v23, v24, v25);
         goto addr_805a97c_30;
     } else {
         if (edi11 < 1) 
@@ -18670,12 +18668,12 @@ void** compare_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         eax58 = reinterpret_cast<void**>(0);
         goto addr_805b925_97;
     } else {
-        v48 = reinterpret_cast<void**>(0x8076bb0);
-        v49 = reinterpret_cast<void**>(0x807277d);
+        v48 = reinterpret_cast<void**>("Expression too big to compare, because MAX_COMPARE_TERMS exceeded.");
+        v49 = reinterpret_cast<void**>("%s\n");
         v50 = reinterpret_cast<void**>(1);
         eax66 = gfp;
         v51 = eax66;
-        fun_8048f04(ecx62, v51, 1, 0x807277d, 0x8076bb0, v24, v67, v68, v69, v70, v13, v71, v16);
+        fun_8048f04(ecx62, v51, 1, "%s\n", "Expression too big to compare, because MAX_COMPARE_TERMS exceeded.", v24, v67, v68, v69, v70, v13, v71, v16);
         eax58 = reinterpret_cast<void**>(0);
         goto addr_805b925_97;
     }
@@ -19386,8 +19384,8 @@ void** compare_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                 __asm__("fucomip st0, st1");
                 __asm__("fstp st0");
                 if (zf74 && !pf73) {
-                    v87 = reinterpret_cast<void**>(0x8076bf4);
-                    warning(ecx77, 0x8076bf4, v86, v85, v88, v24, v225, v226, v227, v228);
+                    v87 = reinterpret_cast<void**>("Modulo 0 encountered, might be considered undefined.");
+                    warning(ecx77, "Modulo 0 encountered, might be considered undefined.", v86, v85, v88, v24, v225, v226, v227, v228);
                 }
                 __asm__("fld qword [ebp-0x40]");
                 __asm__("fdivr qword [edi]");
@@ -19462,8 +19460,8 @@ void** compare_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                             __asm__("fstp st1");
                             if (zf74 && !pf73) {
                                 __asm__("fstp st0");
-                                v87 = reinterpret_cast<void**>(0x8076c2c);
-                                warning(ecx77, 0x8076c2c, v86, v85, v88, v24, v239, v240, v241, v242);
+                                v87 = reinterpret_cast<void**>("0^0 encountered, might be considered indeterminate.");
+                                warning(ecx77, "0^0 encountered, might be considered indeterminate.", v86, v85, v88, v24, v239, v240, v241, v242);
                                 __asm__("fld1 ");
                                 __asm__("fstp qword [ebp-0x20]");
                                 goto addr_805c576_299;
@@ -19515,8 +19513,8 @@ void** compare_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     __asm__("fstp st0");
                     if (!below_or_equal75) {
                         __asm__("fstp st0");
-                        v87 = reinterpret_cast<void**>(0x8076c60);
-                        warning(ecx77, 0x8076c60, v86, v85, v88, v24, v252, v253, v254, v255);
+                        v87 = reinterpret_cast<void**>("Divide by zero (0 raised to negative power).");
+                        warning(ecx77, "Divide by zero (0 raised to negative power).", v86, v85, v88, v24, v252, v253, v254, v255);
                         __asm__("fld dword [0x8075660]");
                         __asm__("fstp qword [ebp-0x20]");
                         goto addr_805c576_299;
@@ -20612,12 +20610,12 @@ void** calc(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (zf20 && !pf19) {
-            warning(ecx, 0x8076bf4, v42, v43, v44, v45, v46, v47, v48, v49);
+            warning(ecx, "Modulo 0 encountered, might be considered undefined.", v42, v43, v44, v45, v46, v47, v48, v49);
         }
         __asm__("fld qword [ebp-0x40]");
         __asm__("fdivr qword [edi]");
         __asm__("fstp qword [esp]");
-        fun_8048fe4(ecx, 0x8076bf4, v50, reinterpret_cast<int32_t>(ebp6) + 0xffffffe0, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60);
+        fun_8048fe4(ecx, "Modulo 0 encountered, might be considered undefined.", v50, reinterpret_cast<int32_t>(ebp6) + 0xffffffe0, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60);
         __asm__("fmul qword [ebp-0x40]");
         __asm__("fst qword [edi]");
         zf61 = modulus_mode == 0;
@@ -20687,8 +20685,8 @@ void** calc(void** ecx, void** a2, void** a3, void** a4, void** a5) {
                     __asm__("fstp st1");
                     if (zf20 && !pf19) {
                         __asm__("fstp st0");
-                        v65 = reinterpret_cast<void**>(0x8076c2c);
-                        warning(ecx, 0x8076c2c, v66, v67, v68, v69, v70, v71, v72, v73);
+                        v65 = reinterpret_cast<void**>("0^0 encountered, might be considered indeterminate.");
+                        warning(ecx, "0^0 encountered, might be considered indeterminate.", v66, v67, v68, v69, v70, v71, v72, v73);
                         __asm__("fld1 ");
                         __asm__("fstp qword [ebp-0x20]");
                         goto addr_805c576_48;
@@ -20740,8 +20738,8 @@ void** calc(void** ecx, void** a2, void** a3, void** a4, void** a5) {
             __asm__("fstp st0");
             if (!below_or_equal21) {
                 __asm__("fstp st0");
-                v65 = reinterpret_cast<void**>(0x8076c60);
-                warning(ecx, 0x8076c60, v93, v94, v95, v96, v97, v98, v99, v100);
+                v65 = reinterpret_cast<void**>("Divide by zero (0 raised to negative power).");
+                warning(ecx, "Divide by zero (0 raised to negative power).", v93, v94, v95, v96, v97, v98, v99, v100);
                 __asm__("fld dword [0x8075660]");
                 __asm__("fstp qword [ebp-0x20]");
                 goto addr_805c576_48;
@@ -21758,8 +21756,8 @@ void** elim_k(void** a1, void** a2, void** a3, void** a4, void** a5) {
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (zf40 && !pf39) {
-        v23 = reinterpret_cast<void**>(0x8076bf4);
-        warning(ecx17, 0x8076bf4, v22, v21, v24, v25, v26, v27, v28, v122);
+        v23 = reinterpret_cast<void**>("Modulo 0 encountered, might be considered undefined.");
+        warning(ecx17, "Modulo 0 encountered, might be considered undefined.", v22, v21, v24, v25, v26, v27, v28, v122);
     }
     __asm__("fld qword [ebp-0x40]");
     __asm__("fdivr qword [edi]");
@@ -21833,8 +21831,8 @@ void** elim_k(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 __asm__("fstp st1");
                 if (zf40 && !pf39) {
                     __asm__("fstp st0");
-                    v23 = reinterpret_cast<void**>(0x8076c2c);
-                    warning(ecx17, 0x8076c2c, v22, v21, v24, v25, v26, v27, v28, v130);
+                    v23 = reinterpret_cast<void**>("0^0 encountered, might be considered indeterminate.");
+                    warning(ecx17, "0^0 encountered, might be considered indeterminate.", v22, v21, v24, v25, v26, v27, v28, v130);
                     __asm__("fld1 ");
                     __asm__("fstp qword [ebp-0x20]");
                     goto addr_805c576_175;
@@ -21886,8 +21884,8 @@ void** elim_k(void** a1, void** a2, void** a3, void** a4, void** a5) {
         __asm__("fstp st0");
         if (!below_or_equal41) {
             __asm__("fstp st0");
-            v23 = reinterpret_cast<void**>(0x8076c60);
-            warning(ecx17, 0x8076c60, v22, v21, v24, v25, v26, v27, v28, v138);
+            v23 = reinterpret_cast<void**>("Divide by zero (0 raised to negative power).");
+            warning(ecx17, "Divide by zero (0 raised to negative power).", v22, v21, v24, v25, v26, v27, v28, v138);
             __asm__("fld dword [0x8075660]");
             __asm__("fstp qword [ebp-0x20]");
             goto addr_805c576_175;
@@ -23365,7 +23363,7 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 __asm__("fld1 ");
                 __asm__("fstp qword [esp+0x8]");
                 __asm__("fstp qword [esp]");
-                fun_8048e94(ecx21, v40, v41, v42, 0x8076b50, v43, 1, v28, v6, v20, v25, v9, v13, v35);
+                fun_8048e94(ecx21, v40, v41, v42, "Square roots in denominator rationalized.", v43, 1, v28, v6, v20, v25, v9, v13, v35);
                 addr_805a1fe_38:
                 __asm__("fld dword [0x8072054]");
                 __asm__("fxch st0, st1");
@@ -23414,7 +23412,7 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
             edi49 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(v22) - reinterpret_cast<unsigned char>(v7));
             esi50 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edi49) << 4);
             eax51 = scratch;
-            fun_80491c4(a1, eax51, (reinterpret_cast<unsigned char>(v9) << 4) + reinterpret_cast<unsigned char>(a1) + 16, esi50, 0x8076b50, v52, 1, v28, v6, v20, v25, v9, v13, v35);
+            fun_80491c4(a1, eax51, (reinterpret_cast<unsigned char>(v9) << 4) + reinterpret_cast<unsigned char>(a1) + 16, esi50, "Square roots in denominator rationalized.", v52, 1, v28, v6, v20, v25, v9, v13, v35);
             eax53 = scratch;
             *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax53) + reinterpret_cast<unsigned char>(esi50) + 4) = v28;
             eax54 = scratch;
@@ -23434,7 +23432,7 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
             v61 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(v22 + 1) << 4) + reinterpret_cast<unsigned char>(a1));
             tmp32_62 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(edi49) + 2 << 4) + reinterpret_cast<unsigned char>(scratch));
             v63 = tmp32_62;
-            fun_80491c4(ecx57, v63, v61, v60, 0x8076b50, v64, 1, v28, v6, v20, v25, v9, v13, v35);
+            fun_80491c4(ecx57, v63, v61, v60, "Square roots in denominator rationalized.", v64, 1, v28, v6, v20, v25, v9, v13, v35);
             esi65 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(v17) - reinterpret_cast<unsigned char>(v22 + 1));
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(esi65) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(esi65 == 0))) {
                 edx66 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(edi49) + 2 << 4);
@@ -23481,7 +23479,7 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 __asm__("fld1 ");
                 __asm__("fstp qword [esp+0x8]");
                 __asm__("fstp qword [esp]");
-                fun_8048e94(ecx70, v40, v41, v42, 0x8076b50, v76, 1, v28, v6, v20, v25, v9, v13, v35);
+                fun_8048e94(ecx70, v40, v41, v42, "Square roots in denominator rationalized.", v76, 1, v28, v6, v20, v25, v9, v13, v35);
                 addr_805a286_61:
                 __asm__("fld dword [0x8072054]");
                 __asm__("fxch st0, st1");
@@ -23512,11 +23510,11 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
         eax78 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(edi77) + reinterpret_cast<uint32_t>(edi77) + 2);
         less_or_equal79 = reinterpret_cast<signed char>(reinterpret_cast<uint32_t>(eax78) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2))) <= reinterpret_cast<signed char>(n_tokens);
         if (!less_or_equal79) {
-            error_huge(ecx57, v63, v61, v60, 0x8076b50, v80, 1, v28, v6, v20, v25, v9, v13, v35);
+            error_huge(ecx57, v63, v61, v60, "Square roots in denominator rationalized.", v80, 1, v28, v6, v20, v25, v9, v13, v35);
         }
         esi81 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(ebx48) << 4) + reinterpret_cast<unsigned char>(a1));
         v82 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2)) - reinterpret_cast<unsigned char>(ebx48) << 4);
-        fun_80491c4(a2, (reinterpret_cast<uint32_t>(eax78) + reinterpret_cast<unsigned char>(ebx48) << 4) + reinterpret_cast<unsigned char>(a1), esi81, v82, 0x8076b50, v83, 1, v28, v6, v20, v25, v9, v13, v35);
+        fun_80491c4(a2, (reinterpret_cast<uint32_t>(eax78) + reinterpret_cast<unsigned char>(ebx48) << 4) + reinterpret_cast<unsigned char>(a1), esi81, v82, "Square roots in denominator rationalized.", v83, 1, v28, v6, v20, v25, v9, v13, v35);
         *reinterpret_cast<void***>(a2) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2)) + reinterpret_cast<uint32_t>(eax78));
         *reinterpret_cast<void***>(esi81 + 4) = v11;
         *reinterpret_cast<void***>(esi81) = reinterpret_cast<void**>(2);
@@ -23524,7 +23522,7 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
         esi84 = ebx48 + 1;
         ebx85 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edi77) << 4);
         eax86 = scratch;
-        fun_80491c4(v11, (reinterpret_cast<unsigned char>(esi84) << 4) + reinterpret_cast<unsigned char>(a1), eax86, ebx85, 0x8076b50, v87, 1, v28, v6, v20, v25, v9, v13, v35);
+        fun_80491c4(v11, (reinterpret_cast<unsigned char>(esi84) << 4) + reinterpret_cast<unsigned char>(a1), eax86, ebx85, "Square roots in denominator rationalized.", v87, 1, v28, v6, v20, v25, v9, v13, v35);
         esi88 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi84) + reinterpret_cast<uint32_t>(edi77));
         eax89 = reinterpret_cast<struct s106*>((reinterpret_cast<uint32_t>(esi88) << 4) + reinterpret_cast<unsigned char>(a1));
         eax89->f4 = v11;
@@ -23535,17 +23533,17 @@ void** rationalize(void** a1, void** a2, void** a3, void** a4, void** a5) {
         eax91 = scratch;
         v41 = eax91;
         v40 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(esi90) << 4) + reinterpret_cast<unsigned char>(a1));
-        fun_80491c4(v11, v40, v41, v42, 0x8076b50, v92, 1, v28, v6, v20, v25, v9, v13, v35);
+        fun_80491c4(v11, v40, v41, v42, "Square roots in denominator rationalized.", v92, 1, v28, v6, v20, v25, v9, v13, v35);
         v7 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi90) + reinterpret_cast<uint32_t>(edi77));
         v6 = reinterpret_cast<void**>(1);
         less_or_equal93 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (less_or_equal93) 
             continue;
-        v42 = reinterpret_cast<void**>(0x807277d);
+        v42 = reinterpret_cast<void**>("%s\n");
         v41 = reinterpret_cast<void**>(1);
         eax94 = gfp;
         v40 = eax94;
-        fun_8048f04(v11, v40, 1, 0x807277d, 0x8076b50, v95, 1, v28, 1, v20, v25, v9, v13);
+        fun_8048f04(v11, v40, 1, "%s\n", "Square roots in denominator rationalized.", v95, 1, v28, 1, v20, v25, v9, v13);
         v6 = reinterpret_cast<void**>(1);
         continue;
         addr_805a2bf_54:
@@ -28331,7 +28329,7 @@ void** poly2_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     less_or_equal8 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
     if (!less_or_equal8) {
         eax9 = gfp;
-        fun_8048f04(ecx, eax9, 1, 0x807277d, 0x8076e6b, v10, v11, v12, v13, v14, v15, v16, v17);
+        fun_8048f04(ecx, eax9, 1, "%s\n", "Entering poly2_gcd():", v10, v11, v12, v13, v14, v15, v16, v17);
     }
     list_debug(ecx, 3, a2, a3, 0, 0, v18, v19, v20);
     v21 = reinterpret_cast<void**>(0);
@@ -28408,7 +28406,7 @@ void** poly2_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     less_or_equal109 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
     if (!less_or_equal109) {
         eax110 = gfp;
-        fun_8048f04(ecx, eax110, 1, 0x807277d, 0x8076e81, v21, v111, v112, v113, v114, v115, v116, v117);
+        fun_8048f04(ecx, eax110, 1, "%s\n", "poly2_gcd() successful.", v21, v111, v112, v113, v114, v115, v116, v117);
         goto addr_8067490_14;
     }
     addr_8067300_19:
@@ -28449,7 +28447,7 @@ void** poly2_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         goto addr_8067490_14;
     } else {
         eax165 = gfp;
-        fun_8048f04(ecx, eax165, 1, 0x807277d, 0x8076fcc, v21, v166, v167, v168, v169, v170, v171, v172);
+        fun_8048f04(ecx, eax165, 1, "%s\n", "Polynomial GCD found, but larger divide failed in poly2_gcd().", v21, v166, v167, v168, v169, v170, v171, v172);
         ebx91 = reinterpret_cast<void**>(0);
         goto addr_8067490_14;
     }
@@ -28458,7 +28456,7 @@ void** poly2_gcd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     if (less_or_equal173) 
         goto addr_806748b_4;
     eax174 = gfp;
-    fun_8048f04(ecx, eax174, 1, 0x807277d, 0x8076f8c, v101, v175, v176, v177, v178, v179, v180, v181);
+    fun_8048f04(ecx, eax174, 1, "%s\n", "Polynomial GCD found, but smaller divide failed in poly2_gcd().", v101, v175, v176, v177, v178, v179, v180, v181);
     ebx91 = reinterpret_cast<void**>(0);
     goto addr_8067490_14;
 }
@@ -31418,7 +31416,7 @@ int32_t poly_div(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
         v84 = *reinterpret_cast<void***>(a6);
         list_var(ecx, v84, 0, v15, v85, v86, v87, v88, v89, v90, v91);
         eax92 = gfp;
-        fun_8048f04(ecx, eax92, 1, 0x8076efc, 0x8079800, v93, v94, v95, v96, v97, v98, v99, v14);
+        fun_8048f04(ecx, eax92, 1, "poly_div() starts using base variable (%s):\n", 0x8079800, v93, v94, v95, v96, v97, v98, v99, v14);
         eax100 = n_trhs;
         eax101 = trhs;
         list_debug(ecx, 3, eax101, eax100, 0, 0, v102, v103, v104);
@@ -32526,13 +32524,13 @@ uint32_t pdiv_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
         less_or_equal228 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (!less_or_equal228) {
             eax229 = gfp;
-            fun_8048f04(v10, eax229, 1, 0x807277d, 0x8076e39, 0, v230, v231, v232, v233, v234, v42, v52);
+            fun_8048f04(v10, eax229, 1, "%s\n", "Smart division successful.", 0, v230, v231, v232, v233, v234, v42, v52);
         }
     } else {
         less_or_equal235 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (!less_or_equal235) {
             eax236 = gfp;
-            fun_8048f04(v10, eax236, 1, 0x807277d, 0x8076f2c, 0, v237, v238, v239, v240, v241, v42, v52);
+            fun_8048f04(v10, eax236, 1, "%s\n", "Polynomial division successful.", 0, v237, v238, v239, v240, v241, v42, v52);
         }
     }
     v242 = *reinterpret_cast<void***>(v10);
@@ -33303,7 +33301,7 @@ int32_t remove_factors(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     less_or_equal6 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
     if (!less_or_equal6) {
         eax7 = gfp;
-        fun_8048f04(ecx, eax7, 1, 0x807277d, 0x8076edc, v8, v9, v10, v11, v12, v13, v14, v15);
+        fun_8048f04(ecx, eax7, 1, "%s\n", "Entering remove_factors() with:", v8, v9, v10, v11, v12, v13, v14, v15);
     }
     eax16 = n_tlhs;
     eax17 = tlhs;
@@ -33735,7 +33733,7 @@ uint32_t polydiv_recurse(void** ecx, void** a2) {
         if (less_or_equal92) 
             continue;
         eax93 = gfp;
-        fun_8048f04(v3, eax93, 1, 0x807277d, 0x807700c, 0, v94, v95, v96, v23, v20, v33, v24);
+        fun_8048f04(v3, eax93, 1, "%s\n", "Division simplified with polynomial GCD.", 0, v94, v95, v96, v23, v20, v33, v24);
         v10 = 1;
         continue;
         addr_8067892_30:
@@ -34131,7 +34129,7 @@ uint32_t pf_sub(void** ecx, void** a2, void** a3, void** a4) {
     less_or_equal10 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
     if (!less_or_equal10) {
         eax11 = gfp;
-        fun_8048f04(ecx, eax11, 1, 0x807277d, 0x8076e99, v12, v13, v14, v15, v16, v17, v18, v19);
+        fun_8048f04(ecx, eax11, 1, "%s\n", "Entering pf_sub().", v12, v13, v14, v15, v16, v17, v18, v19);
     }
     eax20 = partial_flag;
     v21 = eax20;
@@ -34282,9 +34280,9 @@ uint32_t pf_sub(void** ecx, void** a2, void** a3, void** a4) {
         if (!less_or_equal95) {
             list_var(ecx, v9, 0, v92, v26, 0, v24, v23, v96, v97, v98);
             v26 = reinterpret_cast<void**>(0x8079800);
-            v92 = reinterpret_cast<void**>(0x8077038);
+            v92 = reinterpret_cast<void**>("Differentiation successful using variable (%s).\n");
             eax99 = gfp;
-            fun_8048f04(ecx, eax99, 1, 0x8077038, 0x8079800, 0, v24, v23, v100, v101, v102, v37, v40);
+            fun_8048f04(ecx, eax99, 1, "Differentiation successful using variable (%s).\n", 0x8079800, 0, v24, v23, v100, v101, v102, v37, v40);
         }
         eax103 = tlhs;
         simp_loop(ecx, eax103, 0x80796b8, v92, v26, 0, v24, v23, v104);
@@ -34351,9 +34349,9 @@ uint32_t pf_sub(void** ecx, void** a2, void** a3, void** a4) {
         if (v49 == 1) {
             less_or_equal136 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
             if (!less_or_equal136) {
-                v26 = reinterpret_cast<void**>(0x807706c);
+                v26 = reinterpret_cast<void**>("Polynomial with repeated factor factored.");
                 eax137 = gfp;
-                fun_8048f04(ecx, eax137, 1, 0x807277d, 0x807706c, v25, v24, v23, v138, v139, v140, v37, v40);
+                fun_8048f04(ecx, eax137, 1, "%s\n", "Polynomial with repeated factor factored.", v25, v24, v23, v138, v139, v140, v37, v40);
             }
             ebx141 = n_tlhs;
             v40 = ebx141;
@@ -34479,12 +34477,12 @@ uint32_t pf_sub(void** ecx, void** a2, void** a3, void** a4) {
         less_or_equal197 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
         if (!less_or_equal197) {
             eax198 = gfp;
-            fun_8048f04(ecx, eax198, 1, 0x8076eac, v26, v25, v24, v23, v199, v166, v167, v37, v40);
+            fun_8048f04(ecx, eax198, 1, "Trying factor: ", v26, v25, v24, v23, v199, v166, v167, v37, v40);
             eax200 = n_tlhs;
             eax201 = tlhs;
             list_proc(ecx, eax201, eax200, 0, v26, v25, v24, v23, v202);
             eax203 = gfp;
-            fun_8048f04(ecx, eax203, 1, 0x80757fd, v26, v25, v24, v23, v204, v166, v167, v37, v40);
+            fun_8048f04(ecx, eax203, 1, "\n", v26, v25, v24, v23, v204, v166, v167, v37, v40);
         }
         v25 = reinterpret_cast<void**>(0);
         eax205 = n_tlhs;
@@ -34503,10 +34501,10 @@ uint32_t pf_sub(void** ecx, void** a2, void** a3, void** a4) {
     addr_80682a2_95:
     less_or_equal214 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
     if (!less_or_equal214) {
-        v26 = reinterpret_cast<void**>(0x8076ebc);
-        v207 = reinterpret_cast<void**>(0x807277d);
+        v26 = reinterpret_cast<void**>("Symbolic polynomial factored.");
+        v207 = reinterpret_cast<void**>("%s\n");
         eax215 = gfp;
-        fun_8048f04(ecx, eax215, 1, 0x807277d, 0x8076ebc, 0, v24, v23, v216, v166, v167, v37, v40);
+        fun_8048f04(ecx, eax215, 1, "%s\n", "Symbolic polynomial factored.", 0, v24, v23, v216, v166, v167, v37, v40);
     }
     ecx = v36;
     save_factors(ecx, a2, a3, v207, v26, 0, v24, v23);
@@ -35419,7 +35417,7 @@ int32_t d_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     addr_80694ed_13:
     return eax26;
     addr_8068c81_8:
-    error_bug(ecx25, 0x807720c, v327, v328, v329);
+    error_bug(ecx25, "Internal error in d_recurse(): differentiating with unparenthesized operators is not allowed.", v327, v328, v329);
     eax26 = 0;
     goto addr_80694ed_13;
 }
@@ -35662,9 +35660,9 @@ void trim_zeros(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
 
 struct s231 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5);
@@ -35711,24 +35709,24 @@ void** list_c_equation(void** ecx, void** a2, void** a3, void** a4) {
         edi6 = reinterpret_cast<struct s231*>(reinterpret_cast<unsigned char>(a2) * 4);
         v7 = a4;
         v8 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082a40);
-        eax10 = list_code(v8, &edi6->f134753664, a3, v7, v9);
+        eax10 = list_code(v8, &edi6->f8082d80, a3, v7, v9);
         esi5 = eax10;
         if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8079940)) {
             eax11 = gfp;
-            eax20 = fun_8048f04(ecx, eax11, 1, 0x80759cf, v7, v12, v13, v14, v15, v16, v17, v18, ebx19);
+            eax20 = fun_8048f04(ecx, eax11, 1, " = ", v7, v12, v13, v14, v15, v16, v17, v18, ebx19);
             v21 = eax20;
             v7 = a4;
             v22 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(a2) * 4 + 0x8082be0);
-            eax24 = list_code(v22, &edi6->f134715712, a3, v7, v23);
+            eax24 = list_code(v22, &edi6->f8079940, a3, v7, v23);
             esi5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi5) + (reinterpret_cast<unsigned char>(eax24) + reinterpret_cast<unsigned char>(v21)));
         }
         if (reinterpret_cast<unsigned char>(a3 - 1) <= reinterpret_cast<unsigned char>(1)) {
             eax25 = gfp;
-            eax32 = fun_8048f04(ecx, eax25, 1, 0x8077a56, v7, v26, v27, v28, v21, v29, v30, v31, ebx19);
+            eax32 = fun_8048f04(ecx, eax25, 1, ";", v7, v26, v27, v28, v21, v29, v30, v31, ebx19);
             esi5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi5) + reinterpret_cast<unsigned char>(eax32));
         }
         eax33 = gfp;
-        fun_8048f04(ecx, eax33, 1, 0x80757fd, v7, v34, v35, v36, v21, v37, v38, v39, ebx19);
+        fun_8048f04(ecx, eax33, 1, "\n", v7, v34, v35, v36, v21, v37, v38, v39, ebx19);
     }
     return esi5;
 }
@@ -36196,11 +36194,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                         ++v30;
                         if (reinterpret_cast<signed char>(v41) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(v8)) || reinterpret_cast<signed char>(v30) > reinterpret_cast<signed char>(*reinterpret_cast<void***>(v43 + 4))) {
                             addr_806e11b_9:
-                            v23 = reinterpret_cast<void**>(0x8075ad6);
+                            v23 = reinterpret_cast<void**>("(");
                             v12 = reinterpret_cast<void**>(1);
                             eax47 = gfp;
                             v13 = eax47;
-                            eax53 = fun_8048f04(ecx11, v13, 1, 0x8075ad6, v24, v25, 15, v48, v49, v50, v51, v52, v32);
+                            eax53 = fun_8048f04(ecx11, v13, 1, "(", v24, v25, 15, v48, v49, v50, v51, v52, v32);
                             v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax53));
                             continue;
                         } else {
@@ -36226,11 +36224,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                         }
                     } else {
                         --v30;
-                        v23 = reinterpret_cast<void**>(0x80779a8);
+                        v23 = reinterpret_cast<void**>(")");
                         v12 = reinterpret_cast<void**>(1);
                         eax60 = gfp;
                         v13 = eax60;
-                        eax66 = fun_8048f04(ecx11, v13, 1, 0x80779a8, v24, v25, 15, v61, v62, v63, v64, v65, v32);
+                        eax66 = fun_8048f04(ecx11, v13, 1, ")", v24, v25, 15, v61, v62, v63, v64, v65, v32);
                         v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax66));
                         continue;
                     }
@@ -36242,13 +36240,13 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             if (!a4) {
                                 if (a3 == 1) {
                                     eax71 = gfp;
-                                    eax77 = fun_8048f04(ecx11, eax71, 1, 0x80779ef, v24, v25, 15, v72, v73, v74, v75, v76, v32);
+                                    eax77 = fun_8048f04(ecx11, eax71, 1, "pow", v24, v25, 15, v72, v73, v74, v75, v76, v32);
                                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax77));
                                     goto addr_806e11b_9;
                                 } else {
                                     if (reinterpret_cast<int1_t>(a3 == 2)) {
                                         eax78 = gfp;
-                                        eax84 = fun_8048f04(ecx11, eax78, 1, 0x80779ea, v24, v25, 15, v79, v80, v81, v82, v83, v32);
+                                        eax84 = fun_8048f04(ecx11, eax78, 1, "Math.pow", v24, v25, 15, v79, v80, v81, v82, v83, v32);
                                         v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax84));
                                         goto addr_806e11b_9;
                                     }
@@ -36270,7 +36268,7 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                     } else {
                         if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(esi54 + 8) == 7)) {
                             eax85 = gfp;
-                            eax91 = fun_8048f04(ecx11, eax85, 1, 0x80779f3, v24, v25, 15, v86, v87, v88, v89, v90, v32);
+                            eax91 = fun_8048f04(ecx11, eax85, 1, "fact", v24, v25, 15, v86, v87, v88, v89, v90, v32);
                             v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax91));
                             goto addr_806e11b_9;
                         }
@@ -36283,18 +36281,18 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                     v92 = *reinterpret_cast<void***>(v34 + 8);
                     list_var(ecx11, v92, a3, v23, v24, v25, 15, v93, v94, v95, v96);
                     v24 = reinterpret_cast<void**>(0x8079800);
-                    v23 = reinterpret_cast<void**>(0x8075e74);
+                    v23 = reinterpret_cast<void**>("%s");
                     v12 = reinterpret_cast<void**>(1);
                     eax97 = gfp;
                     v13 = eax97;
-                    eax103 = fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x8079800, v25, 15, v98, v99, v100, v101, v102, v32);
+                    eax103 = fun_8048f04(ecx11, v13, 1, "%s", 0x8079800, v25, 15, v98, v99, v100, v101, v102, v32);
                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax103));
                 } else {
-                    v23 = reinterpret_cast<void**>(0x8077a08);
+                    v23 = reinterpret_cast<void**>("1i");
                     v12 = reinterpret_cast<void**>(1);
                     eax104 = gfp;
                     v13 = eax104;
-                    eax110 = fun_8048f04(ecx11, v13, 1, 0x8077a08, v24, v25, 15, v105, v106, v107, v108, v109, v32);
+                    eax110 = fun_8048f04(ecx11, v13, 1, "1i", v24, v25, 15, v105, v106, v107, v108, v109, v32);
                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax110));
                 }
             } else {
@@ -36314,15 +36312,15 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                         __asm__("fld qword [ecx+0x8]");
                         __asm__("fstp qword [esp+0x18]");
                         v111 = reinterpret_cast<void**>(15);
-                        v25 = reinterpret_cast<void**>(0x80779fd);
+                        v25 = reinterpret_cast<void**>("%#.*g");
                         v112 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                        fun_8049224(ecx11, v112, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v113);
-                        trim_zeros(ecx11, v112, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+                        fun_8049224(ecx11, v112, 0x1f4, 1, 0x1f4, "%#.*g", 15, v113);
+                        trim_zeros(ecx11, v112, 0x1f4, 1, 0x1f4, "%#.*g", 15);
                     } else {
                         __asm__("fld qword [eax+0x8]");
                         __asm__("fstp qword [esp+0x14]");
-                        v25 = reinterpret_cast<void**>(0x80779f8);
-                        fun_8049224(ecx11, reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0, 0x1f4, 1, 0x1f4, 0x80779f8, 15, v114);
+                        v25 = reinterpret_cast<void**>("%.0f");
+                        fun_8049224(ecx11, reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0, 0x1f4, 1, 0x1f4, "%.0f", 15, v114);
                     }
                     __asm__("fld qword [eax+0x8]");
                     __asm__("fldz ");
@@ -36331,19 +36329,19 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                     if (reinterpret_cast<unsigned char>(a4) <= reinterpret_cast<unsigned char>(0)) {
                         ecx11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
                         v24 = ecx11;
-                        v23 = reinterpret_cast<void**>(0x8075e74);
+                        v23 = reinterpret_cast<void**>("%s");
                         v12 = reinterpret_cast<void**>(1);
                         eax115 = gfp;
                         v13 = eax115;
-                        eax121 = fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, 15, v116, v117, v118, v119, v120, v32);
+                        eax121 = fun_8048f04(ecx11, v13, 1, "%s", v24, v25, 15, v116, v117, v118, v119, v120, v32);
                         v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax121));
                     } else {
                         v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                        v23 = reinterpret_cast<void**>(0x8077a03);
+                        v23 = reinterpret_cast<void**>("(%s)");
                         v12 = reinterpret_cast<void**>(1);
                         eax122 = gfp;
                         v13 = eax122;
-                        eax128 = fun_8048f04(ecx11, v13, 1, 0x8077a03, v24, v25, 15, v123, v124, v125, v126, v127, v32);
+                        eax128 = fun_8048f04(ecx11, v13, 1, "(%s)", v24, v25, 15, v123, v124, v125, v126, v127, v32);
                         v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax128));
                     }
                 } else {
@@ -36355,27 +36353,27 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             addr_806e341_49:
                         case 0:
                         case 8:
-                            eax129 = reinterpret_cast<void**>(0x8077a0f);
+                            eax129 = reinterpret_cast<void**>("(unknown operator)");
                             break;
                         case 1:
-                            eax129 = reinterpret_cast<void**>(0x8077a0b);
+                            eax129 = reinterpret_cast<void**>(" + ");
                             break;
                         case 2:
-                            eax129 = reinterpret_cast<void**>(0x8077a22);
+                            eax129 = reinterpret_cast<void**>(" - ");
                             break;
                         case 3:
-                            eax129 = reinterpret_cast<void**>(0x8077a2b);
+                            eax129 = reinterpret_cast<void**>("*");
                             break;
                         case 4:
                         case 9:
-                            eax129 = reinterpret_cast<void**>(0x8077a7f);
+                            eax129 = reinterpret_cast<void**>("/");
                             break;
                         case 5:
-                            eax129 = reinterpret_cast<void**>(0x8077a26);
+                            eax129 = reinterpret_cast<void**>(" % ");
                             break;
                         case 6:
-                            if (a4 || (eax129 = reinterpret_cast<void**>(0x8075f0e), reinterpret_cast<int1_t>(a3 == 3))) {
-                                eax129 = reinterpret_cast<void**>(0x8077a2a);
+                            if (a4 || (eax129 = reinterpret_cast<void**>(", "), reinterpret_cast<int1_t>(a3 == 3))) {
+                                eax129 = reinterpret_cast<void**>("**");
                                 break;
                             }
                         case 7:
@@ -36421,11 +36419,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             goto 0x806f7fc;
                         }
                         v24 = eax129;
-                        v23 = reinterpret_cast<void**>(0x8075e74);
+                        v23 = reinterpret_cast<void**>("%s");
                         v12 = reinterpret_cast<void**>(1);
                         eax130 = gfp;
                         v13 = eax130;
-                        eax136 = fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, 15, v131, v132, v133, v134, v135, v32);
+                        eax136 = fun_8048f04(ecx11, v13, 1, "%s", v24, v25, 15, v131, v132, v133, v134, v135, v32);
                         v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<unsigned char>(eax136));
                     }
                 }
@@ -36440,11 +36438,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx137) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx137 == 0))) {
         esi138 = v20;
         do {
-            v23 = reinterpret_cast<void**>(0x80779a8);
+            v23 = reinterpret_cast<void**>(")");
             v12 = reinterpret_cast<void**>(1);
             eax139 = gfp;
             v13 = eax139;
-            eax145 = fun_8048f04(ecx11, v13, 1, 0x80779a8, v24, v25, 15, v140, v141, v142, v143, v144, v32);
+            eax145 = fun_8048f04(ecx11, v13, 1, ")", v24, v25, 15, v140, v141, v142, v143, v144, v32);
             esi138 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi138) + reinterpret_cast<unsigned char>(eax145));
             ebx137 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(ebx137) - 1);
         } while (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx137) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx137 == 0)));
@@ -36452,7 +36450,7 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
         goto addr_806e40c_2;
     }
     while (1) {
-        edi146 = reinterpret_cast<void**>(0x8077a0f);
+        edi146 = reinterpret_cast<void**>("(unknown operator)");
         while (1) {
             if (v147) {
                 v12 = edi146;
@@ -36461,11 +36459,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
             }
             if (a3) {
                 v24 = edi146;
-                v23 = reinterpret_cast<void**>(0x8075e74);
+                v23 = reinterpret_cast<void**>("%s");
                 v12 = reinterpret_cast<void**>(1);
                 eax150 = gfp;
                 v13 = eax150;
-                fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, v111, v151, v152, v153, v154, v155, v32);
+                fun_8048f04(ecx11, v13, 1, "%s", v24, v25, v111, v151, v152, v153, v154, v155, v32);
             }
             ecx156 = -1;
             do {
@@ -36499,12 +36497,12 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                 *edi167 = 40;
                             }
                             if (a3) {
-                                v24 = reinterpret_cast<void**>(0x8075ad6);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v24 = reinterpret_cast<void**>("(");
+                                v23 = reinterpret_cast<void**>("%s");
                                 v12 = reinterpret_cast<void**>(1);
                                 eax173 = gfp;
                                 v13 = eax173;
-                                fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x8075ad6, v25, v111, v174, v152, v175, v176, v177, v32);
+                                fun_8048f04(ecx11, v13, 1, "%s", "(", v25, v111, v174, v152, v175, v176, v177, v32);
                             }
                             v149 = esi54;
                         } else {
@@ -36513,12 +36511,12 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                 *edi167 = 41;
                             }
                             if (a3) {
-                                v24 = reinterpret_cast<void**>(0x80779a8);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v24 = reinterpret_cast<void**>(")");
+                                v23 = reinterpret_cast<void**>("%s");
                                 v12 = reinterpret_cast<void**>(1);
                                 eax179 = gfp;
                                 v13 = eax179;
-                                fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x80779a8, v25, v111, v180, v152, v181, v182, v183, v32);
+                                fun_8048f04(ecx11, v13, 1, "%s", ")", v25, v111, v180, v152, v181, v182, v183, v32);
                             }
                             v149 = esi54;
                             if (v184) {
@@ -36542,11 +36540,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                     }
                     if (a3) {
                         v24 = reinterpret_cast<void**>(0x8079800);
-                        v23 = reinterpret_cast<void**>(0x8075e74);
+                        v23 = reinterpret_cast<void**>("%s");
                         v12 = reinterpret_cast<void**>(1);
                         eax192 = gfp;
                         v13 = eax192;
-                        fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x8079800, v25, v111, v193, v152, v194, v195, v196, v32);
+                        fun_8048f04(ecx11, v13, 1, "%s", 0x8079800, v25, v111, v193, v152, v194, v195, v196, v32);
                     }
                     edi197 = reinterpret_cast<signed char*>(0x8079800);
                     ecx198 = -1;
@@ -36576,12 +36574,12 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                 __asm__("fld qword [eax+0x8]");
                                 __asm__("fstp qword [esp+0x18]");
                                 v111 = v201;
-                                v25 = reinterpret_cast<void**>(0x80759b8);
+                                v25 = reinterpret_cast<void**>("%.*g");
                                 v24 = reinterpret_cast<void**>(0x1f4);
                                 v23 = reinterpret_cast<void**>(1);
                                 v12 = reinterpret_cast<void**>(0x1f4);
                                 v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x80759b8, v111, v202);
+                                fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%.*g", v111, v202);
                             } else {
                                 eax203 = finance_option;
                                 zf204 = reinterpret_cast<uint1_t>(eax203 == 0);
@@ -36594,22 +36592,22 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                         __asm__("fstp qword [esp+0x18]");
                                         eax206 = precision;
                                         v111 = eax206;
-                                        v25 = reinterpret_cast<void**>(0x80759b8);
+                                        v25 = reinterpret_cast<void**>("%.*g");
                                         v24 = reinterpret_cast<void**>(0x1f4);
                                         v23 = reinterpret_cast<void**>(1);
                                         v12 = reinterpret_cast<void**>(0x1f4);
                                         v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                        fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x80759b8, v111, v207);
+                                        fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%.*g", v111, v207);
                                     } else {
                                         __asm__("fstp qword [esp+0x18]");
                                         eax208 = precision;
                                         v111 = eax208;
-                                        v25 = reinterpret_cast<void**>(0x8077a64);
+                                        v25 = reinterpret_cast<void**>("(%.*g)");
                                         v24 = reinterpret_cast<void**>(0x1f4);
                                         v23 = reinterpret_cast<void**>(1);
                                         v12 = reinterpret_cast<void**>(0x1f4);
                                         v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                        fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a64, v111, v209);
+                                        fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "(%.*g)", v111, v209);
                                     }
                                     if (v210) {
                                         v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
@@ -36618,11 +36616,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                     }
                                     if (a3) {
                                         v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                        v23 = reinterpret_cast<void**>(0x8075e74);
+                                        v23 = reinterpret_cast<void**>("%s");
                                         v12 = reinterpret_cast<void**>(1);
                                         eax212 = gfp;
                                         v13 = eax212;
-                                        fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, v111, v213, v152, v214, v215, v216, v32);
+                                        fun_8048f04(ecx11, v13, 1, "%s", v24, v25, v111, v213, v152, v214, v215, v216, v32);
                                     }
                                     ecx217 = -1;
                                     edi218 = v219;
@@ -36639,25 +36637,25 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                     __asm__("fld qword [edx+0x8]");
                                     __asm__("fstp qword [esp+0x18]");
                                     v111 = eax203;
-                                    v25 = reinterpret_cast<void**>(0x8077a5f);
+                                    v25 = reinterpret_cast<void**>("%.*f");
                                     v24 = reinterpret_cast<void**>(0x1f4);
                                     v23 = reinterpret_cast<void**>(1);
                                     v12 = reinterpret_cast<void**>(0x1f4);
                                     v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                    fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a5f, v111, v220);
+                                    fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%.*f", v111, v220);
                                 }
                             }
                         } else {
                             __asm__("fld qword [eax+0x8]");
                             __asm__("fstp qword [esp+0x18]");
                             v111 = reinterpret_cast<void**>(15);
-                            v25 = reinterpret_cast<void**>(0x80779fd);
+                            v25 = reinterpret_cast<void**>("%#.*g");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                            fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v221);
-                            trim_zeros(ecx11, v13, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+                            fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%#.*g", 15, v221);
+                            trim_zeros(ecx11, v13, 0x1f4, 1, 0x1f4, "%#.*g", 15);
                         }
                         __asm__("fld qword [edx+0x8]");
                         __asm__("fldz ");
@@ -36671,11 +36669,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             }
                             if (a3) {
                                 v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v23 = reinterpret_cast<void**>("%s");
                                 v12 = reinterpret_cast<void**>(1);
                                 eax224 = gfp;
                                 v13 = eax224;
-                                fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, v111, v225, v152, v226, v227, v228, v32);
+                                fun_8048f04(ecx11, v13, 1, "%s", v24, v25, v111, v225, v152, v226, v227, v228, v32);
                             }
                             ecx229 = -1;
                             edi230 = v231;
@@ -36689,24 +36687,24 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             v149 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v149) + reinterpret_cast<unsigned char>(ecx11) + 0xffffffff);
                         } else {
                             v111 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                            v25 = reinterpret_cast<void**>(0x8077a03);
+                            v25 = reinterpret_cast<void**>("(%s)");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
-                            fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a03, v111, v232);
+                            fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "(%s)", v111, v232);
                             if (v233) {
                                 v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
                                 v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v234) + reinterpret_cast<unsigned char>(v149));
-                                fun_8049114(v13, v12, 1, 0x1f4, 0x8077a03, v111);
+                                fun_8049114(v13, v12, 1, 0x1f4, "(%s)", v111);
                             }
                             if (a3) {
                                 v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
-                                v23 = reinterpret_cast<void**>(0x8075e74);
+                                v23 = reinterpret_cast<void**>("%s");
                                 v12 = reinterpret_cast<void**>(1);
                                 eax235 = gfp;
                                 v13 = eax235;
-                                fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, 0x8077a03, v111, v236, v152, v237, v238, v239, v32);
+                                fun_8048f04(ecx11, v13, 1, "%s", v24, "(%s)", v111, v236, v152, v237, v238, v239, v32);
                             }
                             ecx240 = -1;
                             do {
@@ -36729,36 +36727,36 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                 break;
             switch (v160->f8) {
             case 1:
-                edi146 = reinterpret_cast<void**>(0x8077a0b);
+                edi146 = reinterpret_cast<void**>(" + ");
                 break;
             case 2:
-                edi146 = reinterpret_cast<void**>(0x8077a22);
+                edi146 = reinterpret_cast<void**>(" - ");
                 break;
             case 3:
-                edi146 = reinterpret_cast<void**>(0x8077a2b);
+                edi146 = reinterpret_cast<void**>("*");
                 break;
             case 4:
-                edi146 = reinterpret_cast<void**>(0x8077a7f);
+                edi146 = reinterpret_cast<void**>("/");
                 break;
             case 5:
-                edi146 = reinterpret_cast<void**>(0x8077a26);
+                edi146 = reinterpret_cast<void**>(" % ");
                 break;
             case 6:
                 zf242 = power_starstar == 0;
                 if (!zf242) 
                     goto addr_806f810_150;
-                edi146 = reinterpret_cast<void**>(0x8077a81);
+                edi146 = reinterpret_cast<void**>("^");
                 if (a5 != 3) 
                     break;
                 addr_806f810_150:
-                edi146 = reinterpret_cast<void**>(0x8077a2a);
+                edi146 = reinterpret_cast<void**>("**");
                 break;
             case 7:
                 ++v157;
-                edi146 = reinterpret_cast<void**>(0x8077a83);
+                edi146 = reinterpret_cast<void**>("!");
                 break;
             case 9:
-                edi146 = reinterpret_cast<void**>(0x8077a7e);
+                edi146 = reinterpret_cast<void**>("//");
             case 0:
             case 8:
                 goto 0x806f7d2;
@@ -36776,12 +36774,12 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                 *esi245 = 41;
             }
             if (a3) {
-                v24 = reinterpret_cast<void**>(0x80779a8);
-                v23 = reinterpret_cast<void**>(0x8075e74);
+                v24 = reinterpret_cast<void**>(")");
+                v23 = reinterpret_cast<void**>("%s");
                 v12 = reinterpret_cast<void**>(1);
                 eax250 = gfp;
                 v13 = eax250;
-                fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x80779a8, v25, v111, v251, v152, v252, v253, v254, v32);
+                fun_8048f04(ecx11, v13, 1, "%s", ")", v25, v111, v251, v152, v252, v253, v254, v32);
             }
             --ebx247;
             if (v255) {
@@ -36819,15 +36817,15 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx261) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx261 == 0))) 
                     goto addr_806f148_176;
             } else {
-                v23 = reinterpret_cast<void**>(0x80779a8);
+                v23 = reinterpret_cast<void**>(")");
                 v12 = reinterpret_cast<void**>(1);
                 eax268 = gfp;
                 v13 = eax268;
-                fun_8048f04(ecx11, v13, 1, 0x80779a8, v24, v25, v111, v269, v152, v270, v271, v272, v32);
+                fun_8048f04(ecx11, v13, 1, ")", v24, v25, v111, v269, v152, v270, v271, v272, v32);
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx261) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx261 == 0)) 
                     goto addr_806f15d_178;
                 v13 = edi266;
-                set_color(v13, 1, 0x80779a8, v24, v25, v111);
+                set_color(v13, 1, ")", v24, v25, v111);
             }
             --edi266;
         }
@@ -36871,11 +36869,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                 v44 = esi54;
                                 if (v20) {
                                     set_color(edi55, v12, v23, v24, v25, v111);
-                                    v23 = reinterpret_cast<void**>(0x8075ad6);
+                                    v23 = reinterpret_cast<void**>("(");
                                     v12 = reinterpret_cast<void**>(1);
                                     eax285 = gfp;
                                     v13 = eax285;
-                                    fun_8048f04(ecx276, v13, 1, 0x8075ad6, v24, v25, v111, v286, v152, v287, v288, v289, v32);
+                                    fun_8048f04(ecx276, v13, 1, "(", v24, v25, v111, v286, v152, v287, v288, v289, v32);
                                     edi55 = eax284;
                                 } else {
                                     edi55 = eax284;
@@ -36884,12 +36882,12 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                                 --edi55;
                                 v44 = esi54;
                                 if (v20) {
-                                    v23 = reinterpret_cast<void**>(0x80779a8);
+                                    v23 = reinterpret_cast<void**>(")");
                                     v12 = reinterpret_cast<void**>(1);
                                     eax290 = gfp;
-                                    fun_8048f04(ecx276, eax290, 1, 0x80779a8, v24, v25, v111, v291, v152, v292, v293, v294, v32);
+                                    fun_8048f04(ecx276, eax290, 1, ")", v24, v25, v111, v291, v152, v292, v293, v294, v32);
                                     v13 = edi55 + 0xffffffff;
-                                    set_color(v13, 1, 0x80779a8, v24, v25, v111);
+                                    set_color(v13, 1, ")", v24, v25, v111);
                                 }
                             }
                             ++ebx283;
@@ -36956,15 +36954,15 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             edi328 = v309;
                             do {
                                 if (!esi326) {
-                                    v314 = reinterpret_cast<void**>(0x807295b);
+                                    v314 = reinterpret_cast<void**>("-");
                                     v315 = reinterpret_cast<void**>(1);
                                     eax329 = gfp;
-                                    fun_8048f04(ecx321, eax329, 1, 0x807295b, v313, v312, v111, v330, v152, v331, v332, v333, v32);
+                                    fun_8048f04(ecx321, eax329, 1, "-", v313, v312, v111, v330, v152, v331, v332, v333, v32);
                                 } else {
-                                    v314 = reinterpret_cast<void**>(0x8077a50);
+                                    v314 = reinterpret_cast<void**>("&minus;");
                                     v315 = reinterpret_cast<void**>(1);
                                     eax334 = gfp;
-                                    fun_8048f04(ecx321, eax334, 1, 0x8077a50, v313, v312, v111, v335, v152, v336, v337, v338, v32);
+                                    fun_8048f04(ecx321, eax334, 1, "&minus;", v313, v312, v111, v335, v152, v336, v337, v338, v32);
                                 }
                                 ++ebx323;
                             } while (reinterpret_cast<signed char>(edi328) > reinterpret_cast<signed char>(ebx323));
@@ -37037,11 +37035,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                     if (!v20) 
                         goto addr_806f0d8_182;
                     v24 = reinterpret_cast<void**>(0x8079800);
-                    v23 = reinterpret_cast<void**>(0x8075e74);
+                    v23 = reinterpret_cast<void**>("%s");
                     v12 = reinterpret_cast<void**>(1);
                     eax356 = gfp;
                     v13 = eax356;
-                    fun_8048f04(ecx11, v13, 1, 0x8075e74, 0x8079800, v25, v111, v357, v152, v358, v359, v360, v32);
+                    fun_8048f04(ecx11, v13, 1, "%s", 0x8079800, v25, v111, v357, v152, v358, v359, v360, v32);
                     ebx274 = v39;
                     continue;
                 }
@@ -37075,24 +37073,24 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                             __asm__("fstp qword [esp+0x18]");
                             eax368 = precision;
                             v111 = eax368;
-                            v25 = reinterpret_cast<void**>(0x80759b8);
+                            v25 = reinterpret_cast<void**>("%.*g");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                            eax370 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x80759b8, v111, v369);
+                            eax370 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%.*g", v111, v369);
                             v44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v44) + reinterpret_cast<uint32_t>(eax370));
                             ebx274 = v39;
                         } else {
                             __asm__("fstp qword [esp+0x18]");
                             eax371 = precision;
                             v111 = eax371;
-                            v25 = reinterpret_cast<void**>(0x8077a64);
+                            v25 = reinterpret_cast<void**>("(%.*g)");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                            eax373 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a64, v111, v372);
+                            eax373 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "(%.*g)", v111, v372);
                             v44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v44) + reinterpret_cast<uint32_t>(eax373));
                             ebx274 = v39;
                         }
@@ -37102,46 +37100,46 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
                         if (below_or_equal366) {
                             __asm__("fstp qword [esp+0x18]");
                             v111 = eax364;
-                            v25 = reinterpret_cast<void**>(0x8077a5f);
+                            v25 = reinterpret_cast<void**>("%.*f");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             ecx11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
                             v13 = ecx11;
-                            eax375 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a5f, v111, v374);
+                            eax375 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "%.*f", v111, v374);
                             v44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v44) + reinterpret_cast<uint32_t>(eax375));
                             ebx274 = v39;
                         } else {
                             __asm__("fstp qword [esp+0x18]");
                             v111 = eax364;
-                            v25 = reinterpret_cast<void**>(0x8077a58);
+                            v25 = reinterpret_cast<void**>("(%.*f)");
                             v24 = reinterpret_cast<void**>(0x1f4);
                             v23 = reinterpret_cast<void**>(1);
                             v12 = reinterpret_cast<void**>(0x1f4);
                             v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                            eax377 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x8077a58, v111, v376);
+                            eax377 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "(%.*f)", v111, v376);
                             v44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v44) + reinterpret_cast<uint32_t>(eax377));
                             ebx274 = v39;
                         }
                     }
                 } else {
                     __asm__("fstp st0");
-                    v25 = reinterpret_cast<void**>(0x807295b);
+                    v25 = reinterpret_cast<void**>("-");
                     v24 = reinterpret_cast<void**>(0x1f4);
                     v23 = reinterpret_cast<void**>(1);
                     v12 = reinterpret_cast<void**>(0x1f4);
                     v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                    eax379 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, 0x807295b, v111, v378);
+                    eax379 = fun_8049224(ecx11, v13, 0x1f4, 1, 0x1f4, "-", v111, v378);
                     v44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v44) + reinterpret_cast<uint32_t>(eax379));
                 }
                 if (!v20) 
                     continue;
                 v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                v23 = reinterpret_cast<void**>(0x8075e74);
+                v23 = reinterpret_cast<void**>("%s");
                 v12 = reinterpret_cast<void**>(1);
                 eax380 = gfp;
                 v13 = eax380;
-                fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, v111, v381, v152, v382, v383, v384, v32);
+                fun_8048f04(ecx11, v13, 1, "%s", v24, v25, v111, v381, v152, v382, v383, v384, v32);
                 continue;
                 addr_806ed5c_243:
                 __asm__("fstp st0");
@@ -37160,53 +37158,53 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
             case 0:
             case 8:
                 v44 = v44 + 18;
-                eax385 = reinterpret_cast<void**>(0x8077a0f);
+                eax385 = reinterpret_cast<void**>("(unknown operator)");
                 break;
             case 1:
                 v44 = v44 + 3;
-                eax385 = reinterpret_cast<void**>(0x8077a0b);
+                eax385 = reinterpret_cast<void**>(" + ");
                 break;
             case 2:
-                eax385 = reinterpret_cast<void**>(0x8077a6b);
+                eax385 = reinterpret_cast<void**>(" &minus; ");
                 if (!v386) {
-                    eax385 = reinterpret_cast<void**>(0x8077a22);
+                    eax385 = reinterpret_cast<void**>(" - ");
                 }
                 v44 = v44 + 3;
                 break;
             case 3:
-                eax385 = reinterpret_cast<void**>(0x8077a75);
+                eax385 = reinterpret_cast<void**>("&middot;");
                 if (!v387) {
-                    eax385 = reinterpret_cast<void**>(0x8077a2b);
+                    eax385 = reinterpret_cast<void**>("*");
                 }
                 ++v44;
                 break;
             case 4:
                 ++v44;
-                eax385 = reinterpret_cast<void**>(0x8077a7f);
+                eax385 = reinterpret_cast<void**>("/");
                 break;
             case 5:
                 v44 = v44 + 3;
-                eax385 = reinterpret_cast<void**>(0x8077a26);
+                eax385 = reinterpret_cast<void**>(" % ");
                 break;
             case 6:
                 zf388 = power_starstar == 0;
                 if (zf388) {
                     ++v44;
-                    eax385 = reinterpret_cast<void**>(0x8077a81);
+                    eax385 = reinterpret_cast<void**>("^");
                     break;
                 } else {
                     v44 = v44 + 2;
-                    eax385 = reinterpret_cast<void**>(0x8077a2a);
+                    eax385 = reinterpret_cast<void**>("**");
                     break;
                 }
             case 7:
                 ++v44;
                 ++v39;
-                eax385 = reinterpret_cast<void**>(0x8077a83);
+                eax385 = reinterpret_cast<void**>("!");
                 break;
             case 9:
                 v44 = v44 + 2;
-                eax385 = reinterpret_cast<void**>(0x8077a7e);
+                eax385 = reinterpret_cast<void**>("//");
             case 19:
                 goto 0x806f7ee;
             case 16:
@@ -37230,11 +37228,11 @@ void** list_code(void** a1, void** a2, void** a3, void** a4, uint32_t a5) {
             if (!v20) 
                 break;
             v24 = eax385;
-            v23 = reinterpret_cast<void**>(0x8075e74);
+            v23 = reinterpret_cast<void**>("%s");
             v12 = reinterpret_cast<void**>(1);
             eax389 = gfp;
             v13 = eax389;
-            fun_8048f04(ecx11, v13, 1, 0x8075e74, v24, v25, v111, v390, v152, v391, v392, v393, v32);
+            fun_8048f04(ecx11, v13, 1, "%s", v24, v25, v111, v390, v152, v391, v392, v393, v32);
             ebx274 = v39;
         }
     }
@@ -37593,11 +37591,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         esi35 = ebx14;
         ebx36 = ecx33;
         do {
-            v37 = reinterpret_cast<void**>(0x8077a28);
+            v37 = reinterpret_cast<void**>(" ");
             v38 = reinterpret_cast<void**>(1);
             eax39 = gfp;
             v27 = eax39;
-            fun_8048f04(ecx33, v27, 1, 0x8077a28, v40, v41, v42, v43, v44, v45, v46, v47, v48);
+            fun_8048f04(ecx33, v27, 1, " ", v40, v41, v42, v43, v44, v45, v46, v47, v48);
             eax49 = cur_pos;
             eax50 = eax49 + 1;
             cur_pos = eax50;
@@ -37663,11 +37661,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                         v20 = esi35;
                         if (v21) {
                             set_color(edi57, v38, v37, v76, v77, v78);
-                            v37 = reinterpret_cast<void**>(0x8075ad6);
+                            v37 = reinterpret_cast<void**>("(");
                             v38 = reinterpret_cast<void**>(1);
                             eax79 = gfp;
                             v27 = eax79;
-                            fun_8048f04(ecx67, v27, 1, 0x8075ad6, v76, v77, v78, v80, v81, v82, v83, v55, v84);
+                            fun_8048f04(ecx67, v27, 1, "(", v76, v77, v78, v80, v81, v82, v83, v55, v84);
                             edi57 = eax75;
                         } else {
                             edi57 = eax75;
@@ -37676,12 +37674,12 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                         --edi57;
                         v20 = esi35;
                         if (v21) {
-                            v37 = reinterpret_cast<void**>(0x80779a8);
+                            v37 = reinterpret_cast<void**>(")");
                             v38 = reinterpret_cast<void**>(1);
                             eax85 = gfp;
-                            fun_8048f04(ecx67, eax85, 1, 0x80779a8, v76, v77, v78, v86, v87, v88, v83, v55, v84);
+                            fun_8048f04(ecx67, eax85, 1, ")", v76, v77, v78, v86, v87, v88, v83, v55, v84);
                             v27 = edi57 + 0xffffffff;
-                            set_color(v27, 1, 0x80779a8, v76, v77, v78);
+                            set_color(v27, 1, ")", v76, v77, v78);
                         }
                     }
                     ++ebx74;
@@ -37702,11 +37700,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                     ebx94 = v59;
                 } else {
                     v76 = reinterpret_cast<void**>(0x8079800);
-                    v37 = reinterpret_cast<void**>(0x8075e74);
+                    v37 = reinterpret_cast<void**>("%s");
                     v38 = reinterpret_cast<void**>(1);
                     eax95 = gfp;
                     v27 = eax95;
-                    fun_8048f04(ecx19, v27, 1, 0x8075e74, 0x8079800, v77, v78, v96, v97, v98, v83, v55, v84);
+                    fun_8048f04(ecx19, v27, 1, "%s", 0x8079800, v77, v78, v96, v97, v98, v83, v55, v84);
                     ebx94 = v59;
                 }
             } else {
@@ -37735,24 +37733,24 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                     __asm__("fstp qword [esp+0x18]");
                                     eax106 = precision;
                                     v78 = eax106;
-                                    v77 = reinterpret_cast<void**>(0x80759b8);
+                                    v77 = reinterpret_cast<void**>("%.*g");
                                     v76 = reinterpret_cast<void**>(0x1f4);
                                     v37 = reinterpret_cast<void**>(1);
                                     v38 = reinterpret_cast<void**>(0x1f4);
                                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                    eax108 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x80759b8, v78, v107);
+                                    eax108 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%.*g", v78, v107);
                                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<uint32_t>(eax108));
                                     ebx94 = v59;
                                 } else {
                                     __asm__("fstp qword [esp+0x18]");
                                     eax109 = precision;
                                     v78 = eax109;
-                                    v77 = reinterpret_cast<void**>(0x8077a64);
+                                    v77 = reinterpret_cast<void**>("(%.*g)");
                                     v76 = reinterpret_cast<void**>(0x1f4);
                                     v37 = reinterpret_cast<void**>(1);
                                     v38 = reinterpret_cast<void**>(0x1f4);
                                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                    eax111 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a64, v78, v110);
+                                    eax111 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "(%.*g)", v78, v110);
                                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<uint32_t>(eax111));
                                     ebx94 = v59;
                                 }
@@ -37762,45 +37760,45 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                 if (below_or_equal104) {
                                     __asm__("fstp qword [esp+0x18]");
                                     v78 = eax102;
-                                    v77 = reinterpret_cast<void**>(0x8077a5f);
+                                    v77 = reinterpret_cast<void**>("%.*f");
                                     v76 = reinterpret_cast<void**>(0x1f4);
                                     v37 = reinterpret_cast<void**>(1);
                                     v38 = reinterpret_cast<void**>(0x1f4);
                                     ecx19 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
                                     v27 = ecx19;
-                                    eax113 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a5f, v78, v112);
+                                    eax113 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%.*f", v78, v112);
                                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<uint32_t>(eax113));
                                     ebx94 = v59;
                                 } else {
                                     __asm__("fstp qword [esp+0x18]");
                                     v78 = eax102;
-                                    v77 = reinterpret_cast<void**>(0x8077a58);
+                                    v77 = reinterpret_cast<void**>("(%.*f)");
                                     v76 = reinterpret_cast<void**>(0x1f4);
                                     v37 = reinterpret_cast<void**>(1);
                                     v38 = reinterpret_cast<void**>(0x1f4);
                                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                    eax115 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a58, v78, v114);
+                                    eax115 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "(%.*f)", v78, v114);
                                     v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<uint32_t>(eax115));
                                     ebx94 = v59;
                                 }
                             }
                         } else {
                             __asm__("fstp st0");
-                            v77 = reinterpret_cast<void**>(0x807295b);
+                            v77 = reinterpret_cast<void**>("-");
                             v76 = reinterpret_cast<void**>(0x1f4);
                             v37 = reinterpret_cast<void**>(1);
                             v38 = reinterpret_cast<void**>(0x1f4);
                             v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                            eax117 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x807295b, v78, v116);
+                            eax117 = fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "-", v78, v116);
                             v20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v20) + reinterpret_cast<uint32_t>(eax117));
                         }
                         if (v21) {
                             v76 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                            v37 = reinterpret_cast<void**>(0x8075e74);
+                            v37 = reinterpret_cast<void**>("%s");
                             v38 = reinterpret_cast<void**>(1);
                             eax118 = gfp;
                             v27 = eax118;
-                            fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, v77, v78, v119, v120, v121, v83, v55, v84);
+                            fun_8048f04(ecx19, v27, 1, "%s", v76, v77, v78, v119, v120, v121, v83, v55, v84);
                         }
                     } else {
                         __asm__("fstp st0");
@@ -37818,53 +37816,53 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                     case 0:
                     case 8:
                         v20 = v20 + 18;
-                        eax122 = reinterpret_cast<void**>(0x8077a0f);
+                        eax122 = reinterpret_cast<void**>("(unknown operator)");
                         break;
                     case 1:
                         v20 = v20 + 3;
-                        eax122 = reinterpret_cast<void**>(0x8077a0b);
+                        eax122 = reinterpret_cast<void**>(" + ");
                         break;
                     case 2:
-                        eax122 = reinterpret_cast<void**>(0x8077a6b);
+                        eax122 = reinterpret_cast<void**>(" &minus; ");
                         if (!v23) {
-                            eax122 = reinterpret_cast<void**>(0x8077a22);
+                            eax122 = reinterpret_cast<void**>(" - ");
                         }
                         v20 = v20 + 3;
                         break;
                     case 3:
-                        eax122 = reinterpret_cast<void**>(0x8077a75);
+                        eax122 = reinterpret_cast<void**>("&middot;");
                         if (!v23) {
-                            eax122 = reinterpret_cast<void**>(0x8077a2b);
+                            eax122 = reinterpret_cast<void**>("*");
                         }
                         ++v20;
                         break;
                     case 4:
                         ++v20;
-                        eax122 = reinterpret_cast<void**>(0x8077a7f);
+                        eax122 = reinterpret_cast<void**>("/");
                         break;
                     case 5:
                         v20 = v20 + 3;
-                        eax122 = reinterpret_cast<void**>(0x8077a26);
+                        eax122 = reinterpret_cast<void**>(" % ");
                         break;
                     case 6:
                         zf123 = power_starstar == 0;
                         if (zf123) {
                             ++v20;
-                            eax122 = reinterpret_cast<void**>(0x8077a81);
+                            eax122 = reinterpret_cast<void**>("^");
                             break;
                         } else {
                             v20 = v20 + 2;
-                            eax122 = reinterpret_cast<void**>(0x8077a2a);
+                            eax122 = reinterpret_cast<void**>("**");
                             break;
                         }
                     case 7:
                         ++v20;
                         ++v59;
-                        eax122 = reinterpret_cast<void**>(0x8077a83);
+                        eax122 = reinterpret_cast<void**>("!");
                         break;
                     case 9:
                         v20 = v20 + 2;
-                        eax122 = reinterpret_cast<void**>(0x8077a7e);
+                        eax122 = reinterpret_cast<void**>("//");
                     case 19:
                         goto 0x806f7ee;
                     case 16:
@@ -37888,11 +37886,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                     if (!v21) 
                         goto addr_806f0d8_36;
                     v76 = eax122;
-                    v37 = reinterpret_cast<void**>(0x8075e74);
+                    v37 = reinterpret_cast<void**>("%s");
                     v38 = reinterpret_cast<void**>(1);
                     eax124 = gfp;
                     v27 = eax124;
-                    fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, v77, v78, v125, v126, v127, v83, v55, v84);
+                    fun_8048f04(ecx19, v27, 1, "%s", v76, v77, v78, v125, v126, v127, v83, v55, v84);
                     ebx94 = v59;
                 }
             }
@@ -37958,15 +37956,15 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                 edi159 = v142;
                 do {
                     if (!esi158) {
-                        v147 = reinterpret_cast<void**>(0x807295b);
+                        v147 = reinterpret_cast<void**>("-");
                         v148 = reinterpret_cast<void**>(1);
                         eax160 = gfp;
-                        fun_8048f04(ecx153, eax160, 1, 0x807295b, v146, v145, v78, v161, v162, v163, v83, v55, v84);
+                        fun_8048f04(ecx153, eax160, 1, "-", v146, v145, v78, v161, v162, v163, v83, v55, v84);
                     } else {
-                        v147 = reinterpret_cast<void**>(0x8077a50);
+                        v147 = reinterpret_cast<void**>("&minus;");
                         v148 = reinterpret_cast<void**>(1);
                         eax164 = gfp;
-                        fun_8048f04(ecx153, eax164, 1, 0x8077a50, v146, v145, v78, v165, v166, v167, v83, v55, v84);
+                        fun_8048f04(ecx153, eax164, 1, "&minus;", v146, v145, v78, v165, v166, v167, v83, v55, v84);
                     }
                     ++ebx155;
                 } while (reinterpret_cast<signed char>(edi159) > reinterpret_cast<signed char>(ebx155));
@@ -38029,15 +38027,15 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx174) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx174 == 0))) 
                     goto addr_806f148_112;
             } else {
-                v37 = reinterpret_cast<void**>(0x80779a8);
+                v37 = reinterpret_cast<void**>(")");
                 v38 = reinterpret_cast<void**>(1);
                 eax182 = gfp;
                 v27 = eax182;
-                fun_8048f04(ecx19, v27, 1, 0x80779a8, v76, v77, v78, v183, v184, v185, v83, v55, v84);
+                fun_8048f04(ecx19, v27, 1, ")", v76, v77, v78, v183, v184, v185, v83, v55, v84);
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx174) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx174 == 0)) 
                     goto addr_806f15d_114;
                 v27 = edi180;
-                set_color(v27, 1, 0x80779a8, v76, v77, v78);
+                set_color(v27, 1, ")", v76, v77, v78);
             }
             --edi180;
         }
@@ -38055,7 +38053,7 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     v20 = esi181;
     goto addr_806f163_108;
     while (1) {
-        edi187 = reinterpret_cast<void**>(0x8077a0f);
+        edi187 = reinterpret_cast<void**>("(unknown operator)");
         while (1) {
             if (v188) {
                 v38 = edi187;
@@ -38064,11 +38062,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
             }
             if (a4) {
                 v76 = edi187;
-                v37 = reinterpret_cast<void**>(0x8075e74);
+                v37 = reinterpret_cast<void**>("%s");
                 v38 = reinterpret_cast<void**>(1);
                 eax191 = gfp;
                 v27 = eax191;
-                fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, v77, v78, v192, v193, v194, v83, v55, v84);
+                fun_8048f04(ecx19, v27, 1, "%s", v76, v77, v78, v192, v193, v194, v83, v55, v84);
             }
             ecx195 = -1;
             do {
@@ -38102,12 +38100,12 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                 *edi206 = 40;
                             }
                             if (a4) {
-                                v76 = reinterpret_cast<void**>(0x8075ad6);
-                                v37 = reinterpret_cast<void**>(0x8075e74);
+                                v76 = reinterpret_cast<void**>("(");
+                                v37 = reinterpret_cast<void**>("%s");
                                 v38 = reinterpret_cast<void**>(1);
                                 eax212 = gfp;
                                 v27 = eax212;
-                                fun_8048f04(ecx19, v27, 1, 0x8075e74, 0x8075ad6, v77, v78, v213, v214, v215, v83, v55, v84);
+                                fun_8048f04(ecx19, v27, 1, "%s", "(", v77, v78, v213, v214, v215, v83, v55, v84);
                             }
                             v190 = esi35;
                         } else {
@@ -38116,12 +38114,12 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                 *edi206 = 41;
                             }
                             if (a4) {
-                                v76 = reinterpret_cast<void**>(0x80779a8);
-                                v37 = reinterpret_cast<void**>(0x8075e74);
+                                v76 = reinterpret_cast<void**>(")");
+                                v37 = reinterpret_cast<void**>("%s");
                                 v38 = reinterpret_cast<void**>(1);
                                 eax217 = gfp;
                                 v27 = eax217;
-                                fun_8048f04(ecx19, v27, 1, 0x8075e74, 0x80779a8, v77, v78, v218, v219, v220, v83, v55, v84);
+                                fun_8048f04(ecx19, v27, 1, "%s", ")", v77, v78, v218, v219, v220, v83, v55, v84);
                             }
                             v190 = esi35;
                             if (v221) {
@@ -38145,11 +38143,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                     }
                     if (a4) {
                         v76 = reinterpret_cast<void**>(0x8079800);
-                        v37 = reinterpret_cast<void**>(0x8075e74);
+                        v37 = reinterpret_cast<void**>("%s");
                         v38 = reinterpret_cast<void**>(1);
                         eax229 = gfp;
                         v27 = eax229;
-                        fun_8048f04(ecx19, v27, 1, 0x8075e74, 0x8079800, v77, v78, v230, v231, v232, v83, v55, v84);
+                        fun_8048f04(ecx19, v27, 1, "%s", 0x8079800, v77, v78, v230, v231, v232, v83, v55, v84);
                     }
                     edi233 = reinterpret_cast<signed char*>(0x8079800);
                     ecx234 = -1;
@@ -38179,12 +38177,12 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                 __asm__("fld qword [eax+0x8]");
                                 __asm__("fstp qword [esp+0x18]");
                                 v78 = v237;
-                                v77 = reinterpret_cast<void**>(0x80759b8);
+                                v77 = reinterpret_cast<void**>("%.*g");
                                 v76 = reinterpret_cast<void**>(0x1f4);
                                 v37 = reinterpret_cast<void**>(1);
                                 v38 = reinterpret_cast<void**>(0x1f4);
                                 v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x80759b8, v78, v238);
+                                fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%.*g", v78, v238);
                             } else {
                                 eax239 = finance_option;
                                 zf240 = reinterpret_cast<uint1_t>(eax239 == 0);
@@ -38197,22 +38195,22 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                         __asm__("fstp qword [esp+0x18]");
                                         eax242 = precision;
                                         v78 = eax242;
-                                        v77 = reinterpret_cast<void**>(0x80759b8);
+                                        v77 = reinterpret_cast<void**>("%.*g");
                                         v76 = reinterpret_cast<void**>(0x1f4);
                                         v37 = reinterpret_cast<void**>(1);
                                         v38 = reinterpret_cast<void**>(0x1f4);
                                         v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                        fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x80759b8, v78, v243);
+                                        fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%.*g", v78, v243);
                                     } else {
                                         __asm__("fstp qword [esp+0x18]");
                                         eax244 = precision;
                                         v78 = eax244;
-                                        v77 = reinterpret_cast<void**>(0x8077a64);
+                                        v77 = reinterpret_cast<void**>("(%.*g)");
                                         v76 = reinterpret_cast<void**>(0x1f4);
                                         v37 = reinterpret_cast<void**>(1);
                                         v38 = reinterpret_cast<void**>(0x1f4);
                                         v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                        fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a64, v78, v245);
+                                        fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "(%.*g)", v78, v245);
                                     }
                                     if (v246) {
                                         v38 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
@@ -38221,11 +38219,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                     }
                                     if (a4) {
                                         v76 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                        v37 = reinterpret_cast<void**>(0x8075e74);
+                                        v37 = reinterpret_cast<void**>("%s");
                                         v38 = reinterpret_cast<void**>(1);
                                         eax248 = gfp;
                                         v27 = eax248;
-                                        fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, v77, v78, v249, v250, v251, v83, v55, v84);
+                                        fun_8048f04(ecx19, v27, 1, "%s", v76, v77, v78, v249, v250, v251, v83, v55, v84);
                                     }
                                     ecx252 = -1;
                                     edi253 = v254;
@@ -38242,25 +38240,25 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                                     __asm__("fld qword [edx+0x8]");
                                     __asm__("fstp qword [esp+0x18]");
                                     v78 = eax239;
-                                    v77 = reinterpret_cast<void**>(0x8077a5f);
+                                    v77 = reinterpret_cast<void**>("%.*f");
                                     v76 = reinterpret_cast<void**>(0x1f4);
                                     v37 = reinterpret_cast<void**>(1);
                                     v38 = reinterpret_cast<void**>(0x1f4);
                                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                    fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a5f, v78, v255);
+                                    fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%.*f", v78, v255);
                                 }
                             }
                         } else {
                             __asm__("fld qword [eax+0x8]");
                             __asm__("fstp qword [esp+0x18]");
                             v78 = reinterpret_cast<void**>(15);
-                            v77 = reinterpret_cast<void**>(0x80779fd);
+                            v77 = reinterpret_cast<void**>("%#.*g");
                             v76 = reinterpret_cast<void**>(0x1f4);
                             v37 = reinterpret_cast<void**>(1);
                             v38 = reinterpret_cast<void**>(0x1f4);
                             v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                            fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v256);
-                            trim_zeros(ecx19, v27, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+                            fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "%#.*g", 15, v256);
+                            trim_zeros(ecx19, v27, 0x1f4, 1, 0x1f4, "%#.*g", 15);
                         }
                         __asm__("fld qword [edx+0x8]");
                         __asm__("fldz ");
@@ -38274,11 +38272,11 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                             }
                             if (a4) {
                                 v76 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                                v37 = reinterpret_cast<void**>(0x8075e74);
+                                v37 = reinterpret_cast<void**>("%s");
                                 v38 = reinterpret_cast<void**>(1);
                                 eax259 = gfp;
                                 v27 = eax259;
-                                fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, v77, v78, v260, v261, v262, v83, v55, v84);
+                                fun_8048f04(ecx19, v27, 1, "%s", v76, v77, v78, v260, v261, v262, v83, v55, v84);
                             }
                             ecx263 = -1;
                             edi264 = v265;
@@ -38292,24 +38290,24 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                             v190 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v190) + reinterpret_cast<unsigned char>(ecx19) + 0xffffffff);
                         } else {
                             v78 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffdf0);
-                            v77 = reinterpret_cast<void**>(0x8077a03);
+                            v77 = reinterpret_cast<void**>("(%s)");
                             v76 = reinterpret_cast<void**>(0x1f4);
                             v37 = reinterpret_cast<void**>(1);
                             v38 = reinterpret_cast<void**>(0x1f4);
                             v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffbfc);
-                            fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, 0x8077a03, v78, v266);
+                            fun_8049224(ecx19, v27, 0x1f4, 1, 0x1f4, "(%s)", v78, v266);
                             if (v267) {
                                 v38 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffbfc);
                                 v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v268) + reinterpret_cast<unsigned char>(v190));
-                                fun_8049114(v27, v38, 1, 0x1f4, 0x8077a03, v78);
+                                fun_8049114(v27, v38, 1, 0x1f4, "(%s)", v78);
                             }
                             if (a4) {
                                 v76 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xfffffbfc);
-                                v37 = reinterpret_cast<void**>(0x8075e74);
+                                v37 = reinterpret_cast<void**>("%s");
                                 v38 = reinterpret_cast<void**>(1);
                                 eax269 = gfp;
                                 v27 = eax269;
-                                fun_8048f04(ecx19, v27, 1, 0x8075e74, v76, 0x8077a03, v78, v270, v271, v272, v83, v55, v84);
+                                fun_8048f04(ecx19, v27, 1, "%s", v76, "(%s)", v78, v270, v271, v272, v83, v55, v84);
                             }
                             ecx273 = -1;
                             do {
@@ -38332,36 +38330,36 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                 break;
             switch (v199->f8) {
             case 1:
-                edi187 = reinterpret_cast<void**>(0x8077a0b);
+                edi187 = reinterpret_cast<void**>(" + ");
                 break;
             case 2:
-                edi187 = reinterpret_cast<void**>(0x8077a22);
+                edi187 = reinterpret_cast<void**>(" - ");
                 break;
             case 3:
-                edi187 = reinterpret_cast<void**>(0x8077a2b);
+                edi187 = reinterpret_cast<void**>("*");
                 break;
             case 4:
-                edi187 = reinterpret_cast<void**>(0x8077a7f);
+                edi187 = reinterpret_cast<void**>("/");
                 break;
             case 5:
-                edi187 = reinterpret_cast<void**>(0x8077a26);
+                edi187 = reinterpret_cast<void**>(" % ");
                 break;
             case 6:
                 zf275 = power_starstar == 0;
                 if (!zf275) 
                     goto addr_806f810_202;
-                edi187 = reinterpret_cast<void**>(0x8077a81);
+                edi187 = reinterpret_cast<void**>("^");
                 if (!reinterpret_cast<int1_t>(a6 == 3)) 
                     break;
                 addr_806f810_202:
-                edi187 = reinterpret_cast<void**>(0x8077a2a);
+                edi187 = reinterpret_cast<void**>("**");
                 break;
             case 7:
                 ++v196;
-                edi187 = reinterpret_cast<void**>(0x8077a83);
+                edi187 = reinterpret_cast<void**>("!");
                 break;
             case 9:
-                edi187 = reinterpret_cast<void**>(0x8077a7e);
+                edi187 = reinterpret_cast<void**>("//");
             case 0:
             case 8:
                 goto 0x806f7d2;
@@ -38379,12 +38377,12 @@ void** flist_recurse(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
                 *esi278 = 41;
             }
             if (a4) {
-                v76 = reinterpret_cast<void**>(0x80779a8);
-                v37 = reinterpret_cast<void**>(0x8075e74);
+                v76 = reinterpret_cast<void**>(")");
+                v37 = reinterpret_cast<void**>("%s");
                 v38 = reinterpret_cast<void**>(1);
                 eax283 = gfp;
                 v27 = eax283;
-                fun_8048f04(ecx19, v27, 1, 0x8075e74, 0x80779a8, v77, v78, v284, v285, v286, v83, v55, v84);
+                fun_8048f04(ecx19, v27, 1, "%s", ")", v77, v78, v284, v285, v286, v83, v55, v84);
             }
             --ebx280;
             if (v287) {
@@ -38589,12 +38587,12 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                             *edi46 = 40;
                         }
                         if (a3) {
-                            v27 = reinterpret_cast<void**>(0x8075ad6);
-                            v26 = reinterpret_cast<void**>(0x8075e74);
+                            v27 = reinterpret_cast<void**>("(");
+                            v26 = reinterpret_cast<void**>("%s");
                             v15 = reinterpret_cast<void**>(1);
                             eax48 = gfp;
                             v16 = eax48;
-                            fun_8048f04(ecx25, v16, 1, 0x8075e74, 0x8075ad6, v28, v29, v49, v50, v51, v52, v53, v37);
+                            fun_8048f04(ecx25, v16, 1, "%s", "(", v28, v29, v49, v50, v51, v52, v53, v37);
                         }
                         v22 = esi45;
                     } else {
@@ -38603,12 +38601,12 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                             *edi46 = 41;
                         }
                         if (a3) {
-                            v27 = reinterpret_cast<void**>(0x80779a8);
-                            v26 = reinterpret_cast<void**>(0x8075e74);
+                            v27 = reinterpret_cast<void**>(")");
+                            v26 = reinterpret_cast<void**>("%s");
                             v15 = reinterpret_cast<void**>(1);
                             eax54 = gfp;
                             v16 = eax54;
-                            fun_8048f04(ecx25, v16, 1, 0x8075e74, 0x80779a8, v28, v29, v55, v56, v57, v58, v59, v37);
+                            fun_8048f04(ecx25, v16, 1, "%s", ")", v28, v29, v55, v56, v57, v58, v59, v37);
                         }
                         v22 = esi45;
                         if (v12) {
@@ -38632,11 +38630,11 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                 }
                 if (a3) {
                     v27 = reinterpret_cast<void**>(0x8079800);
-                    v26 = reinterpret_cast<void**>(0x8075e74);
+                    v26 = reinterpret_cast<void**>("%s");
                     v15 = reinterpret_cast<void**>(1);
                     eax64 = gfp;
                     v16 = eax64;
-                    fun_8048f04(ecx25, v16, 1, 0x8075e74, 0x8079800, v28, v29, v65, v66, v67, v68, v69, v37);
+                    fun_8048f04(ecx25, v16, 1, "%s", 0x8079800, v28, v29, v65, v66, v67, v68, v69, v37);
                 }
                 edi70 = reinterpret_cast<signed char*>(0x8079800);
                 ecx71 = -1;
@@ -38671,35 +38669,35 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                             addr_806f7d2_41:
                         case 0:
                         case 8:
-                            edi73 = reinterpret_cast<void**>(0x8077a0f);
+                            edi73 = reinterpret_cast<void**>("(unknown operator)");
                             break;
                         case 1:
-                            edi73 = reinterpret_cast<void**>(0x8077a0b);
+                            edi73 = reinterpret_cast<void**>(" + ");
                             break;
                         case 2:
-                            edi73 = reinterpret_cast<void**>(0x8077a22);
+                            edi73 = reinterpret_cast<void**>(" - ");
                             break;
                         case 3:
-                            edi73 = reinterpret_cast<void**>(0x8077a2b);
+                            edi73 = reinterpret_cast<void**>("*");
                             break;
                         case 4:
-                            edi73 = reinterpret_cast<void**>(0x8077a7f);
+                            edi73 = reinterpret_cast<void**>("/");
                             break;
                         case 5:
-                            edi73 = reinterpret_cast<void**>(0x8077a26);
+                            edi73 = reinterpret_cast<void**>(" % ");
                             break;
                         case 6:
                             zf74 = power_starstar == 0;
-                            if (!zf74 || (edi73 = reinterpret_cast<void**>(0x8077a81), reinterpret_cast<int1_t>(a5 == 3))) {
-                                edi73 = reinterpret_cast<void**>(0x8077a2a);
+                            if (!zf74 || (edi73 = reinterpret_cast<void**>("^"), reinterpret_cast<int1_t>(a5 == 3))) {
+                                edi73 = reinterpret_cast<void**>("**");
                                 break;
                             }
                         case 7:
                             ++v35;
-                            edi73 = reinterpret_cast<void**>(0x8077a83);
+                            edi73 = reinterpret_cast<void**>("!");
                             break;
                         case 9:
-                            edi73 = reinterpret_cast<void**>(0x8077a7e);
+                            edi73 = reinterpret_cast<void**>("//");
                         }
                         if (v8) {
                             v15 = edi73;
@@ -38708,11 +38706,11 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                         }
                         if (a3) {
                             v27 = edi73;
-                            v26 = reinterpret_cast<void**>(0x8075e74);
+                            v26 = reinterpret_cast<void**>("%s");
                             v15 = reinterpret_cast<void**>(1);
                             eax75 = gfp;
                             v16 = eax75;
-                            fun_8048f04(ecx25, v16, 1, 0x8075e74, v27, v28, v29, v76, v77, v78, v79, v80, v37);
+                            fun_8048f04(ecx25, v16, 1, "%s", v27, v28, v29, v76, v77, v78, v79, v80, v37);
                         }
                         ecx81 = -1;
                         do {
@@ -38732,12 +38730,12 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                 __asm__("fld qword [eax+0x8]");
                 __asm__("fstp qword [esp+0x18]");
                 v29 = v14;
-                v28 = reinterpret_cast<void**>(0x80759b8);
+                v28 = reinterpret_cast<void**>("%.*g");
                 v27 = reinterpret_cast<void**>(0x1f4);
                 v26 = reinterpret_cast<void**>(1);
                 v15 = reinterpret_cast<void**>(0x1f4);
                 v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x80759b8, v29, v83);
+                fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "%.*g", v29, v83);
             } else {
                 eax84 = finance_option;
                 zf85 = reinterpret_cast<uint1_t>(eax84 == 0);
@@ -38750,22 +38748,22 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                         __asm__("fstp qword [esp+0x18]");
                         eax87 = precision;
                         v29 = eax87;
-                        v28 = reinterpret_cast<void**>(0x80759b8);
+                        v28 = reinterpret_cast<void**>("%.*g");
                         v27 = reinterpret_cast<void**>(0x1f4);
                         v26 = reinterpret_cast<void**>(1);
                         v15 = reinterpret_cast<void**>(0x1f4);
                         v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                        fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x80759b8, v29, v88);
+                        fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "%.*g", v29, v88);
                     } else {
                         __asm__("fstp qword [esp+0x18]");
                         eax89 = precision;
                         v29 = eax89;
-                        v28 = reinterpret_cast<void**>(0x8077a64);
+                        v28 = reinterpret_cast<void**>("(%.*g)");
                         v27 = reinterpret_cast<void**>(0x1f4);
                         v26 = reinterpret_cast<void**>(1);
                         v15 = reinterpret_cast<void**>(0x1f4);
                         v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                        fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x8077a64, v29, v90);
+                        fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "(%.*g)", v29, v90);
                     }
                     if (v8) {
                         v15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
@@ -38774,11 +38772,11 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                     }
                     if (a3) {
                         v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                        v26 = reinterpret_cast<void**>(0x8075e74);
+                        v26 = reinterpret_cast<void**>("%s");
                         v15 = reinterpret_cast<void**>(1);
                         eax91 = gfp;
                         v16 = eax91;
-                        fun_8048f04(ecx25, v16, 1, 0x8075e74, v27, v28, v29, v92, v93, v94, v95, v96, v37);
+                        fun_8048f04(ecx25, v16, 1, "%s", v27, v28, v29, v92, v93, v94, v95, v96, v37);
                     }
                     ecx97 = -1;
                     do {
@@ -38793,12 +38791,12 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                     __asm__("fld qword [edx+0x8]");
                     __asm__("fstp qword [esp+0x18]");
                     v29 = eax84;
-                    v28 = reinterpret_cast<void**>(0x8077a5f);
+                    v28 = reinterpret_cast<void**>("%.*f");
                     v27 = reinterpret_cast<void**>(0x1f4);
                     v26 = reinterpret_cast<void**>(1);
                     v15 = reinterpret_cast<void**>(0x1f4);
                     v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                    fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x8077a5f, v29, v99);
+                    fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "%.*f", v29, v99);
                 }
             }
             addr_806f5db_75:
@@ -38814,11 +38812,11 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                 }
                 if (a3) {
                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                    v26 = reinterpret_cast<void**>(0x8075e74);
+                    v26 = reinterpret_cast<void**>("%s");
                     v15 = reinterpret_cast<void**>(1);
                     eax100 = gfp;
                     v16 = eax100;
-                    fun_8048f04(ecx25, v16, 1, 0x8075e74, v27, v28, v29, v101, v102, v103, v104, v105, v37);
+                    fun_8048f04(ecx25, v16, 1, "%s", v27, v28, v29, v101, v102, v103, v104, v105, v37);
                 }
                 ecx106 = -1;
                 do {
@@ -38831,24 +38829,24 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
                 continue;
             } else {
                 v29 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-                v28 = reinterpret_cast<void**>(0x8077a03);
+                v28 = reinterpret_cast<void**>("(%s)");
                 v27 = reinterpret_cast<void**>(0x1f4);
                 v26 = reinterpret_cast<void**>(1);
                 v15 = reinterpret_cast<void**>(0x1f4);
                 v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
-                fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x8077a03, v29, v108);
+                fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "(%s)", v29, v108);
                 if (v8) {
                     v15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
                     v16 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v8) + reinterpret_cast<unsigned char>(v22));
-                    fun_8049114(v16, v15, 1, 0x1f4, 0x8077a03, v29);
+                    fun_8049114(v16, v15, 1, 0x1f4, "(%s)", v29);
                 }
                 if (a3) {
                     v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffbfc);
-                    v26 = reinterpret_cast<void**>(0x8075e74);
+                    v26 = reinterpret_cast<void**>("%s");
                     v15 = reinterpret_cast<void**>(1);
                     eax109 = gfp;
                     v16 = eax109;
-                    fun_8048f04(ecx25, v16, 1, 0x8075e74, v27, 0x8077a03, v29, v110, v111, v112, v113, v114, v37);
+                    fun_8048f04(ecx25, v16, 1, "%s", v27, "(%s)", v29, v110, v111, v112, v113, v114, v37);
                 }
                 ecx115 = -1;
                 do {
@@ -38864,13 +38862,13 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
             __asm__("fld qword [eax+0x8]");
             __asm__("fstp qword [esp+0x18]");
             v29 = reinterpret_cast<void**>(15);
-            v28 = reinterpret_cast<void**>(0x80779fd);
+            v28 = reinterpret_cast<void**>("%#.*g");
             v27 = reinterpret_cast<void**>(0x1f4);
             v26 = reinterpret_cast<void**>(1);
             v15 = reinterpret_cast<void**>(0x1f4);
             v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffdf0);
-            fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, 0x80779fd, 15, v117);
-            trim_zeros(ecx25, v16, 0x1f4, 1, 0x1f4, 0x80779fd, 15);
+            fun_8049224(ecx25, v16, 0x1f4, 1, 0x1f4, "%#.*g", 15, v117);
+            trim_zeros(ecx25, v16, 0x1f4, 1, 0x1f4, "%#.*g", 15);
             goto addr_806f5db_75;
             ++v35;
         } while (reinterpret_cast<signed char>(a2) > reinterpret_cast<signed char>(v35));
@@ -38891,12 +38889,12 @@ void** list_string_sub(void** a1, void** a2, int32_t a3, void** a4, void** a5) {
             *esi120 = 41;
         }
         if (a3) {
-            v27 = reinterpret_cast<void**>(0x80779a8);
-            v26 = reinterpret_cast<void**>(0x8075e74);
+            v27 = reinterpret_cast<void**>(")");
+            v26 = reinterpret_cast<void**>("%s");
             v15 = reinterpret_cast<void**>(1);
             eax124 = gfp;
             v16 = eax124;
-            fun_8048f04(ecx25, v16, 1, 0x8075e74, 0x80779a8, v28, v29, v125, v126, v127, v128, v129, v37);
+            fun_8048f04(ecx25, v16, 1, "%s", ")", v28, v29, v125, v126, v127, v128, v129, v37);
         }
         --ebx121;
         if (v12) {
@@ -39034,18 +39032,18 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
         eax10 = v9;
         edi11 = v8 ^ g14;
         if (edi11) {
-            eax10 = fun_8049184(ecx, v12, 1, 0x80757fd, v13, 0x8077a90, v14, v15, v16, v17, v18);
+            eax10 = fun_8049184(ecx, v12, 1, "\n", v13, "#%d: ", v14, v15, v16, v17, v18);
         }
     } else {
         v14 = esi6 + 1;
         v13 = reinterpret_cast<void**>(50);
-        eax20 = fun_8049224(ecx, reinterpret_cast<int32_t>(ebp5) + 0xffffffb2, 50, 1, 50, 0x8077a90, v14, v19);
+        eax20 = fun_8049224(ecx, reinterpret_cast<int32_t>(ebp5) + 0xffffffb2, 50, 1, 50, "#%d: ", v14, v19);
         cur_line = reinterpret_cast<void**>(0);
         cur_pos = reinterpret_cast<void**>(0);
         ebx21 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(esi6) * 4 + 0x8079940);
         v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffffa0);
         ecx = reinterpret_cast<void**>(0);
-        eax23 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffa4, v22, 50, 0x8077a90, v14);
+        eax23 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffa4, v22, 50, "#%d: ", v14);
         v24 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax20) + reinterpret_cast<unsigned char>(eax23));
         eax25 = reinterpret_cast<void**>(0);
         edi26 = reinterpret_cast<void**>(0);
@@ -39059,7 +39057,7 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
         } else {
             v24 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(v24) + 3);
             addr_806feac_9:
-            while ((eax28 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, 50, 0x8077a90, v14), edx29 = screen_columns, !!edx29) && ((edx30 = gfp, zf31 = edx30 == stdout, zf31) && ((edx32 = screen_columns, reinterpret_cast<signed char>(reinterpret_cast<unsigned char>(eax28) + reinterpret_cast<uint32_t>(v24)) >= reinterpret_cast<signed char>(edx32)) && !(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(ebx21) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(ebx21 == 0))))) {
+            while ((eax28 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, 50, "#%d: ", v14), edx29 = screen_columns, !!edx29) && ((edx30 = gfp, zf31 = edx30 == stdout, zf31) && ((edx32 = screen_columns, reinterpret_cast<signed char>(reinterpret_cast<unsigned char>(eax28) + reinterpret_cast<uint32_t>(v24)) >= reinterpret_cast<signed char>(edx32)) && !(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(ebx21) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(ebx21 == 0))))) {
                 --ebx21;
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(ebx21) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(ebx21 == 0)) 
                     continue;
@@ -39090,7 +39088,7 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
     eax35 = screen_columns;
     if (!eax35 || ((eax36 = gfp, zf37 = eax36 == stdout, !zf37) || (eax38 = screen_columns, reinterpret_cast<signed char>(v9) < reinterpret_cast<signed char>(eax38)))) {
         eax39 = gfp;
-        fun_8048f04(0, eax39, 1, 0x80757fd, 50, 0x8077a90, v14, v40, v41, v42, v43, v44, v9);
+        fun_8048f04(0, eax39, 1, "\n", 50, "#%d: ", v14, v40, v41, v42, v43, v44, v9);
         cur_line = reinterpret_cast<void**>(0);
         if (!0) {
             v45 = ebx21;
@@ -39100,7 +39098,7 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
                 if (zf46) {
                     v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffffb2);
                     eax47 = gfp;
-                    eax52 = fun_8048f04(ecx, eax47, 1, 0x8075e74, v13, 0x8077a90, v14, v48, v49, v50, v51, v45, v9);
+                    eax52 = fun_8048f04(ecx, eax47, 1, "%s", v13, "#%d: ", v14, v48, v49, v50, v51, v45, v9);
                     tmp32_53 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(cur_pos) + reinterpret_cast<unsigned char>(eax52));
                     cur_pos = tmp32_53;
                 }
@@ -39113,36 +39111,36 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
                 } while (v55);
                 ebx56 = reinterpret_cast<void**>(~ecx54 + 0xffffffff);
                 ecx = reinterpret_cast<void**>(1);
-                eax57 = flist_sub(1, ebx56, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, v13, 0x8077a90, v14);
+                eax57 = flist_sub(1, ebx56, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, v13, "#%d: ", v14);
                 if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(esi6) * 4 + 0x8079940)) {
                     zf58 = cur_line == 0;
                     if (zf58) {
-                        v13 = reinterpret_cast<void**>(0x80759cf);
+                        v13 = reinterpret_cast<void**>(" = ");
                         eax59 = gfp;
-                        eax64 = fun_8048f04(1, eax59, 1, 0x8075e74, 0x80759cf, 0x8077a90, v14, v60, v61, v62, v63, v45, v9);
+                        eax64 = fun_8048f04(1, eax59, 1, "%s", " = ", "#%d: ", v14, v60, v61, v62, v63, v45, v9);
                         tmp32_65 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(cur_pos) + reinterpret_cast<unsigned char>(eax64));
                         cur_pos = tmp32_65;
                     }
                     ecx = reinterpret_cast<void**>(1);
-                    flist_sub(1, reinterpret_cast<unsigned char>(ebx56) + reinterpret_cast<unsigned char>(eax57) + 3, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, v13, 0x8077a90, v14);
+                    flist_sub(1, reinterpret_cast<unsigned char>(ebx56) + reinterpret_cast<unsigned char>(eax57) + 3, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, reinterpret_cast<int32_t>(ebp5) + 0xffffffa8, v13, "#%d: ", v14);
                 }
                 eax66 = gfp;
-                fun_8048f04(1, eax66, 1, 0x80757fd, v13, 0x8077a90, v14, v67, v68, v69, v70, v45, v9);
+                fun_8048f04(1, eax66, 1, "\n", v13, "#%d: ", v14, v67, v68, v69, v70, v45, v9);
                 eax71 = cur_line;
                 eax72 = eax71 - 1;
                 cur_line = eax72;
             } while (reinterpret_cast<signed char>(0) <= reinterpret_cast<signed char>(eax72));
             ebx21 = v45;
         }
-        if (reinterpret_cast<signed char>(ebx21) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(reinterpret_cast<unsigned char>(esi6) * 4 + 0x8079940)) && (eax73 = gfp, fun_8048f04(ecx, eax73, 1, 0x80757fd, v13, 0x8077a90, v14, v74, v75, v76, v77, v45, v9), cur_line = reinterpret_cast<void**>(0), !0)) {
+        if (reinterpret_cast<signed char>(ebx21) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(reinterpret_cast<unsigned char>(esi6) * 4 + 0x8079940)) && (eax73 = gfp, fun_8048f04(ecx, eax73, 1, "\n", v13, "#%d: ", v14, v74, v75, v76, v77, v45, v9), cur_line = reinterpret_cast<void**>(0), !0)) {
             v45 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx21) << 4);
             edi78 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffffa8);
             do {
                 cur_pos = reinterpret_cast<void**>(0);
                 ecx = reinterpret_cast<void**>(1);
-                flist_sub(1, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, edi78, v13, 0x8077a90, v14);
+                flist_sub(1, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffffac, edi78, v13, "#%d: ", v14);
                 eax79 = gfp;
-                fun_8048f04(1, eax79, 1, 0x80757fd, v13, 0x8077a90, v14, v80, v81, v82, v83, v45, v9);
+                fun_8048f04(1, eax79, 1, "\n", v13, "#%d: ", v14, v80, v81, v82, v83, v45, v9);
                 eax84 = cur_line;
                 eax85 = eax84 - 1;
                 cur_line = eax85;
@@ -39150,14 +39148,14 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
         }
         eax86 = gfp;
         v12 = eax86;
-        fun_8048f04(ecx, v12, 1, 0x80757fd, v13, 0x8077a90, v14, v87, v88, v89, v90, v45, v9);
+        fun_8048f04(ecx, v12, 1, "\n", v13, "#%d: ", v14, v87, v88, v89, v90, v45, v9);
         goto addr_807020c_2;
     } else {
-        eax91 = list1_sub(0, esi6, 0, v22, 50, 0x8077a90, v14);
+        eax91 = list1_sub(0, esi6, 0, v22, 50, "#%d: ", v14);
         v9 = eax91;
         eax92 = gfp;
         v12 = eax92;
-        fun_8048f04(0, v12, 1, 0x80757fd, 50, 0x8077a90, v14, v93, v94, v95, v96, v97, v9);
+        fun_8048f04(0, v12, 1, "\n", 50, "#%d: ", v14, v93, v94, v95, v96, v97, v9);
         goto addr_807020c_2;
     }
     addr_806ff5e_19:
@@ -39165,7 +39163,7 @@ void** flist_equation(void** ecx, void** a2, void** a3, void** a4) {
     }
     v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffff98);
     ecx = reinterpret_cast<void**>(0);
-    eax25 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffff9c, v22, 50, 0x8077a90, v14);
+    eax25 = flist_sub(0, 0, reinterpret_cast<int32_t>(ebp5) + 0xffffff9c, v22, 50, "#%d: ", v14);
     goto addr_806ff9b_5;
     addr_806ff5b_20:
     goto addr_806ff5e_19;
@@ -40656,7 +40654,7 @@ struct s254 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s255 {
@@ -40836,25 +40834,25 @@ void** process_parse(void** ecx, void** a2, void** a3, void** a4) {
             sf24 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
             if (!sf24) {
                 eax25 = gfp;
-                fun_8048f04(ecx, eax25, 1, 0x807277d, 0x8072c94, v26, v27, v28, v29, v30, v31, v32, v7);
+                fun_8048f04(ecx, eax25, 1, "%s\n", "Swapping both sides of the current equation...", v26, v27, v28, v29, v30, v31, v32, v7);
             }
             ebx33 = cur_equation;
             eax34 = *reinterpret_cast<void***>(0x8082d80 + reinterpret_cast<unsigned char>(ebx33) * 4);
             eax35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax34) << 4);
             v36 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx33) * 4);
             eax37 = tes;
-            fun_80491c4(ecx, eax37, v36, eax35, 0x8072c94, eax35, eax34, v38, v39, v40, v41, v42, v7, v5);
+            fun_80491c4(ecx, eax37, v36, eax35, "Swapping both sides of the current equation...", eax35, eax34, v38, v39, v40, v41, v42, v7, v5);
             eax43 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx33) * 4 + 0x8079940);
             *reinterpret_cast<void***>(0x8082d80 + reinterpret_cast<unsigned char>(ebx33) * 4) = eax43;
             v44 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(ebx33) * 4);
             v45 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx33) * 4);
-            fun_80491c4(ecx, v45, v44, reinterpret_cast<unsigned char>(eax43) << 4, 0x8072c94, eax35, eax34, v46, v47, v48, v49, v50, v7, v5);
+            fun_80491c4(ecx, v45, v44, reinterpret_cast<unsigned char>(eax43) << 4, "Swapping both sides of the current equation...", eax35, eax34, v46, v47, v48, v49, v50, v7, v5);
             *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx33) * 4 + 0x8079940) = eax34;
             eax51 = tes;
             v52 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(ebx33) * 4);
-            fun_80491c4(ecx, v52, eax51, eax35, 0x8072c94, eax35, eax34, v53, v54, v55, v56, v57, v7, v5);
+            fun_80491c4(ecx, v52, eax51, eax35, "Swapping both sides of the current equation...", eax35, eax34, v53, v54, v55, v56, v57, v7, v5);
             eax58 = cur_equation;
-            eax15 = return_result(ecx, eax58, eax51, eax35, 0x8072c94, eax35, eax34);
+            eax15 = return_result(ecx, eax58, eax51, eax35, "Swapping both sides of the current equation...", eax35, eax34);
             goto addr_804ee3d_12;
         }
     }
@@ -40933,7 +40931,7 @@ void** process_parse(void** ecx, void** a2, void** a3, void** a4) {
             edx68 = g807991c;
             eax65->f8 = edx68;
             edx69 = g8079920;
-            eax65->f12 = edx69;
+            eax65->fc = edx69;
             goto addr_804ee0b_14;
         }
     } else {
@@ -40952,11 +40950,11 @@ void** process_parse(void** ecx, void** a2, void** a3, void** a4) {
         (*reinterpret_cast<struct s255**>(0x8082a40 + reinterpret_cast<unsigned char>(ebx9) * 4))->f4 = 1;
         (*reinterpret_cast<struct s255**>(0x8082a40 + reinterpret_cast<unsigned char>(ebx9) * 4))->f0 = 1;
         v78 = reinterpret_cast<void**>(&(*reinterpret_cast<struct s255**>(0x8082a40 + reinterpret_cast<unsigned char>(ebx9) * 4))->f8);
-        parse_var(ecx, v78, 0x80727be, v79, v80, v81, v82, v83);
+        parse_var(ecx, v78, "answer", v79, v80, v81, v82, v83);
         *reinterpret_cast<int32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(ebx9) * 4) = 1;
         edi84 = cur_equation;
         cur_equation = ebx9;
-        calculate_cmd(ecx, 0x80757fe, 0x80727be, v79);
+        calculate_cmd(ecx, 0x80757fe, "answer", v79);
         cur_equation = edi84;
         *reinterpret_cast<int32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(ebx9) * 4) = 0;
         *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx9) * 4 + 0x8079940) = 0;
@@ -41131,7 +41129,7 @@ int32_t approximate_cmd(void** ecx, signed char* a2) {
     addr_8052e84_16:
     return eax33;
     addr_8052d89_6:
-    error(ecx, 0x80758a2, v6, v5, v34, v35, v36, v37, v9, v38, v39, v40);
+    error(ecx, "Invalid argument.", v6, v5, v34, v35, v36, v37, v9, v38, v39, v40);
     eax33 = 0;
     goto addr_8052e84_16;
     addr_8052e78_15:
@@ -41196,19 +41194,19 @@ int32_t skip_no(void** a1, void** a2, void** a3) {
     void** v51;
     void** eax52;
 
-    v4 = reinterpret_cast<void**>(0x8075670);
+    v4 = reinterpret_cast<void**>("no");
     v5 = *reinterpret_cast<void***>(a1);
-    eax10 = strcmp_tospace(v5, 0x8075670, v6, v7, v8, ebx9);
-    if (!eax10 || ((v4 = reinterpret_cast<void**>(0x8075673), v11 = *reinterpret_cast<void***>(a1), eax15 = strcmp_tospace(v11, 0x8075673, v12, v13, v14, ebx9), eax15 == 0) || ((v4 = reinterpret_cast<void**>(0x8075677), v16 = *reinterpret_cast<void***>(a1), eax20 = strcmp_tospace(v16, 0x8075677, v17, v18, v19, ebx9), eax20 == 0) || (v4 = reinterpret_cast<void**>(0x807567b), v21 = *reinterpret_cast<void***>(a1), eax25 = strcmp_tospace(v21, 0x807567b, v22, v23, v24, ebx9), !eax25)))) {
+    eax10 = strcmp_tospace(v5, "no", v6, v7, v8, ebx9);
+    if (!eax10 || ((v4 = reinterpret_cast<void**>("not"), v11 = *reinterpret_cast<void***>(a1), eax15 = strcmp_tospace(v11, "not", v12, v13, v14, ebx9), eax15 == 0) || ((v4 = reinterpret_cast<void**>("off"), v16 = *reinterpret_cast<void***>(a1), eax20 = strcmp_tospace(v16, "off", v17, v18, v19, ebx9), eax20 == 0) || (v4 = reinterpret_cast<void**>("false"), v21 = *reinterpret_cast<void***>(a1), eax25 = strcmp_tospace(v21, "false", v22, v23, v24, ebx9), !eax25)))) {
         v26 = *reinterpret_cast<void***>(a1);
         eax30 = skip_param(v26, v4, v27, v28, v29, ebx9);
         *reinterpret_cast<void***>(a1) = eax30;
         eax31 = 1;
     } else {
-        v32 = reinterpret_cast<void**>(0x8075681);
+        v32 = reinterpret_cast<void**>("yes");
         v33 = *reinterpret_cast<void***>(a1);
-        eax37 = strcmp_tospace(v33, 0x8075681, v34, v35, v36, ebx9);
-        if (!eax37 || ((v32 = reinterpret_cast<void**>(0x8075900), v38 = *reinterpret_cast<void***>(a1), eax42 = strcmp_tospace(v38, 0x8075900, v39, v40, v41, ebx9), eax42 == 0) || (v32 = reinterpret_cast<void**>(0x8075685), v43 = *reinterpret_cast<void***>(a1), eax47 = strcmp_tospace(v43, 0x8075685, v44, v45, v46, ebx9), eax31 = 0, !eax47))) {
+        eax37 = strcmp_tospace(v33, "yes", v34, v35, v36, ebx9);
+        if (!eax37 || ((v32 = reinterpret_cast<void**>("on"), v38 = *reinterpret_cast<void***>(a1), eax42 = strcmp_tospace(v38, "on", v39, v40, v41, ebx9), eax42 == 0) || (v32 = reinterpret_cast<void**>("true"), v43 = *reinterpret_cast<void***>(a1), eax47 = strcmp_tospace(v43, "true", v44, v45, v46, ebx9), eax31 = 0, !eax47))) {
             v48 = *reinterpret_cast<void***>(a1);
             eax52 = skip_param(v48, v32, v49, v50, v51, ebx9);
             *reinterpret_cast<void***>(a1) = eax52;
@@ -41265,24 +41263,24 @@ int32_t list_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     void** v51;
 
     ebp8 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    eax12 = strncasecmp(a2, 0x807591e, 4, v9, v10, v11);
+    eax12 = strncasecmp(a2, "gnuplot", 4, v9, v10, v11);
     if (eax12) {
-        eax16 = strncasecmp(a2, 0x8075926, 4, v13, v14, v15);
+        eax16 = strncasecmp(a2, "export", 4, v13, v14, v15);
         if (eax16) {
-            eax20 = strncasecmp(a2, 0x807592d, 4, v17, v18, v19);
+            eax20 = strncasecmp(a2, "maxima", 4, v17, v18, v19);
             esi21 = reinterpret_cast<void**>(0);
             if (!eax20) {
-                eax25 = skip_param(a2, 0x807592d, 4, v22, v23, v24);
+                eax25 = skip_param(a2, "maxima", 4, v22, v23, v24);
                 a2 = eax25;
                 *reinterpret_cast<int16_t*>(&esi21) = 1;
             }
         } else {
-            eax29 = skip_param(a2, 0x8075926, 4, v26, v27, v28);
+            eax29 = skip_param(a2, "export", 4, v26, v27, v28);
             a2 = eax29;
             esi21 = reinterpret_cast<void**>(2);
         }
     } else {
-        eax33 = skip_param(a2, 0x807591e, 4, v30, v31, v32);
+        eax33 = skip_param(a2, "gnuplot", 4, v30, v31, v32);
         a2 = eax33;
         esi21 = reinterpret_cast<void**>(3);
     }
@@ -41313,7 +41311,7 @@ int32_t list_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     addr_8053760_19:
     return eax37;
     addr_8053720_12:
-    error(ecx, 0x80758a2, v36, v35, v45, v46, v47, v48, v39, v49, v50, v51);
+    error(ecx, "Invalid argument.", v36, v35, v45, v46, v47, v48, v39, v49, v50, v51);
     eax37 = 0;
     goto addr_8053760_19;
     addr_805375b_18:
@@ -41550,7 +41548,7 @@ void** complex_func(void** ecx) {
     edx63 = *reinterpret_cast<void***>(v21);
     if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edx63) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edx63 == 0)) {
         addr_805564f_11:
-        warning(ecx59, 0x8075b2b, v51, v45, v64, v65, v66, v67, v68, v69);
+        warning(ecx59, "Expression was not a mix.", v51, v45, v64, v65, v66, v67, v68, v69);
     } else {
         v70 = reinterpret_cast<void**>(0);
         v71 = 0;
@@ -41900,8 +41898,8 @@ void** sum_product(void** ecx) {
         if (!eax37) 
             goto addr_8056ac4_12;
     } else {
-        v26 = reinterpret_cast<void**>(0x80768dc);
-        error(ecx, 0x80768dc, v25, v29, v38, v39, v40, v41, v42, v43, v44, v45);
+        v26 = reinterpret_cast<void**>("Current expression contains no variables.");
+        error(ecx, "Current expression contains no variables.", v25, v29, v38, v39, v40, v41, v42, v43, v44, v45);
         eax46 = reinterpret_cast<void**>(0);
         goto addr_80570a5_14;
     }
@@ -41909,10 +41907,10 @@ void** sum_product(void** ecx) {
     if (!*reinterpret_cast<signed char*>(&eax47)) {
         list_var(ecx, 0, 0, 0, v48, v49, v50, v51, v52, v53, v54);
         v29 = reinterpret_cast<void**>(1);
-        fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8075cf6, 0x8079800, v55);
+        fun_8049224(ecx, 0x80795a0, 80, 1, 80, "%s = ", 0x8079800, v55);
         v25 = reinterpret_cast<void**>(0x1000);
         v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefe4);
-        eax60 = get_string(v26, 0x1000, 1, 80, 0x8075cf6, 0x8079800, v56, v57, v58, v59);
+        eax60 = get_string(v26, 0x1000, 1, 80, "%s = ", 0x8079800, v56, v57, v58, v59);
         v61 = eax60;
         if (!eax60) 
             goto addr_80570a0_2;
@@ -41923,7 +41921,7 @@ void** sum_product(void** ecx) {
         v61 = v3;
     }
     v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefd4);
-    fun_8048f64(v61, v25, v29, 80, 0x8075cf6, 0x8079800, v62, v63, v64, v65);
+    fun_8048f64(v61, v25, v29, 80, "%s = ", 0x8079800, v62, v63, v64, v65);
     __asm__("fstp qword [ebp+0xffffefc0]");
     if (v61 != v3) {
         __asm__("fld qword [ebp+0xffffefc0]");
@@ -41933,39 +41931,39 @@ void** sum_product(void** ecx) {
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (reinterpret_cast<unsigned char>(v61) < reinterpret_cast<unsigned char>(v3)) {
-            eax70 = skip_space(v3, v25, v29, 80, 0x8075cf6, 0x8079800, v66, v67, v68, v69);
+            eax70 = skip_space(v3, v25, v29, 80, "%s = ", 0x8079800, v66, v67, v68, v69);
             v71 = eax70;
-            eax72 = strcmp_tospace(eax70, 0x8075bc4, v29, 80, 0x8075cf6, 0x8079800);
+            eax72 = strcmp_tospace(eax70, "to", v29, 80, "%s = ", 0x8079800);
             if (!eax72) {
-                eax73 = skip_param(v71, 0x8075bc4, v29, 80, 0x8075cf6, 0x8079800);
+                eax73 = skip_param(v71, "to", v29, 80, "%s = ", 0x8079800);
                 v71 = eax73;
             }
             v74 = v71;
             if (*reinterpret_cast<void***>(v71)) 
                 goto addr_8056c65_25;
             v29 = reinterpret_cast<void**>(80);
-            my_strlcpy(0x80795a0, 0x8075d1f, 80, 80, 0x8075cf6, 0x8079800, v75, v76, v77, v78);
+            my_strlcpy(0x80795a0, "To: ", 80, 80, "%s = ", 0x8079800, v75, v76, v77, v78);
             v25 = reinterpret_cast<void**>(0x1000);
             v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefe4);
-            eax83 = get_string(v26, 0x1000, 80, 80, 0x8075cf6, 0x8079800, v79, v80, v81, v82);
+            eax83 = get_string(v26, 0x1000, 80, 80, "%s = ", 0x8079800, v79, v80, v81, v82);
             v74 = eax83;
             if (!eax83) 
                 goto addr_80570a0_2;
             addr_8056c65_25:
             v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefd4);
-            fun_8048f64(v74, v25, v29, 80, 0x8075cf6, 0x8079800, v84, v85, v86, v87);
+            fun_8048f64(v74, v25, v29, 80, "%s = ", 0x8079800, v84, v85, v86, v87);
             __asm__("fstp qword [ebp+0xffffefb0]");
             if (v74 == v71) 
                 goto addr_8056c91_27;
         } else {
-            v26 = reinterpret_cast<void**>(0x8075d0d);
-            error(ecx, 0x8075d0d, v25, v29, 80, 0x8075cf6, 0x8079800, v88, v89, v90, v91, v92);
+            v26 = reinterpret_cast<void**>("Number too large.");
+            error(ecx, "Number too large.", v25, v29, 80, "%s = ", 0x8079800, v88, v89, v90, v91, v92);
             eax46 = reinterpret_cast<void**>(0);
             goto addr_80570a5_14;
         }
     } else {
-        v26 = reinterpret_cast<void**>(0x8075cfc);
-        error(ecx, 0x8075cfc, v25, v29, 80, 0x8075cf6, 0x8079800, v93, v94, v95, v96, v97);
+        v26 = reinterpret_cast<void**>("Number expected.");
+        error(ecx, "Number expected.", v25, v29, 80, "%s = ", 0x8079800, v93, v94, v95, v96, v97);
         eax46 = reinterpret_cast<void**>(0);
         goto addr_80570a5_14;
     }
@@ -41976,32 +41974,32 @@ void** sum_product(void** ecx) {
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (reinterpret_cast<unsigned char>(v74) < reinterpret_cast<unsigned char>(v71)) {
-        eax102 = skip_space(v71, v25, v29, 80, 0x8075cf6, 0x8079800, v98, v99, v100, v101);
+        eax102 = skip_space(v71, v25, v29, 80, "%s = ", 0x8079800, v98, v99, v100, v101);
         if (!*reinterpret_cast<void***>(eax102)) {
             __asm__("fld1 ");
             __asm__("fstp qword [ebp+0xffffefa8]");
             goto addr_8056d5c_33;
         }
         v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefd4);
-        fun_8048f64(eax102, v25, v29, 80, 0x8075cf6, 0x8079800, v103, v104, v105, v106);
+        fun_8048f64(eax102, v25, v29, 80, "%s = ", 0x8079800, v103, v104, v105, v106);
         cf107 = reinterpret_cast<unsigned char>(eax102) < reinterpret_cast<unsigned char>(eax102);
         if (eax102 != eax102) 
             goto addr_8056d12_35;
     } else {
-        v26 = reinterpret_cast<void**>(0x8075d0d);
-        error(ecx, 0x8075d0d, v25, v29, 80, 0x8075cf6, 0x8079800, v108, v109, v110, v111, v112);
+        v26 = reinterpret_cast<void**>("Number too large.");
+        error(ecx, "Number too large.", v25, v29, 80, "%s = ", 0x8079800, v108, v109, v110, v111, v112);
         eax46 = reinterpret_cast<void**>(0);
         goto addr_80570a5_14;
     }
     __asm__("fstp st0");
     addr_8056d3e_38:
-    v26 = reinterpret_cast<void**>(0x8075d24);
-    error(ecx, 0x8075d24, v25, v29, 80, 0x8075cf6, 0x8079800, v113, v114, v115, v116, v117);
+    v26 = reinterpret_cast<void**>("Invalid step.");
+    error(ecx, "Invalid step.", v25, v29, 80, "%s = ", 0x8079800, v113, v114, v115, v116, v117);
     eax46 = reinterpret_cast<void**>(0);
     addr_80570a5_14:
     edx118 = v8 ^ g14;
     if (edx118) {
-        eax46 = fun_8049184(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800, v119, v120, v121, v122);
+        eax46 = fun_8049184(ecx, v26, v25, v29, 80, "%s = ", 0x8079800, v119, v120, v121, v122);
     }
     return eax46;
     addr_8056d12_35:
@@ -42022,7 +42020,7 @@ void** sum_product(void** ecx) {
         if (cf107) {
             addr_8056d5c_33:
             v26 = eax102;
-            eax123 = extra_characters(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800);
+            eax123 = extra_characters(ecx, v26, v25, v29, 80, "%s = ", 0x8079800);
             zf124 = reinterpret_cast<uint1_t>(eax123 == 0);
             if (!zf124) {
                 addr_80570a0_2:
@@ -42057,15 +42055,15 @@ void** sum_product(void** ecx) {
     __asm__("fld1 ");
     __asm__("fstp qword [esp+0x8]");
     __asm__("fstp qword [esp]");
-    fun_8048e94(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800, v128, v129, v130, v131, v132, v133, v134);
+    fun_8048e94(ecx, v26, v25, v29, 80, "%s = ", 0x8079800, v128, v129, v130, v131, v132, v133, v134);
     addr_8056dc6_50:
     __asm__("fldz ");
     __asm__("fxch st0, st1");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax126) + 1) || !*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax126) + 1)) {
-        v26 = reinterpret_cast<void**>(0x8075d32);
-        warning(ecx, 0x8075d32, v25, v29, 80, 0x8075cf6, 0x8079800, v135, v136, v137);
+        v26 = reinterpret_cast<void**>("End value not reached.");
+        warning(ecx, "End value not reached.", v25, v29, 80, "%s = ", 0x8079800, v135, v136, v137);
     }
     if (!edi5) {
         eax138 = zero_token;
@@ -42110,10 +42108,10 @@ void** sum_product(void** ecx) {
             break;
         less_or_equal151 = reinterpret_cast<signed char>(reinterpret_cast<unsigned char>(ebx22) + reinterpret_cast<uint32_t>(v146) + 1) <= reinterpret_cast<signed char>(n_tokens);
         if (!less_or_equal151) {
-            error_huge(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800, v152, v153, v154, v155, v148, v147, v156);
+            error_huge(ecx, v26, v25, v29, 80, "%s = ", 0x8079800, v152, v153, v154, v155, v148, v147, v156);
         }
         eax157 = tlhs;
-        fun_80491c4(ecx, eax157, v23, v147, 80, 0x8075cf6, 0x8079800, v158, v159, v160, v161, v148, v147, v162);
+        fun_80491c4(ecx, eax157, v23, v147, 80, "%s = ", 0x8079800, v158, v159, v160, v161, v148, v147, v162);
         n_tlhs = ebx22;
         if (reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(ebx22) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(ebx22 == 0)) {
             addr_8056eec_63:
@@ -42156,12 +42154,12 @@ void** sum_product(void** ecx) {
         edx170 = n_tlhs;
         v29 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx170) << 4);
         edx171 = tlhs;
-        fun_80491c4(ecx, reinterpret_cast<unsigned char>(esi24) + (reinterpret_cast<uint32_t>(eax169) << 4), edx171, v29, 80, 0x8075cf6, 0x8079800, v172, v173, v174, v175, v148, v147, v176);
+        fun_80491c4(ecx, reinterpret_cast<unsigned char>(esi24) + (reinterpret_cast<uint32_t>(eax169) << 4), edx171, v29, 80, "%s = ", 0x8079800, v172, v173, v174, v175, v148, v147, v176);
         eax177 = n_tlhs;
         v146 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax169) + reinterpret_cast<unsigned char>(eax177));
         v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffefdc);
         v26 = esi24;
-        calc_simp(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800, v178, v179, v180, v181);
+        calc_simp(ecx, v26, v25, v29, 80, "%s = ", 0x8079800, v178, v179, v180, v181);
         if (!v125) {
             __asm__("fld qword [ebp+0xffffefc0]");
             __asm__("fadd qword [ebp+0xffffefa8]");
@@ -42192,12 +42190,12 @@ void** sum_product(void** ecx) {
         v29 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(edx186) * 4) << 4);
         v25 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(edx186) * 4);
         v187 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(v20) * 4);
-        fun_80491c4(ecx, v187, v25, v29, 80, 0x8075cf6, 0x8079800, v188, v189, v190, v191, v148, v147, v192);
+        fun_80491c4(ecx, v187, v25, v29, 80, "%s = ", 0x8079800, v188, v189, v190, v191, v148, v147, v192);
         eax193 = cur_equation;
         *reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(v20) * 4) = *reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(eax193) * 4);
     }
     v26 = v20;
-    eax46 = return_result(ecx, v26, v25, v29, 80, 0x8075cf6, 0x8079800);
+    eax46 = return_result(ecx, v26, v25, v29, 80, "%s = ", 0x8079800);
     goto addr_80570a5_14;
     addr_8056da9_46:
     if (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax126) + 1)) {
@@ -42209,13 +42207,13 @@ void** sum_product(void** ecx) {
         goto addr_8056db4_49;
     }
     addr_8056c91_27:
-    v26 = reinterpret_cast<void**>(0x8075cfc);
-    error(ecx, 0x8075cfc, v25, v29, 80, 0x8075cf6, 0x8079800, v194, v195, v196, v197, v198);
+    v26 = reinterpret_cast<void**>("Number expected.");
+    error(ecx, "Number expected.", v25, v29, 80, "%s = ", 0x8079800, v194, v195, v196, v197, v198);
     eax46 = reinterpret_cast<void**>(0);
     goto addr_80570a5_14;
     addr_8056ac4_12:
-    v26 = reinterpret_cast<void**>(0x807267b);
-    error(ecx, 0x807267b, v25, 0, v199, v200, v201, v202, v203, v204, v205, v206);
+    v26 = reinterpret_cast<void**>("Variable not found.");
+    error(ecx, "Variable not found.", v25, 0, v199, v200, v201, v202, v203, v204, v205, v206);
     eax46 = reinterpret_cast<void**>(0);
     goto addr_80570a5_14;
 }
@@ -42290,7 +42288,7 @@ void** read_sub(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         clean_up(0x8079600, 0x8079600, 0x9c, v40, v41, v42, v43);
         if (reinterpret_cast<int1_t>(ebx25 == 14)) {
-            error(ecx, 0x80719bb, 0x8079600, 0x9c, v44, v45, v46, v47, v48, v49, v50, v51);
+            error(ecx, "Expression too large.", 0x8079600, 0x9c, v44, v45, v46, v47, v48, v49, v50, v51);
         }
     }
     fun_80491c4(ecx, 0x8079600, reinterpret_cast<int32_t>(ebp8) + 0xffffff5c, 0x9c, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61);
@@ -42338,37 +42336,37 @@ void** edit_sub(void** ecx, void** a2, void** a3, void** a4) {
     v9 = eax8;
     ebx10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4);
     do {
-        eax13 = fun_8048f84(0x8075e6a, 0x1000, 1, 0x1000, 0x8075e71, v11, v12);
+        eax13 = fun_8048f84("EDITOR", 0x1000, 1, 0x1000, "%s %s", v11, v12);
         if (!eax13) 
             break;
         v12 = esi6;
         v11 = eax13;
         v14 = reinterpret_cast<void**>(1);
         v15 = reinterpret_cast<void**>(0x1000);
-        fun_8049224(ecx, ebx10, 0x1000, 1, 0x1000, 0x8075e71, v11, v12);
-        eax16 = shell_out(ecx, ebx10, 0x1000, 1, 0x1000, 0x8075e71, v11, v12);
+        fun_8049224(ecx, ebx10, 0x1000, 1, 0x1000, "%s %s", v11, v12);
+        eax16 = shell_out(ecx, ebx10, 0x1000, 1, 0x1000, "%s %s", v11, v12);
         if (eax16) 
             goto addr_8057b47_4;
-        clear_all(ebx10, 0x1000, 1, 0x1000, 0x8075e71, v11, v12);
+        clear_all(ebx10, 0x1000, 1, 0x1000, "%s %s", v11, v12);
         v17 = esi6;
-        eax18 = read_cmd(ecx, v17, 0x1000, 1, 0x1000, 0x8075e71, v11, v12);
-    } while (!eax18 && (v17 = reinterpret_cast<void**>(0x8075e77), eax19 = pause_cmd(ecx, 0x8075e77, 0x1000, 1, 0x1000, 0x8075e71, v11, v12), !!eax19));
+        eax18 = read_cmd(ecx, v17, 0x1000, 1, 0x1000, "%s %s", v11, v12);
+    } while (!eax18 && (v17 = reinterpret_cast<void**>("Prepare to rerun the editor"), eax19 = pause_cmd(ecx, "Prepare to rerun the editor", 0x1000, 1, 0x1000, "%s %s", v11, v12), !!eax19));
     goto addr_8057b9d_6;
-    v17 = reinterpret_cast<void**>(0x80769dc);
-    error(ecx, 0x80769dc, 0x1000, 1, 0x1000, 0x8075e71, v11, v12, v20, v21, v22, v23);
+    v17 = reinterpret_cast<void**>("EDITOR environment variable not set.");
+    error(ecx, "EDITOR environment variable not set.", 0x1000, 1, 0x1000, "%s %s", v11, v12, v20, v21, v22, v23);
     eax24 = reinterpret_cast<void**>(0);
     addr_8057ba2_8:
     edx25 = v9 ^ g14;
     if (edx25) {
-        eax24 = fun_8049184(ecx, v17, v15, v14, 0x1000, 0x8075e71, v11, v12, v26, v27, v28);
+        eax24 = fun_8049184(ecx, v17, v15, v14, 0x1000, "%s %s", v11, v12, v26, v27, v28);
     }
     return eax24;
     addr_8057b47_4:
-    error(ecx, 0x8076a04, 0x1000, 1, 0x1000, 0x8075e71, v11, v12, v29, v30, v31, v32);
+    error(ecx, "Error executing editor, check EDITOR environment variable.", 0x1000, 1, 0x1000, "%s %s", v11, v12, v29, v30, v31, v32);
     v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffeff4);
-    v15 = reinterpret_cast<void**>(0x8075e01);
+    v15 = reinterpret_cast<void**>("Command line = \"%s\".\n");
     v17 = reinterpret_cast<void**>(1);
-    fun_8048f34(1, 0x8075e01, v14, 0x1000, 0x8075e71, v11, v12, v33, v34, v35, v36, v37);
+    fun_8048f34(1, "Command line = \"%s\".\n", v14, 0x1000, "%s %s", v11, v12, v33, v34, v35, v36, v37);
     eax24 = reinterpret_cast<void**>(0);
     goto addr_8057ba2_8;
     addr_8057b9d_6:
@@ -43195,7 +43193,7 @@ int32_t complex_root_simp(void** a1, void** a2) {
         goto addr_806cee4_19;
     }
     if (v4) {
-        warning(ecx13, 0x80777e8, v16, v15, v17, v18, v19, v20, v21, v22);
+        warning(ecx13, "Complex number roots approximated.", v16, v15, v17, v18, v19, v20, v21, v22);
     }
     return v4;
 }
@@ -43626,7 +43624,7 @@ int32_t smart_div(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
     less_or_equal33 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(2);
     if (!less_or_equal33) {
         eax34 = gfp;
-        fun_8048f04(ecx, eax34, 1, 0x807277d, 0x8076e0c, v35, v36, v37, v38, v39, v40, v41, v42);
+        fun_8048f04(ecx, eax34, 1, "%s\n", "smart_div() starts:", v35, v36, v37, v38, v39, v40, v41, v42);
     }
     eax43 = n_trhs;
     eax44 = trhs;
@@ -44063,7 +44061,7 @@ int32_t smart_div(void** ecx, void** a2, void** a3, void** a4, void** a5, void**
                 if (less_or_equal320) 
                     continue;
                 eax321 = gfp;
-                fun_8048f04(ecx95, eax321, 1, 0x807277d, 0x8076e20, 0, v322, v323, v324, v325, v326, v80, v90);
+                fun_8048f04(ecx95, eax321, 1, "%s\n", "Skipping last operation.", 0, v322, v323, v324, v325, v326, v80, v90);
             }
         }
         addr_8063a77_87:
@@ -44309,24 +44307,24 @@ void** usage(void** a1, void** a2, void** a3, void** a4) {
     void** v57;
     void** eax58;
 
-    fun_8048f34(1, 0x8071b24, 0x8071907, v5, v6, v7, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "\nMathomatic computer algebra system version %s\n\n", "15.1.1", v5, v6, v7, ebp8, __return_address(), a1, a2, a3, a4);
     eax9 = prog_name;
-    fun_8048f34(1, 0x8071b58, eax9, v10, v11, v12, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x807190e, eax9, v13, v14, v15, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071b80, eax9, v16, v17, v18, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071bac, eax9, v19, v20, v21, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071bd0, eax9, v22, v23, v24, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071c00, eax9, v25, v26, v27, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071c34, eax9, v28, v29, v30, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071c70, eax9, v31, v32, v33, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071c94, eax9, v34, v35, v36, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071cd0, eax9, v37, v38, v39, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071cf0, eax9, v40, v41, v42, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071d18, eax9, v43, v44, v45, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071d54, eax9, v46, v47, v48, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071d90, eax9, v49, v50, v51, ebp8, __return_address(), a1, a2, a3, a4);
-    fun_8048f34(1, 0x8071dc0, eax9, v52, v53, v54, ebp8, __return_address(), a1, a2, a3, a4);
-    eax58 = fun_8048f34(1, 0x8071e00, eax9, v55, v56, v57, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "Usage: %s [ options ] [ input_files ]\n\n", eax9, v10, v11, v12, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "Options:\n", eax9, v13, v14, v15, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -b            Enable bold color mode.\n", eax9, v16, v17, v18, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -c            Toggle color mode.\n", eax9, v19, v20, v21, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -h            Display this help and exit.\n", eax9, v22, v23, v24, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -m number     Specify a memory size multiplier.\n", eax9, v25, v26, v27, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -q            Set quiet mode (don't display prompts).\n", eax9, v28, v29, v30, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -r            Disable readline.\n", eax9, v31, v32, v33, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -s level      Set enforced security level for session.\n", eax9, v34, v35, v36, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -t            Set test mode.\n", eax9, v37, v38, v39, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -u            Set unbuffered output.\n", eax9, v40, v41, v42, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -v            Display version information, then exit.\n", eax9, v43, v44, v45, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -w            Wide output mode, sets unlimited width.\n", eax9, v46, v47, v48, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "  -x            Enable HTML/XHTML output mode.\n", eax9, v49, v50, v51, ebp8, __return_address(), a1, a2, a3, a4);
+    fun_8048f34(1, "\nPlease refer to the Mathomatic man page for more information.\n", eax9, v52, v53, v54, ebp8, __return_address(), a1, a2, a3, a4);
+    eax58 = fun_8048f34(1, "The man page is viewed by typing \"man mathomatic\" in shell.\n", eax9, v55, v56, v57, ebp8, __return_address(), a1, a2, a3, a4);
     return eax58;
 }
 
@@ -44394,7 +44392,7 @@ void fun_8049355() {
 
 struct s279 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s280 {
@@ -44413,12 +44411,12 @@ struct s281 {
 
 struct s282 {
     signed char[12] pad12;
-    void*** f12;
+    void*** fc;
 };
 
 struct s283 {
     signed char[12] pad12;
-    void* f12;
+    void* fc;
 };
 
 signed char g807295b = 45;
@@ -44599,24 +44597,24 @@ void fun_804990c(void** ecx) {
     int32_t* ebx162;
 
     esp2 = reinterpret_cast<void***>(__zero_stack_offset());
-    while (v3 = reinterpret_cast<void**>(0x8071947), v4 = ebp5->f12, v6 = ebp7->f8, eax8 = fun_80490c4(v6, v4, 0x8071947), esp9 = esp2 - 4 + 4, eax8 >= 0) {
+    while (v3 = reinterpret_cast<void**>("s:bqrtchuvwxm:"), v4 = ebp5->fc, v6 = ebp7->f8, eax8 = fun_80490c4(v6, v4, "s:bqrtchuvwxm:"), esp9 = esp2 - 4 + 4, eax8 >= 0) {
         eax10 = eax8 - 98;
         if (eax10 <= 22) 
             goto addr_8049909_4;
-        usage(v6, v4, 0x8071947, v11);
-        fun_8049294(2, v4, 0x8071947, v12, v13);
+        usage(v6, v4, "s:bqrtchuvwxm:", v11);
+        fun_8049294(2, v4, "s:bqrtchuvwxm:", v12, v13);
         esp2 = esp9 - 4 + 4 - 4 + 4;
     }
     less_or_equal14 = reinterpret_cast<signed char>(n_tokens) <= reinterpret_cast<signed char>(99);
     if (less_or_equal14) {
         eax15 = prog_name;
         v16 = eax15;
-        v3 = reinterpret_cast<void**>(0x8071e70);
+        v3 = reinterpret_cast<void**>("%s: Expression array size too small.\n");
         v4 = reinterpret_cast<void**>(1);
         eax17 = stderr;
-        fun_8048f04(ecx, eax17, 1, 0x8071e70, v16, v18, v19, v20, v21, v22, v23, 1, v24);
+        fun_8048f04(ecx, eax17, 1, "%s: Expression array size too small.\n", v16, v18, v19, v20, v21, v22, v23, 1, v24);
         v6 = reinterpret_cast<void**>(2);
-        fun_8049294(2, 1, 0x8071e70, v16, v25);
+        fun_8049294(2, 1, "%s: Expression array size too small.\n", v16, v25);
         esp9 = esp9 - 4 + 4 - 4 + 4;
     }
     eax26 = init_mem(v6, v4, v3, v16);
@@ -44624,54 +44622,54 @@ void fun_804990c(void** ecx) {
     if (!eax26) {
         eax28 = prog_name;
         v16 = eax28;
-        v3 = reinterpret_cast<void**>(0x8071956);
+        v3 = reinterpret_cast<void**>("%s: Not enough memory.\n");
         v4 = reinterpret_cast<void**>(1);
         eax29 = stderr;
-        fun_8048f04(ecx, eax29, 1, 0x8071956, v16, v30, v31, v32, v33, v34, v35, 1, v36);
+        fun_8048f04(ecx, eax29, 1, "%s: Not enough memory.\n", v16, v30, v31, v32, v33, v34, v35, 1, v36);
         v6 = reinterpret_cast<void**>(2);
-        fun_8049294(2, 1, 0x8071956, v16, v37);
+        fun_8049294(2, 1, "%s: Not enough memory.\n", v16, v37);
         esp27 = esp27 - 4 + 4 - 4 + 4;
     }
     zf38 = readline_enabled == 0;
     if (!zf38) {
-        v39 = reinterpret_cast<void**>(0x8071918);
-        eax43 = fun_8048f84(0x8071918, v4, v3, v16, v40, v41, v42);
+        v39 = reinterpret_cast<void**>("HOME");
+        eax43 = fun_8048f84("HOME", v4, v3, v16, v40, v41, v42);
         esp44 = esp27 - 4 + 4;
         if (eax43 && (edx45 = prog_name, !!edx45)) {
             v46 = edx45;
             v47 = eax43;
-            v48 = reinterpret_cast<void**>(0x807196e);
+            v48 = reinterpret_cast<void**>("%s/.%s_history");
             v16 = reinterpret_cast<void**>(0x1000);
             v3 = reinterpret_cast<void**>(1);
             v4 = reinterpret_cast<void**>(0x1000);
             v39 = reinterpret_cast<void**>(0x8081a20);
-            fun_8049224(ecx, 0x8081a20, 0x1000, 1, 0x1000, 0x807196e, v47, v46);
+            fun_8049224(ecx, 0x8081a20, 0x1000, 1, 0x1000, "%s/.%s_history", v47, v46);
             esp44 = esp44 - 4 + 4;
             history_filename = reinterpret_cast<void**>(0x8081a20);
         }
-        fun_8048ec4(v39, v4, v3, v16, 0x807196e, v47, v46);
-        fun_8049204(v39, v4, v3, v16, 0x807196e, v47, v46);
-        fun_8049154(0x1f4, v4, v3, v16, 0x807196e, v47, v46);
+        fun_8048ec4(v39, v4, v3, v16, "%s/.%s_history", v47, v46);
+        fun_8049204(v39, v4, v3, v16, "%s/.%s_history", v47, v46);
+        fun_8049154(0x1f4, v4, v3, v16, "%s/.%s_history", v47, v46);
         esp49 = esp44 - 4 + 4 - 4 + 4 - 4 + 4;
         rl_inhibit_completion = 1;
         zf50 = html_flag == 0;
         if (zf50) {
-            eax51 = fun_8048fd4("colors", v4, v3, v16, 0x807196e, v47, v46);
+            eax51 = fun_8048fd4("colors", v4, v3, v16, "%s/.%s_history", v47, v46);
             esp49 = esp49 - 4 + 4;
             color_flag = reinterpret_cast<uint1_t>(eax51 > 7);
         }
         eax52 = history_filename;
         v6 = eax52;
-        fun_8048f54(v6, v4, v3, v16, 0x807196e, v47, v46);
+        fun_8048f54(v6, v4, v3, v16, "%s/.%s_history", v47, v46);
         esp27 = esp49 - 4 + 4;
     }
-    get_screen_size(v6, v4, v3, v16, 0x807196e, v47, v46);
+    get_screen_size(v6, v4, v3, v16, "%s/.%s_history", v47, v46);
     esp53 = esp27 - 4 + 4;
     zf54 = html_flag == 0;
     if (!zf54) {
-        v4 = reinterpret_cast<void**>(0x8071984);
+        v4 = reinterpret_cast<void**>("<pre>\n");
         v6 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8071984, v3, v16, 0x807196e, v47, v46, v55, v56, v57, 1, v58);
+        fun_8048f34(1, "<pre>\n", v3, v16, "%s/.%s_history", v47, v46, v55, v56, v57, 1, v58);
         esp53 = esp53 - 4 + 4;
     }
     zf59 = test_mode == 0;
@@ -44679,31 +44677,31 @@ void fun_804990c(void** ecx) {
         zf60 = quiet_mode == 0;
         if (!zf60) {
             addr_8049cb4_20:
-            eax61 = load_rc(ecx, v6, v4, v3, v16, 0x807196e, v47, v46);
+            eax61 = load_rc(ecx, v6, v4, v3, v16, "%s/.%s_history", v47, v46);
             esp53 = esp53 - 4 + 4;
             if (!eax61) {
                 v48 = reinterpret_cast<void**>(0x8082f40);
                 eax62 = prog_name;
                 v16 = eax62;
-                v3 = reinterpret_cast<void**>(0x8071f38);
+                v3 = reinterpret_cast<void**>("%s: Error loading set options from \"%s\".\n");
                 v4 = reinterpret_cast<void**>(1);
                 eax63 = stderr;
-                fun_8048f04(ecx, eax63, 1, 0x8071f38, v16, 0x8082f40, v47, v46, v64, v65, v66, 1, v67);
+                fun_8048f04(ecx, eax63, 1, "%s: Error loading set options from \"%s\".\n", v16, 0x8082f40, v47, v46, v64, v65, v66, 1, v67);
                 esp53 = esp53 - 4 + 4;
             }
         } else {
             less_or_equal68 = reinterpret_cast<signed char>(security_level) <= reinterpret_cast<signed char>(1);
             if (!less_or_equal68) {
-                fun_8048f34(1, 0x807198b, v3, v16, 0x807196e, v47, v46, v69, v70, v71, 1, v72);
+                fun_8048f34(1, "Secure ", v3, v16, "%s/.%s_history", v47, v46, v69, v70, v71, 1, v72);
                 esp53 = esp53 - 4 + 4;
             }
-            fun_8048f34(1, 0x8071e98, 0x8071907, v16, 0x807196e, v47, v46, v73, v74, v75, 1, v76);
-            fun_8048f34(1, 0x8071ec4, 0x8071907, v16, 0x807196e, v47, v46, v77, v78, v79, 1, v80);
+            fun_8048f34(1, "Mathomatic version %s (www.mathomatic.org)\n", "15.1.1", v16, "%s/.%s_history", v47, v46, v73, v74, v75, 1, v76);
+            fun_8048f34(1, "Copyright (C) 1987-2010 George Gesslein II.\n", "15.1.1", v16, "%s/.%s_history", v47, v46, v77, v78, v79, 1, v80);
             v16 = reinterpret_cast<void**>(__intrinsic() >> 6);
             v3 = reinterpret_cast<void**>(100);
-            v4 = reinterpret_cast<void**>(0x8071ef4);
+            v4 = reinterpret_cast<void**>("%d equation spaces available, %ld kilobytes per equation space.\n");
             v6 = reinterpret_cast<void**>(1);
-            fun_8048f34(1, 0x8071ef4, 100, v16, 0x807196e, v47, v46, v81, v82, v83, 1, v84);
+            fun_8048f34(1, "%d equation spaces available, %ld kilobytes per equation space.\n", 100, v16, "%s/.%s_history", v47, v46, v81, v82, v83, 1, v84);
             esp53 = esp53 - 4 + 4 - 4 + 4 - 4 + 4;
             zf85 = test_mode == 0;
             if (zf85) 
@@ -44729,27 +44727,27 @@ void fun_804990c(void** ecx) {
     zf89 = quiet_mode == 0;
     if (zf89 && (zf90 = color_flag == 0, !zf90)) {
         zf91 = bold_colors == 0;
-        edx92 = reinterpret_cast<void**>(0x8071993);
+        edx92 = reinterpret_cast<void**>(" bold");
         if (zf91) {
             edx92 = reinterpret_cast<void**>(0x80757fe);
         }
         zf93 = html_flag == 0;
-        eax94 = reinterpret_cast<void**>(0x8071999);
-        ecx = reinterpret_cast<void**>(0x807199e);
+        eax94 = reinterpret_cast<void**>("ANSI");
+        ecx = reinterpret_cast<void**>("HTML");
         if (!zf93) {
-            eax94 = reinterpret_cast<void**>(0x807199e);
+            eax94 = reinterpret_cast<void**>("HTML");
         }
         v16 = edx92;
         v3 = eax94;
-        fun_8048f34(1, 0x80719a3, v3, v16, v48, v47, v46, v95, v96, v97, 1, v98);
+        fun_8048f34(1, "%s%s color mode enabled", v3, v16, v48, v47, v46, v95, v96, v97, 1, v98);
         esp99 = reinterpret_cast<void*>(esp53 - 4 + 4);
         if (1) {
-            v4 = reinterpret_cast<void**>(0x807270a);
-            fun_8048f34(1, 0x807270a, v3, v16, v48, v47, v46, v100, v101, v102, 1, v103);
+            v4 = reinterpret_cast<void**>(".\n");
+            fun_8048f34(1, ".\n", v3, v16, v48, v47, v46, v100, v101, v102, 1, v103);
             esp53 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp99) - 4 + 4);
         } else {
-            v4 = reinterpret_cast<void**>(0x8071f64);
-            fun_8048f34(1, 0x8071f64, v3, v16, v48, v47, v46, v104, v105, v106, 1, v107);
+            v4 = reinterpret_cast<void**>("; disable with the -c option or \"set no color\".\n");
+            fun_8048f34(1, "; disable with the -c option or \"set no color\".\n", v3, v16, v48, v47, v46, v104, v105, v106, 1, v107);
             esp53 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp99) - 4 + 4);
         }
     }
@@ -44762,7 +44760,7 @@ void fun_804990c(void** ecx) {
             v4 = reinterpret_cast<void**>(1);
             eax113 = stderr;
             v108 = eax113;
-            fun_8048f04(ecx, v108, 1, 0x80719e5, v16, v48, v47, v46, v114, v115, v116, 1, v117);
+            fun_8048f04(ecx, v108, 1, "signal(2) setting failed.\n", v16, v48, v47, v46, v114, v115, v116, 1, v117);
             esp112 = esp112 - 4 + 4;
         }
         __asm__("fld dword [0x8072054]");
@@ -44774,16 +44772,16 @@ void fun_804990c(void** ecx) {
             eax125 = prog_name;
             v16 = eax125;
             eax126 = stderr;
-            fun_8048f04(ecx, eax126, 1, 0x8071f98, v16, v48, v47, v46, v127, v128, v129, 1, v130);
-            v3 = reinterpret_cast<void**>(0x8071fd4);
+            fun_8048f04(ecx, eax126, 1, "%s: Cannot convert any floating point values to fractions.\n", v16, v48, v47, v46, v127, v128, v129, 1, v130);
+            v3 = reinterpret_cast<void**>("Roots will not work properly.\n");
             v4 = reinterpret_cast<void**>(1);
             eax131 = stderr;
             v108 = eax131;
-            fun_8048f04(ecx, v108, 1, 0x8071fd4, v16, v48, v47, v46, v132, v133, v134, 1, v135);
+            fun_8048f04(ecx, v108, 1, "Roots will not work properly.\n", v16, v48, v47, v46, v132, v133, v134, 1, v135);
         }
         esi136 = optind;
-        if (ebp137->f8 > esi136 && (eax138 = reinterpret_cast<void**>(ebp139->f12 + esi136 * 4), v140 = eax138, eax141 = *reinterpret_cast<void***>(eax138), !!eax141)) {
-            ebx142 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp143->f12) + esi136 * 4 + 4);
+        if (ebp137->f8 > esi136 && (eax138 = reinterpret_cast<void**>(ebp139->fc + esi136 * 4), v140 = eax138, eax141 = *reinterpret_cast<void***>(eax138), !!eax141)) {
+            ebx142 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp143->fc) + esi136 * 4 + 4);
             do {
                 edx144 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax141));
                 zf145 = *reinterpret_cast<signed char*>(&edx144) == g807295b;
@@ -44792,12 +44790,12 @@ void fun_804990c(void** ecx) {
                     eax148 = read_file(ecx, v108, v4, v3, v16, v48, v47, v46);
                     if (!eax148) {
                         v16 = *reinterpret_cast<void***>(v140);
-                        v3 = reinterpret_cast<void**>(0x8071a00);
+                        v3 = reinterpret_cast<void**>("Read of file \"%s\" failed.\n");
                         v4 = reinterpret_cast<void**>(1);
                         eax149 = stderr;
-                        fun_8048f04(ecx, eax149, 1, 0x8071a00, v16, v48, v47, v46, v150, v151, v140, 1, v152);
+                        fun_8048f04(ecx, eax149, 1, "Read of file \"%s\" failed.\n", v16, v48, v47, v46, v150, v151, v140, 1, v152);
                         v108 = reinterpret_cast<void**>(1);
-                        exit_program(ecx, 1, 1, 0x8071a00, v16, v48, v47, v46);
+                        exit_program(ecx, 1, 1, "Read of file \"%s\" failed.\n", v16, v48, v47, v46);
                     }
                 } else {
                     main_io_loop(ecx, v108, v4, v3, v16, v48, v47, v46);
@@ -44808,11 +44806,11 @@ void fun_804990c(void** ecx) {
     } else {
         clean_up(0x8079600, v4, v3, v16, v48, v47, v46);
         if (reinterpret_cast<int1_t>(eax110 == 14)) {
-            error(ecx, 0x80719bb, v4, v3, v16, v48, v47, v46, v154, v155, v156, 1);
+            error(ecx, "Expression too large.", v4, v3, v16, v48, v47, v46, v154, v155, v156, 1);
         }
-        v4 = reinterpret_cast<void**>(0x80719d1);
+        v4 = reinterpret_cast<void**>("Operation aborted.\n");
         v108 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x80719d1, v3, v16, v48, v47, v46, v157, v158, v159, 1, v160);
+        fun_8048f34(1, "Operation aborted.\n", v3, v16, v48, v47, v46, v157, v158, v159, 1, v160);
     }
     main_io_loop(ecx, v108, v4, v3, v16, v48, v47, v46);
     exit_program(ecx, 0, v4, v3, v16, v48, v47, v46);
@@ -45028,7 +45026,7 @@ void** replace_cmd(void** ecx, void** a2) {
         edi12 = reinterpret_cast<void**>(0);
         esi14 = a2;
         do {
-            eax19 = strcmp_tospace(esi14, 0x807585c, v15, v16, v17, v18);
+            eax19 = strcmp_tospace(esi14, "with", v15, v16, v17, v18);
             if (!eax19) 
                 goto addr_80528c8_8;
             if (reinterpret_cast<int1_t>(edi12 == 0x3e8)) 
@@ -45065,7 +45063,7 @@ void** replace_cmd(void** ecx, void** a2) {
         v50 = reinterpret_cast<void**>(0);
         esi51 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp3) - 0xfbc);
     } else {
-        error(ecx, 0x8075861, 0x807585c, v52, v53, v54, v55, v56, v57, v58, v59, v60);
+        error(ecx, "No variables specified.", "with", v52, v53, v54, v55, v56, v57, v58, v59, v60);
         eax8 = reinterpret_cast<void**>(0);
         goto addr_8052d2e_16;
     }
@@ -45126,12 +45124,12 @@ void** replace_cmd(void** ecx, void** a2) {
         if (!edi12) {
             addr_8052b75_42:
             list_var(ecx68, ebx62, 0, v38, v73, v74, 0x8079800, v75, v76, v77, v78);
-            v74 = reinterpret_cast<void**>(0x8075897);
+            v74 = reinterpret_cast<void**>("Enter %s: ");
             v73 = reinterpret_cast<void**>(80);
             v38 = reinterpret_cast<void**>(1);
-            fun_8049224(ecx68, 0x80795a0, 80, 1, 80, 0x8075897, 0x8079800, v79);
+            fun_8049224(ecx68, 0x80795a0, 80, 1, 80, "Enter %s: ", 0x8079800, v79);
             eax80 = scratch;
-            eax85 = get_expr(ecx68, eax80, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, 1, 80, 0x8075897, 0x8079800, v81, v82, v83, v84);
+            eax85 = get_expr(ecx68, eax80, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, 1, 80, "Enter %s: ", 0x8079800, v81, v82, v83, v84);
             if (!eax85) {
                 addr_80529d7_43:
                 v50 = ebx62;
@@ -45184,10 +45182,10 @@ void** replace_cmd(void** ecx, void** a2) {
         esi51 = esi51;
         goto addr_8052bf9_59;
         addr_8052b05_54:
-        eax98 = strcmp_tospace(v11, 0x807585c, v38, v73, v74, 0x8079800);
+        eax98 = strcmp_tospace(v11, "with", v38, v73, v74, 0x8079800);
         if (eax98) 
             goto addr_8052d29_2;
-        eax99 = skip_param(v11, 0x807585c, v38, v73, v74, 0x8079800);
+        eax99 = skip_param(v11, "with", v38, v73, v74, 0x8079800);
         tmp32_100 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(input_column) + (reinterpret_cast<unsigned char>(eax99) - reinterpret_cast<unsigned char>(a2)));
         input_column = tmp32_100;
         eax101 = scratch;
@@ -45241,11 +45239,11 @@ void** replace_cmd(void** ecx, void** a2) {
     addr_8052b5c_62:
     goto addr_8052d29_2;
     addr_80528f4_10:
-    error(ecx, 0x8075879, 0x807585c, v129, v130, v131, v132, v133, v134, v135, v136, v137);
+    error(ecx, "Too many variables specified.", "with", v129, v130, v131, v132, v133, v134, v135, v136, v137);
     eax8 = reinterpret_cast<void**>(0);
     goto addr_8052d2e_16;
     addr_8052938_13:
-    error(ecx, 0x807267b, v22, v138, v139, v140, v141, v142, v143, v144, v145, v146);
+    error(ecx, "Variable not found.", v22, v138, v139, v140, v141, v142, v143, v144, v145, v146);
     eax8 = reinterpret_cast<void**>(0);
     goto addr_8052d2e_16;
     addr_805295d_15:
@@ -45255,13 +45253,13 @@ void** replace_cmd(void** ecx, void** a2) {
 
 struct s293 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37119] pad134752832;
-    void** f134752832;
+    void** f8082a40;
     signed char[415] pad134753248;
-    void** f134753248;
+    void** f8082be0;
     signed char[415] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 struct s294 {
@@ -45389,12 +45387,12 @@ int32_t optimize_cmd(void** ecx) {
         } while (v20);
         v26 = v27;
         eax28 = reinterpret_cast<struct s293*>(reinterpret_cast<unsigned char>(v27) << 2);
-        esi29 = reinterpret_cast<void**>(&eax28->f134753664);
+        esi29 = reinterpret_cast<void**>(&eax28->f8082d80);
         v30 = esi29;
-        v31 = reinterpret_cast<void**>(&eax28->f134753248);
-        ecx32 = reinterpret_cast<void**>(&eax28->f134715712);
+        v31 = reinterpret_cast<void**>(&eax28->f8082be0);
+        ecx32 = reinterpret_cast<void**>(&eax28->f8079940);
         v33 = ecx32;
-        v34 = reinterpret_cast<void**>(&eax28->f134752832);
+        v34 = reinterpret_cast<void**>(&eax28->f8082a40);
         v35 = esi29;
         v36 = reinterpret_cast<void**>(0);
         while (reinterpret_cast<signed char>(v26) <= reinterpret_cast<signed char>(v16)) {
@@ -45485,7 +45483,7 @@ int32_t optimize_cmd(void** ecx) {
         if (ebx7) 
             goto addr_8056992_2;
     }
-    error(ecx32, 0x80768b0, v4, v3, v68, v39, v20, v35, v36, v30, v31, v33);
+    error(ecx32, "Unable to find any repeated expressions.", v4, v3, v68, v39, v20, v35, v36, v30, v31, v33);
     goto addr_8056992_2;
 }
 
@@ -45582,36 +45580,36 @@ void** edit_cmd(void** ecx, void** a2) {
                 eax17 = edit_sub(ecx, v14, 6, v16);
                 ebx18 = eax17;
             } else {
-                v14 = reinterpret_cast<void**>(0x8076a40);
-                error(ecx, 0x8076a40, 6, v19, v20, v21, v22, v23, v24, v25, v26, v27);
+                v14 = reinterpret_cast<void**>("You can only edit existing/writable files or all equations.");
+                error(ecx, "You can only edit existing/writable files or all equations.", 6, v19, v20, v21, v22, v23, v24, v25, v26, v27);
                 ebx18 = reinterpret_cast<void**>(0);
             }
         } else {
-            v13 = reinterpret_cast<void**>(0x8075e93);
+            v13 = reinterpret_cast<void**>("/tmp/mathomatic.XXXXXX");
             ebx28 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffeff4);
-            my_strlcpy(ebx28, 0x8075e93, 0x1000, v29, v30, v31, v32, v33, v34, v35);
-            eax36 = fun_8049064(ebx28, 0x8075e93, 0x1000);
-            if (reinterpret_cast<signed char>(eax36) < reinterpret_cast<signed char>(0) || (v13 = reinterpret_cast<void**>(0x8075eaa), eax37 = fun_8049024(eax36, 0x8075eaa, 0x1000), !eax37)) {
-                v14 = reinterpret_cast<void**>(0x8075ead);
-                error(ecx, 0x8075ead, v13, 0x1000, v38, v39, v40, v41, v42, v43, v44, v45);
+            my_strlcpy(ebx28, "/tmp/mathomatic.XXXXXX", 0x1000, v29, v30, v31, v32, v33, v34, v35);
+            eax36 = fun_8049064(ebx28, "/tmp/mathomatic.XXXXXX", 0x1000);
+            if (reinterpret_cast<signed char>(eax36) < reinterpret_cast<signed char>(0) || (v13 = reinterpret_cast<void**>("w+"), eax37 = fun_8049024(eax36, "w+", 0x1000), !eax37)) {
+                v14 = reinterpret_cast<void**>("Can't create temporary file.");
+                error(ecx, "Can't create temporary file.", v13, 0x1000, v38, v39, v40, v41, v42, v43, v44, v45);
                 ebx18 = reinterpret_cast<void**>(0);
             } else {
                 gfp = eax37;
                 high_prec = 1;
-                list_cmd(ecx, 0x807207b, 0x8075eaa, 0x1000, v46, v47, v48);
+                list_cmd(ecx, "all", "w+", 0x1000, v46, v47, v48);
                 high_prec = 0;
                 eax49 = default_out;
                 gfp = eax49;
-                fun_80490a4(eax37, 0x8075eaa, 0x1000, v50, v51, v52, v53);
-                eax54 = edit_sub(ecx, eax37, 0x8075eaa, 0x1000);
+                fun_80490a4(eax37, "w+", 0x1000, v50, v51, v52, v53);
+                eax54 = edit_sub(ecx, eax37, "w+", 0x1000);
                 ebx18 = eax54;
                 v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffeff4);
-                fun_80490f4(v14, 0x8075eaa, 0x1000);
+                fun_80490f4(v14, "w+", 0x1000);
             }
         }
     } else {
-        v14 = reinterpret_cast<void**>(0x8075934);
-        error(ecx, 0x8075934, v55, v56, v57, v58, v59, v60, v61, v62, v63, v64);
+        v14 = reinterpret_cast<void**>("Command disabled.");
+        error(ecx, "Command disabled.", v55, v56, v57, v58, v59, v60, v61, v62, v63, v64);
         ebx18 = reinterpret_cast<void**>(0);
     }
     eax65 = ebx18;
@@ -45691,11 +45689,11 @@ void** display_cmd(void** ecx, void** a2) {
     void** v68;
 
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    eax8 = strcmp_tospace(a2, 0x8072c49, v4, v5, v6, v7);
+    eax8 = strcmp_tospace(a2, "factor", v4, v5, v6, v7);
     eax9 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax8 == 0))));
     v10 = eax9;
     if (eax9) {
-        eax15 = skip_param(a2, 0x8072c49, v11, v12, v13, v14);
+        eax15 = skip_param(a2, "factor", v11, v12, v13, v14);
         a2 = eax15;
     }
     v16 = reinterpret_cast<void**>(0);
@@ -45731,7 +45729,7 @@ void** display_cmd(void** ecx, void** a2) {
                         v16 = eax46;
                     } else {
                         fun_80491c4(ecx, 0x8079600, reinterpret_cast<int32_t>(ebp3) + 0xffffff54, 0x9c, v47, v48, v49, v10, v16, v50, v51, v52, v53, v54);
-                        fun_8048f34(1, 0x8075eca, v21 + 1, v55, v56, v57, v10, v16, v58, v59, v60, v61);
+                        fun_8048f34(1, "Skipping equation number %d.\n", v21 + 1, v55, v56, v57, v10, v16, v58, v59, v60, v61);
                     }
                 }
                 eax20 = v21 + 1;
@@ -45744,7 +45742,7 @@ void** display_cmd(void** ecx, void** a2) {
     addr_8057ea1_20:
     return v16;
     addr_8057d89_8:
-    error(ecx, 0x80758a2, v18, v17, v63, v64, v65, v10, v16, v66, v67, v68);
+    error(ecx, "Invalid argument.", v18, v17, v63, v64, v65, v10, v16, v66, v67, v68);
     v16 = reinterpret_cast<void**>(0);
     goto addr_8057ea1_20;
 }
@@ -45868,17 +45866,17 @@ void** eliminate_cmd(void** a1) {
         addr_80582f5_5:
         v11 = reinterpret_cast<void**>(0);
     } else {
-        v12 = reinterpret_cast<void**>(0x80727e9);
-        eax17 = strcmp_tospace(v3, 0x80727e9, v13, v14, v15, v16);
+        v12 = reinterpret_cast<void**>("repeat");
+        eax17 = strcmp_tospace(v3, "repeat", v13, v14, v15, v16);
         if (!eax17) {
             repeat_flag = reinterpret_cast<void**>(1);
-            eax22 = skip_param(v3, 0x80727e9, v18, v19, v20, v21);
+            eax22 = skip_param(v3, "repeat", v18, v19, v20, v21);
             v3 = eax22;
         }
         if (*reinterpret_cast<void***>(v3)) 
             goto addr_8057f75_9;
         v23 = reinterpret_cast<void**>(80);
-        my_strlcpy(0x80795a0, 0x8076a7c, 80, v24, v25, v26, v27, v28, v29, v30);
+        my_strlcpy(0x80795a0, "Enter variables to eliminate: ", 80, v24, v25, v26, v27, v28, v29, v30);
         v12 = reinterpret_cast<void**>(0x1000);
         v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffef80);
         eax39 = get_string(v31, 0x1000, 80, v32, v33, v34, v35, v36, v37, v38);
@@ -45994,11 +45992,11 @@ void** eliminate_cmd(void** a1) {
             ecx6 = v47;
             v64 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp2) + reinterpret_cast<unsigned char>(ecx6) * 4 - 0x2024);
         }
-        eax67 = strcmp_tospace(v3, 0x8075eff, v23, v65, v66, v11);
+        eax67 = strcmp_tospace(v3, "using", v23, v65, v66, v11);
         esi68 = reinterpret_cast<uint1_t>(eax67 == 0);
         if (!esi68) 
             goto addr_80581e3_52;
-        eax71 = skip_param(v3, 0x8075eff, v23, v69, v70, v11);
+        eax71 = skip_param(v3, "using", v23, v69, v70, v11);
         v3 = eax71;
         v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffdfd4);
         eax72 = decstrtol(eax71, v12, v23);
@@ -46017,8 +46015,8 @@ void** eliminate_cmd(void** a1) {
                 continue;
             list_var(ecx6, v64, 0, v23, v77, v78, v11, v44, v45, v46, v47);
             v23 = reinterpret_cast<void**>(0x8079800);
-            v12 = reinterpret_cast<void**>(0x8076a9c);
-            fun_8048f34(1, 0x8076a9c, 0x8079800, v79, v80, v11, v44, v45, v46, v47, v57, v3);
+            v12 = reinterpret_cast<void**>("Variable (%s) not found in current equation.\n");
+            fun_8048f34(1, "Variable (%s) not found in current equation.\n", 0x8079800, v79, v80, v11, v44, v45, v46, v47, v57, v3);
             continue;
         }
         if (!esi68) {
@@ -46063,8 +46061,8 @@ void** eliminate_cmd(void** a1) {
         addr_80582d2_67:
     }
     if (!v11) {
-        v31 = reinterpret_cast<void**>(0x8075ee8);
-        error(ecx6, 0x8075ee8, v12, v23, v88, v89, v11, v44, v45, v46, v47, v57);
+        v31 = reinterpret_cast<void**>("No substitutions made.");
+        error(ecx6, "No substitutions made.", v12, v23, v88, v89, v11, v44, v45, v46, v47, v57);
         goto addr_80582ff_12;
     } else {
         eax90 = cur_equation;
@@ -46097,9 +46095,9 @@ struct s300 {
 
 struct s301 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 struct s302 {
@@ -46269,20 +46267,20 @@ void** simplify_cmd(void** ecx, void** a2) {
     v10 = reinterpret_cast<void**>(0);
     v11 = reinterpret_cast<void**>(0);
     while (1) {
-        v12 = reinterpret_cast<void**>(0x80751bf);
-        eax16 = strncasecmp(v4, 0x80751bf, 4, v13, v14, v15);
+        v12 = reinterpret_cast<void**>("sign");
+        eax16 = strncasecmp(v4, "sign", 4, v13, v14, v15);
         if (eax16) {
-            v12 = reinterpret_cast<void**>(0x8075a2d);
-            eax20 = strncasecmp(v4, 0x8075a2d, 4, v17, v18, v19);
+            v12 = reinterpret_cast<void**>("symbolic");
+            eax20 = strncasecmp(v4, "symbolic", 4, v17, v18, v19);
             if (eax20) {
-                v12 = reinterpret_cast<void**>(0x8075f05);
-                eax24 = strcmp_tospace(v4, 0x8075f05, 4, v21, v22, v23);
+                v12 = reinterpret_cast<void**>("quickest");
+                eax24 = strcmp_tospace(v4, "quickest", 4, v21, v22, v23);
                 if (eax24) {
-                    v12 = reinterpret_cast<void**>(0x8075664);
-                    eax28 = strcmp_tospace(v4, 0x8075664, 4, v25, v26, v27);
+                    v12 = reinterpret_cast<void**>("quick");
+                    eax28 = strcmp_tospace(v4, "quick", 4, v25, v26, v27);
                     if (eax28) {
-                        v12 = reinterpret_cast<void**>(0x8072a98);
-                        eax32 = strncasecmp(v4, 0x8072a98, 4, v29, v30, v31);
+                        v12 = reinterpret_cast<void**>("fraction");
+                        eax32 = strncasecmp(v4, "fraction", 4, v29, v30, v31);
                         if (eax32) 
                             break;
                         v7 = reinterpret_cast<void**>(1);
@@ -46449,48 +46447,48 @@ void** simplify_cmd(void** ecx, void** a2) {
                             if (*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(esi54) + reinterpret_cast<int32_t>(ebx90))) {
                                 if (!eax91) {
                                     v44 = v75;
-                                    v92 = reinterpret_cast<void**>(0x8075f11);
+                                    v92 = reinterpret_cast<void**>("Solution number %ld with ");
                                     eax93 = gfp;
-                                    fun_8048f04(ecx, eax93, 1, 0x8075f11, v44, v94, v95, v96, v48, v97, v98, v74, v37);
+                                    fun_8048f04(ecx, eax93, 1, "Solution number %ld with ", v44, v94, v95, v96, v48, v97, v98, v74, v37);
                                 } else {
-                                    v92 = reinterpret_cast<void**>(0x8075f0e);
+                                    v92 = reinterpret_cast<void**>(", ");
                                     eax99 = gfp;
-                                    fun_8048f04(ecx, eax99, 1, 0x8075f0e, v44, v100, v101, v102, v48, v103, v104, v74, v37);
+                                    fun_8048f04(ecx, eax99, 1, ", ", v44, v100, v101, v102, v48, v103, v104, v74, v37);
                                 }
                                 list_var(ecx, (reinterpret_cast<int32_t>(ebx90) << 14) + 4, 0, v92, v44, v105, v106, v107, v48, v108, v109);
                                 v44 = reinterpret_cast<void**>(0x8079800);
                                 eax110 = gfp;
-                                fun_8048f04(ecx, eax110, 1, 0x8075cf6, 0x8079800, v111, v112, v113, v48, v114, v115, v74, v37);
+                                fun_8048f04(ecx, eax110, 1, "%s = ", 0x8079800, v111, v112, v113, v48, v114, v115, v74, v37);
                                 if (!*reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(ebp3) + reinterpret_cast<int32_t>(ebx90) - 0x9c)) {
-                                    v38 = reinterpret_cast<void**>(0x8075f2c);
+                                    v38 = reinterpret_cast<void**>("1");
                                     v39 = reinterpret_cast<void**>(1);
                                     eax116 = gfp;
-                                    fun_8048f04(ecx, eax116, 1, 0x8075f2c, 0x8079800, v117, v118, v119, v48, v120, v121, v74, v37);
+                                    fun_8048f04(ecx, eax116, 1, "1", 0x8079800, v117, v118, v119, v48, v120, v121, v74, v37);
                                     eax91 = 1;
                                 } else {
-                                    v38 = reinterpret_cast<void**>(0x8075f2b);
+                                    v38 = reinterpret_cast<void**>("-1");
                                     v39 = reinterpret_cast<void**>(1);
                                     eax122 = gfp;
-                                    fun_8048f04(ecx, eax122, 1, 0x8075f2b, 0x8079800, v123, v124, v125, v48, v126, v127, v74, v37);
+                                    fun_8048f04(ecx, eax122, 1, "-1", 0x8079800, v123, v124, v125, v48, v126, v127, v74, v37);
                                     eax91 = 1;
                                 }
                             }
                             ebx90 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx90) + 1);
                         } while (!reinterpret_cast<int1_t>(ebx90 == 64));
                         if (eax91) {
-                            v38 = reinterpret_cast<void**>(0x8072669);
+                            v38 = reinterpret_cast<void**>(":\n");
                             v39 = reinterpret_cast<void**>(1);
                             eax128 = gfp;
-                            fun_8048f04(ecx, eax128, 1, 0x8072669, v44, v129, v130, v131, v48, v132, v133, v74, v37);
+                            fun_8048f04(ecx, eax128, 1, ":\n", v44, v129, v130, v131, v48, v132, v133, v74, v37);
                         }
                         if (!v9) {
                             ebx134 = reinterpret_cast<struct s301*>(reinterpret_cast<unsigned char>(v80) << 2);
                             v135 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v80) * 4 + 0x8082a40);
-                            simpa_repeat_side(v7, v135, &ebx134->f134753664, v10, v7);
+                            simpa_repeat_side(v7, v135, &ebx134->f8082d80, v10, v7);
                             ecx = v7;
                             v44 = ecx;
                             v38 = v10;
-                            v39 = reinterpret_cast<void**>(&ebx134->f134715712);
+                            v39 = reinterpret_cast<void**>(&ebx134->f8079940);
                             v40 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v80) * 4 + 0x8082be0);
                             simpa_repeat_side(ecx, v40, v39, v38, v44);
                         } else {
@@ -46513,11 +46511,11 @@ void** simplify_cmd(void** ecx, void** a2) {
                         *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(v80) * 4 + 0x8082d80) = 0;
                         *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(v80) * 4 + 0x8079940) = 0;
                         v44 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp3) + reinterpret_cast<unsigned char>(ebx138) * 4 - 0x234);
-                        v38 = reinterpret_cast<void**>(0x8076acc);
+                        v38 = reinterpret_cast<void**>("is identical to solution number %ld.\n");
                         v39 = reinterpret_cast<void**>(1);
                         eax143 = gfp;
                         v40 = eax143;
-                        fun_8048f04(ecx, v40, 1, 0x8076acc, v44, v144, v145, v146, v48, v147, v148, v74, v37);
+                        fun_8048f04(ecx, v40, 1, "is identical to solution number %ld.\n", v44, v144, v145, v146, v48, v147, v148, v74, v37);
                         addr_80589e7_80:
                         if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(v80) * 4 + 0x8082d80)) {
                             v40 = v80;
@@ -46586,9 +46584,9 @@ struct s303 {
     int32_t f4;
     int32_t f8;
     signed char[4] pad16;
-    int32_t f16;
+    int32_t f10;
     signed char[12] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 struct s304 {
@@ -46609,11 +46607,11 @@ struct s306 {
     int32_t f4;
     int32_t f8;
     signed char[4] pad16;
-    int32_t f16;
+    int32_t f10;
     signed char[12] pad32;
-    int32_t f32;
+    int32_t f20;
     signed char[12] pad48;
-    int32_t f48;
+    int32_t f30;
 };
 
 struct s307 {
@@ -46972,15 +46970,15 @@ void** taylor_cmd(void** ecx, void** a2) {
     if (eax10) 
         goto addr_8069fd0_2;
     v11 = v4;
-    eax16 = strcmp_tospace(v11, 0x80770b3, v12, v13, v14, v15);
+    eax16 = strcmp_tospace(v11, "nosimplify", v12, v13, v14, v15);
     v17 = reinterpret_cast<void**>(1);
     if (!eax16) {
         v11 = v4;
-        eax22 = skip_param(v11, 0x80770b3, v18, v19, v20, v21);
+        eax22 = skip_param(v11, "nosimplify", v18, v19, v20, v21);
         v4 = eax22;
         v17 = reinterpret_cast<void**>(0);
     }
-    eax27 = next_espace(ecx, v11, 0x80770b3, v23, v24, v25, v26);
+    eax27 = next_espace(ecx, v11, "nosimplify", v23, v24, v25, v26);
     v28 = eax27;
     edx29 = cur_equation;
     v30 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(edx29) * 4) << 4);
@@ -47031,8 +47029,8 @@ void** taylor_cmd(void** ecx, void** a2) {
         v57 = eax58;
         eax62 = skip_param(v4, v31, v30, v59, v60, v61);
         if (eax62 != v63 || reinterpret_cast<signed char>(v57) < reinterpret_cast<signed char>(0)) {
-            v55 = reinterpret_cast<void**>(0x807726c);
-            error(ecx, 0x807726c, v31, v30, v64, v65, v66, v67, v68, v69, v49, v57);
+            v55 = reinterpret_cast<void**>("Positive integer required for order.");
+            error(ecx, "Positive integer required for order.", v31, v30, v64, v65, v66, v67, v68, v69, v49, v57);
             eax70 = reinterpret_cast<void**>(0);
             goto addr_8069fd5_17;
         } else {
@@ -47052,7 +47050,7 @@ void** taylor_cmd(void** ecx, void** a2) {
     v72 = *ebx47;
     eax78 = found_var(ecx, edi46, v72, 0, v73, v74, v75, v76, v77);
     if (!eax78) {
-        warning(ecx, 0x807267b, v72, 0, v79, v80, v81, v82, v83, v84);
+        warning(ecx, "Variable not found.", v72, 0, v79, v80, v81, v82, v83, v84);
     }
     v85 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*ebx47) << 4);
     v86 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(0x8082be0) + reinterpret_cast<unsigned char>(v44) * 4);
@@ -47070,9 +47068,9 @@ void** taylor_cmd(void** ecx, void** a2) {
         goto addr_806985a_24;
     if (!*reinterpret_cast<void***>(v4)) {
         list_var(ecx, 0, 0, 0, v108, v109, v110, v111, v112, v113, v49);
-        fun_8048f34(1, 0x8077294, 0x8079800, v114, v115, v116, v117, v118, v119, v49, v57, v17);
+        fun_8048f34(1, "Taylor series expansion around %s = point.\n", 0x8079800, v114, v115, v116, v117, v118, v119, v49, v57, v17);
         v30 = reinterpret_cast<void**>(80);
-        my_strlcpy(0x80795a0, 0x80770d6, 80, v120, v121, v122, v123, v124, v125, v49);
+        my_strlcpy(0x80795a0, "Enter point: ", 80, v120, v121, v122, v123, v124, v125, v49);
         v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffefd8);
         v55 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v44) * 4 + 0x8082a40);
         eax132 = get_expr(ecx, v55, v31, 80, v126, v127, v128, v129, v130, v131, v49);
@@ -47095,7 +47093,7 @@ void** taylor_cmd(void** ecx, void** a2) {
     if (reinterpret_cast<signed char>(v57) >= reinterpret_cast<signed char>(0)) 
         goto addr_80699f8_31;
     v30 = reinterpret_cast<void**>(80);
-    my_strlcpy(0x80795a0, 0x80772c0, 80, v139, v140, v141, v142, v143, v144, v49);
+    my_strlcpy(0x80795a0, "Enter order (number of derivatives to take): ", 80, v139, v140, v141, v142, v143, v144, v49);
     v31 = reinterpret_cast<void**>(0x1000);
     v55 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffefe4);
     eax151 = get_string(v55, 0x1000, 80, v145, v146, v147, v148, v149, v150, v49);
@@ -47104,7 +47102,7 @@ void** taylor_cmd(void** ecx, void** a2) {
         eax70 = reinterpret_cast<void**>(0);
     } else {
         if (!*reinterpret_cast<void***>(eax151)) {
-            fun_8048f34(1, 0x80772f0, 80, v152, v153, v154, v155, v156, v157, v49, v57, v17);
+            fun_8048f34(1, "Derivatives will be taken until they reach zero...\n", 80, v152, v153, v154, v155, v156, v157, v49, v57, v17);
             v57 = reinterpret_cast<void**>(0x7ffffffe);
             goto addr_80699f8_31;
         }
@@ -47112,15 +47110,15 @@ void** taylor_cmd(void** ecx, void** a2) {
         eax158 = decstrtol(eax151, v31, 80);
         v57 = eax158;
         if (*reinterpret_cast<void***>(v4) || reinterpret_cast<signed char>(v57) < reinterpret_cast<signed char>(0)) {
-            v55 = reinterpret_cast<void**>(0x807726c);
-            error(ecx, 0x807726c, v31, 80, v159, v160, v161, v162, v163, v164, v49, v57);
+            v55 = reinterpret_cast<void**>("Positive integer required for order.");
+            error(ecx, "Positive integer required for order.", v31, 80, v159, v160, v161, v162, v163, v164, v49, v57);
             eax70 = reinterpret_cast<void**>(0);
         } else {
             addr_80699f8_31:
-            fun_8048f34(1, 0x80770e4, v30, v165, v166, v167, v168, v169, v170, v49, v57, v17);
+            fun_8048f34(1, "Computing the Taylor series", v30, v165, v166, v167, v168, v169, v170, v49, v57, v17);
             eax171 = cur_equation;
             if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax171) * 4 + 0x8079940)) {
-                fun_8048f34(1, 0x8077100, v30, v172, v173, v174, v175, v176, v177, v49, v57, v17);
+                fun_8048f34(1, " of the RHS", v30, v172, v173, v174, v175, v176, v177, v49, v57, v17);
                 goto addr_8069a2f_38;
             }
         }
@@ -47133,9 +47131,9 @@ void** taylor_cmd(void** ecx, void** a2) {
     return eax70;
     addr_8069a2f_38:
     if (v17) {
-        fun_8048f34(1, 0x807710c, v30, v184, v185, v186, v187, v188, v189, v49, v57, v17);
+        fun_8048f34(1, " and simplifying", v30, v184, v185, v186, v187, v188, v189, v49, v57, v17);
     }
-    fun_8048f34(1, 0x8075a4c, v30, v190, v191, v192, v193, v194, v195, v49, v57, v17);
+    fun_8048f34(1, "...\n", v30, v190, v191, v192, v193, v194, v195, v49, v57, v17);
     v196 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*ebx47) << 4);
     v197 = edi46;
     ecx = v48;
@@ -47200,11 +47198,11 @@ void** taylor_cmd(void** ecx, void** a2) {
         ecx243->f4 = 1;
         ecx243->f0 = reinterpret_cast<void**>(2);
         ecx243->f8 = 3;
-        eax244 = reinterpret_cast<struct s304*>(&ecx243->f16);
+        eax244 = reinterpret_cast<struct s304*>(&ecx243->f10);
         eax244->f4 = 3;
         eax244->f0 = 1;
         eax244->f8 = 0;
-        ecx245 = reinterpret_cast<struct s305*>(&ecx243->f32);
+        ecx245 = reinterpret_cast<struct s305*>(&ecx243->f20);
         ecx245->f4 = 3;
         ecx245->f0 = 2;
         ecx245->f8 = 2;
@@ -47229,16 +47227,16 @@ void** taylor_cmd(void** ecx, void** a2) {
         edx259->f4 = 2;
         edx259->f0 = reinterpret_cast<void**>(2);
         edx259->f8 = 6;
-        eax260 = reinterpret_cast<struct s307*>(&edx259->f16);
+        eax260 = reinterpret_cast<struct s307*>(&edx259->f10);
         eax260->f4 = 2;
         eax260->f0 = 0;
         __asm__("fild dword [ebp+0xffffefb8]");
         __asm__("fstp qword [eax+0x8]");
-        eax261 = reinterpret_cast<struct s308*>(&edx259->f32);
+        eax261 = reinterpret_cast<struct s308*>(&edx259->f20);
         eax261->f4 = 1;
         eax261->f0 = 2;
         eax261->f8 = 4;
-        edx262 = reinterpret_cast<struct s309*>(&edx259->f48);
+        edx262 = reinterpret_cast<struct s309*>(&edx259->f30);
         if (reinterpret_cast<signed char>(v207) > reinterpret_cast<signed char>(1)) {
             eax263 = reinterpret_cast<void**>(2);
             __asm__("fld1 ");
@@ -47336,19 +47334,19 @@ void** taylor_cmd(void** ecx, void** a2) {
         v206 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi208) + reinterpret_cast<unsigned char>(v94));
         ++v207;
     }
-    v55 = reinterpret_cast<void**>(0x8077324);
-    error(ecx, 0x8077324, v31, v30, 0, 0, v297, v298, v299, v300, v49, v57);
+    v55 = reinterpret_cast<void**>("Result invalid because it contains infinity or NaN.");
+    error(ecx, "Result invalid because it contains infinity or NaN.", v31, v30, 0, 0, v297, v298, v299, v300, v49, v57);
     eax70 = reinterpret_cast<void**>(0);
     goto addr_8069fd5_17;
     addr_8069f56_73:
-    eax301 = reinterpret_cast<void**>(0x8075e75);
+    eax301 = reinterpret_cast<void**>("s");
     if (v207 == 1) {
         eax301 = reinterpret_cast<void**>(0x80757fe);
     }
     v179 = eax301;
     v30 = v207;
-    v31 = reinterpret_cast<void**>(0x807711d);
-    fun_8048f34(1, 0x807711d, v30, v179, 0, v302, v303, v304, v305, v49, v57, v17);
+    v31 = reinterpret_cast<void**>("%ld derivative%s applied.\n");
+    fun_8048f34(1, "%ld derivative%s applied.\n", v30, v179, 0, v302, v303, v304, v305, v49, v57, v17);
     eax306 = cur_equation;
     if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax306) * 4 + 0x8079940)) {
         *reinterpret_cast<int32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(v28) * 4) = *reinterpret_cast<int32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(eax306) * 4);
@@ -47357,32 +47355,32 @@ void** taylor_cmd(void** ecx, void** a2) {
     ecx = v28;
     cur_equation = ecx;
     v55 = ecx;
-    eax70 = return_result(ecx, v55, 0x807711d, v30, v179, 0, v307);
+    eax70 = return_result(ecx, v55, "%ld derivative%s applied.\n", v30, v179, 0, v307);
     goto addr_8069fd5_17;
     addr_8069e2f_77:
-    v55 = reinterpret_cast<void**>(0x80770be);
-    error(ecx, 0x80770be, v31, 0, 0, 0, v308, v309, v310, v311, v49, v57);
+    v55 = reinterpret_cast<void**>("Differentiation failed.");
+    error(ecx, "Differentiation failed.", v31, 0, 0, 0, v308, v309, v310, v311, v49, v57);
     eax70 = reinterpret_cast<void**>(0);
     goto addr_8069fd5_17;
     addr_80698cc_29:
     goto addr_8069fd0_2;
     addr_806985a_24:
-    v55 = reinterpret_cast<void**>(0x80770be);
-    error(ecx, 0x80770be, v31, 0, v312, v313, v314, v315, v316, v317, v49, v57);
+    v55 = reinterpret_cast<void**>("Differentiation failed.");
+    error(ecx, "Differentiation failed.", v31, 0, v312, v313, v314, v315, v316, v317, v49, v57);
     eax70 = reinterpret_cast<void**>(0);
     goto addr_8069fd5_17;
     addr_806965f_6:
-    v55 = reinterpret_cast<void**>(0x807210c);
-    error(ecx, 0x807210c, v31, v30, v318, v319, v320, v321, v322, v323, v324, v325);
+    v55 = reinterpret_cast<void**>("Out of free equation spaces.");
+    error(ecx, "Out of free equation spaces.", v31, v30, v318, v319, v320, v321, v322, v323, v324, v325);
     eax70 = reinterpret_cast<void**>(0);
     goto addr_8069fd5_17;
 }
 
 struct s311 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** extrema_cmd(void** ecx, void** a2) {
@@ -47546,7 +47544,7 @@ void** extrema_cmd(void** ecx, void** a2) {
             esi17 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax24) * 4 + 0x8082be0);
             v18 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax24) * 4 + 0x8079940);
         } else {
-            error(ecx, 0x8077170, v25, v26, v27, v28, v29, v30, v31, v32, v33, v34);
+            error(ecx, "The current equation is not solved for a variable.", v25, v26, v27, v28, v29, v30, v31, v32, v33, v34);
             eax35 = reinterpret_cast<void**>(0);
             goto addr_806a312_8;
         }
@@ -47572,7 +47570,7 @@ void** extrema_cmd(void** ecx, void** a2) {
     eax48 = decstrtol(a2, v46, v47);
     v37 = eax48;
     if (*reinterpret_cast<void***>(a2) || reinterpret_cast<signed char>(v37) <= reinterpret_cast<signed char>(0)) {
-        error(ecx, 0x8077358, v46, v49, v50, v51, v52, v53, v54, v55, v56, v57);
+        error(ecx, "The order must be a positive integer.", v46, v49, v50, v51, v52, v53, v54, v55, v56, v57);
         eax35 = reinterpret_cast<void**>(0);
     } else {
         addr_806a0f1_11:
@@ -47602,21 +47600,21 @@ void** extrema_cmd(void** ecx, void** a2) {
                             *reinterpret_cast<void***>(eax83 + 12) = ecx87;
                             cur_equation = ebx15;
                             eax88 = reinterpret_cast<struct s311*>(reinterpret_cast<unsigned char>(ebx15) * 4);
-                            esi89 = reinterpret_cast<void**>(&eax88->f134715712);
+                            esi89 = reinterpret_cast<void**>(&eax88->f8079940);
                             ecx90 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx15) * 4 + 0x8082be0);
                             v91 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx15) * 4);
-                            eax97 = solve_sub(ecx90, reinterpret_cast<int32_t>(ebp3) + 0xffffffd0, 1, v91, &eax88->f134753664, ecx90, esi89, v92, v93, v94, v95, v96);
+                            eax97 = solve_sub(ecx90, reinterpret_cast<int32_t>(ebp3) + 0xffffffd0, 1, v91, &eax88->f8082d80, ecx90, esi89, v92, v93, v94, v95, v96);
                             if (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(eax97 < 0) | reinterpret_cast<uint1_t>(eax97 == 0))) {
                                 v98 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx15) * 4 + 0x8082be0);
                                 simpa_side(ecx90, v98, esi89, 0, 0, ecx90, esi89);
                                 eax99 = cur_equation;
                                 eax35 = return_result(ecx90, eax99, esi89, 0, 0, ecx90, esi89);
                             } else {
-                                error(ecx90, 0x8075970, 1, v91, &eax88->f134753664, ecx90, esi89, v100, v101, v102, v103, v104);
+                                error(ecx90, "Solve failed.", 1, v91, &eax88->f8082d80, ecx90, esi89, v100, v101, v102, v103, v104);
                                 eax35 = reinterpret_cast<void**>(0);
                             }
                         } else {
-                            error(ecx, 0x8077138, v18, 0, 0, v105, v106, v107, v108, v109, v110, v111);
+                            error(ecx, "There are no solutions.", v18, 0, 0, v105, v106, v107, v108, v109, v110, v111);
                             eax35 = reinterpret_cast<void**>(0);
                         }
                     } else {
@@ -47634,7 +47632,7 @@ void** extrema_cmd(void** ecx, void** a2) {
                         goto addr_806a1f4_20;
                     }
                 } else {
-                    error(ecx, 0x8077380, v18, 0, v122, v123, v124, v125, v126, v127, v128, v129);
+                    error(ecx, "Variable not found; the derivative would be zero.", v18, 0, v122, v123, v124, v125, v126, v127, v128, v129);
                     eax35 = reinterpret_cast<void**>(0);
                 }
             } else {
@@ -47642,14 +47640,14 @@ void** extrema_cmd(void** ecx, void** a2) {
                 eax35 = reinterpret_cast<void**>(0);
             }
         } else {
-            error(ecx, 0x80768dc, v18, v58, v130, v131, v132, v133, v134, v135, v136, v137);
+            error(ecx, "Current expression contains no variables.", v18, v58, v130, v131, v132, v133, v134, v135, v136, v137);
             eax35 = reinterpret_cast<void**>(0);
         }
     }
     addr_806a312_8:
     return eax35;
     addr_806a1b4_27:
-    error(ecx, 0x80770be, v113, 0, 0, v138, v139, v140, v141, v142, v143, v144);
+    error(ecx, "Differentiation failed.", v113, 0, 0, v138, v139, v140, v141, v142, v143, v144);
     eax35 = reinterpret_cast<void**>(0);
     goto addr_806a312_8;
 }
@@ -47716,8 +47714,8 @@ void** alarmhandler(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     void** v14;
     void** eax15;
 
-    fun_8048f34(1, 0x80718f0, v6, v7, v8, v9, ebp10, __return_address(), a2, a3, a4, a5);
-    eax15 = exit_program(ecx, 1, 0x80718f0, v11, v12, v13, v14, ebp10);
+    fun_8048f34(1, "\nTimeout, quitting...\n", v6, v7, v8, v9, ebp10, __return_address(), a2, a3, a4, a5);
+    eax15 = exit_program(ecx, 1, "\nTimeout, quitting...\n", v11, v12, v13, v14, ebp10);
     return eax15;
 }
 
@@ -47915,17 +47913,17 @@ void** version_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5) {
 
     eax10 = version_report(ecx, v6, v7, v8, v9);
     eax11 = gfp;
-    fun_8048f04(ecx, eax11, 1, 0x8076170, v12, v13, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax11, 1, "\nMathomatic is GNU LGPL version 2.1 licensed software,\n", v12, v13, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     eax16 = gfp;
-    fun_8048f04(ecx, eax16, 1, 0x80761a8, v17, v18, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax16, 1, "meaning it is free software that comes with no warranty.\n", v17, v18, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     eax19 = gfp;
-    fun_8048f04(ecx, eax19, 1, 0x80761e4, v20, v21, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax19, 1, "Type \"help copyright\" for the copyright and license.\n", v20, v21, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     eax22 = gfp;
-    fun_8048f04(ecx, eax22, 1, 0x807621c, v23, v24, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax22, 1, "\nThe newest version of Mathomatic is always available at\n", v23, v24, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     eax25 = gfp;
-    fun_8048f04(ecx, eax25, 1, 0x8076258, v26, v27, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax25, 1, "the Mathomatic website: http://mathomatic.org\n", v26, v27, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     eax28 = gfp;
-    fun_8048f04(ecx, eax28, 1, 0x8076288, v29, v30, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax28, 1, "Feedback and contributions are welcomed.\n", v29, v30, ebx14, ebp15, __return_address(), a2, a3, a4, a5);
     return eax10;
 }
 
@@ -48102,16 +48100,16 @@ void** unfactor_cmd(void** ecx) {
     v4 = reinterpret_cast<void**>(0);
     esi5 = reinterpret_cast<void**>(0);
     while (1) {
-        v6 = reinterpret_cast<void**>(0x8075664);
-        eax11 = strncasecmp(v7, 0x8075664, 4, v8, v9, v10);
+        v6 = reinterpret_cast<void**>("quick");
+        eax11 = strncasecmp(v7, "quick", 4, v8, v9, v10);
         if (eax11) {
-            v6 = reinterpret_cast<void**>(0x8072a98);
-            eax15 = strncasecmp(v7, 0x8072a98, 4, v12, v13, v14);
-            if (!eax15 || (v6 = reinterpret_cast<void**>(0x807566a), eax19 = strncasecmp(v7, 0x807566a, 4, v16, v17, v18), eax19 == 0)) {
+            v6 = reinterpret_cast<void**>("fraction");
+            eax15 = strncasecmp(v7, "fraction", 4, v12, v13, v14);
+            if (!eax15 || (v6 = reinterpret_cast<void**>("fully"), eax19 = strncasecmp(v7, "fully", 4, v16, v17, v18), eax19 == 0)) {
                 v4 = reinterpret_cast<void**>(1);
             } else {
-                v6 = reinterpret_cast<void**>(0x8075c80);
-                eax23 = strncasecmp(v7, 0x8075c80, 4, v20, v21, v22);
+                v6 = reinterpret_cast<void**>("power");
+                eax23 = strncasecmp(v7, "power", 4, v20, v21, v22);
                 if (eax23) 
                     break;
                 v3 = reinterpret_cast<void**>(1);
@@ -48219,24 +48217,24 @@ void** unfactor_cmd(void** ecx) {
 
 struct s312 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37119] pad134752832;
-    void** f134752832;
+    void** f8082a40;
     signed char[415] pad134753248;
-    void** f134753248;
+    void** f8082be0;
     signed char[415] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 struct s313 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37119] pad134752832;
-    void** f134752832;
+    void** f8082a40;
     signed char[415] pad134753248;
-    void** f134753248;
+    void** f8082be0;
     signed char[415] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** factor_cmd(void** ecx, void** a2) {
@@ -48470,16 +48468,16 @@ void** factor_cmd(void** ecx, void** a2) {
     edx5 = g14;
     v6 = edx5;
     v7 = a2;
-    v8 = reinterpret_cast<void**>(0x807568a);
-    eax13 = strcmp_tospace(a2, 0x807568a, v9, v10, v11, v12);
+    v8 = reinterpret_cast<void**>("number");
+    eax13 = strcmp_tospace(a2, "number", v9, v10, v11, v12);
     if (eax13) {
-        v8 = reinterpret_cast<void**>(0x8075691);
-        eax18 = strcmp_tospace(v4, 0x8075691, v14, v15, v16, v17);
+        v8 = reinterpret_cast<void**>("numbers");
+        eax18 = strcmp_tospace(v4, "numbers", v14, v15, v16, v17);
         if (eax18) {
-            eax23 = strcmp_tospace(v4, 0x8075c80, v19, v20, v21, v22);
+            eax23 = strcmp_tospace(v4, "power", v19, v20, v21, v22);
             ebx24 = 0;
             if (!eax23) {
-                eax29 = skip_param(v4, 0x8075c80, v25, v26, v27, v28);
+                eax29 = skip_param(v4, "power", v25, v26, v27, v28);
                 v4 = eax29;
                 *reinterpret_cast<signed char*>(&ebx24) = 1;
             }
@@ -48492,13 +48490,13 @@ void** factor_cmd(void** ecx, void** a2) {
         } else {
             repeat_flag = reinterpret_cast<void**>(1);
             v31 = v4;
-            eax37 = skip_param(v31, 0x8075691, v33, v34, v35, v36);
+            eax37 = skip_param(v31, "numbers", v33, v34, v35, v36);
             v4 = eax37;
             goto addr_8051c66_8;
         }
     } else {
         v31 = v4;
-        eax42 = skip_param(v31, 0x807568a, v38, v39, v40, v41);
+        eax42 = skip_param(v31, "number", v38, v39, v40, v41);
         v4 = eax42;
         goto addr_8051c66_8;
     }
@@ -48509,12 +48507,12 @@ void** factor_cmd(void** ecx, void** a2) {
                 ebx43 = v44;
                 if (v45 >= ebx43) {
                     eax46 = reinterpret_cast<struct s312*>(ebx43 * 4);
-                    esi47 = reinterpret_cast<void**>(&eax46->f134753664);
-                    edi48 = &eax46->f134752832;
+                    esi47 = reinterpret_cast<void**>(&eax46->f8082d80);
+                    edi48 = &eax46->f8082a40;
                     v7 = esi47;
-                    edx49 = reinterpret_cast<void**>(&eax46->f134715712);
+                    edx49 = reinterpret_cast<void**>(&eax46->f8079940);
                     v50 = edx49;
-                    v51 = reinterpret_cast<void**>(&eax46->f134753248);
+                    v51 = reinterpret_cast<void**>(&eax46->f8082be0);
                     v52 = edx49;
                     do {
                         if (*reinterpret_cast<void***>(esi47) && (v30 = reinterpret_cast<void**>(0), v8 = v7, v31 = *edi48, simpv_side(v31, v8, 0), !!*reinterpret_cast<void***>(v50))) {
@@ -48546,8 +48544,8 @@ void** factor_cmd(void** ecx, void** a2) {
             ebx55 = v56;
             if (reinterpret_cast<signed char>(v57) < reinterpret_cast<signed char>(ebx55)) {
                 addr_8052125_21:
-                v31 = reinterpret_cast<void**>(0x807267b);
-                warning(ecx, 0x807267b, v8, v30, v58, v59, v51, v52, v7, v50);
+                v31 = reinterpret_cast<void**>("Variable not found.");
+                warning(ecx, "Variable not found.", v8, v30, v58, v59, v51, v52, v7, v50);
                 goto addr_8051fe8_12;
             } else {
                 do {
@@ -48599,13 +48597,13 @@ void** factor_cmd(void** ecx, void** a2) {
     if (reinterpret_cast<signed char>(v78) > reinterpret_cast<signed char>(v79)) 
         goto addr_80520fb_30;
     ebx80 = reinterpret_cast<struct s313*>(reinterpret_cast<unsigned char>(v78) << 2);
-    edx81 = reinterpret_cast<void**>(&ebx80->f134753664);
+    edx81 = reinterpret_cast<void**>(&ebx80->f8082d80);
     v7 = edx81;
-    eax82 = reinterpret_cast<void**>(&ebx80->f134715712);
+    eax82 = reinterpret_cast<void**>(&ebx80->f8079940);
     v76 = eax82;
-    edi83 = &ebx80->f134753248;
+    edi83 = &ebx80->f8082be0;
     v51 = eax82;
-    ebx84 = &ebx80->f134752832;
+    ebx84 = &ebx80->f8082a40;
     v52 = edx81;
     while (1) {
         if (!*reinterpret_cast<void***>(v7)) {
@@ -48657,9 +48655,9 @@ void** factor_cmd(void** ecx, void** a2) {
     addr_8051c2f_6:
     ebx102 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v4));
     if (*reinterpret_cast<signed char*>(&ebx102) == 45 || (eax109 = fun_8049084(v31, v8, v30, v103, v104, v105, v106, v7, v107, v108), !!(*reinterpret_cast<unsigned char*>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(eax109) + *reinterpret_cast<signed char*>(&ebx102) * 2) + 1) & 8))) {
-        v8 = reinterpret_cast<void**>(0x8075fa8);
+        v8 = reinterpret_cast<void**>("Factoring integers on command line instead:\n");
         v31 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8075fa8, v30, v110, v111, v112, v113, v7, v114, v115, v116, v4);
+        fun_8048f34(1, "Factoring integers on command line instead:\n", v30, v110, v111, v112, v113, v7, v114, v115, v116, v4);
     } else {
         addr_80520f4_18:
         eax69 = reinterpret_cast<void**>(0);
@@ -48687,7 +48685,7 @@ void** factor_cmd(void** ecx, void** a2) {
         fun_8048f64(v4, v8, v30, v119, v120, v121, v122, v7, v123, v124);
         __asm__("fstp qword [ebp+0xffffefc8]");
         if (v4 == v4) {
-            error(ecx, 0x80756b4, v8, v30, v125, v126, v127, v128, v7, v129, v130, v131);
+            error(ecx, "Integer expected.", v8, v30, v125, v126, v127, v128, v7, v129, v130, v131);
             goto addr_8051c7b_56;
         }
         eax138 = skip_space(v4, v8, v30, v132, v133, v134, v135, v7, v136, v137);
@@ -48712,14 +48710,14 @@ void** factor_cmd(void** ecx, void** a2) {
             eax175 = is_prime(ecx, v31, v8, v30, v169, v170, v171, v172, v7, v173, v174);
             if (!eax175) 
                 goto addr_8051e16_54;
-            v30 = reinterpret_cast<void**>(0x80756c6);
+            v30 = reinterpret_cast<void**>("Prime number!\n");
             v8 = reinterpret_cast<void**>(1);
             eax176 = gfp;
             v31 = eax176;
-            fun_8048f04(ecx, v31, 1, 0x80756c6, v177, v178, v179, v180, v7, v181, v182, v183, v4);
+            fun_8048f04(ecx, v31, 1, "Prime number!\n", v177, v178, v179, v180, v7, v181, v182, v183, v4);
             goto addr_8051e16_54;
         } else {
-            error(ecx, 0x8075fd8, v8, v30, v184, v185, v186, v187, v7, v188, v189, v190);
+            error(ecx, "Number too large to factor or not a non-zero integer.", v8, v30, v184, v185, v186, v187, v7, v188, v189, v190);
             goto addr_8051c7b_56;
         }
         addr_8051d2b_62:
@@ -48734,7 +48732,7 @@ void** factor_cmd(void** ecx, void** a2) {
         if (!eax196) {
             addr_8051c7b_56:
             v30 = reinterpret_cast<void**>(80);
-            my_strlcpy(0x80795a0, 0x8075699, 80, v197, v198, v199, v200, v7, v201, v202);
+            my_strlcpy(0x80795a0, "Enter integers to factor: ", 80, v197, v198, v199, v200, v7, v201, v202);
             v8 = reinterpret_cast<void**>(0x1000);
             v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffefe4);
             eax209 = get_string(v31, 0x1000, 80, v203, v204, v205, v206, v7, v207, v208);
@@ -48758,7 +48756,7 @@ void** factor_cmd(void** ecx, void** a2) {
                 goto addr_8051dab_70;
         }
         addr_8051d9a_68:
-        error(ecx, 0x80756b4, 0x80795f4, v30, v220, v221, v222, v223, v7, v224, v225, v226);
+        error(ecx, "Integer expected.", 0x80795f4, v30, v220, v221, v222, v223, v7, v224, v225, v226);
         goto addr_8051c7b_56;
         addr_8051dab_70:
         __asm__("fld qword [eax+0x8]");
@@ -48775,7 +48773,7 @@ int32_t echo_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     void** ebp9;
 
     eax6 = gfp;
-    fun_8048f04(ecx, eax6, 1, 0x807277d, a2, v7, v8, ebp9, __return_address(), a2, a3, a4, a5);
+    fun_8048f04(ecx, eax6, 1, "%s\n", a2, v7, v8, ebp9, __return_address(), a2, a3, a4, a5);
     return 1;
 }
 
@@ -48904,18 +48902,18 @@ int32_t variables_cmd(void** ecx, void** a2) {
     void** v106;
 
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    v4 = reinterpret_cast<void**>(0x8075a34);
-    eax9 = strcmp_tospace(a2, 0x8075a34, v5, v6, v7, v8);
-    if (!eax9 || (v4 = reinterpret_cast<void**>(0x80758b4), eax14 = strcmp_tospace(a2, 0x80758b4, v10, v11, v12, v13), !eax14)) {
+    v4 = reinterpret_cast<void**>("c");
+    eax9 = strcmp_tospace(a2, "c", v5, v6, v7, v8);
+    if (!eax9 || (v4 = reinterpret_cast<void**>("c++"), eax14 = strcmp_tospace(a2, "c++", v10, v11, v12, v13), !eax14)) {
         skip_param(a2, v4, v15, v16, v17, v18);
         v19 = reinterpret_cast<void**>(0);
         v20 = reinterpret_cast<void**>(1);
     } else {
-        eax25 = strcmp_tospace(a2, 0x80758b8, v21, v22, v23, v24);
+        eax25 = strcmp_tospace(a2, "java", v21, v22, v23, v24);
         if (eax25) {
-            v26 = reinterpret_cast<void**>(0x80758bd);
-            eax31 = strcmp_tospace(a2, 0x80758bd, v27, v28, v29, v30);
-            if (!eax31 || (v26 = reinterpret_cast<void**>(0x807266c), eax36 = strcmp_tospace(a2, 0x807266c, v32, v33, v34, v35), eax36 == 0)) {
+            v26 = reinterpret_cast<void**>("int");
+            eax31 = strcmp_tospace(a2, "int", v27, v28, v29, v30);
+            if (!eax31 || (v26 = reinterpret_cast<void**>("integer"), eax36 = strcmp_tospace(a2, "integer", v32, v33, v34, v35), eax36 == 0)) {
                 skip_param(a2, v26, v37, v38, v39, v40);
                 v19 = reinterpret_cast<void**>(1);
                 v20 = reinterpret_cast<void**>(1);
@@ -48924,7 +48922,7 @@ int32_t variables_cmd(void** ecx, void** a2) {
                 v20 = reinterpret_cast<void**>(0);
             }
         } else {
-            skip_param(a2, 0x80758b8, v41, v42, v43, v44);
+            skip_param(a2, "java", v41, v42, v43, v44);
             v19 = reinterpret_cast<void**>(0);
             v20 = reinterpret_cast<void**>(2);
         }
@@ -49000,9 +48998,9 @@ int32_t variables_cmd(void** ecx, void** a2) {
                 v71 = esi69[reinterpret_cast<unsigned char>(ebx68) * 8];
                 list_var(ecx67, v71, 0, v66, v65, v72, v73, v53, v20, v19, v64);
                 v65 = reinterpret_cast<void**>(0x8079800);
-                v66 = reinterpret_cast<void**>(0x807277d);
+                v66 = reinterpret_cast<void**>("%s\n");
                 eax74 = gfp;
-                fun_8048f04(ecx67, eax74, 1, 0x807277d, 0x8079800, v75, v76, v53, v20, v19, v64, v49, v51);
+                fun_8048f04(ecx67, eax74, 1, "%s\n", 0x8079800, v75, v76, v53, v20, v19, v64, v49, v51);
                 goto addr_8053309_28;
             }
             eax77 = esi69[reinterpret_cast<unsigned char>(ebx68) * 8];
@@ -49020,20 +49018,20 @@ int32_t variables_cmd(void** ecx, void** a2) {
             addr_80532b4_33:
             if (!v19) {
                 v65 = reinterpret_cast<void**>(0x8079800);
-                v66 = reinterpret_cast<void**>(0x80758f0);
+                v66 = reinterpret_cast<void**>("double %s;\n");
                 eax80 = gfp;
-                fun_8048f04(ecx67, eax80, 1, 0x80758f0, 0x8079800, v81, v82, v53, v20, v19, v64, v49, v51);
+                fun_8048f04(ecx67, eax80, 1, "double %s;\n", 0x8079800, v81, v82, v53, v20, v19, v64, v49, v51);
                 goto addr_8053309_28;
             } else {
                 v65 = reinterpret_cast<void**>(0x8079800);
-                v66 = reinterpret_cast<void**>(0x80758e7);
+                v66 = reinterpret_cast<void**>("int %s;\n");
                 eax83 = gfp;
-                fun_8048f04(ecx67, eax83, 1, 0x80758e7, 0x8079800, v84, v85, v53, v20, v19, v64, v49, v51);
+                fun_8048f04(ecx67, eax83, 1, "int %s;\n", 0x8079800, v84, v85, v53, v20, v19, v64, v49, v51);
                 goto addr_8053309_28;
             }
             addr_8053341_32:
             eax86 = gfp;
-            fun_8048f04(ecx67, eax86, 1, 0x80758dd, v65, v87, v88, v53, v20, v19, v64, v49, v51);
+            fun_8048f04(ecx67, eax86, 1, "_Complex ", v65, v87, v88, v53, v20, v19, v64, v49, v51);
             goto addr_80532b4_33;
         }
     }
@@ -49130,7 +49128,7 @@ int32_t variables_cmd(void** ecx, void** a2) {
         eax96 = esi103;
         goto addr_80531ad_39;
     }
-    error(ecx97, 0x80758c1, v46, v45, v104, v105, v106, v53, v20, v19, v64, v49);
+    error(ecx97, "Too many variables to list.", v46, v45, v104, v105, v106, v53, v20, v19, v64, v49);
     eax48 = 0;
     goto addr_805331d_9;
 }
@@ -49222,23 +49220,23 @@ void** code_cmd(void** ecx) {
     ebx3 = reinterpret_cast<void**>(0);
     esi4 = reinterpret_cast<void**>(1);
     while (1) {
-        v5 = reinterpret_cast<void**>(0x8075a34);
-        eax11 = strcmp_tospace(v6, 0x8075a34, v7, v8, v9, v10);
-        if (!eax11 || (v5 = reinterpret_cast<void**>(0x80758b4), eax16 = strcmp_tospace(v6, 0x80758b4, v12, v13, v14, v15), eax16 == 0)) {
+        v5 = reinterpret_cast<void**>("c");
+        eax11 = strcmp_tospace(v6, "c", v7, v8, v9, v10);
+        if (!eax11 || (v5 = reinterpret_cast<void**>("c++"), eax16 = strcmp_tospace(v6, "c++", v12, v13, v14, v15), eax16 == 0)) {
             esi4 = reinterpret_cast<void**>(1);
         } else {
-            v5 = reinterpret_cast<void**>(0x80758b8);
-            eax21 = strcmp_tospace(v6, 0x80758b8, v17, v18, v19, v20);
+            v5 = reinterpret_cast<void**>("java");
+            eax21 = strcmp_tospace(v6, "java", v17, v18, v19, v20);
             if (eax21) {
-                v5 = reinterpret_cast<void**>(0x80758fc);
-                eax26 = strcmp_tospace(v6, 0x80758fc, v22, v23, v24, v25);
+                v5 = reinterpret_cast<void**>("python");
+                eax26 = strcmp_tospace(v6, "python", v22, v23, v24, v25);
                 if (eax26) {
-                    v5 = reinterpret_cast<void**>(0x80758bd);
-                    eax31 = strcmp_tospace(v6, 0x80758bd, v27, v28, v29, v30);
+                    v5 = reinterpret_cast<void**>("int");
+                    eax31 = strcmp_tospace(v6, "int", v27, v28, v29, v30);
                     if (!eax31) 
                         goto addr_8053432_7;
-                    v5 = reinterpret_cast<void**>(0x807266c);
-                    eax36 = strcmp_tospace(v6, 0x807266c, v32, v33, v34, v35);
+                    v5 = reinterpret_cast<void**>("integer");
+                    eax36 = strcmp_tospace(v6, "integer", v32, v33, v34, v35);
                     if (eax36) 
                         break;
                     addr_8053432_7:
@@ -49278,7 +49276,7 @@ void** code_cmd(void** ecx) {
                         break;
                 } else {
                     if (!*reinterpret_cast<void***>(0x8079940 + reinterpret_cast<unsigned char>(eax47) * 4) || (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(0x8082d80 + reinterpret_cast<unsigned char>(eax47) * 4) == 1) || **reinterpret_cast<int32_t**>(reinterpret_cast<unsigned char>(eax47) * 4 + 0x8082a40) != 1)) {
-                        warning(ecx, 0x80762b4, v45, v44, v51, v52, v53, v43, v42, v54);
+                        warning(ecx, "Can't make assignment statement because this is not an equation.", v45, v44, v51, v52, v53, v43, v42, v54);
                     }
                     approximate_roots = 1;
                     v55 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v48) * 4 + 0x8082d80);
@@ -49309,7 +49307,7 @@ void** code_cmd(void** ecx) {
                     v63 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v48) * 4 + 0x8082a40);
                     eax64 = int_expr(ecx, v63, v62, v44);
                     if (!eax64 || (v62 = *reinterpret_cast<void***>(0x8079940 + reinterpret_cast<unsigned char>(v48) * 4), v65 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v48) * 4 + 0x8082be0), eax66 = int_expr(ecx, v65, v62, v44), !eax66)) {
-                        warning(ecx, 0x8075903, v62, v44, v67, v68, v69, v43, v42, v70);
+                        warning(ecx, "Not an integer expression.", v62, v44, v67, v68, v69, v43, v42, v70);
                         goto addr_80535e9_28;
                     }
                 }
@@ -49339,7 +49337,7 @@ void** code_cmd(void** ecx) {
     addr_805362b_37:
     return v42;
     addr_80534a0_18:
-    error(ecx, 0x80758a2, v45, v44, v77, v78, v79, v43, v42, v80, v81, v82);
+    error(ecx, "Invalid argument.", v45, v44, v77, v78, v79, v43, v42, v80, v81, v82);
     v42 = reinterpret_cast<void**>(0);
     goto addr_805362b_37;
 }
@@ -49431,57 +49429,57 @@ int32_t save_cmd(void** ecx, void** a2) {
             if (eax12) 
                 goto addr_80537e5_6;
         } else {
-            error(ecx, 0x8075946, v13, v14, v15, v16, v17, v18, v19, v20, v21, v22);
+            error(ecx, "No file name specified.", v13, v14, v15, v16, v17, v18, v19, v20, v21, v22);
             ebx23 = 0;
             goto addr_80538e7_8;
         }
     } else {
-        error(ecx, 0x8075934, v24, v25, v26, v27, v28, v29, v30, v31, v32, v33);
+        error(ecx, "Command disabled.", v24, v25, v26, v27, v28, v29, v30, v31, v32, v33);
         ebx23 = 0;
         goto addr_80538e7_8;
     }
     v34 = a2;
-    fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8076320, v34, v35);
-    eax36 = get_yes_no(ecx, 0x80795a0, 80, 1, 80, 0x8076320, v34);
+    fun_8049224(ecx, 0x80795a0, 80, 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v35);
+    eax36 = get_yes_no(ecx, 0x80795a0, 80, 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34);
     if (eax36) {
         addr_8053852_4:
-        eax38 = fun_80490d4(a2, 0x80779f1, 1, 80, 0x8076320, v34, v37);
+        eax38 = fun_80490d4(a2, "w", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v37);
         if (eax38) {
             gfp = eax38;
             high_prec = 1;
-            eax39 = list_cmd(ecx, 0x807207b, 0x80779f1, 1, 80, 0x8076320, v34);
+            eax39 = list_cmd(ecx, "all", "w", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34);
             ebx23 = eax39;
             high_prec = 0;
             eax40 = default_out;
             gfp = eax40;
-            eax42 = fun_80490a4(eax38, 0x80779f1, 1, 80, 0x8076320, v34, v41);
+            eax42 = fun_80490a4(eax38, "w", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v41);
             if (eax42 || !ebx23) {
-                error(ecx, 0x807638c, 0x80779f1, 1, 80, 0x8076320, v34, v43, v44, v45, v46, v47);
+                error(ecx, "Error encountered while saving equations.", "w", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v43, v44, v45, v46, v47);
                 ebx23 = 0;
             } else {
-                fun_8048f34(1, 0x8076368, a2, 80, 0x8076320, v34, v48, v49, v50, v51, v52, ebx53);
+                fun_8048f34(1, "All equations saved in file \"%s\".\n", a2, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v48, v49, v50, v51, v52, ebx53);
             }
         } else {
-            error(ecx, 0x8076344, 0x80779f1, 1, 80, 0x8076320, v34, v54, v55, v56, v57, v58);
+            error(ecx, "Can't create specified save file.", "w", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v54, v55, v56, v57, v58);
             ebx23 = 0;
         }
     } else {
-        fun_8048f34(1, 0x807595e, 1, 80, 0x8076320, v34, v59, v60, v61, v62, v63, ebx53);
+        fun_8048f34(1, "Command aborted.\n", 1, 80, "File \"%s\" exists, overwrite (y/n)? ", v34, v59, v60, v61, v62, v63, ebx53);
         ebx23 = 0;
     }
     addr_80538e7_8:
     return ebx23;
     addr_80537e5_6:
-    error(ecx, 0x80762f8, 2, v64, v65, v66, v67, v68, v69, v70, v71, v72);
+    error(ecx, "Specified save file is not writable.", 2, v64, v65, v66, v67, v68, v69, v70, v71, v72);
     ebx23 = 0;
     goto addr_80538e7_8;
 }
 
 struct s317 {
     signed char[134715712] pad134715712;
-    int32_t f134715712;
+    int32_t f8079940;
     signed char[37948] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 int32_t clear_cmd(void** a1) {
@@ -49532,8 +49530,8 @@ int32_t clear_cmd(void** a1) {
         ebx11 = v12;
         if (reinterpret_cast<signed char>(eax9) <= reinterpret_cast<signed char>(ebx11)) {
             edx13 = reinterpret_cast<struct s317*>(reinterpret_cast<unsigned char>(eax9) * 4);
-            ecx14 = reinterpret_cast<void**>(&edx13->f134753664);
-            edx15 = &edx13->f134715712;
+            ecx14 = reinterpret_cast<void**>(&edx13->f8082d80);
+            edx15 = &edx13->f8079940;
             do {
                 *reinterpret_cast<void***>(ecx14) = reinterpret_cast<void**>(0);
                 *edx15 = 0;
@@ -49550,7 +49548,7 @@ int32_t clear_cmd(void** a1) {
     addr_80539a2_4:
     return eax7;
     addr_8053952_8:
-    error(ecx14, 0x80758a2, v4, v5, v20, v21, v22, v23, v10, v24, v25, v26);
+    error(ecx14, "Invalid argument.", v4, v5, v20, v21, v22, v23, v10, v24, v25, v26);
     eax7 = 0;
     goto addr_80539a2_4;
     addr_805399d_14:
@@ -49706,18 +49704,18 @@ void** divide_cmd(void** ecx, void** a2) {
     if (!*reinterpret_cast<void***>(a2) || (v4 = a2, eax6 = parse_var2(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, v4, v5), !!eax6) && (v7 = eax6, eax12 = extra_characters(ecx, v7, v4, v8, v9, v10, v11), !eax12)) {
         eax17 = next_espace(ecx, v7, v4, v13, v14, v15, v16);
         ebx18 = eax17;
-        while (my_strlcpy(0x80795a0, 0x807598b, 80, v19, v20, v21, v22, v23, v24, v25), v26 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082be0), eax27 = get_expr(ecx, v26, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, 80, v19, v20, v21, v22, v23, v24, v25), !!eax27) {
-            my_strlcpy(0x80795a0, 0x807599c, 80, v19, v20, v21, v22, v23, v24, v25);
+        while (my_strlcpy(0x80795a0, "Enter dividend: ", 80, v19, v20, v21, v22, v23, v24, v25), v26 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082be0), eax27 = get_expr(ecx, v26, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, 80, v19, v20, v21, v22, v23, v24, v25), !!eax27) {
+            my_strlcpy(0x80795a0, "Enter divisor: ", 80, v19, v20, v21, v22, v23, v24, v25);
             v28 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082a40);
             eax29 = get_expr(ecx, v28, reinterpret_cast<int32_t>(ebp3) + 0xffffffdc, 80, v19, v20, v21, v22, v23, v24, v25);
             if (!eax29) 
                 goto addr_8053cf4_5;
             eax30 = gfp;
-            fun_8048f04(ecx, eax30, 1, 0x80757fd, v19, v20, v21, v22, v23, v24, v25, v31, v32);
+            fun_8048f04(ecx, eax30, 1, "\n", v19, v20, v21, v22, v23, v24, v25, v31, v32);
             v33 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082be0);
-            calc_simp(ecx, v33, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, 0x80757fd, v19, v20, v21, v22, v23, v24, v25);
+            calc_simp(ecx, v33, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, "\n", v19, v20, v21, v22, v23, v24, v25);
             v34 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx18) * 4);
-            calc_simp(ecx, v34, reinterpret_cast<int32_t>(ebp3) + 0xffffffdc, 0x80757fd, v19, v20, v21, v22, v23, v24, v25);
+            calc_simp(ecx, v34, reinterpret_cast<int32_t>(ebp3) + 0xffffffdc, "\n", v19, v20, v21, v22, v23, v24, v25);
             v35 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffc8);
             v36 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx18) * 4);
             eax37 = get_constant(ecx, v36, 0, v35, v19, v20, v21, v22, v23, v24, v25);
@@ -49739,7 +49737,7 @@ void** divide_cmd(void** ecx, void** a2) {
                     eax52 = poly_div(ecx, v51, 0, v50, 0, v48, v21, v22, v23, v24, v25);
                     if (!eax52) {
                         eax53 = gfp;
-                        fun_8048f04(ecx, eax53, 1, 0x8075a10, 0, v48, v21, v22, v23, v24, v25, v54, v55);
+                        fun_8048f04(ecx, eax53, 1, "Polynomial division failed.\n", 0, v48, v21, v22, v23, v24, v25, v54, v55);
                     } else {
                         eax56 = tlhs;
                         simp_divide(ecx, eax56, 0x80796b8, v50, 0, v48, v21, v22, v23, v24, v25);
@@ -49748,24 +49746,24 @@ void** divide_cmd(void** ecx, void** a2) {
                         list_var(ecx, 0, 0, v50, 0, v48, v21, v22, v23, v24, v25);
                         v49 = reinterpret_cast<void**>(0x8079800);
                         eax58 = gfp;
-                        fun_8048f04(ecx, eax58, 1, 0x80764d4, 0x8079800, v48, v21, v22, v23, v24, v25, v59, v60);
+                        fun_8048f04(ecx, eax58, 1, "Polynomial division successful using base variable (%s).\n", 0x8079800, v48, v21, v22, v23, v24, v25, v59, v60);
                         eax61 = gfp;
-                        fun_8048f04(ecx, eax61, 1, 0x80759e9, 0x8079800, v48, v21, v22, v23, v24, v25, v62, v63);
+                        fun_8048f04(ecx, eax61, 1, "The quotient is:\n", 0x8079800, v48, v21, v22, v23, v24, v25, v62, v63);
                         eax64 = tlhs;
-                        fractions_and_group(ecx, eax64, 0x80796b8, 0x80759e9, 0x8079800, v48, v21, v22, v23, v24, v25);
+                        fractions_and_group(ecx, eax64, 0x80796b8, "The quotient is:\n", 0x8079800, v48, v21, v22, v23, v24, v25);
                         eax65 = tlhs;
                         list_factor(ecx, eax65, 0x80796b8, 0, 0x8079800, v48, v21, v22, v23, v24, v25);
                         eax66 = gfp;
-                        fun_8048f04(ecx, eax66, 1, 0x80759fb, 0x8079800, v48, v21, v22, v23, v24, v25, v67, v68);
+                        fun_8048f04(ecx, eax66, 1, "\n\nThe remainder is:\n", 0x8079800, v48, v21, v22, v23, v24, v25, v67, v68);
                         eax69 = trhs;
-                        fractions_and_group(ecx, eax69, 0x80798b4, 0x80759fb, 0x8079800, v48, v21, v22, v23, v24, v25);
+                        fractions_and_group(ecx, eax69, 0x80798b4, "\n\nThe remainder is:\n", 0x8079800, v48, v21, v22, v23, v24, v25);
                         eax70 = trhs;
                         list_factor(ecx, eax70, 0x80798b4, 0, 0x8079800, v48, v21, v22, v23, v24, v25);
                         eax71 = gfp;
-                        fun_8048f04(ecx, eax71, 1, 0x80757fd, 0x8079800, v48, v21, v22, v23, v24, v25, v72, v73);
+                        fun_8048f04(ecx, eax71, 1, "\n", 0x8079800, v48, v21, v22, v23, v24, v25, v72, v73);
                     }
                     eax74 = gfp;
-                    fun_8048f04(ecx, eax74, 1, 0x80757fd, v49, v48, v21, v22, v23, v24, v25, v75, v76);
+                    fun_8048f04(ecx, eax74, 1, "\n", v49, v48, v21, v22, v23, v24, v25, v75, v76);
                     v77 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082a40);
                     v78 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082be0);
                     eax79 = poly_gcd(ecx, v78, 0, v77, 0, 0, v21, v22, v23, v24, v25);
@@ -49773,23 +49771,23 @@ void** divide_cmd(void** ecx, void** a2) {
                     if (eax79 || (v20 = reinterpret_cast<void**>(0), v19 = reinterpret_cast<void**>(0), v77 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082be0), v81 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx18) * 4 + 0x8082a40), eax82 = poly_gcd(ecx, v81, 0, v77, 0, 0, v21, v22, v23, v24, v25), esi80 = eax82, !!eax82)) {
                         eax83 = trhs;
                         simp_divide(ecx, eax83, 0x80798b4, v77, 0, 0, v21, v22, v23, v24, v25);
-                        eax84 = reinterpret_cast<void**>(0x8075e75);
+                        eax84 = reinterpret_cast<void**>("s");
                         if (esi80 == 1) {
                             eax84 = reinterpret_cast<void**>(0x80757fe);
                         }
                         v20 = eax84;
                         v19 = esi80;
                         eax85 = gfp;
-                        fun_8048f04(ecx, eax85, 1, 0x8076510, v19, v20, v21, v22, v23, v24, v25, v86, v87);
+                        fun_8048f04(ecx, eax85, 1, "Polynomial GCD (%d Euclidean algorithm iteration%s):\n", v19, v20, v21, v22, v23, v24, v25, v86, v87);
                         eax88 = trhs;
-                        fractions_and_group(ecx, eax88, 0x80798b4, 0x8076510, v19, v20, v21, v22, v23, v24, v25);
+                        fractions_and_group(ecx, eax88, 0x80798b4, "Polynomial GCD (%d Euclidean algorithm iteration%s):\n", v19, v20, v21, v22, v23, v24, v25);
                         eax89 = trhs;
                         list_factor(ecx, eax89, 0x80798b4, 0, v19, v20, v21, v22, v23, v24, v25);
                         eax90 = gfp;
-                        fun_8048f04(ecx, eax90, 1, 0x80757fd, v19, v20, v21, v22, v23, v24, v25, v91, v92);
+                        fun_8048f04(ecx, eax90, 1, "\n", v19, v20, v21, v22, v23, v24, v25, v91, v92);
                     } else {
                         eax93 = gfp;
-                        fun_8048f04(ecx, eax93, 1, 0x8076548, 0, 0, v21, v22, v23, v24, v25, v94, v95);
+                        fun_8048f04(ecx, eax93, 1, "No univariate polynomial GCD found.\n", 0, 0, v21, v22, v23, v24, v25, v94, v95);
                     }
                     zf96 = repeat_flag == 0;
                     if (!zf96) 
@@ -49802,7 +49800,7 @@ void** divide_cmd(void** ecx, void** a2) {
                     v20 = v100;
                     complex_div(reinterpret_cast<int32_t>(ebp3) + 0xffffff90, v101, v102, v103, v20, v21, v104, v23, v24, v25);
                     eax105 = gfp;
-                    fun_8048f04(ecx, eax105, 1, 0x80764b0, v103, v20, v21, v104, v23, v24, v25, v106, v107);
+                    fun_8048f04(ecx, eax105, 1, "Result of complex number division:\n", v103, v20, v21, v104, v23, v24, v25, v106, v107);
                     eax108 = precision;
                     __asm__("fld qword [ebp-0x68]");
                     __asm__("fstp qword [esp+0x1c]");
@@ -49811,7 +49809,7 @@ void** divide_cmd(void** ecx, void** a2) {
                     __asm__("fstp qword [esp+0x10]");
                     v19 = eax108;
                     eax109 = gfp;
-                    fun_8048f04(ecx, eax109, 1, 0x80759da, v19, v20, v21, v22, v23, v24, v25, v110, v111);
+                    fun_8048f04(ecx, eax109, 1, "%.*g %+.*g*i\n\n", v19, v20, v21, v22, v23, v24, v25, v110, v111);
                     zf112 = repeat_flag == 0;
                     if (!zf112) 
                         continue; else 
@@ -49839,7 +49837,7 @@ void** divide_cmd(void** ecx, void** a2) {
             __asm__("fstp qword [esp+0x1c]");
             __asm__("fstp qword [esp+0x10]");
             eax117 = gfp;
-            fun_8048f04(ecx, eax117, 1, 0x80759ac, eax116, v20, v21, eax116, v23, v24, v25, v118, v119);
+            fun_8048f04(ecx, eax117, 1, "%.*g/%.*g = %.*g", eax116, v20, v21, eax116, v23, v24, v25, v118, v119);
             __asm__("fldz ");
             __asm__("fld qword [ebp-0x80]");
             __asm__("fucomi st0, st1");
@@ -49857,7 +49855,7 @@ void** divide_cmd(void** ecx, void** a2) {
                     __asm__("fdivr qword [ebp-0x30]");
                     __asm__("fstp qword [esp+0x10]");
                     eax121 = gfp;
-                    fun_8048f04(ecx, eax121, 1, 0x807597e, eax120, v20, v21, eax120, v23, v24, v25, v122, v123);
+                    fun_8048f04(ecx, eax121, 1, " = %.*g/%.*g", eax120, v20, v21, eax120, v23, v24, v25, v122, v123);
                 } else {
                     __asm__("fstp st0");
                 }
@@ -49873,7 +49871,7 @@ void** divide_cmd(void** ecx, void** a2) {
             __asm__("fstp qword [esp+0x10]");
             v19 = eax124;
             eax125 = gfp;
-            fun_8048f04(ecx, eax125, 1, 0x807648c, v19, v20, v21, v22, v23, v24, v25, v126, v127);
+            fun_8048f04(ecx, eax125, 1, "\nQuotient: %.*g, Remainder: %.*g\n", v19, v20, v21, v22, v23, v24, v25, v126, v127);
             __asm__("fld qword [ebp-0x30]");
             __asm__("fabs ");
             __asm__("fstp qword [ebp-0x30]");
@@ -49886,14 +49884,14 @@ void** divide_cmd(void** ecx, void** a2) {
             __asm__("fstp st0");
             if (zf43 && !__intrinsic()) {
                 eax128 = gfp;
-                fun_8048f04(ecx, eax128, 1, 0x80759bd, v19, v20, v21, v22, v23, v24, v25, v129, v130);
+                fun_8048f04(ecx, eax128, 1, "No GCD found.\n", v19, v20, v21, v22, v23, v24, v25, v129, v130);
                 zf131 = repeat_flag == 0;
                 if (!zf131) 
                     continue; else 
                     goto addr_8053f10_29;
             }
             eax132 = gfp;
-            fun_8048f04(ecx, eax132, 1, 0x80759cc, v19, v20, v21, v22, v23, v24, v25, v133, v134);
+            fun_8048f04(ecx, eax132, 1, "GCD = ", v19, v20, v21, v22, v23, v24, v25, v133, v134);
             __asm__("fld dword [0x8072774]");
             __asm__("fld qword [ebp-0x80]");
             __asm__("fucomi st0, st1");
@@ -49904,21 +49902,21 @@ void** divide_cmd(void** ecx, void** a2) {
             goto addr_8053f64_33;
             addr_8053f41_31:
             __asm__("fstp qword [esp]");
-            eax135 = factor_one(ecx, eax132, 1, 0x80759cc, v19, v20, v21, v22, v23, v24, v25);
-            if (!eax135 || (eax136 = is_prime(ecx, eax132, 1, 0x80759cc, v19, v20, v21, v22, v23, v24, v25), !!eax136)) {
+            eax135 = factor_one(ecx, eax132, 1, "GCD = ", v19, v20, v21, v22, v23, v24, v25);
+            if (!eax135 || (eax136 = is_prime(ecx, eax132, 1, "GCD = ", v19, v20, v21, v22, v23, v24, v25), !!eax136)) {
                 addr_8053f64_33:
                 __asm__("fld qword [ebp-0x80]");
                 __asm__("fstp qword [esp]");
-                display_fraction(ecx, eax132, 1, 0x80759cc, v19, v20, v21, v22, v23, v24, v25);
+                display_fraction(ecx, eax132, 1, "GCD = ", v19, v20, v21, v22, v23, v24, v25);
             } else {
-                display_unique(ecx, eax132, 1, 0x80759cc, v19, v20, v21, v22, v23, v24, v25);
+                display_unique(ecx, eax132, 1, "GCD = ", v19, v20, v21, v22, v23, v24, v25);
             }
             __asm__("fld qword [ebp-0x30]");
             __asm__("fmul qword [ebp-0x38]");
             __asm__("fdiv qword [ebp-0x80]");
             __asm__("fstp qword [ebp-0x80]");
             eax137 = gfp;
-            fun_8048f04(ecx, eax137, 1, 0x80759d3, v19, v20, v21, v22, v23, v24, v25, v138, v139);
+            fun_8048f04(ecx, eax137, 1, "LCM = ", v19, v20, v21, v22, v23, v24, v25, v138, v139);
             __asm__("fld dword [0x8072774]");
             __asm__("fld qword [ebp-0x80]");
             __asm__("fucomi st0, st1");
@@ -49928,14 +49926,14 @@ void** divide_cmd(void** ecx, void** a2) {
                 goto addr_8053fc9_37;
             } else {
                 __asm__("fstp qword [esp]");
-                eax140 = factor_one(ecx, eax137, 1, 0x80759d3, v19, v20, v21, v22, v23, v24, v25);
-                if (!eax140 || (eax141 = is_prime(ecx, eax137, 1, 0x80759d3, v19, v20, v21, v22, v23, v24, v25), !!eax141)) {
+                eax140 = factor_one(ecx, eax137, 1, "LCM = ", v19, v20, v21, v22, v23, v24, v25);
+                if (!eax140 || (eax141 = is_prime(ecx, eax137, 1, "LCM = ", v19, v20, v21, v22, v23, v24, v25), !!eax141)) {
                     addr_8053fc9_37:
                     __asm__("fld qword [ebp-0x80]");
                     __asm__("fstp qword [esp]");
-                    display_fraction(ecx, eax137, 1, 0x80759d3, v19, v20, v21, v22, v23, v24, v25);
+                    display_fraction(ecx, eax137, 1, "LCM = ", v19, v20, v21, v22, v23, v24, v25);
                 } else {
-                    display_unique(ecx, eax137, 1, 0x80759d3, v19, v20, v21, v22, v23, v24, v25);
+                    display_unique(ecx, eax137, 1, "LCM = ", v19, v20, v21, v22, v23, v24, v25);
                 }
                 zf142 = repeat_flag == 0;
                 if (zf142) 
@@ -49975,16 +49973,16 @@ struct s318 {
 
 struct s319 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 struct s320 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 int32_t compare_cmd(void** ecx, void** a2) {
@@ -50253,16 +50251,16 @@ int32_t compare_cmd(void** ecx, void** a2) {
     void** v265;
 
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    eax7 = strncasecmp(a2, 0x8075a2d, 3, v4, v5, v6);
+    eax7 = strncasecmp(a2, "symbolic", 3, v4, v5, v6);
     v8 = reinterpret_cast<void**>(0);
     if (!eax7) {
-        eax12 = skip_param(a2, 0x8075a2d, 3, v9, v10, v11);
+        eax12 = skip_param(a2, "symbolic", 3, v9, v10, v11);
         a2 = eax12;
         v8 = reinterpret_cast<void**>(1);
     }
-    eax16 = strcmp_tospace(a2, 0x807585c, 3, v13, v14, v15);
+    eax16 = strcmp_tospace(a2, "with", 3, v13, v14, v15);
     if (!eax16) {
-        eax20 = skip_param(a2, 0x807585c, 3, v17, v18, v19);
+        eax20 = skip_param(a2, "with", 3, v17, v18, v19);
         a2 = eax20;
     }
     v21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 8);
@@ -50271,37 +50269,37 @@ int32_t compare_cmd(void** ecx, void** a2) {
     eax24 = not_defined(ecx, ebx23, v21, 3);
     if (eax24) 
         goto addr_8054df7_6;
-    eax28 = strcmp_tospace(a2, 0x807585c, 3, v25, v26, v27);
+    eax28 = strcmp_tospace(a2, "with", 3, v25, v26, v27);
     if (!eax28) {
-        eax32 = skip_param(a2, 0x807585c, 3, v29, v30, v31);
+        eax32 = skip_param(a2, "with", 3, v29, v30, v31);
         a2 = eax32;
     }
-    eax33 = get_default_en(ecx, a2, 0x807585c, 3);
+    eax33 = get_default_en(ecx, a2, "with", 3);
     if (reinterpret_cast<signed char>(eax33) < reinterpret_cast<signed char>(0)) 
         goto addr_8054df7_6;
     if (ebx23 != eax33) {
         v34 = eax33 + 1;
         v35 = eax22;
         eax36 = gfp;
-        fun_8048f04(ecx, eax36, 1, 0x8075a36, v35, v34, v37, v38, v39, v40, v41, v42, v8);
+        fun_8048f04(ecx, eax36, 1, "Comparing #%d with #%d...\n", v35, v34, v37, v38, v39, v40, v41, v42, v8);
         if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8079940)) {
             if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8079940)) {
                 addr_805484d_13:
-                error(ecx, 0x80765f0, 1, 0x8075a36, v35, v34, v43, v44, v45, v46, v47, v48);
+                error(ecx, "Cannot compare an equation with a non-equation.", 1, "Comparing #%d with #%d...\n", v35, v34, v43, v44, v45, v46, v47, v48);
                 eax49 = 0;
             } else {
                 edx50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082d80);
                 v51 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx23) * 4);
-                simp_loop(ecx, v51, edx50, 0x8075a36, v35, v34, v52, v53, v54);
+                simp_loop(ecx, v51, edx50, "Comparing #%d with #%d...\n", v35, v34, v52, v53, v54);
                 eax55 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082d80);
                 v56 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(eax33) * 4);
-                simp_loop(ecx, v56, eax55, 0x8075a36, v35, v34, v57, v58, v59);
-                eax61 = compare_es(ebx23, eax33, 0x8075a36, v35, v34, v60);
+                simp_loop(ecx, v56, eax55, "Comparing #%d with #%d...\n", v35, v34, v57, v58, v59);
+                eax61 = compare_es(ebx23, eax33, "Comparing #%d with #%d...\n", v35, v34, v60);
                 if (!eax61) {
                     sf62 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
                     if (!sf62) {
                         eax63 = gfp;
-                        fun_8048f04(ecx, eax63, 1, 0x807277d, 0x80765d0, v34, v64, v65, v66, v67, edx50, eax55, v8);
+                        fun_8048f04(ecx, eax63, 1, "%s\n", "Simplifying both expressions...", v34, v64, v65, v66, v67, edx50, eax55, v8);
                     }
                     symb_flag = v8;
                     v68 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx23) * 4);
@@ -50323,84 +50321,84 @@ int32_t compare_cmd(void** ecx, void** a2) {
                         eax84 = compare_es(ebx23, eax33, 0, 1, v34, v83);
                         if (!eax84) {
                             eax85 = gfp;
-                            fun_8048f04(ecx, eax85, 1, 0x8075a6d, 1, v34, v86, v87, v88, v89, edx50, eax55, v8);
+                            fun_8048f04(ecx, eax85, 1, "Expressions differ.\n", 1, v34, v86, v87, v88, v89, edx50, eax55, v8);
                             eax49 = 0;
                         } else {
                             eax90 = gfp;
-                            fun_8048f04(ecx, eax90, 1, 0x8075a51, 1, v34, v91, v92, v93, v94, edx50, eax55, v8);
+                            fun_8048f04(ecx, eax90, 1, "Expressions are identical.\n", 1, v34, v91, v92, v93, v94, edx50, eax55, v8);
                             eax49 = 1;
                         }
                     } else {
                         eax95 = gfp;
-                        fun_8048f04(ecx, eax95, 1, 0x8075a51, 1, v34, v96, v97, v98, v99, edx50, eax55, v8);
+                        fun_8048f04(ecx, eax95, 1, "Expressions are identical.\n", 1, v34, v96, v97, v98, v99, edx50, eax55, v8);
                         eax49 = 1;
                     }
                 } else {
                     eax100 = gfp;
-                    fun_8048f04(ecx, eax100, 1, 0x8075a51, v35, v34, v101, v102, v103, v104, edx50, eax55, v8);
+                    fun_8048f04(ecx, eax100, 1, "Expressions are identical.\n", v35, v34, v101, v102, v103, v104, edx50, eax55, v8);
                     eax49 = 1;
                 }
             }
         } else {
             if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8079940)) 
                 goto addr_805484d_13;
-            eax106 = compare_es(ebx23, eax33, 0x8075a36, v35, v34, v105);
+            eax106 = compare_es(ebx23, eax33, "Comparing #%d with #%d...\n", v35, v34, v105);
             if (!eax106) 
                 goto addr_805489a_28; else 
                 goto addr_8054873_29;
         }
     } else {
-        error(ecx, 0x80765a8, 0x807585c, 3, v107, v108, v109, v110, v111, v112, v113, v114);
+        error(ecx, "Cannot compare an equation with itself.", "with", 3, v107, v108, v109, v110, v111, v112, v113, v114);
         eax49 = 0;
     }
     addr_8054dfc_31:
     return eax49;
     addr_805489a_28:
-    eax115 = solved_equation(ebx23, eax33, 0x8075a36, v35, v34);
-    if (!eax115 || (eax116 = solved_equation(eax33, eax33, 0x8075a36, v35, v34), eax116 == 0)) {
+    eax115 = solved_equation(ebx23, eax33, "Comparing #%d with #%d...\n", v35, v34);
+    if (!eax115 || (eax116 = solved_equation(eax33, eax33, "Comparing #%d with #%d...\n", v35, v34), eax116 == 0)) {
         addr_80549f8_32:
         sf117 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
         if (!sf117) {
             eax118 = gfp;
-            fun_8048f04(ecx, eax118, 1, 0x807277d, 0x8076620, v34, v119, v120, v121, v122, v123, v124, v8);
+            fun_8048f04(ecx, eax118, 1, "%s\n", "Solving both equations for zero and unfactoring...", v34, v119, v120, v121, v122, v123, v124, v8);
         }
     } else {
         eax125 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8079940);
         v123 = eax125;
         v126 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(ebx23) * 4);
-        simp_loop(ecx, v126, eax125, 0x8075a36, v35, v34, v127, v128, v129);
+        simp_loop(ecx, v126, eax125, "Comparing #%d with #%d...\n", v35, v34, v127, v128, v129);
         edx130 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8079940);
         v124 = edx130;
         v131 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(eax33) * 4);
-        simp_loop(ecx, v131, edx130, 0x8075a36, v35, v34, v132, v133, v134);
+        simp_loop(ecx, v131, edx130, "Comparing #%d with #%d...\n", v35, v34, v132, v133, v134);
         ecx = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffe4);
-        eax136 = compare_rhs(ecx, v131, edx130, 0x8075a36, v35, v34, v135);
+        eax136 = compare_rhs(ecx, v131, edx130, "Comparing #%d with #%d...\n", v35, v34, v135);
         if (eax136) {
             addr_8054cee_35:
             if (v137 || (*reinterpret_cast<struct s318**>(0x8082a40 + reinterpret_cast<unsigned char>(ebx23) * 4))->f8 != (*reinterpret_cast<struct s318**>(0x8082a40 + reinterpret_cast<unsigned char>(eax33) * 4))->f8) {
                 eax138 = gfp;
-                fun_8048f04(ecx, eax138, 1, 0x8075acd, v35, v34, v139, v140, v141, v142, v123, v124, v8);
+                fun_8048f04(ecx, eax138, 1, "Variable (", v35, v34, v139, v140, v141, v142, v123, v124, v8);
                 v143 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082d80);
                 v144 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082a40);
                 list_proc(ecx, v144, v143, 0, v35, v34, v145, v146, v147);
                 eax148 = gfp;
-                fun_8048f04(ecx, eax148, 1, 0x8076654, v35, v34, v149, v150, v151, v152, v123, v124, v8);
+                fun_8048f04(ecx, eax148, 1, ") in the first equation is equal to (", v35, v34, v149, v150, v151, v152, v123, v124, v8);
                 if (v153) {
                     eax154 = gfp;
-                    fun_8048f04(ecx, eax154, 1, 0x807295b, v35, v34, v155, v156, v157, v158, v123, v124, v8);
+                    fun_8048f04(ecx, eax154, 1, "-", v35, v34, v155, v156, v157, v158, v123, v124, v8);
                 }
                 v159 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082d80);
                 v160 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082a40);
                 list_proc(ecx, v160, v159, 0, v35, v34, v161, v162, v163);
                 eax164 = gfp;
-                fun_8048f04(ecx, eax164, 1, 0x8075ad8, v35, v34, v165, v166, v167, v168, v123, v124, v8);
+                fun_8048f04(ecx, eax164, 1, ") in the second equation.\n", v35, v34, v165, v166, v167, v168, v123, v124, v8);
                 eax49 = 2;
                 if (!v169) 
                     goto addr_8054dfc_31; else 
                     goto addr_8054df7_6;
             } else {
                 eax170 = gfp;
-                fun_8048f04(ecx, eax170, 1, 0x8075a82, v35, v34, v171, v172, v173, v174, v123, v124, v8);
+                fun_8048f04(ecx, eax170, 1, "Equations are identical.\n", v35, v34, v171, v172, v173, v174, v123, v124, v8);
                 eax49 = 1;
                 goto addr_8054dfc_31;
             }
@@ -50408,7 +50406,7 @@ int32_t compare_cmd(void** ecx, void** a2) {
             sf175 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
             if (!sf175) {
                 eax176 = gfp;
-                fun_8048f04(ecx, eax176, 1, 0x807277d, 0x8075a9c, v34, v177, v178, v179, v180, v123, v124, v8);
+                fun_8048f04(ecx, eax176, 1, "%s\n", "Simplifying both equations...", v34, v177, v178, v179, v180, v123, v124, v8);
             }
             symb_flag = v8;
             v181 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(ebx23) * 4);
@@ -50439,30 +50437,30 @@ int32_t compare_cmd(void** ecx, void** a2) {
         }
     }
     eax198 = reinterpret_cast<struct s319*>(reinterpret_cast<unsigned char>(ebx23) * 4);
-    edi199 = reinterpret_cast<void**>(&eax198->f134715712);
+    edi199 = reinterpret_cast<void**>(&eax198->f8079940);
     v200 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082be0);
     v201 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082a40);
-    eax205 = solve_sub(ecx, 0x8079914, 1, v201, &eax198->f134753664, v200, edi199, v202, v203, v204, v123, &eax198->f134753664);
+    eax205 = solve_sub(ecx, 0x8079914, 1, v201, &eax198->f8082d80, v200, edi199, v202, v203, v204, v123, &eax198->f8082d80);
     if (reinterpret_cast<uint1_t>(eax205 < 0) | reinterpret_cast<uint1_t>(eax205 == 0)) 
         goto addr_8054df7_6;
     eax206 = reinterpret_cast<struct s320*>(reinterpret_cast<unsigned char>(eax33) * 4);
-    edx207 = reinterpret_cast<void**>(&eax206->f134715712);
+    edx207 = reinterpret_cast<void**>(&eax206->f8079940);
     v208 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082be0);
     v209 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082a40);
-    eax212 = solve_sub(ecx, 0x8079914, 1, v209, &eax206->f134753664, v208, edx207, v210, v211, &eax206->f134753664, edx207, &eax198->f134753664);
+    eax212 = solve_sub(ecx, 0x8079914, 1, v209, &eax206->f8082d80, v208, edx207, v210, v211, &eax206->f8082d80, edx207, &eax198->f8082d80);
     if (reinterpret_cast<uint1_t>(eax212 < 0) | reinterpret_cast<uint1_t>(eax212 == 0)) 
         goto addr_8054df7_6;
     v213 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082be0);
-    uf_simp(ecx, v213, edi199, v209, &eax206->f134753664, v208, edx207, v214, v215);
+    uf_simp(ecx, v213, edi199, v209, &eax206->f8082d80, v208, edx207, v214, v215);
     v216 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082be0);
-    uf_simp(ecx, v216, edx207, v209, &eax206->f134753664, v208, edx207, v217, v218);
+    uf_simp(ecx, v216, edx207, v209, &eax206->f8082d80, v208, edx207, v217, v218);
     ecx219 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffe4);
-    eax220 = compare_rhs(ecx219, v216, edx207, v209, &eax206->f134753664, v208, edx207);
+    eax220 = compare_rhs(ecx219, v216, edx207, v209, &eax206->f8082d80, v208, edx207);
     if (!eax220) {
         sf221 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
         if (!sf221) {
             eax222 = gfp;
-            fun_8048f04(ecx219, eax222, 1, 0x807277d, 0x8075a9c, v208, edx207, v223, v224, &eax206->f134753664, edx207, &eax198->f134753664, v8);
+            fun_8048f04(ecx219, eax222, 1, "%s\n", "Simplifying both equations...", v208, edx207, v223, v224, &eax206->f8082d80, edx207, &eax198->f8082d80, v8);
         }
         symb_flag = v8;
         v225 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082be0);
@@ -50476,44 +50474,44 @@ int32_t compare_cmd(void** ecx, void** a2) {
             goto addr_8054bc6_52;
     } else {
         eax229 = gfp;
-        fun_8048f04(ecx219, eax229, 1, 0x8075a82, &eax206->f134753664, v208, edx207, v230, v231, &eax206->f134753664, edx207, &eax198->f134753664, v8);
+        fun_8048f04(ecx219, eax229, 1, "Equations are identical.\n", &eax206->f8082d80, v208, edx207, v230, v231, &eax206->f8082d80, edx207, &eax198->f8082d80, v8);
         eax49 = 1;
         goto addr_8054dfc_31;
     }
     v232 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082be0);
     v233 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(ebx23) * 4 + 0x8082a40);
-    eax236 = solve_sub(ecx227, 0x8079914, 1, v233, &eax198->f134753664, v232, edi199, v234, v235, &eax206->f134753664, edx207, &eax198->f134753664);
-    if (reinterpret_cast<uint1_t>(eax236 < 0) | reinterpret_cast<uint1_t>(eax236 == 0) || (v237 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082be0), v238 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082a40), eax241 = solve_sub(ecx227, 0x8079914, 1, v238, &eax206->f134753664, v237, edx207, v239, v240, &eax206->f134753664, edx207, &eax198->f134753664), reinterpret_cast<uint1_t>(eax241 < 0) | reinterpret_cast<uint1_t>(eax241 == 0))) {
+    eax236 = solve_sub(ecx227, 0x8079914, 1, v233, &eax198->f8082d80, v232, edi199, v234, v235, &eax206->f8082d80, edx207, &eax198->f8082d80);
+    if (reinterpret_cast<uint1_t>(eax236 < 0) | reinterpret_cast<uint1_t>(eax236 == 0) || (v237 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082be0), v238 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax33) * 4 + 0x8082a40), eax241 = solve_sub(ecx227, 0x8079914, 1, v238, &eax206->f8082d80, v237, edx207, v239, v240, &eax206->f8082d80, edx207, &eax198->f8082d80), reinterpret_cast<uint1_t>(eax241 < 0) | reinterpret_cast<uint1_t>(eax241 == 0))) {
         addr_8054df7_6:
         eax49 = 0;
         goto addr_8054dfc_31;
     } else {
         v242 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(ebx23) * 4);
-        uf_simp(ecx227, v242, edi199, v238, &eax206->f134753664, v237, edx207, v243, v244);
+        uf_simp(ecx227, v242, edi199, v238, &eax206->f8082d80, v237, edx207, v243, v244);
         v245 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(eax33) * 4);
-        uf_simp(ecx227, v245, edx207, v238, &eax206->f134753664, v237, edx207, v246, v247);
+        uf_simp(ecx227, v245, edx207, v238, &eax206->f8082d80, v237, edx207, v246, v247);
         ecx248 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffe4);
-        eax249 = compare_rhs(ecx248, v245, edx207, v238, &eax206->f134753664, v237, edx207);
+        eax249 = compare_rhs(ecx248, v245, edx207, v238, &eax206->f8082d80, v237, edx207);
         if (!eax249) {
             eax250 = gfp;
-            fun_8048f04(ecx248, eax250, 1, 0x8075aba, &eax206->f134753664, v237, edx207, v251, v252, &eax206->f134753664, edx207, &eax198->f134753664, v8);
+            fun_8048f04(ecx248, eax250, 1, "Equations differ.\n", &eax206->f8082d80, v237, edx207, v251, v252, &eax206->f8082d80, edx207, &eax198->f8082d80, v8);
             eax49 = 0;
             goto addr_8054dfc_31;
         } else {
             eax253 = gfp;
-            fun_8048f04(ecx248, eax253, 1, 0x8075a82, &eax206->f134753664, v237, edx207, v254, v255, &eax206->f134753664, edx207, &eax198->f134753664, v8);
+            fun_8048f04(ecx248, eax253, 1, "Equations are identical.\n", &eax206->f8082d80, v237, edx207, v254, v255, &eax206->f8082d80, edx207, &eax198->f8082d80, v8);
             eax49 = 1;
             goto addr_8054dfc_31;
         }
     }
     addr_8054bc6_52:
     eax256 = gfp;
-    fun_8048f04(ecx227, eax256, 1, 0x8075a82, 0, v208, edx207, v257, v258, &eax206->f134753664, edx207, &eax198->f134753664, v8);
+    fun_8048f04(ecx227, eax256, 1, "Equations are identical.\n", 0, v208, edx207, v257, v258, &eax206->f8082d80, edx207, &eax198->f8082d80, v8);
     eax49 = 1;
     goto addr_8054dfc_31;
     addr_8054873_29:
     eax259 = gfp;
-    fun_8048f04(ecx, eax259, 1, 0x8075a82, v35, v34, v260, v261, v262, v263, v264, v265, v8);
+    fun_8048f04(ecx, eax259, 1, "Equations are identical.\n", v35, v34, v260, v261, v262, v263, v264, v265, v8);
     eax49 = 1;
     goto addr_8054dfc_31;
 }
@@ -50751,14 +50749,14 @@ int32_t tally_cmd(void** ecx, void** a2) {
     v3 = esi4;
     v5 = ebx6;
     ebx7 = a2;
-    eax11 = strncasecmp(ebx7, 0x8075af3, 4, v8, v9, v10);
+    eax11 = strncasecmp(ebx7, "average", 4, v8, v9, v10);
     v12 = reinterpret_cast<void**>(0);
     if (!eax11) {
-        eax15 = skip_param(ebx7, 0x8075af3, 4, v13, v14, 0);
+        eax15 = skip_param(ebx7, "average", 4, v13, v14, 0);
         ebx7 = eax15;
         v12 = reinterpret_cast<void**>(1);
     }
-    eax18 = extra_characters(ecx, ebx7, 0x8075af3, 4, v16, v17, v12);
+    eax18 = extra_characters(ecx, ebx7, "average", 4, v16, v17, v12);
     eax19 = 0;
     if (!eax18) {
         eax20 = trhs;
@@ -50772,15 +50770,15 @@ int32_t tally_cmd(void** ecx, void** a2) {
         *reinterpret_cast<void***>(eax20 + 12) = edx24;
         n_trhs = reinterpret_cast<void**>(1);
         eax25 = gfp;
-        fun_8048f04(ecx, eax25, 1, 0x8075afb, v26, v27, v12, v28, v29, v30, v31, v32, v5);
+        fun_8048f04(ecx, eax25, 1, "Running total = ", v26, v27, v12, v28, v29, v30, v31, v32, v5);
         eax33 = n_trhs;
         eax34 = trhs;
         list_proc(ecx, eax34, eax33, 0, v35, v36, v12, v37, v38);
         eax39 = gfp;
-        fun_8048f04(ecx, eax39, 1, 0x80757fd, v40, v41, v12, v42, v43, v44, v45, v46, v5);
+        fun_8048f04(ecx, eax39, 1, "\n", v40, v41, v12, v42, v43, v44, v45, v46, v5);
         __asm__("fldz ");
         __asm__("fstp qword [ebp-0x20]");
-        while (eax47 = gfp, fun_8048f04(ecx, eax47, 1, 0x80757fd, v48, v49, v12, v50, v51, v52, v53, v54, v5), my_strlcpy(0x80795a0, 0x8075b17, 80, v55, v56, v12, v57, v58, v59, v60), eax61 = tlhs, eax68 = get_expr(ecx, eax61, 0x80796b8, 80, v62, v63, v12, v64, v65, v66, v67), !!eax68) {
+        while (eax47 = gfp, fun_8048f04(ecx, eax47, 1, "\n", v48, v49, v12, v50, v51, v52, v53, v54, v5), my_strlcpy(0x80795a0, "Enter value: ", 80, v55, v56, v12, v57, v58, v59, v60), eax61 = tlhs, eax68 = get_expr(ecx, eax61, 0x80796b8, 80, v62, v63, v12, v64, v65, v66, v67), !!eax68) {
             eax69 = n_trhs;
             tmp32_70 = reinterpret_cast<struct s321*>(reinterpret_cast<unsigned char>(eax69) + reinterpret_cast<unsigned char>(n_tlhs));
             less_or_equal71 = reinterpret_cast<signed char>(&tmp32_70->f1) <= reinterpret_cast<signed char>(n_tokens);
@@ -50834,12 +50832,12 @@ int32_t tally_cmd(void** ecx, void** a2) {
             __asm__("fadd dword [0x8075170]");
             __asm__("fstp qword [ebp-0x20]");
             eax115 = gfp;
-            fun_8048f04(ecx, eax115, 1, 0x8075afb, v116, v117, v12, v118, v119, v120, v121, v122, v5);
+            fun_8048f04(ecx, eax115, 1, "Running total = ", v116, v117, v12, v118, v119, v120, v121, v122, v5);
             eax123 = n_trhs;
             eax124 = trhs;
             list_proc(ecx, eax124, eax123, 0, v125, v126, v12, v127, v128);
             eax129 = gfp;
-            fun_8048f04(ecx, eax129, 1, 0x80757fd, v130, v131, v12, v132, v133, v134, v135, v136, v5);
+            fun_8048f04(ecx, eax129, 1, "\n", v130, v131, v12, v132, v133, v134, v135, v136, v5);
             __asm__("fldz ");
             __asm__("fld qword [ebp-0x20]");
             __asm__("fucomip st0, st1");
@@ -50893,19 +50891,19 @@ int32_t tally_cmd(void** ecx, void** a2) {
             eax164 = tlhs;
             calc_simp(ecx, eax164, 0x80796b8, v138, v165, v166, v12, v167, v168, v169, v170);
             eax171 = gfp;
-            fun_8048f04(ecx, eax171, 1, 0x8075b0c, v172, v173, v12, v174, v175, v176, v177, v178, v5);
+            fun_8048f04(ecx, eax171, 1, "Average = ", v172, v173, v12, v174, v175, v176, v177, v178, v5);
             eax179 = n_tlhs;
             eax180 = tlhs;
             list_proc(ecx, eax180, eax179, 0, v181, v182, v12, v183, v184);
             eax185 = gfp;
-            fun_8048f04(ecx, eax185, 1, 0x80757fd, v186, v187, v12, v188, v189, v190, v191, v192, v5);
+            fun_8048f04(ecx, eax185, 1, "\n", v186, v187, v12, v188, v189, v190, v191, v192, v5);
             continue;
             addr_8055119_18:
             error_huge(ecx, eax140, eax139, v138, v193, v194, v12, v195, v196, v197, v198, v199, v5, v3);
             goto addr_805511e_19;
         }
         eax200 = gfp;
-        fun_8048f04(ecx, eax200, 1, 0x8075b25, v201, v202, v12, v203, v204, v205, v206, v207, v5);
+        fun_8048f04(ecx, eax200, 1, "End.\n", v201, v202, v12, v203, v204, v205, v206, v207, v5);
         eax19 = 1;
     }
     return eax19;
@@ -50950,14 +50948,14 @@ uint32_t set_cmd(void** ecx, void** a2, void** a3, void** a4, void** a5) {
         eax12 = set_options(ecx, a2, v6, v7, v8, v9, v10, ebp11);
     } else {
         eax13 = gfp;
-        fun_8048f04(ecx, eax13, 1, 0x8075cb4, v14, v15, v16, ebp11, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, eax13, 1, "Options are set as follows:\n\n", v14, v15, v16, ebp11, __return_address(), a2, a3, a4, a5);
         eax17 = gfp;
-        output_options(ecx, eax17, 1, 0x8075cb4, v18);
+        output_options(ecx, eax17, 1, "Options are set as follows:\n\n", v18);
         eax19 = screen_columns;
         eax20 = gfp;
-        fun_8048f04(ecx, eax20, 1, 0x8075cd2, eax19, v21, v22, ebp11, __return_address(), a2, a3, a4, a5);
+        fun_8048f04(ecx, eax20, 1, "columns = %d\n", eax19, v21, v22, ebp11, __return_address(), a2, a3, a4, a5);
         eax23 = gfp;
-        output_current_directory(ecx, eax23, 1, 0x8075cd2, eax19);
+        output_current_directory(ecx, eax23, 1, "columns = %d\n", eax19);
         eax12 = 1;
     }
     return eax12;
@@ -51026,7 +51024,7 @@ int32_t push_cmd(void** ecx) {
                 sf16 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
                 if (!sf16) {
                     eax17 = gfp;
-                    fun_8048f04(ecx, eax17, 1, 0x807277d, 0x8076880, v18, v19, v20, v21, v22, v6, v3, v2);
+                    fun_8048f04(ecx, eax17, 1, "%s\n", "Expression pushed.  Press the UP key to access.", v18, v19, v20, v21, v22, v6, v3, v2);
                     eax12 = 1;
                     goto addr_8056170_3;
                 }
@@ -51043,11 +51041,11 @@ int32_t push_cmd(void** ecx) {
                 goto addr_8056138_5;
             }
         }
-        error(ecx, 0x8075ce0, v10, v9, v25, v26, v27, v28, v21, v29, v6, v3);
+        error(ecx, "Push failed.", v10, v9, v25, v26, v27, v28, v21, v29, v6, v3);
         eax12 = 0;
         goto addr_8056170_3;
     } else {
-        error(ecx, 0x807685c, v30, v31, v32, v33, v34, v35, v36, v37, v6, v3);
+        error(ecx, "Readline is currently turned off.", v30, v31, v32, v33, v34, v35, v36, v37, v6, v3);
         eax12 = 0;
         goto addr_8056170_3;
     }
@@ -51086,9 +51084,9 @@ void fun_8048faa() {
 
 struct s325 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** limit_cmd(void** ecx, void** a2) {
@@ -51320,10 +51318,10 @@ void** limit_cmd(void** ecx, void** a2) {
         *reinterpret_cast<void***>(*reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(eax30) * 4)) = reinterpret_cast<void**>(1);
         eax31 = cur_equation;
         v32 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(eax31) * 4) + 8;
-        parse_var(ecx, v32, 0x80727be, v16, v33, v34, v35, v36);
+        parse_var(ecx, v32, "answer", v16, v33, v34, v35, v36);
     }
     eax37 = cur_equation;
-    eax40 = solved_equation(eax37, 0x80727be, v16, v38, v39);
+    eax40 = solved_equation(eax37, "answer", v16, v38, v39);
     if (!eax40) 
         goto addr_80686cd_6;
     esi41 = a2;
@@ -51353,7 +51351,7 @@ void** limit_cmd(void** ecx, void** a2) {
         if (!eax57) 
             goto addr_80687aa_13;
     } else {
-        error(ecx, 0x80768dc, v45, v44, v58, v59, v60, v61, v62, v63, v64, v65);
+        error(ecx, "Current expression contains no variables.", v45, v44, v58, v59, v60, v61, v62, v63, v64, v65);
         eax66 = reinterpret_cast<void**>(0);
         goto addr_8068ba9_15;
     }
@@ -51364,24 +51362,24 @@ void** limit_cmd(void** ecx, void** a2) {
     if (*reinterpret_cast<void***>(esi41)) 
         goto addr_80687d7_19;
     list_var(ecx, 0, 0, 0, v75, v76, v77, v78, v79, v80, v81);
-    v82 = reinterpret_cast<void**>(0x8077096);
+    v82 = reinterpret_cast<void**>("as (%s) goes to: ");
     v83 = reinterpret_cast<void**>(1);
-    fun_8049224(ecx, 0x80795a0, 80, 1, 80, 0x8077096, 0x8079800, v84);
+    fun_8049224(ecx, 0x80795a0, 80, 1, 80, "as (%s) goes to: ", 0x8079800, v84);
     eax85 = tes;
-    eax90 = get_expr(ecx, eax85, 0x80795f4, 1, 80, 0x8077096, 0x8079800, v86, v87, v88, v89);
+    eax90 = get_expr(ecx, eax85, 0x80795f4, 1, 80, "as (%s) goes to: ", 0x8079800, v86, v87, v88, v89);
     if (!eax90) {
         addr_8068ba4_2:
         eax66 = reinterpret_cast<void**>(0);
     } else {
         addr_8068879_21:
         eax91 = cur_equation;
-        copy_espace(ecx, eax91, eax14, v83, 80, 0x8077096, 0x8079800);
+        copy_espace(ecx, eax91, eax14, v83, 80, "as (%s) goes to: ", 0x8079800);
         edi92 = reinterpret_cast<struct s325*>(reinterpret_cast<unsigned char>(eax14) * 4);
-        esi93 = reinterpret_cast<void**>(&edi92->f134715712);
+        esi93 = reinterpret_cast<void**>(&edi92->f8079940);
         v94 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax14) * 4 + 0x8082be0);
-        simpa_side(ecx, v94, esi93, 0, 0, 0x8077096, 0x8079800);
+        simpa_side(ecx, v94, esi93, 0, 0, "as (%s) goes to: ", 0x8079800);
         eax95 = tes;
-        simp_loop(ecx, eax95, 0x80795f4, 0, 0, 0x8077096, 0x8079800, v96, v97);
+        simp_loop(ecx, eax95, 0x80795f4, 0, 0, "as (%s) goes to: ", 0x8079800, v96, v97);
         zf98 = reinterpret_cast<int1_t>(n_tes == 1);
         if (zf98 && ((eax99 = tes, !*reinterpret_cast<void***>(eax99)) && reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax99)) > reinterpret_cast<unsigned char>(0))) {
             n_tes = reinterpret_cast<void**>(1);
@@ -51428,9 +51426,9 @@ void** limit_cmd(void** ecx, void** a2) {
     sf117 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
     if (!sf117) {
         eax118 = gfp;
-        fun_8048f04(ecx, eax118, 1, 0x807277d, 0x80770a8, v82, 0x8079800, v119, v120, v121, v122, v123, v124);
+        fun_8048f04(ecx, eax118, 1, "%s\n", "Solving...", v82, 0x8079800, v119, v120, v121, v122, v123, v124);
     }
-    edi125 = reinterpret_cast<void**>(&edi92->f134753664);
+    edi125 = reinterpret_cast<void**>(&edi92->f8082d80);
     v126 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax14) * 4 + 0x8082be0);
     v127 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax14) * 4 + 0x8082a40);
     eax133 = solve_sub(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffffc4, 1, v127, edi125, v126, esi93, v128, v129, v130, v131, v132);
@@ -51464,22 +51462,22 @@ void** limit_cmd(void** ecx, void** a2) {
                     eax66 = return_result(ecx, eax14, v165, 0, 0, v156, esi93);
                     goto addr_8068ba9_15;
                 } else {
-                    error(ecx, 0x80771d0, v165, 0, 0, v156, esi93, v168, v169, v170, v171, v172);
+                    error(ecx, "Unable to take limit; result contains NaN (Not a Number).", v165, 0, 0, v156, esi93, v168, v169, v170, v171, v172);
                     eax66 = reinterpret_cast<void**>(0);
                     goto addr_8068ba9_15;
                 }
             } else {
-                error(ecx, 0x80771a4, 1, v157, edi125, v156, esi93, v173, v174, v175, v176, v177);
+                error(ecx, "Can't take the limit because solve failed.", 1, v157, edi125, v156, esi93, v173, v174, v175, v176, v177);
                 eax66 = reinterpret_cast<void**>(0);
                 goto addr_8068ba9_15;
             }
         } else {
-            error(ecx, 0x80771d0, v153, 0, 0, v126, esi93, v178, v179, v180, v181, v182);
+            error(ecx, "Unable to take limit; result contains NaN (Not a Number).", v153, 0, 0, v126, esi93, v178, v179, v180, v181, v182);
             eax66 = reinterpret_cast<void**>(0);
             goto addr_8068ba9_15;
         }
     } else {
-        error(ecx, 0x80771a4, 1, v127, edi125, v126, esi93, v183, v184, v185, v186, v187);
+        error(ecx, "Can't take the limit because solve failed.", 1, v127, edi125, v126, esi93, v183, v184, v185, v186, v187);
         eax66 = reinterpret_cast<void**>(0);
         goto addr_8068ba9_15;
     }
@@ -51496,11 +51494,11 @@ void** limit_cmd(void** ecx, void** a2) {
         goto addr_8068879_21;
     goto addr_8068ba4_2;
     addr_80687aa_13:
-    error(ecx, 0x807267b, v50, 0, v195, v196, v197, v198, v199, v200, v201, v202);
+    error(ecx, "Variable not found.", v50, 0, v195, v196, v197, v198, v199, v200, v201, v202);
     eax66 = reinterpret_cast<void**>(0);
     goto addr_8068ba9_15;
     addr_80686cd_6:
-    error(ecx, 0x8077170, 0x80727be, v16, v203, v204, v205, v206, v207, v208, v209, v210);
+    error(ecx, "The current equation is not solved for a variable.", "answer", v16, v203, v204, v205, v206, v207, v208, v209, v210);
     eax66 = reinterpret_cast<void**>(0);
     goto addr_8068ba9_15;
 }
@@ -51684,15 +51682,15 @@ void** derivative_cmd(void** ecx, void** a2) {
     eax14 = solved_equation(eax9, v10, v11, v12, v13);
     v15 = eax14;
     v16 = a2;
-    eax21 = strcmp_tospace(v16, 0x80770b3, v17, v18, v19, v20);
+    eax21 = strcmp_tospace(v16, "nosimplify", v17, v18, v19, v20);
     v22 = reinterpret_cast<void**>(1);
     if (!eax21) {
         v16 = a2;
-        eax27 = skip_param(v16, 0x80770b3, v23, v24, v25, v26);
+        eax27 = skip_param(v16, "nosimplify", v23, v24, v25, v26);
         a2 = eax27;
         v22 = reinterpret_cast<void**>(0);
     }
-    eax32 = next_espace(ecx, v16, 0x80770b3, v28, v29, v30, v31);
+    eax32 = next_espace(ecx, v16, "nosimplify", v28, v29, v30, v31);
     v33 = eax32;
     edx34 = cur_equation;
     if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(edx34) * 4 + 0x8079940)) {
@@ -51703,7 +51701,7 @@ void** derivative_cmd(void** ecx, void** a2) {
         v39 = ecx38;
     } else {
         if (!v15) {
-            warning(ecx, 0x80773b4, 0x80770b3, v40, v41, v42, v43, v44, v45, v15);
+            warning(ecx, "Not a solved equation.  Only the RHS will be differentiated.", "nosimplify", v40, v41, v42, v43, v44, v45, v15);
         }
         edx46 = cur_equation;
         edi35 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(edx46) * 4);
@@ -51714,10 +51712,10 @@ void** derivative_cmd(void** ecx, void** a2) {
     }
     if (!*reinterpret_cast<void***>(a2)) 
         goto addr_806a486_11;
-    eax48 = is_all(a2, 0x80770b3, v47);
+    eax48 = is_all(a2, "nosimplify", v47);
     if (!eax48) {
         v49 = reinterpret_cast<void**>(static_cast<int32_t>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(a2))));
-        eax54 = isvarchar(v49, 0x80770b3, v50, v51, v52, v53);
+        eax54 = isvarchar(v49, "nosimplify", v50, v51, v52, v53);
         if (!eax54) 
             goto addr_806a448_14;
         eax56 = parse_var2(ecx38, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, a2, v55);
@@ -51725,7 +51723,7 @@ void** derivative_cmd(void** ecx, void** a2) {
         if (!eax56) 
             goto addr_806a73a_2;
     } else {
-        eax61 = skip_param(a2, 0x80770b3, v57, v58, v59, v60);
+        eax61 = skip_param(a2, "nosimplify", v57, v58, v59, v60);
         a2 = eax61;
         v4 = reinterpret_cast<void**>(5);
     }
@@ -51739,7 +51737,7 @@ void** derivative_cmd(void** ecx, void** a2) {
         eax65 = decstrtol(a2, v63, v64);
         v62 = eax65;
         if (*reinterpret_cast<void***>(a2) || reinterpret_cast<signed char>(v62) <= reinterpret_cast<signed char>(0)) {
-            error(ecx38, 0x8077358, v63, v66, v67, v68, v69, v70, v39, v15, v33, v22);
+            error(ecx38, "The order must be a positive integer.", v63, v66, v67, v68, v69, v70, v39, v15, v33, v22);
             eax71 = reinterpret_cast<void**>(0);
         } else {
             addr_806a48d_17:
@@ -51755,20 +51753,20 @@ void** derivative_cmd(void** ecx, void** a2) {
                             eax87 = cur_equation;
                             if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax87) * 4 + 0x8079940)) {
                                 v88 = reinterpret_cast<void**>(0x8079800);
-                                fun_8048f34(1, 0x807746c, 0x8079800, v89, v90, v91, v92, v39, v15, v33, v22, v62);
+                                fun_8048f34(1, "Differentiating with respect to (%s)", 0x8079800, v89, v90, v91, v92, v39, v15, v33, v22, v62);
                             } else {
                                 v88 = reinterpret_cast<void**>(0x8079800);
-                                fun_8048f34(1, 0x807743c, 0x8079800, v93, v94, v95, v96, v39, v15, v33, v22, v62);
+                                fun_8048f34(1, "Differentiating the RHS with respect to (%s)", 0x8079800, v93, v94, v95, v96, v39, v15, v33, v22, v62);
                             }
                             if (v62 != 1) {
                                 ecx38 = v62;
                                 v88 = ecx38;
-                                fun_8048f34(1, 0x8077150, v88, v97, v98, v99, v100, v39, v15, v33, v22, v62);
+                                fun_8048f34(1, " %ld times", v88, v97, v98, v99, v100, v39, v15, v33, v22, v62);
                             }
                             if (!v22) {
-                                fun_8048f34(1, 0x8075a4c, v88, v101, v102, v103, v104, v39, v15, v33, v22, v62);
+                                fun_8048f34(1, "...\n", v88, v101, v102, v103, v104, v39, v15, v33, v22, v62);
                             } else {
-                                fun_8048f34(1, 0x807715b, v88, v105, v106, v107, v108, v39, v15, v33, v22, v62);
+                                fun_8048f34(1, " and simplifying...\n", v88, v105, v106, v107, v108, v39, v15, v33, v22, v62);
                             }
                         }
                         v109 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*ebx36) << 4);
@@ -51779,7 +51777,7 @@ void** derivative_cmd(void** ecx, void** a2) {
                             goto addr_806a650_32; else 
                             goto addr_806a5e3_33;
                     } else {
-                        error(ecx38, 0x8077380, v76, v72, v117, v118, v119, v120, v39, v15, v33, v22);
+                        error(ecx38, "Variable not found; the derivative would be zero.", v76, v72, v117, v118, v119, v120, v39, v15, v33, v22);
                         eax71 = reinterpret_cast<void**>(0);
                     }
                 } else {
@@ -51787,7 +51785,7 @@ void** derivative_cmd(void** ecx, void** a2) {
                     eax71 = reinterpret_cast<void**>(0);
                 }
             } else {
-                error(ecx38, 0x80773f4, v73, v72, v121, v122, v123, v124, v39, v15, v33, v22);
+                error(ecx38, "Current expression contains no variables; the derivative would be zero.", v73, v72, v121, v122, v123, v124, v39, v15, v33, v22);
                 eax71 = reinterpret_cast<void**>(0);
             }
         }
@@ -51802,7 +51800,7 @@ void** derivative_cmd(void** ecx, void** a2) {
         v136 = (*reinterpret_cast<struct s326**>(reinterpret_cast<unsigned char>(ecx135) * 4 + 0x8082a40))->f8;
         eax140 = list_var(ecx135, v136, 0, v109, 0, v137, v138, v139, v39, v15, v33);
         if (reinterpret_cast<signed char>(v62) > reinterpret_cast<signed char>(0) && reinterpret_cast<int32_t>(eax140) <= reinterpret_cast<int32_t>(98)) {
-            ecx135 = reinterpret_cast<void**>(&eax140->f134715392);
+            ecx135 = reinterpret_cast<void**>(&eax140->f8079800);
             edx141 = reinterpret_cast<void**>(0);
             ebx142 = v62;
             do {
@@ -51814,7 +51812,7 @@ void** derivative_cmd(void** ecx, void** a2) {
                     break;
             } while (reinterpret_cast<int32_t>(eax140) <= reinterpret_cast<int32_t>(98));
         }
-        *reinterpret_cast<void***>(&eax140->f134715392) = reinterpret_cast<void**>(0);
+        *reinterpret_cast<void***>(&eax140->f8079800) = reinterpret_cast<void**>(0);
         v110 = reinterpret_cast<void**>(0x8079800);
         v143 = reinterpret_cast<void**>(&(*reinterpret_cast<struct s327**>(reinterpret_cast<unsigned char>(v33) * 4 + 0x8082a40))->f8);
         parse_var(ecx135, v143, 0x8079800, v109, 0, v144, v145, v146);
@@ -51841,7 +51839,7 @@ void** derivative_cmd(void** ecx, void** a2) {
         ++ebx149;
     } while (reinterpret_cast<signed char>(v62) > reinterpret_cast<signed char>(ebx149));
     goto addr_806a650_32;
-    error(ecx38, 0x80770be, edi150, v109, 0, v158, v159, v160, v39, v15, v33, v22);
+    error(ecx38, "Differentiation failed.", edi150, v109, 0, v158, v159, v160, v39, v15, v33, v22);
     eax71 = reinterpret_cast<void**>(0);
     goto addr_806a73f_36;
 }
@@ -51873,14 +51871,14 @@ struct s332 {
     int32_t f4;
     int32_t f8;
     signed char[4] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s333 {
     int32_t f0;
     int32_t f4;
     signed char[8] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s334 {
@@ -51912,7 +51910,7 @@ struct s338 {
     int32_t f4;
     int32_t f8;
     signed char[4] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s339 {
@@ -51932,9 +51930,9 @@ struct s341 {
     signed char[3] pad8;
     int32_t f8;
     signed char[4] pad16;
-    int32_t f16;
+    int32_t f10;
     signed char[12] pad32;
-    void** f32;
+    void** f20;
 };
 
 struct s342 {
@@ -52230,17 +52228,17 @@ void** nintegrate_cmd(void** ecx, void** a2) {
         v26 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(v21) * 4);
         v27 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v21) * 4 + 0x8079940);
     }
-    v28 = reinterpret_cast<void**>(0x80774b0);
-    eax31 = strncasecmp(a2, 0x80774b0, 4, v29, v30, v27);
+    v28 = reinterpret_cast<void**>("trap");
+    eax31 = strncasecmp(a2, "trap", 4, v29, v30, v27);
     eax32 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax31 == 0))));
     v33 = eax32;
     if (eax32) {
-        eax36 = skip_param(a2, 0x80774b0, 4, v34, v35, v27);
+        eax36 = skip_param(a2, "trap", 4, v34, v35, v27);
         a2 = eax36;
     }
     if (*reinterpret_cast<void***>(a2)) 
         goto addr_806a823_9;
-    eax37 = prompt_var(ecx23, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, 0x80774b0, 4);
+    eax37 = prompt_var(ecx23, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, "trap", 4);
     if (!eax37) 
         goto addr_806b212_2; else 
         goto addr_806a891_11;
@@ -52258,7 +52256,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
         eax40 = decstrtol(eax38, v28, 4);
         v39 = eax40;
         if (*reinterpret_cast<void***>(eax38) || (reinterpret_cast<signed char>(v39) <= reinterpret_cast<signed char>(0) || *reinterpret_cast<unsigned char*>(&v39) & 1)) {
-            error(ecx23, 0x8077550, v28, 4, v41, v42, v27, v14, v26, v39, v24, v33);
+            error(ecx23, "Number of partitions must be a positive, even integer.", v28, 4, v41, v42, v27, v14, v26, v39, v24, v33);
             eax43 = reinterpret_cast<void**>(0);
         } else {
             addr_806a898_13:
@@ -52266,7 +52264,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
             v45 = ecx44;
             if (reinterpret_cast<signed char>(ecx44) <= reinterpret_cast<signed char>(1)) {
                 addr_806a949_16:
-                my_strlcpy(0x80795a0, 0x80774b5, 80, v46, v47, v27, v14, v26, v39, v24);
+                my_strlcpy(0x80795a0, "Enter lower bound: ", 80, v46, v47, v27, v14, v26, v39, v24);
                 eax48 = tlhs;
                 eax51 = get_expr(ecx44, eax48, 0x80796b8, 80, v49, v50, v27, v14, v26, v39, v24);
                 if (!eax51) 
@@ -52331,7 +52329,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
     eax66 = tlhs;
     eax69 = exp_contains_infinity(ecx44, eax66, eax65, 80, v67, v68, v27);
     if (!eax69) {
-        my_strlcpy(0x80795a0, 0x80774c9, 80, v70, v71, v27, v14, v26, v39, v24);
+        my_strlcpy(0x80795a0, "Enter upper bound: ", 80, v70, v71, v27, v14, v26, v39, v24);
         eax72 = trhs;
         eax75 = get_expr(ecx44, eax72, 0x80798b4, 80, v73, v74, v27, v14, v26, v39, v24);
         if (!eax75) {
@@ -52353,16 +52351,16 @@ void** nintegrate_cmd(void** ecx, void** a2) {
                 }
                 eax87 = cur_equation;
                 if (!*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax87) * 4 + 0x8079940)) {
-                    fun_8048f34(1, 0x8077620, 80, v88, v89, v27, v14, v26, v39, v24, v33, v21);
+                    fun_8048f34(1, "Approximating the definite integral\n", 80, v88, v89, v27, v14, v26, v39, v24, v33, v21);
                 } else {
-                    fun_8048f34(1, 0x80775f0, 80, v90, v91, v27, v14, v26, v39, v24, v33, v21);
+                    fun_8048f34(1, "Approximating the definite integral of the RHS\n", 80, v90, v91, v27, v14, v26, v39, v24, v33, v21);
                 }
                 if (!v33) {
                     v92 = v39;
-                    fun_8048f34(1, 0x8077678, v92, v93, v94, v27, v14, v26, v39, v24, v33, v21);
+                    fun_8048f34(1, "using Simpson's rule (%d partitions)...\n", v92, v93, v94, v27, v14, v26, v39, v24, v33, v21);
                 } else {
                     v92 = v39;
-                    fun_8048f34(1, 0x8077648, v92, v95, v96, v27, v14, v26, v39, v24, v33, v21);
+                    fun_8048f34(1, "using the trapezoid method (%d partitions)...\n", v92, v95, v96, v27, v14, v26, v39, v24, v33, v21);
                 }
                 ecx97 = v24;
                 subst_constants(ecx97, v25, v92);
@@ -52443,13 +52441,13 @@ void** nintegrate_cmd(void** ecx, void** a2) {
                 if (reinterpret_cast<signed char>(v39) >= reinterpret_cast<signed char>(0)) 
                     goto addr_806aca2_50;
             } else {
-                error(ecx44, 0x80775d0, eax77, 80, v142, v143, v27, v14, v26, v39, v24, v33);
+                error(ecx44, "Error: Bound contains infinity.", eax77, 80, v142, v143, v27, v14, v26, v39, v24, v33);
                 eax43 = reinterpret_cast<void**>(0);
                 goto addr_806b217_32;
             }
         }
     } else {
-        error(ecx44, 0x80775d0, eax65, 80, v144, v145, v27, v14, v26, v39, v24, v33);
+        error(ecx44, "Error: Bound contains infinity.", eax65, 80, v144, v145, v27, v14, v26, v39, v24, v33);
         eax43 = reinterpret_cast<void**>(0);
         goto addr_806b217_32;
     }
@@ -52474,7 +52472,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
     eax153->f4 = 1;
     eax153->f0 = reinterpret_cast<void**>(2);
     eax153->f8 = 4;
-    eax154 = reinterpret_cast<struct s333*>(&eax153->f16);
+    eax154 = reinterpret_cast<struct s333*>(&eax153->f10);
     eax154->f4 = 1;
     eax154->f0 = 0;
     if (!v33) {
@@ -52484,7 +52482,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
         __asm__("fld dword [0x8072058]");
         __asm__("fstp qword [eax+0x8]");
     }
-    eax155 = reinterpret_cast<struct s334*>(&eax154->f16);
+    eax155 = reinterpret_cast<struct s334*>(&eax154->f10);
     eax155->f4 = 1;
     eax155->f0 = 2;
     eax155->f8 = 3;
@@ -52510,8 +52508,8 @@ void** nintegrate_cmd(void** ecx, void** a2) {
     ufactor(v26, v26, ebx166, v158, v169, v170, v27, v14, v26);
     simp_divide(v26, v26, ebx166, v158, v171, v172, v27, v14, v26, v39, v24);
     approximate_roots = 0;
-    v173 = reinterpret_cast<void**>(0x80776f0);
-    fun_8048f34(1, 0x80776f0, v158, v174, v175, v27, v14, v26, v39, v24, v33, v21);
+    v173 = reinterpret_cast<void**>("Numerical integration successful:\n");
+    fun_8048f34(1, "Numerical integration successful:\n", v158, v174, v175, v27, v14, v26, v39, v24, v33, v21);
     ecx176 = v27;
     *reinterpret_cast<void***>(ecx176) = v164;
     eax177 = cur_equation;
@@ -52573,7 +52571,7 @@ void** nintegrate_cmd(void** ecx, void** a2) {
                 eax216->f4 = 2;
                 eax216->f0 = reinterpret_cast<void**>(2);
                 eax216->f8 = 3;
-                eax217 = reinterpret_cast<struct s339*>(&eax216->f16);
+                eax217 = reinterpret_cast<struct s339*>(&eax216->f10);
                 eax217->f4 = 2;
                 eax217->f0 = 0;
                 if (!v33) {
@@ -52664,13 +52662,13 @@ void** nintegrate_cmd(void** ecx, void** a2) {
                 ecx249->f4 = edx247;
                 ecx249->f0 = reinterpret_cast<void**>(2);
                 ecx249->f8 = 1;
-                ebx250 = reinterpret_cast<struct s342*>(&ecx249->f16);
+                ebx250 = reinterpret_cast<struct s342*>(&ecx249->f10);
                 esi251 = edx247 + 1;
                 ebx250->f4 = esi251;
                 ebx250->f0 = 0;
                 __asm__("fild dword [ebp-0x34]");
                 __asm__("fstp qword [ebx+0x8]");
-                ecx207 = reinterpret_cast<void**>(&ecx249->f32);
+                ecx207 = reinterpret_cast<void**>(&ecx249->f20);
                 *reinterpret_cast<void***>(ecx207 + 4) = esi251;
                 *reinterpret_cast<void***>(ecx207) = reinterpret_cast<void**>(2);
                 *reinterpret_cast<void***>(ecx207 + 8) = reinterpret_cast<void**>(3);
@@ -52701,15 +52699,15 @@ void** nintegrate_cmd(void** ecx, void** a2) {
         ecx97 = v196;
     } while (reinterpret_cast<signed char>(v39) >= reinterpret_cast<signed char>(ecx97));
     goto addr_806b002_53;
-    error(ecx221, 0x80776a4, v132, v111, v260, v261, v27, v14, v26, v39, v24, v33);
+    error(ecx221, "Integration failed because result contains infinity or NaN (a singularity).", v132, v111, v260, v261, v27, v14, v26, v39, v24, v33);
     eax43 = reinterpret_cast<void**>(0);
     goto addr_806b217_32;
     addr_806afdc_94:
-    error(ecx221, 0x80774dd, v132, v111, v262, v263, v27, v14, v26, v39, v24, v33);
+    error(ecx221, "Integration failed.", v132, v111, v262, v263, v27, v14, v26, v39, v24, v33);
     eax43 = reinterpret_cast<void**>(0);
     goto addr_806b217_32;
     addr_806a93d_31:
-    warning(ecx44, 0x8077588, v28, 4, v264, v265, v27, v14, v26, v39);
+    warning(ecx44, "Singularity detected, result of numerical integration might be wrong.", v28, 4, v264, v265, v27, v14, v26, v39);
     goto addr_806a949_16;
 }
 
@@ -52804,16 +52802,16 @@ void** laplace_cmd(void** ecx, void** a2) {
         v20 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(eax15) * 4);
         v21 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax15) * 4 + 0x8079940);
     }
-    v22 = reinterpret_cast<void**>(0x80774f1);
-    eax25 = strcmp_tospace(ebx4, 0x80774f1, v23, v24, v21, v20);
+    v22 = reinterpret_cast<void**>("inverse");
+    eax25 = strcmp_tospace(ebx4, "inverse", v23, v24, v21, v20);
     eax26 = reinterpret_cast<void**>(static_cast<uint32_t>(static_cast<unsigned char>(reinterpret_cast<uint1_t>(eax25 == 0))));
     if (eax26) {
-        eax29 = skip_param(ebx4, 0x80774f1, v27, v28, v21, v20);
+        eax29 = skip_param(ebx4, "inverse", v27, v28, v21, v20);
         ebx4 = eax29;
     }
     if (*reinterpret_cast<void***>(ebx4)) 
         goto addr_806b4d9_9;
-    eax31 = prompt_var(ecx17, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, 0x80774f1, v30);
+    eax31 = prompt_var(ecx17, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, "inverse", v30);
     if (!eax31) 
         goto addr_806b696_2;
     eax34 = extra_characters(ecx17, ebx4, v22, v32, v33, v21, v20);
@@ -52834,7 +52832,7 @@ void** laplace_cmd(void** ecx, void** a2) {
             v48 = eax46;
             eax49 = poly_in_v(ecx38, v20, v48, 0, 0, v21, v20, v18);
             if (!eax49 || (v47 = reinterpret_cast<void**>(laplace_sub), v50 = reinterpret_cast<void**>(0), v48 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffe0), ecx38 = v20, eax51 = int_dispatch(ecx38, v48, 0, laplace_sub, v21, v20), !eax51)) {
-                error(ecx38, 0x8077714, v48, 0, v47, v21, v20, v18, eax26, v52, v53, eax46);
+                error(ecx38, "Laplace failed, not a polynomial.", v48, 0, v47, v21, v20, v18, eax26, v52, v53, eax46);
                 eax35 = reinterpret_cast<void**>(0);
             } else {
                 addr_806b62c_15:
@@ -52865,7 +52863,7 @@ void** laplace_cmd(void** ecx, void** a2) {
             if (eax63) 
                 goto addr_806b62c_15;
             addr_806b5bc_19:
-            error(ecx38, 0x80774f9, v61, 0, v47, v21, v20, v18, eax26, v64, v65, eax46);
+            error(ecx38, "Inverse Laplace failed.", v61, 0, v47, v21, v20, v18, eax26, v64, v65, eax46);
             eax35 = reinterpret_cast<void**>(0);
         }
     }
@@ -53857,7 +53855,7 @@ void** roots_cmd(void** ecx, void** a2) {
     __asm__("fstp qword [ebp+0xffffef68]");
     edi9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefc0);
     ebx10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffef88);
-    while (*reinterpret_cast<void***>(v6) || (v11 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, 0x807780c, 80, v12, v13, v14, v15, v16, v17, v18), v19 = reinterpret_cast<void**>(0x1000), v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefe4), eax21 = get_string(v20, 0x1000, 80, v12, v13, v14, v15, v16, v17, v18), esp5 = esp5 - 4 + 4 - 4 + 4, v6 = eax21, !!eax21)) {
+    while (*reinterpret_cast<void***>(v6) || (v11 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, "Enter root (positive integer): ", 80, v12, v13, v14, v15, v16, v17, v18), v19 = reinterpret_cast<void**>(0x1000), v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefe4), eax21 = get_string(v20, 0x1000, 80, v12, v13, v14, v15, v16, v17, v18), esp5 = esp5 - 4 + 4 - 4 + 4, v6 = eax21, !!eax21)) {
         v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefa4);
         v23 = v6;
         fun_8048f64(v23, v22, v11, v12, v13, v14, v15, v16, v17, v18);
@@ -53929,7 +53927,7 @@ void** roots_cmd(void** ecx, void** a2) {
         if (*reinterpret_cast<void***>(eax37)) 
             goto addr_806d24b_20;
         v11 = reinterpret_cast<void**>(80);
-        my_strlcpy(0x80795a0, 0x807791c, 80, v12, v13, v14, v15, v16, v17, v18);
+        my_strlcpy(0x80795a0, "Enter real part (X): ", 80, v12, v13, v14, v15, v16, v17, v18);
         v19 = reinterpret_cast<void**>(0x1000);
         v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefe4);
         eax39 = get_string(v20, 0x1000, 80, v12, v13, v14, v15, v16, v17, v18);
@@ -53956,7 +53954,7 @@ void** roots_cmd(void** ecx, void** a2) {
         if (*reinterpret_cast<void***>(eax43)) 
             goto addr_806d2fa_25;
         v11 = reinterpret_cast<void**>(80);
-        my_strlcpy(0x80795a0, 0x8077932, 80, v12, v13, v14, v15, v16, v17, v18);
+        my_strlcpy(0x80795a0, "Enter imaginary part (Y): ", 80, v12, v13, v14, v15, v16, v17, v18);
         v19 = reinterpret_cast<void**>(0x1000);
         v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffefe4);
         eax44 = get_string(v20, 0x1000, 80, v12, v13, v14, v15, v16, v17, v18);
@@ -54029,7 +54027,7 @@ void** roots_cmd(void** ecx, void** a2) {
             __asm__("fstp qword [esp+0x10]");
             v12 = eax50;
             eax51 = gfp;
-            fun_8048f04(ecx, eax51, 1, 0x807786c, v12, v13, v14, v15, v16, v17, v18, v52, v53);
+            fun_8048f04(ecx, eax51, 1, "\nThe polar coordinates are:\n%.*g amplitude and %.*g radians (%.*g degrees).\n\n", v12, v13, v14, v15, v16, v17, v18, v52, v53);
             esp5 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp49) - 4 + 4 - 4 + 4 - 4 + 4);
             goto addr_806d494_37;
         } else {
@@ -54047,11 +54045,11 @@ void** roots_cmd(void** ecx, void** a2) {
             __asm__("fld qword [ebp+0xffffefd8]");
             __asm__("fstp qword [esp+0x10]");
             v12 = eax54;
-            v11 = reinterpret_cast<void**>(0x807786c);
+            v11 = reinterpret_cast<void**>("\nThe polar coordinates are:\n%.*g amplitude and %.*g radians (%.*g degrees).\n\n");
             v19 = reinterpret_cast<void**>(1);
             eax55 = gfp;
             v20 = eax55;
-            fun_8048f04(ecx, v20, 1, 0x807786c, v12, v13, v14, v15, v16, v17, v18, v56, v57);
+            fun_8048f04(ecx, v20, 1, "\nThe polar coordinates are:\n%.*g amplitude and %.*g radians (%.*g degrees).\n\n", v12, v13, v14, v15, v16, v17, v18, v56, v57);
             esp5 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp49) - 4 + 4 - 4 + 4);
             __asm__("fldz ");
             __asm__("fld qword [ebp+0xffffef78]");
@@ -54072,11 +54070,11 @@ void** roots_cmd(void** ecx, void** a2) {
                     __asm__("fstp qword [esp+0x14]");
                     __asm__("fld qword [ebp+0xffffef78]");
                     __asm__("fstp qword [esp+0xc]");
-                    v11 = reinterpret_cast<void**>(0x80778e8);
+                    v11 = reinterpret_cast<void**>("The %.12g roots of (%.12g%+.12g*i)^(1/%.12g) are:\n\n");
                     v19 = reinterpret_cast<void**>(1);
                     eax58 = gfp;
                     v20 = eax58;
-                    fun_8048f04(ecx, v20, 1, 0x80778e8, v12, v13, v14, v15, v16, v17, v18, v59, v60);
+                    fun_8048f04(ecx, v20, 1, "The %.12g roots of (%.12g%+.12g*i)^(1/%.12g) are:\n\n", v12, v13, v14, v15, v16, v17, v18, v59, v60);
                     esp5 = esp5 - 4 + 4;
                 } else {
                     __asm__("fld qword [ebp+0xffffef78]");
@@ -54084,11 +54082,11 @@ void** roots_cmd(void** ecx, void** a2) {
                     __asm__("fld qword [ebp+0xffffef80]");
                     __asm__("fstp qword [esp+0x14]");
                     __asm__("fstp qword [esp+0xc]");
-                    v11 = reinterpret_cast<void**>(0x80778bc);
+                    v11 = reinterpret_cast<void**>("The %.12g roots of (%.12g)^(1/%.12g) are:\n\n");
                     v19 = reinterpret_cast<void**>(1);
                     eax61 = gfp;
                     v20 = eax61;
-                    fun_8048f04(ecx, v20, 1, 0x80778bc, v12, v13, v14, v15, v16, v17, v18, v62, v63);
+                    fun_8048f04(ecx, v20, 1, "The %.12g roots of (%.12g)^(1/%.12g) are:\n\n", v12, v13, v14, v15, v16, v17, v18, v62, v63);
                     esp5 = esp5 - 4 + 4;
                 }
             } else {
@@ -54151,7 +54149,7 @@ void** roots_cmd(void** ecx, void** a2) {
                     }
                     __asm__("fstp qword [esp+0xc]");
                     eax67 = gfp;
-                    fun_8048f04(ecx, eax67, 1, 0x807794d, v12, v13, v14, v15, v16, v17, v18, v68, v69);
+                    fun_8048f04(ecx, eax67, 1, "%.12g ", v12, v13, v14, v15, v16, v17, v18, v68, v69);
                     esp66 = esp66 - 4 + 4;
                     addr_806d5e5_52:
                     __asm__("fld qword [ebp+0xffffefc8]");
@@ -54162,15 +54160,15 @@ void** roots_cmd(void** ecx, void** a2) {
                     if (pf45 || !zf46) {
                         __asm__("fstp qword [esp+0xc]");
                         eax70 = gfp;
-                        fun_8048f04(ecx, eax70, 1, 0x8077954, v12, v13, v14, v15, v16, v17, v18, v71, v72);
+                        fun_8048f04(ecx, eax70, 1, "%+.12g*i", v12, v13, v14, v15, v16, v17, v18, v71, v72);
                         esp66 = esp66 - 4 + 4;
                     } else {
                         __asm__("fstp st0");
                     }
-                    v11 = reinterpret_cast<void**>(0x80757fd);
+                    v11 = reinterpret_cast<void**>("\n");
                     v73 = reinterpret_cast<void**>(1);
                     eax74 = gfp;
-                    fun_8048f04(ecx, eax74, 1, 0x80757fd, v12, v13, v14, v15, v16, v17, v18, v75, v76);
+                    fun_8048f04(ecx, eax74, 1, "\n", v12, v13, v14, v15, v16, v17, v18, v75, v76);
                     esp77 = esp66 - 4 + 4;
                     v78 = v79;
                     v80 = v81;
@@ -54211,7 +54209,7 @@ void** roots_cmd(void** ecx, void** a2) {
                         } while (!below_or_equal47);
                     }
                     complex_fixup(esi65, v73, v11, v12, v13, v14, v15, v16, v17, v18);
-                    fun_8048f34(1, 0x807795d, v11, v12, v13, v14, v15, v16, v17, v18, v95, v96);
+                    fun_8048f34(1, "Inverse check:", v11, v12, v13, v14, v15, v16, v17, v18, v95, v96);
                     esp97 = esp77 - 4 + 4 - 4 + 4;
                     __asm__("fld qword [ebp+0xffffefb0]");
                     __asm__("fldz ");
@@ -54238,7 +54236,7 @@ void** roots_cmd(void** ecx, void** a2) {
                         }
                     }
                     __asm__("fstp qword [esp+0x8]");
-                    fun_8048f34(1, 0x807796c, v11, v12, v13, v14, v15, v16, v17, v18, v98, v99);
+                    fun_8048f34(1, " %.10g", v11, v12, v13, v14, v15, v16, v17, v18, v98, v99);
                     esp97 = esp97 - 4 + 4;
                     addr_806d794_70:
                     __asm__("fld qword [ebp+0xffffefb8]");
@@ -54248,14 +54246,14 @@ void** roots_cmd(void** ecx, void** a2) {
                     __asm__("fstp st1");
                     if (pf45 || !zf46) {
                         __asm__("fstp qword [esp+0x8]");
-                        fun_8048f34(1, 0x8077973, v11, v12, v13, v14, v15, v16, v17, v18, v100, v101);
+                        fun_8048f34(1, " %+.10g*i", v11, v12, v13, v14, v15, v16, v17, v18, v100, v101);
                         esp97 = esp97 - 4 + 4;
                     } else {
                         __asm__("fstp st0");
                     }
-                    v19 = reinterpret_cast<void**>(0x80757fc);
+                    v19 = reinterpret_cast<void**>("\n\n");
                     v20 = reinterpret_cast<void**>(1);
-                    fun_8048f34(1, 0x80757fc, v11, v12, v13, v14, v15, v16, v17, v18, v102, v103);
+                    fun_8048f34(1, "\n\n", v11, v12, v13, v14, v15, v16, v17, v18, v102, v103);
                     esp5 = esp97 - 4 + 4;
                     __asm__("fld qword [ebp+0xffffef70]");
                     __asm__("fadd dword [0x8075170]");
@@ -54278,9 +54276,9 @@ void** roots_cmd(void** ecx, void** a2) {
     addr_806d1ca_6:
     __asm__("fld dword [0x8077980]");
     __asm__("fstp qword [esp+0x8]");
-    v19 = reinterpret_cast<void**>(0x807782c);
+    v19 = reinterpret_cast<void**>("Root must be a positive integer less than or equal to %.0f.\n");
     v20 = reinterpret_cast<void**>(1);
-    fun_8048f34(1, 0x807782c, v11, v12, v13, v14, v15, v16, v17, v18, v106, v107);
+    fun_8048f34(1, "Root must be a positive integer less than or equal to %.0f.\n", v11, v12, v13, v14, v15, v16, v17, v18, v106, v107);
     eax104 = reinterpret_cast<void**>(0);
     goto addr_806d817_80;
     addr_806d1c8_7:
@@ -54289,13 +54287,13 @@ void** roots_cmd(void** ecx, void** a2) {
     addr_806d1c6_18:
     goto addr_806d1ca_6;
     addr_806d291_24:
-    v20 = reinterpret_cast<void**>(0x8075cfc);
-    error(ecx, 0x8075cfc, v19, v11, v12, v13, v14, v15, v16, v17, v18, v108);
+    v20 = reinterpret_cast<void**>("Number expected.");
+    error(ecx, "Number expected.", v19, v11, v12, v13, v14, v15, v16, v17, v18, v108);
     eax104 = reinterpret_cast<void**>(0);
     goto addr_806d817_80;
     addr_806d323_27:
-    v20 = reinterpret_cast<void**>(0x8075cfc);
-    error(ecx, 0x8075cfc, v19, v11, v12, v13, v14, v15, v16, v17, v18, v109);
+    v20 = reinterpret_cast<void**>("Number expected.");
+    error(ecx, "Number expected.", v19, v11, v12, v13, v14, v15, v16, v17, v18, v109);
     eax104 = reinterpret_cast<void**>(0);
     goto addr_806d817_80;
     addr_806d809_42:
@@ -54376,14 +54374,14 @@ void** inthandler(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     if (eax7 < 0) 
         goto addr_80494ce_2;
     if (eax7 <= 1) {
-        eax13 = fun_8048f34(1, 0x8071a78, v8, v9, v10, v11, ebp12, __return_address(), a2, a3, a4, a5);
+        eax13 = fun_8048f34(1, "\nUser interrupt signal received; three times quits Mathomatic.\n", v8, v9, v10, v11, ebp12, __return_address(), a2, a3, a4, a5);
     } else {
         if (eax7 != 2) {
             addr_80494ce_2:
-            fun_8048f34(1, 0x8071ae8, v14, v15, v16, v17, ebp12, __return_address(), a2, a3, a4, a5);
-            eax13 = exit_program(ecx, 1, 0x8071ae8, v18, v19, v20, v21, ebp12);
+            fun_8048f34(1, "\nRepeatedly interrupted; returning to operating system...\n", v14, v15, v16, v17, ebp12, __return_address(), a2, a3, a4, a5);
+            eax13 = exit_program(ecx, 1, "\nRepeatedly interrupted; returning to operating system...\n", v18, v19, v20, v21, ebp12);
         } else {
-            eax13 = fun_8048f34(1, 0x8071ab8, v22, v23, v24, v25, ebp12, __return_address(), a2, a3, a4, a5);
+            eax13 = fun_8048f34(1, "\nPress Control-C once more to quit program.\n", v22, v23, v24, v25, ebp12, __return_address(), a2, a3, a4, a5);
         }
     }
     return eax13;
@@ -54539,9 +54537,9 @@ void fun_804912a() {
 
 struct s361 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 struct s362 {
@@ -54552,9 +54550,9 @@ struct s362 {
 
 struct s363 {
     signed char[134715712] pad134715712;
-    void** f134715712;
+    void** f8079940;
     signed char[37951] pad134753664;
-    void** f134753664;
+    void** f8082d80;
 };
 
 void** solve_cmd(void** ecx, void** a2) {
@@ -54726,23 +54724,23 @@ void** solve_cmd(void** ecx, void** a2) {
     v6 = eax5;
     eax7 = cur_equation;
     if (reinterpret_cast<signed char>(eax7) < reinterpret_cast<signed char>(0) || ((less8 = reinterpret_cast<signed char>(eax7) < reinterpret_cast<signed char>(n_equations), !less8) || (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax7) * 4 + 0x8082d80) <= 0 || *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax7) * 4 + 0x8079940) <= 0))) {
-        v9 = reinterpret_cast<void**>(0x8075d49);
-        error(ecx, 0x8075d49, v10, v11, v12, v13, v14, v15, v16, v17, v18, v19);
+        v9 = reinterpret_cast<void**>("No current equation.");
+        error(ecx, "No current equation.", v10, v11, v12, v13, v14, v15, v16, v17, v18, v19);
         eax20 = reinterpret_cast<void**>(0);
     } else {
         eax27 = next_espace(ecx, v21, v22, v23, v24, v25, v26);
         ebx28 = eax27;
-        eax33 = strcmp_tospace(esi4, 0x8075d5e, v29, v30, v31, v32);
+        eax33 = strcmp_tospace(esi4, "verify", v29, v30, v31, v32);
         edi34 = 0;
         if (!eax33) {
-            eax39 = skip_param(esi4, 0x8075d5e, v35, v36, v37, v38);
+            eax39 = skip_param(esi4, "verify", v35, v36, v37, v38);
             esi4 = eax39;
             *reinterpret_cast<int16_t*>(&edi34) = 1;
         }
-        eax44 = strcmp_tospace(esi4, 0x8075d65, v40, v41, v42, v43);
+        eax44 = strcmp_tospace(esi4, "for", v40, v41, v42, v43);
         if (eax44) 
             goto addr_805719a_6;
-        eax49 = skip_param(esi4, 0x8075d65, v45, v46, v47, v48);
+        eax49 = skip_param(esi4, "for", v45, v46, v47, v48);
         if (!*reinterpret_cast<void***>(eax49)) 
             goto addr_805719a_6; else 
             goto addr_8057196_8;
@@ -54758,7 +54756,7 @@ void** solve_cmd(void** ecx, void** a2) {
     if (*reinterpret_cast<void***>(esi4)) 
         goto addr_80571de_13;
     v52 = reinterpret_cast<void**>(80);
-    my_strlcpy(0x80795a0, 0x8075d69, 80, v60, v61, v62, v63, v64, v65, v66);
+    my_strlcpy(0x80795a0, "Enter variable to solve for: ", 80, v60, v61, v62, v63, v64, v65, v66);
     v51 = reinterpret_cast<void**>(0x1000);
     v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffefe4);
     eax74 = get_string(v9, 0x1000, 80, v67, v68, v69, v70, v71, v72, v73);
@@ -54796,16 +54794,16 @@ void** solve_cmd(void** ecx, void** a2) {
             v91 = v92;
             eax93 = cur_equation;
             edx94 = reinterpret_cast<struct s361*>(reinterpret_cast<unsigned char>(eax93) * 4);
-            v55 = reinterpret_cast<void**>(&edx94->f134715712);
+            v55 = reinterpret_cast<void**>(&edx94->f8079940);
             ecx = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax93) * 4 + 0x8082be0);
             v54 = ecx;
-            v53 = reinterpret_cast<void**>(&edx94->f134753664);
+            v53 = reinterpret_cast<void**>(&edx94->f8082d80);
             v52 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax93) * 4 + 0x8082a40);
             eax100 = solve_sub(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffefcc, 1, v52, v53, v54, v55, v95, v96, v97, v98, v99);
             if (reinterpret_cast<uint1_t>(eax100 < 0) | reinterpret_cast<uint1_t>(eax100 == 0)) {
-                v51 = reinterpret_cast<void**>(0x807272d);
+                v51 = reinterpret_cast<void**>("Solve failed.\n");
                 v9 = reinterpret_cast<void**>(1);
-                fun_8048f34(1, 0x807272d, v52, v53, v54, v55, v101, v102, v103, v104, v105, v106);
+                fun_8048f34(1, "Solve failed.\n", v52, v53, v54, v55, v101, v102, v103, v104, v105, v106);
                 goto addr_80575b1_17;
             }
             eax107 = cur_equation;
@@ -54820,12 +54818,12 @@ void** solve_cmd(void** ecx, void** a2) {
     }
     sf110 = reinterpret_cast<signed char>(debug_level) < reinterpret_cast<signed char>(0);
     if (!sf110) {
-        v53 = reinterpret_cast<void**>(0x8076908);
-        v52 = reinterpret_cast<void**>(0x807277d);
+        v53 = reinterpret_cast<void**>("Nothing was done, so no need to verify solution.");
+        v52 = reinterpret_cast<void**>("%s\n");
         v51 = reinterpret_cast<void**>(1);
         eax111 = gfp;
         v9 = eax111;
-        fun_8048f04(ecx, v9, 1, 0x807277d, 0x8076908, v54, v55, v112, v113, v114, v115, v116, v117);
+        fun_8048f04(ecx, v9, 1, "%s\n", "Nothing was done, so no need to verify solution.", v54, v55, v112, v113, v114, v115, v116, v117);
     }
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8082d80) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8079940) = 0;
@@ -54852,12 +54850,12 @@ void** solve_cmd(void** ecx, void** a2) {
     v59 = reinterpret_cast<void**>(1);
     addr_805735a_34:
     ecx122 = reinterpret_cast<struct s363*>(reinterpret_cast<unsigned char>(ebx28) * 4);
-    v123 = reinterpret_cast<void**>(&ecx122->f134753664);
+    v123 = reinterpret_cast<void**>(&ecx122->f8082d80);
     v124 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(edx118) * 4);
     v125 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(ebx28) * 4);
     subst_var_with_exp(v125, v123, v124, eax119, v126, v55);
     eax127 = cur_equation;
-    v128 = reinterpret_cast<void**>(&ecx122->f134715712);
+    v128 = reinterpret_cast<void**>(&ecx122->f8079940);
     v54 = v129;
     v53 = *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(eax127) * 4 + 0x8079940);
     v52 = *reinterpret_cast<void***>(0x8082be0 + reinterpret_cast<unsigned char>(eax127) * 4);
@@ -54905,21 +54903,21 @@ void** solve_cmd(void** ecx, void** a2) {
         symb_flag = reinterpret_cast<void**>(0);
         *reinterpret_cast<int16_t*>(&edi139) = 1;
     }
-    v9 = reinterpret_cast<void**>(0x8075db0);
-    error(ecx, 0x8075db0, v51, v52, v53, v54, v55, v155, v156, v157, v59, v123);
+    v9 = reinterpret_cast<void**>("Solution might be incorrect.");
+    error(ecx, "Solution might be incorrect.", v51, v52, v53, v54, v55, v155, v156, v157, v59, v123);
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8082d80) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8079940) = 0;
     eax20 = reinterpret_cast<void**>(2);
     goto addr_80575d3_9;
     addr_805746f_39:
     if (!v59) {
-        v51 = reinterpret_cast<void**>(0x8075d9c);
+        v51 = reinterpret_cast<void**>("Solution verified.\n");
         v9 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8075d9c, v52, v53, v54, v55, v158, v159, v160, v59, v123, v128);
+        fun_8048f34(1, "Solution verified.\n", v52, v53, v54, v55, v158, v159, v160, v59, v123, v128);
     } else {
-        v51 = reinterpret_cast<void**>(0x8075d87);
+        v51 = reinterpret_cast<void**>("Solutions verified.\n");
         v9 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8075d87, v52, v53, v54, v55, v161, v162, v163, v59, v123, v128);
+        fun_8048f34(1, "Solutions verified.\n", v52, v53, v54, v55, v161, v162, v163, v59, v123, v128);
     }
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8082d80) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(ebx28) * 4 + 0x8079940) = 0;
@@ -55076,15 +55074,15 @@ void** plot_cmd(void** ecx, void** a2) {
                 goto addr_80576eb_19;
         }
     } else {
-        v20 = reinterpret_cast<void**>(0x8075934);
-        error(ecx, 0x8075934, v23, v24, v25, v26, v27, v28, v29, v30, v31, v32);
+        v20 = reinterpret_cast<void**>("Command disabled.");
+        error(ecx, "Command disabled.", v23, v24, v25, v26, v27, v28, v29, v30, v31, v32);
         eax33 = reinterpret_cast<void**>(0);
         goto addr_8057879_21;
     }
     addr_8057889_22:
     if (edx10) {
-        v20 = reinterpret_cast<void**>(0x807693c);
-        error(ecx, 0x807693c, v19, 3, v34, v35, v36, v37, v38, v39, v40, v41);
+        v20 = reinterpret_cast<void**>("Invalid character in expression string.");
+        error(ecx, "Invalid character in expression string.", v19, 3, v34, v35, v36, v37, v38, v39, v40, v41);
         if (!esi9) {
             addr_8057874_12:
             eax33 = reinterpret_cast<void**>(0);
@@ -55106,19 +55104,19 @@ void** plot_cmd(void** ecx, void** a2) {
     addr_8057750_7:
     eax52 = fun_8048f74(ebx4, 0x79, 3);
     if (!eax52) {
-        fun_8048f34(1, 0x8075dcd, 3, v53, v54, v55, v56, v57, v58, v59, v60, v61);
+        fun_8048f34(1, "Performing 2D plot...\n", 3, v53, v54, v55, v56, v57, v58, v59, v60, v61);
         v47 = ebx4;
-        v46 = reinterpret_cast<void**>(0x80769b0);
+        v46 = reinterpret_cast<void**>("echo 'set grid; plot %s'|gnuplot -persist");
         v18 = reinterpret_cast<void**>(1);
         v19 = reinterpret_cast<void**>(0x1000);
-        fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffeff4, 0x1000, 1, 0x1000, 0x80769b0, v47, v62);
+        fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffeff4, 0x1000, 1, 0x1000, "echo 'set grid; plot %s'|gnuplot -persist", v47, v62);
     } else {
-        fun_8048f34(1, 0x8076964, 3, v63, v64, v65, v66, v67, v68, v69, v70, v71);
+        fun_8048f34(1, "Performing 3D surface plot...\n", 3, v63, v64, v65, v66, v67, v68, v69, v70, v71);
         v47 = ebx4;
-        v46 = reinterpret_cast<void**>(0x8076984);
+        v46 = reinterpret_cast<void**>("echo 'set grid; splot %s'|gnuplot -persist");
         v18 = reinterpret_cast<void**>(1);
         v19 = reinterpret_cast<void**>(0x1000);
-        fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffeff4, 0x1000, 1, 0x1000, 0x8076984, v47, v72);
+        fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffeff4, 0x1000, 1, 0x1000, "echo 'set grid; splot %s'|gnuplot -persist", v47, v72);
     }
     if (esi9) {
         fun_8049034(ebx4, 0x1000, 1, 0x1000, v46, v47);
@@ -55130,18 +55128,18 @@ void** plot_cmd(void** ecx, void** a2) {
         less_or_equal75 = reinterpret_cast<signed char>(debug_level) <= reinterpret_cast<signed char>(0);
         if (!less_or_equal75) {
             v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffeff4);
-            v19 = reinterpret_cast<void**>(0x8075e01);
+            v19 = reinterpret_cast<void**>("Command line = \"%s\".\n");
             v20 = reinterpret_cast<void**>(1);
-            fun_8048f34(1, 0x8075e01, v18, 0x1000, v46, v47, v76, v77, v78, v79, v80, v81);
+            fun_8048f34(1, "Command line = \"%s\".\n", v18, 0x1000, v46, v47, v76, v77, v78, v79, v80, v81);
             eax33 = reinterpret_cast<void**>(1);
             goto addr_8057879_21;
         }
     } else {
-        error(ecx, 0x8075de4, 0x1000, 1, 0x1000, v46, v47, v82, v83, v84, v85, v86);
+        error(ecx, "Error trying to run gnuplot.", 0x1000, 1, 0x1000, v46, v47, v82, v83, v84, v85, v86);
         v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffeff4);
-        v19 = reinterpret_cast<void**>(0x8075e01);
+        v19 = reinterpret_cast<void**>("Command line = \"%s\".\n");
         v20 = reinterpret_cast<void**>(1);
-        fun_8048f34(1, 0x8075e01, v18, 0x1000, v46, v47, v87, v88, v89, v90, v91, v92);
+        fun_8048f34(1, "Command line = \"%s\".\n", v18, 0x1000, v46, v47, v87, v88, v89, v90, v91, v92);
         eax33 = reinterpret_cast<void**>(0);
         goto addr_8057879_21;
     }
@@ -55468,11 +55466,11 @@ void** integrate_cmd(void** ecx, void** a2) {
     edi25 = 0;
     ebx26 = 0;
     while (1) {
-        v27 = reinterpret_cast<void**>(0x8077511);
-        eax32 = strcmp_tospace(v4, 0x8077511, v28, v29, v30, v31);
+        v27 = reinterpret_cast<void**>("definite");
+        eax32 = strcmp_tospace(v4, "definite", v28, v29, v30, v31);
         if (eax32) {
-            v27 = reinterpret_cast<void**>(0x807751a);
-            eax37 = strcmp_tospace(v4, 0x807751a, v33, v34, v35, v36);
+            v27 = reinterpret_cast<void**>("constant");
+            eax37 = strcmp_tospace(v4, "constant", v33, v34, v35, v36);
             if (eax37) 
                 break;
             edi25 = 1;
@@ -55511,7 +55509,7 @@ void** integrate_cmd(void** ecx, void** a2) {
         goto addr_806c2fc_17;
     }
     v52 = reinterpret_cast<void**>(static_cast<int32_t>(*reinterpret_cast<signed char*>(&eax51)));
-    eax57 = isvarchar(v52, 0x807751a, v53, v54, v55, v56);
+    eax57 = isvarchar(v52, "constant", v53, v54, v55, v56);
     if (!eax57) 
         goto addr_806c259_19;
     v27 = v4;
@@ -55556,8 +55554,8 @@ void** integrate_cmd(void** ecx, void** a2) {
             __asm__("fstp st0");
             if (*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax68) + 1) || !*reinterpret_cast<int1_t*>(reinterpret_cast<int32_t>(&ax68) + 1)) {
                 addr_806c2de_23:
-                v52 = reinterpret_cast<void**>(0x8077358);
-                error(ecx, 0x8077358, v27, v70, v71, v72, v73, v74, v75, v76, v77, v50);
+                v52 = reinterpret_cast<void**>("The order must be a positive integer.");
+                error(ecx, "The order must be a positive integer.", v27, v70, v71, v72, v73, v74, v75, v76, v77, v50);
                 eax78 = reinterpret_cast<void**>(0);
                 goto addr_806c8cb_31;
             } else {
@@ -55594,10 +55592,10 @@ void** integrate_cmd(void** ecx, void** a2) {
         zf108 = *reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax107) * 4 + 0x8079940) == 0;
         if (zf108) {
             v109 = reinterpret_cast<void**>(0x8079800);
-            fun_8048f34(1, 0x8077764, 0x8079800, v110, v111, v112, v113, v114, v115, v116, v50, v17);
+            fun_8048f34(1, "Integrating with respect to (%s)", 0x8079800, v110, v111, v112, v113, v114, v115, v116, v50, v17);
         } else {
             v109 = reinterpret_cast<void**>(0x8079800);
-            fun_8048f34(1, 0x8077738, 0x8079800, v117, v118, v119, v120, v121, v122, v123, v50, v17);
+            fun_8048f34(1, "Integrating the RHS with respect to (%s)", 0x8079800, v117, v118, v119, v120, v121, v122, v123, v50, v17);
         }
         __asm__("fld1 ");
         __asm__("fld qword [ebp+0xffffff50]");
@@ -55607,11 +55605,11 @@ void** integrate_cmd(void** ecx, void** a2) {
             __asm__("fstp qword [esp+0xc]");
             eax124 = precision;
             v109 = eax124;
-            fun_8048f34(1, 0x807753e, v109, v125, v126, v127, v128, v129, v130, v131, v50, v17);
+            fun_8048f34(1, " %.*g times", v109, v125, v126, v127, v128, v129, v130, v131, v50, v17);
         } else {
             __asm__("fstp st0");
         }
-        fun_8048f34(1, 0x807715b, v109, v132, v133, v134, v135, v136, v137, v138, v50, v17);
+        fun_8048f34(1, " and simplifying...\n", v109, v132, v133, v134, v135, v136, v137, v138, v50, v17);
     }
     partial_flag = reinterpret_cast<void**>(0);
     uf_simp(ecx, edi47, esi48, v109, v139, v140, v141, v142, v143);
@@ -55639,7 +55637,7 @@ void** integrate_cmd(void** ecx, void** a2) {
         if (*reinterpret_cast<int32_t*>(reinterpret_cast<unsigned char>(eax159) * 4 + 0x8079940) && ((v90 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(eax159) * 4) << 4), v27 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(eax159) * 4), v160 = *reinterpret_cast<void***>(0x8082a40 + reinterpret_cast<unsigned char>(v24) * 4), fun_80491c4(v24, v160, v27, v90, 0, v92, v93, v161, v162, v163, v164, v50, v17, v45), eax165 = cur_equation, *reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(v24) * 4) = *reinterpret_cast<uint32_t*>(0x8082d80 + reinterpret_cast<unsigned char>(eax165) * 4), !!v17) && (eax166 = isvarchar(39, v27, v90, 0, v92, v93), !!eax166))) {
             v167 = (*reinterpret_cast<struct s364**>(reinterpret_cast<unsigned char>(v24) * 4 + 0x8082a40))->f8;
             eax172 = list_var(v24, v167, 0, v90, 0, v92, v93, v168, v169, v170, v171);
-            ecx173 = reinterpret_cast<void**>(&eax172->f134715391);
+            ecx173 = reinterpret_cast<void**>(&eax172->f80797ff);
             edx174 = reinterpret_cast<struct s5*>(0);
             while ((ebx175 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax172) - reinterpret_cast<uint32_t>(edx174)), reinterpret_cast<uint32_t>(eax172) > reinterpret_cast<uint32_t>(edx174)) && (!(reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ebx175) < reinterpret_cast<int32_t>(0)) | reinterpret_cast<uint1_t>(ebx175 == 0)) && *reinterpret_cast<void***>(ecx173) == 39)) {
                 *reinterpret_cast<void***>(ecx173) = reinterpret_cast<void**>(0);
@@ -55652,18 +55650,18 @@ void** integrate_cmd(void** ecx, void** a2) {
         }
     } else {
         v90 = reinterpret_cast<void**>(80);
-        my_strlcpy(0x80795a0, 0x80774b5, 80, v91, 0x807754a, v93, v178, v179, v180, v181);
+        my_strlcpy(0x80795a0, "Enter lower bound: ", 80, v91, "C_%d", v93, v178, v179, v180, v181);
         v27 = reinterpret_cast<void**>(0x80796b8);
         eax182 = tlhs;
         v52 = eax182;
-        eax187 = get_expr(ecx, v52, 0x80796b8, 80, v91, 0x807754a, v93, v183, v184, v185, v186);
-        if (!eax187 || (v90 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, 0x80774c9, 80, v91, 0x807754a, v93, v188, v189, v190, v191), v27 = reinterpret_cast<void**>(0x80798b4), eax192 = trhs, v52 = eax192, eax197 = get_expr(ecx, v52, 0x80798b4, 80, v91, 0x807754a, v93, v193, v194, v195, v196), eax197 == 0)) {
+        eax187 = get_expr(ecx, v52, 0x80796b8, 80, v91, "C_%d", v93, v183, v184, v185, v186);
+        if (!eax187 || (v90 = reinterpret_cast<void**>(80), my_strlcpy(0x80795a0, "Enter upper bound: ", 80, v91, "C_%d", v93, v188, v189, v190, v191), v27 = reinterpret_cast<void**>(0x80798b4), eax192 = trhs, v52 = eax192, eax197 = get_expr(ecx, v52, 0x80798b4, 80, v91, "C_%d", v93, v193, v194, v195, v196), eax197 == 0)) {
             addr_806c8c6_2:
             eax78 = reinterpret_cast<void**>(0);
             goto addr_806c8cb_31;
         } else {
             eax198 = scratch;
-            fun_80491c4(ecx, eax198, ebx49, reinterpret_cast<unsigned char>(v157) << 4, v91, 0x807754a, v93, v199, v200, v201, v202, v50, v17, v45);
+            fun_80491c4(ecx, eax198, ebx49, reinterpret_cast<unsigned char>(v157) << 4, v91, "C_%d", v93, v199, v200, v201, v202, v50, v17, v45);
             v203 = v157;
             eax204 = n_tlhs;
             eax205 = tlhs;
@@ -55717,13 +55715,13 @@ void** integrate_cmd(void** ecx, void** a2) {
         v91 = reinterpret_cast<void**>(integrate_sub);
         v90 = reinterpret_cast<void**>(0);
         v27 = edi226;
-        eax227 = int_dispatch(ebx49, v27, 0, integrate_sub, 0x807754a, v93);
+        eax227 = int_dispatch(ebx49, v27, 0, integrate_sub, "C_%d", v93);
         if (!eax227) 
             break;
         if (v44) {
             less_or_equal228 = reinterpret_cast<signed char>(v157 + 2) <= reinterpret_cast<signed char>(n_tokens);
             if (!less_or_equal228) {
-                error_huge(ecx, ebx49, v27, 0, integrate_sub, 0x807754a, v93, v229, v230, v231, v232, v50, v17, v45);
+                error_huge(ecx, ebx49, v27, 0, integrate_sub, "C_%d", v93, v229, v230, v231, v232, v50, v17, v45);
             }
             ecx233 = v157;
             if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(ecx233) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(ecx233 == 0))) {
@@ -55745,13 +55743,13 @@ void** integrate_cmd(void** ecx, void** a2) {
             *reinterpret_cast<int32_t*>((reinterpret_cast<unsigned char>(eax236) << 4) + reinterpret_cast<unsigned char>(ebx49) + 4) = 1;
             eax237 = constant_var_number;
             v93 = eax237;
-            v92 = reinterpret_cast<void**>(0x807754a);
+            v92 = reinterpret_cast<void**>("C_%d");
             v91 = reinterpret_cast<void**>(100);
             v90 = reinterpret_cast<void**>(1);
-            fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffff80, 100, 1, 100, 0x807754a, v93, v238);
+            fun_8049224(ecx, reinterpret_cast<int32_t>(ebp3) + 0xffffff80, 100, 1, 100, "C_%d", v93, v238);
             v27 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff80);
             v52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx49) + (reinterpret_cast<unsigned char>(eax236) << 4) + 8);
-            eax240 = parse_var(ecx, v52, v27, 1, 100, 0x807754a, v93, v239);
+            eax240 = parse_var(ecx, v52, v27, 1, 100, "C_%d", v93, v239);
             if (!eax240) 
                 goto addr_806c8c6_2;
             v157 = eax236 + 1;
@@ -55763,7 +55761,7 @@ void** integrate_cmd(void** ecx, void** a2) {
             }
             constant_var_number = eax243;
         }
-        simp_loop(ecx, ebx49, edi226, v90, v91, 0x807754a, v93, v244, v245);
+        simp_loop(ecx, ebx49, edi226, v90, v91, "C_%d", v93, v244, v245);
         tmp32_246 = esi158 + 1;
         cf247 = reinterpret_cast<uint1_t>(tmp32_246 < esi158);
         esi158 = tmp32_246;
@@ -55773,8 +55771,8 @@ void** integrate_cmd(void** ecx, void** a2) {
         __asm__("fstp st0");
     } while (!reinterpret_cast<uint1_t>(cf247 | reinterpret_cast<uint1_t>(esi158 == 0)));
     goto addr_806c5b6_47;
-    v52 = reinterpret_cast<void**>(0x8077788);
-    error(ecx, 0x8077788, v27, 0, integrate_sub, 0x807754a, v93, v248, v249, v250, v251, v50);
+    v52 = reinterpret_cast<void**>("Integration failed, not a polynomial.");
+    error(ecx, "Integration failed, not a polynomial.", v27, 0, integrate_sub, "C_%d", v93, v248, v249, v250, v251, v50);
     eax78 = reinterpret_cast<void**>(0);
     goto addr_806c8cb_31;
     addr_806c264_21:
@@ -55782,8 +55780,8 @@ void** integrate_cmd(void** ecx, void** a2) {
     __asm__("fstp qword [ebp+0xffffff50]");
     goto addr_806c2a1_25;
     addr_806c1a2_12:
-    v52 = reinterpret_cast<void**>(0x8077523);
-    error(ecx, 0x8077523, 0x807751a, v252, v253, v254, v255, v256, v257, v258, v259, v260);
+    v52 = reinterpret_cast<void**>("Conflicting options given.");
+    error(ecx, "Conflicting options given.", "constant", v252, v253, v254, v255, v256, v257, v258, v259, v260);
     eax78 = reinterpret_cast<void**>(0);
     goto addr_806c8cb_31;
 }
@@ -55902,8 +55900,8 @@ void fun_8049959(void** ecx) {
     }
     eax13 = prog_name;
     eax14 = stderr;
-    fun_8048f04(ecx, eax14, 1, 0x8071e40, eax13, v15, v16, v17, v18, v19, v20, v21, v22);
-    fun_8049294(2, 1, 0x8071e40, eax13, v23);
+    fun_8048f04(ecx, eax14, 1, "%s: Invalid memory size multiplier specified.\n", eax13, v15, v16, v17, v18, v19, v20, v21, v22);
+    fun_8049294(2, 1, "%s: Invalid memory size multiplier specified.\n", eax13, v23);
     goto addr_80499d6_8;
 }
 

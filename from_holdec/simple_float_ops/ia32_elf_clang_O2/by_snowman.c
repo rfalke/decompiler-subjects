@@ -279,9 +279,43 @@ struct s8 {
 };
 
 struct s9 {
-    signed char[4] pad4;
+    int32_t f0;
     int32_t f4;
 };
+
+int32_t compare_floats(int32_t a1, int32_t a2) {
+    int32_t* edi3;
+    int32_t* esi4;
+    int32_t* edi5;
+    void* edi6;
+    int32_t* esi7;
+    void* esi8;
+    uint32_t eax9;
+    int32_t ebx10;
+    uint32_t eax11;
+    struct s8* edi12;
+    struct s9* esi13;
+
+    *edi3 = *esi4;
+    edi5 = reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(edi6) + 4 + 4);
+    esi7 = reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(esi8) + 4 + 4);
+    __asm__("movd eax, xmm0");
+    eax11 = fun_80482e0("%d", eax9 & 1, ebx10, __return_address(), a1, a2);
+    *edi5 = *esi7;
+    edi12 = reinterpret_cast<struct s8*>(edi5 + 1 + 1);
+    esi13 = reinterpret_cast<struct s9*>(esi7 + 1 + 1);
+    __asm__("movd eax, xmm0");
+    fun_80482e0("%d", eax11 & 1, ebx10, __return_address(), a1, a2);
+    edi12->f0 = esi13->f0;
+    __asm__("ucomisd xmm0, [esp+0x18]");
+    fun_80482e0("%d", 0, ebx10, __return_address(), a1, a2);
+    fun_80482e0("%d", 1, ebx10, __return_address(), a1, a2);
+    edi12->f4 = esi13->f4;
+    __asm__("ucomisd xmm0, [esp+0x10]");
+    fun_80482e0("%d", 0, ebx10, __return_address(), a1, a2);
+    fun_80482e0("%d", 1, ebx10, __return_address(), a1, a2);
+    return 0x7c;
+}
 
 struct s10 {
     int32_t f0;
@@ -299,7 +333,7 @@ struct s12 {
 };
 
 struct s13 {
-    int32_t f0;
+    signed char[4] pad4;
     int32_t f4;
 };
 
@@ -323,57 +357,13 @@ struct s17 {
     int32_t f4;
 };
 
-int32_t compare_floats(int32_t a1, int32_t a2) {
-    int32_t* edi3;
-    int32_t* esi4;
-    struct s8* edi5;
-    struct s9* edi6;
-    struct s10* esi7;
-    struct s11* esi8;
-    struct s12* edi9;
-    struct s13* esi10;
-    uint32_t eax11;
-    int32_t ebx12;
-    uint32_t eax13;
-    struct s14* edi14;
-    struct s15* esi15;
-    struct s16* edi16;
-    struct s17* esi17;
-
-    *edi3 = *esi4;
-    edi5 = reinterpret_cast<struct s8*>(&edi6->f4);
-    esi7 = reinterpret_cast<struct s10*>(&esi8->f4);
-    edi5->f0 = esi7->f0;
-    edi9 = reinterpret_cast<struct s12*>(&edi5->f4);
-    esi10 = reinterpret_cast<struct s13*>(&esi7->f4);
-    __asm__("movd eax, xmm0");
-    eax13 = fun_80482e0("%d", eax11 & 1, ebx12, __return_address(), a1, a2);
-    edi9->f0 = esi10->f0;
-    edi14 = reinterpret_cast<struct s14*>(&edi9->f4);
-    esi15 = reinterpret_cast<struct s15*>(&esi10->f4);
-    edi14->f0 = esi15->f0;
-    edi16 = reinterpret_cast<struct s16*>(&edi14->f4);
-    esi17 = reinterpret_cast<struct s17*>(&esi15->f4);
-    __asm__("movd eax, xmm0");
-    fun_80482e0("%d", eax13 & 1, ebx12, __return_address(), a1, a2);
-    edi16->f0 = esi17->f0;
-    __asm__("ucomisd xmm0, [esp+0x18]");
-    fun_80482e0("%d", 0, ebx12, __return_address(), a1, a2);
-    fun_80482e0("%d", 1, ebx12, __return_address(), a1, a2);
-    edi16->f4 = esi17->f4;
-    __asm__("ucomisd xmm0, [esp+0x10]");
-    fun_80482e0("%d", 0, ebx12, __return_address(), a1, a2);
-    fun_80482e0("%d", 1, ebx12, __return_address(), a1, a2);
-    return 0x7c;
-}
-
 struct s18 {
     int32_t f0;
     int32_t f4;
 };
 
 struct s19 {
-    signed char[4] pad4;
+    int32_t f0;
     int32_t f4;
 };
 
@@ -383,7 +373,7 @@ struct s20 {
 };
 
 struct s21 {
-    signed char[4] pad4;
+    int32_t f0;
     int32_t f4;
 };
 
@@ -417,109 +407,69 @@ struct s27 {
     int32_t f4;
 };
 
-struct s28 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s29 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s30 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s31 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s32 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s33 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s34 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s35 {
-    int32_t f0;
-    int32_t f4;
-};
-
 int32_t constants(int32_t a1, int32_t a2) {
     int32_t* edi3;
     int32_t* esi4;
-    struct s18* edi5;
-    struct s19* edi6;
-    struct s20* esi7;
-    struct s21* esi8;
-    struct s22* edi9;
-    struct s23* esi10;
+    struct s10* edi5;
+    struct s11* edi6;
+    struct s12* esi7;
+    struct s13* esi8;
+    struct s14* edi9;
+    struct s15* esi10;
     uint32_t v11;
     int32_t v12;
-    struct s24* edi13;
-    struct s25* esi14;
-    struct s26* edi15;
-    struct s27* esi16;
+    struct s16* edi13;
+    struct s17* esi14;
+    struct s18* edi15;
+    struct s19* esi16;
     uint32_t v17;
     int32_t v18;
-    struct s28* edi19;
-    struct s29* esi20;
-    struct s30* edi21;
-    struct s31* esi22;
+    struct s20* edi19;
+    struct s21* esi20;
+    struct s22* edi21;
+    struct s23* esi22;
     uint32_t v23;
     int32_t v24;
-    struct s32* edi25;
-    struct s33* esi26;
-    struct s34* edi27;
-    struct s35* esi28;
+    struct s24* edi25;
+    struct s25* esi26;
+    struct s26* edi27;
+    struct s27* esi28;
     uint32_t v29;
     int32_t v30;
     uint32_t v31;
     int32_t v32;
 
     *edi3 = *esi4;
-    edi5 = reinterpret_cast<struct s18*>(&edi6->f4);
-    esi7 = reinterpret_cast<struct s20*>(&esi8->f4);
+    edi5 = reinterpret_cast<struct s10*>(&edi6->f4);
+    esi7 = reinterpret_cast<struct s12*>(&esi8->f4);
     __asm__("addsd xmm0, xmm0");
     edi5->f0 = esi7->f0;
-    edi9 = reinterpret_cast<struct s22*>(&edi5->f4);
-    esi10 = reinterpret_cast<struct s23*>(&esi7->f4);
+    edi9 = reinterpret_cast<struct s14*>(&edi5->f4);
+    esi10 = reinterpret_cast<struct s15*>(&esi7->f4);
     fun_80482e0("%f", v11, v12, __return_address(), a1, a2);
     edi9->f0 = esi10->f0;
-    edi13 = reinterpret_cast<struct s24*>(&edi9->f4);
-    esi14 = reinterpret_cast<struct s25*>(&esi10->f4);
+    edi13 = reinterpret_cast<struct s16*>(&edi9->f4);
+    esi14 = reinterpret_cast<struct s17*>(&esi10->f4);
     __asm__("mulsd xmm0, [esp+0x10]");
     edi13->f0 = esi14->f0;
-    edi15 = reinterpret_cast<struct s26*>(&edi13->f4);
-    esi16 = reinterpret_cast<struct s27*>(&esi14->f4);
+    edi15 = reinterpret_cast<struct s18*>(&edi13->f4);
+    esi16 = reinterpret_cast<struct s19*>(&esi14->f4);
     fun_80482e0("%f", v17, v18, __return_address(), a1, a2);
     edi15->f0 = esi16->f0;
-    edi19 = reinterpret_cast<struct s28*>(&edi15->f4);
-    esi20 = reinterpret_cast<struct s29*>(&esi16->f4);
+    edi19 = reinterpret_cast<struct s20*>(&edi15->f4);
+    esi20 = reinterpret_cast<struct s21*>(&esi16->f4);
     __asm__("mulsd xmm0, [esp+0x10]");
     edi19->f0 = esi20->f0;
-    edi21 = reinterpret_cast<struct s30*>(&edi19->f4);
-    esi22 = reinterpret_cast<struct s31*>(&esi20->f4);
+    edi21 = reinterpret_cast<struct s22*>(&edi19->f4);
+    esi22 = reinterpret_cast<struct s23*>(&esi20->f4);
     fun_80482e0("%f", v23, v24, __return_address(), a1, a2);
     edi21->f0 = esi22->f0;
-    edi25 = reinterpret_cast<struct s32*>(&edi21->f4);
-    esi26 = reinterpret_cast<struct s33*>(&esi22->f4);
+    edi25 = reinterpret_cast<struct s24*>(&edi21->f4);
+    esi26 = reinterpret_cast<struct s25*>(&esi22->f4);
     __asm__("mulsd xmm0, [esp+0x10]");
     edi25->f0 = esi26->f0;
-    edi27 = reinterpret_cast<struct s34*>(&edi25->f4);
-    esi28 = reinterpret_cast<struct s35*>(&esi26->f4);
+    edi27 = reinterpret_cast<struct s26*>(&edi25->f4);
+    esi28 = reinterpret_cast<struct s27*>(&esi26->f4);
     fun_80482e0("%f", v29, v30, __return_address(), a1, a2);
     edi27->f0 = esi28->f0;
     __asm__("mulsd xmm0, [0x8048988]");
@@ -638,13 +588,53 @@ void converting_between_floats_l2() {
     return;
 }
 
+struct s28 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s29 {
+    signed char[4] pad4;
+    int32_t f4;
+};
+
+struct s30 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s31 {
+    signed char[4] pad4;
+    int32_t f4;
+};
+
+struct s32 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s33 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s34 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s35 {
+    int32_t f0;
+    int32_t f4;
+};
+
 struct s36 {
     int32_t f0;
     int32_t f4;
 };
 
 struct s37 {
-    signed char[4] pad4;
+    int32_t f0;
     int32_t f4;
 };
 
@@ -654,7 +644,7 @@ struct s38 {
 };
 
 struct s39 {
-    signed char[4] pad4;
+    int32_t f0;
     int32_t f4;
 };
 
@@ -738,141 +728,101 @@ struct s55 {
     int32_t f4;
 };
 
-struct s56 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s57 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s58 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s59 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s60 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s61 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s62 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s63 {
-    int32_t f0;
-    int32_t f4;
-};
-
 int32_t basic_operations(int32_t a1, int32_t a2) {
     int32_t* edi3;
     int32_t* esi4;
-    struct s36* edi5;
-    struct s37* edi6;
-    struct s38* esi7;
-    struct s39* esi8;
-    struct s40* edi9;
-    struct s41* esi10;
+    struct s28* edi5;
+    struct s29* edi6;
+    struct s30* esi7;
+    struct s31* esi8;
+    struct s32* edi9;
+    struct s33* esi10;
     uint32_t v11;
     int32_t v12;
-    struct s42* edi13;
-    struct s43* esi14;
-    struct s44* edi15;
-    struct s45* esi16;
+    struct s34* edi13;
+    struct s35* esi14;
+    struct s36* edi15;
+    struct s37* esi16;
     uint32_t v17;
     int32_t v18;
-    struct s46* edi19;
-    struct s47* esi20;
-    struct s48* edi21;
-    struct s49* esi22;
-    struct s50* edi23;
-    struct s51* esi24;
+    struct s38* edi19;
+    struct s39* esi20;
+    struct s40* edi21;
+    struct s41* esi22;
+    struct s42* edi23;
+    struct s43* esi24;
     uint32_t v25;
     int32_t v26;
-    struct s52* edi27;
-    struct s53* esi28;
-    struct s54* edi29;
-    struct s55* esi30;
+    struct s44* edi27;
+    struct s45* esi28;
+    struct s46* edi29;
+    struct s47* esi30;
     uint32_t v31;
     int32_t v32;
-    struct s56* edi33;
-    struct s57* esi34;
-    struct s58* edi35;
-    struct s59* esi36;
+    struct s48* edi33;
+    struct s49* esi34;
+    struct s50* edi35;
+    struct s51* esi36;
     uint32_t v37;
     int32_t v38;
-    struct s60* edi39;
-    struct s61* esi40;
-    struct s62* edi41;
-    struct s63* esi42;
+    struct s52* edi39;
+    struct s53* esi40;
+    struct s54* edi41;
+    struct s55* esi42;
     uint32_t v43;
     int32_t v44;
     uint32_t v45;
     int32_t v46;
 
     *edi3 = *esi4;
-    edi5 = reinterpret_cast<struct s36*>(&edi6->f4);
-    esi7 = reinterpret_cast<struct s38*>(&esi8->f4);
+    edi5 = reinterpret_cast<struct s28*>(&edi6->f4);
+    esi7 = reinterpret_cast<struct s30*>(&esi8->f4);
     __asm__("addsd xmm0, [esp+0x18]");
     edi5->f0 = esi7->f0;
-    edi9 = reinterpret_cast<struct s40*>(&edi5->f4);
-    esi10 = reinterpret_cast<struct s41*>(&esi7->f4);
+    edi9 = reinterpret_cast<struct s32*>(&edi5->f4);
+    esi10 = reinterpret_cast<struct s33*>(&esi7->f4);
     fun_80482e0("%f", v11, v12, __return_address(), a1, a2);
     edi9->f0 = esi10->f0;
-    edi13 = reinterpret_cast<struct s42*>(&edi9->f4);
-    esi14 = reinterpret_cast<struct s43*>(&esi10->f4);
+    edi13 = reinterpret_cast<struct s34*>(&edi9->f4);
+    esi14 = reinterpret_cast<struct s35*>(&esi10->f4);
     __asm__("subsd xmm0, [esp+0x18]");
     edi13->f0 = esi14->f0;
-    edi15 = reinterpret_cast<struct s44*>(&edi13->f4);
-    esi16 = reinterpret_cast<struct s45*>(&esi14->f4);
+    edi15 = reinterpret_cast<struct s36*>(&edi13->f4);
+    esi16 = reinterpret_cast<struct s37*>(&esi14->f4);
     fun_80482e0("%f", v17, v18, __return_address(), a1, a2);
     edi15->f0 = esi16->f0;
-    edi19 = reinterpret_cast<struct s46*>(&edi15->f4);
-    esi20 = reinterpret_cast<struct s47*>(&esi16->f4);
+    edi19 = reinterpret_cast<struct s38*>(&edi15->f4);
+    esi20 = reinterpret_cast<struct s39*>(&esi16->f4);
     edi19->f0 = esi20->f0;
-    edi21 = reinterpret_cast<struct s48*>(&edi19->f4);
-    esi22 = reinterpret_cast<struct s49*>(&esi20->f4);
+    edi21 = reinterpret_cast<struct s40*>(&edi19->f4);
+    esi22 = reinterpret_cast<struct s41*>(&esi20->f4);
     __asm__("subsd xmm0, xmm1");
     edi21->f0 = esi22->f0;
-    edi23 = reinterpret_cast<struct s50*>(&edi21->f4);
-    esi24 = reinterpret_cast<struct s51*>(&esi22->f4);
+    edi23 = reinterpret_cast<struct s42*>(&edi21->f4);
+    esi24 = reinterpret_cast<struct s43*>(&esi22->f4);
     fun_80482e0("%f", v25, v26, __return_address(), a1, a2);
     edi23->f0 = esi24->f0;
-    edi27 = reinterpret_cast<struct s52*>(&edi23->f4);
-    esi28 = reinterpret_cast<struct s53*>(&esi24->f4);
+    edi27 = reinterpret_cast<struct s44*>(&edi23->f4);
+    esi28 = reinterpret_cast<struct s45*>(&esi24->f4);
     __asm__("mulsd xmm0, [esp+0x18]");
     edi27->f0 = esi28->f0;
-    edi29 = reinterpret_cast<struct s54*>(&edi27->f4);
-    esi30 = reinterpret_cast<struct s55*>(&esi28->f4);
+    edi29 = reinterpret_cast<struct s46*>(&edi27->f4);
+    esi30 = reinterpret_cast<struct s47*>(&esi28->f4);
     fun_80482e0("%f", v31, v32, __return_address(), a1, a2);
     edi29->f0 = esi30->f0;
-    edi33 = reinterpret_cast<struct s56*>(&edi29->f4);
-    esi34 = reinterpret_cast<struct s57*>(&esi30->f4);
+    edi33 = reinterpret_cast<struct s48*>(&edi29->f4);
+    esi34 = reinterpret_cast<struct s49*>(&esi30->f4);
     __asm__("divsd xmm0, [esp+0x18]");
     edi33->f0 = esi34->f0;
-    edi35 = reinterpret_cast<struct s58*>(&edi33->f4);
-    esi36 = reinterpret_cast<struct s59*>(&esi34->f4);
+    edi35 = reinterpret_cast<struct s50*>(&edi33->f4);
+    esi36 = reinterpret_cast<struct s51*>(&esi34->f4);
     fun_80482e0("%f", v37, v38, __return_address(), a1, a2);
     edi35->f0 = esi36->f0;
-    edi39 = reinterpret_cast<struct s60*>(&edi35->f4);
-    esi40 = reinterpret_cast<struct s61*>(&esi36->f4);
+    edi39 = reinterpret_cast<struct s52*>(&edi35->f4);
+    esi40 = reinterpret_cast<struct s53*>(&esi36->f4);
     edi39->f0 = esi40->f0;
-    edi41 = reinterpret_cast<struct s62*>(&edi39->f4);
-    esi42 = reinterpret_cast<struct s63*>(&esi40->f4);
+    edi41 = reinterpret_cast<struct s54*>(&edi39->f4);
+    esi42 = reinterpret_cast<struct s55*>(&esi40->f4);
     __asm__("divsd xmm1, xmm0");
     edi41->f0 = esi42->f0;
     fun_80482e0("%f", v43, v44, __return_address(), a1, a2);

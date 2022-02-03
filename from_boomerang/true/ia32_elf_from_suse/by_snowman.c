@@ -238,7 +238,7 @@ void** quotearg_buffer_restyled(void** ecx, void** a2, int32_t a3, int32_t* a4, 
             *reinterpret_cast<void***>(edx18) = reinterpret_cast<void**>(39);
         }
         v12 = reinterpret_cast<void**>(1);
-        v13 = reinterpret_cast<void**>(0x804a3c0);
+        v13 = reinterpret_cast<void**>("'");
         goto addr_8048f90_6;
     case 3:
         edx18 = v9;
@@ -248,7 +248,7 @@ void** quotearg_buffer_restyled(void** ecx, void** a2, int32_t a3, int32_t* a4, 
         }
         v12 = reinterpret_cast<void**>(1);
         v15 = reinterpret_cast<void**>(1);
-        v13 = reinterpret_cast<void**>(0x804a3bc);
+        v13 = reinterpret_cast<void**>("\"");
         goto addr_8048f90_6;
     case 4:
         v15 = reinterpret_cast<void**>(1);
@@ -652,13 +652,14 @@ void** quotearg_buffer_restyled(void** ecx, void** a2, int32_t a3, int32_t* a4, 
             edi61 = v13;
             esi62 = reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v11) + reinterpret_cast<unsigned char>(v28));
             zf63 = ecx == ecx;
-            while (ecx) {
+            do {
+                if (!ecx) 
+                    break;
                 --ecx;
                 zf63 = *esi62 == *reinterpret_cast<void***>(edi61);
-                *reinterpret_cast<void***>(edi61) = *esi62;
                 ++edi61;
                 ++esi62;
-            }
+            } while (zf63);
             if (!zf63) 
                 goto addr_8049000_21; else 
                 goto addr_8048fe8_109;
@@ -929,69 +930,71 @@ void usage(int32_t a1, void** a2, void** a3, void** a4, int32_t a5, int32_t a6) 
     int32_t ecx43;
     void** eax44;
 
-    eax9 = fun_8048828(0, 0x8049f28, 5, v7, v8);
+    eax9 = fun_8048828(0, "Usage: %s [ignored command line arguments]\n  or:  %s OPTION\nExit with a status code indicating success.\n\nThese option names may not be abbreviated.\n\n", 5, v7, v8);
     edx10 = program_name;
     fun_80488f8(eax9, edx10, edx10);
-    eax13 = fun_8048828(0, 0x8049fc0, 5, v11, v12);
+    eax13 = fun_8048828(0, "      --help     display this help and exit\n", 5, v11, v12);
     edx14 = stdout;
     fun_80487f8(eax13, edx14, 5, v15, v16);
-    eax19 = fun_8048828(0, 0x8049ff0, 5, v17, v18);
+    eax19 = fun_8048828(0, "      --version  output version information and exit\n", 5, v17, v18);
     edx20 = stdout;
     fun_80487f8(eax19, edx20, 5, v21, v22);
-    eax25 = fun_8048828(0, 0x804a026, 5, v23, v24);
-    fun_80488f8(eax25, 0x804a03d, 5);
-    fun_8048938(a1, 0x804a03d, 5, v26, v27, v28, ebp29, __return_address());
+    eax25 = fun_8048828(0, "\nReport bugs to <%s>.\n", 5, v23, v24);
+    fun_80488f8(eax25, "bug-coreutils@gnu.org", 5);
+    fun_8048938(a1, "bug-coreutils@gnu.org", 5, v26, v27, v28, ebp29, __return_address());
     ebx30 = reinterpret_cast<void**>(5);
     eax31 = g5;
     program_name = eax31;
     fun_8048838(6, 0x804a03c);
-    v32 = reinterpret_cast<void**>(0x804a053);
-    fun_8048898("coreutils", 0x804a053);
-    fun_80488e8("coreutils", 0x804a053);
-    atexit(0x8048c80, 0x804a053);
+    v32 = reinterpret_cast<void**>("/usr/share/locale");
+    fun_8048898("coreutils", "/usr/share/locale");
+    fun_80488e8("coreutils", "/usr/share/locale");
+    atexit(0x8048c80, "/usr/share/locale");
     if (!0) 
         goto addr_8048bc7_2;
     while (1) {
-        eax33 = fun_8048818("POSIXLY_CORRECT", v32, 0x804a099, 0x804a093, "Jim Meyering", 0);
+        eax33 = fun_8048818("POSIXLY_CORRECT", v32, "GNU coreutils", "5.2.1", "Jim Meyering", 0);
         zf34 = eax33 == 0;
         if (!zf34) {
             addr_8048bc7_2:
-            fun_8048938(0, v32, 0x804a099, 0x804a093, "Jim Meyering", 0, v35, v36);
+            fun_8048938(0, v32, "GNU coreutils", "5.2.1", "Jim Meyering", 0, v35, v36);
             continue;
         } else {
-            edi37 = reinterpret_cast<void***>(0x804a075);
+            edi37 = reinterpret_cast<void***>("--help");
             v38 = *reinterpret_cast<void***>(ebx30 + 4);
             esi39 = v38;
             ecx40 = 7;
-            while (ecx40) {
+            do {
+                if (!ecx40) 
+                    break;
                 --ecx40;
                 zf34 = *reinterpret_cast<void***>(esi39) == *edi37;
-                *edi37 = *reinterpret_cast<void***>(esi39);
                 ++edi37;
                 ++esi39;
-            }
+            } while (zf34);
             if (!zf34) 
                 goto addr_8048bfd_8;
         }
-        usage(0, v32, 0x804a099, 0x804a093, "Jim Meyering", 0);
+        usage(0, v32, "GNU coreutils", "5.2.1", "Jim Meyering", 0);
         ebx30 = *reinterpret_cast<void***>(ebx30 + 4);
         v38 = ebx30;
         addr_8048bfd_8:
         esi41 = v38;
-        edi42 = reinterpret_cast<void***>(0x804a07c);
+        edi42 = reinterpret_cast<void***>("--version");
         ecx43 = 10;
-        while (ecx43) {
+        do {
+            if (!ecx43) 
+                break;
             --ecx43;
             zf34 = *reinterpret_cast<void***>(esi41) == *edi42;
-            *edi42 = *reinterpret_cast<void***>(esi41);
             ++edi42;
             ++esi41;
-        }
+        } while (zf34);
         if (zf34) {
             eax44 = stdout;
-            ebx30 = reinterpret_cast<void**>(0x804a099);
-            v32 = reinterpret_cast<void**>(0x804a0a7);
-            version_etc(eax44, 0x804a0a7, 0x804a099, 0x804a093, "Jim Meyering", 0);
+            ebx30 = reinterpret_cast<void**>("GNU coreutils");
+            v32 = reinterpret_cast<void**>("true");
+            version_etc(eax44, "true", "GNU coreutils", "5.2.1", "Jim Meyering", 0);
             goto addr_8048bc7_2;
         }
     }
@@ -1076,7 +1079,7 @@ void version_etc_va(void** a1, void** a2, void** a3, void** a4, void** a5) {
             goto 0x8049a7a;
         }
     }
-    eax18 = reinterpret_cast<void**>(0x804a3f8);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, %s, and others.\n");
     addr_8049951_11:
     v19 = eax18;
     addr_8049955_12:
@@ -1096,25 +1099,25 @@ void version_etc_va(void** a1, void** a2, void** a3, void** a4, void** a5) {
         **reinterpret_cast<signed char**>(esi8 + 20) = 10;
         *reinterpret_cast<signed char**>(esi8 + 20) = *reinterpret_cast<signed char**>(esi8 + 20) + 1;
     }
-    fun_8048828(0, 0x804a434, 5, v16, v13);
+    fun_8048828(0, "This is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n", 5, v16, v13);
     goto fputs_unlocked;
-    eax18 = reinterpret_cast<void**>(0x804a607);
+    eax18 = reinterpret_cast<void**>("Written by %s.\n");
     goto addr_8049951_11;
-    v19 = reinterpret_cast<void**>(0x804a5f0);
+    v19 = reinterpret_cast<void**>("Written by %s and %s.\n");
     goto addr_8049955_12;
-    eax18 = reinterpret_cast<void**>(0x804a5d4);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, and %s.\n");
     goto addr_8049951_11;
-    eax18 = reinterpret_cast<void**>(0x804a5a8);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, %s,\nand %s.\n");
     goto addr_8049951_11;
-    eax18 = reinterpret_cast<void**>(0x804a584);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, and %s.\n");
     goto addr_8049951_11;
-    v19 = reinterpret_cast<void**>(0x804a55c);
+    v19 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, %s, and %s.\n");
     goto addr_8049955_12;
-    v19 = reinterpret_cast<void**>(0x804a530);
+    v19 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, %s, %s, and %s.\n");
     goto addr_8049955_12;
-    eax18 = reinterpret_cast<void**>(0x804a500);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, %s, %s, %s,\nand %s.\n");
     goto addr_8049951_11;
-    eax18 = reinterpret_cast<void**>(0x804a4cc);
+    eax18 = reinterpret_cast<void**>("Written by %s, %s, %s,\n%s, %s, %s, %s,\n%s, and %s.\n");
     goto addr_8049951_11;
 }
 
@@ -1150,7 +1153,7 @@ void** gettext_quote() {
     *reinterpret_cast<unsigned char*>(&eax4) = reinterpret_cast<uint1_t>(edx7 == 6);
     eax8 = reinterpret_cast<unsigned char>(eax4) & edx6;
     if (*reinterpret_cast<unsigned char*>(&eax8) & 1) {
-        ecx5 = reinterpret_cast<void**>(0x804a3bc);
+        ecx5 = reinterpret_cast<void**>("\"");
     }
     return ecx5;
 }
@@ -1203,14 +1206,14 @@ void xalloc_die(void** a1, void** a2) {
     if (!eax3) 
         goto addr_8049b2f_2;
     while (1) {
-        eax3(v4, 0, 0x804a0bc, v5);
+        eax3(v4, 0, "%s", v5);
         addr_8049b2f_2:
-        eax7 = fun_8048828(0, 0x804a648, 5, v5, v6);
+        eax7 = fun_8048828(0, "memory exhausted", 5, v5, v6);
         v5 = eax7;
         eax8 = exit_failure;
         v4 = eax8;
-        fun_8048998(v4, 0, 0x804a0bc, v5, v9);
-        eax3 = fun_8048878(v4, 0, 0x804a0bc, v5, v10);
+        fun_8048998(v4, 0, "%s", v5, v9);
+        eax3 = fun_8048878(v4, 0, "%s", v5, v10);
     }
 }
 
@@ -1485,12 +1488,12 @@ struct s2 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
+    int32_t f14;
+    int32_t f18;
+    int32_t f1c;
     int32_t f20;
-    int32_t f24;
-    int32_t f28;
-    int32_t f32;
 };
 
 struct s2* quoting_options_from_style() {
@@ -1517,12 +1520,12 @@ struct s2* quoting_options_from_style() {
     ebx4->f0 = v2;
     ebx4->f4 = v6;
     ebx4->f8 = v7;
-    ebx4->f12 = v8;
-    ebx4->f16 = v9;
-    ebx4->f20 = v10;
-    ebx4->f24 = v11;
-    ebx4->f28 = v12;
-    ebx4->f32 = v13;
+    ebx4->fc = v8;
+    ebx4->f10 = v9;
+    ebx4->f14 = v10;
+    ebx4->f18 = v11;
+    ebx4->f1c = v12;
+    ebx4->f20 = v13;
     return ebx4;
 }
 
@@ -1912,12 +1915,12 @@ struct s3 {
     void** f4;
     signed char[3] pad8;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
-    signed char* f20;
-    signed char* f24;
-    int32_t f28;
-    int32_t f32;
+    int32_t fc;
+    int32_t f10;
+    signed char* f14;
+    signed char* f18;
+    int32_t f1c;
+    int32_t f20;
 };
 
 void** fun_8048df1(struct s3* a1) {
@@ -1944,12 +1947,12 @@ void** fun_8048df1(struct s3* a1) {
     *reinterpret_cast<void***>(eax12) = edx13->f0;
     *reinterpret_cast<void***>(eax12 + 4) = edx13->f4;
     *reinterpret_cast<int32_t*>(eax12 + 8) = edx13->f8;
-    *reinterpret_cast<int32_t*>(eax12 + 12) = edx13->f12;
-    *reinterpret_cast<int32_t*>(eax12 + 16) = edx13->f16;
-    *reinterpret_cast<signed char**>(eax12 + 20) = edx13->f20;
-    *reinterpret_cast<signed char**>(eax12 + 24) = edx13->f24;
-    *reinterpret_cast<int32_t*>(eax12 + 28) = edx13->f28;
-    *reinterpret_cast<int32_t*>(eax12 + 32) = edx13->f32;
+    *reinterpret_cast<int32_t*>(eax12 + 12) = edx13->fc;
+    *reinterpret_cast<int32_t*>(eax12 + 16) = edx13->f10;
+    *reinterpret_cast<signed char**>(eax12 + 20) = edx13->f14;
+    *reinterpret_cast<signed char**>(eax12 + 24) = edx13->f18;
+    *reinterpret_cast<int32_t*>(eax12 + 28) = edx13->f1c;
+    *reinterpret_cast<int32_t*>(eax12 + 32) = edx13->f20;
     *eax7 = esi8;
     return eax12;
 }
@@ -2061,16 +2064,16 @@ void fun_8048c7d() {
         ebx2 = *eax13;
     }
     if (reinterpret_cast<int32_t>(ebx2) >= reinterpret_cast<int32_t>(0)) {
-        eax16 = fun_8048828(0, 0x804a0ac, 5, v14, v15);
+        eax16 = fun_8048828(0, "write error", 5, v14, v15);
         eax17 = file_name;
         if (!eax17) {
             eax18 = exit_failure;
-            fun_8048998(eax18, ebx2, 0x804a0bc, eax16, v19);
+            fun_8048998(eax18, ebx2, "%s", eax16, v19);
             return;
         } else {
-            eax20 = quotearg_colon(eax17, 0x804a0ac, 5);
+            eax20 = quotearg_colon(eax17, "write error", 5);
             eax21 = exit_failure;
-            fun_8048998(eax21, ebx2, 0x804a0b8, eax20, eax16);
+            fun_8048998(eax21, ebx2, "%s: %s", eax20, eax16);
             goto addr_8048d20_3;
         }
     }

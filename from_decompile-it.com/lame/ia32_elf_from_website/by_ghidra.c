@@ -57,7 +57,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[15];
+    char _unused2[56];
 };
 
 struct _IO_marker {
@@ -134,12 +134,12 @@ struct blockAlign_struct {
 
 struct IFF_AIFF_struct {
     short numChannels;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x2;
+    undefined field2_0x3;
     ulong numSampleFrames;
     short sampleSize;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field5_0xa;
+    undefined field6_0xb;
     double sampleRate;
     ulong sampleType;
     blockAlign blkAlgn;
@@ -148,15 +148,15 @@ struct IFF_AIFF_struct {
 typedef struct IFF_AIFF_struct IFF_AIFF;
 
 typedef enum sound_file_format_e {
-    sf_mp123=7,
-    sf_mp3=6,
-    sf_mp2=5,
-    sf_ogg=8,
-    sf_mp1=4,
-    sf_aiff=3,
-    sf_wave=2,
     sf_unknown=0,
-    sf_raw=1
+    sf_raw=1,
+    sf_wave=2,
+    sf_aiff=3,
+    sf_mp1=4,
+    sf_mp2=5,
+    sf_mp3=6,
+    sf_mp123=7,
+    sf_ogg=8
 } sound_file_format_e;
 
 typedef enum sound_file_format_e sound_file_format;
@@ -169,8 +169,8 @@ typedef struct stat stat, *Pstat;
 struct stat {
     __dev_t st_dev;
     ushort __pad1;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field2_0xa;
+    undefined field3_0xb;
     __ino_t __st_ino;
     __mode_t st_mode;
     __nlink_t st_nlink;
@@ -178,8 +178,8 @@ struct stat {
     __gid_t st_gid;
     __dev_t st_rdev;
     ushort __pad2;
-    undefined field_0x2a;
-    undefined field_0x2b;
+    undefined field11_0x2a;
+    undefined field12_0x2b;
     __off64_t st_size;
     __blksize_t st_blksize;
     __blkcnt64_t st_blocks;
@@ -260,36 +260,36 @@ typedef long __clock_t;
 typedef __clock_t clock_t;
 
 typedef enum preset_mode_e {
+    ABR_8=8,
     ABR_320=320,
-    MEDIUM_FAST=1007,
+    V9=410,
     VBR_10=410,
+    V8=420,
+    VBR_20=420,
+    V7=430,
+    VBR_30=430,
+    V6=440,
+    VBR_40=440,
+    V5=450,
+    VBR_50=450,
+    V4=460,
+    VBR_60=460,
+    V3=470,
+    VBR_70=470,
+    V2=480,
+    VBR_80=480,
+    V1=490,
     VBR_90=490,
     V0=500,
-    VBR_70=470,
-    V1=490,
-    V2=480,
-    VBR_50=450,
-    V3=470,
-    V4=460,
-    STANDARD=1001,
-    VBR_30=430,
-    V5=450,
-    V6=440,
+    VBR_100=500,
     R3MIX=1000,
-    V7=430,
-    EXTREME_FAST=1005,
-    V8=420,
-    V9=410,
-    MEDIUM=1006,
+    STANDARD=1001,
+    EXTREME=1002,
     INSANE=1003,
     STANDARD_FAST=1004,
-    EXTREME=1002,
-    VBR_80=480,
-    ABR_8=8,
-    VBR_60=460,
-    VBR_40=440,
-    VBR_20=420,
-    VBR_100=500
+    EXTREME_FAST=1005,
+    MEDIUM=1006,
+    MEDIUM_FAST=1007
 } preset_mode_e;
 
 typedef struct lame_global_struct lame_global_struct, *Plame_global_struct;
@@ -315,29 +315,29 @@ struct mp3data_struct {
 };
 
 typedef enum vbr_mode_e {
-    vbr_abr=3,
-    vbr_mtrh=4,
+    vbr_off=0,
     vbr_mt=1,
     vbr_rh=2,
-    vbr_off=0,
+    vbr_abr=3,
     vbr_default=4,
+    vbr_mtrh=4,
     vbr_max_indicator=5
 } vbr_mode_e;
 
 typedef lame_global_flags * lame_t;
 
 typedef enum asm_optimizations_e {
+    MMX=1,
     AMD_3DNOW=2,
-    SSE=3,
-    MMX=1
+    SSE=3
 } asm_optimizations_e;
 
 typedef enum MPEG_mode_e {
+    STEREO=0,
     JOINT_STEREO=1,
+    DUAL_CHANNEL=2,
     MONO=3,
     NOT_SET=4,
-    STEREO=0,
-    DUAL_CHANNEL=2,
     MAX_INDICATOR=5
 } MPEG_mode_e;
 
@@ -352,15 +352,15 @@ typedef __off64_t off_t;
 // WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
 
 typedef enum TextEncoding {
-    TENC_UCS2=2,
     TENC_RAW=0,
-    TENC_LATIN1=1
+    TENC_LATIN1=1,
+    TENC_UCS2=2
 } TextEncoding;
 
 typedef enum ID3TAG_MODE {
-    ID3TAG_MODE_V2_ONLY=2,
     ID3TAG_MODE_DEFAULT=0,
-    ID3TAG_MODE_V1_ONLY=1
+    ID3TAG_MODE_V1_ONLY=1,
+    ID3TAG_MODE_V2_ONLY=2
 } ID3TAG_MODE;
 
 typedef enum ByteOrder {
@@ -395,35 +395,35 @@ struct timezone {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
     SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
     SHT_STRTAB=3,
     SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_HASH=5,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -442,81 +442,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -538,17 +538,17 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 struct Elf32_Phdr {
@@ -567,6 +567,16 @@ typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 struct Elf32_Rel {
     dword r_offset; // location to apply the relocation action
     dword r_info; // the symbol table index and the type of relocation
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -2350,8 +2360,7 @@ int parse_args_from_string(lame_global_flags *gfp,char *p,char *inPath,char *out
     while( true ) {
       r[c] = q;
       c = c + 1;
-      while ((*q != ' ' && (*q != '\0'))) {
-        q = q + 1;
+      for (; (*q != ' ' && (*q != '\0')); q = q + 1) {
       }
       if (*q == '\0') break;
       *q = '\0';
@@ -2588,7 +2597,7 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
         iread = iread + (0x480 - skip_end);
         skip_end = 0x480;
       }
-      while (i < iread) {
+      for (; i < iread; i = i + 1) {
         if (disable_wav_header == 0) {
           Write16BitsLowHigh(outf,(int)Buffer[i]);
           if (channels == 2) {
@@ -2601,7 +2610,6 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
             (*pcVar5)(outf,Buffer[1] + i,2);
           }
         }
-        i = i + 1;
       }
       if (flush_write == 1) {
         fflush((FILE *)outf);
@@ -2695,9 +2703,8 @@ void print_trailing_info(lame_global_flags *gf)
       fVar2 = (float)iVar3 / 10.0;
       fVar5 = (float10)lame_get_noclipScale(gf);
       if (fVar2 <= 0.0) {
-        if (fVar2 <= -0.09999999) {
-          console_printf(
-                         "\nThe waveform does not clip and is at least %.1fdB away from full scale.\n"
+        if (fVar2 <= -0.1) {
+          console_printf("\nThe waveform does not clip and is at least %.1fdB away from full scale.\n"
                          ,SUB84((double)-fVar2,0),(int)((ulonglong)(double)-fVar2 >> 0x20));
         }
         else {
@@ -2709,12 +2716,10 @@ void print_trailing_info(lame_global_flags *gf)
       else {
         uVar6 = SUB84((double)fVar2,0);
         uVar7 = (undefined4)((ulonglong)(double)fVar2 >> 0x20);
-        console_printf(
-                       "WARNING: clipping occurs at the current gain. Set your decoder to decrease\n         the  gain  by  at least %.1fdB or encode again "
+        console_printf("WARNING: clipping occurs at the current gain. Set your decoder to decrease\n         the  gain  by  at least %.1fdB or encode again "
                        ,uVar6,uVar7);
         if ((float)fVar5 <= 0.0) {
-          console_printf(
-                         "using --scale <arg>\n         (For   a   suggestion  on  the  optimal  value  of  <arg>  encode\n         with  --scale 1  first)\n"
+          console_printf("using --scale <arg>\n         (For   a   suggestion  on  the  optimal  value  of  <arg>  encode\n         with  --scale 1  first)\n"
                          ,uVar6,uVar7);
         }
         else {
@@ -2863,8 +2868,7 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
             }
           }
           else {
-            error_printf(
-                         "Error writing ID3v1 tag: buffer too small: buffer size=%d  ID3v1 size=%d\n"
+            error_printf("Error writing ID3v1 tag: buffer too small: buffer size=%d  ID3v1 size=%d\n"
                          ,0x24000,__n_00);
           }
           if (silent < 1) {
@@ -2941,10 +2945,9 @@ void parse_nogap_filenames(int nogapout,char *inPath,char *outPath,char *outdir)
   
   strcpy(outPath,outdir);
   if (nogapout != 0) {
-    slasher = inPath + 0xffd;
-    while (((*slasher != '/' && (*slasher != '\\')) && ((slasher != inPath && (*slasher != ':')))))
-    {
-      slasher = slasher + -1;
+    for (slasher = inPath + 0xffd;
+        ((*slasher != '/' && (*slasher != '\\')) && ((slasher != inPath && (*slasher != ':'))));
+        slasher = slasher + -1) {
     }
     if ((slasher == inPath) ||
        (((sVar1 = strlen(outPath), outPath[sVar1 - 1] != '/' &&
@@ -3038,10 +3041,8 @@ int main(int argc,char **argv)
   local_303c = 0;
   local_3040 = 200;
   memset(acStack832564,0,0xc80c8);
-  local_3044 = 0;
-  while ((int)local_3044 < 200) {
+  for (local_3044 = 0; (int)local_3044 < 200; local_3044 = local_3044 + 1) {
     local_336c[local_3044] = acStack832564 + local_3044 * 0x1001;
-    local_3044 = local_3044 + 1;
   }
   memset(local_3027,0,0x1001);
   frontend_open_console();
@@ -3080,11 +3081,12 @@ int main(int argc,char **argv)
           local_303c = 1;
         }
         if (local_3040 < 1) {
-          local_3048 = init_files(local_3030,local_3027,local_1025,&local_3034,&local_3038);
+          local_3048 = (FILE *)init_files(local_3030,local_3027,local_1025,&local_3034,&local_3038);
         }
         else {
           parse_nogap_filenames(local_303c,local_336c[0],local_1025,local_2026);
-          local_3048 = init_files(local_3030,local_336c[0],local_1025,&local_3034,&local_3038);
+          local_3048 = (FILE *)init_files(local_3030,local_336c[0],local_1025,&local_3034,
+                                          &local_3038);
         }
         if (local_3048 == (FILE *)0x0) {
           lame_close(local_3030);
@@ -3111,39 +3113,36 @@ int main(int argc,char **argv)
             if (iVar1 == 0) {
               if (local_3040 < 1) {
                 brhist_init_package(local_3030);
-                local_302c = lame_encoder(local_3030,local_3048,0,local_3027,local_1025);
-                fclose((FILE *)local_3048);
+                local_302c = lame_encoder(local_3030,(FILE *)local_3048,0,local_3027,local_1025);
+                fclose(local_3048);
                 close_infile();
               }
               else {
-                local_3044 = 0;
-                while ((int)local_3044 < local_3040) {
+                for (local_3044 = 0; (int)local_3044 < local_3040; local_3044 = local_3044 + 1) {
                   local_304c = (uint)(local_3040 - 1U != local_3044);
                   if (0 < (int)local_3044) {
                     parse_nogap_filenames(local_303c,local_336c[local_3044],local_1025,local_2026);
-                    local_3048 = init_files(local_3030,local_336c[local_3044],local_1025,&local_3034
-                                            ,&local_3038);
+                    local_3048 = (FILE *)init_files(local_3030,local_336c[local_3044],local_1025,
+                                                    &local_3034,&local_3038);
                     lame_init_bitstream(local_3030);
                   }
                   brhist_init_package(local_3030);
                   lame_set_nogap_total(local_3030,local_3040);
                   lame_set_nogap_currentindex(local_3030,local_3044);
-                  local_302c = lame_encoder(local_3030,local_3048,local_304c,local_336c[local_3044],
-                                            local_1025);
-                  fclose((FILE *)local_3048);
+                  local_302c = lame_encoder(local_3030,(FILE *)local_3048,local_304c,
+                                            local_336c[local_3044],local_1025);
+                  fclose(local_3048);
                   close_infile();
-                  local_3044 = local_3044 + 1;
                 }
               }
             }
+            else if (mp3_delay_set == 0) {
+              lame_decoder(local_3030,(FILE *)local_3048,0,local_3027,local_1025,&local_3034,
+                           &local_3038);
+            }
             else {
-              if (mp3_delay_set == 0) {
-                lame_decoder(local_3030,local_3048,0,local_3027,local_1025,&local_3034,&local_3038);
-              }
-              else {
-                lame_decoder(local_3030,local_3048,mp3_delay,local_3027,local_1025,&local_3034,
-                             &local_3038);
-              }
+              lame_decoder(local_3030,(FILE *)local_3048,mp3_delay,local_3027,local_1025,&local_3034
+                           ,&local_3038);
             }
             lame_close(local_3030);
             frontend_close_console();
@@ -3432,7 +3431,7 @@ void set_debug_file(char *fn)
 {
   if (Console_IO.Report_fp == (FILE *)0x0) {
     Console_IO.Report_fp = (FILE *)fopen64(fn,"a");
-    if (Console_IO.Report_fp == (FILE *)0x0) {
+    if ((FILE *)Console_IO.Report_fp == (FILE *)0x0) {
       error_printf("Error: can\'t open for debug info: %s\n",fn);
     }
     else {
@@ -3486,14 +3485,13 @@ int fskip(FILE *fp,long offset,int whence)
   iVar2 = fstat64(iVar2,(stat64 *)&file_stat);
   if ((iVar2 == 0) && ((file_stat.st_mode & 0xf000) == 0x1000)) {
     if ((whence == 1) && (-1 < offset)) {
-      while (0 < offset) {
+      for (; 0 < offset; offset = offset - sVar4) {
         sVar3 = min_size_t(0x1000,offset);
         sVar4 = fread(buffer,1,sVar3,(FILE *)fp);
         if (sVar4 == 0) {
           iVar2 = -1;
           goto LAB_0804ce7a;
         }
-        offset = offset - sVar4;
       }
       iVar2 = 0;
     }
@@ -3506,27 +3504,24 @@ int fskip(FILE *fp,long offset,int whence)
     if (iVar2 == 0) {
       iVar2 = 0;
     }
+    else if ((whence == 1) && (-1 < offset)) {
+      for (; 0 < offset; offset = offset - sVar4) {
+        sVar3 = min_size_t(0x1000,offset);
+        sVar4 = fread(buffer,1,sVar3,(FILE *)fp);
+        if (sVar4 == 0) {
+          iVar2 = -1;
+          goto LAB_0804ce7a;
+        }
+      }
+      iVar2 = 0;
+    }
     else {
-      if ((whence == 1) && (-1 < offset)) {
-        while (0 < offset) {
-          sVar3 = min_size_t(0x1000,offset);
-          sVar4 = fread(buffer,1,sVar3,(FILE *)fp);
-          if (sVar4 == 0) {
-            iVar2 = -1;
-            goto LAB_0804ce7a;
-          }
-          offset = offset - sVar4;
-        }
-        iVar2 = 0;
+      if (silent < 10) {
+        error_printf(
+                    "fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n"
+                    );
       }
-      else {
-        if (silent < 10) {
-          error_printf(
-                      "fskip problem: Mostly the return status of functions is not evaluate so it is more secure to polute <stderr>.\n"
-                      );
-        }
-        iVar2 = -1;
-      }
+      iVar2 = -1;
     }
   }
 LAB_0804ce7a:
@@ -3549,15 +3544,15 @@ FILE * init_outfile(char *outPath,int decode)
   iVar1 = strcmp(outPath,"-");
   pFVar2 = stdout;
   if (iVar1 == 0) {
-    lame_set_stream_binary_mode(stdout);
+    lame_set_stream_binary_mode((FILE *)stdout);
   }
   else {
-    pFVar2 = (FILE *)fopen64(outPath,"w+b");
+    pFVar2 = fopen64(outPath,"w+b");
     if (pFVar2 == (FILE *)0x0) {
       pFVar2 = (FILE *)0x0;
     }
   }
-  return pFVar2;
+  return (FILE *)pFVar2;
 }
 
 
@@ -3569,7 +3564,7 @@ void init_infile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_pad
   global.num_samples_read = 0;
   global.pcmbitwidth = in_bitwidth;
   global.pcmswapbytes = swapbytes;
-  global.pcm_is_unsigned_8bit = ZEXT14(in_signed != 1);
+  global.pcm_is_unsigned_8bit = (int)(in_signed != 1);
   global.musicin = OpenSndFile(gfp,inPath,enc_delay,enc_padding);
   return;
 }
@@ -3592,15 +3587,13 @@ void SwapBytesInWords(short *ptr,int short_words)
   ulong val;
   
   p = (ulong *)ptr;
-  while (1 < short_words) {
+  for (; 1 < short_words; short_words = short_words + -2) {
     *p = (*p & 0xff00ff) << 8 | *p >> 8 & 0xff00ff;
-    short_words = short_words + -2;
     p = p + 1;
   }
   ptr = (short *)p;
-  while (0 < short_words) {
+  for (; 0 < short_words; short_words = short_words + -1) {
     *ptr = (ushort)((uint)(int)*ptr >> 8) & 0xff | (ushort)((int)*ptr << 8);
-    short_words = short_words + -1;
     ptr = ptr + 1;
   }
   return;
@@ -3678,35 +3671,29 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
           i = i + -1;
         }
       }
-      else {
-        if (iVar1 == 1) {
-          memset(buffer16[1],0,samples_read * 2);
-          while (-1 < i + -1) {
-            p = p + -1;
-            buffer16[-1][i + 0x47f] = (short)((uint)*p >> 0x10);
-            i = i + -1;
-          }
-        }
-      }
-    }
-    else {
-      if (iVar1 == 2) {
+      else if (iVar1 == 1) {
+        memset(buffer16[1],0,samples_read * 2);
         while (-1 < i + -1) {
-          (*buffer)[i + 0x47f] = p[-1];
-          p = p + -2;
-          buffer[-1][i + 0x47f] = *p;
+          p = p + -1;
+          buffer16[-1][i + 0x47f] = (short)((uint)*p >> 0x10);
           i = i + -1;
         }
       }
-      else {
-        if (iVar1 == 1) {
-          memset(buffer[1],0,samples_read * 4);
-          while (-1 < i + -1) {
-            p = p + -1;
-            buffer[-1][i + 0x47f] = *p;
-            i = i + -1;
-          }
-        }
+    }
+    else if (iVar1 == 2) {
+      while (-1 < i + -1) {
+        (*buffer)[i + 0x47f] = p[-1];
+        p = p + -2;
+        buffer[-1][i + 0x47f] = *p;
+        i = i + -1;
+      }
+    }
+    else if (iVar1 == 1) {
+      memset(buffer[1],0,samples_read * 4);
+      while (-1 < i + -1) {
+        p = p + -1;
+        buffer[-1][i + 0x47f] = *p;
+        i = i + -1;
       }
     }
   }
@@ -3735,10 +3722,8 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
         i = i + -1;
       }
     }
-    else {
-      if (iVar1 == 1) {
-        memset(buffer[1],0,samples_read * 4);
-      }
+    else if (iVar1 == 1) {
+      memset(buffer[1],0,samples_read * 4);
     }
   }
   if (uVar2 != 0xffffffff) {
@@ -3939,9 +3924,9 @@ LAB_0804da8b:
                     // WARNING: Subroutine does not return
     exit(1);
   }
-  swap_byte_order = ZEXT14(in_endian != ByteOrderLittleEndian);
+  swap_byte_order = (int)(in_endian != ByteOrderLittleEndian);
   if (global.pcmswapbytes != 0) {
-    swap_byte_order = ZEXT14(swap_byte_order == 0);
+    swap_byte_order = (int)(swap_byte_order == 0);
   }
   iVar1 = global.pcmbitwidth;
   if (global.pcmbitwidth < 0) {
@@ -3990,8 +3975,7 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
   Read32BitsHighLow(sf);
   iVar2 = Read32BitsHighLow(sf);
   if (iVar2 == 0x57415645) {
-    loop_sanity = 0;
-    while (loop_sanity < 0x14) {
+    for (loop_sanity = 0; loop_sanity < 0x14; loop_sanity = loop_sanity + 1) {
       iVar2 = Read32BitsHighLow(sf);
       if (iVar2 == 0x666d7420) {
         iVar2 = Read32Bits(sf);
@@ -4028,7 +4012,6 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
           return -1;
         }
       }
-      loop_sanity = loop_sanity + 1;
     }
     if (bVar1) {
       if (format_tag == 1) {
@@ -4159,16 +4142,14 @@ LAB_0804e172:
         if (dataType == 0x736f7774) {
           global.pcmswapbytes = swapbytes;
         }
+        else if (dataType == 0x74776f73) {
+          global.pcmswapbytes = (int)(swapbytes == 0);
+        }
         else {
-          if (dataType == 0x74776f73) {
-            global.pcmswapbytes = ZEXT14(swapbytes == 0);
+          if (dataType != 0x4e4f4e45) {
+            return -1;
           }
-          else {
-            if (dataType != 0x4e4f4e45) {
-              return -1;
-            }
-            global.pcmswapbytes = ZEXT14(swapbytes == 0);
-          }
+          global.pcmswapbytes = (int)(swapbytes == 0);
         }
         if ((seen_comm_chunk == 0) || ((seen_ssnd_chunk == 0 && (aiff_info.numSampleFrames != 0))))
         {
@@ -4268,7 +4249,7 @@ int parse_file_header(lame_global_flags *gfp,FILE *sf)
   
   iVar1 = Read32BitsHighLow(sf);
   global.count_samples_carefully = 0;
-  global.pcm_is_unsigned_8bit = ZEXT14(in_signed != 1);
+  global.pcm_is_unsigned_8bit = (int)(in_signed != 1);
   if (iVar1 == 0x52494646) {
     iVar1 = parse_wave_header(gfp,sf);
     if (0 < iVar1) {
@@ -4279,22 +4260,18 @@ int parse_file_header(lame_global_flags *gfp,FILE *sf)
       error_printf("Warning: corrupt or unsupported WAVE format\n");
     }
   }
-  else {
-    if (iVar1 == 0x464f524d) {
-      iVar1 = parse_aiff_header(gfp,sf);
-      if (0 < iVar1) {
-        global.count_samples_carefully = 1;
-        return 3;
-      }
-      if ((iVar1 < 0) && (silent < 10)) {
-        error_printf("Warning: corrupt or unsupported AIFF format\n");
-      }
+  else if (iVar1 == 0x464f524d) {
+    iVar1 = parse_aiff_header(gfp,sf);
+    if (0 < iVar1) {
+      global.count_samples_carefully = 1;
+      return 3;
     }
-    else {
-      if (silent < 10) {
-        error_printf("Warning: unsupported audio format\n");
-      }
+    if ((iVar1 < 0) && (silent < 10)) {
+      error_printf("Warning: corrupt or unsupported AIFF format\n");
     }
+  }
+  else if (silent < 10) {
+    error_printf("Warning: unsupported audio format\n");
   }
   return 0;
 }
@@ -4340,7 +4317,7 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
   }
   else {
     musicin = (FILE *)fopen64(inPath,"rb");
-    if (musicin == (FILE *)0x0) {
+    if ((FILE *)musicin == (FILE *)0x0) {
       if (silent < 10) {
         error_printf("Could not find \"%s\".\n",inPath);
       }
@@ -4408,14 +4385,12 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
         local_3c = (ulong)(longlong)ROUND(dVar1 / (double)(iVar3 * 2));
         lame_set_num_samples(gfp,local_3c);
       }
-      else {
-        if (0 < mp3input_data.bitrate) {
-          dVar2 = (double)mp3input_data.bitrate;
-          iVar3 = lame_get_in_samplerate(gfp);
-          local_3c = (ulong)(longlong)ROUND((double)iVar3 * ((dVar1 * 8.0) / (dVar2 * 1000.0)));
-          lame_set_num_samples(gfp,local_3c);
-          mp3input_data.nsamp = local_3c;
-        }
+      else if (0 < mp3input_data.bitrate) {
+        dVar2 = (double)mp3input_data.bitrate;
+        iVar3 = lame_get_in_samplerate(gfp);
+        local_3c = (ulong)(longlong)ROUND((double)iVar3 * ((dVar1 * 8.0) / (dVar2 * 1000.0)));
+        lame_set_num_samples(gfp,local_3c);
+        mp3input_data.nsamp = local_3c;
       }
     }
   }
@@ -4456,51 +4431,41 @@ int is_syncword_mp123(void *headerptr)
           }
           input_format = sf_mp2;
         }
+        else if (bVar1 == 6) {
+          if ((input_format != sf_mp1) && (input_format != sf_mp123)) {
+            return 0;
+          }
+          input_format = sf_mp1;
+        }
         else {
-          if (bVar1 == 6) {
-            if ((input_format != sf_mp1) && (input_format != sf_mp123)) {
-              return 0;
-            }
-            input_format = sf_mp1;
+          if (bVar1 != 2) {
+            return 0;
           }
-          else {
-            if (bVar1 != 2) {
-              return 0;
-            }
-            if ((input_format != sf_mp3) && (input_format != sf_mp123)) {
-              return 0;
-            }
-            input_format = sf_mp3;
+          if ((input_format != sf_mp3) && (input_format != sf_mp123)) {
+            return 0;
           }
+          input_format = sf_mp3;
         }
         if ((*(byte *)((int)headerptr + 1) & 6) == 0) {
           iVar2 = 0;
         }
+        else if ((*(byte *)((int)headerptr + 2) & 0xf0) == 0xf0) {
+          iVar2 = 0;
+        }
+        else if ((*(byte *)((int)headerptr + 2) & 0xc) == 0xc) {
+          iVar2 = 0;
+        }
+        else if ((((*(byte *)((int)headerptr + 1) & 0x18) == 0x18) &&
+                 ((*(byte *)((int)headerptr + 1) & 6) == 4)) &&
+                (((int)""[*(byte *)((int)headerptr + 2) >> 4] >>
+                  (*(byte *)((int)headerptr + 3) >> 6) & 1U) != 0)) {
+          iVar2 = 0;
+        }
+        else if ((*(byte *)((int)headerptr + 3) & 3) == 2) {
+          iVar2 = 0;
+        }
         else {
-          if ((*(byte *)((int)headerptr + 2) & 0xf0) == 0xf0) {
-            iVar2 = 0;
-          }
-          else {
-            if ((*(byte *)((int)headerptr + 2) & 0xc) == 0xc) {
-              iVar2 = 0;
-            }
-            else {
-              if ((((*(byte *)((int)headerptr + 1) & 0x18) == 0x18) &&
-                  ((*(byte *)((int)headerptr + 1) & 6) == 4)) &&
-                 (((int)""[*(byte *)((int)headerptr + 2) >> 4] >>
-                   (*(byte *)((int)headerptr + 3) >> 6) & 1U) != 0)) {
-                iVar2 = 0;
-              }
-              else {
-                if ((*(byte *)((int)headerptr + 3) & 3) == 2) {
-                  iVar2 = 0;
-                }
-                else {
-                  iVar2 = 1;
-                }
-              }
-            }
-          }
+          iVar2 = 1;
         }
       }
     }
@@ -4598,10 +4563,8 @@ int lame_decode_initfile(FILE *fd,mp3data_struct *mp3data,int *enc_delay,int *en
         iVar3 = -1;
         goto LAB_0804ee55;
       }
-      i = 0;
-      while (i < 3) {
+      for (i = 0; i < 3; i = i + 1) {
         buf[i] = buf[i + 1];
-        i = i + 1;
       }
       sVar2 = fread(buf + 3,1,1,(FILE *)fd);
     } while (sVar2 == 1);
@@ -4852,14 +4815,12 @@ int lame_version_print(FILE *fp)
       fprintf((FILE *)fp,"LAME %s version %s (%s)\n\n",__s,__s_00,__s_01);
     }
   }
+  else if (sVar1 == 0) {
+    fprintf((FILE *)fp,"LAME version %s\n%*s(%s)\n\n",__s_00,0x4e - sVar3,&DAT_08055592,__s_01);
+  }
   else {
-    if (sVar1 == 0) {
-      fprintf((FILE *)fp,"LAME version %s\n%*s(%s)\n\n",__s_00,0x4e - sVar3,&DAT_08055592,__s_01);
-    }
-    else {
-      fprintf((FILE *)fp,"LAME %s version %s\n%*s(%s)\n\n",__s,__s_00,0x4e - sVar3,&DAT_08055592,
-              __s_01);
-    }
+    fprintf((FILE *)fp,"LAME %s version %s\n%*s(%s)\n\n",__s,__s_00,0x4e - sVar3,&DAT_08055592,
+            __s_01);
   }
   return 0;
 }
@@ -4870,23 +4831,17 @@ int print_license(FILE *fp)
 
 {
   lame_version_print(fp);
-  fwrite(
-         "Can I use LAME in my commercial program?\n\nYes, you can, under the restrictions of the LGPL.  In particular, you\ncan include a compiled version of the LAME library (for example,\nlame.dll) with a commercial program.  Some notable requirements of\nthe LGPL:\n\n"
+  fwrite("Can I use LAME in my commercial program?\n\nYes, you can, under the restrictions of the LGPL.  In particular, you\ncan include a compiled version of the LAME library (for example,\nlame.dll) with a commercial program.  Some notable requirements of\nthe LGPL:\n\n"
          ,1,0xff,(FILE *)fp);
-  fwrite(
-         "1. In your program, you cannot include any source code from LAME, with\n   the exception of files whose only purpose is to describe the library\n   interface (such as lame.h).\n\n"
+  fwrite("1. In your program, you cannot include any source code from LAME, with\n   the exception of files whose only purpose is to describe the library\n   interface (such as lame.h).\n\n"
          ,1,0xaf,(FILE *)fp);
-  fwrite(
-         "2. Any modifications of LAME must be released under the LGPL.\n   The LAME project (www.mp3dev.org) would appreciate being\n   notified of any modifications.\n\n"
+  fwrite("2. Any modifications of LAME must be released under the LGPL.\n   The LAME project (www.mp3dev.org) would appreciate being\n   notified of any modifications.\n\n"
          ,1,0x9d,(FILE *)fp);
-  fwrite(
-         "3. You must give prominent notice that your program is:\n      A. using LAME (including version number)\n      B. LAME is under the LGPL\n      C. Provide a copy of the LGPL.  (the file COPYING contains the LGPL)\n      D. Provide a copy of LAME source, or a pointer where the LAME\n         source can be obtained (such as www.mp3dev.org)\n   An example of prominent notice would be an \"About the LAME encoding engine\"\n   button in some pull down menu within the executable of your program.\n\n"
+  fwrite("3. You must give prominent notice that your program is:\n      A. using LAME (including version number)\n      B. LAME is under the LGPL\n      C. Provide a copy of the LGPL.  (the file COPYING contains the LGPL)\n      D. Provide a copy of LAME source, or a pointer where the LAME\n         source can be obtained (such as www.mp3dev.org)\n   An example of prominent notice would be an \"About the LAME encoding engine\"\n   button in some pull down menu within the executable of your program.\n\n"
          ,1,0x1e7,(FILE *)fp);
-  fwrite(
-         "4. If you determine that distribution of LAME requires a patent license,\n   you must obtain such license.\n\n\n"
+  fwrite("4. If you determine that distribution of LAME requires a patent license,\n   you must obtain such license.\n\n\n"
          ,1,0x6c,(FILE *)fp);
-  fwrite(
-         "*** IMPORTANT NOTE ***\n\nThe decoding functions provided in LAME use the mpglib decoding engine which\nis under the GPL.  They may not be used by any program not released under the\nGPL unless you obtain such permission from the MPG123 project (www.mpg123.de).\n\n"
+  fwrite("*** IMPORTANT NOTE ***\n\nThe decoding functions provided in LAME use the mpglib decoding engine which\nis under the GPL.  They may not be used by any program not released under the\nGPL unless you obtain such permission from the MPG123 project (www.mpg123.de).\n\n"
          ,1,0x103,(FILE *)fp);
   return 0;
 }
@@ -4898,7 +4853,6 @@ int usage(FILE *fp,char *ProgramName)
 {
   lame_version_print(fp);
   fprintf((FILE *)fp,
-                    
           "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nTry:\n     \"%s --help\"           for general usage information\n or:\n     \"%s --preset help\"    for information on suggested predefined settings\n or:\n     \"%s --longhelp\"\n  or \"%s -?\"              for a complete options list\n\n"
           ,ProgramName,ProgramName,ProgramName,ProgramName,ProgramName);
   return 0;
@@ -4913,19 +4867,15 @@ int short_help(lame_global_flags *gfp,FILE *fp,char *ProgramName)
   
   lame_version_print(fp);
   fprintf((FILE *)fp,
-                    
           "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nRECOMMENDED:\n    lame -V2 input.wav output.mp3\n\n"
           ,ProgramName);
   uVar1 = lame_get_VBR_q(gfp);
   fprintf((FILE *)fp,
-                    
           "OPTIONS:\n    -b bitrate      set the bitrate, default 128 kbps\n    -h              higher quality, but a little slower.  Recommended.\n    -f              fast mode (lower quality)\n    -V n            quality setting for VBR.  default n=%i\n                    0=high quality,bigger files. 9=smaller files\n"
           ,uVar1);
-  fwrite(
-         "    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n\n"
+  fwrite("    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n\n"
          ,1,0x141,(FILE *)fp);
-  fwrite(
-         "    --longhelp      full list of options\n\n    --license       print License information\n\n"
+  fwrite("    --longhelp      full list of options\n\n    --license       print License information\n\n"
          ,1,0x59,(FILE *)fp);
   return 0;
 }
@@ -4955,77 +4905,58 @@ int long_help(lame_global_flags *gfp,FILE *fp,char *ProgramName,int lessmode)
   
   lame_version_print(fp);
   fprintf((FILE *)fp,
-                    
           "usage: %s [options] <infile> [outfile]\n\n    <infile> and/or <outfile> can be \"-\", which means stdin/stdout.\n\nRECOMMENDED:\n    lame -V2 input.wav output.mp3\n\n"
           ,ProgramName);
-  fwrite(
-         "OPTIONS:\n  Input options:\n    --scale <arg>   scale input (multiply PCM data) by <arg>\n    --scale-l <arg> scale channel 0 (left) input (multiply PCM data) by <arg>\n    --scale-r <arg> scale channel 1 (right) input (multiply PCM data) by <arg>\n    --mp1input      input file is a MPEG Layer I   file\n    --mp2input      input file is a MPEG Layer II  file\n    --mp3input      input file is a MPEG Layer III file\n    --nogap <file1> <file2> <...>\n                    gapless encoding for a set of contiguous files\n    --nogapout <dir>\n                    output dir for gapless encoding (must precede --nogap)\n    --nogaptags     allow the use of VBR tags in gapless encoding\n"
+  fwrite("OPTIONS:\n  Input options:\n    --scale <arg>   scale input (multiply PCM data) by <arg>\n    --scale-l <arg> scale channel 0 (left) input (multiply PCM data) by <arg>\n    --scale-r <arg> scale channel 1 (right) input (multiply PCM data) by <arg>\n    --mp1input      input file is a MPEG Layer I   file\n    --mp2input      input file is a MPEG Layer II  file\n    --mp3input      input file is a MPEG Layer III file\n    --nogap <file1> <file2> <...>\n                    gapless encoding for a set of contiguous files\n    --nogapout <dir>\n                    output dir for gapless encoding (must precede --nogap)\n    --nogaptags     allow the use of VBR tags in gapless encoding\n"
          ,1,0x2a3,(FILE *)fp);
-  fwrite(
-         "\n  Input options for RAW PCM:\n    -r              input is raw pcm\n    -x              force byte-swapping of input\n    -s sfreq        sampling frequency of input file (kHz) - default 44.1 kHz\n    --bitwidth w    input bit width is w (default 16)\n    --signed        input is signed (default)\n    --unsigned      input is unsigned\n    --little-endian input is little-endian (default)\n    --big-endian    input is big-endian\n"
+  fwrite("\n  Input options for RAW PCM:\n    -r              input is raw pcm\n    -x              force byte-swapping of input\n    -s sfreq        sampling frequency of input file (kHz) - default 44.1 kHz\n    --bitwidth w    input bit width is w (default 16)\n    --signed        input is signed (default)\n    --unsigned      input is unsigned\n    --little-endian input is little-endian (default)\n    --big-endian    input is big-endian\n"
          ,1,0x1a9,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  Operational options:\n    -a              downmix from stereo to mono file for mono encoding\n    -m <mode>       (j)oint, (s)imple, (f)orce, (d)dual-mono, (m)ono\n                    default is (j) or (s) depending on bitrate\n                    joint  = joins the best possible of MS and LR stereo\n                    simple = force LR stereo on all frames\n                    force  = force MS stereo on all frames.\n    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n    --comp  <arg>   choose bitrate to achive a compression ratio of <arg>\n"
+  fwrite("  Operational options:\n    -a              downmix from stereo to mono file for mono encoding\n    -m <mode>       (j)oint, (s)imple, (f)orce, (d)dual-mono, (m)ono\n                    default is (j) or (s) depending on bitrate\n                    joint  = joins the best possible of MS and LR stereo\n                    simple = force LR stereo on all frames\n                    force  = force MS stereo on all frames.\n    --preset type   type must be \"medium\", \"standard\", \"extreme\", \"insane\",\n                    or a value for an average desired bitrate and depending\n                    on the value specified, appropriate quality settings will\n                    be used.\n                    \"--preset help\" gives more info on these\n    --comp  <arg>   choose bitrate to achive a compression ratio of <arg>\n"
          ,1,0x32c,(FILE *)fp);
-  fwrite(
-         "    --replaygain-fast   compute RG fast but slightly inaccurately (default)\n    --replaygain-accurate   compute RG more accurately and find the peak sample\n    --noreplaygain  disable ReplayGain analysis\n    --clipdetect    enable --replaygain-accurate and print a message whether\n                    clipping occurs and how far the waveform is from full scale\n"
+  fwrite("    --replaygain-fast   compute RG fast but slightly inaccurately (default)\n    --replaygain-accurate   compute RG more accurately and find the peak sample\n    --noreplaygain  disable ReplayGain analysis\n    --clipdetect    enable --replaygain-accurate and print a message whether\n                    clipping occurs and how far the waveform is from full scale\n"
          ,1,0x169,(FILE *)fp);
-  fwrite(
-         "    --flush         flush output stream as soon as possible\n    --freeformat    produce a free format bitstream\n    --decode        input=mp3 file, output=wav\n    -t              disable writing wav header when using --decode\n"
+  fwrite("    --flush         flush output stream as soon as possible\n    --freeformat    produce a free format bitstream\n    --decode        input=mp3 file, output=wav\n    -t              disable writing wav header when using --decode\n"
          ,1,0xe2,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  Verbosity:\n    --disptime <arg>print progress report every arg seconds\n    -S              don\'t print progress report, VBR histograms\n    --nohist        disable VBR histogram display\n    --silent        don\'t print anything on screen\n    --quiet         don\'t print anything on screen\n    --brief         print more useful information\n    --verbose       print a lot of useful information\n\n"
+  fwrite("  Verbosity:\n    --disptime <arg>print progress report every arg seconds\n    -S              don\'t print progress report, VBR histograms\n    --nohist        disable VBR histogram display\n    --silent        don\'t print anything on screen\n    --quiet         don\'t print anything on screen\n    --brief         print more useful information\n    --verbose       print a lot of useful information\n\n"
          ,1,0x18a,(FILE *)fp);
-  fwrite(
-         "  Noise shaping & psycho acoustic algorithms:\n    -q <arg>        <arg> = 0...9.  Default  -q 5 \n                    -q 0:  Highest quality, very slow \n                    -q 9:  Poor quality, but fast \n    -h              Same as -q 2.   Recommended.\n    -f              Same as -q 7.   Fast, ok quality\n"
+  fwrite("  Noise shaping & psycho acoustic algorithms:\n    -q <arg>        <arg> = 0...9.  Default  -q 5 \n                    -q 0:  Highest quality, very slow \n                    -q 9:  Poor quality, but fast \n    -h              Same as -q 2.   Recommended.\n    -f              Same as -q 7.   Fast, ok quality\n"
          ,1,0x131,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  CBR (constant bitrate, the default) options:\n    -b <bitrate>    set the bitrate in kbps, default 128 kbps\n    --cbr           enforce use of constant bitrate\n\n  ABR options:\n    --abr <bitrate> specify average bitrate desired (instead of quality)\n\n"
+  fwrite("  CBR (constant bitrate, the default) options:\n    -b <bitrate>    set the bitrate in kbps, default 128 kbps\n    --cbr           enforce use of constant bitrate\n\n  ABR options:\n    --abr <bitrate> specify average bitrate desired (instead of quality)\n\n"
          ,1,0xfb,(FILE *)fp);
   uVar1 = lame_get_VBR_q(gfp);
   fprintf((FILE *)fp,
-                    
           "  VBR options:\n    -V n            quality setting for VBR.  default n=%i\n                    0=high quality,bigger files. 9=smaller files\n    -v              the same as -V 4\n    --vbr-old       use old variable bitrate (VBR) routine\n    --vbr-new       use new variable bitrate (VBR) routine (default)\n"
           ,uVar1);
-  fwrite(
-         "    -b <bitrate>    specify minimum allowed bitrate, default  32 kbps\n    -B <bitrate>    specify maximum allowed bitrate, default 320 kbps\n    -F              strictly enforce the -b option, for use with players that\n                    do not support low bitrate mp3\n    -t              disable writing LAME Tag\n    -T              enable and force writing LAME Tag\n"
+  fwrite("    -b <bitrate>    specify minimum allowed bitrate, default  32 kbps\n    -B <bitrate>    specify maximum allowed bitrate, default 320 kbps\n    -F              strictly enforce the -b option, for use with players that\n                    do not support low bitrate mp3\n    -t              disable writing LAME Tag\n    -T              enable and force writing LAME Tag\n"
          ,1,0x170,(FILE *)fp);
   wait_for(fp,lessmode);
   fwrite("  PSY related:\n",1,0xf,(FILE *)fp);
-  fwrite(
-         "    --temporal-masking x   x=0 disables, x=1 enables temporal masking effect\n    --nssafejoint   M/S switching criterion\n    --nsmsfix <arg> M/S switching tuning [effective 0-3.5]\n    --interch x     adjust inter-channel masking ratio\n    --ns-bass x     adjust masking for sfbs  0 -  6 (long)  0 -  5 (short)\n    --ns-alto x     adjust masking for sfbs  7 - 13 (long)  6 - 10 (short)\n    --ns-treble x   adjust masking for sfbs 14 - 21 (long) 11 - 12 (short)\n"
+  fwrite("    --temporal-masking x   x=0 disables, x=1 enables temporal masking effect\n    --nssafejoint   M/S switching criterion\n    --nsmsfix <arg> M/S switching tuning [effective 0-3.5]\n    --interch x     adjust inter-channel masking ratio\n    --ns-bass x     adjust masking for sfbs  0 -  6 (long)  0 -  5 (short)\n    --ns-alto x     adjust masking for sfbs  7 - 13 (long)  6 - 10 (short)\n    --ns-treble x   adjust masking for sfbs 14 - 21 (long) 11 - 12 (short)\n"
          ,1,0x1cc,(FILE *)fp);
   fwrite("    --ns-sfb21 x    change ns-treble by x dB for sfb21\n",1,0x37,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  experimental switches:\n    -Y              lets LAME ignore noise in sfb21, like in CBR\n"
+  fwrite("  experimental switches:\n    -Y              lets LAME ignore noise in sfb21, like in CBR\n"
          ,1,0x5a,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  MP3 header/stream options:\n    -e <emp>        de-emphasis n/5/c  (obsolete)\n    -c              mark as copyright\n    -o              mark as non-original\n    -p              error protection.  adds 16 bit checksum to every frame\n                    (the checksum is computed correctly)\n    --nores         disable the bit reservoir\n    --strictly-enforce-ISO   comply as much as possible to ISO MPEG spec\n\n"
+  fwrite("  MP3 header/stream options:\n    -e <emp>        de-emphasis n/5/c  (obsolete)\n    -c              mark as copyright\n    -o              mark as non-original\n    -p              error protection.  adds 16 bit checksum to every frame\n                    (the checksum is computed correctly)\n    --nores         disable the bit reservoir\n    --strictly-enforce-ISO   comply as much as possible to ISO MPEG spec\n\n"
          ,1,0x19a,(FILE *)fp);
   fprintf((FILE *)fp,
-                    
           "  Filter options:\n  --lowpass <freq>        frequency(kHz), lowpass filter cutoff above freq\n  --lowpass-width <freq>  frequency(kHz) - default 15%% of lowpass freq\n  --highpass <freq>       frequency(kHz), highpass filter cutoff below freq\n  --highpass-width <freq> frequency(kHz) - default 15%% of highpass freq\n"
          );
   fwrite("  --resample <sfreq>  sampling frequency of output file(kHz)- default=automatic\n",1,0x50,
          (FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  ID3 tag options:\n    --tt <title>    audio/song title (max 30 chars for version 1 tag)\n    --ta <artist>   audio/song artist (max 30 chars for version 1 tag)\n    --tl <album>    audio/song album (max 30 chars for version 1 tag)\n    --ty <year>     audio/song year of issue (1 to 9999)\n    --tc <comment>  user-defined text (max 30 chars for v1 tag, 28 for v1.1)\n    --tn <track[/total]>   audio/song track number and (optionally) the total\n                           number of tracks on the original recording. (track\n                           and total each 1 to 255. just the track number\n                           creates v1.1 tag, providing a total forces v2.0).\n    --tg <genre>    audio/song genre (name or number in list)\n    --ti <file>     audio/song albumArt (jpeg/png/gif file, 128KB max, v2.3)\n    --tv <id=value> user-defined frame specified by id and value (v2.3 tag)\n"
+  fwrite("  ID3 tag options:\n    --tt <title>    audio/song title (max 30 chars for version 1 tag)\n    --ta <artist>   audio/song artist (max 30 chars for version 1 tag)\n    --tl <album>    audio/song album (max 30 chars for version 1 tag)\n    --ty <year>     audio/song year of issue (1 to 9999)\n    --tc <comment>  user-defined text (max 30 chars for v1 tag, 28 for v1.1)\n    --tn <track[/total]>   audio/song track number and (optionally) the total\n                           number of tracks on the original recording. (track\n                           and total each 1 to 255. just the track number\n                           creates v1.1 tag, providing a total forces v2.0).\n    --tg <genre>    audio/song genre (name or number in list)\n    --ti <file>     audio/song albumArt (jpeg/png/gif file, 128KB max, v2.3)\n    --tv <id=value> user-defined frame specified by id and value (v2.3 tag)\n"
          ,1,0x376,(FILE *)fp);
-  fwrite(
-         "    --add-id3v2     force addition of version 2 tag\n    --id3v1-only    add only a version 1 tag\n    --id3v2-only    add only a version 2 tag\n    --space-id3v1   pad version 1 tag with spaces instead of nulls\n    --pad-id3v2     same as \'--pad-id3v2-size 128\'\n    --pad-id3v2-size <value> adds version 2 tag, pad with extra <value> bytes\n    --genre-list    print alphabetically sorted ID3 genre list and exit\n    --ignore-tag-errors  ignore errors in values passed for tags\n\n"
+  fwrite("    --add-id3v2     force addition of version 2 tag\n    --id3v1-only    add only a version 1 tag\n    --id3v2-only    add only a version 2 tag\n    --space-id3v1   pad version 1 tag with spaces instead of nulls\n    --pad-id3v2     same as \'--pad-id3v2-size 128\'\n    --pad-id3v2-size <value> adds version 2 tag, pad with extra <value> bytes\n    --genre-list    print alphabetically sorted ID3 genre list and exit\n    --ignore-tag-errors  ignore errors in values passed for tags\n\n"
          ,1,0x1dc,(FILE *)fp);
-  fwrite(
-         "    Note: A version 2 tag will NOT be added unless one of the input fields\n    won\'t fit in a version 1 tag (e.g. the title string is longer than 30\n    characters), or the \'--add-id3v2\' or \'--id3v2-only\' options are used,\n    or output is redirected to stdout.\n\nMisc:\n    --license       print License information\n\n"
+  fwrite("    Note: A version 2 tag will NOT be added unless one of the input fields\n    won\'t fit in a version 1 tag (e.g. the title string is longer than 30\n    characters), or the \'--add-id3v2\' or \'--id3v2-only\' options are used,\n    or output is redirected to stdout.\n\nMisc:\n    --license       print License information\n\n"
          ,1,0x13c,(FILE *)fp);
   wait_for(fp,lessmode);
-  fwrite(
-         "  Platform specific:\n    --noasm <instructions> disable assembly optimizations for mmx/3dnow/sse\n"
+  fwrite("  Platform specific:\n    --noasm <instructions> disable assembly optimizations for mmx/3dnow/sse\n"
          ,1,0x61,(FILE *)fp);
   wait_for(fp,lessmode);
   display_bitrates(fp);
@@ -5053,11 +4984,9 @@ void display_bitrate(FILE *fp,char *version,int d,int indx)
   fprintf((FILE *)fp,
           "\nMPEG-%-3s layer III sample frequencies (kHz):  %2d  %2d  %g\nbitrates (kbps):",version,
           uVar2,uVar1,dVar3);
-  i = 1;
-  while (i <= nBitrates) {
+  for (i = 1; i <= nBitrates; i = i + 1) {
     fprintf((FILE *)fp," %2i",*(undefined4 *)(bitrate_table + (indx * 0x10 + i) * 4),uVar2,uVar1,
             dVar3);
-    i = i + 1;
   }
   fputc(10,(FILE *)fp);
   return;
@@ -5084,34 +5013,25 @@ void presets_longinfo_dm(FILE *msgfp)
   fwrite("\nThe --preset switches are aliases over LAME settings.\n\n\n",1,0x39,(FILE *)msgfp);
   fwrite("To activate these presets:\n\n   For VBR modes (generally highest quality):\n\n",1,0x4b,
          (FILE *)msgfp);
-  fwrite(
-         "     \"--preset medium\" This preset should provide near transparency\n                             to most people on most music.\n\n     \"--preset standard\" This preset should generally be transparent\n                             to most people on most music and is already\n                             quite high in quality.\n\n"
+  fwrite("     \"--preset medium\" This preset should provide near transparency\n                             to most people on most music.\n\n     \"--preset standard\" This preset should generally be transparent\n                             to most people on most music and is already\n                             quite high in quality.\n\n"
          ,1,0x143,(FILE *)msgfp);
-  fwrite(
-         "     \"--preset extreme\" If you have extremely good hearing and similar\n                             equipment, this preset will generally provide\n                             slightly higher quality than the \"standard\"\n                             mode.\n\n"
+  fwrite("     \"--preset extreme\" If you have extremely good hearing and similar\n                             equipment, this preset will generally provide\n                             slightly higher quality than the \"standard\"\n                             mode.\n\n"
          ,1,0xff,(FILE *)msgfp);
-  fwrite(
-         "   For CBR 320kbps (highest quality possible from the --preset switches):\n\n     \"--preset insane\"  This preset will usually be overkill for most\n                             people and most situations, but if you must\n                             have the absolute highest quality with no\n                             regard to filesize, this is the way to go.\n\n"
+  fwrite("   For CBR 320kbps (highest quality possible from the --preset switches):\n\n     \"--preset insane\"  This preset will usually be overkill for most\n                             people and most situations, but if you must\n                             have the absolute highest quality with no\n                             regard to filesize, this is the way to go.\n\n"
          ,1,0x16a,(FILE *)msgfp);
-  fwrite(
-         "   For ABR modes (high quality per given bitrate but not as high as VBR):\n\n     \"--preset <kbps>\"  Using this preset will usually give you good\n                             quality at a specified bitrate. Depending on the\n                             bitrate entered, this preset will determine the\n"
+  fwrite("   For ABR modes (high quality per given bitrate but not as high as VBR):\n\n     \"--preset <kbps>\"  Using this preset will usually give you good\n                             quality at a specified bitrate. Depending on the\n                             bitrate entered, this preset will determine the\n"
          ,1,299,(FILE *)msgfp);
-  fwrite(
-         "                             optimal settings for that particular situation.\n                             While this approach works, it is not nearly as\n                             flexible as VBR, and usually will not attain the\n                             same level of quality as VBR at higher bitrates.\n\n"
+  fwrite("                             optimal settings for that particular situation.\n                             While this approach works, it is not nearly as\n                             flexible as VBR, and usually will not attain the\n                             same level of quality as VBR at higher bitrates.\n\n"
          ,1,0x136,(FILE *)msgfp);
-  fwrite(
-         "The following options are also available for the corresponding profiles:\n\n   <fast>        standard\n   <fast>        extreme\n                 insane\n   <cbr> (ABR Mode) - The ABR Mode is implied. To use it,\n                      simply specify a bitrate. For example:\n                      \"--preset 185\" activates this\n                      preset and uses 185 as an average kbps.\n\n"
+  fwrite("The following options are also available for the corresponding profiles:\n\n   <fast>        standard\n   <fast>        extreme\n                 insane\n   <cbr> (ABR Mode) - The ABR Mode is implied. To use it,\n                      simply specify a bitrate. For example:\n                      \"--preset 185\" activates this\n                      preset and uses 185 as an average kbps.\n\n"
          ,1,0x17f,(FILE *)msgfp);
   fwrite("   \"fast\" - Enables the fast VBR mode for a particular profile.\n\n",1,0x41,
          (FILE *)msgfp);
-  fwrite(
-         "   \"cbr\"  - If you use the ABR mode (read above) with a significant\n            bitrate such as 80, 96, 112, 128, 160, 192, 224, 256, 320,\n            you can use the \"cbr\" option to force CBR mode encoding\n            instead of the standard abr mode. ABR does provide higher\n            quality but CBR may be useful in situations such as when\n            streaming an mp3 over the internet may be important.\n\n"
+  fwrite("   \"cbr\"  - If you use the ABR mode (read above) with a significant\n            bitrate such as 80, 96, 112, 128, 160, 192, 224, 256, 320,\n            you can use the \"cbr\" option to force CBR mode encoding\n            instead of the standard abr mode. ABR does provide higher\n            quality but CBR may be useful in situations such as when\n            streaming an mp3 over the internet may be important.\n\n"
          ,1,0x19c,(FILE *)msgfp);
-  fwrite(
-         "    For example:\n\n    \"--preset fast standard <input file> <output file>\"\n or \"--preset cbr 192 <input file> <output file>\"\n or \"--preset 172 <input file> <output file>\"\n or \"--preset extreme <input file> <output file>\"\n\n\n"
+  fwrite("    For example:\n\n    \"--preset fast standard <input file> <output file>\"\n or \"--preset cbr 192 <input file> <output file>\"\n or \"--preset 172 <input file> <output file>\"\n or \"--preset extreme <input file> <output file>\"\n\n\n"
          ,1,0xde,(FILE *)msgfp);
-  fwrite(
-         "A few aliases are also available for ABR mode:\nphone => 16kbps/mono        phon+/lw/mw-eu/sw => 24kbps/mono\nmw-us => 40kbps/mono        voice => 56kbps/mono\nfm/radio/tape => 112kbps    hifi => 160kbps\ncd => 192kbps               studio => 256kbps\n"
+  fwrite("A few aliases are also available for ABR mode:\nphone => 16kbps/mono        phon+/lw/mw-eu/sw => 24kbps/mono\nmw-us => 40kbps/mono        voice => 56kbps/mono\nfm/radio/tape => 112kbps    hifi => 160kbps\ncd => 192kbps               studio => 256kbps\n"
          ,1,0xf7,(FILE *)msgfp);
   return;
 }
@@ -5221,8 +5141,7 @@ int presets_set(lame_t gfp,int fast,int cbr,char *preset_name,char *ProgramName)
             error_printf(
                         "Error: You did not enter a valid profile and/or options with --preset\n\nAvailable profiles are:\n\n   <fast>        medium\n   <fast>        standard\n   <fast>        extreme\n                 insane\n          <cbr> (ABR Mode) - The ABR Mode is implied. To use it,\n                             simply specify a bitrate. For example:\n                             \"--preset 185\" activates this\n                             preset and uses 185 as an average kbps.\n\n"
                         );
-            error_printf(
-                         "    Some examples:\n\n or \"%s --preset fast standard <input file> <output file>\"\n or \"%s --preset cbr 192 <input file> <output file>\"\n or \"%s --preset 172 <input file> <output file>\"\n or \"%s --preset extreme <input file> <output file>\"\n\nFor further information try: \"%s --preset help\"\n"
+            error_printf("    Some examples:\n\n or \"%s --preset fast standard <input file> <output file>\"\n or \"%s --preset cbr 192 <input file> <output file>\"\n or \"%s --preset 172 <input file> <output file>\"\n or \"%s --preset extreme <input file> <output file>\"\n\nFor further information try: \"%s --preset help\"\n"
                          ,ProgramName,ProgramName,ProgramName,ProgramName,ProgramName);
             iVar1 = -1;
           }
@@ -5240,8 +5159,7 @@ int presets_set(lame_t gfp,int fast,int cbr,char *preset_name,char *ProgramName)
               return 0;
             }
             lame_version_print(Console_IO.Error_fp);
-            error_printf(
-                         "Error: The bitrate specified is out of the valid range for this preset\n\nWhen using this mode you must enter a value between \"32\" and \"320\"\n\nFor further information try: \"%s --preset help\"\n"
+            error_printf("Error: The bitrate specified is out of the valid range for this preset\n\nWhen using this mode you must enter a value between \"32\" and \"320\"\n\nFor further information try: \"%s --preset help\"\n"
                          ,ProgramName);
             iVar1 = -1;
           }
@@ -5449,23 +5367,17 @@ int set_id3_albumart(lame_t gfp,char *file_name)
     if (ret == 2) {
       error_printf("Insufficient memory for reading the albumart.\n");
     }
-    else {
-      if ((uint)ret < 3) {
-        if (ret == 1) {
-          error_printf("Could not find: \'%s\'.\n",file_name);
-        }
+    else if ((uint)ret < 3) {
+      if (ret == 1) {
+        error_printf("Could not find: \'%s\'.\n",file_name);
       }
-      else {
-        if (ret == 3) {
-          error_printf("Read error: \'%s\'.\n",file_name);
-        }
-        else {
-          if (ret == 4) {
-            error_printf("Unsupported image: \'%s\'.\nSpecify JPEG/PNG/GIF image (128KB maximum)\n",
-                         file_name);
-          }
-        }
-      }
+    }
+    else if (ret == 3) {
+      error_printf("Read error: \'%s\'.\n",file_name);
+    }
+    else if (ret == 4) {
+      error_printf("Unsupported image: \'%s\'.\nSpecify JPEG/PNG/GIF image (128KB maximum)\n",
+                   file_name);
     }
   }
   return ret;
@@ -5665,10 +5577,8 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
         if (*inPath == '\0') {
           strncpy(inPath,argv[iVar7],0x1001);
         }
-        else {
-          if (*outPath == '\0') {
-            strncpy(outPath,argv[iVar7],0x1001);
-          }
+        else if (*outPath == '\0') {
+          strncpy(outPath,argv[iVar7],0x1001);
         }
       }
       if (*token == '-') break;
@@ -5750,17 +5660,15 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           if (cVar1 == 'c') {
             lame_set_emphasis(gfp,3);
           }
+          else if (cVar1 == 'n') {
+            lame_set_emphasis(gfp,0);
+          }
           else {
-            if (cVar1 == 'n') {
-              lame_set_emphasis(gfp,0);
+            if (cVar1 != '5') {
+              error_printf("%s: -e emp must be n/5/c not %s\n",ProgramName,arg);
+              return -1;
             }
-            else {
-              if (cVar1 != '5') {
-                error_printf("%s: -e emp must be n/5/c not %s\n",ProgramName,arg);
-                return -1;
-              }
-              lame_set_emphasis(gfp,1);
-            }
+            lame_set_emphasis(gfp,1);
           }
           break;
         case 'f':
@@ -5960,7 +5868,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                   }
                                   iVar7 = local_strcasecmp(token,"phone");
                                   if (iVar7 == 0) {
-                                    iVar7 = presets_set((lame_t)gfp,0,0,token,ProgramName);
+                                    iVar7 = presets_set(gfp,0,0,token,ProgramName);
                                     if (iVar7 < 0) {
                                       return -1;
                                     }
@@ -5971,7 +5879,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                   else {
                                     iVar7 = local_strcasecmp(token,"voice");
                                     if (iVar7 == 0) {
-                                      iVar7 = presets_set((lame_t)gfp,0,0,token,ProgramName);
+                                      iVar7 = presets_set(gfp,0,0,token,ProgramName);
                                       if (iVar7 < 0) {
                                         return -1;
                                       }
@@ -6175,7 +6083,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                     iVar7 = local_strcasecmp(token,"ti");
                                                     if (iVar7 == 0) {
                                                       argUsed = 1;
-                                                      iVar7 = set_id3_albumart((lame_t)gfp,nextArg);
+                                                      iVar7 = set_id3_albumart(gfp,nextArg);
                                                       if ((iVar7 != 0) && (ignore_tag_errors == 0))
                                                       {
                                                         return -1;
@@ -6522,8 +6430,8 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
                                                         nextArg = "";
                                                       }
                                                     }
-                                                    iVar7 = presets_set((lame_t)gfp,fast,cbr,nextArg
-                                                                        ,ProgramName);
+                                                    iVar7 = presets_set(gfp,fast,cbr,nextArg,
+                                                                        ProgramName);
                                                     if (iVar7 < 0) {
                                                       return -1;
                                                     }
@@ -6848,11 +6756,10 @@ void ReadBytesSwapped(FILE *fp,char *p,int n)
     *pcVar4 = (char)iVar3;
     pcVar4 = pcVar4 + 1;
   }
-  while (pcVar4 = pcVar4 + -1, p < pcVar4) {
+  for (; pcVar4 = pcVar4 + -1, p < pcVar4; p = p + 1) {
     cVar1 = *p;
     *p = *pcVar4;
     *pcVar4 = cVar1;
-    p = p + 1;
   }
   return;
 }
@@ -6913,15 +6820,13 @@ double ConvertFromIeeeExtended(char *bytes)
   if (((uVar1 == 0) && (uVar2 == 0)) && (uVar3 == 0)) {
     f = 0.0;
   }
+  else if (uVar1 == 0x7fff) {
+    f = INFINITY;
+  }
   else {
-    if (uVar1 == 0x7fff) {
-      f = INFINITY;
-    }
-    else {
-      dVar4 = ldexp((double)(uVar2 + 0x80000000) + 2147483648.0,uVar1 - 0x401e);
-      dVar5 = ldexp((double)(uVar3 + 0x80000000) + 2147483648.0,uVar1 - 0x403e);
-      f = dVar4 + dVar5;
-    }
+    dVar4 = ldexp((double)(uVar2 + 0x80000000) + 2147483648.0,uVar1 - 0x401e);
+    dVar5 = ldexp((double)(uVar3 + 0x80000000) + 2147483648.0,uVar1 - 0x403e);
+    f = dVar4 + dVar5;
   }
   if (*bytes < '\0') {
     f = -f;
@@ -6982,13 +6887,11 @@ void ts_time_decompose(ulong time_in_sec,char padded_char)
   if (uVar1 == 0) {
     console_printf("   %2u:%02u%c",uVar2,time_in_sec % 0x3c,(int)padded_char);
   }
+  else if (uVar1 < 100) {
+    console_printf("%2lu:%02u:%02u%c",uVar1,uVar2,time_in_sec % 0x3c,(int)padded_char);
+  }
   else {
-    if (uVar1 < 100) {
-      console_printf("%2lu:%02u:%02u%c",uVar1,uVar2,time_in_sec % 0x3c,(int)padded_char);
-    }
-    else {
-      console_printf("%6lu h%c",uVar1,(int)padded_char);
-    }
+    console_printf("%6lu h%c",uVar1,(int)padded_char);
   }
   return;
 }
@@ -7248,10 +7151,8 @@ void encoder_progress(lame_global_flags *gf)
       }
       encoder_progress::lexical_block_0::lexical_block_0_0::last_time = GetRealTime();
     }
-    else {
-      if (iVar1 != (iVar1 / 100) * 100) {
-        return;
-      }
+    else if (iVar1 != (iVar1 / 100) * 100) {
+      return;
     }
     if (brhist != 0) {
       brhist_jump_back();
@@ -7308,13 +7209,11 @@ void decoder_progress(mp3data_struct *mp3data)
         iVar2 = 0x69;
       }
     }
+    else if ((decoder_progress::last & 1U) == 0) {
+      iVar2 = 0x69;
+    }
     else {
-      if ((decoder_progress::last & 1U) == 0) {
-        iVar2 = 0x69;
-      }
-      else {
-        iVar2 = 0x49;
-      }
+      iVar2 = 0x49;
     }
     if ((uVar1 & 2) == 0) {
       if ((decoder_progress::last & 2U) == 0) {
@@ -7324,13 +7223,11 @@ void decoder_progress(mp3data_struct *mp3data)
         puVar3 = &DAT_08059a89;
       }
     }
+    else if ((decoder_progress::last & 2U) == 0) {
+      puVar3 = &DAT_08059a89;
+    }
     else {
-      if ((decoder_progress::last & 2U) == 0) {
-        puVar3 = &DAT_08059a89;
-      }
-      else {
-        puVar3 = &DAT_08059a84;
-      }
+      puVar3 = &DAT_08059a84;
     }
     console_printf("  %s  %c",puVar3,iVar2,iVar4);
     decoder_progress::last = uVar1;
@@ -7671,10 +7568,8 @@ void brhist_disp(lame_global_flags *gf)
   
   lines_used = 0;
   sum = 0.0;
-  iVar2 = 0x12;
   pdVar3 = stat;
-  while (iVar2 != 0) {
-    iVar2 = iVar2 + -1;
+  for (iVar2 = 0x12; iVar2 != 0; iVar2 = iVar2 + -1) {
     *(undefined4 *)pdVar3 = 0;
     pdVar3 = (double *)((int)pdVar3 + 4);
   }
@@ -7686,8 +7581,7 @@ void brhist_disp(lame_global_flags *gf)
   lame_block_type_hist(gf,bl_type);
   most_often = 0;
   frames = 0;
-  i = 0;
-  while (i < 0xe) {
+  for (i = 0; i < 0xe; i = i + 1) {
     frames = frames + br_hist[i];
     sum = sum + (double)(brhist.kbps[i] * br_hist[i]);
     if (most_often < br_hist[i]) {
@@ -7696,10 +7590,8 @@ void brhist_disp(lame_global_flags *gf)
     if (br_hist[i] != 0) {
       lines_used = lines_used + 1;
     }
-    i = i + 1;
   }
-  i = 0;
-  while (i < 0xe) {
+  for (i = 0; i < 0xe; i = i + 1) {
     if ((br_hist[i] == 0) || (lines_used < 2)) {
       bVar1 = false;
     }
@@ -7709,12 +7601,9 @@ void brhist_disp(lame_global_flags *gf)
     if ((bVar1) || ((brhist.vbr_bitrate_min_index <= i && (i <= brhist.vbr_bitrate_max_index)))) {
       brhist_disp_line(i,br_hist[i],br_sm_hist[i][0],most_often,frames);
     }
-    i = i + 1;
   }
-  i = 0;
-  while (i < 4) {
+  for (i = 0; i < 4; i = i + 1) {
     st_frames = st_frames + st_mode[i];
-    i = i + 1;
   }
   if (0 < frames) {
     stat[0] = sum / (double)frames;

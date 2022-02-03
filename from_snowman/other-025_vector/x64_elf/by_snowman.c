@@ -112,7 +112,7 @@ void __do_global_dtors_aux() {
 struct s0 {
     uint64_t f0;
     uint64_t f8;
-    uint64_t f16;
+    uint64_t f10;
 };
 
 /* void std::vector<int, std::allocator<int> >::_M_range_insert<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::forward_iterator_tag) */
@@ -150,7 +150,7 @@ void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_E
         goto addr_4007e1_2;
     r14_5 = rdi->f8;
     r13_6 = reinterpret_cast<uint64_t>(reinterpret_cast<int64_t>(rcx - rdx) >> 2);
-    if (r13_6 <= reinterpret_cast<uint64_t>(reinterpret_cast<int64_t>(rdi->f16 - r14_5) >> 2)) {
+    if (r13_6 <= reinterpret_cast<uint64_t>(reinterpret_cast<int64_t>(rdi->f10 - r14_5) >> 2)) {
         r15_7 = reinterpret_cast<uint64_t>(reinterpret_cast<int64_t>(r14_5 - rsi) >> 2);
         if (r13_6 >= r15_7) {
             r8_8 = r15_7 * 4;
@@ -257,7 +257,7 @@ void _ZNSt6vectorIiSaIiEE15_M_range_insertIN9__gnu_cxx17__normal_iteratorIPiS1_E
     }
     rdi->f0 = r14_25;
     rdi->f8 = rbp31 + r13_30;
-    rdi->f16 = r14_25 + r15_20;
+    rdi->f10 = r14_25 + r15_20;
     goto addr_4007e1_2;
     addr_400888_24:
     if (r14_18) {

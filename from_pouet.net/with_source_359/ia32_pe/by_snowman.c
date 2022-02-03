@@ -33,7 +33,7 @@ void fun_401000(int32_t a1, int32_t a2, int32_t a3, int32_t a4, int32_t a5, stru
 
 struct s2 {
     signed char[254720] pad254720;
-    unsigned char f254720;
+    unsigned char f3e300;
 };
 
 struct s2* g4020d6 = reinterpret_cast<struct s2*>(0);
@@ -77,7 +77,7 @@ void fun_40101b(int32_t a1, int32_t a2, int32_t a3, int32_t a4, int32_t a5, stru
     __asm__("wait ");
     __asm__("fninit ");
     edi24 = g4020d6;
-    edi25 = &edi24->f254720;
+    edi25 = &edi24->f3e300;
     tmp16_26 = reinterpret_cast<int16_t>(*reinterpret_cast<int16_t*>(reinterpret_cast<int32_t>(&g4020ed) + 1) + 2);
     *reinterpret_cast<int16_t*>(reinterpret_cast<int32_t>(&g4020ed) + 1) = tmp16_26;
     __asm__("fild word [ebx]");

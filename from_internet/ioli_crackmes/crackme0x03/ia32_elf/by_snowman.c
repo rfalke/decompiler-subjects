@@ -84,7 +84,7 @@ void shift(void* a1) {
 
 struct s0 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 void fun_804838d(int32_t a1) {
@@ -95,7 +95,7 @@ void fun_804838d(int32_t a1) {
     if (eax2) {
         eax2();
     }
-    goto ebp3->0x4;
+    goto ebp3->f4;
 }
 
 int32_t strlen = 0x8048346;
@@ -128,14 +128,14 @@ void __do_global_dtors_aux();
 
 struct s1 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 void fun_80485cd(int32_t a1, int32_t a2, int32_t a3) {
     struct s1* ebp4;
 
     __do_global_dtors_aux();
-    goto ebp4->0x4;
+    goto ebp4->f4;
 }
 
 int32_t scanf = 0x8048336;

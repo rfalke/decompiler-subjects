@@ -160,7 +160,7 @@ void raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g();
 struct s0 {
     int64_t f0;
     signed char[480] pad488;
-    struct s0* f488;
+    struct s0* f1e8;
 };
 
 void** g32e8;
@@ -168,7 +168,7 @@ void** g32e8;
 struct s1 {
     int64_t f0;
     int64_t f8;
-    void** f16;
+    void** f10;
 };
 
 void** llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(void** rdi, void** rsi, void** rdx, ...) {
@@ -197,7 +197,7 @@ void** llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(void** rdi, void** rsi, void** rdx, ...)
             while (rax10) {
                 if (rax10->f0 <= 29) 
                     goto addr_401218_6;
-                rax10 = rax10->f488;
+                rax10 = rax10->f1e8;
             }
         } else {
             *reinterpret_cast<void***>(rdi + 0x2878) = rax8;
@@ -229,7 +229,7 @@ void** llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(void** rdi, void** rsi, void** rdx, ...)
     rcx15 = rax10->f0 + 1;
     rdi16 = reinterpret_cast<struct s1*>((rax10->f0 << 4) + reinterpret_cast<uint64_t>(rax10));
     rdi16->f8 = 0x1000;
-    rdi16->f16 = rdx9;
+    rdi16->f10 = rdx9;
     rax10->f0 = rcx15;
     goto v4;
 }
@@ -249,7 +249,7 @@ int64_t g2881;
 struct s2 {
     int64_t f0;
     int64_t f8;
-    void** f16;
+    void** f10;
 };
 
 void raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g() {
@@ -291,7 +291,7 @@ void raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g() {
             while (rax9) {
                 if (rax9->f0 <= 29) 
                     goto addr_401218_9;
-                rax9 = rax9->f488;
+                rax9 = rax9->f1e8;
             }
         } else {
             g2879 = rax7;
@@ -327,7 +327,7 @@ void raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g() {
     rcx19 = rax9->f0 + 1;
     rdi20 = reinterpret_cast<struct s2*>((rax9->f0 << 4) + reinterpret_cast<uint64_t>(rax9));
     rdi20->f8 = 0x1000;
-    rdi20->f16 = rdx8;
+    rdi20->f10 = rdx8;
     rax9->f0 = rcx19;
     goto v2;
 }
@@ -336,7 +336,7 @@ struct s3 {
     int64_t f0;
     void** f8;
     signed char[7] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s4 {
@@ -438,13 +438,13 @@ void** requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2(void** rdi, void** rsi) {
     do {
         if (rax11->f0 <= 29) 
             break;
-        rax11 = rax11->f488;
+        rax11 = rax11->f1e8;
     } while (rax11);
     goto addr_401376_20;
     rdx12 = rax11->f0 + 1;
     rcx13 = reinterpret_cast<struct s3*>((rax11->f0 << 4) + reinterpret_cast<uint64_t>(rax11));
     rcx13->f8 = rbp8;
-    rcx13->f16 = r12_3;
+    rcx13->f10 = r12_3;
     rax11->f0 = rdx12;
     addr_40140c_22:
     rsi14 = reinterpret_cast<uint64_t*>(reinterpret_cast<unsigned char>(rbp8) + reinterpret_cast<unsigned char>(r12_3));
@@ -535,7 +535,7 @@ struct s7 {
 struct s8 {
     void** f0;
     signed char[10407] pad10408;
-    void** f10408;
+    void** f28a8;
 };
 
 void** splitChunk2_UxUTh1oy39boKK4NPJIGnLQ(void** rdi, void** rsi, void** rdx) {
@@ -597,7 +597,7 @@ void** splitChunk2_UxUTh1oy39boKK4NPJIGnLQ(void** rdi, void** rsi, void** rdx) {
     *reinterpret_cast<uint32_t*>(&rax17) = *reinterpret_cast<unsigned char*>(&r12_15);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax17) + 4) = 0;
     r13_18 = reinterpret_cast<struct s8*>(reinterpret_cast<unsigned char>(rdi) + reinterpret_cast<uint64_t>(rax17 * 8));
-    rax19 = r13_18->f10408;
+    rax19 = r13_18->f28a8;
     if (rax19) {
         do {
             if (r12_15 == *reinterpret_cast<void***>(rax19 + 8)) 
@@ -617,8 +617,8 @@ void** splitChunk2_UxUTh1oy39boKK4NPJIGnLQ(void** rdi, void** rsi, void** rdx) {
     return rbx4;
     addr_401750_10:
     rax19 = llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(rdi, 80, rdx);
-    *reinterpret_cast<void***>(rax19) = r13_18->f10408;
-    r13_18->f10408 = rax19;
+    *reinterpret_cast<void***>(rax19) = r13_18->f28a8;
+    r13_18->f28a8 = rax19;
     *reinterpret_cast<void***>(rax19 + 8) = r12_15;
     goto addr_40171e_12;
 }
@@ -626,19 +626,19 @@ void** splitChunk2_UxUTh1oy39boKK4NPJIGnLQ(void** rdi, void** rsi, void** rdx) {
 struct s9 {
     void** f0;
     signed char[4215] pad4216;
-    void** f4216;
+    void** f1078;
 };
 
 struct s10 {
     void** f0;
     signed char[10407] pad10408;
-    void** f10408;
+    void** f28a8;
 };
 
 struct s11 {
     void** f0;
     signed char[4115] pad4116;
-    uint32_t f4116;
+    uint32_t f1014;
 };
 
 void** getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(void** rdi, void** rsi) {
@@ -869,12 +869,12 @@ void** getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(void** rdi, void** rsi) {
     rcx36 = reinterpret_cast<uint64_t>(reinterpret_cast<unsigned char>(rdx30) >> *reinterpret_cast<signed char*>(&ecx35)) - 32;
     rdx14 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rsi34) + 0xfffffffffffffffa);
     r8_37 = reinterpret_cast<struct s9*>(rbx4 + ((reinterpret_cast<unsigned char>(rdx14) << 5) + rcx36) * 8);
-    rdi38 = r8_37->f4216;
+    rdi38 = r8_37->f1078;
     *reinterpret_cast<void***>(rax29 + 16) = rdi38;
     if (rdi38) {
         *reinterpret_cast<void***>(rdi38 + 24) = rax29;
     }
-    r8_37->f4216 = rax29;
+    r8_37->f1078 = rax29;
     ecx39 = *reinterpret_cast<uint32_t*>(&rcx36) & 31;
     rdi40 = 1 << *reinterpret_cast<unsigned char*>(&ecx39);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(rbx4 + reinterpret_cast<int64_t>(rsi34) * 4) + 0xffc) = *reinterpret_cast<uint32_t*>(reinterpret_cast<uint64_t>(rbx4 + reinterpret_cast<int64_t>(rsi34) * 4) + 0xffc) | *reinterpret_cast<uint32_t*>(&rdi40);
@@ -888,7 +888,7 @@ void** getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(void** rdi, void** rsi) {
     *reinterpret_cast<uint32_t*>(&rax45) = *reinterpret_cast<unsigned char*>(&r14_43);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax45) + 4) = 0;
     r15_46 = reinterpret_cast<struct s10*>(reinterpret_cast<unsigned char>(rbx4) + reinterpret_cast<uint64_t>(rax45 * 8));
-    rax47 = r15_46->f10408;
+    rax47 = r15_46->f28a8;
     if (rax47) {
         do {
             if (r14_43 == *reinterpret_cast<void***>(rax47 + 8)) 
@@ -909,8 +909,8 @@ void** getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(void** rdi, void** rsi) {
     return r12_21;
     addr_401e80_48:
     rax47 = llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(rbx4, 80, rdx14);
-    *reinterpret_cast<void***>(rax47) = r15_46->f10408;
-    r15_46->f10408 = rax47;
+    *reinterpret_cast<void***>(rax47) = r15_46->f28a8;
+    r15_46->f28a8 = rax47;
     *reinterpret_cast<void***>(rax47 + 8) = r14_43;
     goto addr_401c62_50;
     addr_401d2e_23:
@@ -920,8 +920,8 @@ void** getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(void** rdi, void** rsi) {
         ecx52 = *reinterpret_cast<uint32_t*>(&rcx20) & 31;
         rdi53 = reinterpret_cast<struct s11*>(rbx4 + reinterpret_cast<unsigned char>(rdx14) * 4);
         rax54 = 1 << *reinterpret_cast<unsigned char*>(&ecx52);
-        rdi53->f4116 = rdi53->f4116 & reinterpret_cast<uint32_t>(~*reinterpret_cast<int32_t*>(&rax54));
-        if (!rdi53->f4116) {
+        rdi53->f1014 = rdi53->f1014 & reinterpret_cast<uint32_t>(~*reinterpret_cast<int32_t*>(&rax54));
+        if (!rdi53->f1014) {
             ecx55 = *reinterpret_cast<uint32_t*>(&rdx14) & 31;
             rsi56 = 1 << *reinterpret_cast<unsigned char*>(&ecx55);
             *reinterpret_cast<uint32_t*>(rbx4 + 0x1010) = *reinterpret_cast<uint32_t*>(rbx4 + 0x1010) & reinterpret_cast<uint32_t>(~*reinterpret_cast<int32_t*>(&rsi56));
@@ -1039,13 +1039,13 @@ void add_Xuf47u3imOz8BOk5HURLWQ(void** rdi, void** rsi, void** rdx, void* rcx, v
 struct s12 {
     void** f0;
     signed char[4215] pad4216;
-    void** f4216;
+    void** f1078;
 };
 
 struct s13 {
     void** f0;
     signed char[4091] pad4092;
-    uint32_t f4092;
+    uint32_t fffc;
 };
 
 void removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2(void** rdi, void** rsi) {
@@ -1103,7 +1103,7 @@ void removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2(void** rdi, void** rsi) {
         *reinterpret_cast<void***>(rax10 + 16) = *reinterpret_cast<void***>(rsi + 16);
     }
     rax11 = reinterpret_cast<struct s12*>(rdi + ((r9_8 << 5) + rcx9) * 8);
-    if (rax11->f4216 != rsi || ((r8_12 = *reinterpret_cast<void***>(rsi + 16), rax11->f4216 = r8_12, !!r8_12) || (r8_13 = reinterpret_cast<struct s13*>(reinterpret_cast<unsigned char>(rdi) + reinterpret_cast<uint64_t>(rdx6 * 4)), ecx14 = *reinterpret_cast<uint32_t*>(&rcx9) & 31, rax15 = 1 << *reinterpret_cast<unsigned char*>(&ecx14), r8_13->f4092 = r8_13->f4092 & reinterpret_cast<uint32_t>(~*reinterpret_cast<int32_t*>(&rax15)), !!r8_13->f4092))) {
+    if (rax11->f1078 != rsi || ((r8_12 = *reinterpret_cast<void***>(rsi + 16), rax11->f1078 = r8_12, !!r8_12) || (r8_13 = reinterpret_cast<struct s13*>(reinterpret_cast<unsigned char>(rdi) + reinterpret_cast<uint64_t>(rdx6 * 4)), ecx14 = *reinterpret_cast<uint32_t*>(&rcx9) & 31, rax15 = 1 << *reinterpret_cast<unsigned char*>(&ecx14), r8_13->fffc = r8_13->fffc & reinterpret_cast<uint32_t>(~*reinterpret_cast<int32_t*>(&rax15)), !!r8_13->fffc))) {
         __asm__("pxor xmm0, xmm0");
         __asm__("movups [rsi+0x10], xmm0");
         return;
@@ -1329,7 +1329,7 @@ void del_C66us4UEWCXp84lHW4tDLA_part_8(void** rdi, void** rsi, void** rdx) {
 struct s14 {
     void*** f0;
     void*** f8;
-    void** f16;
+    void** f10;
 };
 
 void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void** rcx, void** r8);
@@ -1359,18 +1359,18 @@ void addZCT_fCDI7oO1NNVXXURtxSzsRw(struct s14* rdi, void** rsi) {
             rax8 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, reinterpret_cast<int64_t>(rax5) * 8 + 16, rdx4, rcx6, r8_7);
             rbp9 = rax8 + 16;
             *reinterpret_cast<void***>(rax8 + 8) = reinterpret_cast<void**>(1);
-            rsi10 = rdi->f16;
+            rsi10 = rdi->f10;
             rdx11 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f0) * 8);
             fun_400a30(rbp9, rsi10, rdx11);
-            rsi12 = rdi->f16 + 0xfffffffffffffff0;
+            rsi12 = rdi->f10 + 0xfffffffffffffff0;
             rawDealloc_DA62HrGC5sdfCED505KyyQ(0x60f060, rsi12, rdx11);
             rax13 = rdi->f0;
-            rdi->f16 = rbp9;
+            rdi->f10 = rbp9;
             *reinterpret_cast<void***>(rbp9 + reinterpret_cast<int64_t>(rax13) * 8) = rsi;
             rdi->f0 = rdi->f0 + 1;
             return;
         } else {
-            *reinterpret_cast<void***>(rdi->f16 + reinterpret_cast<int64_t>(rdi->f0) * 8) = rsi;
+            *reinterpret_cast<void***>(rdi->f10 + reinterpret_cast<int64_t>(rdi->f0) * 8) = rsi;
             rdi->f0 = rdi->f0 + 1;
             return;
         }
@@ -1715,12 +1715,12 @@ void genericResetAux_ruA1rosalqf8AhzZPPTBQg(void*** rdi, void** rsi, void** rdx)
 
 struct s15 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s16 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s17 {
@@ -1741,25 +1741,25 @@ struct s20 {
 struct s19 {
     void** f0;
     signed char[10407] pad10408;
-    struct s20* f10408;
+    struct s20* f28a8;
 };
 
 struct s21 {
     void** f0;
     signed char[4215] pad4216;
-    void** f4216;
+    void** f1078;
 };
 
 struct s22 {
     void** f0;
     signed char[4215] pad4216;
-    void** f4216;
+    void** f1078;
 };
 
 struct s23 {
     void** f0;
     signed char[4215] pad4216;
-    void** f4216;
+    void** f1078;
 };
 
 struct s24 {
@@ -2003,12 +2003,12 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
                 r9_8 = rax5;
             }
             rdi9 = reinterpret_cast<struct s15*>(reinterpret_cast<unsigned char>(rdi) + (reinterpret_cast<unsigned char>(r9_8) & 0xfffffffffffffff8));
-            rdx10 = rdi9->f16;
+            rdx10 = rdi9->f10;
             *reinterpret_cast<void***>(r10_4 + 16) = rdx10;
             if (rdx10) {
                 *reinterpret_cast<void***>(rdx10 + 24) = r10_4;
             }
-            rdi9->f16 = r10_4;
+            rdi9->f10 = r10_4;
             *reinterpret_cast<void***>(r10_4 + 40) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(r10_4 + 40)) + reinterpret_cast<unsigned char>(rax5));
             return;
         } else {
@@ -2022,8 +2022,8 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
                 }
                 rdx12 = *reinterpret_cast<void***>(r10_4 + 16);
                 rax13 = reinterpret_cast<struct s16*>((reinterpret_cast<unsigned char>(rax5) & 0xfffffffffffffff8) + reinterpret_cast<unsigned char>(rdi));
-                if (r10_4 == rax13->f16) {
-                    rax13->f16 = rdx12;
+                if (r10_4 == rax13->f10) {
+                    rax13->f10 = rdx12;
                     if (rdx12) {
                         *reinterpret_cast<void***>(rdx12 + 24) = reinterpret_cast<void**>(0);
                     }
@@ -2803,7 +2803,7 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
     *reinterpret_cast<uint32_t*>(&rdx161) = *reinterpret_cast<unsigned char*>(&r11_160);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx161) + 4) = 0;
     r14_162 = reinterpret_cast<struct s19*>(reinterpret_cast<unsigned char>(rbp145) + reinterpret_cast<uint64_t>(rdx161 * 8));
-    rdx163 = r14_162->f10408;
+    rdx163 = r14_162->f28a8;
     if (!rdx163) 
         goto addr_4027e2_290;
     if (rdx163->f8 != r11_160) {
@@ -2829,7 +2829,7 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
     removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2(rbp145, r10_159);
     rax154 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(r10_159 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(rbx146 + 8)));
     *reinterpret_cast<void***>(rbx146 + 8) = rax154;
-    rdx168 = r14_162->f10408;
+    rdx168 = r14_162->f28a8;
     if (!rdx168) {
         addr_402912_300:
         if (reinterpret_cast<signed char>(rax154) <= reinterpret_cast<signed char>(0x3f000000)) {
@@ -2882,12 +2882,12 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
     rsi174 = rdx172 - 6;
     rcx175 = reinterpret_cast<uint64_t>(reinterpret_cast<unsigned char>(rax154) >> *reinterpret_cast<signed char*>(&ecx173)) - 32;
     rdi176 = reinterpret_cast<struct s21*>(rbp145 + ((rsi174 << 5) + rcx175) * 8);
-    rax177 = rdi176->f4216;
+    rax177 = rdi176->f1078;
     *reinterpret_cast<void***>(rbx146 + 16) = rax177;
     if (rax177) {
         *reinterpret_cast<void***>(rax177 + 24) = rbx146;
     }
-    rdi176->f4216 = rbx146;
+    rdi176->f1078 = rbx146;
     ecx178 = *reinterpret_cast<uint32_t*>(&rcx175) & 31;
     rdi179 = 1 << *reinterpret_cast<unsigned char*>(&ecx178);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp145) + reinterpret_cast<uint64_t>(rdx172 * 4) + 0xffc) = *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp145) + reinterpret_cast<uint64_t>(rdx172 * 4) + 0xffc) | *reinterpret_cast<uint32_t*>(&rdi179);
@@ -2929,12 +2929,12 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
     rcx189 = reinterpret_cast<uint64_t>(reinterpret_cast<unsigned char>(rdx183) >> *reinterpret_cast<signed char*>(&ecx188)) - 32;
     rdx190 = rsi187 - 6;
     r8_191 = reinterpret_cast<struct s22*>(rbp145 + ((rdx190 << 5) + rcx189) * 8);
-    rdi192 = r8_191->f4216;
+    rdi192 = r8_191->f1078;
     *reinterpret_cast<void***>(rax182 + 16) = rdi192;
     if (rdi192) {
         *reinterpret_cast<void***>(rdi192 + 24) = rax182;
     }
-    r8_191->f4216 = rax182;
+    r8_191->f1078 = rax182;
     ecx193 = *reinterpret_cast<uint32_t*>(&rcx189) & 31;
     rdi194 = 1 << *reinterpret_cast<unsigned char*>(&ecx193);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp145) + reinterpret_cast<uint64_t>(rsi187 * 4) + 0xffc) = *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp145) + reinterpret_cast<uint64_t>(rsi187 * 4) + 0xffc) | *reinterpret_cast<uint32_t*>(&rdi194);
@@ -2999,12 +2999,12 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
         rsi206 = rdx204 - 6;
         rcx207 = reinterpret_cast<uint64_t>(reinterpret_cast<unsigned char>(rax200) >> *reinterpret_cast<signed char*>(&ecx205)) - 32;
         rdi208 = reinterpret_cast<struct s23*>(rbp145 + ((rsi206 << 5) + rcx207) * 8);
-        rax209 = rdi208->f4216;
+        rax209 = rdi208->f1078;
         *reinterpret_cast<void***>(r12_148 + 16) = rax209;
         if (rax209) {
             *reinterpret_cast<void***>(rax209 + 24) = r12_148;
         }
-        rdi208->f4216 = r12_148;
+        rdi208->f1078 = r12_148;
         ecx210 = *reinterpret_cast<uint32_t*>(&rcx207) & 31;
         r10_144 = rbx146;
         rdi211 = 1 << *reinterpret_cast<unsigned char*>(&ecx210);
@@ -3051,13 +3051,13 @@ void rawDealloc_DA62HrGC5sdfCED505KyyQ(void** rdi, void** rsi, void** rdx) {
 
 struct s25 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s26 {
     void** f0;
     signed char[10407] pad10408;
-    void** f10408;
+    void** f28a8;
 };
 
 void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void** rcx, void** r8) {
@@ -3092,7 +3092,7 @@ void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void
     rbx8 = rdi;
     if (reinterpret_cast<signed char>(r13_7) <= reinterpret_cast<signed char>(0xfc8)) {
         rbp9 = reinterpret_cast<struct s25*>(reinterpret_cast<unsigned char>(rdi) + (reinterpret_cast<uint64_t>(rax6) & 0xfffffffffffffff8));
-        rdx10 = rbp9->f16;
+        rdx10 = rbp9->f10;
         if (!rdx10) {
             rax11 = getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(rdi, 0x1000);
             __asm__("pxor xmm0, xmm0");
@@ -3101,12 +3101,12 @@ void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void
             *reinterpret_cast<void***>(rax11 + 48) = r13_7;
             __asm__("movups [rdx+0x10], xmm0");
             *reinterpret_cast<void***>(rax11 + 40) = reinterpret_cast<void**>(0xfc8 - reinterpret_cast<unsigned char>(r13_7));
-            rax12 = rbp9->f16;
+            rax12 = rbp9->f10;
             *reinterpret_cast<void***>(rax11 + 16) = rax12;
             if (rax12) {
                 *reinterpret_cast<void***>(rax12 + 24) = rax11;
             }
-            rbp9->f16 = rax11;
+            rbp9->f10 = rax11;
             r12_13 = rax11 + 56;
             if (reinterpret_cast<signed char>(r13_7) > reinterpret_cast<signed char>(*reinterpret_cast<void***>(rax11 + 40))) 
                 goto addr_40254c_6;
@@ -3153,7 +3153,7 @@ void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void
         *reinterpret_cast<void***>(rbp17 + 8) = r13_15;
         r15_24 = reinterpret_cast<struct s26*>(reinterpret_cast<unsigned char>(rbx8) + reinterpret_cast<uint64_t>(rax23 * 8));
         *reinterpret_cast<void***>(rbp17) = reinterpret_cast<void**>(1);
-        rax25 = r15_24->f10408;
+        rax25 = r15_24->f28a8;
         if (rax25) 
             goto addr_40247c_19; else 
             goto addr_402463_20;
@@ -3167,9 +3167,9 @@ void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void
     goto addr_402550_23;
     addr_4023ba_11:
     rax26 = *reinterpret_cast<void***>(rdx10 + 16);
-    if (rdx10 == rbp9->f16) {
+    if (rdx10 == rbp9->f10) {
         addr_402550_23:
-        rbp9->f16 = rax26;
+        rbp9->f10 = rax26;
         if (rax26) {
             *reinterpret_cast<void***>(rax26 + 24) = reinterpret_cast<void**>(0);
         }
@@ -3217,8 +3217,8 @@ void** rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(void** rdi, void** rsi, void** rdx, void
     }
     addr_402588_29:
     rax25 = llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(rbx8, 80, 3, rbx8, 80, 3);
-    *reinterpret_cast<void***>(rax25) = r15_24->f10408;
-    r15_24->f10408 = rax25;
+    *reinterpret_cast<void***>(rax25) = r15_24->f28a8;
+    r15_24->f28a8 = rax25;
     *reinterpret_cast<void***>(rax25 + 8) = r12_21;
     goto addr_402482_30;
     addr_402463_20:
@@ -3240,9 +3240,9 @@ void** g60f050 = reinterpret_cast<void**>(0);
 struct s27 {
     uint64_t f0;
     uint64_t f8;
-    void** f16;
+    void** f10;
     signed char[7] pad24;
-    void** f24;
+    void** f18;
 };
 
 void incl_m4q9b16kJJcoKe9c4ERtlpCg(struct s27* rdi, void** rsi);
@@ -4669,10 +4669,10 @@ struct s29 {
     signed char[7] pad8;
     uint64_t f8;
     signed char[16] pad32;
-    void** f32;
+    void** f20;
     signed char[7] pad40;
-    uint64_t f40;
-    void* f48;
+    uint64_t f28;
+    void* f30;
 };
 
 void** interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA(void** rdi, void** rsi, void** rdx) {
@@ -4747,7 +4747,7 @@ void** interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA(void** rdi, void** rsi, void
     *reinterpret_cast<uint32_t*>(&rsi13) = *reinterpret_cast<uint32_t*>(&rsi) & 0xfff;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi13) + 4) = 0;
     rsi14 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsi13) - 56);
-    if (reinterpret_cast<uint64_t>(rsi14) < reinterpret_cast<uint64_t>(rcx12->f48)) {
+    if (reinterpret_cast<uint64_t>(rsi14) < reinterpret_cast<uint64_t>(rcx12->f30)) {
         rax15 = reinterpret_cast<void**>(reinterpret_cast<uint64_t>(rcx12) + reinterpret_cast<uint64_t>(rsi14) + 56 - reinterpret_cast<uint64_t>(rsi14) % rcx12->f8);
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(rax15 + 8)) <= reinterpret_cast<unsigned char>(1)) {
             rax15 = reinterpret_cast<void**>(0);
@@ -4755,9 +4755,9 @@ void** interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA(void** rdi, void** rsi, void
         return rax15;
     }
     addr_406603_17:
-    rax16 = reinterpret_cast<void**>(&rcx12->f32);
+    rax16 = reinterpret_cast<void**>(&rcx12->f20);
     if (reinterpret_cast<unsigned char>(rsi) >= reinterpret_cast<unsigned char>(rax16)) {
-        if (rcx12->f40 <= 1) {
+        if (rcx12->f28 <= 1) {
             rax16 = reinterpret_cast<void**>(0);
         }
         return rax16;
@@ -5345,9 +5345,9 @@ uint64_t stackSize_IV9bgfYkinlae0WZ2NZi5JA();
 struct s30 {
     struct s30* f0;
     struct s30* f8;
-    void** f16;
+    void** f10;
     signed char[7] pad24;
-    int64_t f24;
+    int64_t f18;
 };
 
 void collectCycles_zoTIuavlrCHyw3B8MBaLJA_3(void** rdi);
@@ -5382,7 +5382,7 @@ void collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2(void** rdi) {
     rdx5 = rax4->f0;
     rcx6 = rax4;
     if (rax4 != rdx5) {
-        while (rdi7 = rcx6->f16, rcx6 = rdx5, rdx5->f0 != rdx5) {
+        while (rdi7 = rcx6->f10, rcx6 = rdx5, rdx5->f0 != rdx5) {
             rdx5 = rdx5->f0;
         }
     } else {
@@ -5393,7 +5393,7 @@ void collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2(void** rdi) {
     rdx8 = -1;
     if (rax4 != rax4->f0) {
         do {
-            rdx8 = rax4->f24;
+            rdx8 = rax4->f18;
             rax4 = rax4->f8;
         } while (rax4->f0 != rax4);
     }
@@ -5570,12 +5570,12 @@ void* raiseEIO_PpfSiTIeNpMAb9a5o6SglJw(void** rdi, void** rsi, void** rdx);
 
 struct s32 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
     signed char[199] pad216;
-    signed char f216;
+    signed char fd8;
     signed char[7] pad224;
-    int64_t f224;
-    int64_t f232;
+    int64_t fe0;
+    int64_t fe8;
 };
 
 struct s32* excHandler_rqLlY5bs9atDw2OXYqJEn5g = reinterpret_cast<struct s32*>(0);
@@ -5596,7 +5596,7 @@ int64_t fun_400a60(void** rdi, int64_t rsi);
 
 struct s33 {
     signed char[17] pad17;
-    void** f17;
+    void** f11;
 };
 
 void showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ(void** rdi) {
@@ -5836,7 +5836,7 @@ void showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ(void** rdi) {
         r12_28 = rbx16;
         goto addr_408518_20;
     }
-    if (!rax18->f216) {
+    if (!rax18->fd8) {
         do {
             rbp43 = currException_9bVPeDJlYTi9bQApZpfH8wjg;
             if (rbp43) {
@@ -5856,15 +5856,15 @@ void showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ(void** rdi) {
             *reinterpret_cast<int32_t*>(&rsi47) = 1;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi47) + 4) = 0;
             currException_9bVPeDJlYTi9bQApZpfH8wjg = rbx16;
-            rdi13 = reinterpret_cast<void**>(&rax46->f16);
+            rdi13 = reinterpret_cast<void**>(&rax46->f10);
             rax48 = fun_400a60(rdi13, 1);
             addr_4082e8_63:
             al49 = reinterpret_cast<signed char>(rax48(rdi13, rsi47, rdx25));
             addr_408242_64:
         } while (al49);
     } else {
-        rsi47 = rax18->f232;
-        rax48 = rax18->f224;
+        rsi47 = rax18->fe8;
+        rax48 = rax18->fe0;
         if (!rsi47) 
             goto addr_4082e8_63;
         al49 = reinterpret_cast<signed char>(rax48());
@@ -5896,7 +5896,7 @@ void showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ(void** rdi) {
     *reinterpret_cast<unsigned char*>(&rcx56) = tmp8_57;
     rbx59 = reinterpret_cast<struct s33*>(reinterpret_cast<unsigned char>(rbx51) - (3 + static_cast<uint64_t>(reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(rbx51) < reinterpret_cast<unsigned char>(3 + static_cast<uint64_t>(cf58))))) - reinterpret_cast<unsigned char>(rbp2));
     if (reinterpret_cast<uint64_t>(rbx59) > 6) {
-        rsi54 = reinterpret_cast<void**>(&rbx59->f17);
+        rsi54 = reinterpret_cast<void**>(&rbx59->f11);
     }
     *reinterpret_cast<uint32_t*>(&rdx60) = 0x60f000;
     *reinterpret_cast<int32_t*>(&rdx60 + 4) = 0;
@@ -6077,7 +6077,7 @@ void* raiseEIO_PpfSiTIeNpMAb9a5o6SglJw(void** rdi, void** rsi, void** rdx) {
 
 struct s34 {
     signed char[128] pad128;
-    void** f128;
+    void** f80;
 };
 
 int64_t fun_4009f0();
@@ -6157,7 +6157,7 @@ signed char readLine_sO1bQXVRA6RP9cdYJXNKeSw(void** rdi, void*** rsi, void** rdx
         if (rax23) 
             goto addr_408c88_13;
         r14_15 = reinterpret_cast<struct s34*>(reinterpret_cast<unsigned char>(r12_8) + reinterpret_cast<uint64_t>(r14_15) + 0xffffffffffffffff);
-        rsi24 = reinterpret_cast<void**>(&r14_15->f128);
+        rsi24 = reinterpret_cast<void**>(&r14_15->f80);
         rax25 = setLengthStr(rbx11, rsi24, r12_8, rcx, r8);
         rbx11 = rax25;
         al26 = isOnStack_dJJW59cIgsBmT59aZrOM71Mg(r13_7, rsi24, r12_8);
@@ -6552,7 +6552,7 @@ void cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ(struct s27* rdi) {
     *reinterpret_cast<void***>(rax9 + 8) = reinterpret_cast<void**>(1);
     rbx11 = rax9 + 16;
     fun_4009c0(rbx11);
-    rsi12 = rbp2->f24;
+    rsi12 = rbp2->f18;
     *reinterpret_cast<int32_t*>(&rdi13) = 0;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi13) + 4) = 0;
     if (reinterpret_cast<int64_t>(r13_3) >= reinterpret_cast<int64_t>(0)) {
@@ -6569,13 +6569,13 @@ void cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ(struct s27* rdi) {
                     } while (*reinterpret_cast<void***>(rdx10));
                 }
                 *reinterpret_cast<void***>(rdx10) = r8_14;
-                rsi12 = rbp2->f24;
+                rsi12 = rbp2->f18;
             }
             ++rdi13;
         } while (rdi13 != r12_4);
     }
     rawDealloc_DA62HrGC5sdfCED505KyyQ(0x60f060, rsi12 - 16, rdx10);
-    rbp2->f24 = rbx11;
+    rbp2->f18 = rbx11;
     return;
 }
 
@@ -6611,7 +6611,7 @@ void incl_m4q9b16kJJcoKe9c4ERtlpCg(struct s27* rdi, void** rsi) {
     rbp4 = rdi;
     rbx5 = rsi;
     rsi6 = rdi->f8;
-    rdi7 = rdi->f24;
+    rdi7 = rdi->f18;
     rdx8 = reinterpret_cast<unsigned char>(r12_3) & rsi6;
     r13_9 = reinterpret_cast<void*>(rdx8 * 8);
     r8_10 = reinterpret_cast<void***>(reinterpret_cast<unsigned char>(rdi7) + reinterpret_cast<uint64_t>(r13_9));
@@ -6623,7 +6623,7 @@ void incl_m4q9b16kJJcoKe9c4ERtlpCg(struct s27* rdi, void** rsi) {
         if (reinterpret_cast<int64_t>(rcx13 + rcx13) < reinterpret_cast<int64_t>(rax12 + rax12 * 2) || reinterpret_cast<int64_t>(rcx13 - rax12) <= reinterpret_cast<int64_t>(3)) {
             cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ(rbp4);
             rsi6 = rbp4->f8;
-            rdi7 = rbp4->f24;
+            rdi7 = rbp4->f18;
             rax12 = rbp4->f0;
             rdx8 = reinterpret_cast<unsigned char>(r12_3) & rsi6;
             r13_9 = reinterpret_cast<void*>(rdx8 * 8);
@@ -6708,10 +6708,10 @@ void incl_m4q9b16kJJcoKe9c4ERtlpCg(struct s27* rdi, void** rsi) {
     __asm__("movups [rax+0x20], xmm0");
     __asm__("movups [rax+0x30], xmm0");
     __asm__("movups [rax+0x40], xmm0");
-    *reinterpret_cast<void***>(rdx19 + 16) = rbp4->f16;
+    *reinterpret_cast<void***>(rdx19 + 16) = rbp4->f10;
     *reinterpret_cast<void***>(rax11 + 8) = r12_3;
-    rdx23 = rbp4->f24;
-    rbp4->f16 = rax11;
+    rdx23 = rbp4->f18;
+    rbp4->f10 = rax11;
     *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(rdx23) + reinterpret_cast<uint64_t>(r13_9)) = rax11;
     addr_405036_7:
     rcx24 = reinterpret_cast<unsigned char>(rbx5) >> 3;
@@ -6749,7 +6749,7 @@ struct s36 {
 
 struct s38 {
     signed char[32] pad32;
-    int64_t f32;
+    int64_t f20;
 };
 
 struct s37 {
@@ -6757,11 +6757,11 @@ struct s37 {
     signed char[7] pad8;
     void* f8;
     signed char[16] pad32;
-    void** f32;
+    void** f20;
     signed char[7] pad40;
-    struct s38* f40;
-    void* f48;
-    void** f56;
+    struct s38* f28;
+    void* f30;
+    void** f38;
 };
 
 void collectCycles_zoTIuavlrCHyw3B8MBaLJA_3(void** rdi) {
@@ -6962,8 +6962,8 @@ void collectCycles_zoTIuavlrCHyw3B8MBaLJA_3(void** rdi) {
                             r8_44 = rax43->f8;
                             if (reinterpret_cast<int64_t>(r8_44) > reinterpret_cast<int64_t>(0xfc8)) 
                                 goto addr_40766a_36;
-                            rsi45 = reinterpret_cast<void**>(&rax43->f56);
-                            r13_46 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rax43->f48) + reinterpret_cast<unsigned char>(rsi45));
+                            rsi45 = reinterpret_cast<void**>(&rax43->f38);
+                            r13_46 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rax43->f30) + reinterpret_cast<unsigned char>(rsi45));
                             if (reinterpret_cast<unsigned char>(rsi45) < reinterpret_cast<unsigned char>(r13_46)) {
                                 v47 = rbx34;
                                 r12_48 = r8_44;
@@ -7022,9 +7022,9 @@ void collectCycles_zoTIuavlrCHyw3B8MBaLJA_3(void** rdi) {
                                 goto addr_4075e0_28;
                             }
                             addr_40766a_36:
-                            if (reinterpret_cast<uint64_t>(rax43->f40) <= 1) 
+                            if (reinterpret_cast<uint64_t>(rax43->f28) <= 1) 
                                 goto addr_4075e0_28;
-                            r12_62 = reinterpret_cast<void**>(&rax43->f32);
+                            r12_62 = reinterpret_cast<void**>(&rax43->f20);
                             r8_63 = *reinterpret_cast<uint64_t*>(r14_25 + 0x3390);
                             r9_64 = *reinterpret_cast<void***>(r14_25 + 0x33a0);
                             rdi65 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(r12_62) >> 12);
@@ -7048,11 +7048,11 @@ void collectCycles_zoTIuavlrCHyw3B8MBaLJA_3(void** rdi) {
                                     continue;
                             } else {
                                 addr_4076c1_54:
-                                rax68 = rax43->f40;
-                                if (rax68->f32) {
+                                rax68 = rax43->f28;
+                                if (rax68->f20) {
                                     tmp64_69 = g60f058 + 1;
                                     g60f058 = tmp64_69;
-                                    rax68->f32(r12_62 + 16);
+                                    rax68->f20(r12_62 + 16);
                                     rsp26 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(rsp26) - 8 + 8);
                                     --g60f058;
                                 }
@@ -7091,7 +7091,7 @@ int64_t fun_400a60(void** rdi, int64_t rsi) {
 
 struct s39 {
     signed char[17] pad17;
-    void** f17;
+    void** f11;
 };
 
 void raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw(void** rdi, void** rsi) {
@@ -7275,7 +7275,7 @@ void raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw(void** rdi, void** rsi) {
     }
     return;
     addr_408220_4:
-    if (!rax11->f216) {
+    if (!rax11->fd8) {
         do {
             rbp33 = currException_9bVPeDJlYTi9bQApZpfH8wjg;
             if (rbp33) {
@@ -7295,15 +7295,15 @@ void raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw(void** rdi, void** rsi) {
             *reinterpret_cast<int32_t*>(&rsi37) = 1;
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi37) + 4) = 0;
             currException_9bVPeDJlYTi9bQApZpfH8wjg = rbx9;
-            rdi8 = reinterpret_cast<void**>(&rax36->f16);
+            rdi8 = reinterpret_cast<void**>(&rax36->f10);
             rax38 = fun_400a60(rdi8, 1);
             addr_4082e8_51:
             al39 = reinterpret_cast<signed char>(rax38(rdi8, rsi37, rdx19));
             addr_408242_52:
         } while (al39);
     } else {
-        rsi37 = rax11->f232;
-        rax38 = rax11->f224;
+        rsi37 = rax11->fe8;
+        rax38 = rax11->fe0;
         if (!rsi37) 
             goto addr_4082e8_51;
         al39 = reinterpret_cast<signed char>(rax38());
@@ -7335,7 +7335,7 @@ void raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw(void** rdi, void** rsi) {
     *reinterpret_cast<unsigned char*>(&rcx46) = tmp8_47;
     rbx49 = reinterpret_cast<struct s39*>(reinterpret_cast<unsigned char>(rbx40) - (3 + static_cast<uint64_t>(reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(rbx40) < reinterpret_cast<unsigned char>(3 + static_cast<uint64_t>(cf48))))) - reinterpret_cast<unsigned char>(rbp17));
     if (reinterpret_cast<uint64_t>(rbx49) > 6) {
-        rsi44 = reinterpret_cast<void**>(&rbx49->f17);
+        rsi44 = reinterpret_cast<void**>(&rbx49->f11);
     }
     *reinterpret_cast<uint32_t*>(&rdx50) = 0x60f000;
     *reinterpret_cast<int32_t*>(&rdx50 + 4) = 0;
@@ -7611,11 +7611,11 @@ void NimMain() {
 struct s40 {
     signed char f0;
     signed char[47] pad48;
-    signed char f48;
+    signed char f30;
     signed char[23] pad72;
-    int64_t f72;
+    int64_t f48;
     signed char[16] pad96;
-    signed char f96;
+    signed char f60;
 };
 
 int16_t g60ee88 = 0;
@@ -7957,11 +7957,11 @@ struct s41 {
     signed char[8] pad8;
     void* f8;
     signed char[8] pad24;
-    void** f24;
+    void** f18;
     signed char[7] pad32;
-    void** f32;
+    void** f20;
     signed char[15] pad48;
-    int64_t f48;
+    int64_t f30;
 };
 
 void Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw(struct s41* rdi, int64_t rsi);
@@ -7994,8 +7994,8 @@ struct s42 {
     signed char[8] pad8;
     void** f8;
     signed char[15] pad24;
-    void* f24;
-    void* f32;
+    void* f18;
+    void* f20;
 };
 
 void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi);
@@ -8036,9 +8036,9 @@ struct s43 {
     signed char[8] pad8;
     void* f8;
     signed char[8] pad24;
-    void** f24;
+    void** f18;
     signed char[7] pad32;
-    void* f32;
+    void* f20;
 };
 
 void Marker_tyRef_LEclZrWX2FQAodlapxGITw(struct s43* rdi, int64_t rsi);
@@ -8124,8 +8124,8 @@ void systemDatInit000() {
         *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(rax2) - 0x90) = 1;
         *reinterpret_cast<signed char*>(reinterpret_cast<int64_t>(rax2) - 48) = 1;
         rax2->f0 = 1;
-        rax2->f48 = 1;
-        rax2->f96 = 1;
+        rax2->f30 = 1;
+        rax2->f60 = 1;
         __asm__("movhps [rax+0x68], xmm2");
         __asm__("movdqa xmm3, [rdx+0x40a630]");
         __asm__("movdqa xmm2, [rdx+0x40a640]");
@@ -8158,7 +8158,7 @@ void systemDatInit000() {
         __asm__("movhps [rax-0x108], xmm5");
         __asm__("movq [rax-0xd8], xmm4");
         __asm__("movhps [rax-0xa8], xmm4");
-        rax2->f72 = *reinterpret_cast<int64_t*>(rdx1 + 0x40a650);
+        rax2->f48 = *reinterpret_cast<int64_t*>(rdx1 + 0x40a650);
         __asm__("movhps [rax+0x78], xmm6");
         __asm__("movaps [rdx+0x60d160], xmm2");
         __asm__("movdqa xmm2, xmm3");
@@ -8669,8 +8669,8 @@ struct s47 {
     void** f0;
     signed char[7] pad8;
     void* f8;
-    struct s47* f16;
-    struct s47* f24;
+    struct s47* f10;
+    struct s47* f18;
 };
 
 struct s48 {
@@ -8681,13 +8681,13 @@ struct s48 {
 struct s49 {
     void** f0;
     signed char[10407] pad10408;
-    void** f10408;
+    void** f28a8;
 };
 
 struct s50 {
     void** f0;
     signed char[4215] pad4216;
-    struct s47* f4216;
+    struct s47* f1078;
 };
 
 void splitChunk_8QXhiy717OAl8WNA2X27EA(void** rdi, struct s46* rsi, void** rdx) {
@@ -8763,7 +8763,7 @@ void splitChunk_8QXhiy717OAl8WNA2X27EA(void** rdi, struct s46* rsi, void** rdx) 
     *reinterpret_cast<uint32_t*>(&rax17) = *reinterpret_cast<unsigned char*>(&r13_15);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax17) + 4) = 0;
     r14_18 = reinterpret_cast<struct s49*>(reinterpret_cast<unsigned char>(rbp4) + reinterpret_cast<uint64_t>(rax17 * 8));
-    rax19 = r14_18->f10408;
+    rax19 = r14_18->f28a8;
     if (rax19) {
         do {
             if (r13_15 == *reinterpret_cast<void***>(rax19 + 8)) 
@@ -8806,18 +8806,18 @@ void splitChunk_8QXhiy717OAl8WNA2X27EA(void** rdi, struct s46* rsi, void** rdx) 
         }
     }
     rcx26 = *reinterpret_cast<signed char*>(rcx24 + 0x40a9e0);
-    rbx5->f24 = reinterpret_cast<struct s47*>(0);
+    rbx5->f18 = reinterpret_cast<struct s47*>(0);
     rdx27 = rdx25 + rcx26;
     ecx28 = static_cast<int32_t>(rdx27 - 5);
     rsi29 = rdx27 - 6;
     rcx30 = (reinterpret_cast<uint64_t>(rax23) >> *reinterpret_cast<signed char*>(&ecx28)) - 32;
     rdi31 = reinterpret_cast<struct s50*>(rbp4 + ((rsi29 << 5) + rcx30) * 8);
-    rax32 = rdi31->f4216;
-    rbx5->f16 = rax32;
+    rax32 = rdi31->f1078;
+    rbx5->f10 = rax32;
     if (rax32) {
-        rax32->f24 = rbx5;
+        rax32->f18 = rbx5;
     }
-    rdi31->f4216 = rbx5;
+    rdi31->f1078 = rbx5;
     ecx33 = *reinterpret_cast<uint32_t*>(&rcx30) & 31;
     rbx34 = 1 << *reinterpret_cast<unsigned char*>(&ecx33);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp4) + reinterpret_cast<uint64_t>(rdx27 * 4) + 0xffc) = *reinterpret_cast<uint32_t*>(reinterpret_cast<unsigned char>(rbp4) + reinterpret_cast<uint64_t>(rdx27 * 4) + 0xffc) | *reinterpret_cast<uint32_t*>(&rbx34);
@@ -8827,8 +8827,8 @@ void splitChunk_8QXhiy717OAl8WNA2X27EA(void** rdi, struct s46* rsi, void** rdx) 
     return;
     addr_4019e0_10:
     rax19 = llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ(rbp4, 80, rdx);
-    *reinterpret_cast<void***>(rax19) = r14_18->f10408;
-    r14_18->f10408 = rax19;
+    *reinterpret_cast<void***>(rax19) = r14_18->f28a8;
+    r14_18->f28a8 = rax19;
     *reinterpret_cast<void***>(rax19 + 8) = r13_15;
     goto addr_40190a_12;
 }
@@ -8905,7 +8905,7 @@ struct s51 {
     struct s51* f0;
     struct s51* f8;
     signed char[16] pad32;
-    int64_t f32;
+    int64_t f20;
 };
 
 void split_Cfx7NvEVZIhBjBm7i89boSg_2(struct s51** rdi) {
@@ -8914,11 +8914,11 @@ void split_Cfx7NvEVZIhBjBm7i89boSg_2(struct s51** rdi) {
 
     rax2 = *rdi;
     rdx3 = rax2->f8;
-    if (rdx3->f8->f32 == rax2->f32) {
+    if (rdx3->f8->f20 == rax2->f20) {
         *rdi = rdx3;
         rax2->f8 = rdx3->f0;
         (*rdi)->f0 = rax2;
-        (*rdi)->f32 = (*rdi)->f32 + 1;
+        (*rdi)->f20 = (*rdi)->f20 + 1;
     }
     return;
 }
@@ -9032,22 +9032,22 @@ struct s55 {
 
 struct s56 {
     signed char[40] pad40;
-    int64_t f40;
+    int64_t f28;
 };
 
 struct s57 {
     signed char[16] pad16;
-    int64_t f16;
+    int64_t f10;
 };
 
 struct s58 {
     signed char[24] pad24;
-    int64_t f24;
+    int64_t f18;
 };
 
 struct s59 {
     signed char[16] pad16;
-    int64_t f16;
+    int64_t f10;
 };
 
 void fun_404671() {
@@ -9085,9 +9085,9 @@ void fun_404671() {
     tmp64_9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(g6118f8) + reinterpret_cast<uint64_t>(r12_10->f8));
     g6118f8 = tmp64_9;
     __asm__("movdqa xmm0, [rip+0x6535]");
-    r12_11->f40 = 1;
+    r12_11->f28 = 1;
     rcx12 = rdx5 - reinterpret_cast<uint64_t>(rdi7);
-    rbx13->f16 = 0;
+    rbx13->f10 = 0;
     *reinterpret_cast<int64_t*>(rbx14 + 0x2008) = 0;
     *reinterpret_cast<uint32_t*>(&rcx15) = reinterpret_cast<uint32_t>(*reinterpret_cast<int32_t*>(&rcx12) + 0x2000) >> 3;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx15) + 4) = 0;
@@ -9096,9 +9096,9 @@ void fun_404671() {
         *rdi7 = 0;
         ++rdi7;
     }
-    rbp16->f24 = rdx5;
+    rbp16->f18 = rdx5;
     __asm__("movups [rbp+0x0], xmm0");
-    rbp17->f16 = 0;
+    rbp17->f10 = 0;
     goto v18;
 }
 
@@ -9125,7 +9125,7 @@ void cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ(struct s27* rdi, void** rsi) {
     void** rdx22;
 
     r8_3 = rdi->f8;
-    r9_4 = rdi->f24;
+    r9_4 = rdi->f18;
     rcx5 = r8_3 & reinterpret_cast<unsigned char>(rsi);
     r12_6 = reinterpret_cast<void*>(rcx5 * 8);
     r10_7 = reinterpret_cast<void***>(reinterpret_cast<unsigned char>(r9_4) + reinterpret_cast<uint64_t>(r12_6));
@@ -9138,7 +9138,7 @@ void cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ(struct s27* rdi, void** rsi) {
         if (reinterpret_cast<int64_t>(rdx9 + rdx9) < reinterpret_cast<int64_t>(rax8 + rax8 * 2) || reinterpret_cast<int64_t>(rdx9 - rax8) <= reinterpret_cast<int64_t>(3)) {
             cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ(rbp11);
             r8_3 = rbp11->f8;
-            r9_4 = rbp11->f24;
+            r9_4 = rbp11->f18;
             rax8 = rbp11->f0;
             rcx5 = reinterpret_cast<unsigned char>(rbx10) & r8_3;
             r12_6 = reinterpret_cast<void*>(rcx5 * 8);
@@ -9222,10 +9222,10 @@ void cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ(struct s27* rdi, void** rsi) {
     __asm__("movups [rax+0x20], xmm0");
     __asm__("movups [rax+0x30], xmm0");
     __asm__("movups [rax+0x40], xmm0");
-    *reinterpret_cast<void***>(rdx17 + 16) = rbp11->f16;
+    *reinterpret_cast<void***>(rdx17 + 16) = rbp11->f10;
     *reinterpret_cast<void***>(rax20 + 8) = rbx10;
-    rdx22 = rbp11->f24;
-    rbp11->f16 = rax20;
+    rdx22 = rbp11->f18;
+    rbp11->f10 = rax20;
     *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(rdx22) + reinterpret_cast<uint64_t>(r12_6)) = rax20;
     addr_404e06_7:
     return;
@@ -9240,7 +9240,7 @@ struct s60 {
     signed char[8] pad8;
     uint64_t f8;
     signed char[8] pad24;
-    struct s61** f24;
+    struct s61** f18;
 };
 
 void cellSetGet_X4WTfs0wkld8wp8XcE9b8BA(struct s60* rdi, uint64_t rsi) {
@@ -9249,7 +9249,7 @@ void cellSetGet_X4WTfs0wkld8wp8XcE9b8BA(struct s60* rdi, uint64_t rsi) {
     uint64_t rdx5;
 
     rcx3 = rdi->f8;
-    rdi4 = rdi->f24;
+    rdi4 = rdi->f18;
     rdx5 = rcx3 & rsi;
     if (rdi4[rdx5]) {
         if (rsi != (rdi4[rdx5])->f8) {
@@ -9275,12 +9275,12 @@ void fun_40581a() {
 
 struct s62 {
     signed char[24] pad24;
-    void** f24;
+    void** f18;
 };
 
 struct s63 {
     signed char[32] pad32;
-    void* f32;
+    void* f20;
 };
 
 void fun_4058c6() {
@@ -9341,10 +9341,10 @@ void fun_4058c6() {
     *reinterpret_cast<void***>(rbx3 + reinterpret_cast<int64_t>(rax2) * 8) = r12_13;
     tmp64_14 = g60f040 + 1;
     g60f040 = tmp64_14;
-    rdi15 = rbp16->f24;
+    rdi15 = rbp16->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi15, 3, rdi15, 3);
-    r12_17 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp18->f32) + 0xfffffffffffffff0);
-    if (rbp18->f32) {
+    r12_17 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp18->f20) + 0xfffffffffffffff0);
+    if (rbp18->f20) {
         rdx19 = g60f048;
         rax20 = g60f040;
         rbx21 = g60f050;
@@ -9377,12 +9377,12 @@ void fun_4058c6() {
 
 struct s64 {
     signed char[24] pad24;
-    void** f24;
+    void** f18;
 };
 
 struct s65 {
     signed char[32] pad32;
-    void* f32;
+    void* f20;
 };
 
 void fun_4059bb() {
@@ -9401,10 +9401,10 @@ void fun_4059bb() {
     if (rdx1 <= 7) {
         addZCT_fCDI7oO1NNVXXURtxSzsRw(0x60f010, r12_4);
     }
-    rdi5 = rbp6->f24;
+    rdi5 = rbp6->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi5, 2);
-    r12_7 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp8->f32) + 0xfffffffffffffff0);
-    if (!rbp8->f32) 
+    r12_7 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp8->f20) + 0xfffffffffffffff0);
+    if (!rbp8->f20) 
         goto 0x4058b0;
     rax9 = *reinterpret_cast<void***>(r12_7) - 8;
     *reinterpret_cast<void***>(r12_7) = rax9;
@@ -9510,12 +9510,12 @@ void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi) {
     esi4 = *reinterpret_cast<unsigned char*>(&rsi);
     rdi5 = rdi->f8;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi5, *reinterpret_cast<signed char*>(&esi4));
-    if (!rdi->f24) {
+    if (!rdi->f18) {
         addr_405d58_2:
-        if (!rdi->f32) 
+        if (!rdi->f20) 
             goto addr_405d84_3;
     } else {
-        r13_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f24) + 0xfffffffffffffff0);
+        r13_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f18) + 0xfffffffffffffff0);
         if (*reinterpret_cast<signed char*>(&rbx3) == 1) {
             rax7 = g60f048;
             less_or_equal8 = reinterpret_cast<int64_t>(rax7) <= reinterpret_cast<int64_t>(g60f040);
@@ -9541,19 +9541,19 @@ void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi) {
         } else {
             if (!*reinterpret_cast<signed char*>(&rbx3)) {
                 markS_NZr5o3Ubzrci4OmK29cHBJA(0x60f000, r13_6);
-                r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) + 0xfffffffffffffff0);
-                if (!rdi->f32) 
+                r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) + 0xfffffffffffffff0);
+                if (!rdi->f20) 
                     goto addr_405d84_3; else 
                     goto addr_405e0e_11;
             }
             if (*reinterpret_cast<signed char*>(&rbx3) == 2) {
-                rdx22 = *reinterpret_cast<void***>(reinterpret_cast<int64_t>(rdi->f24) + 0xfffffffffffffff0) + 0xfffffffffffffff8;
-                *reinterpret_cast<void***>(reinterpret_cast<int64_t>(rdi->f24) + 0xfffffffffffffff0) = rdx22;
+                rdx22 = *reinterpret_cast<void***>(reinterpret_cast<int64_t>(rdi->f18) + 0xfffffffffffffff0) + 0xfffffffffffffff8;
+                *reinterpret_cast<void***>(reinterpret_cast<int64_t>(rdi->f18) + 0xfffffffffffffff0) = rdx22;
                 if (reinterpret_cast<unsigned char>(rdx22) <= reinterpret_cast<unsigned char>(7)) {
                     addZCT_fCDI7oO1NNVXXURtxSzsRw(0x60f010, r13_6);
                 }
-                r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) + 0xfffffffffffffff0);
-                if (!rdi->f32) 
+                r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) + 0xfffffffffffffff0);
+                if (!rdi->f20) 
                     goto addr_405d84_3; else 
                     goto addr_405dcc_16;
             }
@@ -9562,7 +9562,7 @@ void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi) {
                 goto addr_405c04_18;
         }
     }
-    r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) - 16);
+    r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) - 16);
     if (*reinterpret_cast<signed char*>(&rbx3) == 1) 
         goto addr_405ec0_20;
     if (!*reinterpret_cast<signed char*>(&rbx3)) {
@@ -9615,8 +9615,8 @@ void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi) {
     rax37 = g60f040;
     rdx24 = rax37 + 1;
     g60f040 = rdx24;
-    r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) + 0xfffffffffffffff0);
-    if (!rdi->f32) 
+    r13_21 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) + 0xfffffffffffffff0);
+    if (!rdi->f20) 
         goto addr_405d84_3; else 
         goto addr_405cbc_25;
     addr_405c04_18:
@@ -9645,17 +9645,17 @@ void Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ(struct s42* rdi, int64_t rsi) {
 
 struct s66 {
     signed char[24] pad24;
-    void** f24;
+    void** f18;
 };
 
 struct s67 {
     signed char[32] pad32;
-    void** f32;
+    void** f20;
 };
 
 struct s68 {
     signed char[48] pad48;
-    void* f48;
+    void* f30;
 };
 
 void fun_405f67() {
@@ -9720,12 +9720,12 @@ void fun_405f67() {
     *reinterpret_cast<void***>(rbx3 + reinterpret_cast<int64_t>(rax2) * 8) = r13_13;
     tmp64_14 = g60f040 + 1;
     g60f040 = tmp64_14;
-    rdi15 = rbp16->f24;
+    rdi15 = rbp16->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi15, 3, rdi15, 3);
-    rdi17 = rbp18->f32;
+    rdi17 = rbp18->f20;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi17, 3, rdi17, 3);
-    rbp19 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp20->f48) + 0xfffffffffffffff0);
-    if (!rbp20->f48) {
+    rbp19 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rbp20->f30) + 0xfffffffffffffff0);
+    if (!rbp20->f30) {
         goto v21;
     } else {
         rdx22 = g60f048;
@@ -9760,17 +9760,17 @@ void fun_405f67() {
 
 struct s69 {
     signed char[24] pad24;
-    void** f24;
+    void** f18;
 };
 
 struct s70 {
     signed char[32] pad32;
-    void** f32;
+    void** f20;
 };
 
 struct s71 {
     signed char[48] pad48;
-    int64_t f48;
+    int64_t f30;
 };
 
 void fun_40606f() {
@@ -9791,12 +9791,12 @@ void fun_40606f() {
     if (rdx1 <= 7) {
         addZCT_fCDI7oO1NNVXXURtxSzsRw(0x60f010, r13_4);
     }
-    rdi5 = rbp6->f24;
+    rdi5 = rbp6->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi5, 2);
-    rdi7 = rbp8->f32;
+    rdi7 = rbp8->f20;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi7, 2);
-    rbp9 = reinterpret_cast<uint64_t*>(rbp10->f48 - 16);
-    if (!rbp10->f48) 
+    rbp9 = reinterpret_cast<uint64_t*>(rbp10->f30 - 16);
+    if (!rbp10->f30) 
         goto 0x405f5c;
     rax11 = *rbp9 - 8;
     *rbp9 = rax11;
@@ -9807,7 +9807,7 @@ void fun_40606f() {
 
 struct s72 {
     signed char[24] pad24;
-    void** f24;
+    void** f18;
 };
 
 void fun_4061cb() {
@@ -9852,7 +9852,7 @@ void fun_4061cb() {
     *reinterpret_cast<void***>(rax14 + reinterpret_cast<int64_t>(rdx13) * 8) = r13_15;
     tmp64_16 = g60f040 + 1;
     g60f040 = tmp64_16;
-    rdi17 = rbp18->f24;
+    rdi17 = rbp18->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi17, 1);
     goto 0x406024;
 }
@@ -9962,7 +9962,7 @@ void fun_406286(void* rdi, signed char sil) {
 struct s73 {
     struct s73* f0;
     signed char[8] pad16;
-    int64_t f16;
+    int64_t f10;
 };
 
 int64_t fun_4064da() {
@@ -9975,7 +9975,7 @@ int64_t fun_4064da() {
         rcx2 = rdx1->f0;
         rdi3 = rdx1;
     } while (rcx2 != rdx1);
-    return rdi3->f16;
+    return rdi3->f10;
 }
 
 int64_t fun_4064f3() {
@@ -9989,8 +9989,8 @@ int64_t fun_406516() {
 struct s74 {
     struct s74* f0;
     signed char[8] pad16;
-    uint64_t f16;
-    uint64_t f24;
+    uint64_t f10;
+    uint64_t f18;
 };
 
 struct s74* fun_40655a() {
@@ -10007,8 +10007,8 @@ struct s74* fun_40655a() {
         rax4 = *reinterpret_cast<struct s74**>(reinterpret_cast<int64_t>(rax4) + rdx1 * 8);
         if (rax4->f0 == rax4) 
             break;
-        rdx2 = rax4->f16;
-    } while (rdx2 > rsi5 || rax4->f24 <= rsi6);
+        rdx2 = rax4->f10;
+    } while (rdx2 > rsi5 || rax4->f18 <= rsi6);
     goto addr_406581_4;
     return 0;
     addr_406581_4:
@@ -10017,7 +10017,7 @@ struct s74* fun_40655a() {
 
 struct s76 {
     signed char[32] pad32;
-    int64_t f32;
+    int64_t f20;
 };
 
 struct s75 {
@@ -10030,12 +10030,12 @@ void prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ(struct s75* rdi) {
     int64_t tmp64_3;
 
     rax2 = rdi->f8;
-    if (!rax2->f32) {
+    if (!rax2->f20) {
         return;
     } else {
         tmp64_3 = g60f058 + 1;
         g60f058 = tmp64_3;
-        rax2->f32();
+        rax2->f20();
         --g60f058;
         return;
     }
@@ -10044,8 +10044,8 @@ void prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ(struct s75* rdi) {
 struct s77 {
     int64_t f0;
     signed char[8] pad16;
-    void** f16;
-    void* f24;
+    void** f10;
+    void* f18;
 };
 
 void deinit_WHgd5C59bkXWDz3vnAxfzXQ_3(struct s77* rdi) {
@@ -10057,7 +10057,7 @@ void deinit_WHgd5C59bkXWDz3vnAxfzXQ_3(struct s77* rdi) {
     void** rdx7;
 
     rbp2 = rdi;
-    rsi3 = rdi->f16;
+    rsi3 = rdi->f10;
     if (rsi3) {
         do {
             rbx4 = *reinterpret_cast<void***>(rsi3);
@@ -10065,10 +10065,10 @@ void deinit_WHgd5C59bkXWDz3vnAxfzXQ_3(struct s77* rdi) {
             rsi3 = rbx4;
         } while (rbx4);
     }
-    rax6 = rbp2->f24;
-    rbp2->f16 = reinterpret_cast<void**>(0);
+    rax6 = rbp2->f18;
+    rbp2->f10 = reinterpret_cast<void**>(0);
     rawDealloc_DA62HrGC5sdfCED505KyyQ(0x60f060, reinterpret_cast<int64_t>(rax6) + 0xfffffffffffffff0, rdx7);
-    rbp2->f24 = reinterpret_cast<void*>(0);
+    rbp2->f18 = reinterpret_cast<void*>(0);
     rbp2->f0 = 0;
     return;
 }
@@ -10076,8 +10076,8 @@ void deinit_WHgd5C59bkXWDz3vnAxfzXQ_3(struct s77* rdi) {
 struct s78 {
     int64_t f0;
     signed char[8] pad16;
-    void** f16;
-    void** f24;
+    void** f10;
+    void** f18;
 };
 
 void cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2(struct s78* rdi) {
@@ -10099,7 +10099,7 @@ void cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2(struct s78* rdi) {
     int64_t rcx17;
 
     rbp2 = rdi;
-    rsi3 = rdi->f16;
+    rsi3 = rdi->f10;
     if (rsi3) {
         do {
             rbx4 = *reinterpret_cast<void***>(rsi3);
@@ -10107,10 +10107,10 @@ void cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2(struct s78* rdi) {
             rsi3 = rbx4;
         } while (rbx4);
     }
-    rax6 = rbp2->f24;
-    rbp2->f16 = reinterpret_cast<void**>(0);
+    rax6 = rbp2->f18;
+    rbp2->f10 = reinterpret_cast<void**>(0);
     rawDealloc_DA62HrGC5sdfCED505KyyQ(0x60f060, rax6 + 0xfffffffffffffff0, rdx7);
-    rbp2->f24 = reinterpret_cast<void**>(0);
+    rbp2->f18 = reinterpret_cast<void**>(0);
     rbp2->f0 = 0;
     rax8 = getBigChunk_z9bCNjXTYllZ3pI24nEsw2g(0x60f060, 0x2030);
     zf9 = g612108 == 0;
@@ -10143,9 +10143,9 @@ void cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2(struct s78* rdi) {
         *rdi14 = 0;
         ++rdi14;
     }
-    rbp2->f24 = rdx13;
+    rbp2->f18 = rdx13;
     __asm__("movups [rbp+0x0], xmm0");
-    rbp2->f16 = reinterpret_cast<void**>(0);
+    rbp2->f10 = reinterpret_cast<void**>(0);
     return;
 }
 
@@ -10158,7 +10158,7 @@ struct s79 {
     signed char[8] pad8;
     uint64_t f8;
     signed char[8] pad24;
-    struct s80** f24;
+    struct s80** f18;
 };
 
 uint64_t contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw(struct s79* rdi, uint64_t rsi) {
@@ -10172,7 +10172,7 @@ uint64_t contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw(struct s79* rdi, uint64_t rsi) {
     uint64_t rax10;
 
     r9_3 = rdi->f8;
-    rdi4 = rdi->f24;
+    rdi4 = rdi->f18;
     r8_5 = rsi >> 12;
     rax6 = r8_5 & r9_3;
     rdx7 = rdi4[rax6];
@@ -10199,14 +10199,14 @@ uint64_t contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw(struct s79* rdi, uint64_t rsi) {
 
 struct s81 {
     signed char[88] pad88;
-    int64_t f88;
+    int64_t f58;
 };
 
 void fun_407c1a() {
     struct s81* rcx1;
     int64_t v2;
 
-    if (rcx1->f88) {
+    if (rcx1->f58) {
         goto v2;
     } else {
         goto collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2;
@@ -10221,7 +10221,7 @@ struct s82 {
     signed char[1] pad1;
     void** f1;
     signed char[15] pad17;
-    void** f17;
+    void** f11;
 };
 
 void** toNimStr(void** rdi, struct s82* rsi) {
@@ -10235,7 +10235,7 @@ void** toNimStr(void** rdi, struct s82* rsi) {
     if (reinterpret_cast<int64_t>(rsi) >= 7) {
         rbp3 = rsi;
     }
-    rax6 = rawNewObj_BpNS5yt3b9cMOponsUKh8aw(0x6126a0, &rbp3->f17, 0x60f000, rcx4, r8_5);
+    rax6 = rawNewObj_BpNS5yt3b9cMOponsUKh8aw(0x6126a0, &rbp3->f11, 0x60f000, rcx4, r8_5);
     __asm__("movq xmm0, [rsp+0x8]");
     __asm__("movhps xmm0, [rsp+0x8]");
     __asm__("movups [rax], xmm0");
@@ -10272,7 +10272,7 @@ void** cstrToNimstr(void** rdi) {
 
 struct s83 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 void fun_407fe1() {
@@ -10289,7 +10289,7 @@ void fun_407fe1() {
     if (zf1) {
         collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2(0x60f000);
     }
-    rax6 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rbx2->f16, rdx3, rcx4, r8_5);
+    rax6 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rbx2->f10, rdx3, rcx4, r8_5);
     *reinterpret_cast<void***>(rax6 + 8) = rbp7;
     *reinterpret_cast<void***>(rax6) = reinterpret_cast<void**>(8);
     fun_4009c0(rax6 + 16);
@@ -10304,7 +10304,7 @@ void fun_4087e2() {
 
 struct s84 {
     signed char[17] pad17;
-    void** f17;
+    void** f11;
 };
 
 void** mnewString(struct s84* rdi) {
@@ -10319,7 +10319,7 @@ void** mnewString(struct s84* rdi) {
     if (reinterpret_cast<int64_t>(rdi) >= 7) {
         rbp2 = rdi;
     }
-    rax5 = rawNewObj_BpNS5yt3b9cMOponsUKh8aw(0x6126a0, &rbp2->f17, 0x60f000, rcx3, r8_4);
+    rax5 = rawNewObj_BpNS5yt3b9cMOponsUKh8aw(0x6126a0, &rbp2->f11, 0x60f000, rcx3, r8_4);
     rax6 = fun_4009c0(rax5);
     __asm__("movq xmm0, [rsp+0x8]");
     __asm__("movhps xmm0, [rsp+0x8]");
@@ -10463,19 +10463,19 @@ void incl_Iz1GYiOVKwItgr5CdCm0dQ() {
 
 struct s85 {
     signed char[4112] pad4112;
-    uint32_t f4112;
+    uint32_t f1010;
 };
 
 struct s86 {
     signed char[8] pad8;
     uint64_t f8;
-    struct s86* f16;
-    struct s86* f24;
+    struct s86* f10;
+    struct s86* f18;
 };
 
 struct s87 {
     signed char[4216] pad4216;
-    struct s86* f4216;
+    struct s86* f1078;
 };
 
 void addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw(struct s85* rdi, struct s86* rsi) {
@@ -10520,24 +10520,24 @@ void addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw(struct s85* rdi, struct s86* rsi) 
         }
     }
     rcx6 = *reinterpret_cast<signed char*>(rcx4 + 0x40a9e0);
-    rsi->f24 = reinterpret_cast<struct s86*>(0);
+    rsi->f18 = reinterpret_cast<struct s86*>(0);
     rdx7 = rdx5 + rcx6;
     ecx8 = static_cast<int32_t>(rdx7 - 5);
     r8_9 = rdx7 - 6;
     rcx10 = (rax3 >> *reinterpret_cast<signed char*>(&ecx8)) - 32;
     r9_11 = reinterpret_cast<struct s87*>(reinterpret_cast<int64_t>(rdi) + ((r8_9 << 5) + rcx10) * 8);
-    rax12 = r9_11->f4216;
-    rsi->f16 = rax12;
+    rax12 = r9_11->f1078;
+    rsi->f10 = rax12;
     if (rax12) {
-        rax12->f24 = rsi;
+        rax12->f18 = rsi;
     }
-    r9_11->f4216 = rsi;
+    r9_11->f1078 = rsi;
     ecx13 = *reinterpret_cast<uint32_t*>(&rcx10) & 31;
     rsi14 = 1 << *reinterpret_cast<unsigned char*>(&ecx13);
     *reinterpret_cast<uint32_t*>(reinterpret_cast<int64_t>(rdi) + rdx7 * 4 + 0xffc) = *reinterpret_cast<uint32_t*>(reinterpret_cast<int64_t>(rdi) + rdx7 * 4 + 0xffc) | *reinterpret_cast<uint32_t*>(&rsi14);
     ecx15 = *reinterpret_cast<uint32_t*>(&r8_9) & 31;
     rax16 = 1 << *reinterpret_cast<unsigned char*>(&ecx15);
-    rdi->f4112 = rdi->f4112 | *reinterpret_cast<uint32_t*>(&rax16);
+    rdi->f1010 = rdi->f1010 | *reinterpret_cast<uint32_t*>(&rax16);
     return;
 }
 
@@ -10578,21 +10578,21 @@ void dealloc_jqYVOi4APb9cRx3G9a57AkRw() {
 struct s88 {
     signed char[8] pad8;
     int64_t f8;
-    int64_t* f16;
+    int64_t* f10;
 };
 
 int64_t getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg(int64_t rdi, struct s88* rsi) {
     int64_t rax3;
 
-    if (*rsi->f16 == 2) {
+    if (*rsi->f10 == 2) {
         *reinterpret_cast<uint32_t*>(&rax3) = *reinterpret_cast<uint16_t*>(rdi + rsi->f8);
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax3) + 4) = 0;
         return rax3;
     } else {
-        if (*rsi->f16 == 4) {
+        if (*rsi->f10 == 4) {
             return static_cast<int64_t>(*reinterpret_cast<int32_t*>(rdi + rsi->f8));
         } else {
-            if (*rsi->f16 == 1) 
+            if (*rsi->f10 == 1) 
                 goto 0x404200;
             return 0;
         }
@@ -10603,17 +10603,17 @@ struct s89 {
     signed char[8] pad8;
     int64_t f8;
     signed char[16] pad32;
-    uint64_t f32;
-    int64_t* f40;
+    uint64_t f20;
+    int64_t* f28;
 };
 
 void fun_40428a(int64_t rdi, struct s89* rsi) {
     uint64_t rdx3;
 
     rdx3 = reinterpret_cast<uint64_t>(static_cast<int64_t>(*reinterpret_cast<int32_t*>(rdi + rsi->f8)));
-    if (rsi->f32 <= rdx3) 
+    if (rsi->f20 <= rdx3) 
         goto 0x404268;
-    if (!rsi->f40[rdx3]) 
+    if (!rsi->f28[rdx3]) 
         goto 0x404268;
     return;
 }
@@ -10624,14 +10624,14 @@ void fun_40426d(int64_t rdi, int64_t rsi) {
 
 struct s90 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 void** alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2(void** rdi, struct s90* rsi, void** rdx, void** rcx, void** r8) {
     void** rax6;
     void** rax7;
 
-    rax6 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(rdi, &rsi->f16, rdx, rcx, r8);
+    rax6 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(rdi, &rsi->f10, rdx, rcx, r8);
     *reinterpret_cast<void***>(rax6 + 8) = reinterpret_cast<void**>(1);
     rax7 = fun_4009c0(rax6 + 16);
     return rax7;
@@ -10640,7 +10640,7 @@ void** alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2(void** rdi, struct s90* rsi, void** rdx
 struct s91 {
     void** f0;
     signed char[15] pad16;
-    uint64_t f16;
+    uint64_t f10;
 };
 
 int64_t containsOrIncl_CbGEjIBKJIi7knlaDzUluA(struct s27* rdi, void** rsi) {
@@ -10655,7 +10655,7 @@ int64_t containsOrIncl_CbGEjIBKJIi7knlaDzUluA(struct s27* rdi, void** rsi) {
     uint64_t rdx11;
 
     r9_3 = rdi->f8;
-    r10_4 = rdi->f24;
+    r10_4 = rdi->f18;
     r8_5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(rsi) >> 12);
     rax6 = reinterpret_cast<unsigned char>(r8_5) & r9_3;
     rdx7 = *reinterpret_cast<void***>(r10_4 + rax6 * 8);
@@ -10675,9 +10675,9 @@ int64_t containsOrIncl_CbGEjIBKJIi7knlaDzUluA(struct s27* rdi, void** rsi) {
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx9) + 4) = 0;
     rdi10 = reinterpret_cast<struct s91*>(rdx7 + (rcx9 >> 6) * 8);
     rdx11 = 1 << *reinterpret_cast<unsigned char*>(&rcx9);
-    if (rdi10->f16 & rdx11) 
+    if (rdi10->f10 & rdx11) 
         goto 0x4051f0;
-    rdi10->f16 = rdx11 | rdi10->f16;
+    rdi10->f10 = rdx11 | rdi10->f10;
     return 0;
     addr_4051f8_4:
     incl_m4q9b16kJJcoKe9c4ERtlpCg(rdi, rsi);
@@ -10708,10 +10708,10 @@ void Marker_tyRef_LEclZrWX2FQAodlapxGITw(struct s43* rdi, int64_t rsi) {
     rbx3 = rsi;
     if (!rdi->f8) {
         addr_405874_2:
-        rdi4 = rdi->f24;
+        rdi4 = rdi->f18;
         esi5 = *reinterpret_cast<unsigned char*>(&rsi);
         doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi4, *reinterpret_cast<signed char*>(&esi5));
-        if (!rdi->f32) 
+        if (!rdi->f20) 
             goto 0x4058b0;
     } else {
         if (*reinterpret_cast<unsigned char*>(&rsi) == 1) 
@@ -10720,7 +10720,7 @@ void Marker_tyRef_LEclZrWX2FQAodlapxGITw(struct s43* rdi, int64_t rsi) {
             goto addr_405ac0_5; else 
             goto addr_405864_6;
     }
-    r12_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) - 16);
+    r12_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) - 16);
     if (*reinterpret_cast<signed char*>(&rbx3) == 1) 
         goto 0x40598c;
     if (*reinterpret_cast<signed char*>(&rbx3)) {
@@ -10736,10 +10736,10 @@ void Marker_tyRef_LEclZrWX2FQAodlapxGITw(struct s43* rdi, int64_t rsi) {
     addr_405ac0_5:
     rsi7 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f8) + 0xfffffffffffffff0);
     markS_NZr5o3Ubzrci4OmK29cHBJA(0x60f000, rsi7);
-    rdi8 = rdi->f24;
+    rdi8 = rdi->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi8, 0);
-    r12_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f32) + 0xfffffffffffffff0);
-    if (!rdi->f32) 
+    r12_6 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f20) + 0xfffffffffffffff0);
+    if (!rdi->f20) 
         goto 0x4058b0; else 
         goto addr_405ae9_11;
     addr_405864_6:
@@ -10765,13 +10765,13 @@ void Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw(struct s41* rdi, int64_t rsi) {
     rbx4 = rsi;
     if (!rdi->f8) {
         addr_405f14_2:
-        rdi5 = rdi->f24;
+        rdi5 = rdi->f18;
         esi6 = r12d3;
         doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi5, *reinterpret_cast<signed char*>(&esi6));
-        rdi7 = rdi->f32;
+        rdi7 = rdi->f20;
         esi8 = r12d3;
         doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi7, *reinterpret_cast<signed char*>(&esi8));
-        if (!rdi->f48) 
+        if (!rdi->f30) 
             goto 0x405f5c;
     } else {
         if (*reinterpret_cast<unsigned char*>(&rsi) == 1) 
@@ -10794,11 +10794,11 @@ void Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw(struct s41* rdi, int64_t rsi) {
     addr_406180_5:
     rsi9 = reinterpret_cast<void**>(reinterpret_cast<int64_t>(rdi->f8) + 0xfffffffffffffff0);
     markS_NZr5o3Ubzrci4OmK29cHBJA(0x60f000, rsi9);
-    rdi10 = rdi->f24;
+    rdi10 = rdi->f18;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi10, 0);
-    rdi11 = rdi->f32;
+    rdi11 = rdi->f20;
     doOperation_3F8QeaTyYrJJF2gjBr6b8A(rdi11, 0);
-    if (!rdi->f48) 
+    if (!rdi->f30) 
         goto 0x405f5c; else 
         goto addr_4061b4_11;
     addr_405f04_6:
@@ -10826,7 +10826,7 @@ struct s92 {
     struct s92* f0;
     struct s92* f8;
     signed char[8] pad24;
-    int64_t f24;
+    int64_t f18;
 };
 
 int64_t highGauge_3mwQtFaBTgevFrybZdgUNw_2(struct s92* rdi) {
@@ -10835,7 +10835,7 @@ int64_t highGauge_3mwQtFaBTgevFrybZdgUNw_2(struct s92* rdi) {
     do {
         rdi = rdi->f8;
     } while (rdi->f0 != rdi);
-    return rdi->f24;
+    return rdi->f18;
 }
 
 void setPosition_kuKlONPws1O0vpPB9adzcQw() {
@@ -10844,7 +10844,7 @@ void setPosition_kuKlONPws1O0vpPB9adzcQw() {
 
 struct s94 {
     signed char[32] pad32;
-    int64_t f32;
+    int64_t f20;
 };
 
 struct s93 {
@@ -10857,10 +10857,10 @@ void freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2(int64_t rdi, struct s93* rsi) {
     int64_t tmp64_4;
 
     rax3 = rsi->f8;
-    if (rax3->f32) {
+    if (rax3->f20) {
         tmp64_4 = g60f058 + 1;
         g60f058 = tmp64_4;
-        rax3->f32(rsi + 1);
+        rax3->f20(rsi + 1);
         --g60f058;
     }
     goto rawDealloc_DA62HrGC5sdfCED505KyyQ;
@@ -10869,9 +10869,9 @@ void freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2(int64_t rdi, struct s93* rsi) {
 struct s95 {
     signed char[8] pad8;
     int64_t f8;
-    int64_t f16;
+    int64_t f10;
     signed char[10464] pad10488;
-    int64_t f10488;
+    int64_t f28f8;
 };
 
 void collectCT_zoTIuavlrCHyw3B8MBaLJA(struct s95* rdi) {
@@ -10883,9 +10883,9 @@ void collectCT_zoTIuavlrCHyw3B8MBaLJA(struct s95* rdi) {
     if (reinterpret_cast<int64_t>(rax2) <= reinterpret_cast<int64_t>(0xf9ff)) {
         rdx3 = 0x1f4;
     }
-    if (rdi->f16 >= rdx3) 
+    if (rdi->f10 >= rdx3) 
         goto 0x407c20;
-    if (rdi->f8 <= rdi->f10488) 
+    if (rdi->f8 <= rdi->f28f8) 
         goto 0x407c20; else 
         goto "???";
 }
@@ -11120,22 +11120,22 @@ void intSetGet_FhOZKj4Gih3qQ5OimZYOrg(struct s96** rdi, int64_t rsi) {
 
 struct s98 {
     signed char[24] pad24;
-    int64_t f24;
+    int64_t f18;
 };
 
 struct s97 {
     signed char[16] pad16;
-    struct s98* f16;
+    struct s98* f10;
 };
 
 void removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw(void* rdi, struct s97* rsi, int64_t rdx, int64_t rcx) {
     struct s98* rax5;
 
-    rax5 = rsi->f16;
+    rax5 = rsi->f10;
     *reinterpret_cast<struct s98**>(reinterpret_cast<int64_t>(rdi) + (rcx + (rdx << 5) + 0x20e) * 8 + 8) = rax5;
     if (!rax5) 
         goto 0x401a50;
-    rax5->f24 = 0;
+    rax5->f18 = 0;
 }
 
 int64_t g30d8;
@@ -11171,7 +11171,7 @@ void getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3(int64_t rdi, void** rsi) {
 
 struct s99 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 void** alloc_sVm4rDImKK2ZDdylByayiA(struct s99* rdi) {
@@ -11180,7 +11180,7 @@ void** alloc_sVm4rDImKK2ZDdylByayiA(struct s99* rdi) {
     void** r8_4;
     void** rax5;
 
-    rax5 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rdi->f16, rdx2, rcx3, r8_4);
+    rax5 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rdi->f10, rdx2, rcx3, r8_4);
     *reinterpret_cast<void***>(rax5 + 8) = reinterpret_cast<void**>(1);
     return rax5 + 16;
 }
@@ -11231,7 +11231,7 @@ void setPosition_plJQLEbXvFqZv6Phpo1t1w() {
 
 struct s100 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 void** alloc0_sVm4rDImKK2ZDdylByayiA_2(struct s100* rdi) {
@@ -11241,7 +11241,7 @@ void** alloc0_sVm4rDImKK2ZDdylByayiA_2(struct s100* rdi) {
     void** rax5;
     void** rax6;
 
-    rax5 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rdi->f16, rdx2, rcx3, r8_4);
+    rax5 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, &rdi->f10, rdx2, rcx3, r8_4);
     *reinterpret_cast<void***>(rax5 + 8) = reinterpret_cast<void**>(1);
     rax6 = fun_4009c0(rax5 + 16);
     return rax6;
@@ -11352,7 +11352,7 @@ struct s103 {
     struct s103* f0;
     struct s103* f8;
     signed char[16] pad32;
-    int64_t f32;
+    int64_t f20;
 };
 
 void skew_Cfx7NvEVZIhBjBm7i89boSg(struct s103** rdi) {
@@ -11361,7 +11361,7 @@ void skew_Cfx7NvEVZIhBjBm7i89boSg(struct s103** rdi) {
 
     rax2 = *rdi;
     rdx3 = rax2->f0;
-    if (rdx3->f32 == rax2->f32) {
+    if (rdx3->f20 == rax2->f20) {
         *rdi = rdx3;
         rax2->f0 = rdx3->f8;
         (*rdi)->f8 = rax2;
@@ -11371,17 +11371,17 @@ void skew_Cfx7NvEVZIhBjBm7i89boSg(struct s103** rdi) {
 
 struct s104 {
     signed char[16] pad16;
-    int64_t* f16;
+    int64_t* f10;
 };
 
 void selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg() {
     struct s104* rsi1;
 
-    if (*rsi1->f16 == 2) 
+    if (*rsi1->f10 == 2) 
         goto 0x404270;
-    if (*rsi1->f16 == 4) 
+    if (*rsi1->f10 == 4) 
         goto 0x404290;
-    if (*rsi1->f16 == 1) 
+    if (*rsi1->f10 == 1) 
         goto 0x404280; else 
         goto "???";
 }
@@ -11389,7 +11389,7 @@ void selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg() {
 struct s105 {
     int64_t f0;
     int64_t f8;
-    void** f16;
+    void** f10;
 };
 
 void init_E1QNZGuo0DGFXyt4Y3MfqA(struct s105* rdi, int64_t rsi, void** rdx, void** rcx, void** r8) {
@@ -11401,7 +11401,7 @@ void init_E1QNZGuo0DGFXyt4Y3MfqA(struct s105* rdi, int64_t rsi, void** rdx, void
     rax6 = rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg(0x60f060, rsi * 8 + 16, rdx, rcx, r8);
     *reinterpret_cast<void***>(rax6 + 8) = reinterpret_cast<void**>(1);
     rax7 = fun_4009c0(rax6 + 16);
-    rdi->f16 = rax7;
+    rdi->f10 = rax7;
     return;
 }
 
@@ -11413,9 +11413,9 @@ void inRange_Bc4Ua6HOMCIDGx9b15HSY4g(void** rdi) {
 
 struct s106 {
     signed char[40] pad40;
-    int64_t f40;
+    int64_t f28;
     signed char[8] pad56;
-    void*** f56;
+    void*** f38;
 };
 
 void unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6(struct s106* rdi) {
@@ -11426,9 +11426,9 @@ void unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6(struct s106* rdi) {
     void** rax6;
 
     r12_2 = rdi;
-    rbx3 = rdi->f56;
-    rbp4 = rbx3 + rdi->f40 * 8;
-    if (!(reinterpret_cast<uint1_t>(rdi->f40 < 0) | reinterpret_cast<uint1_t>(rdi->f40 == 0))) {
+    rbx3 = rdi->f38;
+    rbp4 = rbx3 + rdi->f28 * 8;
+    if (!(reinterpret_cast<uint1_t>(rdi->f28 < 0) | reinterpret_cast<uint1_t>(rdi->f28 == 0))) {
         do {
             rsi5 = *rbx3;
             rax6 = *reinterpret_cast<void***>(rsi5) - 8;
@@ -11439,7 +11439,7 @@ void unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6(struct s106* rdi) {
             rbx3 = rbx3 + 8;
         } while (rbp4 != rbx3);
     }
-    r12_2->f40 = 0;
+    r12_2->f28 = 0;
     return;
 }
 

@@ -33,8 +33,8 @@ int32_t main(void** r0, void** r1) {
 }
 
 struct s0 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s0* g11218 = reinterpret_cast<struct s0*>(0x1305c);
@@ -55,7 +55,7 @@ void text() {
         return;
     } else {
         r12_3 = g11220;
-        while (++r0_1, *reinterpret_cast<int32_t*>(r0_1->0x4 + r12_3) = *reinterpret_cast<int32_t*>(r0_1->0x4 + r12_3) + r0_1->0x0, reinterpret_cast<uint32_t>(r0_1) >= reinterpret_cast<uint32_t>(lr2)) {
+        while (++r0_1, *reinterpret_cast<int32_t*>(r0_1->f4 + r12_3) = *reinterpret_cast<int32_t*>(r0_1->f4 + r12_3) + r0_1->f0, reinterpret_cast<uint32_t>(r0_1) >= reinterpret_cast<uint32_t>(lr2)) {
         }
         return;
     }
@@ -95,7 +95,7 @@ void** atexit(void** r0) {
 
 struct s1 {
     signed char[4] pad4;
-    int32_t 0x4;
+    int32_t f4;
 };
 
 struct s1** g1138c = reinterpret_cast<struct s1**>(0x14000);
@@ -125,7 +125,7 @@ void __dll_exit() {
             r6_4 = g1138c;
             while (1) {
                 r5_5 = r4_3;
-                z6 = r4_3->0x4 == 0;
+                z6 = r4_3->f4 == 0;
                 if (!z6) {
                 }
                 if (!z6) 
@@ -145,7 +145,7 @@ void __dll_exit() {
     *r3_7 = reinterpret_cast<struct s1*>(0);
     goto addr_11380_13;
     label_10:
-    goto r4_3->0x4;
+    goto r4_3->f4;
 }
 
 void _cexit() {
@@ -155,8 +155,8 @@ void _cexit() {
 }
 
 struct s2 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s2* g1149c = reinterpret_cast<struct s2*>(0x117f0);
@@ -175,13 +175,13 @@ void** __do_global_ctors() {
     void** r0_9;
 
     r3_1 = g1149c;
-    r2_2 = r3_1->0x0;
+    r2_2 = r3_1->f0;
     if (r2_2 == -1) {
         r0_3 = r3_1;
         ++r2_2;
         while (1) {
-            r0_3 = reinterpret_cast<struct s2*>(&r0_3->0x4);
-            z4 = r0_3->0x4 == 0;
+            r0_3 = reinterpret_cast<struct s2*>(&r0_3->f4);
+            z4 = r0_3->f4 == 0;
             if (!z4) {
                 ++r2_2;
             }
@@ -854,8 +854,8 @@ void exit(int32_t r0) {
 }
 
 struct s3 {
-    int32_t 0x0;
-    int32_t 0x4;
+    int32_t f0;
+    int32_t f4;
 };
 
 struct s3** g11438 = reinterpret_cast<struct s3**>(0x12000);
@@ -873,12 +873,12 @@ void fun_113f0(int32_t r0, int32_t r1) {
     if (z4) {
     }
     r3_5 = g11438;
-    r3_6 = (*r3_5)->0x0;
+    r3_6 = (*r3_5)->f0;
     if (!r3_6) {
         return;
     } else {
         r4_7 = g11438;
-        while (r3_6(), r2_8 = *r4_7, *r4_7 = reinterpret_cast<struct s3*>(&r2_8->0x4), r3_6 = r2_8->0x4, !!r3_6) {
+        while (r3_6(), r2_8 = *r4_7, *r4_7 = reinterpret_cast<struct s3*>(&r2_8->f4), r3_6 = r2_8->f4, !!r3_6) {
         }
         return;
     }

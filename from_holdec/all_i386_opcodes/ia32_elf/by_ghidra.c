@@ -29,81 +29,81 @@ typedef ulong size_t;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
+    DT_NULL=0,
+    DT_NEEDED=1,
+    DT_PLTRELSZ=2,
+    DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
+    DT_STRSZ=10,
+    DT_SYMENT=11,
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
     DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
     DT_ANDROID_RELA=1610612753,
     DT_ANDROID_RELASZ=1610612754,
     DT_ANDROID_RELR=1879040000,
-    DT_ANDROID_RELRENT=1879040003,
     DT_ANDROID_RELRSZ=1879040001,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
-    DT_CONFIG=1879047930,
-    DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
+    DT_ANDROID_RELRENT=1879040003,
     DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
     DT_MOVEENT=1879047674,
     DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
+    DT_FEATURE_1=1879047676,
     DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAY=32,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
-    DT_RELENT=19,
-    DT_RELR=36,
-    DT_RELRENT=37,
-    DT_RELRSZ=35,
-    DT_RELSZ=18,
-    DT_RPATH=15,
-    DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
     DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
     DT_VERDEF=1879048188,
     DT_VERDEFNUM=1879048189,
     DT_VERNEED=1879048190,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -125,35 +125,35 @@ struct Elf32_Sym {
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
-    SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -177,17 +177,17 @@ struct Elf32_Rel {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
@@ -69522,14 +69522,18 @@ undefined4 rotate_imm8_sar_l_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_ins1b_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_ins1b_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined uVar1;
   undefined *unaff_EDI;
   
-  uVar1 = in(param_2);
-  *unaff_EDI = uVar1;
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -69550,7 +69554,6 @@ undefined4 rep_ins1b_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar2 = _DAT_00001100 & 0x4000;
@@ -69563,10 +69566,15 @@ undefined4 rep_ins1b_allregs(void)
   uVar5 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar6 * -2 + 1;
-  uVar1 = in((short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = uVar1;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
@@ -69594,16 +69602,23 @@ undefined4 rep_ins1b_allregs(void)
 undefined4 rep_ins1b_constant_simple(void)
 
 {
-  DAT_00000008 = in(5);
+  undefined uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = &DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 9;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -69631,16 +69646,23 @@ undefined4 rep_ins1b_constant_simple(void)
 undefined4 rep_ins1b_constant_complex1(void)
 
 {
-  DAT_e465e152 = in(0x56c4);
+  undefined uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e153;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -69668,16 +69690,23 @@ undefined4 rep_ins1b_constant_complex1(void)
 undefined4 rep_ins1b_constant_complex2(void)
 
 {
-  DAT_91a917b4 = in(0x25b3);
+  undefined uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b3;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -69700,14 +69729,18 @@ undefined4 rep_ins1b_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_ins1w_mv_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_ins1w_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined2 uVar1;
   undefined2 *unaff_EDI;
   
-  uVar1 = in(param_2);
-  *unaff_EDI = uVar1;
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -69728,7 +69761,6 @@ undefined4 rep_ins1w_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar2 = _DAT_00001100 & 0x4000;
@@ -69741,10 +69773,15 @@ undefined4 rep_ins1w_mv_allregs(void)
   uVar5 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar6 * -2 + 1;
-  uVar1 = in((short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = uVar1;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
@@ -69772,16 +69809,23 @@ undefined4 rep_ins1w_mv_allregs(void)
 undefined4 rep_ins1w_mv_constant_simple(void)
 
 {
-  _DAT_00000008 = in(5);
+  undefined2 uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = (undefined2 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 10;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -69809,16 +69853,23 @@ undefined4 rep_ins1w_mv_constant_simple(void)
 undefined4 rep_ins1w_mv_constant_complex1(void)
 
 {
-  _DAT_e465e152 = in(0x56c4);
+  undefined2 uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = (undefined2 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e154;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -69846,16 +69897,23 @@ undefined4 rep_ins1w_mv_constant_complex1(void)
 undefined4 rep_ins1w_mv_constant_complex2(void)
 
 {
-  _DAT_91a917b4 = in(0x25b3);
+  undefined2 uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b2;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -69878,14 +69936,18 @@ undefined4 rep_ins1w_mv_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_ins1l_mv_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_ins1l_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined4 uVar1;
   undefined4 *unaff_EDI;
   
-  uVar1 = in(param_2);
-  *unaff_EDI = uVar1;
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    uVar1 = in(param_2);
+    *unaff_EDI = uVar1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -69906,7 +69968,6 @@ undefined4 rep_ins1l_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar2 = _DAT_00001100 & 0x4000;
@@ -69919,10 +69980,15 @@ undefined4 rep_ins1l_mv_allregs(void)
   uVar5 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar6 * -2 + 1;
-  uVar1 = in((short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = uVar1;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in((short)_DAT_0000200c);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar6 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar6 * 0x400 |
@@ -69950,16 +70016,23 @@ undefined4 rep_ins1l_mv_allregs(void)
 undefined4 rep_ins1l_mv_constant_simple(void)
 
 {
-  _DAT_00000008 = in(5);
+  undefined4 uVar1;
+  
+  _DAT_00002008 = 4;
+  _DAT_00002018 = (undefined4 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(5);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 0xc;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -69987,16 +70060,23 @@ undefined4 rep_ins1l_mv_constant_simple(void)
 undefined4 rep_ins1l_mv_constant_complex1(void)
 
 {
-  _DAT_e465e152 = in(0x56c4);
+  undefined4 uVar1;
+  
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002018 = (undefined4 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x56c4);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e156;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -70024,16 +70104,23 @@ undefined4 rep_ins1l_mv_constant_complex1(void)
 undefined4 rep_ins1l_mv_constant_complex2(void)
 
 {
-  _DAT_91a917b4 = in(0x25b3);
+  undefined4 uVar1;
+  
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    uVar1 = in(0x25b3);
+    *_DAT_00002018 = uVar1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b0;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -70680,6 +70767,10 @@ undefined4 rep_ins2l_mv_constant_complex2(void)
 undefined4 rep_lods1b_plain(void)
 
 {
+  int in_ECX;
+  
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+  }
   return 0;
 }
 
@@ -70698,12 +70789,15 @@ undefined4 rep_lods1b_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002000 = _DAT_00001000 & 0xffffff00 | (uint)*_DAT_00001014;
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002014 = _DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = _DAT_00002000 & 0xffffff00 | (uint)*_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70734,12 +70828,16 @@ undefined4 rep_lods1b_allregs(void)
 undefined4 rep_lods1b_constant_simple(void)
 
 {
-  _DAT_00002000 = (uint)DAT_00000007;
+  DAT_00002000 = 2;
+  _DAT_00002014 = &DAT_00000007;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  uRam00002001 = 0;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 8;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70770,12 +70868,17 @@ undefined4 rep_lods1b_constant_simple(void)
 undefined4 rep_lods1b_constant_complex1(void)
 
 {
-  _DAT_00002000 = CONCAT31(0xa3b179,DAT_ad3c2d78);
+  DAT_00002000 = 0x84;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  uRam00002001 = 0xa3b179;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d79;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70806,12 +70909,17 @@ undefined4 rep_lods1b_constant_complex1(void)
 undefined4 rep_lods1b_constant_complex2(void)
 
 {
-  _DAT_00002000 = CONCAT31(0x313ec0,DAT_2f37a4a5);
+  DAT_00002000 = 0xe8;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
+  uRam00002001 = 0x313ec0;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a4;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70840,6 +70948,10 @@ undefined4 rep_lods1b_constant_complex2(void)
 undefined4 rep_lods1w_mv_plain(void)
 
 {
+  int in_ECX;
+  
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+  }
   return 0;
 }
 
@@ -70858,12 +70970,15 @@ undefined4 rep_lods1w_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)*_DAT_00001014;
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002014 = _DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = _DAT_00002000 & 0xffff0000 | (uint)*_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70894,12 +71009,16 @@ undefined4 rep_lods1w_mv_allregs(void)
 undefined4 rep_lods1w_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = (uint)_DAT_00000007;
+  _DAT_00002000 = 2;
+  _DAT_00002014 = (undefined2 *)&DAT_00000007;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  uRam00002002 = 0;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 9;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70930,12 +71049,17 @@ undefined4 rep_lods1w_mv_constant_simple(void)
 undefined4 rep_lods1w_mv_constant_complex1(void)
 
 {
-  _DAT_00002000 = CONCAT22(0xa3b1,_DAT_ad3c2d78);
+  _DAT_00002000 = 0x7984;
+  _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
+  uRam00002002 = 0xa3b1;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7a;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -70966,12 +71090,17 @@ undefined4 rep_lods1w_mv_constant_complex1(void)
 undefined4 rep_lods1w_mv_constant_complex2(void)
 
 {
-  _DAT_00002000 = CONCAT22(0x313e,_DAT_2f37a4a5);
+  _DAT_00002000 = 0xc0e8;
+  _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
+  uRam00002002 = 0x313e;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a3;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -71000,6 +71129,10 @@ undefined4 rep_lods1w_mv_constant_complex2(void)
 undefined4 rep_lods1l_mv_plain(void)
 
 {
+  int in_ECX;
+  
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+  }
   return 0;
 }
 
@@ -71018,12 +71151,15 @@ undefined4 rep_lods1l_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002000 = *_DAT_00001014;
+  _DAT_00002000 = _DAT_00001000;
+  _DAT_00002014 = _DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -71054,12 +71190,15 @@ undefined4 rep_lods1l_mv_allregs(void)
 undefined4 rep_lods1l_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = _DAT_00000007;
+  _DAT_00002000 = 2;
+  _DAT_00002014 = (undefined4 *)&DAT_00000007;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 0xb;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -71090,12 +71229,16 @@ undefined4 rep_lods1l_mv_constant_simple(void)
 undefined4 rep_lods1l_mv_constant_complex1(void)
 
 {
-  _DAT_00002000 = _DAT_ad3c2d78;
+  _DAT_00002000 = &DAT_a3b17984;
+  _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = (undefined *)*_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7c;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -71126,12 +71269,16 @@ undefined4 rep_lods1l_mv_constant_complex1(void)
 undefined4 rep_lods1l_mv_constant_complex2(void)
 
 {
-  _DAT_00002000 = _DAT_2f37a4a5;
+  _DAT_00002000 = &DAT_313ec0e8;
+  _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    _DAT_00002000 = (undefined *)*_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a1;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -71700,10 +71847,15 @@ undefined4 rep_lods2l_mv_constant_complex2(void)
 undefined4 rep_movs1b_plain(void)
 
 {
+  int in_ECX;
   undefined *unaff_ESI;
   undefined *unaff_EDI;
   
-  *unaff_EDI = *unaff_ESI;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+    *unaff_EDI = *unaff_ESI;
+    unaff_ESI = unaff_ESI + 1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -71722,7 +71874,6 @@ undefined4 rep_movs1b_allregs(void)
   
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -71735,10 +71886,14 @@ undefined4 rep_movs1b_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = *_DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -71766,16 +71921,19 @@ undefined4 rep_movs1b_allregs(void)
 undefined4 rep_movs1b_constant_simple(void)
 
 {
-  DAT_00000008 = DAT_00000007;
+  _DAT_00002014 = &DAT_00000007;
+  _DAT_00002018 = &DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 8;
-  _DAT_00002018 = 9;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -71803,15 +71961,20 @@ undefined4 rep_movs1b_constant_simple(void)
 undefined4 rep_movs1b_constant_complex1(void)
 
 {
+  _DAT_00002014 = &DAT_ad3c2d78;
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d79;
-  _DAT_00002018 = 0xe465e153;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -71829,7 +71992,6 @@ undefined4 rep_movs1b_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  DAT_e465e152 = DAT_ad3c2d78;
   return 0;
 }
 
@@ -71840,15 +72002,20 @@ undefined4 rep_movs1b_constant_complex1(void)
 undefined4 rep_movs1b_constant_complex2(void)
 
 {
+  _DAT_00002014 = &DAT_2f37a4a5;
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a4;
-  _DAT_00002018 = 0x91a917b3;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -71866,7 +72033,6 @@ undefined4 rep_movs1b_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  DAT_91a917b4 = DAT_2f37a4a5;
   return 0;
 }
 
@@ -71875,10 +72041,15 @@ undefined4 rep_movs1b_constant_complex2(void)
 undefined4 rep_movs1w_mv_plain(void)
 
 {
+  int in_ECX;
   undefined2 *unaff_ESI;
   undefined2 *unaff_EDI;
   
-  *unaff_EDI = *unaff_ESI;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+    *unaff_EDI = *unaff_ESI;
+    unaff_ESI = unaff_ESI + 1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -71897,7 +72068,6 @@ undefined4 rep_movs1w_mv_allregs(void)
   
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -71910,10 +72080,14 @@ undefined4 rep_movs1w_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = *_DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -71941,16 +72115,19 @@ undefined4 rep_movs1w_mv_allregs(void)
 undefined4 rep_movs1w_mv_constant_simple(void)
 
 {
-  _DAT_00000007 = CONCAT21(_DAT_00000007,DAT_00000007);
+  _DAT_00002014 = (undefined2 *)&DAT_00000007;
+  _DAT_00002018 = (undefined2 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 9;
-  _DAT_00002018 = 10;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -71978,15 +72155,20 @@ undefined4 rep_movs1w_mv_constant_simple(void)
 undefined4 rep_movs1w_mv_constant_complex1(void)
 
 {
+  _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
+  _DAT_00002018 = (undefined2 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7a;
-  _DAT_00002018 = 0xe465e154;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72004,7 +72186,6 @@ undefined4 rep_movs1w_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  _DAT_e465e152 = _DAT_ad3c2d78;
   return 0;
 }
 
@@ -72015,15 +72196,20 @@ undefined4 rep_movs1w_mv_constant_complex1(void)
 undefined4 rep_movs1w_mv_constant_complex2(void)
 
 {
+  _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
+  _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a3;
-  _DAT_00002018 = 0x91a917b2;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -72041,7 +72227,6 @@ undefined4 rep_movs1w_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  _DAT_91a917b4 = _DAT_2f37a4a5;
   return 0;
 }
 
@@ -72050,10 +72235,15 @@ undefined4 rep_movs1w_mv_constant_complex2(void)
 undefined4 rep_movs1l_mv_plain(void)
 
 {
+  int in_ECX;
   undefined4 *unaff_ESI;
   undefined4 *unaff_EDI;
   
-  *unaff_EDI = *unaff_ESI;
+  for (; in_ECX != 0; in_ECX = in_ECX + -1) {
+    *unaff_EDI = *unaff_ESI;
+    unaff_ESI = unaff_ESI + 1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -72072,7 +72262,6 @@ undefined4 rep_movs1l_mv_allregs(void)
   
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -72085,10 +72274,14 @@ undefined4 rep_movs1l_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar5 * -2 + 1;
+  _DAT_00002014 = _DAT_00001014;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = *_DAT_00001014;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar5 * -2 + 1;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -72116,20 +72309,19 @@ undefined4 rep_movs1l_mv_allregs(void)
 undefined4 rep_movs1l_mv_constant_simple(void)
 
 {
-  uint uVar1;
-  
-  uVar1 = _DAT_00000007;
-  _DAT_00000007 = _DAT_00000007 & 0xff | _DAT_00000007 << 8;
-  uRam0000000b = (undefined)(uVar1 >> 0x18);
+  _DAT_00002014 = (undefined4 *)&DAT_00000007;
+  _DAT_00002018 = (undefined4 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 0xb;
-  _DAT_00002018 = 0xc;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72157,15 +72349,20 @@ undefined4 rep_movs1l_mv_constant_simple(void)
 undefined4 rep_movs1l_mv_constant_complex1(void)
 
 {
+  _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
+  _DAT_00002018 = (undefined4 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + 1;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7c;
-  _DAT_00002018 = 0xe465e156;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -72183,7 +72380,6 @@ undefined4 rep_movs1l_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  _DAT_e465e152 = _DAT_ad3c2d78;
   return 0;
 }
 
@@ -72194,15 +72390,20 @@ undefined4 rep_movs1l_mv_constant_complex1(void)
 undefined4 rep_movs1l_mv_constant_complex2(void)
 
 {
+  _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
+  _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = *_DAT_00002014;
+    _DAT_00002014 = _DAT_00002014 + -1;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a1;
-  _DAT_00002018 = 0x91a917b0;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -72220,7 +72421,6 @@ undefined4 rep_movs1l_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  _DAT_91a917b4 = _DAT_2f37a4a5;
   return 0;
 }
 
@@ -72808,12 +73008,16 @@ undefined4 rep_movs2l_mv_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_outs1b_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_outs1b_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined *unaff_ESI;
   
-  out(*unaff_ESI,param_2);
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
   return 0;
 }
 
@@ -72832,13 +73036,17 @@ undefined4 rep_outs1b_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  out(*_DAT_00001014,(short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -72869,13 +73077,17 @@ undefined4 rep_outs1b_allregs(void)
 undefined4 rep_outs1b_constant_simple(void)
 
 {
-  out(DAT_00000007,5);
+  _DAT_00002008 = 4;
+  _DAT_00002014 = &DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 8;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -72906,13 +73118,17 @@ undefined4 rep_outs1b_constant_simple(void)
 undefined4 rep_outs1b_constant_complex1(void)
 
 {
-  out(DAT_ad3c2d78,0x56c4);
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = &DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d79;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -72943,13 +73159,17 @@ undefined4 rep_outs1b_constant_complex1(void)
 undefined4 rep_outs1b_constant_complex2(void)
 
 {
-  out(DAT_2f37a4a5,0x25b3);
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = &DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a4;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -72975,12 +73195,16 @@ undefined4 rep_outs1b_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_outs1w_mv_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_outs1w_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined2 *unaff_ESI;
   
-  out(*unaff_ESI,param_2);
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
   return 0;
 }
 
@@ -72999,13 +73223,17 @@ undefined4 rep_outs1w_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  out(*_DAT_00001014,(short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73036,13 +73264,17 @@ undefined4 rep_outs1w_mv_allregs(void)
 undefined4 rep_outs1w_mv_constant_simple(void)
 
 {
-  out(_DAT_00000007,5);
+  _DAT_00002008 = 4;
+  _DAT_00002014 = (undefined2 *)&DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 9;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73073,13 +73305,17 @@ undefined4 rep_outs1w_mv_constant_simple(void)
 undefined4 rep_outs1w_mv_constant_complex1(void)
 
 {
-  out(_DAT_ad3c2d78,0x56c4);
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = (undefined2 *)&DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7a;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73110,13 +73346,17 @@ undefined4 rep_outs1w_mv_constant_complex1(void)
 undefined4 rep_outs1w_mv_constant_complex2(void)
 
 {
-  out(_DAT_2f37a4a5,0x25b3);
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = (undefined2 *)&DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a3;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73142,12 +73382,16 @@ undefined4 rep_outs1w_mv_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_outs1l_mv_plain(undefined4 param_1,undefined2 param_2)
+undefined4 __regparm3 rep_outs1l_mv_plain(undefined4 param_1,undefined2 param_2,int param_3)
 
 {
   undefined4 *unaff_ESI;
   
-  out(*unaff_ESI,param_2);
+  while (param_3 != 0) {
+    param_3 = param_3 + -1;
+    out(*unaff_ESI,param_2);
+    unaff_ESI = unaff_ESI + 1;
+  }
   return 0;
 }
 
@@ -73166,13 +73410,17 @@ undefined4 rep_outs1l_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  out(*_DAT_00001014,(short)_DAT_0000100c);
+  _DAT_00002008 = _DAT_00001008;
+  _DAT_00002014 = _DAT_00001014;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,(short)_DAT_0000100c);
+    _DAT_00002014 = _DAT_00002014 + (uint)bVar1 * -2 + 1;
+  }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
-  _DAT_00002014 = _DAT_00001014 + (uint)bVar1 * -2 + 1;
   _DAT_00002018 = _DAT_00001018;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73203,13 +73451,17 @@ undefined4 rep_outs1l_mv_allregs(void)
 undefined4 rep_outs1l_mv_constant_simple(void)
 
 {
-  out(_DAT_00000007,5);
+  _DAT_00002008 = 4;
+  _DAT_00002014 = (undefined4 *)&DAT_00000007;
+  while (_DAT_00002008 != 0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,5);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
-  _DAT_00002014 = 0xb;
   _DAT_00002018 = 8;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73240,13 +73492,17 @@ undefined4 rep_outs1l_mv_constant_simple(void)
 undefined4 rep_outs1l_mv_constant_complex1(void)
 
 {
-  out(_DAT_ad3c2d78,0x56c4);
+  _DAT_00002008 = &DAT_46685248;
+  _DAT_00002014 = (undefined4 *)&DAT_ad3c2d78;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x56c4);
+    _DAT_00002014 = _DAT_00002014 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
-  _DAT_00002014 = 0xad3c2d7c;
   _DAT_00002018 = &DAT_e465e152;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73277,13 +73533,17 @@ undefined4 rep_outs1l_mv_constant_complex1(void)
 undefined4 rep_outs1l_mv_constant_complex2(void)
 
 {
-  out(_DAT_2f37a4a5,0x25b3);
+  _DAT_00002008 = &DAT_1e3f6cb2;
+  _DAT_00002014 = (undefined4 *)&DAT_2f37a4a5;
+  while (_DAT_00002008 != (undefined *)0x0) {
+    _DAT_00002008 = _DAT_00002008 + -1;
+    out(*_DAT_00002014,0x25b3);
+    _DAT_00002014 = _DAT_00002014 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
-  _DAT_00002014 = 0x2f37a4a1;
   _DAT_00002018 = &DAT_91a917b4;
   _DAT_00002020 = 0;
   _DAT_00002050 = (undefined *)register0x00000010;
@@ -73870,12 +74130,15 @@ undefined4 rep_outs2l_mv_constant_complex2(void)
 
 
 
-undefined4 __regparm3 rep_stos1b_plain(undefined param_1)
+undefined4 __regparm3 rep_stos1b_plain(undefined param_1,undefined4 param_2,int param_3)
 
 {
   undefined *unaff_EDI;
   
-  *unaff_EDI = param_1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
+    *unaff_EDI = param_1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -73895,7 +74158,6 @@ undefined4 rep_stos1b_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -73908,9 +74170,12 @@ undefined4 rep_stos1b_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = (char)_DAT_00001000;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = (char)_DAT_00002000;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -73938,16 +74203,18 @@ undefined4 rep_stos1b_allregs(void)
 undefined4 rep_stos1b_constant_simple(void)
 
 {
-  DAT_00000008 = 2;
+  _DAT_00002018 = &DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 2;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 9;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -73975,15 +74242,19 @@ undefined4 rep_stos1b_constant_simple(void)
 undefined4 rep_stos1b_constant_complex1(void)
 
 {
+  _DAT_00002018 = &DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 0x84;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e153;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74001,7 +74272,6 @@ undefined4 rep_stos1b_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  DAT_e465e152 = 0x84;
   return 0;
 }
 
@@ -74012,15 +74282,19 @@ undefined4 rep_stos1b_constant_complex1(void)
 undefined4 rep_stos1b_constant_complex2(void)
 
 {
+  _DAT_00002018 = &DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 0xe8;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b3;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -74038,18 +74312,20 @@ undefined4 rep_stos1b_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  DAT_91a917b4 = 0xe8;
   return 0;
 }
 
 
 
-undefined4 __regparm3 rep_stos1w_mv_plain(undefined2 param_1)
+undefined4 __regparm3 rep_stos1w_mv_plain(undefined2 param_1,undefined4 param_2,int param_3)
 
 {
   undefined2 *unaff_EDI;
   
-  *unaff_EDI = param_1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
+    *unaff_EDI = param_1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -74069,7 +74345,6 @@ undefined4 rep_stos1w_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -74082,9 +74357,12 @@ undefined4 rep_stos1w_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = (short)_DAT_00001000;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = (short)_DAT_00002000;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -74112,16 +74390,18 @@ undefined4 rep_stos1w_mv_allregs(void)
 undefined4 rep_stos1w_mv_constant_simple(void)
 
 {
-  _DAT_00000008 = 2;
+  _DAT_00002018 = (undefined2 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 2;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 10;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74149,15 +74429,19 @@ undefined4 rep_stos1w_mv_constant_simple(void)
 undefined4 rep_stos1w_mv_constant_complex1(void)
 
 {
+  _DAT_00002018 = (undefined2 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 0x7984;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e154;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74175,7 +74459,6 @@ undefined4 rep_stos1w_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  _DAT_e465e152 = 0x7984;
   return 0;
 }
 
@@ -74186,15 +74469,19 @@ undefined4 rep_stos1w_mv_constant_complex1(void)
 undefined4 rep_stos1w_mv_constant_complex2(void)
 
 {
+  _DAT_00002018 = (undefined2 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 0xc0e8;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b2;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -74212,18 +74499,20 @@ undefined4 rep_stos1w_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  _DAT_91a917b4 = 0xc0e8;
   return 0;
 }
 
 
 
-undefined4 __regparm3 rep_stos1l_mv_plain(undefined4 param_1)
+undefined4 __regparm3 rep_stos1l_mv_plain(undefined4 param_1,undefined4 param_2,int param_3)
 
 {
   undefined4 *unaff_EDI;
   
-  *unaff_EDI = param_1;
+  for (; param_3 != 0; param_3 = param_3 + -1) {
+    *unaff_EDI = param_1;
+    unaff_EDI = unaff_EDI + 1;
+  }
   return 0;
 }
 
@@ -74243,7 +74532,6 @@ undefined4 rep_stos1l_mv_allregs(void)
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002010 = _DAT_00001010;
   _DAT_0000200c = _DAT_0000100c;
-  _DAT_00002008 = _DAT_00001008;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002000 = _DAT_00001000;
   uVar1 = _DAT_00001100 & 0x4000;
@@ -74256,9 +74544,12 @@ undefined4 rep_stos1l_mv_allregs(void)
   uVar4 = _DAT_00001100 & 0x10;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
-  _DAT_00002018 = _DAT_00001018 + (uint)bVar5 * -2 + 1;
+  _DAT_00002018 = _DAT_00001018;
   _DAT_00002050 = (undefined *)register0x00000010;
-  *_DAT_00001018 = _DAT_00001000;
+  for (_DAT_00002008 = _DAT_00001008; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = _DAT_00002000;
+    _DAT_00002018 = _DAT_00002018 + (uint)bVar5 * -2 + 1;
+  }
   _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 =
        (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)bVar5 * 0x400 |
@@ -74286,16 +74577,18 @@ undefined4 rep_stos1l_mv_allregs(void)
 undefined4 rep_stos1l_mv_constant_simple(void)
 
 {
-  _DAT_00000008 = 2;
+  _DAT_00002018 = (undefined4 *)&DAT_00000008;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = 4; _DAT_00002008 != 0; _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = 2;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
-  _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
-  _DAT_00002018 = 0xc;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74323,15 +74616,19 @@ undefined4 rep_stos1l_mv_constant_simple(void)
 undefined4 rep_stos1l_mv_constant_complex1(void)
 
 {
+  _DAT_00002018 = (undefined4 *)&DAT_e465e152;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_46685248; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = &DAT_a3b17984;
+    _DAT_00002018 = _DAT_00002018 + 1;
+  }
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
-  _DAT_00002008 = &DAT_46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = &DAT_bc8960a4;
   _DAT_00002014 = &DAT_ad3c2d78;
-  _DAT_00002018 = 0xe465e156;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
@@ -74349,7 +74646,6 @@ undefined4 rep_stos1l_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
-  _DAT_e465e152 = &DAT_a3b17984;
   return 0;
 }
 
@@ -74360,15 +74656,19 @@ undefined4 rep_stos1l_mv_constant_complex1(void)
 undefined4 rep_stos1l_mv_constant_complex2(void)
 
 {
+  _DAT_00002018 = (undefined4 *)&DAT_91a917b4;
+  _DAT_00002050 = (undefined *)register0x00000010;
+  for (_DAT_00002008 = &DAT_1e3f6cb2; _DAT_00002008 != (undefined *)0x0;
+      _DAT_00002008 = _DAT_00002008 + -1) {
+    *_DAT_00002018 = &DAT_313ec0e8;
+    _DAT_00002018 = _DAT_00002018 + -1;
+  }
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
-  _DAT_00002008 = &DAT_1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = &DAT_4f312610;
   _DAT_00002014 = &DAT_2f37a4a5;
-  _DAT_00002018 = 0x91a917b0;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
   _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
@@ -74386,7 +74686,6 @@ undefined4 rep_stos1l_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
-  _DAT_91a917b4 = &DAT_313ec0e8;
   return 0;
 }
 

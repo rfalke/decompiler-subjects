@@ -137,7 +137,7 @@ int64_t compare_floats() {
         *reinterpret_cast<int32_t*>(&rsi1) = 0;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi1) + 4) = 0;
     }
-    fun_4003f0(0x400a2b, rsi1, rdx2, rcx3, r8_4, r9_5);
+    fun_4003f0("zu %zu %zu %zu\n", rsi1, rdx2, rcx3, r8_4, r9_5);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 11) = *rsi1;
     g400a2f = *reinterpret_cast<int32_t*>(&__gmon_start__);
     rsi6 = reinterpret_cast<int32_t*>(4);
@@ -147,19 +147,19 @@ int64_t compare_floats() {
         *reinterpret_cast<int32_t*>(&rsi6) = 1;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi6) + 4) = 0;
     }
-    fun_4003f0(0x400a23, rsi6, rdx7, rcx8, r8_9, r9_10);
+    fun_4003f0("%d", rsi6, rdx7, rcx8, r8_9, r9_10);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 3) = *rsi6;
     __asm__("ucomisd xmm2, [rsp+0x8]");
-    fun_4003f0(0x400a23, 0, rdx11, rcx12, r8_13, r9_14);
+    fun_4003f0("%d", 0, rdx11, rcx12, r8_13, r9_14);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 3) = *reinterpret_cast<int32_t*>(&__gmon_start__);
     __asm__("ucomisd xmm2, [rsp+0x8]");
-    fun_4003f0(0x400a23, 1, rdx15, rcx16, r8_17, r9_18);
+    fun_4003f0("%d", 1, rdx15, rcx16, r8_17, r9_18);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 3) = *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&__gmon_start__) + 1);
     __asm__("ucomisd xmm3, [rsp]");
-    fun_4003f0(0x400a23, 0, rdx19, rcx20, r8_21, r9_22);
+    fun_4003f0("%d", 0, rdx19, rcx20, r8_21, r9_22);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 3) = *reinterpret_cast<int32_t*>(&__gmon_start__);
     __asm__("ucomisd xmm3, [rsp]");
-    fun_4003f0(0x400a23, 1, rdx23, rcx24, r8_25, r9_26);
+    fun_4003f0("%d", 1, rdx23, rcx24, r8_25, r9_26);
     return 0x7c;
 }
 
@@ -199,22 +199,22 @@ int64_t constants() {
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi1;
     rsi2 = &rsi3->f4;
     __asm__("addsd xmm0, xmm0");
-    fun_4003f0(0x400a24, rsi2, rdx4, rcx5, r8_6, r9_7);
+    fun_4003f0("d", rsi2, rdx4, rcx5, r8_6, r9_7);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 4) = *rsi2;
     rsi8 = rsi2 + 1;
     __asm__("mulsd xmm0, [rip+0x123]");
-    fun_4003f0(0x400a20, rsi8, rdx9, rcx10, r8_11, r9_12);
+    fun_4003f0("%f", rsi8, rdx9, rcx10, r8_11, r9_12);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi8;
     rsi13 = rsi8 + 1;
     __asm__("mulsd xmm0, [rip+0x10e]");
-    fun_4003f0(0x400a20, rsi13, rdx14, rcx15, r8_16, r9_17);
+    fun_4003f0("%f", rsi13, rdx14, rcx15, r8_16, r9_17);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi13;
     rsi18 = rsi13 + 1;
     __asm__("mulsd xmm0, [rip+0xf9]");
-    fun_4003f0(0x400a20, rsi18, rdx19, rcx20, r8_21, r9_22);
+    fun_4003f0("%f", rsi18, rdx19, rcx20, r8_21, r9_22);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi18;
     __asm__("mulsd xmm0, [rip+0xe4]");
-    fun_4003f0(0x400a20, rsi18 + 1, rdx23, rcx24, r8_25, r9_26);
+    fun_4003f0("%f", rsi18 + 1, rdx23, rcx24, r8_25, r9_26);
     return 0x7d;
 }
 
@@ -305,13 +305,13 @@ int64_t read_ints() {
     __asm__("pxor xmm0, xmm0");
     __asm__("cvtsi2sd xmm0, qword [rip+0x200a7a]");
     __asm__("addsd xmm0, xmm1");
-    fun_4003f0(0x400a20, rsi1, rdx2, rcx3, r8_4, r9_5);
+    fun_4003f0("%f", rsi1, rdx2, rcx3, r8_4, r9_5);
     return 0x78;
 }
 
 int64_t main() {
-    fun_4003f0(0x400a26, 1, 2, 4, 8, 8);
-    fun_4003f0(0x400a2e, 4, 8, 16, 8, 8);
+    fun_4003f0("%zu %zu %zu %zu %zu\n", 1, 2, 4, 8, 8);
+    fun_4003f0("%zu %zu %zu\n", 4, 8, 16, 8, 8);
     return 0;
 }
 
@@ -421,32 +421,32 @@ int64_t basic_operations() {
     __asm__("addsd xmm0, xmm1");
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 4) = rsi2->f0;
     rsi4 = &rsi2->f4;
-    fun_4003f0(0x400a28, rsi4, rdx5, rcx6, r8_7, r9_8);
+    fun_4003f0("u %zu %zu %zu %zu\n", rsi4, rdx5, rcx6, r8_7, r9_8);
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 8) = *rsi4;
     rsi9 = rsi4 + 1;
     __asm__("subsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x400a20, rsi9, rdx10, rcx11, r8_12, r9_13);
+    fun_4003f0("%f", rsi9, rdx10, rcx11, r8_12, r9_13);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi9;
     rsi14 = rsi9 + 1;
     __asm__("subsd xmm4, [rsp]");
     __asm__("movapd xmm0, xmm4");
-    fun_4003f0(0x400a20, rsi14, rdx15, rcx16, r8_17, r9_18);
+    fun_4003f0("%f", rsi14, rdx15, rcx16, r8_17, r9_18);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi14;
     rsi19 = rsi14 + 1;
     __asm__("mulsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x400a20, rsi19, rdx20, rcx21, r8_22, r9_23);
+    fun_4003f0("%f", rsi19, rdx20, rcx21, r8_22, r9_23);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi19;
     rsi24 = rsi19 + 1;
     __asm__("divsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x400a20, rsi24, rdx25, rcx26, r8_27, r9_28);
+    fun_4003f0("%f", rsi24, rdx25, rcx26, r8_27, r9_28);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi24;
     rsi29 = rsi24 + 1;
     __asm__("divsd xmm4, [rsp]");
     __asm__("movapd xmm0, xmm4");
-    fun_4003f0(0x400a20, rsi29, rdx30, rcx31, r8_32, r9_33);
+    fun_4003f0("%f", rsi29, rdx30, rcx31, r8_32, r9_33);
     *reinterpret_cast<int32_t*>(&g400a20) = *rsi29;
     __asm__("xorpd xmm0, [rip+0x27d]");
-    fun_4003f0(0x400a20, rsi29 + 1, rdx34, rcx35, r8_36, r9_37);
+    fun_4003f0("%f", rsi29 + 1, rdx34, rcx35, r8_36, r9_37);
     return 0x7b;
 }
 
@@ -479,6 +479,6 @@ int64_t read_floats() {
     __asm__("fadd qword [rsp]");
     __asm__("fstp qword [rsp+0x8]");
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g400a20) + 4) = rsi2->f0;
-    fun_4003f0(0x400a28, &rsi2->f4, rdx4, rcx5, r8_6, r9_7);
+    fun_4003f0("u %zu %zu %zu %zu\n", &rsi2->f4, rdx4, rcx5, r8_6, r9_7);
     return 0x7a;
 }

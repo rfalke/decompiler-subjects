@@ -573,9 +573,9 @@ void*** fun_804ce60(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     addr_804cf60_12:
     eax32 = camlList__mem_1161(v28, v26, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     if (eax32 == 1) {
-        eax33 = reinterpret_cast<void**>(0x8073a8c);
+        eax33 = reinterpret_cast<void**>("tcp");
     } else {
-        eax33 = reinterpret_cast<void**>(0x8073a94);
+        eax33 = reinterpret_cast<void**>("udp");
     }
     eax34 = caml_c_call(0x8072518, a4, eax33, v28, v26, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     ecx31 = *reinterpret_cast<void***>(eax34);
@@ -655,9 +655,9 @@ void*** fun_804cf10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     }
     eax22 = camlList__mem_1161(v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     if (eax22 == 1) {
-        eax23 = reinterpret_cast<void**>(0x8073a8c);
+        eax23 = reinterpret_cast<void**>("tcp");
     } else {
-        eax23 = reinterpret_cast<void**>(0x8073a94);
+        eax23 = reinterpret_cast<void**>("udp");
     }
     eax24 = caml_c_call(ecx, a3, eax23, v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     ecx25 = *reinterpret_cast<void***>(eax24);
@@ -676,7 +676,7 @@ void** camlPervasives__string_of_int_1130(void** ecx, void** a2, void** a3, void
     void** eax16;
     void** eax17;
 
-    eax17 = caml_c_call(ecx, 0x8075c34, eax16, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax17 = caml_c_call(ecx, "%d", eax16, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     return eax17;
 }
 
@@ -696,10 +696,10 @@ void fun_804d520(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     }
     ebx20 = eax18 + 4;
     *reinterpret_cast<void***>(ebx20 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
-    *reinterpret_cast<void***>(ebx20) = reinterpret_cast<void**>(0x8073a50);
-    *reinterpret_cast<void***>(ebx20 + 4) = reinterpret_cast<void**>(0x8073a5c);
+    *reinterpret_cast<void***>(ebx20) = reinterpret_cast<void**>("/bin/sh");
+    *reinterpret_cast<void***>(ebx20 + 4) = reinterpret_cast<void**>("-c");
     *reinterpret_cast<void***>(ebx20 + 8) = a3;
-    caml_c_call(ecx, 0x8073a44, ebx20, v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    caml_c_call(ecx, "/bin/sh", ebx20, v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     caml_exception_pointer = v16;
     goto a8;
 }
@@ -731,7 +731,7 @@ void** camlPervasives__min_1022(void** ecx, void** a2, void** a3, void** a4, voi
 
 int32_t camlHashtbl__insert_bucket_1068(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18);
 
-void** caml_ml_array_bound_error(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18);
+void** caml_ml_array_bound_error(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18, void** a19);
 
 void** camlHashtbl__remove_bucket_1083(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10);
 
@@ -764,8 +764,8 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
     void** eax48;
     int1_t cf49;
     void** eax50;
-    void** ebx51;
-    void** ecx52;
+    void** ecx51;
+    void** ebx52;
     void** v53;
     void* eax54;
     void** eax55;
@@ -861,16 +861,17 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
         *reinterpret_cast<void***>(eax50 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
         *reinterpret_cast<void***>(eax50) = ebx42;
         *reinterpret_cast<void***>(eax50 + 4) = v26;
-        ebx51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi43 + 4) + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx51) <= reinterpret_cast<unsigned char>(edx46)) 
+        ecx51 = *reinterpret_cast<void***>(edi43 + 4);
+        ebx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx51 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ebx52) <= reinterpret_cast<unsigned char>(edx46)) 
             break;
-        *reinterpret_cast<void***>(eax50 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(edi43 + 4) + reinterpret_cast<unsigned char>(edx46) * 2) - 2);
-        ecx52 = *reinterpret_cast<void***>(edi43 + 4);
-        ebx51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx52 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx51) <= reinterpret_cast<unsigned char>(edx46)) 
+        *reinterpret_cast<void***>(eax50 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx51 + reinterpret_cast<unsigned char>(edx46) * 2) - 2);
+        ecx51 = *reinterpret_cast<void***>(edi43 + 4);
+        ebx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx51 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ebx52) <= reinterpret_cast<unsigned char>(edx46)) 
             goto addr_80575c3_19;
-        v53 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx52 + reinterpret_cast<unsigned char>(edx46) * 2) + 0xfffffffe);
-        caml_modify(ecx52, v53, eax50, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
+        v53 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx51 + reinterpret_cast<unsigned char>(edx46) * 2) + 0xfffffffe);
+        caml_modify(ecx51, v53, eax50, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
         *reinterpret_cast<void***>(edi43) = *reinterpret_cast<void***>(edi43) + 2;
         eax54 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi43 + 4) + 0xfffffffc)) >> 9 | 1);
         if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi43)) <= reinterpret_cast<signed char>(reinterpret_cast<uint32_t>(eax54) + reinterpret_cast<uint32_t>(eax54) + 0xffffffff)) 
@@ -881,16 +882,16 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
         eax57 = *reinterpret_cast<void***>(edi43 + 4);
         v26 = eax57;
         v58 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax57 + 0xfffffffc)) >> 9 | 1);
-        eax59 = camlPervasives__min_1022(ecx52, v32, v24, v58, v53, v56, v26, v23, a2, a3, a4, a5, a6);
+        eax59 = camlPervasives__min_1022(ecx51, v32, v24, v58, v53, v56, v26, v23, a2, a3, a4, a5, a6);
         if (eax59 == v58) 
             goto addr_80574c0_24;
         v24 = eax59;
         v60 = v58;
-        eax61 = caml_c_call(ecx52, eax59, 1, v32, v24, v60, v53, v56, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9);
+        eax61 = caml_c_call(ecx51, eax59, 1, v32, v24, v60, v53, v56, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9);
         ebx62 = eax61;
         v29 = ebx62;
         while (eax63 = caml_young_ptr, eax64 = eax63 - 24, caml_young_ptr = eax64, cf65 = reinterpret_cast<unsigned char>(eax64) < reinterpret_cast<unsigned char>(caml_young_limit), cf65) {
-            caml_call_gc(ecx52, v32, v24, v60, v29, v56, v26, v23, a2, a3, a4, a5);
+            caml_call_gc(ecx51, v32, v24, v60, v29, v56, v26, v23, a2, a3, a4, a5);
         }
         ecx66 = eax64 + 4;
         *reinterpret_cast<void***>(ecx66 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
@@ -917,12 +918,12 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
             v24 = eax67;
         } while (ecx66 != v60);
         goto addr_8057496_29;
-        eax41 = caml_ml_array_bound_error(v32, v24, v60, v29, v56, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+        eax41 = caml_ml_array_bound_error(ecx35, v32, v24, v60, v29, v56, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     }
     addr_80575c8_34:
-    eax69 = caml_ml_array_bound_error(v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax69 = caml_ml_array_bound_error(ecx51, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     edi70 = eax69;
-    ecx71 = ebx51;
+    ecx71 = ebx52;
     while (eax72 = caml_young_ptr, eax73 = eax72 - 20, caml_young_ptr = eax73, cf74 = reinterpret_cast<unsigned char>(eax73) < reinterpret_cast<unsigned char>(caml_young_limit), cf74) {
         caml_call_gc(ecx71, v29, 0x80575cd, v26, v23, a2, a3, a4, a5, a6, a7, a8);
     }
@@ -950,7 +951,7 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax80 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(edx78)) {
         ecx71 = *reinterpret_cast<void***>(edi70 + 4);
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx71 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx78)) {
-            caml_ml_array_bound_error(v81, v79, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+            caml_ml_array_bound_error(ecx71, v81, v79, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         } else {
             eax82 = camlHashtbl__remove_bucket_1083(v81, v79, v26, v23, a2, a3, a4, a5, a6, a7);
             caml_modify(ecx71, reinterpret_cast<uint32_t>(v81 + reinterpret_cast<unsigned char>(v79) * 2) + 0xfffffffe, eax82, v81, v79, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
@@ -958,7 +959,7 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
         }
     }
     v83 = reinterpret_cast<void**>(0x80576b0);
-    eax84 = caml_ml_array_bound_error(v81, v79, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax84 = caml_ml_array_bound_error(ecx71, v81, v79, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     while (ebx75 != 1) {
         v32 = eax84;
         v24 = *reinterpret_cast<void***>(ebx75 + 8);
@@ -987,7 +988,7 @@ void** camlUnix__open_proc_1949(void** ecx, void** a2, void** a3, void** a4, voi
     addr_80576df_49:
     goto v81;
     addr_80575c3_19:
-    caml_ml_array_bound_error(v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    caml_ml_array_bound_error(ecx51, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     goto addr_80575c8_34;
     addr_80575b0_21:
     return 1;
@@ -1014,10 +1015,10 @@ void fun_804d910(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     }
     ebx19 = eax17 + 4;
     *reinterpret_cast<void***>(ebx19 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
-    *reinterpret_cast<void***>(ebx19) = reinterpret_cast<void**>(0x8073a30);
-    *reinterpret_cast<void***>(ebx19 + 4) = reinterpret_cast<void**>(0x8073a3c);
+    *reinterpret_cast<void***>(ebx19) = reinterpret_cast<void**>("/bin/sh");
+    *reinterpret_cast<void***>(ebx19 + 4) = reinterpret_cast<void**>("-c");
     *reinterpret_cast<void***>(ebx19 + 8) = a6;
-    caml_c_call(ecx, 0x8073a24, ebx19, a7, v15, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_c_call(ecx, "/bin/sh", ebx19, a7, v15, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     caml_exception_pointer = v15;
     goto a10;
 }
@@ -1052,8 +1053,8 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
     void** eax47;
     int1_t cf48;
     void** eax49;
-    void** ebx50;
-    void** ecx51;
+    void** ecx50;
+    void** ebx51;
     void** v52;
     void* eax53;
     void** eax54;
@@ -1143,16 +1144,17 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
         *reinterpret_cast<void***>(eax49 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
         *reinterpret_cast<void***>(eax49) = ebx41;
         *reinterpret_cast<void***>(eax49 + 4) = v26;
-        ebx50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi42 + 4) + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx50) <= reinterpret_cast<unsigned char>(edx45)) 
+        ecx50 = *reinterpret_cast<void***>(edi42 + 4);
+        ebx51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx50 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ebx51) <= reinterpret_cast<unsigned char>(edx45)) 
             break;
-        *reinterpret_cast<void***>(eax49 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(edi42 + 4) + reinterpret_cast<unsigned char>(edx45) * 2) - 2);
-        ecx51 = *reinterpret_cast<void***>(edi42 + 4);
-        ebx50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx51 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx50) <= reinterpret_cast<unsigned char>(edx45)) 
+        *reinterpret_cast<void***>(eax49 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx50 + reinterpret_cast<unsigned char>(edx45) * 2) - 2);
+        ecx50 = *reinterpret_cast<void***>(edi42 + 4);
+        ebx51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx50 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ebx51) <= reinterpret_cast<unsigned char>(edx45)) 
             goto addr_80575c3_15;
-        v52 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx51 + reinterpret_cast<unsigned char>(edx45) * 2) + 0xfffffffe);
-        caml_modify(ecx51, v52, eax49, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
+        v52 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx50 + reinterpret_cast<unsigned char>(edx45) * 2) + 0xfffffffe);
+        caml_modify(ecx50, v52, eax49, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
         *reinterpret_cast<void***>(edi42) = *reinterpret_cast<void***>(edi42) + 2;
         eax53 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi42 + 4) + 0xfffffffc)) >> 9 | 1);
         if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi42)) <= reinterpret_cast<signed char>(reinterpret_cast<uint32_t>(eax53) + reinterpret_cast<uint32_t>(eax53) + 0xffffffff)) 
@@ -1163,16 +1165,16 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
         eax56 = *reinterpret_cast<void***>(edi42 + 4);
         v26 = eax56;
         v57 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax56 + 0xfffffffc)) >> 9 | 1);
-        eax58 = camlPervasives__min_1022(ecx51, v27, v31, v57, v52, v55, v26, v23, a2, a3, a4, a5, a6);
+        eax58 = camlPervasives__min_1022(ecx50, v27, v31, v57, v52, v55, v26, v23, a2, a3, a4, a5, a6);
         if (eax58 == v57) 
             goto addr_80574c0_20;
         v31 = eax58;
         v59 = v57;
-        eax60 = caml_c_call(ecx51, eax58, 1, v27, v31, v59, v52, v55, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9);
+        eax60 = caml_c_call(ecx50, eax58, 1, v27, v31, v59, v52, v55, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9);
         ebx61 = eax60;
         v24 = ebx61;
         while (eax62 = caml_young_ptr, eax63 = eax62 - 24, caml_young_ptr = eax63, cf64 = reinterpret_cast<unsigned char>(eax63) < reinterpret_cast<unsigned char>(caml_young_limit), cf64) {
-            caml_call_gc(ecx51, v27, v31, v59, v24, v55, v26, v23, a2, a3, a4, a5);
+            caml_call_gc(ecx50, v27, v31, v59, v24, v55, v26, v23, a2, a3, a4, a5);
         }
         ecx65 = eax63 + 4;
         *reinterpret_cast<void***>(ecx65 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
@@ -1199,12 +1201,12 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
             v31 = eax66;
         } while (ecx65 != v59);
         goto addr_8057496_25;
-        eax40 = caml_ml_array_bound_error(v27, v31, v59, v24, v55, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+        eax40 = caml_ml_array_bound_error(ecx36, v27, v31, v59, v24, v55, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     }
     addr_80575c8_30:
-    eax68 = caml_ml_array_bound_error(v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax68 = caml_ml_array_bound_error(ecx50, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     edi69 = eax68;
-    ecx70 = ebx50;
+    ecx70 = ebx51;
     while (eax71 = caml_young_ptr, eax72 = eax71 - 20, caml_young_ptr = eax72, cf73 = reinterpret_cast<unsigned char>(eax72) < reinterpret_cast<unsigned char>(caml_young_limit), cf73) {
         caml_call_gc(ecx70, v24, 0x80575cd, v26, v23, a2, a3, a4, a5, a6, a7, a8);
     }
@@ -1232,7 +1234,7 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax79 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(edx77)) {
         ecx70 = *reinterpret_cast<void***>(edi69 + 4);
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx70 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx77)) {
-            caml_ml_array_bound_error(v80, v78, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+            caml_ml_array_bound_error(ecx70, v80, v78, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         } else {
             eax81 = camlHashtbl__remove_bucket_1083(v80, v78, v26, v23, a2, a3, a4, a5, a6, a7);
             caml_modify(ecx70, reinterpret_cast<uint32_t>(v80 + reinterpret_cast<unsigned char>(v78) * 2) + 0xfffffffe, eax81, v80, v78, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
@@ -1240,7 +1242,7 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
         }
     }
     v82 = reinterpret_cast<void**>(0x80576b0);
-    eax83 = caml_ml_array_bound_error(v80, v78, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax83 = caml_ml_array_bound_error(ecx70, v80, v78, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     while (ebx74 != 1) {
         v27 = eax83;
         v31 = *reinterpret_cast<void***>(ebx74 + 8);
@@ -1269,7 +1271,7 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
     addr_80576df_45:
     goto v80;
     addr_80575c3_15:
-    caml_ml_array_bound_error(v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    caml_ml_array_bound_error(ecx50, v26, v23, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     goto addr_80575c8_30;
     addr_80575b0_17:
     return 1;
@@ -1282,7 +1284,7 @@ void** camlUnix__open_proc_full_1975(void** ecx, void** a2, void** a3, void** a4
 
 struct s3 {
     signed char[4] pad4;
-    int32_t f4;
+    void** f4;
 };
 
 void** camlHashtbl__find_in_bucket_1108(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11);
@@ -1306,9 +1308,9 @@ struct s4 {
     signed char[3] pad4;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s5 {
@@ -1316,7 +1318,7 @@ struct s5 {
     signed char[3] pad4;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
 };
 
 struct s7 {
@@ -1329,38 +1331,38 @@ struct s6 {
     int32_t f0;
     struct s7* f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    struct s5* f20;
+    struct s5* f14;
 };
 
 struct s8 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s9 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s10 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
 };
 
 int32_t g807853c = 0;
@@ -1376,16 +1378,16 @@ struct s11 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    struct s4* f16;
-    struct s6* f20;
-    struct s8* f24;
-    struct s9* f28;
-    struct s10* f32;
-    int32_t f36;
-    int32_t f40;
-    int32_t f44;
+    struct s4* f10;
+    struct s6* f14;
+    struct s8* f18;
+    struct s9* f1c;
+    struct s10* f20;
+    int32_t f24;
+    int32_t f28;
+    int32_t f2c;
 };
 
 void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15) {
@@ -1406,91 +1408,91 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
     uint32_t eax30;
     int32_t edx31;
     uint32_t edx32;
-    void** v33;
+    void** ecx33;
     void** v34;
     void** v35;
-    void** eax36;
-    void* esp37;
-    void** edi38;
-    void** ecx39;
-    void** ebx40;
-    void** eax41;
+    void** v36;
+    void** eax37;
+    void* esp38;
+    void** edi39;
+    void** ecx40;
+    void** ebx41;
     void** eax42;
-    int1_t cf43;
-    void** v44;
+    void** eax43;
+    int1_t cf44;
     void** v45;
     void** v46;
-    void** ebx47;
-    uint32_t esi48;
-    void** ecx49;
-    void** eax50;
+    void** v47;
+    void** ebx48;
+    uint32_t esi49;
+    void** ecx50;
     void** eax51;
-    int1_t cf52;
-    void** eax53;
-    void** v54;
+    void** eax52;
+    int1_t cf53;
+    void** eax54;
     void** v55;
     void** v56;
-    void** ebx57;
-    void** v58;
-    void** ebx59;
-    void** eax60;
+    void** v57;
+    void** ebx58;
+    void** v59;
+    void** ebx60;
     void** eax61;
-    void** v62;
+    void** eax62;
     void** v63;
     void** v64;
-    void* esp65;
-    uint32_t edx66;
-    void** ecx67;
-    void** v68;
+    void** v65;
+    void* esp66;
+    uint32_t edx67;
+    void** ecx68;
     void** v69;
     void** v70;
-    void** eax71;
-    void*** esp72;
-    void** edi73;
-    void** eax74;
+    void** v71;
+    void** eax72;
+    void*** esp73;
+    void** edi74;
     void** eax75;
-    int1_t cf76;
-    void** v77;
+    void** eax76;
+    int1_t cf77;
     void** v78;
     void** v79;
     void** v80;
     void** v81;
     void** v82;
-    void** edx83;
-    void** esi84;
-    void** eax85;
-    void** v86;
+    void** v83;
+    void** edx84;
+    void** esi85;
+    void** eax86;
     void** v87;
-    void** ecx88;
-    void** v89;
-    void** eax90;
-    void** v91;
+    void** v88;
+    void** ecx89;
+    void** v90;
+    void** eax91;
     void** v92;
     void** v93;
     void** v94;
-    void** eax95;
-    void** v96;
+    void** v95;
+    void** eax96;
     void** v97;
     void** v98;
     void** v99;
     void** v100;
-    void* esp101;
-    void** edx102;
-    void** v103;
-    void** ebx104;
-    void** v105;
+    void** v101;
+    void* esp102;
+    void** edx103;
+    void** v104;
+    void** ebx105;
     void** v106;
     void** v107;
     void** v108;
     void** v109;
     void** v110;
-    void** eax111;
-    void*** eax112;
-    void** v113;
+    void** v111;
+    void** eax112;
+    void*** eax113;
     void** v114;
     void** v115;
-    void** ebx116;
-    void** ecx117;
+    void** v116;
+    void** ebx117;
     void** v118;
     void** v119;
     void** v120;
@@ -1746,7 +1748,7 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
 
     v16 = reinterpret_cast<void**>(__return_address());
     esp17 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 12);
-    esi18 = *reinterpret_cast<uint32_t*>(eax19->f4 - 4) >> 10;
+    esi18 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax19->f4 + 0xfffffffc)) >> 10;
     if (!esi18) {
         caml_raise_exn(ecx, v20, v21, v22, v16, a2, a3, a4, a5, a6);
         esp23 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp17) - 4 + 4);
@@ -1759,147 +1761,149 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
         edx31 = (reinterpret_cast<int32_t>(eax30) >> 1) % reinterpret_cast<int32_t>(esi18);
     }
     edx32 = (edx31 << 1) + 1;
-    if (*reinterpret_cast<uint32_t*>(eax19->f4 - 4) >> 9 <= edx32) {
-        eax36 = caml_ml_array_bound_error(v33, v34, v35, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
-        esp37 = reinterpret_cast<void*>(esp23 - 4 + 4);
-        edi38 = eax36;
-        ecx39 = ebx40;
-        while (eax41 = caml_young_ptr, eax42 = eax41 - 16, caml_young_ptr = eax42, cf43 = reinterpret_cast<unsigned char>(eax42) < reinterpret_cast<unsigned char>(caml_young_limit), cf43) {
-            caml_call_gc(ecx39, v44, v45, v46, v16, a2, a3, a4, a5, a6, a7, a8);
-            esp37 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp37) - 4 + 4);
+    ecx33 = eax19->f4;
+    if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx33 + 0xfffffffc)) >> 9 <= edx32) {
+        eax37 = caml_ml_array_bound_error(ecx33, v34, v35, v36, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+        esp38 = reinterpret_cast<void*>(esp23 - 4 + 4);
+        edi39 = eax37;
+        ecx40 = ebx41;
+        while (eax42 = caml_young_ptr, eax43 = eax42 - 16, caml_young_ptr = eax43, cf44 = reinterpret_cast<unsigned char>(eax43) < reinterpret_cast<unsigned char>(caml_young_limit), cf44) {
+            caml_call_gc(ecx40, v45, v46, v47, v16, a2, a3, a4, a5, a6, a7, a8);
+            esp38 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp38) - 4 + 4);
         }
-        ebx47 = eax42 + 4;
-        *reinterpret_cast<void***>(ebx47 + 0xfffffffc) = reinterpret_cast<void**>(0xcf7);
-        *reinterpret_cast<void***>(ebx47) = reinterpret_cast<void**>(camlHashtbl__find_in_bucket_1108);
-        *reinterpret_cast<void***>(ebx47 + 4) = reinterpret_cast<void**>(3);
-        *reinterpret_cast<void***>(ebx47 + 8) = ecx39;
-        esi48 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi38 + 4) + 0xfffffffc)) >> 10;
-        if (esi48) 
+        ebx48 = eax43 + 4;
+        *reinterpret_cast<void***>(ebx48 + 0xfffffffc) = reinterpret_cast<void**>(0xcf7);
+        *reinterpret_cast<void***>(ebx48) = reinterpret_cast<void**>(camlHashtbl__find_in_bucket_1108);
+        *reinterpret_cast<void***>(ebx48 + 4) = reinterpret_cast<void**>(3);
+        *reinterpret_cast<void***>(ebx48 + 8) = ecx40;
+        esi49 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi39 + 4) + 0xfffffffc)) >> 10;
+        if (esi49) 
             goto addr_8057950_9;
     } else {
-        ecx49 = *reinterpret_cast<void***>(eax19->f4 + edx32 * 2 - 2);
-        if (ecx49 == 1) {
+        ecx50 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx33 + edx32 * 2) - 2);
+        if (ecx50 == 1) {
             while (1) {
                 addr_80578c0_11:
-                eax50 = caml_young_ptr;
-                eax51 = eax50 - 8;
-                caml_young_ptr = eax51;
-                cf52 = reinterpret_cast<unsigned char>(eax51) < reinterpret_cast<unsigned char>(caml_young_limit);
-                if (!cf52) {
-                    eax53 = eax51 + 4;
-                    *reinterpret_cast<void***>(eax53 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
-                    *reinterpret_cast<void***>(eax53) = reinterpret_cast<void**>(0x8072518);
-                    caml_raise_exn(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6);
+                eax51 = caml_young_ptr;
+                eax52 = eax51 - 8;
+                caml_young_ptr = eax52;
+                cf53 = reinterpret_cast<unsigned char>(eax52) < reinterpret_cast<unsigned char>(caml_young_limit);
+                if (!cf53) {
+                    eax54 = eax52 + 4;
+                    *reinterpret_cast<void***>(eax54 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
+                    *reinterpret_cast<void***>(eax54) = reinterpret_cast<void**>(0x8072518);
+                    caml_raise_exn(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6);
                 }
-                caml_call_gc(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6, a7, a8);
+                caml_call_gc(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6, a7, a8);
             }
         } else {
-            v55 = ebx57;
-            v54 = *reinterpret_cast<void***>(ecx49 + 8);
-            v56 = *reinterpret_cast<void***>(ecx49 + 4);
-            v58 = *reinterpret_cast<void***>(ecx49);
-            eax60 = caml_c_call(ecx49, ebx59, v58, v54, v55, v56, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
-            if (reinterpret_cast<int1_t>(eax60 == 1)) {
-                return v56;
+            v56 = ebx58;
+            v55 = *reinterpret_cast<void***>(ecx50 + 8);
+            v57 = *reinterpret_cast<void***>(ecx50 + 4);
+            v59 = *reinterpret_cast<void***>(ecx50);
+            eax61 = caml_c_call(ecx50, ebx60, v59, v55, v56, v57, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+            if (reinterpret_cast<int1_t>(eax61 == 1)) {
+                return v57;
             }
-            eax61 = v54;
-            if (eax61 == 1) 
+            eax62 = v55;
+            if (eax62 == 1) 
                 goto addr_8057890_17; else 
                 goto addr_80577dc_18;
         }
     }
-    caml_raise_exn(ecx39, v62, v63, v64, v16, a2, a3, a4, a5, a6);
-    esp65 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp37) - 4 + 4);
+    caml_raise_exn(ecx40, v63, v64, v65, v16, a2, a3, a4, a5, a6);
+    esp66 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp38) - 4 + 4);
     addr_8057980_20:
-    edx66 = (edx32 << 1) + 1;
-    ecx67 = *reinterpret_cast<void***>(edi38 + 4);
-    if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx67 + 0xfffffffc)) >> 9 <= edx66) {
-        eax71 = caml_ml_array_bound_error(v68, v69, v70, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
-        esp72 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp65) - 4 + 4 - 28);
-        edi73 = eax71;
-        while (eax74 = caml_young_ptr, eax75 = eax74 - 20, caml_young_ptr = eax75, cf76 = reinterpret_cast<unsigned char>(eax75) < reinterpret_cast<unsigned char>(caml_young_limit), cf76) {
-            caml_call_gc(ecx67, v77, v78, v79, v25, 21, 0xc9, 0x80579a8, v80, v81, v82, v16);
-            esp72 = esp72 - 4 + 4;
+    edx67 = (edx32 << 1) + 1;
+    ecx68 = *reinterpret_cast<void***>(edi39 + 4);
+    if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx68 + 0xfffffffc)) >> 9 <= edx67) {
+        eax72 = caml_ml_array_bound_error(ecx68, v69, v70, v71, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+        esp73 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp66) - 4 + 4 - 28);
+        edi74 = eax72;
+        while (eax75 = caml_young_ptr, eax76 = eax75 - 20, caml_young_ptr = eax76, cf77 = reinterpret_cast<unsigned char>(eax76) < reinterpret_cast<unsigned char>(caml_young_limit), cf77) {
+            caml_call_gc(ecx68, v78, v79, v80, v25, 21, 0xc9, 0x80579a8, v81, v82, v83, v16);
+            esp73 = esp73 - 4 + 4;
         }
-        edx83 = eax75 + 4;
-        *reinterpret_cast<void***>(edx83 + 0xfffffffc) = reinterpret_cast<void**>(0x10f7);
-        *reinterpret_cast<void***>(edx83) = reinterpret_cast<void**>(camlHashtbl__replace_bucket_1116);
-        *reinterpret_cast<void***>(edx83 + 4) = reinterpret_cast<void**>(3);
-        *reinterpret_cast<void***>(edx83 + 8) = ebx47;
-        *reinterpret_cast<void***>(edx83 + 12) = ecx67;
-        esi84 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi73 + 4) + 0xfffffffc)) >> 10);
-        if (esi84) 
+        edx84 = eax76 + 4;
+        *reinterpret_cast<void***>(edx84 + 0xfffffffc) = reinterpret_cast<void**>(0x10f7);
+        *reinterpret_cast<void***>(edx84) = reinterpret_cast<void**>(camlHashtbl__replace_bucket_1116);
+        *reinterpret_cast<void***>(edx84 + 4) = reinterpret_cast<void**>(3);
+        *reinterpret_cast<void***>(edx84 + 8) = ebx48;
+        *reinterpret_cast<void***>(edx84 + 12) = ecx68;
+        esi85 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi74 + 4) + 0xfffffffc)) >> 10);
+        if (esi85) 
             goto addr_80579f8_25;
     } else {
-        eax85 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx67 + edx66 * 2) - 2);
-        while (eax85 != 1) {
-            v86 = ebx47;
-            v87 = *reinterpret_cast<void***>(eax85 + 8);
-            ecx88 = *reinterpret_cast<void***>(eax85 + 4);
-            v89 = ecx88;
-            eax90 = *reinterpret_cast<void***>(eax85);
-            v91 = *reinterpret_cast<void***>(ebx47 + 8);
-            eax95 = caml_c_call(ecx88, eax90, v91, v87, v86, v89, v92, v93, v94, v16, a2, a3, a4, a5, a6, a7, a8, a9);
-            if (reinterpret_cast<int1_t>(eax95 == 1)) 
+        eax86 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx68 + edx67 * 2) - 2);
+        while (eax86 != 1) {
+            v87 = ebx48;
+            v88 = *reinterpret_cast<void***>(eax86 + 8);
+            ecx89 = *reinterpret_cast<void***>(eax86 + 4);
+            v90 = ecx89;
+            eax91 = *reinterpret_cast<void***>(eax86);
+            v92 = *reinterpret_cast<void***>(ebx48 + 8);
+            eax96 = caml_c_call(ecx89, eax91, v92, v88, v87, v90, v93, v94, v95, v16, a2, a3, a4, a5, a6, a7, a8, a9);
+            if (reinterpret_cast<int1_t>(eax96 == 1)) 
                 goto addr_80567b1_30;
-            eax85 = v87;
-            ebx47 = v86;
+            eax86 = v88;
+            ebx48 = v87;
         }
         goto addr_8056800_32;
     }
-    caml_raise_exn(ecx67, v96, v97, v98, v25, 21, 0xc9, 0x80579a8, v99, v100);
-    esp101 = reinterpret_cast<void*>(esp72 - 4 + 4);
+    caml_raise_exn(ecx68, v97, v98, v99, v25, 21, 0xc9, 0x80579a8, v100, v101);
+    esp102 = reinterpret_cast<void*>(esp73 - 4 + 4);
     addr_8057a30_34:
-    edx102 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx83) << 1) + 1);
-    v103 = edx102;
-    ebx104 = *reinterpret_cast<void***>(edi73 + 4);
-    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx104 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx102)) {
+    edx103 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx84) << 1) + 1);
+    v104 = edx103;
+    ebx105 = *reinterpret_cast<void***>(edi74 + 4);
+    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx105 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx103)) {
         addr_8057b7c_35:
-        eax111 = caml_ml_array_bound_error(v105, v106, v107, v25, v24, 0xc9, v103, v108, v109, v110, v16, a2, a3, a4, a5, a6, a7, a8);
+        eax112 = caml_ml_array_bound_error(ecx68, v106, v107, v108, v25, v24, 0xc9, v104, v109, v110, v111, v16, a2, a3, a4, a5, a6, a7, a8);
     } else {
-        v25 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx104 + reinterpret_cast<unsigned char>(edx102) * 2) - 2);
-        eax112 = fun_8057b10(ecx67, v105, v106, v107, v25, v24);
-        if (!reinterpret_cast<int1_t>(*eax112 == 0x8072518)) {
-            caml_raise_exn(0x8072518, v105, v106, v107, v25, v24, 0xc9, v103, v113, v114);
-            v115 = caml_exception_pointer;
-            caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esp101) - 4 + 4 - 4 + 4 - 4);
-            ebx116 = *reinterpret_cast<void***>(edi73 + 4);
-            v103 = ebx116;
-            ebx104 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx116 + 0xfffffffc)) >> 9);
-            if (reinterpret_cast<unsigned char>(ebx104) <= reinterpret_cast<unsigned char>(edx102)) 
+        v25 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx105 + reinterpret_cast<unsigned char>(edx103) * 2) - 2);
+        eax113 = fun_8057b10(ecx68, v106, v107, v108, v25, v24);
+        ecx68 = reinterpret_cast<void**>(0x8072518);
+        if (!reinterpret_cast<int1_t>(*eax113 == 0x8072518)) {
+            caml_raise_exn(0x8072518, v106, v107, v108, v25, v24, 0xc9, v104, v114, v115);
+            v116 = caml_exception_pointer;
+            caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esp102) - 4 + 4 - 4 + 4 - 4);
+            ebx117 = *reinterpret_cast<void***>(edi74 + 4);
+            v104 = ebx117;
+            ebx105 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx117 + 0xfffffffc)) >> 9);
+            if (reinterpret_cast<unsigned char>(ebx105) <= reinterpret_cast<unsigned char>(edx103)) 
                 goto addr_8057b72_39; else 
                 goto addr_8057b2d_40;
         } else {
-            ebx104 = v105;
-            edx102 = *reinterpret_cast<void***>(ebx104 + 4);
-            ecx117 = v103;
-            if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx102 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx117)) {
+            ebx105 = v106;
+            edx103 = *reinterpret_cast<void***>(ebx105 + 4);
+            ecx68 = v104;
+            if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx103 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx68)) {
                 addr_8057b77_42:
-                caml_ml_array_bound_error(v105, v106, v107, v25, v24, 0xc9, v103, v118, v119, v120, v16, a2, a3, a4, a5, a6, a7, a8);
+                caml_ml_array_bound_error(ecx68, v106, v107, v108, v25, v24, 0xc9, v104, v118, v119, v120, v16, a2, a3, a4, a5, a6, a7, a8);
                 goto addr_8057b7c_35;
             } else {
                 while (eax121 = caml_young_ptr, eax122 = eax121 - 16, caml_young_ptr = eax122, cf123 = reinterpret_cast<unsigned char>(eax122) < reinterpret_cast<unsigned char>(caml_young_limit), cf123) {
-                    caml_call_gc(ecx117, v105, v106, v107, v25, v24, 0xc9, v103, v124, v125, v126, v16);
+                    caml_call_gc(ecx68, v106, v107, v108, v25, v24, 0xc9, v104, v124, v125, v126, v16);
                 }
                 esi127 = eax122 + 4;
                 *reinterpret_cast<void***>(esi127 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
-                *reinterpret_cast<void***>(esi127) = v106;
-                *reinterpret_cast<void***>(esi127 + 4) = v107;
+                *reinterpret_cast<void***>(esi127) = v107;
+                *reinterpret_cast<void***>(esi127 + 4) = v108;
                 *reinterpret_cast<void***>(esi127 + 8) = v25;
-                caml_modify(ecx117, reinterpret_cast<uint32_t>(edx102 + reinterpret_cast<unsigned char>(ecx117) * 2) + 0xfffffffe, esi127, v105, v106, v107, v25, v24, 0xc9, v103, v128, v129, v130, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
-                *reinterpret_cast<void***>(ebx104) = *reinterpret_cast<void***>(ebx104) + 2;
-                eax131 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx104 + 4) + 0xfffffffc)) >> 9 | 1);
+                caml_modify(ecx68, reinterpret_cast<uint32_t>(edx103 + reinterpret_cast<unsigned char>(ecx68) * 2) + 0xfffffffe, esi127, v106, v107, v108, v25, v24, 0xc9, v104, v128, v129, v130, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                *reinterpret_cast<void***>(ebx105) = *reinterpret_cast<void***>(ebx105) + 2;
+                eax131 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx105 + 4) + 0xfffffffc)) >> 9 | 1);
                 ecx132 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax131) + reinterpret_cast<uint32_t>(eax131) + 0xffffffff);
-                if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx104)) <= reinterpret_cast<signed char>(ecx132)) 
+                if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx105)) <= reinterpret_cast<signed char>(ecx132)) 
                     goto addr_8057af0_46; else 
                     goto addr_8057ada_47;
             }
         }
     }
-    edi133 = eax111;
-    ecx134 = ebx104;
+    edi133 = eax112;
+    ecx134 = ebx105;
     while (eax135 = caml_young_ptr, eax136 = eax135 - 16, caml_young_ptr = eax136, cf137 = reinterpret_cast<unsigned char>(eax136) < reinterpret_cast<unsigned char>(caml_young_limit), cf137) {
-        caml_call_gc(ecx134, v105, v106, v107, v25, v24, 0xc9, v103, v138, v139, v140, v16);
+        caml_call_gc(ecx134, v106, v107, v108, v25, v24, 0xc9, v104, v138, v139, v140, v16);
     }
     ebx141 = eax136 + 4;
     *reinterpret_cast<void***>(ebx141 + 0xfffffffc) = reinterpret_cast<void**>(0xcf7);
@@ -1908,21 +1912,21 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
     *reinterpret_cast<void***>(ebx141 + 8) = ecx134;
     esi142 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi133 + 4) + 0xfffffffc)) >> 10;
     if (!esi142) {
-        caml_raise_exn(ecx134, v105, v106, v107, v25, v24, 0xc9, v103, v143, v144);
+        caml_raise_exn(ecx134, v106, v107, v108, v25, v24, 0xc9, v104, v143, v144);
     } else {
         v145 = reinterpret_cast<void**>(0xc9);
         v146 = reinterpret_cast<void**>(0x8057bdd);
-        eax147 = caml_hash_univ_param(21, 0xc9, ecx134, v105, v106, v107, v25, v24);
+        eax147 = caml_hash_univ_param(21, 0xc9, ecx134, v106, v107, v108, v25, v24);
         __asm__("cdq ");
-        edx102 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax147) >> 1) % reinterpret_cast<int32_t>(esi142));
+        edx103 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax147) >> 1) % reinterpret_cast<int32_t>(esi142));
     }
-    edx148 = (reinterpret_cast<unsigned char>(edx102) << 1) + 1;
+    edx148 = (reinterpret_cast<unsigned char>(edx103) << 1) + 1;
     ecx149 = *reinterpret_cast<void***>(edi133 + 4);
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx149 + 0xfffffffc)) >> 9 <= edx148) {
-        eax153 = caml_ml_array_bound_error(v105, v106, v107, v25, v24, 0xc9, v103, v150, v151, v152, v16, a2, a3, a4, a5, a6, a7, a8);
+        eax153 = caml_ml_array_bound_error(ecx149, v106, v107, v108, v25, v24, 0xc9, v104, v150, v151, v152, v16, a2, a3, a4, a5, a6, a7, a8);
         edx154 = eax153;
         while (eax155 = caml_young_ptr, eax156 = eax155 - 16, caml_young_ptr = eax156, cf157 = reinterpret_cast<unsigned char>(eax156) < reinterpret_cast<unsigned char>(caml_young_limit), cf157) {
-            caml_call_gc(ecx149, v146, 21, v145, 0x8057c28, v105, v106, v107, v25, v24, 0xc9, v103);
+            caml_call_gc(ecx149, v146, 21, v145, 0x8057c28, v106, v107, v108, v25, v24, 0xc9, v104);
         }
         ecx158 = eax156 + 4;
         *reinterpret_cast<void***>(ecx158 + 0xfffffffc) = reinterpret_cast<void**>(0xcf7);
@@ -1940,7 +1944,7 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
             ecx163 = *reinterpret_cast<void***>(eax162 + 8);
             eax164 = *reinterpret_cast<void***>(eax162);
             v165 = *reinterpret_cast<void***>(ebx141 + 8);
-            eax169 = caml_c_call(ecx163, eax164, v165, ecx163, ebx141, v105, v106, v107, v25, v24, 0xc9, v103, v166, v167, v168, v16, a2, a3);
+            eax169 = caml_c_call(ecx163, eax164, v165, ecx163, ebx141, v106, v107, v108, v25, v24, 0xc9, v104, v166, v167, v168, v16, a2, a3);
             if (reinterpret_cast<int1_t>(eax169 == 1)) 
                 goto addr_805695a_64;
             eax162 = ecx163;
@@ -1949,7 +1953,7 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
         goto addr_8056980_66;
     }
     addr_8057cba_67:
-    goto v105;
+    goto v106;
     addr_8057c7c_59:
     v170 = ebx161;
     v171 = reinterpret_cast<void**>(1);
@@ -1966,10 +1970,10 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
         v171 = eax160;
     } while (ecx176 != v170);
     goto addr_8057cba_67;
-    eax180 = caml_ml_array_bound_error(v172, v173, v171, v170, v105, v106, v107, v25, v24, 0xc9, v103, v177, v178, v179, v16, a2, a3, a4);
+    eax180 = caml_ml_array_bound_error(ecx175, v172, v173, v171, v170, v106, v107, v108, v25, v24, 0xc9, v104, v177, v178, v179, v16, a2, a3, a4);
     esi181 = eax180;
     while (eax182 = caml_young_ptr, eax183 = eax182 - 28, caml_young_ptr = eax183, cf184 = reinterpret_cast<unsigned char>(eax183) < reinterpret_cast<unsigned char>(caml_young_limit), cf184) {
-        caml_call_gc(ecx175, v185, v186, v187, v188, 0x8057cd2, v172, v173, v171, v170, v105, v106);
+        caml_call_gc(ecx175, v185, v186, v187, v188, 0x8057cd2, v172, v173, v171, v170, v106, v107);
     }
     edx189 = eax183 + 4;
     *reinterpret_cast<void***>(edx189 + 0xfffffffc) = reinterpret_cast<void**>(0x10f7);
@@ -1998,14 +2002,14 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
                 break;
             eax200 = camlHashtbl__do_bucket_1142(v198);
             v201 = v196;
-            caml_modify(v198, v201, eax200, v197, v198, v196, v195, v194, v172, v173, v171, v170, v105, v106, v107, v25, v24, 0xc9, v103, v202, v203, v204, v16, a2, a3, a4);
+            caml_modify(v198, v201, eax200, v197, v198, v196, v195, v194, v172, v173, v171, v170, v106, v107, v108, v25, v24, 0xc9, v104, v202, v203, v204, v16, a2, a3, a4);
             edx205 = v195;
             eax192 = v195 + 2;
             v195 = eax192;
         } while (edx205 != v194);
         goto addr_8057d95_74;
     }
-    eax208 = caml_ml_array_bound_error(v197, v198, v196, v195, v194, v172, v173, v171, v170, v105, v106, v107, v25, v24, 0xc9, v103, v206, v207);
+    eax208 = caml_ml_array_bound_error(ecx199, v197, v198, v196, v195, v194, v172, v173, v171, v170, v106, v107, v108, v25, v24, 0xc9, v104, v206, v207);
     ebx209 = eax208;
     eax210 = camlHashtbl;
     v211 = eax210;
@@ -2032,43 +2036,43 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
     ecx222->f0 = reinterpret_cast<void**>(0x804b370);
     ecx222->f4 = 5;
     ecx222->f8 = 0x8056b40;
-    ecx222->f12 = ebx209;
-    ecx222->f16 = eax220;
+    ecx222->fc = ebx209;
+    ecx222->f10 = eax220;
     edx223 = reinterpret_cast<struct s5*>(eax220 + 60);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(edx223) - 4) = 0x10f7;
     edx223->f0 = reinterpret_cast<void**>(0x804b370);
     edx223->f4 = 5;
     edx223->f8 = 0x8056c40;
-    edx223->f12 = ebx209;
+    edx223->fc = ebx209;
     ecx224 = reinterpret_cast<struct s6*>(eax220 + 80);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx224) - 4) = 0x18f7;
     ecx224->f0 = 0x804b370;
     ecx224->f4 = reinterpret_cast<struct s7*>(5);
     ecx224->f8 = 0x8056cd0;
-    ecx224->f12 = ebx209;
-    ecx224->f16 = eax220;
-    ecx224->f20 = edx223;
+    ecx224->fc = ebx209;
+    ecx224->f10 = eax220;
+    ecx224->f14 = edx223;
     esi225 = reinterpret_cast<struct s8*>(eax220 + 0x6c);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(esi225) - 4) = 0x14f7;
     esi225->f0 = 0x804b370;
     esi225->f4 = 5;
     esi225->f8 = 0x8056ee0;
-    esi225->f12 = ebx209;
-    esi225->f16 = eax220;
+    esi225->fc = ebx209;
+    esi225->f10 = eax220;
     edx226 = reinterpret_cast<struct s9*>(eax220 + 0x84);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(edx226) - 4) = 0x14f7;
     edx226->f0 = 0x804b2d0;
     edx226->f4 = 7;
     edx226->f8 = 0x8056fb0;
-    edx226->f12 = ebx209;
-    edx226->f16 = eax220;
+    edx226->fc = ebx209;
+    edx226->f10 = eax220;
     ecx227 = reinterpret_cast<struct s10*>(eax220 + 0x9c);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx227) - 4) = 0x14f7;
     ecx227->f0 = 0x804b370;
     ecx227->f4 = 5;
     ecx227->f8 = 0x80571b0;
-    ecx227->f12 = ebx209;
-    ecx227->f16 = eax220;
+    ecx227->fc = ebx209;
+    ecx227->f10 = eax220;
     ebx228 = g807853c;
     ebp229 = g8078540;
     edi230 = g8078544;
@@ -2077,157 +2081,158 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
     eax231->f0 = v211;
     eax231->f4 = v213;
     eax231->f8 = v215;
-    eax231->f12 = ecx221;
-    eax231->f16 = ecx222;
-    eax231->f20 = ecx224;
-    eax231->f24 = esi225;
-    eax231->f28 = edx226;
-    eax231->f32 = ecx227;
-    eax231->f36 = ebx228;
-    eax231->f40 = ebp229;
-    eax231->f44 = edi230;
+    eax231->fc = ecx221;
+    eax231->f10 = ecx222;
+    eax231->f14 = ecx224;
+    eax231->f18 = esi225;
+    eax231->f1c = edx226;
+    eax231->f20 = ecx227;
+    eax231->f24 = ebx228;
+    eax231->f28 = ebp229;
+    eax231->f2c = edi230;
     goto v197;
     addr_8056980_66:
-    goto v105;
+    goto v106;
     addr_805695a_64:
-    goto v105;
+    goto v106;
     addr_8057b72_39:
     v145 = reinterpret_cast<void**>(0x8057b77);
-    caml_ml_array_bound_error(v115, v105, v106, v107, v25, v24, 0xc9, v103, v232, v233, v234, v16, a2, a3, a4, a5, a6, a7);
+    caml_ml_array_bound_error(0x8072518, v116, v106, v107, v108, v25, v24, 0xc9, v104, v232, v233, v234, v16, a2, a3, a4, a5, a6, a7);
     goto addr_8057b77_42;
     addr_8057b2d_40:
-    eax237 = camlHashtbl__replace_bucket_1116(0x8072518, v115, v105, v106, v107, v25, v24, 0xc9, v103, v235, v236);
-    caml_modify(0x8072518, reinterpret_cast<uint32_t>(v103 + v238 * 2) + 0xfffffffe, eax237, v115, v105, v106, v107, v25, v24, 0xc9, v103, v239, v240, v241, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
-    caml_exception_pointer = v115;
+    eax237 = camlHashtbl__replace_bucket_1116(0x8072518, v116, v106, v107, v108, v25, v24, 0xc9, v104, v235, v236);
+    caml_modify(0x8072518, reinterpret_cast<uint32_t>(v104 + v238 * 2) + 0xfffffffe, eax237, v116, v106, v107, v108, v25, v24, 0xc9, v104, v239, v240, v241, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_exception_pointer = v116;
     goto v242;
     addr_8057af0_46:
     goto v243;
     addr_8057ada_47:
     eax244 = g807854c;
-    while (v245 = eax244, v246 = ebx104, eax247 = *reinterpret_cast<void***>(ebx104 + 4), v248 = eax247, v249 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax247 + 0xfffffffc)) >> 9 | 1), eax253 = camlPervasives__min_1022(ecx132, v245, v107, v249, v24, v246, v248, v250, v251, v252, v16, a2, a3), eax253 != v249) {
-        v107 = eax253;
+    while (v245 = eax244, v246 = ebx105, eax247 = *reinterpret_cast<void***>(ebx105 + 4), v248 = eax247, v249 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax247 + 0xfffffffc)) >> 9 | 1), eax253 = camlPervasives__min_1022(ecx132, v245, v108, v249, v24, v246, v248, v250, v251, v252, v16, a2, a3), eax253 != v249) {
+        v108 = eax253;
         v254 = v249;
         v255 = reinterpret_cast<void**>(0x8057403);
-        eax259 = caml_c_call(ecx132, eax253, 1, v245, v107, v254, v24, v246, v248, v256, v257, v258, v16, a2, a3, a4, a5, a6);
+        eax259 = caml_c_call(ecx132, eax253, 1, v245, v108, v254, v24, v246, v248, v256, v257, v258, v16, a2, a3, a4, a5, a6);
         ebx260 = eax259;
         v24 = ebx260;
         while (eax261 = caml_young_ptr, eax262 = eax261 - 24, caml_young_ptr = eax262, cf263 = reinterpret_cast<unsigned char>(eax262) < reinterpret_cast<unsigned char>(caml_young_limit), cf263) {
-            caml_call_gc(ecx132, v245, v107, v254, v24, v246, v248, v264, v265, v266, v16, a2);
+            caml_call_gc(ecx132, v245, v108, v254, v24, v246, v248, v264, v265, v266, v16, a2);
         }
         ecx267 = eax262 + 4;
         *reinterpret_cast<void***>(ecx267 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
         *reinterpret_cast<void***>(ecx267) = reinterpret_cast<void**>(camlHashtbl__insert_bucket_1068);
         *reinterpret_cast<void***>(ecx267 + 4) = reinterpret_cast<void**>(3);
         *reinterpret_cast<void***>(ecx267 + 8) = v245;
-        *reinterpret_cast<void***>(ecx267 + 12) = v107;
+        *reinterpret_cast<void***>(ecx267 + 12) = v108;
         *reinterpret_cast<void***>(ecx267 + 16) = ebx260;
         eax268 = reinterpret_cast<void**>(1);
         ebx269 = v254 + 0xfffffffe;
         if (reinterpret_cast<signed char>(1) > reinterpret_cast<signed char>(ebx269)) 
             goto addr_8057496_87;
         v254 = ebx269;
-        v107 = reinterpret_cast<void**>(1);
+        v108 = reinterpret_cast<void**>(1);
         v245 = ecx267;
         do {
             ebx270 = v248;
             ecx271 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx270 + 0xfffffffc)) >> 9);
             if (reinterpret_cast<unsigned char>(ecx271) <= reinterpret_cast<unsigned char>(eax268)) 
                 break;
-            camlHashtbl__insert_bucket_1068(v245, v107, v254, v24, v246, v248, v272, v273, v274, v16, a2, a3, a4, a5, a6, a7, a8, a9);
-            ecx267 = v107;
-            eax268 = v107 + 2;
-            v107 = eax268;
+            camlHashtbl__insert_bucket_1068(v245, v108, v254, v24, v246, v248, v272, v273, v274, v16, a2, a3, a4, a5, a6, a7, a8, a9);
+            ecx267 = v108;
+            eax268 = v108 + 2;
+            v108 = eax268;
         } while (ecx267 != v254);
         goto addr_8057496_87;
         v275 = reinterpret_cast<void**>(0x80574d8);
-        eax279 = caml_ml_array_bound_error(v245, v107, v254, v24, v246, v248, v276, v277, v278, v16, a2, a3, a4, a5, a6, a7, a8, a9);
+        eax279 = caml_ml_array_bound_error(ecx271, v245, v108, v254, v24, v246, v248, v276, v277, v278, v16, a2, a3, a4, a5, a6, a7, a8, a9);
         edi280 = eax279;
         esi127 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi280 + 4) + 0xfffffffc)) >> 10);
         if (!esi127) {
-            caml_raise_exn(ecx271, 0x80574d8, v245, v107, v254, v24, v246, v248, v281, v282);
+            caml_raise_exn(ecx271, 0x80574d8, v245, v108, v254, v24, v246, v248, v281, v282);
         } else {
             v275 = ecx271;
             v255 = reinterpret_cast<void**>(0xc9);
-            eax283 = caml_hash_univ_param(21, 0xc9, ebx270, v275, v245, v107, v254, v24);
+            eax283 = caml_hash_univ_param(21, 0xc9, ebx270, v275, v245, v108, v254, v24);
             ecx271 = esi127;
             __asm__("cdq ");
-            edx102 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax283) >> 1) % reinterpret_cast<signed char>(ecx271));
+            edx103 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax283) >> 1) % reinterpret_cast<signed char>(ecx271));
         }
-        edx102 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx102) << 1) + 1);
+        edx103 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx103) << 1) + 1);
         while (eax284 = caml_young_ptr, eax285 = eax284 - 16, caml_young_ptr = eax285, cf286 = reinterpret_cast<unsigned char>(eax285) < reinterpret_cast<unsigned char>(caml_young_limit), cf286) {
-            caml_call_gc(ecx271, v275, v245, v107, v254, v24, v246, v248, v287, v288, v289, v16);
+            caml_call_gc(ecx271, v275, v245, v108, v254, v24, v246, v248, v287, v288, v289, v16);
         }
         eax290 = eax285 + 4;
         *reinterpret_cast<void***>(eax290 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
         *reinterpret_cast<void***>(eax290) = ebx270;
         *reinterpret_cast<void***>(eax290 + 4) = v275;
-        ebx291 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi280 + 4) + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx291) <= reinterpret_cast<unsigned char>(edx102)) 
-            goto addr_80575c8_99;
-        *reinterpret_cast<void***>(eax290 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(edi280 + 4) + reinterpret_cast<unsigned char>(edx102) * 2) - 2);
         ecx132 = *reinterpret_cast<void***>(edi280 + 4);
         ebx291 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx132 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ebx291) <= reinterpret_cast<unsigned char>(edx102)) 
+        if (reinterpret_cast<unsigned char>(ebx291) <= reinterpret_cast<unsigned char>(edx103)) 
+            goto addr_80575c8_99;
+        *reinterpret_cast<void***>(eax290 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx132 + reinterpret_cast<unsigned char>(edx103) * 2) - 2);
+        ecx132 = *reinterpret_cast<void***>(edi280 + 4);
+        ebx291 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx132 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ebx291) <= reinterpret_cast<unsigned char>(edx103)) 
             goto addr_80575c3_101;
-        caml_modify(ecx132, reinterpret_cast<uint32_t>(ecx132 + reinterpret_cast<unsigned char>(edx102) * 2) + 0xfffffffe, eax290, v275, v245, v107, v254, v24, v246, v248, v292, v293, v294, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+        caml_modify(ecx132, reinterpret_cast<uint32_t>(ecx132 + reinterpret_cast<unsigned char>(edx103) * 2) + 0xfffffffe, eax290, v275, v245, v108, v254, v24, v246, v248, v292, v293, v294, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
         *reinterpret_cast<void***>(edi280) = *reinterpret_cast<void***>(edi280) + 2;
         eax295 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi280 + 4) + 0xfffffffc)) >> 9 | 1);
         if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi280)) <= reinterpret_cast<signed char>(reinterpret_cast<uint32_t>(eax295) + reinterpret_cast<uint32_t>(eax295) + 0xffffffff)) 
             goto addr_80575b0_103;
         eax244 = g807854c;
-        ebx104 = edi280;
+        ebx105 = edi280;
     }
     goto v296;
     addr_8057496_87:
-    caml_modify(ecx267, v246 + 4, v24, v245, v107, v254, v24, v246, v248, v297, v298, v299, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    caml_modify(ecx267, v246 + 4, v24, v245, v108, v254, v24, v246, v248, v297, v298, v299, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     goto v300;
     addr_80575c8_99:
-    eax304 = caml_ml_array_bound_error(v275, v245, v107, v254, v24, v246, v248, v301, v302, v303, v16, a2, a3, a4, a5, a6, a7, a8);
+    eax304 = caml_ml_array_bound_error(ecx132, v275, v245, v108, v254, v24, v246, v248, v301, v302, v303, v16, a2, a3, a4, a5, a6, a7, a8);
     edi305 = eax304;
-    ecx49 = ebx291;
+    ecx50 = ebx291;
     while (eax306 = caml_young_ptr, eax307 = eax306 - 20, caml_young_ptr = eax307, cf308 = reinterpret_cast<unsigned char>(eax307) < reinterpret_cast<unsigned char>(caml_young_limit), cf308) {
-        caml_call_gc(ecx49, v255, 0x80575cd, v275, v245, v107, v254, v24, v246, v248, v309, v310);
+        caml_call_gc(ecx50, v255, 0x80575cd, v275, v245, v108, v254, v24, v246, v248, v309, v310);
     }
     ebx311 = eax307 + 4;
     *reinterpret_cast<void***>(ebx311 + 0xfffffffc) = reinterpret_cast<void**>(0x10f7);
     *reinterpret_cast<void***>(ebx311) = reinterpret_cast<void**>(camlHashtbl__remove_bucket_1083);
     *reinterpret_cast<void***>(ebx311 + 4) = reinterpret_cast<void**>(3);
     *reinterpret_cast<void***>(ebx311 + 8) = edi305;
-    *reinterpret_cast<void***>(ebx311 + 12) = ecx49;
+    *reinterpret_cast<void***>(ebx311 + 12) = ecx50;
     esi312 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(edi305 + 4) + 0xfffffffc)) >> 10);
     if (!esi312) {
-        caml_raise_exn(ecx49, v255, 0x80575cd, v275, v245, v107, v254, v24, v246, v248);
+        caml_raise_exn(ecx50, v255, 0x80575cd, v275, v245, v108, v254, v24, v246, v248);
     } else {
-        eax313 = caml_hash_univ_param(21, 0xc9, ecx49, v255, 0x80575cd, v275, v245, v107);
-        ecx49 = esi312;
+        eax313 = caml_hash_univ_param(21, 0xc9, ecx50, v255, 0x80575cd, v275, v245, v108);
+        ecx50 = esi312;
         __asm__("cdq ");
-        edx102 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax313) >> 1) % reinterpret_cast<signed char>(ecx49));
+        edx103 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax313) >> 1) % reinterpret_cast<signed char>(ecx50));
     }
-    edx314 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx102) << 1) + 1);
+    edx314 = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx103) << 1) + 1);
     eax315 = *reinterpret_cast<void***>(edi305 + 4);
     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax315 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(edx314)) {
-        ecx49 = *reinterpret_cast<void***>(edi305 + 4);
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx49 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx314)) {
-            caml_ml_array_bound_error(eax315, edx314, v275, v245, v107, v254, v24, v246, v248, v316, v317, v318, v16, a2, a3, a4, a5, a6);
+        ecx50 = *reinterpret_cast<void***>(edi305 + 4);
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx50 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx314)) {
+            caml_ml_array_bound_error(ecx50, eax315, edx314, v275, v245, v108, v254, v24, v246, v248, v316, v317, v318, v16, a2, a3, a4, a5, a6);
         } else {
-            eax320 = camlHashtbl__remove_bucket_1083(eax315, edx314, v275, v245, v107, v254, v24, v246, v248, v319);
-            caml_modify(ecx49, reinterpret_cast<uint32_t>(eax315 + reinterpret_cast<unsigned char>(edx314) * 2) + 0xfffffffe, eax320, eax315, edx314, v275, v245, v107, v254, v24, v246, v248, v321, v322, v323, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+            eax320 = camlHashtbl__remove_bucket_1083(eax315, edx314, v275, v245, v108, v254, v24, v246, v248, v319);
+            caml_modify(ecx50, reinterpret_cast<uint32_t>(eax315 + reinterpret_cast<unsigned char>(edx314) * 2) + 0xfffffffe, eax320, eax315, edx314, v275, v245, v108, v254, v24, v246, v248, v321, v322, v323, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
             goto v275;
         }
     }
-    eax327 = caml_ml_array_bound_error(eax315, edx314, v275, v245, v107, v254, v24, v246, v248, v324, v325, v326, v16, a2, a3, a4, a5, a6);
+    eax327 = caml_ml_array_bound_error(ecx50, eax315, edx314, v275, v245, v108, v254, v24, v246, v248, v324, v325, v326, v16, a2, a3, a4, a5, a6);
     addr_80576b0_117:
     while (ebx311 != 1) {
         v328 = eax327;
-        v55 = *reinterpret_cast<void***>(ebx311 + 8);
-        ecx49 = *reinterpret_cast<void***>(ebx311 + 4);
-        v329 = ecx49;
+        v56 = *reinterpret_cast<void***>(ebx311 + 8);
+        ecx50 = *reinterpret_cast<void***>(ebx311 + 4);
+        v329 = ecx50;
         v330 = *reinterpret_cast<void***>(ebx311);
-        eax331 = caml_c_call(ecx49, eax327, v330, v328, v55, v329, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+        eax331 = caml_c_call(ecx50, eax327, v330, v328, v56, v329, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
         if (reinterpret_cast<int1_t>(eax331 == 1)) 
             goto addr_80576df_120;
         eax327 = v328;
-        ebx311 = v55;
+        ebx311 = v56;
     }
     while (1) {
         eax332 = caml_young_ptr;
@@ -2238,85 +2243,85 @@ void** camlHashtbl__find_1093(void** ecx, void** a2, void** a3, void** a4, void*
             eax335 = eax333 + 4;
             *reinterpret_cast<void***>(eax335 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
             *reinterpret_cast<void***>(eax335) = reinterpret_cast<void**>(0x8072518);
-            caml_raise_exn(ecx49, v328, v55, v329, v16, a2, a3, a4, a5, a6);
+            caml_raise_exn(ecx50, v328, v56, v329, v16, a2, a3, a4, a5, a6);
         }
-        caml_call_gc(ecx49, v328, v55, v329, v16, a2, a3, a4, a5, a6, a7, a8);
+        caml_call_gc(ecx50, v328, v56, v329, v16, a2, a3, a4, a5, a6, a7, a8);
     }
     addr_80576df_120:
     return v329;
     addr_80575c3_101:
-    caml_ml_array_bound_error(v275, v245, v107, v254, v24, v246, v248, v336, v337, v338, v16, a2, a3, a4, a5, a6, a7, a8);
+    caml_ml_array_bound_error(ecx132, v275, v245, v108, v254, v24, v246, v248, v336, v337, v338, v16, a2, a3, a4, a5, a6, a7, a8);
     goto addr_80575c8_99;
     addr_80575b0_103:
     goto v245;
     addr_80579f8_25:
-    v24 = edx83;
-    v107 = ecx67;
-    v106 = ebx47;
-    v105 = edi73;
+    v24 = edx84;
+    v108 = ecx68;
+    v107 = ebx48;
+    v106 = edi74;
     v145 = reinterpret_cast<void**>(0xc9);
     v146 = reinterpret_cast<void**>(0x8057a14);
-    eax339 = caml_hash_univ_param(21, 0xc9, ebx47, v105, v106, v107, v25, v24);
-    esp101 = reinterpret_cast<void*>(esp72 - 4 - 4 - 4 - 4 + 4 + 12);
-    ecx67 = esi84;
+    eax339 = caml_hash_univ_param(21, 0xc9, ebx48, v106, v107, v108, v25, v24);
+    esp102 = reinterpret_cast<void*>(esp73 - 4 - 4 - 4 - 4 + 4 + 12);
+    ecx68 = esi85;
     __asm__("cdq ");
-    edx83 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax339) >> 1) % reinterpret_cast<signed char>(ecx67));
+    edx84 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax339) >> 1) % reinterpret_cast<signed char>(ecx68));
     goto addr_8057a30_34;
     addr_8056800_32:
     goto v340;
     addr_80567b1_30:
-    eax344 = camlHashtbl__find_in_bucket_1108(v87, v86, v89, v341, v342, v343, v16, a2, a3, a4, a5);
+    eax344 = camlHashtbl__find_in_bucket_1108(v88, v87, v90, v341, v342, v343, v16, a2, a3, a4, a5);
     ecx345 = eax344;
     while (eax346 = caml_young_ptr, eax347 = eax346 - 12, caml_young_ptr = eax347, cf348 = reinterpret_cast<unsigned char>(eax347) < reinterpret_cast<unsigned char>(caml_young_limit), cf348) {
-        caml_call_gc(ecx345, v87, v86, v89, v349, v350, v351, v16, a2, a3, a4, a5);
+        caml_call_gc(ecx345, v88, v87, v90, v349, v350, v351, v16, a2, a3, a4, a5);
     }
     eax352 = eax347 + 4;
     *reinterpret_cast<void***>(eax352 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
-    *reinterpret_cast<void***>(eax352) = v89;
+    *reinterpret_cast<void***>(eax352) = v90;
     *reinterpret_cast<void***>(eax352 + 4) = ecx345;
     goto v353;
     addr_8057950_9:
     v24 = reinterpret_cast<void**>(21);
     v25 = reinterpret_cast<void**>(0x805795d);
-    eax357 = caml_hash_univ_param(21, 0xc9, ecx39, v354, v355, v356, v16, a2);
-    esp65 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp37) - 4 - 4 - 4 - 4 + 4 + 12);
+    eax357 = caml_hash_univ_param(21, 0xc9, ecx40, v354, v355, v356, v16, a2);
+    esp66 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp38) - 4 - 4 - 4 - 4 + 4 + 12);
     __asm__("cdq ");
-    edx32 = reinterpret_cast<uint32_t>((reinterpret_cast<int32_t>(eax357) >> 1) % reinterpret_cast<int32_t>(esi48));
+    edx32 = reinterpret_cast<uint32_t>((reinterpret_cast<int32_t>(eax357) >> 1) % reinterpret_cast<int32_t>(esi49));
     goto addr_8057980_20;
     addr_8057890_17:
     while (eax358 = caml_young_ptr, eax359 = eax358 - 8, caml_young_ptr = eax359, cf360 = reinterpret_cast<unsigned char>(eax359) < reinterpret_cast<unsigned char>(caml_young_limit), cf360) {
-        caml_call_gc(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6, a7, a8);
+        caml_call_gc(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6, a7, a8);
     }
     eax361 = eax359 + 4;
     *reinterpret_cast<void***>(eax361 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
     *reinterpret_cast<void***>(eax361) = reinterpret_cast<void**>(0x8072518);
-    caml_raise_exn(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6);
+    caml_raise_exn(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6);
     goto addr_80578c0_11;
     addr_80577dc_18:
-    v54 = *reinterpret_cast<void***>(eax61 + 8);
-    v56 = *reinterpret_cast<void***>(eax61 + 4);
-    v362 = *reinterpret_cast<void***>(eax61);
-    eax363 = caml_c_call(ecx49, v55, v362, v54, v55, v56, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    v55 = *reinterpret_cast<void***>(eax62 + 8);
+    v57 = *reinterpret_cast<void***>(eax62 + 4);
+    v362 = *reinterpret_cast<void***>(eax62);
+    eax363 = caml_c_call(ecx50, v56, v362, v55, v56, v57, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     if (reinterpret_cast<int1_t>(eax363 == 1)) {
-        return v56;
+        return v57;
     }
-    if (v54 != 1) 
+    if (v55 != 1) 
         goto addr_8057818_132;
     while (eax364 = caml_young_ptr, eax365 = eax364 - 8, caml_young_ptr = eax365, cf366 = reinterpret_cast<unsigned char>(eax365) < reinterpret_cast<unsigned char>(caml_young_limit), cf366) {
-        caml_call_gc(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6, a7, a8);
+        caml_call_gc(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6, a7, a8);
     }
     eax367 = eax365 + 4;
     *reinterpret_cast<void***>(eax367 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
     *reinterpret_cast<void***>(eax367) = reinterpret_cast<void**>(0x8072518);
-    caml_raise_exn(ecx49, v54, v55, v56, v16, a2, a3, a4, a5, a6);
+    caml_raise_exn(ecx50, v55, v56, v57, v16, a2, a3, a4, a5, a6);
     goto addr_8057890_17;
     addr_8057818_132:
-    v328 = *reinterpret_cast<void***>(v54 + 8);
-    v329 = *reinterpret_cast<void***>(v54 + 4);
-    v368 = *reinterpret_cast<void***>(v54);
-    eax369 = caml_c_call(ecx49, v55, v368, v328, v55, v329, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    v328 = *reinterpret_cast<void***>(v55 + 8);
+    v329 = *reinterpret_cast<void***>(v55 + 4);
+    v368 = *reinterpret_cast<void***>(v55);
+    eax369 = caml_c_call(ecx50, v56, v368, v328, v56, v329, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     if (!reinterpret_cast<int1_t>(eax369 == 1)) {
-        eax327 = v55;
+        eax327 = v56;
         ebx311 = v328;
         goto addr_80576b0_117;
     } else {
@@ -2389,7 +2394,7 @@ int32_t camlHashtbl__remove_1080(void** a1, void** a2, void** a3, void** a4, voi
     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(edx41)) {
         ecx24 = *reinterpret_cast<void***>(edi22 + 4);
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx24 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx41)) {
-            caml_ml_array_bound_error(v44, v42, v21, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+            caml_ml_array_bound_error(ecx24, v44, v42, v21, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         } else {
             eax45 = camlHashtbl__remove_bucket_1083(v44, v42, v21, a1, a2, a3, a4, a5, a6, a7);
             caml_modify(ecx24, reinterpret_cast<uint32_t>(v44 + reinterpret_cast<unsigned char>(v42) * 2) + 0xfffffffe, eax45, v44, v42, v21, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
@@ -2397,7 +2402,7 @@ int32_t camlHashtbl__remove_1080(void** a1, void** a2, void** a3, void** a4, voi
         }
     }
     v46 = reinterpret_cast<void**>(0x80576b0);
-    eax47 = caml_ml_array_bound_error(v44, v42, v21, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax47 = caml_ml_array_bound_error(ecx24, v44, v42, v21, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     while (ebx31 != 1) {
         v36 = eax47;
         v35 = *reinterpret_cast<void***>(ebx31 + 8);
@@ -2770,83 +2775,77 @@ int32_t camlArray__sortto_1217(void** ecx, void** a2, void** a3, void** a4, void
     void** eax57;
     void** eax58;
     int1_t cf59;
-    void** ecx60;
+    void** eax60;
     void** eax61;
-    void** eax62;
-    int1_t cf63;
-    void** ecx64;
+    int1_t cf62;
+    void** ecx63;
+    void** eax64;
     void** eax65;
-    void** ecx66;
-    void** eax67;
+    void** eax66;
+    int1_t cf67;
     void** eax68;
-    int1_t cf69;
-    void** eax70;
-    void** ecx71;
+    void** eax69;
+    void** ecx70;
+    void** eax71;
     void** eax72;
-    void** ecx73;
-    void** eax74;
+    int1_t cf73;
+    void** ebx74;
     void** eax75;
-    int1_t cf76;
-    void** ebx77;
-    void** eax78;
-    void** ecx79;
-    void** esi80;
+    void** ecx76;
+    void** esi77;
+    void** v78;
+    void** v79;
+    void** v80;
     void** v81;
     void** v82;
     void** v83;
-    void** v84;
-    void** v85;
-    void** v86;
-    void** ecx87;
-    void** eax88;
+    void** ecx84;
+    void** eax85;
+    void** eax86;
+    void** ebx87;
+    void** esi88;
     void** eax89;
-    void** ecx90;
-    void** ebx91;
-    void** esi92;
+    void** eax90;
+    int1_t cf91;
+    void** eax92;
     void** eax93;
     void** eax94;
     int1_t cf95;
-    void** eax96;
-    void** ecx97;
+    void** edx96;
+    void** ebx97;
     void** ecx98;
     void** eax99;
-    void** eax100;
-    int1_t cf101;
-    void** edx102;
-    void** ebx103;
-    void** ecx104;
-    void** eax105;
-    void** edx106;
-    void* esi107;
-    void** edi108;
+    void** edx100;
+    void* esi101;
+    void** edi102;
+    void** v103;
+    void** ebp104;
+    uint32_t eax105;
+    uint32_t eax106;
+    void** v107;
+    void** esi108;
     void** v109;
-    void** ebp110;
-    uint32_t eax111;
-    uint32_t eax112;
-    void** v113;
-    void** esi114;
-    void** v115;
-    void** v116;
+    void** v110;
+    void** ecx111;
+    void** eax112;
+    void** eax113;
+    int1_t cf114;
+    void** ecx115;
+    void** ebx116;
     void** ecx117;
-    void** eax118;
-    void** eax119;
-    int1_t cf120;
-    void** ecx121;
-    void** ebx122;
-    void** ecx123;
-    void** ebx124;
-    void** esi125;
-    void** v126;
+    void** ebx118;
+    void** esi119;
+    void** v120;
+    void** eax121;
+    void** eax122;
+    int1_t cf123;
+    void** eax124;
+    void** ebx125;
+    void** ebx126;
     void** eax127;
     void** eax128;
     int1_t cf129;
     void** eax130;
-    void** ebx131;
-    void** ebx132;
-    void** eax133;
-    void** eax134;
-    int1_t cf135;
-    void** eax136;
 
     while (1) {
         v18 = reinterpret_cast<void**>(__return_address());
@@ -2899,7 +2898,7 @@ int32_t camlArray__sortto_1217(void** ecx, void** a2, void** a3, void** a4, void
         }
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(v32)) {
             addr_80515c3_13:
-            caml_ml_array_bound_error(v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+            caml_ml_array_bound_error(ecx, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
             goto addr_80515c8_14;
         } else {
             while (eax43 = caml_young_ptr, eax44 = eax43 - 12, caml_young_ptr = eax44, cf45 = reinterpret_cast<unsigned char>(eax44) < reinterpret_cast<unsigned char>(caml_young_limit), cf45) {
@@ -2916,18 +2915,18 @@ int32_t camlArray__sortto_1217(void** ecx, void** a2, void** a3, void** a4, void
         if (ebx21 == 0xfe) {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi38 + 0xfffffffc)) >> 10) > reinterpret_cast<unsigned char>(ecx)) 
                 goto addr_8051567_20;
-            caml_ml_array_bound_error(v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+            caml_ml_array_bound_error(ecx, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
         } else {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi38 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(ecx)) 
                 goto addr_8051557_23;
         }
-        caml_ml_array_bound_error(v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+        caml_ml_array_bound_error(ecx, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
         goto addr_80515c3_13;
         addr_80514da_9:
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(v32)) {
             addr_80515c8_14:
             v46 = reinterpret_cast<void**>(0x80515cd);
-            eax23 = caml_ml_array_bound_error(v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+            eax23 = caml_ml_array_bound_error(ecx, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
             esi28 = esi38;
         } else {
             edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(v32) * 2) - 2);
@@ -2975,310 +2974,313 @@ int32_t camlArray__sortto_1217(void** ecx, void** a2, void** a3, void** a4, void
             *reinterpret_cast<void***>(esi28 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
             *reinterpret_cast<void***>(esi28) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v33) + reinterpret_cast<unsigned char>(edi47) + 0xfffffffd);
             while (reinterpret_cast<signed char>(*reinterpret_cast<void***>(esi28)) >= reinterpret_cast<signed char>(v33)) {
-                ecx60 = *reinterpret_cast<void***>(esi28);
+                ecx52 = *reinterpret_cast<void***>(esi28);
                 edx19 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) & 0xff);
                 if (edx19 == 0xfe) {
-                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx60)) 
+                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx52)) 
                         goto addr_80518b9_41;
-                    while (eax61 = caml_young_ptr, eax62 = eax61 - 12, caml_young_ptr = eax62, cf63 = reinterpret_cast<unsigned char>(eax62) < reinterpret_cast<unsigned char>(caml_young_limit), cf63) {
-                        caml_call_gc(ecx60, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18);
+                    while (eax60 = caml_young_ptr, eax61 = eax60 - 12, caml_young_ptr = eax61, cf62 = reinterpret_cast<unsigned char>(eax61) < reinterpret_cast<unsigned char>(caml_young_limit), cf62) {
+                        caml_call_gc(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18);
                     }
-                    *reinterpret_cast<void***>(eax62 + 4 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                    *reinterpret_cast<void***>(eax61 + 4 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                     __asm__("fld qword [ebx+ecx*4-0x4]");
                     __asm__("fstp qword [eax]");
                 } else {
-                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx60)) 
+                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx52)) 
                         goto addr_80518be_46;
                 }
-                ecx64 = *reinterpret_cast<void***>(v35 + 12);
-                eax65 = caml_apply2(ecx64, v49, v51, v46, v30, v31);
-                if (reinterpret_cast<signed char>(eax65) <= reinterpret_cast<signed char>(1)) 
+                ecx63 = *reinterpret_cast<void***>(v35 + 12);
+                eax64 = caml_apply2(ecx63, v49, v51, v46, v30, v31);
+                if (reinterpret_cast<signed char>(eax64) <= reinterpret_cast<signed char>(1)) 
                     break;
                 esi28 = v46;
-                ecx66 = *reinterpret_cast<void***>(esi28);
+                ecx52 = *reinterpret_cast<void***>(esi28);
                 ebx21 = v32;
                 edx19 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) & 0xff);
                 if (edx19 == 0xfe) {
-                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx66)) 
+                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx52)) 
                         goto addr_80518af_51;
-                    while (eax67 = caml_young_ptr, eax68 = eax67 - 12, caml_young_ptr = eax68, cf69 = reinterpret_cast<unsigned char>(eax68) < reinterpret_cast<unsigned char>(caml_young_limit), cf69) {
-                        caml_call_gc(ecx66, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18);
+                    while (eax65 = caml_young_ptr, eax66 = eax65 - 12, caml_young_ptr = eax66, cf67 = reinterpret_cast<unsigned char>(eax66) < reinterpret_cast<unsigned char>(caml_young_limit), cf67) {
+                        caml_call_gc(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18);
                     }
-                    edx19 = eax68 + 4;
+                    edx19 = eax66 + 4;
                     *reinterpret_cast<void***>(edx19 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                     __asm__("fld qword [ebx+ecx*4-0x4]");
                     __asm__("fstp qword [edx]");
                 } else {
-                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx66)) 
+                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx52)) 
                         goto addr_80518b4_56;
-                    edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(ecx66) * 2) - 2);
+                    edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(ecx52) * 2) - 2);
                 }
-                eax70 = *reinterpret_cast<void***>(esi28) + 2;
+                eax68 = *reinterpret_cast<void***>(esi28) + 2;
                 if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) & 0xff) == 0xfe) {
-                    if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax70)) 
+                    ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10);
+                    if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax68)) 
                         goto addr_80518a5_60;
                     __asm__("fld qword [edx]");
                     __asm__("fstp qword [ebx+eax*4-0x4]");
                 } else {
-                    ecx71 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9);
-                    if (reinterpret_cast<unsigned char>(ecx71) <= reinterpret_cast<unsigned char>(eax70)) 
+                    ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9);
+                    if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax68)) 
                         goto addr_80518aa_63;
-                    caml_modify(ecx71, reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(eax70) * 2) + 0xfffffffe, edx19, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                    caml_modify(ecx52, reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(eax68) * 2) + 0xfffffffe, edx19, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
                 }
                 *reinterpret_cast<void***>(esi28) = *reinterpret_cast<void***>(esi28) + 0xfffffffe;
             }
-            eax72 = *reinterpret_cast<void***>(v46) + 2;
+            eax69 = *reinterpret_cast<void***>(v46) + 2;
             ebx21 = v32;
             edx19 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) & 0xff);
             if (edx19 == 0xfe) {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax72)) 
+                ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 10);
+                if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax69)) 
                     goto addr_805189b_68;
                 __asm__("fld qword [ecx]");
                 __asm__("fstp qword [ebx+eax*4-0x4]");
             } else {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(eax72)) 
+                ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx21 + 0xfffffffc)) >> 9);
+                if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax69)) 
                     goto addr_80518a0_71;
-                caml_modify(v51, reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(eax72) * 2) + 0xfffffffe, v51, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                caml_modify(v51, reinterpret_cast<uint32_t>(ebx21 + reinterpret_cast<unsigned char>(eax69) * 2) + 0xfffffffe, v51, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             }
-            ecx73 = v30;
+            ecx70 = v30;
             edi47 = v30 + 2;
             v30 = edi47;
-        } while (ecx73 != v31);
+        } while (ecx70 != v31);
         break;
         addr_80518c3_74:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         addr_80518c8_33:
-        eax23 = caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        eax23 = caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         continue;
         addr_80518b9_41:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         addr_80518be_46:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         goto addr_80518c3_74;
         addr_80518af_51:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         addr_80518b4_56:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         goto addr_80518b9_41;
         addr_80518a5_60:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         addr_80518aa_63:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         goto addr_80518af_51;
         addr_805189b_68:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         addr_80518a0_71:
-        caml_ml_array_bound_error(v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
+        caml_ml_array_bound_error(ecx52, v49, v51, v46, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8);
         goto addr_80518a5_60;
     }
     goto v18;
     addr_8051567_20:
-    while (eax74 = caml_young_ptr, eax75 = eax74 - 12, caml_young_ptr = eax75, cf76 = reinterpret_cast<unsigned char>(eax75) < reinterpret_cast<unsigned char>(caml_young_limit), cf76) {
+    while (eax71 = caml_young_ptr, eax72 = eax71 - 12, caml_young_ptr = eax72, cf73 = reinterpret_cast<unsigned char>(eax72) < reinterpret_cast<unsigned char>(caml_young_limit), cf73) {
         caml_call_gc(ecx, v30, v31, v33, v35, v32, v22, v20, v18, a2, a3, a4);
     }
-    ebx77 = eax75 + 4;
-    *reinterpret_cast<void***>(ebx77 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+    ebx74 = eax72 + 4;
+    *reinterpret_cast<void***>(ebx74 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
     __asm__("fld qword [esi+ecx*4-0x4]");
     __asm__("fstp qword [ebx]");
     addr_805158c_78:
-    eax78 = ecx;
-    ecx79 = v32;
-    esi80 = v35;
+    eax75 = ecx;
+    ecx76 = v32;
+    esi77 = v35;
     while (1) {
-        v81 = eax78;
-        v82 = ebx77;
-        v83 = ecx79;
-        v84 = edx19;
-        v85 = esi80;
-        v86 = edi42;
-        ecx87 = *reinterpret_cast<void***>(edi42 + 12);
-        eax88 = caml_apply2(ecx87, v86, v81, v83, v84, v85);
-        if (reinterpret_cast<signed char>(eax88) > reinterpret_cast<signed char>(1)) {
-            edi42 = v86;
-            eax89 = *reinterpret_cast<void***>(edi42 + 24);
-            ecx90 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax89 + 0xfffffffc)) & 0xff);
-            if (ecx90 == 0xfe) {
-                ebx91 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax89 + 0xfffffffc)) >> 10);
-                esi92 = v85;
-                if (reinterpret_cast<unsigned char>(ebx91) <= reinterpret_cast<unsigned char>(esi92)) 
+        v78 = eax75;
+        v79 = ebx74;
+        v80 = ecx76;
+        v81 = edx19;
+        v82 = esi77;
+        v83 = edi42;
+        ecx84 = *reinterpret_cast<void***>(edi42 + 12);
+        eax85 = caml_apply2(ecx84, v83, v78, v80, v81, v82);
+        if (reinterpret_cast<signed char>(eax85) > reinterpret_cast<signed char>(1)) {
+            edi42 = v83;
+            eax86 = *reinterpret_cast<void***>(edi42 + 24);
+            ecx76 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax86 + 0xfffffffc)) & 0xff);
+            if (ecx76 == 0xfe) {
+                ebx87 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax86 + 0xfffffffc)) >> 10);
+                esi88 = v82;
+                if (reinterpret_cast<unsigned char>(ebx87) <= reinterpret_cast<unsigned char>(esi88)) 
                     break;
                 __asm__("fld qword [ebx]");
                 __asm__("fstp qword [eax+esi*4-0x4]");
             } else {
-                ebx91 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax89 + 0xfffffffc)) >> 9);
-                esi92 = v85;
-                if (reinterpret_cast<unsigned char>(ebx91) <= reinterpret_cast<unsigned char>(esi92)) 
+                ebx87 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax86 + 0xfffffffc)) >> 9);
+                esi88 = v82;
+                if (reinterpret_cast<unsigned char>(ebx87) <= reinterpret_cast<unsigned char>(esi88)) 
                     goto addr_805062f_85;
-                caml_modify(ecx90, reinterpret_cast<uint32_t>(eax89 + reinterpret_cast<unsigned char>(esi92) * 2) + 0xfffffffe, v84, v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+                caml_modify(ecx76, reinterpret_cast<uint32_t>(eax86 + reinterpret_cast<unsigned char>(esi88) * 2) + 0xfffffffe, v81, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
             }
-            ecx79 = v83 + 2;
-            if (reinterpret_cast<signed char>(ecx79) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi42 + 32))) 
+            ecx76 = v80 + 2;
+            if (reinterpret_cast<signed char>(ecx76) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi42 + 32))) 
                 goto addr_80505f0_88;
-            ebx91 = *reinterpret_cast<void***>(edi42 + 20);
-            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) & 0xff) == 0xfe) {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx79)) 
+            ebx87 = *reinterpret_cast<void***>(edi42 + 20);
+            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) & 0xff) == 0xfe) {
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx76)) 
                     goto addr_8050620_91;
-                while (eax93 = caml_young_ptr, eax94 = eax93 - 12, caml_young_ptr = eax94, cf95 = reinterpret_cast<unsigned char>(eax94) < reinterpret_cast<unsigned char>(caml_young_limit), cf95) {
-                    caml_call_gc(ecx79, v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3);
+                while (eax89 = caml_young_ptr, eax90 = eax89 - 12, caml_young_ptr = eax90, cf91 = reinterpret_cast<unsigned char>(eax90) < reinterpret_cast<unsigned char>(caml_young_limit), cf91) {
+                    caml_call_gc(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3);
                 }
-                edx19 = eax94 + 4;
+                edx19 = eax90 + 4;
                 *reinterpret_cast<void***>(edx19 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                 __asm__("fld qword [ebx+ecx*4-0x4]");
                 __asm__("fstp qword [edx]");
             } else {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx79)) 
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx76)) 
                     goto addr_8050625_96;
-                edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx91 + reinterpret_cast<unsigned char>(ecx79) * 2) - 2);
+                edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx87 + reinterpret_cast<unsigned char>(ecx76) * 2) - 2);
             }
-            esi80 = esi92 + 2;
-            eax78 = v81;
-            ebx77 = v82;
+            esi77 = esi88 + 2;
+            eax75 = v78;
+            ebx74 = v79;
         } else {
-            edi42 = v86;
-            eax96 = *reinterpret_cast<void***>(edi42 + 24);
-            ecx97 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax96 + 0xfffffffc)) & 0xff);
-            if (ecx97 == 0xfe) {
-                ebx91 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax96 + 0xfffffffc)) >> 10);
-                esi92 = v85;
-                if (reinterpret_cast<unsigned char>(ebx91) <= reinterpret_cast<unsigned char>(esi92)) 
+            edi42 = v83;
+            eax92 = *reinterpret_cast<void***>(edi42 + 24);
+            ecx76 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax92 + 0xfffffffc)) & 0xff);
+            if (ecx76 == 0xfe) {
+                ebx87 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax92 + 0xfffffffc)) >> 10);
+                esi88 = v82;
+                if (reinterpret_cast<unsigned char>(ebx87) <= reinterpret_cast<unsigned char>(esi88)) 
                     goto addr_805063e_101;
                 __asm__("fld qword [ebx]");
                 __asm__("fstp qword [eax+esi*4-0x4]");
             } else {
-                ebx91 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax96 + 0xfffffffc)) >> 9);
-                esi92 = v85;
-                if (reinterpret_cast<unsigned char>(ebx91) <= reinterpret_cast<unsigned char>(esi92)) 
+                ebx87 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax92 + 0xfffffffc)) >> 9);
+                esi88 = v82;
+                if (reinterpret_cast<unsigned char>(ebx87) <= reinterpret_cast<unsigned char>(esi88)) 
                     goto addr_8050643_104;
-                caml_modify(ecx97, reinterpret_cast<uint32_t>(eax96 + reinterpret_cast<unsigned char>(esi92) * 2) + 0xfffffffe, v82, v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+                caml_modify(ecx76, reinterpret_cast<uint32_t>(eax92 + reinterpret_cast<unsigned char>(esi88) * 2) + 0xfffffffe, v79, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
             }
-            ecx98 = v81 + 2;
-            if (reinterpret_cast<signed char>(ecx98) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi42 + 28))) 
+            ecx76 = v78 + 2;
+            if (reinterpret_cast<signed char>(ecx76) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi42 + 28))) 
                 goto addr_8050500_107;
-            ebx91 = *reinterpret_cast<void***>(edi42 + 16);
-            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) & 0xff) == 0xfe) {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx98)) 
+            ebx87 = *reinterpret_cast<void***>(edi42 + 16);
+            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) & 0xff) == 0xfe) {
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx76)) 
                     goto addr_8050634_110;
-                while (eax99 = caml_young_ptr, eax100 = eax99 - 12, caml_young_ptr = eax100, cf101 = reinterpret_cast<unsigned char>(eax100) < reinterpret_cast<unsigned char>(caml_young_limit), cf101) {
-                    caml_call_gc(ecx98, v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3);
+                while (eax93 = caml_young_ptr, eax94 = eax93 - 12, caml_young_ptr = eax94, cf95 = reinterpret_cast<unsigned char>(eax94) < reinterpret_cast<unsigned char>(caml_young_limit), cf95) {
+                    caml_call_gc(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3);
                 }
-                edx102 = eax100 + 4;
-                *reinterpret_cast<void***>(edx102 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                edx96 = eax94 + 4;
+                *reinterpret_cast<void***>(edx96 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                 __asm__("fld qword [ebx+ecx*4-0x4]");
                 __asm__("fstp qword [edx]");
-                ebx77 = edx102;
+                ebx74 = edx96;
             } else {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx91 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx98)) 
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx87 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx76)) 
                     goto addr_8050639_115;
-                ebx77 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx91 + reinterpret_cast<unsigned char>(ecx98) * 2) - 2);
+                ebx74 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx87 + reinterpret_cast<unsigned char>(ecx76) * 2) - 2);
             }
-            esi80 = esi92 + 2;
-            eax78 = ecx98;
-            ecx79 = v83;
-            edx19 = v84;
+            esi77 = esi88 + 2;
+            eax75 = ecx76;
+            ecx76 = v80;
+            edx19 = v81;
         }
     }
     addr_805062a_118:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_805062f_85:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_8050634_110:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_8050639_115:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_805063e_101:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_8050643_104:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
-    while (ebx91 != 1) {
-        if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx91) + 0xfffffffc)) & 0xff) == 0xfe) {
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    while (ebx87 != 1) {
+        if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx87) + 0xfffffffc)) & 0xff) == 0xfe) {
         }
-        ebx91 = *reinterpret_cast<void***>(ebx91 + 4);
+        ebx87 = *reinterpret_cast<void***>(ebx87 + 4);
     }
-    goto v86;
+    goto v83;
     addr_80505f0_88:
-    ebx103 = v81;
-    ecx104 = *reinterpret_cast<void***>(edi42 + 24);
-    eax105 = *reinterpret_cast<void***>(edi42 + 16);
-    edx106 = esi92 + 2;
-    esi107 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi42 + 28)) - reinterpret_cast<unsigned char>(ebx103) + 1);
+    ebx97 = v78;
+    ecx98 = *reinterpret_cast<void***>(edi42 + 24);
+    eax99 = *reinterpret_cast<void***>(edi42 + 16);
+    edx100 = esi88 + 2;
+    esi101 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi42 + 28)) - reinterpret_cast<unsigned char>(ebx97) + 1);
     addr_8052130_125:
-    edi108 = eax105;
-    v109 = ecx104;
-    ebp110 = edx106;
-    if (reinterpret_cast<int32_t>(esi107) >= reinterpret_cast<int32_t>(1) && reinterpret_cast<signed char>(ebx103) >= reinterpret_cast<signed char>(1)) {
-        ecx104 = *reinterpret_cast<void***>(edi108 + 0xfffffffc);
-        if ((reinterpret_cast<unsigned char>(ecx104) & 0xff) == 0xfe) {
-            eax111 = reinterpret_cast<unsigned char>(ecx104) >> 10;
+    edi102 = eax99;
+    v103 = ecx98;
+    ebp104 = edx100;
+    if (reinterpret_cast<int32_t>(esi101) >= reinterpret_cast<int32_t>(1) && reinterpret_cast<signed char>(ebx97) >= reinterpret_cast<signed char>(1)) {
+        ecx98 = *reinterpret_cast<void***>(edi102 + 0xfffffffc);
+        if ((reinterpret_cast<unsigned char>(ecx98) & 0xff) == 0xfe) {
+            eax105 = reinterpret_cast<unsigned char>(ecx98) >> 10;
         } else {
-            eax111 = reinterpret_cast<unsigned char>(ecx104) >> 9;
+            eax105 = reinterpret_cast<unsigned char>(ecx98) >> 9;
         }
-        if (reinterpret_cast<signed char>(ebx103) <= reinterpret_cast<signed char>((eax111 | 1) - reinterpret_cast<uint32_t>(esi107) + 1) && reinterpret_cast<signed char>(ebp110) >= reinterpret_cast<signed char>(1)) {
-            ecx104 = *reinterpret_cast<void***>(v109 + 0xfffffffc);
-            if ((reinterpret_cast<unsigned char>(ecx104) & 0xff) == 0xfe) {
-                eax112 = reinterpret_cast<unsigned char>(ecx104) >> 10;
+        if (reinterpret_cast<signed char>(ebx97) <= reinterpret_cast<signed char>((eax105 | 1) - reinterpret_cast<uint32_t>(esi101) + 1) && reinterpret_cast<signed char>(ebp104) >= reinterpret_cast<signed char>(1)) {
+            ecx98 = *reinterpret_cast<void***>(v103 + 0xfffffffc);
+            if ((reinterpret_cast<unsigned char>(ecx98) & 0xff) == 0xfe) {
+                eax106 = reinterpret_cast<unsigned char>(ecx98) >> 10;
             } else {
-                eax112 = reinterpret_cast<unsigned char>(ecx104) >> 9;
+                eax106 = reinterpret_cast<unsigned char>(ecx98) >> 9;
             }
-            if (reinterpret_cast<signed char>(ebp110) <= reinterpret_cast<signed char>((eax112 | 1) - reinterpret_cast<uint32_t>(esi107) + 1)) {
-                if (reinterpret_cast<signed char>(ebx103) >= reinterpret_cast<signed char>(ebp110)) {
-                    v113 = reinterpret_cast<void**>(1);
-                    esi114 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi107) + 0xfffffffe);
-                    if (reinterpret_cast<signed char>(1) <= reinterpret_cast<signed char>(esi114)) {
-                        v115 = ebx103;
-                        v116 = edi108;
+            if (reinterpret_cast<signed char>(ebp104) <= reinterpret_cast<signed char>((eax106 | 1) - reinterpret_cast<uint32_t>(esi101) + 1)) {
+                if (reinterpret_cast<signed char>(ebx97) >= reinterpret_cast<signed char>(ebp104)) {
+                    v107 = reinterpret_cast<void**>(1);
+                    esi108 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi101) + 0xfffffffe);
+                    if (reinterpret_cast<signed char>(1) <= reinterpret_cast<signed char>(esi108)) {
+                        v109 = ebx97;
+                        v110 = edi102;
                         do {
-                            ecx117 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v116 + 0xfffffffc))));
-                            if (ecx117 == 0xfe) {
-                                while (eax118 = caml_young_ptr, eax119 = eax118 - 12, caml_young_ptr = eax119, cf120 = reinterpret_cast<unsigned char>(eax119) < reinterpret_cast<unsigned char>(caml_young_limit), cf120) {
-                                    caml_call_gc(ecx117, v116, v115, v109, v113, v22, v20, v18, a2, a3, a4, a5);
+                            ecx111 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v110 + 0xfffffffc))));
+                            if (ecx111 == 0xfe) {
+                                while (eax112 = caml_young_ptr, eax113 = eax112 - 12, caml_young_ptr = eax113, cf114 = reinterpret_cast<unsigned char>(eax113) < reinterpret_cast<unsigned char>(caml_young_limit), cf114) {
+                                    caml_call_gc(ecx111, v110, v109, v103, v107, v22, v20, v18, a2, a3, a4, a5);
                                 }
-                                ecx121 = eax119 + 4;
-                                *reinterpret_cast<void***>(ecx121 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                                ecx115 = eax113 + 4;
+                                *reinterpret_cast<void***>(ecx115 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                                 __asm__("fld qword [eax+ebx*4-0x4]");
                                 __asm__("fstp qword [ecx]");
-                                ebx122 = ecx121;
+                                ebx116 = ecx115;
                             } else {
-                                ebx122 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v116 + (reinterpret_cast<unsigned char>(v115) + reinterpret_cast<unsigned char>(v113) + 0xffffffff) * 2) - 2);
+                                ebx116 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v110 + (reinterpret_cast<unsigned char>(v109) + reinterpret_cast<unsigned char>(v107) + 0xffffffff) * 2) - 2);
                             }
-                            ecx123 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v109 + 0xfffffffc))));
-                            if (ecx123 == 0xfe) {
+                            ecx117 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v103 + 0xfffffffc))));
+                            if (ecx117 == 0xfe) {
                                 __asm__("fld qword [ebx]");
                                 __asm__("fstp qword [ebx+eax*4-0x4]");
                             } else {
-                                caml_modify(ecx123, reinterpret_cast<uint32_t>(v109 + (reinterpret_cast<unsigned char>(ebp110) + reinterpret_cast<unsigned char>(v113) + 0xffffffff) * 2) + 0xfffffffe, ebx122, v116, v115, v109, v113, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+                                caml_modify(ecx117, reinterpret_cast<uint32_t>(v103 + (reinterpret_cast<unsigned char>(ebp104) + reinterpret_cast<unsigned char>(v107) + 0xffffffff) * 2) + 0xfffffffe, ebx116, v110, v109, v103, v107, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
                             }
-                            ebx124 = v113;
-                            v113 = v113 + 2;
-                        } while (ebx124 != esi114);
+                            ebx118 = v107;
+                            v107 = v107 + 2;
+                        } while (ebx118 != esi108);
                     }
                     return 1;
                 } else {
-                    esi125 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi107) + 0xfffffffe);
-                    if (reinterpret_cast<signed char>(esi125) >= reinterpret_cast<signed char>(1)) {
-                        v126 = ebx103;
+                    esi119 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi101) + 0xfffffffe);
+                    if (reinterpret_cast<signed char>(esi119) >= reinterpret_cast<signed char>(1)) {
+                        v120 = ebx97;
                         do {
-                            if (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi108 + 0xfffffffc))) == 0xfe) {
-                                while (eax127 = caml_young_ptr, eax128 = eax127 - 12, caml_young_ptr = eax128, cf129 = reinterpret_cast<unsigned char>(eax128) < reinterpret_cast<unsigned char>(caml_young_limit), cf129) {
-                                    caml_call_gc(ecx104, v83, v126, v109, v82, v22, v20, v18, a2, a3, a4, a5);
+                            if (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi102 + 0xfffffffc))) == 0xfe) {
+                                while (eax121 = caml_young_ptr, eax122 = eax121 - 12, caml_young_ptr = eax122, cf123 = reinterpret_cast<unsigned char>(eax122) < reinterpret_cast<unsigned char>(caml_young_limit), cf123) {
+                                    caml_call_gc(ecx98, v80, v120, v103, v79, v22, v20, v18, a2, a3, a4, a5);
                                 }
-                                eax130 = eax128 + 4;
-                                *reinterpret_cast<void***>(eax130 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                                eax124 = eax122 + 4;
+                                *reinterpret_cast<void***>(eax124 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                                 __asm__("fld qword [edi+ebx*4-0x4]");
                                 __asm__("fstp qword [eax]");
-                                ebx131 = eax130;
+                                ebx125 = eax124;
                             } else {
-                                ebx131 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi108 + (reinterpret_cast<unsigned char>(v126) + reinterpret_cast<unsigned char>(esi125) + 0xffffffff) * 2) - 2);
+                                ebx125 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi102 + (reinterpret_cast<unsigned char>(v120) + reinterpret_cast<unsigned char>(esi119) + 0xffffffff) * 2) - 2);
                             }
-                            ecx104 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v109 + 0xfffffffc))));
-                            if (ecx104 == 0xfe) {
+                            ecx98 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v103 + 0xfffffffc))));
+                            if (ecx98 == 0xfe) {
                                 __asm__("fld qword [ebx]");
                                 __asm__("fstp qword [ebx+eax*4-0x4]");
                             } else {
-                                caml_modify(ecx104, reinterpret_cast<uint32_t>(v109 + (reinterpret_cast<unsigned char>(ebp110) + reinterpret_cast<unsigned char>(esi125) + 0xffffffff) * 2) + 0xfffffffe, ebx131, v83, v126, v109, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+                                caml_modify(ecx98, reinterpret_cast<uint32_t>(v103 + (reinterpret_cast<unsigned char>(ebp104) + reinterpret_cast<unsigned char>(esi119) + 0xffffffff) * 2) + 0xfffffffe, ebx125, v80, v120, v103, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
                             }
-                            ebx132 = esi125;
-                            esi125 = esi125 - 2;
-                        } while (!reinterpret_cast<int1_t>(ebx132 == 1));
+                            ebx126 = esi119;
+                            esi119 = esi119 - 2;
+                        } while (!reinterpret_cast<int1_t>(ebx126 == 1));
                     }
                     return 1;
                 }
@@ -3286,33 +3288,33 @@ int32_t camlArray__sortto_1217(void** ecx, void** a2, void** a3, void** a4, void
         }
     }
     while (1) {
-        eax133 = caml_young_ptr;
-        eax134 = eax133 - 12;
-        caml_young_ptr = eax134;
-        cf135 = reinterpret_cast<unsigned char>(eax134) < reinterpret_cast<unsigned char>(caml_young_limit);
-        if (!cf135) {
-            eax136 = eax134 + 4;
-            *reinterpret_cast<void***>(eax136 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
-            *reinterpret_cast<void***>(eax136) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax136 + 4) = reinterpret_cast<void**>(0x80765a8);
-            caml_raise_exn(ecx104, v18, a2, a3, a4, a5, a6, a7, a8, a9);
+        eax127 = caml_young_ptr;
+        eax128 = eax127 - 12;
+        caml_young_ptr = eax128;
+        cf129 = reinterpret_cast<unsigned char>(eax128) < reinterpret_cast<unsigned char>(caml_young_limit);
+        if (!cf129) {
+            eax130 = eax128 + 4;
+            *reinterpret_cast<void***>(eax130 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
+            *reinterpret_cast<void***>(eax130) = reinterpret_cast<void**>(0x80724a8);
+            *reinterpret_cast<void***>(eax130 + 4) = reinterpret_cast<void**>("Array.blit");
+            caml_raise_exn(ecx98, v18, a2, a3, a4, a5, a6, a7, a8, a9);
         }
-        caml_call_gc(ecx104, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+        caml_call_gc(ecx98, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     }
     addr_8050620_91:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     addr_8050625_96:
-    caml_ml_array_bound_error(v86, v81, v83, v84, v85, v82, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx76, v83, v78, v80, v81, v82, v79, v22, v20, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     goto addr_805062a_118;
     addr_8050500_107:
-    ebx103 = v83;
-    ecx104 = *reinterpret_cast<void***>(edi42 + 24);
-    eax105 = *reinterpret_cast<void***>(edi42 + 20);
-    edx106 = esi92 + 2;
-    esi107 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi42 + 32)) - reinterpret_cast<unsigned char>(ebx103) + 1);
+    ebx97 = v80;
+    ecx98 = *reinterpret_cast<void***>(edi42 + 24);
+    eax99 = *reinterpret_cast<void***>(edi42 + 20);
+    edx100 = esi88 + 2;
+    esi101 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi42 + 32)) - reinterpret_cast<unsigned char>(ebx97) + 1);
     goto addr_8052130_125;
     addr_8051557_23:
-    ebx77 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi38 + reinterpret_cast<unsigned char>(ecx) * 2) - 2);
+    ebx74 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi38 + reinterpret_cast<unsigned char>(ecx) * 2) - 2);
     goto addr_805158c_78;
 }
 
@@ -3403,7 +3405,7 @@ void** camlArray__copy_1049(void** a1, void** a2, void** a3, void** a4, void** a
 
 struct s14 {
     signed char[12] pad12;
-    void* f12;
+    void* fc;
 };
 
 int32_t camlArray__fill_1070(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17) {
@@ -3460,7 +3462,7 @@ int32_t camlArray__fill_1070(void** a1, void** a2, void** a3, void** a4, void** 
                 } else {
                     eax36 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx30 + reinterpret_cast<uint32_t>(ebx27) * 2) - 2);
                 }
-                edx37 = edi19->f12;
+                edx37 = edi19->fc;
                 ecx38 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(edx37) - 4)));
                 if (ecx38 == 0xfe) {
                     __asm__("fld qword [eax]");
@@ -3492,11 +3494,10 @@ struct s15 {
 void** camlArray__list_length_1126() {
     struct s15* ebx1;
     void** eax2;
-    void** tmp32_3;
 
     while (ebx1 != 1) {
         ebx1 = ebx1->f4;
-        eax2 = tmp32_3;
+        eax2 = eax2 + 2;
     }
     return eax2;
 }
@@ -3635,7 +3636,7 @@ void** camlList__map2_1090(void** ecx, void** a2, void** a3, void** a4, void** a
             eax31 = eax29 + 4;
             *reinterpret_cast<void***>(eax31 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(eax31) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax31 + 4) = reinterpret_cast<void**>(0x8077634);
+            *reinterpret_cast<void***>(eax31 + 4) = reinterpret_cast<void**>("List.map2");
             caml_raise_exn(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9);
         }
         caml_call_gc(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -3714,7 +3715,7 @@ int32_t camlList__fold_right2_1128(void** ecx, void** a2, void** a3, void** a4, 
             eax23 = eax21 + 4;
             *reinterpret_cast<void***>(eax23 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(eax23) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax23 + 4) = reinterpret_cast<void**>(0x80775f8);
+            *reinterpret_cast<void***>(eax23 + 4) = reinterpret_cast<void**>("List.fold_right2");
             caml_raise_exn(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9);
         }
         caml_call_gc(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -3832,7 +3833,7 @@ void** camlList__combine_1226(void** ecx, void** a2, void** a3, void** a4, void*
             eax31 = eax29 + 4;
             *reinterpret_cast<void***>(eax31 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(eax31) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax31 + 4) = reinterpret_cast<void**>(0x80775b0);
+            *reinterpret_cast<void***>(eax31 + 4) = reinterpret_cast<void**>("List.combine");
             caml_raise_exn(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9);
         }
         caml_call_gc(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -4171,7 +4172,7 @@ int32_t camlHashtbl__insert_bucket_1068(void** a1, void** a2, void** a3, void** 
     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx39 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(edx37)) 
         goto addr_8056653_7;
     addr_80566c5_8:
-    eax40 = caml_ml_array_bound_error(v21, v25, v29, v34, v19, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    eax40 = caml_ml_array_bound_error(ecx39, v21, v25, v29, v34, v19, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     if (eax40 == 1) {
         goto v21;
     } else {
@@ -4211,7 +4212,7 @@ int32_t camlHashtbl__insert_bucket_1068(void** a1, void** a2, void** a3, void** 
     ebx38 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx38 + 16) + 0xfffffffc)) >> 9);
     if (reinterpret_cast<unsigned char>(ebx38) > reinterpret_cast<unsigned char>(edx37)) 
         goto addr_805668c_19;
-    caml_ml_array_bound_error(v21, v25, v29, v34, v19, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_ml_array_bound_error(ecx39, v21, v25, v29, v34, v19, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     goto addr_80566c5_8;
     addr_805668c_19:
     *reinterpret_cast<void***>(eax58 + 8) = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(ebx38 + 16) + reinterpret_cast<unsigned char>(edx37) * 2) - 2);
@@ -4436,10 +4437,10 @@ void*** fun_8057130(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         caml_exception_pointer = v8;
         goto v31;
     }
-    caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41);
-    caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51);
+    caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41);
+    caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51);
     v52 = reinterpret_cast<void**>(0x80571a1);
-    eax63 = caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62);
+    eax63 = caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62);
     edx64 = eax63;
     while (eax65 = caml_young_ptr, eax66 = eax65 - 20, caml_young_ptr = eax66, cf67 = reinterpret_cast<unsigned char>(eax66) < reinterpret_cast<unsigned char>(caml_young_limit), cf67) {
         caml_call_gc(ecx, v68, v69, 0x80571a1, v8, v7, a2, a3, a4, a5, a6, v11);
@@ -4457,7 +4458,7 @@ void*** fun_8057130(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     addr_8057240_12:
     edx74 = (reinterpret_cast<unsigned char>(edx64) << 1) + 1;
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(v75 + 4) + 0xfffffffc)) >> 9 <= edx74) {
-        eax84 = caml_ml_array_bound_error(v75, v76, v52, v8, v7, a2, a3, a4, a5, a6, v11, v77, v78, v79, v80, v81, v82, v83);
+        eax84 = caml_ml_array_bound_error(ecx, v75, v76, v52, v8, v7, a2, a3, a4, a5, a6, v11, v77, v78, v79, v80, v81, v82, v83);
         caml_hash_univ_param(21, 0xc9, eax84, v75, v76, v52, v8, v7);
         goto v75;
     }
@@ -4481,8 +4482,9 @@ void*** fun_8057130(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     v75 = edx64;
     ecx90 = *reinterpret_cast<void***>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx + 16) + 8) + 4));
     eax91 = reinterpret_cast<uint32_t>(ecx90());
+    ecx = v52;
     __asm__("cdq ");
-    edx64 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax91 & 0x7fffffff) >> 1) % reinterpret_cast<signed char>(v52));
+    edx64 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(eax91 & 0x7fffffff) >> 1) % reinterpret_cast<signed char>(ecx));
     goto addr_8057240_12;
 }
 
@@ -4619,7 +4621,7 @@ struct s33 {
 
 struct s34 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 void** camlHashtbl__remove_bucket_1083(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
@@ -4655,7 +4657,7 @@ void** camlHashtbl__remove_bucket_1083(void** a1, void** a2, void** a3, void** a
         v19 = ecx17;
         eax20 = *eax21;
         v22 = eax20;
-        v23 = ebx24->f12;
+        v23 = ebx24->fc;
         eax25 = caml_c_call(ecx17, eax20, v23, v22, v19, v13, v15, v11, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
         if (!reinterpret_cast<int1_t>(eax25 == 1)) {
             eax26 = camlHashtbl__remove_bucket_1083(v22, v19, v13, v15, v11, a1, a2, a3, a4, a5);
@@ -4864,9 +4866,9 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         caml_exception_pointer = v8;
         goto v33;
     }
-    caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43);
-    caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53);
-    eax64 = caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63);
+    caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43);
+    caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53);
+    eax64 = caml_ml_array_bound_error(ecx, v8, v7, a2, a3, a4, a5, a6, v11, v54, v55, v56, v57, v58, v59, v60, v61, v62, v63);
     edi65 = eax64;
     ecx66 = ebx12;
     while (eax67 = caml_young_ptr, eax68 = eax67 - 16, caml_young_ptr = eax68, cf69 = reinterpret_cast<unsigned char>(eax68) < reinterpret_cast<unsigned char>(caml_young_limit), cf69) {
@@ -4885,7 +4887,7 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     edx76 = (edx77 << 1) + 1;
     ecx78 = *reinterpret_cast<void***>(edi65 + 4);
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx78 + 0xfffffffc)) >> 9 <= edx76) {
-        eax89 = caml_ml_array_bound_error(v8, v7, a2, a3, a4, a5, a6, v11, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88);
+        eax89 = caml_ml_array_bound_error(ecx78, v8, v7, a2, a3, a4, a5, a6, v11, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88);
         edx90 = eax89;
         while (eax91 = caml_young_ptr, eax92 = eax91 - 16, caml_young_ptr = eax92, cf93 = reinterpret_cast<unsigned char>(eax92) < reinterpret_cast<unsigned char>(caml_young_limit), cf93) {
             caml_call_gc(ecx78, 0x8057bdd, 21, 0xc9, 0x8057c28, v8, v7, a2, a3, a4, a5, a6);
@@ -4932,7 +4934,7 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         v109 = eax96;
     } while (ecx114 != v108);
     goto addr_8057cba_25;
-    eax121 = caml_ml_array_bound_error(v110, v111, v109, v108, v8, v7, a2, a3, a4, a5, a6, v11, v115, v116, v117, v118, v119, v120);
+    eax121 = caml_ml_array_bound_error(ecx113, v110, v111, v109, v108, v8, v7, a2, a3, a4, a5, a6, v11, v115, v116, v117, v118, v119, v120);
     esi122 = eax121;
     while (eax123 = caml_young_ptr, eax124 = eax123 - 28, caml_young_ptr = eax124, cf125 = reinterpret_cast<unsigned char>(eax124) < reinterpret_cast<unsigned char>(caml_young_limit), cf125) {
         caml_call_gc(ecx113, v126, v127, v128, v129, 0x8057cd2, v110, v111, v109, v108, v8, v7);
@@ -4971,7 +4973,7 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         } while (edx149 != v135);
         goto addr_8057d95_32;
     }
-    eax151 = caml_ml_array_bound_error(v138, v139, v137, v136, v135, v110, v111, v109, v108, v8, v7, a2, a3, a4, a5, a6, v11, v150);
+    eax151 = caml_ml_array_bound_error(ecx140, v138, v139, v137, v136, v135, v110, v111, v109, v108, v8, v7, a2, a3, a4, a5, a6, v11, v150);
     ebx152 = eax151;
     eax153 = camlHashtbl;
     v154 = eax153;
@@ -4998,43 +5000,43 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     ecx165->f0 = reinterpret_cast<void**>(0x804b370);
     ecx165->f4 = 5;
     ecx165->f8 = 0x8056b40;
-    ecx165->f12 = ebx152;
-    ecx165->f16 = eax163;
+    ecx165->fc = ebx152;
+    ecx165->f10 = eax163;
     edx166 = reinterpret_cast<struct s5*>(eax163 + 60);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(edx166) - 4) = 0x10f7;
     edx166->f0 = reinterpret_cast<void**>(0x804b370);
     edx166->f4 = 5;
     edx166->f8 = 0x8056c40;
-    edx166->f12 = ebx152;
+    edx166->fc = ebx152;
     ecx167 = reinterpret_cast<struct s6*>(eax163 + 80);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx167) - 4) = 0x18f7;
     ecx167->f0 = 0x804b370;
     ecx167->f4 = reinterpret_cast<struct s7*>(5);
     ecx167->f8 = 0x8056cd0;
-    ecx167->f12 = ebx152;
-    ecx167->f16 = eax163;
-    ecx167->f20 = edx166;
+    ecx167->fc = ebx152;
+    ecx167->f10 = eax163;
+    ecx167->f14 = edx166;
     esi168 = reinterpret_cast<struct s8*>(eax163 + 0x6c);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(esi168) - 4) = 0x14f7;
     esi168->f0 = 0x804b370;
     esi168->f4 = 5;
     esi168->f8 = 0x8056ee0;
-    esi168->f12 = ebx152;
-    esi168->f16 = eax163;
+    esi168->fc = ebx152;
+    esi168->f10 = eax163;
     edx169 = reinterpret_cast<struct s9*>(eax163 + 0x84);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(edx169) - 4) = 0x14f7;
     edx169->f0 = 0x804b2d0;
     edx169->f4 = 7;
     edx169->f8 = 0x8056fb0;
-    edx169->f12 = ebx152;
-    edx169->f16 = eax163;
+    edx169->fc = ebx152;
+    edx169->f10 = eax163;
     ecx170 = reinterpret_cast<struct s10*>(eax163 + 0x9c);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx170) - 4) = 0x14f7;
     ecx170->f0 = 0x804b370;
     ecx170->f4 = 5;
     ecx170->f8 = 0x80571b0;
-    ecx170->f12 = ebx152;
-    ecx170->f16 = eax163;
+    ecx170->fc = ebx152;
+    ecx170->f10 = eax163;
     ebx171 = g807853c;
     ebp172 = g8078540;
     edi173 = g8078544;
@@ -5043,15 +5045,15 @@ void*** fun_8057b10(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     eax174->f0 = v154;
     eax174->f4 = v156;
     eax174->f8 = v158;
-    eax174->f12 = ecx164;
-    eax174->f16 = ecx165;
-    eax174->f20 = ecx167;
-    eax174->f24 = esi168;
-    eax174->f28 = edx169;
-    eax174->f32 = ecx170;
-    eax174->f36 = ebx171;
-    eax174->f40 = ebp172;
-    eax174->f44 = edi173;
+    eax174->fc = ecx164;
+    eax174->f10 = ecx165;
+    eax174->f14 = ecx167;
+    eax174->f18 = esi168;
+    eax174->f1c = edx169;
+    eax174->f20 = ecx170;
+    eax174->f24 = ebx171;
+    eax174->f28 = ebp172;
+    eax174->f2c = edi173;
     goto v138;
     addr_8056980_24:
     goto v8;
@@ -5251,7 +5253,7 @@ int32_t camlBuffer__add_char_1072(void** a1, void** a2, void** a3, void** a4, vo
         *reinterpret_cast<void***>(eax19 + 4) = ecx16 + 2;
         return 1;
     }
-    eax26 = caml_ml_array_bound_error(eax19, ecx16, ebx20, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    eax26 = caml_ml_array_bound_error(ecx16, eax19, ecx16, ebx20, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     if (reinterpret_cast<signed char>(ecx16) < reinterpret_cast<signed char>(1)) 
         goto addr_805870a_7;
     if (reinterpret_cast<signed char>(edx24) < reinterpret_cast<signed char>(1)) 
@@ -5306,7 +5308,7 @@ int32_t camlString__blit_1056(void** ecx, void** a2, void** a3, void** a4, void*
                 eax27 = eax25 + 4;
                 *reinterpret_cast<void***>(eax27 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                 *reinterpret_cast<void***>(eax27) = reinterpret_cast<void**>(0x80724a8);
-                *reinterpret_cast<void***>(eax27 + 4) = reinterpret_cast<void**>(0x8078168);
+                *reinterpret_cast<void***>(eax27 + 4) = reinterpret_cast<void**>("String.blit");
                 caml_raise_exn(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             caml_call_gc(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -5446,7 +5448,7 @@ int32_t camlPervasives__really_input_1235(void** ecx, void** a2, void** a3, void
                 eax21 = eax19 + 4;
                 *reinterpret_cast<void***>(eax21 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                 *reinterpret_cast<void***>(eax21) = reinterpret_cast<void**>(0x80724a8);
-                *reinterpret_cast<void***>(eax21 + 4) = reinterpret_cast<void**>(0x8075b6c);
+                *reinterpret_cast<void***>(eax21 + 4) = reinterpret_cast<void**>("really_input");
                 caml_raise_exn(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             caml_call_gc(ecx, v12, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -5573,7 +5575,7 @@ void** camlBuffer__advance_to_non_alpha_1108(void** ecx, void** a2, void** a3, v
     return ebx30;
     addr_80581d8_7:
     v35 = reinterpret_cast<void**>(0x80581dd);
-    eax36 = caml_ml_array_bound_error(v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    eax36 = caml_ml_array_bound_error(ecx25, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
     while (reinterpret_cast<signed char>(ebx30) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx25 + 24))) {
         eax37 = reinterpret_cast<void*>(reinterpret_cast<signed char>(ebx30) >> 1);
         ebp38 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx25 + 20) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
@@ -5644,7 +5646,7 @@ void** camlBuffer__advance_to_non_alpha_1108(void** ecx, void** a2, void** a3, v
         *reinterpret_cast<void***>(eax46 + 4) = ecx47 + 2;
         return 1;
     }
-    eax53 = caml_ml_array_bound_error(eax46, ecx47, eax36, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax53 = caml_ml_array_bound_error(ecx47, eax46, ecx47, eax36, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     if (reinterpret_cast<signed char>(ecx47) < reinterpret_cast<signed char>(1)) 
         goto addr_805870a_43;
     if (reinterpret_cast<signed char>(edx51) < reinterpret_cast<signed char>(1)) 
@@ -5667,7 +5669,7 @@ void** camlBuffer__advance_to_non_alpha_1108(void** ecx, void** a2, void** a3, v
     camlBuffer__resize_1066(eax46, ecx47, eax36, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     goto addr_8058682_39;
     addr_8058369_24:
-    eax58 = caml_ml_array_bound_error(v42, v43, v35, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax58 = caml_ml_array_bound_error(ecx25, v42, v43, v35, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     if (reinterpret_cast<signed char>(eax58) < reinterpret_cast<signed char>(3)) {
         eax58 = reinterpret_cast<void**>(3);
     }
@@ -5724,7 +5726,7 @@ void** camlString__sub_1046(void** ecx, void** a2, void** a3, void** a4, void** 
                 eax23 = eax21 + 4;
                 *reinterpret_cast<void***>(eax23 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                 *reinterpret_cast<void***>(eax23) = reinterpret_cast<void**>(0x80724a8);
-                *reinterpret_cast<void***>(eax23 + 4) = reinterpret_cast<void**>(0x8078188);
+                *reinterpret_cast<void***>(eax23 + 4) = reinterpret_cast<void**>("String.sub");
                 caml_raise_exn(ecx, v14, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             caml_call_gc(ecx, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -5805,11 +5807,11 @@ struct s46 {
     void** f4;
     signed char[3] pad8;
     int32_t* f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
 };
 
 struct s46* g80795a8 = reinterpret_cast<struct s46*>(0);
@@ -5850,7 +5852,7 @@ void** caml_stat_free(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
 
 struct s47 {
     signed char[350] pad350;
-    void** f350;
+    void** f15e;
 };
 
 struct s47* fun_804a184(void** a1, void** a2, void** a3);
@@ -6776,7 +6778,7 @@ void** camlPrintf__scan_flags_1142(void** a1, void** a2, void** a3, void** a4, v
                             }
                             goto addr_80595b0_26;
                             addr_80595b4_22:
-                            eax26 = caml_ml_array_bound_error(v24, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+                            eax26 = caml_ml_array_bound_error(ecx28, v24, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
                             esp29 = reinterpret_cast<void*>(esp44 - 4 + 4);
                         }
                         edi49 = ebx19 + 2;
@@ -7348,7 +7350,7 @@ void** camlPrintf__scan_flags_1142(void** a1, void** a2, void** a3, void** a4, v
         }
         break;
         addr_80597f5_30:
-        eax26 = caml_ml_array_bound_error(v38, v32, v25, v24, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+        eax26 = caml_ml_array_bound_error(ecx20, v38, v32, v25, v24, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     }
     eax55 = *reinterpret_cast<void***>(ecx20 + 40);
     addr_805b140_39:
@@ -8035,7 +8037,7 @@ void** camlPrintf__scan_flags_1142(void** a1, void** a2, void** a3, void** a4, v
                         eax182 = eax180 + 4;
                         *reinterpret_cast<void***>(eax182 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                         *reinterpret_cast<void***>(eax182) = reinterpret_cast<void**>(0x807248c);
-                        *reinterpret_cast<void***>(eax182 + 4) = reinterpret_cast<void**>(0x8079998);
+                        *reinterpret_cast<void***>(eax182 + 4) = reinterpret_cast<void**>("printf: bad positional specification (0).");
                         caml_raise_exn(ecx167, v25, v24, v17, a1, a2, a3, a4, a5, a6);
                     }
                     caml_call_gc(ecx167, v25, v24, v17, a1, a2, a3, a4, a5, a6, a7, a8);
@@ -8199,7 +8201,7 @@ void** camlPrintf__scan_flags_1142(void** a1, void** a2, void** a3, void** a4, v
     goto addr_80670e3_209;
     addr_8067016_213:
     eax356 = fun_804a184(ebx351, 0, 10);
-    esi357 = reinterpret_cast<void**>(&eax356->f350);
+    esi357 = reinterpret_cast<void**>(&eax356->f15e);
     if (reinterpret_cast<signed char>(esi357) < reinterpret_cast<signed char>(0x15e)) {
         esi357 = reinterpret_cast<void**>(0x15e);
     }
@@ -8239,7 +8241,7 @@ void** camlPrintf__scan_flags_1142(void** a1, void** a2, void** a3, void** a4, v
     goto v25;
     addr_8067062_224:
     eax409 = fun_804a184(ebx351 + 1, 0, 10);
-    eax410 = reinterpret_cast<void**>(&eax409->f350);
+    eax410 = reinterpret_cast<void**>(&eax409->f15e);
     if (reinterpret_cast<signed char>(esi357) < reinterpret_cast<signed char>(eax410)) {
         esi357 = eax410;
     }
@@ -8264,8 +8266,8 @@ int32_t camlPrintf__loop_1159(void** a1, void** a2, void** a3, void** a4, void**
     void** eax27;
     void** eax28;
     void** esi29;
-    void** v30;
-    void** ecx31;
+    void** ecx30;
+    void** v31;
     void** v32;
     void** v33;
     void** eax34;
@@ -8317,28 +8319,29 @@ int32_t camlPrintf__loop_1159(void** a1, void** a2, void** a3, void** a4, void**
     }
     return 1;
     addr_8058e49_4:
-    eax27 = caml_ml_array_bound_error(v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax27 = caml_ml_array_bound_error(ecx24, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     eax28 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx24 + 12)) - reinterpret_cast<unsigned char>(eax27) - 3 + 2);
     esi29 = *reinterpret_cast<void***>(ecx24 + 16);
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi29 + 0xfffffffc)) & 0xff) == 0xfe) {
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi29 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax28)) {
-            caml_ml_array_bound_error(v30, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+        ecx30 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi29 + 0xfffffffc)) >> 10);
+        if (reinterpret_cast<unsigned char>(ecx30) <= reinterpret_cast<unsigned char>(eax28)) {
+            caml_ml_array_bound_error(ecx30, v31, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             goto addr_8058eab_9;
         } else {
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [esi+eax*4-0x4]");
         }
     } else {
-        ecx31 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi29 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ecx31) <= reinterpret_cast<unsigned char>(eax28)) {
+        ecx30 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi29 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ecx30) <= reinterpret_cast<unsigned char>(eax28)) {
             addr_8058eab_9:
             v32 = reinterpret_cast<void**>(0x8058eb0);
-            eax34 = caml_ml_array_bound_error(v33, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+            eax34 = caml_ml_array_bound_error(ecx30, v33, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             ecx35 = eax34;
             edx36 = ebx25;
             goto addr_8058eb4_12;
         } else {
-            caml_modify(ecx31, reinterpret_cast<uint32_t>(esi29 + reinterpret_cast<unsigned char>(eax28) * 2) + 0xfffffffe, ebx25, v37, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
+            caml_modify(ecx30, reinterpret_cast<uint32_t>(esi29 + reinterpret_cast<unsigned char>(eax28) * 2) + 0xfffffffe, ebx25, v37, 0x8058e4e, v23, v20, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
         }
     }
     goto v23;
@@ -8401,7 +8404,7 @@ struct s49 {
 
 struct s48 {
     signed char[12] pad12;
-    struct s49* f12;
+    struct s49* fc;
 };
 
 int32_t camlPrintf__incr_ac_1187(struct s48* ecx) {
@@ -8416,13 +8419,13 @@ int32_t camlPrintf__incr_ac_1187(struct s48* ecx) {
         edx3 = 5;
     }
     if (ebx4 == 0xe5) {
-        ecx->f12->f8 = ecx->f12->f8 + 2;
+        ecx->fc->f8 = ecx->fc->f8 + 2;
     }
     if (eax5 == 1) {
-        ecx->f12->f0 = ecx->f12->f0 + edx3 - 1;
+        ecx->fc->f0 = ecx->fc->f0 + edx3 - 1;
         return 1;
     } else {
-        ecx->f12->f4 = ecx->f12->f4 + edx3 - 1;
+        ecx->fc->f4 = ecx->fc->f4 + edx3 - 1;
         return 1;
     }
 }
@@ -8508,7 +8511,7 @@ uint32_t g8075c8c = 0x4fc;
 
 struct s50 {
     signed char[134700176] pad134700176;
-    unsigned char f134700176;
+    unsigned char f8075c90;
 };
 
 void** camlPervasives__string_of_float_1140(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18) {
@@ -8541,7 +8544,7 @@ void** camlPervasives__string_of_float_1140(void** ecx, void** a2, void** a3, vo
     void** v45;
 
     v19 = reinterpret_cast<void**>(__return_address());
-    eax21 = caml_c_call(ecx, 0x8075c28, eax20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax21 = caml_c_call(ecx, "%.12g", eax20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     ecx22 = eax21;
     eax23 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx22 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
     eax24 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax23) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(ecx22) + reinterpret_cast<uint32_t>(eax23)));
@@ -8580,12 +8583,12 @@ void** camlPervasives__string_of_float_1140(void** ecx, void** a2, void** a3, vo
     ecx40 = reinterpret_cast<struct s50*>((ecx39 >> 10) * 4 + 0xffffffff);
     ecx41 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx40) - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(".") + reinterpret_cast<uint32_t>(ecx40)));
     ebx42 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx41) + reinterpret_cast<unsigned char>(ecx41) + 1);
-    eax43 = caml_c_call(ecx41, reinterpret_cast<unsigned char>(eax38) + reinterpret_cast<unsigned char>(ebx42) + 0xffffffff, eax38, edx35, ebx42, 0x8075c90, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    eax43 = caml_c_call(ecx41, reinterpret_cast<unsigned char>(eax38) + reinterpret_cast<unsigned char>(ebx42) + 0xffffffff, eax38, edx35, ebx42, ".", v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     caml_blit_string(ecx41, edx35, 1, eax43, 1, eax38, eax38, edx35);
-    caml_blit_string(ecx41, 0x8075c90, 1, eax43, eax38, ebx42, eax38, edx35);
+    caml_blit_string(ecx41, ".", 1, eax43, eax38, ebx42, eax38, edx35);
     return eax43;
     addr_804f0d5_8:
-    eax44 = caml_ml_array_bound_error(v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    eax44 = caml_ml_array_bound_error(ecx31, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
     while (eax44 != 1) {
         v45 = *reinterpret_cast<void***>(eax44 + 4);
         fun_804f100(ecx31, v45, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
@@ -9169,7 +9172,7 @@ void** camlPrintf__get_arg_1288(void** ecx, void** a2, void** a3, void** a4, voi
     edx23 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx22 + 0xfffffffc)) & 0xff);
     if (edx23 == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx22 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ebx20)) {
-            caml_ml_array_bound_error(v24, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+            caml_ml_array_bound_error(ecx22, v24, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
             esp18 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp18) - 4 + 4);
         } else {
             while (eax26 = caml_young_ptr, eax27 = eax26 - 12, caml_young_ptr = eax27, cf28 = reinterpret_cast<unsigned char>(eax27) < reinterpret_cast<unsigned char>(caml_young_limit), cf28) {
@@ -9186,7 +9189,7 @@ void** camlPrintf__get_arg_1288(void** ecx, void** a2, void** a3, void** a4, voi
             return *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx22 + reinterpret_cast<unsigned char>(ebx20) * 2) - 2);
         }
     }
-    eax34 = caml_ml_array_bound_error(v32, v33, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax34 = caml_ml_array_bound_error(ecx22, v32, v33, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     esp35 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp18) - 4 + 4);
     while (esp35 = esp35 - 28, edi36 = ecx22, ebp37 = reinterpret_cast<void**>(reinterpret_cast<signed char>(edx23) >> 1), ecx38 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi39 + 12)) + reinterpret_cast<unsigned char>(ebp37)))), ecx22 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx38) + reinterpret_cast<uint32_t>(ecx38) + 1), reinterpret_cast<signed char>(ecx22) < reinterpret_cast<signed char>(0xf9)) {
         v40 = ecx22;
@@ -9884,7 +9887,7 @@ void** camlPrintf__get_arg_1288(void** ecx, void** a2, void** a3, void** a4, voi
                         eax306 = eax304 + 4;
                         *reinterpret_cast<void***>(eax306 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                         *reinterpret_cast<void***>(eax306) = reinterpret_cast<void**>(0x807248c);
-                        *reinterpret_cast<void***>(eax306 + 4) = reinterpret_cast<void**>(0x8079998);
+                        *reinterpret_cast<void***>(eax306 + 4) = reinterpret_cast<void**>("printf: bad positional specification (0).");
                         caml_raise_exn(ecx284, v40, v307, v43, v42, v45, v44, v41, v308, v309);
                     }
                     caml_call_gc(ecx284, v40, v310, v43, v42, v45, v44, v41, v311, v312, v17, a2);
@@ -10048,7 +10051,7 @@ void** camlPrintf__get_arg_1288(void** ecx, void** a2, void** a3, void** a4, voi
     goto addr_80670e3_172;
     addr_8067016_176:
     eax511 = fun_804a184(ebx506, 0, 10);
-    esi512 = reinterpret_cast<void**>(&eax511->f350);
+    esi512 = reinterpret_cast<void**>(&eax511->f15e);
     if (reinterpret_cast<signed char>(esi512) < reinterpret_cast<signed char>(0x15e)) {
         esi512 = reinterpret_cast<void**>(0x15e);
     }
@@ -10088,7 +10091,7 @@ void** camlPrintf__get_arg_1288(void** ecx, void** a2, void** a3, void** a4, voi
     goto v40;
     addr_8067062_187:
     eax564 = fun_804a184(ebx506 + 1, 0, 10);
-    eax565 = reinterpret_cast<void**>(&eax564->f350);
+    eax565 = reinterpret_cast<void**>(&eax564->f15e);
     if (reinterpret_cast<signed char>(esi512) < reinterpret_cast<signed char>(eax565)) {
         esi512 = eax565;
     }
@@ -10185,7 +10188,7 @@ void** camlPrintf__extract_format_1085(void** ecx, void** a2, void** a3, void** 
                 eax51 = eax49 + 4;
                 *reinterpret_cast<void***>(eax51 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                 *reinterpret_cast<void***>(eax51) = reinterpret_cast<void**>(0x80724a8);
-                *reinterpret_cast<void***>(eax51 + 4) = reinterpret_cast<void**>(0x8078188);
+                *reinterpret_cast<void***>(eax51 + 4) = reinterpret_cast<void**>("String.sub");
                 caml_raise_exn(ecx45, v14, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             caml_call_gc(ecx45, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -10202,30 +10205,30 @@ struct s51 {
     signed char[3] pad4;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
+    int32_t f14;
+    int32_t f18;
+    int32_t f1c;
     int32_t f20;
     int32_t f24;
     int32_t f28;
-    int32_t f32;
-    int32_t f36;
-    int32_t f40;
-    void** f44;
+    void** f2c;
     signed char[3] pad48;
-    void** f48;
+    void** f30;
     signed char[3] pad52;
-    void** f52;
+    void** f34;
     signed char[3] pad56;
-    void** f56;
+    void** f38;
     signed char[3] pad60;
-    void** f60;
+    void** f3c;
     signed char[3] pad64;
-    void** f64;
+    void** f40;
     signed char[3] pad68;
-    struct s6* f68;
-    void** f72;
+    struct s6* f44;
+    void** f48;
 };
 
 int32_t camlPrintf__iter_on_format_args_1137(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16);
@@ -10273,8 +10276,8 @@ void** camlPrintf__summarize_format_type_1162(void** ecx, void** a2, void** a3, 
     ebx26->f0 = reinterpret_cast<void**>(0x804b2d0);
     ebx26->f4 = 7;
     ebx26->f8 = 0x80598e0;
-    ebx26->f12 = edx20;
-    *reinterpret_cast<void***>(&ebx26->f16) = ecx25;
+    ebx26->fc = edx20;
+    *reinterpret_cast<void***>(&ebx26->f10) = ecx25;
     camlPrintf__iter_on_format_args_1137(ecx25, v17, v21, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     ecx27 = *reinterpret_cast<void***>(v21 + 4);
     eax28 = *reinterpret_cast<void***>(v21);
@@ -10288,7 +10291,7 @@ void** camlPrintf__summarize_format_type_1162(void** ecx, void** a2, void** a3, 
                 eax33 = eax31 + 4;
                 *reinterpret_cast<void***>(eax33 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                 *reinterpret_cast<void***>(eax33) = reinterpret_cast<void**>(0x80724a8);
-                *reinterpret_cast<void***>(eax33 + 4) = reinterpret_cast<void**>(0x8078188);
+                *reinterpret_cast<void***>(eax33 + 4) = reinterpret_cast<void**>("String.sub");
                 caml_raise_exn(ecx27, v14, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             caml_call_gc(ecx27, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -10413,11 +10416,11 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
     void** v29;
     void** ebx30;
     void** eax31;
-    void* ecx32;
+    void** ecx32;
     void* esi33;
     uint32_t ecx34;
     void** eax35;
-    void* ecx36;
+    void** ecx36;
     void* esi37;
     void* ecx38;
     void** edx39;
@@ -10433,8 +10436,8 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
     void** eax49;
     void** eax50;
     void** esi51;
-    void** v52;
-    void** ecx53;
+    void** ecx52;
+    void** v53;
     void** v54;
     void** v55;
     void** eax56;
@@ -10505,11 +10508,11 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
     *reinterpret_cast<void***>(ebx30 + 44) = esi25;
     eax31 = edx22;
     while (reinterpret_cast<signed char>(eax31) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx30 + 32))) {
-        ecx32 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax31) >> 1);
+        ecx32 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax31) >> 1);
         esi33 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx30 + 28) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi33) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 28)) + reinterpret_cast<uint32_t>(esi33)) <= reinterpret_cast<uint32_t>(ecx32)) 
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi33) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 28)) + reinterpret_cast<uint32_t>(esi33))) <= reinterpret_cast<unsigned char>(ecx32)) 
             goto addr_8058deb_9;
-        ecx34 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 28)) + reinterpret_cast<uint32_t>(ecx32));
+        ecx34 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 28)) + reinterpret_cast<unsigned char>(ecx32));
         if (ecx34 + ecx34 + 1 != 75) {
             eax31 = eax31 + 2;
             continue;
@@ -10518,14 +10521,14 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
         eax35 = eax31 + 2;
         if (reinterpret_cast<signed char>(eax35) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx30 + 20))) 
             goto addr_8058cba_14;
-        ecx36 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax35) >> 1);
+        ecx36 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax35) >> 1);
         esi37 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx30 + 16) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi37) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 16)) + reinterpret_cast<uint32_t>(esi37)) > reinterpret_cast<uint32_t>(ecx36)) 
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi37) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 16)) + reinterpret_cast<uint32_t>(esi37))) > reinterpret_cast<unsigned char>(ecx36)) 
             goto addr_8058cf2_16;
-        eax31 = caml_ml_array_bound_error(v29, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+        eax31 = caml_ml_array_bound_error(ecx36, v29, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
         continue;
         addr_8058cf2_16:
-        ecx38 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 16)) + reinterpret_cast<uint32_t>(ecx36))));
+        ecx38 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx30 + 16)) + reinterpret_cast<unsigned char>(ecx36))));
         edx39 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx38) + reinterpret_cast<uint32_t>(ecx38) + 1);
         ecx40 = edx39 + 0xffffffb0;
         if (reinterpret_cast<unsigned char>(ecx40) <= reinterpret_cast<unsigned char>(3)) {
@@ -10562,7 +10565,7 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
     }
     goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx30 + 20));
     addr_8058deb_9:
-    eax44 = caml_ml_array_bound_error(v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    eax44 = caml_ml_array_bound_error(ecx32, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
     while (reinterpret_cast<signed char>(eax44) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx30 + 16) + 0xfffffffc)) {
         v45 = ebx30;
         ecx46 = *reinterpret_cast<void***>(ebx30 + 12);
@@ -10575,28 +10578,29 @@ void** camlPrintf__sub_fmt_1124(void** ecx, void** a2, void** a3, void** a4, voi
     }
     return 1;
     addr_8058e49_31:
-    eax49 = caml_ml_array_bound_error(v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax49 = caml_ml_array_bound_error(ecx46, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     eax50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx46 + 12)) - reinterpret_cast<unsigned char>(eax49) - 3 + 2);
     esi51 = *reinterpret_cast<void***>(ecx46 + 16);
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi51 + 0xfffffffc)) & 0xff) == 0xfe) {
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi51 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax50)) {
-            caml_ml_array_bound_error(v52, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+        ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi51 + 0xfffffffc)) >> 10);
+        if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax50)) {
+            caml_ml_array_bound_error(ecx52, v53, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
             goto addr_8058eab_36;
         } else {
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [esi+eax*4-0x4]");
         }
     } else {
-        ecx53 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi51 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ecx53) <= reinterpret_cast<unsigned char>(eax50)) {
+        ecx52 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi51 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ecx52) <= reinterpret_cast<unsigned char>(eax50)) {
             addr_8058eab_36:
             v54 = reinterpret_cast<void**>(0x8058eb0);
-            eax56 = caml_ml_array_bound_error(v55, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+            eax56 = caml_ml_array_bound_error(ecx52, v55, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
             ecx57 = eax56;
             edx58 = ebx47;
             goto addr_8058eb4_39;
         } else {
-            caml_modify(ecx53, reinterpret_cast<uint32_t>(esi51 + reinterpret_cast<unsigned char>(eax50) * 2) + 0xfffffffe, ebx47, v59, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
+            caml_modify(ecx52, reinterpret_cast<uint32_t>(esi51 + reinterpret_cast<unsigned char>(eax50) * 2) + 0xfffffffe, ebx47, v59, 0x8058e4e, v45, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
         }
     }
     goto v45;
@@ -11087,7 +11091,7 @@ void camlPrintf__scan_fmt_1144(void** a1, void** a2, void** a3, void** a4, void*
         }
         break;
         addr_80595b4_4:
-        eax27 = caml_ml_array_bound_error(v26, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+        eax27 = caml_ml_array_bound_error(ecx24, v26, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
         esp28 = reinterpret_cast<void*>(esp18 - 4 + 4);
         while (1) {
             esp29 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp28) - 16);
@@ -11566,7 +11570,7 @@ void camlPrintf__scan_fmt_1144(void** a1, void** a2, void** a3, void** a4, void*
             edi23 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(esi35) + reinterpret_cast<uint32_t>(ebp49))));
             ebp50 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp49) - reinterpret_cast<unsigned char>(edi23));
             if (reinterpret_cast<unsigned char>(ebp50) <= reinterpret_cast<unsigned char>(ecx32)) {
-                eax27 = caml_ml_array_bound_error(v43, v37, v34, v33, v26, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+                eax27 = caml_ml_array_bound_error(ecx32, v43, v37, v34, v33, v26, v17, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
                 esp29 = esp29 - 4 + 4 - 8;
                 while (1) {
                     if (reinterpret_cast<signed char>(ebx20) > reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx32 + 52))) 
@@ -12296,7 +12300,7 @@ void camlPrintf__scan_fmt_1144(void** a1, void** a2, void** a3, void** a4, void*
                         eax184 = eax182 + 4;
                         *reinterpret_cast<void***>(eax184 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                         *reinterpret_cast<void***>(eax184) = reinterpret_cast<void**>(0x807248c);
-                        *reinterpret_cast<void***>(eax184 + 4) = reinterpret_cast<void**>(0x8079998);
+                        *reinterpret_cast<void***>(eax184 + 4) = reinterpret_cast<void**>("printf: bad positional specification (0).");
                         caml_raise_exn(ecx168, v43, v37, v34, v33, v26, v17, a1, a2, a3);
                     }
                     caml_call_gc(ecx168, v43, v37, v34, v33, v26, v17, a1, a2, a3, a4, a5);
@@ -12460,7 +12464,7 @@ void camlPrintf__scan_fmt_1144(void** a1, void** a2, void** a3, void** a4, void*
     goto addr_80670e3_209;
     addr_8067016_213:
     eax358 = fun_804a184(ebx353, 0, 10);
-    esi359 = reinterpret_cast<void**>(&eax358->f350);
+    esi359 = reinterpret_cast<void**>(&eax358->f15e);
     if (reinterpret_cast<signed char>(esi359) < reinterpret_cast<signed char>(0x15e)) {
         esi359 = reinterpret_cast<void**>(0x15e);
     }
@@ -12500,7 +12504,7 @@ void camlPrintf__scan_fmt_1144(void** a1, void** a2, void** a3, void** a4, void*
     goto v43;
     addr_8067062_224:
     eax411 = fun_804a184(ebx353 + 1, 0, 10);
-    eax412 = reinterpret_cast<void**>(&eax411->f350);
+    eax412 = reinterpret_cast<void**>(&eax411->f15e);
     if (reinterpret_cast<signed char>(esi359) < reinterpret_cast<signed char>(eax412)) {
         esi359 = eax412;
     }
@@ -12594,7 +12598,7 @@ void** __i686_get_pc_thunk_bx();
 
 struct s52 {
     signed char[70132] pad70132;
-    void** f70132;
+    void** f111f4;
 };
 
 void*** fun_8049df4(void** a1, void** a2, void** a3, ...);
@@ -12626,7 +12630,7 @@ void** uerror(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
     void** esi26;
 
     __i686_get_pc_thunk_bx();
-    ebx7 = reinterpret_cast<void**>(&ebx8->f70132);
+    ebx7 = reinterpret_cast<void**>(&ebx8->f111f4);
     eax15 = fun_8049df4(v9, v10, v11, v12, v13, v14);
     v16 = *eax15;
     unix_error(v16, a1, a2, v17, v18, ebx19, ebp20, v16, a1, a2, v21, v22, ebx19, ebp20);
@@ -12640,7 +12644,7 @@ void** uerror(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, 
 
 void** alloc_inet_addr(void** a1, void** a2, void** a3);
 
-void** caml_alloc_small(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, ...);
+void** caml_alloc_small(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, ...);
 
 void** alloc_inet6_addr(void** a1, void** a2, void** a3);
 
@@ -12716,7 +12720,7 @@ void** alloc_sockaddr(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
         edi15 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx9) - 24);
         v16 = *edi15;
         *edi15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffffc4);
-        eax22 = caml_alloc_small(ecx, 2, 1, v17, v18, v19, v20, v21, v16, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
+        eax22 = caml_alloc_small(2, 1, v17, v18, v19, v20, v21, v16, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
         *reinterpret_cast<void***>(eax22) = eax14;
         edx23 = reinterpret_cast<uint16_t>(*reinterpret_cast<void***>(a2 + 2));
         __asm__("ror dx, 0x8");
@@ -12729,7 +12733,7 @@ void** alloc_sockaddr(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
             edi28 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx9) - 24);
             v29 = *edi28;
             *edi28 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffffc4);
-            eax22 = caml_alloc_small(ecx, 2, 1, v30, v31, v32, v33, v34, v29, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
+            eax22 = caml_alloc_small(2, 1, v30, v31, v32, v33, v34, v29, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
             *reinterpret_cast<void***>(eax22) = eax27;
             edx35 = reinterpret_cast<uint16_t>(*reinterpret_cast<void***>(a2 + 2));
             __asm__("ror dx, 0x8");
@@ -12747,7 +12751,7 @@ void** alloc_sockaddr(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
                 esi60 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx9) - 24);
                 v61 = *esi60;
                 *esi60 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffffc4);
-                eax22 = caml_alloc_small(ecx, 1, 0, v62, v63, v64, v65, v66, v61, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
+                eax22 = caml_alloc_small(1, 0, v62, v63, v64, v65, v66, v61, 1, 1, reinterpret_cast<int32_t>(ebp8) + 0xffffffe4);
                 *reinterpret_cast<void***>(eax22) = eax59;
                 *esi60 = v61;
             }
@@ -12758,11 +12762,12 @@ void** alloc_sockaddr(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
 
 void caml_minor_collection(void** ecx, void** a2, int32_t a3, int32_t a4, void* a5);
 
-void** caml_alloc_small(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, ...) {
-    void* edx13;
-    void* ebx14;
-    void** tmp32_15;
-    int1_t cf16;
+void** caml_alloc_small(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, ...) {
+    void* edx12;
+    void* ebx13;
+    void** tmp32_14;
+    int1_t cf15;
+    void** ecx16;
     void** ebx17;
     int32_t esi18;
     int32_t ebp19;
@@ -12770,19 +12775,19 @@ void** caml_alloc_small(void** ecx, void** a2, void** a3, void** a4, void** a5, 
     void** eax21;
     void** eax22;
 
-    edx13 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(a2) * 4 + 4);
-    ebx14 = reinterpret_cast<void*>(-reinterpret_cast<uint32_t>(edx13));
-    tmp32_15 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx14) + reinterpret_cast<unsigned char>(caml_young_ptr));
-    caml_young_ptr = tmp32_15;
-    cf16 = reinterpret_cast<unsigned char>(tmp32_15) < reinterpret_cast<unsigned char>(caml_young_limit);
-    if (cf16) {
-        caml_young_ptr = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(tmp32_15) + reinterpret_cast<uint32_t>(edx13));
-        caml_minor_collection(ecx, ebx17, esi18, ebp19, __return_address());
-        tmp32_20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(caml_young_ptr) + reinterpret_cast<uint32_t>(ebx14));
+    edx12 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(a1) * 4 + 4);
+    ebx13 = reinterpret_cast<void*>(-reinterpret_cast<uint32_t>(edx12));
+    tmp32_14 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx13) + reinterpret_cast<unsigned char>(caml_young_ptr));
+    caml_young_ptr = tmp32_14;
+    cf15 = reinterpret_cast<unsigned char>(tmp32_14) < reinterpret_cast<unsigned char>(caml_young_limit);
+    if (cf15) {
+        caml_young_ptr = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(tmp32_14) + reinterpret_cast<uint32_t>(edx12));
+        caml_minor_collection(ecx16, ebx17, esi18, ebp19, __return_address());
+        tmp32_20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(caml_young_ptr) + reinterpret_cast<uint32_t>(ebx13));
         caml_young_ptr = tmp32_20;
     }
     eax21 = caml_young_ptr;
-    *reinterpret_cast<void***>(eax21) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a3) + (reinterpret_cast<unsigned char>(a2) << 10) + 0x300);
+    *reinterpret_cast<void***>(eax21) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a2) + (reinterpret_cast<unsigned char>(a1) << 10) + 0x300);
     eax22 = caml_young_ptr;
     return eax22 + 4;
 }
@@ -12825,7 +12830,7 @@ void** alloc_inet6_addr(void** a1, void** a2, void** a3) {
 
 struct s53 {
     signed char[70385] pad70385;
-    void** f70385;
+    void** f112f1;
 };
 
 void** unix_error_of_code(void** a1, void** a2, void** a3);
@@ -12920,7 +12925,7 @@ void** unix_error(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
 
     ebp8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
-    ebx9 = reinterpret_cast<void**>(&ebx10->f70385);
+    ebx9 = reinterpret_cast<void**>(&ebx10->f112f1);
     eax11 = a3;
     edx12 = *reinterpret_cast<void****>(ebx9 + 0xffffffe8);
     v13 = *edx12;
@@ -12938,7 +12943,7 @@ void** unix_error(void** a1, void** a2, void** a3, void** a4, void** a5, void** 
     if (!*reinterpret_cast<struct s54**>(ebx9 + 0x97b0) && (eax53 = caml_named_value(ebx9 + 0xffffebec), *reinterpret_cast<struct s54**>(ebx9 + 0x97b0) = eax53, !eax53)) {
         caml_invalid_argument(ecx14, ebx9 + 0xffffebfc, v54, v55);
     }
-    eax59 = caml_alloc_small(ecx14, 4, 0, v56, v57, v58, v13, 3, 1, v15, v16, v17);
+    eax59 = caml_alloc_small(4, 0, v56, v57, v58, v13, 3, 1, v15, v16, v17);
     *reinterpret_cast<void***>(eax59) = (*reinterpret_cast<struct s54**>(ebx9 + 0x97b0))->f0;
     *reinterpret_cast<void***>(eax59 + 4) = eax52;
     *reinterpret_cast<void***>(eax59 + 8) = eax49;
@@ -13006,7 +13011,7 @@ void** caml_string_length(void** ecx, void** a2, void** a3, void** a4, void** a5
     return reinterpret_cast<uint32_t>(eax16) - static_cast<int32_t>(*reinterpret_cast<signed char*>(reinterpret_cast<uint32_t>(eax16) + reinterpret_cast<unsigned char>(a2)));
 }
 
-void caml_process_pending_signals(void** a1, void** a2);
+void caml_process_pending_signals(void** ecx, void** a2, void** a3);
 
 int32_t caml_enter_blocking_section_hook = 0x8062707;
 
@@ -13014,12 +13019,12 @@ int32_t caml_signals_are_pending = 0;
 
 int32_t caml_leave_blocking_section_hook = 0x8062716;
 
-void caml_enter_blocking_section(void** a1, void** a2, void** a3, ...) {
-    void** v4;
+void caml_enter_blocking_section(void** ecx, void** a2, void** a3, void** a4, ...) {
     void** v5;
-    int32_t eax6;
+    void** v6;
+    int32_t eax7;
 
-    while (caml_process_pending_signals(v4, v5), caml_enter_blocking_section_hook(), eax6 = caml_signals_are_pending, !!eax6) {
+    while (caml_process_pending_signals(ecx, v5, v6), caml_enter_blocking_section_hook(), eax7 = caml_signals_are_pending, !!eax7) {
         caml_leave_blocking_section_hook();
     }
     return;
@@ -13031,12 +13036,12 @@ void** fun_804a2f4(void** a1, void** a2, void** a3, void** a4) {
     goto getaddrinfo;
 }
 
-void caml_leave_blocking_section(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, ...) {
-    void** v12;
+void caml_leave_blocking_section(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, ...) {
     void** v13;
+    void** v14;
 
     caml_leave_blocking_section_hook();
-    caml_process_pending_signals(v12, v13);
+    caml_process_pending_signals(ecx, v13, v14);
     return;
 }
 
@@ -13322,7 +13327,7 @@ void alloc_group_entry(void** ecx, void** a2) {
     eax32 = caml_copy_string(ecx, v22, v23, v24, v25, v26, v7, 3, 1, v8, v9, v10, v27, v28, 1, 1, eax21, v29, v30, v31);
     v33 = *reinterpret_cast<void***>(eax4 + 12);
     eax35 = caml_copy_string_array(ecx, v33, v34);
-    eax39 = caml_alloc_small(ecx, 4, 0, v36, v37, v38, v7, 3, 1, v8, v9, v10);
+    eax39 = caml_alloc_small(4, 0, v36, v37, v38, v7, 3, 1, v8, v9, v10);
     *reinterpret_cast<void***>(eax39) = eax21;
     *reinterpret_cast<void***>(eax39 + 4) = eax32;
     *reinterpret_cast<void***>(eax39 + 8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + 1);
@@ -13357,7 +13362,7 @@ void** fun_804a684(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
 
 struct s58 {
     signed char[38752] pad38752;
-    void** f38752;
+    void** f9760;
 };
 
 struct s59 {
@@ -13415,10 +13420,10 @@ void alloc_host_entry(void** ecx, void** a2, void** a3, void** a4, void** a5, vo
         eax32 = caml_copy_string_array(ecx, v30, v31);
         v29 = eax32;
     }
-    ebx12->f38752 = *reinterpret_cast<void***>(eax11 + 12);
+    ebx12->f9760 = *reinterpret_cast<void***>(eax11 + 12);
     v33 = *reinterpret_cast<void***>(eax11 + 16);
     eax34 = caml_alloc_array(ecx, reinterpret_cast<int32_t>(ebx12) + 0xfffeb626, v33);
-    eax37 = caml_alloc_small(ecx, 4, 0, v35, v36, v15, 4, 1, v16, v17, v18, v19);
+    eax37 = caml_alloc_small(4, 0, v35, v36, v15, 4, 1, v16, v17, v18, v19);
     *reinterpret_cast<void***>(eax37) = eax28;
     *reinterpret_cast<void***>(eax37 + 4) = v29;
     if (*reinterpret_cast<void***>(eax11 + 8) == 1) {
@@ -13473,7 +13478,7 @@ void alloc_proto_entry(void** ecx, void** a2) {
     eax22 = caml_copy_string(ecx, v10, v11, v12, v13, v14, v15, v7, 2, 1, v8, v9, v16, v17, v18, 1, 1, v19, v20, v21);
     v23 = *reinterpret_cast<void***>(eax4 + 4);
     eax25 = caml_copy_string_array(ecx, v23, v24);
-    eax30 = caml_alloc_small(ecx, 3, 0, v26, v27, v28, v29, v7, 2, 1, v8, v9);
+    eax30 = caml_alloc_small(3, 0, v26, v27, v28, v29, v7, 2, 1, v8, v9);
     *reinterpret_cast<void***>(eax30) = eax22;
     *reinterpret_cast<void***>(eax30 + 4) = eax25;
     *reinterpret_cast<void***>(eax30 + 8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + 1);
@@ -13570,7 +13575,7 @@ void alloc_passwd_entry(void** ecx, void** a2) {
     eax50 = caml_copy_string(ecx, v43, v44, v45, v46, v47, v48, v49, v7, 5, 1, v8, v9, v10, v11, v12, 1, 1, eax42, eax34);
     v51 = *reinterpret_cast<void***>(eax4 + 24);
     eax58 = caml_copy_string(ecx, v51, v52, v53, v54, v55, v56, v57, v7, 5, 1, v8, v9, v10, v11, v12, 1, eax50, eax42, eax34);
-    eax69 = caml_alloc_small(ecx, 7, 0, v59, v60, v61, v62, v63, v7, 5, 1, v8, ecx, 7, 0, v64, v65, v66, v67, v68, v7, 5, 1, v8);
+    eax69 = caml_alloc_small(7, 0, v59, v60, v61, v62, v63, v7, 5, 1, v8, 7, 0, v64, v65, v66, v67, v68, v7, 5, 1, v8);
     *reinterpret_cast<void***>(eax69) = eax26;
     *reinterpret_cast<void***>(eax69 + 4) = eax34;
     *reinterpret_cast<void***>(eax69 + 8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + 1);
@@ -13582,10 +13587,11 @@ void alloc_passwd_entry(void** ecx, void** a2) {
     return;
 }
 
-void** caml_copy_double(void** ecx, void** a2, void** a3, void** a4) {
-    void** edx5;
-    void** eax6;
-    int1_t cf7;
+void** caml_copy_double(void** a1, void** a2, void** a3) {
+    void** edx4;
+    void** eax5;
+    int1_t cf6;
+    void** ecx7;
     void** v8;
     int32_t v9;
     int32_t v10;
@@ -13595,13 +13601,13 @@ void** caml_copy_double(void** ecx, void** a2, void** a3, void** a4) {
 
     __asm__("fld qword [ebp+0x8]");
     __asm__("fstp qword [ebp-0x10]");
-    edx5 = caml_young_ptr;
-    eax6 = edx5 + 0xfffffff4;
-    caml_young_ptr = eax6;
-    cf7 = reinterpret_cast<unsigned char>(eax6) < reinterpret_cast<unsigned char>(caml_young_limit);
-    if (cf7) {
-        caml_young_ptr = edx5;
-        caml_minor_collection(ecx, v8, v9, v10, v11);
+    edx4 = caml_young_ptr;
+    eax5 = edx4 + 0xfffffff4;
+    caml_young_ptr = eax5;
+    cf6 = reinterpret_cast<unsigned char>(eax5) < reinterpret_cast<unsigned char>(caml_young_limit);
+    if (cf6) {
+        caml_young_ptr = edx4;
+        caml_minor_collection(ecx7, v8, v9, v10, v11);
         caml_young_ptr = caml_young_ptr - 12;
     }
     eax12 = caml_young_ptr;
@@ -13667,7 +13673,7 @@ void alloc_service_entry(void** ecx, void** a2, void** a3) {
     eax25 = caml_copy_string_array(ecx, v23, v24);
     v26 = *reinterpret_cast<void***>(eax5 + 12);
     eax36 = caml_copy_string(ecx, v26, v27, v28, v29, v30, v8, 3, 1, v9, v10, v11, v31, v32, 1, eax25, eax22, v33, v34, v35);
-    eax40 = caml_alloc_small(ecx, 4, 0, v37, v38, v39, v8, 3, 1, v9, v10, v11);
+    eax40 = caml_alloc_small(4, 0, v37, v38, v39, v8, 3, 1, v9, v10, v11);
     *reinterpret_cast<void***>(eax40) = eax22;
     *reinterpret_cast<void***>(eax40 + 4) = eax25;
     edx41 = *reinterpret_cast<void***>(eax5 + 8);
@@ -13681,41 +13687,39 @@ void alloc_service_entry(void** ecx, void** a2, void** a3) {
 
 void** alloc_tm(void** a1, void** a2, void** a3) {
     void** eax4;
-    void** ecx5;
-    void** v6;
-    void** v7;
-    void** ebx8;
-    void** esi9;
-    void** ebp10;
-    void** eax11;
-    void** edx12;
-
-    eax4 = __i686_get_pc_thunk_bx();
-    eax11 = caml_alloc_small(ecx5, 9, 0, v6, v7, ebx8, esi9, ebp10, __return_address(), a1, a2, a3);
-    *reinterpret_cast<void***>(eax11) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4)) + 1);
-    *reinterpret_cast<void***>(eax11 + 4) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 4)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 4)) + 1);
-    *reinterpret_cast<void***>(eax11 + 8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + 1);
-    *reinterpret_cast<void***>(eax11 + 12) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 12)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 12)) + 1);
-    *reinterpret_cast<void***>(eax11 + 16) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 16)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 16)) + 1);
-    *reinterpret_cast<void***>(eax11 + 20) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 20)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 20)) + 1);
-    *reinterpret_cast<void***>(eax11 + 24) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 24)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 24)) + 1);
-    edx12 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 28)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 28)) + 1);
-    *reinterpret_cast<void***>(eax11 + 28) = edx12;
-    *reinterpret_cast<void***>(eax11 + 32) = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx12) - (reinterpret_cast<unsigned char>(edx12) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(edx12) < reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(edx12) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 32)) < reinterpret_cast<unsigned char>(1))))) & 0xfffffffe) + 3);
-    return eax11;
-}
-
-void** unix_convert_itimer(void** a1, void** a2, void** a3) {
-    void** ecx4;
     void** v5;
     void** v6;
     void** ebx7;
     void** esi8;
     void** ebp9;
     void** eax10;
+    void** edx11;
+
+    eax4 = __i686_get_pc_thunk_bx();
+    eax10 = caml_alloc_small(9, 0, v5, v6, ebx7, esi8, ebp9, __return_address(), a1, a2, a3);
+    *reinterpret_cast<void***>(eax10) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4)) + 1);
+    *reinterpret_cast<void***>(eax10 + 4) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 4)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 4)) + 1);
+    *reinterpret_cast<void***>(eax10 + 8) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 8)) + 1);
+    *reinterpret_cast<void***>(eax10 + 12) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 12)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 12)) + 1);
+    *reinterpret_cast<void***>(eax10 + 16) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 16)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 16)) + 1);
+    *reinterpret_cast<void***>(eax10 + 20) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 20)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 20)) + 1);
+    *reinterpret_cast<void***>(eax10 + 24) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 24)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 24)) + 1);
+    edx11 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 28)) + reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 28)) + 1);
+    *reinterpret_cast<void***>(eax10 + 28) = edx11;
+    *reinterpret_cast<void***>(eax10 + 32) = reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx11) - (reinterpret_cast<unsigned char>(edx11) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(edx11) < reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(edx11) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 32)) < reinterpret_cast<unsigned char>(1))))) & 0xfffffffe) + 3);
+    return eax10;
+}
+
+void** unix_convert_itimer(void** a1, void** a2, void** a3) {
+    void** v4;
+    void** v5;
+    void** ebx6;
+    void** esi7;
+    void** ebp8;
+    void** eax9;
 
     __i686_get_pc_thunk_bx();
-    eax10 = caml_alloc_small(ecx4, 4, 0xfe, v5, v6, ebx7, esi8, ebp9, __return_address(), a1, a2, a3);
+    eax9 = caml_alloc_small(4, 0xfe, v4, v5, ebx6, esi7, ebp8, __return_address(), a1, a2, a3);
     __asm__("fild dword [esi]");
     __asm__("fild dword [esi+0x4]");
     __asm__("fld dword [ebx+0xffffe89c]");
@@ -13729,7 +13733,7 @@ void** unix_convert_itimer(void** a1, void** a2, void** a3) {
     __asm__("fdivrp st2, st0");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [eax+0x8]");
-    return eax10;
+    return eax9;
 }
 
 void fun_804a0e4();
@@ -13772,12 +13776,12 @@ void*** fun_8049df4(void** a1, void** a2, void** a3, ...) {
     goto __errno_location;
 }
 
-void** caml_alloc_custom(void** a1, void** a2, void** a3, void** a4);
+void** caml_alloc_custom(void** ecx, void** a2, void** a3, void** a4, void** a5);
 
 void** caml_copy_int64(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     void** eax6;
 
-    eax6 = caml_alloc_custom(0x807b7b8, 8, 0, 1);
+    eax6 = caml_alloc_custom(ecx, 0x807b7b8, 8, 0, 1);
     *reinterpret_cast<void***>(eax6 + 4) = a2;
     *reinterpret_cast<void***>(eax6 + 8) = a3;
     return eax6;
@@ -13989,12 +13993,11 @@ void** fdset_to_fdlist(void** a1, void** a2, void** a3, void** a4, void** a5) {
     void* esi18;
     void* edx19;
     void* eax20;
-    void** ecx21;
+    void** v21;
     void** v22;
     void** v23;
     void** v24;
-    void** v25;
-    void** eax26;
+    void** eax25;
 
     ebp6 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     eax7 = __i686_get_pc_thunk_bx();
@@ -14015,12 +14018,11 @@ void** fdset_to_fdlist(void** a1, void** a2, void** a3, void** a4, void** a5) {
                 edx19 = esi18;
             }
             eax20 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(eax7)) >> 31) >> 27);
-            ecx21 = reinterpret_cast<void**>((reinterpret_cast<int32_t>(esi18) + reinterpret_cast<uint32_t>(eax20) & 31) - reinterpret_cast<uint32_t>(eax20));
-            if (static_cast<int1_t>(edi10[reinterpret_cast<int32_t>(edx19) >> 5] >> reinterpret_cast<unsigned char>(ecx21))) {
-                eax26 = caml_alloc_small(ecx21, 2, 0, v22, v23, v24, v25, v14, 2, 1, v15, v16);
-                *reinterpret_cast<void***>(eax26) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esi18) + reinterpret_cast<int32_t>(esi18) + 1);
-                *reinterpret_cast<void***>(eax26 + 4) = v12;
-                v12 = eax26;
+            if (static_cast<int1_t>(edi10[reinterpret_cast<int32_t>(edx19) >> 5] >> (reinterpret_cast<int32_t>(esi18) + reinterpret_cast<uint32_t>(eax20) & 31) - reinterpret_cast<uint32_t>(eax20))) {
+                eax25 = caml_alloc_small(2, 0, v21, v22, v23, v24, v14, 2, 1, v15, v16);
+                *reinterpret_cast<void***>(eax25) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esi18) + reinterpret_cast<int32_t>(esi18) + 1);
+                *reinterpret_cast<void***>(eax25 + 4) = v12;
+                v12 = eax25;
             }
             eax7 = *reinterpret_cast<void***>(v17 + 4);
             if (eax7 == 1) 
@@ -14034,7 +14036,7 @@ void** fdset_to_fdlist(void** a1, void** a2, void** a3, void** a4, void** a5) {
 
 struct s64 {
     signed char[37348] pad37348;
-    void** f37348;
+    void** f91e4;
 };
 
 void** caml_convert_flag_list(void** a1, void** a2, void** a3);
@@ -14073,7 +14075,7 @@ int32_t unix_sendto_native(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t
     ebp8 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx9 = reinterpret_cast<struct s64*>(reinterpret_cast<int32_t>(ebx10) + 0x12fcb);
-    eax12 = caml_convert_flag_list(a6, &ebx9->f37348, v11);
+    eax12 = caml_convert_flag_list(a6, &ebx9->f91e4, v11);
     esi13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffbf78);
     get_sockaddr(ecx, a7, esi13, reinterpret_cast<int32_t>(ebp8) + 0xffffbf74);
     edi14 = reinterpret_cast<void**>(a5 >> 1);
@@ -14082,10 +14084,10 @@ int32_t unix_sendto_native(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t
     }
     eax15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp8) + 0xffffbfe8);
     fun_804a684(ecx, eax15, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), edi14, v16, v17, v18, v19, v20, v21, v22, eax12, eax15, v23, v24, v25);
-    caml_enter_blocking_section(eax15, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), edi14);
+    caml_enter_blocking_section(ecx, eax15, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), edi14);
     v26 = reinterpret_cast<void**>(a2 >> 1);
     eax28 = fun_804a014(v26, eax15, edi14, eax12, esi13, v27);
-    caml_leave_blocking_section(v26, eax15, edi14, eax12, esi13, v27, v29, v30, v31, v32, eax12);
+    caml_leave_blocking_section(ecx, v26, eax15, edi14, eax12, esi13, v27, v29, v30, v31, v32, eax12);
     if (eax28 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx9) + 0xffffe973, 0, edi14, eax12, esi13, v27);
     }
@@ -14171,7 +14173,7 @@ void** encode_sigset(void** a1, void** a2, void** a3) {
     void* v10;
     void** esi11;
     int32_t eax12;
-    void** ecx13;
+    void** v13;
     void** v14;
     void** v15;
     void** v16;
@@ -14179,10 +14181,9 @@ void** encode_sigset(void** a1, void** a2, void** a3) {
     void** v18;
     void** v19;
     void** v20;
-    void** v21;
-    void** eax22;
-    void** v23;
-    void** eax24;
+    void** eax21;
+    void** v22;
+    void** eax23;
 
     eax4 = __i686_get_pc_thunk_bx();
     ebx5 = ebx6 + 0x1290f;
@@ -14195,11 +14196,11 @@ void** encode_sigset(void** a1, void** a2, void** a3) {
     do {
         eax12 = fun_8049f04(v7, esi11);
         if (!(reinterpret_cast<uint1_t>(eax12 < 0) | reinterpret_cast<uint1_t>(eax12 == 0))) {
-            eax22 = caml_alloc_small(ecx13, 2, 0, v14, v15, v16, v17, v18, v7, v19, v20, v21);
-            eax24 = caml_rev_convert_signal_number(esi11, 0, v23);
-            *reinterpret_cast<void***>(eax22) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax24) + reinterpret_cast<unsigned char>(eax24) + 1);
-            *reinterpret_cast<void***>(eax22 + 4) = v8;
-            v8 = eax22;
+            eax21 = caml_alloc_small(2, 0, v13, v14, v15, v16, v17, v7, v18, v19, v20);
+            eax23 = caml_rev_convert_signal_number(esi11, 0, v22);
+            *reinterpret_cast<void***>(eax21) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<unsigned char>(eax23) + 1);
+            *reinterpret_cast<void***>(eax21 + 4) = v8;
+            v8 = eax21;
         }
         ++esi11;
     } while (!reinterpret_cast<int1_t>(esi11 == 65));
@@ -14324,19 +14325,18 @@ void** unix_error_of_code(void** a1, void** a2, void** a3) {
     int32_t ebx5;
     void** eax6;
     void** edx7;
-    void** ecx8;
-    void** ebx9;
-    void** esi10;
-    void** ebp11;
-    void** eax12;
+    void** ebx8;
+    void** esi9;
+    void** ebp10;
+    void** eax11;
 
     __i686_get_pc_thunk_bx();
     v4 = *reinterpret_cast<void***>(ebx5 + 0x11357 - 8);
     eax6 = cst_to_constr(a1, v4, 68, 0xffffffff);
     edx7 = eax6;
     if (reinterpret_cast<int1_t>(eax6 == 0xffffffff)) {
-        eax12 = caml_alloc_small(ecx8, 1, 0, 68, 0xffffffff, ebx9, esi10, ebp11, __return_address(), a1, a2, a3);
-        edx7 = eax12;
+        eax11 = caml_alloc_small(1, 0, 68, 0xffffffff, ebx8, esi9, ebp10, __return_address(), a1, a2, a3);
+        edx7 = eax11;
         *reinterpret_cast<void***>(edx7) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a1) + reinterpret_cast<unsigned char>(a1) + 1);
     }
     return edx7;
@@ -14344,23 +14344,23 @@ void** unix_error_of_code(void** a1, void** a2, void** a3) {
 
 struct s65 {
     signed char[37572] pad37572;
-    void** f37572;
+    void** f92c4;
 };
 
 struct s66 {
     void* f0;
     signed char[12] pad16;
-    uint32_t f16;
+    uint32_t f10;
+    void* f14;
+    void* f18;
+    void* f1c;
     void* f20;
-    void* f24;
-    void* f28;
-    void* f32;
     signed char[8] pad44;
-    void** f44;
+    void** f2c;
     signed char[3] pad48;
-    void** f48;
+    void** f30;
     signed char[39] pad88;
-    void* f88;
+    void* f58;
 };
 
 void** stat_aux(void** ecx, void** a2, void** a3, void** a4) {
@@ -14415,32 +14415,32 @@ void** stat_aux(void** ecx, void** a2, void** a3, void** a4) {
     *eax8 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 76);
     __asm__("fild dword [esi+0x40]");
     __asm__("fstp qword [esp]");
-    eax13 = caml_copy_double(ecx, v10, v11, v12);
+    eax13 = caml_copy_double(v10, v11, v12);
     __asm__("fild dword [esi+0x48]");
     __asm__("fstp qword [esp]");
-    eax17 = caml_copy_double(ecx, v14, v15, v16);
+    eax17 = caml_copy_double(v14, v15, v16);
     __asm__("fild dword [esi+0x50]");
     __asm__("fstp qword [esp]");
-    eax21 = caml_copy_double(ecx, v18, v19, v20);
+    eax21 = caml_copy_double(v18, v19, v20);
     if (!eax5) {
-        eax22 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx23->f44) + reinterpret_cast<unsigned char>(edx23->f44) + 1);
+        eax22 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx23->f2c) + reinterpret_cast<unsigned char>(edx23->f2c) + 1);
     } else {
-        edx24 = edx23->f48;
-        v25 = edx23->f44;
+        edx24 = edx23->f30;
+        v25 = edx23->f2c;
         eax22 = caml_copy_int64(ecx, v25, edx24, v26, v27);
     }
-    eax44 = caml_alloc_small(ecx, 12, 0, v28, v29, v30, v31, v32, eax5, v33, v34, v35, ecx, 12, 0, v36, v37, v38, v39, v40, eax5, v41, v42, v43);
+    eax44 = caml_alloc_small(12, 0, v28, v29, v30, v31, v32, eax5, v33, v34, v35, 12, 0, v36, v37, v38, v39, v40, eax5, v41, v42, v43);
     *reinterpret_cast<void***>(eax44) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f0) + reinterpret_cast<int32_t>(edx23->f0) + 1);
-    *reinterpret_cast<void***>(eax44 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f88) + reinterpret_cast<int32_t>(edx23->f88) + 1);
-    v45 = reinterpret_cast<void**>(edx23->f16 & 0xf000);
-    eax46 = cst_to_constr(v45, &ebx6->f37572, 7, 0);
+    *reinterpret_cast<void***>(eax44 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f58) + reinterpret_cast<int32_t>(edx23->f58) + 1);
+    v45 = reinterpret_cast<void**>(edx23->f10 & 0xf000);
+    eax46 = cst_to_constr(v45, &ebx6->f92c4, 7, 0);
     *reinterpret_cast<void***>(eax44 + 8) = eax46;
-    eax47 = reinterpret_cast<void*>(edx23->f16 & 0xfff);
+    eax47 = reinterpret_cast<void*>(edx23->f10 & 0xfff);
     *reinterpret_cast<void***>(eax44 + 12) = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax47) + reinterpret_cast<uint32_t>(eax47) + 1);
-    *reinterpret_cast<void***>(eax44 + 16) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f20) + reinterpret_cast<int32_t>(edx23->f20) + 1);
-    *reinterpret_cast<void***>(eax44 + 20) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f24) + reinterpret_cast<int32_t>(edx23->f24) + 1);
-    *reinterpret_cast<void***>(eax44 + 24) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f28) + reinterpret_cast<int32_t>(edx23->f28) + 1);
-    *reinterpret_cast<void***>(eax44 + 28) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f32) + reinterpret_cast<int32_t>(edx23->f32) + 1);
+    *reinterpret_cast<void***>(eax44 + 16) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f14) + reinterpret_cast<int32_t>(edx23->f14) + 1);
+    *reinterpret_cast<void***>(eax44 + 20) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f18) + reinterpret_cast<int32_t>(edx23->f18) + 1);
+    *reinterpret_cast<void***>(eax44 + 24) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f1c) + reinterpret_cast<int32_t>(edx23->f1c) + 1);
+    *reinterpret_cast<void***>(eax44 + 28) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(edx23->f20) + reinterpret_cast<int32_t>(edx23->f20) + 1);
     *reinterpret_cast<void***>(eax44 + 32) = eax22;
     *reinterpret_cast<void***>(eax44 + 36) = eax13;
     *reinterpret_cast<void***>(eax44 + 40) = eax17;
@@ -14585,7 +14585,7 @@ void** caml_invalid_argument(void** ecx, void** a2, void** a3, void** a4) {
     v18 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp17) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp17) + 0xffffffb4);
     v19 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp17) + 0xffffffd4);
-    eax25 = caml_alloc_small(ecx, 1, 0, v20, v21, v22, v23, v24, v18, 1, 1, v19);
+    eax25 = caml_alloc_small(1, 0, v20, v21, v22, v23, v24, v18, 1, 1, v19);
     *reinterpret_cast<void***>(eax25) = a2;
     caml_raise(ecx, eax25, 0, v26, v27, v28, v29, v30, v18, 1, 1, v19);
     caml_raise_constant(ecx, 0x8072580);
@@ -14671,7 +14671,7 @@ void alloc_process_status(void** a1, void** a2, void** a3) {
     uint32_t edx6;
     void** v7;
     signed char dl8;
-    void** ecx9;
+    void** v9;
     void** v10;
     void** v11;
     void** v12;
@@ -14679,82 +14679,78 @@ void alloc_process_status(void** a1, void** a2, void** a3) {
     void** v14;
     void** v15;
     void** v16;
-    void** v17;
-    void** eax18;
+    void** eax17;
+    void** v18;
     void** v19;
-    void** v20;
-    void** eax21;
-    void** ecx22;
+    void** eax20;
+    void** v21;
+    void** v22;
     void** v23;
     void** v24;
     void** v25;
     void** v26;
     void** v27;
     void** v28;
-    void** v29;
-    void** v30;
-    void** eax31;
-    int32_t edx32;
-    int32_t edx33;
+    void** eax29;
+    int32_t edx30;
+    int32_t edx31;
+    void** v32;
+    void** eax33;
     void** v34;
-    void** eax35;
-    void** ecx36;
+    void** v35;
+    void** v36;
     void** v37;
     void** v38;
     void** v39;
     void** v40;
     void** v41;
-    void** v42;
-    void** v43;
-    void** v44;
-    void** eax45;
-    int32_t edx46;
-    void* esi47;
-    void** esi48;
-    int32_t ebx49;
-    void* v50;
-    void** ecx51;
+    void** eax42;
+    int32_t edx43;
+    void* esi44;
+    void** esi45;
+    int32_t ebx46;
+    void* v47;
+    void** v48;
+    void** v49;
+    void** v50;
+    void** v51;
     void** v52;
     void** v53;
     void** v54;
     void** v55;
-    void** v56;
-    void** v57;
-    void** v58;
-    void** v59;
-    void** eax60;
+    void** eax56;
 
     eax4 = __i686_get_pc_thunk_bx();
     eax5 = reinterpret_cast<void**>(edx6 & 0x7f);
     v7 = eax5;
     if (eax5) {
         if (dl8 != 0x7f) {
-            eax18 = caml_alloc_small(ecx9, 1, 1, v10, v11, v12, v13, v14, v7, v15, v16, v17);
-            v19 = eax18;
-            eax21 = caml_rev_convert_signal_number(v7, 1, v20);
-            *reinterpret_cast<void***>(eax18) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax21) + reinterpret_cast<unsigned char>(eax21) + 1);
+            eax17 = caml_alloc_small(1, 1, v9, v10, v11, v12, v13, v7, v14, v15, v16);
+            v18 = eax17;
+            eax20 = caml_rev_convert_signal_number(v7, 1, v19);
+            *reinterpret_cast<void***>(eax17) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax20) + reinterpret_cast<unsigned char>(eax20) + 1);
         } else {
-            eax31 = caml_alloc_small(ecx22, 1, 2, v23, v24, v25, v26, v27, v7, v28, v29, v30);
-            v7 = eax31;
-            v19 = eax31;
-            edx32 = edx33;
-            eax35 = caml_rev_convert_signal_number(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx32) + 1)), 2, v34);
-            *reinterpret_cast<void***>(v7) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax35) + reinterpret_cast<unsigned char>(eax35) + 1);
+            eax29 = caml_alloc_small(1, 2, v21, v22, v23, v24, v25, v7, v26, v27, v28);
+            v7 = eax29;
+            v18 = eax29;
+            edx30 = edx31;
+            eax33 = caml_rev_convert_signal_number(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx30) + 1)), 2, v32);
+            *reinterpret_cast<void***>(v7) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax33) + reinterpret_cast<unsigned char>(eax33) + 1);
         }
     } else {
-        eax45 = caml_alloc_small(ecx36, 1, 0, v37, v38, v39, v40, v41, v7, v42, v43, v44);
-        v19 = eax45;
-        edx46 = edx33;
-        esi47 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx46) + 1)));
-        *reinterpret_cast<void***>(eax45) = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi47) + reinterpret_cast<uint32_t>(esi47) + 1);
+        eax42 = caml_alloc_small(1, 0, v34, v35, v36, v37, v38, v7, v39, v40, v41);
+        v18 = eax42;
+        edx43 = edx31;
+        esi44 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&edx43) + 1)));
+        *reinterpret_cast<void***>(eax42) = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi44) + reinterpret_cast<uint32_t>(esi44) + 1);
     }
-    esi48 = *reinterpret_cast<void***>(ebx49 + 0x110ec - 24);
-    v50 = *esi48;
-    *esi48 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 60);
-    eax60 = caml_alloc_small(ecx51, 2, 0, v52, v53, v54, v55, v56, v7, v57, v58, v59);
-    *reinterpret_cast<void***>(eax60) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax4) + reinterpret_cast<unsigned char>(eax4) + 1);
-    *reinterpret_cast<void***>(eax60 + 4) = v19;
-    *esi48 = v50;
+    esi45 = *reinterpret_cast<void***>(ebx46 + 0x110ec - 24);
+    v47 = *esi45;
+    *esi45 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 60);
+    eax56 = caml_alloc_small(2, 0, v48, v49, v50, v51, v52, v7, v53, v54, v55);
+    *reinterpret_cast<void***>(eax56) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax4) + reinterpret_cast<unsigned char>(eax4) + 1);
+    *reinterpret_cast<void***>(eax56 + 4) = v18;
+    *esi45 = v47;
     return;
 }
 
@@ -14841,8 +14837,8 @@ void** caml_init_gc(void** ecx, int32_t a2, int32_t a3, int32_t a4, void** a5, i
     v12 = reinterpret_cast<void**>(ebx11 + a2 * 4);
     eax13 = caml_page_table_initialize(v12);
     if (eax13) {
-        v12 = reinterpret_cast<void**>(0x807187c);
-        caml_fatal_error(0x807187c, v14, v15, v16, ebx17);
+        v12 = reinterpret_cast<void**>("OCaml runtime error: cannot initialize page table\n");
+        caml_fatal_error("OCaml runtime error: cannot initialize page table\n", v14, v15, v16, ebx17);
     }
     eax20 = norm_minsize(v12, v18, v19);
     v21 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax20) << 2);
@@ -14855,16 +14851,16 @@ void** caml_init_gc(void** ecx, int32_t a2, int32_t a3, int32_t a4, void** a5, i
     caml_percent_max = eax30;
     caml_init_major_heap(ebx11);
     eax31 = caml_minor_heap_size;
-    caml_gc_message(32, 0x80718b0, reinterpret_cast<unsigned char>(eax31) >> 10, v32);
-    caml_gc_message(32, 0x80718d8, reinterpret_cast<uint32_t>(ebx11) >> 10, v33);
+    caml_gc_message(32, "Initial minor heap size: %luk bytes\n", reinterpret_cast<unsigned char>(eax31) >> 10, v32);
+    caml_gc_message(32, "Initial major heap size: %luk bytes\n", reinterpret_cast<uint32_t>(ebx11) >> 10, v33);
     eax34 = caml_percent_free;
-    caml_gc_message(32, 0x8071900, eax34, v35);
+    caml_gc_message(32, "Initial space overhead: %lu%%\n", eax34, v35);
     eax36 = caml_percent_max;
-    caml_gc_message(32, 0x8071a1d, eax36, v37);
+    caml_gc_message(32, "Initial max overhead: %lu%%\n", eax36, v37);
     eax38 = caml_major_heap_increment;
-    caml_gc_message(32, 0x8071920, reinterpret_cast<unsigned char>(eax38) >> 10, v39);
+    caml_gc_message(32, "Initial heap increment: %luk bytes\n", reinterpret_cast<unsigned char>(eax38) >> 10, v39);
     eax40 = caml_allocation_policy;
-    eax42 = caml_gc_message(32, 0x8071944, eax40, v41);
+    eax42 = caml_gc_message(32, "Initial allocation policy: %d\n", eax40, v41);
     return eax42;
 }
 
@@ -14949,7 +14945,7 @@ uint32_t caml_executable_name(void** a1, void** a2, void** a3, void** a4, int32_
     uint32_t eax7;
     uint32_t v8;
 
-    eax6 = fun_804a674(0x8071c05, a1, a2);
+    eax6 = fun_804a674("/proc/self/exe", a1, a2);
     if (eax6 == 0xffffffff || (reinterpret_cast<signed char>(a2) <= reinterpret_cast<signed char>(eax6) || ((*reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(a1) + reinterpret_cast<unsigned char>(eax6)) = 0, eax7 = fun_8049f54(3, a1, reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffff98), !!eax7) || (v8 & 0xf000) != 0x8000))) {
         eax7 = 0xffffffff;
     }
@@ -14994,7 +14990,7 @@ void** caml_search_exe_in_path(void** ecx, void** a2, void** a3, void** a4, void
 
     ebx7 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffdc);
     caml_ext_table_init(ecx, ebx7, 8);
-    eax8 = fun_8049fc4(0x8071c17, 8);
+    eax8 = fun_8049fc4("PATH", 8);
     eax9 = caml_decompose_path(ebx7, eax8);
     eax10 = caml_search_in_path(ebx7, a2);
     caml_stat_free(ecx, eax9, a2, v11, v12, v13, v14, v15, v16, v17, v18, v19, ebx20, esi21, edi22, ebp23, __return_address());
@@ -15035,7 +15031,7 @@ void** caml_fatal_uncaught_exception(void** ecx, void** a2, void** a3, void** a4
     esi11 = caml_backtrace_active;
     edi12 = caml_backtrace_pos;
     caml_backtrace_active = 0;
-    eax13 = caml_named_value(0x8071ac7);
+    eax13 = caml_named_value("Pervasives.do_at_exit");
     if (eax13) {
         v14 = eax13->f0;
         caml_callback_exn(v14, 1, v15, v16);
@@ -15043,13 +15039,13 @@ void** caml_fatal_uncaught_exception(void** ecx, void** a2, void** a3, void** a4
     caml_backtrace_active = esi11;
     caml_backtrace_pos = edi12;
     eax17 = stderr;
-    fun_804a574(eax17, 0x8071add, eax10, v18, v19, v20, v21, ebx22, esi23, edi24, ebp25, __return_address());
-    fun_804a1a4(eax10, 0x8071add, eax10);
+    fun_804a574(eax17, "Fatal error: exception %s\n", eax10, v18, v19, v20, v21, ebx22, esi23, edi24, ebp25, __return_address());
+    fun_804a1a4(eax10, "Fatal error: exception %s\n", eax10);
     zf26 = caml_backtrace_active == 0;
     if (!zf26) {
-        caml_print_exception_backtrace(eax10, 0x8071add, eax10);
+        caml_print_exception_backtrace(eax10, "Fatal error: exception %s\n", eax10);
     }
-    eax27 = fun_804a894(2, 0x8071add, eax10);
+    eax27 = fun_804a894(2, "Fatal error: exception %s\n", eax10);
     edx28 = *eax27;
     if (*reinterpret_cast<signed char*>(&edx28)) {
         do {
@@ -15319,7 +15315,7 @@ void caml_raise(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
         caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp52) + 0xffffffb8);
         v58 = esi53;
         v59 = ebx55;
-        eax65 = caml_alloc_small(ecx, esi53 + 1, 0, v60, v61, v57, 1, v58, v59, v62, v63, v64);
+        eax65 = caml_alloc_small(esi53 + 1, 0, v60, v61, v57, 1, v58, v59, v62, v63, v64);
         esp66 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp52) - 4 - 4 - 80 - 4 + 4);
         *reinterpret_cast<void***>(eax65) = v67;
         if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi53) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi53 == 0))) {
@@ -15335,7 +15331,7 @@ void caml_raise(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
         v75 = esp74 + 0xffffffd8;
         caml_local_roots = esp74 + 0xffffffb4;
         v76 = esp74 + 0xffffffd4;
-        eax82 = caml_alloc_small(ecx, 2, 0, v77, v78, v79, v80, v81, v75, 1, 1, v76);
+        eax82 = caml_alloc_small(2, 0, v77, v78, v79, v80, v81, v75, 1, 1, v76);
         *reinterpret_cast<void***>(eax82) = reinterpret_cast<void**>(0);
         *reinterpret_cast<void***>(eax82 + 4) = v83;
         caml_raise(ecx, eax82, 0, v84, v85, v86, v87, v88, v75, 1, 1, v76);
@@ -15351,7 +15347,7 @@ void caml_raise(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a
         v119 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp118) + 0xffffffd8);
         caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp118) + 0xffffffb4);
         v120 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp118) + 0xffffffd4);
-        eax126 = caml_alloc_small(ecx, 1, 0, v121, v122, v123, v124, v125, v119, 1, 1, v120);
+        eax126 = caml_alloc_small(1, 0, v121, v122, v123, v124, v125, v119, 1, 1, v120);
         *reinterpret_cast<void***>(eax126) = eax104;
         caml_raise(ecx, eax126, 0, v127, v128, v129, v130, v131, v119, 1, 1, v120);
         caml_raise_constant(ecx, 0x8072580);
@@ -15540,7 +15536,7 @@ void caml_raise_with_arg(void** ecx, void** a2, void** a3) {
     v5 = esp4 + 0xffffffd8;
     caml_local_roots = esp4 + 0xffffffb4;
     v6 = esp4 + 0xffffffd4;
-    eax12 = caml_alloc_small(ecx, 2, 0, v7, v8, v9, v10, v11, v5, 1, 1, v6);
+    eax12 = caml_alloc_small(2, 0, v7, v8, v9, v10, v11, v5, 1, 1, v6);
     *reinterpret_cast<void***>(eax12) = a2;
     *reinterpret_cast<void***>(eax12 + 4) = a3;
     caml_raise(ecx, eax12, 0, v13, v14, v15, v16, v17, v5, 1, 1, v6);
@@ -15556,7 +15552,7 @@ void caml_raise_with_arg(void** ecx, void** a2, void** a3) {
     v48 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp47) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp47) + 0xffffffb4);
     v49 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp47) + 0xffffffd4);
-    eax55 = caml_alloc_small(ecx, 1, 0, v50, v51, v52, v53, v54, v48, 1, 1, v49);
+    eax55 = caml_alloc_small(1, 0, v50, v51, v52, v53, v54, v48, 1, 1, v49);
     *reinterpret_cast<void***>(eax55) = eax33;
     caml_raise(ecx, eax55, 0, v56, v57, v58, v59, v60, v48, 1, 1, v49);
     caml_raise_constant(ecx, 0x8072580);
@@ -15951,7 +15947,7 @@ void** caml_scan_global_roots(void** a1, void** a2, void** a3, void** a4, void**
 
 struct s76 {
     signed char[72] pad72;
-    void** f72;
+    void** f48;
 };
 
 struct s77 {
@@ -15962,7 +15958,7 @@ struct s77 {
 
 struct s78 {
     signed char[72] pad72;
-    void** f72;
+    void** f48;
 };
 
 uint32_t random_seed = 0;
@@ -15997,7 +15993,7 @@ void caml_insert_global_root() {
     v2 = eax3;
     ebx4 = edx5;
     edi6 = eax7;
-    eax8 = eax9->f72;
+    eax8 = eax9->f48;
     v10 = eax8;
     ecx11 = eax8;
     edx12 = edi6;
@@ -16034,7 +16030,7 @@ void caml_insert_global_root() {
                     ++eax17;
                 } while (reinterpret_cast<signed char>(eax17) <= reinterpret_cast<signed char>(esi16));
             }
-            v2->f72 = esi16;
+            v2->f48 = esi16;
         }
         eax21 = caml_stat_alloc(ecx11, reinterpret_cast<unsigned char>(esi16) * 4 + 8, v19, v20);
         *reinterpret_cast<void***>(eax21) = ebx4;
@@ -16059,7 +16055,7 @@ void caml_register_global_root(void** a1, void** a2) {
 
 struct s79 {
     signed char[72] pad72;
-    int32_t f72;
+    int32_t f48;
 };
 
 struct s80 {
@@ -16069,7 +16065,7 @@ struct s80 {
 
 struct s81 {
     signed char[72] pad72;
-    void** f72;
+    void** f48;
 };
 
 void caml_delete_global_root() {
@@ -16107,7 +16103,7 @@ void caml_delete_global_root() {
     ebp1 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     ebx2 = eax3;
     ecx4 = eax5;
-    eax6 = eax7->f72;
+    eax6 = eax7->f48;
     v8 = eax6;
     if (reinterpret_cast<signed char>(eax6) >= reinterpret_cast<signed char>(0)) {
         esi9 = eax6;
@@ -16136,10 +16132,10 @@ void caml_delete_global_root() {
                     *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(edi15[eax14]) + eax14 * 4 + 4) = *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx12 + eax14 * 4) + 4);
                 }
                 ++eax14;
-            } while (ebx2->f72 >= eax14);
+            } while (ebx2->f48 >= eax14);
         }
         caml_stat_free(ecx12, ecx12, v16, v17, v18, v19, v20, v21, v8, v22, v23, v24, v25, v26, v27, v28, v29);
-        eax30 = ebx2->f72;
+        eax30 = ebx2->f48;
         if (reinterpret_cast<uint1_t>(eax30 < 0) | reinterpret_cast<uint1_t>(eax30 == 0)) 
             goto addr_8062561_7;
         if (*reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebx2) + eax30 * 4 + 4)) 
@@ -16151,10 +16147,10 @@ void caml_delete_global_root() {
             break;
     } while (!*reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebx2) + eax30 * 4 + 4));
     goto addr_8062559_17;
-    ebx2->f72 = eax30;
+    ebx2->f48 = eax30;
     goto addr_8062561_7;
     addr_8062559_17:
-    ebx2->f72 = eax30;
+    ebx2->f48 = eax30;
     goto addr_8062561_7;
 }
 
@@ -16230,7 +16226,7 @@ void fun_804a444(void* a1, void** a2, void** a3) {
     goto sigdelset;
 }
 
-void** caml_check_urgent_gc(void** ecx, void** a2, void** a3, void** a4);
+void** caml_check_urgent_gc(void** a1, void** a2, void** a3);
 
 void** caml_alloc(void** ecx, void** a2, void** a3) {
     void** ebx4;
@@ -16262,7 +16258,7 @@ void** caml_alloc(void** ecx, void** a2, void** a3) {
                 v6 = reinterpret_cast<void**>(0);
                 fun_804a074(eax7, 0, v8);
             }
-            eax5 = caml_check_urgent_gc(ecx, eax7, v6, v8);
+            eax5 = caml_check_urgent_gc(eax7, v6, v8);
         } else {
             edx9 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx4) * 4 + 4);
             edi10 = reinterpret_cast<void*>(-reinterpret_cast<uint32_t>(edx9));
@@ -16297,7 +16293,7 @@ int32_t fun_804a234(void** a1, void* a2, void* a3) {
     goto sigaction;
 }
 
-void handle_signal(void** ecx, void** a2);
+void handle_signal(void** a1);
 
 uint32_t caml_set_signal_action(void** a1, void** a2) {
     void* ebp3;
@@ -16478,7 +16474,7 @@ void caml_raise_stack_overflow(void** ecx, void** a2, void** a3, void** a4) {
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp20) + 0xffffffb8);
     v26 = esi21;
     v27 = ebx23;
-    eax33 = caml_alloc_small(ecx, esi21 + 1, 0, v28, v29, v25, 1, v26, v27, v30, v31, v32);
+    eax33 = caml_alloc_small(esi21 + 1, 0, v28, v29, v25, 1, v26, v27, v30, v31, v32);
     esp34 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp20) - 4 - 4 - 80 - 4 + 4);
     *reinterpret_cast<void***>(eax33) = v35;
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi21) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi21 == 0))) {
@@ -16494,7 +16490,7 @@ void caml_raise_stack_overflow(void** ecx, void** a2, void** a3, void** a4) {
     v43 = esp42 + 0xffffffd8;
     caml_local_roots = esp42 + 0xffffffb4;
     v44 = esp42 + 0xffffffd4;
-    eax50 = caml_alloc_small(ecx, 2, 0, v45, v46, v47, v48, v49, v43, 1, 1, v44);
+    eax50 = caml_alloc_small(2, 0, v45, v46, v47, v48, v49, v43, 1, 1, v44);
     *reinterpret_cast<void***>(eax50) = reinterpret_cast<void**>(0);
     *reinterpret_cast<void***>(eax50 + 4) = v51;
     caml_raise(ecx, eax50, 0, v52, v53, v54, v55, v56, v43, 1, 1, v44);
@@ -16510,7 +16506,7 @@ void caml_raise_stack_overflow(void** ecx, void** a2, void** a3, void** a4) {
     v87 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp86) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp86) + 0xffffffb4);
     v88 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp86) + 0xffffffd4);
-    eax94 = caml_alloc_small(ecx, 1, 0, v89, v90, v91, v92, v93, v87, 1, 1, v88);
+    eax94 = caml_alloc_small(1, 0, v89, v90, v91, v92, v93, v87, 1, 1, v88);
     *reinterpret_cast<void***>(eax94) = eax72;
     caml_raise(ecx, eax94, 0, v95, v96, v97, v98, v99, v87, 1, 1, v88);
     caml_raise_constant(ecx, 0x8072580);
@@ -16971,7 +16967,7 @@ void caml_init_major_heap(void*** a1) {
     eax3 = caml_alloc_for_heap(eax2);
     caml_heap_start = eax3;
     if (!eax3) {
-        eax3 = caml_fatal_error(0x8070f40, v4, v5, v6, v7);
+        eax3 = caml_fatal_error("Fatal error: not enough memory for the initial heap.\n", v4, v5, v6, v7);
     }
     *reinterpret_cast<void***>(eax3 + 0xfffffffc) = reinterpret_cast<void**>(0);
     caml_stat_heap_chunks = reinterpret_cast<void**>(1);
@@ -16980,8 +16976,8 @@ void caml_init_major_heap(void*** a1) {
     v10 = reinterpret_cast<void**>(1);
     eax13 = caml_page_table_add(1, eax8, tmp32_9, v11, v12);
     if (eax13) {
-        v10 = reinterpret_cast<void**>(0x8070f78);
-        caml_fatal_error(0x8070f78, eax8, tmp32_9, v14, v15);
+        v10 = reinterpret_cast<void**>("Fatal error: not enough memory for the initial page table.\n");
+        caml_fatal_error("Fatal error: not enough memory for the initial page table.\n", eax8, tmp32_9, v14, v15);
     }
     caml_fl_init_merge(v10, eax8, tmp32_9);
     eax16 = caml_stat_heap_size;
@@ -16993,7 +16989,7 @@ void caml_init_major_heap(void*** a1) {
     eax19 = fun_804a5c4(0x2000, v17, 1);
     gray_vals = eax19;
     if (!eax19) {
-        eax19 = caml_fatal_error(0x8070fb4, v17, 1, v20, v21);
+        eax19 = caml_fatal_error("Fatal error: not enough memory for the gray cache.\n", v17, 1, v20, v21);
     }
     gray_vals_cur = eax19;
     edx22 = gray_vals_size;
@@ -17171,7 +17167,7 @@ void** caml_raise_out_of_memory(void** ecx, void** a2, void** a3, void** a4, int
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esp12) + 0xffffffb8);
     v18 = esi13;
     v19 = ebx15;
-    eax25 = caml_alloc_small(ecx, esi13 + 1, 0, v20, v21, v17, 1, v18, v19, v22, v23, v24);
+    eax25 = caml_alloc_small(esi13 + 1, 0, v20, v21, v17, 1, v18, v19, v22, v23, v24);
     esp26 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp12) - 4 - 4 - 80 - 4 + 4);
     *reinterpret_cast<void***>(eax25) = v27;
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi13) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi13 == 0))) {
@@ -17187,7 +17183,7 @@ void** caml_raise_out_of_memory(void** ecx, void** a2, void** a3, void** a4, int
     v35 = esp34 + 0xffffffd8;
     caml_local_roots = esp34 + 0xffffffb4;
     v36 = esp34 + 0xffffffd4;
-    eax42 = caml_alloc_small(ecx, 2, 0, v37, v38, v39, v40, v41, v35, 1, 1, v36);
+    eax42 = caml_alloc_small(2, 0, v37, v38, v39, v40, v41, v35, 1, 1, v36);
     *reinterpret_cast<void***>(eax42) = reinterpret_cast<void**>(0);
     *reinterpret_cast<void***>(eax42 + 4) = v43;
     caml_raise(ecx, eax42, 0, v44, v45, v46, v47, v48, v35, 1, 1, v36);
@@ -17203,7 +17199,7 @@ void** caml_raise_out_of_memory(void** ecx, void** a2, void** a3, void** a4, int
     v79 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp78) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp78) + 0xffffffb4);
     v80 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp78) + 0xffffffd4);
-    eax86 = caml_alloc_small(ecx, 1, 0, v81, v82, v83, v84, v85, v79, 1, 1, v80);
+    eax86 = caml_alloc_small(1, 0, v81, v82, v83, v84, v85, v79, 1, 1, v80);
     *reinterpret_cast<void***>(eax86) = eax64;
     caml_raise(ecx, eax86, 0, v87, v88, v89, v90, v91, v79, 1, 1, v80);
     caml_raise_constant(ecx, 0x8072580);
@@ -17334,7 +17330,7 @@ void** realloc_gray_vals(void** a1, void** a2, void** a3) {
         heap_is_pure = 0;
     } else {
         v8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx4) << 2 >> 9);
-        caml_gc_message(8, 0x8070fe8, v8, v9);
+        caml_gc_message(8, "Growing gray_vals to %luk bytes\n", v8, v9);
         eax10 = gray_vals_size;
         eax11 = gray_vals;
         eax12 = fun_8049f24(eax11, reinterpret_cast<unsigned char>(eax10) << 3, v8);
@@ -17346,7 +17342,7 @@ void** realloc_gray_vals(void** a1, void** a2, void** a3) {
             eax6 = eax12 + reinterpret_cast<unsigned char>(edx13) * 8;
             gray_vals_end = eax6;
         } else {
-            caml_gc_message(8, 0x807100c, 0, v14);
+            caml_gc_message(8, "No room for growing gray_vals\n", 0, v14);
             eax6 = gray_vals;
             gray_vals_cur = eax6;
             heap_is_pure = 0;
@@ -17450,8 +17446,8 @@ void** markhp = reinterpret_cast<void**>(0);
 void start_cycle(void** ecx) {
     void** v2;
 
-    caml_gc_message(1, 0x807102b, 0, v2);
-    caml_darken_all_roots(ecx, 1, 0x807102b, 0);
+    caml_gc_message(1, "Starting new major GC cycle\n", 0, v2);
+    caml_darken_all_roots(ecx, 1, "Starting new major GC cycle\n", 0);
     caml_gc_phase = reinterpret_cast<void**>(0);
     caml_gc_subphase = reinterpret_cast<void**>(10);
     markhp = reinterpret_cast<void**>(0);
@@ -17526,10 +17522,10 @@ void** mark_slice(void** a1, void** a2, void** a3) {
     void** eax54;
 
     v4 = eax5;
-    caml_gc_message(64, 0x8071048, eax6, v7);
+    caml_gc_message(64, "Marking %ld words\n", eax6, v7);
     eax8 = caml_gc_subphase;
     v9 = eax8;
-    eax11 = caml_gc_message(64, 0x807105b, v9, v10);
+    eax11 = caml_gc_message(64, "Subphase = %ld\n", v9, v10);
     esi12 = gray_vals_cur;
     if (reinterpret_cast<int32_t>(v4) <= reinterpret_cast<int32_t>(0)) {
         addr_8063db2_2:
@@ -17625,7 +17621,7 @@ void** mark_slice(void** a1, void** a2, void** a3) {
                                     eax11 = *reinterpret_cast<void***>(edx31);
                                     if (!eax11) {
                                         gray_vals_cur = esi12;
-                                        eax11 = caml_final_update(64, 0x807105b, v9);
+                                        eax11 = caml_final_update(64, "Subphase = %ld\n", v9);
                                         esi12 = gray_vals_cur;
                                         caml_gc_subphase = reinterpret_cast<void**>(13);
                                     } else {
@@ -17711,7 +17707,7 @@ void** mark_slice(void** a1, void** a2, void** a3) {
                             }
                             if (!(*reinterpret_cast<unsigned char*>(&edx45 + 1) & 3) && (*reinterpret_cast<unsigned char*>(&edx45 + 1) = reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<unsigned char*>(&edx45 + 1) & 0xfc) | 1), *reinterpret_cast<void***>(eax44 + 0xfffffffc) = edx45, *reinterpret_cast<void***>(v43) = eax44, edx50 = v43 + 4, v43 = edx50, cf51 = reinterpret_cast<unsigned char>(edx50) < reinterpret_cast<unsigned char>(gray_vals_end), !cf51)) {
                                 gray_vals_cur = edx50;
-                                realloc_gray_vals(64, 0x807105b, v9);
+                                realloc_gray_vals(64, "Subphase = %ld\n", v9);
                                 ecx52 = gray_vals_cur;
                                 v43 = ecx52;
                             }
@@ -17729,7 +17725,7 @@ void** mark_slice(void** a1, void** a2, void** a3) {
     gray_vals_cur = esi12;
     eax53 = caml_heap_start;
     caml_gc_sweep_hp = eax53;
-    caml_fl_init_merge(64, 0x807105b, v9);
+    caml_fl_init_merge(64, "Subphase = %ld\n", v9);
     caml_gc_phase = reinterpret_cast<void**>(1);
     eax54 = caml_heap_start;
     chunk = eax54;
@@ -17759,7 +17755,7 @@ void** sweep_slice(void** a1, void** a2, void** a3) {
 
     esi4 = eax5;
     v6 = eax7;
-    eax9 = caml_gc_message(64, 0x807106b, v6, v8);
+    eax9 = caml_gc_message(64, "Sweeping %ld words\n", v6, v8);
     if (reinterpret_cast<uint1_t>(esi4 < 0) | reinterpret_cast<uint1_t>(esi4 == 0)) {
         addr_8063f29_2:
         return eax9;
@@ -17784,9 +17780,9 @@ void** sweep_slice(void** a1, void** a2, void** a3) {
                 edx14 = reinterpret_cast<unsigned char>(eax9) & 0x300;
                 if (!edx14) {
                     if (*reinterpret_cast<signed char*>(&eax9) == -1 && (eax15 = *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx10 + 4) + 4), !!eax15)) {
-                        eax15(ebx10 + 4, 0x807106b, v6);
+                        eax15(ebx10 + 4, "Sweeping %ld words\n", v6);
                     }
-                    eax9 = caml_fl_merge_block(ebx10 + 4, 0x807106b, v6);
+                    eax9 = caml_fl_merge_block(ebx10 + 4, "Sweeping %ld words\n", v6);
                     caml_gc_sweep_hp = eax9;
                 } else {
                     if (edx14 != 0x200) {
@@ -17879,21 +17875,21 @@ void** caml_major_collection_slice(void** ecx, void** a2) {
     __asm__("fcmovbe st0, st1");
     __asm__("fstp st1");
     __asm__("fstp qword [ebp-0x30]");
-    caml_gc_message(64, 0x807107f, eax4, v8);
+    caml_gc_message(64, "allocated_words = %lu\n", eax4, v8);
     __asm__("fld qword [0x8070d30]");
     __asm__("fmul qword [0x8082780]");
     __asm__("fnstcw word [ebp-0x22]");
     __asm__("fldcw word [ebp-0x24]");
     __asm__("fistp qword [ebp-0x20]");
     __asm__("fldcw word [ebp-0x22]");
-    caml_gc_message(64, 0x8071096, v6, v9, 64, 0x8071096, v6, v10);
+    caml_gc_message(64, "extra_heap_resources = %luu\n", v6, v9, 64, "extra_heap_resources = %luu\n", v6, v10);
     __asm__("fld qword [0x8070d30]");
     __asm__("fmul qword [ebp-0x30]");
     __asm__("fnstcw word [ebp-0x22]");
     __asm__("fldcw word [ebp-0x24]");
     __asm__("fistp qword [ebp-0x20]");
     __asm__("fldcw word [ebp-0x22]");
-    caml_gc_message(64, 0x80710b3, v6, v11, 64, 0x80710b3, v6, v12);
+    caml_gc_message(64, "amount of work to do = %luu\n", v6, v11, 64, "amount of work to do = %luu\n", v6, v12);
     zf13 = caml_gc_phase == 0;
     if (!zf13) {
         __asm__("fild qword [ebp-0x20]");
@@ -17917,19 +17913,19 @@ void** caml_major_collection_slice(void** ecx, void** a2) {
         __asm__("fldcw word [ebp-0x22]");
         esi14 = v16;
     }
-    caml_gc_message(64, 0x80710d0, a2, v17, 64, 0x80710d0, a2, v18);
-    caml_gc_message(64, 0x80710ea, esi14, v19, 64, 0x80710ea, esi14, v20);
+    caml_gc_message(64, "ordered work = %ld words\n", a2, v17, 64, "ordered work = %ld words\n", a2, v18);
+    caml_gc_message(64, "computed work = %ld words\n", esi14, v19, 64, "computed work = %ld words\n", esi14, v20);
     if (!a2) {
     }
     zf21 = caml_gc_phase == 0;
     if (!zf21) {
-        sweep_slice(64, 0x80710ea, esi14);
-        v22 = reinterpret_cast<void**>(0x8071107);
-        caml_gc_message(2, 0x8071107, 0, v23, 2, 0x8071107, 0, v24);
+        sweep_slice(64, "computed work = %ld words\n", esi14);
+        v22 = reinterpret_cast<void**>("$");
+        caml_gc_message(2, "$", 0, v23, 2, "$", 0, v24);
     } else {
-        mark_slice(64, 0x80710ea, esi14);
-        v22 = reinterpret_cast<void**>(0x8071105);
-        caml_gc_message(2, 0x8071105, 0, v25, 2, 0x8071105, 0, v26);
+        mark_slice(64, "computed work = %ld words\n", esi14);
+        v22 = reinterpret_cast<void**>("!");
+        caml_gc_message(2, "!", 0, v25, 2, "!", 0, v26);
     }
     zf27 = reinterpret_cast<int1_t>(caml_gc_phase == 2);
     if (zf27) {
@@ -18004,21 +18000,21 @@ void** caml_compact_heap_maybe(void** a1, void** a2, void** a3) {
             __asm__("fld dword [0x80709e8]");
             __asm__("fstp dword [ebp-0x20]");
         }
-        caml_gc_message(0x200, 0x8071b74, eax8, v10, 0x200, 0x8071b74, eax8, v11);
+        caml_gc_message(0x200, "FL size at phase change = %lu\n", eax8, v10, 0x200, "FL size at phase change = %lu\n", eax8, v11);
         __asm__("fnstcw word [ebp-0x1a]");
         __asm__("fld dword [ebp-0x20]");
         __asm__("fldcw word [ebp-0x1c]");
         __asm__("fistp qword [ebp-0x18]");
         __asm__("fldcw word [ebp-0x1a]");
-        caml_gc_message(0x200, 0x8071b3b, reinterpret_cast<unsigned char>(edx9) >> 2, v12, 0x200, 0x8071b3b, reinterpret_cast<unsigned char>(edx9) >> 2, v13);
+        caml_gc_message(0x200, "Estimated overhead = %lu%%\n", reinterpret_cast<unsigned char>(edx9) >> 2, v12, 0x200, "Estimated overhead = %lu%%\n", reinterpret_cast<unsigned char>(edx9) >> 2, v13);
         eax14 = caml_percent_max;
         __asm__("fild qword [ebp-0x18]");
         __asm__("fld dword [ebp-0x20]");
         __asm__("fucomip st0, st1");
         __asm__("fstp st0");
         if (!__intrinsic()) {
-            caml_gc_message(0x200, 0x8071990, 0, v15, 0x200, 0x8071990, 0, v16);
-            caml_finish_major_cycle(0, 0x200, 0x8071990, 0);
+            caml_gc_message(0x200, "Automatic compaction triggered.\n", 0, v15, 0x200, "Automatic compaction triggered.\n", 0, v16);
+            caml_finish_major_cycle(0, 0x200, "Automatic compaction triggered.\n", 0);
             __asm__("fild qword [ebp-0x18]");
             __asm__("fld st0");
             __asm__("fmul dword [0x8071abc]");
@@ -18032,8 +18028,8 @@ void** caml_compact_heap_maybe(void** a1, void** a2, void** a3) {
             __asm__("fldcw word [ebp-0x1c]");
             __asm__("fistp qword [ebp-0x18]");
             __asm__("fldcw word [ebp-0x1a]");
-            caml_gc_message(0x200, 0x8071b57, reinterpret_cast<unsigned char>(eax17) >> 2, v18, 0x200, 0x8071b57, reinterpret_cast<unsigned char>(eax17) >> 2, v19);
-            eax14 = caml_compact_heap(0x200, 0x8071b57, reinterpret_cast<unsigned char>(eax17) >> 2);
+            caml_gc_message(0x200, "Measured overhead: %lu%%\n", reinterpret_cast<unsigned char>(eax17) >> 2, v18, 0x200, "Measured overhead: %lu%%\n", reinterpret_cast<unsigned char>(eax17) >> 2, v19);
+            eax14 = caml_compact_heap(0x200, "Measured overhead: %lu%%\n", reinterpret_cast<unsigned char>(eax17) >> 2);
         }
     }
     return eax14;
@@ -18111,7 +18107,7 @@ void** caml_alloc_shr(void** ecx, void** a2, void** a3) {
         edi20 = eax19;
         if (!eax19) {
             v21 = reinterpret_cast<void**>(4);
-            caml_gc_message(4, 0x80711bb, 0, v22);
+            caml_gc_message(4, "No room for growing heap\n", 0, v22);
             goto addr_8064f92_9;
         }
         edx23 = (reinterpret_cast<unsigned char>(ebx18) >> 2) - 1;
@@ -18144,27 +18140,27 @@ void** caml_alloc_shr(void** ecx, void** a2, void** a3) {
     caml_allocated_words = eax29;
     edx30 = caml_minor_heap_size;
     if (reinterpret_cast<unsigned char>(eax29) > reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(edx30) >> 2)) {
-        caml_urge_major_slice(v9, 0x80711bb, 0, v31);
+        caml_urge_major_slice(v9, "No room for growing heap\n", 0, v31);
     }
     return ebx13 + 4;
     addr_8064f8b_20:
     edi20 = edi20 + 4;
     if (edi20) {
         addr_8064fac_25:
-        caml_fl_add_blocks(edi20, 0x80711bb, 0);
+        caml_fl_add_blocks(edi20, "No room for growing heap\n", 0);
         v9 = esi4;
-        eax32 = caml_fl_allocate(v9, 0x80711bb, 0);
+        eax32 = caml_fl_allocate(v9, "No room for growing heap\n", 0);
         ebx13 = eax32;
         goto addr_8064fbe_4;
     } else {
         addr_8064f92_9:
         zf33 = caml_in_minor_collection == 0;
         if (!zf33) {
-            v21 = reinterpret_cast<void**>(0x80711d5);
-            caml_fatal_error(0x80711d5, 0x80711bb, 0, v34, v35);
+            v21 = reinterpret_cast<void**>("Fatal error: out of memory.\n");
+            caml_fatal_error("Fatal error: out of memory.\n", "No room for growing heap\n", 0, v34, v35);
         }
     }
-    caml_raise_out_of_memory(ecx, v21, 0x80711bb, 0, v36);
+    caml_raise_out_of_memory(ecx, v21, "No room for growing heap\n", 0, v36);
     goto addr_8064fac_25;
     addr_8064f81_21:
     v21 = edi20;
@@ -18214,10 +18210,10 @@ void caml_empty_minor_heap(void** a1, void** a2, void** a3) {
     zf5 = eax4 == caml_young_end;
     if (!zf5) {
         caml_in_minor_collection = 1;
-        v6 = reinterpret_cast<void**>(0x807111c);
+        v6 = reinterpret_cast<void**>("<");
         v7 = reinterpret_cast<void**>(2);
-        caml_gc_message(2, 0x807111c, 0, v8);
-        caml_oldify_local_roots(2, 0x807111c, 0);
+        caml_gc_message(2, "<", 0, v8);
+        caml_oldify_local_roots(2, "<", 0);
         ebx9 = caml_ref_table;
         cf10 = reinterpret_cast<unsigned char>(ebx9) < reinterpret_cast<unsigned char>(g807ebc8);
         if (cf10) {
@@ -18261,10 +18257,10 @@ void caml_empty_minor_heap(void** a1, void** a2, void** a3) {
         caml_young_limit = eax23;
         clear_table(v7, v6, 0);
         clear_table(v7, v6, 0);
-        caml_gc_message(2, 0x8071787, 0, v24, 2, 0x8071787, 0, v25);
+        caml_gc_message(2, ">", 0, v24, 2, ">", 0, v25);
         caml_in_minor_collection = 0;
     }
-    caml_final_empty_young(2, 0x8071787, 0);
+    caml_final_empty_young(2, ">", 0);
     return;
 }
 
@@ -18524,12 +18520,12 @@ void caml_oldify_mopup(void** a1, void** a2, void** a3) {
 
 struct s88 {
     signed char[12] pad12;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s89 {
     signed char[16] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s90 {
@@ -18543,8 +18539,8 @@ void clear_table(void** a1, void** a2, void** a3) {
     struct s89* eax6;
     struct s90* eax7;
 
-    eax4->f12 = *eax5;
-    eax6->f16 = eax7->f8;
+    eax4->fc = *eax5;
+    eax6->f10 = eax7->f8;
     return;
 }
 
@@ -18562,20 +18558,20 @@ void caml_final_empty_young(void** a1, void** a2, void** a3) {
 
 struct s91 {
     signed char[20] pad20;
-    int32_t f20;
+    int32_t f14;
 };
 
 struct s92 {
     signed char[24] pad24;
-    int32_t f24;
+    int32_t f18;
 };
 
 struct s93 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
+    int32_t fc;
+    int32_t f10;
 };
 
 void** reset_table(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9) {
@@ -18591,16 +18587,16 @@ void** reset_table(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
     void** ebp19;
     struct s93* eax20;
 
-    eax10->f20 = 0;
-    eax11->f24 = 0;
+    eax10->f14 = 0;
+    eax11->f18 = 0;
     eax12 = *eax13;
     if (eax12) {
         eax12 = caml_stat_free(ecx, eax12, v14, v15, v16, v17, ebx18, ebp19, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9);
     }
     eax20->f4 = 0;
-    eax20->f16 = 0;
+    eax20->f10 = 0;
     eax20->f8 = 0;
-    eax20->f12 = 0;
+    eax20->fc = 0;
     eax20->f0 = 0;
     return eax12;
 }
@@ -18771,12 +18767,12 @@ void caml_realloc_ref_table(void** ecx, void** a2, void** a3) {
                 eax8 = esi7;
             }
             v9 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax8) >> 10);
-            caml_gc_message(8, 0x807113c, v9, v10);
+            caml_gc_message(8, "Growing ref_table to %ldk bytes\n", v9, v10);
             v11 = *reinterpret_cast<void***>(a2);
             eax12 = fun_8049f24(v11, esi7, v9);
             *reinterpret_cast<void***>(a2) = eax12;
             if (!eax12) {
-                eax12 = caml_fatal_error(0x8071160, esi7, v9, v13, v14);
+                eax12 = caml_fatal_error("Fatal error: ref_table overflow\n", esi7, v9, v13, v14);
             }
             ecx15 = *reinterpret_cast<void***>(a2 + 20);
             edx16 = eax12 + (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2 + 24)) + reinterpret_cast<unsigned char>(ecx15)) * 4;
@@ -18785,9 +18781,9 @@ void caml_realloc_ref_table(void** ecx, void** a2, void** a3) {
             *reinterpret_cast<void***>(a2 + 12) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax12) + (reinterpret_cast<unsigned char>(v5) - reinterpret_cast<unsigned char>(edi4) & 0xfffffffc));
             *reinterpret_cast<void***>(a2 + 16) = edx16;
         } else {
-            caml_gc_message(8, 0x807111e, 0, v17);
+            caml_gc_message(8, "ref_table threshold crossed\n", 0, v17);
             *reinterpret_cast<void***>(a2 + 16) = *reinterpret_cast<void***>(a2 + 4);
-            caml_urge_major_slice(8, 0x807111e, 0, v18);
+            caml_urge_major_slice(8, "ref_table threshold crossed\n", 0, v18);
         }
     } else {
         eax19 = caml_minor_heap_size;
@@ -18838,7 +18834,7 @@ void caml_urge_major_slice(void** a1, void** a2, void** a3, int32_t a4) {
 
 struct s94 {
     signed char[2301] pad2301;
-    void** f2301;
+    void** f8fd;
 };
 
 struct s94* caml_allocation_color(void** a1) {
@@ -18862,7 +18858,7 @@ struct s95 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
 };
 
 void** caml_alloc_for_heap(void** a1) {
@@ -19271,7 +19267,7 @@ void** caml_alloc_string(void** ecx, void** a2, void** a3, void** a4) {
     ebx5 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a2 + 4) >> 2);
     if (reinterpret_cast<unsigned char>(ebx5) > reinterpret_cast<unsigned char>(0x100)) {
         eax6 = caml_alloc_shr(ecx, ebx5, 0xfc);
-        eax8 = caml_check_urgent_gc(ecx, eax6, 0xfc, v7);
+        eax8 = caml_check_urgent_gc(eax6, 0xfc, v7);
     } else {
         edx9 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx5) * 4 + 4);
         edi10 = reinterpret_cast<void*>(-reinterpret_cast<uint32_t>(edx9));
@@ -19304,20 +19300,21 @@ void fun_804a074(void** a1, void** a2, void** a3) {
     goto memset;
 }
 
-void** caml_check_urgent_gc(void** ecx, void** a2, void** a3, void** a4) {
-    void* ebp5;
-    void** ebx6;
-    int32_t eax7;
+void** caml_check_urgent_gc(void** a1, void** a2, void** a3) {
+    void* ebp4;
+    void** ebx5;
+    int32_t eax6;
+    void** ecx7;
 
-    ebp5 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    ebx6 = caml_local_roots;
-    caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 0xffffffd8);
-    eax7 = caml_force_major_slice;
-    if (eax7) {
-        caml_minor_collection(ecx, ebx6, 1, 1, reinterpret_cast<int32_t>(ebp5) + 8);
+    ebp4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
+    ebx5 = caml_local_roots;
+    caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffffd8);
+    eax6 = caml_force_major_slice;
+    if (eax6) {
+        caml_minor_collection(ecx7, ebx5, 1, 1, reinterpret_cast<int32_t>(ebp4) + 8);
     }
-    caml_local_roots = ebx6;
-    return a2;
+    caml_local_roots = ebx5;
+    return a1;
 }
 
 void** caml_alloc_array(void** ecx, void** a2, void** a3) {
@@ -19487,9 +19484,9 @@ void compare_stack_overflow(void** ecx) {
     void** v78;
     int32_t eax79;
 
-    caml_gc_message(4, 0x80711f4, 0, v2, 4, 0x80711f4, 0, v3);
-    compare_free_stack(ecx, 4, 0x80711f4, 0);
-    eax5 = caml_raise_out_of_memory(ecx, 4, 0x80711f4, 0, v4);
+    caml_gc_message(4, "Stack overflow in structural comparison\n", 0, v2, 4, "Stack overflow in structural comparison\n", 0, v3);
+    compare_free_stack(ecx, 4, "Stack overflow in structural comparison\n", 0);
+    eax5 = caml_raise_out_of_memory(ecx, 4, "Stack overflow in structural comparison\n", 0, v4);
     v6 = eax5;
     v7 = edx8;
     v9 = ecx;
@@ -19538,8 +19535,8 @@ void compare_stack_overflow(void** ecx) {
                     case 0:
                     case 2:
                         compare_free_stack(ecx22, v26, v27, v28);
-                        v26 = reinterpret_cast<void**>(0x8071233);
-                        caml_invalid_argument(ecx22, 0x8071233, v27, v28);
+                        v26 = reinterpret_cast<void**>("equal: functional value");
+                        caml_invalid_argument(ecx22, "equal: functional value", v27, v28);
                     case 1:
                         if (reinterpret_cast<signed char>(*reinterpret_cast<void***>(v13 + 4)) >> 1 == reinterpret_cast<signed char>(*reinterpret_cast<void***>(v14 + 4)) >> 1) 
                             goto addr_8065a36_6; else 
@@ -19602,8 +19599,8 @@ void compare_stack_overflow(void** ecx) {
                         }
                     case 4:
                         compare_free_stack(ecx22, v26, v27, v28);
-                        v26 = reinterpret_cast<void**>(0x807121d);
-                        caml_invalid_argument(ecx22, 0x807121d, v27, v28);
+                        v26 = reinterpret_cast<void**>("equal: abstract value");
+                        caml_invalid_argument(ecx22, "equal: abstract value", v27, v28);
                         goto addr_8065873_19;
                     case 5:
                         if (!*reinterpret_cast<unsigned char*>(&eax12)) {
@@ -19724,7 +19721,7 @@ void compare_stack_overflow(void** ecx) {
                             goto addr_80658b7_89;
                         if (!edx62) {
                             compare_free_stack(ecx61, v26, v27, v28);
-                            caml_invalid_argument(ecx61, 0x807121d, v27, v28);
+                            caml_invalid_argument(ecx61, "equal: abstract value", v27, v28);
                         }
                         caml_compare_unordered = 0;
                         v27 = v7;
@@ -20067,7 +20064,7 @@ void** caml_failwith(void** ecx, void** a2, void** a3, void** a4, void** a5) {
     v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffffb4);
     v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp11) + 0xffffffd4);
-    eax19 = caml_alloc_small(ecx, 1, 0, v14, v15, v16, v17, v18, v12, 1, 1, v13);
+    eax19 = caml_alloc_small(1, 0, v14, v15, v16, v17, v18, v12, 1, 1, v13);
     *reinterpret_cast<void***>(eax19) = a2;
     caml_raise(ecx, eax19, 0, v20, v21, v22, v23, v24, v12, 1, 1, v13);
     caml_raise_constant(ecx, 0x8072580);
@@ -20312,12 +20309,12 @@ void** caml_raise_zero_divide(void** ecx) {
     goto 0x80724d0;
 }
 
-void** caml_copy_nativeint(void** a1) {
-    void** eax2;
+void** caml_copy_nativeint(void** ecx, void** a2) {
+    void** eax3;
 
-    eax2 = caml_alloc_custom(0x807b7d4, 4, 0, 1);
-    *reinterpret_cast<void***>(eax2 + 4) = a1;
-    return eax2;
+    eax3 = caml_alloc_custom(ecx, 0x807b7d4, 4, 0, 1);
+    *reinterpret_cast<void***>(eax3 + 4) = a2;
+    return eax3;
 }
 
 void** __divdi3(void** a1, void** a2, void** a3, void** a4) {
@@ -20422,12 +20419,12 @@ void** __divdi3(void** a1, void** a2, void** a3, void** a4) {
     }
 }
 
-void** caml_copy_int32(void** a1) {
-    void** eax2;
+void** caml_copy_int32(void** ecx, void** a2) {
+    void** eax3;
 
-    eax2 = caml_alloc_custom(0x807b79c, 4, 0, 1);
-    *reinterpret_cast<void***>(eax2 + 4) = a1;
-    return eax2;
+    eax3 = caml_alloc_custom(ecx, 0x807b79c, 4, 0, 1);
+    *reinterpret_cast<void***>(eax3 + 4) = a2;
+    return eax3;
 }
 
 void fun_8049eb4();
@@ -20633,7 +20630,7 @@ void** caml_array_bound_error(void** ecx, void** a2, void** a3, void** a4) {
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp29) + 0xffffffb8);
     v35 = esi30;
     v36 = ebx32;
-    eax42 = caml_alloc_small(ecx, esi30 + 1, 0, v37, v38, v34, 1, v35, v36, v39, v40, v41);
+    eax42 = caml_alloc_small(esi30 + 1, 0, v37, v38, v34, 1, v35, v36, v39, v40, v41);
     esp43 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esp29) - 4 - 4 - 80 - 4 + 4);
     *reinterpret_cast<void***>(eax42) = v44;
     if (!(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(esi30) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(esi30 == 0))) {
@@ -20649,7 +20646,7 @@ void** caml_array_bound_error(void** ecx, void** a2, void** a3, void** a4) {
     v52 = esp51 + 0xffffffd8;
     caml_local_roots = esp51 + 0xffffffb4;
     v53 = esp51 + 0xffffffd4;
-    eax59 = caml_alloc_small(ecx, 2, 0, v54, v55, v56, v57, v58, v52, 1, 1, v53);
+    eax59 = caml_alloc_small(2, 0, v54, v55, v56, v57, v58, v52, 1, 1, v53);
     *reinterpret_cast<void***>(eax59) = reinterpret_cast<void**>(0);
     *reinterpret_cast<void***>(eax59 + 4) = v60;
     caml_raise(ecx, eax59, 0, v61, v62, v63, v64, v65, v52, 1, 1, v53);
@@ -20665,7 +20662,7 @@ void** caml_array_bound_error(void** ecx, void** a2, void** a3, void** a4) {
     v96 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp95) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp95) + 0xffffffb4);
     v97 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp95) + 0xffffffd4);
-    eax103 = caml_alloc_small(ecx, 1, 0, v98, v99, v100, v101, v102, v96, 1, 1, v97);
+    eax103 = caml_alloc_small(1, 0, v98, v99, v100, v101, v102, v96, 1, 1, v97);
     *reinterpret_cast<void***>(eax103) = eax81;
     caml_raise(ecx, eax103, 0, v104, v105, v106, v107, v108, v96, 1, 1, v97);
     caml_raise_constant(ecx, 0x8072580);
@@ -20745,10 +20742,11 @@ void** caml_array_bound_error(void** ecx, void** a2, void** a3, void** a4) {
     goto 0x80724d0;
 }
 
-void** caml_array_unsafe_get_float(void** ecx, void*** a2, int32_t a3) {
-    void** edx4;
-    void** eax5;
-    int1_t cf6;
+void** caml_array_unsafe_get_float(void*** a1, int32_t a2) {
+    void** edx3;
+    void** eax4;
+    int1_t cf5;
+    void** ecx6;
     void** v7;
     int32_t v8;
     int32_t v9;
@@ -20758,13 +20756,13 @@ void** caml_array_unsafe_get_float(void** ecx, void*** a2, int32_t a3) {
 
     __asm__("fld qword [eax+edx*8]");
     __asm__("fstp qword [ebp-0x10]");
-    edx4 = caml_young_ptr;
-    eax5 = edx4 + 0xfffffff4;
-    caml_young_ptr = eax5;
-    cf6 = reinterpret_cast<unsigned char>(eax5) < reinterpret_cast<unsigned char>(caml_young_limit);
-    if (cf6) {
-        caml_young_ptr = edx4;
-        caml_minor_collection(ecx, v7, v8, v9, v10);
+    edx3 = caml_young_ptr;
+    eax4 = edx3 + 0xfffffff4;
+    caml_young_ptr = eax4;
+    cf5 = reinterpret_cast<unsigned char>(eax4) < reinterpret_cast<unsigned char>(caml_young_limit);
+    if (cf5) {
+        caml_young_ptr = edx3;
+        caml_minor_collection(ecx6, v7, v8, v9, v10);
         caml_young_ptr = caml_young_ptr - 12;
     }
     eax11 = caml_young_ptr;
@@ -21029,12 +21027,13 @@ void caml_sys_error(void** ecx, void** a2, void** a3, void** a4, void** a5, void
 }
 
 void** caml_alloc_channel(void** a1, void** a2) {
-    void** eax3;
+    void** ecx3;
+    void** eax4;
 
     *reinterpret_cast<void***>(a1 + 44) = *reinterpret_cast<void***>(a1 + 44) + 1;
-    eax3 = caml_alloc_custom(0x807b7f0, 4, 1, 0x3e8);
-    *reinterpret_cast<void***>(eax3 + 4) = a1;
-    return eax3;
+    eax4 = caml_alloc_custom(ecx3, 0x807b7f0, 4, 1, 0x3e8);
+    *reinterpret_cast<void***>(eax4 + 4) = a1;
+    return eax4;
 }
 
 struct s105 {
@@ -21044,11 +21043,11 @@ struct s105 {
     signed char[3] pad8;
     void** f8;
     signed char[7] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
     signed char[31] pad52;
-    void** f52;
+    void** f34;
 };
 
 void** fun_804a844(void** a1, void** a2, void** a3, void** a4);
@@ -21081,28 +21080,28 @@ void caml_seek_in(struct s105* a1, void** a2, void** a3) {
 
     edx4 = a1->f8;
     v5 = a1->f4;
-    edx6 = a1->f20;
-    edx7 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(&a1->f52));
+    edx6 = a1->f14;
+    edx7 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(&a1->f34));
     ecx8 = reinterpret_cast<void**>(reinterpret_cast<signed char>(edx7) >> 31);
     eax9 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v5) - reinterpret_cast<unsigned char>(edx7));
     edx10 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx4) - (reinterpret_cast<unsigned char>(ecx8) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(edx4) < reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(ecx8) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(v5) < reinterpret_cast<unsigned char>(edx7))))));
     if (reinterpret_cast<signed char>(edx10) > reinterpret_cast<signed char>(a3) || (reinterpret_cast<signed char>(edx10) >= reinterpret_cast<signed char>(a3) && reinterpret_cast<unsigned char>(eax9) > reinterpret_cast<unsigned char>(a2) || (reinterpret_cast<signed char>(edx4) < reinterpret_cast<signed char>(a3) || reinterpret_cast<signed char>(edx4) <= reinterpret_cast<signed char>(a3) && reinterpret_cast<unsigned char>(v5) < reinterpret_cast<unsigned char>(a2)))) {
-        caml_enter_blocking_section(v11, v12, v13);
+        caml_enter_blocking_section(ecx8, v11, v12, v13);
         v14 = a1->f0;
         eax15 = fun_804a844(v14, a2, a3, 0);
         if (reinterpret_cast<unsigned char>(edx10) ^ reinterpret_cast<unsigned char>(a3) | reinterpret_cast<unsigned char>(eax15) ^ reinterpret_cast<unsigned char>(a2)) {
-            caml_leave_blocking_section(v14, a2, a3, 0, v16, v17, v5, edx4, v18, edx6, eax9);
+            caml_leave_blocking_section(ecx8, v14, a2, a3, 0, v16, v17, v5, edx4, v18, edx6, eax9);
             v14 = reinterpret_cast<void**>(1);
             caml_sys_error(ecx8, 1, a2, a3, 0, v19, v20, v5, edx4, v21, edx6, eax9, edx10, v22, v23);
         }
-        caml_leave_blocking_section(v14, a2, a3, 0, v24, v25, v5, edx4, v26, edx6, eax9);
+        caml_leave_blocking_section(ecx8, v14, a2, a3, 0, v24, v25, v5, edx4, v26, edx6, eax9);
         a1->f4 = a2;
         a1->f8 = a3;
-        eax27 = reinterpret_cast<void**>(&a1->f52);
-        a1->f20 = eax27;
-        a1->f16 = eax27;
+        eax27 = reinterpret_cast<void**>(&a1->f34);
+        a1->f14 = eax27;
+        a1->f10 = eax27;
     } else {
-        a1->f16 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a2) - reinterpret_cast<unsigned char>(v5) + reinterpret_cast<unsigned char>(edx6));
+        a1->f10 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(a2) - reinterpret_cast<unsigned char>(v5) + reinterpret_cast<unsigned char>(edx6));
     }
     return;
 }
@@ -21140,13 +21139,13 @@ struct s106 {
     signed char[3] pad4;
     uint32_t f4;
     uint32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
     signed char[31] pad52;
-    void** f52;
+    void** f34;
 };
 
 void** caml_do_read(void** ecx, void** a2, void** a3, void** a4);
@@ -21189,25 +21188,25 @@ void* caml_input_scan_line(struct s106* a1) {
     v6 = esi7;
     v8 = ebx9;
     ebx10 = a1;
-    esi11 = ebx10->f16;
-    edi12 = reinterpret_cast<void**>(&ebx10->f52);
+    esi11 = ebx10->f10;
+    edi12 = reinterpret_cast<void**>(&ebx10->f34);
     v13 = edi12;
     v14 = edi12;
     do {
-        if (reinterpret_cast<unsigned char>(esi11) >= reinterpret_cast<unsigned char>(ebx10->f20)) {
-            edx15 = ebx10->f16;
+        if (reinterpret_cast<unsigned char>(esi11) >= reinterpret_cast<unsigned char>(ebx10->f14)) {
+            edx15 = ebx10->f10;
             if (reinterpret_cast<unsigned char>(edx15) > reinterpret_cast<unsigned char>(edi12)) {
-                v16 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f20) - reinterpret_cast<unsigned char>(edx15));
+                v16 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f14) - reinterpret_cast<unsigned char>(edx15));
                 fun_804a684(ecx17, v13, edx15, v16, v18, v19, v20, v13, v14, v21, v22, v23, v8, v6, v4, v2);
-                eax24 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(v14) - reinterpret_cast<unsigned char>(ebx10->f16));
-                ebx10->f16 = v14;
-                ebx10->f20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f20) + reinterpret_cast<uint32_t>(eax24));
+                eax24 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(v14) - reinterpret_cast<unsigned char>(ebx10->f10));
+                ebx10->f10 = v14;
+                ebx10->f14 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f14) + reinterpret_cast<uint32_t>(eax24));
                 esi11 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi11) + reinterpret_cast<uint32_t>(eax24));
             }
-            edx25 = ebx10->f20;
-            if (reinterpret_cast<unsigned char>(edx25) >= reinterpret_cast<unsigned char>(ebx10->f12)) 
+            edx25 = ebx10->f14;
+            if (reinterpret_cast<unsigned char>(edx25) >= reinterpret_cast<unsigned char>(ebx10->fc)) 
                 goto addr_806893e_6;
-            v26 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f12) - reinterpret_cast<unsigned char>(edx25));
+            v26 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->fc) - reinterpret_cast<unsigned char>(edx25));
             v27 = ebx10->f0;
             eax28 = caml_do_read(ecx17, v27, edx25, v26);
             if (!eax28) 
@@ -21217,19 +21216,19 @@ void* caml_input_scan_line(struct s106* a1) {
             cf30 = reinterpret_cast<uint1_t>(tmp32_29 < ebx10->f4);
             ebx10->f4 = tmp32_29;
             ebx10->f8 = ebx10->f8 + reinterpret_cast<unsigned char>(ecx17) + cf30;
-            ebx10->f20 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f20) + reinterpret_cast<unsigned char>(eax28));
+            ebx10->f14 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx10->f14) + reinterpret_cast<unsigned char>(eax28));
         }
         eax31 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi11));
         ++esi11;
     } while (*reinterpret_cast<signed char*>(&eax31) != 10);
-    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi11) - reinterpret_cast<unsigned char>(ebx10->f16));
+    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi11) - reinterpret_cast<unsigned char>(ebx10->f10));
     addr_8068982_12:
     return eax32;
     addr_806893e_6:
-    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx10->f16) - reinterpret_cast<unsigned char>(edx25));
+    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx10->f10) - reinterpret_cast<unsigned char>(edx25));
     goto addr_8068982_12;
     addr_806895d_8:
-    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx10->f16) - reinterpret_cast<unsigned char>(ebx10->f20));
+    eax32 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(ebx10->f10) - reinterpret_cast<unsigned char>(ebx10->f14));
     goto addr_8068982_12;
 }
 
@@ -21343,7 +21342,7 @@ void** caml_getword(void** ecx, void** a2) {
     ebx3 = a2;
     eax4 = caml_channel_binary_mode(ebx3);
     if (!eax4) {
-        caml_failwith(ecx, 0x8071410, v5, v6, v7);
+        caml_failwith(ecx, "input_binary_int: not a binary channel", v5, v6, v7);
     }
     edi8 = reinterpret_cast<void**>(0);
     esi9 = 0;
@@ -21485,7 +21484,7 @@ void** do_write(void** ecx, void** a2, void** a3, void** a4) {
     edi5 = eax6;
     v7 = edx8;
     esi9 = ecx;
-    while (caml_enter_blocking_section(v10, v11, v12), v12 = esi9, v11 = v7, v10 = edi5, eax13 = fun_804a004(v10, v11, v12), caml_leave_blocking_section(v10, v11, v12, v14, v15, v16, v17, v7, v18, v19, v20), reinterpret_cast<int1_t>(eax13 == 0xffffffff)) {
+    while (caml_enter_blocking_section(ecx, v10, v11, v12), v12 = esi9, v11 = v7, v10 = edi5, eax13 = fun_804a004(v10, v11, v12), caml_leave_blocking_section(ecx, v10, v11, v12, v14, v15, v16, v17, v7, v18, v19, v20), reinterpret_cast<int1_t>(eax13 == 0xffffffff)) {
         eax21 = fun_8049df4(v10, v11, v12);
         if (*eax21 == 4) 
             continue;
@@ -21521,7 +21520,7 @@ void caml_putword(void** ecx, void** a2, uint32_t a3) {
 
     eax4 = caml_channel_binary_mode(a2);
     if (!eax4) {
-        caml_failwith(ecx, 0x8071438, v5, v6, v7);
+        caml_failwith(ecx, "output_binary_int: not a binary channel", v5, v6, v7);
     }
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2 + 16)) >= reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a2 + 12))) {
         caml_flush_partial(a2);
@@ -21589,15 +21588,15 @@ void caml_seek_out(void** ecx, void** a2, void** a3, void** a4) {
     void** v22;
 
     caml_flush(a2);
-    caml_enter_blocking_section(a2, v5, v6);
+    caml_enter_blocking_section(ecx, a2, v5, v6);
     v7 = *reinterpret_cast<void***>(a2);
     eax8 = fun_804a844(v7, a3, a4, 0);
     if (edx9 ^ reinterpret_cast<unsigned char>(a4) | reinterpret_cast<unsigned char>(eax8) ^ reinterpret_cast<unsigned char>(a3)) {
-        caml_leave_blocking_section(v7, a3, a4, 0, v10, v11, v12, ebx13, esi14, edi15, ebp16);
+        caml_leave_blocking_section(ecx, v7, a3, a4, 0, v10, v11, v12, ebx13, esi14, edi15, ebp16);
         v7 = reinterpret_cast<void**>(1);
         caml_sys_error(ecx, 1, a3, a4, 0, v17, v18, v19, ebx13, esi14, edi15, ebp16, __return_address(), a2, a3);
     }
-    caml_leave_blocking_section(v7, a3, a4, 0, v20, v21, v22, ebx13, esi14, edi15, ebp16);
+    caml_leave_blocking_section(ecx, v7, a3, a4, 0, v20, v21, v22, ebx13, esi14, edi15, ebp16);
     *reinterpret_cast<void***>(a2 + 4) = a3;
     *reinterpret_cast<void***>(a2 + 8) = a4;
     return;
@@ -21687,7 +21686,7 @@ void extern_out_of_memory(void** ecx, void** a2) {
     zf11 = extern_userprovided_output == 0;
     if (!zf11) {
         extern_replay_trail(v12, v13, v14, v15);
-        eax10 = caml_failwith(ecx, 0x8071468, v16, v17, v18);
+        eax10 = caml_failwith(ecx, "Marshal.to_buffer: buffer overflow", v16, v17, v18);
     }
     ecx19 = extern_ptr;
     edx20 = extern_output_block;
@@ -21732,7 +21731,7 @@ void grow_extern_output(void** ecx, void** a2) {
     zf3 = extern_userprovided_output == 0;
     if (!zf3) {
         extern_replay_trail(v4, v5, v6, v7);
-        eax11 = caml_failwith(ecx, 0x8071468, v8, v9, v10);
+        eax11 = caml_failwith(ecx, "Marshal.to_buffer: buffer overflow", v8, v9, v10);
     }
     ecx12 = extern_ptr;
     edx13 = extern_output_block;
@@ -22941,8 +22940,8 @@ void** caml_output_val(void** ecx, void** a2, int32_t a3, int32_t a4) {
     v6 = edi5;
     eax7 = caml_channel_binary_mode(v6);
     if (!eax7) {
-        v6 = reinterpret_cast<void**>(0x8071528);
-        caml_failwith(ecx, 0x8071528, v8, v9, v10);
+        v6 = reinterpret_cast<void**>("output_value: not a binary channel");
+        caml_failwith(ecx, "output_value: not a binary channel", v8, v9, v10);
     }
     init_extern_output(ecx, v6);
     eax11 = extern_value(ecx, v6);
@@ -23086,31 +23085,31 @@ struct s108 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    void** f16;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
     signed char[3] pad24;
-    void** f24;
+    void** f18;
     signed char[3] pad28;
-    void** f28;
+    void** f1c;
     signed char[3] pad32;
-    void** f32;
+    void** f20;
     signed char[3] pad36;
-    void** f36;
+    void** f24;
     signed char[3] pad40;
-    void** f40;
+    void** f28;
     signed char[3] pad44;
-    void** f44;
+    void** f2c;
     signed char[3] pad48;
-    void** f48;
+    void** f30;
     signed char[3] pad52;
-    void** f52;
+    void** f34;
     signed char[3] pad56;
-    void** f56;
+    void** f38;
     signed char[3] pad60;
-    void** f60;
+    void** f3c;
 };
 
 void caml_MD5Transform(void** a1, void** a2, void** a3);
@@ -23154,19 +23153,19 @@ void caml_MD5Update(void** a1, void** a2, void** a3) {
                 *reinterpret_cast<void***>(ebx8) = eax12->f0;
                 *reinterpret_cast<void***>(ebx8 + 4) = eax12->f4;
                 *reinterpret_cast<void***>(ebx8 + 8) = eax12->f8;
-                *reinterpret_cast<void***>(ebx8 + 12) = eax12->f12;
-                *reinterpret_cast<void***>(ebx8 + 16) = eax12->f16;
-                *reinterpret_cast<void***>(ebx8 + 20) = eax12->f20;
-                *reinterpret_cast<void***>(ebx8 + 24) = eax12->f24;
-                *reinterpret_cast<void***>(ebx8 + 28) = eax12->f28;
-                *reinterpret_cast<void***>(ebx8 + 32) = eax12->f32;
-                *reinterpret_cast<void***>(ebx8 + 36) = eax12->f36;
-                *reinterpret_cast<void***>(ebx8 + 40) = eax12->f40;
-                *reinterpret_cast<void***>(ebx8 + 44) = eax12->f44;
-                *reinterpret_cast<void***>(ebx8 + 48) = eax12->f48;
-                *reinterpret_cast<void***>(ebx8 + 52) = eax12->f52;
-                *reinterpret_cast<void***>(ebx8 + 56) = eax12->f56;
-                *reinterpret_cast<void***>(ebx8 + 60) = eax12->f60;
+                *reinterpret_cast<void***>(ebx8 + 12) = eax12->fc;
+                *reinterpret_cast<void***>(ebx8 + 16) = eax12->f10;
+                *reinterpret_cast<void***>(ebx8 + 20) = eax12->f14;
+                *reinterpret_cast<void***>(ebx8 + 24) = eax12->f18;
+                *reinterpret_cast<void***>(ebx8 + 28) = eax12->f1c;
+                *reinterpret_cast<void***>(ebx8 + 32) = eax12->f20;
+                *reinterpret_cast<void***>(ebx8 + 36) = eax12->f24;
+                *reinterpret_cast<void***>(ebx8 + 40) = eax12->f28;
+                *reinterpret_cast<void***>(ebx8 + 44) = eax12->f2c;
+                *reinterpret_cast<void***>(ebx8 + 48) = eax12->f30;
+                *reinterpret_cast<void***>(ebx8 + 52) = eax12->f34;
+                *reinterpret_cast<void***>(ebx8 + 56) = eax12->f38;
+                *reinterpret_cast<void***>(ebx8 + 60) = eax12->f3c;
                 caml_MD5Transform(v10, v9, v13);
                 esi11 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esi11) + 64);
             } while (reinterpret_cast<unsigned char>(edi4) - reinterpret_cast<uint32_t>(esi11) > 63);
@@ -23298,7 +23297,7 @@ void intern_alloc(void** ecx, void** a2, void** a3, void** a4) {
                     eax8 = caml_alloc_shr(ecx, edx6, 0xfc);
                     intern_block = eax8;
                 } else {
-                    eax14 = caml_alloc_small(ecx, edx6, 0xfc, v9, v10, v11, ebx12, ebp13, __return_address(), a2, a3, a4);
+                    eax14 = caml_alloc_small(edx6, 0xfc, v9, v10, v11, ebx12, ebp13, __return_address(), a2, a3, a4);
                     intern_block = eax14;
                 }
             } else {
@@ -23436,7 +23435,7 @@ void** intern_rec(void** a1, void** a2, void** a3) {
     if (ebx9 <= 31) {
         if (*reinterpret_cast<unsigned char*>(&edx8) > 19) {
             intern_cleanup(ecx19, v26, v27, v28, v29, v30, v31, v22, v4);
-            eax10 = caml_failwith(ecx19, 0x807164c, v32, v33, v34);
+            eax10 = caml_failwith(ecx19, "input_value: ill-formed message", v32, v33, v34);
         } else {
             goto *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(0x8071704) + *reinterpret_cast<unsigned char*>(&edx8) * 4);
         }
@@ -23561,7 +23560,7 @@ int32_t input_val_from_block(void** a1, void** a2, void** a3, void** a4) {
 
 struct s109 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 int32_t caml_input_val_from_string(void* a1, void* a2) {
@@ -23602,7 +23601,7 @@ int32_t caml_input_val_from_string(void* a1, void* a2) {
     v7 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(ecx6) - 4)) << 24);
     v8 = reinterpret_cast<void**>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(ecx6) - 1) + reinterpret_cast<uint32_t>(v7));
     ecx9 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(ecx6) - 2)) << 8);
-    intern_src = reinterpret_cast<void**>(&eax5->f12);
+    intern_src = reinterpret_cast<void**>(&eax5->fc);
     intern_alloc(ecx9, v10, v11, v12);
     intern_src = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a2) + reinterpret_cast<int32_t>(a1) + 20);
     intern_rec(v13, v14, v15);
@@ -23700,11 +23699,11 @@ int32_t caml_input_val(void** ecx, void** a2) {
 
     eax3 = caml_channel_binary_mode(a2);
     if (!eax3) {
-        caml_failwith(ecx, 0x80716e0, v4, v5, v6);
+        caml_failwith(ecx, "input_value: not a binary channel", v4, v5, v6);
     }
     eax7 = caml_getword(ecx, a2);
     if (eax7 != 0x8495a6be) {
-        caml_failwith(ecx, 0x80715a1, v8, v9, v10);
+        caml_failwith(ecx, "input_value: bad object", v8, v9, v10);
     }
     eax11 = caml_getword(ecx, a2);
     eax12 = caml_getword(ecx, a2);
@@ -23715,8 +23714,8 @@ int32_t caml_input_val(void** ecx, void** a2) {
     eax18 = caml_really_getblock(ecx, v17, eax16, eax11);
     if (!eax18) {
         caml_stat_free(ecx, eax16, eax16, eax11, v19, v20, v21, eax12, eax13, v22, v23, v24, v25, v26, v27, v28, ebx29);
-        v17 = reinterpret_cast<void**>(0x80715b9);
-        caml_failwith(ecx, 0x80715b9, eax16, eax11, v30);
+        v17 = reinterpret_cast<void**>("input_value: truncated object");
+        caml_failwith(ecx, "input_value: truncated object", eax16, eax11, v30);
     }
     intern_input = eax16;
     intern_input_malloced = 1;
@@ -24104,7 +24103,7 @@ void** token_name(void** a1, void** a2) {
     }
     goto addr_806bebd_2;
     addr_806beb8_9:
-    ebx3 = reinterpret_cast<void**>(0x8071779);
+    ebx3 = reinterpret_cast<void**>("<unknown token>");
     goto addr_806bebd_2;
 }
 
@@ -24251,8 +24250,8 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
     void** eax77;
 
     v4 = reinterpret_cast<void**>(0);
-    v5 = reinterpret_cast<void**>(0x8071b20);
-    caml_gc_message(16, 0x8071b20, 0, v6);
+    v5 = reinterpret_cast<void**>("Compacting heap...\n");
+    caml_gc_message(16, "Compacting heap...\n", 0, v6);
     eax7 = caml_heap_start;
     if (eax7) {
         do {
@@ -24269,12 +24268,12 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
                     eax7 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax7 + reinterpret_cast<unsigned char>(ecx10) * 4) + 4);
                 } while (reinterpret_cast<unsigned char>(esi9) > reinterpret_cast<unsigned char>(eax7));
             }
-            eax7 = edi8->f12;
+            eax7 = edi8->fc;
         } while (eax7);
     }
-    caml_do_roots(ecx10, invert_root, 0x8071b20, 0);
+    caml_do_roots(ecx10, invert_root, "Compacting heap...\n", 0);
     v11 = reinterpret_cast<void**>(invert_root);
-    caml_final_do_weak_roots(invert_root, 0x8071b20, 0);
+    caml_final_do_weak_roots(invert_root, "Compacting heap...\n", 0);
     eax12 = caml_heap_start;
     if (eax12) {
         do {
@@ -24306,7 +24305,7 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
                     if (eax20 <= 0xfa && edi19 > 1) {
                         esi22 = 1;
                         do {
-                            invert_pointer_at(invert_root, 0x8071b20, 0);
+                            invert_pointer_at(invert_root, "Compacting heap...\n", 0);
                             ++esi22;
                         } while (edi19 > esi22);
                     }
@@ -24335,19 +24334,19 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
                 do {
                     zf31 = *reinterpret_cast<void***>(ebx29) == caml_weak_none;
                     if (!zf31) {
-                        invert_pointer_at(invert_root, 0x8071b20, 0);
+                        invert_pointer_at(invert_root, "Compacting heap...\n", 0);
                     }
                     ++esi30;
                     ebx29 = ebx29 + 4;
                 } while (edi28 > esi30);
             }
-            invert_pointer_at(invert_root, 0x8071b20, 0);
+            invert_pointer_at(invert_root, "Compacting heap...\n", 0);
             v17 = v25;
             edx32 = *reinterpret_cast<void***>(v25);
             v25 = edx32;
         } while (edx32);
     }
-    init_compact_allocate(invert_root, 0x8071b20, 0);
+    init_compact_allocate(invert_root, "Compacting heap...\n", 0);
     ebx33 = caml_heap_start;
     if (ebx33) {
         do {
@@ -24380,7 +24379,7 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
                 }
                 addr_806ede4_42:
                 v40 = reinterpret_cast<void*>(esi37 * 4);
-                eax41 = compact_allocate(invert_root, 0x8071b20, 0);
+                eax41 = compact_allocate(invert_root, "Compacting heap...\n", 0);
                 edx42 = *reinterpret_cast<void***>(ebx33);
                 if (!(*reinterpret_cast<unsigned char*>(&edx42) & 3)) {
                     edi43 = eax41 + 4;
@@ -24423,7 +24422,7 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
             ebx33 = *reinterpret_cast<void***>(v34 + 12);
         } while (ebx33);
     }
-    init_compact_allocate(invert_root, 0x8071b20, 0);
+    init_compact_allocate(invert_root, "Compacting heap...\n", 0);
     ebx50 = caml_heap_start;
     if (!ebx50) {
         addr_806eff3_56:
@@ -24458,7 +24457,7 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
     addr_806efc8_65:
     tmp32_65 = caml_stat_compactions + 1;
     caml_stat_compactions = tmp32_65;
-    eax67 = caml_gc_message(16, 0x8071b34, 0, v66);
+    eax67 = caml_gc_message(16, "done.\n", 0, v66);
     return eax67;
     addr_806ef1c_64:
     edx68 = ecx64;
@@ -24469,12 +24468,12 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
             eax69 = eax69 + (reinterpret_cast<unsigned char>(edx70->f4) >> 2);
             ebx50 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx50) + (reinterpret_cast<unsigned char>(edx70->f8) - reinterpret_cast<unsigned char>(edx70->f4) >> 2));
         }
-        edx68 = edx70->f12;
+        edx68 = edx70->fc;
     } while (edx68);
     edi71 = reinterpret_cast<void**>((eax69 / 100 + 1) * reinterpret_cast<unsigned char>(caml_percent_free));
     while (1) {
         eax72 = reinterpret_cast<struct s95*>(ecx64 + 0xfffffff0);
-        esi73 = eax72->f12;
+        esi73 = eax72->fc;
         if (!eax72->f4) {
             if (reinterpret_cast<unsigned char>(edi71) <= reinterpret_cast<unsigned char>(ebx50)) {
                 v11 = ecx64;
@@ -24498,7 +24497,7 @@ void** caml_compact_heap(void** a1, void** a2, void** a3) {
         if (reinterpret_cast<unsigned char>(edx76) > reinterpret_cast<unsigned char>(eax77)) {
             caml_make_free_blocks(reinterpret_cast<unsigned char>(ebx74) + reinterpret_cast<unsigned char>(eax77), reinterpret_cast<unsigned char>(edx76) - reinterpret_cast<unsigned char>(eax77) >> 2, 1);
         }
-        ebx74 = esi75->f12;
+        ebx74 = esi75->fc;
     } while (ebx74);
     goto addr_806efc8_65;
 }
@@ -24913,11 +24912,11 @@ void caml_print_exception_backtrace(void** a1, void** a2, void** a3) {
     if (!less_or_equal4) {
         ebx5 = reinterpret_cast<void**>(0);
         do {
-            extract_location_info(v6, 0x8071c40, v7, v8, v9, v10, v11);
+            extract_location_info(v6, "%s file \"%s\", line %d, characters %d-%d\n", v7, v8, v9, v10, v11);
             if (v12) {
-                eax13 = reinterpret_cast<void**>(0x8071c1c);
-                if (ebx5 && (eax13 = reinterpret_cast<void**>(0x8071c26), !!v14)) {
-                    eax13 = reinterpret_cast<void**>(0x8071c32);
+                eax13 = reinterpret_cast<void**>("Raised at");
+                if (ebx5 && (eax13 = reinterpret_cast<void**>("Called from"), !!v14)) {
+                    eax13 = reinterpret_cast<void**>("Re-raised at");
                 }
                 v11 = v15;
                 v10 = v16;
@@ -24926,7 +24925,7 @@ void caml_print_exception_backtrace(void** a1, void** a2, void** a3) {
                 v7 = eax13;
                 eax19 = stderr;
                 v6 = eax19;
-                fun_804a574(v6, 0x8071c40, v7, v8, v9, v10, v11, v20, v21, v22, v23, v24);
+                fun_804a574(v6, "%s file \"%s\", line %d, characters %d-%d\n", v7, v8, v9, v10, v11, v20, v21, v22, v23, v24);
             }
             ++ebx5;
             less_or_equal25 = reinterpret_cast<signed char>(caml_backtrace_pos) <= reinterpret_cast<signed char>(ebx5);
@@ -25066,13 +25065,13 @@ void** compact_allocate(void** a1, void** a2, void** a3) {
     ecx4 = compact_fl;
     edx5 = reinterpret_cast<struct s95*>(ecx4 + 0xfffffff0);
     if (reinterpret_cast<unsigned char>(edx5->f8) - reinterpret_cast<unsigned char>(edx5->f4) <= 16) {
-        esi6 = edx5->f12;
+        esi6 = edx5->fc;
         edx7 = reinterpret_cast<struct s95*>(esi6 + 0xfffffff0);
         if (reinterpret_cast<unsigned char>(edx7->f8) - reinterpret_cast<unsigned char>(edx7->f4) <= 16) {
             ecx4 = esi6;
-            while (edx7 = reinterpret_cast<struct s95*>(edx7->f12 + 0xfffffff0), reinterpret_cast<unsigned char>(edx7->f8) - reinterpret_cast<unsigned char>(edx7->f4) <= 16) {
-                esi6 = edx7->f12;
-                ecx4 = edx7->f12;
+            while (edx7 = reinterpret_cast<struct s95*>(edx7->fc + 0xfffffff0), reinterpret_cast<unsigned char>(edx7->f8) - reinterpret_cast<unsigned char>(edx7->f4) <= 16) {
+                esi6 = edx7->fc;
+                ecx4 = edx7->fc;
             }
             compact_fl = esi6;
         }
@@ -25081,7 +25080,7 @@ void** compact_allocate(void** a1, void** a2, void** a3) {
     ebx9 = edx8->f4;
     if (reinterpret_cast<uint32_t>(eax10) > reinterpret_cast<unsigned char>(edx8->f8) - reinterpret_cast<unsigned char>(ebx9)) {
         do {
-            ecx4 = edx8->f12;
+            ecx4 = edx8->fc;
             edx8 = reinterpret_cast<struct s95*>(ecx4 + 0xfffffff0);
             ebx9 = edx8->f4;
         } while (reinterpret_cast<unsigned char>(edx8->f8) - reinterpret_cast<unsigned char>(ebx9) < reinterpret_cast<uint32_t>(eax11));
@@ -25297,7 +25296,7 @@ void init_compact_allocate(void** a1, void** a2, void** a3) {
         do {
             eax5 = reinterpret_cast<struct s95*>(eax4 - 16);
             eax5->f4 = reinterpret_cast<void**>(0);
-            eax4 = eax5->f12;
+            eax4 = eax5->fc;
         } while (eax4);
     }
     eax6 = caml_heap_start;
@@ -25506,17 +25505,17 @@ struct s121 {
 
 struct s122 {
     signed char[12] pad12;
-    uint32_t f12;
+    uint32_t fc;
 };
 
 struct s123 {
     signed char[16] pad16;
-    uint32_t f16;
+    uint32_t f10;
 };
 
 struct s124 {
     signed char[20] pad20;
-    uint32_t f20;
+    uint32_t f14;
 };
 
 struct s125 {
@@ -25549,9 +25548,9 @@ void extract_location_info(void** a1, void** a2, void** a3, void** a4, int32_t a
         *reinterpret_cast<unsigned char*>(&eax15) = reinterpret_cast<uint1_t>(!!(edi12 & 3));
         edx16->f4 = eax15 & 0xff;
         edx17->f8 = reinterpret_cast<void*>((edi12 & 0x3fffffc) + reinterpret_cast<uint32_t>(ebx9));
-        edx18->f12 = ecx13 >> 12;
-        edx19->f16 = ecx13 >> 4 & 0xff;
-        edx20->f20 = edi12 >> 26 | (ecx13 & 15) << 6;
+        edx18->fc = ecx13 >> 12;
+        edx19->f10 = ecx13 >> 4 & 0xff;
+        edx20->f14 = edi12 >> 26 | (ecx13 & 15) << 6;
     } else {
         *edx21 = 0;
         edx22->f4 = 1;
@@ -25677,7 +25676,7 @@ int32_t camlSource__loopA_1046() {
 
 struct s126 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 void*** fun_804b970(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15) {
@@ -25696,7 +25695,7 @@ void*** fun_804b970(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     v16 = reinterpret_cast<void**>(__return_address());
     v17 = caml_exception_pointer;
     caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    v18 = edi19->f12;
+    v18 = edi19->fc;
     eax20 = caml_c_call(ecx, v18, v17, v16, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     ecx21 = eax20;
     while (eax22 = caml_young_ptr, eax23 = eax22 - 24, caml_young_ptr = eax23, cf24 = reinterpret_cast<unsigned char>(eax23) < reinterpret_cast<unsigned char>(caml_young_limit), cf24) {
@@ -25714,8 +25713,7 @@ void*** fun_804b970(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     goto a5;
 }
 
-void** caml_ml_array_bound_error(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18) {
-    void** ecx19;
+void** caml_ml_array_bound_error(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18, void** a19) {
     void** ecx20;
     void** edx21;
     void** v22;
@@ -25750,11 +25748,11 @@ void** caml_ml_array_bound_error(void** a1, void** a2, void** a3, void** a4, voi
     __asm__("ffree st7");
     caml_last_return_address = reinterpret_cast<void**>(__return_address());
     caml_bottom_of_stack = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) + 4);
-    caml_array_bound_error(ecx19, __return_address(), a1, a2);
-    ecx20 = a2;
-    edx21 = a1;
-    v22 = a3;
-    v23 = a4;
+    caml_array_bound_error(ecx, __return_address(), a2, a3);
+    ecx20 = a3;
+    edx21 = a2;
+    v22 = a4;
+    v23 = a5;
     v24 = 0;
     if (reinterpret_cast<signed char>(ecx20) >= reinterpret_cast<signed char>(0)) {
         if (reinterpret_cast<signed char>(v23) < reinterpret_cast<signed char>(0)) 
@@ -26038,10 +26036,10 @@ void fun_804d100(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     }
     ebx20 = eax18 + 4;
     *reinterpret_cast<void***>(ebx20 + 0xfffffffc) = reinterpret_cast<void**>(0xc00);
-    *reinterpret_cast<void***>(ebx20) = reinterpret_cast<void**>(0x8073a70);
-    *reinterpret_cast<void***>(ebx20 + 4) = reinterpret_cast<void**>(0x8073a7c);
+    *reinterpret_cast<void***>(ebx20) = reinterpret_cast<void**>("/bin/sh");
+    *reinterpret_cast<void***>(ebx20 + 4) = reinterpret_cast<void**>("-c");
     *reinterpret_cast<void***>(ebx20 + 8) = a2;
-    caml_c_call(ecx, 0x8073a64, ebx20, v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    caml_c_call(ecx, "/bin/sh", ebx20, v16, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     caml_exception_pointer = v16;
     goto a3;
 }
@@ -26282,7 +26280,7 @@ void*** fun_804e752(void** ecx, void** a2, void** a3, void** a4, void** a5, void
 
     v16 = caml_exception_pointer;
     caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
-    eax17 = caml_c_call(ecx, 0x8073958, v16, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax17 = caml_c_call(ecx, "::1", v16, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     caml_exception_pointer = v16;
     g8072f64 = eax17;
     g8072f6c = 0x80732a8;
@@ -26421,14 +26419,15 @@ int32_t caml_string_compare(void** ecx, void** a2, void** a3, void** a4, void** 
     ecx21 = eax19;
     cf22 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(eax19) < reinterpret_cast<unsigned char>(eax19));
     below_or_equal23 = reinterpret_cast<unsigned char>(eax19) <= reinterpret_cast<unsigned char>(eax19);
-    while (ecx21) {
+    do {
+        if (!ecx21) 
+            break;
         --ecx21;
         cf22 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi20)) < reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi9)));
         below_or_equal23 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi20)) <= reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi9));
-        *reinterpret_cast<void***>(edi9) = *reinterpret_cast<void***>(esi20);
         ++edi9;
         ++esi20;
-    }
+    } while (*reinterpret_cast<void***>(esi20) == *reinterpret_cast<void***>(edi9));
     eax24 = reinterpret_cast<signed char>(reinterpret_cast<uint1_t>(!below_or_equal23) - cf22);
     if (eax24 < 0) 
         goto addr_806797d_9;
@@ -26465,7 +26464,7 @@ void caml_garbage_collection(void** ecx) {
     if (!below_or_equal3 || (eax4 = caml_force_major_slice, !!eax4)) {
         caml_minor_collection(ecx, v5, v6, ebp7, __return_address());
     }
-    caml_process_pending_signals(v8, v9);
+    caml_process_pending_signals(ecx, v8, v9);
     return;
 }
 
@@ -26773,7 +26772,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
             if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) & 0xff) == 0xfe) {
                 if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ebx43)) {
                     addr_8050d1a_13:
-                    caml_ml_array_bound_error(v33, v31, v22, v45, v46, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                    caml_ml_array_bound_error(ecx, v33, v31, v22, v45, v46, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
                     esp15 = esp15 - 4 + 4;
                     goto addr_8050d1f_14;
                 } else {
@@ -26790,7 +26789,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
             } else {
                 if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ebx43)) {
                     addr_8050d1f_14:
-                    caml_ml_array_bound_error(v33, v31, v22, v53, v54, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                    caml_ml_array_bound_error(ecx, v33, v31, v22, v53, v54, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
                     esp55 = esp15 - 4 + 4;
                     goto addr_8050d24_19;
                 } else {
@@ -26801,7 +26800,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         edx44 = *reinterpret_cast<void***>(ecx + 16);
         if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) & 0xff) == 0xfe) {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(esi18)) {
-                caml_ml_array_bound_error(v33, v31, v22, v56, v57, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                caml_ml_array_bound_error(ecx, v33, v31, v22, v56, v57, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
                 esp15 = esp15 - 4 + 4;
                 goto addr_8050d15_24;
             } else {
@@ -26815,7 +26814,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         } else {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(esi18)) {
                 addr_8050d15_24:
-                caml_ml_array_bound_error(v33, v31, v22, v63, v64, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+                caml_ml_array_bound_error(ecx, v33, v31, v22, v63, v64, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
                 esp15 = esp15 - 4 + 4;
                 goto addr_8050d1a_13;
             }
@@ -26833,7 +26832,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if (ebx43 == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx + 16) + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(edx44)) {
             addr_8050d42_34:
-            caml_ml_array_bound_error(v33, v31, v22, v68, v69, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v68, v69, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp15 = esp15 - 4 + 4;
             goto addr_8050d47_35;
         } else {
@@ -26849,7 +26848,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     } else {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx + 16) + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx44)) {
             addr_8050d47_35:
-            eax77 = caml_ml_array_bound_error(v33, v31, v22, v75, v76, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            eax77 = caml_ml_array_bound_error(ecx, v33, v31, v22, v75, v76, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             goto addr_8050d50_40;
         } else {
             ebx43 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(*reinterpret_cast<void***>(ecx + 16) + reinterpret_cast<unsigned char>(edx44) * 2) - 2);
@@ -26859,7 +26858,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) & 0xff) == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(esi18)) {
             addr_8050d38_44:
-            caml_ml_array_bound_error(v33, v31, v22, v78, v79, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v78, v79, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp15 = esp15 - 4 + 4;
             goto addr_8050d3d_45;
         } else {
@@ -26874,7 +26873,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     } else {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(esi18)) {
             addr_8050d3d_45:
-            caml_ml_array_bound_error(v33, v31, v22, v85, v86, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v85, v86, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp15 = esp15 - 4 + 4;
             goto addr_8050d42_34;
         }
@@ -26892,7 +26891,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if (ebx43 == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx)) {
             addr_8050d2e_55:
-            caml_ml_array_bound_error(v33, v31, v22, v91, v92, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v91, v92, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp55 = esp55 - 4 + 4;
             goto addr_8050d33_56;
         } else {
@@ -26908,7 +26907,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     } else {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx44 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx)) {
             addr_8050d33_56:
-            caml_ml_array_bound_error(v33, v31, v22, v98, v99, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v98, v99, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp15 = esp55 - 4 + 4;
             goto addr_8050d38_44;
         } else {
@@ -26920,7 +26919,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 0xfffffffc)) & 0xff) == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(edx44)) {
             addr_8050d24_19:
-            caml_ml_array_bound_error(v33, v31, v22, v100, v101, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v100, v101, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp55 = esp55 - 4 + 4;
             goto addr_8050d29_64;
         } else {
@@ -26934,7 +26933,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     } else {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx44)) {
             addr_8050d29_64:
-            caml_ml_array_bound_error(v33, v31, v22, v107, v108, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            caml_ml_array_bound_error(ecx, v33, v31, v22, v107, v108, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             esp55 = esp55 - 4 + 4;
             goto addr_8050d2e_55;
         }
@@ -27017,10 +27016,10 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         edx44 = esi134;
     }
     addr_8050f50_100:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v145, 0x8050d4c, v33, v31, v22, v146, v147, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v145, 0x8050d4c, v33, v31, v22, v146, v147, v14, a2, a3, a4, a5, a6);
     esp124 = esp124 - 4 + 4;
     addr_8050f55_79:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v148, 0x8050d4c, v33, v31, v22, v149, v150, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v148, 0x8050d4c, v33, v31, v22, v149, v150, v14, a2, a3, a4, a5, a6);
     v151 = ecx126;
     v152 = edx125;
     eax154 = fun_8050ff0(v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v153, 0x8050d4c, v33, v31);
@@ -27039,7 +27038,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) & 0xff) == 0xfe) {
         ecx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 10);
         if (reinterpret_cast<unsigned char>(ecx161) <= reinterpret_cast<unsigned char>(ebx159)) {
-            caml_ml_array_bound_error(v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v162, 0x8050d4c, v33, v31, v22, v163, v164, v14, a2);
+            caml_ml_array_bound_error(ecx161, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v162, 0x8050d4c, v33, v31, v22, v163, v164, v14, a2);
             esp155 = esp155 - 4 + 4;
             goto addr_8051016_107;
         } else {
@@ -27050,7 +27049,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         ecx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 9);
         if (reinterpret_cast<unsigned char>(ecx161) <= reinterpret_cast<unsigned char>(ebx159)) {
             addr_8051016_107:
-            eax168 = caml_ml_array_bound_error(v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v165, 0x8050d4c, v33, v31, v22, v166, v167, v14, a2);
+            eax168 = caml_ml_array_bound_error(ecx161, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v165, 0x8050d4c, v33, v31, v22, v166, v167, v14, a2);
             goto addr_8051020_110;
         } else {
             caml_modify(v151, reinterpret_cast<uint32_t>(eax160 + reinterpret_cast<unsigned char>(ebx159) * 2) + 0xfffffffe, v151, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v169, 0x8050d4c, v33, v31, v22, v170, v171, v14, a2, a3, a4, a5, a6, a7);
@@ -27103,10 +27102,10 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         ecx161 = esi179;
     }
     addr_8051110_129:
-    caml_ml_array_bound_error(v175, v173, v174, v191, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v192, 0x8050d4c, v33, v31);
+    caml_ml_array_bound_error(ecx180, v175, v173, v174, v191, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v192, 0x8050d4c, v33, v31);
     esp172 = esp172 - 4 + 4;
     addr_8051115_119:
-    caml_ml_array_bound_error(v175, v173, v174, v193, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v194, 0x8050d4c, v33, v31);
+    caml_ml_array_bound_error(ecx180, v175, v173, v174, v193, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v194, 0x8050d4c, v33, v31);
     eax197 = fun_8051150(ecx180, v175, v173, v174, v195, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v196, 0x8050d4c);
     ecx198 = g8076430;
     if (eax197->f0 != ecx198) {
@@ -27121,10 +27120,10 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         goto v175;
     }
     addr_8051106_123:
-    caml_ml_array_bound_error(v175, v173, v174, v204, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v205, 0x8050d4c, v33, v31);
+    caml_ml_array_bound_error(ecx180, v175, v173, v174, v204, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v205, 0x8050d4c, v33, v31);
     esp172 = esp172 - 4 + 4;
     addr_805110b_126:
-    caml_ml_array_bound_error(v175, v173, v174, v206, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v207, 0x8050d4c, v33, v31);
+    caml_ml_array_bound_error(ecx180, v175, v173, v174, v206, 0x805101b, v152, v151, v141, 0x8050f5a, v117, v114, v116, v115, v119, v207, 0x8050d4c, v33, v31);
     esp172 = esp172 - 4 + 4;
     goto addr_8051110_129;
     addr_8050ec0_82:
@@ -27132,7 +27131,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax208 + 0xfffffffc)) & 0xff) == 0xfe) {
         ecx126 = v115;
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax208 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx126)) {
-            caml_ml_array_bound_error(v117, v114, v116, v115, v119, v209, 0x8050d4c, v33, v31, v22, v210, v211, v14, a2, a3, a4, a5, a6);
+            caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v209, 0x8050d4c, v33, v31, v22, v210, v211, v14, a2, a3, a4, a5, a6);
             esp113 = esp113 - 4 + 4;
             goto addr_8050f37_136;
         } else {
@@ -27143,7 +27142,7 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
         ecx126 = v115;
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax208 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx126)) {
             addr_8050f37_136:
-            caml_ml_array_bound_error(v117, v114, v116, v115, v119, v212, 0x8050d4c, v33, v31, v22, v213, v214, v14, a2, a3, a4, a5, a6);
+            caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v212, 0x8050d4c, v33, v31, v22, v213, v214, v14, a2, a3, a4, a5, a6);
             esp113 = esp113 - 4 + 4;
             goto addr_8050f3c_94;
         } else {
@@ -27152,16 +27151,16 @@ void** camlArray__maxson_1155(void** ecx, void** a2, void** a3, void** a4, void*
     }
     goto v33;
     addr_8050f3c_94:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v218, 0x8050d4c, v33, v31, v22, v219, v220, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v218, 0x8050d4c, v33, v31, v22, v219, v220, v14, a2, a3, a4, a5, a6);
     esp113 = esp113 - 4 + 4;
     addr_8050f41_97:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v221, 0x8050d4c, v33, v31, v22, v222, v223, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v221, 0x8050d4c, v33, v31, v22, v222, v223, v14, a2, a3, a4, a5, a6);
     esp113 = esp113 - 4 + 4;
     addr_8050f46_85:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v224, 0x8050d4c, v33, v31, v22, v225, v226, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v224, 0x8050d4c, v33, v31, v22, v225, v226, v14, a2, a3, a4, a5, a6);
     esp113 = esp113 - 4 + 4;
     addr_8050f4b_90:
-    caml_ml_array_bound_error(v117, v114, v116, v115, v119, v227, 0x8050d4c, v33, v31, v22, v228, v229, v14, a2, a3, a4, a5, a6);
+    caml_ml_array_bound_error(ecx126, v117, v114, v116, v115, v119, v227, 0x8050d4c, v33, v31, v22, v228, v229, v14, a2, a3, a4, a5, a6);
     esp124 = esp113 - 4 + 4;
     goto addr_8050f50_100;
 }
@@ -27280,7 +27279,7 @@ int32_t camlArray__trickle_1165(void** ecx, void** a2, void** a3, void** a4, voi
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax35 + 0xfffffffc)) & 0xff) == 0xfe) {
         ecx36 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax35 + 0xfffffffc)) >> 10);
         if (reinterpret_cast<unsigned char>(ecx36) <= reinterpret_cast<unsigned char>(ebx34)) {
-            caml_ml_array_bound_error(v22, v21, v37, v38, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+            caml_ml_array_bound_error(ecx36, v22, v21, v37, v38, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             esp27 = esp27 - 4 + 4;
             goto addr_8051016_7;
         } else {
@@ -27291,7 +27290,7 @@ int32_t camlArray__trickle_1165(void** ecx, void** a2, void** a3, void** a4, voi
         ecx36 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax35 + 0xfffffffc)) >> 9);
         if (reinterpret_cast<unsigned char>(ecx36) <= reinterpret_cast<unsigned char>(ebx34)) {
             addr_8051016_7:
-            eax41 = caml_ml_array_bound_error(v22, v21, v39, v40, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+            eax41 = caml_ml_array_bound_error(ecx36, v22, v21, v39, v40, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             goto addr_8051020_10;
         } else {
             caml_modify(v21, reinterpret_cast<uint32_t>(eax35 + reinterpret_cast<unsigned char>(ebx34) * 2) + 0xfffffffe, v21, v22, v21, v42, v43, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
@@ -27344,10 +27343,10 @@ int32_t camlArray__trickle_1165(void** ecx, void** a2, void** a3, void** a4, voi
         ecx36 = esi53;
     }
     addr_8051110_29:
-    caml_ml_array_bound_error(v47, v45, v46, v66, 0x805101b, v22, v21, v67, v68, v20, a2, a3, a4, a5, a6, a7, a8, a9);
+    caml_ml_array_bound_error(ecx54, v47, v45, v46, v66, 0x805101b, v22, v21, v67, v68, v20, a2, a3, a4, a5, a6, a7, a8, a9);
     esp44 = esp44 - 4 + 4;
     addr_8051115_19:
-    caml_ml_array_bound_error(v47, v45, v46, v69, 0x805101b, v22, v21, v70, v71, v20, a2, a3, a4, a5, a6, a7, a8, a9);
+    caml_ml_array_bound_error(ecx54, v47, v45, v46, v69, 0x805101b, v22, v21, v70, v71, v20, a2, a3, a4, a5, a6, a7, a8, a9);
     eax75 = fun_8051150(ecx54, v47, v45, v46, v72, 0x805101b, v22, v21, v73, v74, v20, a2, a3, a4, a5, a6, a7);
     ecx76 = g8076430;
     if (eax75->f0 != ecx76) {
@@ -27362,10 +27361,10 @@ int32_t camlArray__trickle_1165(void** ecx, void** a2, void** a3, void** a4, voi
         goto v47;
     }
     addr_8051106_23:
-    caml_ml_array_bound_error(v47, v45, v46, v85, 0x805101b, v22, v21, v86, v87, v20, a2, a3, a4, a5, a6, a7, a8, a9);
+    caml_ml_array_bound_error(ecx54, v47, v45, v46, v85, 0x805101b, v22, v21, v86, v87, v20, a2, a3, a4, a5, a6, a7, a8, a9);
     esp44 = esp44 - 4 + 4;
     addr_805110b_26:
-    caml_ml_array_bound_error(v47, v45, v46, v88, 0x805101b, v22, v21, v89, v90, v20, a2, a3, a4, a5, a6, a7, a8, a9);
+    caml_ml_array_bound_error(ecx54, v47, v45, v46, v88, 0x805101b, v22, v21, v89, v90, v20, a2, a3, a4, a5, a6, a7, a8, a9);
     esp44 = esp44 - 4 + 4;
     goto addr_8051110_29;
 }
@@ -27535,23 +27534,23 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
     void** ecx158;
     void** eax159;
     void** eax160;
-    void** ecx161;
-    void** ebx162;
-    void** esi163;
+    void** ebx161;
+    void** esi162;
+    void** v163;
     void** v164;
-    void** v165;
+    void** eax165;
     void** eax166;
-    void** eax167;
-    int1_t cf168;
-    void** eax169;
-    void** ecx170;
-    void** v171;
-    void** v172;
-    void** ecx173;
-    void** eax174;
-    void** eax175;
-    int1_t cf176;
-    void** edx177;
+    int1_t cf167;
+    void** eax168;
+    void** v169;
+    void** v170;
+    void** eax171;
+    void** eax172;
+    int1_t cf173;
+    void** edx174;
+    void** v175;
+    void** v176;
+    void** v177;
     void** v178;
     void** v179;
     void** v180;
@@ -27561,58 +27560,58 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
     void** v184;
     void** v185;
     void** v186;
-    void** v187;
-    void** v188;
-    void** v189;
-    void** ebx190;
-    void** ecx191;
-    void** eax192;
-    void** edx193;
-    void* esi194;
-    void** edi195;
-    void** v196;
-    void** ebp197;
-    uint32_t eax198;
-    uint32_t eax199;
+    void** ebx187;
+    void** ecx188;
+    void** eax189;
+    void** edx190;
+    void* esi191;
+    void** edi192;
+    void** v193;
+    void** ebp194;
+    uint32_t eax195;
+    uint32_t eax196;
+    void** v197;
+    void** esi198;
+    void** v199;
     void** v200;
-    void** esi201;
-    void** v202;
-    void** v203;
-    void** ecx204;
-    void** eax205;
-    void** eax206;
-    int1_t cf207;
-    void** v208;
-    void** ecx209;
-    void** ebx210;
-    void** ecx211;
-    void** v212;
+    void** ecx201;
+    void** eax202;
+    void** eax203;
+    int1_t cf204;
+    void** v205;
+    void** ecx206;
+    void** ebx207;
+    void** ecx208;
+    void** v209;
+    void** v210;
+    void** ebx211;
+    void** esi212;
     void** v213;
-    void** ebx214;
-    void** esi215;
-    void** v216;
-    void** eax217;
+    void** eax214;
+    void** eax215;
+    int1_t cf216;
+    void** v217;
     void** eax218;
-    int1_t cf219;
+    void** ebx219;
     void** v220;
-    void** eax221;
+    void** v221;
     void** ebx222;
-    void** v223;
-    void** v224;
-    void** ebx225;
+    void** eax223;
+    void** eax224;
+    int1_t cf225;
     void** eax226;
-    void** eax227;
-    int1_t cf228;
-    void** eax229;
+    void** v227;
+    void** v228;
+    void** v229;
     void** v230;
     void** v231;
     void** v232;
     void** v233;
     void** v234;
-    void** v235;
+    void** eax235;
     void** v236;
     void** v237;
-    void** eax238;
+    void** v238;
     void** v239;
     void** v240;
     void** v241;
@@ -27630,9 +27629,6 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
     void** v253;
     void** v254;
     void** v255;
-    void** v256;
-    void** v257;
-    void** v258;
 
     v18 = reinterpret_cast<void**>(__return_address());
     while (1) {
@@ -27718,9 +27714,9 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         ecx = edi19;
     }
     addr_8051434_36:
-    caml_ml_array_bound_error(v26, v27, v28, v29, v55, v56, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v55, v56, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     addr_8051439_13:
-    eax59 = caml_ml_array_bound_error(v26, v27, v28, v29, v57, v58, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    eax59 = caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v57, v58, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     while (1) {
         v60 = eax59;
         v61 = ecx22;
@@ -27751,7 +27747,7 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         if (edx75 == 0xfe) {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx74 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(v62)) {
                 addr_80515c3_42:
-                caml_ml_array_bound_error(v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v76, v77, v18, a2, a3, a4, a5);
+                caml_ml_array_bound_error(ecx67, v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v76, v77, v18, a2, a3, a4, a5);
                 goto addr_80515c8_43;
             } else {
                 while (eax78 = caml_young_ptr, eax79 = eax78 - 12, caml_young_ptr = eax79, cf80 = reinterpret_cast<unsigned char>(eax79) < reinterpret_cast<unsigned char>(caml_young_limit), cf80) {
@@ -27765,7 +27761,7 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         } else {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx74 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(v62)) {
                 addr_80515c8_43:
-                eax83 = caml_ml_array_bound_error(v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v81, v82, v18, a2, a3, a4, a5);
+                eax83 = caml_ml_array_bound_error(ecx67, v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v81, v82, v18, a2, a3, a4, a5);
                 esi84 = esi69;
                 goto addr_80515d0_48;
             } else {
@@ -27777,12 +27773,12 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         if (ebx74 == 0xfe) {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 10) > reinterpret_cast<unsigned char>(ecx67)) 
                 goto addr_8051567_52;
-            caml_ml_array_bound_error(v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v85, v86, v18, a2, a3, a4, a5);
+            caml_ml_array_bound_error(ecx67, v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v85, v86, v18, a2, a3, a4, a5);
         } else {
             if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 9) > reinterpret_cast<unsigned char>(ecx67)) 
                 goto addr_8051557_55;
         }
-        caml_ml_array_bound_error(v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v87, v88, v18, a2, a3, a4, a5);
+        caml_ml_array_bound_error(ecx67, v60, v61, v63, v65, v62, v52, 0x805143e, v26, v27, v28, v29, v87, v88, v18, a2, a3, a4, a5);
         goto addr_80515c3_42;
         addr_80515d0_48:
         while (edi89 = reinterpret_cast<void**>(1), edx90 = edx75 + 0xfffffffe, reinterpret_cast<signed char>(1) <= reinterpret_cast<signed char>(edx90)) {
@@ -27897,32 +27893,32 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
             } while (ecx127 != v91);
             break;
             addr_80518c3_105:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v128, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v128, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             addr_80518c8_64:
-            eax83 = caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v129, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            eax83 = caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v129, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             if (reinterpret_cast<signed char>(edx75) > reinterpret_cast<signed char>(11)) 
                 goto addr_80518f0_107;
             esi84 = *reinterpret_cast<void***>(esi84 + 20);
             continue;
             addr_80518b9_72:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v130, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v130, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             addr_80518be_77:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v131, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v131, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             goto addr_80518c3_105;
             addr_80518af_82:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v132, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v132, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             addr_80518b4_87:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v133, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v133, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             goto addr_80518b9_72;
             addr_80518a5_91:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v134, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v134, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             addr_80518aa_94:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v135, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v135, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             goto addr_80518af_82;
             addr_805189b_99:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v136, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v136, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             addr_80518a0_102:
-            caml_ml_array_bound_error(v96, v98, v99, v92, v91, v94, v93, v95, v137, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
+            caml_ml_array_bound_error(ecx67, v96, v98, v99, v92, v91, v94, v93, v95, v137, 0x80515cd, v60, v61, v63, v65, v62, v52, 0x805143e, v26);
             goto addr_80518a5_91;
         }
         break;
@@ -27971,189 +27967,189 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         if (reinterpret_cast<signed char>(eax159) > reinterpret_cast<signed char>(1)) {
             edi73 = v157;
             eax160 = *reinterpret_cast<void***>(edi73 + 24);
-            ecx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) & 0xff);
-            if (ecx161 == 0xfe) {
-                ebx162 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 10);
-                esi163 = v156;
-                if (reinterpret_cast<unsigned char>(ebx162) <= reinterpret_cast<unsigned char>(esi163)) 
+            ecx150 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) & 0xff);
+            if (ecx150 == 0xfe) {
+                ebx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 10);
+                esi162 = v156;
+                if (reinterpret_cast<unsigned char>(ebx161) <= reinterpret_cast<unsigned char>(esi162)) 
                     break;
                 __asm__("fld qword [ebx]");
                 __asm__("fstp qword [eax+esi*4-0x4]");
             } else {
-                ebx162 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 9);
-                esi163 = v156;
-                if (reinterpret_cast<unsigned char>(ebx162) <= reinterpret_cast<unsigned char>(esi163)) 
+                ebx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax160 + 0xfffffffc)) >> 9);
+                esi162 = v156;
+                if (reinterpret_cast<unsigned char>(ebx161) <= reinterpret_cast<unsigned char>(esi162)) 
                     goto addr_805062f_121;
-                caml_modify(ecx161, reinterpret_cast<uint32_t>(eax160 + reinterpret_cast<unsigned char>(esi163) * 2) + 0xfffffffe, v155, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v164, v165, v18, a2, a3, a4, a5, a6, a7, a8, a9);
+                caml_modify(ecx150, reinterpret_cast<uint32_t>(eax160 + reinterpret_cast<unsigned char>(esi162) * 2) + 0xfffffffe, v155, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v163, v164, v18, a2, a3, a4, a5, a6, a7, a8, a9);
             }
             ecx150 = v154 + 2;
             if (reinterpret_cast<signed char>(ecx150) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi73 + 32))) 
                 goto addr_80505f0_124;
-            ebx162 = *reinterpret_cast<void***>(edi73 + 20);
-            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) & 0xff) == 0xfe) {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx150)) 
+            ebx161 = *reinterpret_cast<void***>(edi73 + 20);
+            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) & 0xff) == 0xfe) {
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx150)) 
                     goto addr_8050620_127;
-                while (eax166 = caml_young_ptr, eax167 = eax166 - 12, caml_young_ptr = eax167, cf168 = reinterpret_cast<unsigned char>(eax167) < reinterpret_cast<unsigned char>(caml_young_limit), cf168) {
+                while (eax165 = caml_young_ptr, eax166 = eax165 - 12, caml_young_ptr = eax166, cf167 = reinterpret_cast<unsigned char>(eax166) < reinterpret_cast<unsigned char>(caml_young_limit), cf167) {
                     caml_call_gc(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28);
                 }
-                edx75 = eax167 + 4;
+                edx75 = eax166 + 4;
                 *reinterpret_cast<void***>(edx75 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                 __asm__("fld qword [ebx+ecx*4-0x4]");
                 __asm__("fstp qword [edx]");
             } else {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx150)) 
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx150)) 
                     goto addr_8050625_132;
-                edx75 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx162 + reinterpret_cast<unsigned char>(ecx150) * 2) - 2);
+                edx75 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx161 + reinterpret_cast<unsigned char>(ecx150) * 2) - 2);
             }
-            esi151 = esi163 + 2;
+            esi151 = esi162 + 2;
             eax149 = v152;
             ebx148 = v153;
         } else {
             edi73 = v157;
-            eax169 = *reinterpret_cast<void***>(edi73 + 24);
-            ecx170 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax169 + 0xfffffffc)) & 0xff);
-            if (ecx170 == 0xfe) {
-                ebx162 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax169 + 0xfffffffc)) >> 10);
-                esi163 = v156;
-                if (reinterpret_cast<unsigned char>(ebx162) <= reinterpret_cast<unsigned char>(esi163)) 
+            eax168 = *reinterpret_cast<void***>(edi73 + 24);
+            ecx150 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax168 + 0xfffffffc)) & 0xff);
+            if (ecx150 == 0xfe) {
+                ebx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax168 + 0xfffffffc)) >> 10);
+                esi162 = v156;
+                if (reinterpret_cast<unsigned char>(ebx161) <= reinterpret_cast<unsigned char>(esi162)) 
                     goto addr_805063e_137;
                 __asm__("fld qword [ebx]");
                 __asm__("fstp qword [eax+esi*4-0x4]");
             } else {
-                ebx162 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax169 + 0xfffffffc)) >> 9);
-                esi163 = v156;
-                if (reinterpret_cast<unsigned char>(ebx162) <= reinterpret_cast<unsigned char>(esi163)) 
+                ebx161 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax168 + 0xfffffffc)) >> 9);
+                esi162 = v156;
+                if (reinterpret_cast<unsigned char>(ebx161) <= reinterpret_cast<unsigned char>(esi162)) 
                     goto addr_8050643_140;
-                caml_modify(ecx170, reinterpret_cast<uint32_t>(eax169 + reinterpret_cast<unsigned char>(esi163) * 2) + 0xfffffffe, v153, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v171, v172, v18, a2, a3, a4, a5, a6, a7, a8, a9);
+                caml_modify(ecx150, reinterpret_cast<uint32_t>(eax168 + reinterpret_cast<unsigned char>(esi162) * 2) + 0xfffffffe, v153, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v169, v170, v18, a2, a3, a4, a5, a6, a7, a8, a9);
             }
-            ecx173 = v152 + 2;
-            if (reinterpret_cast<signed char>(ecx173) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi73 + 28))) 
+            ecx150 = v152 + 2;
+            if (reinterpret_cast<signed char>(ecx150) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(edi73 + 28))) 
                 goto addr_8050500_143;
-            ebx162 = *reinterpret_cast<void***>(edi73 + 16);
-            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) & 0xff) == 0xfe) {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx173)) 
+            ebx161 = *reinterpret_cast<void***>(edi73 + 16);
+            if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) & 0xff) == 0xfe) {
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx150)) 
                     goto addr_8050634_146;
-                while (eax174 = caml_young_ptr, eax175 = eax174 - 12, caml_young_ptr = eax175, cf176 = reinterpret_cast<unsigned char>(eax175) < reinterpret_cast<unsigned char>(caml_young_limit), cf176) {
-                    caml_call_gc(ecx173, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28);
+                while (eax171 = caml_young_ptr, eax172 = eax171 - 12, caml_young_ptr = eax172, cf173 = reinterpret_cast<unsigned char>(eax172) < reinterpret_cast<unsigned char>(caml_young_limit), cf173) {
+                    caml_call_gc(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28);
                 }
-                edx177 = eax175 + 4;
-                *reinterpret_cast<void***>(edx177 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                edx174 = eax172 + 4;
+                *reinterpret_cast<void***>(edx174 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                 __asm__("fld qword [ebx+ecx*4-0x4]");
                 __asm__("fstp qword [edx]");
-                ebx148 = edx177;
+                ebx148 = edx174;
             } else {
-                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx162 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx173)) 
+                if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx161 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx150)) 
                     goto addr_8050639_151;
-                ebx148 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx162 + reinterpret_cast<unsigned char>(ecx173) * 2) - 2);
+                ebx148 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx161 + reinterpret_cast<unsigned char>(ecx150) * 2) - 2);
             }
-            esi151 = esi163 + 2;
-            eax149 = ecx173;
+            esi151 = esi162 + 2;
+            eax149 = ecx150;
             ecx150 = v154;
             edx75 = v155;
         }
     }
     addr_805062a_154:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v178, v179, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v175, v176, v18, a2, a3, a4);
     addr_805062f_121:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v180, v181, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v177, v178, v18, a2, a3, a4);
     addr_8050634_146:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v182, v183, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v179, v180, v18, a2, a3, a4);
     addr_8050639_151:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v184, v185, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v181, v182, v18, a2, a3, a4);
     addr_805063e_137:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v186, v187, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v183, v184, v18, a2, a3, a4);
     addr_8050643_140:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v188, v189, v18, a2, a3, a4);
-    while (ebx162 != 1) {
-        if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx162) + 0xfffffffc)) & 0xff) == 0xfe) {
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v185, v186, v18, a2, a3, a4);
+    while (ebx161 != 1) {
+        if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx161) + 0xfffffffc)) & 0xff) == 0xfe) {
         }
-        ebx162 = *reinterpret_cast<void***>(ebx162 + 4);
+        ebx161 = *reinterpret_cast<void***>(ebx161 + 4);
     }
     goto v157;
     addr_80505f0_124:
-    ebx190 = v152;
-    ecx191 = *reinterpret_cast<void***>(edi73 + 24);
-    eax192 = *reinterpret_cast<void***>(edi73 + 16);
-    edx193 = esi163 + 2;
-    esi194 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi73 + 28)) - reinterpret_cast<unsigned char>(ebx190) + 1);
+    ebx187 = v152;
+    ecx188 = *reinterpret_cast<void***>(edi73 + 24);
+    eax189 = *reinterpret_cast<void***>(edi73 + 16);
+    edx190 = esi162 + 2;
+    esi191 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi73 + 28)) - reinterpret_cast<unsigned char>(ebx187) + 1);
     addr_8052130_161:
-    edi195 = eax192;
-    v196 = ecx191;
-    ebp197 = edx193;
-    if (reinterpret_cast<int32_t>(esi194) >= reinterpret_cast<int32_t>(1) && reinterpret_cast<signed char>(ebx190) >= reinterpret_cast<signed char>(1)) {
-        ecx191 = *reinterpret_cast<void***>(edi195 + 0xfffffffc);
-        if ((reinterpret_cast<unsigned char>(ecx191) & 0xff) == 0xfe) {
-            eax198 = reinterpret_cast<unsigned char>(ecx191) >> 10;
+    edi192 = eax189;
+    v193 = ecx188;
+    ebp194 = edx190;
+    if (reinterpret_cast<int32_t>(esi191) >= reinterpret_cast<int32_t>(1) && reinterpret_cast<signed char>(ebx187) >= reinterpret_cast<signed char>(1)) {
+        ecx188 = *reinterpret_cast<void***>(edi192 + 0xfffffffc);
+        if ((reinterpret_cast<unsigned char>(ecx188) & 0xff) == 0xfe) {
+            eax195 = reinterpret_cast<unsigned char>(ecx188) >> 10;
         } else {
-            eax198 = reinterpret_cast<unsigned char>(ecx191) >> 9;
+            eax195 = reinterpret_cast<unsigned char>(ecx188) >> 9;
         }
-        if (reinterpret_cast<signed char>(ebx190) <= reinterpret_cast<signed char>((eax198 | 1) - reinterpret_cast<uint32_t>(esi194) + 1) && reinterpret_cast<signed char>(ebp197) >= reinterpret_cast<signed char>(1)) {
-            ecx191 = *reinterpret_cast<void***>(v196 + 0xfffffffc);
-            if ((reinterpret_cast<unsigned char>(ecx191) & 0xff) == 0xfe) {
-                eax199 = reinterpret_cast<unsigned char>(ecx191) >> 10;
+        if (reinterpret_cast<signed char>(ebx187) <= reinterpret_cast<signed char>((eax195 | 1) - reinterpret_cast<uint32_t>(esi191) + 1) && reinterpret_cast<signed char>(ebp194) >= reinterpret_cast<signed char>(1)) {
+            ecx188 = *reinterpret_cast<void***>(v193 + 0xfffffffc);
+            if ((reinterpret_cast<unsigned char>(ecx188) & 0xff) == 0xfe) {
+                eax196 = reinterpret_cast<unsigned char>(ecx188) >> 10;
             } else {
-                eax199 = reinterpret_cast<unsigned char>(ecx191) >> 9;
+                eax196 = reinterpret_cast<unsigned char>(ecx188) >> 9;
             }
-            if (reinterpret_cast<signed char>(ebp197) <= reinterpret_cast<signed char>((eax199 | 1) - reinterpret_cast<uint32_t>(esi194) + 1)) {
-                if (reinterpret_cast<signed char>(ebx190) >= reinterpret_cast<signed char>(ebp197)) {
-                    v200 = reinterpret_cast<void**>(1);
-                    esi201 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi194) + 0xfffffffe);
-                    if (reinterpret_cast<signed char>(1) <= reinterpret_cast<signed char>(esi201)) {
-                        v202 = ebx190;
-                        v203 = edi195;
+            if (reinterpret_cast<signed char>(ebp194) <= reinterpret_cast<signed char>((eax196 | 1) - reinterpret_cast<uint32_t>(esi191) + 1)) {
+                if (reinterpret_cast<signed char>(ebx187) >= reinterpret_cast<signed char>(ebp194)) {
+                    v197 = reinterpret_cast<void**>(1);
+                    esi198 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi191) + 0xfffffffe);
+                    if (reinterpret_cast<signed char>(1) <= reinterpret_cast<signed char>(esi198)) {
+                        v199 = ebx187;
+                        v200 = edi192;
                         do {
-                            ecx204 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v203 + 0xfffffffc))));
-                            if (ecx204 == 0xfe) {
-                                while (eax205 = caml_young_ptr, eax206 = eax205 - 12, caml_young_ptr = eax206, cf207 = reinterpret_cast<unsigned char>(eax206) < reinterpret_cast<unsigned char>(caml_young_limit), cf207) {
-                                    caml_call_gc(ecx204, v203, v202, v196, v200, v52, 0x805143e, v26, v27, v28, v29, v208);
+                            ecx201 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v200 + 0xfffffffc))));
+                            if (ecx201 == 0xfe) {
+                                while (eax202 = caml_young_ptr, eax203 = eax202 - 12, caml_young_ptr = eax203, cf204 = reinterpret_cast<unsigned char>(eax203) < reinterpret_cast<unsigned char>(caml_young_limit), cf204) {
+                                    caml_call_gc(ecx201, v200, v199, v193, v197, v52, 0x805143e, v26, v27, v28, v29, v205);
                                 }
-                                ecx209 = eax206 + 4;
-                                *reinterpret_cast<void***>(ecx209 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                                ecx206 = eax203 + 4;
+                                *reinterpret_cast<void***>(ecx206 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                                 __asm__("fld qword [eax+ebx*4-0x4]");
                                 __asm__("fstp qword [ecx]");
-                                ebx210 = ecx209;
+                                ebx207 = ecx206;
                             } else {
-                                ebx210 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v203 + (reinterpret_cast<unsigned char>(v202) + reinterpret_cast<unsigned char>(v200) + 0xffffffff) * 2) - 2);
+                                ebx207 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(v200 + (reinterpret_cast<unsigned char>(v199) + reinterpret_cast<unsigned char>(v197) + 0xffffffff) * 2) - 2);
                             }
-                            ecx211 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v196 + 0xfffffffc))));
-                            if (ecx211 == 0xfe) {
+                            ecx208 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v193 + 0xfffffffc))));
+                            if (ecx208 == 0xfe) {
                                 __asm__("fld qword [ebx]");
                                 __asm__("fstp qword [ebx+eax*4-0x4]");
                             } else {
-                                caml_modify(ecx211, reinterpret_cast<uint32_t>(v196 + (reinterpret_cast<unsigned char>(ebp197) + reinterpret_cast<unsigned char>(v200) + 0xffffffff) * 2) + 0xfffffffe, ebx210, v203, v202, v196, v200, v52, 0x805143e, v26, v27, v28, v29, v212, v213, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+                                caml_modify(ecx208, reinterpret_cast<uint32_t>(v193 + (reinterpret_cast<unsigned char>(ebp194) + reinterpret_cast<unsigned char>(v197) + 0xffffffff) * 2) + 0xfffffffe, ebx207, v200, v199, v193, v197, v52, 0x805143e, v26, v27, v28, v29, v209, v210, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
                             }
-                            ebx214 = v200;
-                            v200 = v200 + 2;
-                        } while (ebx214 != esi201);
+                            ebx211 = v197;
+                            v197 = v197 + 2;
+                        } while (ebx211 != esi198);
                     }
                     goto v26;
                 } else {
-                    esi215 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi194) + 0xfffffffe);
-                    if (reinterpret_cast<signed char>(esi215) >= reinterpret_cast<signed char>(1)) {
-                        v216 = ebx190;
+                    esi212 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esi191) + 0xfffffffe);
+                    if (reinterpret_cast<signed char>(esi212) >= reinterpret_cast<signed char>(1)) {
+                        v213 = ebx187;
                         do {
-                            if (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi195 + 0xfffffffc))) == 0xfe) {
-                                while (eax217 = caml_young_ptr, eax218 = eax217 - 12, caml_young_ptr = eax218, cf219 = reinterpret_cast<unsigned char>(eax218) < reinterpret_cast<unsigned char>(caml_young_limit), cf219) {
-                                    caml_call_gc(ecx191, v154, v216, v196, v153, v52, 0x805143e, v26, v27, v28, v29, v220);
+                            if (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi192 + 0xfffffffc))) == 0xfe) {
+                                while (eax214 = caml_young_ptr, eax215 = eax214 - 12, caml_young_ptr = eax215, cf216 = reinterpret_cast<unsigned char>(eax215) < reinterpret_cast<unsigned char>(caml_young_limit), cf216) {
+                                    caml_call_gc(ecx188, v154, v213, v193, v153, v52, 0x805143e, v26, v27, v28, v29, v217);
                                 }
-                                eax221 = eax218 + 4;
-                                *reinterpret_cast<void***>(eax221 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                                eax218 = eax215 + 4;
+                                *reinterpret_cast<void***>(eax218 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                                 __asm__("fld qword [edi+ebx*4-0x4]");
                                 __asm__("fstp qword [eax]");
-                                ebx222 = eax221;
+                                ebx219 = eax218;
                             } else {
-                                ebx222 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi195 + (reinterpret_cast<unsigned char>(v216) + reinterpret_cast<unsigned char>(esi215) + 0xffffffff) * 2) - 2);
+                                ebx219 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi192 + (reinterpret_cast<unsigned char>(v213) + reinterpret_cast<unsigned char>(esi212) + 0xffffffff) * 2) - 2);
                             }
-                            ecx191 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v196 + 0xfffffffc))));
-                            if (ecx191 == 0xfe) {
+                            ecx188 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v193 + 0xfffffffc))));
+                            if (ecx188 == 0xfe) {
                                 __asm__("fld qword [ebx]");
                                 __asm__("fstp qword [ebx+eax*4-0x4]");
                             } else {
-                                caml_modify(ecx191, reinterpret_cast<uint32_t>(v196 + (reinterpret_cast<unsigned char>(ebp197) + reinterpret_cast<unsigned char>(esi215) + 0xffffffff) * 2) + 0xfffffffe, ebx222, v154, v216, v196, v153, v52, 0x805143e, v26, v27, v28, v29, v223, v224, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+                                caml_modify(ecx188, reinterpret_cast<uint32_t>(v193 + (reinterpret_cast<unsigned char>(ebp194) + reinterpret_cast<unsigned char>(esi212) + 0xffffffff) * 2) + 0xfffffffe, ebx219, v154, v213, v193, v153, v52, 0x805143e, v26, v27, v28, v29, v220, v221, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
                             }
-                            ebx225 = esi215;
-                            esi215 = esi215 - 2;
-                        } while (!reinterpret_cast<int1_t>(ebx225 == 1));
+                            ebx222 = esi212;
+                            esi212 = esi212 - 2;
+                        } while (!reinterpret_cast<int1_t>(ebx222 == 1));
                     }
                     goto v26;
                 }
@@ -28161,67 +28157,67 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
         }
     }
     while (1) {
-        eax226 = caml_young_ptr;
-        eax227 = eax226 - 12;
-        caml_young_ptr = eax227;
-        cf228 = reinterpret_cast<unsigned char>(eax227) < reinterpret_cast<unsigned char>(caml_young_limit);
-        if (!cf228) {
-            eax229 = eax227 + 4;
-            *reinterpret_cast<void***>(eax229 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
-            *reinterpret_cast<void***>(eax229) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax229 + 4) = reinterpret_cast<void**>(0x80765a8);
-            caml_raise_exn(ecx191, v26, v27, v28, v29, v230, v231, v18, a2, a3);
+        eax223 = caml_young_ptr;
+        eax224 = eax223 - 12;
+        caml_young_ptr = eax224;
+        cf225 = reinterpret_cast<unsigned char>(eax224) < reinterpret_cast<unsigned char>(caml_young_limit);
+        if (!cf225) {
+            eax226 = eax224 + 4;
+            *reinterpret_cast<void***>(eax226 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
+            *reinterpret_cast<void***>(eax226) = reinterpret_cast<void**>(0x80724a8);
+            *reinterpret_cast<void***>(eax226 + 4) = reinterpret_cast<void**>("Array.blit");
+            caml_raise_exn(ecx188, v26, v27, v28, v29, v227, v228, v18, a2, a3);
         }
-        caml_call_gc(ecx191, v26, v27, v28, v29, v232, v233, v18, a2, a3, a4, a5);
+        caml_call_gc(ecx188, v26, v27, v28, v29, v229, v230, v18, a2, a3, a4, a5);
     }
     addr_8050620_127:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v234, v235, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v231, v232, v18, a2, a3, a4);
     addr_8050625_132:
-    caml_ml_array_bound_error(v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v236, v237, v18, a2, a3, a4);
+    caml_ml_array_bound_error(ecx150, v157, v152, v154, v155, v156, v153, v52, 0x805143e, v26, v27, v28, v29, v233, v234, v18, a2, a3, a4);
     goto addr_805062a_154;
     addr_8050500_143:
-    ebx190 = v154;
-    ecx191 = *reinterpret_cast<void***>(edi73 + 24);
-    eax192 = *reinterpret_cast<void***>(edi73 + 20);
-    edx193 = esi163 + 2;
-    esi194 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi73 + 32)) - reinterpret_cast<unsigned char>(ebx190) + 1);
+    ebx187 = v154;
+    ecx188 = *reinterpret_cast<void***>(edi73 + 24);
+    eax189 = *reinterpret_cast<void***>(edi73 + 20);
+    edx190 = esi162 + 2;
+    esi191 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi73 + 32)) - reinterpret_cast<unsigned char>(ebx187) + 1);
     goto addr_8052130_161;
     addr_8051557_55:
     ebx148 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi69 + reinterpret_cast<unsigned char>(ecx67) * 2) - 2);
     goto addr_805158c_114;
     addr_8051390_16:
-    eax238 = *reinterpret_cast<void***>(v26 + 16);
-    if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax238 + 0xfffffffc)) & 0xff) == 0xfe) {
-        ebx35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax238 + 0xfffffffc)) >> 10);
+    eax235 = *reinterpret_cast<void***>(v26 + 16);
+    if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax235 + 0xfffffffc)) & 0xff) == 0xfe) {
+        ebx35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax235 + 0xfffffffc)) >> 10);
         ecx22 = v28;
         if (reinterpret_cast<unsigned char>(ebx35) <= reinterpret_cast<unsigned char>(ecx22)) {
-            caml_ml_array_bound_error(v26, v27, v28, v29, v239, v240, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+            caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v236, v237, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
             goto addr_8051411_202;
         } else {
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [eax+ecx*4-0x4]");
         }
     } else {
-        ebx35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax238 + 0xfffffffc)) >> 9);
+        ebx35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax235 + 0xfffffffc)) >> 9);
         ecx22 = v28;
         if (reinterpret_cast<unsigned char>(ebx35) <= reinterpret_cast<unsigned char>(ecx22)) {
             addr_8051411_202:
-            caml_ml_array_bound_error(v26, v27, v28, v29, v241, v242, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+            caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v238, v239, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
             goto addr_8051416_205;
         } else {
-            caml_modify(ecx22, reinterpret_cast<uint32_t>(eax238 + reinterpret_cast<unsigned char>(ecx22) * 2) + 0xfffffffe, v27, v26, v27, v28, v29, v243, v244, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_modify(ecx22, reinterpret_cast<uint32_t>(eax235 + reinterpret_cast<unsigned char>(ecx22) * 2) + 0xfffffffe, v27, v26, v27, v28, v29, v240, v241, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
         }
     }
     return 1;
     addr_805142a_19:
-    caml_ml_array_bound_error(v26, v27, v28, v29, v245, v246, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v242, v243, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     addr_805142f_24:
-    caml_ml_array_bound_error(v26, v27, v28, v29, v247, v248, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v244, v245, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     goto addr_8051434_36;
     addr_8051420_28:
-    caml_ml_array_bound_error(v26, v27, v28, v29, v249, v250, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v246, v247, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     addr_8051425_31:
-    caml_ml_array_bound_error(v26, v27, v28, v29, v251, v252, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v248, v249, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     goto addr_805142a_19;
     addr_8051330_34:
     ecx22 = *reinterpret_cast<void***>(edi19 + 16);
@@ -28229,7 +28225,7 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
     if ((reinterpret_cast<unsigned char>(ebx35) & 0xff) == 0xfe) {
         if (reinterpret_cast<unsigned char>(ebx35) >> 10 <= 1) {
             addr_8051416_205:
-            caml_ml_array_bound_error(v26, v27, v28, v29, v253, v254, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+            caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v250, v251, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
             goto addr_805141b_209;
         } else {
             __asm__("fld qword [eax]");
@@ -28238,10 +28234,10 @@ int32_t camlArray__trickleup_1178(void** ecx, void** a2, void** a3, void** a4, v
     } else {
         if (reinterpret_cast<unsigned char>(ebx35) >> 9 <= 1) {
             addr_805141b_209:
-            caml_ml_array_bound_error(v26, v27, v28, v29, v255, v256, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+            caml_ml_array_bound_error(ecx22, v26, v27, v28, v29, v252, v253, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
             goto addr_8051420_28;
         } else {
-            caml_modify(ecx22, ecx22, v27, v26, v27, v28, v29, v257, v258, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_modify(ecx22, ecx22, v27, v26, v27, v28, v29, v254, v255, v18, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
         }
     }
     return 1;
@@ -29316,7 +29312,7 @@ void** camlBuffer__advance_to_closing_1098(void** ecx, void** a2, void** a3, voi
         ecx33 = v25;
     }
     addr_805812e_20:
-    eax46 = caml_ml_array_bound_error(v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax46 = caml_ml_array_bound_error(ecx39, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     while (reinterpret_cast<signed char>(eax46) < reinterpret_cast<signed char>(ebx31)) {
         edx47 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax46) >> 1);
         ebp48 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx39 + 12) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
@@ -29347,7 +29343,7 @@ void** camlBuffer__advance_to_closing_1098(void** ecx, void** a2, void** a3, voi
     goto v37;
     addr_80581d8_23:
     v51 = reinterpret_cast<void**>(0x80581dd);
-    eax52 = caml_ml_array_bound_error(v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax52 = caml_ml_array_bound_error(ecx39, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     while (reinterpret_cast<signed char>(ebx31) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx39 + 24))) {
         eax53 = reinterpret_cast<void*>(reinterpret_cast<signed char>(ebx31) >> 1);
         ebp54 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ecx39 + 20) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
@@ -29418,7 +29414,7 @@ void** camlBuffer__advance_to_closing_1098(void** ecx, void** a2, void** a3, voi
         *reinterpret_cast<void***>(eax62 + 4) = ecx63 + 2;
         goto v37;
     }
-    eax69 = caml_ml_array_bound_error(eax62, ecx63, eax52, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    eax69 = caml_ml_array_bound_error(ecx63, eax62, ecx63, eax52, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     if (reinterpret_cast<signed char>(ecx63) < reinterpret_cast<signed char>(1)) 
         goto addr_805870a_59;
     if (reinterpret_cast<signed char>(edx67) < reinterpret_cast<signed char>(1)) 
@@ -29441,7 +29437,7 @@ void** camlBuffer__advance_to_closing_1098(void** ecx, void** a2, void** a3, voi
     camlBuffer__resize_1066(eax62, ecx63, eax52, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     goto addr_8058682_55;
     addr_8058369_40:
-    eax74 = caml_ml_array_bound_error(v58, v59, v51, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    eax74 = caml_ml_array_bound_error(ecx39, v58, v59, v51, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     if (reinterpret_cast<signed char>(eax74) < reinterpret_cast<signed char>(3)) {
         eax74 = reinterpret_cast<void**>(3);
     }
@@ -29471,7 +29467,7 @@ void** camlBuffer__advance_to_closing_1098(void** ecx, void** a2, void** a3, voi
     addr_805818e_34:
     goto addr_80581c8_27;
     addr_8058129_14:
-    caml_ml_array_bound_error(v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    caml_ml_array_bound_error(ecx39, v37, v25, v17, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     goto addr_805812e_20;
     addr_80580f5_18:
     return ebx31;
@@ -29580,101 +29576,102 @@ void** camlPrintf__extract_format_int_1103(void** ecx, void** a2, void** a3, voi
     void** eax23;
     void* ebx24;
     uint32_t ebx25;
-    void* ebx26;
+    void** ebx26;
     void* ecx27;
     void** edx28;
-    void** eax29;
-    void** v30;
-    void** eax31;
-    void* ebx32;
-    uint32_t ebx33;
-    void** ebx34;
-    void* ecx35;
-    void** edx36;
-    void** ecx37;
-    void** eax38;
-    void** v39;
-    void** ebp40;
-    void* eax41;
-    void** ecx42;
-    void* eax43;
-    void** edi44;
-    void** eax45;
+    void** ecx29;
+    void** eax30;
+    void** v31;
+    void** eax32;
+    void* ebx33;
+    uint32_t ebx34;
+    void** ebx35;
+    void* ecx36;
+    void** edx37;
+    void** ecx38;
+    void** eax39;
+    void** v40;
+    void** ebp41;
+    void* eax42;
+    void** ecx43;
+    void* eax44;
+    void** edi45;
     void** eax46;
-    int1_t cf47;
-    void** ecx48;
-    void** edx49;
-    void** esi50;
+    void** eax47;
+    int1_t cf48;
+    void** ecx49;
+    void** edx50;
     void** esi51;
-    void** eax52;
+    void** esi52;
     void** eax53;
-    int1_t cf54;
-    void** ebx55;
-    void** eax56;
-    void* ecx57;
-    void* esi58;
-    uint32_t ecx59;
-    void** eax60;
-    void* ecx61;
-    void* esi62;
-    void* ecx63;
-    void** edx64;
-    void** ecx65;
-    void* ecx66;
-    void** ecx67;
-    void** eax68;
+    void** eax54;
+    int1_t cf55;
+    void** ebx56;
+    void** eax57;
+    void** ecx58;
+    void* esi59;
+    uint32_t ecx60;
+    void** eax61;
+    void** ecx62;
+    void* esi63;
+    void* ecx64;
+    void** edx65;
+    void** ecx66;
+    void* ecx67;
+    void** ecx68;
     void** eax69;
-    void** v70;
-    void** ecx71;
-    void** ebx72;
-    void* esi73;
-    void** eax74;
+    void** eax70;
+    void** v71;
+    void** ecx72;
+    void** ebx73;
+    void* esi74;
     void** eax75;
-    void** esi76;
-    void** v77;
+    void** eax76;
+    void** esi77;
     void** ecx78;
     void** v79;
     void** v80;
-    void** eax81;
-    void** ecx82;
-    void** edx83;
-    void** v84;
-    void** eax85;
+    void** v81;
+    void** eax82;
+    void** ecx83;
+    void** edx84;
+    void** v85;
     void** eax86;
-    int1_t cf87;
-    void** v88;
-    void** ebx89;
-    void** ecx90;
-    void** edx91;
-    void** eax92;
+    void** eax87;
+    int1_t cf88;
+    void** v89;
+    void** ebx90;
+    void** ecx91;
+    void** edx92;
     void** eax93;
-    int1_t cf94;
-    void** v95;
+    void** eax94;
+    int1_t cf95;
     void** v96;
     void** v97;
-    void** eax98;
-    int32_t v99;
-    void** v100;
+    void** v98;
+    void** eax99;
+    int32_t v100;
     void** v101;
     void** v102;
     void** v103;
-    void** eax104;
-    void** ecx105;
-    void** v106;
-    void** eax107;
+    void** v104;
+    void** eax105;
+    void** ecx106;
+    void** v107;
     void** eax108;
-    int1_t cf109;
-    void** v110;
-    void** eax111;
-    void** v112;
-    void** ecx113;
-    void** edx114;
-    int32_t* eax115;
-    void** edx116;
-    void** ecx117;
-    int32_t* eax118;
-    int32_t ecx119;
-    int32_t* eax120;
+    void** eax109;
+    int1_t cf110;
+    void** v111;
+    void** eax112;
+    void** v113;
+    void** ecx114;
+    void** edx115;
+    int32_t* eax116;
+    void** edx117;
+    void** ecx118;
+    int32_t* eax119;
+    int32_t ecx120;
+    int32_t* eax121;
 
     v19 = reinterpret_cast<void**>(__return_address());
     v20 = eax21;
@@ -29684,234 +29681,236 @@ void** camlPrintf__extract_format_int_1103(void** ecx, void** a2, void** a3, voi
     }
     ebx24 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax23 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
     ebx25 = reinterpret_cast<uint32_t>(ebx24) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<uint32_t>(ebx24));
-    ebx26 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx25 + ebx25 + 0xffffffff) >> 1);
+    ebx26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx25 + ebx25 + 0xffffffff) >> 1);
     ecx27 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax23 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
     edx28 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<uint32_t>(ecx27))));
-    if (reinterpret_cast<uint32_t>(ecx27) - reinterpret_cast<unsigned char>(edx28) > reinterpret_cast<uint32_t>(ebx26)) {
-        *reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<uint32_t>(ebx26)) = 0x75;
+    ecx29 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx27) - reinterpret_cast<unsigned char>(edx28));
+    if (reinterpret_cast<unsigned char>(ecx29) > reinterpret_cast<unsigned char>(ebx26)) {
+        *reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<unsigned char>(ebx26)) = 0x75;
         return eax23;
     }
-    eax29 = caml_ml_array_bound_error(v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
-    v30 = eax29;
-    eax31 = camlPrintf__extract_format_1085(edx28, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10);
-    if (v30 != 0x8d) 
+    eax30 = caml_ml_array_bound_error(ecx29, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    v31 = eax30;
+    eax32 = camlPrintf__extract_format_1085(edx28, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    if (v31 != 0x8d) 
         goto addr_805b4de_7;
-    ebx32 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax31 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-    ebx33 = reinterpret_cast<uint32_t>(ebx32) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax31) + reinterpret_cast<uint32_t>(ebx32));
-    ebx34 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx33 + ebx33 + 0xffffffff) >> 1);
-    ecx35 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax31 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-    edx36 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax31) + reinterpret_cast<uint32_t>(ecx35))));
-    ecx37 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx35) - reinterpret_cast<unsigned char>(edx36));
-    if (reinterpret_cast<unsigned char>(ecx37) > reinterpret_cast<unsigned char>(ebx34)) {
-        *reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(eax31) + reinterpret_cast<unsigned char>(ebx34)) = 0x67;
+    ebx33 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax32 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+    ebx34 = reinterpret_cast<uint32_t>(ebx33) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax32) + reinterpret_cast<uint32_t>(ebx33));
+    ebx35 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx34 + ebx34 + 0xffffffff) >> 1);
+    ecx36 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax32 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+    edx37 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax32) + reinterpret_cast<uint32_t>(ecx36))));
+    ecx38 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx36) - reinterpret_cast<unsigned char>(edx37));
+    if (reinterpret_cast<unsigned char>(ecx38) > reinterpret_cast<unsigned char>(ebx35)) {
+        *reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(eax32) + reinterpret_cast<unsigned char>(ebx35)) = 0x67;
         goto v20;
     }
-    eax38 = caml_ml_array_bound_error(v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
-    v39 = eax38;
-    ebp40 = ecx37;
-    eax41 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx36 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-    ecx42 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(edx36) + reinterpret_cast<uint32_t>(eax41))));
-    eax43 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax41) - reinterpret_cast<unsigned char>(ecx42));
-    edi44 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax43) + reinterpret_cast<uint32_t>(eax43) + 1);
-    while (eax45 = caml_young_ptr, eax46 = eax45 - 32, caml_young_ptr = eax46, cf47 = reinterpret_cast<unsigned char>(eax46) < reinterpret_cast<unsigned char>(caml_young_limit), cf47) {
-        caml_call_gc(ecx42, v39, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8);
+    eax39 = caml_ml_array_bound_error(ecx38, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    v40 = eax39;
+    ebp41 = ecx38;
+    eax42 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx37 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+    ecx43 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(edx37) + reinterpret_cast<uint32_t>(eax42))));
+    eax44 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax42) - reinterpret_cast<unsigned char>(ecx43));
+    edi45 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(eax44) + reinterpret_cast<uint32_t>(eax44) + 1);
+    while (eax46 = caml_young_ptr, eax47 = eax46 - 32, caml_young_ptr = eax47, cf48 = reinterpret_cast<unsigned char>(eax47) < reinterpret_cast<unsigned char>(caml_young_limit), cf48) {
+        caml_call_gc(ecx43, v40, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8);
     }
-    ecx48 = eax46 + 4;
-    *reinterpret_cast<void***>(ecx48 + 0xfffffffc) = reinterpret_cast<void**>(0x1cf7);
-    *reinterpret_cast<void***>(ecx48) = reinterpret_cast<void**>(0x804b370);
-    *reinterpret_cast<void***>(ecx48 + 4) = reinterpret_cast<void**>(5);
-    *reinterpret_cast<void***>(ecx48 + 8) = reinterpret_cast<void**>(camlPrintf__sub_fmt_1124);
-    *reinterpret_cast<void***>(ecx48 + 12) = v39;
-    *reinterpret_cast<void***>(ecx48 + 16) = ebx34;
-    *reinterpret_cast<void***>(ecx48 + 20) = edx36;
-    *reinterpret_cast<void***>(ecx48 + 24) = edi44;
-    edx49 = esi50;
-    if (reinterpret_cast<int1_t>(ebp40 == 81)) 
+    ecx49 = eax47 + 4;
+    *reinterpret_cast<void***>(ecx49 + 0xfffffffc) = reinterpret_cast<void**>(0x1cf7);
+    *reinterpret_cast<void***>(ecx49) = reinterpret_cast<void**>(0x804b370);
+    *reinterpret_cast<void***>(ecx49 + 4) = reinterpret_cast<void**>(5);
+    *reinterpret_cast<void***>(ecx49 + 8) = reinterpret_cast<void**>(camlPrintf__sub_fmt_1124);
+    *reinterpret_cast<void***>(ecx49 + 12) = v40;
+    *reinterpret_cast<void***>(ecx49 + 16) = ebx35;
+    *reinterpret_cast<void***>(ecx49 + 20) = edx37;
+    *reinterpret_cast<void***>(ecx49 + 24) = edi45;
+    edx50 = esi51;
+    if (reinterpret_cast<int1_t>(ebp41 == 81)) 
         goto addr_80594b7_16;
-    esi51 = reinterpret_cast<void**>(0xfb);
+    esi52 = reinterpret_cast<void**>(0xfb);
     addr_80594c5_18:
-    while (eax52 = caml_young_ptr, eax53 = eax52 - 52, caml_young_ptr = eax53, cf54 = reinterpret_cast<unsigned char>(eax53) < reinterpret_cast<unsigned char>(caml_young_limit), cf54) {
-        v39 = reinterpret_cast<void**>(0x8059533);
-        caml_call_gc(ecx48, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9);
+    while (eax53 = caml_young_ptr, eax54 = eax53 - 52, caml_young_ptr = eax54, cf55 = reinterpret_cast<unsigned char>(eax54) < reinterpret_cast<unsigned char>(caml_young_limit), cf55) {
+        v40 = reinterpret_cast<void**>(0x8059533);
+        caml_call_gc(ecx49, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9);
     }
-    ebx55 = eax53 + 4;
-    *reinterpret_cast<void***>(ebx55 + 0xfffffffc) = reinterpret_cast<void**>(0x30f7);
-    *reinterpret_cast<void***>(ebx55) = reinterpret_cast<void**>(0x8058d90);
-    *reinterpret_cast<void***>(ebx55 + 4) = reinterpret_cast<void**>(3);
-    *reinterpret_cast<void***>(ebx55 + 8) = reinterpret_cast<void**>(0xcf9);
-    *reinterpret_cast<void***>(ebx55 + 12) = reinterpret_cast<void**>(0x8058cb0);
-    *reinterpret_cast<void***>(ebx55 + 16) = reinterpret_cast<void**>(3);
-    *reinterpret_cast<void***>(ebx55 + 20) = *reinterpret_cast<void***>(ecx48 + 12);
-    *reinterpret_cast<void***>(ebx55 + 24) = *reinterpret_cast<void***>(ecx48 + 16);
-    *reinterpret_cast<void***>(ebx55 + 28) = *reinterpret_cast<void***>(ecx48 + 20);
-    *reinterpret_cast<void***>(ebx55 + 32) = *reinterpret_cast<void***>(ecx48 + 24);
-    *reinterpret_cast<void***>(ebx55 + 36) = ecx48;
-    *reinterpret_cast<void***>(ebx55 + 40) = edx49;
-    *reinterpret_cast<void***>(ebx55 + 44) = esi51;
-    eax56 = edx49;
-    while (reinterpret_cast<signed char>(eax56) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx55 + 32))) {
-        ecx57 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax56) >> 1);
-        esi58 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx55 + 28) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi58) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx55 + 28)) + reinterpret_cast<uint32_t>(esi58)) <= reinterpret_cast<uint32_t>(ecx57)) 
+    ebx56 = eax54 + 4;
+    *reinterpret_cast<void***>(ebx56 + 0xfffffffc) = reinterpret_cast<void**>(0x30f7);
+    *reinterpret_cast<void***>(ebx56) = reinterpret_cast<void**>(0x8058d90);
+    *reinterpret_cast<void***>(ebx56 + 4) = reinterpret_cast<void**>(3);
+    *reinterpret_cast<void***>(ebx56 + 8) = reinterpret_cast<void**>(0xcf9);
+    *reinterpret_cast<void***>(ebx56 + 12) = reinterpret_cast<void**>(0x8058cb0);
+    *reinterpret_cast<void***>(ebx56 + 16) = reinterpret_cast<void**>(3);
+    *reinterpret_cast<void***>(ebx56 + 20) = *reinterpret_cast<void***>(ecx49 + 12);
+    *reinterpret_cast<void***>(ebx56 + 24) = *reinterpret_cast<void***>(ecx49 + 16);
+    *reinterpret_cast<void***>(ebx56 + 28) = *reinterpret_cast<void***>(ecx49 + 20);
+    *reinterpret_cast<void***>(ebx56 + 32) = *reinterpret_cast<void***>(ecx49 + 24);
+    *reinterpret_cast<void***>(ebx56 + 36) = ecx49;
+    *reinterpret_cast<void***>(ebx56 + 40) = edx50;
+    *reinterpret_cast<void***>(ebx56 + 44) = esi52;
+    eax57 = edx50;
+    while (reinterpret_cast<signed char>(eax57) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx56 + 32))) {
+        ecx58 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax57) >> 1);
+        esi59 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx56 + 28) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi59) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx56 + 28)) + reinterpret_cast<uint32_t>(esi59))) <= reinterpret_cast<unsigned char>(ecx58)) 
             goto addr_8058deb_23;
-        ecx59 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx55 + 28)) + reinterpret_cast<uint32_t>(ecx57));
-        if (ecx59 + ecx59 + 1 != 75) {
-            eax56 = eax56 + 2;
+        ecx60 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx56 + 28)) + reinterpret_cast<unsigned char>(ecx58));
+        if (ecx60 + ecx60 + 1 != 75) {
+            eax57 = eax57 + 2;
             continue;
         }
-        ebx55 = ebx55 + 12;
-        eax60 = eax56 + 2;
-        if (reinterpret_cast<signed char>(eax60) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx55 + 20))) 
+        ebx56 = ebx56 + 12;
+        eax61 = eax57 + 2;
+        if (reinterpret_cast<signed char>(eax61) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx56 + 20))) 
             goto addr_8058cba_28;
-        ecx61 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax60) >> 1);
-        esi62 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx55 + 16) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi62) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx55 + 16)) + reinterpret_cast<uint32_t>(esi62)) > reinterpret_cast<uint32_t>(ecx61)) 
+        ecx62 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax61) >> 1);
+        esi63 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx56 + 16) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi63) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx56 + 16)) + reinterpret_cast<uint32_t>(esi63))) > reinterpret_cast<unsigned char>(ecx62)) 
             goto addr_8058cf2_30;
-        eax56 = caml_ml_array_bound_error(v39, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+        eax57 = caml_ml_array_bound_error(ecx62, v40, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         continue;
         addr_8058cf2_30:
-        ecx63 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx55 + 16)) + reinterpret_cast<uint32_t>(ecx61))));
-        edx64 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx63) + reinterpret_cast<uint32_t>(ecx63) + 1);
-        ecx65 = edx64 + 0xffffffb0;
-        if (reinterpret_cast<unsigned char>(ecx65) <= reinterpret_cast<unsigned char>(3)) {
+        ecx64 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx56 + 16)) + reinterpret_cast<unsigned char>(ecx62))));
+        edx65 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx64) + reinterpret_cast<uint32_t>(ecx64) + 1);
+        ecx66 = edx65 + 0xffffffb0;
+        if (reinterpret_cast<unsigned char>(ecx66) <= reinterpret_cast<unsigned char>(3)) {
             addr_8058d1d_32:
-            if (!reinterpret_cast<int1_t>(ecx65 == 1)) 
+            if (!reinterpret_cast<int1_t>(ecx66 == 1)) 
                 goto addr_8058d60_33;
         } else {
-            ecx66 = reinterpret_cast<void*>(ecx65 + 0xffffff5a);
-            if (reinterpret_cast<uint32_t>(ecx66) > 5) 
+            ecx67 = reinterpret_cast<void*>(ecx66 + 0xffffff5a);
+            if (reinterpret_cast<uint32_t>(ecx67) > 5) 
                 goto addr_8058d30_35;
-            v39 = ebx55;
-            ecx65 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ecx66) >> 1);
-            if (reinterpret_cast<unsigned char>(ecx65) < reinterpret_cast<unsigned char>(1)) 
+            v40 = ebx56;
+            ecx66 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ecx67) >> 1);
+            if (reinterpret_cast<unsigned char>(ecx66) < reinterpret_cast<unsigned char>(1)) 
                 goto addr_8058d40_37; else 
                 goto addr_8058d19_38;
         }
-        v39 = ebx55;
+        v40 = ebx56;
         addr_8058d40_37:
-        ecx67 = *reinterpret_cast<void***>(ebx55 + 24);
-        eax68 = camlPrintf__sub_fmt_1124(ecx67, v39, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
-        ebx55 = v39 + 0xfffffff4;
-        eax56 = eax68 + 2;
+        ecx68 = *reinterpret_cast<void***>(ebx56 + 24);
+        eax69 = camlPrintf__sub_fmt_1124(ecx68, v40, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+        ebx56 = v40 + 0xfffffff4;
+        eax57 = eax69 + 2;
         continue;
         addr_8058d19_38:
-        if (ecx65 == 1) {
+        if (ecx66 == 1) {
             addr_8058d30_35:
-            ebx55 = ebx55 + 0xfffffff4;
-            eax56 = eax60 + 2;
+            ebx56 = ebx56 + 0xfffffff4;
+            eax57 = eax61 + 2;
         } else {
-            if (reinterpret_cast<signed char>(ecx65) > reinterpret_cast<signed char>(1)) 
+            if (reinterpret_cast<signed char>(ecx66) > reinterpret_cast<signed char>(1)) 
                 goto addr_8058d60_33; else 
                 goto addr_8058d1d_32;
         }
     }
-    goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx55 + 20));
+    goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx56 + 20));
     addr_8058deb_23:
-    eax69 = caml_ml_array_bound_error(v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
-    while (reinterpret_cast<signed char>(eax69) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx55 + 16) + 0xfffffffc)) {
-        v70 = ebx55;
-        ecx71 = *reinterpret_cast<void***>(ebx55 + 12);
-        ebx72 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax69) >> 1);
-        esi73 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx55 + 8) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi73) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx55 + 8)) + reinterpret_cast<uint32_t>(esi73))) <= reinterpret_cast<unsigned char>(ebx72)) 
+    eax70 = caml_ml_array_bound_error(ecx58, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    while (reinterpret_cast<signed char>(eax70) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx56 + 16) + 0xfffffffc)) {
+        v71 = ebx56;
+        ecx72 = *reinterpret_cast<void***>(ebx56 + 12);
+        ebx73 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax70) >> 1);
+        esi74 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx56 + 8) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi74) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx56 + 8)) + reinterpret_cast<uint32_t>(esi74))) <= reinterpret_cast<unsigned char>(ebx73)) 
             goto addr_8058e49_45;
-        eax69 = caml_apply2(ecx71, v70, v30, v20, v19, a2);
-        ebx55 = v70;
+        eax70 = caml_apply2(ecx72, v71, v31, v20, v19, a2);
+        ebx56 = v71;
     }
-    goto v30;
+    goto v31;
     addr_8058e49_45:
-    eax74 = caml_ml_array_bound_error(v70, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
-    eax75 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx71 + 12)) - reinterpret_cast<unsigned char>(eax74) - 3 + 2);
-    esi76 = *reinterpret_cast<void***>(ecx71 + 16);
-    if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi76 + 0xfffffffc)) & 0xff) == 0xfe) {
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi76 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax75)) {
-            caml_ml_array_bound_error(v77, 0x8058e4e, v70, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    eax75 = caml_ml_array_bound_error(ecx72, v71, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax76 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx72 + 12)) - reinterpret_cast<unsigned char>(eax75) - 3 + 2);
+    esi77 = *reinterpret_cast<void***>(ecx72 + 16);
+    if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi77 + 0xfffffffc)) & 0xff) == 0xfe) {
+        ecx78 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi77 + 0xfffffffc)) >> 10);
+        if (reinterpret_cast<unsigned char>(ecx78) <= reinterpret_cast<unsigned char>(eax76)) {
+            caml_ml_array_bound_error(ecx78, v79, 0x8058e4e, v71, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
             goto addr_8058eab_50;
         } else {
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [esi+eax*4-0x4]");
         }
     } else {
-        ecx78 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi76 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ecx78) <= reinterpret_cast<unsigned char>(eax75)) {
+        ecx78 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi77 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ecx78) <= reinterpret_cast<unsigned char>(eax76)) {
             addr_8058eab_50:
-            v79 = reinterpret_cast<void**>(0x8058eb0);
-            eax81 = caml_ml_array_bound_error(v80, 0x8058e4e, v70, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
-            ecx82 = eax81;
-            edx83 = ebx72;
+            v80 = reinterpret_cast<void**>(0x8058eb0);
+            eax82 = caml_ml_array_bound_error(ecx78, v81, 0x8058e4e, v71, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+            ecx83 = eax82;
+            edx84 = ebx73;
             goto addr_8058eb4_53;
         } else {
-            caml_modify(ecx78, reinterpret_cast<uint32_t>(esi76 + reinterpret_cast<unsigned char>(eax75) * 2) + 0xfffffffe, ebx72, v84, 0x8058e4e, v70, v30, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+            caml_modify(ecx78, reinterpret_cast<uint32_t>(esi77 + reinterpret_cast<unsigned char>(eax76) * 2) + 0xfffffffe, ebx73, v85, 0x8058e4e, v71, v31, v20, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
         }
     }
-    goto v70;
+    goto v71;
     addr_8058eb4_53:
-    while (eax85 = caml_young_ptr, eax86 = eax85 - 12, caml_young_ptr = eax86, cf87 = reinterpret_cast<unsigned char>(eax86) < reinterpret_cast<unsigned char>(caml_young_limit), cf87) {
-        v79 = reinterpret_cast<void**>(0x8058eee);
-        caml_call_gc(ecx82, v88, 0x8058e4e, v70, v30, v20, v19, a2, a3, a4, a5, a6);
+    while (eax86 = caml_young_ptr, eax87 = eax86 - 12, caml_young_ptr = eax87, cf88 = reinterpret_cast<unsigned char>(eax87) < reinterpret_cast<unsigned char>(caml_young_limit), cf88) {
+        v80 = reinterpret_cast<void**>(0x8058eee);
+        caml_call_gc(ecx83, v89, 0x8058e4e, v71, v31, v20, v19, a2, a3, a4, a5, a6);
     }
-    ebx89 = eax86 + 4;
-    *reinterpret_cast<void***>(ebx89 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
-    *reinterpret_cast<void***>(ebx89) = ecx82;
-    *reinterpret_cast<void***>(ebx89 + 4) = *reinterpret_cast<void***>(edx83 + 16);
-    ecx90 = *reinterpret_cast<void***>(edx83 + 8);
-    edx91 = *reinterpret_cast<void***>(edx83 + 12) + 2;
-    if (reinterpret_cast<signed char>(edx91) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx90 + 20))) {
-        while (eax92 = caml_young_ptr, eax93 = eax92 - 24, caml_young_ptr = eax93, cf94 = reinterpret_cast<unsigned char>(eax93) < reinterpret_cast<unsigned char>(caml_young_limit), cf94) {
-            caml_call_gc(ecx90, v95, v96, v79, v97, 0x8058e4e, v70, v30, v20, v19, a2, a3);
+    ebx90 = eax87 + 4;
+    *reinterpret_cast<void***>(ebx90 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
+    *reinterpret_cast<void***>(ebx90) = ecx83;
+    *reinterpret_cast<void***>(ebx90 + 4) = *reinterpret_cast<void***>(edx84 + 16);
+    ecx91 = *reinterpret_cast<void***>(edx84 + 8);
+    edx92 = *reinterpret_cast<void***>(edx84 + 12) + 2;
+    if (reinterpret_cast<signed char>(edx92) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ecx91 + 20))) {
+        while (eax93 = caml_young_ptr, eax94 = eax93 - 24, caml_young_ptr = eax94, cf95 = reinterpret_cast<unsigned char>(eax94) < reinterpret_cast<unsigned char>(caml_young_limit), cf95) {
+            caml_call_gc(ecx91, v96, v97, v80, v98, 0x8058e4e, v71, v31, v20, v19, a2, a3);
         }
-        eax98 = eax93 + 4;
-        *reinterpret_cast<void***>(eax98 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
-        *reinterpret_cast<void***>(eax98) = reinterpret_cast<void**>(0x8058eb0);
-        *reinterpret_cast<void***>(eax98 + 4) = reinterpret_cast<void**>(3);
-        *reinterpret_cast<void***>(eax98 + 8) = ecx90;
-        *reinterpret_cast<void***>(eax98 + 12) = edx91;
-        *reinterpret_cast<void***>(eax98 + 16) = ebx89;
-        goto v99;
+        eax99 = eax94 + 4;
+        *reinterpret_cast<void***>(eax99 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
+        *reinterpret_cast<void***>(eax99) = reinterpret_cast<void**>(0x8058eb0);
+        *reinterpret_cast<void***>(eax99 + 4) = reinterpret_cast<void**>(3);
+        *reinterpret_cast<void***>(eax99 + 8) = ecx91;
+        *reinterpret_cast<void***>(eax99 + 12) = edx92;
+        *reinterpret_cast<void***>(eax99 + 16) = ebx90;
+        goto v100;
     }
-    v100 = ecx90;
-    v101 = ebx89;
-    v102 = *reinterpret_cast<void***>(ecx90 + 20);
-    eax104 = caml_c_call(ecx90, v102, 1, v101, v100, v79, v103, 0x8058e4e, v70, v30, v20, v19, a2, a3, a4, a5, a6, a7);
-    ecx105 = eax104;
-    v106 = ecx105;
-    while (eax107 = caml_young_ptr, eax108 = eax107 - 24, caml_young_ptr = eax108, cf109 = reinterpret_cast<unsigned char>(eax108) < reinterpret_cast<unsigned char>(caml_young_limit), cf109) {
-        caml_call_gc(ecx105, v101, v100, v106, v110, 0x8058e4e, v70, v30, v20, v19, a2, a3);
+    v101 = ecx91;
+    v102 = ebx90;
+    v103 = *reinterpret_cast<void***>(ecx91 + 20);
+    eax105 = caml_c_call(ecx91, v103, 1, v102, v101, v80, v104, 0x8058e4e, v71, v31, v20, v19, a2, a3, a4, a5, a6, a7);
+    ecx106 = eax105;
+    v107 = ecx106;
+    while (eax108 = caml_young_ptr, eax109 = eax108 - 24, caml_young_ptr = eax109, cf110 = reinterpret_cast<unsigned char>(eax109) < reinterpret_cast<unsigned char>(caml_young_limit), cf110) {
+        caml_call_gc(ecx106, v102, v101, v107, v111, 0x8058e4e, v71, v31, v20, v19, a2, a3);
     }
-    eax111 = eax108 + 4;
-    *reinterpret_cast<void***>(eax111 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
-    *reinterpret_cast<void***>(eax111) = reinterpret_cast<void**>(0x804b370);
-    *reinterpret_cast<void***>(eax111 + 4) = reinterpret_cast<void**>(5);
-    *reinterpret_cast<void***>(eax111 + 8) = reinterpret_cast<void**>(0x8058e50);
-    *reinterpret_cast<void***>(eax111 + 12) = *reinterpret_cast<void***>(v100 + 20);
-    *reinterpret_cast<void***>(eax111 + 16) = ecx105;
-    camlPrintf__list_iter_i_1201(ecx105, v101, v100, v106, v112, 0x8058e4e, v70, v30, v20, v19, a2);
-    ecx113 = *reinterpret_cast<void***>(v100 + 12);
-    if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(ecx113 + 4) == 5)) 
+    eax112 = eax109 + 4;
+    *reinterpret_cast<void***>(eax112 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
+    *reinterpret_cast<void***>(eax112) = reinterpret_cast<void**>(0x804b370);
+    *reinterpret_cast<void***>(eax112 + 4) = reinterpret_cast<void**>(5);
+    *reinterpret_cast<void***>(eax112 + 8) = reinterpret_cast<void**>(0x8058e50);
+    *reinterpret_cast<void***>(eax112 + 12) = *reinterpret_cast<void***>(v101 + 20);
+    *reinterpret_cast<void***>(eax112 + 16) = ecx106;
+    camlPrintf__list_iter_i_1201(ecx106, v102, v101, v107, v113, 0x8058e4e, v71, v31, v20, v19, a2);
+    ecx114 = *reinterpret_cast<void***>(v101 + 12);
+    if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(ecx114 + 4) == 5)) 
         goto addr_804b54b_67;
-    edx114 = *reinterpret_cast<void***>(ecx113);
-    eax115 = reinterpret_cast<int32_t*>(edx114());
-    goto *eax115;
+    edx115 = *reinterpret_cast<void***>(ecx114);
+    eax116 = reinterpret_cast<int32_t*>(edx115());
+    goto *eax116;
     addr_804b54b_67:
-    goto *reinterpret_cast<void***>(ecx113 + 8);
+    goto *reinterpret_cast<void***>(ecx114 + 8);
     addr_8058cba_28:
-    goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx55 + 8));
+    goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx56 + 8));
     addr_8058d60_33:
-    if (edx64 == *reinterpret_cast<void***>(ebx55 + 32)) {
-        goto v30;
+    if (edx65 == *reinterpret_cast<void***>(ebx56 + 32)) {
+        goto v31;
     }
-    edx116 = *reinterpret_cast<void***>(ebx55 + 12);
-    if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(edx116 + 4) == 7)) 
+    edx117 = *reinterpret_cast<void***>(ebx56 + 12);
+    if (reinterpret_cast<int1_t>(*reinterpret_cast<void***>(edx117 + 4) == 7)) 
         goto addr_804b4fb_72;
-    ecx117 = *reinterpret_cast<void***>(edx116);
-    eax118 = reinterpret_cast<int32_t*>(ecx117());
-    ecx119 = *eax118;
-    eax120 = reinterpret_cast<int32_t*>(ecx119());
-    goto *eax120;
+    ecx118 = *reinterpret_cast<void***>(edx117);
+    eax119 = reinterpret_cast<int32_t*>(ecx118());
+    ecx120 = *eax119;
+    eax121 = reinterpret_cast<int32_t*>(ecx120());
+    goto *eax121;
     addr_804b4fb_72:
-    goto *reinterpret_cast<void***>(edx116 + 8);
+    goto *reinterpret_cast<void***>(edx117 + 8);
     addr_80594b7_16:
-    esi51 = reinterpret_cast<void**>(83);
+    esi52 = reinterpret_cast<void**>(83);
     goto addr_80594c5_18;
     addr_805b4de_7:
     goto v20;
@@ -30004,7 +30003,7 @@ void** parse_format(void** ecx, void** a2, signed char* a3) {
     ecx29 = reinterpret_cast<void**>(~ecx28);
     esi30 = ecx29 + 0xffffffff;
     if (reinterpret_cast<unsigned char>(esi30) + reinterpret_cast<unsigned char>(ebx26) + 1 > 31) {
-        caml_invalid_argument(ecx29, 0x80713ad, v31, v32);
+        caml_invalid_argument(ecx29, "format_int: format too long", v31, v32);
     }
     fun_804a684(ecx29, v16, v12, ebx26, v33, v34, v16, v14, v12, v35, v36, v37, v10, v8, v6, v4);
     ebx38 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(v16) + reinterpret_cast<unsigned char>(ebx26) + 0xffffffff);
@@ -30189,7 +30188,7 @@ void** camlPrintf__format_string_1080(void** ecx, void** a2, void** a3, void** a
             eax29 = eax27 + 4;
             *reinterpret_cast<void***>(eax29 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(eax29) = reinterpret_cast<void**>(0x80724a8);
-            *reinterpret_cast<void***>(eax29 + 4) = reinterpret_cast<void**>(0x8078188);
+            *reinterpret_cast<void***>(eax29 + 4) = reinterpret_cast<void**>("String.sub");
             caml_raise_exn(ecx24, v14, a2, a3, a4, a5, a6, a7, a8, a9);
         }
         caml_call_gc(ecx24, v14, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -30231,11 +30230,11 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
     int1_t cf47;
     void** ebx48;
     void** eax49;
-    void* ecx50;
+    void** ecx50;
     void* esi51;
     uint32_t ecx52;
     void** eax53;
-    void* ecx54;
+    void** ecx54;
     void* esi55;
     void* ecx56;
     void** edx57;
@@ -30251,8 +30250,8 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
     void** eax67;
     void** eax68;
     void** esi69;
-    void** v70;
-    void** ecx71;
+    void** ecx70;
+    void** v71;
     void** v72;
     void** v73;
     void** eax74;
@@ -30312,7 +30311,7 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
         *reinterpret_cast<signed char*>(reinterpret_cast<unsigned char>(eax24) + reinterpret_cast<unsigned char>(ebx27)) = 0x67;
         return;
     }
-    eax31 = caml_ml_array_bound_error(v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax31 = caml_ml_array_bound_error(ecx30, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     v32 = eax31;
     ebp33 = ecx30;
     eax34 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx29 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
@@ -30356,11 +30355,11 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
     *reinterpret_cast<void***>(ebx48 + 44) = esi44;
     eax49 = edx42;
     while (reinterpret_cast<signed char>(eax49) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx48 + 32))) {
-        ecx50 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax49) >> 1);
+        ecx50 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax49) >> 1);
         esi51 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx48 + 28) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi51) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 28)) + reinterpret_cast<uint32_t>(esi51)) <= reinterpret_cast<uint32_t>(ecx50)) 
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi51) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 28)) + reinterpret_cast<uint32_t>(esi51))) <= reinterpret_cast<unsigned char>(ecx50)) 
             goto addr_8058deb_18;
-        ecx52 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 28)) + reinterpret_cast<uint32_t>(ecx50));
+        ecx52 = *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 28)) + reinterpret_cast<unsigned char>(ecx50));
         if (ecx52 + ecx52 + 1 != 75) {
             eax49 = eax49 + 2;
             continue;
@@ -30369,14 +30368,14 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
         eax53 = eax49 + 2;
         if (reinterpret_cast<signed char>(eax53) >= reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx48 + 20))) 
             goto addr_8058cba_23;
-        ecx54 = reinterpret_cast<void*>(reinterpret_cast<signed char>(eax53) >> 1);
+        ecx54 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax53) >> 1);
         esi55 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx48 + 16) + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(esi55) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 16)) + reinterpret_cast<uint32_t>(esi55)) > reinterpret_cast<uint32_t>(ecx54)) 
+        if (reinterpret_cast<unsigned char>(reinterpret_cast<uint32_t>(esi55) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 16)) + reinterpret_cast<uint32_t>(esi55))) > reinterpret_cast<unsigned char>(ecx54)) 
             goto addr_8058cf2_25;
-        eax49 = caml_ml_array_bound_error(v32, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+        eax49 = caml_ml_array_bound_error(ecx54, v32, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
         continue;
         addr_8058cf2_25:
-        ecx56 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 16)) + reinterpret_cast<uint32_t>(ecx54))));
+        ecx56 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx48 + 16)) + reinterpret_cast<unsigned char>(ecx54))));
         edx57 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx56) + reinterpret_cast<uint32_t>(ecx56) + 1);
         ecx58 = edx57 + 0xffffffb0;
         if (reinterpret_cast<unsigned char>(ecx58) <= reinterpret_cast<unsigned char>(3)) {
@@ -30413,7 +30412,7 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
     }
     goto *reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx48 + 20));
     addr_8058deb_18:
-    eax62 = caml_ml_array_bound_error(v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax62 = caml_ml_array_bound_error(ecx50, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     while (reinterpret_cast<signed char>(eax62) < reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx48 + 16) + 0xfffffffc)) {
         v63 = ebx48;
         ecx64 = *reinterpret_cast<void***>(ebx48 + 12);
@@ -30426,28 +30425,29 @@ void camlPrintf__extract_format_float_1110(void** ecx, void** a2, void** a3, voi
     }
     goto v21;
     addr_8058e49_40:
-    eax67 = caml_ml_array_bound_error(v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax67 = caml_ml_array_bound_error(ecx64, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     eax68 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx64 + 12)) - reinterpret_cast<unsigned char>(eax67) - 3 + 2);
     esi69 = *reinterpret_cast<void***>(ecx64 + 16);
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) & 0xff) == 0xfe) {
-        if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(eax68)) {
-            caml_ml_array_bound_error(v70, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+        ecx70 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 10);
+        if (reinterpret_cast<unsigned char>(ecx70) <= reinterpret_cast<unsigned char>(eax68)) {
+            caml_ml_array_bound_error(ecx70, v71, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             goto addr_8058eab_45;
         } else {
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [esi+eax*4-0x4]");
         }
     } else {
-        ecx71 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 9);
-        if (reinterpret_cast<unsigned char>(ecx71) <= reinterpret_cast<unsigned char>(eax68)) {
+        ecx70 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi69 + 0xfffffffc)) >> 9);
+        if (reinterpret_cast<unsigned char>(ecx70) <= reinterpret_cast<unsigned char>(eax68)) {
             addr_8058eab_45:
             v72 = reinterpret_cast<void**>(0x8058eb0);
-            eax74 = caml_ml_array_bound_error(v73, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+            eax74 = caml_ml_array_bound_error(ecx70, v73, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
             ecx75 = eax74;
             edx76 = ebx65;
             goto addr_8058eb4_48;
         } else {
-            caml_modify(ecx71, reinterpret_cast<uint32_t>(esi69 + reinterpret_cast<unsigned char>(eax68) * 2) + 0xfffffffe, ebx65, v77, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
+            caml_modify(ecx70, reinterpret_cast<uint32_t>(esi69 + reinterpret_cast<unsigned char>(eax68) * 2) + 0xfffffffe, ebx65, v77, 0x8058e4e, v63, v21, v20, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19);
         }
     }
     goto v63;
@@ -30551,7 +30551,7 @@ void** camlPrintf__ac_of_format_1184(void** ecx, void** a2, void** a3, void** a4
     ebx22->f0 = reinterpret_cast<void**>(0x804b2d0);
     ebx22->f4 = 7;
     ebx22->f8 = 0x80599a0;
-    ebx22->f12 = eax21;
+    ebx22->fc = eax21;
     camlPrintf__iter_on_format_args_1137(0x8079870, ebx20, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     return ebx20;
 }
@@ -30628,22 +30628,21 @@ int32_t fun_804a5b4(int32_t a1, int32_t a2, void** a3) {
     goto ftruncate64;
 }
 
-void caml_process_pending_signals(void** a1, void** a2) {
-    int32_t eax3;
-    void** ebx4;
-    void** ecx5;
+void caml_process_pending_signals(void** ecx, void** a2, void** a3) {
+    int32_t eax4;
+    void** ebx5;
 
-    eax3 = caml_signals_are_pending;
-    if (eax3) {
+    eax4 = caml_signals_are_pending;
+    if (eax4) {
         caml_signals_are_pending = 0;
-        ebx4 = reinterpret_cast<void**>(0);
+        ebx5 = reinterpret_cast<void**>(0);
         do {
-            if (*reinterpret_cast<int32_t*>(0x8082660 + reinterpret_cast<unsigned char>(ebx4) * 4)) {
-                *reinterpret_cast<int32_t*>(0x8082660 + reinterpret_cast<unsigned char>(ebx4) * 4) = 0;
-                caml_execute_signal(ecx5, ebx4, 0);
+            if (*reinterpret_cast<int32_t*>(0x8082660 + reinterpret_cast<unsigned char>(ebx5) * 4)) {
+                *reinterpret_cast<int32_t*>(0x8082660 + reinterpret_cast<unsigned char>(ebx5) * 4) = 0;
+                caml_execute_signal(ecx, ebx5, 0);
             }
-            ++ebx4;
-        } while (!reinterpret_cast<int1_t>(ebx4 == 65));
+            ++ebx5;
+        } while (!reinterpret_cast<int1_t>(ebx5 == 65));
     }
     return;
 }
@@ -30719,7 +30718,7 @@ void caml_raise_constant(void** ecx, void** a2) {
     v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffb4);
     v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffd4);
-    eax11 = caml_alloc_small(ecx, 1, 0, v6, v7, v8, v9, v10, v4, 1, 1, v5);
+    eax11 = caml_alloc_small(1, 0, v6, v7, v8, v9, v10, v4, 1, 1, v5);
     *reinterpret_cast<void***>(eax11) = a2;
     caml_raise(ecx, eax11, 0, v12, v13, v14, v15, v16, v4, 1, 1, v5);
     caml_raise_constant(ecx, 0x8072580);
@@ -30950,31 +30949,28 @@ int32_t fun_804a034(int32_t a1, int32_t a2) {
 
 void caml_adjust_gc_speed(void** a1, void** a2);
 
-void** caml_alloc_custom(void** a1, void** a2, void** a3, void** a4) {
-    void** eax5;
-    void** ecx6;
+void** caml_alloc_custom(void** ecx, void** a2, void** a3, void** a4, void** a5) {
+    void** eax6;
     void** eax7;
-    void** ecx8;
-    void** v9;
-    void** eax10;
-    void** ecx11;
-    void** v12;
-    void** v13;
-    void** ebx14;
-    void** esi15;
-    void** ebp16;
+    void** v8;
+    void** eax9;
+    void** v10;
+    void** v11;
+    void** ebx12;
+    void** esi13;
+    void** ebp14;
 
-    eax5 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(a2 + 3) >> 2) + 1);
-    if (*reinterpret_cast<void***>(a1 + 4) || reinterpret_cast<unsigned char>(eax5) > reinterpret_cast<unsigned char>(0x100)) {
-        eax7 = caml_alloc_shr(ecx6, eax5, 0xff);
-        *reinterpret_cast<void***>(eax7) = a1;
-        caml_adjust_gc_speed(a3, a4);
-        eax10 = caml_check_urgent_gc(ecx8, eax7, a4, v9);
+    eax6 = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(a3 + 3) >> 2) + 1);
+    if (*reinterpret_cast<void***>(a2 + 4) || reinterpret_cast<unsigned char>(eax6) > reinterpret_cast<unsigned char>(0x100)) {
+        eax7 = caml_alloc_shr(ecx, eax6, 0xff);
+        *reinterpret_cast<void***>(eax7) = a2;
+        caml_adjust_gc_speed(a4, a5);
+        eax9 = caml_check_urgent_gc(eax7, a5, v8);
     } else {
-        eax10 = caml_alloc_small(ecx11, eax5, 0xff, v12, v13, ebx14, esi15, ebp16, __return_address(), a1, a2, a3);
-        *reinterpret_cast<void***>(eax10) = a1;
+        eax9 = caml_alloc_small(eax6, 0xff, v10, v11, ebx12, esi13, ebp14, __return_address(), a2, a3, a4);
+        *reinterpret_cast<void***>(eax9) = a2;
     }
-    return eax10;
+    return eax9;
 }
 
 int32_t mkfifo = 0x804a4aa;
@@ -31375,7 +31371,7 @@ void caml_raise_with_string(void** ecx, void** a2, void** a3, void** a4, void** 
     v35 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp34) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp34) + 0xffffffb4);
     v36 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp34) + 0xffffffd4);
-    eax42 = caml_alloc_small(ecx, 1, 0, v37, v38, v39, v40, v41, v35, 1, 1, v36);
+    eax42 = caml_alloc_small(1, 0, v37, v38, v39, v40, v41, v35, 1, 1, v36);
     *reinterpret_cast<void***>(eax42) = eax20;
     caml_raise(ecx, eax42, 0, v43, v44, v45, v46, v47, v35, 1, 1, v36);
     caml_raise_constant(ecx, 0x8072580);
@@ -31744,30 +31740,30 @@ void** caml_format_exception(void** ecx, void** a2) {
                 ebx17 = *reinterpret_cast<void***>(v14 + reinterpret_cast<unsigned char>(esi16) * 4);
                 if (!(*reinterpret_cast<unsigned char*>(&ebx17) & 1)) {
                     if (!reinterpret_cast<int1_t>(*reinterpret_cast<void***>(ebx17 + 0xfffffffc) == 0xfc)) {
-                        add_char(v18, 0x80717bb, v19);
+                        add_char(v18, "%ld", v19);
                     } else {
-                        add_char(v18, 0x80717bb, v19);
-                        add_string(v18, 0x80717bb, v19);
-                        add_char(v18, 0x80717bb, v19);
+                        add_char(v18, "%ld", v19);
+                        add_string(v18, "%ld", v19);
+                        add_char(v18, "%ld", v19);
                     }
                 } else {
                     v19 = reinterpret_cast<void**>(reinterpret_cast<signed char>(ebx17) >> 1);
                     v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffea0);
-                    fun_8049e24(ecx, v18, 0x80717bb, v19, v20);
-                    add_string(v18, 0x80717bb, v19);
+                    fun_8049e24(ecx, v18, "%ld", v19, v20);
+                    add_string(v18, "%ld", v19);
                 }
                 ++esi16;
                 if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi15)) >> 10) <= reinterpret_cast<unsigned char>(esi16)) 
                     break;
                 if (reinterpret_cast<unsigned char>(v10) >= reinterpret_cast<unsigned char>(esi16)) 
                     continue;
-                add_string(v18, 0x80717bb, v19);
+                add_string(v18, "%ld", v19);
             }
         }
-        add_char(v18, 0x80717bb, v19);
+        add_char(v18, "%ld", v19);
     }
     esi21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v4) - (reinterpret_cast<int32_t>(ebp3) - 24) + 0x101);
-    eax22 = fun_804a5c4(esi21, 0x80717bb, v19);
+    eax22 = fun_804a5c4(esi21, "%ld", v19);
     if (eax22) {
         v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffee8);
         fun_804a684(ecx, eax22, v23, esi21, v24, v25, v26, v14, v10, v27, v28, v29, v30, v31, v32, v33, ecx, eax22, v23, esi21, v34, v35, v36, v14, v10, v37, v38, v39, v40, v41, v42, v43);
@@ -32035,8 +32031,8 @@ struct s151 {
     signed char[7] pad8;
     void** f8;
     signed char[3] pad12;
-    void* f12;
-    void** f16;
+    void* fc;
+    void** f10;
 };
 
 void** caml_final_do_calls(void** a1, void** a2, void** a3) {
@@ -32071,8 +32067,8 @@ void** caml_final_do_calls(void** a1, void** a2, void** a3) {
         addr_806f51e_2:
         return eax11;
     } else {
-        v12 = reinterpret_cast<void**>(0x8071bb4);
-        caml_gc_message(0x80, 0x8071bb4, 0, v13);
+        v12 = reinterpret_cast<void**>("Calling finalisation functions.\n");
+        caml_gc_message(0x80, "Calling finalisation functions.\n", 0, v13);
         while (eax14 = to_do_hd, !!eax14) {
             if (!*reinterpret_cast<void***>(eax14 + 4)) {
                 ebx15 = *reinterpret_cast<void***>(eax14);
@@ -32086,8 +32082,8 @@ void** caml_final_do_calls(void** a1, void** a2, void** a3) {
                 *reinterpret_cast<void***>(eax14 + 4) = edx16;
                 eax17 = reinterpret_cast<struct s151*>(eax14 + reinterpret_cast<uint32_t>(edx16 + reinterpret_cast<unsigned char>(edx16) * 2) * 4);
                 edx18 = eax17->f8;
-                ecx19 = eax17->f16;
-                eax20 = eax17->f12;
+                ecx19 = eax17->f10;
+                eax20 = eax17->fc;
                 running_finalisation_function = 1;
                 v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(eax20) + reinterpret_cast<unsigned char>(ecx19));
                 eax22 = caml_callback_exn(edx18, v12, 0, v21);
@@ -32098,7 +32094,7 @@ void** caml_final_do_calls(void** a1, void** a2, void** a3) {
         }
     }
     addr_806f502_10:
-    eax11 = caml_gc_message(0x80, 0x8071bd8, 0, v23);
+    eax11 = caml_gc_message(0x80, "Done calling finalisation functions.\n", 0, v23);
     goto addr_806f51e_2;
     addr_806f4f7_9:
     caml_raise(ecx19, reinterpret_cast<unsigned char>(eax22) & 0xfffffffc, v12, 0, v24, v25, v7, v5, v4, a1, a2, a3);
@@ -32257,7 +32253,7 @@ void** caml_shrink_heap(void** a1, void** a2, void** a3) {
         eax7 = caml_stat_heap_size;
         eax8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax7) - reinterpret_cast<unsigned char>(esi6->f8));
         caml_stat_heap_size = eax8;
-        caml_gc_message(4, 0x8071181, reinterpret_cast<unsigned char>(eax8) >> 10, v9);
+        caml_gc_message(4, "Shrinking heap to %luk bytes\n", reinterpret_cast<unsigned char>(eax8) >> 10, v9);
         --caml_stat_heap_chunks;
         eax10 = caml_heap_start;
         edx11 = reinterpret_cast<void**>(0x8082778);
@@ -32267,7 +32263,7 @@ void** caml_shrink_heap(void** a1, void** a2, void** a3) {
                 eax10 = *reinterpret_cast<void***>(eax10 + 0xfffffffc);
             } while (ebx4 != eax10);
         }
-        *reinterpret_cast<void***>(edx11) = esi6->f12;
+        *reinterpret_cast<void***>(edx11) = esi6->fc;
         v12 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx4) + reinterpret_cast<unsigned char>(esi6->f8));
         caml_page_table_remove(1, ebx4, v12);
         eax13 = caml_free_for_heap(ebx4, ebx4, v12);
@@ -32297,7 +32293,7 @@ int32_t caml_add_to_heap(void** a1, void** a2, void** a3) {
     esi5 = reinterpret_cast<struct s95*>(ebx4 + 0xfffffff0);
     eax6 = caml_stat_heap_size;
     v7 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax6) + reinterpret_cast<unsigned char>(esi5->f8) >> 10);
-    caml_gc_message(4, 0x807119f, v7, v8);
+    caml_gc_message(4, "Growing heap to %luk bytes\n", v7, v8);
     v9 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ebx4) + reinterpret_cast<unsigned char>(esi5->f8));
     eax12 = caml_page_table_add(1, ebx4, v9, v10, ebx11);
     eax13 = -1;
@@ -32313,7 +32309,7 @@ int32_t caml_add_to_heap(void** a1, void** a2, void** a3) {
                     break;
             } while (reinterpret_cast<unsigned char>(ebx4) > reinterpret_cast<unsigned char>(eax14));
         }
-        esi5->f12 = eax14;
+        esi5->fc = eax14;
         *reinterpret_cast<void***>(edx15) = ebx4;
         tmp32_16 = caml_stat_heap_chunks + 1;
         caml_stat_heap_chunks = tmp32_16;
@@ -32349,7 +32345,7 @@ void** caml_final_custom_operations(void** ecx, void** a2) {
         addr_806f77f_2:
         eax7 = caml_stat_alloc(ecx, 28, v5, v6);
         ebx8 = eax7;
-        *reinterpret_cast<void***>(eax7) = reinterpret_cast<void**>(0x8071bfe);
+        *reinterpret_cast<void***>(eax7) = reinterpret_cast<void**>("_final");
         *reinterpret_cast<void***>(eax7 + 4) = esi3;
         *reinterpret_cast<void***>(eax7 + 8) = reinterpret_cast<void**>(0);
         *reinterpret_cast<void***>(eax7 + 12) = reinterpret_cast<void**>(0);
@@ -32501,8 +32497,8 @@ void** compare_val(void** ecx) {
                     case 0:
                     case 2:
                         compare_free_stack(ecx19, v23, v24, v25);
-                        v23 = reinterpret_cast<void**>(0x8071233);
-                        caml_invalid_argument(ecx19, 0x8071233, v24, v25);
+                        v23 = reinterpret_cast<void**>("equal: functional value");
+                        caml_invalid_argument(ecx19, "equal: functional value", v24, v25);
                     case 1:
                         edx26 = reinterpret_cast<void*>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(v10 + 4)) >> 1);
                         eax27 = reinterpret_cast<void*>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(v11 + 4)) >> 1);
@@ -32568,8 +32564,8 @@ void** compare_val(void** ecx) {
                         }
                     case 4:
                         compare_free_stack(ecx19, v23, v24, v25);
-                        v23 = reinterpret_cast<void**>(0x807121d);
-                        caml_invalid_argument(ecx19, 0x807121d, v24, v25);
+                        v23 = reinterpret_cast<void**>("equal: abstract value");
+                        caml_invalid_argument(ecx19, "equal: abstract value", v24, v25);
                         goto addr_8065873_18;
                     case 5:
                         if (!*reinterpret_cast<unsigned char*>(&eax9)) {
@@ -32691,7 +32687,7 @@ void** compare_val(void** ecx) {
                             goto addr_80658b7_88;
                         if (!edx63) {
                             compare_free_stack(ecx62, v23, v24, v25);
-                            caml_invalid_argument(ecx62, 0x807121d, v24, v25);
+                            caml_invalid_argument(ecx62, "equal: abstract value", v24, v25);
                         }
                         caml_compare_unordered = 0;
                         v24 = v4;
@@ -33298,32 +33294,32 @@ int32_t caml_channel_binary_mode(void** a1) {
 
 struct s155 {
     signed char[28] pad28;
-    int32_t f28;
+    int32_t f1c;
 };
 
 struct s154 {
     signed char[32] pad32;
-    struct s155* f32;
+    struct s155* f20;
 };
 
 struct s156 {
     signed char[28] pad28;
-    int32_t f28;
+    int32_t f1c;
 };
 
 struct s158 {
     signed char[32] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 struct s157 {
     signed char[28] pad28;
-    struct s158* f28;
+    struct s158* f1c;
 };
 
 struct s159 {
     signed char[32] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 void** caml_all_opened_channels = reinterpret_cast<void**>(0);
@@ -33336,10 +33332,10 @@ void unlink_channel(void** a1) {
     void** eax6;
     void** eax7;
 
-    if (eax2->f32) {
-        eax2->f32->f28 = eax3->f28;
-        if (eax4->f28) {
-            eax4->f28->f32 = eax5->f32;
+    if (eax2->f20) {
+        eax2->f20->f1c = eax3->f1c;
+        if (eax4->f1c) {
+            eax4->f1c->f20 = eax5->f20;
         }
     } else {
         eax6 = caml_all_opened_channels;
@@ -33387,18 +33383,18 @@ void** caml_channel_size(void** ecx, void** a2) {
     ebx3 = *reinterpret_cast<void***>(a2);
     edx4 = *reinterpret_cast<void***>(a2 + 4);
     v5 = *reinterpret_cast<void***>(a2 + 8);
-    caml_enter_blocking_section(v6, v7, v8);
+    caml_enter_blocking_section(ecx, v6, v7, v8);
     v9 = reinterpret_cast<void**>(2);
     v10 = reinterpret_cast<void**>(0);
     v11 = reinterpret_cast<void**>(0);
     v12 = ebx3;
     eax13 = fun_804a844(v12, 0, 0, 2);
     if ((reinterpret_cast<unsigned char>(eax13) & reinterpret_cast<unsigned char>(edx4)) == 0xffffffff || (v9 = reinterpret_cast<void**>(0), v10 = edx4, v11 = v5, v12 = ebx3, eax14 = fun_804a844(v12, v10, v11, 0), !!(reinterpret_cast<unsigned char>(v5) ^ reinterpret_cast<unsigned char>(v5) | reinterpret_cast<unsigned char>(eax14) ^ reinterpret_cast<unsigned char>(edx4)))) {
-        caml_leave_blocking_section(v12, v10, v11, v9, v15, v16, v5, edx4, v17, v18, v19);
+        caml_leave_blocking_section(ecx, v12, v10, v11, v9, v15, v16, v5, edx4, v17, v18, v19);
         v12 = reinterpret_cast<void**>(1);
         caml_sys_error(ecx, 1, v10, v11, v9, v20, v21, v5, edx4, v22, v23, v24, ebx25, esi26, edi27);
     }
-    caml_leave_blocking_section(v12, v10, v11, v9, v28, v29, v5, edx4, v30, v31, v32);
+    caml_leave_blocking_section(ecx, v12, v10, v11, v9, v28, v29, v5, edx4, v30, v31, v32);
     return eax13;
 }
 
@@ -33433,12 +33429,12 @@ void** caml_do_read(void** ecx, void** a2, void** a3, void** a4) {
     esi13 = a2;
     edi14 = a3;
     do {
-        caml_enter_blocking_section(v15, v16, v17);
+        caml_enter_blocking_section(ecx, v15, v16, v17);
         v17 = a4;
         v16 = edi14;
         v15 = esi13;
         eax18 = fun_804a114(v15, v16, v17);
-        caml_leave_blocking_section(v15, v16, v17, v19, v20, v21, v22, v11, v9, v7, v5);
+        caml_leave_blocking_section(ecx, v15, v16, v17, v19, v20, v21, v22, v11, v9, v7, v5);
         if (!reinterpret_cast<int1_t>(eax18 == 0xffffffff)) 
             break;
         eax23 = fun_8049df4(v15, v16, v17);
@@ -33485,11 +33481,11 @@ void** caml_open_descriptor_in(void** ecx, void** a2, void** a3, void** a4) {
 
     eax7 = caml_stat_alloc(ecx, 0x1034, v5, v6);
     *reinterpret_cast<void***>(eax7) = a2;
-    caml_enter_blocking_section(0x1034, v8, v9);
+    caml_enter_blocking_section(ecx, 0x1034, v8, v9);
     eax10 = fun_804a844(a2, 0, 0, 1);
     *reinterpret_cast<void***>(eax7 + 4) = eax10;
     *reinterpret_cast<void***>(eax7 + 8) = edx11;
-    caml_leave_blocking_section(a2, 0, 0, 1, ebx12, esi13, ebp14, __return_address(), a2, a3, a4);
+    caml_leave_blocking_section(ecx, a2, 0, 0, 1, ebx12, esi13, ebp14, __return_address(), a2, a3, a4);
     eax15 = eax7 + 52;
     *reinterpret_cast<void***>(eax7 + 20) = eax15;
     *reinterpret_cast<void***>(eax7 + 16) = eax15;
@@ -33510,12 +33506,13 @@ void** caml_open_descriptor_in(void** ecx, void** a2, void** a3, void** a4) {
     return eax7;
 }
 
-void** caml_open_descriptor_out(void** ecx, void** a2) {
+void** caml_open_descriptor_out(void** a1) {
+    void** ecx2;
     void** v3;
     void** v4;
     void** eax5;
 
-    eax5 = caml_open_descriptor_in(ecx, a2, v3, v4);
+    eax5 = caml_open_descriptor_in(ecx2, a1, v3, v4);
     *reinterpret_cast<void***>(eax5 + 20) = reinterpret_cast<void**>(0);
     return eax5;
 }
@@ -33798,7 +33795,7 @@ void caml_raise_sys_error(void** ecx, void** a2, void** a3, void** a4, void** a5
     v34 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp33) + 0xffffffd8);
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp33) + 0xffffffb4);
     v35 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebp33) + 0xffffffd4);
-    eax41 = caml_alloc_small(ecx, 1, 0, v36, v37, v38, v39, v40, v34, 1, 1, v35);
+    eax41 = caml_alloc_small(1, 0, v36, v37, v38, v39, v40, v34, 1, 1, v35);
     *reinterpret_cast<void***>(eax41) = eax19;
     caml_raise(ecx, eax41, 0, v42, v43, v44, v45, v46, v34, 1, 1, v35);
     caml_raise_constant(ecx, 0x8072580);
@@ -33917,7 +33914,7 @@ int32_t caml_read_directory(void** a1, void** a2) {
     v4 = eax3;
     eax5 = -1;
     if (v4) {
-        esi6 = reinterpret_cast<struct s164*>(0x8071c15);
+        esi6 = reinterpret_cast<struct s164*>(".");
         while (eax9 = fun_804a354(v4, v7, v8), !!eax9) {
             ebx10 = eax9 + 19;
             edx11 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx10));
@@ -34007,15 +34004,15 @@ void** test_and_compact(void** a1, void** a2, void** a3) {
     __asm__("fldcw word [ebp-0x1c]");
     __asm__("fistp qword [ebp-0x18]");
     __asm__("fldcw word [ebp-0x1a]");
-    caml_gc_message(0x200, 0x8071964, reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(eax4), v7, 0x200, 0x8071964, reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(eax4), v8);
+    caml_gc_message(0x200, "Estimated overhead (lower bound) = %lu%%\n", reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(eax4), v7, 0x200, "Estimated overhead (lower bound) = %lu%%\n", reinterpret_cast<unsigned char>(edx6) - reinterpret_cast<unsigned char>(eax4), v8);
     eax9 = caml_percent_max;
     __asm__("fild qword [ebp-0x18]");
     __asm__("fld dword [ebp-0x20]");
     __asm__("fucomip st0, st1");
     __asm__("fstp st0");
     if (reinterpret_cast<unsigned char>(edx6) >= reinterpret_cast<unsigned char>(eax4) && (less_or_equal10 = reinterpret_cast<signed char>(caml_stat_heap_chunks) <= reinterpret_cast<signed char>(1), !less_or_equal10)) {
-        caml_gc_message(0x200, 0x8071990, 0, v11, 0x200, 0x8071990, 0, v12);
-        eax9 = caml_compact_heap(0x200, 0x8071990, 0);
+        caml_gc_message(0x200, "Automatic compaction triggered.\n", 0, v11, 0x200, "Automatic compaction triggered.\n", 0, v12);
+        eax9 = caml_compact_heap(0x200, "Automatic compaction triggered.\n", 0);
     }
     return eax9;
 }
@@ -34063,7 +34060,7 @@ void** caml_callback3_exn(void** a1, void** a2, void** a3, void** a4) {
 struct s165 {
     void** f0;
     signed char[11] pad12;
-    void** f12;
+    void** fc;
 };
 
 void** caml_final_update(void** a1, void** a2, void** a3) {
@@ -34120,7 +34117,7 @@ void** caml_final_update(void** a1, void** a2, void** a3) {
     }
     eax10 = fun_804a5c4(reinterpret_cast<uint32_t>(ebx7 + reinterpret_cast<unsigned char>(ebx7) * 2) * 4 + 20, v8, v9);
     if (!eax10) {
-        eax10 = caml_fatal_error(0x8071ba4, v11, v12, v13, v14);
+        eax10 = caml_fatal_error("out of memory", v11, v12, v13, v14);
     }
     *reinterpret_cast<void***>(eax10) = reinterpret_cast<void**>(0);
     *reinterpret_cast<void***>(eax10 + 4) = ebx7;
@@ -34221,7 +34218,7 @@ void** caml_final_update(void** a1, void** a2, void** a3) {
     esi35 = v22;
     do {
         tmp32_36 = reinterpret_cast<struct s165*>((reinterpret_cast<uint32_t>(ebx34 + reinterpret_cast<unsigned char>(ebx34) * 2) << 2) + reinterpret_cast<unsigned char>(to_do_tl));
-        v37 = tmp32_36->f12;
+        v37 = tmp32_36->fc;
         eax5 = caml_darken(v37, 0);
         ++ebx34;
     } while (reinterpret_cast<unsigned char>(ebx34) < reinterpret_cast<unsigned char>(esi35));
@@ -34474,7 +34471,7 @@ int32_t camlPervasives__entry(void** ecx, void** a2, void** a3, void** a4, void*
     eax17 = caml_alloc1(ecx);
     eax18 = eax17 + 4;
     *reinterpret_cast<void***>(eax18 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
-    *reinterpret_cast<void***>(eax18) = reinterpret_cast<void**>(0x8075b50);
+    *reinterpret_cast<void***>(eax18) = reinterpret_cast<void**>("Pervasives.Exit");
     g8075598 = eax18;
     g807559c = 0x80759a0;
     g80755a0 = 0x8075990;
@@ -34562,7 +34559,7 @@ int32_t camlPervasives__entry(void** ecx, void** a2, void** a3, void** a4, void*
     g80756d0 = reinterpret_cast<void**>(0x80756ec);
     g80756c0 = 0x80756e0;
     v32 = g80756d0;
-    caml_c_call(ecx, 0x8075acc, v32, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    caml_c_call(ecx, "Pervasives.do_at_exit", v32, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     return 1;
 }
 
@@ -34641,7 +34638,7 @@ int32_t camlArray__entry(void** ecx) {
     eax3 = caml_alloc1(ecx);
     eax4 = eax3 + 4;
     *reinterpret_cast<void***>(eax4 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
-    *reinterpret_cast<void***>(eax4) = reinterpret_cast<void**>(0x8076588);
+    *reinterpret_cast<void***>(eax4) = reinterpret_cast<void**>("Array.Bottom");
     g8076430 = eax4;
     g807641c = 0x807644c;
     g8076434 = 11;
@@ -35013,7 +35010,7 @@ int32_t camlSys__entry(void** ecx, void** a2, void** a3, void** a4, void** a5, v
     g8078424 = -41;
     eax28 = ebx27 + 8;
     *reinterpret_cast<void***>(eax28 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
-    *reinterpret_cast<void***>(eax28) = reinterpret_cast<void**>(0x807846c);
+    *reinterpret_cast<void***>(eax28) = reinterpret_cast<void**>("Sys.Break");
     g8078428 = eax28;
     g807842c = 0x8078438;
     g8078430 = reinterpret_cast<int32_t>("3.12.1");
@@ -35141,7 +35138,7 @@ struct s168 {
     int32_t* f4;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s169 {
@@ -35199,9 +35196,9 @@ int32_t camlPrintf__entry() {
     edx8->f0 = reinterpret_cast<void**>(0x807981c);
     edx8->f4 = ebx2;
     edx8->f8 = eax4;
-    edx8->f12 = ecx6;
-    edx8->f16 = reinterpret_cast<void**>(0x807980c);
-    edx8->f20 = esi7;
+    edx8->fc = ecx6;
+    edx8->f10 = reinterpret_cast<void**>(0x807980c);
+    edx8->f14 = esi7;
     g80795a8 = edx8;
     g80795ac = 0x80797fc;
     g80795b0 = 0x80797ec;
@@ -35229,7 +35226,7 @@ int32_t camlPrintf__entry() {
     eax9->f0 = reinterpret_cast<void**>(0x804b370);
     eax9->f4 = 5;
     eax9->f8 = reinterpret_cast<int32_t>(camlPrintf__fun_1600);
-    eax9->f12 = reinterpret_cast<void**>(0x80796d8);
+    eax9->fc = reinterpret_cast<void**>(0x80796d8);
     g8079600 = eax9;
     g8079604 = reinterpret_cast<void**>(0x80796c8);
     g8079608 = reinterpret_cast<void**>(0x80796b8);
@@ -35258,8 +35255,8 @@ int32_t camlPrintf__entry() {
     eax17->f0 = ebp12;
     eax17->f4 = edi13;
     eax17->f8 = esi14;
-    eax17->f12 = edx15;
-    eax17->f16 = ebx16;
+    eax17->fc = edx15;
+    eax17->f10 = ebx16;
     ebx18 = reinterpret_cast<struct s167*>(ecx6 + 0x68);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ebx18) - 4) = 0x800;
     ebx18->f0 = eax11;
@@ -35269,8 +35266,8 @@ int32_t camlPrintf__entry() {
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax20) - 4) = 0x1000;
     eax20->f0 = esi19->f0;
     eax20->f4 = esi19->f8;
-    eax20->f8 = esi19->f16;
-    eax20->f12 = esi19->f20;
+    eax20->f8 = esi19->f10;
+    eax20->fc = esi19->f14;
     ecx21 = reinterpret_cast<struct s169*>(ecx6 + 0x88);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(ecx21) - 4) = 0x800;
     ecx21->f0 = eax20;
@@ -35678,7 +35675,7 @@ void camlUnix__entry(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     eax17 = caml_allocN(ecx, __return_address());
     eax18 = eax17 + 4;
     *reinterpret_cast<void***>(eax18 + 0xfffffffc) = reinterpret_cast<void**>(0x400);
-    *reinterpret_cast<void***>(eax18) = reinterpret_cast<void**>(0x80739ac);
+    *reinterpret_cast<void***>(eax18) = reinterpret_cast<void**>("Unix.Unix_error");
     camlUnix = eax18;
     ebx19 = eax18 + 8;
     *reinterpret_cast<void***>(ebx19 + 0xfffffffc) = reinterpret_cast<void**>(0x1000);
@@ -35708,9 +35705,9 @@ void camlUnix__entry(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
     g8073010 = 0x80732cc;
     g8072ee8 = 0x80732c0;
     g8073014 = 0x80732b4;
-    eax23 = caml_c_call(ecx, 0x8073978, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax23 = caml_c_call(ecx, "0.0.0.0", __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     g8072f58 = eax23;
-    eax24 = caml_c_call(ecx, 0x8073968, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax24 = caml_c_call(ecx, "127.0.0.1", __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     g8072f5c = eax24;
     eax25 = fun_804e70a(ecx, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     esp26 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 4 - 4 + 4 - 4 + 4 - 4 - 4 + 4 + 4 - 4 - 4 + 4 + 4 - 4 + 4);
@@ -35719,7 +35716,7 @@ void camlUnix__entry(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         esp27 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp26) - 4 + 4 - 4);
         v28 = caml_exception_pointer;
         caml_exception_pointer = esp27;
-        eax29 = caml_c_call(0x807248c, 0x8073960, v28, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+        eax29 = caml_c_call(0x807248c, "::", v28, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         caml_exception_pointer = v28;
         esp26 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp27 - 4) - 4 + 4 + 4 + 4 + 4);
     } else {
@@ -35731,7 +35728,7 @@ void camlUnix__entry(void** ecx, void** a2, void** a3, void** a4, void** a5, voi
         caml_raise_exn(0x807248c, a2, a3, a4, a5, a6, a7, a8, a9, a10);
         v31 = caml_exception_pointer;
         caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp26) - 4 + 4 - 4 + 4 - 4);
-        eax32 = caml_c_call(0x807248c, 0x8073958, v31, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+        eax32 = caml_c_call(0x807248c, "::1", v31, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
         caml_exception_pointer = v31;
     } else {
         eax32 = g8072f5c;
@@ -37083,10 +37080,10 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
         edx25 = esi41;
     }
     addr_8050f50_29:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v51, v52, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v51, v52, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     esp31 = esp31 - 4 + 4;
     addr_8050f55_8:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v53, v54, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v53, v54, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     v55 = ecx33;
     v56 = edx32;
     eax59 = fun_8050ff0(v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v57, v58, v16, a1);
@@ -37105,7 +37102,7 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax66 + 0xfffffffc)) & 0xff) == 0xfe) {
         ecx67 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax66 + 0xfffffffc)) >> 10);
         if (reinterpret_cast<unsigned char>(ecx67) <= reinterpret_cast<unsigned char>(ebx65)) {
-            caml_ml_array_bound_error(v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v68, v69, v16, a1, a2, a3, a4, a5, a6);
+            caml_ml_array_bound_error(ecx67, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v68, v69, v16, a1, a2, a3, a4, a5, a6);
             esp60 = esp60 - 4 + 4;
             goto addr_8051016_36;
         } else {
@@ -37116,7 +37113,7 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
         ecx67 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax66 + 0xfffffffc)) >> 9);
         if (reinterpret_cast<unsigned char>(ecx67) <= reinterpret_cast<unsigned char>(ebx65)) {
             addr_8051016_36:
-            eax72 = caml_ml_array_bound_error(v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v70, v71, v16, a1, a2, a3, a4, a5, a6);
+            eax72 = caml_ml_array_bound_error(ecx67, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v70, v71, v16, a1, a2, a3, a4, a5, a6);
             goto addr_8051020_39;
         } else {
             caml_modify(v55, reinterpret_cast<uint32_t>(eax66 + reinterpret_cast<unsigned char>(ebx65) * 2) + 0xfffffffe, v55, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v73, v74, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
@@ -37169,10 +37166,10 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
         ecx67 = esi82;
     }
     addr_8051110_58:
-    caml_ml_array_bound_error(v78, v76, v77, v93, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v94, v95, v16, a1);
+    caml_ml_array_bound_error(ecx83, v78, v76, v77, v93, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v94, v95, v16, a1);
     esp75 = esp75 - 4 + 4;
     addr_8051115_48:
-    caml_ml_array_bound_error(v78, v76, v77, v96, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v97, v98, v16, a1);
+    caml_ml_array_bound_error(ecx83, v78, v76, v77, v96, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v97, v98, v16, a1);
     eax102 = fun_8051150(ecx83, v78, v76, v77, v99, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v100, v101);
     ecx103 = g8076430;
     if (eax102->f0 != ecx103) {
@@ -37187,10 +37184,10 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
         goto v78;
     }
     addr_8051106_52:
-    caml_ml_array_bound_error(v78, v76, v77, v110, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v111, v112, v16, a1);
+    caml_ml_array_bound_error(ecx83, v78, v76, v77, v110, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v111, v112, v16, a1);
     esp75 = esp75 - 4 + 4;
     addr_805110b_55:
-    caml_ml_array_bound_error(v78, v76, v77, v113, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v114, v115, v16, a1);
+    caml_ml_array_bound_error(ecx83, v78, v76, v77, v113, 0x805101b, v56, v55, v48, 0x8050f5a, v24, v18, v22, v20, v27, v114, v115, v16, a1);
     esp75 = esp75 - 4 + 4;
     goto addr_8051110_58;
     addr_8050ec0_11:
@@ -37198,7 +37195,7 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax116 + 0xfffffffc)) & 0xff) == 0xfe) {
         ecx33 = v20;
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax116 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ecx33)) {
-            caml_ml_array_bound_error(v24, v18, v22, v20, v27, v117, v118, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+            caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v117, v118, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
             esp17 = esp17 - 4 + 4;
             goto addr_8050f37_65;
         } else {
@@ -37209,7 +37206,7 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
         ecx33 = v20;
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax116 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(ecx33)) {
             addr_8050f37_65:
-            caml_ml_array_bound_error(v24, v18, v22, v20, v27, v119, v120, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+            caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v119, v120, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
             esp17 = esp17 - 4 + 4;
             goto addr_8050f3c_23;
         } else {
@@ -37218,16 +37215,16 @@ int32_t camlArray__trickledown_1160(void** a1, void** a2, void** a3, void** a4, 
     }
     return 1;
     addr_8050f3c_23:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v123, v124, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v123, v124, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     esp17 = esp17 - 4 + 4;
     addr_8050f41_26:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v125, v126, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v125, v126, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     esp17 = esp17 - 4 + 4;
     addr_8050f46_14:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v127, v128, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v127, v128, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     esp17 = esp17 - 4 + 4;
     addr_8050f4b_19:
-    caml_ml_array_bound_error(v24, v18, v22, v20, v27, v129, v130, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_ml_array_bound_error(ecx33, v24, v18, v22, v20, v27, v129, v130, v16, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
     esp31 = esp17 - 4 + 4;
     goto addr_8050f50_29;
 }
@@ -37320,10 +37317,10 @@ void camlArray__bubbledown_1170(void** ecx, void** a2, void** a3, void** a4, voi
         ecx = esi30;
     }
     addr_8051110_18:
-    caml_ml_array_bound_error(v25, v21, v23, v41, v42, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_ml_array_bound_error(ecx31, v25, v21, v23, v41, v42, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     esp20 = esp20 - 4 + 4;
     addr_8051115_8:
-    caml_ml_array_bound_error(v25, v21, v23, v43, v44, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_ml_array_bound_error(ecx31, v25, v21, v23, v43, v44, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     eax47 = fun_8051150(ecx31, v25, v21, v23, v45, v46, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     ecx48 = g8076430;
     if (eax47->f0 != ecx48) {
@@ -37338,10 +37335,10 @@ void camlArray__bubbledown_1170(void** ecx, void** a2, void** a3, void** a4, voi
         goto v25;
     }
     addr_8051106_12:
-    caml_ml_array_bound_error(v25, v21, v23, v55, v56, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_ml_array_bound_error(ecx31, v25, v21, v23, v55, v56, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     esp20 = esp20 - 4 + 4;
     addr_805110b_15:
-    caml_ml_array_bound_error(v25, v21, v23, v57, v58, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
+    caml_ml_array_bound_error(ecx31, v25, v21, v23, v57, v58, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13);
     esp20 = esp20 - 4 + 4;
     goto addr_8051110_18;
 }
@@ -37533,7 +37530,7 @@ void** camlBuffer__find_ident_1114(void** ecx, void** a2, void** a3, void** a4, 
         return eax61;
     }
     v62 = reinterpret_cast<void**>(0x8058b16);
-    eax65 = caml_ml_array_bound_error(v63, v64, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    eax65 = caml_ml_array_bound_error(ecx33, v63, v64, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     esi66 = eax65;
     edx67 = ecx33;
     eax68 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx67 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
@@ -37625,7 +37622,7 @@ void** camlBuffer__find_ident_1114(void** ecx, void** a2, void** a3, void** a4, 
         *reinterpret_cast<void***>(eax103 + 4) = ecx104 + 2;
         goto v110;
     }
-    eax113 = caml_ml_array_bound_error(eax103, ecx104, eax80, v111, v112, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    eax113 = caml_ml_array_bound_error(ecx104, eax103, ecx104, eax80, v111, v112, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     if (reinterpret_cast<signed char>(ecx104) < reinterpret_cast<signed char>(1)) 
         goto addr_805870a_44;
     if (reinterpret_cast<signed char>(edx108) < reinterpret_cast<signed char>(1)) 
@@ -37648,7 +37645,7 @@ void** camlBuffer__find_ident_1114(void** ecx, void** a2, void** a3, void** a4, 
     camlBuffer__resize_1066(eax103, ecx104, eax80, v124, v125, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     goto addr_8058682_40;
     addr_8058369_25:
-    eax128 = caml_ml_array_bound_error(v86, v87, v62, v126, v127, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    eax128 = caml_ml_array_bound_error(ecx77, v86, v87, v62, v126, v127, v30, v32, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     if (reinterpret_cast<signed char>(eax128) < reinterpret_cast<signed char>(3)) {
         eax128 = reinterpret_cast<void**>(3);
     }
@@ -37701,10 +37698,10 @@ void** camlChar__escaped_1038(void** ecx, void** a2, void** a3, void** a4, void*
     int1_t zf37;
 
     if (eax16 == 79) {
-        return 0x8077e60;
+        return "\\'";
     }
     if (eax17 == 0xb9) {
-        return 0x8077e68;
+        return "\\\\";
     }
     if (eax18 >= 29) 
         goto addr_8055220_6;
@@ -37745,17 +37742,17 @@ void** camlChar__escaped_1038(void** ecx, void** a2, void** a3, void** a4, void*
             return eax30;
         }
     case 8:
-        return 0x8077e70;
+        return "\\b";
     case 9:
-        return 0x8077e78;
+        return "\\t";
     case 10:
-        return 0x8077e80;
+        return "\\n";
     case 13:
-        return 0x8077e88;
+        return "\\r";
     case 14:
         eax32 = reinterpret_cast<void**>(reinterpret_cast<signed char>(__return_address()) >> 1);
         if (reinterpret_cast<unsigned char>(eax32) > reinterpret_cast<unsigned char>(0xfffffb)) {
-            eax32 = caml_invalid_argument(ecx, 0x80713f4, v33, v34);
+            eax32 = caml_invalid_argument(ecx, "String.create", v33, v34);
         }
         caml_alloc_string(ecx, eax32, v35, v36);
         goto eax21;
@@ -37774,7 +37771,7 @@ uint32_t g807998c = 0x4fc;
 
 struct s171 {
     signed char[134715792] pad134715792;
-    unsigned char f134715792;
+    unsigned char f8079990;
 };
 
 void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18) {
@@ -38275,12 +38272,12 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
     ecx47 = reinterpret_cast<struct s171*>((ecx46 >> 10) * 4 + 0xffffffff);
     ecx48 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx47) - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(".") + reinterpret_cast<uint32_t>(ecx47)));
     ebx49 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(ecx48) + reinterpret_cast<unsigned char>(ecx48) + 1);
-    eax50 = caml_c_call(ecx48, reinterpret_cast<unsigned char>(eax45) + reinterpret_cast<unsigned char>(ebx49) + 0xffffffff, eax45, edx42, ebx49, 0x8079990, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
+    eax50 = caml_c_call(ecx48, reinterpret_cast<unsigned char>(eax45) + reinterpret_cast<unsigned char>(ebx49) + 0xffffffff, eax45, edx42, ebx49, ".", v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12);
     caml_blit_string(ecx48, edx42, 1, eax50, 1, eax45, eax45, edx42);
-    caml_blit_string(ecx48, 0x8079990, 1, eax50, eax45, ebx49, eax45, edx42);
+    caml_blit_string(ecx48, ".", 1, eax50, eax45, ebx49, eax45, edx42);
     return eax50;
     addr_805a4f4_10:
-    eax51 = caml_ml_array_bound_error(v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    eax51 = caml_ml_array_bound_error(ecx37, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
     esi52 = esi39;
     esp53 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp27) - 4 + 4 - 8);
     if (eax51 != 1) {
@@ -38290,7 +38287,7 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
     edx55 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx54 + 0xfffffffc)) & 0xff);
     if (edx55 == 0xfe) {
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx54 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(ebx35)) {
-            caml_ml_array_bound_error(v20, 0x805a4f9, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+            caml_ml_array_bound_error(ecx54, v20, 0x805a4f9, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
             esp53 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(esp53) - 4 + 4);
         } else {
             while (eax56 = caml_young_ptr, eax57 = eax56 - 12, caml_young_ptr = eax57, cf58 = reinterpret_cast<unsigned char>(eax57) < reinterpret_cast<unsigned char>(caml_young_limit), cf58) {
@@ -38307,7 +38304,7 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
             return *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ecx54 + reinterpret_cast<unsigned char>(ebx35) * 2) - 2);
         }
     }
-    eax60 = caml_ml_array_bound_error(v20, 0x805a4f9, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+    eax60 = caml_ml_array_bound_error(ecx54, v20, 0x805a4f9, v19, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     esp61 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(esp53) - 4 + 4);
     while (esp61 = esp61 - 28, edi62 = ecx54, ebp63 = reinterpret_cast<void**>(reinterpret_cast<signed char>(edx55) >> 1), ecx64 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi52 + 12)) + reinterpret_cast<unsigned char>(ebp63)))), ecx54 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx64) + reinterpret_cast<uint32_t>(ecx64) + 1), reinterpret_cast<signed char>(ecx54) < reinterpret_cast<signed char>(0xf9)) {
         v65 = ecx54;
@@ -39005,7 +39002,7 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
                         eax223 = eax221 + 4;
                         *reinterpret_cast<void***>(eax223 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
                         *reinterpret_cast<void***>(eax223) = reinterpret_cast<void**>(0x807248c);
-                        *reinterpret_cast<void***>(eax223 + 4) = reinterpret_cast<void**>(0x8079998);
+                        *reinterpret_cast<void***>(eax223 + 4) = reinterpret_cast<void**>("printf: bad positional specification (0).");
                         caml_raise_exn(ecx205, v65, v224, v68, v67, v70, v69, v66, v20, 0x805a4f9);
                     }
                     caml_call_gc(ecx205, v65, v225, v68, v67, v70, v69, v66, v20, 0x805a4f9, v19, a2);
@@ -39169,7 +39166,7 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
     goto addr_80670e3_190;
     addr_8067016_194:
     eax412 = fun_804a184(ebx407, 0, 10);
-    esi413 = reinterpret_cast<void**>(&eax412->f350);
+    esi413 = reinterpret_cast<void**>(&eax412->f15e);
     if (reinterpret_cast<signed char>(esi413) < reinterpret_cast<signed char>(0x15e)) {
         esi413 = reinterpret_cast<void**>(0x15e);
     }
@@ -39209,7 +39206,7 @@ void** camlPrintf__fun_1600(void** ecx, void** a2, void** a3, void** a4, void** 
     goto v65;
     addr_8067062_205:
     eax465 = fun_804a184(ebx407 + 1, 0, 10);
-    eax466 = reinterpret_cast<void**>(&eax465->f350);
+    eax466 = reinterpret_cast<void**>(&eax465->f15e);
     if (reinterpret_cast<signed char>(esi413) < reinterpret_cast<signed char>(eax466)) {
         esi413 = eax466;
     }
@@ -39457,7 +39454,7 @@ void** camlString__escaped_1080(void** ecx, void** a2, void** a3, void** a4, voi
     goto v29;
     eax74 = reinterpret_cast<void**>(reinterpret_cast<signed char>(v53) >> 1);
     if (reinterpret_cast<unsigned char>(eax74) > reinterpret_cast<unsigned char>(0xfffffb)) {
-        eax74 = caml_invalid_argument(ecx51, 0x80713f4, v75, v76);
+        eax74 = caml_invalid_argument(ecx51, "String.create", v75, v76);
     }
     caml_alloc_string(ecx51, eax74, v77, v78);
     goto v29;
@@ -39793,14 +39790,14 @@ void** caml_main(void** ecx, void** a2) {
     caml_init_ieee_floats();
     caml_init_custom_operations();
     caml_top_of_stack = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp3) - 25);
-    eax5 = fun_8049fc4(0x8070dbe, v4);
+    eax5 = fun_8049fc4("OCAMLRUNPARAM", v4);
     ebx6 = eax5;
     if (eax5) {
         addr_8061693_2:
         esi7 = reinterpret_cast<void***>(0x8070e08);
         edi8 = reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebp3) - 32);
     } else {
-        eax10 = fun_8049fc4(0x8070dbf, v9);
+        eax10 = fun_8049fc4("CAMLRUNPARAM", v9);
         ebx6 = eax10;
         if (!eax10) {
             addr_80616a6_4:
@@ -39836,7 +39833,7 @@ void** caml_main(void** ecx, void** a2) {
     v23 = reinterpret_cast<void**>(4);
     eax24 = caml_page_table_add(4, 0x8082240, 0x8082640, v14, v12);
     if (eax24) {
-        eax25 = caml_fatal_error(0x8070dcc, 0x8082240, 0x8082640, v14, v12);
+        eax25 = caml_fatal_error("Fatal error: not enough memory for the initial page table", 0x8082240, 0x8082640, v14, v12);
         goto addr_8061734_12;
     } else {
         eax25 = caml_data_segments;
@@ -39851,8 +39848,8 @@ void** caml_main(void** ecx, void** a2) {
                 v23 = reinterpret_cast<void**>(4);
                 eax26 = caml_page_table_add(4, v22, v21, v14, v12);
                 if (eax26) {
-                    v23 = reinterpret_cast<void**>(0x8070dcc);
-                    caml_fatal_error(0x8070dcc, v22, v21, v14, v12);
+                    v23 = reinterpret_cast<void**>("Fatal error: not enough memory for the initial page table");
+                    caml_fatal_error("Fatal error: not enough memory for the initial page table", v22, v21, v14, v12);
                 }
                 ++ebx6;
                 eax25 = edi8[reinterpret_cast<unsigned char>(ebx6) * 8];
@@ -39993,7 +39990,7 @@ void** parse_intnat() {
     v10 = reinterpret_cast<void**>(-1 / reinterpret_cast<unsigned char>(edi7));
     eax15 = parse_digit(ecx5, v11, v12, v13, v14);
     if (reinterpret_cast<signed char>(eax15) < reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(edi7) <= reinterpret_cast<signed char>(eax15)) {
-        eax15 = caml_failwith(ecx5, 0x807139f, v16, v17, v18);
+        eax15 = caml_failwith(ecx5, "int_of_string", v16, v17, v18);
     }
     ebx19 = &eax6->f1;
     esi20 = eax15;
@@ -40004,7 +40001,7 @@ void** parse_intnat() {
             ++ebx19;
             continue;
         } else {
-            eax25 = parse_digit(ecx5, 0x807139f, v22, v23, v24);
+            eax25 = parse_digit(ecx5, "int_of_string", v22, v23, v24);
             if (reinterpret_cast<signed char>(eax25) < reinterpret_cast<signed char>(0)) 
                 break;
             if (reinterpret_cast<signed char>(edi7) <= reinterpret_cast<signed char>(eax25)) 
@@ -40017,31 +40014,31 @@ void** parse_intnat() {
         tmp32_27 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi26) + reinterpret_cast<unsigned char>(eax25));
         esi20 = tmp32_27;
         if (reinterpret_cast<unsigned char>(tmp32_27) < reinterpret_cast<unsigned char>(esi26)) {
-            caml_failwith(ecx5, 0x807139f, v28, v29, v30);
+            caml_failwith(ecx5, "int_of_string", v28, v29, v30);
             goto addr_8066074_5;
         }
         addr_8066054_9:
-        eax25 = caml_failwith(ecx5, 0x807139f, v31, v32, v33);
+        eax25 = caml_failwith(ecx5, "int_of_string", v31, v32, v33);
         goto addr_8066060_10;
     }
     eax43 = caml_string_length(ecx5, v1, v34, v35, v36, v3, v1, v9, v10, v37, v38, v39, v40, v41, v42);
     if (ebx19 != reinterpret_cast<unsigned char>(eax43) + reinterpret_cast<unsigned char>(v1)) {
-        caml_failwith(ecx5, 0x807139f, v44, v45, v46);
+        caml_failwith(ecx5, "int_of_string", v44, v45, v46);
     }
     if (v47 == 10) {
         if (v48 >= 0) {
             ecx49 = v3 - 1;
             if (reinterpret_cast<unsigned char>(1 << *reinterpret_cast<unsigned char*>(&ecx49)) > reinterpret_cast<unsigned char>(esi20)) 
                 goto addr_806610a_17;
-            caml_failwith(ecx49, 0x807139f, v50, v51, v52);
+            caml_failwith(ecx49, "int_of_string", v50, v51, v52);
         }
         ecx53 = v3 - 1;
         if (reinterpret_cast<unsigned char>(1 << *reinterpret_cast<unsigned char*>(&ecx53)) >= reinterpret_cast<unsigned char>(esi20)) 
             goto addr_8066104_20;
-        caml_failwith(ecx53, 0x807139f, v54, v55, v56);
+        caml_failwith(ecx53, "int_of_string", v54, v55, v56);
     }
     if (reinterpret_cast<unsigned char>(v3) <= reinterpret_cast<unsigned char>(31) && (ecx57 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(&v3))), reinterpret_cast<unsigned char>(1 << *reinterpret_cast<unsigned char*>(&ecx57)) <= reinterpret_cast<unsigned char>(esi20))) {
-        caml_failwith(ecx57, 0x807139f, v58, v59, v60);
+        caml_failwith(ecx57, "int_of_string", v58, v59, v60);
     }
     if (v61 >= 0) {
         addr_806610a_17:
@@ -40400,7 +40397,7 @@ void*** fun_804e70a(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     esp17 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     v18 = caml_exception_pointer;
     caml_exception_pointer = esp17;
-    eax19 = caml_c_call(ecx, 0x8073960, v18, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax19 = caml_c_call(ecx, "::", v18, __return_address(), a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     caml_exception_pointer = v18;
     g8072f60 = eax19;
     eax20 = fun_804e752(ecx, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
@@ -40408,7 +40405,7 @@ void*** fun_804e70a(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         caml_raise_exn(0x807248c, a2, a3, a4, a5, a6, a7, a8, a9, a10);
         v21 = caml_exception_pointer;
         caml_exception_pointer = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(esp17 - 4) - 4 + 4 + 4 + 4 + 4 - 4 + 4 - 4 + 4 - 4);
-        eax22 = caml_c_call(0x807248c, 0x8073958, v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
+        eax22 = caml_c_call(0x807248c, "::1", v21, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
         caml_exception_pointer = v21;
     } else {
         eax22 = g8072f5c;
@@ -40955,7 +40952,7 @@ struct s172 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s172* fun_804c370() {
@@ -41006,7 +41003,7 @@ void fun_804b5ad() {
 
 struct s173 {
     signed char[12] pad12;
-    int32_t* f12;
+    int32_t* fc;
 };
 
 struct s174 {
@@ -41035,7 +41032,7 @@ int32_t fun_804b7cd(void** a1, void** a2, void** a3, void** a4, void** a5, void*
         return 1;
     } else {
         if (reinterpret_cast<int32_t>(ecx24) > reinterpret_cast<int32_t>(1)) {
-            *ebx26->f12 = *eax27;
+            *ebx26->fc = *eax27;
             return 1;
         } else {
             ecx28 = *eax29;
@@ -41133,7 +41130,7 @@ void fun_804c9ec(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
             *reinterpret_cast<void***>(ebx23 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             eax24 = g8072f5c;
             *reinterpret_cast<void***>(ebx23) = eax24;
-            *reinterpret_cast<void***>(ebx23 + 4) = reinterpret_cast<void**>(0x8073a9c);
+            *reinterpret_cast<void***>(ebx23 + 4) = reinterpret_cast<void**>("127.0.0.1");
             ecx25 = ebx23 + 12;
             *reinterpret_cast<void***>(ecx25 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(ecx25) = ebx23;
@@ -41147,7 +41144,7 @@ void fun_804c9ec(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
             *reinterpret_cast<void***>(ebx29 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             eax30 = g8072f58;
             *reinterpret_cast<void***>(ebx29) = eax30;
-            *reinterpret_cast<void***>(ebx29 + 4) = reinterpret_cast<void**>(0x8073aac);
+            *reinterpret_cast<void***>(ebx29 + 4) = reinterpret_cast<void**>("0.0.0.0");
             ecx31 = ebx29 + 12;
             *reinterpret_cast<void***>(ecx31 + 0xfffffffc) = reinterpret_cast<void**>(0x800);
             *reinterpret_cast<void***>(ecx31) = ebx29;
@@ -41566,7 +41563,7 @@ struct s175 {
 
 struct s176 {
     signed char[12] pad12;
-    void* f12;
+    void* fc;
 };
 
 void fun_805092f(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16, void** a17, void** a18, void** a19, void** a20, void** a21, void** a22) {
@@ -41592,7 +41589,7 @@ void fun_805092f(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
                 goto addr_8050950_5;
             ebp25 = ebx24->f4;
             ecx30 = ebx24->f0;
-            ebx31 = esi28->f12;
+            ebx31 = esi28->fc;
             if (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(ebx31) - 4)) == 0xfe) 
                 break;
             caml_modify(ecx30, reinterpret_cast<int32_t>(ebx31) + edi26 * 2 + 0xfffffffe, ecx30, v23, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
@@ -42666,18 +42663,18 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v21;
     void** v22;
     void** eax23;
-    void** ecx24;
+    void** eax24;
     void** eax25;
-    void** eax26;
-    int1_t cf27;
+    int1_t cf26;
+    void** v27;
     void** v28;
     void** v29;
     void** v30;
     void** v31;
     void** v32;
-    void** v33;
-    void** edx34;
-    void** ecx35;
+    void** edx33;
+    void** v34;
+    void** v35;
     void** v36;
     void** v37;
     void** v38;
@@ -42717,21 +42714,21 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v72;
     void** v73;
     void** v74;
-    void** v75;
-    void** v76;
+    void** eax75;
+    int32_t v76;
     void** eax77;
-    void** ecx78;
-    int32_t v79;
-    void** eax80;
-    void** eax81;
-    int1_t cf82;
+    void** eax78;
+    int1_t cf79;
+    void** v80;
+    void** v81;
+    void** v82;
     void** v83;
     void** v84;
     void** v85;
-    void** v86;
+    void** ecx86;
     void** v87;
     void** v88;
-    void** ecx89;
+    void** v89;
     void** v90;
     void** v91;
     void** v92;
@@ -42742,12 +42739,12 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v97;
     void** v98;
     void** v99;
-    void** v100;
+    void** eax100;
     void** v101;
     void** v102;
-    void** eax103;
+    void** v103;
     void** v104;
-    void** ecx105;
+    void** v105;
     void** v106;
     void** v107;
     void** v108;
@@ -42757,13 +42754,13 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v112;
     void** v113;
     void** v114;
-    void** v115;
-    void** v116;
-    void** v117;
+    void** eax115;
+    void** eax116;
+    int1_t cf117;
     void** v118;
-    void** eax119;
-    void** eax120;
-    int1_t cf121;
+    void** v119;
+    void** v120;
+    void** v121;
     void** v122;
     void** v123;
     void** v124;
@@ -42783,7 +42780,7 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v138;
     void** v139;
     void** v140;
-    void** ecx141;
+    void** v141;
     void** v142;
     void** v143;
     void** v144;
@@ -42792,21 +42789,21 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v147;
     void** v148;
     void** v149;
-    void** v150;
-    void** v151;
-    void** v152;
+    void** eax150;
+    void** eax151;
+    int1_t cf152;
     void** v153;
     void** v154;
-    void** eax155;
-    void** eax156;
-    int1_t cf157;
+    void** v155;
+    void** v156;
+    void** v157;
     void** v158;
-    void** v159;
+    void** edx159;
     void** v160;
     void** v161;
     void** v162;
     void** v163;
-    void** edx164;
+    void** v164;
     void** v165;
     void** v166;
     void** v167;
@@ -42820,7 +42817,7 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v175;
     void** v176;
     void** v177;
-    void** ecx178;
+    void** v178;
     void** v179;
     void** v180;
     void** v181;
@@ -42865,7 +42862,7 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v220;
     void** v221;
     void** v222;
-    void** ecx223;
+    void** v223;
     void** v224;
     void** v225;
     void** v226;
@@ -42903,14 +42900,14 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v258;
     void** v259;
     void** v260;
-    void** v261;
+    int32_t v261;
     void** v262;
     void** v263;
     void** v264;
     void** v265;
     void** v266;
     void** v267;
-    int32_t v268;
+    void** v268;
     void** v269;
     void** v270;
     void** v271;
@@ -43008,65 +43005,58 @@ void fun_8052c0f(void** a1, void** a2) {
     void** v363;
     void** v364;
     void** v365;
-    void** v366;
-    void** v367;
-    void** v368;
-    void** v369;
-    void** v370;
+    void** eax366;
+    void** ecx367;
+    void** eax368;
+    void** eax369;
+    int1_t cf370;
     void** v371;
     void** v372;
-    void** eax373;
-    void** ecx374;
-    void** eax375;
+    void** v373;
+    void** v374;
+    void** v375;
     void** eax376;
-    int1_t cf377;
-    void** v378;
-    void** v379;
-    void** v380;
+    void** esi377;
+    void** ecx378;
+    uint32_t edx379;
+    void* edx380;
     void** v381;
     void** v382;
-    void** eax383;
-    void** esi384;
-    void** ecx385;
-    uint32_t edx386;
-    void* edx387;
-    void** v388;
+    void** v383;
+    int32_t eax384;
+    void* eax385;
+    void** eax386;
+    void** v387;
+    void** edx388;
     void** v389;
-    void** v390;
-    int32_t eax391;
-    void* eax392;
-    void** eax393;
+    void** ecx390;
+    void** v391;
+    void** v392;
+    void** v393;
     void** v394;
-    void** edx395;
+    void** v395;
     void** v396;
-    void** ecx397;
-    void** v398;
-    void** v399;
+    void** eax397;
+    void** eax398;
+    int1_t cf399;
     void** v400;
-    void** v401;
+    void** eax401;
     void** v402;
     void** v403;
-    void** eax404;
+    void** v404;
     void** eax405;
-    int1_t cf406;
+    void** v406;
     void** v407;
-    void** eax408;
+    void** v408;
     void** v409;
     void** v410;
     void** v411;
-    void** eax412;
+    void** v412;
     void** v413;
     void** v414;
     void** v415;
     void** v416;
     void** v417;
-    void** v418;
-    void** v419;
-    void** v420;
-    void** v421;
-    void** v422;
-    void** v423;
-    void** v424;
 
     v3 = reinterpret_cast<void**>(__return_address());
     eax4 = reinterpret_cast<void**>(eax5 >> 10 | 1);
@@ -43103,24 +43093,24 @@ void fun_8052c0f(void** a1, void** a2) {
                         goto addr_8053006_15;
                     a1 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(ebx8 + reinterpret_cast<unsigned char>(esi9) * 2) - 2);
                 }
-                ecx24 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-                if (ecx24 == 0xfe) {
+                ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+                if (ecx13 == 0xfe) {
                     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 1) 
                         goto addr_8052ff7_19;
-                    while (eax25 = caml_young_ptr, eax26 = eax25 - 12, caml_young_ptr = eax26, cf27 = reinterpret_cast<unsigned char>(eax26) < reinterpret_cast<unsigned char>(caml_young_limit), cf27) {
-                        caml_call_gc(ecx24, v3, a1, a2, v11, v28, v6, v29, v30, v31, v32, v33);
+                    while (eax24 = caml_young_ptr, eax25 = eax24 - 12, caml_young_ptr = eax25, cf26 = reinterpret_cast<unsigned char>(eax25) < reinterpret_cast<unsigned char>(caml_young_limit), cf26) {
+                        caml_call_gc(ecx13, v3, a1, a2, v11, v27, v6, v28, v29, v30, v31, v32);
                     }
-                    edx34 = eax26 + 4;
-                    *reinterpret_cast<void***>(edx34 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                    edx33 = eax25 + 4;
+                    *reinterpret_cast<void***>(edx33 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                     __asm__("fld qword [ebx]");
                     __asm__("fstp qword [edx]");
                 } else {
                     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 1) 
                         goto addr_8052ffc_24;
-                    edx34 = *reinterpret_cast<void***>(ebx8);
+                    edx33 = *reinterpret_cast<void***>(ebx8);
                 }
-                ecx35 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-                if (ecx35 == 0xfe) {
+                ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+                if (ecx13 == 0xfe) {
                     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10) <= reinterpret_cast<unsigned char>(esi9)) 
                         goto addr_8052fed_28;
                     __asm__("fld qword [edx]");
@@ -43128,56 +43118,56 @@ void fun_8052c0f(void** a1, void** a2) {
                 } else {
                     if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(esi9)) 
                         goto addr_8052ff2_31;
-                    v36 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx8 + reinterpret_cast<unsigned char>(esi9) * 2) + 0xfffffffe);
-                    v37 = reinterpret_cast<void**>(0x8052dbc);
-                    caml_modify(ecx35, v36, edx34, v3, a1, a2, v11, v38, v6, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53, v54, v55);
+                    v34 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ebx8 + reinterpret_cast<unsigned char>(esi9) * 2) + 0xfffffffe);
+                    v35 = reinterpret_cast<void**>(0x8052dbc);
+                    caml_modify(ecx13, v34, edx33, v3, a1, a2, v11, v36, v6, v37, v38, v39, v40, v41, v42, v43, v44, v45, v46, v47, v48, v49, v50, v51, v52, v53);
                 }
-                camlArray__bubble_1174(v3, v3, a1, a2, v11, v56, v6, v57, v58, v59, v60, v61, v62, v63, v64, v65);
-                camlArray__trickleup_1178(a2, v3, a1, a2, v11, v66, v6, v67, v68, v69, v70, v71, v72, v73, v74, v75, v76);
-                eax77 = v11;
+                camlArray__bubble_1174(v3, v3, a1, a2, v11, v54, v6, v55, v56, v57, v58, v59, v60, v61, v62, v63);
+                camlArray__trickleup_1178(a2, v3, a1, a2, v11, v64, v6, v65, v66, v67, v68, v69, v70, v71, v72, v73, v74);
+                eax75 = v11;
                 esi9 = v11 - 2;
                 v11 = esi9;
-            } while (!reinterpret_cast<int1_t>(eax77 == 5));
+            } while (!reinterpret_cast<int1_t>(eax75 == 5));
             goto addr_8052e13_5;
         }
     } else {
         v11 = ebx8;
         do {
-            ecx78 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(v79 - 4) & 0xff);
-            if (ecx78 == 0xfe) {
-                if (reinterpret_cast<unsigned char>(*reinterpret_cast<uint32_t*>(v79 - 4) >> 10) <= reinterpret_cast<unsigned char>(ebx8)) 
+            ecx13 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(v76 - 4) & 0xff);
+            if (ecx13 == 0xfe) {
+                if (reinterpret_cast<unsigned char>(*reinterpret_cast<uint32_t*>(v76 - 4) >> 10) <= reinterpret_cast<unsigned char>(ebx8)) 
                     goto addr_805300b_37;
-                while (eax80 = caml_young_ptr, eax81 = eax80 - 12, caml_young_ptr = eax81, cf82 = reinterpret_cast<unsigned char>(eax81) < reinterpret_cast<unsigned char>(caml_young_limit), cf82) {
-                    caml_call_gc(ecx78, v3, a1, a2, v11, v83, v6, v84, v85, v86, v87, v88);
+                while (eax77 = caml_young_ptr, eax78 = eax77 - 12, caml_young_ptr = eax78, cf79 = reinterpret_cast<unsigned char>(eax78) < reinterpret_cast<unsigned char>(caml_young_limit), cf79) {
+                    caml_call_gc(ecx13, v3, a1, a2, v11, v80, v6, v81, v82, v83, v84, v85);
                 }
-                ecx89 = eax81 + 4;
-                *reinterpret_cast<void***>(ecx89 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+                ecx86 = eax78 + 4;
+                *reinterpret_cast<void***>(ecx86 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
                 __asm__("fld qword [edx+ebx*4-0x4]");
                 __asm__("fstp qword [ecx]");
             } else {
-                if (reinterpret_cast<unsigned char>(*reinterpret_cast<uint32_t*>(v79 - 4) >> 9) <= reinterpret_cast<unsigned char>(ebx8)) 
+                if (reinterpret_cast<unsigned char>(*reinterpret_cast<uint32_t*>(v76 - 4) >> 9) <= reinterpret_cast<unsigned char>(ebx8)) 
                     goto addr_8053010_42;
-                ecx89 = *reinterpret_cast<void***>(v79 + reinterpret_cast<unsigned char>(ebx8) * 2 - 2);
+                ecx86 = *reinterpret_cast<void***>(v76 + reinterpret_cast<unsigned char>(ebx8) * 2 - 2);
             }
-            camlArray__trickle_1165(ecx89, v3, a1, a2, v11, v90, v6, v91, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102);
-            eax103 = v11;
+            camlArray__trickle_1165(ecx86, v3, a1, a2, v11, v87, v6, v88, v89, v90, v91, v92, v93, v94, v95, v96, v97, v98, v99);
+            eax100 = v11;
             ebx8 = v11 - 2;
             v11 = ebx8;
-        } while (!reinterpret_cast<int1_t>(eax103 == 1));
+        } while (!reinterpret_cast<int1_t>(eax100 == 1));
         goto addr_8052cb3_4;
     }
-    ebx8 = v104;
-    ecx105 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-    if (ecx105 == 0xfe) {
+    ebx8 = v101;
+    ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+    if (ecx13 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 3) {
             addr_8052fe3_47:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v106, v6, v107, v108, v109, v110, v111, v112, v113, v114, v115, v116, v117, v118);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v102, v6, v103, v104, v105, v106, v107, v108, v109, v110, v111, v112, v113, v114);
             goto addr_8052fe8_48;
         } else {
-            while (eax119 = caml_young_ptr, eax120 = eax119 - 12, caml_young_ptr = eax120, cf121 = reinterpret_cast<unsigned char>(eax120) < reinterpret_cast<unsigned char>(caml_young_limit), cf121) {
-                caml_call_gc(ecx105, v3, a1, a2, v11, v122, v6, v123, v124, v125, v126, v127);
+            while (eax115 = caml_young_ptr, eax116 = eax115 - 12, caml_young_ptr = eax116, cf117 = reinterpret_cast<unsigned char>(eax116) < reinterpret_cast<unsigned char>(caml_young_limit), cf117) {
+                caml_call_gc(ecx13, v3, a1, a2, v11, v118, v6, v119, v120, v121, v122, v123);
             }
-            esi9 = eax120 + 4;
+            esi9 = eax116 + 4;
             *reinterpret_cast<void***>(esi9 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
             __asm__("fld qword [ebx+0x8]");
             __asm__("fstp qword [esi]");
@@ -43185,41 +43175,41 @@ void fun_8052c0f(void** a1, void** a2) {
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 3) {
             addr_8052fe8_48:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v128, v6, v129, v130, v131, v132, v133, v134, v135, v136, v137, v138, v139, v140);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v124, v6, v125, v126, v127, v128, v129, v130, v131, v132, v133, v134, v135, v136);
             goto addr_8052fed_28;
         } else {
             esi9 = *reinterpret_cast<void***>(ebx8 + 4);
         }
     }
-    ecx141 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-    if (ecx141 == 0xfe) {
+    ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+    if (ecx13 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 1) {
             addr_8052fd9_56:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v142, v6, v143, v144, v145, v146, v147, v148, v149, v150, v151, v152, v153, v154);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v137, v6, v138, v139, v140, v141, v142, v143, v144, v145, v146, v147, v148, v149);
             goto addr_8052fde_57;
         } else {
-            while (eax155 = caml_young_ptr, eax156 = eax155 - 12, caml_young_ptr = eax156, cf157 = reinterpret_cast<unsigned char>(eax156) < reinterpret_cast<unsigned char>(caml_young_limit), cf157) {
-                caml_call_gc(ecx141, v3, a1, a2, v11, v158, v6, v159, v160, v161, v162, v163);
+            while (eax150 = caml_young_ptr, eax151 = eax150 - 12, caml_young_ptr = eax151, cf152 = reinterpret_cast<unsigned char>(eax151) < reinterpret_cast<unsigned char>(caml_young_limit), cf152) {
+                caml_call_gc(ecx13, v3, a1, a2, v11, v153, v6, v154, v155, v156, v157, v158);
             }
-            edx164 = eax156 + 4;
-            *reinterpret_cast<void***>(edx164 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+            edx159 = eax151 + 4;
+            *reinterpret_cast<void***>(edx159 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
             __asm__("fld qword [ebx]");
             __asm__("fstp qword [edx]");
         }
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 1) {
             addr_8052fde_57:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v165, v6, v166, v167, v168, v169, v170, v171, v172, v173, v174, v175, v176, v177);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v160, v6, v161, v162, v163, v164, v165, v166, v167, v168, v169, v170, v171, v172);
             goto addr_8052fe3_47;
         } else {
-            edx164 = *reinterpret_cast<void***>(ebx8);
+            edx159 = *reinterpret_cast<void***>(ebx8);
         }
     }
-    ecx178 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-    if (ecx178 == 0xfe) {
+    ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+    if (ecx13 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 3) {
             addr_8052fcf_65:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v179, v6, v180, v181, v182, v183, v184, v185, v186, v187, v188, v189, v190, v191);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v173, v6, v174, v175, v176, v177, v178, v179, v180, v181, v182, v183, v184, v185);
             goto addr_8052fd4_66;
         } else {
             __asm__("fld qword [edx]");
@@ -43228,18 +43218,18 @@ void fun_8052c0f(void** a1, void** a2) {
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 3) {
             addr_8052fd4_66:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v192, v6, v193, v194, v195, v196, v197, v198, v199, v200, v201, v202, v203, v204);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v186, v6, v187, v188, v189, v190, v191, v192, v193, v194, v195, v196, v197, v198);
             goto addr_8052fd9_56;
         } else {
-            v36 = ebx8 + 4;
-            v37 = reinterpret_cast<void**>(0x8052f0e);
-            caml_modify(ecx178, v36, edx164, v3, a1, a2, v11, v205, v6, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216, v217, v218, v219, v220, v221, v222);
+            v34 = ebx8 + 4;
+            v35 = reinterpret_cast<void**>(0x8052f0e);
+            caml_modify(ecx13, v34, edx159, v3, a1, a2, v11, v199, v6, v200, v201, v202, v203, v204, v205, v206, v207, v208, v209, v210, v211, v212, v213, v214, v215, v216);
         }
     }
-    ecx223 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-    if (ecx223 == 0xfe) {
+    ecx13 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+    if (ecx13 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 1) {
-            caml_ml_array_bound_error(v3, a1, a2, v11, v224, v6, v225, v226, v227, v228, v229, v230, v231, v232, v233, v234, v235, v236);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v217, v6, v218, v219, v220, v221, v222, v223, v224, v225, v226, v227, v228, v229);
             goto addr_8052fca_73;
         } else {
             __asm__("fld qword [esi]");
@@ -43248,104 +43238,104 @@ void fun_8052c0f(void** a1, void** a2) {
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 1) {
             addr_8052fca_73:
-            caml_ml_array_bound_error(v3, a1, a2, v11, v237, v6, v238, v239, v240, v241, v242, v243, v244, v245, v246, v247, v248, v249);
+            caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v230, v6, v231, v232, v233, v234, v235, v236, v237, v238, v239, v240, v241, v242);
             goto addr_8052fcf_65;
         } else {
-            caml_modify(ecx223, ebx8, esi9, v3, a1, a2, v11, v250, v6, v251, v252, v253, v254, v255, v256, v257, v258, v259, v260, v261, v262, v263, v264, v265, v266, v267);
+            caml_modify(ecx13, ebx8, esi9, v3, a1, a2, v11, v243, v6, v244, v245, v246, v247, v248, v249, v250, v251, v252, v253, v254, v255, v256, v257, v258, v259, v260);
         }
     }
-    goto v268;
+    goto v261;
     addr_8052fed_28:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v269, v6, v270, v271, v272, v273, v274, v275, v276, v277, v278, v279, v280, v281);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v262, v6, v263, v264, v265, v266, v267, v268, v269, v270, v271, v272, v273, v274);
     addr_8052ff2_31:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v282, v6, v283, v284, v285, v286, v287, v288, v289, v290, v291, v292, v293, v294);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v275, v6, v276, v277, v278, v279, v280, v281, v282, v283, v284, v285, v286, v287);
     addr_8052ff7_19:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v295, v6, v296, v297, v298, v299, v300, v301, v302, v303, v304, v305, v306, v307);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v288, v6, v289, v290, v291, v292, v293, v294, v295, v296, v297, v298, v299, v300);
     addr_8052ffc_24:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v308, v6, v309, v310, v311, v312, v313, v314, v315, v316, v317, v318, v319, v320);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v301, v6, v302, v303, v304, v305, v306, v307, v308, v309, v310, v311, v312, v313);
     addr_8053001_10:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v321, v6, v322, v323, v324, v325, v326, v327, v328, v329, v330, v331, v332, v333);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v314, v6, v315, v316, v317, v318, v319, v320, v321, v322, v323, v324, v325, v326);
     addr_8053006_15:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v334, v6, v335, v336, v337, v338, v339, v340, v341, v342, v343, v344, v345, v346);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v327, v6, v328, v329, v330, v331, v332, v333, v334, v335, v336, v337, v338, v339);
     addr_805300b_37:
-    caml_ml_array_bound_error(v3, a1, a2, v11, v347, v6, v348, v349, v350, v351, v352, v353, v354, v355, v356, v357, v358, v359);
+    caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v340, v6, v341, v342, v343, v344, v345, v346, v347, v348, v349, v350, v351, v352);
     addr_8053010_42:
-    eax373 = caml_ml_array_bound_error(v3, a1, a2, v11, v360, v6, v361, v362, v363, v364, v365, v366, v367, v368, v369, v370, v371, v372);
-    ecx374 = eax373;
-    while (eax375 = caml_young_ptr, eax376 = eax375 - 76, caml_young_ptr = eax376, cf377 = reinterpret_cast<unsigned char>(eax376) < reinterpret_cast<unsigned char>(caml_young_limit), cf377) {
-        caml_call_gc(ecx374, v378, v379, v380, v381, v382, v37, v36, 0x8053015, v3, a1, a2);
+    eax366 = caml_ml_array_bound_error(ecx13, v3, a1, a2, v11, v353, v6, v354, v355, v356, v357, v358, v359, v360, v361, v362, v363, v364, v365);
+    ecx367 = eax366;
+    while (eax368 = caml_young_ptr, eax369 = eax368 - 76, caml_young_ptr = eax369, cf370 = reinterpret_cast<unsigned char>(eax369) < reinterpret_cast<unsigned char>(caml_young_limit), cf370) {
+        caml_call_gc(ecx367, v371, v372, v373, v374, v375, v35, v34, 0x8053015, v3, a1, a2);
     }
-    eax383 = eax376 + 4;
-    *reinterpret_cast<void***>(eax383 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
-    *reinterpret_cast<void***>(eax383) = reinterpret_cast<void**>(0x804ad50);
-    *reinterpret_cast<void***>(eax383 + 4) = reinterpret_cast<void**>(15);
-    *reinterpret_cast<void***>(eax383 + 8) = reinterpret_cast<void**>(0x8051440);
-    *reinterpret_cast<void***>(eax383 + 12) = ecx374;
-    *reinterpret_cast<void***>(eax383 + 16) = ebx8;
-    esi384 = eax383 + 24;
-    *reinterpret_cast<void***>(esi384 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
-    *reinterpret_cast<void***>(esi384) = reinterpret_cast<void**>(caml_curry4);
-    *reinterpret_cast<void***>(esi384 + 4) = reinterpret_cast<void**>(9);
-    *reinterpret_cast<void***>(esi384 + 8) = reinterpret_cast<void**>(0x80515d0);
-    *reinterpret_cast<void***>(esi384 + 12) = ecx374;
-    *reinterpret_cast<void***>(esi384 + 16) = ebx8;
-    ecx385 = eax383 + 48;
-    *reinterpret_cast<void***>(ecx385 + 0xfffffffc) = reinterpret_cast<void**>(0x18f7);
-    *reinterpret_cast<void***>(ecx385) = reinterpret_cast<void**>(caml_curry4);
-    *reinterpret_cast<void***>(ecx385 + 4) = reinterpret_cast<void**>(9);
-    *reinterpret_cast<void***>(ecx385 + 8) = reinterpret_cast<void**>(camlArray__sortto_1217);
-    *reinterpret_cast<void***>(ecx385 + 12) = ebx8;
-    *reinterpret_cast<void***>(ecx385 + 16) = eax383;
-    *reinterpret_cast<void***>(ecx385 + 20) = esi384;
+    eax376 = eax369 + 4;
+    *reinterpret_cast<void***>(eax376 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
+    *reinterpret_cast<void***>(eax376) = reinterpret_cast<void**>(0x804ad50);
+    *reinterpret_cast<void***>(eax376 + 4) = reinterpret_cast<void**>(15);
+    *reinterpret_cast<void***>(eax376 + 8) = reinterpret_cast<void**>(0x8051440);
+    *reinterpret_cast<void***>(eax376 + 12) = ecx367;
+    *reinterpret_cast<void***>(eax376 + 16) = ebx8;
+    esi377 = eax376 + 24;
+    *reinterpret_cast<void***>(esi377 + 0xfffffffc) = reinterpret_cast<void**>(0x14f7);
+    *reinterpret_cast<void***>(esi377) = reinterpret_cast<void**>(caml_curry4);
+    *reinterpret_cast<void***>(esi377 + 4) = reinterpret_cast<void**>(9);
+    *reinterpret_cast<void***>(esi377 + 8) = reinterpret_cast<void**>(0x80515d0);
+    *reinterpret_cast<void***>(esi377 + 12) = ecx367;
+    *reinterpret_cast<void***>(esi377 + 16) = ebx8;
+    ecx378 = eax376 + 48;
+    *reinterpret_cast<void***>(ecx378 + 0xfffffffc) = reinterpret_cast<void**>(0x18f7);
+    *reinterpret_cast<void***>(ecx378) = reinterpret_cast<void**>(caml_curry4);
+    *reinterpret_cast<void***>(ecx378 + 4) = reinterpret_cast<void**>(9);
+    *reinterpret_cast<void***>(ecx378 + 8) = reinterpret_cast<void**>(camlArray__sortto_1217);
+    *reinterpret_cast<void***>(ecx378 + 12) = ebx8;
+    *reinterpret_cast<void***>(ecx378 + 16) = eax376;
+    *reinterpret_cast<void***>(ecx378 + 20) = esi377;
     if ((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff) == 0xfe) {
-        edx386 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10;
+        edx379 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10;
     } else {
-        edx386 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9;
+        edx379 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9;
     }
-    edx387 = reinterpret_cast<void*>(edx386 | 1);
-    if (reinterpret_cast<int32_t>(edx387) <= reinterpret_cast<int32_t>(11)) {
+    edx380 = reinterpret_cast<void*>(edx379 | 1);
+    if (reinterpret_cast<int32_t>(edx380) <= reinterpret_cast<int32_t>(11)) {
         goto 0x80515d0;
     }
-    v388 = ecx385;
-    v389 = eax383;
-    v390 = ebx8;
-    eax391 = reinterpret_cast<int32_t>(edx387) >> 1;
-    if (eax391 < 0) {
-        ++eax391;
+    v381 = ecx378;
+    v382 = eax376;
+    v383 = ebx8;
+    eax384 = reinterpret_cast<int32_t>(edx380) >> 1;
+    if (eax384 < 0) {
+        ++eax384;
     }
-    eax392 = reinterpret_cast<void*>(eax391 >> 1);
-    eax393 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(eax392) + reinterpret_cast<int32_t>(eax392) + 1);
-    v394 = eax393;
-    edx395 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edx387) - reinterpret_cast<unsigned char>(eax393) + 1);
-    v396 = edx395;
-    ecx397 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
-    if (ecx397 != 0xfe) 
+    eax385 = reinterpret_cast<void*>(eax384 >> 1);
+    eax386 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(eax385) + reinterpret_cast<int32_t>(eax385) + 1);
+    v387 = eax386;
+    edx388 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edx380) - reinterpret_cast<unsigned char>(eax386) + 1);
+    v389 = edx388;
+    ecx390 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) & 0xff);
+    if (ecx390 != 0xfe) 
         goto addr_805312a_88;
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 10 <= 1) {
-        caml_ml_array_bound_error(v388, v396, v394, v398, v390, v389, v36, 0x8053015, v3, a1, a2, v11, v399, v6, v400, v401, v402, v403);
+        caml_ml_array_bound_error(ecx390, v381, v389, v387, v391, v383, v382, v34, 0x8053015, v3, a1, a2, v11, v392, v6, v393, v394, v395, v396);
         goto addr_8053203_91;
     } else {
-        while (eax404 = caml_young_ptr, eax405 = eax404 - 12, caml_young_ptr = eax405, cf406 = reinterpret_cast<unsigned char>(eax405) < reinterpret_cast<unsigned char>(caml_young_limit), cf406) {
-            caml_call_gc(ecx397, v388, v396, v394, v407, v390, v389, v36, 0x8053015, v3, a1, a2);
+        while (eax397 = caml_young_ptr, eax398 = eax397 - 12, caml_young_ptr = eax398, cf399 = reinterpret_cast<unsigned char>(eax398) < reinterpret_cast<unsigned char>(caml_young_limit), cf399) {
+            caml_call_gc(ecx390, v381, v389, v387, v400, v383, v382, v34, 0x8053015, v3, a1, a2);
         }
-        eax408 = eax405 + 4;
-        *reinterpret_cast<void***>(eax408 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
+        eax401 = eax398 + 4;
+        *reinterpret_cast<void***>(eax401 + 0xfffffffc) = reinterpret_cast<void**>(0x8fd);
         __asm__("fld qword [ebx]");
         __asm__("fstp qword [eax]");
     }
     addr_8053173_95:
-    eax412 = caml_c_call(ecx397, edx395, eax408, v388, v396, v394, v409, v390, v389, v36, 0x8053015, v3, a1, a2, v11, v410, v6, v411);
-    camlArray__sortto_1217(1, v388, v396, v394, eax412, v390, v389, v36, 0x8053015, v3, a1, a2, v11, v413, v6, v414, v415);
-    camlArray__sortto_1217(v396, v388, v396, v394, eax412, v390, v389, v36, 0x8053015, v3, a1, a2, v11, v416, v6, v417, v418);
+    eax405 = caml_c_call(ecx390, edx388, eax401, v381, v389, v387, v402, v383, v382, v34, 0x8053015, v3, a1, a2, v11, v403, v6, v404);
+    camlArray__sortto_1217(1, v381, v389, v387, eax405, v383, v382, v34, 0x8053015, v3, a1, a2, v11, v406, v6, v407, v408);
+    camlArray__sortto_1217(v389, v381, v389, v387, eax405, v383, v382, v34, 0x8053015, v3, a1, a2, v11, v409, v6, v410, v411);
     caml_extra_params = reinterpret_cast<void**>(1);
-    g807b860 = v389;
+    g807b860 = v382;
     goto 0x8051440;
     addr_805312a_88:
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx8 + 0xfffffffc)) >> 9 <= 1) {
         addr_8053203_91:
-        caml_ml_array_bound_error(v388, v396, v394, v419, v390, v389, v36, 0x8053015, v3, a1, a2, v11, v420, v6, v421, v422, v423, v424);
+        caml_ml_array_bound_error(ecx390, v381, v389, v387, v412, v383, v382, v34, 0x8053015, v3, a1, a2, v11, v413, v6, v414, v415, v416, v417);
     } else {
-        eax408 = *reinterpret_cast<void***>(ebx8);
+        eax401 = *reinterpret_cast<void***>(ebx8);
         goto addr_8053173_95;
     }
 }
@@ -44074,15 +44064,15 @@ struct s183 {
     signed char[3] pad4;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    int32_t f16;
-    int32_t f20;
-    int32_t f24;
-    void** f28;
+    int32_t fc;
+    int32_t f10;
+    int32_t f14;
+    int32_t f18;
+    void** f1c;
     signed char[3] pad32;
-    void** f32;
+    void** f20;
     signed char[3] pad36;
-    struct s51* f36;
+    struct s51* f24;
 };
 
 void** fun_8054eb9(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9) {
@@ -44117,19 +44107,19 @@ void** fun_8054eb9(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
     ecx20->f0 = reinterpret_cast<void**>(0x804b2d0);
     ecx20->f4 = 7;
     ecx20->f8 = 0x8053710;
-    ecx20->f12 = esi11;
+    ecx20->fc = esi11;
     eax21 = reinterpret_cast<struct s183*>(edx19 + 40);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax21) - 4) = 0x28f7;
     eax21->f0 = reinterpret_cast<void**>(0x804b370);
     eax21->f4 = 5;
     eax21->f8 = reinterpret_cast<int32_t>(camlList__sort_1271);
-    eax21->f12 = 0x10f9;
-    eax21->f16 = 0x804b370;
-    eax21->f20 = 5;
-    eax21->f24 = reinterpret_cast<int32_t>(camlList__rev_sort_1272);
-    eax21->f28 = esi11;
-    eax21->f32 = edx19;
-    eax21->f36 = ecx20;
+    eax21->fc = 0x10f9;
+    eax21->f10 = 0x804b370;
+    eax21->f14 = 5;
+    eax21->f18 = reinterpret_cast<int32_t>(camlList__rev_sort_1272);
+    eax21->f1c = esi11;
+    eax21->f20 = edx19;
+    eax21->f24 = ecx20;
     eax22 = camlList__length_aux_1030();
     if (eax22 >= 5) {
         goto camlList__sort_1271;
@@ -44511,7 +44501,7 @@ int32_t fun_8056a76(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         esi33 = *reinterpret_cast<void***>(ebx31 + 4);
         ecx32 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi33 + 0xfffffffc)) >> 9);
         if (reinterpret_cast<unsigned char>(ecx32) <= reinterpret_cast<unsigned char>(edx25)) {
-            caml_ml_array_bound_error(v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+            caml_ml_array_bound_error(ecx32, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
         } else {
             caml_modify(ecx32, reinterpret_cast<uint32_t>(esi33 + reinterpret_cast<unsigned char>(edx25) * 2) + 0xfffffffe, eax30, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23);
             *reinterpret_cast<void***>(ebx31) = *reinterpret_cast<void***>(ebx31) + 2;
@@ -44523,7 +44513,7 @@ int32_t fun_8056a76(void** ecx, void** a2, void** a3, void** a4, void** a5, void
             }
         }
     }
-    eax35 = caml_ml_array_bound_error(v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+    eax35 = caml_ml_array_bound_error(ecx32, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
     edx36 = eax35;
     while (eax37 = caml_young_ptr, eax38 = eax37 - 24, caml_young_ptr = eax38, cf39 = reinterpret_cast<unsigned char>(eax38) < reinterpret_cast<unsigned char>(caml_young_limit), cf39) {
         caml_call_gc(ecx32, v40, v41, 0x8056b3d, v24, a2, a3, a4, a5, a6, a7, a8);
@@ -44555,7 +44545,7 @@ int32_t fun_8056a76(void** ecx, void** a2, void** a3, void** a4, void** a5, void
     if (reinterpret_cast<unsigned char>(ebx54) > reinterpret_cast<unsigned char>(edx50)) {
         ebx54 = *reinterpret_cast<void***>(v47 + 4);
         if (reinterpret_cast<unsigned char>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx54 + 0xfffffffc)) >> 9) <= reinterpret_cast<unsigned char>(edx50)) {
-            caml_ml_array_bound_error(v53, v46, v51, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+            caml_ml_array_bound_error(ecx32, v53, v46, v51, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
         } else {
             eax55 = camlHashtbl__remove_bucket_1188(ecx32, v53, v46, v51, v24, a2, a3);
             caml_modify(ecx32, reinterpret_cast<uint32_t>(v53 + reinterpret_cast<unsigned char>(v51) * 2) + 0xfffffffe, eax55, v53, v46, v51, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20);
@@ -44563,7 +44553,7 @@ int32_t fun_8056a76(void** ecx, void** a2, void** a3, void** a4, void** a5, void
         }
     }
     v56 = reinterpret_cast<void**>(0x8056c37);
-    eax57 = caml_ml_array_bound_error(v53, v46, v51, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
+    eax57 = caml_ml_array_bound_error(ecx32, v53, v46, v51, v24, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15);
     while (ebx54 != 1) {
         v58 = ecx32;
         v59 = eax57;
@@ -44797,7 +44787,7 @@ void** fun_8056cc1(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
         }
     }
     v52 = reinterpret_cast<void**>(0x8056ed7);
-    eax53 = caml_ml_array_bound_error(v26, v23, v24, v22, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+    eax53 = caml_ml_array_bound_error(ecx, v26, v23, v24, v22, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
     edx54 = eax53;
     while (eax55 = caml_young_ptr, eax56 = eax55 - 20, caml_young_ptr = eax56, cf57 = reinterpret_cast<unsigned char>(eax56) < reinterpret_cast<unsigned char>(caml_young_limit), cf57) {
         caml_call_gc(ecx, v58, v59, 0x8056ed7, v26, v23, v24, v22, v15, a2, a3, a4);
@@ -44819,7 +44809,7 @@ void** fun_8056cc1(void** ecx, void** a2, void** a3, void** a4, void** a5, void*
         goto camlHashtbl__find_in_bucket_1213;
     }
     v67 = reinterpret_cast<void**>(0x8056fa2);
-    eax69 = caml_ml_array_bound_error(v66, v68, v52, v26, v23, v24, v22, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+    eax69 = caml_ml_array_bound_error(ecx, v66, v68, v52, v26, v23, v24, v22, v15, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
     esi70 = eax69;
     while (eax71 = caml_young_ptr, eax72 = eax71 - 24, caml_young_ptr = eax72, cf73 = reinterpret_cast<unsigned char>(eax72) < reinterpret_cast<unsigned char>(caml_young_limit), cf73) {
         caml_call_gc(ecx, v74, v75, v76, v77, v78, v79, v80, 0x8056fa2, v66, v68, v52);
@@ -45133,22 +45123,22 @@ void fun_8059092(void** a1, void* a2, void** a3, void** a4, void** a5, void** a6
     edx38->f0 = reinterpret_cast<void**>(0x804b2d0);
     edx38->f4 = 7;
     edx38->f8 = 0x805ade0;
-    edx38->f12 = reinterpret_cast<void**>(0x10f9);
-    *reinterpret_cast<void***>(&edx38->f16) = reinterpret_cast<void**>(caml_curry4);
-    edx38->f20 = 9;
-    edx38->f24 = 0x805ad20;
-    edx38->f28 = 0x20f9;
-    edx38->f32 = reinterpret_cast<int32_t>(caml_curry4);
-    edx38->f36 = 9;
-    edx38->f40 = 0x805a580;
-    edx38->f44 = v25;
-    edx38->f48 = v28;
-    edx38->f52 = esi21;
-    edx38->f56 = v29;
-    edx38->f60 = v31;
-    edx38->f64 = edi32;
-    edx38->f68 = ebp33;
-    edx38->f72 = eax37;
+    edx38->fc = reinterpret_cast<void**>(0x10f9);
+    *reinterpret_cast<void***>(&edx38->f10) = reinterpret_cast<void**>(caml_curry4);
+    edx38->f14 = 9;
+    edx38->f18 = 0x805ad20;
+    edx38->f1c = 0x20f9;
+    edx38->f20 = reinterpret_cast<int32_t>(caml_curry4);
+    edx38->f24 = 9;
+    edx38->f28 = 0x805a580;
+    edx38->f2c = v25;
+    edx38->f30 = v28;
+    edx38->f34 = esi21;
+    edx38->f38 = v29;
+    edx38->f3c = v31;
+    edx38->f40 = edi32;
+    edx38->f44 = ebp33;
+    edx38->f48 = eax37;
     ecx39 = v28 + 2;
     esi40 = v27;
     while (eax41 = caml_young_ptr, eax42 = eax41 - 28, caml_young_ptr = eax42, cf43 = reinterpret_cast<unsigned char>(eax42) < reinterpret_cast<unsigned char>(caml_young_limit), cf43) {
@@ -45159,7 +45149,7 @@ void fun_8059092(void** a1, void* a2, void** a3, void** a4, void** a5, void** a6
     *reinterpret_cast<void***>(ebx44) = reinterpret_cast<void**>(0x804b370);
     *reinterpret_cast<void***>(ebx44 + 4) = reinterpret_cast<void**>(5);
     *reinterpret_cast<void***>(ebx44 + 8) = reinterpret_cast<void**>(camlPrintf__got_spec_1297);
-    *reinterpret_cast<void***>(ebx44 + 12) = reinterpret_cast<void**>(&edx38->f16);
+    *reinterpret_cast<void***>(ebx44 + 12) = reinterpret_cast<void**>(&edx38->f10);
     *reinterpret_cast<void***>(ebx44 + 16) = esi40;
     *reinterpret_cast<void***>(ebx44 + 20) = reinterpret_cast<void**>(1);
     goto 0x805bb10;
@@ -45236,17 +45226,17 @@ struct s188 {
 
 struct s189 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s190 {
     signed char[16] pad16;
-    void** f16;
+    void** f10;
 };
 
 struct s191 {
     signed char[20] pad20;
-    void** f20;
+    void** f14;
 };
 
 struct s192 {
@@ -45296,7 +45286,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
 
     if (eax23 >> 10 <= 1) {
         addr_8059d84_3:
-        caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+        caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     } else {
         __asm__("fld qword [eax]");
         __asm__("fstp qword [ebx]");
@@ -45305,14 +45295,14 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
             goto addr_8059bf0_6; else 
             goto addr_8059bc7_7;
     }
-    eax26 = caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax26 = caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     v27 = reinterpret_cast<void**>(11);
     eax33 = caml_c_call(ecx24, 11, 1, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6);
     ecx34 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) & 0xff);
     if (ecx34 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 10 <= 1) {
             addr_8059f7a_10:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f7f_11;
         } else {
             __asm__("fld qword [eax]");
@@ -45321,14 +45311,14 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 9 <= 1) {
             addr_8059f7f_11:
-            eax35 = caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            eax35 = caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             v36 = reinterpret_cast<void**>(9);
             eax38 = caml_c_call(ecx34, 9, 1, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e);
             ecx39 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) & 0xff);
             if (ecx39 == 0xfe) {
                 if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 10 <= 1) {
                     addr_805a120_15:
-                    caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+                    caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
                     goto addr_805a125_16;
                 } else {
                     __asm__("fld qword [eax]");
@@ -45338,14 +45328,14 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
             } else {
                 if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 9 <= 1) {
                     addr_805a125_16:
-                    eax40 = caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+                    eax40 = caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
                     v41 = reinterpret_cast<void**>(7);
                     eax43 = caml_c_call(ecx39, 7, 1, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29);
                     ecx44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) & 0xff);
                     if (ecx44 == 0xfe) {
                         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 10 <= 1) {
                             addr_805a266_21:
-                            caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+                            caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
                             goto addr_805a26b_22;
                         } else {
                             __asm__("fld qword [eax]");
@@ -45355,14 +45345,14 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
                     } else {
                         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 9 <= 1) {
                             addr_805a26b_22:
-                            eax45 = caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+                            eax45 = caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
                             v46 = reinterpret_cast<void**>(5);
                             eax47 = caml_c_call(ecx44, 5, 1, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33);
                             ecx48 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) & 0xff);
                             if (ecx48 == 0xfe) {
                                 if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) >> 10 <= 1) {
                                     addr_805a32c_27:
-                                    caml_ml_array_bound_error(ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
+                                    caml_ml_array_bound_error(ecx48, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
                                     goto addr_805a331_28;
                                 } else {
                                     __asm__("fld qword [eax]");
@@ -45372,12 +45362,12 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
                             } else {
                                 if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) >> 9 <= 1) {
                                     addr_805a331_28:
-                                    eax49 = caml_ml_array_bound_error(ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
+                                    eax49 = caml_ml_array_bound_error(ecx48, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
                                     eax50 = caml_c_call(ecx48, 3, 1, eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a);
                                     ecx51 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax50 + 0xfffffffc)) & 0xff);
                                     if (ecx51 == 0xfe) {
                                         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax50 + 0xfffffffc)) >> 10 <= 1) {
-                                            caml_ml_array_bound_error(eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34);
+                                            caml_ml_array_bound_error(ecx51, eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34);
                                             goto addr_805a3b6_34;
                                         } else {
                                             __asm__("fld qword [eax]");
@@ -45387,7 +45377,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
                                     } else {
                                         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax50 + 0xfffffffc)) >> 9 <= 1) {
                                             addr_805a3b6_34:
-                                            caml_ml_array_bound_error(eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34);
+                                            caml_ml_array_bound_error(ecx51, eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34);
                                         } else {
                                             caml_modify(ecx51, eax50, eax49, eax47, eax49, v46, 0x805a336, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28);
                                             goto addr_805a3a0_36;
@@ -45420,7 +45410,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx34 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 10 <= 3) {
             addr_8059f70_45:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f75_46;
         } else {
             __asm__("fld qword [eax]");
@@ -45429,7 +45419,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 9 <= 3) {
             addr_8059f75_46:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f7a_10;
         } else {
             v27 = eax33 + 4;
@@ -45440,7 +45430,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx34 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 10 <= 5) {
             addr_8059f66_52:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f6b_53;
         } else {
             __asm__("fld qword [eax]");
@@ -45449,7 +45439,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 9 <= 5) {
             addr_8059f6b_53:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f70_45;
         } else {
             v27 = eax33 + 8;
@@ -45460,7 +45450,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx34 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 10 <= 7) {
             addr_8059f5c_59:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f61_60;
         } else {
             __asm__("fld qword [eax]");
@@ -45469,7 +45459,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 9 <= 7) {
             addr_8059f61_60:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f66_52;
         } else {
             v27 = eax33 + 12;
@@ -45479,7 +45469,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ecx34 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) & 0xff);
     if (ecx34 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 10 <= 9) {
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f57_67;
         } else {
             __asm__("fld qword [eax]");
@@ -45488,7 +45478,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax33 + 0xfffffffc)) >> 9 <= 9) {
             addr_8059f57_67:
-            caml_ml_array_bound_error(edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
+            caml_ml_array_bound_error(ecx34, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9);
             goto addr_8059f5c_59;
         } else {
             caml_modify(ecx34, eax33 + 16, esi29, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
@@ -45500,7 +45490,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx39 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 10 <= 3) {
             addr_805a116_73:
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a11b_74;
         } else {
             __asm__("fld qword [eax]");
@@ -45509,7 +45499,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 9 <= 3) {
             addr_805a11b_74:
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a120_15;
         } else {
             v36 = eax38 + 4;
@@ -45520,7 +45510,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx39 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 10 <= 5) {
             addr_805a10c_80:
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a111_81;
         } else {
             __asm__("fld qword [eax]");
@@ -45529,7 +45519,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 9 <= 5) {
             addr_805a111_81:
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a116_73;
         } else {
             v36 = eax38 + 8;
@@ -45539,7 +45529,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ecx39 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) & 0xff);
     if (ecx39 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 10 <= 7) {
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a107_88;
         } else {
             __asm__("fld qword [eax]");
@@ -45548,7 +45538,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax38 + 0xfffffffc)) >> 9 <= 7) {
             addr_805a107_88:
-            caml_ml_array_bound_error(esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
+            caml_ml_array_bound_error(ecx39, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2);
             goto addr_805a10c_80;
         } else {
             caml_modify(ecx39, eax38 + 12, edx37, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1, a2, a3, a4, a5, a6, a7);
@@ -45560,7 +45550,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx44 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 10 <= 3) {
             addr_805a25c_94:
-            caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+            caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
             goto addr_805a261_95;
         } else {
             __asm__("fld qword [eax]");
@@ -45569,7 +45559,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 9 <= 3) {
             addr_805a261_95:
-            caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+            caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
             goto addr_805a266_21;
         } else {
             v41 = eax43 + 4;
@@ -45579,7 +45569,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ecx44 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) & 0xff);
     if (ecx44 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 10 <= 5) {
-            caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+            caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
             goto addr_805a257_102;
         } else {
             __asm__("fld qword [eax]");
@@ -45588,7 +45578,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax43 + 0xfffffffc)) >> 9 <= 5) {
             addr_805a257_102:
-            caml_ml_array_bound_error(edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
+            caml_ml_array_bound_error(ecx44, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
             goto addr_805a25c_94;
         } else {
             caml_modify(ecx44, eax43 + 8, ecx39, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31, eax26, v32, 0x8059d8e, __return_address(), a1);
@@ -45599,7 +45589,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     ecx48 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) & 0xff);
     if (ecx48 == 0xfe) {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) >> 10 <= 3) {
-            caml_ml_array_bound_error(ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
+            caml_ml_array_bound_error(ecx48, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
             goto addr_805a327_109;
         } else {
             __asm__("fld qword [eax]");
@@ -45608,7 +45598,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax47 + 0xfffffffc)) >> 9 <= 3) {
             addr_805a327_109:
-            caml_ml_array_bound_error(ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
+            caml_ml_array_bound_error(ecx48, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84);
             goto addr_805a32c_27;
         } else {
             caml_modify(ecx48, eax47 + 4, eax43, ecx44, eax43, eax45, v41, 0x805a270, edx42, ecx39, eax38, eax40, v36, 0x805a12a, esi29, edx37, ecx34, eax33, eax35, v27, 0x8059f84, edi28, esi29, edx30, ecx24, ebx31);
@@ -45620,7 +45610,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     addr_8059bf0_6:
     if (*reinterpret_cast<uint32_t*>(ebx25 - 4) >> 10 <= 3) {
         addr_8059d7a_114:
-        caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+        caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
         goto addr_8059d7f_115;
     } else {
         __asm__("fld qword [eax]");
@@ -45631,7 +45621,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx24 == 0xfe) {
         if (*reinterpret_cast<uint32_t*>(ebx52 - 4) >> 10 <= 5) {
             addr_8059d70_119:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d75_120;
         } else {
             __asm__("fld qword [eax]");
@@ -45640,7 +45630,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (*reinterpret_cast<uint32_t*>(ebx52 - 4) >> 9 <= 5) {
             addr_8059d75_120:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d7a_114;
         } else {
             v32 = reinterpret_cast<void**>(&ebx53->f8);
@@ -45651,7 +45641,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx24 == 0xfe) {
         if (*reinterpret_cast<uint32_t*>(ebx54 - 4) >> 10 <= 7) {
             addr_8059d66_126:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d6b_127;
         } else {
             __asm__("fld qword [eax]");
@@ -45660,10 +45650,10 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (*reinterpret_cast<uint32_t*>(ebx54 - 4) >> 9 <= 7) {
             addr_8059d6b_127:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d70_119;
         } else {
-            v32 = reinterpret_cast<void**>(&ebx55->f12);
+            v32 = reinterpret_cast<void**>(&ebx55->fc);
             caml_modify(ecx24, v32, a3, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
         }
     }
@@ -45671,7 +45661,7 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     if (ecx24 == 0xfe) {
         if (*reinterpret_cast<uint32_t*>(ebx56 - 4) >> 10 <= 9) {
             addr_8059d5c_133:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d61_134;
         } else {
             __asm__("fld qword [eax]");
@@ -45680,17 +45670,17 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (*reinterpret_cast<uint32_t*>(ebx56 - 4) >> 9 <= 9) {
             addr_8059d61_134:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d66_126;
         } else {
-            v32 = reinterpret_cast<void**>(&ebx57->f16);
+            v32 = reinterpret_cast<void**>(&ebx57->f10);
             caml_modify(ecx24, v32, a2, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
         }
     }
     ecx24 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(ebx58 - 4) & 0xff);
     if (ecx24 == 0xfe) {
         if (*reinterpret_cast<uint32_t*>(ebx58 - 4) >> 10 <= 11) {
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d57_141;
         } else {
             __asm__("fld qword [eax]");
@@ -45699,17 +45689,17 @@ void fun_8059b95(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
     } else {
         if (*reinterpret_cast<uint32_t*>(ebx58 - 4) >> 9 <= 11) {
             addr_8059d57_141:
-            caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
             goto addr_8059d5c_133;
         } else {
-            caml_modify(ecx24, &ebx59->f20, a1, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
+            caml_modify(ecx24, &ebx59->f14, a1, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22);
         }
     }
     goto caml_apply2;
     addr_8059bc7_7:
     if (*reinterpret_cast<uint32_t*>(ebx25 - 4) >> 9 <= 3) {
         addr_8059d7f_115:
-        caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+        caml_ml_array_bound_error(ecx24, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
         goto addr_8059d84_3;
     } else {
         v32 = reinterpret_cast<void**>(&ebx60->f4);
@@ -46081,10 +46071,10 @@ int32_t unix_connect(void** ecx, int32_t a2, void** a3) {
     v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff84);
     esi6 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff88);
     get_sockaddr(ecx, a3, esi6, v5);
-    caml_enter_blocking_section(a3, esi6, v5);
+    caml_enter_blocking_section(ecx, a3, esi6, v5);
     v7 = reinterpret_cast<void**>(a2 >> 1);
     eax9 = fun_8049e44(v7, esi6, v8);
-    caml_leave_blocking_section(v7, esi6, v8, v10, v11, v12, v13, v14, v15, v16, v17);
+    caml_leave_blocking_section(ecx, v7, esi6, v8, v10, v11, v12, v13, v14, v15, v16, v17);
     if (eax9 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx18) + 0x158dc + 0xffffe7e3, 0, v8, v19, v20, v21);
     }
@@ -46202,14 +46192,14 @@ struct s194 {
     signed char[3] pad8;
     void** f8;
     signed char[3] pad12;
-    void* f12;
-    void** f16;
+    void* fc;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
     signed char[3] pad24;
-    void** f24;
+    void** f18;
     signed char[3] pad28;
-    struct s194* f28;
+    struct s194* f1c;
 };
 
 void** unix_getaddrinfo(void** a1, void** a2, struct s193* a3) {
@@ -46386,12 +46376,12 @@ void** unix_getaddrinfo(void** a1, void** a2, struct s193* a3) {
             a3 = eax48;
         } while (!(*reinterpret_cast<unsigned char*>(&eax48) & 1));
     }
-    caml_enter_blocking_section(v29, v27, v52);
+    caml_enter_blocking_section(ecx46, v29, v27, v52);
     v53 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff78);
     v54 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff7c);
     v55 = edi42;
     eax56 = fun_804a2f4(esi23, v55, v54, v53);
-    caml_leave_blocking_section(esi23, v55, v54, v53, v8, v57, v58, eax56, v59, v60, v61);
+    caml_leave_blocking_section(ecx46, esi23, v55, v54, v53, v8, v57, v58, eax56, v59, v60, v61);
     if (esi23) {
         caml_stat_free(ecx46, esi23, v55, v54, v53, v8, v62, v63, eax56, v64, v65, v66, v67, v68, v69, v70, v71);
     }
@@ -46407,19 +46397,19 @@ void** unix_getaddrinfo(void** a1, void** a2, struct s193* a3) {
                 v86 = **reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx5) - 24);
                 **reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx5) - 24) = v85;
                 edi87 = reinterpret_cast<void**>(0x70);
-                if (reinterpret_cast<unsigned char>(esi83->f16) <= reinterpret_cast<unsigned char>(0x70)) {
-                    edi87 = esi83->f16;
+                if (reinterpret_cast<unsigned char>(esi83->f10) <= reinterpret_cast<unsigned char>(0x70)) {
+                    edi87 = esi83->f10;
                 }
                 v88 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xfffffedc);
-                eax89 = esi83->f20;
+                eax89 = esi83->f14;
                 fun_804a374(v88, eax89, edi87, v53);
                 eax90 = alloc_sockaddr(v88, v88, edi87, 0xffffffff, v53, v8, v85);
-                eax91 = esi83->f24;
+                eax91 = esi83->f18;
                 if (!eax91) {
                     eax91 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx5) + 0xfffff93c);
                 }
                 eax103 = caml_copy_string(v88, eax91, edi87, 0xffffffff, v53, v8, v85, v88, v86, v92, v93, v94, v95, v96, v97, v98, v99, v100, v101, v102);
-                eax107 = caml_alloc_small(v88, 5, 0, 0xffffffff, v53, v8, v85, v88, v86, v104, v105, v106);
+                eax107 = caml_alloc_small(5, 0, 0xffffffff, v53, v8, v85, v88, v86, v104, v105, v106);
                 v108 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx5) - 32);
                 v109 = esi83->f4;
                 eax110 = cst_to_constr(v109, v108, 3, 0);
@@ -46430,16 +46420,16 @@ void** unix_getaddrinfo(void** a1, void** a2, struct s193* a3) {
                 v112 = esi83->f8;
                 eax113 = cst_to_constr(v112, v111, 4, 0);
                 *reinterpret_cast<void***>(eax107 + 4) = eax113;
-                *reinterpret_cast<void***>(eax107 + 8) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esi83->f12) + reinterpret_cast<int32_t>(esi83->f12) + 1);
+                *reinterpret_cast<void***>(eax107 + 8) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(esi83->fc) + reinterpret_cast<int32_t>(esi83->fc) + 1);
                 *reinterpret_cast<void***>(eax107 + 12) = eax90;
                 *reinterpret_cast<void***>(eax107 + 16) = eax103;
                 **reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx5) - 24) = v86;
                 v55 = reinterpret_cast<void**>(0);
-                eax117 = caml_alloc_small(v86, 2, 0, 4, 0, v8, v85, v88, v86, v114, v115, v116);
+                eax117 = caml_alloc_small(2, 0, 4, 0, v8, v85, v88, v86, v114, v115, v116);
                 *reinterpret_cast<void***>(eax117) = eax107;
                 *reinterpret_cast<void***>(eax117 + 4) = v82;
                 v82 = eax117;
-                esi83 = esi83->f28;
+                esi83 = esi83->f1c;
             } while (esi83);
         }
         fun_8049ec4(v118, v55, v54, v53);
@@ -46541,7 +46531,7 @@ void** unix_gethostname(void** ecx) {
 
 struct s195 {
     signed char[37276] pad37276;
-    void** f37276;
+    void** f919c;
 };
 
 void** unix_getnameinfo(void** ecx, void** a2, void** a3) {
@@ -46602,19 +46592,19 @@ void** unix_getnameinfo(void** ecx, void** a2, void** a3) {
     v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff48);
     esi10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffff4c);
     get_sockaddr(ecx, a2, esi10, v9);
-    v11 = reinterpret_cast<void**>(&ebx5->f37276);
+    v11 = reinterpret_cast<void**>(&ebx5->f919c);
     eax12 = caml_convert_flag_list(a3, v11, v9);
-    caml_enter_blocking_section(a3, v11, v9);
+    caml_enter_blocking_section(ecx, a3, v11, v9);
     v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffeb48);
     v14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffef48);
     eax16 = fun_804a6a4(esi10, v15, v14, 0x1000, v13, 0x400, eax12);
-    caml_leave_blocking_section(esi10, v15, v14, 0x1000, v13, 0x400, eax12, v17, v18, v19, v20);
+    caml_leave_blocking_section(ecx, esi10, v15, v14, 0x1000, v13, 0x400, eax12, v17, v18, v19, v20);
     if (eax16) {
         caml_raise_not_found(ecx, esi10, v15, v14, 0x1000, v13, 0x400, eax12, v21);
     }
     eax33 = caml_copy_string(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffef48, v15, v14, 0x1000, v13, 0x400, eax12, v22, v23, v24, v25, eax12, v26, v27, v28, v29, v30, v31, v32);
     eax45 = caml_copy_string(ecx, reinterpret_cast<int32_t>(ebp4) + 0xffffeb48, v15, v14, 0x1000, v13, 0x400, eax12, v34, v35, v36, v37, eax12, v38, v39, v40, v41, v42, v43, v44);
-    eax50 = caml_alloc_small(ecx, 2, 0, v14, 0x1000, v13, 0x400, eax12, v46, v47, v48, v49);
+    eax50 = caml_alloc_small(2, 0, v14, 0x1000, v13, 0x400, eax12, v46, v47, v48, v49);
     *reinterpret_cast<void***>(eax50) = eax33;
     *reinterpret_cast<void***>(eax50 + 4) = eax45;
     **reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx5) - 24) = edi8;
@@ -46699,9 +46689,8 @@ void** unix_gettimeofday() {
     void** v5;
     void** v6;
     void** v7;
-    void** ecx8;
-    void** v9;
-    void** eax10;
+    void** v8;
+    void** eax9;
 
     __i686_get_pc_thunk_bx();
     v1 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xfffffff0);
@@ -46715,8 +46704,8 @@ void** unix_gettimeofday() {
     __asm__("fdiv dword [ebx+0xffffe89c]");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [esp]");
-    eax10 = caml_copy_double(ecx8, v1, 0, v9);
-    return eax10;
+    eax9 = caml_copy_double(v1, 0, v8);
+    return eax9;
 }
 
 void unix_getservbyname(void** ecx, void** a2, void** a3) {
@@ -47008,58 +46997,62 @@ void fun_805e5ed(int32_t ecx) {
 
 void fun_805e6b8(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
     int32_t ebp11;
-    void** v12;
-    void* ebp13;
-    void** esi14;
+    void** ecx12;
+    void** v13;
+    void* ebp14;
+    void** esi15;
+    void** ecx16;
 
     *reinterpret_cast<int16_t*>(ebp11 - 32) = 0;
-    caml_enter_blocking_section(__return_address(), a1, a2);
-    v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp13) + 0xffffffe0);
-    fun_804a744(esi14, 14, v12);
-    caml_leave_blocking_section(esi14, 14, v12, a3, a4, a5, a6, a7, a8, a9, a10);
+    caml_enter_blocking_section(ecx12, __return_address(), a1, a2);
+    v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp14) + 0xffffffe0);
+    fun_804a744(esi15, 14, v13);
+    caml_leave_blocking_section(ecx16, esi15, 14, v13, a3, a4, a5, a6, a7, a8, a9, a10);
     goto 0x805e711;
 }
 
 uint32_t unix_lseek(int32_t a1, int32_t a2, int32_t a3) {
     void* ebx4;
     void* ebx5;
-    void** v6;
+    void** ecx6;
     void** v7;
     void** v8;
     void** v9;
-    void** eax10;
-    void** edx11;
-    void** v12;
-    void** eax13;
-    void** v14;
-    void** v15;
+    void** v10;
+    void** eax11;
+    void** edx12;
+    void** v13;
+    void** eax14;
+    void** ecx15;
     void** v16;
-    void** ebx17;
-    void** esi18;
-    void** edi19;
-    void** ebp20;
-    void** v21;
-    void** v22;
+    void** v17;
+    void** v18;
+    void** ebx19;
+    void** esi20;
+    void** edi21;
+    void** ebp22;
     void** v23;
     void** v24;
     void** v25;
+    void** v26;
+    void** v27;
 
     __i686_get_pc_thunk_bx();
     ebx4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx5) + 0x13972);
-    caml_enter_blocking_section(v6, v7, v8);
-    v9 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx4) + (a3 >> 1) * 4 - 0x16f8);
-    eax10 = reinterpret_cast<void**>(a2 >> 1);
-    edx11 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax10) >> 31);
-    v12 = reinterpret_cast<void**>(a1 >> 1);
-    eax13 = fun_804a844(v12, eax10, edx11, v9);
-    caml_leave_blocking_section(v12, eax10, edx11, v9, v14, v15, v16, ebx17, esi18, edi19, ebp20);
-    if ((reinterpret_cast<unsigned char>(eax13) & reinterpret_cast<unsigned char>(edx11)) == 0xffffffff) {
-        uerror(reinterpret_cast<int32_t>(ebx4) + 0xffffe902, 0, edx11, v9, v21, v22);
+    caml_enter_blocking_section(ecx6, v7, v8, v9);
+    v10 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx4) + (a3 >> 1) * 4 - 0x16f8);
+    eax11 = reinterpret_cast<void**>(a2 >> 1);
+    edx12 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax11) >> 31);
+    v13 = reinterpret_cast<void**>(a1 >> 1);
+    eax14 = fun_804a844(v13, eax11, edx12, v10);
+    caml_leave_blocking_section(ecx15, v13, eax11, edx12, v10, v16, v17, v18, ebx19, esi20, edi21, ebp22);
+    if ((reinterpret_cast<unsigned char>(eax14) & reinterpret_cast<unsigned char>(edx12)) == 0xffffffff) {
+        uerror(reinterpret_cast<int32_t>(ebx4) + 0xffffe902, 0, edx12, v10, v23, v24);
     }
-    if (reinterpret_cast<signed char>(edx11) >= reinterpret_cast<signed char>(0) && (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edx11) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edx11 == 0)) || reinterpret_cast<unsigned char>(eax13) > reinterpret_cast<unsigned char>(0x3fffffff))) {
-        unix_error(75, reinterpret_cast<int32_t>(ebx4) + 0xffffe902, 0, v9, v23, v24, v25);
+    if (reinterpret_cast<signed char>(edx12) >= reinterpret_cast<signed char>(0) && (!reinterpret_cast<uint1_t>(reinterpret_cast<uint1_t>(reinterpret_cast<signed char>(edx12) < reinterpret_cast<signed char>(0)) | reinterpret_cast<uint1_t>(edx12 == 0)) || reinterpret_cast<unsigned char>(eax14) > reinterpret_cast<unsigned char>(0x3fffffff))) {
+        unix_error(75, reinterpret_cast<int32_t>(ebx4) + 0xffffe902, 0, v10, v25, v26, v27);
     }
-    return reinterpret_cast<unsigned char>(eax13) + reinterpret_cast<unsigned char>(eax13) + 1;
+    return reinterpret_cast<unsigned char>(eax14) + reinterpret_cast<unsigned char>(eax14) + 1;
 }
 
 int32_t unix_mkfifo(void** a1, int32_t a2) {
@@ -47107,25 +47100,24 @@ void unix_opendir(void** a1) {
     void** v5;
     void** v6;
     void** v7;
-    void** ecx8;
+    void** v8;
     void** v9;
     void** v10;
     void** v11;
     void** v12;
-    void** v13;
-    void** ebx14;
-    void** esi15;
-    void** edi16;
-    void** ebp17;
-    void** eax18;
+    void** ebx13;
+    void** esi14;
+    void** edi15;
+    void** ebp16;
+    void** eax17;
 
     __i686_get_pc_thunk_bx();
     eax2 = fun_804a264(a1);
     if (!eax2) {
         uerror(reinterpret_cast<int32_t>(ebx3) + 0x136d0 + 0xffffe92b, a1, v4, v5, v6, v7);
     }
-    eax18 = caml_alloc_small(ecx8, 1, 0xfb, v9, v10, v11, v12, v13, ebx14, esi15, edi16, ebp17);
-    *reinterpret_cast<void***>(eax18) = eax2;
+    eax17 = caml_alloc_small(1, 0xfb, v8, v9, v10, v11, v12, ebx13, esi14, edi15, ebp16);
+    *reinterpret_cast<void***>(eax17) = eax2;
     return;
 }
 
@@ -47136,28 +47128,27 @@ void unix_pipe() {
     void** v4;
     void** v5;
     void** v6;
-    void** ecx7;
+    void** v7;
     void** v8;
     void** v9;
     void** v10;
     void** v11;
     void** v12;
     void** v13;
-    void** v14;
-    void** ebx15;
-    void** ebp16;
-    void** eax17;
+    void** ebx14;
+    void** ebp15;
+    void** eax16;
+    void* v17;
     void* v18;
-    void* v19;
 
     __i686_get_pc_thunk_bx();
     eax1 = fun_804a794(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 - 16);
     if (eax1 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx2) + 0x13678 + 0xffffe933, 0, v3, v4, v5, v6);
     }
-    eax17 = caml_alloc_small(ecx7, 2, 0, v8, v9, v10, v11, v12, v13, v14, ebx15, ebp16);
-    *reinterpret_cast<void***>(eax17) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v18) + reinterpret_cast<int32_t>(v18) + 1);
-    *reinterpret_cast<void***>(eax17 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v19) + reinterpret_cast<int32_t>(v19) + 1);
+    eax16 = caml_alloc_small(2, 0, v7, v8, v9, v10, v11, v12, v13, ebx14, ebp15);
+    *reinterpret_cast<void***>(eax16) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v17) + reinterpret_cast<int32_t>(v17) + 1);
+    *reinterpret_cast<void***>(eax16 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v18) + reinterpret_cast<int32_t>(v18) + 1);
     return;
 }
 
@@ -47264,14 +47255,14 @@ uint32_t unix_read(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5) {
     *eax9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffbfd8);
     v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 12);
     esi12 = reinterpret_cast<void**>(a5 >> 1);
-    caml_enter_blocking_section(v13, v14, v15);
+    caml_enter_blocking_section(ecx, v13, v14, v15);
     if (reinterpret_cast<signed char>(esi12) > reinterpret_cast<signed char>(0x4000)) {
         esi12 = reinterpret_cast<void**>(0x4000);
     }
     v16 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffbff8);
     v17 = reinterpret_cast<void**>(a2 >> 1);
     eax18 = fun_804a114(v17, v16, esi12);
-    caml_leave_blocking_section(v17, v16, esi12, v19, v10, 1, 1, v11, v20, v21, v22);
+    caml_leave_blocking_section(ecx, v17, v16, esi12, v19, v10, 1, 1, v11, v20, v21, v22);
     if (reinterpret_cast<int1_t>(eax18 == 0xffffffff)) {
         v23 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx7) + 0xffffe93f);
         uerror(v23, 0, esi12, v24, v10, 1, v23, 0, esi12, v25, v10, 1);
@@ -47412,13 +47403,12 @@ int32_t unix_shutdown(int32_t a1, int32_t a2) {
     return 1;
 }
 
-int32_t unix_sigsuspend(int32_t a1) {
-    void** v2;
+int32_t unix_sigsuspend(void** ecx, int32_t a2) {
     void** v3;
     void** v4;
     void** v5;
-    int32_t eax6;
-    void** v7;
+    void** v6;
+    int32_t eax7;
     void** v8;
     void** v9;
     void** v10;
@@ -47430,21 +47420,22 @@ int32_t unix_sigsuspend(int32_t a1) {
     void** v16;
     void** v17;
     void** v18;
-    void*** eax19;
-    void* ebx20;
-    void** v21;
+    void** v19;
+    void*** eax20;
+    void* ebx21;
     void** v22;
     void** v23;
     void** v24;
+    void** v25;
 
     __i686_get_pc_thunk_bx();
     decode_sigset();
-    caml_enter_blocking_section(v2, v3, v4);
-    v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffff78);
-    eax6 = fun_804a8c4(v5);
-    caml_leave_blocking_section(v5, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16);
-    if (eax6 == -1 && (eax19 = fun_8049df4(v5, v17, v18), *eax19 != 4)) {
-        uerror(reinterpret_cast<int32_t>(ebx20) + 0x1297b + 0xffffe9bc, 0, v21, v22, v23, v24);
+    caml_enter_blocking_section(ecx, v3, v4, v5);
+    v6 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffff78);
+    eax7 = fun_804a8c4(v6);
+    caml_leave_blocking_section(ecx, v6, v8, v9, v10, v11, v12, v13, v14, v15, v16, v17);
+    if (eax7 == -1 && (eax20 = fun_8049df4(v6, v18, v19), *eax20 != 4)) {
+        uerror(reinterpret_cast<int32_t>(ebx21) + 0x1297b + 0xffffe9bc, 0, v22, v23, v24, v25);
     }
     return 1;
 }
@@ -47476,15 +47467,15 @@ void** unix_sigprocmask(int32_t a1, int32_t a2) {
     void* ebx4;
     void* ebx5;
     void** edi6;
-    void** v7;
+    void** ecx7;
     void** v8;
     void** v9;
     void** v10;
     void** v11;
     void** v12;
-    int32_t eax13;
-    void** v14;
-    void** v15;
+    void** v13;
+    int32_t eax14;
+    void** ecx15;
     void** v16;
     void** v17;
     void** v18;
@@ -47494,45 +47485,49 @@ void** unix_sigprocmask(int32_t a1, int32_t a2) {
     void** v22;
     void** v23;
     void** v24;
-    void** eax25;
+    void** v25;
+    void** v26;
+    void** eax27;
 
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx5) + 0x1280f);
     edi6 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx4) + (a1 >> 1) * 4 - 0x1620);
     decode_sigset();
-    caml_enter_blocking_section(v7, v8, v9);
-    v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffee8);
-    v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff68);
-    v12 = edi6;
-    eax13 = fun_804a5d4(v12, v11, v10);
-    caml_leave_blocking_section(v12, v11, v10, v14, v15, v16, v17, v18, v19, v20, v21);
-    if (eax13 == -1) {
-        v11 = reinterpret_cast<void**>(0);
-        v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx4) + 0xffffe9d2);
-        uerror(v12, 0, v10, v22, v23, v24);
+    caml_enter_blocking_section(ecx7, v8, v9, v10);
+    v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffee8);
+    v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff68);
+    v13 = edi6;
+    eax14 = fun_804a5d4(v13, v12, v11);
+    caml_leave_blocking_section(ecx15, v13, v12, v11, v16, v17, v18, v19, v20, v21, v22, v23);
+    if (eax14 == -1) {
+        v12 = reinterpret_cast<void**>(0);
+        v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx4) + 0xffffe9d2);
+        uerror(v13, 0, v11, v24, v25, v26);
     }
-    eax25 = encode_sigset(v12, v11, v10);
-    return eax25;
+    eax27 = encode_sigset(v13, v12, v11);
+    return eax27;
 }
 
 int32_t unix_sleep(void** a1, void** a2, void** a3) {
-    void** v4;
+    void** ecx4;
     void** v5;
     void** v6;
     void** v7;
     void** v8;
-    void** v9;
+    void** ecx9;
     void** v10;
     void** v11;
-    void** ebx12;
-    void** ebp13;
+    void** v12;
+    void** v13;
+    void** ebx14;
+    void** ebp15;
 
     __i686_get_pc_thunk_bx();
-    caml_enter_blocking_section(v4, v5, v6);
-    v7 = reinterpret_cast<void**>(reinterpret_cast<signed char>(a1) >> 1);
-    fun_804a654(v7);
-    caml_leave_blocking_section(v7, v8, v9, v10, v11, ebx12, ebp13, __return_address(), a1, a2, a3);
+    caml_enter_blocking_section(ecx4, v5, v6, v7);
+    v8 = reinterpret_cast<void**>(reinterpret_cast<signed char>(a1) >> 1);
+    fun_804a654(v8);
+    caml_leave_blocking_section(ecx9, v8, v10, v11, v12, v13, ebx14, ebp15, __return_address(), a1, a2, a3);
     return 1;
 }
 
@@ -47564,7 +47559,7 @@ int32_t unix_setsockopt(int32_t a1, int32_t a2, int32_t a3, uint32_t a4) {
 
 struct s197 {
     signed char[33] pad33;
-    signed char f33;
+    signed char f21;
 };
 
 void fun_805ffb5(unsigned char* ecx) {
@@ -47583,7 +47578,7 @@ void fun_805ffb5(unsigned char* ecx) {
     *ecx = reinterpret_cast<unsigned char>(*ecx & 1);
     *reinterpret_cast<signed char*>(eax2 + 0x77000121) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(eax3 + 0x77000121) + al4);
     *ecx = reinterpret_cast<unsigned char>(*ecx & eax5);
-    esi6->f33 = reinterpret_cast<signed char>(esi6->f33 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx) + 1));
+    esi6->f21 = reinterpret_cast<signed char>(esi6->f21 + *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ecx) + 1));
     *eax7 = *eax8 + eax9;
     *ecx = reinterpret_cast<unsigned char>(*ecx & 1);
     __asm__("fadd qword [eax+eax]");
@@ -47627,7 +47622,7 @@ void fun_8060051(unsigned char* ecx) {
 
 void fun_8060074() {
     int32_t ebp1;
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
     void** v5;
@@ -47636,26 +47631,23 @@ void fun_8060074() {
     void** v8;
     void** v9;
     void** v10;
-    void** v11;
-    void** eax12;
-    int32_t ebp13;
+    void** eax11;
+    int32_t ebp12;
 
     if (!*reinterpret_cast<int32_t*>(ebp1 - 32)) 
         goto 0x8060126;
-    eax12 = caml_alloc_small(ecx2, 1, 0, v3, v4, v5, v6, v7, v8, v9, v10, v11);
-    *reinterpret_cast<void***>(eax12) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>(ebp13 - 28)) + reinterpret_cast<int32_t>(*reinterpret_cast<void**>(ebp13 - 28)) + 1);
+    eax11 = caml_alloc_small(1, 0, v2, v3, v4, v5, v6, v7, v8, v9, v10);
+    *reinterpret_cast<void***>(eax11) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>(ebp12 - 28)) + reinterpret_cast<int32_t>(*reinterpret_cast<void**>(ebp12 - 28)) + 1);
     goto 0x806012b;
 }
 
 void fun_80600a0(void** a1, void** a2) {
-    void** ecx3;
-
     __asm__("fild dword [ebp-0x20]");
     __asm__("fild dword [ebp-0x1c]");
     __asm__("fdiv dword [ebx+0xffffe89c]");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [esp]");
-    caml_copy_double(ecx3, __return_address(), a1, a2);
+    caml_copy_double(__return_address(), a1, a2);
     goto 0x806012b;
 }
 
@@ -47840,9 +47832,9 @@ int32_t unix_tcsendbreak(int32_t a1, int32_t a2) {
 
 struct s198 {
     signed char[37620] pad37620;
-    void** f37620;
+    void** f92f4;
     signed char[1151] pad38772;
-    void** f38772;
+    void** f9774;
 };
 
 struct s199 {
@@ -47850,7 +47842,7 @@ struct s199 {
     signed char[3] pad4;
     uint32_t f4;
     struct s199* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s200 {
@@ -47907,20 +47899,20 @@ int32_t unix_tcsetattr(int32_t a1, int32_t a2, uint32_t* a3) {
     __i686_get_pc_thunk_bx();
     ebx4 = reinterpret_cast<struct s198*>(reinterpret_cast<int32_t>(ebx5) + 0x11901);
     v6 = reinterpret_cast<void**>(a1 >> 1);
-    eax7 = fun_804a0f4(v6, &ebx4->f38772);
+    eax7 = fun_804a0f4(v6, &ebx4->f9774);
     if (eax7 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx4) + 0xffffeae5, 0, v8, v9, v10, v11);
     }
-    eax12 = ebx4->f37620;
+    eax12 = ebx4->f92f4;
     if (eax12 != 4) {
         edi13 = a3;
-        esi14 = reinterpret_cast<struct s199*>(&ebx4->f37620);
+        esi14 = reinterpret_cast<struct s199*>(&ebx4->f92f4);
         v15 = reinterpret_cast<struct s199*>(reinterpret_cast<int32_t>(ebx4) + 0xffffeb54);
-        v16 = reinterpret_cast<void**>(&ebx4->f38772);
+        v16 = reinterpret_cast<void**>(&ebx4->f9774);
         goto addr_80608b3_5;
     }
     addr_8060a24_6:
-    v17 = reinterpret_cast<void**>(&ebx4->f38772);
+    v17 = reinterpret_cast<void**>(&ebx4->f9774);
     v18 = *reinterpret_cast<int32_t*>(reinterpret_cast<int32_t>(ebx4) + (a2 >> 1) * 4 - 0x14d0);
     eax19 = fun_804a734(v6, v18, v17);
     if (eax19 == -1) {
@@ -47952,7 +47944,7 @@ int32_t unix_tcsetattr(int32_t a1, int32_t a2, uint32_t* a3) {
                             if (eax12 == 1) {
                                 eax31 = esi14->f0;
                                 v23 = esi14->f8;
-                                edx32 = reinterpret_cast<struct s200*>(&esi14->f12);
+                                edx32 = reinterpret_cast<struct s200*>(&esi14->fc);
                                 v33 = edx32->f0;
                                 ecx34 = reinterpret_cast<struct s199*>((reinterpret_cast<int32_t>(*edi13) >> 1) - esi14->f4);
                                 if (reinterpret_cast<int32_t>(ecx34) < reinterpret_cast<int32_t>(0) || reinterpret_cast<int32_t>(v23) <= reinterpret_cast<int32_t>(ecx34)) {
@@ -48024,17 +48016,17 @@ int32_t unix_tcsetattr(int32_t a1, int32_t a2, uint32_t* a3) {
 
 struct s201 {
     signed char[37620] pad37620;
-    uint32_t* f37620;
+    uint32_t* f92f4;
     signed char[1148] pad38772;
-    void** f38772;
+    void** f9774;
 };
 
 struct s202 {
     uint32_t* f0;
     void* f4;
     void* f8;
-    uint32_t f12;
-    uint32_t* f16;
+    uint32_t fc;
+    uint32_t* f10;
 };
 
 struct s203 {
@@ -48078,7 +48070,7 @@ void** unix_tcgetattr(int32_t a1) {
 
     __i686_get_pc_thunk_bx();
     ebx2 = reinterpret_cast<struct s201*>(reinterpret_cast<int32_t>(ebx3) + 0x116cd);
-    v4 = reinterpret_cast<void**>(&ebx2->f38772);
+    v4 = reinterpret_cast<void**>(&ebx2->f9774);
     eax5 = fun_804a0f4(a1 >> 1, v4);
     if (eax5 == -1) {
         v4 = reinterpret_cast<void**>(0);
@@ -48086,19 +48078,19 @@ void** unix_tcgetattr(int32_t a1) {
     }
     eax12 = caml_alloc_tuple(ecx10, 38, v4, v11);
     v13 = eax12;
-    eax14 = ebx2->f37620;
+    eax14 = ebx2->f92f4;
     if (eax14 != 4) {
         edi15 = v13;
-        edx16 = reinterpret_cast<struct s202*>(&ebx2->f37620);
-        v17 = reinterpret_cast<void**>(&ebx2->f38772);
+        edx16 = reinterpret_cast<struct s202*>(&ebx2->f92f4);
+        v17 = reinterpret_cast<void**>(&ebx2->f9774);
         while (1) {
             esi18 = reinterpret_cast<struct s202*>(&edx16->f4);
             if (eax14 == 1) {
                 v19 = esi18->f0;
                 v20 = esi18->f4;
                 ecx21 = esi18->f8;
-                eax22 = esi18->f12;
-                v23 = &esi18->f16;
+                eax22 = esi18->fc;
+                v23 = &esi18->f10;
                 if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(ecx21) < 0) | reinterpret_cast<uint1_t>(ecx21 == 0)) {
                     addr_8060b91_7:
                     esi18 = reinterpret_cast<struct s202*>(v23 + static_cast<int32_t>(ecx21));
@@ -48250,38 +48242,40 @@ int32_t unix_utimes(void** a1, int32_t a2, int32_t a3) {
 }
 
 void unix_wait() {
-    void** v1;
+    void** ecx1;
     void** v2;
     void** v3;
     void** v4;
-    int32_t eax5;
-    void** v6;
-    void** v7;
+    void** v5;
+    int32_t eax6;
+    void** ecx7;
     void** v8;
     void** v9;
     void** v10;
     void** v11;
     void** v12;
-    void** ebx13;
-    void** esi14;
-    void** ebp15;
-    void* ebx16;
-    void** v17;
-    void** v18;
+    void** v13;
+    void** v14;
+    void** ebx15;
+    void** esi16;
+    void** ebp17;
+    void* ebx18;
     void** v19;
     void** v20;
     void** v21;
+    void** v22;
+    void** v23;
 
     __i686_get_pc_thunk_bx();
-    caml_enter_blocking_section(v1, v2, v3);
-    v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xfffffff4);
-    eax5 = fun_804a0c4(v4);
-    caml_leave_blocking_section(v4, v6, v7, v8, v9, v10, v11, v12, ebx13, esi14, ebp15);
-    if (eax5 == -1) {
-        v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx16) + 0x10f72 + 0xffffec52);
-        uerror(v4, 0, v17, v18, v19, v20);
+    caml_enter_blocking_section(ecx1, v2, v3, v4);
+    v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xfffffff4);
+    eax6 = fun_804a0c4(v5);
+    caml_leave_blocking_section(ecx7, v5, v8, v9, v10, v11, v12, v13, v14, ebx15, esi16, ebp17);
+    if (eax6 == -1) {
+        v5 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx18) + 0x10f72 + 0xffffec52);
+        uerror(v5, 0, v19, v20, v21, v22);
     }
-    alloc_process_status(v4, 0, v21);
+    alloc_process_status(v5, 0, v23);
     return;
 }
 
@@ -48330,11 +48324,11 @@ uint32_t unix_single_write(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t
         }
         edi14 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffbfe8);
         fun_804a684(ecx, edi14, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi12, v15, v10, 1, 1, v11, v16, v17, v18, v19, v20, v21, v22);
-        caml_enter_blocking_section(edi14, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi12);
+        caml_enter_blocking_section(ecx, edi14, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi12);
         v23 = reinterpret_cast<void**>(a2 >> 1);
         eax24 = fun_804a004(v23, edi14, esi12);
         esi13 = eax24;
-        caml_leave_blocking_section(v23, edi14, esi12, v25, v10, 1, 1, v11, v26, v27, v28);
+        caml_leave_blocking_section(ecx, v23, edi14, esi12, v25, v10, 1, 1, v11, v26, v27, v28);
         if (reinterpret_cast<int1_t>(esi13 == 0xffffffff)) 
             goto addr_80612d3_6;
     }
@@ -48445,7 +48439,7 @@ void** caml_install_signal_handler(void** ecx, int32_t a2, void** a3) {
     eax10 = caml_convert_signal_number(a2 >> 1, v9);
     esi11 = eax10;
     if (reinterpret_cast<unsigned char>(eax10) > reinterpret_cast<unsigned char>(64)) {
-        eax10 = caml_invalid_argument(ecx, 0x8070ea8, v12, v13);
+        eax10 = caml_invalid_argument(ecx, "Sys.signal: unavailable signal", v12, v13);
     }
     edx14 = reinterpret_cast<void**>(2);
     if (reinterpret_cast<unsigned char>(a3 + 0xffffffff) <= reinterpret_cast<unsigned char>(2)) {
@@ -48460,7 +48454,7 @@ void** caml_install_signal_handler(void** ecx, int32_t a2, void** a3) {
         if (eax17 == 2) {
             v15 = reinterpret_cast<void**>(0);
             v16 = reinterpret_cast<void**>(1);
-            eax23 = caml_alloc_small(a3, 1, 0, v18, v19, v20, v21, v22, v7, 1, 1, v8);
+            eax23 = caml_alloc_small(1, 0, v18, v19, v20, v21, v22, v7, 1, 1, v8);
             v6 = eax23;
             edx24 = caml_signal_handlers;
             *reinterpret_cast<void***>(eax23) = *reinterpret_cast<void***>(edx24 + reinterpret_cast<unsigned char>(esi11) * 4);
@@ -48485,7 +48479,7 @@ void** caml_install_signal_handler(void** ecx, int32_t a2, void** a3) {
         v16 = tmp32_35;
         caml_modify(a3, v16, v15, v36, v37, v38, v39, v40, v7, 1, 1, v8, v41, v42, v43, v44, v6, ebx5, 2, 1, reinterpret_cast<int32_t>(ebp4) + 8, reinterpret_cast<int32_t>(ebp4) + 12, v45, v46, v47, v48);
     }
-    caml_process_pending_signals(v16, v15);
+    caml_process_pending_signals(a3, v16, v15);
     caml_local_roots = ebx5;
     return v6;
 }
@@ -48584,13 +48578,12 @@ int32_t caml_update_dummy(void** a1, void** a2, void** a3, void** a4, void** a5,
     return 1;
 }
 
-void** caml_alloc_final(uint32_t a1, void** a2, void** a3, void** a4) {
-    void** ecx5;
+void** caml_alloc_final(void** ecx, uint32_t a2, void** a3, void** a4, void** a5) {
     void** eax6;
     void** eax7;
 
-    eax6 = caml_final_custom_operations(ecx5, a2);
-    eax7 = caml_alloc_custom(eax6, a1 << 2, a3, a4);
+    eax6 = caml_final_custom_operations(ecx, a3);
+    eax7 = caml_alloc_custom(ecx, eax6, a2 << 2, a4, a5);
     return eax7;
 }
 
@@ -48717,16 +48710,15 @@ uint32_t caml_compare(int32_t a1, int32_t a2) {
 }
 
 void** caml_nativeint_to_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fild dword [eax+0x4]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 struct s204 {
@@ -48824,28 +48816,26 @@ void** caml_int64_xor(struct s207* a1, struct s208* a2) {
 }
 
 void** caml_log1p_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     caml_log1p();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_array_unsafe_get(void*** a1, int32_t a2) {
     void** eax3;
-    void** ecx4;
 
     if (*reinterpret_cast<signed char*>(a1 - 4) != -2) {
         eax3 = a1[(a2 >> 1) * 4];
     } else {
-        eax3 = caml_array_unsafe_get_float(ecx4, a1, a2);
+        eax3 = caml_array_unsafe_get_float(a1, a2);
     }
     return eax3;
 }
@@ -48885,9 +48875,9 @@ int32_t caml_ml_close_channel(void** ecx, void** a2, void** a3, void** a4, void*
         edx11 = *reinterpret_cast<void***>(eax8 + 12);
         *reinterpret_cast<void***>(eax8 + 20) = edx11;
         *reinterpret_cast<void***>(eax8 + 16) = edx11;
-        caml_enter_blocking_section(v12, v13, v14);
+        caml_enter_blocking_section(ecx, v12, v13, v14);
         eax15 = fun_804a524(ebx9);
-        caml_leave_blocking_section(ebx9, v16, v17, v18, v19, ebx20, ebp21, __return_address(), a2, a3, a4);
+        caml_leave_blocking_section(ecx, ebx9, v16, v17, v18, v19, ebx20, ebp21, __return_address(), a2, a3, a4);
         if (reinterpret_cast<int1_t>(eax15 == 0xffffffff)) {
             caml_sys_error(ecx, 1, v22, v23, v24, v25, ebx20, ebp21, __return_address(), a2, a3, a4, a5, a6, a7);
         }
@@ -49218,14 +49208,15 @@ int32_t caml_ml_seek_out_64(void** ecx, struct s215* a2, struct s216* a3) {
     return 1;
 }
 
-void** caml_ml_open_descriptor_in(void** ecx, int32_t a2) {
+void** caml_ml_open_descriptor_in(int32_t a1) {
+    void** ecx2;
     void** v3;
     void** v4;
     void** eax5;
     void** v6;
     void** eax7;
 
-    eax5 = caml_open_descriptor_in(ecx, a2 >> 1, v3, v4);
+    eax5 = caml_open_descriptor_in(ecx2, a1 >> 1, v3, v4);
     eax7 = caml_alloc_channel(eax5, v6);
     return eax7;
 }
@@ -49307,8 +49298,8 @@ struct s219 {
     unsigned char f7;
     unsigned char f8;
     unsigned char f9;
-    unsigned char f10;
-    unsigned char f11;
+    unsigned char fa;
+    unsigned char fb;
 };
 
 void fun_806ad6b() {
@@ -49408,13 +49399,13 @@ void fun_806ad6b() {
         ebx43 = eax37->f4;
         ecx44 = eax37->f5;
         *reinterpret_cast<signed char*>(ebp45 - 68) = *reinterpret_cast<signed char*>(&ecx44);
-        ecx46 = eax37->f11;
+        ecx46 = eax37->fb;
         eax37->f4 = *reinterpret_cast<unsigned char*>(&ecx46);
-        ecx47 = eax37->f10;
+        ecx47 = eax37->fa;
         eax37->f5 = *reinterpret_cast<unsigned char*>(&ecx47);
-        eax37->f11 = *reinterpret_cast<unsigned char*>(&ebx43);
+        eax37->fb = *reinterpret_cast<unsigned char*>(&ebx43);
         ebx48 = *reinterpret_cast<unsigned char*>(ebp49 - 68);
-        eax37->f10 = *reinterpret_cast<unsigned char*>(&ebx48);
+        eax37->fa = *reinterpret_cast<unsigned char*>(&ebx48);
         ebx50 = eax37->f6;
         ecx51 = eax37->f7;
         *reinterpret_cast<signed char*>(ebp52 - 68) = *reinterpret_cast<signed char*>(&ecx51);
@@ -49470,15 +49461,15 @@ int32_t caml_input_value_from_block(void** a1, void*** a2) {
     intern_src = eax3;
     ecx4 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax3 + 0xfffffffe))) << 8);
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax3 + 0xffffffff)) + (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(a1))) << 24) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(eax3 + 0xfffffffd)) << 16) + reinterpret_cast<unsigned char>(ecx4) != 0x8495a6be) {
-        v5 = reinterpret_cast<void**>(0x807166c);
-        eax3 = caml_failwith(ecx4, 0x807166c, v6, v7, v8);
+        v5 = reinterpret_cast<void**>("input_value_from_block: bad object");
+        eax3 = caml_failwith(ecx4, "input_value_from_block: bad object", v6, v7, v8);
     }
     eax9 = eax3 + 4;
     intern_src = eax9;
     ecx10 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax9 + 0xffffffff)) + (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax9 + 0xfffffffc))) << 24) + 20 + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(eax9 + 0xfffffffd)) << 16));
     if (reinterpret_cast<unsigned char>(ecx10) + (static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax9 + 0xfffffffe))) << 8) > reinterpret_cast<uint32_t>(a2)) {
-        v5 = reinterpret_cast<void**>(0x8071690);
-        caml_failwith(ecx10, 0x8071690, v11, v12, v13);
+        v5 = reinterpret_cast<void**>("input_value_from_block: bad block length");
+        caml_failwith(ecx10, "input_value_from_block: bad block length", v11, v12, v13);
     }
     eax17 = input_val_from_block(v5, v14, v15, v16);
     return eax17;
@@ -49554,9 +49545,9 @@ int32_t caml_sys_system_command(void** ecx, void** a2) {
     esi16 = eax15 + 1;
     eax19 = caml_stat_alloc(ecx, esi16, v17, v18);
     fun_804a684(ecx, eax19, a2, esi16, v20, edi4, 1, 1, v5, v21, v22, v23, v24, v25, v26, v27);
-    caml_enter_blocking_section(eax19, a2, esi16);
+    caml_enter_blocking_section(ecx, eax19, a2, esi16);
     eax28 = fun_8049fe4(eax19, a2, esi16);
-    caml_leave_blocking_section(eax19, a2, esi16, v29, edi4, 1, 1, v5, v30, v31, v32);
+    caml_leave_blocking_section(ecx, eax19, a2, esi16, v29, edi4, 1, 1, v5, v30, v31, v32);
     caml_stat_free(ecx, eax19, a2, esi16, v33, edi4, 1, 1, v5, v34, v35, v36, v37, v38, v39, v40, ebx41);
     if (eax28 != 0xffffffff) {
         if (!(eax28 & 0x7f)) {
@@ -49710,17 +49701,17 @@ uint32_t caml_sys_open(void** ecx, void** a2, void** a3, int32_t a4) {
     fun_804a464(eax20, a2, v21);
     eax23 = caml_convert_flag_list(a3, 0x807b820, v22);
     v24 = reinterpret_cast<void**>(a4 >> 1);
-    caml_enter_blocking_section(a3, 0x807b820, v25, a3, 0x807b820, v26);
+    caml_enter_blocking_section(ecx, a3, 0x807b820, v25, ecx, a3, 0x807b820, v26);
     eax27 = fun_8049ef4(eax20, eax23, v24);
     esi28 = eax27;
     if (eax27 == 0xffffffff) {
-        caml_leave_blocking_section(eax20, eax23, v24, v29, v30, v31, v32, v24, edi6, 3, 1, eax20, eax23, v24, v33, v34, v35, v36, v24, edi6, 3, 1);
+        caml_leave_blocking_section(ecx, eax20, eax23, v24, v29, v30, v31, v32, v24, edi6, 3, 1, ecx, eax20, eax23, v24, v33, v34, v35, v36, v24, edi6, 3, 1);
         esi28 = esi28;
         caml_stat_free(ecx, eax20, eax23, v24, v37, v38, v39, v40, v24, edi6, 3, 1, v7, v8, v9, v41, v42);
         caml_sys_error(ecx, a2, eax23, v24, v43, v44, v45, v46, v24, edi6, 3, 1, v7, v8, v9);
     } else {
         fun_804a744(eax27, 2, 1);
-        caml_leave_blocking_section(eax27, 2, 1, v47, v48, v49, v50, v24, edi6, 3, 1, eax27, 2, 1, v51, v52, v53, v54, v24, edi6, 3, 1);
+        caml_leave_blocking_section(ecx, eax27, 2, 1, v47, v48, v49, v50, v24, edi6, 3, 1, ecx, eax27, 2, 1, v51, v52, v53, v54, v24, edi6, 3, 1);
         caml_stat_free(ecx, eax20, 2, 1, v55, v56, v57, v58, v24, edi6, 3, 1, v7, v8, v9, v59, v60);
     }
     caml_local_roots = edi6;
@@ -49741,17 +49732,19 @@ uint32_t caml_set_parser_trace(int32_t a1) {
     return (eax3 - (eax4 + reinterpret_cast<uint1_t>(eax5 < eax6 + cf2)) & 0xfffffffe) + 3;
 }
 
-int32_t caml_gc_compaction(void** ecx) {
-    void** v2;
+int32_t caml_gc_compaction() {
+    void** v1;
+    void** ecx2;
+    void** ecx3;
 
-    caml_gc_message(16, 0x8071a3a, 0, v2);
-    caml_empty_minor_heap(16, 0x8071a3a, 0);
-    caml_finish_major_cycle(ecx, 16, 0x8071a3a, 0);
-    caml_final_do_calls(16, 0x8071a3a, 0);
-    caml_empty_minor_heap(16, 0x8071a3a, 0);
-    caml_finish_major_cycle(ecx, 16, 0x8071a3a, 0);
-    caml_compact_heap(16, 0x8071a3a, 0);
-    caml_final_do_calls(16, 0x8071a3a, 0);
+    caml_gc_message(16, "Heap compaction requested\n", 0, v1);
+    caml_empty_minor_heap(16, "Heap compaction requested\n", 0);
+    caml_finish_major_cycle(ecx2, 16, "Heap compaction requested\n", 0);
+    caml_final_do_calls(16, "Heap compaction requested\n", 0);
+    caml_empty_minor_heap(16, "Heap compaction requested\n", 0);
+    caml_finish_major_cycle(ecx3, 16, "Heap compaction requested\n", 0);
+    caml_compact_heap(16, "Heap compaction requested\n", 0);
+    caml_final_do_calls(16, "Heap compaction requested\n", 0);
     return 1;
 }
 
@@ -49910,7 +49903,7 @@ uint32_t caml_weak_check(void*** a1, int32_t a2) {
 
     eax3 = reinterpret_cast<void**>((a2 >> 1) + 1);
     if (!eax3 || (edx4 = a1, ecx5 = reinterpret_cast<void**>(*reinterpret_cast<uint32_t*>(edx4 - 4) >> 10), reinterpret_cast<unsigned char>(eax3) >= reinterpret_cast<unsigned char>(ecx5))) {
-        eax3 = caml_invalid_argument(ecx5, 0x8071af8, v6, v7);
+        eax3 = caml_invalid_argument(ecx5, "Weak.get", v6, v7);
     }
     zf8 = edx4[reinterpret_cast<unsigned char>(eax3) * 4] == caml_weak_none;
     eax9 = reinterpret_cast<uint1_t>(!zf8);
@@ -49929,14 +49922,14 @@ int32_t caml_weak_set(void*** a1, int32_t a2, void** a3) {
     ecx4 = a3;
     edx5 = (a2 >> 1) + 1;
     if (!edx5 || (esi6 = a1, edx5 >= *reinterpret_cast<uint32_t*>(a1 - 4) >> 10)) {
-        caml_invalid_argument(ecx4, 0x8071b0b, v7, v8);
+        caml_invalid_argument(ecx4, "Weak.set", v7, v8);
     }
     if (ecx4 == 1 || *reinterpret_cast<unsigned char*>(&ecx4) & 1) {
         eax9 = caml_weak_none;
         esi6[edx5 * 4] = eax9;
     } else {
         ecx10 = *reinterpret_cast<void***>(ecx4);
-        do_set(ecx10, 0x8071b0b);
+        do_set(ecx10, "Weak.set");
     }
     return 1;
 }
@@ -50240,44 +50233,44 @@ struct s228 {
 
 struct s227 {
     signed char[12] pad12;
-    struct s228* f12;
+    struct s228* fc;
 };
 
 struct s226 {
     signed char[12] pad12;
-    struct s227* f12;
+    struct s227* fc;
 };
 
 struct s225 {
     signed char[12] pad12;
-    struct s226* f12;
+    struct s226* fc;
 };
 
 struct s224 {
     signed char[12] pad12;
-    struct s225* f12;
+    struct s225* fc;
 };
 
 struct s223 {
     signed char[12] pad12;
-    struct s224* f12;
+    struct s224* fc;
 };
 
 struct s222 {
     signed char[12] pad12;
-    struct s223* f12;
+    struct s223* fc;
 };
 
 struct s221 {
     signed char[8] pad8;
     void** f8;
     signed char[3] pad12;
-    struct s222* f12;
+    struct s222* fc;
 };
 
 struct s229 {
     signed char[12] pad12;
-    struct s221* f12;
+    struct s221* fc;
 };
 
 struct s230 {
@@ -50303,14 +50296,14 @@ void fun_804ac7c() {
     int32_t v13;
     struct s6* eax14;
 
-    eax1 = ebx2->f12;
-    eax3 = eax1->f12;
-    eax4 = eax3->f12;
-    eax5 = eax4->f12;
-    eax6 = eax5->f12;
-    eax7 = eax6->f12;
-    eax8 = eax7->f12;
-    v9 = eax8->f12;
+    eax1 = ebx2->fc;
+    eax3 = eax1->fc;
+    eax4 = eax3->fc;
+    eax5 = eax4->fc;
+    eax6 = eax5->fc;
+    eax7 = eax6->fc;
+    eax8 = eax7->fc;
+    v9 = eax8->fc;
     v10 = ebx11->f8;
     v12 = eax1->f8;
     v13 = v9->f8;
@@ -50443,32 +50436,32 @@ void fun_804ae8c(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
 
 struct s236 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s235 {
     signed char[12] pad12;
-    struct s236* f12;
+    struct s236* fc;
 };
 
 struct s234 {
     signed char[12] pad12;
-    struct s235* f12;
+    struct s235* fc;
 };
 
 struct s233 {
     signed char[12] pad12;
-    struct s234* f12;
+    struct s234* fc;
 };
 
 struct s232 {
     signed char[12] pad12;
-    struct s233* f12;
+    struct s233* fc;
 };
 
 struct s231 {
     signed char[12] pad12;
-    struct s232* f12;
+    struct s232* fc;
 };
 
 void fun_804aecc() {
@@ -50477,7 +50470,7 @@ void fun_804aecc() {
     void** v3;
     void** eax4;
 
-    edx1 = ebx2->f12->f12->f12->f12->f12->f12;
+    edx1 = ebx2->fc->fc->fc->fc->fc->fc;
     v3 = *reinterpret_cast<void***>(edx1 + 8);
     caml_extra_params = eax4;
     g807b860 = edx1;
@@ -50582,27 +50575,27 @@ void fun_804b03c(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
 
 struct s241 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s240 {
     signed char[12] pad12;
-    struct s241* f12;
+    struct s241* fc;
 };
 
 struct s239 {
     signed char[12] pad12;
-    struct s240* f12;
+    struct s240* fc;
 };
 
 struct s238 {
     signed char[12] pad12;
-    struct s239* f12;
+    struct s239* fc;
 };
 
 struct s237 {
     signed char[12] pad12;
-    struct s238* f12;
+    struct s238* fc;
 };
 
 void fun_804b07c() {
@@ -50610,7 +50603,7 @@ void fun_804b07c() {
     struct s237* ebx2;
     void** v3;
 
-    edx1 = ebx2->f12->f12->f12->f12->f12;
+    edx1 = ebx2->fc->fc->fc->fc->fc;
     v3 = *reinterpret_cast<void***>(edx1 + 8);
     caml_extra_params = edx1;
     goto v3;
@@ -50695,28 +50688,28 @@ struct s246 {
 
 struct s245 {
     signed char[12] pad12;
-    struct s246* f12;
+    struct s246* fc;
 };
 
 struct s244 {
     signed char[12] pad12;
-    struct s245* f12;
+    struct s245* fc;
 };
 
 struct s243 {
     signed char[12] pad12;
-    struct s244* f12;
+    struct s244* fc;
 };
 
 struct s242 {
     signed char[12] pad12;
-    struct s243* f12;
+    struct s243* fc;
 };
 
 void fun_804b1cc() {
     struct s242* ebx1;
 
-    goto ebx1->f12->f12->f12->f12->f8;
+    goto ebx1->fc->fc->fc->fc->f8;
 }
 
 void fun_804b22c(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
@@ -50774,23 +50767,23 @@ struct s250 {
 
 struct s249 {
     signed char[12] pad12;
-    struct s250* f12;
+    struct s250* fc;
 };
 
 struct s248 {
     signed char[12] pad12;
-    struct s249* f12;
+    struct s249* fc;
 };
 
 struct s247 {
     signed char[12] pad12;
-    struct s248* f12;
+    struct s248* fc;
 };
 
 void fun_804b2ac() {
     struct s247* ebx1;
 
-    goto ebx1->f12->f12->f12->f8;
+    goto ebx1->fc->fc->fc->f8;
 }
 
 void fun_804b30c(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
@@ -50824,18 +50817,18 @@ struct s253 {
 
 struct s252 {
     signed char[12] pad12;
-    struct s253* f12;
+    struct s253* fc;
 };
 
 struct s251 {
     signed char[12] pad12;
-    struct s252* f12;
+    struct s252* fc;
 };
 
 void fun_804b34c() {
     struct s251* ebx1;
 
-    goto ebx1->f12->f12->f8;
+    goto ebx1->fc->fc->f8;
 }
 
 struct s255 {
@@ -50845,13 +50838,13 @@ struct s255 {
 
 struct s254 {
     signed char[12] pad12;
-    struct s255* f12;
+    struct s255* fc;
 };
 
 void fun_804b3ac() {
     struct s254* ebx1;
 
-    goto ebx1->f12->f8;
+    goto ebx1->fc->f8;
 }
 
 void fun_804b483() {
@@ -50899,7 +50892,7 @@ void camlSource__code_end(void** ecx, void** a2, void** a3, void** a4, void** a5
 
 struct s256 {
     signed char[16] pad16;
-    int32_t* f16;
+    int32_t* f10;
 };
 
 int32_t fun_804b7a5() {
@@ -50911,7 +50904,7 @@ int32_t fun_804b7a5() {
         goto 0x804b7d0;
     if (eax2 >> 1 < 2) 
         goto 0x804b820;
-    *ebx3->f16 = 3;
+    *ebx3->f10 = 3;
     return 1;
 }
 
@@ -51705,11 +51698,11 @@ int32_t fun_804f6c6() {
     int32_t eax2;
     int32_t eax3;
 
-    eax2 = caml_string_notequal(eax1, 0x8075c5c);
+    eax2 = caml_string_notequal(eax1, "false");
     if (eax2 == 1) {
         return 1;
     } else {
-        eax3 = caml_string_notequal(eax1, 0x8075c50);
+        eax3 = caml_string_notequal(eax1, "true");
         if (eax3 == 1) 
             goto 0x804f710;
         goto camlPervasives__invalid_arg_1012;
@@ -52462,7 +52455,7 @@ void** fun_80572f9(void** a1, void** a2, void** a3, void** a4, void** a5, void**
         } while (eax29 != esi27);
         goto addr_805733f_2;
     }
-    eax30 = caml_ml_array_bound_error(v23, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+    eax30 = caml_ml_array_bound_error(ecx28, v23, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
     v31 = eax30;
     eax32 = camlArray__copy_1049(v31, v23, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16);
     ecx33 = eax32;
@@ -52525,24 +52518,26 @@ void** fun_80584ba(void** a1, void** a2, void** a3, void** a4, void** a5, void**
     int32_t ebx18;
     int32_t ebx19;
     struct s263* eax20;
-    void* ebx21;
+    void** ebx21;
     int32_t ebx22;
     void* ecx23;
     void** eax24;
-    void** eax25;
-    void* eax26;
+    void** ecx25;
+    void** eax26;
+    void* eax27;
 
     if (ebx18 < 1 || ebx19 >= eax20->f4) {
         goto camlPervasives__invalid_arg_1012;
     } else {
-        ebx21 = reinterpret_cast<void*>(ebx22 >> 1);
+        ebx21 = reinterpret_cast<void**>(ebx22 >> 1);
         ecx23 = reinterpret_cast<void*>((*reinterpret_cast<uint32_t*>(reinterpret_cast<int32_t>(*eax24) - 4) >> 10) * 4 + 0xffffffff);
-        if (reinterpret_cast<uint32_t>(ecx23) - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*eax24) + reinterpret_cast<uint32_t>(ecx23)) <= reinterpret_cast<uint32_t>(ebx21)) {
-            eax25 = caml_ml_array_bound_error(__return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
-            return *reinterpret_cast<void***>(eax25 + 4);
+        ecx25 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(ecx23) - *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*eax24) + reinterpret_cast<uint32_t>(ecx23)));
+        if (reinterpret_cast<unsigned char>(ecx25) <= reinterpret_cast<unsigned char>(ebx21)) {
+            eax26 = caml_ml_array_bound_error(ecx25, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17);
+            return *reinterpret_cast<void***>(eax26 + 4);
         } else {
-            eax26 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*eax24) + reinterpret_cast<uint32_t>(ebx21))));
-            return reinterpret_cast<uint32_t>(eax26) + reinterpret_cast<uint32_t>(eax26) + 1;
+            eax27 = reinterpret_cast<void*>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*eax24) + reinterpret_cast<unsigned char>(ebx21))));
+            return reinterpret_cast<uint32_t>(eax27) + reinterpret_cast<uint32_t>(eax27) + 1;
         }
     }
 }
@@ -52630,13 +52625,13 @@ void camlPrintf__got_spec_1304(void** ecx, void** a2, void** a3, void** a4, void
 
 struct s265 {
     signed char[40] pad40;
-    int32_t* f40;
+    int32_t* f28;
 };
 
 void fun_8059029(struct s265* ecx) {
     int32_t ecx2;
 
-    ecx2 = *ecx->f40;
+    ecx2 = *ecx->f28;
     ecx2();
     goto 0x8059150;
 }
@@ -52658,7 +52653,7 @@ void fun_80590bd(int32_t ecx, void** a2) {
 
 struct s266 {
     signed char[84] pad84;
-    void** f84;
+    void** f54;
 };
 
 void camlPrintf__cont_s_1361(void** ecx, void** a2) {
@@ -52667,7 +52662,7 @@ void camlPrintf__cont_s_1361(void** ecx, void** a2) {
     void** edx5;
     void** eax6;
 
-    ecx3 = edx4->f84;
+    ecx3 = edx4->f54;
     caml_apply2(ecx3, edx5, eax6, ecx, __return_address(), a2);
     goto 0x8059150;
 }
@@ -52741,7 +52736,7 @@ void fun_805993a() {
 
 struct s267 {
     signed char[12] pad12;
-    struct s48* f12;
+    struct s48* fc;
 };
 
 int32_t fun_8059994(int32_t ecx) {
@@ -52750,7 +52745,7 @@ int32_t fun_8059994(int32_t ecx) {
     int32_t ebx4;
 
     if (ecx != 83 && ecx != 0xfb) {
-        ecx2 = edx3->f12;
+        ecx2 = edx3->fc;
         camlPrintf__incr_ac_1187(ecx2);
     }
     return ebx4 + 2;
@@ -52837,12 +52832,12 @@ void fun_805ad17() {
 
 struct s268 {
     signed char[12] pad12;
-    int32_t f12;
-    void** f16;
+    int32_t fc;
+    void** f10;
     signed char[3] pad20;
-    int32_t f20;
-    struct s46* f24;
-    int32_t f28;
+    int32_t f14;
+    struct s46* f18;
+    int32_t f1c;
 };
 
 void camlPrintf__cont_t_1363(void** ecx, void** a2);
@@ -52900,11 +52895,11 @@ void fun_805ae3a(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     *reinterpret_cast<int32_t*>(ecx24 + 80) = 0x804b2d0;
     *reinterpret_cast<int32_t*>(ecx24 + 84) = 7;
     *reinterpret_cast<int32_t*>(ecx24 + 88) = 0x8058fa0;
-    *reinterpret_cast<int32_t*>(ecx24 + 92) = esi12->f12;
-    *reinterpret_cast<void***>(ecx24 + 96) = esi12->f16;
-    *reinterpret_cast<int32_t*>(ecx24 + 100) = esi12->f20;
-    *reinterpret_cast<struct s46**>(ecx24 + 0x68) = esi12->f24;
-    *reinterpret_cast<int32_t*>(ecx24 + 0x6c) = esi12->f28;
+    *reinterpret_cast<int32_t*>(ecx24 + 92) = esi12->fc;
+    *reinterpret_cast<void***>(ecx24 + 96) = esi12->f10;
+    *reinterpret_cast<int32_t*>(ecx24 + 100) = esi12->f14;
+    *reinterpret_cast<struct s46**>(ecx24 + 0x68) = esi12->f18;
+    *reinterpret_cast<int32_t*>(ecx24 + 0x6c) = esi12->f1c;
     *reinterpret_cast<struct s268**>(ecx24 + 0x70) = esi12;
     *reinterpret_cast<void***>(ecx24 + 0x74) = v14;
     *reinterpret_cast<void***>(ecx24 + 0x78) = edi16;
@@ -53097,7 +53092,7 @@ void fun_805bf81(void** a1, void** a2, void** a3, void** a4, void** a5, void** a
 
 struct s270 {
     signed char[37260] pad37260;
-    void** f37260;
+    void** f918c;
 };
 
 int32_t unix_access(void** a1, void** a2) {
@@ -53113,7 +53108,7 @@ int32_t unix_access(void** a1, void** a2) {
 
     __i686_get_pc_thunk_bx();
     ebx3 = reinterpret_cast<struct s270*>(reinterpret_cast<int32_t>(ebx4) + 0x15c4b);
-    eax6 = caml_convert_flag_list(a2, &ebx3->f37260, v5);
+    eax6 = caml_convert_flag_list(a2, &ebx3->f918c, v5);
     eax7 = fun_804a204(a1, eax6);
     if (eax7 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx3) + 0xffffe7a7, a1, v8, v9, ebx10, esi11);
@@ -53160,7 +53155,7 @@ void** unix_error_message(void** ecx, void** a2, void** a3, void** a4, void** a5
 
 struct s271 {
     signed char[87900] pad87900;
-    void** f87900;
+    void** f1575c;
 };
 
 void unix_execv(void** ecx, void** a2, void** a3, void** a4, void** a5) {
@@ -53273,7 +53268,7 @@ void unix_execv(void** ecx, void** a2, void** a3, void** a4, void** a5) {
 
     esp6 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
-    ebx7 = reinterpret_cast<void**>(&ebx8->f87900);
+    ebx7 = reinterpret_cast<void**>(&ebx8->f1575c);
     eax9 = cstringvect(ecx, a3);
     fun_804a3a4(a2, eax9);
     caml_stat_free(ecx, eax9, eax9, v10, v11, v12, v13, v14, ebx15, esi16, edi17, ebp18, __return_address(), a2, a3, a4, a5);
@@ -53577,13 +53572,13 @@ void unix_gethostbyname(void** ecx, void** a2) {
     eax17 = caml_string_length(ecx, a2, v4, v5, v6, v7, v8, v9, v10, v11, v12, v13, v14, v15, v16);
     eax20 = caml_stat_alloc(ecx, eax17 + 1, v18, v19);
     fun_804a464(eax20, a2, v21);
-    caml_enter_blocking_section(eax20, a2, v22);
+    caml_enter_blocking_section(ecx, eax20, a2, v22);
     eax23 = fun_804a454(eax20, a2);
     v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffe4);
     v25 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffd8c0);
     v26 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffd0);
     eax27 = fun_804a6f4(eax20, v26, v25, 0x2710, v24, eax23);
-    caml_leave_blocking_section(eax20, v26, v25, 0x2710, v24, eax23, v28, v29, v30, v31, v32);
+    caml_leave_blocking_section(ecx, eax20, v26, v25, 0x2710, v24, eax23, v28, v29, v30, v31, v32);
     if (eax27) {
     }
     caml_stat_free(ecx, eax20, v26, v25, 0x2710, v24, eax23, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42);
@@ -53658,14 +53653,14 @@ void unix_gethostbyaddr(void** ecx, int32_t a2) {
 
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
-    caml_enter_blocking_section(v4, v5, v6);
+    caml_enter_blocking_section(ecx, v4, v5, v6);
     v7 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffd8c8);
     v8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffff0);
     v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffd8cc);
     v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffffdc);
     v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xfffffff4);
     eax12 = fun_804a274(v11, 4, 2, v10, v9, 0x2710, v8, v7);
-    caml_leave_blocking_section(v11, 4, 2, v10, v9, 0x2710, v8, v7, v13, v14, v15);
+    caml_leave_blocking_section(ecx, v11, 4, 2, v10, v9, 0x2710, v8, v7, v13, v14, v15);
     if (!eax12) {
         if (v16) {
             addr_805d867_3:
@@ -53779,49 +53774,47 @@ void unix_mktime(int32_t a1) {
     void* ebp2;
     void* ebx3;
     void* ebx4;
-    void*** edx5;
-    void** v6;
-    void** ecx7;
-    void** v8;
-    void** eax9;
+    void** edx5;
+    void* v6;
+    void** v7;
+    void** eax8;
+    void** v9;
     void** v10;
     void** v11;
     void** v12;
     void** v13;
-    void** v14;
+    void** eax14;
     void** eax15;
-    void** eax16;
+    void** v16;
     void** v17;
     void** v18;
     void** v19;
     void** v20;
     void** v21;
     void** v22;
-    void** v23;
-    void** eax24;
+    void** eax23;
 
     ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx4) + 0x140e2);
-    edx5 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx3) - 24);
+    edx5 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx3) - 24);
     v6 = *edx5;
-    ecx7 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffffa4);
-    *edx5 = ecx7;
-    v8 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffffcc);
-    eax9 = fun_804a344(v8);
-    if (reinterpret_cast<int1_t>(eax9 == 0xffffffff)) {
-        v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx3) + 0xffffe8ac);
-        v8 = reinterpret_cast<void**>(34);
-        unix_error(34, v10, 0, v11, v12, v13, v14);
+    *edx5 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebp2) - 92);
+    v7 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp2) + 0xffffffcc);
+    eax8 = fun_804a344(v7);
+    if (reinterpret_cast<int1_t>(eax8 == 0xffffffff)) {
+        v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx3) + 0xffffe8ac);
+        v7 = reinterpret_cast<void**>(34);
+        unix_error(34, v9, 0, v10, v11, v12, v13);
     }
-    eax15 = alloc_tm(v8, v10, 0);
+    eax14 = alloc_tm(v7, v9, 0);
     __asm__("fild dword [ebp-0x6c]");
     __asm__("fstp qword [esp]");
-    eax16 = caml_copy_double(ecx7, v8, v10, 0);
-    eax24 = caml_alloc_small(ecx7, 2, 0, 0, v17, v18, v19, v20, eax9, v21, v22, v23);
-    *reinterpret_cast<void***>(eax24) = eax16;
-    *reinterpret_cast<void***>(eax24 + 4) = eax15;
-    **reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx3) - 24) = v6;
+    eax15 = caml_copy_double(v7, v9, 0);
+    eax23 = caml_alloc_small(2, 0, 0, v16, v17, v18, v19, eax8, v20, v21, v22);
+    *reinterpret_cast<void***>(eax23) = eax15;
+    *reinterpret_cast<void***>(eax23 + 4) = eax14;
+    **reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx3) - 24) = v6;
     return;
 }
 
@@ -53852,17 +53845,17 @@ void** unix_getitimer(int32_t a1) {
     return eax12;
 }
 
-void fun_805e62c(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
-    int32_t ebp11;
-    void** v12;
-    void* ebp13;
-    void** esi14;
+void fun_805e62c(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11) {
+    int32_t ebp12;
+    void** v13;
+    void* ebp14;
+    void** esi15;
 
-    *reinterpret_cast<int16_t*>(ebp11 - 32) = 1;
-    caml_enter_blocking_section(__return_address(), a1, a2);
-    v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp13) + 0xffffffe0);
-    fun_804a744(esi14, 14, v12);
-    caml_leave_blocking_section(esi14, 14, v12, a3, a4, a5, a6, a7, a8, a9, a10);
+    *reinterpret_cast<int16_t*>(ebp12 - 32) = 1;
+    caml_enter_blocking_section(ecx, __return_address(), a2, a3);
+    v13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp14) + 0xffffffe0);
+    fun_804a744(esi15, 14, v13);
+    caml_leave_blocking_section(ecx, esi15, 14, v13, a4, a5, a6, a7, a8, a9, a10, a11);
     goto 0x805e711;
 }
 
@@ -53900,11 +53893,11 @@ void** unix_lseek_64(void** ecx, int32_t a2, struct s273* a3, int32_t a4) {
     ebx5 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx6) + 0x13a00);
     esi7 = a3->f4;
     edi8 = a3->f8;
-    caml_enter_blocking_section(v9, v10, v11);
+    caml_enter_blocking_section(ecx, v9, v10, v11);
     v12 = *reinterpret_cast<void***>(reinterpret_cast<int32_t>(ebx5) + (a4 >> 1) * 4 - 0x16f8);
     v13 = reinterpret_cast<void**>(a2 >> 1);
     eax14 = fun_804a844(v13, esi7, edi8, v12);
-    caml_leave_blocking_section(v13, esi7, edi8, v12, v15, v16, v17, ebx18, esi19, edi20, ebp21);
+    caml_leave_blocking_section(ecx, v13, esi7, edi8, v12, v15, v16, v17, ebx18, esi19, edi20, ebp21);
     if ((reinterpret_cast<unsigned char>(eax14) & reinterpret_cast<unsigned char>(edx22)) == 0xffffffff) {
         uerror(reinterpret_cast<int32_t>(ebx5) + 0xffffe902, 0, edi8, v12, v23, v24);
     }
@@ -53963,7 +53956,7 @@ int32_t unix_mkdir(void** a1, int32_t a2) {
 
 struct s275 {
     signed char[37300] pad37300;
-    void** f37300;
+    void** f91b4;
 };
 
 uint32_t unix_open(void** ecx, void** a2, void** a3, int32_t a4) {
@@ -54022,15 +54015,15 @@ uint32_t unix_open(void** ecx, void** a2, void** a3, int32_t a4) {
     v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 8);
     v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 12);
     v12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp5) + 16);
-    v13 = reinterpret_cast<void**>(&ebx6->f37300);
+    v13 = reinterpret_cast<void**>(&ebx6->f91b4);
     eax15 = caml_convert_flag_list(a3, v13, v14);
     eax21 = caml_string_length(ecx, a2, v13, v16, v17, v18, v19, v20, eax15, edi9, 3, 1, v10, v11, v12);
     eax23 = caml_stat_alloc(ecx, eax21 + 1, v13, v22);
     fun_804a464(eax23, a2, v24);
-    caml_enter_blocking_section(eax23, a2, v25, eax23, a2, v26);
+    caml_enter_blocking_section(ecx, eax23, a2, v25, ecx, eax23, a2, v26);
     v27 = reinterpret_cast<void**>(a4 >> 1);
     eax28 = fun_8049ef4(eax23, eax15, v27);
-    caml_leave_blocking_section(eax23, eax15, v27, v29, v30, v31, v32, eax28, edi9, 3, 1, eax23, eax15, v27, v33, v34, v35, v36, eax28, edi9, 3, 1);
+    caml_leave_blocking_section(ecx, eax23, eax15, v27, v29, v30, v31, v32, eax28, edi9, 3, 1, ecx, eax23, eax15, v27, v33, v34, v35, v36, eax28, edi9, 3, 1);
     caml_stat_free(ecx, eax23, eax15, v27, v37, v38, v39, v40, eax28, edi9, 3, 1, v10, v11, v12, v41, v42);
     if (reinterpret_cast<int1_t>(eax28 == 0xffffffff)) {
         v43 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx6) + 0xffffe926);
@@ -54195,13 +54188,13 @@ void unix_select(void** ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
         __asm__("fldcw word [ebp+0xfffffe46]");
         esi12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffe6c);
     }
-    caml_enter_blocking_section(esi11, v16, v17, esi11, v18, v19);
+    caml_enter_blocking_section(ecx, esi11, v16, v17, ecx, esi11, v18, v19);
     v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffe78);
     v21 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xfffffef8);
     v22 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp6) + 0xffffff78);
     v23 = reinterpret_cast<void**>(0);
     eax24 = fun_804a504(0, v22, v21, v20, esi12);
-    caml_leave_blocking_section(0, v22, v21, v20, esi12, v25, v26, v27, v28, v29, v14, 0, v22, v21, v20, esi12, v30, v31, v32, v33, v34, v14);
+    caml_leave_blocking_section(ecx, 0, v22, v21, v20, esi12, v25, v26, v27, v28, v29, v14, ecx, 0, v22, v21, v20, esi12, v30, v31, v32, v33, v34, v14);
     if (eax24 == -1) {
         v22 = reinterpret_cast<void**>(0);
         v23 = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(tmp32_7) + 0xffffe96c);
@@ -54210,7 +54203,7 @@ void unix_select(void** ecx, int32_t a2, int32_t a3, int32_t a4, int32_t a5) {
     eax37 = fdset_to_fdlist(v23, v22, v21, v20, esi12);
     eax38 = fdset_to_fdlist(v23, v22, v21, v20, esi12);
     eax39 = fdset_to_fdlist(v23, v22, v21, v20, esi12);
-    eax50 = caml_alloc_small(ecx, 3, 0, v21, v20, esi12, v40, v41, v42, v43, v44, v14, ecx, 3, 0, v21, v20, esi12, v45, v46, v47, v48, v49, v14);
+    eax50 = caml_alloc_small(3, 0, v21, v20, esi12, v40, v41, v42, v43, v44, v14, 3, 0, v21, v20, esi12, v45, v46, v47, v48, v49, v14);
     *reinterpret_cast<void***>(eax50) = eax37;
     *reinterpret_cast<void***>(eax50 + 4) = eax38;
     *reinterpret_cast<void***>(eax50 + 8) = eax39;
@@ -54226,10 +54219,10 @@ struct s276 {
     int32_t f0;
     void* f4;
     int32_t f8;
-    int32_t f12;
-    void** f16;
+    int32_t fc;
+    void** f10;
     signed char[3] pad20;
-    void** f20;
+    void** f14;
 };
 
 int32_t unix_sendto(void** ecx, struct s276* a2) {
@@ -54242,9 +54235,9 @@ int32_t unix_sendto(void** ecx, struct s276* a2) {
     int32_t eax9;
 
     __i686_get_pc_thunk_bx();
-    v3 = a2->f20;
-    v4 = a2->f16;
-    v5 = a2->f12;
+    v3 = a2->f14;
+    v4 = a2->f10;
+    v5 = a2->fc;
     v6 = a2->f8;
     v7 = a2->f4;
     v8 = a2->f0;
@@ -54258,7 +54251,7 @@ void fun_804a6ca() {
 
 struct s277 {
     signed char[37348] pad37348;
-    void** f37348;
+    void** f91e4;
 };
 
 void unix_recvfrom(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, void** a6) {
@@ -54305,13 +54298,13 @@ void unix_recvfrom(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, voi
     ebp7 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx8 = reinterpret_cast<struct s277*>(reinterpret_cast<int32_t>(ebx9) + 0x12dd2);
-    v10 = reinterpret_cast<void**>(&ebx8->f37348);
+    v10 = reinterpret_cast<void**>(&ebx8->f91e4);
     eax12 = caml_convert_flag_list(a6, v10, v11);
     eax13 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx8) - 24);
     v14 = *eax13;
     *eax13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbf50);
     esi15 = reinterpret_cast<void**>(a5 >> 1);
-    caml_enter_blocking_section(a6, v10, v16, a6, v10, v17);
+    caml_enter_blocking_section(ecx, a6, v10, v16, ecx, a6, v10, v17);
     v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbf70);
     v19 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbf74);
     if (reinterpret_cast<signed char>(esi15) > reinterpret_cast<signed char>(0x4000)) {
@@ -54320,14 +54313,14 @@ void unix_recvfrom(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, voi
     v20 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbfe8);
     v21 = reinterpret_cast<void**>(a2 >> 1);
     eax22 = fun_804a824(v21, v20, esi15, eax12, v19, v18);
-    caml_leave_blocking_section(v21, v20, esi15, eax12, v19, v18, v23, v24, v25, v26, v14, v21, v20, esi15, eax12, v19, v18, v27, v28, v29, v30, v14);
+    caml_leave_blocking_section(ecx, v21, v20, esi15, eax12, v19, v18, v23, v24, v25, v26, v14, ecx, v21, v20, esi15, eax12, v19, v18, v27, v28, v29, v30, v14);
     if (reinterpret_cast<int1_t>(eax22 == 0xffffffff)) {
         v31 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx8) + 0xffffe97f);
         uerror(v31, 0, esi15, eax12, v19, v18, v31, 0, esi15, eax12, v19, v18);
     }
     fun_804a684(ecx, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), reinterpret_cast<int32_t>(ebp7) + 0xffffbfe8, eax22, eax12, v19, v18, v32, v33, v34, v35, v14, 2, 1, reinterpret_cast<int32_t>(ebp7) + 12, reinterpret_cast<int32_t>(ebp7) + 0xffffbfe4);
     eax36 = alloc_sockaddr(ecx, reinterpret_cast<int32_t>(ebp7) + 0xffffbf74, 0x70, 0xffffffff, eax12, v19, v18);
-    eax45 = caml_alloc_small(ecx, 2, 0, 0xffffffff, eax12, v19, v18, v37, v38, v39, v40, v14, ecx, 2, 0, 0xffffffff, eax12, v19, v18, v41, v42, v43, v44, v14);
+    eax45 = caml_alloc_small(2, 0, 0xffffffff, eax12, v19, v18, v37, v38, v39, v40, v14, 2, 0, 0xffffffff, eax12, v19, v18, v41, v42, v43, v44, v14);
     *reinterpret_cast<void***>(eax45) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax22) + reinterpret_cast<unsigned char>(eax22) + 1);
     *reinterpret_cast<void***>(eax45 + 4) = eax36;
     **reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx8) - 24) = v14;
@@ -54340,7 +54333,7 @@ void fun_804a82a() {
 
 struct s278 {
     signed char[37348] pad37348;
-    void** f37348;
+    void** f91e4;
 };
 
 uint32_t unix_recv(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, void** a6) {
@@ -54373,21 +54366,21 @@ uint32_t unix_recv(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, voi
     ebp7 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx8 = reinterpret_cast<struct s278*>(reinterpret_cast<int32_t>(ebx9) + 0x12c64);
-    v10 = reinterpret_cast<void**>(&ebx8->f37348);
+    v10 = reinterpret_cast<void**>(&ebx8->f91e4);
     eax12 = caml_convert_flag_list(a6, v10, v11);
     eax13 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx8) - 24);
     v14 = *eax13;
     *eax13 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbfc8);
     v15 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 12);
     esi16 = reinterpret_cast<void**>(a5 >> 1);
-    caml_enter_blocking_section(a6, v10, v17);
+    caml_enter_blocking_section(ecx, a6, v10, v17);
     if (reinterpret_cast<signed char>(esi16) > reinterpret_cast<signed char>(0x4000)) {
         esi16 = reinterpret_cast<void**>(0x4000);
     }
     v18 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp7) + 0xffffbfe8);
     v19 = reinterpret_cast<void**>(a2 >> 1);
     eax20 = fun_8049fb4(v19, v18, esi16, eax12);
-    caml_leave_blocking_section(v19, v18, esi16, eax12, v14, 1, 1, v15, v21, v22, v23);
+    caml_leave_blocking_section(ecx, v19, v18, esi16, eax12, v14, 1, 1, v15, v21, v22, v23);
     if (reinterpret_cast<int1_t>(eax20 == 0xffffffff)) {
         v24 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx8) + 0xffffe988);
         uerror(v24, 0, esi16, eax12, v14, 1, v24, 0, esi16, eax12, v14, 1);
@@ -54466,17 +54459,16 @@ void unix_socketpair(int32_t a1, int32_t a2, int32_t a3) {
     int32_t eax10;
     void** v11;
     void** v12;
-    void** ecx13;
+    void** v13;
     void** v14;
     void** v15;
     void** v16;
     void** v17;
-    void** v18;
-    void** ebx19;
-    void** ebp20;
-    void** eax21;
+    void** ebx18;
+    void** ebp19;
+    void** eax20;
+    void* v21;
     void* v22;
-    void* v23;
 
     __i686_get_pc_thunk_bx();
     ebx4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx5) + 0x123ac);
@@ -54488,9 +54480,9 @@ void unix_socketpair(int32_t a1, int32_t a2, int32_t a3) {
     if (eax10 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx4) + 0xffffe9f3, 0, v7, v6, v11, v12);
     }
-    eax21 = caml_alloc_small(ecx13, 2, 0, v7, v6, v14, v15, v16, v17, v18, ebx19, ebp20);
-    *reinterpret_cast<void***>(eax21) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v22) + reinterpret_cast<int32_t>(v22) + 1);
-    *reinterpret_cast<void***>(eax21 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v23) + reinterpret_cast<int32_t>(v23) + 1);
+    eax20 = caml_alloc_small(2, 0, v7, v6, v13, v14, v15, v16, v17, ebx18, ebp19);
+    *reinterpret_cast<void***>(eax20) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v21) + reinterpret_cast<int32_t>(v21) + 1);
+    *reinterpret_cast<void***>(eax20 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v22) + reinterpret_cast<int32_t>(v22) + 1);
     return;
 }
 
@@ -54531,37 +54523,37 @@ int32_t unix_getsockopt(int32_t a1, int32_t a2, int32_t a3) {
     return eax11;
 }
 
-void fun_80600b8(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11) {
-    int32_t ebp12;
-    void** v13;
-    void** eax14;
-    int32_t ebp15;
-    int32_t* esi16;
-    int32_t ebx17;
+void fun_80600b8(void** a1, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10) {
+    int32_t ebp11;
+    void** v12;
+    void** eax13;
+    int32_t ebp14;
+    int32_t* esi15;
+    int32_t ebx16;
+    int32_t ebp17;
     int32_t ebp18;
     int32_t ebp19;
     int32_t ebp20;
     int32_t ebp21;
     int32_t ebp22;
-    int32_t ebp23;
-    void** eax24;
+    void** eax23;
+    int32_t ebp24;
     int32_t ebp25;
-    int32_t ebp26;
 
-    if (!*reinterpret_cast<void***>(ebp12 - 32)) 
+    if (!*reinterpret_cast<void***>(ebp11 - 32)) 
         goto 0x8060126;
-    v13 = *reinterpret_cast<void***>(ebp12 - 32);
-    eax14 = unix_error_of_code(v13, a2, a3);
-    *reinterpret_cast<void***>(ebp15 - 40) = eax14;
-    esi16 = *reinterpret_cast<int32_t**>(ebx17 - 24);
-    *reinterpret_cast<int32_t*>(ebp18 - 72) = *esi16;
-    *esi16 = ebp19 - 72;
-    *reinterpret_cast<int32_t*>(ebp20 - 64) = 1;
-    *reinterpret_cast<int32_t*>(ebp21 - 68) = 1;
-    *reinterpret_cast<int32_t*>(ebp22 - 60) = ebp23 - 40;
-    eax24 = caml_alloc_small(ecx, 1, 0, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-    *reinterpret_cast<void***>(eax24) = *reinterpret_cast<void***>(ebp25 - 40);
-    *esi16 = *reinterpret_cast<int32_t*>(ebp26 - 72);
+    v12 = *reinterpret_cast<void***>(ebp11 - 32);
+    eax13 = unix_error_of_code(v12, a1, a2);
+    *reinterpret_cast<void***>(ebp14 - 40) = eax13;
+    esi15 = *reinterpret_cast<int32_t**>(ebx16 - 24);
+    *reinterpret_cast<int32_t*>(ebp17 - 72) = *esi15;
+    *esi15 = ebp18 - 72;
+    *reinterpret_cast<int32_t*>(ebp19 - 64) = 1;
+    *reinterpret_cast<int32_t*>(ebp20 - 68) = 1;
+    *reinterpret_cast<int32_t*>(ebp21 - 60) = ebp22 - 40;
+    eax23 = caml_alloc_small(1, 0, a2, a3, a4, a5, a6, a7, a8, a9, a10);
+    *reinterpret_cast<void***>(eax23) = *reinterpret_cast<void***>(ebp24 - 40);
+    *esi15 = *reinterpret_cast<int32_t*>(ebp25 - 72);
     goto 0x806012b;
 }
 
@@ -54740,17 +54732,16 @@ void fun_804a38a() {
 }
 
 void** unix_time() {
-    void** ecx1;
+    void** v1;
     void** v2;
-    void** v3;
-    void** eax4;
+    void** eax3;
 
     __i686_get_pc_thunk_bx();
     fun_804a584(0);
     __asm__("fild dword [ebp-0xc]");
     __asm__("fstp qword [esp]");
-    eax4 = caml_copy_double(ecx1, 0, v2, v3);
-    return eax4;
+    eax3 = caml_copy_double(0, v1, v2);
+    return eax3;
 }
 
 void fun_804a69a() {
@@ -54759,7 +54750,7 @@ void fun_804a69a() {
 
 struct s280 {
     signed char[38372] pad38372;
-    void** f38372;
+    void** f95e4;
 };
 
 void unix_waitpid(void** a1, int32_t a2) {
@@ -54768,37 +54759,39 @@ void unix_waitpid(void** a1, int32_t a2) {
     void** v5;
     void** v6;
     void** eax7;
-    void** v8;
+    void** ecx8;
     void** v9;
     void** v10;
-    int32_t eax11;
-    void** v12;
-    void** v13;
+    void** v11;
+    int32_t eax12;
+    void** ecx13;
     void** v14;
     void** v15;
     void** v16;
-    void** ebx17;
-    void** esi18;
-    void** ebp19;
-    void** v20;
-    void** v21;
+    void** v17;
+    void** v18;
+    void** ebx19;
+    void** esi20;
+    void** ebp21;
     void** v22;
+    void** v23;
+    void** v24;
 
     __i686_get_pc_thunk_bx();
     ebx3 = reinterpret_cast<struct s280*>(reinterpret_cast<int32_t>(ebx4) + 0x10ff0);
-    v5 = reinterpret_cast<void**>(&ebx3->f38372);
+    v5 = reinterpret_cast<void**>(&ebx3->f95e4);
     eax7 = caml_convert_flag_list(a1, v5, v6);
-    caml_enter_blocking_section(a1, v5, v8);
-    v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xfffffff4);
-    v10 = reinterpret_cast<void**>(a2 >> 1);
-    eax11 = fun_804a434(v10, v9, eax7);
-    caml_leave_blocking_section(v10, v9, eax7, v12, v13, v14, v15, v16, ebx17, esi18, ebp19);
-    if (eax11 == -1) {
-        v9 = reinterpret_cast<void**>(0);
-        v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx3) + 0xffffec4a);
-        uerror(v10, 0, eax7, v20, v21, v22);
+    caml_enter_blocking_section(ecx8, a1, v5, v9);
+    v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xfffffff4);
+    v11 = reinterpret_cast<void**>(a2 >> 1);
+    eax12 = fun_804a434(v11, v10, eax7);
+    caml_leave_blocking_section(ecx13, v11, v10, eax7, v14, v15, v16, v17, v18, ebx19, esi20, ebp21);
+    if (eax12 == -1) {
+        v10 = reinterpret_cast<void**>(0);
+        v11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebx3) + 0xffffec4a);
+        uerror(v11, 0, eax7, v22, v23, v24);
     }
-    alloc_process_status(v10, v9, eax7);
+    alloc_process_status(v11, v10, eax7);
     return;
 }
 
@@ -54852,9 +54845,9 @@ uint32_t unix_write(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5) {
                 edi17 = esi12;
             }
             fun_804a684(ecx, v16, reinterpret_cast<unsigned char>(v14) + reinterpret_cast<uint32_t>(a3), edi17, v18, v15, v16, v13, v14, v10, 1, 1, v11, v19, v20, v21);
-            caml_enter_blocking_section(v16, reinterpret_cast<unsigned char>(v14) + reinterpret_cast<uint32_t>(a3), edi17, v16, reinterpret_cast<unsigned char>(v14) + reinterpret_cast<uint32_t>(a3), edi17);
+            caml_enter_blocking_section(ecx, v16, reinterpret_cast<unsigned char>(v14) + reinterpret_cast<uint32_t>(a3), edi17, ecx, v16, reinterpret_cast<unsigned char>(v14) + reinterpret_cast<uint32_t>(a3), edi17);
             eax22 = fun_804a004(v15, v16, edi17);
-            caml_leave_blocking_section(v15, v16, edi17, v23, v15, v16, v13, v14, v10, 1, 1, v15, v16, edi17, v24, v15, v16, v13, v14, v10, 1, 1);
+            caml_leave_blocking_section(ecx, v15, v16, edi17, v23, v15, v16, v13, v14, v10, 1, 1, ecx, v15, v16, edi17, v24, v15, v16, v13, v14, v10, 1, 1);
             if (reinterpret_cast<int1_t>(eax22 == 0xffffffff)) {
                 esi12 = v13;
                 eax25 = fun_8049df4(v15, v16, edi17);
@@ -54904,10 +54897,11 @@ void** caml_startup(void** ecx, void** a2) {
     return eax3;
 }
 
-void caml_register_dyn_global(void** ecx, int32_t a2) {
+void caml_register_dyn_global(int32_t a1) {
+    void** ecx2;
     void** eax3;
 
-    eax3 = cons(ecx);
+    eax3 = cons(ecx2);
     caml_dyn_globals = eax3;
     return;
 }
@@ -55007,16 +55001,17 @@ void fun_804a75a() {
 
 int32_t caml_try_leave_blocking_section_hook = 0x8062725;
 
-void handle_signal(void** ecx, void** a2) {
-    int32_t eax3;
+void handle_signal(void** a1) {
+    int32_t eax2;
+    void** ecx3;
 
-    if (reinterpret_cast<unsigned char>(a2) <= reinterpret_cast<unsigned char>(64)) {
-        eax3 = reinterpret_cast<int32_t>(caml_try_leave_blocking_section_hook());
-        if (!eax3) {
-            caml_record_signal(a2);
+    if (reinterpret_cast<unsigned char>(a1) <= reinterpret_cast<unsigned char>(64)) {
+        eax2 = reinterpret_cast<int32_t>(caml_try_leave_blocking_section_hook());
+        if (!eax2) {
+            caml_record_signal(a1);
         } else {
-            caml_execute_signal(ecx, a2, 1);
-            caml_enter_blocking_section_hook(a2, 1);
+            caml_execute_signal(ecx3, a1, 1);
+            caml_enter_blocking_section_hook(a1, 1);
         }
     }
     return;
@@ -55060,16 +55055,17 @@ void fun_8049fda() {
     goto 0x8049db4;
 }
 
-void** caml_alloc_dummy_float(void** ecx, uint32_t a2) {
-    void** eax3;
-    void** edx4;
+void** caml_alloc_dummy_float(uint32_t a1) {
+    void** eax2;
+    void** edx3;
+    void** ecx4;
 
-    eax3 = reinterpret_cast<void**>(0x8082244);
-    edx4 = reinterpret_cast<void**>(a2 & 0xfffffffe);
-    if (edx4) {
-        eax3 = caml_alloc(ecx, edx4, 0);
+    eax2 = reinterpret_cast<void**>(0x8082244);
+    edx3 = reinterpret_cast<void**>(a1 & 0xfffffffe);
+    if (edx3) {
+        eax2 = caml_alloc(ecx4, edx3, 0);
     }
-    return eax3;
+    return eax2;
 }
 
 void fun_804a07a() {
@@ -55164,25 +55160,25 @@ void fun_8049e2a() {
     goto 0x8049db4;
 }
 
-void** caml_int64_float_of_bits(void** ecx, int32_t a2) {
+void** caml_int64_float_of_bits(int32_t a1) {
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax+0x4]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
-void** caml_nativeint_of_string(int32_t a1) {
-    void** eax2;
+void** caml_nativeint_of_string(void** ecx, int32_t a2) {
     void** eax3;
+    void** eax4;
 
-    eax2 = parse_intnat();
-    eax3 = caml_copy_nativeint(eax2);
-    return eax3;
+    eax3 = parse_intnat();
+    eax4 = caml_copy_nativeint(ecx, eax3);
+    return eax4;
 }
 
 struct s285 {
@@ -55202,7 +55198,7 @@ void** caml_nativeint_div(void** a1, struct s285* a2) {
         eax3 = caml_raise_zero_divide(ecx5);
     }
     if (!reinterpret_cast<int1_t>(edx4 == 0x80000000) || ecx5 != 0xffffffff) {
-        eax3 = caml_copy_nativeint(reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
+        eax3 = caml_copy_nativeint(ecx5, reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
     }
     return eax3;
 }
@@ -55219,11 +55215,12 @@ struct s287 {
 
 void** caml_nativeint_mul(struct s286* a1, struct s287* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 * a1->f4);
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    eax5 = caml_copy_nativeint(ecx4, v3);
+    return eax5;
 }
 
 struct s288 {
@@ -55327,13 +55324,13 @@ struct s294 {
     void** f4;
 };
 
-void** caml_nativeint_to_int32(struct s294* a1) {
-    void** v2;
-    void** eax3;
+void** caml_nativeint_to_int32(void** ecx, struct s294* a2) {
+    void** v3;
+    void** eax4;
 
-    v2 = a1->f4;
-    eax3 = caml_copy_int32(v2);
-    return eax3;
+    v3 = a2->f4;
+    eax4 = caml_copy_int32(ecx, v3);
+    return eax4;
 }
 
 struct s295 {
@@ -55353,7 +55350,7 @@ void** caml_int32_div(void** a1, struct s295* a2) {
         eax3 = caml_raise_zero_divide(ecx5);
     }
     if (!reinterpret_cast<int1_t>(edx4 == 0x80000000) || ecx5 != 0xffffffff) {
-        eax3 = caml_copy_int32(reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
+        eax3 = caml_copy_int32(ecx5, reinterpret_cast<signed char>(edx4) / reinterpret_cast<signed char>(ecx5));
     }
     return eax3;
 }
@@ -55370,43 +55367,41 @@ struct s297 {
 
 void** caml_int32_mul(struct s296* a1, struct s297* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 * a1->f4);
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 void** caml_expm1_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     caml_expm1();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_modf_float(int32_t a1) {
     void* ebp2;
     void** ebx3;
     void** v4;
-    void** ecx5;
+    void** v5;
     void** v6;
-    void** v7;
-    void** eax8;
-    void** ecx9;
-    void** v10;
-    void** v11;
-    void** eax12;
-    void** ecx13;
-    void** v14;
-    void** eax15;
+    void** eax7;
+    void** v8;
+    void** v9;
+    void** eax10;
+    void** ecx11;
+    void** v12;
+    void** eax13;
 
     ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     ebx3 = caml_local_roots;
@@ -55416,30 +55411,29 @@ void** caml_modf_float(int32_t a1) {
     __asm__("fstp qword [esp]");
     fun_804a0e4();
     __asm__("fstp qword [esp]");
-    eax8 = caml_copy_double(ecx5, v6, v7, v4);
+    eax7 = caml_copy_double(v5, v6, v4);
     __asm__("fld qword [ebp-0x10]");
     __asm__("fstp qword [esp]");
-    eax12 = caml_copy_double(ecx9, v10, v11, v4);
-    eax15 = caml_alloc_tuple(ecx13, 2, v14, v4);
-    *reinterpret_cast<void***>(eax15) = eax8;
-    *reinterpret_cast<void***>(eax15 + 4) = eax12;
+    eax10 = caml_copy_double(v8, v9, v4);
+    eax13 = caml_alloc_tuple(ecx11, 2, v12, v4);
+    *reinterpret_cast<void***>(eax13) = eax7;
+    *reinterpret_cast<void***>(eax13 + 4) = eax10;
     caml_local_roots = ebx3;
-    return eax15;
+    return eax13;
 }
 
 void** caml_floor_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     floor();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_8049f9a() {
@@ -55545,7 +55539,7 @@ void** caml_make_vect(int32_t a1, void** a2) {
         edx6 = reinterpret_cast<unsigned char>(eax5) & 1;
         if (edx6 || ((v7 = eax5, ecx8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax5) >> 12 & 0x7ff), (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(eax5) >> 23) * 4 + 0x80827a0)) + reinterpret_cast<unsigned char>(ecx8)) & 7) == 0) || !reinterpret_cast<int1_t>(*reinterpret_cast<void***>(eax5 + 0xfffffffc) == 0xfd))) {
             if (reinterpret_cast<unsigned char>(esi4) > reinterpret_cast<unsigned char>(0x3fffff)) {
-                eax5 = caml_invalid_argument(ecx8, 0x8071402, v9, v10);
+                eax5 = caml_invalid_argument(ecx8, "Array.make", v9, v10);
             }
             if (reinterpret_cast<unsigned char>(esi4) > reinterpret_cast<unsigned char>(0xff)) {
                 if (edx6 || ((cf11 = reinterpret_cast<unsigned char>(eax5) < reinterpret_cast<unsigned char>(caml_young_end), !cf11) || (below_or_equal12 = reinterpret_cast<unsigned char>(eax5) <= reinterpret_cast<unsigned char>(caml_young_start), below_or_equal12))) {
@@ -55556,10 +55550,10 @@ void** caml_make_vect(int32_t a1, void** a2) {
                         caml_initialize(ecx8, v14 + reinterpret_cast<unsigned char>(ebx15) * 4, a2);
                         ++ebx15;
                     } while (reinterpret_cast<unsigned char>(esi4) > reinterpret_cast<unsigned char>(ebx15));
-                    eax17 = caml_check_urgent_gc(ecx8, v14, a2, v16);
+                    eax17 = caml_check_urgent_gc(v14, a2, v16);
                     v18 = eax17;
                 } else {
-                    caml_minor_collection(ecx8, 0x8071402, v19, v20, v21);
+                    caml_minor_collection(ecx8, "Array.make", v19, v20, v21);
                     eax22 = caml_alloc_shr(ecx8, esi4, 0);
                     v23 = eax22;
                     esi24 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi4) << 2);
@@ -55568,11 +55562,11 @@ void** caml_make_vect(int32_t a1, void** a2) {
                         *reinterpret_cast<void***>(reinterpret_cast<unsigned char>(v23) + reinterpret_cast<uint32_t>(eax25)) = a2;
                         eax25 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax25) + 4);
                     } while (eax25 != esi24);
-                    eax27 = caml_check_urgent_gc(a2, v23, 0, v26);
+                    eax27 = caml_check_urgent_gc(v23, 0, v26);
                     v18 = eax27;
                 }
             } else {
-                eax44 = caml_alloc_small(ecx8, esi4, 0, v28, v29, v30, v31, v7, v32, v33, v34, v35, ecx8, esi4, 0, v36, v37, v38, v39, v7, v40, v41, v42, v43);
+                eax44 = caml_alloc_small(esi4, 0, v28, v29, v30, v31, v7, v32, v33, v34, v35, esi4, 0, v36, v37, v38, v39, v7, v40, v41, v42, v43);
                 v18 = eax44;
                 esi45 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(esi4) << 2);
                 eax46 = reinterpret_cast<void*>(0);
@@ -55586,7 +55580,7 @@ void** caml_make_vect(int32_t a1, void** a2) {
             __asm__("fstp qword [ebp-0x70]");
             eax47 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(esi4) + reinterpret_cast<unsigned char>(esi4));
             if (reinterpret_cast<unsigned char>(eax47) > reinterpret_cast<unsigned char>(0x3fffff)) {
-                eax47 = caml_invalid_argument(ecx8, 0x8071402, v48, v49);
+                eax47 = caml_invalid_argument(ecx8, "Array.make", v48, v49);
             }
             eax50 = caml_alloc(ecx8, eax47, 0xfe);
             v18 = eax50;
@@ -55621,14 +55615,13 @@ void** caml_make_array(void** a1) {
     void** eax4;
     void* esi5;
     void** edx6;
-    void** ecx7;
+    void** v7;
     void** v8;
     void** v9;
     void** v10;
-    void** v11;
-    void** eax12;
-    void** v13;
-    void* eax14;
+    void** eax11;
+    void** v12;
+    void* eax13;
 
     ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     ebx3 = caml_local_roots;
@@ -55637,19 +55630,19 @@ void** caml_make_array(void** a1) {
     esi5 = reinterpret_cast<void*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 0xfffffffc)) >> 10);
     if (esi5) {
         edx6 = *reinterpret_cast<void***>(eax4);
-        if (*reinterpret_cast<unsigned char*>(&edx6) & 1 || ((ecx7 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(edx6) >> 12 & 0x7ff), (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx6) >> 23) * 4 + 0x80827a0)) + reinterpret_cast<unsigned char>(ecx7)) & 7) == 0) || *reinterpret_cast<void***>(edx6 + 0xfffffffc) != 0xfd)) {
+        if (*reinterpret_cast<unsigned char*>(&edx6) & 1 || (!(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(edx6) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<unsigned char>(edx6) >> 12 & 0x7ff)) & 7) || *reinterpret_cast<void***>(edx6 + 0xfffffffc) != 0xfd)) {
             caml_local_roots = ebx3;
         } else {
-            eax12 = caml_alloc_small(ecx7, reinterpret_cast<uint32_t>(esi5) + reinterpret_cast<uint32_t>(esi5), 0xfe, v8, v9, v10, v11, reinterpret_cast<int32_t>(ebp2) + 0xffffffc8, 2, 1, reinterpret_cast<int32_t>(ebp2) + 0xffffffc4, reinterpret_cast<int32_t>(ebp2) + 0xffffffc0);
-            v13 = eax12;
-            eax14 = reinterpret_cast<void*>(0);
+            eax11 = caml_alloc_small(reinterpret_cast<uint32_t>(esi5) + reinterpret_cast<uint32_t>(esi5), 0xfe, v7, v8, v9, v10, reinterpret_cast<int32_t>(ebp2) + 0xffffffc8, 2, 1, reinterpret_cast<int32_t>(ebp2) + 0xffffffc4, reinterpret_cast<int32_t>(ebp2) + 0xffffffc0);
+            v12 = eax11;
+            eax13 = reinterpret_cast<void*>(0);
             do {
                 __asm__("fld qword [edx]");
                 __asm__("fstp qword [edx+eax*8]");
-                eax14 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax14) + 1);
-            } while (reinterpret_cast<uint32_t>(esi5) > reinterpret_cast<uint32_t>(eax14));
+                eax13 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax13) + 1);
+            } while (reinterpret_cast<uint32_t>(esi5) > reinterpret_cast<uint32_t>(eax13));
             caml_local_roots = ebx3;
-            eax4 = v13;
+            eax4 = v12;
         }
     } else {
         caml_local_roots = ebx3;
@@ -55757,11 +55750,10 @@ void** caml_ml_out_channels_list() {
     void** v8;
     void** eax9;
     void** v10;
-    void** ecx11;
+    void** v11;
     void** v12;
     void** v13;
-    void** v14;
-    void** eax15;
+    void** eax14;
 
     ebp1 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     esi2 = caml_local_roots;
@@ -55777,9 +55769,9 @@ void** caml_ml_out_channels_list() {
             if (!*reinterpret_cast<void***>(ebx4 + 20)) {
                 eax9 = caml_alloc_channel(ebx4, 0);
                 v10 = v3;
-                eax15 = caml_alloc_small(ecx11, 2, 0, v12, v13, v14, v5, 3, 1, v6, v7, v8);
-                v3 = eax15;
-                *reinterpret_cast<void***>(eax15) = eax9;
+                eax14 = caml_alloc_small(2, 0, v11, v12, v13, v5, 3, 1, v6, v7, v8);
+                v3 = eax14;
+                *reinterpret_cast<void***>(eax14) = eax9;
                 *reinterpret_cast<void***>(v3 + 4) = v10;
             }
             ebx4 = *reinterpret_cast<void***>(ebx4 + 28);
@@ -56211,17 +56203,18 @@ void fun_806aeb1() {
     eax29 = caml_code_checksum(v12, v9, 16);
     edi30 = eax29;
     ecx31 = reinterpret_cast<void**>(16);
-    while (ecx31) {
+    do {
+        if (!ecx31) 
+            break;
         --ecx31;
         cf26 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi10)) < reinterpret_cast<unsigned char>(*edi30));
         below_or_equal28 = reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi10)) <= reinterpret_cast<unsigned char>(*edi30));
-        *edi30 = *reinterpret_cast<void***>(esi10);
         ++edi30;
         ++esi10;
-    }
+    } while (*reinterpret_cast<void***>(esi10) == *edi30);
     if (static_cast<unsigned char>(reinterpret_cast<uint1_t>(!below_or_equal28)) != static_cast<unsigned char>(cf26)) {
         intern_cleanup(ecx31, v12, v9, 16, v32, v33, v34, v35, v36);
-        caml_failwith(ecx31, 0x8071586, v9, 16, v37);
+        caml_failwith(ecx31, "input_value: code mismatch", v9, 16, v37);
     }
     goto 0x806b029;
 }
@@ -56275,10 +56268,10 @@ int32_t caml_input_value_from_malloc(void** a1, void** a2, void** a3, void** a4,
     intern_src = eax10;
     ecx11 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax10 + 0xfffffffe))) << 8);
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax10 + 0xffffffff)) + (static_cast<uint32_t>(edx9->f0) << 24) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(eax10 + 0xfffffffd)) << 16) + reinterpret_cast<unsigned char>(ecx11) != 0x8495a6be) {
-        eax10 = caml_failwith(ecx11, 0x80716bc, v12, v13, v14);
+        eax10 = caml_failwith(ecx11, "input_value_from_malloc: bad object", v12, v13, v14);
     }
     intern_src = eax10 + 4;
-    eax18 = input_val_from_block(0x80716bc, v15, v16, v17);
+    eax18 = input_val_from_block("input_value_from_malloc: bad object", v15, v16, v17);
     eax19 = intern_input;
     caml_stat_free(ecx11, eax19, v20, v21, v22, v23, ebx24, ebp25, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8);
     return eax18;
@@ -56382,7 +56375,7 @@ void** caml_sys_getcwd(void** ecx) {
 
 struct s313 {
     signed char[256] pad256;
-    void** f256;
+    void** f100;
 };
 
 struct s314 {
@@ -56605,7 +56598,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
         if (!eax21) {
             eax45 = token_name(v23, v22);
             eax46 = stderr;
-            fun_804a574(eax46, 0x80717a2, v20, eax45, v47, v48, v49, v50, eax21, v19, v20, v51);
+            fun_804a574(eax46, "State %d: read token %s(", v20, eax45, v47, v48, v49, v50, eax21, v19, v20, v51);
             eax52 = *reinterpret_cast<void***>(a5);
             if (!(*reinterpret_cast<unsigned char*>(&eax52) & 1)) {
                 edx53 = reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax52 + 0xfffffffc));
@@ -56617,7 +56610,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
                         __asm__("fld qword [eax]");
                         __asm__("fstp qword [esp+0x8]");
                         eax55 = stderr;
-                        fun_804a574(eax55, 0x80717bf, v20, eax45, v56, v57, v58, v59, eax21, v19, v20, v60);
+                        fun_804a574(eax55, "%g", v20, eax45, v56, v57, v58, v59, eax21, v19, v20, v60);
                     }
                 } else {
                     edx61 = stderr;
@@ -56625,7 +56618,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
                 }
             } else {
                 eax62 = stderr;
-                fun_804a574(eax62, 0x80717bb, reinterpret_cast<signed char>(eax52) >> 1, eax45, v63, v64, v65, v66, eax21, v19, v20, v67);
+                fun_804a574(eax62, "%ld", reinterpret_cast<signed char>(eax52) >> 1, eax45, v63, v64, v65, v66, eax21, v19, v20, v67);
             }
             eax68 = stderr;
             v69 = eax68;
@@ -56637,7 +56630,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
             v69 = eax71;
             v70 = v20;
             eax72 = stderr;
-            fun_804a574(eax72, 0x8071789, v70, v69, v73, v74, v75, v76, eax21, v19, v20, v77);
+            fun_804a574(eax72, "State %d: read token %s\n", v70, v69, v73, v74, v75, v76, eax21, v19, v20, v77);
             goto addr_806c0b3_8;
         }
     case 2:
@@ -56723,12 +56716,12 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
         fun_804a534("Discarding last token read\n", 1, 27, v69);
         goto addr_806c285_44;
         addr_806c171_37:
-        while ((edx126 = reinterpret_cast<void**>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx17) + reinterpret_cast<unsigned char>(edi18) * 4)) >> 1), eax127 = reinterpret_cast<struct s313*>(static_cast<int32_t>(reinterpret_cast<int16_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(esi16 + 28) + reinterpret_cast<unsigned char>(edx126) * 2)))), ecx128 = reinterpret_cast<void**>(&eax127->f256), eax127 == 0) || (reinterpret_cast<signed char>(ecx128) < reinterpret_cast<signed char>(0) || (reinterpret_cast<signed char>(ecx128) > reinterpret_cast<signed char>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(esi16 + 40)) >> 1) || !reinterpret_cast<int1_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(esi16 + 48) + reinterpret_cast<unsigned char>(ecx128) * 2) == 0x100)))) {
+        while ((edx126 = reinterpret_cast<void**>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(ebx17) + reinterpret_cast<unsigned char>(edi18) * 4)) >> 1), eax127 = reinterpret_cast<struct s313*>(static_cast<int32_t>(reinterpret_cast<int16_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(esi16 + 28) + reinterpret_cast<unsigned char>(edx126) * 2)))), ecx128 = reinterpret_cast<void**>(&eax127->f100), eax127 == 0) || (reinterpret_cast<signed char>(ecx128) < reinterpret_cast<signed char>(0) || (reinterpret_cast<signed char>(ecx128) > reinterpret_cast<signed char>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(esi16 + 40)) >> 1) || !reinterpret_cast<int1_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(esi16 + 48) + reinterpret_cast<unsigned char>(ecx128) * 2) == 0x100)))) {
             zf129 = caml_parser_trace == 0;
             if (!zf129) {
                 v70 = edx126;
                 eax130 = stderr;
-                fun_804a574(eax130, 0x80717dd, v70, v69, v131, v132, v133, v93, v80, v19, v20, v120);
+                fun_804a574(eax130, "Discarding state %d\n", v70, v69, v131, v132, v133, v93, v80, v19, v20, v120);
             }
             if (reinterpret_cast<unsigned char>(edi18) <= reinterpret_cast<unsigned char>(reinterpret_cast<signed char>(*reinterpret_cast<void***>(ebx17 + 20)) >> 1)) 
                 goto addr_806c208_48;
@@ -56760,7 +56753,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
         addr_806c1b8_51:
         v70 = edx126;
         eax160 = stderr;
-        fun_804a574(eax160, 0x80717c5, v70, v69, v161, v162, v163, v93, v80, 3, v20, v120);
+        fun_804a574(eax160, "Recovering in state %d\n", v70, v69, v161, v162, v163, v93, v80, 3, v20, v120);
         v19 = reinterpret_cast<void**>(3);
         addr_806c2a5_39:
         zf164 = caml_parser_trace == 0;
@@ -56768,7 +56761,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
             v69 = reinterpret_cast<void**>(static_cast<int32_t>(reinterpret_cast<int16_t>(*reinterpret_cast<void***>(*reinterpret_cast<void***>(esi16 + 44) + reinterpret_cast<unsigned char>(v120) * 2))));
             v70 = v20;
             eax165 = stderr;
-            fun_804a574(eax165, 0x8071829, v70, v69, v166, v167, v168, v93, v80, v19, v20, v120);
+            fun_804a574(eax165, "State %d: shift to state %d\n", v70, v69, v166, v167, v168, v93, v80, v19, v20, v120);
             goto addr_806c2d8_52;
         }
     }
@@ -56776,7 +56769,7 @@ int32_t caml_parse_engine(void** ecx, void** a2, void** a3, void** a4, void** a5
     zf169 = caml_parser_trace == 0;
     if (!zf169) {
         eax170 = stderr;
-        fun_804a574(eax170, 0x8071846, v20, v115, v171, v172, v173, v93, v80, v19, v20, v115);
+        fun_804a574(eax170, "State %d: reduce by rule %d\n", v20, v115, v171, v172, v173, v93, v80, v19, v20, v115);
     }
     eax174 = reinterpret_cast<struct s314*>(reinterpret_cast<unsigned char>(v115) + reinterpret_cast<unsigned char>(v115));
     edx175 = reinterpret_cast<void*>(static_cast<int32_t>(*reinterpret_cast<int16_t*>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(esi16 + 16)) + reinterpret_cast<uint32_t>(eax174))));
@@ -56854,14 +56847,14 @@ void fun_804a53a() {
 int32_t caml_gc_full_major(void** ecx) {
     void** v2;
 
-    caml_gc_message(1, 0x80719b4, 0, v2);
-    caml_empty_minor_heap(1, 0x80719b4, 0);
-    caml_finish_major_cycle(ecx, 1, 0x80719b4, 0);
-    caml_final_do_calls(1, 0x80719b4, 0);
-    caml_empty_minor_heap(1, 0x80719b4, 0);
-    caml_finish_major_cycle(ecx, 1, 0x80719b4, 0);
-    test_and_compact(1, 0x80719b4, 0);
-    caml_final_do_calls(1, 0x80719b4, 0);
+    caml_gc_message(1, "Full major GC cycle requested\n", 0, v2);
+    caml_empty_minor_heap(1, "Full major GC cycle requested\n", 0);
+    caml_finish_major_cycle(ecx, 1, "Full major GC cycle requested\n", 0);
+    caml_final_do_calls(1, "Full major GC cycle requested\n", 0);
+    caml_empty_minor_heap(1, "Full major GC cycle requested\n", 0);
+    caml_finish_major_cycle(ecx, 1, "Full major GC cycle requested\n", 0);
+    test_and_compact(1, "Full major GC cycle requested\n", 0);
+    caml_final_do_calls(1, "Full major GC cycle requested\n", 0);
     return 1;
 }
 
@@ -56945,15 +56938,15 @@ void** caml_gc_counters(void** ecx) {
     eax8 = caml_alloc_tuple(ecx, 3, v6, v7);
     __asm__("fld qword [ebp-0x58]");
     __asm__("fstp qword [esp]");
-    eax11 = caml_copy_double(ecx, 3, v9, v10);
+    eax11 = caml_copy_double(3, v9, v10);
     caml_modify(ecx, eax8, eax11, v12, v13, v14, v15, v16, v17, v18, v19, eax5, 0, v20, v21, v22, ebx3, 1, 1, v4, v23, v24, v25, v26, eax8, v27);
     __asm__("fld qword [ebp-0x50]");
     __asm__("fstp qword [esp]");
-    eax29 = caml_copy_double(ecx, eax8, eax11, v28);
+    eax29 = caml_copy_double(eax8, eax11, v28);
     caml_modify(ecx, eax8 + 4, eax29, v30, v31, v32, v33, v34, v35, v36, v37, eax5, 0, v38, v39, v40, ebx3, 1, 1, v4, v41, v42, v43, v44, eax8, v45);
     __asm__("fld qword [ebp-0x48]");
     __asm__("fstp qword [esp]");
-    eax47 = caml_copy_double(ecx, eax8 + 4, eax29, v46);
+    eax47 = caml_copy_double(eax8 + 4, eax29, v46);
     caml_modify(ecx, eax8 + 8, eax47, v48, v49, v50, v51, v52, v53, v54, v55, eax5, 0, v56, v57, v58, ebx3, 1, 1, v4, v59, v60, v61, v62, eax8, v63);
     caml_local_roots = ebx3;
     return eax8;
@@ -57168,12 +57161,12 @@ int32_t caml_weak_blit(void** ecx, void*** a2, int32_t a3, void** a4, int32_t a5
     v8 = eax7;
     esi9 = eax7 + 1;
     if (!esi9 || (eax10 = reinterpret_cast<uint32_t>(a6 >> 1), v11 = eax10, edi12 = a2, eax10 + esi9 > *reinterpret_cast<uint32_t*>(edi12 - 4) >> 10)) {
-        caml_invalid_argument(ecx, 0x8071b01, v13, v14);
+        caml_invalid_argument(ecx, "Weak.blit", v13, v14);
     }
     eax15 = (a5 >> 1) + 1;
     v16 = eax15;
     if (!eax15 || (ecx = a4, v11 + v16 > reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx + 0xfffffffc)) >> 10)) {
-        caml_invalid_argument(ecx, 0x8071b01, v17, v18);
+        caml_invalid_argument(ecx, "Weak.blit", v17, v18);
     }
     zf19 = caml_gc_phase == 0;
     if (zf19 && ((zf20 = reinterpret_cast<int1_t>(caml_gc_subphase == 11), zf20) && v11)) {
@@ -57199,7 +57192,7 @@ int32_t caml_weak_blit(void** ecx, void*** a2, int32_t a3, void** a4, int32_t a5
             edi29 = esi27;
             do {
                 ecx30 = *ebx28;
-                do_set(ecx30, 0x8071b01);
+                do_set(ecx30, "Weak.blit");
                 ebx28 = ebx28 - 4;
                 --edi29;
             } while (reinterpret_cast<int32_t>(edi29) >= reinterpret_cast<int32_t>(0));
@@ -57210,7 +57203,7 @@ int32_t caml_weak_blit(void** ecx, void*** a2, int32_t a3, void** a4, int32_t a5
             ebx32 = 0;
             do {
                 ecx33 = edi12[(edx31 + esi9) * 4];
-                do_set(ecx33, 0x8071b01);
+                do_set(ecx33, "Weak.blit");
                 ++ebx32;
                 edx31 = ebx32;
             } while (v11 > ebx32);
@@ -57230,44 +57223,47 @@ void** caml_weak_get_copy(void** ecx, void** a2, int32_t a3) {
     void* esi11;
     void** eax12;
     int1_t zf13;
-    void** v14;
-    void** edi15;
-    void** v16;
+    void** ecx14;
+    void** v15;
+    void** edi16;
     void** v17;
-    void** eax18;
-    void** edx19;
-    int1_t zf20;
-    void** v21;
+    void** v18;
+    void** eax19;
+    void** edx20;
+    int1_t zf21;
     void** v22;
-    void** v23;
-    void** v24;
+    void** ecx23;
+    void** ecx24;
     void** v25;
     void** v26;
     void** v27;
     void** v28;
     void** v29;
-    uint32_t esi30;
+    void** v30;
     void** v31;
-    void* edi32;
-    void** ebx33;
-    int1_t zf34;
-    void*** eax35;
-    void** v36;
-    void*** eax37;
-    int1_t zf38;
-    void** eax39;
-    void** edx40;
-    void** eax41;
-    int1_t cf42;
-    void** eax43;
+    void** v32;
+    uint32_t esi33;
+    void** v34;
+    void* edi35;
+    void** ebx36;
+    int1_t zf37;
+    void*** eax38;
+    void** v39;
+    void*** eax40;
+    int1_t zf41;
+    void** eax42;
+    void** edx43;
     void** eax44;
-    void** v45;
-    void** v46;
-    void** v47;
-    int32_t v48;
-    int32_t v49;
-    int32_t v50;
-    void** eax51;
+    int1_t cf45;
+    void** eax46;
+    void** eax47;
+    void** v48;
+    void** v49;
+    void** v50;
+    int32_t v51;
+    int32_t v52;
+    int32_t v53;
+    void** eax54;
 
     ebp4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     ebx5 = caml_local_roots;
@@ -57275,85 +57271,85 @@ void** caml_weak_get_copy(void** ecx, void** a2, int32_t a3) {
     caml_local_roots = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp4) + 0xffffffa0);
     esi7 = (a3 >> 1) + 1;
     if (!esi7 || (eax8 = a2, esi7 >= reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax8 + 0xfffffffc)) >> 10)) {
-        eax8 = caml_invalid_argument(ecx, 0x8071af8, v9, v10);
+        eax8 = caml_invalid_argument(ecx, "Weak.get", v9, v10);
     }
     esi11 = reinterpret_cast<void*>(esi7 << 2);
     eax12 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi11) + reinterpret_cast<unsigned char>(eax8));
     zf13 = eax12 == caml_weak_none;
     if (!zf13) {
-        if (*reinterpret_cast<unsigned char*>(&eax12) & 1 || (ecx = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(eax12) >> 23) * 4 + 0x80827a0), (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(ecx) + (reinterpret_cast<unsigned char>(eax12) >> 12 & 0x7ff)) & 3) == 0)) {
-            v14 = eax12;
+        if (*reinterpret_cast<unsigned char*>(&eax12) & 1 || (ecx14 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(eax12) >> 23) * 4 + 0x80827a0), (*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(ecx14) + (reinterpret_cast<unsigned char>(eax12) >> 12 & 0x7ff)) & 3) == 0)) {
+            v15 = eax12;
         } else {
-            edi15 = eax12 - 4;
-            v16 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi15))));
-            v17 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi15)) >> 10);
-            eax18 = caml_alloc(ecx, v17, v16);
-            v14 = eax18;
-            edx19 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi11) + reinterpret_cast<unsigned char>(a2));
-            zf20 = edx19 == caml_weak_none;
-            if (!zf20) {
-                v21 = edx19;
-                ecx = edx19 + 0xfffffffc;
-                if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx)) > 0xfa) {
-                    ecx = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx)) >> 10 << 2);
-                    v22 = ecx;
-                    fun_804a684(ecx, eax18, edx19, v22, v23, v24, v21, v25, v26, v27, v28, v6, 2, 1, reinterpret_cast<int32_t>(ebp4) + 0xffffffc4, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0);
+            edi16 = eax12 - 4;
+            v17 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi16))));
+            v18 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edi16)) >> 10);
+            eax19 = caml_alloc(ecx14, v18, v17);
+            v15 = eax19;
+            edx20 = *reinterpret_cast<void***>(reinterpret_cast<uint32_t>(esi11) + reinterpret_cast<unsigned char>(a2));
+            zf21 = edx20 == caml_weak_none;
+            if (!zf21) {
+                v22 = edx20;
+                ecx23 = edx20 + 0xfffffffc;
+                if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx23)) > 0xfa) {
+                    ecx24 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx23)) >> 10 << 2);
+                    v25 = ecx24;
+                    fun_804a684(ecx24, eax19, edx20, v25, v26, v27, v22, v28, v29, v30, v31, v6, 2, 1, reinterpret_cast<int32_t>(ebp4) + 0xffffffc4, reinterpret_cast<int32_t>(ebp4) + 0xffffffc0);
                 } else {
-                    v29 = ecx;
-                    if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx)) >> 10) {
-                        esi30 = 0;
-                        v31 = ebx5;
+                    v32 = ecx23;
+                    if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ecx23)) >> 10) {
+                        esi33 = 0;
+                        v34 = ebx5;
                         do {
-                            edi32 = reinterpret_cast<void*>(esi30 * 4);
-                            ebx33 = *reinterpret_cast<void***>(v21 + esi30 * 4);
-                            zf34 = caml_gc_phase == 0;
-                            if (zf34 && (!(*reinterpret_cast<unsigned char*>(&ebx33) & 1) && *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(ebx33) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<unsigned char>(ebx33) >> 12 & 0x7ff)) & 1)) {
-                                v16 = reinterpret_cast<void**>(0);
-                                caml_darken(ebx33, 0);
+                            edi35 = reinterpret_cast<void*>(esi33 * 4);
+                            ebx36 = *reinterpret_cast<void***>(v22 + esi33 * 4);
+                            zf37 = caml_gc_phase == 0;
+                            if (zf37 && (!(*reinterpret_cast<unsigned char*>(&ebx36) & 1) && *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(ebx36) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<unsigned char>(ebx36) >> 12 & 0x7ff)) & 1)) {
+                                v17 = reinterpret_cast<void**>(0);
+                                caml_darken(ebx36, 0);
                             }
-                            eax35 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi32) + reinterpret_cast<unsigned char>(v14));
-                            v36 = *eax35;
-                            *eax35 = ebx33;
-                            eax37 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi32) + reinterpret_cast<unsigned char>(v14));
-                            if (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<uint32_t>(eax37) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<uint32_t>(eax37) >> 12 & 0x7ff)) & 1) {
-                                zf38 = caml_gc_phase == 0;
-                                if (zf38) {
-                                    v16 = reinterpret_cast<void**>(0);
-                                    caml_darken(v36, 0);
+                            eax38 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi35) + reinterpret_cast<unsigned char>(v15));
+                            v39 = *eax38;
+                            *eax38 = ebx36;
+                            eax40 = reinterpret_cast<void***>(reinterpret_cast<uint32_t>(edi35) + reinterpret_cast<unsigned char>(v15));
+                            if (*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<uint32_t>(eax40) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<uint32_t>(eax40) >> 12 & 0x7ff)) & 1) {
+                                zf41 = caml_gc_phase == 0;
+                                if (zf41) {
+                                    v17 = reinterpret_cast<void**>(0);
+                                    caml_darken(v39, 0);
                                 }
-                                if (!(*reinterpret_cast<unsigned char*>(&ebx33) & 1) && ((eax39 = caml_young_end, reinterpret_cast<unsigned char>(ebx33) < reinterpret_cast<unsigned char>(eax39)) && ((edx40 = caml_young_start, reinterpret_cast<unsigned char>(ebx33) > reinterpret_cast<unsigned char>(edx40)) && (*reinterpret_cast<unsigned char*>(&v36) & 1 || ((ecx = v36, reinterpret_cast<unsigned char>(eax39) <= reinterpret_cast<unsigned char>(ecx)) || reinterpret_cast<unsigned char>(edx40) >= reinterpret_cast<unsigned char>(ecx)))))) {
-                                    eax41 = g807ebc8;
-                                    cf42 = reinterpret_cast<unsigned char>(eax41) < reinterpret_cast<unsigned char>(g807ebcc);
-                                    if (!cf42) {
-                                        caml_realloc_ref_table(ecx, 0x807ebbc, v16);
+                                if (!(*reinterpret_cast<unsigned char*>(&ebx36) & 1) && ((eax42 = caml_young_end, reinterpret_cast<unsigned char>(ebx36) < reinterpret_cast<unsigned char>(eax42)) && ((edx43 = caml_young_start, reinterpret_cast<unsigned char>(ebx36) > reinterpret_cast<unsigned char>(edx43)) && (*reinterpret_cast<unsigned char*>(&v39) & 1 || ((ecx23 = v39, reinterpret_cast<unsigned char>(eax42) <= reinterpret_cast<unsigned char>(ecx23)) || reinterpret_cast<unsigned char>(edx43) >= reinterpret_cast<unsigned char>(ecx23)))))) {
+                                    eax44 = g807ebc8;
+                                    cf45 = reinterpret_cast<unsigned char>(eax44) < reinterpret_cast<unsigned char>(g807ebcc);
+                                    if (!cf45) {
+                                        caml_realloc_ref_table(ecx23, 0x807ebbc, v17);
                                     }
-                                    eax43 = g807ebc8;
-                                    *reinterpret_cast<void***>(eax43) = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edi32) + reinterpret_cast<unsigned char>(v14));
-                                    g807ebc8 = eax43 + 4;
+                                    eax46 = g807ebc8;
+                                    *reinterpret_cast<void***>(eax46) = reinterpret_cast<void**>(reinterpret_cast<uint32_t>(edi35) + reinterpret_cast<unsigned char>(v15));
+                                    g807ebc8 = eax46 + 4;
                                 }
                             }
-                            ++esi30;
-                        } while (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v29)) >> 10 > esi30);
-                        ebx5 = v31;
+                            ++esi33;
+                        } while (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(v32)) >> 10 > esi33);
+                        ebx5 = v34;
                     }
                 }
             } else {
                 caml_local_roots = ebx5;
-                eax44 = reinterpret_cast<void**>(1);
+                eax47 = reinterpret_cast<void**>(1);
                 goto addr_806e863_23;
             }
         }
     } else {
         caml_local_roots = ebx5;
-        eax44 = reinterpret_cast<void**>(1);
+        eax47 = reinterpret_cast<void**>(1);
         goto addr_806e863_23;
     }
-    eax51 = caml_alloc_small(ecx, 1, 0, v22, v45, v31, v21, v29, v36, v46, v47, v6, ecx, 1, 0, v22, v48, v31, v21, v29, v36, v49, v50, v6);
-    *reinterpret_cast<void***>(eax51) = v14;
+    eax54 = caml_alloc_small(1, 0, v25, v48, v34, v22, v32, v39, v49, v50, v6, 1, 0, v25, v51, v34, v22, v32, v39, v52, v53, v6);
+    *reinterpret_cast<void***>(eax54) = v15;
     caml_local_roots = ebx5;
-    eax44 = eax51;
+    eax47 = eax54;
     addr_806e863_23:
-    return eax44;
+    return eax47;
 }
 
 void** caml_weak_get(void** a1, int32_t a2) {
@@ -57382,16 +57378,16 @@ void** caml_weak_get(void** a1, int32_t a2) {
     v6 = edx5;
     eax7 = reinterpret_cast<void**>((a2 >> 1) + 1);
     if (!eax7 || (edx5 = a1, ecx8 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(edx5 + 0xfffffffc)) >> 10), reinterpret_cast<unsigned char>(eax7) >= reinterpret_cast<unsigned char>(ecx8))) {
-        eax7 = caml_invalid_argument(ecx8, 0x8071af8, v9, v10);
+        eax7 = caml_invalid_argument(ecx8, "Weak.get", v9, v10);
     }
     eax11 = *reinterpret_cast<void***>(edx5 + reinterpret_cast<unsigned char>(eax7) * 4);
     zf12 = eax11 == caml_weak_none;
     if (!zf12) {
         zf13 = caml_gc_phase == 0;
-        if (zf13 && (!(*reinterpret_cast<unsigned char*>(&eax11) & 1) && (ecx8 = *reinterpret_cast<void***>((reinterpret_cast<unsigned char>(eax11) >> 23) * 4 + 0x80827a0), !!(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(ecx8) + (reinterpret_cast<unsigned char>(eax11) >> 12 & 0x7ff)) & 1)))) {
+        if (zf13 && (!(*reinterpret_cast<unsigned char*>(&eax11) & 1) && *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((reinterpret_cast<unsigned char>(eax11) >> 23) * 4 + 0x80827a0)) + (reinterpret_cast<unsigned char>(eax11) >> 12 & 0x7ff)) & 1)) {
             caml_darken(eax11, 0);
         }
-        eax18 = caml_alloc_small(ecx8, 1, 0, v14, v15, v16, v17, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, 2, 1, reinterpret_cast<int32_t>(ebp3) + 0xffffffd4, v6);
+        eax18 = caml_alloc_small(1, 0, v14, v15, v16, v17, reinterpret_cast<int32_t>(ebp3) + 0xffffffd8, 2, 1, reinterpret_cast<int32_t>(ebp3) + 0xffffffd4, v6);
         v19 = eax18;
         *reinterpret_cast<void***>(eax18) = eax11;
     } else {
@@ -57419,7 +57415,7 @@ void caml_weak_create(void** ecx, int32_t a2) {
     eax3 = reinterpret_cast<struct s317*>(a2 >> 1);
     ebx4 = reinterpret_cast<void**>(&eax3->f1);
     if (reinterpret_cast<uint32_t>(eax3) > 0x3ffffe) {
-        caml_invalid_argument(ecx, 0x8071b14, v5, v6);
+        caml_invalid_argument(ecx, "Weak.create", v5, v6);
     }
     eax7 = caml_alloc_shr(ecx, ebx4, 0xfb);
     if (reinterpret_cast<unsigned char>(ebx4) > reinterpret_cast<unsigned char>(1)) {
@@ -57636,13 +57632,13 @@ void** caml_get_exception_backtrace(void** ecx) {
         do {
             extract_location_info(v13, v11, v19, v20, v21, v22, v23);
             if (!v24) {
-                eax33 = caml_alloc_small(ecx, 1, 1, v25, v26, v27, v28, v29, v4, v30, v31, v32);
+                eax33 = caml_alloc_small(1, 1, v25, v26, v27, v28, v29, v4, v30, v31, v32);
                 v34 = eax33;
                 *reinterpret_cast<void***>(eax33) = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(edi18) - (reinterpret_cast<uint32_t>(edi18) + reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(edi18) < reinterpret_cast<uint32_t>(edi18) + reinterpret_cast<uint1_t>(v35 < 1))) & 0xfffffffe) + 3);
             } else {
                 eax63 = caml_copy_string(ecx, v36, v11, v37, v38, v39, v40, v41, v4, v42, v43, v44, v45, v46, v47, v48, v49, v6, 4, 1, ecx, v36, v11, v50, v51, v52, v53, v54, v4, v55, v56, v57, v58, v59, v60, v61, v62, v6, 4, 1);
                 v5 = eax63;
-                eax72 = caml_alloc_small(ecx, 5, 0, v64, v65, v66, v67, v68, v4, v69, v70, v71);
+                eax72 = caml_alloc_small(5, 0, v64, v65, v66, v67, v68, v4, v69, v70, v71);
                 v34 = eax72;
                 *reinterpret_cast<void***>(eax72) = reinterpret_cast<void**>((reinterpret_cast<uint32_t>(edi18) - (reinterpret_cast<uint32_t>(edi18) + reinterpret_cast<uint1_t>(reinterpret_cast<uint32_t>(edi18) < reinterpret_cast<uint32_t>(edi18) + reinterpret_cast<uint1_t>(v73 < 1))) & 0xfffffffe) + 3);
                 *reinterpret_cast<void***>(v34 + 4) = v5;
@@ -57657,7 +57653,7 @@ void** caml_get_exception_backtrace(void** ecx) {
             less_or_equal91 = reinterpret_cast<signed char>(caml_backtrace_pos) <= reinterpret_cast<signed char>(ebx17);
         } while (!less_or_equal91);
     }
-    eax100 = caml_alloc_small(ecx, 1, 0, v92, v93, v94, v95, v96, v4, v97, v98, v99);
+    eax100 = caml_alloc_small(1, 0, v92, v93, v94, v95, v96, v4, v97, v98, v99);
     *reinterpret_cast<void***>(eax100) = v15;
     caml_local_roots = v4;
     return eax100;
@@ -58187,7 +58183,7 @@ struct s319 {
 
 struct s320 {
     signed char[12] pad12;
-    int32_t* f12;
+    int32_t* fc;
 };
 
 void fun_804f385() {
@@ -58197,7 +58193,7 @@ void fun_804f385() {
 
     ecx1 = *ebx2->f8;
     ecx1();
-    goto *ebx3->f12;
+    goto *ebx3->fc;
 }
 
 void fun_804f587() {
@@ -58432,15 +58428,15 @@ struct s322 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    int32_t f12;
-    void** f16;
+    int32_t fc;
+    void** f10;
 };
 
 struct s323 {
     int32_t f0;
     int32_t f4;
     int32_t f8;
-    struct s322* f12;
+    struct s322* fc;
 };
 
 struct s324 {
@@ -58448,9 +58444,9 @@ struct s324 {
     signed char[3] pad4;
     int32_t f4;
     int32_t f8;
-    void** f12;
+    void** fc;
     signed char[3] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 void fun_8052ae7(void** a1, void** a2) {
@@ -58515,21 +58511,21 @@ void fun_8052ae7(void** a1, void** a2) {
     edx24->f0 = 0x804b370;
     edx24->f4 = 5;
     edx24->f8 = reinterpret_cast<int32_t>(camlArray__bubbledown_1170);
-    edx24->f12 = ebx25;
-    edx24->f16 = esi18;
+    edx24->fc = ebx25;
+    edx24->f10 = esi18;
     eax26 = reinterpret_cast<struct s323*>(esi18 + 100);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax26) - 4) = 0x10f7;
     eax26->f0 = 0x804b370;
     eax26->f4 = 5;
     eax26->f8 = reinterpret_cast<int32_t>(camlArray__bubble_1174);
-    eax26->f12 = edx24;
+    eax26->fc = edx24;
     eax27 = reinterpret_cast<struct s324*>(esi18 + 0x78);
     *reinterpret_cast<int32_t*>(reinterpret_cast<uint32_t>(eax27) - 4) = 0x14f7;
     eax27->f0 = reinterpret_cast<void**>(0x804b370);
     eax27->f4 = 5;
     eax27->f8 = reinterpret_cast<int32_t>(camlArray__trickleup_1178);
-    eax27->f12 = ecx4;
-    eax27->f16 = ebx28;
+    eax27->fc = ecx4;
+    eax27->f10 = ebx28;
     if ((*reinterpret_cast<uint32_t*>(ebx29 - 4) & 0xff) == 0xfe) 
         goto 0x8052c10;
     goto 0x8052c13;
@@ -58751,7 +58747,7 @@ void camlPrintf__got_spec_1297(int32_t ecx) {
 
 struct s328 {
     signed char[44] pad44;
-    int32_t f44;
+    int32_t f2c;
 };
 
 void camlPrintf__cont_t_1363(void** ecx, void** a2) {
@@ -58762,7 +58758,7 @@ void camlPrintf__cont_t_1363(void** ecx, void** a2) {
     void** ecx7;
     void** edx8;
 
-    if (edx3->f44 == 1) 
+    if (edx3->f2c == 1) 
         goto 0x80590a0;
     ecx4 = *ebx5;
     ecx4(eax6, ecx);
@@ -59062,8 +59058,8 @@ void** caml_int64_of_string(void** a1) {
     eax15 = parse_digit(ecx2, 0xffffffff, 0xffffffff, v9, v10);
     ebx16 = eax15;
     if (reinterpret_cast<signed char>(eax15) < reinterpret_cast<signed char>(0) || reinterpret_cast<signed char>(v4) <= reinterpret_cast<signed char>(eax15)) {
-        v11 = reinterpret_cast<void**>(0x807139f);
-        eax15 = caml_failwith(ecx2, 0x807139f, 0xffffffff, v9, v10);
+        v11 = reinterpret_cast<void**>("int_of_string");
+        eax15 = caml_failwith(ecx2, "int_of_string", 0xffffffff, v9, v10);
     }
     esi17 = reinterpret_cast<void**>(reinterpret_cast<signed char>(eax15) >> 31);
     edi18 = &eax3->f1;
@@ -59098,18 +59094,18 @@ void** caml_int64_of_string(void** a1) {
         ebx16 = tmp32_26;
         esi17 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__intrinsic()) + reinterpret_cast<unsigned char>(v21) + reinterpret_cast<unsigned char>(edx23) + reinterpret_cast<uint1_t>(reinterpret_cast<unsigned char>(tmp32_26) < reinterpret_cast<unsigned char>(ebx22)));
         if (reinterpret_cast<unsigned char>(edx23) >= reinterpret_cast<unsigned char>(esi17) && (reinterpret_cast<unsigned char>(v25) > reinterpret_cast<unsigned char>(esi17) || reinterpret_cast<unsigned char>(eax20) > reinterpret_cast<unsigned char>(ebx16))) {
-            v11 = reinterpret_cast<void**>(0x807139f);
-            caml_failwith(ecx2, 0x807139f, 0xffffffff, v9, v10);
+            v11 = reinterpret_cast<void**>("int_of_string");
+            caml_failwith(ecx2, "int_of_string", 0xffffffff, v9, v10);
             goto addr_8066826_5;
         }
         addr_80667d2_11:
-        v11 = reinterpret_cast<void**>(0x807139f);
-        caml_failwith(ecx2, 0x807139f, 0xffffffff, v9, v10);
+        v11 = reinterpret_cast<void**>("int_of_string");
+        caml_failwith(ecx2, "int_of_string", 0xffffffff, v9, v10);
         goto addr_80667de_9;
     }
     eax33 = caml_string_length(ecx2, a1, 0xffffffff, v9, v10, v27, v28, v24, v25, v29, v30, v21, eax20, v31, v32);
     if (edi18 != reinterpret_cast<unsigned char>(eax33) + reinterpret_cast<unsigned char>(a1)) {
-        caml_failwith(ecx2, 0x807139f, 0xffffffff, v9, v10);
+        caml_failwith(ecx2, "int_of_string", 0xffffffff, v9, v10);
     }
     if (v34 == 10) {
         eax35 = reinterpret_cast<void**>(0xffffffff);
@@ -59119,7 +59115,7 @@ void** caml_int64_of_string(void** a1) {
             edx36 = reinterpret_cast<void**>(0x80000000);
         }
         if (reinterpret_cast<unsigned char>(edx36) <= reinterpret_cast<unsigned char>(esi17) && (reinterpret_cast<unsigned char>(edx36) < reinterpret_cast<unsigned char>(esi17) || reinterpret_cast<unsigned char>(eax35) < reinterpret_cast<unsigned char>(ebx16))) {
-            caml_failwith(ecx2, 0x807139f, 0xffffffff, v9, v10);
+            caml_failwith(ecx2, "int_of_string", 0xffffffff, v9, v10);
         }
     }
     if (v38 < 0) {
@@ -59165,7 +59161,7 @@ void fun_804a50a() {
 
 struct s329 {
     signed char[37348] pad37348;
-    void** f37348;
+    void** f91e4;
 };
 
 int32_t unix_send(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, void** a6) {
@@ -59199,17 +59195,17 @@ int32_t unix_send(void** ecx, int32_t a2, void* a3, int32_t a4, int32_t a5, void
 
     __i686_get_pc_thunk_bx();
     ebx7 = reinterpret_cast<struct s329*>(reinterpret_cast<int32_t>(ebx8) + 0x12e8c);
-    eax10 = caml_convert_flag_list(a6, &ebx7->f37348, v9);
+    eax10 = caml_convert_flag_list(a6, &ebx7->f91e4, v9);
     esi11 = reinterpret_cast<void**>(a5 >> 1);
     if (reinterpret_cast<signed char>(esi11) > reinterpret_cast<signed char>(0x4000)) {
         esi11 = reinterpret_cast<void**>(0x4000);
     }
     edi12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffbfe8);
     fun_804a684(ecx, edi12, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi11, v13, v14, v15, v16, eax10, v17, v18, v19, v20, v21, v22, v23);
-    caml_enter_blocking_section(edi12, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi11);
+    caml_enter_blocking_section(ecx, edi12, (a4 >> 1) + reinterpret_cast<uint32_t>(a3), esi11);
     v24 = reinterpret_cast<void**>(a2 >> 1);
     eax25 = fun_804a6c4(v24, edi12, esi11, eax10);
-    caml_leave_blocking_section(v24, edi12, esi11, eax10, v26, v27, v28, eax10, v29, v30, v31);
+    caml_leave_blocking_section(ecx, v24, edi12, esi11, eax10, v26, v27, v28, eax10, v29, v30, v31);
     if (eax25 == -1) {
         uerror(reinterpret_cast<int32_t>(ebx7) + 0xffffe97a, 0, esi11, eax10, v32, v33);
     }
@@ -59308,7 +59304,7 @@ void fun_804a8aa() {
 }
 
 void** unix_times() {
-    void** ecx1;
+    void** v1;
     void** v2;
     void** v3;
     void** v4;
@@ -59317,14 +59313,13 @@ void** unix_times() {
     void** v7;
     void** v8;
     void** v9;
-    void** v10;
-    void** eax11;
-    void** edi12;
+    void** eax10;
+    void** edi11;
 
     __i686_get_pc_thunk_bx();
-    eax11 = caml_alloc_small(ecx1, 8, 0xfe, v2, v3, v4, v5, v6, v7, v8, v9, v10);
-    edi12 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffa0);
-    fun_804a154(0, edi12);
+    eax10 = caml_alloc_small(8, 0xfe, v1, v2, v3, v4, v5, v6, v7, v8, v9);
+    edi11 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffa0);
+    fun_804a154(0, edi11);
     __asm__("fild dword [ebp-0x60]");
     __asm__("fild dword [ebp-0x5c]");
     __asm__("fdiv qword [eax]");
@@ -59335,7 +59330,7 @@ void** unix_times() {
     __asm__("fdiv qword [eax]");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [esi+0x8]");
-    fun_804a154(0xffffffff, edi12);
+    fun_804a154(0xffffffff, edi11);
     __asm__("fild dword [ebp-0x60]");
     __asm__("fild dword [ebp-0x5c]");
     __asm__("fdiv qword [eax]");
@@ -59346,7 +59341,7 @@ void** unix_times() {
     __asm__("fdiv qword [eax]");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [esi+0x18]");
-    return eax11;
+    return eax10;
 }
 
 void fun_8049f7a() {
@@ -59418,8 +59413,8 @@ void** caml_sys_get_config(void** ecx) {
     caml_local_roots = reinterpret_cast<void**>(ebp2 + 0xffffffd0);
     v4 = reinterpret_cast<void**>(ebp2 + 0xfffffff4);
     v5 = reinterpret_cast<void**>(ebp2 + 0xfffffff0);
-    eax17 = caml_copy_string(ecx, 0x8071774, v6, v7, v8, v9, v10, ebx3, 2, 1, v4, v5, v11, v12, v13, 0, 0, v14, ebx15, ebp16);
-    eax22 = caml_alloc_small(ecx, 2, 0, v18, v19, v20, v21, ebx3, 2, 1, v4, v5);
+    eax17 = caml_copy_string(ecx, "Unix", v6, v7, v8, v9, v10, ebx3, 2, 1, v4, v5, v11, v12, v13, 0, 0, v14, ebx15, ebp16);
+    eax22 = caml_alloc_small(2, 0, v18, v19, v20, v21, ebx3, 2, 1, v4, v5);
     *reinterpret_cast<void***>(eax22) = eax17;
     *reinterpret_cast<void***>(eax22 + 4) = reinterpret_cast<void**>(65);
     caml_local_roots = ebx3;
@@ -59473,7 +59468,7 @@ int32_t caml_final_register(void** ecx, void** a2, uint32_t a3) {
 
     ebx4 = a3;
     if (*reinterpret_cast<unsigned char*>(&ebx4) & 1 || (esi5 = ebx4, !(*reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(*reinterpret_cast<void**>((ebx4 >> 23) * 4 + 0x80827a0)) + (ebx4 >> 12 & 0x7ff)) & 3))) {
-        caml_invalid_argument(ecx, 0x8071b98, v6, v7);
+        caml_invalid_argument(ecx, "Gc.finalise", v6, v7);
     }
     eax8 = size;
     cf9 = reinterpret_cast<unsigned char>(young) < reinterpret_cast<unsigned char>(eax8);
@@ -59611,16 +59606,15 @@ void caml_deserialize_block_2(void* a1, int32_t a2) {
 }
 
 void** caml_int64_to_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fild qword [eax+0x4]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 struct s336 {
@@ -59630,11 +59624,12 @@ struct s336 {
 
 void** caml_nativeint_of_int32(struct s336* a1) {
     void** v2;
-    void** eax3;
+    void** ecx3;
+    void** eax4;
 
     v2 = a1->f4;
-    eax3 = caml_copy_nativeint(v2);
-    return eax3;
+    eax4 = caml_copy_nativeint(ecx3, v2);
+    return eax4;
 }
 
 struct s337 {
@@ -59649,11 +59644,12 @@ struct s338 {
 
 void** caml_nativeint_sub(struct s337* a1, struct s338* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1->f4) - a2->f4);
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    eax5 = caml_copy_nativeint(ecx4, v3);
+    return eax5;
 }
 
 void** caml_int64_of_float(void** ecx, int32_t a2) {
@@ -59733,11 +59729,12 @@ struct s343 {
 
 void** caml_int64_to_int32(struct s343* a1) {
     void** v2;
-    void** eax3;
+    void** ecx3;
+    void** eax4;
 
     v2 = a1->f4;
-    eax3 = caml_copy_int32(v2);
-    return eax3;
+    eax4 = caml_copy_int32(ecx3, v2);
+    return eax4;
 }
 
 struct s344 {
@@ -59752,11 +59749,12 @@ struct s345 {
 
 void** caml_int32_sub(struct s344* a1, struct s345* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a1->f4) - a2->f4);
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 void fun_8049eba() {
@@ -59764,33 +59762,31 @@ void fun_8049eba() {
 }
 
 void** caml_ceil_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     ceil();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_log10_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     log10();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_804a25a() {
@@ -59798,18 +59794,17 @@ void fun_804a25a() {
 }
 
 void** caml_exp_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     exp();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_8049dea() {
@@ -59932,14 +59927,13 @@ int32_t caml_ml_output_char(struct s347* a1, int32_t a2) {
 }
 
 void** caml_ml_open_descriptor_out(int32_t a1) {
-    void** ecx2;
-    void** eax3;
-    void** v4;
-    void** eax5;
+    void** eax2;
+    void** v3;
+    void** eax4;
 
-    eax3 = caml_open_descriptor_out(ecx2, a1 >> 1);
-    eax5 = caml_alloc_channel(eax3, v4);
-    return eax5;
+    eax2 = caml_open_descriptor_out(a1 >> 1);
+    eax4 = caml_alloc_channel(eax2, v3);
+    return eax4;
 }
 
 void caml_serialize_block_2(void** ecx, void* a2, void* a3) {
@@ -60075,7 +60069,7 @@ uint32_t caml_marshal_data_size(void* a1, int32_t a2) {
     intern_src = eax4;
     ecx5 = reinterpret_cast<void**>(static_cast<uint32_t>(reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 0xfffffffe))) << 8);
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax4 + 0xffffffff)) + (static_cast<uint32_t>(edx3->f0) << 24) + (static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(eax4 + 0xfffffffd)) << 16) + reinterpret_cast<unsigned char>(ecx5) != 0x8495a6be) {
-        eax4 = caml_failwith(ecx5, 0x8071568, v6, v7, v8);
+        eax4 = caml_failwith(ecx5, "Marshal.data_size: bad object", v6, v7, v8);
     }
     eax9 = eax4 + 4;
     intern_src = eax9;
@@ -60116,7 +60110,7 @@ void fun_806af7e(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     ebx11 = eax10;
     if (!eax10) {
         intern_cleanup(ecx, eax9, a2, a3, a4, a5, a6, a7, a8);
-        caml_failwith(ecx, 0x807161c, a2, a3, a4);
+        caml_failwith(ecx, "input_value: unknown custom block identifier", a2, a3, a4);
     }
     do {
         eax12 = intern_src;
@@ -60158,11 +60152,11 @@ void fun_804a61a() {
 int32_t caml_gc_major(void** ecx) {
     void** v2;
 
-    caml_gc_message(1, 0x8071a55, 0, v2);
-    caml_empty_minor_heap(1, 0x8071a55, 0);
-    caml_finish_major_cycle(ecx, 1, 0x8071a55, 0);
-    test_and_compact(1, 0x8071a55, 0);
-    caml_final_do_calls(1, 0x8071a55, 0);
+    caml_gc_message(1, "Major GC cycle requested\n", 0, v2);
+    caml_empty_minor_heap(1, "Major GC cycle requested\n", 0);
+    caml_finish_major_cycle(ecx, 1, "Major GC cycle requested\n", 0);
+    test_and_compact(1, "Major GC cycle requested\n", 0);
+    caml_final_do_calls(1, "Major GC cycle requested\n", 0);
     return 1;
 }
 
@@ -60424,15 +60418,15 @@ void** caml_gc_quick_stat(void** ecx) {
     eax16 = caml_alloc_tuple(ecx, 16, v14, v15);
     __asm__("fld qword [ebp-0x78]");
     __asm__("fstp qword [esp]");
-    eax19 = caml_copy_double(ecx, 16, v17, v18);
+    eax19 = caml_copy_double(16, v17, v18);
     caml_modify(ecx, eax16, eax19, v20, v21, v22, v23, v24, v25, v26, v27, v9, v11, eax12, edx13, eax5, 0, v28, v29, v30, ebx3, 1, 1, v4, v31, v32);
     __asm__("fld qword [ebp-0x70]");
     __asm__("fstp qword [esp]");
-    eax34 = caml_copy_double(ecx, eax16, eax19, v33);
+    eax34 = caml_copy_double(eax16, eax19, v33);
     caml_modify(ecx, eax16 + 4, eax34, v35, v36, v37, v38, v39, v40, v41, v42, v9, v11, eax12, edx13, eax5, 0, v43, v44, v45, ebx3, 1, 1, v4, v46, v47);
     __asm__("fld qword [ebp-0x68]");
     __asm__("fstp qword [esp]");
-    eax49 = caml_copy_double(ecx, eax16 + 4, eax34, v48);
+    eax49 = caml_copy_double(eax16 + 4, eax34, v48);
     caml_modify(ecx, eax16 + 8, eax49, v50, v51, v52, v53, v54, v55, v56, v57, v9, v11, eax12, edx13, eax5, 0, v58, v59, v60, ebx3, 1, 1, v4, v61, v62);
     caml_modify(ecx, eax16 + 12, reinterpret_cast<int32_t>(esi6) + reinterpret_cast<int32_t>(esi6) + 1, v63, v64, v65, v66, v67, v68, v69, v70, v9, v11, eax12, edx13, eax5, 0, v71, v72, v73, ebx3, 1, 1, v4, v74, v75);
     caml_modify(ecx, eax16 + 16, reinterpret_cast<unsigned char>(edi7) + reinterpret_cast<unsigned char>(edi7) + 1, v76, v77, v78, v79, v80, v81, v82, v83, v9, v11, eax12, edx13, eax5, 0, v84, v85, v86, ebx3, 1, 1, v4, v87, v88);
@@ -60499,12 +60493,12 @@ struct s350 {
 
 struct s351 {
     signed char[12] pad12;
-    uint32_t* f12;
+    uint32_t* fc;
 };
 
 struct s352 {
     signed char[12] pad12;
-    int32_t* f12;
+    int32_t* fc;
 };
 
 int32_t camlString__code_begin() {
@@ -60517,7 +60511,7 @@ int32_t camlString__code_begin() {
 
     *ebx1->f8 = *ebx1->f8 + 2;
     edx2 = (*reinterpret_cast<uint32_t*>(eax3 - 4) >> 10) * 4 - 1;
-    *ebx4->f12 = *ebx5->f12 + (edx2 - *reinterpret_cast<unsigned char*>(eax6 + edx2)) * 2;
+    *ebx4->fc = *ebx5->fc + (edx2 - *reinterpret_cast<unsigned char*>(eax6 + edx2)) * 2;
     return 1;
 }
 
@@ -60592,12 +60586,12 @@ void unix_accept(void** ecx, int32_t a2) {
     ebp3 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     __i686_get_pc_thunk_bx();
     ebx4 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(ebx5) + 0x15d3f);
-    caml_enter_blocking_section(v6, v7, v8);
+    caml_enter_blocking_section(ecx, v6, v7, v8);
     v9 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff70);
     v10 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff74);
     v11 = reinterpret_cast<void**>(a2 >> 1);
     eax12 = fun_804a284(v11, v10, v9);
-    caml_leave_blocking_section(v11, v10, v9, v13, v14, v15, v16, v17, v18, v19, v20);
+    caml_leave_blocking_section(ecx, v11, v10, v9, v13, v14, v15, v16, v17, v18, v19, v20);
     if (reinterpret_cast<int1_t>(eax12 == 0xffffffff)) {
         uerror(reinterpret_cast<int32_t>(ebx4) + 0xffffe7a0, 0, v9, v21, v22, v23);
     }
@@ -60605,7 +60599,7 @@ void unix_accept(void** ecx, int32_t a2) {
     esi28 = *reinterpret_cast<void****>(reinterpret_cast<int32_t>(ebx4) - 24);
     v29 = *esi28;
     *esi28 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(ebp3) + 0xffffff50);
-    eax34 = caml_alloc_small(ecx, 2, 0, eax12, v30, v31, v32, v29, 1, 1, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, v33);
+    eax34 = caml_alloc_small(2, 0, eax12, v30, v31, v32, v29, 1, 1, reinterpret_cast<int32_t>(ebp3) + 0xffffffe4, v33);
     *reinterpret_cast<void***>(eax34) = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax12) + reinterpret_cast<unsigned char>(eax12) + 1);
     *reinterpret_cast<void***>(eax34 + 4) = eax27;
     *esi28 = v29;
@@ -60785,7 +60779,7 @@ struct s356 {
 
 struct s355 {
     signed char[12] pad12;
-    struct s356* f12;
+    struct s356* fc;
 };
 
 void fun_8056a22(int32_t ecx) {
@@ -60798,7 +60792,7 @@ void fun_8056a22(int32_t ecx) {
 
     if (!(*reinterpret_cast<uint32_t*>(eax2->f4 - 4) >> 10)) 
         goto 0x8056a80;
-    ecx3 = *edx4->f12->f8->f4;
+    ecx3 = *edx4->fc->f8->f4;
     ecx3(ebx5, ecx, eax6, edx7);
     __asm__("cdq ");
     goto 0x8056a90;
@@ -61074,7 +61068,7 @@ void** caml_sys_get_argv(void** ecx) {
     eax17 = caml_copy_string(ecx, eax7, v8, v9, v10, v11, ebx3, 3, 1, v4, v5, v6, v12, v13, 0, 0, 0, v14, ebx15, ebp16);
     eax18 = caml_main_argv;
     eax20 = caml_copy_string_array(ecx, eax18, v19);
-    eax24 = caml_alloc_small(ecx, 2, 0, v21, v22, v23, ebx3, 3, 1, v4, v5, v6);
+    eax24 = caml_alloc_small(2, 0, v21, v22, v23, ebx3, 3, 1, v4, v5, v6);
     *reinterpret_cast<void***>(eax24) = eax17;
     *reinterpret_cast<void***>(eax24 + 4) = eax20;
     caml_local_roots = ebx3;
@@ -61169,29 +61163,29 @@ int32_t int64_deserialize(struct s363* a1) {
 }
 
 void** caml_int32_float_of_bits(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld dword [eax+0x4]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_nativeint_of_float(int32_t a1) {
-    void** v2;
-    void** eax3;
+    void** ecx2;
+    void** v3;
+    void** eax4;
 
     __asm__("fld qword [eax]");
     __asm__("fnstcw word [ebp-0xa]");
     __asm__("fldcw word [ebp-0xc]");
     __asm__("fistp dword [esp]");
     __asm__("fldcw word [ebp-0xa]");
-    eax3 = caml_copy_nativeint(v2);
-    return eax3;
+    eax4 = caml_copy_nativeint(ecx2, v3);
+    return eax4;
 }
 
 struct s364 {
@@ -61204,13 +61198,13 @@ struct s365 {
     void* f4;
 };
 
-void** caml_nativeint_add(struct s364* a1, struct s365* a2) {
-    void** v3;
-    void** eax4;
+void** caml_nativeint_add(void** ecx, struct s364* a2, struct s365* a3) {
+    void** v4;
+    void** eax5;
 
-    v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a2->f4) + reinterpret_cast<uint32_t>(a1->f4));
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    v4 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a3->f4) + reinterpret_cast<uint32_t>(a2->f4));
+    eax5 = caml_copy_nativeint(ecx, v4);
+    return eax5;
 }
 
 void** caml_int64_of_int(void** ecx, int32_t a2) {
@@ -61297,13 +61291,14 @@ void** caml_int64_add(struct s368* a1, struct s369* a2) {
 }
 
 void** caml_int32_bits_of_float(int32_t a1) {
-    void** v2;
-    void** eax3;
+    void** ecx2;
+    void** v3;
+    void** eax4;
 
     __asm__("fld qword [eax]");
     __asm__("fstp dword [ebp-0x10]");
-    eax3 = caml_copy_int32(v2);
-    return eax3;
+    eax4 = caml_copy_int32(ecx2, v3);
+    return eax4;
 }
 
 struct s370 {
@@ -61318,11 +61313,12 @@ struct s371 {
 
 void** caml_int32_add(struct s370* a1, struct s371* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(a2->f4) + reinterpret_cast<uint32_t>(a1->f4));
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 int32_t caml_classify_float(int32_t a1) {
@@ -61334,7 +61330,7 @@ int32_t caml_classify_float(int32_t a1) {
     eax2 = fun_804a1e4();
     eax3 = 1;
     if (eax2 <= 3) {
-        eax3 = *reinterpret_cast<int32_t*>(eax2 * 4 + 0x80713e4);
+        eax3 = *reinterpret_cast<int32_t*>("\t" + eax2 * 4);
     }
     return eax3;
 }
@@ -61343,11 +61339,11 @@ void fun_804a17a() {
     goto 0x8049db4;
 }
 
-void** caml_atan2_float(void** ecx, int32_t a2, int32_t a3) {
+void** caml_atan2_float(int32_t a1, int32_t a2) {
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp+0x8]");
@@ -61355,23 +61351,22 @@ void** caml_atan2_float(void** ecx, int32_t a2, int32_t a3) {
     __asm__("fstp qword [esp]");
     atan2();
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 void** caml_log_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     log();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_804a0da() {
@@ -61379,17 +61374,16 @@ void fun_804a0da() {
 }
 
 void** caml_div_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fdiv qword [eax]");
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx3, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 uint32_t caml_string_lessequal(void** ecx, void** a2, void** a3, void** a4) {
@@ -61462,19 +61456,20 @@ void fun_806abba(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     void** eax9;
 
     intern_cleanup(ecx, __return_address(), a2, a3, a4, a5, a6, a7, a8);
-    eax9 = caml_failwith(ecx, 0x80715d8, a2, a3, a4);
+    eax9 = caml_failwith(ecx, "input_value: integer too large", a2, a3, a4);
     intern_src = eax9 + 1;
     goto 0x806b029;
 }
 
-uint32_t caml_gc_major_slice(void** ecx, int32_t a2) {
+uint32_t caml_gc_major_slice(int32_t a1) {
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
+    void** ecx5;
     void** eax6;
 
-    caml_empty_minor_heap(v3, v4, v5);
-    eax6 = caml_major_collection_slice(ecx, a2 >> 1);
+    caml_empty_minor_heap(v2, v3, v4);
+    eax6 = caml_major_collection_slice(ecx5, a1 >> 1);
     return reinterpret_cast<unsigned char>(eax6) + reinterpret_cast<unsigned char>(eax6) + 1;
 }
 
@@ -61762,15 +61757,15 @@ void** caml_gc_stat() {
     eax31 = caml_alloc_tuple(ecx7, 16, v29, v30);
     __asm__("fld qword [ebp-0x68]");
     __asm__("fstp qword [esp]");
-    eax34 = caml_copy_double(ecx7, 16, v32, v33);
+    eax34 = caml_copy_double(16, v32, v33);
     caml_modify(ecx7, eax31, eax34, v35, v36, v37, v28, edx26, v25, eax23, v3, v8, v38, v6, v39, v15, v9, v16, v40, v41, v11, v12, v13, eax21, 0, v42);
     __asm__("fld qword [ebp-0x78]");
     __asm__("fstp qword [esp]");
-    eax44 = caml_copy_double(ecx7, eax31, eax34, v43);
+    eax44 = caml_copy_double(eax31, eax34, v43);
     caml_modify(ecx7, eax31 + 4, eax44, v45, v46, v47, v28, edx26, v25, eax23, v3, v8, v48, v6, v49, v15, v9, v16, v50, v51, v11, v12, v13, eax21, 0, v52);
     __asm__("fld qword [ebp-0x80]");
     __asm__("fstp qword [esp]");
-    eax54 = caml_copy_double(ecx7, eax31 + 4, eax44, v53);
+    eax54 = caml_copy_double(eax31 + 4, eax44, v53);
     caml_modify(ecx7, eax31 + 8, eax54, v55, v56, v57, v28, edx26, v25, eax23, v3, v8, v58, v6, v59, v15, v9, v16, v60, v61, v11, v12, v13, eax21, 0, v62);
     caml_modify(ecx7, eax31 + 12, reinterpret_cast<int32_t>(edi22) + reinterpret_cast<int32_t>(edi22) + 1, v63, v64, v65, v28, edx26, v25, eax23, v3, v8, v66, v6, v67, v15, v9, v16, v68, v69, v11, v12, v13, eax21, 0, v70);
     caml_modify(ecx7, eax31 + 16, reinterpret_cast<unsigned char>(eax23) + reinterpret_cast<unsigned char>(eax23) + 1, v71, v72, v73, v28, edx26, v25, eax23, v3, v8, v74, v6, v75, v15, v9, v16, v76, v77, v11, v12, v13, eax21, 0, v78);
@@ -61807,12 +61802,12 @@ struct s375 {
 
 struct s376 {
     signed char[16] pad16;
-    void*** f16;
+    void*** f10;
 };
 
 struct s377 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s378 {
@@ -61827,32 +61822,32 @@ struct s379 {
 
 struct s380 {
     signed char[16] pad16;
-    uint32_t* f16;
+    uint32_t* f10;
 };
 
 struct s381 {
     signed char[16] pad16;
-    int32_t* f16;
+    int32_t* f10;
 };
 
 struct s382 {
     signed char[16] pad16;
-    void*** f16;
+    void*** f10;
 };
 
 struct s383 {
     signed char[12] pad12;
-    void** f12;
+    void** fc;
 };
 
 struct s384 {
     signed char[16] pad16;
-    uint32_t* f16;
+    uint32_t* f10;
 };
 
 struct s385 {
     signed char[16] pad16;
-    int32_t* f16;
+    int32_t* f10;
 };
 
 int32_t fun_80553bc(void** a1) {
@@ -61885,20 +61880,20 @@ int32_t fun_80553bc(void** a1) {
     eax2 = reinterpret_cast<void*>((*reinterpret_cast<uint32_t*>(ebx3->f8 - 4) >> 10) * 4 + 0xffffffff);
     ecx4 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(ebx3->f8 + reinterpret_cast<uint32_t>(eax2))));
     eax5 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax2) - reinterpret_cast<unsigned char>(ecx4));
-    v6 = *ebx7->f16;
-    v8 = ebx9->f12;
+    v6 = *ebx7->f10;
+    v8 = ebx9->fc;
     v10 = ebx11->f8;
     caml_blit_string(ecx4, v10, 1, v8, v6, reinterpret_cast<uint32_t>(eax5) + reinterpret_cast<uint32_t>(eax5) + 1, __return_address(), a1);
     edx12 = reinterpret_cast<void*>((*reinterpret_cast<uint32_t*>(ebx13->f8 - 4) >> 10) * 4 - 1);
-    *ebx14->f16 = *ebx15->f16 + (reinterpret_cast<uint32_t>(edx12) - *reinterpret_cast<unsigned char*>(ebx13->f8 + reinterpret_cast<uint32_t>(edx12))) * 2;
+    *ebx14->f10 = *ebx15->f10 + (reinterpret_cast<uint32_t>(edx12) - *reinterpret_cast<unsigned char*>(ebx13->f8 + reinterpret_cast<uint32_t>(edx12))) * 2;
     eax16 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax17 + 0xfffffffc)) >> 10) * 4 + 0xffffffff);
     ecx18 = reinterpret_cast<void**>(static_cast<uint32_t>(*reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax17) + reinterpret_cast<uint32_t>(eax16))));
     eax19 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(eax16) - reinterpret_cast<unsigned char>(ecx18));
-    v20 = *ebx21->f16;
-    v22 = ebx23->f12;
+    v20 = *ebx21->f10;
+    v22 = ebx23->fc;
     caml_blit_string(ecx18, eax17, 1, v22, v20, reinterpret_cast<uint32_t>(eax19) + reinterpret_cast<uint32_t>(eax19) + 1, __return_address(), a1);
     ecx24 = reinterpret_cast<void*>((reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(eax17 + 0xfffffffc)) >> 10) * 4 - 1);
-    *ebx25->f16 = *ebx26->f16 + (reinterpret_cast<uint32_t>(ecx24) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax17) + reinterpret_cast<uint32_t>(ecx24))) * 2;
+    *ebx25->f10 = *ebx26->f10 + (reinterpret_cast<uint32_t>(ecx24) - *reinterpret_cast<unsigned char*>(reinterpret_cast<unsigned char>(eax17) + reinterpret_cast<uint32_t>(ecx24))) * 2;
     return 1;
 }
 
@@ -62115,23 +62110,24 @@ void int64_serialize(void** ecx, struct s390* a2, int32_t* a3, int32_t* a4) {
     return;
 }
 
-void** caml_int32_to_float(void** ecx, int32_t a2) {
+void** caml_int32_to_float(int32_t a1) {
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fild dword [eax+0x4]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_nativeint_of_int(int32_t a1) {
-    void** eax2;
+    void** ecx2;
+    void** eax3;
 
-    eax2 = caml_copy_nativeint(a1 >> 1);
-    return eax2;
+    eax3 = caml_copy_nativeint(ecx2, a1 >> 1);
+    return eax3;
 }
 
 struct s391 {
@@ -62139,13 +62135,13 @@ struct s391 {
     int32_t f4;
 };
 
-void** caml_nativeint_neg(struct s391* a1) {
-    void** v2;
-    void** eax3;
+void** caml_nativeint_neg(void** ecx, struct s391* a2) {
+    void** v3;
+    void** eax4;
 
-    v2 = reinterpret_cast<void**>(-a1->f4);
-    eax3 = caml_copy_nativeint(v2);
-    return eax3;
+    v3 = reinterpret_cast<void**>(-a2->f4);
+    eax4 = caml_copy_nativeint(ecx, v3);
+    return eax4;
 }
 
 struct s392 {
@@ -62194,13 +62190,13 @@ void** caml_int64_neg(void** ecx, struct s393* a2) {
     return eax7;
 }
 
-void** caml_int32_of_string(int32_t a1) {
-    void** eax2;
+void** caml_int32_of_string(void** ecx, int32_t a2) {
     void** eax3;
+    void** eax4;
 
-    eax2 = parse_intnat();
-    eax3 = caml_copy_int32(eax2);
-    return eax3;
+    eax3 = parse_intnat();
+    eax4 = caml_copy_int32(ecx, eax3);
+    return eax4;
 }
 
 struct s394 {
@@ -62210,26 +62206,26 @@ struct s394 {
 
 void** caml_int32_neg(struct s394* a1) {
     void** v2;
-    void** eax3;
+    void** ecx3;
+    void** eax4;
 
     v2 = reinterpret_cast<void**>(-a1->f4);
-    eax3 = caml_copy_int32(v2);
-    return eax3;
+    eax4 = caml_copy_int32(ecx3, v2);
+    return eax4;
 }
 
 void** caml_atan_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     atan();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_804a59a() {
@@ -62237,17 +62233,16 @@ void fun_804a59a() {
 }
 
 void** caml_ldexp_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     fun_8049dc4();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx3, v4, v5, a2 >> 1);
-    return eax6;
+    eax5 = caml_copy_double(v3, v4, a2 >> 1);
+    return eax5;
 }
 
 void fun_804a14a() {
@@ -62255,17 +62250,16 @@ void fun_804a14a() {
 }
 
 void** caml_mul_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fmul qword [eax]");
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx3, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 uint32_t caml_string_lessthan(void** ecx, void** a2, void** a3, void** a4) {
@@ -62420,9 +62414,8 @@ void fun_8061647() {
 
 void** caml_sys_time() {
     void** v1;
-    void** ecx2;
-    void** v3;
-    void** eax4;
+    void** v2;
+    void** eax3;
 
     v1 = reinterpret_cast<void**>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4 + 0xffffffb0);
     fun_804a154(0, v1);
@@ -62438,8 +62431,8 @@ void** caml_sys_time() {
     __asm__("fdivrp st1, st0");
     __asm__("faddp st1, st0");
     __asm__("fstp qword [esp]");
-    eax4 = caml_copy_double(ecx2, 0, v1, v3);
-    return eax4;
+    eax3 = caml_copy_double(0, v1, v2);
+    return eax3;
 }
 
 struct s397 {
@@ -62473,13 +62466,13 @@ struct s399 {
 };
 
 void** caml_nativeint_shift_right_unsigned(struct s399* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_nativeint(v4);
+    eax5 = caml_copy_nativeint(ecx3, v4);
     return eax5;
 }
 
@@ -62490,24 +62483,26 @@ struct s400 {
 
 void** caml_int64_to_nativeint(struct s400* a1) {
     void** v2;
-    void** eax3;
+    void** ecx3;
+    void** eax4;
 
     v2 = a1->f4;
-    eax3 = caml_copy_nativeint(v2);
-    return eax3;
+    eax4 = caml_copy_nativeint(ecx3, v2);
+    return eax4;
 }
 
 void** caml_int32_of_float(int32_t a1) {
-    void** v2;
-    void** eax3;
+    void** ecx2;
+    void** v3;
+    void** eax4;
 
     __asm__("fld qword [eax]");
     __asm__("fnstcw word [ebp-0xa]");
     __asm__("fldcw word [ebp-0xc]");
     __asm__("fistp dword [esp]");
     __asm__("fldcw word [ebp-0xa]");
-    eax3 = caml_copy_int32(v2);
-    return eax3;
+    eax4 = caml_copy_int32(ecx2, v3);
+    return eax4;
 }
 
 int32_t caml_int_of_float(int32_t a1) {
@@ -62526,32 +62521,30 @@ void fun_804a1ea() {
 }
 
 void** caml_acos_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     acos();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_frexp_float(int32_t a1) {
     void* ebp2;
     void** ebx3;
     void** v4;
-    void** ecx5;
+    void** v5;
     void** v6;
-    void** v7;
-    void** eax8;
-    void** ecx9;
-    void** v10;
-    void** eax11;
-    void* v12;
+    void** eax7;
+    void** ecx8;
+    void** v9;
+    void** eax10;
+    void* v11;
 
     ebp2 = reinterpret_cast<void*>(reinterpret_cast<int32_t>(__zero_stack_offset()) - 4);
     ebx3 = caml_local_roots;
@@ -62561,26 +62554,25 @@ void** caml_frexp_float(int32_t a1) {
     __asm__("fstp qword [esp]");
     fun_804a554();
     __asm__("fstp qword [esp]");
-    eax8 = caml_copy_double(ecx5, v6, v7, v4);
-    eax11 = caml_alloc_tuple(ecx9, 2, v10, v4);
-    *reinterpret_cast<void***>(eax11) = eax8;
-    *reinterpret_cast<void***>(eax11 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v12) + reinterpret_cast<int32_t>(v12) + 1);
+    eax7 = caml_copy_double(v5, v6, v4);
+    eax10 = caml_alloc_tuple(ecx8, 2, v9, v4);
+    *reinterpret_cast<void***>(eax10) = eax7;
+    *reinterpret_cast<void***>(eax10 + 4) = reinterpret_cast<void**>(reinterpret_cast<int32_t>(v11) + reinterpret_cast<int32_t>(v11) + 1);
     caml_local_roots = ebx3;
-    return eax11;
+    return eax10;
 }
 
 void** caml_sub_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fsub qword [eax]");
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx3, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 int32_t caml_string_set(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7) {
@@ -62630,9 +62622,9 @@ void fun_806ac03() {
 
 struct s402 {
     signed char[12] pad12;
-    int32_t f12;
+    int32_t fc;
     signed char[8] pad24;
-    int32_t f24;
+    int32_t f18;
 };
 
 int32_t caml_gc_set(void** ecx, struct s402* a2) {
@@ -62658,24 +62650,24 @@ int32_t caml_gc_set(void** ecx, struct s402* a2) {
     void** v22;
     void** v23;
 
-    caml_verb_gc = reinterpret_cast<void*>(a2->f12 >> 1);
+    caml_verb_gc = reinterpret_cast<void*>(a2->fc >> 1);
     eax4 = norm_pfree(v3);
     zf5 = eax4 == caml_percent_free;
     if (!zf5) {
         caml_percent_free = eax4;
         v6 = eax4;
-        v7 = reinterpret_cast<void**>(0x8071a6f);
+        v7 = reinterpret_cast<void**>("New space overhead: %d%%\n");
         v8 = reinterpret_cast<void**>(32);
-        caml_gc_message(32, 0x8071a6f, v6, v9);
+        caml_gc_message(32, "New space overhead: %d%%\n", v6, v9);
     }
-    eax10 = norm_pmax(32, 0x8071a6f, v6);
+    eax10 = norm_pmax(32, "New space overhead: %d%%\n", v6);
     zf11 = eax10 == caml_percent_max;
     if (!zf11) {
         caml_percent_max = eax10;
         v6 = eax10;
-        v7 = reinterpret_cast<void**>(0x8071a89);
+        v7 = reinterpret_cast<void**>("New max overhead: %d%%\n");
         v8 = reinterpret_cast<void**>(32);
-        caml_gc_message(32, 0x8071a89, v6, v12);
+        caml_gc_message(32, "New max overhead: %d%%\n", v6, v12);
     }
     eax13 = norm_heapincr(32, v7, v6);
     eax14 = reinterpret_cast<void**>(eax13 << 2);
@@ -62683,28 +62675,28 @@ int32_t caml_gc_set(void** ecx, struct s402* a2) {
     if (!zf15) {
         caml_major_heap_increment = eax14;
         v6 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax14) >> 10);
-        v7 = reinterpret_cast<void**>(0x80719d4);
+        v7 = reinterpret_cast<void**>("New heap increment size: %luk bytes\n");
         v8 = reinterpret_cast<void**>(32);
-        caml_gc_message(32, 0x80719d4, v6, v16);
+        caml_gc_message(32, "New heap increment size: %luk bytes\n", v6, v16);
     }
-    ebx17 = reinterpret_cast<void**>(a2->f24 >> 1);
+    ebx17 = reinterpret_cast<void**>(a2->f18 >> 1);
     if (reinterpret_cast<unsigned char>(ebx17) >= reinterpret_cast<unsigned char>(2)) {
         ebx17 = reinterpret_cast<void**>(1);
     }
     zf18 = ebx17 == caml_allocation_policy;
     if (!zf18) {
         v6 = ebx17;
-        v7 = reinterpret_cast<void**>(0x8071aa1);
-        caml_gc_message(32, 0x8071aa1, v6, v19);
+        v7 = reinterpret_cast<void**>("New allocation policy: %d\n");
+        caml_gc_message(32, "New allocation policy: %d\n", v6, v19);
         v8 = ebx17;
-        caml_set_allocation_policy(v8, 0x8071aa1, v6);
+        caml_set_allocation_policy(v8, "New allocation policy: %d\n", v6);
     }
     eax20 = norm_minsize(v8, v7, v6);
     zf21 = eax20 == caml_minor_heap_size;
     if (!zf21) {
         v22 = reinterpret_cast<void**>(reinterpret_cast<unsigned char>(eax20) >> 10);
-        caml_gc_message(32, 0x80719fc, v22, v23);
-        caml_set_minor_heap_size(ecx, eax20, 0x80719fc, v22);
+        caml_gc_message(32, "New minor heap size: %luk bytes\n", v22, v23);
+        caml_set_minor_heap_size(ecx, eax20, "New minor heap size: %luk bytes\n", v22);
     }
     return 1;
 }
@@ -62851,9 +62843,9 @@ int32_t nativeint_deserialize(void** ecx, uint32_t* a2) {
         *a2 = eax4;
     } else {
         if (eax3 != 2) {
-            caml_deserialize_error(ecx, 0x8071378);
+            caml_deserialize_error(ecx, "input_value: ill-formed native integer");
         } else {
-            caml_deserialize_error(ecx, 0x807134c);
+            caml_deserialize_error(ecx, "input_value: native integer value too large");
         }
     }
     return 4;
@@ -62865,21 +62857,22 @@ struct s405 {
 };
 
 void** caml_nativeint_shift_right(struct s405* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_nativeint(v4);
+    eax5 = caml_copy_nativeint(ecx3, v4);
     return eax5;
 }
 
 void** caml_int32_of_int(int32_t a1) {
-    void** eax2;
+    void** ecx2;
+    void** eax3;
 
-    eax2 = caml_copy_int32(a1 >> 1);
-    return eax2;
+    eax3 = caml_copy_int32(ecx2, a1 >> 1);
+    return eax3;
 }
 
 uint32_t caml_eq_float(int32_t a1, uint32_t a2) {
@@ -62903,28 +62896,26 @@ uint32_t caml_eq_float(int32_t a1, uint32_t a2) {
 }
 
 void** caml_asin_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     asin();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_fmod_float(int32_t a1, int32_t a2) {
     int16_t ax3;
     int16_t fpu_status_word4;
-    void** ecx5;
+    void** v5;
     void** v6;
     void** v7;
-    void** v8;
-    void** eax9;
+    void** eax8;
 
     __asm__("fld qword [eax]");
     __asm__("fld qword [eax]");
@@ -62952,22 +62943,21 @@ void** caml_fmod_float(int32_t a1, int32_t a2) {
     fmod();
     addr_8067536_7:
     __asm__("fstp qword [esp]");
-    eax9 = caml_copy_double(ecx5, v6, v7, v8);
-    return eax9;
+    eax8 = caml_copy_double(v5, v6, v7);
+    return eax8;
 }
 
 void** caml_add_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fadd qword [eax]");
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx3, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 struct s406 {
@@ -63039,13 +63029,13 @@ struct s407 {
 };
 
 void** caml_nativeint_shift_left(struct s407* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 << *reinterpret_cast<unsigned char*>(&ecx3));
-    eax5 = caml_copy_nativeint(v4);
+    eax5 = caml_copy_nativeint(ecx3, v4);
     return eax5;
 }
 
@@ -63055,13 +63045,13 @@ struct s408 {
 };
 
 void** caml_int32_shift_right_unsigned(struct s408* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_int32(v4);
+    eax5 = caml_copy_int32(ecx3, v4);
     return eax5;
 }
 
@@ -63086,39 +63076,37 @@ uint32_t caml_neq_float(int32_t a1, uint32_t a2) {
 }
 
 void** caml_tanh_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     tanh();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_abs_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fabs ");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_806ac5f(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8) {
     void** eax9;
 
     intern_cleanup(ecx, __return_address(), a2, a3, a4, a5, a6, a7, a8);
-    eax9 = caml_failwith(ecx, 0x80715f8, a2, a3, a4);
+    eax9 = caml_failwith(ecx, "input_value: data block too large", a2, a3, a4);
     intern_src = eax9 + 1;
     goto 0x806aabd;
 }
@@ -63221,11 +63209,12 @@ struct s410 {
 
 void** caml_nativeint_xor(struct s409* a1, struct s410* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 ^ a1->f4);
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    eax5 = caml_copy_nativeint(ecx4, v3);
+    return eax5;
 }
 
 struct s411 {
@@ -63234,13 +63223,13 @@ struct s411 {
 };
 
 void** caml_int32_shift_right(struct s411* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 >> *reinterpret_cast<signed char*>(&ecx3));
-    eax5 = caml_copy_int32(v4);
+    eax5 = caml_copy_int32(ecx3, v4);
     return eax5;
 }
 
@@ -63255,32 +63244,30 @@ uint32_t caml_le_float(int32_t a1, uint32_t a2) {
 }
 
 void** caml_tan_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     tan();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_neg_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fchs ");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 struct s412 {
@@ -63354,13 +63341,13 @@ struct s414 {
     uint32_t f4;
 };
 
-void** caml_nativeint_or(struct s413* a1, struct s414* a2) {
-    void** v3;
-    void** eax4;
+void** caml_nativeint_or(void** ecx, struct s413* a2, struct s414* a3) {
+    void** v4;
+    void** eax5;
 
-    v3 = reinterpret_cast<void**>(a2->f4 | a1->f4);
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    v4 = reinterpret_cast<void**>(a3->f4 | a2->f4);
+    eax5 = caml_copy_nativeint(ecx, v4);
+    return eax5;
 }
 
 struct s415 {
@@ -63369,13 +63356,13 @@ struct s415 {
 };
 
 void** caml_int32_shift_left(struct s415* a1, int32_t a2) {
-    int32_t ecx3;
+    void** ecx3;
     void** v4;
     void** eax5;
 
-    ecx3 = a2 >> 1;
+    ecx3 = reinterpret_cast<void**>(a2 >> 1);
     v4 = reinterpret_cast<void**>(a1->f4 << *reinterpret_cast<unsigned char*>(&ecx3));
-    eax5 = caml_copy_int32(v4);
+    eax5 = caml_copy_int32(ecx3, v4);
     return eax5;
 }
 
@@ -63392,31 +63379,29 @@ uint32_t caml_lt_float(int32_t a1, int32_t a2) {
 }
 
 void** caml_cosh_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     cosh();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** caml_float_of_int(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fild dword [ebp-0xc]");
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void fun_806acac() {
@@ -63476,7 +63461,7 @@ void fun_806acac() {
         obj_counter = ecx4 + 1;
     }
     ecx5 = intern_color;
-    ecx6 = reinterpret_cast<void**>(&ecx5->f2301);
+    ecx6 = reinterpret_cast<void**>(&ecx5->f8fd);
     edx7 = intern_dest;
     *reinterpret_cast<void***>(edx7) = ecx6;
     tmp32_8 = intern_dest + 12;
@@ -63562,11 +63547,12 @@ struct s417 {
 
 void** caml_nativeint_and(struct s416* a1, struct s417* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 & a1->f4);
-    eax4 = caml_copy_nativeint(v3);
-    return eax4;
+    eax5 = caml_copy_nativeint(ecx4, v3);
+    return eax5;
 }
 
 struct s418 {
@@ -63581,11 +63567,12 @@ struct s419 {
 
 void** caml_int32_xor(struct s418* a1, struct s419* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 ^ a1->f4);
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 uint32_t caml_ge_float(int32_t a1, uint32_t a2) {
@@ -63600,18 +63587,17 @@ uint32_t caml_ge_float(int32_t a1, uint32_t a2) {
 }
 
 void** caml_cos_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     cos();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 struct s420 {
@@ -63769,7 +63755,7 @@ void** caml_float_of_string(void** ecx, void** a2) {
             caml_stat_free(ecx, edi21, v28, v31, v32, v33, v34, v35, v36, v37, v38, v39, v40, v41, v42, v43, v44);
             esp19 = esp19 - 4 + 4;
         }
-        caml_failwith(ecx, 0x80713d2, v28, v45, v46);
+        caml_failwith(ecx, "float_of_string", v28, v45, v46);
         ebp47 = reinterpret_cast<void*>(esp19 - 4 + 4 - 4);
         esi48 = reinterpret_cast<void**>(v49 >> 1);
         eax63 = caml_string_length(ecx, v28, v50, v51, v52, v53, v54, v55, v56, v57, v58, v59, v60, v61, v62);
@@ -63800,7 +63786,7 @@ void** caml_float_of_string(void** ecx, void** a2) {
             if (edi66 != reinterpret_cast<int32_t>(ebp47) + 0xffffffa8) {
                 caml_stat_free(ecx, edi66, v73, v76, v77, v78, v79, v80, v81, v82, v83, v84, v85, v86, v87, v88, v89);
             }
-            caml_failwith(ecx, 0x80713d2, v73, v90, v91);
+            caml_failwith(ecx, "float_of_string", v73, v90, v91);
         } else {
             if (edi66 != reinterpret_cast<int32_t>(ebp47) + 0xffffffa8) {
                 v74 = edi66;
@@ -63808,7 +63794,7 @@ void** caml_float_of_string(void** ecx, void** a2) {
             }
             __asm__("fld qword [ebp-0x70]");
             __asm__("fstp qword [esp]");
-            caml_copy_double(ecx, v74, v73, v106);
+            caml_copy_double(v74, v73, v106);
             goto "float_of_string";
         }
     } else {
@@ -63818,7 +63804,7 @@ void** caml_float_of_string(void** ecx, void** a2) {
         }
         __asm__("fld qword [ebp-0x70]");
         __asm__("fstp qword [esp]");
-        eax122 = caml_copy_double(ecx, v29, v28, v121);
+        eax122 = caml_copy_double(v29, v28, v121);
         return eax122;
     }
 }
@@ -63880,9 +63866,9 @@ void** caml_nativeint_mod(struct s421* a1, struct s422* a2) {
         caml_raise_zero_divide(ecx4);
     }
     if (edx3 != 0x80000000 || !reinterpret_cast<int1_t>(ecx4 == 0xffffffff)) {
-        eax5 = caml_copy_nativeint(edx3 % reinterpret_cast<signed char>(ecx4));
+        eax5 = caml_copy_nativeint(ecx4, edx3 % reinterpret_cast<signed char>(ecx4));
     } else {
-        eax5 = caml_copy_nativeint(0);
+        eax5 = caml_copy_nativeint(ecx4, 0);
     }
     return eax5;
 }
@@ -63899,11 +63885,12 @@ struct s424 {
 
 void** caml_int32_or(struct s423* a1, struct s424* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 | a1->f4);
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 uint32_t caml_gt_float(int32_t a1, int32_t a2) {
@@ -63920,18 +63907,17 @@ uint32_t caml_gt_float(int32_t a1, int32_t a2) {
 }
 
 void** caml_sinh_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     sinh();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** camlUnix__fun_2578(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15) {
@@ -63976,11 +63962,12 @@ struct s426 {
 
 void** caml_int32_and(struct s425* a1, struct s426* a2) {
     void** v3;
-    void** eax4;
+    void** ecx4;
+    void** eax5;
 
     v3 = reinterpret_cast<void**>(a2->f4 & a1->f4);
-    eax4 = caml_copy_int32(v3);
-    return eax4;
+    eax5 = caml_copy_int32(ecx4, v3);
+    return eax5;
 }
 
 int32_t caml_float_compare(int32_t a1, int32_t a2) {
@@ -64047,18 +64034,17 @@ int32_t caml_float_compare(int32_t a1, int32_t a2) {
 }
 
 void** caml_sin_float(int32_t a1) {
-    void** ecx2;
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp]");
     sin();
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx2, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** camlUnix__fun_2580(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16) {
@@ -64118,19 +64104,18 @@ void** caml_int32_mod(struct s427* a1, struct s428* a2) {
         caml_raise_zero_divide(ecx4);
     }
     if (edx3 != 0x80000000 || !reinterpret_cast<int1_t>(ecx4 == 0xffffffff)) {
-        eax5 = caml_copy_int32(edx3 % reinterpret_cast<signed char>(ecx4));
+        eax5 = caml_copy_int32(ecx4, edx3 % reinterpret_cast<signed char>(ecx4));
     } else {
-        eax5 = caml_copy_int32(0);
+        eax5 = caml_copy_int32(ecx4, 0);
     }
     return eax5;
 }
 
 void** caml_power_float(int32_t a1, int32_t a2) {
-    void** ecx3;
+    void** v3;
     void** v4;
     void** v5;
-    void** v6;
-    void** eax7;
+    void** eax6;
 
     __asm__("fld qword [eax]");
     __asm__("fstp qword [esp+0x8]");
@@ -64138,8 +64123,8 @@ void** caml_power_float(int32_t a1, int32_t a2) {
     __asm__("fstp qword [esp]");
     pow();
     __asm__("fstp qword [esp]");
-    eax7 = caml_copy_double(ecx3, v4, v5, v6);
-    return eax7;
+    eax6 = caml_copy_double(v3, v4, v5);
+    return eax6;
 }
 
 void** camlUnix__fun_2582(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16) {
@@ -64193,11 +64178,11 @@ void fun_804fd51(void** ecx, void** a2, void** a3, void** a4, void** a5, void** 
     goto camlPervasives__output_string_1191;
 }
 
-void** caml_sqrt_float(void** ecx, int32_t a2) {
+void** caml_sqrt_float(int32_t a1) {
+    void** v2;
     void** v3;
     void** v4;
-    void** v5;
-    void** eax6;
+    void** eax5;
 
     __asm__("fld qword [eax]");
     __asm__("fld st0");
@@ -64217,8 +64202,8 @@ void** caml_sqrt_float(void** ecx, int32_t a2) {
     sqrt();
     addr_8067327_5:
     __asm__("fstp qword [esp]");
-    eax6 = caml_copy_double(ecx, v3, v4, v5);
-    return eax6;
+    eax5 = caml_copy_double(v2, v3, v4);
+    return eax5;
 }
 
 void** camlUnix__fun_2584(void** ecx, void** a2, void** a3, void** a4, void** a5, void** a6, void** a7, void** a8, void** a9, void** a10, void** a11, void** a12, void** a13, void** a14, void** a15, void** a16) {
@@ -65122,12 +65107,12 @@ void camlUnix__handle_unix_error_1171(void** a1, void** a2, void** a3, void** a4
     ecx16 = camlUnix;
     if (eax15->f0 != ecx16) 
         goto 0x804c360;
-    v17 = eax15->f12;
+    v17 = eax15->fc;
     v18 = eax15->f8;
     v19 = eax15->f4;
     ebx20 = camlSys;
     if (reinterpret_cast<unsigned char>(*reinterpret_cast<void***>(ebx20 + 0xfffffffc)) >> 9 <= 1) {
-        eax21 = caml_ml_array_bound_error(v18, v19, v17, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
+        eax21 = caml_ml_array_bound_error(ecx16, v18, v19, v17, __return_address(), a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
         if (reinterpret_cast<signed char>(ecx16) < reinterpret_cast<signed char>(1)) 
             goto 0x804c3e0;
         if (reinterpret_cast<signed char>(eax22) < reinterpret_cast<signed char>(1)) 

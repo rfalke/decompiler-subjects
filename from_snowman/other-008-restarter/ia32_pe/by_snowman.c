@@ -9,7 +9,7 @@ int32_t LocalAlloc = 0x2438;
 
 struct s0 {
     signed char[2048] pad2048;
-    int16_t f2048;
+    int16_t f800;
 };
 
 int32_t wsprintfW = 0x24a0;
@@ -70,7 +70,7 @@ void fun_401000(uint16_t* a1, uint16_t* a2, uint16_t* a3, uint16_t* a4, uint16_t
     v32 = ecx31 + ecx31 + 0x2000;
     eax33 = reinterpret_cast<struct s0*>(LocalAlloc(64, v32, eax29, v27, 0x1300, 0, eax24, 0x400, v25, 0, 0, edi21, esi22, ebx23));
     wsprintfW(eax33, 0x402080, eax29, a1, eax24, v34, 64, v32, eax29, v27, 0x1300, 0, eax24, 0x400, v25, 0, 0, edi21, esi22, ebx23);
-    eax33->f2048 = 0;
+    eax33->f800 = 0;
     MessageBoxW(0, eax33, "E", 0, 64, v32, eax29, v27, 0x1300, 0, eax24, 0x400, v25, 0, 0, edi21, esi22, ebx23);
     ebx35 = LocalFree;
     ebx35(v36, 0, eax33, "E", 0, 64, v32, eax29, v27, 0x1300, 0, eax24, 0x400, v25, 0, 0, edi21, esi22, ebx23);
@@ -157,8 +157,8 @@ struct s1 {
     signed char[4] pad4;
     uint16_t* f4;
     uint16_t* f8;
-    uint16_t* f12;
-    uint16_t* f16;
+    uint16_t* fc;
+    uint16_t* f10;
 };
 
 int32_t OpenProcess = 0x23c8;
@@ -335,9 +335,9 @@ uint32_t fun_401130() {
         CloseHandle(v61, v49, 0, 1, 0, v34);
         eax70 = fun_4010a0(v61, v49, 0, 1, 0, v34, v10, v8, v6, v3, v1, v62, v63, v64, v65, v66, v67, v68, v69);
         if (eax70) {
-            esi71 = ebx13->f12;
+            esi71 = ebx13->fc;
         } else {
-            esi71 = ebx13->f16;
+            esi71 = ebx13->f10;
         }
         eax72 = ebx13->f8;
         v73 = esi71;
@@ -372,7 +372,7 @@ uint32_t fun_401130() {
         if (!eax97) {
             fun_401000(esi71, v96, v95, v94, v93, v92, v91, v90, v89, v88, v87, v74, v73, v61, v49, 0, 1, 0, v34, 68);
         }
-        if (esi71 != ebx13->f12) {
+        if (esi71 != ebx13->fc) {
             esi98 = 100;
             do {
                 fun_4010a0(v96, v95, v94, v93, v92, v91, v90, v89, v88, v87, v74, v73, v61, v49, 0, 1, 0, v34, 68);

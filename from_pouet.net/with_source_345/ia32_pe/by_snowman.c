@@ -1,7 +1,7 @@
 
 struct s0 {
     signed char[88] pad88;
-    int32_t f88;
+    int32_t f58;
 };
 
 void fun_0(void* a1, int32_t a2, int32_t a3, void* a4, int32_t a5);
@@ -77,14 +77,12 @@ void fun_410000(signed char* ecx) {
         *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx35) + 1) = 0x68;
         fun_0(ebx31, v34, 56, ebx31, __return_address());
         fun_1e(ebx31, v34, 56, ebx31, __return_address());
-        v36 = ebx35->f88;
+        v36 = ebx35->f58;
         goto v36;
     }
 }
 
 unsigned char g6ace6f33;
-
-int32_t gc1e87342;
 
 void** gdf77eefb;
 
@@ -112,7 +110,6 @@ void fun_4100d7(int32_t ecx) {
         while (1) {
             g6ace6f33 = reinterpret_cast<unsigned char>(g6ace6f33 & bh4);
             __asm__("ror esi, cl");
-            gc1e87342 = *esp2;
             esp5 = reinterpret_cast<void*>(0xdf77eeff);
             eax6 = reinterpret_cast<int32_t>(esp2 + 1);
             __asm__("out dx, eax");

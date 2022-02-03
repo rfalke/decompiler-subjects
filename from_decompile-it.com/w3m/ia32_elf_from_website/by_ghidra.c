@@ -99,7 +99,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[15];
+    char _unused2[56];
 };
 
 struct _IO_marker {
@@ -310,7 +310,7 @@ struct _struct_1030 {
 };
 
 union _union_1028 {
-    int _pad[125];
+    int _pad[29];
     struct _struct_1029 _kill;
     struct _struct_1030 _timer;
     struct _struct_1031 _rt;
@@ -375,8 +375,8 @@ struct encoded_stream {
     struct ens_handle * handle;
     char type;
     char iseos;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field4_0x16;
+    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -386,8 +386,8 @@ struct base_stream {
     void * handle;
     char type;
     char iseos;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field4_0x16;
+    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -397,8 +397,8 @@ struct file_stream {
     struct file_handle * handle;
     char type;
     char iseos;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field4_0x16;
+    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -408,8 +408,8 @@ struct str_stream {
     Str handle;
     char type;
     char iseos;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field4_0x16;
+    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -426,9 +426,9 @@ struct ens_handle {
     Str s;
     int pos;
     char encoding;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field4_0xd;
+    undefined field5_0xe;
+    undefined field6_0xf;
 };
 
 struct file_handle {
@@ -477,14 +477,14 @@ typedef wc_uint32 wc_ces;
 struct symbol_set {
     wc_ces ces;
     char width;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
     char * * item;
     char encode;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field7_0xd;
+    undefined field8_0xe;
+    undefined field9_0xf;
 };
 
 typedef struct charset_symbol_set charset_symbol_set, *Pcharset_symbol_set;
@@ -637,18 +637,18 @@ struct _anchor {
     char * referer;
     char * title;
     uchar accesskey;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    undefined field5_0x11;
+    undefined field6_0x12;
+    undefined field7_0x13;
     struct BufferPoint start;
     struct BufferPoint end;
     int hseq;
     char slave;
-    undefined field_0x31;
+    undefined field12_0x31;
     short y;
     short rows;
-    undefined field_0x36;
-    undefined field_0x37;
+    undefined field15_0x36;
+    undefined field16_0x37;
     Image * image;
 };
 
@@ -672,9 +672,9 @@ struct _imageCache {
     char * touch;
     pid_t pid;
     char loaded;
-    undefined field_0x15;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field6_0x15;
+    undefined field7_0x16;
+    undefined field8_0x17;
     int index;
     short width;
     short height;
@@ -691,9 +691,9 @@ struct _image {
     short rows;
     char * map;
     char ismap;
-    undefined field_0x19;
-    undefined field_0x1a;
-    undefined field_0x1b;
+    undefined field10_0x19;
+    undefined field11_0x1a;
+    undefined field12_0x1b;
     int touch;
     ImageCache * cache;
 };
@@ -703,8 +703,8 @@ typedef struct _AlarmEvent _AlarmEvent, *P_AlarmEvent;
 struct _AlarmEvent {
     int sec;
     short status;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x6;
+    undefined field3_0x7;
     int cmd;
     void * data;
 };
@@ -745,15 +745,15 @@ struct Breakpoint {
     Anchor anchor;
     Str img_alt;
     char fontstat[7];
-    undefined field_0x57;
+    undefined field7_0x57;
     short nobr_level;
     Lineprop prev_ctype;
     char init_flag;
-    undefined field_0x5d;
+    undefined field11_0x5d;
     short top_margin;
     short bottom_margin;
-    undefined field_0x62;
-    undefined field_0x63;
+    undefined field14_0x62;
+    undefined field15_0x63;
 };
 
 struct cmdtable {
@@ -771,21 +771,21 @@ struct readbuffer {
     int flag_sp;
     int status;
     uchar end_tag;
-    undefined field_0x41;
+    undefined field9_0x41;
     short table_level;
     short nobr_level;
-    undefined field_0x46;
-    undefined field_0x47;
+    undefined field12_0x46;
+    undefined field13_0x47;
     Anchor anchor;
     Str img_alt;
     char fontstat[7];
     char fontstat_stack[5][7];
-    undefined field_0xb2;
-    undefined field_0xb3;
+    undefined field18_0xb2;
+    undefined field19_0xb3;
     int fontstat_sp;
     Lineprop prev_ctype;
-    undefined field_0xba;
-    undefined field_0xbb;
+    undefined field22_0xba;
+    undefined field23_0xbb;
     struct Breakpoint bp;
     struct cmdtable * tag_stack[10];
     int tag_sp;
@@ -854,8 +854,8 @@ struct form_item_list {
 struct http_request {
     char command;
     char flag;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field2_0x2;
+    undefined field3_0x3;
     char * referer;
     FormList * request;
 };
@@ -890,15 +890,15 @@ struct cookie {
     struct portlist * portl;
     char version;
     char flag;
-    undefined field_0x4a;
-    undefined field_0x4b;
+    undefined field11_0x4a;
+    undefined field12_0x4b;
     struct cookie * next;
 };
 
 struct portlist {
     ushort port;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x2;
+    undefined field2_0x3;
     struct portlist * next;
 };
 
@@ -955,21 +955,21 @@ struct _textlinelist {
     TextLineListItem * first;
     TextLineListItem * last;
     short nitem;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0xa;
+    undefined field4_0xb;
 };
 
 struct environment {
     uchar env;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
     int type;
     int count;
     char indent;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field7_0xd;
+    undefined field8_0xe;
+    undefined field9_0xf;
 };
 
 struct _textlinelistitem {
@@ -981,8 +981,8 @@ struct _textlinelistitem {
 struct _TextLine {
     Str line;
     short pos;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x6;
+    undefined field3_0x7;
 };
 
 typedef struct _MapList _MapList, *P_MapList;
@@ -1011,8 +1011,8 @@ struct _generallist {
     ListItem * first;
     ListItem * last;
     short nitem;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0xa;
+    undefined field4_0xb;
 };
 
 typedef uchar Linecolor;
@@ -1078,16 +1078,16 @@ struct frameset_queue {
 struct frame_element {
     char attr;
     char dummy;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field2_0x2;
+    undefined field3_0x3;
     char * name;
 };
 
 struct frameset {
     char attr;
     char dummy;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field2_0x2;
+    undefined field3_0x3;
     char * name;
     ParsedURL * currentURL;
     char * * width;
@@ -1102,8 +1102,8 @@ struct _textlist {
     TextListItem * first;
     TextListItem * last;
     short nitem;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field3_0xa;
+    undefined field4_0xb;
 };
 
 struct _anchorList {
@@ -1137,8 +1137,8 @@ struct mailcap {
 struct frame_body {
     char attr;
     char flags;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field2_0x2;
+    undefined field3_0x3;
     char * name;
     char * url;
     ParsedURL * baseURL;
@@ -1160,8 +1160,8 @@ struct _Line {
     long linenumber;
     long real_linenumber;
     ushort usrflags;
-    undefined field_0x26;
-    undefined field_0x27;
+    undefined field10_0x26;
+    undefined field11_0x27;
     int size;
     int bpos;
     int bwidth;
@@ -1172,9 +1172,9 @@ struct _LinkList {
     char * title;
     char * ctype;
     char type;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field4_0xd;
+    undefined field5_0xe;
+    undefined field6_0xf;
     struct _LinkList * next;
 };
 
@@ -1193,8 +1193,8 @@ struct _Buffer {
     char * real_type;
     int allLine;
     short bufferprop;
-    undefined field_0x42;
-    undefined field_0x43;
+    undefined field14_0x42;
+    undefined field15_0x43;
     int currentColumn;
     short cursorX;
     short cursorY;
@@ -1224,14 +1224,14 @@ struct _Buffer {
     int * clone;
     size_t trbyte;
     char check_url;
-    undefined field_0xcd;
-    undefined field_0xce;
-    undefined field_0xcf;
+    undefined field45_0xcd;
+    undefined field46_0xce;
+    undefined field47_0xcf;
     wc_ces document_charset;
     wc_uint8 auto_detect;
-    undefined field_0xd5;
-    undefined field_0xd6;
-    undefined field_0xd7;
+    undefined field50_0xd5;
+    undefined field51_0xd6;
+    undefined field52_0xd7;
     TextList * document_header;
     FormItemList * form_submit;
     char * savecache;
@@ -1259,9 +1259,9 @@ struct _MapArea {
     char * target;
     char * alt;
     char shape;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field4_0xd;
+    undefined field5_0xe;
+    undefined field6_0xf;
     short * coords;
     int ncoords;
     short center_x;
@@ -1298,8 +1298,8 @@ struct _TabBuffer {
     short x1;
     short x2;
     short y;
-    undefined field_0x16;
-    undefined field_0x17;
+    undefined field7_0x16;
+    undefined field8_0x17;
 };
 
 typedef struct _MouseAction MouseAction;
@@ -1324,11 +1324,11 @@ typedef struct table_linfo table_linfo, *Ptable_linfo;
 struct table_linfo {
     Lineprop prev_ctype;
     char prev_spaces;
-    undefined field_0x3;
+    undefined field2_0x3;
     Str prevchar;
     short length;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field5_0xa;
+    undefined field6_0xb;
 };
 
 typedef ushort table_attr;
@@ -1341,12 +1341,12 @@ struct table_mode {
     char caption;
     short nobr_offset;
     char nobr_level;
-    undefined field_0x9;
+    undefined field5_0x9;
     short anchor_offset;
     uchar end_tag;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field8_0xd;
+    undefined field9_0xe;
+    undefined field10_0xf;
 };
 
 typedef struct table_cell table_cell, *Ptable_cell;
@@ -1416,16 +1416,16 @@ struct table {
     GeneralList * * * tabdata;
     table_attr * * tabattr;
     table_attr trattr;
-    undefined field_0x4e;
-    undefined field_0x4f;
+    undefined field20_0x4e;
+    undefined field21_0x4f;
     Str * * tabidvalue;
     Str * tridvalue;
     short tabwidth[50];
     short minimum_width[50];
     short fixed_width[50];
     struct table_cell cell;
-    undefined field_0x2a2;
-    undefined field_0x2a3;
+    undefined field28_0x2a2;
+    undefined field29_0x2a3;
     short * tabheight;
     struct table_in * tables;
     short ntable;
@@ -1458,14 +1458,14 @@ struct wc_wchar_t {
 
 struct longchar {
     char type;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
     struct wc_wchar_t wch;
     uchar ch;
-    undefined field_0xd;
-    undefined field_0xe;
-    undefined field_0xf;
+    undefined field6_0xd;
+    undefined field7_0xe;
+    undefined field8_0xf;
 };
 
 union anon_union.conflict218b8_for_p {
@@ -1475,9 +1475,9 @@ union anon_union.conflict218b8_for_p {
 struct regexchar {
     union anon_union.conflict218b8_for_p p;
     uchar mode;
-    undefined field_0x5;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
 };
 
 struct regex {
@@ -1507,26 +1507,26 @@ struct Gpm_Connect {
 };
 
 typedef enum Gpm_Etype {
-    GPM_TRIPLE=64,
-    GPM_HARD=256,
-    GPM_SINGLE=16,
-    GPM_UP=8,
     GPM_MOVE=1,
-    GPM_DOWN=4,
-    GPM_LEAVE=1024,
-    GPM_DOUBLE=32,
     GPM_DRAG=2,
+    GPM_DOWN=4,
+    GPM_UP=8,
+    GPM_SINGLE=16,
+    GPM_DOUBLE=32,
+    GPM_TRIPLE=64,
+    GPM_MFLAG=128,
+    GPM_HARD=256,
     GPM_ENTER=512,
-    GPM_MFLAG=128
+    GPM_LEAVE=1024
 } Gpm_Etype;
 
 typedef struct Gpm_Event Gpm_Event, *PGpm_Event;
 
 typedef enum Gpm_Margin {
-    GPM_RGT=8,
-    GPM_LFT=4,
+    GPM_TOP=1,
     GPM_BOT=2,
-    GPM_TOP=1
+    GPM_LFT=4,
+    GPM_RGT=8
 } Gpm_Margin;
 
 struct Gpm_Event {
@@ -1572,8 +1572,8 @@ typedef struct sockaddr_storage sockaddr_storage, *Psockaddr_storage;
 
 struct sockaddr_storage {
     sa_family_t ss_family;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x2;
+    undefined field2_0x3;
     ulong __ss_align;
     char __ss_padding[120];
 };
@@ -1607,15 +1607,15 @@ struct sockaddr_in6 {
 };
 
 typedef enum __socket_type {
-    SOCK_CLOEXEC=524288,
     SOCK_STREAM=1,
-    SOCK_RAW=3,
-    SOCK_NONBLOCK=2048,
-    SOCK_DCCP=6,
-    SOCK_SEQPACKET=5,
-    SOCK_PACKET=10,
     SOCK_DGRAM=2,
-    SOCK_RDM=4
+    SOCK_RAW=3,
+    SOCK_RDM=4,
+    SOCK_SEQPACKET=5,
+    SOCK_DCCP=6,
+    SOCK_PACKET=10,
+    SOCK_NONBLOCK=2048,
+    SOCK_CLOEXEC=524288
 } __socket_type;
 
 typedef struct sockaddr_in sockaddr_in, *Psockaddr_in;
@@ -1913,19 +1913,9 @@ struct wc_gset {
     wc_ccs ccs;
     wc_uchar g;
     wc_bool init;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field3_0x6;
+    undefined field4_0x7;
 };
-
-typedef struct wc_map3 wc_map3, *Pwc_map3;
-
-struct wc_map3 {
-    wc_uint16 code;
-    wc_uint16 code2;
-    wc_uint16 code3;
-};
-
-typedef struct wc_status wc_status, *Pwc_status;
 
 typedef struct wc_ces_info wc_ces_info, *Pwc_ces_info;
 
@@ -1940,12 +1930,22 @@ struct wc_ces_info {
     Str (* char_conv)(...);
 };
 
+typedef struct wc_map3 wc_map3, *Pwc_map3;
+
+struct wc_map3 {
+    wc_uint16 code;
+    wc_uint16 code2;
+    wc_uint16 code3;
+};
+
+typedef struct wc_status wc_status, *Pwc_status;
+
 struct wc_status {
     struct wc_ces_info * ces_info;
     wc_uint8 gr;
     wc_uint8 gl;
     wc_uint8 ss;
-    undefined field_0x7;
+    undefined field4_0x7;
     wc_ccs g0_ccs;
     wc_ccs g1_ccs;
     wc_ccs design[4];
@@ -2024,428 +2024,428 @@ struct auth_cookie {
 };
 
 typedef enum anon_enum_32.conflictd1f {
-    _NL_CTYPE_TRANSLIT_IGNORE_LEN=68,
-    _NL_CTYPE_TOLOWER=3,
-    _NL_CTYPE_OUTDIGIT0_WC=51,
-    _NL_CTYPE_TRANSLIT_IGNORE=69,
-    _NL_IDENTIFICATION_LANGUAGE=786439,
-    WC_CES_N_CP1257=51,
-    WC_CES_N_CP1258=65,
-    WC_CES_N_CP1255=49,
-    WC_CES_N_CP1256=50,
-    _NL_NUM_LC_MEASUREMENT=720898,
-    _NL_CTYPE_EXTRA_MAP_7=78,
-    _NL_CTYPE_INDIGITS9_WC=40,
-    _NL_CTYPE_EXTRA_MAP_6=77,
-    _NL_CTYPE_EXTRA_MAP_9=80,
-    _NL_CTYPE_EXTRA_MAP_8=79,
-    _NL_CTYPE_OUTDIGIT3_MB=44,
-    __YESSTR=327682,
-    _NL_CTYPE_TRANSLIT_DEFAULT_MISSING=67,
-    _NL_CTYPE_INDIGITS2_MB=22,
-    __INT_N_SEP_BY_SPACE=262163,
-    PM_STR=131111,
-    _NL_ADDRESS_COUNTRY_POST=589826,
-    _NL_MONETARY_DUO_P_SEP_BY_SPACE=262171,
-    WC_CES_N_CP1250=44,
-    AM_STR=131110,
-    WC_CES_N_CP1253=47,
-    _NL_CTYPE_TRANSLIT_FROM_TBL=63,
-    WC_CES_N_CP1254=48,
-    WC_CES_N_CP1251=45,
-    WC_CES_N_CP1252=46,
-    AUTHCHR_TOKEN=2,
-    _NL_TIME_ERA_ENTRIES=131123,
-    __INT_FRAC_DIGITS=262151,
-    WC_CES_N_CP1006=43,
-    _NL_CTYPE_TOUPPER32=15,
-    WC_CES_N_TCVN_5712=66,
-    _NL_IDENTIFICATION_APPLICATION=786442,
-    _NL_NUM_LC_IDENTIFICATION=786448,
-    _NL_NUM_LC_PAPER=458755,
-    WC_CES_N_SHIFT_JIS=56,
-    T_FMT_AMPM=131115,
-    _NL_ADDRESS_COUNTRY_AB2=589827,
-    _NL_ADDRESS_COUNTRY_AB3=589828,
-    THOUSEP=65537,
-    _NL_COLLATE_COLLSEQWC=196625,
-    _NL_IDENTIFICATION_SOURCE=786433,
-    _NL_IDENTIFICATION_AUDIENCE=786441,
-    _NL_MONETARY_UNO_VALID_FROM=262182,
-    _NL_WABDAY_6=131129,
+    AUTHCHR_NUL=0,
+    WC_CES_N_US_ASCII=0,
     _NL_CTYPE_CLASS=0,
-    WC_CES_N_UTF_7=70,
-    _NL_WABDAY_5=131128,
-    _NL_MONETARY_DECIMAL_POINT_WC=262187,
-    WC_CES_N_UTF_8=69,
-    _NL_TIME_CAL_DIRECTION=131178,
-    _NL_WABDAY_7=131130,
-    _NL_WABDAY_2=131125,
-    _NL_WABDAY_1=131124,
-    _NL_WABDAY_4=131127,
-    _NL_WABDAY_3=131126,
-    WC_CES_N_ISO_8859_12=12,
-    WC_CES_N_ISO_8859_13=13,
-    _NL_NUM=786449,
-    WC_CES_N_ISO_8859_14=14,
-    WC_CES_N_ISO_8859_15=15,
-    WC_CES_N_ISO_8859_16=16,
-    _NL_IDENTIFICATION_REVISION=786444,
-    _NL_NUM_LC_TELEPHONE=655365,
-    _NL_CTYPE_EXTRA_MAP_3=74,
-    _NL_CTYPE_EXTRA_MAP_2=73,
-    _NL_CTYPE_EXTRA_MAP_5=76,
-    __INT_CURR_SYMBOL=262144,
-    _NL_CTYPE_EXTRA_MAP_4=75,
-    _NL_ADDRESS_LANG_TERM=589834,
-    WC_CES_N_KOI8_U=53,
-    WC_CES_N_KOI8_R=52,
-    _NL_CTYPE_EXTRA_MAP_1=72,
-    _NL_NUM_LC_COLLATE=196627,
-    _NL_NUM_LC_MESSAGES=327685,
-    _NL_IDENTIFICATION_TEL=786437,
-    _NL_COLLATE_NRULES=196608,
-    WC_CES_N_ISO_8859_10=10,
-    _NL_CTYPE_OUTDIGIT2_MB=43,
-    WC_CES_N_ISO_8859_11=11,
-    __NOEXPR=327681,
-    _NL_CTYPE_GAP1=2,
-    WC_CES_N_ISO_2022_KR=21,
-    _NL_CTYPE_MB_CUR_MAX=13,
-    _NL_NAME_CODESET=524294,
-    _NL_MONETARY_CODESET=262189,
-    __MON_THOUSANDS_SEP=262147,
     __LC_CTYPE=0,
-    WC_CES_N_EUC_CN=23,
-    _NL_W_DATE_FMT=131181,
-    _NL_CTYPE_MAP_TO_NONASCII=70,
-    _NL_TIME_WEEK_1STDAY=131174,
-    WC_CES_N_JOHAB=64,
-    _NL_CTYPE_OUTDIGIT1_WC=52,
-    _NL_MONETARY_DUO_FRAC_DIGITS=262169,
-    _NL_PAPER_CODESET=458754,
-    _NL_CTYPE_NONASCII_CASE=71,
-    WC_CES_N_ISO_2022_JP=17,
-    __LC_IDENTIFICATION=12,
-    _NL_CTYPE_GAP6=9,
-    _NL_CTYPE_GAP5=8,
-    _NL_CTYPE_GAP4=7,
-    _NL_CTYPE_GAP3=6,
-    _NL_CTYPE_INDIGITS8_WC=39,
+    AUTHCHR_SEP=1,
+    WC_CES_N_ISO_8859_1=1,
+    _NL_CTYPE_TOUPPER=1,
+    __LC_NUMERIC=1,
+    AUTHCHR_TOKEN=2,
+    WC_CES_N_ISO_8859_2=2,
+    _NL_CTYPE_GAP1=2,
+    __LC_TIME=2,
+    WC_CES_N_ISO_8859_3=3,
+    _NL_CTYPE_TOLOWER=3,
+    __LC_COLLATE=3,
+    WC_CES_N_ISO_8859_4=4,
     _NL_CTYPE_GAP2=4,
-    __THOUSANDS_SEP=65537,
-    _NL_WERA_YEAR=131168,
-    _NL_IDENTIFICATION_ABBREVIATION=786443,
-    _NL_CTYPE_OUTDIGIT4_MB=45,
-    WC_CES_N_HZ_GB_2312=60,
-    _NL_CTYPE_INDIGITS1_MB=21,
-    _NL_WD_T_FMT=131164,
-    _NL_MONETARY_DUO_N_SIGN_POSN=262179,
-    ABMON_10=131095,
-    _NL_WD_FMT=131165,
-    ABMON_11=131096,
-    _NL_CTYPE_TRANSLIT_TAB_SIZE=61,
-    ABMON_12=131097,
-    _NL_TIME_WEEK_NDAYS=131173,
-    _NL_CTYPE_TOLOWER32=16,
-    _NL_WMON_9=131158,
-    _NL_WMON_8=131157,
-    _NL_COLLATE_INDIRECTMB=196613,
-    _NL_WMON_3=131152,
-    _NL_WMON_2=131151,
-    _NL_WMON_1=131150,
-    _NL_WMON_7=131156,
-    _NL_WMON_6=131155,
-    _NL_WMON_5=131154,
-    _NL_WMON_4=131153,
-    _NL_TELEPHONE_CODESET=655364,
-    _NL_COLLATE_TABLEWC=196617,
-    __DECIMAL_POINT=65536,
-    _NL_CTYPE_EXTRA_MAP_14=85,
-    _NL_CTYPE_EXTRA_MAP_13=84,
-    _NL_ADDRESS_COUNTRY_NUM=589830,
-    _NL_CTYPE_INDIGITS_WC_LEN=30,
-    _NL_CTYPE_WIDTH=12,
-    _NL_CTYPE_EXTRA_MAP_10=81,
-    _NL_CTYPE_EXTRA_MAP_12=83,
-    _NL_NUM_LC_ADDRESS=589837,
-    _NL_CTYPE_EXTRA_MAP_11=82,
-    __MON_DECIMAL_POINT=262146,
-    _NL_WALT_DIGITS=131170,
+    __LC_MONETARY=4,
+    WC_CES_N_ISO_8859_5=5,
+    _NL_CTYPE_CLASS32=5,
+    __LC_MESSAGES=5,
+    WC_CES_N_ISO_8859_6=6,
+    _NL_CTYPE_GAP3=6,
     __LC_ALL=6,
-    ERA_D_T_FMT=131120,
-    _NL_NUM_LC_NUMERIC=65542,
-    _NL_TELEPHONE_INT_SELECT=655362,
-    _NL_TIME_ERA_NUM_ENTRIES=131122,
-    __P_CS_PRECEDES=262153,
-    _NL_MONETARY_DUO_INT_CURR_SYMBOL=262166,
-    _NL_COLLATE_INDIRECTWC=196620,
-    _NL_TIME_FIRST_WORKDAY=131177,
-    __YESEXPR=327680,
-    _NL_TELEPHONE_INT_PREFIX=655363,
+    WC_CES_N_ISO_8859_7=7,
+    _NL_CTYPE_GAP4=7,
+    __LC_PAPER=7,
+    WC_CES_N_ISO_8859_8=8,
+    _NL_CTYPE_GAP5=8,
+    __LC_NAME=8,
+    WC_CES_N_ISO_8859_9=9,
+    _NL_CTYPE_GAP6=9,
+    __LC_ADDRESS=9,
+    WC_CES_N_ISO_8859_10=10,
+    _NL_CTYPE_CLASS_NAMES=10,
+    __LC_TELEPHONE=10,
+    WC_CES_N_ISO_8859_11=11,
+    _NL_CTYPE_MAP_NAMES=11,
+    __LC_MEASUREMENT=11,
+    WC_CES_N_ISO_8859_12=12,
+    _NL_CTYPE_WIDTH=12,
+    __LC_IDENTIFICATION=12,
+    WC_CES_N_ISO_8859_13=13,
+    _NL_CTYPE_MB_CUR_MAX=13,
+    CODESET=14,
+    WC_CES_N_ISO_8859_14=14,
+    _NL_CTYPE_CODESET_NAME=14,
+    WC_CES_N_ISO_8859_15=15,
+    _NL_CTYPE_TOUPPER32=15,
+    WC_CES_N_ISO_8859_16=16,
+    _NL_CTYPE_TOLOWER32=16,
+    WC_CES_N_ISO_2022_JP=17,
+    _NL_CTYPE_CLASS_OFFSET=17,
+    WC_CES_N_ISO_2022_JP_2=18,
+    _NL_CTYPE_MAP_OFFSET=18,
+    WC_CES_N_ISO_2022_JP_3=19,
+    _NL_CTYPE_INDIGITS_MB_LEN=19,
+    WC_CES_N_ISO_2022_CN=20,
+    _NL_CTYPE_INDIGITS0_MB=20,
+    WC_CES_N_ISO_2022_KR=21,
+    _NL_CTYPE_INDIGITS1_MB=21,
+    WC_CES_N_EUC_JP=22,
+    _NL_CTYPE_INDIGITS2_MB=22,
+    WC_CES_N_EUC_CN=23,
+    _NL_CTYPE_INDIGITS3_MB=23,
+    WC_CES_N_EUC_TW=24,
+    _NL_CTYPE_INDIGITS4_MB=24,
+    WC_CES_N_EUC_KR=25,
+    _NL_CTYPE_INDIGITS5_MB=25,
+    WC_CES_N_CP437=26,
+    _NL_CTYPE_INDIGITS6_MB=26,
+    WC_CES_N_CP737=27,
+    _NL_CTYPE_INDIGITS7_MB=27,
+    WC_CES_N_CP775=28,
+    _NL_CTYPE_INDIGITS8_MB=28,
+    WC_CES_N_CP850=29,
+    _NL_CTYPE_INDIGITS9_MB=29,
+    WC_CES_N_CP852=30,
+    _NL_CTYPE_INDIGITS_WC_LEN=30,
+    WC_CES_N_CP855=31,
+    _NL_CTYPE_INDIGITS0_WC=31,
+    WC_CES_N_CP856=32,
+    _NL_CTYPE_INDIGITS1_WC=32,
+    WC_CES_N_CP857=33,
+    _NL_CTYPE_INDIGITS2_WC=33,
+    WC_CES_N_CP860=34,
+    _NL_CTYPE_INDIGITS3_WC=34,
+    WC_CES_N_CP861=35,
+    _NL_CTYPE_INDIGITS4_WC=35,
+    WC_CES_N_CP862=36,
+    _NL_CTYPE_INDIGITS5_WC=36,
+    WC_CES_N_CP863=37,
+    _NL_CTYPE_INDIGITS6_WC=37,
+    WC_CES_N_CP864=38,
+    _NL_CTYPE_INDIGITS7_WC=38,
+    WC_CES_N_CP865=39,
+    _NL_CTYPE_INDIGITS8_WC=39,
+    WC_CES_N_CP866=40,
+    _NL_CTYPE_INDIGITS9_WC=40,
+    WC_CES_N_CP869=41,
+    _NL_CTYPE_OUTDIGIT0_MB=41,
+    WC_CES_N_CP874=42,
+    _NL_CTYPE_OUTDIGIT1_MB=42,
+    WC_CES_N_CP1006=43,
+    _NL_CTYPE_OUTDIGIT2_MB=43,
+    WC_CES_N_CP1250=44,
+    _NL_CTYPE_OUTDIGIT3_MB=44,
+    WC_CES_N_CP1251=45,
+    _NL_CTYPE_OUTDIGIT4_MB=45,
+    WC_CES_N_CP1252=46,
+    _NL_CTYPE_OUTDIGIT5_MB=46,
+    WC_CES_N_CP1253=47,
+    _NL_CTYPE_OUTDIGIT6_MB=47,
+    WC_CES_N_CP1254=48,
+    _NL_CTYPE_OUTDIGIT7_MB=48,
+    WC_CES_N_CP1255=49,
+    _NL_CTYPE_OUTDIGIT8_MB=49,
+    WC_CES_N_CP1256=50,
+    _NL_CTYPE_OUTDIGIT9_MB=50,
+    WC_CES_N_CP1257=51,
+    _NL_CTYPE_OUTDIGIT0_WC=51,
+    WC_CES_N_KOI8_R=52,
+    _NL_CTYPE_OUTDIGIT1_WC=52,
+    WC_CES_N_KOI8_U=53,
+    _NL_CTYPE_OUTDIGIT2_WC=53,
+    WC_CES_N_NEXTSTEP=54,
+    _NL_CTYPE_OUTDIGIT3_WC=54,
+    WC_CES_N_RAW=55,
+    _NL_CTYPE_OUTDIGIT4_WC=55,
+    WC_CES_N_SHIFT_JIS=56,
+    _NL_CTYPE_OUTDIGIT5_WC=56,
+    WC_CES_N_SHIFT_JISX0213=57,
+    _NL_CTYPE_OUTDIGIT6_WC=57,
+    WC_CES_N_GBK=58,
+    _NL_CTYPE_OUTDIGIT7_WC=58,
+    WC_CES_N_GB18030=59,
+    _NL_CTYPE_OUTDIGIT8_WC=59,
+    WC_CES_N_HZ_GB_2312=60,
+    _NL_CTYPE_OUTDIGIT9_WC=60,
+    WC_CES_N_BIG5=61,
+    _NL_CTYPE_TRANSLIT_TAB_SIZE=61,
+    WC_CES_N_HKSCS=62,
     _NL_CTYPE_TRANSLIT_FROM_IDX=62,
+    WC_CES_N_UHC=63,
+    _NL_CTYPE_TRANSLIT_FROM_TBL=63,
+    WC_CES_N_JOHAB=64,
+    _NL_CTYPE_TRANSLIT_TO_IDX=64,
+    WC_CES_N_CP1258=65,
     _NL_CTYPE_TRANSLIT_TO_TBL=65,
+    WC_CES_N_TCVN_5712=66,
+    _NL_CTYPE_TRANSLIT_DEFAULT_MISSING_LEN=66,
+    WC_CES_N_VISCII_11=67,
+    _NL_CTYPE_TRANSLIT_DEFAULT_MISSING=67,
+    WC_CES_N_VPS=68,
+    _NL_CTYPE_TRANSLIT_IGNORE_LEN=68,
+    WC_CES_N_UTF_8=69,
+    _NL_CTYPE_TRANSLIT_IGNORE=69,
+    WC_CES_N_UTF_7=70,
+    _NL_CTYPE_MAP_TO_NONASCII=70,
+    _NL_CTYPE_NONASCII_CASE=71,
+    _NL_CTYPE_EXTRA_MAP_1=72,
+    _NL_CTYPE_EXTRA_MAP_2=73,
+    _NL_CTYPE_EXTRA_MAP_3=74,
+    _NL_CTYPE_EXTRA_MAP_4=75,
+    _NL_CTYPE_EXTRA_MAP_5=76,
+    _NL_CTYPE_EXTRA_MAP_6=77,
+    _NL_CTYPE_EXTRA_MAP_7=78,
+    _NL_CTYPE_EXTRA_MAP_8=79,
+    _NL_CTYPE_EXTRA_MAP_9=80,
+    _NL_CTYPE_EXTRA_MAP_10=81,
+    _NL_CTYPE_EXTRA_MAP_11=82,
+    _NL_CTYPE_EXTRA_MAP_12=83,
+    _NL_CTYPE_EXTRA_MAP_13=84,
+    _NL_CTYPE_EXTRA_MAP_14=85,
+    _NL_NUM_LC_CTYPE=86,
+    RADIXCHAR=65536,
+    __DECIMAL_POINT=65536,
+    THOUSEP=65537,
+    __THOUSANDS_SEP=65537,
+    __GROUPING=65538,
+    _NL_NUMERIC_DECIMAL_POINT_WC=65539,
+    _NL_NUMERIC_THOUSANDS_SEP_WC=65540,
+    _NL_NUMERIC_CODESET=65541,
+    _NL_NUM_LC_NUMERIC=65542,
+    ABDAY_1=131072,
+    ABDAY_2=131073,
+    ABDAY_3=131074,
+    ABDAY_4=131075,
+    ABDAY_5=131076,
+    ABDAY_6=131077,
+    ABDAY_7=131078,
+    DAY_1=131079,
+    DAY_2=131080,
+    DAY_3=131081,
+    DAY_4=131082,
+    DAY_5=131083,
+    DAY_6=131084,
+    DAY_7=131085,
+    ABMON_1=131086,
+    ABMON_2=131087,
+    ABMON_3=131088,
+    ABMON_4=131089,
+    ABMON_5=131090,
+    ABMON_6=131091,
+    ABMON_7=131092,
+    ABMON_8=131093,
+    ABMON_9=131094,
+    ABMON_10=131095,
+    ABMON_11=131096,
+    ABMON_12=131097,
+    MON_1=131098,
+    MON_2=131099,
+    MON_3=131100,
+    MON_4=131101,
+    MON_5=131102,
+    MON_6=131103,
+    MON_7=131104,
+    MON_8=131105,
+    MON_9=131106,
+    MON_10=131107,
+    MON_11=131108,
+    MON_12=131109,
+    AM_STR=131110,
+    PM_STR=131111,
+    D_T_FMT=131112,
+    D_FMT=131113,
+    T_FMT=131114,
+    T_FMT_AMPM=131115,
     ERA=131116,
-    _NL_WABMON_12=131149,
-    __INT_N_SIGN_POSN=262165,
+    __ERA_YEAR=131117,
+    ERA_D_FMT=131118,
+    ALT_DIGITS=131119,
+    ERA_D_T_FMT=131120,
+    ERA_T_FMT=131121,
+    _NL_TIME_ERA_NUM_ENTRIES=131122,
+    _NL_TIME_ERA_ENTRIES=131123,
+    _NL_WABDAY_1=131124,
+    _NL_WABDAY_2=131125,
+    _NL_WABDAY_3=131126,
+    _NL_WABDAY_4=131127,
+    _NL_WABDAY_5=131128,
+    _NL_WABDAY_6=131129,
+    _NL_WABDAY_7=131130,
+    _NL_WDAY_1=131131,
+    _NL_WDAY_2=131132,
+    _NL_WDAY_3=131133,
+    _NL_WDAY_4=131134,
+    _NL_WDAY_5=131135,
+    _NL_WDAY_6=131136,
+    _NL_WDAY_7=131137,
+    _NL_WABMON_1=131138,
+    _NL_WABMON_2=131139,
+    _NL_WABMON_3=131140,
+    _NL_WABMON_4=131141,
+    _NL_WABMON_5=131142,
+    _NL_WABMON_6=131143,
+    _NL_WABMON_7=131144,
+    _NL_WABMON_8=131145,
+    _NL_WABMON_9=131146,
     _NL_WABMON_10=131147,
     _NL_WABMON_11=131148,
-    _NL_MONETARY_CRNCYSTR=262159,
-    _NL_NUM_LC_MONETARY=262190,
-    _NL_CTYPE_MAP_OFFSET=18,
-    _NL_CTYPE_OUTDIGIT2_WC=53,
-    WC_CES_N_EUC_JP=22,
-    _NL_CTYPE_INDIGITS7_WC=38,
-    __LC_MONETARY=4,
-    _NL_ADDRESS_CODESET=589836,
-    _NL_MONETARY_DUO_N_SEP_BY_SPACE=262173,
-    _NL_CTYPE_OUTDIGIT5_MB=46,
-    _NL_MONETARY_DUO_INT_N_SEP_BY_SPACE=262177,
-    _NL_TELEPHONE_TEL_DOM_FMT=655361,
-    _NL_CTYPE_INDIGITS0_MB=20,
-    WC_CES_N_VPS=68,
-    _NL_IDENTIFICATION_FAX=786438,
-    _NL_COLLATE_RULESETS=196609,
-    _NL_MONETARY_DUO_P_CS_PRECEDES=262170,
-    _NL_CTYPE_TRANSLIT_DEFAULT_MISSING_LEN=66,
-    _NL_ADDRESS_LANG_LIB=589835,
-    __N_SIGN_POSN=262158,
-    _NL_CTYPE_OUTDIGIT4_WC=55,
-    _NL_WT_FMT=131166,
-    _NL_MONETARY_DUO_P_SIGN_POSN=262178,
-    _NL_MONETARY_DUO_INT_N_SIGN_POSN=262181,
-    _NL_COLLATE_TABLEMB=196610,
-    _NL_CTYPE_INDIGITS5_WC=36,
-    _NL_COLLATE_COLLSEQMB=196624,
-    __GROUPING=65538,
-    _NL_CTYPE_OUTDIGIT7_MB=48,
-    _NL_TIME_WEEK_1STWEEK=131175,
-    WC_CES_N_EUC_KR=25,
-    _NL_COLLATE_WEIGHTMB=196611,
-    __P_SEP_BY_SPACE=262154,
-    WC_CES_N_BIG5=61,
-    WC_CES_N_HKSCS=62,
-    __INT_N_CS_PRECEDES=262162,
+    _NL_WABMON_12=131149,
+    _NL_WMON_1=131150,
+    _NL_WMON_2=131151,
+    _NL_WMON_3=131152,
+    _NL_WMON_4=131153,
+    _NL_WMON_5=131154,
+    _NL_WMON_6=131155,
+    _NL_WMON_7=131156,
+    _NL_WMON_8=131157,
+    _NL_WMON_9=131158,
     _NL_WMON_10=131159,
     _NL_WMON_11=131160,
     _NL_WMON_12=131161,
-    _NL_MEASUREMENT_MEASUREMENT=720896,
-    _NL_ADDRESS_COUNTRY_CAR=589829,
-    _NL_IDENTIFICATION_TERRITORY=786440,
-    _NL_MONETARY_CONVERSION_RATE=262186,
-    CODESET=14,
-    _NL_CTYPE_INDIGITS9_MB=29,
-    _NL_IDENTIFICATION_EMAIL=786436,
-    _NL_MONETARY_DUO_INT_P_CS_PRECEDES=262174,
-    _NL_CTYPE_OUTDIGIT3_WC=54,
-    _NL_NUMERIC_THOUSANDS_SEP_WC=65540,
-    __INT_P_SIGN_POSN=262164,
-    _NL_CTYPE_CLASS_OFFSET=17,
-    RADIXCHAR=65536,
-    WC_CES_N_ISO_2022_CN=20,
-    _NL_CTYPE_INDIGITS6_WC=37,
-    _NL_PAPER_WIDTH=458753,
-    _NL_CTYPE_OUTDIGIT6_MB=47,
-    AUTHCHR_NUL=0,
-    _NL_COLLATE_GAP2=196615,
-    WC_CES_N_VISCII_11=67,
-    _NL_COLLATE_GAP1=196614,
-    _NL_IDENTIFICATION_TITLE=786432,
-    _NL_COLLATE_GAP3=196616,
-    WC_CES_N_UHC=63,
-    _NL_MONETARY_THOUSANDS_SEP_WC=262188,
-    _NL_NAME_NAME_GEN=524289,
-    WC_CES_N_RAW=55,
-    D_FMT=131113,
-    __LC_MESSAGES=5,
-    _NL_CTYPE_INDIGITS7_MB=27,
-    _NL_CTYPE_OUTDIGIT5_WC=56,
-    ALT_DIGITS=131119,
-    _NL_TELEPHONE_TEL_INT_FMT=655360,
-    ERA_D_FMT=131118,
-    _NL_ADDRESS_POSTAL_FMT=589824,
-    __ERA_YEAR=131117,
-    _NL_NAME_NAME_MRS=524291,
-    _NL_CTYPE_TRANSLIT_TO_IDX=64,
-    _NL_ADDRESS_COUNTRY_NAME=589825,
-    _NL_CTYPE_INDIGITS4_WC=35,
-    _NL_PAPER_HEIGHT=458752,
-    ABDAY_6=131077,
-    ABDAY_7=131078,
-    _NL_CTYPE_OUTDIGIT8_MB=49,
-    ABDAY_4=131075,
-    ABDAY_5=131076,
-    _NL_COLLATE_EXTRAWC=196619,
-    __LC_MEASUREMENT=11,
-    D_T_FMT=131112,
-    _NL_ADDRESS_LANG_NAME=589832,
-    WC_CES_N_ISO_2022_JP_2=18,
-    _NL_WERA_T_FMT=131172,
-    WC_CES_N_ISO_2022_JP_3=19,
-    _NL_COLLATE_SYMB_EXTRAMB=196623,
-    ABDAY_2=131073,
-    ABDAY_3=131074,
-    _NL_MESSAGES_CODESET=327684,
-    ABDAY_1=131072,
-    _NL_CTYPE_MAP_NAMES=11,
-    __LC_COLLATE=3,
-    WC_CES_N_SHIFT_JISX0213=57,
-    _NL_IDENTIFICATION_DATE=786445,
-    __LC_TELEPHONE=10,
-    __LC_NAME=8,
-    _NL_CTYPE_INDIGITS8_MB=28,
-    _NL_COLLATE_WEIGHTWC=196618,
-    WC_CES_N_EUC_TW=24,
-    _NL_NUM_LC_NAME=524295,
-    _NL_IDENTIFICATION_CATEGORY=786446,
-    __LC_ADDRESS=9,
-    __LC_TIME=2,
-    _NL_NAME_NAME_MISS=524292,
-    _NL_CTYPE_CLASS32=5,
-    _NL_MONETARY_UNO_VALID_TO=262183,
-    _NL_CTYPE_INDIGITS6_MB=26,
-    _NL_NUM_LC_TIME=131183,
-    _NL_CTYPE_OUTDIGIT6_WC=57,
-    _NL_MONETARY_DUO_INT_P_SIGN_POSN=262180,
-    WC_CES_N_GB18030=59,
-    T_FMT=131114,
-    __CURRENCY_SYMBOL=262145,
-    _NL_CTYPE_INDIGITS3_WC=34,
-    _NL_NUMERIC_DECIMAL_POINT_WC=65539,
-    ERA_T_FMT=131121,
-    _NL_WERA_D_T_FMT=131171,
-    _NL_COLLATE_SYMB_TABLEMB=196622,
-    _NL_IDENTIFICATION_CONTACT=786435,
-    _NL_CTYPE_OUTDIGIT9_MB=50,
-    _NL_MONETARY_DUO_INT_FRAC_DIGITS=262168,
-    __LC_PAPER=7,
-    _NL_WDAY_6=131136,
-    _NL_WDAY_7=131137,
-    _NL_WDAY_4=131134,
-    _NL_WDAY_5=131135,
-    _NL_WDAY_2=131132,
-    _NL_WDAY_3=131133,
-    WC_CES_N_US_ASCII=0,
-    AUTHCHR_SEP=1,
-    _NL_WDAY_1=131131,
-    _NL_CTYPE_CLASS_NAMES=10,
-    __FRAC_DIGITS=262152,
-    WC_CES_N_CP850=29,
     _NL_WAM_STR=131162,
-    WC_CES_N_CP852=30,
-    _NL_COLLATE_SYMB_HASH_SIZEMB=196621,
-    _NL_MONETARY_DUO_N_CS_PRECEDES=262172,
-    __N_CS_PRECEDES=262155,
-    WC_CES_N_CP737=27,
-    _NL_CTYPE_OUTDIGIT8_WC=59,
-    _NL_WERA_D_FMT=131169,
-    WC_CES_N_CP855=31,
-    WC_CES_N_CP856=32,
-    WC_CES_N_CP857=33,
-    _NL_TIME_FIRST_WEEKDAY=131176,
-    _NL_CTYPE_INDIGITS1_WC=32,
-    __NEGATIVE_SIGN=262150,
-    _NL_MONETARY_DUO_VALID_TO=262185,
-    WC_CES_N_CP861=35,
-    WC_CES_N_CP862=36,
-    WC_CES_N_CP863=37,
-    WC_CES_N_CP864=38,
-    WC_CES_N_CP860=34,
-    WC_CES_N_CP869=41,
-    WC_CES_N_CP865=39,
-    __NOSTR=327683,
-    WC_CES_N_CP866=40,
-    __P_SIGN_POSN=262157,
-    WC_CES_N_NEXTSTEP=54,
-    _NL_CTYPE_OUTDIGIT0_MB=41,
-    _NL_WABMON_3=131140,
-    _NL_WABMON_4=131141,
-    WC_CES_N_CP874=42,
-    _NL_WABMON_1=131138,
-    _DATE_FMT=131180,
-    _NL_WABMON_2=131139,
-    _NL_WABMON_7=131144,
-    _NL_WABMON_8=131145,
-    _NL_WABMON_5=131142,
-    _NL_WABMON_6=131143,
     _NL_WPM_STR=131163,
-    WC_CES_N_GBK=58,
-    __N_SEP_BY_SPACE=262156,
-    ABMON_9=131094,
-    ABMON_8=131093,
-    ABMON_7=131092,
-    ABMON_6=131091,
-    ABMON_5=131090,
-    ABMON_4=131089,
-    _NL_WABMON_9=131146,
-    _NL_CTYPE_INDIGITS5_MB=25,
-    __MON_GROUPING=262148,
-    _NL_MONETARY_DUO_INT_P_SEP_BY_SPACE=262175,
-    _NL_CTYPE_TOUPPER=1,
-    ABMON_3=131088,
-    ABMON_2=131087,
-    _NL_CTYPE_OUTDIGIT7_WC=58,
-    ABMON_1=131086,
+    _NL_WD_T_FMT=131164,
+    _NL_WD_FMT=131165,
+    _NL_WT_FMT=131166,
     _NL_WT_FMT_AMPM=131167,
-    _NL_CTYPE_INDIGITS2_WC=33,
-    WC_CES_N_CP775=28,
-    _NL_CTYPE_INDIGITS3_MB=23,
-    _NL_MEASUREMENT_CODESET=720897,
-    _NL_COLLATE_EXTRAMB=196612,
-    _NL_IDENTIFICATION_CODESET=786447,
-    _NL_TIME_CODESET=131182,
-    _NL_CTYPE_CODESET_NAME=14,
-    _NL_NUM_LC_CTYPE=86,
-    _NL_ADDRESS_COUNTRY_ISBN=589831,
-    _NL_NUMERIC_CODESET=65541,
-    WC_CES_N_ISO_8859_2=2,
-    WC_CES_N_ISO_8859_1=1,
-    WC_CES_N_ISO_8859_4=4,
-    WC_CES_N_ISO_8859_3=3,
-    __LC_NUMERIC=1,
-    WC_CES_N_ISO_8859_6=6,
-    WC_CES_N_ISO_8859_5=5,
-    WC_CES_N_ISO_8859_8=8,
-    WC_CES_N_ISO_8859_7=7,
-    _NL_CTYPE_INDIGITS_MB_LEN=19,
-    _NL_CTYPE_OUTDIGIT9_WC=60,
-    WC_CES_N_ISO_8859_9=9,
-    MON_11=131108,
-    _NL_ADDRESS_LANG_AB=589833,
-    MON_10=131107,
-    MON_12=131109,
-    _NL_IDENTIFICATION_ADDRESS=786434,
-    _NL_CTYPE_INDIGITS0_WC=31,
+    _NL_WERA_YEAR=131168,
+    _NL_WERA_D_FMT=131169,
+    _NL_WALT_DIGITS=131170,
+    _NL_WERA_D_T_FMT=131171,
+    _NL_WERA_T_FMT=131172,
+    _NL_TIME_WEEK_NDAYS=131173,
+    _NL_TIME_WEEK_1STDAY=131174,
+    _NL_TIME_WEEK_1STWEEK=131175,
+    _NL_TIME_FIRST_WEEKDAY=131176,
+    _NL_TIME_FIRST_WORKDAY=131177,
+    _NL_TIME_CAL_DIRECTION=131178,
     _NL_TIME_TIMEZONE=131179,
-    MON_5=131102,
-    MON_6=131103,
-    MON_3=131100,
+    _DATE_FMT=131180,
+    _NL_W_DATE_FMT=131181,
+    _NL_TIME_CODESET=131182,
+    _NL_NUM_LC_TIME=131183,
+    _NL_COLLATE_NRULES=196608,
+    _NL_COLLATE_RULESETS=196609,
+    _NL_COLLATE_TABLEMB=196610,
+    _NL_COLLATE_WEIGHTMB=196611,
+    _NL_COLLATE_EXTRAMB=196612,
+    _NL_COLLATE_INDIRECTMB=196613,
+    _NL_COLLATE_GAP1=196614,
+    _NL_COLLATE_GAP2=196615,
+    _NL_COLLATE_GAP3=196616,
+    _NL_COLLATE_TABLEWC=196617,
+    _NL_COLLATE_WEIGHTWC=196618,
+    _NL_COLLATE_EXTRAWC=196619,
+    _NL_COLLATE_INDIRECTWC=196620,
+    _NL_COLLATE_SYMB_HASH_SIZEMB=196621,
+    _NL_COLLATE_SYMB_TABLEMB=196622,
+    _NL_COLLATE_SYMB_EXTRAMB=196623,
+    _NL_COLLATE_COLLSEQMB=196624,
+    _NL_COLLATE_COLLSEQWC=196625,
     _NL_COLLATE_CODESET=196626,
-    MON_4=131101,
-    MON_9=131106,
-    MON_7=131104,
-    MON_8=131105,
-    WC_CES_N_CP437=26,
+    _NL_NUM_LC_COLLATE=196627,
+    __INT_CURR_SYMBOL=262144,
+    __CURRENCY_SYMBOL=262145,
+    __MON_DECIMAL_POINT=262146,
+    __MON_THOUSANDS_SEP=262147,
+    __MON_GROUPING=262148,
     __POSITIVE_SIGN=262149,
-    _NL_MONETARY_DUO_VALID_FROM=262184,
-    _NL_NAME_NAME_FMT=524288,
-    _NL_CTYPE_OUTDIGIT1_MB=42,
-    _NL_MONETARY_DUO_CURRENCY_SYMBOL=262167,
-    __INT_P_SEP_BY_SPACE=262161,
-    _NL_NAME_NAME_MS=524293,
-    DAY_7=131085,
-    _NL_MONETARY_DUO_INT_N_CS_PRECEDES=262176,
-    _NL_NAME_NAME_MR=524290,
-    DAY_4=131082,
-    DAY_3=131081,
-    DAY_6=131084,
-    DAY_5=131083,
-    DAY_2=131080,
-    DAY_1=131079,
+    __NEGATIVE_SIGN=262150,
+    __INT_FRAC_DIGITS=262151,
+    __FRAC_DIGITS=262152,
+    __P_CS_PRECEDES=262153,
+    __P_SEP_BY_SPACE=262154,
+    __N_CS_PRECEDES=262155,
+    __N_SEP_BY_SPACE=262156,
+    __P_SIGN_POSN=262157,
+    __N_SIGN_POSN=262158,
+    _NL_MONETARY_CRNCYSTR=262159,
     __INT_P_CS_PRECEDES=262160,
-    MON_1=131098,
-    MON_2=131099,
-    _NL_CTYPE_INDIGITS4_MB=24
+    __INT_P_SEP_BY_SPACE=262161,
+    __INT_N_CS_PRECEDES=262162,
+    __INT_N_SEP_BY_SPACE=262163,
+    __INT_P_SIGN_POSN=262164,
+    __INT_N_SIGN_POSN=262165,
+    _NL_MONETARY_DUO_INT_CURR_SYMBOL=262166,
+    _NL_MONETARY_DUO_CURRENCY_SYMBOL=262167,
+    _NL_MONETARY_DUO_INT_FRAC_DIGITS=262168,
+    _NL_MONETARY_DUO_FRAC_DIGITS=262169,
+    _NL_MONETARY_DUO_P_CS_PRECEDES=262170,
+    _NL_MONETARY_DUO_P_SEP_BY_SPACE=262171,
+    _NL_MONETARY_DUO_N_CS_PRECEDES=262172,
+    _NL_MONETARY_DUO_N_SEP_BY_SPACE=262173,
+    _NL_MONETARY_DUO_INT_P_CS_PRECEDES=262174,
+    _NL_MONETARY_DUO_INT_P_SEP_BY_SPACE=262175,
+    _NL_MONETARY_DUO_INT_N_CS_PRECEDES=262176,
+    _NL_MONETARY_DUO_INT_N_SEP_BY_SPACE=262177,
+    _NL_MONETARY_DUO_P_SIGN_POSN=262178,
+    _NL_MONETARY_DUO_N_SIGN_POSN=262179,
+    _NL_MONETARY_DUO_INT_P_SIGN_POSN=262180,
+    _NL_MONETARY_DUO_INT_N_SIGN_POSN=262181,
+    _NL_MONETARY_UNO_VALID_FROM=262182,
+    _NL_MONETARY_UNO_VALID_TO=262183,
+    _NL_MONETARY_DUO_VALID_FROM=262184,
+    _NL_MONETARY_DUO_VALID_TO=262185,
+    _NL_MONETARY_CONVERSION_RATE=262186,
+    _NL_MONETARY_DECIMAL_POINT_WC=262187,
+    _NL_MONETARY_THOUSANDS_SEP_WC=262188,
+    _NL_MONETARY_CODESET=262189,
+    _NL_NUM_LC_MONETARY=262190,
+    __YESEXPR=327680,
+    __NOEXPR=327681,
+    __YESSTR=327682,
+    __NOSTR=327683,
+    _NL_MESSAGES_CODESET=327684,
+    _NL_NUM_LC_MESSAGES=327685,
+    _NL_PAPER_HEIGHT=458752,
+    _NL_PAPER_WIDTH=458753,
+    _NL_PAPER_CODESET=458754,
+    _NL_NUM_LC_PAPER=458755,
+    _NL_NAME_NAME_FMT=524288,
+    _NL_NAME_NAME_GEN=524289,
+    _NL_NAME_NAME_MR=524290,
+    _NL_NAME_NAME_MRS=524291,
+    _NL_NAME_NAME_MISS=524292,
+    _NL_NAME_NAME_MS=524293,
+    _NL_NAME_CODESET=524294,
+    _NL_NUM_LC_NAME=524295,
+    _NL_ADDRESS_POSTAL_FMT=589824,
+    _NL_ADDRESS_COUNTRY_NAME=589825,
+    _NL_ADDRESS_COUNTRY_POST=589826,
+    _NL_ADDRESS_COUNTRY_AB2=589827,
+    _NL_ADDRESS_COUNTRY_AB3=589828,
+    _NL_ADDRESS_COUNTRY_CAR=589829,
+    _NL_ADDRESS_COUNTRY_NUM=589830,
+    _NL_ADDRESS_COUNTRY_ISBN=589831,
+    _NL_ADDRESS_LANG_NAME=589832,
+    _NL_ADDRESS_LANG_AB=589833,
+    _NL_ADDRESS_LANG_TERM=589834,
+    _NL_ADDRESS_LANG_LIB=589835,
+    _NL_ADDRESS_CODESET=589836,
+    _NL_NUM_LC_ADDRESS=589837,
+    _NL_TELEPHONE_TEL_INT_FMT=655360,
+    _NL_TELEPHONE_TEL_DOM_FMT=655361,
+    _NL_TELEPHONE_INT_SELECT=655362,
+    _NL_TELEPHONE_INT_PREFIX=655363,
+    _NL_TELEPHONE_CODESET=655364,
+    _NL_NUM_LC_TELEPHONE=655365,
+    _NL_MEASUREMENT_MEASUREMENT=720896,
+    _NL_MEASUREMENT_CODESET=720897,
+    _NL_NUM_LC_MEASUREMENT=720898,
+    _NL_IDENTIFICATION_TITLE=786432,
+    _NL_IDENTIFICATION_SOURCE=786433,
+    _NL_IDENTIFICATION_ADDRESS=786434,
+    _NL_IDENTIFICATION_CONTACT=786435,
+    _NL_IDENTIFICATION_EMAIL=786436,
+    _NL_IDENTIFICATION_TEL=786437,
+    _NL_IDENTIFICATION_FAX=786438,
+    _NL_IDENTIFICATION_LANGUAGE=786439,
+    _NL_IDENTIFICATION_TERRITORY=786440,
+    _NL_IDENTIFICATION_AUDIENCE=786441,
+    _NL_IDENTIFICATION_APPLICATION=786442,
+    _NL_IDENTIFICATION_ABBREVIATION=786443,
+    _NL_IDENTIFICATION_REVISION=786444,
+    _NL_IDENTIFICATION_DATE=786445,
+    _NL_IDENTIFICATION_CATEGORY=786446,
+    _NL_IDENTIFICATION_CODESET=786447,
+    _NL_NUM_LC_IDENTIFICATION=786448,
+    _NL_NUM=786449
 } anon_enum_32.conflictd1f;
 
 typedef struct MatchingContext2 MatchingContext2, *PMatchingContext2;
@@ -2524,24 +2524,24 @@ typedef struct rc_search_table rc_search_table, *Prc_search_table;
 struct rc_search_table {
     struct param_ptr * param;
     short uniq_pos;
-    undefined field_0x6;
-    undefined field_0x7;
+    undefined field2_0x6;
+    undefined field3_0x7;
 };
 
 typedef struct parsed_tag parsed_tag, *Pparsed_tag;
 
 struct parsed_tag {
     uchar tagid;
-    undefined field_0x1;
-    undefined field_0x2;
-    undefined field_0x3;
+    undefined field1_0x1;
+    undefined field2_0x2;
+    undefined field3_0x3;
     uchar * attrid;
     char * * value;
     uchar * map;
     char need_reconstruct;
-    undefined field_0x11;
-    undefined field_0x12;
-    undefined field_0x13;
+    undefined field8_0x11;
+    undefined field9_0x12;
+    undefined field10_0x13;
 };
 
 typedef struct form_select_option form_select_option, *Pform_select_option;
@@ -2614,7 +2614,7 @@ struct URLFile {
     uchar scheme;
     char is_cgi;
     char encoding;
-    undefined field_0x3;
+    undefined field3_0x3;
     InputStream stream;
     char * ext;
     int compression;
@@ -2638,16 +2638,6 @@ struct table2 {
     char * item2;
 };
 
-typedef struct tag_attribute_info tag_attribute_info, *Ptag_attribute_info;
-
-struct tag_attribute_info {
-    char * name;
-    uchar vtype;
-    uchar flag;
-    undefined field_0x6;
-    undefined field_0x7;
-};
-
 typedef struct html_tag_info html_tag_info, *Phtml_tag_info;
 
 typedef struct html_tag_info TagInfo;
@@ -2657,8 +2647,18 @@ struct html_tag_info {
     uchar * accept_attribute;
     uchar max_attribute;
     uchar flag;
-    undefined field_0xa;
-    undefined field_0xb;
+    undefined field4_0xa;
+    undefined field5_0xb;
+};
+
+typedef struct tag_attribute_info tag_attribute_info, *Ptag_attribute_info;
+
+struct tag_attribute_info {
+    char * name;
+    uchar vtype;
+    uchar flag;
+    undefined field3_0x6;
+    undefined field4_0x7;
 };
 
 typedef struct tag_attribute_info TagAttrInfo;
@@ -2725,35 +2725,35 @@ typedef int (* __compar_fn_t)(void *, void *);
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 typedef enum Elf_SectionHeaderType_x86 {
-    SHT_SYMTAB=2,
-    SHT_GNU_versym=1879048191,
-    SHT_GNU_verdef=1879048189,
-    SHT_GNU_LIBLIST=1879048183,
-    SHT_FINI_ARRAY=15,
-    SHT_GROUP=17,
-    SHT_CHECKSUM=1879048184,
-    SHT_SHLIB=10,
-    SHT_ANDROID_RELA=1610612738,
-    SHT_NOBITS=8,
-    SHT_GNU_HASH=1879048182,
-    SHT_REL=9,
-    SHT_SYMTAB_SHNDX=18,
-    SHT_HASH=5,
-    SHT_PROGBITS=1,
-    SHT_ANDROID_REL=1610612737,
     SHT_NULL=0,
-    SHT_GNU_verneed=1879048190,
-    SHT_INIT_ARRAY=14,
-    SHT_NOTE=7,
-    SHT_PREINIT_ARRAY=16,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
     SHT_STRTAB=3,
     SHT_RELA=4,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_GNU_ATTRIBUTES=1879048181,
-    SHT_DYNSYM=11,
-    SHT_SUNW_syminfo=1879048188,
+    SHT_HASH=5,
     SHT_DYNAMIC=6,
-    SHT_SUNW_move=1879048186
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
+    SHT_ANDROID_REL=1610612737,
+    SHT_ANDROID_RELA=1610612738,
+    SHT_GNU_ATTRIBUTES=1879048181,
+    SHT_GNU_HASH=1879048182,
+    SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
+    SHT_GNU_verdef=1879048189,
+    SHT_GNU_verneed=1879048190,
+    SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
 struct Elf32_Shdr {
@@ -2772,81 +2772,81 @@ struct Elf32_Shdr {
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -2868,17 +2868,17 @@ struct Elf32_Sym {
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 struct Elf32_Phdr {
@@ -2897,6 +2897,16 @@ typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 struct Elf32_Rel {
     dword r_offset; // location to apply the relocation action
     dword r_info; // the symbol table index and the type of relocation
+};
+
+typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+
+struct Gnu_BuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Build-id vendor name
+    byte description[20]; // Build-id value
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -4930,7 +4940,6 @@ void fversion(FILE *f)
 
 {
   fprintf((FILE *)f,"w3m version %s, options %s\n",w3m_version,
-                    
           "lang=en,m17n,image,color,ansi-color,mouse,gpm,menu,cookie,external-uri-loader,w3mmailer,nntp,gopher,ipv6,alarm,mark,migemo"
          );
   return;
@@ -5024,13 +5033,13 @@ void wrap_GC_warn_proc(char *param_1,GC_word param_2)
     }
     if (wrap_GC_warn_proc::lexical_block_0::lock == 0) {
       wrap_GC_warn_proc::lexical_block_0::lock = 1;
-      while (0 < (int)wrap_GC_warn_proc::lexical_block_0::n) {
+      for (; 0 < (int)wrap_GC_warn_proc::lexical_block_0::n;
+          wrap_GC_warn_proc::lexical_block_0::n = wrap_GC_warn_proc::lexical_block_0::n - 1) {
         wrap_GC_warn_proc::lexical_block_0::i = wrap_GC_warn_proc::lexical_block_0::i % 0x14;
         printf(wrap_GC_warn_proc::lexical_block_0::msg_ring[wrap_GC_warn_proc::lexical_block_0::i].
                msg,wrap_GC_warn_proc::lexical_block_0::msg_ring
                    [wrap_GC_warn_proc::lexical_block_0::i].arg);
         sleep_till_anykey(1,1);
-        wrap_GC_warn_proc::lexical_block_0::n = wrap_GC_warn_proc::lexical_block_0::n - 1;
         wrap_GC_warn_proc::lexical_block_0::i = wrap_GC_warn_proc::lexical_block_0::i + 1;
       }
       wrap_GC_warn_proc::lexical_block_0::lock = 0;
@@ -5069,14 +5078,12 @@ Str make_optional_header_string(char *s)
   
   pcVar1 = strchr(s,10);
   if ((pcVar1 == (char *)0x0) && (pcVar1 = strchr(s,0xd), pcVar1 == (char *)0x0)) {
-    p = s;
-    while ((*p != '\0' && (*p != ':'))) {
-      p = p + 1;
+    for (p = s; (*p != '\0' && (*p != ':')); p = p + 1) {
     }
     if ((*p == ':') && (p != s)) {
       sVar2 = strlen(s);
       x = Strnew_size(sVar2 + 3);
-      Strcopy_charp_n(x,s,(int)(p + -(int)s));
+      Strcopy_charp_n(x,s,(int)p - (int)s);
       iVar3 = strcasecmp(x->ptr,"content-type");
       if (iVar3 == 0) {
         override_content_type = 1;
@@ -5164,7 +5171,7 @@ int main(int argc,char **argv,char **envp)
   Buffer *local_28;
   char local_22;
   
-  local_28 = (Buffer *)0x0;
+  local_28 = (_Buffer *)0x0;
   local_38 = (char *)0x0;
   bVar2 = false;
   bVar3 = false;
@@ -5183,15 +5190,14 @@ int main(int argc,char **argv,char **envp)
   CurrentPid = getpid();
   BookmarkFile = (char *)0x0;
   config_file = (char *)0x0;
-  local_30 = 1;
-  while (local_30 < argc) {
+  for (local_30 = 1; local_30 < argc; local_30 = local_30 + 1) {
     if (*argv[local_30] == '-') {
       iVar8 = strcmp("-config",argv[local_30]);
       if (iVar8 == 0) {
         argv[local_30] = "-dummy";
         local_30 = local_30 + 1;
         if (argc <= local_30) {
-          fusage(stderr,1);
+          fusage((FILE *)stderr,1);
         }
         config_file = argv[local_30];
         argv[local_30] = "-dummy";
@@ -5211,7 +5217,6 @@ int main(int argc,char **argv,char **envp)
         }
       }
     }
-    local_30 = local_30 + 1;
   }
   local_60 = getenv("LC_ALL");
   iVar8 = non_null(local_60);
@@ -5284,14 +5289,13 @@ LAB_0804b3a3:
   if ((iVar8 == 0) && (pcVar9 = getenv("MAILER"), pcVar9 != (char *)0x0)) {
     Mailer = pcVar9;
   }
-  local_30 = 1;
-  while (local_30 < argc) {
+  for (local_30 = 1; local_30 < argc; local_30 = local_30 + 1) {
     if (*argv[local_30] == '-') {
       iVar8 = strcmp("-t",argv[local_30]);
       if (iVar8 == 0) {
         local_30 = local_30 + 1;
         if (argc <= local_30) {
-          fusage(stderr,1);
+          fusage((FILE *)stderr,1);
         }
         iVar8 = atoi(argv[local_30]);
         if (0 < iVar8) {
@@ -5308,7 +5312,7 @@ LAB_0804b3a3:
           if (iVar8 == 0) {
             local_30 = local_30 + 1;
             if (argc <= local_30) {
-              fusage(stderr,1);
+              fusage((FILE *)stderr,1);
             }
             iVar8 = atoi(argv[local_30]);
             if (0 < iVar8) {
@@ -5321,7 +5325,7 @@ LAB_0804b3a3:
               if (argv[local_30][2] == '\0') {
                 local_30 = local_30 + 1;
                 if (argc <= local_30) {
-                  fusage(stderr,1);
+                  fusage((FILE *)stderr,1);
                 }
                 local_2c = argv[local_30];
               }
@@ -5338,7 +5342,7 @@ LAB_0804b3a3:
                 if (argv[local_30][2] == '\0') {
                   local_30 = local_30 + 1;
                   if (argc <= local_30) {
-                    fusage(stderr,1);
+                    fusage((FILE *)stderr,1);
                   }
                   local_2c = argv[local_30];
                 }
@@ -5362,7 +5366,7 @@ LAB_0804b3a3:
                     if (iVar8 == 0) {
                       local_30 = local_30 + 1;
                       if (argc <= local_30) {
-                        fusage(stderr,1);
+                        fusage((FILE *)stderr,1);
                       }
                       DefaultType = argv[local_30];
                       local_54 = DefaultType;
@@ -5398,7 +5402,7 @@ LAB_0804b3a3:
                                 if (iVar8 == 0) {
                                   local_30 = local_30 + 1;
                                   if (argc <= local_30) {
-                                    fusage(stderr,1);
+                                    fusage((FILE *)stderr,1);
                                   }
                                   BookmarkFile = argv[local_30];
                                   if ((*BookmarkFile != '~') && (*BookmarkFile != '/')) {
@@ -5482,7 +5486,7 @@ LAB_0804b3a3:
                                                         w3m_backend = 1;
                                                         local_30 = local_30 + 1;
                                                         if (argc <= local_30) {
-                                                          fusage(stderr,1);
+                                                          fusage((FILE *)stderr,1);
                                                         }
                                                         if (backend_batch_commands ==
                                                             (TextList *)0x0) {
@@ -5498,7 +5502,7 @@ LAB_0804b3a3:
                                                         if (iVar8 == 0) {
                                                           local_30 = local_30 + 1;
                                                           if (argc <= local_30) {
-                                                            fusage(stderr,1);
+                                                            fusage((FILE *)stderr,1);
                                                           }
                                                           COLS = atoi(argv[local_30]);
                                                         }
@@ -5507,7 +5511,7 @@ LAB_0804b3a3:
                                                           if (iVar8 == 0) {
                                                             local_30 = local_30 + 1;
                                                             if (argc <= local_30) {
-                                                              fusage(stderr,1);
+                                                              fusage((FILE *)stderr,1);
                                                             }
                                                             dVar15 = atof(argv[local_30]);
                                                             if ((4.0 <= dVar15) && (dVar15 <= 32.0))
@@ -5521,7 +5525,7 @@ LAB_0804b3a3:
                                                             if (iVar8 == 0) {
                                                               local_30 = local_30 + 1;
                                                               if (argc <= local_30) {
-                                                                fusage(stderr,1);
+                                                                fusage((FILE *)stderr,1);
                                                               }
                                                               dVar15 = atof(argv[local_30]);
                                                               if ((4.0 <= dVar15) &&
@@ -5556,7 +5560,7 @@ LAB_0804b3a3:
                                                     if (iVar8 == 0) {
                                                       local_30 = local_30 + 1;
                                                       if (argc <= local_30) {
-                                                        fusage(stderr,1);
+                                                        fusage((FILE *)stderr,1);
                                                       }
                                                       local_58 = argv[local_30];
                                                     }
@@ -5565,7 +5569,7 @@ LAB_0804b3a3:
                                                       if (iVar8 == 0) {
                                                         local_30 = local_30 + 1;
                                                         if (argc <= local_30) {
-                                                          fusage(stderr,1);
+                                                          fusage((FILE *)stderr,1);
                                                         }
                                                         p_Var11 = make_optional_header_string
                                                                             (argv[local_30]);
@@ -5608,7 +5612,7 @@ LAB_0804b3a3:
                                                               if (iVar8 == 0) {
                                                                 local_30 = local_30 + 1;
                                                                 if (argc <= local_30) {
-                                                                  fusage(stderr,1);
+                                                                  fusage((FILE *)stderr,1);
                                                                 }
                                                                 p_Var10 = encodeB(argv[local_30]);
                                                                 proxy_auth_cookie =
@@ -5660,10 +5664,10 @@ LAB_0804b3a3:
                                                               iVar8 = set_param_option(argv[local_30
                                                   ]);
                                                   if (iVar8 == 0) {
-                                                    fprintf((FILE *)stderr,"%s: bad option\n",
-                                                            argv[local_30]);
+                                                    fprintf(stderr,"%s: bad option\n",argv[local_30]
+                                                           );
                                                     show_params_p = 1;
-                                                    fusage(stderr,1);
+                                                    fusage((FILE *)stderr,1);
                                                   }
                                                   }
                                                   else {
@@ -5679,7 +5683,7 @@ LAB_0804b3a3:
                                                           w3m_reqlog = rcFile("request.log");
                                                         }
                                                         else {
-                                                          fusage(stderr,1);
+                                                          fusage((FILE *)stderr,1);
                                                         }
                                                       }
                                                     }
@@ -5726,16 +5730,13 @@ LAB_0804b3a3:
         }
       }
     }
-    else {
-      if (*argv[local_30] == '+') {
-        local_38 = argv[local_30] + 1;
-      }
-      else {
-        *(char **)(local_44 * 4 + iVar7) = argv[local_30];
-        local_44 = local_44 + 1;
-      }
+    else if (*argv[local_30] == '+') {
+      local_38 = argv[local_30] + 1;
     }
-    local_30 = local_30 + 1;
+    else {
+      *(char **)(local_44 * 4 + iVar7) = argv[local_30];
+      local_44 = local_44 + 1;
+    }
   }
   FirstTab = (TabBuffer *)0x0;
   LastTab = (TabBuffer *)0x0;
@@ -5756,10 +5757,8 @@ LAB_0804b3a3:
     fmInit();
     mySignal(0x1c,resize_hook);
   }
-  else {
-    if (((w3m_dump & 0x10U) != 0) && (displayImage != 0)) {
-      activeImage = 1;
-    }
+  else if (((w3m_dump & 0x10U) != 0) && (displayImage != 0)) {
+    activeImage = 1;
   }
   sync_with_option();
   initCookie();
@@ -5781,72 +5780,62 @@ LAB_0804b3a3:
     iVar8 = isatty(0);
     if (iVar8 == 0) {
       iVar8 = dup(0);
-      f = (FILE *)fdopen(iVar8,"rb");
-      stream = newFileStream(f,pclose);
+      f = fdopen(iVar8,"rb");
+      stream = newFileStream((FILE *)f,pclose);
       local_28 = openGeneralPagerBuffer(stream);
       dup2(1,0);
     }
+    else if (bVar2) {
+      local_28 = loadGeneralFile(BookmarkFile,(ParsedURL *)0x0,(char *)0xffffffff,0,(FormList *)0x0)
+      ;
+      if (local_28 == (Buffer *)0x0) {
+        Strcat_charp(p_Var10,"w3m: Can\'t load bookmark.\n");
+      }
+    }
+    else if (bVar3) {
+      p_Var11 = Strnew_charp("<title>W3M startup page</title><center><b>Welcome to ");
+      Strcat_charp(p_Var11,"<a href=\'http://w3m.sourceforge.net/\'>");
+      Strcat_m_charp(p_Var11,"w3m</a>!<p><p>This is w3m version ",w3m_version,
+                     "<br>Written by <a href=\'mailto:aito@fw.ipsj.or.jp\'>Akinori Ito</a>",0);
+      Strcat_m_charp(p_Var11,
+                     "<p>Debian package is maintained by <a href=\'mailto:ukai@debian.or.jp\'>Fumitoshi UKAI</a>."
+                     ,
+                     "You can read <a href=\'file:///usr/share/doc/w3m/\'>w3m documents on your local system</a>."
+                     ,0);
+      local_28 = loadHTMLString(p_Var11);
+      if (local_28 == (Buffer *)0x0) {
+        Strcat_charp(p_Var10,"w3m: Can\'t load string.\n");
+      }
+      else if (local_28 != (Buffer *)0x1) {
+        local_28->bufferprop = local_28->bufferprop | 0x18;
+      }
+    }
     else {
-      if (bVar2) {
-        local_28 = loadGeneralFile(BookmarkFile,(ParsedURL *)0x0,(char *)0xffffffff,0,
-                                   (FormList *)0x0);
-        if (local_28 == (Buffer *)0x0) {
-          Strcat_charp(p_Var10,"w3m: Can\'t load bookmark.\n");
+      local_2c = getenv("HTTP_HOME");
+      if ((local_2c == (char *)0x0) && (local_2c = getenv("WWW_HOME"), local_2c == (char *)0x0)) {
+        if (fmInitialized != '\0') {
+          fmTerm();
         }
+        fusage((FILE *)stderr,1);
       }
       else {
-        if (bVar3) {
-          p_Var11 = Strnew_charp("<title>W3M startup page</title><center><b>Welcome to ");
-          Strcat_charp(p_Var11,"<a href=\'http://w3m.sourceforge.net/\'>");
-          Strcat_m_charp(p_Var11,"w3m</a>!<p><p>This is w3m version ",w3m_version,
-                         "<br>Written by <a href=\'mailto:aito@fw.ipsj.or.jp\'>Akinori Ito</a>",0);
-          Strcat_m_charp(p_Var11,
-                         "<p>Debian package is maintained by <a href=\'mailto:ukai@debian.or.jp\'>Fumitoshi UKAI</a>."
-                         ,
-                         "You can read <a href=\'file:///usr/share/doc/w3m/\'>w3m documents on your local system</a>."
-                         ,0);
-          local_28 = loadHTMLString(p_Var11);
-          if (local_28 == (Buffer *)0x0) {
-            Strcat_charp(p_Var10,"w3m: Can\'t load string.\n");
-          }
-          else {
-            if (local_28 != (Buffer *)0x1) {
-              local_28->bufferprop = local_28->bufferprop | 0x18;
-            }
-          }
+        local_28 = loadGeneralFile(local_2c,(ParsedURL *)0x0,(char *)0xffffffff,0,(FormList *)0x0);
+        if (local_28 == (Buffer *)0x0) {
+          p_Var11 = Sprintf("w3m: Can\'t load %s.\n",local_2c);
+          Strcat(p_Var10,p_Var11);
         }
-        else {
-          local_2c = getenv("HTTP_HOME");
-          if ((local_2c == (char *)0x0) && (local_2c = getenv("WWW_HOME"), local_2c == (char *)0x0))
-          {
-            if (fmInitialized != '\0') {
-              fmTerm();
-            }
-            fusage(stderr,1);
-          }
-          else {
-            local_28 = loadGeneralFile(local_2c,(ParsedURL *)0x0,(char *)0xffffffff,0,
-                                       (FormList *)0x0);
-            if (local_28 == (Buffer *)0x0) {
-              p_Var11 = Sprintf("w3m: Can\'t load %s.\n",local_2c);
-              Strcat(p_Var10,p_Var11);
-            }
-            else {
-              if (local_28 != (Buffer *)0x1) {
-                p_Var11 = parsedURL2Str(&local_28->currentURL);
-                pushHashHist(URLHist,p_Var11->ptr);
-              }
-            }
-          }
+        else if (local_28 != (Buffer *)0x1) {
+          p_Var11 = parsedURL2Str(&local_28->currentURL);
+          pushHashHist(URLHist,p_Var11->ptr);
         }
       }
     }
-    if (local_28 == (Buffer *)0x0) {
+    if (local_28 == (_Buffer *)0x0) {
       if (fmInitialized != '\0') {
         fmTerm();
       }
       if (p_Var10->length != 0) {
-        fputs(p_Var10->ptr,(FILE *)stderr);
+        fputs(p_Var10->ptr,stderr);
       }
       w3m_exit(2);
     }
@@ -5855,9 +5844,9 @@ LAB_0804b3a3:
   else {
     local_30 = 0;
   }
-  while (local_30 < local_44) {
+  for (; local_30 < local_44; local_30 = local_30 + 1) {
     if (local_30 < 0) {
-      if (local_28 != (Buffer *)0x1) {
+      if (local_28 != (_Buffer *)0x1) {
 LAB_0804cfee:
         if ((local_28->pagerSource != (InputStream)0x0) ||
            ((((local_28->real_scheme == 4 && (local_28->header_source != (char *)0x0)) &&
@@ -5874,16 +5863,14 @@ LAB_0804cfee:
           pTVar12->currentBuffer = local_28;
           pTVar12->firstBuffer = pTVar12->currentBuffer;
         }
+        else if (bVar4) {
+          _newT();
+          CurrentTab->currentBuffer->nextBuffer = local_28;
+          delBuffer(CurrentTab->currentBuffer);
+        }
         else {
-          if (bVar4) {
-            _newT();
-            CurrentTab->currentBuffer->nextBuffer = (_Buffer *)local_28;
-            delBuffer(CurrentTab->currentBuffer);
-          }
-          else {
-            CurrentTab->currentBuffer->nextBuffer = (_Buffer *)local_28;
-            CurrentTab->currentBuffer = local_28;
-          }
+          CurrentTab->currentBuffer->nextBuffer = local_28;
+          CurrentTab->currentBuffer = local_28;
         }
         if (((w3m_dump == 0) || (w3m_dump == 1)) &&
            ((CurrentTab->currentBuffer->frameset != (frameset *)0x0 && (RenderFrame != '\0')))) {
@@ -5908,7 +5895,7 @@ LAB_0804cfee:
       }
       else {
         if ((local_58 == (char *)0x0) || (local_30 != 0)) {
-          local_40 = (form_list *)0x0;
+          local_40 = (FormList *)0x0;
         }
         else {
           iVar8 = strcmp(local_58,"-");
@@ -5916,16 +5903,16 @@ LAB_0804cfee:
             local_70 = stdin;
           }
           else {
-            local_70 = (FILE *)fopen(local_58,"r");
+            local_70 = fopen(local_58,"r");
           }
           if (local_70 == (FILE *)0x0) {
             p_Var11 = Sprintf("w3m: Can\'t open %s.\n",local_58);
             Strcat(p_Var10,p_Var11);
             goto LAB_0804d16a;
           }
-          p_Var11 = Strfgetall(local_70);
+          p_Var11 = Strfgetall((FILE *)local_70);
           if (local_70 != stdin) {
-            fclose((FILE *)local_70);
+            fclose(local_70);
           }
           local_40 = newFormList((char *)0x0,"post",(char *)0x0,(char *)0x0,(char *)0x0,(char *)0x0,
                                  (form_list *)0x0);
@@ -5934,39 +5921,34 @@ LAB_0804cfee:
           local_40->length = p_Var11->length;
         }
         local_28 = loadGeneralFile(*(char **)(local_30 * 4 + iVar7),(ParsedURL *)0x0,
-                                   (char *)0xffffffff,0,(FormList *)local_40);
+                                   (char *)0xffffffff,0,local_40);
       }
       f_ces = SystemCharset;
       t_ces = InnerCharset;
-      if (local_28 == (Buffer *)0x0) {
+      if (local_28 == (_Buffer *)0x0) {
         p_Var11 = Sprintf("w3m: Can\'t load %s.\n",*(undefined4 *)(local_30 * 4 + iVar7));
         Strcat(p_Var10,p_Var11);
       }
-      else {
-        if (local_28 != (Buffer *)0x1) {
-          iVar8 = local_28->real_scheme;
-          if (3 < iVar8) {
-            if (iVar8 < 6) {
-              p_Var11 = Strnew_charp(*(char **)(local_30 * 4 + iVar7));
-              p_Var11 = wc_Str_conv(p_Var11,f_ces,t_ces);
-              unshiftHist(LoadHist,p_Var11->ptr);
-            }
-            else {
-              if (iVar8 == 0xc) goto LAB_0804cfee;
-            }
+      else if (local_28 != (_Buffer *)0x1) {
+        iVar8 = local_28->real_scheme;
+        if (3 < iVar8) {
+          if (iVar8 < 6) {
+            p_Var11 = Strnew_charp(*(char **)(local_30 * 4 + iVar7));
+            p_Var11 = wc_Str_conv(p_Var11,f_ces,t_ces);
+            unshiftHist(LoadHist,p_Var11->ptr);
           }
-          p_Var11 = parsedURL2Str(&local_28->currentURL);
-          pushHashHist(URLHist,p_Var11->ptr);
-          goto LAB_0804cfee;
+          else if (iVar8 == 0xc) goto LAB_0804cfee;
         }
+        p_Var11 = parsedURL2Str(&local_28->currentURL);
+        pushHashHist(URLHist,p_Var11->ptr);
+        goto LAB_0804cfee;
       }
     }
 LAB_0804d16a:
-    local_30 = local_30 + 1;
   }
   if (w3m_dump != 0) {
     if (p_Var10->length != 0) {
-      fputs(p_Var10->ptr,(FILE *)stderr);
+      fputs(p_Var10->ptr,stderr);
     }
     save_cookies();
     w3m_exit(0);
@@ -6008,7 +5990,7 @@ LAB_0804d16a:
   }
   if (((FirstTab == (TabBuffer *)0x0) || (CurrentTab->firstBuffer == (Buffer *)0x0)) ||
      (CurrentTab->firstBuffer == (Buffer *)0x1)) {
-    if ((local_28 == (Buffer *)0x1) && (fmInitialized != '\0')) {
+    if ((local_28 == (_Buffer *)0x1) && (fmInitialized != '\0')) {
       inputLineHistSearch("Hit any key to quit w3m:","",0x200,(Hist *)0x0,
                           (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
     }
@@ -6016,9 +5998,9 @@ LAB_0804d16a:
       fmTerm();
     }
     if (p_Var10->length != 0) {
-      fputs(p_Var10->ptr,(FILE *)stderr);
+      fputs(p_Var10->ptr,stderr);
     }
-    if ((local_28 == (Buffer *)0x1) && (save_cookies(), p_Var10->length == 0)) {
+    if ((local_28 == (_Buffer *)0x1) && (save_cookies(), p_Var10->length == 0)) {
       w3m_exit(0);
     }
     w3m_exit(2);
@@ -6056,7 +6038,7 @@ LAB_0804d16a:
         CurrentCmdData = (char *)CurrentEvent->data;
         (*w3mFuncList[CurrentEvent->cmd].func)();
         CurrentCmdData = (char *)0x0;
-        CurrentEvent = (Event *)CurrentEvent->next;
+        CurrentEvent = CurrentEvent->next;
       }
       if (CurrentTab->currentBuffer->event != (_AlarmEvent *)0x0) break;
 LAB_0804d5ae:
@@ -6106,18 +6088,16 @@ LAB_0804d5ae:
           keyPressEventProc((int)cVar6);
           prec_num = 0;
         }
+        else if ((((prec_num == 0) || (cVar6 != '0')) && (cVar6 < '1')) || ('9' < cVar6)) {
+          set_buffer_environ(CurrentTab->currentBuffer);
+          save_buffer_position(CurrentTab->currentBuffer);
+          keyPressEventProc((int)cVar6);
+          prec_num = 0;
+        }
         else {
-          if ((((prec_num == 0) || (cVar6 != '0')) && (cVar6 < '1')) || ('9' < cVar6)) {
-            set_buffer_environ(CurrentTab->currentBuffer);
-            save_buffer_position(CurrentTab->currentBuffer);
-            keyPressEventProc((int)cVar6);
-            prec_num = 0;
-          }
-          else {
-            prec_num = prec_num * 10 + cVar6 + -0x30;
-            if (10000 < prec_num) {
-              prec_num = 10000;
-            }
+          prec_num = prec_num * 10 + cVar6 + -0x30;
+          if (10000 < prec_num) {
+            prec_num = 10000;
           }
         }
       }
@@ -6129,7 +6109,7 @@ LAB_0804d5ae:
       CurrentTab->currentBuffer->event = (_AlarmEvent *)0x0;
       goto LAB_0804d5ae;
     }
-    CurrentAlarm = (AlarmEvent *)CurrentTab->currentBuffer->event;
+    CurrentAlarm = CurrentTab->currentBuffer->event;
     if (CurrentAlarm->sec != 0) goto LAB_0804d5ae;
     CurrentTab->currentBuffer->event = (_AlarmEvent *)0x0;
     CurrentKey = -1;
@@ -6146,7 +6126,7 @@ void keyPressEventProc(int c)
 
 {
   CurrentKey = c;
-  (*w3mFuncList[(byte)GlobalKeymap[c]].func)();
+  (*w3mFuncList[GlobalKeymap[c]].func)();
   return;
 }
 
@@ -6165,7 +6145,7 @@ void pushEvent(int cmd,void *data)
   pEVar2->next = (_Event *)0x0;
   pEVar1 = pEVar2;
   if (CurrentEvent != (Event *)0x0) {
-    LastEvent->next = (_Event *)pEVar2;
+    LastEvent->next = pEVar2;
     pEVar1 = CurrentEvent;
   }
   CurrentEvent = pEVar1;
@@ -6213,13 +6193,12 @@ void dump_head(Buffer *buf)
     }
   }
   else {
-    ti = buf->document_header->first;
-    while (f_ces = InnerCharset, ti != (TextListItem *)0x0) {
+    for (ti = buf->document_header->first; f_ces = InnerCharset, ti != (TextListItem *)0x0;
+        ti = ti->next) {
       t_ces = buf->document_charset;
       p_Var1 = Strnew_charp(ti->ptr);
       p_Var1 = wc_Str_conv_strict(p_Var1,f_ces,t_ces);
       printf("%s",p_Var1->ptr);
-      ti = (TextListItem *)ti->next;
     }
     puts("");
   }
@@ -6309,18 +6288,14 @@ void escKeyProc(int c,int esc,uchar *map)
     if (esc == 0x200) {
       map = ppuVar1[2];
     }
+    else if (esc == 0x400) {
+      map = ppuVar1[3];
+    }
+    else if (esc == 0x100) {
+      map = ppuVar1[1];
+    }
     else {
-      if (esc == 0x400) {
-        map = ppuVar1[3];
-      }
-      else {
-        if (esc == 0x100) {
-          map = ppuVar1[1];
-        }
-        else {
-          map = *ppuVar1;
-        }
-      }
+      map = *ppuVar1;
     }
     esc = esc | CurrentKey & 0xffff0000U;
   }
@@ -6437,7 +6412,7 @@ void pushBuffer(Buffer *buf)
     tmpClearBuffer(CurrentTab->currentBuffer);
   }
   if (CurrentTab->firstBuffer == CurrentTab->currentBuffer) {
-    buf->nextBuffer = (_Buffer *)CurrentTab->firstBuffer;
+    buf->nextBuffer = CurrentTab->firstBuffer;
     pTVar1 = CurrentTab;
     CurrentTab->currentBuffer = buf;
     pTVar1->firstBuffer = pTVar1->currentBuffer;
@@ -6445,8 +6420,8 @@ void pushBuffer(Buffer *buf)
   else {
     pBVar2 = prevBuffer(CurrentTab->firstBuffer,CurrentTab->currentBuffer);
     if (pBVar2 != (Buffer *)0x0) {
-      pBVar2->nextBuffer = (_Buffer *)buf;
-      buf->nextBuffer = (_Buffer *)CurrentTab->currentBuffer;
+      pBVar2->nextBuffer = buf;
+      buf->nextBuffer = CurrentTab->currentBuffer;
       CurrentTab->currentBuffer = buf;
     }
   }
@@ -6463,7 +6438,7 @@ void delBuffer(Buffer *buf)
   
   if (buf != (Buffer *)0x0) {
     if (CurrentTab->currentBuffer == buf) {
-      CurrentTab->currentBuffer = (Buffer *)buf->nextBuffer;
+      CurrentTab->currentBuffer = buf->nextBuffer;
     }
     pTVar1 = CurrentTab;
     pBVar2 = deleteBuffer(CurrentTab->firstBuffer,buf);
@@ -6562,10 +6537,8 @@ void nscroll(int n,int mode)
       if (lnum < buf_00->topLine->linenumber) {
         lnum = buf_00->topLine->linenumber;
       }
-      else {
-        if (buf_00->lastLine->linenumber < lnum) {
-          lnum = buf_00->lastLine->linenumber;
-        }
+      else if (buf_00->lastLine->linenumber < lnum) {
+        lnum = buf_00->lastLine->linenumber;
       }
     }
     else {
@@ -6598,18 +6571,16 @@ void nscroll(int n,int mode)
         }
       }
     }
+    else if ((buf_00->currentLine->bpos == 0) ||
+            (buf_00->currentLine->bwidth < buf_00->currentColumn + buf_00->visualpos)) {
+      while (((buf_00->currentLine->next != (_Line *)0x0 && (buf_00->currentLine->next->bpos != 0))
+             && (buf_00->currentLine->bwidth + buf_00->currentLine->width <
+                 buf_00->currentColumn + buf_00->visualpos))) {
+        cursorDown0(buf_00,1);
+      }
+    }
     else {
-      if ((buf_00->currentLine->bpos == 0) ||
-         (buf_00->currentLine->bwidth < buf_00->currentColumn + buf_00->visualpos)) {
-        while (((buf_00->currentLine->next != (_Line *)0x0 && (buf_00->currentLine->next->bpos != 0)
-                ) && (buf_00->currentLine->bwidth + buf_00->currentLine->width <
-                      buf_00->currentColumn + buf_00->visualpos))) {
-          cursorDown0(buf_00,1);
-        }
-      }
-      else {
-        cursorDown(buf_00,1);
-      }
+      cursorDown(buf_00,1);
     }
     displayBuffer(buf_00,mode);
   }
@@ -6754,10 +6725,8 @@ void clear_mark(Line *l)
   int pos;
   
   if (l != (Line *)0x0) {
-    pos = 0;
-    while (pos < l->size) {
+    for (pos = 0; pos < l->size; pos = pos + 1) {
       l->propBuf[pos] = l->propBuf[pos] & 0xfffe;
-      pos = pos + 1;
     }
   }
   return;
@@ -6881,10 +6850,8 @@ int dispincsrch(int ch,Str buf,Lineprop *prop)
       searchRoutine = backwardSearch;
       bVar2 = true;
     }
-    else {
-      if (-1 < ch) {
-        return ch;
-      }
+    else if (-1 < ch) {
+      return ch;
     }
   }
   if (bVar2) {
@@ -7275,7 +7242,7 @@ void setEnv(void)
   }
   pcVar1 = strchr(env,0x3d);
   if ((pcVar1 != (char *)0x0) && (env < pcVar1)) {
-    var_00 = allocStr(env,(int)(pcVar1 + -(int)env));
+    var_00 = allocStr(env,(int)pcVar1 - (int)env);
     set_environ(var_00,pcVar1 + 1);
   }
   displayBuffer(CurrentTab->currentBuffer,0);
@@ -7290,7 +7257,7 @@ void pipeBuf(void)
   wc_ces wVar1;
   wc_ces wVar2;
   Str p_Var3;
-  FILE *f_00;
+  FILE *__stream;
   char *pcVar4;
   Buffer *buf_00;
   FILE *f;
@@ -7317,14 +7284,14 @@ void pipeBuf(void)
   else {
     p_Var3 = tmpfname(0,(char *)0x0);
     pcVar4 = p_Var3->ptr;
-    f_00 = (FILE *)fopen(pcVar4,"w");
-    if (f_00 == (FILE *)0x0) {
+    __stream = fopen(pcVar4,"w");
+    if (__stream == (FILE *)0x0) {
       p_Var3 = Sprintf("Can\'t save buffer to %s",cmd);
       disp_message(p_Var3->ptr,1);
     }
     else {
-      saveBuffer(CurrentTab->currentBuffer,f_00,1);
-      fclose((FILE *)f_00);
+      saveBuffer(CurrentTab->currentBuffer,(FILE *)__stream,1);
+      fclose(__stream);
       pcVar4 = shell_quote(pcVar4);
       p_Var3 = myExtCommand(cmd,pcVar4,1);
       buf_00 = getpipe(p_Var3->ptr);
@@ -7562,12 +7529,10 @@ void cmd_loadfile(char *fn)
     p_Var1 = Sprintf("%s not found",p_Var1->ptr);
     disp_err_message(p_Var1->ptr,0);
   }
-  else {
-    if (buf_00 != (Buffer *)0x1) {
-      pushBuffer(buf_00);
-      if ((RenderFrame != '\0') && (CurrentTab->currentBuffer->frameset != (frameset *)0x0)) {
-        rFrame();
-      }
+  else if (buf_00 != (Buffer *)0x1) {
+    pushBuffer(buf_00);
+    if ((RenderFrame != '\0') && (CurrentTab->currentBuffer->frameset != (frameset *)0x0)) {
+      rFrame();
     }
   }
   displayBuffer(CurrentTab->currentBuffer,0);
@@ -7585,10 +7550,8 @@ void _movL(int n)
   
   iVar1 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       cursorLeft(CurrentTab->currentBuffer,n);
-      i = i + 1;
     }
     displayBuffer(CurrentTab->currentBuffer,0);
   }
@@ -7624,10 +7587,8 @@ void _movD(int n)
   
   iVar1 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       cursorDown(CurrentTab->currentBuffer,n);
-      i = i + 1;
     }
     displayBuffer(CurrentTab->currentBuffer,0);
   }
@@ -7663,10 +7624,8 @@ void _movU(int n)
   
   iVar1 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       cursorUp(CurrentTab->currentBuffer,n);
-      i = i + 1;
     }
     displayBuffer(CurrentTab->currentBuffer,0);
   }
@@ -7702,10 +7661,8 @@ void _movR(int n)
   
   iVar1 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       cursorRight(CurrentTab->currentBuffer,n);
-      i = i + 1;
     }
     displayBuffer(CurrentTab->currentBuffer,0);
   }
@@ -7738,9 +7695,7 @@ int prev_nonnull_line(Line *line)
   int iVar1;
   Line *l;
   
-  l = line;
-  while ((l != (Line *)0x0 && (l->len == 0))) {
-    l = (Line *)l->prev;
+  for (l = line; (l != (Line *)0x0 && (l->len == 0)); l = l->prev) {
   }
   if ((l == (Line *)0x0) || (l->len == 0)) {
     iVar1 = -1;
@@ -7775,8 +7730,7 @@ void movLW(void)
   
   iVar5 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar5) {
+    for (i = 0; i < iVar5; i = i + 1) {
       pLVar1 = CurrentTab->currentBuffer->currentLine;
       iVar2 = CurrentTab->currentBuffer->pos;
       iVar6 = prev_nonnull_line(CurrentTab->currentBuffer->currentLine);
@@ -7790,7 +7744,7 @@ void movLW(void)
           CurrentTab->currentBuffer->pos = CurrentTab->currentBuffer->pos + -1;
         }
         if (0 < CurrentTab->currentBuffer->pos) break;
-        iVar6 = prev_nonnull_line((Line *)CurrentTab->currentBuffer->currentLine->prev);
+        iVar6 = prev_nonnull_line(CurrentTab->currentBuffer->currentLine->prev);
         if (iVar6 < 0) {
           CurrentTab->currentBuffer->currentLine = pLVar1;
           CurrentTab->currentBuffer->pos = iVar2;
@@ -7805,7 +7759,6 @@ void movLW(void)
              ((pLVar4[CurrentTab->currentBuffer->pos + -1] & 0x3f00) == 0))) {
         CurrentTab->currentBuffer->pos = CurrentTab->currentBuffer->pos + -1;
       }
-      i = i + 1;
     }
 end:
     arrangeCursor(CurrentTab->currentBuffer);
@@ -7822,9 +7775,7 @@ int next_nonnull_line(Line *line)
   int iVar1;
   Line *l;
   
-  l = line;
-  while ((l != (Line *)0x0 && (l->len == 0))) {
-    l = (Line *)l->next;
+  for (l = line; (l != (Line *)0x0 && (l->len == 0)); l = l->next) {
   }
   if ((l == (Line *)0x0) || (l->len == 0)) {
     iVar1 = -1;
@@ -7857,8 +7808,7 @@ void movRW(void)
   
   iVar3 = searchKeyNum();
   if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
-    i = 0;
-    while (i < iVar3) {
+    for (i = 0; i < iVar3; i = i + 1) {
       pLVar1 = CurrentTab->currentBuffer->currentLine;
       iVar2 = CurrentTab->currentBuffer->pos;
       iVar4 = next_nonnull_line(CurrentTab->currentBuffer->currentLine);
@@ -7877,7 +7827,7 @@ void movRW(void)
           CurrentTab->currentBuffer->pos = CurrentTab->currentBuffer->pos + 1;
         }
         if (lb[CurrentTab->currentBuffer->pos] != '\0') break;
-        iVar4 = next_nonnull_line((Line *)CurrentTab->currentBuffer->currentLine->next);
+        iVar4 = next_nonnull_line(CurrentTab->currentBuffer->currentLine->next);
         if (iVar4 < 0) {
           CurrentTab->currentBuffer->currentLine = pLVar1;
           CurrentTab->currentBuffer->pos = iVar2;
@@ -7887,7 +7837,6 @@ void movRW(void)
         lb = CurrentTab->currentBuffer->currentLine->lineBuf;
         pb = CurrentTab->currentBuffer->currentLine->propBuf;
       }
-      i = i + 1;
     }
 end:
     arrangeCursor(CurrentTab->currentBuffer);
@@ -7984,36 +7933,26 @@ void selBuf(void)
         CurrentTab->currentBuffer = CurrentTab->firstBuffer;
       }
     }
-    else {
-      if (cmd < 'E') {
-        if (cmd == 'B') {
-          bVar1 = true;
-        }
-        else {
-          if ((cmd < 'C') && ((cmd == '\n' || (cmd == ' ')))) {
-            CurrentTab->currentBuffer = pBVar3;
-            bVar1 = true;
-          }
-        }
+    else if (cmd < 'E') {
+      if (cmd == 'B') {
+        bVar1 = true;
       }
-      else {
-        if (cmd == 'Q') {
-          quitfm();
-        }
-        else {
-          if (cmd == 'q') {
-            qquitfm();
-          }
-        }
+      else if ((cmd < 'C') && ((cmd == '\n' || (cmd == ' ')))) {
+        CurrentTab->currentBuffer = pBVar3;
+        bVar1 = true;
       }
     }
+    else if (cmd == 'Q') {
+      quitfm();
+    }
+    else if (cmd == 'q') {
+      qquitfm();
+    }
   } while (!bVar1);
-  buf = CurrentTab->firstBuffer;
-  while (buf != (Buffer *)0x0) {
+  for (buf = CurrentTab->firstBuffer; buf != (Buffer *)0x0; buf = buf->nextBuffer) {
     if ((CurrentTab->currentBuffer != buf) && (deleteImage(buf), clear_buffer != 0)) {
       tmpClearBuffer(buf);
     }
-    buf = (Buffer *)buf->nextBuffer;
   }
   displayBuffer(CurrentTab->currentBuffer,1);
   return;
@@ -8053,26 +7992,22 @@ void _goLine(char *l)
     if (((*l == '^') || (*l == '$')) && (prec_num != 0)) {
       gotoRealLine(CurrentTab->currentBuffer,prec_num);
     }
+    else if (*l == '^') {
+      pBVar1 = CurrentTab->currentBuffer;
+      pBVar2 = CurrentTab->currentBuffer;
+      pBVar2->currentLine = CurrentTab->currentBuffer->firstLine;
+      pBVar1->topLine = pBVar2->currentLine;
+    }
+    else if (*l == '$') {
+      pBVar1 = CurrentTab->currentBuffer;
+      pLVar3 = lineSkip(CurrentTab->currentBuffer,CurrentTab->currentBuffer->lastLine,
+                        ~(int)CurrentTab->currentBuffer->LINES / 2,1);
+      pBVar1->topLine = pLVar3;
+      CurrentTab->currentBuffer->currentLine = CurrentTab->currentBuffer->lastLine;
+    }
     else {
-      if (*l == '^') {
-        pBVar1 = CurrentTab->currentBuffer;
-        pBVar2 = CurrentTab->currentBuffer;
-        pBVar2->currentLine = CurrentTab->currentBuffer->firstLine;
-        pBVar1->topLine = pBVar2->currentLine;
-      }
-      else {
-        if (*l == '$') {
-          pBVar1 = CurrentTab->currentBuffer;
-          pLVar3 = lineSkip(CurrentTab->currentBuffer,CurrentTab->currentBuffer->lastLine,
-                            ~(int)CurrentTab->currentBuffer->LINES / 2,1);
-          pBVar1->topLine = pLVar3;
-          CurrentTab->currentBuffer->currentLine = CurrentTab->currentBuffer->lastLine;
-        }
-        else {
-          n = atoi(l);
-          gotoRealLine(CurrentTab->currentBuffer,n);
-        }
-      }
+      n = atoi(l);
+      gotoRealLine(CurrentTab->currentBuffer,n);
     }
     arrangeCursor(CurrentTab->currentBuffer);
     displayBuffer(CurrentTab->currentBuffer,1);
@@ -8178,12 +8113,11 @@ int cur_real_linenumber(Buffer *buf)
     else {
       n = pLVar1->real_linenumber;
     }
-    l = buf->firstLine;
-    while (((l != (Line *)0x0 && (l != pLVar1)) && (l->real_linenumber == 0))) {
+    for (l = buf->firstLine; ((l != (Line *)0x0 && (l != pLVar1)) && (l->real_linenumber == 0));
+        l = l->next) {
       if (l->bpos == 0) {
         n = n + 1;
       }
-      l = (Line *)l->next;
     }
   }
   return n;
@@ -8235,7 +8169,7 @@ void editScr(void)
 {
   char *__filename;
   Str p_Var1;
-  FILE *f_00;
+  FILE *__stream;
   int line;
   char *file;
   FILE *f;
@@ -8243,14 +8177,14 @@ void editScr(void)
   
   p_Var1 = tmpfname(0,(char *)0x0);
   __filename = p_Var1->ptr;
-  f_00 = (FILE *)fopen(__filename,"w");
-  if (f_00 == (FILE *)0x0) {
+  __stream = fopen(__filename,"w");
+  if (__stream == (FILE *)0x0) {
     p_Var1 = Sprintf("Can\'t open %s",__filename);
     disp_err_message(p_Var1->ptr,1);
   }
   else {
-    saveBuffer(CurrentTab->currentBuffer,f_00,1);
-    fclose((FILE *)f_00);
+    saveBuffer(CurrentTab->currentBuffer,(FILE *)__stream,1);
+    fclose(__stream);
     fmTerm();
     line = cur_real_linenumber(CurrentTab->currentBuffer);
     file = shell_quote(__filename);
@@ -8293,10 +8227,10 @@ void nextMk(void)
     l = CurrentTab->currentBuffer->currentLine;
     if (l->len <= i) {
       i = 0;
-      l = (Line *)l->next;
+      l = l->next;
     }
     while (l != (Line *)0x0) {
-      while (i < l->len) {
+      for (; i < l->len; i = i + 1) {
         if ((l->propBuf[i] & 1) != 0) {
           CurrentTab->currentBuffer->currentLine = l;
           CurrentTab->currentBuffer->pos = i;
@@ -8304,9 +8238,8 @@ void nextMk(void)
           displayBuffer(CurrentTab->currentBuffer,0);
           return;
         }
-        i = i + 1;
       }
-      l = (Line *)l->next;
+      l = l->next;
       i = 0;
     }
     disp_message("No mark exist after here",1);
@@ -8325,11 +8258,11 @@ void prevMk(void)
   if ((use_mark != 0) && (CurrentTab->currentBuffer->firstLine != (Line *)0x0)) {
     i = CurrentTab->currentBuffer->pos + -1;
     l = CurrentTab->currentBuffer->currentLine;
-    if ((i < 0) && (l = (Line *)l->prev, l != (Line *)0x0)) {
-      i = ((_Line *)l)->len + -1;
+    if ((i < 0) && (l = l->prev, l != (_Line *)0x0)) {
+      i = l->len + -1;
     }
     while (l != (Line *)0x0) {
-      while (-1 < i) {
+      for (; -1 < i; i = i + -1) {
         if ((l->propBuf[i] & 1) != 0) {
           CurrentTab->currentBuffer->currentLine = l;
           CurrentTab->currentBuffer->pos = i;
@@ -8337,11 +8270,10 @@ void prevMk(void)
           displayBuffer(CurrentTab->currentBuffer,0);
           return;
         }
-        i = i + -1;
       }
-      l = (Line *)l->prev;
-      if (l != (Line *)0x0) {
-        i = ((_Line *)l)->len + -1;
+      l = l->prev;
+      if (l != (_Line *)0x0) {
+        i = l->len + -1;
       }
     }
     disp_message("No mark exist before here",1);
@@ -8373,17 +8305,15 @@ void reMark(void)
     str = conv_search_string(str,DisplayCharset);
     str = regexCompile(str,1);
     if (str == (char *)0x0) {
-      l = CurrentTab->currentBuffer->firstLine;
       MarkString = str;
-      while (l != (Line *)0x0) {
+      for (l = CurrentTab->currentBuffer->firstLine; l != (Line *)0x0; l = l->next) {
         p = l->lineBuf;
         while (iVar1 = regexMatch(p,(int)(l->lineBuf + (l->len - (int)p)),(uint)(l->lineBuf == p)),
               iVar1 == 1) {
           matchedPosition(&p1,&p2);
-          l->propBuf[(int)(p1 + -(int)l->lineBuf)] = l->propBuf[(int)(p1 + -(int)l->lineBuf)] | 1;
+          l->propBuf[(int)p1 - (int)l->lineBuf] = l->propBuf[(int)p1 - (int)l->lineBuf] | 1;
           p = p2;
         }
-        l = (Line *)l->next;
       }
       displayBuffer(CurrentTab->currentBuffer,1);
     }
@@ -8457,61 +8387,57 @@ Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
     if (pBVar4 == (Buffer *)0x1) {
       pBVar4 = (Buffer *)0x0;
     }
-    else {
-      if (on_target == 0) {
-        pBVar4 = loadNormalBuf(pBVar4,1);
-      }
-      else {
-        if (do_download == 0) {
-          if (((target != (char *)0x0) && (iVar5 = strcmp(target,"_top"), iVar5 != 0)) &&
-             ((CurrentTab->currentBuffer->bufferprop & 2U) != 0)) {
-            p_Var1 = CurrentTab->currentBuffer->linkBuffer[1];
-            if (p_Var1 == (_Buffer *)0x0) {
-              pBVar4 = loadNormalBuf(pBVar4,1);
-              return pBVar4;
-            }
-            f_element_00 = (char **)search_frame(p_Var1->frameset,target);
-            if (f_element_00 == (char **)0x0) {
-              pBVar4 = loadNormalBuf(pBVar4,1);
-              return pBVar4;
-            }
-            pBVar2 = CurrentTab->currentBuffer;
-            fs = copyFrameSet(p_Var1->frameset);
-            pushFrameTree(&p_Var1->frameQ,fs,pBVar2);
-            delBuffer(CurrentTab->currentBuffer);
-            CurrentTab->currentBuffer = (Buffer *)p_Var1;
-            resetFrameElement(f_element_00,pBVar4,referer,request);
-            discardBuffer(pBVar4);
-            rFrame();
-            al = (Anchor *)0x0;
-            if ((pu.label != (char *)0x0) && (**f_element_00 == '\x01')) {
-              al = searchAnchor(*(AnchorList **)(*f_element_00 + 0x1c),pu.label);
-            }
-            if (al == (Anchor *)0x0) {
-              p_Var3 = Strnew_m_charp("_",target,0);
-              al = searchURLLabel(CurrentTab->currentBuffer,p_Var3->ptr);
-            }
-            if (al != (Anchor *)0x0) {
-              gotoLine(CurrentTab->currentBuffer,(al->start).line);
-              if (label_topline != 0) {
-                pBVar2 = CurrentTab->currentBuffer;
-                pLVar6 = lineSkip(CurrentTab->currentBuffer,CurrentTab->currentBuffer->topLine,
-                                  CurrentTab->currentBuffer->currentLine->linenumber -
-                                  CurrentTab->currentBuffer->topLine->linenumber,0);
-                pBVar2->topLine = pLVar6;
-              }
-              CurrentTab->currentBuffer->pos = (al->start).pos;
-              arrangeCursor(CurrentTab->currentBuffer);
-            }
-            displayBuffer(CurrentTab->currentBuffer,0);
-            return pBVar4;
-          }
+    else if (on_target == 0) {
+      pBVar4 = loadNormalBuf(pBVar4,1);
+    }
+    else if (do_download == 0) {
+      if (((target != (char *)0x0) && (iVar5 = strcmp(target,"_top"), iVar5 != 0)) &&
+         ((CurrentTab->currentBuffer->bufferprop & 2U) != 0)) {
+        p_Var1 = CurrentTab->currentBuffer->linkBuffer[1];
+        if (p_Var1 == (_Buffer *)0x0) {
           pBVar4 = loadNormalBuf(pBVar4,1);
+          return pBVar4;
         }
-        else {
-          pBVar4 = loadNormalBuf(pBVar4,0);
+        f_element_00 = (char **)search_frame(p_Var1->frameset,target);
+        if (f_element_00 == (char **)0x0) {
+          pBVar4 = loadNormalBuf(pBVar4,1);
+          return pBVar4;
         }
+        pBVar2 = CurrentTab->currentBuffer;
+        fs = copyFrameSet(p_Var1->frameset);
+        pushFrameTree(&p_Var1->frameQ,fs,pBVar2);
+        delBuffer(CurrentTab->currentBuffer);
+        CurrentTab->currentBuffer = p_Var1;
+        resetFrameElement(f_element_00,pBVar4,referer,request);
+        discardBuffer(pBVar4);
+        rFrame();
+        al = (Anchor *)0x0;
+        if ((pu.label != (char *)0x0) && (**f_element_00 == '\x01')) {
+          al = searchAnchor(*(AnchorList **)(*f_element_00 + 0x1c),pu.label);
+        }
+        if (al == (Anchor *)0x0) {
+          p_Var3 = Strnew_m_charp("_",target,0);
+          al = searchURLLabel(CurrentTab->currentBuffer,p_Var3->ptr);
+        }
+        if (al != (Anchor *)0x0) {
+          gotoLine(CurrentTab->currentBuffer,(al->start).line);
+          if (label_topline != 0) {
+            pBVar2 = CurrentTab->currentBuffer;
+            pLVar6 = lineSkip(CurrentTab->currentBuffer,CurrentTab->currentBuffer->topLine,
+                              CurrentTab->currentBuffer->currentLine->linenumber -
+                              CurrentTab->currentBuffer->topLine->linenumber,0);
+            pBVar2->topLine = pLVar6;
+          }
+          CurrentTab->currentBuffer->pos = (al->start).pos;
+          arrangeCursor(CurrentTab->currentBuffer);
+        }
+        displayBuffer(CurrentTab->currentBuffer,0);
+        return pBVar4;
       }
+      pBVar4 = loadNormalBuf(pBVar4,1);
+    }
+    else {
+      pBVar4 = loadNormalBuf(pBVar4,0);
     }
   }
   return pBVar4;
@@ -8539,10 +8465,8 @@ void gotoLabel(char *label)
   else {
     pBVar3 = newBuffer((int)CurrentTab->currentBuffer->width);
     copyBuffer(pBVar3,CurrentTab->currentBuffer);
-    i = 0;
-    while (i < 5) {
+    for (i = 0; i < 5; i = i + 1) {
       pBVar3->linkBuffer[i] = (_Buffer *)0x0;
-      i = i + 1;
     }
     pcVar4 = allocStr(label,-1);
     (pBVar3->currentURL).label = pcVar4;
@@ -8698,10 +8622,8 @@ void followI(void)
       p_Var2 = Sprintf("Can\'t load %s",pAVar1->url);
       disp_err_message(p_Var2->ptr,0);
     }
-    else {
-      if (buf_00 != (Buffer *)0x1) {
-        pushBuffer(buf_00);
-      }
+    else if (buf_00 != (Buffer *)0x1) {
+      pushBuffer(buf_00);
     }
     displayBuffer(CurrentTab->currentBuffer,0);
   }
@@ -8742,8 +8664,7 @@ FormItemList * save_submit_formlist(FormItemList *src)
     pfVar2->body = pfVar1->body;
     pfVar2->boundary = pfVar1->boundary;
     pfVar2->length = pfVar1->length;
-    srcitem = (FormItemList *)pfVar1->item;
-    while (srcitem != (FormItemList *)0x0) {
+    for (srcitem = pfVar1->item; srcitem != (FormItemList *)0x0; srcitem = srcitem->next) {
       pFVar4 = (FormItemList *)GC_malloc(0x48);
       pFVar4->type = srcitem->type;
       p_Var3 = Strdup(srcitem->name);
@@ -8758,8 +8679,8 @@ FormItemList * save_submit_formlist(FormItemList *src)
       pFVar4->readonly = srcitem->readonly;
       curopt = (FormSelectOptionItem *)0x0;
       opt = (FormSelectOptionItem *)0x0;
-      srcopt = srcitem->select_option;
-      while (srcopt != (FormSelectOptionItem *)0x0) {
+      for (srcopt = srcitem->select_option; srcopt != (FormSelectOptionItem *)0x0;
+          srcopt = srcopt->next) {
         if (srcopt->checked != 0) {
           opt = (FormSelectOptionItem *)GC_malloc(0x10);
           p_Var3 = Strdup(srcopt->value);
@@ -8772,11 +8693,10 @@ FormItemList * save_submit_formlist(FormItemList *src)
             curopt = opt;
           }
           else {
-            curopt->next = (form_select_option_item *)opt;
-            curopt = (FormSelectOptionItem *)curopt->next;
+            curopt->next = opt;
+            curopt = curopt->next;
           }
         }
-        srcopt = (FormSelectOptionItem *)srcopt->next;
       }
       pFVar4->select_option = opt;
       if (srcitem->label != (Str)0x0) {
@@ -8786,17 +8706,16 @@ FormItemList * save_submit_formlist(FormItemList *src)
       pFVar4->parent = pfVar2;
       pFVar4->next = (form_item_list *)0x0;
       if (pfVar2->lastitem == (form_item_list *)0x0) {
-        pfVar2->lastitem = (form_item_list *)pFVar4;
+        pfVar2->lastitem = pFVar4;
         pfVar2->item = pfVar2->lastitem;
       }
       else {
-        pfVar2->lastitem->next = (form_item_list *)pFVar4;
-        pfVar2->lastitem = (form_item_list *)pFVar4;
+        pfVar2->lastitem->next = pFVar4;
+        pfVar2->lastitem = pFVar4;
       }
       if (srcitem == src) {
         ret = pFVar4;
       }
-      srcitem = (FormItemList *)srcitem->next;
     }
   }
   return ret;
@@ -8844,7 +8763,7 @@ void query_from_followform(Str *query,FormItemList *fi,int multipart)
     p_Var4 = tmpfname(0,(char *)0x0);
     *query = p_Var4;
     body = (FILE *)fopen((*query)->ptr,"w");
-    if (body == (FILE *)0x0) {
+    if ((FILE *)body == (FILE *)0x0) {
       return;
     }
     fi->parent->body = (*query)->ptr;
@@ -8855,7 +8774,7 @@ void query_from_followform(Str *query,FormItemList *fi,int multipart)
   }
   p_Var4 = Strnew();
   *query = p_Var4;
-  f2 = (FormItemList *)fi->parent->item;
+  f2 = fi->parent->item;
   do {
     if (f2 == (FormItemList *)0x0) {
       if (multipart == 0) {
@@ -8928,42 +8847,38 @@ switchD_0805204e_caseD_0:
             (*query)->ptr[(*query)->length] = '\0';
           }
         }
-        else {
-          if (f2->type == 7) {
-            x = 0;
-            y = 0;
-            pAVar5 = retrieveCurrentImg(CurrentTab->currentBuffer);
-            getMapXY(CurrentTab->currentBuffer,pAVar5,&x,&y);
+        else if (f2->type == 7) {
+          x = 0;
+          y = 0;
+          pAVar5 = retrieveCurrentImg(CurrentTab->currentBuffer);
+          getMapXY(CurrentTab->currentBuffer,pAVar5,&x,&y);
+          p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
+          p_Var4 = Strdup(p_Var4);
+          *query = p_Var4;
+          Strcat_charp(*query,".x");
+          p_Var4 = Sprintf("%d",x);
+          form_write_data(body,fi->parent->boundary,(*query)->ptr,p_Var4->ptr);
+          p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
+          p_Var4 = Strdup(p_Var4);
+          *query = p_Var4;
+          Strcat_charp(*query,".y");
+          p_Var4 = Sprintf("%d",y);
+          form_write_data(body,fi->parent->boundary,(*query)->ptr,p_Var4->ptr);
+        }
+        else if (((f2->name != (Str)0x0) && (0 < f2->name->length)) && (f2->value != (Str)0x0)) {
+          p_Var4 = conv_form_encoding(f2->value,fi,CurrentTab->currentBuffer);
+          *query = p_Var4;
+          if (f2->type == 0xb) {
+            p_Var4 = wc_Str_conv_strict(f2->value,InnerCharset,SystemCharset);
+            pcVar2 = p_Var4->ptr;
+            filename = (*query)->ptr;
             p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
-            p_Var4 = Strdup(p_Var4);
-            *query = p_Var4;
-            Strcat_charp(*query,".x");
-            p_Var4 = Sprintf("%d",x);
-            form_write_data(body,fi->parent->boundary,(*query)->ptr,p_Var4->ptr);
-            p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
-            p_Var4 = Strdup(p_Var4);
-            *query = p_Var4;
-            Strcat_charp(*query,".y");
-            p_Var4 = Sprintf("%d",y);
-            form_write_data(body,fi->parent->boundary,(*query)->ptr,p_Var4->ptr);
+            form_write_from_file(body,fi->parent->boundary,p_Var4->ptr,filename,pcVar2);
           }
           else {
-            if (((f2->name != (Str)0x0) && (0 < f2->name->length)) && (f2->value != (Str)0x0)) {
-              p_Var4 = conv_form_encoding(f2->value,fi,CurrentTab->currentBuffer);
-              *query = p_Var4;
-              if (f2->type == 0xb) {
-                p_Var4 = wc_Str_conv_strict(f2->value,InnerCharset,SystemCharset);
-                pcVar2 = p_Var4->ptr;
-                filename = (*query)->ptr;
-                p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
-                form_write_from_file(body,fi->parent->boundary,p_Var4->ptr,filename,pcVar2);
-              }
-              else {
-                pcVar2 = (*query)->ptr;
-                p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
-                form_write_data(body,fi->parent->boundary,p_Var4->ptr,pcVar2);
-              }
-            }
+            pcVar2 = (*query)->ptr;
+            p_Var4 = conv_form_encoding(f2->name,fi,CurrentTab->currentBuffer);
+            form_write_data(body,fi->parent->boundary,p_Var4->ptr,pcVar2);
           }
         }
         break;
@@ -8983,7 +8898,7 @@ joined_r0x08052064:
       case 5:
       }
     }
-    f2 = (FormItemList *)f2->next;
+    f2 = f2->next;
   } while( true );
 }
 
@@ -9038,10 +8953,10 @@ void _followForm(int submit)
     return;
   }
   fi = (FormItemList *)a->url;
-  switch(((form_item_list *)fi)->type) {
+  switch(fi->type) {
   case 0:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly != 0) {
+      if (fi->readonly != 0) {
         disp_message_nsec("Read only field!",0,1,1,0);
       }
       if (fi->value == (Str)0x0) {
@@ -9064,15 +8979,15 @@ void _followForm(int submit)
     break;
   case 1:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly != 0) {
+      if (fi->readonly != 0) {
         disp_message_nsec("Read only field!",0,1,1,0);
         goto switchD_080526c4_caseD_6;
       }
-      if (((form_item_list *)fi)->value == (Str)0x0) {
+      if (fi->value == (Str)0x0) {
         pcVar1 = (char *)0x0;
       }
       else {
-        pcVar1 = ((form_item_list *)fi)->value->ptr;
+        pcVar1 = fi->value->ptr;
       }
       p = inputLineHistSearch("Password:",pcVar1,0x40,(Hist *)0x0,
                               (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
@@ -9085,8 +9000,8 @@ void _followForm(int submit)
     break;
   case 2:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly == 0) {
-        ((form_item_list *)fi)->checked = (uint)(((form_item_list *)fi)->checked == 0);
+      if (fi->readonly == 0) {
+        fi->checked = (uint)(fi->checked == 0);
         formUpdateBuffer(a,CurrentTab->currentBuffer,fi);
       }
       else {
@@ -9097,7 +9012,7 @@ void _followForm(int submit)
     break;
   case 3:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly == 0) {
+      if (fi->readonly == 0) {
         formRecheckRadio(a,CurrentTab->currentBuffer,fi);
       }
       else {
@@ -9111,8 +9026,7 @@ void _followForm(int submit)
   case 10:
     break;
   case 5:
-    i = 0;
-    while (i < CurrentTab->currentBuffer->formitem->nanchor) {
+    for (i = 0; i < CurrentTab->currentBuffer->formitem->nanchor; i = i + 1) {
       a2 = CurrentTab->currentBuffer->formitem->anchors + i;
       f2 = (FormItemList *)a2->url;
       if (((((f2->parent == fi->parent) && (f2->name != (Str)0x0)) && (f2->value != (Str)0x0)) &&
@@ -9123,16 +9037,15 @@ void _followForm(int submit)
         f2->selected = f2->init_selected;
         formUpdateBuffer(a2,CurrentTab->currentBuffer,f2);
       }
-      i = i + 1;
     }
   default:
     goto switchD_080526c4_caseD_6;
   case 8:
     if (submit == 0) {
       iVar3 = formChooseOptionByMenu
-                        ((form_item_list *)fi,
-                         ((int)CurrentTab->currentBuffer->cursorX - CurrentTab->currentBuffer->pos)
-                         + (a->start).pos + (int)CurrentTab->currentBuffer->rootX,
+                        (fi,((int)CurrentTab->currentBuffer->cursorX -
+                            CurrentTab->currentBuffer->pos) + (a->start).pos +
+                            (int)CurrentTab->currentBuffer->rootX,
                          (int)CurrentTab->currentBuffer->cursorY +
                          (int)CurrentTab->currentBuffer->rootY);
       if (iVar3 == 0) goto switchD_080526c4_caseD_6;
@@ -9144,7 +9057,7 @@ joined_r0x08052b70:
     break;
   case 9:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly != 0) {
+      if (fi->readonly != 0) {
         disp_message_nsec("Read only field!",0,1,1,0);
       }
       input_textarea(fi);
@@ -9154,7 +9067,7 @@ joined_r0x08052b70:
     break;
   case 0xb:
     if (submit == 0) {
-      if (((form_item_list *)fi)->readonly != 0) {
+      if (fi->readonly != 0) {
         disp_message_nsec("Read only field!",0,1,1,0);
       }
       if (fi->value == (Str)0x0) {
@@ -9202,36 +9115,32 @@ joined_r0x08052b70:
     Strcat(tmp2,tmp);
     loadLink(tmp2->ptr,a->target,(char *)0x0,(FormList *)0x0);
   }
-  else {
-    if (fi->parent->method == 1) {
-      if (iVar3 == 0) {
-        fi->parent->body = tmp->ptr;
-        fi->parent->length = tmp->length;
-      }
-      else {
-        stat(fi->parent->body,(stat *)&st);
-        fi->parent->length = st.st_size;
-      }
-      pBVar5 = loadLink(tmp2->ptr,a->target,(char *)0x0,(FormList *)fi->parent);
-      if (iVar3 != 0) {
-        unlink(fi->parent->body);
-      }
-      if ((pBVar5 != (Buffer *)0x0) && ((pBVar5->bufferprop & 0x20U) == 0)) {
-        pFVar6 = save_submit_formlist(fi);
-        pBVar5->form_submit = pFVar6;
-      }
+  else if (fi->parent->method == 1) {
+    if (iVar3 == 0) {
+      fi->parent->body = tmp->ptr;
+      fi->parent->length = tmp->length;
     }
     else {
-      if (((fi->parent->method == 2) &&
-          ((iVar3 = strcmp(fi->parent->action->ptr,"map"), iVar3 == 0 ||
-           (iVar3 = strcmp(fi->parent->action->ptr,"none"), iVar3 == 0)))) ||
-         ((CurrentTab->currentBuffer->bufferprop & 8U) != 0)) {
-        do_internal(tmp2->ptr,tmp->ptr);
-      }
-      else {
-        disp_err_message("Can\'t send form because of illegal method.",0);
-      }
+      stat(fi->parent->body,(stat *)&st);
+      fi->parent->length = st.st_size;
     }
+    pBVar5 = loadLink(tmp2->ptr,a->target,(char *)0x0,fi->parent);
+    if (iVar3 != 0) {
+      unlink(fi->parent->body);
+    }
+    if ((pBVar5 != (Buffer *)0x0) && ((pBVar5->bufferprop & 0x20U) == 0)) {
+      pFVar6 = save_submit_formlist(fi);
+      pBVar5->form_submit = pFVar6;
+    }
+  }
+  else if (((fi->parent->method == 2) &&
+           ((iVar3 = strcmp(fi->parent->action->ptr,"map"), iVar3 == 0 ||
+            (iVar3 = strcmp(fi->parent->action->ptr,"none"), iVar3 == 0)))) ||
+          ((CurrentTab->currentBuffer->bufferprop & 8U) != 0)) {
+    do_internal(tmp2->ptr,tmp->ptr);
+  }
+  else {
+    disp_err_message("Can\'t send form because of illegal method.",0);
   }
 switchD_080526c4_caseD_6:
   displayBuffer(CurrentTab->currentBuffer,1);
@@ -9257,10 +9166,8 @@ void topA(void)
     if (pHVar2->nmark < prec_num) {
       hseq = pHVar2->nmark + -1;
     }
-    else {
-      if (0 < prec_num) {
-        hseq = prec_num + -1;
-      }
+    else if (0 < prec_num) {
+      hseq = prec_num + -1;
     }
     do {
       if (pHVar2->nmark <= hseq) {
@@ -9398,8 +9305,7 @@ void _nextA(int visited)
     if (visited == 1) {
       n = pHVar1->nmark;
     }
-    i = 0;
-    while (pAVar4 = an, i < n) {
+    for (i = 0; pAVar4 = an, i < n; i = i + 1) {
       if ((an == (Anchor *)0x0) || (an->hseq < 0)) {
         an = closest_next_anchor(CurrentTab->currentBuffer->href,(Anchor *)0x0,x,y);
         if (visited != 1) {
@@ -9446,7 +9352,6 @@ void _nextA(int visited)
           }
         } while ((an == (Anchor *)0x0) || (an == pAVar4));
       }
-      i = i + 1;
     }
     an = pAVar4;
     if (visited != 1) {
@@ -9500,8 +9405,7 @@ void _prevA(int visited)
     if (visited == 1) {
       n = pHVar1->nmark;
     }
-    i = 0;
-    while (pAVar4 = an, i < n) {
+    for (i = 0; pAVar4 = an, i < n; i = i + 1) {
       if ((an == (Anchor *)0x0) || (an->hseq < 0)) {
         an = closest_prev_anchor(CurrentTab->currentBuffer->href,(Anchor *)0x0,x,y);
         if (visited != 1) {
@@ -9548,7 +9452,6 @@ void _prevA(int visited)
           }
         } while ((an == (Anchor *)0x0) || (an == pAVar4));
       }
-      i = i + 1;
     }
     an = pAVar4;
     if (visited != 1) {
@@ -9607,7 +9510,7 @@ LAB_08053b5f:
       }
       an = (Anchor *)0x0;
       do {
-        while ((-1 < x && (x < l->len))) {
+        for (; (-1 < x && (x < l->len)); x = x + d) {
           an = retrieveAnchor(CurrentTab->currentBuffer->href,y,x);
           if (an == (Anchor *)0x0) {
             an = retrieveAnchor(CurrentTab->currentBuffer->formitem,y,x);
@@ -9616,23 +9519,22 @@ LAB_08053b5f:
             pan = an;
             break;
           }
-          x = x + d;
         }
         if ((dy == 0) || (an != (Anchor *)0x0)) goto LAB_08053b55;
         if (dy < 1) {
-          l = (Line *)l->prev;
+          l = l->prev;
         }
         else {
-          l = (Line *)l->next;
+          l = l->next;
         }
-        if (l == (Line *)0x0) goto LAB_08053b55;
+        if (l == (_Line *)0x0) goto LAB_08053b55;
         if (d < 1) {
-          x = ((_Line *)l)->len + -1;
+          x = l->len + -1;
         }
         else {
           x = 0;
         }
-        y = ((_Line *)l)->linenumber;
+        y = l->linenumber;
       } while( true );
     }
 LAB_08053b6e:
@@ -9680,8 +9582,7 @@ void nextY(int d)
     y = CurrentTab->currentBuffer->currentLine->linenumber + d;
     pan = (Anchor *)0x0;
     hseq = -1;
-    i = 0;
-    while (i < iVar2) {
+    for (i = 0; i < iVar2; i = i + 1) {
       if (an != (Anchor *)0x0) {
         uVar3 = an->hseq >> 0x1f;
         hseq = (an->hseq ^ uVar3) - uVar3;
@@ -9700,7 +9601,6 @@ void nextY(int d)
       pan = an;
 LAB_08053d36:
       if (an == (Anchor *)0x0) break;
-      i = i + 1;
     }
     if (pan != (Anchor *)0x0) {
       gotoLine(CurrentTab->currentBuffer,(pan->start).line);
@@ -9813,7 +9713,7 @@ void prevBf(void)
     if (iVar2 <= i) goto LAB_08053f16;
     p_Var1 = CurrentTab->currentBuffer->nextBuffer;
     if (p_Var1 == (_Buffer *)0x0) break;
-    CurrentTab->currentBuffer = (Buffer *)p_Var1;
+    CurrentTab->currentBuffer = p_Var1;
     i = i + 1;
   }
   if (i != 0) {
@@ -9883,7 +9783,7 @@ void backBf(void)
     delBuffer(CurrentTab->currentBuffer);
     if (p_Var1 != (_Buffer *)0x0) {
       if (p_Var1->frameQ == (frameset_queue *)0x0) {
-        if ((RenderFrame != '\0') && ((_Buffer *)CurrentTab->currentBuffer == p_Var1)) {
+        if ((RenderFrame != '\0') && (CurrentTab->currentBuffer == p_Var1)) {
           delBuffer(CurrentTab->currentBuffer);
         }
       }
@@ -9892,11 +9792,11 @@ void backBf(void)
         iVar2 = p_Var1->frameQ->top_linenumber;
         iVar3 = p_Var1->frameQ->pos;
         iVar4 = p_Var1->frameQ->currentColumn;
-        formitem_00 = (AnchorList *)p_Var1->frameQ->formitem;
+        formitem_00 = p_Var1->frameQ->formitem;
         pfVar7 = popFrameTree(&p_Var1->frameQ);
         deleteFrameSet(p_Var1->frameset);
         p_Var1->frameset = pfVar7;
-        if ((_Buffer *)CurrentTab->currentBuffer == p_Var1) {
+        if (CurrentTab->currentBuffer == p_Var1) {
           rFrame();
           pBVar5 = CurrentTab->currentBuffer;
           pLVar8 = lineSkip(CurrentTab->currentBuffer,CurrentTab->currentBuffer->firstLine,
@@ -9923,7 +9823,7 @@ void deletePrevBuf(void)
   Buffer *buf_00;
   Buffer *buf;
   
-  buf_00 = (Buffer *)CurrentTab->currentBuffer->nextBuffer;
+  buf_00 = CurrentTab->currentBuffer->nextBuffer;
   if (buf_00 != (Buffer *)0x0) {
     delBuffer(buf_00);
   }
@@ -9969,11 +9869,9 @@ void cmd_loadURL(char *url,ParsedURL *current,char *referer,FormList *request)
     p_Var3 = Sprintf("Can\'t load %s",p_Var3->ptr);
     disp_err_message(p_Var3->ptr,0);
   }
-  else {
-    if (((buf_00 != (Buffer *)0x1) && (pushBuffer(buf_00), RenderFrame != '\0')) &&
-       (CurrentTab->currentBuffer->frameset != (frameset *)0x0)) {
-      rFrame();
-    }
+  else if (((buf_00 != (Buffer *)0x1) && (pushBuffer(buf_00), RenderFrame != '\0')) &&
+          (CurrentTab->currentBuffer->frameset != (frameset *)0x0)) {
+    rFrame();
   }
   displayBuffer(CurrentTab->currentBuffer,0);
   return;
@@ -10060,28 +9958,26 @@ void goURL0(char *prompt,int relative)
   if ((url == (char *)0x0) || (*url == '\0')) {
     displayBuffer(CurrentTab->currentBuffer,1);
   }
+  else if (*url == '#') {
+    gotoLabel(url + 1);
+  }
   else {
-    if (*url == '#') {
-      gotoLabel(url + 1);
+    if (relative == 0) {
+      current = (ParsedURL *)0x0;
+      referer = (char *)0x0;
     }
     else {
-      if (relative == 0) {
-        current = (ParsedURL *)0x0;
-        referer = (char *)0x0;
-      }
-      else {
-        current = baseURL(CurrentTab->currentBuffer);
-        p_Var4 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
-        referer = p_Var4->ptr;
-      }
-      parseURL2(url,&p_url,current);
-      p_Var4 = parsedURL2Str(&p_url);
+      current = baseURL(CurrentTab->currentBuffer);
+      p_Var4 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
+      referer = p_Var4->ptr;
+    }
+    parseURL2(url,&p_url,current);
+    p_Var4 = parsedURL2Str(&p_url);
+    pushHashHist(URLHist,p_Var4->ptr);
+    cmd_loadURL(url,current,referer,(FormList *)0x0);
+    if (CurrentTab->currentBuffer != pBVar1) {
+      p_Var4 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
       pushHashHist(URLHist,p_Var4->ptr);
-      cmd_loadURL(url,current,referer,(FormList *)0x0);
-      if (CurrentTab->currentBuffer != pBVar1) {
-        p_Var4 = parsedURL2Str(&CurrentTab->currentBuffer->currentURL);
-        pushHashHist(URLHist,p_Var4->ptr);
-      }
     }
   }
   return;
@@ -10113,18 +10009,16 @@ void cmd_loadBuffer(Buffer *buf,int prop,int linkid)
   if (buf == (Buffer *)0x0) {
     disp_err_message("Can\'t load string",0);
   }
-  else {
-    if (buf != (Buffer *)0x1) {
-      buf->bufferprop = buf->bufferprop | (ushort)prop | 8;
-      if ((buf->bufferprop & 0x10U) == 0) {
-        copyParsedURL(&buf->currentURL,&CurrentTab->currentBuffer->currentURL);
-      }
-      if (linkid != -1) {
-        buf->linkBuffer[REV_LB[linkid]] = (_Buffer *)CurrentTab->currentBuffer;
-        CurrentTab->currentBuffer->linkBuffer[linkid] = (_Buffer *)buf;
-      }
-      pushBuffer(buf);
+  else if (buf != (Buffer *)0x1) {
+    buf->bufferprop = buf->bufferprop | (ushort)prop | 8;
+    if ((buf->bufferprop & 0x10U) == 0) {
+      copyParsedURL(&buf->currentURL,&CurrentTab->currentBuffer->currentURL);
     }
+    if (linkid != -1) {
+      buf->linkBuffer[REV_LB[linkid]] = CurrentTab->currentBuffer;
+      CurrentTab->currentBuffer->linkBuffer[linkid] = buf;
+    }
+    pushBuffer(buf);
   }
   displayBuffer(CurrentTab->currentBuffer,1);
   return;
@@ -10176,8 +10070,7 @@ void adBmark(void)
                            (form_list *)0x0);
   request_00->body = p_Var5->ptr;
   request_00->length = p_Var5->length;
-  cmd_loadURL("file:///$LIB/w3mbookmark",(ParsedURL *)0x0,(char *)0xffffffff,(FormList *)request_00)
-  ;
+  cmd_loadURL("file:///$LIB/w3mbookmark",(ParsedURL *)0x0,(char *)0xffffffff,request_00);
   return;
 }
 
@@ -10254,7 +10147,7 @@ void pginfo(void)
   
   p_Var1 = CurrentTab->currentBuffer->linkBuffer[3];
   if (p_Var1 == (_Buffer *)0x0) {
-    pBVar2 = (Buffer *)CurrentTab->currentBuffer->linkBuffer[2];
+    pBVar2 = CurrentTab->currentBuffer->linkBuffer[2];
     if (pBVar2 != (Buffer *)0x0) {
       delBuffer(pBVar2);
     }
@@ -10262,7 +10155,7 @@ void pginfo(void)
     cmd_loadBuffer(pBVar2,0,2);
   }
   else {
-    CurrentTab->currentBuffer = (Buffer *)p_Var1;
+    CurrentTab->currentBuffer = p_Var1;
     displayBuffer(CurrentTab->currentBuffer,0);
   }
   return;
@@ -10663,9 +10556,8 @@ void _peekURL(int only_img)
     if ((1 < _peekURL::n) && ((COLS + -1) * (_peekURL::n + -1) < _peekURL::s->length)) {
       _peekURL::offset = (COLS + -1) * (_peekURL::n + -1);
     }
-    while ((_peekURL::offset < _peekURL::s->length && ((_peekURL::p[_peekURL::offset] & 0x400) != 0)
-           )) {
-      _peekURL::offset = _peekURL::offset + 1;
+    for (; (_peekURL::offset < _peekURL::s->length && ((_peekURL::p[_peekURL::offset] & 0x400) != 0)
+           ); _peekURL::offset = _peekURL::offset + 1) {
     }
     disp_message_nomouse(_peekURL::s->ptr + _peekURL::offset,1);
   }
@@ -10740,8 +10632,8 @@ void curURL(void)
     if ((1 < curURL::n) && ((COLS + -1) * (curURL::n + -1) < curURL::s->length)) {
       curURL::offset = (COLS + -1) * (curURL::n + -1);
     }
-    while ((curURL::offset < curURL::s->length && ((curURL::p[curURL::offset] & 0x400) != 0))) {
-      curURL::offset = curURL::offset + 1;
+    for (; (curURL::offset < curURL::s->length && ((curURL::p[curURL::offset] & 0x400) != 0));
+        curURL::offset = curURL::offset + 1) {
     }
     disp_message_nomouse(curURL::s->ptr + curURL::offset,1);
   }
@@ -10758,7 +10650,7 @@ void vwSrc(void)
   wc_bool wVar3;
   int iVar4;
   Str p_Var5;
-  FILE *f_00;
+  FILE *__stream;
   Buffer *buf_00;
   Str tmpf;
   FILE *f;
@@ -10768,9 +10660,9 @@ void vwSrc(void)
   
   if ((CurrentTab->currentBuffer->type != (char *)0x0) &&
      ((CurrentTab->currentBuffer->bufferprop & 2U) == 0)) {
-    buf = (Buffer *)CurrentTab->currentBuffer->linkBuffer[4];
-    if ((buf == (Buffer *)0x0) &&
-       (buf = (Buffer *)CurrentTab->currentBuffer->linkBuffer[4], buf == (Buffer *)0x0)) {
+    buf = CurrentTab->currentBuffer->linkBuffer[4];
+    if ((buf == (_Buffer *)0x0) &&
+       (buf = CurrentTab->currentBuffer->linkBuffer[4], buf == (_Buffer *)0x0)) {
       if (CurrentTab->currentBuffer->sourcefile == (char *)0x0) {
         if (CurrentTab->currentBuffer->pagerSource == (InputStream)0x0) {
           return;
@@ -10780,10 +10672,10 @@ void vwSrc(void)
           return;
         }
         p_Var5 = tmpfname(1,(char *)0x0);
-        f_00 = (FILE *)fopen(p_Var5->ptr,"w");
+        __stream = fopen(p_Var5->ptr,"w");
         wVar3 = WcOption.fix_width_conv;
         wVar2 = DisplayCharset;
-        if (f_00 == (FILE *)0x0) {
+        if (__stream == (FILE *)0x0) {
           return;
         }
         if (CurrentTab->currentBuffer->document_charset == 0x100) {
@@ -10793,10 +10685,10 @@ void vwSrc(void)
           DisplayCharset = CurrentTab->currentBuffer->document_charset;
         }
         WcOption.fix_width_conv = '\0';
-        saveBufferBody(CurrentTab->currentBuffer,f_00,1);
+        saveBufferBody(CurrentTab->currentBuffer,(FILE *)__stream,1);
         DisplayCharset = wVar2;
         WcOption.fix_width_conv = wVar3;
-        fclose((FILE *)f_00);
+        fclose(__stream);
         CurrentTab->currentBuffer->sourcefile = p_Var5->ptr;
       }
       if (showLineNum == 0) {
@@ -10826,8 +10718,8 @@ void vwSrc(void)
         }
         p_Var5 = Sprintf("HTML view of %s",CurrentTab->currentBuffer->buffername);
         buf_00->buffername = p_Var5->ptr;
-        buf_00->linkBuffer[4] = (_Buffer *)CurrentTab->currentBuffer;
-        CurrentTab->currentBuffer->linkBuffer[4] = (_Buffer *)buf_00;
+        buf_00->linkBuffer[4] = CurrentTab->currentBuffer;
+        CurrentTab->currentBuffer->linkBuffer[4] = buf_00;
       }
       else {
         buf_00->type = "text/plain";
@@ -10840,8 +10732,8 @@ void vwSrc(void)
         }
         p_Var5 = Sprintf("source of %s",CurrentTab->currentBuffer->buffername);
         buf_00->buffername = p_Var5->ptr;
-        buf_00->linkBuffer[4] = (_Buffer *)CurrentTab->currentBuffer;
-        CurrentTab->currentBuffer->linkBuffer[4] = (_Buffer *)buf_00;
+        buf_00->linkBuffer[4] = CurrentTab->currentBuffer;
+        CurrentTab->currentBuffer->linkBuffer[4] = buf_00;
       }
       pBVar1 = CurrentTab->currentBuffer;
       (buf_00->currentURL).scheme = (pBVar1->currentURL).scheme;
@@ -10910,7 +10802,7 @@ void reload(void)
   }
   copyBuffer(&sbuf,CurrentTab->currentBuffer);
   if (((CurrentTab->currentBuffer->bufferprop & 2U) != 0) &&
-     (fbuf = (Buffer *)CurrentTab->currentBuffer->linkBuffer[1], fbuf != (Buffer *)0x0)) {
+     (fbuf = CurrentTab->currentBuffer->linkBuffer[1], fbuf != (_Buffer *)0x0)) {
     if (fmInitialized != '\0') {
       message("Rendering frame",0,0);
       refresh();
@@ -10925,10 +10817,10 @@ void reload(void)
          (iVar2 = strcmp(buf->sourcefile,fbuf->linkBuffer[0]->sourcefile), iVar2 == 0)) {
         fbuf->linkBuffer[0]->sourcefile = (char *)0x0;
       }
-      delBuffer((Buffer *)fbuf->linkBuffer[0]);
+      delBuffer(fbuf->linkBuffer[0]);
     }
-    fbuf->linkBuffer[0] = (_Buffer *)buf;
-    buf->linkBuffer[1] = (_Buffer *)fbuf;
+    fbuf->linkBuffer[0] = buf;
+    buf->linkBuffer[1] = fbuf;
     pushBuffer(buf);
     CurrentTab->currentBuffer = buf;
     if (CurrentTab->currentBuffer->firstLine != (Line *)0x0) {
@@ -10942,15 +10834,15 @@ void reload(void)
     return;
   }
   if (CurrentTab->currentBuffer->frameset != (frameset *)0x0) {
-    fbuf = (Buffer *)CurrentTab->currentBuffer->linkBuffer[0];
+    fbuf = CurrentTab->currentBuffer->linkBuffer[0];
   }
   multipart = 0;
   if (CurrentTab->currentBuffer->form_submit == (FormItemList *)0x0) {
     request = (FormList *)0x0;
   }
   else {
-    request = (FormList *)CurrentTab->currentBuffer->form_submit->parent;
-    if ((((form_list *)request)->method == 1) && (((form_list *)request)->enctype == 1)) {
+    request = CurrentTab->currentBuffer->form_submit->parent;
+    if ((request->method == 1) && (request->enctype == 1)) {
       multipart = 1;
       query_from_followform(&query,CurrentTab->currentBuffer->form_submit,1);
       stat(request->body,(stat *)&st);
@@ -11051,15 +10943,14 @@ void change_charset(parsed_tagarg *arg)
   p_Var1 = CurrentTab->currentBuffer->linkBuffer[3];
   if (p_Var1 != (_Buffer *)0x0) {
     delBuffer(CurrentTab->currentBuffer);
-    CurrentTab->currentBuffer = (Buffer *)p_Var1;
+    CurrentTab->currentBuffer = p_Var1;
     if ((CurrentTab->currentBuffer->bufferprop & 8U) == 0) {
       charset = CurrentTab->currentBuffer->document_charset;
-      while (arg != (parsed_tagarg *)0x0) {
+      for (; arg != (parsed_tagarg *)0x0; arg = arg->next) {
         iVar2 = strcmp(arg->arg,"charset");
         if (iVar2 == 0) {
           charset = atoi(arg->value);
         }
-        arg = arg->next;
       }
       _docCSet(charset);
     }
@@ -11124,10 +11015,8 @@ void chkURLBuffer(Buffer *buf)
 {
   int i;
   
-  i = 0;
-  while (chkURLBuffer::url_like_pat[i] != (char *)0x0) {
+  for (i = 0; chkURLBuffer::url_like_pat[i] != (char *)0x0; i = i + 1) {
     reAnchor(buf,chkURLBuffer::url_like_pat[i]);
-    i = i + 1;
   }
   chkExternalURIBuffer(buf);
   buf->check_url = buf->check_url | 1;
@@ -11168,10 +11057,8 @@ void chkNMIDBuffer(Buffer *buf)
 {
   int i;
   
-  i = 0;
-  while (chkNMIDBuffer::url_like_pat[i] != (char *)0x0) {
+  for (i = 0; chkNMIDBuffer::url_like_pat[i] != (char *)0x0; i = i + 1) {
     reAnchorNews(buf,chkNMIDBuffer::url_like_pat[i]);
-    i = i + 1;
   }
   buf->check_url = buf->check_url | 2;
   return;
@@ -11201,7 +11088,7 @@ void rFrame(void)
     if (CurrentTab->currentBuffer->frameset == (frameset *)0x0) {
       p_Var1 = CurrentTab->currentBuffer->linkBuffer[1];
       if (p_Var1 != (_Buffer *)0x0) {
-        CurrentTab->currentBuffer = (Buffer *)p_Var1;
+        CurrentTab->currentBuffer = p_Var1;
         displayBuffer(CurrentTab->currentBuffer,0);
       }
     }
@@ -11215,8 +11102,8 @@ void rFrame(void)
         displayBuffer(CurrentTab->currentBuffer,0);
       }
       else {
-        buf_00->linkBuffer[1] = (_Buffer *)CurrentTab->currentBuffer;
-        CurrentTab->currentBuffer->linkBuffer[0] = (_Buffer *)buf_00;
+        buf_00->linkBuffer[1] = CurrentTab->currentBuffer;
+        CurrentTab->currentBuffer->linkBuffer[0] = buf_00;
         pushBuffer(buf_00);
         if ((fmInitialized != '\0') && (display_ok != 0)) {
           displayBuffer(CurrentTab->currentBuffer,1);
@@ -11225,7 +11112,7 @@ void rFrame(void)
     }
   }
   else {
-    CurrentTab->currentBuffer = (Buffer *)p_Var1;
+    CurrentTab->currentBuffer = p_Var1;
     displayBuffer(CurrentTab->currentBuffer,0);
   }
   return;
@@ -11255,17 +11142,13 @@ void invoke_browser(char *url)
     if (prec_num == 2) {
       browser = ExtBrowser2;
     }
-    else {
-      if (prec_num < 3) {
-        if (-1 < prec_num) {
-          browser = ExtBrowser;
-        }
+    else if (prec_num < 3) {
+      if (-1 < prec_num) {
+        browser = ExtBrowser;
       }
-      else {
-        if (prec_num == 3) {
-          browser = ExtBrowser3;
-        }
-      }
+    }
+    else if (prec_num == 3) {
+      browser = ExtBrowser3;
     }
     if (((browser == (char *)0x0) || (*browser == '\0')) &&
        (browser = inputLineHistSearch("Browse command: ",(char *)0x0,0x10,(Hist *)0x0,
@@ -11370,7 +11253,7 @@ void curlno(void)
     col = l->bwidth + CurrentTab->currentBuffer->currentColumn +
           (int)CurrentTab->currentBuffer->cursorX + 1;
     while ((l->next != (_Line *)0x0 && (l->next->bpos != 0))) {
-      l = (Line *)l->next;
+      l = l->next;
     }
     if (l->width < 0) {
       iVar2 = calcPosition(l->lineBuf,l->propBuf,l->len,l->len,0,0);
@@ -11458,12 +11341,10 @@ TabBuffer * posTab(int x,int y)
       pTVar1 = (TabBuffer *)0x0;
     }
     else {
-      tab = FirstTab;
-      while (tab != (TabBuffer *)0x0) {
+      for (tab = FirstTab; tab != (TabBuffer *)0x0; tab = tab->nextTab) {
         if (((tab->x1 <= x) && (x <= tab->x2)) && (tab->y == y)) {
           return tab;
         }
-        tab = (TabBuffer *)tab->nextTab;
       }
       pTVar1 = (TabBuffer *)0x0;
     }
@@ -11495,74 +11376,66 @@ void do_mouse_action(int btn,int x,int y)
   if (btn == 1) {
     btn = 1;
   }
+  else if (btn == 2) {
+    btn = 2;
+  }
   else {
-    if (btn == 2) {
-      btn = 2;
+    if (btn != 0) {
+      return;
     }
-    else {
-      if (btn != 0) {
-        return;
-      }
-      btn = 0;
-    }
+    btn = 0;
   }
   if (y < ny) {
     if (((mouse_action.menu_str == (char *)0x0) || (x < 0)) || (mouse_action.menu_width <= x)) {
       map = mouse_action.tab_map + btn;
     }
-    else {
-      if (mouse_action.menu_map[btn] != (MouseActionMap *)0x0) {
-        map = mouse_action.menu_map[btn] + x;
-      }
+    else if (mouse_action.menu_map[btn] != (MouseActionMap *)0x0) {
+      map = mouse_action.menu_map[btn] + x;
+    }
+  }
+  else if (LINES + -1 == y) {
+    if ((((mouse_action.lastline_str != (char *)0x0) && (-1 < x)) &&
+        (x < mouse_action.lastline_width)) &&
+       (mouse_action.lastline_map[btn] != (MouseActionMap *)0x0)) {
+      map = mouse_action.lastline_map[btn] + x;
     }
   }
   else {
-    if (LINES + -1 == y) {
-      if ((((mouse_action.lastline_str != (char *)0x0) && (-1 < x)) &&
-          (x < mouse_action.lastline_width)) &&
-         (mouse_action.lastline_map[btn] != (MouseActionMap *)0x0)) {
-        map = mouse_action.lastline_map[btn] + x;
+    if (y <= ny) {
+      return;
+    }
+    if (((int)CurrentTab->currentBuffer->cursorY + (int)CurrentTab->currentBuffer->rootY == y) &&
+       (((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX == x ||
+        ((((WcOption.use_wide != '\0' && (CurrentTab->currentBuffer->currentLine != (Line *)0x0)) &&
+          ((CurrentTab->currentBuffer->currentLine->propBuf[CurrentTab->currentBuffer->pos] & 0x3f00
+           ) == 0xa00)) &&
+         ((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX + 1 == x))
+        )))) {
+      pAVar3 = retrieveCurrentAnchor(CurrentTab->currentBuffer);
+      if (((pAVar3 != (Anchor *)0x0) ||
+          (pAVar3 = retrieveCurrentForm(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0)) &&
+         ((map = mouse_action.active_map + btn, map == (MouseActionMap *)0x0 ||
+          (map->func == (anon_subr_void_varargs_for_func *)0x0)))) {
+        map = mouse_action.anchor_map + btn;
       }
     }
     else {
-      if (y <= ny) {
-        return;
-      }
+      sVar1 = CurrentTab->currentBuffer->cursorX;
+      sVar2 = CurrentTab->currentBuffer->cursorY;
+      cursorXY(CurrentTab->currentBuffer,x - CurrentTab->currentBuffer->rootX,
+               y - CurrentTab->currentBuffer->rootY);
       if (((int)CurrentTab->currentBuffer->cursorY + (int)CurrentTab->currentBuffer->rootY == y) &&
-         (((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX == x ||
-          ((((WcOption.use_wide != '\0' && (CurrentTab->currentBuffer->currentLine != (Line *)0x0))
-            && ((CurrentTab->currentBuffer->currentLine->propBuf[CurrentTab->currentBuffer->pos] &
-                0x3f00) == 0xa00)) &&
-           ((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX + 1 == x
-           )))))) {
-        pAVar3 = retrieveCurrentAnchor(CurrentTab->currentBuffer);
-        if (((pAVar3 != (Anchor *)0x0) ||
-            (pAVar3 = retrieveCurrentForm(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0)) &&
-           ((map = mouse_action.active_map + btn, map == (MouseActionMap *)0x0 ||
-            (map->func == (anon_subr_void_varargs_for_func *)0x0)))) {
-          map = mouse_action.anchor_map + btn;
-        }
+         ((((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX == x ||
+           (((WcOption.use_wide != '\0' && (CurrentTab->currentBuffer->currentLine != (Line *)0x0))
+            && (((CurrentTab->currentBuffer->currentLine->propBuf[CurrentTab->currentBuffer->pos] &
+                 0x3f00) == 0xa00 &&
+                ((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX + 1
+                 == x)))))) &&
+          ((pAVar3 = retrieveCurrentAnchor(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0 ||
+           (pAVar3 = retrieveCurrentForm(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0)))))) {
+        map = mouse_action.anchor_map + btn;
       }
-      else {
-        sVar1 = CurrentTab->currentBuffer->cursorX;
-        sVar2 = CurrentTab->currentBuffer->cursorY;
-        cursorXY(CurrentTab->currentBuffer,x - CurrentTab->currentBuffer->rootX,
-                 y - CurrentTab->currentBuffer->rootY);
-        if (((int)CurrentTab->currentBuffer->cursorY + (int)CurrentTab->currentBuffer->rootY == y)
-           && ((((int)CurrentTab->currentBuffer->cursorX + (int)CurrentTab->currentBuffer->rootX ==
-                 x || (((WcOption.use_wide != '\0' &&
-                        (CurrentTab->currentBuffer->currentLine != (Line *)0x0)) &&
-                       (((CurrentTab->currentBuffer->currentLine->propBuf
-                          [CurrentTab->currentBuffer->pos] & 0x3f00) == 0xa00 &&
-                        ((int)CurrentTab->currentBuffer->cursorX +
-                         (int)CurrentTab->currentBuffer->rootX + 1 == x)))))) &&
-               ((pAVar3 = retrieveCurrentAnchor(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0
-                || (pAVar3 = retrieveCurrentForm(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0
-                   )))))) {
-          map = mouse_action.anchor_map + btn;
-        }
-        cursorXY(CurrentTab->currentBuffer,(int)sVar1,(int)sVar2);
-      }
+      cursorXY(CurrentTab->currentBuffer,(int)sVar1,(int)sVar2);
     }
   }
   if ((map == (MouseActionMap *)0x0) || (map->func == (anon_subr_void_varargs_for_func *)0x0)) {
@@ -11706,36 +11579,24 @@ void process_mouse(int btn,int x,int y)
       }
       break;
     case 3:
-      i = 0;
-      while (iVar6 = mouse_scroll_line(), i < iVar6) {
+      for (i = 0; iVar6 = mouse_scroll_line(), i < iVar6; i = i + 1) {
         ldown1();
-        i = i + 1;
       }
       break;
     case 4:
-      i = 0;
-      while (iVar6 = mouse_scroll_line(), i < iVar6) {
+      for (i = 0; iVar6 = mouse_scroll_line(), i < iVar6; i = i + 1) {
         lup1();
-        i = i + 1;
       }
     }
   }
-  else {
-    if (btn == 0x40) {
-      i = 0;
-      while (iVar6 = mouse_scroll_line(), i < iVar6) {
-        ldown1();
-        i = i + 1;
-      }
+  else if (btn == 0x40) {
+    for (i = 0; iVar6 = mouse_scroll_line(), i < iVar6; i = i + 1) {
+      ldown1();
     }
-    else {
-      if (btn == 0x41) {
-        i = 0;
-        while (iVar6 = mouse_scroll_line(), i < iVar6) {
-          lup1();
-          i = i + 1;
-        }
-      }
+  }
+  else if (btn == 0x41) {
+    for (i = 0; iVar6 = mouse_scroll_line(), i < iVar6; i = i + 1) {
+      lup1();
     }
   }
   if ((btn == 3) && (process_mouse::press_btn != -1)) {
@@ -11754,7 +11615,7 @@ void process_mouse(int btn,int x,int y)
 void msToggle(void)
 
 {
-  use_mouse = ZEXT14(use_mouse == 0);
+  use_mouse = (int)(use_mouse == 0);
   displayBuffer(CurrentTab->currentBuffer,1);
   return;
 }
@@ -11819,15 +11680,11 @@ int gpm_process_mouse(Gpm_Event *event,void *data)
     if (uVar2 == '\x02') {
       btn = 1;
     }
-    else {
-      if (uVar2 == '\x04') {
-        btn = 0;
-      }
-      else {
-        if (uVar2 == '\x01') {
-          btn = 2;
-        }
-      }
+    else if (uVar2 == '\x04') {
+      btn = 0;
+    }
+    else if (uVar2 == '\x01') {
+      btn = 2;
     }
   }
   else {
@@ -11949,16 +11806,14 @@ int is_wordchar(int c,char *badchars)
   uint uVar2;
   
   if (badchars == (char *)0x0) {
-    uVar2 = (byte)MYCTYPE_MAP[c & 0xff] & 4;
+    uVar2 = MYCTYPE_MAP[c & 0xff] & 4;
+  }
+  else if (((MYCTYPE_MAP[c & 0xff] & 2) == 0) &&
+          (pcVar1 = strchr(badchars,c), pcVar1 == (char *)0x0)) {
+    uVar2 = 1;
   }
   else {
-    if (((MYCTYPE_MAP[c & 0xff] & 2) == 0) && (pcVar1 = strchr(badchars,c), pcVar1 == (char *)0x0))
-    {
-      uVar2 = 1;
-    }
-    else {
-      uVar2 = 0;
-    }
+    uVar2 = 0;
   }
   return uVar2;
 }
@@ -12260,15 +12115,13 @@ void deleteFiles(void)
   char *f;
   Buffer *buf;
   
-  CurrentTab = FirstTab;
-  while (CurrentTab != (TabBuffer *)0x0) {
+  for (CurrentTab = FirstTab; CurrentTab != (TabBuffer *)0x0; CurrentTab = CurrentTab->nextTab) {
     while ((CurrentTab->firstBuffer != (Buffer *)0x0 && (CurrentTab->firstBuffer != (Buffer *)0x1)))
     {
-      pBVar1 = (Buffer *)CurrentTab->firstBuffer->nextBuffer;
+      pBVar1 = CurrentTab->firstBuffer->nextBuffer;
       discardBuffer(CurrentTab->firstBuffer);
       CurrentTab->firstBuffer = pBVar1;
     }
-    CurrentTab = (TabBuffer *)CurrentTab->nextTab;
   }
   while (__name = (char *)popValue((GeneralList *)fileToDelete), __name != (char *)0x0) {
     unlink(__name);
@@ -12369,7 +12222,7 @@ void SigAlarm(int _dummy)
         CurrentTab->currentBuffer->event = (_AlarmEvent *)0x0;
       }
       else {
-        CurrentAlarm = (AlarmEvent *)CurrentTab->currentBuffer->event;
+        CurrentAlarm = CurrentTab->currentBuffer->event;
       }
     }
     if (CurrentTab->currentBuffer->event == (_AlarmEvent *)0x0) {
@@ -12567,23 +12420,21 @@ void _newT(void)
     a = newBuffer((int)CurrentTab->currentBuffer->width);
     copyBuffer(a,CurrentTab->currentBuffer);
     a->nextBuffer = (_Buffer *)0x0;
-    i = 0;
-    while (i < 5) {
+    for (i = 0; i < 5; i = i + 1) {
       a->linkBuffer[i] = (_Buffer *)0x0;
-      i = i + 1;
     }
     *a->clone = *a->clone + 1;
     pTVar2->currentBuffer = a;
     pTVar2->firstBuffer = pTVar2->currentBuffer;
     pTVar2->nextTab = CurrentTab->nextTab;
-    pTVar2->prevTab = (_TabBuffer *)CurrentTab;
+    pTVar2->prevTab = CurrentTab;
     pTVar1 = pTVar2;
     if (CurrentTab->nextTab != (_TabBuffer *)0x0) {
-      CurrentTab->nextTab->prevTab = (_TabBuffer *)pTVar2;
+      CurrentTab->nextTab->prevTab = pTVar2;
       pTVar1 = LastTab;
     }
     LastTab = pTVar1;
-    CurrentTab->nextTab = (_TabBuffer *)pTVar2;
+    CurrentTab->nextTab = pTVar2;
     nTab = nTab + 1;
     CurrentTab = pTVar2;
   }
@@ -12614,10 +12465,8 @@ TabBuffer * numTab(int n)
       tab = (TabBuffer *)0x0;
     }
     else {
-      i = 1;
-      while ((tab != (TabBuffer *)0x0 && (i < n))) {
-        tab = (TabBuffer *)tab->nextTab;
-        i = i + 1;
+      for (i = 1; (tab != (TabBuffer *)0x0 && (i < n)); i = i + 1) {
+        tab = tab->nextTab;
       }
     }
   }
@@ -12678,7 +12527,7 @@ void calcTabPos(void)
         col = COLS;
       }
       ix = 0;
-      while ((ix < nx && (tab != (TabBuffer *)0x0))) {
+      for (; (ix < nx && (tab != (TabBuffer *)0x0)); tab = tab->nextTab) {
         tab->x1 = (short)((col * ix) / nx);
         tab->x2 = (short)(((ix + 1) * col) / nx) + -1;
         tab->y = (short)iy;
@@ -12687,7 +12536,6 @@ void calcTabPos(void)
           tab->x2 = tab->x2 + (short)iVar1;
         }
         ix = ix + 1;
-        tab = (TabBuffer *)tab->nextTab;
       }
       iy = iy + 1;
     }
@@ -12707,21 +12555,21 @@ TabBuffer * deleteTab(TabBuffer *tab)
   if (1 < nTab) {
     if (tab->prevTab == (_TabBuffer *)0x0) {
       tab->nextTab->prevTab = (_TabBuffer *)0x0;
-      FirstTab = (TabBuffer *)tab->nextTab;
+      FirstTab = tab->nextTab;
       if (tab == CurrentTab) {
-        CurrentTab = (TabBuffer *)tab->nextTab;
+        CurrentTab = tab->nextTab;
       }
     }
     else {
       if (tab->nextTab == (_TabBuffer *)0x0) {
-        LastTab = (TabBuffer *)tab->prevTab;
+        LastTab = tab->prevTab;
       }
       else {
         tab->nextTab->prevTab = tab->prevTab;
       }
       tab->prevTab->nextTab = tab->nextTab;
       if (tab == CurrentTab) {
-        CurrentTab = (TabBuffer *)tab->prevTab;
+        CurrentTab = tab->prevTab;
       }
     }
     nTab = nTab + -1;
@@ -12729,7 +12577,7 @@ TabBuffer * deleteTab(TabBuffer *tab)
     while ((buf != (Buffer *)0x0 && (buf != (Buffer *)0x1))) {
       p_Var1 = buf->nextBuffer;
       discardBuffer(buf);
-      buf = (Buffer *)p_Var1;
+      buf = p_Var1;
     }
   }
   return FirstTab;
@@ -12782,7 +12630,7 @@ void nextT(void)
         CurrentTab = FirstTab;
       }
       else {
-        CurrentTab = (TabBuffer *)CurrentTab->nextTab;
+        CurrentTab = CurrentTab->nextTab;
       }
       i = i + 1;
     }
@@ -12811,7 +12659,7 @@ void prevT(void)
         CurrentTab = LastTab;
       }
       else {
-        CurrentTab = (TabBuffer *)CurrentTab->prevTab;
+        CurrentTab = CurrentTab->prevTab;
       }
       i = i + 1;
     }
@@ -12856,19 +12704,17 @@ void followTab(TabBuffer *tab)
           delBuffer(pBVar1);
         }
       }
-      else {
-        if (CurrentTab->currentBuffer != pBVar1) {
-          first = CurrentTab->currentBuffer;
-          buf = prevBuffer(first,pBVar1);
-          buf->nextBuffer = (_Buffer *)0x0;
-          CurrentTab->firstBuffer = pBVar1;
-          deleteTab(CurrentTab);
-          CurrentTab = tab;
-          while (buf != (Buffer *)0x0) {
-            pBVar1 = prevBuffer(first,buf);
-            pushBuffer(buf);
-            buf = pBVar1;
-          }
+      else if (CurrentTab->currentBuffer != pBVar1) {
+        first = CurrentTab->currentBuffer;
+        buf = prevBuffer(first,pBVar1);
+        buf->nextBuffer = (_Buffer *)0x0;
+        CurrentTab->firstBuffer = pBVar1;
+        deleteTab(CurrentTab);
+        CurrentTab = tab;
+        while (buf != (Buffer *)0x0) {
+          pBVar1 = prevBuffer(first,buf);
+          pushBuffer(buf);
+          buf = pBVar1;
         }
       }
       displayBuffer(CurrentTab->currentBuffer,1);
@@ -12925,19 +12771,17 @@ void tabURL0(TabBuffer *tab,char *prompt,int relative)
         delBuffer(pBVar1);
       }
     }
-    else {
-      if (CurrentTab->currentBuffer != pBVar1) {
-        first = CurrentTab->currentBuffer;
-        buf = prevBuffer(first,pBVar1);
-        buf->nextBuffer = (_Buffer *)0x0;
-        CurrentTab->firstBuffer = pBVar1;
-        deleteTab(CurrentTab);
-        CurrentTab = tab;
-        while (buf != (Buffer *)0x0) {
-          pBVar1 = prevBuffer(first,buf);
-          pushBuffer(buf);
-          buf = pBVar1;
-        }
+    else if (CurrentTab->currentBuffer != pBVar1) {
+      first = CurrentTab->currentBuffer;
+      buf = prevBuffer(first,pBVar1);
+      buf->nextBuffer = (_Buffer *)0x0;
+      CurrentTab->firstBuffer = pBVar1;
+      deleteTab(CurrentTab);
+      CurrentTab = tab;
+      while (buf != (Buffer *)0x0) {
+        pBVar1 = prevBuffer(first,buf);
+        pushBuffer(buf);
+        buf = pBVar1;
       }
     }
     displayBuffer(CurrentTab->currentBuffer,1);
@@ -13001,11 +12845,11 @@ void moveTab(TabBuffer *t,TabBuffer *t2,int right)
      (t != (TabBuffer *)0x1)) {
     if (t->prevTab == (_TabBuffer *)0x0) {
       t->nextTab->prevTab = (_TabBuffer *)0x0;
-      FirstTab = (TabBuffer *)t->nextTab;
+      FirstTab = t->nextTab;
     }
     else {
       if (t->nextTab == (_TabBuffer *)0x0) {
-        LastTab = (TabBuffer *)t->prevTab;
+        LastTab = t->prevTab;
       }
       else {
         t->nextTab->prevTab = t->prevTab;
@@ -13014,25 +12858,25 @@ void moveTab(TabBuffer *t,TabBuffer *t2,int right)
     }
     if (right == 0) {
       t->prevTab = t2->prevTab;
-      t->nextTab = (_TabBuffer *)t2;
+      t->nextTab = t2;
       if (t2->prevTab == (_TabBuffer *)0x0) {
         FirstTab = t;
       }
       else {
-        t2->prevTab->nextTab = (_TabBuffer *)t;
+        t2->prevTab->nextTab = t;
       }
-      t2->prevTab = (_TabBuffer *)t;
+      t2->prevTab = t;
     }
     else {
       t->nextTab = t2->nextTab;
-      t->prevTab = (_TabBuffer *)t2;
+      t->prevTab = t2;
       if (t2->nextTab == (_TabBuffer *)0x0) {
         LastTab = t;
       }
       else {
-        t2->nextTab->prevTab = (_TabBuffer *)t;
+        t2->nextTab->prevTab = t;
       }
-      t2->nextTab = (_TabBuffer *)t;
+      t2->nextTab = t;
     }
     displayBuffer(CurrentTab->currentBuffer,1);
   }
@@ -13049,15 +12893,13 @@ void tabR(void)
   int i;
   TabBuffer *tab;
   
-  tab = CurrentTab;
   i = 0;
-  while (tab != (TabBuffer *)0x0) {
+  for (tab = CurrentTab; tab != (TabBuffer *)0x0; tab = tab->nextTab) {
     iVar1 = prec_num;
     if (prec_num == 0) {
       iVar1 = 1;
     }
     if (iVar1 <= i) break;
-    tab = (TabBuffer *)tab->nextTab;
     i = i + 1;
   }
   t2 = LastTab;
@@ -13078,15 +12920,13 @@ void tabL(void)
   int i;
   TabBuffer *tab;
   
-  tab = CurrentTab;
   i = 0;
-  while (tab != (TabBuffer *)0x0) {
+  for (tab = CurrentTab; tab != (TabBuffer *)0x0; tab = tab->prevTab) {
     iVar1 = prec_num;
     if (prec_num == 0) {
       iVar1 = 1;
     }
     if (iVar1 <= i) break;
-    tab = (TabBuffer *)tab->prevTab;
     i = i + 1;
   }
   t2 = FirstTab;
@@ -13125,10 +12965,10 @@ void addDownloadList(pid_t pid,char *url,char *save,char *lock,clen_t size)
   pDVar2->time = tVar5;
   pDVar2->ok = 0;
   pDVar2->next = (_DownloadList *)0x0;
-  pDVar2->prev = (_DownloadList *)LastDL;
+  pDVar2->prev = LastDL;
   pDVar1 = pDVar2;
   if (LastDL != (DownloadList *)0x0) {
-    LastDL->next = (_DownloadList *)pDVar2;
+    LastDL->next = pDVar2;
     pDVar1 = FirstDL;
   }
   FirstDL = pDVar1;
@@ -13147,12 +12987,10 @@ int checkDownloadList(void)
   DownloadList *d;
   
   if (FirstDL != (DownloadList *)0x0) {
-    d = FirstDL;
-    while (d != (DownloadList *)0x0) {
+    for (d = FirstDL; d != (DownloadList *)0x0; d = d->next) {
       if ((d->ok == 0) && (iVar1 = lstat(d->lock,(stat *)&st), iVar1 == 0)) {
         return 1;
       }
-      d = (DownloadList *)d->next;
     }
   }
   return 0;
@@ -13220,8 +13058,7 @@ Buffer * DownloadListBuffer(void)
     x = Strnew_charp(
                     "<html><head><title>Download List Panel</title></head>\n<body><h1 align=center>Download List Panel</h1>\n<form method=internal action=download><hr>\n"
                     );
-    d = LastDL;
-    while (d != (DownloadList *)0x0) {
+    for (d = LastDL; d != (DownloadList *)0x0; d = d->prev) {
       iVar5 = lstat(d->lock,(stat *)&st);
       if (iVar5 != 0) {
         d->ok = 1;
@@ -13340,7 +13177,6 @@ LAB_08059fc1:
         }
       }
       Strcat_charp(x,"\n</pre><hr>\n");
-      d = (DownloadList *)d->prev;
     }
     Strcat_charp(x,"</form></body></html>");
     pBVar3 = loadHTMLString(x);
@@ -13367,25 +13203,23 @@ void download_action(parsed_tagarg *arg)
       pid = atoi(arg->arg + 4);
       kill(pid,9);
 LAB_0805a3de:
-      d = FirstDL;
-      while (d != (DownloadList *)0x0) {
+      for (d = FirstDL; d != (DownloadList *)0x0; d = d->next) {
         if (d->pid == pid) {
           unlink(d->lock);
           if (d->prev == (_DownloadList *)0x0) {
-            FirstDL = (DownloadList *)d->next;
+            FirstDL = d->next;
           }
           else {
             d->prev->next = d->next;
           }
           if (d->next == (_DownloadList *)0x0) {
-            LastDL = (DownloadList *)d->prev;
+            LastDL = d->prev;
           }
           else {
             d->next->prev = d->prev;
           }
           break;
         }
-        d = (DownloadList *)d->next;
       }
     }
     else {
@@ -13407,13 +13241,11 @@ void stopDownload(void)
   DownloadList *d;
   
   if (FirstDL != (DownloadList *)0x0) {
-    d = FirstDL;
-    while (d != (DownloadList *)0x0) {
+    for (d = FirstDL; d != (DownloadList *)0x0; d = d->next) {
       if (d->ok == 0) {
         kill(d->pid,9);
         unlink(d->lock);
       }
-      d = (DownloadList *)d->next;
     }
   }
   return;
@@ -13469,11 +13301,9 @@ void ldDL(void)
         pBVar4->LINES = CurrentTab->currentBuffer->LINES;
         restorePosition(pBVar4,CurrentTab->currentBuffer);
       }
-      else {
-        if (open_tab_dl_list != 0) {
-          _newT();
-          bVar2 = true;
-        }
+      else if (open_tab_dl_list != 0) {
+        _newT();
+        bVar2 = true;
       }
       pushBuffer(pBVar4);
       if ((bVar1) || (bVar2)) {
@@ -13481,8 +13311,8 @@ void ldDL(void)
       }
       if (iVar3 != 0) {
         pBVar4 = CurrentTab->currentBuffer;
-        pAVar5 = setAlarmEvent((AlarmEvent *)CurrentTab->currentBuffer->event,1,2,0x70,(void *)0x0);
-        pBVar4->event = (_AlarmEvent *)pAVar5;
+        pAVar5 = setAlarmEvent(CurrentTab->currentBuffer->event,1,2,0x70,(void *)0x0);
+        pBVar4->event = pAVar5;
       }
       displayBuffer(CurrentTab->currentBuffer,1);
     }
@@ -13573,7 +13403,7 @@ void resetPos(BufferPos *b)
   buf.pos = b->pos;
   buf.currentColumn = b->currentColumn;
   restorePosition(CurrentTab->currentBuffer,&buf);
-  CurrentTab->currentBuffer->undo = (_BufferPos *)b;
+  CurrentTab->currentBuffer->undo = b;
   displayBuffer(CurrentTab->currentBuffer,1);
   return;
 }
@@ -13587,9 +13417,9 @@ void undoPos(void)
   int i;
   BufferPos *b;
   
-  b = (BufferPos *)CurrentTab->currentBuffer->undo;
-  if (((CurrentTab->currentBuffer->firstLine != (Line *)0x0) && (b != (BufferPos *)0x0)) &&
-     (((_BufferPos *)b)->prev != (_BufferPos *)0x0)) {
+  b = CurrentTab->currentBuffer->undo;
+  if (((CurrentTab->currentBuffer->firstLine != (Line *)0x0) && (b != (_BufferPos *)0x0)) &&
+     (b->prev != (_BufferPos *)0x0)) {
     i = 0;
     while( true ) {
       iVar1 = prec_num;
@@ -13598,7 +13428,7 @@ void undoPos(void)
       }
       if ((iVar1 <= i) || (b->prev == (_BufferPos *)0x0)) break;
       i = i + 1;
-      b = (BufferPos *)b->prev;
+      b = b->prev;
     }
     resetPos(b);
   }
@@ -13614,9 +13444,9 @@ void redoPos(void)
   int i;
   BufferPos *b;
   
-  b = (BufferPos *)CurrentTab->currentBuffer->undo;
-  if (((CurrentTab->currentBuffer->firstLine != (Line *)0x0) && (b != (BufferPos *)0x0)) &&
-     (((_BufferPos *)b)->next != (_BufferPos *)0x0)) {
+  b = CurrentTab->currentBuffer->undo;
+  if (((CurrentTab->currentBuffer->firstLine != (Line *)0x0) && (b != (_BufferPos *)0x0)) &&
+     (b->next != (_BufferPos *)0x0)) {
     i = 0;
     while( true ) {
       iVar1 = prec_num;
@@ -13625,7 +13455,7 @@ void redoPos(void)
       }
       if ((iVar1 <= i) || (b->next == (_BufferPos *)0x0)) break;
       i = i + 1;
-      b = (BufferPos *)b->next;
+      b = b->next;
     }
     resetPos(b);
   }
@@ -13653,15 +13483,13 @@ void UFhalfclose(URLFile *f)
   if ((uVar1 == '\a') || (uVar1 == '\t')) {
     closeNews();
   }
+  else if (uVar1 == '\x02') {
+    closeFTP();
+  }
   else {
-    if (uVar1 == '\x02') {
-      closeFTP();
-    }
-    else {
-      iVar2 = ISclose(f->stream);
-      if (iVar2 == 0) {
-        f->stream = (InputStream)0x0;
-      }
+    iVar2 = ISclose(f->stream);
+    if (iVar2 == 0) {
+      f->stream = (InputStream)0x0;
     }
   }
   return;
@@ -13841,15 +13669,13 @@ void check_compression(char *path,URLFile *uf)
   if (path != (char *)0x0) {
     sVar1 = strlen(path);
     uf->compression = 0;
-    d = compression_decoders;
-    while (d->type != 0) {
+    for (d = compression_decoders; d->type != 0; d = d + 1) {
       if (((d->ext != (char *)0x0) && (sVar2 = strlen(d->ext), (int)sVar2 < (int)sVar1)) &&
          (iVar3 = strcasecmp(path + (sVar1 - sVar2),d->ext), iVar3 == 0)) {
         uf->compression = d->type;
         uf->guess_type = d->mime_type;
         return;
       }
-      d = d + 1;
     }
   }
   return;
@@ -14064,14 +13890,12 @@ char * acceptableEncoding(void)
   
   if (acceptableEncoding::encodings == (Str)0x0) {
     tl = newGeneralList();
-    d = compression_decoders;
-    while (d->type != 0) {
+    for (d = compression_decoders; d->type != 0; d = d + 1) {
       iVar1 = check_command(d->cmd,d->auxbin_p);
       if (iVar1 != 0) {
         pcVar2 = allocStr(d->encoding,-1);
         pushValue(tl,pcVar2);
       }
-      d = d + 1;
     }
     acceptableEncoding::encodings = Strnew();
     while( true ) {
@@ -14170,7 +13994,8 @@ int matchattr(char *p,char *attr,int len,Str *value)
           if (*p == '\0') break;
         } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
         bVar1 = false;
-        while ((((*p != '\0' && (*p != '\r')) && (*p != '\n')) && ((bVar1 || (*p != ';'))))) {
+        for (; (((*p != '\0' && (*p != '\r')) && (*p != '\n')) && ((bVar1 || (*p != ';'))));
+            p = p + 1) {
           if ((MYCTYPE_MAP[(byte)*p] & 2) == 0) {
             q = p;
           }
@@ -14187,7 +14012,6 @@ int matchattr(char *p,char *attr,int len,Str *value)
             p_Var3->length = iVar2 + 1;
             (*value)->ptr[(*value)->length] = '\0';
           }
-          p = p + 1;
         }
         if (q != (char *)0x0) {
           Strshrink(*value,(int)(p + (-1 - (int)q)));
@@ -14325,7 +14149,7 @@ void readHeader(URLFile *uf,Buffer *newBuf,int thru,ParsedURL *pu)
     p_Var4 = tmpfname(0,(char *)0x0);
     tmpf = p_Var4->ptr;
     src = (FILE *)fopen(tmpf,"w");
-    if (src != (FILE *)0x0) {
+    if ((FILE *)src != (FILE *)0x0) {
       newBuf->header_source = tmpf;
     }
   }
@@ -14385,11 +14209,9 @@ LAB_0805caff:
   tmp = Strnew_size(lineBuf2->length);
   p = lineBuf2->ptr;
   while (*p != '\0') {
-    q = p;
-    while (((*q != '\0' && (*q != '\r')) && (*q != '\n'))) {
-      q = q + 1;
+    for (q = p; ((*q != '\0' && (*q != '\r')) && (*q != '\n')); q = q + 1) {
     }
-    p_Var4 = Strnew_charp_n(p,(int)(q + -(int)p));
+    p_Var4 = Strnew_charp_n(p,(int)q - (int)p);
     lineBuf2 = checkType(p_Var4,&propBuffer,(Linecolor **)0x0);
     Strcat(tmp,lineBuf2);
     if (thru != 0) {
@@ -14411,8 +14233,7 @@ LAB_0805caff:
       }
       addnewline(newBuf,lineBuf2->ptr,propBuffer,(Linecolor *)0x0,lineBuf2->length,iVar5,-1);
     }
-    while ((*q != '\0' && ((*q == '\r' || (*q == '\n'))))) {
-      q = q + 1;
+    for (; (*q != '\0' && ((*q == '\r' || (*q == '\n')))); q = q + 1) {
     }
     p = q;
   }
@@ -14440,10 +14261,8 @@ LAB_0805caff:
       stream = newStrStream(src_1);
       init_stream(&f,4,stream);
       loadHTMLstream(&f,newBuf,(FILE *)0x0,1);
-      l = newBuf->lastLine;
-      while ((l != (Line *)0x0 && (l->real_linenumber != 0))) {
+      for (l = newBuf->lastLine; (l != (Line *)0x0 && (l->real_linenumber != 0)); l = l->prev) {
         l->real_linenumber = 0;
-        l = (Line *)l->prev;
       }
       newBuf->document_charset = old_charset;
     }
@@ -14498,250 +14317,244 @@ LAB_0805bd3a:
         p = p + 1;
       }
       uf->compression = 0;
-      d = compression_decoders;
-      while (d->type != 0) {
-        e = d->encodings;
-        while (*e != (char *)0x0) {
+      for (d = compression_decoders; d->type != 0; d = d + 1) {
+        for (e = d->encodings; *e != (char *)0x0; e = e + 1) {
           __n = strlen(*e);
           iVar5 = strncasecmp(p,*e,__n);
           if (iVar5 == 0) {
             uf->compression = d->type;
             break;
           }
-          e = e + 1;
         }
         if (uf->compression != 0) break;
-        d = d + 1;
       }
       uf->content_encoding = uf->compression;
     }
-    else {
-      if (((((use_cookie == 0) || (accept_cookie == 0)) || (pu == (ParsedURL *)0x0)) ||
-          (iVar5 = check_cookie_accept_domain(pu->host), iVar5 == 0)) ||
-         ((iVar5 = strncasecmp(lineBuf2->ptr,"Set-Cookie:",0xb), iVar5 != 0 &&
-          (iVar5 = strncasecmp(lineBuf2->ptr,"Set-Cookie2:",0xc), iVar5 != 0)))) {
-        iVar5 = strncasecmp(lineBuf2->ptr,"w3m-control:",0xc);
-        if ((iVar5 == 0) && (uf->scheme == '\x05')) {
-          p_Var4 = Strnew();
-          p = lineBuf2->ptr + 0xc;
-          while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
-            p = p + 1;
-          }
-          while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) == 0))) {
-            if (p_Var4->area_size <= p_Var4->length + 1) {
-              Strgrow(p_Var4);
-            }
-            iVar5 = p_Var4->length;
-            p_Var4->ptr[iVar5] = *p;
-            p_Var4->length = iVar5 + 1;
-            p = p + 1;
-            p_Var4->ptr[p_Var4->length] = '\0';
-          }
-          while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
-            p = p + 1;
-          }
-          iVar5 = getFuncList(p_Var4->ptr);
-          if (-1 < iVar5) {
-            tmp = Strnew_charp(p);
-            Strchop(tmp);
-            pushEvent(iVar5,tmp->ptr);
-          }
+    else if (((((use_cookie == 0) || (accept_cookie == 0)) || (pu == (ParsedURL *)0x0)) ||
+             (iVar5 = check_cookie_accept_domain(pu->host), iVar5 == 0)) ||
+            ((iVar5 = strncasecmp(lineBuf2->ptr,"Set-Cookie:",0xb), iVar5 != 0 &&
+             (iVar5 = strncasecmp(lineBuf2->ptr,"Set-Cookie2:",0xc), iVar5 != 0)))) {
+      iVar5 = strncasecmp(lineBuf2->ptr,"w3m-control:",0xc);
+      if ((iVar5 == 0) && (uf->scheme == '\x05')) {
+        p_Var4 = Strnew();
+        p = lineBuf2->ptr + 0xc;
+        while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
+          p = p + 1;
         }
-      }
-      else {
-        name = Strnew();
-        value = Strnew();
-        domain = (Str)0x0;
-        path = (Str)0x0;
-        comment = (Str)0x0;
-        commentURL = (Str)0x0;
-        port = (Str)0x0;
-        flag = 0;
-        expires = -1;
-        q = (char *)0x0;
-        if (lineBuf2->ptr[10] == '2') {
-          p = lineBuf2->ptr + 0xc;
-          version = 1;
-        }
-        else {
-          p = lineBuf2->ptr + 0xb;
-          version = 0;
+        while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) == 0))) {
+          if (p_Var4->area_size <= p_Var4->length + 1) {
+            Strgrow(p_Var4);
+          }
+          iVar5 = p_Var4->length;
+          p_Var4->ptr[iVar5] = *p;
+          p_Var4->length = iVar5 + 1;
+          p = p + 1;
+          p_Var4->ptr[p_Var4->length] = '\0';
         }
         while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
           p = p + 1;
         }
-        while ((((*p != '=' && (*p != '\0')) && (*p != '\r')) && ((*p != '\n' && (*p != ';'))))) {
-          if (name->area_size <= name->length + 1) {
-            Strgrow(name);
-          }
-          iVar5 = name->length;
-          name->ptr[iVar5] = *p;
-          name->length = iVar5 + 1;
+        iVar5 = getFuncList(p_Var4->ptr);
+        if (-1 < iVar5) {
+          tmp = Strnew_charp(p);
+          Strchop(tmp);
+          pushEvent(iVar5,tmp->ptr);
+        }
+      }
+    }
+    else {
+      name = Strnew();
+      value = Strnew();
+      domain = (Str)0x0;
+      path = (Str)0x0;
+      comment = (Str)0x0;
+      commentURL = (Str)0x0;
+      port = (Str)0x0;
+      flag = 0;
+      expires = -1;
+      q = (char *)0x0;
+      if (lineBuf2->ptr[10] == '2') {
+        p = lineBuf2->ptr + 0xc;
+        version = 1;
+      }
+      else {
+        p = lineBuf2->ptr + 0xb;
+        version = 0;
+      }
+      while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
+        p = p + 1;
+      }
+      while ((((*p != '=' && (*p != '\0')) && (*p != '\r')) && ((*p != '\n' && (*p != ';'))))) {
+        if (name->area_size <= name->length + 1) {
+          Strgrow(name);
+        }
+        iVar5 = name->length;
+        name->ptr[iVar5] = *p;
+        name->length = iVar5 + 1;
+        p = p + 1;
+        name->ptr[name->length] = '\0';
+      }
+      Strremovetrailingspaces(name);
+      if (*p == '=') {
+        do {
           p = p + 1;
-          name->ptr[name->length] = '\0';
-        }
-        Strremovetrailingspaces(name);
-        if (*p == '=') {
-          do {
-            p = p + 1;
-            if (*p == '\0') break;
-          } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
-          bVar1 = false;
-          while (((*p != '\0' && (*p != '\r')) && ((*p != '\n' && ((bVar1 || (*p != ';'))))))) {
-            if ((MYCTYPE_MAP[(byte)*p] & 2) == 0) {
-              q = p;
-            }
-            if (*p == '\"') {
-              bVar1 = !bVar1;
-            }
-            if (value->area_size <= value->length + 1) {
-              Strgrow(value);
-            }
-            iVar5 = value->length;
-            value->ptr[iVar5] = *p;
-            value->length = iVar5 + 1;
-            p = p + 1;
-            value->ptr[value->length] = '\0';
+          if (*p == '\0') break;
+        } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
+        bVar1 = false;
+        while (((*p != '\0' && (*p != '\r')) && ((*p != '\n' && ((bVar1 || (*p != ';'))))))) {
+          if ((MYCTYPE_MAP[(byte)*p] & 2) == 0) {
+            q = p;
           }
-          if (q != (char *)0x0) {
-            Strshrink(value,(int)(p + (-1 - (int)q)));
+          if (*p == '\"') {
+            bVar1 = !bVar1;
           }
+          if (value->area_size <= value->length + 1) {
+            Strgrow(value);
+          }
+          iVar5 = value->length;
+          value->ptr[iVar5] = *p;
+          value->length = iVar5 + 1;
+          p = p + 1;
+          value->ptr[value->length] = '\0';
         }
-        while (*p == ';') {
-          do {
-            p = p + 1;
-            if (*p == '\0') break;
-          } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
-          iVar5 = matchattr(p,"expires",7,&tmp2);
+        if (q != (char *)0x0) {
+          Strshrink(value,(int)(p + (-1 - (int)q)));
+        }
+      }
+      while (*p == ';') {
+        do {
+          p = p + 1;
+          if (*p == '\0') break;
+        } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
+        iVar5 = matchattr(p,"expires",7,&tmp2);
+        if (iVar5 == 0) {
+          iVar5 = matchattr(p,"max-age",7,&tmp2);
           if (iVar5 == 0) {
-            iVar5 = matchattr(p,"max-age",7,&tmp2);
+            iVar5 = matchattr(p,"domain",6,&tmp2);
             if (iVar5 == 0) {
-              iVar5 = matchattr(p,"domain",6,&tmp2);
+              iVar5 = matchattr(p,"path",4,&tmp2);
               if (iVar5 == 0) {
-                iVar5 = matchattr(p,"path",4,&tmp2);
+                iVar5 = matchattr(p,"secure",6,(Str *)0x0);
                 if (iVar5 == 0) {
-                  iVar5 = matchattr(p,"secure",6,(Str *)0x0);
+                  iVar5 = matchattr(p,"comment",7,&tmp2);
                   if (iVar5 == 0) {
-                    iVar5 = matchattr(p,"comment",7,&tmp2);
+                    iVar5 = matchattr(p,"version",7,&tmp2);
                     if (iVar5 == 0) {
-                      iVar5 = matchattr(p,"version",7,&tmp2);
+                      iVar5 = matchattr(p,"port",4,&tmp2);
                       if (iVar5 == 0) {
-                        iVar5 = matchattr(p,"port",4,&tmp2);
+                        iVar5 = matchattr(p,"commentURL",10,&tmp2);
                         if (iVar5 == 0) {
-                          iVar5 = matchattr(p,"commentURL",10,&tmp2);
-                          if (iVar5 == 0) {
-                            iVar5 = matchattr(p,"discard",7,(Str *)0x0);
-                            if (iVar5 != 0) {
-                              flag = flag | 0x10;
-                            }
-                          }
-                          else {
-                            commentURL = tmp2;
+                          iVar5 = matchattr(p,"discard",7,(Str *)0x0);
+                          if (iVar5 != 0) {
+                            flag = flag | 0x10;
                           }
                         }
                         else {
-                          port = tmp2;
+                          commentURL = tmp2;
                         }
                       }
                       else {
-                        version = atoi(tmp2->ptr);
+                        port = tmp2;
                       }
                     }
                     else {
-                      comment = tmp2;
+                      version = atoi(tmp2->ptr);
                     }
                   }
                   else {
-                    flag = flag | 2;
+                    comment = tmp2;
                   }
                 }
                 else {
-                  path = tmp2;
+                  flag = flag | 2;
                 }
               }
               else {
-                domain = tmp2;
+                path = tmp2;
               }
             }
             else {
-              tVar6 = time((time_t *)0x0);
-              lVar7 = atol(tmp2->ptr);
-              expires = tVar6 + lVar7;
+              domain = tmp2;
             }
           }
           else {
-            expires = mymktime(tmp2->ptr);
-          }
-          bVar1 = false;
-          while ((((*p != '\0' && (*p != '\r')) && (*p != '\n')) && ((bVar1 || (*p != ';'))))) {
-            if (*p == '\"') {
-              bVar1 = !bVar1;
-            }
-            p = p + 1;
+            tVar6 = time((time_t *)0x0);
+            lVar7 = atol(tmp2->ptr);
+            expires = tVar6 + lVar7;
           }
         }
-        if ((pu != (ParsedURL *)0x0) && (0 < name->length)) {
-          if (show_cookie != 0) {
-            if ((flag & 2U) == 0) {
-              p_Var4 = Sprintf("Received cookie: %s=%s",name->ptr,value->ptr);
-              disp_message_nsec(p_Var4->ptr,0,1,1,0);
+        else {
+          expires = mymktime(tmp2->ptr);
+        }
+        bVar1 = false;
+        for (; (((*p != '\0' && (*p != '\r')) && (*p != '\n')) && ((bVar1 || (*p != ';'))));
+            p = p + 1) {
+          if (*p == '\"') {
+            bVar1 = !bVar1;
+          }
+        }
+      }
+      if ((pu != (ParsedURL *)0x0) && (0 < name->length)) {
+        if (show_cookie != 0) {
+          if ((flag & 2U) == 0) {
+            p_Var4 = Sprintf("Received cookie: %s=%s",name->ptr,value->ptr);
+            disp_message_nsec(p_Var4->ptr,0,1,1,0);
+          }
+          else {
+            disp_message_nsec("Received a secured cookie",0,1,1,0);
+          }
+        }
+        err = add_cookie(pu,name,value,expires,domain,path,flag,comment,version,port,commentURL);
+        if (err != 0) {
+          if (accept_bad_cookie == 1) {
+            ans = "y";
+          }
+          else {
+            ans = (char *)0x0;
+          }
+          if (((fmInitialized != '\0') && ((err & 0x20U) != 0)) && (accept_bad_cookie == 2)) {
+            if ((domain == (Str)0x0) || (domain->ptr == (char *)0x0)) {
+              pcVar8 = "<localdomain>";
             }
             else {
-              disp_message_nsec("Received a secured cookie",0,1,1,0);
+              pcVar8 = domain->ptr;
+            }
+            p_Var4 = Sprintf("Accept bad cookie from %s for %s?",pu->host,pcVar8);
+            if (COLS + -10 < p_Var4->length) {
+              Strshrink(p_Var4,p_Var4->length + (10 - COLS));
+            }
+            Strcat_charp(p_Var4," (y/n)");
+            ans = inputAnswer(p_Var4->ptr);
+          }
+          if (ans != (char *)0x0) {
+            if ((MYCTYPE_MAP[(byte)*ans] & 4) == 0) {
+              bVar2 = *ans;
+            }
+            else {
+              bVar2 = *ans | 0x20;
+            }
+            if ((bVar2 == 0x79) &&
+               (err = add_cookie(pu,name,value,expires,domain,path,flag | 0x20,comment,version,port,
+                                 commentURL), err == 0)) {
+              if (show_cookie != 0) {
+                p_Var4 = Sprintf("Accepting invalid cookie: %s=%s",name->ptr,value->ptr);
+                disp_message_nsec(p_Var4->ptr,0,1,1,0);
+              }
+              goto LAB_0805ca92;
             }
           }
-          err = add_cookie(pu,name,value,expires,domain,path,flag,comment,version,port,commentURL);
-          if (err != 0) {
-            if (accept_bad_cookie == 1) {
-              ans = "y";
-            }
-            else {
-              ans = (char *)0x0;
-            }
-            if (((fmInitialized != '\0') && ((err & 0x20U) != 0)) && (accept_bad_cookie == 2)) {
-              if ((domain == (Str)0x0) || (domain->ptr == (char *)0x0)) {
-                pcVar8 = "<localdomain>";
-              }
-              else {
-                pcVar8 = domain->ptr;
-              }
-              p_Var4 = Sprintf("Accept bad cookie from %s for %s?",pu->host,pcVar8);
-              if (COLS + -10 < p_Var4->length) {
-                Strshrink(p_Var4,p_Var4->length + (10 - COLS));
-              }
-              Strcat_charp(p_Var4," (y/n)");
-              ans = inputAnswer(p_Var4->ptr);
-            }
-            if (ans != (char *)0x0) {
-              if ((MYCTYPE_MAP[(byte)*ans] & 4) == 0) {
-                bVar2 = *ans;
-              }
-              else {
-                bVar2 = *ans | 0x20;
-              }
-              if ((bVar2 == 0x79) &&
-                 (err = add_cookie(pu,name,value,expires,domain,path,flag | 0x20,comment,version,
-                                   port,commentURL), err == 0)) {
-                if (show_cookie != 0) {
-                  p_Var4 = Sprintf("Accepting invalid cookie: %s=%s",name->ptr,value->ptr);
-                  disp_message_nsec(p_Var4->ptr,0,1,1,0);
-                }
-                goto LAB_0805ca92;
-              }
-            }
-            iVar5 = (err & 0xffffffdfU) - 1;
-            if ((iVar5 < 0) || (8 < iVar5)) {
-              emsg = "This cookie was rejected to prevent security violation.";
-            }
-            else {
-              p_Var4 = Sprintf("This cookie was rejected to prevent security violation. [%s]",
-                               violations[iVar5]);
-              emsg = p_Var4->ptr;
-            }
-            record_err_message(emsg);
-            if (show_cookie != 0) {
-              disp_message_nsec(emsg,0,1,1,0);
-            }
+          iVar5 = (err & 0xffffffdfU) - 1;
+          if ((iVar5 < 0) || (8 < iVar5)) {
+            emsg = "This cookie was rejected to prevent security violation.";
+          }
+          else {
+            p_Var4 = Sprintf("This cookie was rejected to prevent security violation. [%s]",
+                             violations[iVar5]);
+            emsg = p_Var4->ptr;
+          }
+          record_err_message(emsg);
+          if (show_cookie != 0) {
+            disp_message_nsec(emsg,0,1,1,0);
           }
         }
       }
@@ -14772,14 +14585,12 @@ char * checkHeader(Buffer *buf,char *field)
   if (((buf != (Buffer *)0x0) && (field != (char *)0x0)) &&
      (buf->document_header != (TextList *)0x0)) {
     __n = strlen(field);
-    i = buf->document_header->first;
-    while (i != (TextListItem *)0x0) {
+    for (i = buf->document_header->first; i != (TextListItem *)0x0; i = i->next) {
       iVar1 = strncasecmp(i->ptr,field,__n);
       if (iVar1 == 0) {
         pcVar2 = remove_space(i->ptr + __n);
         return pcVar2;
       }
-      i = (TextListItem *)i->next;
     }
   }
   return (char *)0x0;
@@ -14880,9 +14691,7 @@ switchD_0805cd85_caseD_9:
     if (first == 0) {
       first = typ;
     }
-    else {
-      if (first != typ) goto endoftoken;
-    }
+    else if (first != typ) goto endoftoken;
     p = p + 1;
   } while( true );
 }
@@ -15037,10 +14846,8 @@ char * extract_auth_param(char *q,auth_param *auth)
   char *p;
   auth_param *ap;
   
-  ap = auth;
-  while (ap->name != (char *)0x0) {
+  for (ap = auth; ap->name != (char *)0x0; ap = ap + 1) {
     ap->val = (Str)0x0;
-    ap = ap + 1;
   }
   do {
     if (*q == '\0') {
@@ -15173,8 +14980,7 @@ http_auth * findAuthentication(http_auth *hauth,Buffer *buf,char *auth_field)
           p = p + 1;
         }
         p0 = p;
-        ha = www_auth;
-        while (ha->scheme != (char *)0x0) {
+        for (ha = www_auth; ha->scheme != (char *)0x0; ha = ha + 1) {
           slen = strlen(ha->scheme);
           iVar1 = strncasecmp(p,ha->scheme,slen);
           if (iVar1 == 0) {
@@ -15192,7 +14998,6 @@ http_auth * findAuthentication(http_auth *hauth,Buffer *buf,char *auth_field)
             }
             p = extract_auth_param(p,none_auth_param);
           }
-          ha = ha + 1;
         }
         if (p0 == p) {
           iVar1 = skip_auth_token(&p);
@@ -15204,7 +15009,7 @@ http_auth * findAuthentication(http_auth *hauth,Buffer *buf,char *auth_field)
         }
       }
     }
-    i = (TextListItem *)i->next;
+    i = i->next;
   } while( true );
 }
 
@@ -15269,8 +15074,8 @@ LAB_0805d6e1:
         }
         sleep(2);
         if (fmInitialized == '\0') {
-          iVar5 = feof((FILE *)stdin);
-          if ((iVar5 != 0) || (iVar5 = ferror((FILE *)stdin), iVar5 != 0)) {
+          iVar5 = feof(stdin);
+          if ((iVar5 != 0) || (iVar5 = ferror(stdin), iVar5 != 0)) {
             fprintf(stderr,"w3m: Authorization required for %s\n",realm);
                     // WARNING: Subroutine does not return
             exit(1);
@@ -15283,7 +15088,7 @@ LAB_0805d6e1:
           }
           printf(pcVar6,realm);
           fflush(stdout);
-          p_Var4 = Strfgets(stdin);
+          p_Var4 = Strfgets((FILE *)stdin);
           *uname = p_Var4;
           Strchop(*uname);
           if (is_proxy == 0) {
@@ -15342,7 +15147,7 @@ LAB_0805d6e1:
       bVar1 = true;
       goto LAB_0805d6e1;
     }
-    i = (TextListItem *)i->next;
+    i = i->next;
   } while( true );
 }
 
@@ -15547,41 +15352,35 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                   charset = SystemCharset;
                 }
               }
-              else {
-                if (local_16c < 5) {
-                  if (local_16c == 3) {
-                    page = loadFTPDir(&pu,&charset);
-                    t = "ftp:directory";
-                  }
+              else if (local_16c < 5) {
+                if (local_16c == 3) {
+                  page = loadFTPDir(&pu,&charset);
+                  t = "ftp:directory";
                 }
-                else {
-                  if (local_16c == 10) {
-                    page = loadNewsgroup(&pu,&charset);
-                    t = "news:group";
+              }
+              else if (local_16c == 10) {
+                page = loadNewsgroup(&pu,&charset);
+                t = "news:group";
+              }
+              else if (local_16c == 0xff) {
+                tmp = searchURIMethods(&pu);
+                if (tmp != (Str)0x0) {
+                  b = loadGeneralFile(tmp->ptr,current,referer,flag,request);
+                  if ((b != (Buffer *)0x0) && (b != (Buffer *)0x1)) {
+                    copyParsedURL(&b->currentURL,&pu);
                   }
-                  else {
-                    if (local_16c == 0xff) {
-                      tmp = searchURIMethods(&pu);
-                      if (tmp != (Str)0x0) {
-                        b = loadGeneralFile(tmp->ptr,current,referer,flag,request);
-                        if ((b != (Buffer *)0x0) && (b != (Buffer *)0x1)) {
-                          copyParsedURL(&b->currentURL,&pu);
-                        }
-                        pBVar12 = b;
-                        goto LAB_0805fa43;
-                      }
-                      p_Var6 = parsedURL2Str(&pu);
-                      p_Var6 = Sprintf("Unknown URI: %s",p_Var6->ptr);
-                      disp_err_message(p_Var6->ptr,0);
-                    }
-                  }
+                  pBVar12 = b;
+                  goto LAB_0805fa43;
                 }
+                p_Var6 = parsedURL2Str(&pu);
+                p_Var6 = Sprintf("Unknown URI: %s",p_Var6->ptr);
+                disp_err_message(p_Var6->ptr,0);
               }
               if ((page != (Str)0x0) && (0 < page->length)) goto page_loaded;
               pBVar12 = (Buffer *)0x0;
               goto LAB_0805fa43;
             }
-            if (status == -2) {
+            if (status == 0xfe) {
               if (TrapSignal != '\0') {
                 if (fmInitialized != '\0') {
                   term_raw();
@@ -15660,18 +15459,14 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                 }
                 if (cVar1 != '1') goto LAB_0805ecf5;
               }
-              else {
-                if (cVar1 != 'm') {
-                  if (cVar1 == 's') {
-                    t = "audio/basic";
-                  }
-                  else {
-                    if (cVar1 == 'h') {
-                      t = "text/html";
-                    }
-                  }
-                  goto LAB_0805ecf5;
+              else if (cVar1 != 'm') {
+                if (cVar1 == 's') {
+                  t = "audio/basic";
                 }
+                else if (cVar1 == 'h') {
+                  t = "text/html";
+                }
+                goto LAB_0805ecf5;
               }
               page = loadGopherDir(&f,&pu,&charset);
               t = "gopher:directory";
@@ -15921,23 +15716,21 @@ page_loaded:
         }
         pBVar12 = b;
       }
+      else if (__s == (FILE *)0x0) {
+        pBVar12 = (Buffer *)0x0;
+      }
       else {
-        if (__s == (FILE *)0x0) {
-          pBVar12 = (Buffer *)0x0;
+        file = guess_filename(pu.file);
+        if (f.scheme == '\x01') {
+          p_Var6 = Sprintf("%s.html",file);
+          file = p_Var6->ptr;
         }
-        else {
-          file = guess_filename(pu.file);
-          if (f.scheme == '\x01') {
-            p_Var6 = Sprintf("%s.html",file);
-            file = p_Var6->ptr;
-          }
-          if (f.scheme == '\n') {
-            p_Var6 = Sprintf("%s.html",file);
-            file = p_Var6->ptr;
-          }
-          doFileMove(tmp->ptr,file);
-          pBVar12 = (Buffer *)0x1;
+        if (f.scheme == '\n') {
+          p_Var6 = Sprintf("%s.html",file);
+          file = p_Var6->ptr;
         }
+        doFileMove(tmp->ptr,file);
+        pBVar12 = (Buffer *)0x1;
       }
     }
     else {
@@ -15966,7 +15759,7 @@ page_loaded:
         mySignal(2,prevtrap);
       }
     }
-    if ((DecodeCTE != '\0') && (*(char *)&(f.stream)->field_0x14 != '\x04')) {
+    if ((DecodeCTE != '\0') && ((f.stream)->field_0x14 != '\x04')) {
       f.stream = newEncodedStream(f.stream,f.encoding);
     }
     if (pu.scheme == 4) {
@@ -16040,7 +15833,7 @@ LAB_0805f1f5:
   }
   if (image_source != (char *)0x0) {
     b_1 = (Buffer *)0x0;
-    if (*(char *)&(f.stream)->field_0x14 != '\x04') {
+    if ((f.stream)->field_0x14 != '\x04') {
       f.stream = newEncodedStream(f.stream,f.encoding);
     }
     iVar7 = save2tmp((URLFile)CONCAT428(f.modtime,
@@ -16164,7 +15957,7 @@ LAB_0805f1f5:
           _doFileCopy(pu.real_file,p_Var6->ptr,1);
         }
         else {
-          if ((DecodeCTE != '\0') && (*(char *)&(f.stream)->field_0x14 != '\x04')) {
+          if ((DecodeCTE != '\0') && ((f.stream)->field_0x14 != '\x04')) {
             f.stream = newEncodedStream(f.stream,f.encoding);
           }
           pcVar8 = guess_save_name(t_buf,pu.file);
@@ -16304,20 +16097,16 @@ char * has_hidden_link(readbuffer *obuf,int cmd)
     pcVar2 = (char *)0x0;
   }
   else {
-    p = link_stack;
-    while ((p != (link_stack *)0x0 && (p->cmd != cmd))) {
-      p = p->next;
+    for (p = link_stack; (p != (link_stack *)0x0 && (p->cmd != cmd)); p = p->next) {
     }
     if (p == (link_stack *)0x0) {
       pcVar2 = (char *)0x0;
     }
+    else if (obuf->pos == p->pos) {
+      pcVar2 = p_Var1->ptr + p->offset;
+    }
     else {
-      if (obuf->pos == p->pos) {
-        pcVar2 = p_Var1->ptr + p->offset;
-      }
-      else {
-        pcVar2 = (char *)0x0;
-      }
+      pcVar2 = (char *)0x0;
     }
   }
   return pcVar2;
@@ -16383,9 +16172,7 @@ LAB_0805fb86:
     if (bVar1 < 0x5c) {
       if ((bVar1 == 0x28) || (bVar1 == 0x3c)) goto LAB_0805fb86;
     }
-    else {
-      if ((bVar1 == 0x60) || (bVar1 == 0x7b)) goto LAB_0805fb86;
-    }
+    else if ((bVar1 == 0x60) || (bVar1 == 0x7b)) goto LAB_0805fb86;
     iVar2 = 0;
   }
   return iVar2;
@@ -16419,7 +16206,7 @@ int is_word_char(uchar *ch)
           iVar1 = 1;
           break;
         default:
-          if (*ch == -0x60) {
+          if (*ch == 0xa0) {
             iVar1 = 1;
           }
           else {
@@ -16461,28 +16248,26 @@ int is_boundary(uchar *ch1,uchar *ch2)
   if ((*ch1 == '\0') || (*ch2 == '\0')) {
     iVar1 = 1;
   }
+  else if ((*ch1 == ' ') && (*ch2 == ' ')) {
+    iVar1 = 0;
+  }
   else {
-    if ((*ch1 == ' ') && (*ch2 == ' ')) {
-      iVar1 = 0;
+    if ((*ch1 != ' ') && (iVar1 = is_period_char(ch2), iVar1 != 0)) {
+      return 0;
+    }
+    if ((*ch2 != ' ') && (iVar1 = is_beginning_char(ch1), iVar1 != 0)) {
+      return 0;
+    }
+    iVar1 = is_combining_char(ch2);
+    if (iVar1 == 0) {
+      iVar1 = is_word_char(ch1);
+      if ((iVar1 != 0) && (iVar1 = is_word_char(ch2), iVar1 != 0)) {
+        return 0;
+      }
+      iVar1 = 1;
     }
     else {
-      if ((*ch1 != ' ') && (iVar1 = is_period_char(ch2), iVar1 != 0)) {
-        return 0;
-      }
-      if ((*ch2 != ' ') && (iVar1 = is_beginning_char(ch1), iVar1 != 0)) {
-        return 0;
-      }
-      iVar1 = is_combining_char(ch2);
-      if (iVar1 == 0) {
-        iVar1 = is_word_char(ch1);
-        if ((iVar1 != 0) && (iVar1 = is_word_char(ch2), iVar1 != 0)) {
-          return 0;
-        }
-        iVar1 = 1;
-      }
-      else {
-        iVar1 = 0;
-      }
+      iVar1 = 0;
     }
   }
   return iVar1;
@@ -16565,24 +16350,18 @@ void append_tags(readbuffer *obuf)
 LAB_0805ffef:
       push_link(obuf->tag_stack[i]->cmd,obuf->line->length,(int)obuf->pos);
     }
-    else {
-      if (iVar2 < 0x42) {
-        if ((iVar2 == 1) || (iVar2 == 7)) goto LAB_0805ffef;
-      }
-      else {
-        if (((iVar2 == 0x6d) || (iVar2 == 0x88)) || (iVar2 == 0x69)) goto LAB_0805ffef;
-      }
+    else if (iVar2 < 0x42) {
+      if ((iVar2 == 1) || (iVar2 == 7)) goto LAB_0805ffef;
     }
+    else if (((iVar2 == 0x6d) || (iVar2 == 0x88)) || (iVar2 == 0x69)) goto LAB_0805ffef;
     Strcat_charp(obuf->line,obuf->tag_stack[i]->cmdname);
     iVar2 = obuf->tag_stack[i]->cmd;
     if (iVar2 == 0x32) {
       if (obuf->nobr_level < 2) goto LAB_08060067;
     }
-    else {
-      if (iVar2 == 0x45) {
+    else if (iVar2 == 0x45) {
 LAB_08060067:
-        bVar3 = true;
-      }
+      bVar3 = true;
     }
     i = i + 1;
   } while( true );
@@ -16689,8 +16468,7 @@ void push_spaces(readbuffer *obuf,int pre_mode,int width)
   
   if (0 < width) {
     check_breakpoint(obuf,pre_mode," ");
-    i = 0;
-    while (i < width) {
+    for (i = 0; i < width; i = i + 1) {
       if (obuf->line->area_size <= obuf->line->length + 1) {
         Strgrow(obuf->line);
       }
@@ -16699,7 +16477,6 @@ void push_spaces(readbuffer *obuf,int pre_mode,int width)
       obuf->line->ptr[iVar2] = ' ';
       p_Var1->length = iVar2 + 1;
       obuf->line->ptr[obuf->line->length] = '\0';
-      i = i + 1;
     }
     obuf->pos = obuf->pos + (short)width;
     Strcopy_charp_n(obuf->prevchar," ",1);
@@ -16801,22 +16578,20 @@ void passthrough(readbuffer *obuf,char *str,int back)
         str_bak = str;
         iVar1 = sloppy_parse_line(&str);
         if (iVar1 != 0) break;
-        push_nchars(obuf,0,str_bak,(int)(str + -(int)str_bak),obuf->prev_ctype);
+        push_nchars(obuf,0,str_bak,(int)str - (int)str_bak,obuf->prev_ctype);
       }
       q = str_bak;
       cmd = gethtmlcmd(&q);
       if (back != 0) break;
-      Strcat_charp_n(tok,str_bak,(int)(str + -(int)str_bak));
+      Strcat_charp_n(tok,str_bak,(int)str - (int)str_bak);
       push_tag(obuf,tok->ptr,cmd);
       Strclear(tok);
     }
-    p = link_stack;
-    while (p != (link_stack *)0x0) {
+    for (p = link_stack; p != (link_stack *)0x0; p = p->next) {
       if (p->cmd == cmd) {
         link_stack = p->next;
         break;
       }
-      p = p->next;
     }
     back = 0;
   } while( true );
@@ -16965,8 +16740,7 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
     o.top_margin = -1;
     o.bottom_margin = -1;
     Strcat_charp(o.line,"<pre_int>");
-    i = 0;
-    while (i < o.pos) {
+    for (i = 0; i < o.pos; i = i + 1) {
       if ((o.line)->area_size <= (o.line)->length + 1) {
         Strgrow(o.line);
       }
@@ -16974,13 +16748,10 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
       (o.line)->ptr[iVar1] = ' ';
       (o.line)->length = iVar1 + 1;
       (o.line)->ptr[(o.line)->length] = '\0';
-      i = i + 1;
     }
     Strcat_charp(o.line,"</pre_int>");
-    i = 0;
-    while (i < obuf->top_margin) {
+    for (i = 0; i < obuf->top_margin; i = i + 1) {
       flushline(h_env,&o,indent,force,width);
-      i = i + 1;
     }
   }
   if ((force == 1) || ((obuf->flag & 0x8000U) != 0)) {
@@ -16988,15 +16759,11 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
     if ((obuf->flag & 0x70U) == 0x20) {
       align(lbuf,width,0);
     }
-    else {
-      if ((obuf->flag & 0x70U) == 0x40) {
-        align(lbuf,width,2);
-      }
-      else {
-        if (((obuf->flag & 0x70U) == 0x10) && ((obuf->flag & 0x20000U) != 0)) {
-          align(lbuf,width,1);
-        }
-      }
+    else if ((obuf->flag & 0x70U) == 0x40) {
+      align(lbuf,width,2);
+    }
+    else if (((obuf->flag & 0x70U) == 0x10) && ((obuf->flag & 0x20000U) != 0)) {
+      align(lbuf,width,1);
     }
     if (h_env->maxlimit < (int)lbuf->pos) {
       h_env->maxlimit = (int)lbuf->pos;
@@ -17038,7 +16805,7 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
     while (pcVar3 = p, *p != '\0') {
       iVar1 = sloppy_parse_line(&p);
       if (iVar1 != 0) {
-        Strcat_charp_n(x,pcVar3,(int)(p + -(int)pcVar3));
+        Strcat_charp_n(x,pcVar3,(int)p - (int)pcVar3);
         if (force == 2) {
           if (buf == (TextLineList *)0x0) {
             if (f != (FILE *)0x0) {
@@ -17069,10 +16836,8 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
       pass = (Str)0x0;
       p_Var2 = pass;
     }
-    else {
-      if (pass != (Str)0x0) {
-        Strcat(p_Var2,pass);
-      }
+    else if (pass != (Str)0x0) {
+      Strcat(p_Var2,pass);
     }
   }
   pass = p_Var2;
@@ -17084,8 +16849,7 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
     o.top_margin = -1;
     o.bottom_margin = -1;
     Strcat_charp(o.line,"<pre_int>");
-    i_1 = 0;
-    while (i_1 < o.pos) {
+    for (i_1 = 0; i_1 < o.pos; i_1 = i_1 + 1) {
       if ((o.line)->area_size <= (o.line)->length + 1) {
         Strgrow(o.line);
       }
@@ -17093,13 +16857,10 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
       (o.line)->ptr[iVar1] = ' ';
       (o.line)->length = iVar1 + 1;
       (o.line)->ptr[(o.line)->length] = '\0';
-      i_1 = i_1 + 1;
     }
     Strcat_charp(o.line,"</pre_int>");
-    i_1 = 0;
-    while (i_1 < obuf->bottom_margin) {
+    for (i_1 = 0; i_1 < obuf->bottom_margin; i_1 = i_1 + 1) {
       flushline(h_env,&o,indent,force,width);
-      i_1 = i_1 + 1;
     }
   }
   if ((-1 < obuf->top_margin) && (-1 < obuf->bottom_margin)) {
@@ -17202,7 +16963,7 @@ void purgeline(html_feed_environ *h_env)
 
 {
   char *y;
-  char **ppcVar1;
+  undefined4 *puVar1;
   Str x;
   int iVar2;
   Str tmp;
@@ -17210,13 +16971,13 @@ void purgeline(html_feed_environ *h_env)
   char *p;
   
   if ((h_env->buf != (TextLineList *)0x0) && (h_env->blank_lines != 0)) {
-    ppcVar1 = (char **)rpopValue((GeneralList *)h_env->buf);
-    p = *(char **)*ppcVar1;
+    puVar1 = (undefined4 *)rpopValue((GeneralList *)h_env->buf);
+    p = *(char **)*puVar1;
     x = Strnew();
     while (y = p, *p != '\0') {
       iVar2 = sloppy_parse_line(&p);
       if (iVar2 != 0) {
-        Strcat_charp_n(x,y,(int)(p + -(int)y));
+        Strcat_charp_n(x,y,(int)p - (int)y);
       }
     }
     appendTextLine(h_env->buf,x,0);
@@ -17423,29 +17184,27 @@ void feed_title(char *str)
         y = getescapecmd(&str);
         Strcat_charp(cur_title,y);
       }
+      else if ((*str == '\n') || (*str == '\r')) {
+        if (cur_title->area_size <= cur_title->length + 1) {
+          Strgrow(cur_title);
+        }
+        p_Var2 = cur_title;
+        iVar1 = cur_title->length;
+        cur_title->ptr[iVar1] = ' ';
+        p_Var2->length = iVar1 + 1;
+        cur_title->ptr[cur_title->length] = '\0';
+        str = str + 1;
+      }
       else {
-        if ((*str == '\n') || (*str == '\r')) {
-          if (cur_title->area_size <= cur_title->length + 1) {
-            Strgrow(cur_title);
-          }
-          p_Var2 = cur_title;
-          iVar1 = cur_title->length;
-          cur_title->ptr[iVar1] = ' ';
-          p_Var2->length = iVar1 + 1;
-          cur_title->ptr[cur_title->length] = '\0';
-          str = str + 1;
+        if (cur_title->area_size <= cur_title->length + 1) {
+          Strgrow(cur_title);
         }
-        else {
-          if (cur_title->area_size <= cur_title->length + 1) {
-            Strgrow(cur_title);
-          }
-          p_Var2 = cur_title;
-          iVar1 = cur_title->length;
-          cur_title->ptr[iVar1] = *str;
-          p_Var2->length = iVar1 + 1;
-          str = str + 1;
-          cur_title->ptr[cur_title->length] = '\0';
-        }
+        p_Var2 = cur_title;
+        iVar1 = cur_title->length;
+        cur_title->ptr[iVar1] = *str;
+        p_Var2->length = iVar1 + 1;
+        str = str + 1;
+        cur_title->ptr[cur_title->length] = '\0';
       }
     }
   }
@@ -17538,10 +17297,8 @@ Str process_img(parsed_tag *tag,int width)
       if (w == 0) {
         w = 1;
       }
-      else {
-        if (0x800 < w) {
-          w = 0x800;
-        }
+      else if (0x800 < w) {
+        w = 0x800;
       }
     }
   }
@@ -17557,10 +17314,8 @@ Str process_img(parsed_tag *tag,int width)
         if (i == 0) {
           i = 1;
         }
-        else {
-          if (0x800 < i) {
-            i = 0x800;
-          }
+        else if (0x800 < i) {
+          i = 0x800;
         }
       }
     }
@@ -17587,15 +17342,11 @@ Str process_img(parsed_tag *tag,int width)
     if (align == 1) {
       Strcat_charp(p_Var4,"<div_int align=left>");
     }
-    else {
-      if (align == 2) {
-        Strcat_charp(p_Var4,"<div_int align=right>");
-      }
-      else {
-        if (align == 0) {
-          Strcat_charp(p_Var4,"<div_int align=center>");
-        }
-      }
+    else if (align == 2) {
+      Strcat_charp(p_Var4,"<div_int align=right>");
+    }
+    else if (align == 0) {
+      Strcat_charp(p_Var4,"<div_int align=center>");
     }
   }
   if (r != (char *)0x0) {
@@ -17638,7 +17389,7 @@ Str process_img(parsed_tag *tag,int width)
     w0 = w;
     i0 = i;
     if ((w < 0) || (i < 0)) {
-      t_ces = SEXT14(cur_document_charset);
+      t_ces = (wc_ces)cur_document_charset;
       p_Var6 = Strnew_charp(p);
       p_Var6 = wc_Str_conv(p_Var6,f_ces,t_ces);
       parseURL2(p_Var6->ptr,&u,current);
@@ -17724,36 +17475,32 @@ Str process_img(parsed_tag *tag,int width)
       bottom = ni + -1;
       yoffset = 0;
     }
-    else {
-      if (align == 6) {
-        top = ni + -1;
-        bottom = 0;
-        yoffset = (int)ROUND(pixel_per_line * (double)ni - (double)i);
+    else if (align == 6) {
+      top = ni + -1;
+      bottom = 0;
+      yoffset = (int)ROUND(pixel_per_line * (double)ni - (double)i);
+    }
+    else if (align == 4) {
+      bottom = ni / 2;
+      top = bottom;
+      if (bottom * 2 == ni) {
+        yoffset = (int)ROUND((pixel_per_line * (double)(ni + 1) - (double)i) / 2.0);
       }
       else {
-        if (align == 4) {
-          bottom = ni / 2;
-          top = bottom;
-          if (bottom * 2 == ni) {
-            yoffset = (int)ROUND((pixel_per_line * (double)(ni + 1) - (double)i) / 2.0);
-          }
-          else {
-            yoffset = (int)ROUND((pixel_per_line * (double)ni - (double)i) / 2.0);
-          }
+        yoffset = (int)ROUND((pixel_per_line * (double)ni - (double)i) / 2.0);
+      }
+    }
+    else {
+      top = ni + -1;
+      bottom = 0;
+      if ((ni != 1) || (pixel_per_line * 1.0 <= (double)i)) {
+        yoffset = (int)ROUND(pixel_per_line * (double)ni - (double)i);
+        if (yoffset < -1) {
+          yoffset = yoffset + 1;
         }
-        else {
-          top = ni + -1;
-          bottom = 0;
-          if ((ni != 1) || (pixel_per_line * 1.0 <= (double)i)) {
-            yoffset = (int)ROUND(pixel_per_line * (double)ni - (double)i);
-            if (yoffset < -1) {
-              yoffset = yoffset + 1;
-            }
-          }
-          else {
-            yoffset = 0;
-          }
-        }
+      }
+      else {
+        yoffset = 0;
       }
     }
     iVar5 = (int)ROUND((pixel_per_char * (double)nw - (double)w) / 2.0);
@@ -17814,7 +17561,7 @@ Str process_img(parsed_tag *tag,int width)
           }
           n = n + (uint)bVar10;
         }
-        p_Var6 = Strnew_charp_n(q,(int)(r_1 + -(int)q));
+        p_Var6 = Strnew_charp_n(q,(int)r_1 - (int)q);
         pcVar7 = html_quote(p_Var6->ptr);
         Strcat_charp(p_Var4,pcVar7);
       }
@@ -17865,12 +17612,9 @@ Str process_img(parsed_tag *tag,int width)
       goto img_end;
     }
   }
-  q = p;
-  while (*q != '\0') {
-    q = q + 1;
+  for (q = p; *q != '\0'; q = q + 1) {
   }
-  while ((p < q && (*q != '/'))) {
-    q = q + -1;
+  for (; (p < q && (*q != '/')); q = q + -1) {
   }
   if (*q == '/') {
     q = q + 1;
@@ -17884,7 +17628,8 @@ Str process_img(parsed_tag *tag,int width)
   p_Var4->ptr[p_Var4->length] = '\0';
   n = 1;
   p = q;
-  while ((*q != '\0' && ((((MYCTYPE_MAP[(byte)*q] & 0xc) != 0 || (*q == '_')) || (*q == '-'))))) {
+  for (; (*q != '\0' && ((((MYCTYPE_MAP[(byte)*q] & 0xc) != 0 || (*q == '_')) || (*q == '-'))));
+      q = q + 1) {
     if (p_Var4->area_size <= p_Var4->length + 1) {
       Strgrow(p_Var4);
     }
@@ -17896,7 +17641,6 @@ Str process_img(parsed_tag *tag,int width)
     iVar8 = n + 2;
     n = iVar5;
     if (nw <= iVar8) break;
-    q = q + 1;
   }
   if (p_Var4->area_size <= p_Var4->length + 1) {
     Strgrow(p_Var4);
@@ -17908,7 +17652,7 @@ Str process_img(parsed_tag *tag,int width)
   n = n + 1;
 img_end:
   if (bVar1) {
-    while (n < nw) {
+    for (; n < nw; n = n + 1) {
       if (p_Var4->area_size <= p_Var4->length + 1) {
         Strgrow(p_Var4);
       }
@@ -17916,7 +17660,6 @@ img_end:
       p_Var4->ptr[iVar5] = ' ';
       p_Var4->length = iVar5 + 1;
       p_Var4->ptr[p_Var4->length] = '\0';
-      n = n + 1;
     }
   }
   Strcat_charp(p_Var4,"</img_alt>");
@@ -18066,23 +17809,19 @@ Str process_input(parsed_tag *tag)
     tmp->length = iVar5 + 1;
     tmp->ptr[tmp->length] = '\0';
   }
-  else {
-    if (v < 4) {
-      if (-1 < v) {
+  else if (v < 4) {
+    if (-1 < v) {
 LAB_080635bc:
-        if (tmp->area_size <= tmp->length + 1) {
-          Strgrow(tmp);
-        }
-        iVar5 = tmp->length;
-        tmp->ptr[iVar5] = '[';
-        tmp->length = iVar5 + 1;
-        tmp->ptr[tmp->length] = '\0';
+      if (tmp->area_size <= tmp->length + 1) {
+        Strgrow(tmp);
       }
-    }
-    else {
-      if (v == 0xb) goto LAB_080635bc;
+      iVar5 = tmp->length;
+      tmp->ptr[iVar5] = '[';
+      tmp->length = iVar5 + 1;
+      tmp->ptr[tmp->length] = '\0';
     }
   }
+  else if (v == 0xb) goto LAB_080635bc;
   iVar2 = i;
   iVar1 = w;
   pcVar3 = html_quote(r);
@@ -18094,8 +17833,7 @@ LAB_080635bc:
     iVar6 = form_stack[form_sp];
   }
   cur_hseq = cur_hseq + 1;
-  p_Var4 = Sprintf(
-                   "<input_alt hseq=\"%d\" fid=\"%d\" type=%s name=\"%s\" width=%d maxlength=%d value=\"%s\""
+  p_Var4 = Sprintf("<input_alt hseq=\"%d\" fid=\"%d\" type=%s name=\"%s\" width=%d maxlength=%d value=\"%s\""
                    ,iVar5,iVar6,p,pcVar3,iVar1,iVar2,qq);
   Strcat(tmp,p_Var4);
   if (x != 0) {
@@ -18165,8 +17903,7 @@ LAB_08063920:
   case 0:
   case 0xb:
     if (q == (char *)0x0) {
-      i = 0;
-      while (i < w) {
+      for (i = 0; i < w; i = i + 1) {
         if (tmp->area_size <= tmp->length + 1) {
           Strgrow(tmp);
         }
@@ -18174,7 +17911,6 @@ LAB_08063920:
         tmp->ptr[iVar5] = ' ';
         tmp->length = iVar5 + 1;
         tmp->ptr[tmp->length] = '\0';
-        i = i + 1;
       }
     }
     else {
@@ -18186,7 +17922,7 @@ LAB_08063920:
   case 1:
     i = 0;
     if (q != (char *)0x0) {
-      while ((i < qlen && (i < w))) {
+      for (; (i < qlen && (i < w)); i = i + 1) {
         if (tmp->area_size <= tmp->length + 1) {
           Strgrow(tmp);
         }
@@ -18194,10 +17930,9 @@ LAB_08063920:
         tmp->ptr[iVar5] = '*';
         tmp->length = iVar5 + 1;
         tmp->ptr[tmp->length] = '\0';
-        i = i + 1;
       }
     }
-    while (i < w) {
+    for (; i < w; i = i + 1) {
       if (tmp->area_size <= tmp->length + 1) {
         Strgrow(tmp);
       }
@@ -18205,7 +17940,6 @@ LAB_08063920:
       tmp->ptr[iVar5] = ' ';
       tmp->length = iVar5 + 1;
       tmp->ptr[tmp->length] = '\0';
-      i = i + 1;
     }
     break;
   case 2:
@@ -18267,9 +18001,7 @@ LAB_08063920:
     if (v < 4) {
       if (v < 0) goto LAB_08063ce1;
     }
-    else {
-      if (v != 0xb) goto LAB_08063ce1;
-    }
+    else if (v != 0xb) goto LAB_08063ce1;
     if (tmp->area_size <= tmp->length + 1) {
       Strgrow(tmp);
     }
@@ -18324,8 +18056,7 @@ Str process_select(parsed_tag *tag)
       iVar4 = form_stack[form_sp];
     }
     cur_hseq = cur_hseq + 1;
-    select_str = Sprintf(
-                         "<pre_int>[<input_alt hseq=\"%d\" fid=\"%d\" type=select name=\"%s\" selectnumber=%d"
+    select_str = Sprintf("<pre_int>[<input_alt hseq=\"%d\" fid=\"%d\" type=select name=\"%s\" selectnumber=%d"
                          ,iVar2,iVar4,pcVar3,iVar1);
     Strcat_charp(select_str,">");
     if (n_select == max_select) {
@@ -18427,32 +18158,30 @@ void feed_select(char *str)
             feed_select::prev_spaces = -1;
           }
         }
-        else {
-          if (cur_option != (Str)0x0) {
-            while (*p != '\0') {
-              if (((MYCTYPE_MAP[(byte)*p] & 2) == 0) || (feed_select::prev_spaces == 0)) {
-                feed_select::prev_spaces = ZEXT14((MYCTYPE_MAP[(byte)*p] & 2) != 0);
-                if (*p == '&') {
-                  y = getescapecmd(&p);
-                  Strcat_charp(cur_option,y);
-                }
-                else {
-                  if (cur_option->area_size <= cur_option->length + 1) {
-                    Strgrow(cur_option);
-                  }
-                  p_Var1 = cur_option;
-                  iVar2 = cur_option->length;
-                  cur_option->ptr[iVar2] = *p;
-                  p_Var1->length = iVar2 + 1;
-                  p = p + 1;
-                  cur_option->ptr[cur_option->length] = '\0';
-                }
+        else if (cur_option != (Str)0x0) {
+          while (*p != '\0') {
+            if (((MYCTYPE_MAP[(byte)*p] & 2) == 0) || (feed_select::prev_spaces == 0)) {
+              feed_select::prev_spaces = (int)((MYCTYPE_MAP[(byte)*p] & 2) != 0);
+              if (*p == '&') {
+                y = getescapecmd(&p);
+                Strcat_charp(cur_option,y);
               }
               else {
-                p = p + 1;
-                if (0 < feed_select::prev_spaces) {
-                  feed_select::prev_spaces = feed_select::prev_spaces + 1;
+                if (cur_option->area_size <= cur_option->length + 1) {
+                  Strgrow(cur_option);
                 }
+                p_Var1 = cur_option;
+                iVar2 = cur_option->length;
+                cur_option->ptr[iVar2] = *p;
+                p_Var1->length = iVar2 + 1;
+                p = p + 1;
+                cur_option->ptr[cur_option->length] = '\0';
+              }
+            }
+            else {
+              p = p + 1;
+              if (0 < feed_select::prev_spaces) {
+                feed_select::prev_spaces = feed_select::prev_spaces + 1;
               }
             }
           }
@@ -18527,8 +18256,7 @@ void process_option(void)
         iVar5 = form_stack[form_sp];
       }
       cur_hseq = cur_hseq + 1;
-      p_Var6 = Sprintf(
-                       "<br><pre_int>%c<input_alt hseq=\"%d\" fid=\"%d\" type=%s name=\"%s\" value=\"%s\""
+      p_Var6 = Sprintf("<br><pre_int>%c<input_alt hseq=\"%d\" fid=\"%d\" type=%s name=\"%s\" value=\"%s\""
                        ,(int)begin_char,iVar2,iVar5,pcVar7,pcVar4,pcVar3);
       Strcat(select_str,p_Var6);
       if (cur_option_selected == 0) {
@@ -18650,16 +18378,14 @@ Str process_n_textarea(void)
     else {
       iVar6 = form_stack[form_sp];
     }
-    y = Sprintf(
-                "<pre_int>[<input_alt hseq=\"%d\" fid=\"%d\" type=textarea name=\"%s\" size=%d rows=%d top_margin=%d textareanumber=%d"
+    y = Sprintf("<pre_int>[<input_alt hseq=\"%d\" fid=\"%d\" type=textarea name=\"%s\" size=%d rows=%d top_margin=%d textareanumber=%d"
                 ,cur_hseq,iVar6,pcVar5,iVar1,iVar2,iVar4,iVar3);
     Strcat(x,y);
     if (cur_textarea_readonly != 0) {
       Strcat_charp(x," readonly");
     }
     Strcat_charp(x,"><u>");
-    i = 0;
-    while (i < cur_textarea_size) {
+    for (i = 0; i < cur_textarea_size; i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -18667,7 +18393,6 @@ Str process_n_textarea(void)
       x->ptr[iVar1] = ' ';
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
     Strcat_charp(x,"</u></input_alt>]</pre_int>\n");
     cur_hseq = cur_hseq + 1;
@@ -18701,24 +18426,20 @@ void feed_textarea(char *str)
         y = getescapecmd(&str);
         Strcat_charp(textarea_str[n_textarea],y);
       }
-      else {
-        if (*str == '\n') {
-          Strcat_charp(textarea_str[n_textarea],"\r\n");
-          str = str + 1;
+      else if (*str == '\n') {
+        Strcat_charp(textarea_str[n_textarea],"\r\n");
+        str = str + 1;
+      }
+      else if (*str != '\r') {
+        if (textarea_str[n_textarea]->area_size <= textarea_str[n_textarea]->length + 1) {
+          Strgrow(textarea_str[n_textarea]);
         }
-        else {
-          if (*str != '\r') {
-            if (textarea_str[n_textarea]->area_size <= textarea_str[n_textarea]->length + 1) {
-              Strgrow(textarea_str[n_textarea]);
-            }
-            p_Var1 = textarea_str[n_textarea];
-            iVar2 = p_Var1->length;
-            textarea_str[n_textarea]->ptr[iVar2] = *str;
-            p_Var1->length = iVar2 + 1;
-            str = str + 1;
-            textarea_str[n_textarea]->ptr[textarea_str[n_textarea]->length] = '\0';
-          }
-        }
+        p_Var1 = textarea_str[n_textarea];
+        iVar2 = p_Var1->length;
+        textarea_str[n_textarea]->ptr[iVar2] = *str;
+        p_Var1->length = iVar2 + 1;
+        str = str + 1;
+        textarea_str[n_textarea]->ptr[textarea_str[n_textarea]->length] = '\0';
       }
     }
   }
@@ -18745,27 +18466,21 @@ Str process_hr(parsed_tag *tag,int width,int indent_width)
   if (iVar1 == 0) {
     w = width;
   }
+  else if (w < 0) {
+    w = (-w * width) / 100;
+  }
   else {
-    if (w < 0) {
-      w = (-w * width) / 100;
-    }
-    else {
-      w = (int)ROUND((double)w / pixel_per_char);
-    }
+    w = (int)ROUND((double)w / pixel_per_char);
   }
   parsedtag_get_value(tag,4,&x);
   if (x == 1) {
     Strcat_charp(tmp,"<div_int align=left>");
   }
-  else {
-    if (x == 2) {
-      Strcat_charp(tmp,"<div_int align=right>");
-    }
-    else {
-      if (x == 0) {
-        Strcat_charp(tmp,"<div_int align=center>");
-      }
-    }
+  else if (x == 2) {
+    Strcat_charp(tmp,"<div_int align=right>");
+  }
+  else if (x == 0) {
+    Strcat_charp(tmp,"<div_int align=center>");
   }
   w = w / symbol_width;
   if (w < 1) {
@@ -18805,15 +18520,12 @@ char * check_accept_charset(char *ac)
     if (*s == '\0') {
       return (char *)0x0;
     }
-    while ((*s != '\0' && (((MYCTYPE_MAP[(byte)*s] & 2) != 0 || (*s == ','))))) {
-      s = s + 1;
+    for (; (*s != '\0' && (((MYCTYPE_MAP[(byte)*s] & 2) != 0 || (*s == ',')))); s = s + 1) {
     }
     if (*s == '\0') break;
-    e = s;
-    while (((*e != '\0' && ((MYCTYPE_MAP[(byte)*e] & 2) == 0)) && (*e != ','))) {
-      e = e + 1;
+    for (e = s; ((*e != '\0' && ((MYCTYPE_MAP[(byte)*e] & 2) == 0)) && (*e != ',')); e = e + 1) {
     }
-    p_Var1 = Strnew_charp_n(s,(int)(e + -(int)s));
+    p_Var1 = Strnew_charp_n(s,(int)e - (int)s);
     wVar2 = wc_guess_charset(p_Var1->ptr,0);
     if (wVar2 != 0) {
       return ac;
@@ -18881,18 +18593,16 @@ Str process_form_int(parsed_tag *tag,int fid)
     forms = (FormList **)GC_malloc(0x28);
     form_stack = (int *)GC_malloc_atomic(forms_size << 2);
   }
-  else {
-    if (forms_size <= form_max) {
-      forms_size = forms_size + form_max;
-      forms = (FormList **)GC_realloc(forms,forms_size * 4);
-      form_stack = (int *)GC_realloc(form_stack,forms_size * 4);
-    }
+  else if (forms_size <= form_max) {
+    forms_size = forms_size + form_max;
+    forms = (FormList **)GC_realloc(forms,forms_size * 4);
+    form_stack = (int *)GC_realloc(form_stack,forms_size * 4);
   }
   form_stack[form_sp] = fid;
   if ((w3m_dump & 0x10U) == 0) {
     ppFVar6 = forms + fid;
     pfVar7 = newFormList(q,p,r,s,tg,n,(form_list *)0x0);
-    *ppFVar6 = (FormList *)pfVar7;
+    *ppFVar6 = pfVar7;
     x = (Str)0x0;
   }
   else {
@@ -18980,15 +18690,11 @@ void set_alignment(readbuffer *obuf,parsed_tag *tag)
     if (align == 1) {
       flag = 0x10;
     }
-    else {
-      if (align == 2) {
-        flag = 0x40;
-      }
-      else {
-        if (align == 0) {
-          flag = 0x20;
-        }
-      }
+    else if (align == 2) {
+      flag = 0x40;
+    }
+    else if (align == 0) {
+      flag = 0x20;
     }
   }
   if (obuf->flag_sp < 10) {
@@ -19095,25 +18801,22 @@ int getMetaRefreshParam(char *q,Str *refresh_uri)
             pcVar1 = q + 5;
           }
           q = pcVar1;
-          r = q;
-          while (((*r != '\0' && ((MYCTYPE_MAP[(byte)*r] & 2) == 0)) && (*r != ';'))) {
-            r = r + 1;
+          for (r = q; ((*r != '\0' && ((MYCTYPE_MAP[(byte)*r] & 2) == 0)) && (*r != ';')); r = r + 1
+              ) {
           }
-          s_tmp = Strnew_charp_n(q,(int)(r + -(int)q));
+          s_tmp = Strnew_charp_n(q,(int)r - (int)q);
           if (s_tmp->ptr[s_tmp->length + -1] == '\"') {
             s_tmp->length = s_tmp->length + -1;
             s_tmp->ptr[s_tmp->length] = '\0';
           }
           q = r;
         }
-        while ((*q != '\0' && (*q != ';'))) {
-          q = q + 1;
+        for (; (*q != '\0' && (*q != ';')); q = q + 1) {
         }
         if (*q == ';') {
           q = q + 1;
         }
-        while ((*q != '\0' && (*q == ' '))) {
-          q = q + 1;
+        for (; (*q != '\0' && (*q == ' ')); q = q + 1) {
         }
       }
       *refresh_uri = s_tmp;
@@ -19164,7 +18867,7 @@ int HTMLtagproc1(parsed_tag *tag,html_feed_environ *h_env)
   envs = h_env->envs;
   id = (char *)0x0;
   bVar1 = tag->tagid;
-  cmd = ZEXT14(bVar1);
+  cmd = (int)bVar1;
   if ((((obuf->flag & 1U) != 0) && (0x31 < (uint)cmd)) && (((uint)cmd < 0x34 || (cmd - 0x80U < 2))))
   {
     return 1;
@@ -19413,29 +19116,23 @@ int HTMLtagproc1(parsed_tag *tag,html_feed_environ *h_env)
         iVar9 = h_env->envc;
         iVar4 = ul_type(tag,envs[h_env->envc].type);
         peVar3[iVar9].type = iVar4;
-        i = 0;
-        while (i < IndentIncr + -3) {
+        for (i = 0; i < IndentIncr + -3; i = i + 1) {
           push_nchars(obuf,1,&DAT_080ca175,1,0);
-          i = i + 1;
         }
         tmp = Strnew();
         iVar9 = envs[h_env->envc].type;
         if (iVar9 == 100) {
           push_symbol(tmp,')',symbol_width,1);
         }
+        else if (iVar9 == 0x73) {
+          push_symbol(tmp,'+',symbol_width,1);
+        }
+        else if (iVar9 == 99) {
+          push_symbol(tmp,'*',symbol_width,1);
+        }
         else {
-          if (iVar9 == 0x73) {
-            push_symbol(tmp,'+',symbol_width,1);
-          }
-          else {
-            if (iVar9 == 99) {
-              push_symbol(tmp,'*',symbol_width,1);
-            }
-            else {
-              iVar9 = h_env->envc_real + -1;
-              push_symbol(tmp,(char)iVar9 + (char)(iVar9 / 9) * -9 + ' ',symbol_width,1);
-            }
-          }
+          iVar9 = h_env->envc_real + -1;
+          push_symbol(tmp,(char)iVar9 + (char)(iVar9 / 9) * -9 + ' ',symbol_width,1);
         }
         if (symbol_width == 1) {
           push_nchars(obuf,1,&DAT_080ca175,1,0);
@@ -19444,64 +19141,58 @@ int HTMLtagproc1(parsed_tag *tag,html_feed_environ *h_env)
         push_nchars(obuf,1,&DAT_080ca175,1,0);
         Strcopy_charp_n(obuf->prevchar," ",1);
       }
-      else {
-        if (envs[h_env->envc].env == '\f') {
-          iVar9 = parsedtag_get_value(tag,0x21,&p);
-          if (iVar9 != 0) {
-            envs[h_env->envc].type = (int)*p;
-          }
-          if (envs[h_env->envc].count < 1) {
-            iVar9 = 0x31;
-          }
-          else {
-            iVar9 = envs[h_env->envc].type;
-          }
-          if (iVar9 == 0x49) {
-            num = romanNumeral(envs[h_env->envc].count);
+      else if (envs[h_env->envc].env == '\f') {
+        iVar9 = parsedtag_get_value(tag,0x21,&p);
+        if (iVar9 != 0) {
+          envs[h_env->envc].type = (int)*p;
+        }
+        if (envs[h_env->envc].count < 1) {
+          iVar9 = 0x31;
+        }
+        else {
+          iVar9 = envs[h_env->envc].type;
+        }
+        if (iVar9 == 0x49) {
+          num = romanNumeral(envs[h_env->envc].count);
+          Strupper(num);
+        }
+        else if (iVar9 < 0x4a) {
+          if (iVar9 == 0x41) {
+            num = romanAlphabet(envs[h_env->envc].count);
             Strupper(num);
           }
           else {
-            if (iVar9 < 0x4a) {
-              if (iVar9 == 0x41) {
-                num = romanAlphabet(envs[h_env->envc].count);
-                Strupper(num);
-              }
-              else {
 LAB_08066848:
-                num = Sprintf("%d",envs[h_env->envc].count);
-              }
-            }
-            else {
-              if (iVar9 == 0x61) {
-                num = romanAlphabet(envs[h_env->envc].count);
-              }
-              else {
-                if (iVar9 != 0x69) goto LAB_08066848;
-                num = romanNumeral(envs[h_env->envc].count);
-              }
-            }
+            num = Sprintf("%d",envs[h_env->envc].count);
           }
-          if (IndentIncr < 4) {
-            if (num->area_size <= num->length + 1) {
-              Strgrow(num);
-            }
-            iVar9 = num->length;
-            num->ptr[iVar9] = '.';
-            num->length = iVar9 + 1;
-            num->ptr[num->length] = '\0';
-          }
-          else {
-            Strcat_charp(num,". ");
-          }
-          push_spaces(obuf,1,IndentIncr - num->length);
-          push_nchars(obuf,num->length,num->ptr,num->length,0);
-          if (3 < IndentIncr) {
-            Strcopy_charp_n(obuf->prevchar," ",1);
-          }
+        }
+        else if (iVar9 == 0x61) {
+          num = romanAlphabet(envs[h_env->envc].count);
         }
         else {
-          push_spaces(obuf,1,IndentIncr);
+          if (iVar9 != 0x69) goto LAB_08066848;
+          num = romanNumeral(envs[h_env->envc].count);
         }
+        if (IndentIncr < 4) {
+          if (num->area_size <= num->length + 1) {
+            Strgrow(num);
+          }
+          iVar9 = num->length;
+          num->ptr[iVar9] = '.';
+          num->length = iVar9 + 1;
+          num->ptr[num->length] = '\0';
+        }
+        else {
+          Strcat_charp(num,". ");
+        }
+        push_spaces(obuf,1,IndentIncr - num->length);
+        push_nchars(obuf,num->length,num->ptr,num->length,0);
+        if (3 < IndentIncr) {
+          Strcopy_charp_n(obuf->prevchar," ",1);
+        }
+      }
+      else {
+        push_spaces(obuf,1,IndentIncr);
       }
     }
     obuf->flag = obuf->flag | 0x2000;
@@ -19565,7 +19256,7 @@ LAB_08066848:
     }
     if (((tag->map != (uchar *)0x0) && (tag->map[0x27] != 'K')) &&
        (tag->attrid[tag->map[0x27]] != '\0')) {
-      envs[h_env->envc].env = -0x7b;
+      envs[h_env->envc].env = 0x85;
     }
     obuf->flag = obuf->flag | 0x2000;
     iVar9 = 1;
@@ -19583,7 +19274,7 @@ LAB_08066848:
     close_anchor(h_env,obuf);
     if (((h_env->envc == 0) ||
         (((h_env->envc_real < h_env->nenv && (envs[h_env->envc].env != '\x11')) &&
-         (envs[h_env->envc].env != -0x7b)))) &&
+         (envs[h_env->envc].env != 0x85)))) &&
        (h_env->envc_real = h_env->envc_real + 1, h_env->envc_real < h_env->nenv)) {
       h_env->envc = h_env->envc + 1;
       envs[h_env->envc].env = '\x11';
@@ -19620,7 +19311,7 @@ LAB_08066848:
       obuf->flag = obuf->flag & 0xfffffbff;
       HTMLlineproc0("</b>",h_env,1);
     }
-    if (envs[h_env->envc].env == -0x7b) {
+    if (envs[h_env->envc].env == 0x85) {
       if ((short)envs[h_env->envc].indent < obuf->pos) {
         flushline(h_env,obuf,(int)envs[h_env->envc].indent,0,h_env->limit);
       }
@@ -19700,15 +19391,11 @@ LAB_08066848:
     if (cmd == 0x1c) {
       obuf->end_tag = '\x1d';
     }
-    else {
-      if (cmd == 0x1e) {
-        obuf->end_tag = -0x6f;
-      }
-      else {
-        if (cmd == 0x1a) {
-          obuf->end_tag = '\x1b';
-        }
-      }
+    else if (cmd == 0x1e) {
+      obuf->end_tag = 0x91;
+    }
+    else if (cmd == 0x1a) {
+      obuf->end_tag = '\x1b';
     }
     iVar9 = 1;
     break;
@@ -19748,15 +19435,13 @@ LAB_08066848:
         if (iVar9 == 0) {
           w = 1;
         }
+        else if (w < 3) {
+          if (w < 0) {
+            w = 1;
+          }
+        }
         else {
-          if (w < 3) {
-            if (w < 0) {
-              w = 1;
-            }
-          }
-          else {
-            w = 2;
-          }
+          w = 2;
         }
       }
       iVar9 = parsedtag_get_value(tag,0x26,&i);
@@ -20128,18 +19813,14 @@ LAB_08066848:
     if (displayInsDel == 1) {
       HTMLlineproc0("<U>[DEL:</U>",h_env,1);
     }
-    else {
-      if (displayInsDel == 2) {
-        obuf->fontstat[3] = obuf->fontstat[3] + '\x01';
-        if (obuf->fontstat[3] == '\x01') {
-          push_tag(obuf,"<s>",0x69);
-        }
+    else if (displayInsDel == 2) {
+      obuf->fontstat[3] = obuf->fontstat[3] + '\x01';
+      if (obuf->fontstat[3] == '\x01') {
+        push_tag(obuf,"<s>",0x69);
       }
-      else {
-        if (displayInsDel == 0) {
-          obuf->flag = obuf->flag | 0x100000;
-        }
-      }
+    }
+    else if (displayInsDel == 0) {
+      obuf->flag = obuf->flag | 0x100000;
     }
     iVar9 = 1;
     break;
@@ -20170,11 +19851,9 @@ LAB_0806955d:
     if (displayInsDel == 1) {
       HTMLlineproc0("<U>[INS:</U>",h_env,1);
     }
-    else {
-      if ((displayInsDel == 2) &&
-         (obuf->fontstat[4] = obuf->fontstat[4] + '\x01', obuf->fontstat[4] == '\x01')) {
-        push_tag(obuf,"<ins>",0x3f);
-      }
+    else if ((displayInsDel == 2) &&
+            (obuf->fontstat[4] = obuf->fontstat[4] + '\x01', obuf->fontstat[4] == '\x01')) {
+      push_tag(obuf,"<ins>",0x3f);
     }
     iVar9 = 1;
     break;
@@ -20182,18 +19861,16 @@ LAB_0806955d:
     if (displayInsDel == 1) {
       HTMLlineproc0("<U>:INS]</U>",h_env,1);
     }
-    else {
-      if (displayInsDel == 2) {
-        if (obuf->fontstat[4] == '\0') {
-          return 1;
-        }
-        if ((obuf->fontstat[4] == '\x01') && (iVar9 = close_effect0(obuf,0x3f), iVar9 != 0)) {
-          obuf->fontstat[4] = '\0';
-        }
-        if (('\0' < obuf->fontstat[4]) &&
-           (obuf->fontstat[4] = obuf->fontstat[4] + -1, obuf->fontstat[4] == '\0')) {
-          push_tag(obuf,"</ins>",0x40);
-        }
+    else if (displayInsDel == 2) {
+      if (obuf->fontstat[4] == '\0') {
+        return 1;
+      }
+      if ((obuf->fontstat[4] == '\x01') && (iVar9 = close_effect0(obuf,0x3f), iVar9 != 0)) {
+        obuf->fontstat[4] = '\0';
+      }
+      if (('\0' < obuf->fontstat[4]) &&
+         (obuf->fontstat[4] = obuf->fontstat[4] + -1, obuf->fontstat[4] == '\0')) {
+        push_tag(obuf,"</ins>",0x40);
       }
     }
     iVar9 = 1;
@@ -20330,18 +20007,14 @@ LAB_0806955d:
     if (displayInsDel == 1) {
       HTMLlineproc0("<U>[S:</U>",h_env,1);
     }
-    else {
-      if (displayInsDel == 2) {
-        obuf->fontstat[3] = obuf->fontstat[3] + '\x01';
-        if (obuf->fontstat[3] == '\x01') {
-          push_tag(obuf,"<s>",0x69);
-        }
+    else if (displayInsDel == 2) {
+      obuf->fontstat[3] = obuf->fontstat[3] + '\x01';
+      if (obuf->fontstat[3] == '\x01') {
+        push_tag(obuf,"<s>",0x69);
       }
-      else {
-        if (displayInsDel == 0) {
-          obuf->flag = obuf->flag | 0x200000;
-        }
-      }
+    }
+    else if (displayInsDel == 0) {
+      obuf->flag = obuf->flag | 0x200000;
     }
     iVar9 = 1;
     break;
@@ -20349,24 +20022,20 @@ LAB_0806955d:
     if (displayInsDel == 1) {
       HTMLlineproc0("<U>:S]</U>",h_env,1);
     }
-    else {
-      if (displayInsDel == 2) {
-        if (obuf->fontstat[3] == '\0') {
-          return 1;
-        }
-        if ((obuf->fontstat[3] == '\x01') && (iVar9 = close_effect0(obuf,0x69), iVar9 != 0)) {
-          obuf->fontstat[3] = '\0';
-        }
-        if (('\0' < obuf->fontstat[3]) &&
-           (obuf->fontstat[3] = obuf->fontstat[3] + -1, obuf->fontstat[3] == '\0')) {
-          push_tag(obuf,"</s>",0x6a);
-        }
+    else if (displayInsDel == 2) {
+      if (obuf->fontstat[3] == '\0') {
+        return 1;
       }
-      else {
-        if (displayInsDel == 0) {
-          obuf->flag = obuf->flag & 0xffdfffff;
-        }
+      if ((obuf->fontstat[3] == '\x01') && (iVar9 = close_effect0(obuf,0x69), iVar9 != 0)) {
+        obuf->fontstat[3] = '\0';
       }
+      if (('\0' < obuf->fontstat[3]) &&
+         (obuf->fontstat[3] = obuf->fontstat[3] + -1, obuf->fontstat[3] == '\0')) {
+        push_tag(obuf,"</s>",0x6a);
+      }
+    }
+    else if (displayInsDel == 0) {
+      obuf->flag = obuf->flag & 0xffdfffff;
     }
     iVar9 = 1;
     break;
@@ -20562,7 +20231,7 @@ Str textlist_feed(void)
   }
   else {
     ppTVar1 = &_tl_lp2->ptr;
-    _tl_lp2 = (TextLineListItem *)_tl_lp2->next;
+    _tl_lp2 = _tl_lp2->next;
     p_Var2 = (*ppTVar1)->line;
   }
   return p_Var2;
@@ -20711,10 +20380,8 @@ LAB_0806bfe6:
     line = (*feed)();
     if (line == (Str)0x0) {
 LAB_0806bffb:
-      form_id = 1;
-      while (form_id <= form_max) {
-        forms[form_id]->next = (form_list *)forms[form_id + -1];
-        form_id = form_id + 1;
+      for (form_id = 1; form_id <= form_max; form_id = form_id + 1) {
+        forms[form_id]->next = forms[form_id + -1];
       }
       if (form_max < 0) {
         pFVar20 = (FormList *)0x0;
@@ -20757,34 +20424,52 @@ LAB_0806bffb:
               pos = pos + 1;
               str = str + 1;
             }
-            else {
-              if ((mode & 0x1000) == 0) {
-                if ((*str == '<') || (*str == '&')) {
-                  if (*str == '&') {
-                    p = getescapecmd(&str);
-                    while (*p != '\0') {
-                      if (HTMLlineproc2body::out_size <= pos + 1) {
-                        HTMLlineproc2body::out_size = (pos * 3) / 2;
-                        HTMLlineproc2body::outc =
-                             (char *)GC_realloc(HTMLlineproc2body::outc,HTMLlineproc2body::out_size)
-                        ;
-                        HTMLlineproc2body::outp =
-                             (Lineprop *)
-                             GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
-                      }
-                      bVar4 = WTF_TYPE_MAP[(byte)*p];
-                      mode = (ushort)bVar4 << 8;
-                      if ((bVar4 == 1) || (bVar4 == 0x20)) {
-                        pLVar1 = HTMLlineproc2body::outp + pos;
-                        iVar9 = ex_efct((uint)ex_effect);
-                        *pLVar1 = effect | (ushort)iVar9;
-                        HTMLlineproc2body::outc[pos] = ' ';
-                        pos = pos + 1;
-                        p = p + 1;
-                      }
-                      else {
-                        if ((mode & 0x1000) == 0) {
-                          len_2 = ZEXT14(WTF_LEN_MAP[(byte)*p]);
+            else if ((mode & 0x1000) == 0) {
+              if ((*str == '<') || (*str == '&')) {
+                if (*str == '&') {
+                  p = getescapecmd(&str);
+                  while (*p != '\0') {
+                    if (HTMLlineproc2body::out_size <= pos + 1) {
+                      HTMLlineproc2body::out_size = (pos * 3) / 2;
+                      HTMLlineproc2body::outc =
+                           (char *)GC_realloc(HTMLlineproc2body::outc,HTMLlineproc2body::out_size);
+                      HTMLlineproc2body::outp =
+                           (Lineprop *)
+                           GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
+                    }
+                    bVar4 = WTF_TYPE_MAP[(byte)*p];
+                    mode = (ushort)bVar4 << 8;
+                    if ((bVar4 == 1) || (bVar4 == 0x20)) {
+                      pLVar1 = HTMLlineproc2body::outp + pos;
+                      iVar9 = ex_efct((uint)ex_effect);
+                      *pLVar1 = effect | (ushort)iVar9;
+                      HTMLlineproc2body::outc[pos] = ' ';
+                      pos = pos + 1;
+                      p = p + 1;
+                    }
+                    else if ((mode & 0x1000) == 0) {
+                      len_2 = (int)WTF_LEN_MAP[(byte)*p];
+                      pLVar1 = HTMLlineproc2body::outp + pos;
+                      uVar7 = effect | mode;
+                      iVar9 = ex_efct((uint)ex_effect);
+                      *pLVar1 = (ushort)iVar9 | uVar7;
+                      HTMLlineproc2body::outc[pos] = *p;
+                      p = p + 1;
+                      pos = pos + 1;
+                      len_2 = len_2 + -1;
+                      if (len_2 != 0) {
+                        mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
+                        while (bVar22 = len_2 != 0, len_2 = len_2 + -1, bVar22) {
+                          if (HTMLlineproc2body::out_size <= pos + 1) {
+                            HTMLlineproc2body::out_size = (pos * 3) / 2;
+                            HTMLlineproc2body::outc =
+                                 (char *)GC_realloc(HTMLlineproc2body::outc,
+                                                    HTMLlineproc2body::out_size);
+                            HTMLlineproc2body::outp =
+                                 (Lineprop *)
+                                 GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2)
+                            ;
+                          }
                           pLVar1 = HTMLlineproc2body::outp + pos;
                           uVar7 = effect | mode;
                           iVar9 = ex_efct((uint)ex_effect);
@@ -20792,585 +20477,24 @@ LAB_0806bffb:
                           HTMLlineproc2body::outc[pos] = *p;
                           p = p + 1;
                           pos = pos + 1;
-                          len_2 = len_2 + -1;
-                          if (len_2 != 0) {
-                            mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 |
-                                   0x400;
-                            while (bVar22 = len_2 != 0, len_2 = len_2 + -1, bVar22) {
-                              if (HTMLlineproc2body::out_size <= pos + 1) {
-                                HTMLlineproc2body::out_size = (pos * 3) / 2;
-                                HTMLlineproc2body::outc =
-                                     (char *)GC_realloc(HTMLlineproc2body::outc,
-                                                        HTMLlineproc2body::out_size);
-                                HTMLlineproc2body::outp =
-                                     (Lineprop *)
-                                     GC_realloc(HTMLlineproc2body::outp,
-                                                HTMLlineproc2body::out_size * 2);
-                              }
-                              pLVar1 = HTMLlineproc2body::outp + pos;
-                              uVar7 = effect | mode;
-                              iVar9 = ex_efct((uint)ex_effect);
-                              *pLVar1 = (ushort)iVar9 | uVar7;
-                              HTMLlineproc2body::outc[pos] = *p;
-                              p = p + 1;
-                              pos = pos + 1;
-                            }
-                          }
-                        }
-                        else {
-                          pLVar1 = HTMLlineproc2body::outp + pos;
-                          iVar9 = ex_efct((uint)ex_effect);
-                          *pLVar1 = effect | (ushort)iVar9;
-                          HTMLlineproc2body::outc[pos] = ' ';
-                          pos = pos + 1;
-                          p = p + WTF_LEN_MAP[(byte)*p];
                         }
                       }
                     }
+                    else {
+                      pLVar1 = HTMLlineproc2body::outp + pos;
+                      iVar9 = ex_efct((uint)ex_effect);
+                      *pLVar1 = effect | (ushort)iVar9;
+                      HTMLlineproc2body::outc[pos] = ' ';
+                      pos = pos + 1;
+                      p = p + WTF_LEN_MAP[(byte)*p];
+                    }
                   }
-                  else {
-                    tag = parse_tag(&str,1);
-                    if (tag != (parsed_tag *)0x0) {
-                      switch(tag->tagid) {
-                      case '\x01':
-                        if ((renderFrameSet != (frameset *)0x0) &&
-                           (iVar9 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset,
-                           iVar9 != 0)) {
-                          wVar6 = buf_1->document_charset;
-                          p_Var17 = Strnew_charp(p);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          p = url_quote(p_Var17->ptr);
-                          if (((idFrame == (frameset_element *)0x0) ||
-                              (iVar9 = strcmp(*(char **)(*idFrame + 4),p), iVar9 != 0)) &&
-                             ((idFrame = search_frame(renderFrameSet,p),
-                              (char **)idFrame != (char **)0x0 && (*(char *)*idFrame != '\x01')))) {
-                            idFrame = (frameset_element *)0x0;
-                          }
-                        }
-                        s = (char *)0x0;
-                        r = (char *)0x0;
-                        p = (char *)0x0;
-                        q = buf_1->baseTarget;
-                        t = "";
-                        hseq = 0;
-                        id = (char *)0x0;
-                        iVar9 = parsedtag_get_value(tag,0x19,&id);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          p_Var17 = Strnew_charp(id);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          id = url_quote(p_Var17->ptr);
-                          iVar9 = currentLn(buf_1);
-                          registerName(buf_1,id,iVar9,pos);
-                        }
-                        iVar9 = parsedtag_get_value(tag,0x12,&p);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          pcVar11 = remove_space(p);
-                          p_Var17 = Strnew_charp(pcVar11);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          p = url_quote(p_Var17->ptr);
-                        }
-                        iVar9 = parsedtag_get_value(tag,0x20,&q);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          p_Var17 = Strnew_charp(q);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          q = url_quote(p_Var17->ptr);
-                        }
-                        iVar9 = parsedtag_get_value(tag,0x47,&r);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          p_Var17 = Strnew_charp(r);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          r = url_quote(p_Var17->ptr);
-                        }
-                        parsedtag_get_value(tag,0x31,&s);
-                        parsedtag_get_value(tag,0x32,&t);
-                        parsedtag_get_value(tag,0x45,&hseq);
-                        if (hseq < 1) {
-                          if ((((hseq < 0) && (h_1 = ~hseq, buf_1->hmarklist != (HmarkerList *)0x0))
-                              && (h_1 < buf_1->hmarklist->nmark)) &&
-                             (buf_1->hmarklist->marks[h_1].invalid != 0)) {
-                            buf_1->hmarklist->marks[h_1].pos = pos;
-                            pBVar2 = buf_1->hmarklist->marks + h_1;
-                            iVar9 = currentLn(buf_1);
-                            pBVar2->line = iVar9;
-                            buf_1->hmarklist->marks[h_1].invalid = 0;
-                            hseq = -hseq;
-                          }
-                        }
-                        else {
-                          iVar9 = hseq + -1;
-                          iVar18 = currentLn(buf_1);
-                          pHVar10 = putHmarker(buf_1->hmarklist,iVar18,pos,iVar9);
-                          buf_1->hmarklist = pHVar10;
-                        }
-                        if ((id != (char *)0x0) && (idFrame != (frameset_element *)0x0)) {
-                          iVar9 = *idFrame;
-                          iVar18 = currentLn(buf_1);
-                          pAVar19 = putAnchor(*(AnchorList **)(*idFrame + 0x1c),id,(char *)0x0,
-                                              (Anchor **)0x0,(char *)0x0,(char *)0x0,'\0',iVar18,pos
-                                             );
-                          *(AnchorList **)(iVar9 + 0x1c) = pAVar19;
-                        }
-                        if (p != (char *)0x0) {
-                          effect = effect | 0x10;
-                          iVar9 = currentLn(buf_1);
-                          a_href = registerHref(buf_1,p,q,r,s,*t,iVar9,pos);
-                          a_href->hseq = ((hseq ^ hseq >> 0x1f) - (hseq >> 0x1f)) + -1;
-                          a_href->slave = hseq < 1;
-                        }
-                        break;
-                      case '\x02':
-                        effect = effect & 0xffef;
-                        if (a_href != (Anchor *)0x0) {
-                          iVar9 = currentLn(buf_1);
-                          (a_href->end).line = iVar9;
-                          (a_href->end).pos = pos;
-                          if (((a_href->start).line == (a_href->end).line) &&
-                             ((a_href->start).pos == (a_href->end).pos)) {
-                            if ((buf_1->hmarklist != (HmarkerList *)0x0) &&
-                               (a_href->hseq < buf_1->hmarklist->nmark)) {
-                              buf_1->hmarklist->marks[a_href->hseq].invalid = 1;
-                            }
-                            a_href->hseq = -1;
-                          }
-                          a_href = (Anchor *)0x0;
-                        }
-                        break;
-                      case '\a':
-                        effect = effect | 8;
-                        break;
-                      case '\b':
-                        effect = effect & 0xfff7;
-                        break;
-                      case '!':
-                        q = (char *)0x0;
-                        p = (char *)0x0;
-                        parsedtag_get_value(tag,0x13,&p);
-                        parsedtag_get_value(tag,0xf,&q);
-                        if ((((p != (char *)0x0) && (q != (char *)0x0)) &&
-                            (iVar9 = strcasecmp(p,"refresh"), iVar9 == 0)) && (MetaRefresh != '\0'))
-                        {
-                          tmp = (Str)0x0;
-                          iVar9 = getMetaRefreshParam(q,&tmp);
-                          wVar5 = InnerCharset;
-                          if (tmp == (Str)0x0) {
-                            if (0 < iVar9) {
-                              pAVar16 = setAlarmEvent((AlarmEvent *)buf_1->event,iVar9,2,0x70,
-                                                      (void *)0x0);
-                              buf_1->event = (_AlarmEvent *)pAVar16;
-                            }
-                          }
-                          else {
-                            wVar6 = buf_1->document_charset;
-                            pcVar11 = remove_space(tmp->ptr);
-                            p_Var17 = Strnew_charp(pcVar11);
-                            p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                            p = url_quote(p_Var17->ptr);
-                            pAVar16 = setAlarmEvent((AlarmEvent *)buf_1->event,iVar9,3,0x25,p);
-                            buf_1->event = (_AlarmEvent *)pAVar16;
-                          }
-                        }
-                        break;
-                      case '#':
-                        if ((-1 < frameset_sp) && (frameset_sp < 10)) {
-                          element = newFrame(tag,buf_1);
-                          addFrameSetElement(frameset_s[frameset_sp],element);
-                        }
-                        break;
-                      case '$':
-                        iVar9 = frameset_sp + 1;
-                        frameset_sp = iVar9;
-                        if (iVar9 < 10) {
-                          pfVar14 = newFrameSet(tag);
-                          frameset_s[iVar9] = pfVar14;
-                          if (frameset_s[frameset_sp] != (frameset *)0x0) {
-                            if (frameset_sp == 0) {
-                              if (buf_1->frameset == (frameset *)0x0) {
-                                buf_1->frameset = frameset_s[0];
-                              }
-                              else {
-                                pushFrameTree(&buf_1->frameQ,frameset_s[0],(Buffer *)0x0);
-                              }
-                            }
-                            else {
-                              addFrameSetElement(frameset_s[frameset_sp + -1],
-                                                 frameset_s[frameset_sp]);
-                            }
-                          }
-                        }
-                        break;
-                      case '%':
-                        if (-1 < frameset_sp) {
-                          frameset_sp = frameset_sp + -1;
-                        }
-                        break;
-                      case '7':
-                        iVar9 = parsedtag_get_value(tag,0x19,&p);
-                        if (iVar9 != 0) {
-                          m = (MapList *)GC_malloc(0xc);
-                          p_Var17 = Strnew_charp(p);
-                          m->name = p_Var17;
-                          pGVar13 = newGeneralList();
-                          m->area = pGVar13;
-                          m->next = (_MapList *)buf_1->maplist;
-                          buf_1->maplist = m;
-                        }
-                        break;
-                      case '9':
-                        if ((buf_1->maplist != (MapList *)0x0) &&
-                           (iVar9 = parsedtag_get_value(tag,0x12,&p), wVar5 = InnerCharset,
-                           iVar9 != 0)) {
-                          wVar6 = buf_1->document_charset;
-                          pcVar11 = remove_space(p);
-                          p_Var17 = Strnew_charp(pcVar11);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          p = url_quote(p_Var17->ptr);
-                          t = (char *)0x0;
-                          parsedtag_get_value(tag,0x20,&t);
-                          q = "";
-                          parsedtag_get_value(tag,5,&q);
-                          r = (char *)0x0;
-                          s = (char *)0x0;
-                          parsedtag_get_value(tag,0x2c,&r);
-                          parsedtag_get_value(tag,0x2d,&s);
-                          a = newMapArea(p,t,q,r,s);
-                          pushValue(buf_1->maplist->area,a);
-                        }
-                        break;
-                      case '<':
-                        iVar9 = parsedtag_get_value(tag,0x12,&p);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          pcVar11 = remove_space(p);
-                          p_Var17 = Strnew_charp(pcVar11);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          p = url_quote(p_Var17->ptr);
-                          if (buf_1->baseURL == (ParsedURL *)0x0) {
-                            pPVar15 = (ParsedURL *)GC_malloc(0x28);
-                            buf_1->baseURL = pPVar15;
-                          }
-                          parseURL(p,buf_1->baseURL,(ParsedURL *)0x0);
-                        }
-                        iVar9 = parsedtag_get_value(tag,0x20,&p);
-                        wVar5 = InnerCharset;
-                        if (iVar9 != 0) {
-                          wVar6 = buf_1->document_charset;
-                          p_Var17 = Strnew_charp(p);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          pcVar11 = url_quote(p_Var17->ptr);
-                          buf_1->baseTarget = pcVar11;
-                        }
-                        break;
-                      case '?':
-                        ex_effect = ex_effect | 2;
-                        break;
-                      case '@':
-                        ex_effect = ex_effect & 0xfffd;
-                        break;
-                      case 'A':
-                        effect = effect | 2;
-                        break;
-                      case 'B':
-                        effect = effect & 0xfffd;
-                        break;
-                      case 'h':
-                        addLink(buf_1,tag);
-                        break;
-                      case 'i':
-                        ex_effect = ex_effect | 4;
-                        break;
-                      case 'j':
-                        ex_effect = ex_effect & 0xfffb;
-                        break;
-                      case 'm':
-                        ex_effect = ex_effect | 1;
-                        break;
-                      case 'n':
-                        ex_effect = ex_effect & 0xfffe;
-                        break;
-                      case 'x':
-                        iVar9 = parsedtag_get_value(tag,0x48,&n_select);
-                        if ((iVar9 == 0) || (max_select <= n_select)) {
-                          n_select = -1;
-                        }
-                        else {
-                          select_option[n_select].first = (FormSelectOptionItem *)0x0;
-                          select_option[n_select].last = (FormSelectOptionItem *)0x0;
-                        }
-                        break;
-                      case 'y':
-                        if (-1 < n_select) {
-                          fi = (FormItemList *)a_select[n_select]->url;
-                          fi->select_option = select_option[n_select].first;
-                          chooseSelectOption(fi,fi->select_option);
-                          fi->init_selected = fi->selected;
-                          fi->init_value = fi->value;
-                          fi->init_label = fi->label;
-                        }
-                        break;
-                      case 'z':
-                        if (-1 < n_select) {
-                          q = "";
-                          parsedtag_get_value(tag,0x2a,&q);
-                          p = q;
-                          parsedtag_get_value(tag,0x24,&p);
-                          if (((tag->map == (uchar *)0x0) || (tag->map[0x29] == 'K')) ||
-                             (tag->attrid[tag->map[0x29]] == '\0')) {
-                            iVar9 = 0;
-                          }
-                          else {
-                            iVar9 = 1;
-                          }
-                          p_Var17 = Strnew_charp(q);
-                          value = Strnew_charp(p);
-                          addSelectOption(select_option + n_select,value,p_Var17,iVar9);
-                        }
-                        break;
-                      case '{':
-                        iVar9 = parsedtag_get_value(tag,0x49,&n_textarea);
-                        if ((iVar9 == 0) || (max_textarea <= n_textarea)) {
-                          n_textarea = -1;
-                        }
-                        else {
-                          pp_Var3 = textarea_str + n_textarea;
-                          p_Var17 = Strnew();
-                          *pp_Var3 = p_Var17;
-                        }
-                        break;
-                      case '|':
-                        if (-1 < n_textarea) {
-                          pcVar11 = a_textarea[n_textarea]->url;
-                          *(Str *)(pcVar11 + 8) = textarea_str[n_textarea];
-                          *(undefined4 *)(pcVar11 + 0xc) = *(undefined4 *)(pcVar11 + 8);
-                        }
-                        break;
-                      case '~':
-                        effect = effect | 0x8000;
-                        iVar9 = parsedtag_get_value(tag,0x21,&p);
-                        if (iVar9 != 0) {
-                          iVar9 = atoi(p);
-                          symbol = (char)iVar9;
-                        }
-                        break;
-                      case '\x7f':
-                        effect = effect & 0x7fff;
-                        break;
-                      case -0x7e:
-                        iVar9 = parsedtag_get_value(tag,0x31,&p);
-                        if (iVar9 != 0) {
-                          pcVar11 = html_unquote(p);
-                          buf_1->buffername = pcVar11;
-                        }
-                        break;
-                      case -0x7d:
-                        iVar9 = parsedtag_get_value(tag,0x41,&form_id);
-                        if (iVar9 != 0) {
-                          process_form_int(tag,form_id);
-                        }
-                        break;
-                      case -0x7a:
-                        top = 0;
-                        bottom = 0;
-                        textareanumber = -1;
-                        tmp = (Str)0xffffffff;
-                        hseq = 0;
-                        form_id = -1;
-                        parsedtag_get_value(tag,0x45,&hseq);
-                        parsedtag_get_value(tag,0x41,&form_id);
-                        parsedtag_get_value(tag,0x3e,&top);
-                        parsedtag_get_value(tag,0x3f,&bottom);
-                        if (((-1 < form_id) && (form_id <= form_max)) && (forms != (FormList **)0x0)
-                           ) {
-                          form = forms[form_id];
-                          if (0 < hseq) {
-                            hpos = pos;
-                            if (*str == '[') {
-                              hpos = pos + 1;
-                            }
-                            iVar9 = hseq + -1;
-                            iVar18 = currentLn(buf_1);
-                            pHVar10 = putHmarker(buf_1->hmarklist,iVar18,hpos,iVar9);
-                            buf_1->hmarklist = pHVar10;
-                          }
-                          if (form->target == (char *)0x0) {
-                            form->target = buf_1->baseTarget;
-                          }
-                          if (((a_textarea != (Anchor **)0x0) &&
-                              (iVar9 = parsedtag_get_value(tag,0x49,&textareanumber), iVar9 != 0))
-                             && (max_textarea <= textareanumber)) {
-                            max_textarea = textareanumber * 2;
-                            textarea_str = (Str *)GC_realloc(textarea_str,textareanumber << 3);
-                            a_textarea = (Anchor **)GC_realloc(a_textarea,max_textarea << 2);
-                          }
-                          if (((a_select != (Anchor **)0x0) &&
-                              (iVar9 = parsedtag_get_value(tag,0x48,&tmp), iVar9 != 0)) &&
-                             (max_select <= (int)tmp)) {
-                            max_select = (int)tmp * 2;
-                            select_option =
-                                 (FormSelectOption *)GC_realloc(select_option,(int)tmp << 4);
-                            a_select = (Anchor **)GC_realloc(a_select,max_select << 2);
-                          }
-                          iVar9 = currentLn(buf_1);
-                          a_form = registerForm(buf_1,form,tag,iVar9,pos);
-                          if ((a_textarea != (Anchor **)0x0) && (-1 < textareanumber)) {
-                            a_textarea[textareanumber] = a_form;
-                          }
-                          if ((a_select != (Anchor **)0x0) && (-1 < (int)tmp)) {
-                            a_select[(int)tmp] = a_form;
-                          }
-                          if (a_form == (Anchor *)0x0) goto switchD_0806a4ec_caseD_87;
-                          a_form->hseq = hseq + -1;
-                          iVar9 = currentLn(buf_1);
-                          a_form->y = (short)iVar9 - (short)top;
-                          a_form->rows = (short)top + (short)bottom + 1;
-                          if (((tag->map == (uchar *)0x0) || (tag->map[0x46] == 'K')) ||
-                             (tag->attrid[tag->map[0x46]] == '\0')) {
-                            effect = effect | 0x40;
-                          }
-                        }
-                        break;
-                      case -0x79:
-switchD_0806a4ec_caseD_87:
-                        effect = effect & 0xffbf;
-                        if (a_form != (Anchor *)0x0) {
-                          iVar9 = currentLn(buf_1);
-                          (a_form->end).line = iVar9;
-                          (a_form->end).pos = pos;
-                          if (((a_form->start).line == (a_form->end).line) &&
-                             ((a_form->start).pos == (a_form->end).pos)) {
-                            a_form->hseq = -1;
-                          }
-                        }
-                        a_form = (Anchor *)0x0;
-                        break;
-                      case -0x78:
-                        iVar9 = parsedtag_get_value(tag,0x1f,&p);
-                        if (iVar9 != 0) {
-                          w = -1;
-                          h = -1;
-                          iseq = 0;
-                          ismap = 0;
-                          tmp = (Str)0x0;
-                          textareanumber = 0;
-                          bottom = 0;
-                          top = 0;
-                          parsedtag_get_value(tag,0x45,&iseq);
-                          parsedtag_get_value(tag,0x26,&w);
-                          parsedtag_get_value(tag,0x11,&h);
-                          parsedtag_get_value(tag,0x3c,&tmp);
-                          parsedtag_get_value(tag,0x3d,&textareanumber);
-                          parsedtag_get_value(tag,0x3e,&bottom);
-                          parsedtag_get_value(tag,0x3f,&top);
-                          if (((tag->map != (uchar *)0x0) && (tag->map[0x2e] != 'K')) &&
-                             (tag->attrid[tag->map[0x2e]] != '\0')) {
-                            ismap = 1;
-                          }
-                          q = (char *)0x0;
-                          parsedtag_get_value(tag,0x22,&q);
-                          if (0 < iseq) {
-                            iVar9 = iseq + -1;
-                            iVar18 = currentLn(buf_1);
-                            pHVar10 = putHmarker(buf_1->imarklist,iVar18,pos,iVar9);
-                            buf_1->imarklist = pHVar10;
-                          }
-                          s = (char *)0x0;
-                          parsedtag_get_value(tag,0x31,&s);
-                          wVar6 = InnerCharset;
-                          wVar5 = buf_1->document_charset;
-                          pcVar11 = remove_space(p);
-                          p_Var17 = Strnew_charp(pcVar11);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar6,wVar5);
-                          p = url_quote(p_Var17->ptr);
-                          iVar9 = currentLn(buf_1);
-                          a_img = registerImg(buf_1,p,s,iVar9,pos);
-                          a_img->hseq = iseq;
-                          a_img->image = (Image *)0x0;
-                          if (iseq < 1) {
-                            if (iseq < 0) {
-                              po = buf_1->imarklist->marks + (-1 - iseq);
-                              a_1 = retrieveAnchor(buf_1->img,po->line,po->pos);
-                              if (a_1 != (Anchor *)0x0) {
-                                a_img->url = a_1->url;
-                                a_img->image = a_1->image;
-                              }
-                            }
-                          }
-                          else {
-                            parseURL2(a_img->url,&u,cur_baseURL);
-                            image = (Image *)GC_malloc(0x24);
-                            a_img->image = image;
-                            p_Var17 = parsedURL2Str(&u);
-                            image->url = p_Var17->ptr;
-                            pcVar11 = uncompressed_file_type(u.file,&image->ext);
-                            if (pcVar11 == (char *)0x0) {
-                              pcVar11 = filename_extension(u.file,1);
-                              image->ext = pcVar11;
-                            }
-                            image->cache = (ImageCache *)0x0;
-                            iVar9 = w;
-                            if (0x800 < w) {
-                              iVar9 = 0x800;
-                            }
-                            image->width = (short)iVar9;
-                            iVar9 = h;
-                            if (0x800 < h) {
-                              iVar9 = 0x800;
-                            }
-                            image->height = (short)iVar9;
-                            image->xoffset = (short)tmp;
-                            image->yoffset = (short)textareanumber;
-                            iVar9 = currentLn(buf_1);
-                            image->y = (short)iVar9 - (short)bottom;
-                            if ((image->xoffset < 0) && (pos == 0)) {
-                              image->xoffset = 0;
-                            }
-                            if ((image->yoffset < 0) && (image->y == 1)) {
-                              image->yoffset = 0;
-                            }
-                            image->rows = (short)bottom + (short)top + 1;
-                            image->map = q;
-                            image->ismap = (char)ismap;
-                            image->touch = 0;
-                            pIVar12 = getImage(image,cur_baseURL,1);
-                            image->cache = pIVar12;
-                          }
-                        }
-                        effect = effect | 0x20;
-                        break;
-                      case -0x77:
-                        effect = effect & 0xffdf;
-                        if (a_img != (Anchor *)0x0) {
-                          iVar9 = currentLn(buf_1);
-                          (a_img->end).line = iVar9;
-                          (a_img->end).pos = pos;
-                        }
-                        a_img = (Anchor *)0x0;
-                        break;
-                      case -0x73:
-                        internal = 0x8d;
-                        break;
-                      case -0x72:
-                        internal = 0x8e;
-                      }
-                      id = (char *)0x0;
-                      iVar9 = parsedtag_get_value(tag,0x14,&id);
-                      wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(id);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        id = url_quote(p_Var17->ptr);
-                        iVar9 = currentLn(buf_1);
-                        registerName(buf_1,id,iVar9,pos);
-                      }
+                }
+                else {
+                  tag = parse_tag(&str,1);
+                  if (tag != (parsed_tag *)0x0) {
+                    switch(tag->tagid) {
+                    case '\x01':
                       if ((renderFrameSet != (frameset *)0x0) &&
                          (iVar9 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset, iVar9 != 0
                          )) {
@@ -21385,6 +20509,69 @@ switchD_0806a4ec_caseD_87:
                           idFrame = (frameset_element *)0x0;
                         }
                       }
+                      s = (char *)0x0;
+                      r = (char *)0x0;
+                      p = (char *)0x0;
+                      q = buf_1->baseTarget;
+                      t = "";
+                      hseq = 0;
+                      id = (char *)0x0;
+                      iVar9 = parsedtag_get_value(tag,0x19,&id);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        p_Var17 = Strnew_charp(id);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        id = url_quote(p_Var17->ptr);
+                        iVar9 = currentLn(buf_1);
+                        registerName(buf_1,id,iVar9,pos);
+                      }
+                      iVar9 = parsedtag_get_value(tag,0x12,&p);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        pcVar11 = remove_space(p);
+                        p_Var17 = Strnew_charp(pcVar11);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        p = url_quote(p_Var17->ptr);
+                      }
+                      iVar9 = parsedtag_get_value(tag,0x20,&q);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        p_Var17 = Strnew_charp(q);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        q = url_quote(p_Var17->ptr);
+                      }
+                      iVar9 = parsedtag_get_value(tag,0x47,&r);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        p_Var17 = Strnew_charp(r);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        r = url_quote(p_Var17->ptr);
+                      }
+                      parsedtag_get_value(tag,0x31,&s);
+                      parsedtag_get_value(tag,0x32,&t);
+                      parsedtag_get_value(tag,0x45,&hseq);
+                      if (hseq < 1) {
+                        if ((((hseq < 0) && (h_1 = ~hseq, buf_1->hmarklist != (HmarkerList *)0x0))
+                            && (h_1 < buf_1->hmarklist->nmark)) &&
+                           (buf_1->hmarklist->marks[h_1].invalid != 0)) {
+                          buf_1->hmarklist->marks[h_1].pos = pos;
+                          pBVar2 = buf_1->hmarklist->marks + h_1;
+                          iVar9 = currentLn(buf_1);
+                          pBVar2->line = iVar9;
+                          buf_1->hmarklist->marks[h_1].invalid = 0;
+                          hseq = -hseq;
+                        }
+                      }
+                      else {
+                        iVar9 = hseq + -1;
+                        iVar18 = currentLn(buf_1);
+                        pHVar10 = putHmarker(buf_1->hmarklist,iVar18,pos,iVar9);
+                        buf_1->hmarklist = pHVar10;
+                      }
                       if ((id != (char *)0x0) && (idFrame != (frameset_element *)0x0)) {
                         iVar9 = *idFrame;
                         iVar18 = currentLn(buf_1);
@@ -21392,56 +20579,526 @@ switchD_0806a4ec_caseD_87:
                                             (Anchor **)0x0,(char *)0x0,(char *)0x0,'\0',iVar18,pos);
                         *(AnchorList **)(iVar9 + 0x1c) = pAVar19;
                       }
-                    }
-                  }
-                }
-                else {
-                  len_1 = ZEXT14(WTF_LEN_MAP[(byte)*str]);
-                  pLVar1 = HTMLlineproc2body::outp + pos;
-                  uVar7 = effect | mode;
-                  iVar9 = ex_efct((uint)ex_effect);
-                  *pLVar1 = (ushort)iVar9 | uVar7;
-                  HTMLlineproc2body::outc[pos] = *str;
-                  str = str + 1;
-                  pos = pos + 1;
-                  len_1 = len_1 + -1;
-                  if (len_1 != 0) {
-                    mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
-                    while (bVar22 = len_1 != 0, len_1 = len_1 + -1, bVar22) {
-                      if (HTMLlineproc2body::out_size <= pos + 1) {
-                        HTMLlineproc2body::out_size = (pos * 3) / 2;
-                        HTMLlineproc2body::outc =
-                             (char *)GC_realloc(HTMLlineproc2body::outc,HTMLlineproc2body::out_size)
-                        ;
-                        HTMLlineproc2body::outp =
-                             (Lineprop *)
-                             GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
+                      if (p != (char *)0x0) {
+                        effect = effect | 0x10;
+                        iVar9 = currentLn(buf_1);
+                        a_href = registerHref(buf_1,p,q,r,s,*t,iVar9,pos);
+                        a_href->hseq = ((hseq ^ hseq >> 0x1f) - (hseq >> 0x1f)) + -1;
+                        a_href->slave = hseq < 1;
                       }
-                      pLVar1 = HTMLlineproc2body::outp + pos;
-                      uVar7 = effect | mode;
-                      iVar9 = ex_efct((uint)ex_effect);
-                      *pLVar1 = (ushort)iVar9 | uVar7;
-                      HTMLlineproc2body::outc[pos] = *str;
-                      str = str + 1;
-                      pos = pos + 1;
+                      break;
+                    case '\x02':
+                      effect = effect & 0xffef;
+                      if (a_href != (Anchor *)0x0) {
+                        iVar9 = currentLn(buf_1);
+                        (a_href->end).line = iVar9;
+                        (a_href->end).pos = pos;
+                        if (((a_href->start).line == (a_href->end).line) &&
+                           ((a_href->start).pos == (a_href->end).pos)) {
+                          if ((buf_1->hmarklist != (HmarkerList *)0x0) &&
+                             (a_href->hseq < buf_1->hmarklist->nmark)) {
+                            buf_1->hmarklist->marks[a_href->hseq].invalid = 1;
+                          }
+                          a_href->hseq = -1;
+                        }
+                        a_href = (Anchor *)0x0;
+                      }
+                      break;
+                    case '\a':
+                      effect = effect | 8;
+                      break;
+                    case '\b':
+                      effect = effect & 0xfff7;
+                      break;
+                    case '!':
+                      q = (char *)0x0;
+                      p = (char *)0x0;
+                      parsedtag_get_value(tag,0x13,&p);
+                      parsedtag_get_value(tag,0xf,&q);
+                      if ((((p != (char *)0x0) && (q != (char *)0x0)) &&
+                          (iVar9 = strcasecmp(p,"refresh"), iVar9 == 0)) && (MetaRefresh != '\0')) {
+                        tmp = (Str)0x0;
+                        iVar9 = getMetaRefreshParam(q,&tmp);
+                        wVar5 = InnerCharset;
+                        if (tmp == (Str)0x0) {
+                          if (0 < iVar9) {
+                            pAVar16 = setAlarmEvent(buf_1->event,iVar9,2,0x70,(void *)0x0);
+                            buf_1->event = pAVar16;
+                          }
+                        }
+                        else {
+                          wVar6 = buf_1->document_charset;
+                          pcVar11 = remove_space(tmp->ptr);
+                          p_Var17 = Strnew_charp(pcVar11);
+                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                          p = url_quote(p_Var17->ptr);
+                          pAVar16 = setAlarmEvent(buf_1->event,iVar9,3,0x25,p);
+                          buf_1->event = pAVar16;
+                        }
+                      }
+                      break;
+                    case '#':
+                      if ((-1 < frameset_sp) && (frameset_sp < 10)) {
+                        element = newFrame(tag,buf_1);
+                        addFrameSetElement(frameset_s[frameset_sp],element);
+                      }
+                      break;
+                    case '$':
+                      iVar9 = frameset_sp + 1;
+                      frameset_sp = iVar9;
+                      if (iVar9 < 10) {
+                        pfVar14 = newFrameSet(tag);
+                        frameset_s[iVar9] = pfVar14;
+                        if (frameset_s[frameset_sp] != (frameset *)0x0) {
+                          if (frameset_sp == 0) {
+                            if (buf_1->frameset == (frameset *)0x0) {
+                              buf_1->frameset = frameset_s[0];
+                            }
+                            else {
+                              pushFrameTree(&buf_1->frameQ,frameset_s[0],(Buffer *)0x0);
+                            }
+                          }
+                          else {
+                            addFrameSetElement(frameset_s[frameset_sp + -1],frameset_s[frameset_sp])
+                            ;
+                          }
+                        }
+                      }
+                      break;
+                    case '%':
+                      if (-1 < frameset_sp) {
+                        frameset_sp = frameset_sp + -1;
+                      }
+                      break;
+                    case '7':
+                      iVar9 = parsedtag_get_value(tag,0x19,&p);
+                      if (iVar9 != 0) {
+                        m = (MapList *)GC_malloc(0xc);
+                        p_Var17 = Strnew_charp(p);
+                        m->name = p_Var17;
+                        pGVar13 = newGeneralList();
+                        m->area = pGVar13;
+                        m->next = buf_1->maplist;
+                        buf_1->maplist = m;
+                      }
+                      break;
+                    case '9':
+                      if ((buf_1->maplist != (MapList *)0x0) &&
+                         (iVar9 = parsedtag_get_value(tag,0x12,&p), wVar5 = InnerCharset, iVar9 != 0
+                         )) {
+                        wVar6 = buf_1->document_charset;
+                        pcVar11 = remove_space(p);
+                        p_Var17 = Strnew_charp(pcVar11);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        p = url_quote(p_Var17->ptr);
+                        t = (char *)0x0;
+                        parsedtag_get_value(tag,0x20,&t);
+                        q = "";
+                        parsedtag_get_value(tag,5,&q);
+                        r = (char *)0x0;
+                        s = (char *)0x0;
+                        parsedtag_get_value(tag,0x2c,&r);
+                        parsedtag_get_value(tag,0x2d,&s);
+                        a = newMapArea(p,t,q,r,s);
+                        pushValue(buf_1->maplist->area,a);
+                      }
+                      break;
+                    case '<':
+                      iVar9 = parsedtag_get_value(tag,0x12,&p);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        pcVar11 = remove_space(p);
+                        p_Var17 = Strnew_charp(pcVar11);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        p = url_quote(p_Var17->ptr);
+                        if (buf_1->baseURL == (ParsedURL *)0x0) {
+                          pPVar15 = (ParsedURL *)GC_malloc(0x28);
+                          buf_1->baseURL = pPVar15;
+                        }
+                        parseURL(p,buf_1->baseURL,(ParsedURL *)0x0);
+                      }
+                      iVar9 = parsedtag_get_value(tag,0x20,&p);
+                      wVar5 = InnerCharset;
+                      if (iVar9 != 0) {
+                        wVar6 = buf_1->document_charset;
+                        p_Var17 = Strnew_charp(p);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                        pcVar11 = url_quote(p_Var17->ptr);
+                        buf_1->baseTarget = pcVar11;
+                      }
+                      break;
+                    case '?':
+                      ex_effect = ex_effect | 2;
+                      break;
+                    case '@':
+                      ex_effect = ex_effect & 0xfffd;
+                      break;
+                    case 'A':
+                      effect = effect | 2;
+                      break;
+                    case 'B':
+                      effect = effect & 0xfffd;
+                      break;
+                    case 'h':
+                      addLink(buf_1,tag);
+                      break;
+                    case 'i':
+                      ex_effect = ex_effect | 4;
+                      break;
+                    case 'j':
+                      ex_effect = ex_effect & 0xfffb;
+                      break;
+                    case 'm':
+                      ex_effect = ex_effect | 1;
+                      break;
+                    case 'n':
+                      ex_effect = ex_effect & 0xfffe;
+                      break;
+                    case 'x':
+                      iVar9 = parsedtag_get_value(tag,0x48,&n_select);
+                      if ((iVar9 == 0) || (max_select <= n_select)) {
+                        n_select = -1;
+                      }
+                      else {
+                        select_option[n_select].first = (FormSelectOptionItem *)0x0;
+                        select_option[n_select].last = (FormSelectOptionItem *)0x0;
+                      }
+                      break;
+                    case 'y':
+                      if (-1 < n_select) {
+                        fi = (FormItemList *)a_select[n_select]->url;
+                        fi->select_option = select_option[n_select].first;
+                        chooseSelectOption(fi,fi->select_option);
+                        fi->init_selected = fi->selected;
+                        fi->init_value = fi->value;
+                        fi->init_label = fi->label;
+                      }
+                      break;
+                    case 'z':
+                      if (-1 < n_select) {
+                        q = "";
+                        parsedtag_get_value(tag,0x2a,&q);
+                        p = q;
+                        parsedtag_get_value(tag,0x24,&p);
+                        if (((tag->map == (uchar *)0x0) || (tag->map[0x29] == 'K')) ||
+                           (tag->attrid[tag->map[0x29]] == '\0')) {
+                          iVar9 = 0;
+                        }
+                        else {
+                          iVar9 = 1;
+                        }
+                        p_Var17 = Strnew_charp(q);
+                        value = Strnew_charp(p);
+                        addSelectOption(select_option + n_select,value,p_Var17,iVar9);
+                      }
+                      break;
+                    case '{':
+                      iVar9 = parsedtag_get_value(tag,0x49,&n_textarea);
+                      if ((iVar9 == 0) || (max_textarea <= n_textarea)) {
+                        n_textarea = -1;
+                      }
+                      else {
+                        pp_Var3 = textarea_str + n_textarea;
+                        p_Var17 = Strnew();
+                        *pp_Var3 = p_Var17;
+                      }
+                      break;
+                    case '|':
+                      if (-1 < n_textarea) {
+                        pcVar11 = a_textarea[n_textarea]->url;
+                        *(Str *)(pcVar11 + 8) = textarea_str[n_textarea];
+                        *(undefined4 *)(pcVar11 + 0xc) = *(undefined4 *)(pcVar11 + 8);
+                      }
+                      break;
+                    case '~':
+                      effect = effect | 0x8000;
+                      iVar9 = parsedtag_get_value(tag,0x21,&p);
+                      if (iVar9 != 0) {
+                        iVar9 = atoi(p);
+                        symbol = (char)iVar9;
+                      }
+                      break;
+                    case '\x7f':
+                      effect = effect & 0x7fff;
+                      break;
+                    case 0x82:
+                      iVar9 = parsedtag_get_value(tag,0x31,&p);
+                      if (iVar9 != 0) {
+                        pcVar11 = html_unquote(p);
+                        buf_1->buffername = pcVar11;
+                      }
+                      break;
+                    case 0x83:
+                      iVar9 = parsedtag_get_value(tag,0x41,&form_id);
+                      if (iVar9 != 0) {
+                        process_form_int(tag,form_id);
+                      }
+                      break;
+                    case 0x86:
+                      top = 0;
+                      bottom = 0;
+                      textareanumber = -1;
+                      tmp = (Str)0xffffffff;
+                      hseq = 0;
+                      form_id = -1;
+                      parsedtag_get_value(tag,0x45,&hseq);
+                      parsedtag_get_value(tag,0x41,&form_id);
+                      parsedtag_get_value(tag,0x3e,&top);
+                      parsedtag_get_value(tag,0x3f,&bottom);
+                      if (((-1 < form_id) && (form_id <= form_max)) && (forms != (FormList **)0x0))
+                      {
+                        form = forms[form_id];
+                        if (0 < hseq) {
+                          hpos = pos;
+                          if (*str == '[') {
+                            hpos = pos + 1;
+                          }
+                          iVar9 = hseq + -1;
+                          iVar18 = currentLn(buf_1);
+                          pHVar10 = putHmarker(buf_1->hmarklist,iVar18,hpos,iVar9);
+                          buf_1->hmarklist = pHVar10;
+                        }
+                        if (form->target == (char *)0x0) {
+                          form->target = buf_1->baseTarget;
+                        }
+                        if (((a_textarea != (Anchor **)0x0) &&
+                            (iVar9 = parsedtag_get_value(tag,0x49,&textareanumber), iVar9 != 0)) &&
+                           (max_textarea <= textareanumber)) {
+                          max_textarea = textareanumber * 2;
+                          textarea_str = (Str *)GC_realloc(textarea_str,textareanumber << 3);
+                          a_textarea = (Anchor **)GC_realloc(a_textarea,max_textarea << 2);
+                        }
+                        if (((a_select != (Anchor **)0x0) &&
+                            (iVar9 = parsedtag_get_value(tag,0x48,&tmp), iVar9 != 0)) &&
+                           (max_select <= (int)tmp)) {
+                          max_select = (int)tmp * 2;
+                          select_option =
+                               (FormSelectOption *)GC_realloc(select_option,(int)tmp << 4);
+                          a_select = (Anchor **)GC_realloc(a_select,max_select << 2);
+                        }
+                        iVar9 = currentLn(buf_1);
+                        a_form = registerForm(buf_1,form,tag,iVar9,pos);
+                        if ((a_textarea != (Anchor **)0x0) && (-1 < textareanumber)) {
+                          a_textarea[textareanumber] = a_form;
+                        }
+                        if ((a_select != (Anchor **)0x0) && (-1 < (int)tmp)) {
+                          a_select[(int)tmp] = a_form;
+                        }
+                        if (a_form == (Anchor *)0x0) goto switchD_0806a4ec_caseD_87;
+                        a_form->hseq = hseq + -1;
+                        iVar9 = currentLn(buf_1);
+                        a_form->y = (short)iVar9 - (short)top;
+                        a_form->rows = (short)top + (short)bottom + 1;
+                        if (((tag->map == (uchar *)0x0) || (tag->map[0x46] == 'K')) ||
+                           (tag->attrid[tag->map[0x46]] == '\0')) {
+                          effect = effect | 0x40;
+                        }
+                      }
+                      break;
+                    case 0x87:
+switchD_0806a4ec_caseD_87:
+                      effect = effect & 0xffbf;
+                      if (a_form != (Anchor *)0x0) {
+                        iVar9 = currentLn(buf_1);
+                        (a_form->end).line = iVar9;
+                        (a_form->end).pos = pos;
+                        if (((a_form->start).line == (a_form->end).line) &&
+                           ((a_form->start).pos == (a_form->end).pos)) {
+                          a_form->hseq = -1;
+                        }
+                      }
+                      a_form = (Anchor *)0x0;
+                      break;
+                    case 0x88:
+                      iVar9 = parsedtag_get_value(tag,0x1f,&p);
+                      if (iVar9 != 0) {
+                        w = -1;
+                        h = -1;
+                        iseq = 0;
+                        ismap = 0;
+                        tmp = (Str)0x0;
+                        textareanumber = 0;
+                        bottom = 0;
+                        top = 0;
+                        parsedtag_get_value(tag,0x45,&iseq);
+                        parsedtag_get_value(tag,0x26,&w);
+                        parsedtag_get_value(tag,0x11,&h);
+                        parsedtag_get_value(tag,0x3c,&tmp);
+                        parsedtag_get_value(tag,0x3d,&textareanumber);
+                        parsedtag_get_value(tag,0x3e,&bottom);
+                        parsedtag_get_value(tag,0x3f,&top);
+                        if (((tag->map != (uchar *)0x0) && (tag->map[0x2e] != 'K')) &&
+                           (tag->attrid[tag->map[0x2e]] != '\0')) {
+                          ismap = 1;
+                        }
+                        q = (char *)0x0;
+                        parsedtag_get_value(tag,0x22,&q);
+                        if (0 < iseq) {
+                          iVar9 = iseq + -1;
+                          iVar18 = currentLn(buf_1);
+                          pHVar10 = putHmarker(buf_1->imarklist,iVar18,pos,iVar9);
+                          buf_1->imarklist = pHVar10;
+                        }
+                        s = (char *)0x0;
+                        parsedtag_get_value(tag,0x31,&s);
+                        wVar6 = InnerCharset;
+                        wVar5 = buf_1->document_charset;
+                        pcVar11 = remove_space(p);
+                        p_Var17 = Strnew_charp(pcVar11);
+                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar6,wVar5);
+                        p = url_quote(p_Var17->ptr);
+                        iVar9 = currentLn(buf_1);
+                        a_img = registerImg(buf_1,p,s,iVar9,pos);
+                        a_img->hseq = iseq;
+                        a_img->image = (Image *)0x0;
+                        if (iseq < 1) {
+                          if (iseq < 0) {
+                            po = buf_1->imarklist->marks + (-1 - iseq);
+                            a_1 = retrieveAnchor(buf_1->img,po->line,po->pos);
+                            if (a_1 != (Anchor *)0x0) {
+                              a_img->url = a_1->url;
+                              a_img->image = a_1->image;
+                            }
+                          }
+                        }
+                        else {
+                          parseURL2(a_img->url,&u,cur_baseURL);
+                          image = (Image *)GC_malloc(0x24);
+                          a_img->image = image;
+                          p_Var17 = parsedURL2Str(&u);
+                          image->url = p_Var17->ptr;
+                          pcVar11 = uncompressed_file_type(u.file,&image->ext);
+                          if (pcVar11 == (char *)0x0) {
+                            pcVar11 = filename_extension(u.file,1);
+                            image->ext = pcVar11;
+                          }
+                          image->cache = (ImageCache *)0x0;
+                          iVar9 = w;
+                          if (0x800 < w) {
+                            iVar9 = 0x800;
+                          }
+                          image->width = (short)iVar9;
+                          iVar9 = h;
+                          if (0x800 < h) {
+                            iVar9 = 0x800;
+                          }
+                          image->height = (short)iVar9;
+                          image->xoffset = (short)tmp;
+                          image->yoffset = (short)textareanumber;
+                          iVar9 = currentLn(buf_1);
+                          image->y = (short)iVar9 - (short)bottom;
+                          if ((image->xoffset < 0) && (pos == 0)) {
+                            image->xoffset = 0;
+                          }
+                          if ((image->yoffset < 0) && (image->y == 1)) {
+                            image->yoffset = 0;
+                          }
+                          image->rows = (short)bottom + (short)top + 1;
+                          image->map = q;
+                          image->ismap = (char)ismap;
+                          image->touch = 0;
+                          pIVar12 = getImage(image,cur_baseURL,1);
+                          image->cache = pIVar12;
+                        }
+                      }
+                      effect = effect | 0x20;
+                      break;
+                    case 0x89:
+                      effect = effect & 0xffdf;
+                      if (a_img != (Anchor *)0x0) {
+                        iVar9 = currentLn(buf_1);
+                        (a_img->end).line = iVar9;
+                        (a_img->end).pos = pos;
+                      }
+                      a_img = (Anchor *)0x0;
+                      break;
+                    case 0x8d:
+                      internal = 0x8d;
+                      break;
+                    case 0x8e:
+                      internal = 0x8e;
+                    }
+                    id = (char *)0x0;
+                    iVar9 = parsedtag_get_value(tag,0x14,&id);
+                    wVar5 = InnerCharset;
+                    if (iVar9 != 0) {
+                      wVar6 = buf_1->document_charset;
+                      p_Var17 = Strnew_charp(id);
+                      p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                      id = url_quote(p_Var17->ptr);
+                      iVar9 = currentLn(buf_1);
+                      registerName(buf_1,id,iVar9,pos);
+                    }
+                    if ((renderFrameSet != (frameset *)0x0) &&
+                       (iVar9 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset, iVar9 != 0))
+                    {
+                      wVar6 = buf_1->document_charset;
+                      p_Var17 = Strnew_charp(p);
+                      p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
+                      p = url_quote(p_Var17->ptr);
+                      if (((idFrame == (frameset_element *)0x0) ||
+                          (iVar9 = strcmp(*(char **)(*idFrame + 4),p), iVar9 != 0)) &&
+                         ((idFrame = search_frame(renderFrameSet,p),
+                          (char **)idFrame != (char **)0x0 && (*(char *)*idFrame != '\x01')))) {
+                        idFrame = (frameset_element *)0x0;
+                      }
+                    }
+                    if ((id != (char *)0x0) && (idFrame != (frameset_element *)0x0)) {
+                      iVar9 = *idFrame;
+                      iVar18 = currentLn(buf_1);
+                      pAVar19 = putAnchor(*(AnchorList **)(*idFrame + 0x1c),id,(char *)0x0,
+                                          (Anchor **)0x0,(char *)0x0,(char *)0x0,'\0',iVar18,pos);
+                      *(AnchorList **)(iVar9 + 0x1c) = pAVar19;
                     }
                   }
                 }
               }
               else {
+                len_1 = (int)WTF_LEN_MAP[(byte)*str];
                 pLVar1 = HTMLlineproc2body::outp + pos;
+                uVar7 = effect | mode;
                 iVar9 = ex_efct((uint)ex_effect);
-                *pLVar1 = effect | (ushort)iVar9;
-                HTMLlineproc2body::outc[pos] = ' ';
+                *pLVar1 = (ushort)iVar9 | uVar7;
+                HTMLlineproc2body::outc[pos] = *str;
+                str = str + 1;
                 pos = pos + 1;
-                str = str + WTF_LEN_MAP[(byte)*str];
+                len_1 = len_1 + -1;
+                if (len_1 != 0) {
+                  mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
+                  while (bVar22 = len_1 != 0, len_1 = len_1 + -1, bVar22) {
+                    if (HTMLlineproc2body::out_size <= pos + 1) {
+                      HTMLlineproc2body::out_size = (pos * 3) / 2;
+                      HTMLlineproc2body::outc =
+                           (char *)GC_realloc(HTMLlineproc2body::outc,HTMLlineproc2body::out_size);
+                      HTMLlineproc2body::outp =
+                           (Lineprop *)
+                           GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
+                    }
+                    pLVar1 = HTMLlineproc2body::outp + pos;
+                    uVar7 = effect | mode;
+                    iVar9 = ex_efct((uint)ex_effect);
+                    *pLVar1 = (ushort)iVar9 | uVar7;
+                    HTMLlineproc2body::outc[pos] = *str;
+                    str = str + 1;
+                    pos = pos + 1;
+                  }
+                }
               }
+            }
+            else {
+              pLVar1 = HTMLlineproc2body::outp + pos;
+              iVar9 = ex_efct((uint)ex_effect);
+              *pLVar1 = effect | (ushort)iVar9;
+              HTMLlineproc2body::outc[pos] = ' ';
+              pos = pos + 1;
+              str = str + WTF_LEN_MAP[(byte)*str];
             }
           }
           else {
             buf = set_symbol(symbol_width0);
             p = buf[symbol];
-            len = ZEXT14(WTF_LEN_MAP[(byte)*p]);
+            len = (int)WTF_LEN_MAP[(byte)*p];
             mode = (ushort)WTF_TYPE_MAP[(byte)*p] << 8;
             pLVar1 = HTMLlineproc2body::outp + pos;
             uVar7 = effect | mode;
@@ -21482,7 +21139,7 @@ switchD_0806a4ec_caseD_87:
           internal = 0;
         }
         if (str == endp) goto LAB_0806bfe6;
-        line = Strsubstr(line,(int)(str + -(int)line->ptr),(int)(endp + -(int)str));
+        line = Strsubstr(line,(int)str - (int)line->ptr,(int)endp - (int)str);
       } while( true );
     }
     Strcat(textarea_str[n_textarea],line);
@@ -21543,11 +21200,9 @@ void addLink(Buffer *buf,parsed_tag *tag)
     buf->linklist = pLVar2;
   }
   else {
-    i = buf->linklist;
-    while (i->next != (_LinkList *)0x0) {
-      i = (LinkList *)i->next;
+    for (i = buf->linklist; i->next != (_LinkList *)0x0; i = i->next) {
     }
-    i->next = (_LinkList *)pLVar2;
+    i->next = pLVar2;
   }
   return;
 }
@@ -21631,7 +21286,7 @@ void proc_escape(readbuffer *obuf,char **str_return)
       push_nchars(obuf,1,(char *)p,sVar2,mode);
     }
     else {
-      push_nchars(obuf,width_00,str_00,(int)(pcVar1 + -(int)str_00),mode);
+      push_nchars(obuf,width_00,str_00,(int)pcVar1 - (int)str_00,mode);
     }
     sVar2 = strlen((char *)p);
     Strcopy_charp_n(obuf->prevchar,(char *)p,sVar2);
@@ -21659,22 +21314,18 @@ int need_flushline(html_feed_environ *h_env,readbuffer *obuf,Lineprop mode)
     if (cVar1 == ' ') {
       iVar2 = 0;
     }
-    else {
-      if (h_env->limit < (int)obuf->pos) {
-        iVar2 = 1;
-      }
-      else {
-        iVar2 = 0;
-      }
-    }
-  }
-  else {
-    if (h_env->limit < (int)obuf->pos) {
+    else if (h_env->limit < (int)obuf->pos) {
       iVar2 = 1;
     }
     else {
       iVar2 = 0;
     }
+  }
+  else if (h_env->limit < (int)obuf->pos) {
+    iVar2 = 1;
+  }
+  else {
+    iVar2 = 0;
   }
   return iVar2;
 }
@@ -21793,7 +21444,7 @@ LAB_0806d451:
     else {
       bVar2 = tbl_mode->end_tag;
     }
-    end_tag = ZEXT14(bVar2);
+    end_tag = (int)bVar2;
     if ((*line_1 == '<') || (obuf->status != 0)) {
       if (obuf->status == 7) {
         obuf->status = 0;
@@ -21845,7 +21496,7 @@ LAB_0806d451:
         if (is_tag != 0) {
           iVar4 = strncmp(str,"<!--",4);
           if ((iVar4 != 0) && (p = strchr(str + 1,0x3c), p != (char *)0x0)) {
-            p_Var5 = Strnew_charp_n(str,(int)(p + -(int)str));
+            p_Var5 = Strnew_charp_n(str,(int)p - (int)str);
             str = p_Var5->ptr;
             p_Var5 = Strnew_m_charp(p,line_1,0);
             line_1 = p_Var5->ptr;
@@ -21860,11 +21511,9 @@ LAB_0806d451:
           if (((pre_mode & 2U) != 0) || ((pre_mode & 4U) != 0)) goto LAB_0806d451;
         }
       }
-      else {
-        if (obuf->table_level < 0) {
-          feed_select(str);
-          goto LAB_0806d451;
-        }
+      else if (obuf->table_level < 0) {
+        feed_select(str);
+        goto LAB_0806d451;
       }
     }
 proc_normal:
@@ -21919,7 +21568,7 @@ proc_normal:
           else {
             bVar6 = WTF_WIDTH_MAP[(byte)*str];
           }
-          delta = ZEXT14(bVar6);
+          delta = (int)bVar6;
           if ((obuf->flag & 0x20fU) == 0) {
             if ((MYCTYPE_MAP[(byte)*str] & 2) == 0) {
               obuf->flag = obuf->flag & 0xffffdfff;
@@ -21933,7 +21582,7 @@ proc_normal:
             else {
               if (bVar2 == 10) {
                 bVar2 = wtf_is_hangul((wc_uchar *)str);
-                is_hangul = ZEXT14(bVar2);
+                is_hangul = (int)bVar2;
               }
               else {
                 is_hangul = 0;
@@ -21975,11 +21624,9 @@ proc_normal:
               ch = '\n';
               str = p_1 + -1;
             }
-            else {
-              if (iVar4 == 9) {
-                ch = '\t';
-                str = p_1 + -1;
-              }
+            else if (iVar4 == 9) {
+              ch = '\t';
+              str = p_1 + -1;
             }
           }
           if (ch == '\n') {
@@ -22003,25 +21650,23 @@ proc_normal:
               } while (((int)h_env->envs[h_env->envc].indent + (int)obuf->pos) % Tabstop != 0);
               str = str + 1;
             }
-            else {
-              if ((obuf->flag & 8U) == 0) {
-                if (*str == '&') {
-                  proc_escape(obuf,&str);
-                }
-                else {
-                  proc_mchar(obuf,1,delta,&str,mode);
-                }
+            else if ((obuf->flag & 8U) == 0) {
+              if (*str == '&') {
+                proc_escape(obuf,&str);
               }
               else {
-                pcVar1 = HTML_QUOTE_MAP[QUOTE_MAP[(byte)*str] & 7];
-                if (pcVar1 == (char *)0x0) {
-                  proc_mchar(obuf,1,delta,&str,mode);
-                }
-                else {
-                  len = strlen(pcVar1);
-                  push_nchars(obuf,1,pcVar1,len,0);
-                  str = str + 1;
-                }
+                proc_mchar(obuf,1,delta,&str,mode);
+              }
+            }
+            else {
+              pcVar1 = HTML_QUOTE_MAP[QUOTE_MAP[(byte)*str] & 7];
+              if (pcVar1 == (char *)0x0) {
+                proc_mchar(obuf,1,delta,&str,mode);
+              }
+              else {
+                len = strlen(pcVar1);
+                push_nchars(obuf,1,pcVar1,len,0);
+                str = str + 1;
               }
             }
 LAB_0806d02e:
@@ -22053,7 +21698,7 @@ LAB_0806d2f8:
     }
     tag = parse_tag(&str,internal);
     if (tag == (parsed_tag *)0x0) goto LAB_0806d451;
-    cmd = ZEXT14(tag->tagid);
+    cmd = (int)tag->tagid;
     iVar4 = HTMLtagproc1(tag,h_env);
     if (iVar4 == 0) {
       if (tag->need_reconstruct != '\0') {
@@ -22089,7 +21734,7 @@ void addnewline2(Buffer *buf,char *line,Lineprop *prop,Linecolor *color,int pos,
   p_Var1->size = pos;
   p_Var1->bpos = 0;
   p_Var1->bwidth = 0;
-  p_Var1->prev = (_Line *)buf->currentLine;
+  p_Var1->prev = buf->currentLine;
   if (buf->currentLine == (Line *)0x0) {
     p_Var1->next = (_Line *)0x0;
   }
@@ -22098,11 +21743,11 @@ void addnewline2(Buffer *buf,char *line,Lineprop *prop,Linecolor *color,int pos,
     buf->currentLine->next = p_Var1;
   }
   if ((buf->lastLine == (Line *)0x0) || (buf->lastLine == buf->currentLine)) {
-    buf->lastLine = (Line *)p_Var1;
+    buf->lastLine = p_Var1;
   }
-  buf->currentLine = (Line *)p_Var1;
+  buf->currentLine = p_Var1;
   if (buf->firstLine == (Line *)0x0) {
-    buf->firstLine = (Line *)p_Var1;
+    buf->firstLine = p_Var1;
   }
   buf->allLine = buf->allLine + 1;
   p_Var1->linenumber = buf->allLine;
@@ -22209,7 +21854,7 @@ Buffer * loadHTMLBuffer(URLFile *f,Buffer *newBuf)
      ((f->scheme != '\x04' || (newBuf->mailcap != (mailcap *)0x0)))) {
     p_Var2 = tmpfname(1,".html");
     src = (FILE *)fopen(p_Var2->ptr,"w");
-    if (src != (FILE *)0x0) {
+    if ((FILE *)src != (FILE *)0x0) {
       newBuf->sourcefile = p_Var2->ptr;
     }
   }
@@ -22239,11 +21884,10 @@ char * convert_size(clen_t size,int usefloat)
   int sizepos;
   float csize;
   
-  sizepos = 0;
   csize = (float)size;
-  while ((999.495 <= csize && (_size_unit[sizepos + 1] != (char *)0x0))) {
+  for (sizepos = 0; (999.495 <= csize && (_size_unit[sizepos + 1] != (char *)0x0));
+      sizepos = sizepos + 1) {
     csize = csize / 1024.0;
-    sizepos = sizepos + 1;
   }
   pcVar1 = _size_unit[sizepos];
   dVar3 = floor((double)(csize * 100.0 + 0.5));
@@ -22281,9 +21925,9 @@ char * convert_size2(clen_t size1,clen_t size2,int usefloat)
   if (size2 < size1) {
     lVar2 = size1;
   }
-  while ((999.495 <= (float)lVar2 / factor && (_size_unit[sizepos + 1] != (char *)0x0))) {
+  for (; (999.495 <= (float)lVar2 / factor && (_size_unit[sizepos + 1] != (char *)0x0));
+      sizepos = sizepos + 1) {
     factor = factor * 1024.0;
-    sizepos = sizepos + 1;
   }
   pcVar1 = _size_unit[sizepos];
   dVar4 = floor((double)(((float)size2 / factor) * 100.0 + 0.5));
@@ -22408,10 +22052,8 @@ void showProgress(clen_t *linelen,clen_t *trbyte)
           move(LINES + -1,0x2a);
           standout();
           addch(' ');
-          j = 0x2b;
-          while (j <= iVar6 + 0x2a) {
+          for (j = 0x2b; j <= iVar6 + 0x2a; j = j + 1) {
             addch('|');
-            j = j + 1;
           }
           standend();
           refresh();
@@ -22550,13 +22192,11 @@ void print_internal_information(html_feed_environ *henv)
     pushValue(tl_00,pTVar2);
   }
   if (0 < n_select) {
-    i = 0;
-    while (i < n_select) {
+    for (i = 0; i < n_select; i = i + 1) {
       p_Var1 = Sprintf("<select_int selectnumber=%d>",i);
       pTVar2 = newTextLine(p_Var1,0);
       pushValue(tl_00,pTVar2);
-      ip = select_option[i].first;
-      while (ip != (FormSelectOptionItem *)0x0) {
+      for (ip = select_option[i].first; ip != (FormSelectOptionItem *)0x0; ip = ip->next) {
         if (ip->checked == 0) {
           pcVar3 = "";
         }
@@ -22574,17 +22214,14 @@ void print_internal_information(html_feed_environ *henv)
         p_Var1 = Sprintf("<option_int value=\"%s\" label=\"%s\"%s>",pcVar5,pcVar4,pcVar3);
         pTVar2 = newTextLine(p_Var1,0);
         pushValue(tl_00,pTVar2);
-        ip = (FormSelectOptionItem *)ip->next;
       }
       p_Var1 = Strnew_charp("</select_int>");
       pTVar2 = newTextLine(p_Var1,0);
       pushValue(tl_00,pTVar2);
-      i = i + 1;
     }
   }
   if (0 < n_textarea) {
-    i = 0;
-    while (i < n_textarea) {
+    for (i = 0; i < n_textarea; i = i + 1) {
       p_Var1 = Sprintf("<textarea_int textareanumber=%d>",i);
       pTVar2 = newTextLine(p_Var1,0);
       pushValue(tl_00,pTVar2);
@@ -22593,7 +22230,6 @@ void print_internal_information(html_feed_environ *henv)
       Strcat_charp(p_Var1,"</textarea_int>");
       pTVar2 = newTextLine(p_Var1,0);
       pushValue(tl_00,pTVar2);
-      i = i + 1;
     }
   }
   p_Var1 = Strnew_charp("</internal>");
@@ -22601,8 +22237,7 @@ void print_internal_information(html_feed_environ *henv)
   pushValue(tl_00,pTVar2);
   if (henv->buf == (TextLineList *)0x0) {
     if (henv->f != (FILE *)0x0) {
-      p = (TextLineListItem *)tl_00->first;
-      while (p != (TextLineListItem *)0x0) {
+      for (p = (TextLineListItem *)tl_00->first; p != (TextLineListItem *)0x0; p = p->next) {
         if (ExtHalfdump == '\0') {
           p_Var1 = p->ptr->line;
         }
@@ -22610,7 +22245,6 @@ void print_internal_information(html_feed_environ *henv)
           p_Var1 = wc_Str_conv(p->ptr->line,InnerCharset,DisplayCharset);
         }
         fprintf((FILE *)henv->f,"%s\n",p_Var1->ptr);
-        p = (TextLineListItem *)p->next;
       }
     }
   }
@@ -22734,7 +22368,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
       doc_charset = content_charset;
     }
     meta_charset = 0;
-    if (*(char *)&f->stream->field_0x14 != '\x04') {
+    if (f->stream->field_0x14 != '\x04') {
       piVar3 = newEncodedStream(f->stream,f->encoding);
       f->stream = piVar3;
     }
@@ -22900,17 +22534,11 @@ Str loadGopherDir(URLFile *uf,ParsedURL *pu,wc_ces *charset)
   Str p_Var2;
   char *pcVar3;
   char *pcVar4;
-  wc_ces *pwVar5;
-  int iVar6;
+  int iVar5;
+  Str p_Var6;
   Str p_Var7;
   Str p_Var8;
   Str p_Var9;
-  Str p_Var10;
-  wc_ces *pwVar11;
-  __jmp_buf_tag *stream;
-  code *n;
-  char *pcVar12;
-  undefined4 uVar13;
   wc_ces doc_charset;
   anon_subr_void_int *prevtrap;
   char *q;
@@ -22929,114 +22557,74 @@ Str loadGopherDir(URLFile *uf,ParsedURL *pu,wc_ces *charset)
   pcVar4 = file_unquote(p_Var2->ptr);
   p_Var2 = Strnew_charp(pcVar4);
   p_Var2 = convertLine((URLFile *)0x0,p_Var2,0,charset,doc_charset_00);
-  pwVar5 = (wc_ces *)html_quote(p_Var2->ptr);
-  uVar13 = 0;
-  pcVar12 = "</h1>\n<table>\n";
-  p = "</title>\n</head>\n<body>\n<h1>Index of ";
-  pcVar4 = "\">\n<title>";
-  pwVar11 = pwVar5;
-  p_Var2 = Strnew_m_charp("<html>\n<head>\n<base href=\"",pcVar3,"\">\n<title>",pwVar5,
-                          "</title>\n</head>\n<body>\n<h1>Index of ",pwVar5,"</h1>\n<table>\n",0);
-  n = (code *)0x1;
-  stream = AbortLoading;
-  iVar6 = __sigsetjmp(AbortLoading,1);
-  if (iVar6 == 0) {
-    if (TrapSignal != '\0') {
-      n = KeyAbort;
-      prevtrap = mySignal(2,KeyAbort);
-      if (fmInitialized != '\0') {
-        term_cbreak();
-      }
+  pcVar4 = html_quote(p_Var2->ptr);
+  p_Var2 = Strnew_m_charp("<html>\n<head>\n<base href=\"",pcVar3,"\">\n<title>",pcVar4,
+                          "</title>\n</head>\n<body>\n<h1>Index of ",pcVar4,"</h1>\n<table>\n",0);
+  iVar5 = __sigsetjmp(AbortLoading,1);
+  if (iVar5 == 0) {
+    if ((TrapSignal != '\0') && (prevtrap = mySignal(2,KeyAbort), fmInitialized != '\0')) {
+      term_cbreak();
     }
-    while( true ) {
-      stream = (__jmp_buf_tag *)uf->stream;
-      p_Var7 = StrISgets((InputStream)stream);
-      if ((p_Var7->length == 0) ||
-         ((*p_Var7->ptr == '.' && ((p_Var7->ptr[1] == '\n' || (p_Var7->ptr[1] == '\r')))))) break;
-      pcVar4 = (char *)0x2;
-      pwVar5 = charset;
-      p = (char *)doc_charset_00;
-      p_Var7 = convertLine(uf,p_Var7,2,charset,doc_charset_00);
-      pcVar3 = p_Var7->ptr;
-      q = pcVar3;
-      while ((*q != '\0' && (*q != '\t'))) {
-        q = q + 1;
+    while ((p_Var6 = StrISgets(uf->stream), p_Var6->length != 0 &&
+           ((*p_Var6->ptr != '.' || ((p_Var6->ptr[1] != '\n' && (p_Var6->ptr[1] != '\r'))))))) {
+      p_Var6 = convertLine(uf,p_Var6,2,charset,doc_charset_00);
+      pcVar3 = p_Var6->ptr;
+      for (q = pcVar3; (*q != '\0' && (*q != '\t')); q = q + 1) {
       }
-      n = (code *)(q + -(int)pcVar3);
-      p_Var7 = Strnew_charp_n(pcVar3,(int)n);
+      p_Var6 = Strnew_charp_n(pcVar3,(int)q - (int)pcVar3);
       if (*q != '\0') {
         pcVar3 = q + 1;
-        q = pcVar3;
-        while ((*q != '\0' && (*q != '\t'))) {
-          q = q + 1;
+        for (q = pcVar3; (*q != '\0' && (*q != '\t')); q = q + 1) {
         }
-        n = (code *)(q + -(int)pcVar3);
-        p_Var8 = Strnew_charp_n(pcVar3,(int)n);
+        p_Var7 = Strnew_charp_n(pcVar3,(int)q - (int)pcVar3);
         if (*q != '\0') {
           pcVar3 = q + 1;
-          q = pcVar3;
-          while ((*q != '\0' && (*q != '\t'))) {
-            q = q + 1;
+          for (q = pcVar3; (*q != '\0' && (*q != '\t')); q = q + 1) {
           }
-          n = (code *)(q + -(int)pcVar3);
-          p_Var9 = Strnew_charp_n(pcVar3,(int)n);
+          p_Var8 = Strnew_charp_n(pcVar3,(int)q - (int)pcVar3);
           if (*q != '\0') {
             pcVar3 = q + 1;
-            q = pcVar3;
-            while ((((*q != '\0' && (*q != '\t')) && (*q != '\r')) && (*q != '\n'))) {
-              q = q + 1;
+            for (q = pcVar3; (((*q != '\0' && (*q != '\t')) && (*q != '\r')) && (*q != '\n'));
+                q = q + 1) {
             }
-            p_Var10 = Strnew_charp_n(pcVar3,(int)(q + -(int)pcVar3));
-            cVar1 = *p_Var7->ptr;
+            p_Var9 = Strnew_charp_n(pcVar3,(int)q - (int)pcVar3);
+            cVar1 = *p_Var6->ptr;
             if (cVar1 == 'g') {
               p = "[gif]";
             }
-            else {
-              if (cVar1 < 'h') {
-                if (cVar1 == '0') {
-                  p = "[text file]";
-                }
-                else {
-                  if (cVar1 == '1') {
-                    p = "[directory]";
-                  }
-                  else {
-LAB_0806f46f:
-                    p = "[unsupported]";
-                  }
-                }
+            else if (cVar1 < 'h') {
+              if (cVar1 == '0') {
+                p = "[text file]";
+              }
+              else if (cVar1 == '1') {
+                p = "[directory]";
               }
               else {
-                if (cVar1 == 'm') {
-                  p = "[message]";
-                }
-                else {
-                  if (cVar1 == 's') {
-                    p = "[sound]";
-                  }
-                  else {
-                    if (cVar1 != 'h') goto LAB_0806f46f;
-                    p = "[HTML]";
-                  }
-                }
+LAB_0806f46f:
+                p = "[unsupported]";
               }
             }
-            p_Var8 = Strnew_m_charp("gopher://",p_Var9->ptr,&DAT_080ca9fb,p_Var10->ptr,&DAT_080ca9f9
-                                    ,p_Var8->ptr,0);
-            pcVar3 = p_Var8->ptr;
-            pwVar11 = (wc_ces *)html_quote(p_Var7->ptr + 1);
+            else if (cVar1 == 'm') {
+              p = "[message]";
+            }
+            else if (cVar1 == 's') {
+              p = "[sound]";
+            }
+            else {
+              if (cVar1 != 'h') goto LAB_0806f46f;
+              p = "[HTML]";
+            }
+            p_Var7 = Strnew_m_charp("gopher://",p_Var8->ptr,&DAT_080ca9fb,p_Var9->ptr,&DAT_080ca9f9,
+                                    p_Var7->ptr,0);
+            pcVar3 = p_Var7->ptr;
+            pcVar4 = html_quote(p_Var6->ptr + 1);
             f_ces = InnerCharset;
             t_ces = *charset;
-            p_Var7 = Strnew_charp(pcVar3);
-            p_Var7 = wc_Str_conv_strict(p_Var7,f_ces,t_ces);
-            pcVar3 = url_quote(p_Var7->ptr);
-            pcVar4 = html_quote(pcVar3);
-            uVar13 = 0;
-            pcVar12 = "</a>\n";
-            pwVar5 = (wc_ces *)&DAT_080c9bbb;
-            pcVar3 = "<a href=\"";
-            Strcat_m_charp(p_Var2);
-            n = (code *)pcVar3;
+            p_Var6 = Strnew_charp(pcVar3);
+            p_Var6 = wc_Str_conv_strict(p_Var6,f_ces,t_ces);
+            pcVar3 = url_quote(p_Var6->ptr);
+            pcVar3 = html_quote(pcVar3);
+            Strcat_m_charp(p_Var2,"<a href=\"",pcVar3,&DAT_080c9bbb,p,pcVar4,"</a>\n",0);
           }
         }
       }
@@ -23044,7 +22632,7 @@ LAB_0806f46f:
   }
   if (TrapSignal != '\0') {
     if (fmInitialized != '\0') {
-      term_raw(stream,n,pcVar4,pwVar5,p,pwVar11,pcVar12,uVar13);
+      term_raw();
     }
     if (prevtrap != (anon_subr_void_int *)0x0) {
       mySignal(2,prevtrap);
@@ -23132,7 +22720,7 @@ _end:
      ((uf->scheme != '\x04' || (newBuf->mailcap != (mailcap *)0x0)))) {
     tmpf = tmpfname(1,(char *)0x0);
     src = (FILE *)fopen(tmpf->ptr,"w");
-    if (src != (FILE *)0x0) {
+    if ((FILE *)src != (FILE *)0x0) {
       newBuf->sourcefile = tmpf->ptr;
     }
   }
@@ -23144,7 +22732,7 @@ _end:
     doc_charset = content_charset;
   }
   nlines = 0;
-  if (*(char *)&uf->stream->field_0x14 != '\x04') {
+  if (uf->stream->field_0x14 != '\x04') {
     piVar3 = newEncodedStream(uf->stream,uf->encoding);
     uf->stream = piVar3;
   }
@@ -23211,7 +22799,7 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
   char *pcVar4;
   Str s;
   Str p_Var5;
-  FILE *src_00;
+  FILE *__stream;
   stat st;
   Image image;
   URLFile f;
@@ -23234,7 +22822,7 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
     if ((TrapSignal != '\0') && (prevtrap = mySignal(2,KeyAbort), fmInitialized != '\0')) {
       term_cbreak();
     }
-    if (*(char *)&uf->stream->field_0x14 != '\x04') {
+    if (uf->stream->field_0x14 != '\x04') {
       piVar3 = newEncodedStream(uf->stream,uf->encoding);
       uf->stream = piVar3;
     }
@@ -23289,13 +22877,13 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
   pcVar4 = html_quote(image.url);
   s = Sprintf("<img src=\"%s\"><br><br>",pcVar4);
   p_Var5 = tmpfname(1,".html");
-  src_00 = (FILE *)fopen(p_Var5->ptr,"w");
+  __stream = fopen(p_Var5->ptr,"w");
   newBuf->mailcap_source = p_Var5->ptr;
   piVar3 = newStrStream(s);
   init_stream(&f,4,piVar3);
-  loadHTMLstream(&f,newBuf,src_00,1);
-  if (src_00 != (FILE *)0x0) {
-    fclose((FILE *)src_00);
+  loadHTMLstream(&f,newBuf,(FILE *)__stream,1);
+  if (__stream != (FILE *)0x0) {
+    fclose(__stream);
   }
   newBuf->topLine = newBuf->firstLine;
   newBuf->lastLine = newBuf->currentLine;
@@ -23326,14 +22914,14 @@ Str conv_symbol(Line *l)
   ep = p + l->len;
   pr = l->propBuf;
   symbol = (char **)0x0;
-  while (p < ep) {
+  for (; p < ep; p = p + 1) {
     if ((short)*pr < 0) {
       wVar3 = wtf_get_code((wc_uchar *)p);
       c = ((byte)wVar3 & 0x7f) - 0x20;
       bVar1 = WTF_LEN_MAP[(byte)*p];
       if (tmp == (Str)0x0) {
         tmp = Strnew_size(l->len);
-        Strcopy_charp_n(tmp,l->lineBuf,(int)(p + -(int)l->lineBuf));
+        Strcopy_charp_n(tmp,l->lineBuf,(int)p - (int)l->lineBuf);
         if ((*pr & 0x800) == 0) {
           w = 1;
         }
@@ -23346,18 +22934,15 @@ Str conv_symbol(Line *l)
       p = p + (bVar1 - 1);
       pr = pr + (bVar1 - 1);
     }
-    else {
-      if (tmp != (Str)0x0) {
-        if (tmp->area_size <= tmp->length + 1) {
-          Strgrow(tmp);
-        }
-        iVar2 = tmp->length;
-        tmp->ptr[iVar2] = *p;
-        tmp->length = iVar2 + 1;
-        tmp->ptr[tmp->length] = '\0';
+    else if (tmp != (Str)0x0) {
+      if (tmp->area_size <= tmp->length + 1) {
+        Strgrow(tmp);
       }
+      iVar2 = tmp->length;
+      tmp->ptr[iVar2] = *p;
+      tmp->length = iVar2 + 1;
+      tmp->ptr[tmp->length] = '\0';
     }
-    p = p + 1;
     pr = pr + 1;
   }
   if (tmp == (Str)0x0) {
@@ -23386,7 +22971,7 @@ void _saveBuffer(Buffer *buf,Line *l,FILE *f,int cont)
   }
   iVar1 = is_html_type(buf->type);
   while( true ) {
-    while (l != (Line *)0x0) {
+    for (; l != (Line *)0x0; l = l->next) {
       if (iVar1 == 0) {
         tmp = Strnew_charp_n(l->lineBuf,l->len);
       }
@@ -23399,7 +22984,6 @@ void _saveBuffer(Buffer *buf,Line *l,FILE *f,int cont)
          ((cont == 0 || ((l->next == (_Line *)0x0 || (l->next->bpos == 0)))))) {
         _IO_putc(10,(_IO_FILE *)f);
       }
-      l = (Line *)l->next;
     }
     if ((buf->pagerSource == (InputStream)0x0) || ((buf->bufferprop & 0x40U) != 0)) break;
     l = getNextPage(buf,PagerMax);
@@ -23426,9 +23010,7 @@ void saveBufferBody(Buffer *buf,FILE *f,int cont)
 {
   Line *l;
   
-  l = buf->firstLine;
-  while ((l != (Line *)0x0 && (l->real_linenumber == 0))) {
-    l = (Line *)l->next;
+  for (l = buf->firstLine; (l != (Line *)0x0 && (l->real_linenumber == 0)); l = l->next) {
   }
   _saveBuffer(buf,l,f,cont);
   return;
@@ -23451,12 +23033,12 @@ Buffer * loadcmdout(char *cmd,anon_subr_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadp
     pBVar1 = (Buffer *)0x0;
   }
   else {
-    f_00 = (FILE *)popen(cmd,"r");
+    f_00 = popen(cmd,"r");
     if (f_00 == (FILE *)0x0) {
       pBVar1 = (Buffer *)0x0;
     }
     else {
-      stream = newFileStream(f_00,pclose);
+      stream = newFileStream((FILE *)f_00,pclose);
       init_stream(&uf,0xff,stream);
       pBVar1 = (*loadproc)(&uf,defaultbuf);
       ISclose(uf.stream);
@@ -23511,7 +23093,7 @@ Buffer * getpipe(char *cmd)
     pBVar1 = (Buffer *)0x0;
   }
   else {
-    f_00 = (FILE *)popen(cmd,"r");
+    f_00 = popen(cmd,"r");
     if (f_00 == (FILE *)0x0) {
       pBVar1 = (Buffer *)0x0;
     }
@@ -23527,7 +23109,7 @@ Buffer * getpipe(char *cmd)
         iVar2 = 0;
       }
       pBVar1 = newBuffer(iVar2);
-      piVar3 = newFileStream(f_00,pclose);
+      piVar3 = newFileStream((FILE *)f_00,pclose);
       pBVar1->pagerSource = piVar3;
       pBVar1->filename = cmd;
       f_ces = SystemCharset;
@@ -23652,7 +23234,7 @@ Buffer * openGeneralPagerBuffer(InputStream stream)
                                                                                      uf._0_4_)))))))
                            ,"-",t,&buf,t_buf);
         if (iVar1 == 0) {
-          if (*(char *)&stream->field_0x14 != '\x04') {
+          if (stream->field_0x14 != '\x04') {
             stream = newEncodedStream(stream,uf.encoding);
           }
           buf = openPagerBuffer(stream,t_buf);
@@ -23676,7 +23258,7 @@ Buffer * openGeneralPagerBuffer(InputStream stream)
       }
     }
     else {
-      if (*(char *)&stream->field_0x14 != '\x04') {
+      if (stream->field_0x14 != '\x04') {
         stream = newEncodedStream(stream,uf.encoding);
       }
       buf = openPagerBuffer(stream,t_buf);
@@ -23773,8 +23355,7 @@ Line * getNextPage(Buffer *buf,int plen)
         term_cbreak();
       }
       init_stream(&uf,0xff,(InputStream)0x0);
-      i = 0;
-      while (i < plen) {
+      for (i = 0; i < plen; i = i + 1) {
         lineBuf2 = StrmyISgets(buf->pagerSource);
         f_ces = SystemCharset;
         t_ces = InnerCharset;
@@ -23830,15 +23411,15 @@ LAB_08070aaf:
             l = buf->firstLine;
             do {
               if (top == l) {
-                top = (Line *)l->next;
+                top = l->next;
               }
               if (cur == l) {
-                cur = (Line *)l->next;
+                cur = l->next;
               }
               if (last == l) {
                 last = (Line *)0x0;
               }
-              l = (Line *)l->next;
+              l = l->next;
             } while ((l != (Line *)0x0) && (l->bpos != 0));
             buf->firstLine = l;
             buf->firstLine->prev = (_Line *)0x0;
@@ -23854,7 +23435,6 @@ LAB_08070aaf:
           i = i + -1;
           squeeze_flag = 1;
         }
-        i = i + 1;
       }
     }
     if (TrapSignal != '\0') {
@@ -23873,10 +23453,8 @@ LAB_08070aaf:
     if (last == (Line *)0x0) {
       last = buf->firstLine;
     }
-    else {
-      if ((last != (Line *)0x0) && ((last->next != (_Line *)0x0 || (squeeze_flag == 0)))) {
-        last = (Line *)last->next;
-      }
+    else if ((last != (Line *)0x0) && ((last->next != (_Line *)0x0 || (squeeze_flag == 0)))) {
+      last = last->next;
     }
   }
   return last;
@@ -23906,7 +23484,7 @@ int save2tmp(URLFile uf,char *tmpf)
   trbyte._4_4_ = 0;
   prevtrap = (anon_subr_void_int *)0x0;
   ff = (FILE *)fopen(tmpf,"wb");
-  if (ff == (FILE *)0x0) {
+  if ((FILE *)ff == (FILE *)0x0) {
     iVar2 = -1;
   }
   else {
@@ -23921,27 +23499,21 @@ int save2tmp(URLFile uf,char *tmpf)
         while( true ) {
           iVar2 = ISgetc(uf.stream);
           c = (char)iVar2;
-          if (*(char *)&(uf.stream)->field_0x15 != '\0') break;
+          if ((uf.stream)->field_0x15 != '\0') break;
           if (c == '\n') {
             if (check == 0) {
               check = 1;
             }
-            else {
-              if (check == 3) break;
-            }
+            else if (check == 3) break;
+          }
+          else if ((c == '.') && (check == 1)) {
+            check = 2;
+          }
+          else if ((c == '\r') && (check == 2)) {
+            check = 3;
           }
           else {
-            if ((c == '.') && (check == 1)) {
-              check = 2;
-            }
-            else {
-              if ((c == '\r') && (check == 2)) {
-                check = 3;
-              }
-              else {
-                check = 0;
-              }
-            }
+            check = 0;
           }
           _IO_putc((int)c,(_IO_FILE *)ff);
           bVar3 = 0xfffffffe < (uint)linelen;
@@ -24016,7 +23588,7 @@ int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf
       ext = (char *)0x0;
     }
     tmpf = tmpfname(0,ext);
-    if (*(char *)&(uf.stream)->field_0x14 != '\x04') {
+    if ((uf.stream)->field_0x14 != '\x04') {
       uf.stream = newEncodedStream(uf.stream,uf.encoding);
     }
     header = checkHeader(defaultbuf,"Content-Type:");
@@ -24642,7 +24214,7 @@ void uncompress_stream(URLFile *uf,char **src)
   expand_name = "gunzip";
   tmpf = (char *)0x0;
   ext = (char *)0x0;
-  if (*(char *)&uf->stream->field_0x14 != '\x04') {
+  if (uf->stream->field_0x14 != '\x04') {
     piVar1 = newEncodedStream(uf->stream,uf->encoding);
     uf->stream = piVar1;
     uf->encoding = '\0';
@@ -24754,33 +24326,29 @@ FILE * lessopen_stream(char *path)
   if (pcVar1 == (char *)0x0) {
     fp = (FILE *)0x0;
   }
-  else {
-    if (*pcVar1 == '\0') {
+  else if (*pcVar1 == '\0') {
+    fp = (FILE *)0x0;
+  }
+  else if (*pcVar1 == '|') {
+    pcVar2 = shell_quote(path);
+    p_Var3 = Sprintf(pcVar1 + 1,pcVar2);
+    fp = (FILE *)popen(p_Var3->ptr,"r");
+    if ((FILE *)fp == (FILE *)0x0) {
       fp = (FILE *)0x0;
     }
     else {
-      if (*pcVar1 == '|') {
-        pcVar2 = shell_quote(path);
-        p_Var3 = Sprintf(pcVar1 + 1,pcVar2);
-        fp = (FILE *)popen(p_Var3->ptr,"r");
-        if (fp == (FILE *)0x0) {
-          fp = (FILE *)0x0;
-        }
-        else {
-          __c = _IO_getc((_IO_FILE *)fp);
-          if (__c == -1) {
-            fclose((FILE *)fp);
-            fp = (FILE *)0x0;
-          }
-          else {
-            ungetc(__c,(FILE *)fp);
-          }
-        }
-      }
-      else {
+      __c = _IO_getc((_IO_FILE *)fp);
+      if (__c == -1) {
+        fclose((FILE *)fp);
         fp = (FILE *)0x0;
       }
+      else {
+        ungetc(__c,(FILE *)fp);
+      }
     }
+  }
+  else {
+    fp = (FILE *)0x0;
   }
   return fp;
 }
@@ -24806,12 +24374,11 @@ char * guess_filename(char *file)
     if (*p == '#') {
       p = p + 1;
     }
-    while (*p != '\0') {
+    for (; *p != '\0'; p = p + 1) {
       if (((*p == '#') && (p[1] != '\0')) || (*p == '?')) {
         *p = '\0';
         return pcVar1;
       }
-      p = p + 1;
     }
   }
   return pcVar1;
@@ -24933,12 +24500,10 @@ void discardBuffer(Buffer *buf)
   
   deleteImage(buf);
   clearBuffer(buf);
-  i = 0;
-  while (i < 5) {
+  for (i = 0; i < 5; i = i + 1) {
     if (buf->linkBuffer[i] != (_Buffer *)0x0) {
       buf->linkBuffer[i]->linkBuffer[REV_LB[i]] = (_Buffer *)0x0;
     }
-    i = i + 1;
   }
   if (buf->savecache != (char *)0x0) {
     unlink(buf->savecache);
@@ -24980,13 +24545,11 @@ Buffer * namedBuffer(Buffer *first,char *name)
   
   iVar1 = strcmp(first->buffername,name);
   if (iVar1 != 0) {
-    buf = first;
-    while (buf->nextBuffer != (_Buffer *)0x0) {
+    for (buf = first; buf->nextBuffer != (_Buffer *)0x0; buf = buf->nextBuffer) {
       iVar1 = strcmp(buf->nextBuffer->buffername,name);
       if (iVar1 == 0) {
-        return (Buffer *)buf->nextBuffer;
+        return buf->nextBuffer;
       }
-      buf = (Buffer *)buf->nextBuffer;
     }
     first = (Buffer *)0x0;
   }
@@ -25004,14 +24567,14 @@ Buffer * deleteBuffer(Buffer *first,Buffer *delbuf)
   Buffer *buf;
   
   if ((first == delbuf) && (first->nextBuffer != (_Buffer *)0x0)) {
-    pBVar1 = (Buffer *)first->nextBuffer;
+    pBVar1 = first->nextBuffer;
     discardBuffer(first);
     first = pBVar1;
   }
   else {
     pBVar1 = prevBuffer(first,delbuf);
     if (pBVar1 != (Buffer *)0x0) {
-      buf_00 = (Buffer *)pBVar1->nextBuffer;
+      buf_00 = pBVar1->nextBuffer;
       pBVar1->nextBuffer = buf_00->nextBuffer;
       discardBuffer(buf_00);
     }
@@ -25028,23 +24591,20 @@ Buffer * replaceBuffer(Buffer *first,Buffer *delbuf,Buffer *newbuf)
   Buffer *buf;
   
   if (delbuf == (Buffer *)0x0) {
-    newbuf->nextBuffer = (_Buffer *)first;
+    newbuf->nextBuffer = first;
+  }
+  else if (first == delbuf) {
+    newbuf->nextBuffer = delbuf->nextBuffer;
+    discardBuffer(delbuf);
   }
   else {
-    if (first == delbuf) {
+    if ((delbuf != (Buffer *)0x0) && (pBVar1 = prevBuffer(first,delbuf), pBVar1 != (Buffer *)0x0)) {
+      pBVar1->nextBuffer = newbuf;
       newbuf->nextBuffer = delbuf->nextBuffer;
       discardBuffer(delbuf);
+      return first;
     }
-    else {
-      if ((delbuf != (Buffer *)0x0) && (pBVar1 = prevBuffer(first,delbuf), pBVar1 != (Buffer *)0x0))
-      {
-        pBVar1->nextBuffer = (_Buffer *)newbuf;
-        newbuf->nextBuffer = delbuf->nextBuffer;
-        discardBuffer(delbuf);
-        return first;
-      }
-      newbuf->nextBuffer = (_Buffer *)first;
-    }
+    newbuf->nextBuffer = first;
   }
   return newbuf;
 }
@@ -25059,13 +24619,11 @@ Buffer * nthBuffer(Buffer *firstbuf,int n)
   
   buf = firstbuf;
   if (-1 < n) {
-    i = 0;
-    while (i < n) {
+    for (i = 0; i < n; i = i + 1) {
       if (buf == (Buffer *)0x0) {
         return (Buffer *)0x0;
       }
-      buf = (Buffer *)buf->nextBuffer;
-      i = i + 1;
+      buf = buf->nextBuffer;
     }
   }
   return buf;
@@ -25156,27 +24714,23 @@ void gotoLine(Buffer *buf,int n)
       buf->currentLine = l;
       buf->topLine = buf->currentLine;
     }
+    else if (buf->lastLine->linenumber < n) {
+      pLVar2 = buf->lastLine;
+      sprintf(msg,"Last line is #%ld",buf->lastLine->linenumber);
+      set_delayed_message(msg);
+      buf->currentLine = pLVar2;
+      pLVar2 = lineSkip(buf,buf->currentLine,1 - buf->LINES,0);
+      buf->topLine = pLVar2;
+    }
     else {
-      if (buf->lastLine->linenumber < n) {
-        pLVar2 = buf->lastLine;
-        sprintf(msg,"Last line is #%ld",buf->lastLine->linenumber);
-        set_delayed_message(msg);
-        buf->currentLine = pLVar2;
-        pLVar2 = lineSkip(buf,buf->currentLine,1 - buf->LINES,0);
-        buf->topLine = pLVar2;
-      }
-      else {
-        while (l != (Line *)0x0) {
-          if (n <= l->linenumber) {
-            buf->currentLine = l;
-            if ((n < buf->topLine->linenumber) || (buf->topLine->linenumber + (int)buf->LINES <= n))
-            {
-              pLVar2 = lineSkip(buf,l,~(int)buf->LINES / 2,0);
-              buf->topLine = pLVar2;
-            }
-            break;
+      for (; l != (Line *)0x0; l = l->next) {
+        if (n <= l->linenumber) {
+          buf->currentLine = l;
+          if ((n < buf->topLine->linenumber) || (buf->topLine->linenumber + (int)buf->LINES <= n)) {
+            pLVar2 = lineSkip(buf,l,~(int)buf->LINES / 2,0);
+            buf->topLine = pLVar2;
           }
-          l = (Line *)l->next;
+          break;
         }
       }
     }
@@ -25217,27 +24771,24 @@ void gotoRealLine(Buffer *buf,int n)
       buf->currentLine = l;
       buf->topLine = buf->currentLine;
     }
+    else if (buf->lastLine->real_linenumber < n) {
+      pLVar2 = buf->lastLine;
+      sprintf(msg,"Last line is #%ld",buf->lastLine->real_linenumber);
+      set_delayed_message(msg);
+      buf->currentLine = pLVar2;
+      pLVar2 = lineSkip(buf,buf->currentLine,1 - buf->LINES,0);
+      buf->topLine = pLVar2;
+    }
     else {
-      if (buf->lastLine->real_linenumber < n) {
-        pLVar2 = buf->lastLine;
-        sprintf(msg,"Last line is #%ld",buf->lastLine->real_linenumber);
-        set_delayed_message(msg);
-        buf->currentLine = pLVar2;
-        pLVar2 = lineSkip(buf,buf->currentLine,1 - buf->LINES,0);
-        buf->topLine = pLVar2;
-      }
-      else {
-        while (l != (Line *)0x0) {
-          if (n <= l->real_linenumber) {
-            buf->currentLine = l;
-            if ((n < buf->topLine->real_linenumber) ||
-               (buf->topLine->real_linenumber + (int)buf->LINES <= n)) {
-              pLVar2 = lineSkip(buf,l,~(int)buf->LINES / 2,0);
-              buf->topLine = pLVar2;
-            }
-            break;
+      for (; l != (Line *)0x0; l = l->next) {
+        if (n <= l->real_linenumber) {
+          buf->currentLine = l;
+          if ((n < buf->topLine->real_linenumber) ||
+             (buf->topLine->real_linenumber + (int)buf->LINES <= n)) {
+            pLVar2 = lineSkip(buf,l,~(int)buf->LINES / 2,0);
+            buf->topLine = pLVar2;
           }
-          l = (Line *)l->next;
+          break;
         }
       }
     }
@@ -25275,7 +24826,7 @@ LAB_080733bb:
       standend();
       move(c,0);
       refresh();
-      return (Buffer *)buf->nextBuffer;
+      return buf->nextBuffer;
     }
     if (buf == current) {
       c = i;
@@ -25296,7 +24847,7 @@ LAB_080733bb:
       clrtobotx();
       goto LAB_080733bb;
     }
-    buf = (Buffer *)buf->nextBuffer;
+    buf = buf->nextBuffer;
     i = i + 1;
   } while( true );
 }
@@ -25324,13 +24875,11 @@ Buffer * selectBuffer(Buffer *firstbuf,Buffer *currentbuf,char *selectchar)
   iVar3 = LINES + -1;
   cpoint = 0;
   i = 0;
-  buf = firstbuf;
-  while (iVar2 = i, buf != (Buffer *)0x0) {
+  for (buf = firstbuf; iVar2 = i, buf != (Buffer *)0x0; buf = buf->nextBuffer) {
     if (buf == currentbuf) {
       cpoint = i;
     }
     i = i + 1;
-    buf = (Buffer *)buf->nextBuffer;
   }
   if (cpoint < iVar3) {
     topbuf = firstbuf;
@@ -25353,22 +24902,16 @@ Buffer * selectBuffer(Buffer *firstbuf,Buffer *currentbuf,char *selectchar)
         if (c == 'B') {
           c = 'j';
         }
-        else {
-          if (c < 'C') {
-            if (c == 'A') {
-              c = 'k';
-            }
+        else if (c < 'C') {
+          if (c == 'A') {
+            c = 'k';
           }
-          else {
-            if (c == 'C') {
-              c = ' ';
-            }
-            else {
-              if (c == 'D') {
-                c = 'B';
-              }
-            }
-          }
+        }
+        else if (c == 'C') {
+          c = ' ';
+        }
+        else if (c == 'D') {
+          c = 'B';
         }
       }
     }
@@ -25403,18 +24946,16 @@ LAB_080735eb:
     if (c < '\x11') {
       if (c != '\x0e') goto LAB_080736cc;
     }
-    else {
-      if (c != 'j') {
-        if (c == 'k') goto LAB_080735eb;
+    else if (c != 'j') {
+      if (c == 'k') goto LAB_080735eb;
 LAB_080736cc:
-        *selectchar = c;
-        return currentbuf;
-      }
+      *selectchar = c;
+      return currentbuf;
     }
     if (iVar1 + -2 <= spoint) {
       if (cpoint < iVar2 + -1) {
         topbuf = currentbuf;
-        current = (Buffer *)currentbuf->nextBuffer;
+        current = currentbuf->nextBuffer;
         cpoint = cpoint + 1;
         spoint = 1;
         listBuffer(currentbuf,current);
@@ -25424,7 +24965,7 @@ LAB_080736cc:
     }
     if (currentbuf->nextBuffer != (_Buffer *)0x0) {
       writeBufferName(currentbuf,spoint);
-      currentbuf = (Buffer *)currentbuf->nextBuffer;
+      currentbuf = currentbuf->nextBuffer;
       cpoint = cpoint + 1;
       spoint = spoint + 1;
       standout();
@@ -25538,8 +25079,7 @@ void reshapeBuffer(Buffer *buf)
         if ((buf->firstLine != (Line *)0x0) && (sbuf.firstLine != (Line *)0x0)) {
           cur = sbuf.currentLine;
           buf->pos = sbuf.pos + (sbuf.currentLine)->bpos;
-          while ((cur->bpos != 0 && (cur->prev != (_Line *)0x0))) {
-            cur = (Line *)cur->prev;
+          for (; (cur->bpos != 0 && (cur->prev != (_Line *)0x0)); cur = cur->prev) {
           }
           if (cur->real_linenumber < 1) {
             gotoLine(buf,cur->linenumber);
@@ -25601,9 +25141,7 @@ Buffer * prevBuffer(Buffer *first,Buffer *buf)
 {
   Buffer *b;
   
-  b = first;
-  while ((b != (Buffer *)0x0 && ((Buffer *)b->nextBuffer != buf))) {
-    b = (Buffer *)b->nextBuffer;
+  for (b = first; (b != (Buffer *)0x0 && (b->nextBuffer != buf)); b = b->nextBuffer) {
   }
   return b;
 }
@@ -25625,7 +25163,7 @@ int writeBufferCache(Buffer *buf)
       tmp = tmpfname(3,(char *)0x0);
       buf->savecache = tmp->ptr;
       cache = (FILE *)fopen(buf->savecache,"w");
-      if (cache != (FILE *)0x0) {
+      if ((FILE *)cache != (FILE *)0x0) {
         sVar1 = fwrite(&buf->currentLine->linenumber,4,1,(FILE *)cache);
         if ((sVar1 != 0) &&
            (sVar1 = fwrite(&buf->topLine->linenumber,4,1,(FILE *)cache), sVar1 != 0)) {
@@ -25646,13 +25184,13 @@ int writeBufferCache(Buffer *buf)
                 ((sVar1 = fwrite(l->lineBuf,1,l->size,(FILE *)cache), sVar1 < (uint)l->size ||
                  (sVar1 = fwrite(l->propBuf,2,l->size,(FILE *)cache), sVar1 < (uint)l->size))))))
             break;
-            colorflag = ZEXT14(l->colorBuf != (Linecolor *)0x0);
+            colorflag = (int)(l->colorBuf != (Linecolor *)0x0);
             sVar1 = fwrite(&colorflag,4,1,(FILE *)cache);
             if ((sVar1 == 0) ||
                (((colorflag != 0 && (l->bpos == 0)) &&
                 (sVar1 = fwrite(l->colorBuf,1,l->size,(FILE *)cache), sVar1 < (uint)l->size))))
             break;
-            l = (Line *)l->next;
+            l = l->next;
           }
         }
         fclose((FILE *)cache);
@@ -25692,7 +25230,7 @@ int readBufferCache(Buffer *buf)
   }
   else {
     cache = (FILE *)fopen(buf->savecache,"r");
-    if (((cache == (FILE *)0x0) || (sVar2 = fread(&clnum,4,1,(FILE *)cache), sVar2 == 0)) ||
+    if ((((FILE *)cache == (FILE *)0x0) || (sVar2 = fread(&clnum,4,1,(FILE *)cache), sVar2 == 0)) ||
        (sVar2 = fread(&tlnum,4,1,(FILE *)cache), sVar2 == 0)) {
       buf->savecache = (char *)0x0;
       iVar1 = -1;
@@ -25702,12 +25240,12 @@ int readBufferCache(Buffer *buf)
         lnum = lnum + 1;
         prevl = l;
         l = (Line *)GC_malloc(0x34);
-        l->prev = (_Line *)prevl;
+        l->prev = prevl;
         if (prevl == (Line *)0x0) {
           buf->firstLine = l;
         }
         else {
-          prevl->next = (_Line *)l;
+          prevl->next = l;
         }
         l->linenumber = lnum;
         if (lnum == clnum) {
@@ -25743,15 +25281,13 @@ int readBufferCache(Buffer *buf)
         if (colorflag == 0) {
           l->colorBuf = (Linecolor *)0x0;
         }
+        else if (l->bpos == 0) {
+          pLVar5 = (Linecolor *)GC_malloc_atomic(l->size);
+          l->colorBuf = pLVar5;
+          fread(l->colorBuf,1,l->size,(FILE *)cache);
+        }
         else {
-          if (l->bpos == 0) {
-            pLVar5 = (Linecolor *)GC_malloc_atomic(l->size);
-            l->colorBuf = pLVar5;
-            fread(l->colorBuf,1,l->size,(FILE *)cache);
-          }
-          else {
-            l->colorBuf = basel->colorBuf + l->bpos;
-          }
+          l->colorBuf = basel->colorBuf + l->bpos;
         }
       }
       buf->lastLine = prevl;
@@ -25885,14 +25421,12 @@ void effect_active_start(void)
   if (useColor == 0) {
     bold();
   }
+  else if (useActiveColor == 0) {
+    underline();
+  }
   else {
-    if (useActiveColor == 0) {
-      underline();
-    }
-    else {
-      setfcolor(active_color);
-      underline();
-    }
+    setfcolor(active_color);
+    underline();
   }
   return;
 }
@@ -25905,14 +25439,12 @@ void effect_active_end(void)
   if (useColor == 0) {
     boldend();
   }
+  else if (useActiveColor == 0) {
+    underlineend();
+  }
   else {
-    if (useActiveColor == 0) {
-      underlineend();
-    }
-    else {
-      setfcolor(basic_color);
-      underlineend();
-    }
+    setfcolor(basic_color);
+    underlineend();
   }
   return;
 }
@@ -25999,12 +25531,10 @@ Str make_lastline_link(Buffer *buf,char *title,char *url)
   l = COLS + -1;
   if ((title != (char *)0x0) && (*title != '\0')) {
     s = Strnew_m_charp("[",title,&DAT_080cac38,0);
-    p = s->ptr;
-    while (*p != '\0') {
+    for (p = s->ptr; *p != '\0'; p = p + 1) {
       if (((MYCTYPE_MAP[(byte)*p] & 1) != 0) || ((MYCTYPE_MAP[(byte)*p] & 2) != 0)) {
         *p = ' ';
       }
-      p = p + 1;
     }
     if (url != (char *)0x0) {
       Strcat_charp(s," ");
@@ -26036,17 +25566,13 @@ Str make_lastline_link(Buffer *buf,char *title,char *url)
       if (s == (Str)0x0) {
         s = Strnew_size(COLS);
       }
-      i = (l + -2) / 2;
-      while ((i != 0 && ((pr[i] & 0x400) != 0))) {
-        i = i + -1;
+      for (i = (l + -2) / 2; (i != 0 && ((pr[i] & 0x400) != 0)); i = i + -1) {
       }
       Strcat_charp_n(s,u->ptr,i);
       Strcat_charp(s,"..");
       iVar1 = wtf_strwidth((wc_uchar *)u->ptr);
       iVar2 = wtf_strwidth((wc_uchar *)s->ptr);
-      i = iVar1 + iVar2 + (1 - COLS);
-      while ((i < u->length && ((pr[i] & 0x400) != 0))) {
-        i = i + 1;
+      for (i = iVar1 + iVar2 + (1 - COLS); (i < u->length && ((pr[i] & 0x400) != 0)); i = i + 1) {
       }
       Strcat_charp(s,u->ptr + i);
       p_Var3 = s;
@@ -26148,8 +25674,7 @@ Str make_lastline_message(Buffer *buf)
     l = (COLS + -3) - sl;
     iVar6 = wtf_strwidth((wc_uchar *)msg->ptr);
     if (l < iVar6) {
-      p_1 = msg->ptr;
-      while (*p_1 != '\0') {
+      for (p_1 = msg->ptr; *p_1 != '\0'; p_1 = p_1 + WTF_LEN_MAP[(byte)*p_1]) {
         if (WcOption.use_wide == '\0') {
           bVar7 = WTF_WIDTH_MAP[(byte)*p_1] != '\0';
         }
@@ -26158,9 +25683,8 @@ Str make_lastline_message(Buffer *buf)
         }
         l = l - (uint)bVar7;
         if (l < 0) break;
-        p_1 = p_1 + WTF_LEN_MAP[(byte)*p_1];
       }
-      Strtruncate(msg,(int)(p_1 + -(int)msg->ptr));
+      Strtruncate(msg,(int)p_1 - (int)msg->ptr);
     }
     Strcat_charp(msg,"> ");
     Strcat(msg,s);
@@ -26317,27 +25841,26 @@ void drawAnchorCursor0(Buffer *buf,AnchorList *al,int hseq,int prevhseq,int tlin
     if (al->nanchor <= j) {
       return;
     }
-    pAVar1 = al->anchors + j;
-    if (tline <= (pAVar1->start).line) {
-      if (eline <= (pAVar1->start).line) {
+    pAVar1 = al->anchors;
+    if (tline <= pAVar1[j].start.line) {
+      if (eline <= pAVar1[j].start.line) {
         return;
       }
       while( true ) {
         if (l == (Line *)0x0) {
           return;
         }
-        if (l->linenumber == (pAVar1->start).line) break;
-        l = (Line *)l->next;
+        if (l->linenumber == pAVar1[j].start.line) break;
+        l = l->next;
       }
-      if ((hseq < 0) || (pAVar1->hseq != hseq)) {
-        if ((-1 < prevhseq) && ((pAVar1->hseq == prevhseq && (active != 0)))) {
-          redrawLineRegion(buf,l,(l->linenumber - tline) + (int)buf->rootY,(pAVar1->start).pos,
-                           (pAVar1->end).pos);
+      if ((hseq < 0) || (pAVar1[j].hseq != hseq)) {
+        if ((-1 < prevhseq) && ((pAVar1[j].hseq == prevhseq && (active != 0)))) {
+          redrawLineRegion(buf,l,(l->linenumber - tline) + (int)buf->rootY,pAVar1[j].start.pos,
+                           pAVar1[j].end.pos);
         }
       }
       else {
-        i = (pAVar1->start).pos;
-        while (i < (pAVar1->end).pos) {
+        for (i = pAVar1[j].start.pos; i < pAVar1[j].end.pos; i = i + 1) {
           if ((l->propBuf[i] & 0x70) != 0) {
             if (active == 0) {
               l->propBuf[i] = l->propBuf[i] & 0xff7f;
@@ -26346,11 +25869,10 @@ void drawAnchorCursor0(Buffer *buf,AnchorList *al,int hseq,int prevhseq,int tlin
               l->propBuf[i] = l->propBuf[i] | 0x80;
             }
           }
-          i = i + 1;
         }
         if (active != 0) {
-          redrawLineRegion(buf,l,(l->linenumber - tline) + (int)buf->rootY,(pAVar1->start).pos,
-                           (pAVar1->end).pos);
+          redrawLineRegion(buf,l,(l->linenumber - tline) + (int)buf->rootY,pAVar1[j].start.pos,
+                           pAVar1[j].end.pos);
         }
       }
     }
@@ -26423,8 +25945,7 @@ void redrawNLine(Buffer *buf,int n)
       addstr(mouse_action.menu_str);
     }
     clrtoeolx();
-    t = FirstTab;
-    while (t != (TabBuffer *)0x0) {
+    for (t = FirstTab; t != (TabBuffer *)0x0; t = t->nextTab) {
       move((int)t->y,(int)t->x1);
       if (t == CurrentTab) {
         bold();
@@ -26455,24 +25976,20 @@ void redrawNLine(Buffer *buf,int n)
       if (t == CurrentTab) {
         boldend();
       }
-      t = (TabBuffer *)t->nextTab;
     }
     move(LastTab->y + 1,0);
-    i = 0;
-    while (i < COLS) {
+    for (i = 0; i < COLS; i = i + 1) {
       addch('~');
-      i = i + 1;
     }
   }
   i = 0;
   l = buf->topLine;
-  while (i < buf->LINES) {
+  for (; i < buf->LINES; i = i + 1) {
     if ((buf->LINES - n <= i) || (-i != n && i <= -n)) {
       l = redrawLine(buf,l,buf->rootY + i);
     }
     if (l == (Line *)0x0) break;
-    i = i + 1;
-    l = (Line *)l->next;
+    l = l->next;
   }
   if (0 < n) {
     move(buf->rootY + i,0);
@@ -26481,13 +25998,11 @@ void redrawNLine(Buffer *buf,int n)
   if (((activeImage != 0) && (displayImage != 0)) && (buf->img != (AnchorList *)0x0)) {
     move((int)buf->cursorY + (int)buf->rootY,(int)buf->cursorX + (int)buf->rootX);
     i = 0;
-    l = buf->topLine;
-    while ((i < buf->LINES && (l != (Line *)0x0))) {
+    for (l = buf->topLine; (i < buf->LINES && (l != (Line *)0x0)); l = l->next) {
       if ((buf->LINES - n <= i) || (-i != n && i <= -n)) {
         redrawLineImage(buf,l,buf->rootY + i);
       }
       i = i + 1;
-      l = (Line *)l->next;
     }
     getAllImage(buf);
   }
@@ -26499,12 +26014,12 @@ void redrawNLine(Buffer *buf,int n)
 Line * redrawLine(Buffer *buf,Line *l,int i)
 
 {
-  char *pcVar1;
-  int iVar2;
+  int iVar1;
   int column_00;
-  int iVar3;
+  char *pcVar2;
+  Lineprop *pLVar3;
   int iVar4;
-  Lineprop *pLVar5;
+  int iVar5;
   Anchor *pAVar6;
   ParsedURL *current;
   Str p_Var7;
@@ -26530,7 +26045,7 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
   char tmp [16];
   
   local_84 = l;
-  iVar2 = *(int *)(in_GS_OFFSET + 0x14);
+  iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   column_00 = buf->currentColumn;
   vpos = -1;
   if (l == (Line *)0x0) {
@@ -26569,71 +26084,64 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
   }
   move(i,(int)buf->rootX);
   if (local_84->width < 0) {
-    iVar4 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,local_84->len,0,0);
-    local_84->width = iVar4;
+    iVar5 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,local_84->len,0,0);
+    local_84->width = iVar5;
   }
   if ((local_84->len == 0) || (local_84->width + -1 < column_00)) {
     clrtoeolx();
   }
   else {
-    iVar4 = columnPos(local_84,column_00);
-    pcVar1 = local_84->lineBuf + iVar4;
-    pLVar5 = local_84->propBuf + iVar4;
+    iVar5 = columnPos(local_84,column_00);
+    pcVar2 = local_84->lineBuf;
+    pLVar3 = local_84->propBuf;
     if ((useColor == 0) || (local_84->colorBuf == (Linecolor *)0x0)) {
       pc = (Linecolor *)0x0;
     }
     else {
-      pc = local_84->colorBuf + iVar4;
+      pc = local_84->colorBuf + iVar5;
     }
-    rcol = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar4,0,0);
-    j = 0;
-    while ((rcol - column_00 < (int)buf->COLS && (iVar4 + j < local_84->len))) {
+    rcol = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar5,0,0);
+    for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar5 + j < local_84->len)); j = j + len) {
       if ((useVisitedColor != 0) &&
-         (((vpos <= iVar4 + j && ((pLVar5[j] & 0x4000) == 0)) &&
-          (pAVar6 = retrieveAnchor(buf->href,local_84->linenumber,iVar4 + j),
+         (((vpos <= iVar5 + j && ((pLVar3[iVar5 + j] & 0x4000) == 0)) &&
+          (pAVar6 = retrieveAnchor(buf->href,local_84->linenumber,iVar5 + j),
           pAVar6 != (Anchor *)0x0)))) {
         current = baseURL(buf);
         parseURL2(pAVar6->url,&url,current);
         p_Var7 = parsedURL2Str(&url);
         pHVar8 = getHashHist(URLHist,p_Var7->ptr);
         if (pHVar8 != (HistItem *)0x0) {
-          k = (pAVar6->start).pos;
-          while (k < (pAVar6->end).pos) {
-            pLVar5[k - iVar4] =
-                 pLVar5[k - iVar4] & 0xff | (ushort)(byte)((uint)pLVar5[k - iVar4] >> 8) << 8 |
-                 0x4000;
-            k = k + 1;
+          for (k = (pAVar6->start).pos; k < (pAVar6->end).pos; k = k + 1) {
+            pLVar3[k] = pLVar3[k] & 0xff | (ushort)(byte)((uint)pLVar3[k] >> 8) << 8 | 0x4000;
           }
         }
         vpos = (pAVar6->end).pos;
       }
-      len = wtf_len((wc_uchar *)(pcVar1 + j));
-      iVar9 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar4 + j + len,0,0);
+      len = wtf_len((wc_uchar *)(pcVar2 + j + iVar5));
+      iVar9 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar5 + j + len,0,0);
       if ((int)buf->COLS < iVar9 - column_00) break;
       if (pc != (Linecolor *)0x0) {
         do_color(pc[j]);
       }
-      iVar3 = column_00;
+      iVar4 = column_00;
       if (rcol < column_00) {
-        while (rcol = iVar3, iVar3 = rcol, rcol < iVar9) {
+        while (rcol = iVar4, iVar4 = rcol, rcol < iVar9) {
           addChar(' ',0);
-          iVar3 = rcol + 1;
+          iVar4 = rcol + 1;
         }
       }
       else {
-        iVar3 = iVar9;
-        if (pcVar1[j] == '\t') {
-          while (rcol < iVar9) {
+        iVar4 = iVar9;
+        if (pcVar2[j + iVar5] == '\t') {
+          for (; rcol < iVar9; rcol = rcol + 1) {
             addChar(' ',0);
-            rcol = rcol + 1;
           }
         }
         else {
-          addMChar(pcVar1 + j,pLVar5[j],len);
+          addMChar(pcVar2 + j + iVar5,pLVar3[iVar5 + j],len);
         }
       }
-      rcol = iVar3;
-      j = j + len;
+      rcol = iVar4;
     }
     if (somode != 0) {
       somode = 0;
@@ -26687,7 +26195,7 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
     }
   }
 LAB_08075f17:
-  if (iVar2 == *(int *)(in_GS_OFFSET + 0x14)) {
+  if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
     return local_84;
   }
                     // WARNING: Subroutine does not return
@@ -26733,8 +26241,7 @@ Line * redrawLineImage(Buffer *buf,Line *l,int i)
     if ((l->len != 0) && (column_00 <= l->width + -1)) {
       iVar2 = columnPos(l,column_00);
       rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2,0,0);
-      j = 0;
-      while ((rcol - column_00 < (int)buf->COLS && (iVar2 + j < l->len))) {
+      for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar2 + j < l->len)); j = j + 1) {
         if (rcol - column_00 < 0) {
           rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2 + j + 1,0,0);
         }
@@ -26799,7 +26306,6 @@ Line * redrawLineImage(Buffer *buf,Line *l,int i)
           }
           rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2 + j + 1,0,0);
         }
-        j = j + 1;
       }
     }
   }
@@ -26812,10 +26318,10 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
 
 {
   char *pcVar1;
-  int iVar2;
+  Lineprop *pLVar2;
   int iVar3;
+  int iVar4;
   int pos_00;
-  Lineprop *pLVar4;
   Anchor *pAVar5;
   ParsedURL *current;
   Str p_Var6;
@@ -26838,15 +26344,15 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
   int pos;
   int j;
   
-  iVar3 = buf->currentColumn;
+  iVar4 = buf->currentColumn;
   vpos = -1;
   if (l == (Line *)0x0) {
-    iVar3 = 0;
+    iVar4 = 0;
   }
   else {
-    pos_00 = columnPos(l,iVar3);
-    pcVar1 = l->lineBuf + pos_00;
-    pLVar4 = l->propBuf + pos_00;
+    pos_00 = columnPos(l,iVar4);
+    pcVar1 = l->lineBuf;
+    pLVar2 = l->propBuf;
     if ((useColor == 0) || (l->colorBuf == (Linecolor *)0x0)) {
       pc = (Linecolor *)0x0;
     }
@@ -26854,10 +26360,9 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
       pc = l->colorBuf + pos_00;
     }
     rcol = calcPosition(l->lineBuf,l->propBuf,l->len,pos_00,0,0);
-    j = 0;
-    while ((rcol - iVar3 < (int)buf->COLS && (pos_00 + j < l->len))) {
+    for (j = 0; (rcol - iVar4 < (int)buf->COLS && (pos_00 + j < l->len)); j = j + len) {
       if ((useVisitedColor != 0) &&
-         (((vpos <= pos_00 + j && ((pLVar4[j] & 0x4000) == 0)) &&
+         (((vpos <= pos_00 + j && ((pLVar2[pos_00 + j] & 0x4000) == 0)) &&
           (pAVar5 = retrieveAnchor(buf->href,l->linenumber,pos_00 + j), pAVar5 != (Anchor *)0x0))))
       {
         current = baseURL(buf);
@@ -26865,47 +26370,39 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
         p_Var6 = parsedURL2Str(&url);
         pHVar7 = getHashHist(URLHist,p_Var6->ptr);
         if (pHVar7 != (HistItem *)0x0) {
-          k = (pAVar5->start).pos;
-          while (k < (pAVar5->end).pos) {
-            pLVar4[k - pos_00] =
-                 pLVar4[k - pos_00] & 0xff | (ushort)(byte)((uint)pLVar4[k - pos_00] >> 8) << 8 |
-                 0x4000;
-            k = k + 1;
+          for (k = (pAVar5->start).pos; k < (pAVar5->end).pos; k = k + 1) {
+            pLVar2[k] = pLVar2[k] & 0xff | (ushort)(byte)((uint)pLVar2[k] >> 8) << 8 | 0x4000;
           }
         }
         vpos = (pAVar5->end).pos;
       }
-      len = wtf_len((wc_uchar *)(pcVar1 + j));
+      len = wtf_len((wc_uchar *)(pcVar1 + j + pos_00));
       iVar8 = calcPosition(l->lineBuf,l->propBuf,l->len,pos_00 + j + len,0,0);
-      if ((int)buf->COLS < iVar8 - iVar3) break;
+      if ((int)buf->COLS < iVar8 - iVar4) break;
       if (pc != (Linecolor *)0x0) {
         do_color(pc[j]);
       }
-      iVar2 = iVar8;
+      iVar3 = iVar8;
       if ((bpos - pos_00 <= j) && (j < epos - pos_00)) {
-        if (rcol < iVar3) {
+        if (rcol < iVar4) {
           move(i,(int)buf->rootX);
-          rcol = iVar3;
-          while (iVar2 = rcol, rcol < iVar8) {
+          for (rcol = iVar4; iVar3 = rcol, rcol < iVar8; rcol = rcol + 1) {
             addChar(' ',0);
-            rcol = rcol + 1;
           }
         }
         else {
-          move(i,(rcol - iVar3) + (int)buf->rootX);
-          if (pcVar1[j] == '\t') {
-            while (rcol < iVar8) {
+          move(i,(rcol - iVar4) + (int)buf->rootX);
+          if (pcVar1[j + pos_00] == '\t') {
+            for (; rcol < iVar8; rcol = rcol + 1) {
               addChar(' ',0);
-              rcol = rcol + 1;
             }
           }
           else {
-            addMChar(pcVar1 + j,pLVar4[j],len);
+            addMChar(pcVar1 + j + pos_00,pLVar2[pos_00 + j],len);
           }
         }
       }
-      rcol = iVar2;
-      j = j + len;
+      rcol = iVar3;
     }
     if (somode != 0) {
       somode = 0;
@@ -26954,9 +26451,9 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
     if (color_mode != '\0') {
       do_color('\0');
     }
-    iVar3 = rcol - iVar3;
+    iVar4 = rcol - iVar4;
   }
-  return iVar3;
+  return iVar4;
 }
 
 
@@ -27067,10 +26564,8 @@ void do_color(Linecolor c)
   if ((char)c < '\0') {
     setbcolor(c >> 4 & 7);
   }
-  else {
-    if ((char)color_mode < '\0') {
-      setbcolor(bg_color);
-    }
+  else if ((char)color_mode < '\0') {
+    setbcolor(bg_color);
   }
   color_mode = c;
   return;
@@ -27132,41 +26627,37 @@ void addMChar(char *p,Lineprop mode,size_t len)
         }
       }
     }
+    else if ((mode & 0x100) == 0) {
+      if ((mode & 0x1000) == 0) {
+        addmch(p,len);
+      }
+      else {
+        wVar1 = wtf_get_code((wc_uchar *)p);
+        sprintf(buf,"[%.2X]",(wVar1 | 0xffffff80) & 0xff);
+        addstr(buf);
+      }
+    }
+    else if (c == '\n') {
+      addch(' ');
+    }
     else {
-      if ((mode & 0x100) == 0) {
-        if ((mode & 0x1000) == 0) {
-          addmch(p,len);
-        }
-        else {
-          wVar1 = wtf_get_code((wc_uchar *)p);
-          sprintf(buf,"[%.2X]",(wVar1 | 0xffffff80) & 0xff);
-          addstr(buf);
+      if (c < '\v') {
+        if (c == '\t') {
+          addch('\t');
+          return;
         }
       }
       else {
-        if (c == '\n') {
-          addch(' ');
+        if (c == '\r') {
+          return;
         }
-        else {
-          if (c < '\v') {
-            if (c == '\t') {
-              addch('\t');
-              return;
-            }
-          }
-          else {
-            if (c == '\r') {
-              return;
-            }
-            if (c == '\x7f') {
-              addstr("^?");
-              return;
-            }
-          }
-          addch('^');
-          addch(c + '@');
+        if (c == '\x7f') {
+          addstr("^?");
+          return;
         }
       }
+      addch('^');
+      addch(c + '@');
     }
   }
   return;
@@ -27211,11 +26702,9 @@ Buffer * message_list_panel(void)
     Strcat_charp(x,"<tr><td>(no message recorded)</td></tr>\n");
   }
   else {
-    p = message_list->last;
-    while (p != (ListItem *)0x0) {
+    for (p = message_list->last; p != (ListItem *)0x0; p = p->prev) {
       pcVar1 = html_quote((char *)p->ptr);
       Strcat_m_charp(x,"<tr><td><pre>",pcVar1,"</pre></td></tr>\n",0);
-      p = (ListItem *)p->prev;
     }
   }
   Strcat_charp(x,"</table></body></html>");
@@ -27327,7 +26816,7 @@ void cursorUp0(Buffer *buf,int n)
     pLVar1 = lineSkip(buf,buf->topLine,-n,0);
     buf->topLine = pLVar1;
     if (buf->currentLine->prev != (_Line *)0x0) {
-      buf->currentLine = (Line *)buf->currentLine->prev;
+      buf->currentLine = buf->currentLine->prev;
     }
     arrangeLine(buf);
   }
@@ -27379,7 +26868,7 @@ void cursorDown0(Buffer *buf,int n)
     pLVar1 = lineSkip(buf,buf->topLine,n,0);
     buf->topLine = pLVar1;
     if (buf->currentLine->next != (_Line *)0x0) {
-      buf->currentLine = (Line *)buf->currentLine->next;
+      buf->currentLine = buf->currentLine->next;
     }
     arrangeLine(buf);
   }
@@ -27463,21 +26952,19 @@ void cursorRight(Buffer *buf,int n)
     if (iVar3 + delta < pLVar1->len) {
       buf->pos = iVar3 + delta;
     }
+    else if (pLVar1->len == 0) {
+      buf->pos = 0;
+    }
     else {
-      if (pLVar1->len == 0) {
+      if ((pLVar1->next != (_Line *)0x0) && (pLVar1->next->bpos != 0)) {
+        cursorDown0(buf,1);
         buf->pos = 0;
+        arrangeCursor(buf);
+        return;
       }
-      else {
-        if ((pLVar1->next != (_Line *)0x0) && (pLVar1->next->bpos != 0)) {
-          cursorDown0(buf,1);
-          buf->pos = 0;
-          arrangeCursor(buf);
-          return;
-        }
-        buf->pos = pLVar1->len + -1;
-        while ((buf->pos != 0 && ((pLVar2[buf->pos] & 0x400) != 0))) {
-          buf->pos = buf->pos + -1;
-        }
+      buf->pos = pLVar1->len + -1;
+      while ((buf->pos != 0 && ((pLVar2[buf->pos] & 0x400) != 0))) {
+        buf->pos = buf->pos + -1;
       }
     }
     iVar3 = calcPosition(pLVar1->lineBuf,pLVar1->propBuf,pLVar1->len,buf->pos,0,0);
@@ -27590,10 +27077,8 @@ void arrangeCursor(Buffer *buf)
     if ((buf->currentLine->len == 0) || (buf->pos < 0)) {
       buf->pos = 0;
     }
-    else {
-      if (buf->currentLine->len <= buf->pos) {
-        buf->pos = buf->currentLine->len + -1;
-      }
+    else if (buf->currentLine->len <= buf->pos) {
+      buf->pos = buf->currentLine->len + -1;
     }
     while ((0 < buf->pos && ((buf->currentLine->propBuf[buf->pos] & 0x400) != 0))) {
       buf->pos = buf->pos + -1;
@@ -27669,16 +27154,14 @@ void cursorXY(Buffer *buf,int x,int y)
       cursorLeft(buf,(int)(buf->COLS / 2));
     }
   }
-  else {
-    if (buf->cursorX < x) {
-      do {
-        if (x <= buf->cursorX) break;
-        sVar1 = buf->cursorX;
-        cursorRight(buf,(int)(buf->COLS / 2));
-      } while (buf->cursorX != sVar1);
-      if (x < buf->cursorX) {
-        cursorLeft(buf,(int)(buf->COLS / 2));
-      }
+  else if (buf->cursorX < x) {
+    do {
+      if (x <= buf->cursorX) break;
+      sVar1 = buf->cursorX;
+      cursorRight(buf,(int)(buf->COLS / 2));
+    } while (buf->cursorX != sVar1);
+    if (x < buf->cursorX) {
+      cursorLeft(buf,(int)(buf->COLS / 2));
     }
   }
   return;
@@ -27735,8 +27218,7 @@ int columnSkip(Buffer *buf,int offset)
   sVar1 = buf->LINES;
   maxColumn = 0;
   i = 0;
-  l = buf->topLine;
-  while ((i < sVar1 + 1 && (l != (Line *)0x0))) {
+  for (l = buf->topLine; (i < sVar1 + 1 && (l != (Line *)0x0)); l = l->next) {
     if (l->width < 0) {
       iVar3 = calcPosition(l->lineBuf,l->propBuf,l->len,l->len,0,0);
       l->width = iVar3;
@@ -27745,7 +27227,6 @@ int columnSkip(Buffer *buf,int offset)
       maxColumn = l->width + -1;
     }
     i = i + 1;
-    l = (Line *)l->next;
   }
   maxColumn = maxColumn + (1 - buf->COLS);
   if (iVar2 < maxColumn) {
@@ -27794,9 +27275,8 @@ Line * lineSkip(Buffer *buf,Line *line,int offset,int last)
   l = currentLineSkip(buf,line,offset,last);
   if (nextpage_topline == 0) {
     i = buf->LINES + -1 + (l->linenumber - buf->lastLine->linenumber);
-    while ((0 < i && (l->prev != (_Line *)0x0))) {
+    for (; (0 < i && (l->prev != (_Line *)0x0)); l = l->prev) {
       i = i + -1;
-      l = (Line *)l->prev;
     }
   }
   return l;
@@ -27830,16 +27310,14 @@ Line * currentLineSkip(Buffer *buf,Line *line,int offset,int last)
   if (offset != 0) {
     if (offset < 1) {
       i = 0;
-      while ((-i != offset && i <= -offset && (l->prev != (_Line *)0x0))) {
+      for (; (-i != offset && i <= -offset && (l->prev != (_Line *)0x0)); l = l->prev) {
         i = i + 1;
-        l = (Line *)l->prev;
       }
     }
     else {
       i = 0;
-      while ((i < offset && (l->next != (_Line *)0x0))) {
+      for (; (i < offset && (l->next != (_Line *)0x0)); l = l->next) {
         i = i + 1;
-        l = (Line *)l->next;
       }
     }
   }
@@ -27885,8 +27363,8 @@ int gethtmlcmd(char **s)
         *s = *s + 1;
       }
     }
-    while ((((MYCTYPE_MAP[(byte)**s] & 0xc) != 0 || (**s == '_')) &&
-           ((int)(p + -(int)cmdstr) < 0x80))) {
+    while ((((MYCTYPE_MAP[(byte)**s] & 0xc) != 0 || (**s == '_')) && ((int)p - (int)cmdstr < 0x80)))
+    {
       if ((MYCTYPE_MAP[(byte)**s] & 4) == 0) {
         bVar3 = **s;
       }
@@ -27898,13 +27376,13 @@ int gethtmlcmd(char **s)
       *s = *s + 1;
     }
     cmdstr[0] = bVar2;
-    if (p + -(int)cmdstr == (char *)0x80) {
+    if ((int)p - (int)cmdstr == 0x80) {
       *s = pcVar1 + 1;
       iVar4 = 0;
     }
     else {
       *p = '\0';
-      iVar4 = getHash_si((Hash_si *)&tagtable,cmdstr,0);
+      iVar4 = getHash_si(&tagtable,cmdstr,0);
       while ((**s != '\0' && (**s != '>'))) {
         *s = *s + 1;
       }
@@ -27939,9 +27417,7 @@ int parse_ansi_color(char **str,Lineprop *effect,Linecolor *color)
   c = *color;
   if ((*pcVar3 == '\x1b') && (pcVar3[1] == '[')) {
     p = pcVar3 + 2;
-    q = p;
-    while (((MYCTYPE_MAP[(byte)*q] & 8) != 0 || (*q == ';'))) {
-      q = q + 1;
+    for (q = p; ((MYCTYPE_MAP[(byte)*q] & 8) != 0 || (*q == ';')); q = q + 1) {
     }
     if (*q == 'm') {
       *str = q + 1;
@@ -27955,56 +27431,48 @@ int parse_ansi_color(char **str,Lineprop *effect,Linecolor *color)
           pcVar1 = p;
           p = pcVar1 + 1;
         } while ((MYCTYPE_MAP[(byte)*p] & 8) != 0);
-        pcVar3 = allocStr(pcVar3,(int)(p + -(int)pcVar3));
+        pcVar3 = allocStr(pcVar3,(int)p - (int)pcVar3);
         iVar2 = atoi(pcVar3);
         if (iVar2 == 5) {
 LAB_08078815:
           e = 8;
         }
-        else {
-          if (iVar2 < 6) {
-            if (iVar2 == 1) goto LAB_08078815;
-            if (iVar2 == 4) {
-              e = 2;
-            }
-            else {
-              if (iVar2 != 0) goto LAB_0807883f;
-              e = 0;
-              c = '\0';
-            }
+        else if (iVar2 < 6) {
+          if (iVar2 == 1) goto LAB_08078815;
+          if (iVar2 == 4) {
+            e = 2;
           }
           else {
-            if (iVar2 == 0x27) {
-              c = c & 0xf0;
+            if (iVar2 != 0) goto LAB_0807883f;
+            e = 0;
+            c = '\0';
+          }
+        }
+        else if (iVar2 == 0x27) {
+          c = c & 0xf0;
+        }
+        else if (iVar2 < 0x28) {
+          if (iVar2 == 7) {
+            e = 4;
+          }
+          else {
+LAB_0807883f:
+            if ((iVar2 < 0x1e) || (0x25 < iVar2)) {
+              if ((0x27 < iVar2) && (iVar2 < 0x30)) {
+                c = ((char)iVar2 + -0x28) * '\x10' | c & 0xf | 0x80;
+              }
             }
             else {
-              if (iVar2 < 0x28) {
-                if (iVar2 == 7) {
-                  e = 4;
-                }
-                else {
-LAB_0807883f:
-                  if ((iVar2 < 0x1e) || (0x25 < iVar2)) {
-                    if ((0x27 < iVar2) && (iVar2 < 0x30)) {
-                      c = ((char)iVar2 + -0x28) * '\x10' | c & 0xf | 0x80;
-                    }
-                  }
-                  else {
-                    c = (char)iVar2 - 0x1eU | c & 0xf0 | 8;
-                  }
-                }
-              }
-              else {
-                if (iVar2 == 0x31) {
-                  c = c & 0xf;
-                }
-                else {
-                  if (iVar2 != 100) goto LAB_0807883f;
-                  c = '\0';
-                }
-              }
+              c = (char)iVar2 - 0x1eU | c & 0xf0 | 8;
             }
           }
+        }
+        else if (iVar2 == 0x31) {
+          c = c & 0xf;
+        }
+        else {
+          if (iVar2 != 100) goto LAB_0807883f;
+          c = '\0';
         }
         if (*p == 'm') goto LAB_080788ab;
         p = pcVar1 + 2;
@@ -28118,7 +27586,7 @@ Str checkType(Str s,Lineprop **oprop,Linecolor **ocolor)
         }
         str = str + 1;
       }
-      Strcat_charp_n(s,y,(int)(str + -(int)y));
+      Strcat_charp_n(s,y,(int)str - (int)y);
     }
   }
   if (!bVar3) {
@@ -28136,8 +27604,7 @@ Str checkType(Str s,Lineprop **oprop,Linecolor **ocolor)
   }
 LAB_08079182:
   while( true ) {
-    if ((pcVar1 <= str) ||
-       (checkType::prop_size <= (int)((int)prop - (int)checkType::prop_buffer) >> 1)) {
+    if ((pcVar1 <= str) || (checkType::prop_size <= (int)prop - (int)checkType::prop_buffer >> 1)) {
       *oprop = checkType::prop_buffer;
       if (ocolor != (Linecolor **)0x0) {
         pLVar7 = checkType::color_buffer;
@@ -28153,108 +27620,92 @@ LAB_08079182:
       str = str + 4;
       effect = 2;
       if (str < pcVar1) {
-        bs = (char *)memchr(str,8,(size_t)(pcVar1 + -(int)str));
+        bs = (char *)memchr(str,8,(int)pcVar1 - (int)str);
+      }
+    }
+    else if ((bs + -1 == str) && (*str == '_')) {
+      str = str + 2;
+      effect = 2;
+      if (str < pcVar1) {
+        bs = (char *)memchr(str,8,(int)pcVar1 - (int)str);
       }
     }
     else {
-      if ((bs + -1 == str) && (*str == '_')) {
-        str = str + 2;
-        effect = 2;
-        if (str < pcVar1) {
-          bs = (char *)memchr(str,8,(size_t)(pcVar1 + -(int)str));
+      if (str != bs) {
+        if (bs < str) {
+          bs = (char *)memchr(str,8,(int)pcVar1 - (int)str);
+        }
+        break;
+      }
+      if (str[1] == '_') {
+        if (s->length == 0) {
+          str = str + 1;
+        }
+        else {
+          str = str + 2;
+          for (i = 1; i <= plen; i = i + 1) {
+            prop[-i] = prop[-i] | 2;
+          }
         }
       }
       else {
-        if (str != bs) {
-          if (bs < str) {
-            bs = (char *)memchr(str,8,(size_t)(pcVar1 + -(int)str));
-          }
-          break;
-        }
-        if (str[1] == '_') {
+        iVar6 = strncmp(str + 1,"\b__",3);
+        if (iVar6 == 0) {
           if (s->length == 0) {
-            str = str + 1;
+            str = str + 2;
           }
           else {
-            str = str + 2;
-            i = 1;
-            while (i <= plen) {
+            if (plen == 1) {
+              iVar6 = 3;
+            }
+            else {
+              iVar6 = 4;
+            }
+            str = str + iVar6;
+            for (i = 1; i <= plen; i = i + 1) {
               prop[-i] = prop[-i] | 2;
-              i = i + 1;
             }
           }
         }
-        else {
-          iVar6 = strncmp(str + 1,"\b__",3);
-          if (iVar6 == 0) {
-            if (s->length == 0) {
+        else if (str[1] == '\b') {
+          if (s->length == 0) {
+            str = str + 2;
+          }
+          else {
+            bVar2 = WTF_LEN_MAP[(byte)str[2]];
+            if ((plen == (uint)bVar2) && (iVar6 = strncmp(str + -plen,str + 2,plen), iVar6 == 0)) {
+              for (i = 1; i <= plen; i = i + 1) {
+                prop[-i] = prop[-i] | 8;
+              }
+              str = str + bVar2 + 2;
+            }
+            else {
+              Strshrink(s,plen);
+              prop = prop + -plen;
               str = str + 2;
             }
-            else {
-              if (plen == 1) {
-                iVar6 = 3;
-              }
-              else {
-                iVar6 = 4;
-              }
-              str = str + iVar6;
-              i = 1;
-              while (i <= plen) {
-                prop[-i] = prop[-i] | 2;
-                i = i + 1;
-              }
+          }
+        }
+        else if (s->length == 0) {
+          str = str + 1;
+        }
+        else {
+          bVar2 = WTF_LEN_MAP[(byte)str[1]];
+          if ((plen == (uint)bVar2) && (iVar6 = strncmp(str + -plen,str + 1,plen), iVar6 == 0)) {
+            for (i = 1; i <= plen; i = i + 1) {
+              prop[-i] = prop[-i] | 8;
             }
+            str = str + bVar2 + 1;
           }
           else {
-            if (str[1] == '\b') {
-              if (s->length == 0) {
-                str = str + 2;
-              }
-              else {
-                bVar2 = WTF_LEN_MAP[(byte)str[2]];
-                if ((plen == (uint)bVar2) && (iVar6 = strncmp(str + -plen,str + 2,plen), iVar6 == 0)
-                   ) {
-                  i = 1;
-                  while (i <= plen) {
-                    prop[-i] = prop[-i] | 8;
-                    i = i + 1;
-                  }
-                  str = str + bVar2 + 2;
-                }
-                else {
-                  Strshrink(s,plen);
-                  prop = prop + -plen;
-                  str = str + 2;
-                }
-              }
-            }
-            else {
-              if (s->length == 0) {
-                str = str + 1;
-              }
-              else {
-                bVar2 = WTF_LEN_MAP[(byte)str[1]];
-                if ((plen == (uint)bVar2) && (iVar6 = strncmp(str + -plen,str + 1,plen), iVar6 == 0)
-                   ) {
-                  i = 1;
-                  while (i <= plen) {
-                    prop[-i] = prop[-i] | 8;
-                    i = i + 1;
-                  }
-                  str = str + bVar2 + 1;
-                }
-                else {
-                  Strshrink(s,plen);
-                  prop = prop + -plen;
-                  str = str + 1;
-                }
-              }
-            }
+            Strshrink(s,plen);
+            prop = prop + -plen;
+            str = str + 1;
           }
         }
-        if (str < pcVar1) {
-          bs = (char *)memchr(str,8,(size_t)(pcVar1 + -(int)str));
-        }
+      }
+      if (str < pcVar1) {
+        bs = (char *)memchr(str,8,(int)pcVar1 - (int)str);
       }
     }
   }
@@ -28262,7 +27713,7 @@ LAB_08079182:
     if (str == es) {
       iVar6 = parse_ansi_color(&str,&ceffect,&cmode);
       if (str < pcVar1) {
-        es = (char *)memchr(str,0x1b,(size_t)(pcVar1 + -(int)str));
+        es = (char *)memchr(str,0x1b,(int)pcVar1 - (int)str);
       }
       if (iVar6 != 0) {
         if (cmode != '\0') {
@@ -28271,13 +27722,11 @@ LAB_08079182:
         goto LAB_08079182;
       }
     }
-    else {
-      if (es < str) {
-        es = (char *)memchr(str,0x1b,(size_t)(pcVar1 + -(int)str));
-      }
+    else if (es < str) {
+      es = (char *)memchr(str,0x1b,(int)pcVar1 - (int)str);
     }
   }
-  plen = ZEXT14(WTF_LEN_MAP[(byte)*str]);
+  plen = (int)WTF_LEN_MAP[(byte)*str];
   mode = effect | (ushort)WTF_TYPE_MAP[(byte)*str] << 8;
   if (color != (Linecolor *)0x0) {
     *color = cmode;
@@ -28300,15 +27749,13 @@ LAB_08079182:
   }
   else {
     mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
-    i = 1;
-    while (i < plen) {
+    for (i = 1; i < plen; i = i + 1) {
       *prop = mode;
       prop = prop + 1;
       if (color != (Linecolor *)0x0) {
         *color = cmode;
         color = color + 1;
       }
-      i = i + 1;
     }
     if (bVar3) {
       Strcat_charp_n(s,str,plen);
@@ -28340,20 +27787,14 @@ int nextColumn(int n,char *p,Lineprop *pr)
       n = n + 4;
     }
   }
-  else {
-    if (*p == '\t') {
-      n = Tabstop * ((Tabstop + n) / Tabstop);
-    }
-    else {
-      if (*p == '\n') {
-        n = n + 1;
-      }
-      else {
-        if (*p != '\r') {
-          n = n + 2;
-        }
-      }
-    }
+  else if (*p == '\t') {
+    n = Tabstop * ((Tabstop + n) / Tabstop);
+  }
+  else if (*p == '\n') {
+    n = n + 1;
+  }
+  else if (*p != '\r') {
+    n = n + 2;
   }
   return n;
 }
@@ -28383,9 +27824,8 @@ int calcPosition(char *l,Lineprop *pr,int len,int pos,int bpos,int mode)
       i = 0;
       j = bpos;
       if ((*pr & 0x400) != 0) {
-        while ((i < len && ((pr[i] & 0x400) != 0))) {
+        for (; (i < len && ((pr[i] & 0x400) != 0)); i = i + 1) {
           calcPosition::realColumn[i] = bpos;
-          i = i + 1;
         }
         if (((0 < i) && ((pr[i + -1] & 0x800) != 0)) && (WcOption.use_wide != '\0')) {
           j = bpos + 1;
@@ -28443,12 +27883,10 @@ char * lastFileName(char *path)
   char *p;
   
   q = path;
-  p = path;
-  while (*p != '\0') {
+  for (p = path; *p != '\0'; p = p + 1) {
     if (*p == '/') {
       q = p + 1;
     }
-    p = p + 1;
   }
   pcVar1 = allocStr(q,-1);
   return pcVar1;
@@ -28462,12 +27900,9 @@ char * mybasename(char *s)
   char *pcVar1;
   char *p;
   
-  p = s;
-  while (*p != '\0') {
-    p = p + 1;
+  for (p = s; *p != '\0'; p = p + 1) {
   }
-  while ((s <= p && (*p != '/'))) {
-    p = p + -1;
+  for (; (s <= p && (*p != '/')); p = p + -1) {
   }
   if (*p == '/') {
     p = p + 1;
@@ -28489,22 +27924,17 @@ char * mydirname(char *s)
   size_t sVar3;
   char *p;
   
-  p = s;
-  while (*p != '\0') {
-    p = p + 1;
+  for (p = s; *p != '\0'; p = p + 1) {
   }
   if (s != p) {
     p = p + -1;
   }
-  while ((s != p && (*p == '/'))) {
-    p = p + -1;
+  for (; (s != p && (*p == '/')); p = p + -1) {
   }
-  while ((s != p && (*p != '/'))) {
-    p = p + -1;
+  for (; (s != p && (*p != '/')); p = p + -1) {
   }
   if (*p == '/') {
-    while ((s != p && (*p == '/'))) {
-      p = p + -1;
+    for (; (s != p && (*p == '/')); p = p + -1) {
     }
     sVar2 = strlen(s);
     sVar3 = strlen(p);
@@ -28529,14 +27959,12 @@ int next_status(char c,int *status)
       *status = 1;
       iVar1 = 0;
     }
+    else if (c == '&') {
+      *status = 6;
+      iVar1 = 1;
+    }
     else {
-      if (c == '&') {
-        *status = 6;
-        iVar1 = 1;
-      }
-      else {
-        iVar1 = 1;
-      }
+      iVar1 = 1;
     }
     break;
   case 1:
@@ -28549,10 +27977,8 @@ int next_status(char c,int *status)
     if (c == '>') {
       *status = 0;
     }
-    else {
-      if (c == '=') {
-        *status = 5;
-      }
+    else if (c == '=') {
+      *status = 5;
     }
     iVar1 = 0;
     break;
@@ -28572,23 +27998,19 @@ int next_status(char c,int *status)
     if (c == '\"') {
       *status = 4;
     }
-    else {
-      if (c == '\'') {
-        *status = 3;
+    else if (c == '\'') {
+      *status = 3;
+    }
+    else if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
+      if (c == '>') {
+        *status = 0;
       }
       else {
-        if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
-          if (c == '>') {
-            *status = 0;
-          }
-          else {
-            *status = 0xf;
-          }
-        }
-        else {
-          *status = 5;
-        }
+        *status = 0xf;
       }
+    }
+    else {
+      *status = 5;
     }
     iVar1 = 0;
     break;
@@ -28597,27 +28019,23 @@ int next_status(char c,int *status)
       *status = 0;
       iVar1 = 0;
     }
+    else if (((c == '#') || ((MYCTYPE_MAP[(byte)c] & 0xc) != 0)) || (c == '_')) {
+      iVar1 = 0;
+    }
     else {
-      if (((c == '#') || ((MYCTYPE_MAP[(byte)c] & 0xc) != 0)) || (c == '_')) {
-        iVar1 = 0;
-      }
-      else {
-        *status = 0;
-        iVar1 = 0;
-      }
+      *status = 0;
+      iVar1 = 0;
     }
     break;
   case 8:
     if (c == '-') {
       *status = 9;
     }
+    else if (c == '>') {
+      *status = 0;
+    }
     else {
-      if (c == '>') {
-        *status = 0;
-      }
-      else {
-        *status = 0xe;
-      }
+      *status = 0xe;
     }
     iVar1 = 0;
     break;
@@ -28625,13 +28043,11 @@ int next_status(char c,int *status)
     if (c == '-') {
       *status = 10;
     }
+    else if (c == '>') {
+      *status = 0;
+    }
     else {
-      if (c == '>') {
-        *status = 0;
-      }
-      else {
-        *status = 0xe;
-      }
+      *status = 0xe;
     }
     iVar1 = 0;
     break;
@@ -28654,18 +28070,14 @@ int next_status(char c,int *status)
     if (c == '-') {
       *status = 0xc;
     }
+    else if (c == '>') {
+      *status = 0;
+    }
+    else if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
+      *status = 10;
+    }
     else {
-      if (c == '>') {
-        *status = 0;
-      }
-      else {
-        if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
-          *status = 10;
-        }
-        else {
-          *status = 0xd;
-        }
-      }
+      *status = 0xd;
     }
   default:
     iVar1 = 0;
@@ -28674,18 +28086,14 @@ int next_status(char c,int *status)
     if (c == '-') {
       *status = 0xb;
     }
+    else if (c == '>') {
+      *status = 0;
+    }
+    else if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
+      *status = 10;
+    }
     else {
-      if (c == '>') {
-        *status = 0;
-      }
-      else {
-        if ((MYCTYPE_MAP[(byte)c] & 2) == 0) {
-          *status = 10;
-        }
-        else {
-          *status = 0xd;
-        }
-      }
+      *status = 0xd;
     }
     iVar1 = 0;
     break;
@@ -28699,10 +28107,8 @@ int next_status(char c,int *status)
     if (c == '>') {
       *status = 0;
     }
-    else {
-      if ((MYCTYPE_MAP[(byte)c] & 2) != 0) {
-        *status = 2;
-      }
+    else if ((MYCTYPE_MAP[(byte)c] & 2) != 0) {
+      *status = 2;
     }
     iVar1 = 0;
   }
@@ -28727,8 +28133,7 @@ int read_token(Str buf,char **instr,int *status,int pre,int append)
     iVar3 = 0;
   }
   else {
-    p = *instr;
-    while (*p != '\0') {
+    for (p = *instr; *p != '\0'; p = p + 1) {
       iVar3 = *status;
       next_status(*p,status);
       switch(*status) {
@@ -28849,7 +28254,6 @@ int read_token(Str buf,char **instr,int *status,int pre,int append)
           buf->ptr[buf->length] = '\0';
         }
       }
-      p = p + 1;
     }
 proc_end:
     *instr = p;
@@ -28930,9 +28334,7 @@ void add_auth_pass_entry(auth_pass *ent,int netrc,int override)
           paVar1 = passwords;
         }
         else {
-          ep = passwords;
-          while (ep->next != (auth_pass *)0x0) {
-            ep = ep->next;
+          for (ep = passwords; ep->next != (auth_pass *)0x0; ep = ep->next) {
           }
           ep->next = paVar1;
           paVar1 = passwords;
@@ -29176,7 +28578,6 @@ void parsePasswd(FILE *fp,int netrc)
 FILE * openSecretFile(char *fname)
 
 {
-  FILE *__stream;
   FILE *pFVar1;
   char *__file;
   int iVar2;
@@ -29190,31 +28591,29 @@ FILE * openSecretFile(char *fname)
   else {
     __file = expandPath(fname);
     iVar2 = stat(__file,(stat *)&st);
-    __stream = stderr;
+    pFVar1 = stderr;
     if (iVar2 < 0) {
       pFVar1 = (FILE *)0x0;
     }
-    else {
-      if ((disable_secret_security_check == 0) && ((st.st_mode & 0x3f) != 0)) {
-        if (fmInitialized == '\0') {
-          p_Var3 = Sprintf("SECURITY NOTE: file %s must not be accessible by others",fname);
-          fputs(p_Var3->ptr,__stream);
-          fputc(10,stderr);
-        }
-        else {
-          p_Var3 = Sprintf("SECURITY NOTE: file %s must not be accessible by others",fname);
-          message(p_Var3->ptr,0,0);
-          refresh();
-        }
-        sleep(2);
-        pFVar1 = (FILE *)0x0;
+    else if ((disable_secret_security_check == 0) && ((st.st_mode & 0x3f) != 0)) {
+      if (fmInitialized == '\0') {
+        p_Var3 = Sprintf("SECURITY NOTE: file %s must not be accessible by others",fname);
+        fputs(p_Var3->ptr,pFVar1);
+        fputc(10,stderr);
       }
       else {
-        pFVar1 = (FILE *)fopen(__file,"r");
+        p_Var3 = Sprintf("SECURITY NOTE: file %s must not be accessible by others",fname);
+        message(p_Var3->ptr,0,0);
+        refresh();
       }
+      sleep(2);
+      pFVar1 = (FILE *)0x0;
+    }
+    else {
+      pFVar1 = fopen(__file,"r");
     }
   }
-  return pFVar1;
+  return (FILE *)pFVar1;
 }
 
 
@@ -29226,15 +28625,15 @@ void loadPasswd(void)
   FILE *fp;
   
   passwords = (auth_pass *)0x0;
-  pFVar1 = openSecretFile(passwd_file);
+  pFVar1 = (FILE *)openSecretFile(passwd_file);
   if (pFVar1 != (FILE *)0x0) {
-    parsePasswd(pFVar1,0);
-    fclose((FILE *)pFVar1);
+    parsePasswd((FILE *)pFVar1,0);
+    fclose(pFVar1);
   }
-  pFVar1 = openSecretFile("~/.netrc");
+  pFVar1 = (FILE *)openSecretFile("~/.netrc");
   if (pFVar1 != (FILE *)0x0) {
-    parsePasswd(pFVar1,1);
-    fclose((FILE *)pFVar1);
+    parsePasswd((FILE *)pFVar1,1);
+    fclose(pFVar1);
   }
   return;
 }
@@ -29256,7 +28655,7 @@ char * last_modified(Buffer *buf)
         pcVar2 = "unknown";
       }
       else {
-        pcVar2 = ctime((time_t *)&st.st_mtim);
+        pcVar2 = ctime(&st.st_mtim.tv_sec);
       }
     }
     else {
@@ -29264,13 +28663,11 @@ char * last_modified(Buffer *buf)
     }
   }
   else {
-    ti = buf->document_header->first;
-    while (ti != (TextListItem *)0x0) {
+    for (ti = buf->document_header->first; ti != (TextListItem *)0x0; ti = ti->next) {
       iVar1 = strncasecmp(ti->ptr,"Last-modified: ",0xf);
       if (iVar1 == 0) {
         return ti->ptr + 0xf;
       }
-      ti = (TextListItem *)ti->next;
     }
     pcVar2 = "unknown";
   }
@@ -29291,7 +28688,7 @@ Str romanNum2(int l,int n)
   case 1:
   case 2:
   case 3:
-    while (0 < n) {
+    for (; 0 < n; n = n + -1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -29299,7 +28696,6 @@ Str romanNum2(int l,int n)
       x->ptr[iVar1] = roman_num1[l];
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      n = n + -1;
     }
     break;
   case 4:
@@ -29329,8 +28725,7 @@ Str romanNum2(int l,int n)
     x->ptr[iVar1] = roman_num5[l];
     x->length = iVar1 + 1;
     x->ptr[x->length] = '\0';
-    n = n + -5;
-    while (0 < n) {
+    for (n = n + -5; 0 < n; n = n + -1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -29338,7 +28733,6 @@ Str romanNum2(int l,int n)
       x->ptr[iVar1] = roman_num1[l];
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      n = n + -1;
     }
     break;
   case 9:
@@ -29407,10 +28801,9 @@ Str romanAlphabet(int n)
   x = Strnew();
   if (0 < n) {
     l = 0;
-    while (iVar2 = l, n != 0) {
+    for (; iVar2 = l, n != 0; n = (n + -1) / 0x1a) {
       buf[l] = (char)(n + -1) + (char)((n + -1) / 0x1a) * -0x1a + 'a';
       l = l + 1;
-      n = (n + -1) / 0x1a;
     }
     while (l = iVar2 + -1, -1 < l) {
       if (x->area_size <= x->length + 1) {
@@ -29460,23 +28853,19 @@ LAB_0807ae80:
     iVar1 = open("/dev/null",1);
     dup2(iVar1,1);
   }
-  else {
-    if (i != 2) {
-      if (i != 0) goto LAB_0807aec8;
-      iVar1 = open("/dev/null",0);
-      dup2(iVar1,0);
-      goto LAB_0807ae80;
-    }
+  else if (i != 2) {
+    if (i != 0) goto LAB_0807aec8;
+    iVar1 = open("/dev/null",0);
+    dup2(iVar1,0);
+    goto LAB_0807ae80;
   }
   iVar1 = open("/dev/null",1);
   dup2(iVar1,2);
 LAB_0807aec8:
-  i = 3;
-  while (i < 0x10) {
+  for (i = 3; i < 0x10; i = i + 1) {
     if (i != f) {
       close(i);
     }
-    i = i + 1;
   }
   return;
 }
@@ -29534,8 +28923,8 @@ pid_t open_pipe_rw(FILE **fr,FILE **fw)
             dup2(fdr[0],0);
           }
           else {
-            pFVar3 = (FILE *)fdopen(fdr[0],"r");
-            *fr = pFVar3;
+            pFVar3 = fdopen(fdr[0],"r");
+            *fr = (FILE *)pFVar3;
           }
         }
         if (fw == (FILE **)0x0) {
@@ -29546,8 +28935,8 @@ pid_t open_pipe_rw(FILE **fr,FILE **fw)
           dup2(fdw[1],1);
           return _Var2;
         }
-        pFVar3 = (FILE *)fdopen(fdw[1],"w");
-        *fw = pFVar3;
+        pFVar3 = fdopen(fdw[1],"w");
+        *fw = (FILE *)pFVar3;
         return _Var2;
       }
       if (fw != (FILE **)0x0) {
@@ -29608,8 +28997,7 @@ Str myExtCommand(char *cmd,char *arg,int redirect)
   
   tmp = (Str)0x0;
   bVar2 = false;
-  p = cmd;
-  while (*p != '\0') {
+  for (p = cmd; *p != '\0'; p = p + 1) {
     if (((*p != '%') || (p[1] != 's')) || (bVar2)) {
       if (tmp != (Str)0x0) {
         if (tmp->area_size <= tmp->length + 1) {
@@ -29623,13 +29011,12 @@ Str myExtCommand(char *cmd,char *arg,int redirect)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(cmd,(int)(p + -(int)cmd));
+        tmp = Strnew_charp_n(cmd,(int)p - (int)cmd);
       }
       Strcat_charp(tmp,arg);
       bVar2 = true;
       p = p + 1;
     }
-    p = p + 1;
   }
   if (!bVar2) {
     if (redirect == 0) {
@@ -29660,8 +29047,7 @@ Str myEditor(char *cmd,char *file,int line)
   tmp = (Str)0x0;
   bVar2 = false;
   bVar3 = false;
-  p = cmd;
-  while (*p != '\0') {
+  for (p = cmd; *p != '\0'; p = p + 1) {
     if (((*p != '%') || (p[1] != 's')) || (bVar2)) {
       if (((*p != '%') || (p[1] != 'd')) || ((bVar3 || (line < 1)))) {
         if (tmp != (Str)0x0) {
@@ -29676,7 +29062,7 @@ Str myEditor(char *cmd,char *file,int line)
       }
       else {
         if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(cmd,(int)(p + -(int)cmd));
+          tmp = Strnew_charp_n(cmd,(int)p - (int)cmd);
         }
         p_Var5 = Sprintf("%d",line);
         Strcat(tmp,p_Var5);
@@ -29686,13 +29072,12 @@ Str myEditor(char *cmd,char *file,int line)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(cmd,(int)(p + -(int)cmd));
+        tmp = Strnew_charp_n(cmd,(int)p - (int)cmd);
       }
       Strcat_charp(tmp,file);
       bVar2 = true;
       p = p + 1;
     }
-    p = p + 1;
   }
   if (!bVar2) {
     if (tmp == (Str)0x0) {
@@ -29713,6 +29098,7 @@ Str myEditor(char *cmd,char *file,int line)
 
 
 // WARNING: Variable defined which should be unmapped: q
+// WARNING: Variable defined which should be unmapped: extpath
 
 char * expandName(char *name)
 
@@ -29729,38 +29115,36 @@ char * expandName(char *name)
   if (name == (char *)0x0) {
     name = (char *)0x0;
   }
-  else {
-    if (*name == '/') {
-      if (((name[1] == '~') && ((MYCTYPE_MAP[(byte)name[2]] & 4) != 0)) &&
-         (personal_document_root != (char *)0x0)) {
-        pcVar2 = name + 2;
-        pcVar1 = strchr(pcVar2,0x2f);
-        if (pcVar1 == (char *)0x0) {
-          passent = (passwd *)getpwnam(pcVar2);
-          p = "";
+  else if (*name == '/') {
+    if (((name[1] == '~') && ((MYCTYPE_MAP[(byte)name[2]] & 4) != 0)) &&
+       (personal_document_root != (char *)0x0)) {
+      pcVar2 = name + 2;
+      pcVar1 = strchr(pcVar2,0x2f);
+      if (pcVar1 == (char *)0x0) {
+        passent = (passwd *)getpwnam(pcVar2);
+        p = "";
+      }
+      else {
+        pcVar2 = allocStr(pcVar2,(int)pcVar1 - (int)pcVar2);
+        passent = (passwd *)getpwnam(pcVar2);
+        p = pcVar1;
+      }
+      if (passent != (passwd *)0x0) {
+        x = Strnew_m_charp(passent->pw_dir,&DAT_080caf56,personal_document_root,0,pcVar1,0);
+        if ((*personal_document_root == '\0') && (*p == '/')) {
+          p = p + 1;
         }
-        else {
-          pcVar2 = allocStr(pcVar2,(int)(pcVar1 + -(int)pcVar2));
-          passent = (passwd *)getpwnam(pcVar2);
-          p = pcVar1;
+        iVar3 = strcmp(x->ptr,"/");
+        if ((iVar3 == 0) && (*p == '/')) {
+          p = p + 1;
         }
-        if (passent != (passwd *)0x0) {
-          x = Strnew_m_charp(passent->pw_dir,&DAT_080caf56,personal_document_root,0,pcVar1,0);
-          if ((*personal_document_root == '\0') && (*p == '/')) {
-            p = p + 1;
-          }
-          iVar3 = strcmp(x->ptr,"/");
-          if ((iVar3 == 0) && (*p == '/')) {
-            p = p + 1;
-          }
-          Strcat_charp(x,p);
-          name = x->ptr;
-        }
+        Strcat_charp(x,p);
+        name = x->ptr;
       }
     }
-    else {
-      name = expandPath(name);
-    }
+  }
+  else {
+    name = expandPath(name);
   }
   return name;
 }
@@ -30217,8 +29601,8 @@ time_t mymktime(char *timestr)
       if (iVar1 == -1) {
         return -1;
       }
-      while ((((*s != '\0' && ((MYCTYPE_MAP[(byte)*s] & 8) == 0)) && (*s != '+')) && (*s != '-'))) {
-        s = s + 1;
+      for (; (((*s != '\0' && ((MYCTYPE_MAP[(byte)*s] & 8) == 0)) && (*s != '+')) && (*s != '-'));
+          s = s + 1) {
       }
       get_zone(&s,&z_hour,&z_min);
     }
@@ -30258,9 +29642,7 @@ char * FQDN(char *host)
   else {
     iVar1 = strcasecmp(host,"localhost");
     if (iVar1 != 0) {
-      p = host;
-      while ((*p != '\0' && (*p != '.'))) {
-        p = p + 1;
+      for (p = host; (*p != '\0' && (*p != '.')); p = p + 1) {
       }
       if (*p != '.') {
         af = (int *)ai_family_order_table[DNS_order];
@@ -30271,14 +29653,12 @@ char * FQDN(char *host)
           hints.ai_socktype = 1;
           error = getaddrinfo(host,(char *)0x0,(addrinfo *)&hints,(addrinfo **)&res0);
           if (error == 0) {
-            res = res0;
-            while (res != (addrinfo *)0x0) {
+            for (res = res0; res != (addrinfo *)0x0; res = res->ai_next) {
               if (res->ai_canonname != (char *)0x0) {
                 pcVar2 = strdup(res->ai_canonname);
                 freeaddrinfo((addrinfo *)res0);
                 return pcVar2;
               }
-              res = res->ai_next;
             }
             freeaddrinfo((addrinfo *)res0);
             iVar1 = *af;
@@ -30321,9 +29701,8 @@ anon_subr_void_int * mySignal(int signal_number,anon_subr_void_int *action)
 void set_mark(Line *l,int pos,int epos)
 
 {
-  while ((pos < epos && (pos < l->size))) {
+  for (; (pos < epos && (pos < l->size)); pos = pos + 1) {
     l->propBuf[pos] = l->propBuf[pos] | 1;
-    pos = pos + 1;
   }
   return;
 }
@@ -30470,19 +29849,17 @@ int forwardSearch(Buffer *buf,char *str)
   pos = buf->pos;
   if (l->bpos != 0) {
     pos = pos + l->bpos;
-    while ((l->bpos != 0 && (l->prev != (_Line *)0x0))) {
-      l = (Line *)l->prev;
+    for (; (l->bpos != 0 && (l->prev != (_Line *)0x0)); l = l->prev) {
     }
   }
-  while ((pLVar2 = l, pos < l->size && ((l->propBuf[pos] & 0x400) != 0))) {
-    pos = pos + 1;
+  for (; (pLVar2 = l, pos < l->size && ((l->propBuf[pos] & 0x400) != 0)); pos = pos + 1) {
   }
   if ((pos < l->size) && (iVar3 = regexMatch(l->lineBuf + pos,l->size - pos,0), iVar3 == 1)) {
     matchedPosition(&first,&last);
-    pos = (int)(first + -(int)l->lineBuf);
+    pos = (int)first - (int)l->lineBuf;
     while (((l->len <= pos && (l->next != (_Line *)0x0)) && (l->next->bpos != 0))) {
       pos = pos - l->len;
-      l = (Line *)l->next;
+      l = l->next;
     }
     buf->pos = pos;
     if (buf->currentLine != l) {
@@ -30492,7 +29869,7 @@ int forwardSearch(Buffer *buf,char *str)
     set_mark(l,pos,(int)(last + (pos - (int)first)));
     return 1;
   }
-  l = (Line *)l->next;
+  l = l->next;
   do {
     if (l == (Line *)0x0) {
       if (buf->pagerSource == (InputStream)0x0) {
@@ -30520,10 +29897,10 @@ int forwardSearch(Buffer *buf,char *str)
       iVar3 = regexMatch(l->lineBuf,l->size,1);
       if (iVar3 == 1) {
         matchedPosition(&first,&last);
-        pos = (int)(first + -(int)l->lineBuf);
+        pos = (int)first - (int)l->lineBuf;
         while (((l->len <= pos && (l->next != (_Line *)0x0)) && (l->next->bpos != 0))) {
           pos = pos - l->len;
-          l = (Line *)l->next;
+          l = l->next;
         }
         buf->pos = pos;
         buf->currentLine = l;
@@ -30539,11 +29916,13 @@ int forwardSearch(Buffer *buf,char *str)
         return 2;
       }
     }
-    l = (Line *)l->next;
+    l = l->next;
   } while( true );
 }
 
 
+
+// WARNING: Type propagation algorithm not settling
 
 int backwardSearch(Buffer *buf,char *str)
 
@@ -30587,8 +29966,7 @@ int backwardSearch(Buffer *buf,char *str)
   pos = buf->pos;
   if (l->bpos != 0) {
     pos = pos + l->bpos;
-    while ((l->bpos != 0 && (l->prev != (_Line *)0x0))) {
-      l = (Line *)l->prev;
+    for (; (l->bpos != 0 && (l->prev != (_Line *)0x0)); l = l->prev) {
     }
   }
   pLVar2 = l;
@@ -30609,17 +29987,17 @@ int backwardSearch(Buffer *buf,char *str)
         found = first;
         found_last = last;
       }
-      if (l->size <= (int)(q + -(int)l->lineBuf)) break;
+      if (l->size <= (int)q - (int)l->lineBuf) break;
       do {
         q = q + 1;
-        if (l->size <= (int)(q + -(int)l->lineBuf)) break;
-      } while ((l->propBuf[(int)(q + -(int)l->lineBuf)] & 0x400) != 0);
+        if (l->size <= (int)q - (int)l->lineBuf) break;
+      } while ((l->propBuf[(int)q - (int)l->lineBuf] & 0x400) != 0);
     } while (q <= p);
     if (found != (char *)0x0) {
-      pos = (int)(found + -(int)l->lineBuf);
+      pos = (int)found - (int)l->lineBuf;
       while (((l->len <= pos && (l->next != (_Line *)0x0)) && (l->next->bpos != 0))) {
         pos = pos - l->len;
-        l = (Line *)l->next;
+        l = l->next;
       }
       buf->pos = pos;
       if (buf->currentLine != l) {
@@ -30630,7 +30008,7 @@ int backwardSearch(Buffer *buf,char *str)
       return 1;
     }
   }
-  l = (Line *)l->prev;
+  l = l->prev;
   do {
     if (l == (Line *)0x0) {
       if (WrapSearch == 0) {
@@ -30648,19 +30026,19 @@ LAB_0807d10a:
       matchedPosition(&first,&last);
       found = first;
       found_last = last;
-      if (l->size <= (int)(q + -(int)l->lineBuf)) goto LAB_0807d150;
+      if (l->size <= (int)q - (int)l->lineBuf) goto LAB_0807d150;
       do {
         q = q + 1;
-        if (l->size <= (int)(q + -(int)l->lineBuf)) break;
-      } while ((l->propBuf[(int)(q + -(int)l->lineBuf)] & 0x400) != 0);
+        if (l->size <= (int)q - (int)l->lineBuf) break;
+      } while ((l->propBuf[(int)q - (int)l->lineBuf] & 0x400) != 0);
       goto LAB_0807d10a;
     }
 LAB_0807d150:
     if (found != (char *)0x0) {
-      pos = (int)(found + -(int)l->lineBuf);
+      pos = (int)found - (int)l->lineBuf;
       while (((l->len <= pos && (l->next != (_Line *)0x0)) && (l->next->bpos != 0))) {
         pos = pos - l->len;
-        l = (Line *)l->next;
+        l = l->next;
       }
       buf->pos = pos;
       gotoLine(buf,l->linenumber);
@@ -30674,7 +30052,7 @@ LAB_0807d150:
     if ((bVar1) && (l == pLVar2)) {
       return 2;
     }
-    l = (Line *)l->prev;
+    l = l->prev;
   } while( true );
 }
 
@@ -30711,7 +30089,7 @@ char * inputLineHistSearch(char *prompt,char *def_str,int flag,Hist *hist,
   if (hist != (Hist *)0x0) {
     strCurrentBuf = (Str)0x0;
   }
-  use_hist = ZEXT14(hist != (Hist *)0x0);
+  use_hist = (int)(hist != (Hist *)0x0);
   if ((flag & 0x100U) == 0) {
     if ((flag & 0x20U) == 0) {
       if ((flag & 0x40U) == 0) {
@@ -30768,20 +30146,16 @@ char * inputLineHistSearch(char *prompt,char *def_str,int flag,Hist *hist,
       if (iVar4 - iVar2 < iVar5 - epos) {
         offset = iVar4 - iVar2;
       }
-      else {
-        if (iVar5 != epos && -1 < iVar5 - epos) {
-          offset = iVar5 - epos;
-        }
+      else if (iVar5 != epos && -1 < iVar5 - epos) {
+        offset = iVar5 - epos;
       }
     }
-    else {
-      if (iVar4 - iVar1 < offset) {
-        if (iVar4 == iVar1 || iVar4 - iVar1 < 0) {
-          offset = 0;
-        }
-        else {
-          offset = iVar4 - iVar1;
-        }
+    else if (iVar4 - iVar1 < offset) {
+      if (iVar4 == iVar1 || iVar4 - iVar1 < 0) {
+        offset = 0;
+      }
+      else {
+        offset = iVar4 - iVar1;
       }
     }
     move(LINES + -1,0);
@@ -30838,7 +30212,8 @@ LAB_0807d750:
           c = (uchar)iVar4;
           if (c < 0x20) goto LAB_0807d750;
         }
-        if (((incrfunc != (anon_subr_int_int_Str_Lineprop_ptr *)0x0) && (c != -1)) && (c != '\n')) {
+        if (((incrfunc != (anon_subr_int_int_Str_Lineprop_ptr *)0x0) && (c != 0xff)) && (c != '\n'))
+        {
           (*incrfunc)(-1,strBuf,strProp);
         }
         if (cm_clear != 0) {
@@ -30913,9 +30288,8 @@ void addPasswd(char *p,Lineprop *pr,int len,int offset,int limit)
     addChar('{',0);
     rcol = offset + 1;
   }
-  while (rcol < ncol) {
+  for (; rcol < ncol; rcol = rcol + 1) {
     addChar('*',0);
-    rcol = rcol + 1;
   }
   return;
 }
@@ -30942,15 +30316,13 @@ void addStr(char *p,Lineprop *pr,int len,int offset,int limit)
     if (len <= i) {
       return;
     }
-    while ((pr[i] & 0x400) != 0) {
-      i = i + 1;
+    for (; (pr[i] & 0x400) != 0; i = i + 1) {
     }
     addChar('{',0);
     rcol = offset + 1;
     iVar1 = calcPosition(p,pr,len,i,0,0);
-    while (rcol < iVar1) {
+    for (; rcol < iVar1; rcol = rcol + 1) {
       addChar(' ',0);
-      rcol = rcol + 1;
     }
   }
   while( true ) {
@@ -30961,9 +30333,8 @@ void addStr(char *p,Lineprop *pr,int len,int offset,int limit)
     iVar1 = calcPosition(p,pr,len,i + len_00,0,0);
     if (limit < iVar1 - offset) break;
     if (p[i] == '\t') {
-      while (rcol < iVar1) {
+      for (; rcol < iVar1; rcol = rcol + 1) {
         addChar(' ',0);
-        rcol = rcol + 1;
       }
     }
     else {
@@ -31130,10 +30501,8 @@ void insC(void)
   
   Strinsert_char(strBuf,CPos,' ');
   CLen = strBuf->length;
-  i = CLen;
-  while (CPos < i) {
+  for (i = CLen; CPos < i; i = i + -1) {
     strProp[i] = *(Lineprop *)(i * 2 + 0x817ca5e);
-    i = i + -1;
   }
   return;
 }
@@ -31151,10 +30520,8 @@ void delC(void)
     while ((CPos + delta < CLen && ((strProp[CPos + delta] & 0x400) != 0))) {
       delta = delta + 1;
     }
-    i = CPos;
-    while (i < CLen) {
+    for (i = CPos; i < CLen; i = i + 1) {
       strProp[i] = strProp[i + delta];
-      i = i + 1;
     }
     Strdelete(strBuf,CPos,delta);
     CLen = CLen - delta;
@@ -31170,8 +30537,7 @@ void _mvL(void)
   if (0 < CPos) {
     CPos = CPos + -1;
   }
-  while ((0 < CPos && ((strProp[CPos] & 0x400) != 0))) {
-    CPos = CPos + -1;
+  for (; (0 < CPos && ((strProp[CPos] & 0x400) != 0)); CPos = CPos + -1) {
   }
   return;
 }
@@ -31240,8 +30606,7 @@ void _mvR(void)
   if (CPos < CLen) {
     CPos = CPos + 1;
   }
-  while ((CPos < CLen && ((strProp[CPos] & 0x400) != 0))) {
-    CPos = CPos + 1;
+  for (; (CPos < CLen && ((strProp[CPos] & 0x400) != 0)); CPos = CPos + 1) {
   }
   return;
 }
@@ -31427,11 +30792,10 @@ void next_compl(int next)
     cm_clear = 0;
     if (cm_next == 0) {
       if ((cm_mode & 4U) == 0) {
-        b = CPos + -1;
-        while ((-1 < b &&
-               (((strBuf->ptr[b] != ' ' && (strBuf->ptr[b] != '\t')) ||
-                ((0 < b && (strBuf->ptr[b + -1] == '\\'))))))) {
-          b = b + -1;
+        for (b = CPos + -1;
+            (-1 < b &&
+            (((strBuf->ptr[b] != ' ' && (strBuf->ptr[b] != '\t')) ||
+             ((0 < b && (strBuf->ptr[b + -1] == '\\')))))); b = b + -1) {
         }
         b = b + 1;
       }
@@ -31564,13 +30928,11 @@ void next_dcompl(int next)
         next_dcompl::d = Strnew_charp(p);
       }
       next_dcompl::len = 0;
-      i = 0;
-      while (i < NCFileBuf) {
+      for (i = 0; i < NCFileBuf; i = i + 1) {
         sVar4 = strlen(CFileBuf[i]);
         if (next_dcompl::len < (int)(sVar4 + 3)) {
           next_dcompl::len = sVar4 + 3;
         }
-        i = i + 1;
       }
       next_dcompl::col = COLS / next_dcompl::len;
       if (next_dcompl::col == 0) {
@@ -31585,11 +30947,9 @@ void next_dcompl(int next)
           cm_disp_next = 0;
         }
       }
-      else {
-        if ((next == -1) &&
-           (cm_disp_next = cm_disp_next - next_dcompl::col * nline, cm_disp_next < 0)) {
-          cm_disp_next = 0;
-        }
+      else if ((next == -1) &&
+              (cm_disp_next = cm_disp_next - next_dcompl::col * nline, cm_disp_next < 0)) {
+        cm_disp_next = 0;
       }
       next_dcompl::row = ((NCFileBuf - cm_disp_next) + next_dcompl::col + -1) / next_dcompl::col;
     }
@@ -31602,14 +30962,12 @@ void next_dcompl(int next)
         y = (nline - next_dcompl::row) + 1;
       }
     }
+    else if (next_dcompl::row < nline) {
+      y = (nline - next_dcompl::row) + -1;
+    }
     else {
-      if (next_dcompl::row < nline) {
-        y = (nline - next_dcompl::row) + -1;
-      }
-      else {
-        next_dcompl::row = nline;
-        y = 0;
-      }
+      next_dcompl::row = nline;
+      y = 0;
     }
     if (y != 0) {
       move(y + -1,0);
@@ -31623,11 +30981,10 @@ void next_dcompl(int next)
       boldend();
       y = y + 1;
     }
-    i = 0;
-    while (i < next_dcompl::row) {
-      j = 0;
-      while ((j < next_dcompl::col &&
-             (iVar5 = next_dcompl::row * j + cm_disp_next + i, iVar5 < NCFileBuf))) {
+    for (i = 0; i < next_dcompl::row; i = i + 1) {
+      for (j = 0; (j < next_dcompl::col &&
+                  (iVar5 = next_dcompl::row * j + cm_disp_next + i, iVar5 < NCFileBuf)); j = j + 1)
+      {
         move(y,next_dcompl::len * j);
         clrtoeolx();
         p_Var6 = Strdup(next_dcompl::d);
@@ -31642,10 +30999,8 @@ void next_dcompl(int next)
         if ((iVar5 != -1) && ((st.st_mode & 0xf000) == 0x4000)) {
           addstr("/");
         }
-        j = j + 1;
       }
       y = y + 1;
-      i = i + 1;
     }
     if ((bVar1) && (LINES + -2 == y)) {
       move(y,0);
@@ -31674,11 +31029,10 @@ Str escape_spaces(Str s)
   
   tmp = (Str)0x0;
   if (s != (Str)0x0) {
-    p = s->ptr;
-    while (*p != '\0') {
+    for (p = s->ptr; *p != '\0'; p = p + 1) {
       if ((*p == ' ') || (*p == '\t')) {
         if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(s->ptr,(int)(p + -(int)s->ptr));
+          tmp = Strnew_charp_n(s->ptr,(int)p - (int)s->ptr);
         }
         if (tmp->area_size <= tmp->length + 1) {
           Strgrow(tmp);
@@ -31697,7 +31051,6 @@ Str escape_spaces(Str s)
         tmp->length = iVar1 + 1;
         tmp->ptr[tmp->length] = '\0';
       }
-      p = p + 1;
     }
     if (tmp != (Str)0x0) {
       s = tmp;
@@ -31717,25 +31070,21 @@ Str unescape_spaces(Str s)
   
   tmp = (Str)0x0;
   if (s != (Str)0x0) {
-    p = s->ptr;
-    while (*p != '\0') {
+    for (p = s->ptr; *p != '\0'; p = p + 1) {
       if ((*p == '\\') && ((p[1] == ' ' || (p[1] == '\t')))) {
         if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(s->ptr,(int)(p + -(int)s->ptr));
+          tmp = Strnew_charp_n(s->ptr,(int)p - (int)s->ptr);
         }
       }
-      else {
-        if (tmp != (Str)0x0) {
-          if (tmp->area_size <= tmp->length + 1) {
-            Strgrow(tmp);
-          }
-          iVar1 = tmp->length;
-          tmp->ptr[iVar1] = *p;
-          tmp->length = iVar1 + 1;
-          tmp->ptr[tmp->length] = '\0';
+      else if (tmp != (Str)0x0) {
+        if (tmp->area_size <= tmp->length + 1) {
+          Strgrow(tmp);
         }
+        iVar1 = tmp->length;
+        tmp->ptr[iVar1] = *p;
+        tmp->length = iVar1 + 1;
+        tmp->ptr[tmp->length] = '\0';
       }
-      p = p + 1;
     }
     if (tmp != (Str)0x0) {
       s = tmp;
@@ -31844,9 +31193,7 @@ Str doComplete(Str ifn,int *status,int next)
           CFileName = Strnew_charp(pdVar4->d_name);
         }
         else {
-          i = 0;
-          while (CFileName->ptr[i] == pdVar4->d_name[i]) {
-            i = i + 1;
+          for (i = 0; CFileName->ptr[i] == pdVar4->d_name[i]; i = i + 1) {
           }
           Strtruncate(CFileName,i);
         }
@@ -32072,8 +31419,7 @@ void _editor(void)
     (fi.value)->ptr[(fi.value)->length] = '\0';
     input_textarea(&fi);
     strBuf = Strnew();
-    p = (fi.value)->ptr;
-    while (*p != '\0') {
+    for (p = (fi.value)->ptr; *p != '\0'; p = p + 1) {
       if ((*p != '\r') && (*p != '\n')) {
         if (strBuf->area_size <= strBuf->length + 1) {
           Strgrow(strBuf);
@@ -32084,7 +31430,6 @@ void _editor(void)
         p_Var2->length = iVar1 + 1;
         strBuf->ptr[strBuf->length] = '\0';
       }
-      p = p + 1;
     }
     CPos = setStrType(strBuf,strProp);
     CLen = CPos;
@@ -32119,36 +31464,27 @@ int LUfactor(Matrix A,int *indexarray)
   
   n = A->dim;
   pvVar4 = new_vector(n);
-  i = 0;
-  while (i < n) {
+  for (i = 0; i < n; i = i + 1) {
     indexarray[i] = i;
-    i = i + 1;
   }
-  i = 0;
-  while (i < n) {
+  for (i = 0; i < n; i = i + 1) {
     mx = 0.0;
-    j = 0;
-    while (j < n) {
+    for (j = 0; j < n; j = j + 1) {
       if (mx < ABS(A->me[A->dim * i + j])) {
         mx = ABS(A->me[A->dim * i + j]);
       }
-      j = j + 1;
     }
     pvVar4->ve[i] = mx;
-    i = i + 1;
   }
-  k = 0;
-  while (k < n + -1) {
+  for (k = 0; k < n + -1; k = k + 1) {
     mx = 0.0;
     i_max = -1;
-    i = k;
-    while (i < n) {
+    for (i = k; i < n; i = i + 1) {
       if ((Tiny * ABS(A->me[A->dim * i + k]) <= ABS(pvVar4->ve[i])) &&
          (dVar1 = ABS(A->me[A->dim * i + k]) / pvVar4->ve[i], mx < dVar1)) {
         i_max = i;
         mx = dVar1;
       }
-      i = i + 1;
     }
     if (i_max == -1) {
       *(double *)((int)A->me + (A->dim + 1) * 8 * k) = 0.0;
@@ -32159,12 +31495,10 @@ int LUfactor(Matrix A,int *indexarray)
         iVar2 = indexarray[i_max];
         indexarray[i_max] = indexarray[k];
         indexarray[k] = iVar2;
-        j = 0;
-        while (j < n) {
+        for (j = 0; j < n; j = j + 1) {
           dVar1 = A->me[A->dim * i_max + j];
           A->me[A->dim * i_max + j] = A->me[A->dim * k + j];
           A->me[A->dim * k + j] = dVar1;
-          j = j + 1;
         }
       }
       while (i = i + 1, i < n) {
@@ -32179,7 +31513,6 @@ int LUfactor(Matrix A,int *indexarray)
         }
       }
     }
-    k = k + 1;
   }
   return 0;
 }
@@ -32194,10 +31527,8 @@ int LUsolve(Matrix A,int *indexarray,Vector b,Vector x)
   int i;
   
   iVar1 = A->dim;
-  i = 0;
-  while (i < iVar1) {
+  for (i = 0; i < iVar1; i = i + 1) {
     x->ve[i] = b->ve[indexarray[i]];
-    i = i + 1;
   }
   iVar1 = Lsolve(A,x,x,1.0);
   if ((iVar1 != -1) && (iVar1 = Usolve(A,x,x,0.0), iVar1 != -1)) {
@@ -32232,18 +31563,14 @@ Matrix LUinverse(Matrix A,int *indexarray,Matrix out)
     if (n <= i) {
       return out;
     }
-    j = 0;
-    while (j < n) {
+    for (j = 0; j < n; j = j + 1) {
       b->ve[j] = 0.0;
-      j = j + 1;
     }
     b->ve[i] = 1.0;
     iVar1 = LUsolve(A,indexarray,b,x);
     if (iVar1 == -1) break;
-    j = 0;
-    while (j < n) {
+    for (j = 0; j < n; j = j + 1) {
       out->me[out->dim * j + i] = x->ve[j];
-      j = j + 1;
     }
     i = i + 1;
   }
@@ -32302,20 +31629,16 @@ int Lsolve(Matrix mat,Vector b,Vector out,double diag)
   int i;
   
   iVar1 = mat->dim;
-  i = 0;
-  while ((iVar2 = i, i < iVar1 && (b->ve[i] == 0.0))) {
+  for (i = 0; (iVar2 = i, i < iVar1 && (b->ve[i] == 0.0)); i = i + 1) {
     out->ve[i] = 0.0;
-    i = i + 1;
   }
   do {
     if (iVar1 <= i) {
       return 0;
     }
     sum = b->ve[i];
-    j = iVar2;
-    while (j < i) {
+    for (j = iVar2; j < i; j = j + 1) {
       sum = sum - out->ve[j] * mat->me[mat->dim * i + j];
-      j = j + 1;
     }
     if (diag == 0.0) {
       if (ABS(*(double *)((int)mat->me + (mat->dim + 1) * 8 * i)) <= Tiny * ABS(sum)) {
@@ -32501,9 +31824,7 @@ int table_colspan(table *t,int row,int col)
 {
   int i;
   
-  i = col + 1;
-  while ((i <= t->maxcol && ((t->tabattr[row][i] & 1) != 0))) {
-    i = i + 1;
+  for (i = col + 1; (i <= t->maxcol && ((t->tabattr[row][i] & 1) != 0)); i = i + 1) {
   }
   return i - col;
 }
@@ -32540,10 +31861,8 @@ int minimum_cellspacing(int border_mode)
   if (border_mode == 0) {
     iVar1 = 1;
   }
-  else {
-    if ((border_mode < 0) || (iVar1 = symbol_width, 3 < border_mode)) {
-      iVar1 = 0;
-    }
+  else if ((border_mode < 0) || (iVar1 = symbol_width, 3 < border_mode)) {
+    iVar1 = 0;
   }
   return iVar1;
 }
@@ -32565,9 +31884,7 @@ LAB_080805d1:
       return t->cellspacing * t->maxcol;
     }
   }
-  else {
-    if (iVar1 == 3) goto LAB_080805d1;
-  }
+  else if (iVar1 == 3) goto LAB_080805d1;
   return 0;
 }
 
@@ -32599,21 +31916,17 @@ table * newTable(void)
   ptVar1->tabidvalue = ppp_Var5;
   pp_Var6 = (Str *)GC_malloc(200);
   ptVar1->tridvalue = pp_Var6;
-  i = 0;
-  while (i < 0x32) {
+  for (i = 0; i < 0x32; i = i + 1) {
     ptVar1->tabdata[i] = (GeneralList **)0x0;
     ptVar1->tabattr[i] = (table_attr *)0x0;
     ptVar1->tabheight[i] = 0;
     ptVar1->tabidvalue[i] = (Str *)0x0;
     ptVar1->tridvalue[i] = (Str)0x0;
-    i = i + 1;
   }
-  j = 0;
-  while (j < 0x32) {
+  for (j = 0; j < 0x32; j = j + 1) {
     ptVar1->tabwidth[j] = 0;
     ptVar1->minimum_width[j] = 0;
     ptVar1->fixed_width[j] = 0;
-    j = j + 1;
   }
   (ptVar1->cell).maxcell = -1;
   (ptVar1->cell).icell = -1;
@@ -32666,22 +31979,19 @@ void check_row(table *t,int row)
     psVar5 = (short *)GC_malloc_atomic(iVar2 * 2);
     ppp_Var6 = (Str **)GC_malloc(iVar2 << 2);
     pp_Var7 = (Str *)GC_malloc(iVar2 << 2);
-    i = 0;
-    while (i < t->max_rowsize) {
-      pppGVar3[i] = (GeneralList **)t->tabdata[i];
+    for (i = 0; i < t->max_rowsize; i = i + 1) {
+      pppGVar3[i] = t->tabdata[i];
       pptVar4[i] = t->tabattr[i];
       psVar5[i] = t->tabheight[i];
-      ppp_Var6[i] = (Str *)t->tabidvalue[i];
+      ppp_Var6[i] = t->tabidvalue[i];
       pp_Var7[i] = t->tridvalue[i];
-      i = i + 1;
     }
-    while (i < iVar2) {
+    for (; i < iVar2; i = i + 1) {
       pppGVar3[i] = (GeneralList **)0x0;
       pptVar4[i] = (table_attr *)0x0;
       psVar5[i] = 0;
       ppp_Var6[i] = (Str *)0x0;
       pp_Var7[i] = (Str)0x0;
-      i = i + 1;
     }
     t->tabdata = pppGVar3;
     t->tabattr = pptVar4;
@@ -32700,12 +32010,10 @@ void check_row(table *t,int row)
     ppp_Var6 = t->tabidvalue;
     pp_Var7 = (Str *)GC_malloc(200);
     ppp_Var6[row] = pp_Var7;
-    i = 0;
-    while (i < 0x32) {
+    for (i = 0; i < 0x32; i = i + 1) {
       t->tabdata[row][i] = (GeneralList *)0x0;
       t->tabattr[row][i] = 0;
       t->tabidvalue[row][i] = (Str)0x0;
-      i = i + 1;
     }
   }
   return;
@@ -32783,7 +32091,7 @@ int visible_length(char *str)
   prev_status = 0;
   tagbuf = Strnew();
   t = str;
-  while (*str != '\0') {
+  for (; *str != '\0'; str = str + n) {
     prev_status = status;
     iVar1 = next_status(*str,&status);
     if (iVar1 == 0) {
@@ -32797,68 +32105,57 @@ int visible_length(char *str)
         bVar3 = WTF_WIDTH_MAP[(byte)*str];
       }
       len = len + (uint)bVar3;
-      n = ZEXT14(WTF_LEN_MAP[(byte)*str]);
+      n = (int)WTF_LEN_MAP[(byte)*str];
     }
     if (status == 1) {
       Strclear(tagbuf);
       Strcat_charp_n(tagbuf,str,n);
     }
-    else {
-      if ((((status == 2) || (status == 4)) || (status == 3)) || ((status == 5 || (status == 0xf))))
-      {
-        Strcat_charp_n(tagbuf,str,n);
+    else if ((((status == 2) || (status == 4)) || (status == 3)) ||
+            ((status == 5 || (status == 0xf)))) {
+      Strcat_charp_n(tagbuf,str,n);
+    }
+    else if (status == 6) {
+      if (prev_status == 0) {
+        Strclear(tagbuf);
+        len = len + -1;
       }
       else {
-        if (status == 6) {
-          if (prev_status == 0) {
-            Strclear(tagbuf);
-            len = len + -1;
-          }
-          else {
-            Strcat_charp_n(tagbuf,str,n);
-          }
-        }
-        else {
-          if ((status == 0) && (prev_status == 6)) {
-            Strcat_charp_n(tagbuf,str,n);
-            r2 = tagbuf->ptr;
-            t = getescapecmd(&r2);
-            if ((*r2 == '\0') && ((*t == '\r' || (*t == '\n')))) {
-              if (max_len < len) {
-                max_len = len;
-              }
-              len = 0;
-            }
-            else {
-              iVar1 = wtf_strwidth((wc_uchar *)t);
-              iVar2 = wtf_strwidth((wc_uchar *)r2);
-              len = len + iVar1 + iVar2;
-            }
-          }
-          else {
-            if ((status != 0) ||
-               ((((prev_status != 2 && (prev_status != 1)) && (prev_status != 5)) &&
-                (prev_status != 0xf)))) {
-              if (*str == '\t') {
-                len = len + -1;
-                do {
-                  len = len + 1;
-                } while ((visible_length_offset + len) % Tabstop != 0);
-              }
-              else {
-                if ((*str == '\r') || (*str == '\n')) {
-                  if (max_len < len + -1) {
-                    max_len = len + -1;
-                  }
-                  len = 0;
-                }
-              }
-            }
-          }
-        }
+        Strcat_charp_n(tagbuf,str,n);
       }
     }
-    str = str + n;
+    else if ((status == 0) && (prev_status == 6)) {
+      Strcat_charp_n(tagbuf,str,n);
+      r2 = tagbuf->ptr;
+      t = getescapecmd(&r2);
+      if ((*r2 == '\0') && ((*t == '\r' || (*t == '\n')))) {
+        if (max_len < len) {
+          max_len = len;
+        }
+        len = 0;
+      }
+      else {
+        iVar1 = wtf_strwidth((wc_uchar *)t);
+        iVar2 = wtf_strwidth((wc_uchar *)r2);
+        len = len + iVar1 + iVar2;
+      }
+    }
+    else if ((status != 0) ||
+            ((((prev_status != 2 && (prev_status != 1)) && (prev_status != 5)) &&
+             (prev_status != 0xf)))) {
+      if (*str == '\t') {
+        len = len + -1;
+        do {
+          len = len + 1;
+        } while ((visible_length_offset + len) % Tabstop != 0);
+      }
+      else if ((*str == '\r') || (*str == '\n')) {
+        if (max_len < len + -1) {
+          max_len = len + -1;
+        }
+        len = 0;
+      }
+    }
   }
   if (status == 6) {
     r2 = tagbuf->ptr;
@@ -32893,24 +32190,22 @@ int visible_length_plain(char *str)
       } while ((visible_length_offset + len) % Tabstop != 0);
       str = str + 1;
     }
+    else if ((*str == '\r') || (*str == '\n')) {
+      if (max_len < len) {
+        max_len = len;
+      }
+      len = 0;
+      str = str + 1;
+    }
     else {
-      if ((*str == '\r') || (*str == '\n')) {
-        if (max_len < len) {
-          max_len = len;
-        }
-        len = 0;
-        str = str + 1;
+      if (WcOption.use_wide == '\0') {
+        bVar1 = WTF_WIDTH_MAP[(byte)*str] != '\0';
       }
       else {
-        if (WcOption.use_wide == '\0') {
-          bVar1 = WTF_WIDTH_MAP[(byte)*str] != '\0';
-        }
-        else {
-          bVar1 = WTF_WIDTH_MAP[(byte)*str];
-        }
-        len = len + (uint)bVar1;
-        str = str + WTF_LEN_MAP[(byte)*str];
+        bVar1 = WTF_WIDTH_MAP[(byte)*str];
       }
+      len = len + (uint)bVar1;
+      str = str + WTF_LEN_MAP[(byte)*str];
     }
   }
   if (len <= max_len) {
@@ -32961,8 +32256,7 @@ void align(TextLine *lbuf,int width,int mode)
   
   y = lbuf->line;
   if (y->length == 0) {
-    i = 0;
-    while (i < width) {
+    for (i = 0; i < width; i = i + 1) {
       if (y->area_size <= y->length + 1) {
         Strgrow(y);
       }
@@ -32970,7 +32264,6 @@ void align(TextLine *lbuf,int width,int mode)
       y->ptr[iVar2] = ' ';
       y->length = iVar2 + 1;
       y->ptr[y->length] = '\0';
-      i = i + 1;
     }
     lbuf->pos = (short)width;
   }
@@ -32979,8 +32272,7 @@ void align(TextLine *lbuf,int width,int mode)
     iVar2 = width - lbuf->pos;
     if (mode == 1) {
       Strcat(x,y);
-      i = 0;
-      while (i < iVar2) {
+      for (i = 0; i < iVar2; i = i + 1) {
         if (x->area_size <= x->length + 1) {
           Strgrow(x);
         }
@@ -32988,51 +32280,42 @@ void align(TextLine *lbuf,int width,int mode)
         x->ptr[iVar1] = ' ';
         x->length = iVar1 + 1;
         x->ptr[x->length] = '\0';
-        i = i + 1;
       }
     }
-    else {
-      if (mode == 2) {
-        i = 0;
-        while (i < iVar2) {
-          if (x->area_size <= x->length + 1) {
-            Strgrow(x);
-          }
-          iVar1 = x->length;
-          x->ptr[iVar1] = ' ';
-          x->length = iVar1 + 1;
-          x->ptr[x->length] = '\0';
-          i = i + 1;
+    else if (mode == 2) {
+      for (i = 0; i < iVar2; i = i + 1) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
-        Strcat(x,y);
+        iVar1 = x->length;
+        x->ptr[iVar1] = ' ';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
       }
-      else {
-        if (mode != 0) {
-          return;
+      Strcat(x,y);
+    }
+    else {
+      if (mode != 0) {
+        return;
+      }
+      for (i = 0; i < iVar2 / 2; i = i + 1) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
-        i = 0;
-        while (i < iVar2 / 2) {
-          if (x->area_size <= x->length + 1) {
-            Strgrow(x);
-          }
-          iVar1 = x->length;
-          x->ptr[iVar1] = ' ';
-          x->length = iVar1 + 1;
-          x->ptr[x->length] = '\0';
-          i = i + 1;
+        iVar1 = x->length;
+        x->ptr[iVar1] = ' ';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+      }
+      Strcat(x,y);
+      for (i = 0; i < iVar2 - iVar2 / 2; i = i + 1) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
-        Strcat(x,y);
-        i = 0;
-        while (i < iVar2 - iVar2 / 2) {
-          if (x->area_size <= x->length + 1) {
-            Strgrow(x);
-          }
-          iVar1 = x->length;
-          x->ptr[iVar1] = ' ';
-          x->length = iVar1 + 1;
-          x->ptr[x->length] = '\0';
-          i = i + 1;
-        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = ' ';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
       }
     }
     lbuf->line = x;
@@ -33069,15 +32352,11 @@ void print_item(table *t,int row,int col,int width,Str buf)
     if ((t->tabattr[row][col] & 0x30) == 0) {
       alignment = 1;
     }
-    else {
-      if ((t->tabattr[row][col] & 0x30) == 0x20) {
-        alignment = 2;
-      }
-      else {
-        if ((t->tabattr[row][col] & 0x30) == 0x10) {
-          alignment = 0;
-        }
-      }
+    else if ((t->tabattr[row][col] & 0x30) == 0x20) {
+      alignment = 2;
+    }
+    else if ((t->tabattr[row][col] & 0x30) == 0x10) {
+      alignment = 0;
     }
     align(lbuf,width,alignment);
     Strcat(buf,lbuf->line);
@@ -33116,15 +32395,11 @@ void print_sep(table *t,int row,int type,int maxcol,Str buf)
   if (type == 0) {
     forbid._0_1_ = '\x03';
   }
-  else {
-    if (type == 2) {
-      forbid._0_1_ = '\t';
-    }
-    else {
-      if ((*t->tabattr[row + 1] & 2) != 0) {
-        forbid._0_1_ = '\x05';
-      }
-    }
+  else if (type == 2) {
+    forbid._0_1_ = '\t';
+  }
+  else if ((*t->tabattr[row + 1] & 2) != 0) {
+    forbid._0_1_ = '\x05';
   }
   if (t->border_mode != 3) {
     if (t->border_mode == 2) {
@@ -33132,8 +32407,7 @@ void print_sep(table *t,int row,int type,int maxcol,Str buf)
     }
     push_symbol(buf,(byte)forbid,symbol_width,1);
   }
-  i = 0;
-  while (i <= maxcol) {
+  for (i = 0; i <= maxcol; i = i + 1) {
     if ((type == 2) || ((t->tabattr[row + 1][i] & 2) == 0)) {
       w = (int)t->tabwidth[i] + t->cellpadding * 2;
       if (symbol_width == 2) {
@@ -33147,31 +32421,26 @@ void print_sep(table *t,int row,int type,int maxcol,Str buf)
       }
       push_symbol(buf,cVar2,symbol_width,w);
     }
-    else {
-      if ((t->tabattr[row + 1][i] & 1) == 0) {
-        k = row;
-        while (((-1 < k && (t->tabattr[k] != (table_attr *)0x0)) && ((t->tabattr[k][i] & 2) != 0)))
-        {
-          k = k + -1;
-        }
-        m = (int)t->tabwidth[i] + t->cellpadding * 2;
-        iVar1 = i;
-        while ((l = iVar1 + 1, l <= t->maxcol && ((t->tabattr[row][l] & 1) != 0))) {
-          m = m + (int)t->tabwidth[iVar1 + 1] + t->cellspacing;
-          iVar1 = l;
-        }
-        print_item(t,k,i,m,buf);
+    else if ((t->tabattr[row + 1][i] & 1) == 0) {
+      k = row;
+      while (((-1 < k && (t->tabattr[k] != (table_attr *)0x0)) && ((t->tabattr[k][i] & 2) != 0))) {
+        k = k + -1;
       }
+      m = (int)t->tabwidth[i] + t->cellpadding * 2;
+      iVar1 = i;
+      while ((l = iVar1 + 1, l <= t->maxcol && ((t->tabattr[row][l] & 1) != 0))) {
+        m = m + (int)t->tabwidth[iVar1 + 1] + t->cellspacing;
+        iVar1 = l;
+      }
+      print_item(t,k,i,m,buf);
     }
     if (i < maxcol) {
       forbid = 0;
       if (type == 0) {
         forbid = 2;
       }
-      else {
-        if ((t->tabattr[row][i + 1] & 1) != 0) {
-          forbid = 2;
-        }
+      else if ((t->tabattr[row][i + 1] & 1) != 0) {
+        forbid = 2;
       }
       if (type == 2) {
         forbid = forbid | 8;
@@ -33195,7 +32464,6 @@ void print_sep(table *t,int row,int type,int maxcol,Str buf)
         push_symbol(buf,cVar2,symbol_width,1);
       }
     }
-    i = i + 1;
   }
   forbid._0_1_ = 4;
   if (type == 0) {
@@ -33225,10 +32493,9 @@ int get_spec_cell_width(table *tbl,int row,int col)
   int i;
   
   w = (int)tbl->tabwidth[col];
-  i = col + 1;
-  while ((i <= tbl->maxcol && (check_row(tbl,row), (tbl->tabattr[row][i] & 1) != 0))) {
+  for (i = col + 1; (i <= tbl->maxcol && (check_row(tbl,row), (tbl->tabattr[row][i] & 1) != 0));
+      i = i + 1) {
     w = w + (int)tbl->tabwidth[i] + tbl->cellspacing;
-    i = i + 1;
   }
   return w;
 }
@@ -33238,10 +32505,11 @@ int get_spec_cell_width(table *tbl,int row,int col)
 void do_refill(table *tbl,int row,int col,int maxlimit)
 
 {
-  GeneralList **ppGVar1;
-  table *ptVar2;
-  GeneralList *pGVar3;
-  int iVar4;
+  short sVar1;
+  GeneralList **ppGVar2;
+  table *ptVar3;
+  GeneralList *pGVar4;
+  int iVar5;
   parsed_tag *tag_00;
   readbuffer obuf;
   environment envs [20];
@@ -33264,11 +32532,11 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
   if ((tbl->tabdata[row] != (GeneralList **)0x0) && (tbl->tabdata[row][col] != (GeneralList *)0x0))
   {
     orgdata = (TextList *)tbl->tabdata[row][col];
-    ppGVar1 = tbl->tabdata[row];
-    pGVar3 = newGeneralList();
-    ppGVar1[col] = pGVar3;
-    iVar4 = get_spec_cell_width(tbl,row,col);
-    init_henv(&h_env,&obuf,envs,0x14,(TextLineList *)tbl->tabdata[row][col],iVar4,0);
+    ppGVar2 = tbl->tabdata[row];
+    pGVar4 = newGeneralList();
+    ppGVar2[col] = pGVar4;
+    iVar5 = get_spec_cell_width(tbl,row,col);
+    init_henv(&h_env,&obuf,envs,0x14,(TextLineList *)tbl->tabdata[row][col],iVar5,0);
     obuf.flag = obuf.flag | 0x20000;
     if (maxlimit < h_env.limit) {
       h_env.limit = maxlimit;
@@ -33276,10 +32544,9 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
     if ((tbl->border_mode != 0) && (0 < tbl->vcellpadding)) {
       do_blankline(&h_env,&obuf,0,0,h_env.limit);
     }
-    l = orgdata->first;
-    while (l != (TextListItem *)0x0) {
-      iVar4 = strncasecmp(l->ptr,"<table_alt",10);
-      if ((iVar4 == 0) && ((l->ptr[10] == '>' || ((MYCTYPE_MAP[(byte)l->ptr[10]] & 2) != 0)))) {
+    for (l = orgdata->first; l != (TextListItem *)0x0; l = l->next) {
+      iVar5 = strncasecmp(l->ptr,"<table_alt",10);
+      if ((iVar5 == 0) && ((l->ptr[10] == '>' || ((MYCTYPE_MAP[(byte)l->ptr[10]] & 2) != 0)))) {
         id = -1;
         p = l->ptr;
         tag_00 = parse_tag(&p,1);
@@ -33287,40 +32554,36 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
           parsedtag_get_value(tag_00,0x40,&id);
         }
         if ((-1 < id) && (id < tbl->ntable)) {
-          ptVar2 = tbl->tables[id].ptr;
-          iVar4 = (int)tbl->tables[id].indent + ptVar2->total_width;
+          ptVar3 = tbl->tables[id].ptr;
+          iVar5 = (int)tbl->tables[id].indent + ptVar3->total_width;
           tbl->tables[id].ptr = (table *)0x0;
           save_fonteffect(&h_env,h_env.obuf);
           flushline(&h_env,&obuf,0,2,h_env.limit);
-          if ((0 < ptVar2->vspace) && ((obuf.flag & 0x2000U) == 0)) {
+          if ((0 < ptVar3->vspace) && ((obuf.flag & 0x2000U) == 0)) {
             do_blankline(&h_env,&obuf,0,0,h_env.limit);
           }
           if (((h_env.obuf)->flag & 0x70U) == 0x20) {
             alignment = 0;
           }
+          else if (((h_env.obuf)->flag & 0x70U) == 0x40) {
+            alignment = 2;
+          }
           else {
-            if (((h_env.obuf)->flag & 0x70U) == 0x40) {
-              alignment = 2;
-            }
-            else {
-              alignment = 1;
-            }
+            alignment = 1;
           }
           if (alignment != 1) {
-            ti = (tbl->tables[id].buf)->first;
-            while (ti != (TextLineListItem *)0x0) {
+            for (ti = (tbl->tables[id].buf)->first; ti != (TextLineListItem *)0x0; ti = ti->next) {
               align(ti->ptr,h_env.limit,alignment);
-              ti = (TextLineListItem *)ti->next;
             }
           }
           appendGeneralList((GeneralList *)h_env.buf,(GeneralList *)tbl->tables[id].buf);
-          if (h_env.maxlimit < iVar4) {
-            h_env.maxlimit = iVar4;
+          if (h_env.maxlimit < iVar5) {
+            h_env.maxlimit = iVar5;
           }
           restore_fonteffect(&h_env,h_env.obuf);
           obuf.flag = obuf.flag & 0xffffdfff;
           h_env.blank_lines = 0;
-          if (0 < ptVar2->vspace) {
+          if (0 < ptVar3->vspace) {
             do_blankline(&h_env,&obuf,0,0,h_env.limit);
             obuf.flag = obuf.flag | 0x2000;
           }
@@ -33329,7 +32592,6 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
       else {
         HTMLlineproc0(l->ptr,&h_env,1);
       }
-      l = (TextListItem *)l->next;
     }
     if (obuf.status != 0) {
       obuf.status = 7;
@@ -33338,27 +32600,21 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
     completeHTMLstream(&h_env,&obuf);
     flushline(&h_env,&obuf,0,2,h_env.limit);
     if (tbl->border_mode == 0) {
-      iVar4 = table_rowspan(tbl,row,col);
-      if (tbl->maxrow < row + iVar4) {
+      iVar5 = table_rowspan(tbl,row,col);
+      if (tbl->maxrow < row + iVar5) {
         if (0 < tbl->vspace) {
           purgeline(&h_env);
         }
       }
-      else {
-        if ((0 < tbl->vcellpadding) && ((obuf.flag & 0x2000U) == 0)) {
-          do_blankline(&h_env,&obuf,0,0,h_env.limit);
-        }
+      else if ((0 < tbl->vcellpadding) && ((obuf.flag & 0x2000U) == 0)) {
+        do_blankline(&h_env,&obuf,0,0,h_env.limit);
       }
     }
-    else {
-      if (tbl->vcellpadding < 1) {
-        purgeline(&h_env);
-      }
-      else {
-        if ((obuf.flag & 0x2000U) == 0) {
-          do_blankline(&h_env,&obuf,0,0,h_env.limit);
-        }
-      }
+    else if (tbl->vcellpadding < 1) {
+      purgeline(&h_env);
+    }
+    else if ((obuf.flag & 0x2000U) == 0) {
+      do_blankline(&h_env,&obuf,0,0,h_env.limit);
     }
     colspan = table_colspan(tbl,row,col);
     if (colspan < 2) {
@@ -33367,11 +32623,11 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
       }
     }
     else {
-      iVar4 = bsearch_2short((short)colspan,(tbl->cell).colspan,(short)col,(short *)&tbl->cell,0x32,
+      iVar5 = bsearch_2short((short)colspan,(tbl->cell).colspan,(short)col,(tbl->cell).col,0x32,
                              (tbl->cell).index,(tbl->cell).maxcell + 1);
-      iVar4 = (int)(tbl->cell).index[iVar4];
-      if ((tbl->cell).minimum_width[iVar4] < h_env.maxlimit) {
-        (tbl->cell).minimum_width[iVar4] = (short)h_env.maxlimit;
+      sVar1 = (tbl->cell).index[iVar5];
+      if ((tbl->cell).minimum_width[sVar1] < h_env.maxlimit) {
+        (tbl->cell).minimum_width[sVar1] = (short)h_env.maxlimit;
       }
     }
   }
@@ -33400,7 +32656,7 @@ void check_cell_width(short *tabwidth,short *cellwidth,short *col,short *colspan
 {
   int iVar1;
   short sVar2;
-  int iVar3;
+  short sVar3;
   int iVar4;
   int iVar5;
   int r;
@@ -33413,38 +32669,30 @@ void check_cell_width(short *tabwidth,short *cellwidth,short *col,short *colspan
   int j;
   int i;
   
-  k = 0;
-  while (k <= maxcell) {
-    iVar3 = (int)indexarray[k];
-    if (0 < cellwidth[iVar3]) {
-      iVar4 = (int)col[iVar3];
-      iVar5 = colspan[iVar3] + iVar4;
+  for (k = 0; k <= maxcell; k = k + 1) {
+    sVar2 = indexarray[k];
+    if (0 < cellwidth[sVar2]) {
+      iVar4 = (int)col[sVar2];
+      iVar5 = colspan[sVar2] + iVar4;
       swidth = 0;
-      i = iVar4;
-      while (i < iVar5) {
+      for (i = iVar4; i < iVar5; i = i + 1) {
         swidth = swidth + tabwidth[i];
-        i = i + 1;
       }
-      iVar1 = (int)cellwidth[iVar3] + (1 - colspan[iVar3]) * space;
+      iVar1 = (int)cellwidth[sVar2] + (1 - colspan[sVar2]) * space;
       if (swidth < iVar1) {
-        sVar2 = colspan[iVar3];
-        r = (iVar1 - swidth) % (int)colspan[iVar3];
-        i = iVar4;
-        while (i < iVar5) {
-          tabwidth[i] = tabwidth[i] + (short)((iVar1 - swidth) / (int)sVar2);
-          i = i + 1;
+        sVar3 = colspan[sVar2];
+        r = (iVar1 - swidth) % (int)colspan[sVar2];
+        for (i = iVar4; i < iVar5; i = i + 1) {
+          tabwidth[i] = tabwidth[i] + (short)((iVar1 - swidth) / (int)sVar3);
         }
         if ((dir == 1) && (0 < r)) {
-          r = (int)colspan[iVar3];
+          r = (int)colspan[sVar2];
         }
-        i = 1;
-        while (i <= r) {
+        for (i = 1; i <= r; i = i + 1) {
           tabwidth[iVar5 - i] = tabwidth[iVar5 - i] + 1;
-          i = i + 1;
         }
       }
     }
-    k = k + 1;
   }
   return;
 }
@@ -33457,14 +32705,12 @@ void check_minimum_width(table *t,short *tabwidth)
   table_cell *cell;
   int i;
   
-  i = 0;
-  while (i <= t->maxcol) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
     if (tabwidth[i] < t->minimum_width[i]) {
       tabwidth[i] = t->minimum_width[i];
     }
-    i = i + 1;
   }
-  check_cell_width(tabwidth,(t->cell).minimum_width,(short *)&t->cell,(t->cell).colspan,
+  check_cell_width(tabwidth,(t->cell).minimum_width,(t->cell).col,(t->cell).colspan,
                    (t->cell).maxcell,(t->cell).index,t->cellspacing,0);
   return;
 }
@@ -33484,20 +32730,17 @@ void check_maximum_width(table *t)
   table_cell *cell;
   
   (t->cell).necell = 0;
-  j = 0;
-  while (j <= (t->cell).maxcell) {
+  for (j = 0; j <= (t->cell).maxcell; j = j + 1) {
     i = (int)(t->cell).col[j];
     iVar1 = (t->cell).colspan[j] + i;
     swidth = 0;
-    while (i < iVar1) {
+    for (; i < iVar1; i = i + 1) {
       swidth = swidth + t->tabwidth[i];
-      i = i + 1;
     }
     if (swidth < (int)(t->cell).width[j] + t->cellspacing * (1 - (t->cell).colspan[j])) {
       (t->cell).eindex[(t->cell).necell] = (short)j;
       (t->cell).necell = (t->cell).necell + 1;
     }
-    j = j + 1;
   }
   return;
 }
@@ -33508,13 +32751,13 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
 
 {
   short sVar1;
-  ulonglong uVar2;
+  short sVar2;
+  ulonglong uVar3;
   int step_00;
   short *indexarray_00;
   double *ent;
   void *__s;
   size_t __n;
-  int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
@@ -33552,29 +32795,23 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
   step_00 = table_rule_width(t);
   indexarray_00 = (short *)GC_malloc_atomic();
   ent = (double *)GC_malloc_atomic();
-  i = 0;
-  while (i <= t->maxcol) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
     dVar7 = ceil(dwidth[i]);
-    iVar3 = ceil_at_intervals((int)ROUND(dVar7),step_00);
-    iwidth[i] = (short)iVar3;
+    iVar4 = ceil_at_intervals((int)ROUND(dVar7),step_00);
+    iwidth[i] = (short)iVar4;
     ent[i] = (double)iwidth[i] - dwidth[i];
-    i = i + 1;
   }
   sum = 0.0;
-  k = 0;
-  while (k <= t->maxcol) {
+  for (k = 0; k <= t->maxcol; k = k + 1) {
     x = ent[k];
     sum = sum + x;
-    iVar3 = bsearch_double(x,ent,indexarray_00,k);
-    if (iVar3 < k) {
-      ii = k;
-      while (iVar3 < ii) {
+    iVar4 = bsearch_double(x,ent,indexarray_00,k);
+    if (iVar4 < k) {
+      for (ii = k; iVar4 < ii; ii = ii + -1) {
         indexarray_00[ii] = indexarray_00[ii + -1];
-        ii = ii + -1;
       }
     }
-    indexarray_00[iVar3] = (short)k;
-    k = k + 1;
+    indexarray_00[iVar4] = (short)k;
   }
   __s = (void *)GC_malloc_atomic();
   __n = t->maxcol + 1;
@@ -33585,121 +32822,95 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
     if (1 < step) {
       return;
     }
-    i = 0;
-    while (i <= t->maxcol) {
+    for (i = 0; i <= t->maxcol; i = i + n) {
       if (sum < 0.5) {
         return;
       }
-      n = 0;
-      while (i + n <= t->maxcol) {
+      for (n = 0; i + n <= t->maxcol; n = n + 1) {
         if (n == 0) {
           x = ent[indexarray_00[i + n]];
         }
-        else {
-          if (1e-06 < ABS(ent[indexarray_00[i + n]] - x)) break;
-        }
-        n = n + 1;
+        else if (1e-06 < ABS(ent[indexarray_00[i + n]] - x)) break;
       }
-      k = 0;
-      while (k < n) {
-        iVar3 = (int)indexarray_00[i + k];
-        if ((*(char *)(iVar3 + (int)__s) < '\x02') &&
-           (iwidth[iVar3] - step_00 < (int)t->minimum_width[iVar3])) {
-          *(undefined *)(iVar3 + (int)__s) = 2;
+      for (k = 0; k < n; k = k + 1) {
+        iVar4 = (int)indexarray_00[i + k];
+        if ((*(char *)(iVar4 + (int)__s) < '\x02') &&
+           (iwidth[iVar4] - step_00 < (int)t->minimum_width[iVar4])) {
+          *(undefined *)(iVar4 + (int)__s) = 2;
         }
-        if (((*(char *)(iVar3 + (int)__s) < '\x01') &&
-            (iwidth[iVar3] - step_00 < (int)t->tabwidth[iVar3])) &&
-           (0.5 < (double)step_00 - ent[iVar3])) {
-          *(undefined *)(iVar3 + (int)__s) = 1;
+        if (((*(char *)(iVar4 + (int)__s) < '\x01') &&
+            (iwidth[iVar4] - step_00 < (int)t->tabwidth[iVar4])) &&
+           (0.5 < (double)step_00 - ent[iVar4])) {
+          *(undefined *)(iVar4 + (int)__s) = 1;
         }
-        k = k + 1;
       }
-      uVar2 = uVar8 >> 0x20;
+      uVar3 = uVar8 >> 0x20;
       uVar8 = uVar8 & 0xffffffff00000000;
-      iVar3 = GC_malloc_atomic(n,(int)uVar2);
-      k = 0;
-      while (k < (t->cell).maxcell) {
-        iVar4 = (int)(t->cell).index[k];
-        iVar5 = (int)(t->cell).col[iVar4];
-        iVar6 = (t->cell).colspan[iVar4] + iVar5;
+      iVar4 = GC_malloc_atomic(n,(int)uVar3);
+      for (k = 0; k < (t->cell).maxcell; k = k + 1) {
+        sVar1 = (t->cell).index[k];
+        iVar5 = (int)(t->cell).col[sVar1];
+        iVar6 = (t->cell).colspan[sVar1] + iVar5;
         m = 0;
-        kk = 0;
-        while (kk < n) {
-          sVar1 = indexarray_00[i + kk];
-          if ((iVar5 <= sVar1) && (sVar1 < iVar6)) {
-            *(char *)(m + iVar3) = (char)sVar1;
+        for (kk = 0; kk < n; kk = kk + 1) {
+          sVar2 = indexarray_00[i + kk];
+          if ((iVar5 <= sVar2) && (sVar2 < iVar6)) {
+            *(char *)(m + iVar4) = (char)sVar2;
             m = m + 1;
           }
-          kk = kk + 1;
         }
         if (m != 0) {
-          width = t->cellspacing * ((t->cell).colspan[iVar4] + -1);
-          kk = iVar5;
-          while (kk < iVar6) {
+          width = t->cellspacing * ((t->cell).colspan[sVar1] + -1);
+          for (kk = iVar5; kk < iVar6; kk = kk + 1) {
             width = width + iwidth[kk];
-            kk = kk + 1;
           }
           w = 0;
-          kk = 0;
-          while (kk < m) {
-            if (*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x02') {
+          for (kk = 0; kk < m; kk = kk + 1) {
+            if (*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x02') {
               w = w + step_00;
             }
-            kk = kk + 1;
           }
-          if (width - w < (int)(t->cell).minimum_width[iVar4]) {
-            kk = 0;
-            while (kk < m) {
-              if (*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x02') {
-                *(undefined *)((int)*(char *)(kk + iVar3) + (int)__s) = 2;
+          if (width - w < (int)(t->cell).minimum_width[sVar1]) {
+            for (kk = 0; kk < m; kk = kk + 1) {
+              if (*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x02') {
+                *(undefined *)((int)*(char *)(kk + iVar4) + (int)__s) = 2;
               }
-              kk = kk + 1;
             }
           }
           w = 0;
-          kk = 0;
-          while (kk < m) {
-            if ((*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x01') &&
-               (0.5 < (double)step_00 - ent[*(char *)(kk + iVar3)])) {
+          for (kk = 0; kk < m; kk = kk + 1) {
+            if ((*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x01') &&
+               (0.5 < (double)step_00 - ent[*(char *)(kk + iVar4)])) {
               w = w + step_00;
             }
-            kk = kk + 1;
           }
-          if (width - w < (int)(t->cell).width[iVar4]) {
-            kk = 0;
-            while (kk < m) {
-              if ((*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x01') &&
-                 (0.5 < (double)step_00 - ent[*(char *)(kk + iVar3)])) {
-                *(undefined *)((int)*(char *)(kk + iVar3) + (int)__s) = 1;
+          if (width - w < (int)(t->cell).width[sVar1]) {
+            for (kk = 0; kk < m; kk = kk + 1) {
+              if ((*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x01') &&
+                 (0.5 < (double)step_00 - ent[*(char *)(kk + iVar4)])) {
+                *(undefined *)((int)*(char *)(kk + iVar4) + (int)__s) = 1;
               }
-              kk = kk + 1;
             }
           }
         }
-        k = k + 1;
       }
       nn = 0;
-      k = 0;
-      while (k < n) {
+      for (k = 0; k < n; k = k + 1) {
         if (*(char *)((int)indexarray_00[i + k] + (int)__s) <= step) {
           nn = nn + 1;
         }
-        k = k + 1;
       }
       dVar7 = sum - (double)(nn * step_00);
       if ((dVar7 < 0.0) && (ABS(sum) <= ABS(dVar7))) {
         return;
       }
-      k = 0;
-      while (k < n) {
-        iVar3 = (int)indexarray_00[i + k];
-        if (*(char *)(iVar3 + (int)__s) <= step) {
-          iwidth[iVar3] = iwidth[iVar3] - (short)step_00;
-          *(undefined *)(iVar3 + (int)__s) = 3;
+      for (k = 0; k < n; k = k + 1) {
+        iVar4 = (int)indexarray_00[i + k];
+        if (*(char *)(iVar4 + (int)__s) <= step) {
+          iwidth[iVar4] = iwidth[iVar4] - (short)step_00;
+          *(undefined *)(iVar4 + (int)__s) = 3;
         }
-        k = k + 1;
       }
-      i = i + n;
       sum = dVar7;
     }
     step = step + 1;
@@ -33831,12 +33042,11 @@ int check_compressible_cell
               double *Sxx,int icol,int icell,double sxx,int corr)
 
 {
-  table_cell *ptVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
-  double dVar6;
+  double dVar5;
   double sxy;
   double dmin;
   double dmax;
@@ -33857,8 +33067,7 @@ int check_compressible_cell
   int i;
   table_cell *cell;
   
-  ptVar1 = &t->cell;
-  iVar2 = table_rule_width(t);
+  iVar1 = table_rule_width(t);
   if (10.0 <= sxx) {
     if (icol < 0) {
       if (icell < 0) {
@@ -33870,7 +33079,7 @@ int check_compressible_cell
       else {
         owidth = swidth[icell];
         delta = swidth[icell] - (double)cwidth[icell];
-        bcol = (int)ptVar1->col[icell];
+        bcol = (int)(t->cell).col[icell];
         ecol = (t->cell).colspan[icell] + bcol;
       }
     }
@@ -33882,46 +33091,38 @@ int check_compressible_cell
     }
     dmin = delta;
     dmax = -1.0;
-    k = 0;
-    while (k <= (t->cell).maxcell) {
+    for (k = 0; k <= (t->cell).maxcell; k = k + 1) {
       is_inclusive = 0;
       if (dmin <= 0.0) goto _end;
-      iVar3 = (int)ptVar1->index[k];
-      if (iVar3 != icell) {
-        iVar4 = (int)ptVar1->col[iVar3];
-        iVar5 = (t->cell).colspan[iVar3] + iVar4;
+      iVar2 = (int)(t->cell).index[k];
+      if (iVar2 != icell) {
+        iVar3 = (int)(t->cell).col[iVar2];
+        iVar4 = (t->cell).colspan[iVar2] + iVar3;
         sxy = 0.0;
-        m = iVar4;
-        while (m < iVar5) {
-          i = bcol;
-          while (i < ecol) {
+        for (m = iVar3; m < iVar4; m = m + 1) {
+          for (i = bcol; i < ecol; i = i + 1) {
             sxy = sxy + minv->me[minv->dim * i + m];
-            i = i + 1;
           }
-          m = m + 1;
         }
-        if ((bcol <= iVar4) && (iVar5 <= ecol)) {
+        if ((bcol <= iVar3) && (iVar4 <= ecol)) {
           is_inclusive = 1;
         }
         if (sxy <= 0.0) {
-          dmax = recalc_width(dmax,swidth[iVar3],(int)cwidth[iVar3],sxx,Sxx[iVar3],sxy,is_inclusive)
+          dmax = recalc_width(dmax,swidth[iVar2],(int)cwidth[iVar2],sxx,Sxx[iVar2],sxy,is_inclusive)
           ;
         }
         else {
-          dmin = recalc_width(dmin,swidth[iVar3],(int)cwidth[iVar3],sxx,Sxx[iVar3],sxy,is_inclusive)
+          dmin = recalc_width(dmin,swidth[iVar2],(int)cwidth[iVar2],sxx,Sxx[iVar2],sxy,is_inclusive)
           ;
         }
       }
-      k = k + 1;
     }
     m = 0;
     while ((m <= t->maxcol && (is_inclusive_1 = 0, 0.0 < dmin))) {
       if (m != icol) {
         sxy = 0.0;
-        i = bcol;
-        while (i < ecol) {
+        for (i = bcol; i < ecol; i = i + 1) {
           sxy = sxy + minv->me[minv->dim * i + m];
-          i = i + 1;
         }
         if ((bcol <= m) && (m < ecol)) {
           is_inclusive_1 = 1;
@@ -33944,10 +33145,10 @@ _end:
       dmin = dmax;
     }
     if (((t->maxcol + 1 == ecol - bcol) && (0.0 <= dmin)) ||
-       ((t->maxcol + 1 != ecol - bcol && ((double)iVar2 * 0.5 < dmin)))) {
-      dVar6 = floor((owidth - dmin) + 0.5);
-      iVar2 = ceil_at_intervals((int)ROUND(dVar6),iVar2);
-      correct_table_matrix(t,bcol,ecol - bcol,iVar2,1.0);
+       ((t->maxcol + 1 != ecol - bcol && ((double)iVar1 * 0.5 < dmin)))) {
+      dVar5 = floor((owidth - dmin) + 0.5);
+      iVar1 = ceil_at_intervals((int)ROUND(dVar5),iVar1);
+      correct_table_matrix(t,bcol,ecol - bcol,iVar1,1.0);
       corr = corr + 1;
     }
   }
@@ -33964,22 +33165,22 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   int iVar3;
   int iVar4;
   int iVar5;
-  double (*padVar6) [1];
-  short (*pasVar7) [1];
+  double_0_ *pdVar6;
+  short_0_ *psVar7;
   int iVar8;
   int in_GS_OFFSET;
   undefined2 in_FPUControlWord;
   double dVar9;
   table *ptStack384;
   undefined8 uStack380;
-  double *pdStack372;
-  double (*padStack368) [1];
+  double *apdStack372 [2];
   undefined auStack364 [12];
   double *pdStack352;
   int aiStack348 [2];
   double dStack340;
   int aiStack332 [3];
-  undefined8 uStack320;
+  short_0_ asStack320 [4];
+  int local_13c;
   uint local_138;
   uint local_134;
   undefined4 local_130;
@@ -34022,13 +33223,13 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   double stotal;
   double sxy;
   double twidth;
-  double (*swidth) [1];
+  double_0_ *swidth;
   int local_68;
-  short (*cwidth) [1];
+  short_0_ *cwidth;
   int local_60;
-  short (*corwidth) [1];
+  short_0_ *corwidth;
   int local_58;
-  short (*orgwidth) [1];
+  short_0_ *orgwidth;
   int local_50;
   int mwidth;
   int nwidth;
@@ -34057,7 +33258,7 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   local_dc = local_d4 * 0x10;
   local_d8 = local_d4 >> 0x1c;
   iVar2 = -(local_d4 * 2 + 0x1e & 0xfffffff0);
-  orgwidth = (short (*) [1])((int)&uStack320 + iVar2);
+  orgwidth = asStack320 + iVar2;
   local_e4 = t->maxcol + 1;
   local_58 = t->maxcol;
   local_e0 = 0;
@@ -34068,7 +33269,7 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   local_fc = local_e4 * 0x10;
   local_f8 = local_e4 >> 0x1c;
   iVar3 = -(local_e4 * 2 + 0x1e & 0xfffffff0);
-  corwidth = (short (*) [1])((int)&uStack320 + iVar3 + iVar2);
+  corwidth = asStack320 + iVar3 + iVar2;
   local_60 = (int)(t->cell).maxcell;
   local_104 = local_60 + 1;
   local_100 = 0;
@@ -34079,7 +33280,7 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   local_11c = local_104 * 0x10;
   local_118 = local_104 >> 0x1c;
   iVar4 = -(local_104 * 2 + 0x1e & 0xfffffff0);
-  cwidth = (short (*) [1])((int)&uStack320 + iVar4 + iVar3 + iVar2);
+  cwidth = asStack320 + iVar4 + iVar3 + iVar2;
   local_68 = (int)(t->cell).maxcell;
   local_124 = local_68 + 1;
   local_120 = 0;
@@ -34087,55 +33288,44 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   local_128 = local_124 >> 0x1a & 0xf;
   local_134 = local_124;
   local_130 = 0;
-  uStack320._4_4_ = local_124 * 0x40;
+  local_13c = local_124 * 0x40;
   local_138 = local_124 >> 0x1a & 0xf;
   iVar5 = -(local_124 * 8 + 0x1e & 0xfffffff0);
-  swidth = (double (*) [1])((int)&uStack320 + iVar5 + iVar4 + iVar3 + iVar2);
+  swidth = asStack320 + iVar5 + iVar4 + iVar3 + iVar2;
   twidth = 0.0;
   stotal = 0.0;
-  i = 0;
-  while (i <= t->maxcol) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
     twidth = twidth + newwidth[i];
     stotal = stotal + *(double *)((int)minv->me + (minv->dim + 1) * 8 * i);
-    m = 0;
-    while (m < i) {
+    for (m = 0; m < i; m = m + 1) {
       stotal = stotal + minv->me[minv->dim * i + m] + minv->me[minv->dim * i + m];
-      m = m + 1;
     }
-    i = i + 1;
   }
   *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = ((t->cell).maxcell + 1) * 8;
   *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083737;
   Sxx = (double *)GC_malloc_atomic();
-  pasVar7 = cwidth;
-  padVar6 = swidth;
-  k = 0;
-  while (k <= cell->maxcell) {
+  psVar7 = cwidth;
+  pdVar6 = swidth;
+  for (k = 0; k <= cell->maxcell; k = k + 1) {
     j = (int)cell->index[k];
     bcol = (int)cell->col[j];
     ecol = cell->colspan[j] + bcol;
-    swidth[j][0] = 0.0;
-    i = bcol;
-    while (i < ecol) {
-      swidth[j][0] = local_b4[i] + swidth[j][0];
-      i = i + 1;
+    *(undefined8 *)(swidth + j * 8) = 0;
+    for (i = bcol; i < ecol; i = i + 1) {
+      *(double *)(swidth + j * 8) = local_b4[i] + *(double *)(swidth + j * 8);
     }
-    cwidth[j][0] = cell->width[j] + (short)local_b0->cellspacing * (1 - cell->colspan[j]);
+    *(short *)(cwidth + j * 2) =
+         cell->width[j] + (short)local_b0->cellspacing * (1 - cell->colspan[j]);
     Sxx[j] = 0.0;
-    i = bcol;
-    while (i < ecol) {
+    for (i = bcol; i < ecol; i = i + 1) {
       Sxx[j] = *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i) + Sxx[j];
-      m = bcol;
-      while (m <= ecol) {
+      for (m = bcol; m <= ecol; m = m + 1) {
         if (m < i) {
           Sxx[j] = local_b8->me[local_b8->dim * i + m] + local_b8->me[local_b8->dim * i + m] +
                    Sxx[j];
         }
-        m = m + 1;
       }
-      i = i + 1;
     }
-    k = k + 1;
   }
   *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
   *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2) = stotal;
@@ -34143,17 +33333,17 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
   *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
   *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-  *(short (**) [1])(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = pasVar7;
-  *(double (**) [1])((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2) = padVar6;
-  *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-  *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = local_b8;
+  *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+  *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+  *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
+  *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
   *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
   *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083929;
   iVar8 = check_compressible_cell
                     (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(double **)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                     *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                      *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
                      *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                      *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
@@ -34163,8 +33353,7 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
                      *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
   corr = iVar8;
   if ((9 < itr) || (iVar8 < 1)) {
-    k = (int)cell->maxcell;
-    while (pasVar7 = cwidth, padVar6 = swidth, -1 < k) {
+    for (k = (int)cell->maxcell; psVar7 = cwidth, pdVar6 = swidth, -1 < k; k = k + -1) {
       j = (int)cell->index[k];
       dVar9 = Sxx[cell->index[k]];
       *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
@@ -34173,17 +33362,17 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
       *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
       *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
       *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-      *(short (**) [1])(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = pasVar7;
-      *(double (**) [1])((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2) = padVar6;
-      *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-      *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = local_b8;
+      *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+      *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+      *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
+      *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
       *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
       *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x80839c4;
       corr = check_compressible_cell
                        (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double **)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                         *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
                         *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                         *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
@@ -34192,10 +33381,8 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
                         *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2),
                         *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
       if ((itr < 10) && (iVar8 = corr, 0 < corr)) goto LAB_08083eda;
-      k = k + -1;
     }
-    i = 0;
-    while (pasVar7 = cwidth, padVar6 = swidth, i <= local_b0->maxcol) {
+    for (i = 0; psVar7 = cwidth, pdVar6 = swidth, i <= local_b0->maxcol; i = i + 1) {
       dVar9 = *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i);
       *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
       *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2) = dVar9;
@@ -34203,17 +33390,17 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
       *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = i;
       *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
       *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-      *(short (**) [1])(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = pasVar7;
-      *(double (**) [1])((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2) = padVar6;
-      *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-      *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = local_b8;
+      *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+      *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+      *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
+      *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
       *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
       *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083a6d;
       corr = check_compressible_cell
                        (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(MAT **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double **)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double **)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                         *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
                         *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                         *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
@@ -34222,33 +33409,29 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
                         *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2),
                         *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
       if ((itr < 10) && (iVar8 = corr, 0 < corr)) goto LAB_08083eda;
-      i = i + 1;
     }
-    i = 0;
-    while (iVar8 = i, i <= local_b0->maxcol) {
+    for (i = 0; iVar8 = i, i <= local_b0->maxcol; i = i + 1) {
       *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4[i] + 0.5;
       *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ac7;
       dVar9 = floor(*(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2));
       local_ba = in_FPUControlWord;
       local_bc = CONCAT11(0xc,(char)in_FPUControlWord);
       local_c0 = (int)ROUND(dVar9);
-      orgwidth[iVar8][0] = (short)(int)ROUND(dVar9);
-      corwidth[iVar8][0] = orgwidth[iVar8][0];
-      i = i + 1;
+      *(short *)(orgwidth + iVar8 * 2) = (short)(int)ROUND(dVar9);
+      *(undefined2 *)(corwidth + iVar8 * 2) = *(undefined2 *)(orgwidth + iVar8 * 2);
     }
-    *(short (**) [1])((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = corwidth;
+    *(short_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = corwidth;
     *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
     *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b33;
     check_minimum_width(*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(short **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4));
-    i = 0;
-    while (i <= local_b0->maxcol) {
+                        *(short **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4));
+    for (i = 0; i <= local_b0->maxcol; i = i + 1) {
       *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) =
            *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i);
       *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b67;
       sx = sqrt(*(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2));
-      if (((0.1 <= sx) && (orgwidth[i][0] < local_b0->minimum_width[i])) &&
-         (corwidth[i][0] == local_b0->minimum_width[i])) {
+      if (((0.1 <= sx) && (*(short *)(orgwidth + i * 2) < local_b0->minimum_width[i])) &&
+         (*(short *)(corwidth + i * 2) == local_b0->minimum_width[i])) {
         if (sx <= 0.5) {
           w = sx * 0.2;
         }
@@ -34256,34 +33439,30 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
           w = 0.5;
         }
         sxy = 0.0;
-        m = 0;
-        while (m <= local_b0->maxcol) {
+        for (m = 0; m <= local_b0->maxcol; m = m + 1) {
           if (m != i) {
             sxy = sxy + local_b8->me[local_b8->dim * i + m];
           }
-          m = m + 1;
         }
         if (sxy <= 0.0) {
           sVar1 = local_b0->minimum_width[i];
           *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = w;
-          *(int *)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2) = (int)sVar1;
-          *(undefined4 *)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = 1;
-          *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = i;
+          *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = (int)sVar1;
+          *(undefined4 *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = 1;
+          *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = i;
           *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
           *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ca5;
           correct_table_matrix
                     (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(int *)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                      *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2));
           corr = corr + 1;
         }
       }
-      i = i + 1;
     }
-    k = 0;
-    while (k <= cell->maxcell) {
+    for (k = 0; k <= cell->maxcell; k = k + 1) {
       nwidth = 0;
       j = (int)cell->index[k];
       *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx[cell->index[k]];
@@ -34292,13 +33471,11 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
       if (0.1 <= sx_1) {
         bcol = (int)cell->col[j];
         ecol = cell->colspan[j] + bcol;
-        i = bcol;
-        while (i < ecol) {
-          nwidth = nwidth + corwidth[i][0];
-          i = i + 1;
+        for (i = bcol; i < ecol; i = i + 1) {
+          nwidth = nwidth + *(short *)(corwidth + i * 2);
         }
         mwidth = (int)cell->minimum_width[j] + local_b0->cellspacing * (1 - cell->colspan[j]);
-        if ((swidth[j][0] < (double)mwidth) && (mwidth == nwidth)) {
+        if ((*(double *)(swidth + j * 8) < (double)mwidth) && (mwidth == nwidth)) {
           if (sx_1 <= 0.5) {
             w_1 = sx_1 * 0.2;
           }
@@ -34306,36 +33483,31 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
             w_1 = 0.5;
           }
           sxy = 0.0;
-          i = bcol;
-          while (i < ecol) {
-            m = 0;
-            while (m <= local_b0->maxcol) {
+          for (i = bcol; i < ecol; i = i + 1) {
+            for (m = 0; m <= local_b0->maxcol; m = m + 1) {
               if ((m < bcol) || (ecol <= m)) {
                 sxy = sxy + local_b8->me[local_b8->dim * i + m];
               }
-              m = m + 1;
             }
-            i = i + 1;
           }
           if (sxy <= 0.0) {
             sVar1 = cell->colspan[j];
             *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = w_1;
-            *(int *)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2) = mwidth;
-            *(int *)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = (int)sVar1;
-            *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = bcol;
+            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = mwidth;
+            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = (int)sVar1;
+            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = bcol;
             *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
             *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083eae;
             correct_table_matrix
                       (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                       *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                       *(int *)((int)&pdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                       *(int *)((int)&padStack368 + iVar5 + iVar4 + iVar3 + iVar2),
+                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
+                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
                        *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2));
             corr = corr + 1;
           }
         }
       }
-      k = k + 1;
     }
     iVar8 = corr;
     if (9 < itr) {
@@ -34373,11 +33545,9 @@ void check_table_height(table *t)
   space = 0;
   cell.size = 0;
   cell.maxcell = -1;
-  j = 0;
-  while (j <= t->maxrow) {
+  for (j = 0; j <= t->maxrow; j = j + 1) {
     if (t->tabattr[j] != (table_attr *)0x0) {
-      i = 0;
-      while (i <= t->maxcol) {
+      for (i = 0; i <= t->maxcol; i = i + 1) {
         if ((t->tabattr[j][i] & 3) == 0) {
           if (t->tabdata[j][i] == (GeneralList *)0x0) {
             t_dep = 0;
@@ -34431,10 +33601,8 @@ void check_table_height(table *t)
                 cell.rowspan[cell.maxcell] = (short)iVar1;
                 cell.height[cell.maxcell] = 0;
                 if (iVar2 < cell.maxcell) {
-                  ii = (int)cell.maxcell;
-                  while (iVar2 < ii) {
+                  for (ii = (int)cell.maxcell; iVar2 < ii; ii = ii + -1) {
                     cell.indexarray[ii] = cell.indexarray[ii + -1];
-                    ii = ii + -1;
                   }
                 }
                 cell.indexarray[iVar2] = cell.maxcell;
@@ -34445,19 +33613,15 @@ void check_table_height(table *t)
             }
           }
         }
-        i = i + 1;
       }
     }
-    j = j + 1;
   }
   iVar1 = t->border_mode;
   if (iVar1 == 0) {
     space = 0;
   }
-  else {
-    if ((-1 < iVar1) && (iVar1 < 4)) {
-      space = 1;
-    }
+  else if ((-1 < iVar1) && (iVar1 < 4)) {
+    space = 1;
   }
   check_cell_width(t->tabheight,cell.height,cell.row,cell.rowspan,cell.maxcell,cell.indexarray,space
                    ,1);
@@ -34473,22 +33637,25 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   short *psVar2;
   int iVar3;
   int iVar4;
-  short (*pasVar5) [1];
+  short_0_ *psVar5;
   table_cell *ptVar6;
-  short (*pasVar7) [1];
+  short_0_ *psVar7;
   int iVar8;
   short sVar9;
   table **pptVar10;
   int in_GS_OFFSET;
   undefined4 uStack192;
   table *ptStack188;
-  short (*pasStack184) [1];
+  short *psStack184;
   table_cell *ptStack180;
   short *psStack176;
   int iStack172;
   short *psStack168;
   int aiStack164 [5];
-  int local_90 [4];
+  undefined4 local_90;
+  int local_8c;
+  uint local_88;
+  uint local_84;
   undefined4 local_80;
   int local_7c;
   uint local_78;
@@ -34499,12 +33666,12 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   short *local_64;
   undefined *local_60;
   undefined *local_5c;
-  short (*local_58) [1];
+  short *local_58;
   short *local_54;
   table *local_50;
-  short (*ccellwidth) [1];
+  short_0_ *ccellwidth;
   int local_3c;
-  short (*newwidth) [1];
+  short_0_ *newwidth;
   int local_34;
   int rulewidth;
   table_cell *cell;
@@ -34514,7 +33681,7 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   
   local_50 = t;
   local_54 = orgwidth;
-  local_58 = (short (*) [1])cellwidth;
+  local_58 = cellwidth;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
   local_5c = (undefined *)&ptStack188;
   local_74 = t->maxcol + 1;
@@ -34526,21 +33693,19 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   local_78 = local_74 >> 0x1c;
   iVar8 = -(local_74 * 2 + 0x1e & 0xfffffff0);
   pptVar10 = (table **)((int)&ptStack188 + iVar8);
-  newwidth = (short (*) [1])((int)local_90 + iVar8);
+  newwidth = (short_0_ *)((int)&local_90 + iVar8);
   cell = &t->cell;
   *(table **)((int)&ptStack188 + iVar8) = t;
   *(undefined4 *)((int)&uStack192 + iVar8) = 0x808440a;
   rulewidth = table_rule_width(*(table **)((int)&ptStack188 + iVar8));
   ptVar6 = cell;
-  pasVar5 = newwidth;
-  i = 0;
-  while (i <= local_50->maxcol) {
+  psVar5 = newwidth;
+  for (i = 0; i <= local_50->maxcol; i = i + 1) {
     sVar9 = 0;
     if (-1 < local_54[i]) {
       sVar9 = local_54[i];
     }
-    newwidth[i][0] = sVar9;
-    i = i + 1;
+    *(short *)(newwidth + i * 2) = sVar9;
   }
   if ((flag & 2U) == 0) {
     iVar4 = local_50->cellspacing;
@@ -34553,44 +33718,38 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
     *(int *)((int)&iStack172 + iVar8) = (int)sVar9;
     *(short **)((int)&psStack176 + iVar8) = psVar2;
     *(table_cell **)((int)&ptStack180 + iVar8) = ptVar6;
-    *(short (**) [1])((int)&pasStack184 + iVar8) = local_58;
-    *(short (**) [1])((int)&ptStack188 + iVar8) = pasVar5;
+    *(short **)((int)&psStack184 + iVar8) = local_58;
+    *(short_0_ **)((int)&ptStack188 + iVar8) = psVar5;
     *(undefined4 *)((int)&uStack192 + iVar8) = 0x808467d;
-    check_cell_width(*(short **)((int)&ptStack188 + iVar8),
-                     (short *)*(short (**) [1])((int)&pasStack184 + iVar8),
-                     (short *)*(table_cell **)((int)&ptStack180 + iVar8),
-                     *(short **)((int)&psStack176 + iVar8),*(short *)((int)&iStack172 + iVar8),
-                     *(short **)((int)&psStack168 + iVar8),*(int *)((int)aiStack164 + iVar8),
-                     *(int *)((int)aiStack164 + iVar8 + 4));
+    check_cell_width(*(short **)((int)&ptStack188 + iVar8),*(short **)((int)&psStack184 + iVar8),
+                     *(short **)((int)&ptStack180 + iVar8),*(short **)((int)&psStack176 + iVar8),
+                     *(short *)((int)&iStack172 + iVar8),*(short **)((int)&psStack168 + iVar8),
+                     *(int *)((int)aiStack164 + iVar8),*(int *)((int)aiStack164 + iVar8 + 4));
   }
   else {
     local_60 = (undefined *)((int)&ptStack188 + iVar8);
-    local_90[3] = (int)cell->maxcell + 1;
+    local_84 = (int)cell->maxcell + 1;
     local_3c = (int)cell->maxcell;
     local_80 = 0;
-    local_90[1] = local_90[3] * 0x10;
-    local_90[2] = (uint)local_90[3] >> 0x1c;
-    aiStack164[4] = local_90[3];
-    local_90[0] = 0;
-    aiStack164[2] = local_90[3] * 0x10;
-    aiStack164[3] = (uint)local_90[3] >> 0x1c;
-    iVar4 = -(local_90[3] * 2 + 0x1eU & 0xfffffff0);
-    pasVar7 = (short (*) [1])((int)local_90 + iVar4 + iVar8);
-    ccellwidth = pasVar7;
-    i = 0;
-    while (i <= local_50->maxcol) {
-      if (newwidth[i][0] < local_50->fixed_width[i]) {
-        newwidth[i][0] = local_50->fixed_width[i];
+    local_8c = local_84 * 0x10;
+    local_88 = local_84 >> 0x1c;
+    aiStack164[4] = local_84;
+    local_90 = 0;
+    aiStack164[2] = local_84 * 0x10;
+    aiStack164[3] = local_84 >> 0x1c;
+    iVar4 = -(local_84 * 2 + 0x1e & 0xfffffff0);
+    psVar7 = (short_0_ *)((int)&local_90 + iVar4 + iVar8);
+    ccellwidth = psVar7;
+    for (i = 0; i <= local_50->maxcol; i = i + 1) {
+      if (*(short *)(newwidth + i * 2) < local_50->fixed_width[i]) {
+        *(short *)(newwidth + i * 2) = local_50->fixed_width[i];
       }
-      i = i + 1;
     }
-    i = 0;
-    while (i <= cell->maxcell) {
-      pasVar7[i][0] = local_58[i][0];
-      if (pasVar7[i][0] < cell->fixed_width[i]) {
-        pasVar7[i][0] = cell->fixed_width[i];
+    for (i = 0; i <= cell->maxcell; i = i + 1) {
+      *(short *)(psVar7 + i * 2) = local_58[i];
+      if (*(short *)(psVar7 + i * 2) < cell->fixed_width[i]) {
+        *(short *)(psVar7 + i * 2) = cell->fixed_width[i];
       }
-      i = i + 1;
     }
     iVar3 = local_50->cellspacing;
     psVar1 = cell->index;
@@ -34602,11 +33761,11 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
     *(int *)((int)&iStack172 + iVar4 + iVar8) = (int)sVar9;
     *(short **)((int)&psStack176 + iVar4 + iVar8) = local_64;
     *(table_cell **)((int)&ptStack180 + iVar4 + iVar8) = ptVar6;
-    *(short (**) [1])((int)&pasStack184 + iVar4 + iVar8) = pasVar7;
-    *(short (**) [1])((int)&ptStack188 + iVar4 + iVar8) = pasVar5;
+    *(short_0_ **)((int)&psStack184 + iVar4 + iVar8) = psVar7;
+    *(short_0_ **)((int)&ptStack188 + iVar4 + iVar8) = psVar5;
     *(undefined4 *)((int)&uStack192 + iVar4 + iVar8) = 0x808462b;
     check_cell_width(*(short **)((int)&ptStack188 + iVar4 + iVar8),
-                     *(short **)((int)&pasStack184 + iVar4 + iVar8),
+                     *(short **)((int)&psStack184 + iVar4 + iVar8),
                      *(short **)((int)&ptStack180 + iVar4 + iVar8),
                      *(short **)((int)&psStack176 + iVar4 + iVar8),
                      *(short *)((int)&iStack172 + iVar4 + iVar8),
@@ -34622,15 +33781,13 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
     check_minimum_width(*pptVar10,(short *)pptVar10[1]);
   }
   swidth = 0;
-  i = 0;
-  while (i <= local_50->maxcol) {
-    sVar9 = newwidth[i][0];
+  for (i = 0; i <= local_50->maxcol; i = i + 1) {
+    sVar9 = *(short *)(newwidth + i * 2);
     pptVar10[1] = (table *)rulewidth;
     *pptVar10 = (table *)(int)sVar9;
     pptVar10[-1] = (table *)0x80846c3;
     iVar8 = ceil_at_intervals((int)*pptVar10,(int)pptVar10[1]);
     swidth = swidth + iVar8;
-    i = i + 1;
   }
   *pptVar10 = local_50;
   pptVar10[-1] = (table *)0x80846e0;
@@ -34663,8 +33820,7 @@ void renderCoTable(table *tbl,int maxlimit)
   int i;
   table *t;
   
-  i = 0;
-  while (i < tbl->ntable) {
+  for (i = 0; i < tbl->ntable; i = i + 1) {
     t_00 = tbl->tables[i].ptr;
     row_00 = (int)tbl->tables[i].row;
     indent_00 = (int)tbl->tables[i].indent;
@@ -34677,17 +33833,14 @@ void renderCoTable(table *tbl,int maxlimit)
     if (t_00->total_width == 0) {
       maxwidth = h_env.limit - indent_00;
     }
+    else if (t_00->total_width < 1) {
+      t_00->total_width = (-t_00->total_width * h_env.limit) / 100;
+      maxwidth = t_00->total_width;
+    }
     else {
-      if (t_00->total_width < 1) {
-        t_00->total_width = (-t_00->total_width * h_env.limit) / 100;
-        maxwidth = t_00->total_width;
-      }
-      else {
-        maxwidth = t_00->total_width;
-      }
+      maxwidth = t_00->total_width;
     }
     renderTable(t_00,maxwidth,&h_env);
-    i = i + 1;
   }
   return;
 }
@@ -34817,58 +33970,46 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
     do {
       bcopy(t->matrix->me,A->me,t->matrix->dim * t->matrix->dim * 8);
       LUfactor(A,indexarray);
-      LUsolve(A,indexarray,(Vector)t->vector,x);
+      LUsolve(A,indexarray,t->vector,x);
       LUinverse(A,indexarray,out);
       itr = itr + 1;
-      iVar4 = check_table_width(t,x->ve,(MAT *)out,itr);
+      iVar4 = check_table_width(t,x->ve,out,itr);
     } while (iVar4 != 0);
     set_integered_width(t,x->ve,new_tabwidth);
     check_minimum_width(t,new_tabwidth);
     t->matrix = (MAT *)0x0;
     t->vector = (VEC *)0x0;
-    i = 0;
-    while (i <= t->maxcol) {
+    for (i = 0; i <= t->maxcol; i = i + 1) {
       t->tabwidth[i] = new_tabwidth[i];
-      i = i + 1;
     }
   }
   check_minimum_width(t,t->tabwidth);
-  i = 0;
-  while (i <= t->maxcol) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
     iVar4 = ceil_at_intervals((int)t->tabwidth[i],iVar3);
     t->tabwidth[i] = (short)iVar4;
-    i = i + 1;
   }
   renderCoTable(t,h_env->limit);
-  i = 0;
-  while (i <= t->maxcol) {
-    j = 0;
-    while (j <= t->maxrow) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
+    for (j = 0; j <= t->maxrow; j = j + 1) {
       check_row(t,j);
       if ((t->tabattr[j][i] & 2) == 0) {
         do_refill(t,j,i,h_env->limit);
       }
-      j = j + 1;
     }
-    i = i + 1;
   }
   check_minimum_width(t,t->tabwidth);
   t->total_width = 0;
-  i = 0;
-  while (i <= t->maxcol) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
     iVar4 = ceil_at_intervals((int)t->tabwidth[i],iVar3);
     t->tabwidth[i] = (short)iVar4;
     t->total_width = t->total_width + (int)t->tabwidth[i];
-    i = i + 1;
   }
   iVar3 = t->total_width;
   iVar4 = table_border_width(t);
   t->total_width = iVar3 + iVar4;
   check_table_height(t);
-  i = 0;
-  while (i <= t->maxcol) {
-    j = 0;
-    while (j <= t->maxrow) {
+  for (i = 0; i <= t->maxcol; i = i + 1) {
+    for (j = 0; j <= t->maxrow; j = j + 1) {
       if ((((t->tabattr[j][i] & 2) == 0) && ((t->tabattr[j][i] & 0x100) == 0)) &&
          (t->tabdata[j][i] != (GeneralList *)0x0)) {
         h = (int)t->tabheight[j];
@@ -34885,20 +34026,16 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
         }
         if (0 < h) {
           pGVar5 = newGeneralList();
-          k = 0;
-          while (k < h) {
+          for (k = 0; k < h; k = k + 1) {
             s = newTextLine((Str)0x0,0);
             pushValue(pGVar5,s);
-            k = k + 1;
           }
           ppGVar1 = t->tabdata[j];
           pGVar5 = appendGeneralList(pGVar5,t->tabdata[j][i]);
           ppGVar1[i] = pGVar5;
         }
       }
-      j = j + 1;
     }
-    i = i + 1;
   }
   iVar3 = t->total_width;
   make_caption(t,h_env);
@@ -34919,8 +34056,7 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
   if (iVar4 < 3) {
     if (iVar4 < 1) {
       if (iVar4 == 0) {
-        i = 0;
-        while (i < t->cellspacing) {
+        for (i = 0; i < t->cellspacing; i = i + 1) {
           if (p_Var7->area_size <= p_Var7->length + 1) {
             Strgrow(p_Var7);
           }
@@ -34928,7 +34064,6 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
           p_Var7->ptr[iVar4] = ' ';
           p_Var7->length = iVar4 + 1;
           p_Var7->ptr[p_Var7->length] = '\0';
-          i = i + 1;
         }
       }
       goto LAB_0808546e;
@@ -34942,8 +34077,7 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
       cVar2 = '\x05';
     }
     push_symbol(vrulea,cVar2,symbol_width,1);
-    i = 0;
-    while (i < t->cellpadding) {
+    for (i = 0; i < t->cellpadding; i = i + 1) {
       if (vrulea->area_size <= vrulea->length + 1) {
         Strgrow(vrulea);
       }
@@ -34965,7 +34099,6 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
       vrulec->ptr[iVar4] = ' ';
       vrulec->length = iVar4 + 1;
       vrulec->ptr[vrulec->length] = '\0';
-      i = i + 1;
     }
     if (t->border_mode == 2) {
       cVar2 = '\x15';
@@ -34975,12 +34108,9 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
     }
     push_symbol(vrulec,cVar2,symbol_width,1);
   }
-  else {
-    if (iVar4 != 3) goto LAB_0808546e;
-  }
+  else if (iVar4 != 3) goto LAB_0808546e;
   push_symbol(p_Var7,'\x05',symbol_width,1);
-  i = 0;
-  while (i < t->cellpadding) {
+  for (i = 0; i < t->cellpadding; i = i + 1) {
     if (p_Var7->area_size <= p_Var7->length + 1) {
       Strgrow(p_Var7);
     }
@@ -34988,7 +34118,6 @@ void renderTable(table *t,int max_width,html_feed_environ *h_env)
     p_Var7->ptr[iVar4] = ' ';
     p_Var7->length = iVar4 + 1;
     p_Var7->ptr[p_Var7->length] = '\0';
-    i = i + 1;
   }
 LAB_0808546e:
   r = 0;
@@ -35009,8 +34138,7 @@ LAB_0808546e:
       HTMLlineproc0("</pre>",h_env,1);
       return;
     }
-    h = 0;
-    while (h < t->tabheight[r]) {
+    for (h = 0; h < t->tabheight[r]; h = h + 1) {
       p_Var9 = Strnew();
       if ((t->border_mode == 1) || (t->border_mode == 2)) {
         Strcat(p_Var9,vrulea);
@@ -35020,8 +34148,7 @@ LAB_0808546e:
         p_Var8 = Sprintf("<_id id=\"%s\">",pcVar6);
         Strcat(p_Var9,p_Var8);
       }
-      i = 0;
-      while (i <= t->maxcol) {
+      for (i = 0; i <= t->maxcol; i = i + 1) {
         check_row(t,r);
         if ((t->tabidvalue[r][i] != (Str)0x0) && (h == 0)) {
           pcVar6 = html_quote(t->tabidvalue[r][i]->ptr);
@@ -35050,14 +34177,12 @@ LAB_0808546e:
         if ((i < t->maxcol) && ((t->tabattr[r][i + 1] & 1) == 0)) {
           Strcat(p_Var9,p_Var7);
         }
-        i = i + 1;
       }
       if (t->border_mode - 1U < 2) {
         Strcat(p_Var9,vrulec);
         t->total_height = t->total_height + 1;
       }
       push_render_image(p_Var9,iVar3,t->total_width,h_env);
-      h = h + 1;
     }
     if ((r < t->maxrow) && (t->border_mode != 0)) {
       p_Var9 = Strnew();
@@ -35104,10 +34229,8 @@ table * begin_table(int border,int spacing,int padding,int vspace)
   if (border == 0) {
     ptVar3->cellpadding = iVar4 - (int)ROUND(dVar5);
   }
-  else {
-    if ((-1 < border) && (border < 4)) {
-      ptVar3->cellpadding = padding - ((int)ROUND(dVar5) + -4) / 2;
-    }
+  else if ((-1 < border) && (border < 4)) {
+    ptVar3->cellpadding = padding - ((int)ROUND(dVar5) + -4) / 2;
   }
   if (ptVar3->cellpadding < iVar1) {
     if (ptVar3->cellpadding < 1) {
@@ -35123,10 +34246,8 @@ table * begin_table(int border,int spacing,int padding,int vspace)
   if (border == 0) {
     ptVar3->cellspacing = ptVar3->cellpadding + iVar2;
   }
-  else {
-    if ((-1 < border) && (border < 4)) {
-      ptVar3->cellspacing = ptVar3->cellpadding * 2 + iVar2;
-    }
+  else if ((-1 < border) && (border < 4)) {
+    ptVar3->cellspacing = ptVar3->cellpadding * 2 + iVar2;
   }
   if (border == 0) {
     if (iVar4 / 2 + vspace < 2) {
@@ -35136,13 +34257,11 @@ table * begin_table(int border,int spacing,int padding,int vspace)
       ptVar3->vspace = 1;
     }
   }
+  else if (vspace < iVar1) {
+    ptVar3->vspace = 0;
+  }
   else {
-    if (vspace < iVar1) {
-      ptVar3->vspace = 0;
-    }
-    else {
-      ptVar3->vspace = 1;
-    }
+    ptVar3->vspace = 1;
   }
   if (border == 0) {
     if (iVar4 < 5) {
@@ -35152,13 +34271,11 @@ table * begin_table(int border,int spacing,int padding,int vspace)
       ptVar3->vcellpadding = 1;
     }
   }
+  else if (padding < (iVar1 + -1) * 2) {
+    ptVar3->vcellpadding = 0;
+  }
   else {
-    if (padding < (iVar1 + -1) * 2) {
-      ptVar3->vcellpadding = 0;
-    }
-    else {
-      ptVar3->vcellpadding = 1;
-    }
+    ptVar3->vcellpadding = 1;
   }
   return ptVar3;
 }
@@ -35180,8 +34297,7 @@ void end_table(table *tbl)
       iVar2 = ceil_at_intervals(tbl->total_width,iVar1);
       tbl->total_width = iVar2;
     }
-    i = 0;
-    while (i <= tbl->maxcol) {
+    for (i = 0; i <= tbl->maxcol; i = i + 1) {
       iVar2 = ceil_at_intervals((int)tbl->minimum_width[i],iVar1);
       tbl->minimum_width[i] = (short)iVar2;
       iVar2 = ceil_at_intervals((int)tbl->tabwidth[i],iVar1);
@@ -35190,10 +34306,8 @@ void end_table(table *tbl)
         iVar2 = ceil_at_intervals((int)tbl->fixed_width[i],iVar1);
         tbl->fixed_width[i] = (short)iVar2;
       }
-      i = i + 1;
     }
-    i = 0;
-    while (i <= (tbl->cell).maxcell) {
+    for (i = 0; i <= (tbl->cell).maxcell; i = i + 1) {
       iVar2 = ceil_at_intervals((int)(tbl->cell).minimum_width[i],iVar1);
       (tbl->cell).minimum_width[i] = (short)iVar2;
       iVar2 = ceil_at_intervals((int)(tbl->cell).width[i],iVar1);
@@ -35202,7 +34316,6 @@ void end_table(table *tbl)
         iVar2 = ceil_at_intervals((int)(tbl->cell).fixed_width[i],iVar1);
         (tbl->cell).fixed_width[i] = (short)iVar2;
       }
-      i = i + 1;
     }
   }
   iVar1 = get_table_width(tbl,tbl->fixed_width,(tbl->cell).fixed_width,1);
@@ -35234,12 +34347,11 @@ void check_minimum0(table *t,int min)
        ((ww = 0, -1 < (t->cell).icell && ((t->cell).minimum_width[(t->cell).icell] < iVar1)))) {
       (t->cell).minimum_width[(t->cell).icell] = (short)iVar1;
     }
-    i = t->col;
-    while ((i <= t->maxcol && ((t->col == i || ((t->tabattr[t->row][i] & 1) != 0))))) {
+    for (i = t->col; (i <= t->maxcol && ((t->col == i || ((t->tabattr[t->row][i] & 1) != 0))));
+        i = i + 1) {
       if (t->minimum_width[i] < ww) {
         t->minimum_width[i] = (short)ww;
       }
-      i = i + 1;
     }
   }
   return;
@@ -35259,26 +34371,22 @@ int setwidth0(table *t,table_mode *mode)
   if (t->col < 0) {
     width = -1;
   }
+  else if (t->tabwidth[t->col] < 0) {
+    width = -1;
+  }
   else {
-    if (t->tabwidth[t->col] < 0) {
-      width = -1;
+    check_row(t,t->row);
+    if ('\0' < (t->linfo).prev_spaces) {
+      width = width - (t->linfo).prev_spaces;
     }
-    else {
-      check_row(t,t->row);
-      if ('\0' < (t->linfo).prev_spaces) {
-        width = width - (t->linfo).prev_spaces;
+    iVar1 = table_colspan(t,t->row,t->col);
+    if (iVar1 == 1) {
+      if (t->tabwidth[t->col] < width) {
+        t->tabwidth[t->col] = (short)width;
       }
-      iVar1 = table_colspan(t,t->row,t->col);
-      if (iVar1 == 1) {
-        if (t->tabwidth[t->col] < width) {
-          t->tabwidth[t->col] = (short)width;
-        }
-      }
-      else {
-        if ((-1 < (t->cell).icell) && ((t->cell).width[(t->cell).icell] < width)) {
-          (t->cell).width[(t->cell).icell] = (short)width;
-        }
-      }
+    }
+    else if ((-1 < (t->cell).icell) && ((t->cell).width[(t->cell).icell] < width)) {
+      (t->cell).width[(t->cell).icell] = (short)width;
     }
   }
   return width;
@@ -35457,8 +34565,8 @@ int skip_space(table *t,char *line,table_linfo *linfo,int checkminimum)
       else {
         bVar4 = WTF_WIDTH_MAP[(byte)*line];
       }
-      len = ZEXT14(bVar4);
-      plen = ZEXT14(WTF_LEN_MAP[(byte)*line]);
+      len = (int)bVar4;
+      plen = (int)WTF_LEN_MAP[(byte)*line];
       if (min < w) {
         min = w;
       }
@@ -35472,8 +34580,8 @@ int skip_space(table *t,char *line,table_linfo *linfo,int checkminimum)
           c = conv_entity(c_00);
           ctype = (ushort)WTF_TYPE_MAP[(byte)*c] << 8;
           len = wtf_strwidth((wc_uchar *)c);
-          wlen = (int)(line + -(int)pcVar1);
-          plen = ZEXT14(WTF_LEN_MAP[(byte)*c]);
+          wlen = (int)line - (int)pcVar1;
+          plen = (int)WTF_LEN_MAP[(byte)*c];
         }
         if ((x->length == 0) || (iVar3 = is_boundary((uchar *)x->ptr,(uchar *)c), iVar3 == 0)) {
           w = w + len;
@@ -35547,11 +34655,9 @@ void feed_table_block_tag(table *tbl,char *line,table_mode *mode,int indent,int 
         tbl->indent = tbl->indent + IndentIncr;
       }
     }
-    else {
-      if ((indent == -1) &&
-         (mode->indent_level = mode->indent_level + -1, mode->indent_level < '\n')) {
-        tbl->indent = tbl->indent - IndentIncr;
-      }
+    else if ((indent == -1) &&
+            (mode->indent_level = mode->indent_level + -1, mode->indent_level < '\n')) {
+      tbl->indent = tbl->indent - IndentIncr;
     }
     offset = tbl->indent;
     if (((cmd == 0x13) && ('\0' < mode->indent_level)) && (mode->indent_level < '\v')) {
@@ -35607,12 +34713,10 @@ void table_close_anchor0(table *tbl,table_mode *mode)
       addcontentssize(tbl,1);
       setwidth(tbl,mode);
     }
-    else {
-      if ((('\0' < (tbl->linfo).prev_spaces) &&
-          (tbl->tabcontentssize + -1 == (int)mode->anchor_offset)) &&
-         ('\0' < (tbl->linfo).prev_spaces)) {
-        (tbl->linfo).prev_spaces = -1;
-      }
+    else if ((('\0' < (tbl->linfo).prev_spaces) &&
+             (tbl->tabcontentssize + -1 == (int)mode->anchor_offset)) &&
+            ('\0' < (tbl->linfo).prev_spaces)) {
+      (tbl->linfo).prev_spaces = -1;
     }
   }
   return;
@@ -35653,7 +34757,7 @@ int feed_table_tag(table *tbl,char *line,table_mode *mode,int width,parsed_tag *
   table_attr align;
   
   cell = &tbl->cell;
-  cmd = ZEXT14(tag->tagid);
+  cmd = (int)tag->tagid;
   if ((mode->pre_mode & 8) != 0) {
     if ((uint)mode->end_tag != cmd) {
       return 4;
@@ -35840,18 +34944,16 @@ LAB_0808774b:
         return 0;
       }
     }
-    else {
-      if (cmd != 0x8b) {
-        if (cmd != 0x8c) {
-          if (cmd != 0x1e) {
-            return 0;
-          }
-          mode->pre_mode = mode->pre_mode | 8;
-          mode->end_tag = -0x6f;
+    else if (cmd != 0x8b) {
+      if (cmd != 0x8c) {
+        if (cmd != 0x1e) {
           return 0;
         }
-        goto LAB_0808774b;
+        mode->pre_mode = mode->pre_mode | 8;
+        mode->end_tag = 0x91;
+        return 0;
       }
+      goto LAB_0808774b;
     }
     mode->pre_mode = mode->pre_mode | 1;
     break;
@@ -35883,16 +34985,14 @@ LAB_0808774b:
         w = (-tbl->total_width * w) / 100;
       }
     }
-    else {
-      if (w == 0) {
-        if (tbl->total_width < 1) {
-          if (0 < width) {
-            w = width;
-          }
+    else if (w == 0) {
+      if (tbl->total_width < 1) {
+        if (0 < width) {
+          w = width;
         }
-        else {
-          w = tbl->total_width;
-        }
+      }
+      else {
+        w = tbl->total_width;
       }
     }
     tok = process_img(tag,w);
@@ -35929,10 +35029,8 @@ LAB_0808774b:
         w = (int)tbl->fixed_width[tbl->col];
       }
     }
-    else {
-      if ((-1 < cell->icell) && (0 < cell->fixed_width[cell->icell])) {
-        w = (int)cell->fixed_width[cell->icell];
-      }
+    else if ((-1 < cell->icell) && (0 < cell->fixed_width[cell->icell])) {
+      w = (int)cell->fixed_width[cell->icell];
     }
     tmp = process_textarea(tag,w);
     if (tmp != (Str)0x0) {
@@ -35977,14 +35075,12 @@ LAB_0808774b:
       }
       mode->pre_mode = mode->pre_mode | 0x80;
     }
-    else {
-      if (cmd == 0x80) {
-        if ((mode->pre_mode & 0x200) != 0) {
-          return 0;
-        }
-        mode->pre_mode = mode->pre_mode | 0x200;
-        (tbl->linfo).prev_spaces = '\0';
+    else if (cmd == 0x80) {
+      if ((mode->pre_mode & 0x200) != 0) {
+        return 0;
       }
+      mode->pre_mode = mode->pre_mode | 0x200;
+      (tbl->linfo).prev_spaces = '\0';
     }
     mode->nobr_offset = -1;
     if (0 < (tbl->linfo).length) {
@@ -36011,30 +35107,22 @@ LAB_0808774b:
     if (displayInsDel == 1) {
       feed_table_inline_tag(tbl,line,mode,5);
     }
-    else {
-      if (displayInsDel == 2) {
-        feed_table_inline_tag(tbl,line,mode,-1);
-      }
-      else {
-        if (displayInsDel == 0) {
-          mode->pre_mode = mode->pre_mode | 0x100000;
-        }
-      }
+    else if (displayInsDel == 2) {
+      feed_table_inline_tag(tbl,line,mode,-1);
+    }
+    else if (displayInsDel == 0) {
+      mode->pre_mode = mode->pre_mode | 0x100000;
     }
     break;
   case 0x3e:
     if (displayInsDel == 1) {
       feed_table_inline_tag(tbl,line,mode,5);
     }
-    else {
-      if (displayInsDel == 2) {
-        feed_table_inline_tag(tbl,line,mode,-1);
-      }
-      else {
-        if (displayInsDel == 0) {
-          mode->pre_mode = mode->pre_mode & 0xffefffff;
-        }
-      }
+    else if (displayInsDel == 2) {
+      feed_table_inline_tag(tbl,line,mode,-1);
+    }
+    else if (displayInsDel == 0) {
+      mode->pre_mode = mode->pre_mode & 0xffefffff;
     }
     break;
   case 0x3f:
@@ -36042,10 +35130,8 @@ LAB_0808774b:
     if (displayInsDel == 1) {
       feed_table_inline_tag(tbl,line,mode,5);
     }
-    else {
-      if (displayInsDel == 2) {
-        feed_table_inline_tag(tbl,line,mode,-1);
-      }
+    else if (displayInsDel == 2) {
+      feed_table_inline_tag(tbl,line,mode,-1);
     }
     break;
   case 0x43:
@@ -36067,15 +35153,11 @@ LAB_0808774b:
       if (i == 1) {
         align = 0x40;
       }
-      else {
-        if (i == 2) {
-          align = 0x60;
-        }
-        else {
-          if (i == 0) {
-            align = 0x50;
-          }
-        }
+      else if (i == 2) {
+        align = 0x60;
+      }
+      else if (i == 0) {
+        align = 0x50;
       }
     }
     iVar5 = parsedtag_get_value(tag,0x23,&i);
@@ -36083,15 +35165,11 @@ LAB_0808774b:
       if (i == 1) {
         valign = 0x900;
       }
-      else {
-        if (i == 2) {
-          valign = 0xc00;
-        }
-        else {
-          if (i == 0) {
-            valign = 0xa00;
-          }
-        }
+      else if (i == 2) {
+        valign = 0xc00;
+      }
+      else if (i == 0) {
+        valign = 0xa00;
       }
     }
     iVar5 = parsedtag_get_value(tag,0x14,&p);
@@ -36172,15 +35250,11 @@ LAB_0808774b:
       if (i == 1) {
         align = 0;
       }
-      else {
-        if (i == 2) {
-          align = 0x20;
-        }
-        else {
-          if (i == 0) {
-            align = 0x10;
-          }
-        }
+      else if (i == 2) {
+        align = 0x20;
+      }
+      else if (i == 0) {
+        align = 0x10;
       }
     }
     iVar5 = parsedtag_get_value(tag,0x23,&i);
@@ -36188,15 +35262,11 @@ LAB_0808774b:
       if (i == 1) {
         valign = 0x100;
       }
-      else {
-        if (i == 2) {
-          valign = 0x400;
-        }
-        else {
-          if (i == 0) {
-            valign = 0x200;
-          }
-        }
+      else if (i == 2) {
+        valign = 0x400;
+      }
+      else if (i == 0) {
+        valign = 0x200;
       }
     }
     if (((tag->map != (uchar *)0x0) && (tag->map[0x1a] != 'K')) &&
@@ -36223,7 +35293,7 @@ LAB_0808774b:
     if (1 < colspan) {
       col = tbl->col;
       cell->icell = cell->maxcell + 1;
-      k = bsearch_2short((short)colspan,cell->colspan,(short)col,(short *)cell,0x32,cell->index,
+      k = bsearch_2short((short)colspan,cell->colspan,(short)col,cell->col,0x32,cell->index,
                          (int)cell->icell);
       if (k <= cell->maxcell) {
         sVar1 = cell->index[k];
@@ -36239,10 +35309,8 @@ LAB_0808774b:
         cell->minimum_width[cell->maxcell] = 0;
         cell->fixed_width[cell->maxcell] = 0;
         if (k < cell->maxcell) {
-          ii = (int)cell->maxcell;
-          while (k < ii) {
+          for (ii = (int)cell->maxcell; k < ii; ii = ii + -1) {
             cell->index[ii] = cell->colspan[ii + 0x13];
-            ii = ii + -1;
           }
         }
         cell->index[k] = cell->maxcell;
@@ -36258,19 +35326,15 @@ LAB_0808774b:
           tbl->fixed_width[tbl->col] = (short)v;
         }
       }
-      else {
-        if ((-1 < cell->icell) &&
-           (((v0 = (int)cell->fixed_width[cell->icell], v0 == 0 || ((0 < v0 && (v0 < v)))) ||
-            ((v0 < 0 && (v < v0)))))) {
-          cell->fixed_width[cell->icell] = (short)v;
-        }
+      else if ((-1 < cell->icell) &&
+              (((v0 = (int)cell->fixed_width[cell->icell], v0 == 0 || ((0 < v0 && (v0 < v)))) ||
+               ((v0 < 0 && (v < v0)))))) {
+        cell->fixed_width[cell->icell] = (short)v;
       }
     }
-    i = 0;
-    while (i < rowspan) {
+    for (i = 0; i < rowspan; i = i + 1) {
       check_row(tbl,tbl->row + i);
-      j = 0;
-      while (j < colspan) {
+      for (j = 0; j < colspan; j = j + 1) {
         if ((tbl->tabattr[tbl->row + i][tbl->col + j] & 3) == 0) {
           if (i < 1) {
             uVar3 = 0;
@@ -36284,12 +35348,10 @@ LAB_0808774b:
         if (tbl->maxcol < tbl->col + j) {
           tbl->maxcol = tbl->col + j;
         }
-        j = j + 1;
       }
       if (tbl->maxrow < tbl->row + i) {
         tbl->maxrow = tbl->row + i;
       }
-      i = i + 1;
     }
     begin_cell(tbl,mode);
     break;
@@ -36312,30 +35374,22 @@ LAB_0808774b:
     if (displayInsDel == 1) {
       feed_table_inline_tag(tbl,line,mode,3);
     }
-    else {
-      if (displayInsDel == 2) {
-        feed_table_inline_tag(tbl,line,mode,-1);
-      }
-      else {
-        if (displayInsDel == 0) {
-          mode->pre_mode = mode->pre_mode | 0x200000;
-        }
-      }
+    else if (displayInsDel == 2) {
+      feed_table_inline_tag(tbl,line,mode,-1);
+    }
+    else if (displayInsDel == 0) {
+      mode->pre_mode = mode->pre_mode | 0x200000;
     }
     break;
   case 0x6a:
     if (displayInsDel == 1) {
       feed_table_inline_tag(tbl,line,mode,3);
     }
-    else {
-      if (displayInsDel == 2) {
-        feed_table_inline_tag(tbl,line,mode,-1);
-      }
-      else {
-        if (displayInsDel == 0) {
-          mode->pre_mode = mode->pre_mode & 0xffdfffff;
-        }
-      }
+    else if (displayInsDel == 2) {
+      feed_table_inline_tag(tbl,line,mode,-1);
+    }
+    else if (displayInsDel == 0) {
+      mode->pre_mode = mode->pre_mode & 0xffdfffff;
     }
     break;
   case 0x7d:
@@ -36433,10 +35487,8 @@ int feed_table(table *tbl,char *line,table_mode *mode,int width,int internal)
       }
     }
   }
-  else {
-    if ((mode->pre_mode & 0x300000) != 0) {
-      return -1;
-    }
+  else if ((mode->pre_mode & 0x300000) != 0) {
+    return -1;
   }
 LAB_08088396:
   if (mode->caption == '\0') {
@@ -36547,56 +35599,54 @@ LAB_08088639:
             setwidth(tbl,mode);
             pushdata(tbl,tbl->row,tbl->col,line);
           }
-          else {
-            if ((mode->pre_mode & 0x200) == 0) {
-              check_rowcol(tbl,mode);
-              while (*line != '\0') {
-                bVar1 = false;
-                p = strchr(line,0xd);
-                if ((p == (char *)0x0) && (p = strchr(line,10), p == (char *)0x0)) {
+          else if ((mode->pre_mode & 0x200) == 0) {
+            check_rowcol(tbl,mode);
+            while (*line != '\0') {
+              bVar1 = false;
+              p = strchr(line,0xd);
+              if ((p == (char *)0x0) && (p = strchr(line,10), p == (char *)0x0)) {
+                p = line;
+                line = "";
+              }
+              else {
+                if ((*p == '\r') && (p[1] == '\n')) {
+                  p = p + 1;
+                }
+                if (p[1] == '\0') {
                   p = line;
                   line = "";
                 }
                 else {
-                  if ((*p == '\r') && (p[1] == '\n')) {
-                    p = p + 1;
-                  }
-                  if (p[1] == '\0') {
-                    p = line;
-                    line = "";
-                  }
-                  else {
-                    p = p + 1;
-                    p_Var3 = Strnew_charp_n(line,(int)(p + -(int)line));
-                    line = p;
-                    p = p_Var3->ptr;
-                  }
-                  bVar1 = true;
+                  p = p + 1;
+                  p_Var3 = Strnew_charp_n(line,(int)p - (int)line);
+                  line = p;
+                  p = p_Var3->ptr;
                 }
-                if ((mode->pre_mode & 8) == 0) {
-                  i = maximum_visible_length(p,tbl->tabcontentssize);
-                }
-                else {
-                  i = maximum_visible_length_plain(p,tbl->tabcontentssize);
-                }
-                addcontentssize(tbl,i);
-                setwidth(tbl,mode);
-                if (bVar1) {
-                  clearcontentssize(tbl,mode);
-                }
-                pushdata(tbl,tbl->row,tbl->col,p);
+                bVar1 = true;
               }
-            }
-            else {
-              check_rowcol(tbl,mode);
-              if (mode->nobr_offset < 0) {
-                mode->nobr_offset = (short)tbl->tabcontentssize;
+              if ((mode->pre_mode & 8) == 0) {
+                i = maximum_visible_length(p,tbl->tabcontentssize);
               }
-              iVar2 = maximum_visible_length(line,tbl->tabcontentssize);
-              addcontentssize(tbl,iVar2);
+              else {
+                i = maximum_visible_length_plain(p,tbl->tabcontentssize);
+              }
+              addcontentssize(tbl,i);
               setwidth(tbl,mode);
-              pushdata(tbl,tbl->row,tbl->col,line);
+              if (bVar1) {
+                clearcontentssize(tbl,mode);
+              }
+              pushdata(tbl,tbl->row,tbl->col,p);
             }
+          }
+          else {
+            check_rowcol(tbl,mode);
+            if (mode->nobr_offset < 0) {
+              mode->nobr_offset = (short)tbl->tabcontentssize;
+            }
+            iVar2 = maximum_visible_length(line,tbl->tabcontentssize);
+            addcontentssize(tbl,iVar2);
+            setwidth(tbl,mode);
+            pushdata(tbl,tbl->row,tbl->col,line);
           }
         }
         else {
@@ -36690,16 +35740,12 @@ int correct_table_matrix(table *t,int col,int cspan,int a,double b)
   int i;
   
   dVar1 = 1.0 / (b * b);
-  i = col;
-  while (i < col + cspan) {
+  for (i = col; i < col + cspan; i = i + 1) {
     t->vector->ve[i] = (double)a * dVar1 + t->vector->ve[i];
-    j = i;
-    while (j < col + cspan) {
+    for (j = i; j < col + cspan; j = j + 1) {
       t->matrix->me[t->matrix->dim * i + j] = t->matrix->me[t->matrix->dim * i + j] + dVar1;
       t->matrix->me[t->matrix->dim * j + i] = t->matrix->me[t->matrix->dim * i + j];
-      j = j + 1;
     }
-    i = i + 1;
   }
   return i;
 }
@@ -36720,10 +35766,8 @@ void correct_table_matrix2(table *t,int col,int cspan,double s,double b)
   
   iVar1 = col + cspan;
   iVar2 = t->maxcol + 1;
-  i = 0;
-  while (i < iVar2) {
-    j = i;
-    while (j < iVar2) {
+  for (i = 0; i < iVar2; i = i + 1) {
+    for (j = i; j < iVar2; j = j + 1) {
       if ((((i < col) || (iVar1 <= i)) || (j < col)) || (iVar1 <= j)) {
         if (((i < col) || (iVar1 <= i)) && ((j < col || (iVar1 <= j)))) {
           ss = s * s;
@@ -36737,9 +35781,7 @@ void correct_table_matrix2(table *t,int col,int cspan,double s,double b)
       }
       t->matrix->me[t->matrix->dim * i + j] =
            (1.0 / (b * b)) * ss + t->matrix->me[t->matrix->dim * i + j];
-      j = j + 1;
     }
-    i = i + 1;
   }
   return;
 }
@@ -36760,30 +35802,24 @@ void correct_table_matrix3(table *t,int col,char *flags,double s,double b)
   
   iVar1 = t->maxcol + 1;
   bVar2 = flags[col] == '\0';
-  i = 0;
-  while (i < iVar1) {
+  for (i = 0; i < iVar1; i = i + 1) {
     if (((bVar2) && (flags[i] == '\0')) || ((!bVar2 && (flags[i] != '\0')))) {
-      j = i;
-      while (j < iVar1) {
+      for (j = i; j < iVar1; j = j + 1) {
         if (((bVar2) && (flags[j] == '\0')) || ((!bVar2 && (flags[j] != '\0')))) {
           if ((i == col) && (j == col)) {
             ss = (1.0 - s) * (1.0 - s);
           }
+          else if ((i == col) || (j == col)) {
+            ss = -(1.0 - s) * s;
+          }
           else {
-            if ((i == col) || (j == col)) {
-              ss = -(1.0 - s) * s;
-            }
-            else {
-              ss = s * s;
-            }
+            ss = s * s;
           }
           t->matrix->me[t->matrix->dim * i + j] =
                (1.0 / (b * b)) * ss + t->matrix->me[t->matrix->dim * i + j];
         }
-        j = j + 1;
       }
     }
-    i = i + 1;
   }
   return;
 }
@@ -36804,11 +35840,9 @@ void correct_table_matrix4(table *t,int col,int cspan,char *flags,double s,doubl
   
   iVar1 = col + cspan;
   iVar2 = t->maxcol + 1;
-  i = 0;
-  while (i < iVar2) {
+  for (i = 0; i < iVar2; i = i + 1) {
     if ((flags[i] == '\0') || ((col <= i && (i < iVar1)))) {
-      j = i;
-      while (j < iVar2) {
+      for (j = i; j < iVar2; j = j + 1) {
         if ((flags[j] == '\0') || ((col <= j && (j < iVar1)))) {
           if ((i < col) || (((iVar1 <= i || (j < col)) || (iVar1 <= j)))) {
             if (((i < col) || (iVar1 <= i)) && ((j < col || (iVar1 <= j)))) {
@@ -36824,10 +35858,8 @@ void correct_table_matrix4(table *t,int col,int cspan,char *flags,double s,doubl
           t->matrix->me[t->matrix->dim * i + j] =
                (1.0 / (b * b)) * ss + t->matrix->me[t->matrix->dim * i + j];
         }
-        j = j + 1;
       }
     }
-    i = i + 1;
   }
   return;
 }
@@ -36840,7 +35872,7 @@ void set_table_matrix0(table *t,int maxwidth)
   short sVar1;
   int iVar2;
   int iVar3;
-  char (*pacVar4) [1];
+  char_0_ *pcVar4;
   int iVar5;
   int in_GS_OFFSET;
   undefined2 in_FPUControlWord;
@@ -36848,7 +35880,7 @@ void set_table_matrix0(table *t,int maxwidth)
   undefined4 uStack240;
   table *ptStack236;
   size_t sStack232;
-  char (*pacStack228) [1];
+  char *pcStack228;
   undefined auStack224 [8];
   undefined auStack216 [20];
   int local_c4;
@@ -36875,9 +35907,9 @@ void set_table_matrix0(table *t,int maxwidth)
   double w;
   double w1;
   double w0;
-  char (*expand) [1];
+  char_0_ *expand;
   int local_4c;
-  double (*we) [1];
+  double_0_ *we;
   int local_44;
   table_cell *cell;
   int width;
@@ -36900,7 +35932,7 @@ void set_table_matrix0(table *t,int maxwidth)
   local_a4 = size * 0x40;
   local_a0 = (uint)size >> 0x1a & 0xf;
   iVar2 = -(size * 8 + 0x1eU & 0xfffffff0);
-  we = (double (*) [1])((int)&local_c0 + iVar2);
+  we = (double_0_ *)((int)&local_c0 + iVar2);
   local_4c = local_44;
   local_ac = size;
   local_a8 = 0;
@@ -36911,68 +35943,60 @@ void set_table_matrix0(table *t,int maxwidth)
   local_c4 = size * 8;
   local_c0 = (uint)size >> 0x1d;
   iVar3 = -(local_44 + 0x1fU & 0xfffffff0);
-  expand = (char (*) [1])((int)&local_c0 + iVar3 + iVar2);
+  expand = (char_0_ *)((int)&local_c0 + iVar3 + iVar2);
   cell = &t->cell;
   w0 = 0.0;
-  i = 0;
-  while (iVar5 = i, pacVar4 = expand, i < size) {
+  for (i = 0; iVar5 = i, pcVar4 = expand, i < size; i = i + 1) {
     *(int *)((int)&ptStack236 + iVar3 + iVar2) = (int)local_80->tabwidth[i];
     *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80894d5;
     dVar6 = weight(*(int *)((int)&ptStack236 + iVar3 + iVar2));
-    we[iVar5][0] = dVar6;
-    w0 = w0 + we[i][0];
-    i = i + 1;
+    *(double *)(we + iVar5 * 8) = dVar6;
+    w0 = w0 + *(double *)(we + i * 8);
   }
   if (w0 <= 0.0) {
     w0 = 1.0;
   }
   if (cell->necell == 0) {
-    i = 0;
-    while (i < size) {
-      s = we[i][0] / w0;
+    for (i = 0; i < size; i = i + 1) {
+      s = *(double *)(we + i * 8) / w0;
       local_82 = in_FPUControlWord;
       local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
-      local_88 = (int)ROUND((double)maxwidth * s);
+      local_88 = (int)ROUND((double)maxwidth * (*(double *)(we + i * 8) / w0));
       *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
       *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089565;
       dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
       b = dVar6 * 32.0;
       *(double *)(auStack216 + iVar3 + iVar2) = dVar6 * 32.0;
       *(double *)(auStack224 + iVar3 + iVar2) = s;
-      *(undefined4 *)((int)&pacStack228 + iVar3 + iVar2) = 1;
+      *(undefined4 *)((int)&pcStack228 + iVar3 + iVar2) = 1;
       *(int *)((int)&sStack232 + iVar3 + iVar2) = i;
       *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
       *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089598;
       correct_table_matrix2
                 (*(table **)((int)&ptStack236 + iVar3 + iVar2),
                  *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(int *)((int)&pacStack228 + iVar3 + iVar2),*(double *)(auStack224 + iVar3 + iVar2)
-                 ,*(double *)(auStack216 + iVar3 + iVar2));
-      i = i + 1;
+                 *(int *)((int)&pcStack228 + iVar3 + iVar2),*(double *)(auStack224 + iVar3 + iVar2),
+                 *(double *)(auStack216 + iVar3 + iVar2));
     }
   }
   else {
     *(int *)((int)&sStack232 + iVar3 + iVar2) = size;
-    *(char (**) [1])((int)&ptStack236 + iVar3 + iVar2) = pacVar4;
+    *(char_0_ **)((int)&ptStack236 + iVar3 + iVar2) = pcVar4;
     *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80895bb;
     bzero(*(void **)((int)&ptStack236 + iVar3 + iVar2),*(size_t *)((int)&sStack232 + iVar3 + iVar2))
     ;
-    k = 0;
-    while (k < cell->necell) {
+    for (k = 0; k < cell->necell; k = k + 1) {
       j = (int)cell->eindex[k];
       bcol = (int)cell->col[j];
       ecol = cell->colspan[j] + bcol;
       width = (int)cell->width[j] + local_80->cellspacing * (1 - cell->colspan[j]);
       w1 = 0.0;
-      i = bcol;
-      while (i < ecol) {
+      for (i = bcol; i < ecol; i = i + 1) {
         local_8a = local_80->tabwidth[i];
         w1 = w1 + (double)local_80->tabwidth[i] + 0.1;
-        expand[i][0] = expand[i][0] + '\x01';
-        i = i + 1;
+        expand[i] = expand[i] + '\x01';
       }
-      i = bcol;
-      while (i < ecol) {
+      for (i = bcol; i < ecol; i = i + 1) {
         local_8a = local_80->tabwidth[i];
         local_82 = in_FPUControlWord;
         local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
@@ -36980,28 +36004,23 @@ void set_table_matrix0(table *t,int maxwidth)
         *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
         *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80896e3;
         w = weight(*(int *)((int)&ptStack236 + iVar3 + iVar2));
-        if (we[i][0] < w) {
-          we[i][0] = w;
+        if (*(double *)(we + i * 8) < w) {
+          *(double *)(we + i * 8) = w;
         }
-        i = i + 1;
       }
-      k = k + 1;
     }
     w0 = 0.0;
     w1 = 0.0;
-    i = 0;
-    while (i < size) {
-      w0 = w0 + we[i][0];
-      if (expand[i][0] == '\0') {
-        w1 = w1 + we[i][0];
+    for (i = 0; i < size; i = i + 1) {
+      w0 = w0 + *(double *)(we + i * 8);
+      if (expand[i] == '\0') {
+        w1 = w1 + *(double *)(we + i * 8);
       }
-      i = i + 1;
     }
     if (w0 <= 0.0) {
       w0 = 1.0;
     }
-    k = 0;
-    while (k < cell->necell) {
+    for (k = 0; k < cell->necell; k = k + 1) {
       j = (int)cell->eindex[k];
       bcol = (int)cell->col[j];
       width = (int)cell->width[j] + local_80->cellspacing * (1 - cell->colspan[j]);
@@ -37015,35 +36034,33 @@ void set_table_matrix0(table *t,int maxwidth)
       *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
       *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089840;
       dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
-      pacVar4 = expand;
+      pcVar4 = expand;
       b = dVar6 * 32.0;
       sVar1 = cell->colspan[j];
       *(double *)(auStack216 + iVar3 + iVar2 + 4) = dVar6 * 32.0;
       *(double *)(auStack224 + iVar3 + iVar2 + 4) = s;
-      *(char (**) [1])(auStack224 + iVar3 + iVar2) = pacVar4;
-      *(int *)((int)&pacStack228 + iVar3 + iVar2) = (int)sVar1;
+      *(char_0_ **)(auStack224 + iVar3 + iVar2) = pcVar4;
+      *(int *)((int)&pcStack228 + iVar3 + iVar2) = (int)sVar1;
       *(int *)((int)&sStack232 + iVar3 + iVar2) = bcol;
       *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
       *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089885;
       correct_table_matrix4
                 (*(table **)((int)&ptStack236 + iVar3 + iVar2),
                  *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(int *)((int)&pacStack228 + iVar3 + iVar2),*(char **)(auStack224 + iVar3 + iVar2),
+                 *(int *)((int)&pcStack228 + iVar3 + iVar2),*(char **)(auStack224 + iVar3 + iVar2),
                  *(double *)(auStack224 + iVar3 + iVar2 + 4),
                  *(double *)(auStack216 + iVar3 + iVar2 + 4));
-      k = k + 1;
     }
-    i = 0;
-    while (i < size) {
-      if (expand[i][0] == '\0') {
+    for (i = 0; i < size; i = i + 1) {
+      if (expand[i] == '\0') {
         dVar6 = w1;
         if (w1 <= 1.0) {
           dVar6 = 1.0;
         }
-        s = we[i][0] / dVar6;
+        s = *(double *)(we + i * 8) / dVar6;
         local_82 = in_FPUControlWord;
         local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
-        local_88 = (int)ROUND((double)maxwidth * s);
+        local_88 = (int)ROUND((double)maxwidth * (*(double *)(we + i * 8) / dVar6));
         *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
         *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x808990b;
         dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
@@ -37056,25 +36073,24 @@ void set_table_matrix0(table *t,int maxwidth)
         else {
           dVar6 = w0 - w1;
         }
-        s = we[i][0] / dVar6;
+        s = *(double *)(we + i * 8) / dVar6;
         *(int *)((int)&ptStack236 + iVar3 + iVar2) = maxwidth;
         *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089950;
         dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
         b = dVar6 * 32.0;
       }
-      pacVar4 = expand;
+      pcVar4 = expand;
       *(double *)(auStack216 + iVar3 + iVar2) = b;
       *(double *)(auStack224 + iVar3 + iVar2) = s;
-      *(char (**) [1])((int)&pacStack228 + iVar3 + iVar2) = pacVar4;
+      *(char_0_ **)((int)&pcStack228 + iVar3 + iVar2) = pcVar4;
       *(int *)((int)&sStack232 + iVar3 + iVar2) = i;
       *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
       *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089982;
       correct_table_matrix3
                 (*(table **)((int)&ptStack236 + iVar3 + iVar2),
                  *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(char **)((int)&pacStack228 + iVar3 + iVar2),
+                 *(char **)((int)&pcStack228 + iVar3 + iVar2),
                  *(double *)(auStack224 + iVar3 + iVar2),*(double *)(auStack216 + iVar3 + iVar2));
-      i = i + 1;
     }
   }
   if (local_20 == *(int *)(in_GS_OFFSET + 0x14)) {
@@ -37112,42 +36128,33 @@ void check_relative_width(table *t,int maxwidth)
   iVar1 = t->maxcol + 1;
   iVar2 = GC_malloc(iVar1 * 8);
   n_leftcol = 0;
-  i = 0;
-  while (i < iVar1) {
+  for (i = 0; i < iVar1; i = i + 1) {
     *(undefined8 *)(i * 8 + iVar2) = 0;
-    i = i + 1;
   }
-  i = 0;
-  while (i < iVar1) {
+  for (i = 0; i < iVar1; i = i + 1) {
     if (t->fixed_width[i] < 0) {
       *(double *)(i * 8 + iVar2) = (double)t->fixed_width[i] / -100.0;
     }
-    else {
-      if (t->fixed_width[i] < 1) {
-        n_leftcol = n_leftcol + 1;
-      }
-      else {
-        *(double *)(i * 8 + iVar2) = (double)t->fixed_width[i] / (double)maxwidth;
-      }
+    else if (t->fixed_width[i] < 1) {
+      n_leftcol = n_leftcol + 1;
     }
-    i = i + 1;
+    else {
+      *(double *)(i * 8 + iVar2) = (double)t->fixed_width[i] / (double)maxwidth;
+    }
   }
-  i = 0;
-  while (i <= (t->cell).maxcell) {
+  for (i = 0; i <= (t->cell).maxcell; i = i + 1) {
     if ((t->cell).fixed_width[i] < 0) {
       w = (double)(t->cell).fixed_width[i] / -100.0;
       n_leftcell = 0;
       iVar3 = (int)(t->cell).col[i];
       r = 0.0;
-      j = 0;
-      while (j < (t->cell).colspan[i]) {
+      for (j = 0; j < (t->cell).colspan[i]; j = j + 1) {
         if (*(double *)((j + iVar3) * 8 + iVar2) <= 0.0) {
           n_leftcell = n_leftcell + 1;
         }
         else {
           r = r + *(double *)((j + iVar3) * 8 + iVar2);
         }
-        j = j + 1;
       }
       if (n_leftcell == 0) {
         if (w != r) {
@@ -37159,47 +36166,34 @@ void check_relative_width(table *t,int maxwidth)
           w = ((double)(t->cell).colspan[i] * r) / (double)((t->cell).colspan[i] - n_leftcell);
           (t->cell).fixed_width[i] = (short)ROUND(w * -100.0);
         }
-        j = 0;
-        while (j < (t->cell).colspan[i]) {
+        for (j = 0; j < (t->cell).colspan[i]; j = j + 1) {
           if (*(double *)((j + iVar3) * 8 + iVar2) == 0.0) {
             *(double *)((j + iVar3) * 8 + iVar2) = (w - r) / (double)n_leftcell;
           }
-          j = j + 1;
         }
       }
     }
-    i = i + 1;
   }
-  i = 0;
-  while (i < iVar1) {
+  for (i = 0; i < iVar1; i = i + 1) {
     rel_total = rel_total + *(double *)(i * 8 + iVar2);
-    i = i + 1;
   }
   if (((n_leftcol == 0) && (rel_total < 0.9)) || (1.1 < rel_total)) {
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       *(double *)(i * 8 + iVar2) = *(double *)(i * 8 + iVar2) / rel_total;
-      i = i + 1;
     }
-    i = 0;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       if (t->fixed_width[i] < 0) {
         t->fixed_width[i] = (short)ROUND(*(double *)(i * 8 + iVar2) * -100.0);
       }
-      i = i + 1;
     }
-    i = 0;
-    while (i <= (t->cell).maxcell) {
+    for (i = 0; i <= (t->cell).maxcell; i = i + 1) {
       if ((t->cell).fixed_width[i] < 0) {
         r_1 = 0.0;
-        j_1 = 0;
-        while (j_1 < (t->cell).colspan[i]) {
+        for (j_1 = 0; j_1 < (t->cell).colspan[i]; j_1 = j_1 + 1) {
           r_1 = r_1 + *(double *)((j_1 + (t->cell).col[i]) * 8 + iVar2);
-          j_1 = j_1 + 1;
         }
         (t->cell).fixed_width[i] = (short)ROUND(r_1 * -100.0);
       }
-      i = i + 1;
     }
   }
   return;
@@ -37228,22 +36222,17 @@ void set_table_matrix(table *t,int width)
   n = t->maxcol + 1;
   if (0 < n) {
     pmVar3 = new_matrix(n);
-    t->matrix = (MAT *)pmVar3;
+    t->matrix = pmVar3;
     pvVar4 = new_vector(n);
-    t->vector = (VEC *)pvVar4;
-    i = 0;
-    while (i < n) {
-      j = i;
-      while (j < n) {
+    t->vector = pvVar4;
+    for (i = 0; i < n; i = i + 1) {
+      for (j = i; j < n; j = j + 1) {
         t->matrix->me[t->matrix->dim * i + j] = 0.0;
-        j = j + 1;
       }
       t->vector->ve[i] = 0.0;
-      i = i + 1;
     }
     check_relative_width(t,width);
-    i = 0;
-    while (i < n) {
+    for (i = 0; i < n; i = i + 1) {
       if (t->fixed_width[i] < 1) {
         if (t->fixed_width[i] < 0) {
           dVar6 = (double)t->fixed_width[i] / -100.0;
@@ -37259,10 +36248,8 @@ void set_table_matrix(table *t,int width)
         dVar6 = weight2((int)sVar1);
         correct_table_matrix(t,i,1,(int)sVar1,dVar6 * 0.5);
       }
-      i = i + 1;
     }
-    j = 0;
-    while (j <= (t->cell).maxcell) {
+    for (j = 0; j <= (t->cell).maxcell; j = j + 1) {
       if ((t->cell).fixed_width[j] < 1) {
         if ((t->cell).fixed_width[j] < 0) {
           dVar6 = (double)(t->cell).fixed_width[j] / -100.0;
@@ -37281,7 +36268,6 @@ void set_table_matrix(table *t,int width)
         correct_table_matrix
                   (t,(int)(t->cell).col[j],(int)(t->cell).colspan[j],(int)sVar2,dVar6 * 0.5);
       }
-      j = j + 1;
     }
     set_table_matrix0(t,width);
     if (t->total_width < 1) {
@@ -37445,8 +36431,7 @@ Str loadLocalDir(char *dname)
       Strcat_charp(p_Var3,"<TABLE CELLPADDING=0>\n<TR VALIGN=TOP>\n");
     }
     qsort(flist,nfile,4,strCmp);
-    i = 0;
-    while (i < nfile) {
+    for (i = 0; i < nfile; i = i + 1) {
       pcVar4 = flist[i];
       iVar8 = strcmp(pcVar4,".");
       if (iVar8 != 0) {
@@ -37467,19 +36452,15 @@ Str loadLocalDir(char *dname)
             if ((lst.st_mode & 0xf000) == 0xa000) {
               Strcat_charp(p_Var3,"[LINK] ");
             }
+            else if ((st.st_mode & 0xf000) == 0x4000) {
+              Strcat_charp(p_Var3,"[DIR]&nbsp; ");
+            }
             else {
-              if ((st.st_mode & 0xf000) == 0x4000) {
-                Strcat_charp(p_Var3,"[DIR]&nbsp; ");
-              }
-              else {
-                Strcat_charp(p_Var3,"[FILE] ");
-              }
+              Strcat_charp(p_Var3,"[FILE] ");
             }
           }
-          else {
-            if (n == 1) {
-              Strcat_charp(p_Var3,"<TD><NOBR>");
-            }
+          else if (n == 1) {
+            Strcat_charp(p_Var3,"<TD><NOBR>");
           }
           pcVar5 = file_quote(pcVar4);
           pcVar5 = html_quote(pcVar5);
@@ -37543,7 +36524,6 @@ Str loadLocalDir(char *dname)
           }
         }
       }
-      i = i + 1;
     }
     if (multicolList != 0) {
       Strcat_charp(p_Var3,"</TR>\n</TABLE>\n");
@@ -37572,19 +36552,17 @@ int check_local_cgi(char *file,int status)
     if (iVar1 < 0) {
       iVar1 = -1;
     }
+    else if ((st.st_mode & 0xf000) == 0x4000) {
+      iVar1 = -1;
+    }
     else {
-      if ((st.st_mode & 0xf000) == 0x4000) {
-        iVar1 = -1;
+      _Var2 = geteuid();
+      if ((((st.st_uid != _Var2) || ((st.st_mode & 0x40) == 0)) &&
+          ((_Var3 = getegid(), st.st_gid != _Var3 || ((st.st_mode & 8) == 0)))) &&
+         ((st.st_mode & 1) == 0)) {
+        return -1;
       }
-      else {
-        _Var2 = geteuid();
-        if ((((st.st_uid != _Var2) || ((st.st_mode & 0x40) == 0)) &&
-            ((_Var3 = getegid(), st.st_gid != _Var3 || ((st.st_mode & 8) == 0)))) &&
-           ((st.st_mode & 1) == 0)) {
-          return -1;
-        }
-        iVar1 = 0;
-      }
+      iVar1 = 0;
     }
   }
   else {
@@ -37641,7 +36619,7 @@ Str checkPath(char *fn,char *path)
     }
     pcVar1 = strchr(path,0x3a);
     if (pcVar1 != (char *)0x0) {
-      path = allocStr(path,(int)(pcVar1 + -(int)path));
+      path = allocStr(path,(int)pcVar1 - (int)path);
     }
     p_00 = expandPath(path);
     x = Strnew_charp(p_00);
@@ -37688,7 +36666,7 @@ int cgi_filename(char *uri,char **fn,char **name,char **path_info)
     pcVar2 = strchr(uri + 9,0x2f);
     *path_info = pcVar2;
     if (*path_info != (char *)0x0) {
-      pcVar2 = allocStr(uri,(int)(*path_info + -(int)uri));
+      pcVar2 = allocStr(uri,(int)*path_info - (int)uri);
       *name = pcVar2;
     }
     p_Var3 = checkPath(*name + 9,cgi_bin);
@@ -37745,7 +36723,7 @@ int cgi_filename(char *uri,char **fn,char **name,char **path_info)
   pcVar2 = strchr(uri + offset,0x2f);
   *path_info = pcVar2;
   if (*path_info != (char *)0x0) {
-    pcVar2 = allocStr(uri,(int)(*path_info + -(int)uri));
+    pcVar2 = allocStr(uri,(int)*path_info - (int)uri);
     *name = pcVar2;
   }
   Strcat_charp(p_Var3,*name + offset);
@@ -37789,7 +36767,7 @@ FILE * localcgi_post(char *uri,char *qstr,FormList *request,char *referer)
       p_Var2 = tmpfname(0,(char *)0x0);
       tmpf = p_Var2->ptr;
       fw = (FILE *)fopen(tmpf,"w");
-      if (fw == (FILE *)0x0) {
+      if ((FILE *)fw == (FILE *)0x0) {
         return (FILE *)0x0;
       }
     }
@@ -38017,7 +36995,7 @@ form_item_list * formList_addInput(form_list *fl,parsed_tag *tag)
     }
     else {
       if (item->type == 8) {
-        chooseSelectOption((FormItemList *)item,item->select_option);
+        chooseSelectOption(item,item->select_option);
         item->init_selected = item->selected;
         item->init_value = item->value;
         item->init_label = item->label;
@@ -38104,8 +37082,7 @@ void formRecheckRadio(Anchor *a,Buffer *buf,FormItemList *fi)
   Anchor *a2;
   int i;
   
-  i = 0;
-  while (i < buf->formitem->nanchor) {
+  for (i = 0; i < buf->formitem->nanchor; i = i + 1) {
     a_00 = buf->formitem->anchors + i;
     form = (FormItemList *)a_00->url;
     if (((form->parent == fi->parent) && (form != fi)) && (form->type == 3)) {
@@ -38115,7 +37092,6 @@ void formRecheckRadio(Anchor *a,Buffer *buf,FormItemList *fi)
         formUpdateBuffer(a_00,buf,form);
       }
     }
-    i = i + 1;
   }
   fi->checked = 1;
   formUpdateBuffer(a,buf,fi);
@@ -38248,23 +37224,21 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
         pos = pos + 1;
       }
     }
-    else {
-      if (password == 0) {
-        if ((WTF_TYPE_MAP[(byte)*p] & 0x10) == 0) {
-          if (width < (int)(w + uVar5)) break;
-          w = w + uVar5;
-          pos = pos + (uint)WTF_LEN_MAP[(byte)*p];
-        }
-        else {
-          w = w + 1;
-          pos = pos + 1;
-        }
-      }
-      else {
+    else if (password == 0) {
+      if ((WTF_TYPE_MAP[(byte)*p] & 0x10) == 0) {
         if (width < (int)(w + uVar5)) break;
         w = w + uVar5;
-        pos = pos + uVar5;
+        pos = pos + (uint)WTF_LEN_MAP[(byte)*p];
       }
+      else {
+        w = w + 1;
+        pos = pos + 1;
+      }
+    }
+    else {
+      if (width < (int)(w + uVar5)) break;
+      w = w + uVar5;
+      pos = pos + uVar5;
     }
     p = p + WTF_LEN_MAP[(byte)*p];
   }
@@ -38302,51 +37276,43 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
         w = w + 1;
       }
     }
-    else {
-      if (password == 0) {
-        if (((ushort)bVar6 << 8 & 0x1000) == 0) {
-          if (width < (int)(w + uVar5)) break;
-          __dest[pos] = *p;
-          __dest_00[pos] = (ushort)bVar6 << 8 | uVar3;
-          i = 1;
-          while (pos = pos + 1, i < (int)(uint)bVar1) {
-            __dest[pos] = p[i];
-            __dest_00[pos] = (ushort)(bVar6 & 0xf9) << 8 | 0x400 | uVar3;
-            i = i + 1;
-          }
-          w = w + uVar5;
+    else if (password == 0) {
+      if (((ushort)bVar6 << 8 & 0x1000) == 0) {
+        if (width < (int)(w + uVar5)) break;
+        __dest[pos] = *p;
+        __dest_00[pos] = (ushort)bVar6 << 8 | uVar3;
+        for (i = 1; pos = pos + 1, i < (int)(uint)bVar1; i = i + 1) {
+          __dest[pos] = p[i];
+          __dest_00[pos] = (ushort)(bVar6 & 0xf9) << 8 | 0x400 | uVar3;
         }
-        else {
-          __dest[pos] = ' ';
-          __dest_00[pos] = uVar3;
-          pos = pos + 1;
-          w = w + 1;
-        }
+        w = w + uVar5;
       }
       else {
-        if (width < (int)(w + uVar5)) break;
-        i = 0;
-        while (i < (int)uVar5) {
-          __dest[pos] = '*';
-          __dest_00[pos] = uVar3;
-          pos = pos + 1;
-          w = w + 1;
-          i = i + 1;
-        }
+        __dest[pos] = ' ';
+        __dest_00[pos] = uVar3;
+        pos = pos + 1;
+        w = w + 1;
+      }
+    }
+    else {
+      if (width < (int)(w + uVar5)) break;
+      for (i = 0; i < (int)uVar5; i = i + 1) {
+        __dest[pos] = '*';
+        __dest_00[pos] = uVar3;
+        pos = pos + 1;
+        w = w + 1;
       }
     }
     p = p + bVar1;
   }
-  while (w < width) {
+  for (; w < width; w = w + 1) {
     __dest[pos] = ' ';
     __dest_00[pos] = uVar3;
     pos = pos + 1;
-    w = w + 1;
   }
   if (newline != 0) {
     if (FoldTextarea == 0) {
-      while (((*p != '\0' && (*p != '\r')) && (*p != '\n'))) {
-        p = p + 1;
+      for (; ((*p != '\0' && (*p != '\r')) && (*p != '\n')); p = p + 1) {
       }
     }
     if (*p == '\r') {
@@ -38422,16 +37388,14 @@ void formUpdateBuffer(Anchor *a,Buffer *buf,FormItemList *form)
         n = (int)a->y - buf->currentLine->linenumber;
         if (n < 1) {
           if (n < 0) {
-            while ((l != (Line *)0x0 && (n != 0))) {
-              l = (Line *)l->prev;
-              n = n + 1;
+            for (; (l != (Line *)0x0 && (n != 0)); n = n + 1) {
+              l = l->prev;
             }
           }
         }
         else {
-          while ((l != (Line *)0x0 && (n != 0))) {
-            l = (Line *)l->prev;
-            n = n + -1;
+          for (; (l != (Line *)0x0 && (n != 0)); n = n + -1) {
+            l = l->prev;
           }
         }
         if (l == (Line *)0x0) goto LAB_0808c8a3;
@@ -38443,8 +37407,7 @@ void formUpdateBuffer(Anchor *a,Buffer *buf,FormItemList *form)
         iVar1 = form->rows;
       }
       column = calcPosition(l->lineBuf,l->propBuf,l->len,(a->start).pos,0,0);
-      c_rows = 0;
-      while (c_rows < iVar1) {
+      for (c_rows = 0; c_rows < iVar1; c_rows = c_rows + 1) {
         if (1 < iVar1) {
           iVar2 = columnPos(l,column);
           a = retrieveAnchor(buf->formitem,l->linenumber,iVar2);
@@ -38462,8 +37425,7 @@ void formUpdateBuffer(Anchor *a,Buffer *buf,FormItemList *form)
           shiftAnchorPosition(buf->img,buf->hmarklist,(a->start).line,spos,iVar2 - epos);
           shiftAnchorPosition(buf->formitem,buf->hmarklist,(a->start).line,spos,iVar2 - epos);
         }
-        c_rows = c_rows + 1;
-        l = (Line *)l->next;
+        l = l->next;
       }
     }
   }
@@ -38491,8 +37453,7 @@ Str textfieldrep(Str s,int width)
   
   x = Strnew_size(width + 2);
   j = 0;
-  i = 0;
-  while (i < s->length) {
+  for (i = 0; i < s->length; i = i + (uint)bVar1) {
     bVar1 = WTF_LEN_MAP[(byte)s->ptr[i]];
     if (s->ptr[i] != '\r') {
       if (WcOption.use_wide == '\0') {
@@ -38513,39 +37474,32 @@ Str textfieldrep(Str s,int width)
         x->length = iVar2 + 1;
         x->ptr[x->length] = '\0';
       }
-      else {
-        if ((WTF_TYPE_MAP[(byte)s->ptr[i]] & 0x10) == 0) {
-          if (s->ptr[i] == '&') {
-            Strcat_charp(x,"&amp;");
-          }
-          else {
-            if (s->ptr[i] == '<') {
-              Strcat_charp(x,"&lt;");
-            }
-            else {
-              if (s->ptr[i] == '>') {
-                Strcat_charp(x,"&gt;");
-              }
-              else {
-                Strcat_charp_n(x,s->ptr + i,(uint)bVar1);
-              }
-            }
-          }
+      else if ((WTF_TYPE_MAP[(byte)s->ptr[i]] & 0x10) == 0) {
+        if (s->ptr[i] == '&') {
+          Strcat_charp(x,"&amp;");
+        }
+        else if (s->ptr[i] == '<') {
+          Strcat_charp(x,"&lt;");
+        }
+        else if (s->ptr[i] == '>') {
+          Strcat_charp(x,"&gt;");
         }
         else {
-          if (x->area_size <= x->length + 1) {
-            Strgrow(x);
-          }
-          iVar2 = x->length;
-          x->ptr[iVar2] = ' ';
-          x->length = iVar2 + 1;
-          x->ptr[x->length] = '\0';
+          Strcat_charp_n(x,s->ptr + i,(uint)bVar1);
         }
       }
+      else {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar2 = x->length;
+        x->ptr[iVar2] = ' ';
+        x->length = iVar2 + 1;
+        x->ptr[x->length] = '\0';
+      }
     }
-    i = i + (uint)bVar1;
   }
-  while (j < width) {
+  for (; j < width; j = j + 1) {
     if (x->area_size <= x->length + 1) {
       Strgrow(x);
     }
@@ -38553,7 +37507,6 @@ Str textfieldrep(Str s,int width)
     x->ptr[iVar2] = ' ';
     x->length = iVar2 + 1;
     x->ptr[x->length] = '\0';
-    j = j + 1;
   }
   return x;
 }
@@ -38569,8 +37522,7 @@ void form_fputs_decode(Str s,FILE *f)
   char *p;
   
   p_Var2 = Strnew();
-  p = s->ptr;
-  while (*p != '\0') {
+  for (p = s->ptr; *p != '\0'; p = p + 1) {
     if ((*p == '\r') && (p[1] == '\n')) {
       p = p + 1;
     }
@@ -38581,7 +37533,6 @@ void form_fputs_decode(Str s,FILE *f)
     p_Var2->ptr[iVar1] = *p;
     p_Var2->length = iVar1 + 1;
     p_Var2->ptr[p_Var2->length] = '\0';
-    p = p + 1;
   }
   p_Var2 = wc_Str_conv_strict(p_Var2,InnerCharset,DisplayCharset);
   fwrite(p_Var2->ptr,1,p_Var2->length,(FILE *)f);
@@ -38604,7 +37555,7 @@ void input_textarea(FormItemList *fi)
   tmpf = p_Var1->ptr;
   charset = DisplayCharset;
   f = (FILE *)fopen(tmpf,"w");
-  if (f == (FILE *)0x0) {
+  if ((FILE *)f == (FILE *)0x0) {
     disp_err_message("Can\'t open temporary file",0);
   }
   else {
@@ -38618,7 +37569,7 @@ void input_textarea(FormItemList *fi)
     fmInit();
     if (fi->readonly == 0) {
       f = (FILE *)fopen(tmpf,"r");
-      if (f == (FILE *)0x0) {
+      if ((FILE *)f == (FILE *)0x0) {
         disp_err_message("Can\'t open temporary file",0);
       }
       else {
@@ -38632,12 +37583,10 @@ void input_textarea(FormItemList *fi)
           if ((tmp->length == 1) && (tmp->ptr[tmp->length + -1] == '\n')) {
             tmp = Strnew_charp("\r\n");
           }
-          else {
-            if ((1 < tmp->length) &&
-               ((tmp->ptr[tmp->length + -1] == '\n' && (tmp->ptr[tmp->length + -2] != '\r')))) {
-              Strshrink(tmp,1);
-              Strcat_charp(tmp,"\r\n");
-            }
+          else if ((1 < tmp->length) &&
+                  ((tmp->ptr[tmp->length + -1] == '\n' && (tmp->ptr[tmp->length + -2] != '\r')))) {
+            Strshrink(tmp,1);
+            Strcat_charp(tmp,"\r\n");
           }
           tmp = convertLine((URLFile *)0x0,tmp,0,&charset,DisplayCharset);
           Strcat(fi->value,tmp);
@@ -38702,7 +37651,7 @@ void addSelectOption(FormSelectOption *fso,Str value,Str label,int chk)
     fso->first = fso->last;
   }
   else {
-    fso->last->next = (form_select_option_item *)pFVar1;
+    fso->last->next = pFVar1;
     fso->last = pFVar1;
   }
   return;
@@ -38728,8 +37677,7 @@ void chooseSelectOption(FormItemList *fi,FormSelectOptionItem *item)
     fi->value = item->value;
     fi->label = item->label;
     i = 0;
-    opt = item;
-    while (opt != (FormSelectOptionItem *)0x0) {
+    for (opt = item; opt != (FormSelectOptionItem *)0x0; opt = opt->next) {
       if (opt->checked != 0) {
         fi->value = opt->value;
         fi->label = opt->label;
@@ -38737,7 +37685,6 @@ void chooseSelectOption(FormItemList *fi,FormSelectOptionItem *item)
         break;
       }
       i = i + 1;
-      opt = (FormSelectOptionItem *)opt->next;
     }
     updateSelectOption(fi,item);
   }
@@ -38753,7 +37700,7 @@ void updateSelectOption(FormItemList *fi,FormSelectOptionItem *item)
   
   if ((fi != (FormItemList *)0x0) && (item != (FormSelectOptionItem *)0x0)) {
     i = 0;
-    while (item != (FormSelectOptionItem *)0x0) {
+    for (; item != (FormSelectOptionItem *)0x0; item = item->next) {
       if (fi->selected == i) {
         item->checked = 1;
       }
@@ -38761,7 +37708,6 @@ void updateSelectOption(FormItemList *fi,FormSelectOptionItem *item)
         item->checked = 0;
       }
       i = i + 1;
-      item = (FormSelectOptionItem *)item->next;
     }
   }
   return;
@@ -38784,18 +37730,14 @@ int formChooseOptionByMenu(form_item_list *fi,int x,int y)
   selected = -1;
   iVar1 = fi->selected;
   n = 0;
-  opt = fi->select_option;
-  while (opt != (FormSelectOptionItem *)0x0) {
+  for (opt = fi->select_option; opt != (FormSelectOptionItem *)0x0; opt = opt->next) {
     n = n + 1;
-    opt = (FormSelectOptionItem *)opt->next;
   }
   label_00 = (char **)GC_malloc((n + 1) * 4);
   i = 0;
-  opt = fi->select_option;
-  while (opt != (FormSelectOptionItem *)0x0) {
+  for (opt = fi->select_option; opt != (FormSelectOptionItem *)0x0; opt = opt->next) {
     label_00[i] = opt->label->ptr;
     i = i + 1;
-    opt = (FormSelectOptionItem *)opt->next;
   }
   label_00[n] = (char *)0x0;
   optionMenu(x,y,label_00,&selected,iVar1,(anon_subr_void_varargs *)0x0);
@@ -38804,8 +37746,7 @@ int formChooseOptionByMenu(form_item_list *fi,int x,int y)
   }
   else {
     i = 0;
-    opt = fi->select_option;
-    while (opt != (FormSelectOptionItem *)0x0) {
+    for (opt = fi->select_option; opt != (FormSelectOptionItem *)0x0; opt = opt->next) {
       if (i == selected) {
         fi->selected = selected;
         fi->value = opt->value;
@@ -38813,9 +37754,8 @@ int formChooseOptionByMenu(form_item_list *fi,int x,int y)
         break;
       }
       i = i + 1;
-      opt = (FormSelectOptionItem *)opt->next;
     }
-    updateSelectOption((FormItemList *)fi,fi->select_option);
+    updateSelectOption(fi,fi->select_option);
     iVar1 = 1;
   }
   return iVar1;
@@ -39019,99 +37959,95 @@ LAB_0808d618:
             pi = pf->item;
           }
         }
-        else {
-          if (pf != (pre_form *)0x0) {
-            iVar2 = strcmp(pcVar3,"form");
-            if (iVar2 != 0) {
-              iVar2 = strcmp(pcVar3,"text");
+        else if (pf != (pre_form *)0x0) {
+          iVar2 = strcmp(pcVar3,"form");
+          if (iVar2 != 0) {
+            iVar2 = strcmp(pcVar3,"text");
+            if (iVar2 == 0) {
+              type = 0;
+            }
+            else {
+              iVar2 = strcmp(pcVar3,"file");
               if (iVar2 == 0) {
-                type = 0;
+                type = 0xb;
               }
               else {
-                iVar2 = strcmp(pcVar3,"file");
-                if (iVar2 == 0) {
-                  type = 0xb;
+                iVar2 = strcmp(pcVar3,"passwd");
+                if ((iVar2 == 0) || (iVar2 = strcmp(pcVar3,"password"), iVar2 == 0)) {
+                  type = 1;
                 }
                 else {
-                  iVar2 = strcmp(pcVar3,"passwd");
-                  if ((iVar2 == 0) || (iVar2 = strcmp(pcVar3,"password"), iVar2 == 0)) {
-                    type = 1;
+                  iVar2 = strcmp(pcVar3,"checkbox");
+                  if (iVar2 == 0) {
+                    type = 2;
                   }
                   else {
-                    iVar2 = strcmp(pcVar3,"checkbox");
+                    iVar2 = strcmp(pcVar3,"radio");
                     if (iVar2 == 0) {
-                      type = 2;
+                      type = 3;
                     }
                     else {
-                      iVar2 = strcmp(pcVar3,"radio");
+                      iVar2 = strcmp(pcVar3,"submit");
                       if (iVar2 == 0) {
-                        type = 3;
+                        type = 4;
                       }
                       else {
-                        iVar2 = strcmp(pcVar3,"submit");
+                        iVar2 = strcmp(pcVar3,"image");
                         if (iVar2 == 0) {
-                          type = 4;
+                          type = 7;
                         }
                         else {
-                          iVar2 = strcmp(pcVar3,"image");
-                          if (iVar2 == 0) {
-                            type = 7;
-                          }
-                          else {
-                            iVar2 = strcmp(pcVar3,"select");
-                            if (iVar2 != 0) {
-                              iVar2 = strcmp(pcVar3,"textarea");
-                              if (iVar2 == 0) {
-                                type = 9;
-                                p_Var4 = Strnew_charp(p_00);
-                                name = p_Var4->ptr;
-                                textarea = Strnew();
-                              }
-                              else {
-                                if (((textarea != (Str)0x0) && (name != (char *)0x0)) &&
-                                   (iVar2 = strcmp(pcVar3,"/textarea"), iVar2 == 0)) {
-                                  pi = add_pre_form_item(pf,pi,type,name,textarea->ptr,(char *)0x0);
-                                  textarea = (Str)0x0;
-                                  name = (char *)0x0;
-                                }
-                              }
-                              goto LAB_0808d618;
+                          iVar2 = strcmp(pcVar3,"select");
+                          if (iVar2 != 0) {
+                            iVar2 = strcmp(pcVar3,"textarea");
+                            if (iVar2 == 0) {
+                              type = 9;
+                              p_Var4 = Strnew_charp(p_00);
+                              name = p_Var4->ptr;
+                              textarea = Strnew();
                             }
-                            type = 8;
+                            else if (((textarea != (Str)0x0) && (name != (char *)0x0)) &&
+                                    (iVar2 = strcmp(pcVar3,"/textarea"), iVar2 == 0)) {
+                              pi = add_pre_form_item(pf,pi,type,name,textarea->ptr,(char *)0x0);
+                              textarea = (Str)0x0;
+                              name = (char *)0x0;
+                            }
+                            goto LAB_0808d618;
                           }
+                          type = 8;
                         }
                       }
                     }
                   }
                 }
               }
-              pcVar3 = getQWord(&p);
-              checked = getQWord(&p);
-              pi = add_pre_form_item(pf,pi,type,p_00,pcVar3,checked);
-              goto LAB_0808d618;
             }
-            if ((p_00 != (char *)0x0) && (*p_00 != '\0')) {
-              pcVar3 = getQWord(&p);
-              p = getQWord(&p);
-              ppVar1 = pf;
-              if ((p == (char *)0x0) || (s = pcVar3, *p == '\0')) {
-                s = (char *)0x0;
-                p = pcVar3;
-              }
-              if (pf->item == (pre_form_item *)0x0) {
-                pf->name = s;
-                if ((p == (char *)0x0) || (pcVar3 = p, *p == '\0')) {
-                  pcVar3 = (char *)0x0;
-                }
-                pf->action = pcVar3;
-              }
-              else {
-                pf = add_pre_form(pf,"",s,p);
-                pf->url = ppVar1->url;
-                pf->re_url = ppVar1->re_url;
-              }
-              pi = pf->item;
+            pcVar3 = getQWord(&p);
+            checked = getQWord(&p);
+            pi = add_pre_form_item(pf,pi,type,p_00,pcVar3,checked);
+            goto LAB_0808d618;
+          }
+          if ((p_00 != (char *)0x0) && (*p_00 != '\0')) {
+            pcVar3 = getQWord(&p);
+            p = getQWord(&p);
+            ppVar1 = pf;
+            if ((p == (char *)0x0) || (s = pcVar3, *p == '\0')) {
+              s = (char *)0x0;
+              p = pcVar3;
             }
+            if (pf->item == (pre_form_item *)0x0) {
+              pf->name = s;
+              if ((p == (char *)0x0) || (pcVar3 = p, *p == '\0')) {
+                pcVar3 = (char *)0x0;
+              }
+              pf->action = pcVar3;
+            }
+            else {
+              pf = add_pre_form(pf,"",s,p);
+              pf->url = ppVar1->url;
+              pf->re_url = ppVar1->re_url;
+            }
+            pi = pf->item;
           }
         }
       }
@@ -39145,8 +38081,7 @@ void preFormUpdateBuffer(Buffer *buf)
   
   if (((buf != (Buffer *)0x0) && (buf->formitem != (AnchorList *)0x0)) &&
      (PreForm != (pre_form *)0x0)) {
-    pf = PreForm;
-    while (pf != (pre_form *)0x0) {
+    for (pf = PreForm; pf != (pre_form *)0x0; pf = pf->next) {
       if (pf->re_url == (Regex *)0x0) {
         if (pf->url != (char *)0x0) {
           __s2 = pf->url;
@@ -39160,8 +38095,7 @@ void preFormUpdateBuffer(Buffer *buf)
         iVar3 = RegexMatch(pf->re_url,p_Var2->ptr,p_Var2->length,1);
         if (iVar3 != 0) {
 LAB_0808db3c:
-          i = 0;
-          while (i < buf->formitem->nanchor) {
+          for (i = 0; i < buf->formitem->nanchor; i = i + 1) {
             a_00 = buf->formitem->anchors + i;
             fi_00 = (FormItemList *)a_00->url;
             pfVar1 = fi_00->parent;
@@ -39170,8 +38104,7 @@ LAB_0808db3c:
                  ))) && ((pf->action == (char *)0x0 ||
                          ((pfVar1->action != (Str)0x0 &&
                           (iVar3 = strcmp(pfVar1->action->ptr,pf->action), iVar3 == 0)))))) {
-              pi = pf->item;
-              while (pi != (pre_form_item *)0x0) {
+              for (pi = pf->item; pi != (pre_form_item *)0x0; pi = pi->next) {
                 if (pi->type == fi_00->type) {
                   if ((pi->type == 4) || (pi->type == 7)) {
                     if ((((pi->name == (char *)0x0) || (*pi->name == '\0')) ||
@@ -39184,59 +38117,53 @@ LAB_0808db3c:
                       buf->submit = a_00;
                     }
                   }
-                  else {
-                    if (((pi->name != (char *)0x0) && (fi_00->name != (Str)0x0)) &&
-                       (iVar3 = strcmp(fi_00->name->ptr,pi->name), iVar3 == 0)) {
-                      switch(pi->type) {
-                      case 0:
-                      case 1:
-                      case 9:
-                      case 0xb:
-                        p_Var2 = Strnew_charp(pi->value);
-                        fi_00->value = p_Var2;
+                  else if (((pi->name != (char *)0x0) && (fi_00->name != (Str)0x0)) &&
+                          (iVar3 = strcmp(fi_00->name->ptr,pi->name), iVar3 == 0)) {
+                    switch(pi->type) {
+                    case 0:
+                    case 1:
+                    case 9:
+                    case 0xb:
+                      p_Var2 = Strnew_charp(pi->value);
+                      fi_00->value = p_Var2;
+                      formUpdateBuffer(a_00,buf,fi_00);
+                      break;
+                    case 2:
+                      if (((pi->value != (char *)0x0) && (fi_00->value != (Str)0x0)) &&
+                         (iVar3 = strcmp(fi_00->value->ptr,pi->value), iVar3 == 0)) {
+                        fi_00->checked = pi->checked;
                         formUpdateBuffer(a_00,buf,fi_00);
-                        break;
-                      case 2:
-                        if (((pi->value != (char *)0x0) && (fi_00->value != (Str)0x0)) &&
-                           (iVar3 = strcmp(fi_00->value->ptr,pi->value), iVar3 == 0)) {
-                          fi_00->checked = pi->checked;
+                      }
+                      break;
+                    case 3:
+                      if (((pi->value != (char *)0x0) && (fi_00->value != (Str)0x0)) &&
+                         (iVar3 = strcmp(fi_00->value->ptr,pi->value), iVar3 == 0)) {
+                        formRecheckRadio(a_00,buf,fi_00);
+                      }
+                      break;
+                    case 8:
+                      j = 0;
+                      for (opt = fi_00->select_option; opt != (FormSelectOptionItem *)0x0;
+                          opt = opt->next) {
+                        if (((pi->value != (char *)0x0) && (opt->value != (Str)0x0)) &&
+                           (iVar3 = strcmp(opt->value->ptr,pi->value), iVar3 == 0)) {
+                          fi_00->selected = j;
+                          fi_00->value = opt->value;
+                          fi_00->label = opt->label;
+                          updateSelectOption(fi_00,fi_00->select_option);
                           formUpdateBuffer(a_00,buf,fi_00);
+                          break;
                         }
-                        break;
-                      case 3:
-                        if (((pi->value != (char *)0x0) && (fi_00->value != (Str)0x0)) &&
-                           (iVar3 = strcmp(fi_00->value->ptr,pi->value), iVar3 == 0)) {
-                          formRecheckRadio(a_00,buf,fi_00);
-                        }
-                        break;
-                      case 8:
-                        j = 0;
-                        opt = fi_00->select_option;
-                        while (opt != (FormSelectOptionItem *)0x0) {
-                          if (((pi->value != (char *)0x0) && (opt->value != (Str)0x0)) &&
-                             (iVar3 = strcmp(opt->value->ptr,pi->value), iVar3 == 0)) {
-                            fi_00->selected = j;
-                            fi_00->value = opt->value;
-                            fi_00->label = opt->label;
-                            updateSelectOption(fi_00,fi_00->select_option);
-                            formUpdateBuffer(a_00,buf,fi_00);
-                            break;
-                          }
-                          j = j + 1;
-                          opt = (FormSelectOptionItem *)opt->next;
-                        }
+                        j = j + 1;
                       }
                     }
                   }
                 }
-                pi = pi->next;
               }
             }
-            i = i + 1;
           }
         }
       }
-      pf = pf->next;
     }
   }
   return;
@@ -39256,7 +38183,7 @@ MapList * searchMapList(Buffer *buf,char *name)
   else {
     ml = buf->maplist;
     while ((ml != (MapList *)0x0 && (iVar1 = strcmp(ml->name->ptr,name), iVar1 != 0))) {
-      ml = (MapList *)ml->next;
+      ml = ml->next;
     }
   }
   return ml;
@@ -39289,45 +38216,36 @@ int inMapArea(MapArea *a,int x,int y)
         return 1;
       }
     }
-    else {
-      if (cVar1 < '\x03') {
-        if (cVar1 == '\x01') {
+    else if (cVar1 < '\x03') {
+      if (cVar1 == '\x01') {
+        return 1;
+      }
+    }
+    else if (cVar1 == '\x03') {
+      if ((x - *a->coords) * (x - *a->coords) + (y - a->coords[1]) * (y - a->coords[1]) <=
+          (int)a->coords[2] * (int)a->coords[2]) {
+        return 1;
+      }
+    }
+    else if (cVar1 == '\x04') {
+      t = 0.0;
+      for (i = 0; i < a->ncoords; i = i + 2) {
+        dVar3 = SQRT((double)(y - a->coords[i + 1]) * (double)(y - a->coords[i + 1]) +
+                     (double)(x - a->coords[i]) * (double)(x - a->coords[i]));
+        dVar2 = sqrt((double)(y - a->coords[i + 3]) * (double)(y - a->coords[i + 3]) +
+                     (double)(x - a->coords[i + 2]) * (double)(x - a->coords[i + 2]));
+        if ((dVar3 == 0.0) || (dVar2 == 0.0)) {
           return 1;
         }
-      }
-      else {
-        if (cVar1 == '\x03') {
-          if ((x - *a->coords) * (x - *a->coords) + (y - a->coords[1]) * (y - a->coords[1]) <=
-              (int)a->coords[2] * (int)a->coords[2]) {
-            return 1;
-          }
-        }
-        else {
-          if (cVar1 == '\x04') {
-            t = 0.0;
-            i = 0;
-            while (i < a->ncoords) {
-              dVar3 = SQRT((double)(y - a->coords[i + 1]) * (double)(y - a->coords[i + 1]) +
-                           (double)(x - a->coords[i]) * (double)(x - a->coords[i]));
-              dVar2 = sqrt((double)(y - a->coords[i + 3]) * (double)(y - a->coords[i + 3]) +
-                           (double)(x - a->coords[i + 2]) * (double)(x - a->coords[i + 2]));
-              if ((dVar3 == 0.0) || (dVar2 == 0.0)) {
-                return 1;
-              }
-              dVar3 = atan2((((double)(y - a->coords[i + 3]) * (double)(x - a->coords[i]) -
-                             (double)(y - a->coords[i + 1]) * (double)(x - a->coords[i + 2])) /
-                            dVar3) / dVar2,
-                            (((double)(y - a->coords[i + 3]) * (double)(y - a->coords[i + 1]) +
+        dVar3 = atan2((((double)(y - a->coords[i + 3]) * (double)(x - a->coords[i]) -
+                       (double)(y - a->coords[i + 1]) * (double)(x - a->coords[i + 2])) / dVar3) /
+                      dVar2,(((double)(y - a->coords[i + 3]) * (double)(y - a->coords[i + 1]) +
                              (double)(x - a->coords[i + 2]) * (double)(x - a->coords[i])) / dVar3) /
                             dVar2);
-              t = t + dVar3;
-              i = i + 2;
-            }
-            if (6.28 < ABS(t)) {
-              return 1;
-            }
-          }
-        }
+        t = t + dVar3;
+      }
+      if (6.28 < ABS(t)) {
+        return 1;
       }
     }
   }
@@ -39356,8 +38274,7 @@ int nearestMapArea(MapList *ml,int x,int y)
   }
   else {
     i = 0;
-    al = ml->area->first;
-    while (al != (ListItem *)0x0) {
+    for (al = ml->area->first; al != (ListItem *)0x0; al = al->next) {
       pvVar2 = al->ptr;
       if ((pvVar2 != (void *)0x0) &&
          (((iVar1 = (*(short *)((int)pvVar2 + 0x18) - x) * (*(short *)((int)pvVar2 + 0x18) - x) +
@@ -39369,7 +38286,6 @@ int nearestMapArea(MapList *ml,int x,int y)
         min = iVar1;
       }
       i = i + 1;
-      al = (ListItem *)al->next;
     }
   }
   return n;
@@ -39399,8 +38315,7 @@ int searchMapArea(Buffer *buf,MapList *ml,Anchor *a_img)
     else {
       n = -(int)ml->area->nitem;
       i = 0;
-      al = ml->area->first;
-      while (al != (ListItem *)0x0) {
+      for (al = ml->area->first; al != (ListItem *)0x0; al = al->next) {
         a = (MapArea *)al->ptr;
         if (((a != (MapArea *)0x0) && (n < 0)) && (iVar1 = inMapArea(a,px,py), iVar1 != 0)) {
           if (a->shape == '\x01') {
@@ -39413,15 +38328,12 @@ int searchMapArea(Buffer *buf,MapList *ml,Anchor *a_img)
           }
         }
         i = i + 1;
-        al = (ListItem *)al->next;
       }
       if (-n == (int)ml->area->nitem) {
         n = nearestMapArea(ml,px,py);
       }
-      else {
-        if (n < 0) {
-          n = -n;
-        }
+      else if (n < 0) {
+        n = -n;
       }
     }
   }
@@ -39462,13 +38374,11 @@ MapArea * retrieveCurrentMapArea(Buffer *buf)
     ml_00 = searchMapList(buf,pcVar2);
     if ((ml_00 != (MapList *)0x0) && (iVar3 = searchMapArea(buf,ml_00,a_img_00), -1 < iVar3)) {
       i = 0;
-      al = ml_00->area->first;
-      while (al != (ListItem *)0x0) {
+      for (al = ml_00->area->first; al != (ListItem *)0x0; al = al->next) {
         if (((MapArea *)al->ptr != (MapArea *)0x0) && (i == iVar3)) {
           return (MapArea *)al->ptr;
         }
         i = i + 1;
-        al = (ListItem *)al->next;
       }
     }
   }
@@ -39523,11 +38433,9 @@ Anchor * retrieveCurrentMap(Buffer *buf)
   if ((pAVar1 == (Anchor *)0x0) || (pAVar1->url == (char *)0x0)) {
     pAVar1 = (Anchor *)0x0;
   }
-  else {
-    if ((*(int *)(*(int *)(pAVar1->url + 0x40) + 8) != 2) ||
-       (iVar2 = strcmp(**(char ***)(*(int *)(pAVar1->url + 0x40) + 0xc),"map"), iVar2 != 0)) {
-      pAVar1 = (Anchor *)0x0;
-    }
+  else if ((*(int *)(*(int *)(pAVar1->url + 0x40) + 8) != 2) ||
+          (iVar2 = strcmp(**(char ***)(*(int *)(pAVar1->url + 0x40) + 0xc),"map"), iVar2 != 0)) {
+    pAVar1 = (Anchor *)0x0;
   }
   return pAVar1;
 }
@@ -39564,8 +38472,7 @@ MapArea * follow_map_menu(Buffer *buf,char *name,Anchor *a_img,int x,int y)
   }
   label_00 = (char **)GC_malloc((ml->area->nitem + 1) * 4);
   i = 0;
-  al = ml->area->first;
-  while (al != (ListItem *)0x0) {
+  for (al = ml->area->first; al != (ListItem *)0x0; al = al->next) {
     ppcVar1 = (char **)al->ptr;
     if (ppcVar1 == (char **)0x0) {
       label_00[i] = "";
@@ -39580,7 +38487,6 @@ MapArea * follow_map_menu(Buffer *buf,char *name,Anchor *a_img,int x,int y)
       label_00[i] = pcVar3;
     }
     i = i + 1;
-    al = (ListItem *)al->next;
   }
   label_00[ml->area->nitem] = (char *)0x0;
   optionMenu(x,y,label_00,&selected,initial,(anon_subr_void_varargs *)0x0);
@@ -39589,13 +38495,11 @@ map_end:
   selected = iVar2;
   if (-1 < selected) {
     i = 0;
-    al = ml->area->first;
-    while (al != (ListItem *)0x0) {
+    for (al = ml->area->first; al != (ListItem *)0x0; al = al->next) {
       if ((al->ptr != (void *)0x0) && (i == selected)) {
         return (MapArea *)al->ptr;
       }
       i = i + 1;
-      al = (ListItem *)al->next;
     }
   }
   return (MapArea *)0x0;
@@ -39663,12 +38567,10 @@ MapArea * newMapArea(char *url,char *target,char *alt,char *shape,char *coords)
         pMVar1->coords = psVar3;
         pMVar1->ncoords = 4;
       }
-      else {
-        if (pMVar1->shape == '\x03') {
-          psVar3 = (short *)GC_malloc(6);
-          pMVar1->coords = psVar3;
-          pMVar1->ncoords = 3;
-        }
+      else if (pMVar1->shape == '\x03') {
+        psVar3 = (short *)GC_malloc(6);
+        pMVar1->coords = psVar3;
+        pMVar1->ncoords = 3;
       }
       max = pMVar1->ncoords;
       i = 0;
@@ -39720,11 +38622,9 @@ MapArea * newMapArea(char *url,char *target,char *alt,char *shape,char *coords)
           pMVar1->center_y = pMVar1->coords[1];
         }
         else {
-          i = 0;
-          while (i < pMVar1->ncoords / 2) {
+          for (i = 0; i < pMVar1->ncoords / 2; i = i + 1) {
             pMVar1->center_x = pMVar1->center_x + pMVar1->coords[i * 2];
             pMVar1->center_y = pMVar1->center_y + pMVar1->coords[i * 2 + 1];
-            i = i + 1;
           }
           pMVar1->center_x = (short)((int)pMVar1->center_x / (pMVar1->ncoords / 2));
           pMVar1->center_y = (short)((int)pMVar1->center_y / (pMVar1->ncoords / 2));
@@ -39768,8 +38668,7 @@ void append_map_info(Buffer *buf,Str tmp,FormItemList *fi)
   if (pMVar2 != (MapList *)0x0) {
     Strcat_m_charp(tmp,"<tr valign=top><td colspan=2>Links of current image map",
                    "<tr valign=top><td colspan=2><table>",0);
-    al = pMVar2->area->first;
-    while (al != (ListItem *)0x0) {
+    for (al = pMVar2->area->first; al != (ListItem *)0x0; al = al->next) {
       ppcVar1 = (char **)al->ptr;
       if (ppcVar1 != (char **)0x0) {
         current = baseURL(buf);
@@ -39793,7 +38692,6 @@ void append_map_info(Buffer *buf,Str tmp,FormItemList *fi)
         Strcat_m_charp(tmp,"<tr valign=top><td>&nbsp;&nbsp;<td><a href=\"",pcVar4,&DAT_080cbb9f,
                        pcVar5,"</a><td>",p,&DAT_080cbb94,0);
       }
-      al = (ListItem *)al->next;
     }
     Strcat_charp(tmp,"</table>");
   }
@@ -39817,8 +38715,7 @@ void append_link_info(Buffer *buf,Str html,LinkList *link)
   
   if (link != (LinkList *)0x0) {
     Strcat_charp(html,"<hr width=50%><h1>Link information</h1><table>\n");
-    l = link;
-    while (l != (LinkList *)0x0) {
+    for (l = link; l != (LinkList *)0x0; l = l->next) {
       if (l->url == (char *)0x0) {
         url = "(empty)";
       }
@@ -39840,22 +38737,18 @@ void append_link_info(Buffer *buf,Str html,LinkList *link)
       if (l->type == '\x01') {
         Strcat_charp(html,"[Rel]");
       }
-      else {
-        if (l->type == '\x02') {
-          Strcat_charp(html,"[Rev]");
-        }
+      else if (l->type == '\x02') {
+        Strcat_charp(html,"[Rev]");
       }
       if (l->url == (char *)0x0) {
         url = "(empty)";
       }
+      else if (DecodeURL == 0) {
+        url = html_quote(l->url);
+      }
       else {
-        if (DecodeURL == 0) {
-          url = html_quote(l->url);
-        }
-        else {
-          str = url_unquote_conv(l->url,buf->document_charset);
-          url = html_quote(str);
-        }
+        str = url_unquote_conv(l->url,buf->document_charset);
+        url = html_quote(str);
       }
       Strcat_m_charp(html,&DAT_080cbc3d,url,0,pcVar2,pcVar3,uVar4);
       if (l->ctype != (char *)0x0) {
@@ -39863,7 +38756,6 @@ void append_link_info(Buffer *buf,Str html,LinkList *link)
         Strcat_m_charp(html,&DAT_080cbc44,pcVar2,&DAT_080cbc42,0);
       }
       Strcat_charp(html,"\n");
-      l = (LinkList *)l->next;
     }
     Strcat_charp(html,"</table>\n");
   }
@@ -39886,17 +38778,14 @@ void append_frame_info(Buffer *buf,Str html,frameset *set,int level)
   char *p;
   
   if (set != (frameset *)0x0) {
-    i = 0;
-    while (iVar3 = set->row * set->col, iVar3 - i != 0 && i <= iVar3) {
+    for (i = 0; iVar3 = set->row * set->col, iVar3 - i != 0 && i <= iVar3; i = i + 1) {
       set_00 = (frameset *)set->frame[i];
       if ((set_00 != (frameset *)0x0) && (cVar1 = set_00->attr, -1 < cVar1)) {
         if (cVar1 < '\x02') {
           if (set_00->currentURL != (ParsedURL *)0x0) {
             Strcat_charp(html,"<pre_int>");
-            j = 0;
-            while (j < level) {
+            for (j = 0; j < level; j = j + 1) {
               Strcat_charp(html,"   ");
-              j = j + 1;
             }
             p = html_quote((char *)set_00->currentURL);
             Strcat_m_charp(html,"<a href=\"",p,&DAT_080cbb9f,0);
@@ -39912,13 +38801,10 @@ void append_frame_info(Buffer *buf,Str html,frameset *set,int level)
             Strcat_m_charp(html,&DAT_080cbc7d,p,"</a></pre_int><br>\n",0);
           }
         }
-        else {
-          if (cVar1 == '\x02') {
-            append_frame_info(buf,html,set_00,level + 1);
-          }
+        else if (cVar1 == '\x02') {
+          append_frame_info(buf,html,set_00,level + 1);
         }
       }
-      i = i + 1;
     }
   }
   return;
@@ -39944,8 +38830,7 @@ Buffer * page_info_panel(Buffer *buf)
   int in_GS_OFFSET;
   char *pcVar11;
   char *pcVar12;
-  char *pcVar13;
-  undefined4 uVar14;
+  undefined4 uVar13;
   ParsedURL pu;
   FormItemList *fi;
   Buffer *newbuf;
@@ -39986,10 +38871,9 @@ Buffer * page_info_panel(Buffer *buf)
     }
     pcVar5 = html_quote(p);
     pcVar6 = html_quote(buf->buffername);
-    uVar14 = 0;
-    pcVar13 = "<tr valign=top><td nowrap>Last Modified<td>";
-    pcVar12 = "<tr valign=top><td nowrap>Document Type<td>";
-    pcVar11 = "<tr valign=top><td nowrap>Current URL<td>";
+    uVar13 = 0;
+    pcVar12 = "<tr valign=top><td nowrap>Last Modified<td>";
+    pcVar11 = "<tr valign=top><td nowrap>Document Type<td>";
     Strcat_m_charp(x,"<table cellpadding=0>","<tr valign=top><td nowrap>Title<td>",pcVar6,
                    "<tr valign=top><td nowrap>Current URL<td>",pcVar5,
                    "<tr valign=top><td nowrap>Document Type<td>",pcVar4,
@@ -39997,28 +38881,25 @@ Buffer * page_info_panel(Buffer *buf)
     if (buf->document_charset != InnerCharset) {
       list = wc_get_ces_list();
       Strcat_charp(x,"<tr><td nowrap>Document Charset<td><select name=charset>");
-      while (list->name != (char *)0x0) {
-        sprintf(charset,"%d",list->id,pcVar6,pcVar11,pcVar5);
-        pcVar11 = list->desc;
+      for (; list->name != (char *)0x0; list = list + 1) {
+        sprintf(charset,"%d",list->id);
         if (buf->document_charset == list->id) {
-          pcVar6 = " selected>";
+          pcVar5 = " selected>";
         }
         else {
-          pcVar6 = ">";
+          pcVar5 = ">";
         }
-        pcVar5 = (char *)0x0;
-        Strcat_m_charp(x,"<option value=",charset);
-        list = list + 1;
+        Strcat_m_charp(x,"<option value=",charset,pcVar5,list->desc,0);
       }
       Strcat_charp(x,"</select>");
       Strcat_charp(x,"<tr><td><td><input type=submit value=Change>");
     }
     p_Var2 = Sprintf("%d",buf->trbyte);
-    pcVar11 = p_Var2->ptr;
+    pcVar5 = p_Var2->ptr;
     p_Var2 = Sprintf("%d",all);
     Strcat_m_charp(x,"<tr valign=top><td nowrap>Number of lines<td>",p_Var2->ptr,
-                   "<tr valign=top><td nowrap>Transferred bytes<td>",pcVar11,0,pcVar12,pcVar4,
-                   pcVar13,pcVar3,uVar14);
+                   "<tr valign=top><td nowrap>Transferred bytes<td>",pcVar5,0,pcVar11,pcVar4,pcVar12
+                   ,pcVar3,uVar13);
     pAVar7 = retrieveCurrentAnchor(buf);
     if (pAVar7 != (Anchor *)0x0) {
       pPVar8 = baseURL(buf);
@@ -40063,7 +38944,7 @@ Buffer * page_info_panel(Buffer *buf)
       Strcat_m_charp(x,"<tr valign=top><td nowrap>Method/type of current form&nbsp;<td>",p,0);
       if ((fi_00->parent->method == 2) &&
          (iVar9 = strcmp(fi_00->parent->action->ptr,"map"), iVar9 == 0)) {
-        append_map_info(buf,x,(FormItemList *)fi_00->parent->item);
+        append_map_info(buf,x,fi_00->parent->item);
       }
     }
     Strcat_charp(x,"</table>\n");
@@ -40071,11 +38952,9 @@ Buffer * page_info_panel(Buffer *buf)
     append_link_info(buf,x,buf->linklist);
     if (buf->document_header != (TextList *)0x0) {
       Strcat_charp(x,"<hr width=50%><h1>Header information</h1><pre>\n");
-      ti = buf->document_header->first;
-      while (ti != (TextListItem *)0x0) {
+      for (ti = buf->document_header->first; ti != (TextListItem *)0x0; ti = ti->next) {
         pcVar3 = html_quote(ti->ptr);
         Strcat_m_charp(x,"<pre_int>",pcVar3,"</pre_int>\n",0);
-        ti = (TextListItem *)ti->next;
       }
       Strcat_charp(x,"</pre>\n");
     }
@@ -40154,17 +39033,15 @@ int parseFrameSetLength(char *s,char ***ret)
       *ppcVar4 = p_Var2->ptr;
       i = i + 1;
     }
+    else if (*q == '*') {
+      ppcVar1[i] = "*";
+      i = i + 1;
+    }
     else {
-      if (*q == '*') {
-        ppcVar1[i] = "*";
-        i = i + 1;
-      }
-      else {
-        ppcVar4 = ppcVar1 + i;
-        p_Var2 = Sprintf("%d",len);
-        *ppcVar4 = p_Var2->ptr;
-        i = i + 1;
-      }
+      ppcVar4 = ppcVar1 + i;
+      p_Var2 = Sprintf("%d",len);
+      *ppcVar4 = p_Var2->ptr;
+      i = i + 1;
     }
     pcVar3 = strchr(q,0x2c);
     if (pcVar3 == (char *)0x0) break;
@@ -40300,10 +39177,8 @@ void deleteFrameSet(frameset *f)
   int i;
   
   if (f != (frameset *)0x0) {
-    i = 0;
-    while (iVar1 = f->row * f->col, iVar1 - i != 0 && i <= iVar1) {
+    for (i = 0; iVar1 = f->row * f->col, iVar1 - i != 0 && i <= iVar1; i = i + 1) {
       deleteFrameSetElement(f->frame[i]);
-      i = i + 1;
     }
     f->name = (char *)0x0;
     f->currentURL = (ParsedURL *)0x0;
@@ -40320,10 +39195,8 @@ void deleteFrameSetElement(frameset *e)
     if (e->attr == '\x01') {
       deleteFrame((frame_body *)e);
     }
-    else {
-      if (e->attr == '\x02') {
-        deleteFrameSet(e);
-      }
+    else if (e->attr == '\x02') {
+      deleteFrameSet(e);
     }
   }
   return;
@@ -40406,10 +39279,8 @@ void flushFrameSet(frameset *fs)
       if (cVar1 < '\x02') {
         *(undefined4 *)(fs->frame[n] + 0x1c) = 0;
       }
-      else {
-        if (cVar1 == '\x02') {
-          flushFrameSet((frameset *)fs->frame[n]);
-        }
+      else if (cVar1 == '\x02') {
+        flushFrameSet((frameset *)fs->frame[n]);
       }
     }
   }
@@ -40464,7 +39335,7 @@ void pushFrameTree(frameset_queue **fqpp,frameset *fs,Buffer *buf)
       p_Var5 = (_anchorList *)0x0;
     }
     else {
-      p_Var5 = (_anchorList *)buf->formitem;
+      p_Var5 = buf->formitem;
     }
     pfVar2->formitem = p_Var5;
     pfVar2->back = pfVar1;
@@ -40715,11 +39586,9 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
       else {
         currentURL = f->currentURL;
       }
-      r = 0;
-      while (r < f->row) {
+      for (r = 0; r < f->row; r = r + 1) {
         fwrite("<tr valign=top>\n",1,0x10,(FILE *)f1);
-        c = 0;
-        while (c < f->col) {
+        for (c = 0; c < f->col; c = c + 1) {
           i = f->col * r + c;
           p = "";
           status = 0;
@@ -40834,30 +39703,28 @@ LAB_08090c14:
                               pre_mode = 0;
                               end_tag = 0;
                             }
-                            else {
-                              if (t_stack != 0) {
-                                switch(tag->tagid) {
-                                case '\x1f':
-                                case ' ':
-                                case 'J':
-                                case 'K':
-                                case 'L':
-                                case 'M':
-                                case 'P':
-                                case 'Q':
-                                case 'R':
-                                case 'S':
-                                case 'T':
-                                case 'U':
-                                case 'V':
-                                case 'W':
-                                case 'X':
-                                case 'Y':
-                                case 'Z':
-                                  fwrite("</SELECT>",1,9,(FILE *)f1);
-                                  pre_mode = 0;
-                                  end_tag = 0;
-                                }
+                            else if (t_stack != 0) {
+                              switch(tag->tagid) {
+                              case '\x1f':
+                              case ' ':
+                              case 'J':
+                              case 'K':
+                              case 'L':
+                              case 'M':
+                              case 'P':
+                              case 'Q':
+                              case 'R':
+                              case 'S':
+                              case 'T':
+                              case 'U':
+                              case 'V':
+                              case 'W':
+                              case 'X':
+                              case 'Y':
+                              case 'Z':
+                                fwrite("</SELECT>",1,9,(FILE *)f1);
+                                pre_mode = 0;
+                                end_tag = 0;
                               }
                             }
                           }
@@ -40869,7 +39736,7 @@ LAB_08090c14:
                       if ((tag == (parsed_tag *)0x0) || ((uint)tag->tagid != end_tag)) {
                         iVar5 = strncmp(tok->ptr,"<!--",4);
                         if ((iVar5 != 0) && (q = strchr(tok->ptr + 1,0x3c), q != (char *)0x0)) {
-                          tok = Strnew_charp_n(tok->ptr,(int)(q + -(int)tok->ptr));
+                          tok = Strnew_charp_n(tok->ptr,(int)q - (int)tok->ptr);
                           p_Var7 = Strnew_m_charp(q,p,0);
                           p = p_Var7->ptr;
                           status = 0;
@@ -41040,9 +39907,8 @@ proc_normal:
                       pre_mode = 4;
                       end_tag = 0x44;
 switchD_08091292_caseD_10:
-                      j = 0;
-                      while (wVar4 = charset, wVar8 = InnerCharset,
-                            j < (int)(uint)TagMAP[tag->tagid].max_attribute) {
+                      for (j = 0; wVar4 = charset, wVar8 = InnerCharset,
+                          j < (int)(uint)TagMAP[tag->tagid].max_attribute; j = j + 1) {
                         uVar9 = tag->attrid[j] - 3;
                         if (uVar9 < 0x1e) {
                           uVar9 = 1 << ((byte)uVar9 & 0x1f);
@@ -41062,38 +39928,33 @@ switchD_08091292_caseD_10:
                                 }
                               }
                             }
-                            else {
-                              if (tag->value[j] != (char *)0x0) {
-                                parsedtag_set_value(tag,0x43,s_target);
-                              }
+                            else if (tag->value[j] != (char *)0x0) {
+                              parsedtag_set_value(tag,0x43,s_target);
                             }
                           }
-                          else {
-                            if (tag->value[j] != (char *)0x0) {
+                          else if (tag->value[j] != (char *)0x0) {
+                            ppcVar1 = tag->value + j;
+                            pcVar6 = remove_space(tag->value[j]);
+                            p_Var7 = Strnew_charp(pcVar6);
+                            p_Var7 = wc_Str_conv_strict(p_Var7,wVar8,wVar4);
+                            pcVar6 = url_quote(p_Var7->ptr);
+                            *ppcVar1 = pcVar6;
+                            tag->need_reconstruct = '\x01';
+                            parseURL2(tag->value[j],&url,&base);
+                            if ((url.scheme != 0xff) && (url.scheme != 0xfe)) {
+                              a_target = a_target | 1;
                               ppcVar1 = tag->value + j;
-                              pcVar6 = remove_space(tag->value[j]);
-                              p_Var7 = Strnew_charp(pcVar6);
-                              p_Var7 = wc_Str_conv_strict(p_Var7,wVar8,wVar4);
-                              pcVar6 = url_quote(p_Var7->ptr);
-                              *ppcVar1 = pcVar6;
-                              tag->need_reconstruct = '\x01';
-                              parseURL2(tag->value[j],&url,&base);
-                              if ((url.scheme != 0xff) && (url.scheme != 0xfe)) {
-                                a_target = a_target | 1;
-                                ppcVar1 = tag->value + j;
-                                p_Var7 = parsedURL2Str(&url);
-                                *ppcVar1 = p_Var7->ptr;
-                                p_Var7 = parsedURL2Str(&base);
-                                parsedtag_set_value(tag,0x47,p_Var7->ptr);
-                                if ((tag->attrid[j] == '\x03') && (charset != 0x100)) {
-                                  pcVar6 = wc_ces_to_charset(charset);
-                                  parsedtag_set_value(tag,0xb,pcVar6);
-                                }
+                              p_Var7 = parsedURL2Str(&url);
+                              *ppcVar1 = p_Var7->ptr;
+                              p_Var7 = parsedURL2Str(&base);
+                              parsedtag_set_value(tag,0x47,p_Var7->ptr);
+                              if ((tag->attrid[j] == '\x03') && (charset != 0x100)) {
+                                pcVar6 = wc_ces_to_charset(charset);
+                                parsedtag_set_value(tag,0xb,pcVar6);
                               }
                             }
                           }
                         }
-                        j = j + 1;
                       }
                       if (a_target == 1) {
                         parsedtag_set_value(tag,0x20,d_target);
@@ -41127,7 +39988,7 @@ switchD_08091292_caseD_10:
 token_end:
                     Strclear(tok);
 LAB_08091c5a:
-                  } while ((*p != '\0') || (*(char *)&(f2.stream)->field_0x15 == '\0'));
+                  } while ((*p != '\0') || ((f2.stream)->field_0x15 == '\0'));
                   if ((pre_mode & 8U) == 0) {
                     if ((pre_mode & 0x800U) == 0) {
                       if ((pre_mode & 0x1000U) == 0) {
@@ -41210,10 +40071,8 @@ LAB_08091c5a:
 LAB_08091e70:
             fwrite("</td>\n",1,6,(FILE *)f1);
           }
-          c = c + 1;
         }
         fwrite("</tr>\n",1,6,(FILE *)f1);
-        r = r + 1;
       }
       fwrite("</table>\n",1,9,(FILE *)f1);
       if ((level == 0) && (fwrite("</body></html>\n",1,0xf,(FILE *)f1), TrapSignal != '\0')) {
@@ -41241,7 +40100,7 @@ Buffer * renderFrame(Buffer *Cbuf,int force_reload)
 {
   wc_ces wVar1;
   Str p_Var2;
-  FILE *f1;
+  FILE *__stream;
   int iVar3;
   Buffer *buf_00;
   wc_ces doc_charset;
@@ -41253,12 +40112,12 @@ Buffer * renderFrame(Buffer *Cbuf,int force_reload)
   
   wVar1 = DocumentCharset;
   p_Var2 = tmpfname(2,".html");
-  f1 = (FILE *)fopen(p_Var2->ptr,"w");
-  if (((f1 == (FILE *)0x0) || (Cbuf->frameset == (frameset *)0x0)) ||
-     (iVar3 = createFrameFile(Cbuf->frameset,f1,Cbuf,0,force_reload), iVar3 < 0)) {
+  __stream = fopen(p_Var2->ptr,"w");
+  if (((__stream == (FILE *)0x0) || (Cbuf->frameset == (frameset *)0x0)) ||
+     (iVar3 = createFrameFile(Cbuf->frameset,(FILE *)__stream,Cbuf,0,force_reload), iVar3 < 0)) {
     return (Buffer *)0x0;
   }
-  fclose((FILE *)f1);
+  fclose(__stream);
   flag = 2;
   if ((Cbuf->currentURL).is_nocache != 0) {
     flag = 3;
@@ -41287,25 +40146,26 @@ frameset_element * search_frame(frameset *fset,char *name)
 
 {
   frameset **ppfVar1;
-  int iVar2;
+  frameset_element *pfVar2;
+  int iVar3;
   frameset_element *e;
   int i;
   
   i = 0;
   do {
-    iVar2 = fset->row * fset->col;
-    if (iVar2 - i == 0 || iVar2 < i) {
-      return (frameset **)0x0;
+    iVar3 = fset->row * fset->col;
+    if (iVar3 - i == 0 || iVar3 < i) {
+      return (frameset_element *)0x0;
     }
     ppfVar1 = (frameset **)(fset->frame + i);
     if (*ppfVar1 != (frameset *)0x0) {
-      if (((*ppfVar1)->name != (char *)0x0) && (iVar2 = strcmp((*ppfVar1)->name,name), iVar2 == 0))
+      if (((*ppfVar1)->name != (char *)0x0) && (iVar3 = strcmp((*ppfVar1)->name,name), iVar3 == 0))
       {
         return ppfVar1;
       }
       if (((*ppfVar1)->attr == '\x02') &&
-         (ppfVar1 = (frameset **)search_frame(*ppfVar1,name), ppfVar1 != (frameset **)0x0)) {
-        return ppfVar1;
+         (pfVar2 = search_frame(*ppfVar1,name), pfVar2 != (frameset_element *)0x0)) {
+        return pfVar2;
       }
     }
     i = i + 1;
@@ -41339,36 +40199,26 @@ void create_option_search_table(void)
   int i;
   
   RC_table_size = 0;
-  j = 0;
-  while (sections[j].name != (char *)0x0) {
-    i = 0;
-    while (sections[j].params[i].name != (char *)0x0) {
-      i = i + 1;
+  for (j = 0; sections[j].name != (char *)0x0; j = j + 1) {
+    for (i = 0; sections[j].params[i].name != (char *)0x0; i = i + 1) {
       RC_table_size = RC_table_size + 1;
     }
-    j = j + 1;
   }
   RC_search_table = (rc_search_table *)GC_malloc(RC_table_size << 3);
   k = 0;
-  j = 0;
-  while (sections[j].name != (char *)0x0) {
-    i = 0;
-    while (sections[j].params[i].name != (char *)0x0) {
+  for (j = 0; sections[j].name != (char *)0x0; j = j + 1) {
+    for (i = 0; sections[j].params[i].name != (char *)0x0; i = i + 1) {
       RC_search_table[k].param = sections[j].params + i;
       k = k + 1;
-      i = i + 1;
     }
-    j = j + 1;
   }
   qsort(RC_search_table,RC_table_size,8,compare_table);
   diff2 = 0;
-  i = 0;
-  while (i < RC_table_size + -1) {
+  for (i = 0; i < RC_table_size + -1; i = i + 1) {
     pcVar1 = (RC_search_table[i].param)->name;
     pcVar2 = (RC_search_table[i + 1].param)->name;
-    j = 0;
-    while (((pcVar1[j] != '\0' && (pcVar2[j] != '\0')) && (pcVar1[j] == pcVar2[j]))) {
-      j = j + 1;
+    for (j = 0; ((pcVar1[j] != '\0' && (pcVar2[j] != '\0')) && (pcVar1[j] == pcVar2[j])); j = j + 1)
+    {
     }
     if (diff2 < j) {
       RC_search_table[i].uniq_pos = (short)j + 1;
@@ -41377,7 +40227,6 @@ void create_option_search_table(void)
       RC_search_table[i].uniq_pos = (short)diff2 + 1;
     }
     diff2 = j;
-    i = i + 1;
   }
   return;
 }
@@ -41439,12 +40288,10 @@ void show_params(FILE *fp)
 {
   wc_ces wVar1;
   wc_ces wVar2;
-  Str p_Var3;
-  size_t sVar4;
+  char *pcVar3;
+  Str p_Var4;
   size_t sVar5;
-  char *pcVar6;
-  char *pcVar7;
-  FILE *pFVar8;
+  size_t sVar6;
   char *cmt;
   char *t;
   int l;
@@ -41453,31 +40300,25 @@ void show_params(FILE *fp)
   
   t = (char *)0x0;
   OptionCharset = SystemCharset;
-  pcVar7 = (char *)0x1a;
-  pcVar6 = (char *)0x1;
-  pFVar8 = fp;
   fwrite("\nconfiguration parameters\n",1,0x1a,(FILE *)fp);
-  j = 0;
-  while (wVar2 = OptionCharset, wVar1 = InnerCharset, sections[j].name != (char *)0x0) {
+  for (j = 0; wVar2 = OptionCharset, wVar1 = InnerCharset, sections[j].name != (char *)0x0;
+      j = j + 1) {
     if (OptionEncode == 0) {
-      pcVar7 = (char *)gettext(sections[j].name,pcVar6,pcVar7,pFVar8);
-      p_Var3 = Strnew_charp(pcVar7);
-      p_Var3 = wc_Str_conv(p_Var3,wVar2,wVar1);
-      cmt = p_Var3->ptr;
+      pcVar3 = (char *)gettext(sections[j].name);
+      p_Var4 = Strnew_charp(pcVar3);
+      p_Var4 = wc_Str_conv(p_Var4,wVar2,wVar1);
+      cmt = p_Var4->ptr;
     }
     else {
       cmt = sections[j].name;
     }
     wVar2 = SystemCharset;
     wVar1 = InnerCharset;
-    p_Var3 = Strnew_charp(cmt);
-    p_Var3 = wc_Str_conv_strict(p_Var3,wVar1,wVar2);
-    pFVar8 = (FILE *)p_Var3->ptr;
-    pcVar6 = "  section[%d]: %s\n";
-    pcVar7 = (char *)j;
-    fprintf((FILE *)fp,"  section[%d]: %s\n");
-    i = 0;
-    while (wVar2 = OptionCharset, wVar1 = InnerCharset, sections[j].params[i].name != (char *)0x0) {
+    p_Var4 = Strnew_charp(cmt);
+    p_Var4 = wc_Str_conv_strict(p_Var4,wVar1,wVar2);
+    fprintf((FILE *)fp,"  section[%d]: %s\n",j,p_Var4->ptr);
+    for (i = 0; wVar2 = OptionCharset, wVar1 = InnerCharset,
+        sections[j].params[i].name != (char *)0x0; i = i + 1) {
       switch(sections[j].params[i].type) {
       case 0:
       case 1:
@@ -41509,31 +40350,27 @@ void show_params(FILE *fp)
         t = "percent";
       }
       if (OptionEncode == 0) {
-        pcVar7 = (char *)gettext(sections[j].params[i].comment,pcVar6,pcVar7,pFVar8);
-        p_Var3 = Strnew_charp(pcVar7);
-        p_Var3 = wc_Str_conv(p_Var3,wVar2,wVar1);
-        cmt = p_Var3->ptr;
+        pcVar3 = (char *)gettext(sections[j].params[i].comment);
+        p_Var4 = Strnew_charp(pcVar3);
+        p_Var4 = wc_Str_conv(p_Var4,wVar2,wVar1);
+        cmt = p_Var4->ptr;
       }
       else {
         cmt = sections[j].params[i].comment;
       }
-      sVar4 = strlen(sections[j].params[i].name);
-      sVar5 = strlen(t);
+      sVar5 = strlen(sections[j].params[i].name);
+      sVar6 = strlen(t);
       wVar2 = SystemCharset;
       wVar1 = InnerCharset;
-      l = 0x1e - (sVar4 + sVar5);
+      l = 0x1e - (sVar5 + sVar6);
       if (l < 0) {
         l = 1;
       }
-      p_Var3 = Strnew_charp(cmt);
-      p_Var3 = wc_Str_conv_strict(p_Var3,wVar1,wVar2);
-      pcVar7 = sections[j].params[i].name;
-      pcVar6 = "    -o %s=<%s>%*s%s\n";
-      pFVar8 = (FILE *)t;
-      fprintf((FILE *)fp,"    -o %s=<%s>%*s%s\n",pcVar7,t,l,&DAT_080cde7a,p_Var3->ptr);
-      i = i + 1;
+      p_Var4 = Strnew_charp(cmt);
+      p_Var4 = wc_Str_conv_strict(p_Var4,wVar1,wVar2);
+      fprintf((FILE *)fp,"    -o %s=<%s>%*s%s\n",sections[j].params[i].name,t,l,&DAT_080cde7a,
+              p_Var4->ptr);
     }
-    j = j + 1;
   }
   return;
 }
@@ -42054,21 +40891,21 @@ LAB_08093233:
   else {
 open_rc:
     pcVar4 = etcFile("w3mconfig");
-    pFVar5 = (FILE *)fopen(pcVar4,"rt");
+    pFVar5 = fopen(pcVar4,"rt");
     if (pFVar5 != (FILE *)0x0) {
-      interpret_rc(pFVar5);
-      fclose((FILE *)pFVar5);
+      interpret_rc((FILE *)pFVar5);
+      fclose(pFVar5);
     }
     pcVar4 = confFile("config");
-    pFVar5 = (FILE *)fopen(pcVar4,"rt");
+    pFVar5 = fopen(pcVar4,"rt");
     if (pFVar5 != (FILE *)0x0) {
-      interpret_rc(pFVar5);
-      fclose((FILE *)pFVar5);
+      interpret_rc((FILE *)pFVar5);
+      fclose(pFVar5);
     }
-    pFVar5 = (FILE *)fopen(config_file,"rt");
+    pFVar5 = fopen(config_file,"rt");
     if (pFVar5 != (FILE *)0x0) {
-      interpret_rc(pFVar5);
-      fclose((FILE *)pFVar5);
+      interpret_rc((FILE *)pFVar5);
+      fclose(pFVar5);
     }
   }
   return;
@@ -42127,8 +40964,6 @@ Str to_str(param_ptr *p)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 Buffer * load_option_panel(void)
 
 {
@@ -42161,51 +40996,46 @@ Buffer * load_option_panel(void)
   OptionCharset = SystemCharset;
   if (OptionEncode == 0) {
     optionpanel_str = wc_Str_conv(optionpanel_str,SystemCharset,InnerCharset);
-    i = 0;
-    while (wVar9 = OptionCharset, wVar1 = InnerCharset, sections[i].name != (char *)0x0) {
+    for (i = 0; wVar9 = OptionCharset, wVar1 = InnerCharset, sections[i].name != (char *)0x0;
+        i = i + 1) {
       pcVar4 = (char *)gettext(sections[i].name);
       p_Var3 = Strnew_charp(pcVar4);
       p_Var3 = wc_Str_conv(p_Var3,wVar9,wVar1);
       sections[i].name = p_Var3->ptr;
-      p = sections[i].params;
-      while (wVar9 = OptionCharset, wVar1 = InnerCharset, p->name != (char *)0x0) {
+      for (p = sections[i].params; wVar9 = OptionCharset, wVar1 = InnerCharset,
+          p->name != (char *)0x0; p = p + 1) {
         pcVar4 = (char *)gettext(p->comment);
         p_Var3 = Strnew_charp(pcVar4);
         p_Var3 = wc_Str_conv(p_Var3,wVar9,wVar1);
         p->comment = p_Var3->ptr;
         if ((p->inputtype == 2) && ((sel_c *)p->select != colorstr)) {
-          s = (sel_c *)p->select;
-          while (wVar9 = OptionCharset, wVar1 = InnerCharset, s->text != (char *)0x0) {
+          for (s = (sel_c *)p->select; wVar9 = OptionCharset, wVar1 = InnerCharset,
+              s->text != (char *)0x0; s = s + 1) {
             pcVar4 = (char *)gettext(s->text);
             p_Var3 = Strnew_charp(pcVar4);
             p_Var3 = wc_Str_conv(p_Var3,wVar9,wVar1);
             s->text = p_Var3->ptr;
-            s = s + 1;
           }
         }
-        p = p + 1;
       }
-      i = i + 1;
     }
-    s = colorstr;
-    while (wVar9 = OptionCharset, wVar1 = InnerCharset, s->text != (char *)0x0) {
+    for (s = colorstr; wVar9 = OptionCharset, wVar1 = InnerCharset, s->text != (char *)0x0;
+        s = s + 1) {
       pcVar4 = (char *)gettext(s->text);
       p_Var3 = Strnew_charp(pcVar4);
       p_Var3 = wc_Str_conv(p_Var3,wVar9,wVar1);
       s->text = p_Var3->ptr;
-      s = s + 1;
     }
     OptionEncode = 1;
   }
   p_Var3 = Strdup(optionpanel_str);
   Strcat_charp(p_Var3,"<table><tr><td>");
-  i = 0;
-  while (sections[i].name != (char *)0x0) {
+  for (i = 0; sections[i].name != (char *)0x0; i = i + 1) {
     pcVar4 = (char *)0x0;
     Strcat_m_charp(p_Var3,&DAT_080ce270,sections[i].name,"</h1>",0);
     p = sections[i].params;
     Strcat_charp(p_Var3,"<table width=100% cellpadding=0>");
-    while (p->name != (char *)0x0) {
+    for (; p->name != (char *)0x0; p = p + 1) {
       Strcat_m_charp(p_Var3,"<tr><td>",p->comment,0,pcVar4);
       p_Var5 = Sprintf("</td><td width=%d>",(int)ROUND(pixel_per_char * 28.0));
       Strcat(p_Var3,p_Var5);
@@ -42229,77 +41059,66 @@ Buffer * load_option_panel(void)
                        ">YES&nbsp;&nbsp;<input type=radio name=",p->name," value=0",pcVar11,
                        &DAT_080ce2e2,0);
       }
-      else {
-        if (iVar6 < 2) {
-          if (iVar6 == 0) {
-            p_Var5 = to_str(p);
-            pcVar4 = html_quote(p_Var5->ptr);
-            Strcat_m_charp(p_Var3,"<input type=text name=",p->name," value=\"",pcVar4,&DAT_080ce2b5,
-                           0);
-          }
-        }
-        else {
-          if (iVar6 == 2) {
-            p_Var5 = to_str(p);
-            pcVar4 = (char *)0x0;
-            Strcat_m_charp(p_Var3,"<select name=",p->name,&DAT_080ce339,0);
-            s = (sel_c *)p->select;
-            while (s->text != (char *)0x0) {
-              Strcat_charp(p_Var3,"<option value=");
-              p_Var8 = Sprintf("%s\n",s->cvalue);
-              Strcat(p_Var3,p_Var8);
-              if (((p->type != 3) && (iVar6 = s->value, iVar7 = atoi(p_Var5->ptr), iVar6 == iVar7))
-                 || ((p->type == 3 && ((char)s->value == *p_Var5->ptr)))) {
-                Strcat_charp(p_Var3," selected");
-              }
-              if (p_Var3->area_size <= p_Var3->length + 1) {
-                Strgrow(p_Var3);
-              }
-              iVar6 = p_Var3->length;
-              p_Var3->ptr[iVar6] = '>';
-              p_Var3->length = iVar6 + 1;
-              p_Var3->ptr[p_Var3->length] = '\0';
-              Strcat_charp(p_Var3,s->text);
-              s = s + 1;
-            }
-            Strcat_charp(p_Var3,"</select>");
-          }
-          else {
-            if (iVar6 == 3) {
-              p_Var5 = to_str(p);
-              pcVar4 = (char *)0x0;
-              Strcat_m_charp(p_Var3,"<select name=",p->name,&DAT_080ce339,0);
-              c = (wc_ces_list *)((wc_ces_list *)p->select)->id;
-              while (c->desc != (char *)0x0) {
-                Strcat_charp(p_Var3,"<option value=");
-                p_Var8 = Sprintf("%s\n",c->name);
-                Strcat(p_Var3,p_Var8);
-                wVar1 = c->id;
-                wVar9 = atoi(p_Var5->ptr);
-                if (wVar1 == wVar9) {
-                  Strcat_charp(p_Var3," selected");
-                }
-                if (p_Var3->area_size <= p_Var3->length + 1) {
-                  Strgrow(p_Var3);
-                }
-                iVar6 = p_Var3->length;
-                p_Var3->ptr[iVar6] = '>';
-                p_Var3->length = iVar6 + 1;
-                p_Var3->ptr[p_Var3->length] = '\0';
-                Strcat_charp(p_Var3,c->desc);
-                c = c + 1;
-              }
-              Strcat_charp(p_Var3,"</select>");
-            }
-          }
+      else if (iVar6 < 2) {
+        if (iVar6 == 0) {
+          p_Var5 = to_str(p);
+          pcVar4 = html_quote(p_Var5->ptr);
+          Strcat_m_charp(p_Var3,"<input type=text name=",p->name," value=\"",pcVar4,&DAT_080ce2b5,0)
+          ;
         }
       }
+      else if (iVar6 == 2) {
+        p_Var5 = to_str(p);
+        pcVar4 = (char *)0x0;
+        Strcat_m_charp(p_Var3,"<select name=",p->name,&DAT_080ce339,0);
+        for (s = (sel_c *)p->select; s->text != (char *)0x0; s = s + 1) {
+          Strcat_charp(p_Var3,"<option value=");
+          p_Var8 = Sprintf("%s\n",s->cvalue);
+          Strcat(p_Var3,p_Var8);
+          if (((p->type != 3) && (iVar6 = s->value, iVar7 = atoi(p_Var5->ptr), iVar6 == iVar7)) ||
+             ((p->type == 3 && ((char)s->value == *p_Var5->ptr)))) {
+            Strcat_charp(p_Var3," selected");
+          }
+          if (p_Var3->area_size <= p_Var3->length + 1) {
+            Strgrow(p_Var3);
+          }
+          iVar6 = p_Var3->length;
+          p_Var3->ptr[iVar6] = '>';
+          p_Var3->length = iVar6 + 1;
+          p_Var3->ptr[p_Var3->length] = '\0';
+          Strcat_charp(p_Var3,s->text);
+        }
+        Strcat_charp(p_Var3,"</select>");
+      }
+      else if (iVar6 == 3) {
+        p_Var5 = to_str(p);
+        pcVar4 = (char *)0x0;
+        Strcat_m_charp(p_Var3,"<select name=",p->name,&DAT_080ce339,0);
+                    // WARNING: Load size is inaccurate
+        for (c = *p->select; c->desc != (char *)0x0; c = c + 1) {
+          Strcat_charp(p_Var3,"<option value=");
+          p_Var8 = Sprintf("%s\n",c->name);
+          Strcat(p_Var3,p_Var8);
+          wVar1 = c->id;
+          wVar9 = atoi(p_Var5->ptr);
+          if (wVar1 == wVar9) {
+            Strcat_charp(p_Var3," selected");
+          }
+          if (p_Var3->area_size <= p_Var3->length + 1) {
+            Strgrow(p_Var3);
+          }
+          iVar6 = p_Var3->length;
+          p_Var3->ptr[iVar6] = '>';
+          p_Var3->length = iVar6 + 1;
+          p_Var3->ptr[p_Var3->length] = '\0';
+          Strcat_charp(p_Var3,c->desc);
+        }
+        Strcat_charp(p_Var3,"</select>");
+      }
       Strcat_charp(p_Var3,"</td></tr>\n");
-      p = p + 1;
     }
     Strcat_charp(p_Var3,"<tr><td></td><td><p><input type=submit value=\"OK\"></td></tr>");
     Strcat_charp(p_Var3,"</table><hr width=50%>");
-    i = i + 1;
   }
   Strcat_charp(p_Var3,"</table></form></body></html>");
   pBVar10 = loadHTMLString(p_Var3);
@@ -42325,14 +41144,15 @@ void panel_set_option(parsed_tagarg *arg)
   f = (FILE *)0x0;
   if (no_rc_dir == 0) {
     f = (FILE *)fopen(config_file,"wt");
-    if (f == (FILE *)0x0) {
+    if ((FILE *)f == (FILE *)0x0) {
       disp_message("Can\'t write option!",0);
     }
   }
   else {
     disp_message("There\'s no ~/.w3m directory... config not saved",0);
   }
-  while (t_ces = SystemCharset, f_ces = InnerCharset, arg != (parsed_tagarg *)0x0) {
+  for (; t_ces = SystemCharset, f_ces = InnerCharset, arg != (parsed_tagarg *)0x0; arg = arg->next)
+  {
     if (arg->value != (char *)0x0) {
       p_Var1 = Strnew_charp(arg->value);
       p_Var1 = wc_Str_conv_strict(p_Var1,f_ces,t_ces);
@@ -42342,7 +41162,6 @@ void panel_set_option(parsed_tagarg *arg)
         fprintf((FILE *)f,"%s %s\n",arg->arg,value);
       }
     }
-    arg = arg->next;
   }
   if (f != (FILE *)0x0) {
     fclose((FILE *)f);
@@ -42436,35 +41255,28 @@ void new_menu(Menu *menu,MenuItem *item)
   menu->offset = 0;
   menu->active = 0;
   if (item != (MenuItem *)0x0) {
-    i = 0;
-    while (item[i].type != 0) {
-      i = i + 1;
+    for (i = 0; item[i].type != 0; i = i + 1) {
     }
     menu->nitem = i;
     menu->height = menu->nitem;
-    i = 0;
-    while (i < 0x80) {
+    for (i = 0; i < 0x80; i = i + 1) {
       menu->keymap[i] = MenuKeymap[i];
-      i = i + 1;
     }
     menu->width = 0;
-    i = 0;
-    while (i < menu->nitem) {
+    for (i = 0; i < menu->nitem; i = i + 1) {
       p = item[i].keys;
       if (p != (char *)0x0) {
-        while (*p != '\0') {
+        for (; *p != '\0'; p = p + 1) {
           if ((MYCTYPE_MAP[(byte)*p] & 0x11) != 0) {
             menu->keymap[*p] = mSelect;
             menu->keyselect[*p] = i;
           }
-          p = p + 1;
         }
       }
       iVar1 = wtf_strwidth((wc_uchar *)item[i].label);
       if (menu->width < iVar1) {
         menu->width = iVar1;
       }
-      i = i + 1;
     }
   }
   return;
@@ -42516,7 +41328,7 @@ void draw_all_menu(Menu *menu)
 
 {
   if (menu->parent != (_Menu *)0x0) {
-    draw_all_menu((Menu *)menu->parent);
+    draw_all_menu(menu->parent);
   }
   draw_menu(menu);
   return;
@@ -42545,11 +41357,9 @@ void draw_menu(Menu *menu)
     }
     move(y,column);
     addstr(FRAME[3]);
-    i = FRAME_WIDTH;
-    while (i < iVar1 - FRAME_WIDTH) {
+    for (i = FRAME_WIDTH; i < iVar1 - FRAME_WIDTH; i = i + FRAME_WIDTH) {
       move(y,column + i);
       addstr(FRAME[10]);
-      i = i + FRAME_WIDTH;
     }
     move(y,column + i);
     addstr(FRAME[6]);
@@ -42566,11 +41376,9 @@ void draw_menu(Menu *menu)
     if (graph_mode != 0) {
       graphend();
     }
-    i = FRAME_WIDTH;
-    while (i < iVar1 - FRAME_WIDTH) {
+    for (i = FRAME_WIDTH; i < iVar1 - FRAME_WIDTH; i = i + 1) {
       move(y,column + i);
       addstr(" ");
-      i = i + 1;
     }
     if (graph_mode != 0) {
       graphstart();
@@ -42583,8 +41391,7 @@ void draw_menu(Menu *menu)
     move(y,column + FRAME_WIDTH * ((iVar1 / 2 + -1) / FRAME_WIDTH));
     addstr(":");
   }
-  j = 0;
-  while (j < menu->height) {
+  for (j = 0; j < menu->height; j = j + 1) {
     y = y + 1;
     if (graph_mode != 0) {
       graphstart();
@@ -42603,7 +41410,6 @@ void draw_menu(Menu *menu)
     if (graph_mode != 0) {
       graphend();
     }
-    j = j + 1;
   }
   line = y + 1;
   if (menu->offset + menu->height == menu->nitem) {
@@ -42612,11 +41418,9 @@ void draw_menu(Menu *menu)
     }
     move(line,column);
     addstr(FRAME[9]);
-    i = FRAME_WIDTH;
-    while (i < iVar1 - FRAME_WIDTH) {
+    for (i = FRAME_WIDTH; i < iVar1 - FRAME_WIDTH; i = i + FRAME_WIDTH) {
       move(line,column + i);
       addstr(FRAME[10]);
-      i = i + FRAME_WIDTH;
     }
     move(line,column + i);
     addstr(FRAME[0xc]);
@@ -42633,11 +41437,9 @@ void draw_menu(Menu *menu)
     if (graph_mode != 0) {
       graphend();
     }
-    i = FRAME_WIDTH;
-    while (i < iVar1 - FRAME_WIDTH) {
+    for (i = FRAME_WIDTH; i < iVar1 - FRAME_WIDTH; i = i + 1) {
       move(line,column + i);
       addstr(" ");
-      i = i + 1;
     }
     if (graph_mode != 0) {
       graphstart();
@@ -42677,10 +41479,8 @@ int select_menu(Menu *menu,int mselect)
     if (mselect < menu->offset) {
       up_menu(menu,menu->offset - mselect);
     }
-    else {
-      if (menu->offset + menu->height <= mselect) {
-        down_menu(menu,((mselect - menu->offset) - menu->height) + 1);
-      }
+    else if (menu->offset + menu->height <= mselect) {
+      down_menu(menu,((mselect - menu->offset) - menu->height) + 1);
     }
     if ((menu->offset <= menu->select) && (menu->select < menu->offset + menu->height)) {
       draw_menu_item(menu,menu->select);
@@ -42818,7 +41618,7 @@ int action_menu(Menu *menu)
       paVar3 = pMVar7->func;
       pcVar4 = pMVar7->data;
       if ((uVar6 & 8) != 0) {
-        popup_menu(menu,(Menu *)pMVar7->popup);
+        popup_menu(menu,pMVar7->popup);
         return 1;
       }
       if (menu->parent != (_Menu *)0x0) {
@@ -42849,7 +41649,7 @@ void popup_menu(Menu *parent,Menu *menu)
   active = 1;
   if (((menu->item != (MenuItem *)0x0) && (menu->nitem != 0)) && (menu->active == 0)) {
     gpm_handler = gpm_process_menu_mouse;
-    menu->parent = (_Menu *)parent;
+    menu->parent = parent;
     menu->select = menu->initial;
     menu->offset = 0;
     menu->active = 1;
@@ -42902,15 +41702,12 @@ void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_vararg
   
   if ((label != (char **)0x0) && (*label != (char *)0x0)) {
     i = 0;
-    p = label;
-    while (iVar1 = i, *p != (char *)0x0) {
+    for (p = label; iVar1 = i, *p != (char *)0x0; p = p + 1) {
       i = i + 1;
-      p = p + 1;
     }
     item_00 = (MenuItem *)GC_malloc((i + 1) * 0x20);
-    i = 0;
     p = label;
-    while (i < iVar1) {
+    for (i = 0; i < iVar1; i = i + 1) {
       if (func == (anon_subr_void_varargs *)0x0) {
         item_00[i].type = 2;
       }
@@ -42923,7 +41720,6 @@ void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_vararg
       item_00[i].func = (anon_subr_void_varargs_for_func *)func;
       item_00[i].popup = (_Menu *)0x0;
       item_00[i].keys = "";
-      i = i + 1;
       p = p + 1;
     }
     item_00[iVar1].type = 0;
@@ -43254,12 +42050,10 @@ int menuForwardSearch(Menu *menu,char *str,int from)
     if (from < 0) {
       from = 0;
     }
-    i = from;
-    while (i < menu->nitem) {
+    for (i = from; i < menu->nitem; i = i + 1) {
       if ((menu->item[i].type != 1) && (iVar1 = regexMatch(menu->item[i].label,-1,1), iVar1 == 1)) {
         return i;
       }
-      i = i + 1;
     }
   }
   else {
@@ -43331,12 +42125,10 @@ int menuBackwardSearch(Menu *menu,char *str,int from)
     if (menu->nitem <= from) {
       from = menu->nitem + -1;
     }
-    i = from;
-    while (-1 < i) {
+    for (i = from; -1 < i; i = i + -1) {
       if ((menu->item[i].type != 1) && (iVar1 = regexMatch(menu->item[i].label,-1,1), iVar1 == 1)) {
         return i;
       }
-      i = i + -1;
     }
   }
   else {
@@ -43510,18 +42302,14 @@ LAB_08095c5e:
         return -1;
       }
       if (y < process_mMouse::press_y) {
-        i = 0;
-        while (i < process_mMouse::press_y - y) {
+        for (i = 0; i < process_mMouse::press_y - y; i = i + 1) {
           mLineU(' ');
-          i = i + 1;
         }
         return -1;
       }
       if (process_mMouse::press_y < y) {
-        i = 0;
-        while (i < y - process_mMouse::press_y) {
+        for (i = 0; i < y - process_mMouse::press_y; i = i + 1) {
           mLineD(' ');
-          i = i + 1;
         }
         return -1;
       }
@@ -43543,41 +42331,25 @@ LAB_08095c5e:
     if (process_mMouse::press_btn < 3) {
       if (process_mMouse::press_btn == 0) goto LAB_08095c5e;
     }
-    else {
-      if (process_mMouse::press_btn == 3) {
-        i = 0;
-        while (iVar1 = mMouse_scroll_line(), i < iVar1) {
-          mLineD(' ');
-          i = i + 1;
-        }
+    else if (process_mMouse::press_btn == 3) {
+      for (i = 0; iVar1 = mMouse_scroll_line(), i < iVar1; i = i + 1) {
+        mLineD(' ');
       }
-      else {
-        if (process_mMouse::press_btn == 4) {
-          i = 0;
-          while (iVar1 = mMouse_scroll_line(), i < iVar1) {
-            mLineU(' ');
-            i = i + 1;
-          }
-        }
+    }
+    else if (process_mMouse::press_btn == 4) {
+      for (i = 0; iVar1 = mMouse_scroll_line(), i < iVar1; i = i + 1) {
+        mLineU(' ');
       }
     }
   }
-  else {
-    if (btn == 0x40) {
-      i = 0;
-      while (iVar1 = mMouse_scroll_line(), i < iVar1) {
-        mLineD(' ');
-        i = i + 1;
-      }
+  else if (btn == 0x40) {
+    for (i = 0; iVar1 = mMouse_scroll_line(), i < iVar1; i = i + 1) {
+      mLineD(' ');
     }
-    else {
-      if (btn == 0x41) {
-        i = 0;
-        while (iVar1 = mMouse_scroll_line(), i < iVar1) {
-          mLineU(' ');
-          i = i + 1;
-        }
-      }
+  }
+  else if (btn == 0x41) {
+    for (i = 0; iVar1 = mMouse_scroll_line(), i < iVar1; i = i + 1) {
+      mLineU(' ');
     }
   }
   if ((btn == 3) && (process_mMouse::press_btn != -1)) {
@@ -43650,15 +42422,11 @@ int gpm_process_menu_mouse(Gpm_Event *event,void *data)
     if (uVar2 == '\x02') {
       btn = 1;
     }
-    else {
-      if (uVar2 == '\x04') {
-        btn = 0;
-      }
-      else {
-        if (uVar2 == '\x01') {
-          btn = 2;
-        }
-      }
+    else if (uVar2 == '\x04') {
+      btn = 0;
+    }
+    else if (uVar2 == '\x01') {
+      btn = 2;
     }
   }
   else {
@@ -43768,18 +42536,16 @@ void initSelectMenu(void)
   len = 0;
   SelectV = -1;
   i = 0;
-  buf = CurrentTab->firstBuffer;
-  while (iVar2 = i, buf != (Buffer *)0x0) {
+  for (buf = CurrentTab->firstBuffer; iVar2 = i, buf != (Buffer *)0x0; buf = buf->nextBuffer) {
     if (CurrentTab->currentBuffer == buf) {
       SelectV = i;
     }
     i = i + 1;
-    buf = (Buffer *)buf->nextBuffer;
   }
   label_00 = (char **)GC_malloc((i + 2) * 4);
   i = 0;
   buf = CurrentTab->firstBuffer;
-  while (i < iVar2) {
+  for (; i < iVar2; i = i + 1) {
     p_Var5 = Sprintf("<%s>",buf->buffername);
     if (buf->filename != (char *)0x0) {
       iVar4 = (buf->currentURL).scheme;
@@ -43800,30 +42566,27 @@ void initSelectMenu(void)
           Strcat_charp(p_Var5,p_Var3->ptr);
         }
       }
-      else {
-        if (iVar4 != 0xfe) {
-          if (p_Var5->area_size <= p_Var5->length + 1) {
-            Strgrow(p_Var5);
-          }
-          iVar4 = p_Var5->length;
-          p_Var5->ptr[iVar4] = ' ';
-          p_Var5->length = iVar4 + 1;
-          p_Var5->ptr[p_Var5->length] = '\0';
-          p_Var3 = parsedURL2Str(&buf->currentURL);
-          p = p_Var3->ptr;
-          if (DecodeURL != 0) {
-            p = url_unquote_conv(p,0);
-          }
-          Strcat_charp(p_Var5,p);
+      else if (iVar4 != 0xfe) {
+        if (p_Var5->area_size <= p_Var5->length + 1) {
+          Strgrow(p_Var5);
         }
+        iVar4 = p_Var5->length;
+        p_Var5->ptr[iVar4] = ' ';
+        p_Var5->length = iVar4 + 1;
+        p_Var5->ptr[p_Var5->length] = '\0';
+        p_Var3 = parsedURL2Str(&buf->currentURL);
+        p = p_Var3->ptr;
+        if (DecodeURL != 0) {
+          p = url_unquote_conv(p,0);
+        }
+        Strcat_charp(p_Var5,p);
       }
     }
     label_00[i] = p_Var5->ptr;
     if (len < p_Var5->length) {
       len = p_Var5->length;
     }
-    i = i + 1;
-    buf = (Buffer *)buf->nextBuffer;
+    buf = buf->nextBuffer;
   }
   iVar4 = wtf_strwidth((wc_uchar *)initSelectMenu::comment);
   if (len < iVar4 + 4) {
@@ -43839,8 +42602,7 @@ void initSelectMenu(void)
     iVar4 = ((len - iVar4) + 1) / 2;
   }
   p_Var5 = Strnew();
-  i = 0;
-  while (i < iVar4) {
+  for (i = 0; i < iVar4; i = i + 1) {
     if (p_Var5->area_size <= p_Var5->length + 1) {
       Strgrow(p_Var5);
     }
@@ -43848,11 +42610,9 @@ void initSelectMenu(void)
     p_Var5->ptr[iVar1] = '-';
     p_Var5->length = iVar1 + 1;
     p_Var5->ptr[p_Var5->length] = '\0';
-    i = i + 1;
   }
   Strcat_charp(p_Var5,initSelectMenu::comment);
-  i = 0;
-  while (i < iVar4) {
+  for (i = 0; i < iVar4; i = i + 1) {
     if (p_Var5->area_size <= p_Var5->length + 1) {
       Strgrow(p_Var5);
     }
@@ -43860,7 +42620,6 @@ void initSelectMenu(void)
     p_Var5->ptr[iVar1] = '-';
     p_Var5->length = iVar1 + 1;
     p_Var5->ptr[p_Var5->length] = '\0';
-    i = i + 1;
   }
   label_00[iVar2] = p_Var5->ptr;
   label_00[iVar2 + 1] = (char *)0x0;
@@ -43886,17 +42645,14 @@ void smChBuf(void)
   if ((-1 < SelectV) && (SelectV < SelectMenu.nitem)) {
     i = 0;
     buf = CurrentTab->firstBuffer;
-    while (i < SelectV) {
-      i = i + 1;
-      buf = (Buffer *)buf->nextBuffer;
+    for (; i < SelectV; i = i + 1) {
+      buf = buf->nextBuffer;
     }
     CurrentTab->currentBuffer = buf;
-    buf = CurrentTab->firstBuffer;
-    while (buf != (Buffer *)0x0) {
+    for (buf = CurrentTab->firstBuffer; buf != (Buffer *)0x0; buf = buf->nextBuffer) {
       if ((CurrentTab->currentBuffer != buf) && (deleteImage(buf), clear_buffer != 0)) {
         tmpClearBuffer(buf);
       }
-      buf = (Buffer *)buf->nextBuffer;
     }
   }
   return;
@@ -43921,12 +42677,11 @@ int smDelBuf(char c)
   if ((-1 < CurrentMenu->select) && (CurrentMenu->select < SelectMenu.nitem)) {
     i = 0;
     buf = CurrentTab->firstBuffer;
-    while (i < CurrentMenu->select) {
-      i = i + 1;
-      buf = (Buffer *)buf->nextBuffer;
+    for (; i < CurrentMenu->select; i = i + 1) {
+      buf = buf->nextBuffer;
     }
     if (CurrentTab->currentBuffer == buf) {
-      CurrentTab->currentBuffer = (Buffer *)buf->nextBuffer;
+      CurrentTab->currentBuffer = buf->nextBuffer;
     }
     pTVar2 = CurrentTab;
     pBVar3 = deleteBuffer(CurrentTab->firstBuffer,buf);
@@ -44007,18 +42762,15 @@ void initSelTabMenu(void)
   len = 0;
   SelTabV = -1;
   i = 0;
-  tab = LastTab;
-  while (iVar3 = i, tab != (TabBuffer *)0x0) {
+  for (tab = LastTab; iVar3 = i, tab != (TabBuffer *)0x0; tab = tab->prevTab) {
     if (tab == CurrentTab) {
       SelTabV = i;
     }
     i = i + 1;
-    tab = (TabBuffer *)tab->prevTab;
   }
   label_00 = (char **)GC_malloc((i + 2) * 4);
-  i = 0;
   tab = LastTab;
-  while (i < iVar3) {
+  for (i = 0; i < iVar3; i = i + 1) {
     pBVar1 = tab->currentBuffer;
     p_Var7 = Sprintf("<%s>",pBVar1->buffername);
     if (pBVar1->filename != (char *)0x0) {
@@ -44040,23 +42792,20 @@ void initSelTabMenu(void)
           Strcat_charp(p_Var7,p_Var4->ptr);
         }
       }
-      else {
-        if (iVar6 != 0xfe) {
-          p_Var4 = parsedURL2Str(&pBVar1->currentURL);
-          p = p_Var4->ptr;
-          if (DecodeURL != 0) {
-            p = url_unquote_conv(p,0);
-          }
-          Strcat_charp(p_Var7,p);
+      else if (iVar6 != 0xfe) {
+        p_Var4 = parsedURL2Str(&pBVar1->currentURL);
+        p = p_Var4->ptr;
+        if (DecodeURL != 0) {
+          p = url_unquote_conv(p,0);
         }
+        Strcat_charp(p_Var7,p);
       }
     }
     label_00[i] = p_Var7->ptr;
     if (len < p_Var7->length) {
       len = p_Var7->length;
     }
-    i = i + 1;
-    tab = (TabBuffer *)tab->prevTab;
+    tab = tab->prevTab;
   }
   sVar5 = strlen(initSelTabMenu::comment);
   if (len < (int)(sVar5 + 4)) {
@@ -44072,8 +42821,7 @@ void initSelTabMenu(void)
     iVar6 = (int)((len - sVar5) + 1) / 2;
   }
   p_Var7 = Strnew();
-  i = 0;
-  while (i < iVar6) {
+  for (i = 0; i < iVar6; i = i + 1) {
     if (p_Var7->area_size <= p_Var7->length + 1) {
       Strgrow(p_Var7);
     }
@@ -44081,11 +42829,9 @@ void initSelTabMenu(void)
     p_Var7->ptr[iVar2] = '-';
     p_Var7->length = iVar2 + 1;
     p_Var7->ptr[p_Var7->length] = '\0';
-    i = i + 1;
   }
   Strcat_charp(p_Var7,initSelTabMenu::comment);
-  i = 0;
-  while (i < iVar6) {
+  for (i = 0; i < iVar6; i = i + 1) {
     if (p_Var7->area_size <= p_Var7->length + 1) {
       Strgrow(p_Var7);
     }
@@ -44093,7 +42839,6 @@ void initSelTabMenu(void)
     p_Var7->ptr[iVar2] = '-';
     p_Var7->length = iVar2 + 1;
     p_Var7->ptr[p_Var7->length] = '\0';
-    i = i + 1;
   }
   label_00[iVar3] = p_Var7->ptr;
   label_00[iVar3 + 1] = (char *)0x0;
@@ -44120,14 +42865,11 @@ void smChTab(void)
   
   if ((-1 < SelTabV) && (SelTabV < SelTabMenu.nitem)) {
     i = 0;
-    tab = LastTab;
-    while ((i < SelTabV && (tab != (TabBuffer *)0x0))) {
+    for (tab = LastTab; (i < SelTabV && (tab != (TabBuffer *)0x0)); tab = tab->prevTab) {
       i = i + 1;
-      tab = (TabBuffer *)tab->prevTab;
     }
     CurrentTab = tab;
-    tab = LastTab;
-    while (tab != (TabBuffer *)0x0) {
+    for (tab = LastTab; tab != (TabBuffer *)0x0; tab = tab->prevTab) {
       if (tab != CurrentTab) {
         buf_00 = tab->currentBuffer;
         deleteImage(buf_00);
@@ -44135,7 +42877,6 @@ void smChTab(void)
           tmpClearBuffer(buf_00);
         }
       }
-      tab = (TabBuffer *)tab->prevTab;
     }
   }
   return;
@@ -44157,10 +42898,9 @@ int smDelTab(char c)
   
   if ((-1 < CurrentMenu->select) && (CurrentMenu->select < SelTabMenu.nitem)) {
     i = 0;
-    tab = LastTab;
-    while ((i < CurrentMenu->select && (tab != (TabBuffer *)0x0))) {
+    for (tab = LastTab; (i < CurrentMenu->select && (tab != (TabBuffer *)0x0)); tab = tab->prevTab)
+    {
       i = i + 1;
-      tab = (TabBuffer *)tab->prevTab;
     }
     deleteTab(tab);
     iVar1 = CurrentMenu->x;
@@ -44309,34 +43049,31 @@ void initMenu(void)
   w3mMenuList[3].id = (char *)0x0;
   if (MainMenuEncode == 0) {
     MainMenuCharset = SystemCharset;
-    item = MainMenuItem;
-    while (f_ces = MainMenuCharset, t_ces = InnerCharset, item->type != 0) {
+    for (item = MainMenuItem; f_ces = MainMenuCharset, t_ces = InnerCharset, item->type != 0;
+        item = item + 1) {
       pcVar2 = (char *)gettext(item->label);
       p_Var1 = Strnew_charp(pcVar2);
       p_Var1 = wc_Str_conv(p_Var1,f_ces,t_ces);
       item->label = p_Var1->ptr;
-      item = item + 1;
     }
     MainMenuEncode = 1;
   }
   pcVar2 = confFile("menu");
-  pFVar3 = (FILE *)fopen(pcVar2,"rt");
+  pFVar3 = fopen(pcVar2,"rt");
   if (pFVar3 != (FILE *)0x0) {
-    interpret_menu(pFVar3);
-    fclose((FILE *)pFVar3);
+    interpret_menu((FILE *)pFVar3);
+    fclose(pFVar3);
   }
   pcVar2 = rcFile("menu");
-  pFVar3 = (FILE *)fopen(pcVar2,"rt");
+  pFVar3 = fopen(pcVar2,"rt");
   if (pFVar3 != (FILE *)0x0) {
-    interpret_menu(pFVar3);
-    fclose((FILE *)pFVar3);
+    interpret_menu((FILE *)pFVar3);
+    fclose(pFVar3);
   }
-  list = w3mMenuList;
-  while (list->id != (char *)0x0) {
+  for (list = w3mMenuList; list->id != (char *)0x0; list = list + 1) {
     if (list->item != (MenuItem *)0x0) {
       new_menu(list->menu,list->item);
     }
-    list = list + 1;
   }
   return;
 }
@@ -44417,7 +43154,7 @@ int setMenuItem(MenuItem *item,char *type,char *line)
               if (n == -1) {
                 n = addMenuList(&w3mMenuList,pcVar3);
               }
-              item->popup = (_Menu *)w3mMenuList[n].menu;
+              item->popup = w3mMenuList[n].menu;
               item->keys = pcVar4;
               iVar1 = 8;
             }
@@ -44445,8 +43182,7 @@ int addMenuList(MenuList **mlist,char *id)
   
   list = *mlist;
   n = 0;
-  while (list->id != (char *)0x0) {
-    list = list + 1;
+  for (; list->id != (char *)0x0; list = list + 1) {
     n = n + 1;
   }
   pMVar1 = (MenuList *)GC_realloc(*mlist,n * 0xc + 0x18);
@@ -44504,16 +43240,13 @@ LinkList * link_menu(Buffer *buf)
   linkV = -1;
   if (buf->linklist != (LinkList *)0x0) {
     i = 0;
-    l = buf->linklist;
-    while (l != (LinkList *)0x0) {
+    for (l = buf->linklist; l != (LinkList *)0x0; l = l->next) {
       i = i + 1;
-      l = (LinkList *)l->next;
     }
     nitem = i;
     label_00 = (char **)GC_malloc((i + 1) * 4);
     i = 0;
-    l = buf->linklist;
-    while (l != (LinkList *)0x0) {
+    for (l = buf->linklist; l != (LinkList *)0x0; l = l->next) {
       if (l->title == (char *)0x0) {
         p_00 = "(empty)";
       }
@@ -44524,24 +43257,20 @@ LinkList * link_menu(Buffer *buf)
       if (l->type == '\x01') {
         Strcat_charp(x," [Rel] ");
       }
+      else if (l->type == '\x02') {
+        Strcat_charp(x," [Rev] ");
+      }
       else {
-        if (l->type == '\x02') {
-          Strcat_charp(x," [Rev] ");
-        }
-        else {
-          Strcat_charp(x," ");
-        }
+        Strcat_charp(x," ");
       }
       if (l->url == (char *)0x0) {
         p = "";
       }
+      else if (DecodeURL == 0) {
+        p = l->url;
+      }
       else {
-        if (DecodeURL == 0) {
-          p = l->url;
-        }
-        else {
-          p = url_unquote_conv(l->url,buf->document_charset);
-        }
+        p = url_unquote_conv(l->url,buf->document_charset);
       }
       Strcat_charp(x,p);
       label_00[i] = x->ptr;
@@ -44549,7 +43278,6 @@ LinkList * link_menu(Buffer *buf)
         len = x->length;
       }
       i = i + 1;
-      l = (LinkList *)l->next;
     }
     label_00[nitem] = (char *)0x0;
     set_menu_frame();
@@ -44562,13 +43290,11 @@ LinkList * link_menu(Buffer *buf)
     popup_menu((Menu *)0x0,&menu);
     if (-1 < linkV) {
       i = 0;
-      l = buf->linklist;
-      while (l != (LinkList *)0x0) {
+      for (l = buf->linklist; l != (LinkList *)0x0; l = l->next) {
         if (i == linkV) {
           return l;
         }
         i = i + 1;
-        l = (LinkList *)l->next;
       }
     }
   }
@@ -44604,14 +43330,12 @@ Anchor * accesskey_menu(Buffer *buf)
     pAVar1 = (Anchor *)0x0;
   }
   else {
-    i = 0;
-    while (i < al->nanchor) {
+    for (i = 0; i < al->nanchor; i = i + 1) {
       a = al->anchors + i;
       if (((a->slave == '\0') && (a->accesskey != '\0')) &&
          ((MYCTYPE_MAP[a->accesskey] & 0x11) != 0)) {
         nitem = nitem + 1;
       }
-      i = i + 1;
     }
     if (nitem == 0) {
       pAVar1 = (Anchor *)0x0;
@@ -44619,9 +43343,8 @@ Anchor * accesskey_menu(Buffer *buf)
     else {
       label_00 = (char **)GC_malloc((nitem + 1) * 4);
       ap = (Anchor **)GC_malloc(nitem << 2);
-      i = 0;
       n = 0;
-      while (i < al->nanchor) {
+      for (i = 0; i < al->nanchor; i = i + 1) {
         a = al->anchors + i;
         if (((a->slave == '\0') && (a->accesskey != '\0')) &&
            ((MYCTYPE_MAP[a->accesskey] & 0x11) != 0)) {
@@ -44635,7 +43358,6 @@ Anchor * accesskey_menu(Buffer *buf)
           ap[n] = a;
           n = n + 1;
         }
-        i = i + 1;
       }
       label_00[nitem] = (char *)0x0;
       new_option_menu(&menu,label_00,&key,(anon_subr_void_varargs *)0x0);
@@ -44644,20 +43366,15 @@ Anchor * accesskey_menu(Buffer *buf)
       menu.cursorY = (int)buf->cursorY + (int)buf->rootY;
       menu.x = menu.cursorX + FRAME_WIDTH + 1;
       menu.y = menu.cursorY + 2;
-      i = 0;
-      while (i < 0x80) {
+      for (i = 0; i < 0x80; i = i + 1) {
         menu.keyselect[i] = -1;
-        i = i + 1;
       }
-      i = 0;
-      while (i < nitem) {
+      for (i = 0; i < nitem; i = i + 1) {
         c = ap[i]->accesskey;
         menu.keymap[c] = mSelect;
         menu.keyselect[c] = i;
-        i = i + 1;
       }
-      i = 0;
-      while (i < nitem) {
+      for (i = 0; i < nitem; i = i + 1) {
         c = ap[i]->accesskey;
         if (((MYCTYPE_MAP[c] & 4) != 0) && (menu.keyselect[n] < 0)) {
           if ((MYCTYPE_MAP[c] & 4) != 0) {
@@ -44671,18 +43388,15 @@ Anchor * accesskey_menu(Buffer *buf)
           menu.keymap[c] = mSelect;
           menu.keyselect[c] = i;
         }
-        i = i + 1;
       }
       a = retrieveCurrentAnchor(buf);
       if (((a != (Anchor *)0x0) && (a->accesskey != '\0')) &&
          ((MYCTYPE_MAP[a->accesskey] & 0x11) != 0)) {
-        i = 0;
-        while (i < nitem) {
+        for (i = 0; i < nitem; i = i + 1) {
           if (a->hseq == ap[i]->hseq) {
             menu.initial = i;
             break;
           }
-          i = i + 1;
         }
       }
       popup_menu((Menu *)0x0,&menu);
@@ -44756,13 +43470,11 @@ Anchor * list_menu(Buffer *buf)
     pAVar2 = (Anchor *)0x0;
   }
   else {
-    i = 0;
-    while (i < al->nanchor) {
+    for (i = 0; i < al->nanchor; i = i + 1) {
       a = al->anchors + i;
       if (a->slave == '\0') {
         nitem = nitem + 1;
       }
-      i = i + 1;
     }
     if (nitem == 0) {
       pAVar2 = (Anchor *)0x0;
@@ -44771,9 +43483,8 @@ Anchor * list_menu(Buffer *buf)
       bVar1 = (uint)nitem < 0x15;
       label_00 = (char **)GC_malloc((nitem + 1) * 4);
       ap = (Anchor **)GC_malloc(nitem << 2);
-      i = 0;
       n = 0;
-      while (i < al->nanchor) {
+      for (i = 0; i < al->nanchor; i = i + 1) {
         a = al->anchors + i;
         if (a->slave == '\0') {
           t = getAnchorText(buf,al,a);
@@ -44801,7 +43512,6 @@ Anchor * list_menu(Buffer *buf)
           ap[n] = a;
           n = n + 1;
         }
-        i = i + 1;
       }
       label_00[nitem] = (char *)0x0;
       set_menu_frame();
@@ -44812,45 +43522,35 @@ Anchor * list_menu(Buffer *buf)
       menu.cursorY = (int)buf->cursorY + (int)buf->rootY;
       menu.x = menu.cursorX + FRAME_WIDTH + 1;
       menu.y = menu.cursorY + 2;
-      i = 0;
-      while (i < 0x80) {
+      for (i = 0; i < 0x80; i = i + 1) {
         menu.keyselect[i] = -1;
-        i = i + 1;
       }
       if (bVar1) {
-        i = 0;
-        while (i < nitem) {
+        for (i = 0; i < nitem; i = i + 1) {
           c = lmKeys[i];
           menu.keymap[c] = mSelect;
           menu.keyselect[c] = i;
-          i = i + 1;
         }
       }
       else {
-        i = 0;
-        while ((uint)i < 0x21) {
+        for (i = 0; (uint)i < 0x21; i = i + 1) {
           c = lmKeys2[i];
           menu.keymap[c] = lmGoto;
           menu.keyselect[c] = i;
-          i = i + 1;
         }
-        i = 0;
-        while ((uint)i < 0x15) {
+        for (i = 0; (uint)i < 0x15; i = i + 1) {
           c = lmKeys[i];
           menu.keymap[c] = lmSelect;
           menu.keyselect[c] = i;
-          i = i + 1;
         }
       }
       a = retrieveCurrentAnchor(buf);
       if (a != (Anchor *)0x0) {
-        i = 0;
-        while (i < nitem) {
+        for (i = 0; i < nitem; i = i + 1) {
           if (a->hseq == ap[i]->hseq) {
             menu.initial = i;
             break;
           }
-          i = i + 1;
         }
       }
       popup_menu((Menu *)0x0,&menu);
@@ -44882,12 +43582,12 @@ int mailcapMatch(mailcap *mcap,char *type)
     if (*p == '/') {
       if (*type == '/') {
         p = p + 1;
-        level = ZEXT14((mcap->flags & 4U) != 0);
+        level = (int)((mcap->flags & 4U) != 0);
         if (*p == '*') {
           iVar3 = level + 10;
         }
         else {
-          while (type = type + 1, *p != '\0') {
+          for (; type = type + 1, *p != '\0'; p = p + 1) {
             if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
               bVar1 = *p;
             }
@@ -44903,7 +43603,6 @@ int mailcapMatch(mailcap *mcap,char *type)
             if (bVar1 != bVar2) {
               return 0;
             }
-            p = p + 1;
           }
           if (*type == '\0') {
             iVar3 = level + 0x14;
@@ -44956,7 +43655,7 @@ mailcap * searchMailcap(mailcap *table,char *type)
     mcap = (mailcap *)0x0;
   }
   else {
-    while (table->type != (char *)0x0) {
+    for (; table->type != (char *)0x0; table = table + 1) {
       iVar1 = mailcapMatch(table,type);
       if (level < iVar1) {
         if (table->test != (char *)0x0) {
@@ -44968,7 +43667,6 @@ mailcap * searchMailcap(mailcap *table,char *type)
         level = iVar1;
       }
 LAB_08098684:
-      table = table + 1;
     }
   }
   return mcap;
@@ -45001,17 +43699,15 @@ int matchMailcapAttr(char *p,char *attr,int len,Str *value)
           if (*p == '\0') break;
         } while ((MYCTYPE_MAP[(byte)*p] & 2) != 0);
         bVar1 = false;
-        while ((*p != '\0' && ((bVar1 || (*p != ';'))))) {
+        for (; (*p != '\0' && ((bVar1 || (*p != ';')))); p = p + 1) {
           if ((bVar1) || ((MYCTYPE_MAP[(byte)*p] & 2) == 0)) {
             q = p;
           }
           if (bVar1) {
             bVar1 = false;
           }
-          else {
-            if (*p == '\\') {
-              bVar1 = true;
-            }
+          else if (*p == '\\') {
+            bVar1 = true;
           }
           if ((*value)->area_size <= (*value)->length + 1) {
             Strgrow(*value);
@@ -45021,7 +43717,6 @@ int matchMailcapAttr(char *p,char *attr,int len,Str *value)
           (*value)->ptr[iVar2] = *p;
           p_Var3->length = iVar2 + 1;
           (*value)->ptr[(*value)->length] = '\0';
-          p = p + 1;
         }
         if (q != (char *)0x0) {
           Strshrink(*value,(int)(p + (-1 - (int)q)));
@@ -45055,12 +43750,10 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
     p = p + 1;
   }
   k = -1;
-  j = 0;
-  while ((p[j] != '\0' && (p[j] != ';'))) {
+  for (j = 0; (p[j] != '\0' && (p[j] != ';')); j = j + 1) {
     if ((MYCTYPE_MAP[(byte)p[j]] & 2) == 0) {
       k = j;
     }
-    j = j + 1;
   }
   iVar2 = j;
   if (-1 < k) {
@@ -45078,8 +43771,7 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
     }
     k = -1;
     quoted = 0;
-    j = 0;
-    while ((p[j] != '\0' && ((quoted != 0 || (p[j] != ';'))))) {
+    for (j = 0; (p[j] != '\0' && ((quoted != 0 || (p[j] != ';')))); j = j + 1) {
       if ((quoted != 0) || ((MYCTYPE_MAP[(byte)p[j]] & 2) == 0)) {
         k = j;
       }
@@ -45091,7 +43783,6 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
       else {
         quoted = 0;
       }
-      j = j + 1;
     }
     iVar2 = j;
     if (-1 < k) {
@@ -45144,7 +43835,7 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
         mcap->flags = mcap->flags | 1;
       }
       quoted = 0;
-      while ((*p != '\0' && ((quoted != 0 || (*p != ';'))))) {
+      for (; (*p != '\0' && ((quoted != 0 || (*p != ';')))); p = p + 1) {
         if (quoted == 0) {
           if (*p == '\\') {
             quoted = 1;
@@ -45153,7 +43844,6 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
         else {
           quoted = 0;
         }
-        p = p + 1;
       }
     }
     iVar2 = 1;
@@ -45167,7 +43857,7 @@ mailcap * loadMailcap(char *filename)
 
 {
   char *__filename;
-  FILE *f_00;
+  FILE *__stream;
   mailcap *pmVar1;
   Str p_Var2;
   uint uVar3;
@@ -45180,21 +43870,21 @@ mailcap * loadMailcap(char *filename)
   FILE *f;
   
   __filename = expandPath(filename);
-  f_00 = (FILE *)fopen(__filename,"r");
-  if (f_00 == (FILE *)0x0) {
+  __stream = fopen(__filename,"r");
+  if (__stream == (FILE *)0x0) {
     pmVar1 = (mailcap *)0x0;
   }
   else {
     i = 0;
-    while (p_Var2 = Strfgets(f_00), 0 < p_Var2->length) {
+    while (p_Var2 = Strfgets((FILE *)__stream), 0 < p_Var2->length) {
       if (*p_Var2->ptr != '#') {
         i = i + 1;
       }
     }
-    fseek((FILE *)f_00,0,0);
+    fseek(__stream,0,0);
     pmVar1 = (mailcap *)GC_malloc((i + 1) * 0x18);
     i = 0;
-    while (p_Var2 = Strfgets(f_00), 0 < p_Var2->length) {
+    while (p_Var2 = Strfgets((FILE *)__stream), 0 < p_Var2->length) {
       if (*p_Var2->ptr != '#') {
         while( true ) {
           while( true ) {
@@ -45209,7 +43899,7 @@ mailcap * loadMailcap(char *filename)
           }
           if ((p_Var2->length < 1) || (p_Var2->ptr[p_Var2->length + -1] != '\\')) break;
           Strshrink(p_Var2,1);
-          y = Strfgets(f_00);
+          y = Strfgets((FILE *)__stream);
           Strcat(p_Var2,y);
         }
         iVar4 = extractMailcapEntry(p_Var2->ptr,pmVar1 + i);
@@ -45219,7 +43909,7 @@ mailcap * loadMailcap(char *filename)
       }
     }
     bzero(pmVar1 + i,0x18);
-    fclose((FILE *)f_00);
+    fclose(__stream);
   }
   return pmVar1;
 }
@@ -45245,13 +43935,11 @@ void initMailcap(void)
   if (mailcap_list != (TextList *)0x0) {
     UserMailcap = (mailcap **)GC_malloc((int)mailcap_list->nitem << 2);
     i = 0;
-    tl = mailcap_list->first;
-    while (tl != (TextListItem *)0x0) {
+    for (tl = mailcap_list->first; tl != (TextListItem *)0x0; tl = tl->next) {
       ppmVar1 = UserMailcap + i;
       pmVar3 = loadMailcap(tl->ptr);
       *ppmVar1 = pmVar3;
       i = i + 1;
-      tl = (TextListItem *)tl->next;
     }
   }
   return;
@@ -45281,14 +43969,13 @@ char * acceptableMimeTypes(void)
     pcVar1 = allocStr("image",-1);
     pushValue(tl,pcVar1);
     putHash_si(t,"image",1);
-    i = 0;
-    while (i < mailcap_list->nitem) {
+    for (i = 0; i < mailcap_list->nitem; i = i + 1) {
       mp = UserMailcap[i];
       if (mp != (mailcap *)0x0) {
-        while (mp->type != (char *)0x0) {
+        for (; mp->type != (char *)0x0; mp = mp + 1) {
           pcVar1 = strchr(mp->type,0x2f);
           if (pcVar1 != (char *)0x0) {
-            pcVar1 = allocStr(mp->type,(int)(pcVar1 + -(int)mp->type));
+            pcVar1 = allocStr(mp->type,(int)pcVar1 - (int)mp->type);
             iVar2 = getHash_si(t,pcVar1,0);
             if (iVar2 == 0) {
               s = allocStr(pcVar1,-1);
@@ -45296,10 +43983,8 @@ char * acceptableMimeTypes(void)
               putHash_si(t,pcVar1,1);
             }
           }
-          mp = mp + 1;
         }
       }
-      i = i + 1;
     }
     acceptableMimeTypes::types = Strnew();
     Strcat_charp(acceptableMimeTypes::types,"text/html, text/*;q=0.5");
@@ -45326,13 +44011,11 @@ mailcap * searchExtViewer(char *type)
   mailcap *p;
   
   if (mailcap_list != (TextList *)0x0) {
-    i = 0;
-    while (i < mailcap_list->nitem) {
+    for (i = 0; i < mailcap_list->nitem; i = i + 1) {
       pmVar1 = searchMailcap(UserMailcap[i],type);
       if (pmVar1 != (mailcap *)0x0) {
         return pmVar1;
       }
-      i = i + 1;
     }
   }
   pmVar1 = searchMailcap(DefaultMailcap,type);
@@ -45437,8 +44120,7 @@ Str unquote_mailcap_loop(char *qstr,char *type,char *name,char *attr,int *mc_sta
     str = Strnew();
     tmp = (Str)0x0;
     flag = flag0;
-    p = qstr;
-    while (*p != '\0') {
+    for (p = qstr; *p != '\0'; p = p + 1) {
       if (status == 3) {
         if (prev_status == 2) {
           if (tmp->area_size <= tmp->length + 1) {
@@ -45460,139 +44142,116 @@ Str unquote_mailcap_loop(char *qstr,char *type,char *name,char *attr,int *mc_sta
         }
         status = prev_status;
       }
-      else {
-        if (*p == '\\') {
-          prev_status = status;
-          status = 3;
+      else if (*p == '\\') {
+        prev_status = status;
+        status = 3;
+      }
+      else if (status == 1) {
+        if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
+          if (*p == '{') {
+            status = 2;
+            tmp = Strnew();
+          }
+          else if (*p == '%') {
+            if (str->area_size <= str->length + 1) {
+              Strgrow(str);
+            }
+            iVar1 = str->length;
+            str->ptr[iVar1] = *p;
+            str->length = iVar1 + 1;
+            str->ptr[str->length] = '\0';
+          }
         }
         else {
-          if (status == 1) {
-            if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
-              if (*p == '{') {
-                status = 2;
-                tmp = Strnew();
+          if (*p == 's') {
+            if (name != (char *)0x0) {
+              p_Var2 = quote_mailcap(name,flag);
+              Strcat_charp(str,p_Var2->ptr);
+              if (mc_stat != (int *)0x0) {
+                *mc_stat = *mc_stat | 1;
               }
-              else {
-                if (*p == '%') {
-                  if (str->area_size <= str->length + 1) {
-                    Strgrow(str);
-                  }
-                  iVar1 = str->length;
-                  str->ptr[iVar1] = *p;
-                  str->length = iVar1 + 1;
-                  str->ptr[str->length] = '\0';
-                }
-              }
-            }
-            else {
-              if (*p == 's') {
-                if (name != (char *)0x0) {
-                  p_Var2 = quote_mailcap(name,flag);
-                  Strcat_charp(str,p_Var2->ptr);
-                  if (mc_stat != (int *)0x0) {
-                    *mc_stat = *mc_stat | 1;
-                  }
-                }
-              }
-              else {
-                if ((*p == 't') && (type != (char *)0x0)) {
-                  p_Var2 = quote_mailcap(type,flag);
-                  Strcat_charp(str,p_Var2->ptr);
-                  if (mc_stat != (int *)0x0) {
-                    *mc_stat = *mc_stat | 2;
-                  }
-                }
-              }
-              status = 0;
             }
           }
+          else if ((*p == 't') && (type != (char *)0x0)) {
+            p_Var2 = quote_mailcap(type,flag);
+            Strcat_charp(str,p_Var2->ptr);
+            if (mc_stat != (int *)0x0) {
+              *mc_stat = *mc_stat | 2;
+            }
+          }
+          status = 0;
+        }
+      }
+      else if (status == 2) {
+        if ((sp < 1) && (*p != '{')) {
+          if (*p == '}') {
+            if ((((attr != (char *)0x0) && (p_00 = strcasestr(attr,tmp->ptr), p_00 != (char *)0x0))
+                && ((p_00 == attr || (((MYCTYPE_MAP[(byte)p_00[-1]] & 2) != 0 || (p_00[-1] == ';')))
+                    ))) && (iVar1 = matchattr(p_00,tmp->ptr,tmp->length,&tmp), iVar1 != 0)) {
+              p_Var2 = quote_mailcap(tmp->ptr,flag);
+              Strcat_charp(str,p_Var2->ptr);
+              if (mc_stat != (int *)0x0) {
+                *mc_stat = *mc_stat | 4;
+              }
+            }
+            status = 0;
+          }
           else {
-            if (status == 2) {
-              if ((sp < 1) && (*p != '{')) {
-                if (*p == '}') {
-                  if ((((attr != (char *)0x0) &&
-                       (p_00 = strcasestr(attr,tmp->ptr), p_00 != (char *)0x0)) &&
-                      ((p_00 == attr ||
-                       (((MYCTYPE_MAP[(byte)p_00[-1]] & 2) != 0 || (p_00[-1] == ';')))))) &&
-                     (iVar1 = matchattr(p_00,tmp->ptr,tmp->length,&tmp), iVar1 != 0)) {
-                    p_Var2 = quote_mailcap(tmp->ptr,flag);
-                    Strcat_charp(str,p_Var2->ptr);
-                    if (mc_stat != (int *)0x0) {
-                      *mc_stat = *mc_stat | 4;
-                    }
-                  }
-                  status = 0;
-                }
-                else {
-                  if (tmp->area_size <= tmp->length + 1) {
-                    Strgrow(tmp);
-                  }
-                  iVar1 = tmp->length;
-                  tmp->ptr[iVar1] = *p;
-                  tmp->length = iVar1 + 1;
-                  tmp->ptr[tmp->length] = '\0';
-                }
-              }
-              else {
-                if (tmp->area_size <= tmp->length + 1) {
-                  Strgrow(tmp);
-                }
-                iVar1 = tmp->length;
-                tmp->ptr[iVar1] = *p;
-                tmp->length = iVar1 + 1;
-                tmp->ptr[tmp->length] = '\0';
-                if (*p == '{') {
-                  sp = sp + 1;
-                }
-                else {
-                  if (*p == '}') {
-                    sp = sp + -1;
-                  }
-                }
-              }
+            if (tmp->area_size <= tmp->length + 1) {
+              Strgrow(tmp);
             }
-            else {
-              if (status == 0) {
-                if (*p == '%') {
-                  status = 1;
-                }
-                else {
-                  if (*p == '\'') {
-                    if ((flag0 == 0) && ((flag & 1U) != 0)) {
-                      flag = flag & 0xfffffffe;
-                    }
-                    else {
-                      if (flag == 0) {
-                        flag = 1;
-                      }
-                    }
-                  }
-                  else {
-                    if (*p == '\"') {
-                      if ((flag0 == 0) && ((flag & 2U) != 0)) {
-                        flag = flag & 0xfffffffd;
-                      }
-                      else {
-                        if (flag == 0) {
-                          flag = 2;
-                        }
-                      }
-                    }
-                  }
-                  if (str->area_size <= str->length + 1) {
-                    Strgrow(str);
-                  }
-                  iVar1 = str->length;
-                  str->ptr[iVar1] = *p;
-                  str->length = iVar1 + 1;
-                  str->ptr[str->length] = '\0';
-                }
-              }
-            }
+            iVar1 = tmp->length;
+            tmp->ptr[iVar1] = *p;
+            tmp->length = iVar1 + 1;
+            tmp->ptr[tmp->length] = '\0';
+          }
+        }
+        else {
+          if (tmp->area_size <= tmp->length + 1) {
+            Strgrow(tmp);
+          }
+          iVar1 = tmp->length;
+          tmp->ptr[iVar1] = *p;
+          tmp->length = iVar1 + 1;
+          tmp->ptr[tmp->length] = '\0';
+          if (*p == '{') {
+            sp = sp + 1;
+          }
+          else if (*p == '}') {
+            sp = sp + -1;
           }
         }
       }
-      p = p + 1;
+      else if (status == 0) {
+        if (*p == '%') {
+          status = 1;
+        }
+        else {
+          if (*p == '\'') {
+            if ((flag0 == 0) && ((flag & 1U) != 0)) {
+              flag = flag & 0xfffffffe;
+            }
+            else if (flag == 0) {
+              flag = 1;
+            }
+          }
+          else if (*p == '\"') {
+            if ((flag0 == 0) && ((flag & 2U) != 0)) {
+              flag = flag & 0xfffffffd;
+            }
+            else if (flag == 0) {
+              flag = 2;
+            }
+          }
+          if (str->area_size <= str->length + 1) {
+            Strgrow(str);
+          }
+          iVar1 = str->length;
+          str->ptr[iVar1] = *p;
+          str->length = iVar1 + 1;
+          str->ptr[str->length] = '\0';
+        }
+      }
     }
   }
   return str;
@@ -45649,7 +44308,7 @@ int getCharSize(void)
   }
   Strcat_m_charp(tmp,Imgdisplay," -test 2>/dev/null",0);
   f = (FILE *)popen(tmp->ptr,"r");
-  if (f == (FILE *)0x0) {
+  if ((FILE *)f == (FILE *)0x0) {
     iVar2 = 0;
   }
   else {
@@ -45822,8 +44481,7 @@ void drawImage(void)
   
   bVar1 = false;
   if ((activeImage != 0) && (n_terminal_image != 0)) {
-    j = 0;
-    while (j < n_terminal_image) {
+    for (j = 0; j < n_terminal_image; j = j + 1) {
       pTVar4 = terminal_image + j;
       if ((((pTVar4->cache->loaded & 1U) != 0) && (0 < pTVar4->width)) && (0 < pTVar4->height)) {
         if (((Imgdisplay_rf == (FILE *)0x0) || (Imgdisplay_wf == (FILE *)0x0)) &&
@@ -45853,7 +44511,6 @@ void drawImage(void)
         fputc(10,(FILE *)Imgdisplay_wf);
         bVar1 = true;
       }
-      j = j + 1;
     }
     if (bVar1) {
       syncImage();
@@ -45878,15 +44535,13 @@ void clearImage(void)
       n_terminal_image = 0;
     }
     else {
-      j = 0;
-      while (j < n_terminal_image) {
+      for (j = 0; j < n_terminal_image; j = j + 1) {
         pTVar1 = terminal_image + j;
         if ((((pTVar1->cache->loaded & 1U) != 0) && (0 < pTVar1->width)) && (0 < pTVar1->height)) {
           sprintf(clearImage::buf,"6;%d;%d;%d;%d\n",(int)pTVar1->x,(int)pTVar1->y,(int)pTVar1->width
                   ,(int)pTVar1->height);
           fputs(clearImage::buf,(FILE *)Imgdisplay_wf);
         }
-        j = j + 1;
       }
       syncImage();
       n_terminal_image = 0;
@@ -45908,13 +44563,12 @@ void deleteImage(Buffer *buf)
   if ((buf != (Buffer *)0x0) && (pAVar1 = buf->img, pAVar1 != (AnchorList *)0x0)) {
     i = 0;
     a = pAVar1->anchors;
-    while (i < pAVar1->nanchor) {
+    for (; i < pAVar1->nanchor; i = i + 1) {
       if ((((a->image != (Image *)0x0) && (a->image->cache != (ImageCache *)0x0)) &&
           (a->image->cache->loaded != '\0')) &&
          (((a->image->cache->loaded & 4U) == 0 && (a->image->cache->index < 0)))) {
         unlink(a->image->cache->file);
       }
-      i = i + 1;
       a = a + 1;
     }
     loadImage((Buffer *)0x0,1);
@@ -45944,7 +44598,7 @@ void getAllImage(Buffer *buf)
       current_00 = baseURL(buf);
       i = 0;
       a = pAVar1->anchors;
-      while (i < pAVar1->nanchor) {
+      for (; i < pAVar1->nanchor; i = i + 1) {
         if (a->image != (Image *)0x0) {
           pIVar2 = a->image;
           pIVar3 = getImage(a->image,current_00,(int)buf->image_flag);
@@ -45953,7 +44607,6 @@ void getAllImage(Buffer *buf)
             buf->image_loaded = '\0';
           }
         }
-        i = i + 1;
         a = a + 1;
       }
     }
@@ -45983,13 +44636,12 @@ void showImageProgress(Buffer *buf)
     l = 0;
     n = 0;
     a = pAVar5->anchors;
-    while (i < pAVar5->nanchor) {
+    for (; i < pAVar5->nanchor; i = i + 1) {
       if ((((a->image != (Image *)0x0) && (-1 < a->hseq)) &&
           (n = n + 1, a->image->cache != (ImageCache *)0x0)) &&
          ((a->image->cache->loaded & 1U) != 0)) {
         l = l + 1;
       }
-      i = i + 1;
       a = a + 1;
     }
     if (n != 0) {
@@ -46037,8 +44689,7 @@ void loadImage(Buffer *buf,int flag)
     image_cache = (ImageCache **)GC_malloc(0x20);
     bzero(image_cache,0x20);
   }
-  i = 0;
-  while (i < n_load_image) {
+  for (i = 0; i < n_load_image; i = i + 1) {
     pIVar2 = image_cache[i];
     if ((pIVar2 != (ImageCache *)0x0) && (iVar5 = lstat(pIVar2->touch,(stat *)&st), iVar5 == 0)) {
       if (pIVar2->pid != 0) {
@@ -46060,13 +44711,12 @@ void loadImage(Buffer *buf,int flag)
       unlink(pIVar2->touch);
       image_cache[i] = (ImageCache *)0x0;
     }
-    i = i + 1;
   }
   i = maxLoadImage;
   if (buf != image_buffer) {
     i = 0;
   }
-  while (i < n_load_image) {
+  for (; i < n_load_image; i = i + 1) {
     pIVar2 = image_cache[i];
     if (pIVar2 != (ImageCache *)0x0) {
       if (pIVar2->pid != 0) {
@@ -46076,7 +44726,6 @@ void loadImage(Buffer *buf,int flag)
       unlink(pIVar2->touch);
       image_cache[i] = (ImageCache *)0x0;
     }
-    i = i + 1;
   }
   if (flag == 1) {
     image_list = (GeneralList *)0x0;
@@ -46091,8 +44740,7 @@ void loadImage(Buffer *buf,int flag)
     }
     image_buffer = buf;
     if (image_list != (GeneralList *)0x0) {
-      i = 0;
-      while (i < n_load_image) {
+      for (i = 0; i < n_load_image; i = i + 1) {
         if (image_cache[i] == (ImageCache *)0x0) {
           do {
             pIVar2 = (ImageCache *)popValue(image_list);
@@ -46137,7 +44785,6 @@ void loadImage(Buffer *buf,int flag)
             return;
           }
         }
-        i = i + 1;
       }
     }
   }
@@ -46245,85 +44892,79 @@ int getImageSize(ImageCache *cache)
   if (activeImage == 0) {
     iVar2 = 0;
   }
+  else if (((cache == (ImageCache *)0x0) || ((cache->loaded & 1U) == 0)) ||
+          ((0 < cache->width && (0 < cache->height)))) {
+    iVar2 = 0;
+  }
   else {
-    if (((cache == (ImageCache *)0x0) || ((cache->loaded & 1U) == 0)) ||
-       ((0 < cache->width && (0 < cache->height)))) {
+    tmp = Strnew();
+    pcVar3 = strchr(Imgdisplay,0x2f);
+    if (pcVar3 == (char *)0x0) {
+      pcVar3 = w3m_auxbin_dir();
+      Strcat_m_charp(tmp,pcVar3,&DAT_080ce928,0);
+    }
+    pcVar3 = shell_quote(cache->file);
+    Strcat_m_charp(tmp,Imgdisplay," -size ",pcVar3,0);
+    f = (FILE *)popen(tmp->ptr,"r");
+    if ((FILE *)f == (FILE *)0x0) {
       iVar2 = 0;
     }
     else {
-      tmp = Strnew();
-      pcVar3 = strchr(Imgdisplay,0x2f);
-      if (pcVar3 == (char *)0x0) {
-        pcVar3 = w3m_auxbin_dir();
-        Strcat_m_charp(tmp,pcVar3,&DAT_080ce928,0);
-      }
-      pcVar3 = shell_quote(cache->file);
-      Strcat_m_charp(tmp,Imgdisplay," -size ",pcVar3,0);
-      f = (FILE *)popen(tmp->ptr,"r");
-      if (f == (FILE *)0x0) {
+      do {
+        iVar2 = fscanf((FILE *)f,"%d %d",&w,&h);
+        if (-1 < iVar2) break;
+        iVar2 = feof((FILE *)f);
+      } while (iVar2 == 0);
+      pclose((FILE *)f);
+      if ((w < 1) || (h < 1)) {
         iVar2 = 0;
       }
       else {
-        do {
-          iVar2 = fscanf((FILE *)f,"%d %d",&w,&h);
-          if (-1 < iVar2) break;
-          iVar2 = feof((FILE *)f);
-        } while (iVar2 == 0);
-        pclose((FILE *)f);
-        if ((w < 1) || (h < 1)) {
-          iVar2 = 0;
+        w = (int)ROUND((image_scale * (double)w) / 100.0 + 0.5);
+        if (w == 0) {
+          w = 1;
         }
-        else {
-          w = (int)ROUND((image_scale * (double)w) / 100.0 + 0.5);
-          if (w == 0) {
-            w = 1;
-          }
-          h = (int)ROUND((image_scale * (double)h) / 100.0 + 0.5);
-          if (h == 0) {
-            h = 1;
-          }
-          if ((cache->width < 0) && (cache->height < 0)) {
-            iVar2 = w;
-            if (0x800 < w) {
-              iVar2 = 0x800;
-            }
-            cache->width = (short)iVar2;
-            iVar2 = h;
-            if (0x800 < h) {
-              iVar2 = 0x800;
-            }
-            cache->height = (short)iVar2;
-          }
-          else {
-            if (cache->width < 0) {
-              iVar2 = (int)ROUND(((double)w * (double)cache->height) / (double)h + 0.5);
-              sVar1 = 0x800;
-              if (iVar2 < 0x801) {
-                sVar1 = (short)iVar2;
-              }
-              cache->width = sVar1;
-            }
-            else {
-              if (cache->height < 0) {
-                iVar2 = (int)ROUND(((double)h * (double)cache->width) / (double)w + 0.5);
-                sVar1 = 0x800;
-                if (iVar2 < 0x801) {
-                  sVar1 = (short)iVar2;
-                }
-                cache->height = sVar1;
-              }
-            }
-          }
-          if (cache->width == 0) {
-            cache->width = 1;
-          }
-          if (cache->height == 0) {
-            cache->height = 1;
-          }
-          tmp = Sprintf("%d;%d;%s",(int)cache->width,(int)cache->height,cache->url);
-          putHash_sv(image_hash,tmp->ptr,cache);
-          iVar2 = 1;
+        h = (int)ROUND((image_scale * (double)h) / 100.0 + 0.5);
+        if (h == 0) {
+          h = 1;
         }
+        if ((cache->width < 0) && (cache->height < 0)) {
+          iVar2 = w;
+          if (0x800 < w) {
+            iVar2 = 0x800;
+          }
+          cache->width = (short)iVar2;
+          iVar2 = h;
+          if (0x800 < h) {
+            iVar2 = 0x800;
+          }
+          cache->height = (short)iVar2;
+        }
+        else if (cache->width < 0) {
+          iVar2 = (int)ROUND(((double)w * (double)cache->height) / (double)h + 0.5);
+          sVar1 = 0x800;
+          if (iVar2 < 0x801) {
+            sVar1 = (short)iVar2;
+          }
+          cache->width = sVar1;
+        }
+        else if (cache->height < 0) {
+          iVar2 = (int)ROUND(((double)h * (double)cache->width) / (double)w + 0.5);
+          sVar1 = 0x800;
+          if (iVar2 < 0x801) {
+            sVar1 = (short)iVar2;
+          }
+          cache->height = sVar1;
+        }
+        if (cache->width == 0) {
+          cache->width = 1;
+        }
+        if (cache->height == 0) {
+          cache->height = 1;
+        }
+        tmp = Sprintf("%d;%d;%s",(int)cache->width,(int)cache->height,cache->url);
+        putHash_sv(image_hash,tmp->ptr,cache);
+        iVar2 = 1;
       }
     }
   }
@@ -46341,8 +44982,7 @@ void encode_symbol(symbol_set *s)
   Str p_Var2;
   int i;
   
-  i = 0;
-  while (t_ces = InnerCharset, s->item[i] != (char *)0x0) {
+  for (i = 0; t_ces = InnerCharset, s->item[i] != (char *)0x0; i = i + 1) {
     if (*s->item[i] != '\0') {
       ppcVar1 = s->item;
       f_ces = s->ces;
@@ -46350,7 +44990,6 @@ void encode_symbol(symbol_set *s)
       p_Var2 = wc_Str_conv(p_Var2,f_ces,t_ces);
       ppcVar1[i] = p_Var2->ptr;
     }
-    i = i + 1;
   }
   s->encode = '\x01';
   return;
@@ -46373,13 +45012,11 @@ char ** get_symbol(wc_ces charset,int *width)
   }
   else {
     save_charset = charset;
-    p = charset_symbol_list;
-    while (p->charset != 0) {
+    for (p = charset_symbol_list; p->charset != 0; p = p + 1) {
       if ((p->charset == charset) && ((*width == 0 || (*width == (int)p->symbol->width)))) {
         s = p->symbol;
         break;
       }
-      p = p + 1;
     }
     if (s == (symbol_set *)0x0) {
       if (*width == 2) {
@@ -46413,14 +45050,11 @@ char ** set_symbol(int width)
   
   if (width != set_symbol::save_width) {
     if (set_symbol::symbol_buf == (char **)0x0) {
-      i = 0;
-      while (alt_symbol_set.item[i] != (char *)0x0) {
-        i = i + 1;
+      for (i = 0; alt_symbol_set.item[i] != (char *)0x0; i = i + 1) {
       }
       set_symbol::symbol_buf = (char **)GC_malloc(i << 2);
     }
-    i = 0;
-    while (alt_symbol_set.item[i] != (char *)0x0) {
+    for (i = 0; alt_symbol_set.item[i] != (char *)0x0; i = i + 1) {
       os = Strnew_size(4);
       if (width == 2) {
         wtf_push(os,0x8800,i + 0x20);
@@ -46429,7 +45063,6 @@ char ** set_symbol(int width)
         wtf_push(os,0x800,i + 0x20);
       }
       set_symbol::symbol_buf[i] = os->ptr;
-      i = i + 1;
     }
     set_symbol::save_width = width;
   }
@@ -46454,7 +45087,7 @@ void push_symbol(Str str,char symbol,int width,int n)
     p = alt_symbol[symbol];
   }
   i = 0;
-  while ((i < 2 && (*p != '\0'))) {
+  for (; (i < 2 && (*p != '\0')); p = p + 1) {
     if (*p == ' ') {
       cVar1 = -0x60;
     }
@@ -46463,13 +45096,11 @@ void push_symbol(Str str,char symbol,int width,int n)
     }
     buf[i] = cVar1;
     i = i + 1;
-    p = p + 1;
   }
   y = Sprintf("<_SYMBOL TYPE=%d>",(int)symbol);
   Strcat(str,y);
-  while (0 < n) {
+  for (; 0 < n; n = n + -1) {
     Strcat_charp_n(str,buf,i);
-    n = n + -1;
   }
   Strcat_charp(str,"</_SYMBOL>");
   return;
@@ -46491,45 +45122,35 @@ char * conv_entity(uint c)
   if (c < 0x20) {
     pcVar2 = " ";
   }
-  else {
-    if (c < 0x7f) {
+  else if (c < 0x7f) {
+    p_Var3 = Strnew_charp_n(&b,1);
+    pcVar2 = p_Var3->ptr;
+  }
+  else if (c < 0xa0) {
+    pcVar2 = " ";
+  }
+  else if (c == 0xa0) {
+    pcVar2 = &DAT_080ceca0;
+  }
+  else if (c < 0x100) {
+    if (UseAltEntity == '\0') {
       p_Var3 = Strnew_charp_n(&b,1);
+      p_Var3 = wc_Str_conv(p_Var3,0x100201,wVar1);
       pcVar2 = p_Var3->ptr;
     }
     else {
-      if (c < 0xa0) {
-        pcVar2 = " ";
-      }
-      else {
-        if (c == 0xa0) {
-          pcVar2 = &DAT_080ceca0;
-        }
-        else {
-          if (c < 0x100) {
-            if (UseAltEntity == '\0') {
-              p_Var3 = Strnew_charp_n(&b,1);
-              p_Var3 = wc_Str_conv(p_Var3,0x100201,wVar1);
-              pcVar2 = p_Var3->ptr;
-            }
-            else {
-              pcVar2 = alt_latin1[c - 0xa0];
-            }
-          }
-          else {
-            if ((int)c < 0) {
-              pcVar2 = "?";
-            }
-            else {
-              wc_ucs_to_utf8(c,utf8);
-              wVar1 = InnerCharset;
-              p_Var3 = Strnew_charp((char *)utf8);
-              p_Var3 = wc_Str_conv(p_Var3,0x308045,wVar1);
-              pcVar2 = p_Var3->ptr;
-            }
-          }
-        }
-      }
+      pcVar2 = alt_latin1[c - 0xa0];
     }
+  }
+  else if ((int)c < 0) {
+    pcVar2 = "?";
+  }
+  else {
+    wc_ucs_to_utf8(c,utf8);
+    wVar1 = InnerCharset;
+    p_Var3 = Strnew_charp((char *)utf8);
+    p_Var3 = wc_Str_conv(p_Var3,0x308045,wVar1);
+    pcVar2 = p_Var3->ptr;
   }
   return pcVar2;
 }
@@ -46570,28 +45191,24 @@ int set_tty(void)
   ttyf = (FILE *)fdopen(tty,"w");
   tcgetattr(tty,(termios *)&d_ioval);
   if (displayTitleTerm != (char *)0x0) {
-    p = w3m_term_info_list;
-    while (p->term != (char *)0x0) {
+    for (p = w3m_term_info_list; p->term != (char *)0x0; p = p + 1) {
       sVar2 = strlen(p->term);
       iVar1 = strncmp(displayTitleTerm,p->term,sVar2);
       if (iVar1 == 0) {
         title_str = p->title_str;
         break;
       }
-      p = p + 1;
     }
   }
   __s1 = getenv("TERM");
   if (__s1 != (char *)0x0) {
-    p_1 = w3m_term_info_list;
-    while (p_1->term != (char *)0x0) {
+    for (p_1 = w3m_term_info_list; p_1->term != (char *)0x0; p_1 = p_1 + 1) {
       sVar2 = strlen(p_1->term);
       iVar1 = strncmp(__s1,p_1->term,sVar2);
       if (iVar1 == 0) {
         is_xterm = p_1->mouse_flag;
         return 0;
       }
-      p_1 = p_1 + 1;
     }
   }
   return 0;
@@ -46781,20 +45398,16 @@ void setgraphchar(void)
   int i;
   int c;
   
-  c = 0;
-  while (c < 0x60) {
+  for (c = 0; c < 0x60; c = c + 1) {
     gcmap[c] = (char)c + ' ';
-    c = c + 1;
   }
   if (T_ac != (char *)0x0) {
     sVar1 = strlen(T_ac);
-    i = 0;
-    while (i < (int)(sVar1 - 1)) {
+    for (i = 0; i < (int)(sVar1 - 1); i = i + 2) {
       iVar2 = T_ac[i] + -0x20;
       if ((-1 < iVar2) && (iVar2 < 0x60)) {
         *(char *)((int)&max_LINES + (int)T_ac[i]) = T_ac[i + 1];
       }
-      i = i + 2;
     }
   }
   return;
@@ -47093,8 +45706,8 @@ void setlinescols(void)
   
   iVar1 = ioctl(tty,0x5413,&wins);
   if (((-1 < iVar1) && (wins.ws_row != 0)) && (wins.ws_col != 0)) {
-    LINES = ZEXT24(wins.ws_row);
-    COLS = ZEXT24(wins.ws_col);
+    LINES = (int)wins.ws_row;
+    COLS = (int)wins.ws_col;
   }
   if (LINES < 1) {
     pcVar2 = getenv("LINES");
@@ -47147,8 +45760,7 @@ void setupscreen(void)
   }
   if (max_COLS < COLS + 1) {
     max_COLS = COLS + 1;
-    i = 0;
-    while (i < max_LINES) {
+    for (i = 0; i < max_LINES; i = i + 1) {
       pSVar1 = ScreenElem + i;
       ppcVar2 = (char **)GC_malloc(max_COLS << 2);
       pSVar1->lineimage = ppcVar2;
@@ -47156,19 +45768,15 @@ void setupscreen(void)
       pSVar1 = ScreenElem;
       plVar3 = (l_prop *)GC_malloc(max_COLS * 2);
       pSVar1[i].lineprop = plVar3;
-      i = i + 1;
     }
   }
-  i = 0;
-  while (i < LINES) {
+  for (i = 0; i < LINES; i = i + 1) {
     ScreenImage[i] = ScreenElem + i;
     *ScreenImage[i]->lineprop = 8;
     ScreenImage[i]->isdirty = 0;
-    i = i + 1;
   }
-  while (i < max_LINES) {
+  for (; i < max_LINES; i = i + 1) {
     ScreenElem[i].isdirty = 2;
-    i = i + 1;
   }
   clear();
   return;
@@ -47298,29 +45906,25 @@ void addmch(char *pc,size_t len)
         CurColumn = CurColumn + 1;
         return;
       }
-      i = CurColumn;
-      while ((-1 < i && ((pr[i] & 8) != 0))) {
+      for (i = CurColumn; (-1 < i && ((pr[i] & 8) != 0)); i = i + -1) {
         pcVar6 = (char *)GC_realloc(p[i],2);
         p[i] = pcVar6;
         memcpy(p[i],&DAT_080ceefd,1);
         p[i][1] = '\0';
         pr[i] = pr[i] & 0x20;
-        i = i + -1;
       }
     }
     if ((((bVar1 == 9) || (bVar1 == 10)) || (bVar1 == 0xd)) || (bVar1 == 8)) {
       CurrentMode = CurrentMode | 0xc0;
     }
+    else if (len < 2) {
+      if ((MYCTYPE_MAP[bVar1] & 1) != 0) {
+        return;
+      }
+      CurrentMode = CurrentMode & 0xff3f;
+    }
     else {
-      if (len < 2) {
-        if ((MYCTYPE_MAP[bVar1] & 1) != 0) {
-          return;
-        }
-        CurrentMode = CurrentMode & 0xff3f;
-      }
-      else {
-        CurrentMode = CurrentMode & 0xff3f | 0x40;
-      }
+      CurrentMode = CurrentMode & 0xff3f | 0x40;
     }
     i = CurColumn + uVar3;
     iVar4 = i + -1;
@@ -47344,15 +45948,13 @@ void addmch(char *pc,size_t len)
     }
     if (COLS < (int)(CurColumn + uVar3)) {
       touch_line();
-      i = CurColumn;
-      while (i < COLS) {
+      for (i = CurColumn; i < COLS; i = i + 1) {
         pcVar6 = (char *)GC_realloc(p[i],2);
         p[i] = pcVar6;
         memcpy(p[i],&DAT_080ceefd,1);
         p[i][1] = '\0';
         pr[i] = pr[i] & 0xff3f;
         touch_column(i);
-        i = i + 1;
       }
       wrap();
       if (COLS < (int)(CurColumn + uVar3)) {
@@ -47386,8 +45988,7 @@ void addmch(char *pc,size_t len)
           p = ScreenImage[CurLine]->lineimage;
           pr = ScreenImage[CurLine]->lineprop;
         }
-        i = CurColumn;
-        while (i < dest) {
+        for (i = CurColumn; i < dest; i = i + 1) {
           iVar4 = need_redraw(p[i],pr[i]," ",CurrentMode);
           if (iVar4 != 0) {
             pcVar7 = (char *)GC_realloc(p[i],2);
@@ -47398,29 +45999,22 @@ void addmch(char *pc,size_t len)
             touch_line();
             touch_column(i);
           }
-          i = i + 1;
         }
         CurColumn = i;
       }
-      else {
-        if (bVar1 == 10) {
-          wrap();
-        }
-        else {
-          if (bVar1 == 0xd) {
-            CurColumn = 0;
+      else if (bVar1 == 10) {
+        wrap();
+      }
+      else if (bVar1 == 0xd) {
+        CurColumn = 0;
+      }
+      else if ((bVar1 == 8) && (0 < CurColumn)) {
+        do {
+          CurColumn = CurColumn + -1;
+          if (CurColumn < 1) {
+            return;
           }
-          else {
-            if ((bVar1 == 8) && (0 < CurColumn)) {
-              do {
-                CurColumn = CurColumn + -1;
-                if (CurColumn < 1) {
-                  return;
-                }
-              } while ((pr[CurColumn] & 0xc0) == 0x80);
-            }
-          }
-        }
+        } while ((pr[CurColumn] & 0xc0) == 0x80);
       }
     }
     else {
@@ -47444,14 +46038,13 @@ void addmch(char *pc,size_t len)
           pr[i] = pr[CurColumn] & 0xff00 | pr[CurColumn] & 0x3f | pr[i] & 0x20 | 0x80;
           touch_column(i);
         }
-        while ((i < COLS && ((pr[i] & 0xc0) == 0x80))) {
+        for (; (i < COLS && ((pr[i] & 0xc0) == 0x80)); i = i + 1) {
           pcVar7 = (char *)GC_realloc(p[i],2);
           p[i] = pcVar7;
           memcpy(p[i],&DAT_080ceefd,1);
           p[i][1] = '\0';
           pr[i] = pr[i] & 0xff3f;
           touch_column(i);
-          i = i + 1;
         }
       }
       CurColumn = CurColumn + uVar3;
@@ -47491,10 +46084,8 @@ void touch_line(void)
   int i;
   
   if ((ScreenImage[CurLine]->isdirty & 1U) == 0) {
-    i = 0;
-    while (i < COLS) {
+    for (i = 0; i < COLS; i = i + 1) {
       ScreenImage[CurLine]->lineprop[i] = ScreenImage[CurLine]->lineprop[i] & 0xffdf;
-      i = i + 1;
     }
     ScreenImage[CurLine]->isdirty = ScreenImage[CurLine]->isdirty | 1;
   }
@@ -47603,13 +46194,11 @@ int graph_ok(void)
   if (UseGraphicChar == '\0') {
     iVar1 = 0;
   }
+  else if (((*T_as == '\0') || (*T_ae == '\0')) || (*T_ac == '\0')) {
+    iVar1 = 0;
+  }
   else {
-    if (((*T_as == '\0') || (*T_ae == '\0')) || (*T_ac == '\0')) {
-      iVar1 = 0;
-    }
-    else {
-      iVar1 = 1;
-    }
+    iVar1 = 1;
   }
   return iVar1;
 }
@@ -47664,7 +46253,7 @@ void refresh(void)
   char **ppcVar1;
   l_prop *plVar2;
   char c;
-  ushort *puVar3;
+  short *psVar3;
   int iVar4;
   char *pcVar5;
   bool bVar6;
@@ -47693,29 +46282,27 @@ void refresh(void)
       flush_tty();
       return;
     }
-    puVar3 = (ushort *)&ScreenImage[line]->isdirty;
-    if ((*puVar3 & 1) != 0) {
-      *puVar3 = *puVar3 & 0xfffe;
+    psVar3 = &ScreenImage[line]->isdirty;
+    if ((*psVar3 & 1U) != 0) {
+      *psVar3 = *psVar3 & 0xfffe;
       ppcVar1 = ScreenImage[line]->lineimage;
       plVar2 = ScreenImage[line]->lineprop;
-      col = 0;
-      while ((col < COLS && ((plVar2[col] & 8) == 0))) {
-        if (((*puVar3 & 4) == 0) || (col < ScreenImage[line]->eol)) {
+      for (col = 0; (col < COLS && ((plVar2[col] & 8) == 0)); col = col + 1) {
+        if (((*psVar3 & 4U) == 0) || (col < ScreenImage[line]->eol)) {
           if ((plVar2[col] & 0x20) != 0) break;
         }
         else {
           iVar4 = need_redraw(ppcVar1[col],plVar2[col]," ",0);
           if (iVar4 != 0) break;
         }
-        col = col + 1;
       }
-      if ((*puVar3 & 0xc) == 0) {
+      if ((*psVar3 & 0xcU) == 0) {
         pcol = col;
       }
       else {
         pcol = (int)ScreenImage[line]->eol;
         if (COLS <= pcol) {
-          *puVar3 = *puVar3 & 0xfff3;
+          *psVar3 = *psVar3 & 0xfff3;
           pcol = col;
         }
       }
@@ -47724,17 +46311,13 @@ void refresh(void)
           write1('\n');
           write1('\r');
         }
-        else {
-          if (moved == 2) {
-            moved = 1;
-          }
-          else {
-            if (moved == 0) {
-              pcVar5 = (char *)tgoto(T_cm,0,line);
-              writestr(pcVar5);
-              moved = 1;
-            }
-          }
+        else if (moved == 2) {
+          moved = 1;
+        }
+        else if (moved == 0) {
+          pcVar5 = (char *)tgoto(T_cm,0,line);
+          writestr(pcVar5);
+          moved = 1;
         }
       }
       else {
@@ -47742,13 +46325,13 @@ void refresh(void)
         writestr(pcVar5);
         moved = 1;
       }
-      if (((*puVar3 & 0xc) != 0) && (writestr(T_ce), col != pcol)) {
+      if (((*psVar3 & 0xcU) != 0) && (writestr(T_ce), col != pcol)) {
         pcVar5 = (char *)tgoto(T_cm,col,line);
         writestr(pcVar5);
       }
       pline = line;
       pcol = col;
-      while ((col < COLS && ((plVar2[col] & 8) == 0))) {
+      for (; (col < COLS && ((plVar2[col] & 8) == 0)); col = col + 1) {
         if ((((((plVar2[col] & 1) == 0) && ((mode & 1) != 0)) ||
              (((plVar2[col] & 2) == 0 && ((mode & 2) != 0)))) ||
             (((plVar2[col] & 4) == 0 && ((mode & 4) != 0)))) ||
@@ -47764,7 +46347,7 @@ void refresh(void)
           writestr(T_me);
           mode = 0;
         }
-        if (((*puVar3 & 4) == 0) || (col < ScreenImage[line]->eol)) {
+        if (((*psVar3 & 4U) == 0) || (col < ScreenImage[line]->eol)) {
           bVar6 = (plVar2[col] & 0x20) != 0;
         }
         else {
@@ -47775,11 +46358,9 @@ void refresh(void)
           if (col + -1 == pcol) {
             writestr(T_nd);
           }
-          else {
-            if (pcol != col) {
-              pcVar5 = (char *)tgoto(T_cm,col,line);
-              writestr(pcVar5);
-            }
+          else if (pcol != col) {
+            pcVar5 = (char *)tgoto(T_cm,col,line);
+            writestr(pcVar5);
           }
           if (((plVar2[col] & 1) != 0) && ((mode & 1) == 0)) {
             writestr(T_so);
@@ -47828,17 +46409,15 @@ void refresh(void)
           }
           pcol = col + 1;
         }
-        col = col + 1;
       }
       if (col == COLS) {
         moved = 0;
       }
-      while ((col < COLS && ((plVar2[col] & 8) == 0))) {
+      for (; (col < COLS && ((plVar2[col] & 8) == 0)); col = col + 1) {
         plVar2[col] = plVar2[col] | 8;
-        col = col + 1;
       }
     }
-    *puVar3 = *puVar3 & 0xfff3;
+    *psVar3 = *psVar3 & 0xfff3;
     if (mode != 0) {
       if ((mode & 0xff00) != 0) {
         writestr(T_op);
@@ -47866,16 +46445,12 @@ void clear(void)
   
   writestr(T_cl);
   move(0,0);
-  i = 0;
-  while (i < LINES) {
+  for (i = 0; i < LINES; i = i + 1) {
     ScreenImage[i]->isdirty = 0;
     plVar1 = ScreenImage[i]->lineprop;
-    j = 0;
-    while (j < COLS) {
+    for (j = 0; j < COLS; j = j + 1) {
       plVar1[j] = 8;
-      j = j + 1;
     }
-    i = i + 1;
   }
   CurrentMode = 0;
   return;
@@ -47897,10 +46472,8 @@ void clrtoeol(void)
     }
     ScreenImage[CurLine]->isdirty = ScreenImage[CurLine]->isdirty | 8;
     touch_line();
-    i = CurColumn;
-    while ((i < COLS && ((plVar1[i] & 8) == 0))) {
+    for (i = CurColumn; (i < COLS && ((plVar1[i] & 8) == 0)); i = i + 1) {
       plVar1[i] = 0x28;
-      i = i + 1;
     }
   }
   return;
@@ -47927,10 +46500,8 @@ void clrtoeol_with_bcolor(void)
   }
   else {
     CurrentMode = CurrentMode & 0xf020;
-    i = CurColumn;
-    while (i < COLS) {
+    for (i = CurColumn; i < COLS; i = i + 1) {
       addch(' ');
-      i = i + 1;
     }
     move(line,column);
     CurrentMode = lVar1;
@@ -47995,10 +46566,9 @@ void addstr(char *s)
   size_t len_00;
   int len;
   
-  while (*s != '\0') {
+  for (; *s != '\0'; s = s + len_00) {
     len_00 = wtf_len((wc_uchar *)s);
     addmch(s,len_00);
-    s = s + len_00;
   }
   return;
 }
@@ -48046,7 +46616,7 @@ void addnstr_sup(char *s,int n)
   int i;
   
   i = 0;
-  while (*s != '\0') {
+  for (; *s != '\0'; s = s + len_00) {
     if (WcOption.use_wide == '\0') {
       bVar1 = WTF_WIDTH_MAP[(byte)*s] != '\0';
     }
@@ -48056,12 +46626,10 @@ void addnstr_sup(char *s,int n)
     if (n < (int)(i + (uint)bVar1)) break;
     len_00 = wtf_len((wc_uchar *)s);
     addmch(s,len_00);
-    s = s + len_00;
     i = i + (uint)bVar1;
   }
-  while (i < n) {
+  for (; i < n; i = i + 1) {
     addch(' ');
-    i = i + 1;
   }
   return;
 }
@@ -48250,7 +46818,7 @@ int sleep_till_anykey(int sec,int purge)
   int iVar3;
   int *piVar4;
   int iVar5;
-  fd_set *pfVar6;
+  __fd_mask *p_Var6;
   int in_GS_OFFSET;
   fd_set rfd;
   timeval tim;
@@ -48268,11 +46836,10 @@ int sleep_till_anykey(int sec,int purge)
   tim.tv_sec = sec;
   tim.tv_usec = 0;
   iVar5 = 0x20;
-  pfVar6 = &rfd;
-  while (iVar5 != 0) {
-    iVar5 = iVar5 + -1;
-    pfVar6->__fds_bits[0] = 0;
-    pfVar6 = (fd_set *)(pfVar6->__fds_bits + 1);
+  p_Var6 = rfd.__fds_bits;
+  for (; iVar5 != 0; iVar5 = iVar5 + -1) {
+    *p_Var6 = 0;
+    p_Var6 = p_Var6 + 1;
   }
   iVar5 = tty;
   if (tty < 0) {
@@ -48320,11 +46887,9 @@ void mouse_init(void)
       Gpm_Close();
       is_xterm = 3;
     }
-    else {
-      if (-1 < iVar1) {
-        gpm_handler = gpm_process_mouse;
-        is_xterm = 0;
-      }
+    else if (-1 < iVar1) {
+      gpm_handler = gpm_process_mouse;
+      is_xterm = 0;
     }
     if (is_xterm != 0) {
       fwrite(&DAT_080cef05,1,0x10,(FILE *)ttyf);
@@ -48395,11 +46960,10 @@ void touch_cursor(void)
   int i;
   
   touch_line();
-  i = CurColumn;
-  while ((iVar1 = CurColumn, -1 < i &&
-         (touch_column(i), iVar1 = CurColumn, (ScreenImage[CurLine]->lineprop[i] & 0xc0) == 0x80)))
-  {
-    i = i + -1;
+  for (i = CurColumn;
+      (iVar1 = CurColumn, -1 < i &&
+      (touch_column(i), iVar1 = CurColumn, (ScreenImage[CurLine]->lineprop[i] & 0xc0) == 0x80));
+      i = i + -1) {
   }
   while ((i = iVar1 + 1, i < COLS && ((ScreenImage[CurLine]->lineprop[i] & 0xc0) == 0x80))) {
     touch_column(i);
@@ -48414,7 +46978,7 @@ table2 * loadMimeTypes(char *filename)
 
 {
   char *pcVar1;
-  FILE *f_00;
+  FILE *__stream;
   table2 *ptVar2;
   Str p_Var3;
   char *p;
@@ -48427,13 +46991,13 @@ table2 * loadMimeTypes(char *filename)
   FILE *f;
   
   pcVar1 = expandPath(filename);
-  f_00 = (FILE *)fopen(pcVar1,"r");
-  if (f_00 == (FILE *)0x0) {
+  __stream = fopen(pcVar1,"r");
+  if (__stream == (FILE *)0x0) {
     ptVar2 = (table2 *)0x0;
   }
   else {
     n = 0;
-    while (p_Var3 = Strfgets(f_00), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
       if ((*p_Var3->ptr != '#') && (pcVar1 = strtok(p_Var3->ptr," \t\n\r"), pcVar1 != (char *)0x0))
       {
         d = strtok((char *)0x0," \t\n\r");
@@ -48445,10 +47009,10 @@ table2 * loadMimeTypes(char *filename)
         n = n + i;
       }
     }
-    fseek((FILE *)f_00,0,0);
+    fseek(__stream,0,0);
     ptVar2 = (table2 *)GC_malloc((n + 1) * 8);
     i = 0;
-    while (p_Var3 = Strfgets(f_00), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
       if ((*p_Var3->ptr != '#') && (pcVar1 = strtok(p_Var3->ptr," \t\n\r"), pcVar1 != (char *)0x0))
       {
         while (p = strtok((char *)0x0," \t\n\r"), p != (char *)0x0) {
@@ -48462,7 +47026,7 @@ table2 * loadMimeTypes(char *filename)
     }
     ptVar2[i].item1 = (char *)0x0;
     ptVar2[i].item2 = (char *)0x0;
-    fclose((FILE *)f_00);
+    fclose(__stream);
   }
   return ptVar2;
 }
@@ -48488,13 +47052,11 @@ void initMimeTypes(void)
   if (mimetypes_list != (TextList *)0x0) {
     UserMimeTypes = (table2 **)GC_malloc((int)mimetypes_list->nitem << 2);
     i = 0;
-    tl = mimetypes_list->first;
-    while (tl != (TextListItem *)0x0) {
+    for (tl = mimetypes_list->first; tl != (TextListItem *)0x0; tl = tl->next) {
       pptVar1 = UserMimeTypes + i;
       ptVar3 = loadMimeTypes(tl->ptr);
       *pptVar1 = ptVar3;
       i = i + 1;
-      tl = (TextListItem *)tl->next;
     }
   }
   return;
@@ -48517,11 +47079,9 @@ char * DefaultFile(int scheme)
         return pcVar1;
       }
     }
-    else {
-      if (scheme < 6) {
-        pcVar1 = allocStr("/",-1);
-        return pcVar1;
-      }
+    else if (scheme < 6) {
+      pcVar1 = allocStr("/",-1);
+      return pcVar1;
     }
     pcVar1 = (char *)0x0;
   }
@@ -48637,8 +47197,7 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
         }
         if (error == 0) {
           sock = -1;
-          res = res0;
-          while (res != (addrinfo *)0x0) {
+          for (res = res0; res != (addrinfo *)0x0; res = res->ai_next) {
             sock = socket(res->ai_family,res->ai_socktype,res->ai_protocol);
             if (-1 < sock) {
               iVar2 = connect(sock,(sockaddr *)res->ai_addr,res->ai_addrlen);
@@ -48646,7 +47205,6 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
               close(sock);
               sock = -1;
             }
-            res = res->ai_next;
           }
           if (-1 < sock) {
             freeaddrinfo((addrinfo *)res0);
@@ -48673,10 +47231,8 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
       } while( true );
     }
   }
-  else {
-    if (-1 < sock) {
-      close(sock);
-    }
+  else if (-1 < sock) {
+    close(sock);
   }
 error:
   if (TrapSignal != '\0') {
@@ -48700,7 +47256,7 @@ char * copyPath(char *orgpath,int length,int option)
   Str tmp;
   
   x = Strnew();
-  while ((*orgpath != '\0' && (length != 0))) {
+  for (; (*orgpath != '\0' && (length != 0)); length = length + -1) {
     if ((MYCTYPE_MAP[(byte)*orgpath] & 2) == 0) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
@@ -48710,26 +47266,21 @@ char * copyPath(char *orgpath,int length,int option)
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
     }
-    else {
-      if (option != 1) {
-        if (option == 2) {
-          Strcat_charp(x,"%20");
+    else if (option != 1) {
+      if (option == 2) {
+        Strcat_charp(x,"%20");
+      }
+      else if (option == 0) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
-        else {
-          if (option == 0) {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar1 = x->length;
-            x->ptr[iVar1] = *orgpath;
-            x->length = iVar1 + 1;
-            x->ptr[x->length] = '\0';
-          }
-        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = *orgpath;
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
       }
     }
     orgpath = orgpath + 1;
-    length = length + -1;
   }
   return x->ptr;
 }
@@ -48822,7 +47373,7 @@ analyze_url:
           }
           cVar1 = *p;
           if (cVar1 != ':') break;
-          pcVar2 = copyPath(pcVar2,(int)(p + -(int)pcVar2),1);
+          pcVar2 = copyPath(pcVar2,(int)p - (int)pcVar2,1);
           p_url->host = pcVar2;
           pcVar2 = p + 1;
           p = pcVar2;
@@ -48830,12 +47381,12 @@ analyze_url:
             p = p + 1;
           }
           if (*p != '@') {
-            p_Var5 = Strnew_charp_n(pcVar2,(int)(p + -(int)pcVar2));
+            p_Var5 = Strnew_charp_n(pcVar2,(int)p - (int)pcVar2);
             iVar3 = atoi(p_Var5->ptr);
             p_url->port = iVar3;
             goto analyze_file;
           }
-          pcVar2 = copyPath(pcVar2,(int)(p + -(int)pcVar2),0);
+          pcVar2 = copyPath(pcVar2,(int)p - (int)pcVar2,0);
           p_url->pass = pcVar2;
           p = p + 1;
           p_url->user = p_url->host;
@@ -48844,13 +47395,13 @@ analyze_url:
         if (cVar1 < ';') break;
         if (cVar1 == '?') goto LAB_0809f322;
         if (cVar1 != '@') goto analyze_file;
-        pcVar2 = copyPath(pcVar2,(int)(p + -(int)pcVar2),1);
+        pcVar2 = copyPath(pcVar2,(int)p - (int)pcVar2,1);
         p_url->user = pcVar2;
         p = p + 1;
       }
       if (((cVar1 == '#') || (cVar1 == '/')) || (cVar1 == '\0')) {
 LAB_0809f322:
-        pcVar2 = copyPath(pcVar2,(int)(p + -(int)pcVar2),1);
+        pcVar2 = copyPath(pcVar2,(int)p - (int)pcVar2,1);
         p_url->host = pcVar2;
         p_url->port = DefaultPort[p_url->scheme];
       }
@@ -48906,60 +47457,54 @@ analyze_file:
       pcVar2 = DefaultFile(p_url->scheme);
       p_url->file = pcVar2;
     }
-    else {
-      if ((p_url->scheme == 1) && (*p == 'R')) {
+    else if ((p_url->scheme == 1) && (*p == 'R')) {
+      p = p + 1;
+      p_Var5 = Strnew();
+      if (p_Var5->area_size <= p_Var5->length + 1) {
+        Strgrow(p_Var5);
+      }
+      iVar3 = p_Var5->length;
+      p_Var5->ptr[iVar3] = *p;
+      p_Var5->length = iVar3 + 1;
+      p_Var5->ptr[p_Var5->length] = '\0';
+      do {
         p = p + 1;
-        p_Var5 = Strnew();
-        if (p_Var5->area_size <= p_Var5->length + 1) {
-          Strgrow(p_Var5);
+        if (*p == '\0') break;
+      } while (*p != '/');
+      Strcat_charp(p_Var5,p);
+      for (; *p != '\0'; p = p + 1) {
+      }
+      pcVar2 = copyPath(p_Var5->ptr,-1,1);
+      p_url->file = pcVar2;
+    }
+    else {
+      pcVar2 = strchr(p,0x3f);
+      while( true ) {
+        for (; ((*p != '\0' && (*p != '#')) && (p != pcVar2)); p = p + 1) {
         }
-        iVar3 = p_Var5->length;
-        p_Var5->ptr[iVar3] = *p;
-        p_Var5->length = iVar3 + 1;
-        p_Var5->ptr[p_Var5->length] = '\0';
-        do {
-          p = p + 1;
-          if (*p == '\0') break;
-        } while (*p != '/');
-        Strcat_charp(p_Var5,p);
-        while (*p != '\0') {
-          p = p + 1;
-        }
-        pcVar2 = copyPath(p_Var5->ptr,-1,1);
+        if ((*p != '#') || (p_url->scheme != 4)) goto LAB_0809f61d;
+        if (((p <= q) || (p[-1] != '/')) || ((pcVar2 != (char *)0x0 && (pcVar2 <= p)))) break;
+        p = p + 1;
+      }
+      if (p[1] == '\0') {
+        p = p + 1;
+      }
+LAB_0809f61d:
+      if ((p_url->scheme == 4) || (p_url->scheme == 0xfe)) {
+        pcVar2 = copyPath(q,(int)p - (int)q,0);
         p_url->file = pcVar2;
       }
       else {
-        pcVar2 = strchr(p,0x3f);
-        while( true ) {
-          while (((*p != '\0' && (*p != '#')) && (p != pcVar2))) {
-            p = p + 1;
-          }
-          if ((*p != '#') || (p_url->scheme != 4)) goto LAB_0809f61d;
-          if (((p <= q) || (p[-1] != '/')) || ((pcVar2 != (char *)0x0 && (pcVar2 <= p)))) break;
-          p = p + 1;
-        }
-        if (p[1] == '\0') {
-          p = p + 1;
-        }
-LAB_0809f61d:
-        if ((p_url->scheme == 4) || (p_url->scheme == 0xfe)) {
-          pcVar2 = copyPath(q,(int)(p + -(int)q),0);
-          p_url->file = pcVar2;
-        }
-        else {
-          pcVar2 = copyPath(q,(int)(p + -(int)q),1);
-          p_url->file = pcVar2;
-        }
+        pcVar2 = copyPath(q,(int)p - (int)q,1);
+        p_url->file = pcVar2;
       }
     }
   }
   if (*p == '?') {
     pcVar2 = p + 1;
-    p = pcVar2;
-    while ((*p != '\0' && (*p != '#'))) {
-      p = p + 1;
+    for (p = pcVar2; (*p != '\0' && (*p != '#')); p = p + 1) {
     }
-    pcVar2 = copyPath(pcVar2,(int)(p + -(int)pcVar2),0);
+    pcVar2 = copyPath(pcVar2,(int)p - (int)pcVar2,0);
     p_url->query = pcVar2;
   }
 do_label:
@@ -48969,14 +47514,12 @@ do_label:
     p_url->file = pcVar2;
     p_url->label = (char *)0x0;
   }
+  else if (*p == '#') {
+    pcVar2 = allocStr(p + 1,-1);
+    p_url->label = pcVar2;
+  }
   else {
-    if (*p == '#') {
-      pcVar2 = allocStr(p + 1,-1);
-      p_url->label = pcVar2;
-    }
-    else {
-      p_url->label = (char *)0x0;
-    }
+    p_url->label = (char *)0x0;
   }
   return;
 }
@@ -49071,117 +47614,106 @@ void parseURL2(char *url,ParsedURL *pu,ParsedURL *current)
         pu->scheme = 10;
       }
     }
-    else {
-      if ((pu->scheme == 7) || (pu->scheme == 8)) {
-        if ((pu->file != (char *)0x0) && (*pu->file == '/')) {
-          pcVar2 = allocStr(pu->file + 1,-1);
-          pu->file = pcVar2;
-        }
-        if (((pu->file == (char *)0x0) || (pcVar2 = strchr(pu->file,0x40), pcVar2 != (char *)0x0))
-           || ((pcVar2 = strchr(pu->file,0x2f), pcVar2 != (char *)0x0 &&
-               ((pcVar3 = strchr(pcVar2 + 1,0x2d), pcVar3 == (char *)0x0 && (pcVar2[1] != '\0'))))))
-        {
-          pu->scheme = 7;
-        }
-        else {
-          pu->scheme = 8;
-        }
-        if ((current != (ParsedURL *)0x0) &&
-           (((current->scheme == 7 || (current->scheme == 8)) && (pu->host == (char *)0x0)))) {
-          pu->host = current->host;
-          pu->port = current->port;
-        }
+    else if ((pu->scheme == 7) || (pu->scheme == 8)) {
+      if ((pu->file != (char *)0x0) && (*pu->file == '/')) {
+        pcVar2 = allocStr(pu->file + 1,-1);
+        pu->file = pcVar2;
+      }
+      if (((pu->file == (char *)0x0) || (pcVar2 = strchr(pu->file,0x40), pcVar2 != (char *)0x0)) ||
+         ((pcVar2 = strchr(pu->file,0x2f), pcVar2 != (char *)0x0 &&
+          ((pcVar3 = strchr(pcVar2 + 1,0x2d), pcVar3 == (char *)0x0 && (pcVar2[1] != '\0')))))) {
+        pu->scheme = 7;
       }
       else {
-        if (pu->scheme == 4) {
+        pu->scheme = 8;
+      }
+      if ((current != (ParsedURL *)0x0) &&
+         (((current->scheme == 7 || (current->scheme == 8)) && (pu->host == (char *)0x0)))) {
+        pu->host = current->host;
+        pu->port = current->port;
+      }
+    }
+    else {
+      if (pu->scheme == 4) {
+        pcVar2 = file_unquote(pu->file);
+        pcVar2 = expandName(pcVar2);
+        pcVar2 = file_quote(pcVar2);
+        pu->file = pcVar2;
+      }
+      if ((current != (ParsedURL *)0x0) &&
+         ((((pu->scheme == current->scheme || ((pu->scheme == 2 && (current->scheme == 3)))) ||
+           ((pu->scheme == 4 && (current->scheme == 5)))) && (pu->host == (char *)0x0)))) {
+        pu->user = current->user;
+        pu->pass = current->pass;
+        pu->host = current->host;
+        pu->port = current->port;
+        if ((pu->file == (char *)0x0) || (*pu->file == '\0')) {
+          pu->file = current->file;
+          if (pu->query == (char *)0x0) {
+            pu->query = current->query;
+          }
+        }
+        else if ((((pu->scheme == 0xff) && (pcVar2 = strchr(pu->file,0x3a), pcVar2 == (char *)0x0))
+                 && (current != (ParsedURL *)0x0)) &&
+                (pcVar2 = strchr(current->file,0x3a), pcVar2 != (char *)0x0)) {
+          pcVar3 = pu->file;
+          pcVar2 = allocStr(current->file,(int)pcVar2 - (int)current->file);
+          p_Var4 = Sprintf("%s:%s",pcVar2,pcVar3);
+          pu->file = p_Var4->ptr;
+        }
+        else if ((pu->scheme == 1) || (*pu->file == '/')) {
+          if ((pu->scheme == 1) && (*pu->file == '/')) {
+            pcVar2 = allocStr(pu->file + 1,-1);
+            pu->file = pcVar2;
+          }
+        }
+        else {
+          pcVar2 = pu->file;
+          if (current->file != (char *)0x0) {
+            p_Var4 = Strnew_charp(current->file);
+            while ((0 < p_Var4->length &&
+                   ((p_Var4->length < 1 || (p_Var4->ptr[p_Var4->length + -1] != '/'))))) {
+              Strshrink(p_Var4,1);
+            }
+            Strcat_charp(p_Var4,pcVar2);
+            pu->file = p_Var4->ptr;
+            bVar1 = true;
+          }
+        }
+      }
+      if (pu->file != (char *)0x0) {
+        if (((pu->scheme == 4) && (*pu->file != '/')) && (iVar5 = strcmp(pu->file,"-"), iVar5 != 0))
+        {
+          p_Var4 = Strnew_charp(CurrentDir);
+          if ((p_Var4->length < 1) || (p_Var4->ptr[p_Var4->length + -1] != '/')) {
+            if (p_Var4->area_size <= p_Var4->length + 1) {
+              Strgrow(p_Var4);
+            }
+            iVar5 = p_Var4->length;
+            p_Var4->ptr[iVar5] = '/';
+            p_Var4->length = iVar5 + 1;
+            p_Var4->ptr[p_Var4->length] = '\0';
+          }
           pcVar2 = file_unquote(pu->file);
-          pcVar2 = expandName(pcVar2);
+          Strcat_charp(p_Var4,pcVar2);
+          pcVar2 = cleanupName(p_Var4->ptr);
           pcVar2 = file_quote(pcVar2);
           pu->file = pcVar2;
         }
-        if ((current != (ParsedURL *)0x0) &&
-           ((((pu->scheme == current->scheme || ((pu->scheme == 2 && (current->scheme == 3)))) ||
-             ((pu->scheme == 4 && (current->scheme == 5)))) && (pu->host == (char *)0x0)))) {
-          pu->user = current->user;
-          pu->pass = current->pass;
-          pu->host = current->host;
-          pu->port = current->port;
-          if ((pu->file == (char *)0x0) || (*pu->file == '\0')) {
-            pu->file = current->file;
-            if (pu->query == (char *)0x0) {
-              pu->query = current->query;
-            }
-          }
-          else {
-            if ((((pu->scheme == 0xff) && (pcVar2 = strchr(pu->file,0x3a), pcVar2 == (char *)0x0))
-                && (current != (ParsedURL *)0x0)) &&
-               (pcVar2 = strchr(current->file,0x3a), pcVar2 != (char *)0x0)) {
-              pcVar3 = pu->file;
-              pcVar2 = allocStr(current->file,(int)(pcVar2 + -(int)current->file));
-              p_Var4 = Sprintf("%s:%s",pcVar2,pcVar3);
-              pu->file = p_Var4->ptr;
-            }
-            else {
-              if ((pu->scheme == 1) || (*pu->file == '/')) {
-                if ((pu->scheme == 1) && (*pu->file == '/')) {
-                  pcVar2 = allocStr(pu->file + 1,-1);
-                  pu->file = pcVar2;
-                }
-              }
-              else {
-                pcVar2 = pu->file;
-                if (current->file != (char *)0x0) {
-                  p_Var4 = Strnew_charp(current->file);
-                  while ((0 < p_Var4->length &&
-                         ((p_Var4->length < 1 || (p_Var4->ptr[p_Var4->length + -1] != '/'))))) {
-                    Strshrink(p_Var4,1);
-                  }
-                  Strcat_charp(p_Var4,pcVar2);
-                  pu->file = p_Var4->ptr;
-                  bVar1 = true;
-                }
-              }
-            }
-          }
-        }
-        if (pu->file != (char *)0x0) {
-          if (((pu->scheme == 4) && (*pu->file != '/')) &&
-             (iVar5 = strcmp(pu->file,"-"), iVar5 != 0)) {
-            p_Var4 = Strnew_charp(CurrentDir);
-            if ((p_Var4->length < 1) || (p_Var4->ptr[p_Var4->length + -1] != '/')) {
-              if (p_Var4->area_size <= p_Var4->length + 1) {
-                Strgrow(p_Var4);
-              }
-              iVar5 = p_Var4->length;
-              p_Var4->ptr[iVar5] = '/';
-              p_Var4->length = iVar5 + 1;
-              p_Var4->ptr[p_Var4->length] = '\0';
-            }
-            pcVar2 = file_unquote(pu->file);
-            Strcat_charp(p_Var4,pcVar2);
-            pcVar2 = cleanupName(p_Var4->ptr);
-            pcVar2 = file_quote(pcVar2);
+        else if (pu->scheme == 0) {
+          if (bVar1) {
+            pcVar2 = cleanupName(pu->file);
             pu->file = pcVar2;
           }
-          else {
-            if (pu->scheme == 0) {
-              if (bVar1) {
-                pcVar2 = cleanupName(pu->file);
-                pu->file = pcVar2;
-              }
-            }
-            else {
-              if ((pu->scheme != 1) && (*pu->file == '/')) {
-                pcVar2 = cleanupName(pu->file);
-                pu->file = pcVar2;
-              }
-            }
-          }
-          if (pu->scheme == 4) {
-            pcVar2 = file_unquote(pu->file);
-            pcVar2 = cleanupName(pcVar2);
-            pu->real_file = pcVar2;
-          }
+        }
+        else if ((pu->scheme != 1) && (*pu->file == '/')) {
+          pcVar2 = cleanupName(pu->file);
+          pu->file = pcVar2;
+        }
+        if (pu->scheme == 4) {
+          pcVar2 = file_unquote(pu->file);
+          pcVar2 = cleanupName(pcVar2);
+          pu->real_file = pcVar2;
         }
       }
     }
@@ -49202,30 +47734,44 @@ Str _parsedURL2Str(ParsedURL *pu,int pass)
   if (pu->scheme == 0xfe) {
     x = Strnew_charp("???");
   }
+  else if (pu->scheme == 0xff) {
+    x = Strnew_charp(pu->file);
+  }
+  else if (((pu->host == (char *)0x0) && (pu->file == (char *)0x0)) && (pu->label != (char *)0x0)) {
+    x = Sprintf("#%s",pu->label);
+  }
+  else if ((pu->scheme == 4) && (iVar1 = strcmp(pu->file,"-"), iVar1 == 0)) {
+    x = Strnew_charp("-");
+    if (pu->label != (char *)0x0) {
+      if (x->area_size <= x->length + 1) {
+        Strgrow(x);
+      }
+      iVar1 = x->length;
+      x->ptr[iVar1] = '#';
+      x->length = iVar1 + 1;
+      x->ptr[x->length] = '\0';
+      Strcat_charp(x,pu->label);
+    }
+  }
   else {
-    if (pu->scheme == 0xff) {
-      x = Strnew_charp(pu->file);
+    x = Strnew_charp(_parsedURL2Str::scheme_str[pu->scheme]);
+    if (x->area_size <= x->length + 1) {
+      Strgrow(x);
+    }
+    iVar1 = x->length;
+    x->ptr[iVar1] = ':';
+    x->length = iVar1 + 1;
+    x->ptr[x->length] = '\0';
+    if (pu->scheme == 0xb) {
+      Strcat_charp(x,pu->file);
     }
     else {
-      if (((pu->host == (char *)0x0) && (pu->file == (char *)0x0)) && (pu->label != (char *)0x0)) {
-        x = Sprintf("#%s",pu->label);
+      if ((pu->scheme != 9) && (pu->scheme != 10)) {
+        Strcat_charp(x,"//");
       }
-      else {
-        if ((pu->scheme == 4) && (iVar1 = strcmp(pu->file,"-"), iVar1 == 0)) {
-          x = Strnew_charp("-");
-          if (pu->label != (char *)0x0) {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar1 = x->length;
-            x->ptr[iVar1] = '#';
-            x->length = iVar1 + 1;
-            x->ptr[x->length] = '\0';
-            Strcat_charp(x,pu->label);
-          }
-        }
-        else {
-          x = Strnew_charp(_parsedURL2Str::scheme_str[pu->scheme]);
+      if (pu->user != (char *)0x0) {
+        Strcat_charp(x,pu->user);
+        if ((pass != 0) && (pu->pass != (char *)0x0)) {
           if (x->area_size <= x->length + 1) {
             Strgrow(x);
           }
@@ -49233,87 +47779,67 @@ Str _parsedURL2Str(ParsedURL *pu,int pass)
           x->ptr[iVar1] = ':';
           x->length = iVar1 + 1;
           x->ptr[x->length] = '\0';
-          if (pu->scheme == 0xb) {
-            Strcat_charp(x,pu->file);
-          }
-          else {
-            if ((pu->scheme != 9) && (pu->scheme != 10)) {
-              Strcat_charp(x,"//");
-            }
-            if (pu->user != (char *)0x0) {
-              Strcat_charp(x,pu->user);
-              if ((pass != 0) && (pu->pass != (char *)0x0)) {
-                if (x->area_size <= x->length + 1) {
-                  Strgrow(x);
-                }
-                iVar1 = x->length;
-                x->ptr[iVar1] = ':';
-                x->length = iVar1 + 1;
-                x->ptr[x->length] = '\0';
-                Strcat_charp(x,pu->pass);
-              }
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = '@';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-            }
-            if ((pu->host != (char *)0x0) &&
-               (Strcat_charp(x,pu->host), pu->port != DefaultPort[pu->scheme])) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = ':';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-              y = Sprintf("%d",pu->port);
-              Strcat(x,y);
-            }
-            if (((pu->scheme != 9) && (pu->scheme != 10)) &&
-               ((pu->file == (char *)0x0 || (*pu->file != '/')))) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = '/';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-            }
-            Strcat_charp(x,pu->file);
-            if ((pu->scheme == 3) && ((x->length < 1 || (x->ptr[x->length + -1] != '/')))) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = '/';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-            }
-            if (pu->query != (char *)0x0) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = '?';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-              Strcat_charp(x,pu->query);
-            }
-            if (pu->label != (char *)0x0) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = '#';
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-              Strcat_charp(x,pu->label);
-            }
-          }
+          Strcat_charp(x,pu->pass);
         }
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '@';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+      }
+      if ((pu->host != (char *)0x0) &&
+         (Strcat_charp(x,pu->host), pu->port != DefaultPort[pu->scheme])) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = ':';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+        y = Sprintf("%d",pu->port);
+        Strcat(x,y);
+      }
+      if (((pu->scheme != 9) && (pu->scheme != 10)) &&
+         ((pu->file == (char *)0x0 || (*pu->file != '/')))) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '/';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+      }
+      Strcat_charp(x,pu->file);
+      if ((pu->scheme == 3) && ((x->length < 1 || (x->ptr[x->length + -1] != '/')))) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '/';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+      }
+      if (pu->query != (char *)0x0) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '?';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+        Strcat_charp(x,pu->query);
+      }
+      if (pu->label != (char *)0x0) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '#';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+        Strcat_charp(x,pu->label);
       }
     }
   }
@@ -49347,14 +47873,13 @@ int getURLScheme(char **url)
   
   p = *url;
   scheme = 0xfe;
-  while ((*p != '\0' &&
-         (((((MYCTYPE_MAP[(byte)*p] & 0xc) != 0 || (*p == '.')) || (*p == '+')) || (*p == '-'))))) {
-    p = p + 1;
+  for (; (*p != '\0' &&
+         (((((MYCTYPE_MAP[(byte)*p] & 0xc) != 0 || (*p == '.')) || (*p == '+')) || (*p == '-'))));
+      p = p + 1) {
   }
   if (*p == ':') {
     scheme = 0xff;
-    i = 0;
-    while (__s = schemetable[i].cmdname, __s != (char *)0x0) {
+    for (i = 0; __s = schemetable[i].cmdname, __s != (char *)0x0; i = i + 1) {
       __n = strlen(__s);
       iVar1 = strncasecmp(__s,*url,__n);
       if ((iVar1 == 0) && ((*url)[__n] == ':')) {
@@ -49362,7 +47887,6 @@ int getURLScheme(char **url)
         *url = p + 1;
         return iVar1;
       }
-      i = i + 1;
     }
   }
   return scheme;
@@ -49417,18 +47941,16 @@ char * otherinfo(ParsedURL *target,ParsedURL *current,char *referer)
       current->label = pcVar2;
       Strcat_charp(x,"\r\n");
     }
-    else {
-      if ((referer != (char *)0x0) && (referer != (char *)0xffffffff)) {
-        pcVar2 = strchr(referer,0x23);
-        Strcat_charp(x,"Referer: ");
-        if (pcVar2 == (char *)0x0) {
-          Strcat_charp(x,referer);
-        }
-        else {
-          Strcat_charp_n(x,referer,(int)(pcVar2 + -(int)referer));
-        }
-        Strcat_charp(x,"\r\n");
+    else if ((referer != (char *)0x0) && (referer != (char *)0xffffffff)) {
+      pcVar2 = strchr(referer,0x23);
+      Strcat_charp(x,"Referer: ");
+      if (pcVar2 == (char *)0x0) {
+        Strcat_charp(x,referer);
       }
+      else {
+        Strcat_charp_n(x,referer,(int)pcVar2 - (int)referer);
+      }
+      Strcat_charp(x,"\r\n");
     }
   }
   return x->ptr;
@@ -49446,18 +47968,14 @@ Str HTTPrequestMethod(HRequest *hr)
   if (cVar1 == '\x02') {
     p_Var2 = Strnew_charp("CONNECT");
   }
+  else if (cVar1 == '\x03') {
+    p_Var2 = Strnew_charp("HEAD");
+  }
+  else if (cVar1 == '\x01') {
+    p_Var2 = Strnew_charp("POST");
+  }
   else {
-    if (cVar1 == '\x03') {
-      p_Var2 = Strnew_charp("HEAD");
-    }
-    else {
-      if (cVar1 == '\x01') {
-        p_Var2 = Strnew_charp("POST");
-      }
-      else {
-        p_Var2 = Strnew_charp("GET");
-      }
-    }
+    p_Var2 = Strnew_charp("GET");
   }
   return p_Var2;
 }
@@ -49480,26 +47998,24 @@ Str HTTPrequestURI(ParsedURL *pu,HRequest *hr)
     p_Var3 = Sprintf(":%d",pu->port);
     Strcat(x,p_Var3);
   }
+  else if ((hr->flag & 1U) == 0) {
+    pcVar2 = pu->label;
+    pu->label = (char *)0x0;
+    p_Var3 = _parsedURL2Str(pu,1);
+    Strcat(x,p_Var3);
+    pu->label = pcVar2;
+  }
   else {
-    if ((hr->flag & 1U) == 0) {
-      pcVar2 = pu->label;
-      pu->label = (char *)0x0;
-      p_Var3 = _parsedURL2Str(pu,1);
-      Strcat(x,p_Var3);
-      pu->label = pcVar2;
-    }
-    else {
-      Strcat_charp(x,pu->file);
-      if (pu->query != (char *)0x0) {
-        if (x->area_size <= x->length + 1) {
-          Strgrow(x);
-        }
-        iVar1 = x->length;
-        x->ptr[iVar1] = '?';
-        x->length = iVar1 + 1;
-        x->ptr[x->length] = '\0';
-        Strcat_charp(x,pu->query);
+    Strcat_charp(x,pu->file);
+    if (pu->query != (char *)0x0) {
+      if (x->area_size <= x->length + 1) {
+        Strgrow(x);
       }
+      iVar1 = x->length;
+      x->ptr[iVar1] = '?';
+      x->length = iVar1 + 1;
+      x->ptr[x->length] = '\0';
+      Strcat_charp(x,pu->query);
     }
   }
   return x;
@@ -49533,12 +48049,10 @@ Str HTTPrequest(ParsedURL *pu,ParsedURL *current,HRequest *hr,TextList *extra)
     Strcat_charp(x,pcVar2);
   }
   if (extra != (TextList *)0x0) {
-    i = extra->first;
-    while (i != (TextListItem *)0x0) {
+    for (i = extra->first; i != (TextListItem *)0x0; i = i->next) {
       strncasecmp(i->ptr,"Authorization:",0xe);
       strncasecmp(i->ptr,"Proxy-Authorization:",0x14);
       Strcat_charp(x,i->ptr);
-      i = (TextListItem *)i->next;
     }
   }
   if (((hr->command != '\x02') && (use_cookie != 0)) &&
@@ -49699,7 +48213,7 @@ retry:
        (iVar4 = check_no_proxy(pu->host), iVar4 != 0)) {
       sock = openSocket(pu->host,schemetable[pu->scheme].cmdname,(ushort)pu->port);
       if (sock < 0) {
-        *status = -2;
+        *status = 0xfe;
         *(uint *)__return_storage_ptr__ = uf._0_4_;
         __return_storage_ptr__->stream = uf.stream;
         __return_storage_ptr__->ext = uf.ext;
@@ -50066,26 +48580,20 @@ char * guessContentTypeFromTable(table2 *table,char *filename)
   
   if (table != (table2 *)0x0) {
     sVar1 = strlen(filename);
-    p = filename + (sVar1 - 1);
-    while ((filename < p && (*p != '.'))) {
-      p = p + -1;
+    for (p = filename + (sVar1 - 1); (filename < p && (*p != '.')); p = p + -1) {
     }
     if (p != filename) {
-      t = table;
-      while (t->item1 != (char *)0x0) {
+      for (t = table; t->item1 != (char *)0x0; t = t + 1) {
         iVar2 = strcmp(p + 1,t->item1);
         if (iVar2 == 0) {
           return t->item2;
         }
-        t = t + 1;
       }
-      t = table;
-      while (t->item1 != (char *)0x0) {
+      for (t = table; t->item1 != (char *)0x0; t = t + 1) {
         iVar2 = strcasecmp(p + 1,t->item1);
         if (iVar2 == 0) {
           return t->item2;
         }
-        t = t + 1;
       }
     }
   }
@@ -50106,13 +48614,11 @@ char * guessContentType(char *filename)
   }
   else {
     if (mimetypes_list != (TextList *)0x0) {
-      i = 0;
-      while (i < mimetypes_list->nitem) {
+      for (i = 0; i < mimetypes_list->nitem; i = i + 1) {
         pcVar1 = guessContentTypeFromTable(UserMimeTypes[i],filename);
         if (pcVar1 != (char *)0x0) {
           return pcVar1;
         }
-        i = i + 1;
       }
     }
     pcVar1 = guessContentTypeFromTable(DefaultGuess,filename);
@@ -50221,14 +48727,12 @@ int check_no_proxy(char *domain)
     iVar2 = 0;
   }
   else {
-    tl = NO_proxy_domains->first;
-    while (tl != (TextListItem *)0x0) {
+    for (tl = NO_proxy_domains->first; tl != (TextListItem *)0x0; tl = tl->next) {
       iVar2 = domain_match(tl->ptr,domain);
       if (iVar2 != 0) {
         iVar2 = 1;
         goto LAB_080a215d;
       }
-      tl = (TextListItem *)tl->next;
     }
     if (NOproxy_netaddr == 0) {
       iVar2 = 0;
@@ -50245,13 +48749,11 @@ int check_no_proxy(char *domain)
           hints.ai_family = *af;
           error = getaddrinfo(domain,(char *)0x0,(addrinfo *)&hints,(addrinfo **)&res0);
           if (error == 0) {
-            res = res0;
-            while (res != (addrinfo *)0x0) {
+            for (res = res0; res != (addrinfo *)0x0; res = res->ai_next) {
               if (res->ai_family == 2) {
                 inet_ntop(2,res->ai_addr->sa_data + 2,addr,0x40);
 LAB_080a2099:
-                tl = NO_proxy_domains->first;
-                while (tl != (TextListItem *)0x0) {
+                for (tl = NO_proxy_domains->first; tl != (TextListItem *)0x0; tl = tl->next) {
                   __n = strlen(tl->ptr);
                   iVar2 = strncmp(tl->ptr,addr,__n);
                   if (iVar2 == 0) {
@@ -50259,16 +48761,12 @@ LAB_080a2099:
                     ret = 1;
                     goto end;
                   }
-                  tl = (TextListItem *)tl->next;
                 }
               }
-              else {
-                if (res->ai_family == 10) {
-                  inet_ntop(10,res->ai_addr->sa_data + 6,addr,0x40);
-                  goto LAB_080a2099;
-                }
+              else if (res->ai_family == 10) {
+                inet_ntop(10,res->ai_addr->sa_data + 6,addr,0x40);
+                goto LAB_080a2099;
               }
-              res = res->ai_next;
             }
             freeaddrinfo((addrinfo *)res0);
             iVar2 = *af;
@@ -50321,14 +48819,11 @@ char * filename_extension(char *path,int is_url)
     if (*path == '.') {
       p = path + 1;
     }
-    while (*p != '\0') {
+    for (; *p != '\0'; p = p + 1) {
       if (*p == '.') {
         last_dot = p;
       }
-      else {
-        if ((is_url != 0) && (*p == '?')) break;
-      }
-      p = p + 1;
+      else if ((is_url != 0) && (*p == '?')) break;
     }
     if (*last_dot == '.') {
       i = 1;
@@ -50348,7 +48843,7 @@ table2 * loadURIMethods(char *filename)
 
 {
   char *pcVar1;
-  FILE *f_00;
+  FILE *__stream;
   table2 *ptVar2;
   Str p_Var3;
   uint uVar4;
@@ -50361,21 +48856,21 @@ table2 * loadURIMethods(char *filename)
   FILE *f;
   
   pcVar1 = expandPath(filename);
-  f_00 = (FILE *)fopen(pcVar1,"r");
-  if (f_00 == (FILE *)0x0) {
+  __stream = fopen(pcVar1,"r");
+  if (__stream == (FILE *)0x0) {
     ptVar2 = (table2 *)0x0;
   }
   else {
     i = 0;
-    while (p_Var3 = Strfgets(f_00), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
       if (*p_Var3->ptr != '#') {
         i = i + 1;
       }
     }
-    fseek((FILE *)f_00,0,0);
+    fseek(__stream,0,0);
     ptVar2 = (table2 *)GC_malloc((i + 1) * 8);
     i = 0;
-    while (p_Var3 = Strfgets(f_00), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
       if (*p_Var3->ptr != '#') {
         while( true ) {
           if (p_Var3->length < 1) {
@@ -50388,15 +48883,13 @@ table2 * loadURIMethods(char *filename)
           Strshrink(p_Var3,1);
         }
         pcVar1 = p_Var3->ptr;
-        p = pcVar1;
-        while (*p != '\0') {
+        for (p = pcVar1; *p != '\0'; p = p + 1) {
           if (*p == ':') {
-            p_Var3 = Strnew_charp_n(pcVar1,(int)(p + -(int)pcVar1));
+            p_Var3 = Strnew_charp_n(pcVar1,(int)p - (int)pcVar1);
             ptVar2[i].item1 = p_Var3->ptr;
             p = p + 1;
             break;
           }
-          p = p + 1;
         }
         if (*p != '\0') {
           while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
@@ -50410,7 +48903,7 @@ table2 * loadURIMethods(char *filename)
     }
     ptVar2[i].item1 = (char *)0x0;
     ptVar2[i].item2 = (char *)0x0;
-    fclose((FILE *)f_00);
+    fclose(__stream);
   }
   return ptVar2;
 }
@@ -50435,15 +48928,13 @@ void initURIMethods(void)
   if (methodmap_list != (TextList *)0x0) {
     urimethods = (table2 **)GC_malloc((methodmap_list->nitem + 1) * 4);
     i = 0;
-    tl = methodmap_list->first;
-    while (tl != (TextListItem *)0x0) {
+    for (tl = methodmap_list->first; tl != (TextListItem *)0x0; tl = tl->next) {
       pptVar1 = urimethods + i;
       ptVar3 = loadURIMethods(tl->ptr);
       *pptVar1 = ptVar3;
       if (urimethods[i] != (table2 *)0x0) {
         i = i + 1;
       }
-      tl = (TextListItem *)tl->next;
     }
     urimethods[i] = (table2 *)0x0;
   }
@@ -50467,37 +48958,30 @@ Str searchURIMethods(ParsedURL *pu)
   scheme = (Str)0x0;
   if ((pu->scheme == 0xff) && (urimethods != (table2 **)0x0)) {
     p_Var1 = parsedURL2Str(pu);
-    p = p_Var1->ptr;
-    while (*p != '\0') {
+    for (p = p_Var1->ptr; *p != '\0'; p = p + 1) {
       if (*p == ':') {
-        scheme = Strnew_charp_n(p_Var1->ptr,(int)(p + -(int)p_Var1->ptr));
+        scheme = Strnew_charp_n(p_Var1->ptr,(int)p - (int)p_Var1->ptr);
         break;
       }
-      p = p + 1;
     }
     if (scheme != (Str)0x0) {
-      i = 0;
-      while (ump = urimethods[i], ump != (table2 *)0x0) {
-        while (ump->item1 != (char *)0x0) {
+      for (i = 0; ump = urimethods[i], ump != (table2 *)0x0; i = i + 1) {
+        for (; ump->item1 != (char *)0x0; ump = ump + 1) {
           iVar2 = strcasecmp(ump->item1,scheme->ptr);
           if (iVar2 == 0) {
             pcVar3 = url_quote(p_Var1->ptr);
             p_Var1 = Sprintf(ump->item2,pcVar3);
             return p_Var1;
           }
-          ump = ump + 1;
         }
-        i = i + 1;
       }
-      ump = default_urimethods;
-      while (ump->item1 != (char *)0x0) {
+      for (ump = default_urimethods; ump->item1 != (char *)0x0; ump = ump + 1) {
         iVar2 = strcasecmp(ump->item1,scheme->ptr);
         if (iVar2 == 0) {
           pcVar3 = url_quote(p_Var1->ptr);
           p_Var1 = Sprintf(ump->item2,pcVar3);
           return p_Var1;
         }
-        ump = ump + 1;
       }
     }
   }
@@ -50513,22 +48997,17 @@ void chkExternalURIBuffer(Buffer *buf)
   table2 *ump;
   int i;
   
-  i = 0;
-  while (ump = urimethods[i], ump != (table2 *)0x0) {
-    while (ump->item1 != (char *)0x0) {
+  for (i = 0; ump = urimethods[i], ump != (table2 *)0x0; i = i + 1) {
+    for (; ump->item1 != (char *)0x0; ump = ump + 1) {
       p_Var1 = Sprintf("%s:%s",ump->item1,
                        "([-;/?:@&=+$,a-zA-Z0-9_.!~*\'()]|%[0-9A-Fa-f][0-9A-Fa-f])*");
       reAnchor(buf,p_Var1->ptr);
-      ump = ump + 1;
     }
-    i = i + 1;
   }
-  ump = default_urimethods;
-  while (ump->item1 != (char *)0x0) {
+  for (ump = default_urimethods; ump->item1 != (char *)0x0; ump = ump + 1) {
     p_Var1 = Sprintf("%s:%s",ump->item1,"([-;/?:@&=+$,a-zA-Z0-9_.!~*\'()]|%[0-9A-Fa-f][0-9A-Fa-f])*"
                     );
     reAnchor(buf,p_Var1->ptr);
-    ump = ump + 1;
   }
   return;
 }
@@ -50544,15 +49023,11 @@ ParsedURL * schemeToProxy(int scheme)
   if (scheme == 1) {
     pu = &GOPHER_proxy_parsed;
   }
-  else {
-    if (scheme == 2) {
-      pu = &FTP_proxy_parsed;
-    }
-    else {
-      if (scheme == 0) {
-        pu = &HTTP_proxy_parsed;
-      }
-    }
+  else if (scheme == 2) {
+    pu = &FTP_proxy_parsed;
+  }
+  else if (scheme == 0) {
+    pu = &HTTP_proxy_parsed;
   }
   return pu;
 }
@@ -50620,7 +49095,7 @@ void ftp_close(FTP ftp)
 {
   if (ftp->host != (char *)0x0) {
     if (ftp->rf != (InputStream)0x0) {
-      *(byte *)&ftp->rf->field_0x14 = *(byte *)&ftp->rf->field_0x14 & 0xef;
+      ftp->rf->field_0x14 = ftp->rf->field_0x14 & 0xef;
       ISclose(ftp->rf);
       ftp->rf = (InputStream)0x0;
     }
@@ -50681,10 +49156,10 @@ int ftp_login(FTP ftp)
     piVar6 = newInputStream(sock);
     ftp->rf = piVar6;
     iVar2 = dup(sock);
-    pFVar7 = (FILE *)fdopen(iVar2,"wb");
-    ftp->wf = pFVar7;
+    pFVar7 = fdopen(iVar2,"wb");
+    ftp->wf = (FILE *)pFVar7;
     if ((ftp->rf != (InputStream)0x0) && (ftp->wf != (FILE *)0x0)) {
-      *(byte *)&ftp->rf->field_0x14 = *(byte *)&ftp->rf->field_0x14 | 0x10;
+      ftp->rf->field_0x14 = ftp->rf->field_0x14 | 0x10;
       ftp_command(ftp,(char *)0x0,(char *)0x0,&status);
       if (status == 0xdc) {
         if (fmInitialized != '\0') {
@@ -50758,7 +49233,7 @@ int ftp_pasv(FTP ftp)
     iVar2 = -1;
     goto LAB_080a30d1;
   }
-  family = ZEXT24(sockaddr.ss_family);
+  family = (int)sockaddr.ss_family;
   if (family == 2) {
     tmp = ftp_command(ftp,"PASV",(char *)0x0,&status);
     if (status != 0xe3) {
@@ -50787,9 +49262,7 @@ int ftp_pasv(FTP ftp)
       iVar2 = -1;
       goto LAB_080a30d1;
     }
-    p = tmp->ptr + 4;
-    while ((*p != '\0' && (*p != '('))) {
-      p = p + 1;
+    for (p = tmp->ptr + 4; (*p != '\0' && (*p != '(')); p = p + 1) {
     }
     if (*p == '\0') {
       iVar2 = -1;
@@ -50812,8 +49285,8 @@ int ftp_pasv(FTP ftp)
     iVar2 = -1;
   }
   else {
-    pFVar3 = (FILE *)fdopen(data,"rb");
-    ftp->data = pFVar3;
+    pFVar3 = fdopen(data,"rb");
+    ftp->data = (FILE *)pFVar3;
     iVar2 = 0;
   }
 LAB_080a30d1:
@@ -50843,9 +49316,7 @@ time_t ftp_modtime(FTP ftp,char *path)
   
   tmp = ftp_command(ftp,"MDTM",path,&status);
   if (status == 0xd5) {
-    p = tmp->ptr + 4;
-    while ((*p != '\0' && (*p == ' '))) {
-      p = p + 1;
+    for (p = tmp->ptr + 4; (*p != '\0' && (*p == ' ')); p = p + 1) {
     }
     memset(&tm,0,0x2c);
     iVar1 = __isoc99_sscanf(p,"%04d%02d%02d%02d%02d%02d",&tm.tm_year,&tm.tm_mon,&tm.tm_mday,
@@ -50893,7 +49364,7 @@ void closeFTPdata(FILE *f)
       current_ftp.data = (FILE *)0x0;
     }
   }
-  ftp_command((FTP)&current_ftp,(char *)0x0,(char *)0x0,&status);
+  ftp_command(&current_ftp,(char *)0x0,(char *)0x0,&status);
   return;
 }
 
@@ -50902,7 +49373,7 @@ void closeFTPdata(FILE *f)
 void closeFTP(void)
 
 {
-  ftp_close((FTP)&current_ftp);
+  ftp_close(&current_ftp);
   return;
 }
 
@@ -50958,12 +49429,12 @@ InputStream openFTPStream(ParsedURL *pu,URLFile *uf)
     iVar2 = strcmp(current_ftp.host,pu->host);
     if (((iVar2 == 0) && (current_ftp.port == pu->port)) &&
        (iVar2 = strcmp(current_ftp.user,user), iVar2 == 0)) {
-      ftp_command((FTP)&current_ftp,"NOOP",(char *)0x0,&status);
+      ftp_command(&current_ftp,"NOOP",(char *)0x0,&status);
       if (status == 200) goto ftp_read;
-      ftp_close((FTP)&current_ftp);
+      ftp_close(&current_ftp);
     }
     else {
-      ftp_quit((FTP)&current_ftp);
+      ftp_quit(&current_ftp);
     }
   }
   if (pass == (char *)0x0) {
@@ -51022,7 +49493,7 @@ InputStream openFTPStream(ParsedURL *pu,URLFile *uf)
     current_ftp.port = pu->port;
     current_ftp.user = allocStr(user,-1);
     current_ftp.pass = allocStr(pass,-1);
-    iVar2 = ftp_login((FTP)&current_ftp);
+    iVar2 = ftp_login(&current_ftp);
     if (iVar2 == 0) {
       return (InputStream)0x0;
     }
@@ -51031,10 +49502,10 @@ InputStream openFTPStream(ParsedURL *pu,URLFile *uf)
     add_auth_user_passwd(pu,(char *)0x0,uname,pwd,0);
   }
 ftp_read:
-  ftp_command((FTP)&current_ftp,"TYPE","I",&status);
-  iVar2 = ftp_pasv((FTP)&current_ftp);
+  ftp_command(&current_ftp,"TYPE","I",&status);
+  iVar2 = ftp_pasv(&current_ftp);
   if (iVar2 < 0) {
-    ftp_quit((FTP)&current_ftp);
+    ftp_quit(&current_ftp);
   }
   else {
     if (((pu->file != (char *)0x0) && (*pu->file != '\0')) &&
@@ -51043,9 +49514,9 @@ ftp_read:
       if ((*realpathname == '/') && (realpathname[1] == '~')) {
         realpathname = realpathname + 1;
       }
-      tVar6 = ftp_modtime((FTP)&current_ftp,realpathname);
+      tVar6 = ftp_modtime(&current_ftp,realpathname);
       uf->modtime = tVar6;
-      ftp_command((FTP)&current_ftp,"RETR",realpathname,&status);
+      ftp_command(&current_ftp,"RETR",realpathname,&status);
       if ((status == 0x7d) || (status == 0x96)) {
         piVar7 = newFileStream(current_ftp.data,closeFTPdata);
         return piVar7;
@@ -51098,7 +49569,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
     FTPDIRtmp = (Str)0x0;
   }
   else {
-    tmp = ftp_command((FTP)&current_ftp,"SYST",(char *)0x0,&status);
+    tmp = ftp_command(&current_ftp,"SYST",(char *)0x0,&status);
     pcVar2 = strstr(tmp->ptr,"UNIX");
     if ((pcVar2 == (char *)0x0) && (iVar3 = strncmp(tmp->ptr + 4,"Windows_NT",10), iVar3 != 0)) {
       sv_type = 0;
@@ -51108,10 +49579,10 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
     }
     if ((pu->file == (char *)0x0) || (*pu->file == '\0')) {
       if (sv_type == 1) {
-        ftp_command((FTP)&current_ftp,"LIST",(char *)0x0,&status);
+        ftp_command(&current_ftp,"LIST",(char *)0x0,&status);
       }
       else {
-        ftp_command((FTP)&current_ftp,"NLST",(char *)0x0,&status);
+        ftp_command(&current_ftp,"NLST",(char *)0x0,&status);
       }
       pu->file = "/";
     }
@@ -51121,13 +49592,13 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
         realpathname = realpathname + 1;
       }
       if (sv_type == 1) {
-        ftp_command((FTP)&current_ftp,"CWD",realpathname,&status);
+        ftp_command(&current_ftp,"CWD",realpathname,&status);
         if (status == 0xfa) {
-          ftp_command((FTP)&current_ftp,"LIST",(char *)0x0,&status);
+          ftp_command(&current_ftp,"LIST",(char *)0x0,&status);
         }
       }
       else {
-        ftp_command((FTP)&current_ftp,"NLST",realpathname,&status);
+        ftp_command(&current_ftp,"NLST",realpathname,&status);
       }
     }
     if ((status == 0x7d) || (status == 0x96)) {
@@ -51174,14 +49645,12 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
                 len = len + 1;
                 type_str = "/";
               }
+              else if (iVar3 == 2) {
+                len = len + 1;
+                type_str = "@";
+              }
               else {
-                if (iVar3 == 2) {
-                  len = len + 1;
-                  type_str = "@";
-                }
-                else {
-                  type_str = " ";
-                }
+                type_str = " ";
               }
               if (max_len < len) {
                 max_len = len;
@@ -51198,23 +49667,20 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
             }
           }
           qsort(flist,nfile,4,strCmp);
-          j = 0;
-          while (j < nfile) {
+          for (j = 0; j < nfile; j = j + 1) {
             fn = flist[j];
             pcVar2 = strchr(fn,10);
             if (pcVar2[-1] == '/') {
               ftype = 1;
               *pcVar2 = '\0';
             }
+            else if (pcVar2[-1] == '@') {
+              ftype = 2;
+              pcVar2[-1] = '\0';
+            }
             else {
-              if (pcVar2[-1] == '@') {
-                ftype = 2;
-                pcVar2[-1] = '\0';
-              }
-              else {
-                ftype = 3;
-                pcVar2[-1] = '\0';
-              }
+              ftype = 3;
+              pcVar2[-1] = '\0';
             }
             date = pcVar2 + 1;
             p_Var4 = Strnew_charp(fn);
@@ -51232,8 +49698,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
             pcVar6 = file_quote(fn);
             pcVar6 = html_quote(pcVar6);
             Strcat_m_charp(FTPDIRtmp,"<a href=\"",pcVar6,&DAT_080cf53d,pcVar2,&DAT_080cf538,0);
-            i = wtf_strwidth((wc_uchar *)tmp->ptr);
-            while (i <= max_len) {
+            for (i = wtf_strwidth((wc_uchar *)tmp->ptr); i <= max_len; i = i + 1) {
               cVar1 = (char)(max_len >> 0x1f);
               if ((((char)max_len - cVar1 & 1U) + cVar1 + (char)i & 1) == 0) {
                 if (FTPDIRtmp->area_size <= FTPDIRtmp->length + 1) {
@@ -51253,13 +49718,11 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
                 FTPDIRtmp->length = iVar3 + 1;
                 FTPDIRtmp->ptr[FTPDIRtmp->length] = '\0';
               }
-              i = i + 1;
             }
             p_Var4 = Strnew_charp(date);
             tmp = convertLine((URLFile *)0x0,p_Var4,0,charset,doc_charset);
             pcVar2 = html_quote(tmp->ptr);
             Strcat_m_charp(FTPDIRtmp,pcVar2,&DAT_080cf54a,0);
-            j = j + 1;
           }
           Strcat_charp(FTPDIRtmp,"</pre>\n");
         }
@@ -51277,8 +49740,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
             }
           }
           qsort(flist,nfile,4,strCmp);
-          i = 0;
-          while (i < nfile) {
+          for (i = 0; i < nfile; i = i + 1) {
             fn = flist[i];
             p_Var4 = Strnew_charp(fn);
             tmp = convertLine((URLFile *)0x0,p_Var4,0,charset,doc_charset);
@@ -51286,7 +49748,6 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
             pcVar6 = file_quote(fn);
             pcVar6 = html_quote(pcVar6);
             Strcat_m_charp(FTPDIRtmp,"<li><a href=\"",pcVar6,&DAT_080cf53d,pcVar2,"</a>\n",0);
-            i = i + 1;
           }
           Strcat_charp(FTPDIRtmp,"</ul>\n");
         }
@@ -51325,7 +49786,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
 void disconnectFTP(void)
 
 {
-  ftp_quit((FTP)&current_ftp);
+  ftp_quit(&current_ftp);
   return;
 }
 
@@ -51352,9 +49813,7 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
   ftype = 0;
   sVar2 = strlen(line);
   if ((10 < sVar2) && ((MYCTYPE_MAP[(byte)line[10]] & 2) != 0)) {
-    cp = line + 0xb;
-    while (((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0'))) {
-      cp = cp + 1;
+    for (cp = line + 0xb; ((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0')); cp = cp + 1) {
     }
     if (*cp != '\0') {
       while ((*cp != '\0' && ((MYCTYPE_MAP[(byte)*cp] & 8) != 0))) {
@@ -51366,8 +49825,7 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
           if ((MYCTYPE_MAP[(byte)*cp] & 2) == 0) break;
         } while (*cp != '\0');
         if (*cp != '\0') {
-          while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-            cp = cp + 1;
+          for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0')); cp = cp + 1) {
           }
           if (*cp != '\0') {
             do {
@@ -51375,8 +49833,7 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
               if ((MYCTYPE_MAP[(byte)*cp] & 2) == 0) break;
             } while (*cp != '\0');
             if (*cp != '\0') {
-              while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-                cp = cp + 1;
+              for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0')); cp = cp + 1) {
               }
               if (*cp != '\0') {
                 do {
@@ -51390,7 +49847,7 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
                   while ((*cp != '\0' && ((MYCTYPE_MAP[(byte)*cp] & 8) != 0))) {
                     uVar1 = (ulonglong)(uint)size;
                     uVar3 = (uint)(uVar1 * 10);
-                    uVar8 = SEXT14(*cp);
+                    uVar8 = (uint)*cp;
                     uVar4 = uVar3 + uVar8;
                     size._0_4_ = uVar4 - 0x30;
                     size._4_4_ = size._4_4_ * 10 + (int)(uVar1 * 10 >> 0x20) + ((int)uVar8 >> 0x1f)
@@ -51406,13 +49863,12 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
                       if (*cp == '\0') {
                         return 0;
                       }
-                      while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-                        cp = cp + 1;
+                      for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0')); cp = cp + 1) {
                       }
                       if (*cp == '\0') {
                         return 0;
                       }
-                      pcVar5 = allocStr(pcVar5,(int)(cp + -(int)pcVar5));
+                      pcVar5 = allocStr(pcVar5,(int)cp - (int)pcVar5);
                       *sizep = pcVar5;
                     }
                     else {
@@ -51420,32 +49876,29 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
                       *sizep = p_Var6->ptr;
                     }
                     pcVar5 = cp + 1;
-                    cp = pcVar5;
-                    while (((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0'))) {
-                      cp = cp + 1;
+                    for (cp = pcVar5; ((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0'));
+                        cp = cp + 1) {
                     }
                     if (*cp != '\0') {
-                      while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-                        cp = cp + 1;
+                      for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0')); cp = cp + 1) {
                       }
                       if (*cp != '\0') {
-                        while (((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0'))) {
-                          cp = cp + 1;
+                        for (; ((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0')); cp = cp + 1) {
                         }
                         if (*cp != '\0') {
-                          while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-                            cp = cp + 1;
+                          for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0')); cp = cp + 1)
+                          {
                           }
                           if (*cp != '\0') {
-                            while (((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0'))) {
-                              cp = cp + 1;
+                            for (; ((MYCTYPE_MAP[(byte)*cp] & 2) != 0 && (*cp != '\0')); cp = cp + 1
+                                ) {
                             }
                             if (*cp != '\0') {
-                              while (((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'))) {
-                                cp = cp + 1;
+                              for (; ((MYCTYPE_MAP[(byte)*cp] & 2) == 0 && (*cp != '\0'));
+                                  cp = cp + 1) {
                               }
                               if (*cp != '\0') {
-                                pcVar5 = allocStr(pcVar5,(int)(cp + -(int)pcVar5));
+                                pcVar5 = allocStr(pcVar5,(int)cp - (int)pcVar5);
                                 *date = pcVar5;
                                 do {
                                   cp = cp + 1;
@@ -51459,24 +49912,22 @@ int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char
                                     *link = "";
                                     *sizep = "";
                                   }
+                                  else if (*line == 'l') {
+                                    ftype = 2;
+                                    pcVar5 = strstr(cp," -> ");
+                                    if (pcVar5 != (char *)0x0) {
+                                      pcVar7 = allocStr(cp,(int)pcVar5 - (int)cp);
+                                      *name = pcVar7;
+                                      pcVar5 = allocStr(pcVar5,-1);
+                                      *link = pcVar5;
+                                      *sizep = "";
+                                    }
+                                  }
                                   else {
-                                    if (*line == 'l') {
-                                      ftype = 2;
-                                      pcVar5 = strstr(cp," -> ");
-                                      if (pcVar5 != (char *)0x0) {
-                                        pcVar7 = allocStr(cp,(int)(pcVar5 + -(int)cp));
-                                        *name = pcVar7;
-                                        pcVar5 = allocStr(pcVar5,-1);
-                                        *link = pcVar5;
-                                        *sizep = "";
-                                      }
-                                    }
-                                    else {
-                                      ftype = 3;
-                                      pcVar5 = allocStr(cp,-1);
-                                      *name = pcVar5;
-                                      *link = "";
-                                    }
+                                    ftype = 3;
+                                    pcVar5 = allocStr(cp,-1);
+                                    *name = pcVar5;
+                                    *link = "";
                                   }
                                 }
                               }
@@ -51509,38 +49960,30 @@ Str size_int2str(clen_t size)
   int unit;
   Str size_str;
   
-  dtmp = (double)size;
   unit = 0;
-  while ((unit < 3 && (1024.0 <= dtmp))) {
-    dtmp = dtmp / 1024.0;
+  for (dtmp = (double)size; (unit < 3 && (1024.0 <= dtmp)); dtmp = dtmp / 1024.0) {
     unit = unit + 1;
   }
   if ((unit == 0) || (100.0 < dtmp)) {
     size_format = "%.0f%s";
   }
+  else if (dtmp <= 10.0) {
+    size_format = "%.2f%s";
+  }
   else {
-    if (dtmp <= 10.0) {
-      size_format = "%.2f%s";
-    }
-    else {
-      size_format = "%.1f%s";
-    }
+    size_format = "%.1f%s";
   }
   if (unit == 2) {
     unit_str = "M";
   }
+  else if (unit == 3) {
+    unit_str = "G";
+  }
+  else if (unit == 1) {
+    unit_str = "K";
+  }
   else {
-    if (unit == 3) {
-      unit_str = "G";
-    }
-    else {
-      if (unit == 1) {
-        unit_str = "K";
-      }
-      else {
-        unit_str = "";
-      }
-    }
+    unit_str = "";
   }
   p_Var1 = Sprintf(size_format,dtmp,unit_str);
   return p_Var1;
@@ -51559,13 +50002,11 @@ uchar c2e(char x)
         if (x == '+') {
           uVar1 = '>';
         }
+        else if (x == '/') {
+          uVar1 = '?';
+        }
         else {
-          if (x == '/') {
-            uVar1 = '?';
-          }
-          else {
-            uVar1 = -1;
-          }
+          uVar1 = 0xff;
         }
       }
       else {
@@ -51573,11 +50014,11 @@ uchar c2e(char x)
       }
     }
     else {
-      uVar1 = x + -0x47;
+      uVar1 = x + 0xb9;
     }
   }
   else {
-    uVar1 = x + -0x41;
+    uVar1 = x + 0xbf;
   }
   return uVar1;
 }
@@ -51641,13 +50082,11 @@ Str decodeB(char **ww)
   x = Strnew_size(n);
   n_pad = 0;
 LAB_080a4a11:
-  i = 0;
-  while (i < 4) {
+  for (i = 0; i < 4; i = i + 1) {
     c[i] = *wp;
     wp = wp + 1;
     iVar1 = i;
     if ((*wp == '\0') || (*wp == '?')) goto LAB_080a4a51;
-    i = i + 1;
   }
   goto LAB_080a4a63;
 LAB_080a4a51:
@@ -51666,21 +50105,18 @@ LAB_080a4a63:
     }
   }
   n_pad = iVar1;
-  i = 0;
-  while (i < 4) {
+  for (i = 0; i < 4; i = i + 1) {
     uVar2 = c2e(c[i]);
     c[i] = uVar2;
-    if (c[i] == -1) {
+    if (c[i] == 0xff) {
       *ww = wp;
       return x;
     }
-    i = i + 1;
   }
   d[0] = c[1] >> 4 | c[0] << 2;
   d[1] = c[2] >> 2 | c[1] << 4;
   d[2] = c[3] | c[2] << 6;
-  i = 0;
-  while (i < 3 - n_pad) {
+  for (i = 0; i < 3 - n_pad; i = i + 1) {
     if (x->area_size <= x->length + 1) {
       Strgrow(x);
     }
@@ -51688,7 +50124,6 @@ LAB_080a4a63:
     x->ptr[iVar1] = d[i];
     x->length = iVar1 + 1;
     x->ptr[x->length] = '\0';
-    i = i + 1;
   }
   if (((n_pad != 0) || (*wp == '\0')) || (*wp == '?')) {
     *ww = wp;
@@ -51725,7 +50160,7 @@ Str decodeU(char **ww)
     x = Strnew_size(n);
     w = pcVar3 + 1;
     i = 2;
-    while ((*w != '\0' && (n != 0))) {
+    for (; (*w != '\0' && (n != 0)); n = n + -1) {
       cVar1 = *w;
       bVar5 = (byte)(cVar1 + -0x20 >> 0x37);
       cVar2 = w[1];
@@ -51748,7 +50183,6 @@ Str decodeU(char **ww)
         w = w + 1;
         i = i + 2;
       }
-      n = n + -1;
     }
   }
   return x;
@@ -51770,7 +50204,7 @@ Str decodeQ(char **ww)
   w = *ww;
   n = strlen(w);
   x = Strnew_size(n);
-  while ((*w != '\0' && (*w != '?'))) {
+  for (; (*w != '\0' && (*w != '?')); w = w + 1) {
     if (*w == '=') {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
@@ -51783,27 +50217,24 @@ Str decodeQ(char **ww)
       x->ptr[x->length] = '\0';
       w = w + 2;
     }
-    else {
-      if (*w == '_') {
-        if (x->area_size <= x->length + 1) {
-          Strgrow(x);
-        }
-        iVar2 = x->length;
-        x->ptr[iVar2] = ' ';
-        x->length = iVar2 + 1;
-        x->ptr[x->length] = '\0';
+    else if (*w == '_') {
+      if (x->area_size <= x->length + 1) {
+        Strgrow(x);
       }
-      else {
-        if (x->area_size <= x->length + 1) {
-          Strgrow(x);
-        }
-        iVar2 = x->length;
-        x->ptr[iVar2] = *w;
-        x->length = iVar2 + 1;
-        x->ptr[x->length] = '\0';
-      }
+      iVar2 = x->length;
+      x->ptr[iVar2] = ' ';
+      x->length = iVar2 + 1;
+      x->ptr[x->length] = '\0';
     }
-    w = w + 1;
+    else {
+      if (x->area_size <= x->length + 1) {
+        Strgrow(x);
+      }
+      iVar2 = x->length;
+      x->ptr[iVar2] = *w;
+      x->length = iVar2 + 1;
+      x->ptr[x->length] = '\0';
+    }
   }
   *ww = w;
   return x;
@@ -51826,7 +50257,7 @@ Str decodeQP(char **ww)
   w = *ww;
   n = strlen(w);
   x = Strnew_size(n);
-  while (pcVar3 = w, *w != '\0') {
+  for (; pcVar3 = w, *w != '\0'; w = w + 1) {
     if (*w == '=') {
       pcVar3 = w + 1;
       if ((((*pcVar3 == '\n') || (*pcVar3 == '\r')) || (*pcVar3 == ' ')) || (*pcVar3 == '\t')) {
@@ -51859,7 +50290,6 @@ Str decodeQP(char **ww)
       x->length = iVar2 + 1;
       x->ptr[x->length] = '\0';
     }
-    w = w + 1;
   }
   w = pcVar3;
   *ww = w;
@@ -51887,8 +50317,7 @@ Str decodeWord(char **ow,wc_ces *charset)
   p_Var4 = Strnew();
   pcVar3 = w;
   if ((*w == '=') && (w[1] == '?')) {
-    w = w + 2;
-    while (*w != '?') {
+    for (w = w + 2; *w != '?'; w = w + 1) {
       pcVar3 = w;
       if (*w == '\0') goto convert_fail;
       if (p_Var4->area_size <= p_Var4->length + 1) {
@@ -51898,7 +50327,6 @@ Str decodeWord(char **ow,wc_ces *charset)
       p_Var4->ptr[iVar1] = *w;
       p_Var4->length = iVar1 + 1;
       p_Var4->ptr[p_Var4->length] = '\0';
-      w = w + 1;
     }
     c = wc_guess_charset(p_Var4->ptr,0);
     pcVar3 = w;
@@ -51980,7 +50408,7 @@ LAB_080a536d:
   }
   if (cnv == (Str)0x0) {
     cnv = Strnew_size(orgstr->length);
-    Strcat_charp_n(cnv,orgstr->ptr,(int)(org + -(int)orgstr->ptr));
+    Strcat_charp_n(cnv,orgstr->ptr,(int)org - (int)orgstr->ptr);
   }
 nextEncodeWord:
   pcVar2 = org;
@@ -51997,9 +50425,7 @@ nextEncodeWord:
       if (iVar3 < 0xe) {
         if (1 < iVar3 - 9U) goto LAB_080a536d;
       }
-      else {
-        if (iVar3 != 0x20) break;
-      }
+      else if (iVar3 != 0x20) break;
     }
     org0 = org0 + 1;
   } while( true );
@@ -52035,14 +50461,12 @@ Str encodeB(char *a)
     n_pad = 0;
     d[2] = '\0';
     d[1] = '\0';
-    i = 0;
-    while (i < 3) {
+    for (i = 0; i < 3; i = i + 1) {
       d[i] = a[i];
       if (a[i] == '\0') {
         n_pad = 3 - i;
         break;
       }
-      i = i + 1;
     }
     bVar3 = d[0] >> 2;
     bVar4 = d[1] >> 4;
@@ -52051,15 +50475,13 @@ Str encodeB(char *a)
       c4 = '@';
       c3 = '@';
     }
+    else if (n_pad == 1) {
+      c3 = (uchar)((d[1] & 0xf) << 2);
+      c4 = '@';
+    }
     else {
-      if (n_pad == 1) {
-        c3 = (uchar)((d[1] & 0xf) << 2);
-        c4 = '@';
-      }
-      else {
-        c3 = d[2] >> 6 | (d[1] & 0xf) << 2;
-        c4 = d[2] & 0x3f;
-      }
+      c3 = d[2] >> 6 | (d[1] & 0xf) << 2;
+      c4 = d[2] & 0x3f;
     }
     if (x->area_size <= x->length + 1) {
       Strgrow(x);
@@ -52180,7 +50602,7 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
     regex = (Regex *)GC_malloc(0x120c);
   }
   regex->alt_regex = (regex *)0x0;
-  re = (regexchar *)regex;
+  re = regex->re;
   st_ptr = regex->storage;
   p = *ex;
   do {
@@ -52285,29 +50707,27 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
           st_ptr = st_ptr + 1;
           p = p + WTF_LEN_MAP[(byte)*p];
         }
-        else {
-          if ((*p == '-') && (p[1] != ']')) {
-            st_ptr->type = '\x03';
-            st_ptr = st_ptr + 1;
-            p = p + 1;
-          }
-          else {
-            if (*p == '\0') {
-              if (msg != (char **)0x0) {
-                *msg = "Missing ]";
-              }
-              return (Regex *)0x0;
-            }
-            set_longchar((longchar *)&local_3c,p);
-            *(undefined4 *)plVar2 = local_3c;
-            (plVar2->wch).ccs = local_38;
-            (plVar2->wch).code = local_34;
-            *(undefined4 *)&plVar2->ch = local_30;
-            st_ptr = st_ptr + 1;
-            p = p + WTF_LEN_MAP[(byte)*p];
-          }
+        else if ((*p == '-') && (p[1] != ']')) {
+          st_ptr->type = '\x03';
+          st_ptr = st_ptr + 1;
+          p = p + 1;
         }
-        if ((longchar *)&regex->position <= st_ptr) {
+        else {
+          if (*p == '\0') {
+            if (msg != (char **)0x0) {
+              *msg = "Missing ]";
+            }
+            return (Regex *)0x0;
+          }
+          set_longchar((longchar *)&local_3c,p);
+          *(undefined4 *)plVar2 = local_3c;
+          (plVar2->wch).ccs = local_38;
+          (plVar2->wch).code = local_34;
+          *(undefined4 *)&plVar2->ch = local_30;
+          st_ptr = st_ptr + 1;
+          p = p + WTF_LEN_MAP[(byte)*p];
+        }
+        if (&regex->position <= st_ptr) {
           if (msg != (char **)0x0) {
             *msg = "Regular expression too long";
           }
@@ -52350,14 +50770,14 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       re = re + 1;
       p = p + 1;
       pRVar3 = newRegex0(&p,igncase,(Regex *)0x0,msg,level);
-      regex->alt_regex = (regex *)pRVar3;
+      regex->alt_regex = pRVar3;
       if (regex->alt_regex == (regex *)0x0) {
         return (Regex *)0x0;
       }
       *ex = p;
       return regex;
     }
-    if (((longchar *)&regex->position <= st_ptr) || (regex->storage <= re)) {
+    if ((&regex->position <= st_ptr) || (regex->storage <= re)) {
       if (msg != (char **)0x0) {
         *msg = "Regular expression too long";
       }
@@ -52406,19 +50826,17 @@ int RegexMatch(Regex *re,char *str,int len,int firstp)
     }
     re->position = (char *)0x0;
     ep = str + len;
-    p = str;
-    while (p <= ep) {
+    for (p = str; p <= ep; p = p + WTF_LEN_MAP[(byte)*p]) {
       lpos = (char *)0x0;
       re->lposition = (char *)0x0;
-      r = re;
-      while (r != (Regex *)0x0) {
+      for (r = re; r != (Regex *)0x0; r = r->alt_regex) {
         if ((firstp == 0) || (p != str)) {
           iVar1 = 0;
         }
         else {
           iVar1 = 1;
         }
-        iVar1 = regmatch((regexchar *)r,p,ep,iVar1,&lpos);
+        iVar1 = regmatch(r->re,p,ep,iVar1,&lpos);
         if (iVar1 == -1) {
           re->position = (char *)0x0;
           return -1;
@@ -52427,12 +50845,10 @@ int RegexMatch(Regex *re,char *str,int len,int firstp)
            ((re->position = p, re->lposition == (char *)0x0 || (re->lposition < lpos)))) {
           re->lposition = lpos;
         }
-        r = (Regex *)r->alt_regex;
       }
       if (re->lposition != (char *)0x0) {
         return 1;
       }
-      p = p + WTF_LEN_MAP[(byte)*p];
     }
   }
   return 0;
@@ -52498,16 +50914,15 @@ label3:
       }
     }
     do {
-      while (iVar3 = regmatch_iter(c->ctx,(regexchar *)c->regex,c->str,end_p,c->firstp), iVar3 == 0)
-      {
+      while (iVar3 = regmatch_iter(c->ctx,c->regex->re,c->str,end_p,c->firstp), iVar3 == 0) {
         if (c->regex->alt_regex == (regex *)0x0) {
           return 0;
         }
-        c->regex = (Regex *)c->regex->alt_regex;
+        c->regex = c->regex->alt_regex;
 LAB_080a5fda:
         c->ctx->label = 0;
       }
-      c->n_any = (int)(c->ctx->lastpos + -(int)c->str);
+      c->n_any = (int)c->ctx->lastpos - (int)c->str;
     } while (c->n_any < 1);
     c->firstp = 0;
     if ((pat2->mode & 7) == 7) break;
@@ -52594,8 +51009,8 @@ int regmatch_iter(MatchingContext1 *c,regexchar *re,char *str,char *end_p,int fi
             do {
               c->sub_ctx->label = 0;
 label6:
-              while (iVar2 = regmatch_iter(c->sub_ctx,(regexchar *)c->sub_regex,c->str,c->end_p,
-                                           c->firstp), iVar2 != 0) {
+              while (iVar2 = regmatch_iter(c->sub_ctx,c->sub_regex->re,c->str,c->end_p,c->firstp),
+                    iVar2 != 0) {
                 if (c->sub_ctx->lastpos != c->str) {
                   c->firstp = 0;
                 }
@@ -52613,7 +51028,7 @@ label6:
               if (c->sub_regex->alt_regex == (regex *)0x0) {
                 return 0;
               }
-              c->sub_regex = (Regex *)c->sub_regex->alt_regex;
+              c->sub_regex = c->sub_regex->alt_regex;
             } while( true );
           }
           set_longchar((longchar *)&local_3c,c->str);
@@ -52643,7 +51058,7 @@ label1:
       iVar2 = 0;
     }
     else {
-      c->n_any = (int)(c->ctx2->lastpos + -(int)c->str);
+      c->n_any = (int)c->ctx2->lastpos - (int)c->str;
       c->lastpos = c->ctx2->lastpos;
       c->label = 1;
       iVar2 = 1;
@@ -52726,39 +51141,38 @@ int regmatch1(regexchar *re,longchar *c)
 
 {
   byte bVar1;
-  uint uVar2;
-  int iVar3;
+  int iVar2;
   int ans;
   
   if (c->type == '\x04') {
-    uVar2 = 0;
+    iVar2 = 0;
   }
   else {
     bVar1 = re->mode & 7;
     if (bVar1 == 1) {
-      uVar2 = 1;
+      iVar2 = 1;
     }
     else {
       if (bVar1 < 2) {
         if ((re->mode & 7) == 0) {
-          uVar2 = match_longchar((longchar *)re->p,c,re->mode & 0x40);
-          return uVar2;
+          iVar2 = match_longchar((longchar *)re->p,c,re->mode & 0x40);
+          return iVar2;
         }
       }
       else {
         if (bVar1 == 2) {
-          uVar2 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
-          return uVar2;
+          iVar2 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
+          return iVar2;
         }
         if (bVar1 == 3) {
-          iVar3 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
-          return (uint)(iVar3 == 0);
+          iVar2 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
+          return (uint)(iVar2 == 0);
         }
       }
-      uVar2 = 0;
+      iVar2 = 0;
     }
   }
-  return uVar2;
+  return iVar2;
 }
 
 
@@ -52807,30 +51221,28 @@ int match_longchar(longchar *a,longchar *b,int ignore)
         uVar2 = 0;
       }
     }
+    else if ((ignore == 0) || ((MYCTYPE_MAP[b->ch] & 4) == 0)) {
+      uVar2 = (uint)(a->ch == b->ch);
+    }
     else {
-      if ((ignore == 0) || ((MYCTYPE_MAP[b->ch] & 4) == 0)) {
-        uVar2 = (uint)(a->ch == b->ch);
+      if ((MYCTYPE_MAP[b->ch] & 4) == 0) {
+        bVar1 = b->ch;
       }
       else {
+        bVar1 = b->ch | 0x20;
+      }
+      if (a->ch != bVar1) {
         if ((MYCTYPE_MAP[b->ch] & 4) == 0) {
           bVar1 = b->ch;
         }
         else {
-          bVar1 = b->ch | 0x20;
+          bVar1 = b->ch & 0xdf;
         }
         if (a->ch != bVar1) {
-          if ((MYCTYPE_MAP[b->ch] & 4) == 0) {
-            bVar1 = b->ch;
-          }
-          else {
-            bVar1 = b->ch & 0xdf;
-          }
-          if (a->ch != bVar1) {
-            return 0;
-          }
+          return 0;
         }
-        uVar2 = 1;
       }
+      uVar2 = 1;
     }
   }
   else {
@@ -52954,7 +51366,7 @@ void news_close(News *news)
 {
   if (news->host != (char *)0x0) {
     if (news->rf != (InputStream)0x0) {
-      *(byte *)&news->rf->field_0x14 = *(byte *)&news->rf->field_0x14 & 0xef;
+      news->rf->field_0x14 = news->rf->field_0x14 & 0xef;
       ISclose(news->rf);
       news->rf = (InputStream)0x0;
     }
@@ -52983,10 +51395,10 @@ int news_open(News *news)
     piVar1 = newInputStream(sock);
     news->rf = piVar1;
     __fd = dup(sock);
-    pFVar2 = (FILE *)fdopen(__fd,"wb");
-    news->wf = pFVar2;
+    pFVar2 = fdopen(__fd,"wb");
+    news->wf = (FILE *)pFVar2;
     if ((news->rf != (InputStream)0x0) && (news->wf != (FILE *)0x0)) {
-      *(byte *)&news->rf->field_0x14 = *(byte *)&news->rf->field_0x14 | 0x10;
+      news->rf->field_0x14 = news->rf->field_0x14 | 0x10;
       news_command(news,(char *)0x0,(char *)0x0,&status);
       if (((status == 200) || (status == 0xc9)) &&
          (((news->mode == (char *)0x0 ||
@@ -53056,15 +51468,12 @@ char * name_from_address(char *str,int n)
     *pcVar2 = '\0';
     s = s + 1;
   }
-  else {
-    if ((*s == '(') && (pcVar2 = strchr(s + 1,0x29), pcVar2 != (char *)0x0)) {
-      *pcVar2 = '\0';
-      s = s + 1;
-    }
+  else if ((*s == '(') && (pcVar2 = strchr(s + 1,0x29), pcVar2 != (char *)0x0)) {
+    *pcVar2 = '\0';
+    s = s + 1;
   }
-  p = s;
   l = 0;
-  while (*p != '\0') {
+  for (p = s; *p != '\0'; p = p + WTF_LEN_MAP[(byte)*p]) {
     if ((MYCTYPE_MAP[(byte)*p] & 2) == 0) {
       bVar1 = false;
 LAB_080a7185:
@@ -53077,13 +51486,10 @@ LAB_080a7185:
       l = l + (uint)bVar3;
       if (n < l) break;
     }
-    else {
-      if (!bVar1) {
-        bVar1 = true;
-        goto LAB_080a7185;
-      }
+    else if (!bVar1) {
+      bVar1 = true;
+      goto LAB_080a7185;
     }
-    p = p + WTF_LEN_MAP[(byte)*p];
   }
   *p = '\0';
   return s;
@@ -53128,17 +51534,15 @@ LAB_080a7277:
       }
       else {
         if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+          tmp = Strnew_charp_n(str,(int)p - (int)str);
         }
         Strcat_charp(tmp,q);
       }
     }
-    else {
-      if (!bVar2) {
-        q = "&nbsp;";
-        bVar2 = true;
-        goto LAB_080a7277;
-      }
+    else if (!bVar2) {
+      q = "&nbsp;";
+      bVar2 = true;
+      goto LAB_080a7277;
     }
     p = p + 1;
   } while( true );
@@ -53217,7 +51621,7 @@ InputStream openNewsStream(ParsedURL *pu)
         port = pu->port;
       }
       else {
-        host = allocStr(host,(int)(p + -(int)host));
+        host = allocStr(host,(int)p - (int)host);
         port = atoi(p + 1);
       }
       if ((NNTP_mode == (char *)0x0) || (*NNTP_mode == '\0')) {
@@ -53418,8 +51822,7 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
           piVar7 = (int *)qgroup;
           pcVar8 = (char *)iVar3;
           iVar9 = (int)pcVar6;
-          page = Sprintf(
-                         "<html>\n<head>\n<base href=\"%s\">\n<title>Newsgroup: %s %d-%d</title>\n</head>\n<body>\n<h1>Newsgroup: %s %d-%d</h1>\n<hr>\n"
+          page = Sprintf("<html>\n<head>\n<base href=\"%s\">\n<title>Newsgroup: %s %d-%d</title>\n</head>\n<body>\n<h1>Newsgroup: %s %d-%d</h1>\n<hr>\n"
                          ,p_Var2->ptr,qgroup,iVar3,pcVar6,qgroup,iVar3,pcVar6);
           if (first < start) {
             i = start - MaxNewsMessage;
@@ -53518,8 +51921,7 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
               iVar3 = 0;
             }
             buf = newBuffer(iVar3);
-            i = start;
-            while ((i <= end && (i <= last))) {
+            for (i = start; (i <= end && (i <= last)); i = i + 1) {
               p_Var2 = Sprintf("%d",i);
               arg = (InputStream)p_Var2->ptr;
               status_00 = &status;
@@ -53554,7 +51956,6 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
                   }
                 }
               }
-              i = i + 1;
             }
           }
           Strcat_charp(page,"</table>\n");
@@ -53753,16 +52154,12 @@ void setKeymap(char *p,int lineno,int verbose)
         }
         if (mmap == (uchar **)0x0) {
           mmap = (uchar **)GC_malloc(0x10);
-          i = 0;
-          while (i < 4) {
+          for (i = 0; i < 4; i = i + 1) {
             puVar5 = (uchar *)GC_malloc(0x80);
             mmap[i] = puVar5;
-            j = 0;
-            while (j < 0x80) {
+            for (j = 0; j < 0x80; j = j + 1) {
               mmap[i][j] = '\0';
-              j = j + 1;
             }
-            i = i + 1;
           }
           (*mmap)[0x1b] = '\x1c';
           mmap[1][0x5b] = '\x1b';
@@ -53840,10 +52237,8 @@ void interpret_keymap(FILE *kf,stat *current,int force)
          ((*(uint *)&current->st_dev ^ (uint)kstat.st_dev |
           kstat.st_dev._4_4_ ^ *(uint *)((int)&current->st_dev + 4)) != 0)) ||
         (kstat.st_ino != current->st_ino)))) || (kstat.st_size != current->st_size)))) {
-    iVar1 = 0x16;
     psVar4 = &kstat;
-    while (iVar1 != 0) {
-      iVar1 = iVar1 + -1;
+    for (iVar1 = 0x16; iVar1 != 0; iVar1 = iVar1 + -1) {
       *(undefined4 *)&current->st_dev = *(undefined4 *)&psVar4->st_dev;
       psVar4 = (stat *)((int)psVar4 + (uint)bVar5 * -8 + 4);
       current = (stat *)((int)current + (uint)bVar5 * -8 + 4);
@@ -53907,7 +52302,7 @@ void initKeymap(int force)
   FILE *kf;
   
   pcVar1 = confFile("keymap");
-  pFVar2 = (FILE *)fopen(pcVar1,"rt");
+  pFVar2 = fopen(pcVar1,"rt");
   if (pFVar2 != (FILE *)0x0) {
     if ((force == 0) && (keymap_initialized != '\0')) {
       iVar3 = 0;
@@ -53915,11 +52310,11 @@ void initKeymap(int force)
     else {
       iVar3 = 1;
     }
-    interpret_keymap(pFVar2,&sys_current_keymap_file,iVar3);
-    fclose((FILE *)pFVar2);
+    interpret_keymap((FILE *)pFVar2,&sys_current_keymap_file,iVar3);
+    fclose(pFVar2);
   }
   pcVar1 = rcFile(keymap_file);
-  pFVar2 = (FILE *)fopen(pcVar1,"rt");
+  pFVar2 = fopen(pcVar1,"rt");
   if (pFVar2 != (FILE *)0x0) {
     if ((force == 0) && (keymap_initialized != '\0')) {
       iVar3 = 0;
@@ -53927,8 +52322,8 @@ void initKeymap(int force)
     else {
       iVar3 = 1;
     }
-    interpret_keymap(pFVar2,&current_keymap_file,iVar3);
-    fclose((FILE *)pFVar2);
+    interpret_keymap((FILE *)pFVar2,&current_keymap_file,iVar3);
+    fclose(pFVar2);
   }
   keymap_initialized = '\x01';
   return;
@@ -54017,11 +52412,9 @@ int getKey2(char **str)
                 s = s + 2;
                 esc = 0x100;
               }
-              else {
-                if (*s == '\x1b') {
-                  s = s + 1;
-                  esc = 0x100;
-                }
+              else if (*s == '\x1b') {
+                s = s + 1;
+                esc = 0x100;
               }
             }
             iVar4 = strncasecmp(s,"C-",2);
@@ -54029,11 +52422,9 @@ int getKey2(char **str)
               s = s + 2;
               bVar2 = true;
             }
-            else {
-              if ((*s == '^') && (s[1] != '\0')) {
-                s = s + 1;
-                bVar2 = true;
-              }
+            else if ((*s == '^') && (s[1] != '\0')) {
+              s = s + 1;
+              bVar2 = true;
             }
             if (((esc == 0) && (bVar2)) && (*s == '[')) {
               s = s + 1;
@@ -54050,11 +52441,9 @@ int getKey2(char **str)
                 s = s + 2;
                 bVar2 = true;
               }
-              else {
-                if ((*s == '^') && (s[1] != '\0')) {
-                  s = s + 1;
-                  bVar2 = true;
-                }
+              else if ((*s == '^') && (s[1] != '\0')) {
+                s = s + 1;
+                bVar2 = true;
               }
             }
             if (bVar2) {
@@ -54076,82 +52465,78 @@ int getKey2(char **str)
                 uVar3 = (int)*s - 0x40U | esc;
               }
             }
-            else {
-              if ((esc == 0x200) && ((MYCTYPE_MAP[(byte)*s] & 8) != 0)) {
-                c = *s + -0x30;
-                pbVar1 = (byte *)(s + 1);
-                if ((MYCTYPE_MAP[*pbVar1] & 8) != 0) {
-                  c = c * 10 + (char)*pbVar1 + -0x30;
-                  pbVar1 = (byte *)(s + 2);
-                }
-                s = (char *)pbVar1;
-                *str = s + 1;
-                if (*s == '~') {
-                  uVar3 = c | 0x400;
-                }
-                else {
-                  uVar3 = 0xffffffff;
-                }
+            else if ((esc == 0x200) && ((MYCTYPE_MAP[(byte)*s] & 8) != 0)) {
+              c = *s + -0x30;
+              pbVar1 = (byte *)(s + 1);
+              if ((MYCTYPE_MAP[*pbVar1] & 8) != 0) {
+                c = c * 10 + (char)*pbVar1 + -0x30;
+                pbVar1 = (byte *)(s + 2);
+              }
+              s = (char *)pbVar1;
+              *str = s + 1;
+              if (*s == '~') {
+                uVar3 = c | 0x400;
               }
               else {
-                iVar4 = strncasecmp(s,"SPC",3);
+                uVar3 = 0xffffffff;
+              }
+            }
+            else {
+              iVar4 = strncasecmp(s,"SPC",3);
+              if (iVar4 == 0) {
+                *str = s + 3;
+                uVar3 = esc | 0x20;
+              }
+              else {
+                iVar4 = strncasecmp(s,"TAB",3);
                 if (iVar4 == 0) {
                   *str = s + 3;
-                  uVar3 = esc | 0x20;
+                  uVar3 = esc | 9;
                 }
                 else {
-                  iVar4 = strncasecmp(s,"TAB",3);
+                  iVar4 = strncasecmp(s,"DEL",3);
                   if (iVar4 == 0) {
                     *str = s + 3;
-                    uVar3 = esc | 9;
+                    uVar3 = esc | 0x7f;
+                  }
+                  else if ((*s == '\\') && (s[1] != '\0')) {
+                    *str = s + 2;
+                    switch(s[1]) {
+                    case '\\':
+                      uVar3 = esc | 0x5c;
+                      break;
+                    default:
+                      uVar3 = 0xffffffff;
+                      break;
+                    case '^':
+                      uVar3 = esc | 0x5e;
+                      break;
+                    case 'a':
+                      uVar3 = esc | 7;
+                      break;
+                    case 'b':
+                      uVar3 = esc | 8;
+                      break;
+                    case 'e':
+                      uVar3 = esc | 0x1b;
+                      break;
+                    case 'n':
+                      uVar3 = esc | 10;
+                      break;
+                    case 'r':
+                      uVar3 = esc | 0xd;
+                      break;
+                    case 't':
+                      uVar3 = esc | 9;
+                    }
                   }
                   else {
-                    iVar4 = strncasecmp(s,"DEL",3);
-                    if (iVar4 == 0) {
-                      *str = s + 3;
-                      uVar3 = esc | 0x7f;
+                    *str = s + 1;
+                    if ((MYCTYPE_MAP[(byte)*s] & 0x11) == 0) {
+                      uVar3 = 0xffffffff;
                     }
                     else {
-                      if ((*s == '\\') && (s[1] != '\0')) {
-                        *str = s + 2;
-                        switch(s[1]) {
-                        case '\\':
-                          uVar3 = esc | 0x5c;
-                          break;
-                        default:
-                          uVar3 = 0xffffffff;
-                          break;
-                        case '^':
-                          uVar3 = esc | 0x5e;
-                          break;
-                        case 'a':
-                          uVar3 = esc | 7;
-                          break;
-                        case 'b':
-                          uVar3 = esc | 8;
-                          break;
-                        case 'e':
-                          uVar3 = esc | 0x1b;
-                          break;
-                        case 'n':
-                          uVar3 = esc | 10;
-                          break;
-                        case 'r':
-                          uVar3 = esc | 0xd;
-                          break;
-                        case 't':
-                          uVar3 = esc | 9;
-                        }
-                      }
-                      else {
-                        *str = s + 1;
-                        if ((MYCTYPE_MAP[(byte)*s] & 0x11) == 0) {
-                          uVar3 = 0xffffffff;
-                        }
-                        else {
-                          uVar3 = *s | esc;
-                        }
-                      }
+                      uVar3 = *s | esc;
                     }
                   }
                 }
@@ -54210,11 +52595,10 @@ char * getWord(char **str)
   while ((p_00 = p, *p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
     p = p + 1;
   }
-  while (((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) == 0)) && (*p != ';'))) {
-    p = p + 1;
+  for (; ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) == 0)) && (*p != ';')); p = p + 1) {
   }
   *str = p;
-  p_Var1 = Strnew_charp_n(p_00,(int)(p + -(int)p_00));
+  p_Var1 = Strnew_charp_n(p_00,(int)p - (int)p_00);
   return p_Var1->ptr;
 }
 
@@ -54242,7 +52626,7 @@ char * getQWord(char **str)
   while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
     p = p + 1;
   }
-  while (*p != '\0') {
+  for (; *p != '\0'; p = p + 1) {
     if (bVar2) {
       if (bVar3) {
         if ((*p != '\\') && (*p != '\'')) {
@@ -54255,30 +52639,26 @@ char * getQWord(char **str)
           x->ptr[x->length] = '\0';
         }
       }
-      else {
-        if (bVar4) {
-          if ((*p != '\\') && (*p != '\"')) {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar1 = x->length;
-            x->ptr[iVar1] = '\\';
-            x->length = iVar1 + 1;
-            x->ptr[x->length] = '\0';
+      else if (bVar4) {
+        if ((*p != '\\') && (*p != '\"')) {
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
           }
+          iVar1 = x->length;
+          x->ptr[iVar1] = '\\';
+          x->length = iVar1 + 1;
+          x->ptr[x->length] = '\0';
         }
-        else {
-          if ((((*p != '\\') && (*p != '\'')) && (*p != '\"')) && ((MYCTYPE_MAP[(byte)*p] & 2) == 0)
-             ) {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar1 = x->length;
-            x->ptr[iVar1] = '\\';
-            x->length = iVar1 + 1;
-            x->ptr[x->length] = '\0';
-          }
+      }
+      else if ((((*p != '\\') && (*p != '\'')) && (*p != '\"')) &&
+              ((MYCTYPE_MAP[(byte)*p] & 2) == 0)) {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
+        iVar1 = x->length;
+        x->ptr[iVar1] = '\\';
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
       }
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
@@ -54289,64 +52669,53 @@ char * getQWord(char **str)
       x->ptr[x->length] = '\0';
       bVar2 = false;
     }
-    else {
-      if (*p == '\\') {
-        bVar2 = true;
+    else if (*p == '\\') {
+      bVar2 = true;
+    }
+    else if (bVar3) {
+      if (*p == '\'') {
+        bVar3 = false;
       }
       else {
-        if (bVar3) {
-          if (*p == '\'') {
-            bVar3 = false;
-          }
-          else {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar1 = x->length;
-            x->ptr[iVar1] = *p;
-            x->length = iVar1 + 1;
-            x->ptr[x->length] = '\0';
-          }
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
         }
-        else {
-          if (bVar4) {
-            if (*p == '\"') {
-              bVar4 = false;
-            }
-            else {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar1 = x->length;
-              x->ptr[iVar1] = *p;
-              x->length = iVar1 + 1;
-              x->ptr[x->length] = '\0';
-            }
-          }
-          else {
-            if (*p == '\'') {
-              bVar3 = true;
-            }
-            else {
-              if (*p == '\"') {
-                bVar4 = true;
-              }
-              else {
-                if (((MYCTYPE_MAP[(byte)*p] & 2) != 0) || (*p == ';')) break;
-                if (x->area_size <= x->length + 1) {
-                  Strgrow(x);
-                }
-                iVar1 = x->length;
-                x->ptr[iVar1] = *p;
-                x->length = iVar1 + 1;
-                x->ptr[x->length] = '\0';
-              }
-            }
-          }
-        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = *p;
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
       }
     }
-    p = p + 1;
+    else if (bVar4) {
+      if (*p == '\"') {
+        bVar4 = false;
+      }
+      else {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar1 = x->length;
+        x->ptr[iVar1] = *p;
+        x->length = iVar1 + 1;
+        x->ptr[x->length] = '\0';
+      }
+    }
+    else if (*p == '\'') {
+      bVar3 = true;
+    }
+    else if (*p == '\"') {
+      bVar4 = true;
+    }
+    else {
+      if (((MYCTYPE_MAP[(byte)*p] & 2) != 0) || (*p == ';')) break;
+      if (x->area_size <= x->length + 1) {
+        Strgrow(x);
+      }
+      iVar1 = x->length;
+      x->ptr[iVar1] = *p;
+      x->length = iVar1 + 1;
+      x->ptr[x->length] = '\0';
+    }
   }
   *str = p;
   return x->ptr;
@@ -54369,10 +52738,8 @@ void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
   p_00 = (wc_uchar *)getQWord(&p);
   if (*p_00 == '\0') {
     *str = (char *)0x0;
-    b = 0;
-    while (b < 3) {
+    for (b = 0; b < 3; b = b + 1) {
       map[b] = (MouseActionMap *)0x0;
-      b = b + 1;
     }
   }
   else {
@@ -54384,8 +52751,7 @@ void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
       *width = 100;
     }
     if (iVar1 < *width) {
-      b = 0;
-      while (b < 3) {
+      for (b = 0; b < 3; b = b + 1) {
         if (map[b] != (MouseActionMap *)0x0) {
           pMVar3 = (MouseActionMap *)GC_realloc(map[b],*width * 8);
           map[b] = pMVar3;
@@ -54395,7 +52761,6 @@ void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
             map[b][x].data = (char *)0x0;
           }
         }
-        b = b + 1;
       }
     }
   }
@@ -54421,11 +52786,9 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
   if (*map == (MouseActionMap *)0x0) {
     pMVar1 = (MouseActionMap *)GC_malloc(width << 3);
     *map = pMVar1;
-    x = 0;
-    while (x < width) {
+    for (x = 0; x < width; x = x + 1) {
       (*map)[x].func = (anon_subr_void_varargs_for_func *)0x0;
       (*map)[x].data = (char *)0x0;
-      x = x + 1;
     }
   }
   pbVar2 = (byte *)getWord(&p);
@@ -54440,7 +52803,7 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
       if (*s == '\0') {
         s = (char *)0x0;
       }
-      while (x <= iVar3) {
+      for (; x <= iVar3; x = x + 1) {
         if (iVar4 < 0) {
           paVar5 = (anon_subr_void_varargs_for_func *)0x0;
         }
@@ -54449,7 +52812,6 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
         }
         (*map)[x].func = (anon_subr_void_varargs_for_func *)paVar5;
         (*map)[x].data = s;
-        x = x + 1;
       }
     }
   }
@@ -54514,7 +52876,7 @@ void interpret_mouse_action(FILE *mf)
       if (*pcVar2 != '#') {
         iVar4 = strcmp(pcVar2,"menu");
         if (iVar4 == 0) {
-          setMouseAction0((char **)&mouse_action,&mouse_action.menu_width,mouse_action.menu_map,p);
+          setMouseAction0(&mouse_action.menu_str,&mouse_action.menu_width,mouse_action.menu_map,p);
         }
         else {
           iVar4 = strcmp(pcVar2,"lastline");
@@ -54608,13 +52970,13 @@ void initMouseAction(void)
   mouse_action.lastline_str = p_Var2->ptr;
   pcVar3 = confFile("mouse");
   mf = (FILE *)fopen(pcVar3,"rt");
-  if (mf != (FILE *)0x0) {
+  if ((FILE *)mf != (FILE *)0x0) {
     interpret_mouse_action(mf);
     fclose((FILE *)mf);
   }
   pcVar3 = rcFile("mouse");
   mf = (FILE *)fopen(pcVar3,"rt");
-  if (mf != (FILE *)0x0) {
+  if ((FILE *)mf != (FILE *)0x0) {
     interpret_mouse_action(mf);
     fclose((FILE *)mf);
   }
@@ -54761,11 +53123,9 @@ Str portlist2str(portlist *first)
   portlist *pl;
   
   x = Sprintf("%d",(uint)first->port);
-  pl = first->next;
-  while (pl != (portlist *)0x0) {
+  for (pl = first->next; pl != (portlist *)0x0; pl = pl->next) {
     y = Sprintf(", %d",(uint)pl->port);
     Strcat(x,y);
-    pl = pl->next;
   }
   return x;
 }
@@ -54925,8 +53285,7 @@ Str find_cookie(ParsedURL *pu)
   version = 0;
   pcVar1 = FQDN(pu->host);
   check_expired_cookies();
-  p = First_cookie;
-  while (p != (cookie *)0x0) {
+  for (p = First_cookie; p != (cookie *)0x0; p = p->next) {
     domainname_00 = pcVar1;
     if (p->version != '\0') {
       domainname_00 = pu->host;
@@ -54947,7 +53306,6 @@ Str find_cookie(ParsedURL *pu)
         }
       }
     }
-    p = p->next;
   }
   if (fco == (cookie *)0x0) {
     x = (Str)0x0;
@@ -54960,8 +53318,7 @@ Str find_cookie(ParsedURL *pu)
     }
     p_Var3 = make_cookie(fco);
     Strcat(x,p_Var3);
-    p1 = fco->next;
-    while (p1 != (cookie *)0x0) {
+    for (p1 = fco->next; p1 != (cookie *)0x0; p1 = p1->next) {
       Strcat_charp(x,"; ");
       p_Var3 = make_cookie(p1);
       Strcat(x,p_Var3);
@@ -54980,7 +53337,6 @@ Str find_cookie(ParsedURL *pu)
           Strcat(x,p_Var3);
         }
       }
-      p1 = p1->next;
     }
   }
   return x;
@@ -55037,15 +53393,14 @@ int add_cookie(ParsedURL *pu,Str name,Str value,time_t expires,Str domain,Str pa
       }
       if (iVar4 == 2) {
         bVar1 = false;
-        sdomain = special_domain;
-        while ((!bVar1 && (*sdomain != (char *)0x0))) {
+        for (sdomain = special_domain; (!bVar1 && (*sdomain != (char *)0x0)); sdomain = sdomain + 1)
+        {
           iVar4 = domain->length;
           sVar5 = strlen(*sdomain);
           iVar4 = iVar4 - sVar5;
           if ((-1 < iVar4) && (iVar4 = strcasecmp(*sdomain,domain->ptr + iVar4), iVar4 == 0)) {
             bVar1 = true;
           }
-          sdomain = sdomain + 1;
         }
         if (!bVar1) {
           return 3;
@@ -55098,7 +53453,7 @@ int add_cookie(ParsedURL *pu,Str name,Str value,time_t expires,Str domain,Str pa
     p->next = First_cookie;
     First_cookie = p;
   }
-  copyParsedURL((ParsedURL *)p,pu);
+  copyParsedURL(&p->url,pu);
   p->name = name;
   p->value = value;
   p->expires = expires;
@@ -55185,8 +53540,7 @@ void save_cookies(void)
     __filename = rcFile("cookie");
     __stream = fopen(__filename,"w");
     if (__stream != (FILE *)0x0) {
-      p = First_cookie;
-      while (p != (cookie *)0x0) {
+      for (p = First_cookie; p != (cookie *)0x0; p = p->next) {
         if (((p->flag & 1U) != 0) && ((p->flag & 0x10U) == 0)) {
           if (p->commentURL == (Str)0x0) {
             pcVar9 = "";
@@ -55214,11 +53568,10 @@ void save_cookies(void)
           tVar5 = p->expires;
           pcVar6 = p->value->ptr;
           pcVar7 = p->name->ptr;
-          p_Var8 = parsedURL2Str((ParsedURL *)p);
+          p_Var8 = parsedURL2Str(&p->url);
           fprintf(__stream,"%s\t%s\t%s\t%ld\t%s\t%s\t%d\t%d\t%s\t%s\t%s\n",p_Var8->ptr,pcVar7,pcVar6
                   ,tVar5,pcVar4,pcVar3,(int)cVar2,(int)cVar1,local_48,pcVar10,pcVar9);
         }
-        p = p->next;
       }
       fclose(__stream);
       chmod(__filename,0x180);
@@ -55274,14 +53627,12 @@ void load_cookies(void)
   
   __filename = rcFile("cookie");
   fp = (FILE *)fopen(__filename,"r");
-  if (fp != (FILE *)0x0) {
+  if ((FILE *)fp != (FILE *)0x0) {
     if (First_cookie == (cookie *)0x0) {
       p = (cookie *)0x0;
     }
     else {
-      p = First_cookie;
-      while (p->next != (cookie *)0x0) {
-        p = p->next;
+      for (p = First_cookie; p->next != (cookie *)0x0; p = p->next) {
       }
     }
     while (line = Strfgets(fp), line->length != 0) {
@@ -55289,7 +53640,7 @@ void load_cookies(void)
       p_url = (cookie *)GC_malloc(0x50);
       p_url->next = (cookie *)0x0;
       p_url->flag = '\0';
-      p_url->version = 0;
+      p_url->version = '\0';
       p_url->expires = -1;
       p_url->comment = (Str)0x0;
       p_url->portl = (portlist *)0x0;
@@ -55408,10 +53759,9 @@ Buffer * cookie_list_panel(void)
   }
   else {
     Strcat_charp(x,"<ol>");
-    p = First_cookie;
     i = 0;
-    while (p != (cookie *)0x0) {
-      p_Var3 = parsedURL2Str((ParsedURL *)p);
+    for (p = First_cookie; p != (cookie *)0x0; p = p->next) {
+      p_Var3 = parsedURL2Str(&p->url);
       pcVar4 = html_quote(p_Var3->ptr);
       if (p->expires == -1) {
         tmp2[0] = '\0';
@@ -55503,12 +53853,10 @@ Buffer * cookie_list_panel(void)
       else {
         pcVar5 = " checked";
       }
-      p_Var3 = Sprintf(
-                       "<tr><td width=\"80\"><b>Use:</b></td><td><input type=radio name=\"%d\" value=1%s>Yes&nbsp;&nbsp;<input type=radio name=\"%d\" value=0%s>No"
+      p_Var3 = Sprintf("<tr><td width=\"80\"><b>Use:</b></td><td><input type=radio name=\"%d\" value=1%s>Yes&nbsp;&nbsp;<input type=radio name=\"%d\" value=0%s>No"
                        ,i,pcVar5,i,pcVar4);
       Strcat(x,p_Var3);
       Strcat_charp(x,"</td></tr><tr><td><input type=submit value=\"OK\"></table><p>");
-      p = p->next;
       i = i + 1;
     }
     Strcat_charp(x,"</ol></form></body></html>");
@@ -55533,7 +53881,7 @@ void set_cookie_flag(parsed_tagarg *arg)
   int v;
   int n;
   
-  while (arg != (parsed_tagarg *)0x0) {
+  for (; arg != (parsed_tagarg *)0x0; arg = arg->next) {
     if ((((arg->arg != (char *)0x0) && (*arg->arg != '\0')) && (arg->value != (char *)0x0)) &&
        (*arg->value != '\0')) {
       n_00 = atoi(arg->arg);
@@ -55553,7 +53901,6 @@ void set_cookie_flag(parsed_tagarg *arg)
         }
       }
     }
-    arg = arg->next;
   }
   backBf();
   return;
@@ -55573,23 +53920,19 @@ int check_cookie_accept_domain(char *domain)
   }
   else {
     if ((Cookie_accept_domains != (TextList *)0x0) && (0 < Cookie_accept_domains->nitem)) {
-      tl = Cookie_accept_domains->first;
-      while (tl != (TextListItem *)0x0) {
+      for (tl = Cookie_accept_domains->first; tl != (TextListItem *)0x0; tl = tl->next) {
         pcVar2 = domain_match(domain,tl->ptr);
         if (pcVar2 != (char *)0x0) {
           return 1;
         }
-        tl = (TextListItem *)tl->next;
       }
     }
     if ((Cookie_reject_domains != (TextList *)0x0) && (0 < Cookie_reject_domains->nitem)) {
-      tl = Cookie_reject_domains->first;
-      while (tl != (TextListItem *)0x0) {
+      for (tl = Cookie_reject_domains->first; tl != (TextListItem *)0x0; tl = tl->next) {
         pcVar2 = domain_match(domain,tl->ptr);
         if (pcVar2 != (char *)0x0) {
           return 0;
         }
-        tl = (TextListItem *)tl->next;
       }
     }
     iVar1 = 1;
@@ -55616,8 +53959,7 @@ Buffer * historyBuffer(Hist *hist)
   Strcat_charp(x,"<body>\n<h1>History Page</h1>\n<hr>\n");
   Strcat_charp(x,"<ol>\n");
   if ((hist != (Hist *)0x0) && (hist->list != (HistList *)0x0)) {
-    item = (HistItem *)hist->list->last;
-    while (item != (HistItem *)0x0) {
+    for (item = hist->list->last; item != (HistItem *)0x0; item = item->prev) {
       y = html_quote((char *)item->ptr);
       p = y;
       if (DecodeURL != 0) {
@@ -55629,7 +53971,6 @@ Buffer * historyBuffer(Hist *hist)
       Strcat_charp(x,"\">");
       Strcat_charp(x,p);
       Strcat_charp(x,"</a>\n");
-      item = (HistItem *)item->prev;
     }
   }
   Strcat_charp(x,"</ol>\n</body>\n</html>");
@@ -55643,7 +53984,7 @@ void loadHistory(Hist *hist)
 
 {
   char *pcVar1;
-  FILE *f_00;
+  FILE *__stream;
   Str s;
   int iVar2;
   Str line;
@@ -55651,10 +53992,10 @@ void loadHistory(Hist *hist)
   
   if (hist != (Hist *)0x0) {
     pcVar1 = rcFile("history");
-    f_00 = (FILE *)fopen(pcVar1,"rt");
-    if (f_00 != (FILE *)0x0) {
-      while (iVar2 = feof((FILE *)f_00), iVar2 == 0) {
-        s = Strfgets(f_00);
+    __stream = fopen(pcVar1,"rt");
+    if (__stream != (FILE *)0x0) {
+      while (iVar2 = feof(__stream), iVar2 == 0) {
+        s = Strfgets((FILE *)__stream);
         Strchop(s);
         Strremovefirstspaces(s);
         Strremovetrailingspaces(s);
@@ -55663,7 +54004,7 @@ void loadHistory(Hist *hist)
           pushHist(hist,pcVar1);
         }
       }
-      fclose((FILE *)f_00);
+      fclose(__stream);
     }
   }
   return;
@@ -55691,14 +54032,12 @@ void saveHistory(Hist *hist,size_t size)
       disp_err_message("Can\'t open history",0);
     }
     else {
-      item = (HistItem *)hist->list->first;
-      while ((item != (HistItem *)0x0 && (size < (uint)(int)hist->list->nitem))) {
-        size = size + 1;
-        item = (HistItem *)item->next;
+      item = hist->list->first;
+      for (; (item != (HistItem *)0x0 && (size < (uint)(int)hist->list->nitem)); size = size + 1) {
+        item = item->next;
       }
-      while (item != (HistItem *)0x0) {
+      for (; item != (HistItem *)0x0; item = item->next) {
         fprintf(__stream,"%s\n",item->ptr);
-        item = (HistItem *)item->next;
       }
       iVar2 = fclose(__stream);
       if (iVar2 == -1) {
@@ -55724,7 +54063,7 @@ Hist * newHist(void)
   
   pHVar1 = (Hist *)GC_malloc(0xc);
   pGVar2 = newGeneralList();
-  pHVar1->list = (HistList *)pGVar2;
+  pHVar1->list = pGVar2;
   pHVar1->current = (HistItem *)0x0;
   pHVar1->hash = (Hash_sv *)0x0;
   return pHVar1;
@@ -55744,10 +54083,8 @@ Hist * copyHist(Hist *hist)
   }
   else {
     hist_00 = newHist();
-    item = (HistItem *)hist->list->first;
-    while (item != (HistItem *)0x0) {
+    for (item = hist->list->first; item != (HistItem *)0x0; item = item->next) {
       pushHist(hist_00,(char *)item->ptr);
-      item = (HistItem *)item->next;
     }
   }
   return hist_00;
@@ -55769,14 +54106,14 @@ HistItem * unshiftHist(Hist *hist,char *ptr)
   else {
     n = hist->list->first;
     s = allocStr(ptr,-1);
-    pHVar1 = (HistItem *)newListItem(s,n,(ListItem *)0x0);
+    pHVar1 = newListItem(s,n,(ListItem *)0x0);
     if (hist->list->first == (ListItem *)0x0) {
-      hist->list->last = (ListItem *)pHVar1;
+      hist->list->last = pHVar1;
     }
     else {
-      hist->list->first->prev = (_listitem *)pHVar1;
+      hist->list->first->prev = pHVar1;
     }
-    hist->list->first = (ListItem *)pHVar1;
+    hist->list->first = pHVar1;
     hist->list->nitem = hist->list->nitem + 1;
   }
   return pHVar1;
@@ -55798,14 +54135,14 @@ HistItem * pushHist(Hist *hist,char *ptr)
   else {
     p = hist->list->last;
     s = allocStr(ptr,-1);
-    pHVar1 = (HistItem *)newListItem(s,(ListItem *)0x0,p);
+    pHVar1 = newListItem(s,(ListItem *)0x0,p);
     if (hist->list->last == (ListItem *)0x0) {
-      hist->list->first = (ListItem *)pHVar1;
+      hist->list->first = pHVar1;
     }
     else {
-      hist->list->last->next = (_listitem *)pHVar1;
+      hist->list->last->next = pHVar1;
     }
-    hist->list->last = (ListItem *)pHVar1;
+    hist->list->last = pHVar1;
     hist->list->nitem = hist->list->nitem + 1;
   }
   return pHVar1;
@@ -55826,13 +54163,13 @@ HistItem * pushHashHist(Hist *hist,char *ptr)
     pHVar1 = getHashHist(hist,ptr);
     if (pHVar1 != (HistItem *)0x0) {
       if (pHVar1->next == (_listitem *)0x0) {
-        hist->list->last = (ListItem *)pHVar1->prev;
+        hist->list->last = pHVar1->prev;
       }
       else {
         pHVar1->next->prev = pHVar1->prev;
       }
       if (pHVar1->prev == (_listitem *)0x0) {
-        hist->list->first = (ListItem *)pHVar1->next;
+        hist->list->first = pHVar1->next;
       }
       else {
         pHVar1->prev->next = pHVar1->next;
@@ -55861,10 +54198,8 @@ HistItem * getHashHist(Hist *hist,char *ptr)
     if (hist->hash == (Hash_sv *)0x0) {
       pHVar2 = newHash_sv(0x7f);
       hist->hash = pHVar2;
-      item = (HistItem *)hist->list->first;
-      while (item != (HistItem *)0x0) {
+      for (item = hist->list->first; item != (HistItem *)0x0; item = item->next) {
         putHash_sv(hist->hash,(char *)item->ptr,item);
-        item = (HistItem *)item->next;
       }
     }
     pHVar1 = (HistItem *)getHash_sv(hist->hash,ptr,(void *)0x0);
@@ -55882,14 +54217,12 @@ char * lastHist(Hist *hist)
   if ((hist == (Hist *)0x0) || (hist->list == (HistList *)0x0)) {
     pcVar1 = (char *)0x0;
   }
+  else if (hist->list->last == (ListItem *)0x0) {
+    pcVar1 = (char *)0x0;
+  }
   else {
-    if (hist->list->last == (ListItem *)0x0) {
-      pcVar1 = (char *)0x0;
-    }
-    else {
-      hist->current = (HistItem *)hist->list->last;
-      pcVar1 = (char *)hist->current->ptr;
-    }
+    hist->current = hist->list->last;
+    pcVar1 = (char *)hist->current->ptr;
   }
   return pcVar1;
 }
@@ -55904,14 +54237,12 @@ char * nextHist(Hist *hist)
   if ((hist == (Hist *)0x0) || (hist->list == (HistList *)0x0)) {
     pcVar1 = (char *)0x0;
   }
+  else if ((hist->current == (HistItem *)0x0) || (hist->current->next == (_listitem *)0x0)) {
+    pcVar1 = (char *)0x0;
+  }
   else {
-    if ((hist->current == (HistItem *)0x0) || (hist->current->next == (_listitem *)0x0)) {
-      pcVar1 = (char *)0x0;
-    }
-    else {
-      hist->current = (HistItem *)hist->current->next;
-      pcVar1 = (char *)hist->current->ptr;
-    }
+    hist->current = hist->current->next;
+    pcVar1 = (char *)hist->current->ptr;
   }
   return pcVar1;
 }
@@ -55926,14 +54257,12 @@ char * prevHist(Hist *hist)
   if ((hist == (Hist *)0x0) || (hist->list == (HistList *)0x0)) {
     pcVar1 = (char *)0x0;
   }
+  else if ((hist->current == (HistItem *)0x0) || (hist->current->prev == (_listitem *)0x0)) {
+    pcVar1 = (char *)0x0;
+  }
   else {
-    if ((hist->current == (HistItem *)0x0) || (hist->current->prev == (_listitem *)0x0)) {
-      pcVar1 = (char *)0x0;
-    }
-    else {
-      hist->current = (HistItem *)hist->current->prev;
-      pcVar1 = (char *)hist->current->ptr;
-    }
+    hist->current = hist->current->prev;
+    pcVar1 = (char *)hist->current->ptr;
   }
   return pcVar1;
 }
@@ -55948,10 +54277,8 @@ void print_headers(Buffer *buf,int len)
   TextListItem *tp;
   
   if (buf->document_header != (TextList *)0x0) {
-    tp = buf->document_header->first;
-    while (tp != (TextListItem *)0x0) {
+    for (tp = buf->document_header->first; tp != (TextListItem *)0x0; tp = tp->next) {
       puts(tp->ptr);
-      tp = (TextListItem *)tp->next;
     }
   }
   p_Var1 = parsedURL2Str(&buf->currentURL);
@@ -56000,13 +54327,11 @@ void internal_get(char *url,int flag,FormList *request)
       iVar2 = strcasecmp(buf_00->type,"text/plain");
       if (iVar2 == 0) {
         len_1 = 0;
-        lp = buf_00->firstLine;
-        while (lp != (Line *)0x0) {
+        for (lp = buf_00->firstLine; lp != (Line *)0x0; lp = lp->next) {
           len_1 = len_1 + lp->len;
           if (lp->lineBuf[lp->len + -1] != '\n') {
             len_1 = len_1 + 1;
           }
-          lp = (Line *)lp->next;
         }
         print_headers(buf_00,len_1);
         putchar(10);
@@ -56018,8 +54343,7 @@ void internal_get(char *url,int flag,FormList *request)
     }
     else {
       len = 0;
-      p = backend_halfdump_buf->first;
-      while (p != (TextLineListItem *)0x0) {
+      for (p = backend_halfdump_buf->first; p != (TextLineListItem *)0x0; p = p->next) {
         pTVar1 = p->ptr;
         if (ExtHalfdump == '\0') {
           p_Var3 = p->ptr->line;
@@ -56029,7 +54353,6 @@ void internal_get(char *url,int flag,FormList *request)
         }
         pTVar1->line = p_Var3;
         len = len + p->ptr->line->length + 1;
-        p = (TextLineListItem *)p->next;
       }
       p_Var3 = Strnew_charp("<pre>\n");
       pcVar4 = html_quote(buf_00->buffername);
@@ -56037,10 +54360,8 @@ void internal_get(char *url,int flag,FormList *request)
       print_headers(buf_00,p_Var3->length + len + p_Var5->length);
       putchar(10);
       printf("%s",p_Var3->ptr);
-      p = backend_halfdump_buf->first;
-      while (p != (TextLineListItem *)0x0) {
+      for (p = backend_halfdump_buf->first; p != (TextLineListItem *)0x0; p = p->next) {
         puts(p->ptr->line->ptr);
-        p = (TextLineListItem *)p->next;
       }
       printf("%s",p_Var5->ptr);
     }
@@ -56167,7 +54488,7 @@ void post(TextList *argv)
       }
     }
     request_00->length = length;
-    internal_get(url,flag,(FormList *)request_00);
+    internal_get(url,flag,request_00);
   }
   return;
 }
@@ -56181,8 +54502,7 @@ void set(TextList *argv)
   int i;
   
   if (1 < argv->nitem) {
-    i = 0;
-    while (variable_table[i].name != (char *)0x0) {
+    for (i = 0; variable_table[i].name != (char *)0x0; i = i + 1) {
       iVar1 = strcasecmp(variable_table[i].name,argv->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)argv);
@@ -56192,7 +54512,6 @@ void set(TextList *argv)
         (*variable_table[i].set_func)(argv);
         return;
       }
-      i = i + 1;
     }
   }
   return;
@@ -56207,8 +54526,7 @@ void show(TextList *argv)
   int i;
   
   if (0 < argv->nitem) {
-    i = 0;
-    while (variable_table[i].name != (char *)0x0) {
+    for (i = 0; variable_table[i].name != (char *)0x0; i = i + 1) {
       iVar1 = strcasecmp(variable_table[i].name,argv->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)argv);
@@ -56218,7 +54536,6 @@ void show(TextList *argv)
         (*variable_table[i].show_func)(argv);
         return;
       }
-      i = i + 1;
     }
   }
   return;
@@ -56241,11 +54558,9 @@ void help(TextList *argv)
 {
   int i;
   
-  i = 0;
-  while (command_table[i].name != (char *)0x0) {
+  for (i = 0; command_table[i].name != (char *)0x0; i = i + 1) {
     printf("%s %s\n    %s\n",command_table[i].name,command_table[i].option_string,
            command_table[i].help);
-    i = i + 1;
   }
   return;
 }
@@ -56282,8 +54597,7 @@ void call_command_function(char *str)
   
   tl = split(str);
   if (0 < tl->nitem) {
-    i = 0;
-    while (command_table[i].name != (char *)0x0) {
+    for (i = 0; command_table[i].name != (char *)0x0; i = i + 1) {
       iVar1 = strcasecmp(command_table[i].name,tl->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)tl);
@@ -56293,7 +54607,6 @@ void call_command_function(char *str)
         (*command_table[i].func)(tl);
         return;
       }
-      i = i + 1;
     }
   }
   return;
@@ -56339,8 +54652,8 @@ char * readline(char *prompt)
   
   fputs(prompt,stdout);
   fflush(stdout);
-  p_Var1 = Strfgets(stdin);
-  iVar2 = feof((FILE *)stdin);
+  p_Var1 = Strfgets((FILE *)stdin);
+  iVar2 = feof(stdin);
   if ((iVar2 == 0) || (*p_Var1->ptr != '\0')) {
     pcVar3 = p_Var1->ptr;
   }
@@ -56370,7 +54683,7 @@ TextList * split(char *p)
   bVar2 = false;
   s = Strnew();
   tl = (TextList *)newGeneralList();
-  while (*p != '\0') {
+  for (; *p != '\0'; p = p + 1) {
     iVar4 = (int)*p;
     if (iVar4 < 0xe) {
       if ((iVar4 < 0xc) && (1 < iVar4 - 9U)) goto LAB_080acccb;
@@ -56384,130 +54697,117 @@ LAB_080acc32:
         s->length = iVar4 + 1;
         s->ptr[s->length] = '\0';
       }
-      else {
-        if (0 < s->length) {
-          pcVar5 = allocStr(s->ptr,-1);
-          pushValue((GeneralList *)tl,pcVar5);
-          s = Strnew();
+      else if (0 < s->length) {
+        pcVar5 = allocStr(s->ptr,-1);
+        pushValue((GeneralList *)tl,pcVar5);
+        s = Strnew();
+      }
+    }
+    else if (iVar4 == 0x22) {
+      if (bVar2) {
+        if (s->area_size <= s->length + 1) {
+          Strgrow(s);
         }
+        iVar4 = s->length;
+        s->ptr[iVar4] = '\"';
+        s->length = iVar4 + 1;
+        s->ptr[s->length] = '\0';
+      }
+      else {
+        bVar3 = !bVar3;
+      }
+    }
+    else if (iVar4 < 0x23) {
+      if (iVar4 == 0x20) goto LAB_080acc32;
+LAB_080acccb:
+      if (s->area_size <= s->length + 1) {
+        Strgrow(s);
+      }
+      iVar4 = s->length;
+      s->ptr[iVar4] = *p;
+      s->length = iVar4 + 1;
+      s->ptr[s->length] = '\0';
+    }
+    else if (iVar4 == 0x27) {
+      if (bVar3) {
+        if (s->area_size <= s->length + 1) {
+          Strgrow(s);
+        }
+        iVar4 = s->length;
+        s->ptr[iVar4] = '\'';
+        s->length = iVar4 + 1;
+        s->ptr[s->length] = '\0';
+      }
+      else {
+        bVar2 = !bVar2;
       }
     }
     else {
-      if (iVar4 == 0x22) {
-        if (bVar2) {
-          if (s->area_size <= s->length + 1) {
-            Strgrow(s);
-          }
-          iVar4 = s->length;
-          s->ptr[iVar4] = '\"';
-          s->length = iVar4 + 1;
-          s->ptr[s->length] = '\0';
+      if (iVar4 != 0x5c) goto LAB_080acccb;
+      if (bVar2) {
+        if (s->area_size <= s->length + 1) {
+          Strgrow(s);
         }
-        else {
-          bVar3 = !bVar3;
-        }
+        iVar4 = s->length;
+        s->ptr[iVar4] = *p;
+        s->length = iVar4 + 1;
+        s->ptr[s->length] = '\0';
       }
       else {
-        if (iVar4 < 0x23) {
-          if (iVar4 == 0x20) goto LAB_080acc32;
-LAB_080acccb:
+        p = p + 1;
+        cVar1 = *p;
+        if (cVar1 == 'n') {
           if (s->area_size <= s->length + 1) {
             Strgrow(s);
           }
           iVar4 = s->length;
-          s->ptr[iVar4] = *p;
+          s->ptr[iVar4] = '\n';
+          s->length = iVar4 + 1;
+          s->ptr[s->length] = '\0';
+        }
+        else if (cVar1 < 'o') {
+          if (cVar1 == '\0') break;
+          if (cVar1 == 'f') {
+            if (s->area_size <= s->length + 1) {
+              Strgrow(s);
+            }
+            iVar4 = s->length;
+            s->ptr[iVar4] = '\f';
+            s->length = iVar4 + 1;
+            s->ptr[s->length] = '\0';
+          }
+          else {
+LAB_080acb85:
+            if (s->area_size <= s->length + 1) {
+              Strgrow(s);
+            }
+            iVar4 = s->length;
+            s->ptr[iVar4] = *p;
+            s->length = iVar4 + 1;
+            s->ptr[s->length] = '\0';
+          }
+        }
+        else if (cVar1 == 'r') {
+          if (s->area_size <= s->length + 1) {
+            Strgrow(s);
+          }
+          iVar4 = s->length;
+          s->ptr[iVar4] = '\r';
           s->length = iVar4 + 1;
           s->ptr[s->length] = '\0';
         }
         else {
-          if (iVar4 == 0x27) {
-            if (bVar3) {
-              if (s->area_size <= s->length + 1) {
-                Strgrow(s);
-              }
-              iVar4 = s->length;
-              s->ptr[iVar4] = '\'';
-              s->length = iVar4 + 1;
-              s->ptr[s->length] = '\0';
-            }
-            else {
-              bVar2 = !bVar2;
-            }
+          if (cVar1 != 't') goto LAB_080acb85;
+          if (s->area_size <= s->length + 1) {
+            Strgrow(s);
           }
-          else {
-            if (iVar4 != 0x5c) goto LAB_080acccb;
-            if (bVar2) {
-              if (s->area_size <= s->length + 1) {
-                Strgrow(s);
-              }
-              iVar4 = s->length;
-              s->ptr[iVar4] = *p;
-              s->length = iVar4 + 1;
-              s->ptr[s->length] = '\0';
-            }
-            else {
-              p = p + 1;
-              cVar1 = *p;
-              if (cVar1 == 'n') {
-                if (s->area_size <= s->length + 1) {
-                  Strgrow(s);
-                }
-                iVar4 = s->length;
-                s->ptr[iVar4] = '\n';
-                s->length = iVar4 + 1;
-                s->ptr[s->length] = '\0';
-              }
-              else {
-                if (cVar1 < 'o') {
-                  if (cVar1 == '\0') break;
-                  if (cVar1 == 'f') {
-                    if (s->area_size <= s->length + 1) {
-                      Strgrow(s);
-                    }
-                    iVar4 = s->length;
-                    s->ptr[iVar4] = '\f';
-                    s->length = iVar4 + 1;
-                    s->ptr[s->length] = '\0';
-                  }
-                  else {
-LAB_080acb85:
-                    if (s->area_size <= s->length + 1) {
-                      Strgrow(s);
-                    }
-                    iVar4 = s->length;
-                    s->ptr[iVar4] = *p;
-                    s->length = iVar4 + 1;
-                    s->ptr[s->length] = '\0';
-                  }
-                }
-                else {
-                  if (cVar1 == 'r') {
-                    if (s->area_size <= s->length + 1) {
-                      Strgrow(s);
-                    }
-                    iVar4 = s->length;
-                    s->ptr[iVar4] = '\r';
-                    s->length = iVar4 + 1;
-                    s->ptr[s->length] = '\0';
-                  }
-                  else {
-                    if (cVar1 != 't') goto LAB_080acb85;
-                    if (s->area_size <= s->length + 1) {
-                      Strgrow(s);
-                    }
-                    iVar4 = s->length;
-                    s->ptr[iVar4] = '\t';
-                    s->length = iVar4 + 1;
-                    s->ptr[s->length] = '\0';
-                  }
-                }
-              }
-            }
-          }
+          iVar4 = s->length;
+          s->ptr[iVar4] = '\t';
+          s->length = iVar4 + 1;
+          s->ptr[s->length] = '\0';
         }
       }
     }
-    p = p + 1;
   }
   if (0 < s->length) {
     pcVar5 = allocStr(s->ptr,-1);
@@ -56560,8 +54860,7 @@ putAnchor(AnchorList *al,char *url,char *target,Anchor **anchor_return,char *ref
       iVar4 = al->anchors[j + -1].start.line - line;
     }
     if (-1 < iVar4) {
-      i = 0;
-      while (i < j) {
+      for (i = 0; i < j; i = i + 1) {
         if (al->anchors[i].start.line == line) {
           cVar2 = (char)((uint)(al->anchors[i].start.pos - pos) >> 0x18);
         }
@@ -56569,7 +54868,6 @@ putAnchor(AnchorList *al,char *url,char *target,Anchor **anchor_return,char *ref
           cVar2 = (char)((uint)(al->anchors[i].start.line - line) >> 0x18);
         }
         if (-1 < cVar2) goto LAB_080acff5;
-        i = i + 1;
       }
     }
   }
@@ -56593,7 +54891,7 @@ LAB_080ad013:
   }
   return al;
 LAB_080acff5:
-  while (i < j) {
+  for (; i < j; j = j + -1) {
     pAVar3 = al->anchors + j;
     pAVar1 = al->anchors + j + -1;
     pAVar3->url = pAVar1->url;
@@ -56611,7 +54909,6 @@ LAB_080acff5:
     *(undefined4 *)&pAVar3->slave = *(undefined4 *)&pAVar1->slave;
     *(undefined4 *)&pAVar3->rows = *(undefined4 *)&pAVar1->rows;
     pAVar3->image = pAVar1->image;
-    j = j + -1;
   }
   goto LAB_080ad013;
 }
@@ -56666,7 +54963,7 @@ Anchor * registerForm(Buffer *buf,FormList *flist,parsed_tag *tag,int line,int p
   FormItemList *fi;
   Anchor *a;
   
-  url = formList_addInput((form_list *)flist,tag);
+  url = formList_addInput(flist,tag);
   if (url == (form_item_list *)0x0) {
     a = (Anchor *)0x0;
   }
@@ -56816,13 +55113,11 @@ Anchor * searchAnchor(AnchorList *al,char *str)
   int i;
   
   if (al != (AnchorList *)0x0) {
-    i = 0;
-    while (i < al->nanchor) {
+    for (i = 0; i < al->nanchor; i = i + 1) {
       pAVar1 = al->anchors + i;
       if ((-1 < pAVar1->hseq) && (iVar2 = strcmp(pAVar1->url,str), iVar2 == 0)) {
         return pAVar1;
       }
-      i = i + 1;
     }
   }
   return (Anchor *)0x0;
@@ -56856,7 +55151,7 @@ Anchor * _put_anchor_news(Buffer *buf,char *p1,char *p2,int line,int pos)
     p2 = p2 + -1;
   }
   t_ces = buf->document_charset;
-  p_Var1 = Strnew_charp_n(p1,(int)(p2 + -(int)p1));
+  p_Var1 = Strnew_charp_n(p1,(int)p2 - (int)p1);
   p_Var1 = wc_Str_conv_strict(p_Var1,f_ces,t_ces);
   pcVar2 = file_quote(p_Var1->ptr);
   p_Var1 = Sprintf("news:%s",pcVar2);
@@ -56878,7 +55173,7 @@ Anchor * _put_anchor_all(Buffer *buf,char *p1,char *p2,int line,int pos)
   
   f_ces = InnerCharset;
   t_ces = buf->document_charset;
-  p_Var1 = Strnew_charp_n(p1,(int)(p2 + -(int)p1));
+  p_Var1 = Strnew_charp_n(p1,(int)p2 - (int)p1);
   p_Var1 = wc_Str_conv_strict(p_Var1,f_ces,t_ces);
   url = url_quote(p_Var1->ptr);
   pAVar2 = registerHref(buf,url,(char *)0x0,(char *)0xffffffff,(char *)0x0,'\0',line,pos);
@@ -56895,13 +55190,11 @@ void reseq_anchor0(AnchorList *al,short *seqmap)
   int i;
   
   if (al != (AnchorList *)0x0) {
-    i = 0;
-    while (i < al->nanchor) {
-      pAVar1 = al->anchors + i;
-      if (-1 < pAVar1->hseq) {
-        pAVar1->hseq = (int)seqmap[pAVar1->hseq];
+    for (i = 0; i < al->nanchor; i = i + 1) {
+      pAVar1 = al->anchors;
+      if (-1 < pAVar1[i].hseq) {
+        pAVar1[i].hseq = (int)seqmap[pAVar1[i].hseq];
       }
-      i = i + 1;
     }
   }
   return;
@@ -56933,49 +55226,39 @@ void reseq_anchor(Buffer *buf)
   }
   ml = (HmarkerList *)0x0;
   if (buf->href != (AnchorList *)0x0) {
-    i = 0;
     n = iVar2;
-    while (i < buf->href->nanchor) {
+    for (i = 0; i < buf->href->nanchor; i = i + 1) {
       if (buf->href->anchors[i].hseq == -2) {
         n = n + 1;
       }
-      i = i + 1;
     }
     if (n != iVar2) {
       seqmap_00 = (short *)GC_malloc_atomic(n * 2);
-      i = 0;
-      while (i < n) {
+      for (i = 0; i < n; i = i + 1) {
         seqmap_00[i] = (short)i;
-        i = i + 1;
       }
-      i = 0;
       n = iVar2;
-      while (i < buf->href->nanchor) {
-        pAVar1 = buf->href->anchors + i;
-        if (pAVar1->hseq == -2) {
-          pAVar1->hseq = n;
-          pAVar3 = closest_next_anchor(buf->href,(Anchor *)0x0,(pAVar1->start).pos,
-                                       (pAVar1->start).line);
-          pAVar3 = closest_next_anchor(buf->formitem,pAVar3,(pAVar1->start).pos,(pAVar1->start).line
+      for (i = 0; i < buf->href->nanchor; i = i + 1) {
+        pAVar1 = buf->href->anchors;
+        if (pAVar1[i].hseq == -2) {
+          pAVar1[i].hseq = n;
+          pAVar3 = closest_next_anchor(buf->href,(Anchor *)0x0,pAVar1[i].start.pos,
+                                       pAVar1[i].start.line);
+          pAVar3 = closest_next_anchor(buf->formitem,pAVar3,pAVar1[i].start.pos,pAVar1[i].start.line
                                       );
           if ((pAVar3 != (Anchor *)0x0) && (-1 < pAVar3->hseq)) {
             seqmap_00[n] = seqmap_00[pAVar3->hseq];
-            j = pAVar3->hseq;
-            while (j < iVar2) {
+            for (j = pAVar3->hseq; j < iVar2; j = j + 1) {
               seqmap_00[j] = seqmap_00[j] + 1;
-              j = j + 1;
             }
           }
-          ml = putHmarker(ml,(pAVar1->start).line,(pAVar1->start).pos,(int)seqmap_00[n]);
+          ml = putHmarker(ml,pAVar1[i].start.line,pAVar1[i].start.pos,(int)seqmap_00[n]);
           n = n + 1;
         }
-        i = i + 1;
       }
-      i = 0;
-      while (i < iVar2) {
+      for (i = 0; i < iVar2; i = i + 1) {
         ml = putHmarker(ml,buf->hmarklist->marks[i].line,buf->hmarklist->marks[i].pos,
                         (int)seqmap_00[i]);
-        i = i + 1;
       }
       buf->hmarklist = ml;
       reseq_anchor0(buf->href,seqmap_00);
@@ -56991,7 +55274,7 @@ char * reAnchorPos(Buffer *buf,Line *l,char *p1,char *p2,
                   anon_subr_Anchor_ptr_Buffer_ptr_char_ptr_char_ptr_int_int *anchorproc)
 
 {
-  char *pcVar1;
+  int iVar1;
   Anchor *pAVar2;
   int hseq;
   int i;
@@ -57000,20 +55283,20 @@ char * reAnchorPos(Buffer *buf,Line *l,char *p1,char *p2,
   Anchor *a;
   
   hseq = -2;
-  spos = (int)(p1 + -(int)l->lineBuf);
-  epos = (int)(p2 + -(int)l->lineBuf);
+  spos = (int)p1 - (int)l->lineBuf;
+  epos = (int)p2 - (int)l->lineBuf;
   i = spos;
   while( true ) {
-    pcVar1 = (char *)spos;
+    iVar1 = spos;
     if (epos <= i) {
-      while (i = (int)pcVar1, i < epos) {
+      while (i = iVar1, i < epos) {
         l->propBuf[i] = l->propBuf[i] | 0x10;
-        pcVar1 = (char *)(i + 1);
+        iVar1 = i + 1;
       }
       while (((l->len < spos && (l->next != (_Line *)0x0)) && (l->next->bpos != 0))) {
         spos = spos - l->len;
         epos = epos - l->len;
-        l = (Line *)l->next;
+        l = l->next;
       }
       while( true ) {
         pAVar2 = (*anchorproc)(buf,p1,p2,l->linenumber,spos);
@@ -57027,7 +55310,7 @@ char * reAnchorPos(Buffer *buf,Line *l,char *p1,char *p2,
         (pAVar2->end).pos = l->len;
         spos = 0;
         epos = epos - l->len;
-        l = (Line *)l->next;
+        l = l->next;
       }
       (pAVar2->end).pos = epos;
       return p2;
@@ -57073,8 +55356,9 @@ char * reAnchorAny(Buffer *buf,char *re,
       else {
         l = buf->firstLine;
       }
-      while ((l != (Line *)0x0 &&
-             ((MarkAllPages != 0 || (l->linenumber < buf->topLine->linenumber + LINES + -1))))) {
+      for (; (l != (Line *)0x0 &&
+             ((MarkAllPages != 0 || (l->linenumber < buf->topLine->linenumber + LINES + -1))));
+          l = l->next) {
         if ((p == (char *)0x0) || (l->bpos == 0)) {
           p = l->lineBuf;
           while (iVar2 = regexMatch(p,(int)(l->lineBuf + (l->size - (int)p)),(uint)(l->lineBuf == p)
@@ -57087,7 +55371,6 @@ char * reAnchorAny(Buffer *buf,char *re,
             (buf->pagerSource != (InputStream)0x0)) && ((buf->bufferprop & 0x40U) == 0)) {
           getNextPage(buf,PagerMax);
         }
-        l = (Line *)l->next;
       }
       pcVar1 = (char *)0x0;
     }
@@ -57137,8 +55420,7 @@ char * reAnchorNewsheader(Buffer *buf)
   
   bVar1 = false;
   if ((buf != (Buffer *)0x0) && (buf->firstLine != (Line *)0x0)) {
-    i = 0;
-    while (i < 2) {
+    for (i = 0; i < 2; i = i + 1) {
       if (i == 0) {
         regexCompile("<[!-;=?-~]+@[a-zA-Z0-9\\.\\-_]+>",1);
         header = reAnchorNewsheader::header_mid;
@@ -57147,14 +55429,12 @@ char * reAnchorNewsheader(Buffer *buf)
         regexCompile("[a-zA-Z0-9\\.\\-_]+",1);
         header = reAnchorNewsheader::header_group;
       }
-      l = buf->firstLine;
-      while ((l != (Line *)0x0 && (l->real_linenumber == 0))) {
+      for (l = buf->firstLine; (l != (Line *)0x0 && (l->real_linenumber == 0)); l = l->next) {
         if (l->bpos == 0) {
           p = l->lineBuf;
           if ((MYCTYPE_MAP[(byte)*p] & 2) == 0) {
             bVar1 = false;
-            q = header;
-            while (*q != (char *)0x0) {
+            for (q = header; *q != (char *)0x0; q = q + 1) {
               __n = strlen(*q);
               iVar3 = strncasecmp(p,*q,__n);
               if (iVar3 == 0) {
@@ -57163,7 +55443,6 @@ char * reAnchorNewsheader(Buffer *buf)
                 p = pcVar2 + 1;
                 break;
               }
-              q = q + 1;
             }
           }
           if (bVar1) {
@@ -57174,9 +55453,7 @@ char * reAnchorNewsheader(Buffer *buf)
             }
           }
         }
-        l = (Line *)l->next;
       }
-      i = i + 1;
     }
     reseq_anchor(buf);
   }
@@ -57225,8 +55502,7 @@ Anchor * closest_next_anchor(AnchorList *a,Anchor *an,int x,int y)
   int i;
   
   if ((a != (AnchorList *)0x0) && (a->nanchor != 0)) {
-    i = 0;
-    while (i < a->nanchor) {
+    for (i = 0; i < a->nanchor; i = i + 1) {
       if (((-1 < a->anchors[i].hseq) &&
           ((y < a->anchors[i].start.line ||
            ((a->anchors[i].start.line == y && (x < a->anchors[i].start.pos)))))) &&
@@ -57236,7 +55512,6 @@ Anchor * closest_next_anchor(AnchorList *a,Anchor *an,int x,int y)
             (a->anchors[i].start.pos < (an->start).pos)))))))) {
         an = a->anchors + i;
       }
-      i = i + 1;
     }
   }
   return an;
@@ -57250,8 +55525,7 @@ Anchor * closest_prev_anchor(AnchorList *a,Anchor *an,int x,int y)
   int i;
   
   if ((a != (AnchorList *)0x0) && (a->nanchor != 0)) {
-    i = 0;
-    while (i < a->nanchor) {
+    for (i = 0; i < a->nanchor; i = i + 1) {
       if (((-1 < a->anchors[i].hseq) &&
           ((a->anchors[i].end.line < y ||
            ((a->anchors[i].end.line == y && (a->anchors[i].end.pos <= x)))))) &&
@@ -57261,7 +55535,6 @@ Anchor * closest_prev_anchor(AnchorList *a,Anchor *an,int x,int y)
           ))) {
         an = a->anchors + i;
       }
-      i = i + 1;
     }
   }
   return an;
@@ -57294,14 +55567,14 @@ void shiftAnchorPosition(AnchorList *al,HmarkerList *hl,int line,int pos,int shi
       }
       s = b + e + 1 >> 1;
     }
-    while ((s < (uint)al->nanchor && (pAVar1 = al->anchors + s, (pAVar1->start).line <= line))) {
-      if ((pos < (pAVar1->start).pos) &&
-         ((pAVar1->start).pos = (pAVar1->start).pos + shift, hl->marks[pAVar1->hseq].line == line))
-      {
-        hl->marks[pAVar1->hseq].pos = (pAVar1->start).pos;
+    while ((s < (uint)al->nanchor && (pAVar1 = al->anchors, pAVar1[s].start.line <= line))) {
+      if ((pos < pAVar1[s].start.pos) &&
+         (pAVar1[s].start.pos = pAVar1[s].start.pos + shift, hl->marks[pAVar1[s].hseq].line == line)
+         ) {
+        hl->marks[pAVar1[s].hseq].pos = pAVar1[s].start.pos;
       }
-      if (pos <= (pAVar1->end).pos) {
-        (pAVar1->end).pos = (pAVar1->end).pos + shift;
+      if (pos <= pAVar1[s].end.pos) {
+        pAVar1[s].end.pos = pAVar1[s].end.pos + shift;
       }
       s = s + 1;
     }
@@ -57339,8 +55612,7 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
   int i;
   
   if ((al != (AnchorList *)0x0) && (al->nanchor != 0)) {
-    i = 0;
-    while (i < al->nanchor) {
+    for (i = 0; i < al->nanchor; i = i + 1) {
       pAVar1 = al->anchors + i;
       url = pAVar1->url;
       title = pAVar1->title;
@@ -57350,9 +55622,8 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
       iVar2 = pAVar1->hseq;
       img = pAVar1->image;
       if (((-1 < iVar2) && (img != (Image *)0x0)) && (1 < img->rows)) {
-        l = buf->firstLine;
-        while ((l != (Line *)0x0 && (l->linenumber != (int)img->y))) {
-          l = (Line *)l->next;
+        for (l = buf->firstLine; (l != (Line *)0x0 && (l->linenumber != (int)img->y)); l = l->next)
+        {
         }
         if (l != (Line *)0x0) {
           a_img.y = (short)((uint)*(undefined4 *)&pAVar1->slave >> 0x10);
@@ -57363,10 +55634,10 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
             ls = l;
             while ((ls != (Line *)0x0 && (ls->linenumber != line))) {
               if (a_img.y < line) {
-                ls = (Line *)ls->next;
+                ls = ls->next;
               }
               else {
-                ls = (Line *)ls->prev;
+                ls = ls->prev;
               }
             }
             if (ls == (Line *)0x0) goto LAB_080aeacb;
@@ -57394,8 +55665,7 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
           }
           col = calcPosition(ls->lineBuf,ls->propBuf,ls->len,pos_00,0,0);
           ecol = calcPosition(ls->lineBuf,ls->propBuf,ls->len,pos_01,0,0);
-          j = 0;
-          while ((l != (Line *)0x0 && (j < img->rows))) {
+          for (j = 0; (l != (Line *)0x0 && (j < img->rows)); j = j + 1) {
             if (line != l->linenumber) {
               pos = columnPos(l,col);
               a = registerImg(buf,url,title,l->linenumber,pos);
@@ -57403,10 +55673,8 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
               a->slave = '\x01';
               a->image = img;
               (a->end).pos = (pos + ecol) - col;
-              k = pos;
-              while (k < (a->end).pos) {
+              for (k = pos; k < (a->end).pos; k = k + 1) {
                 l->propBuf[k] = l->propBuf[k] | 0x20;
-                k = k + 1;
               }
               if (a_href.url != (char *)0x0) {
                 a = registerHref(buf,a_href.url,a_href.target,a_href.referer,a_href.title,
@@ -57414,10 +55682,8 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
                 a->hseq = a_href.hseq;
                 a->slave = '\x01';
                 (a->end).pos = (pos + ecol) - col;
-                k = pos;
-                while (k < (a->end).pos) {
+                for (k = pos; k < (a->end).pos; k = k + 1) {
                   l->propBuf[k] = l->propBuf[k] | 0x10;
-                  k = k + 1;
                 }
               }
               if (a_form.url != (char *)0x0) {
@@ -57428,14 +55694,12 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
                 (a->end).pos = (pos + ecol) - col;
               }
             }
-            l = (Line *)l->next;
-            j = j + 1;
+            l = l->next;
           }
           img->rows = 0;
         }
       }
 LAB_080aeacb:
-      i = i + 1;
     }
   }
   return;
@@ -57469,8 +55733,7 @@ void addMultirowsForm(Buffer *buf,AnchorList *al)
   int i;
   
   if ((al != (AnchorList *)0x0) && (al->nanchor != 0)) {
-    i = 0;
-    while (i < al->nanchor) {
+    for (i = 0; i < al->nanchor; i = i + 1) {
       pAVar1 = al->anchors + i;
       url = pAVar1->url;
       target = pAVar1->target;
@@ -57482,10 +55745,9 @@ void addMultirowsForm(Buffer *buf,AnchorList *al)
       uVar5 = *(undefined4 *)&pAVar1->rows;
       al->anchors[i].rows = 1;
       if ((-1 < iVar3) && (a_form.rows = (short)uVar5, 1 < a_form.rows)) {
-        l = buf->firstLine;
-        while ((a_form.y = (short)((uint)uVar4 >> 0x10), l != (Line *)0x0 &&
-               (l->linenumber != (int)a_form.y))) {
-          l = (Line *)l->next;
+        for (l = buf->firstLine;
+            (a_form.y = (short)((uint)uVar4 >> 0x10), l != (Line *)0x0 &&
+            (l->linenumber != (int)a_form.y)); l = l->next) {
         }
         if (l != (Line *)0x0) {
           if (a_form.y == iVar2) {
@@ -57495,18 +55757,17 @@ void addMultirowsForm(Buffer *buf,AnchorList *al)
             ls = l;
             while ((ls != (Line *)0x0 && (ls->linenumber != iVar2))) {
               if (a_form.y < iVar2) {
-                ls = (Line *)ls->next;
+                ls = ls->next;
               }
               else {
-                ls = (Line *)ls->prev;
+                ls = ls->prev;
               }
             }
             if (ls == (Line *)0x0) goto LAB_080aee53;
           }
           col = calcPosition(ls->lineBuf,ls->propBuf,ls->len,pos_00,0,0);
           ecol = calcPosition(ls->lineBuf,ls->propBuf,ls->len,pos_01,0,0);
-          j = 0;
-          while ((l != (Line *)0x0 && (j < a_form.rows))) {
+          for (j = 0; (l != (Line *)0x0 && (j < a_form.rows)); j = j + 1) {
             pos = columnPos(l,col);
             if (j == 0) {
               buf->hmarklist->marks[iVar3].line = l->linenumber;
@@ -57521,19 +55782,15 @@ void addMultirowsForm(Buffer *buf,AnchorList *al)
               (a->end).pos = (pos + ecol) - col;
               l->lineBuf[pos + -1] = '[';
               l->lineBuf[(a->end).pos] = ']';
-              k = pos;
-              while (k < (a->end).pos) {
+              for (k = pos; k < (a->end).pos; k = k + 1) {
                 l->propBuf[k] = l->propBuf[k] | 0x40;
-                k = k + 1;
               }
             }
-            l = (Line *)l->next;
-            j = j + 1;
+            l = l->next;
           }
         }
       }
 LAB_080aee53:
-      i = i + 1;
     }
   }
   return;
@@ -57544,8 +55801,8 @@ LAB_080aee53:
 char * getAnchorText(Buffer *buf,AnchorList *al,Anchor *a)
 
 {
-  Anchor *pAVar1;
-  int iVar2;
+  int iVar1;
+  Anchor *pAVar2;
   int iVar3;
   char *pcVar4;
   char *ep;
@@ -57560,24 +55817,22 @@ char * getAnchorText(Buffer *buf,AnchorList *al,Anchor *a)
     pcVar4 = (char *)0x0;
   }
   else {
-    iVar2 = a->hseq;
+    iVar1 = a->hseq;
     l = buf->firstLine;
-    i = 0;
-    while (i < al->nanchor) {
-      pAVar1 = al->anchors + i;
-      if (pAVar1->hseq == iVar2) {
-        while ((l != (Line *)0x0 && (l->linenumber != (pAVar1->start).line))) {
-          l = (Line *)l->next;
+    for (i = 0; i < al->nanchor; i = i + 1) {
+      pAVar2 = al->anchors;
+      if (pAVar2[i].hseq == iVar1) {
+        for (; (l != (Line *)0x0 && (l->linenumber != pAVar2[i].start.line)); l = l->next) {
         }
         if (l == (Line *)0x0) break;
-        p = l->lineBuf + (pAVar1->start).pos;
-        pcVar4 = l->lineBuf + (pAVar1->end).pos;
+        p = l->lineBuf + pAVar2[i].start.pos;
+        pcVar4 = l->lineBuf + pAVar2[i].end.pos;
         while ((p < pcVar4 && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
           p = p + 1;
         }
         if (p != pcVar4) {
           if (tmp == (Str)0x0) {
-            tmp = Strnew_size((int)(pcVar4 + -(int)p));
+            tmp = Strnew_size((int)pcVar4 - (int)p);
           }
           else {
             if (tmp->area_size <= tmp->length + 1) {
@@ -57588,10 +55843,9 @@ char * getAnchorText(Buffer *buf,AnchorList *al,Anchor *a)
             tmp->length = iVar3 + 1;
             tmp->ptr[tmp->length] = '\0';
           }
-          Strcat_charp_n(tmp,p,(int)(pcVar4 + -(int)p));
+          Strcat_charp_n(tmp,p,(int)pcVar4 - (int)p);
         }
       }
-      i = i + 1;
     }
     if (tmp == (Str)0x0) {
       pcVar4 = (char *)0x0;
@@ -57640,8 +55894,7 @@ Buffer * link_list_panel(Buffer *buf)
       (buf->img != (AnchorList *)0x0)))) {
     if (buf->linklist != (LinkList *)0x0) {
       Strcat_charp(x,"<hr><h2>Links</h2>\n<ol>\n");
-      l = buf->linklist;
-      while (l != (LinkList *)0x0) {
+      for (l = buf->linklist; l != (LinkList *)0x0; l = l->next) {
         if (l->url == (char *)0x0) {
           p = "";
           u = "";
@@ -57661,13 +55914,11 @@ Buffer * link_list_panel(Buffer *buf)
         if (l->type == '\x01') {
           t = " [Rel]";
         }
+        else if (l->type == '\x02') {
+          t = " [Rev]";
+        }
         else {
-          if (l->type == '\x02') {
-            t = " [Rev]";
-          }
-          else {
-            t = "";
-          }
+          t = "";
         }
         if (l->title == (char *)0x0) {
           pcVar8 = "";
@@ -57678,15 +55929,13 @@ Buffer * link_list_panel(Buffer *buf)
         p_Var6 = Sprintf("%s%s\n",pcVar8,t);
         pcVar8 = html_quote(p_Var6->ptr);
         Strcat_m_charp(x,"<li><a href=\"",u,&DAT_080d08ee,pcVar8,"</a><br>",p,&DAT_080d08e3,0);
-        l = (LinkList *)l->next;
       }
       Strcat_charp(x,"</ol>\n");
     }
     if (buf->href != (AnchorList *)0x0) {
       Strcat_charp(x,"<hr><h2>Anchors</h2>\n<ol>\n");
       pAVar1 = buf->href;
-      i = 0;
-      while (i < pAVar1->nanchor) {
+      for (i = 0; i < pAVar1->nanchor; i = i + 1) {
         pAVar9 = pAVar1->anchors + i;
         if ((-1 < pAVar9->hseq) && (pAVar9->slave == '\0')) {
           pPVar5 = baseURL(buf);
@@ -57709,15 +55958,13 @@ Buffer * link_list_panel(Buffer *buf)
           Strcat_m_charp(x,"<li><a href=\"",pcVar7,&DAT_080d08ee,pcVar8,"</a><br>",p,&DAT_080d08e3,0
                         );
         }
-        i = i + 1;
       }
       Strcat_charp(x,"</ol>\n");
     }
     if (buf->img != (AnchorList *)0x0) {
       Strcat_charp(x,"<hr><h2>Images</h2>\n<ol>\n");
       pAVar1 = buf->img;
-      i = 0;
-      while (i < pAVar1->nanchor) {
+      for (i = 0; i < pAVar1->nanchor; i = i + 1) {
         pAVar9 = pAVar1->anchors + i;
         if (pAVar9->slave == '\0') {
           pPVar5 = baseURL(buf);
@@ -57751,8 +55998,7 @@ Buffer * link_list_panel(Buffer *buf)
                  (pMVar11 = searchMapList(buf,**(char ***)(iVar2 + 8)), pMVar11 != (MapList *)0x0)))
              ) {
             Strcat_charp(x,"<br>\n<b>Image map</b>\n<ol>\n");
-            mi = pMVar11->area->first;
-            while (mi != (ListItem *)0x0) {
+            for (mi = pMVar11->area->first; mi != (ListItem *)0x0; mi = mi->next) {
               ppcVar3 = (char **)mi->ptr;
               if (ppcVar3 != (char **)0x0) {
                 pPVar5 = baseURL(buf);
@@ -57780,12 +56026,10 @@ Buffer * link_list_panel(Buffer *buf)
                 Strcat_m_charp(x,"<li><a href=\"",pcVar7,&DAT_080d08ee,t,"</a><br>",p,&DAT_080d08e3,
                                0);
               }
-              mi = (ListItem *)mi->next;
             }
             Strcat_charp(x,"</ol>\n");
           }
         }
-        i = i + 1;
       }
       Strcat_charp(x,"</ol>\n");
     }
@@ -57971,9 +56215,9 @@ parsed_tag * parse_tag(char **s,int internal)
       if (*q == '\0') break;
     } while ((MYCTYPE_MAP[(byte)*q] & 2) != 0);
   }
-  while ((((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
-          ((tagname[0] == '/' || (*q != '/')))) &&
-         ((*q != '>' && ((int)(p + -(int)tagname) < 0x3f))))) {
+  for (; (((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
+          ((tagname[0] == '/' || (*q != '/')))) && ((*q != '>' && ((int)p - (int)tagname < 0x3f))));
+      p = p + 1) {
     if ((MYCTYPE_MAP[(byte)*q] & 4) == 0) {
       bVar2 = *q;
     }
@@ -57981,18 +56225,15 @@ parsed_tag * parse_tag(char **s,int internal)
       bVar2 = *q | 0x20;
     }
     *p = bVar2;
-    p = p + 1;
     q = q + 1;
   }
   *p = '\0';
-  while ((((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
-          ((tagname[0] == '/' || (*q != '/')))) && (*q != '>'))) {
-    q = q + 1;
+  for (; (((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
+          ((tagname[0] == '/' || (*q != '/')))) && (*q != '>')); q = q + 1) {
   }
-  iVar3 = getHash_si((Hash_si *)&tagtable,tagname,0);
+  iVar3 = getHash_si(&tagtable,tagname,0);
   if ((iVar3 == 0) || ((internal == 0 && ((TagMAP[iVar3].flag & 2) != 0)))) {
-    while ((*q != '>' && (*q != '\0'))) {
-      q = q + 1;
+    for (; (*q != '>' && (*q != '\0')); q = q + 1) {
     }
   }
   else {
@@ -58009,10 +56250,8 @@ parsed_tag * parse_tag(char **s,int internal)
       tag->map = puVar4;
       memset(tag->map,0x4b,0x4b);
       memset(tag->attrid,0,__n);
-      i = 0;
-      while (i < (int)__n) {
+      for (i = 0; i < (int)__n; i = i + 1) {
         tag->map[TagMAP[iVar3].accept_attribute[i]] = (uchar)i;
-        i = i + 1;
       }
     }
     while ((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) != 0))) {
@@ -58022,9 +56261,9 @@ parsed_tag * parse_tag(char **s,int internal)
       value = (Str)0x0;
       value_tmp = (Str)0x0;
       if ((*q == '>') || (*q == '\0')) break;
-      p = attrname;
-      while ((((*q != '\0' && (*q != '=')) && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
-             ((*q != '>' && ((int)(p + -(int)attrname) < 0x3f))))) {
+      for (p = attrname;
+          (((*q != '\0' && (*q != '=')) && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) &&
+          ((*q != '>' && ((int)p - (int)attrname < 0x3f)))); p = p + 1) {
         if ((MYCTYPE_MAP[(byte)*q] & 4) == 0) {
           bVar2 = *q;
         }
@@ -58032,12 +56271,11 @@ parsed_tag * parse_tag(char **s,int internal)
           bVar2 = *q | 0x20;
         }
         *p = bVar2;
-        p = p + 1;
         q = q + 1;
       }
       *p = '\0';
-      while (((*q != '\0' && (*q != '=')) && (((MYCTYPE_MAP[(byte)*q] & 2) == 0 && (*q != '>'))))) {
-        q = q + 1;
+      for (; ((*q != '\0' && (*q != '=')) && (((MYCTYPE_MAP[(byte)*q] & 2) == 0 && (*q != '>'))));
+          q = q + 1) {
       }
       while ((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) != 0))) {
         q = q + 1;
@@ -58050,8 +56288,7 @@ parsed_tag * parse_tag(char **s,int internal)
           if (*q == '\0') break;
         } while ((MYCTYPE_MAP[(byte)*q] & 2) != 0);
         if (*q == '\"') {
-          q = pcVar7 + 2;
-          while ((*q != '\0' && (*q != '\"'))) {
+          for (q = pcVar7 + 2; (*q != '\0' && (*q != '\"')); q = q + 1) {
             if (value_tmp->area_size <= value_tmp->length + 1) {
               Strgrow(value_tmp);
             }
@@ -58062,77 +56299,64 @@ parsed_tag * parse_tag(char **s,int internal)
             if ((tag->need_reconstruct == '\0') && ((QUOTE_MAP[(byte)*q] & 7) != 0)) {
               tag->need_reconstruct = '\x01';
             }
-            q = q + 1;
           }
           if (*q == '\"') {
             q = q + 1;
           }
         }
-        else {
-          if (*q == '\'') {
-            q = pcVar7 + 2;
-            while ((*q != '\0' && (*q != '\''))) {
-              if (value_tmp->area_size <= value_tmp->length + 1) {
-                Strgrow(value_tmp);
-              }
-              iVar6 = value_tmp->length;
-              value_tmp->ptr[iVar6] = *q;
-              value_tmp->length = iVar6 + 1;
-              value_tmp->ptr[value_tmp->length] = '\0';
-              if ((tag->need_reconstruct == '\0') && ((QUOTE_MAP[(byte)*q] & 7) != 0)) {
-                tag->need_reconstruct = '\x01';
-              }
-              q = q + 1;
+        else if (*q == '\'') {
+          for (q = pcVar7 + 2; (*q != '\0' && (*q != '\'')); q = q + 1) {
+            if (value_tmp->area_size <= value_tmp->length + 1) {
+              Strgrow(value_tmp);
             }
-            if (*q == '\'') {
-              q = q + 1;
+            iVar6 = value_tmp->length;
+            value_tmp->ptr[iVar6] = *q;
+            value_tmp->length = iVar6 + 1;
+            value_tmp->ptr[value_tmp->length] = '\0';
+            if ((tag->need_reconstruct == '\0') && ((QUOTE_MAP[(byte)*q] & 7) != 0)) {
+              tag->need_reconstruct = '\x01';
             }
           }
-          else {
-            if (*q != '\0') {
-              while (((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) && (*q != '>'))) {
-                if (value_tmp->area_size <= value_tmp->length + 1) {
-                  Strgrow(value_tmp);
-                }
-                iVar6 = value_tmp->length;
-                value_tmp->ptr[iVar6] = *q;
-                value_tmp->length = iVar6 + 1;
-                value_tmp->ptr[value_tmp->length] = '\0';
-                if ((tag->need_reconstruct == '\0') && ((QUOTE_MAP[(byte)*q] & 7) != 0)) {
-                  tag->need_reconstruct = '\x01';
-                }
-                q = q + 1;
-              }
+          if (*q == '\'') {
+            q = q + 1;
+          }
+        }
+        else if (*q != '\0') {
+          for (; ((*q != '\0' && ((MYCTYPE_MAP[(byte)*q] & 2) == 0)) && (*q != '>')); q = q + 1) {
+            if (value_tmp->area_size <= value_tmp->length + 1) {
+              Strgrow(value_tmp);
+            }
+            iVar6 = value_tmp->length;
+            value_tmp->ptr[iVar6] = *q;
+            value_tmp->length = iVar6 + 1;
+            value_tmp->ptr[value_tmp->length] = '\0';
+            if ((tag->need_reconstruct == '\0') && ((QUOTE_MAP[(byte)*q] & 7) != 0)) {
+              tag->need_reconstruct = '\x01';
             }
           }
         }
       }
-      i = 0;
-      while (i < (int)__n) {
+      for (i = 0; i < (int)__n; i = i + 1) {
         if ((tag->attrid[i] == '\0') &&
            (iVar6 = strcmp(AttrMAP[TagMAP[iVar3].accept_attribute[i]].name,attrname), iVar6 == 0)) {
-          attr_id = ZEXT14(TagMAP[iVar3].accept_attribute[i]);
+          attr_id = (int)TagMAP[iVar3].accept_attribute[i];
           break;
         }
-        i = i + 1;
       }
       if (value_tmp != (Str)0x0) {
         bVar1 = false;
-        j = 0;
-        while (j < i) {
+        for (j = 0; j < i; j = j + 1) {
           if ((tag->attrid[j] == '!') && (iVar6 = strcmp("hidden",tag->value[j]), iVar6 == 0)) {
             bVar1 = true;
             break;
           }
-          j = j + 1;
         }
         if ((((iVar3 == 0x2c) || (iVar3 == 0x86)) && (attr_id == 0x24)) && (bVar1)) {
           value = value_tmp;
         }
         else {
           value = Strnew();
-          x = value_tmp->ptr;
-          while (*x != '\0') {
+          for (x = value_tmp->ptr; *x != '\0'; x = x + 1) {
             if (*x != '\n') {
               if (value->area_size <= value->length + 1) {
                 Strgrow(value);
@@ -58142,30 +56366,27 @@ parsed_tag * parse_tag(char **s,int internal)
               value->length = iVar6 + 1;
               value->ptr[value->length] = '\0';
             }
-            x = x + 1;
           }
         }
       }
       if (i == __n) {
         tag->need_reconstruct = '\x01';
       }
+      else if ((internal == 0) &&
+              (((AttrMAP[attr_id].flag & 1) != 0 ||
+               (((value != (Str)0x0 && (AttrMAP[attr_id].vtype == '\b')) &&
+                (iVar6 = strcasecmp(value->ptr,"internal"), iVar6 == 0)))))) {
+        tag->need_reconstruct = '\x01';
+      }
       else {
-        if ((internal == 0) &&
-           (((AttrMAP[attr_id].flag & 1) != 0 ||
-            (((value != (Str)0x0 && (AttrMAP[attr_id].vtype == '\b')) &&
-             (iVar6 = strcasecmp(value->ptr,"internal"), iVar6 == 0)))))) {
-          tag->need_reconstruct = '\x01';
+        tag->attrid[i] = (uchar)attr_id;
+        if (value == (Str)0x0) {
+          tag->value[i] = (char *)0x0;
         }
         else {
-          tag->attrid[i] = (uchar)attr_id;
-          if (value == (Str)0x0) {
-            tag->value[i] = (char *)0x0;
-          }
-          else {
-            ppcVar5 = tag->value;
-            pcVar7 = html_unquote(value->ptr);
-            ppcVar5[i] = pcVar7;
-          }
+          ppcVar5 = tag->value;
+          pcVar7 = html_unquote(value->ptr);
+          ppcVar5[i] = pcVar7;
         }
       }
     }
@@ -58186,30 +56407,30 @@ parsed_tag * parse_tag(char **s,int internal)
 int parsedtag_set_value(parsed_tag *tag,int id,char *value)
 
 {
-  char **ppcVar1;
-  int iVar2;
-  uint uVar3;
+  byte bVar1;
+  char **ppcVar2;
+  int iVar3;
   char *pcVar4;
   int i;
   
   if ((tag->map == (uchar *)0x0) || (tag->map[id] == 'K')) {
-    iVar2 = 0;
+    iVar3 = 0;
   }
   else {
-    uVar3 = (uint)tag->map[id];
-    tag->attrid[uVar3] = (uchar)id;
+    bVar1 = tag->map[id];
+    tag->attrid[bVar1] = (uchar)id;
     if (value == (char *)0x0) {
-      tag->value[uVar3] = (char *)0x0;
+      tag->value[bVar1] = (char *)0x0;
     }
     else {
-      ppcVar1 = tag->value;
+      ppcVar2 = tag->value;
       pcVar4 = allocStr(value,-1);
-      ppcVar1[uVar3] = pcVar4;
+      ppcVar2[bVar1] = pcVar4;
     }
     tag->need_reconstruct = '\x01';
-    iVar2 = 1;
+    iVar3 = 1;
   }
-  return iVar2;
+  return iVar3;
 }
 
 
@@ -58257,8 +56478,7 @@ Str parsedtag2str(parsed_tag *tag)
   x->length = iVar3 + 1;
   x->ptr[x->length] = '\0';
   Strcat_charp(x,TagMAP[bVar1].name);
-  i = 0;
-  while (i < (int)(uint)bVar2) {
+  for (i = 0; i < (int)(uint)bVar2; i = i + 1) {
     if (tag->attrid[i] != '\0') {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
@@ -58274,7 +56494,6 @@ Str parsedtag2str(parsed_tag *tag)
         Strcat(x,y);
       }
     }
-    i = i + 1;
   }
   if (x->area_size <= x->length + 1) {
     Strgrow(x);
@@ -58392,8 +56611,6 @@ InputStream newInputStream(int des)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 InputStream newFileStream(FILE *f,anon_subr_void_varargs *closep)
 
 {
@@ -58410,7 +56627,7 @@ InputStream newFileStream(FILE *f,anon_subr_void_varargs *closep)
     base->type = '\x01';
     pvVar1 = (void *)GC_malloc(8);
     base->handle = pvVar1;
-    ((FILE *)base->handle)->_flags = (int)f;
+    *(FILE **)base->handle = f;
     if (closep == (anon_subr_void_varargs *)0x0) {
       *(code **)((int)base->handle + 4) = fclose;
     }
@@ -58482,7 +56699,7 @@ int ISclose(InputStream stream)
   anon_subr_void_varargs *prevtrap;
   
   if (((stream == (InputStream)0x0) || (*(int *)&stream->field_0x1c == 0)) ||
-     ((*(byte *)&stream->field_0x14 & 0x10) != 0)) {
+     ((stream->field_0x14 & 0x10) != 0)) {
     iVar1 = -1;
   }
   else {
@@ -58506,11 +56723,11 @@ int ISgetc(InputStream stream)
     uVar1 = 0;
   }
   else {
-    if ((*(char *)&stream->field_0x15 == '\0') &&
-       (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc)) {
+    if ((stream->field_0x15 == '\0') && (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc))
+    {
       do_update((BaseStream)stream);
     }
-    if (*(char *)&stream->field_0x15 == '\0') {
+    if (stream->field_0x15 == '\0') {
       uVar1 = (uint)*(byte *)(*(int *)stream + *(int *)&stream->field_0x8);
       *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + 1;
     }
@@ -58532,14 +56749,12 @@ int ISundogetc(InputStream stream)
   if (stream == (InputStream)0x0) {
     iVar1 = -1;
   }
+  else if (*(int *)&stream->field_0x8 < 1) {
+    iVar1 = -1;
+  }
   else {
-    if (*(int *)&stream->field_0x8 < 1) {
-      iVar1 = -1;
-    }
-    else {
-      *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + -1;
-      iVar1 = 0;
-    }
+    *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + -1;
+    iVar1 = 0;
   }
   return iVar1;
 }
@@ -58562,7 +56777,7 @@ Str StrISgets(InputStream stream)
     s = (Str)0x0;
   }
   else {
-    while (*(char *)&stream->field_0x15 == '\0') {
+    while (stream->field_0x15 == '\0') {
       if (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc) {
         do_update((BaseStream)stream);
       }
@@ -58615,7 +56830,7 @@ Str StrmyISgets(InputStream stream)
     do {
       while( true ) {
         while( true ) {
-          if (*(char *)&stream->field_0x15 != '\0') {
+          if (stream->field_0x15 != '\0') {
             if (s != (Str)0x0) {
               return s;
             }
@@ -58640,10 +56855,9 @@ Str StrmyISgets(InputStream stream)
           s->ptr[s->length] = '\0';
           return s;
         }
-        i = *(int *)&stream->field_0x8;
-        while (((i < *(int *)&stream->field_0xc && (*(char *)(*(int *)stream + i) != '\n')) &&
-               (*(char *)(*(int *)stream + i) != '\r'))) {
-          i = i + 1;
+        for (i = *(int *)&stream->field_0x8;
+            ((i < *(int *)&stream->field_0xc && (*(char *)(*(int *)stream + i) != '\n')) &&
+            (*(char *)(*(int *)stream + i) != '\r')); i = i + 1) {
         }
         if (i < *(int *)&stream->field_0xc) break;
         if (s == (Str)0x0) {
@@ -58674,7 +56888,7 @@ int ISread(InputStream stream,Str buf,int count)
   int len;
   int rest;
   
-  if ((stream == (InputStream)0x0) || (*(char *)&stream->field_0x15 != '\0')) {
+  if ((stream == (InputStream)0x0) || (stream->field_0x15 != '\0')) {
     iVar1 = 0;
   }
   else {
@@ -58684,7 +56898,7 @@ int ISread(InputStream stream,Str buf,int count)
       len = (**(code **)&stream->field_0x18)
                       (*(undefined4 *)&stream->field_0x10,buf->ptr + iVar1,rest);
       if (len < 1) {
-        *(undefined *)&stream->field_0x15 = 1;
+        stream->field_0x15 = 1;
         len = 0;
       }
       rest = rest - len;
@@ -58702,8 +56916,6 @@ int ISread(InputStream stream,Str buf,int count)
 
 
 
-// WARNING: Type propagation algorithm not settling
-
 int ISfileno(InputStream stream)
 
 {
@@ -58714,22 +56926,18 @@ int ISfileno(InputStream stream)
     iVar2 = -1;
   }
   else {
-    bVar1 = *(byte *)&stream->field_0x14 & 0xef;
+    bVar1 = stream->field_0x14 & 0xef;
     if (bVar1 == 1) {
-      iVar2 = fileno((FILE *)(*(FILE **)&stream->field_0x10)->_flags);
+      iVar2 = fileno(**(FILE ***)&stream->field_0x10);
+    }
+    else if (bVar1 == 4) {
+      iVar2 = ISfileno(**(InputStream **)&stream->field_0x10);
+    }
+    else if (bVar1 == 0) {
+      iVar2 = **(int **)&stream->field_0x10;
     }
     else {
-      if (bVar1 == 4) {
-        iVar2 = ISfileno(*(InputStream *)*(InputStream *)&stream->field_0x10);
-      }
-      else {
-        if (bVar1 == 0) {
-          iVar2 = **(int **)&stream->field_0x10;
-        }
-        else {
-          iVar2 = -1;
-        }
-      }
+      iVar2 = -1;
     }
   }
   return iVar2;
@@ -58742,11 +56950,10 @@ int ISeos(InputStream stream)
 {
   BaseStream base;
   
-  if ((*(char *)&stream->field_0x15 == '\0') &&
-     (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc)) {
+  if ((stream->field_0x15 == '\0') && (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc)) {
     do_update((BaseStream)stream);
   }
-  return (int)*(char *)&stream->field_0x15;
+  return (int)(char)stream->field_0x15;
 }
 
 
@@ -58802,7 +57009,7 @@ int str_read(Str handle,char *buf,int len)
 void ens_close(ens_handle *handle)
 
 {
-  ISclose((InputStream)handle->is);
+  ISclose(handle->is);
   return;
 }
 
@@ -58816,7 +57023,7 @@ int ens_read(ens_handle *handle,char *buf,int len)
   char *p;
   
   if ((handle->s == (Str)0x0) || (handle->pos == handle->s->length)) {
-    p_Var1 = StrmyISgets((InputStream)handle->is);
+    p_Var1 = StrmyISgets(handle->is);
     handle->s = p_Var1;
     if (handle->s->length == 0) {
       return 0;
@@ -58825,32 +57032,26 @@ int ens_read(ens_handle *handle,char *buf,int len)
     if (handle->encoding == '\x01') {
       Strchop(handle->s);
     }
-    else {
-      if (handle->encoding == '\x03') {
-        iVar2 = strncmp(handle->s->ptr,"begin",5);
-        if (iVar2 == 0) {
-          p_Var1 = StrmyISgets((InputStream)handle->is);
-          handle->s = p_Var1;
-        }
-        Strchop(handle->s);
+    else if (handle->encoding == '\x03') {
+      iVar2 = strncmp(handle->s->ptr,"begin",5);
+      if (iVar2 == 0) {
+        p_Var1 = StrmyISgets(handle->is);
+        handle->s = p_Var1;
       }
+      Strchop(handle->s);
     }
     p = handle->s->ptr;
     if (handle->encoding == '\x02') {
       p_Var1 = decodeQP(&p);
       handle->s = p_Var1;
     }
-    else {
-      if (handle->encoding == '\x01') {
-        p_Var1 = decodeB(&p);
-        handle->s = p_Var1;
-      }
-      else {
-        if (handle->encoding == '\x03') {
-          p_Var1 = decodeU(&p);
-          handle->s = p_Var1;
-        }
-      }
+    else if (handle->encoding == '\x01') {
+      p_Var1 = decodeB(&p);
+      handle->s = p_Var1;
+    }
+    else if (handle->encoding == '\x03') {
+      p_Var1 = decodeU(&p);
+      handle->s = p_Var1;
     }
     handle->pos = 0;
   }
@@ -59179,8 +57380,7 @@ Str Strsubstr(Str s,int beg,int len)
   
   x = Strnew();
   if (beg < s->length) {
-    i = 0;
-    while ((i < len && (beg + i < s->length))) {
+    for (i = 0; (i < len && (beg + i < s->length)); i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -59188,7 +57388,6 @@ Str Strsubstr(Str s,int beg,int len)
       x->ptr[iVar1] = s->ptr[beg + i];
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
   }
   return x;
@@ -59202,8 +57401,7 @@ void Strlower(Str s)
   byte bVar1;
   int i;
   
-  i = 0;
-  while (i < s->length) {
+  for (i = 0; i < s->length; i = i + 1) {
     if ((MYCTYPE_MAP[(byte)s->ptr[i]] & 4) == 0) {
       bVar1 = s->ptr[i];
     }
@@ -59211,7 +57409,6 @@ void Strlower(Str s)
       bVar1 = s->ptr[i] | 0x20;
     }
     s->ptr[i] = bVar1;
-    i = i + 1;
   }
   return;
 }
@@ -59224,8 +57421,7 @@ void Strupper(Str s)
   byte bVar1;
   int i;
   
-  i = 0;
-  while (i < s->length) {
+  for (i = 0; i < s->length; i = i + 1) {
     if ((MYCTYPE_MAP[(byte)s->ptr[i]] & 4) == 0) {
       bVar1 = s->ptr[i];
     }
@@ -59233,7 +57429,6 @@ void Strupper(Str s)
       bVar1 = s->ptr[i] & 0xdf;
     }
     s->ptr[i] = bVar1;
-    i = i + 1;
   }
   return;
 }
@@ -59262,10 +57457,8 @@ void Strinsert_char(Str s,int pos,char c)
     if (s->area_size < s->length + 2) {
       Strgrow(s);
     }
-    i = s->length;
-    while (pos < i) {
+    for (i = s->length; pos < i; i = i + -1) {
       s->ptr[i] = s->ptr[i + -1];
-      i = i + -1;
     }
     s->length = s->length + 1;
     s->ptr[s->length] = '\0';
@@ -59298,10 +57491,8 @@ void Strdelete(Str s,int pos,int n)
   int i;
   
   if (pos + n < s->length) {
-    i = pos;
-    while (i < s->length - n) {
+    for (i = pos; i < s->length - n; i = i + 1) {
       s->ptr[i] = s->ptr[i + n];
-      i = i + 1;
     }
     s->ptr[i] = '\0';
     s->length = i;
@@ -59388,8 +57579,7 @@ Str Stralign_left(Str s,int width)
   if (s->length < width) {
     x = Strnew_size(width);
     Strcopy(x,s);
-    i = s->length;
-    while (i < width) {
+    for (i = s->length; i < width; i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -59397,7 +57587,6 @@ Str Stralign_left(Str s,int width)
       x->ptr[iVar1] = ' ';
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
   }
   else {
@@ -59418,8 +57607,7 @@ Str Stralign_right(Str s,int width)
   
   if (s->length < width) {
     x = Strnew_size(width);
-    i = s->length;
-    while (i < width) {
+    for (i = s->length; i < width; i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -59427,7 +57615,6 @@ Str Stralign_right(Str s,int width)
       x->ptr[iVar1] = ' ';
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
     Strcat(x,s);
   }
@@ -59452,8 +57639,7 @@ Str Stralign_center(Str s,int width)
   if (s->length < width) {
     x = Strnew_size(width);
     iVar2 = (width - s->length) / 2;
-    i = 0;
-    while (i < iVar2) {
+    for (i = 0; i < iVar2; i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -59461,11 +57647,9 @@ Str Stralign_center(Str s,int width)
       x->ptr[iVar1] = ' ';
       x->length = iVar1 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
     Strcat(x,s);
-    i = s->length + iVar2;
-    while (i < width) {
+    for (i = s->length + iVar2; i < width; i = i + 1) {
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
@@ -59473,7 +57657,6 @@ Str Stralign_center(Str s,int width)
       x->ptr[iVar2] = ' ';
       x->length = iVar2 + 1;
       x->ptr[x->length] = '\0';
-      i = i + 1;
     }
   }
   else {
@@ -59542,11 +57725,9 @@ Str Sprintf(char *fmt,...)
         if (*f == '.') {
           status = 2;
         }
-        else {
-          if (*f == '%') {
-            status = 0;
-            len = len + 1;
-          }
+        else if (*f == '%') {
+          status = 0;
+          len = len + 1;
         }
       }
       else {
@@ -59685,7 +57866,7 @@ clen_t strtoclen(char *s)
   longlong lVar1;
   
   lVar1 = strtoll(s,(char **)0x0,10);
-  return (clen_t)lVar1;
+  return lVar1;
 }
 
 
@@ -59766,20 +57947,18 @@ char * cleanupName(char *name)
         p = p + 3;
         q = q + 3;
       }
+      else if ((p + -3 < __dest) || (iVar1 = strncmp(p + -3,"/..",3), iVar1 != 0)) {
+        do {
+          if (p == __dest) break;
+          p = p + -1;
+        } while (*p != '/');
+        *p = '\0';
+        q = q + 3;
+        strcat(__dest,q);
+      }
       else {
-        if ((p + -3 < __dest) || (iVar1 = strncmp(p + -3,"/..",3), iVar1 != 0)) {
-          do {
-            if (p == __dest) break;
-            p = p + -1;
-          } while (*p != '/');
-          *p = '\0';
-          q = q + 3;
-          strcat(__dest,q);
-        }
-        else {
-          p = p + 3;
-          q = q + 3;
-        }
+        p = p + 3;
+        q = q + 3;
       }
     }
     iVar1 = strcmp(p,"/..");
@@ -59839,39 +58018,37 @@ char * expandPath(char *name)
   if (name == (char *)0x0) {
     name = (char *)0x0;
   }
-  else {
-    if (*name == '~') {
-      p = name + 1;
-      if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
-        if ((*p != 0x2f) && (*p != 0)) {
-          return name;
-        }
-        pcVar1 = getenv("HOME");
-        extpath = Strnew_charp(pcVar1);
+  else if (*name == '~') {
+    p = name + 1;
+    if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
+      if ((*p != 0x2f) && (*p != 0)) {
+        return name;
+      }
+      pcVar1 = getenv("HOME");
+      extpath = Strnew_charp(pcVar1);
+    }
+    else {
+      pcVar1 = strchr(p,0x2f);
+      if (pcVar1 == (char *)0x0) {
+        passent = (passwd *)getpwnam(p);
+        p = "";
       }
       else {
-        pcVar1 = strchr(p,0x2f);
-        if (pcVar1 == (char *)0x0) {
-          passent = (passwd *)getpwnam(p);
-          p = "";
-        }
-        else {
-          __name = allocStr(p,(int)(pcVar1 + -(int)p));
-          passent = (passwd *)getpwnam(__name);
-          p = pcVar1;
-        }
-        if (passent == (passwd *)0x0) {
-          return name;
-        }
-        extpath = Strnew_charp(passent->pw_dir);
+        __name = allocStr(p,(int)pcVar1 - (int)p);
+        passent = (passwd *)getpwnam(__name);
+        p = pcVar1;
       }
-      iVar2 = strcmp(extpath->ptr,"/");
-      if ((iVar2 == 0) && (*p == '/')) {
-        p = p + 1;
+      if (passent == (passwd *)0x0) {
+        return name;
       }
-      Strcat_charp(extpath,p);
-      name = extpath->ptr;
+      extpath = Strnew_charp(passent->pw_dir);
     }
+    iVar2 = strcmp(extpath->ptr,"/");
+    if ((iVar2 == 0) && (*p == '/')) {
+      p = p + 1;
+    }
+    Strcat_charp(extpath,p);
+    name = extpath->ptr;
   }
   return name;
 }
@@ -59885,7 +58062,7 @@ int strcasematch(char *s1,char *s2)
   byte bVar2;
   int x;
   
-  while (*s1 != '\0') {
+  for (; *s1 != '\0'; s1 = s1 + 1) {
     if (*s2 == '\0') {
       return 1;
     }
@@ -59902,7 +58079,6 @@ int strcasematch(char *s1,char *s2)
       bVar2 = *s2 | 0x20;
     }
     if (bVar1 != bVar2) break;
-    s1 = s1 + 1;
     s2 = s2 + 1;
   }
   return (uint)(*s2 == '\0');
@@ -59920,8 +58096,7 @@ int strcasemstr(char *str,char **srch,char **ret_ptr)
     if (*str == '\0') {
       return -1;
     }
-    i = 0;
-    while (srch[i] != (char *)0x0) {
+    for (i = 0; srch[i] != (char *)0x0; i = i + 1) {
       iVar1 = strcasematch(str,srch[i]);
       if (iVar1 != 0) {
         if (ret_ptr == (char **)0x0) {
@@ -59930,7 +58105,6 @@ int strcasemstr(char *str,char **srch,char **ret_ptr)
         *ret_ptr = str;
         return i;
       }
-      i = i + 1;
     }
     str = str + 1;
   } while( true );
@@ -59949,15 +58123,13 @@ char * remove_space(char *str)
   while ((*p != '\0' && ((MYCTYPE_MAP[(byte)*p] & 2) != 0))) {
     p = p + 1;
   }
-  q = p;
-  while (*q != '\0') {
-    q = q + 1;
+  for (q = p; *q != '\0'; q = q + 1) {
   }
   while ((p < q && ((MYCTYPE_MAP[(byte)q[-1]] & 2) != 0))) {
     q = q + -1;
   }
   if (*q != '\0') {
-    p_Var1 = Strnew_charp_n(p,(int)(q + -(int)p));
+    p_Var1 = Strnew_charp_n(p,(int)q - (int)p);
     p = p_Var1->ptr;
   }
   return p;
@@ -59969,11 +58141,10 @@ int non_null(char *s)
 
 {
   if (s != (char *)0x0) {
-    while (*s != '\0') {
+    for (; *s != '\0'; s = s + 1) {
       if ((MYCTYPE_MAP[(byte)*s] & 2) == 0) {
         return 1;
       }
-      s = s + 1;
     }
   }
   return 0;
@@ -60014,12 +58185,10 @@ void cleanup_line(Str s,int mode)
     s->ptr[s->length] = '\0';
   }
   if (mode != 1) {
-    i = 0;
-    while (i < s->length) {
+    for (i = 0; i < s->length; i = i + 1) {
       if (s->ptr[i] == '\0') {
         s->ptr[i] = ' ';
       }
-      i = i + 1;
     }
   }
   return;
@@ -60055,10 +58224,10 @@ int getescapechar(char **str)
         dummy = -1;
       }
       else {
-        dummy = ZEXT14((byte)MYCTYPE_DIGITMAP[*pbVar1]);
+        dummy = (int)MYCTYPE_DIGITMAP[*pbVar1];
         p = p + 3;
         while ((MYCTYPE_MAP[(byte)*p] & 0x28) != 0) {
-          dummy = dummy * 0x10 + (uint)(byte)MYCTYPE_DIGITMAP[(byte)*p];
+          dummy = dummy * 0x10 + (uint)MYCTYPE_DIGITMAP[(byte)*p];
           p = p + 1;
         }
         if (*p == ';') {
@@ -60067,52 +58236,46 @@ int getescapechar(char **str)
         *str = p;
       }
     }
-    else {
-      if ((MYCTYPE_MAP[*pbVar1] & 8) == 0) {
-        *str = (char *)pbVar1;
-        dummy = -1;
-      }
-      else {
-        dummy = ZEXT14((byte)MYCTYPE_DIGITMAP[*pbVar1]);
-        p = p + 2;
-        while ((MYCTYPE_MAP[(byte)*p] & 8) != 0) {
-          dummy = dummy * 10 + (uint)(byte)MYCTYPE_DIGITMAP[(byte)*p];
-          p = p + 1;
-        }
-        if (*p == ';') {
-          p = p + 1;
-        }
-        *str = p;
-      }
-    }
-  }
-  else {
-    if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
-      *str = p;
+    else if ((MYCTYPE_MAP[*pbVar1] & 8) == 0) {
+      *str = (char *)pbVar1;
       dummy = -1;
     }
     else {
-      do {
-        pcVar2 = p;
-        p = pcVar2 + 1;
-      } while ((MYCTYPE_MAP[(byte)*p] & 0xc) != 0);
-      pcVar4 = allocStr(pcVar4,(int)(p + -(int)pcVar4));
-      pcVar5 = strcasestr("lt gt amp quot nbsp",pcVar4);
-      if ((pcVar5 != (char *)0x0) && (*p != '=')) {
-        bVar3 = false;
+      dummy = (int)MYCTYPE_DIGITMAP[*pbVar1];
+      p = p + 2;
+      while ((MYCTYPE_MAP[(byte)*p] & 8) != 0) {
+        dummy = dummy * 10 + (uint)MYCTYPE_DIGITMAP[(byte)*p];
+        p = p + 1;
       }
       if (*p == ';') {
-        p = pcVar2 + 2;
-      }
-      else {
-        if (bVar3) {
-          *str = p;
-          return -1;
-        }
+        p = p + 1;
       }
       *str = p;
-      dummy = getHash_si(&entity,pcVar4,-1);
     }
+  }
+  else if ((MYCTYPE_MAP[(byte)*p] & 4) == 0) {
+    *str = p;
+    dummy = -1;
+  }
+  else {
+    do {
+      pcVar2 = p;
+      p = pcVar2 + 1;
+    } while ((MYCTYPE_MAP[(byte)*p] & 0xc) != 0);
+    pcVar4 = allocStr(pcVar4,(int)p - (int)pcVar4);
+    pcVar5 = strcasestr("lt gt amp quot nbsp",pcVar4);
+    if ((pcVar5 != (char *)0x0) && (*p != '=')) {
+      bVar3 = false;
+    }
+    if (*p == ';') {
+      p = pcVar2 + 2;
+    }
+    else if (bVar3) {
+      *str = p;
+      return -1;
+    }
+    *str = p;
+    dummy = getHash_si(&entity,pcVar4,-1);
   }
   return dummy;
 }
@@ -60137,7 +58300,7 @@ char * getescapecmd(char **s)
     else {
       tmp = Strnew_charp("&");
     }
-    Strcat_charp_n(tmp,pcVar1,(int)(*s + -(int)pcVar1));
+    Strcat_charp_n(tmp,pcVar1,(int)*s - (int)pcVar1);
     pcVar1 = tmp->ptr;
   }
   else {
@@ -60158,8 +58321,7 @@ char * html_quote(char *str)
   Str tmp;
   
   tmp = (Str)0x0;
-  p = str;
-  while (*p != '\0') {
+  for (p = str; *p != '\0'; p = p + 1) {
     y = HTML_QUOTE_MAP[QUOTE_MAP[(byte)*p] & 7];
     if (y == (char *)0x0) {
       if (tmp != (Str)0x0) {
@@ -60174,11 +58336,10 @@ char * html_quote(char *str)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+        tmp = Strnew_charp_n(str,(int)p - (int)str);
       }
       Strcat_charp(tmp,y);
     }
-    p = p + 1;
   }
   if (tmp != (Str)0x0) {
     str = tmp->ptr;
@@ -60202,7 +58363,7 @@ char * html_unquote(char *str)
   while (*p != '\0') {
     if (*p == '&') {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+        tmp = Strnew_charp_n(str,(int)p - (int)str);
       }
       y = getescapecmd(&p);
       Strcat_charp(tmp,y);
@@ -60236,8 +58397,7 @@ char * url_quote(char *str)
   Str tmp;
   
   tmp = (Str)0x0;
-  p = str;
-  while (*p != '\0') {
+  for (p = str; *p != '\0'; p = p + 1) {
     if ((QUOTE_MAP[(byte)*p] & 0x10) == 0) {
       if (tmp != (Str)0x0) {
         if (tmp->area_size <= tmp->length + 1) {
@@ -60251,7 +58411,7 @@ char * url_quote(char *str)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+        tmp = Strnew_charp_n(str,(int)p - (int)str);
       }
       if (tmp->area_size <= tmp->length + 1) {
         Strgrow(tmp);
@@ -60275,7 +58435,6 @@ char * url_quote(char *str)
       tmp->length = iVar1 + 1;
       tmp->ptr[tmp->length] = '\0';
     }
-    p = p + 1;
   }
   if (tmp != (Str)0x0) {
     str = tmp->ptr;
@@ -60294,8 +58453,7 @@ char * file_quote(char *str)
   Str tmp;
   
   tmp = (Str)0x0;
-  p = str;
-  while (*p != '\0') {
+  for (p = str; *p != '\0'; p = p + 1) {
     if ((QUOTE_MAP[(byte)*p] & 0x30) == 0) {
       if (tmp != (Str)0x0) {
         if (tmp->area_size <= tmp->length + 1) {
@@ -60309,12 +58467,11 @@ char * file_quote(char *str)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+        tmp = Strnew_charp_n(str,(int)p - (int)str);
       }
       sprintf(buf,"%%%02X",(uint)(byte)*p);
       Strcat_charp(tmp,buf);
     }
-    p = p + 1;
   }
   if (tmp != (Str)0x0) {
     str = tmp->ptr;
@@ -60363,12 +58520,11 @@ LAB_080b36fb:
     }
     else {
       q = p + 3;
-      uVar2 = (uint)(byte)MYCTYPE_DIGITMAP[(byte)p[2]] |
-              (uint)(byte)MYCTYPE_DIGITMAP[(byte)p[1]] << 4;
+      uVar2 = (uint)MYCTYPE_DIGITMAP[(byte)p[2]] | (uint)MYCTYPE_DIGITMAP[(byte)p[1]] << 4;
     }
     if ((int)uVar2 < 0) goto LAB_080b36fb;
     if (tmp == (Str)0x0) {
-      tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+      tmp = Strnew_charp_n(str,(int)p - (int)str);
     }
     if (((uVar2 != 0) && (uVar2 != 10)) && (uVar2 != 0xd)) {
       if (tmp->area_size <= tmp->length + 1) {
@@ -60397,13 +58553,12 @@ Str Str_form_quote(Str x)
   Str tmp;
   
   tmp = (Str)0x0;
-  p = x->ptr;
   pcVar1 = x->ptr;
   iVar2 = x->length;
-  while (p < pcVar1 + iVar2) {
+  for (p = x->ptr; p < pcVar1 + iVar2; p = p + 1) {
     if (*p == ' ') {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(x->ptr,(int)(p + -(int)x->ptr));
+        tmp = Strnew_charp_n(x->ptr,(int)p - (int)x->ptr);
       }
       if (tmp->area_size <= tmp->length + 1) {
         Strgrow(tmp);
@@ -60413,27 +58568,24 @@ Str Str_form_quote(Str x)
       tmp->length = iVar3 + 1;
       tmp->ptr[tmp->length] = '\0';
     }
-    else {
-      if ((QUOTE_MAP[(byte)*p] & 0x70) == 0) {
-        if (tmp != (Str)0x0) {
-          if (tmp->area_size <= tmp->length + 1) {
-            Strgrow(tmp);
-          }
-          iVar3 = tmp->length;
-          tmp->ptr[iVar3] = *p;
-          tmp->length = iVar3 + 1;
-          tmp->ptr[tmp->length] = '\0';
+    else if ((QUOTE_MAP[(byte)*p] & 0x70) == 0) {
+      if (tmp != (Str)0x0) {
+        if (tmp->area_size <= tmp->length + 1) {
+          Strgrow(tmp);
         }
-      }
-      else {
-        if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(x->ptr,(int)(p + -(int)x->ptr));
-        }
-        sprintf(buf,"%%%02X",(uint)(byte)*p);
-        Strcat_charp(tmp,buf);
+        iVar3 = tmp->length;
+        tmp->ptr[iVar3] = *p;
+        tmp->length = iVar3 + 1;
+        tmp->ptr[tmp->length] = '\0';
       }
     }
-    p = p + 1;
+    else {
+      if (tmp == (Str)0x0) {
+        tmp = Strnew_charp_n(x->ptr,(int)p - (int)x->ptr);
+      }
+      sprintf(buf,"%%%02X",(uint)(byte)*p);
+      Strcat_charp(tmp,buf);
+    }
   }
   if (tmp != (Str)0x0) {
     x = tmp;
@@ -60471,7 +58623,7 @@ Str Str_url_unquote(Str x,int is_form,int safe)
         }
         if ((is_form == 0) || (*p != '+')) break;
         if (tmp == (Str)0x0) {
-          tmp = Strnew_charp_n(x->ptr,(int)(p + -(int)x->ptr));
+          tmp = Strnew_charp_n(x->ptr,(int)p - (int)x->ptr);
         }
         if (tmp->area_size <= tmp->length + 1) {
           Strgrow(tmp);
@@ -60501,14 +58653,13 @@ LAB_080b3b06:
     }
     else {
       q = p + 3;
-      uVar4 = (uint)(byte)MYCTYPE_DIGITMAP[(byte)p[2]] |
-              (uint)(byte)MYCTYPE_DIGITMAP[(byte)p[1]] << 4;
+      uVar4 = (uint)MYCTYPE_DIGITMAP[(byte)p[2]] | (uint)MYCTYPE_DIGITMAP[(byte)p[1]] << 4;
     }
     if (((int)uVar4 < 0) ||
        (((safe != 0 && ((MYCTYPE_MAP[uVar4 & 0xff] & 0x11) != 0)) &&
         ((QUOTE_MAP[uVar4 & 0xff] & 0x30) != 0)))) goto LAB_080b3b06;
     if (tmp == (Str)0x0) {
-      tmp = Strnew_charp_n(x->ptr,(int)(p + -(int)x->ptr));
+      tmp = Strnew_charp_n(x->ptr,(int)p - (int)x->ptr);
     }
     if (tmp->area_size <= tmp->length + 1) {
       Strgrow(tmp);
@@ -60531,8 +58682,7 @@ char * shell_quote(char *str)
   Str tmp;
   
   tmp = (Str)0x0;
-  p = str;
-  while (*p != '\0') {
+  for (p = str; *p != '\0'; p = p + 1) {
     if ((QUOTE_MAP[(byte)*p] & 8) == 0) {
       if (tmp != (Str)0x0) {
         if (tmp->area_size <= tmp->length + 1) {
@@ -60546,7 +58696,7 @@ char * shell_quote(char *str)
     }
     else {
       if (tmp == (Str)0x0) {
-        tmp = Strnew_charp_n(str,(int)(p + -(int)str));
+        tmp = Strnew_charp_n(str,(int)p - (int)str);
       }
       if (tmp->area_size <= tmp->length + 1) {
         Strgrow(tmp);
@@ -60563,7 +58713,6 @@ char * shell_quote(char *str)
       tmp->length = iVar1 + 1;
       tmp->ptr[tmp->length] = '\0';
     }
-    p = p + 1;
   }
   if (tmp != (Str)0x0) {
     str = tmp->ptr;
@@ -60644,8 +58793,8 @@ ListItem * newListItem(void *s,ListItem *n,ListItem *p)
   
   pLVar1 = (ListItem *)GC_malloc(0xc);
   pLVar1->ptr = s;
-  pLVar1->next = (_listitem *)n;
-  pLVar1->prev = (_listitem *)p;
+  pLVar1->next = n;
+  pLVar1->prev = p;
   return pLVar1;
 }
 
@@ -60680,7 +58829,7 @@ void pushValue(GeneralList *tl,void *s)
       tl->nitem = 1;
     }
     else {
-      tl->last->next = (_listitem *)pLVar1;
+      tl->last->next = pLVar1;
       tl->last = pLVar1;
       tl->nitem = tl->nitem + 1;
     }
@@ -60702,7 +58851,7 @@ void * popValue(GeneralList *tl)
   }
   else {
     pLVar1 = tl->first;
-    tl->first = (ListItem *)pLVar1->next;
+    tl->first = pLVar1->next;
     if (tl->first == (ListItem *)0x0) {
       tl->last = (ListItem *)0x0;
     }
@@ -60729,7 +58878,7 @@ void * rpopValue(GeneralList *tl)
   }
   else {
     pLVar1 = tl->last;
-    tl->last = (ListItem *)pLVar1->prev;
+    tl->last = pLVar1->prev;
     if (tl->last == (ListItem *)0x0) {
       tl->first = (ListItem *)0x0;
     }
@@ -60748,13 +58897,13 @@ void delValue(GeneralList *tl,ListItem *it)
 
 {
   if (it->prev == (_listitem *)0x0) {
-    tl->first = (ListItem *)it->next;
+    tl->first = it->next;
   }
   else {
     it->prev->next = it->next;
   }
   if (it->next == (_listitem *)0x0) {
-    tl->last = (ListItem *)it->prev;
+    tl->last = it->prev;
   }
   else {
     it->next->prev = it->prev;
@@ -60776,8 +58925,8 @@ GeneralList * appendGeneralList(GeneralList *tl,GeneralList *tl2)
         tl->nitem = tl2->nitem;
       }
       else {
-        tl->last->next = (_listitem *)tl2->first;
-        tl2->first->prev = (_listitem *)tl->last;
+        tl->last->next = tl2->first;
+        tl2->first->prev = tl->last;
         tl->last = tl2->last;
         tl->nitem = tl->nitem + tl2->nitem;
       }
@@ -60921,10 +59070,8 @@ parsed_tagarg * cgistr2tagarg(char *cgistr)
       p_Var3 = Str_url_unquote(p_Var3,1,0);
       ppVar2->value = p_Var3->ptr;
     }
-    else {
-      if (*cgistr == '&') {
-        cgistr = cgistr + 1;
-      }
+    else if (*cgistr == '&') {
+      cgistr = cgistr + 1;
     }
     t0 = ppVar2;
   } while (*cgistr != '\0');
@@ -60939,7 +59086,7 @@ uint hashfunc(char *s)
   uint h;
   
   h = 0;
-  while (*s != '\0') {
+  for (; *s != '\0'; s = s + 1) {
     if ((int)h < 0) {
       h = h << 1 | 1;
     }
@@ -60947,7 +59094,6 @@ uint hashfunc(char *s)
       h = h << 1;
     }
     h = h + (int)*s;
-    s = s + 1;
   }
   return h;
 }
@@ -60966,10 +59112,8 @@ Hash_si * newHash_si(int size)
   pHVar1->size = size;
   ppHVar2 = (HashItem_si **)GC_malloc(size << 2);
   pHVar1->tab = ppHVar2;
-  i = 0;
-  while (i < size) {
+  for (i = 0; i < size; i = i + 1) {
     pHVar1->tab[i] = (HashItem_si *)0x0;
-    i = i + 1;
   }
   return pHVar1;
 }
@@ -61050,10 +59194,8 @@ Hash_ss * newHash_ss(int size)
   pHVar1->size = size;
   ppHVar2 = (HashItem_ss **)GC_malloc(size << 2);
   pHVar1->tab = ppHVar2;
-  i = 0;
-  while (i < size) {
+  for (i = 0; i < size; i = i + 1) {
     pHVar1->tab[i] = (HashItem_ss *)0x0;
-    i = i + 1;
   }
   return pHVar1;
 }
@@ -61134,10 +59276,8 @@ Hash_sv * newHash_sv(int size)
   pHVar1->size = size;
   ppHVar2 = (HashItem_sv **)GC_malloc(size << 2);
   pHVar1->tab = ppHVar2;
-  i = 0;
-  while (i < size) {
+  for (i = 0; i < size; i = i + 1) {
     pHVar1->tab[i] = (HashItem_sv *)0x0;
-    i = i + 1;
   }
   return pHVar1;
 }
@@ -61218,10 +59358,8 @@ Hash_iv * newHash_iv(int size)
   pHVar1->size = size;
   ppHVar2 = (HashItem_iv **)GC_malloc(size << 2);
   pHVar1->tab = ppHVar2;
-  i = 0;
-  while (i < size) {
+  for (i = 0; i < size; i = i + 1) {
     pHVar1->tab[i] = (HashItem_iv *)0x0;
-    i = i + 1;
   }
   return pHVar1;
 }
@@ -61540,13 +59678,11 @@ wc_ces wc_charset_to_ces(char *charset)
             if (iVar1 == 0x4e5) {
               wVar3 = 0x10042f;
             }
+            else if (iVar1 < 0x4e6) {
+              wVar3 = 0x10042e;
+            }
             else {
-              if (iVar1 < 0x4e6) {
-                wVar3 = 0x10042e;
-              }
-              else {
-                wVar3 = 0x100430;
-              }
+              wVar3 = 0x100430;
             }
             goto LAB_080b5673;
           }
@@ -61658,18 +59794,14 @@ wc_ces wc_charset_to_ces(char *charset)
           }
         }
       }
+      else if (buf[7] == 'k') {
+        wVar3 = 0x200815;
+      }
+      else if (buf[7] == 'c') {
+        wVar3 = 0x200814;
+      }
       else {
-        if (buf[7] == 'k') {
-          wVar3 = 0x200815;
-        }
-        else {
-          if (buf[7] == 'c') {
-            wVar3 = 0x200814;
-          }
-          else {
-            wVar3 = 0x200811;
-          }
-        }
+        wVar3 = 0x200811;
       }
       goto LAB_080b5673;
     }
@@ -61941,13 +60073,11 @@ switchD_080b5745_caseD_64:
       if (*p == '2') {
         wVar1 = 0x200812;
       }
+      else if (*p == '3') {
+        wVar1 = 0x200813;
+      }
       else {
-        if (*p == '3') {
-          wVar1 = 0x200813;
-        }
-        else {
-          wVar1 = 0x200811;
-        }
+        wVar1 = 0x200811;
       }
     }
     break;
@@ -62082,30 +60212,26 @@ wc_ces wc_locale_to_ces(char *locale)
         if (buf[0] == 'k') {
           WcLocale = 5;
         }
-        else {
-          if (buf[0] == 'z') {
-            iVar2 = strcmp(buf,"zh_tw");
-            if (iVar2 == 0) {
-              WcLocale = 3;
-            }
-            else {
-              iVar2 = strcmp(buf,"zh_hk");
-              if (iVar2 == 0) {
-                WcLocale = 4;
-              }
-              else {
-                WcLocale = 2;
-              }
-            }
+        else if (buf[0] == 'z') {
+          iVar2 = strcmp(buf,"zh_tw");
+          if (iVar2 == 0) {
+            WcLocale = 3;
           }
           else {
-            if (buf[0] == 'j') {
-              WcLocale = 1;
+            iVar2 = strcmp(buf,"zh_hk");
+            if (iVar2 == 0) {
+              WcLocale = 4;
             }
             else {
-              WcLocale = 0;
+              WcLocale = 2;
             }
           }
+        }
+        else if (buf[0] == 'j') {
+          WcLocale = 1;
+        }
+        else {
+          WcLocale = 0;
         }
       }
       wVar1 = wc_charset_to_ces(p + 1);
@@ -62147,7 +60273,7 @@ char * wc_ces_to_charset(wc_ces ces)
     pcVar1 = "WTF";
   }
   else {
-    pcVar1 = *(char **)(WcCesInfo + (ces & 0xff) * 0x20 + 4);
+    pcVar1 = WcCesInfo[ces & 0xff].name;
   }
   return pcVar1;
 }
@@ -62163,7 +60289,7 @@ char * wc_ces_to_charset_desc(wc_ces ces)
     pcVar1 = "W3M Transfer Format";
   }
   else {
-    pcVar1 = *(char **)(WcCesInfo + (ces & 0xff) * 0x20 + 8);
+    pcVar1 = WcCesInfo[ces & 0xff].desc;
   }
   return pcVar1;
 }
@@ -62183,15 +60309,11 @@ wc_ces wc_guess_8bit_charset(wc_ces orig)
       orig = 0x301016;
     }
   }
-  else {
-    if (orig == 0x200815) {
-      orig = 0x301019;
-    }
-    else {
-      if ((orig < 0x200815) || (orig == 0x20203c)) {
-        orig = 0x301017;
-      }
-    }
+  else if (orig == 0x200815) {
+    orig = 0x301019;
+  }
+  else if ((orig < 0x200815) || (orig == 0x20203c)) {
+    orig = 0x301017;
   }
   return orig;
 }
@@ -62204,7 +60326,7 @@ wc_bool wc_check_ces(wc_ces ces)
   wc_bool wVar1;
   size_t i;
   
-  if (((ces & 0xff) < 0x47) && (*(wc_ces *)(WcCesInfo + (ces & 0xff) * 0x20) == ces)) {
+  if (((ces & 0xff) < 0x47) && (WcCesInfo[ces & 0xff].id == ces)) {
     wVar1 = '\x01';
   }
   else {
@@ -62233,25 +60355,21 @@ wc_ces_list * wc_get_ces_list(void)
   wc_ces_info *info;
   
   if (list == (wc_ces_list *)0x0) {
-    info = (wc_ces_info *)WcCesInfo;
     n = 0;
-    while (info->id != 0) {
+    for (info = WcCesInfo; info->id != 0; info = info + 1) {
       if (info->name != (char *)0x0) {
         n = n + 1;
       }
-      info = info + 1;
     }
     list = (wc_ces_list *)GC_malloc((n + 1) * 0xc);
-    info = (wc_ces_info *)WcCesInfo;
     n = 0;
-    while (info->id != 0) {
+    for (info = WcCesInfo; info->id != 0; info = info + 1) {
       if (info->name != (char *)0x0) {
         list[n].id = info->id;
         list[n].name = info->name;
         list[n].desc = info->desc;
         n = n + 1;
       }
-      info = info + 1;
     }
     list[n].id = 0;
     list[n].name = (char *)0x0;
@@ -62267,7 +60385,7 @@ Str wc_Str_conv(Str is,wc_ces f_ces,wc_ces t_ces)
 
 {
   if (f_ces != 0x310000) {
-    is = (Str)(**(code **)(WcCesInfo + ((f_ces & 0xff) * 2 + 1) * 0x10 + 4))(is,f_ces);
+    is = (*WcCesInfo[f_ces & 0xff].conv_from)(is,f_ces);
   }
   if (t_ces != 0x310000) {
     is = wc_conv_to_ces(is,t_ces);
@@ -62326,21 +60444,16 @@ Str wc_conv_to_ces(Str is,wc_ces ces)
   p = sp;
   if (ces < 0x104442) {
 LAB_080b5f9b:
-    while ((p < ep && (-1 < (char)*p))) {
-      p = p + 1;
+    for (; (p < ep && (-1 < (char)*p)); p = p + 1) {
+    }
+  }
+  else if (ces < 0x104445) {
+    for (; ((p < ep && (0x1f < *p)) && (-1 < (char)*p)); p = p + 1) {
     }
   }
   else {
-    if (ces < 0x104445) {
-      while (((p < ep && (0x1f < *p)) && (-1 < (char)*p))) {
-        p = p + 1;
-      }
-    }
-    else {
-      if (ces != 0x20203c) goto LAB_080b5f9b;
-      while (((p < ep && (*p != '~')) && (-1 < (char)*p))) {
-        p = p + 1;
-      }
+    if (ces != 0x20203c) goto LAB_080b5f9b;
+    for (; ((p < ep && (*p != '~')) && (-1 < (char)*p)); p = p + 1) {
     }
   }
   if (p == ep) {
@@ -62351,7 +60464,7 @@ LAB_080b5f9b:
     p = p + -1;
   }
   if (sp < p) {
-    Strcat_charp_n(os,is->ptr,(int)(p + -(int)sp));
+    Strcat_charp_n(os,is->ptr,(int)p - (int)sp);
   }
   wc_output_init(ces,&st);
   if (ces < 0x200816) {
@@ -62377,9 +60490,7 @@ LAB_080b6169:
       goto LAB_080b6175;
     }
   }
-  else {
-    if (((ces != 0x208046) && (ces != 0x308045)) && (ces != 0x20203c)) goto LAB_080b6169;
-  }
+  else if (((ces != 0x208046) && (ces != 0x308045)) && (ces != 0x20203c)) goto LAB_080b6169;
   while (p < ep) {
     paVar1 = (st.ces_info)->push_to;
     wtf_parse(&local_24);
@@ -62402,27 +60513,22 @@ Str wc_Str_conv_with_detect(Str is,wc_ces *f_ces,wc_ces hint,wc_ces t_ces)
     *f_ces = 0x310000;
     detect = 0x310000;
   }
+  else if (WcOption.auto_detect == '\0') {
+    *f_ces = hint;
+    detect = hint;
+  }
   else {
-    if (WcOption.auto_detect == '\0') {
-      *f_ces = hint;
-      detect = hint;
+    if ((*f_ces & 0x100000) != 0) {
+      hint = *f_ces;
     }
-    else {
-      if ((*f_ces & 0x100000) != 0) {
-        hint = *f_ces;
+    detect = wc_auto_detect(is->ptr,is->length,hint);
+    if (WcOption.auto_detect == '\x02') {
+      if (((detect & 0x100000) != 0) || (((detect & 0x1fe00) != 0 && ((*f_ces & 0x100000) == 0)))) {
+        *f_ces = detect;
       }
-      detect = wc_auto_detect(is->ptr,is->length,hint);
-      if (WcOption.auto_detect == '\x02') {
-        if (((detect & 0x100000) != 0) || (((detect & 0x1fe00) != 0 && ((*f_ces & 0x100000) == 0))))
-        {
-          *f_ces = detect;
-        }
-      }
-      else {
-        if (((detect & 0x800) != 0) && ((*f_ces & 0x100000) == 0)) {
-          *f_ces = detect;
-        }
-      }
+    }
+    else if (((detect & 0x800) != 0) && ((*f_ces & 0x100000) == 0)) {
+      *f_ces = detect;
     }
   }
   p_Var1 = wc_Str_conv(is,detect,t_ces);
@@ -62438,15 +60544,11 @@ void wc_push_end(Str os,wc_status *st)
     if (st->ces_info->id == 0x20203c) {
       wc_push_to_hz_end(os,st);
     }
-    else {
-      if (st->ces_info->id == 0x308045) {
-        wc_push_to_utf8_end(os,st);
-      }
-      else {
-        if (st->ces_info->id == 0x208046) {
-          wc_push_to_utf7_end(os,st);
-        }
-      }
+    else if (st->ces_info->id == 0x308045) {
+      wc_push_to_utf8_end(os,st);
+    }
+    else if (st->ces_info->id == 0x208046) {
+      wc_push_to_utf7_end(os,st);
     }
   }
   else {
@@ -62465,10 +60567,8 @@ void wc_create_detect_map(wc_ces ces,wc_bool esc)
   
   if (ces != wc_create_detect_map::detect_ces) {
     if ((ces & 0x4000) == 0) {
-      i = 0;
-      while (i < 0x20) {
+      for (i = 0; i < 0x20; i = i + 1) {
         WC_DETECT_MAP[i] = '\0';
-        i = i + 1;
       }
       WC_DETECT_MAP[126] = ces == 0x20203c;
       WC_DETECT_MAP[43] = ces == 0x208046;
@@ -62478,20 +60578,14 @@ void wc_create_detect_map(wc_ces ces,wc_bool esc)
       if (ces == 0x104443) {
         map = wc_c0_viscii112_map;
       }
-      else {
-        if (ces == 0x104444) {
-          map = wc_c0_vps2_map;
-        }
-        else {
-          if (ces == 0x104442) {
-            map = wc_c0_tcvn57122_map;
-          }
-        }
+      else if (ces == 0x104444) {
+        map = wc_c0_vps2_map;
       }
-      i = 0;
-      while (i < 0x20) {
+      else if (ces == 0x104442) {
+        map = wc_c0_tcvn57122_map;
+      }
+      for (i = 0; i < 0x20; i = i + 1) {
         WC_DETECT_MAP[i] = map[i] != '\0';
-        i = i + 1;
       }
     }
     wc_create_detect_map::detect_ces = ces;
@@ -62573,71 +60667,61 @@ LAB_080b659d:
     euc_detect = 0;
     possible = 3;
   }
-  else {
-    if (hint < 0x301017) {
-      if (hint < 0x200814) {
-        if (0x200810 < hint) goto LAB_080b659d;
-        if (hint != 0x100) goto LAB_080b66bd;
-        latin_detect = 0;
-        possible = 2;
-      }
-      else {
-        if (hint == 0x200815) {
+  else if (hint < 0x301017) {
+    if (hint < 0x200814) {
+      if (0x200810 < hint) goto LAB_080b659d;
+      if (hint != 0x100) goto LAB_080b66bd;
+      latin_detect = 0;
+      possible = 2;
+    }
+    else if (hint == 0x200815) {
 LAB_080b6673:
-          euc = 0x301019;
-          euc_detect = 0;
-          possible = 3;
-        }
-        else {
-          if (hint < 0x200815) {
+      euc = 0x301019;
+      euc_detect = 0;
+      possible = 3;
+    }
+    else if (hint < 0x200815) {
 LAB_080b65d1:
-            euc = 0x301017;
-            big5_detect = 0;
-            euc_detect = 0;
-            possible = 3;
-          }
-          else {
-            if (hint != 0x20203c) goto LAB_080b66bd;
-            euc = 0x301017;
-            hz_detect = 0;
-            big5_detect = 0;
-            euc_detect = 0;
-            possible = 4;
-          }
-        }
-      }
+      euc = 0x301017;
+      big5_detect = 0;
+      euc_detect = 0;
+      possible = 3;
     }
     else {
-      if (hint < 0x30203a) {
-        if (0x302037 < hint) goto LAB_080b659d;
-        if (hint == 0x301018) goto LAB_080b6605;
-        if (hint < 0x301018) goto LAB_080b65d1;
-        if (hint == 0x301019) goto LAB_080b6673;
-LAB_080b66bd:
-        if ((hint & 0x200) == 0) {
-          priv_detect = 0;
-          priv = hint;
-          possible = 2;
-        }
-        else {
-          latin_detect = 0;
-          possible = 2;
-        }
-      }
-      else {
-        if (hint == 0x30203d) {
-LAB_080b6605:
-          euc = 0x301018;
-          big5_detect = 0;
-          euc_detect = 0;
-          possible = 3;
-        }
-        else {
-          if (hint != 0x308045) goto LAB_080b66bd;
-          possible = 1;
-        }
-      }
+      if (hint != 0x20203c) goto LAB_080b66bd;
+      euc = 0x301017;
+      hz_detect = 0;
+      big5_detect = 0;
+      euc_detect = 0;
+      possible = 4;
     }
+  }
+  else if (hint < 0x30203a) {
+    if (0x302037 < hint) goto LAB_080b659d;
+    if (hint == 0x301018) goto LAB_080b6605;
+    if (hint < 0x301018) goto LAB_080b65d1;
+    if (hint == 0x301019) goto LAB_080b6673;
+LAB_080b66bd:
+    if ((hint & 0x200) == 0) {
+      priv_detect = 0;
+      priv = hint;
+      possible = 2;
+    }
+    else {
+      latin_detect = 0;
+      possible = 2;
+    }
+  }
+  else if (hint == 0x30203d) {
+LAB_080b6605:
+    euc = 0x301018;
+    big5_detect = 0;
+    euc_detect = 0;
+    possible = 3;
+  }
+  else {
+    if (hint != 0x308045) goto LAB_080b66bd;
+    possible = 1;
   }
   euc_state = 0;
   sjis_state = 0;
@@ -62658,51 +60742,43 @@ LAB_080b6924:
             euc_detect = euc_detect | 2;
             ok = '\x01';
           }
+          else if ((euc_detect & 4U) == 0) {
+            euc_detect = euc_detect | 4;
+          }
           else {
-            if ((euc_detect & 4U) == 0) {
-              euc_detect = euc_detect | 4;
+            euc_detect = 8;
+          }
+          euc_state = 0;
+        }
+        else if (euc_state == 3) {
+          if (((*p < 0xa0) || (0xb0 < *p)) || (WC_ISO_MAP[p[1]] != '@')) {
+            euc_detect = 8;
+          }
+          euc_state = 0;
+        }
+        else if (euc_state == 0) {
+          switch(WC_ISO_MAP[*p]) {
+          case '@':
+            euc_state = 2;
+            break;
+          case 'P':
+          case '`':
+            euc_detect = 8;
+            break;
+          case 'T':
+            if (euc == 0x301016) {
+              euc_state = 2;
+            }
+            else if (euc == 0x301018) {
+              euc_state = 3;
             }
             else {
               euc_detect = 8;
             }
-          }
-          euc_state = 0;
-        }
-        else {
-          if (euc_state == 3) {
-            if (((*p < 0xa0) || (0xb0 < *p)) || (WC_ISO_MAP[p[1]] != '@')) {
+            break;
+          case 'U':
+            if ((euc != 0x301016) || (WC_ISO_MAP[p[1]] != '@')) {
               euc_detect = 8;
-            }
-            euc_state = 0;
-          }
-          else {
-            if (euc_state == 0) {
-              switch(WC_ISO_MAP[*p]) {
-              case '@':
-                euc_state = 2;
-                break;
-              case 'P':
-              case '`':
-                euc_detect = 8;
-                break;
-              case 'T':
-                if (euc == 0x301016) {
-                  euc_state = 2;
-                }
-                else {
-                  if (euc == 0x301018) {
-                    euc_state = 3;
-                  }
-                  else {
-                    euc_detect = 8;
-                  }
-                }
-                break;
-              case 'U':
-                if ((euc != 0x301016) || (WC_ISO_MAP[p[1]] != '@')) {
-                  euc_detect = 8;
-                }
-              }
             }
           }
         }
@@ -62726,37 +60802,33 @@ LAB_080b6924:
           }
           sjis_state = 0;
         }
-        else {
-          if (sjis_state == 3) {
-            if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
-              sjis_detect = 8;
-            }
-            else {
-              sjis_detect = sjis_detect | 1;
-            }
-            sjis_state = 0;
+        else if (sjis_state == 3) {
+          if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
+            sjis_detect = 8;
           }
           else {
-            if (sjis_state == 0) {
-              switch(WC_SJIS_MAP[*p]) {
-              case '\x12':
-              case '\x17':
-              case '@':
+            sjis_detect = sjis_detect | 1;
+          }
+          sjis_state = 0;
+        }
+        else if (sjis_state == 0) {
+          switch(WC_SJIS_MAP[*p]) {
+          case '\x12':
+          case '\x17':
+          case '@':
 switchD_080b6ab8_caseD_12:
-                sjis_detect = 8;
-                break;
-              case '\x13':
-                sjis_detect = sjis_detect | 1;
-                break;
-              case '4':
-              case '5':
-                sjis_state = 1;
-                break;
-              case '6':
-                if (WcOption.use_jisx0213 == '\0') goto switchD_080b6ab8_caseD_12;
-                sjis_state = 3;
-              }
-            }
+            sjis_detect = 8;
+            break;
+          case '\x13':
+            sjis_detect = sjis_detect | 1;
+            break;
+          case '4':
+          case '5':
+            sjis_state = 1;
+            break;
+          case '6':
+            if (WcOption.use_jisx0213 == '\0') goto switchD_080b6ab8_caseD_12;
+            sjis_state = 3;
           }
         }
         if (sjis_detect == 8) {
@@ -62781,15 +60853,11 @@ switchD_080b6ab8_caseD_12:
             bVar1 = false;
           }
         }
-        else {
-          if (WC_BIG5_MAP[*p] == '\x02') {
-            big5_detect = 8;
-          }
-          else {
-            if (WC_BIG5_MAP[*p] == '\a') {
-              bVar1 = true;
-            }
-          }
+        else if (WC_BIG5_MAP[*p] == '\x02') {
+          big5_detect = 8;
+        }
+        else if (WC_BIG5_MAP[*p] == '\a') {
+          bVar1 = true;
         }
         if (big5_detect == 8) {
           possible = possible + -1;
@@ -62843,11 +60911,9 @@ switchD_080b6ab8_caseD_12:
         if (bVar3 == 0x50) {
           latin_detect = 8;
         }
-        else {
-          if ((bVar3 == 0x60) || (bVar3 == 0x40)) {
-            latin_detect = latin_detect | 2;
-            ok = '\x01';
-          }
+        else if ((bVar3 == 0x60) || (bVar3 == 0x40)) {
+          latin_detect = latin_detect | 2;
+          ok = '\x01';
         }
         if (latin_detect == 8) {
           possible = possible + -1;
@@ -62875,7 +60941,7 @@ switchD_080b6ab8_caseD_12:
           }
         }
         else {
-          utf8_next = ZEXT14(WC_UTF8_MAP[*p]);
+          utf8_next = (int)WC_UTF8_MAP[*p];
           if (utf8_next != 1) {
             if ((uint)utf8_next < 2) {
               if (utf8_next == 0) {
@@ -62925,19 +60991,16 @@ LAB_080b6906:
           if ((st.design[0] == 0x814f) || (st.design[0] == 0x8150)) {
             iso2022jp3 = '\x01';
           }
-          else {
-            if ((st.design[0] & 0xff00) == 0x8100) {
-              iso2022jp2 = '\x01';
-            }
+          else if ((st.design[0] & 0xff00) == 0x8100) {
+            iso2022jp2 = '\x01';
           }
         }
         if (st.design[1] == 0x8143) {
           iso2022kr = '\x01';
         }
-        else {
-          if (((st.design[1] == 0x8141) || (st.design[1] == 0x8145)) || (st.design[1] == 0x8147)) {
-            iso2022cn = '\x01';
-          }
+        else if (((st.design[1] == 0x8141) || (st.design[1] == 0x8145)) || (st.design[1] == 0x8147))
+        {
+          iso2022cn = '\x01';
         }
         if (((st.design[2] & 0xff00) == 0x8100) || ((st.design[3] & 0xff00) == 0x8100)) {
           iso2022cn = '\x01';
@@ -62981,10 +61044,8 @@ LAB_080b68e4:
           return 0x200814;
         }
       }
-      else {
-        if ((euc == 0x301019) && (iso2022kr != '\0')) {
-          return 0x200815;
-        }
+      else if ((euc == 0x301019) && (iso2022kr != '\0')) {
+        return 0x200815;
       }
     }
     if (iso2022jp3 != '\0') {
@@ -63048,38 +61109,32 @@ LAB_080b6f9c:
     if (sjis_detect == 2) {
       euc = 0x302038;
     }
-    else {
-      if (big5_detect == 2) {
-        euc = 0x30203d;
-      }
-      else {
-        if (utf8_detect == 2) {
-          euc = 0x308045;
-        }
-        else {
-          if ((sjis_detect & 1U) == 0) {
-            if (euc_detect == 8) {
-              if (sjis_detect == 8) {
-                if (big5_detect == 8) {
-                  euc = hint;
-                  if (utf8_detect != 8) {
-                    euc = 0x308045;
-                  }
-                }
-                else {
-                  euc = 0x30203d;
-                }
-              }
-              else {
-                euc = 0x302038;
-              }
+    else if (big5_detect == 2) {
+      euc = 0x30203d;
+    }
+    else if (utf8_detect == 2) {
+      euc = 0x308045;
+    }
+    else if ((sjis_detect & 1U) == 0) {
+      if (euc_detect == 8) {
+        if (sjis_detect == 8) {
+          if (big5_detect == 8) {
+            euc = hint;
+            if (utf8_detect != 8) {
+              euc = 0x308045;
             }
           }
           else {
-            euc = 0x302038;
+            euc = 0x30203d;
           }
         }
+        else {
+          euc = 0x302038;
+        }
       }
+    }
+    else {
+      euc = 0x302038;
     }
   }
   return euc;
@@ -63103,39 +61158,33 @@ Str wc_conv_from_hz(Str is,wc_ces ces)
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar3 = pwVar1 + is->length;
   state = 0;
-  p = pwVar1;
-  while (((p < pwVar3 && (-1 < (char)*p)) && (*p != '~'))) {
-    p = p + 1;
+  for (p = pwVar1; ((p < pwVar3 && (-1 < (char)*p)) && (*p != '~')); p = p + 1) {
   }
   if (p != pwVar3) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (p < pwVar3) {
+    for (; p < pwVar3; p = p + 1) {
       switch(state) {
       case 0:
         if (*p == '~') {
           state = 1;
         }
+        else if (WC_ISO_MAP[*p] == '@') {
+          state = 5;
+        }
+        else if ((char)*p < '\0') {
+          wtf_push_unknown(x,p,1);
+        }
         else {
-          if (WC_ISO_MAP[*p] == '@') {
-            state = 5;
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
           }
-          else {
-            if ((char)*p < '\0') {
-              wtf_push_unknown(x,p,1);
-            }
-            else {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar2 = x->length;
-              x->ptr[iVar2] = *p;
-              x->length = iVar2 + 1;
-              x->ptr[x->length] = '\0';
-            }
-          }
+          iVar2 = x->length;
+          x->ptr[iVar2] = *p;
+          x->length = iVar2 + 1;
+          x->ptr[x->length] = '\0';
         }
         break;
       case 1:
@@ -63177,13 +61226,11 @@ Str wc_conv_from_hz(Str is,wc_ces ces)
         if (*p == '~') {
           state = 2;
         }
+        else if (WC_ISO_MAP[*p & 0x7f] == '\0') {
+          state = 4;
+        }
         else {
-          if (WC_ISO_MAP[*p & 0x7f] == '\0') {
-            state = 4;
-          }
-          else {
-            wtf_push_unknown(x,p,1);
-          }
+          wtf_push_unknown(x,p,1);
         }
         break;
       case 4:
@@ -63204,7 +61251,6 @@ Str wc_conv_from_hz(Str is,wc_ces ces)
         }
         state = 0;
       }
-      p = p + 1;
     }
     is = x;
     if (((uint)state < 6) && ((1 << (sbyte)state & 0x36U) != 0)) {
@@ -63440,7 +61486,7 @@ Str wc_conv_from_iso2022(Str is,wc_ces ces)
   if (p != ep) {
     os = Strnew_size(is->length);
     if (sp < p) {
-      Strcat_charp_n(os,is->ptr,(int)(p + -(int)sp));
+      Strcat_charp_n(os,is->ptr,(int)p - (int)sp);
     }
     wc_input_init(ces,&st);
     gl_ccs = st.design[st.gl];
@@ -63455,27 +61501,25 @@ LAB_080b8290:
 LAB_080b7feb:
           wtf_push_iso2022(os,gl_ccs,(uint)CONCAT11(*q,*p));
         }
+        else if (WC_ISO_MAP[*p] == ' ') {
+          if ((gl_ccs & 0x200) != 0) goto LAB_080b7feb;
+          if (os->area_size <= os->length + 1) {
+            Strgrow(os);
+          }
+          iVar1 = os->length;
+          os->ptr[iVar1] = *q;
+          os->length = iVar1 + 1;
+          os->ptr[os->length] = '\0';
+          if (os->area_size <= os->length + 1) {
+            Strgrow(os);
+          }
+          iVar1 = os->length;
+          os->ptr[iVar1] = *p;
+          os->length = iVar1 + 1;
+          os->ptr[os->length] = '\0';
+        }
         else {
-          if (WC_ISO_MAP[*p] == ' ') {
-            if ((gl_ccs & 0x200) != 0) goto LAB_080b7feb;
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = *q;
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = *p;
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-          }
-          else {
-            wtf_push_unknown(os,q,2);
-          }
+          wtf_push_unknown(os,q,2);
         }
         goto switchD_080b7b66_caseD_3;
       case 2:
@@ -63487,14 +61531,12 @@ LAB_080b8085:
           }
           wtf_push_iso2022(os,gr_ccs,(uint)CONCAT11(*q,*p));
         }
+        else if (WC_ISO_MAP[*p] == '`') {
+          if ((gr_ccs & 0x200) != 0) goto LAB_080b8085;
+          wtf_push_unknown(os,q,2);
+        }
         else {
-          if (WC_ISO_MAP[*p] == '`') {
-            if ((gr_ccs & 0x200) != 0) goto LAB_080b8085;
-            wtf_push_unknown(os,q,2);
-          }
-          else {
-            wtf_push_unknown(os,q,2);
-          }
+          wtf_push_unknown(os,q,2);
         }
       default:
         goto switchD_080b7b66_caseD_3;
@@ -63531,7 +61573,7 @@ LAB_080b8233:
         }
         goto LAB_080b8287;
       case 0x20:
-        wtf_push_unknown(os,p,(size_t)(ep + -(int)p));
+        wtf_push_unknown(os,p,(int)ep - (int)p);
         return os;
       }
     }
@@ -63539,10 +61581,8 @@ LAB_080b8233:
       if (state < 3) {
         wtf_push_unknown(os,p + -1,1);
       }
-      else {
-        if (state == 4) {
-          wtf_push_unknown(os,p + -2,2);
-        }
+      else if (state == 4) {
+        wtf_push_unknown(os,p + -2,2);
       }
     }
   }
@@ -63707,42 +61747,30 @@ LAB_080b85f4:
           if (cs == '/') {
             st->state = 0x20;
           }
-          else {
-            if (cs < 0x30) {
-              if (cs == '(') {
-                st->design[g] = (uint)CONCAT11(1,f);
+          else if (cs < 0x30) {
+            if (cs == '(') {
+              st->design[g] = (uint)CONCAT11(1,f);
+            }
+            else if (cs == ',') {
+              st->design[g] = (uint)CONCAT11(2,f);
+            }
+            else if (cs == '%') {
+              if (f == '@') {
+                st->state = 0;
               }
               else {
-                if (cs == ',') {
-                  st->design[g] = (uint)CONCAT11(2,f);
-                }
-                else {
-                  if (cs == '%') {
-                    if (f == '@') {
-                      st->state = 0;
-                    }
-                    else {
-                      st->state = 0x10;
-                    }
-                  }
-                }
+                st->state = 0x10;
               }
             }
-            else {
-              if (cs == -0x58) {
-                st->design[g] = (uint)CONCAT11(0x81,f);
-              }
-              else {
-                if (cs == -0x54) {
-                  st->design[g] = (uint)CONCAT11(0x82,f);
-                }
-                else {
-                  if (cs == -0x5f) {
-                    st->design[g] = (uint)CONCAT11(4,f);
-                  }
-                }
-              }
-            }
+          }
+          else if (cs == 0xa8) {
+            st->design[g] = (uint)CONCAT11(0x81,f);
+          }
+          else if (cs == 0xac) {
+            st->design[g] = (uint)CONCAT11(0x82,f);
+          }
+          else if (cs == 0xa1) {
+            st->design[g] = (uint)CONCAT11(4,f);
           }
           *ptr = pwVar1;
           return 1;
@@ -63752,8 +61780,8 @@ LAB_080b85f4:
       pwVar1 = p;
       if (state != '(') break;
       if (*p == '!') {
-        cs = -0x5f;
-        state = -0x5f;
+        cs = 0xa1;
+        state = 0xa1;
         g = *p & 3;
       }
       else {
@@ -63763,16 +61791,14 @@ LAB_080b85b1:
       }
     }
     if (0x28 < state) {
-      if (state != -0x5b) {
+      if (state != 0xa5) {
         if (state < 0xa6) {
-          if ((state != ',') && (state != -0x5f)) {
+          if ((state != ',') && (state != 0xa1)) {
             return 0;
           }
         }
-        else {
-          if ((state != -0x58) && (state != -0x54)) {
-            return 0;
-          }
+        else if ((state != 0xa8) && (state != 0xac)) {
+          return 0;
         }
       }
       goto LAB_080b85b1;
@@ -63784,8 +61810,8 @@ LAB_080b85b1:
           return 0;
         }
         if (*p == '/') {
-          cs = -0x5b;
-          state = -0x5b;
+          cs = 0xa5;
+          state = 0xa5;
         }
         else {
           state = '\0';
@@ -63797,20 +61823,20 @@ LAB_080b85b1:
         uVar2 = 1 << ((byte)(*p - 0x28) & 0x1f);
         if ((uVar2 & 0x7000000) != 0) {
           state = '\0';
-          cs = -0x58;
+          cs = 0xa8;
           g = '\0';
           f = *p;
           goto LAB_080b85f4;
         }
         if ((uVar2 & 0xf0) != 0) {
-          cs = -0x54;
-          state = -0x54;
+          cs = 0xac;
+          state = 0xac;
           g = *p & 3;
           goto LAB_080b85f4;
         }
         if ((uVar2 & 0xf) != 0) {
-          cs = -0x58;
-          state = -0x58;
+          cs = 0xa8;
+          state = 0xa8;
           g = *p & 3;
           goto LAB_080b85f4;
         }
@@ -63911,7 +61937,7 @@ LAB_080b872d:
       }
       cc.ccs = 0x142;
       g = cs94_gmap[2];
-      cc.code = SEXT14(*WcReplace);
+      cc.code = (wc_uint32)*WcReplace;
 LAB_080b8a50:
       if (g != '\0') {
         wc_push_iso2022_esc(os,cc.ccs,g,'\x01',st);
@@ -63952,17 +61978,15 @@ LAB_080b8a50:
       if (uVar4 == 0x200) {
         g = cs94w_gmap[cc.ccs & 0xff];
       }
+      else if (uVar4 == 0x400) {
+        g = cs96w_gmap[cc.ccs & 0xff];
+      }
       else {
-        if (uVar4 == 0x400) {
-          g = cs96w_gmap[cc.ccs & 0xff];
+        if (uVar4 != 0x100) goto LAB_080b89be;
+        if (cc.ccs == 0x142) {
+          cc.ccs = st->g0_ccs;
         }
-        else {
-          if (uVar4 != 0x100) goto LAB_080b89be;
-          if (cc.ccs == 0x142) {
-            cc.ccs = st->g0_ccs;
-          }
-          g = *(wc_uchar *)((int)char_conv_st.design + (cc.ccs & 0xff) + 0x10);
-        }
+        g = *(wc_uchar *)((int)char_conv_st.design + (cc.ccs & 0xff) + 0x10);
       }
       goto LAB_080b8a50;
     }
@@ -64118,55 +62142,49 @@ void wc_push_iso2022_esc(Str os,wc_ccs ccs,wc_uchar g,wc_uint8 invoke,wc_status 
         st->gl = '\x01';
       }
     }
-    else {
-      if (bVar2 < 2) {
-        if ((bVar2 == 0) && (st->gl != '\0')) {
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = '\x0f';
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          st->gl = '\0';
+    else if (bVar2 < 2) {
+      if ((bVar2 == 0) && (st->gl != '\0')) {
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
+        iVar1 = os->length;
+        os->ptr[iVar1] = '\x0f';
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        st->gl = '\0';
       }
-      else {
-        if (bVar2 == 2) {
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = '\x1b';
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = 'N';
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-        }
-        else {
-          if (bVar2 == 3) {
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = '\x1b';
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = 'O';
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-          }
-        }
+    }
+    else if (bVar2 == 2) {
+      if (os->area_size <= os->length + 1) {
+        Strgrow(os);
       }
+      iVar1 = os->length;
+      os->ptr[iVar1] = '\x1b';
+      os->length = iVar1 + 1;
+      os->ptr[os->length] = '\0';
+      if (os->area_size <= os->length + 1) {
+        Strgrow(os);
+      }
+      iVar1 = os->length;
+      os->ptr[iVar1] = 'N';
+      os->length = iVar1 + 1;
+      os->ptr[os->length] = '\0';
+    }
+    else if (bVar2 == 3) {
+      if (os->area_size <= os->length + 1) {
+        Strgrow(os);
+      }
+      iVar1 = os->length;
+      os->ptr[iVar1] = '\x1b';
+      os->length = iVar1 + 1;
+      os->ptr[os->length] = '\0';
+      if (os->area_size <= os->length + 1) {
+        Strgrow(os);
+      }
+      iVar1 = os->length;
+      os->ptr[iVar1] = 'O';
+      os->length = iVar1 + 1;
+      os->ptr[os->length] = '\0';
     }
   }
   return;
@@ -64505,31 +62523,29 @@ LAB_080b9b7a:
         if (cc.ccs == 0x8147) goto LAB_080b9b7a;
       }
     }
-    else {
-      if (0x8803 < cc.ccs) {
-        if (cc.ccs < 0x880d) {
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = -0x72;
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.ccs + -0x5c;
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          goto LAB_080b9b7a;
+    else if (0x8803 < cc.ccs) {
+      if (cc.ccs < 0x880d) {
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
-        if (cc.ccs == 0xc000) {
-          if (WcOption.no_replace == '\0') {
-            Strcat_charp(os,WcReplaceW);
-          }
-          return;
+        iVar1 = os->length;
+        os->ptr[iVar1] = -0x72;
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
+        iVar1 = os->length;
+        os->ptr[iVar1] = (char)cc.ccs + -0x5c;
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        goto LAB_080b9b7a;
+      }
+      if (cc.ccs == 0xc000) {
+        if (WcOption.no_replace == '\0') {
+          Strcat_charp(os,WcReplaceW);
+        }
+        return;
       }
     }
     if (WcOption.ucs_conv == '\0') {
@@ -64637,65 +62653,51 @@ void wc_create_gmap(wc_status *st)
   pwVar1 = st->ces_info->gset;
   pwVar2 = st->ces_info->gset_ext;
   if (WcOption.strict_iso2022 == '\0') {
-    i = 0;
-    while (i < 0x40) {
+    for (i = 0; i < 0x40; i = i + 1) {
       cs94_gmap[i] = *pwVar2;
       cs96_gmap[i] = pwVar2[1];
       cs94w_gmap[i] = pwVar2[2];
       cs96w_gmap[i] = pwVar2[3];
       cs942_gmap[i] = *pwVar2;
-      i = i + 1;
     }
   }
   else {
-    i = 0;
-    while (i < 0x40) {
+    for (i = 0; i < 0x40; i = i + 1) {
       cs94_gmap[i] = '\0';
       cs96_gmap[i] = '\0';
       cs94w_gmap[i] = '\0';
       cs96w_gmap[i] = '\0';
       cs942_gmap[i] = '\0';
-      i = i + 1;
     }
   }
-  i = 0;
-  while (pwVar1[i].ccs != 0) {
+  for (i = 0; pwVar1[i].ccs != 0; i = i + 1) {
     uVar4 = pwVar1[i].ccs & 0xff;
     uVar5 = pwVar1[i].ccs & 0xff00;
     if (uVar5 == 0x400) {
       cs96w_gmap[uVar4] = pwVar1[i].g;
     }
-    else {
-      if (uVar5 < 0x401) {
-        if (uVar5 == 0x100) {
-          if ((pwVar1[i].ccs != 0x149) || (WcOption.use_jisx0201k != '\0')) {
-            *(wc_uchar *)((int)char_conv_st.design + uVar4 + 0x10) = pwVar1[i].g;
-          }
-        }
-        else {
-          if (uVar5 == 0x200) {
-            cs94w_gmap[uVar4] = pwVar1[i].g;
-          }
+    else if (uVar5 < 0x401) {
+      if (uVar5 == 0x100) {
+        if ((pwVar1[i].ccs != 0x149) || (WcOption.use_jisx0201k != '\0')) {
+          *(wc_uchar *)((int)char_conv_st.design + uVar4 + 0x10) = pwVar1[i].g;
         }
       }
-      else {
-        if (uVar5 == 0x8100) {
-          uVar5 = pwVar1[i].ccs;
-          wVar3 = WcOption.use_jisx0212;
-          if (((uVar5 != 0x8144) &&
-              ((uVar5 < 0x8144 || (wVar3 = WcOption.use_jisx0213, 1 < uVar5 - 0x814f)))) ||
-             (wVar3 != '\0')) {
-            cs94_gmap[uVar4] = pwVar1[i].g;
-          }
-        }
-        else {
-          if (uVar5 == 0x8200) {
-            cs96_gmap[uVar4] = pwVar1[i].g;
-          }
-        }
+      else if (uVar5 == 0x200) {
+        cs94w_gmap[uVar4] = pwVar1[i].g;
       }
     }
-    i = i + 1;
+    else if (uVar5 == 0x8100) {
+      uVar5 = pwVar1[i].ccs;
+      wVar3 = WcOption.use_jisx0212;
+      if (((uVar5 != 0x8144) &&
+          ((uVar5 < 0x8144 || (wVar3 = WcOption.use_jisx0213, 1 < uVar5 - 0x814f)))) ||
+         (wVar3 != '\0')) {
+        cs94_gmap[uVar4] = pwVar1[i].g;
+      }
+    }
+    else if (uVar5 == 0x8200) {
+      cs96_gmap[uVar4] = pwVar1[i].g;
+    }
   }
   return;
 }
@@ -65234,26 +63236,22 @@ wc_wchar_t wc_johab_to_ksx1001(wc_wchar_t cc)
         goto LAB_080baacc;
       }
     }
+    else if (WcOption.ucs_conv == '\0') {
+      cc.code = 0xc000;
+    }
     else {
-      if (WcOption.ucs_conv == '\0') {
-        cc.code = 0xc000;
+      if (wc_johab_to_ksx1001::t == (wc_table *)0x0) {
+        wc_johab_to_ksx1001::t = wc_get_ucs_table(0x8143);
       }
-      else {
-        if (wc_johab_to_ksx1001::t == (wc_table *)0x0) {
-          wc_johab_to_ksx1001::t = wc_get_ucs_table(0x8143);
-        }
-        wc_any_to_any((wc_wchar_t)CONCAT44(cc.code,(int)&cc + 4),in_stack_0000000c);
-      }
+      wc_any_to_any((wc_wchar_t)CONCAT44(cc.code,(int)&cc + 4),in_stack_0000000c);
     }
   }
-  else {
-    if (cc.code == 0x8812) {
-      if (in_stack_0000000c < (wc_table *)0x2121) {
-        cc.code = 0xc000;
-      }
-      else {
-        cc.code = 0x8143;
-      }
+  else if (cc.code == 0x8812) {
+    if (in_stack_0000000c < (wc_table *)0x2121) {
+      cc.code = 0xc000;
+    }
+    else {
+      cc.code = 0x8143;
     }
   }
   *(wc_uint32 *)wVar1 = cc.code;
@@ -65451,48 +63449,44 @@ wc_wchar_t wc_cs128w_to_johab(wc_wchar_t cc)
     }
     in_stack_0000000c = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
   }
-  else {
-    if (cc.code == 0x8812) {
-      ub = (byte)(in_stack_0000000c >> 8) & 0x7f;
-      if (ub < 0x4a) {
-        lb = (byte)in_stack_0000000c & 0x7f;
-        if ((ub - 0x1f & 1) == 0) {
-          if (lb < 0x6f) {
-            cVar2 = '\x10';
-          }
-          else {
-            cVar2 = '\"';
-          }
+  else if (cc.code == 0x8812) {
+    ub = (byte)(in_stack_0000000c >> 8) & 0x7f;
+    if (ub < 0x4a) {
+      lb = (byte)in_stack_0000000c & 0x7f;
+      if ((ub - 0x1f & 1) == 0) {
+        if (lb < 0x6f) {
+          cVar2 = '\x10';
         }
         else {
-          cVar2 = -0x80;
+          cVar2 = '\"';
         }
-        _lb = CONCAT11(((byte)(ub - 0x1f) >> 1) - 0x28,lb + cVar2);
       }
       else {
-        lb = (byte)in_stack_0000000c & 0x7f;
-        if ((ub + 0xb6 & 1) == 0) {
-          if (lb < 0x6f) {
-            cVar2 = '\x10';
-          }
-          else {
-            cVar2 = '\"';
-          }
-        }
-        else {
-          cVar2 = -0x80;
-        }
-        _lb = CONCAT11(((byte)(ub + 0xb6) >> 1) - 0x20,lb + cVar2);
+        cVar2 = -0x80;
       }
-      in_stack_0000000c = (uint)_lb;
+      _lb = CONCAT11(((byte)(ub - 0x1f) >> 1) - 0x28,lb + cVar2);
     }
     else {
-      if (cc.code == 0x8810) {
-        in_stack_0000000c =
-             wc_N_to_johab1(((in_stack_0000000c >> 8 & 0x7f) + 0x1ffffdf) * 0x80 +
-                            (in_stack_0000000c & 0x7f));
+      lb = (byte)in_stack_0000000c & 0x7f;
+      if ((ub + 0xb6 & 1) == 0) {
+        if (lb < 0x6f) {
+          cVar2 = '\x10';
+        }
+        else {
+          cVar2 = '\"';
+        }
       }
+      else {
+        cVar2 = -0x80;
+      }
+      _lb = CONCAT11(((byte)(ub + 0xb6) >> 1) - 0x20,lb + cVar2);
     }
+    in_stack_0000000c = (uint)_lb;
+  }
+  else if (cc.code == 0x8810) {
+    in_stack_0000000c =
+         wc_N_to_johab1(((in_stack_0000000c >> 8 & 0x7f) + 0x1ffffdf) * 0x80 +
+                        (in_stack_0000000c & 0x7f));
   }
   *(undefined4 *)cc.ccs = 0x880f;
   *(uint *)(cc.ccs + 4) = in_stack_0000000c;
@@ -65518,16 +63512,14 @@ Str wc_conv_from_johab(Str is,wc_ces ces)
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar4 = pwVar1 + is->length;
   state = 0;
-  p = pwVar1;
-  while ((p < pwVar4 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar4 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar4) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (p < pwVar4) {
+    for (; p < pwVar4; p = p + 1) {
       if (state == 1) {
         if ((WC_JOHAB_MAP[*p] & 0x10) == 0) {
           wtf_push_unknown(x,p + -1,2);
@@ -65537,45 +63529,36 @@ Str wc_conv_from_johab(Str is,wc_ces ces)
         }
         state = 0;
       }
-      else {
-        if (state == 2) {
-          if ((WC_JOHAB_MAP[*p] & 0x20) == 0) {
-            wtf_push_unknown(x,p + -1,2);
-          }
-          else {
-            wtf_push(x,0x880f,(uint)CONCAT11(p[-1],*p));
-          }
-          state = 0;
+      else if (state == 2) {
+        if ((WC_JOHAB_MAP[*p] & 0x20) == 0) {
+          wtf_push_unknown(x,p + -1,2);
         }
         else {
-          if (state == 0) {
-            bVar3 = WC_JOHAB_MAP[*p] & 0xf;
-            if (bVar3 == 4) {
-              state = 2;
-            }
-            else {
-              if (bVar3 == 8) {
-                wtf_push_unknown(x,p,1);
-              }
-              else {
-                if (bVar3 == 2) {
-                  state = 1;
-                }
-                else {
-                  if (x->area_size <= x->length + 1) {
-                    Strgrow(x);
-                  }
-                  iVar2 = x->length;
-                  x->ptr[iVar2] = *p;
-                  x->length = iVar2 + 1;
-                  x->ptr[x->length] = '\0';
-                }
-              }
-            }
+          wtf_push(x,0x880f,(uint)CONCAT11(p[-1],*p));
+        }
+        state = 0;
+      }
+      else if (state == 0) {
+        bVar3 = WC_JOHAB_MAP[*p] & 0xf;
+        if (bVar3 == 4) {
+          state = 2;
+        }
+        else if (bVar3 == 8) {
+          wtf_push_unknown(x,p,1);
+        }
+        else if (bVar3 == 2) {
+          state = 1;
+        }
+        else {
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
           }
+          iVar2 = x->length;
+          x->ptr[iVar2] = *p;
+          x->length = iVar2 + 1;
+          x->ptr[x->length] = '\0';
         }
       }
-      p = p + 1;
     }
     is = x;
     if (state - 1U < 2) {
@@ -65688,37 +63671,33 @@ Str wc_char_conv_from_johab(wc_uchar c,wc_status *st)
       ;
     }
   }
-  else {
-    if (iVar1 == 2) {
-      if ((WC_JOHAB_MAP[c] & 0x20) != 0) {
-        wtf_push(wc_char_conv_from_johab::os,0x880f,
-                 (uint)CONCAT11(wc_char_conv_from_johab::johabu,c));
-      }
+  else if (iVar1 == 2) {
+    if ((WC_JOHAB_MAP[c] & 0x20) != 0) {
+      wtf_push(wc_char_conv_from_johab::os,0x880f,(uint)CONCAT11(wc_char_conv_from_johab::johabu,c))
+      ;
     }
-    else {
-      if (iVar1 == 0) {
-        bVar3 = WC_JOHAB_MAP[c] & 0xf;
-        if (bVar3 == 4) {
-          wc_char_conv_from_johab::johabu = c;
-          st->state = 2;
-          return (Str)0x0;
-        }
-        if (bVar3 != 8) {
-          if (bVar3 == 2) {
-            wc_char_conv_from_johab::johabu = c;
-            st->state = 1;
-            return (Str)0x0;
-          }
-          if (wc_char_conv_from_johab::os->area_size <= wc_char_conv_from_johab::os->length + 1) {
-            Strgrow(wc_char_conv_from_johab::os);
-          }
-          p_Var2 = wc_char_conv_from_johab::os;
-          iVar1 = wc_char_conv_from_johab::os->length;
-          wc_char_conv_from_johab::os->ptr[iVar1] = c;
-          p_Var2->length = iVar1 + 1;
-          wc_char_conv_from_johab::os->ptr[wc_char_conv_from_johab::os->length] = '\0';
-        }
+  }
+  else if (iVar1 == 0) {
+    bVar3 = WC_JOHAB_MAP[c] & 0xf;
+    if (bVar3 == 4) {
+      wc_char_conv_from_johab::johabu = c;
+      st->state = 2;
+      return (Str)0x0;
+    }
+    if (bVar3 != 8) {
+      if (bVar3 == 2) {
+        wc_char_conv_from_johab::johabu = c;
+        st->state = 1;
+        return (Str)0x0;
       }
+      if (wc_char_conv_from_johab::os->area_size <= wc_char_conv_from_johab::os->length + 1) {
+        Strgrow(wc_char_conv_from_johab::os);
+      }
+      p_Var2 = wc_char_conv_from_johab::os;
+      iVar1 = wc_char_conv_from_johab::os->length;
+      wc_char_conv_from_johab::os->ptr[iVar1] = c;
+      p_Var2->length = iVar1 + 1;
+      wc_char_conv_from_johab::os->ptr[wc_char_conv_from_johab::os->length] = '\0';
     }
   }
   st->state = -1;
@@ -66215,16 +64194,14 @@ Str wc_conv_from_sjis(Str is,wc_ces ces)
   pwVar2 = (wc_uchar *)is->ptr;
   pwVar5 = pwVar2 + is->length;
   state = 0;
-  p = pwVar2;
-  while ((p < pwVar5 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar2; (p < pwVar5 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar5) {
     x = Strnew_size(is->length);
     if (pwVar2 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar2));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar2);
     }
-    while (p < pwVar5) {
+    for (; p < pwVar5; p = p + 1) {
       if ((uint)state < 3) {
         if (state == 0) {
           switch(WC_SJIS_MAP[*p]) {
@@ -66293,18 +64270,15 @@ Str wc_conv_from_sjis(Str is,wc_ces ces)
           state = 0;
         }
       }
-      else {
-        if (state == 3) {
-          if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
-            wtf_push_unknown(x,p + -1,2);
-          }
-          else {
-            wtf_push(x,0x8813,(uint)CONCAT11(p[-1],*p));
-          }
-          state = 0;
+      else if (state == 3) {
+        if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
+          wtf_push_unknown(x,p + -1,2);
         }
+        else {
+          wtf_push(x,0x8813,(uint)CONCAT11(p[-1],*p));
+        }
+        state = 0;
       }
-      p = p + 1;
     }
     is = x;
     if (state - 1U < 3) {
@@ -66339,16 +64313,14 @@ Str wc_conv_from_sjisx0213(Str is,wc_ces ces)
   pwVar2 = (wc_uchar *)is->ptr;
   pwVar5 = pwVar2 + is->length;
   state = 0;
-  p = pwVar2;
-  while ((p < pwVar5 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar2; (p < pwVar5 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar5) {
     x = Strnew_size(is->length);
     if (pwVar2 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar2));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar2);
     }
-    while (p < pwVar5) {
+    for (; p < pwVar5; p = p + 1) {
       if ((uint)state < 3) {
         if (state == 0) {
           switch(WC_SJIS_MAP[*p]) {
@@ -66412,33 +64384,30 @@ Str wc_conv_from_sjisx0213(Str is,wc_ces ces)
           state = 0;
         }
       }
-      else {
-        if (state == 3) {
-          if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
-            wtf_push_unknown(x,p + -1,2);
-          }
-          else {
-            bVar1 = *p;
-            if (bVar1 < 0x9f) {
-              jis[0] = johab1_N_map[2][p[-1] + 0x10];
-              if (bVar1 < 0x7f) {
-                cVar4 = '\x1f';
-              }
-              else {
-                cVar4 = ' ';
-              }
-              jis[1] = bVar1 - cVar4;
+      else if (state == 3) {
+        if ((WC_SJIS_MAP[*p] & 0x10) == 0) {
+          wtf_push_unknown(x,p + -1,2);
+        }
+        else {
+          bVar1 = *p;
+          if (bVar1 < 0x9f) {
+            jis[0] = johab1_N_map[2][p[-1] + 0x10];
+            if (bVar1 < 0x7f) {
+              cVar4 = '\x1f';
             }
             else {
-              jis[0] = N_johab1_map[p[-1]];
-              jis[1] = bVar1 + 0x82;
+              cVar4 = ' ';
             }
-            wtf_push(x,0x8150,(uint)CONCAT11(jis[0],jis[1]));
+            jis[1] = bVar1 - cVar4;
           }
-          state = 0;
+          else {
+            jis[0] = N_johab1_map[p[-1]];
+            jis[1] = bVar1 + 0x82;
+          }
+          wtf_push(x,0x8150,(uint)CONCAT11(jis[0],jis[1]));
         }
+        state = 0;
       }
-      p = p + 1;
     }
     is = x;
     if (state - 1U < 3) {
@@ -66523,14 +64492,12 @@ LAB_080bc807:
         }
         if (cc.ccs == 0x8813) goto LAB_080bc807;
       }
-      else {
-        if (cc.ccs == 0xc000) {
-          if (WcOption.no_replace != '\0') {
-            return;
-          }
-          Strcat_charp(os,WcReplaceW);
+      else if (cc.ccs == 0xc000) {
+        if (WcOption.no_replace != '\0') {
           return;
         }
+        Strcat_charp(os,WcReplaceW);
+        return;
       }
 LAB_080bc8f0:
       if (WcOption.ucs_conv == '\0') {
@@ -66655,54 +64622,52 @@ LAB_080bccfd:
         }
       }
     }
-    else {
-      if (cc.ccs == 0x8150) {
-        if (WcOption.use_jisx0213 != '\0') {
-          if ((cc.code & 0x100) == 0) {
-            cVar2 = '}';
-          }
-          else {
-            cVar2 = '\x1f';
-          }
-          lb = ((byte)cc.code & 0x7f) + cVar2;
-          if (0x7e < lb) {
-            lb = lb + 1;
-          }
-          ub = jisx02132_sjis_map[bVar3 & 0x7f];
-          if (ub != '\0') {
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = ub;
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-            if (os->area_size <= os->length + 1) {
-              Strgrow(os);
-            }
-            iVar1 = os->length;
-            os->ptr[iVar1] = lb;
-            os->length = iVar1 + 1;
-            os->ptr[os->length] = '\0';
-            return;
-          }
-          goto LAB_080bccb4;
+    else if (cc.ccs == 0x8150) {
+      if (WcOption.use_jisx0213 != '\0') {
+        if ((cc.code & 0x100) == 0) {
+          cVar2 = '}';
         }
-        cc.ccs = 0xc000;
-      }
-      else {
-        if (cc.ccs == 0xc000) {
-LAB_080bccb4:
-          if (WcOption.no_replace != '\0') {
-            return;
+        else {
+          cVar2 = '\x1f';
+        }
+        lb = ((byte)cc.code & 0x7f) + cVar2;
+        if (0x7e < lb) {
+          lb = lb + 1;
+        }
+        ub = jisx02132_sjis_map[bVar3 & 0x7f];
+        if (ub != '\0') {
+          if (os->area_size <= os->length + 1) {
+            Strgrow(os);
           }
-          Strcat_charp(os,WcReplaceW);
+          iVar1 = os->length;
+          os->ptr[iVar1] = ub;
+          os->length = iVar1 + 1;
+          os->ptr[os->length] = '\0';
+          if (os->area_size <= os->length + 1) {
+            Strgrow(os);
+          }
+          iVar1 = os->length;
+          os->ptr[iVar1] = lb;
+          os->length = iVar1 + 1;
+          os->ptr[os->length] = '\0';
           return;
         }
-        if (cc.ccs != 0x814f) goto LAB_080bccfd;
-        if (WcOption.use_jisx0213 != '\0') break;
-        cc.ccs = 0xc000;
+        goto LAB_080bccb4;
       }
+      cc.ccs = 0xc000;
+    }
+    else {
+      if (cc.ccs == 0xc000) {
+LAB_080bccb4:
+        if (WcOption.no_replace != '\0') {
+          return;
+        }
+        Strcat_charp(os,WcReplaceW);
+        return;
+      }
+      if (cc.ccs != 0x814f) goto LAB_080bccfd;
+      if (WcOption.use_jisx0213 != '\0') break;
+      cc.ccs = 0xc000;
     }
   }
   if ((cc.code & 0x100) == 0) {
@@ -66814,7 +64779,7 @@ Str wc_char_conv_from_sjis(wc_uchar c,wc_status *st)
         }
         else {
           wc_char_conv_from_sjis::jis[0] = cVar3 + '\"';
-          wc_char_conv_from_sjis::jis[1] = c + -0x7e;
+          wc_char_conv_from_sjis::jis[1] = c + 0x82;
         }
         code = CONCAT11(wc_char_conv_from_sjis::jis[0],wc_char_conv_from_sjis::jis[1]);
         wVar4 = wc_jisx0208_or_jisx02131(code);
@@ -66829,15 +64794,12 @@ Str wc_char_conv_from_sjis(wc_uchar c,wc_status *st)
       st->state = 0;
     }
   }
-  else {
-    if (iVar1 == 3) {
-      if ((WC_SJIS_MAP[c] & 0x10) != 0) {
-        wc_char_conv_from_sjis::jis[1] = c;
-        wtf_push(wc_char_conv_from_sjis::os,0x8813,(uint)CONCAT11(wc_char_conv_from_sjis::jis[0],c))
-        ;
-      }
-      st->state = 0;
+  else if (iVar1 == 3) {
+    if ((WC_SJIS_MAP[c] & 0x10) != 0) {
+      wc_char_conv_from_sjis::jis[1] = c;
+      wtf_push(wc_char_conv_from_sjis::os,0x8813,(uint)CONCAT11(wc_char_conv_from_sjis::jis[0],c));
     }
+    st->state = 0;
   }
   st->state = -1;
   return wc_char_conv_from_sjis::os;
@@ -66918,7 +64880,7 @@ Str wc_char_conv_from_sjisx0213(wc_uchar c,wc_status *st)
         }
         else {
           wc_char_conv_from_sjisx0213::jis[0] = cVar3 + '\"';
-          wc_char_conv_from_sjisx0213::jis[1] = c + -0x7e;
+          wc_char_conv_from_sjisx0213::jis[1] = c + 0x82;
         }
         code = CONCAT11(wc_char_conv_from_sjisx0213::jis[0],wc_char_conv_from_sjisx0213::jis[1]);
         ccs = wc_jisx0208_or_jisx02131(code);
@@ -66927,30 +64889,28 @@ Str wc_char_conv_from_sjisx0213(wc_uchar c,wc_status *st)
       st->state = 0;
     }
   }
-  else {
-    if (iVar1 == 3) {
-      if ((WC_SJIS_MAP[c] & 0x10) != 0) {
-        if (c < 0x9f) {
-          wc_char_conv_from_sjisx0213::jis[0] =
-               johab1_N_map[2][wc_char_conv_from_sjisx0213::jis[0] + 0x10];
-          if (c < 0x7f) {
-            cVar3 = '\x1f';
-          }
-          else {
-            cVar3 = ' ';
-          }
-          wc_char_conv_from_sjisx0213::jis[1] = c - cVar3;
+  else if (iVar1 == 3) {
+    if ((WC_SJIS_MAP[c] & 0x10) != 0) {
+      if (c < 0x9f) {
+        wc_char_conv_from_sjisx0213::jis[0] =
+             johab1_N_map[2][wc_char_conv_from_sjisx0213::jis[0] + 0x10];
+        if (c < 0x7f) {
+          cVar3 = '\x1f';
         }
         else {
-          wc_char_conv_from_sjisx0213::jis[0] = N_johab1_map[wc_char_conv_from_sjisx0213::jis[0]];
-          wc_char_conv_from_sjisx0213::jis[1] = c + -0x7e;
+          cVar3 = ' ';
         }
-        wtf_push(wc_char_conv_from_sjisx0213::os,0x8150,
-                 (uint)CONCAT11(wc_char_conv_from_sjisx0213::jis[0],
-                                wc_char_conv_from_sjisx0213::jis[1]));
+        wc_char_conv_from_sjisx0213::jis[1] = c - cVar3;
       }
-      st->state = 0;
+      else {
+        wc_char_conv_from_sjisx0213::jis[0] = N_johab1_map[wc_char_conv_from_sjisx0213::jis[0]];
+        wc_char_conv_from_sjisx0213::jis[1] = c + 0x82;
+      }
+      wtf_push(wc_char_conv_from_sjisx0213::os,0x8150,
+               (uint)CONCAT11(wc_char_conv_from_sjisx0213::jis[0],
+                              wc_char_conv_from_sjisx0213::jis[1]));
     }
+    st->state = 0;
   }
   st->state = -1;
   return wc_char_conv_from_sjisx0213::os;
@@ -66967,7 +64927,7 @@ void wc_input_init(wc_ces ces,wc_status *st)
   int i;
   wc_gset *gset;
   
-  st->ces_info = (wc_ces_info *)(WcCesInfo + (ces & 0xff) * 0x20);
+  st->ces_info = WcCesInfo + (ces & 0xff);
   pwVar1 = st->ces_info->gset;
   st->state = 0;
   st->g0_ccs = 0;
@@ -66979,12 +64939,10 @@ void wc_input_init(wc_ces ces,wc_status *st)
   st->gl = '\0';
   st->gr = '\x01';
   st->ss = '\0';
-  i = 0;
-  while (pwVar1[i].ccs != 0) {
+  for (i = 0; pwVar1[i].ccs != 0; i = i + 1) {
     if ((pwVar1[i].init != '\0') && (uVar2 = pwVar1[i].g & 3, st->design[uVar2] == 0)) {
       st->design[uVar2] = pwVar1[i].ccs;
     }
-    i = i + 1;
   }
   st->tag = (Str)0x0;
   st->ntag = 0;
@@ -67011,7 +64969,7 @@ void wc_output_init(wc_ces ces,wc_status *st)
   if (((output_set == '\0') || ((output_st.ces_info)->id != ces)) ||
      (iVar4 = memcmp(&WcOption,&output_option,0x10), iVar4 != 0)) {
     st->state = 0;
-    st->ces_info = (wc_ces_info *)(WcCesInfo + (ces & 0xff) * 0x20);
+    st->ces_info = WcCesInfo + (ces & 0xff);
     pwVar1 = st->ces_info->gset;
     if ((((ces == 0x200811) || (ces == 0x200812)) || (ces == 0x200813)) &&
        ((char)((uint)WcOption._4_4_ >> 0x18) != '\0')) {
@@ -67048,15 +65006,13 @@ void wc_output_init(wc_ces ces,wc_status *st)
     else {
       nw = 0;
       n = 0;
-      i = 0;
-      while (pwVar1[i].ccs != 0) {
+      for (i = 0; pwVar1[i].ccs != 0; i = i + 1) {
         if ((pwVar1[i].ccs & 0x18000) == 0) {
           n = n + 1;
         }
         else {
           nw = nw + 1;
         }
-        i = i + 1;
       }
       ppwVar6 = (wc_table **)GC_malloc((n + 1) * 4);
       st->tlist = ppwVar6;
@@ -67064,8 +65020,7 @@ void wc_output_init(wc_ces ces,wc_status *st)
       st->tlistw = ppwVar6;
       nw = 0;
       n = 0;
-      i = 0;
-      while (pwVar1[i].ccs != 0) {
+      for (i = 0; pwVar1[i].ccs != 0; i = i + 1) {
         if ((pwVar1[i].ccs & 0x18000) == 0) {
           if ((pwVar1[i].ccs != 0x149) || ((char)((uint)WcOption._8_4_ >> 8) != '\0')) {
             ppwVar6 = st->tlist;
@@ -67081,23 +65036,19 @@ void wc_output_init(wc_ces ces,wc_status *st)
 joined_r0x080bd7ba:
             if (cVar3 == '\0') goto LAB_080bd887;
           }
-          else {
-            if (uVar2 < 0x8145) {
-              if ((((uVar2 == 0x8141) && ((char)((uint)WcOption._4_4_ >> 0x10) != '\0')) &&
-                  (ces != 0x30203a)) && (ces != 0x30203b)) {
-                ppwVar6 = st->tlistw;
-                pwVar7 = wc_get_ucs_table(0x880e);
-                ppwVar6[nw] = pwVar7;
-                nw = nw + 1;
-                goto LAB_080bd887;
-              }
+          else if (uVar2 < 0x8145) {
+            if ((((uVar2 == 0x8141) && ((char)((uint)WcOption._4_4_ >> 0x10) != '\0')) &&
+                (ces != 0x30203a)) && (ces != 0x30203b)) {
+              ppwVar6 = st->tlistw;
+              pwVar7 = wc_get_ucs_table(0x880e);
+              ppwVar6[nw] = pwVar7;
+              nw = nw + 1;
+              goto LAB_080bd887;
             }
-            else {
-              if (uVar2 - 0x814f < 2) {
-                cVar3 = (char)((uint)WcOption._8_4_ >> 0x18);
-                goto joined_r0x080bd7ba;
-              }
-            }
+          }
+          else if (uVar2 - 0x814f < 2) {
+            cVar3 = (char)((uint)WcOption._8_4_ >> 0x18);
+            goto joined_r0x080bd7ba;
           }
           ppwVar6 = st->tlistw;
           pwVar7 = wc_get_ucs_table(pwVar1[i].ccs);
@@ -67105,7 +65056,6 @@ joined_r0x080bd7ba:
           nw = nw + 1;
         }
 LAB_080bd887:
-        i = i + 1;
       }
       st->tlist[n] = (wc_table *)0x0;
       st->tlistw[nw] = (wc_table *)0x0;
@@ -67200,15 +65150,11 @@ wc_wchar_t ucs_viet_conv(wc_ccs ccs,wc_uint16 c)
     if (_c == 0x820) {
       cc.ccs = 0x821;
     }
-    else {
-      if (_c == 0x822) {
-        cc.ccs = 0x823;
-      }
-      else {
-        if (_c == 0x81d) {
-          cc.ccs = 0x81e;
-        }
-      }
+    else if (_c == 0x822) {
+      cc.ccs = 0x823;
+    }
+    else if (_c == 0x81d) {
+      cc.ccs = 0x81e;
     }
   }
   else {
@@ -67216,15 +65162,11 @@ wc_wchar_t ucs_viet_conv(wc_ccs ccs,wc_uint16 c)
     if (_c == 0x821) {
       cc.ccs = 0x820;
     }
-    else {
-      if (_c == 0x823) {
-        cc.ccs = 0x822;
-      }
-      else {
-        if (_c == 0x81e) {
-          cc.ccs = 0x81d;
-        }
-      }
+    else if (_c == 0x823) {
+      cc.ccs = 0x822;
+    }
+    else if (_c == 0x81e) {
+      cc.ccs = 0x81d;
     }
   }
   *(wc_ccs *)ccs = cc.ccs;
@@ -67459,19 +65401,15 @@ wc_wchar_t wc_ucs_to_any(wc_uint32 ucs,wc_table *t)
     if (*in_stack_0000000c == 0x814f) {
       map = wc_map_search(code,ucs_p2_jisx02131_map,0x19);
     }
+    else if (*in_stack_0000000c == 0x8150) {
+      map = wc_map_search(code,ucs_p2_jisx02132_map,0x115);
+    }
+    else if (((*in_stack_0000000c == 0x881f) || (*in_stack_0000000c == 0x8820)) ||
+            (*in_stack_0000000c == 0x8821)) {
+      map = wc_map_search(code,ucs_p2_hkscs_map,0x439);
+    }
     else {
-      if (*in_stack_0000000c == 0x8150) {
-        map = wc_map_search(code,ucs_p2_jisx02132_map,0x115);
-      }
-      else {
-        if (((*in_stack_0000000c == 0x881f) || (*in_stack_0000000c == 0x8820)) ||
-           (*in_stack_0000000c == 0x8821)) {
-          map = wc_map_search(code,ucs_p2_hkscs_map,0x439);
-        }
-        else {
-          map = (wc_map *)0x0;
-        }
-      }
+      map = (wc_map *)0x0;
     }
     if (map != (wc_map *)0x0) {
       (*(code *)in_stack_0000000c[3])(ucs,*in_stack_0000000c,map->code2);
@@ -67525,205 +65463,197 @@ wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
       map = cs96_ucs_map[f - 0x40];
       cc.code = cc.code & 0x7f;
     }
-    else {
-      if (uVar1 < 0x201) {
-        if (uVar1 != 0x100) {
-          return 0xffffffff;
-        }
-        if (((uint)f < 0x40) || (0x54 < (uint)f)) {
-          return 0xffffffff;
-        }
-        map = cs94_ucs_map[f - 0x40];
-        cc.code = cc.code & 0x7f;
+    else if (uVar1 < 0x201) {
+      if (uVar1 != 0x100) {
+        return 0xffffffff;
       }
-      else {
-        if (uVar1 == 0x400) {
-          if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
-            return 0xffffffff;
-          }
-          map = cs942_ucs_map[f - 0x40];
-          cc.code = cc.code & 0x7f;
-        }
-        else {
-          if (uVar1 != 0x800) {
-            return 0xffffffff;
-          }
-          if ((((ulonglong)cc & 0xff) == 0) || (0x28 < (uint)f)) {
-            return 0xffffffff;
-          }
-          if (cc.ccs == 0x81f) {
-            wc_tcvn57123_to_tcvn5712((wc_wchar_t)CONCAT44(0x81f,&local_20));
-            wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_1c,local_20));
-            return wVar4;
-          }
-          if (cc.ccs == 0x827) {
-            return 0x20ac;
-          }
-          if (cc.ccs == 0x81c) {
-            pwVar2 = wc_map_search(code,cp12582_ucs_map,0x78);
-            if (pwVar2 == (wc_map *)0x0) {
-              return 0xffffffff;
-            }
-            return (uint)pwVar2->code2;
-          }
-          map = pcs_ucs_map[f - 1];
-          cc.code = cc.code & 0x7f;
-        }
+      if (((uint)f < 0x40) || (0x54 < (uint)f)) {
+        return 0xffffffff;
       }
+      map = cs94_ucs_map[f - 0x40];
+      cc.code = cc.code & 0x7f;
     }
-  }
-  else {
-    if (uVar1 == 0x8100) {
-      if ((cc.ccs == 0x8141) && (WcOption.use_gb12345_map != '\0')) {
-        cc.ccs = 0x880e;
-        wVar4 = wc_any_to_ucs((wc_wchar_t)((ulonglong)cc & 0xffffffff00000000 | 0x880e));
+    else if (uVar1 == 0x400) {
+      if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
+        return 0xffffffff;
+      }
+      map = cs942_ucs_map[f - 0x40];
+      cc.code = cc.code & 0x7f;
+    }
+    else {
+      if (uVar1 != 0x800) {
+        return 0xffffffff;
+      }
+      if ((((ulonglong)cc & 0xff) == 0) || (0x28 < (uint)f)) {
+        return 0xffffffff;
+      }
+      if (cc.ccs == 0x81f) {
+        wc_tcvn57123_to_tcvn5712((wc_wchar_t)CONCAT44(0x81f,&local_20));
+        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_1c,local_20));
         return wVar4;
       }
-      if (cc.ccs == 0x814f) {
-        pwVar2 = wc_map_search(code & 0x7f7f,jisx02131_ucs_p2_map,0x19);
-        if (pwVar2 != (wc_map *)0x0) {
-          return pwVar2->code2 | 0x20000;
+      if (cc.ccs == 0x827) {
+        return 0x20ac;
+      }
+      if (cc.ccs == 0x81c) {
+        pwVar2 = wc_map_search(code,cp12582_ucs_map,0x78);
+        if (pwVar2 == (wc_map *)0x0) {
+          return 0xffffffff;
         }
+        return (uint)pwVar2->code2;
       }
-      else {
-        if ((cc.ccs == 0x8150) &&
-           (pwVar2 = wc_map_search(code & 0x7f7f,jisx02132_ucs_p2_map,0x115),
-           pwVar2 != (wc_map *)0x0)) {
-          return pwVar2->code2 | 0x20000;
+      map = pcs_ucs_map[f - 1];
+      cc.code = cc.code & 0x7f;
+    }
+  }
+  else if (uVar1 == 0x8100) {
+    if ((cc.ccs == 0x8141) && (WcOption.use_gb12345_map != '\0')) {
+      cc.ccs = 0x880e;
+      wVar4 = wc_any_to_ucs((wc_wchar_t)((ulonglong)cc & 0xffffffff00000000 | 0x880e));
+      return wVar4;
+    }
+    if (cc.ccs == 0x814f) {
+      pwVar2 = wc_map_search(code & 0x7f7f,jisx02131_ucs_p2_map,0x19);
+      if (pwVar2 != (wc_map *)0x0) {
+        return pwVar2->code2 | 0x20000;
+      }
+    }
+    else if ((cc.ccs == 0x8150) &&
+            (pwVar2 = wc_map_search(code & 0x7f7f,jisx02132_ucs_p2_map,0x115),
+            pwVar2 != (wc_map *)0x0)) {
+      return pwVar2->code2 | 0x20000;
+    }
+    if ((f < 0x40) || (0x50 < f)) {
+      return 0;
+    }
+    map = cs94w_ucs_map[f + -0x40];
+    cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
+  }
+  else {
+    if (uVar1 < 0x8101) {
+      if (uVar1 != 0x2000) {
+        if ((uVar1 == 0x4000) && (cc.ccs == 0x4001)) {
+          return cc.code | 0x80;
         }
+        return 0xffffffff;
       }
-      if ((f < 0x40) || (0x50 < f)) {
-        return 0;
+      uVar1 = cc.ccs & 0xffff;
+      if (uVar1 == 0x2001) {
+        return cc.code & 0x1fffff;
       }
-      map = cs94w_ucs_map[f + -0x40];
-      cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
+      if (uVar1 == 0x2002) {
+        wVar4 = wc_gb18030_to_ucs(cc);
+        return wVar4;
+      }
+      if (uVar1 != 0x2000) {
+        return 0xffffffff;
+      }
+      return cc.code;
+    }
+    if (uVar1 == 0x8200) {
+      if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
+        return 0xffffffff;
+      }
+      map = cs96w_ucs_map[f - 0x40];
+      cc.code = ((cc.code >> 8 & 0x7f) * 0x60 + (cc.code & 0x7f)) - 0xc20;
     }
     else {
-      if (uVar1 < 0x8101) {
-        if (uVar1 != 0x2000) {
-          if ((uVar1 == 0x4000) && (cc.ccs == 0x4001)) {
-            return cc.code | 0x80;
-          }
-          return 0xffffffff;
-        }
-        uVar1 = cc.ccs & 0xffff;
-        if (uVar1 == 0x2001) {
-          return cc.code & 0x1fffff;
-        }
-        if (uVar1 == 0x2002) {
-          wVar4 = wc_gb18030_to_ucs(cc);
-          return wVar4;
-        }
-        if (uVar1 != 0x2000) {
-          return 0xffffffff;
-        }
-        return cc.code;
+      if (uVar1 != 0x8800) {
+        return 0xffffffff;
       }
-      if (uVar1 == 0x8200) {
-        if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
-          return 0xffffffff;
-        }
-        map = cs96w_ucs_map[f - 0x40];
-        cc.code = ((cc.code >> 8 & 0x7f) * 0x60 + (cc.code & 0x7f)) - 0xc20;
+      if ((((ulonglong)cc & 0xff) == 0) || (0x21 < (uint)f)) {
+        return 0xffffffff;
       }
-      else {
-        if (uVar1 != 0x8800) {
+      map = pcsw_ucs_map[f - 1];
+      switch(cc.ccs) {
+      case 0x8801:
+        if ((cc.code & 0xff) < 0xa1) {
+          iVar3 = 0x40;
+        }
+        else {
+          iVar3 = 0x62;
+        }
+        cc.code = (((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar3) - 0x62bd;
+        break;
+      default:
+        cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
+        break;
+      case 0x8803:
+        cc.code = (cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f) + 0xc49;
+        break;
+      case 0x880f:
+        wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_28));
+        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_24,local_28));
+        return wVar4;
+      case 0x8810:
+        return ((cc.code >> 8 & 0x7f) + 0x1ffffdf) * 0x80 + (cc.code & 0x7f) + 0xac00;
+      case 0x8811:
+        uVar1 = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+        if (uVar1 % 0xbc < 0x3e) {
+          iVar3 = 0x41;
+        }
+        else {
+          iVar3 = 0x43;
+        }
+        cc.code = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
+        pwVar2 = wc_map_search((wc_uint16)cc.code,johab2_ucs_map,0x33);
+        if (pwVar2 == (wc_map *)0x0) {
           return 0xffffffff;
         }
-        if ((((ulonglong)cc & 0xff) == 0) || (0x21 < (uint)f)) {
+        return (uint)pwVar2->code2;
+      case 0x8812:
+        if ((cc.code & 0x7f7f) < 0x2121) {
           return 0xffffffff;
         }
-        map = pcsw_ucs_map[f - 1];
-        switch(cc.ccs) {
-        case 0x8801:
-          if ((cc.code & 0xff) < 0xa1) {
-            iVar3 = 0x40;
-          }
-          else {
-            iVar3 = 0x62;
-          }
-          cc.code = (((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar3) - 0x62bd;
-          break;
-        default:
-          cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
-          break;
-        case 0x8803:
-          cc.code = (cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f) + 0xc49;
-          break;
-        case 0x880f:
-          wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_28));
-          wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_24,local_28));
-          return wVar4;
-        case 0x8810:
-          return ((cc.code >> 8 & 0x7f) + 0x1ffffdf) * 0x80 + (cc.code & 0x7f) + 0xac00;
-        case 0x8811:
-          uVar1 = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
-          if (uVar1 % 0xbc < 0x3e) {
-            iVar3 = 0x41;
-          }
-          else {
-            iVar3 = 0x43;
-          }
-          cc.code = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
-          pwVar2 = wc_map_search((wc_uint16)cc.code,johab2_ucs_map,0x33);
-          if (pwVar2 == (wc_map *)0x0) {
-            return 0xffffffff;
-          }
-          return (uint)pwVar2->code2;
-        case 0x8812:
-          if ((cc.code & 0x7f7f) < 0x2121) {
-            return 0xffffffff;
-          }
-        case 0x8813:
-          wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_30));
-          wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_2c,local_30));
-          return wVar4;
-        case 0x8814:
-          cc.code = wc_sjis_ext1_to_N(cc.code);
-          if (cc.code == 0xffffffff) {
-            return 0xffffffff;
-          }
-          break;
-        case 0x8815:
-          cc.code = wc_sjis_ext2_to_N(cc.code);
-          if (cc.code == 0xffffffff) {
-            return 0xffffffff;
-          }
-          break;
-        case 0x8817:
-        case 0x8818:
-          wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
-          cc.ccs = local_44;
-          cc.code = local_40;
-        case 0x8816:
-          cc.code = wc_gbk_to_N(cc.code);
-          break;
-        case 0x8819:
-        case 0x881a:
-        case 0x881b:
-          wVar4 = wc_gb18030_to_ucs(cc);
-          return wVar4;
-        case 0x881d:
-        case 0x881e:
-          wc_cs128w_to_uhc((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
-          cc.ccs = local_44;
-          cc.code = local_40;
-        case 0x881c:
-          if (0xc6fe < cc.code) {
-            return 0xffffffff;
-          }
-          cc.code = wc_uhc_to_N(cc.code);
-          break;
-        case 0x8820:
-        case 0x8821:
-          wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&cc));
-        case 0x881f:
-          map2 = wc_map_search((wc_uint16)cc.code,hkscs_ucs_p2_map,0x439);
-          if (map2 != (wc_map *)0x0) {
-            return map2->code2 | 0x20000;
-          }
-          cc.code = wc_hkscs_to_N(cc.code);
+      case 0x8813:
+        wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_30));
+        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_2c,local_30));
+        return wVar4;
+      case 0x8814:
+        cc.code = wc_sjis_ext1_to_N(cc.code);
+        if (cc.code == 0xffffffff) {
+          return 0xffffffff;
         }
+        break;
+      case 0x8815:
+        cc.code = wc_sjis_ext2_to_N(cc.code);
+        if (cc.code == 0xffffffff) {
+          return 0xffffffff;
+        }
+        break;
+      case 0x8817:
+      case 0x8818:
+        wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
+        cc.ccs = local_44;
+        cc.code = local_40;
+      case 0x8816:
+        cc.code = wc_gbk_to_N(cc.code);
+        break;
+      case 0x8819:
+      case 0x881a:
+      case 0x881b:
+        wVar4 = wc_gb18030_to_ucs(cc);
+        return wVar4;
+      case 0x881d:
+      case 0x881e:
+        wc_cs128w_to_uhc((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
+        cc.ccs = local_44;
+        cc.code = local_40;
+      case 0x881c:
+        if (0xc6fe < cc.code) {
+          return 0xffffffff;
+        }
+        cc.code = wc_uhc_to_N(cc.code);
+        break;
+      case 0x8820:
+      case 0x8821:
+        wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+      case 0x881f:
+        map2 = wc_map_search((wc_uint16)cc.code,hkscs_ucs_p2_map,0x439);
+        if (map2 != (wc_map *)0x0) {
+          return map2->code2 | 0x20000;
+        }
+        cc.code = wc_hkscs_to_N(cc.code);
       }
     }
   }
@@ -67794,8 +65724,7 @@ wc_wchar_t wc_ucs_to_any_list(wc_uint32 ucs,wc_table **tlist)
   wc_table **t;
   
   if (in_stack_0000000c != (wc_table **)0x0) {
-    t = in_stack_0000000c;
-    while (*t != (wc_table *)0x0) {
+    for (t = in_stack_0000000c; *t != (wc_table *)0x0; t = t + 1) {
       if ((*t)->map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&cc,(wc_table *)tlist);
         if ((cc.ccs & 0x4000) == 0) {
@@ -67804,7 +65733,6 @@ wc_wchar_t wc_ucs_to_any_list(wc_uint32 ucs,wc_table **tlist)
           goto LAB_080be955;
         }
       }
-      t = t + 1;
     }
   }
   *(undefined4 *)ucs = 0x4000;
@@ -68095,8 +66023,7 @@ wc_wchar_t wc_ucs_to_iso2022(wc_uint32 ucs)
   wc_table *t;
   
   if (in_stack_00000008 < 0x10000) {
-    f = 0;
-    while (f < 0x27) {
+    for (f = 0; f < 0x27; f = f + 1) {
       if (ucs_cs96_table[f].map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&cc,(wc_table *)(in_stack_00000008 & 0xffff));
         if ((cc.ccs & 0x4000) == 0) {
@@ -68105,10 +66032,8 @@ wc_wchar_t wc_ucs_to_iso2022(wc_uint32 ucs)
           goto LAB_080bf224;
         }
       }
-      f = f + 1;
     }
-    f = 0;
-    while (f < 0x15) {
+    for (f = 0; f < 0x15; f = f + 1) {
       if (ucs_cs94_table[f].map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
         cc.ccs = local_24;
@@ -68119,10 +66044,8 @@ wc_wchar_t wc_ucs_to_iso2022(wc_uint32 ucs)
           goto LAB_080bf224;
         }
       }
-      f = f + 1;
     }
-    f = 0;
-    while (f < -0x3f) {
+    for (f = 0; f < -0x3f; f = f + 1) {
       if (ucs_cs942_table[f].map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
         cc.ccs = local_24;
@@ -68133,7 +66056,6 @@ wc_wchar_t wc_ucs_to_iso2022(wc_uint32 ucs)
           goto LAB_080bf224;
         }
       }
-      f = f + 1;
     }
   }
   *(undefined4 *)ucs = 0x4000;
@@ -68155,8 +66077,7 @@ wc_wchar_t wc_ucs_to_iso2022w(wc_uint32 ucs)
   wc_table *t;
   
   if (in_stack_00000008 < 0x10000) {
-    f = 0;
-    while (f < 0x11) {
+    for (f = 0; f < 0x11; f = f + 1) {
       if (ucs_cs94w_table[f].map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&cc,(wc_table *)(in_stack_00000008 & 0xffff));
         if ((cc.ccs & 0x4000) == 0) {
@@ -68165,10 +66086,8 @@ wc_wchar_t wc_ucs_to_iso2022w(wc_uint32 ucs)
           goto LAB_080bf32f;
         }
       }
-      f = f + 1;
     }
-    f = 0;
-    while (f < -0x3f) {
+    for (f = 0; f < -0x3f; f = f + 1) {
       if (ucs_cs96w_table[f].map != (wc_map *)0x0) {
         wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
         cc.ccs = local_24;
@@ -68179,7 +66098,6 @@ wc_wchar_t wc_ucs_to_iso2022w(wc_uint32 ucs)
           goto LAB_080bf32f;
         }
       }
-      f = f + 1;
     }
   }
   *(undefined4 *)ucs = 0xc000;
@@ -68240,15 +66158,13 @@ wc_bool wc_is_ucs_wide(wc_uint32 ucs)
     pwVar1 = wc_map_range_search((wc_uint16)ucs,ucs_wide_map,0xb);
     bVar2 = pwVar1 != (wc_map *)0x0;
   }
-  else {
-    if ((ucs >> 0x10 == 2) || (ucs >> 0x10 == 3)) {
-      bVar2 = true;
-    }
-    else {
-      bVar2 = false;
-    }
+  else if ((ucs >> 0x10 == 2) || (ucs >> 0x10 == 3)) {
+    bVar2 = true;
   }
-  return (wc_bool)bVar2;
+  else {
+    bVar2 = false;
+  }
+  return bVar2;
 }
 
 
@@ -68322,13 +66238,11 @@ int wc_ucs_put_tag(char *p)
     iVar1 = 0;
   }
   else {
-    i = 1;
-    while (i <= n_tag_map) {
+    for (i = 1; i <= n_tag_map; i = i + 1) {
       iVar1 = strcasecmp(p,tag_map[i]);
       if (iVar1 == 0) {
         return i;
       }
-      i = i + 1;
     }
     n_tag_map = n_tag_map + 1;
     if (n_tag_map == 0x100) {
@@ -68396,30 +66310,24 @@ void wtf_push_ucs(Str os,wc_uint32 ucs,wc_status *st)
       wtf_push(os,ccs,ucs);
     }
   }
-  else {
-    if (WcOption.use_language_tag != '\0') {
-      if (ucs == 0xe0001) {
-        p_Var1 = Strnew_size(4);
-        st->tag = p_Var1;
+  else if (WcOption.use_language_tag != '\0') {
+    if (ucs == 0xe0001) {
+      p_Var1 = Strnew_size(4);
+      st->tag = p_Var1;
+    }
+    else if (ucs == 0xe007f) {
+      st->tag = (Str)0x0;
+      st->ntag = 0;
+    }
+    else if ((st->tag != (Str)0x0) && (0xe001f < ucs)) {
+      if (st->tag->area_size <= st->tag->length + 1) {
+        Strgrow(st->tag);
       }
-      else {
-        if (ucs == 0xe007f) {
-          st->tag = (Str)0x0;
-          st->ntag = 0;
-        }
-        else {
-          if ((st->tag != (Str)0x0) && (0xe001f < ucs)) {
-            if (st->tag->area_size <= st->tag->length + 1) {
-              Strgrow(st->tag);
-            }
-            p_Var1 = st->tag;
-            iVar2 = p_Var1->length;
-            st->tag->ptr[iVar2] = (byte)ucs & 0x7f;
-            p_Var1->length = iVar2 + 1;
-            st->tag->ptr[st->tag->length] = '\0';
-          }
-        }
-      }
+      p_Var1 = st->tag;
+      iVar2 = p_Var1->length;
+      st->tag->ptr[iVar2] = (byte)ucs & 0x7f;
+      p_Var1->length = iVar2 + 1;
+      st->tag->ptr[st->tag->length] = '\0';
     }
   }
   return;
@@ -68437,13 +66345,11 @@ wc_wchar_t wc_uhc_to_cs128w(wc_wchar_t cc)
   if ((in_stack_0000000c & 0xff) < 0x61) {
     iVar2 = 0x41;
   }
+  else if ((in_stack_0000000c & 0xff) < 0x81) {
+    iVar2 = 0x47;
+  }
   else {
-    if ((in_stack_0000000c & 0xff) < 0x81) {
-      iVar2 = 0x47;
-    }
-    else {
-      iVar2 = 0x4d;
-    }
+    iVar2 = 0x4d;
   }
   iVar2 = ((in_stack_0000000c >> 8 & 0xff) * 0xb2 + (in_stack_0000000c & 0xff)) - iVar2;
   in_stack_0000000c = iVar2 - 0x59b2;
@@ -68476,13 +66382,11 @@ wc_wchar_t wc_cs128w_to_uhc(wc_wchar_t cc)
   if (in_stack_0000000c % 0xb2 < 0x1a) {
     iVar2 = 0x41;
   }
+  else if (in_stack_0000000c % 0xb2 < 0x34) {
+    iVar2 = 0x47;
+  }
   else {
-    if (in_stack_0000000c % 0xb2 < 0x34) {
-      iVar2 = 0x47;
-    }
-    else {
-      iVar2 = 0x4d;
-    }
+    iVar2 = 0x4d;
   }
   uVar1 = (in_stack_0000000c / 0xb2 + 0x81) * 0x100 + in_stack_0000000c % 0xb2 + iVar2;
   *(undefined4 *)cc.ccs = 0x881c;
@@ -68502,50 +66406,40 @@ wc_uint32 wc_uhc_to_N(wc_uint32 c)
     if ((c & 0xff) < 0x61) {
       iVar1 = 0x41;
     }
+    else if ((c & 0xff) < 0x81) {
+      iVar1 = 0x47;
+    }
     else {
-      if ((c & 0xff) < 0x81) {
-        iVar1 = 0x47;
-      }
-      else {
-        iVar1 = 0x4d;
-      }
+      iVar1 = 0x4d;
     }
     wVar2 = (((c >> 8 & 0xff) * 0xb2 + (c & 0xff)) - iVar1) - 0x59b2;
   }
-  else {
-    if (c < 0xa2a1) {
-      if ((c & 0xff) < 0x61) {
-        iVar1 = 0x41;
-      }
-      else {
-        if ((c & 0xff) < 0x81) {
-          iVar1 = 0x47;
-        }
-        else {
-          iVar1 = 0x4d;
-        }
-      }
-      wVar2 = (((c >> 8 & 0xff) * 0xb2 + (c & 0xff)) - iVar1) - 0x5a10;
+  else if (c < 0xa2a1) {
+    if ((c & 0xff) < 0x61) {
+      iVar1 = 0x41;
+    }
+    else if ((c & 0xff) < 0x81) {
+      iVar1 = 0x47;
     }
     else {
-      if (c < 0xa2e8) {
-        wVar2 = c - 0x8bfe;
-      }
-      else {
-        if ((c & 0xff) < 0x61) {
-          iVar1 = 0x41;
-        }
-        else {
-          if ((c & 0xff) < 0x81) {
-            iVar1 = 0x47;
-          }
-          else {
-            iVar1 = 0x4d;
-          }
-        }
-        wVar2 = ((((c >> 8 & 0xff) * 0xb2 + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x1e92;
-      }
+      iVar1 = 0x4d;
     }
+    wVar2 = (((c >> 8 & 0xff) * 0xb2 + (c & 0xff)) - iVar1) - 0x5a10;
+  }
+  else if (c < 0xa2e8) {
+    wVar2 = c - 0x8bfe;
+  }
+  else {
+    if ((c & 0xff) < 0x61) {
+      iVar1 = 0x41;
+    }
+    else if ((c & 0xff) < 0x81) {
+      iVar1 = 0x47;
+    }
+    else {
+      iVar1 = 0x4d;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xb2 + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x1e92;
   }
   return wVar2;
 }
@@ -68571,16 +66465,14 @@ Str wc_conv_from_uhc(Str is,wc_ces ces)
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar4 = pwVar1 + is->length;
   bVar3 = false;
-  p = pwVar1;
-  while ((p < pwVar4 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar4 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar4) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (p < pwVar4) {
+    for (; p < pwVar4; p = p + 1) {
       if (bVar3) {
         if (bVar3) {
           if ((WC_UHC_MAP[*p] & 4) == 0) {
@@ -68598,26 +66490,21 @@ Str wc_conv_from_uhc(Str is,wc_ces ces)
           bVar3 = false;
         }
       }
-      else {
-        if (WC_UHC_MAP[*p] == '\x02') {
-          wtf_push_unknown(x,p,1);
-        }
-        else {
-          if (WC_UHC_MAP[*p] == '\f') {
-            bVar3 = true;
-          }
-          else {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar2 = x->length;
-            x->ptr[iVar2] = *p;
-            x->length = iVar2 + 1;
-            x->ptr[x->length] = '\0';
-          }
-        }
+      else if (WC_UHC_MAP[*p] == '\x02') {
+        wtf_push_unknown(x,p,1);
       }
-      p = p + 1;
+      else if (WC_UHC_MAP[*p] == '\f') {
+        bVar3 = true;
+      }
+      else {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar2 = x->length;
+        x->ptr[iVar2] = *p;
+        x->length = iVar2 + 1;
+        x->ptr[x->length] = '\0';
+      }
     }
     is = x;
     if (bVar3) {
@@ -68751,16 +66638,14 @@ Str wc_char_conv_from_uhc(wc_uchar c,wc_status *st)
       wc_char_conv_from_uhc::os->ptr[wc_char_conv_from_uhc::os->length] = '\0';
     }
   }
-  else {
-    if ((st->state == 1) && ((WC_UHC_MAP[c] & 4) != 0)) {
-      code = (uint)CONCAT11(wc_char_conv_from_uhc::uhcu,c);
-      if ((wc_char_conv_from_uhc::uhcu < 0xa1) ||
-         (((c < 0xa1 || (code == 0xa2e6)) || (code == 0xa2e7)))) {
-        wtf_push(wc_char_conv_from_uhc::os,0x881c,code);
-      }
-      else {
-        wtf_push(wc_char_conv_from_uhc::os,0x8143,code);
-      }
+  else if ((st->state == 1) && ((WC_UHC_MAP[c] & 4) != 0)) {
+    code = (uint)CONCAT11(wc_char_conv_from_uhc::uhcu,c);
+    if ((wc_char_conv_from_uhc::uhcu < 0xa1) ||
+       (((c < 0xa1 || (code == 0xa2e6)) || (code == 0xa2e7)))) {
+      wtf_push(wc_char_conv_from_uhc::os,0x881c,code);
+    }
+    else {
+      wtf_push(wc_char_conv_from_uhc::os,0x8143,code);
     }
   }
   st->state = -1;
@@ -68791,18 +66676,16 @@ Str wc_conv_from_utf7(Str is,wc_ces ces)
   pwVar4 = pwVar2 + is->length;
   state = 0;
   high = 0;
-  p = pwVar2;
-  while (((p < pwVar4 && (-1 < (char)*p)) && (*p != '+'))) {
-    p = p + 1;
+  for (p = pwVar2; ((p < pwVar4 && (-1 < (char)*p)) && (*p != '+')); p = p + 1) {
   }
   if (p != pwVar4) {
     x = Strnew_size((is->length * 4) / 3);
     if (pwVar2 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar2));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar2);
     }
     st.tag = (Str)0x0;
     st.ntag = 0;
-    while (is = x, p < pwVar4) {
+    for (; is = x, p < pwVar4; p = p + 1) {
       if (state == 1) {
         if (*p == '-') {
           wtf_push_ucs(x,0x2b,&st);
@@ -68867,19 +66750,16 @@ LAB_080c0405:
             x->length = iVar3 + 1;
             x->ptr[x->length] = '\0';
           }
+          else if (wVar1 == '\b') {
+            wtf_push_unknown(x,p,1);
+          }
           else {
-            if (wVar1 == '\b') {
-              wtf_push_unknown(x,p,1);
-            }
-            else {
-              if (wVar1 == '\x04') goto LAB_080c0405;
-              wtf_push_ucs(x,(uint)*p,&st);
-            }
+            if (wVar1 == '\x04') goto LAB_080c0405;
+            wtf_push_ucs(x,(uint)*p,&st);
           }
         }
       }
 LAB_080c0491:
-      p = p + 1;
     }
   }
   return is;
@@ -69035,9 +66915,8 @@ int wc_push_tag_to_utf7(Str os,int ntag,wc_status *st)
   }
   else {
     wc_push_ucs_to_utf7(os,0xe0001,st);
-    while (*p != '\0') {
+    for (; *p != '\0'; p = p + 1) {
       wc_push_ucs_to_utf7(os,(int)*p | 0xe0000,st);
-      p = p + 1;
     }
   }
   return ntag;
@@ -69090,10 +66969,8 @@ LAB_080c0b36:
           iVar2 = wc_push_tag_to_utf7(os,0,st);
           st->ntag = iVar2;
         }
-        p = WcReplace;
-        while (*p != '\0') {
+        for (p = WcReplace; *p != '\0'; p = p + 1) {
           wc_push_ucs_to_utf7(os,(int)*p,st);
-          p = p + 1;
         }
         return;
       }
@@ -69105,10 +66982,8 @@ LAB_080c0b36:
           iVar2 = wc_push_tag_to_utf7(os,0,st);
           st->ntag = iVar2;
         }
-        p = WcReplaceW;
-        while (*p != '\0') {
+        for (p = WcReplaceW; *p != '\0'; p = p + 1) {
           wc_push_ucs_to_utf7(os,(int)*p,st);
-          p = p + 1;
         }
         return;
       }
@@ -69212,13 +67087,11 @@ LAB_080c0f41:
             wc_char_conv_from_utf7::high = 0;
           }
         }
+        else if (wc_char_conv_from_utf7::high == 0) {
+          wc_char_conv_from_utf7::high = st->base;
+        }
         else {
-          if (wc_char_conv_from_utf7::high == 0) {
-            wc_char_conv_from_utf7::high = st->base;
-          }
-          else {
-            wc_char_conv_from_utf7::high = 0;
-          }
+          wc_char_conv_from_utf7::high = 0;
         }
         st->shift = st->shift + 0x10;
         st->base = 0;
@@ -69279,59 +67152,51 @@ size_t wc_ucs_to_utf8(wc_uint32 ucs,wc_uchar *utf8)
     utf8[1] = '\0';
     sVar2 = 1;
   }
+  else if (ucs < 0x800) {
+    *utf8 = (byte)(ucs >> 6) | 0xc0;
+    utf8[1] = bVar3 & 0x3f | 0x80;
+    utf8[2] = '\0';
+    sVar2 = 2;
+  }
+  else if (ucs < 0x10000) {
+    *utf8 = (byte)(ucs >> 0xc) | 0xe0;
+    utf8[1] = (byte)(ucs >> 6) & 0x3f | 0x80;
+    utf8[2] = bVar3 & 0x3f | 0x80;
+    utf8[3] = '\0';
+    sVar2 = 3;
+  }
+  else if (ucs < 0x200000) {
+    *utf8 = (byte)(ucs >> 0x12) | 0xf0;
+    utf8[1] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
+    utf8[2] = (byte)(ucs >> 6) & 0x3f | 0x80;
+    utf8[3] = bVar3 & 0x3f | 0x80;
+    utf8[4] = '\0';
+    sVar2 = 4;
+  }
   else {
-    if (ucs < 0x800) {
-      *utf8 = (byte)(ucs >> 6) | 0xc0;
-      utf8[1] = bVar3 & 0x3f | 0x80;
-      utf8[2] = '\0';
-      sVar2 = 2;
+    bVar1 = (byte)(ucs >> 0x18);
+    if (ucs < 0x4000000) {
+      *utf8 = bVar1 | 0xf8;
+      utf8[1] = (byte)(ucs >> 0x12) & 0x3f | 0x80;
+      utf8[2] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
+      utf8[3] = (byte)(ucs >> 6) & 0x3f | 0x80;
+      utf8[4] = bVar3 & 0x3f | 0x80;
+      utf8[5] = '\0';
+      sVar2 = 5;
+    }
+    else if ((int)ucs < 0) {
+      *utf8 = '\0';
+      sVar2 = 0;
     }
     else {
-      if (ucs < 0x10000) {
-        *utf8 = (byte)(ucs >> 0xc) | 0xe0;
-        utf8[1] = (byte)(ucs >> 6) & 0x3f | 0x80;
-        utf8[2] = bVar3 & 0x3f | 0x80;
-        utf8[3] = '\0';
-        sVar2 = 3;
-      }
-      else {
-        if (ucs < 0x200000) {
-          *utf8 = (byte)(ucs >> 0x12) | 0xf0;
-          utf8[1] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
-          utf8[2] = (byte)(ucs >> 6) & 0x3f | 0x80;
-          utf8[3] = bVar3 & 0x3f | 0x80;
-          utf8[4] = '\0';
-          sVar2 = 4;
-        }
-        else {
-          bVar1 = (byte)(ucs >> 0x18);
-          if (ucs < 0x4000000) {
-            *utf8 = bVar1 | 0xf8;
-            utf8[1] = (byte)(ucs >> 0x12) & 0x3f | 0x80;
-            utf8[2] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
-            utf8[3] = (byte)(ucs >> 6) & 0x3f | 0x80;
-            utf8[4] = bVar3 & 0x3f | 0x80;
-            utf8[5] = '\0';
-            sVar2 = 5;
-          }
-          else {
-            if ((int)ucs < 0) {
-              *utf8 = '\0';
-              sVar2 = 0;
-            }
-            else {
-              *utf8 = bVar1 >> 6 | 0xfc;
-              utf8[1] = bVar1 & 0x3f | 0x80;
-              utf8[2] = (byte)(ucs >> 0x12) & 0x3f | 0x80;
-              utf8[3] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
-              utf8[4] = (byte)(ucs >> 6) & 0x3f | 0x80;
-              utf8[5] = bVar3 & 0x3f | 0x80;
-              utf8[6] = '\0';
-              sVar2 = 6;
-            }
-          }
-        }
-      }
+      *utf8 = bVar1 >> 6 | 0xfc;
+      utf8[1] = bVar1 & 0x3f | 0x80;
+      utf8[2] = (byte)(ucs >> 0x12) & 0x3f | 0x80;
+      utf8[3] = (byte)(ucs >> 0xc) & 0x3f | 0x80;
+      utf8[4] = (byte)(ucs >> 6) & 0x3f | 0x80;
+      utf8[5] = bVar3 & 0x3f | 0x80;
+      utf8[6] = '\0';
+      sVar2 = 6;
     }
   }
   return sVar2;
@@ -69414,18 +67279,16 @@ Str wc_conv_from_utf8(Str is,wc_ces ces)
   q = (wc_uchar *)0x0;
   bVar3 = false;
   next = 0;
-  p = pwVar1;
-  while ((p < pwVar4 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar4 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar4) {
     x = Strnew_size((is->length * 4) / 3);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
     st.tag = (Str)0x0;
     st.ntag = 0;
-    while (p < pwVar4) {
+    for (; p < pwVar4; p = p + 1) {
       if (bVar3) {
         if (bVar3) {
           if (WC_UTF8_MAP[*p] == '\0') {
@@ -69436,10 +67299,8 @@ Str wc_conv_from_utf8(Str is,wc_ces ces)
               if ((ucs_00 == 0xffffffff) || ((0xd7ff < ucs_00 && (ucs_00 < 0xe000)))) {
                 wtf_push_unknown(x,q,(size_t)(p + (1 - (int)q)));
               }
-              else {
-                if (ucs_00 != 0xfeff) {
-                  wtf_push_ucs(x,ucs_00,&st);
-                }
+              else if (ucs_00 != 0xfeff) {
+                wtf_push_ucs(x,ucs_00,&st);
               }
             }
           }
@@ -69454,33 +67315,28 @@ Str wc_conv_from_utf8(Str is,wc_ces ces)
         if (next == 1) {
           wtf_push_ucs(x,(uint)*p,&st);
         }
+        else if ((next == 0) || (next == 7)) {
+          wtf_push_unknown(x,p,1);
+        }
+        else if (next == 8) {
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
+          }
+          iVar2 = x->length;
+          x->ptr[iVar2] = *p;
+          x->length = iVar2 + 1;
+          x->ptr[x->length] = '\0';
+        }
         else {
-          if ((next == 0) || (next == 7)) {
-            wtf_push_unknown(x,p,1);
-          }
-          else {
-            if (next == 8) {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar2 = x->length;
-              x->ptr[iVar2] = *p;
-              x->length = iVar2 + 1;
-              x->ptr[x->length] = '\0';
-            }
-            else {
-              q = p;
-              next = next - 1;
-              bVar3 = true;
-            }
-          }
+          q = p;
+          next = next - 1;
+          bVar3 = true;
         }
       }
-      p = p + 1;
     }
     is = x;
     if (bVar3) {
-      wtf_push_unknown(x,q,(size_t)(p + -(int)q));
+      wtf_push_unknown(x,q,(int)p - (int)q);
     }
   }
   return is;
@@ -69503,10 +67359,9 @@ int wc_push_tag_to_utf8(Str os,int ntag)
   else {
     wc_ucs_to_utf8(0xe0001,utf8_buf);
     Strcat_charp(os,(char *)utf8_buf);
-    while (*p != '\0') {
+    for (; *p != '\0'; p = p + 1) {
       wc_ucs_to_utf8((int)*p | 0xe0000,utf8_buf);
       Strcat_charp(os,(char *)utf8_buf);
-      p = p + 1;
     }
   }
   return ntag;
@@ -69638,39 +67493,35 @@ Str wc_char_conv_from_utf8(wc_uchar c,wc_status *st)
     if (wc_char_conv_from_utf8::next == 1) {
       wtf_push_ucs(wc_char_conv_from_utf8::os,(uint)c,st);
     }
-    else {
-      if ((wc_char_conv_from_utf8::next != 0) && (wc_char_conv_from_utf8::next != 7)) {
-        if (wc_char_conv_from_utf8::next != 8) {
-          wc_char_conv_from_utf8::buf[wc_char_conv_from_utf8::nbuf] = c;
-          wc_char_conv_from_utf8::nbuf = wc_char_conv_from_utf8::nbuf + 1;
-          wc_char_conv_from_utf8::next = wc_char_conv_from_utf8::next - 1;
-          st->state = 1;
-          return (Str)0x0;
-        }
-        if (wc_char_conv_from_utf8::os->area_size <= wc_char_conv_from_utf8::os->length + 1) {
-          Strgrow(wc_char_conv_from_utf8::os);
-        }
-        p_Var2 = wc_char_conv_from_utf8::os;
-        iVar1 = wc_char_conv_from_utf8::os->length;
-        wc_char_conv_from_utf8::os->ptr[iVar1] = c;
-        p_Var2->length = iVar1 + 1;
-        wc_char_conv_from_utf8::os->ptr[wc_char_conv_from_utf8::os->length] = '\0';
-      }
-    }
-  }
-  else {
-    if ((st->state == 1) && (WC_UTF8_MAP[c] == '\0')) {
-      wc_char_conv_from_utf8::buf[wc_char_conv_from_utf8::nbuf] = c;
-      wc_char_conv_from_utf8::nbuf = wc_char_conv_from_utf8::nbuf + 1;
-      wc_char_conv_from_utf8::next = wc_char_conv_from_utf8::next - 1;
-      if (wc_char_conv_from_utf8::next != 0) {
+    else if ((wc_char_conv_from_utf8::next != 0) && (wc_char_conv_from_utf8::next != 7)) {
+      if (wc_char_conv_from_utf8::next != 8) {
+        wc_char_conv_from_utf8::buf[wc_char_conv_from_utf8::nbuf] = c;
+        wc_char_conv_from_utf8::nbuf = wc_char_conv_from_utf8::nbuf + 1;
+        wc_char_conv_from_utf8::next = wc_char_conv_from_utf8::next - 1;
+        st->state = 1;
         return (Str)0x0;
       }
-      ucs_00 = wc_utf8_to_ucs(wc_char_conv_from_utf8::buf);
-      if ((ucs_00 != 0xffffffff) && (((ucs_00 < 0xd800 || (0xdfff < ucs_00)) && (ucs_00 != 0xfeff)))
-         ) {
-        wtf_push_ucs(wc_char_conv_from_utf8::os,ucs_00,st);
+      if (wc_char_conv_from_utf8::os->area_size <= wc_char_conv_from_utf8::os->length + 1) {
+        Strgrow(wc_char_conv_from_utf8::os);
       }
+      p_Var2 = wc_char_conv_from_utf8::os;
+      iVar1 = wc_char_conv_from_utf8::os->length;
+      wc_char_conv_from_utf8::os->ptr[iVar1] = c;
+      p_Var2->length = iVar1 + 1;
+      wc_char_conv_from_utf8::os->ptr[wc_char_conv_from_utf8::os->length] = '\0';
+    }
+  }
+  else if ((st->state == 1) && (WC_UTF8_MAP[c] == '\0')) {
+    wc_char_conv_from_utf8::buf[wc_char_conv_from_utf8::nbuf] = c;
+    wc_char_conv_from_utf8::nbuf = wc_char_conv_from_utf8::nbuf + 1;
+    wc_char_conv_from_utf8::next = wc_char_conv_from_utf8::next - 1;
+    if (wc_char_conv_from_utf8::next != 0) {
+      return (Str)0x0;
+    }
+    ucs_00 = wc_utf8_to_ucs(wc_char_conv_from_utf8::buf);
+    if ((ucs_00 != 0xffffffff) && (((ucs_00 < 0xd800 || (0xdfff < ucs_00)) && (ucs_00 != 0xfeff))))
+    {
+      wtf_push_ucs(wc_char_conv_from_utf8::os,ucs_00,st);
     }
   }
   st->state = -1;
@@ -69757,21 +67608,17 @@ Str wc_conv_from_viet(Str is,wc_ces ces)
   
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar3 = pwVar1 + is->length;
-  ccs = *(wc_ccs *)(*(int *)(WcCesInfo + (ces & 0xff) * 0x20 + 0xc) + 8);
-  ccs_00 = *(wc_ccs *)(*(int *)(WcCesInfo + (ces & 0xff) * 0x20 + 0xc) + 0x10);
+  ccs = WcCesInfo[ces & 0xff].gset[1].ccs;
+  ccs_00 = WcCesInfo[ces & 0xff].gset[2].ccs;
   map = (wc_uint8 *)0x0;
   if (ces == 0x104443) {
     map = wc_c0_viscii112_map;
   }
-  else {
-    if (ces == 0x104444) {
-      map = wc_c0_vps2_map;
-    }
-    else {
-      if (ces == 0x104442) {
-        map = wc_c0_tcvn57122_map;
-      }
-    }
+  else if (ces == 0x104444) {
+    map = wc_c0_vps2_map;
+  }
+  else if (ces == 0x104442) {
+    map = wc_c0_tcvn57122_map;
   }
   wc_create_detect_map(ces,'\0');
   p = pwVar1;
@@ -69781,27 +67628,24 @@ Str wc_conv_from_viet(Str is,wc_ces ces)
   if (p != pwVar3) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (is = x, p < pwVar3) {
+    for (; is = x, p < pwVar3; p = p + 1) {
       if ((char)*p < '\0') {
         wtf_push(x,ccs,(uint)*p);
       }
-      else {
-        if ((*p < 0x20) && (map[*p] != '\0')) {
-          wtf_push(x,ccs_00,(uint)*p);
-        }
-        else {
-          if (x->area_size <= x->length + 1) {
-            Strgrow(x);
-          }
-          iVar2 = x->length;
-          x->ptr[iVar2] = *p;
-          x->length = iVar2 + 1;
-          x->ptr[x->length] = '\0';
-        }
+      else if ((*p < 0x20) && (map[*p] != '\0')) {
+        wtf_push(x,ccs_00,(uint)*p);
       }
-      p = p + 1;
+      else {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar2 = x->length;
+        x->ptr[iVar2] = *p;
+        x->length = iVar2 + 1;
+        x->ptr[x->length] = '\0';
+      }
     }
   }
   return is;
@@ -69830,24 +67674,18 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
     ccs2 = st->ces_info->gset[2].ccs;
     ccs3 = st->ces_info->gset[3].ccs;
   }
-  else {
-    if (uVar2 < 0x104443) {
-      if (uVar2 == 0x100441) {
-        ccs3 = st->ces_info->gset[2].ccs;
-      }
+  else if (uVar2 < 0x104443) {
+    if (uVar2 == 0x100441) {
+      ccs3 = st->ces_info->gset[2].ccs;
     }
-    else {
-      if (uVar2 == 0x104443) {
-        map = wc_c0_viscii112_map;
-        ccs2 = st->ces_info->gset[2].ccs;
-      }
-      else {
-        if (uVar2 == 0x104444) {
-          map = wc_c0_vps2_map;
-          ccs2 = st->ces_info->gset[2].ccs;
-        }
-      }
-    }
+  }
+  else if (uVar2 == 0x104443) {
+    map = wc_c0_viscii112_map;
+    ccs2 = st->ces_info->gset[2].ccs;
+  }
+  else if (uVar2 == 0x104444) {
+    map = wc_c0_vps2_map;
+    ccs2 = st->ces_info->gset[2].ccs;
   }
   while( true ) {
     if (cc.ccs == wVar1) {
@@ -69951,32 +67789,26 @@ Str wc_char_conv_from_viet(wc_uchar c,wc_status *st)
   if (wVar1 == 0x104443) {
     map = wc_c0_viscii112_map;
   }
-  else {
-    if (wVar1 == 0x104444) {
-      map = wc_c0_vps2_map;
-    }
-    else {
-      if (wVar1 == 0x104442) {
-        map = wc_c0_tcvn57122_map;
-      }
-    }
+  else if (wVar1 == 0x104444) {
+    map = wc_c0_vps2_map;
+  }
+  else if (wVar1 == 0x104442) {
+    map = wc_c0_tcvn57122_map;
   }
   if ((char)c < '\0') {
     wtf_push(x,st->ces_info->gset[1].ccs,(uint)c);
   }
+  else if ((c < 0x20) && (map[c] != '\0')) {
+    wtf_push(x,st->ces_info->gset[2].ccs,(uint)c);
+  }
   else {
-    if ((c < 0x20) && (map[c] != '\0')) {
-      wtf_push(x,st->ces_info->gset[2].ccs,(uint)c);
+    if (x->area_size <= x->length + 1) {
+      Strgrow(x);
     }
-    else {
-      if (x->area_size <= x->length + 1) {
-        Strgrow(x);
-      }
-      iVar2 = x->length;
-      x->ptr[iVar2] = c;
-      x->length = iVar2 + 1;
-      x->ptr[x->length] = '\0';
-    }
+    iVar2 = x->length;
+    x->ptr[iVar2] = c;
+    x->length = iVar2 + 1;
+    x->ptr[x->length] = '\0';
   }
   return x;
 }
@@ -69986,7 +67818,7 @@ Str wc_char_conv_from_viet(wc_uchar c,wc_status *st)
 void wtf_init(wc_ces ces1,wc_ces ces2)
 
 {
-  int iVar1;
+  wc_gset *pwVar1;
   wc_bool wVar2;
   wc_gset *gset;
   int i;
@@ -69996,25 +67828,21 @@ void wtf_init(wc_ces ces1,wc_ces ces2)
     wtf_major_ces = ces2;
   }
   wVar2 = wc_check_ces(ces1);
-  if ((((wVar2 != '\0') && (iVar1 = *(int *)(WcCesInfo + (ces1 & 0xff) * 0x20 + 0xc), iVar1 != 0))
-      && (*(int *)(iVar1 + 8) != 0)) && ((*(uint *)(iVar1 + 8) & 0x3000) == 0)) {
-    wtf_gr_ccs = *(uint *)(iVar1 + 8);
+  if ((((wVar2 != '\0') && (pwVar1 = WcCesInfo[ces1 & 0xff].gset, pwVar1 != (wc_gset *)0x0)) &&
+      (pwVar1[1].ccs != 0)) && ((pwVar1[1].ccs & 0x3000) == 0)) {
+    wtf_gr_ccs = pwVar1[1].ccs;
     if ((wtf_gr_ccs & 0x18000) == 0) {
-      i = 0xa1;
-      while (i < 0x100) {
+      for (i = 0xa1; i < 0x100; i = i + 1) {
         WTF_WIDTH_MAP[i] = '\x01';
         WTF_LEN_MAP[i] = '\x01';
         WTF_TYPE_MAP[i] = '\x02';
-        i = i + 1;
       }
     }
     else {
-      i = 0xa1;
-      while (i < 0x100) {
+      for (i = 0xa1; i < 0x100; i = i + 1) {
         WTF_WIDTH_MAP[i] = '\x02';
         WTF_LEN_MAP[i] = '\x02';
         WTF_TYPE_MAP[i] = '\n';
-        i = i + 1;
       }
     }
   }
@@ -70030,7 +67858,7 @@ int wtf_strwidth(wc_uchar *p)
   int w;
   
   w = 0;
-  while (*p != '\0') {
+  for (; *p != '\0'; p = p + WTF_LEN_MAP[*p]) {
     if (WcOption.use_wide == '\0') {
       bVar1 = WTF_WIDTH_MAP[*p] != '\0';
     }
@@ -70038,7 +67866,6 @@ int wtf_strwidth(wc_uchar *p)
       bVar1 = WTF_WIDTH_MAP[*p];
     }
     w = w + (uint)bVar1;
-    p = p + WTF_LEN_MAP[*p];
   }
   return w;
 }
@@ -70054,7 +67881,7 @@ size_t wtf_len(wc_uchar *p)
   while ((*q != '\0' && (WTF_WIDTH_MAP[*q] == '\0'))) {
     q = q + WTF_LEN_MAP[*q];
   }
-  return (size_t)(q + -(int)p);
+  return (int)q - (int)p;
 }
 
 
@@ -70105,41 +67932,37 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
         cc.code = cc2.code;
       }
     }
-    else {
-      if ((ccs == 0x8143) && (wtf_major_ces == 0x302040)) {
-        wc_ksx1001_to_johab((wc_wchar_t)CONCAT44(0x8143,&local_4c));
+    else if ((ccs == 0x8143) && (wtf_major_ces == 0x302040)) {
+      wc_ksx1001_to_johab((wc_wchar_t)CONCAT44(0x8143,&local_4c));
+      cc2.ccs = local_4c;
+      cc2.code = local_48;
+      wVar5 = WcOption.fix_width_conv;
+      if ((local_4c & 0x4000) == 0) {
+        cc.ccs = local_4c;
+        cc.code = local_48;
+      }
+    }
+    else if (WcOption.ucs_conv != '\0') {
+      WcOption.fix_width_conv = '\0';
+      wc_output_init(wtf_major_ces,&wtf_major_st);
+      wVar4 = wc_ces_has_ccs(ccs & 0xffff,&wtf_major_st);
+      if (wVar4 == '\0') {
+        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_4c),(wc_status *)cc.code);
         cc2.ccs = local_4c;
         cc2.code = local_48;
-        wVar5 = WcOption.fix_width_conv;
-        if ((local_4c & 0x4000) == 0) {
+        if (local_4c == 0x142) {
+          if (local_40->area_size <= local_40->length + 1) {
+            Strgrow(local_40);
+          }
+          iVar2 = local_40->length;
+          local_40->ptr[iVar2] = (byte)cc2.code & 0x7f;
+          local_40->length = iVar2 + 1;
+          local_40->ptr[local_40->length] = '\0';
+          goto LAB_080c30bc;
+        }
+        if ((((local_4c & 0x4000) == 0) && (local_4c != 0x81c)) && (local_4c != 0x81f)) {
           cc.ccs = local_4c;
           cc.code = local_48;
-        }
-      }
-      else {
-        if (WcOption.ucs_conv != '\0') {
-          WcOption.fix_width_conv = '\0';
-          wc_output_init(wtf_major_ces,&wtf_major_st);
-          wVar4 = wc_ces_has_ccs(ccs & 0xffff,&wtf_major_st);
-          if (wVar4 == '\0') {
-            wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_4c),(wc_status *)cc.code);
-            cc2.ccs = local_4c;
-            cc2.code = local_48;
-            if (local_4c == 0x142) {
-              if (local_40->area_size <= local_40->length + 1) {
-                Strgrow(local_40);
-              }
-              iVar2 = local_40->length;
-              local_40->ptr[iVar2] = (byte)cc2.code & 0x7f;
-              local_40->length = iVar2 + 1;
-              local_40->ptr[local_40->length] = '\0';
-              goto LAB_080c30bc;
-            }
-            if ((((local_4c & 0x4000) == 0) && (local_4c != 0x81c)) && (local_4c != 0x81f)) {
-              cc.ccs = local_4c;
-              cc.code = local_48;
-            }
-          }
         }
       }
     }
@@ -70177,78 +68000,74 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
             n = 1;
             goto LAB_080c30a3;
           }
-          s[0] = -0x7e;
+          s[0] = 0x82;
         }
         else {
-          s[0] = -0x6e;
+          s[0] = 0x92;
         }
         s[1] = (byte)cc.ccs | 0x80;
         s[2] = (byte)cc.code | 0x80;
         n = 3;
       }
-      else {
-        if (uVar7 < 0x201) {
-          if (uVar7 == 0x100) {
-            if (cc.ccs == wtf_gr_ccs) {
-              s[0] = bVar3 | 0x80;
-              n = 1;
-            }
-            else {
-              if ((cc.ccs == 0x149) && (WcOption.use_jisx0201k == '\0')) {
-                wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&local_4c));
-                cc2.ccs = local_4c;
-                cc2.code = local_48;
-                if ((local_4c & 0x4000) == 0) {
-                  wtf_push(local_40,local_4c,local_48);
-                  goto LAB_080c30bc;
-                }
-              }
-              s[0] = -0x80;
-              s[1] = (byte)cc.ccs | 0x80;
-              s[2] = (byte)cc.code | 0x80;
-              n = 3;
-            }
+      else if (uVar7 < 0x201) {
+        if (uVar7 == 0x100) {
+          if (cc.ccs == wtf_gr_ccs) {
+            s[0] = bVar3 | 0x80;
+            n = 1;
           }
           else {
-LAB_080c3086:
-            s[0] = -0x7b;
-            s[1] = bVar8 | 0x80;
-            s[2] = bVar3 | 0x80;
-            n = 3;
-          }
-        }
-        else {
-          if (uVar7 == 0x400) {
-            if (cc.ccs == wtf_gr_ccs) {
-              s[0] = bVar3 | 0x80;
-              n = 1;
-            }
-            else {
-              s[0] = -0x7c;
-              s[1] = bVar8 | 0x80;
-              s[2] = bVar3 | 0x80;
-              n = 3;
-            }
-          }
-          else {
-            if (uVar7 != 0x800) goto LAB_080c3086;
-            if ((WcOption.use_combining == '\0') ||
-               (wVar5 = wc_is_combining((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), wVar5 == '\0')) {
-              if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code & 0x7f))) {
-                s[0] = (byte)cc.code | 0x80;
-                n = 1;
-                goto LAB_080c30a3;
+            if ((cc.ccs == 0x149) && (WcOption.use_jisx0201k == '\0')) {
+              wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&local_4c));
+              cc2.ccs = local_4c;
+              cc2.code = local_48;
+              if ((local_4c & 0x4000) == 0) {
+                wtf_push(local_40,local_4c,local_48);
+                goto LAB_080c30bc;
               }
-              s[0] = -0x7a;
             }
-            else {
-              s[0] = -0x6a;
-            }
+            s[0] = 0x80;
             s[1] = (byte)cc.ccs | 0x80;
             s[2] = (byte)cc.code | 0x80;
             n = 3;
           }
         }
+        else {
+LAB_080c3086:
+          s[0] = 0x85;
+          s[1] = bVar8 | 0x80;
+          s[2] = bVar3 | 0x80;
+          n = 3;
+        }
+      }
+      else if (uVar7 == 0x400) {
+        if (cc.ccs == wtf_gr_ccs) {
+          s[0] = bVar3 | 0x80;
+          n = 1;
+        }
+        else {
+          s[0] = 0x84;
+          s[1] = bVar8 | 0x80;
+          s[2] = bVar3 | 0x80;
+          n = 3;
+        }
+      }
+      else {
+        if (uVar7 != 0x800) goto LAB_080c3086;
+        if ((WcOption.use_combining == '\0') ||
+           (wVar5 = wc_is_combining((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), wVar5 == '\0')) {
+          if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code & 0x7f))) {
+            s[0] = (byte)cc.code | 0x80;
+            n = 1;
+            goto LAB_080c30a3;
+          }
+          s[0] = 0x86;
+        }
+        else {
+          s[0] = 0x96;
+        }
+        s[1] = (byte)cc.ccs | 0x80;
+        s[2] = (byte)cc.code | 0x80;
+        n = 3;
       }
     }
     else {
@@ -70260,7 +68079,43 @@ LAB_080c3086:
           n = 2;
         }
         else {
-          s[0] = -0x7f;
+          s[0] = 0x81;
+          s[1] = bVar8 | 0x80;
+          s[2] = bVar6 | 0x80;
+          s[3] = bVar3 | 0x80;
+          n = 4;
+        }
+      }
+      else if (uVar7 < 0x8101) {
+        if (uVar7 != 0x2000) goto LAB_080c3086;
+        if ((cc.ccs & 0x18000) == 0) {
+          bVar8 = 0x8a;
+        }
+        else {
+          bVar8 = 0x8b;
+        }
+        if ((cc.ccs & 0x20000) == 0) {
+          bVar6 = 0;
+        }
+        else {
+          bVar6 = 0x10;
+        }
+        s[0] = bVar6 | bVar8;
+        s[2] = (byte)(cc.code >> 0x15) | 0x80;
+        s[3] = (byte)(cc.code >> 0xe) | 0x80;
+        s[4] = (byte)(cc.code >> 7) | 0x80;
+        s[5] = bVar3 | 0x80;
+        s[1] = (byte)(cc.code >> 0x1c) | 0x80 | (byte)(cc.ccs << 4);
+        n = 6;
+      }
+      else if (uVar7 == 0x8200) {
+        if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code >> 8 & 0x7f))) {
+          s[0] = bVar6 | 0x80;
+          s[1] = bVar3 | 0x80;
+          n = 2;
+        }
+        else {
+          s[0] = 0x83;
           s[1] = bVar8 | 0x80;
           s[2] = bVar6 | 0x80;
           s[3] = bVar3 | 0x80;
@@ -70268,93 +68123,53 @@ LAB_080c3086:
         }
       }
       else {
-        if (uVar7 < 0x8101) {
-          if (uVar7 != 0x2000) goto LAB_080c3086;
-          if ((cc.ccs & 0x18000) == 0) {
-            bVar8 = 0x8a;
-          }
-          else {
-            bVar8 = 0x8b;
-          }
-          if ((cc.ccs & 0x20000) == 0) {
-            bVar6 = 0;
-          }
-          else {
-            bVar6 = 0x10;
-          }
-          s[0] = bVar6 | bVar8;
-          s[2] = (byte)(cc.code >> 0x15) | 0x80;
-          s[3] = (byte)(cc.code >> 0xe) | 0x80;
-          s[4] = (byte)(cc.code >> 7) | 0x80;
-          s[5] = bVar3 | 0x80;
-          s[1] = (byte)(cc.code >> 0x1c) | 0x80 | (byte)(cc.ccs << 4);
-          n = 6;
+        if (uVar7 != 0x8800) goto LAB_080c3086;
+        switch(cc.ccs) {
+        case 0x8801:
+          wc_big5_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+          break;
+        case 0x880f:
+          wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+          break;
+        case 0x8813:
+          wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+          break;
+        case 0x8816:
+          wc_gbk_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+          break;
+        case 0x8819:
+          wc_gbk_ext_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+          break;
+        case 0x881c:
+          wc_uhc_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+          break;
+        case 0x881f:
+          wc_hkscs_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc.ccs = local_4c;
+          cc.code = local_48;
+        }
+        bVar3 = (byte)(cc.code >> 8);
+        if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code >> 8 & 0x7f))) {
+          s[0] = bVar3 | 0x80;
+          s[1] = (byte)cc.code | 0x80;
+          n = 2;
         }
         else {
-          if (uVar7 == 0x8200) {
-            if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code >> 8 & 0x7f))) {
-              s[0] = bVar6 | 0x80;
-              s[1] = bVar3 | 0x80;
-              n = 2;
-            }
-            else {
-              s[0] = -0x7d;
-              s[1] = bVar8 | 0x80;
-              s[2] = bVar6 | 0x80;
-              s[3] = bVar3 | 0x80;
-              n = 4;
-            }
-          }
-          else {
-            if (uVar7 != 0x8800) goto LAB_080c3086;
-            switch(cc.ccs) {
-            case 0x8801:
-              wc_big5_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-              break;
-            case 0x880f:
-              wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-              break;
-            case 0x8813:
-              wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&cc));
-              break;
-            case 0x8816:
-              wc_gbk_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-              break;
-            case 0x8819:
-              wc_gbk_ext_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-              break;
-            case 0x881c:
-              wc_uhc_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-              break;
-            case 0x881f:
-              wc_hkscs_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
-              cc.ccs = local_4c;
-              cc.code = local_48;
-            }
-            bVar3 = (byte)(cc.code >> 8);
-            if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code >> 8 & 0x7f))) {
-              s[0] = bVar3 | 0x80;
-              s[1] = (byte)cc.code | 0x80;
-              n = 2;
-            }
-            else {
-              s[0] = -0x79;
-              s[1] = (byte)cc.ccs | 0x80;
-              s[2] = bVar3 | 0x80;
-              s[3] = (byte)cc.code | 0x80;
-              n = 4;
-            }
-          }
+          s[0] = 0x87;
+          s[1] = (byte)cc.ccs | 0x80;
+          s[2] = bVar3 | 0x80;
+          s[3] = (byte)cc.code | 0x80;
+          n = 4;
         }
       }
     }
@@ -70571,45 +68386,41 @@ wc_wchar_t wtf_parse(wc_uchar **p)
         goto LAB_080c37fe;
       }
     }
-    else {
-      if (((cc.ccs == 0x142) || (cc.ccs == 0x81d)) && ((cc2.ccs & 0xffff) == 0x81d)) {
-        pwVar2 = (wc_uchar *)wc_tcvn5712_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
-        if (pwVar2 != (wc_uchar *)0x0) {
-          *in_stack_00000008 = pbVar1;
-          *p = (wc_uchar *)0x81f;
-          p[1] = pwVar2;
-          goto LAB_080c37fe;
-        }
+    else if (((cc.ccs == 0x142) || (cc.ccs == 0x81d)) && ((cc2.ccs & 0xffff) == 0x81d)) {
+      pwVar2 = (wc_uchar *)wc_tcvn5712_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
+      if (pwVar2 != (wc_uchar *)0x0) {
+        *in_stack_00000008 = pbVar1;
+        *p = (wc_uchar *)0x81f;
+        p[1] = pwVar2;
+        goto LAB_080c37fe;
       }
-      else {
-        if (((cc.ccs == 0x142) || (cc.ccs == 0x241)) ||
-           (((cc.ccs & 0xffff) == 0x1000 ||
-            (((cc.ccs & 0xffff) == 0x2000 || ((cc.ccs & 0xffff) == 0x2001)))))) {
-          while (((cc2.ccs & 0xffff) == 0x1000 ||
-                 (((cc2.ccs & 0xffff) == 0x2000 || ((cc2.ccs & 0xffff) == 0x2001))))) {
-            ucs1 = cc.code;
-            if ((cc.ccs & 0xffff) == 0x2001) {
-              ucs1 = cc.code & 0x1fffff;
-            }
-            if ((cc2.ccs & 0xffff) == 0x2001) {
-              cc2.code = cc2.code & 0x1fffff;
-            }
-            ucs_00 = wc_ucs_precompose(ucs1,cc2.code);
-            if (ucs_00 == 0xffffffff) break;
-            if ((cc.ccs & 0xffff) == 0x2001) {
-              cc.code = cc.code & 0xff000000 | ucs_00;
-            }
-            else {
-              cc.ccs = wc_ucs_to_ccs(ucs_00);
-              cc.code = ucs_00;
-            }
-            *in_stack_00000008 = pbVar1;
-            if (WTF_WIDTH_MAP[*pbVar1] == '\0') break;
-            wtf_parse1(&local_34);
-            cc2.ccs = (wc_ccs)local_34;
-            cc2.code = local_30;
-          }
+    }
+    else if (((cc.ccs == 0x142) || (cc.ccs == 0x241)) ||
+            (((cc.ccs & 0xffff) == 0x1000 ||
+             (((cc.ccs & 0xffff) == 0x2000 || ((cc.ccs & 0xffff) == 0x2001)))))) {
+      while (((cc2.ccs & 0xffff) == 0x1000 ||
+             (((cc2.ccs & 0xffff) == 0x2000 || ((cc2.ccs & 0xffff) == 0x2001))))) {
+        ucs1 = cc.code;
+        if ((cc.ccs & 0xffff) == 0x2001) {
+          ucs1 = cc.code & 0x1fffff;
         }
+        if ((cc2.ccs & 0xffff) == 0x2001) {
+          cc2.code = cc2.code & 0x1fffff;
+        }
+        ucs_00 = wc_ucs_precompose(ucs1,cc2.code);
+        if (ucs_00 == 0xffffffff) break;
+        if ((cc.ccs & 0xffff) == 0x2001) {
+          cc.code = cc.code & 0xff000000 | ucs_00;
+        }
+        else {
+          cc.ccs = wc_ucs_to_ccs(ucs_00);
+          cc.code = ucs_00;
+        }
+        *in_stack_00000008 = pbVar1;
+        if (WTF_WIDTH_MAP[*pbVar1] == '\0') break;
+        wtf_parse1(&local_34);
+        cc2.ccs = (wc_ccs)local_34;
+        cc2.code = local_30;
       }
     }
     *p = (wc_uchar *)cc.ccs;
@@ -70656,46 +68467,40 @@ wc_bool wtf_is_hangul(wc_uchar *p)
   wc_uchar f;
   
   if (*p < 0xa1) {
-    if (*p == -0x7f) {
+    if (*p == 0x81) {
       bVar3 = (p[1] & 0x7f) == 0x43;
     }
-    else {
-      if (*p == -0x79) {
-        bVar1 = p[1] & 0x7f;
-        if ((((bVar1 == 0x10) || (bVar1 == 0x11)) || (bVar1 == 0x12)) ||
-           ((bVar1 == 0x1d || (bVar1 == 0x1e)))) {
-          bVar3 = true;
-        }
-        else {
-          bVar3 = false;
-        }
+    else if (*p == 0x87) {
+      bVar1 = p[1] & 0x7f;
+      if ((((bVar1 == 0x10) || (bVar1 == 0x11)) || (bVar1 == 0x12)) ||
+         ((bVar1 == 0x1d || (bVar1 == 0x1e)))) {
+        bVar3 = true;
       }
       else {
-        if (*p == -0x77) {
-          if ((char)((int)(p[1] & 0x7f) >> 2) == '\0') {
-            wVar2 = wc_is_ucs_hangul(p[3] & 0x7f | (p[1] & 3) << 0xe | (p[2] & 0x7f) << 7);
-            return wVar2;
-          }
-        }
-        else {
-          if ((*p == -0x75) && ((char)((int)(p[1] & 0x7f) >> 4) == '\x01')) {
-            wVar2 = wc_is_ucs_hangul(p[5] & 0x7f | (p[3] & 0x7f) << 0xe | (p[4] & 0x7f) << 7);
-            return wVar2;
-          }
-        }
         bVar3 = false;
       }
     }
-  }
-  else {
-    if ((wtf_gr_ccs == 0x8143) || (wtf_gr_ccs == 0x8810)) {
-      bVar3 = true;
-    }
     else {
+      if (*p == 0x89) {
+        if ((char)((int)(p[1] & 0x7f) >> 2) == '\0') {
+          wVar2 = wc_is_ucs_hangul(p[3] & 0x7f | (p[1] & 3) << 0xe | (p[2] & 0x7f) << 7);
+          return wVar2;
+        }
+      }
+      else if ((*p == 0x8b) && ((char)((int)(p[1] & 0x7f) >> 4) == '\x01')) {
+        wVar2 = wc_is_ucs_hangul(p[5] & 0x7f | (p[3] & 0x7f) << 0xe | (p[4] & 0x7f) << 7);
+        return wVar2;
+      }
       bVar3 = false;
     }
   }
-  return (wc_bool)bVar3;
+  else if ((wtf_gr_ccs == 0x8143) || (wtf_gr_ccs == 0x8810)) {
+    bVar3 = true;
+  }
+  else {
+    bVar3 = false;
+  }
+  return bVar3;
 }
 
 
@@ -70716,15 +68521,13 @@ char * wtf_conv_fit(char *s,wc_ces ces)
   wc_bool pre_conv;
   
   if ((ces != 0x310000) && (ces != 0x100)) {
-    p = (wc_uchar *)s;
-    while ((*p != '\0' && (-1 < (char)*p))) {
-      p = p + 1;
+    for (p = (wc_uchar *)s; (*p != '\0' && (-1 < (char)*p)); p = p + 1) {
     }
     if (*p != '\0') {
       n = strlen(s);
       x = Strnew_size(n);
       if (s < p) {
-        Strcopy_charp_n(x,s,(int)(p + -(int)s));
+        Strcopy_charp_n(x,s,(int)p - (int)s);
       }
       wVar3 = wtf_major_ces;
       wVar2 = WcOption.pre_conv;
@@ -70820,16 +68623,14 @@ Str wc_conv_from_big5(Str is,wc_ces ces)
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar4 = pwVar1 + is->length;
   bVar3 = false;
-  p = pwVar1;
-  while ((p < pwVar4 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar4 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar4) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (p < pwVar4) {
+    for (; p < pwVar4; p = p + 1) {
       if (bVar3) {
         if (bVar3) {
           if ((WC_BIG5_MAP[*p] & 4) == 0) {
@@ -70841,26 +68642,21 @@ Str wc_conv_from_big5(Str is,wc_ces ces)
           bVar3 = false;
         }
       }
-      else {
-        if (WC_BIG5_MAP[*p] == '\x02') {
-          wtf_push_unknown(x,p,1);
-        }
-        else {
-          if (WC_BIG5_MAP[*p] == '\a') {
-            bVar3 = true;
-          }
-          else {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar2 = x->length;
-            x->ptr[iVar2] = *p;
-            x->length = iVar2 + 1;
-            x->ptr[x->length] = '\0';
-          }
-        }
+      else if (WC_BIG5_MAP[*p] == '\x02') {
+        wtf_push_unknown(x,p,1);
       }
-      p = p + 1;
+      else if (WC_BIG5_MAP[*p] == '\a') {
+        bVar3 = true;
+      }
+      else {
+        if (x->area_size <= x->length + 1) {
+          Strgrow(x);
+        }
+        iVar2 = x->length;
+        x->ptr[iVar2] = *p;
+        x->length = iVar2 + 1;
+        x->ptr[x->length] = '\0';
+      }
     }
     is = x;
     if (bVar3) {
@@ -70975,10 +68771,8 @@ Str wc_char_conv_from_big5(wc_uchar c,wc_status *st)
       wc_char_conv_from_big5::os->ptr[wc_char_conv_from_big5::os->length] = '\0';
     }
   }
-  else {
-    if ((st->state == 1) && ((WC_BIG5_MAP[c] & 4) != 0)) {
-      wtf_push(wc_char_conv_from_big5::os,0x8801,(uint)CONCAT11(wc_char_conv_from_big5::big5u,c));
-    }
+  else if ((st->state == 1) && ((WC_BIG5_MAP[c] & 4) != 0)) {
+    wtf_push(wc_char_conv_from_big5::os,0x8801,(uint)CONCAT11(wc_char_conv_from_big5::big5u,c));
   }
   st->state = -1;
   return wc_char_conv_from_big5::os;
@@ -71031,9 +68825,7 @@ LAB_080c42dd:
         return tcvn5712_combining_map[cc.code & 0x7f];
       }
     }
-    else {
-      if (uVar2 - 0x2000 < 2) goto LAB_080c42dd;
-    }
+    else if (uVar2 - 0x2000 < 2) goto LAB_080c42dd;
   }
   return '\0';
 }
@@ -71182,11 +68974,9 @@ LAB_080c44fb:
         return (ucs_gb18030_map[i].code + uVar1) - (uint)ucs_gb18030_map[i].code3;
       }
     }
-    else {
-      if (uVar1 < 0x881c) {
-        wc_cs128w_to_gbk_ext((wc_wchar_t)CONCAT44(cc.ccs,&cc));
-        goto LAB_080c44fb;
-      }
+    else if (uVar1 < 0x881c) {
+      wc_cs128w_to_gbk_ext((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+      goto LAB_080c44fb;
     }
     wVar5 = wc_any_to_ucs(cc);
   }
@@ -71248,24 +69038,21 @@ wc_wchar_t wc_ucs_to_gb18030(wc_uint32 ucs)
       goto LAB_080c4b6a;
     }
   }
-  else {
-    if (in_stack_00000008 < 0x110000) {
-      uVar4 = in_stack_00000008 + 0x1e248;
-      cc.code = ((uVar4 >> 3) / 0x627 + 0x81) * 0x1000000 +
-                (((uVar4 >> 2) / 0x13b) % 10 + 0x30) * 0x10000 +
-                (uVar4 / 10 + ((uVar4 / 10 >> 1) / 0x3f) * -0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30
-      ;
-      if (WcOption.gb18030_as_ucs == '\0') {
-        cc.ccs = 0x12002;
-      }
-      else {
-        wVar3 = wc_ucs_to_ccs(in_stack_00000008);
-        cc.ccs = wVar3 & 0xffff0000 | 0x2002;
-      }
-      *(wc_ccs *)ucs = cc.ccs;
-      *(wc_uint32 *)(ucs + 4) = cc.code;
-      goto LAB_080c4b6a;
+  else if (in_stack_00000008 < 0x110000) {
+    uVar4 = in_stack_00000008 + 0x1e248;
+    cc.code = ((uVar4 >> 3) / 0x627 + 0x81) * 0x1000000 +
+              (((uVar4 >> 2) / 0x13b) % 10 + 0x30) * 0x10000 +
+              (uVar4 / 10 + ((uVar4 / 10 >> 1) / 0x3f) * -0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30;
+    if (WcOption.gb18030_as_ucs == '\0') {
+      cc.ccs = 0x12002;
     }
+    else {
+      wVar3 = wc_ucs_to_ccs(in_stack_00000008);
+      cc.ccs = wVar3 & 0xffff0000 | 0x2002;
+    }
+    *(wc_ccs *)ucs = cc.ccs;
+    *(wc_uint32 *)(ucs + 4) = cc.code;
+    goto LAB_080c4b6a;
   }
   *(undefined4 *)ucs = 0x4000;
   *(wc_uint32 *)(ucs + 4) = cc.code;
@@ -71298,16 +69085,14 @@ Str wc_conv_from_gb18030(Str is,wc_ces ces)
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar3 = pwVar1 + is->length;
   state = 0;
-  p = pwVar1;
-  while ((p < pwVar3 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar3 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar3) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (p < pwVar3) {
+    for (; p < pwVar3; p = p + 1) {
       if (state == 1) {
         if ((WC_GB18030_MAP[*p] & 4) == 0) {
           if (WC_GB18030_MAP[*p] == '\x10') {
@@ -71323,88 +69108,73 @@ Str wc_conv_from_gb18030(Str is,wc_ces ces)
           if (wVar5 == 0x8819) {
             wtf_push(x,0x8819,uVar4);
           }
+          else if ((p[-1] < 0xa1) || (*p < 0xa1)) {
+            wtf_push(x,0x8816,uVar4);
+          }
           else {
-            if ((p[-1] < 0xa1) || (*p < 0xa1)) {
-              wtf_push(x,0x8816,uVar4);
-            }
-            else {
-              wVar5 = wc_gb2312_or_gbk(code);
-              wtf_push(x,wVar5,uVar4);
-            }
+            wVar5 = wc_gb2312_or_gbk(code);
+            wtf_push(x,wVar5,uVar4);
           }
         }
         state = 0;
       }
-      else {
-        if ((uint)state < 2) {
-          if (state == 0) {
-            if (WC_GB18030_MAP[*p] == '\x02') {
-              wtf_push_unknown(x,p,1);
-            }
-            else {
-              if (WC_GB18030_MAP[*p] == '\f') {
-                state = 1;
-              }
-              else {
-                if (x->area_size <= x->length + 1) {
-                  Strgrow(x);
-                }
-                iVar2 = x->length;
-                x->ptr[iVar2] = *p;
-                x->length = iVar2 + 1;
-                x->ptr[x->length] = '\0';
-              }
-            }
+      else if ((uint)state < 2) {
+        if (state == 0) {
+          if (WC_GB18030_MAP[*p] == '\x02') {
+            wtf_push_unknown(x,p,1);
           }
-        }
-        else {
-          if (state == 2) {
-            if (WC_GB18030_MAP[*p] == '\f') {
-              state = 3;
-            }
-            else {
-              wtf_push_unknown(x,p + -2,3);
-              state = 0;
-            }
+          else if (WC_GB18030_MAP[*p] == '\f') {
+            state = 1;
           }
           else {
-            if (state == 3) {
-              if (WC_GB18030_MAP[*p] == '\x10') {
-                uVar4 = (uint)*p | (uint)p[-3] << 0x18 | (uint)p[-2] << 0x10 | (uint)p[-1] << 8;
-                if ((WcOption.gb18030_as_ucs == '\0') ||
-                   (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar4,0x12002)),
-                   ucs_00 == 0xffffffff)) {
-                  wtf_push(x,0x12002,uVar4);
-                }
-                else {
-                  wVar5 = wc_ucs_to_ccs(ucs_00);
-                  wtf_push(x,wVar5 & 0xffff0000 | 0x2002,uVar4);
-                }
-              }
-              else {
-                wtf_push_unknown(x,p + -3,4);
-              }
-              state = 0;
+            if (x->area_size <= x->length + 1) {
+              Strgrow(x);
             }
+            iVar2 = x->length;
+            x->ptr[iVar2] = *p;
+            x->length = iVar2 + 1;
+            x->ptr[x->length] = '\0';
           }
         }
       }
+      else if (state == 2) {
+        if (WC_GB18030_MAP[*p] == '\f') {
+          state = 3;
+        }
+        else {
+          wtf_push_unknown(x,p + -2,3);
+          state = 0;
+        }
+      }
+      else if (state == 3) {
+        if (WC_GB18030_MAP[*p] == '\x10') {
+          uVar4 = (uint)*p | (uint)p[-3] << 0x18 | (uint)p[-2] << 0x10 | (uint)p[-1] << 8;
+          if ((WcOption.gb18030_as_ucs == '\0') ||
+             (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar4,0x12002)), ucs_00 == 0xffffffff)
+             ) {
+            wtf_push(x,0x12002,uVar4);
+          }
+          else {
+            wVar5 = wc_ucs_to_ccs(ucs_00);
+            wtf_push(x,wVar5 & 0xffff0000 | 0x2002,uVar4);
+          }
+        }
+        else {
+          wtf_push_unknown(x,p + -3,4);
+        }
+        state = 0;
+      }
 LAB_080c4f23:
-      p = p + 1;
     }
     is = x;
     if (state == 2) {
       wtf_push_unknown(x,p + -2,2);
     }
-    else {
-      if (state == 3) {
-        wtf_push_unknown(x,p + -3,3);
-      }
-      else {
-        if (state == 1) {
-          wtf_push_unknown(x,p + -1,1);
-        }
-      }
+    else if (state == 3) {
+      wtf_push_unknown(x,p + -3,3);
+    }
+    else if (state == 1) {
+      wtf_push_unknown(x,p + -1,1);
     }
   }
   return is;
@@ -71594,59 +69364,50 @@ Str wc_char_conv_from_gb18030(wc_uchar c,wc_status *st)
       if (wVar4 == 0x8819) {
         wtf_push(wc_char_conv_from_gb18030::os,0x8819,uVar3);
       }
+      else if ((wc_char_conv_from_gb18030::gb[0] < 0xa1) || (c < 0xa1)) {
+        wtf_push(wc_char_conv_from_gb18030::os,0x8816,uVar3);
+      }
       else {
-        if ((wc_char_conv_from_gb18030::gb[0] < 0xa1) || (c < 0xa1)) {
-          wtf_push(wc_char_conv_from_gb18030::os,0x8816,uVar3);
-        }
-        else {
-          wVar4 = wc_gb2312_or_gbk(code);
-          wtf_push(wc_char_conv_from_gb18030::os,wVar4,uVar3);
-        }
+        wVar4 = wc_gb2312_or_gbk(code);
+        wtf_push(wc_char_conv_from_gb18030::os,wVar4,uVar3);
       }
     }
   }
-  else {
-    if (iVar1 < 2) {
-      if ((iVar1 == 0) && (WC_GB18030_MAP[c] != '\x02')) {
-        if (WC_GB18030_MAP[c] == '\f') {
-          wc_char_conv_from_gb18030::gb[0] = c;
-          st->state = 1;
-          return (Str)0x0;
-        }
-        if (wc_char_conv_from_gb18030::os->area_size <= wc_char_conv_from_gb18030::os->length + 1) {
-          Strgrow(wc_char_conv_from_gb18030::os);
-        }
-        p_Var2 = wc_char_conv_from_gb18030::os;
-        iVar1 = wc_char_conv_from_gb18030::os->length;
-        wc_char_conv_from_gb18030::os->ptr[iVar1] = c;
-        p_Var2->length = iVar1 + 1;
-        wc_char_conv_from_gb18030::os->ptr[wc_char_conv_from_gb18030::os->length] = '\0';
+  else if (iVar1 < 2) {
+    if ((iVar1 == 0) && (WC_GB18030_MAP[c] != '\x02')) {
+      if (WC_GB18030_MAP[c] == '\f') {
+        wc_char_conv_from_gb18030::gb[0] = c;
+        st->state = 1;
+        return (Str)0x0;
       }
+      if (wc_char_conv_from_gb18030::os->area_size <= wc_char_conv_from_gb18030::os->length + 1) {
+        Strgrow(wc_char_conv_from_gb18030::os);
+      }
+      p_Var2 = wc_char_conv_from_gb18030::os;
+      iVar1 = wc_char_conv_from_gb18030::os->length;
+      wc_char_conv_from_gb18030::os->ptr[iVar1] = c;
+      p_Var2->length = iVar1 + 1;
+      wc_char_conv_from_gb18030::os->ptr[wc_char_conv_from_gb18030::os->length] = '\0';
+    }
+  }
+  else if (iVar1 == 2) {
+    if (WC_GB18030_MAP[c] == '\f') {
+      wc_char_conv_from_gb18030::gb[2] = c;
+      st->state = 3;
+      return (Str)0x0;
+    }
+  }
+  else if ((iVar1 == 3) && (WC_GB18030_MAP[c] == '\x10')) {
+    uVar3 = (uint)c | (uint)wc_char_conv_from_gb18030::gb[0] << 0x18 |
+                      (uint)wc_char_conv_from_gb18030::gb[1] << 0x10 |
+                      (uint)wc_char_conv_from_gb18030::gb[2] << 8;
+    if ((WcOption.gb18030_as_ucs == '\0') ||
+       (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar3,0x12002)), ucs_00 == 0xffffffff)) {
+      wtf_push(wc_char_conv_from_gb18030::os,0x12002,uVar3);
     }
     else {
-      if (iVar1 == 2) {
-        if (WC_GB18030_MAP[c] == '\f') {
-          wc_char_conv_from_gb18030::gb[2] = c;
-          st->state = 3;
-          return (Str)0x0;
-        }
-      }
-      else {
-        if ((iVar1 == 3) && (WC_GB18030_MAP[c] == '\x10')) {
-          uVar3 = (uint)c | (uint)wc_char_conv_from_gb18030::gb[0] << 0x18 |
-                            (uint)wc_char_conv_from_gb18030::gb[1] << 0x10 |
-                            (uint)wc_char_conv_from_gb18030::gb[2] << 8;
-          if ((WcOption.gb18030_as_ucs == '\0') ||
-             (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar3,0x12002)), ucs_00 == 0xffffffff)
-             ) {
-            wtf_push(wc_char_conv_from_gb18030::os,0x12002,uVar3);
-          }
-          else {
-            wVar4 = wc_ucs_to_ccs(ucs_00);
-            wtf_push(wc_char_conv_from_gb18030::os,wVar4 & 0xffff0000 | 0x2002,uVar3);
-          }
-        }
-      }
+      wVar4 = wc_ucs_to_ccs(ucs_00);
+      wtf_push(wc_char_conv_from_gb18030::os,wVar4 & 0xffff0000 | 0x2002,uVar3);
     }
   }
   st->state = -1;
@@ -71744,69 +69505,59 @@ wc_uint32 wc_gbk_to_N(wc_uint32 c)
     }
     wVar2 = (((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) - 0x5fbe;
   }
-  else {
-    if (c < 0xa2ab) {
-      if ((c & 0xff) < 0x80) {
-        iVar1 = 0x40;
-      }
-      else {
-        iVar1 = 0x41;
-      }
-      wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x24a0;
+  else if (c < 0xa2ab) {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
     }
     else {
-      if (c < 0xa6a1) {
-        if ((c & 0xff) < 0x80) {
-          iVar1 = 0x40;
-        }
-        else {
-          iVar1 = 0x41;
-        }
-        wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x2496;
-      }
-      else {
-        if (c < 0xa6f6) {
-          if ((c & 0xff) < 0x80) {
-            iVar1 = 0x40;
-          }
-          else {
-            iVar1 = 0x41;
-          }
-          wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x24d5;
-        }
-        else {
-          if (c < 0xa8a1) {
-            if ((c & 0xff) < 0x80) {
-              iVar1 = 0x40;
-            }
-            else {
-              iVar1 = 0x41;
-            }
-            wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x2480;
-          }
-          else {
-            if (c < 0xa8c1) {
-              if ((c & 0xff) < 0x80) {
-                iVar1 = 0x40;
-              }
-              else {
-                iVar1 = 0x41;
-              }
-              wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x249a;
-            }
-            else {
-              if ((c & 0xff) < 0x80) {
-                iVar1 = 0x40;
-              }
-              else {
-                iVar1 = 0x41;
-              }
-              wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x247a;
-            }
-          }
-        }
-      }
+      iVar1 = 0x41;
     }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x24a0;
+  }
+  else if (c < 0xa6a1) {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
+    }
+    else {
+      iVar1 = 0x41;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x2496;
+  }
+  else if (c < 0xa6f6) {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
+    }
+    else {
+      iVar1 = 0x41;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x24d5;
+  }
+  else if (c < 0xa8a1) {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
+    }
+    else {
+      iVar1 = 0x41;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x2480;
+  }
+  else if (c < 0xa8c1) {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
+    }
+    else {
+      iVar1 = 0x41;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x249a;
+  }
+  else {
+    if ((c & 0xff) < 0x80) {
+      iVar1 = 0x40;
+    }
+    else {
+      iVar1 = 0x41;
+    }
+    wVar2 = ((((c >> 8 & 0xff) * 0xbe + (c & 0xff)) - iVar1) + (c >> 8) * -0x5e) - 0x247a;
   }
   return wVar2;
 }
@@ -71834,16 +69585,14 @@ Str wc_conv_from_gbk(Str is,wc_ces ces)
   pwVar2 = (wc_uchar *)is->ptr;
   pwVar5 = pwVar2 + is->length;
   bVar4 = false;
-  p = pwVar2;
-  while ((p < pwVar5 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar2; (p < pwVar5 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar5) {
     x = Strnew_size(is->length);
     if (pwVar2 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar2));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar2);
     }
-    while (p < pwVar5) {
+    for (; p < pwVar5; p = p + 1) {
       if (bVar4) {
         if (bVar4) {
           if ((WC_GBK_MAP[*p] & 4) == 0) {
@@ -71867,27 +69616,22 @@ Str wc_conv_from_gbk(Str is,wc_ces ces)
         if (wVar1 == '\f') {
           bVar4 = true;
         }
+        else if (wVar1 == '\x14') {
+          wtf_push(x,0x827,(uint)*p);
+        }
+        else if (wVar1 == '\x02') {
+          wtf_push_unknown(x,p,1);
+        }
         else {
-          if (wVar1 == '\x14') {
-            wtf_push(x,0x827,(uint)*p);
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
           }
-          else {
-            if (wVar1 == '\x02') {
-              wtf_push_unknown(x,p,1);
-            }
-            else {
-              if (x->area_size <= x->length + 1) {
-                Strgrow(x);
-              }
-              iVar3 = x->length;
-              x->ptr[iVar3] = *p;
-              x->length = iVar3 + 1;
-              x->ptr[x->length] = '\0';
-            }
-          }
+          iVar3 = x->length;
+          x->ptr[iVar3] = *p;
+          x->length = iVar3 + 1;
+          x->ptr[x->length] = '\0';
         }
       }
-      p = p + 1;
     }
     is = x;
     if (bVar4) {
@@ -71953,38 +69697,34 @@ void wc_push_to_gbk(Str os,wc_wchar_t cc,wc_status *st)
         return;
       }
     }
-    else {
-      if (cc.ccs < 0x8819) {
-        if (0x8816 < cc.ccs) {
-          wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+    else if (cc.ccs < 0x8819) {
+      if (0x8816 < cc.ccs) {
+        wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&cc));
 LAB_080c5fe5:
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 8);
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          return;
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
-        if (cc.ccs == 0x8816) goto LAB_080c5fe5;
-      }
-      else {
-        if (cc.ccs == 0xc000) {
-          if (WcOption.no_replace != '\0') {
-            return;
-          }
-          Strcat_charp(os,WcReplaceW);
-          return;
+        iVar1 = os->length;
+        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
+        iVar1 = os->length;
+        os->ptr[iVar1] = (char)cc.code;
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        return;
       }
+      if (cc.ccs == 0x8816) goto LAB_080c5fe5;
+    }
+    else if (cc.ccs == 0xc000) {
+      if (WcOption.no_replace != '\0') {
+        return;
+      }
+      Strcat_charp(os,WcReplaceW);
+      return;
     }
     if (WcOption.ucs_conv == '\0') {
       if ((cc.ccs & 0x18000) == 0) {
@@ -72028,29 +69768,25 @@ Str wc_char_conv_from_gbk(wc_uchar c,wc_status *st)
     if (wVar1 == '\x14') {
       wtf_push(wc_char_conv_from_gbk::os,0x827,(uint)c);
     }
-    else {
-      if (wVar1 != '\x02') {
-        if (wc_char_conv_from_gbk::os->area_size <= wc_char_conv_from_gbk::os->length + 1) {
-          Strgrow(wc_char_conv_from_gbk::os);
-        }
-        p_Var3 = wc_char_conv_from_gbk::os;
-        iVar2 = wc_char_conv_from_gbk::os->length;
-        wc_char_conv_from_gbk::os->ptr[iVar2] = c;
-        p_Var3->length = iVar2 + 1;
-        wc_char_conv_from_gbk::os->ptr[wc_char_conv_from_gbk::os->length] = '\0';
+    else if (wVar1 != '\x02') {
+      if (wc_char_conv_from_gbk::os->area_size <= wc_char_conv_from_gbk::os->length + 1) {
+        Strgrow(wc_char_conv_from_gbk::os);
       }
+      p_Var3 = wc_char_conv_from_gbk::os;
+      iVar2 = wc_char_conv_from_gbk::os->length;
+      wc_char_conv_from_gbk::os->ptr[iVar2] = c;
+      p_Var3->length = iVar2 + 1;
+      wc_char_conv_from_gbk::os->ptr[wc_char_conv_from_gbk::os->length] = '\0';
     }
   }
-  else {
-    if ((st->state == 1) && ((WC_GBK_MAP[c] & 4) != 0)) {
-      code = CONCAT11(wc_char_conv_from_gbk::gbku,c);
-      if ((wc_char_conv_from_gbk::gbku < 0xa1) || (c < 0xa1)) {
-        wtf_push(wc_char_conv_from_gbk::os,0x8816,(uint)code);
-      }
-      else {
-        ccs = wc_gb2312_or_gbk(code);
-        wtf_push(wc_char_conv_from_gbk::os,ccs,(uint)code);
-      }
+  else if ((st->state == 1) && ((WC_GBK_MAP[c] & 4) != 0)) {
+    code = CONCAT11(wc_char_conv_from_gbk::gbku,c);
+    if ((wc_char_conv_from_gbk::gbku < 0xa1) || (c < 0xa1)) {
+      wtf_push(wc_char_conv_from_gbk::os,0x8816,(uint)code);
+    }
+    else {
+      ccs = wc_gb2312_or_gbk(code);
+      wtf_push(wc_char_conv_from_gbk::os,ccs,(uint)code);
     }
   }
   st->state = -1;
@@ -72162,28 +69898,24 @@ Str wc_conv_from_hkscs(Str is,wc_ces ces)
   pwVar2 = (wc_uchar *)is->ptr;
   pwVar5 = pwVar2 + is->length;
   bVar4 = false;
-  p = pwVar2;
-  while ((p < pwVar5 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar2; (p < pwVar5 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar5) {
     x = Strnew_size(is->length);
     if (pwVar2 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar2));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar2);
     }
-    while (p < pwVar5) {
+    for (; p < pwVar5; p = p + 1) {
       if (bVar4) {
         if (bVar4) {
           if ((WC_HKSCS_MAP[*p] & 4) == 0) {
             wtf_push_unknown(x,p + -1,2);
           }
+          else if ((p[-1] < 0xa1) || (0xf9 < p[-1])) {
+            wtf_push(x,0x881f,(uint)CONCAT11(p[-1],*p));
+          }
           else {
-            if ((p[-1] < 0xa1) || (0xf9 < p[-1])) {
-              wtf_push(x,0x881f,(uint)CONCAT11(p[-1],*p));
-            }
-            else {
-              wtf_push(x,0x8801,(uint)CONCAT11(p[-1],*p));
-            }
+            wtf_push(x,0x8801,(uint)CONCAT11(p[-1],*p));
           }
           bVar4 = false;
         }
@@ -72193,22 +69925,19 @@ Str wc_conv_from_hkscs(Str is,wc_ces ces)
         if ((wVar1 == '\f') || (wVar1 == '\x10')) {
           bVar4 = true;
         }
+        else if (wVar1 == '\x02') {
+          wtf_push_unknown(x,p,1);
+        }
         else {
-          if (wVar1 == '\x02') {
-            wtf_push_unknown(x,p,1);
+          if (x->area_size <= x->length + 1) {
+            Strgrow(x);
           }
-          else {
-            if (x->area_size <= x->length + 1) {
-              Strgrow(x);
-            }
-            iVar3 = x->length;
-            x->ptr[iVar3] = *p;
-            x->length = iVar3 + 1;
-            x->ptr[x->length] = '\0';
-          }
+          iVar3 = x->length;
+          x->ptr[iVar3] = *p;
+          x->length = iVar3 + 1;
+          x->ptr[x->length] = '\0';
         }
       }
-      p = p + 1;
     }
     is = x;
     if (bVar4) {
@@ -72267,40 +69996,36 @@ LAB_080c67e1:
         return;
       }
     }
-    else {
-      if (cc.ccs < 0x8822) {
-        if (0x881f < cc.ccs) {
-          wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&local_14));
-          cc.ccs = local_14;
-          cc.code = local_10;
+    else if (cc.ccs < 0x8822) {
+      if (0x881f < cc.ccs) {
+        wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&local_14));
+        cc.ccs = local_14;
+        cc.code = local_10;
 LAB_080c68a9:
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 8);
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          if (os->area_size <= os->length + 1) {
-            Strgrow(os);
-          }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
-          os->length = iVar1 + 1;
-          os->ptr[os->length] = '\0';
-          return;
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
-        if (cc.ccs == 0x881f) goto LAB_080c68a9;
-      }
-      else {
-        if (cc.ccs == 0xc000) {
-          if (WcOption.no_replace != '\0') {
-            return;
-          }
-          Strcat_charp(os,WcReplaceW);
-          return;
+        iVar1 = os->length;
+        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        if (os->area_size <= os->length + 1) {
+          Strgrow(os);
         }
+        iVar1 = os->length;
+        os->ptr[iVar1] = (char)cc.code;
+        os->length = iVar1 + 1;
+        os->ptr[os->length] = '\0';
+        return;
       }
+      if (cc.ccs == 0x881f) goto LAB_080c68a9;
+    }
+    else if (cc.ccs == 0xc000) {
+      if (WcOption.no_replace != '\0') {
+        return;
+      }
+      Strcat_charp(os,WcReplaceW);
+      return;
     }
     if (WcOption.ucs_conv == '\0') {
       if ((cc.ccs & 0x18000) == 0) {
@@ -72350,17 +70075,15 @@ Str wc_char_conv_from_hkscs(wc_uchar c,wc_status *st)
       wc_char_conv_from_hkscs::os->ptr[wc_char_conv_from_hkscs::os->length] = '\0';
     }
   }
-  else {
-    if ((st->state == 1) && ((WC_HKSCS_MAP[c] & 4) != 0)) {
-      if ((wc_char_conv_from_hkscs::hkscsu < 0xa1) ||
-         ((0xf9 < wc_char_conv_from_hkscs::hkscsu || (c < 0xa1)))) {
-        wtf_push(wc_char_conv_from_hkscs::os,0x881f,
-                 (uint)CONCAT11(wc_char_conv_from_hkscs::hkscsu,c));
-      }
-      else {
-        wtf_push(wc_char_conv_from_hkscs::os,0x8801,
-                 (uint)CONCAT11(wc_char_conv_from_hkscs::hkscsu,c));
-      }
+  else if ((st->state == 1) && ((WC_HKSCS_MAP[c] & 4) != 0)) {
+    if ((wc_char_conv_from_hkscs::hkscsu < 0xa1) ||
+       ((0xf9 < wc_char_conv_from_hkscs::hkscsu || (c < 0xa1)))) {
+      wtf_push(wc_char_conv_from_hkscs::os,0x881f,(uint)CONCAT11(wc_char_conv_from_hkscs::hkscsu,c))
+      ;
+    }
+    else {
+      wtf_push(wc_char_conv_from_hkscs::os,0x8801,(uint)CONCAT11(wc_char_conv_from_hkscs::hkscsu,c))
+      ;
     }
   }
   st->state = -1;
@@ -72385,17 +70108,15 @@ Str wc_conv_from_priv1(Str is,wc_ces ces)
   
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar3 = pwVar1 + is->length;
-  ccs_00 = *(wc_ccs *)(*(int *)(WcCesInfo + (ces & 0xff) * 0x20 + 0xc) + 8);
-  p = pwVar1;
-  while ((p < pwVar3 && (-1 < (char)*p))) {
-    p = p + 1;
+  ccs_00 = WcCesInfo[ces & 0xff].gset[1].ccs;
+  for (p = pwVar1; (p < pwVar3 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar3) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (is = x, p < pwVar3) {
+    for (; is = x, p < pwVar3; p = p + 1) {
       if ((char)*p < '\0') {
         wtf_push(x,ccs_00,(uint)*p);
       }
@@ -72408,7 +70129,6 @@ Str wc_conv_from_priv1(Str is,wc_ces ces)
         x->length = iVar2 + 1;
         x->ptr[x->length] = '\0';
       }
-      p = p + 1;
     }
   }
   return is;
@@ -72455,16 +70175,14 @@ Str wc_conv_from_ascii(Str is,wc_ces ces)
   
   pwVar1 = (wc_uchar *)is->ptr;
   pwVar3 = pwVar1 + is->length;
-  p = pwVar1;
-  while ((p < pwVar3 && (-1 < (char)*p))) {
-    p = p + 1;
+  for (p = pwVar1; (p < pwVar3 && (-1 < (char)*p)); p = p + 1) {
   }
   if (p != pwVar3) {
     x = Strnew_size(is->length);
     if (pwVar1 < p) {
-      Strcat_charp_n(x,is->ptr,(int)(p + -(int)pwVar1));
+      Strcat_charp_n(x,is->ptr,(int)p - (int)pwVar1);
     }
-    while (is = x, p < pwVar3) {
+    for (; is = x, p < pwVar3; p = p + 1) {
       if ((char)*p < '\0') {
         wtf_push_unknown(x,p,1);
       }
@@ -72477,7 +70195,6 @@ Str wc_conv_from_ascii(Str is,wc_ces ces)
         x->length = iVar2 + 1;
         x->ptr[x->length] = '\0';
       }
-      p = p + 1;
     }
   }
   return is;
@@ -72516,7 +70233,7 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   uint uVar7;
   uint uVar8;
   bool bVar9;
-  byte local_1c;
+  byte bStack28;
   uint local_18;
   uint local_14;
   uint local_10;
@@ -72553,22 +70270,21 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   if (local_10 <= param_2) {
     uVar8 = 0x1f;
     if (local_10 != 0) {
-      while (local_10 >> uVar8 == 0) {
-        uVar8 = uVar8 - 1;
+      for (; local_10 >> uVar8 == 0; uVar8 = uVar8 - 1) {
       }
     }
     if ((uVar8 ^ 0x1f) != 0) {
-      local_1c = (byte)(uVar8 ^ 0x1f);
-      bVar6 = 0x20 - local_1c;
-      uVar1 = (ulonglong)(local_14 >> (bVar6 & 0x1f) | local_10 << (local_1c & 0x1f));
+      bStack28 = (byte)(uVar8 ^ 0x1f);
+      bVar6 = 0x20 - bStack28;
+      uVar1 = (ulonglong)(local_14 >> (bVar6 & 0x1f) | local_10 << (bStack28 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_2 << (local_1c & 0x1f) | param_1 >> (bVar6 & 0x1f));
+                       param_2 << (bStack28 & 0x1f) | param_1 >> (bVar6 & 0x1f));
       uVar3 = uVar2 / uVar1;
       iVar5 = (int)uVar3;
       uVar8 = (uint)(uVar2 % uVar1);
-      lVar4 = (uVar3 & 0xffffffff) * (ulonglong)(local_14 << (local_1c & 0x1f));
+      lVar4 = (uVar3 & 0xffffffff) * (ulonglong)(local_14 << (bStack28 & 0x1f));
       uVar7 = (uint)((ulonglong)lVar4 >> 0x20);
-      if ((uVar8 < uVar7) || ((param_1 << (local_1c & 0x1f) < (uint)lVar4 && (uVar8 == uVar7)))) {
+      if ((uVar8 < uVar7) || ((param_1 << (bStack28 & 0x1f) < (uint)lVar4 && (uVar8 == uVar7)))) {
         iVar5 = iVar5 + -1;
         uVar8 = 0;
       }
@@ -72647,8 +70363,7 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     if (local_20 <= param_2) {
       uVar3 = 0x1f;
       if (local_20 != 0) {
-        while (local_20 >> uVar3 == 0) {
-          uVar3 = uVar3 - 1;
+        for (; local_20 >> uVar3 == 0; uVar3 = uVar3 - 1) {
         }
       }
       if ((uVar3 ^ 0x1f) == 0) {

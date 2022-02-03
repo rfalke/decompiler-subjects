@@ -54,13 +54,13 @@ void fun_8049002() {
 }
 
 struct s1 {
-    signed char 0x0;
-    signed char 0x1;
+    signed char f0;
+    signed char f1;
 };
 
 struct s0 {
     signed char[4] pad4;
-    struct s1* 0x4;
+    struct s1* f4;
 };
 
 int32_t main(int32_t a1, struct s0* a2);
@@ -230,10 +230,10 @@ void fun_80491b9() {
 int32_t main(int32_t a1, struct s0* a2) {
     int32_t v3;
 
-    if (a1 != 2 || !a2->0x4->0x0) {
+    if (a1 != 2 || !a2->f4->f0) {
         v3 = reinterpret_cast<int32_t>("not enough args or too small");
     } else {
-        if (!(a2->0x4->0x1 - 97)) {
+        if (!(a2->f4->f1 - 97)) {
             v3 = reinterpret_cast<int32_t>("got an 'a'");
         } else {
             v3 = reinterpret_cast<int32_t>("no 'a'");

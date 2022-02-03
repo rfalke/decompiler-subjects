@@ -356,11 +356,9 @@ undefined8 _main(int param_1)
       }
     } while (0 < param_1);
   }
-  else {
-    if ((param_1 < 6) && (param_1 == 2)) {
-      do {
-      } while( true );
-    }
+  else if ((param_1 < 6) && (param_1 == 2)) {
+    do {
+    } while( true );
   }
   return 0xd;
 }

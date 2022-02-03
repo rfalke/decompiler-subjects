@@ -51,7 +51,7 @@ int32_t __do_global_ctors_aux() {
 struct s0 {
     signed char f0;
     signed char[30] pad31;
-    signed char f31;
+    signed char f1f;
 };
 
 int32_t stdout = 0;
@@ -84,7 +84,7 @@ struct s0* main(struct s0* ecx, struct s0* a2, struct s0* a3, struct s0* a4, str
         if (reinterpret_cast<int32_t>(a2) < 0) {
             if (reinterpret_cast<int32_t>(a2) < -72) {
                 v6 = a4;
-                v7 = reinterpret_cast<struct s0*>(0x8048580);
+                v7 = reinterpret_cast<struct s0*>("@n'+,#'/*{}w+/w#cdnr/+,{}r/*de}+,/*{*+,/w{%+,/w#q#n+,/#{l,+,/n{n+,/+#n+,/#;#q#n+,/+k#;*+,/'r :'d*'3,}{w+K w'K:'+}e#';dq#'l q#'+d'K#!/+k#;q#'r}eKK#}w'r}eKK{nl]'/#;#q#n'){)#}w'){){nl]'/+#n';d}rw' i;# ){nl]!/n{n#'; r{#w'r nc{nl]'/#{l,+'K {rw' iK{;[{nl]'/w#q#n'wk nw' iwk{KK{nl]!/w{%'l##w#' i; :{nl]'/*{q#'ld;r'}{nlwb!/*de}'c ;;{nl'-{}rw]'/+,}##'*}#nc,',#nw]'/+kd'+e}+;#'rdq#w! nr'/ ') }+}{rl#'{n' ')# }'+}##(!!/");
                 v8 = a2;
                 v9 = a3;
             } else {
@@ -99,7 +99,7 @@ struct s0* main(struct s0* ecx, struct s0* a2, struct s0* a3, struct s0* a4, str
                     v9 = eax10;
                 } else {
                     if (a3 == static_cast<int32_t>(a4->f0)) {
-                        eax11 = a4->f31;
+                        eax11 = a4->f1f;
                         v12 = stdout;
                         eax13 = _IO_putc(eax11, v12);
                         goto addr_80483bf_11;
@@ -115,13 +115,13 @@ struct s0* main(struct s0* ecx, struct s0* a2, struct s0* a3, struct s0* a4, str
             if (reinterpret_cast<uint1_t>(reinterpret_cast<int32_t>(a2) < 0) | reinterpret_cast<uint1_t>(a2 == 0)) {
                 dl14 = a4->f0;
                 ebx15 = reinterpret_cast<struct s0*>(0);
-                if (dl14 == 47 || (eax17 = main(ecx, 0xc3, static_cast<int32_t>(dl14), 0x8048540, v16), eax19 = main(ecx, 0, eax17, &a4->pad31, eax18), !!eax19)) {
+                if (dl14 == 47 || (eax17 = main(ecx, 0xc3, static_cast<int32_t>(dl14), "!ek;dc i@bK'(q)-[w]*%n+r3#l,{}:\nuwloca-O;m .vpbks,fxntdCeghiry", v16), eax19 = main(ecx, 0, eax17, &a4->pad31, eax18), !!eax19)) {
                     ebx15 = reinterpret_cast<struct s0*>(1);
                     goto addr_8048395_16;
                 }
             } else {
                 v6 = edx20;
-                v7 = reinterpret_cast<struct s0*>(0x8048532);
+                v7 = reinterpret_cast<struct s0*>("%s");
                 v8 = reinterpret_cast<struct s0*>(2);
                 goto addr_80483b8_18;
             }
@@ -157,7 +157,7 @@ struct s0* main(struct s0* ecx, struct s0* a2, struct s0* a3, struct s0* a4, str
     addr_804839f_26:
     if (reinterpret_cast<int32_t>(a3) <= 12) {
         v6 = eax25;
-        v7 = reinterpret_cast<struct s0*>(0x8048528);
+        v7 = reinterpret_cast<struct s0*>("%s %d %d\n");
         v8 = reinterpret_cast<struct s0*>(&a3->pad31);
         goto addr_80483b8_18;
     } else {

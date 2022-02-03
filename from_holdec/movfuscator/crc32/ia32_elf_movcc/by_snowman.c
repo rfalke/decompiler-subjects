@@ -88,7 +88,7 @@ struct s1 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s0* R0 = reinterpret_cast<struct s0*>(0);
@@ -112,7 +112,7 @@ struct s3 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 int32_t D0 = 0;
@@ -196,7 +196,7 @@ struct s9 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s10 {
@@ -208,7 +208,7 @@ struct s11 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s12 {
@@ -235,7 +235,7 @@ struct s16 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s17 {
@@ -247,7 +247,7 @@ struct s18 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s0* alu_sx = reinterpret_cast<struct s0*>(0);
@@ -266,7 +266,7 @@ struct s19 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s20 {
@@ -278,7 +278,7 @@ struct s21 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s22 {
@@ -315,7 +315,7 @@ struct s28 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s29 {
@@ -327,7 +327,7 @@ struct s30 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s31 {
@@ -344,7 +344,7 @@ struct s33 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s34 {
@@ -356,7 +356,7 @@ struct s35 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s36 {
@@ -373,7 +373,7 @@ struct s38 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s39 {
@@ -385,7 +385,7 @@ struct s40 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s41 {
@@ -422,7 +422,7 @@ struct s47 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s48 {
@@ -434,7 +434,7 @@ struct s49 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s50 {
@@ -456,7 +456,7 @@ struct s53 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s54 {
@@ -468,7 +468,7 @@ struct s55 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s56 {
@@ -490,7 +490,7 @@ struct s59 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s60 {
@@ -502,7 +502,7 @@ struct s61 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 struct s62 {
@@ -534,7 +534,7 @@ struct s67 {
     struct s0* f0;
     struct s0* f4;
     struct s0* f8;
-    struct s0* f12;
+    struct s0* fc;
 };
 
 struct s68 {
@@ -546,7 +546,7 @@ struct s69 {
     int32_t f0;
     int32_t f4;
     struct s0* f8;
-    int32_t f12;
+    int32_t fc;
 };
 
 void _start() {
@@ -2030,7 +2030,7 @@ void _start() {
     edx34 = R2;
     eax31->f8 = edx34;
     edx35 = R3;
-    eax31->f12 = edx35;
+    eax31->fc = edx35;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax36 = *reinterpret_cast<struct s2**>(ecx30 * 4 + 0x83f9180);
     edx37 = F0;
@@ -2046,7 +2046,7 @@ void _start() {
     edx42 = D1;
     eax39->f8 = edx42;
     edx43 = g805008c;
-    eax39->f12 = edx43;
+    eax39->fc = edx43;
     eax44 = on;
     **reinterpret_cast<int32_t**>(eax44 * 4 + 0x83f9160) = 0;
     eax45 = target;
@@ -2344,7 +2344,7 @@ void _start() {
     edx169 = R2;
     eax166->f8 = edx169;
     edx170 = R3;
-    eax166->f12 = edx170;
+    eax166->fc = edx170;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax171 = *reinterpret_cast<struct s10**>(ecx165 * 4 + 0x83f9180);
     edx172 = F0;
@@ -2360,7 +2360,7 @@ void _start() {
     edx177 = D1;
     eax174->f8 = edx177;
     edx178 = g805008c;
-    eax174->f12 = edx178;
+    eax174->fc = edx178;
     eax179 = b0;
     **reinterpret_cast<int32_t**>(eax179 * 4 + 0x83f9160) = 0;
     R3 = reinterpret_cast<struct s0*>(0);
@@ -2617,7 +2617,7 @@ void _start() {
     edx279 = R2;
     eax276->f8 = edx279;
     edx280 = R3;
-    eax276->f12 = edx280;
+    eax276->fc = edx280;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax281 = *reinterpret_cast<struct s17**>(ecx275 * 4 + 0x83f9180);
     edx282 = F0;
@@ -2633,7 +2633,7 @@ void _start() {
     edx287 = D1;
     eax284->f8 = edx287;
     edx288 = g805008c;
-    eax284->f12 = edx288;
+    eax284->fc = edx288;
     eax289 = b0;
     **reinterpret_cast<int32_t**>(eax289 * 4 + 0x83f9160) = 0;
     eax290 = fp;
@@ -2807,7 +2807,7 @@ void _start() {
     edx360 = R2;
     eax357->f8 = edx360;
     edx361 = R3;
-    eax357->f12 = edx361;
+    eax357->fc = edx361;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax362 = *reinterpret_cast<struct s20**>(ecx356 * 4 + 0x83f9180);
     edx363 = F0;
@@ -2823,7 +2823,7 @@ void _start() {
     edx368 = D1;
     eax365->f8 = edx368;
     edx369 = g805008c;
-    eax365->f12 = edx369;
+    eax365->fc = edx369;
     eax370 = on;
     **reinterpret_cast<int32_t**>(eax370 * 4 + 0x83f9160) = 0;
     eax371 = target;
@@ -3248,7 +3248,7 @@ void _start() {
     edx532 = R2;
     eax529->f8 = edx532;
     edx533 = R3;
-    eax529->f12 = edx533;
+    eax529->fc = edx533;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax534 = *reinterpret_cast<struct s29**>(ecx528 * 4 + 0x83f9180);
     edx535 = F0;
@@ -3264,7 +3264,7 @@ void _start() {
     edx540 = D1;
     eax537->f8 = edx540;
     edx541 = g805008c;
-    eax537->f12 = edx541;
+    eax537->fc = edx541;
     eax542 = b0;
     **reinterpret_cast<int32_t**>(eax542 * 4 + 0x83f9160) = 0;
     eax543 = fp;
@@ -3587,7 +3587,7 @@ void _start() {
     edx666 = R2;
     eax663->f8 = edx666;
     edx667 = R3;
-    eax663->f12 = edx667;
+    eax663->fc = edx667;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax668 = *reinterpret_cast<struct s34**>(ecx662 * 4 + 0x83f9180);
     edx669 = F0;
@@ -3603,7 +3603,7 @@ void _start() {
     edx674 = D1;
     eax671->f8 = edx674;
     edx675 = g805008c;
-    eax671->f12 = edx675;
+    eax671->fc = edx675;
     eax676 = b0;
     **reinterpret_cast<int32_t**>(eax676 * 4 + 0x83f9160) = 0;
     R3 = reinterpret_cast<struct s0*>(0x8050020);
@@ -3770,7 +3770,7 @@ void _start() {
     edx745 = R2;
     eax742->f8 = edx745;
     edx746 = R3;
-    eax742->f12 = edx746;
+    eax742->fc = edx746;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax747 = *reinterpret_cast<struct s39**>(ecx741 * 4 + 0x83f9180);
     edx748 = F0;
@@ -3786,7 +3786,7 @@ void _start() {
     edx753 = D1;
     eax750->f8 = edx753;
     edx754 = g805008c;
-    eax750->f12 = edx754;
+    eax750->fc = edx754;
     eax755 = on;
     **reinterpret_cast<int32_t**>(eax755 * 4 + 0x83f9160) = 0;
     eax756 = target;
@@ -4469,7 +4469,7 @@ void _start() {
     edx1022 = R2;
     eax1019->f8 = edx1022;
     edx1023 = R3;
-    eax1019->f12 = edx1023;
+    eax1019->fc = edx1023;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax1024 = *reinterpret_cast<struct s48**>(ecx1018 * 4 + 0x83f9180);
     edx1025 = F0;
@@ -4485,7 +4485,7 @@ void _start() {
     edx1030 = D1;
     eax1027->f8 = edx1030;
     edx1031 = g805008c;
-    eax1027->f12 = edx1031;
+    eax1027->fc = edx1031;
     eax1032 = b0;
     **reinterpret_cast<int32_t**>(eax1032 * 4 + 0x83f9160) = 0;
     eax1033 = fp;
@@ -4664,7 +4664,7 @@ void _start() {
     edx1110 = R2;
     eax1107->f8 = edx1110;
     edx1111 = R3;
-    eax1107->f12 = edx1111;
+    eax1107->fc = edx1111;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax1112 = *reinterpret_cast<struct s54**>(ecx1106 * 4 + 0x83f9180);
     edx1113 = F0;
@@ -4680,7 +4680,7 @@ void _start() {
     edx1118 = D1;
     eax1115->f8 = edx1118;
     edx1119 = g805008c;
-    eax1115->f12 = edx1119;
+    eax1115->fc = edx1119;
     eax1120 = on;
     **reinterpret_cast<int32_t**>(eax1120 * 4 + 0x83f9160) = 0;
     eax1121 = target;
@@ -4829,7 +4829,7 @@ void _start() {
     data_p = reinterpret_cast<struct s0*>(0x83f9140);
     edx1188 = stack_temp;
     **reinterpret_cast<struct s0***>(edx1187 * 4 + 0x83f9180) = edx1188;
-    R3 = reinterpret_cast<struct s0*>(0x8050028);
+    R3 = reinterpret_cast<struct s0*>("The quick brown fox jumps over the lazy dog");
     eax1189 = fp;
     edx1190 = on;
     data_p = *reinterpret_cast<struct s0**>(reinterpret_cast<int32_t>(eax1189) - 0x200068);
@@ -4961,7 +4961,7 @@ void _start() {
     edx1251 = R2;
     eax1248->f8 = edx1251;
     edx1252 = R3;
-    eax1248->f12 = edx1252;
+    eax1248->fc = edx1252;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax1253 = *reinterpret_cast<struct s60**>(ecx1247 * 4 + 0x83f9180);
     edx1254 = F0;
@@ -4977,7 +4977,7 @@ void _start() {
     edx1259 = D1;
     eax1256->f8 = edx1259;
     edx1260 = g805008c;
-    eax1256->f12 = edx1260;
+    eax1256->fc = edx1260;
     eax1261 = on;
     **reinterpret_cast<int32_t**>(eax1261 * 4 + 0x83f9160) = 0;
     eax1262 = target;
@@ -5064,7 +5064,7 @@ void _start() {
     data_p = eax1293;
     edx1295 = stack_temp;
     **reinterpret_cast<struct s0***>(edx1294 * 4 + 0x83f9180) = edx1295;
-    R3 = reinterpret_cast<struct s0*>(0x8050024);
+    R3 = reinterpret_cast<struct s0*>("%X\n");
     eax1296 = R3;
     stack_temp = eax1296;
     edx1297 = on;
@@ -5274,7 +5274,7 @@ void _start() {
     edx1387 = R2;
     eax1384->f8 = edx1387;
     edx1388 = R3;
-    eax1384->f12 = edx1388;
+    eax1384->fc = edx1388;
     data_p = reinterpret_cast<struct s0*>(0x85f91b0);
     eax1389 = *reinterpret_cast<struct s68**>(ecx1383 * 4 + 0x83f9180);
     edx1390 = F0;
@@ -5290,7 +5290,7 @@ void _start() {
     edx1395 = D1;
     eax1392->f8 = edx1395;
     edx1396 = g805008c;
-    eax1392->f12 = edx1396;
+    eax1392->fc = edx1396;
     eax1397 = on;
     **reinterpret_cast<int32_t**>(eax1397 * 4 + 0x83f9160) = 0;
 }

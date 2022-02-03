@@ -37,9 +37,9 @@ int32_t bswap_plain() {
 struct s0 {
     struct s0* f0;
     signed char[8] pad12;
-    int16_t f12;
+    int16_t fc;
     signed char[20] pad34;
-    struct s0* f34;
+    struct s0* f22;
 };
 
 struct s0* g1000;
@@ -2464,7 +2464,7 @@ int32_t cmov4_mv_allregs() {
     edi9 = g1018;
     g2050 = esp2;
     if (zf10) {
-        *reinterpret_cast<int16_t*>(&eax3) = ebx4->f12;
+        *reinterpret_cast<int16_t*>(&eax3) = ebx4->fc;
     }
     g2000 = eax3;
     g2004 = ebx4;
@@ -2735,7 +2735,7 @@ int32_t cmov5_mv_allregs() {
     edi9 = g1018;
     g2050 = esp2;
     if (zf10) {
-        eax3 = ebx4->f34;
+        eax3 = ebx4->f22;
     }
     g2000 = eax3;
     g2004 = ebx4;

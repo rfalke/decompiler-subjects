@@ -10,81 +10,81 @@ typedef unsigned short    word;
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
 
 typedef enum Elf32_DynTag_x86 {
-    DT_INIT_ARRAY=25,
-    DT_CONFIG=1879047930,
-    DT_RELASZ=8,
-    DT_INIT=12,
-    DT_HASH=4,
     DT_NULL=0,
-    DT_GNU_CONFLICT=1879047928,
-    DT_FLAGS=30,
-    DT_AUXILIARY=2147483645,
-    DT_GNU_HASH=1879047925,
-    DT_DEBUG=21,
-    DT_RELCOUNT=1879048186,
-    DT_RELR=36,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_RELENT=19,
-    DT_REL=17,
-    DT_DEPAUDIT=1879047931,
-    DT_RUNPATH=29,
-    DT_GNU_PRELINKED=1879047669,
-    DT_POSFLAG_1=1879047677,
-    DT_VERDEF=1879048188,
-    DT_ANDROID_RELRENT=1879040003,
-    DT_MOVETAB=1879047934,
-    DT_RPATH=15,
-    DT_RELACOUNT=1879048185,
-    DT_RELSZ=18,
-    DT_SYMINSZ=1879047678,
-    DT_VERNEED=1879048190,
-    DT_ANDROID_RELASZ=1610612754,
-    DT_FINI_ARRAY=26,
-    DT_TEXTREL=22,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_VERNEEDNUM=1879048191,
-    DT_STRTAB=5,
     DT_NEEDED=1,
-    DT_PLTPADSZ=1879047673,
-    DT_ANDROID_REL=1610612751,
-    DT_FLAGS_1=1879048187,
-    DT_ANDROID_RELR=1879040000,
-    DT_SYMINFO=1879047935,
-    DT_SYMTAB=6,
-    DT_TLSDESC_GOT=1879047927,
-    DT_JMPREL=23,
-    DT_ANDROID_RELA=1610612753,
-    DT_SYMINENT=1879047679,
-    DT_SONAME=14,
-    DT_FINI=13,
-    DT_MOVEENT=1879047674,
-    DT_RELRENT=37,
-    DT_FINI_ARRAYSZ=28,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_VERSYM=1879048176,
-    DT_MOVESZ=1879047675,
-    DT_RELAENT=9,
     DT_PLTRELSZ=2,
-    DT_RELA=7,
-    DT_VERDEFNUM=1879048189,
-    DT_PLTREL=20,
-    DT_CHECKSUM=1879047672,
-    DT_TLSDESC_PLT=1879047926,
-    DT_PLTPAD=1879047933,
-    DT_RELRSZ=35,
-    DT_BIND_NOW=24,
-    DT_PREINIT_ARRAY=32,
-    DT_SYMBOLIC=16,
-    DT_GNU_LIBLIST=1879047929,
     DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
     DT_STRSZ=10,
-    DT_GNU_LIBLISTSZ=1879047671,
-    DT_INIT_ARRAYSZ=27,
-    DT_AUDIT=1879047932,
     DT_SYMENT=11,
-    DT_ANDROID_RELRSZ=1879040001
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
+    DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
+    DT_ANDROID_RELA=1610612753,
+    DT_ANDROID_RELASZ=1610612754,
+    DT_ANDROID_RELR=1879040000,
+    DT_ANDROID_RELRSZ=1879040001,
+    DT_ANDROID_RELRENT=1879040003,
+    DT_GNU_PRELINKED=1879047669,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
+    DT_MOVEENT=1879047674,
+    DT_MOVESZ=1879047675,
+    DT_FEATURE_1=1879047676,
+    DT_POSFLAG_1=1879047677,
+    DT_SYMINSZ=1879047678,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
+    DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
+    DT_VERDEF=1879048188,
+    DT_VERDEFNUM=1879048189,
+    DT_VERNEED=1879048190,
+    DT_VERNEEDNUM=1879048191,
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf32_DynTag_x86;
 
 struct Elf32_Dyn_x86 {
@@ -93,17 +93,17 @@ struct Elf32_Dyn_x86 {
 };
 
 typedef enum Elf_ProgramHeaderType_x86 {
-    PT_GNU_STACK=1685382481,
-    PT_NOTE=4,
-    PT_INTERP=3,
-    PT_PHDR=6,
-    PT_LOAD=1,
     PT_NULL=0,
+    PT_LOAD=1,
     PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
     PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_TLS=7
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType_x86;
 
 typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
@@ -677,14 +677,12 @@ LAB_08048c08:
   if (param_2 == 3) {
     FUN_08048b68(param_1,1,5,4,0);
   }
-  else {
-    if (param_2 == 1) {
-      uVar4 = 3;
-      uVar3 = 4;
-      uVar2 = 2;
-      uVar1 = 1;
-      goto LAB_08048c08;
-    }
+  else if (param_2 == 1) {
+    uVar4 = 3;
+    uVar3 = 4;
+    uVar2 = 2;
+    uVar1 = 1;
+    goto LAB_08048c08;
   }
   return;
 }
@@ -711,14 +709,12 @@ LAB_08048c4b:
   if (param_2 == 3) {
     FUN_08048b68(param_1,0,4,5,1);
   }
-  else {
-    if (param_2 == 1) {
-      uVar4 = 1;
-      uVar3 = 2;
-      uVar2 = 4;
-      uVar1 = 3;
-      goto LAB_08048c4b;
-    }
+  else if (param_2 == 1) {
+    uVar4 = 1;
+    uVar3 = 2;
+    uVar2 = 4;
+    uVar1 = 3;
+    goto LAB_08048c4b;
   }
   return;
 }
@@ -776,39 +772,36 @@ int FUN_08048c67(int param_1,int param_2,int param_3)
       } while (iVar7 != 3);
     }
   }
-  else {
-    if ((param_3 != 0) && (fVar1 == 90.0)) {
-      uVar5 = *(undefined4 *)(param_1 + 4 + (param_2 + 0x24) * 4);
-      *(undefined4 *)(param_1 + 8 + iVar7 * 4) = 0;
-      uVar4 = *(undefined4 *)(param_1 + 4 + (param_2 + 0x12) * 4);
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x12) * 4) = uVar5;
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x24) * 4) =
-           *(undefined4 *)(param_1 + 4 + (param_2 + 0x1e) * 4);
-      iVar7 = param_2 + 0xc;
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x1e) * 4) = *(undefined4 *)(param_1 + 4 + iVar7 * 4)
-      ;
-      *(undefined4 *)(param_1 + 4 + iVar7 * 4) = uVar4;
-      uVar5 = *(undefined4 *)(param_1 + 4 + (param_2 + 0xf) * 4);
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0xf) * 4) =
-           *(undefined4 *)(param_1 + 4 + (param_2 + 0x1b) * 4);
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x1b) * 4) =
-           *(undefined4 *)(param_1 + 4 + (param_2 + 0x21) * 4);
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x21) * 4) =
-           *(undefined4 *)(param_1 + 4 + (param_2 + 0x15) * 4);
-      puVar6 = (undefined4 *)(param_1 + 4 + iVar7 * 4);
-      *(undefined4 *)(param_1 + 4 + (param_2 + 0x15) * 4) = uVar5;
-      iVar7 = 0;
-      do {
-        iVar7 = iVar7 + 1;
-        uVar5 = FUN_08048c24(*puVar6,3);
-        *puVar6 = uVar5;
-        uVar5 = FUN_08048c24(puVar6[3],3);
-        puVar6[3] = uVar5;
-        uVar5 = FUN_08048c24(puVar6[6],3);
-        puVar6[6] = uVar5;
-        puVar6 = puVar6 + 9;
-      } while (iVar7 != 3);
-    }
+  else if ((param_3 != 0) && (fVar1 == 90.0)) {
+    uVar5 = *(undefined4 *)(param_1 + 4 + (param_2 + 0x24) * 4);
+    *(undefined4 *)(param_1 + 8 + iVar7 * 4) = 0;
+    uVar4 = *(undefined4 *)(param_1 + 4 + (param_2 + 0x12) * 4);
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x12) * 4) = uVar5;
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x24) * 4) =
+         *(undefined4 *)(param_1 + 4 + (param_2 + 0x1e) * 4);
+    iVar7 = param_2 + 0xc;
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x1e) * 4) = *(undefined4 *)(param_1 + 4 + iVar7 * 4);
+    *(undefined4 *)(param_1 + 4 + iVar7 * 4) = uVar4;
+    uVar5 = *(undefined4 *)(param_1 + 4 + (param_2 + 0xf) * 4);
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0xf) * 4) =
+         *(undefined4 *)(param_1 + 4 + (param_2 + 0x1b) * 4);
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x1b) * 4) =
+         *(undefined4 *)(param_1 + 4 + (param_2 + 0x21) * 4);
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x21) * 4) =
+         *(undefined4 *)(param_1 + 4 + (param_2 + 0x15) * 4);
+    puVar6 = (undefined4 *)(param_1 + 4 + iVar7 * 4);
+    *(undefined4 *)(param_1 + 4 + (param_2 + 0x15) * 4) = uVar5;
+    iVar7 = 0;
+    do {
+      iVar7 = iVar7 + 1;
+      uVar5 = FUN_08048c24(*puVar6,3);
+      *puVar6 = uVar5;
+      uVar5 = FUN_08048c24(puVar6[3],3);
+      puVar6[3] = uVar5;
+      uVar5 = FUN_08048c24(puVar6[6],3);
+      puVar6[6] = uVar5;
+      puVar6 = puVar6 + 9;
+    } while (iVar7 != 3);
   }
   fVar1 = *(float *)(param_1 + 0x28);
   fVar2 = *(float *)(param_1 + 0x2c);
@@ -873,35 +866,33 @@ int FUN_08048eb5(int param_1,int param_2,int param_3)
       } while (iVar8 != 3);
     }
   }
-  else {
-    if ((param_3 != 0) && (fVar2 == 90.0)) {
-      iVar8 = 0;
-      *(undefined4 *)(param_1 + 0xc + iVar1 * 4) = 0;
-      iVar1 = param_1 + param_2 * 0xc;
-      uVar6 = *(undefined4 *)(iVar1 + 0x34);
-      *(undefined4 *)(iVar1 + 0x34) = *(undefined4 *)(iVar1 + 0x7c);
-      *(undefined4 *)(iVar1 + 0x7c) = *(undefined4 *)(iVar1 + 0x84);
-      uVar5 = *(undefined4 *)(iVar1 + 0x3c);
-      *(undefined4 *)(iVar1 + 0x3c) = uVar6;
-      uVar6 = *(undefined4 *)(iVar1 + 0x58);
-      *(undefined4 *)(iVar1 + 0x84) = uVar5;
-      *(undefined4 *)(iVar1 + 0x58) = *(undefined4 *)(iVar1 + 0x80);
-      *(undefined4 *)(iVar1 + 0x80) = *(undefined4 *)(iVar1 + 0x60);
-      uVar5 = *(undefined4 *)(iVar1 + 0x38);
-      *(undefined4 *)(iVar1 + 0x38) = uVar6;
-      *(undefined4 *)(iVar1 + 0x60) = uVar5;
-      puVar7 = (undefined4 *)(param_1 + 0x34 + param_2 * 0xc);
-      do {
-        iVar8 = iVar8 + 1;
-        uVar6 = FUN_08048c24(*puVar7,2);
-        *puVar7 = uVar6;
-        uVar6 = FUN_08048c24(puVar7[1],2);
-        puVar7[1] = uVar6;
-        uVar6 = FUN_08048c24(puVar7[2],2);
-        puVar7[2] = uVar6;
-        puVar7 = puVar7 + 9;
-      } while (iVar8 != 3);
-    }
+  else if ((param_3 != 0) && (fVar2 == 90.0)) {
+    iVar8 = 0;
+    *(undefined4 *)(param_1 + 0xc + iVar1 * 4) = 0;
+    iVar1 = param_1 + param_2 * 0xc;
+    uVar6 = *(undefined4 *)(iVar1 + 0x34);
+    *(undefined4 *)(iVar1 + 0x34) = *(undefined4 *)(iVar1 + 0x7c);
+    *(undefined4 *)(iVar1 + 0x7c) = *(undefined4 *)(iVar1 + 0x84);
+    uVar5 = *(undefined4 *)(iVar1 + 0x3c);
+    *(undefined4 *)(iVar1 + 0x3c) = uVar6;
+    uVar6 = *(undefined4 *)(iVar1 + 0x58);
+    *(undefined4 *)(iVar1 + 0x84) = uVar5;
+    *(undefined4 *)(iVar1 + 0x58) = *(undefined4 *)(iVar1 + 0x80);
+    *(undefined4 *)(iVar1 + 0x80) = *(undefined4 *)(iVar1 + 0x60);
+    uVar5 = *(undefined4 *)(iVar1 + 0x38);
+    *(undefined4 *)(iVar1 + 0x38) = uVar6;
+    *(undefined4 *)(iVar1 + 0x60) = uVar5;
+    puVar7 = (undefined4 *)(param_1 + 0x34 + param_2 * 0xc);
+    do {
+      iVar8 = iVar8 + 1;
+      uVar6 = FUN_08048c24(*puVar7,2);
+      *puVar7 = uVar6;
+      uVar6 = FUN_08048c24(puVar7[1],2);
+      puVar7[1] = uVar6;
+      uVar6 = FUN_08048c24(puVar7[2],2);
+      puVar7[2] = uVar6;
+      puVar7 = puVar7 + 9;
+    } while (iVar8 != 3);
   }
   fVar2 = *(float *)(param_1 + 0x1c);
   fVar3 = *(float *)(param_1 + 0x20);
@@ -966,35 +957,33 @@ int FUN_080490d5(int param_1,int param_2,int param_3)
       } while (iVar8 != 3);
     }
   }
-  else {
-    if ((param_3 != 0) && (fVar2 == 90.0)) {
-      iVar8 = 0;
-      *(undefined4 *)(param_1 + iVar1 * 4) = 0;
-      iVar1 = param_1 + param_2 * 0x24;
-      uVar6 = *(undefined4 *)(iVar1 + 0x3c);
-      *(undefined4 *)(iVar1 + 0x3c) = *(undefined4 *)(iVar1 + 0x54);
-      *(undefined4 *)(iVar1 + 0x54) = *(undefined4 *)(iVar1 + 0x4c);
-      uVar5 = *(undefined4 *)(iVar1 + 0x34);
-      *(undefined4 *)(iVar1 + 0x34) = uVar6;
-      uVar6 = *(undefined4 *)(iVar1 + 0x38);
-      *(undefined4 *)(iVar1 + 0x4c) = uVar5;
-      *(undefined4 *)(iVar1 + 0x38) = *(undefined4 *)(iVar1 + 0x48);
-      *(undefined4 *)(iVar1 + 0x48) = *(undefined4 *)(iVar1 + 0x50);
-      uVar5 = *(undefined4 *)(iVar1 + 0x40);
-      *(undefined4 *)(iVar1 + 0x40) = uVar6;
-      *(undefined4 *)(iVar1 + 0x50) = uVar5;
-      puVar7 = (undefined4 *)(param_1 + 0x34 + param_2 * 0x24);
-      do {
-        iVar8 = iVar8 + 1;
-        uVar6 = FUN_08048c24(*puVar7,1);
-        *puVar7 = uVar6;
-        uVar6 = FUN_08048c24(puVar7[1],1);
-        puVar7[1] = uVar6;
-        uVar6 = FUN_08048c24(puVar7[2],1);
-        puVar7[2] = uVar6;
-        puVar7 = puVar7 + 3;
-      } while (iVar8 != 3);
-    }
+  else if ((param_3 != 0) && (fVar2 == 90.0)) {
+    iVar8 = 0;
+    *(undefined4 *)(param_1 + iVar1 * 4) = 0;
+    iVar1 = param_1 + param_2 * 0x24;
+    uVar6 = *(undefined4 *)(iVar1 + 0x3c);
+    *(undefined4 *)(iVar1 + 0x3c) = *(undefined4 *)(iVar1 + 0x54);
+    *(undefined4 *)(iVar1 + 0x54) = *(undefined4 *)(iVar1 + 0x4c);
+    uVar5 = *(undefined4 *)(iVar1 + 0x34);
+    *(undefined4 *)(iVar1 + 0x34) = uVar6;
+    uVar6 = *(undefined4 *)(iVar1 + 0x38);
+    *(undefined4 *)(iVar1 + 0x4c) = uVar5;
+    *(undefined4 *)(iVar1 + 0x38) = *(undefined4 *)(iVar1 + 0x48);
+    *(undefined4 *)(iVar1 + 0x48) = *(undefined4 *)(iVar1 + 0x50);
+    uVar5 = *(undefined4 *)(iVar1 + 0x40);
+    *(undefined4 *)(iVar1 + 0x40) = uVar6;
+    *(undefined4 *)(iVar1 + 0x50) = uVar5;
+    puVar7 = (undefined4 *)(param_1 + 0x34 + param_2 * 0x24);
+    do {
+      iVar8 = iVar8 + 1;
+      uVar6 = FUN_08048c24(*puVar7,1);
+      *puVar7 = uVar6;
+      uVar6 = FUN_08048c24(puVar7[1],1);
+      puVar7[1] = uVar6;
+      uVar6 = FUN_08048c24(puVar7[2],1);
+      puVar7[2] = uVar6;
+      puVar7 = puVar7 + 3;
+    } while (iVar8 != 3);
   }
   fVar2 = *(float *)(param_1 + 0x10);
   fVar3 = *(float *)(param_1 + 0x14);
@@ -1020,15 +1009,11 @@ undefined4 FUN_080492d1(undefined4 param_1,int param_2,undefined4 param_3)
   if (iVar1 == 2) {
     FUN_08048eb5(param_1,*(undefined4 *)(param_2 + 8),param_3);
   }
-  else {
-    if (iVar1 == 3) {
-      FUN_08048c67(param_1,*(undefined4 *)(param_2 + 8),param_3);
-    }
-    else {
-      if (iVar1 == 1) {
-        FUN_080490d5(param_1,*(undefined4 *)(param_2 + 8),param_3);
-      }
-    }
+  else if (iVar1 == 3) {
+    FUN_08048c67(param_1,*(undefined4 *)(param_2 + 8),param_3);
+  }
+  else if (iVar1 == 1) {
+    FUN_080490d5(param_1,*(undefined4 *)(param_2 + 8),param_3);
   }
   return param_1;
 }
@@ -1125,7 +1110,6 @@ void FUN_08049444(int param_1)
 
 {
   float fVar1;
-  float fVar2;
   
   glPushMatrix();
   glBegin(7);
@@ -1146,9 +1130,8 @@ void FUN_08049444(int param_1)
   fVar1 = *(float *)(param_1 + 4) / 1.8;
   glVertex3f(fVar1,fVar1,fVar1);
   fVar1 = *(float *)(param_1 + 4) / 1.8;
-  fVar2 = -*(float *)(param_1 + 4) / 1.8;
-  glVertex3f(fVar1);
-  glColor3fv(param_1 + 0x20,fVar1,fVar2);
+  glVertex3f(fVar1,fVar1,-*(float *)(param_1 + 4) / 1.8);
+  glColor3fv(param_1 + 0x20);
   fVar1 = *(float *)(param_1 + 4) / 1.8;
   glVertex3f(fVar1,fVar1,fVar1);
   fVar1 = *(float *)(param_1 + 4) / 1.8;
@@ -1156,9 +1139,8 @@ void FUN_08049444(int param_1)
   fVar1 = -*(float *)(param_1 + 4) / 1.8;
   glVertex3f(fVar1,fVar1,*(float *)(param_1 + 4) / 1.8);
   fVar1 = *(float *)(param_1 + 4) / 1.8;
-  fVar2 = -*(float *)(param_1 + 4) / 1.8;
-  glVertex3f(fVar1);
-  glColor3fv(param_1 + 0x2c,fVar2,fVar1);
+  glVertex3f(fVar1,-*(float *)(param_1 + 4) / 1.8,fVar1);
+  glColor3fv(param_1 + 0x2c);
   fVar1 = *(float *)(param_1 + 4) / 1.8;
   glVertex3f(fVar1,fVar1,-*(float *)(param_1 + 4) / 1.8);
   fVar1 = -*(float *)(param_1 + 4) / 1.8;
@@ -1249,16 +1231,16 @@ void entry(void)
 
 {
   code *pcVar1;
-  int iVar2;
+  undefined4 uVar2;
   int iVar3;
-  undefined4 extraout_EDX;
   int iVar4;
   undefined4 *puVar5;
   undefined4 *puVar6;
   byte bVar7;
-  int local_158;
-  undefined4 uStack340;
-  undefined4 uStack336;
+  undefined4 uStack364;
+  undefined4 uStack360;
+  undefined4 uStack356;
+  undefined4 uStack352;
   undefined4 *local_14c;
   undefined4 *local_148;
   undefined4 *local_144;
@@ -1268,96 +1250,119 @@ void entry(void)
   undefined4 local_30 [8];
   
   bVar7 = 0;
-  uStack336 = 0x80000002;
-  uStack340 = 0;
-  local_158 = 800;
+  uStack352 = 0x8049b38;
   SDL_SetVideoMode();
+  uStack352 = 0x8049b44;
   SDL_ShowCursor();
+  uStack352 = 0x8049b50;
   glShadeModel();
+  uStack352 = 0x3f000000;
+  uStack356 = 0x3f4ccccd;
+  uStack360 = 0x3f4ccccd;
+  uStack364 = 0x3f4ccccd;
   glClearColor();
-  local_158 = 0x3ff00000;
+  uStack352 = 0x8049b78;
   glClearDepth();
+  uStack352 = 0x8049b84;
   glEnable();
+  uStack352 = 0x8049b90;
   glDepthFunc();
-  local_158 = 0x1102;
+  uStack352 = 0x8049ba1;
   glHint();
+  uStack352 = 800;
+  uStack356 = 0x500;
+  uStack360 = 0;
+  uStack364 = 0;
   glViewport();
+  uStack352 = 0x8049bc1;
   glMatrixMode();
+  uStack352 = 0x8049bc6;
   glLoadIdentity();
+  uStack352 = 0x40590000;
+  uStack356 = 0;
+  uStack360 = 0x3ff80000;
+  uStack364 = 0;
   glFrustum(0x147ae148,0xbff547ae,0x147ae148,0x3ff547ae,0,0xbff00000,0,0x3ff00000);
+  uStack352 = 0x8049c08;
   glMatrixMode();
+  uStack352 = 0x8049c0d;
   glLoadIdentity();
+  uStack352 = 0x8049c19;
   glClear();
+  uStack352 = 0x8049c1e;
   glLoadIdentity();
   iVar4 = 0;
-  local_158 = 0xc01c0000;
+  uStack352 = 0;
+  uStack356 = 0;
+  uStack360 = 0;
+  uStack364 = 0;
   glTranslated();
-  uStack336 = 0;
-  uStack340 = 0;
-  local_158 = 0x3f800000;
+  uStack352 = 0x8049c4c;
   glRotatef();
+  uStack352 = 0;
+  uStack356 = 0x3f800000;
+  uStack360 = 0;
+  uStack364 = 0x42700000;
   glRotatef();
-  uStack336 = 0x8049c67;
   FUN_08049394();
+  uStack352 = 0x8049c76;
   srand(100000000);
   local_130 = 0;
   local_140 = local_30;
   do {
-    iVar3 = 5;
     puVar5 = local_140;
-    puVar6 = (undefined4 *)&stack0xfffffe94;
-    while (iVar3 != 0) {
-      iVar3 = iVar3 + -1;
+    puVar6 = &uStack364;
+    for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
     iVar3 = FUN_08049330();
     if (iVar3 == 1) goto LAB_08049e43;
-    uStack336 = 0x8049cb0;
     iVar3 = rand();
     iVar3 = iVar3 % 3 + 1;
-    uStack336 = 0x8049cc0;
-    iVar2 = rand();
+    rand();
     if (local_130 == iVar3) {
       iVar4 = iVar4 + -1;
     }
     else {
-      local_158 = iVar2 % 3;
-      uStack336 = extraout_EDX;
-      local_158 = FUN_08049363();
-      auStack288[iVar4] = local_158;
-      uStack340 = 0x5a;
+      uStack352 = 0x8049cd5;
+      uVar2 = FUN_08049363();
+      auStack288[iVar4] = uVar2;
+      uStack352 = 0x8049ce5;
       FUN_080492d1();
       local_130 = iVar3;
     }
     iVar4 = iVar4 + 1;
   } while (iVar4 < 0x3c);
   iVar4 = 0;
+  uStack352 = 0x8049cfd;
   FUN_0804993d();
+  uStack352 = 0x8049d02;
   SDL_GL_SwapBuffers();
   local_144 = local_30;
   do {
-    iVar3 = 5;
     puVar5 = local_144;
-    puVar6 = (undefined4 *)&stack0xfffffe94;
-    while (iVar3 != 0) {
-      iVar3 = iVar3 + -1;
+    puVar6 = &uStack364;
+    for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
     iVar3 = FUN_08049330();
     if (iVar3 == 1) goto LAB_08049e43;
-    uStack336 = 0x3f800000;
     iVar4 = iVar4 + 1;
-    uStack340 = 0x3f800000;
-    local_158 = 0;
+    uStack352 = 0x8049d46;
     glRotatef();
+    uStack352 = 0x8049d52;
     glClear();
+    uStack352 = 0x8049d57;
     glFlush();
+    uStack352 = 0x8049d5f;
     FUN_0804993d();
+    uStack352 = 0x8049d64;
     SDL_GL_SwapBuffers();
+    uStack352 = 0x8049d70;
     SDL_Delay();
   } while (iVar4 != 200);
   local_148 = local_30;
@@ -1365,28 +1370,28 @@ void entry(void)
   do {
     local_130 = 0;
     do {
-      iVar3 = 5;
       puVar5 = local_148;
-      puVar6 = (undefined4 *)&stack0xfffffe94;
-      while (iVar3 != 0) {
-        iVar3 = iVar3 + -1;
+      puVar6 = &uStack364;
+      for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar6 = *puVar5;
         puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
         puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
       }
       iVar3 = FUN_08049330();
       if (iVar3 == 1) goto LAB_08049e43;
-      uStack336 = 0x3f800000;
-      uStack340 = 0x3f800000;
-      local_158 = 0;
+      uStack352 = 0x8049dc2;
       glRotatef();
-      uStack340 = 0xfffffffb;
-      local_158 = auStack288[iVar4];
+      uStack352 = 0x8049dd1;
       FUN_080492d1();
+      uStack352 = 0x8049ddd;
       glClear();
+      uStack352 = 0x8049de2;
       glFlush();
+      uStack352 = 0x8049dea;
       FUN_0804993d();
+      uStack352 = 0x8049def;
       SDL_GL_SwapBuffers();
+      uStack352 = 0x8049dfb;
       SDL_Delay();
       local_130 = local_130 + 1;
     } while (local_130 != 0x12);
@@ -1395,29 +1400,29 @@ void entry(void)
   local_14c = local_30;
   iVar4 = 0;
   while( true ) {
-    iVar3 = 5;
     puVar5 = local_14c;
-    puVar6 = (undefined4 *)&stack0xfffffe94;
-    while (iVar3 != 0) {
-      iVar3 = iVar3 + -1;
+    puVar6 = &uStack364;
+    for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
       puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
     }
     iVar3 = FUN_08049330();
     if (iVar3 == 1) break;
-    uStack336 = 0x3f800000;
     iVar4 = iVar4 + 1;
-    uStack340 = 0x3f800000;
-    local_158 = 0;
+    uStack352 = 0x8049e69;
     glRotatef();
+    uStack352 = 0x8049e75;
     glClear();
+    uStack352 = 0x8049e7a;
     glFlush();
+    uStack352 = 0x8049e82;
     FUN_0804993d();
+    uStack352 = 0x8049e87;
     SDL_GL_SwapBuffers();
+    uStack352 = 0x8049e93;
     SDL_Delay();
     if (iVar4 == 0x15e) {
-      uStack336 = 0x8049ea3;
       SDL_Quit();
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();

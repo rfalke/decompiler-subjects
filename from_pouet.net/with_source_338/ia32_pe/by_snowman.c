@@ -1,7 +1,7 @@
 
 struct s0 {
     signed char[88] pad88;
-    int32_t f88;
+    int32_t f58;
 };
 
 void fun_0(void* a1, int32_t a2, int32_t a3, void* a4, int32_t a5);
@@ -77,7 +77,7 @@ void fun_410000(signed char* ecx) {
         *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx35) + 1) = 0x68;
         fun_0(ebx31, v34, 56, ebx31, __return_address());
         fun_1e(ebx31, v34, 56, ebx31, __return_address());
-        v36 = ebx35->f88;
+        v36 = ebx35->f58;
         goto v36;
     }
 }
@@ -190,17 +190,12 @@ void fun_41016e(uint32_t* ecx) {
 
 void fun_4101ad(int32_t a1) {
     int1_t below_or_equal2;
-    int1_t below_or_equal3;
-    uint32_t* esi4;
-    uint32_t* edi5;
-    int32_t* edi6;
-    int32_t* esi7;
+    uint32_t* esi3;
+    uint32_t* edi4;
 
     if (below_or_equal2) {
         __asm__("int 0xc");
-        below_or_equal3 = *esi4 <= *edi5;
-        *edi6 = *esi7;
-        if (below_or_equal3) 
+        if (*esi3 <= *edi4) 
             goto 0x41018f;
         __asm__("lodsd ");
     } else {

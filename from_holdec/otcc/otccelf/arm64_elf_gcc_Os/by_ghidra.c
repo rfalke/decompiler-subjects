@@ -52,7 +52,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[15];
+    char _unused2[56];
 };
 
 struct _IO_marker {
@@ -86,36 +86,36 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType_AARCH64 {
-    SHT_AARCH64_ATTRIBUTES=1879048195,
+    SHT_NULL=0,
+    SHT_PROGBITS=1,
+    SHT_SYMTAB=2,
+    SHT_STRTAB=3,
+    SHT_RELA=4,
+    SHT_HASH=5,
+    SHT_DYNAMIC=6,
+    SHT_NOTE=7,
+    SHT_NOBITS=8,
+    SHT_REL=9,
+    SHT_SHLIB=10,
+    SHT_DYNSYM=11,
+    SHT_INIT_ARRAY=14,
+    SHT_FINI_ARRAY=15,
+    SHT_PREINIT_ARRAY=16,
+    SHT_GROUP=17,
+    SHT_SYMTAB_SHNDX=18,
     SHT_ANDROID_REL=1610612737,
     SHT_ANDROID_RELA=1610612738,
-    SHT_CHECKSUM=1879048184,
-    SHT_DYNAMIC=6,
-    SHT_DYNSYM=11,
-    SHT_FINI_ARRAY=15,
     SHT_GNU_ATTRIBUTES=1879048181,
     SHT_GNU_HASH=1879048182,
     SHT_GNU_LIBLIST=1879048183,
+    SHT_CHECKSUM=1879048184,
+    SHT_SUNW_move=1879048186,
+    SHT_SUNW_COMDAT=1879048187,
+    SHT_SUNW_syminfo=1879048188,
     SHT_GNU_verdef=1879048189,
     SHT_GNU_verneed=1879048190,
     SHT_GNU_versym=1879048191,
-    SHT_GROUP=17,
-    SHT_HASH=5,
-    SHT_INIT_ARRAY=14,
-    SHT_NOBITS=8,
-    SHT_NOTE=7,
-    SHT_NULL=0,
-    SHT_PREINIT_ARRAY=16,
-    SHT_PROGBITS=1,
-    SHT_REL=9,
-    SHT_RELA=4,
-    SHT_SHLIB=10,
-    SHT_STRTAB=3,
-    SHT_SUNW_COMDAT=1879048187,
-    SHT_SUNW_move=1879048186,
-    SHT_SUNW_syminfo=1879048188,
-    SHT_SYMTAB=2,
-    SHT_SYMTAB_SHNDX=18
+    SHT_AARCH64_ATTRIBUTES=1879048195
 } Elf_SectionHeaderType_AARCH64;
 
 struct Elf64_Shdr {
@@ -142,18 +142,18 @@ struct Elf64_Rela {
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
 typedef enum Elf_ProgramHeaderType_AARCH64 {
-    PT_AARCH64_ARCHEXT=1879048192,
-    PT_DYNAMIC=2,
-    PT_GNU_EH_FRAME=1685382480,
-    PT_GNU_RELRO=1685382482,
-    PT_GNU_STACK=1685382481,
-    PT_INTERP=3,
-    PT_LOAD=1,
-    PT_NOTE=4,
     PT_NULL=0,
-    PT_PHDR=6,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
     PT_SHLIB=5,
-    PT_TLS=7
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482,
+    PT_AARCH64_ARCHEXT=1879048192
 } Elf_ProgramHeaderType_AARCH64;
 
 struct Elf64_Phdr {
@@ -170,81 +170,81 @@ struct Elf64_Phdr {
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
+    DT_NULL=0,
+    DT_NEEDED=1,
+    DT_PLTRELSZ=2,
+    DT_PLTGOT=3,
+    DT_HASH=4,
+    DT_STRTAB=5,
+    DT_SYMTAB=6,
+    DT_RELA=7,
+    DT_RELASZ=8,
+    DT_RELAENT=9,
+    DT_STRSZ=10,
+    DT_SYMENT=11,
+    DT_INIT=12,
+    DT_FINI=13,
+    DT_SONAME=14,
+    DT_RPATH=15,
+    DT_SYMBOLIC=16,
+    DT_REL=17,
+    DT_RELSZ=18,
+    DT_RELENT=19,
+    DT_PLTREL=20,
+    DT_DEBUG=21,
+    DT_TEXTREL=22,
+    DT_JMPREL=23,
+    DT_BIND_NOW=24,
+    DT_INIT_ARRAY=25,
+    DT_FINI_ARRAY=26,
+    DT_INIT_ARRAYSZ=27,
+    DT_FINI_ARRAYSZ=28,
+    DT_RUNPATH=29,
+    DT_FLAGS=30,
+    DT_PREINIT_ARRAY=32,
+    DT_PREINIT_ARRAYSZ=33,
+    DT_RELRSZ=35,
+    DT_RELR=36,
+    DT_RELRENT=37,
     DT_ANDROID_REL=1610612751,
+    DT_ANDROID_RELSZ=1610612752,
     DT_ANDROID_RELA=1610612753,
     DT_ANDROID_RELASZ=1610612754,
     DT_ANDROID_RELR=1879040000,
-    DT_ANDROID_RELRENT=1879040003,
     DT_ANDROID_RELRSZ=1879040001,
-    DT_ANDROID_RELSZ=1610612752,
-    DT_AUDIT=1879047932,
-    DT_AUXILIARY=2147483645,
-    DT_BIND_NOW=24,
-    DT_CHECKSUM=1879047672,
-    DT_CONFIG=1879047930,
-    DT_DEBUG=21,
-    DT_DEPAUDIT=1879047931,
-    DT_FEATURE_1=1879047676,
-    DT_FILTER=2147483647,
-    DT_FINI=13,
-    DT_FINI_ARRAY=26,
-    DT_FINI_ARRAYSZ=28,
-    DT_FLAGS=30,
-    DT_FLAGS_1=1879048187,
-    DT_GNU_CONFLICT=1879047928,
-    DT_GNU_CONFLICTSZ=1879047670,
-    DT_GNU_HASH=1879047925,
-    DT_GNU_LIBLIST=1879047929,
-    DT_GNU_LIBLISTSZ=1879047671,
+    DT_ANDROID_RELRENT=1879040003,
     DT_GNU_PRELINKED=1879047669,
-    DT_HASH=4,
-    DT_INIT=12,
-    DT_INIT_ARRAY=25,
-    DT_INIT_ARRAYSZ=27,
-    DT_JMPREL=23,
+    DT_GNU_CONFLICTSZ=1879047670,
+    DT_GNU_LIBLISTSZ=1879047671,
+    DT_CHECKSUM=1879047672,
+    DT_PLTPADSZ=1879047673,
     DT_MOVEENT=1879047674,
     DT_MOVESZ=1879047675,
-    DT_MOVETAB=1879047934,
-    DT_NEEDED=1,
-    DT_NULL=0,
-    DT_PLTGOT=3,
-    DT_PLTPAD=1879047933,
-    DT_PLTPADSZ=1879047673,
-    DT_PLTREL=20,
-    DT_PLTRELSZ=2,
+    DT_FEATURE_1=1879047676,
     DT_POSFLAG_1=1879047677,
-    DT_PREINIT_ARRAY=32,
-    DT_PREINIT_ARRAYSZ=33,
-    DT_REL=17,
-    DT_RELA=7,
-    DT_RELACOUNT=1879048185,
-    DT_RELAENT=9,
-    DT_RELASZ=8,
-    DT_RELCOUNT=1879048186,
-    DT_RELENT=19,
-    DT_RELR=36,
-    DT_RELRENT=37,
-    DT_RELRSZ=35,
-    DT_RELSZ=18,
-    DT_RPATH=15,
-    DT_RUNPATH=29,
-    DT_SONAME=14,
-    DT_STRSZ=10,
-    DT_STRTAB=5,
-    DT_SYMBOLIC=16,
-    DT_SYMENT=11,
-    DT_SYMINENT=1879047679,
-    DT_SYMINFO=1879047935,
     DT_SYMINSZ=1879047678,
-    DT_SYMTAB=6,
-    DT_TEXTREL=22,
-    DT_TLSDESC_GOT=1879047927,
+    DT_SYMINENT=1879047679,
+    DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
+    DT_TLSDESC_GOT=1879047927,
+    DT_GNU_CONFLICT=1879047928,
+    DT_GNU_LIBLIST=1879047929,
+    DT_CONFIG=1879047930,
+    DT_DEPAUDIT=1879047931,
+    DT_AUDIT=1879047932,
+    DT_PLTPAD=1879047933,
+    DT_MOVETAB=1879047934,
+    DT_SYMINFO=1879047935,
+    DT_VERSYM=1879048176,
+    DT_RELACOUNT=1879048185,
+    DT_RELCOUNT=1879048186,
+    DT_FLAGS_1=1879048187,
     DT_VERDEF=1879048188,
     DT_VERDEFNUM=1879048189,
     DT_VERNEED=1879048190,
     DT_VERNEEDNUM=1879048191,
-    DT_VERSYM=1879048176
+    DT_AUXILIARY=2147483645,
+    DT_FILTER=2147483647
 } Elf64_DynTag_AARCH64;
 
 struct Elf64_Dyn_AARCH64 {
@@ -665,7 +665,7 @@ int w(void)
     iVar1 = m;
   }
   else {
-    m = ZEXT14(*(byte *)(long)V);
+    m = (int)*(byte *)(long)V;
     V = V + 1;
     iVar1 = 0x1130a4;
     if (m == 2) {
@@ -687,7 +687,7 @@ int am(void)
   
   iVar1 = m;
   uVar2 = isalnum(m);
-  return (int)(iVar1 == 0x5f | uVar2);
+  return iVar1 == 0x5f | uVar2;
 }
 
 
@@ -855,8 +855,8 @@ int E(int a,int d)
 int ao(int a)
 
 {
-  return (int)((uint)*(byte *)(long)(a + 2) << 0x10 | (uint)*(byte *)(long)(a + 1) << 8 |
-              (uint)*(byte *)(long)a | (uint)*(byte *)(long)(a + 3) << 0x18);
+  return (uint)*(byte *)(long)(a + 2) << 0x10 | (uint)*(byte *)(long)(a + 1) << 8 |
+         (uint)*(byte *)(long)a | (uint)*(byte *)(long)(a + 3) << 0x18;
 }
 
 
@@ -1037,77 +1037,75 @@ int ab(int s)
   if (a == 2) {
     M(iVar2);
   }
-  else {
-    if (iVar1 == 2) {
-      ab(0);
-      x(0xb9,0);
-      if (a == 0x21) {
-        aq(iVar2);
-      }
-      else {
-LAB_00101a4c:
-        aw(iVar2);
-      }
+  else if (iVar1 == 2) {
+    ab(0);
+    x(0xb9,0);
+    if (a == 0x21) {
+      aq(iVar2);
     }
     else {
-      if (a == 0x28) {
-        B();
-      }
-      else {
-        if (a == 0x2a) {
-          av();
-          a = e;
-          av();
-          av();
-          if (e == 0x2a) {
-            av();
-            a = 0;
-            av();
-            av();
-            av();
-          }
-          av();
-          ab(0);
-          if (e == 0x3d) {
-            av();
-            aw(0x50);
-            B();
-            aw(0x59);
-            iVar2 = (a == 0x100) + 0x188;
-            goto LAB_00101a4c;
-          }
-          uVar4 = 1;
-          if (a == 0) goto LAB_00101900;
-          iVar2 = 0x8b;
-          if (a != 0x100) {
-            iVar2 = 0xbe0f;
-          }
-          aw(iVar2);
-          v = v + 1;
-          goto LAB_001018fc;
-        }
-        if (a != 0x26) {
-          uVar4 = (uint)(e == 0x3d) & s;
-          if (uVar4 == 0) {
-            if ((e != 0x28) && (W(8,a), J == 0xb)) {
-              W(0,a);
-              aw(C);
-              av();
-            }
-          }
-          else {
-            av();
-            uVar4 = 0;
-            B();
-            W(6,a);
-          }
-          goto LAB_00101900;
-        }
-        W(10,e);
-      }
-LAB_001018a0:
-      av();
+LAB_00101a4c:
+      aw(iVar2);
     }
+  }
+  else {
+    if (a == 0x28) {
+      B();
+    }
+    else {
+      if (a == 0x2a) {
+        av();
+        a = e;
+        av();
+        av();
+        if (e == 0x2a) {
+          av();
+          a = 0;
+          av();
+          av();
+          av();
+        }
+        av();
+        ab(0);
+        if (e == 0x3d) {
+          av();
+          aw(0x50);
+          B();
+          aw(0x59);
+          iVar2 = (a == 0x100) + 0x188;
+          goto LAB_00101a4c;
+        }
+        uVar4 = 1;
+        if (a == 0) goto LAB_00101900;
+        iVar2 = 0x8b;
+        if (a != 0x100) {
+          iVar2 = 0xbe0f;
+        }
+        aw(iVar2);
+        v = v + 1;
+        goto LAB_001018fc;
+      }
+      if (a != 0x26) {
+        uVar4 = (uint)(e == 0x3d) & s;
+        if (uVar4 == 0) {
+          if ((e != 0x28) && (W(8,a), J == 0xb)) {
+            W(0,a);
+            aw(C);
+            av();
+          }
+        }
+        else {
+          av();
+          uVar4 = 0;
+          B();
+          W(6,a);
+        }
+        goto LAB_00101900;
+      }
+      W(10,e);
+    }
+LAB_001018a0:
+    av();
   }
 LAB_001018fc:
   uVar4 = 1;
@@ -1305,28 +1303,22 @@ int S(int s)
           S(s);
         }
       }
-      else {
-        if (e == 0x1c0) {
-          av();
-          if (e != 0x3b) {
-            B();
-          }
-          piVar2 = &U;
-          iVar1 = I(U);
-          *piVar2 = iVar1;
+      else if (e == 0x1c0) {
+        av();
+        if (e != 0x3b) {
+          B();
         }
-        else {
-          if (e == 400) {
-            av();
-            iVar1 = I(*(int *)(long)s);
-            *(int *)(long)s = iVar1;
-          }
-          else {
-            if (e != 0x3b) {
-              B();
-            }
-          }
-        }
+        piVar2 = &U;
+        iVar1 = I(U);
+        *piVar2 = iVar1;
+      }
+      else if (e == 400) {
+        av();
+        iVar1 = I(*(int *)(long)s);
+        *(int *)(long)s = iVar1;
+      }
+      else if (e != 0x3b) {
+        B();
       }
       iVar1 = av();
       return iVar1;
@@ -1434,34 +1426,30 @@ int ae(int s)
           memcpy((void *)(long)i,(char *)(long)iVar1,(long)(iVar3 - iVar1));
           i = ((iVar3 + i) - iVar1) + 1;
         }
+        else if (s == 1) {
+          ax(iVar9 + 0x16);
+          ax(0);
+          ax(0);
+          ax(0x10);
+          iVar9 = ((iVar3 + iVar9) - iVar1) + 1;
+        }
         else {
-          if (s == 1) {
-            ax(iVar9 + 0x16);
-            ax(0);
-            ax(0);
-            ax(0x10);
-            iVar9 = ((iVar3 + iVar9) - iVar1) + 1;
-          }
-          else {
-            iVar9 = iVar9 + 1;
-            piVar8 = &R;
-            piVar7 = &y;
-            do {
-              ao(iVar5);
-              bVar2 = *(char *)(long)(iVar5 + -1) != '\x05';
-              uVar6 = (uint)bVar2;
-              E(iVar5,(uint)bVar2 * extraout_w11);
-              ax((iVar5 - *extraout_x8) + *piVar8 + *piVar7);
-              ax(uVar6 + extraout_w10 + 1);
-              iVar5 = extraout_w9;
-            } while (extraout_w9 != 0);
-          }
+          iVar9 = iVar9 + 1;
+          piVar8 = &R;
+          piVar7 = &y;
+          do {
+            ao(iVar5);
+            bVar2 = *(char *)(long)(iVar5 + -1) != '\x05';
+            uVar6 = (uint)bVar2;
+            E(iVar5,(uint)bVar2 * extraout_w11);
+            ax((iVar5 - *extraout_x8) + *piVar8 + *piVar7);
+            ax(uVar6 + extraout_w10 + 1);
+            iVar5 = extraout_w9;
+          } while (extraout_w9 != 0);
         }
       }
-      else {
-        if (s == 0) {
-          ap(iVar5,z);
-        }
+      else if (s == 0) {
+        ap(iVar5,z);
       }
     }
   }

@@ -598,14 +598,15 @@ int32_t fun_804864c() {
     copy2_four_times(edi7, esi5, 100);
     copy2_eight_times(edi7, esi5, 100);
     ecx8 = 0xc8;
-    while (ecx8) {
+    do {
+        if (!ecx8) 
+            break;
         --ecx8;
         cf2 = reinterpret_cast<uint1_t>(esi5->f0 < edi7->f0);
         below_or_equal3 = esi5->f0 <= edi7->f0;
-        edi7->f0 = esi5->f0;
         edi7 = reinterpret_cast<struct s2*>(&edi7->pad2);
         esi5 = reinterpret_cast<struct s2*>(&esi5->pad2);
-    }
+    } while (esi5->f0 == edi7->f0);
     return static_cast<int32_t>(reinterpret_cast<signed char>(reinterpret_cast<uint1_t>(!below_or_equal3) - cf2));
 }
 

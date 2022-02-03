@@ -41,12 +41,12 @@ uint32_t g804ab68 = 0;
 
 struct s0 {
     signed char[28] pad28;
-    int32_t f28;
+    int32_t f1c;
 };
 
 struct s1 {
     signed char[24] pad24;
-    int32_t f24;
+    int32_t f18;
 };
 
 struct s2 {
@@ -60,19 +60,19 @@ uint32_t g804ab54 = 0;
 
 struct s3 {
     signed char[12] pad12;
-    int32_t f12;
+    int32_t fc;
 };
 
 void fun_8048891(int32_t ecx);
 
 struct s4 {
     signed char[16] pad16;
-    int32_t f16;
+    int32_t f10;
 };
 
 struct s5 {
     signed char[20] pad20;
-    int32_t f20;
+    int32_t f14;
 };
 
 void fun_80487cb() {
@@ -96,8 +96,8 @@ void fun_80487cb() {
     g804ab60 = 0;
     g804ab64 = 0x10000;
     __asm__("cdq ");
-    g804ab68 = reinterpret_cast<uint32_t>((ebp1->f28 << 16) / 0x29040);
-    eax2 = ebp3->f24;
+    g804ab68 = reinterpret_cast<uint32_t>((ebp1->f1c << 16) / 0x29040);
+    eax2 = ebp3->f18;
     if (!eax2) {
         g804ab48 = 42;
     } else {
@@ -109,11 +109,11 @@ void fun_80487cb() {
     __asm__("cdq ");
     fun_804888c(ecx4);
     g804ab54 = -g804ab54;
-    ecx6 = ebp7->f12;
+    ecx6 = ebp7->fc;
     fun_8048891(ecx6);
-    ecx8 = ebp9->f16;
+    ecx8 = ebp9->f10;
     fun_804888c(ecx8);
-    ecx10 = ebp11->f20;
+    ecx10 = ebp11->f14;
     __asm__("cdq ");
     fun_804888c(ecx10);
     return;
@@ -744,11 +744,11 @@ int32_t dlopen() {
 struct s6 {
     int32_t f0;
     signed char[262136] pad262140;
-    int32_t f262140;
+    int32_t f3fffc;
     signed char[262140] pad524284;
-    uint32_t f524284;
+    uint32_t f7fffc;
     signed char[262140] pad786428;
-    uint32_t f786428;
+    uint32_t fbfffc;
 };
 
 int32_t g804a712 = 0;
@@ -790,9 +790,9 @@ void fun_8048714(int32_t a1) {
         edi5 = reinterpret_cast<struct s6*>(&edi5->pad262140);
         __asm__("cdq ");
         __asm__("cdq ");
-        edi5->f524284 = (ebx6 % reinterpret_cast<uint32_t>(0xa8) << 16) / 0xa8 - 0x8000;
+        edi5->f7fffc = (ebx6 % reinterpret_cast<uint32_t>(0xa8) << 16) / 0xa8 - 0x8000;
         eax10 = fun_804890c();
-        edi5->f786428 = (eax10 & 0xffff) - 0x8000;
+        edi5->fbfffc = (eax10 & 0xffff) - 0x8000;
         __asm__("fld qword [0x804a71e]");
         __asm__("fld st0");
         __asm__("fsin ");
@@ -801,7 +801,7 @@ void fun_8048714(int32_t a1) {
         __asm__("fadd qword [0x804a716]");
         __asm__("fstp qword [0x804a71e]");
         eax11 = g804a712;
-        edi5->f262140 = eax11;
+        edi5->f3fffc = eax11;
         ++ebx6;
         --ecx7;
     } while (ecx7);

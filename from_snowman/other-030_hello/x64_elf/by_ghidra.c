@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
 typedef unsigned int    ImageBaseOffset32;
+typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
@@ -16,6 +17,7 @@ typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
 typedef short    wchar_t;
 typedef unsigned short    word;
+typedef unsigned short    wchar16;
 typedef struct _IMAGE_RUNTIME_FUNCTION_ENTRY _IMAGE_RUNTIME_FUNCTION_ENTRY, *P_IMAGE_RUNTIME_FUNCTION_ENTRY;
 
 struct _IMAGE_RUNTIME_FUNCTION_ENTRY {
@@ -24,210 +26,95 @@ struct _IMAGE_RUNTIME_FUNCTION_ENTRY {
     ImageBaseOffset32 UnwindInfoAddressOrData;
 };
 
-typedef unsigned short    wchar16;
-typedef struct _FILETIME _FILETIME, *P_FILETIME;
+typedef enum VARENUM {
+    VT_EMPTY=0,
+    VT_NULL=1,
+    VT_I2=2,
+    VT_I4=3,
+    VT_R4=4,
+    VT_R8=5,
+    VT_CY=6,
+    VT_DATE=7,
+    VT_BSTR=8,
+    VT_DISPATCH=9,
+    VT_ERROR=10,
+    VT_BOOL=11,
+    VT_VARIANT=12,
+    VT_UNKNOWN=13,
+    VT_DECIMAL=14,
+    VT_I1=16,
+    VT_UI1=17,
+    VT_UI2=18,
+    VT_UI4=19,
+    VT_I8=20,
+    VT_UI8=21,
+    VT_INT=22,
+    VT_UINT=23,
+    VT_VOID=24,
+    VT_HRESULT=25,
+    VT_PTR=26,
+    VT_SAFEARRAY=27,
+    VT_CARRAY=28,
+    VT_USERDEFINED=29,
+    VT_LPSTR=30,
+    VT_LPWSTR=31,
+    VT_RECORD=36,
+    VT_INT_PTR=37,
+    VT_UINT_PTR=38,
+    VT_FILETIME=64,
+    VT_BLOB=65,
+    VT_STREAM=66,
+    VT_STORAGE=67,
+    VT_STREAMED_OBJECT=68,
+    VT_STORED_OBJECT=69,
+    VT_BLOB_OBJECT=70,
+    VT_CF=71,
+    VT_CLSID=72,
+    VT_VERSIONED_STREAM=73,
+    VT_BSTR_BLOB=4095,
+    VT_ILLEGALMASKED=4095,
+    VT_TYPEMASK=4095,
+    VT_VECTOR=4096,
+    VT_ARRAY=8192,
+    VT_BYREF=16384,
+    VT_RESERVED=32768,
+    VT_ILLEGAL=65535
+} VARENUM;
 
-typedef struct _FILETIME * LPFILETIME;
+typedef struct char_traits<char> char_traits<char>, *Pchar_traits<char>;
 
-typedef ulong DWORD;
-
-struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
+struct char_traits<char> {
+    undefined field0_0x0;
 };
 
-typedef ushort WORD;
+typedef char char_type;
 
-typedef uchar BYTE;
+typedef int int_type;
 
-typedef longlong INT_PTR;
-
-typedef INT_PTR (* FARPROC)(void);
-
-typedef struct HINSTANCE__ HINSTANCE__, *PHINSTANCE__;
-
-typedef struct HINSTANCE__ * HINSTANCE;
-
-struct HINSTANCE__ {
-    int unused;
-};
-
-typedef void * LPCVOID;
-
-typedef void * LPVOID;
-
-typedef HINSTANCE HMODULE;
-
-typedef DWORD * PDWORD;
-
-typedef int BOOL;
-
-typedef BYTE * LPBYTE;
-
-typedef uint UINT;
-
-typedef BYTE * PBYTE;
-
-typedef struct IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
-
-struct IMAGE_DATA_DIRECTORY {
-    ImageBaseOffset32 VirtualAddress;
-    dword Size;
-};
-
-typedef struct IMAGE_OPTIONAL_HEADER64 IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
-
-struct IMAGE_OPTIONAL_HEADER64 {
-    word Magic;
-    byte MajorLinkerVersion;
-    byte MinorLinkerVersion;
-    dword SizeOfCode;
-    dword SizeOfInitializedData;
-    dword SizeOfUninitializedData;
-    ImageBaseOffset32 AddressOfEntryPoint;
-    ImageBaseOffset32 BaseOfCode;
-    pointer64 ImageBase;
-    dword SectionAlignment;
-    dword FileAlignment;
-    word MajorOperatingSystemVersion;
-    word MinorOperatingSystemVersion;
-    word MajorImageVersion;
-    word MinorImageVersion;
-    word MajorSubsystemVersion;
-    word MinorSubsystemVersion;
-    dword Win32VersionValue;
-    dword SizeOfImage;
-    dword SizeOfHeaders;
-    dword CheckSum;
-    word Subsystem;
-    word DllCharacteristics;
-    qword SizeOfStackReserve;
-    qword SizeOfStackCommit;
-    qword SizeOfHeapReserve;
-    qword SizeOfHeapCommit;
-    dword LoaderFlags;
-    dword NumberOfRvaAndSizes;
-    struct IMAGE_DATA_DIRECTORY DataDirectory[16];
-};
-
-typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
-
-typedef union Misc Misc, *PMisc;
-
-typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
-} SectionFlags;
-
-union Misc {
-    dword PhysicalAddress;
-    dword VirtualSize;
-};
-
-struct IMAGE_SECTION_HEADER {
-    char Name[8];
-    union Misc Misc;
-    ImageBaseOffset32 VirtualAddress;
-    dword SizeOfRawData;
-    dword PointerToRawData;
-    dword PointerToRelocations;
-    dword PointerToLinenumbers;
-    word NumberOfRelocations;
-    word NumberOfLinenumbers;
-    enum SectionFlags Characteristics;
-};
-
-typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
-
-struct IMAGE_FILE_HEADER {
-    word Machine; // 34404
-    word NumberOfSections;
-    dword TimeDateStamp;
-    dword PointerToSymbolTable;
-    dword NumberOfSymbols;
-    word SizeOfOptionalHeader;
-    word Characteristics;
-};
-
-typedef struct IMAGE_NT_HEADERS64 IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
-
-struct IMAGE_NT_HEADERS64 {
-    char Signature[4];
-    struct IMAGE_FILE_HEADER FileHeader;
-    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
-};
-
-typedef struct IMAGE_THUNK_DATA64 IMAGE_THUNK_DATA64, *PIMAGE_THUNK_DATA64;
-
-struct IMAGE_THUNK_DATA64 {
-    qword StartAddressOfRawData;
-    qword EndAddressOfRawData;
-    qword AddressOfIndex;
-    qword AddressOfCallBacks;
-    dword SizeOfZeroFill;
-    dword Characteristics;
-};
-
-typedef struct _iobuf _iobuf, *P_iobuf;
-
-struct _iobuf {
-    char * _ptr;
-    int _cnt;
-    char * _base;
-    int _flag;
-    int _file;
-    int _charbuf;
-    int _bufsiz;
-    char * _tmpfname;
-};
-
-typedef struct _iobuf FILE;
+typedef wchar_t wctrans_t;
 
 typedef struct _STARTUPINFOA _STARTUPINFOA, *P_STARTUPINFOA;
+
+typedef ulong DWORD;
 
 typedef char CHAR;
 
 typedef CHAR * LPSTR;
 
+typedef ushort WORD;
+
+typedef uchar BYTE;
+
+typedef BYTE * LPBYTE;
+
 typedef void * HANDLE;
 
 struct _STARTUPINFOA {
     DWORD cb;
+    undefined field1_0x4;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
     LPSTR lpReserved;
     LPSTR lpDesktop;
     LPSTR lpTitle;
@@ -241,61 +128,25 @@ struct _STARTUPINFOA {
     DWORD dwFlags;
     WORD wShowWindow;
     WORD cbReserved2;
+    undefined field18_0x44;
+    undefined field19_0x45;
+    undefined field20_0x46;
+    undefined field21_0x47;
     LPBYTE lpReserved2;
     HANDLE hStdInput;
     HANDLE hStdOutput;
     HANDLE hStdError;
 };
 
-typedef struct _RTL_CRITICAL_SECTION _RTL_CRITICAL_SECTION, *P_RTL_CRITICAL_SECTION;
+typedef struct _STARTUPINFOA STARTUPINFOA;
 
-typedef struct _RTL_CRITICAL_SECTION * PRTL_CRITICAL_SECTION;
-
-typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
-
-typedef struct _RTL_CRITICAL_SECTION_DEBUG _RTL_CRITICAL_SECTION_DEBUG, *P_RTL_CRITICAL_SECTION_DEBUG;
-
-typedef struct _RTL_CRITICAL_SECTION_DEBUG * PRTL_CRITICAL_SECTION_DEBUG;
+typedef STARTUPINFOA STARTUPINFO;
 
 typedef long LONG;
 
-typedef ulonglong ULONG_PTR;
-
-typedef struct _LIST_ENTRY _LIST_ENTRY, *P_LIST_ENTRY;
-
-typedef struct _LIST_ENTRY LIST_ENTRY;
-
-struct _RTL_CRITICAL_SECTION {
-    PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
-    LONG LockCount;
-    LONG RecursionCount;
-    HANDLE OwningThread;
-    HANDLE LockSemaphore;
-    ULONG_PTR SpinCount;
-};
-
-struct _LIST_ENTRY {
-    struct _LIST_ENTRY * Flink;
-    struct _LIST_ENTRY * Blink;
-};
-
-struct _RTL_CRITICAL_SECTION_DEBUG {
-    WORD Type;
-    WORD CreatorBackTraceIndex;
-    struct _RTL_CRITICAL_SECTION * CriticalSection;
-    LIST_ENTRY ProcessLocksList;
-    DWORD EntryCount;
-    DWORD ContentionCount;
-    DWORD Flags;
-    WORD CreatorBackTraceIndexHigh;
-    WORD SpareWORD;
-};
-
-typedef struct _STARTUPINFOA * LPSTARTUPINFOA;
-
 typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
 
-typedef LONG (* PTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
+typedef LONG (* LPTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
 
 typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
 
@@ -309,21 +160,21 @@ typedef struct _CONTEXT * PCONTEXT;
 
 typedef void * PVOID;
 
+typedef ulonglong ULONG_PTR;
+
 typedef ulonglong DWORD64;
 
-typedef union _union_52 _union_52, *P_union_52;
+typedef union anon_union.conflicta2d_for_field_38 anon_union.conflicta2d_for_field_38, *Panon_union.conflicta2d_for_field_38;
 
 typedef struct _M128A _M128A, *P_M128A;
 
 typedef struct _M128A M128A;
 
-typedef struct _XSAVE_FORMAT _XSAVE_FORMAT, *P_XSAVE_FORMAT;
+typedef struct _XMM_SAVE_AREA32 _XMM_SAVE_AREA32, *P_XMM_SAVE_AREA32;
 
-typedef struct _XSAVE_FORMAT XSAVE_FORMAT;
+typedef struct _XMM_SAVE_AREA32 XMM_SAVE_AREA32;
 
-typedef XSAVE_FORMAT XMM_SAVE_AREA32;
-
-typedef struct _struct_53 _struct_53, *P_struct_53;
+typedef struct anon_struct.conflict8d8 anon_struct.conflict8d8, *Panon_struct.conflict8d8;
 
 typedef ulonglong ULONGLONG;
 
@@ -334,26 +185,7 @@ struct _M128A {
     LONGLONG High;
 };
 
-struct _XSAVE_FORMAT {
-    WORD ControlWord;
-    WORD StatusWord;
-    BYTE TagWord;
-    BYTE Reserved1;
-    WORD ErrorOpcode;
-    DWORD ErrorOffset;
-    WORD ErrorSelector;
-    WORD Reserved2;
-    DWORD DataOffset;
-    WORD DataSelector;
-    WORD Reserved3;
-    DWORD MxCsr;
-    DWORD MxCsr_Mask;
-    M128A FloatRegisters[8];
-    M128A XmmRegisters[16];
-    BYTE Reserved4[96];
-};
-
-struct _struct_53 {
+struct anon_struct.conflict8d8 {
     M128A Header[2];
     M128A Legacy[8];
     M128A Xmm0;
@@ -374,9 +206,29 @@ struct _struct_53 {
     M128A Xmm15;
 };
 
-union _union_52 {
+struct _XMM_SAVE_AREA32 {
+    WORD ControlWord;
+    WORD StatusWord;
+    BYTE TagWord;
+    BYTE Reserved1;
+    WORD ErrorOpcode;
+    DWORD ErrorOffset;
+    WORD ErrorSelector;
+    WORD Reserved2;
+    DWORD DataOffset;
+    WORD DataSelector;
+    WORD Reserved3;
+    DWORD MxCsr;
+    DWORD MxCsr_Mask;
+    M128A FloatRegisters[8];
+    M128A XmmRegisters[16];
+    BYTE Reserved4[96];
+};
+
+union anon_union.conflicta2d_for_field_38 {
     XMM_SAVE_AREA32 FltSave;
-    struct _struct_53 s;
+    XMM_SAVE_AREA32 FloatSave;
+    struct anon_struct.conflict8d8 field_2;
 };
 
 struct _CONTEXT {
@@ -418,7 +270,7 @@ struct _CONTEXT {
     DWORD64 R14;
     DWORD64 R15;
     DWORD64 Rip;
-    union _union_52 u;
+    union anon_union.conflicta2d_for_field_38 field_38;
     M128A VectorRegister[26];
     DWORD64 VectorControl;
     DWORD64 DebugControl;
@@ -434,6 +286,10 @@ struct _EXCEPTION_RECORD {
     struct _EXCEPTION_RECORD * ExceptionRecord;
     PVOID ExceptionAddress;
     DWORD NumberParameters;
+    undefined field5_0x1c;
+    undefined field6_0x1d;
+    undefined field7_0x1e;
+    undefined field8_0x1f;
     ULONG_PTR ExceptionInformation[15];
 };
 
@@ -442,7 +298,397 @@ struct _EXCEPTION_POINTERS {
     PCONTEXT ContextRecord;
 };
 
-typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
+typedef struct _IMAGE_DOS_HEADER _IMAGE_DOS_HEADER, *P_IMAGE_DOS_HEADER;
+
+struct _IMAGE_DOS_HEADER {
+    WORD e_magic;
+    WORD e_cblp;
+    WORD e_cp;
+    WORD e_crlc;
+    WORD e_cparhdr;
+    WORD e_minalloc;
+    WORD e_maxalloc;
+    WORD e_ss;
+    WORD e_sp;
+    WORD e_csum;
+    WORD e_ip;
+    WORD e_cs;
+    WORD e_lfarlc;
+    WORD e_ovno;
+    WORD e_res[4];
+    WORD e_oemid;
+    WORD e_oeminfo;
+    WORD e_res2[10];
+    LONG e_lfanew;
+};
+
+typedef struct _IMAGE_NT_HEADERS64 _IMAGE_NT_HEADERS64, *P_IMAGE_NT_HEADERS64;
+
+typedef struct _IMAGE_FILE_HEADER _IMAGE_FILE_HEADER, *P_IMAGE_FILE_HEADER;
+
+typedef struct _IMAGE_FILE_HEADER IMAGE_FILE_HEADER;
+
+typedef struct _IMAGE_OPTIONAL_HEADER64 _IMAGE_OPTIONAL_HEADER64, *P_IMAGE_OPTIONAL_HEADER64;
+
+typedef struct _IMAGE_OPTIONAL_HEADER64 IMAGE_OPTIONAL_HEADER64;
+
+typedef struct _IMAGE_DATA_DIRECTORY _IMAGE_DATA_DIRECTORY, *P_IMAGE_DATA_DIRECTORY;
+
+typedef struct _IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY;
+
+struct _IMAGE_FILE_HEADER {
+    WORD Machine;
+    WORD NumberOfSections;
+    DWORD TimeDateStamp;
+    DWORD PointerToSymbolTable;
+    DWORD NumberOfSymbols;
+    WORD SizeOfOptionalHeader;
+    WORD Characteristics;
+};
+
+struct _IMAGE_DATA_DIRECTORY {
+    DWORD VirtualAddress;
+    DWORD Size;
+};
+
+struct _IMAGE_OPTIONAL_HEADER64 {
+    WORD Magic;
+    BYTE MajorLinkerVersion;
+    BYTE MinorLinkerVersion;
+    DWORD SizeOfCode;
+    DWORD SizeOfInitializedData;
+    DWORD SizeOfUninitializedData;
+    DWORD AddressOfEntryPoint;
+    DWORD BaseOfCode;
+    ULONGLONG ImageBase;
+    DWORD SectionAlignment;
+    DWORD FileAlignment;
+    WORD MajorOperatingSystemVersion;
+    WORD MinorOperatingSystemVersion;
+    WORD MajorImageVersion;
+    WORD MinorImageVersion;
+    WORD MajorSubsystemVersion;
+    WORD MinorSubsystemVersion;
+    DWORD Win32VersionValue;
+    DWORD SizeOfImage;
+    DWORD SizeOfHeaders;
+    DWORD CheckSum;
+    WORD Subsystem;
+    WORD DllCharacteristics;
+    ULONGLONG SizeOfStackReserve;
+    ULONGLONG SizeOfStackCommit;
+    ULONGLONG SizeOfHeapReserve;
+    ULONGLONG SizeOfHeapCommit;
+    DWORD LoaderFlags;
+    DWORD NumberOfRvaAndSizes;
+    IMAGE_DATA_DIRECTORY DataDirectory[16];
+};
+
+struct _IMAGE_NT_HEADERS64 {
+    DWORD Signature;
+    IMAGE_FILE_HEADER FileHeader;
+    IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+};
+
+typedef struct _NT_TIB _NT_TIB, *P_NT_TIB;
+
+typedef struct _NT_TIB NT_TIB;
+
+typedef struct _EXCEPTION_REGISTRATION_RECORD _EXCEPTION_REGISTRATION_RECORD, *P_EXCEPTION_REGISTRATION_RECORD;
+
+typedef union anon_union.conflictb15_for_field_4 anon_union.conflictb15_for_field_4, *Panon_union.conflictb15_for_field_4;
+
+union anon_union.conflictb15_for_field_4 {
+    PVOID FiberData;
+    DWORD Version;
+};
+
+struct _NT_TIB {
+    struct _EXCEPTION_REGISTRATION_RECORD * ExceptionList;
+    PVOID StackBase;
+    PVOID StackLimit;
+    PVOID SubSystemTib;
+    union anon_union.conflictb15_for_field_4 field_4;
+    PVOID ArbitraryUserPointer;
+    struct _NT_TIB * Self;
+};
+
+struct _EXCEPTION_REGISTRATION_RECORD {
+};
+
+typedef NT_TIB * PNT_TIB;
+
+typedef struct _IMAGE_DOS_HEADER * PIMAGE_DOS_HEADER;
+
+typedef struct _IMAGE_OPTIONAL_HEADER _IMAGE_OPTIONAL_HEADER, *P_IMAGE_OPTIONAL_HEADER;
+
+typedef struct _IMAGE_OPTIONAL_HEADER * PIMAGE_OPTIONAL_HEADER32;
+
+struct _IMAGE_OPTIONAL_HEADER {
+    WORD Magic;
+    BYTE MajorLinkerVersion;
+    BYTE MinorLinkerVersion;
+    DWORD SizeOfCode;
+    DWORD SizeOfInitializedData;
+    DWORD SizeOfUninitializedData;
+    DWORD AddressOfEntryPoint;
+    DWORD BaseOfCode;
+    DWORD BaseOfData;
+    DWORD ImageBase;
+    DWORD SectionAlignment;
+    DWORD FileAlignment;
+    WORD MajorOperatingSystemVersion;
+    WORD MinorOperatingSystemVersion;
+    WORD MajorImageVersion;
+    WORD MinorImageVersion;
+    WORD MajorSubsystemVersion;
+    WORD MinorSubsystemVersion;
+    DWORD Win32VersionValue;
+    DWORD SizeOfImage;
+    DWORD SizeOfHeaders;
+    DWORD CheckSum;
+    WORD Subsystem;
+    WORD DllCharacteristics;
+    DWORD SizeOfStackReserve;
+    DWORD SizeOfStackCommit;
+    DWORD SizeOfHeapReserve;
+    DWORD SizeOfHeapCommit;
+    DWORD LoaderFlags;
+    DWORD NumberOfRvaAndSizes;
+    IMAGE_DATA_DIRECTORY DataDirectory[16];
+};
+
+typedef struct _IMAGE_NT_HEADERS64 * PIMAGE_NT_HEADERS64;
+
+typedef union anon_union.conflicta2d anon_union.conflicta2d, *Panon_union.conflicta2d;
+
+union anon_union.conflicta2d {
+    XMM_SAVE_AREA32 FltSave;
+    XMM_SAVE_AREA32 FloatSave;
+    struct anon_struct.conflict8d8 field_2;
+};
+
+typedef struct _IMAGE_OPTIONAL_HEADER64 * PIMAGE_OPTIONAL_HEADER64;
+
+typedef union anon_union.conflictb15 anon_union.conflictb15, *Panon_union.conflictb15;
+
+union anon_union.conflictb15 {
+    PVOID FiberData;
+    DWORD Version;
+};
+
+typedef struct _IMAGE_DOS_HEADER IMAGE_DOS_HEADER;
+
+typedef PIMAGE_NT_HEADERS64 PIMAGE_NT_HEADERS;
+
+typedef longlong LONG_PTR;
+
+typedef struct __numeric_traits_integer<long_unsigned_int> __numeric_traits_integer<long_unsigned_int>, *P__numeric_traits_integer<long_unsigned_int>;
+
+struct __numeric_traits_integer<long_unsigned_int> { // Original name: __numeric_traits_integer<long unsigned int>
+    undefined field0_0x0;
+};
+
+typedef struct __numeric_traits_integer<char> __numeric_traits_integer<char>, *P__numeric_traits_integer<char>;
+
+struct __numeric_traits_integer<char> {
+    undefined field0_0x0;
+};
+
+typedef struct __numeric_traits_integer<long_long_int> __numeric_traits_integer<long_long_int>, *P__numeric_traits_integer<long_long_int>;
+
+struct __numeric_traits_integer<long_long_int> { // Original name: __numeric_traits_integer<long long int>
+    undefined field0_0x0;
+};
+
+typedef struct __numeric_traits_integer<short_int> __numeric_traits_integer<short_int>, *P__numeric_traits_integer<short_int>;
+
+struct __numeric_traits_integer<short_int> { // Original name: __numeric_traits_integer<short int>
+    undefined field0_0x0;
+};
+
+typedef struct __numeric_traits_integer<int> __numeric_traits_integer<int>, *P__numeric_traits_integer<int>;
+
+struct __numeric_traits_integer<int> {
+    undefined field0_0x0;
+};
+
+typedef char _TCHAR;
+
+typedef longlong ptrdiff_t;
+
+typedef ulonglong size_t;
+
+typedef int _Atomic_word;
+
+typedef struct Init Init, *PInit;
+
+struct Init {
+    undefined field0_0x0;
+};
+
+typedef char * __gnuc_va_list;
+
+typedef __gnuc_va_list va_list;
+
+typedef struct basic_ostream<char,_std::char_traits<char>_> basic_ostream<char,_std::char_traits<char>_>, *Pbasic_ostream<char,_std::char_traits<char>_>;
+
+typedef struct basic_ostream<char,_std::char_traits<char>_> ostream;
+
+struct basic_ostream<char,_std::char_traits<char>_> { // Original name: basic_ostream<char, std::char_traits<char> >
+};
+
+typedef struct _iobuf _iobuf, *P_iobuf;
+
+struct _iobuf {
+    char * _ptr;
+    int _cnt;
+    undefined field2_0xc;
+    undefined field3_0xd;
+    undefined field4_0xe;
+    undefined field5_0xf;
+    char * _base;
+    int _flag;
+    int _file;
+    int _charbuf;
+    int _bufsiz;
+    char * _tmpfname;
+};
+
+typedef struct _iobuf FILE;
+
+typedef int mbstate_t;
+
+typedef struct tm tm, *Ptm;
+
+struct tm {
+    int tm_sec;
+    int tm_min;
+    int tm_hour;
+    int tm_mday;
+    int tm_mon;
+    int tm_year;
+    int tm_wday;
+    int tm_yday;
+    int tm_isdst;
+};
+
+typedef struct HINSTANCE__ HINSTANCE__, *PHINSTANCE__;
+
+typedef struct HINSTANCE__ * HINSTANCE;
+
+struct HINSTANCE__ {
+    int unused;
+};
+
+typedef int WINBOOL;
+
+typedef struct _TEB _TEB, *P_TEB;
+
+struct _TEB {
+};
+
+typedef struct ios_base ios_base, *Pios_base;
+
+struct ios_base {
+};
+
+typedef enum __enative_startup_state {
+    __uninitialized=0,
+    __initializing=1,
+    __initialized=2
+} __enative_startup_state;
+
+typedef struct _startupinfo _startupinfo, *P_startupinfo;
+
+struct _startupinfo {
+    int newmode;
+};
+
+typedef ushort wint_t;
+
+
+// WARNING! conflicting data type names: /DWARF/_mingw.h/wchar_t - /wchar_t
+
+typedef ulonglong uintptr_t;
+
+typedef ushort wctype_t;
+
+typedef struct lconv lconv, *Plconv;
+
+struct lconv {
+    char * decimal_point;
+    char * thousands_sep;
+    char * grouping;
+    char * int_curr_symbol;
+    char * currency_symbol;
+    char * mon_decimal_point;
+    char * mon_thousands_sep;
+    char * mon_grouping;
+    char * positive_sign;
+    char * negative_sign;
+    char int_frac_digits;
+    char frac_digits;
+    char p_cs_precedes;
+    char p_sep_by_space;
+    char n_cs_precedes;
+    char n_sep_by_space;
+    char p_sign_posn;
+    char n_sign_posn;
+};
+
+
+// WARNING! conflicting data type names: /winbase.h/_STARTUPINFOA - /DWARF/winbase.h/_STARTUPINFOA
+
+typedef struct _RTL_CRITICAL_SECTION _RTL_CRITICAL_SECTION, *P_RTL_CRITICAL_SECTION;
+
+typedef struct _RTL_CRITICAL_SECTION * PRTL_CRITICAL_SECTION;
+
+typedef PRTL_CRITICAL_SECTION LPCRITICAL_SECTION;
+
+typedef struct _RTL_CRITICAL_SECTION_DEBUG _RTL_CRITICAL_SECTION_DEBUG, *P_RTL_CRITICAL_SECTION_DEBUG;
+
+typedef struct _RTL_CRITICAL_SECTION_DEBUG * PRTL_CRITICAL_SECTION_DEBUG;
+
+typedef struct _LIST_ENTRY _LIST_ENTRY, *P_LIST_ENTRY;
+
+typedef struct _LIST_ENTRY LIST_ENTRY;
+
+struct _RTL_CRITICAL_SECTION {
+    PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
+    LONG LockCount;
+    LONG RecursionCount;
+    HANDLE OwningThread;
+    HANDLE LockSemaphore;
+    ULONG_PTR SpinCount;
+};
+
+struct _LIST_ENTRY {
+    struct _LIST_ENTRY * Flink;
+    struct _LIST_ENTRY * Blink;
+};
+
+struct _RTL_CRITICAL_SECTION_DEBUG {
+    WORD Type;
+    WORD CreatorBackTraceIndex;
+    struct _RTL_CRITICAL_SECTION * CriticalSection;
+    LIST_ENTRY ProcessLocksList;
+    DWORD EntryCount;
+    DWORD ContentionCount;
+    DWORD Flags;
+    WORD CreatorBackTraceIndexHigh;
+    WORD SpareWORD;
+};
+
+typedef struct _STARTUPINFOA * LPSTARTUPINFOA;
+
+
+// WARNING! conflicting data type names: /excpt.h/_EXCEPTION_POINTERS - /DWARF/winnt.h/_EXCEPTION_POINTERS
+
+typedef LONG (* PTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
+
+
+// WARNING! conflicting data type names: /winbase.h/LPTOP_LEVEL_EXCEPTION_FILTER - /DWARF/winbase.h/LPTOP_LEVEL_EXCEPTION_FILTER
 
 typedef struct _MEMORY_BASIC_INFORMATION _MEMORY_BASIC_INFORMATION, *P_MEMORY_BASIC_INFORMATION;
 
@@ -457,6 +703,12 @@ struct _MEMORY_BASIC_INFORMATION {
     DWORD Protect;
     DWORD Type;
 };
+
+
+// WARNING! conflicting data type names: /winnt.h/PEXCEPTION_RECORD - /DWARF/winnt.h/PEXCEPTION_RECORD
+
+
+// WARNING! conflicting data type names: /winnt.h/_M128A - /DWARF/winnt.h/_M128A
 
 typedef union _LARGE_INTEGER _LARGE_INTEGER, *P_LARGE_INTEGER;
 
@@ -481,6 +733,56 @@ union _LARGE_INTEGER {
 };
 
 typedef union _LARGE_INTEGER LARGE_INTEGER;
+
+typedef struct _XSAVE_FORMAT _XSAVE_FORMAT, *P_XSAVE_FORMAT;
+
+
+// WARNING! conflicting data type names: /winnt.h/M128A - /DWARF/winnt.h/M128A
+
+struct _XSAVE_FORMAT {
+    WORD ControlWord;
+    WORD StatusWord;
+    BYTE TagWord;
+    BYTE Reserved1;
+    WORD ErrorOpcode;
+    DWORD ErrorOffset;
+    WORD ErrorSelector;
+    WORD Reserved2;
+    DWORD DataOffset;
+    WORD DataSelector;
+    WORD Reserved3;
+    DWORD MxCsr;
+    DWORD MxCsr_Mask;
+    M128A FloatRegisters[8];
+    M128A XmmRegisters[16];
+    BYTE Reserved4[96];
+};
+
+typedef struct _struct_53 _struct_53, *P_struct_53;
+
+struct _struct_53 {
+    M128A Header[2];
+    M128A Legacy[8];
+    M128A Xmm0;
+    M128A Xmm1;
+    M128A Xmm2;
+    M128A Xmm3;
+    M128A Xmm4;
+    M128A Xmm5;
+    M128A Xmm6;
+    M128A Xmm7;
+    M128A Xmm8;
+    M128A Xmm9;
+    M128A Xmm10;
+    M128A Xmm11;
+    M128A Xmm12;
+    M128A Xmm13;
+    M128A Xmm14;
+    M128A Xmm15;
+};
+
+
+// WARNING! conflicting data type names: /winnt.h/XMM_SAVE_AREA32 - /DWARF/winnt.h/XMM_SAVE_AREA32
 
 typedef struct _RUNTIME_FUNCTION _RUNTIME_FUNCTION, *P_RUNTIME_FUNCTION;
 
@@ -515,13 +817,19 @@ struct _IMAGE_SECTION_HEADER {
 typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
 
 typedef enum _EXCEPTION_DISPOSITION {
-    ExceptionCollidedUnwind=3,
     ExceptionContinueExecution=0,
     ExceptionContinueSearch=1,
-    ExceptionNestedException=2
+    ExceptionNestedException=2,
+    ExceptionCollidedUnwind=3
 } _EXCEPTION_DISPOSITION;
 
 typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
+
+
+// WARNING! conflicting data type names: /excpt.h/_EXCEPTION_RECORD - /DWARF/winnt.h/_EXCEPTION_RECORD
+
+
+// WARNING! conflicting data type names: /excpt.h/_CONTEXT - /DWARF/winnt.h/_CONTEXT
 
 typedef EXCEPTION_DISPOSITION (EXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, PVOID, struct _CONTEXT *, PVOID);
 
@@ -621,6 +929,21 @@ union _union_59 {
     struct _struct_60 s;
 };
 
+typedef struct _XSAVE_FORMAT XSAVE_FORMAT;
+
+typedef union _union_52 _union_52, *P_union_52;
+
+union _union_52 {
+    XMM_SAVE_AREA32 FltSave;
+    struct _struct_53 s;
+};
+
+
+// WARNING! conflicting data type names: /winnt.h/LPSTR - /DWARF/winnt.h/LPSTR
+
+
+// WARNING! conflicting data type names: /winnt.h/PCONTEXT - /DWARF/winnt.h/PCONTEXT
+
 typedef struct _KNONVOLATILE_CONTEXT_POINTERS _KNONVOLATILE_CONTEXT_POINTERS, *P_KNONVOLATILE_CONTEXT_POINTERS;
 
 typedef struct _KNONVOLATILE_CONTEXT_POINTERS * PKNONVOLATILE_CONTEXT_POINTERS;
@@ -632,43 +955,203 @@ struct _KNONVOLATILE_CONTEXT_POINTERS {
 
 typedef EXCEPTION_ROUTINE * PEXCEPTION_ROUTINE;
 
-typedef char * va_list;
 
-typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+// WARNING! conflicting data type names: /winnt.h/EXCEPTION_RECORD - /DWARF/winnt.h/EXCEPTION_RECORD
 
-struct IMAGE_DOS_HEADER {
-    char e_magic[2]; // Magic number
-    word e_cblp; // Bytes of last page
-    word e_cp; // Pages in file
-    word e_crlc; // Relocations
-    word e_cparhdr; // Size of header in paragraphs
-    word e_minalloc; // Minimum extra paragraphs needed
-    word e_maxalloc; // Maximum extra paragraphs needed
-    word e_ss; // Initial (relative) SS value
-    word e_sp; // Initial SP value
-    word e_csum; // Checksum
-    word e_ip; // Initial IP value
-    word e_cs; // Initial (relative) CS value
-    word e_lfarlc; // File address of relocation table
-    word e_ovno; // Overlay number
-    word e_res[4][4]; // Reserved words
-    word e_oemid; // OEM identifier (for e_oeminfo)
-    word e_oeminfo; // OEM information; e_oemid specific
-    word e_res2[10][10]; // Reserved words
-    dword e_lfanew; // File address of new exe header
-    byte e_program[64]; // Actual DOS program
-};
+
+// WARNING! conflicting data type names: /DOS/IMAGE_DOS_HEADER - /DWARF/winnt.h/IMAGE_DOS_HEADER
+
+typedef longlong INT_PTR;
 
 typedef ULONG_PTR DWORD_PTR;
 
+typedef struct _FILETIME _FILETIME, *P_FILETIME;
+
+typedef struct _FILETIME * LPFILETIME;
+
+struct _FILETIME {
+    DWORD dwLowDateTime;
+    DWORD dwHighDateTime;
+};
+
+typedef INT_PTR (* FARPROC)(void);
+
+
+// WARNING! conflicting data type names: /WinDef.h/HINSTANCE - /DWARF/windef.h/HINSTANCE
+
+typedef void * LPCVOID;
+
+typedef void * LPVOID;
+
+typedef HINSTANCE HMODULE;
+
+
+// WARNING! conflicting data type names: /WinDef.h/HINSTANCE__ - /DWARF/windef.h/HINSTANCE__
+
+typedef DWORD * PDWORD;
+
+typedef int BOOL;
+
+
+// WARNING! conflicting data type names: /WinDef.h/LPBYTE - /DWARF/windef.h/LPBYTE
+
+typedef uint UINT;
+
+typedef BYTE * PBYTE;
+
+
+// WARNING! conflicting data type names: /PE/IMAGE_DATA_DIRECTORY - /DWARF/winnt.h/IMAGE_DATA_DIRECTORY
+
+
+// WARNING! conflicting data type names: /PE/IMAGE_OPTIONAL_HEADER64 - /DWARF/winnt.h/IMAGE_OPTIONAL_HEADER64
+
+typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
+
+typedef union Misc Misc, *PMisc;
+
+typedef enum SectionFlags {
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
+} SectionFlags;
+
+union Misc {
+    dword PhysicalAddress;
+    dword VirtualSize;
+};
+
+struct IMAGE_SECTION_HEADER {
+    char Name[8];
+    union Misc Misc;
+    ImageBaseOffset32 VirtualAddress;
+    dword SizeOfRawData;
+    dword PointerToRawData;
+    dword PointerToRelocations;
+    dword PointerToLinenumbers;
+    word NumberOfRelocations;
+    word NumberOfLinenumbers;
+    enum SectionFlags Characteristics;
+};
+
+
+// WARNING! conflicting data type names: /PE/IMAGE_FILE_HEADER - /DWARF/winnt.h/IMAGE_FILE_HEADER
+
+typedef struct IMAGE_NT_HEADERS64 IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
+
+struct IMAGE_NT_HEADERS64 {
+    char Signature[4];
+    struct IMAGE_FILE_HEADER FileHeader;
+    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+};
+
+typedef struct IMAGE_THUNK_DATA64 IMAGE_THUNK_DATA64, *PIMAGE_THUNK_DATA64;
+
+struct IMAGE_THUNK_DATA64 {
+    qword StartAddressOfRawData;
+    qword EndAddressOfRawData;
+    qword AddressOfIndex;
+    qword AddressOfCallBacks;
+    dword SizeOfZeroFill;
+    dword Characteristics;
+};
+
+
+// WARNING! conflicting data type names: /mbstring.h/_iobuf - /DWARF/wchar.h/_iobuf
+
+
+// WARNING! conflicting data type names: /mbstring.h/FILE - /DWARF/wchar.h/FILE
+
+
+// WARNING! conflicting data type names: /vadefs.h/va_list - /DWARF/vadefs.h/va_list
+
 typedef int (* _onexit_t)(void);
 
-typedef ulonglong size_t;
 
 
 
+void __mingw_invalidParameterHandler
+               (wchar_t *expression,wchar_t *function,wchar_t *file,uint line,uintptr_t pReserved)
 
+{
+  return;
+}
+
+
+
+void pre_cpp_init(void)
+
+{
+  startinfo = _newmode;
+  argret = __getmainargs(&argc,&argv,&envp,_dowildcard,&startinfo);
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00401163)
+// WARNING: Removing unreachable block (ram,0x0040116d)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined8 pre_c_init(void)
+
+{
+  _mingw_initltsdrot_force = 1;
+  _mingw_initltsdyn_force = 1;
+  _mingw_initltssuo_force = 1;
+  _mingw_initcharmax = 1;
+  managedapp = 0;
+  if (mingw_app_type == 0) {
+    __set_app_type(1);
+  }
+  else {
+    __set_app_type(2);
+  }
+  __onexitbegin = _encode_pointer(0xffffffffffffffff);
+  __onexitend = __onexitbegin;
+  *(undefined4 *)_fmode_exref = _fmode;
+  _setargv();
+  if (__MINGW_INSTALL_DEBUG_MATHERR != 1) {
+    return 0;
+  }
+  __mingw_setusermatherr(&_matherr);
+  return 0;
+}
+
+
 
 int __tmainCRTStartup(undefined8 param_1,undefined8 param_2,ulonglong param_3,PDWORD param_4)
 
@@ -747,7 +1230,7 @@ LAB_00401213:
       _initterm();
     }
     else {
-      DAT_00407000 = 1;
+      has_cctor = 1;
     }
   }
   if (__native_startup_state == 1) {
@@ -779,19 +1262,17 @@ LAB_00401213:
   iVar6 = argc;
   if (mingw_app_type != 0) {
     bVar14 = false;
-    ___mingw_winmain_lpCmdLine = *(char **)_acmdln_exref;
+    __mingw_winmain_lpCmdLine = *(_TCHAR **)_acmdln_exref;
     do {
-      cVar2 = *___mingw_winmain_lpCmdLine;
+      cVar2 = *__mingw_winmain_lpCmdLine;
       if (cVar2 < '!') {
         if (cVar2 == '\0') goto LAB_004012f4;
         if (!bVar14) goto LAB_004012e8;
       }
-      else {
-        if (cVar2 == '\"') {
-          bVar14 = (bool)(bVar14 ^ 1);
-        }
+      else if (cVar2 == '\"') {
+        bVar14 = (bool)(bVar14 ^ 1);
       }
-      ___mingw_winmain_lpCmdLine = ___mingw_winmain_lpCmdLine + 1;
+      __mingw_winmain_lpCmdLine = __mingw_winmain_lpCmdLine + 1;
     } while( true );
   }
 LAB_0040131f:
@@ -802,7 +1283,7 @@ LAB_0040131f:
     lVar13 = 0;
     do {
       sVar10 = strlen(ppcVar7[lVar13]);
-      sVar10 = SEXT48((int)sVar10 + 1);
+      sVar10 = (size_t)((int)sVar10 + 1);
       _Dst = (char *)malloc(sVar10);
       ppcVar9[lVar13] = _Dst;
       ppcVar1 = ppcVar7 + lVar13;
@@ -818,36 +1299,59 @@ LAB_0040131f:
   *(char ***)__initenv_exref = envp;
   mainret = main(iVar6,argv,envp);
   if (managedapp != 0) {
-    if (DAT_00407000 == 0) {
+    if (has_cctor == 0) {
       _cexit();
     }
     return mainret;
   }
                     // WARNING: Subroutine does not return
   exit(mainret);
-  while (*___mingw_winmain_lpCmdLine != '\0') {
+  while (*__mingw_winmain_lpCmdLine != '\0') {
 LAB_004012e8:
-    ___mingw_winmain_lpCmdLine = ___mingw_winmain_lpCmdLine + 1;
-    if (' ' < *___mingw_winmain_lpCmdLine) break;
+    __mingw_winmain_lpCmdLine = __mingw_winmain_lpCmdLine + 1;
+    if (' ' < *__mingw_winmain_lpCmdLine) break;
   }
 LAB_004012f4:
-  ___mingw_winmain_nShowCmd = 10;
-  ___mingw_winmain_hInstance = 0x400000;
+  __mingw_winmain_nShowCmd = 10;
+  __mingw_winmain_hInstance = (HINSTANCE)&IMAGE_DOS_HEADER_00400000;
   if ((local_98[60] & 1) != 0) {
-    ___mingw_winmain_nShowCmd = (uint)local_58;
+    __mingw_winmain_nShowCmd = (DWORD)local_58;
   }
   goto LAB_0040131f;
 }
 
 
 
-void mainCRTStartup(undefined8 param_1,undefined8 param_2,ulonglong param_3,PDWORD param_4)
+int WinMainCRTStartup(void)
 
 {
+  int iVar1;
+  undefined8 in_RCX;
+  undefined8 in_RDX;
+  ulonglong in_R8;
+  PDWORD in_R9;
+  
+  mingw_app_type = 1;
+  __security_init_cookie();
+  iVar1 = __tmainCRTStartup(in_RCX,in_RDX,in_R8,in_R9);
+  return iVar1;
+}
+
+
+
+int mainCRTStartup(void)
+
+{
+  int iVar1;
+  undefined8 in_RCX;
+  undefined8 in_RDX;
+  ulonglong in_R8;
+  PDWORD in_R9;
+  
   mingw_app_type = 0;
   __security_init_cookie();
-  __tmainCRTStartup(param_1,param_2,param_3,param_4);
-  return;
+  iVar1 = __tmainCRTStartup(in_RCX,in_RDX,in_R8,in_R9);
+  return iVar1;
 }
 
 
@@ -865,13 +1369,31 @@ int main(int _Argc,char **_Argv,char **_Env)
 
 
 
-void _Z41__static_initialization_and_destruction_0ii(int param_1,int param_2)
+void __tcf_0(void)
 
 {
-  if ((param_1 == 1) && (param_2 == 0xffff)) {
-    _ZNSt8ios_base4InitC1Ev(&_ZStL8__ioinit);
-    atexit(&__tcf_0);
+  _ZNSt8ios_base4InitD1Ev(&std::__ioinit);
+  return;
+}
+
+
+
+void __static_initialization_and_destruction_0(int __initialize_p,int __priority)
+
+{
+  if ((__initialize_p == 1) && (__priority == 0xffff)) {
+    _ZNSt8ios_base4InitC1Ev(&std::__ioinit);
+    atexit(__tcf_0);
   }
+  return;
+}
+
+
+
+void _GLOBAL__sub_I_main(void)
+
+{
+  __static_initialization_and_destruction_0(1,0xffff);
   return;
 }
 
@@ -999,7 +1521,7 @@ int atexit(void *param_1)
   _onexit_t p_Var1;
   
   p_Var1 = mingw_onexit((_onexit_t)param_1);
-  return (int)-(uint)(p_Var1 == (_onexit_t)0x0);
+  return -(uint)(p_Var1 == (_onexit_t)0x0);
 }
 
 
@@ -1172,8 +1694,7 @@ void __write_memory(void *param_1,void *param_2,size_t param_3,undefined8 param_
   *puVar7 = 0;
   lVar1 = _GetPEImageBase();
   *(ulonglong *)(puVar7 + 2) = lVar1 + (ulonglong)p_Var2->VirtualAddress;
-  SVar3 = VirtualQuery(*(LPCVOID *)(the_secs + 8 + lVar6),(PMEMORY_BASIC_INFORMATION)&local_68,0x30)
-  ;
+  SVar3 = VirtualQuery(*(LPCVOID *)(the_secs + 8 + lVar6),&local_68,0x30);
   if (SVar3 == 0) {
                     // WARNING: Subroutine does not return
     __report_error("  VirtualQuery failed for %d bytes at address %p",(ulonglong)(uint)p_Var2->Misc,
@@ -1190,6 +1711,7 @@ LAB_00401ee0:
 
 
 
+// WARNING: Function: ___chkstk_ms replaced with injection: alloca_probe
 // WARNING: Removing unreachable block (ram,0x004020c4)
 // WARNING: Removing unreachable block (ram,0x004020d0)
 // WARNING: Removing unreachable block (ram,0x004020dc)
@@ -1205,132 +1727,128 @@ void _pei386_runtime_relocator
   DWORD flNewProtect;
   uint uVar1;
   LPCVOID lpAddress;
-  undefined8 uVar2;
-  longlong lVar3;
+  longlong lVar2;
   LPVOID lpAddress_00;
   SIZE_T dwSize;
-  uint uVar4;
-  ulonglong uVar5;
-  SIZE_T SVar6;
-  longlong *plVar7;
-  PDWORD *ppDVar8;
-  longlong lVar9;
-  uint *puVar10;
-  int iVar11;
+  uint uVar3;
+  undefined8 uVar4;
+  SIZE_T SVar5;
+  longlong *plVar6;
+  PDWORD *ppDVar7;
+  longlong lVar8;
+  uint *puVar9;
+  int iVar10;
+  ulonglong uVar11;
   PDWORD lpflOldProtect;
-  undefined8 auStack144 [5];
+  undefined8 auStack152 [5];
+  undefined auStack112 [8];
   _MEMORY_BASIC_INFORMATION local_68;
   PDWORD local_38;
   DWORD local_2c;
   
   if (was_init_61499 == 0) {
     was_init_61499 = 1;
-    auStack144[0] = 0x401f93;
-    __mingw_GetSectionCount();
-    auStack144[0] = 0x401faa;
-    uVar5 = ___chkstk_ms();
+    auStack152[1] = 0x401f93;
+    uVar4 = __mingw_GetSectionCount();
+    auStack152[1] = 0x401faa;
     maxSections = 0;
-    lVar3 = -uVar5;
-    the_secs = (longlong)&local_68 + lVar3;
-    puVar10 = &DAT_00404294;
+    lVar2 = -((longlong)(int)uVar4 * 0x18 + 0x1eU & 0xfffffffffffffff0);
+    the_secs = auStack112 + lVar2;
+    puVar9 = &DAT_00404294;
     do {
-      uVar1 = puVar10[2];
-      uVar4 = uVar1 & 0xff;
-      ppDVar8 = (PDWORD *)((ulonglong)*puVar10 + 0x400000);
-      plVar7 = (longlong *)((ulonglong)puVar10[1] + 0x400000);
-      lpflOldProtect = *ppDVar8;
-      if (uVar4 == 0x10) {
-        uVar5 = (ulonglong)*(ushort *)plVar7;
-        if ((*(ushort *)plVar7 & 0x8000) == 0) {
+      uVar1 = puVar9[2];
+      uVar3 = uVar1 & 0xff;
+      ppDVar7 = (PDWORD *)((ulonglong)*puVar9 + 0x400000);
+      plVar6 = (longlong *)((ulonglong)puVar9[1] + 0x400000);
+      lpflOldProtect = *ppDVar7;
+      if (uVar3 == 0x10) {
+        uVar11 = (ulonglong)*(ushort *)plVar6;
+        if ((*(ushort *)plVar6 & 0x8000) == 0) {
 LAB_004021b5:
-          lpflOldProtect = (PDWORD)((longlong)lpflOldProtect + (uVar5 - (longlong)ppDVar8));
+          lpflOldProtect = (PDWORD)((longlong)lpflOldProtect + (uVar11 - (longlong)ppDVar7));
           local_38 = lpflOldProtect;
-          if (uVar4 != 0x10) {
-            if (uVar4 < 0x11) {
-              if (uVar4 == 8) goto LAB_004021cb;
+          if (uVar3 != 0x10) {
+            if (uVar3 < 0x11) {
+              if (uVar3 == 8) goto LAB_004021cb;
             }
             else {
-              if (uVar4 == 0x20) goto LAB_004021f5;
-              if (uVar4 == 0x40) goto LAB_00402169;
+              if (uVar3 == 0x20) goto LAB_004021f5;
+              if (uVar3 == 0x40) goto LAB_00402169;
             }
             goto LAB_00402178;
           }
         }
         else {
-          local_38 = (PDWORD)(((uVar5 | 0xffffffffffff0000) - (longlong)ppDVar8) +
+          local_38 = (PDWORD)(((uVar11 | 0xffffffffffff0000) - (longlong)ppDVar7) +
                              (longlong)lpflOldProtect);
         }
-        *(undefined8 *)((longlong)auStack144 + lVar3) = 0x4021b3;
-        __write_memory(plVar7,&local_38,2,lpflOldProtect);
+        *(undefined8 *)((longlong)auStack152 + lVar2) = 0x4021b3;
+        __write_memory(plVar6,&local_38,2,lpflOldProtect);
+      }
+      else if (uVar3 < 0x11) {
+        if (uVar3 != 8) {
+LAB_00402139:
+          local_38 = (PDWORD)0x0;
+                    // WARNING: Subroutine does not return
+          *(undefined8 *)((longlong)auStack152 + lVar2) = 0x402151;
+          __report_error("  Unknown pseudo relocation bit size %d.\n",(ulonglong)(uVar1 & 0xff),
+                         (ulonglong)uVar1,lpflOldProtect);
+        }
+        uVar11 = (ulonglong)*(byte *)plVar6;
+        if ((*(byte *)plVar6 & 0x80) == 0) goto LAB_004021b5;
+        local_38 = (PDWORD)(((uVar11 | 0xffffffffffffff00) - (longlong)ppDVar7) +
+                           (longlong)lpflOldProtect);
+LAB_004021cb:
+        *(undefined8 *)((longlong)auStack152 + lVar2) = 0x4021da;
+        __write_memory(plVar6,&local_38,1,lpflOldProtect);
+      }
+      else if (uVar3 == 0x20) {
+        uVar11 = (ulonglong)*(uint *)plVar6;
+        if ((*(uint *)plVar6 & 0x80000000) == 0) goto LAB_004021b5;
+        local_38 = (PDWORD)(((uVar11 | 0xffffffff00000000) - (longlong)ppDVar7) +
+                           (longlong)lpflOldProtect);
+LAB_004021f5:
+        *(undefined8 *)((longlong)auStack152 + lVar2) = 0x402204;
+        __write_memory(plVar6,&local_38,4,lpflOldProtect);
       }
       else {
-        if (uVar4 < 0x11) {
-          if (uVar4 != 8) {
-LAB_00402139:
-            local_38 = (PDWORD)0x0;
-                    // WARNING: Subroutine does not return
-            *(undefined8 *)((longlong)auStack144 + lVar3) = 0x402151;
-            __report_error("  Unknown pseudo relocation bit size %d.\n",(ulonglong)(uVar1 & 0xff),
-                           (ulonglong)uVar1,lpflOldProtect);
-          }
-          uVar5 = (ulonglong)*(byte *)plVar7;
-          if ((*(byte *)plVar7 & 0x80) == 0) goto LAB_004021b5;
-          local_38 = (PDWORD)(((uVar5 | 0xffffffffffffff00) - (longlong)ppDVar8) +
-                             (longlong)lpflOldProtect);
-LAB_004021cb:
-          *(undefined8 *)((longlong)auStack144 + lVar3) = 0x4021da;
-          __write_memory(plVar7,&local_38,1,lpflOldProtect);
-        }
-        else {
-          if (uVar4 == 0x20) {
-            uVar5 = (ulonglong)*(uint *)plVar7;
-            if ((*(uint *)plVar7 & 0x80000000) == 0) goto LAB_004021b5;
-            local_38 = (PDWORD)(((uVar5 | 0xffffffff00000000) - (longlong)ppDVar8) +
-                               (longlong)lpflOldProtect);
-LAB_004021f5:
-            *(undefined8 *)((longlong)auStack144 + lVar3) = 0x402204;
-            __write_memory(plVar7,&local_38,4,lpflOldProtect);
-          }
-          else {
-            if (uVar4 != 0x40) goto LAB_00402139;
-            lpflOldProtect = (PDWORD)((longlong)lpflOldProtect + (*plVar7 - (longlong)ppDVar8));
-            local_38 = lpflOldProtect;
+        if (uVar3 != 0x40) goto LAB_00402139;
+        lpflOldProtect = (PDWORD)((longlong)lpflOldProtect + (*plVar6 - (longlong)ppDVar7));
+        local_38 = lpflOldProtect;
 LAB_00402169:
-            local_38 = lpflOldProtect;
-            *(undefined8 *)((longlong)auStack144 + lVar3) = 0x402178;
-            __write_memory(plVar7,&local_38,8,lpflOldProtect);
-          }
-        }
+        local_38 = lpflOldProtect;
+        *(undefined8 *)((longlong)auStack152 + lVar2) = 0x402178;
+        __write_memory(plVar6,&local_38,8,lpflOldProtect);
       }
 LAB_00402178:
-      puVar10 = puVar10 + 3;
-    } while (puVar10 < &__rt_psrelocs_end);
+      puVar9 = puVar9 + 3;
+    } while (puVar9 < &__rt_psrelocs_end);
     if (0 < maxSections) {
-      lVar9 = 0;
-      iVar11 = 0;
+      lVar8 = 0;
+      iVar10 = 0;
       do {
-        if (*(int *)(lVar9 + the_secs) != 0) {
-          lpAddress = *(LPCVOID *)((int *)(lVar9 + the_secs) + 2);
-          *(undefined8 *)((longlong)auStack144 + lVar3) = 0x402094;
-          SVar6 = VirtualQuery(lpAddress,(PMEMORY_BASIC_INFORMATION)&local_68,0x30);
+        if (*(int *)(the_secs + lVar8) != 0) {
+          lpAddress = *(LPCVOID *)((longlong)(the_secs + lVar8) + 8);
+          *(undefined8 *)((longlong)auStack152 + lVar2) = 0x402094;
+          SVar5 = VirtualQuery(lpAddress,&local_68,0x30);
           dwSize = local_68.RegionSize;
           lpAddress_00 = local_68.BaseAddress;
-          if (SVar6 == 0) {
-            uVar2 = *(undefined8 *)(lVar9 + the_secs + 8);
-            uVar1 = *(uint *)(*(longlong *)(lVar9 + the_secs + 0x10) + 8);
+          if (SVar5 == 0) {
+            uVar4 = *(undefined8 *)(the_secs + lVar8 + 8);
+            uVar1 = *(uint *)(*(longlong *)(the_secs + lVar8 + 0x10) + 8);
                     // WARNING: Subroutine does not return
-            *(undefined8 *)((longlong)auStack144 + lVar3) = 0x402257;
-            __report_error("  VirtualQuery failed for %d bytes at address %p",(ulonglong)uVar1,uVar2
+            *(undefined8 *)((longlong)auStack152 + lVar2) = 0x402257;
+            __report_error("  VirtualQuery failed for %d bytes at address %p",(ulonglong)uVar1,uVar4
                            ,lpflOldProtect);
           }
           lpflOldProtect = &local_2c;
-          flNewProtect = *(DWORD *)(the_secs + lVar9);
-          *(undefined8 *)((longlong)auStack144 + lVar3) = 0x4020b6;
+          flNewProtect = *(DWORD *)(the_secs + lVar8);
+          *(undefined8 *)((longlong)auStack152 + lVar2) = 0x4020b6;
           VirtualProtect(lpAddress_00,dwSize,flNewProtect,lpflOldProtect);
         }
-        iVar11 = iVar11 + 1;
-        lVar9 = lVar9 + 0x18;
-      } while (iVar11 < maxSections);
+        iVar10 = iVar10 + 1;
+        lVar8 = lVar8 + 0x18;
+      } while (iVar10 < maxSections);
     }
   }
   return;
@@ -1343,8 +1861,7 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
 {
   if ((*(short *)pImageBase == 0x5a4d) &&
      (*(int *)(pImageBase + *(int *)(pImageBase + 0x3c)) == 0x4550)) {
-    return (BOOL)(uint)(*(short *)((longlong)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) ==
-                       0x20b);
+    return (uint)(*(short *)((longlong)(pImageBase + *(int *)(pImageBase + 0x3c)) + 0x18) == 0x20b);
   }
   return 0;
 }
@@ -1355,19 +1872,21 @@ PIMAGE_SECTION_HEADER _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   PIMAGE_SECTION_HEADER p_Var1;
-  PIMAGE_SECTION_HEADER p_Var2;
-  PBYTE pBVar3;
+  int iVar2;
+  PIMAGE_SECTION_HEADER p_Var3;
   
-  pBVar3 = pImageBase + *(int *)(pImageBase + 0x3c);
-  if (*(ushort *)(pBVar3 + 6) != 0) {
-    p_Var2 = (PIMAGE_SECTION_HEADER)(pBVar3 + (ulonglong)*(ushort *)(pBVar3 + 0x14) + 0x18);
-    p_Var1 = p_Var2 + (ulonglong)(*(ushort *)(pBVar3 + 6) - 1) + 1;
+  iVar2 = *(int *)(pImageBase + 0x3c);
+  if (*(ushort *)(pImageBase + (longlong)iVar2 + 6) != 0) {
+    p_Var3 = (PIMAGE_SECTION_HEADER)
+             (pImageBase +
+             (ulonglong)*(ushort *)(pImageBase + (longlong)iVar2 + 0x14) + (longlong)iVar2 + 0x18);
+    p_Var1 = p_Var3 + (ulonglong)(*(ushort *)(pImageBase + (longlong)iVar2 + 6) - 1) + 1;
     do {
-      if ((p_Var2->VirtualAddress <= rva) && (rva < p_Var2->VirtualAddress + p_Var2->Misc)) {
-        return p_Var2;
+      if ((p_Var3->VirtualAddress <= rva) && (rva < p_Var3->VirtualAddress + p_Var3->Misc)) {
+        return p_Var3;
       }
-      p_Var2 = p_Var2 + 1;
-    } while (p_Var2 != p_Var1);
+      p_Var3 = p_Var3 + 1;
+    } while (p_Var3 != p_Var1);
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -1597,7 +2116,7 @@ void __security_init_cookie(void)
     __security_cookie_complement = ~__security_cookie;
     return;
   }
-  GetSystemTimeAsFileTime((LPFILETIME)local_48);
+  GetSystemTimeAsFileTime(local_48);
   _Var1 = local_48[0];
   DVar2 = GetCurrentProcessId();
   DVar3 = GetCurrentThreadId();
@@ -1693,10 +2212,8 @@ undefined8 __mingw_TLScallback(undefined8 param_1,int param_2)
         DeleteCriticalSection((LPCRITICAL_SECTION)&__mingwthr_cs);
       }
     }
-    else {
-      if ((param_2 == 3) && (__mingwthr_cs_init != 0)) {
-        __mingwthr_run_key_dtors_part_0();
-      }
+    else if ((param_2 == 3) && (__mingwthr_cs_init != 0)) {
+      __mingwthr_run_key_dtors_part_0();
     }
     return 1;
   }
@@ -1708,6 +2225,8 @@ undefined8 __mingw_TLScallback(undefined8 param_1,int param_2)
 }
 
 
+
+// WARNING: This is an inlined function
 
 ulonglong ___chkstk_ms(void)
 

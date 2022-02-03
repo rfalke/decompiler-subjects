@@ -1,4 +1,16 @@
 
+uint64_t g140009000 = 0x2b992ddfa232;
+
+int64_t sprintf = 0xb678;
+
+void fun_140001776(void* rcx, int64_t rdx, int64_t r8);
+
+int32_t fun_140001770(void* rcx, int64_t rdx, int64_t r8);
+
+void fun_14000176a(uint64_t rcx, int64_t rdx, int64_t r8);
+
+int64_t printf = 0xb650;
+
 struct s1 {
     signed char[8] pad8;
     int32_t f8;
@@ -15,32 +27,20 @@ struct s0 {
     signed char[3] pad4;
     struct s0* f4;
     int64_t f8;
-    struct s0* f12;
-    struct s1* f16;
-    int32_t f20;
-    int32_t f24;
-    int32_t f28;
+    struct s0* fc;
+    struct s1* f10;
+    int32_t f14;
+    int32_t f18;
+    int32_t f1c;
     signed char[8] pad56;
-    struct s2* f56;
+    struct s2* f38;
 };
 
-uint64_t g140009000 = 0x2b992ddfa232;
+int32_t fun_1400017c0(void* rcx, struct s0* rdx, int64_t r8, int64_t r9);
 
-int64_t sprintf = 0xb678;
+int64_t fun_1400017a0(uint64_t rcx, struct s0* rdx, ...);
 
-void fun_140001776(void* rcx, int64_t rdx, int64_t r8);
-
-int32_t fun_140001770(void* rcx, int64_t rdx, int64_t r8);
-
-void fun_14000176a(uint64_t rcx, int64_t rdx, int64_t r8);
-
-int64_t printf = 0xb650;
-
-struct s0* fun_1400017c0(void* rcx, struct s0* rdx, int64_t r8, int64_t r9);
-
-struct s0* fun_1400017a0(uint64_t rcx, struct s0* rdx, ...);
-
-struct s0* fun_14000100a(void* rcx, uint32_t edx, uint32_t r8d, int64_t r9) {
+int64_t fun_14000100a(void* rcx, uint32_t edx, uint32_t r8d, int64_t r9) {
     uint32_t v5;
     uint32_t v6;
     void* v7;
@@ -64,7 +64,7 @@ struct s0* fun_14000100a(void* rcx, uint32_t edx, uint32_t r8d, int64_t r9) {
     void* rsp25;
     void* rsp26;
     uint64_t rcx27;
-    struct s0* rax28;
+    int64_t rax28;
 
     v5 = r8d;
     v6 = edx;
@@ -189,7 +189,7 @@ int32_t fun_14000100f(int64_t rcx) {
     uint32_t eax18;
     void* rsp19;
     uint64_t rcx20;
-    struct s0* rax21;
+    int64_t rax21;
 
     v2 = rcx;
     rsp3 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 0xb0);
@@ -251,26 +251,26 @@ int32_t fun_14000100f(int64_t rcx) {
 
 int32_t g140009018 = 1;
 
-struct s0* fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9);
+int32_t fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9);
 
 struct s3 {
     signed char[5368736952] pad5368736952;
-    unsigned char f5368736952;
+    unsigned char f140006cb8;
 };
 
 struct s4 {
     signed char[5368736984] pad5368736984;
-    unsigned char f5368736984;
+    unsigned char f140006cd8;
 };
 
-struct s0* fun_140002360(void* rcx, struct s0* rdx) {
+int32_t fun_140002360(void* rcx, struct s0* rdx) {
     void* rsp3;
     uint64_t rax4;
     uint64_t v5;
     int32_t r10d6;
     void* r11_7;
     uint64_t rcx8;
-    struct s0* rax9;
+    int64_t rax9;
     int1_t zf10;
     void* r9_11;
     uint64_t rcx12;
@@ -297,7 +297,7 @@ struct s0* fun_140002360(void* rcx, struct s0* rdx) {
         addr_140002451_2:
         rcx8 = v5 ^ reinterpret_cast<uint64_t>(rsp3);
         rax9 = fun_1400017a0(rcx8, rdx, rcx8, rdx);
-        return rax9;
+        return *reinterpret_cast<int32_t*>(&rax9);
     } else {
         zf10 = rdx->f0 == 0;
         if (zf10) {
@@ -378,7 +378,7 @@ void fun_140002610(signed char* rcx, void* rdx, void* r8, void* r9);
 
 int64_t lstrlenA = 0xb954;
 
-struct s0* fun_140002470(void* rcx, struct s0* rdx, int32_t r8d) {
+int32_t fun_140002470(void* rcx, struct s0* rdx, int32_t r8d) {
     void* rsp4;
     uint64_t rax5;
     uint64_t v6;
@@ -395,7 +395,7 @@ struct s0* fun_140002470(void* rcx, struct s0* rdx, int32_t r8d) {
     void* rsp17;
     void* rsp18;
     uint64_t rcx19;
-    struct s0* rax20;
+    int64_t rax20;
 
     rsp4 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 8 - 8 - 8 - 0x1c8);
     rax5 = g140009000;
@@ -429,7 +429,7 @@ struct s0* fun_140002470(void* rcx, struct s0* rdx, int32_t r8d) {
     }
     rcx19 = v6 ^ reinterpret_cast<uint64_t>(rsp4);
     rax20 = fun_1400017a0(rcx19, rdx, rcx19, rdx);
-    return rax20;
+    return *reinterpret_cast<int32_t*>(&rax20);
 }
 
 int64_t _CRT_RTC_INITW = 0xb6c2;
@@ -472,7 +472,7 @@ void fun_140002dd2(int64_t rcx, int64_t rdx) {
 struct s5 {
     uint16_t f0;
     signed char[58] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 int32_t fun_140002c10(struct s5* rcx);
@@ -480,14 +480,14 @@ int32_t fun_140002c10(struct s5* rcx);
 struct s6 {
     signed char[8] pad8;
     int32_t f8;
-    int32_t f12;
+    int32_t fc;
     signed char[20] pad36;
-    uint32_t f36;
+    uint32_t f24;
 };
 
 struct s7 {
     signed char[60] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 struct s6* fun_140002c90(struct s7* rcx, uint64_t rdx);
@@ -502,7 +502,7 @@ int32_t fun_140002d40(int64_t rcx, int64_t rdx, int64_t r8) {
     if (eax4) {
         rax5 = fun_140002c90(0x140000000, rcx - 0x140000000);
         if (rax5) {
-            if (rax5->f36 & 0x80000000) {
+            if (rax5->f24 & 0x80000000) {
                 v6 = 0;
             } else {
                 v6 = 1;
@@ -552,7 +552,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
 
 int64_t WideCharToMultiByte = 0xb928;
 
-struct s0* fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9) {
+int32_t fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9) {
     void* rsp5;
     uint64_t rax6;
     int64_t rbp7;
@@ -572,7 +572,7 @@ struct s0* fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9) {
     void* rsp21;
     int32_t eax22;
     uint64_t rcx23;
-    struct s0* rax24;
+    int64_t rax24;
     int32_t eax25;
     uint16_t v26;
     uint32_t v27;
@@ -630,7 +630,7 @@ struct s0* fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9) {
             addr_1400022e3_9:
             rcx23 = rax6 ^ reinterpret_cast<uint64_t>(rsp5) ^ reinterpret_cast<uint64_t>(rsp21);
             rax24 = fun_1400017a0(rcx23, rdx14, rcx23, rdx14);
-            return rax24;
+            return *reinterpret_cast<int32_t*>(&rax24);
         }
     }
     if (!r12_8 && !rax9 || *reinterpret_cast<signed char*>(&eax22) && (eax25 = reinterpret_cast<int32_t>(IsDebuggerPresent(rcx19, rdx14, r8_13, r9_12)), rsp21 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp21) - 8 + 8), !!eax25)) {
@@ -646,7 +646,7 @@ struct s0* fun_1400020b0(void* rcx, int32_t edx, int32_t r8d, void* r9) {
             rsp30 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp28) - 8 + 8);
             rbx31 = reinterpret_cast<struct s0*>(reinterpret_cast<uint64_t>(rsp30) + 0x470);
             if (!eax29) {
-                rbx31 = reinterpret_cast<struct s0*>(0x140006d68);
+                rbx31 = reinterpret_cast<struct s0*>("Unknown Filename");
             }
             eax32 = reinterpret_cast<int32_t>(WideCharToMultiByte(0xfde9));
             rsp33 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp30) - 8 + 8);
@@ -698,57 +698,57 @@ int64_t GetModuleFileNameW = 0xba1c;
 struct s8 {
     int16_t f0;
     signed char[58] pad60;
-    int32_t f60;
+    int32_t f3c;
 };
 
 struct s9 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 signed char g140009720;
 
-struct s0* g140009718;
+int64_t g140009718;
 
-struct s0* fun_1400031d0();
+int64_t fun_1400031d0();
 
 struct s10 {
     signed char[56] pad56;
-    int64_t f56;
+    int64_t f38;
 };
 
 struct s11 {
     signed char[80] pad80;
-    int64_t f80;
+    int64_t f50;
 };
 
 struct s12 {
     signed char[64] pad64;
-    int64_t f64;
+    int64_t f40;
 };
 
 struct s13 {
     signed char[112] pad112;
-    int64_t f112;
+    int64_t f70;
 };
 
 struct s14 {
     signed char[208] pad208;
-    int64_t f208;
+    int64_t fd0;
 };
 
 struct s15 {
     signed char[128] pad128;
-    int64_t f128;
+    int64_t f80;
 };
 
 struct s16 {
     int64_t f0;
     signed char[8] pad16;
-    int64_t f16;
-    int64_t f24;
+    int64_t f10;
+    int64_t f18;
 };
 
 struct s16* g0;
@@ -767,11 +767,11 @@ struct s17 {
 
 struct s18 {
     signed char[224] pad224;
-    int64_t f224;
+    int64_t fe0;
 };
 
 int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uint16_t a5, uint32_t a6) {
-    struct s0* rbp7;
+    int64_t rbp7;
     uint64_t rsi8;
     uint32_t* r13_9;
     int64_t rax10;
@@ -794,7 +794,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
     int64_t rcx27;
     uint32_t ebx28;
     int1_t zf29;
-    struct s0* rax30;
+    int64_t rax30;
     int1_t zf31;
     int64_t rax32;
     int64_t v33;
@@ -851,11 +851,11 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
     *rdx = 0;
     r13_9 = r9;
     rax10 = reinterpret_cast<int64_t>(VirtualQuery(rsi8, reinterpret_cast<int64_t>(__zero_stack_offset()) - 8 - 8 - 8 - 8 - 0xc8 + 0x78, 48));
-    if (!rax10 || ((*reinterpret_cast<int32_t*>(&r8_11) = v12, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_11) + 4) = 0, eax15 = reinterpret_cast<int32_t>(GetModuleFileNameW(v13, v14, r8_11)), eax15 == 0) || ((r9_16 = v17, r9_16->f0 != 0x5a4d) || ((rax18 = r9_16->f60, reinterpret_cast<uint1_t>(*reinterpret_cast<int32_t*>(&rax18) < 0) | reinterpret_cast<uint1_t>(*reinterpret_cast<int32_t*>(&rax18) == 0)) || (rcx19 = reinterpret_cast<struct s9*>(reinterpret_cast<int64_t>(r9_16) + rax18), *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(r9_16) + rax18) != 0x4550))))) {
+    if (!rax10 || ((*reinterpret_cast<int32_t*>(&r8_11) = v12, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&r8_11) + 4) = 0, eax15 = reinterpret_cast<int32_t>(GetModuleFileNameW(v13, v14, r8_11)), eax15 == 0) || ((r9_16 = v17, r9_16->f0 != 0x5a4d) || ((rax18 = r9_16->f3c, reinterpret_cast<uint1_t>(*reinterpret_cast<int32_t*>(&rax18) < 0) | reinterpret_cast<uint1_t>(*reinterpret_cast<int32_t*>(&rax18) == 0)) || (rcx19 = reinterpret_cast<struct s9*>(reinterpret_cast<int64_t>(r9_16) + rax18), *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(r9_16) + rax18) != 0x4550))))) {
         return 0;
     }
     r8d20 = rcx19->f6;
-    *reinterpret_cast<uint32_t*>(&rax21) = rcx19->f20;
+    *reinterpret_cast<uint32_t*>(&rax21) = rcx19->f14;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax21) + 4) = 0;
     esi22 = reinterpret_cast<uint32_t>(*reinterpret_cast<int32_t*>(&rsi8) - *reinterpret_cast<int32_t*>(&r9_16));
     ebx23 = 0;
@@ -898,31 +898,31 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
     } else {
         rax36 = *v37;
         eax38 = reinterpret_cast<int32_t>(*rax36());
-        if (eax38 != 0x131a5b5 || (rax39 = *v40, eax41 = reinterpret_cast<int32_t>(rax39->f56()), eax41 == 0)) {
+        if (eax38 != 0x131a5b5 || (rax39 = *v40, eax41 = reinterpret_cast<int32_t>(rax39->f38()), eax41 == 0)) {
             addr_140003198_16:
             rdx42 = *v43;
-            rdx42->f80();
+            rdx42->f50();
             *reinterpret_cast<uint32_t*>(&rax35) = *reinterpret_cast<uint32_t*>(&rbp7);
             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax35) + 4) = 0;
         } else {
             rax44 = *v45;
-            eax46 = reinterpret_cast<int32_t>(rax44->f64());
+            eax46 = reinterpret_cast<int32_t>(rax44->f40());
             if (!eax46) {
                 addr_14000318d_18:
                 rdx47 = *v48;
-                rdx47->f112();
+                rdx47->f70();
                 goto addr_140003198_16;
             } else {
                 rax49 = *v50;
-                al51 = reinterpret_cast<signed char>(rax49->f208());
+                al51 = reinterpret_cast<signed char>(rax49->fd0());
                 if (!al51 || 1) {
                     addr_14000317f_20:
                     rdx52 = *v53;
-                    rdx52->f128();
+                    rdx52->f80();
                     goto addr_14000318d_18;
                 } else {
                     rax54 = g0;
-                    eax55 = reinterpret_cast<int32_t>(rax54->f16());
+                    eax55 = reinterpret_cast<int32_t>(rax54->f10());
                     if (!eax55) {
                         addr_140003161_22:
                         rax56 = reinterpret_cast<int64_t>(GetProcessHeap());
@@ -931,7 +931,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
                     } else {
                         do {
                             rax57 = g0;
-                            al58 = reinterpret_cast<signed char>(rax57->f24());
+                            al58 = reinterpret_cast<signed char>(rax57->f18());
                             if (!al58) 
                                 goto addr_140003175_23;
                             if (static_cast<uint32_t>(a5) != ebx28) 
@@ -941,7 +941,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
                             if (edi25 < v59 + v60) 
                                 goto addr_140003076_29;
                             rax61 = g0;
-                            eax62 = reinterpret_cast<int32_t>(rax61->f16());
+                            eax62 = reinterpret_cast<int32_t>(rax61->f10());
                         } while (eax62);
                         goto addr_140003071_31;
                     }
@@ -960,7 +960,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
         goto addr_14000317f_20;
     } else {
         r10_68 = g0;
-        al69 = reinterpret_cast<signed char>(r10_68->f24());
+        al69 = reinterpret_cast<signed char>(r10_68->f18());
         if (al69 && (edi70 = edi25 - v71, edi70 >= rsi66->f0)) {
             edx72 = a6;
             *reinterpret_cast<uint32_t*>(&rcx73) = 1;
@@ -980,7 +980,7 @@ int64_t fun_140002df0(uint64_t rcx, int16_t* rdx, int32_t r8d, uint32_t* r9, uin
             eax76 = *reinterpret_cast<uint32_t*>(reinterpret_cast<int64_t>(rsi66) + rax75 * 8 + 4);
             *r13_9 = eax76 & 0xffffff;
             rax77 = *v78;
-            al79 = reinterpret_cast<signed char>(rax77->f224());
+            al79 = reinterpret_cast<signed char>(rax77->fe0());
             if (al79) {
                 *reinterpret_cast<uint32_t*>(&rbp7) = 1;
                 goto addr_140003161_22;
@@ -1048,13 +1048,13 @@ int64_t g140009038 = 0x1400070d8;
 
 int64_t FreeLibrary = 0xba42;
 
-struct s0* fun_1400031d0() {
+int64_t fun_1400031d0() {
     void* rsp1;
     uint64_t rax2;
     uint64_t v3;
     int1_t zf4;
     struct s0* rdx5;
-    struct s0* rax6;
+    int64_t rax6;
     int64_t rcx7;
     int64_t rax8;
     void* rsp9;
@@ -1081,7 +1081,7 @@ struct s0* fun_1400031d0() {
     uint32_t eax30;
     void* rcx31;
     uint64_t rcx32;
-    struct s0* rax33;
+    int64_t rax33;
 
     rsp1 = reinterpret_cast<void*>(reinterpret_cast<int64_t>(__zero_stack_offset()) - 0x168);
     rax2 = g140009000;
@@ -1099,50 +1099,50 @@ struct s0* fun_1400031d0() {
         rax10 = reinterpret_cast<int64_t>(LoadLibraryA("ADVAPI32.DLL"));
         rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp9) - 8 + 8);
         if (rax10) {
-            rdx11 = reinterpret_cast<struct s0*>(0x140007170);
-            rax12 = reinterpret_cast<int64_t>(GetProcAddress(rax10, 0x140007170));
+            rdx11 = reinterpret_cast<struct s0*>("RegOpenKeyExA");
+            rax12 = reinterpret_cast<int64_t>(GetProcAddress(rax10, "RegOpenKeyExA"));
             rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp9) - 8 + 8);
             if (rax12) {
-                rdx11 = reinterpret_cast<struct s0*>(0x140007158);
-                rax13 = reinterpret_cast<int64_t>(GetProcAddress(rax10, 0x140007158));
+                rdx11 = reinterpret_cast<struct s0*>("RegQueryValueExA");
+                rax13 = reinterpret_cast<int64_t>(GetProcAddress(rax10, "RegQueryValueExA"));
                 rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp9) - 8 + 8);
                 if (rax13) {
-                    rdx11 = reinterpret_cast<struct s0*>(0x140007148);
-                    rax14 = reinterpret_cast<int64_t>(GetProcAddress(rax10, 0x140007148));
+                    rdx11 = reinterpret_cast<struct s0*>("RegCloseKey");
+                    rax14 = reinterpret_cast<int64_t>(GetProcAddress(rax10, "RegCloseKey"));
                     rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp9) - 8 + 8);
                     if (!rax14) {
                         addr_1400032e5_8:
                     } else {
-                        rdx11 = reinterpret_cast<struct s0*>(0x140007118);
-                        eax15 = reinterpret_cast<int32_t>(rax12(0xffffffff80000002, 0x140007118));
+                        rdx11 = reinterpret_cast<struct s0*>("SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS");
+                        eax15 = reinterpret_cast<int32_t>(rax12(0xffffffff80000002, "SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS"));
                         rsp16 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp9) - 8 + 8);
                         if (!eax15) {
-                            rdx11 = reinterpret_cast<struct s0*>(0x140007100);
+                            rdx11 = reinterpret_cast<struct s0*>("EnvironmentDirectory");
                             *reinterpret_cast<int32_t*>(&rdi17) = 0;
                             *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdi17) + 4) = 0;
-                            eax19 = reinterpret_cast<int32_t>(rax13(v18, 0x140007100));
+                            eax19 = reinterpret_cast<int32_t>(rax13(v18, "EnvironmentDirectory"));
                             rsp20 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp16) - 8 + 8);
                             if (eax19 || ((*reinterpret_cast<int32_t*>(&rcx21) = v22, *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx21) + 4) = 0, reinterpret_cast<uint32_t>(0x7fffffff - *reinterpret_cast<int32_t*>(&rcx21)) < 13) || static_cast<uint32_t>(rcx21 + 13) >= 0x104)) {
-                                FreeLibrary(rax10, 0x140007100);
+                                FreeLibrary(rax10, "EnvironmentDirectory");
                                 rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp20) - 8 + 8);
                                 goto addr_1400033dc_12;
                             } else {
-                                rdx11 = reinterpret_cast<struct s0*>(0x140007100);
-                                eax24 = reinterpret_cast<int32_t>(rax13(v23, 0x140007100));
-                                rax14(v25, 0x140007100);
-                                FreeLibrary(rax10, 0x140007100);
+                                rdx11 = reinterpret_cast<struct s0*>("EnvironmentDirectory");
+                                eax24 = reinterpret_cast<int32_t>(rax13(v23, "EnvironmentDirectory"));
+                                rax14(v25, "EnvironmentDirectory");
+                                FreeLibrary(rax10, "EnvironmentDirectory");
                                 rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp20) - 8 + 8 - 8 + 8 - 8 + 8);
                                 if (eax24) {
                                     addr_1400033dc_12:
                                 } else {
                                     *reinterpret_cast<int32_t*>(&rdx11) = v26;
                                     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rdx11) + 4) = 0;
-                                    *reinterpret_cast<int32_t*>(&rax27) = static_cast<int32_t>(reinterpret_cast<uint64_t>(rdx11) + 0xfffffffffffffffe);
+                                    *reinterpret_cast<int32_t*>(&rax27) = static_cast<int32_t>(reinterpret_cast<uint64_t>(rdx11) - 2);
                                     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax27) + 4) = 0;
                                     if (*reinterpret_cast<signed char*>(reinterpret_cast<uint64_t>(rsp9) + reinterpret_cast<int64_t>(rax27) + 64) == 92) {
                                         *reinterpret_cast<int32_t*>(&rdx11) = *reinterpret_cast<int32_t*>(&rdx11) - 1;
                                     } else {
-                                        *reinterpret_cast<int32_t*>(&rax28) = static_cast<int32_t>(reinterpret_cast<uint64_t>(rdx11) + 0xffffffffffffffff);
+                                        *reinterpret_cast<int32_t*>(&rax28) = static_cast<int32_t>(reinterpret_cast<uint64_t>(rdx11) - 1);
                                         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax28) + 4) = 0;
                                         *reinterpret_cast<signed char*>(reinterpret_cast<uint64_t>(rsp9) + reinterpret_cast<int64_t>(rax28) + 64) = 92;
                                     }
@@ -1161,7 +1161,7 @@ struct s0* fun_1400031d0() {
                                 }
                             }
                         } else {
-                            FreeLibrary(rax10, 0x140007118);
+                            FreeLibrary(rax10, "SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS");
                             rsp9 = reinterpret_cast<void*>(reinterpret_cast<uint64_t>(rsp16) - 8 + 8);
                             goto addr_1400032e5_8;
                         }
@@ -1201,9 +1201,9 @@ int64_t GetCurrentProcess = 0xb864;
 
 int64_t TerminateProcess = 0xb850;
 
-struct s0* fun_1400017a0(uint64_t rcx, struct s0* rdx, ...) {
+int64_t fun_1400017a0(uint64_t rcx, struct s0* rdx, ...) {
     int1_t zf3;
-    struct s0* rax4;
+    int64_t rax4;
     void* rsp5;
     int64_t r11_6;
     int64_t r8_7;
@@ -1217,7 +1217,7 @@ struct s0* fun_1400017a0(uint64_t rcx, struct s0* rdx, ...) {
     int64_t rcx15;
     int1_t zf16;
     int64_t rax17;
-    struct s0* rax18;
+    int64_t rax18;
 
     zf3 = rcx == g140009000;
     if (zf3) {
@@ -1265,7 +1265,7 @@ struct s0* fun_1400017a0(uint64_t rcx, struct s0* rdx, ...) {
         fun_140002dde(1, rdx8, r8_7, r9_11);
     }
     rax17 = reinterpret_cast<int64_t>(GetCurrentProcess(rcx15, rdx8, r8_7, r9_11));
-    rax18 = reinterpret_cast<struct s0*>(TerminateProcess(rax17, 0xc0000409, r8_7, r9_11));
+    rax18 = reinterpret_cast<int64_t>(TerminateProcess(rax17, 0xc0000409, r8_7, r9_11));
     return rax18;
 }
 
@@ -1281,14 +1281,14 @@ void fun_14000176a(uint64_t rcx, int64_t rdx, int64_t r8) {
     goto strcpy;
 }
 
-struct s0* fun_1400017c0(void* rcx, struct s0* rdx, int64_t r8, int64_t r9) {
+int32_t fun_1400017c0(void* rcx, struct s0* rdx, int64_t r8, int64_t r9) {
     void* v5;
     int64_t rdi6;
     struct s0* rsi7;
     void* rbp8;
     int64_t rbx9;
     void* rcx10;
-    struct s0* rax11;
+    void* rax11;
     struct s0* rdx12;
 
     v5 = __return_address();
@@ -1299,15 +1299,15 @@ struct s0* fun_1400017c0(void* rcx, struct s0* rdx, int64_t r8, int64_t r9) {
         rbx9 = 0;
         do {
             rcx10 = reinterpret_cast<void*>(static_cast<int64_t>(*reinterpret_cast<int32_t*>(*reinterpret_cast<int64_t*>(reinterpret_cast<uint64_t>(rsi7) + 8) + rbx9)));
-            if (*reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rcx10) + reinterpret_cast<uint64_t>(rbp8) - 4) != 0xcccccccc || (rax11 = reinterpret_cast<struct s0*>(*reinterpret_cast<int32_t*>(*reinterpret_cast<int64_t*>(reinterpret_cast<uint64_t>(rsi7) + 8) + rbx9 + 4) + reinterpret_cast<uint64_t>(rcx10)), *reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rax11) + reinterpret_cast<uint64_t>(rbp8)) != 0xcccccccc)) {
+            if (*reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(rcx10) + reinterpret_cast<uint64_t>(rbp8) - 4) != 0xcccccccc || (rax11 = reinterpret_cast<void*>(*reinterpret_cast<int32_t*>(*reinterpret_cast<int64_t*>(reinterpret_cast<uint64_t>(rsi7) + 8) + rbx9 + 4) + reinterpret_cast<int64_t>(rcx10)), *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(rax11) + reinterpret_cast<uint64_t>(rbp8)) != 0xcccccccc)) {
                 rdx12 = *reinterpret_cast<struct s0**>(*reinterpret_cast<int64_t*>(reinterpret_cast<uint64_t>(rsi7) + 8) + rbx9 + 8);
-                rax11 = fun_140002360(v5, rdx12);
+                *reinterpret_cast<int32_t*>(&rax11) = fun_140002360(v5, rdx12);
             }
             *reinterpret_cast<signed char*>(&rdi6) = reinterpret_cast<signed char>(*reinterpret_cast<signed char*>(&rdi6) + 1);
             rbx9 = rbx9 + 16;
         } while (*reinterpret_cast<signed char*>(&rdi6) < rsi7->f0);
     }
-    return rax11;
+    return *reinterpret_cast<int32_t*>(&rax11);
 }
 
 int64_t GetSystemTimeAsFileTime = 0xb9d8;
@@ -1545,7 +1545,7 @@ int32_t fun_140001005(int32_t ecx, int64_t* rdx, int64_t r8) {
 struct s20 {
     int32_t f0;
     signed char[20] pad24;
-    uint16_t f24;
+    uint16_t f18;
 };
 
 int32_t fun_140002c10(struct s5* rcx) {
@@ -1553,9 +1553,9 @@ int32_t fun_140002c10(struct s5* rcx) {
     int32_t eax3;
 
     if (static_cast<uint32_t>(rcx->f0) == 0x5a4d) {
-        v2 = reinterpret_cast<struct s20*>(reinterpret_cast<int64_t>(rcx) + rcx->f60);
+        v2 = reinterpret_cast<struct s20*>(reinterpret_cast<int64_t>(rcx) + rcx->f3c);
         if (v2->f0 == 0x4550) {
-            if (static_cast<uint32_t>(v2->f24) == 0x20b) {
+            if (static_cast<uint32_t>(v2->f18) == 0x20b) {
                 eax3 = 1;
             } else {
                 eax3 = 0;
@@ -1604,7 +1604,7 @@ struct s21 {
     signed char[6] pad6;
     uint16_t f6;
     signed char[12] pad20;
-    uint16_t f20;
+    uint16_t f14;
 };
 
 struct s6* fun_140002c90(struct s7* rcx, uint64_t rdx) {
@@ -1618,17 +1618,17 @@ struct s6* fun_140002c90(struct s7* rcx, uint64_t rdx) {
     struct s6* rax10;
 
     v3 = rdx;
-    v4 = reinterpret_cast<struct s21*>(reinterpret_cast<int64_t>(rcx) + rcx->f60);
+    v4 = reinterpret_cast<struct s21*>(reinterpret_cast<int64_t>(rcx) + rcx->f3c);
     v5 = 0;
-    *reinterpret_cast<uint32_t*>(&rcx6) = v4->f20;
+    *reinterpret_cast<uint32_t*>(&rcx6) = v4->f14;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx6) + 4) = 0;
     v7 = reinterpret_cast<struct s6*>(reinterpret_cast<int64_t>(v4) + rcx6 + 24);
     while (v5 < static_cast<uint32_t>(v4->f6)) {
-        *reinterpret_cast<int32_t*>(&rax8) = v7->f12;
+        *reinterpret_cast<int32_t*>(&rax8) = v7->fc;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax8) + 4) = 0;
         if (v3 < rax8) 
             goto addr_140002d29_4;
-        *reinterpret_cast<int32_t*>(&rax9) = v7->f12 + v7->f8;
+        *reinterpret_cast<int32_t*>(&rax9) = v7->fc + v7->f8;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax9) + 4) = 0;
         if (v3 < rax9) 
             goto addr_140002d22_6;
@@ -1650,7 +1650,7 @@ struct s22 {
     unsigned char f3;
 };
 
-struct s0* fun_140001670(void* rcx, struct s0* rdx, struct s2* r8) {
+int64_t fun_140001670(void* rcx, struct s0* rdx, struct s2* r8) {
     struct s0* v4;
     uint32_t v5;
     void* v6;
@@ -1660,7 +1660,7 @@ struct s0* fun_140001670(void* rcx, struct s0* rdx, struct s2* r8) {
     void* v10;
     uint32_t eax11;
     uint32_t eax12;
-    struct s0* rax13;
+    int64_t rax13;
 
     v4 = rdx;
     v5 = r8->f0 & 0xfffffff8;
@@ -1846,7 +1846,7 @@ struct s23 {
     signed char f0;
     signed char[3] pad4;
     struct s23* f4;
-    int64_t f12;
+    int64_t fc;
 };
 
 void fun_140001850(struct s23* rcx, int64_t rdx, struct s23** r8) {
@@ -1864,7 +1864,7 @@ void fun_140001850(struct s23* rcx, int64_t rdx, struct s23** r8) {
             rdi5 = reinterpret_cast<struct s23*>(&rdi5->pad4);
         }
         r9_4->f4 = *r8;
-        r9_4->f12 = rdx;
+        r9_4->fc = rdx;
         *r8 = r9_4;
     }
     return;
@@ -1937,7 +1937,7 @@ void fun_14000177c() {
 int64_t fun_140001630(int64_t rcx, void* rdx, int64_t r8, struct s0* r9) {
     struct s2* r8_5;
 
-    r8_5 = r9->f56;
+    r8_5 = r9->f38;
     fun_140001670(rdx, r9, r8_5);
     return 1;
 }
@@ -1952,7 +1952,7 @@ struct s24 {
     int64_t f8;
 };
 
-struct s0* fun_140001890(int64_t rcx, struct s24* rdx, struct s0* r8) {
+int32_t fun_140001890(int64_t rcx, struct s24* rdx, struct s0* r8) {
     void* v4;
     int64_t rdi5;
     int64_t r13_6;
@@ -1995,32 +1995,32 @@ struct s0* fun_140001890(int64_t rcx, struct s24* rdx, struct s0* r8) {
     }
     if (rbx7) {
         do {
-            if (rbx7->f0 != 0xcccccccc || (*reinterpret_cast<int32_t*>(&rbx7->f12) != 0xcccccccc || (*reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rbx7) + 24) != 0xcccccccc || *reinterpret_cast<int32_t*>(&rbx7->f16) != 0xcccccccc))) {
+            if (rbx7->f0 != 0xcccccccc || (*reinterpret_cast<int32_t*>(&rbx7->fc) != 0xcccccccc || (*reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rbx7) + 24) != 0xcccccccc || *reinterpret_cast<int32_t*>(&rbx7->f10) != 0xcccccccc))) {
                 fun_140002470(v4, rbx7, *reinterpret_cast<int32_t*>(&rdi5));
             }
             rax14 = *reinterpret_cast<struct s0**>(&rbx7->f8);
-            if (*reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rax14) + reinterpret_cast<uint64_t>(rbx7) + 0xfffffffffffffffc) != 0xcccccccc) {
-                rax14 = fun_140002470(v4, rbx7, *reinterpret_cast<int32_t*>(&rdi5));
+            if (*reinterpret_cast<int32_t*>(reinterpret_cast<uint64_t>(rax14) + reinterpret_cast<uint64_t>(rbx7) - 4) != 0xcccccccc) {
+                *reinterpret_cast<int32_t*>(&rax14) = fun_140002470(v4, rbx7, *reinterpret_cast<int32_t*>(&rdi5));
             }
             rbx7 = rbx7->f4;
             *reinterpret_cast<int32_t*>(&rdi5) = *reinterpret_cast<int32_t*>(&rdi5) - 1;
         } while (rbx7);
     }
-    return rax14;
+    return *reinterpret_cast<int32_t*>(&rax14);
 }
 
 struct s25 {
     int32_t f0;
     signed char[20] pad24;
-    int32_t f24;
+    int32_t f18;
     signed char[4] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 int64_t fun_140002880(struct s25** rcx) {
     int64_t rax2;
 
-    if ((*rcx)->f0 != 0xe06d7363 || ((*rcx)->f24 != 4 || (*rcx)->f32 != 0x19930520 && ((*rcx)->f32 != 0x19930521 && ((*rcx)->f32 != 0x19930522 && (*rcx)->f32 != 0x1994000)))) {
+    if ((*rcx)->f0 != 0xe06d7363 || ((*rcx)->f18 != 4 || (*rcx)->f20 != 0x19930520 && ((*rcx)->f20 != 0x19930521 && ((*rcx)->f20 != 0x19930522 && (*rcx)->f20 != 0x1994000)))) {
         *reinterpret_cast<int32_t*>(&rax2) = 0;
         *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax2) + 4) = 0;
     } else {
@@ -2094,15 +2094,15 @@ int32_t g14000901c = 1;
 
 struct s26 {
     signed char[5368737008] pad5368737008;
-    unsigned char f5368737008;
+    unsigned char f140006cf0;
 };
 
 struct s27 {
     signed char[5368737024] pad5368737024;
-    unsigned char f5368737024;
+    unsigned char f140006d00;
 };
 
-struct s0* fun_1400026c0(signed char* rcx) {
+int64_t fun_1400026c0(signed char* rcx) {
     void* v2;
     void* rsp3;
     uint64_t rax4;
@@ -2111,7 +2111,7 @@ struct s0* fun_1400026c0(signed char* rcx) {
     signed char* r8_7;
     uint64_t rcx8;
     struct s0* rdx9;
-    struct s0* rax10;
+    int64_t rax10;
     void* r9_11;
     uint64_t rcx12;
     signed char* rdi13;
@@ -2653,25 +2653,25 @@ void fun_14000346c() {
     goto RtlCaptureContext;
 }
 
-struct s0* fun_140002050(void* rcx, uint32_t edx) {
-    struct s0* rax3;
+int32_t fun_140002050(void* rcx, uint32_t edx) {
+    int64_t rax3;
 
     if (edx > 4) {
-        rax3 = fun_1400020b0(rcx, 1, 5, "Unknown Runtime Check Error\n\r");
+        *reinterpret_cast<int32_t*>(&rax3) = fun_1400020b0(rcx, 1, 5, "Unknown Runtime Check Error\n\r");
     } else {
-        rax3 = reinterpret_cast<struct s0*>(static_cast<int64_t>(reinterpret_cast<int32_t>(edx)));
-        if (*reinterpret_cast<int32_t*>(0x140000000 + reinterpret_cast<uint64_t>(rax3) * 4 + 0x9010) != -1) {
+        rax3 = reinterpret_cast<int32_t>(edx);
+        if (*reinterpret_cast<int32_t*>(0x140000000 + rax3 * 4 + 0x9010) != -1) {
             goto fun_1400020b0;
         }
     }
-    return rax3;
+    return *reinterpret_cast<int32_t*>(&rax3);
 }
 
 int64_t fun_1400027e0(uint32_t ecx) {
     if (ecx > 4) {
         return 0;
     } else {
-        return *reinterpret_cast<int64_t*>(0x140007098 + reinterpret_cast<int32_t>(ecx) * 8);
+        return *reinterpret_cast<int64_t*>("xp" + ecx * 8);
     }
 }
 
@@ -2876,19 +2876,19 @@ void fun_1400034d8() {
 
 struct s28 {
     signed char[72] pad72;
-    int32_t f72;
+    int32_t f48;
     signed char[4] pad80;
-    int32_t** f80;
+    int32_t** f50;
 };
 
 void fun_140004c90(int32_t** rcx, struct s28* rdx) {
     int32_t** rdx3;
     int64_t rcx4;
 
-    rdx->f80 = rcx;
-    rdx->f72 = **rdx->f80;
-    rdx3 = rdx->f80;
-    *reinterpret_cast<int32_t*>(&rcx4) = rdx->f72;
+    rdx->f50 = rcx;
+    rdx->f48 = **rdx->f50;
+    rdx3 = rdx->f50;
+    *reinterpret_cast<int32_t*>(&rcx4) = rdx->f48;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rcx4) + 4) = 0;
     fun_140002be4(rcx4, rdx3);
     return;
@@ -2904,23 +2904,23 @@ void fun_140004cc0() {
 
 struct s29 {
     signed char[56] pad56;
-    int32_t** f56;
-    int32_t f64;
+    int32_t** f38;
+    int32_t f40;
     signed char[4] pad72;
-    int32_t f72;
+    int32_t f48;
 };
 
 int64_t fun_140004ce0(int32_t** rcx, struct s29* rdx) {
     int64_t rax3;
 
-    rdx->f56 = rcx;
-    rdx->f64 = **rdx->f56;
-    if (rdx->f64 != 0xc0000005) {
-        rdx->f72 = 0;
+    rdx->f38 = rcx;
+    rdx->f40 = **rdx->f38;
+    if (rdx->f40 != 0xc0000005) {
+        rdx->f48 = 0;
     } else {
-        rdx->f72 = 1;
+        rdx->f48 = 1;
     }
-    *reinterpret_cast<int32_t*>(&rax3) = rdx->f72;
+    *reinterpret_cast<int32_t*>(&rax3) = rdx->f48;
     *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rax3) + 4) = 0;
     return rax3;
 }

@@ -1,7 +1,7 @@
 
 struct s0 {
     signed char[88] pad88;
-    int32_t f88;
+    int32_t f58;
 };
 
 void fun_0(void* a1, int32_t a2, int32_t a3, void* a4, int32_t a5);
@@ -77,24 +77,24 @@ void fun_410000(signed char* ecx) {
         *reinterpret_cast<signed char*>(reinterpret_cast<int32_t>(&ebx35) + 1) = 0x68;
         fun_0(ebx31, v34, 56, ebx31, __return_address());
         fun_1e(ebx31, v34, 56, ebx31, __return_address());
-        v36 = ebx35->f88;
+        v36 = ebx35->f58;
         goto v36;
     }
 }
 
 struct s1 {
     signed char[25] pad25;
-    unsigned char f25;
+    unsigned char f19;
 };
 
 struct s2 {
     signed char[25] pad25;
-    unsigned char f25;
+    unsigned char f19;
 };
 
 struct s3 {
     signed char[25] pad25;
-    signed char f25;
+    signed char f19;
 };
 
 void fun_4100ab(unsigned char cl) {
@@ -109,8 +109,8 @@ void fun_4100ab(unsigned char cl) {
     signed char bh10;
 
     __asm__("das ");
-    cf2 = reinterpret_cast<uint1_t>(eax3->f25 < cl);
-    eax4->f25 = reinterpret_cast<unsigned char>(eax5->f25 - cl);
+    cf2 = reinterpret_cast<uint1_t>(eax3->f19 < cl);
+    eax4->f19 = reinterpret_cast<unsigned char>(eax5->f19 - cl);
     *reinterpret_cast<unsigned char*>(edx6 + 0x44b05694) = reinterpret_cast<unsigned char>(*reinterpret_cast<signed char*>(edx7 + 0x44b05694) - reinterpret_cast<unsigned char>(bh8 + reinterpret_cast<uint1_t>(*reinterpret_cast<unsigned char*>(edx9 + 0x44b05694) < reinterpret_cast<unsigned char>(bh10 + cf2))));
     __asm__("aam 0x1a");
     __asm__("hlt ");
@@ -288,7 +288,7 @@ void fun_41004e(unsigned char* ecx) {
 struct s4 {
     signed char f0;
     signed char[609223426] pad609223427;
-    signed char f609223427;
+    signed char f24500303;
 };
 
 struct s5 {
@@ -325,14 +325,11 @@ void fun_410124(int32_t ecx) {
     int32_t eax2;
     unsigned char ah3;
     unsigned char bl4;
-    int32_t* edi5;
-    int32_t* esi6;
 
     *reinterpret_cast<unsigned char*>(reinterpret_cast<int32_t>(&eax2) + 1) = reinterpret_cast<unsigned char>(ah3 | bl4);
     __asm__("int1 ");
     if (ecx <= eax2) 
         goto 0x410115;
-    *edi5 = *esi6;
 }
 
 void fun_410140(int32_t ecx) {

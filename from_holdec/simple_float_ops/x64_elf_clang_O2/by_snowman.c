@@ -109,6 +109,38 @@ struct s3 {
     int32_t f4;
 };
 
+uint56_t g4009d0 = 0x25006425006625;
+
+int32_t __gmon_start__;
+
+int64_t compare_floats(struct s2* rdi, struct s3* rsi) {
+    int32_t* rsi3;
+    int64_t rsi4;
+    int32_t* rsi5;
+
+    rdi->f0 = rsi->f0;
+    rsi3 = &rsi->f4;
+    rdi->f4 = *rsi3;
+    __asm__("movapd xmm2, xmm0");
+    rsi4 = reinterpret_cast<int64_t>(rsi3 + 1 + 1);
+    __asm__("movd rsi, xmm2");
+    *reinterpret_cast<uint32_t*>(&rsi5) = *reinterpret_cast<uint32_t*>(&rsi4) & 1;
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi5) + 4) = 0;
+    fun_4003f0("%d");
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = *rsi5;
+    __asm__("movd rsi, xmm0");
+    fun_4003f0("%d");
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = __gmon_start__;
+    __asm__("ucomisd xmm0, [rsp]");
+    fun_4003f0("%d", "%d");
+    fun_4003f0("%d", "%d");
+    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = __gmon_start__;
+    __asm__("ucomisd xmm0, [rsp+0x8]");
+    fun_4003f0("%d", "%d");
+    fun_4003f0("%d", "%d");
+    return 0x7c;
+}
+
 struct s4 {
     int32_t f0;
     int32_t f4;
@@ -124,95 +156,40 @@ struct s6 {
     int32_t f4;
 };
 
-uint56_t g4009d0 = 0x25006425006625;
-
-int32_t g4009d7 = 0x2520757a;
-
-int32_t __gmon_start__;
-
-int64_t compare_floats(struct s2* rdi, struct s3* rsi) {
-    struct s4* rdi3;
-    struct s5* rsi4;
-    int32_t* rsi5;
-    int64_t rsi6;
-    struct s6* rsi7;
-
-    rdi->f0 = rsi->f0;
-    rdi3 = reinterpret_cast<struct s4*>(&rdi->f4);
-    rsi4 = reinterpret_cast<struct s5*>(&rsi->f4);
-    rdi3->f0 = rsi4->f0;
-    rsi5 = &rsi4->f4;
-    __asm__("movapd xmm2, xmm0");
-    rdi3->f4 = *rsi5;
-    rsi6 = reinterpret_cast<int64_t>(rsi5 + 1);
-    __asm__("movd rsi, xmm2");
-    *reinterpret_cast<uint32_t*>(&rsi7) = *reinterpret_cast<uint32_t*>(&rsi6) & 1;
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&rsi7) + 4) = 0;
-    fun_4003f0(0x4009d3);
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = rsi7->f0;
-    g4009d7 = rsi7->f4;
-    __asm__("movd rsi, xmm0");
-    fun_4003f0(0x4009d3);
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = __gmon_start__;
-    __asm__("ucomisd xmm0, [rsp]");
-    fun_4003f0(0x4009d3, 0x4009d3);
-    fun_4003f0(0x4009d3, 0x4009d3);
-    *reinterpret_cast<int32_t*>(reinterpret_cast<int64_t>(&g4009d0) + 3) = __gmon_start__;
-    __asm__("ucomisd xmm0, [rsp+0x8]");
-    fun_4003f0(0x4009d3, 0x4009d3);
-    fun_4003f0(0x4009d3, 0x4009d3);
-    return 0x7c;
-}
-
 struct s7 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s8 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s9 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s10 {
-    int32_t f0;
-    int32_t f4;
-};
-
-int64_t constants(int32_t* rdi, struct s7* rsi) {
-    struct s8* rsi3;
-    struct s9* rsi4;
-    struct s10* rsi5;
+int64_t constants(int32_t* rdi, struct s4* rsi) {
+    struct s5* rsi3;
+    struct s6* rsi4;
+    struct s7* rsi5;
 
     *rdi = rsi->f0;
-    rsi3 = reinterpret_cast<struct s8*>(&rsi->f4);
+    rsi3 = reinterpret_cast<struct s5*>(&rsi->f4);
     __asm__("addsd xmm0, xmm0");
-    fun_4003f0(0x4009d0);
+    fun_4003f0("%f");
     *reinterpret_cast<int32_t*>(&g4009d0) = rsi3->f0;
-    rsi4 = reinterpret_cast<struct s9*>(&rsi3->f4);
+    rsi4 = reinterpret_cast<struct s6*>(&rsi3->f4);
     __asm__("mulsd xmm0, [rsp]");
-    fun_4003f0(0x4009d0);
+    fun_4003f0("%f");
     *reinterpret_cast<int32_t*>(&g4009d0) = rsi4->f0;
-    rsi5 = reinterpret_cast<struct s10*>(&rsi4->f4);
+    rsi5 = reinterpret_cast<struct s7*>(&rsi4->f4);
     __asm__("mulsd xmm0, [rsp]");
-    fun_4003f0(0x4009d0);
+    fun_4003f0("%f");
     *reinterpret_cast<int32_t*>(&g4009d0) = rsi5->f0;
     __asm__("mulsd xmm0, [rsp]");
-    fun_4003f0(0x4009d0);
+    fun_4003f0("%f");
     *reinterpret_cast<int32_t*>(&g4009d0) = rsi5->f4;
     __asm__("mulsd xmm0, [rip+0x12a]");
-    fun_4003f0(0x4009d0, 0x4009d0);
+    fun_4003f0("%f", "%f");
     return 0x7d;
 }
 
 int64_t main() {
-    fun_4003f0(0x4009d6, 0x4009d6);
-    fun_4003f0(0x4009de, 0x4009de);
+    fun_4003f0("%zu %zu %zu %zu %zu\n", "%zu %zu %zu %zu %zu\n");
+    fun_4003f0("%zu %zu %zu\n", "%zu %zu %zu\n");
     return 0;
 }
 
@@ -294,7 +271,7 @@ int64_t read_ints() {
     __asm__("xorps xmm0, xmm0");
     __asm__("cvtsi2sd xmm0, qword [rip+0x200ada]");
     __asm__("addsd xmm0, xmm1");
-    fun_4003f0(0x4009d0);
+    fun_4003f0("%f");
     return 0x78;
 }
 
@@ -343,56 +320,56 @@ int64_t write_ints() {
     return 0x79;
 }
 
+struct s8 {
+    int32_t f0;
+    int32_t f4;
+};
+
+struct s9 {
+    int32_t f0;
+    int32_t f4;
+};
+
+int64_t basic_operations(int32_t* rdi, struct s8* rsi) {
+    struct s9* rsi3;
+
+    *rdi = rsi->f0;
+    rsi3 = reinterpret_cast<struct s9*>(&rsi->f4);
+    __asm__("movapd [rsp+0x10], xmm0");
+    __asm__("addsd xmm0, xmm1");
+    fun_4003f0("%f");
+    __asm__("movapd xmm0, [rsp+0x10]");
+    __asm__("subsd xmm0, [rsp+0x8]");
+    fun_4003f0("%f");
+    *reinterpret_cast<int32_t*>(&g4009d0) = rsi3->f0;
+    __asm__("subsd xmm0, [rsp+0x10]");
+    fun_4003f0("%f");
+    __asm__("movapd xmm0, [rsp+0x10]");
+    __asm__("mulsd xmm0, [rsp+0x8]");
+    fun_4003f0("%f");
+    __asm__("movapd xmm0, [rsp+0x10]");
+    __asm__("divsd xmm0, [rsp+0x8]");
+    fun_4003f0("%f");
+    *reinterpret_cast<int32_t*>(&g4009d0) = rsi3->f4;
+    __asm__("divsd xmm0, [rsp+0x10]");
+    fun_4003f0("%f", "%f");
+    __asm__("movapd xmm0, [rsp+0x10]");
+    __asm__("xorpd xmm0, [rip+0x24a]");
+    fun_4003f0("%f", "%f");
+    return 0x7b;
+}
+
+struct s10 {
+    int32_t f0;
+    int32_t f4;
+};
+
 struct s11 {
     int32_t f0;
     int32_t f4;
 };
 
-struct s12 {
-    int32_t f0;
-    int32_t f4;
-};
-
-int64_t basic_operations(int32_t* rdi, struct s11* rsi) {
-    struct s12* rsi3;
-
-    *rdi = rsi->f0;
-    rsi3 = reinterpret_cast<struct s12*>(&rsi->f4);
-    __asm__("movapd [rsp+0x10], xmm0");
-    __asm__("addsd xmm0, xmm1");
-    fun_4003f0(0x4009d0);
-    __asm__("movapd xmm0, [rsp+0x10]");
-    __asm__("subsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x4009d0);
-    *reinterpret_cast<int32_t*>(&g4009d0) = rsi3->f0;
-    __asm__("subsd xmm0, [rsp+0x10]");
-    fun_4003f0(0x4009d0);
-    __asm__("movapd xmm0, [rsp+0x10]");
-    __asm__("mulsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x4009d0);
-    __asm__("movapd xmm0, [rsp+0x10]");
-    __asm__("divsd xmm0, [rsp+0x8]");
-    fun_4003f0(0x4009d0);
-    *reinterpret_cast<int32_t*>(&g4009d0) = rsi3->f4;
-    __asm__("divsd xmm0, [rsp+0x10]");
-    fun_4003f0(0x4009d0, 0x4009d0);
-    __asm__("movapd xmm0, [rsp+0x10]");
-    __asm__("xorpd xmm0, [rip+0x24a]");
-    fun_4003f0(0x4009d0, 0x4009d0);
-    return 0x7b;
-}
-
-struct s13 {
-    int32_t f0;
-    int32_t f4;
-};
-
-struct s14 {
-    int32_t f0;
-    int32_t f4;
-};
-
-int64_t read_floats(struct s13* rdi, struct s14* rsi) {
+int64_t read_floats(struct s10* rdi, struct s11* rsi) {
     __asm__("movss xmm0, [rip+0x200a8c]");
     __asm__("cvtss2sd xmm0, xmm0");
     __asm__("xorpd xmm1, xmm1");
@@ -403,6 +380,6 @@ int64_t read_floats(struct s13* rdi, struct s14* rsi) {
     __asm__("fadd qword [rsp+0x10]");
     __asm__("fstp qword [rsp+0x8]");
     rdi->f4 = rsi->f4;
-    fun_4003f0(0x4009d0, 0x4009d0);
+    fun_4003f0("%f", "%f");
     return 0x7a;
 }

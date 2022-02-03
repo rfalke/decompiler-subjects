@@ -340,43 +340,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_CNT_CODE=32,
     IMAGE_SCN_CNT_INITIALIZED_DATA=64,
     IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
     IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
     IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
     IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
     IMAGE_SCN_MEM_NOT_CACHED=67108864,
     IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
     IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
 } SectionFlags;
 
 union Misc {
@@ -467,22 +467,13 @@ typedef struct _iobuf FILE;
 
 typedef uint uintptr_t;
 
-typedef struct unsigned_char unsigned_char, *Punsigned_char;
 
-struct unsigned_char { // PlaceHolder Structure
-};
-
-typedef dword unsigned_long;
+// WARNING! conflicting data type names: /Demangler/wchar_t - /wchar_t
 
 typedef struct _RTC_ALLOCA_NODE _RTC_ALLOCA_NODE, *P_RTC_ALLOCA_NODE;
 
 struct _RTC_ALLOCA_NODE { // PlaceHolder Structure
 };
-
-typedef dword unsigned_int;
-
-
-// WARNING! conflicting data type names: /Demangler/wchar_t - /wchar_t
 
 typedef int (* _onexit_t)(void);
 
@@ -625,7 +616,7 @@ void __cdecl ___security_init_cookie(void)
   _Stack12.dwLowDateTime = 0;
   _Stack12.dwHighDateTime = 0;
   if ((DAT_00417000 == 0xbb40e64e) || ((DAT_00417000 & 0xffff0000) == 0)) {
-    GetSystemTimeAsFileTime((LPFILETIME)&_Stack12);
+    GetSystemTimeAsFileTime(&_Stack12);
     uStack16 = _Stack12.dwLowDateTime ^ _Stack12.dwHighDateTime;
     DVar1 = GetCurrentProcessId();
     uStack16 = DVar1 ^ uStack16;
@@ -638,10 +629,8 @@ void __cdecl ___security_init_cookie(void)
     if (uStack16 == 0xbb40e64e) {
       uStack16 = 0xbb40e64f;
     }
-    else {
-      if ((uStack16 & 0xffff0000) == 0) {
-        uStack16 = uStack16 << 0x10 | uStack16;
-      }
+    else if ((uStack16 & 0xffff0000) == 0) {
+      uStack16 = uStack16 << 0x10 | uStack16;
     }
     DAT_00417000 = uStack16;
     DAT_00417004 = ~uStack16;
@@ -845,15 +834,16 @@ char * __cdecl strcpy(char *_Dest,char *_Source)
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
-  PBYTE pBVar1;
+  int iVar1;
   PIMAGE_SECTION_HEADER p_Stack16;
   uint uStack12;
   
-  pBVar1 = pImageBase + *(int *)(pImageBase + 0x3c);
+  iVar1 = *(int *)(pImageBase + 0x3c);
   uStack12 = 0;
-  p_Stack16 = (PIMAGE_SECTION_HEADER)(pBVar1 + *(ushort *)(pBVar1 + 0x14) + 0x18);
+  p_Stack16 = (PIMAGE_SECTION_HEADER)
+              (pImageBase + (uint)*(ushort *)(pImageBase + iVar1 + 0x14) + iVar1 + 0x18);
   while( true ) {
-    if (*(ushort *)(pBVar1 + 6) <= uStack12) {
+    if (*(ushort *)(pImageBase + iVar1 + 6) <= uStack12) {
       return (PIMAGE_SECTION_HEADER)0x0;
     }
     if ((p_Stack16->VirtualAddress <= rva) && (rva < p_Stack16->VirtualAddress + p_Stack16->Misc))
@@ -1252,8 +1242,8 @@ _invoke_watson(wchar_t *param_1,wchar_t *param_2,wchar_t *param_3,uint param_4,u
 
 
 int __cdecl
-_RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,int *param_4,
-               wchar_t *param_5,unsigned_long param_6)
+_RTC_GetSrcLine(uchar *param_1,wchar_t *param_2,ulong param_3,int *param_4,wchar_t *param_5,
+               ulong param_6)
 
 {
   char cVar1;
@@ -1266,7 +1256,7 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   HANDLE pvVar8;
   uint uVar9;
   uint uVar10;
-  unsigned_char *lpAddress;
+  uchar *lpAddress;
   uint uVar11;
   uint uVar12;
   _MEMORY_BASIC_INFORMATION _Stack72;
@@ -1276,15 +1266,15 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   int iStack32;
   int *piStack28;
   uint uStack24;
-  code **ppcStack20;
+  int *piStack20;
   int *piStack16;
   uint uStack12;
-  code **ppcStack8;
+  int *piStack8;
   
   *param_4 = 0;
   lpAddress = param_1 + -1;
   *(undefined2 *)param_2 = 0;
-  SVar2 = VirtualQuery(lpAddress,(PMEMORY_BASIC_INFORMATION)&_Stack72,0x1c);
+  SVar2 = VirtualQuery(lpAddress,&_Stack72,0x1c);
   if ((((SVar2 == 0) ||
        (DVar3 = GetModuleFileNameW((HMODULE)_Stack72.AllocationBase,(LPWSTR)param_5,param_6),
        DVar3 == 0)) || (*(short *)(int *)_Stack72.AllocationBase != 0x5a4d)) ||
@@ -1324,23 +1314,23 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   if (pFVar6 == (FARPROC)0x0) {
     return 0;
   }
-  iVar7 = (*pFVar6)(param_5,0,0,0,auStack44,0,0,&ppcStack20);
+  iVar7 = (*pFVar6)(param_5,0,0,0,auStack44,0,0,&piStack20);
   if (iVar7 == 0) {
     return 0;
   }
   iStack32 = 0;
-  iVar7 = (**(code **)*ppcStack20)();
+  iVar7 = (**(code **)*piStack20)();
   if ((iVar7 != 0x131a5b5) ||
-     (iVar7 = (**(code **)(*ppcStack20 + 0x1c))(0,&DAT_00416154,&piStack28), iVar7 == 0))
+     (iVar7 = (**(code **)(*piStack20 + 0x1c))(0,&DAT_00416154,&piStack28), iVar7 == 0))
   goto LAB_004136ac;
   iVar7 = (**(code **)(*piStack28 + 0x20))(uVar10 + 1,uVar12,&piStack16,0,0,0);
   if (iVar7 != 0) {
-    ppcStack8 = (code **)0x0;
-    cVar1 = (**(code **)(*piStack16 + 0x68))(&ppcStack8);
-    if ((cVar1 != '\0') && (ppcStack8 != (code **)0x0)) {
-      iVar7 = (**(code **)(*ppcStack8 + 8))();
+    piStack8 = (int *)0x0;
+    cVar1 = (**(code **)(*piStack16 + 0x68))(&piStack8);
+    if ((cVar1 != '\0') && (piStack8 != (int *)0x0)) {
+      iVar7 = (**(code **)(*piStack8 + 8))();
       while (iVar7 != 0) {
-        cVar1 = (**(code **)(*ppcStack8 + 0xc))(0,&uStack24,&param_1,&iStack36,&uStack12,0);
+        cVar1 = (**(code **)(*piStack8 + 0xc))(0,&uStack24,&param_1,&iStack36,&uStack12,0);
         if (cVar1 == '\0') goto LAB_0041368f;
         if (((((uint)param_1 & 0xffff) == uVar10 + 1) && (uStack24 <= uVar12)) &&
            (uVar12 < uStack24 + iStack36)) {
@@ -1350,13 +1340,13 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
           pvVar8 = GetProcessHeap();
           puVar5 = (uint *)HeapAlloc(pvVar8,DVar3,SVar2);
           if (puVar5 == (uint *)0x0) goto LAB_0041368f;
-          cVar1 = (**(code **)(*ppcStack8 + 0xc))(&uStack40,0,0,0,&uStack12,puVar5);
+          cVar1 = (**(code **)(*piStack8 + 0xc))(&uStack40,0,0,0,&uStack12,puVar5);
           if ((cVar1 == '\0') || (uVar12 - uStack24 < *puVar5)) break;
           uVar9 = 1;
           if (1 < uStack12) goto LAB_00413640;
           goto LAB_0041364a;
         }
-        iVar7 = (**(code **)(*ppcStack8 + 8))();
+        iVar7 = (**(code **)(*piStack8 + 8))();
       }
       goto LAB_0041367f;
     }
@@ -1378,13 +1368,13 @@ LAB_0041367f:
   pvVar8 = GetProcessHeap();
   HeapFree(pvVar8,DVar3,puVar5);
 LAB_0041368f:
-  (**(code **)*ppcStack8)();
+  (**(code **)*piStack8)();
 LAB_00413698:
   (**(code **)(*piStack16 + 0x40))();
 LAB_004136a2:
   (**(code **)(*piStack28 + 0x38))();
 LAB_004136ac:
-  (**(code **)(*ppcStack20 + 0x28))();
+  (**(code **)(*piStack20 + 0x28))();
   return iStack32;
 }
 
@@ -1481,8 +1471,6 @@ void __cdecl _RTC_Failure(void *param_1,int param_2)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int param_3)
 
 {
@@ -1509,12 +1497,12 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
   if (DAT_00417018 != -1) {
     hModule = LoadLibraryA("user32.dll");
     if (hModule != (HMODULE)0x0) {
-      _DAT_00417534 = GetProcAddress(hModule,"wsprintfA");
-      if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (_DAT_00417534 != (FARPROC)0x0)) {
-        (*_DAT_00417534)(aCStack324,"%s%s%p%s%ld%s%d%s",
-                         "Stack area around _alloca memory reserved by this function is corrupted",
-                         "\nAddress: 0x",param_2 + 0x20,"\nSize: ",*(int *)(param_2 + 0xc) + -0x24,
-                         "\nAllocation number within this function: ",param_3,"\nData: <");
+      DAT_00417534 = GetProcAddress(hModule,"wsprintfA");
+      if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (DAT_00417534 != (FARPROC)0x0)) {
+        (*DAT_00417534)(aCStack324,"%s%s%p%s%ld%s%d%s",
+                        "Stack area around _alloca memory reserved by this function is corrupted",
+                        "\nAddress: 0x",param_2 + 0x20,"\nSize: ",*(int *)(param_2 + 0xc) + -0x24,
+                        "\nAllocation number within this function: ",param_3,"\nData: <");
         _getMemBlockDataString
                   (acStack28,acStack80,(char *)(param_2 + 0x20),*(int *)(param_2 + 0xc) - 0x24);
         puVar7 = &DAT_00415de8;
@@ -1523,7 +1511,7 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
         pcVar4 = acStack28;
         pcVar3 = "%s%s%s%s";
         iVar2 = lstrlenA(aCStack324);
-        (*_DAT_00417534)(aCStack324 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
+        (*DAT_00417534)(aCStack324 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
         failwithmessage(pvVar8,iVar1,4,aCStack324);
         thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,extraout_EDX,(char)pvVar8);
         return;
@@ -2129,18 +2117,16 @@ int ___tmainCRTStartup(void)
   if (_DAT_00417560 == 1) {
     _amsg_exit(0x1f);
   }
+  else if (_DAT_00417560 == 0) {
+    _DAT_00417560 = 1;
+    iVar5 = _initterm_e(&DAT_0041530c,&DAT_00415618);
+    if (iVar5 != 0) {
+      iVar5 = 0xff;
+      goto LAB_00411fa4;
+    }
+  }
   else {
-    if (_DAT_00417560 == 0) {
-      _DAT_00417560 = 1;
-      iVar5 = _initterm_e(&DAT_0041530c,&DAT_00415618);
-      if (iVar5 != 0) {
-        iVar5 = 0xff;
-        goto LAB_00411fa4;
-      }
-    }
-    else {
-      _DAT_00417160 = 1;
-    }
+    _DAT_00417160 = 1;
   }
   if (_DAT_00417560 == 1) {
     _initterm(&DAT_00415000,&DAT_00415208);
@@ -2156,9 +2142,9 @@ int ___tmainCRTStartup(void)
   if (!bVar2) {
     InterlockedExchange((LONG *)&DAT_00417570,0);
   }
-  if ((_DAT_00417594 != (code *)0x0) &&
-     (BVar6 = __IsNonwritableInCurrentImage(&DAT_00417594), BVar6 != 0)) {
-    (*_DAT_00417594)(0,2,0);
+  if ((DAT_00417594 != (code *)0x0) &&
+     (BVar6 = __IsNonwritableInCurrentImage((PBYTE)&DAT_00417594), BVar6 != 0)) {
+    (*DAT_00417594)(0,2,0);
   }
   _CrtSetCheckCount(1);
   *(undefined4 *)__initenv_exref = DAT_00417148;
@@ -2222,13 +2208,13 @@ undefined _check_managed_app(void)
 // 
 // Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-int __cdecl DebuggerProbe(unsigned_long param_1)
+int __cdecl DebuggerProbe(ulong param_1)
 
 {
   int **in_FS_OFFSET;
   uint uStack72;
   ULONG_PTR local_38;
-  unsigned_long local_34;
+  ulong local_34;
   byte *local_30;
   byte local_1d;
   uint *local_1c;
@@ -2340,8 +2326,8 @@ LAB_00412483:
       BVar4 = IsDebuggerPresent();
       if (BVar4 != 0) goto LAB_004125e0;
     }
-    _RTC_GetSrcLine((unsigned_char *)((int)param_1 + -5),(wchar_t *)local_210,0x104,
-                    (int *)&local_e34,(wchar_t *)local_418,0x104);
+    _RTC_GetSrcLine((uchar *)((int)param_1 + -5),(wchar_t *)local_210,0x104,(int *)&local_e34,
+                    (wchar_t *)local_418,0x104);
     if (pcVar2 == (code *)0x0) {
       pcVar6 = "Unknown Filename";
       iVar3 = WideCharToMultiByte(0xfde9,0,local_210,-1,local_a30,0x30a,(LPCSTR)0x0,(LPBOOL)0x0);
@@ -2378,13 +2364,13 @@ LAB_004125e6:
 // 
 // Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-int __cdecl DebuggerRuntime(unsigned_long param_1,int param_2,void *param_3,wchar_t *param_4)
+int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *param_4)
 
 {
   int **in_FS_OFFSET;
   uint uStack72;
   ULONG_PTR local_38;
-  unsigned_long local_34;
+  ulong local_34;
   int local_30;
   void *local_2c;
   byte *local_28;
@@ -2512,7 +2498,6 @@ LAB_0041283e:
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
 //  void __cdecl _RTC_AllocaFailure(void *,struct _RTC_ALLOCA_NODE *,int)
 // 
@@ -2544,12 +2529,12 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
   if (DAT_00417018 != -1) {
     hModule = LoadLibraryA("user32.dll");
     if (hModule != (HMODULE)0x0) {
-      _DAT_00417534 = GetProcAddress(hModule,"wsprintfA");
-      if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (_DAT_00417534 != (FARPROC)0x0)) {
-        (*_DAT_00417534)(local_144,"%s%s%p%s%ld%s%d%s",
-                         "Stack area around _alloca memory reserved by this function is corrupted",
-                         "\nAddress: 0x",param_2 + 0x20,"\nSize: ",*(int *)(param_2 + 0xc) + -0x24,
-                         "\nAllocation number within this function: ",param_3,"\nData: <");
+      DAT_00417534 = GetProcAddress(hModule,"wsprintfA");
+      if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (DAT_00417534 != (FARPROC)0x0)) {
+        (*DAT_00417534)(local_144,"%s%s%p%s%ld%s%d%s",
+                        "Stack area around _alloca memory reserved by this function is corrupted",
+                        "\nAddress: 0x",param_2 + 0x20,"\nSize: ",*(int *)(param_2 + 0xc) + -0x24,
+                        "\nAllocation number within this function: ",param_3,"\nData: <");
         _getMemBlockDataString
                   (local_1c,local_50,(char *)(param_2 + 0x20),*(int *)(param_2 + 0xc) - 0x24);
         puVar7 = &DAT_00415de8;
@@ -2558,7 +2543,7 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
         pcVar4 = local_1c;
         pcVar3 = "%s%s%s%s";
         iVar2 = lstrlenA(local_144);
-        (*_DAT_00417534)(local_144 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
+        (*DAT_00417534)(local_144 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
         failwithmessage(pvVar8,iVar1,4,local_144);
         thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,extraout_EDX,(char)pvVar8);
         return;
@@ -2574,17 +2559,16 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // Library Function - Single Match
 //  void __cdecl _getMemBlockDataString(char *,char *,char *,unsigned int)
 // 
 // Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release, Visual Studio 2010 Debug
 
-void __cdecl _getMemBlockDataString(char *param_1,char *param_2,char *param_3,unsigned_int param_4)
+void __cdecl _getMemBlockDataString(char *param_1,char *param_2,char *param_3,uint param_4)
 
 {
   char cVar1;
-  unsigned_int uVar2;
+  uint uVar2;
   char *pcVar3;
   uint uVar4;
   char *local_8;
@@ -2599,7 +2583,7 @@ void __cdecl _getMemBlockDataString(char *param_1,char *param_2,char *param_3,un
     }
     if (uVar2 <= uVar4) break;
     cVar1 = pcVar3[(int)param_3 - (int)param_1];
-    (*_DAT_00417534)(local_8,"%.2X ",cVar1);
+    (*DAT_00417534)(local_8,"%.2X ",cVar1);
     local_8 = local_8 + 3;
     *pcVar3 = cVar1;
     uVar4 = uVar4 + 1;
@@ -3009,7 +2993,7 @@ void __cdecl ___security_init_cookie(void)
   local_c.dwLowDateTime = 0;
   local_c.dwHighDateTime = 0;
   if ((DAT_00417000 == 0xbb40e64e) || ((DAT_00417000 & 0xffff0000) == 0)) {
-    GetSystemTimeAsFileTime((LPFILETIME)&local_c);
+    GetSystemTimeAsFileTime(&local_c);
     local_10 = local_c.dwLowDateTime ^ local_c.dwHighDateTime;
     DVar1 = GetCurrentProcessId();
     local_10 = DVar1 ^ local_10;
@@ -3022,10 +3006,8 @@ void __cdecl ___security_init_cookie(void)
     if (local_10 == 0xbb40e64e) {
       local_10 = 0xbb40e64f;
     }
-    else {
-      if ((local_10 & 0xffff0000) == 0) {
-        local_10 = local_10 << 0x10 | local_10;
-      }
+    else if ((local_10 & 0xffff0000) == 0) {
+      local_10 = local_10 << 0x10 | local_10;
     }
     DAT_00417000 = local_10;
     DAT_00417004 = ~local_10;
@@ -3092,15 +3074,16 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
-  PBYTE pBVar1;
+  int iVar1;
   PIMAGE_SECTION_HEADER local_10;
   uint local_c;
   
-  pBVar1 = pImageBase + *(int *)(pImageBase + 0x3c);
+  iVar1 = *(int *)(pImageBase + 0x3c);
   local_c = 0;
-  local_10 = (PIMAGE_SECTION_HEADER)(pBVar1 + *(ushort *)(pBVar1 + 0x14) + 0x18);
+  local_10 = (PIMAGE_SECTION_HEADER)
+             (pImageBase + (uint)*(ushort *)(pImageBase + iVar1 + 0x14) + iVar1 + 0x18);
   while( true ) {
-    if (*(ushort *)(pBVar1 + 6) <= local_c) {
+    if (*(ushort *)(pImageBase + iVar1 + 6) <= local_c) {
       return (PIMAGE_SECTION_HEADER)0x0;
     }
     if ((local_10->VirtualAddress <= rva) && (rva < local_10->VirtualAddress + local_10->Misc))
@@ -3211,8 +3194,8 @@ void __cdecl _crt_debugger_hook(int param_1)
 // Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
 int __cdecl
-_RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,int *param_4,
-               wchar_t *param_5,unsigned_long param_6)
+_RTC_GetSrcLine(uchar *param_1,wchar_t *param_2,ulong param_3,int *param_4,wchar_t *param_5,
+               ulong param_6)
 
 {
   char cVar1;
@@ -3225,7 +3208,7 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   HANDLE pvVar8;
   uint uVar9;
   uint uVar10;
-  unsigned_char *lpAddress;
+  uchar *lpAddress;
   uint uVar11;
   uint uVar12;
   _MEMORY_BASIC_INFORMATION local_48;
@@ -3235,15 +3218,15 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   int local_20;
   int *local_1c;
   uint local_18;
-  code **local_14;
+  int *local_14;
   int *local_10;
   uint local_c;
-  code **local_8;
+  int *local_8;
   
   *param_4 = 0;
   lpAddress = param_1 + -1;
   *(undefined2 *)param_2 = 0;
-  SVar2 = VirtualQuery(lpAddress,(PMEMORY_BASIC_INFORMATION)&local_48,0x1c);
+  SVar2 = VirtualQuery(lpAddress,&local_48,0x1c);
   if ((((SVar2 == 0) ||
        (DVar3 = GetModuleFileNameW((HMODULE)local_48.AllocationBase,(LPWSTR)param_5,param_6),
        DVar3 == 0)) || (*(short *)(int *)local_48.AllocationBase != 0x5a4d)) ||
@@ -3294,9 +3277,9 @@ _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,in
   goto LAB_004136ac;
   iVar7 = (**(code **)(*local_1c + 0x20))(uVar10 + 1,uVar12,&local_10,0,0,0);
   if (iVar7 != 0) {
-    local_8 = (code **)0x0;
+    local_8 = (int *)0x0;
     cVar1 = (**(code **)(*local_10 + 0x68))(&local_8);
-    if ((cVar1 != '\0') && (local_8 != (code **)0x0)) {
+    if ((cVar1 != '\0') && (local_8 != (int *)0x0)) {
       iVar7 = (**(code **)(*local_8 + 8))();
       while (iVar7 != 0) {
         cVar1 = (**(code **)(*local_8 + 0xc))(0,&local_18,&param_1,&local_24,&local_c,0);

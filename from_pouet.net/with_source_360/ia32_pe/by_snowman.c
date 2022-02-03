@@ -263,25 +263,25 @@ void fun_4011c5(struct s0* a1, struct s0* a2, struct s0* a3, struct s0* a4, stru
 
     v10 = reinterpret_cast<struct s0*>(__return_address());
     eax11 = reinterpret_cast<struct s0*>(GlobalAlloc(0, 0xf4240, v10));
-    if (!eax11 || ((g40210c = eax11, g402104 = eax11, eax12 = reinterpret_cast<int32_t>(eax11 + 0x3e8), g402100 = eax12, eax13 = eax12 + 0x61a80, g40211c = eax13, g402120 = eax13 + 0x30d40, v14 = reinterpret_cast<struct s0*>(0), eax15 = reinterpret_cast<struct s0*>(GetModuleHandleW(0, 0, 0xf4240, v10)), g4020b4 = eax15, v16 = reinterpret_cast<struct s0*>(0x7f00), v17 = reinterpret_cast<struct s0*>(0), eax18 = reinterpret_cast<int32_t>(LoadIconW(0, 0x7f00, 0, 0, 0xf4240, v10)), g4020b8 = eax18, v19 = reinterpret_cast<struct s0*>(0x7f00), eax20 = reinterpret_cast<int32_t>(LoadCursorW(0)), g4020bc = eax20, eax21 = reinterpret_cast<int32_t>(RegisterClassW(0x4020a4, 0)), eax21 == 0) || (v22 = g4020b4, eax23 = reinterpret_cast<struct s0*>(CreateWindowExW(0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0)), eax23 == 0))) {
+    if (!eax11 || ((g40210c = eax11, g402104 = eax11, eax12 = reinterpret_cast<int32_t>(eax11 + 0x3e8), g402100 = eax12, eax13 = eax12 + 0x61a80, g40211c = eax13, g402120 = eax13 + 0x30d40, v14 = reinterpret_cast<struct s0*>(0), eax15 = reinterpret_cast<struct s0*>(GetModuleHandleW(0, 0, 0xf4240, v10)), g4020b4 = eax15, v16 = reinterpret_cast<struct s0*>(0x7f00), v17 = reinterpret_cast<struct s0*>(0), eax18 = reinterpret_cast<int32_t>(LoadIconW(0, 0x7f00, 0, 0, 0xf4240, v10)), g4020b8 = eax18, v19 = reinterpret_cast<struct s0*>(0x7f00), eax20 = reinterpret_cast<int32_t>(LoadCursorW(0)), g4020bc = eax20, eax21 = reinterpret_cast<int32_t>(RegisterClassW(0x4020a4, 0)), eax21 == 0) || (v22 = g4020b4, eax23 = reinterpret_cast<struct s0*>(CreateWindowExW(0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0)), eax23 == 0))) {
         v14 = reinterpret_cast<struct s0*>(16);
         v16 = reinterpret_cast<struct s0*>(0);
-        v17 = reinterpret_cast<struct s0*>(0x40204c);
+        v17 = reinterpret_cast<struct s0*>("S");
         v19 = reinterpret_cast<struct s0*>(0);
         MessageBoxW();
     } else {
         g4020cc = eax23;
         v24 = eax23;
-        eax25 = reinterpret_cast<struct s0*>(GetDC(v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0));
+        eax25 = reinterpret_cast<struct s0*>(GetDC(v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0));
         g4020d0 = eax25;
-        fun_401000(v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
-        fun_401020(v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0, 0x7f00, 0, 0x7f00, 0, 0, 0xf4240, v10, a1, a2);
+        fun_401000(v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
+        fun_401020(v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0, 0x7f00, 0, 0x7f00, 0, 0, 0xf4240, v10, a1, a2);
         v26 = g4020d0;
-        SetStretchBltMode(v26, 4, v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
-        while (PeekMessageW(0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0), zf27 = g4020d8 == 18, !zf27) {
-            TranslateMessage(0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
-            DispatchMessageW(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
-            fun_401020(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, 0x402000, 0x402012, 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
+        SetStretchBltMode(v26, 4, v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
+        while (PeekMessageW(0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0), zf27 = g4020d8 == 18, !zf27) {
+            TranslateMessage(0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
+            DispatchMessageW(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
+            fun_401020(0x4020d4, 0x4020d4, 0x4020d4, 0, 0, 0, 1, v26, 4, v24, 0, "D", "<", 0x10cf0000, 0x8000, 0x8000, 0x21c, 0x190, 0, 0, v22, 0, 0x4020a4, 0);
             ++g402108;
         }
     }

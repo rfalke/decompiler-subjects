@@ -32,7 +32,7 @@ int32_t deregister_tm_clones() {
 
 struct s0 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 int32_t fun_8049040(int32_t a1, int32_t a2);
@@ -45,7 +45,7 @@ void fun_804918c() {
     int32_t v5;
 
     eax1 = reinterpret_cast<struct s0*>(reinterpret_cast<int32_t>(__return_address()) + 0x2e74);
-    edx2 = eax1->0x18;
+    edx2 = eax1->f18;
     eax3 = fun_8049040(reinterpret_cast<int32_t>(eax1) - 0x1ff4, edx2);
     *reinterpret_cast<int32_t*>(ebp4 - 8) = eax3;
     goto v5;
@@ -59,12 +59,12 @@ int32_t fun_8049040(int32_t a1, int32_t a2) {
 
 struct s1 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 struct s2 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 void a_func(int32_t a1, int32_t a2);
@@ -82,11 +82,11 @@ void fun_80491cc() {
 
     eax1 = reinterpret_cast<struct s1*>(reinterpret_cast<int32_t>(__return_address()) + 0x2e34);
     *reinterpret_cast<int32_t*>(ebp2 - 8) = 0;
-    edx3 = eax1->0x18;
+    edx3 = eax1->f18;
     v4 = reinterpret_cast<int32_t>(eax1) - 0x1fe7;
     *reinterpret_cast<struct s1**>(ebp5 - 12) = eax1;
     eax6 = fun_8049040(v4, edx3);
-    (*reinterpret_cast<struct s2**>(ebp7 - 12))->0x18 = (*reinterpret_cast<struct s2**>(ebp7 - 12))->0x18 + 1;
+    (*reinterpret_cast<struct s2**>(ebp7 - 12))->f18 = (*reinterpret_cast<struct s2**>(ebp7 - 12))->f18 + 1;
     *reinterpret_cast<int32_t*>(ebp8 - 16) = eax6;
     a_func(v4, edx3);
     goto v9;
@@ -94,7 +94,7 @@ void fun_80491cc() {
 
 struct s3 {
     signed char[24] pad24;
-    int32_t 0x18;
+    int32_t f18;
 };
 
 void a_func(int32_t a1, int32_t a2) {
@@ -104,7 +104,7 @@ void a_func(int32_t a1, int32_t a2) {
 
     fun_804918c();
     eax3 = reinterpret_cast<struct s3*>(v4 + 0x2e74);
-    edx5 = eax3->0x18;
+    edx5 = eax3->f18;
     fun_8049040(reinterpret_cast<int32_t>(eax3) - 0x1ff4, edx5);
     goto a1;
 }

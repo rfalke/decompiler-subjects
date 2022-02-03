@@ -136,9 +136,9 @@ int32_t fun_401bfc(int32_t a1, int32_t a2, int32_t a3, unsigned char* a4) {
 
 struct s0 {
     signed char[20] pad20;
-    signed char f20;
+    signed char f14;
     signed char[4139] pad4160;
-    int32_t f4160;
+    int32_t f1040;
 };
 
 struct s0* fun_4018f6(int32_t a1);
@@ -151,8 +151,8 @@ int32_t fun_401c14(int32_t a1, int32_t a2) {
 
     eax3 = fun_4018f6(__return_address());
     ecx4 = a1;
-    eax3->f20 = *reinterpret_cast<signed char*>(&ecx4);
-    eax3->f4160 = a2;
+    eax3->f14 = *reinterpret_cast<signed char*>(&ecx4);
+    eax3->f1040 = a2;
     if (!ecx4) {
         _setmbcp();
     }
@@ -308,7 +308,7 @@ void fun_401120() {
 struct s1 {
     int32_t f0;
     signed char[92] pad96;
-    int32_t f96;
+    int32_t f60;
 };
 
 int32_t fun_4018f0(int32_t a1);
@@ -324,7 +324,7 @@ void fun_401150(struct s1* ecx, int32_t a2) {
     fun_4018f6(0x66);
     fun_4018f0(0x80);
     eax3 = reinterpret_cast<int32_t>(LoadIconA());
-    ecx->f96 = eax3;
+    ecx->f60 = eax3;
     g0 = reinterpret_cast<void**>(14);
     goto a2;
 }
@@ -356,11 +356,11 @@ void fun_4011e0() {
 
 struct s2 {
     signed char[96] pad96;
-    int32_t f96;
+    int32_t f60;
 };
 
 int32_t fun_401560(struct s2* ecx) {
-    return ecx->f96;
+    return ecx->f60;
 }
 
 void fun_4010a0();
@@ -413,7 +413,7 @@ void fun_401606(int32_t* ecx) {
 
 struct s3 {
     signed char[32] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 int32_t EnableWindow = 0x45dc;
@@ -421,7 +421,7 @@ int32_t EnableWindow = 0x45dc;
 void fun_401720(struct s3* ecx) {
     int32_t eax2;
 
-    eax2 = ecx->f32;
+    eax2 = ecx->f20;
     EnableWindow();
     goto eax2;
 }
@@ -579,13 +579,13 @@ void fun_401656(int32_t* ecx) {
 
 struct s4 {
     signed char[32] pad32;
-    int32_t f32;
+    int32_t f20;
 };
 
 void fun_401730(struct s4* ecx) {
     int32_t eax2;
 
-    eax2 = ecx->f32;
+    eax2 = ecx->f20;
     EnableWindow();
     goto eax2;
 }
@@ -615,9 +615,9 @@ void fun_4010a0() {
 
 struct s5 {
     signed char[32] pad32;
-    int32_t f32;
+    int32_t f20;
     signed char[60] pad96;
-    int32_t f96;
+    int32_t f60;
 };
 
 int32_t SendMessageA = 0x45c0;
@@ -630,9 +630,9 @@ void fun_401210(struct s5* ecx) {
     int32_t v6;
 
     fun_401902(edi2, esi3, __return_address());
-    ecx4 = ecx->f32;
+    ecx4 = ecx->f20;
     edi5 = SendMessageA;
-    v6 = ecx->f96;
+    v6 = ecx->f60;
     edi5(ecx4, 0x80, 1, v6, edi2, esi3, __return_address());
     edi5();
     goto 0;
@@ -659,7 +659,7 @@ void fun_401c70() {
 
 struct s6 {
     signed char[32] pad32;
-    void* f32;
+    void* f20;
 };
 
 int32_t fun_4010b0(struct s6* ecx) {
@@ -675,7 +675,7 @@ int32_t fun_4010b0(struct s6* ecx) {
     esp4 = reinterpret_cast<void*>(esp3 - 25 - 1 - 1 + 1 - 1);
     fun_401150(reinterpret_cast<uint32_t>(esp4) + 8, 0);
     esp5 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp4) - 4 + 4 + 4);
-    ecx->f32 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp5) + 4);
+    ecx->f20 = reinterpret_cast<void*>(reinterpret_cast<uint32_t>(esp5) + 4);
     fun_401830(reinterpret_cast<uint32_t>(esp5) + 4);
     fun_40182a(reinterpret_cast<uint32_t>(esp5) - 4 + 4 + 4);
     g0 = eax2;

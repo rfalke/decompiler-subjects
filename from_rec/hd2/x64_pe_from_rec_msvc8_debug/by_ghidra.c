@@ -40,6 +40,241 @@ union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
 };
 
 typedef unsigned short    wchar16;
+typedef struct _FILETIME _FILETIME, *P_FILETIME;
+
+typedef struct _FILETIME * LPFILETIME;
+
+typedef ulong DWORD;
+
+struct _FILETIME {
+    DWORD dwLowDateTime;
+    DWORD dwHighDateTime;
+};
+
+typedef ushort WORD;
+
+typedef uchar BYTE;
+
+typedef longlong INT_PTR;
+
+typedef INT_PTR (* FARPROC)(void);
+
+typedef struct HINSTANCE__ HINSTANCE__, *PHINSTANCE__;
+
+typedef struct HINSTANCE__ * HINSTANCE;
+
+struct HINSTANCE__ {
+    int unused;
+};
+
+typedef void * LPCVOID;
+
+typedef void * LPVOID;
+
+typedef int BOOL;
+
+typedef HINSTANCE HMODULE;
+
+typedef BOOL * LPBOOL;
+
+typedef uint UINT;
+
+typedef BYTE * PBYTE;
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
+
+typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion;
+
+typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
+
+struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct {
+    dword NameOffset;
+    dword NameIsString;
+};
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion {
+    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
+    dword Name;
+    word Id;
+};
+
+union IMAGE_RESOURCE_DIRECTORY_ENTRY {
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion NameUnion;
+    union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion DirectoryUnion;
+};
+
+typedef struct IMAGE_OPTIONAL_HEADER64 IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
+
+typedef struct IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
+
+struct IMAGE_DATA_DIRECTORY {
+    ImageBaseOffset32 VirtualAddress;
+    dword Size;
+};
+
+struct IMAGE_OPTIONAL_HEADER64 {
+    word Magic;
+    byte MajorLinkerVersion;
+    byte MinorLinkerVersion;
+    dword SizeOfCode;
+    dword SizeOfInitializedData;
+    dword SizeOfUninitializedData;
+    ImageBaseOffset32 AddressOfEntryPoint;
+    ImageBaseOffset32 BaseOfCode;
+    pointer64 ImageBase;
+    dword SectionAlignment;
+    dword FileAlignment;
+    word MajorOperatingSystemVersion;
+    word MinorOperatingSystemVersion;
+    word MajorImageVersion;
+    word MinorImageVersion;
+    word MajorSubsystemVersion;
+    word MinorSubsystemVersion;
+    dword Win32VersionValue;
+    dword SizeOfImage;
+    dword SizeOfHeaders;
+    dword CheckSum;
+    word Subsystem;
+    word DllCharacteristics;
+    qword SizeOfStackReserve;
+    qword SizeOfStackCommit;
+    qword SizeOfHeapReserve;
+    qword SizeOfHeapCommit;
+    dword LoaderFlags;
+    dword NumberOfRvaAndSizes;
+    struct IMAGE_DATA_DIRECTORY DataDirectory[16];
+};
+
+typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
+
+typedef union Misc Misc, *PMisc;
+
+typedef enum SectionFlags {
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
+    IMAGE_SCN_CNT_CODE=32,
+    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
+    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
+    IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
+    IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
+    IMAGE_SCN_MEM_16BIT=131072,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
+    IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
+    IMAGE_SCN_MEM_NOT_CACHED=67108864,
+    IMAGE_SCN_MEM_NOT_PAGED=134217728,
+    IMAGE_SCN_MEM_SHARED=268435456,
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
+} SectionFlags;
+
+union Misc {
+    dword PhysicalAddress;
+    dword VirtualSize;
+};
+
+struct IMAGE_SECTION_HEADER {
+    char Name[8];
+    union Misc Misc;
+    ImageBaseOffset32 VirtualAddress;
+    dword SizeOfRawData;
+    dword PointerToRawData;
+    dword PointerToRelocations;
+    dword PointerToLinenumbers;
+    word NumberOfRelocations;
+    word NumberOfLinenumbers;
+    enum SectionFlags Characteristics;
+};
+
+typedef struct IMAGE_NT_HEADERS64 IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
+
+typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
+
+struct IMAGE_FILE_HEADER {
+    word Machine; // 34404
+    word NumberOfSections;
+    dword TimeDateStamp;
+    dword PointerToSymbolTable;
+    dword NumberOfSymbols;
+    word SizeOfOptionalHeader;
+    word Characteristics;
+};
+
+struct IMAGE_NT_HEADERS64 {
+    char Signature[4];
+    struct IMAGE_FILE_HEADER FileHeader;
+    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
+};
+
+typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
+
+struct IMAGE_RESOURCE_DATA_ENTRY {
+    dword OffsetToData;
+    dword Size;
+    dword CodePage;
+    dword Reserved;
+};
+
+typedef struct IMAGE_RESOURCE_DIRECTORY IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;
+
+struct IMAGE_RESOURCE_DIRECTORY {
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    word NumberOfNamedEntries;
+    word NumberOfIdEntries;
+};
+
+typedef struct IMAGE_DEBUG_DIRECTORY IMAGE_DEBUG_DIRECTORY, *PIMAGE_DEBUG_DIRECTORY;
+
+struct IMAGE_DEBUG_DIRECTORY {
+    dword Characteristics;
+    dword TimeDateStamp;
+    word MajorVersion;
+    word MinorVersion;
+    dword Type;
+    dword SizeOfData;
+    dword AddressOfRawData;
+    dword PointerToRawData;
+};
+
+typedef struct _iobuf _iobuf, *P_iobuf;
+
+struct _iobuf {
+    char * _ptr;
+    int _cnt;
+    char * _base;
+    int _flag;
+    int _file;
+    int _charbuf;
+    int _bufsiz;
+    char * _tmpfname;
+};
+
+typedef struct _iobuf FILE;
+
 typedef long LONG;
 
 typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
@@ -56,15 +291,11 @@ typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
 
 typedef struct _CONTEXT * PCONTEXT;
 
-typedef ulong DWORD;
-
 typedef void * PVOID;
 
 typedef ulonglong ULONG_PTR;
 
 typedef ulonglong DWORD64;
-
-typedef ushort WORD;
 
 typedef union _union_52 _union_52, *P_union_52;
 
@@ -83,8 +314,6 @@ typedef struct _struct_53 _struct_53, *P_struct_53;
 typedef ulonglong ULONGLONG;
 
 typedef longlong LONGLONG;
-
-typedef uchar BYTE;
 
 struct _M128A {
     ULONGLONG Low;
@@ -274,10 +503,10 @@ struct _IMAGE_SECTION_HEADER {
 typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
 
 typedef enum _EXCEPTION_DISPOSITION {
-    ExceptionCollidedUnwind=3,
     ExceptionContinueExecution=0,
     ExceptionContinueSearch=1,
-    ExceptionNestedException=2
+    ExceptionNestedException=2,
+    ExceptionCollidedUnwind=3
 } _EXCEPTION_DISPOSITION;
 
 typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
@@ -420,9 +649,11 @@ struct IMAGE_DOS_HEADER {
     byte e_program[64]; // Actual DOS program
 };
 
-typedef longlong INT_PTR;
-
 typedef ULONG_PTR DWORD_PTR;
+
+typedef int (* _onexit_t)(void);
+
+typedef ulonglong size_t;
 
 typedef struct DotNetPdbInfo DotNetPdbInfo, *PDotNetPdbInfo;
 
@@ -432,254 +663,6 @@ struct DotNetPdbInfo {
     dword age;
     char pdbname[16];
 };
-
-typedef struct _FILETIME _FILETIME, *P_FILETIME;
-
-typedef struct _FILETIME * LPFILETIME;
-
-struct _FILETIME {
-    DWORD dwLowDateTime;
-    DWORD dwHighDateTime;
-};
-
-typedef INT_PTR (* FARPROC)(void);
-
-typedef struct HINSTANCE__ HINSTANCE__, *PHINSTANCE__;
-
-typedef struct HINSTANCE__ * HINSTANCE;
-
-struct HINSTANCE__ {
-    int unused;
-};
-
-typedef void * LPCVOID;
-
-typedef void * LPVOID;
-
-typedef int BOOL;
-
-typedef HINSTANCE HMODULE;
-
-typedef BOOL * LPBOOL;
-
-typedef uint UINT;
-
-typedef BYTE * PBYTE;
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY IMAGE_RESOURCE_DIRECTORY_ENTRY, *PIMAGE_RESOURCE_DIRECTORY_ENTRY;
-
-typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion;
-
-typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
-
-struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct {
-    dword NameOffset;
-    dword NameIsString;
-};
-
-union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion {
-    struct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_NameStruct;
-    dword Name;
-    word Id;
-};
-
-union IMAGE_RESOURCE_DIRECTORY_ENTRY {
-    union IMAGE_RESOURCE_DIRECTORY_ENTRY_NameUnion NameUnion;
-    union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion DirectoryUnion;
-};
-
-typedef struct IMAGE_OPTIONAL_HEADER64 IMAGE_OPTIONAL_HEADER64, *PIMAGE_OPTIONAL_HEADER64;
-
-typedef struct IMAGE_DATA_DIRECTORY IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;
-
-struct IMAGE_DATA_DIRECTORY {
-    ImageBaseOffset32 VirtualAddress;
-    dword Size;
-};
-
-struct IMAGE_OPTIONAL_HEADER64 {
-    word Magic;
-    byte MajorLinkerVersion;
-    byte MinorLinkerVersion;
-    dword SizeOfCode;
-    dword SizeOfInitializedData;
-    dword SizeOfUninitializedData;
-    ImageBaseOffset32 AddressOfEntryPoint;
-    ImageBaseOffset32 BaseOfCode;
-    pointer64 ImageBase;
-    dword SectionAlignment;
-    dword FileAlignment;
-    word MajorOperatingSystemVersion;
-    word MinorOperatingSystemVersion;
-    word MajorImageVersion;
-    word MinorImageVersion;
-    word MajorSubsystemVersion;
-    word MinorSubsystemVersion;
-    dword Win32VersionValue;
-    dword SizeOfImage;
-    dword SizeOfHeaders;
-    dword CheckSum;
-    word Subsystem;
-    word DllCharacteristics;
-    qword SizeOfStackReserve;
-    qword SizeOfStackCommit;
-    qword SizeOfHeapReserve;
-    qword SizeOfHeapCommit;
-    dword LoaderFlags;
-    dword NumberOfRvaAndSizes;
-    struct IMAGE_DATA_DIRECTORY DataDirectory[16];
-};
-
-typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER;
-
-typedef union Misc Misc, *PMisc;
-
-typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
-    IMAGE_SCN_CNT_CODE=32,
-    IMAGE_SCN_CNT_INITIALIZED_DATA=64,
-    IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
-    IMAGE_SCN_LNK_OTHER=256,
-    IMAGE_SCN_LNK_REMOVE=2048,
-    IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
-    IMAGE_SCN_MEM_LOCKED=262144,
-    IMAGE_SCN_MEM_NOT_CACHED=67108864,
-    IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
-    IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
-} SectionFlags;
-
-union Misc {
-    dword PhysicalAddress;
-    dword VirtualSize;
-};
-
-struct IMAGE_SECTION_HEADER {
-    char Name[8];
-    union Misc Misc;
-    ImageBaseOffset32 VirtualAddress;
-    dword SizeOfRawData;
-    dword PointerToRawData;
-    dword PointerToRelocations;
-    dword PointerToLinenumbers;
-    word NumberOfRelocations;
-    word NumberOfLinenumbers;
-    enum SectionFlags Characteristics;
-};
-
-typedef struct IMAGE_NT_HEADERS64 IMAGE_NT_HEADERS64, *PIMAGE_NT_HEADERS64;
-
-typedef struct IMAGE_FILE_HEADER IMAGE_FILE_HEADER, *PIMAGE_FILE_HEADER;
-
-struct IMAGE_FILE_HEADER {
-    word Machine; // 34404
-    word NumberOfSections;
-    dword TimeDateStamp;
-    dword PointerToSymbolTable;
-    dword NumberOfSymbols;
-    word SizeOfOptionalHeader;
-    word Characteristics;
-};
-
-struct IMAGE_NT_HEADERS64 {
-    char Signature[4];
-    struct IMAGE_FILE_HEADER FileHeader;
-    struct IMAGE_OPTIONAL_HEADER64 OptionalHeader;
-};
-
-typedef struct IMAGE_RESOURCE_DATA_ENTRY IMAGE_RESOURCE_DATA_ENTRY, *PIMAGE_RESOURCE_DATA_ENTRY;
-
-struct IMAGE_RESOURCE_DATA_ENTRY {
-    dword OffsetToData;
-    dword Size;
-    dword CodePage;
-    dword Reserved;
-};
-
-typedef struct IMAGE_RESOURCE_DIRECTORY IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;
-
-struct IMAGE_RESOURCE_DIRECTORY {
-    dword Characteristics;
-    dword TimeDateStamp;
-    word MajorVersion;
-    word MinorVersion;
-    word NumberOfNamedEntries;
-    word NumberOfIdEntries;
-};
-
-typedef struct IMAGE_DEBUG_DIRECTORY IMAGE_DEBUG_DIRECTORY, *PIMAGE_DEBUG_DIRECTORY;
-
-struct IMAGE_DEBUG_DIRECTORY {
-    dword Characteristics;
-    dword TimeDateStamp;
-    word MajorVersion;
-    word MinorVersion;
-    dword Type;
-    dword SizeOfData;
-    dword AddressOfRawData;
-    dword PointerToRawData;
-};
-
-typedef struct _iobuf _iobuf, *P_iobuf;
-
-struct _iobuf {
-    char * _ptr;
-    int _cnt;
-    char * _base;
-    int _flag;
-    int _file;
-    int _charbuf;
-    int _bufsiz;
-    char * _tmpfname;
-};
-
-typedef struct _iobuf FILE;
-
-typedef struct unsigned_char unsigned_char, *Punsigned_char;
-
-struct unsigned_char { // PlaceHolder Structure
-};
-
-typedef dword unsigned_long;
-
-typedef struct _RTC_ALLOCA_NODE _RTC_ALLOCA_NODE, *P_RTC_ALLOCA_NODE;
-
-struct _RTC_ALLOCA_NODE { // PlaceHolder Structure
-};
-
-
-// WARNING! conflicting data type names: /Demangler/wchar_t - /wchar_t
-
-typedef dword unsigned___int64;
-
-typedef int (* _onexit_t)(void);
-
-typedef ulonglong size_t;
 
 
 
@@ -1109,7 +1092,7 @@ void _RTC_CheckStackVars(longlong param_1,int *param_2)
   ulonglong uVar2;
   uint uVar3;
   ulonglong uVar4;
-  void *in_stack_00000000;
+  longlong in_stack_00000000;
   
   uVar2 = 0;
   uVar4 = uVar2;
@@ -1119,7 +1102,7 @@ void _RTC_CheckStackVars(longlong param_1,int *param_2)
       if ((*(int *)(lVar1 + -4 + param_1) != -0x33333334) ||
          (*(int *)(*(int *)(*(longlong *)(param_2 + 2) + 4 + uVar2) + lVar1 + param_1) !=
           -0x33333334)) {
-        _RTC_StackFailure(in_stack_00000000,*(char **)(*(longlong *)(param_2 + 2) + 8 + uVar2));
+        FUN_140002360(in_stack_00000000,*(char **)(*(longlong *)(param_2 + 2) + 8 + uVar2));
       }
       uVar3 = (int)uVar4 + 1;
       uVar2 = uVar2 + 0x10;
@@ -1131,13 +1114,7 @@ void _RTC_CheckStackVars(longlong param_1,int *param_2)
 
 
 
-// Library Function - Single Match
-//  _RTC_AllocaHelper
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release, Visual Studio 2010 Debug, Visual
-// Studio 2012 Debug
-
-void _RTC_AllocaHelper(undefined *param_1,longlong param_2,undefined8 *param_3)
+void FUN_140001850(undefined *param_1,longlong param_2,undefined8 *param_3)
 
 {
   longlong lVar1;
@@ -1158,12 +1135,7 @@ void _RTC_AllocaHelper(undefined *param_1,longlong param_2,undefined8 *param_3)
 
 
 
-// Library Function - Single Match
-//  _RTC_InitBase
-// 
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010
-
-void _RTC_InitBase(void)
+void FUN_1400019b0(void)
 
 {
   undefined8 uVar1;
@@ -1171,7 +1143,7 @@ void _RTC_InitBase(void)
   if (DAT_140009150 == '\0') {
     DAT_140009150 = '\x01';
     uVar1 = _CRT_RTC_INITW(0,0,0,1,0);
-    _RTC_SetErrorFuncW(uVar1);
+    FUN_140002840(uVar1);
   }
   return;
 }
@@ -1231,20 +1203,16 @@ void FUN_140001ae0(void)
 void entry(void)
 
 {
-  __security_init_cookie();
-  __tmainCRTStartup();
+  FUN_140002ae0();
+  FUN_140001b70();
   return;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Library Function - Single Match
-//  __tmainCRTStartup
-// 
-// Library: Visual Studio 2008 Debug
 
-ulonglong __tmainCRTStartup(void)
+ulonglong FUN_140001b70(void)
 
 {
   ulonglong uVar1;
@@ -1269,17 +1237,15 @@ LAB_140001bd6:
       if (DAT_140009728 == 1) {
         _amsg_exit(0x1f);
       }
+      else if (DAT_140009728 == 0) {
+        DAT_140009728 = 1;
+        iVar4 = _initterm_e(&DAT_140006330,&DAT_140006660);
+        if (iVar4 != 0) {
+          return 0xff;
+        }
+      }
       else {
-        if (DAT_140009728 == 0) {
-          DAT_140009728 = 1;
-          iVar4 = _initterm_e(&DAT_140006330,&DAT_140006660);
-          if (iVar4 != 0) {
-            return 0xff;
-          }
-        }
-        else {
-          _DAT_14000917c = 1;
-        }
+        _DAT_14000917c = 1;
       }
       if (DAT_140009728 == 1) {
         _initterm(&DAT_140006000,&DAT_140006220);
@@ -1295,9 +1261,9 @@ LAB_140001bd6:
       if (!bVar3) {
         DAT_140009738 = 0;
       }
-      if ((_DAT_140009760 != (code *)0x0) &&
-         (BVar5 = _IsNonwritableInCurrentImage(&DAT_140009760), BVar5 != 0)) {
-        (*_DAT_140009760)(0,2,0);
+      if ((DAT_140009760 != (code *)0x0) &&
+         (BVar5 = _IsNonwritableInCurrentImage((PBYTE)&DAT_140009760), BVar5 != 0)) {
+        (*DAT_140009760)(0,2,0);
       }
       _CrtSetCheckCount();
       *(undefined8 *)__initenv_exref = DAT_140009160;
@@ -1368,7 +1334,7 @@ undefined8 DebuggerKnownHandle(void)
   
   BVar1 = IsDebuggerPresent();
   if (BVar1 != 0) {
-    iVar2 = DebuggerProbe(0x1004);
+    iVar2 = FUN_140002000(0x1004);
     if (iVar2 != 0) {
       return 1;
     }
@@ -1378,58 +1344,43 @@ undefined8 DebuggerKnownHandle(void)
 
 
 
-// Library Function - Single Match
-//  int __cdecl DebuggerProbe(unsigned long)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-int DebuggerProbe(unsigned_long param_1)
+undefined FUN_140002000(undefined4 param_1)
 
 {
-  byte local_res8 [32];
+  undefined local_res8 [32];
   undefined4 local_38;
-  unsigned_long local_30;
-  byte *local_28;
+  undefined4 local_30;
+  undefined *local_28;
   
   local_res8[0] = 0;
   local_38 = 0x1001;
   local_28 = local_res8;
   local_30 = param_1;
   RaiseException(0x406d1388,0,10,(ULONG_PTR *)&local_38);
-  return (int)(uint)local_res8[0];
+  return local_res8[0];
 }
 
 
 
-// Library Function - Single Match
-//  void __cdecl _RTC_Failure(void * __ptr64,int)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-void _RTC_Failure(void *param_1,int param_2)
+void FUN_140002050(longlong param_1,uint param_2)
 
 {
-  if ((uint)param_2 < 5) {
-    if (*(int *)(&DAT_140009010 + (longlong)param_2 * 4) != -1) {
-      failwithmessage(param_1,*(int *)(&DAT_140009010 + (longlong)param_2 * 4),param_2,
-                      (&PTR_s_The_value_of_ESP_was_not_properl_140006c70)[param_2]);
+  if (param_2 < 5) {
+    if (*(int *)(&DAT_140009010 + (longlong)(int)param_2 * 4) != -1) {
+      FUN_1400020b0(param_1,*(int *)(&DAT_140009010 + (longlong)(int)param_2 * 4),param_2,
+                    (&PTR_s_The_value_of_ESP_was_not_properl_140006c70)[(int)param_2]);
       return;
     }
   }
   else {
-    failwithmessage(param_1,1,5,"Unknown Runtime Check Error\n\r");
+    FUN_1400020b0(param_1,1,5,"Unknown Runtime Check Error\n\r");
   }
   return;
 }
 
 
 
-// Library Function - Single Match
-//  void __cdecl failwithmessage(void * __ptr64,int,int,char const * __ptr64)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-void failwithmessage(void *param_1,int param_2,int param_3,char *param_4)
+void FUN_1400020b0(longlong param_1,undefined4 param_2,int param_3,LPCSTR param_4)
 
 {
   uint cchWideChar;
@@ -1441,7 +1392,7 @@ void failwithmessage(void *param_1,int param_2,int param_3,char *param_4)
   wchar_t *pwVar6;
   char *pcVar7;
   undefined auStackY3816 [32];
-  int local_ea8 [4];
+  uint local_ea8 [4];
   WCHAR local_e98 [264];
   WCHAR local_c88 [264];
   CHAR local_a78 [784];
@@ -1463,19 +1414,18 @@ void failwithmessage(void *param_1,int param_2,int param_3,char *param_4)
   else {
     pwVar6 = L"Runtime Check Error.\n\r Unable to display RTC Message.";
   }
-  iVar1 = DebuggerProbe(0x1002);
+  iVar1 = FUN_140002000(0x1002);
   if (iVar1 == 0) {
     iVar1 = 1;
   }
   else {
-    iVar1 = DebuggerRuntime(param_3,*(int *)(&DAT_140006ca0 + (longlong)param_3 * 4),param_1,
-                            (wchar_t *)pwVar6);
+    iVar1 = FUN_140002310(param_3,*(undefined4 *)(&DAT_140006ca0 + (longlong)param_3 * 4),param_1,
+                          pwVar6);
     if (iVar1 != 0) goto LAB_1400022e3;
   }
   if (((pcVar4 != (code *)0x0) || (pcVar3 != (code *)0x0)) &&
      (((char)iVar1 == '\0' || (BVar2 = IsDebuggerPresent(), BVar2 == 0)))) {
-    _RTC_GetSrcLine((unsigned_char *)((longlong)param_1 + -5),(wchar_t *)local_c88,0x104,local_ea8,
-                    (wchar_t *)local_e98,0x104);
+    FUN_140002df0(param_1 + -5,local_c88,0x104,local_ea8,local_e98,0x104);
     if (pcVar3 == (code *)0x0) {
       iVar1 = WideCharToMultiByte(0xfde9,0,local_c88,-1,local_a78,0x30a,(LPCSTR)0x0,(LPBOOL)0x0);
       pcVar5 = local_a78;
@@ -1502,21 +1452,16 @@ LAB_1400022e3:
 
 
 
-// Library Function - Single Match
-//  int __cdecl DebuggerRuntime(unsigned long,int,void * __ptr64,wchar_t const * __ptr64)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-int DebuggerRuntime(unsigned_long param_1,int param_2,void *param_3,wchar_t *param_4)
+undefined FUN_140002310(undefined4 param_1,undefined4 param_2,undefined8 param_3,undefined8 param_4)
 
 {
-  byte local_res8 [32];
+  undefined local_res8 [32];
   undefined4 local_38;
-  unsigned_long local_30;
-  int local_2c;
-  void *local_28;
-  byte *local_20;
-  wchar_t *local_18;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined8 local_28;
+  undefined *local_20;
+  undefined8 local_18;
   
   local_res8[0] = 0;
   local_38 = 0x1002;
@@ -1526,17 +1471,12 @@ int DebuggerRuntime(unsigned_long param_1,int param_2,void *param_3,wchar_t *par
   local_28 = param_3;
   local_18 = param_4;
   RaiseException(0x406d1388,0,10,(ULONG_PTR *)&local_38);
-  return (int)(uint)local_res8[0];
+  return local_res8[0];
 }
 
 
 
-// Library Function - Single Match
-//  void __cdecl _RTC_StackFailure(void * __ptr64,char const * __ptr64)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-void _RTC_StackFailure(void *param_1,char *param_2)
+void FUN_140002360(longlong param_1,char *param_2)
 
 {
   char cVar1;
@@ -1546,7 +1486,7 @@ void _RTC_StackFailure(void *param_1,char *param_2)
   char *pcVar5;
   char *pcVar6;
   undefined auStack1080 [32];
-  char local_418 [1024];
+  CHAR local_418 [1024];
   ulonglong local_18;
   
   local_18 = DAT_140009000 ^ (ulonglong)auStack1080;
@@ -1605,7 +1545,7 @@ LAB_140002431:
       lVar3 = lVar3 + 1;
     } while (cVar1 != '\0');
   }
-  failwithmessage(param_1,DAT_140009018,2,pcVar6);
+  FUN_1400020b0(param_1,DAT_140009018,2,pcVar6);
 LAB_140002451:
   FUN_1400017a0(local_18 ^ (ulonglong)auStack1080);
   return;
@@ -1613,27 +1553,21 @@ LAB_140002451:
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Library Function - Single Match
-//  void __cdecl _RTC_AllocaFailure(void * __ptr64,struct _RTC_ALLOCA_NODE * __ptr64,int)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-void _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int param_3)
+void FUN_140002470(longlong param_1,longlong param_2,undefined4 param_3)
 
 {
   int iVar1;
   int iVar2;
   HMODULE hModule;
   undefined auStack488 [32];
-  _RTC_ALLOCA_NODE *local_1c8;
+  undefined *local_1c8;
   char *local_1c0;
   longlong local_1b8;
   char *local_1b0;
-  int local_1a8;
+  undefined4 local_1a8;
   char *local_1a0;
-  char local_198 [24];
-  char local_180 [56];
+  undefined local_198 [24];
+  undefined local_180 [56];
   CHAR local_148 [272];
   ulonglong local_38;
   
@@ -1642,30 +1576,29 @@ void _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int param_3)
   if (DAT_140009020 != -1) {
     hModule = LoadLibraryA("user32.dll");
     if (hModule != (HMODULE)0x0) {
-      _DAT_1400096f0 = GetProcAddress(hModule,"wsprintfA");
-      if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (_DAT_1400096f0 != (FARPROC)0x0)) {
+      DAT_1400096f0 = GetProcAddress(hModule,"wsprintfA");
+      if ((param_2 != 0) && (DAT_1400096f0 != (FARPROC)0x0)) {
         local_1a0 = "\nData: <";
         local_1b8 = *(longlong *)(param_2 + 0xc) + -0x24;
         local_1b0 = "\nAllocation number within this function: ";
         local_1c0 = "\nSize: ";
-        local_1c8 = param_2 + 0x20;
+        local_1c8 = (undefined *)(param_2 + 0x20);
         local_1a8 = param_3;
-        (*_DAT_1400096f0)(local_148,"%s%s%p%s%I64d%s%d%s",
-                          "Stack area around _alloca memory reserved by this function is corrupted",
-                          "\nAddress: 0x");
-        _getMemBlockDataString
-                  (local_198,local_180,(char *)(param_2 + 0x20),
-                   (int)*(undefined8 *)(param_2 + 0xc) - 0x24);
+        (*DAT_1400096f0)(local_148,"%s%s%p%s%I64d%s%d%s",
+                         "Stack area around _alloca memory reserved by this function is corrupted",
+                         "\nAddress: 0x");
+        FUN_140002610(local_198,(longlong)local_180,param_2 + 0x20,
+                      *(longlong *)(param_2 + 0xc) - 0x24);
         iVar2 = lstrlenA(local_148);
         local_1c0 = &DAT_140006eac;
-        local_1c8 = (_RTC_ALLOCA_NODE *)local_180;
-        (*_DAT_1400096f0)(local_148 + iVar2,"%s%s%s%s",local_198,&DAT_140006ebc);
-        failwithmessage(param_1,iVar1,4,local_148);
+        local_1c8 = local_180;
+        (*DAT_1400096f0)(local_148 + iVar2,"%s%s%s%s",local_198,&DAT_140006ebc);
+        FUN_1400020b0(param_1,iVar1,4,local_148);
         goto LAB_1400025e7;
       }
     }
-    failwithmessage(param_1,iVar1,4,
-                    "Stack area around _alloca memory reserved by this function is corrupted\n");
+    FUN_1400020b0(param_1,iVar1,4,
+                  "Stack area around _alloca memory reserved by this function is corrupted\n");
   }
 LAB_1400025e7:
   FUN_1400017a0(local_38 ^ (ulonglong)auStack488);
@@ -1674,56 +1607,43 @@ LAB_1400025e7:
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// Library Function - Single Match
-//  void __cdecl _getMemBlockDataString(char * __ptr64,char * __ptr64,char * __ptr64,unsigned
-// __int64)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
-
-void _getMemBlockDataString(char *param_1,char *param_2,char *param_3,unsigned___int64 param_4)
+void FUN_140002610(undefined *param_1,longlong param_2,longlong param_3,ulonglong param_4)
 
 {
-  char cVar1;
-  longlong lVar2;
-  longlong lVar3;
-  char *pcVar4;
-  longlong lVar5;
-  undefined4 in_register_0000008c;
-  char *pcVar6;
+  undefined uVar1;
+  ulonglong uVar2;
+  ulonglong uVar3;
+  undefined *puVar4;
+  ulonglong uVar5;
+  longlong lVar6;
   
-  lVar2 = 0x10;
-  if (CONCAT44(in_register_0000008c,param_4) < 0x10) {
-    lVar2 = CONCAT44(in_register_0000008c,param_4);
+  uVar2 = 0x10;
+  if (param_4 < 0x10) {
+    uVar2 = param_4;
   }
-  lVar5 = 0;
-  if (lVar2 != 0) {
-    lVar3 = lVar2;
-    pcVar4 = param_1;
-    pcVar6 = param_2;
+  uVar5 = 0;
+  if (uVar2 != 0) {
+    uVar3 = uVar2;
+    puVar4 = param_1;
+    lVar6 = param_2;
     do {
-      cVar1 = pcVar4[(longlong)param_3 - (longlong)param_1];
-      (*_DAT_1400096f0)(pcVar6,"%.2X ",cVar1);
-      *pcVar4 = cVar1;
-      pcVar4 = pcVar4 + 1;
-      pcVar6 = pcVar6 + 3;
-      lVar3 = lVar3 + -1;
-      lVar5 = lVar2;
-    } while (lVar3 != 0);
+      uVar1 = puVar4[param_3 - (longlong)param_1];
+      (*DAT_1400096f0)(lVar6,"%.2X ",uVar1);
+      *puVar4 = uVar1;
+      puVar4 = puVar4 + 1;
+      lVar6 = lVar6 + 3;
+      uVar3 = uVar3 - 1;
+      uVar5 = uVar2;
+    } while (uVar3 != 0);
   }
-  param_1[lVar5] = '\0';
-  param_2[lVar5 * 3] = '\0';
+  param_1[uVar5] = 0;
+  *(undefined *)(param_2 + uVar5 * 3) = 0;
   return;
 }
 
 
 
-// Library Function - Single Match
-//  _RTC_SetErrorFuncW
-// 
-// Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010
-
-undefined8 _RTC_SetErrorFuncW(undefined8 param_1)
+undefined8 FUN_140002840(undefined8 param_1)
 
 {
   undefined8 uVar1;
@@ -1862,12 +1782,7 @@ void _amsg_exit(int param_1)
 
 
 
-// Library Function - Single Match
-//  __security_init_cookie
-// 
-// Library: Visual Studio 2008 Debug
-
-void __security_init_cookie(void)
+void FUN_140002ae0(void)
 
 {
   DWORD DVar1;
@@ -1877,7 +1792,7 @@ void __security_init_cookie(void)
   
   local_28 = (_FILETIME)0x0;
   if (DAT_140009000 == 0x2b992ddfa232) {
-    GetSystemTimeAsFileTime((LPFILETIME)&local_28);
+    GetSystemTimeAsFileTime(&local_28);
     local_20 = local_28;
     DVar1 = GetCurrentProcessId();
     local_20 = (_FILETIME)((ulonglong)local_20 ^ (ulonglong)DVar1);
@@ -1953,15 +1868,17 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
 PIMAGE_SECTION_HEADER _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
-  PBYTE pBVar1;
+  int iVar1;
   uint local_20;
   PIMAGE_SECTION_HEADER local_18;
   
-  pBVar1 = pImageBase + *(int *)(pImageBase + 0x3c);
+  iVar1 = *(int *)(pImageBase + 0x3c);
   local_20 = 0;
-  local_18 = (PIMAGE_SECTION_HEADER)(pBVar1 + (ulonglong)*(ushort *)(pBVar1 + 0x14) + 0x18);
+  local_18 = (PIMAGE_SECTION_HEADER)
+             (pImageBase +
+             (ulonglong)*(ushort *)(pImageBase + (longlong)iVar1 + 0x14) + (longlong)iVar1 + 0x18);
   while( true ) {
-    if (*(ushort *)(pBVar1 + 6) <= local_20) {
+    if (*(ushort *)(pImageBase + (longlong)iVar1 + 6) <= local_20) {
       return (PIMAGE_SECTION_HEADER)0x0;
     }
     if ((local_18->VirtualAddress <= rva) && (rva < local_18->VirtualAddress + local_18->Misc))
@@ -1999,7 +1916,7 @@ BOOL _IsNonwritableInCurrentImage(PBYTE pTarget)
       local_14 = (uint)((p_Var2->Characteristics & 0x80000000) == 0);
     }
   }
-  return (BOOL)local_14;
+  return local_14;
 }
 
 
@@ -2058,86 +1975,90 @@ void __crt_debugger_hook(int param_1)
 // WARNING: Removing unreachable block (ram,0x000140003071)
 // WARNING: Removing unreachable block (ram,0x000140003161)
 // WARNING: Removing unreachable block (ram,0x000140003175)
-// Library Function - Single Match
-//  int __cdecl _RTC_GetSrcLine(unsigned char * __ptr64,wchar_t * __ptr64,unsigned long,int *
-// __ptr64,wchar_t * __ptr64,unsigned long)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-int _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_3,int *param_4,
-                   wchar_t *param_5,unsigned_long param_6)
+uint * FUN_140002df0(longlong param_1,undefined2 *param_2,undefined4 param_3,uint *param_4,
+                    LPWSTR param_5,DWORD param_6)
 
 {
-  longlong lVar1;
-  ushort uVar2;
-  DWORD DVar3;
-  int iVar4;
-  SIZE_T SVar5;
-  FARPROC pFVar6;
-  INT_PTR IVar7;
-  uint uVar8;
-  uint uVar10;
+  ushort uVar1;
+  DWORD DVar2;
+  int iVar3;
+  SIZE_T SVar4;
+  longlong lVar5;
+  ulonglong uVar6;
+  FARPROC pFVar7;
+  INT_PTR IVar8;
+  uint uVar9;
   uint uVar11;
+  uint uVar12;
   longlong *local_a0 [2];
-  code **local_90 [2];
+  longlong *local_90 [2];
   longlong *local_80;
   undefined local_78 [8];
   _MEMORY_BASIC_INFORMATION local_70;
-  ulonglong uVar9;
-  ulonglong uVar12;
+  ulonglong uVar10;
+  ulonglong uVar13;
   
-  uVar9 = 0;
+  uVar10 = 0;
   *param_4 = 0;
-  *(undefined2 *)param_2 = 0;
-  SVar5 = VirtualQuery(param_1 + -1,(PMEMORY_BASIC_INFORMATION)&local_70,0x30);
-  if ((((SVar5 == 0) ||
-       (DVar3 = GetModuleFileNameW((HMODULE)local_70.AllocationBase,(LPWSTR)param_5,param_6),
-       DVar3 == 0)) || (*(short *)(int *)local_70.AllocationBase != 0x5a4d)) ||
-     ((iVar4 = ((HMODULE)((longlong)local_70.AllocationBase + 0x3c))->unused, iVar4 < 1 ||
-      (lVar1 = (longlong)(int *)local_70.AllocationBase + (longlong)iVar4,
-      *(int *)((longlong)(int *)local_70.AllocationBase + (longlong)iVar4) != 0x4550)))) {
-    return 0;
+  *param_2 = 0;
+  SVar4 = VirtualQuery((LPCVOID)(param_1 + -1),&local_70,0x30);
+  if ((((SVar4 == 0) ||
+       (DVar2 = GetModuleFileNameW((HMODULE)local_70.AllocationBase,param_5,param_6), DVar2 == 0))
+      || (*(short *)(int *)local_70.AllocationBase != 0x5a4d)) ||
+     ((lVar5 = (longlong)((HMODULE)((longlong)local_70.AllocationBase + 0x3c))->unused,
+      ((HMODULE)((longlong)local_70.AllocationBase + 0x3c))->unused < 1 ||
+      (*(int *)((longlong)(int *)local_70.AllocationBase + lVar5) != 0x4550)))) {
+    return (uint *)0x0;
   }
-  uVar2 = *(ushort *)(lVar1 + 6);
-  uVar10 = (int)(param_1 + -1) - (int)local_70.AllocationBase;
-  uVar8 = 0;
-  lVar1 = (ulonglong)*(ushort *)(lVar1 + 0x14) + 0x18 + lVar1;
+  uVar1 = *(ushort *)
+           ((longlong)&((HMODULE)((longlong)local_70.AllocationBase + 4))->unused + lVar5 + 2);
+  uVar6 = (ulonglong)
+          *(ushort *)
+           ((longlong)&((HMODULE)((longlong)local_70.AllocationBase + 0x14))->unused + lVar5);
+  uVar11 = (int)(LPCVOID)(param_1 + -1) - (int)local_70.AllocationBase;
+  uVar9 = 0;
+  uVar13 = uVar10;
   uVar12 = uVar9;
-  uVar11 = uVar8;
-  if (uVar2 != 0) {
+  if (uVar1 != 0) {
     do {
-      uVar8 = (uint)uVar9;
-      uVar11 = *(uint *)(lVar1 + 0xc + uVar9 * 0x28);
-      if (uVar11 <= uVar10) {
-        uVar11 = uVar10 - uVar11;
-        uVar12 = (ulonglong)uVar11;
-        if (uVar10 < *(uint *)(lVar1 + 8 + uVar9 * 0x28)) break;
+      uVar9 = (uint)uVar10;
+      uVar12 = *(uint *)((longlong)
+                         &((HMODULE)((longlong)local_70.AllocationBase + (uVar10 * 10 + 9) * 4))->
+                          unused + lVar5 + uVar6);
+      if (uVar12 <= uVar11) {
+        uVar12 = uVar11 - uVar12;
+        uVar13 = (ulonglong)uVar12;
+        if (uVar11 < *(uint *)((longlong)
+                               &((HMODULE)
+                                ((longlong)local_70.AllocationBase + (uVar10 * 10 + 8) * 4))->unused
+                              + lVar5 + uVar6)) break;
       }
-      uVar11 = (uint)uVar12;
-      uVar8 = uVar8 + 1;
-      uVar9 = (ulonglong)uVar8;
-    } while (uVar8 < uVar2);
+      uVar12 = (uint)uVar13;
+      uVar9 = uVar9 + 1;
+      uVar10 = (ulonglong)uVar9;
+    } while (uVar9 < uVar1);
   }
-  if (uVar8 != uVar2) {
+  if (uVar9 != uVar1) {
     if (DAT_140009720 == '\0') {
       if (DAT_140009718 != (HMODULE)0x0) {
-        return 0;
+        return (uint *)0x0;
       }
-      DAT_140009718 = GetPdbDll();
-      if (DAT_140009718 == (HINSTANCE__ *)0x0) {
-        return 0;
+      DAT_140009718 = (HMODULE)FUN_1400031d0();
+      if (DAT_140009718 == (HMODULE)0x0) {
+        return (uint *)0x0;
       }
       DAT_140009720 = '\x01';
     }
-    pFVar6 = GetProcAddress(DAT_140009718,"PDBOpenValidate5");
-    if ((pFVar6 != (FARPROC)0x0) &&
-       (IVar7 = (*pFVar6)(param_5,0,0,0,local_78,0,0,local_90), (int)IVar7 != 0)) {
-      iVar4 = (**(code **)*local_90[0])();
-      if ((iVar4 == 0x131a5b5) &&
-         (iVar4 = (**(code **)(*local_90[0] + 0x38))(local_90[0],0,&DAT_1400070e4,&local_80),
-         iVar4 != 0)) {
-        iVar4 = (**(code **)(*local_80 + 0x40))(local_80,uVar8 + 1 & 0xffff,uVar11,local_a0,0,0,0);
-        if (iVar4 != 0) {
+    pFVar7 = GetProcAddress(DAT_140009718,"PDBOpenValidate5");
+    if ((pFVar7 != (FARPROC)0x0) &&
+       (IVar8 = (*pFVar7)(param_5,0,0,0,local_78,0,0,local_90), (int)IVar8 != 0)) {
+      iVar3 = (**(code **)*local_90[0])();
+      if ((iVar3 == 0x131a5b5) &&
+         (iVar3 = (**(code **)(*local_90[0] + 0x38))(local_90[0],0,&DAT_1400070e4,&local_80),
+         iVar3 != 0)) {
+        iVar3 = (**(code **)(*local_80 + 0x40))(local_80,uVar9 + 1 & 0xffff,uVar12,local_a0,0,0,0);
+        if (iVar3 != 0) {
           (**(code **)(*local_a0[0] + 0xd0))();
           (**(code **)(*local_a0[0] + 0x80))();
         }
@@ -2146,30 +2067,24 @@ int _RTC_GetSrcLine(unsigned_char *param_1,wchar_t *param_2,unsigned_long param_
       (**(code **)(*local_90[0] + 0x50))();
     }
   }
-  return 0;
+  return (uint *)0x0;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
-// WARNING: Unknown calling convention yet parameter storage is locked
-// Library Function - Single Match
-//  struct HINSTANCE__ * __ptr64 __cdecl GetPdbDll(void)
-// 
-// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-HINSTANCE__ * GetPdbDll(void)
+void FUN_1400031d0(void)
 
 {
   undefined *puVar1;
-  HINSTANCE__ *pHVar2;
-  HMODULE pHVar3;
+  HMODULE pHVar2;
+  FARPROC pFVar3;
   FARPROC pFVar4;
   FARPROC pFVar5;
-  FARPROC pFVar6;
-  INT_PTR IVar7;
-  uint uVar8;
-  longlong lVar9;
+  INT_PTR IVar6;
+  uint uVar7;
+  longlong lVar8;
   undefined auStack360 [32];
   undefined8 *local_148;
   uint *local_140;
@@ -2182,56 +2097,56 @@ HINSTANCE__ * GetPdbDll(void)
   local_18 = DAT_140009000 ^ (ulonglong)auStack360;
   if (_DAT_140009724 == 0) {
     _DAT_140009724 = 1;
-    pHVar3 = LoadLibraryA(PTR_DAT_140009038);
-    if ((((pHVar3 == (HMODULE)0x0) &&
-         (pHVar3 = LoadLibraryA("ADVAPI32.DLL"), pHVar3 != (HMODULE)0x0)) &&
-        (pFVar4 = GetProcAddress(pHVar3,"RegOpenKeyExA"), pFVar4 != (FARPROC)0x0)) &&
-       ((pFVar5 = GetProcAddress(pHVar3,"RegQueryValueExA"), pFVar5 != (FARPROC)0x0 &&
-        (pFVar6 = GetProcAddress(pHVar3,"RegCloseKey"), pFVar6 != (FARPROC)0x0)))) {
+    pHVar2 = LoadLibraryA(PTR_DAT_140009038);
+    if ((((pHVar2 == (HMODULE)0x0) &&
+         (pHVar2 = LoadLibraryA("ADVAPI32.DLL"), pHVar2 != (HMODULE)0x0)) &&
+        (pFVar3 = GetProcAddress(pHVar2,"RegOpenKeyExA"), pFVar3 != (FARPROC)0x0)) &&
+       ((pFVar4 = GetProcAddress(pHVar2,"RegQueryValueExA"), pFVar4 != (FARPROC)0x0 &&
+        (pFVar5 = GetProcAddress(pHVar2,"RegCloseKey"), pFVar5 != (FARPROC)0x0)))) {
       local_148 = &local_130;
-      IVar7 = (*pFVar4)(0xffffffff80000002,"SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS",0,1);
-      if ((int)IVar7 == 0) {
+      IVar6 = (*pFVar3)(0xffffffff80000002,"SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS",0,1);
+      if ((int)IVar6 == 0) {
         local_140 = &local_138;
-        lVar9 = 0;
+        lVar8 = 0;
         local_148 = (undefined8 *)0x0;
-        IVar7 = (*pFVar5)(local_130,"EnvironmentDirectory",0,local_134);
-        if ((((int)IVar7 == 0) && (0xc < 0x7fffffff - local_138)) && (local_138 + 0xd < 0x104)) {
+        IVar6 = (*pFVar4)(local_130,"EnvironmentDirectory",0,local_134);
+        if ((((int)IVar6 == 0) && (0xc < 0x7fffffff - local_138)) && (local_138 + 0xd < 0x104)) {
           local_140 = &local_138;
           local_148 = local_128;
-          IVar7 = (*pFVar5)(local_130,"EnvironmentDirectory",0,local_134);
-          (*pFVar6)(local_130);
-          FreeLibrary(pHVar3);
-          if ((int)IVar7 == 0) {
+          IVar6 = (*pFVar4)(local_130,"EnvironmentDirectory",0,local_134);
+          (*pFVar5)(local_130);
+          FreeLibrary(pHVar2);
+          if ((int)IVar6 == 0) {
             if (*(char *)((longlong)local_128 + (ulonglong)(local_138 - 2)) == '\\') {
-              uVar8 = local_138 - 1;
-              local_138 = uVar8;
+              uVar7 = local_138 - 1;
+              local_138 = uVar7;
             }
             else {
               *(undefined *)((longlong)local_128 + (ulonglong)(local_138 - 1)) = 0x5c;
-              uVar8 = local_138;
+              uVar7 = local_138;
             }
             do {
-              puVar1 = PTR_DAT_140009038 + lVar9;
-              lVar9 = lVar9 + 1;
-              *(undefined *)((longlong)local_128 + (ulonglong)uVar8) = *puVar1;
-              uVar8 = uVar8 + 1;
-            } while (lVar9 < 0xc);
+              puVar1 = PTR_DAT_140009038 + lVar8;
+              lVar8 = lVar8 + 1;
+              *(undefined *)((longlong)local_128 + (ulonglong)uVar7) = *puVar1;
+              uVar7 = uVar7 + 1;
+            } while (lVar8 < 0xc);
             LoadLibraryA((LPCSTR)local_128);
           }
         }
         else {
-          FreeLibrary(pHVar3);
+          FreeLibrary(pHVar2);
         }
       }
       else {
-        FreeLibrary(pHVar3);
+        FreeLibrary(pHVar2);
       }
     }
-    pHVar2 = (HINSTANCE__ *)FUN_1400017a0(local_18 ^ (ulonglong)auStack360);
-    return pHVar2;
+    FUN_1400017a0(local_18 ^ (ulonglong)auStack360);
+    return;
   }
-  pHVar2 = (HINSTANCE__ *)FUN_1400017a0(local_18 ^ (ulonglong)auStack360);
-  return pHVar2;
+  FUN_1400017a0(local_18 ^ (ulonglong)auStack360);
+  return;
 }
 
 

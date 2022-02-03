@@ -29,7 +29,7 @@ typedef int ptrdiff_t;
 struct TypeDescriptor {
     void * pVFTable;
     void * spare;
-    char[0] name;
+    char name[0];
 };
 
 struct PMD {
@@ -313,43 +313,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_CNT_CODE=32,
     IMAGE_SCN_CNT_INITIALIZED_DATA=64,
     IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
     IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
     IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
     IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
     IMAGE_SCN_MEM_NOT_CACHED=67108864,
     IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
     IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
 } SectionFlags;
 
 union Misc {
@@ -430,8 +430,6 @@ struct IMAGE_LOAD_CONFIG_DIRECTORY32 {
 
 typedef uint uintptr_t;
 
-typedef dword unsigned_int;
-
 typedef struct type_info type_info, *Ptype_info;
 
 struct type_info { // PlaceHolder Structure
@@ -461,18 +459,18 @@ undefined4 thunk_FUN_00401050(void)
 void thunk_FUN_00401060(void)
 
 {
-  code **ppcVar1;
+  undefined4 *puVar1;
   
-  ppcVar1 = (code **)operator_new(4);
-  if (ppcVar1 == (code **)0x0) {
-    ppcVar1 = (code **)0x0;
+  puVar1 = (undefined4 *)operator_new(4);
+  if (puVar1 == (undefined4 *)0x0) {
+    puVar1 = (undefined4 *)0x0;
   }
   else {
-    *ppcVar1 = (code *)BBBBB::vftable;
+    *puVar1 = BBBBB::vftable;
   }
                     // WARNING: Could not recover jumptable at 0x0040107e. Too many branches
                     // WARNING: Treating indirect jump as call
-  (**(code **)*ppcVar1)();
+  (**(code **)*puVar1)();
   return;
 }
 
@@ -489,18 +487,18 @@ undefined4 FUN_00401050(void)
 void FUN_00401060(void)
 
 {
-  code **ppcVar1;
+  undefined4 *puVar1;
   
-  ppcVar1 = (code **)operator_new(4);
-  if (ppcVar1 == (code **)0x0) {
-    ppcVar1 = (code **)0x0;
+  puVar1 = (undefined4 *)operator_new(4);
+  if (puVar1 == (undefined4 *)0x0) {
+    puVar1 = (undefined4 *)0x0;
   }
   else {
-    *ppcVar1 = (code *)BBBBB::vftable;
+    *puVar1 = BBBBB::vftable;
   }
                     // WARNING: Could not recover jumptable at 0x0040107e. Too many branches
                     // WARNING: Treating indirect jump as call
-  (**(code **)*ppcVar1)();
+  (**(code **)*puVar1)();
   return;
 }
 
@@ -553,7 +551,7 @@ void _purecall(void)
 
 // WARNING: Exceeded maximum restarts with more pending
 
-void * __cdecl operator_new(unsigned_int param_1)
+void * __cdecl operator_new(uint param_1)
 
 {
   void *pvVar1;
@@ -592,17 +590,15 @@ LAB_004011a0:
       if (DAT_004054c4 == 1) {
         _amsg_exit(0x1f);
       }
+      else if (DAT_004054c4 == 0) {
+        DAT_004054c4 = 1;
+        iVar3 = _initterm_e(&DAT_0040330c,&DAT_00403618);
+        if (iVar3 != 0) {
+          return 0xff;
+        }
+      }
       else {
-        if (DAT_004054c4 == 0) {
-          DAT_004054c4 = 1;
-          iVar3 = _initterm_e(&DAT_0040330c,&DAT_00403618);
-          if (iVar3 != 0) {
-            return 0xff;
-          }
-        }
-        else {
-          _DAT_0040518c = 1;
-        }
+        _DAT_0040518c = 1;
       }
       if (DAT_004054c4 == 1) {
         _initterm(&DAT_00403000,&DAT_00403208);
@@ -611,9 +607,9 @@ LAB_004011a0:
       if (!bVar1) {
         InterlockedExchange((LONG *)&DAT_004054d4,0);
       }
-      if ((_DAT_004054f0 != (code *)0x0) &&
-         (BVar4 = __IsNonwritableInCurrentImage(&DAT_004054f0), BVar4 != 0)) {
-        (*_DAT_004054f0)(0,2,0);
+      if ((DAT_004054f0 != (code *)0x0) &&
+         (BVar4 = __IsNonwritableInCurrentImage((PBYTE)&DAT_004054f0), BVar4 != 0)) {
+        (*DAT_004054f0)(0,2,0);
       }
       *(undefined4 *)__initenv_exref = DAT_00405174;
       DAT_00405188 = thunk_FUN_00401060();
@@ -656,7 +652,7 @@ void __cdecl operator_delete(void *param_1)
 // 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void __ArrayUnwind(void *param_1,unsigned_int param_2,int param_3,FuncDef5 *param_4)
+void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef10 *param_4)
 
 {
   void *in_stack_ffffffc8;
@@ -679,8 +675,7 @@ void __ArrayUnwind(void *param_1,unsigned_int param_2,int param_3,FuncDef5 *para
 // 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void _eh_vector_destructor_iterator_
-               (void *param_1,unsigned_int param_2,int param_3,FuncDef6 *param_4)
+void _eh_vector_destructor_iterator_(void *param_1,uint param_2,int param_3,FuncDef11 *param_4)
 
 {
   void *in_stack_ffffffd0;
@@ -702,8 +697,8 @@ void FUN_00401497(void)
   int unaff_EBP;
   
   if (*(int *)(unaff_EBP + -0x1c) == 0) {
-    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(unsigned_int *)(unaff_EBP + 0xc),
-                  *(int *)(unaff_EBP + 0x10),*(FuncDef5 **)(unaff_EBP + 0x14));
+    __ArrayUnwind(*(void **)(unaff_EBP + 8),*(uint *)(unaff_EBP + 0xc),*(int *)(unaff_EBP + 0x10),
+                  *(FuncDef10 **)(unaff_EBP + 0x14));
   }
   return;
 }
@@ -814,17 +809,15 @@ int __cdecl _atexit(void *param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
+void FUN_0040161c(void)
 
 {
-  int iVar1;
-  
                     // WARNING: Could not recover jumptable at 0x0040161c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = _XcptFilter();
-  return iVar1;
+  (*_DAT_00406220)();
+  return;
 }
 
 
@@ -854,21 +847,22 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
-  PIMAGE_SECTION_HEADER p_Var1;
-  PBYTE pBVar2;
+  int iVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
   uint uVar3;
   
-  pBVar2 = pImageBase + *(int *)(pImageBase + 0x3c);
+  iVar1 = *(int *)(pImageBase + 0x3c);
   uVar3 = 0;
-  p_Var1 = (PIMAGE_SECTION_HEADER)(pBVar2 + *(ushort *)(pBVar2 + 0x14) + 0x18);
-  if (*(ushort *)(pBVar2 + 6) != 0) {
+  p_Var2 = (PIMAGE_SECTION_HEADER)
+           (pImageBase + *(ushort *)(pImageBase + iVar1 + 0x14) + 0x18 + iVar1);
+  if (*(ushort *)(pImageBase + iVar1 + 6) != 0) {
     do {
-      if ((p_Var1->VirtualAddress <= rva) && (rva < p_Var1->Misc + p_Var1->VirtualAddress)) {
-        return p_Var1;
+      if ((p_Var2->VirtualAddress <= rva) && (rva < p_Var2->Misc + p_Var2->VirtualAddress)) {
+        return p_Var2;
       }
       uVar3 = uVar3 + 1;
-      p_Var1 = p_Var1 + 1;
-    } while (uVar3 < *(ushort *)(pBVar2 + 6));
+      p_Var2 = p_Var2 + 1;
+    } while (uVar3 < *(ushort *)(pImageBase + iVar1 + 6));
   }
   return (PIMAGE_SECTION_HEADER)0x0;
 }
@@ -1016,7 +1010,7 @@ void __cdecl ___security_init_cookie(void)
   local_c.dwLowDateTime = 0;
   local_c.dwHighDateTime = 0;
   if ((DAT_00405058 == 0xbb40e64e) || ((DAT_00405058 & 0xffff0000) == 0)) {
-    GetSystemTimeAsFileTime((LPFILETIME)&local_c);
+    GetSystemTimeAsFileTime(&local_c);
     uVar4 = local_c.dwHighDateTime ^ local_c.dwLowDateTime;
     DVar1 = GetCurrentProcessId();
     DVar2 = GetCurrentThreadId();
@@ -1026,10 +1020,8 @@ void __cdecl ___security_init_cookie(void)
     if (DAT_00405058 == 0xbb40e64e) {
       DAT_00405058 = 0xbb40e64f;
     }
-    else {
-      if ((DAT_00405058 & 0xffff0000) == 0) {
-        DAT_00405058 = DAT_00405058 | (DAT_00405058 | 0x4711) << 0x10;
-      }
+    else if ((DAT_00405058 & 0xffff0000) == 0) {
+      DAT_00405058 = DAT_00405058 | (DAT_00405058 | 0x4711) << 0x10;
     }
     _DAT_0040505c = ~DAT_00405058;
   }

@@ -70,43 +70,43 @@ typedef struct IMAGE_SECTION_HEADER IMAGE_SECTION_HEADER, *PIMAGE_SECTION_HEADER
 typedef union Misc Misc, *PMisc;
 
 typedef enum SectionFlags {
-    IMAGE_SCN_ALIGN_1024BYTES=11534336,
-    IMAGE_SCN_ALIGN_128BYTES=8388608,
-    IMAGE_SCN_ALIGN_16BYTES=5242880,
-    IMAGE_SCN_ALIGN_1BYTES=1048576,
-    IMAGE_SCN_ALIGN_2048BYTES=12582912,
-    IMAGE_SCN_ALIGN_256BYTES=9437184,
-    IMAGE_SCN_ALIGN_2BYTES=2097152,
-    IMAGE_SCN_ALIGN_32BYTES=6291456,
-    IMAGE_SCN_ALIGN_4096BYTES=13631488,
-    IMAGE_SCN_ALIGN_4BYTES=3145728,
-    IMAGE_SCN_ALIGN_512BYTES=10485760,
-    IMAGE_SCN_ALIGN_64BYTES=7340032,
-    IMAGE_SCN_ALIGN_8192BYTES=14680064,
-    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_TYPE_NO_PAD=8,
+    IMAGE_SCN_RESERVED_0001=16,
     IMAGE_SCN_CNT_CODE=32,
     IMAGE_SCN_CNT_INITIALIZED_DATA=64,
     IMAGE_SCN_CNT_UNINITIALIZED_DATA=128,
-    IMAGE_SCN_GPREL=32768,
-    IMAGE_SCN_LNK_COMDAT=4096,
-    IMAGE_SCN_LNK_INFO=512,
-    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
     IMAGE_SCN_LNK_OTHER=256,
+    IMAGE_SCN_LNK_INFO=512,
+    IMAGE_SCN_RESERVED_0040=1024,
     IMAGE_SCN_LNK_REMOVE=2048,
+    IMAGE_SCN_LNK_COMDAT=4096,
+    IMAGE_SCN_GPREL=32768,
     IMAGE_SCN_MEM_16BIT=131072,
-    IMAGE_SCN_MEM_DISCARDABLE=33554432,
-    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_PURGEABLE=131072,
     IMAGE_SCN_MEM_LOCKED=262144,
+    IMAGE_SCN_MEM_PRELOAD=524288,
+    IMAGE_SCN_ALIGN_1BYTES=1048576,
+    IMAGE_SCN_ALIGN_2BYTES=2097152,
+    IMAGE_SCN_ALIGN_4BYTES=3145728,
+    IMAGE_SCN_ALIGN_8BYTES=4194304,
+    IMAGE_SCN_ALIGN_16BYTES=5242880,
+    IMAGE_SCN_ALIGN_32BYTES=6291456,
+    IMAGE_SCN_ALIGN_64BYTES=7340032,
+    IMAGE_SCN_ALIGN_128BYTES=8388608,
+    IMAGE_SCN_ALIGN_256BYTES=9437184,
+    IMAGE_SCN_ALIGN_512BYTES=10485760,
+    IMAGE_SCN_ALIGN_1024BYTES=11534336,
+    IMAGE_SCN_ALIGN_2048BYTES=12582912,
+    IMAGE_SCN_ALIGN_4096BYTES=13631488,
+    IMAGE_SCN_ALIGN_8192BYTES=14680064,
+    IMAGE_SCN_LNK_NRELOC_OVFL=16777216,
+    IMAGE_SCN_MEM_DISCARDABLE=33554432,
     IMAGE_SCN_MEM_NOT_CACHED=67108864,
     IMAGE_SCN_MEM_NOT_PAGED=134217728,
-    IMAGE_SCN_MEM_PRELOAD=524288,
-    IMAGE_SCN_MEM_PURGEABLE=131072,
-    IMAGE_SCN_MEM_READ=1073741824,
     IMAGE_SCN_MEM_SHARED=268435456,
-    IMAGE_SCN_MEM_WRITE=2147483648,
-    IMAGE_SCN_RESERVED_0001=16,
-    IMAGE_SCN_RESERVED_0040=1024,
-    IMAGE_SCN_TYPE_NO_PAD=8
+    IMAGE_SCN_MEM_EXECUTE=536870912,
+    IMAGE_SCN_MEM_READ=1073741824,
+    IMAGE_SCN_MEM_WRITE=2147483648
 } SectionFlags;
 
 union Misc {
@@ -332,14 +332,14 @@ undefined8 entry(void)
   uint uVar3;
   code **ppcVar4;
   HANDLE hFile;
-  ushort *puVar5;
+  LPWCH pWVar5;
   longlong lVar6;
   DWORD *pDVar7;
   ulonglong uVar8;
   undefined8 *puVar9;
   DWORD *pDVar10;
   DWORD **ppDVar11;
-  ushort *puVar12;
+  LPWCH pWVar12;
   ulonglong uVar13;
   ulonglong uVar14;
   DWORD *pDVar15;
@@ -360,7 +360,7 @@ undefined8 entry(void)
   }
   _DAT_00403000 = 4;
   GetCommandLineW();
-  puVar5 = (ushort *)GetEnvironmentStringsW();
+  pWVar5 = GetEnvironmentStringsW();
   FUN_0040165c((longlong)local_d038,0x3fff,0x200);
   lVar6 = 0;
   while( true ) {
@@ -371,8 +371,8 @@ undefined8 entry(void)
     }
     lVar6 = lVar6 + 1;
   }
-  if (*puVar5 < 0xd800) {
-    local_e04c = (uint)*puVar5;
+  if ((ushort)*pWVar5 < 0xd800) {
+    local_e04c = (uint)(ushort)*pWVar5;
     uVar3 = 1;
   }
   else {
@@ -381,7 +381,7 @@ undefined8 entry(void)
   pDVar10 = local_8038;
   pDVar15 = local_3a;
   uVar13 = 0;
-  puVar12 = puVar5 + uVar3;
+  pWVar12 = pWVar5 + uVar3;
   pDVar16 = pDVar10;
   do {
     if (local_e04c == 0) {
@@ -399,7 +399,7 @@ undefined8 entry(void)
       }
       *(undefined *)((longlong)local_8038 + uVar8) = 0;
       local_e040[uVar13 + 1] = (DWORD *)0x0;
-      FreeEnvironmentStringsW((LPWCH)puVar5);
+      FreeEnvironmentStringsW(pWVar5);
       FUN_00401297();
       _DAT_0040335c = _DAT_0040335c | 1;
       puVar9 = &DAT_00402008;
@@ -423,7 +423,7 @@ undefined8 entry(void)
     }
     do {
       uVar14 = (ulonglong)local_e04c;
-      uVar8 = SEXT48((int)local_e04c);
+      uVar8 = (ulonglong)(int)local_e04c;
       pDVar7 = pDVar10;
       if (0x7f < local_e04c) {
         uVar8 = FUN_00401a09();
@@ -438,14 +438,14 @@ undefined8 entry(void)
         uVar8 = uVar8 >> 8;
         pDVar7 = pDVar10;
       } while (uVar8 != 0);
-      if (*puVar12 < 0xd800) {
-        local_e04c = (uint)*puVar12;
+      if ((ushort)*pWVar12 < 0xd800) {
+        local_e04c = (uint)(ushort)*pWVar12;
         uVar3 = 1;
       }
       else {
         uVar3 = FUN_004019fa();
       }
-      puVar12 = puVar12 + uVar3;
+      pWVar12 = pWVar12 + uVar3;
     } while (iVar2 != 0);
     uVar8 = (longlong)pDVar10 - (longlong)pDVar16;
     if (0x7ffd < uVar8) {
@@ -486,7 +486,7 @@ void FUN_0040162c(void)
   undefined *puVar3;
   
   puVar3 = *(undefined **)(unaff_RDI + 0x10);
-  uVar2 = SEXT48((int)unaff_ESI);
+  uVar2 = (ulonglong)(int)unaff_ESI;
   if (0x7f < unaff_ESI) {
     uVar2 = FUN_00401a09();
   }
