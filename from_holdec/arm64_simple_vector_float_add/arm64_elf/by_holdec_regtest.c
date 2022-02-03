@@ -24,7 +24,7 @@ void add_float_neon3(d1* dest, d1* src1, d1* src2, d4 count)
     reg_q = LOAD(reg_var1 + 12);
     reg_var1 += 16;
     reg_s = reg_var4 < 5;
-    reg_var4 += -4;
+    reg_var4 -= 4;
     (void) STORE(reg_var3 + 4, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_j) + INT_TO_FLOATBITS(reg_o)));
     (void) STORE(reg_var3 + 8, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_k) + INT_TO_FLOATBITS(reg_p)));
     (void) STORE(reg_var3 + 12, FLOATBITS_TO_INT(INT_TO_FLOATBITS(reg_l) + INT_TO_FLOATBITS(reg_q)));

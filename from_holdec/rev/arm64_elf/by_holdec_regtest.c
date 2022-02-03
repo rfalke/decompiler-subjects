@@ -300,7 +300,7 @@ L31:
       (void) STORE(reg_var15, LOAD(reg_var14 + -4));
       reg_var15 += 4;
       (void) STORE(reg_var14 + -4, reg_Cp);
-      reg_var14 += -4;
+      reg_var14 -= 4;
     } while(reg_var15 != reg_Ck + (reg_var12 & 0x7ffffffffffffffe) * 2);
   }
   (void) fputws(reg_Ck, LOAD(reg_Bb));
