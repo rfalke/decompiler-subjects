@@ -1,0 +1,25 @@
+[activeFunctions]
+char_or1
+char_or2
+char_and1
+char_and2
+char_and3
+char_xor1
+
+[func:char_or1]
+signature: void char_or1()
+
+[func:char_or2]
+signature: void char_or2()
+
+[func:char_and1]
+signature: void char_and1()
+
+[func:char_and2]
+signature: void char_and2()
+
+[func:char_and3]
+signature: void char_and3()
+
+[func:char_xor1]
+signature: void char_xor1()
