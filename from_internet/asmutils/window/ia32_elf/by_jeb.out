@@ -1,0 +1,40 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/window/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 10 methods
+Output folder: jeb_output
+  0/ 10: Method: sub_80482F0
+  1/ 10: 1/10: sub_80482F0 (DONE:101ms)
+  1/ 10: Method: sub_80482C6
+  2/ 10: 2/10: sub_80482C6 (DONE:137ms)
+  2/ 10: Method: sub_8048326
+  3/ 10: 3/10: sub_8048326 (DONE:21ms)
+  3/ 10: Method: sub_8048318
+  4/ 10: 4/10: sub_8048318 (DONE:20ms)
+  4/ 10: Method: sub_80481FE
+  5/ 10: 5/10: sub_80481FE (DONE:25ms)
+  5/ 10: Method: sub_80482A7
+  6/ 10: 6/10: sub_80482A7 (DONE:26ms)
+  6/ 10: Method: sub_804819E
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 25: Number of targets (1) differ from number of edges (0)
+  7/ 10: 7/10: sub_804819E (DONE:68ms)
+  7/ 10: Method: sub_804830A
+  8/ 10: 8/10: sub_804830A (DONE:30ms)
+  8/ 10: Method: sub_8048160
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 30: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 30: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 30: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 30: Number of targets (1) differ from number of edges (0)
+  9/ 10: 9/10: sub_8048160 (DONE:107ms)
+  9/ 10: Method: start
+ 10/ 10: 10/10: start (DONE:36ms)
+Exectime: 1.089000 sec
+[I] Done.

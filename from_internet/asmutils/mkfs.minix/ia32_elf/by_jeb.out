@@ -1,0 +1,27 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/mkfs.minix/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 4 methods
+Output folder: jeb_output
+  0/  4: Method: sub_80483A0
+  1/  4: 1/4: sub_80483A0 (DONE:44ms)
+  1/  4: Method: sub_8048374
+  2/  4: 2/4: sub_8048374 (DONE:47ms)
+  2/  4: Method: sub_804838B
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1E: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1E: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1E: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1E: Number of targets (1) differ from number of edges (0)
+  3/  4: 3/4: sub_804838B (DONE:112ms)
+  3/  4: Method: start
+  4/  4: 4/4: start (DONE:91ms)
+Exectime: 0.685000 sec
+[I] Done.

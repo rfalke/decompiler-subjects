@@ -1,109 +1,65 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.3M used (224.7M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/asgngoto/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (43 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 25 methods
 Output folder: jeb_output
-  0/ 43: Method: sub_8048554
-  1/ 43: 1/43: sub_8048554 (DONE:134ms)
-  1/ 43: Method: frame_dummy
-  2/ 43: 2/43: frame_dummy (DONE:342ms)
-  2/ 43: Method: __do_global_dtors_aux
-  3/ 43: 3/43: __do_global_dtors_aux (DONE:268ms)
-  3/ 43: Method: __do_global_ctors_aux
-  4/ 43: 4/43: __do_global_ctors_aux (DONE:170ms)
-  4/ 43: Method: sub_804856A
-  5/ 43: 5/43: sub_804856A (DONE:20ms)
-  5/ 43: Method: sub_8048564
-  6/ 43: 6/43: sub_8048564 (DONE:17ms)
-  6/ 43: Method: sub_804857A
-  7/ 43: 7/43: sub_804857A (DONE:26ms)
-  7/ 43: Method: sub_8048574
-  8/ 43: 8/43: sub_8048574 (DONE:18ms)
-  8/ 43: Method: sub_804859A
-  9/ 43: 9/43: sub_804859A (DONE:23ms)
-  9/ 43: Method: sub_80485AA
- 10/ 43: 10/43: sub_80485AA (DONE:19ms)
- 10/ 43: Method: sub_80485BA
- 11/ 43: 11/43: sub_80485BA (DONE:42ms)
- 11/ 43: Method: sub_80485CA
- 12/ 43: 12/43: sub_80485CA (DONE:65ms)
- 12/ 43: Method: sub_80485DA
- 13/ 43: 13/43: sub_80485DA (DONE:38ms)
- 13/ 43: Method: sub_80485EA
- 14/ 43: 14/43: sub_80485EA (DONE:27ms)
- 14/ 43: Method: sub_80485FA
- 15/ 43: 15/43: sub_80485FA (DONE:58ms)
- 15/ 43: Method: sub_804860A
- 16/ 43: 16/43: sub_804860A (DONE:35ms)
- 16/ 43: Method: sub_804861A
- 17/ 43: 17/43: sub_804861A (DONE:29ms)
- 17/ 43: Method: sub_8048614
- 18/ 43: 18/43: sub_8048614 (DONE:15ms)
- 18/ 43: Method: sub_8048594
- 19/ 43: 19/43: sub_8048594 (DONE:16ms)
- 19/ 43: Method: sub_80485A4
- 20/ 43: 20/43: sub_80485A4 (DONE:14ms)
- 20/ 43: Method: sub_80485B4
- 21/ 43: 21/43: sub_80485B4 (DONE:16ms)
- 21/ 43: Method: sub_80485C4
- 22/ 43: 22/43: sub_80485C4 (DONE:12ms)
- 22/ 43: Method: sub_80485D4
- 23/ 43: 23/43: sub_80485D4 (DONE:13ms)
- 23/ 43: Method: sub_80485E4
- 24/ 43: 24/43: sub_80485E4 (DONE:19ms)
- 24/ 43: Method: sub_80485F4
- 25/ 43: 25/43: sub_80485F4 (DONE:25ms)
- 25/ 43: Method: sub_8048604
- 26/ 43: 26/43: sub_8048604 (DONE:16ms)
- 26/ 43: Method: sub_80487F3
- 27/ 43: 27/43: sub_80487F3 (DONE:93ms)
- 27/ 43: Method: MAIN__
- 28/ 43: 28/43: MAIN__ (DONE:211ms)
- 28/ 43: Method: f_exit
- 29/ 43: 29/43: f_exit (DONE:25ms)
- 29/ 43: Method: sub_804858A
- 30/ 43: 30/43: sub_804858A (DONE:18ms)
- 30/ 43: Method: sub_804869E
- 31/ 43: 31/43: sub_804869E (DONE:17ms)
- 31/ 43: Method: sub_8048760
- 32/ 43: 32/43: sub_8048760 (DONE:60ms)
- 32/ 43: Method: sub_8048793
- 33/ 43: 33/43: sub_8048793 (DONE:54ms)
- 33/ 43: Method: sub_80487C3
- 34/ 43: 34/43: sub_80487C3 (DONE:64ms)
- 34/ 43: Method: _start
- 35/ 43: 35/43: _start (DONE:43ms)
- 35/ 43: Method: call_gmon_start
- 36/ 43: 36/43: call_gmon_start (DONE:70ms)
- 36/ 43: Method: initializer_0
- 37/ 43: 37/43: initializer_0 (DONE:42ms)
- 37/ 43: Method: finalizer_0
- 38/ 43: 38/43: finalizer_0 (DONE:51ms)
- 38/ 43: Method: atexit
- 39/ 43: 39/43: atexit (DONE:101ms)
- 39/ 43: Method: main
- 40/ 43: 40/43: main (DONE:87ms)
- 40/ 43: Method: __libc_csu_fini
- 41/ 43: 41/43: __libc_csu_fini (DONE:380ms)
- 41/ 43: Method: sub_80488BE
- 42/ 43: 42/43: sub_80488BE (DONE:10ms)
- 42/ 43: Method: __libc_csu_init
- 43/ 43: 43/43: __libc_csu_init (DONE:138ms)
-Exectime: 5.312000 sec
-Done.
+  0/ 25: Method: sub_804855A
+  1/ 25: 1/25: sub_804855A (DONE:40ms)
+  1/ 25: Method: →do_lio
+  2/ 25: 2/25: →do_lio (DONE:17ms)
+  2/ 25: Method: __do_global_dtors_aux
+  3/ 25: 3/25: __do_global_dtors_aux (DONE:96ms)
+  3/ 25: Method: frame_dummy
+  4/ 25: 4/25: frame_dummy (DONE:36ms)
+  4/ 25: Method: __do_global_ctors_aux
+  5/ 25: 5/25: __do_global_ctors_aux (DONE:74ms)
+  5/ 25: Method: →e_wsle
+  6/ 25: 6/25: →e_wsle (DONE:9ms)
+  6/ 25: Method: →s_rsle
+  7/ 25: 7/25: →s_rsle (DONE:9ms)
+  7/ 25: Method: →__cxa_atexit
+  8/ 25: 8/25: →__cxa_atexit (DONE:8ms)
+  8/ 25: Method: →e_rsle
+  9/ 25: 9/25: →e_rsle (DONE:9ms)
+  9/ 25: Method: →__libc_start_main
+ 10/ 25: 10/25: →__libc_start_main (DONE:7ms)
+ 10/ 25: Method: →f_init
+ 11/ 25: 11/25: →f_init (DONE:7ms)
+ 11/ 25: Method: →f_setsig
+ 12/ 25: 12/25: →f_setsig (DONE:7ms)
+ 12/ 25: Method: →exit
+ 13/ 25: 13/25: →exit (DONE:8ms)
+ 13/ 25: Method: →f_setarg
+ 14/ 25: 14/25: →f_setarg (DONE:7ms)
+ 14/ 25: Method: →s_wsle
+ 15/ 25: 15/25: →s_wsle (DONE:7ms)
+ 15/ 25: Method: MAIN__
+ 16/ 25: 16/25: MAIN__ (DONE:156ms)
+ 16/ 25: Method: →f_exit
+ 17/ 25: 17/25: →f_exit (DONE:4ms)
+ 17/ 25: Method: _start
+ 18/ 25: 18/25: _start (DONE:27ms)
+ 18/ 25: Method: call_gmon_start
+ 19/ 25: 19/25: call_gmon_start (DONE:29ms)
+ 19/ 25: Method: initializer_0
+ 20/ 25: 20/25: initializer_0 (DONE:17ms)
+ 20/ 25: Method: finalizer_0
+ 21/ 25: 21/25: finalizer_0 (DONE:17ms)
+ 21/ 25: Method: atexit
+ 22/ 25: 22/25: atexit (DONE:24ms)
+ 22/ 25: Method: main
+ 23/ 25: 23/25: main (DONE:52ms)
+ 23/ 25: Method: __libc_csu_init
+ 24/ 25: 24/25: __libc_csu_init (DONE:86ms)
+ 24/ 25: Method: __libc_csu_fini
+ 25/ 25: 25/25: __libc_csu_fini (DONE:62ms)
+Exectime: 1.470000 sec
+[I] Done.

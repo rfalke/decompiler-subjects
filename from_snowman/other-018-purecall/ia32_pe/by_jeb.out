@@ -1,19 +1,201 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_snowman/other-018-purecall/ia32_pe/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> Microsoft Visual Studio
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-
-=== Killed because of time limit
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: Microsoft Visual Studio
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] Cannot parse signature: "__stdcall void __ArrayUnwind(void *,unsigned int,int,void (__thiscall*)(void *))" (to be applied on Method{__ArrayUnwind}@4013EEh)
+line 1:15 token recognition error at: '`'
+line 1:45 token recognition error at: ''(void *,unsigned int,int,void (__thiscall*)(void *));'
+line 1:99 no viable alternative at input '__stdcallvoidehvectordestructoriterator'
+[E] Cannot parse signature: "__stdcall void `eh vector destructor iterator'(void *,unsigned int,int,void (__thiscall*)(void *))" (to be applied on Method{`eh vector destructor iterator'}@40144Ch)
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (3s)
+line 1:13 token recognition error at: '`'
+line 1:42 token recognition error at: '';'
+line 1:11 no viable alternative at input 'constAAAAA:'
+line 1:7 token recognition error at: '`'
+line 1:39 token recognition error at: '';'
+line 1:5 no viable alternative at input 'AAAAA:'
+line 1:12 token recognition error at: '`'
+line 1:33 token recognition error at: '';'
+line 1:35 no viable alternative at input 'classAAAAARTTITypeDescriptor'
+line 1:7 token recognition error at: '`'
+line 1:48 token recognition error at: '';'
+line 1:5 no viable alternative at input 'AAAAA:'
+line 1:7 token recognition error at: '`'
+line 1:29 token recognition error at: '';'
+line 1:5 no viable alternative at input 'AAAAA:'
+line 1:13 token recognition error at: '`'
+line 1:42 token recognition error at: '';'
+line 1:11 no viable alternative at input 'constBBBBB:'
+line 1:7 token recognition error at: '`'
+line 1:39 token recognition error at: '';'
+line 1:5 no viable alternative at input 'BBBBB:'
+line 1:12 token recognition error at: '`'
+line 1:33 token recognition error at: '';'
+line 1:35 no viable alternative at input 'classBBBBBRTTITypeDescriptor'
+line 1:7 token recognition error at: '`'
+line 1:48 token recognition error at: '';'
+line 1:5 no viable alternative at input 'BBBBB:'
+line 1:7 token recognition error at: '`'
+line 1:29 token recognition error at: '';'
+line 1:5 no viable alternative at input 'BBBBB:'
+line 1:17 token recognition error at: '`'
+line 1:46 token recognition error at: '';'
+line 1:15 no viable alternative at input 'consttype_info:'
+line 1:11 token recognition error at: '`'
+line 1:43 token recognition error at: '';'
+line 1:9 no viable alternative at input 'type_info:'
+line 1:16 token recognition error at: '`'
+line 1:37 token recognition error at: '';'
+line 1:39 no viable alternative at input 'classtype_infoRTTITypeDescriptor'
+line 1:11 token recognition error at: '`'
+line 1:52 token recognition error at: '';'
+line 1:9 no viable alternative at input 'type_info:'
+line 1:11 token recognition error at: '`'
+line 1:33 token recognition error at: '';'
+line 1:9 no viable alternative at input 'type_info:'
+line 1:13 token recognition error at: '`'
+line 1:21 token recognition error at: '';'
+line 1:11 no viable alternative at input 'constAAAAA:'
+line 1:13 token recognition error at: '`'
+line 1:21 token recognition error at: '';'
+line 1:11 no viable alternative at input 'constBBBBB:'
+line 1:17 token recognition error at: '`'
+line 1:25 token recognition error at: '';'
+line 1:15 no viable alternative at input 'consttype_info:'
+[I] {subject.exe > subject.exe > x86 image}: MSVC RTTI memory scanner: 3 Complete Object Locator recovered - 3 vftables recovered
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 63 methods
+Output folder: jeb_output
+  0/ 63: Method: sub_401790
+  1/ 63: 1/63: sub_401790 (DONE:94ms)
+  1/ 63: Method: sub_4017D5
+  2/ 63: 2/63: sub_4017D5 (DONE:43ms)
+  2/ 63: Method: →MSVCR100.dll!??3@YAXPAX@Z
+  3/ 63: 3/63: →MSVCR100.dll!??3@YAXPAX@Z (DONE:9ms)
+  3/ 63: Method: →MSVCR100.dll!?terminate@@YAXXZ
+  4/ 63: 4/63: →MSVCR100.dll!?terminate@@YAXXZ (DONE:3ms)
+  4/ 63: Method: →MSVCR100.dll!_invoke_watson
+  5/ 63: 5/63: →MSVCR100.dll!_invoke_watson (DONE:7ms)
+  5/ 63: Method: →MSVCR100.dll!_crt_debugger_hook
+  6/ 63: 6/63: →MSVCR100.dll!_crt_debugger_hook (DONE:4ms)
+  6/ 63: Method: →MSVCR100.dll!??2@YAPAXI@Z
+  7/ 63: 7/63: →MSVCR100.dll!??2@YAPAXI@Z (DONE:4ms)
+  7/ 63: Method: →MSVCR100.dll!_amsg_exit
+  8/ 63: 8/63: →MSVCR100.dll!_amsg_exit (DONE:3ms)
+  8/ 63: Method: →MSVCR100.dll!_XcptFilter
+  9/ 63: 9/63: →MSVCR100.dll!_XcptFilter (DONE:4ms)
+  9/ 63: Method: sub_401630
+ 10/ 63: 10/63: sub_401630 (DONE:65ms)
+ 10/ 63: Method: sub_401670
+ 11/ 63: 11/63: sub_401670 (DONE:70ms)
+ 11/ 63: Method: →MSVCR100.dll!_initterm
+ 12/ 63: 12/63: →MSVCR100.dll!_initterm (DONE:5ms)
+ 12/ 63: Method: →MSVCR100.dll!_initterm_e
+ 13/ 63: 13/63: →MSVCR100.dll!_initterm_e (DONE:5ms)
+ 13/ 63: Method: →MSVCR100.dll!?_type_info_dtor_internal_method@type_info@@QAEXXZ
+ 14/ 63: 14/63: →MSVCR100.dll!?_type_info_dtor_internal_method@type_info@@QAEXXZ (DONE:3ms)
+ 14/ 63: Method: →MSVCR100.dll!_unlock
+ 15/ 63: 15/63: →MSVCR100.dll!_unlock (DONE:3ms)
+ 15/ 63: Method: →MSVCR100.dll!__dllonexit
+ 16/ 63: 16/63: →MSVCR100.dll!__dllonexit (DONE:5ms)
+ 16/ 63: Method: →MSVCR100.dll!_lock
+ 17/ 63: 17/63: →MSVCR100.dll!_lock (DONE:3ms)
+ 17/ 63: Method: →MSVCR100.dll!_except_handler4_common
+ 18/ 63: 18/63: →MSVCR100.dll!_except_handler4_common (DONE:2ms)
+ 18/ 63: Method: →MSVCR100.dll!_controlfp_s
+ 19/ 63: 19/63: →MSVCR100.dll!_controlfp_s (DONE:3ms)
+ 19/ 63: Method: sub_4013EE
+ 20/ 63: 20/63: sub_4013EE (DONE:53ms)
+ 20/ 63: Method: sub_4016C0
+ 21/ 63: 21/63: sub_4016C0 (DONE:115ms)
+ 21/ 63: Method: sub_4015A4
+ 22/ 63: 22/63: sub_4015A4 (DONE:7ms)
+ 22/ 63: Method: sub_401497
+ 23/ 63: 23/63: sub_401497 (DONE:24ms)
+ 23/ 63: Method: sub_40144C
+ 24/ 63: 24/63: sub_40144C (DONE:117ms)
+ 24/ 63: Method: sub_401005
+ 25/ 63: 25/63: sub_401005 (DONE:5ms)
+ 25/ 63: Method: →MSVCR100.dll!_purecall
+ 26/ 63: 26/63: →MSVCR100.dll!_purecall (DONE:3ms)
+ 26/ 63: Method: →MSVCR100.dll!__getmainargs
+ 27/ 63: 27/63: →MSVCR100.dll!__getmainargs (DONE:4ms)
+ 27/ 63: Method: sub_4015C4
+ 28/ 63: 28/63: sub_4015C4 (DONE:25ms)
+ 28/ 63: Method: sub_4015EA
+ 29/ 63: 29/63: sub_4015EA (DONE:26ms)
+ 29/ 63: Method: →MSVCR100.dll!_cexit
+ 30/ 63: 30/63: →MSVCR100.dll!_cexit (DONE:3ms)
+ 30/ 63: Method: →MSVCR100.dll!_exit
+ 31/ 63: 31/63: →MSVCR100.dll!_exit (DONE:3ms)
+ 31/ 63: Method: →MSVCR100.dll!exit
+ 32/ 63: 32/63: →MSVCR100.dll!exit (DONE:4ms)
+ 32/ 63: Method: →MSVCR100.dll!_configthreadlocale
+ 33/ 63: 33/63: →MSVCR100.dll!_configthreadlocale (DONE:3ms)
+ 33/ 63: Method: →MSVCR100.dll!__setusermatherr
+ 34/ 63: 34/63: →MSVCR100.dll!__setusermatherr (DONE:6ms)
+ 34/ 63: Method: →MSVCR100.dll!__set_app_type
+ 35/ 63: 35/63: →MSVCR100.dll!__set_app_type (DONE:3ms)
+ 35/ 63: Method: →KERNEL32.dll!InterlockedExchange
+ 36/ 63: 36/63: →KERNEL32.dll!InterlockedExchange (DONE:4ms)
+ 36/ 63: Method: →KERNEL32.dll!Sleep
+ 37/ 63: 37/63: →KERNEL32.dll!Sleep (DONE:3ms)
+ 37/ 63: Method: →KERNEL32.dll!InterlockedCompareExchange
+ 38/ 63: 38/63: →KERNEL32.dll!InterlockedCompareExchange (DONE:3ms)
+ 38/ 63: Method: →KERNEL32.dll!HeapSetInformation
+ 39/ 63: 39/63: →KERNEL32.dll!HeapSetInformation (DONE:4ms)
+ 39/ 63: Method: →KERNEL32.dll!EncodePointer
+ 40/ 63: 40/63: →KERNEL32.dll!EncodePointer (DONE:3ms)
+ 40/ 63: Method: →KERNEL32.dll!SetUnhandledExceptionFilter
+ 41/ 63: 41/63: →KERNEL32.dll!SetUnhandledExceptionFilter (DONE:3ms)
+ 41/ 63: Method: →KERNEL32.dll!DecodePointer
+ 42/ 63: 42/63: →KERNEL32.dll!DecodePointer (DONE:5ms)
+ 42/ 63: Method: →KERNEL32.dll!QueryPerformanceCounter
+ 43/ 63: 43/63: →KERNEL32.dll!QueryPerformanceCounter (DONE:3ms)
+ 43/ 63: Method: →KERNEL32.dll!GetTickCount
+ 44/ 63: 44/63: →KERNEL32.dll!GetTickCount (DONE:3ms)
+ 44/ 63: Method: →KERNEL32.dll!GetCurrentThreadId
+ 45/ 63: 45/63: →KERNEL32.dll!GetCurrentThreadId (DONE:2ms)
+ 45/ 63: Method: →KERNEL32.dll!GetCurrentProcessId
+ 46/ 63: 46/63: →KERNEL32.dll!GetCurrentProcessId (DONE:3ms)
+ 46/ 63: Method: →KERNEL32.dll!GetSystemTimeAsFileTime
+ 47/ 63: 47/63: →KERNEL32.dll!GetSystemTimeAsFileTime (DONE:3ms)
+ 47/ 63: Method: →KERNEL32.dll!TerminateProcess
+ 48/ 63: 48/63: →KERNEL32.dll!TerminateProcess (DONE:4ms)
+ 48/ 63: Method: →KERNEL32.dll!GetCurrentProcess
+ 49/ 63: 49/63: →KERNEL32.dll!GetCurrentProcess (DONE:3ms)
+ 49/ 63: Method: →KERNEL32.dll!UnhandledExceptionFilter
+ 50/ 63: 50/63: →KERNEL32.dll!UnhandledExceptionFilter (DONE:3ms)
+ 50/ 63: Method: →KERNEL32.dll!IsDebuggerPresent
+ 51/ 63: 51/63: →KERNEL32.dll!IsDebuggerPresent (DONE:4ms)
+ 51/ 63: Method: sub_4014AF
+ 52/ 63: 52/63: sub_4014AF (DONE:49ms)
+ 52/ 63: Method: sub_401814
+ 53/ 63: 53/63: sub_401814 (DONE:19ms)
+ 53/ 63: Method: sub_4017E9
+ 54/ 63: 54/63: sub_4017E9 (DONE:12ms)
+ 54/ 63: Method: sub_401835
+ 55/ 63: 55/63: sub_401835 (DONE:20ms)
+ 55/ 63: Method: sub_401093
+ 56/ 63: 56/63: sub_401093 (DONE:41ms)
+ 56/ 63: Method: sub_40100A
+ 57/ 63: 57/63: sub_40100A (DONE:19ms)
+ 57/ 63: Method: sub_40150C
+ 58/ 63: 58/63: sub_40150C (DONE:145ms)
+ 58/ 63: Method: sub_4015AD
+ 59/ 63: 59/63: sub_4015AD (DONE:29ms)
+ 59/ 63: Method: start
+ 60/ 63: 60/63: start (DONE:24ms)
+ 60/ 63: Method: sub_401870
+ 61/ 63: 61/63: sub_401870 (DONE:113ms)
+ 61/ 63: Method: sub_40194C
+ 62/ 63: 62/63: sub_40194C (DONE:88ms)
+ 62/ 63: Method: sub_401142
+ 63/ 63: 63/63: sub_401142 (DONE:604ms)
+Exectime: 6.603000 sec
+[I] Done.

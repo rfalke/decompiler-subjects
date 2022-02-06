@@ -1,120 +1,92 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_rec/hd2/x64_elf_from_rec_gcc4g/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (36 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 25 methods
 Output folder: jeb_output
-  0/ 36: Method: sub_4005F0
-  1/ 36: 1/36: sub_4005F0 (DONE:95ms)
-  1/ 36: Method: call_gmon_start
-  2/ 36: 2/36: call_gmon_start (DONE:167ms)
-  2/ 36: Method: __do_global_dtors_aux
-  3/ 36: 3/36: __do_global_dtors_aux (DONE:155ms)
-  3/ 36: Method: frame_dummy
-  4/ 36: 4/36: frame_dummy (DONE:58ms)
-  4/ 36: Method: __do_global_ctors_aux
-  5/ 36: 5/36: __do_global_ctors_aux (DONE:106ms)
-  5/ 36: Method: sub_400606
-  6/ 36: 6/36: sub_400606 (DONE:23ms)
-  6/ 36: Method: sub_400616
-  7/ 36: 7/36: sub_400616 (DONE:28ms)
-  7/ 36: Method: sub_400626
-  8/ 36: 8/36: sub_400626 (DONE:27ms)
-  8/ 36: Method: sub_400636
-  9/ 36: 9/36: sub_400636 (DONE:31ms)
-  9/ 36: Method: sub_400646
- 10/ 36: 10/36: sub_400646 (DONE:28ms)
- 10/ 36: Method: sub_400656
- 11/ 36: 11/36: sub_400656 (DONE:23ms)
- 11/ 36: Method: sub_400650
- 12/ 36: 12/36: sub_400650 (DONE:31ms)
- 12/ 36: Method: sub_400666
- 13/ 36: 13/36: sub_400666 (DONE:18ms)
- 13/ 36: Method: sub_400676
- 14/ 36: 14/36: sub_400676 (DONE:31ms)
- 14/ 36: Method: sub_400670
- 15/ 36: 15/36: sub_400670 (DONE:24ms)
- 15/ 36: Method: sub_400686
- 16/ 36: 16/36: sub_400686 (DONE:26ms)
- 16/ 36: Method: sub_400696
- 17/ 36: 17/36: sub_400696 (DONE:31ms)
- 17/ 36: Method: sub_4006A6
- 18/ 36: 18/36: sub_4006A6 (DONE:37ms)
- 18/ 36: Method: sub_4006A0
- 19/ 36: 19/36: sub_4006A0 (DONE:20ms)
- 19/ 36: Method: initializer_0
- 20/ 36: 20/36: initializer_0 (DONE:154ms)
- 20/ 36: Method: sub_400600
- 21/ 36: 21/36: sub_400600 (DONE:17ms)
- 21/ 36: Method: sub_400610
- 22/ 36: 22/36: sub_400610 (DONE:26ms)
- 22/ 36: Method: sub_400620
- 23/ 36: 23/36: sub_400620 (DONE:16ms)
- 23/ 36: Method: sub_400630
- 24/ 36: 24/36: sub_400630 (DONE:23ms)
- 24/ 36: Method: sub_400640
- 25/ 36: 25/36: sub_400640 (DONE:20ms)
- 25/ 36: Method: sub_400660
- 26/ 36: 26/36: sub_400660 (DONE:23ms)
- 26/ 36: Method: sub_400680
- 27/ 36: 27/36: sub_400680 (DONE:20ms)
- 27/ 36: Method: sub_400690
- 28/ 36: 28/36: sub_400690 (DONE:20ms)
- 28/ 36: Method: stat
- 29/ 36: 29/36: stat (DONE:26ms)
- 29/ 36: Method: dumpline
- 30/ 36: 30/36: dumpline (DONE:1029ms)
- 30/ 36: Method: hexdump
- 31/ 36: 31/36: hexdump (DONE:362ms)
- 31/ 36: Method: __libc_csu_fini
- 32/ 36: 32/36: __libc_csu_fini (DONE:10ms)
- 32/ 36: Method: finalizer_0
- 33/ 36: 33/36: finalizer_0 (DONE:37ms)
- 33/ 36: Method: __libc_csu_init
- 34/ 36: 34/36: __libc_csu_init (DONE:76ms)
- 34/ 36: Method: _start
- 35/ 36: 35/36: _start (DONE:34ms)
- 35/ 36: Method: main
- 36/ 36: 36/36: main (DONE:105ms)
+  0/ 25: Method: sub_4005F6
+  1/ 25: 1/25: sub_4005F6 (DONE:52ms)
+  1/ 25: Method: →sprintf
+  2/ 25: 2/25: →sprintf (DONE:59ms)
+  2/ 25: Method: →memcpy
+  3/ 25: 3/25: →memcpy (DONE:20ms)
+  3/ 25: Method: →perror
+  4/ 25: 4/25: →perror (DONE:12ms)
+  4/ 25: Method: call_gmon_start
+  5/ 25: 5/25: call_gmon_start (DONE:54ms)
+  5/ 25: Method: __do_global_dtors_aux
+  6/ 25: 6/25: __do_global_dtors_aux (DONE:108ms)
+  6/ 25: Method: frame_dummy
+  7/ 25: 7/25: frame_dummy (DONE:28ms)
+  7/ 25: Method: __do_global_ctors_aux
+[C] java.lang.IllegalArgumentException: Entry point is an unknown address
+[C] 	at com.pnfsoftware.jeb.core.units.code.asm.analyzer.BranchTarget.<init>(SourceFile:41)
+  8/ 25: 8/25: __do_global_ctors_aux (DONE:46ms)
+  8/ 25: Method: →puts
+  9/ 25: 9/25: →puts (DONE:10ms)
+  9/ 25: Method: →fopen
+ 10/ 25: 10/25: →fopen (DONE:11ms)
+ 10/ 25: Method: →__libc_start_main
+ 11/ 25: 11/25: →__libc_start_main (DONE:9ms)
+ 11/ 25: Method: →strlen
+ 12/ 25: 12/25: →strlen (DONE:9ms)
+ 12/ 25: Method: →__xstat
+ 13/ 25: 13/25: →__xstat (DONE:13ms)
+ 13/ 25: Method: →strcat
+ 14/ 25: 14/25: →strcat (DONE:10ms)
+ 14/ 25: Method: →fread
+ 15/ 25: 15/25: →fread (DONE:10ms)
+ 15/ 25: Method: →fclose
+ 16/ 25: 16/25: →fclose (DONE:9ms)
+ 16/ 25: Method: initializer_0
+ 17/ 25: 17/25: initializer_0 (DONE:25ms)
+ 17/ 25: Method: stat
+ 18/ 25: 18/25: stat (DONE:6ms)
+ 18/ 25: Method: dumpline
+ 19/ 25: 19/25: dumpline (DONE:760ms)
+ 19/ 25: Method: hexdump
+ 20/ 25: 20/25: hexdump (DONE:223ms)
+ 20/ 25: Method: __libc_csu_fini
+ 21/ 25: 21/25: __libc_csu_fini (DONE:3ms)
+ 21/ 25: Method: finalizer_0
+ 22/ 25: 22/25: finalizer_0 (DONE:12ms)
+ 22/ 25: Method: _start
+ 23/ 25: 23/25: _start (DONE:19ms)
+ 23/ 25: Method: __libc_csu_init
+ 24/ 25: 24/25: __libc_csu_init (DONE:46ms)
+ 24/ 25: Method: main
+ 25/ 25: 25/25: main (DONE:70ms)
 1/1 DECOMPILATION ERROR: METHOD __do_global_ctors_aux: java.lang.IllegalArgumentException: Entry point is an unknown address
-	at com.pnfsoftware.jeb.core.units.code.asm.analyzer.BranchTarget.<init>(SourceFile:42)
-	at com.pnfsoftware.jebglobal.WE.Vo(SourceFile:330)
-	at com.pnfsoftware.jebglobal.WE.Vo(SourceFile:602)
-	at com.pnfsoftware.jebglobal.WE.OQ(SourceFile:461)
-	at com.pnfsoftware.jebglobal.Ye.XP(SourceFile:72)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.analyzer.BranchTarget.<init>(SourceFile:41)
+	at com.pnfsoftware.jebglobal.ts.oD(SourceFile:332)
+	at com.pnfsoftware.jebglobal.ts.oD(SourceFile:662)
+	at com.pnfsoftware.jebglobal.ts.MC(SourceFile:463)
+	at com.pnfsoftware.jebglobal.u.Na(SourceFile:71)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:116)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
 	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
 	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:461)
@@ -140,8 +112,8 @@ Output folder: jeb_output
 	at org.python.core.PyObject._jcall(PyObject.java:3598)
 	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
 	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
 	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
 
-Exectime: 5.189000 sec
-Done.
+Exectime: 2.314000 sec
+[I] Done.

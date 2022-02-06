@@ -1,51 +1,53 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/x64_lea/x64_elf/subject.exe...
-The notes section ".gnu.build.attributes" was not processed
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (13 internal methods created)
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x401026 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 18 methods
 Output folder: jeb_output
-  0/ 13: Method: initializer_0
-  1/ 13: 1/13: initializer_0 (DONE:281ms)
-  1/ 13: Method: sub_401036
-  2/ 13: 2/13: sub_401036 (DONE:60ms)
-  2/ 13: Method: sub_401030
-  3/ 13: 3/13: sub_401030 (DONE:28ms)
-  3/ 13: Method: deregister_tm_clones
-  4/ 13: 4/13: deregister_tm_clones (DONE:45ms)
-  4/ 13: Method: register_tm_clones
-  5/ 13: 5/13: register_tm_clones (DONE:50ms)
-  5/ 13: Method: initializer_1
-  6/ 13: 6/13: initializer_1 (DONE:24ms)
-  6/ 13: Method: _dl_relocate_static_pie
-  7/ 13: 7/13: _dl_relocate_static_pie (DONE:14ms)
-  7/ 13: Method: __libc_csu_fini
-  8/ 13: 8/13: __libc_csu_fini (DONE:10ms)
-  8/ 13: Method: finalizer_0
-  9/ 13: 9/13: finalizer_0 (DONE:23ms)
-  9/ 13: Method: main
- 10/ 13: 10/13: main (DONE:307ms)
- 10/ 13: Method: finalizer_1
-Emulation failed!
- 11/ 13: 11/13: finalizer_1 (DONE:157ms)
- 11/ 13: Method: __libc_csu_init
- 12/ 13: 12/13: __libc_csu_init (DONE:291ms)
- 12/ 13: Method: _start
- 13/ 13: 13/13: _start (DONE:75ms)
-Exectime: 3.180000 sec
-Done.
+  0/ 18: Method: →printf
+  1/ 18: 1/18: →printf (DONE:80ms)
+  1/ 18: Method: sub_401190
+  2/ 18: 2/18: sub_401190 (DONE:7ms)
+  2/ 18: Method: sub_4011D0
+  3/ 18: 3/18: sub_4011D0 (DONE:8ms)
+  3/ 18: Method: initializer_0
+  4/ 18: 4/18: initializer_0 (DONE:65ms)
+  4/ 18: Method: sub_401200
+  5/ 18: 5/18: sub_401200 (DONE:5ms)
+  5/ 18: Method: sub_40117D
+  6/ 18: 6/18: sub_40117D (DONE:18ms)
+  6/ 18: Method: sub_4011BF
+  7/ 18: 7/18: sub_4011BF (DONE:18ms)
+  7/ 18: Method: deregister_tm_clones
+  8/ 18: 8/18: deregister_tm_clones (DONE:14ms)
+  8/ 18: Method: register_tm_clones
+  9/ 18: 9/18: register_tm_clones (DONE:54ms)
+  9/ 18: Method: sub_4011ED
+ 10/ 18: 10/18: sub_4011ED (DONE:13ms)
+ 10/ 18: Method: initializer_1
+ 11/ 18: 11/18: initializer_1 (DONE:5ms)
+ 11/ 18: Method: _dl_relocate_static_pie
+ 12/ 18: 12/18: _dl_relocate_static_pie (DONE:4ms)
+ 12/ 18: Method: __libc_csu_fini
+ 13/ 18: 13/18: __libc_csu_fini (DONE:8ms)
+ 13/ 18: Method: finalizer_0
+ 14/ 18: 14/18: finalizer_0 (DONE:17ms)
+ 14/ 18: Method: main
+ 15/ 18: 15/18: main (DONE:96ms)
+ 15/ 18: Method: finalizer_1
+ 16/ 18: 16/18: finalizer_1 (DONE:13ms)
+ 16/ 18: Method: __libc_csu_init
+ 17/ 18: 17/18: __libc_csu_init (DONE:115ms)
+ 17/ 18: Method: _start
+ 18/ 18: 18/18: _start (DONE:31ms)
+Exectime: 1.031000 sec
+[I] Done.

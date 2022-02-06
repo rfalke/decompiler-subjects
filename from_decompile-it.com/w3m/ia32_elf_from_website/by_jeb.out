@@ -1,2344 +1,1942 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_decompile-it.com/w3m/ia32_elf_from_website/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (1660 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (13s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 1491 methods
 Output folder: jeb_output
-  0/1660: Method: sub_8049C2C
-  1/1660: 1/1660: sub_8049C2C (DONE:98ms)
-  1/1660: Method: parsedtag_get_value
-  2/1660: 2/1660: parsedtag_get_value (DONE:330ms)
-  2/1660: Method: fclose@@GLIBC_2.1
-  3/1660: 3/1660: fclose@@GLIBC_2.1 (DONE:1089ms)
-  3/1660: Method: move
-  4/1660: 4/1660: move (DONE:95ms)
-  4/1660: Method: baseURL
-  5/1660: 5/1660: baseURL (DONE:82ms)
-  5/1660: Method: Strshrink
-  6/1660: 6/1660: Strshrink (DONE:89ms)
-  6/1660: Method: non_null
-  7/1660: 7/1660: non_null (DONE:213ms)
-  7/1660: Method: wtf_strwidth
-  8/1660: 8/1660: wtf_strwidth (DONE:120ms)
-  8/1660: Method: popValue
-  9/1660: 9/1660: popValue (DONE:102ms)
-  9/1660: Method: Strchop
- 10/1660: 10/1660: Strchop (DONE:65ms)
- 10/1660: Method: currentLn
- 11/1660: 11/1660: currentLn (DONE:40ms)
- 11/1660: Method: setfcolor
- 12/1660: 12/1660: setfcolor (DONE:62ms)
- 12/1660: Method: Strclear
- 13/1660: 13/1660: Strclear (DONE:24ms)
- 13/1660: Method: standend
- 14/1660: 14/1660: standend (DONE:28ms)
- 14/1660: Method: ceil_at_intervals
- 15/1660: 15/1660: ceil_at_intervals (DONE:80ms)
- 15/1660: Method: Strdelete
- 16/1660: 16/1660: Strdelete (DONE:122ms)
- 16/1660: Method: ex_efct
- 17/1660: 17/1660: ex_efct (DONE:63ms)
- 17/1660: Method: standout
- 18/1660: 18/1660: standout (DONE:24ms)
- 18/1660: Method: graphend
- 19/1660: 19/1660: graphend (DONE:22ms)
- 19/1660: Method: weight2
- 20/1660: 20/1660: weight2 (DONE:36ms)
- 20/1660: Method: touch_column
- 21/1660: 21/1660: touch_column (DONE:90ms)
- 21/1660: Method: boldend
- 22/1660: 22/1660: boldend (DONE:23ms)
- 22/1660: Method: has_hidden_link
- 23/1660: 23/1660: has_hidden_link (DONE:106ms)
- 23/1660: Method: graphstart
- 24/1660: 24/1660: graphstart (DONE:21ms)
- 24/1660: Method: wc_get_ucs_table
- 25/1660: 25/1660: wc_get_ucs_table (DONE:262ms)
- 25/1660: Method: Strremovefirstspaces
- 26/1660: 26/1660: Strremovefirstspaces (DONE:109ms)
- 26/1660: Method: prevBuffer
- 27/1660: 27/1660: prevBuffer (DONE:43ms)
- 27/1660: Method: touch_line
- 28/1660: 28/1660: touch_line (DONE:137ms)
- 28/1660: Method: matchedPosition
- 29/1660: 29/1660: matchedPosition (DONE:37ms)
- 29/1660: Method: wc_ces_to_charset
- 30/1660: 30/1660: wc_ces_to_charset (DONE:38ms)
- 30/1660: Method: wc_parse_iso2022_esc
- 31/1660: 31/1660: wc_parse_iso2022_esc (DONE:1222ms)
- 31/1660: Method: wc_ucs_to_utf8
- 32/1660: 32/1660: wc_ucs_to_utf8 (DONE:374ms)
- 32/1660: Method: correct_table_matrix
- 33/1660: 33/1660: correct_table_matrix (DONE:263ms)
- 33/1660: Method: bold
- 34/1660: 34/1660: bold (DONE:19ms)
- 34/1660: Method: underlineend
- 35/1660: 35/1660: underlineend (DONE:19ms)
- 35/1660: Method: setbcolor
- 36/1660: 36/1660: setbcolor (DONE:51ms)
- 36/1660: Method: Strremovetrailingspaces
- 37/1660: 37/1660: Strremovetrailingspaces (DONE:78ms)
- 37/1660: Method: wtf_len
- 38/1660: 38/1660: wtf_len (DONE:67ms)
- 38/1660: Method: __divdi3
- 39/1660: 39/1660: __divdi3 (DONE:463ms)
- 39/1660: Method: pclose@@GLIBC_2.1
- 40/1660: 40/1660: pclose@@GLIBC_2.1 (DONE:231ms)
- 40/1660: Method: clear_mark
- 41/1660: 41/1660: clear_mark (DONE:65ms)
- 41/1660: Method: posTab
- 42/1660: 42/1660: posTab (DONE:107ms)
- 42/1660: Method: nthBuffer
- 43/1660: 43/1660: nthBuffer (DONE:62ms)
- 43/1660: Method: setStrType
- 44/1660: 44/1660: setStrType (DONE:225ms)
- 44/1660: Method: table_rule_width
- 45/1660: 45/1660: table_rule_width (DONE:24ms)
- 45/1660: Method: w3m_dir
- 46/1660: 46/1660: w3m_dir (DONE:17ms)
- 46/1660: Method: wc_cs128w_to_gbk
- 47/1660: 47/1660: wc_cs128w_to_gbk (DONE:163ms)
- 47/1660: Method: w3m_auxbin_dir
- 48/1660: 48/1660: w3m_auxbin_dir (DONE:27ms)
- 48/1660: Method: mouse_scroll_line
- 49/1660: 49/1660: mouse_scroll_line (DONE:48ms)
- 49/1660: Method: numTab
- 50/1660: 50/1660: numTab (DONE:71ms)
- 50/1660: Method: set_mark
- 51/1660: 51/1660: set_mark (DONE:65ms)
- 51/1660: Method: check_cell_width
- 52/1660: 52/1660: check_cell_width (DONE:595ms)
- 52/1660: Method: check_minimum_width
- 53/1660: 53/1660: check_minimum_width (DONE:182ms)
- 53/1660: Method: updateSelectOption
- 54/1660: 54/1660: updateSelectOption (DONE:80ms)
- 54/1660: Method: str_to_bool
- 55/1660: 55/1660: str_to_bool (DONE:472ms)
- 55/1660: Method: mMouse_scroll_line
- 56/1660: 56/1660: mMouse_scroll_line (DONE:77ms)
- 56/1660: Method: wrap
- 57/1660: 57/1660: wrap (DONE:33ms)
- 57/1660: Method: toggle_stand
- 58/1660: 58/1660: toggle_stand (DONE:108ms)
- 58/1660: Method: underline
- 59/1660: 59/1660: underline (DONE:14ms)
- 59/1660: Method: closest_next_anchor
- 60/1660: 60/1660: closest_next_anchor (DONE:244ms)
- 60/1660: Method: do_update
- 61/1660: 61/1660: do_update (DONE:74ms)
- 61/1660: Method: Strtruncate
- 62/1660: 62/1660: Strtruncate (DONE:25ms)
- 62/1660: Method: appendGeneralList
- 63/1660: 63/1660: appendGeneralList (DONE:87ms)
- 63/1660: Method: wc_jisx0201k_to_jisx0208
- 64/1660: 64/1660: wc_jisx0201k_to_jisx0208 (DONE:36ms)
- 64/1660: Method: __i686.get_pc_thunk.bx
- 65/1660: 65/1660: __i686.get_pc_thunk.bx (DONE:9ms)
- 65/1660: Method: set_alignment
- 66/1660: 66/1660: set_alignment (DONE:145ms)
- 66/1660: Method: effect_active_end
- 67/1660: 67/1660: effect_active_end (DONE:56ms)
- 67/1660: Method: do_color
- 68/1660: 68/1660: do_color (DONE:105ms)
- 68/1660: Method: sloppy_parse_line
- 69/1660: 69/1660: sloppy_parse_line (DONE:64ms)
- 69/1660: Method: process_n_form
- 70/1660: 70/1660: process_n_form (DONE:19ms)
- 70/1660: Method: next_status
- 71/1660: 71/1660: next_status (DONE:335ms)
- 71/1660: Method: _mvL
- 72/1660: 72/1660: _mvL (DONE:38ms)
- 72/1660: Method: terminated
- 73/1660: 73/1660: terminated (DONE:73ms)
- 73/1660: Method: bsearch_2short
- 74/1660: 74/1660: bsearch_2short (DONE:241ms)
- 74/1660: Method: table_colspan
- 75/1660: 75/1660: table_colspan (DONE:54ms)
- 75/1660: Method: table_border_width
- 76/1660: 76/1660: table_border_width (DONE:62ms)
- 76/1660: Method: correct_table_matrix2
- 77/1660: 77/1660: correct_table_matrix2 (DONE:311ms)
- 77/1660: Method: geom_menu
- 78/1660: 78/1660: geom_menu (DONE:335ms)
- 78/1660: Method: graph_ok
- 79/1660: 79/1660: graph_ok (DONE:37ms)
- 79/1660: Method: hashfunc
- 80/1660: 80/1660: hashfunc (DONE:55ms)
- 80/1660: Method: wc_sjis_ext_to_cs94w
- 81/1660: 81/1660: wc_sjis_ext_to_cs94w (DONE:87ms)
- 81/1660: Method: wc_input_init
- 82/1660: 82/1660: wc_input_init (DONE:139ms)
- 82/1660: Method: wc_cs128w_to_uhc
- 83/1660: 83/1660: wc_cs128w_to_uhc (DONE:128ms)
- 83/1660: Method: wc_cs94w_to_big5
- 84/1660: 84/1660: wc_cs94w_to_big5 (DONE:113ms)
- 84/1660: Method: wc_cs128w_to_hkscs
- 85/1660: 85/1660: wc_cs128w_to_hkscs (DONE:121ms)
- 85/1660: Method: effect_visited_end
- 86/1660: 86/1660: effect_visited_end (DONE:27ms)
- 86/1660: Method: effect_image_end
- 87/1660: 87/1660: effect_image_end (DONE:36ms)
- 87/1660: Method: effect_form_end
- 88/1660: 88/1660: effect_form_end (DONE:45ms)
- 88/1660: Method: effect_anchor_end
- 89/1660: 89/1660: effect_anchor_end (DONE:36ms)
- 89/1660: Method: effect_mark_end
- 90/1660: 90/1660: effect_mark_end (DONE:35ms)
- 90/1660: Method: keyPressEventProc
- 91/1660: 91/1660: keyPressEventProc (DONE:28ms)
- 91/1660: Method: nulcmd
- 92/1660: 92/1660: nulcmd (DONE:16ms)
- 92/1660: Method: prev_nonnull_line
- 93/1660: 93/1660: prev_nonnull_line (DONE:73ms)
- 93/1660: Method: next_nonnull_line
- 94/1660: 94/1660: next_nonnull_line (DONE:62ms)
- 94/1660: Method: cur_real_linenumber
- 95/1660: 95/1660: cur_real_linenumber (DONE:66ms)
- 95/1660: Method: skip_auth_token
- 96/1660: 96/1660: skip_auth_token (DONE:162ms)
- 96/1660: Method: is_word_char
- 97/1660: 97/1660: is_word_char (DONE:130ms)
- 97/1660: Method: table_width
- 98/1660: 98/1660: table_width (DONE:64ms)
- 98/1660: Method: clearBuffer
- 99/1660: 99/1660: clearBuffer (DONE:28ms)
- 99/1660: Method: nextColumn
-100/1660: 100/1660: nextColumn (DONE:115ms)
-100/1660: Method: table_rowspan
-101/1660: 101/1660: table_rowspan (DONE:95ms)
-101/1660: Method: unloadFrame
-102/1660: 102/1660: unloadFrame (DONE:16ms)
-102/1660: Method: addFrameSetElement
-103/1660: 103/1660: addFrameSetElement (DONE:43ms)
-103/1660: Method: clrtobot_eol
-104/1660: 104/1660: clrtobot_eol (DONE:66ms)
-104/1660: Method: clrtobotx
-105/1660: 105/1660: clrtobotx (DONE:30ms)
-105/1660: Method: ha2d
-106/1660: 106/1660: ha2d (DONE:121ms)
-106/1660: Method: match_longchar
-107/1660: 107/1660: match_longchar (DONE:131ms)
-107/1660: Method: port_match
-108/1660: 108/1660: port_match (DONE:30ms)
-108/1660: Method: lastHist
-109/1660: 109/1660: lastHist (DONE:30ms)
-109/1660: Method: onAnchor
-110/1660: 110/1660: onAnchor (DONE:80ms)
-110/1660: Method: retrieveAnchor
-111/1660: 111/1660: retrieveAnchor (DONE:159ms)
-111/1660: Method: retrieveCurrentAnchor
-112/1660: 112/1660: retrieveCurrentAnchor (DONE:41ms)
-112/1660: Method: retrieveCurrentForm
-113/1660: 113/1660: retrieveCurrentForm (DONE:42ms)
-113/1660: Method: retrieveCurrentImg
-114/1660: 114/1660: retrieveCurrentImg (DONE:36ms)
-114/1660: Method: shiftAnchorPosition
-115/1660: 115/1660: shiftAnchorPosition (DONE:282ms)
-115/1660: Method: reseq_anchor0
-116/1660: 116/1660: reseq_anchor0 (DONE:80ms)
-116/1660: Method: closest_prev_anchor
-117/1660: 117/1660: closest_prev_anchor (DONE:206ms)
-117/1660: Method: Strlower
-118/1660: 118/1660: Strlower (DONE:67ms)
-118/1660: Method: Strupper
-119/1660: 119/1660: Strupper (DONE:56ms)
-119/1660: Method: lookupHash_iv
-120/1660: 120/1660: lookupHash_iv (DONE:55ms)
-120/1660: Method: wc_check_ces
-121/1660: 121/1660: wc_check_ces (DONE:35ms)
-121/1660: Method: wc_create_detect_map
-122/1660: 122/1660: wc_create_detect_map (DONE:137ms)
-122/1660: Method: wc_N_to_johab1
-123/1660: 123/1660: wc_N_to_johab1 (DONE:156ms)
-123/1660: Method: wc_cs94w_to_sjis_ext
-124/1660: 124/1660: wc_cs94w_to_sjis_ext (DONE:101ms)
-124/1660: Method: wc_ucs_get_tag
-125/1660: 125/1660: wc_ucs_get_tag (DONE:27ms)
-125/1660: Method: wc_uhc_to_cs128w
-126/1660: 126/1660: wc_uhc_to_cs128w (DONE:123ms)
-126/1660: Method: wc_utf8_to_ucs
-127/1660: 127/1660: wc_utf8_to_ucs (DONE:288ms)
-127/1660: Method: wc_big5_to_cs94w
-128/1660: 128/1660: wc_big5_to_cs94w (DONE:103ms)
-128/1660: Method: wc_cs128w_to_gbk_ext
-129/1660: 129/1660: wc_cs128w_to_gbk_ext (DONE:137ms)
-129/1660: Method: wc_gbk_to_cs128w
-130/1660: 130/1660: wc_gbk_to_cs128w (DONE:105ms)
-130/1660: Method: wc_hkscs_to_cs128w
-131/1660: 131/1660: wc_hkscs_to_cs128w (DONE:96ms)
-131/1660: Method: new_menu
-132/1660: 132/1660: new_menu (DONE:361ms)
-132/1660: Method: delC
-133/1660: 133/1660: delC (DONE:105ms)
-133/1660: Method: effect_active_start
-134/1660: 134/1660: effect_active_start (DONE:60ms)
-134/1660: Method: ISgetc
-135/1660: 135/1660: ISgetc (DONE:57ms)
-135/1660: Method: wc_cs128w_to_johab
-136/1660: 136/1660: wc_cs128w_to_johab (DONE:280ms)
-136/1660: Method: wtf_parse1
-137/1660: 137/1660: wtf_parse1 (DONE:883ms)
-137/1660: Method: set_longchar
-138/1660: 138/1660: set_longchar (DONE:142ms)
-138/1660: Method: wtf_get_code
-139/1660: 139/1660: wtf_get_code (DONE:29ms)
-139/1660: Method: _bs
-140/1660: 140/1660: _bs (DONE:33ms)
-140/1660: Method: __do_global_dtors_aux
-141/1660: 141/1660: __do_global_dtors_aux (DONE:47ms)
-141/1660: Method: frame_dummy
-142/1660: 142/1660: frame_dummy (DONE:30ms)
-142/1660: Method: checkBackBuffer
-143/1660: 143/1660: checkBackBuffer (DONE:54ms)
-143/1660: Method: calcTabPos
-144/1660: 144/1660: calcTabPos (DONE:474ms)
-144/1660: Method: compress_application_type
-145/1660: 145/1660: compress_application_type (DONE:41ms)
-145/1660: Method: is_period_char
-146/1660: 146/1660: is_period_char (DONE:56ms)
-146/1660: Method: is_beginning_char
-147/1660: 147/1660: is_beginning_char (DONE:23ms)
-147/1660: Method: is_combining_char
-148/1660: 148/1660: is_combining_char (DONE:28ms)
-148/1660: Method: is_boundary
-149/1660: 149/1660: is_boundary (DONE:103ms)
-149/1660: Method: clear_ignore_p_flag
-150/1660: 150/1660: clear_ignore_p_flag (DONE:54ms)
-150/1660: Method: need_flushline
-151/1660: 151/1660: need_flushline (DONE:74ms)
-151/1660: Method: _mvR
-152/1660: 152/1660: _mvR (DONE:47ms)
-152/1660: Method: Usolve
-153/1660: 153/1660: Usolve (DONE:540ms)
-153/1660: Method: Lsolve
-154/1660: 154/1660: Lsolve (DONE:528ms)
-154/1660: Method: LUsolve
-155/1660: 155/1660: LUsolve (DONE:129ms)
-155/1660: Method: bsearch_double
-156/1660: 156/1660: bsearch_double (DONE:236ms)
-156/1660: Method: floor_at_intervals
-157/1660: 157/1660: floor_at_intervals (DONE:64ms)
-157/1660: Method: minimum_cellspacing
-158/1660: 158/1660: minimum_cellspacing (DONE:45ms)
-158/1660: Method: visible_length_plain
-159/1660: 159/1660: visible_length_plain (DONE:209ms)
-159/1660: Method: check_maximum_width
-160/1660: 160/1660: check_maximum_width (DONE:198ms)
-160/1660: Method: correct_table_matrix3
-161/1660: 161/1660: correct_table_matrix3 (DONE:390ms)
-161/1660: Method: correct_table_matrix4
-162/1660: 162/1660: correct_table_matrix4 (DONE:388ms)
-162/1660: Method: nearestMapArea
-163/1660: 163/1660: nearestMapArea (DONE:155ms)
-163/1660: Method: guess_menu_xy
-164/1660: 164/1660: guess_menu_xy (DONE:125ms)
-164/1660: Method: mailcapMatch
-165/1660: 165/1660: mailcapMatch (DONE:226ms)
-165/1660: Method: schemeToProxy
-166/1660: 166/1660: schemeToProxy (DONE:28ms)
-166/1660: Method: c2e
-167/1660: 167/1660: c2e (DONE:62ms)
-167/1660: Method: match_range_longchar
-168/1660: 168/1660: match_range_longchar (DONE:199ms)
-168/1660: Method: matchWhich
-169/1660: 169/1660: matchWhich (DONE:90ms)
-169/1660: Method: regmatch1
-170/1660: 170/1660: regmatch1 (DONE:91ms)
-170/1660: Method: nth_cookie
-171/1660: 171/1660: nth_cookie (DONE:37ms)
-171/1660: Method: nextHist
-172/1660: 172/1660: nextHist (DONE:38ms)
-172/1660: Method: prevHist
-173/1660: 173/1660: prevHist (DONE:28ms)
-173/1660: Method: ISundogetc
-174/1660: 174/1660: ISundogetc (DONE:31ms)
-174/1660: Method: strcasematch
-175/1660: 175/1660: strcasematch (DONE:92ms)
-175/1660: Method: rpopValue
-176/1660: 176/1660: rpopValue (DONE:53ms)
-176/1660: Method: delValue
-177/1660: 177/1660: delValue (DONE:48ms)
-177/1660: Method: wc_ces_to_charset_desc
-178/1660: 178/1660: wc_ces_to_charset_desc (DONE:21ms)
-178/1660: Method: wc_guess_8bit_charset
-179/1660: 179/1660: wc_guess_8bit_charset (DONE:39ms)
-179/1660: Method: wc_create_gmap
-180/1660: 180/1660: wc_create_gmap (DONE:482ms)
-180/1660: Method: wc_jisx0212_or_jisx02132
-181/1660: 181/1660: wc_jisx0212_or_jisx02132 (DONE:42ms)
-181/1660: Method: wc_johab1_to_N
-182/1660: 182/1660: wc_johab1_to_N (DONE:88ms)
-182/1660: Method: wc_johab_to_cs128w
-183/1660: 183/1660: wc_johab_to_cs128w (DONE:212ms)
-183/1660: Method: wc_putc_clear_status
-184/1660: 184/1660: wc_putc_clear_status (DONE:27ms)
-184/1660: Method: wc_sjis_ext1_to_N
-185/1660: 185/1660: wc_sjis_ext1_to_N (DONE:59ms)
-185/1660: Method: wc_sjis_ext2_to_N
-186/1660: 186/1660: wc_sjis_ext2_to_N (DONE:37ms)
-186/1660: Method: wc_ces_has_ccs
-187/1660: 187/1660: wc_ces_has_ccs (DONE:42ms)
-187/1660: Method: wc_uhc_to_N
-188/1660: 188/1660: wc_uhc_to_N (DONE:124ms)
-188/1660: Method: wc_tcvn5712_precompose
-189/1660: 189/1660: wc_tcvn5712_precompose (DONE:40ms)
-189/1660: Method: wc_cp1258_precompose
-190/1660: 190/1660: wc_cp1258_precompose (DONE:43ms)
-190/1660: Method: wc_gbk_ext_to_cs128w
-191/1660: 191/1660: wc_gbk_ext_to_cs128w (DONE:74ms)
-191/1660: Method: wc_gbk_to_N
-192/1660: 192/1660: wc_gbk_to_N (DONE:271ms)
-192/1660: Method: wc_hkscs_to_N
-193/1660: 193/1660: wc_hkscs_to_N (DONE:64ms)
-193/1660: Method: __moddi3
-194/1660: 194/1660: __moddi3 (DONE:523ms)
-194/1660: Method: __do_global_ctors_aux
-195/1660: 195/1660: __do_global_ctors_aux (DONE:65ms)
-195/1660: Method: sub_8049C42
-196/1660: 196/1660: sub_8049C42 (DONE:15ms)
-196/1660: Method: sub_8049C3C
-197/1660: 197/1660: sub_8049C3C (DONE:18ms)
-197/1660: Method: sub_8049C52
-198/1660: 198/1660: sub_8049C52 (DONE:17ms)
-198/1660: Method: sub_8049C4C
-199/1660: 199/1660: sub_8049C4C (DONE:14ms)
-199/1660: Method: sub_8049C62
-200/1660: 200/1660: sub_8049C62 (DONE:13ms)
-200/1660: Method: sub_8049C72
-201/1660: 201/1660: sub_8049C72 (DONE:11ms)
-201/1660: Method: sub_8049C6C
-202/1660: 202/1660: sub_8049C6C (DONE:12ms)
-202/1660: Method: sub_8049C82
-203/1660: 203/1660: sub_8049C82 (DONE:12ms)
-203/1660: Method: sub_8049C92
-204/1660: 204/1660: sub_8049C92 (DONE:12ms)
-204/1660: Method: sub_8049C8C
-205/1660: 205/1660: sub_8049C8C (DONE:17ms)
-205/1660: Method: sub_8049CA2
-206/1660: 206/1660: sub_8049CA2 (DONE:16ms)
-206/1660: Method: sub_8049C9C
-207/1660: 207/1660: sub_8049C9C (DONE:22ms)
-207/1660: Method: sub_8049CB2
-208/1660: 208/1660: sub_8049CB2 (DONE:18ms)
-208/1660: Method: sub_8049CAC
-209/1660: 209/1660: sub_8049CAC (DONE:25ms)
-209/1660: Method: sub_8049CC2
-210/1660: 210/1660: sub_8049CC2 (DONE:12ms)
-210/1660: Method: sub_8049CBC
-211/1660: 211/1660: sub_8049CBC (DONE:12ms)
-211/1660: Method: sub_8049CD2
-212/1660: 212/1660: sub_8049CD2 (DONE:10ms)
-212/1660: Method: sub_8049CE2
-213/1660: 213/1660: sub_8049CE2 (DONE:11ms)
-213/1660: Method: sub_8049CF2
-214/1660: 214/1660: sub_8049CF2 (DONE:10ms)
-214/1660: Method: sub_8049D02
-215/1660: 215/1660: sub_8049D02 (DONE:13ms)
-215/1660: Method: sub_8049D12
-216/1660: 216/1660: sub_8049D12 (DONE:11ms)
-216/1660: Method: sub_8049D22
-217/1660: 217/1660: sub_8049D22 (DONE:10ms)
-217/1660: Method: sub_8049D32
-218/1660: 218/1660: sub_8049D32 (DONE:10ms)
-218/1660: Method: sub_8049D42
-219/1660: 219/1660: sub_8049D42 (DONE:9ms)
-219/1660: Method: sub_8049D3C
-220/1660: 220/1660: sub_8049D3C (DONE:13ms)
-220/1660: Method: sub_8049D52
-221/1660: 221/1660: sub_8049D52 (DONE:9ms)
-221/1660: Method: sub_8049D62
-222/1660: 222/1660: sub_8049D62 (DONE:10ms)
-222/1660: Method: sub_8049D5C
-223/1660: 223/1660: sub_8049D5C (DONE:10ms)
-223/1660: Method: sub_8049D72
-224/1660: 224/1660: sub_8049D72 (DONE:16ms)
-224/1660: Method: sub_8049D6C
-225/1660: 225/1660: sub_8049D6C (DONE:15ms)
-225/1660: Method: wc_map_search
-226/1660: 226/1660: wc_map_search (DONE:31ms)
-226/1660: Method: wc_ucs_to_any
-227/1660: 227/1660: wc_ucs_to_any (DONE:231ms)
-227/1660: Method: wc_ucs_to_any_list
-228/1660: 228/1660: wc_ucs_to_any_list (DONE:93ms)
-228/1660: Method: wc_map_range_search
-229/1660: 229/1660: wc_map_range_search (DONE:27ms)
-229/1660: Method: wc_jisx0208_or_jisx02131
-230/1660: 230/1660: wc_jisx0208_or_jisx02131 (DONE:36ms)
-230/1660: Method: wc_map3_range_search
-231/1660: 231/1660: wc_map3_range_search (DONE:33ms)
-231/1660: Method: wc_ucs_to_iso2022w
-232/1660: 232/1660: wc_ucs_to_iso2022w (DONE:216ms)
-232/1660: Method: wc_ucs_to_iso2022
-233/1660: 233/1660: wc_ucs_to_iso2022 (DONE:424ms)
-233/1660: Method: wc_gb2312_or_gbk
-234/1660: 234/1660: wc_gb2312_or_gbk (DONE:46ms)
-234/1660: Method: wc_ucs_to_fullwidth
-235/1660: 235/1660: wc_ucs_to_fullwidth (DONE:57ms)
-235/1660: Method: wc_ucs_to_johab
-236/1660: 236/1660: wc_ucs_to_johab (DONE:142ms)
-236/1660: Method: wc_is_ucs_combining
-237/1660: 237/1660: wc_is_ucs_combining (DONE:60ms)
-237/1660: Method: wc_is_ucs_hangul
-238/1660: 238/1660: wc_is_ucs_hangul (DONE:50ms)
-238/1660: Method: wc_gbk_or_gbk_ext
-239/1660: 239/1660: wc_gbk_or_gbk_ext (DONE:44ms)
-239/1660: Method: wc_is_combining
-240/1660: 240/1660: wc_is_combining (DONE:151ms)
-240/1660: Method: sub_8049D82
-241/1660: 241/1660: sub_8049D82 (DONE:9ms)
-241/1660: Method: sub_8049D92
-242/1660: 242/1660: sub_8049D92 (DONE:9ms)
-242/1660: Method: sub_8049DA2
-243/1660: 243/1660: sub_8049DA2 (DONE:8ms)
-243/1660: Method: sub_8049DB2
-244/1660: 244/1660: sub_8049DB2 (DONE:7ms)
-244/1660: Method: sub_8049DC2
-245/1660: 245/1660: sub_8049DC2 (DONE:18ms)
-245/1660: Method: sub_8049DBC
-246/1660: 246/1660: sub_8049DBC (DONE:11ms)
-246/1660: Method: sub_8049DD2
-247/1660: 247/1660: sub_8049DD2 (DONE:14ms)
-247/1660: Method: sub_8049DE2
-248/1660: 248/1660: sub_8049DE2 (DONE:7ms)
-248/1660: Method: sub_8049DDC
-249/1660: 249/1660: sub_8049DDC (DONE:8ms)
-249/1660: Method: sub_8049DF2
-250/1660: 250/1660: sub_8049DF2 (DONE:8ms)
-250/1660: Method: sub_8049DEC
-251/1660: 251/1660: sub_8049DEC (DONE:12ms)
-251/1660: Method: sub_8049E02
-252/1660: 252/1660: sub_8049E02 (DONE:10ms)
-252/1660: Method: sub_8049DFC
-253/1660: 253/1660: sub_8049DFC (DONE:10ms)
-253/1660: Method: is_wordchar
-254/1660: 254/1660: is_wordchar (DONE:62ms)
-254/1660: Method: getCurWord
-255/1660: 255/1660: getCurWord (DONE:173ms)
-255/1660: Method: sub_8049E12
-256/1660: 256/1660: sub_8049E12 (DONE:12ms)
-256/1660: Method: sub_8049E0C
-257/1660: 257/1660: sub_8049E0C (DONE:11ms)
-257/1660: Method: sub_8049E22
-258/1660: 258/1660: sub_8049E22 (DONE:10ms)
-258/1660: Method: sub_8049E1C
-259/1660: 259/1660: sub_8049E1C (DONE:11ms)
-259/1660: Method: sub_8049E32
-260/1660: 260/1660: sub_8049E32 (DONE:11ms)
-260/1660: Method: sub_8049E42
-261/1660: 261/1660: sub_8049E42 (DONE:8ms)
-261/1660: Method: sub_8049E3C
-262/1660: 262/1660: sub_8049E3C (DONE:12ms)
-262/1660: Method: sub_8049E52
-263/1660: 263/1660: sub_8049E52 (DONE:9ms)
-263/1660: Method: sub_8049E4C
-264/1660: 264/1660: sub_8049E4C (DONE:14ms)
-264/1660: Method: sub_8049E62
-265/1660: 265/1660: sub_8049E62 (DONE:8ms)
-265/1660: Method: sub_8049E5C
-266/1660: 266/1660: sub_8049E5C (DONE:10ms)
-266/1660: Method: sub_8049E72
-267/1660: 267/1660: sub_8049E72 (DONE:7ms)
-267/1660: Method: sub_8049E6C
-268/1660: 268/1660: sub_8049E6C (DONE:6ms)
-268/1660: Method: sub_8049E82
-269/1660: 269/1660: sub_8049E82 (DONE:10ms)
-269/1660: Method: sub_8049E92
-270/1660: 270/1660: sub_8049E92 (DONE:7ms)
-270/1660: Method: sub_8049E8C
-271/1660: 271/1660: sub_8049E8C (DONE:7ms)
-271/1660: Method: init_stream
-272/1660: 272/1660: init_stream (DONE:42ms)
-272/1660: Method: sub_8049EA2
-273/1660: 273/1660: sub_8049EA2 (DONE:9ms)
-273/1660: Method: sub_8049EB2
-274/1660: 274/1660: sub_8049EB2 (DONE:12ms)
-274/1660: Method: sub_8049EAC
-275/1660: 275/1660: sub_8049EAC (DONE:11ms)
-275/1660: Method: sub_8049EC2
-276/1660: 276/1660: sub_8049EC2 (DONE:7ms)
-276/1660: Method: sub_8049ED2
-277/1660: 277/1660: sub_8049ED2 (DONE:9ms)
-277/1660: Method: sub_8049ECC
-278/1660: 278/1660: sub_8049ECC (DONE:10ms)
-278/1660: Method: sub_8049EE2
-279/1660: 279/1660: sub_8049EE2 (DONE:13ms)
-279/1660: Method: sub_8049EF2
-280/1660: 280/1660: sub_8049EF2 (DONE:10ms)
-280/1660: Method: sub_8049EEC
-281/1660: 281/1660: sub_8049EEC (DONE:13ms)
-281/1660: Method: sub_8049F02
-282/1660: 282/1660: sub_8049F02 (DONE:7ms)
-282/1660: Method: sub_8049EFC
-283/1660: 283/1660: sub_8049EFC (DONE:10ms)
-283/1660: Method: sub_8049F12
-284/1660: 284/1660: sub_8049F12 (DONE:10ms)
-284/1660: Method: sub_8049F22
-285/1660: 285/1660: sub_8049F22 (DONE:9ms)
-285/1660: Method: sub_8049F32
-286/1660: 286/1660: sub_8049F32 (DONE:7ms)
-286/1660: Method: sub_8049F2C
-287/1660: 287/1660: sub_8049F2C (DONE:11ms)
-287/1660: Method: calcPosition
-288/1660: 288/1660: calcPosition (DONE:309ms)
-288/1660: Method: newGeneralList
-289/1660: 289/1660: newGeneralList (DONE:26ms)
-289/1660: Method: putAnchor
-290/1660: 290/1660: putAnchor (DONE:609ms)
-290/1660: Method: columnSkip
-291/1660: 291/1660: columnSkip (DONE:246ms)
-291/1660: Method: columnPos
-292/1660: 292/1660: columnPos (DONE:133ms)
-292/1660: Method: arrangeLine
-293/1660: 293/1660: arrangeLine (DONE:186ms)
-293/1660: Method: new_option_menu
-294/1660: 294/1660: new_option_menu (DONE:207ms)
-294/1660: Method: newHist
-295/1660: 295/1660: newHist (DONE:31ms)
-295/1660: Method: setAlarmEvent
-296/1660: 296/1660: setAlarmEvent (DONE:46ms)
-296/1660: Method: getMapXY
-297/1660: 297/1660: getMapXY (DONE:225ms)
-297/1660: Method: registerHref
-298/1660: 298/1660: registerHref (DONE:46ms)
-298/1660: Method: shiftvisualpos
-299/1660: 299/1660: shiftvisualpos (DONE:99ms)
-299/1660: Method: newTab
-300/1660: 300/1660: newTab (DONE:23ms)
-300/1660: Method: newListItem
-301/1660: 301/1660: newListItem (DONE:19ms)
-301/1660: Method: pushValue
-302/1660: 302/1660: pushValue (DONE:55ms)
-302/1660: Method: putHash_iv
-303/1660: 303/1660: putHash_iv (DONE:63ms)
-303/1660: Method: newHash_sv
-304/1660: 304/1660: newHash_sv (DONE:57ms)
-304/1660: Method: save_buffer_position
-305/1660: 305/1660: save_buffer_position (DONE:164ms)
-305/1660: Method: addnewline2
-306/1660: 306/1660: addnewline2 (DONE:105ms)
-306/1660: Method: pushFrameTree
-307/1660: 307/1660: pushFrameTree (DONE:112ms)
-307/1660: Method: addSelectOption
-308/1660: 308/1660: addSelectOption (DONE:59ms)
-308/1660: Method: wc_get_ces_list
-309/1660: 309/1660: wc_get_ces_list (DONE:124ms)
-309/1660: Method: newHash_iv
-310/1660: 310/1660: newHash_iv (DONE:66ms)
-310/1660: Method: addMenuList
-311/1660: 311/1660: addMenuList (DONE:89ms)
-311/1660: Method: registerName
-312/1660: 312/1660: registerName (DONE:30ms)
-312/1660: Method: registerImg
-313/1660: 313/1660: registerImg (DONE:29ms)
-313/1660: Method: sub_8049F42
-314/1660: 314/1660: sub_8049F42 (DONE:10ms)
-314/1660: Method: sub_8049F3C
-315/1660: 315/1660: sub_8049F3C (DONE:10ms)
-315/1660: Method: sub_8049F52
-316/1660: 316/1660: sub_8049F52 (DONE:10ms)
-316/1660: Method: sub_8049F62
-317/1660: 317/1660: sub_8049F62 (DONE:10ms)
-317/1660: Method: sub_8049F5C
-318/1660: 318/1660: sub_8049F5C (DONE:9ms)
-318/1660: Method: sub_8049F72
-319/1660: 319/1660: sub_8049F72 (DONE:10ms)
-319/1660: Method: sub_8049F82
-320/1660: 320/1660: sub_8049F82 (DONE:9ms)
-320/1660: Method: sub_8049F7C
-321/1660: 321/1660: sub_8049F7C (DONE:11ms)
-321/1660: Method: sub_8049F92
-322/1660: 322/1660: sub_8049F92 (DONE:11ms)
-322/1660: Method: sub_8049F8C
-323/1660: 323/1660: sub_8049F8C (DONE:9ms)
-323/1660: Method: sub_8049FA2
-324/1660: 324/1660: sub_8049FA2 (DONE:11ms)
-324/1660: Method: sub_8049F9C
-325/1660: 325/1660: sub_8049F9C (DONE:9ms)
-325/1660: Method: sub_8049FB2
-326/1660: 326/1660: sub_8049FB2 (DONE:7ms)
-326/1660: Method: sub_8049FAC
-327/1660: 327/1660: sub_8049FAC (DONE:10ms)
-327/1660: Method: sub_8049FC2
-328/1660: 328/1660: sub_8049FC2 (DONE:12ms)
-328/1660: Method: sub_8049FD2
-329/1660: 329/1660: sub_8049FD2 (DONE:9ms)
-329/1660: Method: sub_8049FE2
-330/1660: 330/1660: sub_8049FE2 (DONE:14ms)
-330/1660: Method: sub_8049FDC
-331/1660: 331/1660: sub_8049FDC (DONE:11ms)
-331/1660: Method: flush_tty
-332/1660: 332/1660: flush_tty (DONE:29ms)
-332/1660: Method: sub_8049FF2
-333/1660: 333/1660: sub_8049FF2 (DONE:10ms)
-333/1660: Method: sub_8049FEC
-334/1660: 334/1660: sub_8049FEC (DONE:8ms)
-334/1660: Method: sub_804A002
-335/1660: 335/1660: sub_804A002 (DONE:8ms)
-335/1660: Method: sub_8049FFC
-336/1660: 336/1660: sub_8049FFC (DONE:8ms)
-336/1660: Method: sub_804A012
-337/1660: 337/1660: sub_804A012 (DONE:11ms)
-337/1660: Method: sub_804A00C
-338/1660: 338/1660: sub_804A00C (DONE:8ms)
-338/1660: Method: sub_804A022
-339/1660: 339/1660: sub_804A022 (DONE:13ms)
-339/1660: Method: sub_804A01C
-340/1660: 340/1660: sub_804A01C (DONE:10ms)
-340/1660: Method: sub_804A032
-341/1660: 341/1660: sub_804A032 (DONE:16ms)
-341/1660: Method: sub_804A042
-342/1660: 342/1660: sub_804A042 (DONE:6ms)
-342/1660: Method: sub_804A03C
-343/1660: 343/1660: sub_804A03C (DONE:11ms)
-343/1660: Method: sub_804A052
-344/1660: 344/1660: sub_804A052 (DONE:6ms)
-344/1660: Method: sub_804A04C
-345/1660: 345/1660: sub_804A04C (DONE:12ms)
-345/1660: Method: sub_804A062
-346/1660: 346/1660: sub_804A062 (DONE:10ms)
-346/1660: Method: sub_804A072
-347/1660: 347/1660: sub_804A072 (DONE:9ms)
-347/1660: Method: sub_804A06C
-348/1660: 348/1660: sub_804A06C (DONE:9ms)
-348/1660: Method: sub_804A082
-349/1660: 349/1660: sub_804A082 (DONE:9ms)
-349/1660: Method: sub_804A07C
-350/1660: 350/1660: sub_804A07C (DONE:8ms)
-350/1660: Method: sub_804A0A2
-351/1660: 351/1660: sub_804A0A2 (DONE:9ms)
-351/1660: Method: sub_804A09C
-352/1660: 352/1660: sub_804A09C (DONE:12ms)
-352/1660: Method: set_breakpoint
-353/1660: 353/1660: set_breakpoint (DONE:98ms)
-353/1660: Method: sub_804A0B2
-354/1660: 354/1660: sub_804A0B2 (DONE:7ms)
-354/1660: Method: sub_804A0AC
-355/1660: 355/1660: sub_804A0AC (DONE:11ms)
-355/1660: Method: sub_804A0C2
-356/1660: 356/1660: sub_804A0C2 (DONE:15ms)
-356/1660: Method: sub_804A0BC
-357/1660: 357/1660: sub_804A0BC (DONE:8ms)
-357/1660: Method: sub_804A0D2
-358/1660: 358/1660: sub_804A0D2 (DONE:16ms)
-358/1660: Method: sub_804A0CC
-359/1660: 359/1660: sub_804A0CC (DONE:10ms)
-359/1660: Method: add_auth_pass_entry
-360/1660: 360/1660: add_auth_pass_entry (DONE:124ms)
-360/1660: Method: sub_804A0E2
-361/1660: 361/1660: sub_804A0E2 (DONE:9ms)
-361/1660: Method: sub_804A0F2
-362/1660: 362/1660: sub_804A0F2 (DONE:5ms)
-362/1660: Method: sub_804A0EC
-363/1660: 363/1660: sub_804A0EC (DONE:6ms)
-363/1660: Method: total_dot_number
-364/1660: 364/1660: total_dot_number (DONE:63ms)
-364/1660: Method: sub_804A102
-365/1660: 365/1660: sub_804A102 (DONE:7ms)
-365/1660: Method: sub_804A0FC
-366/1660: 366/1660: sub_804A0FC (DONE:7ms)
-366/1660: Method: sub_804A112
-367/1660: 367/1660: sub_804A112 (DONE:8ms)
-367/1660: Method: sub_804A10C
-368/1660: 368/1660: sub_804A10C (DONE:16ms)
-368/1660: Method: sub_804A122
-369/1660: 369/1660: sub_804A122 (DONE:9ms)
-369/1660: Method: sub_804A11C
-370/1660: 370/1660: sub_804A11C (DONE:8ms)
-370/1660: Method: sub_804A132
-371/1660: 371/1660: sub_804A132 (DONE:7ms)
-371/1660: Method: sub_804A142
-372/1660: 372/1660: sub_804A142 (DONE:5ms)
-372/1660: Method: sub_804A13C
-373/1660: 373/1660: sub_804A13C (DONE:8ms)
-373/1660: Method: sub_804A152
-374/1660: 374/1660: sub_804A152 (DONE:6ms)
-374/1660: Method: sub_804A162
-375/1660: 375/1660: sub_804A162 (DONE:5ms)
-375/1660: Method: sub_804A172
-376/1660: 376/1660: sub_804A172 (DONE:6ms)
-376/1660: Method: sub_804A16C
-377/1660: 377/1660: sub_804A16C (DONE:7ms)
-377/1660: Method: sub_804A182
-378/1660: 378/1660: sub_804A182 (DONE:7ms)
-378/1660: Method: sub_804A17C
-379/1660: 379/1660: sub_804A17C (DONE:6ms)
-379/1660: Method: sub_804A192
-380/1660: 380/1660: sub_804A192 (DONE:9ms)
-380/1660: Method: sub_804A1A2
-381/1660: 381/1660: sub_804A1A2 (DONE:10ms)
-381/1660: Method: sub_804A1B2
-382/1660: 382/1660: sub_804A1B2 (DONE:8ms)
-382/1660: Method: sub_804A1AC
-383/1660: 383/1660: sub_804A1AC (DONE:12ms)
-383/1660: Method: sub_804A1C2
-384/1660: 384/1660: sub_804A1C2 (DONE:14ms)
-384/1660: Method: sub_804A1D2
-385/1660: 385/1660: sub_804A1D2 (DONE:8ms)
-385/1660: Method: sub_804A1E2
-386/1660: 386/1660: sub_804A1E2 (DONE:6ms)
-386/1660: Method: sub_804A1F2
-387/1660: 387/1660: sub_804A1F2 (DONE:7ms)
-387/1660: Method: sub_804A202
-388/1660: 388/1660: sub_804A202 (DONE:5ms)
-388/1660: Method: sub_804A1FC
-389/1660: 389/1660: sub_804A1FC (DONE:6ms)
-389/1660: Method: sub_804A212
-390/1660: 390/1660: sub_804A212 (DONE:7ms)
-390/1660: Method: sub_804A222
-391/1660: 391/1660: sub_804A222 (DONE:6ms)
-391/1660: Method: sub_804A232
-392/1660: 392/1660: sub_804A232 (DONE:6ms)
-392/1660: Method: sub_804A22C
-393/1660: 393/1660: sub_804A22C (DONE:7ms)
-393/1660: Method: sub_804A242
-394/1660: 394/1660: sub_804A242 (DONE:6ms)
-394/1660: Method: sub_804A23C
-395/1660: 395/1660: sub_804A23C (DONE:8ms)
-395/1660: Method: is_html_type
-396/1660: 396/1660: is_html_type (DONE:30ms)
-396/1660: Method: get_auth_param
-397/1660: 397/1660: get_auth_param (DONE:51ms)
-397/1660: Method: formtype
-398/1660: 398/1660: formtype (DONE:33ms)
-398/1660: Method: check_compression
-399/1660: 399/1660: check_compression (DONE:94ms)
-399/1660: Method: ul_type
-400/1660: 400/1660: ul_type (DONE:52ms)
-400/1660: Method: sub_804A252
-401/1660: 401/1660: sub_804A252 (DONE:5ms)
-401/1660: Method: sub_804A24C
-402/1660: 402/1660: sub_804A24C (DONE:8ms)
-402/1660: Method: sub_804A262
-403/1660: 403/1660: sub_804A262 (DONE:6ms)
-403/1660: Method: sub_804A25C
-404/1660: 404/1660: sub_804A25C (DONE:5ms)
-404/1660: Method: sub_804A272
-405/1660: 405/1660: sub_804A272 (DONE:6ms)
-405/1660: Method: sub_804A282
-406/1660: 406/1660: sub_804A282 (DONE:5ms)
-406/1660: Method: sub_804A292
-407/1660: 407/1660: sub_804A292 (DONE:7ms)
-407/1660: Method: sub_804A2A2
-408/1660: 408/1660: sub_804A2A2 (DONE:5ms)
-408/1660: Method: sub_804A29C
-409/1660: 409/1660: sub_804A29C (DONE:14ms)
-409/1660: Method: close_tty
-410/1660: 410/1660: close_tty (DONE:20ms)
-410/1660: Method: sub_804A2B2
-411/1660: 411/1660: sub_804A2B2 (DONE:5ms)
-411/1660: Method: sub_804A2AC
-412/1660: 412/1660: sub_804A2AC (DONE:7ms)
-412/1660: Method: sub_804A2C2
-413/1660: 413/1660: sub_804A2C2 (DONE:8ms)
-413/1660: Method: sub_804A2BC
-414/1660: 414/1660: sub_804A2BC (DONE:9ms)
-414/1660: Method: form_write_data
-415/1660: 415/1660: form_write_data (DONE:28ms)
-415/1660: Method: fversion
-416/1660: 416/1660: fversion (DONE:17ms)
-416/1660: Method: term_title
-417/1660: 417/1660: term_title (DONE:29ms)
-417/1660: Method: sub_804A2D2
-418/1660: 418/1660: sub_804A2D2 (DONE:8ms)
-418/1660: Method: sub_804A2CC
-419/1660: 419/1660: sub_804A2CC (DONE:6ms)
-419/1660: Method: sub_804A2E2
-420/1660: 420/1660: sub_804A2E2 (DONE:7ms)
-420/1660: Method: sub_804A2DC
-421/1660: 421/1660: sub_804A2DC (DONE:6ms)
-421/1660: Method: check_expired_cookies
-422/1660: 422/1660: check_expired_cookies (DONE:98ms)
-422/1660: Method: sub_804A2F2
-423/1660: 423/1660: sub_804A2F2 (DONE:12ms)
-423/1660: Method: sub_804A302
-424/1660: 424/1660: sub_804A302 (DONE:5ms)
-424/1660: Method: sub_804A2FC
-425/1660: 425/1660: sub_804A2FC (DONE:6ms)
-425/1660: Method: get_table_width
-426/1660: 426/1660: get_table_width (DONE:933ms)
-426/1660: Method: sub_804A312
-427/1660: 427/1660: sub_804A312 (DONE:9ms)
-427/1660: Method: sub_804A30C
-428/1660: 428/1660: sub_804A30C (DONE:10ms)
-428/1660: Method: mouse_end
-429/1660: 429/1660: mouse_end (DONE:40ms)
-429/1660: Method: mouse_inactive
-430/1660: 430/1660: mouse_inactive (DONE:18ms)
-430/1660: Method: sub_804A322
-431/1660: 431/1660: sub_804A322 (DONE:6ms)
-431/1660: Method: sub_804A332
-432/1660: 432/1660: sub_804A332 (DONE:6ms)
-432/1660: Method: sub_804A342
-433/1660: 433/1660: sub_804A342 (DONE:9ms)
-433/1660: Method: sub_804A33C
-434/1660: 434/1660: sub_804A33C (DONE:7ms)
-434/1660: Method: sub_804A352
-435/1660: 435/1660: sub_804A352 (DONE:12ms)
-435/1660: Method: sub_804A34C
-436/1660: 436/1660: sub_804A34C (DONE:7ms)
-436/1660: Method: sub_804A362
-437/1660: 437/1660: sub_804A362 (DONE:6ms)
-437/1660: Method: sub_804A35C
-438/1660: 438/1660: sub_804A35C (DONE:5ms)
-438/1660: Method: sub_804A372
-439/1660: 439/1660: sub_804A372 (DONE:6ms)
-439/1660: Method: sub_804A36C
-440/1660: 440/1660: sub_804A36C (DONE:6ms)
-440/1660: Method: sub_804A382
-441/1660: 441/1660: sub_804A382 (DONE:6ms)
-441/1660: Method: sub_804A37C
-442/1660: 442/1660: sub_804A37C (DONE:6ms)
-442/1660: Method: sub_804A392
-443/1660: 443/1660: sub_804A392 (DONE:5ms)
-443/1660: Method: sub_804A38C
-444/1660: 444/1660: sub_804A38C (DONE:5ms)
-444/1660: Method: setlinescols
-445/1660: 445/1660: setlinescols (DONE:150ms)
-445/1660: Method: sub_804A3A2
-446/1660: 446/1660: sub_804A3A2 (DONE:11ms)
-446/1660: Method: sub_804A3B2
-447/1660: 447/1660: sub_804A3B2 (DONE:6ms)
-447/1660: Method: sub_804A3AC
-448/1660: 448/1660: sub_804A3AC (DONE:12ms)
-448/1660: Method: getURLScheme
-449/1660: 449/1660: getURLScheme (DONE:211ms)
-449/1660: Method: is_text_type
-450/1660: 450/1660: is_text_type (DONE:61ms)
-450/1660: Method: getKey2
-451/1660: 451/1660: getKey2 (DONE:1194ms)
-451/1660: Method: sub_804A3C2
-452/1660: 452/1660: sub_804A3C2 (DONE:11ms)
-452/1660: Method: sub_804A3D2
-453/1660: 453/1660: sub_804A3D2 (DONE:12ms)
-453/1660: Method: sub_804A3CC
-454/1660: 454/1660: sub_804A3CC (DONE:10ms)
-454/1660: Method: sub_804A3E2
-455/1660: 455/1660: sub_804A3E2 (DONE:11ms)
-455/1660: Method: sub_804A3F2
-456/1660: 456/1660: sub_804A3F2 (DONE:10ms)
-456/1660: Method: sub_804A3EC
-457/1660: 457/1660: sub_804A3EC (DONE:10ms)
-457/1660: Method: weight
-458/1660: 458/1660: weight (DONE:40ms)
-458/1660: Method: sub_804A402
-459/1660: 459/1660: sub_804A402 (DONE:9ms)
-459/1660: Method: sub_804A3FC
-460/1660: 460/1660: sub_804A3FC (DONE:10ms)
-460/1660: Method: sub_804A412
-461/1660: 461/1660: sub_804A412 (DONE:11ms)
-461/1660: Method: sub_804A40C
-462/1660: 462/1660: sub_804A40C (DONE:12ms)
-462/1660: Method: sub_804A422
-463/1660: 463/1660: sub_804A422 (DONE:10ms)
-463/1660: Method: sub_804A432
-464/1660: 464/1660: sub_804A432 (DONE:7ms)
-464/1660: Method: sub_804A442
-465/1660: 465/1660: sub_804A442 (DONE:14ms)
-465/1660: Method: sub_804A43C
-466/1660: 466/1660: sub_804A43C (DONE:12ms)
-466/1660: Method: sub_804A452
-467/1660: 467/1660: sub_804A452 (DONE:11ms)
-467/1660: Method: sub_804A44C
-468/1660: 468/1660: sub_804A44C (DONE:7ms)
-468/1660: Method: newBuffer
-469/1660: 469/1660: newBuffer (DONE:127ms)
-469/1660: Method: popFrameTree
-470/1660: 470/1660: popFrameTree (DONE:105ms)
-470/1660: Method: deleteFrame
-471/1660: 471/1660: deleteFrame (DONE:42ms)
-471/1660: Method: nullBuffer
-472/1660: 472/1660: nullBuffer (DONE:43ms)
-472/1660: Method: sub_804A462
-473/1660: 473/1660: sub_804A462 (DONE:14ms)
-473/1660: Method: sub_804A472
-474/1660: 474/1660: sub_804A472 (DONE:11ms)
-474/1660: Method: sub_804A46C
-475/1660: 475/1660: sub_804A46C (DONE:14ms)
-475/1660: Method: sub_804A482
-476/1660: 476/1660: sub_804A482 (DONE:13ms)
-476/1660: Method: sub_804A492
-477/1660: 477/1660: sub_804A492 (DONE:12ms)
-477/1660: Method: sub_804A48C
-478/1660: 478/1660: sub_804A48C (DONE:12ms)
-478/1660: Method: sub_804A4A2
-479/1660: 479/1660: sub_804A4A2 (DONE:12ms)
-479/1660: Method: sub_804A49C
-480/1660: 480/1660: sub_804A49C (DONE:13ms)
-480/1660: Method: sub_804A4B2
-481/1660: 481/1660: sub_804A4B2 (DONE:13ms)
-481/1660: Method: sub_804A4AC
-482/1660: 482/1660: sub_804A4AC (DONE:13ms)
-482/1660: Method: sub_804A4C2
-483/1660: 483/1660: sub_804A4C2 (DONE:16ms)
-483/1660: Method: sub_804A4BC
-484/1660: 484/1660: sub_804A4BC (DONE:15ms)
-484/1660: Method: sub_804A4D2
-485/1660: 485/1660: sub_804A4D2 (DONE:17ms)
-485/1660: Method: sub_804A4CC
-486/1660: 486/1660: sub_804A4CC (DONE:11ms)
-486/1660: Method: write1
-487/1660: 487/1660: write1 (DONE:41ms)
-487/1660: Method: sub_804A4E2
-488/1660: 488/1660: sub_804A4E2 (DONE:11ms)
-488/1660: Method: sub_804A4DC
-489/1660: 489/1660: sub_804A4DC (DONE:10ms)
-489/1660: Method: open_pipe_rw
-490/1660: 490/1660: open_pipe_rw (DONE:313ms)
-490/1660: Method: sub_804A4F2
-491/1660: 491/1660: sub_804A4F2 (DONE:11ms)
-491/1660: Method: sub_804A502
-492/1660: 492/1660: sub_804A502 (DONE:8ms)
-492/1660: Method: sub_804A4FC
-493/1660: 493/1660: sub_804A4FC (DONE:11ms)
-493/1660: Method: sub_804A512
-494/1660: 494/1660: sub_804A512 (DONE:10ms)
-494/1660: Method: sub_804A522
-495/1660: 495/1660: sub_804A522 (DONE:8ms)
-495/1660: Method: sub_804A51C
-496/1660: 496/1660: sub_804A51C (DONE:6ms)
-496/1660: Method: Strgrow
-497/1660: 497/1660: Strgrow (DONE:83ms)
-497/1660: Method: Strnew
-498/1660: 498/1660: Strnew (DONE:30ms)
-498/1660: Method: Strnew_charp
-499/1660: 499/1660: Strnew_charp (DONE:60ms)
-499/1660: Method: Strnew_size
-500/1660: 500/1660: Strnew_size (DONE:32ms)
-500/1660: Method: Strcat_charp_n
-501/1660: 501/1660: Strcat_charp_n (DONE:94ms)
-501/1660: Method: Strcat_charp
-502/1660: 502/1660: Strcat_charp (DONE:22ms)
-502/1660: Method: Strcat
-503/1660: 503/1660: Strcat (DONE:18ms)
-503/1660: Method: Strcat_m_charp
-504/1660: 504/1660: Strcat_m_charp (DONE:35ms)
-504/1660: Method: Strnew_charp_n
-505/1660: 505/1660: Strnew_charp_n (DONE:70ms)
-505/1660: Method: html_quote
-506/1660: 506/1660: html_quote (DONE:107ms)
-506/1660: Method: Strnew_m_charp
-507/1660: 507/1660: Strnew_m_charp (DONE:53ms)
-507/1660: Method: url_quote
-508/1660: 508/1660: url_quote (DONE:211ms)
-508/1660: Method: getQWord
-509/1660: 509/1660: getQWord (DONE:709ms)
-509/1660: Method: Strcopy_charp_n
-510/1660: 510/1660: Strcopy_charp_n (DONE:97ms)
-510/1660: Method: check_row
-511/1660: 511/1660: check_row (DONE:661ms)
-511/1660: Method: getWord
-512/1660: 512/1660: getWord (DONE:82ms)
-512/1660: Method: file_unquote
-513/1660: 513/1660: file_unquote (DONE:250ms)
-513/1660: Method: matchattr
-514/1660: 514/1660: matchattr (DONE:219ms)
-514/1660: Method: newTextLine
-515/1660: 515/1660: newTextLine (DONE:27ms)
-515/1660: Method: remove_space
-516/1660: 516/1660: remove_space (DONE:64ms)
-516/1660: Method: checkHeader
-517/1660: 517/1660: checkHeader (DONE:70ms)
-517/1660: Method: Str_form_quote
-518/1660: 518/1660: Str_form_quote (DONE:210ms)
-518/1660: Method: readcol
-519/1660: 519/1660: readcol (DONE:104ms)
-519/1660: Method: shell_quote
-520/1660: 520/1660: shell_quote (DONE:238ms)
-520/1660: Method: file_quote
-521/1660: 521/1660: file_quote (DONE:132ms)
-521/1660: Method: check_minimum0
-522/1660: 522/1660: check_minimum0 (DONE:155ms)
-522/1660: Method: StrmyISgets
-523/1660: 523/1660: StrmyISgets (DONE:312ms)
-523/1660: Method: copyPath
-524/1660: 524/1660: copyPath (DONE:123ms)
-524/1660: Method: matchMailcapAttr
-525/1660: 525/1660: matchMailcapAttr (DONE:201ms)
-525/1660: Method: next_token
-526/1660: 526/1660: next_token (DONE:69ms)
-526/1660: Method: StrISgets
-527/1660: 527/1660: StrISgets (DONE:154ms)
-527/1660: Method: wc_push_tag_to_utf8
-528/1660: 528/1660: wc_push_tag_to_utf8 (DONE:106ms)
-528/1660: Method: addcontentssize
-529/1660: 529/1660: addcontentssize (DONE:61ms)
-529/1660: Method: align
-530/1660: 530/1660: align (DONE:433ms)
-530/1660: Method: init_henv
-531/1660: 531/1660: init_henv (DONE:114ms)
-531/1660: Method: new_vector
-532/1660: 532/1660: new_vector (DONE:19ms)
-532/1660: Method: putHmarker
-533/1660: 533/1660: putHmarker (DONE:122ms)
-533/1660: Method: read_token
-534/1660: 534/1660: read_token (DONE:984ms)
-534/1660: Method: new_matrix
-535/1660: 535/1660: new_matrix (DONE:39ms)
-535/1660: Method: Strsubstr
-536/1660: 536/1660: Strsubstr (DONE:126ms)
-536/1660: Method: romanNum2
-537/1660: 537/1660: romanNum2 (DONE:248ms)
-537/1660: Method: Str_url_unquote
-538/1660: 538/1660: Str_url_unquote (DONE:353ms)
-538/1660: Method: myExtCommand
-539/1660: 539/1660: myExtCommand (DONE:136ms)
-539/1660: Method: Strcopy
-540/1660: 540/1660: Strcopy (DONE:51ms)
-540/1660: Method: Strdup
-541/1660: 541/1660: Strdup (DONE:18ms)
-541/1660: Method: cleanup_line
-542/1660: 542/1660: cleanup_line (DONE:137ms)
-542/1660: Method: wc_push_iso2022_esc
-543/1660: 543/1660: wc_push_iso2022_esc (DONE:671ms)
-543/1660: Method: chooseSelectOption
-544/1660: 544/1660: chooseSelectOption (DONE:76ms)
-544/1660: Method: getAnchorText
-545/1660: 545/1660: getAnchorText (DONE:244ms)
-545/1660: Method: quote_mailcap
-546/1660: 546/1660: quote_mailcap (DONE:243ms)
-546/1660: Method: form2str
-547/1660: 547/1660: form2str (DONE:106ms)
-547/1660: Method: getMetaRefreshParam
-548/1660: 548/1660: getMetaRefreshParam (DONE:202ms)
-548/1660: Method: unescape_spaces
-549/1660: 549/1660: unescape_spaces (DONE:107ms)
-549/1660: Method: escape_spaces
-550/1660: 550/1660: escape_spaces (DONE:223ms)
-550/1660: Method: print_item
-551/1660: 551/1660: print_item (DONE:245ms)
-551/1660: Method: make_cookie
-552/1660: 552/1660: make_cookie (DONE:86ms)
-552/1660: Method: appendTextLine
-553/1660: 553/1660: appendTextLine (DONE:76ms)
-553/1660: Method: init_buffer
-554/1660: 554/1660: init_buffer (DONE:31ms)
-554/1660: Method: init_base_stream
-555/1660: 555/1660: init_base_stream (DONE:13ms)
-555/1660: Method: newEncodedStream
-556/1660: 556/1660: newEncodedStream (DONE:54ms)
-556/1660: Method: newFileStream
-557/1660: 557/1660: newFileStream (DONE:48ms)
-557/1660: Method: newInputStream
-558/1660: 558/1660: newInputStream (DONE:41ms)
-558/1660: Method: readBufferCache
-559/1660: 559/1660: readBufferCache (DONE:818ms)
-559/1660: Method: copyBuffer
-560/1660: 560/1660: copyBuffer (DONE:26ms)
-560/1660: Method: _newT
-561/1660: 561/1660: _newT (DONE:124ms)
-561/1660: Method: Strinsert_char
-562/1660: 562/1660: Strinsert_char (DONE:147ms)
-562/1660: Method: insC
-563/1660: 563/1660: insC (DONE:68ms)
-563/1660: Method: qstr_unquote
-564/1660: 564/1660: qstr_unquote (DONE:178ms)
-564/1660: Method: get_day
-565/1660: 565/1660: get_day (DONE:104ms)
-565/1660: Method: get_year
-566/1660: 566/1660: get_year (DONE:104ms)
-566/1660: Method: make_portlist
-567/1660: 567/1660: make_portlist (DONE:136ms)
-567/1660: Method: romanAlphabet
-568/1660: 568/1660: romanAlphabet (DONE:136ms)
-568/1660: Method: get_month
-569/1660: 569/1660: get_month (DONE:205ms)
-569/1660: Method: get_time
-570/1660: 570/1660: get_time (DONE:462ms)
-570/1660: Method: extract_auth_val
-571/1660: 571/1660: extract_auth_val (DONE:451ms)
-571/1660: Method: extract_auth_param
-572/1660: 572/1660: extract_auth_param (DONE:411ms)
-572/1660: Method: encodeB
-573/1660: 573/1660: encodeB (DONE:368ms)
-573/1660: Method: add_auth_user_passwd
-574/1660: 574/1660: add_auth_user_passwd (DONE:62ms)
-574/1660: Method: decodeB
-575/1660: 575/1660: decodeB (DONE:304ms)
-575/1660: Method: textfieldrep
-576/1660: 576/1660: textfieldrep (DONE:435ms)
-576/1660: Method: GetWord
-577/1660: 577/1660: GetWord (DONE:35ms)
-577/1660: Method: setMouseAction0
-578/1660: 578/1660: setMouseAction0 (DONE:168ms)
-578/1660: Method: get_spec_cell_width
-579/1660: 579/1660: get_spec_cell_width (DONE:98ms)
-579/1660: Method: setwidth0
-580/1660: 580/1660: setwidth0 (DONE:123ms)
-580/1660: Method: setwidth
-581/1660: 581/1660: setwidth (DONE:55ms)
-581/1660: Method: table_close_anchor0
-582/1660: 582/1660: table_close_anchor0 (DONE:63ms)
-582/1660: Method: clearcontentssize
-583/1660: 583/1660: clearcontentssize (DONE:28ms)
-583/1660: Method: reseq_anchor
-584/1660: 584/1660: reseq_anchor (DONE:472ms)
-584/1660: Method: reAnchorPos
-585/1660: 585/1660: reAnchorPos (DONE:186ms)
-585/1660: Method: romanNumeral
-586/1660: 586/1660: romanNumeral (DONE:219ms)
-586/1660: Method: purgeline
-587/1660: 587/1660: purgeline (DONE:100ms)
-587/1660: Method: findAuthentication
-588/1660: 588/1660: findAuthentication (DONE:542ms)
-588/1660: Method: begin_cell
-589/1660: 589/1660: begin_cell (DONE:97ms)
-589/1660: Method: check_rowcol
-590/1660: 590/1660: check_rowcol (DONE:161ms)
-590/1660: Method: sub_804A532
-591/1660: 591/1660: sub_804A532 (DONE:5ms)
-591/1660: Method: sub_804A52C
-592/1660: 592/1660: sub_804A52C (DONE:9ms)
-592/1660: Method: sub_804A542
-593/1660: 593/1660: sub_804A542 (DONE:6ms)
-593/1660: Method: sub_804A53C
-594/1660: 594/1660: sub_804A53C (DONE:6ms)
-594/1660: Method: init_migemo
-595/1660: 595/1660: init_migemo (DONE:32ms)
-595/1660: Method: closeImgdisplay
-596/1660: 596/1660: closeImgdisplay (DONE:34ms)
-596/1660: Method: sub_804A552
-597/1660: 597/1660: sub_804A552 (DONE:6ms)
-597/1660: Method: sub_804A562
-598/1660: 598/1660: sub_804A562 (DONE:5ms)
-598/1660: Method: sub_804A572
-599/1660: 599/1660: sub_804A572 (DONE:7ms)
-599/1660: Method: sub_804A582
-600/1660: 600/1660: sub_804A582 (DONE:5ms)
-600/1660: Method: sub_804A57C
-601/1660: 601/1660: sub_804A57C (DONE:7ms)
-601/1660: Method: Strfgets
-602/1660: 602/1660: Strfgets (DONE:69ms)
-602/1660: Method: syncImage
-603/1660: 603/1660: syncImage (DONE:58ms)
-603/1660: Method: clearImage
-604/1660: 604/1660: clearImage (DONE:112ms)
-604/1660: Method: sub_804A592
-605/1660: 605/1660: sub_804A592 (DONE:6ms)
-605/1660: Method: sub_804A58C
-606/1660: 606/1660: sub_804A58C (DONE:9ms)
-606/1660: Method: sub_804A5A2
-607/1660: 607/1660: sub_804A5A2 (DONE:7ms)
-607/1660: Method: sub_804A59C
-608/1660: 608/1660: sub_804A59C (DONE:6ms)
-608/1660: Method: wc_charset_to_ces
-609/1660: 609/1660: wc_charset_to_ces (DONE:2458ms)
-609/1660: Method: wc_guess_charset
-610/1660: 610/1660: wc_guess_charset (DONE:53ms)
-610/1660: Method: checkContentType
-611/1660: 611/1660: checkContentType (DONE:183ms)
-611/1660: Method: newFormList
-612/1660: 612/1660: newFormList (DONE:142ms)
-612/1660: Method: sub_804A5B2
-613/1660: 613/1660: sub_804A5B2 (DONE:6ms)
-613/1660: Method: sub_804A5AC
-614/1660: 614/1660: sub_804A5AC (DONE:6ms)
-614/1660: Method: need_redraw2
-615/1660: 615/1660: need_redraw2 (DONE:49ms)
-615/1660: Method: searchMapList
-616/1660: 616/1660: searchMapList (DONE:30ms)
-616/1660: Method: getMenuN
-617/1660: 617/1660: getMenuN (DONE:30ms)
-617/1660: Method: searchAnchor
-618/1660: 618/1660: searchAnchor (DONE:54ms)
-618/1660: Method: searchURLLabel
-619/1660: 619/1660: searchURLLabel (DONE:14ms)
-619/1660: Method: lookupHash_si
-620/1660: 620/1660: lookupHash_si (DONE:41ms)
-620/1660: Method: getHash_si
-621/1660: 621/1660: getHash_si (DONE:23ms)
-621/1660: Method: getFuncList
-622/1660: 622/1660: getFuncList (DONE:14ms)
-622/1660: Method: setMouseAction2
-623/1660: 623/1660: setMouseAction2 (DONE:53ms)
-623/1660: Method: putHash_si
-624/1660: 624/1660: putHash_si (DONE:45ms)
-624/1660: Method: lookupHash_ss
-625/1660: 625/1660: lookupHash_ss (DONE:43ms)
-625/1660: Method: lookupHash_sv
-626/1660: 626/1660: lookupHash_sv (DONE:38ms)
-626/1660: Method: putHash_sv
-627/1660: 627/1660: putHash_sv (DONE:41ms)
-627/1660: Method: getHash_sv
-628/1660: 628/1660: getHash_sv (DONE:23ms)
-628/1660: Method: getHashHist
-629/1660: 629/1660: getHashHist (DONE:53ms)
-629/1660: Method: same_url_p
-630/1660: 630/1660: same_url_p (DONE:54ms)
-630/1660: Method: guessContentTypeFromTable
-631/1660: 631/1660: guessContentTypeFromTable (DONE:88ms)
-631/1660: Method: guessContentType
-632/1660: 632/1660: guessContentType (DONE:56ms)
-632/1660: Method: add_pre_form_item
-633/1660: 633/1660: add_pre_form_item (DONE:97ms)
-633/1660: Method: search_param
-634/1660: 634/1660: search_param (DONE:150ms)
-634/1660: Method: find_auth_pass_entry
-635/1660: 635/1660: find_auth_pass_entry (DONE:189ms)
-635/1660: Method: find_auth_user_passwd
-636/1660: 636/1660: find_auth_user_passwd (DONE:115ms)
-636/1660: Method: parsePasswd
-637/1660: 637/1660: parsePasswd (DONE:1511ms)
-637/1660: Method: setMouseAction1
-638/1660: 638/1660: setMouseAction1 (DONE:246ms)
-638/1660: Method: sub_804A5C2
-639/1660: 639/1660: sub_804A5C2 (DONE:5ms)
-639/1660: Method: sub_804A5BC
-640/1660: 640/1660: sub_804A5BC (DONE:7ms)
-640/1660: Method: sub_804A5D2
-641/1660: 641/1660: sub_804A5D2 (DONE:7ms)
-641/1660: Method: sub_804A5E2
-642/1660: 642/1660: sub_804A5E2 (DONE:5ms)
-642/1660: Method: sub_804A5DC
-643/1660: 643/1660: sub_804A5DC (DONE:7ms)
-643/1660: Method: allocStr
-644/1660: 644/1660: allocStr (DONE:62ms)
-644/1660: Method: expandPath
-645/1660: 645/1660: expandPath (DONE:139ms)
-645/1660: Method: copyParsedURL
-646/1660: 646/1660: copyParsedURL (DONE:120ms)
-646/1660: Method: cleanupName
-647/1660: 647/1660: cleanupName (DONE:294ms)
-647/1660: Method: rcFile
-648/1660: 648/1660: rcFile (DONE:65ms)
-648/1660: Method: parsedtag_set_value
-649/1660: 649/1660: parsedtag_set_value (DONE:79ms)
-649/1660: Method: pushdata
-650/1660: 650/1660: pushdata (DONE:89ms)
-650/1660: Method: feed_table_inline_tag
-651/1660: 651/1660: feed_table_inline_tag (DONE:42ms)
-651/1660: Method: feed_table_block_tag
-652/1660: 652/1660: feed_table_block_tag (DONE:179ms)
-652/1660: Method: mybasename
-653/1660: 653/1660: mybasename (DONE:45ms)
-653/1660: Method: pushHist
-654/1660: 654/1660: pushHist (DONE:57ms)
-654/1660: Method: pushHashHist
-655/1660: 655/1660: pushHashHist (DONE:99ms)
-655/1660: Method: make_domain_list
-656/1660: 656/1660: make_domain_list (DONE:205ms)
-656/1660: Method: record_err_message
-657/1660: 657/1660: record_err_message (DONE:57ms)
-657/1660: Method: getescapechar
-658/1660: 658/1660: getescapechar (DONE:252ms)
-658/1660: Method: set_delayed_message
-659/1660: 659/1660: set_delayed_message (DONE:14ms)
-659/1660: Method: filename_extension
-660/1660: 660/1660: filename_extension (DONE:94ms)
-660/1660: Method: uncompressed_file_type
-661/1660: 661/1660: uncompressed_file_type (DONE:140ms)
-661/1660: Method: lastFileName
-662/1660: 662/1660: lastFileName (DONE:32ms)
-662/1660: Method: auxbinFile
-663/1660: 663/1660: auxbinFile (DONE:22ms)
-663/1660: Method: addDownloadList
-664/1660: 664/1660: addDownloadList (DONE:96ms)
-664/1660: Method: file_to_url
-665/1660: 665/1660: file_to_url (DONE:169ms)
-665/1660: Method: suspend_or_pushdata
-666/1660: 666/1660: suspend_or_pushdata (DONE:98ms)
-666/1660: Method: guess_filename
-667/1660: 667/1660: guess_filename (DONE:97ms)
-667/1660: Method: guess_save_name
-668/1660: 668/1660: guess_save_name (DONE:196ms)
-668/1660: Method: sub_804A602
-669/1660: 669/1660: sub_804A602 (DONE:9ms)
-669/1660: Method: sub_804A612
-670/1660: 670/1660: sub_804A612 (DONE:9ms)
-670/1660: Method: effect_visited_start
-671/1660: 671/1660: effect_visited_start (DONE:36ms)
-671/1660: Method: effect_image_start
-672/1660: 672/1660: effect_image_start (DONE:42ms)
-672/1660: Method: effect_form_start
-673/1660: 673/1660: effect_form_start (DONE:36ms)
-673/1660: Method: clrtoeol
-674/1660: 674/1660: clrtoeol (DONE:177ms)
-674/1660: Method: touch_cursor
-675/1660: 675/1660: touch_cursor (DONE:136ms)
-675/1660: Method: effect_mark_start
-676/1660: 676/1660: effect_mark_start (DONE:45ms)
-676/1660: Method: w3m_lib_dir
-677/1660: 677/1660: w3m_lib_dir (DONE:21ms)
-677/1660: Method: w3m_etc_dir
-678/1660: 678/1660: w3m_etc_dir (DONE:16ms)
-678/1660: Method: w3m_conf_dir
-679/1660: 679/1660: w3m_conf_dir (DONE:19ms)
-679/1660: Method: confFile
-680/1660: 680/1660: confFile (DONE:29ms)
-680/1660: Method: effect_anchor_start
-681/1660: 681/1660: effect_anchor_start (DONE:31ms)
-681/1660: Method: _mvLw
-682/1660: 682/1660: _mvLw (DONE:63ms)
-682/1660: Method: _mvRw
-683/1660: 683/1660: _mvRw (DONE:60ms)
-683/1660: Method: wc_char_conv_init
-684/1660: 684/1660: wc_char_conv_init (DONE:20ms)
-684/1660: Method: columnLen
-685/1660: 685/1660: columnLen (DONE:77ms)
-685/1660: Method: addnewline
-686/1660: 686/1660: addnewline (DONE:322ms)
-686/1660: Method: getHash_iv
-687/1660: 687/1660: getHash_iv (DONE:29ms)
-687/1660: Method: getKeyData
-688/1660: 688/1660: getKeyData (DONE:25ms)
-688/1660: Method: searchKeyData
-689/1660: 689/1660: searchKeyData (DONE:55ms)
-689/1660: Method: searchKeyNum
-690/1660: 690/1660: searchKeyNum (DONE:28ms)
-690/1660: Method: escKeyProc
-691/1660: 691/1660: escKeyProc (DONE:70ms)
-691/1660: Method: wtf_init
-692/1660: 692/1660: wtf_init (DONE:94ms)
-692/1660: Method: wc_auto_detect
-693/1660: 693/1660: wc_auto_detect (DONE:8592ms)
-693/1660: Method: _bsw
-694/1660: 694/1660: _bsw (DONE:72ms)
-694/1660: Method: maximum_visible_length_plain
-695/1660: 695/1660: maximum_visible_length_plain (DONE:22ms)
-695/1660: Method: sub_8049C5C
-696/1660: 696/1660: sub_8049C5C (DONE:9ms)
-696/1660: Method: sub_8049C7C
-697/1660: 697/1660: sub_8049C7C (DONE:10ms)
-697/1660: Method: color_seq
-698/1660: 698/1660: color_seq (DONE:27ms)
-698/1660: Method: bcolor_seq
-699/1660: 699/1660: bcolor_seq (DONE:47ms)
-699/1660: Method: sub_8049CCC
-700/1660: 700/1660: sub_8049CCC (DONE:9ms)
-700/1660: Method: sub_8049CDC
-701/1660: 701/1660: sub_8049CDC (DONE:5ms)
-701/1660: Method: sub_8049CEC
-702/1660: 702/1660: sub_8049CEC (DONE:10ms)
-702/1660: Method: sub_8049CFC
-703/1660: 703/1660: sub_8049CFC (DONE:7ms)
-703/1660: Method: sub_8049D0C
-704/1660: 704/1660: sub_8049D0C (DONE:11ms)
-704/1660: Method: sub_8049D1C
-705/1660: 705/1660: sub_8049D1C (DONE:12ms)
-705/1660: Method: sub_8049D2C
-706/1660: 706/1660: sub_8049D2C (DONE:9ms)
-706/1660: Method: wc_output_init
-707/1660: 707/1660: wc_output_init (DONE:1144ms)
-707/1660: Method: sub_8049D4C
-708/1660: 708/1660: sub_8049D4C (DONE:10ms)
-708/1660: Method: wc_map3_search
-709/1660: 709/1660: wc_map3_search (DONE:34ms)
-709/1660: Method: wc_tcvn57123_to_tcvn5712
-710/1660: 710/1660: wc_tcvn57123_to_tcvn5712 (DONE:77ms)
-710/1660: Method: wc_is_ucs_wide
-711/1660: 711/1660: wc_is_ucs_wide (DONE:50ms)
-711/1660: Method: wc_ucs_to_ccs
-712/1660: 712/1660: wc_ucs_to_ccs (DONE:56ms)
-712/1660: Method: wtf_is_hangul
-713/1660: 713/1660: wtf_is_hangul (DONE:246ms)
-713/1660: Method: sub_8049D7C
-714/1660: 714/1660: sub_8049D7C (DONE:7ms)
-714/1660: Method: sub_8049D8C
-715/1660: 715/1660: sub_8049D8C (DONE:19ms)
-715/1660: Method: stat
-716/1660: 716/1660: stat (DONE:30ms)
-716/1660: Method: dir_exist
-717/1660: 717/1660: dir_exist (DONE:39ms)
-717/1660: Method: checkCopyFile
-718/1660: 718/1660: checkCopyFile (DONE:83ms)
-718/1660: Method: sub_8049D9C
-719/1660: 719/1660: sub_8049D9C (DONE:11ms)
-719/1660: Method: sub_8049DAC
-720/1660: 720/1660: sub_8049DAC (DONE:11ms)
-720/1660: Method: lstat
-721/1660: 721/1660: lstat (DONE:25ms)
-721/1660: Method: checkDownloadList
-722/1660: 722/1660: checkDownloadList (DONE:74ms)
-722/1660: Method: sub_8049DCC
-723/1660: 723/1660: sub_8049DCC (DONE:12ms)
-723/1660: Method: Sprintf
-724/1660: 724/1660: Sprintf (DONE:573ms)
-724/1660: Method: tmpfname
-725/1660: 725/1660: tmpfname (DONE:67ms)
-725/1660: Method: ftp_command
-726/1660: 726/1660: ftp_command (DONE:293ms)
-726/1660: Method: push_symbol
-727/1660: 727/1660: push_symbol (DONE:142ms)
-727/1660: Method: news_command
-728/1660: 728/1660: news_command (DONE:116ms)
-728/1660: Method: convert_size
-729/1660: 729/1660: convert_size (DONE:219ms)
-729/1660: Method: parsedtag2str
-730/1660: 730/1660: parsedtag2str (DONE:278ms)
-730/1660: Method: convert_size2
-731/1660: 731/1660: convert_size2 (DONE:292ms)
-731/1660: Method: convert_size3
-732/1660: 732/1660: convert_size3 (DONE:72ms)
-732/1660: Method: portlist2str
-733/1660: 733/1660: portlist2str (DONE:44ms)
-733/1660: Method: myEditor
-734/1660: 734/1660: myEditor (DONE:290ms)
-734/1660: Method: print_sep
-735/1660: 735/1660: print_sep (DONE:1381ms)
-735/1660: Method: process_n_textarea
-736/1660: 736/1660: process_n_textarea (DONE:151ms)
-736/1660: Method: process_option
-737/1660: 737/1660: process_option (DONE:384ms)
-737/1660: Method: getImageSize
-738/1660: 738/1660: getImageSize (DONE:168ms)
-738/1660: Method: getImage
-739/1660: 739/1660: getImage (DONE:359ms)
-739/1660: Method: parseFrameSetLength
-740/1660: 740/1660: parseFrameSetLength (DONE:220ms)
-740/1660: Method: _parsedURL2Str
-741/1660: 741/1660: _parsedURL2Str (DONE:623ms)
-741/1660: Method: parsedURL2Str
-742/1660: 742/1660: parsedURL2Str (DONE:15ms)
-742/1660: Method: save_cookies
-743/1660: 743/1660: save_cookies (DONE:273ms)
-743/1660: Method: print_headers
-744/1660: 744/1660: print_headers (DONE:104ms)
-744/1660: Method: process_anchor
-745/1660: 745/1660: process_anchor (DONE:71ms)
-745/1660: Method: process_n_select
-746/1660: 746/1660: process_n_select (DONE:72ms)
-746/1660: Method: otherinfo
-747/1660: 747/1660: otherinfo (DONE:370ms)
-747/1660: Method: sub_8049E2C
-748/1660: 748/1660: sub_8049E2C (DONE:7ms)
-748/1660: Method: addmch
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-749/1660: 749/1660: addmch (DONE:4163ms)
-749/1660: Method: addstr
-750/1660: 750/1660: addstr (DONE:40ms)
-750/1660: Method: addnstr_sup
-751/1660: 751/1660: addnstr_sup (DONE:111ms)
-751/1660: Method: draw_menu_item
-752/1660: 752/1660: draw_menu_item (DONE:40ms)
-752/1660: Method: draw_menu
-753/1660: 753/1660: draw_menu (DONE:1210ms)
-753/1660: Method: up_menu
-754/1660: 754/1660: up_menu (DONE:44ms)
-754/1660: Method: down_menu
-755/1660: 755/1660: down_menu (DONE:47ms)
-755/1660: Method: addnstr
-756/1660: 756/1660: addnstr (DONE:65ms)
-756/1660: Method: ttyname_tty
-757/1660: 757/1660: ttyname_tty (DONE:19ms)
-757/1660: Method: addImage
-758/1660: 758/1660: addImage (DONE:74ms)
-758/1660: Method: sub_8049E7C
-759/1660: 759/1660: sub_8049E7C (DONE:7ms)
-759/1660: Method: sub_8049E9C
-760/1660: 760/1660: sub_8049E9C (DONE:7ms)
-760/1660: Method: sub_8049EBC
-761/1660: 761/1660: sub_8049EBC (DONE:7ms)
-761/1660: Method: sub_8049EDC
-762/1660: 762/1660: sub_8049EDC (DONE:12ms)
-762/1660: Method: sub_8049F0C
-763/1660: 763/1660: sub_8049F0C (DONE:8ms)
-763/1660: Method: sub_8049F1C
-764/1660: 764/1660: sub_8049F1C (DONE:13ms)
-764/1660: Method: pushEvent
-765/1660: 765/1660: pushEvent (DONE:33ms)
-765/1660: Method: push_link
-766/1660: 766/1660: push_link (DONE:28ms)
-766/1660: Method: append_tags
-767/1660: 767/1660: append_tags (DONE:163ms)
-767/1660: Method: push_tag
-768/1660: 768/1660: push_tag (DONE:89ms)
-768/1660: Method: push_nchars
-769/1660: 769/1660: push_nchars (DONE:91ms)
-769/1660: Method: check_breakpoint
-770/1660: 770/1660: check_breakpoint (DONE:55ms)
-770/1660: Method: push_spaces
-771/1660: 771/1660: push_spaces (DONE:124ms)
-771/1660: Method: proc_mchar
-772/1660: 772/1660: proc_mchar (DONE:103ms)
-772/1660: Method: push_char
-773/1660: 773/1660: push_char (DONE:83ms)
-773/1660: Method: restore_fonteffect
-774/1660: 774/1660: restore_fonteffect (DONE:94ms)
-774/1660: Method: save_fonteffect
-775/1660: 775/1660: save_fonteffect (DONE:95ms)
-775/1660: Method: fillline
-776/1660: 776/1660: fillline (DONE:27ms)
-776/1660: Method: check_relative_width
-777/1660: 777/1660: check_relative_width (DONE:2869ms)
-777/1660: Method: create_option_search_table
-778/1660: 778/1660: create_option_search_table (DONE:235ms)
-778/1660: Method: newHash_si
-779/1660: 779/1660: newHash_si (DONE:43ms)
-779/1660: Method: addMultirowsForm
-780/1660: 780/1660: addMultirowsForm (DONE:1022ms)
-780/1660: Method: addMultirowsImg
-781/1660: 781/1660: addMultirowsImg (DONE:3640ms)
-781/1660: Method: sub_8049F4C
-782/1660: 782/1660: sub_8049F4C (DONE:10ms)
-782/1660: Method: sub_8049F6C
-783/1660: 783/1660: sub_8049F6C (DONE:9ms)
-783/1660: Method: sub_8049FBC
-784/1660: 784/1660: sub_8049FBC (DONE:8ms)
-784/1660: Method: sub_8049FCC
-785/1660: 785/1660: sub_8049FCC (DONE:8ms)
-785/1660: Method: mySignal
-786/1660: 786/1660: mySignal (DONE:44ms)
-786/1660: Method: ISclose
-787/1660: 787/1660: ISclose (DONE:45ms)
-787/1660: Method: news_close
-788/1660: 788/1660: news_close (DONE:38ms)
-788/1660: Method: myExec
-789/1660: 789/1660: myExec (DONE:26ms)
-789/1660: Method: ftp_close
-790/1660: 790/1660: ftp_close (DONE:50ms)
-790/1660: Method: loadcmdout
-791/1660: 791/1660: loadcmdout (DONE:86ms)
-791/1660: Method: news_quit
-792/1660: 792/1660: news_quit (DONE:29ms)
-792/1660: Method: ftp_quit
-793/1660: 793/1660: ftp_quit (DONE:24ms)
-793/1660: Method: correlation_coefficient
-794/1660: 794/1660: correlation_coefficient (DONE:190ms)
-794/1660: Method: correlation_coefficient2
-795/1660: 795/1660: correlation_coefficient2 (DONE:151ms)
-795/1660: Method: recalc_width
-796/1660: 796/1660: recalc_width (DONE:973ms)
-796/1660: Method: check_compressible_cell
-797/1660: 797/1660: check_compressible_cell (DONE:5443ms)
-797/1660: Method: sub_804A02C
-798/1660: 798/1660: sub_804A02C (DONE:8ms)
-798/1660: Method: sub_804A05C
-799/1660: 799/1660: sub_804A05C (DONE:7ms)
-799/1660: Method: back_to_breakpoint
-800/1660: 800/1660: back_to_breakpoint (DONE:55ms)
-800/1660: Method: buffer_read
-801/1660: 801/1660: buffer_read (DONE:43ms)
-801/1660: Method: ISread
-802/1660: 802/1660: ISread (DONE:71ms)
-802/1660: Method: copyFrame
-803/1660: 803/1660: copyFrame (DONE:18ms)
-803/1660: Method: form_update_line
-804/1660: 804/1660: form_update_line (DONE:1105ms)
-804/1660: Method: sub_804A0DC
-805/1660: 805/1660: sub_804A0DC (DONE:6ms)
-805/1660: Method: setModtime
-806/1660: 806/1660: setModtime (DONE:31ms)
-806/1660: Method: setgraphchar
-807/1660: 807/1660: setgraphchar (DONE:62ms)
-807/1660: Method: sub_804A12C
-808/1660: 808/1660: sub_804A12C (DONE:13ms)
-808/1660: Method: sub_804A14C
-809/1660: 809/1660: sub_804A14C (DONE:7ms)
-809/1660: Method: sub_804A15C
-810/1660: 810/1660: sub_804A15C (DONE:6ms)
-810/1660: Method: write_from_file
-811/1660: 811/1660: write_from_file (DONE:39ms)
-811/1660: Method: dump_source
-812/1660: 812/1660: dump_source (DONE:43ms)
-812/1660: Method: sub_804A18C
-813/1660: 813/1660: sub_804A18C (DONE:6ms)
-813/1660: Method: sub_804A19C
-814/1660: 814/1660: sub_804A19C (DONE:5ms)
-814/1660: Method: sub_804A1BC
-815/1660: 815/1660: sub_804A1BC (DONE:7ms)
-815/1660: Method: sub_804A1CC
-816/1660: 816/1660: sub_804A1CC (DONE:16ms)
-816/1660: Method: sub_804A1DC
-817/1660: 817/1660: sub_804A1DC (DONE:6ms)
-817/1660: Method: writestr
-818/1660: 818/1660: writestr (DONE:14ms)
-818/1660: Method: clear
-819/1660: 819/1660: clear (DONE:52ms)
-819/1660: Method: reset_tty
-820/1660: 820/1660: reset_tty (DONE:59ms)
-820/1660: Method: setupscreen
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-821/1660: 821/1660: setupscreen (DONE:173ms)
-821/1660: Method: sub_804A1EC
-822/1660: 822/1660: sub_804A1EC (DONE:5ms)
-822/1660: Method: sub_804A20C
-823/1660: 823/1660: sub_804A20C (DONE:5ms)
-823/1660: Method: sub_804A21C
-824/1660: 824/1660: sub_804A21C (DONE:6ms)
-824/1660: Method: tag_get_value
-825/1660: 825/1660: tag_get_value (DONE:29ms)
-825/1660: Method: wc_ucs_put_tag
-826/1660: 826/1660: wc_ucs_put_tag (DONE:60ms)
-826/1660: Method: domain_match
-827/1660: 827/1660: domain_match (DONE:44ms)
-827/1660: Method: Strfree
-828/1660: 828/1660: Strfree (DONE:16ms)
-828/1660: Method: sub_804A26C
-829/1660: 829/1660: sub_804A26C (DONE:8ms)
-829/1660: Method: sub_804A27C
-830/1660: 830/1660: sub_804A27C (DONE:8ms)
-830/1660: Method: sub_804A28C
-831/1660: 831/1660: sub_804A28C (DONE:8ms)
-831/1660: Method: close_all_fds_except
-832/1660: 832/1660: close_all_fds_except (DONE:84ms)
-832/1660: Method: sub_804A2EC
-833/1660: 833/1660: sub_804A2EC (DONE:7ms)
-833/1660: Method: end_table
-834/1660: 834/1660: end_table (DONE:323ms)
-834/1660: Method: sub_804A31C
-835/1660: 835/1660: sub_804A31C (DONE:15ms)
-835/1660: Method: localCookie
-836/1660: 836/1660: localCookie (DONE:60ms)
-836/1660: Method: sub_804A32C
-837/1660: 837/1660: sub_804A32C (DONE:8ms)
-837/1660: Method: sub_804A39C
-838/1660: 838/1660: sub_804A39C (DONE:7ms)
-838/1660: Method: str_to_color
-839/1660: 839/1660: str_to_color (DONE:120ms)
-839/1660: Method: newMapArea
-840/1660: 840/1660: newMapArea (DONE:962ms)
-840/1660: Method: getKey
-841/1660: 841/1660: getKey (DONE:53ms)
-841/1660: Method: sub_804A3BC
-842/1660: 842/1660: sub_804A3BC (DONE:9ms)
-842/1660: Method: sub_804A3DC
-843/1660: 843/1660: sub_804A3DC (DONE:7ms)
-843/1660: Method: sub_804A41C
-844/1660: 844/1660: sub_804A41C (DONE:6ms)
-844/1660: Method: sub_804A42C
-845/1660: 845/1660: sub_804A42C (DONE:7ms)
-845/1660: Method: set_table_matrix0
-846/1660: 846/1660: set_table_matrix0 (DONE:4331ms)
-846/1660: Method: sub_804A45C
-847/1660: 847/1660: sub_804A45C (DONE:8ms)
-847/1660: Method: sub_804A47C
-848/1660: 848/1660: sub_804A47C (DONE:6ms)
-848/1660: Method: fstat
-849/1660: 849/1660: fstat (DONE:19ms)
-849/1660: Method: set_tty
-850/1660: 850/1660: set_tty (DONE:148ms)
-850/1660: Method: bell
-851/1660: 851/1660: bell (DONE:12ms)
-851/1660: Method: sub_804A4EC
-852/1660: 852/1660: sub_804A4EC (DONE:6ms)
-852/1660: Method: sub_804A50C
-853/1660: 853/1660: sub_804A50C (DONE:7ms)
-853/1660: Method: check_table_height
-854/1660: 854/1660: check_table_height (DONE:1405ms)
-854/1660: Method: wc_push_to_hz_end
-855/1660: 855/1660: wc_push_to_hz_end (DONE:49ms)
-855/1660: Method: process_title
-856/1660: 856/1660: process_title (DONE:13ms)
-856/1660: Method: correct_irrtag
-857/1660: 857/1660: correct_irrtag (DONE:90ms)
-857/1660: Method: get_zone
-858/1660: 858/1660: get_zone (DONE:154ms)
-858/1660: Method: mymktime
-859/1660: 859/1660: mymktime (DONE:784ms)
-859/1660: Method: HTTPrequestMethod
-860/1660: 860/1660: HTTPrequestMethod (DONE:30ms)
-860/1660: Method: decodeQP
-861/1660: 861/1660: decodeQP (DONE:180ms)
-861/1660: Method: decodeQ
-862/1660: 862/1660: decodeQ (DONE:151ms)
-862/1660: Method: decodeU
-863/1660: 863/1660: decodeU (DONE:163ms)
-863/1660: Method: html_quote_s
-864/1660: 864/1660: html_quote_s (DONE:130ms)
-864/1660: Method: process_n_title
-865/1660: 865/1660: process_n_title (DONE:38ms)
-865/1660: Method: newTable
-866/1660: 866/1660: newTable (DONE:146ms)
-866/1660: Method: make_optional_header_string
-867/1660: 867/1660: make_optional_header_string (DONE:183ms)
-867/1660: Method: pushTable
-868/1660: 868/1660: pushTable (DONE:241ms)
-868/1660: Method: wc_push_to_utf8_end
-869/1660: 869/1660: wc_push_to_utf8_end (DONE:30ms)
-869/1660: Method: LUfactor
-870/1660: 870/1660: LUfactor (DONE:1011ms)
-870/1660: Method: LUinverse
-871/1660: 871/1660: LUinverse (DONE:140ms)
-871/1660: Method: cgistr2tagarg
-872/1660: 872/1660: cgistr2tagarg (DONE:230ms)
-872/1660: Method: save_submit_formlist
-873/1660: 873/1660: save_submit_formlist (DONE:327ms)
-873/1660: Method: wc_push_to_iso2022_end
-874/1660: 874/1660: wc_push_to_iso2022_end (DONE:35ms)
-874/1660: Method: formList_addInput
-875/1660: 875/1660: formList_addInput (DONE:590ms)
-875/1660: Method: unquote_mailcap_loop
-876/1660: 876/1660: unquote_mailcap_loop (DONE:1891ms)
-876/1660: Method: unquote_mailcap
-877/1660: 877/1660: unquote_mailcap (DONE:18ms)
-877/1660: Method: searchMailcap
-878/1660: 878/1660: searchMailcap (DONE:70ms)
-878/1660: Method: searchExtViewer
-879/1660: 879/1660: searchExtViewer (DONE:58ms)
-879/1660: Method: is_dump_text_type
-880/1660: 880/1660: is_dump_text_type (DONE:34ms)
-880/1660: Method: is_plain_text_type
-881/1660: 881/1660: is_plain_text_type (DONE:31ms)
-881/1660: Method: init_str_stream
-882/1660: 882/1660: init_str_stream (DONE:16ms)
-882/1660: Method: newStrStream
-883/1660: 883/1660: newStrStream (DONE:36ms)
-883/1660: Method: ins_char
-884/1660: 884/1660: ins_char (DONE:139ms)
-884/1660: Method: reAnchorWord
-885/1660: 885/1660: reAnchorWord (DONE:22ms)
-885/1660: Method: stopDownload
-886/1660: 886/1660: stopDownload (DONE:37ms)
-886/1660: Method: sub_804A54C
-887/1660: 887/1660: sub_804A54C (DONE:6ms)
-887/1660: Method: sub_804A55C
-888/1660: 888/1660: sub_804A55C (DONE:6ms)
-888/1660: Method: FQDN
-889/1660: 889/1660: FQDN (DONE:167ms)
-889/1660: Method: sub_804A56C
-890/1660: 890/1660: sub_804A56C (DONE:8ms)
-890/1660: Method: Strfgetall
-891/1660: 891/1660: Strfgetall (DONE:67ms)
-891/1660: Method: readline
-892/1660: 892/1660: readline (DONE:58ms)
-892/1660: Method: termImage
-893/1660: 893/1660: termImage (DONE:36ms)
-893/1660: Method: wc_charset_short_to_ces
-894/1660: 894/1660: wc_charset_short_to_ces (DONE:397ms)
-894/1660: Method: wc_guess_charset_short
-895/1660: 895/1660: wc_guess_charset_short (DONE:31ms)
-895/1660: Method: set_param
-896/1660: 896/1660: set_param (DONE:335ms)
-896/1660: Method: interpret_rc
-897/1660: 897/1660: interpret_rc (DONE:167ms)
-897/1660: Method: set_param_option
-898/1660: 898/1660: set_param_option (DONE:190ms)
-898/1660: Method: check_charset
-899/1660: 899/1660: check_charset (DONE:16ms)
-899/1660: Method: check_accept_charset
-900/1660: 900/1660: check_accept_charset (DONE:93ms)
-900/1660: Method: process_form_int
-901/1660: 901/1660: process_form_int (DONE:623ms)
-901/1660: Method: process_form
-902/1660: 902/1660: process_form (DONE:16ms)
-902/1660: Method: retrieveCurrentMap
-903/1660: 903/1660: retrieveCurrentMap (DONE:45ms)
-903/1660: Method: get_cookie_info
-904/1660: 904/1660: get_cookie_info (DONE:62ms)
-904/1660: Method: gethtmlcmd
-905/1660: 905/1660: gethtmlcmd (DONE:217ms)
-905/1660: Method: passthrough
-906/1660: 906/1660: passthrough (DONE:193ms)
-906/1660: Method: close_effect0
-907/1660: 907/1660: close_effect0 (DONE:82ms)
-907/1660: Method: setMenuItem
-908/1660: 908/1660: setMenuItem (DONE:211ms)
-908/1660: Method: invalidate_auth_user_passwd
-909/1660: 909/1660: invalidate_auth_user_passwd (DONE:27ms)
-909/1660: Method: sub_804A5CC
-910/1660: 910/1660: sub_804A5CC (DONE:7ms)
-910/1660: Method: set_environ
-911/1660: 911/1660: set_environ (DONE:20ms)
-911/1660: Method: name_from_address
-912/1660: 912/1660: name_from_address (DONE:260ms)
-912/1660: Method: add_news_message
-913/1660: 913/1660: add_news_message (DONE:119ms)
-913/1660: Method: unshiftHist
-914/1660: 914/1660: unshiftHist (DONE:55ms)
-914/1660: Method: mydirname
-915/1660: 915/1660: mydirname (DONE:72ms)
-915/1660: Method: parse_ansi_color
-916/1660: 916/1660: parse_ansi_color (DONE:305ms)
-916/1660: Method: checkType
-917/1660: 917/1660: checkType (DONE:4667ms)
-917/1660: Method: split
-918/1660: 918/1660: split (DONE:821ms)
-918/1660: Method: DefaultFile
-919/1660: 919/1660: DefaultFile (DONE:32ms)
-919/1660: Method: parseURL
-920/1660: 920/1660: parseURL (DONE:2930ms)
-920/1660: Method: extractMailcapEntry
-921/1660: 921/1660: extractMailcapEntry (DONE:721ms)
-921/1660: Method: loadMimeTypes
-922/1660: 922/1660: loadMimeTypes (DONE:286ms)
-922/1660: Method: initMimeTypes
-923/1660: 923/1660: initMimeTypes (DONE:62ms)
-923/1660: Method: loadURIMethods
-924/1660: 924/1660: loadURIMethods (DONE:347ms)
-924/1660: Method: initURIMethods
-925/1660: 925/1660: initURIMethods (DONE:84ms)
-925/1660: Method: expandName
-926/1660: 926/1660: expandName (DONE:164ms)
-926/1660: Method: parseURL2
-927/1660: 927/1660: parseURL2 (DONE:1149ms)
-927/1660: Method: set_buffer_environ
-928/1660: 928/1660: set_buffer_environ (DONE:571ms)
-928/1660: Method: copyHist
-929/1660: 929/1660: copyHist (DONE:33ms)
-929/1660: Method: loadHistory
-930/1660: 930/1660: loadHistory (DONE:100ms)
-930/1660: Method: parse_cookie
-931/1660: 931/1660: parse_cookie (DONE:34ms)
-931/1660: Method: sub_804A5FC
-932/1660: 932/1660: sub_804A5FC (DONE:8ms)
-932/1660: Method: sub_804A60C
-933/1660: 933/1660: sub_804A60C (DONE:5ms)
-933/1660: Method: etcFile
-934/1660: 934/1660: etcFile (DONE:38ms)
-934/1660: Method: init_rc
-935/1660: 935/1660: init_rc (DONE:550ms)
-935/1660: Method: do_effects
-936/1660: 936/1660: do_effects (DONE:548ms)
-936/1660: Method: wc_putc_init
-937/1660: 937/1660: wc_putc_init (DONE:26ms)
-937/1660: Method: wc_ucs_precompose
-938/1660: 938/1660: wc_ucs_precompose (DONE:44ms)
-938/1660: Method: wtf_parse
-939/1660: 939/1660: wtf_parse (DONE:474ms)
-939/1660: Method: wc_ucs_to_gb18030
-940/1660: 940/1660: wc_ucs_to_gb18030 (DONE:563ms)
-940/1660: Method: check_command
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-941/1660: 941/1660: check_command (DONE:226ms)
-941/1660: Method: checkPath
-942/1660: 942/1660: checkPath (DONE:184ms)
-942/1660: Method: form_write_from_file
-943/1660: 943/1660: form_write_from_file (DONE:106ms)
-943/1660: Method: size_int2str
-944/1660: 944/1660: size_int2str (DONE:183ms)
-944/1660: Method: writeBufferCache
-945/1660: 945/1660: writeBufferCache (DONE:448ms)
-945/1660: Method: tmpClearBuffer
-946/1660: 946/1660: tmpClearBuffer (DONE:21ms)
-946/1660: Method: closeFTPdata
-947/1660: 947/1660: closeFTPdata (DONE:19ms)
-947/1660: Method: ftp_modtime
-948/1660: 948/1660: ftp_modtime (DONE:128ms)
-948/1660: Method: process_hr
-949/1660: 949/1660: process_hr (DONE:153ms)
-949/1660: Method: getAllImage
-950/1660: 950/1660: getAllImage (DONE:103ms)
-950/1660: Method: xface2xpm
-951/1660: 951/1660: xface2xpm (DONE:142ms)
-951/1660: Method: newFrameSet
-952/1660: 952/1660: newFrameSet (DONE:74ms)
-952/1660: Method: HTTPrequestURI
-953/1660: 953/1660: HTTPrequestURI (DONE:106ms)
-953/1660: Method: currentURL
-954/1660: 954/1660: currentURL (DONE:28ms)
-954/1660: Method: searchURIMethods
-955/1660: 955/1660: searchURIMethods (DONE:167ms)
-955/1660: Method: dump_extra
-956/1660: 956/1660: dump_extra (DONE:48ms)
-956/1660: Method: clrtoeol_with_bcolor
-957/1660: 957/1660: clrtoeol_with_bcolor (DONE:55ms)
-957/1660: Method: clrtoeolx
-958/1660: 958/1660: clrtoeolx (DONE:13ms)
-958/1660: Method: message
-959/1660: 959/1660: message (DONE:43ms)
-959/1660: Method: redrawLineImage
-960/1660: 960/1660: redrawLineImage (DONE:2156ms)
-960/1660: Method: process_idattr
-961/1660: 961/1660: process_idattr (DONE:70ms)
-961/1660: Method: acceptableMimeTypes
-962/1660: 962/1660: acceptableMimeTypes (DONE:258ms)
-962/1660: Method: strtoclen
-963/1660: 963/1660: strtoclen (DONE:16ms)
-963/1660: Method: lessopen_stream
-964/1660: 964/1660: lessopen_stream (DONE:72ms)
-964/1660: Method: set_int
-965/1660: 965/1660: set_int (DONE:40ms)
-965/1660: Method: reset_signals
-966/1660: 966/1660: reset_signals (DONE:50ms)
-966/1660: Method: setup_child
-967/1660: 967/1660: setup_child (DONE:33ms)
-967/1660: Method: mySystem
-968/1660: 968/1660: mySystem (DONE:38ms)
-968/1660: Method: closeNews
-969/1660: 969/1660: closeNews (DONE:10ms)
-969/1660: Method: closeFTP
-970/1660: 970/1660: closeFTP (DONE:10ms)
-970/1660: Method: UFhalfclose
-971/1660: 971/1660: UFhalfclose (DONE:31ms)
-971/1660: Method: disconnectNews
-972/1660: 972/1660: disconnectNews (DONE:10ms)
-972/1660: Method: disconnectFTP
-973/1660: 973/1660: disconnectFTP (DONE:10ms)
-973/1660: Method: check_table_width
-974/1660: 974/1660: check_table_width (DONE:14351ms)
-974/1660: Method: last_modified
-975/1660: 975/1660: last_modified (DONE:67ms)
-975/1660: Method: wc_locale_to_ces
-976/1660: 976/1660: wc_locale_to_ces (DONE:275ms)
-976/1660: Method: wc_guess_locale_charset
-977/1660: 977/1660: wc_guess_locale_charset (DONE:27ms)
-977/1660: Method: inMapArea
-978/1660: 978/1660: inMapArea (DONE:1242ms)
-978/1660: Method: searchMapArea
-979/1660: 979/1660: searchMapArea (DONE:131ms)
-979/1660: Method: currentdir
-980/1660: 980/1660: currentdir (DONE:19ms)
-980/1660: Method: set_table_matrix
-981/1660: 981/1660: set_table_matrix (DONE:689ms)
-981/1660: Method: mouse_init
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-982/1660: 982/1660: mouse_init (DONE:49ms)
-982/1660: Method: mouse_active
-983/1660: 983/1660: mouse_active (DONE:14ms)
-983/1660: Method: decodeWord
-984/1660: 984/1660: decodeWord (DONE:253ms)
-984/1660: Method: decodeMIME
-985/1660: 985/1660: decodeMIME (DONE:243ms)
-985/1660: Method: begin_table
-986/1660: 986/1660: begin_table (DONE:301ms)
-986/1660: Method: registerForm
-987/1660: 987/1660: registerForm (DONE:53ms)
-987/1660: Method: getCharSize
-988/1660: 988/1660: getCharSize (DONE:107ms)
-988/1660: Method: initImage
-989/1660: 989/1660: initImage (DONE:23ms)
-989/1660: Method: writeLocalCookie
-990/1660: 990/1660: writeLocalCookie (DONE:59ms)
-990/1660: Method: set_cgi_environ
-991/1660: 991/1660: set_cgi_environ (DONE:61ms)
-991/1660: Method: load_cookies
-992/1660: 992/1660: load_cookies (DONE:915ms)
-992/1660: Method: initCookie
-993/1660: 993/1660: initCookie (DONE:21ms)
-993/1660: Method: parse_proxy
-994/1660: 994/1660: parse_proxy (DONE:63ms)
-994/1660: Method: loadMailcap
-995/1660: 995/1660: loadMailcap (DONE:268ms)
-995/1660: Method: initMailcap
-996/1660: 996/1660: initMailcap (DONE:72ms)
-996/1660: Method: set_integered_width
-997/1660: 997/1660: set_integered_width (DONE:9203ms)
-997/1660: Method: check_local_cgi
-998/1660: 998/1660: check_local_cgi (DONE:70ms)
-998/1660: Method: acceptableEncoding
-999/1660: 999/1660: acceptableEncoding (DONE:98ms)
-999/1660: Method: cgi_filename
-1000/1660: 1000/1660: cgi_filename (DONE:409ms)
-1000/1660: Method: localcgi_post
-1001/1660: 1001/1660: localcgi_post (DONE:742ms)
-1001/1660: Method: ex_ftpdir_name_size_date
-1002/1660: 1002/1660: ex_ftpdir_name_size_date (DONE:1670ms)
-1002/1660: Method: open_migemo
-1003/1660: 1003/1660: open_migemo (DONE:44ms)
-1003/1660: Method: openImgdisplay
-1004/1660: 1004/1660: openImgdisplay (DONE:76ms)
-1004/1660: Method: retrieveCurrentMapArea
-1005/1660: 1005/1660: retrieveCurrentMapArea (DONE:141ms)
-1005/1660: Method: pcmap
-1006/1660: 1006/1660: pcmap (DONE:6ms)
-1006/1660: Method: textlist_feed
-1007/1660: 1007/1660: textlist_feed (DONE:19ms)
-1007/1660: Method: cursorHome
-1008/1660: 1008/1660: cursorHome (DONE:16ms)
-1008/1660: Method: sub_807B163
-1009/1660: 1009/1660: sub_807B163 (DONE:5ms)
-1009/1660: Method: _enter
-1010/1660: 1010/1660: _enter (DONE:8ms)
-1010/1660: Method: _quo
-1011/1660: 1011/1660: _quo (DONE:7ms)
-1011/1660: Method: _mvB
-1012/1660: 1012/1660: _mvB (DONE:7ms)
-1012/1660: Method: _mvE
-1013/1660: 1013/1660: _mvE (DONE:8ms)
-1013/1660: Method: _inbrk
-1014/1660: 1014/1660: _inbrk (DONE:8ms)
-1014/1660: Method: _tcompl
-1015/1660: 1015/1660: _tcompl (DONE:31ms)
-1015/1660: Method: mNull
-1016/1660: 1016/1660: mNull (DONE:12ms)
-1016/1660: Method: mOk
-1017/1660: 1017/1660: mOk (DONE:22ms)
-1017/1660: Method: mCancel
-1018/1660: 1018/1660: mCancel (DONE:11ms)
-1018/1660: Method: mClose
-1019/1660: 1019/1660: mClose (DONE:9ms)
-1019/1660: Method: sub_809B704
-1020/1660: 1020/1660: sub_809B704 (DONE:6ms)
-1020/1660: Method: MatchedPosition
-1021/1660: 1021/1660: MatchedPosition (DONE:16ms)
-1021/1660: Method: sub_80AC66E
-1022/1660: 1022/1660: sub_80AC66E (DONE:8ms)
-1022/1660: Method: sub_80AC848
-1023/1660: 1023/1660: sub_80AC848 (DONE:10ms)
-1023/1660: Method: noConv
-1024/1660: 1024/1660: noConv (DONE:19ms)
-1024/1660: Method: file_close
-1025/1660: 1025/1660: file_close (DONE:15ms)
-1025/1660: Method: str_read
-1026/1660: 1026/1660: str_read (DONE:7ms)
-1026/1660: Method: map_cmp
-1027/1660: 1027/1660: map_cmp (DONE:10ms)
-1027/1660: Method: map3_cmp
-1028/1660: 1028/1660: map3_cmp (DONE:13ms)
-1028/1660: Method: map_range_cmp
-1029/1660: 1029/1660: map_range_cmp (DONE:21ms)
-1029/1660: Method: map2_range_cmp
-1030/1660: 1030/1660: map2_range_cmp (DONE:23ms)
-1030/1660: Method: map3_range_cmp
-1031/1660: 1031/1660: map3_range_cmp (DONE:18ms)
-1031/1660: Method: wc_sjis_to_jis
-1032/1660: 1032/1660: wc_sjis_to_jis (DONE:78ms)
-1032/1660: Method: wc_jis_to_sjis
-1033/1660: 1033/1660: wc_jis_to_sjis (DONE:85ms)
-1033/1660: Method: ucs_cs94_conv
-1034/1660: 1034/1660: ucs_cs94_conv (DONE:15ms)
-1034/1660: Method: ucs_viet_conv
-1035/1660: 1035/1660: ucs_viet_conv (DONE:42ms)
-1035/1660: Method: ucs_cp1258_conv
-1036/1660: 1036/1660: ucs_cp1258_conv (DONE:19ms)
-1036/1660: Method: ucs_cns11643_conv
-1037/1660: 1037/1660: ucs_cns11643_conv (DONE:21ms)
-1037/1660: Method: ucs_johab3_conv
-1038/1660: 1038/1660: ucs_johab3_conv (DONE:45ms)
-1038/1660: Method: __libc_csu_fini
-1039/1660: 1039/1660: __libc_csu_fini (DONE:6ms)
-1039/1660: Method: sub_804A092
-1040/1660: 1040/1660: sub_804A092 (DONE:5ms)
-1040/1660: Method: sub_804A5F2
-1041/1660: 1041/1660: sub_804A5F2 (DONE:6ms)
-1041/1660: Method: w3m_help_dir
-1042/1660: 1042/1660: w3m_help_dir (DONE:12ms)
-1042/1660: Method: ISeos
-1043/1660: 1043/1660: ISeos (DONE:29ms)
-1043/1660: Method: killn
-1044/1660: 1044/1660: killn (DONE:15ms)
-1044/1660: Method: ucs_sjis_ext_conv
-1045/1660: 1045/1660: ucs_sjis_ext_conv (DONE:35ms)
-1045/1660: Method: clrtobot
-1046/1660: 1046/1660: clrtobot (DONE:10ms)
-1046/1660: Method: ucs_uhc_conv
-1047/1660: 1047/1660: ucs_uhc_conv (DONE:24ms)
-1047/1660: Method: ucs_big5_conv
-1048/1660: 1048/1660: ucs_big5_conv (DONE:29ms)
-1048/1660: Method: ucs_gbk_conv
-1049/1660: 1049/1660: ucs_gbk_conv (DONE:24ms)
-1049/1660: Method: ucs_hkscs_conv
-1050/1660: 1050/1660: ucs_hkscs_conv (DONE:35ms)
-1050/1660: Method: wtf_get_ccs
-1051/1660: 1051/1660: wtf_get_ccs (DONE:17ms)
-1051/1660: Method: killb
-1052/1660: 1052/1660: killb (DONE:18ms)
-1052/1660: Method: strcasemstr
-1053/1660: 1053/1660: strcasemstr (DONE:54ms)
-1053/1660: Method: ucs_johab2_conv
-1054/1660: 1054/1660: ucs_johab2_conv (DONE:24ms)
-1054/1660: Method: wc_map2_range_search
-1055/1660: 1055/1660: wc_map2_range_search (DONE:27ms)
-1055/1660: Method: newHash_ss
-1056/1660: 1056/1660: newHash_ss (DONE:40ms)
-1056/1660: Method: basic_read
-1057/1660: 1057/1660: basic_read (DONE:17ms)
-1057/1660: Method: toNumber
-1058/1660: 1058/1660: toNumber (DONE:26ms)
-1058/1660: Method: intTrap
-1059/1660: 1059/1660: intTrap (DONE:20ms)
-1059/1660: Method: KeyAbort
-1060/1660: 1060/1660: KeyAbort (DONE:28ms)
-1060/1660: Method: KeyAbort2
-1061/1660: 1061/1660: KeyAbort2 (DONE:20ms)
-1061/1660: Method: KeyAbort3
-1062/1660: 1062/1660: KeyAbort3 (DONE:21ms)
-1062/1660: Method: KeyAbort4
-1063/1660: 1063/1660: KeyAbort4 (DONE:24ms)
-1063/1660: Method: KeyAbort5
-1064/1660: 1064/1660: KeyAbort5 (DONE:19ms)
-1064/1660: Method: help
-1065/1660: 1065/1660: help (DONE:40ms)
-1065/1660: Method: set_column
-1066/1660: 1066/1660: set_column (DONE:21ms)
-1066/1660: Method: toLength
-1067/1660: 1067/1660: toLength (DONE:49ms)
-1067/1660: Method: tag_exists
-1068/1660: 1068/1660: tag_exists (DONE:23ms)
-1068/1660: Method: wc_ces_list_cmp
-1069/1660: 1069/1660: wc_ces_list_cmp (DONE:14ms)
-1069/1660: Method: set
-1070/1660: 1070/1660: set (DONE:74ms)
-1070/1660: Method: show
-1071/1660: 1071/1660: show (DONE:73ms)
-1071/1660: Method: toVAlign
-1072/1660: 1072/1660: toVAlign (DONE:47ms)
-1072/1660: Method: toAlign
-1073/1660: 1073/1660: toAlign (DONE:63ms)
-1073/1660: Method: basic_close
-1074/1660: 1074/1660: basic_close (DONE:17ms)
-1074/1660: Method: show_column
-1075/1660: 1075/1660: show_column (DONE:18ms)
-1075/1660: Method: file_read
-1076/1660: 1076/1660: file_read (DONE:18ms)
-1076/1660: Method: Strcopy_charp
-1077/1660: 1077/1660: Strcopy_charp (DONE:49ms)
-1077/1660: Method: wc_push_to_raw
-1078/1660: 1078/1660: wc_push_to_raw (DONE:33ms)
-1078/1660: Method: Stralign_right
-1079/1660: 1079/1660: Stralign_right (DONE:64ms)
-1079/1660: Method: Stralign_center
-1080/1660: 1080/1660: Stralign_center (DONE:104ms)
-1080/1660: Method: Stralign_left
-1081/1660: 1081/1660: Stralign_left (DONE:60ms)
-1081/1660: Method: Strinsert_charp
-1082/1660: 1082/1660: Strinsert_charp (DONE:27ms)
-1082/1660: Method: insertself
-1083/1660: 1083/1660: insertself (DONE:55ms)
-1083/1660: Method: AuthBasicCred
-1084/1660: 1084/1660: AuthBasicCred (DONE:54ms)
-1084/1660: Method: compare_table
-1085/1660: 1085/1660: compare_table (DONE:14ms)
-1085/1660: Method: strCmp
-1086/1660: 1086/1660: strCmp (DONE:13ms)
-1086/1660: Method: namedBuffer
-1087/1660: 1087/1660: namedBuffer (DONE:45ms)
-1087/1660: Method: getHash_ss
-1088/1660: 1088/1660: getHash_ss (DONE:21ms)
-1088/1660: Method: putHash_ss
-1089/1660: 1089/1660: putHash_ss (DONE:39ms)
-1089/1660: Method: _start
-1090/1660: 1090/1660: _start (DONE:13ms)
-1090/1660: Method: resize_hook
-1091/1660: 1091/1660: resize_hook (DONE:14ms)
-1091/1660: Method: SigPipe
-1092/1660: 1092/1660: SigPipe (DONE:26ms)
-1092/1660: Method: ens_close
-1093/1660: 1093/1660: ens_close (DONE:13ms)
-1093/1660: Method: file_feed
-1094/1660: 1094/1660: file_feed (DONE:29ms)
-1094/1660: Method: sig_chld
-1095/1660: 1095/1660: sig_chld (DONE:27ms)
-1095/1660: Method: error_dump
-1096/1660: 1096/1660: error_dump (DONE:14ms)
-1096/1660: Method: ens_read
-1097/1660: 1097/1660: ens_read (DONE:183ms)
-1097/1660: Method: SigAlarm
-1098/1660: 1098/1660: SigAlarm (DONE:87ms)
-1098/1660: Method: wc_Str_conv_strict
-1099/1660: 1099/1660: wc_Str_conv_strict (DONE:41ms)
-1099/1660: Method: conv_form_encoding
-1100/1660: 1100/1660: conv_form_encoding (DONE:35ms)
-1100/1660: Method: newFrame
-1101/1660: 1101/1660: newFrame (DONE:132ms)
-1101/1660: Method: query_from_followform
-1102/1660: 1102/1660: query_from_followform (DONE:2947ms)
-1102/1660: Method: form_fputs_decode
-1103/1660: 1103/1660: form_fputs_decode (DONE:86ms)
-1103/1660: Method: dump_head
-1104/1660: 1104/1660: dump_head (DONE:65ms)
-1104/1660: Method: addLink
-1105/1660: 1105/1660: addLink (DONE:179ms)
-1105/1660: Method: _put_anchor_all
-1106/1660: 1106/1660: _put_anchor_all (DONE:56ms)
-1106/1660: Method: _put_anchor_news
-1107/1660: 1107/1660: _put_anchor_news (DONE:73ms)
-1107/1660: Method: wtf_push_unknown
-1108/1660: 1108/1660: wtf_push_unknown (DONE:167ms)
-1108/1660: Method: wc_conv_from_ascii
-1109/1660: 1109/1660: wc_conv_from_ascii (DONE:118ms)
-1109/1660: Method: wc_Str_conv
-1110/1660: 1110/1660: wc_Str_conv (DONE:72ms)
-1110/1660: Method: to_str
-1111/1660: 1111/1660: to_str (DONE:107ms)
-1111/1660: Method: writeBufferName
-1112/1660: 1112/1660: writeBufferName (DONE:185ms)
-1112/1660: Method: conv_entity
-1113/1660: 1113/1660: conv_entity (DONE:108ms)
-1113/1660: Method: getescapecmd
-1114/1660: 1114/1660: getescapecmd (DONE:60ms)
-1114/1660: Method: html_unquote
-1115/1660: 1115/1660: html_unquote (DONE:94ms)
-1115/1660: Method: parse_tag
-1116/1660: 1116/1660: parse_tag (DONE:6096ms)
-1116/1660: Method: wc_char_conv
-1117/1660: 1117/1660: wc_char_conv (DONE:29ms)
-1117/1660: Method: visible_length
-1118/1660: 1118/1660: visible_length (DONE:838ms)
-1118/1660: Method: openPagerBuffer
-1119/1660: 1119/1660: openPagerBuffer (DONE:107ms)
-1119/1660: Method: interpret_mouse_action
-1120/1660: 1120/1660: interpret_mouse_action (DONE:1265ms)
-1120/1660: Method: loadSomething
-1121/1660: 1121/1660: loadSomething (DONE:111ms)
-1121/1660: Method: getpipe
-1122/1660: 1122/1660: getpipe (DONE:109ms)
-1122/1660: Method: print_internal_information
-1123/1660: 1123/1660: print_internal_information (DONE:854ms)
-1123/1660: Method: interpret_menu
-1124/1660: 1124/1660: interpret_menu (DONE:733ms)
-1124/1660: Method: doComplete
-1125/1660: 1125/1660: doComplete (DONE:3725ms)
-1125/1660: Method: next_compl
-1126/1660: 1126/1660: next_compl (DONE:237ms)
-1126/1660: Method: show_params
-1127/1660: 1127/1660: show_params (DONE:575ms)
-1127/1660: Method: fusage
-1128/1660: 1128/1660: fusage (DONE:493ms)
-1128/1660: Method: proc_escape
-1129/1660: 1129/1660: proc_escape (DONE:203ms)
-1129/1660: Method: feed_textarea
-1130/1660: 1130/1660: feed_textarea (DONE:162ms)
-1130/1660: Method: process_textarea
-1131/1660: 1131/1660: process_textarea (DONE:258ms)
-1131/1660: Method: process_select
-1132/1660: 1132/1660: process_select (DONE:233ms)
-1132/1660: Method: process_input
-1133/1660: 1133/1660: process_input (DONE:9360ms)
-1133/1660: Method: process_img
-1134/1660: 1134/1660: process_img (DONE:30117ms)
-1134/1660: Method: feed_select
-1135/1660: 1135/1660: feed_select (DONE:686ms)
-1135/1660: Method: maximum_visible_length
-1136/1660: 1136/1660: maximum_visible_length (DONE:15ms)
-1136/1660: Method: initMenu
-Emulation failed!
-1137/1660: 1137/1660: initMenu (DONE:211ms)
-1137/1660: Method: encode_symbol
-1138/1660: 1138/1660: encode_symbol (DONE:118ms)
-1138/1660: Method: get_symbol
-1139/1660: 1139/1660: get_symbol (DONE:98ms)
-1139/1660: Method: set_menu_frame
-1140/1660: 1140/1660: set_menu_frame (DONE:43ms)
-1140/1660: Method: addMChar
-1141/1660: 1141/1660: addMChar (DONE:291ms)
-1141/1660: Method: addChar
-1142/1660: 1142/1660: addChar (DONE:28ms)
-1142/1660: Method: initMouseAction
-1143/1660: 1143/1660: initMouseAction (DONE:146ms)
-1143/1660: Method: redrawLineRegion
+  0/1491: Method: parsedtag_get_value
+  1/1491: 1/1491: parsedtag_get_value (DONE:221ms)
+  1/1491: Method: →fclose
+  2/1491: 2/1491: →fclose (DONE:7ms)
+  2/1491: Method: move
+  3/1491: 3/1491: move (DONE:91ms)
+  3/1491: Method: baseURL
+  4/1491: 4/1491: baseURL (DONE:26ms)
+  4/1491: Method: Strshrink
+  5/1491: 5/1491: Strshrink (DONE:34ms)
+  5/1491: Method: non_null
+  6/1491: 6/1491: non_null (DONE:37ms)
+  6/1491: Method: wtf_strwidth
+  7/1491: 7/1491: wtf_strwidth (DONE:82ms)
+  7/1491: Method: popValue
+  8/1491: 8/1491: popValue (DONE:38ms)
+  8/1491: Method: Strchop
+  9/1491: 9/1491: Strchop (DONE:59ms)
+  9/1491: Method: currentLn
+ 10/1491: 10/1491: currentLn (DONE:14ms)
+ 10/1491: Method: setfcolor
+ 11/1491: 11/1491: setfcolor (DONE:31ms)
+ 11/1491: Method: Strclear
+ 12/1491: 12/1491: Strclear (DONE:7ms)
+ 12/1491: Method: standend
+ 13/1491: 13/1491: standend (DONE:6ms)
+ 13/1491: Method: ceil_at_intervals
+ 14/1491: 14/1491: ceil_at_intervals (DONE:56ms)
+ 14/1491: Method: Strdelete
+ 15/1491: 15/1491: Strdelete (DONE:89ms)
+ 15/1491: Method: ex_efct
+ 16/1491: 16/1491: ex_efct (DONE:42ms)
+ 16/1491: Method: standout
+ 17/1491: 17/1491: standout (DONE:6ms)
+ 17/1491: Method: graphend
+ 18/1491: 18/1491: graphend (DONE:7ms)
+ 18/1491: Method: weight2
+ 19/1491: 19/1491: weight2 (DONE:19ms)
+ 19/1491: Method: touch_column
+ 20/1491: 20/1491: touch_column (DONE:57ms)
+ 20/1491: Method: boldend
+ 21/1491: 21/1491: boldend (DONE:6ms)
+ 21/1491: Method: has_hidden_link
+ 22/1491: 22/1491: has_hidden_link (DONE:114ms)
+ 22/1491: Method: graphstart
+ 23/1491: 23/1491: graphstart (DONE:6ms)
+ 23/1491: Method: wc_get_ucs_table
+ 24/1491: 24/1491: wc_get_ucs_table (DONE:943ms)
+ 24/1491: Method: Strremovefirstspaces
+ 25/1491: 25/1491: Strremovefirstspaces (DONE:58ms)
+ 25/1491: Method: prevBuffer
+ 26/1491: 26/1491: prevBuffer (DONE:25ms)
+ 26/1491: Method: touch_line
+ 27/1491: 27/1491: touch_line (DONE:155ms)
+ 27/1491: Method: matchedPosition
+ 28/1491: 28/1491: matchedPosition (DONE:6ms)
+ 28/1491: Method: wc_ces_to_charset
+ 29/1491: 29/1491: wc_ces_to_charset (DONE:18ms)
+ 29/1491: Method: wc_parse_iso2022_esc
+ 30/1491: 30/1491: wc_parse_iso2022_esc (DONE:1175ms)
+ 30/1491: Method: wc_ucs_to_utf8
+ 31/1491: 31/1491: wc_ucs_to_utf8 (DONE:363ms)
+ 31/1491: Method: correct_table_matrix
+ 32/1491: 32/1491: correct_table_matrix (DONE:205ms)
+ 32/1491: Method: bold
+ 33/1491: 33/1491: bold (DONE:7ms)
+ 33/1491: Method: underlineend
+ 34/1491: 34/1491: underlineend (DONE:7ms)
+ 34/1491: Method: setbcolor
+ 35/1491: 35/1491: setbcolor (DONE:27ms)
+ 35/1491: Method: Strremovetrailingspaces
+ 36/1491: 36/1491: Strremovetrailingspaces (DONE:50ms)
+ 36/1491: Method: wtf_len
+ 37/1491: 37/1491: wtf_len (DONE:45ms)
+ 37/1491: Method: __divdi3
+ 38/1491: 38/1491: __divdi3 (DONE:483ms)
+ 38/1491: Method: →pclose
+ 39/1491: 39/1491: →pclose (DONE:4ms)
+ 39/1491: Method: clear_mark
+ 40/1491: 40/1491: clear_mark (DONE:42ms)
+ 40/1491: Method: posTab
+ 41/1491: 41/1491: posTab (DONE:88ms)
+ 41/1491: Method: nthBuffer
+ 42/1491: 42/1491: nthBuffer (DONE:80ms)
+ 42/1491: Method: setStrType
+ 43/1491: 43/1491: setStrType (DONE:166ms)
+ 43/1491: Method: table_rule_width
+ 44/1491: 44/1491: table_rule_width (DONE:8ms)
+ 44/1491: Method: w3m_dir
+ 45/1491: 45/1491: w3m_dir (DONE:4ms)
+ 45/1491: Method: wc_cs128w_to_gbk
+ 46/1491: 46/1491: wc_cs128w_to_gbk (DONE:149ms)
+ 46/1491: Method: w3m_auxbin_dir
+ 47/1491: 47/1491: w3m_auxbin_dir (DONE:10ms)
+ 47/1491: Method: mouse_scroll_line
+ 48/1491: 48/1491: mouse_scroll_line (DONE:27ms)
+ 48/1491: Method: numTab
+ 49/1491: 49/1491: numTab (DONE:50ms)
+ 49/1491: Method: set_mark
+ 50/1491: 50/1491: set_mark (DONE:40ms)
+ 50/1491: Method: check_cell_width
+ 51/1491: 51/1491: check_cell_width (DONE:678ms)
+ 51/1491: Method: check_minimum_width
+ 52/1491: 52/1491: check_minimum_width (DONE:147ms)
+ 52/1491: Method: updateSelectOption
+ 53/1491: 53/1491: updateSelectOption (DONE:38ms)
+ 53/1491: Method: str_to_bool
+ 54/1491: 54/1491: str_to_bool (DONE:224ms)
+ 54/1491: Method: mMouse_scroll_line
+ 55/1491: 55/1491: mMouse_scroll_line (DONE:36ms)
+ 55/1491: Method: wrap
+ 56/1491: 56/1491: wrap (DONE:16ms)
+ 56/1491: Method: toggle_stand
+ 57/1491: 57/1491: toggle_stand (DONE:86ms)
+ 57/1491: Method: underline
+ 58/1491: 58/1491: underline (DONE:6ms)
+ 58/1491: Method: closest_next_anchor
+ 59/1491: 59/1491: closest_next_anchor (DONE:578ms)
+ 59/1491: Method: do_update
+ 60/1491: 60/1491: do_update (DONE:41ms)
+ 60/1491: Method: Strtruncate
+ 61/1491: 61/1491: Strtruncate (DONE:6ms)
+ 61/1491: Method: appendGeneralList
+ 62/1491: 62/1491: appendGeneralList (DONE:47ms)
+ 62/1491: Method: wc_jisx0201k_to_jisx0208
+ 63/1491: 63/1491: wc_jisx0201k_to_jisx0208 (DONE:14ms)
+ 63/1491: Method: __i686.get_pc_thunk.bx
+ 64/1491: 64/1491: __i686.get_pc_thunk.bx (DONE:2ms)
+ 64/1491: Method: set_alignment
+ 65/1491: 65/1491: set_alignment (DONE:88ms)
+ 65/1491: Method: effect_active_end
+ 66/1491: 66/1491: effect_active_end (DONE:20ms)
+ 66/1491: Method: do_color
+ 67/1491: 67/1491: do_color (DONE:57ms)
+ 67/1491: Method: sloppy_parse_line
+ 68/1491: 68/1491: sloppy_parse_line (DONE:55ms)
+ 68/1491: Method: process_n_form
+ 69/1491: 69/1491: process_n_form (DONE:11ms)
+ 69/1491: Method: next_status
+ 70/1491: 70/1491: next_status (DONE:361ms)
+ 70/1491: Method: _mvL
+ 71/1491: 71/1491: _mvL (DONE:23ms)
+ 71/1491: Method: terminated
+ 72/1491: 72/1491: terminated (DONE:29ms)
+ 72/1491: Method: bsearch_2short
+ 73/1491: 73/1491: bsearch_2short (DONE:126ms)
+ 73/1491: Method: table_colspan
+ 74/1491: 74/1491: table_colspan (DONE:51ms)
+ 74/1491: Method: table_border_width
+ 75/1491: 75/1491: table_border_width (DONE:41ms)
+ 75/1491: Method: correct_table_matrix2
+ 76/1491: 76/1491: correct_table_matrix2 (DONE:276ms)
+ 76/1491: Method: geom_menu
+ 77/1491: 77/1491: geom_menu (DONE:319ms)
+ 77/1491: Method: graph_ok
+ 78/1491: 78/1491: graph_ok (DONE:16ms)
+ 78/1491: Method: hashfunc
+ 79/1491: 79/1491: hashfunc (DONE:44ms)
+ 79/1491: Method: wc_sjis_ext_to_cs94w
+ 80/1491: 80/1491: wc_sjis_ext_to_cs94w (DONE:112ms)
+ 80/1491: Method: wc_input_init
+ 81/1491: 81/1491: wc_input_init (DONE:153ms)
+ 81/1491: Method: wc_cs128w_to_uhc
+ 82/1491: 82/1491: wc_cs128w_to_uhc (DONE:139ms)
+ 82/1491: Method: wc_cs94w_to_big5
+ 83/1491: 83/1491: wc_cs94w_to_big5 (DONE:114ms)
+ 83/1491: Method: wc_cs128w_to_hkscs
+ 84/1491: 84/1491: wc_cs128w_to_hkscs (DONE:106ms)
+ 84/1491: Method: effect_visited_end
+ 85/1491: 85/1491: effect_visited_end (DONE:15ms)
+ 85/1491: Method: effect_image_end
+ 86/1491: 86/1491: effect_image_end (DONE:14ms)
+ 86/1491: Method: effect_form_end
+ 87/1491: 87/1491: effect_form_end (DONE:14ms)
+ 87/1491: Method: effect_anchor_end
+ 88/1491: 88/1491: effect_anchor_end (DONE:14ms)
+ 88/1491: Method: effect_mark_end
+ 89/1491: 89/1491: effect_mark_end (DONE:13ms)
+ 89/1491: Method: keyPressEventProc
+ 90/1491: 90/1491: keyPressEventProc (DONE:12ms)
+ 90/1491: Method: nulcmd
+ 91/1491: 91/1491: nulcmd (DONE:2ms)
+ 91/1491: Method: prev_nonnull_line
+ 92/1491: 92/1491: prev_nonnull_line (DONE:40ms)
+ 92/1491: Method: next_nonnull_line
+ 93/1491: 93/1491: next_nonnull_line (DONE:37ms)
+ 93/1491: Method: cur_real_linenumber
+ 94/1491: 94/1491: cur_real_linenumber (DONE:49ms)
+ 94/1491: Method: skip_auth_token
+ 95/1491: 95/1491: skip_auth_token (DONE:62ms)
+ 95/1491: Method: is_word_char
+ 96/1491: 96/1491: is_word_char (DONE:45ms)
+ 96/1491: Method: table_width
+ 97/1491: 97/1491: table_width (DONE:34ms)
+ 97/1491: Method: clearBuffer
+ 98/1491: 98/1491: clearBuffer (DONE:9ms)
+ 98/1491: Method: nextColumn
+ 99/1491: 99/1491: nextColumn (DONE:122ms)
+ 99/1491: Method: table_rowspan
+100/1491: 100/1491: table_rowspan (DONE:85ms)
+100/1491: Method: unloadFrame
+101/1491: 101/1491: unloadFrame (DONE:4ms)
+101/1491: Method: addFrameSetElement
+102/1491: 102/1491: addFrameSetElement (DONE:27ms)
+102/1491: Method: clrtobot_eol
+103/1491: 103/1491: clrtobot_eol (DONE:34ms)
+103/1491: Method: clrtobotx
+104/1491: 104/1491: clrtobotx (DONE:10ms)
+104/1491: Method: ha2d
+105/1491: 105/1491: ha2d (DONE:153ms)
+105/1491: Method: match_longchar
+106/1491: 106/1491: match_longchar (DONE:172ms)
+106/1491: Method: port_match
+107/1491: 107/1491: port_match (DONE:25ms)
+107/1491: Method: lastHist
+108/1491: 108/1491: lastHist (DONE:17ms)
+108/1491: Method: onAnchor
+109/1491: 109/1491: onAnchor (DONE:76ms)
+109/1491: Method: retrieveAnchor
+110/1491: 110/1491: retrieveAnchor (DONE:124ms)
+110/1491: Method: retrieveCurrentAnchor
+111/1491: 111/1491: retrieveCurrentAnchor (DONE:17ms)
+111/1491: Method: retrieveCurrentForm
+112/1491: 112/1491: retrieveCurrentForm (DONE:17ms)
+112/1491: Method: retrieveCurrentImg
+113/1491: 113/1491: retrieveCurrentImg (DONE:20ms)
+113/1491: Method: shiftAnchorPosition
+114/1491: 114/1491: shiftAnchorPosition (DONE:439ms)
+114/1491: Method: reseq_anchor0
+115/1491: 115/1491: reseq_anchor0 (DONE:56ms)
+115/1491: Method: closest_prev_anchor
+116/1491: 116/1491: closest_prev_anchor (DONE:534ms)
+116/1491: Method: Strlower
+117/1491: 117/1491: Strlower (DONE:45ms)
+117/1491: Method: Strupper
+118/1491: 118/1491: Strupper (DONE:48ms)
+118/1491: Method: lookupHash_iv
+119/1491: 119/1491: lookupHash_iv (DONE:33ms)
+119/1491: Method: wc_check_ces
+120/1491: 120/1491: wc_check_ces (DONE:27ms)
+120/1491: Method: wc_create_detect_map
+121/1491: 121/1491: wc_create_detect_map (DONE:137ms)
+121/1491: Method: wc_N_to_johab1
+122/1491: 122/1491: wc_N_to_johab1 (DONE:102ms)
+122/1491: Method: wc_cs94w_to_sjis_ext
+123/1491: 123/1491: wc_cs94w_to_sjis_ext (DONE:98ms)
+123/1491: Method: wc_ucs_get_tag
+124/1491: 124/1491: wc_ucs_get_tag (DONE:24ms)
+124/1491: Method: wc_uhc_to_cs128w
+125/1491: 125/1491: wc_uhc_to_cs128w (DONE:64ms)
+125/1491: Method: wc_utf8_to_ucs
+126/1491: 126/1491: wc_utf8_to_ucs (DONE:912ms)
+126/1491: Method: wc_big5_to_cs94w
+127/1491: 127/1491: wc_big5_to_cs94w (DONE:101ms)
+127/1491: Method: wc_cs128w_to_gbk_ext
+128/1491: 128/1491: wc_cs128w_to_gbk_ext (DONE:130ms)
+128/1491: Method: wc_gbk_to_cs128w
+129/1491: 129/1491: wc_gbk_to_cs128w (DONE:50ms)
+129/1491: Method: wc_hkscs_to_cs128w
+130/1491: 130/1491: wc_hkscs_to_cs128w (DONE:50ms)
+130/1491: Method: new_menu
+131/1491: 131/1491: new_menu (DONE:311ms)
+131/1491: Method: delC
+132/1491: 132/1491: delC (DONE:74ms)
+132/1491: Method: effect_active_start
+133/1491: 133/1491: effect_active_start (DONE:18ms)
+133/1491: Method: ISgetc
+134/1491: 134/1491: ISgetc (DONE:36ms)
+134/1491: Method: wc_cs128w_to_johab
+135/1491: 135/1491: wc_cs128w_to_johab (DONE:575ms)
+135/1491: Method: wtf_parse1
+136/1491: 136/1491: wtf_parse1 (DONE:1724ms)
+136/1491: Method: set_longchar
+137/1491: 137/1491: set_longchar (DONE:115ms)
+137/1491: Method: wtf_get_code
+138/1491: 138/1491: wtf_get_code (DONE:14ms)
+138/1491: Method: _bs
+139/1491: 139/1491: _bs (DONE:11ms)
+139/1491: Method: sub_8049C32
+140/1491: 140/1491: sub_8049C32 (DONE:3ms)
+140/1491: Method: →strcmp
+141/1491: 141/1491: →strcmp (DONE:6ms)
+141/1491: Method: →GC_malloc
+142/1491: 142/1491: →GC_malloc (DONE:7ms)
+142/1491: Method: →fwrite
+143/1491: 143/1491: →fwrite (DONE:6ms)
+143/1491: Method: →strcasecmp
+144/1491: 144/1491: →strcasecmp (DONE:6ms)
+144/1491: Method: →strncmp
+145/1491: 145/1491: →strncmp (DONE:7ms)
+145/1491: Method: →strlen
+146/1491: 146/1491: →strlen (DONE:6ms)
+146/1491: Method: →strchr
+147/1491: 147/1491: →strchr (DONE:5ms)
+147/1491: Method: →atoi
+148/1491: 148/1491: →atoi (DONE:5ms)
+148/1491: Method: →strncasecmp
+149/1491: 149/1491: →strncasecmp (DONE:6ms)
+149/1491: Method: →fopen
+150/1491: 150/1491: →fopen (DONE:6ms)
+150/1491: Method: →GC_realloc
+151/1491: 151/1491: →GC_realloc (DONE:4ms)
+151/1491: Method: →GC_malloc_atomic
+152/1491: 152/1491: →GC_malloc_atomic (DONE:4ms)
+152/1491: Method: Strnew
+153/1491: 153/1491: Strnew (DONE:18ms)
+153/1491: Method: Strnew_size
+154/1491: 154/1491: Strnew_size (DONE:21ms)
+154/1491: Method: →fprintf
+155/1491: 155/1491: →fprintf (DONE:6ms)
+155/1491: Method: →bcopy
+156/1491: 156/1491: →bcopy (DONE:5ms)
+156/1491: Method: Strnew_charp
+157/1491: 157/1491: Strnew_charp (DONE:33ms)
+157/1491: Method: Strnew_charp_n
+158/1491: 158/1491: Strnew_charp_n (DONE:31ms)
+158/1491: Method: →getenv
+159/1491: 159/1491: →getenv (DONE:4ms)
+159/1491: Method: calcPosition
+160/1491: 160/1491: calcPosition (DONE:627ms)
+160/1491: Method: →tgetstr
+161/1491: 161/1491: →tgetstr (DONE:4ms)
+161/1491: Method: →printf
+162/1491: 162/1491: →printf (DONE:5ms)
+162/1491: Method: →__stack_chk_fail
+163/1491: 163/1491: →__stack_chk_fail (DONE:4ms)
+163/1491: Method: →unlink
+164/1491: 164/1491: →unlink (DONE:5ms)
+164/1491: Method: newGeneralList
+165/1491: 165/1491: newGeneralList (DONE:15ms)
+165/1491: Method: →bzero
+166/1491: 166/1491: →bzero (DONE:5ms)
+166/1491: Method: newBuffer
+167/1491: 167/1491: newBuffer (DONE:44ms)
+167/1491: Method: →__errno_location
+168/1491: 168/1491: →__errno_location (DONE:4ms)
+168/1491: Method: check_row
+169/1491: 169/1491: check_row (DONE:1058ms)
+169/1491: Method: getWord
+170/1491: 170/1491: getWord (DONE:60ms)
+170/1491: Method: →exit
+171/1491: 171/1491: →exit (DONE:4ms)
+171/1491: Method: allocStr
+172/1491: 172/1491: allocStr (DONE:43ms)
+172/1491: Method: copyParsedURL
+173/1491: 173/1491: copyParsedURL (DONE:97ms)
+173/1491: Method: →sprintf
+174/1491: 174/1491: →sprintf (DONE:5ms)
+174/1491: Method: →fflush
+175/1491: 175/1491: →fflush (DONE:4ms)
+175/1491: Method: →fread
+176/1491: 176/1491: →fread (DONE:6ms)
+176/1491: Method: →__sigsetjmp
+177/1491: 177/1491: →__sigsetjmp (DONE:5ms)
+177/1491: Method: →fputs
+178/1491: 178/1491: →fputs (DONE:5ms)
+178/1491: Method: →close
+179/1491: 179/1491: →close (DONE:4ms)
+179/1491: Method: is_html_type
+180/1491: 180/1491: is_html_type (DONE:20ms)
+180/1491: Method: →feof
+181/1491: 181/1491: →feof (DONE:4ms)
+181/1491: Method: newTextLine
+182/1491: 182/1491: newTextLine (DONE:19ms)
+182/1491: Method: remove_space
+183/1491: 183/1491: remove_space (DONE:84ms)
+183/1491: Method: checkHeader
+184/1491: 184/1491: checkHeader (DONE:42ms)
+184/1491: Method: →strcasestr
+185/1491: 185/1491: →strcasestr (DONE:5ms)
+185/1491: Method: flush_tty
+186/1491: 186/1491: flush_tty (DONE:12ms)
+186/1491: Method: →memset
+187/1491: 187/1491: →memset (DONE:5ms)
+187/1491: Method: init_stream
+188/1491: 188/1491: init_stream (DONE:20ms)
+188/1491: Method: →gettext
+189/1491: 189/1491: →gettext (DONE:5ms)
+189/1491: Method: →dup2
+190/1491: 190/1491: →dup2 (DONE:5ms)
+190/1491: Method: →memchr
+191/1491: 191/1491: →memchr (DONE:5ms)
+191/1491: Method: check_minimum0
+192/1491: 192/1491: check_minimum0 (DONE:294ms)
+192/1491: Method: →popen
+193/1491: 193/1491: →popen (DONE:5ms)
+193/1491: Method: →system
+194/1491: 194/1491: →system (DONE:4ms)
+194/1491: Method: →sqrt
+195/1491: 195/1491: →sqrt (DONE:5ms)
+195/1491: Method: →memcpy
+196/1491: 196/1491: →memcpy (DONE:10ms)
+196/1491: Method: →time
+197/1491: 197/1491: →time (DONE:4ms)
+197/1491: Method: putAnchor
+198/1491: 198/1491: putAnchor (DONE:1605ms)
+198/1491: Method: columnSkip
+199/1491: 199/1491: columnSkip (DONE:147ms)
+199/1491: Method: →floor
+200/1491: 200/1491: →floor (DONE:5ms)
+200/1491: Method: →fdopen
+201/1491: 201/1491: →fdopen (DONE:5ms)
+201/1491: Method: →GC_free
+202/1491: 202/1491: →GC_free (DONE:4ms)
+202/1491: Method: Strgrow
+203/1491: 203/1491: Strgrow (DONE:61ms)
+203/1491: Method: Strcat_charp_n
+204/1491: 204/1491: Strcat_charp_n (DONE:72ms)
+204/1491: Method: Strcat_charp
+205/1491: 205/1491: Strcat_charp (DONE:14ms)
+205/1491: Method: html_quote
+206/1491: 206/1491: html_quote (DONE:106ms)
+206/1491: Method: Strcat
+207/1491: 207/1491: Strcat (DONE:12ms)
+207/1491: Method: Strcat_m_charp
+208/1491: 208/1491: Strcat_m_charp (DONE:21ms)
+208/1491: Method: Strnew_m_charp
+209/1491: 209/1491: Strnew_m_charp (DONE:21ms)
+209/1491: Method: url_quote
+210/1491: 210/1491: url_quote (DONE:319ms)
+210/1491: Method: getQWord
+211/1491: 211/1491: getQWord (DONE:1408ms)
+211/1491: Method: Strcopy_charp_n
+212/1491: 212/1491: Strcopy_charp_n (DONE:46ms)
+212/1491: Method: file_unquote
+213/1491: 213/1491: file_unquote (DONE:335ms)
+213/1491: Method: matchattr
+214/1491: 214/1491: matchattr (DONE:498ms)
+214/1491: Method: Str_form_quote
+215/1491: 215/1491: Str_form_quote (DONE:226ms)
+215/1491: Method: readcol
+216/1491: 216/1491: readcol (DONE:93ms)
+216/1491: Method: shell_quote
+217/1491: 217/1491: shell_quote (DONE:194ms)
+217/1491: Method: file_quote
+218/1491: 218/1491: file_quote (DONE:111ms)
+218/1491: Method: StrmyISgets
+219/1491: 219/1491: StrmyISgets (DONE:630ms)
+219/1491: Method: copyPath
+220/1491: 220/1491: copyPath (DONE:151ms)
+220/1491: Method: →kill
+221/1491: 221/1491: →kill (DONE:5ms)
+221/1491: Method: next_token
+222/1491: 222/1491: next_token (DONE:82ms)
+222/1491: Method: columnPos
+223/1491: 223/1491: columnPos (DONE:93ms)
+223/1491: Method: arrangeLine
+224/1491: 224/1491: arrangeLine (DONE:169ms)
+224/1491: Method: addcontentssize
+225/1491: 225/1491: addcontentssize (DONE:35ms)
+225/1491: Method: parsedtag_set_value
+226/1491: 226/1491: parsedtag_set_value (DONE:70ms)
+226/1491: Method: matchMailcapAttr
+227/1491: 227/1491: matchMailcapAttr (DONE:384ms)
+227/1491: Method: StrISgets
+228/1491: 228/1491: StrISgets (DONE:218ms)
+228/1491: Method: wc_push_tag_to_utf8
+229/1491: 229/1491: wc_push_tag_to_utf8 (DONE:64ms)
+229/1491: Method: →open
+230/1491: 230/1491: →open (DONE:5ms)
+230/1491: Method: →qsort
+231/1491: 231/1491: →qsort (DONE:6ms)
+231/1491: Method: →freeaddrinfo
+232/1491: 232/1491: →freeaddrinfo (DONE:5ms)
+232/1491: Method: →siglongjmp
+233/1491: 233/1491: →siglongjmp (DONE:4ms)
+233/1491: Method: →fgetc
+234/1491: 234/1491: →fgetc (DONE:4ms)
+234/1491: Method: →fork
+235/1491: 235/1491: →fork (DONE:4ms)
+235/1491: Method: new_option_menu
+236/1491: 236/1491: new_option_menu (DONE:194ms)
+236/1491: Method: newHist
+237/1491: 237/1491: newHist (DONE:12ms)
+237/1491: Method: mybasename
+238/1491: 238/1491: mybasename (DONE:57ms)
+238/1491: Method: align
+239/1491: 239/1491: align (DONE:994ms)
+239/1491: Method: →bsearch
+240/1491: 240/1491: →bsearch (DONE:6ms)
+240/1491: Method: wc_map_search
+241/1491: 241/1491: wc_map_search (DONE:13ms)
+241/1491: Method: wc_ucs_to_any
+242/1491: 242/1491: wc_ucs_to_any (DONE:223ms)
+242/1491: Method: wc_ucs_to_any_list
+243/1491: 243/1491: wc_ucs_to_any_list (DONE:50ms)
+243/1491: Method: →__isoc99_sscanf
+244/1491: 244/1491: →__isoc99_sscanf (DONE:4ms)
+244/1491: Method: →putchar
+245/1491: 245/1491: →putchar (DONE:4ms)
+245/1491: Method: →tcgetattr
+246/1491: 246/1491: →tcgetattr (DONE:4ms)
+246/1491: Method: →strtok
+247/1491: 247/1491: →strtok (DONE:5ms)
+247/1491: Method: →tgoto
+248/1491: 248/1491: →tgoto (DONE:4ms)
+248/1491: Method: →tcsetattr
+249/1491: 249/1491: →tcsetattr (DONE:5ms)
+249/1491: Method: need_redraw2
+250/1491: 250/1491: need_redraw2 (DONE:52ms)
+250/1491: Method: setAlarmEvent
+251/1491: 251/1491: setAlarmEvent (DONE:21ms)
+251/1491: Method: new_vector
+252/1491: 252/1491: new_vector (DONE:15ms)
+252/1491: Method: set_breakpoint
+253/1491: 253/1491: set_breakpoint (DONE:71ms)
+253/1491: Method: init_henv
+254/1491: 254/1491: init_henv (DONE:75ms)
+254/1491: Method: popFrameTree
+255/1491: 255/1491: popFrameTree (DONE:37ms)
+255/1491: Method: putHmarker
+256/1491: 256/1491: putHmarker (DONE:144ms)
+256/1491: Method: read_token
+257/1491: 257/1491: read_token (DONE:2584ms)
+257/1491: Method: wc_map_range_search
+258/1491: 258/1491: wc_map_range_search (DONE:14ms)
+258/1491: Method: wc_jisx0208_or_jisx02131
+259/1491: 259/1491: wc_jisx0208_or_jisx02131 (DONE:16ms)
+259/1491: Method: →fileno
+260/1491: 260/1491: →fileno (DONE:4ms)
+260/1491: Method: →write
+261/1491: 261/1491: →write (DONE:5ms)
+261/1491: Method: →getaddrinfo
+262/1491: 262/1491: →getaddrinfo (DONE:6ms)
+262/1491: Method: →atol
+263/1491: 263/1491: →atol (DONE:4ms)
+263/1491: Method: →atof
+264/1491: 264/1491: →atof (DONE:4ms)
+264/1491: Method: →fputc
+265/1491: 265/1491: →fputc (DONE:5ms)
+265/1491: Method: →sscanf
+266/1491: 266/1491: →sscanf (DONE:7ms)
+266/1491: Method: →ferror
+267/1491: 267/1491: →ferror (DONE:4ms)
+267/1491: Method: Strfgets
+268/1491: 268/1491: Strfgets (DONE:66ms)
+268/1491: Method: →getpwnam
+269/1491: 269/1491: →getpwnam (DONE:4ms)
+269/1491: Method: expandPath
+270/1491: 270/1491: expandPath (DONE:150ms)
+270/1491: Method: rcFile
+271/1491: 271/1491: rcFile (DONE:85ms)
+271/1491: Method: →tolower
+272/1491: 272/1491: →tolower (DONE:4ms)
+272/1491: Method: searchMapList
+273/1491: 273/1491: searchMapList (DONE:24ms)
+273/1491: Method: total_dot_number
+274/1491: 274/1491: total_dot_number (DONE:55ms)
+274/1491: Method: is_wordchar
+275/1491: 275/1491: is_wordchar (DONE:28ms)
+275/1491: Method: new_matrix
+276/1491: 276/1491: new_matrix (DONE:20ms)
+276/1491: Method: getMapXY
+277/1491: 277/1491: getMapXY (DONE:185ms)
+277/1491: Method: set_delayed_message
+278/1491: 278/1491: set_delayed_message (DONE:10ms)
+278/1491: Method: filename_extension
+279/1491: 279/1491: filename_extension (DONE:152ms)
+279/1491: Method: check_expired_cookies
+280/1491: 280/1491: check_expired_cookies (DONE:86ms)
+280/1491: Method: registerHref
+281/1491: 281/1491: registerHref (DONE:22ms)
+281/1491: Method: Strsubstr
+282/1491: 282/1491: Strsubstr (DONE:109ms)
+282/1491: Method: Str_url_unquote
+283/1491: 283/1491: Str_url_unquote (DONE:654ms)
+283/1491: Method: romanNum2
+284/1491: 284/1491: romanNum2 (DONE:888ms)
+284/1491: Method: myExtCommand
+285/1491: 285/1491: myExtCommand (DONE:174ms)
+285/1491: Method: init_migemo
+286/1491: 286/1491: init_migemo (DONE:26ms)
+286/1491: Method: shiftvisualpos
+287/1491: 287/1491: shiftvisualpos (DONE:89ms)
+287/1491: Method: wc_map3_range_search
+288/1491: 288/1491: wc_map3_range_search (DONE:13ms)
+288/1491: Method: wc_ucs_to_iso2022w
+289/1491: 289/1491: wc_ucs_to_iso2022w (DONE:140ms)
+289/1491: Method: wc_ucs_to_iso2022
+290/1491: 290/1491: wc_ucs_to_iso2022 (DONE:257ms)
+290/1491: Method: wc_gb2312_or_gbk
+291/1491: 291/1491: wc_gb2312_or_gbk (DONE:14ms)
+291/1491: Method: wc_charset_to_ces
+292/1491: 292/1491: wc_charset_to_ces (DONE:3497ms)
+292/1491: Method: wc_guess_charset
+293/1491: 293/1491: wc_guess_charset (DONE:20ms)
+293/1491: Method: checkContentType
+294/1491: 294/1491: checkContentType (DONE:225ms)
+294/1491: Method: newFormList
+295/1491: 295/1491: newFormList (DONE:126ms)
+295/1491: Method: →read
+296/1491: 296/1491: →read (DONE:5ms)
+296/1491: Method: →symlink
+297/1491: 297/1491: →symlink (DONE:5ms)
+297/1491: Method: →ioctl
+298/1491: 298/1491: →ioctl (DONE:5ms)
+298/1491: Method: →fseek
+299/1491: 299/1491: →fseek (DONE:5ms)
+299/1491: Method: →isatty
+300/1491: 300/1491: →isatty (DONE:4ms)
+300/1491: Method: →dup
+301/1491: 301/1491: →dup (DONE:4ms)
+301/1491: Method: →mktime
+302/1491: 302/1491: →mktime (DONE:4ms)
+302/1491: Method: →alarm
+303/1491: 303/1491: →alarm (DONE:4ms)
+303/1491: Method: →freopen
+304/1491: 304/1491: →freopen (DONE:5ms)
+304/1491: Method: →sleep
+305/1491: 305/1491: →sleep (DONE:4ms)
+305/1491: Method: →strcat
+306/1491: 306/1491: →strcat (DONE:4ms)
+306/1491: Method: cleanupName
+307/1491: 307/1491: cleanupName (DONE:399ms)
+307/1491: Method: →log
+308/1491: 308/1491: →log (DONE:5ms)
+308/1491: Method: →puts
+309/1491: 309/1491: →puts (DONE:4ms)
+309/1491: Method: →_IO_putc
+310/1491: 310/1491: →_IO_putc (DONE:5ms)
+310/1491: Method: write1
+311/1491: 311/1491: write1 (DONE:12ms)
+311/1491: Method: getMenuN
+312/1491: 312/1491: getMenuN (DONE:33ms)
+312/1491: Method: newTab
+313/1491: 313/1491: newTab (DONE:16ms)
+313/1491: Method: newListItem
+314/1491: 314/1491: newListItem (DONE:13ms)
+314/1491: Method: pushValue
+315/1491: 315/1491: pushValue (DONE:25ms)
+315/1491: Method: pushdata
+316/1491: 316/1491: pushdata (DONE:85ms)
+316/1491: Method: pushHist
+317/1491: 317/1491: pushHist (DONE:44ms)
+317/1491: Method: make_domain_list
+318/1491: 318/1491: make_domain_list (DONE:207ms)
+318/1491: Method: record_err_message
+319/1491: 319/1491: record_err_message (DONE:39ms)
+319/1491: Method: putHash_iv
+320/1491: 320/1491: putHash_iv (DONE:45ms)
+320/1491: Method: newHash_sv
+321/1491: 321/1491: newHash_sv (DONE:46ms)
+321/1491: Method: get_auth_param
+322/1491: 322/1491: get_auth_param (DONE:24ms)
+322/1491: Method: chooseSelectOption
+323/1491: 323/1491: chooseSelectOption (DONE:51ms)
+323/1491: Method: form_write_data
+324/1491: 324/1491: form_write_data (DONE:19ms)
+324/1491: Method: getMetaRefreshParam
+325/1491: 325/1491: getMetaRefreshParam (DONE:255ms)
+325/1491: Method: lastFileName
+326/1491: 326/1491: lastFileName (DONE:34ms)
+326/1491: Method: add_auth_pass_entry
+327/1491: 327/1491: add_auth_pass_entry (DONE:85ms)
+327/1491: Method: Strcopy
+328/1491: 328/1491: Strcopy (DONE:42ms)
+328/1491: Method: Strdup
+329/1491: 329/1491: Strdup (DONE:13ms)
+329/1491: Method: unescape_spaces
+330/1491: 330/1491: unescape_spaces (DONE:133ms)
+330/1491: Method: cleanup_line
+331/1491: 331/1491: cleanup_line (DONE:436ms)
+331/1491: Method: escape_spaces
+332/1491: 332/1491: escape_spaces (DONE:161ms)
+332/1491: Method: wc_push_iso2022_esc
+333/1491: 333/1491: wc_push_iso2022_esc (DONE:3372ms)
+333/1491: Method: getAnchorText
+334/1491: 334/1491: getAnchorText (DONE:322ms)
+334/1491: Method: quote_mailcap
+335/1491: 335/1491: quote_mailcap (DONE:248ms)
+335/1491: Method: form2str
+336/1491: 336/1491: form2str (DONE:101ms)
+336/1491: Method: print_item
+337/1491: 337/1491: print_item (DONE:224ms)
+337/1491: Method: wc_ucs_to_fullwidth
+338/1491: 338/1491: wc_ucs_to_fullwidth (DONE:20ms)
+338/1491: Method: weight
+339/1491: 339/1491: weight (DONE:24ms)
+339/1491: Method: make_cookie
+340/1491: 340/1491: make_cookie (DONE:34ms)
+340/1491: Method: appendTextLine
+341/1491: 341/1491: appendTextLine (DONE:37ms)
+341/1491: Method: →inet_ntop
+342/1491: 342/1491: →inet_ntop (DONE:6ms)
+342/1491: Method: →localtime
+343/1491: 343/1491: →localtime (DONE:4ms)
+343/1491: Method: →getpass
+344/1491: 344/1491: →getpass (DONE:4ms)
+344/1491: Method: →ttyname
+345/1491: 345/1491: →ttyname (DONE:5ms)
+345/1491: Method: →execl
+346/1491: 346/1491: →execl (DONE:5ms)
+346/1491: Method: →chmod
+347/1491: 347/1491: →chmod (DONE:4ms)
+347/1491: Method: →readdir
+348/1491: 348/1491: →readdir (DONE:4ms)
+348/1491: Method: →strtol
+349/1491: 349/1491: →strtol (DONE:6ms)
+349/1491: Method: →opendir
+350/1491: 350/1491: →opendir (DONE:4ms)
+350/1491: Method: →strstr
+351/1491: 351/1491: →strstr (DONE:4ms)
+351/1491: Method: →Gpm_Close
+352/1491: 352/1491: →Gpm_Close (DONE:4ms)
+352/1491: Method: mouse_end
+353/1491: 353/1491: mouse_end (DONE:21ms)
+353/1491: Method: mouse_inactive
+354/1491: 354/1491: mouse_inactive (DONE:11ms)
+354/1491: Method: →tgetnum
+355/1491: 355/1491: →tgetnum (DONE:4ms)
+355/1491: Method: →gmtime
+356/1491: 356/1491: →gmtime (DONE:5ms)
+356/1491: Method: →fscanf
+357/1491: 357/1491: →fscanf (DONE:5ms)
+357/1491: Method: →pipe
+358/1491: 358/1491: →pipe (DONE:5ms)
+358/1491: Method: open_pipe_rw
+359/1491: 359/1491: open_pipe_rw (DONE:171ms)
+359/1491: Method: searchAnchor
+360/1491: 360/1491: searchAnchor (DONE:69ms)
+360/1491: Method: searchURLLabel
+361/1491: 361/1491: searchURLLabel (DONE:11ms)
+361/1491: Method: lookupHash_si
+362/1491: 362/1491: lookupHash_si (DONE:37ms)
+362/1491: Method: getHash_si
+363/1491: 363/1491: getHash_si (DONE:17ms)
+363/1491: Method: getFuncList
+364/1491: 364/1491: getFuncList (DONE:9ms)
+364/1491: Method: getescapechar
+365/1491: 365/1491: getescapechar (DONE:594ms)
+365/1491: Method: setMouseAction2
+366/1491: 366/1491: setMouseAction2 (DONE:32ms)
+366/1491: Method: putHash_si
+367/1491: 367/1491: putHash_si (DONE:45ms)
+367/1491: Method: lookupHash_ss
+368/1491: 368/1491: lookupHash_ss (DONE:35ms)
+368/1491: Method: lookupHash_sv
+369/1491: 369/1491: lookupHash_sv (DONE:35ms)
+369/1491: Method: putHash_sv
+370/1491: 370/1491: putHash_sv (DONE:43ms)
+370/1491: Method: getHash_sv
+371/1491: 371/1491: getHash_sv (DONE:18ms)
+371/1491: Method: getHashHist
+372/1491: 372/1491: getHashHist (DONE:38ms)
+372/1491: Method: pushHashHist
+373/1491: 373/1491: pushHashHist (DONE:59ms)
+373/1491: Method: save_buffer_position
+374/1491: 374/1491: save_buffer_position (DONE:151ms)
+374/1491: Method: addnewline2
+375/1491: 375/1491: addnewline2 (DONE:80ms)
+375/1491: Method: pushFrameTree
+376/1491: 376/1491: pushFrameTree (DONE:94ms)
+376/1491: Method: addSelectOption
+377/1491: 377/1491: addSelectOption (DONE:36ms)
+377/1491: Method: newHash_iv
+378/1491: 378/1491: newHash_iv (DONE:47ms)
+378/1491: Method: formtype
+379/1491: 379/1491: formtype (DONE:30ms)
+379/1491: Method: same_url_p
+380/1491: 380/1491: same_url_p (DONE:59ms)
+380/1491: Method: find_auth_pass_entry
+381/1491: 381/1491: find_auth_pass_entry (DONE:105ms)
+381/1491: Method: find_auth_user_passwd
+382/1491: 382/1491: find_auth_user_passwd (DONE:52ms)
+382/1491: Method: add_pre_form_item
+383/1491: 383/1491: add_pre_form_item (DONE:69ms)
+383/1491: Method: ul_type
+384/1491: 384/1491: ul_type (DONE:33ms)
+384/1491: Method: guessContentTypeFromTable
+385/1491: 385/1491: guessContentTypeFromTable (DONE:106ms)
+385/1491: Method: guessContentType
+386/1491: 386/1491: guessContentType (DONE:57ms)
+386/1491: Method: uncompressed_file_type
+387/1491: 387/1491: uncompressed_file_type (DONE:142ms)
+387/1491: Method: search_param
+388/1491: 388/1491: search_param (DONE:211ms)
+388/1491: Method: check_compression
+389/1491: 389/1491: check_compression (DONE:75ms)
+389/1491: Method: getURLScheme
+390/1491: 390/1491: getURLScheme (DONE:135ms)
+390/1491: Method: is_text_type
+391/1491: 391/1491: is_text_type (DONE:26ms)
+391/1491: Method: getKey2
+392/1491: 392/1491: getKey2 (DONE:2564ms)
+392/1491: Method: addMenuList
+393/1491: 393/1491: addMenuList (DONE:68ms)
+393/1491: Method: init_buffer
+394/1491: 394/1491: init_buffer (DONE:21ms)
+394/1491: Method: init_base_stream
+395/1491: 395/1491: init_base_stream (DONE:10ms)
+395/1491: Method: newEncodedStream
+396/1491: 396/1491: newEncodedStream (DONE:57ms)
+396/1491: Method: newFileStream
+397/1491: 397/1491: newFileStream (DONE:30ms)
+397/1491: Method: newInputStream
+398/1491: 398/1491: newInputStream (DONE:22ms)
+398/1491: Method: fversion
+399/1491: 399/1491: fversion (DONE:12ms)
+399/1491: Method: term_title
+400/1491: 400/1491: term_title (DONE:19ms)
+400/1491: Method: get_table_width
+401/1491: 401/1491: get_table_width (DONE:2123ms)
+401/1491: Method: deleteFrame
+402/1491: 402/1491: deleteFrame (DONE:13ms)
+402/1491: Method: nullBuffer
+403/1491: 403/1491: nullBuffer (DONE:11ms)
+403/1491: Method: get_spec_cell_width
+404/1491: 404/1491: get_spec_cell_width (DONE:79ms)
+404/1491: Method: setwidth0
+405/1491: 405/1491: setwidth0 (DONE:187ms)
+405/1491: Method: setwidth
+406/1491: 406/1491: setwidth (DONE:64ms)
+406/1491: Method: table_close_anchor0
+407/1491: 407/1491: table_close_anchor0 (DONE:64ms)
+407/1491: Method: clearcontentssize
+408/1491: 408/1491: clearcontentssize (DONE:18ms)
+408/1491: Method: close_tty
+409/1491: 409/1491: close_tty (DONE:14ms)
+409/1491: Method: readBufferCache
+410/1491: 410/1491: readBufferCache (DONE:920ms)
+410/1491: Method: copyBuffer
+411/1491: 411/1491: copyBuffer (DONE:12ms)
+411/1491: Method: _newT
+412/1491: 412/1491: _newT (DONE:93ms)
+412/1491: Method: registerName
+413/1491: 413/1491: registerName (DONE:18ms)
+413/1491: Method: registerImg
+414/1491: 414/1491: registerImg (DONE:20ms)
+414/1491: Method: Strinsert_char
+415/1491: 415/1491: Strinsert_char (DONE:85ms)
+415/1491: Method: insC
+416/1491: 416/1491: insC (DONE:33ms)
+416/1491: Method: qstr_unquote
+417/1491: 417/1491: qstr_unquote (DONE:127ms)
+417/1491: Method: get_day
+418/1491: 418/1491: get_day (DONE:100ms)
+418/1491: Method: get_year
+419/1491: 419/1491: get_year (DONE:134ms)
+419/1491: Method: make_portlist
+420/1491: 420/1491: make_portlist (DONE:134ms)
+420/1491: Method: romanAlphabet
+421/1491: 421/1491: romanAlphabet (DONE:240ms)
+421/1491: Method: get_month
+422/1491: 422/1491: get_month (DONE:309ms)
+422/1491: Method: get_time
+423/1491: 423/1491: get_time (DONE:689ms)
+423/1491: Method: extract_auth_val
+424/1491: 424/1491: extract_auth_val (DONE:530ms)
+424/1491: Method: extract_auth_param
+425/1491: 425/1491: extract_auth_param (DONE:559ms)
+425/1491: Method: encodeB
+426/1491: 426/1491: encodeB (DONE:709ms)
+426/1491: Method: textfieldrep
+427/1491: 427/1491: textfieldrep (DONE:806ms)
+427/1491: Method: setMouseAction0
+428/1491: 428/1491: setMouseAction0 (DONE:287ms)
+428/1491: Method: closeImgdisplay
+429/1491: 429/1491: closeImgdisplay (DONE:23ms)
+429/1491: Method: wc_get_ces_list
+430/1491: 430/1491: wc_get_ces_list (DONE:201ms)
+430/1491: Method: guess_filename
+431/1491: 431/1491: guess_filename (DONE:77ms)
+431/1491: Method: guess_save_name
+432/1491: 432/1491: guess_save_name (DONE:180ms)
+432/1491: Method: wc_ucs_to_johab
+433/1491: 433/1491: wc_ucs_to_johab (DONE:73ms)
+433/1491: Method: reseq_anchor
+434/1491: 434/1491: reseq_anchor (DONE:938ms)
+434/1491: Method: reAnchorPos
+435/1491: 435/1491: reAnchorPos (DONE:316ms)
+435/1491: Method: wc_is_ucs_combining
+436/1491: 436/1491: wc_is_ucs_combining (DONE:26ms)
+436/1491: Method: wc_is_ucs_hangul
+437/1491: 437/1491: wc_is_ucs_hangul (DONE:16ms)
+437/1491: Method: auxbinFile
+438/1491: 438/1491: auxbinFile (DONE:13ms)
+438/1491: Method: addDownloadList
+439/1491: 439/1491: addDownloadList (DONE:66ms)
+439/1491: Method: getCurWord
+440/1491: 440/1491: getCurWord (DONE:168ms)
+440/1491: Method: romanNumeral
+441/1491: 441/1491: romanNumeral (DONE:235ms)
+441/1491: Method: wc_gbk_or_gbk_ext
+442/1491: 442/1491: wc_gbk_or_gbk_ext (DONE:14ms)
+442/1491: Method: file_to_url
+443/1491: 443/1491: file_to_url (DONE:104ms)
+443/1491: Method: suspend_or_pushdata
+444/1491: 444/1491: suspend_or_pushdata (DONE:38ms)
+444/1491: Method: add_auth_user_passwd
+445/1491: 445/1491: add_auth_user_passwd (DONE:25ms)
+445/1491: Method: parsePasswd
+446/1491: 446/1491: parsePasswd (DONE:556ms)
+446/1491: Method: setlinescols
+447/1491: 447/1491: setlinescols (DONE:117ms)
+447/1491: Method: setMouseAction1
+448/1491: 448/1491: setMouseAction1 (DONE:347ms)
+448/1491: Method: begin_cell
+449/1491: 449/1491: begin_cell (DONE:94ms)
+449/1491: Method: check_rowcol
+450/1491: 450/1491: check_rowcol (DONE:200ms)
+450/1491: Method: feed_table_inline_tag
+451/1491: 451/1491: feed_table_inline_tag (DONE:32ms)
+451/1491: Method: feed_table_block_tag
+452/1491: 452/1491: feed_table_block_tag (DONE:202ms)
+452/1491: Method: findAuthentication
+453/1491: 453/1491: findAuthentication (DONE:399ms)
+453/1491: Method: syncImage
+454/1491: 454/1491: syncImage (DONE:42ms)
+454/1491: Method: wc_is_combining
+455/1491: 455/1491: wc_is_combining (DONE:111ms)
+455/1491: Method: GetWord
+456/1491: 456/1491: GetWord (DONE:25ms)
+456/1491: Method: clearImage
+457/1491: 457/1491: clearImage (DONE:154ms)
+457/1491: Method: __do_global_dtors_aux
+458/1491: 458/1491: __do_global_dtors_aux (DONE:32ms)
+458/1491: Method: frame_dummy
+459/1491: 459/1491: frame_dummy (DONE:13ms)
+459/1491: Method: checkBackBuffer
+460/1491: 460/1491: checkBackBuffer (DONE:45ms)
+460/1491: Method: calcTabPos
+461/1491: 461/1491: calcTabPos (DONE:609ms)
+461/1491: Method: compress_application_type
+462/1491: 462/1491: compress_application_type (DONE:29ms)
+462/1491: Method: is_period_char
+463/1491: 463/1491: is_period_char (DONE:12ms)
+463/1491: Method: is_beginning_char
+464/1491: 464/1491: is_beginning_char (DONE:25ms)
+464/1491: Method: is_combining_char
+465/1491: 465/1491: is_combining_char (DONE:17ms)
+465/1491: Method: is_boundary
+466/1491: 466/1491: is_boundary (DONE:78ms)
+466/1491: Method: clear_ignore_p_flag
+467/1491: 467/1491: clear_ignore_p_flag (DONE:29ms)
+467/1491: Method: need_flushline
+468/1491: 468/1491: need_flushline (DONE:63ms)
+468/1491: Method: _mvR
+469/1491: 469/1491: _mvR (DONE:24ms)
+469/1491: Method: Usolve
+470/1491: 470/1491: Usolve (DONE:491ms)
+470/1491: Method: Lsolve
+471/1491: 471/1491: Lsolve (DONE:491ms)
+471/1491: Method: LUsolve
+472/1491: 472/1491: LUsolve (DONE:87ms)
+472/1491: Method: bsearch_double
+473/1491: 473/1491: bsearch_double (DONE:129ms)
+473/1491: Method: floor_at_intervals
+474/1491: 474/1491: floor_at_intervals (DONE:39ms)
+474/1491: Method: minimum_cellspacing
+475/1491: 475/1491: minimum_cellspacing (DONE:13ms)
+475/1491: Method: visible_length_plain
+476/1491: 476/1491: visible_length_plain (DONE:173ms)
+476/1491: Method: check_maximum_width
+477/1491: 477/1491: check_maximum_width (DONE:149ms)
+477/1491: Method: correct_table_matrix3
+478/1491: 478/1491: correct_table_matrix3 (DONE:396ms)
+478/1491: Method: correct_table_matrix4
+479/1491: 479/1491: correct_table_matrix4 (DONE:385ms)
+479/1491: Method: nearestMapArea
+480/1491: 480/1491: nearestMapArea (DONE:127ms)
+480/1491: Method: guess_menu_xy
+481/1491: 481/1491: guess_menu_xy (DONE:125ms)
+481/1491: Method: mailcapMatch
+482/1491: 482/1491: mailcapMatch (DONE:232ms)
+482/1491: Method: schemeToProxy
+483/1491: 483/1491: schemeToProxy (DONE:18ms)
+483/1491: Method: c2e
+484/1491: 484/1491: c2e (DONE:64ms)
+484/1491: Method: decodeB
+485/1491: 485/1491: decodeB (DONE:537ms)
+485/1491: Method: match_range_longchar
+486/1491: 486/1491: match_range_longchar (DONE:579ms)
+486/1491: Method: matchWhich
+487/1491: 487/1491: matchWhich (DONE:79ms)
+487/1491: Method: regmatch1
+488/1491: 488/1491: regmatch1 (DONE:95ms)
+488/1491: Method: nth_cookie
+489/1491: 489/1491: nth_cookie (DONE:31ms)
+489/1491: Method: nextHist
+490/1491: 490/1491: nextHist (DONE:21ms)
+490/1491: Method: prevHist
+491/1491: 491/1491: prevHist (DONE:20ms)
+491/1491: Method: ISundogetc
+492/1491: 492/1491: ISundogetc (DONE:15ms)
+492/1491: Method: strcasematch
+493/1491: 493/1491: strcasematch (DONE:83ms)
+493/1491: Method: rpopValue
+494/1491: 494/1491: rpopValue (DONE:22ms)
+494/1491: Method: purgeline
+495/1491: 495/1491: purgeline (DONE:64ms)
+495/1491: Method: delValue
+496/1491: 496/1491: delValue (DONE:19ms)
+496/1491: Method: wc_ces_to_charset_desc
+497/1491: 497/1491: wc_ces_to_charset_desc (DONE:14ms)
+497/1491: Method: wc_guess_8bit_charset
+498/1491: 498/1491: wc_guess_8bit_charset (DONE:27ms)
+498/1491: Method: wc_create_gmap
+499/1491: 499/1491: wc_create_gmap (DONE:670ms)
+499/1491: Method: wc_jisx0212_or_jisx02132
+500/1491: 500/1491: wc_jisx0212_or_jisx02132 (DONE:23ms)
+500/1491: Method: wc_johab1_to_N
+501/1491: 501/1491: wc_johab1_to_N (DONE:76ms)
+501/1491: Method: wc_johab_to_cs128w
+502/1491: 502/1491: wc_johab_to_cs128w (DONE:249ms)
+502/1491: Method: wc_putc_clear_status
+503/1491: 503/1491: wc_putc_clear_status (DONE:8ms)
+503/1491: Method: wc_sjis_ext1_to_N
+504/1491: 504/1491: wc_sjis_ext1_to_N (DONE:41ms)
+504/1491: Method: wc_sjis_ext2_to_N
+505/1491: 505/1491: wc_sjis_ext2_to_N (DONE:29ms)
+505/1491: Method: wc_ces_has_ccs
+506/1491: 506/1491: wc_ces_has_ccs (DONE:43ms)
+506/1491: Method: wc_uhc_to_N
+507/1491: 507/1491: wc_uhc_to_N (DONE:210ms)
+507/1491: Method: wc_tcvn5712_precompose
+508/1491: 508/1491: wc_tcvn5712_precompose (DONE:31ms)
+508/1491: Method: wc_cp1258_precompose
+509/1491: 509/1491: wc_cp1258_precompose (DONE:30ms)
+509/1491: Method: wc_gbk_ext_to_cs128w
+510/1491: 510/1491: wc_gbk_ext_to_cs128w (DONE:48ms)
+510/1491: Method: wc_gbk_to_N
+511/1491: 511/1491: wc_gbk_to_N (DONE:1129ms)
+511/1491: Method: wc_hkscs_to_N
+512/1491: 512/1491: wc_hkscs_to_N (DONE:55ms)
+512/1491: Method: __moddi3
+513/1491: 513/1491: __moddi3 (DONE:638ms)
+513/1491: Method: __do_global_ctors_aux
+514/1491: 514/1491: __do_global_ctors_aux (DONE:41ms)
+514/1491: Method: effect_visited_start
+515/1491: 515/1491: effect_visited_start (DONE:13ms)
+515/1491: Method: effect_image_start
+516/1491: 516/1491: effect_image_start (DONE:13ms)
+516/1491: Method: effect_form_start
+517/1491: 517/1491: effect_form_start (DONE:13ms)
+517/1491: Method: clrtoeol
+518/1491: 518/1491: clrtoeol (DONE:180ms)
+518/1491: Method: touch_cursor
+519/1491: 519/1491: touch_cursor (DONE:109ms)
+519/1491: Method: effect_mark_start
+520/1491: 520/1491: effect_mark_start (DONE:16ms)
+520/1491: Method: w3m_lib_dir
+521/1491: 521/1491: w3m_lib_dir (DONE:9ms)
+521/1491: Method: w3m_etc_dir
+522/1491: 522/1491: w3m_etc_dir (DONE:8ms)
+522/1491: Method: w3m_conf_dir
+523/1491: 523/1491: w3m_conf_dir (DONE:8ms)
+523/1491: Method: confFile
+524/1491: 524/1491: confFile (DONE:14ms)
+524/1491: Method: effect_anchor_start
+525/1491: 525/1491: effect_anchor_start (DONE:14ms)
+525/1491: Method: _mvLw
+526/1491: 526/1491: _mvLw (DONE:57ms)
+526/1491: Method: _mvRw
+527/1491: 527/1491: _mvRw (DONE:60ms)
+527/1491: Method: wc_char_conv_init
+528/1491: 528/1491: wc_char_conv_init (DONE:12ms)
+528/1491: Method: columnLen
+529/1491: 529/1491: columnLen (DONE:91ms)
+529/1491: Method: addnewline
+530/1491: 530/1491: addnewline (DONE:380ms)
+530/1491: Method: getHash_iv
+531/1491: 531/1491: getHash_iv (DONE:18ms)
+531/1491: Method: getKeyData
+532/1491: 532/1491: getKeyData (DONE:13ms)
+532/1491: Method: searchKeyData
+533/1491: 533/1491: searchKeyData (DONE:48ms)
+533/1491: Method: searchKeyNum
+534/1491: 534/1491: searchKeyNum (DONE:26ms)
+534/1491: Method: escKeyProc
+535/1491: 535/1491: escKeyProc (DONE:89ms)
+535/1491: Method: wtf_init
+536/1491: 536/1491: wtf_init (DONE:122ms)
+536/1491: Method: wc_auto_detect
+537/1491: 537/1491: wc_auto_detect (DONE:16069ms)
+537/1491: Method: _bsw
+538/1491: 538/1491: _bsw (DONE:38ms)
+538/1491: Method: →abort
+539/1491: 539/1491: →abort (DONE:4ms)
+539/1491: Method: →sigemptyset
+540/1491: 540/1491: →sigemptyset (DONE:5ms)
+540/1491: Method: →connect
+541/1491: 541/1491: →connect (DONE:6ms)
+541/1491: Method: →getpid
+542/1491: 542/1491: →getpid (DONE:4ms)
+542/1491: Method: →mkdir
+543/1491: 543/1491: →mkdir (DONE:4ms)
+543/1491: Method: →srand48
+544/1491: 544/1491: →srand48 (DONE:4ms)
+544/1491: Method: →strerror
+545/1491: 545/1491: →strerror (DONE:5ms)
+545/1491: Method: →getsockname
+546/1491: 546/1491: →getsockname (DONE:5ms)
+546/1491: Method: →memcmp
+547/1491: 547/1491: →memcmp (DONE:5ms)
+547/1491: Method: wc_output_init
+548/1491: 548/1491: wc_output_init (DONE:2145ms)
+548/1491: Method: →inet_ntoa
+549/1491: 549/1491: →inet_ntoa (DONE:5ms)
+549/1491: Method: →tgetflag
+550/1491: 550/1491: →tgetflag (DONE:5ms)
+550/1491: Method: →__xstat
+551/1491: 551/1491: →__xstat (DONE:6ms)
+551/1491: Method: stat
+552/1491: 552/1491: stat (DONE:19ms)
+552/1491: Method: dir_exist
+553/1491: 553/1491: dir_exist (DONE:29ms)
+553/1491: Method: checkCopyFile
+554/1491: 554/1491: checkCopyFile (DONE:40ms)
+554/1491: Method: →__gmon_start__
+555/1491: 555/1491: →__gmon_start__ (DONE:5ms)
+555/1491: Method: →__lxstat
+556/1491: 556/1491: →__lxstat (DONE:5ms)
+556/1491: Method: lstat
+557/1491: 557/1491: lstat (DONE:17ms)
+557/1491: Method: checkDownloadList
+558/1491: 558/1491: checkDownloadList (DONE:29ms)
+558/1491: Method: →vsprintf
+559/1491: 559/1491: →vsprintf (DONE:6ms)
+559/1491: Method: Sprintf
+560/1491: 560/1491: Sprintf (DONE:546ms)
+560/1491: Method: tmpfname
+561/1491: 561/1491: tmpfname (DONE:40ms)
+561/1491: Method: ftp_command
+562/1491: 562/1491: ftp_command (DONE:291ms)
+562/1491: Method: push_symbol
+563/1491: 563/1491: push_symbol (DONE:115ms)
+563/1491: Method: news_command
+564/1491: 564/1491: news_command (DONE:64ms)
+564/1491: Method: convert_size
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+565/1491: 565/1491: convert_size (DONE:119ms)
+565/1491: Method: parsedtag2str
+566/1491: 566/1491: parsedtag2str (DONE:314ms)
+566/1491: Method: convert_size2
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+[W] Cannot set type ? on IR i32:FFFFFFFFh
+567/1491: 567/1491: convert_size2 (DONE:194ms)
+567/1491: Method: convert_size3
+568/1491: 568/1491: convert_size3 (DONE:38ms)
+568/1491: Method: portlist2str
+569/1491: 569/1491: portlist2str (DONE:28ms)
+569/1491: Method: myEditor
+570/1491: 570/1491: myEditor (DONE:459ms)
+570/1491: Method: print_sep
+571/1491: 571/1491: print_sep (DONE:2807ms)
+571/1491: Method: process_n_textarea
+572/1491: 572/1491: process_n_textarea (DONE:196ms)
+572/1491: Method: getImageSize
+573/1491: 573/1491: getImageSize (DONE:1238ms)
+573/1491: Method: getImage
+574/1491: 574/1491: getImage (DONE:508ms)
+574/1491: Method: process_option
+575/1491: 575/1491: process_option (DONE:489ms)
+575/1491: Method: _parsedURL2Str
+576/1491: 576/1491: _parsedURL2Str (DONE:3412ms)
+576/1491: Method: parsedURL2Str
+577/1491: 577/1491: parsedURL2Str (DONE:9ms)
+577/1491: Method: save_cookies
+578/1491: 578/1491: save_cookies (DONE:244ms)
+578/1491: Method: print_headers
+579/1491: 579/1491: print_headers (DONE:77ms)
+579/1491: Method: parseFrameSetLength
+580/1491: 580/1491: parseFrameSetLength (DONE:227ms)
+580/1491: Method: process_anchor
+581/1491: 581/1491: process_anchor (DONE:46ms)
+581/1491: Method: process_n_select
+582/1491: 582/1491: process_n_select (DONE:60ms)
+582/1491: Method: otherinfo
+583/1491: 583/1491: otherinfo (DONE:497ms)
+583/1491: Method: →strncpy
+584/1491: 584/1491: →strncpy (DONE:6ms)
+584/1491: Method: addmch
+585/1491: 585/1491: addmch (DONE:14679ms)
+585/1491: Method: addstr
+586/1491: 586/1491: addstr (DONE:27ms)
+586/1491: Method: addnstr_sup
+587/1491: 587/1491: addnstr_sup (DONE:115ms)
+587/1491: Method: draw_menu_item
+588/1491: 588/1491: draw_menu_item (DONE:36ms)
+588/1491: Method: draw_menu
+589/1491: 589/1491: draw_menu (DONE:2138ms)
+589/1491: Method: up_menu
+590/1491: 590/1491: up_menu (DONE:27ms)
+590/1491: Method: down_menu
+591/1491: 591/1491: down_menu (DONE:50ms)
+591/1491: Method: addnstr
+592/1491: 592/1491: addnstr (DONE:76ms)
+592/1491: Method: →rename
+593/1491: 593/1491: →rename (DONE:6ms)
+593/1491: Method: →__libc_start_main
+594/1491: 594/1491: →__libc_start_main (DONE:4ms)
+594/1491: Method: →_IO_getc
+595/1491: 595/1491: →_IO_getc (DONE:4ms)
+595/1491: Method: →strrchr
+596/1491: 596/1491: →strrchr (DONE:5ms)
+596/1491: Method: →GC_set_warn_proc
+597/1491: 597/1491: →GC_set_warn_proc (DONE:4ms)
+597/1491: Method: →bindtextdomain
+598/1491: 598/1491: →bindtextdomain (DONE:5ms)
+598/1491: Method: →strtoll
+599/1491: 599/1491: →strtoll (DONE:6ms)
+599/1491: Method: →ungetc
+600/1491: 600/1491: →ungetc (DONE:5ms)
+600/1491: Method: →tgetent
+601/1491: 601/1491: →tgetent (DONE:4ms)
+601/1491: Method: →sigaction
+602/1491: 602/1491: →sigaction (DONE:6ms)
+602/1491: Method: mySignal
+603/1491: 603/1491: mySignal (DONE:28ms)
+603/1491: Method: ISclose
+604/1491: 604/1491: ISclose (DONE:29ms)
+604/1491: Method: news_close
+605/1491: 605/1491: news_close (DONE:34ms)
+605/1491: Method: myExec
+606/1491: 606/1491: myExec (DONE:29ms)
+606/1491: Method: ftp_close
+607/1491: 607/1491: ftp_close (DONE:44ms)
+607/1491: Method: loadcmdout
+608/1491: 608/1491: loadcmdout (DONE:48ms)
+608/1491: Method: news_quit
+609/1491: 609/1491: news_quit (DONE:13ms)
+609/1491: Method: ftp_quit
+610/1491: 610/1491: ftp_quit (DONE:15ms)
+610/1491: Method: →socket
+611/1491: 611/1491: →socket (DONE:6ms)
+611/1491: Method: →execlp
+612/1491: 612/1491: →execlp (DONE:6ms)
+612/1491: Method: →utime
+613/1491: 613/1491: →utime (DONE:5ms)
+613/1491: Method: setModtime
+614/1491: 614/1491: setModtime (DONE:22ms)
+614/1491: Method: →getpwuid
+615/1491: 615/1491: →getpwuid (DONE:6ms)
+615/1491: Method: →setlocale
+616/1491: 616/1491: →setlocale (DONE:5ms)
+616/1491: Method: →waitpid
+617/1491: 617/1491: →waitpid (DONE:6ms)
+617/1491: Method: →strcpy
+618/1491: 618/1491: →strcpy (DONE:5ms)
+618/1491: Method: →getegid
+619/1491: 619/1491: →getegid (DONE:4ms)
+619/1491: Method: →chdir
+620/1491: 620/1491: →chdir (DONE:6ms)
+620/1491: Method: →ctime
+621/1491: 621/1491: →ctime (DONE:5ms)
+621/1491: Method: →tputs
+622/1491: 622/1491: →tputs (DONE:5ms)
+622/1491: Method: writestr
+623/1491: 623/1491: writestr (DONE:9ms)
+623/1491: Method: clear
+624/1491: 624/1491: clear (DONE:73ms)
+624/1491: Method: reset_tty
+625/1491: 625/1491: reset_tty (DONE:44ms)
+625/1491: Method: setupscreen
+626/1491: 626/1491: setupscreen (DONE:302ms)
+626/1491: Method: →getuid
+627/1491: 627/1491: →getuid (DONE:5ms)
+627/1491: Method: →lrand48
+628/1491: 628/1491: →lrand48 (DONE:4ms)
+628/1491: Method: →gethostbyaddr
+629/1491: 629/1491: →gethostbyaddr (DONE:6ms)
+629/1491: Method: →select
+630/1491: 630/1491: →select (DONE:6ms)
+630/1491: Method: →closedir
+631/1491: 631/1491: →closedir (DONE:5ms)
+631/1491: Method: →Gpm_Wgetch
+632/1491: 632/1491: →Gpm_Wgetch (DONE:4ms)
+632/1491: Method: →nl_langinfo
+633/1491: 633/1491: →nl_langinfo (DONE:5ms)
+633/1491: Method: →gethostname
+634/1491: 634/1491: →gethostname (DONE:5ms)
+634/1491: Method: localCookie
+635/1491: 635/1491: localCookie (DONE:44ms)
+635/1491: Method: →atan2
+636/1491: 636/1491: →atan2 (DONE:6ms)
+636/1491: Method: →readlink
+637/1491: 637/1491: →readlink (DONE:5ms)
+637/1491: Method: →getnameinfo
+638/1491: 638/1491: →getnameinfo (DONE:7ms)
+638/1491: Method: →getcwd
+639/1491: 639/1491: →getcwd (DONE:6ms)
+639/1491: Method: →setpgrp
+640/1491: 640/1491: →setpgrp (DONE:5ms)
+640/1491: Method: →textdomain
+641/1491: 641/1491: →textdomain (DONE:5ms)
+641/1491: Method: →strspn
+642/1491: 642/1491: →strspn (DONE:6ms)
+642/1491: Method: →__fxstat
+643/1491: 643/1491: →__fxstat (DONE:6ms)
+643/1491: Method: fstat
+644/1491: 644/1491: fstat (DONE:18ms)
+644/1491: Method: →Gpm_Open
+645/1491: 645/1491: →Gpm_Open (DONE:6ms)
+645/1491: Method: →strftime
+646/1491: 646/1491: →strftime (DONE:6ms)
+646/1491: Method: →strcspn
+647/1491: 647/1491: →strcspn (DONE:5ms)
+647/1491: Method: →strdup
+648/1491: 648/1491: →strdup (DONE:5ms)
+648/1491: Method: FQDN
+649/1491: 649/1491: FQDN (DONE:158ms)
+649/1491: Method: →getpeername
+650/1491: 650/1491: →getpeername (DONE:6ms)
+650/1491: Method: →setenv
+651/1491: 651/1491: →setenv (DONE:6ms)
+651/1491: Method: set_environ
+652/1491: 652/1491: set_environ (DONE:15ms)
+652/1491: Method: →ceil
+653/1491: 653/1491: →ceil (DONE:5ms)
+653/1491: Method: →geteuid
+654/1491: 654/1491: →geteuid (DONE:5ms)
+654/1491: Method: retrieveCurrentMap
+655/1491: 655/1491: retrieveCurrentMap (DONE:37ms)
+655/1491: Method: pushEvent
+656/1491: 656/1491: pushEvent (DONE:19ms)
+656/1491: Method: push_link
+657/1491: 657/1491: push_link (DONE:16ms)
+657/1491: Method: append_tags
+658/1491: 658/1491: append_tags (DONE:234ms)
+658/1491: Method: push_tag
+659/1491: 659/1491: push_tag (DONE:50ms)
+659/1491: Method: push_nchars
+660/1491: 660/1491: push_nchars (DONE:45ms)
+660/1491: Method: check_breakpoint
+661/1491: 661/1491: check_breakpoint (DONE:43ms)
+661/1491: Method: push_spaces
+662/1491: 662/1491: push_spaces (DONE:114ms)
+662/1491: Method: proc_mchar
+663/1491: 663/1491: proc_mchar (DONE:77ms)
+663/1491: Method: push_char
+664/1491: 664/1491: push_char (DONE:82ms)
+664/1491: Method: restore_fonteffect
+665/1491: 665/1491: restore_fonteffect (DONE:108ms)
+665/1491: Method: save_fonteffect
+666/1491: 666/1491: save_fonteffect (DONE:99ms)
+666/1491: Method: fillline
+667/1491: 667/1491: fillline (DONE:23ms)
+667/1491: Method: check_relative_width
+668/1491: 668/1491: check_relative_width (DONE:6390ms)
+668/1491: Method: newHash_si
+669/1491: 669/1491: newHash_si (DONE:49ms)
+669/1491: Method: tag_get_value
+670/1491: 670/1491: tag_get_value (DONE:23ms)
+670/1491: Method: wc_ucs_put_tag
+671/1491: 671/1491: wc_ucs_put_tag (DONE:66ms)
+671/1491: Method: get_cookie_info
+672/1491: 672/1491: get_cookie_info (DONE:42ms)
+672/1491: Method: setgraphchar
+673/1491: 673/1491: setgraphchar (DONE:90ms)
+673/1491: Method: domain_match
+674/1491: 674/1491: domain_match (DONE:45ms)
+674/1491: Method: str_to_color
+675/1491: 675/1491: str_to_color (DONE:67ms)
+675/1491: Method: addImage
+676/1491: 676/1491: addImage (DONE:70ms)
+676/1491: Method: newMapArea
+677/1491: 677/1491: newMapArea (DONE:2149ms)
+677/1491: Method: check_table_height
+678/1491: 678/1491: check_table_height (DONE:2141ms)
+678/1491: Method: process_title
+679/1491: 679/1491: process_title (DONE:8ms)
+679/1491: Method: show_column
+680/1491: 680/1491: show_column (DONE:10ms)
+680/1491: Method: back_to_breakpoint
+681/1491: 681/1491: back_to_breakpoint (DONE:55ms)
+681/1491: Method: buffer_read
+682/1491: 682/1491: buffer_read (DONE:44ms)
+682/1491: Method: ISread
+683/1491: 683/1491: ISread (DONE:89ms)
+683/1491: Method: copyFrame
+684/1491: 684/1491: copyFrame (DONE:12ms)
+684/1491: Method: form_update_line
+685/1491: 685/1491: form_update_line (DONE:2392ms)
+685/1491: Method: HTTPrequestMethod
+686/1491: 686/1491: HTTPrequestMethod (DONE:32ms)
+686/1491: Method: pushTable
+687/1491: 687/1491: pushTable (DONE:402ms)
+687/1491: Method: mydirname
+688/1491: 688/1491: mydirname (DONE:137ms)
+688/1491: Method: name_from_address
+689/1491: 689/1491: name_from_address (DONE:480ms)
+689/1491: Method: parse_ansi_color
+690/1491: 690/1491: parse_ansi_color (DONE:452ms)
+690/1491: Method: checkType
+691/1491: 691/1491: checkType (DONE:6786ms)
+691/1491: Method: DefaultFile
+692/1491: 692/1491: DefaultFile (DONE:34ms)
+692/1491: Method: parseURL
+693/1491: 693/1491: parseURL (DONE:16318ms)
+693/1491: Method: color_seq
+694/1491: 694/1491: color_seq (DONE:15ms)
+694/1491: Method: bcolor_seq
+695/1491: 695/1491: bcolor_seq (DONE:13ms)
+695/1491: Method: correlation_coefficient
+696/1491: 696/1491: correlation_coefficient (DONE:73ms)
+696/1491: Method: correlation_coefficient2
+697/1491: 697/1491: correlation_coefficient2 (DONE:86ms)
+697/1491: Method: recalc_width
+698/1491: 698/1491: recalc_width (DONE:542ms)
+698/1491: Method: check_compressible_cell
+699/1491: 699/1491: check_compressible_cell (DONE:7702ms)
+699/1491: Method: Strfree
+700/1491: 700/1491: Strfree (DONE:11ms)
+700/1491: Method: correct_irrtag
+701/1491: 701/1491: correct_irrtag (DONE:66ms)
+701/1491: Method: decodeU
+702/1491: 702/1491: decodeU (DONE:354ms)
+702/1491: Method: wc_push_to_hz_end
+703/1491: 703/1491: wc_push_to_hz_end (DONE:58ms)
+703/1491: Method: get_zone
+704/1491: 704/1491: get_zone (DONE:437ms)
+704/1491: Method: mymktime
+705/1491: 705/1491: mymktime (DONE:1252ms)
+705/1491: Method: decodeQP
+706/1491: 706/1491: decodeQP (DONE:310ms)
+706/1491: Method: decodeQ
+707/1491: 707/1491: decodeQ (DONE:254ms)
+707/1491: Method: html_quote_s
+708/1491: 708/1491: html_quote_s (DONE:157ms)
+708/1491: Method: add_news_message
+709/1491: 709/1491: add_news_message (DONE:79ms)
+709/1491: Method: process_n_title
+710/1491: 710/1491: process_n_title (DONE:23ms)
+710/1491: Method: newTable
+711/1491: 711/1491: newTable (DONE:173ms)
+711/1491: Method: make_optional_header_string
+712/1491: 712/1491: make_optional_header_string (DONE:168ms)
+712/1491: Method: stopDownload
+713/1491: 713/1491: stopDownload (DONE:28ms)
+713/1491: Method: addMultirowsForm
+714/1491: 714/1491: addMultirowsForm (DONE:1506ms)
+714/1491: Method: extractMailcapEntry
+715/1491: 715/1491: extractMailcapEntry (DONE:1375ms)
+715/1491: Method: wc_push_to_utf8_end
+716/1491: 716/1491: wc_push_to_utf8_end (DONE:13ms)
+716/1491: Method: close_all_fds_except
+717/1491: 717/1491: close_all_fds_except (DONE:59ms)
+717/1491: Method: create_option_search_table
+718/1491: 718/1491: create_option_search_table (DONE:552ms)
+718/1491: Method: wc_map3_search
+719/1491: 719/1491: wc_map3_search (DONE:20ms)
+719/1491: Method: wc_tcvn57123_to_tcvn5712
+720/1491: 720/1491: wc_tcvn57123_to_tcvn5712 (DONE:51ms)
+720/1491: Method: dump_source
+721/1491: 721/1491: dump_source (DONE:37ms)
+721/1491: Method: LUfactor
+722/1491: 722/1491: LUfactor (DONE:3465ms)
+722/1491: Method: wc_is_ucs_wide
+723/1491: 723/1491: wc_is_ucs_wide (DONE:27ms)
+723/1491: Method: wc_ucs_to_ccs
+724/1491: 724/1491: wc_ucs_to_ccs (DONE:48ms)
+724/1491: Method: write_from_file
+725/1491: 725/1491: write_from_file (DONE:33ms)
+725/1491: Method: set_column
+726/1491: 726/1491: set_column (DONE:19ms)
+726/1491: Method: Strfgetall
+727/1491: 727/1491: Strfgetall (DONE:56ms)
+727/1491: Method: readline
+728/1491: 728/1491: readline (DONE:32ms)
+728/1491: Method: expandName
+729/1491: 729/1491: expandName (DONE:203ms)
+729/1491: Method: parseURL2
+730/1491: 730/1491: parseURL2 (DONE:6569ms)
+730/1491: Method: set_buffer_environ
+731/1491: 731/1491: set_buffer_environ (DONE:426ms)
+731/1491: Method: cgistr2tagarg
+732/1491: 732/1491: cgistr2tagarg (DONE:272ms)
+732/1491: Method: wc_charset_short_to_ces
+733/1491: 733/1491: wc_charset_short_to_ces (DONE:628ms)
+733/1491: Method: wc_guess_charset_short
+734/1491: 734/1491: wc_guess_charset_short (DONE:21ms)
+734/1491: Method: set_param
+735/1491: 735/1491: set_param (DONE:599ms)
+735/1491: Method: interpret_rc
+736/1491: 736/1491: interpret_rc (DONE:133ms)
+736/1491: Method: set_param_option
+737/1491: 737/1491: set_param_option (DONE:288ms)
+737/1491: Method: check_charset
+738/1491: 738/1491: check_charset (DONE:13ms)
+738/1491: Method: check_accept_charset
+739/1491: 739/1491: check_accept_charset (DONE:101ms)
+739/1491: Method: process_form_int
+740/1491: 740/1491: process_form_int (DONE:580ms)
+740/1491: Method: process_form
+741/1491: 741/1491: process_form (DONE:9ms)
+741/1491: Method: loadURIMethods
+742/1491: 742/1491: loadURIMethods (DONE:423ms)
+742/1491: Method: initURIMethods
+743/1491: 743/1491: initURIMethods (DONE:105ms)
+743/1491: Method: loadMimeTypes
+744/1491: 744/1491: loadMimeTypes (DONE:346ms)
+744/1491: Method: initMimeTypes
+745/1491: 745/1491: initMimeTypes (DONE:71ms)
+745/1491: Method: bell
+746/1491: 746/1491: bell (DONE:9ms)
+746/1491: Method: unshiftHist
+747/1491: 747/1491: unshiftHist (DONE:51ms)
+747/1491: Method: split
+748/1491: 748/1491: split (DONE:1240ms)
+748/1491: Method: copyHist
+749/1491: 749/1491: copyHist (DONE:23ms)
+749/1491: Method: loadHistory
+750/1491: 750/1491: loadHistory (DONE:62ms)
+750/1491: Method: parse_cookie
+751/1491: 751/1491: parse_cookie (DONE:21ms)
+751/1491: Method: save_submit_formlist
+752/1491: 752/1491: save_submit_formlist (DONE:286ms)
+752/1491: Method: wc_push_to_iso2022_end
+753/1491: 753/1491: wc_push_to_iso2022_end (DONE:31ms)
+753/1491: Method: unquote_mailcap_loop
+754/1491: 754/1491: unquote_mailcap_loop (DONE:1760ms)
+754/1491: Method: unquote_mailcap
+755/1491: 755/1491: unquote_mailcap (DONE:14ms)
+755/1491: Method: searchMailcap
+756/1491: 756/1491: searchMailcap (DONE:59ms)
+756/1491: Method: searchExtViewer
+757/1491: 757/1491: searchExtViewer (DONE:58ms)
+757/1491: Method: is_dump_text_type
+758/1491: 758/1491: is_dump_text_type (DONE:18ms)
+758/1491: Method: is_plain_text_type
+759/1491: 759/1491: is_plain_text_type (DONE:24ms)
+759/1491: Method: ttyname_tty
+760/1491: 760/1491: ttyname_tty (DONE:9ms)
+760/1491: Method: set_tty
+761/1491: 761/1491: set_tty (DONE:149ms)
+761/1491: Method: gethtmlcmd
+762/1491: 762/1491: gethtmlcmd (DONE:438ms)
+762/1491: Method: passthrough
+763/1491: 763/1491: passthrough (DONE:172ms)
+763/1491: Method: close_effect0
+764/1491: 764/1491: close_effect0 (DONE:97ms)
+764/1491: Method: formList_addInput
+765/1491: 765/1491: formList_addInput (DONE:1634ms)
+765/1491: Method: invalidate_auth_user_passwd
+766/1491: 766/1491: invalidate_auth_user_passwd (DONE:21ms)
+766/1491: Method: getKey
+767/1491: 767/1491: getKey (DONE:59ms)
+767/1491: Method: setMenuItem
+768/1491: 768/1491: setMenuItem (DONE:248ms)
+768/1491: Method: init_str_stream
+769/1491: 769/1491: init_str_stream (DONE:13ms)
+769/1491: Method: newStrStream
+770/1491: 770/1491: newStrStream (DONE:18ms)
+770/1491: Method: end_table
+771/1491: 771/1491: end_table (DONE:536ms)
+771/1491: Method: addMultirowsImg
+772/1491: 772/1491: addMultirowsImg (DONE:2821ms)
+772/1491: Method: ins_char
+773/1491: 773/1491: ins_char (DONE:153ms)
+773/1491: Method: reAnchorWord
+774/1491: 774/1491: reAnchorWord (DONE:18ms)
+774/1491: Method: wtf_is_hangul
+775/1491: 775/1491: wtf_is_hangul (DONE:526ms)
+775/1491: Method: termImage
+776/1491: 776/1491: termImage (DONE:23ms)
+776/1491: Method: LUinverse
+777/1491: 777/1491: LUinverse (DONE:174ms)
+777/1491: Method: maximum_visible_length_plain
+778/1491: 778/1491: maximum_visible_length_plain (DONE:10ms)
+778/1491: Method: set_table_matrix0
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+779/1491: 779/1491: set_table_matrix0 (DONE:10777ms)
+779/1491: Method: etcFile
+780/1491: 780/1491: etcFile (DONE:14ms)
+780/1491: Method: init_rc
+781/1491: 781/1491: init_rc (DONE:441ms)
+781/1491: Method: do_effects
+782/1491: 782/1491: do_effects (DONE:313ms)
+782/1491: Method: wc_putc_init
+783/1491: 783/1491: wc_putc_init (DONE:15ms)
+783/1491: Method: check_command
+784/1491: 784/1491: check_command (DONE:122ms)
+784/1491: Method: checkPath
+785/1491: 785/1491: checkPath (DONE:163ms)
+785/1491: Method: form_write_from_file
+786/1491: 786/1491: form_write_from_file (DONE:79ms)
+786/1491: Method: size_int2str
+787/1491: 787/1491: size_int2str (DONE:134ms)
+787/1491: Method: writeBufferCache
+788/1491: 788/1491: writeBufferCache (DONE:636ms)
+788/1491: Method: tmpClearBuffer
+789/1491: 789/1491: tmpClearBuffer (DONE:17ms)
+789/1491: Method: closeFTPdata
+790/1491: 790/1491: closeFTPdata (DONE:21ms)
+790/1491: Method: ftp_modtime
+791/1491: 791/1491: ftp_modtime (DONE:151ms)
+791/1491: Method: process_hr
+792/1491: 792/1491: process_hr (DONE:171ms)
+792/1491: Method: getAllImage
+793/1491: 793/1491: getAllImage (DONE:89ms)
+793/1491: Method: xface2xpm
+794/1491: 794/1491: xface2xpm (DONE:138ms)
+794/1491: Method: HTTPrequestURI
+795/1491: 795/1491: HTTPrequestURI (DONE:114ms)
+795/1491: Method: currentURL
+796/1491: 796/1491: currentURL (DONE:22ms)
+796/1491: Method: searchURIMethods
+797/1491: 797/1491: searchURIMethods (DONE:246ms)
+797/1491: Method: dump_extra
+798/1491: 798/1491: dump_extra (DONE:32ms)
+798/1491: Method: newFrameSet
+799/1491: 799/1491: newFrameSet (DONE:68ms)
+799/1491: Method: clrtoeol_with_bcolor
+800/1491: 800/1491: clrtoeol_with_bcolor (DONE:45ms)
+800/1491: Method: clrtoeolx
+801/1491: 801/1491: clrtoeolx (DONE:7ms)
+801/1491: Method: message
+802/1491: 802/1491: message (DONE:32ms)
+802/1491: Method: strtoclen
+803/1491: 803/1491: strtoclen (DONE:10ms)
+803/1491: Method: lessopen_stream
+804/1491: 804/1491: lessopen_stream (DONE:76ms)
+804/1491: Method: set_int
+805/1491: 805/1491: set_int (DONE:25ms)
+805/1491: Method: reset_signals
+806/1491: 806/1491: reset_signals (DONE:29ms)
+806/1491: Method: setup_child
+807/1491: 807/1491: setup_child (DONE:24ms)
+807/1491: Method: mySystem
+808/1491: 808/1491: mySystem (DONE:23ms)
+808/1491: Method: closeNews
+809/1491: 809/1491: closeNews (DONE:8ms)
+809/1491: Method: closeFTP
+810/1491: 810/1491: closeFTP (DONE:8ms)
+810/1491: Method: UFhalfclose
+811/1491: 811/1491: UFhalfclose (DONE:32ms)
+811/1491: Method: disconnectNews
+812/1491: 812/1491: disconnectNews (DONE:7ms)
+812/1491: Method: disconnectFTP
+813/1491: 813/1491: disconnectFTP (DONE:9ms)
+813/1491: Method: last_modified
+814/1491: 814/1491: last_modified (DONE:57ms)
+814/1491: Method: wc_locale_to_ces
+815/1491: 815/1491: wc_locale_to_ces (DONE:341ms)
+815/1491: Method: wc_guess_locale_charset
+816/1491: 816/1491: wc_guess_locale_charset (DONE:21ms)
+816/1491: Method: inMapArea
+817/1491: 817/1491: inMapArea (DONE:3799ms)
+817/1491: Method: searchMapArea
+818/1491: 818/1491: searchMapArea (DONE:178ms)
+818/1491: Method: currentdir
+819/1491: 819/1491: currentdir (DONE:12ms)
+819/1491: Method: mouse_init
+820/1491: 820/1491: mouse_init (DONE:42ms)
+820/1491: Method: mouse_active
+821/1491: 821/1491: mouse_active (DONE:10ms)
+821/1491: Method: writeLocalCookie
+822/1491: 822/1491: writeLocalCookie (DONE:48ms)
+822/1491: Method: set_cgi_environ
+823/1491: 823/1491: set_cgi_environ (DONE:35ms)
+823/1491: Method: set_integered_width
+824/1491: 824/1491: set_integered_width (DONE:11061ms)
+824/1491: Method: check_local_cgi
+825/1491: 825/1491: check_local_cgi (DONE:63ms)
+825/1491: Method: process_idattr
+826/1491: 826/1491: process_idattr (DONE:59ms)
+826/1491: Method: acceptableMimeTypes
+827/1491: 827/1491: acceptableMimeTypes (DONE:234ms)
+827/1491: Method: redrawLineImage
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i16:0000h
+[W] Cannot set type ? on IR i16:0000h
+828/1491: 828/1491: redrawLineImage (DONE:3641ms)
+828/1491: Method: load_cookies
+829/1491: 829/1491: load_cookies (DONE:503ms)
+829/1491: Method: initCookie
+830/1491: 830/1491: initCookie (DONE:9ms)
+830/1491: Method: parse_proxy
+831/1491: 831/1491: parse_proxy (DONE:41ms)
+831/1491: Method: check_table_width
+832/1491: 832/1491: check_table_width (DONE:26492ms)
+832/1491: Method: decodeWord
+833/1491: 833/1491: decodeWord (DONE:348ms)
+833/1491: Method: decodeMIME
+834/1491: 834/1491: decodeMIME (DONE:290ms)
+834/1491: Method: begin_table
+835/1491: 835/1491: begin_table (DONE:664ms)
+835/1491: Method: loadMailcap
+836/1491: 836/1491: loadMailcap (DONE:323ms)
+836/1491: Method: initMailcap
+837/1491: 837/1491: initMailcap (DONE:69ms)
+837/1491: Method: wc_ucs_precompose
+838/1491: 838/1491: wc_ucs_precompose (DONE:42ms)
+838/1491: Method: wtf_parse
+839/1491: 839/1491: wtf_parse (DONE:913ms)
+839/1491: Method: wc_ucs_to_gb18030
+840/1491: 840/1491: wc_ucs_to_gb18030 (DONE:3465ms)
+840/1491: Method: getCharSize
+841/1491: 841/1491: getCharSize (DONE:200ms)
+841/1491: Method: initImage
+842/1491: 842/1491: initImage (DONE:14ms)
+842/1491: Method: registerForm
+843/1491: 843/1491: registerForm (DONE:36ms)
+843/1491: Method: set_table_matrix
+844/1491: 844/1491: set_table_matrix (DONE:2206ms)
+844/1491: Method: acceptableEncoding
+845/1491: 845/1491: acceptableEncoding (DONE:89ms)
+845/1491: Method: cgi_filename
+846/1491: 846/1491: cgi_filename (DONE:906ms)
+846/1491: Method: localcgi_post
+847/1491: 847/1491: localcgi_post (DONE:529ms)
+847/1491: Method: ex_ftpdir_name_size_date
+848/1491: 848/1491: ex_ftpdir_name_size_date (DONE:2859ms)
+848/1491: Method: open_migemo
+849/1491: 849/1491: open_migemo (DONE:26ms)
+849/1491: Method: openImgdisplay
+850/1491: 850/1491: openImgdisplay (DONE:48ms)
+850/1491: Method: retrieveCurrentMapArea
+851/1491: 851/1491: retrieveCurrentMapArea (DONE:143ms)
+851/1491: Method: pcmap
+852/1491: 852/1491: pcmap (DONE:2ms)
+852/1491: Method: textlist_feed
+853/1491: 853/1491: textlist_feed (DONE:13ms)
+853/1491: Method: cursorHome
+854/1491: 854/1491: cursorHome (DONE:7ms)
+854/1491: Method: _enter
+855/1491: 855/1491: _enter (DONE:3ms)
+855/1491: Method: _quo
+856/1491: 856/1491: _quo (DONE:3ms)
+856/1491: Method: _mvB
+857/1491: 857/1491: _mvB (DONE:3ms)
+857/1491: Method: _mvE
+858/1491: 858/1491: _mvE (DONE:3ms)
+858/1491: Method: _inbrk
+859/1491: 859/1491: _inbrk (DONE:3ms)
+859/1491: Method: _tcompl
+860/1491: 860/1491: _tcompl (DONE:9ms)
+860/1491: Method: mNull
+861/1491: 861/1491: mNull (DONE:7ms)
+861/1491: Method: mOk
+862/1491: 862/1491: mOk (DONE:22ms)
+862/1491: Method: mCancel
+863/1491: 863/1491: mCancel (DONE:7ms)
+863/1491: Method: mClose
+864/1491: 864/1491: mClose (DONE:6ms)
+864/1491: Method: MatchedPosition
+865/1491: 865/1491: MatchedPosition (DONE:6ms)
+865/1491: Method: noConv
+866/1491: 866/1491: noConv (DONE:3ms)
+866/1491: Method: file_close
+867/1491: 867/1491: file_close (DONE:10ms)
+867/1491: Method: str_read
+868/1491: 868/1491: str_read (DONE:2ms)
+868/1491: Method: map_cmp
+869/1491: 869/1491: map_cmp (DONE:9ms)
+869/1491: Method: map3_cmp
+870/1491: 870/1491: map3_cmp (DONE:13ms)
+870/1491: Method: map_range_cmp
+871/1491: 871/1491: map_range_cmp (DONE:26ms)
+871/1491: Method: map2_range_cmp
+872/1491: 872/1491: map2_range_cmp (DONE:27ms)
+872/1491: Method: map3_range_cmp
+873/1491: 873/1491: map3_range_cmp (DONE:24ms)
+873/1491: Method: wc_sjis_to_jis
+874/1491: 874/1491: wc_sjis_to_jis (DONE:155ms)
+874/1491: Method: wc_jis_to_sjis
+875/1491: 875/1491: wc_jis_to_sjis (DONE:143ms)
+875/1491: Method: ucs_cs94_conv
+876/1491: 876/1491: ucs_cs94_conv (DONE:12ms)
+876/1491: Method: ucs_viet_conv
+877/1491: 877/1491: ucs_viet_conv (DONE:47ms)
+877/1491: Method: ucs_cp1258_conv
+878/1491: 878/1491: ucs_cp1258_conv (DONE:17ms)
+878/1491: Method: ucs_cns11643_conv
+879/1491: 879/1491: ucs_cns11643_conv (DONE:19ms)
+879/1491: Method: ucs_johab3_conv
+880/1491: 880/1491: ucs_johab3_conv (DONE:49ms)
+880/1491: Method: __libc_csu_fini
+881/1491: 881/1491: __libc_csu_fini (DONE:2ms)
+881/1491: Method: w3m_help_dir
+882/1491: 882/1491: w3m_help_dir (DONE:8ms)
+882/1491: Method: ISeos
+883/1491: 883/1491: ISeos (DONE:26ms)
+883/1491: Method: killn
+884/1491: 884/1491: killn (DONE:10ms)
+884/1491: Method: ucs_sjis_ext_conv
+885/1491: 885/1491: ucs_sjis_ext_conv (DONE:21ms)
+885/1491: Method: clrtobot
+886/1491: 886/1491: clrtobot (DONE:8ms)
+886/1491: Method: ucs_uhc_conv
+887/1491: 887/1491: ucs_uhc_conv (DONE:20ms)
+887/1491: Method: ucs_big5_conv
+888/1491: 888/1491: ucs_big5_conv (DONE:19ms)
+888/1491: Method: ucs_gbk_conv
+889/1491: 889/1491: ucs_gbk_conv (DONE:22ms)
+889/1491: Method: ucs_hkscs_conv
+890/1491: 890/1491: ucs_hkscs_conv (DONE:20ms)
+890/1491: Method: wtf_get_ccs
+891/1491: 891/1491: wtf_get_ccs (DONE:13ms)
+891/1491: Method: killb
+892/1491: 892/1491: killb (DONE:11ms)
+892/1491: Method: compare_table
+893/1491: 893/1491: compare_table (DONE:12ms)
+893/1491: Method: strCmp
+894/1491: 894/1491: strCmp (DONE:10ms)
+894/1491: Method: namedBuffer
+895/1491: 895/1491: namedBuffer (DONE:29ms)
+895/1491: Method: newHash_ss
+896/1491: 896/1491: newHash_ss (DONE:46ms)
+896/1491: Method: tag_exists
+897/1491: 897/1491: tag_exists (DONE:21ms)
+897/1491: Method: wc_ces_list_cmp
+898/1491: 898/1491: wc_ces_list_cmp (DONE:10ms)
+898/1491: Method: toVAlign
+899/1491: 899/1491: toVAlign (DONE:32ms)
+899/1491: Method: toAlign
+900/1491: 900/1491: toAlign (DONE:48ms)
+900/1491: Method: toLength
+901/1491: 901/1491: toLength (DONE:52ms)
+901/1491: Method: help
+902/1491: 902/1491: help (DONE:41ms)
+902/1491: Method: file_read
+903/1491: 903/1491: file_read (DONE:12ms)
+903/1491: Method: basic_close
+904/1491: 904/1491: basic_close (DONE:9ms)
+904/1491: Method: Strcopy_charp
+905/1491: 905/1491: Strcopy_charp (DONE:43ms)
+905/1491: Method: wc_push_to_raw
+906/1491: 906/1491: wc_push_to_raw (DONE:37ms)
+906/1491: Method: intTrap
+907/1491: 907/1491: intTrap (DONE:17ms)
+907/1491: Method: KeyAbort
+908/1491: 908/1491: KeyAbort (DONE:16ms)
+908/1491: Method: KeyAbort2
+909/1491: 909/1491: KeyAbort2 (DONE:16ms)
+909/1491: Method: KeyAbort3
+910/1491: 910/1491: KeyAbort3 (DONE:16ms)
+910/1491: Method: KeyAbort4
+911/1491: 911/1491: KeyAbort4 (DONE:16ms)
+911/1491: Method: KeyAbort5
+912/1491: 912/1491: KeyAbort5 (DONE:17ms)
+912/1491: Method: wc_map2_range_search
+913/1491: 913/1491: wc_map2_range_search (DONE:13ms)
+913/1491: Method: basic_read
+914/1491: 914/1491: basic_read (DONE:11ms)
+914/1491: Method: Stralign_right
+915/1491: 915/1491: Stralign_right (DONE:64ms)
+915/1491: Method: Stralign_center
+916/1491: 916/1491: Stralign_center (DONE:179ms)
+916/1491: Method: Stralign_left
+917/1491: 917/1491: Stralign_left (DONE:61ms)
+917/1491: Method: toNumber
+918/1491: 918/1491: toNumber (DONE:21ms)
+918/1491: Method: getHash_ss
+919/1491: 919/1491: getHash_ss (DONE:19ms)
+919/1491: Method: putHash_ss
+920/1491: 920/1491: putHash_ss (DONE:43ms)
+920/1491: Method: Strinsert_charp
+921/1491: 921/1491: Strinsert_charp (DONE:29ms)
+921/1491: Method: insertself
+922/1491: 922/1491: insertself (DONE:34ms)
+922/1491: Method: AuthBasicCred
+923/1491: 923/1491: AuthBasicCred (DONE:42ms)
+923/1491: Method: strcasemstr
+924/1491: 924/1491: strcasemstr (DONE:67ms)
+924/1491: Method: ucs_johab2_conv
+925/1491: 925/1491: ucs_johab2_conv (DONE:19ms)
+925/1491: Method: _start
+926/1491: 926/1491: _start (DONE:13ms)
+926/1491: Method: resize_hook
+927/1491: 927/1491: resize_hook (DONE:11ms)
+927/1491: Method: SigPipe
+928/1491: 928/1491: SigPipe (DONE:12ms)
+928/1491: Method: ens_close
+929/1491: 929/1491: ens_close (DONE:9ms)
+929/1491: Method: file_feed
+930/1491: 930/1491: file_feed (DONE:21ms)
+930/1491: Method: sig_chld
+931/1491: 931/1491: sig_chld (DONE:20ms)
+931/1491: Method: error_dump
+932/1491: 932/1491: error_dump (DONE:21ms)
+932/1491: Method: show
+933/1491: 933/1491: show (DONE:96ms)
+933/1491: Method: ens_read
+934/1491: 934/1491: ens_read (DONE:284ms)
+934/1491: Method: set
+935/1491: 935/1491: set (DONE:102ms)
+935/1491: Method: SigAlarm
+936/1491: 936/1491: SigAlarm (DONE:89ms)
+936/1491: Method: wc_Str_conv_strict
+937/1491: 937/1491: wc_Str_conv_strict (DONE:25ms)
+937/1491: Method: conv_form_encoding
+938/1491: 938/1491: conv_form_encoding (DONE:32ms)
+938/1491: Method: newFrame
+939/1491: 939/1491: newFrame (DONE:111ms)
+939/1491: Method: query_from_followform
+940/1491: 940/1491: query_from_followform (DONE:4106ms)
+940/1491: Method: form_fputs_decode
+941/1491: 941/1491: form_fputs_decode (DONE:104ms)
+941/1491: Method: addLink
 
 === Killed because of time limit

@@ -1,0 +1,107 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/branchless_arithmetic/ia32_elf_clang/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 46 methods
+Output folder: jeb_output
+  0/ 46: Method: __x86.get_pc_thunk.bx
+  1/ 46: 1/46: __x86.get_pc_thunk.bx (DONE:40ms)
+  1/ 46: Method: sub_8049100
+  2/ 46: 2/46: sub_8049100 (DONE:5ms)
+  2/ 46: Method: sub_8049148
+  3/ 46: 3/46: sub_8049148 (DONE:4ms)
+  3/ 46: Method: sub_8049036
+  4/ 46: 4/46: sub_8049036 (DONE:14ms)
+  4/ 46: Method: →printf
+  5/ 46: 5/46: →printf (DONE:23ms)
+  5/ 46: Method: sub_80490A7
+  6/ 46: 6/46: sub_80490A7 (DONE:4ms)
+  6/ 46: Method: sub_8049178
+  7/ 46: 7/46: sub_8049178 (DONE:3ms)
+  7/ 46: Method: sat_addu32b
+  8/ 46: 8/46: sat_addu32b (DONE:30ms)
+  8/ 46: Method: sat_subu32b
+  9/ 46: 9/46: sat_subu32b (DONE:20ms)
+  9/ 46: Method: sat_divu32b
+ 10/ 46: 10/46: sat_divu32b (DONE:17ms)
+ 10/ 46: Method: sat_mulu32b
+ 11/ 46: 11/46: sat_mulu32b (DONE:26ms)
+ 11/ 46: Method: sat_addu64b
+ 12/ 46: 12/46: sat_addu64b (DONE:35ms)
+ 12/ 46: Method: sat_subu64b
+ 13/ 46: 13/46: sat_subu64b (DONE:16ms)
+ 13/ 46: Method: sat_adds32b_var1
+ 14/ 46: 14/46: sat_adds32b_var1 (DONE:24ms)
+ 14/ 46: Method: sat_adds32b_var2
+ 15/ 46: 15/46: sat_adds32b_var2 (DONE:24ms)
+ 15/ 46: Method: sat_adds32b_var3
+ 16/ 46: 16/46: sat_adds32b_var3 (DONE:22ms)
+ 16/ 46: Method: sat_subs32b
+ 17/ 46: 17/46: sat_subs32b (DONE:23ms)
+ 17/ 46: Method: sat_divs32b
+ 18/ 46: 18/46: sat_divs32b (DONE:23ms)
+ 18/ 46: Method: sat_muls32b
+ 19/ 46: 19/46: sat_muls32b (DONE:35ms)
+ 19/ 46: Method: sat_adds64b
+ 20/ 46: 20/46: sat_adds64b (DONE:40ms)
+ 20/ 46: Method: sat_subs64b
+ 21/ 46: 21/46: sat_subs64b (DONE:38ms)
+ 21/ 46: Method: abs32
+ 22/ 46: 22/46: abs32 (DONE:9ms)
+ 22/ 46: Method: abs64
+ 23/ 46: 23/46: abs64 (DONE:11ms)
+ 23/ 46: Method: sgn32
+ 24/ 46: 24/46: sgn32 (DONE:14ms)
+ 24/ 46: Method: sgn64
+ 25/ 46: 25/46: sgn64 (DONE:37ms)
+ 25/ 46: Method: __divdi3
+ 26/ 46: 26/46: __divdi3 (DONE:518ms)
+ 26/ 46: Method: __udivdi3
+ 27/ 46: 27/46: __udivdi3 (DONE:329ms)
+ 27/ 46: Method: __x86.get_pc_thunk.bp
+ 28/ 46: 28/46: __x86.get_pc_thunk.bp (DONE:3ms)
+ 28/ 46: Method: initializer_0
+ 29/ 46: 29/46: initializer_0 (DONE:30ms)
+ 29/ 46: Method: sub_80490DC
+ 30/ 46: 30/46: sub_80490DC (DONE:15ms)
+ 30/ 46: Method: sub_8049128
+ 31/ 46: 31/46: sub_8049128 (DONE:12ms)
+ 31/ 46: Method: →puts
+ 32/ 46: 32/46: →puts (DONE:8ms)
+ 32/ 46: Method: →__libc_start_main
+ 33/ 46: 33/46: →__libc_start_main (DONE:6ms)
+ 33/ 46: Method: sat_divs64b
+ 34/ 46: 34/46: sat_divs64b (DONE:74ms)
+ 34/ 46: Method: sat_divu64b
+ 35/ 46: 35/46: sat_divu64b (DONE:24ms)
+ 35/ 46: Method: deregister_tm_clones
+ 36/ 46: 36/46: deregister_tm_clones (DONE:6ms)
+ 36/ 46: Method: register_tm_clones
+ 37/ 46: 37/46: register_tm_clones (DONE:39ms)
+ 37/ 46: Method: sub_804915D
+ 38/ 46: 38/46: sub_804915D (DONE:19ms)
+ 38/ 46: Method: initializer_1
+ 39/ 46: 39/46: initializer_1 (DONE:3ms)
+ 39/ 46: Method: _dl_relocate_static_pie
+ 40/ 46: 40/46: _dl_relocate_static_pie (DONE:3ms)
+ 40/ 46: Method: __libc_csu_fini
+ 41/ 46: 41/46: __libc_csu_fini (DONE:3ms)
+ 41/ 46: Method: finalizer_0
+ 42/ 46: 42/46: finalizer_0 (DONE:20ms)
+ 42/ 46: Method: _start
+ 43/ 46: 43/46: _start (DONE:52ms)
+ 43/ 46: Method: main
+ 44/ 46: 44/46: main (DONE:2755ms)
+ 44/ 46: Method: finalizer_1
+ 45/ 46: 45/46: finalizer_1 (DONE:9ms)
+ 45/ 46: Method: __libc_csu_init
+ 46/ 46: 46/46: __libc_csu_init (DONE:74ms)
+Exectime: 5.271000 sec
+[I] Done.

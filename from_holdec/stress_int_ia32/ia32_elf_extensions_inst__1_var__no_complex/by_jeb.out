@@ -1,148 +1,147 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_extensions_inst__1_var__no_complex/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (62 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 66 methods
 Output folder: jeb_output
-  0/ 62: Method: __x86.get_pc_thunk.bx
-  1/ 62: 1/62: __x86.get_pc_thunk.bx (DONE:76ms)
-  1/ 62: Method: sub_8049030
-  2/ 62: 2/62: sub_8049030 (DONE:30ms)
-  2/ 62: Method: sub_8049207
-  3/ 62: 3/62: sub_8049207 (DONE:41ms)
-  3/ 62: Method: deregister_tm_clones
-  4/ 62: 4/62: deregister_tm_clones (DONE:61ms)
-  4/ 62: Method: register_tm_clones
-  5/ 62: 5/62: register_tm_clones (DONE:70ms)
-  5/ 62: Method: inst_0_values_var_0
-  6/ 62: 6/62: inst_0_values_var_0 (DONE:142ms)
-  6/ 62: Method: inst_0_flags_var_0
-  7/ 62: 7/62: inst_0_flags_var_0 (DONE:130ms)
-  7/ 62: Method: inst_1_values_var_0
-  8/ 62: 8/62: inst_1_values_var_0 (DONE:70ms)
-  8/ 62: Method: inst_1_flags_var_0
-  9/ 62: 9/62: inst_1_flags_var_0 (DONE:62ms)
-  9/ 62: Method: inst_2_values_var_0
- 10/ 62: 10/62: inst_2_values_var_0 (DONE:62ms)
- 10/ 62: Method: inst_2_flags_var_0
- 11/ 62: 11/62: inst_2_flags_var_0 (DONE:74ms)
- 11/ 62: Method: inst_3_values_var_0
- 12/ 62: 12/62: inst_3_values_var_0 (DONE:56ms)
- 12/ 62: Method: inst_3_flags_var_0
- 13/ 62: 13/62: inst_3_flags_var_0 (DONE:66ms)
- 13/ 62: Method: inst_4_values_var_0
- 14/ 62: 14/62: inst_4_values_var_0 (DONE:66ms)
- 14/ 62: Method: inst_4_flags_var_0
- 15/ 62: 15/62: inst_4_flags_var_0 (DONE:73ms)
- 15/ 62: Method: inst_5_values_var_0
- 16/ 62: 16/62: inst_5_values_var_0 (DONE:49ms)
- 16/ 62: Method: inst_5_flags_var_0
- 17/ 62: 17/62: inst_5_flags_var_0 (DONE:55ms)
- 17/ 62: Method: inst_6_values_var_0
- 18/ 62: 18/62: inst_6_values_var_0 (DONE:53ms)
- 18/ 62: Method: inst_6_flags_var_0
- 19/ 62: 19/62: inst_6_flags_var_0 (DONE:49ms)
- 19/ 62: Method: inst_7_values_var_0
- 20/ 62: 20/62: inst_7_values_var_0 (DONE:45ms)
- 20/ 62: Method: inst_7_flags_var_0
- 21/ 62: 21/62: inst_7_flags_var_0 (DONE:55ms)
- 21/ 62: Method: inst_8_values_var_0
- 22/ 62: 22/62: inst_8_values_var_0 (DONE:59ms)
- 22/ 62: Method: inst_8_flags_var_0
- 23/ 62: 23/62: inst_8_flags_var_0 (DONE:56ms)
- 23/ 62: Method: inst_9_values_var_0
- 24/ 62: 24/62: inst_9_values_var_0 (DONE:50ms)
- 24/ 62: Method: inst_9_flags_var_0
- 25/ 62: 25/62: inst_9_flags_var_0 (DONE:49ms)
- 25/ 62: Method: inst_10_values_var_0
- 26/ 62: 26/62: inst_10_values_var_0 (DONE:47ms)
- 26/ 62: Method: inst_10_flags_var_0
- 27/ 62: 27/62: inst_10_flags_var_0 (DONE:53ms)
- 27/ 62: Method: inst_11_values_var_0
- 28/ 62: 28/62: inst_11_values_var_0 (DONE:45ms)
- 28/ 62: Method: inst_11_flags_var_0
- 29/ 62: 29/62: inst_11_flags_var_0 (DONE:56ms)
- 29/ 62: Method: inst_12_values_var_0
- 30/ 62: 30/62: inst_12_values_var_0 (DONE:53ms)
- 30/ 62: Method: inst_12_flags_var_0
- 31/ 62: 31/62: inst_12_flags_var_0 (DONE:56ms)
- 31/ 62: Method: inst_13_values_var_0
- 32/ 62: 32/62: inst_13_values_var_0 (DONE:44ms)
- 32/ 62: Method: inst_13_flags_var_0
- 33/ 62: 33/62: inst_13_flags_var_0 (DONE:42ms)
- 33/ 62: Method: inst_14_values_var_0
- 34/ 62: 34/62: inst_14_values_var_0 (DONE:54ms)
- 34/ 62: Method: inst_14_flags_var_0
- 35/ 62: 35/62: inst_14_flags_var_0 (DONE:44ms)
- 35/ 62: Method: inst_15_values_var_0
- 36/ 62: 36/62: inst_15_values_var_0 (DONE:56ms)
- 36/ 62: Method: inst_15_flags_var_0
- 37/ 62: 37/62: inst_15_flags_var_0 (DONE:50ms)
- 37/ 62: Method: inst_16_values_var_0
- 38/ 62: 38/62: inst_16_values_var_0 (DONE:46ms)
- 38/ 62: Method: inst_16_flags_var_0
- 39/ 62: 39/62: inst_16_flags_var_0 (DONE:33ms)
- 39/ 62: Method: inst_17_values_var_0
- 40/ 62: 40/62: inst_17_values_var_0 (DONE:47ms)
- 40/ 62: Method: inst_17_flags_var_0
- 41/ 62: 41/62: inst_17_flags_var_0 (DONE:47ms)
- 41/ 62: Method: inst_18_values_var_0
- 42/ 62: 42/62: inst_18_values_var_0 (DONE:58ms)
- 42/ 62: Method: inst_18_flags_var_0
- 43/ 62: 43/62: inst_18_flags_var_0 (DONE:44ms)
- 43/ 62: Method: inst_19_values_var_0
- 44/ 62: 44/62: inst_19_values_var_0 (DONE:42ms)
- 44/ 62: Method: inst_19_flags_var_0
- 45/ 62: 45/62: inst_19_flags_var_0 (DONE:45ms)
- 45/ 62: Method: inst_20_values_var_0
- 46/ 62: 46/62: inst_20_values_var_0 (DONE:64ms)
- 46/ 62: Method: inst_20_flags_var_0
- 47/ 62: 47/62: inst_20_flags_var_0 (DONE:51ms)
- 47/ 62: Method: inst_21_values_var_0
- 48/ 62: 48/62: inst_21_values_var_0 (DONE:50ms)
- 48/ 62: Method: inst_21_flags_var_0
- 49/ 62: 49/62: inst_21_flags_var_0 (DONE:44ms)
- 49/ 62: Method: initializer_0
- 50/ 62: 50/62: initializer_0 (DONE:40ms)
- 50/ 62: Method: sub_8049046
- 51/ 62: 51/62: sub_8049046 (DONE:9ms)
- 51/ 62: Method: sub_8049056
- 52/ 62: 52/62: sub_8049056 (DONE:15ms)
- 52/ 62: Method: initializer_1
- 53/ 62: 53/62: initializer_1 (DONE:10ms)
- 53/ 62: Method: sub_8049040
- 54/ 62: 54/62: sub_8049040 (DONE:9ms)
- 54/ 62: Method: sub_8049050
- 55/ 62: 55/62: sub_8049050 (DONE:19ms)
- 55/ 62: Method: _dl_relocate_static_pie
- 56/ 62: 56/62: _dl_relocate_static_pie (DONE:8ms)
- 56/ 62: Method: __libc_csu_fini
- 57/ 62: 57/62: __libc_csu_fini (DONE:8ms)
- 57/ 62: Method: finalizer_0
- 58/ 62: 58/62: finalizer_0 (DONE:17ms)
- 58/ 62: Method: finalizer_1
-Emulation failed!
- 59/ 62: 59/62: finalizer_1 (DONE:75ms)
- 59/ 62: Method: __libc_csu_init
- 60/ 62: 60/62: __libc_csu_init (DONE:108ms)
- 60/ 62: Method: _start
- 61/ 62: 61/62: _start (DONE:56ms)
- 61/ 62: Method: main
- 62/ 62: 62/62: main (DONE:1310ms)
-Exectime: 7.008000 sec
-Done.
+  0/ 66: Method: __x86.get_pc_thunk.bx
+  1/ 66: 1/66: __x86.get_pc_thunk.bx (DONE:50ms)
+  1/ 66: Method: sub_8049260
+  2/ 66: 2/66: sub_8049260 (DONE:7ms)
+  2/ 66: Method: sub_80492A8
+  3/ 66: 3/66: sub_80492A8 (DONE:3ms)
+  3/ 66: Method: sub_8049036
+  4/ 66: 4/66: sub_8049036 (DONE:13ms)
+  4/ 66: Method: sub_8049207
+  5/ 66: 5/66: sub_8049207 (DONE:4ms)
+  5/ 66: Method: sub_80492D8
+  6/ 66: 6/66: sub_80492D8 (DONE:3ms)
+  6/ 66: Method: inst_0_values_var_0
+  7/ 66: 7/66: inst_0_values_var_0 (DONE:95ms)
+  7/ 66: Method: inst_0_flags_var_0
+  8/ 66: 8/66: inst_0_flags_var_0 (DONE:36ms)
+  8/ 66: Method: inst_1_values_var_0
+  9/ 66: 9/66: inst_1_values_var_0 (DONE:36ms)
+  9/ 66: Method: inst_1_flags_var_0
+ 10/ 66: 10/66: inst_1_flags_var_0 (DONE:31ms)
+ 10/ 66: Method: inst_2_values_var_0
+ 11/ 66: 11/66: inst_2_values_var_0 (DONE:45ms)
+ 11/ 66: Method: inst_2_flags_var_0
+ 12/ 66: 12/66: inst_2_flags_var_0 (DONE:35ms)
+ 12/ 66: Method: inst_3_values_var_0
+ 13/ 66: 13/66: inst_3_values_var_0 (DONE:30ms)
+ 13/ 66: Method: inst_3_flags_var_0
+ 14/ 66: 14/66: inst_3_flags_var_0 (DONE:52ms)
+ 14/ 66: Method: inst_4_values_var_0
+ 15/ 66: 15/66: inst_4_values_var_0 (DONE:36ms)
+ 15/ 66: Method: inst_4_flags_var_0
+ 16/ 66: 16/66: inst_4_flags_var_0 (DONE:24ms)
+ 16/ 66: Method: inst_5_values_var_0
+ 17/ 66: 17/66: inst_5_values_var_0 (DONE:28ms)
+ 17/ 66: Method: inst_5_flags_var_0
+ 18/ 66: 18/66: inst_5_flags_var_0 (DONE:31ms)
+ 18/ 66: Method: inst_6_values_var_0
+ 19/ 66: 19/66: inst_6_values_var_0 (DONE:27ms)
+ 19/ 66: Method: inst_6_flags_var_0
+ 20/ 66: 20/66: inst_6_flags_var_0 (DONE:22ms)
+ 20/ 66: Method: inst_7_values_var_0
+ 21/ 66: 21/66: inst_7_values_var_0 (DONE:27ms)
+ 21/ 66: Method: inst_7_flags_var_0
+ 22/ 66: 22/66: inst_7_flags_var_0 (DONE:23ms)
+ 22/ 66: Method: inst_8_values_var_0
+ 23/ 66: 23/66: inst_8_values_var_0 (DONE:23ms)
+ 23/ 66: Method: inst_8_flags_var_0
+ 24/ 66: 24/66: inst_8_flags_var_0 (DONE:21ms)
+ 24/ 66: Method: inst_9_values_var_0
+ 25/ 66: 25/66: inst_9_values_var_0 (DONE:20ms)
+ 25/ 66: Method: inst_9_flags_var_0
+ 26/ 66: 26/66: inst_9_flags_var_0 (DONE:24ms)
+ 26/ 66: Method: inst_10_values_var_0
+ 27/ 66: 27/66: inst_10_values_var_0 (DONE:23ms)
+ 27/ 66: Method: inst_10_flags_var_0
+ 28/ 66: 28/66: inst_10_flags_var_0 (DONE:14ms)
+ 28/ 66: Method: inst_11_values_var_0
+ 29/ 66: 29/66: inst_11_values_var_0 (DONE:18ms)
+ 29/ 66: Method: inst_11_flags_var_0
+ 30/ 66: 30/66: inst_11_flags_var_0 (DONE:16ms)
+ 30/ 66: Method: inst_12_values_var_0
+ 31/ 66: 31/66: inst_12_values_var_0 (DONE:22ms)
+ 31/ 66: Method: inst_12_flags_var_0
+ 32/ 66: 32/66: inst_12_flags_var_0 (DONE:16ms)
+ 32/ 66: Method: inst_13_values_var_0
+ 33/ 66: 33/66: inst_13_values_var_0 (DONE:24ms)
+ 33/ 66: Method: inst_13_flags_var_0
+ 34/ 66: 34/66: inst_13_flags_var_0 (DONE:20ms)
+ 34/ 66: Method: inst_14_values_var_0
+ 35/ 66: 35/66: inst_14_values_var_0 (DONE:19ms)
+ 35/ 66: Method: inst_14_flags_var_0
+ 36/ 66: 36/66: inst_14_flags_var_0 (DONE:15ms)
+ 36/ 66: Method: inst_15_values_var_0
+ 37/ 66: 37/66: inst_15_values_var_0 (DONE:26ms)
+ 37/ 66: Method: inst_15_flags_var_0
+ 38/ 66: 38/66: inst_15_flags_var_0 (DONE:22ms)
+ 38/ 66: Method: inst_16_values_var_0
+ 39/ 66: 39/66: inst_16_values_var_0 (DONE:27ms)
+ 39/ 66: Method: inst_16_flags_var_0
+ 40/ 66: 40/66: inst_16_flags_var_0 (DONE:44ms)
+ 40/ 66: Method: inst_17_values_var_0
+ 41/ 66: 41/66: inst_17_values_var_0 (DONE:42ms)
+ 41/ 66: Method: inst_17_flags_var_0
+ 42/ 66: 42/66: inst_17_flags_var_0 (DONE:19ms)
+ 42/ 66: Method: inst_18_values_var_0
+ 43/ 66: 43/66: inst_18_values_var_0 (DONE:22ms)
+ 43/ 66: Method: inst_18_flags_var_0
+ 44/ 66: 44/66: inst_18_flags_var_0 (DONE:14ms)
+ 44/ 66: Method: inst_19_values_var_0
+ 45/ 66: 45/66: inst_19_values_var_0 (DONE:19ms)
+ 45/ 66: Method: inst_19_flags_var_0
+ 46/ 66: 46/66: inst_19_flags_var_0 (DONE:13ms)
+ 46/ 66: Method: inst_20_values_var_0
+ 47/ 66: 47/66: inst_20_values_var_0 (DONE:29ms)
+ 47/ 66: Method: inst_20_flags_var_0
+ 48/ 66: 48/66: inst_20_flags_var_0 (DONE:17ms)
+ 48/ 66: Method: inst_21_values_var_0
+ 49/ 66: 49/66: inst_21_values_var_0 (DONE:17ms)
+ 49/ 66: Method: inst_21_flags_var_0
+ 50/ 66: 50/66: inst_21_flags_var_0 (DONE:14ms)
+ 50/ 66: Method: initializer_0
+ 51/ 66: 51/66: initializer_0 (DONE:47ms)
+ 51/ 66: Method: sub_804923C
+ 52/ 66: 52/66: sub_804923C (DONE:20ms)
+ 52/ 66: Method: sub_8049288
+ 53/ 66: 53/66: sub_8049288 (DONE:12ms)
+ 53/ 66: Method: →__libc_start_main
+ 54/ 66: 54/66: →__libc_start_main (DONE:10ms)
+ 54/ 66: Method: →__assert_fail
+ 55/ 66: 55/66: →__assert_fail (DONE:8ms)
+ 55/ 66: Method: deregister_tm_clones
+ 56/ 66: 56/66: deregister_tm_clones (DONE:8ms)
+ 56/ 66: Method: register_tm_clones
+ 57/ 66: 57/66: register_tm_clones (DONE:37ms)
+ 57/ 66: Method: sub_80492BD
+ 58/ 66: 58/66: sub_80492BD (DONE:14ms)
+ 58/ 66: Method: initializer_1
+ 59/ 66: 59/66: initializer_1 (DONE:2ms)
+ 59/ 66: Method: _dl_relocate_static_pie
+ 60/ 66: 60/66: _dl_relocate_static_pie (DONE:1ms)
+ 60/ 66: Method: __libc_csu_fini
+ 61/ 66: 61/66: __libc_csu_fini (DONE:1ms)
+ 61/ 66: Method: finalizer_0
+ 62/ 66: 62/66: finalizer_0 (DONE:10ms)
+ 62/ 66: Method: _start
+ 63/ 66: 63/66: _start (DONE:34ms)
+ 63/ 66: Method: main
+ 64/ 66: 64/66: main (DONE:2142ms)
+ 64/ 66: Method: finalizer_1
+ 65/ 66: 65/66: finalizer_1 (DONE:8ms)
+ 65/ 66: Method: __libc_csu_init
+ 66/ 66: 66/66: __libc_csu_init (DONE:68ms)
+Exectime: 4.667000 sec
+[I] Done.

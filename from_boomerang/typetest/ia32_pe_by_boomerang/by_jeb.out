@@ -1,269 +1,224 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/typetest/ia32_pe_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (104 internal methods created)
-java.lang.RuntimeException
-	at com.pnfsoftware.jebglobal.Hc.W(SourceFile:442)
-	at com.pnfsoftware.jebglobal.Hc.rv(SourceFile:429)
-	at com.pnfsoftware.jebglobal.Hc.XP(SourceFile:410)
-	at com.pnfsoftware.jebglobal.Hc.FJ(SourceFile:391)
-	at com.pnfsoftware.jebglobal.Hc.Vo(SourceFile:286)
-	at com.pnfsoftware.jeb.corei.parsers.winpe.mL.processInternal(SourceFile:517)
-	at com.pnfsoftware.jeb.core.units.AbstractUnit.process(SourceFile:447)
-	at com.pnfsoftware.jebglobal.Xc.process(SourceFile:652)
-	at com.pnfsoftware.jebglobal.al.load(SourceFile:125)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:474)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:453)
-	at com.pnfsoftware.jebglobal.Xb.processArtifact(SourceFile:67)
-	at com.pnfsoftware.jeb.client.AbstractClientContext.open(SourceFile:1391)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:477)
-	at org.python.core.PyObject.__call__(PyObject.java:481)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
+[C] java.lang.RuntimeException
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 104 methods
 Output folder: jeb_output
-  0/104: Method: sub_401B9C
-  1/104: 1/104: sub_401B9C (DONE:107ms)
+  0/104: Method: →MSVCRT.dll!_initterm
+  1/104: 1/104: →MSVCRT.dll!_initterm (DONE:51ms)
   1/104: Method: sub_401BE0
-  2/104: 2/104: sub_401BE0 (DONE:25ms)
-  2/104: Method: sub_401BF6
-  3/104: 3/104: sub_401BF6 (DONE:35ms)
-  3/104: Method: sub_401C60
-  4/104: 4/104: sub_401C60 (DONE:19ms)
+  2/104: 2/104: sub_401BE0 (DONE:8ms)
+  2/104: Method: →MSVCRT.dll!_controlfp
+  3/104: 3/104: →MSVCRT.dll!_controlfp (DONE:9ms)
+  3/104: Method: →MFC42.DLL!#1576
+  4/104: 4/104: →MFC42.DLL!#1576 (DONE:6ms)
   4/104: Method: sub_401BB0
-  5/104: 5/104: sub_401BB0 (DONE:45ms)
+  5/104: 5/104: sub_401BB0 (DONE:36ms)
   5/104: Method: sub_401BFC
-  6/104: 6/104: sub_401BFC (DONE:83ms)
-  6/104: Method: sub_401740
-  7/104: 7/104: sub_401740 (DONE:16ms)
-  7/104: Method: sub_401746
-  8/104: 8/104: sub_401746 (DONE:11ms)
-  8/104: Method: sub_40174C
-  9/104: 9/104: sub_40174C (DONE:14ms)
-  9/104: Method: sub_401752
- 10/104: 10/104: sub_401752 (DONE:14ms)
- 10/104: Method: sub_401758
- 11/104: 11/104: sub_401758 (DONE:17ms)
- 11/104: Method: sub_40175E
- 12/104: 12/104: sub_40175E (DONE:14ms)
- 12/104: Method: sub_401764
- 13/104: 13/104: sub_401764 (DONE:23ms)
- 13/104: Method: sub_40176A
- 14/104: 14/104: sub_40176A (DONE:12ms)
- 14/104: Method: sub_401770
- 15/104: 15/104: sub_401770 (DONE:11ms)
- 15/104: Method: sub_401776
- 16/104: 16/104: sub_401776 (DONE:10ms)
- 16/104: Method: sub_40177C
- 17/104: 17/104: sub_40177C (DONE:13ms)
- 17/104: Method: sub_401782
- 18/104: 18/104: sub_401782 (DONE:13ms)
- 18/104: Method: sub_401788
- 19/104: 19/104: sub_401788 (DONE:15ms)
- 19/104: Method: sub_40178E
- 20/104: 20/104: sub_40178E (DONE:19ms)
- 20/104: Method: sub_401794
- 21/104: 21/104: sub_401794 (DONE:12ms)
- 21/104: Method: sub_40179A
- 22/104: 22/104: sub_40179A (DONE:20ms)
- 22/104: Method: sub_4017A0
- 23/104: 23/104: sub_4017A0 (DONE:9ms)
- 23/104: Method: sub_4017A6
- 24/104: 24/104: sub_4017A6 (DONE:9ms)
- 24/104: Method: sub_4017AC
- 25/104: 25/104: sub_4017AC (DONE:10ms)
- 25/104: Method: sub_4017B2
- 26/104: 26/104: sub_4017B2 (DONE:11ms)
- 26/104: Method: sub_4017B8
- 27/104: 27/104: sub_4017B8 (DONE:11ms)
- 27/104: Method: sub_4017BE
- 28/104: 28/104: sub_4017BE (DONE:12ms)
- 28/104: Method: sub_4017C4
- 29/104: 29/104: sub_4017C4 (DONE:6ms)
- 29/104: Method: sub_4017CA
- 30/104: 30/104: sub_4017CA (DONE:15ms)
- 30/104: Method: sub_4017D0
- 31/104: 31/104: sub_4017D0 (DONE:14ms)
- 31/104: Method: sub_4017D6
- 32/104: 32/104: sub_4017D6 (DONE:15ms)
- 32/104: Method: sub_4017DC
- 33/104: 33/104: sub_4017DC (DONE:10ms)
- 33/104: Method: sub_4017E2
- 34/104: 34/104: sub_4017E2 (DONE:9ms)
- 34/104: Method: sub_4017E8
- 35/104: 35/104: sub_4017E8 (DONE:8ms)
- 35/104: Method: sub_4017EE
- 36/104: 36/104: sub_4017EE (DONE:9ms)
- 36/104: Method: sub_4017F4
- 37/104: 37/104: sub_4017F4 (DONE:8ms)
- 37/104: Method: sub_4017FA
- 38/104: 38/104: sub_4017FA (DONE:11ms)
- 38/104: Method: sub_401800
- 39/104: 39/104: sub_401800 (DONE:10ms)
- 39/104: Method: sub_401806
- 40/104: 40/104: sub_401806 (DONE:13ms)
- 40/104: Method: sub_40180C
- 41/104: 41/104: sub_40180C (DONE:8ms)
- 41/104: Method: sub_401812
- 42/104: 42/104: sub_401812 (DONE:14ms)
- 42/104: Method: sub_401818
- 43/104: 43/104: sub_401818 (DONE:10ms)
- 43/104: Method: sub_40181E
- 44/104: 44/104: sub_40181E (DONE:18ms)
- 44/104: Method: sub_401824
- 45/104: 45/104: sub_401824 (DONE:8ms)
- 45/104: Method: sub_40182A
- 46/104: 46/104: sub_40182A (DONE:10ms)
- 46/104: Method: sub_401830
- 47/104: 47/104: sub_401830 (DONE:11ms)
- 47/104: Method: sub_401836
- 48/104: 48/104: sub_401836 (DONE:9ms)
- 48/104: Method: sub_40183C
- 49/104: 49/104: sub_40183C (DONE:11ms)
- 49/104: Method: sub_401842
- 50/104: 50/104: sub_401842 (DONE:12ms)
- 50/104: Method: sub_401848
- 51/104: 51/104: sub_401848 (DONE:11ms)
- 51/104: Method: sub_40184E
- 52/104: 52/104: sub_40184E (DONE:10ms)
- 52/104: Method: sub_401854
- 53/104: 53/104: sub_401854 (DONE:14ms)
- 53/104: Method: sub_40185A
- 54/104: 54/104: sub_40185A (DONE:8ms)
- 54/104: Method: sub_401860
- 55/104: 55/104: sub_401860 (DONE:20ms)
- 55/104: Method: sub_401866
- 56/104: 56/104: sub_401866 (DONE:10ms)
- 56/104: Method: sub_40186C
- 57/104: 57/104: sub_40186C (DONE:11ms)
- 57/104: Method: sub_401872
- 58/104: 58/104: sub_401872 (DONE:10ms)
- 58/104: Method: sub_401878
- 59/104: 59/104: sub_401878 (DONE:9ms)
- 59/104: Method: sub_40187E
- 60/104: 60/104: sub_40187E (DONE:9ms)
- 60/104: Method: sub_401884
- 61/104: 61/104: sub_401884 (DONE:8ms)
- 61/104: Method: sub_40188A
- 62/104: 62/104: sub_40188A (DONE:11ms)
- 62/104: Method: sub_401890
- 63/104: 63/104: sub_401890 (DONE:10ms)
- 63/104: Method: sub_401896
- 64/104: 64/104: sub_401896 (DONE:15ms)
- 64/104: Method: sub_40189C
- 65/104: 65/104: sub_40189C (DONE:10ms)
- 65/104: Method: sub_4018A2
- 66/104: 66/104: sub_4018A2 (DONE:16ms)
- 66/104: Method: sub_4018A8
- 67/104: 67/104: sub_4018A8 (DONE:11ms)
- 67/104: Method: sub_4018AE
- 68/104: 68/104: sub_4018AE (DONE:7ms)
- 68/104: Method: sub_4018B4
- 69/104: 69/104: sub_4018B4 (DONE:11ms)
- 69/104: Method: sub_4018BA
- 70/104: 70/104: sub_4018BA (DONE:12ms)
- 70/104: Method: sub_4018C0
- 71/104: 71/104: sub_4018C0 (DONE:10ms)
- 71/104: Method: sub_4018C6
- 72/104: 72/104: sub_4018C6 (DONE:10ms)
- 72/104: Method: sub_4018CC
- 73/104: 73/104: sub_4018CC (DONE:11ms)
- 73/104: Method: sub_4018D2
- 74/104: 74/104: sub_4018D2 (DONE:12ms)
- 74/104: Method: sub_4018D8
- 75/104: 75/104: sub_4018D8 (DONE:16ms)
- 75/104: Method: sub_4018DE
- 76/104: 76/104: sub_4018DE (DONE:12ms)
- 76/104: Method: sub_4018E4
- 77/104: 77/104: sub_4018E4 (DONE:15ms)
- 77/104: Method: sub_4018EA
- 78/104: 78/104: sub_4018EA (DONE:12ms)
- 78/104: Method: sub_4018F0
- 79/104: 79/104: sub_4018F0 (DONE:11ms)
- 79/104: Method: sub_4018F6
- 80/104: 80/104: sub_4018F6 (DONE:10ms)
- 80/104: Method: sub_4018FC
- 81/104: 81/104: sub_4018FC (DONE:10ms)
- 81/104: Method: sub_401902
- 82/104: 82/104: sub_401902 (DONE:9ms)
- 82/104: Method: sub_401908
- 83/104: 83/104: sub_401908 (DONE:7ms)
- 83/104: Method: sub_40190E
- 84/104: 84/104: sub_40190E (DONE:9ms)
- 84/104: Method: sub_401914
- 85/104: 85/104: sub_401914 (DONE:10ms)
- 85/104: Method: sub_40191A
- 86/104: 86/104: sub_40191A (DONE:8ms)
- 86/104: Method: sub_401920
- 87/104: 87/104: sub_401920 (DONE:8ms)
- 87/104: Method: sub_401926
- 88/104: 88/104: sub_401926 (DONE:20ms)
- 88/104: Method: sub_40192C
- 89/104: 89/104: sub_40192C (DONE:6ms)
- 89/104: Method: sub_401932
- 90/104: 90/104: sub_401932 (DONE:8ms)
- 90/104: Method: sub_401938
- 91/104: 91/104: sub_401938 (DONE:7ms)
- 91/104: Method: sub_40193E
- 92/104: 92/104: sub_40193E (DONE:7ms)
- 92/104: Method: sub_401944
- 93/104: 93/104: sub_401944 (DONE:7ms)
- 93/104: Method: sub_40194A
- 94/104: 94/104: sub_40194A (DONE:10ms)
- 94/104: Method: sub_401950
- 95/104: 95/104: sub_401950 (DONE:9ms)
- 95/104: Method: sub_401956
- 96/104: 96/104: sub_401956 (DONE:9ms)
- 96/104: Method: sub_40195C
- 97/104: 97/104: sub_40195C (DONE:9ms)
- 97/104: Method: sub_401962
- 98/104: 98/104: sub_401962 (DONE:7ms)
- 98/104: Method: sub_4019C0
- 99/104: 99/104: sub_4019C0 (DONE:9ms)
- 99/104: Method: sub_4019D0
-100/104: 100/104: sub_4019D0 (DONE:74ms)
-100/104: Method: sub_401B90
-101/104: 101/104: sub_401B90 (DONE:10ms)
-101/104: Method: sub_401B96
-102/104: 102/104: sub_401B96 (DONE:10ms)
-102/104: Method: sub_401BF0
-103/104: 103/104: sub_401BF0 (DONE:10ms)
+  6/104: 6/104: sub_401BFC (DONE:30ms)
+  6/104: Method: →MFC42.DLL!#4673
+  7/104: 7/104: →MFC42.DLL!#4673 (DONE:6ms)
+  7/104: Method: →MFC42.DLL!#6375
+  8/104: 8/104: →MFC42.DLL!#6375 (DONE:4ms)
+  8/104: Method: →MFC42.DLL!#4486
+  9/104: 9/104: →MFC42.DLL!#4486 (DONE:4ms)
+  9/104: Method: →MFC42.DLL!#2554
+ 10/104: 10/104: →MFC42.DLL!#2554 (DONE:3ms)
+ 10/104: Method: →MFC42.DLL!#2512
+ 11/104: 11/104: →MFC42.DLL!#2512 (DONE:3ms)
+ 11/104: Method: →MFC42.DLL!#5731
+ 12/104: 12/104: →MFC42.DLL!#5731 (DONE:3ms)
+ 12/104: Method: →MFC42.DLL!#3922
+ 13/104: 13/104: →MFC42.DLL!#3922 (DONE:3ms)
+ 13/104: Method: →MFC42.DLL!#1089
+ 14/104: 14/104: →MFC42.DLL!#1089 (DONE:5ms)
+ 14/104: Method: →MFC42.DLL!#5199
+ 15/104: 15/104: →MFC42.DLL!#5199 (DONE:4ms)
+ 15/104: Method: →MFC42.DLL!#2396
+ 16/104: 16/104: →MFC42.DLL!#2396 (DONE:6ms)
+ 16/104: Method: →MFC42.DLL!#3346
+ 17/104: 17/104: →MFC42.DLL!#3346 (DONE:4ms)
+ 17/104: Method: →MFC42.DLL!#5300
+ 18/104: 18/104: →MFC42.DLL!#5300 (DONE:4ms)
+ 18/104: Method: →MFC42.DLL!#5302
+ 19/104: 19/104: →MFC42.DLL!#5302 (DONE:3ms)
+ 19/104: Method: →MFC42.DLL!#2725
+ 20/104: 20/104: →MFC42.DLL!#2725 (DONE:3ms)
+ 20/104: Method: →MFC42.DLL!#4079
+ 21/104: 21/104: →MFC42.DLL!#4079 (DONE:4ms)
+ 21/104: Method: →MFC42.DLL!#4698
+ 22/104: 22/104: →MFC42.DLL!#4698 (DONE:12ms)
+ 22/104: Method: →MFC42.DLL!#5307
+ 23/104: 23/104: →MFC42.DLL!#5307 (DONE:5ms)
+ 23/104: Method: →MFC42.DLL!#5289
+ 24/104: 24/104: →MFC42.DLL!#5289 (DONE:3ms)
+ 24/104: Method: →MFC42.DLL!#5714
+ 25/104: 25/104: →MFC42.DLL!#5714 (DONE:3ms)
+ 25/104: Method: →MFC42.DLL!#2982
+ 26/104: 26/104: →MFC42.DLL!#2982 (DONE:4ms)
+ 26/104: Method: →MFC42.DLL!#3147
+ 27/104: 27/104: →MFC42.DLL!#3147 (DONE:3ms)
+ 27/104: Method: →MFC42.DLL!#3259
+ 28/104: 28/104: →MFC42.DLL!#3259 (DONE:3ms)
+ 28/104: Method: →MFC42.DLL!#4465
+ 29/104: 29/104: →MFC42.DLL!#4465 (DONE:4ms)
+ 29/104: Method: →MFC42.DLL!#3136
+ 30/104: 30/104: →MFC42.DLL!#3136 (DONE:5ms)
+ 30/104: Method: →MFC42.DLL!#3262
+ 31/104: 31/104: →MFC42.DLL!#3262 (DONE:7ms)
+ 31/104: Method: →MFC42.DLL!#2985
+ 32/104: 32/104: →MFC42.DLL!#2985 (DONE:3ms)
+ 32/104: Method: →MFC42.DLL!#3081
+ 33/104: 33/104: →MFC42.DLL!#3081 (DONE:3ms)
+ 33/104: Method: →MFC42.DLL!#2976
+ 34/104: 34/104: →MFC42.DLL!#2976 (DONE:3ms)
+ 34/104: Method: →MFC42.DLL!#3830
+ 35/104: 35/104: →MFC42.DLL!#3830 (DONE:3ms)
+ 35/104: Method: →MFC42.DLL!#3831
+ 36/104: 36/104: →MFC42.DLL!#3831 (DONE:3ms)
+ 36/104: Method: →MFC42.DLL!#3825
+ 37/104: 37/104: →MFC42.DLL!#3825 (DONE:5ms)
+ 37/104: Method: →MFC42.DLL!#3079
+ 38/104: 38/104: →MFC42.DLL!#3079 (DONE:5ms)
+ 38/104: Method: →MFC42.DLL!#4080
+ 39/104: 39/104: →MFC42.DLL!#4080 (DONE:3ms)
+ 39/104: Method: →MFC42.DLL!#4622
+ 40/104: 40/104: →MFC42.DLL!#4622 (DONE:4ms)
+ 40/104: Method: →MFC42.DLL!#4424
+ 41/104: 41/104: →MFC42.DLL!#4424 (DONE:3ms)
+ 41/104: Method: →MFC42.DLL!#3738
+ 42/104: 42/104: →MFC42.DLL!#3738 (DONE:6ms)
+ 42/104: Method: →MFC42.DLL!#561
+ 43/104: 43/104: →MFC42.DLL!#561 (DONE:4ms)
+ 43/104: Method: →MFC42.DLL!#825
+ 44/104: 44/104: →MFC42.DLL!#825 (DONE:5ms)
+ 44/104: Method: →MFC42.DLL!#815
+ 45/104: 45/104: →MFC42.DLL!#815 (DONE:3ms)
+ 45/104: Method: →MFC42.DLL!#641
+ 46/104: 46/104: →MFC42.DLL!#641 (DONE:3ms)
+ 46/104: Method: →MFC42.DLL!#2514
+ 47/104: 47/104: →MFC42.DLL!#2514 (DONE:3ms)
+ 47/104: Method: →MFC42.DLL!#2621
+ 48/104: 48/104: →MFC42.DLL!#2621 (DONE:4ms)
+ 48/104: Method: →MFC42.DLL!#5265
+ 49/104: 49/104: →MFC42.DLL!#5265 (DONE:4ms)
+ 49/104: Method: →MFC42.DLL!#4376
+ 50/104: 50/104: →MFC42.DLL!#4376 (DONE:4ms)
+ 50/104: Method: →MFC42.DLL!#4853
+ 51/104: 51/104: →MFC42.DLL!#4853 (DONE:4ms)
+ 51/104: Method: →MFC42.DLL!#4998
+ 52/104: 52/104: →MFC42.DLL!#4998 (DONE:3ms)
+ 52/104: Method: →MFC42.DLL!#6052
+ 53/104: 53/104: →MFC42.DLL!#6052 (DONE:3ms)
+ 53/104: Method: →MFC42.DLL!#4078
+ 54/104: 54/104: →MFC42.DLL!#4078 (DONE:3ms)
+ 54/104: Method: →MFC42.DLL!#1775
+ 55/104: 55/104: →MFC42.DLL!#1775 (DONE:3ms)
+ 55/104: Method: →MFC42.DLL!#4407
+ 56/104: 56/104: →MFC42.DLL!#4407 (DONE:3ms)
+ 56/104: Method: →MFC42.DLL!#5241
+ 57/104: 57/104: →MFC42.DLL!#5241 (DONE:4ms)
+ 57/104: Method: →MFC42.DLL!#2385
+ 58/104: 58/104: →MFC42.DLL!#2385 (DONE:3ms)
+ 58/104: Method: →MFC42.DLL!#5163
+ 59/104: 59/104: →MFC42.DLL!#5163 (DONE:4ms)
+ 59/104: Method: →MFC42.DLL!#6374
+ 60/104: 60/104: →MFC42.DLL!#6374 (DONE:4ms)
+ 60/104: Method: →MFC42.DLL!#4353
+ 61/104: 61/104: →MFC42.DLL!#4353 (DONE:3ms)
+ 61/104: Method: →MFC42.DLL!#5280
+ 62/104: 62/104: →MFC42.DLL!#5280 (DONE:4ms)
+ 62/104: Method: →MFC42.DLL!#3798
+ 63/104: 63/104: →MFC42.DLL!#3798 (DONE:3ms)
+ 63/104: Method: →MFC42.DLL!#4837
+ 64/104: 64/104: →MFC42.DLL!#4837 (DONE:3ms)
+ 64/104: Method: →MFC42.DLL!#4441
+ 65/104: 65/104: →MFC42.DLL!#4441 (DONE:3ms)
+ 65/104: Method: →MFC42.DLL!#2648
+ 66/104: 66/104: →MFC42.DLL!#2648 (DONE:7ms)
+ 66/104: Method: →MFC42.DLL!#2055
+ 67/104: 67/104: →MFC42.DLL!#2055 (DONE:5ms)
+ 67/104: Method: →MFC42.DLL!#6376
+ 68/104: 68/104: →MFC42.DLL!#6376 (DONE:3ms)
+ 68/104: Method: →MFC42.DLL!#3749
+ 69/104: 69/104: →MFC42.DLL!#3749 (DONE:3ms)
+ 69/104: Method: →MFC42.DLL!#5065
+ 70/104: 70/104: →MFC42.DLL!#5065 (DONE:4ms)
+ 70/104: Method: →MFC42.DLL!#1727
+ 71/104: 71/104: →MFC42.DLL!#1727 (DONE:3ms)
+ 71/104: Method: →MFC42.DLL!#5261
+ 72/104: 72/104: →MFC42.DLL!#5261 (DONE:3ms)
+ 72/104: Method: →MFC42.DLL!#2446
+ 73/104: 73/104: →MFC42.DLL!#2446 (DONE:2ms)
+ 73/104: Method: →MFC42.DLL!#2124
+ 74/104: 74/104: →MFC42.DLL!#2124 (DONE:3ms)
+ 74/104: Method: →MFC42.DLL!#5277
+ 75/104: 75/104: →MFC42.DLL!#5277 (DONE:6ms)
+ 75/104: Method: →MFC42.DLL!#4627
+ 76/104: 76/104: →MFC42.DLL!#4627 (DONE:2ms)
+ 76/104: Method: →MFC42.DLL!#4425
+ 77/104: 77/104: →MFC42.DLL!#4425 (DONE:4ms)
+ 77/104: Method: →MFC42.DLL!#3597
+ 78/104: 78/104: →MFC42.DLL!#3597 (DONE:6ms)
+ 78/104: Method: →MFC42.DLL!#1146
+ 79/104: 79/104: →MFC42.DLL!#1146 (DONE:2ms)
+ 79/104: Method: →MFC42.DLL!#1168
+ 80/104: 80/104: →MFC42.DLL!#1168 (DONE:2ms)
+ 80/104: Method: →MFC42.DLL!#324
+ 81/104: 81/104: →MFC42.DLL!#324 (DONE:2ms)
+ 81/104: Method: →MFC42.DLL!#4710
+ 82/104: 82/104: →MFC42.DLL!#4710 (DONE:3ms)
+ 82/104: Method: →MFC42.DLL!#3663
+ 83/104: 83/104: →MFC42.DLL!#3663 (DONE:3ms)
+ 83/104: Method: →MFC42.DLL!#3619
+ 84/104: 84/104: →MFC42.DLL!#3619 (DONE:4ms)
+ 84/104: Method: →MFC42.DLL!#3626
+ 85/104: 85/104: →MFC42.DLL!#3626 (DONE:3ms)
+ 85/104: Method: →MFC42.DLL!#755
+ 86/104: 86/104: →MFC42.DLL!#755 (DONE:4ms)
+ 86/104: Method: →MFC42.DLL!#2414
+ 87/104: 87/104: →MFC42.DLL!#2414 (DONE:3ms)
+ 87/104: Method: →MFC42.DLL!#5789
+ 88/104: 88/104: →MFC42.DLL!#5789 (DONE:3ms)
+ 88/104: Method: →MFC42.DLL!#1641
+ 89/104: 89/104: →MFC42.DLL!#1641 (DONE:3ms)
+ 89/104: Method: →MFC42.DLL!#5875
+ 90/104: 90/104: →MFC42.DLL!#5875 (DONE:3ms)
+ 90/104: Method: →MFC42.DLL!#6170
+ 91/104: 91/104: →MFC42.DLL!#6170 (DONE:3ms)
+ 91/104: Method: →MFC42.DLL!#5788
+ 92/104: 92/104: →MFC42.DLL!#5788 (DONE:4ms)
+ 92/104: Method: →MFC42.DLL!#472
+ 93/104: 93/104: →MFC42.DLL!#472 (DONE:3ms)
+ 93/104: Method: →MFC42.DLL!#4133
+ 94/104: 94/104: →MFC42.DLL!#4133 (DONE:3ms)
+ 94/104: Method: →MFC42.DLL!#4297
+ 95/104: 95/104: →MFC42.DLL!#4297 (DONE:3ms)
+ 95/104: Method: →MFC42.DLL!#283
+ 96/104: 96/104: →MFC42.DLL!#283 (DONE:2ms)
+ 96/104: Method: →MFC42.DLL!#6021
+ 97/104: 97/104: →MFC42.DLL!#6021 (DONE:3ms)
+ 97/104: Method: →MFC42.DLL!#470
+ 98/104: 98/104: →MFC42.DLL!#470 (DONE:2ms)
+ 98/104: Method: →MSVCRT.dll!__CxxFrameHandler
+ 99/104: 99/104: →MSVCRT.dll!__CxxFrameHandler (DONE:2ms)
+ 99/104: Method: →MSVCRT.dll!_ftol
+100/104: 100/104: →MSVCRT.dll!_ftol (DONE:3ms)
+100/104: Method: →MSVCRT.dll!__dllonexit
+101/104: 101/104: →MSVCRT.dll!__dllonexit (DONE:2ms)
+101/104: Method: →MSVCRT.dll!_XcptFilter
+102/104: 102/104: →MSVCRT.dll!_XcptFilter (DONE:2ms)
+102/104: Method: →MSVCRT.dll!_except_handler3
+103/104: 103/104: →MSVCRT.dll!_except_handler3 (DONE:3ms)
 103/104: Method: start
-104/104: 104/104: start (DONE:970ms)
-Exectime: 2.623000 sec
-Done.
+104/104: 104/104: start (DONE:401ms)
+Exectime: 2.479000 sec
+[I] Done.

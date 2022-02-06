@@ -10,7 +10,7 @@ alab1:
             break;
         }
         case 4: {
-            switch((unsigned int)(10 - param0 - 3)) {
+            switch((unsigned int)(7 - param0)) {
                 case 0: {
                     →puts("Seven!");
                     return 0;
@@ -62,9 +62,6 @@ alab1:
     return 0;
 }
 
-void sub_8048298() {
-    jump gvar_8049630;
-}
-
-void sub_8048352() {
+int sub_804829E() {
+    return gvar_8049630();
 }

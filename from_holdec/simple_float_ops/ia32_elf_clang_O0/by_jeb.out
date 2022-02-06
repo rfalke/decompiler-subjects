@@ -1,109 +1,113 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/simple_float_ops/ia32_elf_clang_O0/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (32 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 38 methods
 Output folder: jeb_output
-  0/ 32: Method: __x86.get_pc_thunk.bx
-  1/ 32: 1/32: __x86.get_pc_thunk.bx (DONE:90ms)
-  1/ 32: Method: sub_80482D0
-  2/ 32: 2/32: sub_80482D0 (DONE:34ms)
-  2/ 32: Method: register_tm_clones
-  3/ 32: 3/32: register_tm_clones (DONE:103ms)
-  3/ 32: Method: sub_8048300
-  4/ 32: 4/32: sub_8048300 (DONE:12ms)
-  4/ 32: Method: deregister_tm_clones
-  5/ 32: 5/32: deregister_tm_clones (DONE:77ms)
-  5/ 32: Method: sub_80482E6
-  6/ 32: 6/32: sub_80482E6 (DONE:27ms)
-  6/ 32: Method: sub_80482E0
-  7/ 32: 7/32: sub_80482E0 (DONE:24ms)
-  7/ 32: Method: use
-  8/ 32: 8/32: use (DONE:111ms)
-  8/ 32: Method: use_int
-  9/ 32: 9/32: use_int (DONE:54ms)
-  9/ 32: Method: sub_80482F6
- 10/ 32: 10/32: sub_80482F6 (DONE:17ms)
- 10/ 32: Method: initializer_1
- 11/ 32: 11/32: initializer_1 (DONE:47ms)
- 11/ 32: Method: initializer_0
- 12/ 32: 12/32: initializer_0 (DONE:64ms)
- 12/ 32: Method: sub_80482F0
- 13/ 32: 13/32: sub_80482F0 (DONE:11ms)
- 13/ 32: Method: write_ints
- 14/ 32: 14/32: write_ints (DONE:135ms)
- 14/ 32: Method: write_floats
- 15/ 32: 15/32: write_floats (DONE:49ms)
- 15/ 32: Method: converting_between_floats_f1
- 16/ 32: 16/32: converting_between_floats_f1 (DONE:21ms)
- 16/ 32: Method: converting_between_floats_f2
- 17/ 32: 17/32: converting_between_floats_f2 (DONE:33ms)
- 17/ 32: Method: converting_between_floats_d1
- 18/ 32: 18/32: converting_between_floats_d1 (DONE:16ms)
- 18/ 32: Method: converting_between_floats_d2
- 19/ 32: 19/32: converting_between_floats_d2 (DONE:35ms)
- 19/ 32: Method: converting_between_floats_l1
- 20/ 32: 20/32: converting_between_floats_l1 (DONE:24ms)
- 20/ 32: Method: converting_between_floats_l2
- 21/ 32: 21/32: converting_between_floats_l2 (DONE:21ms)
- 21/ 32: Method: __libc_csu_fini
- 22/ 32: 22/32: __libc_csu_fini (DONE:12ms)
- 22/ 32: Method: finalizer_0
- 23/ 32: 23/32: finalizer_0 (DONE:22ms)
- 23/ 32: Method: finalizer_1
- 24/ 32: 24/32: finalizer_1 (DONE:44ms)
- 24/ 32: Method: main
- 25/ 32: 25/32: main (DONE:97ms)
- 25/ 32: Method: read_ints
- 26/ 32: 26/32: read_ints (DONE:141ms)
- 26/ 32: Method: read_floats
- 27/ 32: 27/32: read_floats (DONE:104ms)
- 27/ 32: Method: constants
- 28/ 32: 28/32: constants (DONE:104ms)
- 28/ 32: Method: basic_operations
- 29/ 32: 29/32: basic_operations (DONE:100ms)
- 29/ 32: Method: compare_floats
- 30/ 32: 30/32: compare_floats (DONE:463ms)
- 30/ 32: Method: __libc_csu_init
- 31/ 32: 31/32: __libc_csu_init (DONE:153ms)
- 31/ 32: Method: _start
- 32/ 32: 32/32: _start (DONE:42ms)
+  0/ 38: Method: __x86.get_pc_thunk.bx
+  1/ 38: 1/38: __x86.get_pc_thunk.bx (DONE:49ms)
+  1/ 38: Method: sub_8048379
+  2/ 38: 2/38: sub_8048379 (DONE:4ms)
+  2/ 38: Method: sub_80483B3
+  3/ 38: 3/38: sub_80483B3 (DONE:5ms)
+  3/ 38: Method: sub_80483DC
+  4/ 38: 4/38: sub_80483DC (DONE:4ms)
+  4/ 38: Method: sub_80482D6
+  5/ 38: 5/38: sub_80482D6 (DONE:16ms)
+  5/ 38: Method: →printf
+  6/ 38: 6/38: →printf (DONE:25ms)
+  6/ 38: Method: use
+  7/ 38: 7/38: use (DONE:60ms)
+  7/ 38: Method: use_int
+  8/ 38: 8/38: use_int (DONE:32ms)
+  8/ 38: Method: sub_8048300
+  9/ 38: 9/38: sub_8048300 (DONE:4ms)
+  9/ 38: Method: sub_804835F
+ 10/ 38: 10/38: sub_804835F (DONE:15ms)
+ 10/ 38: Method: sub_8048398
+ 11/ 38: 11/38: sub_8048398 (DONE:14ms)
+ 11/ 38: Method: register_tm_clones
+ 12/ 38: 12/38: register_tm_clones (DONE:43ms)
+ 12/ 38: Method: sub_80483EB
+ 13/ 38: 13/38: sub_80483EB (DONE:10ms)
+ 13/ 38: Method: →__libc_start_main
+ 14/ 38: 14/38: →__libc_start_main (DONE:10ms)
+ 14/ 38: Method: initializer_0
+ 15/ 38: 15/38: initializer_0 (DONE:30ms)
+ 15/ 38: Method: deregister_tm_clones
+ 16/ 38: 16/38: deregister_tm_clones (DONE:10ms)
+ 16/ 38: Method: sub_80483F0
+ 17/ 38: 17/38: sub_80483F0 (DONE:24ms)
+ 17/ 38: Method: sub_80483C9
+ 18/ 38: 18/38: sub_80483C9 (DONE:17ms)
+ 18/ 38: Method: initializer_1
+ 19/ 38: 19/38: initializer_1 (DONE:11ms)
+ 19/ 38: Method: write_ints
+ 20/ 38: 20/38: write_ints (DONE:50ms)
+ 20/ 38: Method: write_floats
+ 21/ 38: 21/38: write_floats (DONE:53ms)
+ 21/ 38: Method: converting_between_floats_f1
+ 22/ 38: 22/38: converting_between_floats_f1 (DONE:11ms)
+ 22/ 38: Method: converting_between_floats_f2
+ 23/ 38: 23/38: converting_between_floats_f2 (DONE:28ms)
+ 23/ 38: Method: converting_between_floats_d1
+ 24/ 38: 24/38: converting_between_floats_d1 (DONE:6ms)
+ 24/ 38: Method: converting_between_floats_d2
+ 25/ 38: 25/38: converting_between_floats_d2 (DONE:19ms)
+ 25/ 38: Method: converting_between_floats_l1
+ 26/ 38: 26/38: converting_between_floats_l1 (DONE:8ms)
+ 26/ 38: Method: converting_between_floats_l2
+ 27/ 38: 27/38: converting_between_floats_l2 (DONE:5ms)
+ 27/ 38: Method: __libc_csu_fini
+ 28/ 38: 28/38: __libc_csu_fini (DONE:3ms)
+ 28/ 38: Method: finalizer_0
+ 29/ 38: 29/38: finalizer_0 (DONE:12ms)
+ 29/ 38: Method: main
+ 30/ 38: 30/38: main (DONE:36ms)
+ 30/ 38: Method: read_ints
+ 31/ 38: 31/38: read_ints (DONE:101ms)
+ 31/ 38: Method: read_floats
+ 32/ 38: 32/38: read_floats (DONE:66ms)
+ 32/ 38: Method: constants
+ 33/ 38: 33/38: constants (DONE:61ms)
+ 33/ 38: Method: basic_operations
+ 34/ 38: 34/38: basic_operations (DONE:68ms)
+ 34/ 38: Method: compare_floats
+ 35/ 38: 35/38: compare_floats (DONE:250ms)
+ 35/ 38: Method: _start
+ 36/ 38: 36/38: _start (DONE:17ms)
+ 36/ 38: Method: finalizer_1
+ 37/ 38: 37/38: finalizer_1 (DONE:17ms)
+ 37/ 38: Method: __libc_csu_init
+ 38/ 38: 38/38: __libc_csu_init (DONE:86ms)
 1/2 DECOMPILATION ERROR: METHOD basic_operations: java.lang.RuntimeException: Unexpected: stack parameter item cannot be created
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.EPrototypeHandler.applyKnownPrototype(SourceFile:131)
-	at com.pnfsoftware.jebglobal.Ha.XP(SourceFile:58)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.EPrototypeHandler.applyKnownPrototype(SourceFile:132)
+	at com.pnfsoftware.jebglobal.KL.Na(SourceFile:58)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:116)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
 	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
 	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:461)
@@ -129,30 +133,30 @@ Output folder: jeb_output
 	at org.python.core.PyObject._jcall(PyObject.java:3598)
 	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
 	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
 	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
 
 2/2 DECOMPILATION ERROR: METHOD compare_floats: java.lang.RuntimeException: Unexpected: stack parameter item cannot be created
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.EPrototypeHandler.applyKnownPrototype(SourceFile:131)
-	at com.pnfsoftware.jebglobal.Ha.XP(SourceFile:58)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.ir.EPrototypeHandler.applyKnownPrototype(SourceFile:132)
+	at com.pnfsoftware.jebglobal.KL.Na(SourceFile:58)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:116)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
 	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
 	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:461)
@@ -178,8 +182,8 @@ Output folder: jeb_output
 	at org.python.core.PyObject._jcall(PyObject.java:3598)
 	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
 	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
 	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
 
-Exectime: 4.358000 sec
-Done.
+Exectime: 2.129000 sec
+[I] Done.

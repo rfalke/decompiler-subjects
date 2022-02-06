@@ -1,61 +1,45 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/short2/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (19 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 15 methods
 Output folder: jeb_output
-  0/ 19: Method: test
-  1/ 19: 1/19: test (DONE:236ms)
-  1/ 19: Method: sub_8048298
-  2/ 19: 2/19: sub_8048298 (DONE:33ms)
-  2/ 19: Method: frame_dummy
-  3/ 19: 3/19: frame_dummy (DONE:84ms)
-  3/ 19: Method: __do_global_dtors_aux
-  4/ 19: 4/19: __do_global_dtors_aux (DONE:209ms)
-  4/ 19: Method: __do_global_ctors_aux
-  5/ 19: 5/19: __do_global_ctors_aux (DONE:148ms)
-  5/ 19: Method: sub_80482AE
-  6/ 19: 6/19: sub_80482AE (DONE:23ms)
-  6/ 19: Method: sub_80482BE
-  7/ 19: 7/19: sub_80482BE (DONE:18ms)
-  7/ 19: Method: sub_80482B8
-  8/ 19: 8/19: sub_80482B8 (DONE:24ms)
-  8/ 19: Method: sub_80482CE
-  9/ 19: 9/19: sub_80482CE (DONE:19ms)
-  9/ 19: Method: sub_80482A8
- 10/ 19: 10/19: sub_80482A8 (DONE:12ms)
- 10/ 19: Method: sub_80482C8
- 11/ 19: 11/19: sub_80482C8 (DONE:14ms)
- 11/ 19: Method: __libc_csu_fini
- 12/ 19: 12/19: __libc_csu_fini (DONE:17ms)
- 12/ 19: Method: sub_8048352
- 13/ 19: 13/19: sub_8048352 (DONE:8ms)
- 13/ 19: Method: main
- 14/ 19: 14/19: main (DONE:192ms)
- 14/ 19: Method: _start
- 15/ 19: 15/19: _start (DONE:36ms)
- 15/ 19: Method: initializer_0
- 16/ 19: 16/19: initializer_0 (DONE:59ms)
- 16/ 19: Method: call_gmon_start
- 17/ 19: 17/19: call_gmon_start (DONE:62ms)
- 17/ 19: Method: finalizer_0
- 18/ 19: 18/19: finalizer_0 (DONE:45ms)
- 18/ 19: Method: __libc_csu_init
- 19/ 19: 19/19: __libc_csu_init (DONE:110ms)
-Exectime: 3.292000 sec
-Done.
+  0/ 15: Method: test
+  1/ 15: 1/15: test (DONE:152ms)
+  1/ 15: Method: sub_804829E
+  2/ 15: 2/15: sub_804829E (DONE:14ms)
+  2/ 15: Method: →printf
+  3/ 15: 3/15: →printf (DONE:28ms)
+  3/ 15: Method: __do_global_dtors_aux
+  4/ 15: 4/15: __do_global_dtors_aux (DONE:130ms)
+  4/ 15: Method: frame_dummy
+  5/ 15: 5/15: frame_dummy (DONE:41ms)
+  5/ 15: Method: __do_global_ctors_aux
+  6/ 15: 6/15: __do_global_ctors_aux (DONE:60ms)
+  6/ 15: Method: →__libc_start_main
+  7/ 15: 7/15: →__libc_start_main (DONE:9ms)
+  7/ 15: Method: →__gmon_start__
+  8/ 15: 8/15: →__gmon_start__ (DONE:8ms)
+  8/ 15: Method: __libc_csu_fini
+  9/ 15: 9/15: __libc_csu_fini (DONE:5ms)
+  9/ 15: Method: main
+ 10/ 15: 10/15: main (DONE:90ms)
+ 10/ 15: Method: _start
+ 11/ 15: 11/15: _start (DONE:33ms)
+ 11/ 15: Method: initializer_0
+ 12/ 15: 12/15: initializer_0 (DONE:30ms)
+ 12/ 15: Method: call_gmon_start
+ 13/ 15: 13/15: call_gmon_start (DONE:28ms)
+ 13/ 15: Method: finalizer_0
+ 14/ 15: 14/15: finalizer_0 (DONE:20ms)
+ 14/ 15: Method: __libc_csu_init
+ 15/ 15: 15/15: __libc_csu_init (DONE:90ms)
+Exectime: 1.323000 sec
+[I] Done.

@@ -6,17 +6,6 @@ int main() {
     return →printf("%08X\n", 0x87653412);
 }
 
-void sub_8048268() {
-    jump gvar_80495B0;
-}
-
-int sub_804827E() {
-    /*BAD_CALL!*/ sub_8048268();
-}
-
-int sub_804828E() {
-    /*BAD_CALL!*/ sub_8048268();
-}
-
-void sub_804832E() {
+int sub_804826E() {
+    return gvar_80495B0();
 }

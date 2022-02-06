@@ -1,178 +1,458 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_internet/cosmopolitan_and_ape/hello2/x64_macho_after_exec_on_mac/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (79 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 86 methods
 Output folder: jeb_output
-  0/ 79: Method: sub_4018E7
-  1/ 79: 1/79: sub_4018E7 (DONE:128ms)
-  1/ 79: Method: sub_404C6C
-  2/ 79: 2/79: sub_404C6C (DONE:126ms)
-  2/ 79: Method: sub_404C04
-  3/ 79: 3/79: sub_404C04 (DONE:149ms)
-  3/ 79: Method: sub_405092
-  4/ 79: 4/79: sub_405092 (DONE:110ms)
-  4/ 79: Method: sub_4020B3
-  5/ 79: 5/79: sub_4020B3 (DONE:105ms)
-  5/ 79: Method: sub_4022A8
-  6/ 79: 6/79: sub_4022A8 (DONE:95ms)
-  6/ 79: Method: sub_40186F
-  7/ 79: 7/79: sub_40186F (DONE:97ms)
-  7/ 79: Method: sub_4018F7
-  8/ 79: 8/79: sub_4018F7 (DONE:24ms)
-  8/ 79: Method: sub_404F70
-  9/ 79: 9/79: sub_404F70 (DONE:39ms)
-  9/ 79: Method: sub_4050B2
- 10/ 79: 10/79: sub_4050B2 (DONE:33ms)
- 10/ 79: Method: sub_4047B0
- 11/ 79: 11/79: sub_4047B0 (DONE:217ms)
- 11/ 79: Method: sub_4020AB
- 12/ 79: 12/79: sub_4020AB (DONE:40ms)
- 12/ 79: Method: sub_404ABB
- 13/ 79: 13/79: sub_404ABB (DONE:33ms)
- 13/ 79: Method: sub_40161F
- 14/ 79: 14/79: sub_40161F (DONE:283ms)
- 14/ 79: Method: sub_40173E
- 15/ 79: 15/79: sub_40173E (DONE:268ms)
- 15/ 79: Method: sub_40189D
- 16/ 79: 16/79: sub_40189D (DONE:61ms)
- 16/ 79: Method: sub_4018C7
- 17/ 79: 17/79: sub_4018C7 (DONE:16ms)
- 17/ 79: Method: sub_4018D7
- 18/ 79: 18/79: sub_4018D7 (DONE:16ms)
- 18/ 79: Method: sub_401907
- 19/ 79: 19/79: sub_401907 (DONE:18ms)
- 19/ 79: Method: sub_401E5C
- 20/ 79: 20/79: sub_401E5C (DONE:51ms)
- 20/ 79: Method: sub_401E9A
- 21/ 79: 21/79: sub_401E9A (DONE:123ms)
- 21/ 79: Method: sub_401EDF
- 22/ 79: 22/79: sub_401EDF (DONE:80ms)
- 22/ 79: Method: sub_4020D4
- 23/ 79: 23/79: sub_4020D4 (DONE:19ms)
- 23/ 79: Method: sub_4020DE
- 24/ 79: 24/79: sub_4020DE (DONE:18ms)
- 24/ 79: Method: sub_402296
- 25/ 79: 25/79: sub_402296 (DONE:14ms)
- 25/ 79: Method: sub_40229C
- 26/ 79: 26/79: sub_40229C (DONE:6ms)
- 26/ 79: Method: sub_4022A2
- 27/ 79: 27/79: sub_4022A2 (DONE:10ms)
- 27/ 79: Method: sub_404C31
- 28/ 79: 28/79: sub_404C31 (DONE:52ms)
- 28/ 79: Method: sub_404DB0
- 29/ 79: 29/79: sub_404DB0 (DONE:10ms)
- 29/ 79: Method: sub_404DC0
- 30/ 79: 30/79: sub_404DC0 (DONE:8ms)
- 30/ 79: Method: sub_404DD0
- 31/ 79: 31/79: sub_404DD0 (DONE:9ms)
- 31/ 79: Method: sub_404DE0
- 32/ 79: 32/79: sub_404DE0 (DONE:8ms)
- 32/ 79: Method: sub_404E8F
- 33/ 79: 33/79: sub_404E8F (DONE:134ms)
- 33/ 79: Method: sub_40524A
- 34/ 79: 34/79: sub_40524A (DONE:115ms)
- 34/ 79: Method: sub_40228B
- 35/ 79: 35/79: sub_40228B (DONE:20ms)
- 35/ 79: Method: sub_401F82
- 36/ 79: 36/79: sub_401F82 (DONE:158ms)
- 36/ 79: Method: sub_401FE7
- 37/ 79: 37/79: sub_401FE7 (DONE:480ms)
- 37/ 79: Method: sub_404540
- 38/ 79: 38/79: sub_404540 (DONE:248ms)
- 38/ 79: Method: sub_4045D5
- 39/ 79: 39/79: sub_4045D5 (DONE:425ms)
- 39/ 79: Method: sub_40466A
- 40/ 79: 40/79: sub_40466A (DONE:646ms)
- 40/ 79: Method: sub_401711
- 41/ 79: 41/79: sub_401711 (DONE:82ms)
- 41/ 79: Method: sub_404C24
- 42/ 79: 42/79: sub_404C24 (DONE:41ms)
- 42/ 79: Method: sub_401F47
- 43/ 79: 43/79: sub_401F47 (DONE:129ms)
- 43/ 79: Method: sub_4014CE
- 44/ 79: 44/79: sub_4014CE (DONE:47ms)
- 44/ 79: Method: sub_401158
- 45/ 79: 45/79: sub_401158 (DONE:62ms)
- 45/ 79: Method: sub_4011FE
- 46/ 79: 46/79: sub_4011FE (DONE:165ms)
- 46/ 79: Method: sub_401270
- 47/ 79: 47/79: sub_401270 (DONE:14ms)
- 47/ 79: Method: sub_40127E
- 48/ 79: 48/79: sub_40127E (DONE:69ms)
- 48/ 79: Method: sub_401299
- 49/ 79: 49/79: sub_401299 (DONE:13ms)
- 49/ 79: Method: sub_404E4D
- 50/ 79: 50/79: sub_404E4D (DONE:29ms)
- 50/ 79: Method: sub_40452C
- 51/ 79: 51/79: sub_40452C (DONE:58ms)
- 51/ 79: Method: sub_4022EF
- 52/ 79: 52/79: sub_4022EF (DONE:1323ms)
- 52/ 79: Method: sub_403AE8
- 53/ 79: 53/79: sub_403AE8 (DONE:4845ms)
- 53/ 79: Method: sub_4026E8
- 54/ 79: 54/79: sub_4026E8 (DONE:1690ms)
- 54/ 79: Method: sub_404049
- 55/ 79: 55/79: sub_404049 (DONE:929ms)
- 55/ 79: Method: sub_401E81
- 56/ 79: 56/79: sub_401E81 (DONE:51ms)
- 56/ 79: Method: sub_404518
- 57/ 79: 57/79: sub_404518 (DONE:79ms)
- 57/ 79: Method: sub_402B64
- 58/ 79: 58/79: sub_402B64 (DONE:24891ms)
- 58/ 79: Method: sub_403FED
- 59/ 79: 59/79: sub_403FED (DONE:118ms)
- 59/ 79: Method: sub_4043D8
- 60/ 79: 60/79: sub_4043D8 (DONE:252ms)
- 60/ 79: Method: sub_405211
- 61/ 79: 61/79: sub_405211 (DONE:85ms)
- 61/ 79: Method: sub_401000
- 62/ 79: 62/79: sub_401000 (DONE:53ms)
- 62/ 79: Method: sub_4018AE
- 63/ 79: 63/79: sub_4018AE (DONE:65ms)
- 63/ 79: Method: sub_404491
- 64/ 79: 64/79: sub_404491 (DONE:22ms)
- 64/ 79: Method: sub_4015CB
- 65/ 79: 65/79: sub_4015CB (DONE:23ms)
- 65/ 79: Method: sub_4052D6
- 66/ 79: 66/79: sub_4052D6 (DONE:43ms)
- 66/ 79: Method: sub_40481D
- 67/ 79: 67/79: sub_40481D (DONE:1271ms)
- 67/ 79: Method: sub_401EB0
- 68/ 79: 68/79: sub_401EB0 (DONE:52ms)
- 68/ 79: Method: sub_401674
- 69/ 79: 69/79: sub_401674 (DONE:163ms)
- 69/ 79: Method: sub_4014E0
- 70/ 79: 70/79: sub_4014E0 (DONE:297ms)
- 70/ 79: Method: sub_401EC9
- 71/ 79: 71/79: sub_401EC9 (DONE:44ms)
- 71/ 79: Method: sub_401EF5
- 72/ 79: 72/79: sub_401EF5 (DONE:41ms)
- 72/ 79: Method: sub_404AC1
- 73/ 79: 73/79: sub_404AC1 (DONE:418ms)
- 73/ 79: Method: sub_404C87
- 74/ 79: 74/79: sub_404C87 (DONE:338ms)
- 74/ 79: Method: sub_4021BE
- 75/ 79: 75/79: sub_4021BE (DONE:112ms)
- 75/ 79: Method: sub_4012F0
- 76/ 79: 76/79: sub_4012F0 (DONE:1628ms)
- 76/ 79: Method: start
- 77/ 79: 77/79: start (DONE:151ms)
- 77/ 79: Method: sub_4020EC
- 78/ 79: 78/79: sub_4020EC (DONE:201ms)
- 78/ 79: Method: sub_401DBA
- 79/ 79: 79/79: sub_401DBA (DONE:364ms)
-Exectime: 44.986000 sec
-Done.
+  0/ 86: Method: sub_4018E7
+  1/ 86: 1/86: sub_4018E7 (DONE:56ms)
+  1/ 86: Method: sub_404C6C
+  2/ 86: 2/86: sub_404C6C (DONE:80ms)
+  2/ 86: Method: sub_405092
+  3/ 86: 3/86: sub_405092 (DONE:51ms)
+  3/ 86: Method: sub_4020B3
+  4/ 86: 4/86: sub_4020B3 (DONE:33ms)
+  4/ 86: Method: sub_4022A8
+  5/ 86: 5/86: sub_4022A8 (DONE:34ms)
+  5/ 86: Method: sub_40186F
+  6/ 86: 6/86: sub_40186F (DONE:68ms)
+  6/ 86: Method: sub_4018F7
+  7/ 86: 7/86: sub_4018F7 (DONE:5ms)
+  7/ 86: Method: sub_404517
+  8/ 86: 8/86: sub_404517 (DONE:3ms)
+  8/ 86: Method: sub_404F70
+  9/ 86: 9/86: sub_404F70 (DONE:14ms)
+  9/ 86: Method: sub_4050B2
+ 10/ 86: 10/86: sub_4050B2 (DONE:18ms)
+ 10/ 86: Method: sub_4020AB
+ 11/ 86: 11/86: sub_4020AB (DONE:12ms)
+ 11/ 86: Method: sub_404ABB
+ 12/ 86: 12/86: sub_404ABB (DONE:8ms)
+ 12/ 86: Method: sub_40161F
+ 13/ 86: 13/86: sub_40161F (DONE:140ms)
+ 13/ 86: Method: sub_40173E
+ 14/ 86: 14/86: sub_40173E (DONE:156ms)
+ 14/ 86: Method: sub_4018C7
+ 15/ 86: 15/86: sub_4018C7 (DONE:6ms)
+ 15/ 86: Method: sub_4018D7
+ 16/ 86: 16/86: sub_4018D7 (DONE:11ms)
+ 16/ 86: Method: sub_401907
+ 17/ 86: 17/86: sub_401907 (DONE:6ms)
+ 17/ 86: Method: sub_401E9A
+ 18/ 86: 18/86: sub_401E9A (DONE:45ms)
+ 18/ 86: Method: sub_401EDF
+ 19/ 86: 19/86: sub_401EDF (DONE:22ms)
+ 19/ 86: Method: sub_4020D4
+ 20/ 86: 20/86: sub_4020D4 (DONE:18ms)
+ 20/ 86: Method: sub_4020DE
+ 21/ 86: 21/86: sub_4020DE (DONE:6ms)
+ 21/ 86: Method: sub_402296
+ 22/ 86: 22/86: sub_402296 (DONE:3ms)
+ 22/ 86: Method: sub_40229C
+ 23/ 86: 23/86: sub_40229C (DONE:6ms)
+ 23/ 86: Method: sub_4022A2
+ 24/ 86: 24/86: sub_4022A2 (DONE:4ms)
+ 24/ 86: Method: sub_404C31
+ 25/ 86: 25/86: sub_404C31 (DONE:34ms)
+ 25/ 86: Method: sub_404DB0
+ 26/ 86: 26/86: sub_404DB0 (DONE:9ms)
+ 26/ 86: Method: sub_404DC0
+ 27/ 86: 27/86: sub_404DC0 (DONE:4ms)
+ 27/ 86: Method: sub_404DD0
+ 28/ 86: 28/86: sub_404DD0 (DONE:4ms)
+ 28/ 86: Method: sub_404DE0
+ 29/ 86: 29/86: sub_404DE0 (DONE:4ms)
+ 29/ 86: Method: sub_404E8F
+ 30/ 86: 30/86: sub_404E8F (DONE:88ms)
+ 30/ 86: Method: sub_40522E
+ 31/ 86: 31/86: sub_40522E (DONE:5ms)
+ 31/ 86: Method: sub_40228B
+ 32/ 86: 32/86: sub_40228B (DONE:6ms)
+ 32/ 86: Method: sub_401F82
+ 33/ 86: 33/86: sub_401F82 (DONE:160ms)
+ 33/ 86: Method: sub_401FE7
+ 34/ 86: 34/86: sub_401FE7 (DONE:224ms)
+ 34/ 86: Method: sub_404540
+ 35/ 86: 35/86: sub_404540 (DONE:79ms)
+ 35/ 86: Method: sub_4045D5
+ 36/ 86: 36/86: sub_4045D5 (DONE:138ms)
+ 36/ 86: Method: sub_401711
+ 37/ 86: 37/86: sub_401711 (DONE:31ms)
+ 37/ 86: Method: sub_404C24
+ 38/ 86: 38/86: sub_404C24 (DONE:10ms)
+ 38/ 86: Method: sub_401F47
+ 39/ 86: 39/86: sub_401F47 (DONE:37ms)
+ 39/ 86: Method: sub_4014CE
+ 40/ 86: 40/86: sub_4014CE (DONE:10ms)
+ 40/ 86: Method: sub_4011FE
+ 41/ 86: 41/86: sub_4011FE (DONE:54ms)
+ 41/ 86: Method: sub_401270
+ 42/ 86: 42/86: sub_401270 (DONE:6ms)
+ 42/ 86: Method: sub_40127E
+ 43/ 86: 43/86: sub_40127E (DONE:15ms)
+ 43/ 86: Method: sub_401299
+ 44/ 86: 44/86: sub_401299 (DONE:3ms)
+ 44/ 86: Method: sub_404E4D
+ 45/ 86: 45/86: sub_404E4D (DONE:8ms)
+ 45/ 86: Method: sub_40452C
+ 46/ 86: 46/86: sub_40452C (DONE:21ms)
+ 46/ 86: Method: sub_4022EF
+ 47/ 86: 47/86: sub_4022EF (DONE:985ms)
+ 47/ 86: Method: sub_4026E8
+ 48/ 86: 48/86: sub_4026E8 (DONE:2423ms)
+ 48/ 86: Method: sub_4025AC
+ 49/ 86: 49/86: sub_4025AC (DONE:251ms)
+ 49/ 86: Method: sub_403AE8
+ 50/ 86: 50/86: sub_403AE8 (DONE:2772ms)
+ 50/ 86: Method: sub_404049
+ 51/ 86: 51/86: sub_404049 (DONE:1070ms)
+ 51/ 86: Method: sub_401E81
+ 52/ 86: 52/86: sub_401E81 (DONE:21ms)
+ 52/ 86: Method: sub_404518
+ 53/ 86: 53/86: sub_404518 (DONE:20ms)
+ 53/ 86: Method: sub_402B64
+ 54/ 86: 54/86: sub_402B64 (DONE:70631ms)
+ 54/ 86: Method: sub_403FED
+ 55/ 86: 55/86: sub_403FED (DONE:117ms)
+ 55/ 86: Method: sub_4043D8
+ 56/ 86: 56/86: sub_4043D8 (DONE:99ms)
+ 56/ 86: Method: sub_4047B0
+ 57/ 86: 57/86: sub_4047B0 (DONE:55ms)
+ 57/ 86: Method: sub_40466A
+ 58/ 86: 58/86: sub_40466A (DONE:280ms)
+ 58/ 86: Method: sub_401516
+ 59/ 86: 59/86: sub_401516 (DONE:66ms)
+ 59/ 86: Method: sub_4052D6
+ 60/ 86: 60/86: sub_4052D6 (DONE:13ms)
+ 60/ 86: Method: sub_405211
+ 61/ 86: 61/86: sub_405211 (DONE:5ms)
+ 61/ 86: Method: sub_401000
+ 62/ 86: 62/86: sub_401000 (DONE:43ms)
+ 62/ 86: Method: sub_4018AE
+ 63/ 86: 63/86: sub_4018AE (DONE:30ms)
+ 63/ 86: Method: sub_40449B
+ 64/ 86: 64/86: sub_40449B (DONE:38ms)
+ 64/ 86: Method: sub_404491
+ 65/ 86: 65/86: sub_404491 (DONE:5ms)
+ 65/ 86: Method: sub_4015CB
+ 66/ 86: 66/86: sub_4015CB (DONE:7ms)
+ 66/ 86: Method: sub_40189D
+ 67/ 86: 67/86: sub_40189D (DONE:14ms)
+ 67/ 86: Method: sub_401E5C
+ 68/ 86: 68/86: sub_401E5C (DONE:10ms)
+ 68/ 86: Method: sub_401EB0
+ 69/ 86: 69/86: sub_401EB0 (DONE:16ms)
+ 69/ 86: Method: sub_401674
+ 70/ 86: 70/86: sub_401674 (DONE:97ms)
+ 70/ 86: Method: sub_4014E0
+ 71/ 86: 71/86: sub_4014E0 (DONE:24ms)
+ 71/ 86: Method: sub_401EC9
+ 72/ 86: 72/86: sub_401EC9 (DONE:18ms)
+ 72/ 86: Method: sub_401EF5
+ 73/ 86: 73/86: sub_401EF5 (DONE:19ms)
+ 73/ 86: Method: sub_405221
+ 74/ 86: 74/86: sub_405221 (DONE:18ms)
+ 74/ 86: Method: sub_404C87
+ 75/ 86: 75/86: sub_404C87 (DONE:171ms)
+ 75/ 86: Method: sub_4021BE
+ 76/ 86: 76/86: sub_4021BE (DONE:63ms)
+ 76/ 86: Method: sub_4012B7
+ 77/ 86: 77/86: sub_4012B7 (DONE:105ms)
+ 77/ 86: Method: start
+ 78/ 86: 78/86: start (DONE:4ms)
+ 78/ 86: Method: sub_4012F0
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFF0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB0F9h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFFAh
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB210h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFE0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFF0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB0F9h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFFAh
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB210h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFE0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFF0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB0F9h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFFAh
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB210h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFE0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFF0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB0F9h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFFAh
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFBFB210h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR s64:rsp
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i64:FFFFFFFFFFFFFFE0h
+[W] Cannot set type ? on IR i64:0000000000000000h
+[W] Cannot set type ? on IR i8:00h
+ 79/ 86: 79/86: sub_4012F0 (DONE:1143ms)
+ 79/ 86: Method: sub_404AC1
+ 80/ 86: 80/86: sub_404AC1 (DONE:305ms)
+ 80/ 86: Method: sub_4020EC
+ 81/ 86: 81/86: sub_4020EC (DONE:136ms)
+ 81/ 86: Method: sub_401158
+ 82/ 86: 82/86: sub_401158 (DONE:28ms)
+ 82/ 86: Method: sub_404C04
+ 83/ 86: 83/86: sub_404C04 (DONE:28ms)
+ 83/ 86: Method: sub_40481D
+ 84/ 86: 84/86: sub_40481D (DONE:70ms)
+ 84/ 86: Method: sub_40524A
+ 85/ 86: 85/86: sub_40524A (DONE:71ms)
+ 85/ 86: Method: sub_401DBA
+ 86/ 86: 86/86: sub_401DBA (DONE:187ms)
+1/2 DECOMPILATION ERROR: METHOD sub_4050B2: java.lang.IllegalArgumentException: Cannot find an integer primitive accommodating 128 bits
+	at com.pnfsoftware.jebglobal.U.Na(SourceFile:235)
+	at com.pnfsoftware.jebglobal.U.createWithEffectiveBitsize(SourceFile:58)
+	at com.pnfsoftware.jebglobal.Sc.oD(SourceFile:1024)
+	at com.pnfsoftware.jebglobal.Sc.generateC(SourceFile:947)
+	at com.pnfsoftware.jebglobal.ck.generateC(SourceFile:972)
+	at com.pnfsoftware.jebglobal.Kq.oD(SourceFile:399)
+	at com.pnfsoftware.jebglobal.Kq.oD(SourceFile:356)
+	at com.pnfsoftware.jebglobal.Kq.buildStructuredMethod(SourceFile:190)
+	at com.pnfsoftware.jebglobal.dw.Na(SourceFile:37)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:116)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+2/2 DECOMPILATION ERROR: METHOD sub_402B64: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 70630 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 83.285000 sec
+[I] Done.

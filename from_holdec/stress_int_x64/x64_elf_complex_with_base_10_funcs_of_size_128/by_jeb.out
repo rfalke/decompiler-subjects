@@ -1,71 +1,283 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_128/subject.exe...
-The notes section ".gnu.build.attributes" was not processed
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (23 internal methods created)
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x401026 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 28 methods
 Output folder: jeb_output
-  0/ 23: Method: initializer_0
-  1/ 23: 1/23: initializer_0 (DONE:254ms)
-  1/ 23: Method: sub_401036
-  2/ 23: 2/23: sub_401036 (DONE:36ms)
-  2/ 23: Method: deregister_tm_clones
-  3/ 23: 3/23: deregister_tm_clones (DONE:48ms)
-  3/ 23: Method: register_tm_clones
-  4/ 23: 4/23: register_tm_clones (DONE:65ms)
-  4/ 23: Method: log_size_7_var_000
-  5/ 23: 5/23: log_size_7_var_000 (DONE:1838ms)
-  5/ 23: Method: log_size_7_var_001
-  6/ 23: 6/23: log_size_7_var_001 (DONE:1137ms)
-  6/ 23: Method: log_size_7_var_002
-  7/ 23: 7/23: log_size_7_var_002 (DONE:917ms)
-  7/ 23: Method: log_size_7_var_003
-  8/ 23: 8/23: log_size_7_var_003 (DONE:855ms)
-  8/ 23: Method: log_size_7_var_004
-  9/ 23: 9/23: log_size_7_var_004 (DONE:616ms)
-  9/ 23: Method: log_size_7_var_005
- 10/ 23: 10/23: log_size_7_var_005 (DONE:1356ms)
- 10/ 23: Method: log_size_7_var_006
- 11/ 23: 11/23: log_size_7_var_006 (DONE:674ms)
- 11/ 23: Method: log_size_7_var_007
- 12/ 23: 12/23: log_size_7_var_007 (DONE:832ms)
- 12/ 23: Method: log_size_7_var_008
- 13/ 23: 13/23: log_size_7_var_008 (DONE:860ms)
- 13/ 23: Method: log_size_7_var_009
- 14/ 23: 14/23: log_size_7_var_009 (DONE:606ms)
- 14/ 23: Method: sub_401030
- 15/ 23: 15/23: sub_401030 (DONE:26ms)
- 15/ 23: Method: initializer_1
- 16/ 23: 16/23: initializer_1 (DONE:12ms)
- 16/ 23: Method: _dl_relocate_static_pie
- 17/ 23: 17/23: _dl_relocate_static_pie (DONE:6ms)
- 17/ 23: Method: __libc_csu_fini
- 18/ 23: 18/23: __libc_csu_fini (DONE:6ms)
- 18/ 23: Method: finalizer_0
- 19/ 23: 19/23: finalizer_0 (DONE:11ms)
- 19/ 23: Method: finalizer_1
-Emulation failed!
- 20/ 23: 20/23: finalizer_1 (DONE:85ms)
- 20/ 23: Method: main
- 21/ 23: 21/23: main (DONE:304ms)
- 21/ 23: Method: __libc_csu_init
- 22/ 23: 22/23: __libc_csu_init (DONE:138ms)
- 22/ 23: Method: _start
- 23/ 23: 23/23: _start (DONE:46ms)
-Exectime: 13.637000 sec
-Done.
+  0/ 28: Method: sub_401110
+  1/ 28: 1/28: sub_401110 (DONE:43ms)
+  1/ 28: Method: sub_401150
+  2/ 28: 2/28: sub_401150 (DONE:6ms)
+  2/ 28: Method: initializer_0
+  3/ 28: 3/28: initializer_0 (DONE:66ms)
+  3/ 28: Method: →__assert_fail
+  4/ 28: 4/28: →__assert_fail (DONE:31ms)
+  4/ 28: Method: sub_401180
+  5/ 28: 5/28: sub_401180 (DONE:5ms)
+  5/ 28: Method: log_size_7_var_000
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+  6/ 28: 6/28: log_size_7_var_000 (DONE:3981ms)
+  6/ 28: Method: log_size_7_var_001
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+  7/ 28: 7/28: log_size_7_var_001 (DONE:5678ms)
+  7/ 28: Method: log_size_7_var_002
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+  8/ 28: 8/28: log_size_7_var_002 (DONE:2934ms)
+  8/ 28: Method: log_size_7_var_003
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:-20, end:-19
+  9/ 28: 9/28: log_size_7_var_003 (DONE:4303ms)
+  9/ 28: Method: log_size_7_var_004
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 10/ 28: 10/28: log_size_7_var_004 (DONE:3549ms)
+ 10/ 28: Method: log_size_7_var_005
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 11/ 28: 11/28: log_size_7_var_005 (DONE:5571ms)
+ 11/ 28: Method: log_size_7_var_006
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 12/ 28: 12/28: log_size_7_var_006 (DONE:5485ms)
+ 12/ 28: Method: log_size_7_var_007
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 13/ 28: 13/28: log_size_7_var_007 (DONE:4415ms)
+ 13/ 28: Method: log_size_7_var_008
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 14/ 28: 14/28: log_size_7_var_008 (DONE:5224ms)
+ 14/ 28: Method: log_size_7_var_009
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:64, end:65
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 15/ 28: 15/28: log_size_7_var_009 (DONE:3250ms)
+ 15/ 28: Method: sub_4010FD
+ 16/ 28: 16/28: sub_4010FD (DONE:12ms)
+ 16/ 28: Method: sub_40113F
+ 17/ 28: 17/28: sub_40113F (DONE:11ms)
+ 17/ 28: Method: deregister_tm_clones
+ 18/ 28: 18/28: deregister_tm_clones (DONE:7ms)
+ 18/ 28: Method: register_tm_clones
+ 19/ 28: 19/28: register_tm_clones (DONE:20ms)
+ 19/ 28: Method: sub_40116D
+ 20/ 28: 20/28: sub_40116D (DONE:9ms)
+ 20/ 28: Method: initializer_1
+ 21/ 28: 21/28: initializer_1 (DONE:4ms)
+ 21/ 28: Method: _dl_relocate_static_pie
+ 22/ 28: 22/28: _dl_relocate_static_pie (DONE:2ms)
+ 22/ 28: Method: __libc_csu_fini
+ 23/ 28: 23/28: __libc_csu_fini (DONE:1ms)
+ 23/ 28: Method: finalizer_0
+ 24/ 28: 24/28: finalizer_0 (DONE:5ms)
+ 24/ 28: Method: main
+ 25/ 28: 25/28: main (DONE:281ms)
+ 25/ 28: Method: finalizer_1
+ 26/ 28: 26/28: finalizer_1 (DONE:7ms)
+ 26/ 28: Method: __libc_csu_init
+ 27/ 28: 27/28: __libc_csu_init (DONE:64ms)
+ 27/ 28: Method: _start
+ 28/ 28: 28/28: _start (DONE:23ms)
+Exectime: 45.750000 sec
+[I] Done.

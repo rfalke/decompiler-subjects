@@ -1,55 +1,56 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_internet/cosmopolitan_and_ape/life/x64_pe_orig/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (17 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 19 methods
 Output folder: jeb_output
-  0/ 17: Method: sub_401A09
-  1/ 17: 1/17: sub_401A09 (DONE:387ms)
-  1/ 17: Method: sub_40162C
-  2/ 17: 2/17: sub_40162C (DONE:248ms)
-  2/ 17: Method: sub_401297
-  3/ 17: 3/17: sub_401297 (DONE:374ms)
-  3/ 17: Method: sub_40134D
-  4/ 17: 4/17: sub_40134D (DONE:11ms)
-  4/ 17: Method: sub_4013B4
-  5/ 17: 5/17: sub_4013B4 (DONE:31ms)
-  5/ 17: Method: sub_401A3C
-  6/ 17: 6/17: sub_401A3C (DONE:161ms)
-  6/ 17: Method: sub_4019FA
-  7/ 17: 7/17: sub_4019FA (DONE:44ms)
-  7/ 17: Method: sub_401601
-  8/ 17: 8/17: sub_401601 (DONE:93ms)
-  8/ 17: Method: sub_40165C
-  9/ 17: 9/17: sub_40165C (DONE:2215ms)
-  9/ 17: Method: sub_4011A5
- 10/ 17: 10/17: sub_4011A5 (DONE:179ms)
- 10/ 17: Method: sub_401217
- 11/ 17: 11/17: sub_401217 (DONE:13ms)
- 11/ 17: Method: sub_401225
- 12/ 17: 12/17: sub_401225 (DONE:70ms)
- 12/ 17: Method: sub_401240
- 13/ 17: 13/17: sub_401240 (DONE:14ms)
- 13/ 17: Method: sub_401872
- 14/ 17: 14/17: sub_401872 (DONE:194ms)
- 14/ 17: Method: sub_401907
- 15/ 17: 15/17: sub_401907 (DONE:295ms)
- 15/ 17: Method: sub_401AA1
- 16/ 17: 16/17: sub_401AA1 (DONE:52ms)
- 16/ 17: Method: start
- 17/ 17: 17/17: start (DONE:1783ms)
-Exectime: 6.461000 sec
-Done.
+  0/ 19: Method: sub_401A09
+  1/ 19: 1/19: sub_401A09 (DONE:226ms)
+  1/ 19: Method: sub_40162C
+  2/ 19: 2/19: sub_40162C (DONE:82ms)
+  2/ 19: Method: sub_401297
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+  3/ 19: 3/19: sub_401297 (DONE:276ms)
+  3/ 19: Method: sub_40134D
+  4/ 19: 4/19: sub_40134D (DONE:5ms)
+  4/ 19: Method: sub_4013B4
+  5/ 19: 5/19: sub_4013B4 (DONE:9ms)
+  5/ 19: Method: sub_401A3C
+  6/ 19: 6/19: sub_401A3C (DONE:136ms)
+  6/ 19: Method: sub_4019FA
+  7/ 19: 7/19: sub_4019FA (DONE:22ms)
+  7/ 19: Method: sub_401ABE
+  8/ 19: 8/19: sub_401ABE (DONE:5ms)
+  8/ 19: Method: sub_4011A5
+  9/ 19: 9/19: sub_4011A5 (DONE:101ms)
+  9/ 19: Method: sub_401217
+ 10/ 19: 10/19: sub_401217 (DONE:15ms)
+ 10/ 19: Method: sub_401225
+ 11/ 19: 11/19: sub_401225 (DONE:25ms)
+ 11/ 19: Method: sub_401240
+ 12/ 19: 12/19: sub_401240 (DONE:4ms)
+ 12/ 19: Method: sub_401872
+ 13/ 19: 13/19: sub_401872 (DONE:111ms)
+ 13/ 19: Method: sub_401601
+ 14/ 19: 14/19: sub_401601 (DONE:35ms)
+ 14/ 19: Method: sub_40165C
+ 15/ 19: 15/19: sub_40165C (DONE:957ms)
+ 15/ 19: Method: sub_401907
+ 16/ 19: 16/19: sub_401907 (DONE:140ms)
+ 16/ 19: Method: sub_401AB1
+ 17/ 19: 17/19: sub_401AB1 (DONE:39ms)
+ 17/ 19: Method: sub_401AA1
+ 18/ 19: 18/19: sub_401AA1 (DONE:10ms)
+ 18/ 19: Method: start
+ 19/ 19: 19/19: start (DONE:552ms)
+Exectime: 3.849000 sec
+[I] Done.

@@ -1,240 +1,160 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_decompile-it.com/optic/ia32_elf_from_website/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (125 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (3s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 84 methods
 Output folder: jeb_output
-  0/125: Method: sub_8048B00
-  1/125: 1/125: sub_8048B00 (DONE:99ms)
-  1/125: Method: canon9_
-  2/125: 2/125: canon9_ (DONE:465ms)
-  2/125: Method: matr3inv_
-  3/125: 3/125: matr3inv_ (DONE:505ms)
-  3/125: Method: __do_global_dtors_aux
-  4/125: 4/125: __do_global_dtors_aux (DONE:74ms)
-  4/125: Method: frame_dummy
-  5/125: 5/125: frame_dummy (DONE:41ms)
-  5/125: Method: pmat2cart_
-  6/125: 6/125: pmat2cart_ (DONE:6082ms)
-  6/125: Method: __i686.get_pc_thunk.bx
-  7/125: 7/125: __i686.get_pc_thunk.bx (DONE:12ms)
-  7/125: Method: __do_global_ctors_aux
-  8/125: 8/125: __do_global_ctors_aux (DONE:111ms)
-  8/125: Method: sub_8048B16
-  9/125: 9/125: sub_8048B16 (DONE:11ms)
-  9/125: Method: sub_8048B10
- 10/125: 10/125: sub_8048B10 (DONE:20ms)
- 10/125: Method: sub_8048B26
- 11/125: 11/125: sub_8048B26 (DONE:12ms)
- 11/125: Method: sub_8048B36
- 12/125: 12/125: sub_8048B36 (DONE:10ms)
- 12/125: Method: sub_8048B30
- 13/125: 13/125: sub_8048B30 (DONE:8ms)
- 13/125: Method: sub_8048B46
- 14/125: 14/125: sub_8048B46 (DONE:12ms)
- 14/125: Method: sub_8048B40
- 15/125: 15/125: sub_8048B40 (DONE:14ms)
- 15/125: Method: sub_8048B56
- 16/125: 16/125: sub_8048B56 (DONE:11ms)
- 16/125: Method: sub_8048B50
- 17/125: 17/125: sub_8048B50 (DONE:19ms)
- 17/125: Method: sub_8048B66
- 18/125: 18/125: sub_8048B66 (DONE:13ms)
- 18/125: Method: sub_8048B76
- 19/125: 19/125: sub_8048B76 (DONE:10ms)
- 19/125: Method: sub_8048B70
- 20/125: 20/125: sub_8048B70 (DONE:10ms)
- 20/125: Method: sub_8048B86
- 21/125: 21/125: sub_8048B86 (DONE:10ms)
- 21/125: Method: sub_8048B96
- 22/125: 22/125: sub_8048B96 (DONE:13ms)
- 22/125: Method: sub_8048B90
- 23/125: 23/125: sub_8048B90 (DONE:15ms)
- 23/125: Method: sub_8048BA6
- 24/125: 24/125: sub_8048BA6 (DONE:15ms)
- 24/125: Method: sub_8048BB6
- 25/125: 25/125: sub_8048BB6 (DONE:11ms)
- 25/125: Method: sub_8048BC6
- 26/125: 26/125: sub_8048BC6 (DONE:11ms)
- 26/125: Method: sub_8048BC0
- 27/125: 27/125: sub_8048BC0 (DONE:17ms)
- 27/125: Method: sub_8048BD6
- 28/125: 28/125: sub_8048BD6 (DONE:14ms)
- 28/125: Method: sub_8048BD0
- 29/125: 29/125: sub_8048BD0 (DONE:10ms)
- 29/125: Method: sub_8048BE6
- 30/125: 30/125: sub_8048BE6 (DONE:12ms)
- 30/125: Method: sub_8048BE0
- 31/125: 31/125: sub_8048BE0 (DONE:10ms)
- 31/125: Method: sub_8048BF6
- 32/125: 32/125: sub_8048BF6 (DONE:11ms)
- 32/125: Method: sub_8048C06
- 33/125: 33/125: sub_8048C06 (DONE:11ms)
- 33/125: Method: sub_8048C16
- 34/125: 34/125: sub_8048C16 (DONE:15ms)
- 34/125: Method: sub_8048C10
- 35/125: 35/125: sub_8048C10 (DONE:10ms)
- 35/125: Method: sub_8048C26
- 36/125: 36/125: sub_8048C26 (DONE:12ms)
- 36/125: Method: sub_8048C20
- 37/125: 37/125: sub_8048C20 (DONE:16ms)
- 37/125: Method: sub_8048C36
- 38/125: 38/125: sub_8048C36 (DONE:12ms)
- 38/125: Method: sub_8048C30
- 39/125: 39/125: sub_8048C30 (DONE:10ms)
- 39/125: Method: sub_8048C46
- 40/125: 40/125: sub_8048C46 (DONE:9ms)
- 40/125: Method: sub_8048C40
- 41/125: 41/125: sub_8048C40 (DONE:12ms)
- 41/125: Method: sub_8048C56
- 42/125: 42/125: sub_8048C56 (DONE:12ms)
- 42/125: Method: sub_8048C50
- 43/125: 43/125: sub_8048C50 (DONE:9ms)
- 43/125: Method: sub_8048C66
- 44/125: 44/125: sub_8048C66 (DONE:13ms)
- 44/125: Method: sub_8048C76
- 45/125: 45/125: sub_8048C76 (DONE:13ms)
- 45/125: Method: sub_8048C70
- 46/125: 46/125: sub_8048C70 (DONE:12ms)
- 46/125: Method: wffclose_
- 47/125: 47/125: wffclose_ (DONE:75ms)
- 47/125: Method: sub_8048C86
- 48/125: 48/125: sub_8048C86 (DONE:11ms)
- 48/125: Method: sub_8048C80
- 49/125: 49/125: sub_8048C80 (DONE:13ms)
- 49/125: Method: sub_8048C96
- 50/125: 50/125: sub_8048C96 (DONE:11ms)
- 50/125: Method: sub_8048C90
- 51/125: 51/125: sub_8048C90 (DONE:8ms)
- 51/125: Method: sub_8048CA6
- 52/125: 52/125: sub_8048CA6 (DONE:17ms)
- 52/125: Method: sub_8048CA0
- 53/125: 53/125: sub_8048CA0 (DONE:12ms)
- 53/125: Method: sub_8048CB6
- 54/125: 54/125: sub_8048CB6 (DONE:15ms)
- 54/125: Method: sub_8048CB0
- 55/125: 55/125: sub_8048CB0 (DONE:13ms)
- 55/125: Method: sub_8048CC6
- 56/125: 56/125: sub_8048CC6 (DONE:11ms)
- 56/125: Method: sub_8048CC0
- 57/125: 57/125: sub_8048CC0 (DONE:10ms)
- 57/125: Method: sub_8048CD6
- 58/125: 58/125: sub_8048CD6 (DONE:17ms)
- 58/125: Method: sub_8048CD0
- 59/125: 59/125: sub_8048CD0 (DONE:11ms)
- 59/125: Method: sub_8048CE6
- 60/125: 60/125: sub_8048CE6 (DONE:20ms)
- 60/125: Method: sub_8048CE0
- 61/125: 61/125: sub_8048CE0 (DONE:19ms)
- 61/125: Method: sub_8048CF6
- 62/125: 62/125: sub_8048CF6 (DONE:10ms)
- 62/125: Method: sub_8048CF0
- 63/125: 63/125: sub_8048CF0 (DONE:9ms)
- 63/125: Method: sub_8048D06
- 64/125: 64/125: sub_8048D06 (DONE:12ms)
- 64/125: Method: sub_8048D00
- 65/125: 65/125: sub_8048D00 (DONE:11ms)
- 65/125: Method: sub_8048D16
- 66/125: 66/125: sub_8048D16 (DONE:13ms)
- 66/125: Method: sub_8048D10
- 67/125: 67/125: sub_8048D10 (DONE:9ms)
- 67/125: Method: sub_8048D26
- 68/125: 68/125: sub_8048D26 (DONE:11ms)
- 68/125: Method: sub_8048D20
- 69/125: 69/125: sub_8048D20 (DONE:9ms)
- 69/125: Method: sub_8048D36
- 70/125: 70/125: sub_8048D36 (DONE:14ms)
- 70/125: Method: sub_8048D30
- 71/125: 71/125: sub_8048D30 (DONE:8ms)
- 71/125: Method: hdr_skip_wfftype_
- 72/125: 72/125: hdr_skip_wfftype_ (DONE:761ms)
- 72/125: Method: sub_8048D46
- 73/125: 73/125: sub_8048D46 (DONE:13ms)
- 73/125: Method: sub_8048D56
- 74/125: 74/125: sub_8048D56 (DONE:10ms)
- 74/125: Method: sub_8048D50
- 75/125: 75/125: sub_8048D50 (DONE:19ms)
- 75/125: Method: sub_8048D66
- 76/125: 76/125: sub_8048D66 (DONE:13ms)
- 76/125: Method: sub_8048D60
- 77/125: 77/125: sub_8048D60 (DONE:11ms)
- 77/125: Method: sub_8048D76
- 78/125: 78/125: sub_8048D76 (DONE:8ms)
- 78/125: Method: sub_8048D70
- 79/125: 79/125: sub_8048D70 (DONE:6ms)
- 79/125: Method: wrtout_
- 80/125: 80/125: wrtout_ (DONE:22603ms)
- 80/125: Method: sub_8048D86
- 81/125: 81/125: sub_8048D86 (DONE:9ms)
- 81/125: Method: sub_8048D80
- 82/125: 82/125: sub_8048D80 (DONE:9ms)
- 82/125: Method: sub_8048D96
- 83/125: 83/125: sub_8048D96 (DONE:10ms)
- 83/125: Method: sub_8048B20
- 84/125: 84/125: sub_8048B20 (DONE:8ms)
- 84/125: Method: sym2cart_
- 85/125: 85/125: sym2cart_ (DONE:598ms)
- 85/125: Method: sub_8048B60
- 86/125: 86/125: sub_8048B60 (DONE:8ms)
- 86/125: Method: sub_8048B80
- 87/125: 87/125: sub_8048B80 (DONE:7ms)
- 87/125: Method: sub_8048BA0
- 88/125: 88/125: sub_8048BA0 (DONE:7ms)
- 88/125: Method: sub_8048BB0
- 89/125: 89/125: sub_8048BB0 (DONE:8ms)
- 89/125: Method: sub_8048BF0
- 90/125: 90/125: sub_8048BF0 (DONE:6ms)
- 90/125: Method: sub_8048C00
- 91/125: 91/125: sub_8048C00 (DONE:7ms)
- 91/125: Method: hdr_clean_
- 92/125: 92/125: hdr_clean_ (DONE:1836ms)
- 92/125: Method: sub_8048C60
- 93/125: 93/125: sub_8048C60 (DONE:10ms)
- 93/125: Method: wffwritenpwrec_
- 94/125: 94/125: wffwritenpwrec_ (DONE:81ms)
- 94/125: Method: wffreadnpwrec_
- 95/125: 95/125: wffreadnpwrec_ (DONE:68ms)
- 95/125: Method: mvrecord_
- 96/125: 96/125: mvrecord_ (DONE:122ms)
- 96/125: Method: wffreadskiprec_
- 97/125: 97/125: wffreadskiprec_ (DONE:47ms)
- 97/125: Method: sub_8048D40
- 98/125: 98/125: sub_8048D40 (DONE:12ms)
- 98/125: Method: nlinopt_
- 99/125: 99/125: nlinopt_ (DONE:152258ms)
- 99/125: Method: herald_
-100/125: 100/125: herald_ (DONE:7185ms)
-100/125: Method: print_ij_
-101/125: 101/125: print_ij_ (DONE:29309ms)
-101/125: Method: sub_8048D90
-102/125: 102/125: sub_8048D90 (DONE:10ms)
-102/125: Method: leave_myproc_
-103/125: 103/125: leave_myproc_ (DONE:44ms)
-103/125: Method: leave_new_
-104/125: 104/125: leave_new_ (DONE:52ms)
-104/125: Method: int2char4_
-105/125: 105/125: int2char4_ (DONE:338ms)
-105/125: Method: wffopen_
-106/125: 106/125: wffopen_ (DONE:302ms)
-106/125: Method: timein_
-107/125: 107/125: timein_ (DONE:488ms)
-107/125: Method: timab_
-108/125: 108/125: timab_ (DONE:1131ms)
-108/125: Method: linopt_
+  0/ 84: Method: canon9_
+  1/ 84: 1/84: canon9_ (DONE:375ms)
+  1/ 84: Method: matr3inv_
+  2/ 84: 2/84: matr3inv_ (DONE:317ms)
+  2/ 84: Method: sub_8048B06
+  3/ 84: 3/84: sub_8048B06 (DONE:11ms)
+  3/ 84: Method: →_gfortran_transfer_character
+  4/ 84: 4/84: →_gfortran_transfer_character (DONE:8ms)
+  4/ 84: Method: →_gfortran_st_write_done
+  5/ 84: 5/84: →_gfortran_st_write_done (DONE:7ms)
+  5/ 84: Method: →_gfortran_st_write
+  6/ 84: 6/84: →_gfortran_st_write (DONE:9ms)
+  6/ 84: Method: →_gfortran_transfer_integer
+  7/ 84: 7/84: →_gfortran_transfer_integer (DONE:6ms)
+  7/ 84: Method: →free
+  8/ 84: 8/84: →free (DONE:8ms)
+  8/ 84: Method: →_gfortran_transfer_real
+  9/ 84: 9/84: →_gfortran_transfer_real (DONE:8ms)
+  9/ 84: Method: →_gfortran_transfer_array
+ 10/ 84: 10/84: →_gfortran_transfer_array (DONE:10ms)
+ 10/ 84: Method: →_gfortran_runtime_error_at
+ 11/ 84: 11/84: →_gfortran_runtime_error_at (DONE:6ms)
+ 11/ 84: Method: →_gfortran_os_error
+ 12/ 84: 12/84: →_gfortran_os_error (DONE:9ms)
+ 12/ 84: Method: →malloc
+ 13/ 84: 13/84: →malloc (DONE:10ms)
+ 13/ 84: Method: →_gfortran_runtime_error
+ 14/ 84: 14/84: →_gfortran_runtime_error (DONE:6ms)
+ 14/ 84: Method: →_gfortran_st_read_done
+ 15/ 84: 15/84: →_gfortran_st_read_done (DONE:6ms)
+ 15/ 84: Method: →_gfortran_st_read
+ 16/ 84: 16/84: →_gfortran_st_read (DONE:6ms)
+ 16/ 84: Method: →_gfortran_string_trim
+ 17/ 84: 17/84: →_gfortran_string_trim (DONE:8ms)
+ 17/ 84: Method: →memmove
+ 18/ 84: 18/84: →memmove (DONE:7ms)
+ 18/ 84: Method: →_gfortran_concat_string
+ 19/ 84: 19/84: →_gfortran_concat_string (DONE:6ms)
+ 19/ 84: Method: →memset
+ 20/ 84: 20/84: →memset (DONE:8ms)
+ 20/ 84: Method: →_gfortran_st_close
+ 21/ 84: 21/84: →_gfortran_st_close (DONE:6ms)
+ 21/ 84: Method: →_gfortran_stop_numeric
+ 22/ 84: 22/84: →_gfortran_stop_numeric (DONE:5ms)
+ 22/ 84: Method: →_gfortran_st_open
+ 23/ 84: 23/84: →_gfortran_st_open (DONE:5ms)
+ 23/ 84: Method: →_gfortran_string_index
+ 24/ 84: 24/84: →_gfortran_string_index (DONE:8ms)
+ 24/ 84: Method: →_gfortran_internal_pack
+ 25/ 84: 25/84: →_gfortran_internal_pack (DONE:6ms)
+ 25/ 84: Method: →_gfortran_st_rewind
+ 26/ 84: 26/84: →_gfortran_st_rewind (DONE:5ms)
+ 26/ 84: Method: wffclose_
+ 27/ 84: 27/84: wffclose_ (DONE:84ms)
+ 27/ 84: Method: hdr_skip_wfftype_
+ 28/ 84: 28/84: hdr_skip_wfftype_ (DONE:460ms)
+ 28/ 84: Method: →_gfortran_date_and_time
+ 29/ 84: 29/84: →_gfortran_date_and_time (DONE:8ms)
+ 29/ 84: Method: →_gfortran_internal_unpack
+ 30/ 84: 30/84: →_gfortran_internal_unpack (DONE:7ms)
+ 30/ 84: Method: →acos
+ 31/ 84: 31/84: →acos (DONE:7ms)
+ 31/ 84: Method: →_gfortran_compare_string
+ 32/ 84: 32/84: →_gfortran_compare_string (DONE:7ms)
+ 32/ 84: Method: wrtout_
+ 33/ 84: 33/84: wrtout_ (DONE:4831ms)
+ 33/ 84: Method: →_gfortran_pow_i4_i4
+ 34/ 84: 34/84: →_gfortran_pow_i4_i4 (DONE:6ms)
+ 34/ 84: Method: →dgemm_
+ 35/ 84: 35/84: →dgemm_ (DONE:7ms)
+ 35/ 84: Method: →_gfortran_st_backspace
+ 36/ 84: 36/84: →_gfortran_st_backspace (DONE:4ms)
+ 36/ 84: Method: →cabs
+ 37/ 84: 37/84: →cabs (DONE:6ms)
+ 37/ 84: Method: __do_global_dtors_aux
+ 38/ 84: 38/84: __do_global_dtors_aux (DONE:43ms)
+ 38/ 84: Method: frame_dummy
+ 39/ 84: 39/84: frame_dummy (DONE:12ms)
+ 39/ 84: Method: pmat2cart_
+ 40/ 84: 40/84: pmat2cart_ (DONE:7122ms)
+ 40/ 84: Method: __i686.get_pc_thunk.bx
+ 41/ 84: 41/84: __i686.get_pc_thunk.bx (DONE:2ms)
+ 41/ 84: Method: __do_global_ctors_aux
+ 42/ 84: 42/84: __do_global_ctors_aux (DONE:54ms)
+ 42/ 84: Method: →_gfortran_exit_i4
+ 43/ 84: 43/84: →_gfortran_exit_i4 (DONE:4ms)
+ 43/ 84: Method: →__gmon_start__
+ 44/ 84: 44/84: →__gmon_start__ (DONE:4ms)
+ 44/ 84: Method: →_gfortran_st_inquire
+ 45/ 84: 45/84: →_gfortran_st_inquire (DONE:4ms)
+ 45/ 84: Method: →_gfortran_transfer_complex
+ 46/ 84: 46/84: →_gfortran_transfer_complex (DONE:4ms)
+ 46/ 84: Method: →__libc_start_main
+ 47/ 84: 47/84: →__libc_start_main (DONE:4ms)
+ 47/ 84: Method: →_gfortran_set_options
+ 48/ 84: 48/84: →_gfortran_set_options (DONE:4ms)
+ 48/ 84: Method: →_gfortran_set_args
+ 49/ 84: 49/84: →_gfortran_set_args (DONE:4ms)
+ 49/ 84: Method: →_gfortran_system_clock_4
+ 50/ 84: 50/84: →_gfortran_system_clock_4 (DONE:4ms)
+ 50/ 84: Method: →dgemv_
+ 51/ 84: 51/84: →dgemv_ (DONE:4ms)
+ 51/ 84: Method: →_gfortran_store_exe_path
+ 52/ 84: 52/84: →_gfortran_store_exe_path (DONE:4ms)
+ 52/ 84: Method: wffwritenpwrec_
+ 53/ 84: 53/84: wffwritenpwrec_ (DONE:45ms)
+ 53/ 84: Method: hdr_clean_
+ 54/ 84: 54/84: hdr_clean_ (DONE:3063ms)
+ 54/ 84: Method: wffreadnpwrec_
+ 55/ 84: 55/84: wffreadnpwrec_ (DONE:45ms)
+ 55/ 84: Method: herald_
+ 56/ 84: 56/84: herald_ (DONE:1969ms)
+ 56/ 84: Method: print_ij_
+ 57/ 84: 57/84: print_ij_ (DONE:14789ms)
+ 57/ 84: Method: sym2cart_
+ 58/ 84: 58/84: sym2cart_ (DONE:500ms)
+ 58/ 84: Method: mvrecord_
+ 59/ 84: 59/84: mvrecord_ (DONE:105ms)
+ 59/ 84: Method: wffreadskiprec_
+ 60/ 84: 60/84: wffreadskiprec_ (DONE:28ms)
+ 60/ 84: Method: nlinopt_
+ 61/ 84: 61/84: nlinopt_ (DONE:77312ms)
+ 61/ 84: Method: leave_myproc_
+ 62/ 84: 62/84: leave_myproc_ (DONE:37ms)
+ 62/ 84: Method: leave_new_
+ 63/ 84: 63/84: leave_new_ (DONE:28ms)
+ 63/ 84: Method: int2char4_
+ 64/ 84: 64/84: int2char4_ (DONE:144ms)
+ 64/ 84: Method: wffopen_
+ 65/ 84: 65/84: wffopen_ (DONE:144ms)
+ 65/ 84: Method: timein_
+ 66/ 84: 66/84: timein_ (DONE:682ms)
+ 66/ 84: Method: timab_
+ 67/ 84: 67/84: timab_ (DONE:865ms)
+ 67/ 84: Method: linopt_
+ 68/ 84: 68/84: linopt_ (DONE:83298ms)
+ 68/ 84: Method: getwtk_
+ 69/ 84: 69/84: getwtk_ (DONE:7715ms)
+ 69/ 84: Method: mati3inv_
+ 70/ 84: 70/84: mati3inv_ (DONE:636ms)
+ 70/ 84: Method: metric_
+ 71/ 84: 71/84: metric_ (DONE:6962ms)
+ 71/ 84: Method: writewf_
+ 72/ 84: 72/84: writewf_ (DONE:4125ms)
+ 72/ 84: Method: hdr_io_int_
 
 === Killed because of time limit

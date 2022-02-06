@@ -1,61 +1,49 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/fibo/ia32_elf_by_boomerang_o4/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (19 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 17 methods
 Output folder: jeb_output
-  0/ 19: Method: atexit
-  1/ 19: 1/19: atexit (DONE:95ms)
-  1/ 19: Method: printf
-  2/ 19: 2/19: printf (DONE:19ms)
-  2/ 19: Method: __fpstart
-  3/ 19: 3/19: __fpstart (DONE:14ms)
-  3/ 19: Method: exit
-  4/ 19: 4/19: exit (DONE:15ms)
-  4/ 19: Method: scanf
-  5/ 19: 5/19: scanf (DONE:15ms)
-  5/ 19: Method: sub_804866D
-  6/ 19: 6/19: sub_804866D (DONE:44ms)
-  6/ 19: Method: _cleanup
-  7/ 19: 7/19: _cleanup (DONE:19ms)
-  7/ 19: Method: sub_804873C
-  8/ 19: 8/19: sub_804873C (DONE:19ms)
-  8/ 19: Method: _mcount
-  9/ 19: 9/19: _mcount (DONE:18ms)
-  9/ 19: Method: sub_8048812
- 10/ 19: 10/19: sub_8048812 (DONE:131ms)
- 10/ 19: Method: __do_global_dtors_aux
- 11/ 19: 11/19: __do_global_dtors_aux (DONE:170ms)
- 11/ 19: Method: finalizer_0
- 12/ 19: 12/19: finalizer_0 (DONE:38ms)
- 12/ 19: Method: __do_global_ctors_aux
- 13/ 19: 13/19: __do_global_ctors_aux (DONE:199ms)
- 13/ 19: Method: initializer_0
- 14/ 19: 14/19: initializer_0 (DONE:32ms)
- 14/ 19: Method: fini_dummy
- 15/ 19: 15/19: fini_dummy (DONE:32ms)
- 15/ 19: Method: init_dummy
- 16/ 19: 16/19: init_dummy (DONE:34ms)
- 16/ 19: Method: _start
- 17/ 19: 17/19: _start (DONE:177ms)
- 17/ 19: Method: fib
- 18/ 19: 18/19: fib (DONE:95ms)
- 18/ 19: Method: main
- 19/ 19: 19/19: main (DONE:146ms)
-Exectime: 3.597000 sec
-Done.
+  0/ 17: Method: →atexit
+  1/ 17: 1/17: →atexit (DONE:53ms)
+  1/ 17: Method: →printf
+  2/ 17: 2/17: →printf (DONE:7ms)
+  2/ 17: Method: →__fpstart
+  3/ 17: 3/17: →__fpstart (DONE:9ms)
+  3/ 17: Method: →exit
+  4/ 17: 4/17: →exit (DONE:6ms)
+  4/ 17: Method: →scanf
+  5/ 17: 5/17: →scanf (DONE:5ms)
+  5/ 17: Method: sub_8048672
+  6/ 17: 6/17: sub_8048672 (DONE:7ms)
+  6/ 17: Method: →_cleanup
+  7/ 17: 7/17: →_cleanup (DONE:6ms)
+  7/ 17: Method: _mcount
+  8/ 17: 8/17: _mcount (DONE:12ms)
+  8/ 17: Method: __do_global_dtors_aux
+  9/ 17: 9/17: __do_global_dtors_aux (DONE:112ms)
+  9/ 17: Method: finalizer_0
+ 10/ 17: 10/17: finalizer_0 (DONE:10ms)
+ 10/ 17: Method: __do_global_ctors_aux
+ 11/ 17: 11/17: __do_global_ctors_aux (DONE:106ms)
+ 11/ 17: Method: initializer_0
+ 12/ 17: 12/17: initializer_0 (DONE:5ms)
+ 12/ 17: Method: fini_dummy
+ 13/ 17: 13/17: fini_dummy (DONE:14ms)
+ 13/ 17: Method: init_dummy
+ 14/ 17: 14/17: init_dummy (DONE:13ms)
+ 14/ 17: Method: _start
+ 15/ 17: 15/17: _start (DONE:142ms)
+ 15/ 17: Method: fib
+ 16/ 17: 16/17: fib (DONE:45ms)
+ 16/ 17: Method: main
+ 17/ 17: 17/17: main (DONE:67ms)
+Exectime: 1.185000 sec
+[I] Done.

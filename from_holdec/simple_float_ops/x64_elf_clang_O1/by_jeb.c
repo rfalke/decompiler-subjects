@@ -1,5 +1,9 @@
 
 long basic_operations() {
+    double v0;
+    double v1;
+    long v2;
+    *(__int128*)&v0 = (unsigned __int128)v1 | ((unsigned __int128)v2 << 64);
     use();
     use();
     use();
@@ -11,16 +15,48 @@ long basic_operations() {
 }
 
 long compare_floats() {
-    double v0;
-    double v1;
-    long v2 = cmpeqsd(v0, v1);
-    use_int();
-    long v3 = cmpneqsd(v0, v1);
-    use_int();
-    use_int();
-    use_int();
-    use_int();
-    use_int();
+    char v0;
+    char v1;
+    char v2;
+    char v3;
+    double v4;
+    double v5;
+    double v6;
+    double v7;
+    double v8;
+    double v9;
+    double v10;
+    __int128 v11;
+    use_int((double)v11 != v10 ? 0L: 1L);
+    use_int((double)v11 == v10 ? 0L: 1L);
+    if(v4 == v10) {
+        v3 = 1;
+        v2 = 0;
+    }
+    else if(v5 > v10) {
+        v3 = 0;
+        v2 = 0;
+    }
+    else {
+        v3 = v6 < v10 ? 0: 1;
+        v2 = 1;
+    }
+    use_int(v2 || v3 ? 0L: 1L);
+    use_int(v2 ? 0L: 1L);
+    if(v10 == v7) {
+        v1 = 1;
+        v0 = 0;
+    }
+    else if(v10 > v8) {
+        v1 = 0;
+        v0 = 0;
+    }
+    else {
+        v1 = v10 < v9 ? 0: 1;
+        v0 = 1;
+    }
+    use_int(v0 || v1 ? 0L: 1L);
+    use_int(v0 ? 0L: 1L);
     return 124L;
 }
 
@@ -58,8 +94,8 @@ void converting_between_floats_l2() {
 }
 
 long main() {
-    →printf("%zu %zu %zu %zu %zu\n", 1L, 2L, 4L, 8L, 8L);
-    →printf((char*)0x40094E, 4L, 8L, 16L);
+    →printf("%zu %zu %zu %zu %zu\n");
+    →printf((char*)"%zu %zu %zu\n");
     return 0L;
 }
 
@@ -73,11 +109,25 @@ long read_ints() {
     return 120L;
 }
 
+long sub_4004B9() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6917 = 1;
+}
+
+void sub_4004CA() {
+}
+
+long sub_4004E0() {
+    return register_tm_clones();
+}
+
 int use() {
     return →printf((char*)&gvar_400940);
 }
 
-int use_int() {
+int use_int(long param0) {
     return →printf((char*)&gvar_400943);
 }
 
@@ -89,11 +139,12 @@ void write_floats() {
 }
 
 long write_ints() {
-    double v0;
-    global_char = (unsigned char)(int)v0;
-    global_short = (unsigned short)(int)v0;
-    global_int = (int)v0;
-    global_long = (long)v0;
-    global_long_long = (long)v0;
+    int v0;
+    double v1;
+    global_char = (unsigned char)(int)v1;
+    global_short = (unsigned short)(int)v1;
+    global_int = (int)v1;
+    global_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
+    global_long_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
     return 121L;
 }

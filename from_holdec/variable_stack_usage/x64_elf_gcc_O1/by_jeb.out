@@ -1,55 +1,54 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/variable_stack_usage/x64_elf_gcc_O1/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (16 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x4003E6 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 19 methods
 Output folder: jeb_output
-  0/ 16: Method: use
-  1/ 16: 1/16: use (DONE:139ms)
-  1/ 16: Method: register_tm_clones
-  2/ 16: 2/16: register_tm_clones (DONE:102ms)
-  2/ 16: Method: initializer_0
-  3/ 16: 3/16: initializer_0 (DONE:135ms)
-  3/ 16: Method: sub_4003F6
-  4/ 16: 4/16: sub_4003F6 (DONE:35ms)
-  4/ 16: Method: deregister_tm_clones
-  5/ 16: 5/16: deregister_tm_clones (DONE:50ms)
-  5/ 16: Method: initializer_1
-  6/ 16: 6/16: initializer_1 (DONE:72ms)
-  6/ 16: Method: sub_4003F0
-  7/ 16: 7/16: sub_4003F0 (DONE:38ms)
-  7/ 16: Method: fill
-  8/ 16: 8/16: fill (DONE:115ms)
-  8/ 16: Method: with_array
-  9/ 16: 9/16: with_array (DONE:184ms)
-  9/ 16: Method: with_alloca
- 10/ 16: 10/16: with_alloca (DONE:234ms)
- 10/ 16: Method: __libc_csu_fini
- 11/ 16: 11/16: __libc_csu_fini (DONE:14ms)
- 11/ 16: Method: finalizer_0
- 12/ 16: 12/16: finalizer_0 (DONE:24ms)
- 12/ 16: Method: finalizer_1
- 13/ 16: 13/16: finalizer_1 (DONE:75ms)
- 13/ 16: Method: __libc_csu_init
- 14/ 16: 14/16: __libc_csu_init (DONE:182ms)
- 14/ 16: Method: main
- 15/ 16: 15/16: main (DONE:83ms)
- 15/ 16: Method: _start
- 16/ 16: 16/16: _start (DONE:60ms)
-Exectime: 3.561000 sec
-Done.
+  0/ 19: Method: use
+  1/ 19: 1/19: use (DONE:94ms)
+  1/ 19: Method: register_tm_clones
+  2/ 19: 2/19: register_tm_clones (DONE:98ms)
+  2/ 19: Method: sub_4004CA
+  3/ 19: 3/19: sub_4004CA (DONE:8ms)
+  3/ 19: Method: sub_4004DB
+  4/ 19: 4/19: sub_4004DB (DONE:16ms)
+  4/ 19: Method: initializer_0
+  5/ 19: 5/19: initializer_0 (DONE:43ms)
+  5/ 19: Method: →memset
+  6/ 19: 6/19: →memset (DONE:19ms)
+  6/ 19: Method: fill
+  7/ 19: 7/19: fill (DONE:39ms)
+  7/ 19: Method: deregister_tm_clones
+  8/ 19: 8/19: deregister_tm_clones (DONE:30ms)
+  8/ 19: Method: sub_4004E0
+  9/ 19: 9/19: sub_4004E0 (DONE:28ms)
+  9/ 19: Method: with_array
+ 10/ 19: 10/19: with_array (DONE:60ms)
+ 10/ 19: Method: with_alloca
+ 11/ 19: 11/19: with_alloca (DONE:65ms)
+ 11/ 19: Method: sub_4004B9
+ 12/ 19: 12/19: sub_4004B9 (DONE:12ms)
+ 12/ 19: Method: initializer_1
+ 13/ 19: 13/19: initializer_1 (DONE:11ms)
+ 13/ 19: Method: __libc_csu_fini
+ 14/ 19: 14/19: __libc_csu_fini (DONE:4ms)
+ 14/ 19: Method: finalizer_0
+ 15/ 19: 15/19: finalizer_0 (DONE:7ms)
+ 15/ 19: Method: main
+ 16/ 19: 16/19: main (DONE:17ms)
+ 16/ 19: Method: finalizer_1
+ 17/ 19: 17/19: finalizer_1 (DONE:6ms)
+ 17/ 19: Method: __libc_csu_init
+ 18/ 19: 18/19: __libc_csu_init (DONE:83ms)
+ 18/ 19: Method: _start
+ 19/ 19: 19/19: _start (DONE:26ms)
+Exectime: 1.351000 sec
+[I] Done.

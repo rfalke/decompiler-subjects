@@ -1,95 +1,238 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_shootout/reversefile_ocaml/x64_elf/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (1503 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (36s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 1299 methods
 Output folder: jeb_output
-  0/1503: Method: caml_c_call
-  1/1503: 1/1503: caml_c_call (DONE:168ms)
-  1/1503: Method: caml_call_gc
-  2/1503: 2/1503: caml_call_gc (DONE:29ms)
-  2/1503: Method: sub_407840
-  3/1503: 3/1503: sub_407840 (DONE:23ms)
-  3/1503: Method: caml_ml_array_bound_error
-  4/1503: 4/1503: caml_ml_array_bound_error (DONE:35ms)
-  4/1503: Method: caml_apply2
-  5/1503: 5/1503: caml_apply2 (DONE:162ms)
-  5/1503: Method: caml_page_table_lookup
-  6/1503: 6/1503: caml_page_table_lookup (DONE:201ms)
-  6/1503: Method: caml_string_length
-  7/1503: 7/1503: caml_string_length (DONE:49ms)
-  7/1503: Method: camlPervasives__output_string_215
-  8/1503: 8/1503: camlPervasives__output_string_215 (DONE:60ms)
-  8/1503: Method: caml_convert_flag_list
-  9/1503: 9/1503: caml_convert_flag_list (DONE:84ms)
-  9/1503: Method: camlList__rev_append_79
- 10/1503: 10/1503: camlList__rev_append_79 (DONE:149ms)
- 10/1503: Method: camlPervasives__exit_350
- 11/1503: 11/1503: camlPervasives__exit_350 (DONE:126ms)
- 11/1503: Method: camlList__iter_102
- 12/1503: 12/1503: camlList__iter_102 (DONE:125ms)
- 12/1503: Method: caml_iterate_global_roots
- 13/1503: 13/1503: caml_iterate_global_roots (DONE:112ms)
- 13/1503: Method: camlList__mem_189
- 14/1503: 14/1503: camlList__mem_189 (DONE:94ms)
- 14/1503: Method: caml_apply3
- 15/1503: 15/1503: caml_apply3 (DONE:103ms)
- 15/1503: Method: cst_to_constr
- 16/1503: 16/1503: cst_to_constr (DONE:103ms)
- 16/1503: Method: caml_urge_major_slice
- 17/1503: 17/1503: caml_urge_major_slice (DONE:21ms)
- 17/1503: Method: allocate_block
- 18/1503: 18/1503: allocate_block (DONE:257ms)
- 18/1503: Method: caml_string_equal
- 19/1503: 19/1503: caml_string_equal (DONE:84ms)
- 19/1503: Method: caml_string_compare
- 20/1503: 20/1503: caml_string_compare (DONE:172ms)
- 20/1503: Method: caml_MD5Transform
- 21/1503: 21/1503: caml_MD5Transform (DONE:116959ms)
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:655)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.QH.XP(SourceFile:253)
-	at com.pnfsoftware.jebglobal.QH.duplicate(SourceFile:49)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.hG.Vo(SourceFile:225)
-	at com.pnfsoftware.jebglobal.hG.duplicate(SourceFile:34)
+  0/1299: Method: caml_c_call
+  1/1299: 1/1299: caml_c_call (DONE:108ms)
+  1/1299: Method: caml_ml_array_bound_error
+  2/1299: 2/1299: caml_ml_array_bound_error (DONE:18ms)
+  2/1299: Method: caml_apply2
+  3/1299: 3/1299: caml_apply2 (DONE:90ms)
+  3/1299: Method: caml_string_length
+  4/1299: 4/1299: caml_string_length (DONE:25ms)
+  4/1299: Method: camlPervasives__output_string_215
+  5/1299: 5/1299: camlPervasives__output_string_215 (DONE:54ms)
+  5/1299: Method: caml_convert_flag_list
+  6/1299: 6/1299: caml_convert_flag_list (DONE:51ms)
+  6/1299: Method: camlPervasives__exit_350
+  7/1299: 7/1299: camlPervasives__exit_350 (DONE:31ms)
+  7/1299: Method: camlList__iter_102
+  8/1299: 8/1299: camlList__iter_102 (DONE:37ms)
+  8/1299: Method: caml_iterate_global_roots
+  9/1299: 9/1299: caml_iterate_global_roots (DONE:42ms)
+  9/1299: Method: camlList__mem_189
+ 10/1299: 10/1299: camlList__mem_189 (DONE:58ms)
+ 10/1299: Method: caml_apply3
+ 11/1299: 11/1299: caml_apply3 (DONE:54ms)
+ 11/1299: Method: caml_urge_major_slice
+ 12/1299: 12/1299: caml_urge_major_slice (DONE:5ms)
+ 12/1299: Method: caml_MD5Transform
+ 13/1299: 13/1299: caml_MD5Transform (DONE:851541ms)
+ 13/1299: Method: fdlist_to_fdset
+ 14/1299: 14/1299: fdlist_to_fdset (DONE:133ms)
+ 14/1299: Method: sub_41DFC7
+ 15/1299: 15/1299: sub_41DFC7 (DONE:29ms)
+ 15/1299: Method: camlPervasives__string_of_int_154
+ 16/1299: 16/1299: camlPervasives__string_of_int_154 (DONE:15ms)
+ 16/1299: Method: camlPervasives__close_out_233
+ 17/1299: 17/1299: camlPervasives__close_out_233 (DONE:18ms)
+ 17/1299: Method: →ceil
+ 18/1299: 18/1299: →ceil (DONE:5ms)
+ 18/1299: Method: sub_40A400
+ 19/1299: 19/1299: sub_40A400 (DONE:23ms)
+ 19/1299: Method: camlUnix__domain_of_sockaddr_555
+ 20/1299: 20/1299: camlUnix__domain_of_sockaddr_555 (DONE:26ms)
+ 20/1299: Method: camlList__for_all_165
+ 21/1299: 21/1299: camlList__for_all_165 (DONE:34ms)
+ 21/1299: Method: caml_enter_blocking_section_default
+ 22/1299: 22/1299: caml_enter_blocking_section_default (DONE:4ms)
+ 22/1299: Method: caml_leave_blocking_section_default
+ 23/1299: 23/1299: caml_leave_blocking_section_default (DONE:2ms)
+ 23/1299: Method: caml_convert_signal_number
+ 24/1299: 24/1299: caml_convert_signal_number (DONE:17ms)
+ 24/1299: Method: caml_fl_init_merge
+ 25/1299: 25/1299: caml_fl_init_merge (DONE:4ms)
+ 25/1299: Method: caml_fl_merge_block
+ 26/1299: 26/1299: caml_fl_merge_block (DONE:456ms)
+ 26/1299: Method: caml_make_free_blocks
+ 27/1299: 27/1299: caml_make_free_blocks (DONE:55ms)
+ 27/1299: Method: sub_41E015
+ 28/1299: 28/1299: sub_41E015 (DONE:40ms)
+ 28/1299: Method: sub_41FD91
+ 29/1299: 29/1299: sub_41FD91 (DONE:3ms)
+ 29/1299: Method: sub_4226F0
+ 30/1299: 30/1299: sub_4226F0 (DONE:19ms)
+ 30/1299: Method: caml_channel_binary_mode
+ 31/1299: 31/1299: caml_channel_binary_mode (DONE:3ms)
+ 31/1299: Method: caml_deserialize_sint_4
+ 32/1299: 32/1299: caml_deserialize_sint_4 (DONE:31ms)
+ 32/1299: Method: caml_deserialize_block_8
+ 33/1299: 33/1299: caml_deserialize_block_8 (DONE:31ms)
+ 33/1299: Method: sub_40B2FC
+ 34/1299: 34/1299: sub_40B2FC (DONE:22ms)
+ 34/1299: Method: sub_40B460
+ 35/1299: 35/1299: sub_40B460 (DONE:22ms)
+ 35/1299: Method: camlPervasives__min_50
+ 36/1299: 36/1299: camlPervasives__min_50 (DONE:36ms)
+ 36/1299: Method: camlSys__set_signal_85
+ 37/1299: 37/1299: camlSys__set_signal_85 (DONE:16ms)
+ 37/1299: Method: camlPervasives__open_out_gen_199
+ 38/1299: 38/1299: camlPervasives__open_out_gen_199 (DONE:16ms)
+ 38/1299: Method: camlPervasives__open_in_gen_238
+ 39/1299: 39/1299: camlPervasives__open_in_gen_238 (DONE:22ms)
+ 39/1299: Method: caml_deserialize_sint_8
+ 40/1299: 40/1299: caml_deserialize_sint_8 (DONE:16ms)
+ 40/1299: Method: sub_407846
+ 41/1299: 41/1299: sub_407846 (DONE:4ms)
+ 41/1299: Method: →memmove
+ 42/1299: 42/1299: →memmove (DONE:18ms)
+ 42/1299: Method: →__stack_chk_fail
+ 43/1299: 43/1299: →__stack_chk_fail (DONE:9ms)
+ 43/1299: Method: →__fprintf_chk
+ 44/1299: 44/1299: →__fprintf_chk (DONE:7ms)
+ 44/1299: Method: →strlen
+ 45/1299: 45/1299: →strlen (DONE:7ms)
+ 45/1299: Method: →__errno_location
+ 46/1299: 46/1299: →__errno_location (DONE:6ms)
+ 46/1299: Method: →malloc
+ 47/1299: 47/1299: →malloc (DONE:6ms)
+ 47/1299: Method: →free
+ 48/1299: 48/1299: →free (DONE:7ms)
+ 48/1299: Method: →→free
+ 49/1299: 49/1299: →→free (DONE:4ms)
+ 49/1299: Method: →strcpy
+ 50/1299: 50/1299: →strcpy (DONE:6ms)
+ 50/1299: Method: compare_free_stack
+ 51/1299: 51/1299: compare_free_stack (DONE:17ms)
+ 51/1299: Method: →fcntl
+ 52/1299: 52/1299: →fcntl (DONE:8ms)
+ 52/1299: Method: →lseek64
+ 53/1299: 53/1299: →lseek64 (DONE:6ms)
+ 53/1299: Method: →__sprintf_chk
+ 54/1299: 54/1299: →__sprintf_chk (DONE:6ms)
+ 54/1299: Method: →__xstat64
+ 55/1299: 55/1299: →__xstat64 (DONE:7ms)
+ 55/1299: Method: caml_delete_global_root
+ 56/1299: 56/1299: caml_delete_global_root (DONE:241ms)
+ 56/1299: Method: →close
+ 57/1299: 57/1299: →close (DONE:10ms)
+ 57/1299: Method: →exit
+ 58/1299: 58/1299: →exit (DONE:10ms)
+ 58/1299: Method: caml_fatal_error
+ 59/1299: 59/1299: caml_fatal_error (DONE:55ms)
+ 59/1299: Method: →sigemptyset
+ 60/1299: 60/1299: →sigemptyset (DONE:6ms)
+ 60/1299: Method: →memset
+ 61/1299: 61/1299: →memset (DONE:6ms)
+ 61/1299: Method: →sigprocmask
+ 62/1299: 62/1299: →sigprocmask (DONE:6ms)
+ 62/1299: Method: →getenv
+ 63/1299: 63/1299: →getenv (DONE:8ms)
+ 63/1299: Method: →realloc
+ 64/1299: 64/1299: →realloc (DONE:6ms)
+ 64/1299: Method: →__memmove_chk
+ 65/1299: 65/1299: →__memmove_chk (DONE:6ms)
+ 65/1299: Method: caml_blit_string
+ 66/1299: 66/1299: caml_blit_string (DONE:25ms)
+ 66/1299: Method: add_string
+ 67/1299: 67/1299: add_string (DONE:80ms)
+ 67/1299: Method: extern_replay_trail
+ 68/1299: 68/1299: extern_replay_trail (DONE:43ms)
+ 68/1299: Method: free_extern_output
+ 69/1299: 69/1299: free_extern_output (DONE:19ms)
+ 69/1299: Method: →getrusage
+ 70/1299: 70/1299: →getrusage (DONE:8ms)
+ 70/1299: Method: →sigaction
+ 71/1299: 71/1299: →sigaction (DONE:6ms)
+ 71/1299: Method: →strtol
+ 72/1299: 72/1299: →strtol (DONE:7ms)
+ 72/1299: Method: →strcmp
+ 73/1299: 73/1299: →strcmp (DONE:6ms)
+ 73/1299: Method: →write
+ 74/1299: 74/1299: →write (DONE:7ms)
+ 74/1299: Method: →readdir64
+ 75/1299: 75/1299: →readdir64 (DONE:9ms)
+ 75/1299: Method: caml_free_for_heap
+ 76/1299: 76/1299: caml_free_for_heap (DONE:5ms)
+ 76/1299: Method: intern_cleanup
+ 77/1299: 77/1299: intern_cleanup (DONE:45ms)
+ 77/1299: Method: caml_ext_table_free
+ 78/1299: 78/1299: caml_ext_table_free (DONE:56ms)
+ 78/1299: Method: caml_MD5Final
+ 79/1299: 79/1299: caml_MD5Final (DONE:274ms)
+ 79/1299: Method: camlPervasives__$5e_136
+ 80/1299: 80/1299: camlPervasives__$5e_136 (DONE:57ms)
+ 80/1299: Method: →chdir
+ 81/1299: 81/1299: →chdir (DONE:6ms)
+ 81/1299: Method: →truncate64
+ 82/1299: 82/1299: →truncate64 (DONE:5ms)
+ 82/1299: Method: →inet_pton
+ 83/1299: 83/1299: →inet_pton (DONE:6ms)
+ 83/1299: Method: →__isoc99_sscanf
+ 84/1299: 84/1299: →__isoc99_sscanf (DONE:5ms)
+ 84/1299: Method: →execvp
+ 85/1299: 85/1299: →execvp (DONE:7ms)
+ 85/1299: Method: →gettimeofday
+ 86/1299: 86/1299: →gettimeofday (DONE:6ms)
+ 86/1299: Method: →unlink
+ 87/1299: 87/1299: →unlink (DONE:6ms)
+ 87/1299: Method: →getpid
+ 88/1299: 88/1299: →getpid (DONE:6ms)
+ 88/1299: Method: →__fxstat64
+ 89/1299: 89/1299: →__fxstat64 (DONE:7ms)
+ 89/1299: Method: →opendir
+ 90/1299: 90/1299: →opendir (DONE:6ms)
+ 90/1299: Method: →strerror
+ 91/1299: 91/1299: →strerror (DONE:7ms)
+ 91/1299: Method: →open64
+ 92/1299: 92/1299: →open64 (DONE:7ms)
+ 92/1299: Method: →ftruncate64
+ 93/1299: 93/1299: →ftruncate64 (DONE:7ms)
+ 93/1299: Method: →readlink
+ 94/1299: 94/1299: →readlink (DONE:6ms)
+ 94/1299: Method: →tcgetattr
+ 95/1299: 95/1299: →tcgetattr (DONE:5ms)
+ 95/1299: Method: →memcpy
+ 96/1299: 96/1299: →memcpy (DONE:6ms)
+ 96/1299: Method: caml_MD5Update
+ 97/1299: 97/1299: caml_MD5Update (DONE:221ms)
+ 97/1299: Method: →__lxstat64
+ 98/1299: 98/1299: →__lxstat64 (DONE:7ms)
+ 98/1299: Method: →sigaddset
+ 99/1299: 99/1299: →sigaddset (DONE:7ms)
+ 99/1299: Method: →getcwd
+100/1299: 100/1299: →getcwd (DONE:6ms)
+100/1299: Method: →calloc
+101/1299: 101/1299: →calloc (DONE:6ms)
+101/1299: Method: →closedir
+102/1299: 102/1299: →closedir (DONE:6ms)
+102/1299: Method: →modf
+103/1299: 103/1299: →modf (DONE:8ms)
+103/1299: Method: →getppid
+104/1299: 104/1299: →getppid (DONE:9ms)
+104/1299: Method: →inet_ntop
+105/1299: 105/1299: →inet_ntop (DONE:7ms)
+105/1299: Method: →rename
+106/1299: 106/1299: →rename (DONE:13ms)
+106/1299: Method: →strtod
+107/1299: 107/1299: →strtod (DONE:7ms)
+107/1299: Method: caml_aligned_malloc
+108/1299: 108/1299: caml_aligned_malloc (DONE:32ms)
+108/1299: Method: caml_alloc_for_heap
+109/1299: 109/1299: caml_alloc_for_heap (DONE:28ms)
+109/1299: Method: camlPervasives__build_result_267
+110/1299: 110/1299: camlPervasives__build_result_267 (DONE:42ms)
+110/1299: Method: caml_set_signal_action
+111/1299: 111/1299: caml_set_signal_action (DONE:57ms)
+111/1299: Method: caml_named_value
+
+=== Killed because of time limit

@@ -1,31 +1,31 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_377/ia32_pe/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (5 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 7 methods
 Output folder: jeb_output
-  0/  5: Method: sub_401000
-  1/  5: 1/5: sub_401000 (DONE:394ms)
-  1/  5: Method: sub_401017
-  2/  5: 2/5: sub_401017 (DONE:691ms)
-  2/  5: Method: sub_401088
-  3/  5: 3/5: sub_401088 (DONE:1319ms)
-  3/  5: Method: sub_401359
-  4/  5: 4/5: sub_401359 (DONE:119ms)
-  4/  5: Method: start
-  5/  5: 5/5: start (DONE:370ms)
-Exectime: 3.043000 sec
-Done.
+  0/  7: Method: sub_401000
+  1/  7: 1/7: sub_401000 (DONE:140ms)
+  1/  7: Method: sub_40102F
+  2/  7: 2/7: sub_40102F (DONE:48ms)
+  2/  7: Method: sub_401017
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Number of targets (1) differ from number of edges (0)
+  3/  7: 3/7: sub_401017 (DONE:14ms)
+  3/  7: Method: sub_401088
+  4/  7: 4/7: sub_401088 (DONE:992ms)
+  4/  7: Method: sub_401359
+  5/  7: 5/7: sub_401359 (DONE:63ms)
+  5/  7: Method: sub_4012FB
+  6/  7: 6/7: sub_4012FB (DONE:47ms)
+  6/  7: Method: start
+  7/  7: 7/7: start (DONE:253ms)
+Exectime: 2.594000 sec
+[I] Done.

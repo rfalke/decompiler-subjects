@@ -1,12 +1,15 @@
 
 long main() {
-    for(int i = 0; i <= 9; ++i) {
+    unsigned int v0 = 0;
+    do {
         puts("Hello!\n");
+        ++v0;
     }
+    while((int)v0 <= 9);
     return 0L;
 }
 
 int puts(char* __s) {
-    int result;
+    long result;
     return result;
 }

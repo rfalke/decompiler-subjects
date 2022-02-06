@@ -1,20 +1,14 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/static_helloworld/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-An exception was thrown when executing the script:
-EXCEPTION: com.pnfsoftware.jeb.client.script.ScriptException: java.lang.RuntimeException: Type cannot be used to create a data item: Prototype(int __cdecl f(FILE*, printf_info*, void**)) in com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:149) / caused by: java.lang.RuntimeException: Type cannot be used to create a data item: Prototype(int __cdecl f(FILE*, printf_info*, void**)) in com.pnfsoftware.jebglobal.Ni.Vo(SourceFile:163)
-Done.
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (3s)
+[E] An exception was thrown when executing the script:
+[E] EXCEPTION: com.pnfsoftware.jeb.client.script.ScriptException: java.lang.RuntimeException: Type cannot be used to create a data item: Prototype(int __cdecl f(FILE*, printf_info*, void**)) in com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:149) / caused by: java.lang.RuntimeException: Type cannot be used to create a data item: Prototype(int __cdecl f(FILE*, printf_info*, void**)) in com.pnfsoftware.jebglobal.tr.oD(SourceFile:163)
+[I] Done.

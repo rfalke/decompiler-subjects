@@ -1,16 +1,16 @@
 
-long basic_operations(long param0, long param1, long param2) {
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
+long basic_operations() {
+    use();
+    use();
+    use();
+    use();
+    use();
+    use();
+    use();
     return 123L;
 }
 
-long compare_floats(long param0, long param1, long param2) {
+char compare_floats() {
     char v0;
     char v1;
     char v2;
@@ -37,7 +37,7 @@ long compare_floats(long param0, long param1, long param2) {
         v7 = 1;
         v6 = 1;
     }
-    use_int((long)((v6 ? 0: 1) & (v7 ? 1: 0) & 0x1), param1, param2);
+    int v10 = /*BAD_CALL!*/ use_int((long)((v6 ? 0: 1) & (v7 ? 1: 0) & 0x1));
     if(v9 == v8) {
         v5 = 1;
         v4 = 0;
@@ -54,7 +54,7 @@ long compare_floats(long param0, long param1, long param2) {
         v5 = 1;
         v4 = 1;
     }
-    use_int((long)(((v4 ? 1: 0) | (v5 ? 0: 1)) & 0x1), param1, param2);
+    int v11 = /*BAD_CALL!*/ use_int((long)(((v4 ? 1: 0) | (v5 ? 0: 1)) & 0x1));
     if(v9 == v8) {
         v3 = 1;
         v2 = 0;
@@ -67,8 +67,8 @@ long compare_floats(long param0, long param1, long param2) {
         v3 = v9 < v8 ? 0: 1;
         v2 = 1;
     }
-    use_int((long)((v2 || v3 ? 0: 1) & 0x1), param1, param2);
-    use_int((long)((v9 == v8 ? 0: v9 <= v8 ? 0: 1) & 0x1), param1, param2);
+    int v12 = use_int(v2 || v3 ? 0L: 1L);
+    int v13 = /*BAD_CALL!*/ use_int(v9 != v8 ? v9 <= v8: 0 ? 0L: 1L);
     if(v8 == v9) {
         v1 = 1;
         v0 = 0;
@@ -81,17 +81,17 @@ long compare_floats(long param0, long param1, long param2) {
         v1 = v8 < v9 ? 0: 1;
         v0 = 1;
     }
-    use_int((long)((v0 || v1 ? 0: 1) & 0x1), param1, param2);
-    use_int((long)((v8 == v9 ? 0: v8 <= v9 ? 0: 1) & 0x1), param1, param2);
-    return 124L;
+    int v14 = use_int(v0 || v1 ? 0L: 1L);
+    use_int(v8 != v9 ? v8 <= v9: 0 ? 0L: 1L);
+    return 124;
 }
 
-long constants(long param0, long param1, long param2) {
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
-    use(param0, param1, param2);
+long constants() {
+    use();
+    use();
+    use();
+    use();
+    use();
     return 125L;
 }
 
@@ -120,27 +120,41 @@ void converting_between_floats_l2() {
 }
 
 long main() {
-    →printf("%zu %zu %zu %zu %zu\n", 1L, 2L, 4L, 8L, 8L);
-    →printf((char*)0x400AE6, 4L, 8L, 16L);
+    →printf("%zu %zu %zu %zu %zu\n");
+    →printf((char*)"%zu %zu %zu\n");
     return 0L;
 }
 
-long read_floats(long param0, long param1, long param2) {
-    use(param0, param1, param2);
+long read_floats() {
+    use();
     return 122L;
 }
 
-long read_ints(long param0, long param1, long param2) {
-    use(param0, param1, param2);
+long read_ints() {
+    use();
     return 120L;
 }
 
-int use(long param0, long param1, long param2) {
-    return →printf((char*)&gvar_400AD8, param1, param2);
+long sub_4004B9() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6917 = 1;
 }
 
-int use_int(int param0, long param1, long param2) {
-    return →printf((char*)&gvar_400ADB, (unsigned long)param0, param2);
+void sub_4004CA() {
+}
+
+long sub_4004E0() {
+    return register_tm_clones();
+}
+
+int use() {
+    return →printf((char*)&gvar_400AD8);
+}
+
+int use_int(long param0) {
+    return →printf((char*)&gvar_400ADB);
 }
 
 void write_floats() {
@@ -150,12 +164,13 @@ void write_floats() {
     *(__int128*)&global_long_double = v0;
 }
 
-long write_ints() {
-    double v0;
-    global_char = (unsigned char)(int)v0;
-    global_short = (unsigned short)(int)v0;
-    global_int = (int)v0;
-    global_long = (long)v0;
-    global_long_long = (long)v0;
+long write_ints(long param0) {
+    int v0;
+    double v1;
+    global_char = (unsigned char)(int)v1;
+    global_short = (unsigned short)(int)v1;
+    global_int = (int)v1;
+    global_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
+    global_long_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
     return 121L;
 }

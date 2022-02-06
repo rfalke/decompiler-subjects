@@ -1,98 +1,105 @@
 
-int dumpline(char* param0, long param1, int param2) {
-    long v0;
+long dumpline(char* param0, long param1, unsigned int param2) {
+    char v0;
     long v1;
-    char v2;
+    long v2;
     char v3;
+    char v4;
+    unsigned char v5;
+    char v6;
+    long result;
     char* ptr0;
-    →sprintf(&v2, "%08lX:", param1);
-    long v4 = param2 <= 16 ? (unsigned long)param2: 16L;
-    long v5 = 1L;
-    if(!((unsigned int)v4 ? 0: 1) && (unsigned int)v4 >= 0) {
+    char v7;
+    *(long*)&v4 = &loc_4006E8;
+    /*BAD_CALL!*/ →sprintf(&v5, "%08lX:");
+    long v8 = (int)param2 <= 16 ? (unsigned long)param2: 16L;
+    int v9 = 1;
+    if(!((unsigned int)v8 ? 0: 1) && (unsigned int)v8 >= 0) {
         char* ptr1 = ptr0;
-        int v6 = 0;
+        int v10 = 0;
         do {
-            →sprintf((char*)((long)v6 + (long)&v3), " %02lX");
+            *(long*)&v4 = &loc_400727;
+            /*BAD_CALL!*/ →sprintf((char*)((long)v10 + (long)&v7), " %02lX");
             ++ptr1;
-            v6 += 3;
+            v10 += 3;
         }
-        while((unsigned int)ptr1 - (unsigned int)ptr0 < (unsigned int)v4);
-        if((unsigned int)v4 <= 15) {
-            v5 = (v4 + 1L) & 0xffffffffL;
+        while((int)(unsigned int)((unsigned int)ptr1 - (unsigned int)ptr0) < (unsigned int)v8);
+        if((unsigned int)v8 <= 15) {
+            v9 = (unsigned int)v8 + 1;
             goto loc_400759;
         }
         else {
-            char* ptr2 = &v2;
-            long v7 = -1L;
-            while(v7 != 0L) {
-                char v8 = ptr2[0] == 0;
+            char* ptr2 = &v5;
+            long v11 = -1L;
+            do {
+                v3 = ptr2[0] == 0;
                 ++ptr2;
-                --v7;
-                if(!~v8) {
-                    break;
-                }
+                --v11;
             }
-            v1 = ~v7 - 1L;
-            *(int*)((long)(unsigned int)v1 + (long)&v2) = 0x7c2020;
-            v0 = (unsigned long)((unsigned int)v1 + 3);
+            while(~v3 && v11 == 0L);
+            v2 = -2L - v11;
+            *(int*)((long)(unsigned int)v2 + (long)&v5) = 0x7c2020;
+            v1 = (unsigned long)((unsigned int)v2 + 3);
             goto loc_4007B4;
         }
     }
     else {
     loc_400759:
         do {
-            long v9 = -1L;
-            while(v9 != 0L) {
-                --v9;
-                if(v2 == 0) {
+            long v12 = -1L;
+            while(v12 != 0L) {
+                --v12;
+                if(v5 == 0) {
                     break;
                 }
             }
-            *(int*)((char*)(~v9 + (long)&v2) - 1L) = 0x202020;
-            v5 = (unsigned long)((unsigned int)v5 + 1);
+            *(int*)(~v12 + (long)&v6) = 0x202020;
+            ++v9;
         }
-        while((unsigned int)v5 - 1 <= 15);
-        char* ptr3 = &v2;
-        long v10 = -1L;
-        while(v10 != 0L) {
-            char v11 = ptr3[0] == 0;
+        while(v9 == 16 || (int)(unsigned int)(v9 - 1) < 15);
+        char* ptr3 = &v5;
+        long v13 = -1L;
+        do {
+            v0 = ptr3[0] == 0;
             ++ptr3;
-            --v10;
-            if(!~v11) {
-                break;
-            }
+            --v13;
         }
-        v1 = ~v10 - 1L;
-        *(int*)((long)(unsigned int)v1 + (long)&v2) = 0x7c2020;
-        v0 = (unsigned long)((unsigned int)v1 + 3);
-        if((((unsigned int)v4 ? 0: 1) || (unsigned int)v4 < 0)) {
-            v4 = 0L;
+        while(~v0 && v13 == 0L);
+        v2 = -2L - v13;
+        *(int*)((long)(unsigned int)v2 + (long)&v5) = 0x7c2020;
+        v1 = (unsigned long)((unsigned int)v2 + 3);
+        if((((unsigned int)v8 ? 0: 1) || (unsigned int)v8 < 0)) {
+            v8 = 0L;
         }
         else {
         loc_4007B4:
-            long* ptr4 = (long*)((char*)(((v4 - 1L) & 0xffffffffL) + (long)ptr0) + 1L);
+            long* ptr4 = (long*)((char*)((unsigned long)((unsigned int)v8 - 1) + (long)ptr0) + 1L);
             char* ptr5 = ptr0;
-            long v12 = (unsigned long)((unsigned int)v1 - (unsigned int)ptr0 + 3);
+            long v14 = (unsigned long)((unsigned int)v2 - (unsigned int)ptr0 + 3);
             do {
-                *(char*)((long)((unsigned int)ptr5 + (unsigned int)v12) + (long)&v2) = (unsigned char)(*ptr5 + 224) < 95 ? *ptr5: '.';
+                *(char*)((long)((unsigned int)ptr5 + (unsigned int)v14) + (long)&v5) = (unsigned char)(*ptr5 + 224) < 95 ? *ptr5: '.';
                 ++ptr5;
             }
             while(ptr5 != ptr4);
-            if((unsigned int)v4 > 15) {
-                *(short*)((long)(unsigned int)v0 + (long)(unsigned int)v4 + (long)&v2) = 124;
-                return →puts(&v2);
+            if((unsigned int)v8 > 15) {
+                *(short*)((long)(unsigned int)v1 + (long)(unsigned int)v8 + (long)&v5) = 124;
+                *(long*)&v4 = &loc_400818;
+                /*BAD_CALL!*/ →puts(&v5);
+                return result;
             }
         }
-        int v13 = (unsigned int)v0 + (unsigned int)v4;
+        int v15 = (unsigned int)v1 + (unsigned int)v8;
         do {
-            *(char*)((long)v13 + (long)&v2) = ' ';
-            v4 = (unsigned long)((unsigned int)v4 + 1);
-            ++v13;
+            *(char*)((long)v15 + (long)&v5) = ' ';
+            v8 = (unsigned long)((unsigned int)v8 + 1);
+            ++v15;
         }
-        while((unsigned int)v4 <= 15);
+        while((unsigned int)v8 <= 15);
     }
-    *(short*)((long)(unsigned int)v0 + (long)(unsigned int)v4 + (long)&v2) = 124;
-    return →puts(&v2);
+    *(short*)((long)(unsigned int)v1 + (long)(unsigned int)v8 + (long)&v5) = 124;
+    *(long*)&v4 = &loc_400818;
+    /*BAD_CALL!*/ →puts(&v5);
+    return result;
 }
 
 long hexdump(char* __filename) {
@@ -100,27 +107,32 @@ long hexdump(char* __filename) {
     char v0;
     unsigned long v1;
     char v2;
-    int v3 = →__xstat(1, __filename, &v0);
-    if((unsigned int)v3) {
+    FILE* __stream;
+    int v3;
+    unsigned int v4;
+    int v5;
+    int v6;
+    →__xstat(1L, __filename, &v0);
+    if(v6) {
         →perror(__filename);
         result = 1L;
     }
     else {
-        FILE* __stream = →fopen(__filename, (char*)&gvar_400A5A);
+        →fopen(__filename, (char*)&gvar_400A5A);
         if(__stream) {
-            long v4 = 0L;
+            long v7 = 0L;
             if(v1) {
                 do {
-                    size_t v5 = /*BAD_CALL!*/ →fread(&v2, 1L, 16L, __stream);
-                    if(!(int)v5) {
+                    →fread(&v2, 1L, 16L, __stream);
+                    if(!v3) {
                         break;
                     }
                     else {
-                        dumpline((char*)&v2, v4, (int)v5);
-                        v4 += (long)(int)v5;
+                        dumpline((char*)&v2, v7, v4);
+                        v7 += (long)v5;
                     }
                 }
-                while((unsigned long)v4 < v1);
+                while((unsigned long)v7 < v1);
             }
             →fclose(__stream);
             result = 0L;
@@ -133,22 +145,22 @@ long hexdump(char* __filename) {
     return result;
 }
 
-long main(int param0, long param1) {
+long main(long param0, long param1) {
     int v0 = 0;
-    if(param0 > 1) {
+    if((unsigned int)param0 > 1) {
         long v1 = param1;
-        int v2 = 1;
+        unsigned int v2 = 1;
         do {
             long v3 = hexdump(*(char**)(v1 + 8L));
             v0 += (unsigned int)v3;
             ++v2;
             v1 += 8L;
         }
-        while(v2 < param0);
+        while((int)(unsigned int)param0 > (int)v2);
     }
     return (unsigned long)v0;
 }
 
-void sub_400540() {
-    jump gvar_600D70;
+long sub_400546() {
+    return gvar_600D70();
 }

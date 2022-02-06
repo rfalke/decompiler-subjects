@@ -1,0 +1,53 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/readelf/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 16 methods
+Output folder: jeb_output
+  0/ 16: Method: sub_8048D00
+  1/ 16: 1/16: sub_8048D00 (DONE:116ms)
+  1/ 16: Method: sub_8048CE3
+  2/ 16: 2/16: sub_8048CE3 (DONE:8ms)
+  2/ 16: Method: sub_8048CC6
+  3/ 16: 3/16: sub_8048CC6 (DONE:13ms)
+  3/ 16: Method: sub_804839B
+  4/ 16: 4/16: sub_804839B (DONE:11ms)
+  4/ 16: Method: sub_804858E
+  5/ 16: 5/16: sub_804858E (DONE:8ms)
+  5/ 16: Method: sub_8048D33
+  6/ 16: 6/16: sub_8048D33 (DONE:5ms)
+  6/ 16: Method: sub_804838D
+  7/ 16: 7/16: sub_804838D (DONE:30ms)
+  7/ 16: Method: sub_8048580
+  8/ 16: 8/16: sub_8048580 (DONE:29ms)
+  8/ 16: Method: start
+  9/ 16: 9/16: start (DONE:215ms)
+  9/ 16: Method: sub_8048D11
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2B: Number of targets (1) differ from number of edges (0)
+ 10/ 16: 10/16: sub_8048D11 (DONE:94ms)
+ 10/ 16: Method: sub_8048D34
+ 11/ 16: 11/16: sub_8048D34 (DONE:141ms)
+ 11/ 16: Method: sub_80487FB
+ 12/ 16: 12/16: sub_80487FB (DONE:21ms)
+ 12/ 16: Method: sub_8048689
+ 13/ 16: 13/16: sub_8048689 (DONE:803ms)
+ 13/ 16: Method: sub_8048445
+ 14/ 16: 14/16: sub_8048445 (DONE:182ms)
+ 14/ 16: Method: sub_804859F
+ 15/ 16: 15/16: sub_804859F (DONE:38ms)
+ 15/ 16: Method: sub_80483AC
+ 16/ 16: 16/16: sub_80483AC (DONE:34ms)
+Exectime: 2.481000 sec
+[I] Done.

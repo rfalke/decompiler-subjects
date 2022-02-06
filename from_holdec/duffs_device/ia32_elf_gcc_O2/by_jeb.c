@@ -8,7 +8,7 @@ short* copy1_eight_times(short* param0, short* param1, int param2) {
     int v1 = v0;
     short* result = param1;
     int v2 = (param2 + 7 < 0 ? param2 + 14: param2 + 7) >> 3;
-    switch((unsigned int)(((((param2 >> 31) >>> 29) + param2) & 0x7) - ((param2 >> 31) >>> 29))) {
+    switch((unsigned int)(((unsigned int)((param2 >> 31) >>> 29) + param2) & 0x7) - (unsigned int)((param2 >> 31) >>> 29)) {
         case 0: {
             break;
         }
@@ -108,42 +108,36 @@ short* copy1_eight_times(short* param0, short* param1, int param2) {
     goto loc_80484BC;
 }
 
-int copy1_four_times(short* param0, short* param1, int param2) {
+unsigned int copy1_four_times(short* param0, short* param1, int param2) {
     int v0;
     short* ptr0 = param0;
     int v1 = v0;
     short* ptr1 = param1;
-    int result = ((((param2 >> 31) >>> 30) + param2) & 0x3) - ((param2 >> 31) >>> 30);
+    unsigned int result = (unsigned int)(((unsigned int)((param2 >> 31) >>> 30) + param2) & 0x3) - (unsigned int)((param2 >> 31) >>> 30);
     int v2 = (param2 + 3 < 0 ? param2 + 6: param2 + 3) >> 2;
-    switch(result) {
-        case 1: {
-            goto loc_8048430;
-        }
-        case 2: {
-            break;
-        }
-        case 3: {
+    if(result == 1) {
+        goto loc_8048430;
+    }
+    else if((int)result >= 1) {
+        if(result == 3) {
             short v3 = *ptr1;
             ++ptr1;
             *ptr0 = v3;
             ++ptr0;
-            break;
         }
-        default: {
-            if(result >= 1) {
-                return result;
-            }
-            else if(!result) {
-                short* ptr2 = ptr1 + 1;
-                *ptr0 = *ptr1;
-                ptr1 = ptr2 + 1;
-                *(ptr0 + 1) = *ptr2;
-                ptr0 += 2;
-            }
-            else {
-                return result;
-            }
+        else if(result != 2) {
+            return result;
         }
+    }
+    else if(!result) {
+        short* ptr2 = ptr1 + 1;
+        *ptr0 = *ptr1;
+        ptr1 = ptr2 + 1;
+        *(ptr0 + 1) = *ptr2;
+        ptr0 += 2;
+    }
+    else {
+        return result;
     }
 loc_8048424:
     short v4 = *ptr1;
@@ -174,7 +168,7 @@ short* copy2_eight_times(short* param0, short* param1, int param2) {
     short* ptr0 = param1;
     if(param2 > 0) {
         unsigned int v2 = (unsigned int)(8 - param2);
-        int v3 = 16 - param2 + ((param2 - 8) & 0xfffffff8);
+        unsigned int v3 = (unsigned int)(16 - param2 + ((param2 - 8) & 0xfffffff8));
     loc_804863C:
         switch(v2) {
             case 1: {
@@ -240,8 +234,8 @@ short* copy2_four_times(short* param0, short* param1, int param2) {
     int v1 = v0;
     short* ptr0 = param1;
     if(param2 > 0) {
-        int v2 = 4 - param2;
-        int v3 = 8 - param2 + ((param2 - 4) & 0xfffffffc);
+        unsigned int v2 = (unsigned int)(4 - param2);
+        unsigned int v3 = (unsigned int)(8 - param2 + ((param2 - 4) & 0xfffffffc));
         while(1) {
             if(v2 == 3) {
                 goto loc_804858C;
@@ -276,31 +270,29 @@ short* copy2_four_times(short* param0, short* param1, int param2) {
 }
 
 int main() {
-    int v0;
-    int v1;
-    char v2 = &v0 == 48;
-    char v3 = (unsigned int)&v1 < 24;
-    short* ptr0 = (short*)→malloc(200);
-    void* ptr1 = →malloc(200);
-    short* ptr2 = (short*)ptr1;
-    copy1_four_times((short*)ptr1, ptr0, 100);
-    copy1_eight_times(ptr2, ptr0, 100);
-    copy2_four_times(ptr2, ptr0, 100);
-    copy2_eight_times(ptr2, ptr0, 100);
-    int v4 = 200;
-    while(v4 != 0) {
-        v2 = *(char*)&ptr0[0] == *(char*)&ptr2[0];
-        v3 = *(char*)&ptr0[0] < *(char*)&ptr2[0];
-        ptr0 = (short*)((char*)ptr0 + 1);
+    char v0;
+    char v1;
+    short* ptr0;
+    →malloc(200);
+    short* ptr1 = ptr0;
+    →malloc(200);
+    short* ptr2 = ptr0;
+    copy1_four_times(ptr0, ptr1, 100);
+    copy1_eight_times(ptr2, ptr1, 100);
+    copy2_four_times(ptr2, ptr1, 100);
+    short* ptr3 = copy2_eight_times(ptr2, ptr1, 100);
+    int v2 = 200;
+    do {
+        v1 = *(char*)&ptr1[0] == *(char*)&ptr2[0];
+        v0 = *(char*)&ptr1[0] < *(char*)&ptr2[0];
+        ptr1 = (short*)((char*)ptr1 + 1);
         ptr2 = (short*)((char*)ptr2 + 1);
-        --v4;
-        if(!v2) {
-            break;
-        }
+        --v2;
     }
-    return (int)((v3 || v2 ? 0: 1) - (v3 ? 1: 0));
+    while(v1 && v2 == 0);
+    return (int)((v0 || v1 ? 0: 1) - (v0 ? 1: 0));
 }
 
-void sub_80482C4() {
-    jump gvar_804997C;
+int sub_80482CA() {
+    return gvar_804997C();
 }

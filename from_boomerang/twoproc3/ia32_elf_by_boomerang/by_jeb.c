@@ -4,12 +4,14 @@ int getDevice(int param0) {
 }
 
 int main() {
-    int v0 = →xf86GetPciVideoInfo();
-    int v1 = getDevice(*(int*)v0);
-    →printf((char*)&gvar_80485F8, v1);
+    int* ptr0;
+    →xf86GetPciVideoInfo();
+    int* ptr1 = ptr0;
+    int v0 = getDevice(*ptr0);
+    →printf(&gvar_80485F8);
     return 0;
 }
 
-void sub_8048374() {
-    jump gvar_80496F0;
+int sub_804837A() {
+    return gvar_80496F0();
 }

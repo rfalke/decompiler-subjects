@@ -1,16 +1,31 @@
 
 int main() {
-    int v0;
-    →printf("plain: 0x%08x\n", 0x11223344);
-    (v0 >>> 16) & 0xFFFF = 0x1122;
-    v0 & 0xFFFF = 0x3344;
-    →printf("small: 0x%08x\n", v0);
+    short v0;
+    *(int*)&v0 = 0x11223344;
+    →printf("plain: 0x%08x\n");
+    →printf("small: 0x%08x\n");
     return 0;
 }
 
-void sub_8049030() {
-    jump gvar_804C008;
+int sub_8049036() {
+    return gvar_804C008();
 }
 
 void sub_80490E7() {
+}
+
+int sub_804911C() {
+    return 0;
+}
+
+void sub_8049168() {
+}
+
+int sub_804919D() {
+    int result = deregister_tm_clones();
+    completed.6844 = 1;
+    return result;
+}
+
+void sub_80491B8() {
 }

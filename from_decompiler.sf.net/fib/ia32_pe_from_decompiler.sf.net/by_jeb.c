@@ -4,13 +4,13 @@ int start(int param0, int param1, int param2, int param3) {
     int v1;
     sub_401000(9);
     int v2 = sub_401000(8);
-    return sub_401050((unsigned int)(v2 + v1), &v0, 100);
+    return sub_401050(v2 + v1, &v0, 100);
 }
 
-int sub_401000(int param0) {
+int sub_401000(unsigned int param0) {
     int v0;
     int v1;
-    if(param0 < 1) {
+    if((int)param0 < 1) {
         return 1;
     }
     int v2 = sub_401000(param0 - 2, v1);

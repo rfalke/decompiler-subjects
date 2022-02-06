@@ -2,44 +2,52 @@
 void __i686.get_pc_thunk.bx() {
 }
 
-int check(char* __s) {
+unsigned int check(int param0) {
     int v0;
-    int v1 = 0;
-    unsigned int min = 0;
-    for(size_t i = →strlen(__s); i > min; i = →strlen(__s)) {
-        char v2 = __s[min];
-        →sscanf(&v2, (char*)&gvar_8048668, &v0);
-        v1 += v0;
-        if(v1 == 16) {
-            parell(__s);
+    unsigned int result;
+    unsigned int v1 = 0;
+    unsigned int v2 = 0;
+    while(1) {
+        →strlen(param0);
+        if(result <= v2) {
+            break;
         }
-        ++min;
+        else {
+            char v3 = *(char*)(v2 + param0);
+            int* ptr0 = &v0;
+            →sscanf(&v3, &gvar_8048668);
+            v1 += v0;
+            if(v1 == 16) {
+                parell(param0);
+            }
+            ++v2;
+        }
     }
-    return →printf("Password Incorrect!\n");
+    →printf("Password Incorrect!\n");
+    return result;
 }
 
 int main() {
     char v0;
     →printf("IOLI Crackme Level 0x05\n");
     →printf("Password: ");
-    →scanf((char*)&gvar_80486B2, &v0);
+    →scanf(&gvar_80486B2);
     check(&v0);
     return 0;
 }
 
-int parell(char* __s) {
+int parell(int param0) {
     int v0;
-    int result;
-    →sscanf(__s, (char*)&gvar_8048668, &v0);
+    →sscanf(param0, &gvar_8048668);
     if(!(v0 & 0x1)) {
         →printf("Password OK!\n");
         /*NO_RETURN*/ →exit(0);
     }
-    return result;
+    return v0 & 0x1;
 }
 
-void sub_8048354() {
-    jump gvar_8049FFC;
+int sub_804835A() {
+    return gvar_8049FFC();
 }
 
 int sub_80483F4(int param0, int param1) {

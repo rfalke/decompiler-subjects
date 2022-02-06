@@ -1,80 +1,80 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.3M used (224.7M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_snowman/malformed-elf-2/x64_elf/subject.exe...
-{subject.exe > subject.exe}: The section ".plt" may be compressed: 32768 bytes were expected, only 11072 were read
-{subject.exe > subject.exe}: The section ".debug_aranges" may be compressed: 96 bytes were expected, only 0 were read
-{subject.exe > subject.exe}: The section ".debug_str" may be compressed: 65535 bytes were expected, only 6068 were read
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (27 internal methods created)
+[W] {subject.exe > subject.exe}: The section ".plt" may be compressed: 32768 bytes were expected, only 11072 were read
+[W] {subject.exe > subject.exe}: The section ".debug_aranges" may be compressed: 96 bytes were expected, only 0 were read
+[W] {subject.exe > subject.exe}: The section ".debug_str" may be compressed: 65535 bytes were expected, only 6068 were read
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 31 methods
 Output folder: jeb_output
-  0/ 27: Method: sub_400720
-  1/ 27: 1/27: sub_400720 (DONE:128ms)
-  1/ 27: Method: sub_400730
-  2/ 27: 2/27: sub_400730 (DONE:46ms)
-  2/ 27: Method: @2e
-  3/ 27: 3/27: @2e (DONE:147ms)
-  3/ 27: Method: sub_400710
-  4/ 27: 4/27: sub_400710 (DONE:39ms)
-  4/ 27: Method: sub_400740
-  5/ 27: 5/27: sub_400740 (DONE:29ms)
-  5/ 27: Method: sub_400750
-  6/ 27: 6/27: sub_400750 (DONE:30ms)
-  6/ 27: Method: sub_400760
-  7/ 27: 7/27: sub_400760 (DONE:22ms)
-  7/ 27: Method: sub_400770
-  8/ 27: 8/27: sub_400770 (DONE:20ms)
-  8/ 27: Method: sub_400780
-  9/ 27: 9/27: sub_400780 (DONE:27ms)
-  9/ 27: Method: sub_400790
- 10/ 27: 10/27: sub_400790 (DONE:27ms)
- 10/ 27: Method: sub_4007A0
- 11/ 27: 11/27: sub_4007A0 (DONE:27ms)
- 11/ 27: Method: sub_4007B0
- 12/ 27: 12/27: sub_4007B0 (DONE:28ms)
- 12/ 27: Method: sub_4007C0
- 13/ 27: 13/27: sub_4007C0 (DONE:25ms)
- 13/ 27: Method: sub_4007D0
- 14/ 27: 14/27: sub_4007D0 (DONE:19ms)
- 14/ 27: Method: sub_4007E0
- 15/ 27: 15/27: sub_4007E0 (DONE:21ms)
- 15/ 27: Method: sub_4007F0
- 16/ 27: 16/27: sub_4007F0 (DONE:16ms)
- 16/ 27: Method: @19
- 17/ 27: 17/27: @19 (DONE:45ms)
- 17/ 27: Method: initializer_1
- 18/ 27: 18/27: initializer_1 (DONE:61ms)
- 18/ 27: Method: @2f3
- 19/ 27: 19/27: @2f3 (DONE:327ms)
- 19/ 27: Method: initializer_0
- 20/ 27: 20/27: initializer_0 (DONE:30ms)
- 20/ 27: Method: sub_400706
- 21/ 27: 21/27: sub_400706 (DONE:11ms)
- 21/ 27: Method: @124
- 22/ 27: 22/27: @124 (DONE:15ms)
- 22/ 27: Method: finalizer_0
- 23/ 27: 23/27: finalizer_0 (DONE:15ms)
- 23/ 27: Method: @2c7
- 24/ 27: 24/27: @2c7 (DONE:53ms)
- 24/ 27: Method: finalizer_1
- 25/ 27: 25/27: finalizer_1 (DONE:67ms)
- 25/ 27: Method: @2da
- 26/ 27: 26/27: @2da (DONE:221ms)
- 26/ 27: Method: @29e
- 27/ 27: 27/27: @29e (DONE:149ms)
-Exectime: 4.004000 sec
-Done.
+  0/ 31: Method: @2e
+  1/ 31: 1/31: @2e (DONE:151ms)
+  1/ 31: Method: sub_4008BA
+  2/ 31: 2/31: sub_4008BA (DONE:5ms)
+  2/ 31: Method: sub_4008E8
+  3/ 31: 3/31: sub_4008E8 (DONE:21ms)
+  3/ 31: Method: sub_400706
+  4/ 31: 4/31: sub_400706 (DONE:12ms)
+  4/ 31: Method: →@50
+  5/ 31: 5/31: →@50 (DONE:18ms)
+  5/ 31: Method: →@3b
+  6/ 31: 6/31: →@3b (DONE:15ms)
+  6/ 31: Method: @19
+  7/ 31: 7/31: @19 (DONE:25ms)
+  7/ 31: Method: sub_4008CA
+  8/ 31: 8/31: sub_4008CA (DONE:31ms)
+  8/ 31: Method: →@16
+  9/ 31: 9/31: →@16 (DONE:13ms)
+  9/ 31: Method: →@23
+ 10/ 31: 10/31: →@23 (DONE:15ms)
+ 10/ 31: Method: →@34
+ 11/ 31: 11/31: →@34 (DONE:9ms)
+ 11/ 31: Method: →@4f
+ 12/ 31: 12/31: →@4f (DONE:10ms)
+ 12/ 31: Method: →@5c
+ 13/ 31: 13/31: →@5c (DONE:9ms)
+ 13/ 31: Method: →@49
+ 14/ 31: 14/31: →@49 (DONE:9ms)
+ 14/ 31: Method: →@64
+ 15/ 31: 15/31: →@64 (DONE:9ms)
+ 15/ 31: Method: →@10
+ 16/ 31: 16/31: →@10 (DONE:8ms)
+ 16/ 31: Method: →@76
+ 17/ 31: 17/31: →@76 (DONE:8ms)
+ 17/ 31: Method: →@1e
+ 18/ 31: 18/31: →@1e (DONE:9ms)
+ 18/ 31: Method: →@55
+ 19/ 31: 19/31: →@55 (DONE:9ms)
+ 19/ 31: Method: →@b
+ 20/ 31: 20/31: →@b (DONE:10ms)
+ 20/ 31: Method: →@11
+ 21/ 31: 21/31: →@11 (DONE:11ms)
+ 21/ 31: Method: sub_4008A9
+ 22/ 31: 22/31: sub_4008A9 (DONE:18ms)
+ 22/ 31: Method: initializer_1
+ 23/ 31: 23/31: initializer_1 (DONE:11ms)
+ 23/ 31: Method: @2f3
+ 24/ 31: 24/31: @2f3 (DONE:222ms)
+ 24/ 31: Method: initializer_0
+ 25/ 31: 25/31: initializer_0 (DONE:22ms)
+ 25/ 31: Method: @124
+ 26/ 31: 26/31: @124 (DONE:7ms)
+ 26/ 31: Method: finalizer_0
+ 27/ 31: 27/31: finalizer_0 (DONE:8ms)
+ 27/ 31: Method: @2c7
+ 28/ 31: 28/31: @2c7 (DONE:35ms)
+ 28/ 31: Method: finalizer_1
+ 29/ 31: 29/31: finalizer_1 (DONE:7ms)
+ 29/ 31: Method: @2da
+ 30/ 31: 30/31: @2da (DONE:94ms)
+ 30/ 31: Method: @29e
+ 31/ 31: 31/31: @29e (DONE:102ms)
+Exectime: 1.993000 sec
+[I] Done.

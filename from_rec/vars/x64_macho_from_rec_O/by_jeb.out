@@ -1,32 +1,26 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_rec/vars/x64_macho_from_rec_O/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (6 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 6 methods
 Output folder: jeb_output
   0/  6: Method: _func
-  1/  6: 1/6: _func (DONE:184ms)
+  1/  6: 1/6: _func (DONE:74ms)
   1/  6: Method: _func2
-  2/  6: 2/6: _func2 (DONE:100ms)
-  2/  6: Method: sub_100000EE0
-  3/  6: 3/6: sub_100000EE0 (DONE:44ms)
-  3/  6: Method:  stub helpers
-  4/  6: 4/6:  stub helpers (DONE:39ms)
-  4/  6: Method: _main
-  5/  6: 5/6: _main (DONE:118ms)
+  2/  6: 2/6: _func2 (DONE:29ms)
+  2/  6: Method:  stub helpers
+  3/  6: 3/6:  stub helpers (DONE:19ms)
+  3/  6: Method: _main
+  4/  6: 4/6: _main (DONE:24ms)
+  4/  6: Method: →_exit
+  5/  6: 5/6: →_exit (DONE:21ms)
   5/  6: Method: start
-  6/  6: 6/6: start (DONE:182ms)
-Exectime: 0.726000 sec
-Done.
+  6/  6: 6/6: start (DONE:200ms)
+Exectime: 0.393000 sec
+[I] Done.

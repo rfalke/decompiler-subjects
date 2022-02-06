@@ -1,19 +1,83 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_rec/hd2/ia32_pe_from_rec_msvc8_release/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> Microsoft Visual Studio
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-
-=== Killed because of time limit
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: Microsoft Visual Studio
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (2s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 34 methods
+Output folder: jeb_output
+  0/ 34: Method: sub_4018BC
+  1/ 34: 1/34: sub_4018BC (DONE:97ms)
+  1/ 34: Method: sub_401901
+  2/ 34: 2/34: sub_401901 (DONE:30ms)
+  2/ 34: Method: →MSVCR90.dll!_crt_debugger_hook
+  3/ 34: 3/34: →MSVCR90.dll!_crt_debugger_hook (DONE:8ms)
+  3/ 34: Method: →MSVCR90.dll!_amsg_exit
+  4/ 34: 4/34: →MSVCR90.dll!_amsg_exit (DONE:5ms)
+  4/ 34: Method: →MSVCR90.dll!_XcptFilter
+  5/ 34: 5/34: →MSVCR90.dll!_XcptFilter (DONE:4ms)
+  5/ 34: Method: sub_401760
+  6/ 34: 6/34: sub_401760 (DONE:66ms)
+  6/ 34: Method: sub_4017A0
+  7/ 34: 7/34: sub_4017A0 (DONE:67ms)
+  7/ 34: Method: →MSVCR90.dll!_initterm
+  8/ 34: 8/34: →MSVCR90.dll!_initterm (DONE:4ms)
+  8/ 34: Method: →MSVCR90.dll!_initterm_e
+  9/ 34: 9/34: →MSVCR90.dll!_initterm_e (DONE:4ms)
+  9/ 34: Method: →MSVCR90.dll!?terminate@@YAXXZ
+ 10/ 34: 10/34: →MSVCR90.dll!?terminate@@YAXXZ (DONE:3ms)
+ 10/ 34: Method: →MSVCR90.dll!_unlock
+ 11/ 34: 11/34: →MSVCR90.dll!_unlock (DONE:3ms)
+ 11/ 34: Method: →MSVCR90.dll!__dllonexit
+ 12/ 34: 12/34: →MSVCR90.dll!__dllonexit (DONE:4ms)
+ 12/ 34: Method: →MSVCR90.dll!_lock
+ 13/ 34: 13/34: →MSVCR90.dll!_lock (DONE:4ms)
+ 13/ 34: Method: →MSVCR90.dll!_except_handler4_common
+ 14/ 34: 14/34: →MSVCR90.dll!_except_handler4_common (DONE:4ms)
+ 14/ 34: Method: →MSVCR90.dll!_invoke_watson
+ 15/ 34: 15/34: →MSVCR90.dll!_invoke_watson (DONE:4ms)
+ 15/ 34: Method: →MSVCR90.dll!_controlfp_s
+ 16/ 34: 16/34: →MSVCR90.dll!_controlfp_s (DONE:4ms)
+ 16/ 34: Method: →MSVCR90.dll!memset
+ 17/ 34: 17/34: →MSVCR90.dll!memset (DONE:4ms)
+ 17/ 34: Method: sub_4017F0
+ 18/ 34: 18/34: sub_4017F0 (DONE:139ms)
+ 18/ 34: Method: sub_4016EE
+ 19/ 34: 19/34: sub_4016EE (DONE:6ms)
+ 19/ 34: Method: sub_40170E
+ 20/ 34: 20/34: sub_40170E (DONE:12ms)
+ 20/ 34: Method: sub_401734
+ 21/ 34: 21/34: sub_401734 (DONE:11ms)
+ 21/ 34: Method: sub_4015FC
+ 22/ 34: 22/34: sub_4015FC (DONE:51ms)
+ 22/ 34: Method: sub_401915
+ 23/ 34: 23/34: sub_401915 (DONE:16ms)
+ 23/ 34: Method: sub_40193A
+ 24/ 34: 24/34: sub_40193A (DONE:19ms)
+ 24/ 34: Method: sub_40123B
+ 25/ 34: 25/34: sub_40123B (DONE:13ms)
+ 25/ 34: Method: sub_401200
+ 26/ 34: 26/34: sub_401200 (DONE:49ms)
+ 26/ 34: Method: sub_401652
+ 27/ 34: 27/34: sub_401652 (DONE:143ms)
+ 27/ 34: Method: sub_4016F7
+ 28/ 34: 28/34: sub_4016F7 (DONE:23ms)
+ 28/ 34: Method: sub_401000
+ 29/ 34: 29/34: sub_401000 (DONE:545ms)
+ 29/ 34: Method: start
+ 30/ 34: 30/34: start (DONE:14ms)
+ 30/ 34: Method: sub_401140
+ 31/ 34: 31/34: sub_401140 (DONE:156ms)
+ 31/ 34: Method: sub_401968
+ 32/ 34: 32/34: sub_401968 (DONE:87ms)
+ 32/ 34: Method: sub_4014F6
+ 33/ 34: 33/34: sub_4014F6 (DONE:102ms)
+ 33/ 34: Method: sub_401295
+ 34/ 34: 34/34: sub_401295 (DONE:571ms)
+Exectime: 5.256000 sec
+[I] Done.

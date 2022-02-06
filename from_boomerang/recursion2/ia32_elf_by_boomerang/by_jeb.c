@@ -57,17 +57,12 @@ unsigned int l(int param0, int param1) {
 }
 
 int main() {
-    int v0;
-    int v1;
     b(55, 99);
-    →printf("ecx is %d, edx is %d\n", v0, v1);
-    →printf("res is %d\n", res);
+    →printf("ecx is %d, edx is %d\n");
+    →printf("res is %d\n");
     return 0;
 }
 
-void sub_8048298() {
-    jump gvar_80497F4;
-}
-
-void sub_8048352() {
+int sub_804829E() {
+    return gvar_80497F4();
 }

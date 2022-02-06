@@ -1,65 +1,57 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/otcc/otcc/ia32_elf_otcc/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (21 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 21 methods
 Output folder: jeb_output
   0/ 21: Method: sub_804898B
-  1/ 21: 1/21: sub_804898B (DONE:292ms)
+  1/ 21: 1/21: sub_804898B (DONE:224ms)
   1/ 21: Method: sub_8048A74
-  2/ 21: 2/21: sub_8048A74 (DONE:112ms)
+  2/ 21: 2/21: sub_8048A74 (DONE:64ms)
   2/ 21: Method: sub_8048A15
-  3/ 21: 3/21: sub_8048A15 (DONE:94ms)
+  3/ 21: 3/21: sub_8048A15 (DONE:54ms)
   3/ 21: Method: sub_8048B0E
-  4/ 21: 4/21: sub_8048B0E (DONE:52ms)
+  4/ 21: 4/21: sub_8048B0E (DONE:24ms)
   4/ 21: Method: sub_8048205
-  5/ 21: 5/21: sub_8048205 (DONE:42ms)
+  5/ 21: 5/21: sub_8048205 (DONE:19ms)
   5/ 21: Method: sub_8048AD9
-  6/ 21: 6/21: sub_8048AD9 (DONE:40ms)
+  6/ 21: 6/21: sub_8048AD9 (DONE:24ms)
   6/ 21: Method: sub_8048C4F
-  7/ 21: 7/21: sub_8048C4F (DONE:81ms)
+  7/ 21: 7/21: sub_8048C4F (DONE:78ms)
   7/ 21: Method: sub_8048B48
-  8/ 21: 8/21: sub_8048B48 (DONE:61ms)
+  8/ 21: 8/21: sub_8048B48 (DONE:56ms)
   8/ 21: Method: sub_8048BA9
-  9/ 21: 9/21: sub_8048BA9 (DONE:108ms)
+  9/ 21: 9/21: sub_8048BA9 (DONE:64ms)
   9/ 21: Method: sub_8048227
- 10/ 21: 10/21: sub_8048227 (DONE:93ms)
+ 10/ 21: 10/21: sub_8048227 (DONE:67ms)
  10/ 21: Method: sub_80482FE
- 11/ 21: 11/21: sub_80482FE (DONE:77ms)
+ 11/ 21: 11/21: sub_80482FE (DONE:33ms)
  11/ 21: Method: sub_80498E4
- 12/ 21: 12/21: sub_80498E4 (DONE:71ms)
+ 12/ 21: 12/21: sub_80498E4 (DONE:29ms)
  12/ 21: Method: sub_804990C
- 13/ 21: 13/21: sub_804990C (DONE:34ms)
+ 13/ 21: 13/21: sub_804990C (DONE:28ms)
  13/ 21: Method: sub_80482B5
- 14/ 21: 14/21: sub_80482B5 (DONE:51ms)
+ 14/ 21: 14/21: sub_80482B5 (DONE:48ms)
  14/ 21: Method: start
- 15/ 21: 15/21: start (DONE:50ms)
+ 15/ 21: 15/21: start (DONE:35ms)
  15/ 21: Method: sub_80495A9
- 16/ 21: 16/21: sub_80495A9 (DONE:869ms)
+ 16/ 21: 16/21: sub_80495A9 (DONE:801ms)
  16/ 21: Method: sub_804835D
- 17/ 21: 17/21: sub_804835D (DONE:1919ms)
+ 17/ 21: 17/21: sub_804835D (DONE:3249ms)
  17/ 21: Method: sub_8049E97
- 18/ 21: 18/21: sub_8049E97 (DONE:639ms)
+ 18/ 21: 18/21: sub_8049E97 (DONE:649ms)
  18/ 21: Method: sub_8048CD0
- 19/ 21: 19/21: sub_8048CD0 (DONE:2180ms)
+ 19/ 21: 19/21: sub_8048CD0 (DONE:5328ms)
  19/ 21: Method: sub_8049950
- 20/ 21: 20/21: sub_8049950 (DONE:775ms)
+ 20/ 21: 20/21: sub_8049950 (DONE:2110ms)
  20/ 21: Method: sub_804A1A4
- 21/ 21: 21/21: sub_804A1A4 (DONE:253ms)
-Exectime: 10.490000 sec
-Done.
+ 21/ 21: 21/21: sub_804A1A4 (DONE:213ms)
+Exectime: 13.926000 sec
+[I] Done.

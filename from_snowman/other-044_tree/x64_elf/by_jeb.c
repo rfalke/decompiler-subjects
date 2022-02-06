@@ -1,21 +1,20 @@
 
-unsigned long* insert(unsigned long* param0, int* param1) {
+unsigned long* insert(unsigned long* param0, unsigned int* param1) {
     unsigned long* result;
-    unsigned long* ptr0 = param0;
-    int* ptr1 = param1;
     if(!*param0) {
-        result = ptr0;
-        *result = ptr1;
+        result = param0;
+        *result = param1;
     }
-    else if(**ptr0 > *ptr1) {
-        long v0 = *ptr0 + 16L;
-        result = (unsigned long*)insert(v0, (long)ptr1, v0);
+    else if((int)**param0 > (int)*param1) {
+        long v0 = *param0 + 16L;
+        result = (unsigned long*)insert(v0, (long)param1, v0);
     }
     else {
-        result = (unsigned long*)**param0;
-        if(**param0 < *ptr1) {
-            long v1 = *ptr0 + 8L;
-            result = (unsigned long*)insert(v1, (long)ptr1, v1);
+        int* ptr0 = *param0;
+        result = (unsigned long*)*ptr0;
+        if(*ptr0 < *param1) {
+            long v1 = *param0 + 8L;
+            result = (unsigned long*)insert(v1, (long)param1, v1);
         }
     }
     return result;
@@ -23,31 +22,51 @@ unsigned long* insert(unsigned long* param0, int* param1) {
 
 // Stale decompilation - Refresh this view to re-decompile this code
 long main() {
-    long v0 = 0L;
-    for(int i = 1; i <= 10; ++i) {
-        void* ptr0 = →malloc(24L);
-        *(long*)((long)ptr0 + 8L) = 0L;
-        *(long*)((long)ptr0 + 16L) = *(long*)((long)ptr0 + 8L);
-        int v1 = →rand();
-        *(int*)ptr0 = (unsigned int)v1;
-        insert(&v0, (int*)ptr0);
+    unsigned int v0;
+    unsigned int* ptr0;
+    long v1 = 0L;
+    unsigned int v2 = 1;
+    do {
+        →malloc(24L);
+        unsigned int* ptr1 = ptr0;
+        *(long*)&ptr1[2] = 0L;
+        *(long*)&ptr1[4] = 0L;
+        →rand();
+        ptr1[0] = v0;
+        insert(&v1, ptr1);
+        ++v2;
     }
-    return printout(v0);
+    while((int)v2 <= 10);
+    return printout(v1);
 }
 
-long printout(long param0) {
-    long result;
-    long v0 = param0;
-    if(*(long*)(v0 + 16L)) {
-        printout(*(long*)(v0 + 16L));
+long printout(int* param0) {
+    int* ptr0 = param0;
+    if(*(long*)(ptr0 + 4)) {
+        printout(*(long*)(ptr0 + 4));
     }
     →printf((char*)&gvar_400794);
-    if(*(long*)(v0 + 8L)) {
-        result = printout(*(long*)(v0 + 8L));
+    long result = *(long*)(ptr0 + 2);
+    if(result) {
+        result = printout(*(long*)(ptr0 + 2));
     }
     return result;
 }
 
-void sub_400440() {
-    jump gvar_600AF8;
+long sub_400446() {
+    return gvar_600AF8();
+}
+
+long sub_400549() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6391 = 1;
+}
+
+void sub_40055A() {
+}
+
+long sub_40056A() {
+    return register_tm_clones();
 }

@@ -1,53 +1,55 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/pic/x64_elf_gcc_O3_limited-pic/subject.exe...
-The notes section ".gnu.build.attributes" was not processed
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (14 internal methods created)
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x401026 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 19 methods
 Output folder: jeb_output
-  0/ 14: Method: initializer_0
-  1/ 14: 1/14: initializer_0 (DONE:528ms)
-  1/ 14: Method: sub_401036
-  2/ 14: 2/14: sub_401036 (DONE:101ms)
-  2/ 14: Method: sub_401030
-  3/ 14: 3/14: sub_401030 (DONE:84ms)
-  3/ 14: Method: deregister_tm_clones
-  4/ 14: 4/14: deregister_tm_clones (DONE:106ms)
-  4/ 14: Method: register_tm_clones
-  5/ 14: 5/14: register_tm_clones (DONE:142ms)
-  5/ 14: Method: a_func
-  6/ 14: 6/14: a_func (DONE:227ms)
-  6/ 14: Method: initializer_1
-  7/ 14: 7/14: initializer_1 (DONE:86ms)
-  7/ 14: Method: _dl_relocate_static_pie
-  8/ 14: 8/14: _dl_relocate_static_pie (DONE:31ms)
-  8/ 14: Method: __libc_csu_fini
-  9/ 14: 9/14: __libc_csu_fini (DONE:34ms)
-  9/ 14: Method: finalizer_0
- 10/ 14: 10/14: finalizer_0 (DONE:88ms)
- 10/ 14: Method: finalizer_1
-Emulation failed!
- 11/ 14: 11/14: finalizer_1 (DONE:396ms)
- 11/ 14: Method: main
- 12/ 14: 12/14: main (DONE:360ms)
- 12/ 14: Method: __libc_csu_init
- 13/ 14: 13/14: __libc_csu_init (DONE:742ms)
- 13/ 14: Method: _start
- 14/ 14: 14/14: _start (DONE:157ms)
-Exectime: 6.964000 sec
-Done.
+  0/ 19: Method: →printf
+  1/ 19: 1/19: →printf (DONE:96ms)
+  1/ 19: Method: sub_4010D0
+  2/ 19: 2/19: sub_4010D0 (DONE:12ms)
+  2/ 19: Method: sub_401110
+  3/ 19: 3/19: sub_401110 (DONE:5ms)
+  3/ 19: Method: initializer_0
+  4/ 19: 4/19: initializer_0 (DONE:62ms)
+  4/ 19: Method: sub_401140
+  5/ 19: 5/19: sub_401140 (DONE:5ms)
+  5/ 19: Method: a_func
+  6/ 19: 6/19: a_func (DONE:14ms)
+  6/ 19: Method: sub_4010BD
+  7/ 19: 7/19: sub_4010BD (DONE:19ms)
+  7/ 19: Method: sub_4010FF
+  8/ 19: 8/19: sub_4010FF (DONE:18ms)
+  8/ 19: Method: deregister_tm_clones
+  9/ 19: 9/19: deregister_tm_clones (DONE:18ms)
+  9/ 19: Method: register_tm_clones
+ 10/ 19: 10/19: register_tm_clones (DONE:58ms)
+ 10/ 19: Method: sub_40112D
+ 11/ 19: 11/19: sub_40112D (DONE:19ms)
+ 11/ 19: Method: initializer_1
+ 12/ 19: 12/19: initializer_1 (DONE:13ms)
+ 12/ 19: Method: _dl_relocate_static_pie
+ 13/ 19: 13/19: _dl_relocate_static_pie (DONE:5ms)
+ 13/ 19: Method: __libc_csu_fini
+ 14/ 19: 14/19: __libc_csu_fini (DONE:3ms)
+ 14/ 19: Method: finalizer_0
+ 15/ 19: 15/19: finalizer_0 (DONE:22ms)
+ 15/ 19: Method: main
+ 16/ 19: 16/19: main (DONE:58ms)
+ 16/ 19: Method: finalizer_1
+ 17/ 19: 17/19: finalizer_1 (DONE:13ms)
+ 17/ 19: Method: __libc_csu_init
+ 18/ 19: 18/19: __libc_csu_init (DONE:118ms)
+ 18/ 19: Method: _start
+ 19/ 19: 19/19: _start (DONE:29ms)
+Exectime: 1.076000 sec
+[I] Done.

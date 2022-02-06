@@ -2,177 +2,182 @@
 void __i686.get_pc_thunk.bx() {
 }
 
-int dumpline(int param0, int param1, int param2) {
-    int v0;
-    int v1;
-    char v2;
-    int v3 = param0;
-    int v4 = *(int*)(__GS_BASE + (int)(int*)0x14);
-    int v5 = param1;
-    int v6 = "%08lX:";
-    int* ptr0 = (int*)0x50;
-    int v7 = 1;
-    int* ptr1 = (int*)((char*)&v1 + 1);
+int dumpline(int param0, int param1, unsigned int param2) {
+    char v0;
+    char v1;
+    unsigned int v2;
+    short v3;
+    char v4;
+    char v5;
+    int v6;
+    int v7 = v6;
+    int v8 = param0;
+    int v9 = *(int*)(__GS_BASE + (int)(int*)0x14);
+    int v10 = param1;
+    int v11 = "%08lX:";
+    unsigned short* ptr0 = (unsigned short*)0x50;
+    int v12 = 1;
+    unsigned short* ptr1 = &v3;
     →__sprintf_chk();
-    int v8 = param2;
-    if(v8 > 16) {
-        v8 = 16;
+    unsigned int v13 = param2;
+    if((int)v13 > 16) {
+        v13 = 16;
     }
-    int v9 = 1;
-    if(v8 > 0) {
-        v9 = 0;
-        v0 = v8;
-        int* ptr2 = &v2;
+    unsigned int v14 = 1;
+    if((int)v13 > 0) {
+        v14 = 0;
+        v2 = v13;
+        unsigned short* ptr2 = &v5;
         do {
-            v5 = (unsigned int)*(char*)(v3 + v9);
-            v6 = " %02lX";
-            ptr0 = (int*)0xFFFFFFFF;
-            v7 = 1;
+            v10 = (unsigned int)*(char*)(v8 + v14);
+            v11 = " %02lX";
+            ptr0 = (unsigned short*)0xFFFFFFFF;
+            v12 = 1;
             ptr1 = ptr2;
             →__sprintf_chk();
-            ++v9;
-            ptr2 = (int*)((char*)ptr2 + 3);
+            ++v14;
+            ptr2 = (unsigned short*)((char*)ptr2 + 3);
         }
-        while(v9 < v0);
-        v8 = v0;
-        if(v8 <= 15) {
-            v9 = v8 + 1;
+        while((int)v14 < (int)v2);
+        v13 = v2;
+        if((int)v13 <= 15) {
+            v14 = v13 + 1;
             goto loc_80486AC;
         }
         else {
-            char* ptr3 = (char*)((char*)&v1 + 1);
-            int v10 = -1;
-            while(v10 != 0) {
-                char v11 = *ptr3 == 0;
-                ++ptr3;
-                --v10;
-                if(!~v11) {
-                    break;
-                }
+            unsigned short* ptr3 = &v3;
+            int v15 = -1;
+            do {
+                v1 = *(char*)ptr3 == 0;
+                ptr3 = (unsigned short*)((char*)ptr3 + 1);
+                --v15;
             }
-            *(int*)(~v10 + (int)&v1) = 0x7c2020;
-            v0 = ~v10 + 2;
+            while(~v1 && v15 == 0);
+            *(int*)(~v15 + (int)&v4) = 0x7c2020;
+            v2 = (unsigned int)(1 - v15);
             goto loc_804870A;
         }
     }
     else {
     loc_80486AC:
         do {
-            ptr0 = (int*)0x50;
-            v7 = &gvar_80489AE;
-            ptr1 = (int*)((char*)&v1 + 1);
+            ptr0 = (unsigned short*)0x50;
+            v12 = &gvar_80489AE;
+            ptr1 = &v3;
             →__strcat_chk();
-            ++v9;
+            ++v14;
         }
-        while(v9 - 1 <= 15);
-        char* ptr4 = (char*)((char*)&v1 + 1);
-        int v12 = -1;
-        while(v12 != 0) {
-            char v13 = *ptr4 == 0;
-            ++ptr4;
-            --v12;
-            if(!~v13) {
-                break;
-            }
+        while((int)(v14 - 1) <= 15);
+        unsigned short* ptr4 = &v3;
+        int v16 = -1;
+        do {
+            v0 = *(char*)ptr4 == 0;
+            ptr4 = (unsigned short*)((char*)ptr4 + 1);
+            --v16;
         }
-        *(int*)(~v12 + (int)&v1) = 0x7c2020;
-        v0 = ~v12 + 2;
-        if(v8 <= 0) {
-            v8 = 0;
+        while(~v0 && v16 == 0);
+        *(int*)(~v16 + (int)&v4) = 0x7c2020;
+        v2 = (unsigned int)(1 - v16);
+        if((int)v13 <= 0) {
+            v13 = 0;
         }
         else {
         loc_804870A:
-            char* ptr5 = (char*)((char*)((int)&v1 + v0) + 1);
-            int v14 = 0;
+            char* ptr5 = (char*)((int)&v3 + v2);
+            unsigned int v17 = 0;
             do {
-                int v15 = (unsigned int)*(char*)(v14 + v3);
-                if((unsigned char)((unsigned char)v15 + 224) > 94) {
-                    v15 = 46;
+                char v18 = *(char*)(v17 + v8);
+                if((unsigned char)(v18 + 224) > 94) {
+                    v18 = 46;
                 }
-                *ptr5 = (unsigned char)v15;
-                ++v14;
+                *ptr5 = v18;
+                ++v17;
                 ++ptr5;
             }
-            while(v14 != v8);
-            if(v8 > 15) {
+            while(v17 != v13);
+            if((int)v13 > 15) {
                 goto loc_804874D;
             }
         }
-        char* ptr6 = (char*)((int)(int*)(v8 + (int)&v1) + (v0 + 1));
+        char* ptr6 = (char*)((int)(int*)(v13 + (int)&v3) + v2);
         do {
             *ptr6 = 32;
-            ++v8;
+            ++v13;
             ++ptr6;
         }
-        while(v8 <= 15);
+        while((int)v13 <= 15);
     }
 loc_804874D:
-    *(short*)((int)(int*)(v8 + (int)&v1) + (v0 + 1)) = 124;
+    *(short*)((int)(int*)(v13 + (int)&v3) + v2) = 124;
     →__printf_chk();
-    int result = *(int*)(__GS_BASE + (int)(int*)0x14) ^ v4;
+    int result = *(int*)(__GS_BASE + (int)(int*)0x14) ^ v9;
     if(result) {
-        result = /*NO_RETURN*/ →__stack_chk_fail();
+        /*NO_RETURN*/ →__stack_chk_fail();
     }
     return result;
 }
 
-int hexdump(char* __filename) {
-    int result;
+unsigned int hexdump(int param0) {
     char v0;
     unsigned int v1;
     char v2;
-    int v3 = *(int*)(__GS_BASE + (int)(int*)0x14);
-    int v4 = →__xstat(3, __filename, &v0);
-    if(v4) {
-        →perror(__filename);
+    unsigned int result;
+    int v3;
+    int v4 = v3;
+    int v5 = *(int*)(__GS_BASE + (int)(int*)0x14);
+    →__xstat(3, param0, &v0);
+    if(result) {
+        →perror(param0);
         result = 1;
     }
     else {
-        FILE* ptr0 = →fopen(__filename, (char*)&gvar_80489B6);
-        FILE* __stream = ptr0;
-        if(ptr0) {
-            int v5 = 0;
+        →fopen(param0, &gvar_80489B6);
+        unsigned int v6 = result;
+        if(result) {
+            int v7 = 0;
             if(v1) {
                 do {
-                    size_t v6 = →fread(&v2, 1, 16, __stream);
-                    if(!v6) {
+                    →fread(&v2, 1, 16, (int)v6);
+                    if(!result) {
                         break;
                     }
                     else {
-                        dumpline((int)&v2, v5, (int)v6);
-                        v5 = (int)(v6 + v5);
+                        dumpline(&v2, v7, result);
+                        v7 = (int)(result + v7);
                     }
                 }
-                while((unsigned int)v5 < v1);
+                while((unsigned int)v7 < v1);
             }
-            →fclose(__stream);
+            →fclose((int)v6);
             result = 0;
         }
         else {
-            →perror(__filename);
+            →perror(param0);
             result = 1;
         }
     }
-    if((*(int*)(__GS_BASE + (int)(int*)0x14) ^ v3)) {
-        result = /*NO_RETURN*/ →__stack_chk_fail();
+    if((*(int*)(__GS_BASE + (int)(int*)0x14) ^ v5)) {
+        /*NO_RETURN*/ →__stack_chk_fail();
     }
     return result;
 }
 
-int main(int param0, int param1) {
-    int v0 = 1;
+int main(unsigned int param0, int param1) {
+    int v0;
+    int v1 = v0;
+    unsigned int v2 = 1;
     int result = 0;
-    if(param0 > 1) {
+    if((int)param0 > 1) {
         do {
-            int v1 = hexdump(*(char**)(v0 * 4 + param1));
-            result += v1;
-            ++v0;
+            unsigned int v3 = hexdump(*(int*)(v2 * 4 + param1));
+            result += v3;
+            ++v2;
         }
-        while(v0 < param0);
+        while((int)v2 < (int)param0);
     }
     return result;
 }
 
-void sub_8048480() {
-    jump gvar_8049FFC;
+int sub_8048486() {
+    return gvar_8049FFC();
 }

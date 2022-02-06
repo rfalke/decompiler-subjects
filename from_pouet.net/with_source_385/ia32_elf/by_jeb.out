@@ -1,147 +1,89 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_385/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (62 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 37 methods
 Output folder: jeb_output
-  0/ 62: Method: sub_8048814
-  1/ 62: 1/62: sub_8048814 (DONE:109ms)
-  1/ 62: Method: MikMod_strerror
-  2/ 62: 2/62: MikMod_strerror (DONE:19ms)
-  2/ 62: Method: exit@@GLIBC_2.0
-  3/ 62: 3/62: exit@@GLIBC_2.0 (DONE:24ms)
-  3/ 62: Method: XDrawString
-  4/ 62: 4/62: XDrawString (DONE:14ms)
-  4/ 62: Method: XMapWindow
-  5/ 62: 5/62: XMapWindow (DONE:10ms)
-  5/ 62: Method: MikMod_RegisterAllLoaders
-  6/ 62: 6/62: MikMod_RegisterAllLoaders (DONE:9ms)
-  6/ 62: Method: fprintf@@GLIBC_2.0
-  7/ 62: 7/62: fprintf@@GLIBC_2.0 (DONE:13ms)
-  7/ 62: Method: XCreateSimpleWindow
-  8/ 62: 8/62: XCreateSimpleWindow (DONE:7ms)
-  8/ 62: Method: XSetForeground
-  9/ 62: 9/62: XSetForeground (DONE:9ms)
-  9/ 62: Method: strlen@@GLIBC_2.0
- 10/ 62: 10/62: strlen@@GLIBC_2.0 (DONE:10ms)
- 10/ 62: Method: XParseColor
- 11/ 62: 11/62: XParseColor (DONE:8ms)
- 11/ 62: Method: __libc_start_main@@GLIBC_2.0
- 12/ 62: 12/62: __libc_start_main@@GLIBC_2.0 (DONE:9ms)
- 12/ 62: Method: XLoadQueryFont
- 13/ 62: 13/62: XLoadQueryFont (DONE:9ms)
- 13/ 62: Method: printf@@GLIBC_2.0
- 14/ 62: 14/62: printf@@GLIBC_2.0 (DONE:22ms)
- 14/ 62: Method: MikMod_RegisterAllDrivers
- 15/ 62: 15/62: MikMod_RegisterAllDrivers (DONE:10ms)
- 15/ 62: Method: MikMod_Init
- 16/ 62: 16/62: MikMod_Init (DONE:11ms)
- 16/ 62: Method: XAllocColor
- 17/ 62: 17/62: XAllocColor (DONE:9ms)
- 17/ 62: Method: XSetFont
- 18/ 62: 18/62: XSetFont (DONE:10ms)
- 18/ 62: Method: MikMod_Update
- 19/ 62: 19/62: MikMod_Update (DONE:10ms)
- 19/ 62: Method: Player_Start
- 20/ 62: 20/62: Player_Start (DONE:10ms)
- 20/ 62: Method: XClearWindow
- 21/ 62: 21/62: XClearWindow (DONE:21ms)
- 21/ 62: Method: Player_Load
- 22/ 62: 22/62: Player_Load (DONE:6ms)
- 22/ 62: Method: sin@@GLIBC_2.0
- 23/ 62: 23/62: sin@@GLIBC_2.0 (DONE:8ms)
- 23/ 62: Method: XCreateGC
- 24/ 62: 24/62: XCreateGC (DONE:7ms)
- 24/ 62: Method: XOpenDisplay
- 25/ 62: 25/62: XOpenDisplay (DONE:19ms)
- 25/ 62: Method: __do_global_dtors_aux
- 26/ 62: 26/62: __do_global_dtors_aux (DONE:82ms)
- 26/ 62: Method: __do_global_ctors_aux
- 27/ 62: 27/62: __do_global_ctors_aux (DONE:184ms)
- 27/ 62: Method: XPrint
- 28/ 62: 28/62: XPrint (DONE:165ms)
- 28/ 62: Method: FontInit
- 29/ 62: 29/62: FontInit (DONE:65ms)
- 29/ 62: Method: MikmodInit
- 30/ 62: 30/62: MikmodInit (DONE:229ms)
- 30/ 62: Method: init
- 31/ 62: 31/62: init (DONE:167ms)
- 31/ 62: Method: sub_804882A
- 32/ 62: 32/62: sub_804882A (DONE:24ms)
- 32/ 62: Method: sub_804883A
- 33/ 62: 33/62: sub_804883A (DONE:11ms)
- 33/ 62: Method: sub_804884A
- 34/ 62: 34/62: sub_804884A (DONE:11ms)
- 34/ 62: Method: sub_804885A
- 35/ 62: 35/62: sub_804885A (DONE:10ms)
- 35/ 62: Method: sub_804886A
- 36/ 62: 36/62: sub_804886A (DONE:10ms)
- 36/ 62: Method: sub_804887A
- 37/ 62: 37/62: sub_804887A (DONE:10ms)
- 37/ 62: Method: sub_804888A
- 38/ 62: 38/62: sub_804888A (DONE:10ms)
- 38/ 62: Method: sub_804889A
- 39/ 62: 39/62: sub_804889A (DONE:12ms)
- 39/ 62: Method: sub_80488AA
- 40/ 62: 40/62: sub_80488AA (DONE:10ms)
- 40/ 62: Method: sub_80488BA
- 41/ 62: 41/62: sub_80488BA (DONE:14ms)
- 41/ 62: Method: sub_80488CA
- 42/ 62: 42/62: sub_80488CA (DONE:13ms)
- 42/ 62: Method: sub_80488DA
- 43/ 62: 43/62: sub_80488DA (DONE:15ms)
- 43/ 62: Method: sub_80488EA
- 44/ 62: 44/62: sub_80488EA (DONE:12ms)
- 44/ 62: Method: sub_80488FA
- 45/ 62: 45/62: sub_80488FA (DONE:11ms)
- 45/ 62: Method: sub_804890A
- 46/ 62: 46/62: sub_804890A (DONE:8ms)
- 46/ 62: Method: sub_804891A
- 47/ 62: 47/62: sub_804891A (DONE:10ms)
- 47/ 62: Method: sub_804892A
- 48/ 62: 48/62: sub_804892A (DONE:9ms)
- 48/ 62: Method: sub_804893A
- 49/ 62: 49/62: sub_804893A (DONE:10ms)
- 49/ 62: Method: sub_804894A
- 50/ 62: 50/62: sub_804894A (DONE:8ms)
- 50/ 62: Method: sub_804895A
- 51/ 62: 51/62: sub_804895A (DONE:14ms)
- 51/ 62: Method: sub_804896A
- 52/ 62: 52/62: sub_804896A (DONE:13ms)
- 52/ 62: Method: sub_804897A
- 53/ 62: 53/62: sub_804897A (DONE:21ms)
- 53/ 62: Method: sub_804898A
- 54/ 62: 54/62: sub_804898A (DONE:10ms)
- 54/ 62: Method: sub_804899A
- 55/ 62: 55/62: sub_804899A (DONE:9ms)
- 55/ 62: Method: _start
- 56/ 62: 56/62: _start (DONE:37ms)
- 56/ 62: Method: main
- 57/ 62: 57/62: main (DONE:292ms)
- 57/ 62: Method: frame_dummy
- 58/ 62: 58/62: frame_dummy (DONE:32ms)
- 58/ 62: Method: sub_8048A26
- 59/ 62: 59/62: sub_8048A26 (DONE:11ms)
- 59/ 62: Method: call_gmon_start
- 60/ 62: 60/62: call_gmon_start (DONE:38ms)
- 60/ 62: Method: initializer_0
- 61/ 62: 61/62: initializer_0 (DONE:26ms)
- 61/ 62: Method: finalizer_0
- 62/ 62: 62/62: finalizer_0 (DONE:29ms)
-Exectime: 4.621000 sec
-Done.
+  0/ 37: Method: →MikMod_strerror
+  1/ 37: 1/37: →MikMod_strerror (DONE:41ms)
+  1/ 37: Method: →exit
+  2/ 37: 2/37: →exit (DONE:8ms)
+  2/ 37: Method: →XDrawString
+  3/ 37: 3/37: →XDrawString (DONE:5ms)
+  3/ 37: Method: →XMapWindow
+  4/ 37: 4/37: →XMapWindow (DONE:6ms)
+  4/ 37: Method: →MikMod_RegisterAllLoaders
+  5/ 37: 5/37: →MikMod_RegisterAllLoaders (DONE:5ms)
+  5/ 37: Method: →fprintf
+  6/ 37: 6/37: →fprintf (DONE:7ms)
+  6/ 37: Method: →XCreateSimpleWindow
+  7/ 37: 7/37: →XCreateSimpleWindow (DONE:9ms)
+  7/ 37: Method: →XSetForeground
+  8/ 37: 8/37: →XSetForeground (DONE:5ms)
+  8/ 37: Method: →strlen
+  9/ 37: 9/37: →strlen (DONE:5ms)
+  9/ 37: Method: →XParseColor
+ 10/ 37: 10/37: →XParseColor (DONE:4ms)
+ 10/ 37: Method: →__libc_start_main
+ 11/ 37: 11/37: →__libc_start_main (DONE:4ms)
+ 11/ 37: Method: →XLoadQueryFont
+ 12/ 37: 12/37: →XLoadQueryFont (DONE:4ms)
+ 12/ 37: Method: →printf
+ 13/ 37: 13/37: →printf (DONE:6ms)
+ 13/ 37: Method: →MikMod_RegisterAllDrivers
+ 14/ 37: 14/37: →MikMod_RegisterAllDrivers (DONE:4ms)
+ 14/ 37: Method: →MikMod_Init
+ 15/ 37: 15/37: →MikMod_Init (DONE:7ms)
+ 15/ 37: Method: →XAllocColor
+ 16/ 37: 16/37: →XAllocColor (DONE:12ms)
+ 16/ 37: Method: →XSetFont
+ 17/ 37: 17/37: →XSetFont (DONE:4ms)
+ 17/ 37: Method: →MikMod_Update
+ 18/ 37: 18/37: →MikMod_Update (DONE:4ms)
+ 18/ 37: Method: →Player_Start
+ 19/ 37: 19/37: →Player_Start (DONE:4ms)
+ 19/ 37: Method: →XClearWindow
+ 20/ 37: 20/37: →XClearWindow (DONE:3ms)
+ 20/ 37: Method: →Player_Load
+ 21/ 37: 21/37: →Player_Load (DONE:3ms)
+ 21/ 37: Method: →sin
+ 22/ 37: 22/37: →sin (DONE:4ms)
+ 22/ 37: Method: →XCreateGC
+ 23/ 37: 23/37: →XCreateGC (DONE:3ms)
+ 23/ 37: Method: →XOpenDisplay
+ 24/ 37: 24/37: →XOpenDisplay (DONE:4ms)
+ 24/ 37: Method: __do_global_dtors_aux
+ 25/ 37: 25/37: __do_global_dtors_aux (DONE:128ms)
+ 25/ 37: Method: __do_global_ctors_aux
+ 26/ 37: 26/37: __do_global_ctors_aux (DONE:107ms)
+ 26/ 37: Method: XPrint
+ 27/ 37: 27/37: XPrint (DONE:82ms)
+ 27/ 37: Method: FontInit
+ 28/ 37: 28/37: FontInit (DONE:44ms)
+ 28/ 37: Method: MikmodInit
+ 29/ 37: 29/37: MikmodInit (DONE:166ms)
+ 29/ 37: Method: init
+ 30/ 37: 30/37: init (DONE:124ms)
+ 30/ 37: Method: sub_804881A
+ 31/ 37: 31/37: sub_804881A (DONE:7ms)
+ 31/ 37: Method: _start
+ 32/ 37: 32/37: _start (DONE:25ms)
+ 32/ 37: Method: main
+ 33/ 37: 33/37: main (DONE:157ms)
+ 33/ 37: Method: call_gmon_start
+ 34/ 37: 34/37: call_gmon_start (DONE:34ms)
+ 34/ 37: Method: frame_dummy
+ 35/ 37: 35/37: frame_dummy (DONE:27ms)
+ 35/ 37: Method: initializer_0
+ 36/ 37: 36/37: initializer_0 (DONE:13ms)
+ 36/ 37: Method: finalizer_0
+ 37/ 37: 37/37: finalizer_0 (DONE:18ms)
+Exectime: 1.783000 sec
+[I] Done.

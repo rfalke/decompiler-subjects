@@ -1,2435 +1,2083 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (2465 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (1m 46s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 2221 methods
 Output folder: jeb_output
-  0/2465: Method: sub_8058BF8
-  1/2465: 1/2465: sub_8058BF8 (DONE:95ms)
-  1/2465: Method: get_cp_mime_name
-  2/2465: 2/2465: get_cp_mime_name (DONE:167ms)
-  2/2465: Method: elinks_ulongcat
-  3/2465: 3/2465: elinks_ulongcat (DONE:604ms)
-  3/2465: Method: c_toupper
-  4/2465: 4/2465: c_toupper (DONE:234ms)
-  4/2465: Method: unicode_to_cell
-  5/2465: 5/2465: unicode_to_cell (DONE:148ms)
-  5/2465: Method: skip_scanner_tokens
-  6/2465: 6/2465: skip_scanner_tokens (DONE:430ms)
-  6/2465: Method: add_dlg_radio_do
-  7/2465: 7/2465: add_dlg_radio_do (DONE:84ms)
-  7/2465: Method: traverse_listbox_items_list
-  8/2465: 8/2465: traverse_listbox_items_list (DONE:1772ms)
-  8/2465: Method: ln_break
-  9/2465: 9/2465: ln_break (DONE:76ms)
-  9/2465: Method: add_dlg_field_do
- 10/2465: 10/2465: add_dlg_field_do (DONE:88ms)
- 10/2465: Method: get_hash_item
- 11/2465: 11/2465: get_hash_item (DONE:203ms)
- 11/2465: Method: display_widget
- 12/2465: 12/2465: display_widget (DONE:36ms)
- 12/2465: Method: utf8charlen
- 13/2465: 13/2465: utf8charlen (DONE:26ms)
- 13/2465: Method: kbd_action
- 14/2465: 14/2465: kbd_action (DONE:99ms)
- 14/2465: Method: add_dlg_text
- 15/2465: 15/2465: add_dlg_text (DONE:88ms)
- 15/2465: Method: decode_uri
- 16/2465: 16/2465: decode_uri (DONE:270ms)
- 16/2465: Method: is_cp_utf8
- 17/2465: 17/2465: is_cp_utf8 (DONE:38ms)
- 17/2465: Method: c_tolower
- 18/2465: 18/2465: c_tolower (DONE:181ms)
- 18/2465: Method: c_strcasecmp
- 19/2465: 19/2465: c_strcasecmp (DONE:102ms)
- 19/2465: Method: c_strncasecmp
- 20/2465: 20/2465: c_strncasecmp (DONE:136ms)
- 20/2465: Method: add_table_bad_html_end
- 21/2465: 21/2465: add_table_bad_html_end (DONE:58ms)
- 21/2465: Method: timeval_from_seconds
- 22/2465: 22/2465: timeval_from_seconds (DONE:31ms)
- 22/2465: Method: select_widget
- 23/2465: 23/2465: select_widget (DONE:70ms)
- 23/2465: Method: get_next_dom_scanner_token
- 24/2465: 24/2465: get_next_dom_scanner_token (DONE:75ms)
- 24/2465: Method: encode_utf8
- 25/2465: 25/2465: encode_utf8 (DONE:238ms)
- 25/2465: Method: compare_component
- 26/2465: 26/2465: compare_component (DONE:112ms)
- 26/2465: Method: timeval_cmp
- 27/2465: 27/2465: timeval_cmp (DONE:64ms)
- 27/2465: Method: get_hline_width
- 28/2465: 28/2465: get_hline_width (DONE:103ms)
- 28/2465: Method: utf8_prevchar
- 29/2465: 29/2465: utf8_prevchar (DONE:73ms)
- 29/2465: Method: get_output_handle
- 30/2465: 30/2465: get_output_handle (DONE:17ms)
- 30/2465: Method: set_kbd_event
- 31/2465: 31/2465: set_kbd_event (DONE:103ms)
- 31/2465: Method: timeval_sub
- 32/2465: 32/2465: timeval_sub (DONE:60ms)
- 32/2465: Method: skip_sgml_space
- 33/2465: 33/2465: skip_sgml_space (DONE:104ms)
- 33/2465: Method: can_open_in_new
- 34/2465: 34/2465: can_open_in_new (DONE:54ms)
- 34/2465: Method: u2cp_
- 35/2465: 35/2465: u2cp_ (DONE:281ms)
- 35/2465: Method: set_led_value
- 36/2465: 36/2465: set_led_value (DONE:64ms)
- 36/2465: Method: register_led
- 37/2465: 37/2465: register_led (DONE:50ms)
- 37/2465: Method: html_skip
- 38/2465: 38/2465: html_skip (DONE:18ms)
- 38/2465: Method: is_entry_used
- 39/2465: 39/2465: is_entry_used (DONE:53ms)
- 39/2465: Method: set_bin
- 40/2465: 40/2465: set_bin (DONE:16ms)
- 40/2465: Method: want_draw
- 41/2465: 41/2465: want_draw (DONE:12ms)
- 41/2465: Method: done_draw
- 42/2465: 42/2465: done_draw (DONE:12ms)
- 42/2465: Method: parse_year
- 43/2465: 43/2465: parse_year (DONE:142ms)
- 43/2465: Method: parse_day
- 44/2465: 44/2465: parse_day (DONE:93ms)
- 44/2465: Method: parse_time
- 45/2465: 45/2465: parse_time (DONE:414ms)
- 45/2465: Method: convert_to_md5_digest_hex_T
- 46/2465: 46/2465: convert_to_md5_digest_hex_T (DONE:93ms)
- 46/2465: Method: is_blocked
- 47/2465: 47/2465: is_blocked (DONE:28ms)
- 47/2465: Method: c_isupper
- 48/2465: 48/2465: c_isupper (DONE:29ms)
- 48/2465: Method: transform_md5
- 49/2465: 49/2465: transform_md5 (DONE:7678ms)
- 49/2465: Method: timeval_add_interval
- 50/2465: 50/2465: timeval_add_interval (DONE:49ms)
- 50/2465: Method: timeval_from_milliseconds
- 51/2465: 51/2465: timeval_from_milliseconds (DONE:74ms)
- 51/2465: Method: timeval_to_seconds
- 52/2465: 52/2465: timeval_to_seconds (DONE:50ms)
- 52/2465: Method: get_link_x_bounds
- 53/2465: 53/2465: get_link_x_bounds (DONE:188ms)
- 53/2465: Method: init_vs
- 54/2465: 54/2465: init_vs (DONE:88ms)
- 54/2465: Method: __divdi3
- 55/2465: 55/2465: __divdi3 (DONE:364ms)
- 55/2465: Method: map_dom_scanner_string
- 56/2465: 56/2465: map_dom_scanner_string (DONE:107ms)
- 56/2465: Method: get_cp_name
- 57/2465: 57/2465: get_cp_name (DONE:26ms)
- 57/2465: Method: cp2utf8
- 58/2465: 58/2465: cp2utf8 (DONE:128ms)
- 58/2465: Method: notify_connection_callbacks
- 59/2465: 59/2465: notify_connection_callbacks (DONE:119ms)
- 59/2465: Method: are_there_downloads
- 60/2465: 60/2465: are_there_downloads (DONE:36ms)
- 60/2465: Method: get_current_download
- 61/2465: 61/2465: get_current_download (DONE:84ms)
- 61/2465: Method: number_of_tabs
- 62/2465: 62/2465: number_of_tabs (DONE:43ms)
- 62/2465: Method: elinks_longcat
- 63/2465: 63/2465: elinks_longcat (DONE:481ms)
- 63/2465: Method: init_md5
- 64/2465: 64/2465: init_md5 (DONE:22ms)
- 64/2465: Method: get_textarea_line_number
- 65/2465: 65/2465: get_textarea_line_number (DONE:83ms)
- 65/2465: Method: color_to_string
- 66/2465: 66/2465: color_to_string (DONE:34ms)
- 66/2465: Method: dom_node_casecmp
- 67/2465: 67/2465: dom_node_casecmp (DONE:124ms)
- 67/2465: Method: select_widget_by_id
- 68/2465: 68/2465: select_widget_by_id (DONE:64ms)
- 68/2465: Method: unset_led_value
- 69/2465: 69/2465: unset_led_value (DONE:44ms)
- 69/2465: Method: bookmarks_unset_dirty
- 70/2465: 70/2465: bookmarks_unset_dirty (DONE:16ms)
- 70/2465: Method: call_change_hooks
- 71/2465: 71/2465: call_change_hooks (DONE:61ms)
- 71/2465: Method: option_changed
- 72/2465: 72/2465: option_changed (DONE:40ms)
- 72/2465: Method: form_type2str
- 73/2465: 73/2465: form_type2str (DONE:44ms)
- 73/2465: Method: add_fragment_identifier
- 74/2465: 74/2465: add_fragment_identifier (DONE:43ms)
- 74/2465: Method: get_dom_node_child
- 75/2465: 75/2465: get_dom_node_child (DONE:191ms)
- 75/2465: Method: get_rss_text
- 76/2465: 76/2465: get_rss_text (DONE:51ms)
- 76/2465: Method: get_cp_config_name
- 77/2465: 77/2465: get_cp_config_name (DONE:45ms)
- 77/2465: Method: language_to_name
- 78/2465: 78/2465: language_to_name (DONE:21ms)
- 78/2465: Method: trigger_event_va
- 79/2465: 79/2465: trigger_event_va (DONE:104ms)
- 79/2465: Method: trigger_event
- 80/2465: 80/2465: trigger_event (DONE:30ms)
- 80/2465: Method: can_resize_window
- 81/2465: 81/2465: can_resize_window (DONE:23ms)
- 81/2465: Method: can_open_os_shell
- 82/2465: 82/2465: can_open_os_shell (DONE:12ms)
- 82/2465: Method: get_system_str
- 83/2465: 83/2465: get_system_str (DONE:18ms)
- 83/2465: Method: parse_psv_resp
- 84/2465: 84/2465: parse_psv_resp (DONE:248ms)
- 84/2465: Method: add_to_history
- 85/2465: 85/2465: add_to_history (DONE:41ms)
- 85/2465: Method: set_kbd_interlink_event
- 86/2465: 86/2465: set_kbd_interlink_event (DONE:34ms)
- 86/2465: Method: timeval_sub_interval
- 87/2465: 87/2465: timeval_sub_interval (DONE:55ms)
- 87/2465: Method: get_timer_duration
- 88/2465: 88/2465: get_timer_duration (DONE:14ms)
- 88/2465: Method: next_frame
- 89/2465: 89/2465: next_frame (DONE:203ms)
- 89/2465: Method: __moddi3
- 90/2465: 90/2465: __moddi3 (DONE:488ms)
- 90/2465: Method: listbox_item_offset
- 91/2465: 91/2465: listbox_item_offset (DONE:56ms)
- 91/2465: Method: name_to_language
- 92/2465: 92/2465: name_to_language (DONE:54ms)
- 92/2465: Method: search_dom_stack
- 93/2465: 93/2465: search_dom_stack (DONE:122ms)
- 93/2465: Method: has_progress
- 94/2465: 94/2465: has_progress (DONE:49ms)
- 94/2465: Method: download_is_progressing
- 95/2465: 95/2465: download_is_progressing (DONE:47ms)
- 95/2465: Method: get_color_string
- 96/2465: 96/2465: get_color_string (DONE:85ms)
- 96/2465: Method: __do_global_dtors_aux
- 97/2465: 97/2465: __do_global_dtors_aux (DONE:38ms)
- 97/2465: Method: frame_dummy
- 98/2465: 98/2465: frame_dummy (DONE:25ms)
- 98/2465: Method: clear_hotkeys_cache
- 99/2465: 99/2465: clear_hotkeys_cache (DONE:39ms)
- 99/2465: Method: init_led_panel
-100/2465: 100/2465: init_led_panel (DONE:58ms)
-100/2465: Method: add_dlg_listbox
-101/2465: 101/2465: add_dlg_listbox (DONE:27ms)
-101/2465: Method: deselect_mainmenu
-102/2465: 102/2465: deselect_mainmenu (DONE:53ms)
-102/2465: Method: bookmarks_set_dirty
-103/2465: 103/2465: bookmarks_set_dirty (DONE:16ms)
-103/2465: Method: bookmarks_are_dirty
-104/2465: 104/2465: bookmarks_are_dirty (DONE:17ms)
-104/2465: Method: get_cache_size
-105/2465: 105/2465: get_cache_size (DONE:13ms)
-105/2465: Method: get_cache_entry_count
-106/2465: 106/2465: get_cache_entry_count (DONE:21ms)
-106/2465: Method: get_cache_entry_used_count
-107/2465: 107/2465: get_cache_entry_used_count (DONE:30ms)
-107/2465: Method: cache_entry_is_valid
-108/2465: 108/2465: cache_entry_is_valid (DONE:48ms)
-108/2465: Method: keybinding_exists
-109/2465: 109/2465: keybinding_exists (DONE:72ms)
-109/2465: Method: get_format_cache_size
-110/2465: 110/2465: get_format_cache_size (DONE:26ms)
-110/2465: Method: get_format_cache_used_count
-111/2465: 111/2465: get_format_cache_used_count (DONE:38ms)
-111/2465: Method: get_format_cache_refresh_count
-112/2465: 112/2465: get_format_cache_refresh_count (DONE:28ms)
-112/2465: Method: skip_dom_scanner_tokens
-113/2465: 113/2465: skip_dom_scanner_tokens (DONE:226ms)
-113/2465: Method: parse_dom_select_nth_arg
-114/2465: 114/2465: parse_dom_select_nth_arg (DONE:1122ms)
-114/2465: Method: get_sgml_info
-115/2465: 115/2465: get_sgml_info (DONE:24ms)
-115/2465: Method: read_encoded
-116/2465: 116/2465: read_encoded (DONE:23ms)
-116/2465: Method: decode_encoded_buffer
-117/2465: 117/2465: decode_encoded_buffer (DONE:32ms)
-117/2465: Method: listext_encoded
-118/2465: 118/2465: listext_encoded (DONE:15ms)
-118/2465: Method: get_encoding_name
-119/2465: 119/2465: get_encoding_name (DONE:17ms)
-119/2465: Method: get_file_handles_count
-120/2465: 120/2465: get_file_handles_count (DONE:42ms)
-120/2465: Method: get_timers_count
-121/2465: 121/2465: get_timers_count (DONE:33ms)
-121/2465: Method: get_next_timer_time
-122/2465: 122/2465: get_next_timer_time (DONE:31ms)
-122/2465: Method: get_connections_count
-123/2465: 123/2465: get_connections_count (DONE:30ms)
-123/2465: Method: get_keepalive_connections_count
-124/2465: 124/2465: get_keepalive_connections_count (DONE:22ms)
-124/2465: Method: get_connections_connecting_count
-125/2465: 125/2465: get_connections_connecting_count (DONE:41ms)
-125/2465: Method: get_connections_transfering_count
-126/2465: 126/2465: get_connections_transfering_count (DONE:45ms)
-126/2465: Method: resize_window
-127/2465: 127/2465: resize_window (DONE:12ms)
-127/2465: Method: terminate_osdep
-128/2465: 128/2465: terminate_osdep (DONE:10ms)
-128/2465: Method: block_stdin
-129/2465: 129/2465: block_stdin (DONE:11ms)
-129/2465: Method: unblock_stdin
-130/2465: 130/2465: unblock_stdin (DONE:10ms)
-130/2465: Method: elinks_cfmakeraw
-131/2465: 131/2465: elinks_cfmakeraw (DONE:27ms)
-131/2465: Method: set_highpri
-132/2465: 132/2465: set_highpri (DONE:13ms)
-132/2465: Method: clear_signal_mask_and_handlers
-133/2465: 133/2465: clear_signal_mask_and_handlers (DONE:22ms)
-133/2465: Method: get_invalid_auth_entry
-134/2465: 134/2465: get_invalid_auth_entry (DONE:28ms)
-134/2465: Method: create_history
-135/2465: 135/2465: create_history (DONE:19ms)
-135/2465: Method: del_from_history
-136/2465: 136/2465: del_from_history (DONE:58ms)
-136/2465: Method: get_current_link_in_view
-137/2465: 137/2465: get_current_link_in_view (DONE:38ms)
-137/2465: Method: decode_terminal_mouse_escape_sequence
-138/2465: 138/2465: decode_terminal_mouse_escape_sequence (DONE:362ms)
-138/2465: Method: get_tab_number
-139/2465: 139/2465: get_tab_number (DONE:62ms)
-139/2465: Method: get_tab_number_by_xpos
-140/2465: 140/2465: get_tab_number_by_xpos (DONE:73ms)
-140/2465: Method: month2num
-141/2465: 141/2465: month2num (DONE:151ms)
-141/2465: Method: parse_month
-142/2465: 142/2465: parse_month (DONE:57ms)
-142/2465: Method: parse_date
-143/2465: 143/2465: parse_date (DONE:1375ms)
-143/2465: Method: timeval_is_positive
-144/2465: 144/2465: timeval_is_positive (DONE:44ms)
-144/2465: Method: timeval_limit_to_zero_or_one
-145/2465: 145/2465: timeval_limit_to_zero_or_one (DONE:23ms)
-145/2465: Method: __udivdi3
-146/2465: 146/2465: __udivdi3 (DONE:238ms)
-146/2465: Method: __i686.get_pc_thunk.bx
-147/2465: 147/2465: __i686.get_pc_thunk.bx (DONE:8ms)
-147/2465: Method: __do_global_ctors_aux
-148/2465: 148/2465: __do_global_ctors_aux (DONE:80ms)
-148/2465: Method: sub_8058C0E
-149/2465: 149/2465: sub_8058C0E (DONE:13ms)
-149/2465: Method: sub_8058C08
-150/2465: 150/2465: sub_8058C08 (DONE:15ms)
-150/2465: Method: sub_8058C1E
-151/2465: 151/2465: sub_8058C1E (DONE:21ms)
-151/2465: Method: sub_8058C18
-152/2465: 152/2465: sub_8058C18 (DONE:18ms)
-152/2465: Method: sub_8058C2E
-153/2465: 153/2465: sub_8058C2E (DONE:21ms)
-153/2465: Method: sub_8058C3E
-154/2465: 154/2465: sub_8058C3E (DONE:16ms)
-154/2465: Method: sub_8058C38
-155/2465: 155/2465: sub_8058C38 (DONE:13ms)
-155/2465: Method: secure_fputs
-156/2465: 156/2465: secure_fputs (DONE:74ms)
-156/2465: Method: sub_8058C4E
-157/2465: 157/2465: sub_8058C4E (DONE:14ms)
-157/2465: Method: sub_8058C5E
-158/2465: 158/2465: sub_8058C5E (DONE:16ms)
-158/2465: Method: sub_8058C58
-159/2465: 159/2465: sub_8058C58 (DONE:20ms)
-159/2465: Method: sub_8058C6E
-160/2465: 160/2465: sub_8058C6E (DONE:14ms)
-160/2465: Method: sub_8058C7E
-161/2465: 161/2465: sub_8058C7E (DONE:13ms)
-161/2465: Method: sub_8058C8E
-162/2465: 162/2465: sub_8058C8E (DONE:12ms)
-162/2465: Method: sub_8058C9E
-163/2465: 163/2465: sub_8058C9E (DONE:11ms)
-163/2465: Method: sub_8058C98
-164/2465: 164/2465: sub_8058C98 (DONE:14ms)
-164/2465: Method: sub_8058CAE
-165/2465: 165/2465: sub_8058CAE (DONE:14ms)
-165/2465: Method: sub_8058CA8
-166/2465: 166/2465: sub_8058CA8 (DONE:19ms)
-166/2465: Method: sub_8058CBE
-167/2465: 167/2465: sub_8058CBE (DONE:13ms)
-167/2465: Method: sub_8058CCE
-168/2465: 168/2465: sub_8058CCE (DONE:10ms)
-168/2465: Method: sub_8058CDE
-169/2465: 169/2465: sub_8058CDE (DONE:9ms)
-169/2465: Method: sub_8058CEE
-170/2465: 170/2465: sub_8058CEE (DONE:9ms)
-170/2465: Method: sub_8058CE8
-171/2465: 171/2465: sub_8058CE8 (DONE:14ms)
-171/2465: Method: sub_8058CFE
-172/2465: 172/2465: sub_8058CFE (DONE:11ms)
-172/2465: Method: sub_8058CF8
-173/2465: 173/2465: sub_8058CF8 (DONE:10ms)
-173/2465: Method: sub_8058D0E
-174/2465: 174/2465: sub_8058D0E (DONE:19ms)
-174/2465: Method: sub_8058D08
-175/2465: 175/2465: sub_8058D08 (DONE:16ms)
-175/2465: Method: sub_8058D1E
-176/2465: 176/2465: sub_8058D1E (DONE:14ms)
-176/2465: Method: sub_8058D2E
-177/2465: 177/2465: sub_8058D2E (DONE:13ms)
-177/2465: Method: sub_8058D3E
-178/2465: 178/2465: sub_8058D3E (DONE:8ms)
-178/2465: Method: sub_8058D4E
-179/2465: 179/2465: sub_8058D4E (DONE:8ms)
-179/2465: Method: sub_8058D48
-180/2465: 180/2465: sub_8058D48 (DONE:10ms)
-180/2465: Method: sub_8058D5E
-181/2465: 181/2465: sub_8058D5E (DONE:11ms)
-181/2465: Method: sub_8058D58
-182/2465: 182/2465: sub_8058D58 (DONE:12ms)
-182/2465: Method: sub_8058D6E
-183/2465: 183/2465: sub_8058D6E (DONE:11ms)
-183/2465: Method: sub_8058D7E
-184/2465: 184/2465: sub_8058D7E (DONE:9ms)
-184/2465: Method: sub_8058D8E
-185/2465: 185/2465: sub_8058D8E (DONE:13ms)
-185/2465: Method: sub_8058D88
-186/2465: 186/2465: sub_8058D88 (DONE:14ms)
-186/2465: Method: sub_8058D9E
-187/2465: 187/2465: sub_8058D9E (DONE:17ms)
-187/2465: Method: sub_8058D98
-188/2465: 188/2465: sub_8058D98 (DONE:15ms)
-188/2465: Method: sub_8058DAE
-189/2465: 189/2465: sub_8058DAE (DONE:11ms)
-189/2465: Method: sub_8058DBE
-190/2465: 190/2465: sub_8058DBE (DONE:10ms)
-190/2465: Method: sub_8058DCE
-191/2465: 191/2465: sub_8058DCE (DONE:10ms)
-191/2465: Method: sub_8058DDE
-192/2465: 192/2465: sub_8058DDE (DONE:11ms)
-192/2465: Method: sub_8058DD8
-193/2465: 193/2465: sub_8058DD8 (DONE:12ms)
-193/2465: Method: sub_8058DEE
-194/2465: 194/2465: sub_8058DEE (DONE:12ms)
-194/2465: Method: sub_8058DE8
-195/2465: 195/2465: sub_8058DE8 (DONE:10ms)
-195/2465: Method: show_parse_error
-196/2465: 196/2465: show_parse_error (DONE:56ms)
-196/2465: Method: sub_8058DFE
-197/2465: 197/2465: sub_8058DFE (DONE:15ms)
-197/2465: Method: sub_8058E0E
-198/2465: 198/2465: sub_8058E0E (DONE:11ms)
-198/2465: Method: sub_8058E1E
-199/2465: 199/2465: sub_8058E1E (DONE:8ms)
-199/2465: Method: sub_8058E2E
-200/2465: 200/2465: sub_8058E2E (DONE:7ms)
-200/2465: Method: sub_8058E3E
-201/2465: 201/2465: sub_8058E3E (DONE:11ms)
-201/2465: Method: sub_8058E38
-202/2465: 202/2465: sub_8058E38 (DONE:10ms)
-202/2465: Method: sub_8058E4E
-203/2465: 203/2465: sub_8058E4E (DONE:12ms)
-203/2465: Method: sub_8058E5E
-204/2465: 204/2465: sub_8058E5E (DONE:10ms)
-204/2465: Method: sub_8058E6E
-205/2465: 205/2465: sub_8058E6E (DONE:16ms)
-205/2465: Method: sub_8058E68
-206/2465: 206/2465: sub_8058E68 (DONE:16ms)
-206/2465: Method: file_is_dir
-207/2465: 207/2465: file_is_dir (DONE:31ms)
-207/2465: Method: sub_8058E7E
-208/2465: 208/2465: sub_8058E7E (DONE:8ms)
-208/2465: Method: sub_8058E78
-209/2465: 209/2465: sub_8058E78 (DONE:9ms)
-209/2465: Method: sub_8058E8E
-210/2465: 210/2465: sub_8058E8E (DONE:11ms)
-210/2465: Method: sub_8058E9E
-211/2465: 211/2465: sub_8058E9E (DONE:7ms)
-211/2465: Method: sub_8058E98
-212/2465: 212/2465: sub_8058E98 (DONE:7ms)
-212/2465: Method: sub_8058EAE
-213/2465: 213/2465: sub_8058EAE (DONE:6ms)
-213/2465: Method: sub_8058EBE
-214/2465: 214/2465: sub_8058EBE (DONE:6ms)
-214/2465: Method: sub_8058EB8
-215/2465: 215/2465: sub_8058EB8 (DONE:8ms)
-215/2465: Method: sub_8058ECE
-216/2465: 216/2465: sub_8058ECE (DONE:19ms)
-216/2465: Method: sub_8058EC8
-217/2465: 217/2465: sub_8058EC8 (DONE:14ms)
-217/2465: Method: is_xterm
-218/2465: 218/2465: is_xterm (DONE:81ms)
-218/2465: Method: is_gnuscreen
-219/2465: 219/2465: is_gnuscreen (DONE:48ms)
-219/2465: Method: get_terminal_name
-220/2465: 220/2465: get_terminal_name (DONE:149ms)
-220/2465: Method: sub_8058EDE
-221/2465: 221/2465: sub_8058EDE (DONE:9ms)
-221/2465: Method: sub_8058ED8
-222/2465: 222/2465: sub_8058ED8 (DONE:12ms)
-222/2465: Method: sub_8058EEE
-223/2465: 223/2465: sub_8058EEE (DONE:10ms)
-223/2465: Method: sub_8058EFE
-224/2465: 224/2465: sub_8058EFE (DONE:9ms)
-224/2465: Method: sub_8058EF8
-225/2465: 225/2465: sub_8058EF8 (DONE:9ms)
-225/2465: Method: exe
-226/2465: 226/2465: exe (DONE:21ms)
-226/2465: Method: sub_8058F0E
-227/2465: 227/2465: sub_8058F0E (DONE:10ms)
-227/2465: Method: sub_8058F08
-228/2465: 228/2465: sub_8058F08 (DONE:20ms)
-228/2465: Method: sub_8058F1E
-229/2465: 229/2465: sub_8058F1E (DONE:11ms)
-229/2465: Method: sub_8058F2E
-230/2465: 230/2465: sub_8058F2E (DONE:9ms)
-230/2465: Method: sub_8058F3E
-231/2465: 231/2465: sub_8058F3E (DONE:9ms)
-231/2465: Method: sub_8058F4E
-232/2465: 232/2465: sub_8058F4E (DONE:8ms)
-232/2465: Method: sub_8058F5E
-233/2465: 233/2465: sub_8058F5E (DONE:7ms)
-233/2465: Method: sub_8058F58
-234/2465: 234/2465: sub_8058F58 (DONE:12ms)
-234/2465: Method: sub_8058F6E
-235/2465: 235/2465: sub_8058F6E (DONE:9ms)
-235/2465: Method: sub_8058F68
-236/2465: 236/2465: sub_8058F68 (DONE:9ms)
-236/2465: Method: sub_8058F7E
-237/2465: 237/2465: sub_8058F7E (DONE:12ms)
-237/2465: Method: sub_8058F8E
-238/2465: 238/2465: sub_8058F8E (DONE:14ms)
-238/2465: Method: sub_8058F9E
-239/2465: 239/2465: sub_8058F9E (DONE:17ms)
-239/2465: Method: sub_8058F98
-240/2465: 240/2465: sub_8058F98 (DONE:15ms)
-240/2465: Method: sub_8058FAE
-241/2465: 241/2465: sub_8058FAE (DONE:8ms)
-241/2465: Method: sub_8058FBE
-242/2465: 242/2465: sub_8058FBE (DONE:6ms)
-242/2465: Method: sub_8058FB8
-243/2465: 243/2465: sub_8058FB8 (DONE:8ms)
-243/2465: Method: sub_8058FCE
-244/2465: 244/2465: sub_8058FCE (DONE:11ms)
-244/2465: Method: sub_8058FC8
-245/2465: 245/2465: sub_8058FC8 (DONE:11ms)
-245/2465: Method: sub_8058FDE
-246/2465: 246/2465: sub_8058FDE (DONE:13ms)
-246/2465: Method: sub_8058FD8
-247/2465: 247/2465: sub_8058FD8 (DONE:12ms)
-247/2465: Method: sub_8058FEE
-248/2465: 248/2465: sub_8058FEE (DONE:12ms)
-248/2465: Method: sub_8058FFE
-249/2465: 249/2465: sub_8058FFE (DONE:9ms)
-249/2465: Method: sub_805900E
-250/2465: 250/2465: sub_805900E (DONE:10ms)
-250/2465: Method: sub_8059008
-251/2465: 251/2465: sub_8059008 (DONE:19ms)
-251/2465: Method: sub_805901E
-252/2465: 252/2465: sub_805901E (DONE:13ms)
-252/2465: Method: sub_805902E
-253/2465: 253/2465: sub_805902E (DONE:7ms)
-253/2465: Method: sub_8059028
-254/2465: 254/2465: sub_8059028 (DONE:10ms)
-254/2465: Method: sub_805903E
-255/2465: 255/2465: sub_805903E (DONE:12ms)
-255/2465: Method: sub_8059038
-256/2465: 256/2465: sub_8059038 (DONE:10ms)
-256/2465: Method: sub_805904E
-257/2465: 257/2465: sub_805904E (DONE:9ms)
-257/2465: Method: sub_8059048
-258/2465: 258/2465: sub_8059048 (DONE:12ms)
-258/2465: Method: sub_805905E
-259/2465: 259/2465: sub_805905E (DONE:12ms)
-259/2465: Method: sub_8059058
-260/2465: 260/2465: sub_8059058 (DONE:13ms)
-260/2465: Method: sub_805906E
-261/2465: 261/2465: sub_805906E (DONE:16ms)
-261/2465: Method: sub_8059068
-262/2465: 262/2465: sub_8059068 (DONE:15ms)
-262/2465: Method: sub_805907E
-263/2465: 263/2465: sub_805907E (DONE:11ms)
-263/2465: Method: sub_805908E
-264/2465: 264/2465: sub_805908E (DONE:10ms)
-264/2465: Method: sub_805909E
-265/2465: 265/2465: sub_805909E (DONE:7ms)
-265/2465: Method: sub_8059098
-266/2465: 266/2465: sub_8059098 (DONE:11ms)
-266/2465: Method: sub_80590AE
-267/2465: 267/2465: sub_80590AE (DONE:10ms)
-267/2465: Method: sub_80590A8
-268/2465: 268/2465: sub_80590A8 (DONE:11ms)
-268/2465: Method: sub_80590BE
-269/2465: 269/2465: sub_80590BE (DONE:11ms)
-269/2465: Method: sub_80590B8
-270/2465: 270/2465: sub_80590B8 (DONE:14ms)
-270/2465: Method: sub_80590CE
-271/2465: 271/2465: sub_80590CE (DONE:10ms)
-271/2465: Method: sub_80590DE
-272/2465: 272/2465: sub_80590DE (DONE:16ms)
-272/2465: Method: sub_80590EE
-273/2465: 273/2465: sub_80590EE (DONE:12ms)
-273/2465: Method: sub_80590FE
-274/2465: 274/2465: sub_80590FE (DONE:8ms)
-274/2465: Method: sub_80590F8
-275/2465: 275/2465: sub_80590F8 (DONE:13ms)
-275/2465: Method: sub_805910E
-276/2465: 276/2465: sub_805910E (DONE:11ms)
-276/2465: Method: sub_8059108
-277/2465: 277/2465: sub_8059108 (DONE:11ms)
-277/2465: Method: sub_805911E
-278/2465: 278/2465: sub_805911E (DONE:8ms)
-278/2465: Method: sub_805912E
-279/2465: 279/2465: sub_805912E (DONE:9ms)
-279/2465: Method: sub_805913E
-280/2465: 280/2465: sub_805913E (DONE:6ms)
-280/2465: Method: sub_8059138
-281/2465: 281/2465: sub_8059138 (DONE:11ms)
-281/2465: Method: sub_805914E
-282/2465: 282/2465: sub_805914E (DONE:8ms)
-282/2465: Method: sub_805915E
-283/2465: 283/2465: sub_805915E (DONE:10ms)
-283/2465: Method: sub_8059158
-284/2465: 284/2465: sub_8059158 (DONE:15ms)
-284/2465: Method: sub_805916E
-285/2465: 285/2465: sub_805916E (DONE:12ms)
-285/2465: Method: sub_805917E
-286/2465: 286/2465: sub_805917E (DONE:15ms)
-286/2465: Method: sub_805918E
-287/2465: 287/2465: sub_805918E (DONE:11ms)
-287/2465: Method: sub_8059188
-288/2465: 288/2465: sub_8059188 (DONE:8ms)
-288/2465: Method: sub_805919E
-289/2465: 289/2465: sub_805919E (DONE:14ms)
-289/2465: Method: sub_8059198
-290/2465: 290/2465: sub_8059198 (DONE:13ms)
-290/2465: Method: get_e
-291/2465: 291/2465: get_e (DONE:38ms)
-291/2465: Method: sub_80591AE
-292/2465: 292/2465: sub_80591AE (DONE:9ms)
-292/2465: Method: sub_80591A8
-293/2465: 293/2465: sub_80591A8 (DONE:17ms)
-293/2465: Method: sub_80591BE
-294/2465: 294/2465: sub_80591BE (DONE:14ms)
-294/2465: Method: sub_80591B8
-295/2465: 295/2465: sub_80591B8 (DONE:9ms)
-295/2465: Method: sub_80591CE
-296/2465: 296/2465: sub_80591CE (DONE:12ms)
-296/2465: Method: sub_80591C8
-297/2465: 297/2465: sub_80591C8 (DONE:12ms)
-297/2465: Method: sub_80591DE
-298/2465: 298/2465: sub_80591DE (DONE:11ms)
-298/2465: Method: sub_80591EE
-299/2465: 299/2465: sub_80591EE (DONE:9ms)
-299/2465: Method: sub_80591E8
-300/2465: 300/2465: sub_80591E8 (DONE:10ms)
-300/2465: Method: sub_80591FE
-301/2465: 301/2465: sub_80591FE (DONE:12ms)
-301/2465: Method: sub_80591F8
-302/2465: 302/2465: sub_80591F8 (DONE:11ms)
-302/2465: Method: sub_805920E
-303/2465: 303/2465: sub_805920E (DONE:9ms)
-303/2465: Method: sub_805921E
-304/2465: 304/2465: sub_805921E (DONE:17ms)
-304/2465: Method: sub_8059218
-305/2465: 305/2465: sub_8059218 (DONE:12ms)
-305/2465: Method: sub_805922E
-306/2465: 306/2465: sub_805922E (DONE:16ms)
-306/2465: Method: sub_805923E
-307/2465: 307/2465: sub_805923E (DONE:10ms)
-307/2465: Method: sub_8059238
-308/2465: 308/2465: sub_8059238 (DONE:10ms)
-308/2465: Method: file_exists
-309/2465: 309/2465: file_exists (DONE:22ms)
-309/2465: Method: file_can_read
-310/2465: 310/2465: file_can_read (DONE:29ms)
-310/2465: Method: sub_805924E
-311/2465: 311/2465: sub_805924E (DONE:10ms)
-311/2465: Method: sub_8059248
-312/2465: 312/2465: sub_8059248 (DONE:18ms)
-312/2465: Method: sub_805925E
-313/2465: 313/2465: sub_805925E (DONE:12ms)
-313/2465: Method: sub_8059258
-314/2465: 314/2465: sub_8059258 (DONE:14ms)
-314/2465: Method: sub_805926E
-315/2465: 315/2465: sub_805926E (DONE:9ms)
-315/2465: Method: sub_8059268
-316/2465: 316/2465: sub_8059268 (DONE:9ms)
-316/2465: Method: secure_fprintf
-317/2465: 317/2465: secure_fprintf (DONE:62ms)
-317/2465: Method: sub_805927E
-318/2465: 318/2465: sub_805927E (DONE:12ms)
-318/2465: Method: sub_805928E
-319/2465: 319/2465: sub_805928E (DONE:10ms)
-319/2465: Method: sub_805929E
-320/2465: 320/2465: sub_805929E (DONE:7ms)
-320/2465: Method: sub_8059298
-321/2465: 321/2465: sub_8059298 (DONE:12ms)
-321/2465: Method: sub_80592AE
-322/2465: 322/2465: sub_80592AE (DONE:12ms)
-322/2465: Method: sub_80592A8
-323/2465: 323/2465: sub_80592A8 (DONE:9ms)
-323/2465: Method: get_terminal_size
-324/2465: 324/2465: get_terminal_size (DONE:58ms)
-324/2465: Method: sub_80592BE
-325/2465: 325/2465: sub_80592BE (DONE:5ms)
-325/2465: Method: sub_80592B8
-326/2465: 326/2465: sub_80592B8 (DONE:7ms)
-326/2465: Method: sub_80592CE
-327/2465: 327/2465: sub_80592CE (DONE:12ms)
-327/2465: Method: sub_80592C8
-328/2465: 328/2465: sub_80592C8 (DONE:7ms)
-328/2465: Method: sub_80592DE
-329/2465: 329/2465: sub_80592DE (DONE:7ms)
-329/2465: Method: sub_80592D8
-330/2465: 330/2465: sub_80592D8 (DONE:6ms)
-330/2465: Method: put_chrs
-331/2465: 331/2465: put_chrs (DONE:181ms)
-331/2465: Method: skip_white
-332/2465: 332/2465: skip_white (DONE:91ms)
-332/2465: Method: skip_comment
-333/2465: 333/2465: skip_comment (DONE:261ms)
-333/2465: Method: decode_uri_for_display
-334/2465: 334/2465: decode_uri_for_display (DONE:69ms)
-334/2465: Method: sub_80592EE
-335/2465: 335/2465: sub_80592EE (DONE:13ms)
-335/2465: Method: sub_80592E8
-336/2465: 336/2465: sub_80592E8 (DONE:22ms)
-336/2465: Method: sub_80592FE
-337/2465: 337/2465: sub_80592FE (DONE:13ms)
-337/2465: Method: sub_805930E
-338/2465: 338/2465: sub_805930E (DONE:9ms)
-338/2465: Method: sub_8059308
-339/2465: 339/2465: sub_8059308 (DONE:12ms)
-339/2465: Method: sub_805931E
-340/2465: 340/2465: sub_805931E (DONE:10ms)
-340/2465: Method: sub_8059318
-341/2465: 341/2465: sub_8059318 (DONE:8ms)
-341/2465: Method: sub_805932E
-342/2465: 342/2465: sub_805932E (DONE:13ms)
-342/2465: Method: sub_805933E
-343/2465: 343/2465: sub_805933E (DONE:9ms)
-343/2465: Method: sub_8059338
-344/2465: 344/2465: sub_8059338 (DONE:8ms)
-344/2465: Method: sub_805934E
-345/2465: 345/2465: sub_805934E (DONE:12ms)
-345/2465: Method: sub_805935E
-346/2465: 346/2465: sub_805935E (DONE:8ms)
-346/2465: Method: sub_8059358
-347/2465: 347/2465: sub_8059358 (DONE:13ms)
-347/2465: Method: sub_805936E
-348/2465: 348/2465: sub_805936E (DONE:12ms)
-348/2465: Method: sub_805937E
-349/2465: 349/2465: sub_805937E (DONE:9ms)
-349/2465: Method: sub_8059378
-350/2465: 350/2465: sub_8059378 (DONE:14ms)
-350/2465: Method: update_dialog_data
-351/2465: 351/2465: update_dialog_data (DONE:94ms)
-351/2465: Method: set_auth_user
-352/2465: 352/2465: set_auth_user (DONE:46ms)
-352/2465: Method: set_auth_password
-353/2465: 353/2465: set_auth_password (DONE:46ms)
-353/2465: Method: sub_805938E
-354/2465: 354/2465: sub_805938E (DONE:8ms)
-354/2465: Method: sub_805939E
-355/2465: 355/2465: sub_805939E (DONE:7ms)
-355/2465: Method: sub_80593AE
-356/2465: 356/2465: sub_80593AE (DONE:7ms)
-356/2465: Method: sub_80593A8
-357/2465: 357/2465: sub_80593A8 (DONE:7ms)
-357/2465: Method: sub_80593BE
-358/2465: 358/2465: sub_80593BE (DONE:14ms)
-358/2465: Method: sub_80593B8
-359/2465: 359/2465: sub_80593B8 (DONE:12ms)
-359/2465: Method: sub_80593CE
-360/2465: 360/2465: sub_80593CE (DONE:11ms)
-360/2465: Method: sub_80593C8
-361/2465: 361/2465: sub_80593C8 (DONE:8ms)
-361/2465: Method: elinks_strlcasecmp
-362/2465: 362/2465: elinks_strlcasecmp (DONE:460ms)
-362/2465: Method: c_strcasestr
-363/2465: 363/2465: c_strcasestr (DONE:80ms)
-363/2465: Method: get_global_history_item
-364/2465: 364/2465: get_global_history_item (DONE:63ms)
-364/2465: Method: decode_uri_string
-365/2465: 365/2465: decode_uri_string (DONE:53ms)
-365/2465: Method: elinks_strlcmp
-366/2465: 366/2465: elinks_strlcmp (DONE:204ms)
-366/2465: Method: get_bookmark
-367/2465: 367/2465: get_bookmark (DONE:57ms)
-367/2465: Method: get_mailcap_field
-368/2465: 368/2465: get_mailcap_field (DONE:242ms)
-368/2465: Method: decode_uri_string_for_display
-369/2465: 369/2465: decode_uri_string_for_display (DONE:44ms)
-369/2465: Method: end_with_known_tld
-370/2465: 370/2465: end_with_known_tld (DONE:109ms)
-370/2465: Method: is_in_domain
-371/2465: 371/2465: is_in_domain (DONE:91ms)
-371/2465: Method: map_scanner_string
-372/2465: 372/2465: map_scanner_string (DONE:122ms)
-372/2465: Method: sub_80593DE
-373/2465: 373/2465: sub_80593DE (DONE:12ms)
-373/2465: Method: sub_80593EE
-374/2465: 374/2465: sub_80593EE (DONE:8ms)
-374/2465: Method: sub_80593E8
-375/2465: 375/2465: sub_80593E8 (DONE:12ms)
-375/2465: Method: sub_80593FE
-376/2465: 376/2465: sub_80593FE (DONE:15ms)
-376/2465: Method: sub_805940E
-377/2465: 377/2465: sub_805940E (DONE:14ms)
-377/2465: Method: sub_8059408
-378/2465: 378/2465: sub_8059408 (DONE:16ms)
-378/2465: Method: uninstall_alarm
-379/2465: 379/2465: uninstall_alarm (DONE:22ms)
-379/2465: Method: sub_805941E
-380/2465: 380/2465: sub_805941E (DONE:13ms)
-380/2465: Method: sub_8059418
-381/2465: 381/2465: sub_8059418 (DONE:10ms)
-381/2465: Method: sub_805942E
-382/2465: 382/2465: sub_805942E (DONE:9ms)
-382/2465: Method: sub_805943E
-383/2465: 383/2465: sub_805943E (DONE:10ms)
-383/2465: Method: sub_8059438
-384/2465: 384/2465: sub_8059438 (DONE:13ms)
-384/2465: Method: sub_805944E
-385/2465: 385/2465: sub_805944E (DONE:13ms)
-385/2465: Method: sub_805945E
-386/2465: 386/2465: sub_805945E (DONE:12ms)
-386/2465: Method: sub_805946E
-387/2465: 387/2465: sub_805946E (DONE:8ms)
-387/2465: Method: sub_8059468
-388/2465: 388/2465: sub_8059468 (DONE:13ms)
-388/2465: Method: sub_805947E
-389/2465: 389/2465: sub_805947E (DONE:9ms)
-389/2465: Method: sub_8059478
-390/2465: 390/2465: sub_8059478 (DONE:9ms)
-390/2465: Method: sub_805948E
-391/2465: 391/2465: sub_805948E (DONE:13ms)
-391/2465: Method: sub_8059488
-392/2465: 392/2465: sub_8059488 (DONE:10ms)
-392/2465: Method: sub_805949E
-393/2465: 393/2465: sub_805949E (DONE:9ms)
-393/2465: Method: sub_80594AE
-394/2465: 394/2465: sub_80594AE (DONE:7ms)
-394/2465: Method: sub_80594BE
-395/2465: 395/2465: sub_80594BE (DONE:6ms)
-395/2465: Method: sub_80594B8
-396/2465: 396/2465: sub_80594B8 (DONE:8ms)
-396/2465: Method: sub_80594CE
-397/2465: 397/2465: sub_80594CE (DONE:11ms)
-397/2465: Method: sub_80594DE
-398/2465: 398/2465: sub_80594DE (DONE:11ms)
-398/2465: Method: sub_80594EE
-399/2465: 399/2465: sub_80594EE (DONE:9ms)
-399/2465: Method: sub_80594FE
-400/2465: 400/2465: sub_80594FE (DONE:10ms)
-400/2465: Method: sub_80594F8
-401/2465: 401/2465: sub_80594F8 (DONE:17ms)
-401/2465: Method: set_cwd
-402/2465: 402/2465: set_cwd (DONE:48ms)
-402/2465: Method: sub_805950E
-403/2465: 403/2465: sub_805950E (DONE:7ms)
-403/2465: Method: sub_805951E
-404/2465: 404/2465: sub_805951E (DONE:10ms)
-404/2465: Method: sub_805952E
-405/2465: 405/2465: sub_805952E (DONE:8ms)
-405/2465: Method: sub_8059528
-406/2465: 406/2465: sub_8059528 (DONE:13ms)
-406/2465: Method: sub_805953E
-407/2465: 407/2465: sub_805953E (DONE:9ms)
-407/2465: Method: sub_8059538
-408/2465: 408/2465: sub_8059538 (DONE:15ms)
-408/2465: Method: sub_805954E
-409/2465: 409/2465: sub_805954E (DONE:14ms)
-409/2465: Method: sub_805955E
-410/2465: 410/2465: sub_805955E (DONE:9ms)
-410/2465: Method: sub_805956E
-411/2465: 411/2465: sub_805956E (DONE:8ms)
-411/2465: Method: sub_8059568
-412/2465: 412/2465: sub_8059568 (DONE:11ms)
-412/2465: Method: sub_805957E
-413/2465: 413/2465: sub_805957E (DONE:10ms)
-413/2465: Method: sub_805958E
-414/2465: 414/2465: sub_805958E (DONE:10ms)
-414/2465: Method: sub_8059588
-415/2465: 415/2465: sub_8059588 (DONE:10ms)
-415/2465: Method: safe_mkstemp
-416/2465: 416/2465: safe_mkstemp (DONE:40ms)
-416/2465: Method: sub_805959E
-417/2465: 417/2465: sub_805959E (DONE:13ms)
-417/2465: Method: sub_80595AE
-418/2465: 418/2465: sub_80595AE (DONE:14ms)
-418/2465: Method: sub_80595A8
-419/2465: 419/2465: sub_80595A8 (DONE:14ms)
-419/2465: Method: elinks_usleep
-420/2465: 420/2465: elinks_usleep (DONE:56ms)
-420/2465: Method: can_read_or_write
-421/2465: 421/2465: can_read_or_write (DONE:110ms)
-421/2465: Method: can_read
-422/2465: 422/2465: can_read (DONE:20ms)
-422/2465: Method: sub_80595BE
-423/2465: 423/2465: sub_80595BE (DONE:9ms)
-423/2465: Method: sub_80595CE
-424/2465: 424/2465: sub_80595CE (DONE:8ms)
-424/2465: Method: sub_80595C8
-425/2465: 425/2465: sub_80595C8 (DONE:12ms)
-425/2465: Method: close_terminal_pipes
-426/2465: 426/2465: close_terminal_pipes (DONE:34ms)
-426/2465: Method: sub_80595DE
-427/2465: 427/2465: sub_80595DE (DONE:8ms)
-427/2465: Method: sub_80595D8
-428/2465: 428/2465: sub_80595D8 (DONE:12ms)
-428/2465: Method: sub_80595EE
-429/2465: 429/2465: sub_80595EE (DONE:10ms)
-429/2465: Method: sub_80595E8
-430/2465: 430/2465: sub_80595E8 (DONE:11ms)
-430/2465: Method: sub_80595FE
-431/2465: 431/2465: sub_80595FE (DONE:12ms)
-431/2465: Method: sub_80595F8
-432/2465: 432/2465: sub_80595F8 (DONE:10ms)
-432/2465: Method: sub_805960E
-433/2465: 433/2465: sub_805960E (DONE:9ms)
-433/2465: Method: sub_805961E
-434/2465: 434/2465: sub_805961E (DONE:8ms)
-434/2465: Method: sub_8059618
-435/2465: 435/2465: sub_8059618 (DONE:10ms)
-435/2465: Method: sub_805962E
-436/2465: 436/2465: sub_805962E (DONE:17ms)
-436/2465: Method: sub_8059628
-437/2465: 437/2465: sub_8059628 (DONE:14ms)
-437/2465: Method: sub_805963E
-438/2465: 438/2465: sub_805963E (DONE:14ms)
-438/2465: Method: sub_8059638
-439/2465: 439/2465: sub_8059638 (DONE:13ms)
-439/2465: Method: sub_805964E
-440/2465: 440/2465: sub_805964E (DONE:10ms)
-440/2465: Method: sub_805965E
-441/2465: 441/2465: sub_805965E (DONE:7ms)
-441/2465: Method: sub_8059658
-442/2465: 442/2465: sub_8059658 (DONE:12ms)
-442/2465: Method: sub_805966E
-443/2465: 443/2465: sub_805966E (DONE:11ms)
-443/2465: Method: sub_8059668
-444/2465: 444/2465: sub_8059668 (DONE:11ms)
-444/2465: Method: sub_805967E
-445/2465: 445/2465: sub_805967E (DONE:10ms)
-445/2465: Method: sub_805968E
-446/2465: 446/2465: sub_805968E (DONE:8ms)
-446/2465: Method: sub_805969E
-447/2465: 447/2465: sub_805969E (DONE:7ms)
-447/2465: Method: sub_8059698
-448/2465: 448/2465: sub_8059698 (DONE:20ms)
-448/2465: Method: usrerror
-449/2465: 449/2465: usrerror (DONE:46ms)
-449/2465: Method: secure_fputc
-450/2465: 450/2465: secure_fputc (DONE:50ms)
-450/2465: Method: sub_80596AE
-451/2465: 451/2465: sub_80596AE (DONE:10ms)
-451/2465: Method: sub_80596A8
-452/2465: 452/2465: sub_80596A8 (DONE:18ms)
-452/2465: Method: sub_80596BE
-453/2465: 453/2465: sub_80596BE (DONE:11ms)
-453/2465: Method: sub_80596B8
-454/2465: 454/2465: sub_80596B8 (DONE:10ms)
-454/2465: Method: sub_80596CE
-455/2465: 455/2465: sub_80596CE (DONE:9ms)
-455/2465: Method: sub_80596DE
-456/2465: 456/2465: sub_80596DE (DONE:7ms)
-456/2465: Method: sub_80596D8
-457/2465: 457/2465: sub_80596D8 (DONE:12ms)
-457/2465: Method: match_link_text
-458/2465: 458/2465: match_link_text (DONE:114ms)
-458/2465: Method: sub_80596EE
-459/2465: 459/2465: sub_80596EE (DONE:6ms)
-459/2465: Method: sub_80596FE
-460/2465: 460/2465: sub_80596FE (DONE:7ms)
-460/2465: Method: sub_805970E
-461/2465: 461/2465: sub_805970E (DONE:9ms)
-461/2465: Method: sub_8059708
-462/2465: 462/2465: sub_8059708 (DONE:13ms)
-462/2465: Method: er
-463/2465: 463/2465: er (DONE:96ms)
-463/2465: Method: sub_805971E
-464/2465: 464/2465: sub_805971E (DONE:14ms)
-464/2465: Method: sub_805972E
-465/2465: 465/2465: sub_805972E (DONE:10ms)
-465/2465: Method: sub_805973E
-466/2465: 466/2465: sub_805973E (DONE:9ms)
-466/2465: Method: sub_8059738
-467/2465: 467/2465: sub_8059738 (DONE:15ms)
-467/2465: Method: update_md5
-468/2465: 468/2465: update_md5 (DONE:359ms)
-468/2465: Method: done_md5
-469/2465: 469/2465: done_md5 (DONE:410ms)
-469/2465: Method: del_from_dom_node_list
-470/2465: 470/2465: del_from_dom_node_list (DONE:103ms)
-470/2465: Method: sanitize_url
-471/2465: 471/2465: sanitize_url (DONE:144ms)
-471/2465: Method: sanitize_title
-472/2465: 472/2465: sanitize_title (DONE:135ms)
-472/2465: Method: sub_805974E
-473/2465: 473/2465: sub_805974E (DONE:9ms)
-473/2465: Method: sub_805975E
-474/2465: 474/2465: sub_805975E (DONE:9ms)
-474/2465: Method: sub_8059758
-475/2465: 475/2465: sub_8059758 (DONE:7ms)
-475/2465: Method: sub_805976E
-476/2465: 476/2465: sub_805976E (DONE:10ms)
-476/2465: Method: sub_8059768
-477/2465: 477/2465: sub_8059768 (DONE:11ms)
-477/2465: Method: unicode_fold_label_case
-478/2465: 478/2465: unicode_fold_label_case (DONE:16ms)
-478/2465: Method: sub_805977E
-479/2465: 479/2465: sub_805977E (DONE:12ms)
-479/2465: Method: sub_805978E
-480/2465: 480/2465: sub_805978E (DONE:8ms)
-480/2465: Method: sub_8059788
-481/2465: 481/2465: sub_8059788 (DONE:14ms)
-481/2465: Method: sub_805979E
-482/2465: 482/2465: sub_805979E (DONE:12ms)
-482/2465: Method: sub_8059798
-483/2465: 483/2465: sub_8059798 (DONE:8ms)
-483/2465: Method: sub_80597AE
-484/2465: 484/2465: sub_80597AE (DONE:8ms)
-484/2465: Method: sub_80597BE
-485/2465: 485/2465: sub_80597BE (DONE:7ms)
-485/2465: Method: sub_80597B8
-486/2465: 486/2465: sub_80597B8 (DONE:7ms)
-486/2465: Method: utf8_ptr2chars
-487/2465: 487/2465: utf8_ptr2chars (DONE:69ms)
-487/2465: Method: strlen_utf8
-488/2465: 488/2465: strlen_utf8 (DONE:59ms)
-488/2465: Method: strlen_u
-489/2465: 489/2465: strlen_u (DONE:24ms)
-489/2465: Method: sub_80597CE
-490/2465: 490/2465: sub_80597CE (DONE:7ms)
-490/2465: Method: sub_80597DE
-491/2465: 491/2465: sub_80597DE (DONE:7ms)
-491/2465: Method: sub_80597EE
-492/2465: 492/2465: sub_80597EE (DONE:7ms)
-492/2465: Method: sub_80597E8
-493/2465: 493/2465: sub_80597E8 (DONE:8ms)
-493/2465: Method: sub_80597FE
-494/2465: 494/2465: sub_80597FE (DONE:15ms)
-494/2465: Method: sub_805980E
-495/2465: 495/2465: sub_805980E (DONE:9ms)
-495/2465: Method: sub_805981E
-496/2465: 496/2465: sub_805981E (DONE:6ms)
-496/2465: Method: sub_8059818
-497/2465: 497/2465: sub_8059818 (DONE:7ms)
-497/2465: Method: sub_805982E
-498/2465: 498/2465: sub_805982E (DONE:6ms)
-498/2465: Method: sub_805983E
-499/2465: 499/2465: sub_805983E (DONE:5ms)
-499/2465: Method: sub_8059838
-500/2465: 500/2465: sub_8059838 (DONE:5ms)
-500/2465: Method: sub_805984E
-501/2465: 501/2465: sub_805984E (DONE:7ms)
-501/2465: Method: sub_805985E
-502/2465: 502/2465: sub_805985E (DONE:6ms)
-502/2465: Method: sub_805986E
-503/2465: 503/2465: sub_805986E (DONE:5ms)
-503/2465: Method: sub_8059868
-504/2465: 504/2465: sub_8059868 (DONE:8ms)
-504/2465: Method: sub_805987E
-505/2465: 505/2465: sub_805987E (DONE:6ms)
-505/2465: Method: sub_805988E
-506/2465: 506/2465: sub_805988E (DONE:6ms)
-506/2465: Method: sub_8059888
-507/2465: 507/2465: sub_8059888 (DONE:11ms)
-507/2465: Method: set_nonblocking_fd
-508/2465: 508/2465: set_nonblocking_fd (DONE:48ms)
-508/2465: Method: set_blocking_fd
-509/2465: 509/2465: set_blocking_fd (DONE:32ms)
-509/2465: Method: sub_805989E
-510/2465: 510/2465: sub_805989E (DONE:9ms)
-510/2465: Method: sub_80598AE
-511/2465: 511/2465: sub_80598AE (DONE:10ms)
-511/2465: Method: sub_80598BE
-512/2465: 512/2465: sub_80598BE (DONE:11ms)
-512/2465: Method: sub_80598CE
-513/2465: 513/2465: sub_80598CE (DONE:10ms)
-513/2465: Method: sub_80598C8
-514/2465: 514/2465: sub_80598C8 (DONE:10ms)
-514/2465: Method: sub_80598DE
-515/2465: 515/2465: sub_80598DE (DONE:9ms)
-515/2465: Method: sub_80598D8
-516/2465: 516/2465: sub_80598D8 (DONE:19ms)
-516/2465: Method: add_dlg_button_do
-517/2465: 517/2465: add_dlg_button_do (DONE:86ms)
-517/2465: Method: check_whether_file_exists
-518/2465: 518/2465: check_whether_file_exists (DONE:118ms)
-518/2465: Method: sub_80598EE
-519/2465: 519/2465: sub_80598EE (DONE:10ms)
-519/2465: Method: sub_80598E8
-520/2465: 520/2465: sub_80598E8 (DONE:9ms)
-520/2465: Method: sub_80598FE
-521/2465: 521/2465: sub_80598FE (DONE:8ms)
-521/2465: Method: sub_80598F8
-522/2465: 522/2465: sub_80598F8 (DONE:10ms)
-522/2465: Method: get_ctl_handle
-523/2465: 523/2465: get_ctl_handle (DONE:35ms)
-523/2465: Method: get_input_handle
-524/2465: 524/2465: get_input_handle (DONE:16ms)
-524/2465: Method: sub_805990E
-525/2465: 525/2465: sub_805990E (DONE:8ms)
-525/2465: Method: sub_805991E
-526/2465: 526/2465: sub_805991E (DONE:7ms)
-526/2465: Method: sub_8059918
-527/2465: 527/2465: sub_8059918 (DONE:8ms)
-527/2465: Method: elinks_internal
-528/2465: 528/2465: elinks_internal (DONE:45ms)
-528/2465: Method: mem_free
-529/2465: 529/2465: mem_free (DONE:41ms)
-529/2465: Method: done_string
-530/2465: 530/2465: done_string (DONE:78ms)
-530/2465: Method: set_handlers
-531/2465: 531/2465: set_handlers (DONE:358ms)
-531/2465: Method: get_listbox_widget_data
-532/2465: 532/2465: get_listbox_widget_data (DONE:59ms)
-532/2465: Method: current_frame
-533/2465: 533/2465: current_frame (DONE:147ms)
-533/2465: Method: safe_strncpy
-534/2465: 534/2465: safe_strncpy (DONE:64ms)
-534/2465: Method: install_signal_handler
-535/2465: 535/2465: install_signal_handler (DONE:134ms)
-535/2465: Method: utf8_to_unicode
-536/2465: 536/2465: utf8_to_unicode (DONE:531ms)
-536/2465: Method: get_tab_by_number
-537/2465: 537/2465: get_tab_by_number (DONE:123ms)
-537/2465: Method: elinks_error
-538/2465: 538/2465: elinks_error (DONE:53ms)
-538/2465: Method: kill_timer
-539/2465: 539/2465: kill_timer (DONE:80ms)
-539/2465: Method: kill_html_stack_item
-540/2465: 540/2465: kill_html_stack_item (DONE:344ms)
-540/2465: Method: hard_write
-541/2465: 541/2465: hard_write (DONE:128ms)
-541/2465: Method: compare_uri
-542/2465: 542/2465: compare_uri (DONE:272ms)
-542/2465: Method: set_term_color
-543/2465: 543/2465: set_term_color (DONE:3748ms)
-543/2465: Method: get_priority
-544/2465: 544/2465: get_priority (DONE:68ms)
-544/2465: Method: connection_state8
-545/2465: 545/2465: connection_state8 (DONE:61ms)
-545/2465: Method: draw_char_data
-546/2465: 546/2465: draw_char_data (DONE:143ms)
-546/2465: Method: parse_element
-547/2465: 547/2465: parse_element (DONE:1404ms)
-547/2465: Method: find_in_cache
-548/2465: 548/2465: find_in_cache (DONE:88ms)
-548/2465: Method: get_event_id
-549/2465: 549/2465: get_event_id (DONE:120ms)
-549/2465: Method: check_bottom_halves
-550/2465: 550/2465: check_bottom_halves (DONE:45ms)
-550/2465: Method: get_action
-551/2465: 551/2465: get_action (DONE:65ms)
-551/2465: Method: kill_buffer_data
-552/2465: 552/2465: kill_buffer_data (DONE:66ms)
-552/2465: Method: connection_state9
-553/2465: 553/2465: connection_state9 (DONE:55ms)
-553/2465: Method: find_css_selector
-554/2465: 554/2465: find_css_selector (DONE:122ms)
-554/2465: Method: utf8_char2cells
-555/2465: 555/2465: utf8_char2cells (DONE:577ms)
-555/2465: Method: utf8_ptr2cells
-556/2465: 556/2465: utf8_ptr2cells (DONE:109ms)
-556/2465: Method: utf8_cells2bytes
-557/2465: 557/2465: utf8_cells2bytes (DONE:134ms)
-557/2465: Method: free_hash
-558/2465: 558/2465: free_hash (DONE:183ms)
-558/2465: Method: listbox_sel_move
-559/2465: 559/2465: listbox_sel_move (DONE:154ms)
-559/2465: Method: connection_state3
-560/2465: 560/2465: connection_state3 (DONE:65ms)
-560/2465: Method: redraw_from_window
-561/2465: 561/2465: redraw_from_window (DONE:84ms)
-561/2465: Method: connection_state7
-562/2465: 562/2465: connection_state7 (DONE:49ms)
-562/2465: Method: get_handler
-563/2465: 563/2465: get_handler (DONE:103ms)
-563/2465: Method: read_from_socket
-564/2465: 564/2465: read_from_socket (DONE:126ms)
-564/2465: Method: check_sgml_incomplete
-565/2465: 565/2465: check_sgml_incomplete (DONE:82ms)
-565/2465: Method: get_action_name
-566/2465: 566/2465: get_action_name (DONE:18ms)
-566/2465: Method: update_hierbox_browser
-567/2465: 567/2465: update_hierbox_browser (DONE:35ms)
-567/2465: Method: done_listbox_item
-568/2465: 568/2465: done_listbox_item (DONE:200ms)
-568/2465: Method: init_dom_stack
-569/2465: 569/2465: init_dom_stack (DONE:51ms)
-569/2465: Method: cp2u
-570/2465: 570/2465: cp2u (DONE:77ms)
-570/2465: Method: connection_state2
-571/2465: 571/2465: connection_state2 (DONE:51ms)
-571/2465: Method: get_protocol_need_slash_after_host
-572/2465: 572/2465: get_protocol_need_slash_after_host (DONE:54ms)
-572/2465: Method: del_hash_item
-573/2465: 573/2465: del_hash_item (DONE:44ms)
-573/2465: Method: done_uri
-574/2465: 574/2465: done_uri (DONE:219ms)
-574/2465: Method: set_session_referrer
-575/2465: 575/2465: set_session_referrer (DONE:41ms)
-575/2465: Method: done_dom_stack
-576/2465: 576/2465: done_dom_stack (DONE:146ms)
-576/2465: Method: delete_global_history_item
-577/2465: 577/2465: delete_global_history_item (DONE:100ms)
-577/2465: Method: elinks_wdebug
-578/2465: 578/2465: elinks_wdebug (DONE:69ms)
-578/2465: Method: get_table_frames
-579/2465: 579/2465: get_table_frames (DONE:88ms)
-579/2465: Method: connection_state
-580/2465: 580/2465: connection_state (DONE:53ms)
-580/2465: Method: clr_spaces
-581/2465: 581/2465: clr_spaces (DONE:104ms)
-581/2465: Method: get_filename_position
-582/2465: 582/2465: get_filename_position (DONE:99ms)
-582/2465: Method: set_pos_x
-583/2465: 583/2465: set_pos_x (DONE:204ms)
-583/2465: Method: search_html_stack
-584/2465: 584/2465: search_html_stack (DONE:93ms)
-584/2465: Method: skip_sgml_chars
-585/2465: 585/2465: skip_sgml_chars (DONE:123ms)
-585/2465: Method: T.130
-586/2465: 586/2465: T.130 (DONE:352ms)
-586/2465: Method: init_dom_scanner
-587/2465: 587/2465: init_dom_scanner (DONE:520ms)
-587/2465: Method: fix_dwchar_around_box
-588/2465: 588/2465: fix_dwchar_around_box (DONE:1323ms)
-588/2465: Method: freeml
-589/2465: 589/2465: freeml (DONE:45ms)
-589/2465: Method: fastfind_done
-590/2465: 590/2465: fastfind_done (DONE:173ms)
-590/2465: Method: handle_itrm_stdin
-591/2465: 591/2465: handle_itrm_stdin (DONE:72ms)
-591/2465: Method: done_html_parser_state
-592/2465: 592/2465: done_html_parser_state (DONE:43ms)
-592/2465: Method: get_host_connection
-593/2465: 593/2465: get_host_connection (DONE:65ms)
-593/2465: Method: listbox_sel
-594/2465: 594/2465: listbox_sel (DONE:36ms)
-594/2465: Method: cp_to_unicode
-595/2465: 595/2465: cp_to_unicode (DONE:59ms)
-595/2465: Method: free_task
-596/2465: 596/2465: free_task (DONE:69ms)
-596/2465: Method: done_session_info
-597/2465: 597/2465: done_session_info (DONE:57ms)
-597/2465: Method: get_keymap_name
-598/2465: 598/2465: get_keymap_name (DONE:43ms)
-598/2465: Method: get_dom_node_list_pos
-599/2465: 599/2465: get_dom_node_list_pos (DONE:78ms)
-599/2465: Method: get_protocol_need_slashes
-600/2465: 600/2465: get_protocol_need_slashes (DONE:50ms)
-600/2465: Method: get_char
-601/2465: 601/2465: get_char (DONE:94ms)
-601/2465: Method: sec_to_ms
-602/2465: 602/2465: sec_to_ms (DONE:39ms)
-602/2465: Method: get_link_at_coordinates
-603/2465: 603/2465: get_link_at_coordinates (DONE:225ms)
-603/2465: Method: ses_find_frame
-604/2465: 604/2465: ses_find_frame (DONE:78ms)
-604/2465: Method: hard_read
-605/2465: 605/2465: hard_read (DONE:115ms)
-605/2465: Method: set_sgml_error
-606/2465: 606/2465: set_sgml_error (DONE:89ms)
-606/2465: Method: get_blacklist_entry
-607/2465: 607/2465: get_blacklist_entry (DONE:83ms)
-607/2465: Method: set_menu_selection
-608/2465: 608/2465: set_menu_selection (DONE:156ms)
-608/2465: Method: scroll_menu
-609/2465: 609/2465: scroll_menu (DONE:326ms)
-609/2465: Method: apply_css_selector_style
-610/2465: 610/2465: apply_css_selector_style (DONE:111ms)
-610/2465: Method: fastfind_search
-611/2465: 611/2465: fastfind_search (DONE:691ms)
-611/2465: Method: decode_color
-612/2465: 612/2465: decode_color (DONE:219ms)
-612/2465: Method: dlg_set_history
-613/2465: 613/2465: dlg_set_history (DONE:137ms)
-613/2465: Method: check_questions_queue
-614/2465: 614/2465: check_questions_queue (DONE:42ms)
-614/2465: Method: del_dns_cache_entry
-615/2465: 615/2465: del_dns_cache_entry (DONE:28ms)
-615/2465: Method: free_string_list
-616/2465: 616/2465: free_string_list (DONE:77ms)
-616/2465: Method: new_pos
-617/2465: 617/2465: new_pos (DONE:65ms)
-617/2465: Method: patience
-618/2465: 618/2465: patience (DONE:39ms)
-618/2465: Method: mem_calloc
-619/2465: 619/2465: mem_calloc (DONE:42ms)
-619/2465: Method: mem_alloc
-620/2465: 620/2465: mem_alloc (DONE:30ms)
-620/2465: Method: mem_realloc
-621/2465: 621/2465: mem_realloc (DONE:51ms)
-621/2465: Method: add_char_to_string
-622/2465: 622/2465: add_char_to_string (DONE:131ms)
-622/2465: Method: init_string
-623/2465: 623/2465: init_string (DONE:51ms)
-623/2465: Method: memacpy
-624/2465: 624/2465: memacpy (DONE:83ms)
-624/2465: Method: stracpy
-625/2465: 625/2465: stracpy (DONE:71ms)
-625/2465: Method: add_to_menu
-626/2465: 626/2465: add_to_menu (DONE:179ms)
-626/2465: Method: add_crlf_to_string
-627/2465: 627/2465: add_crlf_to_string (DONE:140ms)
-627/2465: Method: straconcat
-628/2465: 628/2465: straconcat (DONE:260ms)
-628/2465: Method: add_bytes_to_string__7
-629/2465: 629/2465: add_bytes_to_string__7 (DONE:157ms)
-629/2465: Method: parse_header
-630/2465: 630/2465: parse_header (DONE:977ms)
-630/2465: Method: getml
-631/2465: 631/2465: getml (DONE:104ms)
-631/2465: Method: install_timer
-632/2465: 632/2465: install_timer (DONE:124ms)
-632/2465: Method: new_menu
-633/2465: 633/2465: new_menu (DONE:106ms)
-633/2465: Method: add_listbox_item
-634/2465: 634/2465: add_listbox_item (DONE:134ms)
-634/2465: Method: html_stack_dup
-635/2465: 635/2465: html_stack_dup (DONE:232ms)
-635/2465: Method: add_hash_item
-636/2465: 636/2465: add_hash_item (DONE:89ms)
-636/2465: Method: encode_uri_string
-637/2465: 637/2465: encode_uri_string (DONE:421ms)
-637/2465: Method: register_bottom_half_do
-638/2465: 638/2465: register_bottom_half_do (DONE:66ms)
-638/2465: Method: add_dom_stack_context
-639/2465: 639/2465: add_dom_stack_context (DONE:80ms)
-639/2465: Method: set_cookies_dirty
-640/2465: 640/2465: set_cookies_dirty (DONE:18ms)
-640/2465: Method: init_hash8
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-641/2465: 641/2465: init_hash8 (DONE:54ms)
-641/2465: Method: get_header_param
-642/2465: 642/2465: get_header_param (DONE:519ms)
-642/2465: Method: merge_css_selectors
-643/2465: 643/2465: merge_css_selectors (DONE:88ms)
-643/2465: Method: mem_align_alloc__2
-644/2465: 644/2465: mem_align_alloc__2 (DONE:67ms)
-644/2465: Method: insert_in_string
-645/2465: 645/2465: insert_in_string (DONE:74ms)
-645/2465: Method: add_to_strn
-646/2465: 646/2465: add_to_strn (DONE:86ms)
-646/2465: Method: new_columns
-647/2465: 647/2465: new_columns (DONE:111ms)
-647/2465: Method: add_shell_safe_to_string
-648/2465: 648/2465: add_shell_safe_to_string (DONE:168ms)
-648/2465: Method: register_check_queue
-649/2465: 649/2465: register_check_queue (DONE:16ms)
-649/2465: Method: init_listbox_context
-650/2465: 650/2465: init_listbox_context (DONE:75ms)
-650/2465: Method: T.146
-651/2465: 651/2465: T.146 (DONE:44ms)
-651/2465: Method: add_to_string
-652/2465: 652/2465: add_to_string (DONE:141ms)
-652/2465: Method: add_format_to_string
-653/2465: 653/2465: add_format_to_string (DONE:108ms)
-653/2465: Method: add_string_to_string
-654/2465: 654/2465: add_string_to_string (DONE:143ms)
-654/2465: Method: add_keystroke_to_string
-655/2465: 655/2465: add_keystroke_to_string (DONE:129ms)
-655/2465: Method: parse_header_param
-656/2465: 656/2465: parse_header_param (DONE:612ms)
-656/2465: Method: init_submitted_value
-657/2465: 657/2465: init_submitted_value (DONE:62ms)
-657/2465: Method: add_bookmark
-658/2465: 658/2465: add_bookmark (DONE:423ms)
-658/2465: Method: get_cwd
-659/2465: 659/2465: get_cwd (DONE:70ms)
-659/2465: Method: realloc_lines
-660/2465: 660/2465: realloc_lines (DONE:131ms)
-660/2465: Method: move_links
-661/2465: 661/2465: move_links (DONE:914ms)
-661/2465: Method: add_to_ml
-662/2465: 662/2465: add_to_ml (DONE:89ms)
-662/2465: Method: new_menu_item
-663/2465: 663/2465: new_menu_item (DONE:236ms)
-663/2465: Method: add_xchar_to_string
-664/2465: 664/2465: add_xchar_to_string (DONE:101ms)
-664/2465: Method: add_window
-665/2465: 665/2465: add_window (DONE:73ms)
-665/2465: Method: do_dialog
-666/2465: 666/2465: do_dialog (DONE:59ms)
-666/2465: Method: init_options_tree
-667/2465: 667/2465: init_options_tree (DONE:23ms)
-667/2465: Method: add_to_dom_string
-668/2465: 668/2465: add_to_dom_string (DONE:59ms)
-668/2465: Method: add_bytes_to_string__
-669/2465: 669/2465: add_bytes_to_string__ (DONE:186ms)
-669/2465: Method: add_bytes_to_string__2
-670/2465: 670/2465: add_bytes_to_string__2 (DONE:196ms)
-670/2465: Method: add_string_replace
-671/2465: 671/2465: add_string_replace (DONE:340ms)
-671/2465: Method: dump_output_flush
-672/2465: 672/2465: dump_output_flush (DONE:174ms)
-672/2465: Method: write_char
-673/2465: 673/2465: write_char (DONE:40ms)
-673/2465: Method: write_color_256
-674/2465: 674/2465: write_color_256 (DONE:71ms)
-674/2465: Method: format_text
-675/2465: 675/2465: format_text (DONE:779ms)
-675/2465: Method: str_rd
-676/2465: 676/2465: str_rd (DONE:215ms)
-676/2465: Method: get_extension_from_uri
-677/2465: 677/2465: get_extension_from_uri (DONE:142ms)
-677/2465: Method: init_css_selector
-678/2465: 678/2465: init_css_selector (DONE:98ms)
-678/2465: Method: add_shell_quoted_to_string
-679/2465: 679/2465: add_shell_quoted_to_string (DONE:68ms)
-679/2465: Method: add_keystroke_action_to_string
-680/2465: 680/2465: add_keystroke_action_to_string (DONE:44ms)
-680/2465: Method: write_color_16
-681/2465: 681/2465: write_color_16 (DONE:79ms)
-681/2465: Method: beep_terminal
-682/2465: 682/2465: beep_terminal (DONE:18ms)
-682/2465: Method: check_signals
-683/2465: 683/2465: check_signals (DONE:51ms)
-683/2465: Method: cycle_widget_focus
-684/2465: 684/2465: cycle_widget_focus (DONE:145ms)
-684/2465: Method: has_keepalive_connection
-685/2465: 685/2465: has_keepalive_connection (DONE:107ms)
-685/2465: Method: init_form
-686/2465: 686/2465: init_form (DONE:33ms)
-686/2465: Method: find_form_view_in_vs
-687/2465: 687/2465: find_form_view_in_vs (DONE:102ms)
-687/2465: Method: copy_vs
-688/2465: 688/2465: copy_vs (DONE:286ms)
-688/2465: Method: new_cell
-689/2465: 689/2465: new_cell (DONE:972ms)
-689/2465: Method: add_questions_entry
-690/2465: 690/2465: add_questions_entry (DONE:28ms)
-690/2465: Method: dump_output_alloc
-691/2465: 691/2465: dump_output_alloc (DONE:69ms)
-691/2465: Method: memacpy_u
-692/2465: 692/2465: memacpy_u (DONE:74ms)
-692/2465: Method: add_blacklist_entry
-693/2465: 693/2465: add_blacklist_entry (DONE:57ms)
-693/2465: Method: set_td_width
-694/2465: 694/2465: set_td_width (DONE:187ms)
-694/2465: Method: T.125
-695/2465: 695/2465: T.125 (DONE:56ms)
-695/2465: Method: mem_align_alloc__3
-696/2465: 696/2465: mem_align_alloc__3 (DONE:57ms)
-696/2465: Method: add_to_dom_node_list
-697/2465: 697/2465: add_to_dom_node_list (DONE:316ms)
-697/2465: Method: normalize_text_node_whitespace
-698/2465: 698/2465: normalize_text_node_whitespace (DONE:426ms)
-698/2465: Method: T.210
-699/2465: 699/2465: T.210 (DONE:1042ms)
-699/2465: Method: textarea_op
-700/2465: 700/2465: textarea_op (DONE:168ms)
-700/2465: Method: area_cursor
-701/2465: 701/2465: area_cursor (DONE:367ms)
-701/2465: Method: encode_crlf
-702/2465: 702/2465: encode_crlf (DONE:132ms)
-702/2465: Method: get_cookie_server
-703/2465: 703/2465: get_cookie_server (DONE:260ms)
-703/2465: Method: init_html_parser_state
-704/2465: 704/2465: init_html_parser_state (DONE:46ms)
-704/2465: Method: add_bytes_to_string__4
-705/2465: 705/2465: add_bytes_to_string__4 (DONE:89ms)
-705/2465: Method: string_concat
-706/2465: 706/2465: string_concat (DONE:218ms)
-706/2465: Method: add_to_string_list
-707/2465: 707/2465: add_to_string_list (DONE:279ms)
-707/2465: Method: set_window_title
-708/2465: 708/2465: set_window_title (DONE:433ms)
-708/2465: Method: add_select_item
-709/2465: 709/2465: add_select_item (DONE:165ms)
-709/2465: Method: dump_nocolor
-710/2465: 710/2465: dump_nocolor (DONE:577ms)
-710/2465: Method: get_css_selector
-711/2465: 711/2465: get_css_selector (DONE:51ms)
-711/2465: Method: skip_quoted
-712/2465: 712/2465: skip_quoted (DONE:106ms)
-712/2465: Method: get_keybinding_action_box_item
-713/2465: 713/2465: get_keybinding_action_box_item (DONE:56ms)
-713/2465: Method: connection_state4
-714/2465: 714/2465: connection_state4 (DONE:45ms)
-714/2465: Method: get_protocol_free_syntax
-715/2465: 715/2465: get_protocol_free_syntax (DONE:54ms)
-715/2465: Method: connection_state6
-716/2465: 716/2465: connection_state6 (DONE:44ms)
-716/2465: Method: mult_ms
-717/2465: 717/2465: mult_ms (DONE:62ms)
-717/2465: Method: get_form_label
-718/2465: 718/2465: get_form_label (DONE:93ms)
-718/2465: Method: set_pos_y
-719/2465: 719/2465: set_pos_y (DONE:214ms)
-719/2465: Method: next_link_in_view_
-720/2465: 720/2465: next_link_in_view_ (DONE:425ms)
-720/2465: Method: get_range
-721/2465: 721/2465: get_range (DONE:286ms)
-721/2465: Method: get_srch
-722/2465: 722/2465: get_srch (DONE:804ms)
-722/2465: Method: write_dns_data
-723/2465: 723/2465: write_dns_data (DONE:89ms)
-723/2465: Method: read_dns_data
-724/2465: 724/2465: read_dns_data (DONE:93ms)
-724/2465: Method: set_sgml_incomplete
-725/2465: 725/2465: set_sgml_incomplete (DONE:57ms)
-725/2465: Method: strip_proxy_protocol
-726/2465: 726/2465: strip_proxy_protocol (DONE:94ms)
-726/2465: Method: unlink_unix
-727/2465: 727/2465: unlink_unix (DONE:51ms)
-727/2465: Method: has_form_submit
-728/2465: 728/2465: has_form_submit (DONE:100ms)
-728/2465: Method: call_dom_stack_callbacks
-729/2465: 729/2465: call_dom_stack_callbacks (DONE:215ms)
-729/2465: Method: get_protocol_port
-730/2465: 730/2465: get_protocol_port (DONE:64ms)
-730/2465: Method: get_dom_node_map_index
-731/2465: 731/2465: get_dom_node_map_index (DONE:129ms)
-731/2465: Method: init_scanner
-732/2465: 732/2465: init_scanner (DONE:511ms)
-732/2465: Method: detach_menu
-733/2465: 733/2465: detach_menu (DONE:30ms)
-733/2465: Method: close_encoded
-734/2465: 734/2465: close_encoded (DONE:22ms)
-734/2465: Method: shutdown_connection_stream
-735/2465: 735/2465: shutdown_connection_stream (DONE:42ms)
-735/2465: Method: done_form_state
-736/2465: 736/2465: done_form_state (DONE:16ms)
-736/2465: Method: free_last_searched_bookmark
-737/2465: 737/2465: free_last_searched_bookmark (DONE:24ms)
-737/2465: Method: done_mimetypes_entry
-738/2465: 738/2465: done_mimetypes_entry (DONE:28ms)
-738/2465: Method: reap_deleted_globhist_items
-739/2465: 739/2465: reap_deleted_globhist_items (DONE:72ms)
-739/2465: Method: done_mailcap_entry
-740/2465: 740/2465: done_mailcap_entry (DONE:33ms)
-740/2465: Method: free_menu_items
-741/2465: 741/2465: free_menu_items (DONE:71ms)
-741/2465: Method: free_node
-742/2465: 742/2465: free_node (DONE:123ms)
-742/2465: Method: done_link_members
-743/2465: 743/2465: done_link_members (DONE:145ms)
-743/2465: Method: free_table
-744/2465: 744/2465: free_table (DONE:174ms)
-744/2465: Method: close_handle
-745/2465: 745/2465: close_handle (DONE:21ms)
-745/2465: Method: unhandle_itrm_stdin
-746/2465: 746/2465: unhandle_itrm_stdin (DONE:46ms)
-746/2465: Method: get_current_session_link
-747/2465: 747/2465: get_current_session_link (DONE:43ms)
-747/2465: Method: get_current_url
-748/2465: 748/2465: get_current_url (DONE:99ms)
-748/2465: Method: get_current_title
-749/2465: 749/2465: get_current_title (DONE:90ms)
-749/2465: Method: unhandle_terminal_resize
-750/2465: 750/2465: unhandle_terminal_resize (DONE:15ms)
-750/2465: Method: handle_terminal_resize
-751/2465: 751/2465: handle_terminal_resize (DONE:15ms)
-751/2465: Method: check_for_select_race
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-752/2465: 752/2465: check_for_select_race (DONE:64ms)
-752/2465: Method: unhandle_basic_signals
-753/2465: 753/2465: unhandle_basic_signals (DONE:56ms)
-753/2465: Method: get_parent_ptr
-754/2465: 754/2465: get_parent_ptr (DONE:53ms)
-754/2465: Method: kill_document_refresh
-755/2465: 755/2465: kill_document_refresh (DONE:16ms)
-755/2465: Method: kill_element
-756/2465: 756/2465: kill_element (DONE:71ms)
-756/2465: Method: kill_html_stack_until
-757/2465: 757/2465: kill_html_stack_until (DONE:331ms)
-757/2465: Method: send_mouse_done_sequence
-758/2465: 758/2465: send_mouse_done_sequence (DONE:23ms)
-758/2465: Method: send_mouse_init_sequence
-759/2465: 759/2465: send_mouse_init_sequence (DONE:20ms)
-759/2465: Method: get_screen_char_template
-760/2465: 760/2465: get_screen_char_template (DONE:111ms)
-760/2465: Method: add_to_queue
-761/2465: 761/2465: add_to_queue (DONE:63ms)
-761/2465: Method: sort_queue
-762/2465: 762/2465: sort_queue (DONE:93ms)
-762/2465: Method: follow_cached_redirects
-763/2465: 763/2465: follow_cached_redirects (DONE:50ms)
-763/2465: Method: get_document_css_magic
-764/2465: 764/2465: get_document_css_magic (DONE:80ms)
-764/2465: Method: trigger_event_name
-765/2465: 765/2465: trigger_event_name (DONE:26ms)
-765/2465: Method: T.72
-766/2465: 766/2465: T.72 (DONE:227ms)
-766/2465: Method: dlg_format_buttons
-767/2465: 767/2465: dlg_format_buttons (DONE:579ms)
-767/2465: Method: free_table_cache
-768/2465: 768/2465: free_table_cache (DONE:88ms)
-768/2465: Method: read_more_http_data
-769/2465: 769/2465: read_more_http_data (DONE:44ms)
-769/2465: Method: done_download_display
-770/2465: 770/2465: done_download_display (DONE:29ms)
-770/2465: Method: free_keybinding
-771/2465: 771/2465: free_keybinding (DONE:42ms)
-771/2465: Method: add_keybinding
-772/2465: 772/2465: add_keybinding (DONE:324ms)
-772/2465: Method: done_cookie_server
-773/2465: 773/2465: done_cookie_server (DONE:37ms)
-773/2465: Method: done_cookie
-774/2465: 774/2465: done_cookie (DONE:59ms)
-774/2465: Method: delete_cookie
-775/2465: 775/2465: delete_cookie (DONE:14ms)
-775/2465: Method: accept_cookie
-776/2465: 776/2465: accept_cookie (DONE:223ms)
-776/2465: Method: init_cookie
-777/2465: 777/2465: init_cookie (DONE:109ms)
-777/2465: Method: done_document_refresh
-778/2465: 778/2465: done_document_refresh (DONE:21ms)
-778/2465: Method: done_auth_entry
-779/2465: 779/2465: done_auth_entry (DONE:47ms)
-779/2465: Method: del_auth_entry
-780/2465: 780/2465: del_auth_entry (DONE:18ms)
-780/2465: Method: get_dom_node_list_index
-781/2465: 781/2465: get_dom_node_list_index (DONE:65ms)
-781/2465: Method: get_dom_node_next
-782/2465: 782/2465: get_dom_node_next (DONE:189ms)
-782/2465: Method: get_blacklist_flags
-783/2465: 783/2465: get_blacklist_flags (DONE:22ms)
-783/2465: Method: del_blacklist_entry
-784/2465: 784/2465: del_blacklist_entry (DONE:34ms)
-784/2465: Method: init_socket
-785/2465: 785/2465: init_socket (DONE:18ms)
-785/2465: Method: init_mime_handler
-786/2465: 786/2465: init_mime_handler (DONE:80ms)
-786/2465: Method: http_negotiate_get
-787/2465: 787/2465: http_negotiate_get (DONE:64ms)
-787/2465: Method: alloc_read_buffer
-788/2465: 788/2465: alloc_read_buffer (DONE:47ms)
-788/2465: Method: add_host_connection
-789/2465: 789/2465: add_host_connection (DONE:58ms)
-789/2465: Method: add_selector_properties
-790/2465: 790/2465: add_selector_properties (DONE:49ms)
-790/2465: Method: base64_encode_bin
-791/2465: 791/2465: base64_encode_bin (DONE:194ms)
-791/2465: Method: base64_encode
-792/2465: 792/2465: base64_encode (DONE:51ms)
-792/2465: Method: open_encoded
-793/2465: 793/2465: open_encoded (DONE:47ms)
-793/2465: Method: base64_decode_bin
-794/2465: 794/2465: base64_decode_bin (DONE:294ms)
-794/2465: Method: write_to_socket
-795/2465: 795/2465: write_to_socket (DONE:185ms)
-795/2465: Method: request_from_socket
-796/2465: 796/2465: request_from_socket (DONE:27ms)
-796/2465: Method: send_cmd
-797/2465: 797/2465: send_cmd (DONE:42ms)
-797/2465: Method: mem_align_alloc__
-798/2465: 798/2465: mem_align_alloc__ (DONE:54ms)
-798/2465: Method: realloc_line2
-799/2465: 799/2465: realloc_line2 (DONE:112ms)
-799/2465: Method: expand_lines
-800/2465: 800/2465: expand_lines (DONE:81ms)
-800/2465: Method: draw_frame_hchars
-801/2465: 801/2465: draw_frame_hchars (DONE:344ms)
-801/2465: Method: draw_frame_vchars
-802/2465: 802/2465: draw_frame_vchars (DONE:266ms)
-802/2465: Method: add_bytes_to_string__3
-803/2465: 803/2465: add_bytes_to_string__3 (DONE:162ms)
-803/2465: Method: add_bytes_to_string__5
-804/2465: 804/2465: add_bytes_to_string__5 (DONE:156ms)
-804/2465: Method: add_bytes_to_string__6
-805/2465: 805/2465: add_bytes_to_string__6 (DONE:146ms)
-805/2465: Method: add_bytes_to_string__8
-806/2465: 806/2465: add_bytes_to_string__8 (DONE:144ms)
-806/2465: Method: add_long_to_string
-807/2465: 807/2465: add_long_to_string (DONE:240ms)
-807/2465: Method: add_html_to_string
-808/2465: 808/2465: add_html_to_string (DONE:365ms)
-808/2465: Method: add_xnum_to_string
-809/2465: 809/2465: add_xnum_to_string (DONE:397ms)
-809/2465: Method: print_xml_entities
-810/2465: 810/2465: print_xml_entities (DONE:64ms)
-810/2465: Method: deflate_decode_buffer
-811/2465: 811/2465: deflate_decode_buffer (DONE:164ms)
-811/2465: Method: alloc_leafset
-812/2465: 812/2465: alloc_leafset (DONE:88ms)
-812/2465: Method: add_one_to_ml
-813/2465: 813/2465: add_one_to_ml (DONE:44ms)
-813/2465: Method: read_config_file
-814/2465: 814/2465: read_config_file (DONE:336ms)
-814/2465: Method: get_clipboard_text
-815/2465: 815/2465: get_clipboard_text (DONE:17ms)
-815/2465: Method: get_mailcap_field_text
-816/2465: 816/2465: get_mailcap_field_text (DONE:56ms)
-816/2465: Method: copy_option
-817/2465: 817/2465: copy_option (DONE:117ms)
-817/2465: Method: truncate_label
-818/2465: 818/2465: truncate_label (DONE:112ms)
-818/2465: Method: get_tempdir_filename
-819/2465: 819/2465: get_tempdir_filename (DONE:56ms)
-819/2465: Method: refresh_dialog
-820/2465: 820/2465: refresh_dialog (DONE:47ms)
-820/2465: Method: new_formhist_item
-821/2465: 821/2465: new_formhist_item (DONE:70ms)
-821/2465: Method: register_event
-822/2465: 822/2465: register_event (DONE:299ms)
-822/2465: Method: subst_user_agent
-823/2465: 823/2465: subst_user_agent (DONE:1162ms)
-823/2465: Method: format_command
-824/2465: 824/2465: format_command (DONE:1230ms)
-824/2465: Method: get_range_string
-825/2465: 825/2465: get_range_string (DONE:50ms)
-825/2465: Method: wrap_option_desc
-826/2465: 826/2465: wrap_option_desc (DONE:715ms)
-826/2465: Method: get_content_filename
-827/2465: 827/2465: get_content_filename (DONE:177ms)
-827/2465: Method: realloc_line
-828/2465: 828/2465: realloc_line (DONE:121ms)
-828/2465: Method: realloc_line3
-829/2465: 829/2465: realloc_line3 (DONE:76ms)
-829/2465: Method: del_chars
-830/2465: 830/2465: del_chars (DONE:90ms)
-830/2465: Method: add_cfg_header_to_string
-831/2465: 831/2465: add_cfg_header_to_string (DONE:55ms)
-831/2465: Method: add_empty_window
-832/2465: 832/2465: add_empty_window (DONE:43ms)
-832/2465: Method: input_field_line
-833/2465: 833/2465: input_field_line (DONE:137ms)
-833/2465: Method: subst_file
-834/2465: 834/2465: subst_file (DONE:569ms)
-834/2465: Method: get_keystroke
-835/2465: 835/2465: get_keystroke (DONE:44ms)
-835/2465: Method: lowered_string
-836/2465: 836/2465: lowered_string (DONE:96ms)
-836/2465: Method: add_bytes_to_string__9
-837/2465: 837/2465: add_bytes_to_string__9 (DONE:102ms)
-837/2465: Method: textarea_op_eob
-838/2465: 838/2465: textarea_op_eob (DONE:11ms)
-838/2465: Method: textarea_op_bob
-839/2465: 839/2465: textarea_op_bob (DONE:10ms)
-839/2465: Method: encode_textarea
-840/2465: 840/2465: encode_textarea (DONE:57ms)
-840/2465: Method: skip_option_value
-841/2465: 841/2465: skip_option_value (DONE:51ms)
-841/2465: Method: next_link_in_view
-842/2465: 842/2465: next_link_in_view (DONE:11ms)
-842/2465: Method: find_link
-843/2465: 843/2465: find_link (DONE:334ms)
-843/2465: Method: find_link_page_down
-844/2465: 844/2465: find_link_page_down (DONE:9ms)
-844/2465: Method: find_link_page_up
-845/2465: 845/2465: find_link_page_up (DONE:9ms)
-845/2465: Method: get_search_data
-846/2465: 846/2465: get_search_data (DONE:430ms)
-846/2465: Method: done_interlink
-847/2465: 847/2465: done_interlink (DONE:74ms)
-847/2465: Method: add_global_history_item
-848/2465: 848/2465: add_global_history_item (DONE:335ms)
-848/2465: Method: sort_links
-849/2465: 849/2465: sort_links (DONE:506ms)
-849/2465: Method: send_done_sequence
-850/2465: 850/2465: send_done_sequence (DONE:41ms)
-850/2465: Method: send_init_sequence
-851/2465: 851/2465: send_init_sequence (DONE:28ms)
-851/2465: Method: free_auth
-852/2465: 852/2465: free_auth (DONE:76ms)
-852/2465: Method: close_pipe_and_read
-853/2465: 853/2465: close_pipe_and_read (DONE:78ms)
-853/2465: Method: align_line
-854/2465: 854/2465: align_line (DONE:9738ms)
-854/2465: Method: add_knum_to_string
-855/2465: 855/2465: add_knum_to_string (DONE:388ms)
-855/2465: Method: get_image_filename_from_src
-856/2465: 856/2465: get_image_filename_from_src (DONE:91ms)
-856/2465: Method: check_entries
-857/2465: 857/2465: check_entries (DONE:67ms)
-857/2465: Method: sub_805992E
-858/2465: 858/2465: sub_805992E (DONE:6ms)
-858/2465: Method: sub_8059928
-859/2465: 859/2465: sub_8059928 (DONE:7ms)
-859/2465: Method: sub_805993E
-860/2465: 860/2465: sub_805993E (DONE:6ms)
-860/2465: Method: sub_8059938
-861/2465: 861/2465: sub_8059938 (DONE:6ms)
-861/2465: Method: sub_805994E
-862/2465: 862/2465: sub_805994E (DONE:7ms)
-862/2465: Method: sub_8059948
-863/2465: 863/2465: sub_8059948 (DONE:7ms)
-863/2465: Method: c_pipe
-864/2465: 864/2465: c_pipe (DONE:10ms)
-864/2465: Method: start_thread
-865/2465: 865/2465: start_thread (DONE:124ms)
-865/2465: Method: decompress_data
-866/2465: 866/2465: decompress_data (DONE:498ms)
-866/2465: Method: sub_805995E
-867/2465: 867/2465: sub_805995E (DONE:5ms)
-867/2465: Method: sub_805996E
-868/2465: 868/2465: sub_805996E (DONE:5ms)
-868/2465: Method: sub_8059968
-869/2465: 869/2465: sub_8059968 (DONE:6ms)
-869/2465: Method: sub_805997E
-870/2465: 870/2465: sub_805997E (DONE:7ms)
-870/2465: Method: sub_805998E
-871/2465: 871/2465: sub_805998E (DONE:5ms)
-871/2465: Method: sub_805999E
-872/2465: 872/2465: sub_805999E (DONE:5ms)
-872/2465: Method: sub_8059998
-873/2465: 873/2465: sub_8059998 (DONE:8ms)
-873/2465: Method: add_date_to_string
-874/2465: 874/2465: add_date_to_string (DONE:67ms)
-874/2465: Method: sub_80599AE
-875/2465: 875/2465: sub_80599AE (DONE:5ms)
-875/2465: Method: sub_80599BE
-876/2465: 876/2465: sub_80599BE (DONE:5ms)
-876/2465: Method: sub_80599B8
-877/2465: 877/2465: sub_80599B8 (DONE:7ms)
-877/2465: Method: sub_80599CE
-878/2465: 878/2465: sub_80599CE (DONE:6ms)
-878/2465: Method: sub_80599C8
-879/2465: 879/2465: sub_80599C8 (DONE:6ms)
-879/2465: Method: sub_80599DE
-880/2465: 880/2465: sub_80599DE (DONE:7ms)
-880/2465: Method: sub_80599EE
-881/2465: 881/2465: sub_80599EE (DONE:6ms)
-881/2465: Method: sub_80599E8
-882/2465: 882/2465: sub_80599E8 (DONE:9ms)
-882/2465: Method: find_uri_protocol
-883/2465: 883/2465: find_uri_protocol (DONE:258ms)
-883/2465: Method: sub_80599FE
-884/2465: 884/2465: sub_80599FE (DONE:7ms)
-884/2465: Method: sub_8059A0E
-885/2465: 885/2465: sub_8059A0E (DONE:6ms)
-885/2465: Method: sub_8059A08
-886/2465: 886/2465: sub_8059A08 (DONE:12ms)
-886/2465: Method: sub_8059A1E
-887/2465: 887/2465: sub_8059A1E (DONE:7ms)
-887/2465: Method: sub_8059A2E
-888/2465: 888/2465: sub_8059A2E (DONE:8ms)
-888/2465: Method: sub_8059A3E
-889/2465: 889/2465: sub_8059A3E (DONE:7ms)
-889/2465: Method: sub_8059A4E
-890/2465: 890/2465: sub_8059A4E (DONE:10ms)
-890/2465: Method: sub_8059A48
-891/2465: 891/2465: sub_8059A48 (DONE:9ms)
-891/2465: Method: xstrcmp
-892/2465: 892/2465: xstrcmp (DONE:29ms)
-892/2465: Method: guess_encoding
-893/2465: 893/2465: guess_encoding (DONE:89ms)
-893/2465: Method: add_to_input_history
-894/2465: 894/2465: add_to_input_history (DONE:493ms)
-894/2465: Method: fixup_select_state
-895/2465: 895/2465: fixup_select_state (DONE:178ms)
-895/2465: Method: get_action_from_string
-896/2465: 896/2465: get_action_from_string (DONE:69ms)
-896/2465: Method: find_auth_entry
-897/2465: 897/2465: find_auth_entry (DONE:78ms)
-897/2465: Method: add_auth_entry
-898/2465: 898/2465: add_auth_entry (DONE:753ms)
-898/2465: Method: find_auth
-899/2465: 899/2465: find_auth (DONE:154ms)
-899/2465: Method: sub_8059A5E
-900/2465: 900/2465: sub_8059A5E (DONE:9ms)
-900/2465: Method: sub_8059A6E
-901/2465: 901/2465: sub_8059A6E (DONE:6ms)
-901/2465: Method: sub_8059A7E
-902/2465: 902/2465: sub_8059A7E (DONE:7ms)
-902/2465: Method: sub_8059A8E
-903/2465: 903/2465: sub_8059A8E (DONE:9ms)
-903/2465: Method: sub_8059A88
-904/2465: 904/2465: sub_8059A88 (DONE:7ms)
-904/2465: Method: set_clipboard_text
-905/2465: 905/2465: set_clipboard_text (DONE:105ms)
-905/2465: Method: set_binding_values
-906/2465: 906/2465: set_binding_values (DONE:841ms)
-906/2465: Method: sub_8059A9E
-907/2465: 907/2465: sub_8059A9E (DONE:9ms)
-907/2465: Method: sub_8059A98
-908/2465: 908/2465: sub_8059A98 (DONE:9ms)
-908/2465: Method: env_set
-909/2465: 909/2465: env_set (DONE:88ms)
-909/2465: Method: sub_8059AAE
-910/2465: 910/2465: sub_8059AAE (DONE:5ms)
-910/2465: Method: sub_8059ABE
-911/2465: 911/2465: sub_8059ABE (DONE:6ms)
-911/2465: Method: sub_8059ACE
-912/2465: 912/2465: sub_8059ACE (DONE:7ms)
-912/2465: Method: sub_8059AC8
-913/2465: 913/2465: sub_8059AC8 (DONE:6ms)
-913/2465: Method: sub_8059ADE
-914/2465: 914/2465: sub_8059ADE (DONE:8ms)
-914/2465: Method: sub_8059AD8
-915/2465: 915/2465: sub_8059AD8 (DONE:7ms)
-915/2465: Method: sub_8059AEE
-916/2465: 916/2465: sub_8059AEE (DONE:13ms)
-916/2465: Method: sub_8059AE8
-917/2465: 917/2465: sub_8059AE8 (DONE:8ms)
-917/2465: Method: sub_8059AFE
-918/2465: 918/2465: sub_8059AFE (DONE:9ms)
-918/2465: Method: sub_8059B0E
-919/2465: 919/2465: sub_8059B0E (DONE:7ms)
-919/2465: Method: sub_8059B1E
-920/2465: 920/2465: sub_8059B1E (DONE:6ms)
-920/2465: Method: sub_8059B2E
-921/2465: 921/2465: sub_8059B2E (DONE:6ms)
-921/2465: Method: sub_8059B3E
-922/2465: 922/2465: sub_8059B3E (DONE:6ms)
-922/2465: Method: skip_css_block
-923/2465: 923/2465: skip_css_block (DONE:118ms)
-923/2465: Method: read_key
-924/2465: 924/2465: read_key (DONE:54ms)
-924/2465: Method: parse_keystroke
-925/2465: 925/2465: parse_keystroke (DONE:201ms)
-925/2465: Method: compare_opt
-926/2465: 926/2465: compare_opt (DONE:106ms)
-926/2465: Method: select_dlg_item
-927/2465: 927/2465: select_dlg_item (DONE:33ms)
-927/2465: Method: get_cache_entry_loading_count
-928/2465: 928/2465: get_cache_entry_loading_count (DONE:30ms)
-928/2465: Method: timeval_div_off_t
-929/2465: 929/2465: timeval_div_off_t (DONE:118ms)
-929/2465: Method: sub_8058C28
-930/2465: 930/2465: sub_8058C28 (DONE:7ms)
-930/2465: Method: sub_8058C48
-931/2465: 931/2465: sub_8058C48 (DONE:11ms)
-931/2465: Method: sub_8058C68
-932/2465: 932/2465: sub_8058C68 (DONE:9ms)
-932/2465: Method: sub_8058C78
-933/2465: 933/2465: sub_8058C78 (DONE:11ms)
-933/2465: Method: sub_8058C88
-934/2465: 934/2465: sub_8058C88 (DONE:9ms)
-934/2465: Method: sub_8058CB8
-935/2465: 935/2465: sub_8058CB8 (DONE:11ms)
-935/2465: Method: sub_8058CC8
-936/2465: 936/2465: sub_8058CC8 (DONE:9ms)
-936/2465: Method: sub_8058CD8
-937/2465: 937/2465: sub_8058CD8 (DONE:8ms)
-937/2465: Method: sub_8058D18
-938/2465: 938/2465: sub_8058D18 (DONE:12ms)
-938/2465: Method: round_size
-939/2465: 939/2465: round_size (DONE:53ms)
-939/2465: Method: mem_mmap_free
-940/2465: 940/2465: mem_mmap_free (DONE:43ms)
-940/2465: Method: delete_entry_content
-941/2465: 941/2465: delete_entry_content (DONE:163ms)
-941/2465: Method: delete_cache_entry
-942/2465: 942/2465: delete_cache_entry (DONE:252ms)
-942/2465: Method: mem_mmap_alloc
-943/2465: 943/2465: mem_mmap_alloc (DONE:38ms)
-943/2465: Method: frag_alloc
-944/2465: 944/2465: frag_alloc (DONE:32ms)
-944/2465: Method: get_cache_fragment
-945/2465: 945/2465: get_cache_fragment (DONE:407ms)
-945/2465: Method: sub_8058D28
-946/2465: 946/2465: sub_8058D28 (DONE:12ms)
-946/2465: Method: sub_8058D38
-947/2465: 947/2465: sub_8058D38 (DONE:9ms)
-947/2465: Method: sub_8058D68
-948/2465: 948/2465: sub_8058D68 (DONE:9ms)
-948/2465: Method: sub_8058D78
-949/2465: 949/2465: sub_8058D78 (DONE:9ms)
-949/2465: Method: sub_8058DA8
-950/2465: 950/2465: sub_8058DA8 (DONE:8ms)
-950/2465: Method: sub_8058DB8
-951/2465: 951/2465: sub_8058DB8 (DONE:9ms)
-951/2465: Method: sub_8058DC8
-952/2465: 952/2465: sub_8058DC8 (DONE:8ms)
-952/2465: Method: sub_8058DF8
-953/2465: 953/2465: sub_8058DF8 (DONE:15ms)
-953/2465: Method: sub_8058E08
-954/2465: 954/2465: sub_8058E08 (DONE:10ms)
-954/2465: Method: sub_8058E18
-955/2465: 955/2465: sub_8058E18 (DONE:8ms)
-955/2465: Method: sub_8058E28
-956/2465: 956/2465: sub_8058E28 (DONE:8ms)
-956/2465: Method: sub_8058E48
-957/2465: 957/2465: sub_8058E48 (DONE:12ms)
-957/2465: Method: sub_8058E58
-958/2465: 958/2465: sub_8058E58 (DONE:9ms)
-958/2465: Method: sub_8058E88
-959/2465: 959/2465: sub_8058E88 (DONE:11ms)
-959/2465: Method: sub_8058EA8
-960/2465: 960/2465: sub_8058EA8 (DONE:15ms)
-960/2465: Method: is_twterm
-961/2465: 961/2465: is_twterm (DONE:45ms)
-961/2465: Method: get_shell
-962/2465: 962/2465: get_shell (DONE:37ms)
-962/2465: Method: sub_8058EE8
-963/2465: 963/2465: sub_8058EE8 (DONE:16ms)
-963/2465: Method: sub_8058F18
-964/2465: 964/2465: sub_8058F18 (DONE:15ms)
-964/2465: Method: sub_8058F28
-965/2465: 965/2465: sub_8058F28 (DONE:13ms)
-965/2465: Method: sub_8058F38
-966/2465: 966/2465: sub_8058F38 (DONE:11ms)
-966/2465: Method: mem_mmap_realloc
-967/2465: 967/2465: mem_mmap_realloc (DONE:132ms)
-967/2465: Method: truncate_entry
-968/2465: 968/2465: truncate_entry (DONE:1100ms)
-968/2465: Method: normalize_cache_entry
-969/2465: 969/2465: normalize_cache_entry (DONE:44ms)
-969/2465: Method: remove_overlaps
-970/2465: 970/2465: remove_overlaps (DONE:1791ms)
-970/2465: Method: add_fragment
-971/2465: 971/2465: add_fragment (DONE:1729ms)
-971/2465: Method: sub_8058F48
-972/2465: 972/2465: sub_8058F48 (DONE:14ms)
-972/2465: Method: sub_8058F78
-973/2465: 973/2465: sub_8058F78 (DONE:12ms)
-973/2465: Method: sub_8058F88
-974/2465: 974/2465: sub_8058F88 (DONE:8ms)
-974/2465: Method: sub_8058FA8
-975/2465: 975/2465: sub_8058FA8 (DONE:11ms)
-975/2465: Method: sub_8058FE8
-976/2465: 976/2465: sub_8058FE8 (DONE:8ms)
-976/2465: Method: sub_8058FF8
-977/2465: 977/2465: sub_8058FF8 (DONE:11ms)
-977/2465: Method: sub_8059018
-978/2465: 978/2465: sub_8059018 (DONE:18ms)
-978/2465: Method: sub_8059078
-979/2465: 979/2465: sub_8059078 (DONE:8ms)
-979/2465: Method: sub_8059088
-980/2465: 980/2465: sub_8059088 (DONE:10ms)
-980/2465: Method: setraw
-981/2465: 981/2465: setraw (DONE:206ms)
-981/2465: Method: sub_80590C8
-982/2465: 982/2465: sub_80590C8 (DONE:8ms)
-982/2465: Method: add_uri_to_string
-983/2465: 983/2465: add_uri_to_string (DONE:6676ms)
-983/2465: Method: get_uri_string
-984/2465: 984/2465: get_uri_string (DONE:41ms)
-984/2465: Method: add_url_to_http_string
-985/2465: 985/2465: add_url_to_http_string (DONE:329ms)
-985/2465: Method: add_mime_filename_to_string
-986/2465: 986/2465: add_mime_filename_to_string (DONE:87ms)
-986/2465: Method: init_directory_listing
-987/2465: 987/2465: init_directory_listing (DONE:4115ms)
-987/2465: Method: send_cookies
-988/2465: 988/2465: send_cookies (DONE:548ms)
-988/2465: Method: sub_80590D8
-989/2465: 989/2465: sub_80590D8 (DONE:8ms)
-989/2465: Method: sub_80590E8
-990/2465: 990/2465: sub_80590E8 (DONE:7ms)
-990/2465: Method: sub_8059118
-991/2465: 991/2465: sub_8059118 (DONE:11ms)
-991/2465: Method: sub_8059128
-992/2465: 992/2465: sub_8059128 (DONE:11ms)
-992/2465: Method: sub_8059148
-993/2465: 993/2465: sub_8059148 (DONE:10ms)
-993/2465: Method: sub_8059168
-994/2465: 994/2465: sub_8059168 (DONE:9ms)
-994/2465: Method: sub_8059178
-995/2465: 995/2465: sub_8059178 (DONE:10ms)
-995/2465: Method: timeval_now
-996/2465: 996/2465: timeval_now (DONE:24ms)
-996/2465: Method: done_dns_lookup
-997/2465: 997/2465: done_dns_lookup (DONE:460ms)
-997/2465: Method: check_timers
-998/2465: 998/2465: check_timers (DONE:107ms)
-998/2465: Method: update_progress
-999/2465: 999/2465: update_progress (DONE:523ms)
-999/2465: Method: strtolx
-1000/2465: 1000/2465: strtolx (DONE:75ms)
-1000/2465: Method: sub_80591D8
-1001/2465: 1001/2465: sub_80591D8 (DONE:9ms)
-1001/2465: Method: sub_8059208
-1002/2465: 1002/2465: sub_8059208 (DONE:10ms)
-1002/2465: Method: sub_8059228
-1003/2465: 1003/2465: sub_8059228 (DONE:11ms)
-1003/2465: Method: sub_8059278
-1004/2465: 1004/2465: sub_8059278 (DONE:11ms)
-1004/2465: Method: sub_8059288
-1005/2465: 1005/2465: sub_8059288 (DONE:8ms)
-1005/2465: Method: parse_cookie_str
-1006/2465: 1006/2465: parse_cookie_str (DONE:223ms)
-1006/2465: Method: sub_80592F8
-1007/2465: 1007/2465: sub_80592F8 (DONE:10ms)
-1007/2465: Method: do_real_lookup
-1008/2465: 1008/2465: do_real_lookup (DONE:402ms)
-1008/2465: Method: sub_8059328
-1009/2465: 1009/2465: sub_8059328 (DONE:22ms)
-1009/2465: Method: parse_ftp_winnt_response
-1010/2465: 1010/2465: parse_ftp_winnt_response (DONE:1396ms)
-1010/2465: Method: sub_8059348
-1011/2465: 1011/2465: sub_8059348 (DONE:12ms)
-1011/2465: Method: sub_8059368
-1012/2465: 1012/2465: sub_8059368 (DONE:15ms)
-1012/2465: Method: get_entity_string
-1013/2465: 1013/2465: get_entity_string (DONE:1153ms)
-1013/2465: Method: convert_string_elinks
-1014/2465: 1014/2465: convert_string_elinks (DONE:1477ms)
-1014/2465: Method: get_attr_value
-1015/2465: 1015/2465: get_attr_value (DONE:2976ms)
-1015/2465: Method: render_dom_text
-1016/2465: 1016/2465: render_dom_text (DONE:1929ms)
-1016/2465: Method: get_num
-1017/2465: 1017/2465: get_num (DONE:69ms)
-1017/2465: Method: html_focusable
-1018/2465: 1018/2465: html_focusable (DONE:401ms)
-1018/2465: Method: html_linebrk
-1019/2465: 1019/2465: html_linebrk (DONE:94ms)
-1019/2465: Method: html_h
-1020/2465: 1020/2465: html_h (DONE:112ms)
-1020/2465: Method: get_align
-1021/2465: 1021/2465: get_align (DONE:72ms)
-1021/2465: Method: get_color
-1022/2465: 1022/2465: get_color (DONE:58ms)
-1022/2465: Method: init_form_control
-1023/2465: 1023/2465: init_form_control (DONE:63ms)
-1023/2465: Method: get_valign
-1024/2465: 1024/2465: get_valign (DONE:73ms)
-1024/2465: Method: get_target
-1025/2465: 1025/2465: get_target (DONE:49ms)
-1025/2465: Method: get_bgcolor
-1026/2465: 1026/2465: get_bgcolor (DONE:27ms)
-1026/2465: Method: get_width
-1027/2465: 1027/2465: get_width (DONE:575ms)
-1027/2465: Method: scan_http_equiv
-1028/2465: 1028/2465: scan_http_equiv (DONE:2667ms)
-1028/2465: Method: put_image_label
-1029/2465: 1029/2465: put_image_label (DONE:42ms)
-1029/2465: Method: get_column_width
-1030/2465: 1030/2465: get_column_width (DONE:119ms)
-1030/2465: Method: render_dom_flush
-1031/2465: 1031/2465: render_dom_flush (DONE:143ms)
-1031/2465: Method: sub_8059388
-1032/2465: 1032/2465: sub_8059388 (DONE:9ms)
-1032/2465: Method: sub_8059398
-1033/2465: 1033/2465: sub_8059398 (DONE:10ms)
-1033/2465: Method: find_tag
-1034/2465: 1034/2465: find_tag (DONE:72ms)
-1034/2465: Method: sub_80593D8
-1035/2465: 1035/2465: sub_80593D8 (DONE:7ms)
-1035/2465: Method: sub_80593F8
-1036/2465: 1036/2465: sub_80593F8 (DONE:8ms)
-1036/2465: Method: sub_8059428
-1037/2465: 1037/2465: sub_8059428 (DONE:9ms)
-1037/2465: Method: sub_8059448
-1038/2465: 1038/2465: sub_8059448 (DONE:10ms)
-1038/2465: Method: sub_8059458
-1039/2465: 1039/2465: sub_8059458 (DONE:7ms)
-1039/2465: Method: init_osdep
-1040/2465: 1040/2465: init_osdep (DONE:15ms)
-1040/2465: Method: sub_8059498
-1041/2465: 1041/2465: sub_8059498 (DONE:9ms)
-1041/2465: Method: sub_80594A8
-1042/2465: 1042/2465: sub_80594A8 (DONE:8ms)
-1042/2465: Method: sub_80594C8
-1043/2465: 1043/2465: sub_80594C8 (DONE:8ms)
-1043/2465: Method: sub_80594D8
-1044/2465: 1044/2465: sub_80594D8 (DONE:12ms)
-1044/2465: Method: sub_80594E8
-1045/2465: 1045/2465: sub_80594E8 (DONE:11ms)
-1045/2465: Method: sub_8059508
-1046/2465: 1046/2465: sub_8059508 (DONE:8ms)
-1046/2465: Method: sub_8059518
-1047/2465: 1047/2465: sub_8059518 (DONE:8ms)
-1047/2465: Method: sub_8059548
-1048/2465: 1048/2465: sub_8059548 (DONE:8ms)
-1048/2465: Method: sub_8059558
-1049/2465: 1049/2465: sub_8059558 (DONE:9ms)
-1049/2465: Method: sub_8059578
-1050/2465: 1050/2465: sub_8059578 (DONE:8ms)
-1050/2465: Method: sub_8059598
-1051/2465: 1051/2465: sub_8059598 (DONE:8ms)
-1051/2465: Method: can_write
-1052/2465: 1052/2465: can_write (DONE:18ms)
-1052/2465: Method: sub_80595B8
-1053/2465: 1053/2465: sub_80595B8 (DONE:8ms)
-1053/2465: Method: sub_8059608
-1054/2465: 1054/2465: sub_8059608 (DONE:7ms)
-1054/2465: Method: _nl_normalize_codeset
-1055/2465: 1055/2465: _nl_normalize_codeset (DONE:225ms)
-1055/2465: Method: sub_8059648
-1056/2465: 1056/2465: sub_8059648 (DONE:7ms)
-1056/2465: Method: sub_8059678
-1057/2465: 1057/2465: sub_8059678 (DONE:6ms)
-1057/2465: Method: sub_8059688
-1058/2465: 1058/2465: sub_8059688 (DONE:7ms)
-1058/2465: Method: sub_80596C8
-1059/2465: 1059/2465: sub_80596C8 (DONE:7ms)
-1059/2465: Method: http_negotiate_cleanup
-1060/2465: 1060/2465: http_negotiate_cleanup (DONE:89ms)
-1060/2465: Method: sub_80596E8
-1061/2465: 1061/2465: sub_80596E8 (DONE:6ms)
-1061/2465: Method: sub_80596F8
-1062/2465: 1062/2465: sub_80596F8 (DONE:6ms)
-1062/2465: Method: get_directory_entries
-1063/2465: 1063/2465: get_directory_entries (DONE:12207ms)
-1063/2465: Method: sub_8059718
-1064/2465: 1064/2465: sub_8059718 (DONE:7ms)
-1064/2465: Method: sub_8059728
-1065/2465: 1065/2465: sub_8059728 (DONE:7ms)
-1065/2465: Method: digest_md5
-1066/2465: 1066/2465: digest_md5 (DONE:53ms)
-1066/2465: Method: sub_8059748
-1067/2465: 1067/2465: sub_8059748 (DONE:6ms)
-1067/2465: Method: sub_8059778
-1068/2465: 1068/2465: sub_8059778 (DONE:6ms)
-1068/2465: Method: sub_80597A8
-1069/2465: 1069/2465: sub_80597A8 (DONE:8ms)
-1069/2465: Method: sub_80597C8
-1070/2465: 1070/2465: sub_80597C8 (DONE:6ms)
-1070/2465: Method: sub_80597D8
-1071/2465: 1071/2465: sub_80597D8 (DONE:13ms)
-1071/2465: Method: sub_80597F8
-1072/2465: 1072/2465: sub_80597F8 (DONE:6ms)
-1072/2465: Method: sub_8059808
-1073/2465: 1073/2465: sub_8059808 (DONE:6ms)
-1073/2465: Method: sub_8059828
-1074/2465: 1074/2465: sub_8059828 (DONE:6ms)
-1074/2465: Method: sub_8059848
-1075/2465: 1075/2465: sub_8059848 (DONE:6ms)
-1075/2465: Method: sub_8059858
-1076/2465: 1076/2465: sub_8059858 (DONE:9ms)
-1076/2465: Method: set_ip_tos_throughput
-1077/2465: 1077/2465: set_ip_tos_throughput (DONE:21ms)
-1077/2465: Method: get_pasv_socket
-1078/2465: 1078/2465: get_pasv_socket (DONE:242ms)
-1078/2465: Method: sub_8059878
-1079/2465: 1079/2465: sub_8059878 (DONE:8ms)
-1079/2465: Method: sub_8059898
-1080/2465: 1080/2465: sub_8059898 (DONE:7ms)
-1080/2465: Method: sub_80598A8
-1081/2465: 1081/2465: sub_80598A8 (DONE:7ms)
-1081/2465: Method: get_http_auth_digest_response
-1082/2465: 1082/2465: get_http_auth_digest_response (DONE:7283ms)
-1082/2465: Method: sub_80598B8
-1083/2465: 1083/2465: sub_80598B8 (DONE:9ms)
-1083/2465: Method: sub_8059908
-1084/2465: 1084/2465: sub_8059908 (DONE:9ms)
-1084/2465: Method: distribute_rows_or_cols
-1085/2465: 1085/2465: distribute_rows_or_cols (DONE:267ms)
-1085/2465: Method: parse_frame_widths
-1086/2465: 1086/2465: parse_frame_widths (DONE:2285ms)
-1086/2465: Method: get_dom_node_type_name
-1087/2465: 1087/2465: get_dom_node_type_name (DONE:39ms)
-1087/2465: Method: connection_state5
-1088/2465: 1088/2465: connection_state5 (DONE:45ms)
-1088/2465: Method: get_protocol_handler
-1089/2465: 1089/2465: get_protocol_handler (DONE:53ms)
-1089/2465: Method: get_protocol_need_ssl
-1090/2465: 1090/2465: get_protocol_need_ssl (DONE:50ms)
-1090/2465: Method: get_protocol_keep_double_slashes
-1091/2465: 1091/2465: get_protocol_keep_double_slashes (DONE:49ms)
-1091/2465: Method: assert_terminal_ptr_not_dangling
-1092/2465: 1092/2465: assert_terminal_ptr_not_dangling (DONE:39ms)
-1092/2465: Method: add_ms_to_ms
-1093/2465: 1093/2465: add_ms_to_ms (DONE:48ms)
-1093/2465: Method: link_in_view_y
-1094/2465: 1094/2465: link_in_view_y (DONE:104ms)
-1094/2465: Method: get_last_link
-1095/2465: 1095/2465: get_last_link (DONE:84ms)
-1095/2465: Method: get_first_link
-1096/2465: 1096/2465: get_first_link (DONE:103ms)
-1096/2465: Method: css_parse_value
-1097/2465: 1097/2465: css_parse_value (DONE:118ms)
-1097/2465: Method: css_parse_properties
-1098/2465: 1098/2465: css_parse_properties (DONE:499ms)
-1098/2465: Method: check_html_form_hierarchy
-1099/2465: 1099/2465: check_html_form_hierarchy (DONE:366ms)
-1099/2465: Method: get_dom_node_map_entry
-1100/2465: 1100/2465: get_dom_node_map_entry (DONE:215ms)
-1100/2465: Method: toggle_option
-1101/2465: 1101/2465: toggle_option (DONE:70ms)
-1101/2465: Method: draw_line
-1102/2465: 1102/2465: draw_line (DONE:380ms)
-1102/2465: Method: get_sgml_parser_line_number
-1103/2465: 1103/2465: get_sgml_parser_line_number (DONE:158ms)
-1103/2465: Method: call_sgml_error_function
-1104/2465: 1104/2465: call_sgml_error_function (DONE:55ms)
-1104/2465: Method: utf8_step_forward
-1105/2465: 1105/2465: utf8_step_forward (DONE:2365ms)
-1105/2465: Method: utf8_step_backward
-1106/2465: 1106/2465: utf8_step_backward (DONE:1898ms)
-1106/2465: Method: abort_refreshed_msg_box_handler
-1107/2465: 1107/2465: abort_refreshed_msg_box_handler (DONE:27ms)
-1107/2465: Method: done_home
-1108/2465: 1108/2465: done_home (DONE:16ms)
-1108/2465: Method: done_state_message
-1109/2465: 1109/2465: done_state_message (DONE:51ms)
-1109/2465: Method: free_blacklist
-1110/2465: 1110/2465: free_blacklist (DONE:50ms)
-1110/2465: Method: done_form_view
-1111/2465: 1111/2465: done_form_view (DONE:19ms)
-1111/2465: Method: destroy_vs
-1112/2465: 1112/2465: destroy_vs (DONE:85ms)
-1112/2465: Method: destroy_location
-1113/2465: 1113/2465: destroy_location (DONE:103ms)
-1113/2465: Method: free_mark_by_index
-1114/2465: 1114/2465: free_mark_by_index (DONE:55ms)
-1114/2465: Method: clean_unhistory
-1115/2465: 1115/2465: clean_unhistory (DONE:57ms)
-1115/2465: Method: done_ssl_connection
-1116/2465: 1116/2465: done_ssl_connection (DONE:29ms)
-1116/2465: Method: done_screen
-1117/2465: 1117/2465: done_screen (DONE:21ms)
-1117/2465: Method: done_dom_stack_context
-1118/2465: 1118/2465: done_dom_stack_context (DONE:99ms)
-1118/2465: Method: done_progress
-1119/2465: 1119/2465: done_progress (DONE:39ms)
-1119/2465: Method: done_keybinding_listboxes
-1120/2465: 1120/2465: done_keybinding_listboxes (DONE:280ms)
-1120/2465: Method: done_document_options
-1121/2465: 1121/2465: done_document_options (DONE:37ms)
-1121/2465: Method: lun_cancel
-1122/2465: 1122/2465: lun_cancel (DONE:38ms)
-1122/2465: Method: done_submitted_value
-1123/2465: 1123/2465: done_submitted_value (DONE:35ms)
-1123/2465: Method: done_submitted_value_list
-1124/2465: 1124/2465: done_submitted_value_list (DONE:72ms)
-1124/2465: Method: done_formhist_item
-1125/2465: 1125/2465: done_formhist_item (DONE:32ms)
-1125/2465: Method: delete_formhist_item
-1126/2465: 1126/2465: delete_formhist_item (DONE:12ms)
-1126/2465: Method: is_ip_address
-1127/2465: 1127/2465: is_ip_address (DONE:63ms)
-1127/2465: Method: set_sigcld
-1128/2465: 1128/2465: set_sigcld (DONE:13ms)
-1128/2465: Method: unhandle_terminal_signals
-1129/2465: 1129/2465: unhandle_terminal_signals (DONE:43ms)
-1129/2465: Method: handle_basic_signals
-1130/2465: 1130/2465: handle_basic_signals (DONE:55ms)
-1130/2465: Method: redraw_below_window
-1131/2465: 1131/2465: redraw_below_window (DONE:77ms)
-1131/2465: Method: erase_screen
-1132/2465: 1132/2465: erase_screen (DONE:50ms)
-1132/2465: Method: done_bfu_colors
-1133/2465: 1133/2465: done_bfu_colors (DONE:85ms)
-1133/2465: Method: done_event
-1134/2465: 1134/2465: done_event (DONE:69ms)
-1134/2465: Method: done_mailcap
-1135/2465: 1135/2465: done_mailcap (DONE:149ms)
-1135/2465: Method: free_uri_list
-1136/2465: 1136/2465: free_uri_list (DONE:49ms)
-1136/2465: Method: next_link_in_dir
-1137/2465: 1137/2465: next_link_in_dir (DONE:1749ms)
-1137/2465: Method: free_tags_lookup
-1138/2465: 1138/2465: free_tags_lookup (DONE:14ms)
-1138/2465: Method: free_charsets_lookup
-1139/2465: 1139/2465: free_charsets_lookup (DONE:12ms)
-1139/2465: Method: free_colors_lookup
-1140/2465: 1140/2465: free_colors_lookup (DONE:19ms)
-1140/2465: Method: done_saved_session_info
-1141/2465: 1141/2465: done_saved_session_info (DONE:21ms)
-1141/2465: Method: get_dom_node_prev
-1142/2465: 1142/2465: get_dom_node_prev (DONE:231ms)
-1142/2465: Method: clear_link
-1143/2465: 1143/2465: clear_link (DONE:324ms)
-1143/2465: Method: css_parse_color_value
-1144/2465: 1144/2465: css_parse_color_value (DONE:614ms)
-1144/2465: Method: init_progress
-1145/2465: 1145/2465: init_progress (DONE:37ms)
-1145/2465: Method: init_connection
-1146/2465: 1146/2465: init_connection (DONE:240ms)
-1146/2465: Method: init_screen
-1147/2465: 1147/2465: init_screen (DONE:18ms)
-1147/2465: Method: init_tab
-1148/2465: 1148/2465: init_tab (DONE:87ms)
-1148/2465: Method: mkalldirs
-1149/2465: 1149/2465: mkalldirs (DONE:122ms)
-1149/2465: Method: read_alias_file
-1150/2465: 1150/2465: read_alias_file (DONE:2303ms)
-1150/2465: Method: get_unique_name
-1151/2465: 1151/2465: get_unique_name (DONE:173ms)
-1151/2465: Method: add_to_uri_list
-1152/2465: 1152/2465: add_to_uri_list (DONE:81ms)
-1152/2465: Method: register_event_hook
-1153/2465: 1153/2465: register_event_hook (DONE:402ms)
-1153/2465: Method: resize_screen
-1154/2465: 1154/2465: resize_screen (DONE:178ms)
-1154/2465: Method: unregister_event_hook
-1155/2465: 1155/2465: unregister_event_hook (DONE:211ms)
-1155/2465: Method: file_read_line
-1156/2465: 1156/2465: file_read_line (DONE:259ms)
-1156/2465: Method: add_quoted_to_string
-1157/2465: 1157/2465: add_quoted_to_string (DONE:61ms)
-1157/2465: Method: add_optstring_to_string
-1158/2465: 1158/2465: add_optstring_to_string (DONE:53ms)
-1158/2465: Method: encode_session_info
-1159/2465: 1159/2465: encode_session_info (DONE:249ms)
-1159/2465: Method: read_file
-1160/2465: 1160/2465: read_file (DONE:246ms)
-1160/2465: Method: get_window_title
-1161/2465: 1161/2465: get_window_title (DONE:12ms)
-1161/2465: Method: globhist_simple_search
-1162/2465: 1162/2465: globhist_simple_search (DONE:163ms)
-1162/2465: Method: add_session_info
-1163/2465: 1163/2465: add_session_info (DONE:71ms)
-1163/2465: Method: init_download_display
-1164/2465: 1164/2465: init_download_display (DONE:28ms)
-1164/2465: Method: init_keybinding_listboxes
-1165/2465: 1165/2465: init_keybinding_listboxes (DONE:208ms)
-1165/2465: Method: really_exit_prog
-1166/2465: 1166/2465: really_exit_prog (DONE:19ms)
-1166/2465: Method: add_dom_config_normalizer
-1167/2465: 1167/2465: add_dom_config_normalizer (DONE:25ms)
-1167/2465: Method: init_sgml_parser
-1168/2465: 1168/2465: init_sgml_parser (DONE:118ms)
-1168/2465: Method: init_event
-1169/2465: 1169/2465: init_event (DONE:13ms)
-1169/2465: Method: textarea_op_enter
-1170/2465: 1170/2465: textarea_op_enter (DONE:96ms)
-1170/2465: Method: add_duration_to_string
-1171/2465: 1171/2465: add_duration_to_string (DONE:1830ms)
-1171/2465: Method: add_timeval_to_string
-1172/2465: 1172/2465: add_timeval_to_string (DONE:21ms)
-1172/2465: Method: bind_config_string
-1173/2465: 1173/2465: bind_config_string (DONE:244ms)
-1173/2465: Method: init_menu
-1174/2465: 1174/2465: init_menu (DONE:24ms)
-1174/2465: Method: copy_location
-1175/2465: 1175/2465: copy_location (DONE:99ms)
-1175/2465: Method: http_error_document
-1176/2465: 1176/2465: http_error_document (DONE:63ms)
-1176/2465: Method: textarea_op_right
-1177/2465: 1177/2465: textarea_op_right (DONE:11ms)
-1177/2465: Method: textarea_op_left
-1178/2465: 1178/2465: textarea_op_left (DONE:16ms)
-1178/2465: Method: textarea_op_end
-1179/2465: 1179/2465: textarea_op_end (DONE:10ms)
-1179/2465: Method: textarea_op_down
-1180/2465: 1180/2465: textarea_op_down (DONE:11ms)
-1180/2465: Method: textarea_op_up
-1181/2465: 1181/2465: textarea_op_up (DONE:10ms)
-1181/2465: Method: textarea_op_home
-1182/2465: 1182/2465: textarea_op_home (DONE:10ms)
-1182/2465: Method: draw_textarea
-1183/2465: 1183/2465: draw_textarea (DONE:3120ms)
-1183/2465: Method: next_link_in_view_y
-1184/2465: 1184/2465: next_link_in_view_y (DONE:12ms)
-1184/2465: Method: get_uri_port
-1185/2465: 1185/2465: get_uri_port (DONE:73ms)
-1185/2465: Method: init_connection_info
-1186/2465: 1186/2465: init_connection_info (DONE:42ms)
-1186/2465: Method: done_mimetypes
-1187/2465: 1187/2465: done_mimetypes (DONE:87ms)
-1187/2465: Method: parse_mimetypes_file
-1188/2465: 1188/2465: parse_mimetypes_file (DONE:814ms)
-1188/2465: Method: get_current_link_url
-1189/2465: 1189/2465: get_current_link_url (DONE:75ms)
-1189/2465: Method: get_current_link_name
-1190/2465: 1190/2465: get_current_link_name (DONE:106ms)
-1190/2465: Method: release_document
-1191/2465: 1191/2465: release_document (DONE:71ms)
-1191/2465: Method: detach_formatted
-1192/2465: 1192/2465: detach_formatted (DONE:64ms)
-1192/2465: Method: session_is_loading
-1193/2465: 1193/2465: session_is_loading (DONE:86ms)
-1193/2465: Method: get_redirected_cache_entry
-1194/2465: 1194/2465: get_redirected_cache_entry (DONE:20ms)
-1194/2465: Method: free_history_lists
-1195/2465: 1195/2465: free_history_lists (DONE:63ms)
-1195/2465: Method: really_really_add_keybinding
-1196/2465: 1196/2465: really_really_add_keybinding (DONE:68ms)
-1196/2465: Method: mirror_css_stylesheet
-1197/2465: 1197/2465: mirror_css_stylesheet (DONE:141ms)
-1197/2465: Method: base64_decode
-1198/2465: 1198/2465: base64_decode (DONE:63ms)
-1198/2465: Method: draw_table_frames
+  0/2221: Method: get_cp_mime_name
+  1/2221: 1/2221: get_cp_mime_name (DONE:102ms)
+  1/2221: Method: elinks_ulongcat
+  2/2221: 2/2221: elinks_ulongcat (DONE:458ms)
+  2/2221: Method: c_toupper
+  3/2221: 3/2221: c_toupper (DONE:81ms)
+  3/2221: Method: unicode_to_cell
+  4/2221: 4/2221: unicode_to_cell (DONE:91ms)
+  4/2221: Method: skip_scanner_tokens
+  5/2221: 5/2221: skip_scanner_tokens (DONE:737ms)
+  5/2221: Method: add_dlg_radio_do
+  6/2221: 6/2221: add_dlg_radio_do (DONE:34ms)
+  6/2221: Method: traverse_listbox_items_list
+  7/2221: 7/2221: traverse_listbox_items_list (DONE:1612ms)
+  7/2221: Method: ln_break
+  8/2221: 8/2221: ln_break (DONE:57ms)
+  8/2221: Method: add_dlg_field_do
+  9/2221: 9/2221: add_dlg_field_do (DONE:33ms)
+  9/2221: Method: get_hash_item
+ 10/2221: 10/2221: get_hash_item (DONE:144ms)
+ 10/2221: Method: display_widget
+ 11/2221: 11/2221: display_widget (DONE:21ms)
+ 11/2221: Method: utf8charlen
+ 12/2221: 12/2221: utf8charlen (DONE:16ms)
+ 12/2221: Method: kbd_action
+ 13/2221: 13/2221: kbd_action (DONE:94ms)
+ 13/2221: Method: add_dlg_text
+ 14/2221: 14/2221: add_dlg_text (DONE:43ms)
+ 14/2221: Method: decode_uri
+ 15/2221: 15/2221: decode_uri (DONE:232ms)
+ 15/2221: Method: is_cp_utf8
+ 16/2221: 16/2221: is_cp_utf8 (DONE:29ms)
+ 16/2221: Method: c_tolower
+ 17/2221: 17/2221: c_tolower (DONE:67ms)
+ 17/2221: Method: c_strcasecmp
+ 18/2221: 18/2221: c_strcasecmp (DONE:77ms)
+ 18/2221: Method: c_strncasecmp
+ 19/2221: 19/2221: c_strncasecmp (DONE:82ms)
+ 19/2221: Method: add_table_bad_html_end
+ 20/2221: 20/2221: add_table_bad_html_end (DONE:25ms)
+ 20/2221: Method: timeval_from_seconds
+ 21/2221: 21/2221: timeval_from_seconds (DONE:6ms)
+ 21/2221: Method: select_widget
+ 22/2221: 22/2221: select_widget (DONE:36ms)
+ 22/2221: Method: get_next_dom_scanner_token
+ 23/2221: 23/2221: get_next_dom_scanner_token (DONE:46ms)
+ 23/2221: Method: encode_utf8
+ 24/2221: 24/2221: encode_utf8 (DONE:297ms)
+ 24/2221: Method: compare_component
+ 25/2221: 25/2221: compare_component (DONE:71ms)
+ 25/2221: Method: timeval_cmp
+ 26/2221: 26/2221: timeval_cmp (DONE:21ms)
+ 26/2221: Method: get_hline_width
+ 27/2221: 27/2221: get_hline_width (DONE:81ms)
+ 27/2221: Method: utf8_prevchar
+ 28/2221: 28/2221: utf8_prevchar (DONE:90ms)
+ 28/2221: Method: get_output_handle
+ 29/2221: 29/2221: get_output_handle (DONE:3ms)
+ 29/2221: Method: set_kbd_event
+ 30/2221: 30/2221: set_kbd_event (DONE:65ms)
+ 30/2221: Method: timeval_sub
+ 31/2221: 31/2221: timeval_sub (DONE:42ms)
+ 31/2221: Method: skip_sgml_space
+ 32/2221: 32/2221: skip_sgml_space (DONE:53ms)
+ 32/2221: Method: can_open_in_new
+ 33/2221: 33/2221: can_open_in_new (DONE:17ms)
+ 33/2221: Method: u2cp_
+ 34/2221: 34/2221: u2cp_ (DONE:324ms)
+ 34/2221: Method: set_led_value
+ 35/2221: 35/2221: set_led_value (DONE:35ms)
+ 35/2221: Method: register_led
+ 36/2221: 36/2221: register_led (DONE:25ms)
+ 36/2221: Method: html_skip
+ 37/2221: 37/2221: html_skip (DONE:6ms)
+ 37/2221: Method: is_entry_used
+ 38/2221: 38/2221: is_entry_used (DONE:22ms)
+ 38/2221: Method: set_bin
+ 39/2221: 39/2221: set_bin (DONE:3ms)
+ 39/2221: Method: want_draw
+ 40/2221: 40/2221: want_draw (DONE:2ms)
+ 40/2221: Method: done_draw
+ 41/2221: 41/2221: done_draw (DONE:2ms)
+ 41/2221: Method: parse_year
+ 42/2221: 42/2221: parse_year (DONE:122ms)
+ 42/2221: Method: parse_day
+ 43/2221: 43/2221: parse_day (DONE:70ms)
+ 43/2221: Method: parse_time
+ 44/2221: 44/2221: parse_time (DONE:667ms)
+ 44/2221: Method: convert_to_md5_digest_hex_T
+ 45/2221: 45/2221: convert_to_md5_digest_hex_T (DONE:68ms)
+ 45/2221: Method: is_blocked
+ 46/2221: 46/2221: is_blocked (DONE:23ms)
+ 46/2221: Method: c_isupper
+ 47/2221: 47/2221: c_isupper (DONE:14ms)
+ 47/2221: Method: transform_md5
+ 48/2221: 48/2221: transform_md5 (DONE:9718ms)
+ 48/2221: Method: timeval_add_interval
+ 49/2221: 49/2221: timeval_add_interval (DONE:24ms)
+ 49/2221: Method: timeval_from_milliseconds
+ 50/2221: 50/2221: timeval_from_milliseconds (DONE:37ms)
+ 50/2221: Method: timeval_to_seconds
+ 51/2221: 51/2221: timeval_to_seconds (DONE:23ms)
+ 51/2221: Method: get_link_x_bounds
+ 52/2221: 52/2221: get_link_x_bounds (DONE:125ms)
+ 52/2221: Method: init_vs
+ 53/2221: 53/2221: init_vs (DONE:84ms)
+ 53/2221: Method: __divdi3
+ 54/2221: 54/2221: __divdi3 (DONE:483ms)
+ 54/2221: Method: map_dom_scanner_string
+ 55/2221: 55/2221: map_dom_scanner_string (DONE:72ms)
+ 55/2221: Method: get_cp_name
+ 56/2221: 56/2221: get_cp_name (DONE:13ms)
+ 56/2221: Method: cp2utf8
+ 57/2221: 57/2221: cp2utf8 (DONE:99ms)
+ 57/2221: Method: notify_connection_callbacks
+ 58/2221: 58/2221: notify_connection_callbacks (DONE:75ms)
+ 58/2221: Method: are_there_downloads
+ 59/2221: 59/2221: are_there_downloads (DONE:15ms)
+ 59/2221: Method: get_current_download
+ 60/2221: 60/2221: get_current_download (DONE:57ms)
+ 60/2221: Method: number_of_tabs
+ 61/2221: 61/2221: number_of_tabs (DONE:27ms)
+ 61/2221: Method: elinks_longcat
+ 62/2221: 62/2221: elinks_longcat (DONE:417ms)
+ 62/2221: Method: init_md5
+ 63/2221: 63/2221: init_md5 (DONE:7ms)
+ 63/2221: Method: get_textarea_line_number
+ 64/2221: 64/2221: get_textarea_line_number (DONE:75ms)
+ 64/2221: Method: color_to_string
+ 65/2221: 65/2221: color_to_string (DONE:18ms)
+ 65/2221: Method: dom_node_casecmp
+ 66/2221: 66/2221: dom_node_casecmp (DONE:100ms)
+ 66/2221: Method: select_widget_by_id
+ 67/2221: 67/2221: select_widget_by_id (DONE:31ms)
+ 67/2221: Method: unset_led_value
+ 68/2221: 68/2221: unset_led_value (DONE:20ms)
+ 68/2221: Method: bookmarks_unset_dirty
+ 69/2221: 69/2221: bookmarks_unset_dirty (DONE:6ms)
+ 69/2221: Method: call_change_hooks
+ 70/2221: 70/2221: call_change_hooks (DONE:31ms)
+ 70/2221: Method: option_changed
+ 71/2221: 71/2221: option_changed (DONE:16ms)
+ 71/2221: Method: form_type2str
+ 72/2221: 72/2221: form_type2str (DONE:32ms)
+ 72/2221: Method: add_fragment_identifier
+ 73/2221: 73/2221: add_fragment_identifier (DONE:17ms)
+ 73/2221: Method: get_dom_node_child
+ 74/2221: 74/2221: get_dom_node_child (DONE:156ms)
+ 74/2221: Method: get_rss_text
+ 75/2221: 75/2221: get_rss_text (DONE:32ms)
+ 75/2221: Method: get_cp_config_name
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i8:00h
+ 76/2221: 76/2221: get_cp_config_name (DONE:19ms)
+ 76/2221: Method: language_to_name
+ 77/2221: 77/2221: language_to_name (DONE:5ms)
+ 77/2221: Method: trigger_event_va
+ 78/2221: 78/2221: trigger_event_va (DONE:76ms)
+ 78/2221: Method: trigger_event
+ 79/2221: 79/2221: trigger_event (DONE:12ms)
+ 79/2221: Method: can_resize_window
+ 80/2221: 80/2221: can_resize_window (DONE:8ms)
+ 80/2221: Method: can_open_os_shell
+ 81/2221: 81/2221: can_open_os_shell (DONE:3ms)
+ 81/2221: Method: get_system_str
+ 82/2221: 82/2221: get_system_str (DONE:6ms)
+ 82/2221: Method: parse_psv_resp
+ 83/2221: 83/2221: parse_psv_resp (DONE:177ms)
+ 83/2221: Method: add_to_history
+ 84/2221: 84/2221: add_to_history (DONE:15ms)
+ 84/2221: Method: set_kbd_interlink_event
+ 85/2221: 85/2221: set_kbd_interlink_event (DONE:16ms)
+ 85/2221: Method: timeval_sub_interval
+ 86/2221: 86/2221: timeval_sub_interval (DONE:33ms)
+ 86/2221: Method: get_timer_duration
+ 87/2221: 87/2221: get_timer_duration (DONE:4ms)
+ 87/2221: Method: next_frame
+ 88/2221: 88/2221: next_frame (DONE:113ms)
+ 88/2221: Method: __moddi3
+ 89/2221: 89/2221: __moddi3 (DONE:766ms)
+ 89/2221: Method: listbox_item_offset
+ 90/2221: 90/2221: listbox_item_offset (DONE:35ms)
+ 90/2221: Method: name_to_language
+ 91/2221: 91/2221: name_to_language (DONE:34ms)
+ 91/2221: Method: search_dom_stack
+ 92/2221: 92/2221: search_dom_stack (DONE:91ms)
+ 92/2221: Method: has_progress
+ 93/2221: 93/2221: has_progress (DONE:20ms)
+ 93/2221: Method: download_is_progressing
+ 94/2221: 94/2221: download_is_progressing (DONE:34ms)
+ 94/2221: Method: get_color_string
+ 95/2221: 95/2221: get_color_string (DONE:66ms)
+ 95/2221: Method: sub_8058BFE
+ 96/2221: 96/2221: sub_8058BFE (DONE:3ms)
+ 96/2221: Method: →strlen
+ 97/2221: 97/2221: →strlen (DONE:5ms)
+ 97/2221: Method: →memcpy
+ 98/2221: 98/2221: →memcpy (DONE:7ms)
+ 98/2221: Method: →memset
+ 99/2221: 99/2221: →memset (DONE:6ms)
+ 99/2221: Method: →__errno_location
+100/2221: 100/2221: →__errno_location (DONE:4ms)
+100/2221: Method: →strchr
+101/2221: 101/2221: →strchr (DONE:7ms)
+101/2221: Method: →__stack_chk_fail
+102/2221: 102/2221: →__stack_chk_fail (DONE:5ms)
+102/2221: Method: →memmove
+103/2221: 103/2221: →memmove (DONE:6ms)
+103/2221: Method: →__ctype_b_loc
+104/2221: 104/2221: →__ctype_b_loc (DONE:5ms)
+104/2221: Method: →strcmp
+105/2221: 105/2221: →strcmp (DONE:10ms)
+105/2221: Method: →close
+106/2221: 106/2221: →close (DONE:7ms)
+106/2221: Method: put_chrs
+107/2221: 107/2221: put_chrs (DONE:124ms)
+107/2221: Method: →getenv
+108/2221: 108/2221: →getenv (DONE:6ms)
+108/2221: Method: →free
+109/2221: 109/2221: →free (DONE:5ms)
+109/2221: Method: →memchr
+110/2221: 110/2221: →memchr (DONE:6ms)
+110/2221: Method: add_dlg_button_do
+111/2221: 111/2221: add_dlg_button_do (DONE:72ms)
+111/2221: Method: →strtol
+112/2221: 112/2221: →strtol (DONE:6ms)
+112/2221: Method: →__snprintf_chk
+113/2221: 113/2221: →__snprintf_chk (DONE:5ms)
+113/2221: Method: →__fprintf_chk
+114/2221: 114/2221: →__fprintf_chk (DONE:5ms)
+114/2221: Method: update_md5
+115/2221: 115/2221: update_md5 (DONE:385ms)
+115/2221: Method: →fclose
+116/2221: 116/2221: →fclose (DONE:7ms)
+116/2221: Method: →strstr
+117/2221: 117/2221: →strstr (DONE:5ms)
+117/2221: Method: →__rawmemchr
+118/2221: 118/2221: →__rawmemchr (DONE:5ms)
+118/2221: Method: →read
+119/2221: 119/2221: →read (DONE:6ms)
+119/2221: Method: →time
+120/2221: 120/2221: →time (DONE:5ms)
+120/2221: Method: →malloc
+121/2221: 121/2221: →malloc (DONE:5ms)
+121/2221: Method: c_strcasestr
+122/2221: 122/2221: c_strcasestr (DONE:50ms)
+122/2221: Method: →__printf_chk
+123/2221: 123/2221: →__printf_chk (DONE:5ms)
+123/2221: Method: →fflush
+124/2221: 124/2221: →fflush (DONE:6ms)
+124/2221: Method: show_parse_error
+125/2221: 125/2221: show_parse_error (DONE:23ms)
+125/2221: Method: →fopen64
+126/2221: 126/2221: →fopen64 (DONE:5ms)
+126/2221: Method: →stpcpy
+127/2221: 127/2221: →stpcpy (DONE:5ms)
+127/2221: Method: skip_white
+128/2221: 128/2221: skip_white (DONE:99ms)
+128/2221: Method: →unlink
+129/2221: 129/2221: →unlink (DONE:6ms)
+129/2221: Method: →strerror
+130/2221: 130/2221: →strerror (DONE:5ms)
+130/2221: Method: →strrchr
+131/2221: 131/2221: →strrchr (DONE:5ms)
+131/2221: Method: get_global_history_item
+132/2221: 132/2221: get_global_history_item (DONE:32ms)
+132/2221: Method: skip_comment
+133/2221: 133/2221: skip_comment (DONE:183ms)
+133/2221: Method: →write
+134/2221: 134/2221: →write (DONE:6ms)
+134/2221: Method: →fgets
+135/2221: 135/2221: →fgets (DONE:6ms)
+135/2221: Method: →sleep
+136/2221: 136/2221: →sleep (DONE:5ms)
+136/2221: Method: →open64
+137/2221: 137/2221: →open64 (DONE:6ms)
+137/2221: Method: decode_uri_string
+138/2221: 138/2221: decode_uri_string (DONE:18ms)
+138/2221: Method: elinks_strlcmp
+139/2221: 139/2221: elinks_strlcmp (DONE:174ms)
+139/2221: Method: →bsearch
+140/2221: 140/2221: →bsearch (DONE:6ms)
+140/2221: Method: →umask
+141/2221: 141/2221: →umask (DONE:4ms)
+141/2221: Method: →strtoul
+142/2221: 142/2221: →strtoul (DONE:5ms)
+142/2221: Method: →fwrite
+143/2221: 143/2221: →fwrite (DONE:6ms)
+143/2221: Method: →strcasestr
+144/2221: 144/2221: →strcasestr (DONE:5ms)
+144/2221: Method: →__strdup
+145/2221: 145/2221: →__strdup (DONE:4ms)
+145/2221: Method: →strcpy
+146/2221: 146/2221: →strcpy (DONE:6ms)
+146/2221: Method: →fputc
+147/2221: 147/2221: →fputc (DONE:5ms)
+147/2221: Method: →towlower
+148/2221: 148/2221: →towlower (DONE:5ms)
+148/2221: Method: decode_uri_for_display
+149/2221: 149/2221: decode_uri_for_display (DONE:45ms)
+149/2221: Method: →inflateEnd
+150/2221: 150/2221: →inflateEnd (DONE:5ms)
+150/2221: Method: →realloc
+151/2221: 151/2221: →realloc (DONE:5ms)
+151/2221: Method: →rb_protect
+152/2221: 152/2221: →rb_protect (DONE:5ms)
+152/2221: Method: →__memcpy_chk
+153/2221: 153/2221: →__memcpy_chk (DONE:4ms)
+153/2221: Method: →_exit
+154/2221: 154/2221: →_exit (DONE:4ms)
+154/2221: Method: →rb_str_new
+155/2221: 155/2221: →rb_str_new (DONE:4ms)
+155/2221: Method: →__ctype_toupper_loc
+156/2221: 156/2221: →__ctype_toupper_loc (DONE:4ms)
+156/2221: Method: elinks_strlcasecmp
+157/2221: 157/2221: elinks_strlcasecmp (DONE:432ms)
+157/2221: Method: →socket
+158/2221: 158/2221: →socket (DONE:6ms)
+158/2221: Method: →__ctype_tolower_loc
+159/2221: 159/2221: →__ctype_tolower_loc (DONE:4ms)
+159/2221: Method: →strncmp
+160/2221: 160/2221: →strncmp (DONE:6ms)
+160/2221: Method: update_dialog_data
+161/2221: 161/2221: update_dialog_data (DONE:54ms)
+161/2221: Method: secure_fputc
+162/2221: 162/2221: secure_fputc (DONE:39ms)
+162/2221: Method: →qsort
+163/2221: 163/2221: →qsort (DONE:6ms)
+163/2221: Method: →__xstat64
+164/2221: 164/2221: →__xstat64 (DONE:6ms)
+164/2221: Method: file_is_dir
+165/2221: 165/2221: file_is_dir (DONE:26ms)
+165/2221: Method: →localtime
+166/2221: 166/2221: →localtime (DONE:6ms)
+166/2221: Method: →mempcpy
+167/2221: 167/2221: →mempcpy (DONE:6ms)
+167/2221: Method: →_IO_getc
+168/2221: 168/2221: →_IO_getc (DONE:5ms)
+168/2221: Method: →__vsnprintf_chk
+169/2221: 169/2221: →__vsnprintf_chk (DONE:4ms)
+169/2221: Method: →isatty
+170/2221: 170/2221: →isatty (DONE:5ms)
+170/2221: Method: →BZ2_bzDecompressEnd
+171/2221: 171/2221: →BZ2_bzDecompressEnd (DONE:6ms)
+171/2221: Method: →fork
+172/2221: 172/2221: →fork (DONE:4ms)
+172/2221: Method: →rb_str_new2
+173/2221: 173/2221: →rb_str_new2 (DONE:5ms)
+173/2221: Method: →fcntl
+174/2221: 174/2221: →fcntl (DONE:5ms)
+174/2221: Method: set_nonblocking_fd
+175/2221: 175/2221: set_nonblocking_fd (DONE:24ms)
+175/2221: Method: →__sprintf_chk
+176/2221: 176/2221: →__sprintf_chk (DONE:4ms)
+176/2221: Method: get_bookmark
+177/2221: 177/2221: get_bookmark (DONE:32ms)
+177/2221: Method: done_md5
+178/2221: 178/2221: done_md5 (DONE:451ms)
+178/2221: Method: get_mailcap_field
+179/2221: 179/2221: get_mailcap_field (DONE:216ms)
+179/2221: Method: xstrcmp
+180/2221: 180/2221: xstrcmp (DONE:25ms)
+180/2221: Method: guess_encoding
+181/2221: 181/2221: guess_encoding (DONE:84ms)
+181/2221: Method: is_xterm
+182/2221: 182/2221: is_xterm (DONE:72ms)
+182/2221: Method: unicode_fold_label_case
+183/2221: 183/2221: unicode_fold_label_case (DONE:8ms)
+183/2221: Method: decode_uri_string_for_display
+184/2221: 184/2221: decode_uri_string_for_display (DONE:18ms)
+184/2221: Method: →__argz_count
+185/2221: 185/2221: →__argz_count (DONE:6ms)
+185/2221: Method: →connect
+186/2221: 186/2221: →connect (DONE:6ms)
+186/2221: Method: →calloc
+187/2221: 187/2221: →calloc (DONE:5ms)
+187/2221: Method: →inflateInit2_
+188/2221: 188/2221: →inflateInit2_ (DONE:4ms)
+188/2221: Method: →fdopen
+189/2221: 189/2221: →fdopen (DONE:5ms)
+189/2221: Method: →access
+190/2221: 190/2221: →access (DONE:5ms)
+190/2221: Method: file_exists
+191/2221: 191/2221: file_exists (DONE:13ms)
+191/2221: Method: →__vfprintf_chk
+192/2221: 192/2221: →__vfprintf_chk (DONE:5ms)
+192/2221: Method: usrerror
+193/2221: 193/2221: usrerror (DONE:26ms)
+193/2221: Method: secure_fprintf
+194/2221: 194/2221: secure_fprintf (DONE:36ms)
+194/2221: Method: er
+195/2221: 195/2221: er (DONE:36ms)
+195/2221: Method: elinks_internal
+196/2221: 196/2221: elinks_internal (DONE:83ms)
+196/2221: Method: mem_free
+197/2221: 197/2221: mem_free (DONE:15ms)
+197/2221: Method: done_string
+198/2221: 198/2221: done_string (DONE:48ms)
+198/2221: Method: set_handlers
+199/2221: 199/2221: set_handlers (DONE:568ms)
+199/2221: Method: get_listbox_widget_data
+200/2221: 200/2221: get_listbox_widget_data (DONE:58ms)
+200/2221: Method: current_frame
+201/2221: 201/2221: current_frame (DONE:149ms)
+201/2221: Method: utf8_to_unicode
+202/2221: 202/2221: utf8_to_unicode (DONE:1849ms)
+202/2221: Method: get_tab_by_number
+203/2221: 203/2221: get_tab_by_number (DONE:84ms)
+203/2221: Method: elinks_error
+204/2221: 204/2221: elinks_error (DONE:83ms)
+204/2221: Method: kill_timer
+205/2221: 205/2221: kill_timer (DONE:44ms)
+205/2221: Method: kill_html_stack_item
+206/2221: 206/2221: kill_html_stack_item (DONE:333ms)
+206/2221: Method: compare_uri
+207/2221: 207/2221: compare_uri (DONE:323ms)
+207/2221: Method: hard_write
+208/2221: 208/2221: hard_write (DONE:129ms)
+208/2221: Method: set_term_color
+209/2221: 209/2221: set_term_color (DONE:6092ms)
+209/2221: Method: get_priority
+210/2221: 210/2221: get_priority (DONE:56ms)
+210/2221: Method: connection_state8
+211/2221: 211/2221: connection_state8 (DONE:39ms)
+211/2221: Method: draw_char_data
+212/2221: 212/2221: draw_char_data (DONE:158ms)
+212/2221: Method: parse_element
+213/2221: 213/2221: parse_element (DONE:1354ms)
+213/2221: Method: find_in_cache
+214/2221: 214/2221: find_in_cache (DONE:65ms)
+214/2221: Method: get_event_id
+215/2221: 215/2221: get_event_id (DONE:79ms)
+215/2221: Method: check_bottom_halves
+216/2221: 216/2221: check_bottom_halves (DONE:32ms)
+216/2221: Method: get_action
+217/2221: 217/2221: get_action (DONE:69ms)
+217/2221: Method: kill_buffer_data
+218/2221: 218/2221: kill_buffer_data (DONE:66ms)
+218/2221: Method: connection_state9
+219/2221: 219/2221: connection_state9 (DONE:37ms)
+219/2221: Method: utf8_char2cells
+220/2221: 220/2221: utf8_char2cells (DONE:2544ms)
+220/2221: Method: utf8_ptr2cells
+221/2221: 221/2221: utf8_ptr2cells (DONE:69ms)
+221/2221: Method: utf8_cells2bytes
+222/2221: 222/2221: utf8_cells2bytes (DONE:113ms)
+222/2221: Method: find_css_selector
+223/2221: 223/2221: find_css_selector (DONE:114ms)
+223/2221: Method: free_hash
+224/2221: 224/2221: free_hash (DONE:217ms)
+224/2221: Method: listbox_sel_move
+225/2221: 225/2221: listbox_sel_move (DONE:127ms)
+225/2221: Method: connection_state3
+226/2221: 226/2221: connection_state3 (DONE:37ms)
+226/2221: Method: redraw_from_window
+227/2221: 227/2221: redraw_from_window (DONE:80ms)
+227/2221: Method: connection_state7
+228/2221: 228/2221: connection_state7 (DONE:36ms)
+228/2221: Method: get_handler
+229/2221: 229/2221: get_handler (DONE:120ms)
+229/2221: Method: read_from_socket
+230/2221: 230/2221: read_from_socket (DONE:115ms)
+230/2221: Method: check_sgml_incomplete
+231/2221: 231/2221: check_sgml_incomplete (DONE:80ms)
+231/2221: Method: get_action_name
+232/2221: 232/2221: get_action_name (DONE:15ms)
+232/2221: Method: update_hierbox_browser
+233/2221: 233/2221: update_hierbox_browser (DONE:27ms)
+233/2221: Method: done_listbox_item
+234/2221: 234/2221: done_listbox_item (DONE:194ms)
+234/2221: Method: init_dom_stack
+235/2221: 235/2221: init_dom_stack (DONE:39ms)
+235/2221: Method: cp2u
+236/2221: 236/2221: cp2u (DONE:80ms)
+236/2221: Method: connection_state2
+237/2221: 237/2221: connection_state2 (DONE:35ms)
+237/2221: Method: get_protocol_need_slash_after_host
+238/2221: 238/2221: get_protocol_need_slash_after_host (DONE:67ms)
+238/2221: Method: del_hash_item
+239/2221: 239/2221: del_hash_item (DONE:47ms)
+239/2221: Method: done_uri
+240/2221: 240/2221: done_uri (DONE:120ms)
+240/2221: Method: set_session_referrer
+241/2221: 241/2221: set_session_referrer (DONE:25ms)
+241/2221: Method: done_dom_stack
+242/2221: 242/2221: done_dom_stack (DONE:106ms)
+242/2221: Method: delete_global_history_item
+243/2221: 243/2221: delete_global_history_item (DONE:56ms)
+243/2221: Method: elinks_wdebug
+244/2221: 244/2221: elinks_wdebug (DONE:82ms)
+244/2221: Method: get_table_frames
+245/2221: 245/2221: get_table_frames (DONE:109ms)
+245/2221: Method: connection_state
+246/2221: 246/2221: connection_state (DONE:36ms)
+246/2221: Method: clr_spaces
+247/2221: 247/2221: clr_spaces (DONE:107ms)
+247/2221: Method: get_filename_position
+248/2221: 248/2221: get_filename_position (DONE:54ms)
+248/2221: Method: set_pos_x
+249/2221: 249/2221: set_pos_x (DONE:219ms)
+249/2221: Method: skip_sgml_chars
+250/2221: 250/2221: skip_sgml_chars (DONE:114ms)
+250/2221: Method: T.130
+251/2221: 251/2221: T.130 (DONE:321ms)
+251/2221: Method: search_html_stack
+252/2221: 252/2221: search_html_stack (DONE:77ms)
+252/2221: Method: init_dom_scanner
+253/2221: 253/2221: init_dom_scanner (DONE:1226ms)
+253/2221: Method: fix_dwchar_around_box
+254/2221: 254/2221: fix_dwchar_around_box (DONE:2785ms)
+254/2221: Method: freeml
+255/2221: 255/2221: freeml (DONE:47ms)
+255/2221: Method: fastfind_done
+256/2221: 256/2221: fastfind_done (DONE:95ms)
+256/2221: Method: handle_itrm_stdin
+257/2221: 257/2221: handle_itrm_stdin (DONE:35ms)
+257/2221: Method: done_html_parser_state
+258/2221: 258/2221: done_html_parser_state (DONE:30ms)
+258/2221: Method: get_host_connection
+259/2221: 259/2221: get_host_connection (DONE:41ms)
+259/2221: Method: listbox_sel
+260/2221: 260/2221: listbox_sel (DONE:25ms)
+260/2221: Method: cp_to_unicode
+261/2221: 261/2221: cp_to_unicode (DONE:52ms)
+261/2221: Method: free_task
+262/2221: 262/2221: free_task (DONE:51ms)
+262/2221: Method: done_session_info
+263/2221: 263/2221: done_session_info (DONE:31ms)
+263/2221: Method: →gnutls_deinit
+264/2221: 264/2221: →gnutls_deinit (DONE:4ms)
+264/2221: Method: →ctime
+265/2221: 265/2221: →ctime (DONE:5ms)
+265/2221: Method: →select
+266/2221: 266/2221: →select (DONE:7ms)
+266/2221: Method: →rb_define_module_function
+267/2221: 267/2221: →rb_define_module_function (DONE:5ms)
+267/2221: Method: →__fxstat64
+268/2221: 268/2221: →__fxstat64 (DONE:5ms)
+268/2221: Method: →tcsetattr
+269/2221: 269/2221: →tcsetattr (DONE:6ms)
+269/2221: Method: →munmap
+270/2221: 270/2221: →munmap (DONE:4ms)
+270/2221: Method: →fread
+271/2221: 271/2221: →fread (DONE:6ms)
+271/2221: Method: →strftime
+272/2221: 272/2221: →strftime (DONE:6ms)
+272/2221: Method: →strcspn
+273/2221: 273/2221: →strcspn (DONE:5ms)
+273/2221: Method: →gnutls_strerror
+274/2221: 274/2221: →gnutls_strerror (DONE:4ms)
+274/2221: Method: end_with_known_tld
+275/2221: 275/2221: end_with_known_tld (DONE:57ms)
+275/2221: Method: del_from_dom_node_list
+276/2221: 276/2221: del_from_dom_node_list (DONE:66ms)
+276/2221: Method: sanitize_url
+277/2221: 277/2221: sanitize_url (DONE:120ms)
+277/2221: Method: sanitize_title
+278/2221: 278/2221: sanitize_title (DONE:97ms)
+278/2221: Method: close_terminal_pipes
+279/2221: 279/2221: close_terminal_pipes (DONE:12ms)
+279/2221: Method: is_gnuscreen
+280/2221: 280/2221: is_gnuscreen (DONE:23ms)
+280/2221: Method: get_terminal_name
+281/2221: 281/2221: get_terminal_name (DONE:140ms)
+281/2221: Method: utf8_ptr2chars
+282/2221: 282/2221: utf8_ptr2chars (DONE:54ms)
+282/2221: Method: match_link_text
+283/2221: 283/2221: match_link_text (DONE:64ms)
+283/2221: Method: get_ctl_handle
+284/2221: 284/2221: get_ctl_handle (DONE:19ms)
+284/2221: Method: get_keymap_name
+285/2221: 285/2221: get_keymap_name (DONE:39ms)
+285/2221: Method: get_dom_node_list_pos
+286/2221: 286/2221: get_dom_node_list_pos (DONE:66ms)
+286/2221: Method: get_protocol_need_slashes
+287/2221: 287/2221: get_protocol_need_slashes (DONE:53ms)
+287/2221: Method: get_char
+288/2221: 288/2221: get_char (DONE:87ms)
+288/2221: Method: sec_to_ms
+289/2221: 289/2221: sec_to_ms (DONE:42ms)
+289/2221: Method: get_link_at_coordinates
+290/2221: 290/2221: get_link_at_coordinates (DONE:257ms)
+290/2221: Method: ses_find_frame
+291/2221: 291/2221: ses_find_frame (DONE:85ms)
+291/2221: Method: set_sgml_error
+292/2221: 292/2221: set_sgml_error (DONE:79ms)
+292/2221: Method: get_action_from_string
+293/2221: 293/2221: get_action_from_string (DONE:72ms)
+293/2221: Method: hard_read
+294/2221: 294/2221: hard_read (DONE:129ms)
+294/2221: Method: get_blacklist_entry
+295/2221: 295/2221: get_blacklist_entry (DONE:75ms)
+295/2221: Method: set_menu_selection
+296/2221: 296/2221: set_menu_selection (DONE:141ms)
+296/2221: Method: scroll_menu
+297/2221: 297/2221: scroll_menu (DONE:567ms)
+297/2221: Method: apply_css_selector_style
+298/2221: 298/2221: apply_css_selector_style (DONE:98ms)
+298/2221: Method: dlg_set_history
+299/2221: 299/2221: dlg_set_history (DONE:151ms)
+299/2221: Method: fastfind_search
+300/2221: 300/2221: fastfind_search (DONE:2161ms)
+300/2221: Method: decode_color
+301/2221: 301/2221: decode_color (DONE:244ms)
+301/2221: Method: check_questions_queue
+302/2221: 302/2221: check_questions_queue (DONE:34ms)
+302/2221: Method: del_dns_cache_entry
+303/2221: 303/2221: del_dns_cache_entry (DONE:22ms)
+303/2221: Method: free_string_list
+304/2221: 304/2221: free_string_list (DONE:66ms)
+304/2221: Method: new_pos
+305/2221: 305/2221: new_pos (DONE:68ms)
+305/2221: Method: patience
+306/2221: 306/2221: patience (DONE:30ms)
+306/2221: Method: mem_calloc
+307/2221: 307/2221: mem_calloc (DONE:43ms)
+307/2221: Method: mem_alloc
+308/2221: 308/2221: mem_alloc (DONE:26ms)
+308/2221: Method: mem_realloc
+309/2221: 309/2221: mem_realloc (DONE:49ms)
+309/2221: Method: add_char_to_string
+310/2221: 310/2221: add_char_to_string (DONE:94ms)
+310/2221: Method: init_string
+311/2221: 311/2221: init_string (DONE:55ms)
+311/2221: Method: memacpy
+312/2221: 312/2221: memacpy (DONE:51ms)
+312/2221: Method: stracpy
+313/2221: 313/2221: stracpy (DONE:47ms)
+313/2221: Method: add_to_menu
+314/2221: 314/2221: add_to_menu (DONE:185ms)
+314/2221: Method: add_crlf_to_string
+315/2221: 315/2221: add_crlf_to_string (DONE:82ms)
+315/2221: Method: straconcat
+316/2221: 316/2221: straconcat (DONE:203ms)
+316/2221: Method: add_bytes_to_string__7
+317/2221: 317/2221: add_bytes_to_string__7 (DONE:120ms)
+317/2221: Method: parse_header
+318/2221: 318/2221: parse_header (DONE:731ms)
+318/2221: Method: getml
+319/2221: 319/2221: getml (DONE:68ms)
+319/2221: Method: install_timer
+320/2221: 320/2221: install_timer (DONE:80ms)
+320/2221: Method: new_menu
+321/2221: 321/2221: new_menu (DONE:84ms)
+321/2221: Method: add_listbox_item
+322/2221: 322/2221: add_listbox_item (DONE:89ms)
+322/2221: Method: html_stack_dup
+323/2221: 323/2221: html_stack_dup (DONE:166ms)
+323/2221: Method: add_hash_item
+324/2221: 324/2221: add_hash_item (DONE:39ms)
+324/2221: Method: encode_uri_string
+325/2221: 325/2221: encode_uri_string (DONE:440ms)
+325/2221: Method: register_bottom_half_do
+326/2221: 326/2221: register_bottom_half_do (DONE:58ms)
+326/2221: Method: add_dom_stack_context
+327/2221: 327/2221: add_dom_stack_context (DONE:68ms)
+327/2221: Method: set_cookies_dirty
+328/2221: 328/2221: set_cookies_dirty (DONE:10ms)
+328/2221: Method: init_hash8
+329/2221: 329/2221: init_hash8 (DONE:40ms)
+329/2221: Method: get_header_param
+330/2221: 330/2221: get_header_param (DONE:539ms)
+330/2221: Method: merge_css_selectors
+331/2221: 331/2221: merge_css_selectors (DONE:83ms)
+331/2221: Method: mem_align_alloc__2
+332/2221: 332/2221: mem_align_alloc__2 (DONE:42ms)
+332/2221: Method: insert_in_string
+333/2221: 333/2221: insert_in_string (DONE:38ms)
+333/2221: Method: add_to_strn
+334/2221: 334/2221: add_to_strn (DONE:54ms)
+334/2221: Method: new_columns
+335/2221: 335/2221: new_columns (DONE:126ms)
+335/2221: Method: add_shell_safe_to_string
+336/2221: 336/2221: add_shell_safe_to_string (DONE:229ms)
+336/2221: Method: register_check_queue
+337/2221: 337/2221: register_check_queue (DONE:9ms)
+337/2221: Method: init_listbox_context
+338/2221: 338/2221: init_listbox_context (DONE:72ms)
+338/2221: Method: T.146
+339/2221: 339/2221: T.146 (DONE:35ms)
+339/2221: Method: add_to_string
+340/2221: 340/2221: add_to_string (DONE:126ms)
+340/2221: Method: add_format_to_string
+341/2221: 341/2221: add_format_to_string (DONE:99ms)
+341/2221: Method: add_string_to_string
+342/2221: 342/2221: add_string_to_string (DONE:99ms)
+342/2221: Method: add_keystroke_to_string
+343/2221: 343/2221: add_keystroke_to_string (DONE:129ms)
+343/2221: Method: parse_header_param
+344/2221: 344/2221: parse_header_param (DONE:765ms)
+344/2221: Method: init_submitted_value
+345/2221: 345/2221: init_submitted_value (DONE:43ms)
+345/2221: Method: add_bookmark
+346/2221: 346/2221: add_bookmark (DONE:313ms)
+346/2221: Method: realloc_lines
+347/2221: 347/2221: realloc_lines (DONE:112ms)
+347/2221: Method: move_links
+348/2221: 348/2221: move_links (DONE:1281ms)
+348/2221: Method: add_to_ml
+349/2221: 349/2221: add_to_ml (DONE:75ms)
+349/2221: Method: new_menu_item
+350/2221: 350/2221: new_menu_item (DONE:242ms)
+350/2221: Method: add_xchar_to_string
+351/2221: 351/2221: add_xchar_to_string (DONE:77ms)
+351/2221: Method: add_date_to_string
+352/2221: 352/2221: add_date_to_string (DONE:104ms)
+352/2221: Method: add_window
+353/2221: 353/2221: add_window (DONE:49ms)
+353/2221: Method: do_dialog
+354/2221: 354/2221: do_dialog (DONE:32ms)
+354/2221: Method: init_options_tree
+355/2221: 355/2221: init_options_tree (DONE:11ms)
+355/2221: Method: add_to_input_history
+356/2221: 356/2221: add_to_input_history (DONE:497ms)
+356/2221: Method: add_to_dom_string
+357/2221: 357/2221: add_to_dom_string (DONE:38ms)
+357/2221: Method: add_bytes_to_string__
+358/2221: 358/2221: add_bytes_to_string__ (DONE:107ms)
+358/2221: Method: add_bytes_to_string__2
+359/2221: 359/2221: add_bytes_to_string__2 (DONE:108ms)
+359/2221: Method: add_string_replace
+360/2221: 360/2221: add_string_replace (DONE:186ms)
+360/2221: Method: dump_output_flush
+361/2221: 361/2221: dump_output_flush (DONE:140ms)
+361/2221: Method: write_char
+362/2221: 362/2221: write_char (DONE:31ms)
+362/2221: Method: write_color_256
+363/2221: 363/2221: write_color_256 (DONE:118ms)
+363/2221: Method: str_rd
+364/2221: 364/2221: str_rd (DONE:252ms)
+364/2221: Method: get_extension_from_uri
+365/2221: 365/2221: get_extension_from_uri (DONE:179ms)
+365/2221: Method: init_css_selector
+366/2221: 366/2221: init_css_selector (DONE:56ms)
+366/2221: Method: fixup_select_state
+367/2221: 367/2221: fixup_select_state (DONE:226ms)
+367/2221: Method: add_shell_quoted_to_string
+368/2221: 368/2221: add_shell_quoted_to_string (DONE:73ms)
+368/2221: Method: add_keystroke_action_to_string
+369/2221: 369/2221: add_keystroke_action_to_string (DONE:42ms)
+369/2221: Method: write_color_16
+370/2221: 370/2221: write_color_16 (DONE:176ms)
+370/2221: Method: beep_terminal
+371/2221: 371/2221: beep_terminal (DONE:12ms)
+371/2221: Method: check_signals
+372/2221: 372/2221: check_signals (DONE:31ms)
+372/2221: Method: cycle_widget_focus
+373/2221: 373/2221: cycle_widget_focus (DONE:138ms)
+373/2221: Method: has_keepalive_connection
+374/2221: 374/2221: has_keepalive_connection (DONE:75ms)
+374/2221: Method: init_form
+375/2221: 375/2221: init_form (DONE:14ms)
+375/2221: Method: find_form_view_in_vs
+376/2221: 376/2221: find_form_view_in_vs (DONE:74ms)
+376/2221: Method: copy_vs
+377/2221: 377/2221: copy_vs (DONE:289ms)
+377/2221: Method: new_cell
+378/2221: 378/2221: new_cell (DONE:1803ms)
+378/2221: Method: add_questions_entry
+379/2221: 379/2221: add_questions_entry (DONE:17ms)
+379/2221: Method: dump_output_alloc
+380/2221: 380/2221: dump_output_alloc (DONE:49ms)
+380/2221: Method: memacpy_u
+381/2221: 381/2221: memacpy_u (DONE:65ms)
+381/2221: Method: set_td_width
+382/2221: 382/2221: set_td_width (DONE:201ms)
+382/2221: Method: T.125
+383/2221: 383/2221: T.125 (DONE:30ms)
+383/2221: Method: mem_align_alloc__3
+384/2221: 384/2221: mem_align_alloc__3 (DONE:42ms)
+384/2221: Method: add_to_dom_node_list
+385/2221: 385/2221: add_to_dom_node_list (DONE:278ms)
+385/2221: Method: normalize_text_node_whitespace
+386/2221: 386/2221: normalize_text_node_whitespace (DONE:973ms)
+386/2221: Method: T.210
+387/2221: 387/2221: T.210 (DONE:1597ms)
+387/2221: Method: encode_crlf
+388/2221: 388/2221: encode_crlf (DONE:175ms)
+388/2221: Method: get_cookie_server
+389/2221: 389/2221: get_cookie_server (DONE:300ms)
+389/2221: Method: init_html_parser_state
+390/2221: 390/2221: init_html_parser_state (DONE:31ms)
+390/2221: Method: add_bytes_to_string__4
+391/2221: 391/2221: add_bytes_to_string__4 (DONE:68ms)
+391/2221: Method: string_concat
+392/2221: 392/2221: string_concat (DONE:230ms)
+392/2221: Method: add_to_string_list
+393/2221: 393/2221: add_to_string_list (DONE:228ms)
+393/2221: Method: set_window_title
+394/2221: 394/2221: set_window_title (DONE:255ms)
+394/2221: Method: add_select_item
+395/2221: 395/2221: add_select_item (DONE:148ms)
+395/2221: Method: dump_nocolor
+396/2221: 396/2221: dump_nocolor (DONE:1164ms)
+396/2221: Method: get_css_selector
+397/2221: 397/2221: get_css_selector (DONE:34ms)
+397/2221: Method: →fileno
+398/2221: 398/2221: →fileno (DONE:4ms)
+398/2221: Method: →fputs
+399/2221: 399/2221: →fputs (DONE:5ms)
+399/2221: Method: secure_fputs
+400/2221: 400/2221: secure_fputs (DONE:33ms)
+400/2221: Method: →inet_ntop
+401/2221: 401/2221: →inet_ntop (DONE:6ms)
+401/2221: Method: →mkdir
+402/2221: 402/2221: →mkdir (DONE:5ms)
+402/2221: Method: →getsockname
+403/2221: 403/2221: →getsockname (DONE:6ms)
+403/2221: Method: →freeaddrinfo
+404/2221: 404/2221: →freeaddrinfo (DONE:5ms)
+404/2221: Method: →gnutls_handshake
+405/2221: 405/2221: →gnutls_handshake (DONE:4ms)
+405/2221: Method: →system
+406/2221: 406/2221: →system (DONE:6ms)
+406/2221: Method: set_clipboard_text
+407/2221: 407/2221: set_clipboard_text (DONE:50ms)
+407/2221: Method: →strncpy
+408/2221: 408/2221: →strncpy (DONE:5ms)
+408/2221: Method: safe_strncpy
+409/2221: 409/2221: safe_strncpy (DONE:38ms)
+409/2221: Method: add_blacklist_entry
+410/2221: 410/2221: add_blacklist_entry (DONE:45ms)
+410/2221: Method: →listen
+411/2221: 411/2221: →listen (DONE:5ms)
+411/2221: Method: →fseeko64
+412/2221: 412/2221: →fseeko64 (DONE:7ms)
+412/2221: Method: →gnutls_credentials_set
+413/2221: 413/2221: →gnutls_credentials_set (DONE:5ms)
+413/2221: Method: →ungetc
+414/2221: 414/2221: →ungetc (DONE:5ms)
+414/2221: Method: →inflate
+415/2221: 415/2221: →inflate (DONE:4ms)
+415/2221: Method: →inet_pton
+416/2221: 416/2221: →inet_pton (DONE:5ms)
+416/2221: Method: →__lxstat64
+417/2221: 417/2221: →__lxstat64 (DONE:5ms)
+417/2221: Method: →fgets_unlocked
+418/2221: 418/2221: →fgets_unlocked (DONE:5ms)
+418/2221: Method: →sigaction
+419/2221: 419/2221: →sigaction (DONE:5ms)
+419/2221: Method: →accept
+420/2221: 420/2221: →accept (DONE:6ms)
+420/2221: Method: →ioctl
+421/2221: 421/2221: →ioctl (DONE:6ms)
+421/2221: Method: →dup2
+422/2221: 422/2221: →dup2 (DONE:6ms)
+422/2221: Method: →mktime
+423/2221: 423/2221: →mktime (DONE:5ms)
+423/2221: Method: →readdir64
+424/2221: 424/2221: →readdir64 (DONE:5ms)
+424/2221: Method: →gnutls_protocol_set_priority
+425/2221: 425/2221: →gnutls_protocol_set_priority (DONE:5ms)
+425/2221: Method: →alarm
+426/2221: 426/2221: →alarm (DONE:5ms)
+426/2221: Method: →gnutls_anon_allocate_client_credentials
+427/2221: 427/2221: →gnutls_anon_allocate_client_credentials (DONE:5ms)
+427/2221: Method: →BZ2_bzDecompress
+428/2221: 428/2221: →BZ2_bzDecompress (DONE:4ms)
+428/2221: Method: →getifaddrs
+429/2221: 429/2221: →getifaddrs (DONE:4ms)
+429/2221: Method: →setlocale
+430/2221: 430/2221: →setlocale (DONE:5ms)
+430/2221: Method: →chdir
+431/2221: 431/2221: →chdir (DONE:5ms)
+431/2221: Method: set_cwd
+432/2221: 432/2221: set_cwd (DONE:28ms)
+432/2221: Method: →bind
+433/2221: 433/2221: →bind (DONE:6ms)
+433/2221: Method: →gnutls_certificate_verify_peers
+434/2221: 434/2221: →gnutls_certificate_verify_peers (DONE:4ms)
+434/2221: Method: →mkstemp64
+435/2221: 435/2221: →mkstemp64 (DONE:5ms)
+435/2221: Method: →nl_langinfo
+436/2221: 436/2221: →nl_langinfo (DONE:5ms)
+436/2221: Method: →rb_obj_as_string
+437/2221: 437/2221: →rb_obj_as_string (DONE:4ms)
+437/2221: Method: →memrchr
+438/2221: 438/2221: →memrchr (DONE:5ms)
+438/2221: Method: format_text
+439/2221: 439/2221: format_text (DONE:891ms)
+439/2221: Method: textarea_op
+440/2221: 440/2221: textarea_op (DONE:120ms)
+440/2221: Method: area_cursor
+441/2221: 441/2221: area_cursor (DONE:567ms)
+441/2221: Method: →getcwd
+442/2221: 442/2221: →getcwd (DONE:5ms)
+442/2221: Method: get_cwd
+443/2221: 443/2221: get_cwd (DONE:61ms)
+443/2221: Method: →sigfillset
+444/2221: 444/2221: →sigfillset (DONE:5ms)
+444/2221: Method: install_signal_handler
+445/2221: 445/2221: install_signal_handler (DONE:94ms)
+445/2221: Method: →_IO_putc
+446/2221: 446/2221: →_IO_putc (DONE:5ms)
+446/2221: Method: →pipe
+447/2221: 447/2221: →pipe (DONE:4ms)
+447/2221: Method: c_pipe
+448/2221: 448/2221: c_pipe (DONE:8ms)
+448/2221: Method: start_thread
+449/2221: 449/2221: start_thread (DONE:97ms)
+449/2221: Method: →mmap64
+450/2221: 450/2221: →mmap64 (DONE:4ms)
+450/2221: Method: →__memmove_chk
+451/2221: 451/2221: →__memmove_chk (DONE:5ms)
+451/2221: Method: →BZ2_bzDecompressInit
+452/2221: 452/2221: →BZ2_bzDecompressInit (DONE:4ms)
+452/2221: Method: →setenv
+453/2221: 453/2221: →setenv (DONE:6ms)
+453/2221: Method: env_set
+454/2221: 454/2221: env_set (DONE:61ms)
+454/2221: Method: →rb_define_const
+455/2221: 455/2221: →rb_define_const (DONE:5ms)
+455/2221: Method: →pclose
+456/2221: 456/2221: →pclose (DONE:5ms)
+456/2221: Method: is_in_domain
+457/2221: 457/2221: is_in_domain (DONE:51ms)
+457/2221: Method: set_auth_user
+458/2221: 458/2221: set_auth_user (DONE:24ms)
+458/2221: Method: set_auth_password
+459/2221: 459/2221: set_auth_password (DONE:23ms)
+459/2221: Method: get_e
+460/2221: 460/2221: get_e (DONE:14ms)
+460/2221: Method: strlen_utf8
+461/2221: 461/2221: strlen_utf8 (DONE:43ms)
+461/2221: Method: strlen_u
+462/2221: 462/2221: strlen_u (DONE:16ms)
+462/2221: Method: set_binding_values
+463/2221: 463/2221: set_binding_values (DONE:1133ms)
+463/2221: Method: map_scanner_string
+464/2221: 464/2221: map_scanner_string (DONE:53ms)
+464/2221: Method: set_blocking_fd
+465/2221: 465/2221: set_blocking_fd (DONE:22ms)
+465/2221: Method: file_can_read
+466/2221: 466/2221: file_can_read (DONE:12ms)
+466/2221: Method: check_whether_file_exists
+467/2221: 467/2221: check_whether_file_exists (DONE:54ms)
+467/2221: Method: skip_quoted
+468/2221: 468/2221: skip_quoted (DONE:149ms)
+468/2221: Method: get_keybinding_action_box_item
+469/2221: 469/2221: get_keybinding_action_box_item (DONE:51ms)
+469/2221: Method: connection_state4
+470/2221: 470/2221: connection_state4 (DONE:34ms)
+470/2221: Method: get_protocol_free_syntax
+471/2221: 471/2221: get_protocol_free_syntax (DONE:55ms)
+471/2221: Method: connection_state6
+472/2221: 472/2221: connection_state6 (DONE:34ms)
+472/2221: Method: mult_ms
+473/2221: 473/2221: mult_ms (DONE:50ms)
+473/2221: Method: get_form_label
+474/2221: 474/2221: get_form_label (DONE:92ms)
+474/2221: Method: set_pos_y
+475/2221: 475/2221: set_pos_y (DONE:176ms)
+475/2221: Method: next_link_in_view_
+476/2221: 476/2221: next_link_in_view_ (DONE:535ms)
+476/2221: Method: get_range
+477/2221: 477/2221: get_range (DONE:374ms)
+477/2221: Method: get_srch
+478/2221: 478/2221: get_srch (DONE:867ms)
+478/2221: Method: set_sgml_incomplete
+479/2221: 479/2221: set_sgml_incomplete (DONE:39ms)
+479/2221: Method: strip_proxy_protocol
+480/2221: 480/2221: strip_proxy_protocol (DONE:62ms)
+480/2221: Method: read_dns_data
+481/2221: 481/2221: read_dns_data (DONE:72ms)
+481/2221: Method: unlink_unix
+482/2221: 482/2221: unlink_unix (DONE:33ms)
+482/2221: Method: write_dns_data
+483/2221: 483/2221: write_dns_data (DONE:72ms)
+483/2221: Method: has_form_submit
+484/2221: 484/2221: has_form_submit (DONE:86ms)
+484/2221: Method: call_dom_stack_callbacks
+485/2221: 485/2221: call_dom_stack_callbacks (DONE:198ms)
+485/2221: Method: get_protocol_port
+486/2221: 486/2221: get_protocol_port (DONE:69ms)
+486/2221: Method: get_dom_node_map_index
+487/2221: 487/2221: get_dom_node_map_index (DONE:126ms)
+487/2221: Method: init_scanner
+488/2221: 488/2221: init_scanner (DONE:690ms)
+488/2221: Method: detach_menu
+489/2221: 489/2221: detach_menu (DONE:21ms)
+489/2221: Method: close_encoded
+490/2221: 490/2221: close_encoded (DONE:16ms)
+490/2221: Method: shutdown_connection_stream
+491/2221: 491/2221: shutdown_connection_stream (DONE:26ms)
+491/2221: Method: done_form_state
+492/2221: 492/2221: done_form_state (DONE:12ms)
+492/2221: Method: free_last_searched_bookmark
+493/2221: 493/2221: free_last_searched_bookmark (DONE:16ms)
+493/2221: Method: done_mimetypes_entry
+494/2221: 494/2221: done_mimetypes_entry (DONE:17ms)
+494/2221: Method: reap_deleted_globhist_items
+495/2221: 495/2221: reap_deleted_globhist_items (DONE:46ms)
+495/2221: Method: done_mailcap_entry
+496/2221: 496/2221: done_mailcap_entry (DONE:21ms)
+496/2221: Method: free_menu_items
+497/2221: 497/2221: free_menu_items (DONE:51ms)
+497/2221: Method: free_node
+498/2221: 498/2221: free_node (DONE:107ms)
+498/2221: Method: done_link_members
+499/2221: 499/2221: done_link_members (DONE:104ms)
+499/2221: Method: free_table
+500/2221: 500/2221: free_table (DONE:166ms)
+500/2221: Method: close_handle
+501/2221: 501/2221: close_handle (DONE:18ms)
+501/2221: Method: unhandle_itrm_stdin
+502/2221: 502/2221: unhandle_itrm_stdin (DONE:32ms)
+502/2221: Method: get_current_session_link
+503/2221: 503/2221: get_current_session_link (DONE:40ms)
+503/2221: Method: get_parent_ptr
+504/2221: 504/2221: get_parent_ptr (DONE:32ms)
+504/2221: Method: kill_document_refresh
+505/2221: 505/2221: kill_document_refresh (DONE:7ms)
+505/2221: Method: kill_element
+506/2221: 506/2221: kill_element (DONE:53ms)
+506/2221: Method: kill_html_stack_until
+507/2221: 507/2221: kill_html_stack_until (DONE:342ms)
+507/2221: Method: find_auth_entry
+508/2221: 508/2221: find_auth_entry (DONE:67ms)
+508/2221: Method: send_mouse_done_sequence
+509/2221: 509/2221: send_mouse_done_sequence (DONE:18ms)
+509/2221: Method: send_mouse_init_sequence
+510/2221: 510/2221: send_mouse_init_sequence (DONE:17ms)
+510/2221: Method: get_screen_char_template
+511/2221: 511/2221: get_screen_char_template (DONE:50ms)
+511/2221: Method: add_to_queue
+512/2221: 512/2221: add_to_queue (DONE:36ms)
+512/2221: Method: sort_queue
+513/2221: 513/2221: sort_queue (DONE:52ms)
+513/2221: Method: follow_cached_redirects
+514/2221: 514/2221: follow_cached_redirects (DONE:30ms)
+514/2221: Method: get_document_css_magic
+515/2221: 515/2221: get_document_css_magic (DONE:46ms)
+515/2221: Method: trigger_event_name
+516/2221: 516/2221: trigger_event_name (DONE:10ms)
+516/2221: Method: T.72
+517/2221: 517/2221: T.72 (DONE:207ms)
+517/2221: Method: dlg_format_buttons
+518/2221: 518/2221: dlg_format_buttons (DONE:597ms)
+518/2221: Method: free_table_cache
+519/2221: 519/2221: free_table_cache (DONE:74ms)
+519/2221: Method: read_more_http_data
+520/2221: 520/2221: read_more_http_data (DONE:26ms)
+520/2221: Method: done_download_display
+521/2221: 521/2221: done_download_display (DONE:19ms)
+521/2221: Method: free_keybinding
+522/2221: 522/2221: free_keybinding (DONE:35ms)
+522/2221: Method: add_keybinding
+523/2221: 523/2221: add_keybinding (DONE:336ms)
+523/2221: Method: done_cookie_server
+524/2221: 524/2221: done_cookie_server (DONE:27ms)
+524/2221: Method: done_cookie
+525/2221: 525/2221: done_cookie (DONE:43ms)
+525/2221: Method: delete_cookie
+526/2221: 526/2221: delete_cookie (DONE:11ms)
+526/2221: Method: accept_cookie
+527/2221: 527/2221: accept_cookie (DONE:188ms)
+527/2221: Method: init_cookie
+528/2221: 528/2221: init_cookie (DONE:74ms)
+528/2221: Method: done_document_refresh
+529/2221: 529/2221: done_document_refresh (DONE:17ms)
+529/2221: Method: done_auth_entry
+530/2221: 530/2221: done_auth_entry (DONE:35ms)
+530/2221: Method: del_auth_entry
+531/2221: 531/2221: del_auth_entry (DONE:11ms)
+531/2221: Method: add_auth_entry
+532/2221: 532/2221: add_auth_entry (DONE:1305ms)
+532/2221: Method: find_auth
+533/2221: 533/2221: find_auth (DONE:145ms)
+533/2221: Method: elinks_usleep
+534/2221: 534/2221: elinks_usleep (DONE:26ms)
+534/2221: Method: can_read_or_write
+535/2221: 535/2221: can_read_or_write (DONE:63ms)
+535/2221: Method: can_read
+536/2221: 536/2221: can_read (DONE:10ms)
+536/2221: Method: get_input_handle
+537/2221: 537/2221: get_input_handle (DONE:7ms)
+537/2221: Method: get_dom_node_list_index
+538/2221: 538/2221: get_dom_node_list_index (DONE:70ms)
+538/2221: Method: get_dom_node_next
+539/2221: 539/2221: get_dom_node_next (DONE:216ms)
+539/2221: Method: get_blacklist_flags
+540/2221: 540/2221: get_blacklist_flags (DONE:12ms)
+540/2221: Method: del_blacklist_entry
+541/2221: 541/2221: del_blacklist_entry (DONE:32ms)
+541/2221: Method: init_socket
+542/2221: 542/2221: init_socket (DONE:14ms)
+542/2221: Method: init_mime_handler
+543/2221: 543/2221: init_mime_handler (DONE:44ms)
+543/2221: Method: http_negotiate_get
+544/2221: 544/2221: http_negotiate_get (DONE:48ms)
+544/2221: Method: alloc_read_buffer
+545/2221: 545/2221: alloc_read_buffer (DONE:27ms)
+545/2221: Method: add_host_connection
+546/2221: 546/2221: add_host_connection (DONE:47ms)
+546/2221: Method: add_selector_properties
+547/2221: 547/2221: add_selector_properties (DONE:43ms)
+547/2221: Method: base64_encode_bin
+548/2221: 548/2221: base64_encode_bin (DONE:635ms)
+548/2221: Method: base64_encode
+549/2221: 549/2221: base64_encode (DONE:43ms)
+549/2221: Method: open_encoded
+550/2221: 550/2221: open_encoded (DONE:28ms)
+550/2221: Method: base64_decode_bin
+551/2221: 551/2221: base64_decode_bin (DONE:470ms)
+551/2221: Method: write_to_socket
+552/2221: 552/2221: write_to_socket (DONE:250ms)
+552/2221: Method: request_from_socket
+553/2221: 553/2221: request_from_socket (DONE:14ms)
+553/2221: Method: send_cmd
+554/2221: 554/2221: send_cmd (DONE:24ms)
+554/2221: Method: mem_align_alloc__
+555/2221: 555/2221: mem_align_alloc__ (DONE:41ms)
+555/2221: Method: realloc_line2
+556/2221: 556/2221: realloc_line2 (DONE:103ms)
+556/2221: Method: expand_lines
+557/2221: 557/2221: expand_lines (DONE:82ms)
+557/2221: Method: draw_frame_hchars
+558/2221: 558/2221: draw_frame_hchars (DONE:494ms)
+558/2221: Method: draw_frame_vchars
+559/2221: 559/2221: draw_frame_vchars (DONE:448ms)
+559/2221: Method: add_bytes_to_string__3
+560/2221: 560/2221: add_bytes_to_string__3 (DONE:114ms)
+560/2221: Method: add_bytes_to_string__5
+561/2221: 561/2221: add_bytes_to_string__5 (DONE:108ms)
+561/2221: Method: add_bytes_to_string__6
+562/2221: 562/2221: add_bytes_to_string__6 (DONE:111ms)
+562/2221: Method: add_bytes_to_string__8
+563/2221: 563/2221: add_bytes_to_string__8 (DONE:111ms)
+563/2221: Method: add_long_to_string
+564/2221: 564/2221: add_long_to_string (DONE:283ms)
+564/2221: Method: add_html_to_string
+565/2221: 565/2221: add_html_to_string (DONE:221ms)
+565/2221: Method: add_xnum_to_string
+566/2221: 566/2221: add_xnum_to_string (DONE:787ms)
+566/2221: Method: print_xml_entities
+567/2221: 567/2221: print_xml_entities (DONE:34ms)
+567/2221: Method: alloc_leafset
+568/2221: 568/2221: alloc_leafset (DONE:77ms)
+568/2221: Method: add_one_to_ml
+569/2221: 569/2221: add_one_to_ml (DONE:33ms)
+569/2221: Method: read_config_file
+570/2221: 570/2221: read_config_file (DONE:494ms)
+570/2221: Method: get_clipboard_text
+571/2221: 571/2221: get_clipboard_text (DONE:12ms)
+571/2221: Method: get_mailcap_field_text
+572/2221: 572/2221: get_mailcap_field_text (DONE:58ms)
+572/2221: Method: copy_option
+573/2221: 573/2221: copy_option (DONE:117ms)
+573/2221: Method: truncate_label
+574/2221: 574/2221: truncate_label (DONE:94ms)
+574/2221: Method: get_tempdir_filename
+575/2221: 575/2221: get_tempdir_filename (DONE:45ms)
+575/2221: Method: refresh_dialog
+576/2221: 576/2221: refresh_dialog (DONE:30ms)
+576/2221: Method: new_formhist_item
+577/2221: 577/2221: new_formhist_item (DONE:57ms)
+577/2221: Method: register_event
+578/2221: 578/2221: register_event (DONE:219ms)
+578/2221: Method: subst_user_agent
+579/2221: 579/2221: subst_user_agent (DONE:778ms)
+579/2221: Method: format_command
+580/2221: 580/2221: format_command (DONE:685ms)
+580/2221: Method: get_range_string
+581/2221: 581/2221: get_range_string (DONE:32ms)
+581/2221: Method: wrap_option_desc
+582/2221: 582/2221: wrap_option_desc (DONE:484ms)
+582/2221: Method: get_content_filename
+583/2221: 583/2221: get_content_filename (DONE:127ms)
+583/2221: Method: realloc_line
+584/2221: 584/2221: realloc_line (DONE:101ms)
+584/2221: Method: realloc_line3
+585/2221: 585/2221: realloc_line3 (DONE:65ms)
+585/2221: Method: del_chars
+586/2221: 586/2221: del_chars (DONE:74ms)
+586/2221: Method: add_cfg_header_to_string
+587/2221: 587/2221: add_cfg_header_to_string (DONE:40ms)
+587/2221: Method: add_empty_window
+588/2221: 588/2221: add_empty_window (DONE:24ms)
+588/2221: Method: input_field_line
+589/2221: 589/2221: input_field_line (DONE:124ms)
+589/2221: Method: subst_file
+590/2221: 590/2221: subst_file (DONE:406ms)
+590/2221: Method: get_keystroke
+591/2221: 591/2221: get_keystroke (DONE:27ms)
+591/2221: Method: add_bytes_to_string__9
+592/2221: 592/2221: add_bytes_to_string__9 (DONE:71ms)
+592/2221: Method: exe
+593/2221: 593/2221: exe (DONE:8ms)
+593/2221: Method: get_current_url
+594/2221: 594/2221: get_current_url (DONE:86ms)
+594/2221: Method: get_current_title
+595/2221: 595/2221: get_current_title (DONE:49ms)
+595/2221: Method: deflate_decode_buffer
+596/2221: 596/2221: deflate_decode_buffer (DONE:98ms)
+596/2221: Method: uninstall_alarm
+597/2221: 597/2221: uninstall_alarm (DONE:10ms)
+597/2221: Method: safe_mkstemp
+598/2221: 598/2221: safe_mkstemp (DONE:17ms)
+598/2221: Method: encode_textarea
+599/2221: 599/2221: encode_textarea (DONE:45ms)
+599/2221: Method: textarea_op_eob
+600/2221: 600/2221: textarea_op_eob (DONE:9ms)
+600/2221: Method: textarea_op_bob
+601/2221: 601/2221: textarea_op_bob (DONE:8ms)
+601/2221: Method: unhandle_terminal_resize
+602/2221: 602/2221: unhandle_terminal_resize (DONE:10ms)
+602/2221: Method: handle_terminal_resize
+603/2221: 603/2221: handle_terminal_resize (DONE:12ms)
+603/2221: Method: check_for_select_race
+604/2221: 604/2221: check_for_select_race (DONE:30ms)
+604/2221: Method: unhandle_basic_signals
+605/2221: 605/2221: unhandle_basic_signals (DONE:36ms)
+605/2221: Method: get_terminal_size
+606/2221: 606/2221: get_terminal_size (DONE:43ms)
+606/2221: Method: lowered_string
+607/2221: 607/2221: lowered_string (DONE:53ms)
+607/2221: Method: find_uri_protocol
+608/2221: 608/2221: find_uri_protocol (DONE:257ms)
+608/2221: Method: skip_option_value
+609/2221: 609/2221: skip_option_value (DONE:69ms)
+609/2221: Method: next_link_in_view
+610/2221: 610/2221: next_link_in_view (DONE:10ms)
+610/2221: Method: find_link
+611/2221: 611/2221: find_link (DONE:502ms)
+611/2221: Method: find_link_page_down
+612/2221: 612/2221: find_link_page_down (DONE:9ms)
+612/2221: Method: find_link_page_up
+613/2221: 613/2221: find_link_page_up (DONE:8ms)
+613/2221: Method: get_search_data
+614/2221: 614/2221: get_search_data (DONE:488ms)
+614/2221: Method: done_interlink
+615/2221: 615/2221: done_interlink (DONE:47ms)
+615/2221: Method: add_global_history_item
+616/2221: 616/2221: add_global_history_item (DONE:289ms)
+616/2221: Method: sort_links
+617/2221: 617/2221: sort_links (DONE:637ms)
+617/2221: Method: send_done_sequence
+618/2221: 618/2221: send_done_sequence (DONE:22ms)
+618/2221: Method: send_init_sequence
+619/2221: 619/2221: send_init_sequence (DONE:18ms)
+619/2221: Method: free_auth
+620/2221: 620/2221: free_auth (DONE:65ms)
+620/2221: Method: close_pipe_and_read
+621/2221: 621/2221: close_pipe_and_read (DONE:57ms)
+621/2221: Method: align_line
+622/2221: 622/2221: align_line (DONE:10303ms)
+622/2221: Method: add_knum_to_string
+623/2221: 623/2221: add_knum_to_string (DONE:365ms)
+623/2221: Method: get_image_filename_from_src
+624/2221: 624/2221: get_image_filename_from_src (DONE:105ms)
+624/2221: Method: check_entries
+625/2221: 625/2221: check_entries (DONE:53ms)
+625/2221: Method: __do_global_dtors_aux
+626/2221: 626/2221: __do_global_dtors_aux (DONE:32ms)
+626/2221: Method: frame_dummy
+627/2221: 627/2221: frame_dummy (DONE:12ms)
+627/2221: Method: clear_hotkeys_cache
+628/2221: 628/2221: clear_hotkeys_cache (DONE:19ms)
+628/2221: Method: init_led_panel
+629/2221: 629/2221: init_led_panel (DONE:33ms)
+629/2221: Method: add_dlg_listbox
+630/2221: 630/2221: add_dlg_listbox (DONE:9ms)
+630/2221: Method: deselect_mainmenu
+631/2221: 631/2221: deselect_mainmenu (DONE:15ms)
+631/2221: Method: bookmarks_set_dirty
+632/2221: 632/2221: bookmarks_set_dirty (DONE:3ms)
+632/2221: Method: bookmarks_are_dirty
+633/2221: 633/2221: bookmarks_are_dirty (DONE:8ms)
+633/2221: Method: get_cache_size
+634/2221: 634/2221: get_cache_size (DONE:4ms)
+634/2221: Method: get_cache_entry_count
+635/2221: 635/2221: get_cache_entry_count (DONE:11ms)
+635/2221: Method: get_cache_entry_used_count
+636/2221: 636/2221: get_cache_entry_used_count (DONE:16ms)
+636/2221: Method: cache_entry_is_valid
+637/2221: 637/2221: cache_entry_is_valid (DONE:22ms)
+637/2221: Method: keybinding_exists
+638/2221: 638/2221: keybinding_exists (DONE:42ms)
+638/2221: Method: get_format_cache_size
+639/2221: 639/2221: get_format_cache_size (DONE:11ms)
+639/2221: Method: get_format_cache_used_count
+640/2221: 640/2221: get_format_cache_used_count (DONE:16ms)
+640/2221: Method: get_format_cache_refresh_count
+641/2221: 641/2221: get_format_cache_refresh_count (DONE:21ms)
+641/2221: Method: skip_dom_scanner_tokens
+642/2221: 642/2221: skip_dom_scanner_tokens (DONE:261ms)
+642/2221: Method: parse_dom_select_nth_arg
+643/2221: 643/2221: parse_dom_select_nth_arg (DONE:1134ms)
+643/2221: Method: get_sgml_info
+644/2221: 644/2221: get_sgml_info (DONE:10ms)
+644/2221: Method: read_encoded
+645/2221: 645/2221: read_encoded (DONE:10ms)
+645/2221: Method: decompress_data
+646/2221: 646/2221: decompress_data (DONE:652ms)
+646/2221: Method: decode_encoded_buffer
+647/2221: 647/2221: decode_encoded_buffer (DONE:18ms)
+647/2221: Method: listext_encoded
+648/2221: 648/2221: listext_encoded (DONE:5ms)
+648/2221: Method: get_encoding_name
+649/2221: 649/2221: get_encoding_name (DONE:4ms)
+649/2221: Method: get_file_handles_count
+650/2221: 650/2221: get_file_handles_count (DONE:29ms)
+650/2221: Method: get_timers_count
+651/2221: 651/2221: get_timers_count (DONE:11ms)
+651/2221: Method: get_next_timer_time
+652/2221: 652/2221: get_next_timer_time (DONE:11ms)
+652/2221: Method: get_connections_count
+653/2221: 653/2221: get_connections_count (DONE:13ms)
+653/2221: Method: get_keepalive_connections_count
+654/2221: 654/2221: get_keepalive_connections_count (DONE:11ms)
+654/2221: Method: get_connections_connecting_count
+655/2221: 655/2221: get_connections_connecting_count (DONE:20ms)
+655/2221: Method: get_connections_transfering_count
+656/2221: 656/2221: get_connections_transfering_count (DONE:21ms)
+656/2221: Method: resize_window
+657/2221: 657/2221: resize_window (DONE:3ms)
+657/2221: Method: terminate_osdep
+658/2221: 658/2221: terminate_osdep (DONE:2ms)
+658/2221: Method: block_stdin
+659/2221: 659/2221: block_stdin (DONE:2ms)
+659/2221: Method: unblock_stdin
+660/2221: 660/2221: unblock_stdin (DONE:2ms)
+660/2221: Method: elinks_cfmakeraw
+661/2221: 661/2221: elinks_cfmakeraw (DONE:9ms)
+661/2221: Method: set_highpri
+662/2221: 662/2221: set_highpri (DONE:2ms)
+662/2221: Method: clear_signal_mask_and_handlers
+663/2221: 663/2221: clear_signal_mask_and_handlers (DONE:9ms)
+663/2221: Method: get_invalid_auth_entry
+664/2221: 664/2221: get_invalid_auth_entry (DONE:15ms)
+664/2221: Method: create_history
+665/2221: 665/2221: create_history (DONE:5ms)
+665/2221: Method: del_from_history
+666/2221: 666/2221: del_from_history (DONE:26ms)
+666/2221: Method: get_current_link_in_view
+667/2221: 667/2221: get_current_link_in_view (DONE:31ms)
+667/2221: Method: decode_terminal_mouse_escape_sequence
+668/2221: 668/2221: decode_terminal_mouse_escape_sequence (DONE:301ms)
+668/2221: Method: get_tab_number
+669/2221: 669/2221: get_tab_number (DONE:43ms)
+669/2221: Method: get_tab_number_by_xpos
+670/2221: 670/2221: get_tab_number_by_xpos (DONE:42ms)
+670/2221: Method: month2num
+671/2221: 671/2221: month2num (DONE:132ms)
+671/2221: Method: parse_month
+672/2221: 672/2221: parse_month (DONE:44ms)
+672/2221: Method: parse_date
+673/2221: 673/2221: parse_date (DONE:1001ms)
+673/2221: Method: timeval_is_positive
+674/2221: 674/2221: timeval_is_positive (DONE:18ms)
+674/2221: Method: timeval_limit_to_zero_or_one
+675/2221: 675/2221: timeval_limit_to_zero_or_one (DONE:9ms)
+675/2221: Method: __udivdi3
+676/2221: 676/2221: __udivdi3 (DONE:304ms)
+676/2221: Method: __i686.get_pc_thunk.bx
+677/2221: 677/2221: __i686.get_pc_thunk.bx (DONE:2ms)
+677/2221: Method: __do_global_ctors_aux
+678/2221: 678/2221: __do_global_ctors_aux (DONE:41ms)
+678/2221: Method: skip_css_block
+679/2221: 679/2221: skip_css_block (DONE:118ms)
+679/2221: Method: read_key
+680/2221: 680/2221: read_key (DONE:48ms)
+680/2221: Method: parse_keystroke
+681/2221: 681/2221: parse_keystroke (DONE:165ms)
+681/2221: Method: compare_opt
+682/2221: 682/2221: compare_opt (DONE:108ms)
+682/2221: Method: select_dlg_item
+683/2221: 683/2221: select_dlg_item (DONE:18ms)
+683/2221: Method: get_cache_entry_loading_count
+684/2221: 684/2221: get_cache_entry_loading_count (DONE:26ms)
+684/2221: Method: timeval_div_off_t
+685/2221: 685/2221: timeval_div_off_t (DONE:75ms)
+685/2221: Method: →abort
+686/2221: 686/2221: →abort (DONE:4ms)
+686/2221: Method: →gnutls_mac_get
+687/2221: 687/2221: →gnutls_mac_get (DONE:4ms)
+687/2221: Method: →gnutls_global_init
+688/2221: 688/2221: →gnutls_global_init (DONE:5ms)
+688/2221: Method: →popen
+689/2221: 689/2221: →popen (DONE:5ms)
+689/2221: Method: →srand
+690/2221: 690/2221: →srand (DONE:7ms)
+690/2221: Method: →rb_define_global_function
+691/2221: 691/2221: →rb_define_global_function (DONE:5ms)
+691/2221: Method: →getpid
+692/2221: 692/2221: →getpid (DONE:5ms)
+692/2221: Method: →gss_release_name
+693/2221: 693/2221: →gss_release_name (DONE:5ms)
+693/2221: Method: →sysconf
+694/2221: 694/2221: →sysconf (DONE:5ms)
+694/2221: Method: round_size
+695/2221: 695/2221: round_size (DONE:29ms)
+695/2221: Method: mem_mmap_free
+696/2221: 696/2221: mem_mmap_free (DONE:24ms)
+696/2221: Method: delete_entry_content
+697/2221: 697/2221: delete_entry_content (DONE:117ms)
+697/2221: Method: delete_cache_entry
+698/2221: 698/2221: delete_cache_entry (DONE:171ms)
+698/2221: Method: mem_mmap_alloc
+699/2221: 699/2221: mem_mmap_alloc (DONE:24ms)
+699/2221: Method: frag_alloc
+700/2221: 700/2221: frag_alloc (DONE:18ms)
+700/2221: Method: get_cache_fragment
+701/2221: 701/2221: get_cache_fragment (DONE:289ms)
+701/2221: Method: →memcmp
+702/2221: 702/2221: →memcmp (DONE:6ms)
+702/2221: Method: →gnutls_certificate_type_get_name
+703/2221: 703/2221: →gnutls_certificate_type_get_name (DONE:5ms)
+703/2221: Method: →gnutls_record_recv
+704/2221: 704/2221: →gnutls_record_recv (DONE:4ms)
+704/2221: Method: →XML_ParserCreate
+705/2221: 705/2221: →XML_ParserCreate (DONE:4ms)
+705/2221: Method: →gss_release_buffer
+706/2221: 706/2221: →gss_release_buffer (DONE:4ms)
+706/2221: Method: →__isoc99_fscanf
+707/2221: 707/2221: →__isoc99_fscanf (DONE:4ms)
+707/2221: Method: →gnutls_record_send
+708/2221: 708/2221: →gnutls_record_send (DONE:4ms)
+708/2221: Method: →gnutls_protocol_get_name
+709/2221: 709/2221: →gnutls_protocol_get_name (DONE:4ms)
+709/2221: Method: →signal
+710/2221: 710/2221: →signal (DONE:5ms)
+710/2221: Method: →__gmon_start__
+711/2221: 711/2221: →__gmon_start__ (DONE:5ms)
+711/2221: Method: →gnutls_certificate_set_x509_trust_file
+712/2221: 712/2221: →gnutls_certificate_set_x509_trust_file (DONE:4ms)
+712/2221: Method: →iconv_open
+713/2221: 713/2221: →iconv_open (DONE:5ms)
+713/2221: Method: →gnutls_compression_get
+714/2221: 714/2221: →gnutls_compression_get (DONE:4ms)
+714/2221: Method: →__argz_stringify
+715/2221: 715/2221: →__argz_stringify (DONE:6ms)
+715/2221: Method: →strtod
+716/2221: 716/2221: →strtod (DONE:6ms)
+716/2221: Method: →gnutls_certificate_allocate_credentials
+717/2221: 717/2221: →gnutls_certificate_allocate_credentials (DONE:5ms)
+717/2221: Method: →gnutls_transport_set_ptr
+718/2221: 718/2221: →gnutls_transport_set_ptr (DONE:4ms)
+718/2221: Method: →ruby_init
+719/2221: 719/2221: →ruby_init (DONE:5ms)
+719/2221: Method: →mremap
+720/2221: 720/2221: →mremap (DONE:5ms)
+720/2221: Method: mem_mmap_realloc
+721/2221: 721/2221: mem_mmap_realloc (DONE:59ms)
+721/2221: Method: truncate_entry
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+722/2221: 722/2221: truncate_entry (DONE:905ms)
+722/2221: Method: normalize_cache_entry
+723/2221: 723/2221: normalize_cache_entry (DONE:27ms)
+723/2221: Method: remove_overlaps
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+724/2221: 724/2221: remove_overlaps (DONE:1421ms)
+724/2221: Method: add_fragment
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+725/2221: 725/2221: add_fragment (DONE:1575ms)
+725/2221: Method: →gnutls_certificate_set_verify_flags
+726/2221: 726/2221: →gnutls_certificate_set_verify_flags (DONE:5ms)
+726/2221: Method: →lseek64
+727/2221: 727/2221: →lseek64 (DONE:6ms)
+727/2221: Method: →XML_GetErrorCode
+728/2221: 728/2221: →XML_GetErrorCode (DONE:5ms)
+728/2221: Method: →rename
+729/2221: 729/2221: →rename (DONE:6ms)
+729/2221: Method: →ruby_init_loadpath
+730/2221: 730/2221: →ruby_init_loadpath (DONE:5ms)
+730/2221: Method: →__libc_start_main
+731/2221: 731/2221: →__libc_start_main (DONE:5ms)
+731/2221: Method: →execl
+732/2221: 732/2221: →execl (DONE:5ms)
+732/2221: Method: →uname
+733/2221: 733/2221: →uname (DONE:5ms)
+733/2221: Method: →tcgetattr
+734/2221: 734/2221: →tcgetattr (DONE:5ms)
+734/2221: Method: setraw
+735/2221: 735/2221: setraw (DONE:233ms)
+735/2221: Method: →idna_to_ascii_lz
+736/2221: 736/2221: →idna_to_ascii_lz (DONE:5ms)
+736/2221: Method: add_uri_to_string
+737/2221: 737/2221: add_uri_to_string (DONE:9438ms)
+737/2221: Method: get_uri_string
+738/2221: 738/2221: get_uri_string (DONE:28ms)
+738/2221: Method: add_url_to_http_string
+739/2221: 739/2221: add_url_to_http_string (DONE:214ms)
+739/2221: Method: add_mime_filename_to_string
+740/2221: 740/2221: add_mime_filename_to_string (DONE:52ms)
+740/2221: Method: init_directory_listing
+741/2221: 741/2221: init_directory_listing (DONE:1815ms)
+741/2221: Method: send_cookies
+742/2221: 742/2221: send_cookies (DONE:291ms)
+742/2221: Method: →XML_GetCurrentColumnNumber
+743/2221: 743/2221: →XML_GetCurrentColumnNumber (DONE:5ms)
+743/2221: Method: →gnutls_cipher_set_priority
+744/2221: 744/2221: →gnutls_cipher_set_priority (DONE:5ms)
+744/2221: Method: →__strcat_chk
+745/2221: 745/2221: →__strcat_chk (DONE:5ms)
+745/2221: Method: →gnutls_anon_free_client_credentials
+746/2221: 746/2221: →gnutls_anon_free_client_credentials (DONE:4ms)
+746/2221: Method: →gnutls_cipher_get_name
+747/2221: 747/2221: →gnutls_cipher_get_name (DONE:4ms)
+747/2221: Method: →gnutls_init
+748/2221: 748/2221: →gnutls_init (DONE:5ms)
+748/2221: Method: →gettimeofday
+749/2221: 749/2221: →gettimeofday (DONE:5ms)
+749/2221: Method: timeval_now
+750/2221: 750/2221: timeval_now (DONE:16ms)
+750/2221: Method: done_dns_lookup
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+751/2221: 751/2221: done_dns_lookup (DONE:384ms)
+751/2221: Method: check_timers
+752/2221: 752/2221: check_timers (DONE:69ms)
+752/2221: Method: update_progress
+753/2221: 753/2221: update_progress (DONE:397ms)
+753/2221: Method: →rb_define_singleton_method
+754/2221: 754/2221: →rb_define_singleton_method (DONE:5ms)
+754/2221: Method: →backtrace_symbols
+755/2221: 755/2221: →backtrace_symbols (DONE:6ms)
+755/2221: Method: →setpgid
+756/2221: 756/2221: →setpgid (DONE:5ms)
+756/2221: Method: →opendir
+757/2221: 757/2221: →opendir (DONE:5ms)
+757/2221: Method: →rb_define_module
+758/2221: 758/2221: →rb_define_module (DONE:4ms)
+758/2221: Method: →getaddrinfo
+759/2221: 759/2221: →getaddrinfo (DONE:6ms)
+759/2221: Method: do_real_lookup
+760/2221: 760/2221: do_real_lookup (DONE:206ms)
+760/2221: Method: →ftello64
+761/2221: 761/2221: →ftello64 (DONE:5ms)
+761/2221: Method: →fsync
+762/2221: 762/2221: →fsync (DONE:5ms)
+762/2221: Method: →tfind
+763/2221: 763/2221: →tfind (DONE:5ms)
+763/2221: Method: →gnutls_kx_set_priority
+764/2221: 764/2221: →gnutls_kx_set_priority (DONE:4ms)
+764/2221: Method: →utime
+765/2221: 765/2221: →utime (DONE:5ms)
+765/2221: Method: →gnutls_protocol_get_version
+766/2221: 766/2221: →gnutls_protocol_get_version (DONE:5ms)
+766/2221: Method: →rb_load_protect
+767/2221: 767/2221: →rb_load_protect (DONE:4ms)
+767/2221: Method: →rb_class_path
+768/2221: 768/2221: →rb_class_path (DONE:4ms)
+768/2221: Method: →iconv
+769/2221: 769/2221: →iconv (DONE:7ms)
+769/2221: Method: →getpwuid
+770/2221: 770/2221: →getpwuid (DONE:5ms)
+770/2221: Method: →waitpid
+771/2221: 771/2221: →waitpid (DONE:6ms)
+771/2221: Method: →feof
+772/2221: 772/2221: →feof (DONE:5ms)
+772/2221: Method: →getegid
+773/2221: 773/2221: →getegid (DONE:5ms)
+773/2221: Method: →XML_GetCurrentLineNumber
+774/2221: 774/2221: →XML_GetCurrentLineNumber (DONE:5ms)
+774/2221: Method: →rb_inspect
+775/2221: 775/2221: →rb_inspect (DONE:5ms)
+775/2221: Method: →gnutls_mac_get_name
+776/2221: 776/2221: →gnutls_mac_get_name (DONE:5ms)
+776/2221: Method: →ruby_script
+777/2221: 777/2221: →ruby_script (DONE:4ms)
+777/2221: Method: →getuid
+778/2221: 778/2221: →getuid (DONE:4ms)
+778/2221: Method: →raise
+779/2221: 779/2221: →raise (DONE:5ms)
+779/2221: Method: →Gpm_GetEvent
+780/2221: 780/2221: →Gpm_GetEvent (DONE:5ms)
+780/2221: Method: →gnutls_compression_get_name
+781/2221: 781/2221: →gnutls_compression_get_name (DONE:5ms)
+781/2221: Method: →closedir
+782/2221: 782/2221: →closedir (DONE:5ms)
+782/2221: Method: →gnutls_certificate_free_credentials
+783/2221: 783/2221: →gnutls_certificate_free_credentials (DONE:4ms)
+783/2221: Method: →XML_ErrorString
+784/2221: 784/2221: →XML_ErrorString (DONE:4ms)
+784/2221: Method: →Gpm_Close
+785/2221: 785/2221: →Gpm_Close (DONE:4ms)
+785/2221: Method: →iconv_close
+786/2221: 786/2221: →iconv_close (DONE:5ms)
+786/2221: Method: →gss_delete_sec_context
+787/2221: 787/2221: →gss_delete_sec_context (DONE:5ms)
+787/2221: Method: http_negotiate_cleanup
+788/2221: 788/2221: http_negotiate_cleanup (DONE:54ms)
+788/2221: Method: →freeifaddrs
+789/2221: 789/2221: →freeifaddrs (DONE:5ms)
+789/2221: Method: →getgrgid
+790/2221: 790/2221: →getgrgid (DONE:5ms)
+790/2221: Method: get_directory_entries
+791/2221: 791/2221: get_directory_entries (DONE:3662ms)
+791/2221: Method: →readlink
+792/2221: 792/2221: →readlink (DONE:6ms)
+792/2221: Method: →backtrace
+793/2221: 793/2221: →backtrace (DONE:6ms)
+793/2221: Method: →XML_ParserFree
+794/2221: 794/2221: →XML_ParserFree (DONE:5ms)
+794/2221: Method: →gnutls_certificate_type_get
+795/2221: 795/2221: →gnutls_certificate_type_get (DONE:4ms)
+795/2221: Method: →vasprintf
+796/2221: 796/2221: →vasprintf (DONE:5ms)
+796/2221: Method: →XML_SetElementHandler
+797/2221: 797/2221: →XML_SetElementHandler (DONE:4ms)
+797/2221: Method: →gnutls_priority_set_direct
+798/2221: 798/2221: →gnutls_priority_set_direct (DONE:4ms)
+798/2221: Method: →gnutls_kx_get
+799/2221: 799/2221: →gnutls_kx_get (DONE:5ms)
+799/2221: Method: →gnutls_kx_get_name
+800/2221: 800/2221: →gnutls_kx_get_name (DONE:5ms)
+800/2221: Method: →gss_import_name
+801/2221: 801/2221: →gss_import_name (DONE:5ms)
+801/2221: Method: →XML_Parse
+802/2221: 802/2221: →XML_Parse (DONE:4ms)
+802/2221: Method: →setsockopt
+803/2221: 803/2221: →setsockopt (DONE:6ms)
+803/2221: Method: set_ip_tos_throughput
+804/2221: 804/2221: set_ip_tos_throughput (DONE:13ms)
+804/2221: Method: get_pasv_socket
+805/2221: 805/2221: get_pasv_socket (DONE:352ms)
+805/2221: Method: →rb_intern
+806/2221: 806/2221: →rb_intern (DONE:5ms)
+806/2221: Method: →getrlimit64
+807/2221: 807/2221: →getrlimit64 (DONE:5ms)
+807/2221: Method: →rand
+808/2221: 808/2221: →rand (DONE:5ms)
+808/2221: Method: →gmtime
+809/2221: 809/2221: →gmtime (DONE:5ms)
+809/2221: Method: →rb_funcall3
+810/2221: 810/2221: →rb_funcall3 (DONE:6ms)
+810/2221: Method: →Gpm_Open
+811/2221: 811/2221: →Gpm_Open (DONE:5ms)
+811/2221: Method: init_mouse
+812/2221: 812/2221: init_mouse (DONE:15ms)
+812/2221: Method: →getsockopt
+813/2221: 813/2221: →getsockopt (DONE:8ms)
+813/2221: Method: →gnutls_global_deinit
+814/2221: 814/2221: →gnutls_global_deinit (DONE:5ms)
+814/2221: Method: →kill
+815/2221: 815/2221: →kill (DONE:5ms)
+815/2221: Method: →tempnam
+816/2221: 816/2221: →tempnam (DONE:5ms)
+816/2221: Method: →getpeername
+817/2221: 817/2221: →getpeername (DONE:6ms)
+817/2221: Method: get_ftp_response
+818/2221: 818/2221: get_ftp_response (DONE:892ms)
+818/2221: Method: →ferror
+819/2221: 819/2221: →ferror (DONE:6ms)
+819/2221: Method: →getpwnam
+820/2221: 820/2221: →getpwnam (DONE:6ms)
+820/2221: Method: expand_tilde
+821/2221: 821/2221: expand_tilde (DONE:104ms)
+821/2221: Method: get_next_path_filename
+822/2221: 822/2221: get_next_path_filename (DONE:100ms)
+822/2221: Method: →gss_init_sec_context
+823/2221: 823/2221: →gss_init_sec_context (DONE:5ms)
+823/2221: Method: http_negotiate_create_context
+824/2221: 824/2221: http_negotiate_create_context (DONE:35ms)
+824/2221: Method: →XML_SetCharacterDataHandler
+825/2221: 825/2221: →XML_SetCharacterDataHandler (DONE:5ms)
+825/2221: Method: →gnutls_cipher_get
+826/2221: 826/2221: →gnutls_cipher_get (DONE:5ms)
+826/2221: Method: →herror
+827/2221: 827/2221: →herror (DONE:6ms)
+827/2221: Method: →exit
+828/2221: 828/2221: →exit (DONE:5ms)
+828/2221: Method: →gnutls_bye
+829/2221: 829/2221: →gnutls_bye (DONE:5ms)
+829/2221: Method: →backtrace_symbols_fd
+830/2221: 830/2221: →backtrace_symbols_fd (DONE:6ms)
+830/2221: Method: →__vasprintf_chk
+831/2221: 831/2221: →__vasprintf_chk (DONE:5ms)
+831/2221: Method: →getgid
+832/2221: 832/2221: →getgid (DONE:5ms)
+832/2221: Method: →tsearch
+833/2221: 833/2221: →tsearch (DONE:6ms)
+833/2221: Method: →geteuid
+834/2221: 834/2221: →geteuid (DONE:5ms)
+834/2221: Method: parse_cookie_str
+835/2221: 835/2221: parse_cookie_str (DONE:240ms)
+835/2221: Method: str2form_type
+836/2221: 836/2221: str2form_type (DONE:34ms)
+836/2221: Method: is_twterm
+837/2221: 837/2221: is_twterm (DONE:22ms)
+837/2221: Method: get_shell
+838/2221: 838/2221: get_shell (DONE:16ms)
+838/2221: Method: strtolx
+839/2221: 839/2221: strtolx (DONE:79ms)
+839/2221: Method: _nl_normalize_codeset
+840/2221: 840/2221: _nl_normalize_codeset (DONE:169ms)
+840/2221: Method: textdomain__
+841/2221: 841/2221: textdomain__ (DONE:77ms)
+841/2221: Method: find_tag
+842/2221: 842/2221: find_tag (DONE:42ms)
+842/2221: Method: get_entity_string
+843/2221: 843/2221: get_entity_string (DONE:1107ms)
+843/2221: Method: convert_string_elinks
+844/2221: 844/2221: convert_string_elinks (DONE:1395ms)
+844/2221: Method: get_attr_value
+845/2221: 845/2221: get_attr_value (DONE:2681ms)
+845/2221: Method: render_dom_text
+846/2221: 846/2221: render_dom_text (DONE:1653ms)
+846/2221: Method: get_num
+847/2221: 847/2221: get_num (DONE:54ms)
+847/2221: Method: html_focusable
+848/2221: 848/2221: html_focusable (DONE:309ms)
+848/2221: Method: html_linebrk
+849/2221: 849/2221: html_linebrk (DONE:76ms)
+849/2221: Method: html_h
+850/2221: 850/2221: html_h (DONE:96ms)
+850/2221: Method: get_align
+851/2221: 851/2221: get_align (DONE:51ms)
+851/2221: Method: get_color
+852/2221: 852/2221: get_color (DONE:39ms)
+852/2221: Method: init_form_control
+853/2221: 853/2221: init_form_control (DONE:50ms)
+853/2221: Method: get_valign
+854/2221: 854/2221: get_valign (DONE:45ms)
+854/2221: Method: get_target
+855/2221: 855/2221: get_target (DONE:35ms)
+855/2221: Method: get_bgcolor
+856/2221: 856/2221: get_bgcolor (DONE:26ms)
+856/2221: Method: get_width
+857/2221: 857/2221: get_width (DONE:877ms)
+857/2221: Method: scan_http_equiv
+858/2221: 858/2221: scan_http_equiv (DONE:1164ms)
+858/2221: Method: put_image_label
+859/2221: 859/2221: put_image_label (DONE:24ms)
+859/2221: Method: get_column_width
+860/2221: 860/2221: get_column_width (DONE:83ms)
+860/2221: Method: render_dom_flush
+861/2221: 861/2221: render_dom_flush (DONE:128ms)
+861/2221: Method: digest_md5
+862/2221: 862/2221: digest_md5 (DONE:79ms)
+862/2221: Method: get_http_auth_digest_response
+863/2221: 863/2221: get_http_auth_digest_response (DONE:5022ms)
+863/2221: Method: distribute_rows_or_cols
+864/2221: 864/2221: distribute_rows_or_cols (DONE:272ms)
+864/2221: Method: parse_frame_widths
+865/2221: 865/2221: parse_frame_widths (DONE:1306ms)
+865/2221: Method: get_dom_node_type_name
+866/2221: 866/2221: get_dom_node_type_name (DONE:37ms)
+866/2221: Method: connection_state5
+867/2221: 867/2221: connection_state5 (DONE:34ms)
+867/2221: Method: get_protocol_handler
+868/2221: 868/2221: get_protocol_handler (DONE:47ms)
+868/2221: Method: get_protocol_need_ssl
+869/2221: 869/2221: get_protocol_need_ssl (DONE:54ms)
+869/2221: Method: get_protocol_keep_double_slashes
+870/2221: 870/2221: get_protocol_keep_double_slashes (DONE:55ms)
+870/2221: Method: assert_terminal_ptr_not_dangling
+871/2221: 871/2221: assert_terminal_ptr_not_dangling (DONE:32ms)
+871/2221: Method: add_ms_to_ms
+872/2221: 872/2221: add_ms_to_ms (DONE:38ms)
+872/2221: Method: link_in_view_y
+873/2221: 873/2221: link_in_view_y (DONE:92ms)
+873/2221: Method: get_last_link
+874/2221: 874/2221: get_last_link (DONE:93ms)
+874/2221: Method: get_first_link
+875/2221: 875/2221: get_first_link (DONE:103ms)
+875/2221: Method: css_parse_value
+876/2221: 876/2221: css_parse_value (DONE:106ms)
+876/2221: Method: css_parse_properties
+877/2221: 877/2221: css_parse_properties (DONE:391ms)
+877/2221: Method: check_html_form_hierarchy
+878/2221: 878/2221: check_html_form_hierarchy (DONE:469ms)
+878/2221: Method: get_dom_node_map_entry
+879/2221: 879/2221: get_dom_node_map_entry (DONE:167ms)
+879/2221: Method: toggle_option
+880/2221: 880/2221: toggle_option (DONE:62ms)
+880/2221: Method: draw_line
+881/2221: 881/2221: draw_line (DONE:494ms)
+881/2221: Method: get_sgml_parser_line_number
+882/2221: 882/2221: get_sgml_parser_line_number (DONE:148ms)
+882/2221: Method: call_sgml_error_function
+883/2221: 883/2221: call_sgml_error_function (DONE:47ms)
+883/2221: Method: utf8_step_forward
+884/2221: 884/2221: utf8_step_forward (DONE:2809ms)
+884/2221: Method: utf8_step_backward
+885/2221: 885/2221: utf8_step_backward (DONE:2471ms)
+885/2221: Method: abort_refreshed_msg_box_handler
+886/2221: 886/2221: abort_refreshed_msg_box_handler (DONE:18ms)
+886/2221: Method: done_home
+887/2221: 887/2221: done_home (DONE:12ms)
+887/2221: Method: done_state_message
+888/2221: 888/2221: done_state_message (DONE:53ms)
+888/2221: Method: free_blacklist
+889/2221: 889/2221: free_blacklist (DONE:52ms)
+889/2221: Method: done_form_view
+890/2221: 890/2221: done_form_view (DONE:8ms)
+890/2221: Method: destroy_vs
+891/2221: 891/2221: destroy_vs (DONE:80ms)
+891/2221: Method: destroy_location
+892/2221: 892/2221: destroy_location (DONE:81ms)
+892/2221: Method: free_mark_by_index
+893/2221: 893/2221: free_mark_by_index (DONE:43ms)
+893/2221: Method: clean_unhistory
+894/2221: 894/2221: clean_unhistory (DONE:25ms)
+894/2221: Method: done_screen
+895/2221: 895/2221: done_screen (DONE:17ms)
+895/2221: Method: done_dom_stack_context
+896/2221: 896/2221: done_dom_stack_context (DONE:97ms)
+896/2221: Method: done_progress
+897/2221: 897/2221: done_progress (DONE:37ms)
+897/2221: Method: done_keybinding_listboxes
+898/2221: 898/2221: done_keybinding_listboxes (DONE:253ms)
+898/2221: Method: done_document_options
+899/2221: 899/2221: done_document_options (DONE:23ms)
+899/2221: Method: lun_cancel
+900/2221: 900/2221: lun_cancel (DONE:29ms)
+900/2221: Method: done_submitted_value
+901/2221: 901/2221: done_submitted_value (DONE:29ms)
+901/2221: Method: done_submitted_value_list
+902/2221: 902/2221: done_submitted_value_list (DONE:59ms)
+902/2221: Method: done_formhist_item
+903/2221: 903/2221: done_formhist_item (DONE:24ms)
+903/2221: Method: delete_formhist_item
+904/2221: 904/2221: delete_formhist_item (DONE:12ms)
+904/2221: Method: redraw_below_window
+905/2221: 905/2221: redraw_below_window (DONE:65ms)
+905/2221: Method: erase_screen
+906/2221: 906/2221: erase_screen (DONE:35ms)
+906/2221: Method: done_bfu_colors
+907/2221: 907/2221: done_bfu_colors (DONE:74ms)
+907/2221: Method: done_event
+908/2221: 908/2221: done_event (DONE:64ms)
+908/2221: Method: done_mailcap
+909/2221: 909/2221: done_mailcap (DONE:133ms)
+909/2221: Method: free_uri_list
+910/2221: 910/2221: free_uri_list (DONE:42ms)
+910/2221: Method: next_link_in_dir
+911/2221: 911/2221: next_link_in_dir (DONE:2249ms)
+911/2221: Method: free_tags_lookup
+912/2221: 912/2221: free_tags_lookup (DONE:10ms)
+912/2221: Method: free_charsets_lookup
+913/2221: 913/2221: free_charsets_lookup (DONE:8ms)
+913/2221: Method: free_colors_lookup
+914/2221: 914/2221: free_colors_lookup (DONE:9ms)
+914/2221: Method: done_saved_session_info
+915/2221: 915/2221: done_saved_session_info (DONE:16ms)
+915/2221: Method: done_ssl_connection
+916/2221: 916/2221: done_ssl_connection (DONE:19ms)
+916/2221: Method: get_dom_node_prev
+917/2221: 917/2221: get_dom_node_prev (DONE:234ms)
+917/2221: Method: clear_link
+918/2221: 918/2221: clear_link (DONE:271ms)
+918/2221: Method: kbd_nm_lookup
+919/2221: 919/2221: kbd_nm_lookup (DONE:38ms)
+919/2221: Method: css_parse_color_value
+920/2221: 920/2221: css_parse_color_value (DONE:1093ms)
+920/2221: Method: init_progress
+921/2221: 921/2221: init_progress (DONE:18ms)
+921/2221: Method: init_connection
+922/2221: 922/2221: init_connection (DONE:189ms)
+922/2221: Method: init_screen
+923/2221: 923/2221: init_screen (DONE:14ms)
+923/2221: Method: init_tab
+924/2221: 924/2221: init_tab (DONE:81ms)
+924/2221: Method: get_unique_name
+925/2221: 925/2221: get_unique_name (DONE:114ms)
+925/2221: Method: add_to_uri_list
+926/2221: 926/2221: add_to_uri_list (DONE:67ms)
+926/2221: Method: register_event_hook
+927/2221: 927/2221: register_event_hook (DONE:636ms)
+927/2221: Method: resize_screen
+928/2221: 928/2221: resize_screen (DONE:143ms)
+928/2221: Method: unregister_event_hook
+929/2221: 929/2221: unregister_event_hook (DONE:251ms)
+929/2221: Method: add_quoted_to_string
+930/2221: 930/2221: add_quoted_to_string (DONE:65ms)
+930/2221: Method: add_optstring_to_string
+931/2221: 931/2221: add_optstring_to_string (DONE:30ms)
+931/2221: Method: encode_session_info
+932/2221: 932/2221: encode_session_info (DONE:180ms)
+932/2221: Method: read_file
+933/2221: 933/2221: read_file (DONE:240ms)
+933/2221: Method: get_window_title
+934/2221: 934/2221: get_window_title (DONE:10ms)
+934/2221: Method: iso639_to_language
+935/2221: 935/2221: iso639_to_language (DONE:283ms)
+935/2221: Method: get_system_language_index
+936/2221: 936/2221: get_system_language_index (DONE:30ms)
+936/2221: Method: language_to_iso639
+937/2221: 937/2221: language_to_iso639 (DONE:17ms)
+937/2221: Method: set_language
+938/2221: 938/2221: set_language (DONE:58ms)
+938/2221: Method: globhist_simple_search
+939/2221: 939/2221: globhist_simple_search (DONE:179ms)
+939/2221: Method: add_session_info
+940/2221: 940/2221: add_session_info (DONE:53ms)
+940/2221: Method: init_download_display
+941/2221: 941/2221: init_download_display (DONE:17ms)
+941/2221: Method: init_keybinding_listboxes
+942/2221: 942/2221: init_keybinding_listboxes (DONE:178ms)
+942/2221: Method: really_exit_prog
+943/2221: 943/2221: really_exit_prog (DONE:12ms)
+943/2221: Method: add_dom_config_normalizer
+944/2221: 944/2221: add_dom_config_normalizer (DONE:19ms)
+944/2221: Method: init_event
+945/2221: 945/2221: init_event (DONE:8ms)
+945/2221: Method: textarea_op_enter
+946/2221: 946/2221: textarea_op_enter (DONE:93ms)
+946/2221: Method: add_duration_to_string
+947/2221: 947/2221: add_duration_to_string (DONE:4882ms)
+947/2221: Method: add_timeval_to_string
+948/2221: 948/2221: add_timeval_to_string (DONE:20ms)
+948/2221: Method: bind_config_string
+949/2221: 949/2221: bind_config_string (DONE:136ms)
+949/2221: Method: init_menu
+950/2221: 950/2221: init_menu (DONE:20ms)
+950/2221: Method: copy_location
+951/2221: 951/2221: copy_location (DONE:90ms)
+951/2221: Method: http_error_document
+952/2221: 952/2221: http_error_document (DONE:46ms)
+952/2221: Method: mkalldirs
+953/2221: 953/2221: mkalldirs (DONE:77ms)
+953/2221: Method: file_read_line
+954/2221: 954/2221: file_read_line (DONE:196ms)
+954/2221: Method: is_ip_address
+955/2221: 955/2221: is_ip_address (DONE:155ms)
+955/2221: Method: read_alias_file
+956/2221: 956/2221: read_alias_file (DONE:1979ms)
+956/2221: Method: parse_ftp_winnt_response
+957/2221: 957/2221: parse_ftp_winnt_response (DONE:715ms)
+957/2221: Method: init_osdep
+958/2221: 958/2221: init_osdep (DONE:9ms)
+958/2221: Method: textarea_op_right
+959/2221: 959/2221: textarea_op_right (DONE:9ms)
+959/2221: Method: textarea_op_left
+960/2221: 960/2221: textarea_op_left (DONE:9ms)
+960/2221: Method: textarea_op_end
+961/2221: 961/2221: textarea_op_end (DONE:9ms)
+961/2221: Method: textarea_op_down
+962/2221: 962/2221: textarea_op_down (DONE:9ms)
+962/2221: Method: textarea_op_up
+963/2221: 963/2221: textarea_op_up (DONE:9ms)
+963/2221: Method: textarea_op_home
+964/2221: 964/2221: textarea_op_home (DONE:9ms)
+964/2221: Method: draw_textarea
+965/2221: 965/2221: draw_textarea (DONE:6478ms)
+965/2221: Method: set_sigcld
+966/2221: 966/2221: set_sigcld (DONE:11ms)
+966/2221: Method: unhandle_terminal_signals
+967/2221: 967/2221: unhandle_terminal_signals (DONE:32ms)
+967/2221: Method: handle_basic_signals
+968/2221: 968/2221: handle_basic_signals (DONE:42ms)
+968/2221: Method: check_terminal_pipes
+969/2221: 969/2221: check_terminal_pipes (DONE:8ms)
+969/2221: Method: bind_textdomain_codeset__
+970/2221: 970/2221: bind_textdomain_codeset__ (DONE:12ms)
+970/2221: Method: bind_textdomain_codeset
+971/2221: 971/2221: bind_textdomain_codeset (DONE:8ms)
+971/2221: Method: bindtextdomain__
+972/2221: 972/2221: bindtextdomain__ (DONE:11ms)
+972/2221: Method: next_link_in_view_y
+973/2221: 973/2221: next_link_in_view_y (DONE:9ms)
+973/2221: Method: get_uri_port
+974/2221: 974/2221: get_uri_port (DONE:59ms)
+974/2221: Method: init_connection_info
+975/2221: 975/2221: init_connection_info (DONE:31ms)
+975/2221: Method: done_mimetypes
+976/2221: 976/2221: done_mimetypes (DONE:84ms)
+976/2221: Method: parse_mimetypes_file
+977/2221: 977/2221: parse_mimetypes_file (DONE:863ms)
+977/2221: Method: get_current_link_url
+978/2221: 978/2221: get_current_link_url (DONE:54ms)
+978/2221: Method: get_current_link_name
+979/2221: 979/2221: get_current_link_name (DONE:95ms)
+979/2221: Method: release_document
+980/2221: 980/2221: release_document (DONE:65ms)
+980/2221: Method: detach_formatted
+981/2221: 981/2221: detach_formatted (DONE:58ms)
+981/2221: Method: get_redirected_cache_entry
+982/2221: 982/2221: get_redirected_cache_entry (DONE:14ms)
+982/2221: Method: free_history_lists
+983/2221: 983/2221: free_history_lists (DONE:55ms)
+983/2221: Method: really_really_add_keybinding
+984/2221: 984/2221: really_really_add_keybinding (DONE:48ms)
+984/2221: Method: can_write
+985/2221: 985/2221: can_write (DONE:9ms)
+985/2221: Method: mirror_css_stylesheet
+986/2221: 986/2221: mirror_css_stylesheet (DONE:77ms)
+986/2221: Method: base64_decode
+987/2221: 987/2221: base64_decode (DONE:43ms)
+987/2221: Method: load_formhist_from_file
+988/2221: 988/2221: load_formhist_from_file (DONE:1507ms)
+988/2221: Method: get_form_history_value
+989/2221: 989/2221: get_form_history_value (DONE:88ms)
+989/2221: Method: draw_table_frames
 
 === Killed because of time limit

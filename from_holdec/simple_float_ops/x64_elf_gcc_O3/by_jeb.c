@@ -1,56 +1,31 @@
 
-long basic_operations(long param0, long param1, long param2) {
-    long v0;
-    →printf((char*)&gvar_400A20, param1, param2);
+long basic_operations() {
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
-    →printf((char*)&gvar_400A20, param1, param2, v0);
+    →printf((char*)&gvar_400A20);
+    →printf((char*)&gvar_400A20);
     return 123L;
 }
 
-long compare_floats(long param0, long param1) {
-    char v0;
-    char v1;
-    double v2;
-    double v3;
-    long v4;
-    if(v3 == v2) {
-        v1 = 1;
-        v0 = 0;
-    }
-    else if(v3 > v2) {
-        v1 = 0;
-        v0 = 0;
-    }
-    else if(v3 < v2) {
-        v1 = 0;
-        v0 = 0;
-    }
-    else {
-        v1 = 1;
-        v0 = 1;
-    }
-    →printf((char*)&gvar_400A23, v1 ? v0 ? 0L: 1L: 0L, param1);
+long compare_floats() {
     →printf((char*)&gvar_400A23);
     →printf((char*)&gvar_400A23);
     →printf((char*)&gvar_400A23);
     →printf((char*)&gvar_400A23);
-    →printf((char*)&gvar_400A23, v2 == v3 ? 0: v2 <= v3 ? 0L: 1L, param1, v4);
+    →printf((char*)&gvar_400A23);
+    →printf((char*)&gvar_400A23);
     return 124L;
 }
 
 long constants() {
-    long v0;
-    long v1;
-    long v2;
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
     →printf((char*)&gvar_400A20);
-    →printf((char*)&gvar_400A20, v0, v1, v2);
+    →printf((char*)&gvar_400A20);
     return 125L;
 }
 
@@ -79,26 +54,40 @@ void converting_between_floats_l2() {
 }
 
 long main() {
-    →printf("%zu %zu %zu %zu %zu\n", 1L, 2L, 4L, 8L, 8L);
-    →printf((char*)0x400A2E, 4L, 8L, 16L);
+    →printf("%zu %zu %zu %zu %zu\n");
+    →printf((char*)"%zu %zu %zu\n");
     return 0L;
 }
 
-long read_floats(long param0, long param1, long param2, long param3) {
-    →printf((char*)&gvar_400A20, param1, param2, param3);
+long read_floats() {
+    →printf((char*)&gvar_400A20);
     return 122L;
 }
 
-long read_ints(long param0, long param1) {
-    →printf((char*)&gvar_400A20, param1);
+long read_ints() {
+    →printf((char*)&gvar_400A20);
     return 120L;
+}
+
+long sub_400509() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6917 = 1;
+}
+
+void sub_40051A() {
+}
+
+long sub_400530() {
+    return register_tm_clones();
 }
 
 int use() {
     return →printf((char*)&gvar_400A20);
 }
 
-int use_int() {
+int use_int(long param0) {
     return →printf((char*)&gvar_400A23);
 }
 
@@ -110,11 +99,12 @@ void write_floats() {
 }
 
 long write_ints() {
-    double v0;
-    global_char = (unsigned char)(int)v0;
-    global_short = (unsigned short)(int)v0;
-    global_int = (int)v0;
-    global_long = (long)v0;
-    global_long_long = (long)v0;
+    int v0;
+    double v1;
+    global_char = (unsigned char)(int)v1;
+    global_short = (unsigned short)(int)v1;
+    global_int = (int)v1;
+    global_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
+    global_long_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
     return 121L;
 }

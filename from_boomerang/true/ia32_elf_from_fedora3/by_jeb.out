@@ -1,234 +1,151 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/true/ia32_elf_from_fedora3/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (107 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 68 methods
 Output folder: jeb_output
-  0/107: Method: sub_80488D4
-  1/107: 1/107: sub_80488D4 (DONE:83ms)
-  1/107: Method: sub_8048D64
-  2/107: 2/107: sub_8048D64 (DONE:20ms)
-  2/107: Method: sub_8048E5F
-  3/107: 3/107: sub_8048E5F (DONE:29ms)
-  3/107: Method: sub_8048B3C
-  4/107: 4/107: sub_8048B3C (DONE:79ms)
-  4/107: Method: sub_8049905
-  5/107: 5/107: sub_8049905 (DONE:219ms)
-  5/107: Method: sub_8048B08
-  6/107: 6/107: sub_8048B08 (DONE:169ms)
-  6/107: Method: sub_804A0D0
-  7/107: 7/107: sub_804A0D0 (DONE:128ms)
-  7/107: Method: sub_80488EA
-  8/107: 8/107: sub_80488EA (DONE:15ms)
-  8/107: Method: sub_80488FA
-  9/107: 9/107: sub_80488FA (DONE:15ms)
-  9/107: Method: sub_80488F4
- 10/107: 10/107: sub_80488F4 (DONE:28ms)
- 10/107: Method: sub_804890A
- 11/107: 11/107: sub_804890A (DONE:17ms)
- 11/107: Method: sub_8048904
- 12/107: 12/107: sub_8048904 (DONE:15ms)
- 12/107: Method: sub_804891A
- 13/107: 13/107: sub_804891A (DONE:18ms)
- 13/107: Method: sub_8048914
- 14/107: 14/107: sub_8048914 (DONE:16ms)
- 14/107: Method: sub_804892A
- 15/107: 15/107: sub_804892A (DONE:12ms)
- 15/107: Method: sub_804893A
- 16/107: 16/107: sub_804893A (DONE:12ms)
- 16/107: Method: sub_8048934
- 17/107: 17/107: sub_8048934 (DONE:16ms)
- 17/107: Method: sub_8048FA3
- 18/107: 18/107: sub_8048FA3 (DONE:111ms)
- 18/107: Method: sub_804894A
- 19/107: 19/107: sub_804894A (DONE:9ms)
- 19/107: Method: sub_804895A
- 20/107: 20/107: sub_804895A (DONE:21ms)
- 20/107: Method: sub_804896A
- 21/107: 21/107: sub_804896A (DONE:10ms)
- 21/107: Method: sub_8048964
- 22/107: 22/107: sub_8048964 (DONE:11ms)
- 22/107: Method: sub_804897A
- 23/107: 23/107: sub_804897A (DONE:12ms)
- 23/107: Method: sub_8048974
- 24/107: 24/107: sub_8048974 (DONE:12ms)
- 24/107: Method: sub_804898A
- 25/107: 25/107: sub_804898A (DONE:10ms)
- 25/107: Method: sub_8048984
- 26/107: 26/107: sub_8048984 (DONE:9ms)
- 26/107: Method: sub_804899A
- 27/107: 27/107: sub_804899A (DONE:15ms)
- 27/107: Method: sub_80489AA
- 28/107: 28/107: sub_80489AA (DONE:11ms)
- 28/107: Method: sub_80489BA
- 29/107: 29/107: sub_80489BA (DONE:12ms)
- 29/107: Method: sub_80489CA
- 30/107: 30/107: sub_80489CA (DONE:9ms)
- 30/107: Method: sub_80489DA
- 31/107: 31/107: sub_80489DA (DONE:15ms)
- 31/107: Method: sub_80489D4
- 32/107: 32/107: sub_80489D4 (DONE:12ms)
- 32/107: Method: sub_80489EA
- 33/107: 33/107: sub_80489EA (DONE:12ms)
- 33/107: Method: sub_80489FA
- 34/107: 34/107: sub_80489FA (DONE:10ms)
- 34/107: Method: sub_80489F4
- 35/107: 35/107: sub_80489F4 (DONE:12ms)
- 35/107: Method: sub_8048A0A
- 36/107: 36/107: sub_8048A0A (DONE:11ms)
- 36/107: Method: sub_8048A1A
- 37/107: 37/107: sub_8048A1A (DONE:11ms)
- 37/107: Method: sub_8048A2A
- 38/107: 38/107: sub_8048A2A (DONE:10ms)
- 38/107: Method: sub_8048A3A
- 39/107: 39/107: sub_8048A3A (DONE:8ms)
- 39/107: Method: sub_8048A34
- 40/107: 40/107: sub_8048A34 (DONE:9ms)
- 40/107: Method: sub_8048A4A
- 41/107: 41/107: sub_8048A4A (DONE:21ms)
- 41/107: Method: sub_8048A5A
- 42/107: 42/107: sub_8048A5A (DONE:10ms)
- 42/107: Method: sub_8048A6A
- 43/107: 43/107: sub_8048A6A (DONE:9ms)
- 43/107: Method: sub_8048A7A
- 44/107: 44/107: sub_8048A7A (DONE:9ms)
- 44/107: Method: sub_8048A74
- 45/107: 45/107: sub_8048A74 (DONE:13ms)
- 45/107: Method: sub_8048A8A
- 46/107: 46/107: sub_8048A8A (DONE:8ms)
- 46/107: Method: sub_8048A9A
- 47/107: 47/107: sub_8048A9A (DONE:8ms)
- 47/107: Method: sub_8048A94
- 48/107: 48/107: sub_8048A94 (DONE:10ms)
- 48/107: Method: sub_8049D10
- 49/107: 49/107: sub_8049D10 (DONE:103ms)
- 49/107: Method: sub_8049DC5
- 50/107: 50/107: sub_8049DC5 (DONE:52ms)
- 50/107: Method: sub_8049E3F
- 51/107: 51/107: sub_8049E3F (DONE:59ms)
- 51/107: Method: sub_8048AAA
- 52/107: 52/107: sub_8048AAA (DONE:8ms)
- 52/107: Method: sub_8048F36
- 53/107: 53/107: sub_8048F36 (DONE:146ms)
- 53/107: Method: sub_80488E4
- 54/107: 54/107: sub_80488E4 (DONE:12ms)
- 54/107: Method: sub_8048924
- 55/107: 55/107: sub_8048924 (DONE:13ms)
- 55/107: Method: sub_8048944
- 56/107: 56/107: sub_8048944 (DONE:11ms)
- 56/107: Method: sub_8048954
- 57/107: 57/107: sub_8048954 (DONE:8ms)
- 57/107: Method: sub_8048994
- 58/107: 58/107: sub_8048994 (DONE:19ms)
- 58/107: Method: sub_80489A4
- 59/107: 59/107: sub_80489A4 (DONE:25ms)
- 59/107: Method: sub_80489B4
- 60/107: 60/107: sub_80489B4 (DONE:15ms)
- 60/107: Method: sub_80489C4
- 61/107: 61/107: sub_80489C4 (DONE:11ms)
- 61/107: Method: sub_80489E4
- 62/107: 62/107: sub_80489E4 (DONE:10ms)
- 62/107: Method: sub_8048A04
- 63/107: 63/107: sub_8048A04 (DONE:11ms)
- 63/107: Method: sub_8048A14
- 64/107: 64/107: sub_8048A14 (DONE:11ms)
- 64/107: Method: sub_8048A24
- 65/107: 65/107: sub_8048A24 (DONE:17ms)
- 65/107: Method: sub_8048B68
- 66/107: 66/107: sub_8048B68 (DONE:152ms)
- 66/107: Method: sub_8048A44
- 67/107: 67/107: sub_8048A44 (DONE:12ms)
- 67/107: Method: sub_8048A54
- 68/107: 68/107: sub_8048A54 (DONE:9ms)
- 68/107: Method: sub_8048A64
- 69/107: 69/107: sub_8048A64 (DONE:10ms)
- 69/107: Method: sub_8048A84
- 70/107: 70/107: sub_8048A84 (DONE:7ms)
- 70/107: Method: sub_8048AA4
- 71/107: 71/107: sub_8048AA4 (DONE:8ms)
- 71/107: Method: sub_8049AC0
- 72/107: 72/107: sub_8049AC0 (DONE:607ms)
- 72/107: Method: sub_8049FE0
- 73/107: 73/107: sub_8049FE0 (DONE:53ms)
- 73/107: Method: sub_8049CCD
- 74/107: 74/107: sub_8049CCD (DONE:45ms)
- 74/107: Method: sub_8048D68
- 75/107: 75/107: sub_8048D68 (DONE:31ms)
- 75/107: Method: sub_8048EEA
- 76/107: 76/107: sub_8048EEA (DONE:32ms)
- 76/107: Method: sub_8048F0D
- 77/107: 77/107: sub_8048F0D (DONE:53ms)
- 77/107: Method: sub_8048B3A
- 78/107: 78/107: sub_8048B3A (DONE:5ms)
- 78/107: Method: sub_8049D82
- 79/107: 79/107: sub_8049D82 (DONE:92ms)
- 79/107: Method: sub_8049DF5
- 80/107: 80/107: sub_8049DF5 (DONE:83ms)
- 80/107: Method: sub_8048E70
- 81/107: 81/107: sub_8048E70 (DONE:100ms)
- 81/107: Method: sub_8049F27
- 82/107: 82/107: sub_8049F27 (DONE:44ms)
- 82/107: Method: sub_8049E75
- 83/107: 83/107: sub_8049E75 (DONE:105ms)
- 83/107: Method: sub_8049EE2
- 84/107: 84/107: sub_8049EE2 (DONE:72ms)
- 84/107: Method: start
- 85/107: 85/107: start (DONE:28ms)
- 85/107: Method: sub_8049FA5
- 86/107: 86/107: sub_8049FA5 (DONE:44ms)
- 86/107: Method: sub_8049F60
- 87/107: 87/107: sub_8049F60 (DONE:72ms)
- 87/107: Method: sub_8048D59
- 88/107: 88/107: sub_8048D59 (DONE:56ms)
- 88/107: Method: sub_80496C3
- 89/107: 89/107: sub_80496C3 (DONE:254ms)
- 89/107: Method: sub_8049721
- 90/107: 90/107: sub_8049721 (DONE:355ms)
- 90/107: Method: sub_80498AE
- 91/107: 91/107: sub_80498AE (DONE:28ms)
- 91/107: Method: sub_804995F
- 92/107: 92/107: sub_804995F (DONE:52ms)
- 92/107: Method: sub_80499F0
- 93/107: 93/107: sub_80499F0 (DONE:105ms)
- 93/107: Method: sub_8049A8B
- 94/107: 94/107: sub_8049A8B (DONE:43ms)
- 94/107: Method: sub_804998F
- 95/107: 95/107: sub_804998F (DONE:41ms)
- 95/107: Method: sub_80498DA
- 96/107: 96/107: sub_80498DA (DONE:36ms)
- 96/107: Method: sub_80499BE
- 97/107: 97/107: sub_80499BE (DONE:44ms)
- 97/107: Method: sub_8048FF6
- 98/107: 98/107: sub_8048FF6 (DONE:8650ms)
- 98/107: Method: sub_8048AE4
- 99/107: 99/107: sub_8048AE4 (DONE:33ms)
- 99/107: Method: initializer_0
-100/107: 100/107: initializer_0 (DONE:19ms)
-100/107: Method: finalizer_0
-101/107: 101/107: finalizer_0 (DONE:21ms)
-101/107: Method: sub_804A0A0
-102/107: 102/107: sub_804A0A0 (DONE:43ms)
-102/107: Method: sub_8048C4A
-103/107: 103/107: sub_8048C4A (DONE:199ms)
-103/107: Method: sub_804A05C
-104/107: 104/107: sub_804A05C (DONE:84ms)
-104/107: Method: sub_804A05A
-105/107: 105/107: sub_804A05A (DONE:4ms)
-105/107: Method: sub_804A008
-106/107: 106/107: sub_804A008 (DONE:76ms)
-Exectime: 17.020000 sec
-Done.
+  0/ 68: Method: sub_8048D64
+  1/ 68: 1/68: sub_8048D64 (DONE:39ms)
+  1/ 68: Method: sub_8049905
+  2/ 68: 2/68: sub_8049905 (DONE:105ms)
+  2/ 68: Method: sub_80488DA
+  3/ 68: 3/68: sub_80488DA (DONE:13ms)
+  3/ 68: Method: →dcgettext
+  4/ 68: 4/68: →dcgettext (DONE:17ms)
+  4/ 68: Method: →__errno_location
+  5/ 68: 5/68: →__errno_location (DONE:8ms)
+  5/ 68: Method: →fputs_unlocked
+  6/ 68: 6/68: →fputs_unlocked (DONE:9ms)
+  6/ 68: Method: →abort
+  7/ 68: 7/68: →abort (DONE:7ms)
+  7/ 68: Method: →error
+  8/ 68: 8/68: →error (DONE:11ms)
+  8/ 68: Method: sub_8049D10
+  9/ 68: 9/68: sub_8049D10 (DONE:37ms)
+  9/ 68: Method: →__overflow
+ 10/ 68: 10/68: →__overflow (DONE:8ms)
+ 10/ 68: Method: →fprintf
+ 11/ 68: 11/68: →fprintf (DONE:8ms)
+ 11/ 68: Method: →printf
+ 12/ 68: 12/68: →printf (DONE:8ms)
+ 12/ 68: Method: →exit
+ 13/ 68: 13/68: →exit (DONE:8ms)
+ 13/ 68: Method: →memset
+ 14/ 68: 14/68: →memset (DONE:13ms)
+ 14/ 68: Method: sub_8048FA3
+ 15/ 68: 15/68: sub_8048FA3 (DONE:98ms)
+ 15/ 68: Method: sub_8048B08
+ 16/ 68: 16/68: sub_8048B08 (DONE:70ms)
+ 16/ 68: Method: sub_8048B3C
+ 17/ 68: 17/68: sub_8048B3C (DONE:22ms)
+ 17/ 68: Method: sub_804A0D0
+ 18/ 68: 18/68: sub_804A0D0 (DONE:45ms)
+ 18/ 68: Method: sub_8048F36
+ 19/ 68: 19/68: sub_8048F36 (DONE:136ms)
+ 19/ 68: Method: →__fpending
+ 20/ 68: 20/68: →__fpending (DONE:8ms)
+ 20/ 68: Method: →getenv
+ 21/ 68: 21/68: →getenv (DONE:7ms)
+ 21/ 68: Method: →setlocale
+ 22/ 68: 22/68: →setlocale (DONE:8ms)
+ 22/ 68: Method: →__cxa_atexit
+ 23/ 68: 23/68: →__cxa_atexit (DONE:10ms)
+ 23/ 68: Method: →malloc
+ 24/ 68: 24/68: →malloc (DONE:10ms)
+ 24/ 68: Method: sub_8049DC5
+ 25/ 68: 25/68: sub_8049DC5 (DONE:70ms)
+ 25/ 68: Method: →vfprintf
+ 26/ 68: 26/68: →vfprintf (DONE:8ms)
+ 26/ 68: Method: →bindtextdomain
+ 27/ 68: 27/68: →bindtextdomain (DONE:10ms)
+ 27/ 68: Method: →mbrtowc
+ 28/ 68: 28/68: →mbrtowc (DONE:7ms)
+ 28/ 68: Method: →__libc_start_main
+ 29/ 68: 29/68: →__libc_start_main (DONE:6ms)
+ 29/ 68: Method: →realloc
+ 30/ 68: 30/68: →realloc (DONE:7ms)
+ 30/ 68: Method: sub_8049E3F
+ 31/ 68: 31/68: sub_8049E3F (DONE:60ms)
+ 31/ 68: Method: →textdomain
+ 32/ 68: 32/68: →textdomain (DONE:7ms)
+ 32/ 68: Method: →memcpy
+ 33/ 68: 33/68: →memcpy (DONE:6ms)
+ 33/ 68: Method: →fclose
+ 34/ 68: 34/68: →fclose (DONE:5ms)
+ 34/ 68: Method: →__ctype_get_mb_cur_max
+ 35/ 68: 35/68: →__ctype_get_mb_cur_max (DONE:5ms)
+ 35/ 68: Method: →iswprint
+ 36/ 68: 36/68: →iswprint (DONE:11ms)
+ 36/ 68: Method: →free
+ 37/ 68: 37/68: →free (DONE:6ms)
+ 37/ 68: Method: →mbsinit
+ 38/ 68: 38/68: →mbsinit (DONE:6ms)
+ 38/ 68: Method: →__ctype_b_loc
+ 39/ 68: 39/68: →__ctype_b_loc (DONE:7ms)
+ 39/ 68: Method: sub_8048B68
+ 40/ 68: 40/68: sub_8048B68 (DONE:115ms)
+ 40/ 68: Method: sub_8049AC0
+ 41/ 68: 41/68: sub_8049AC0 (DONE:280ms)
+ 41/ 68: Method: sub_8049FE0
+ 42/ 68: 42/68: sub_8049FE0 (DONE:22ms)
+ 42/ 68: Method: sub_8049CCD
+ 43/ 68: 43/68: sub_8049CCD (DONE:24ms)
+ 43/ 68: Method: →calloc
+ 44/ 68: 44/68: →calloc (DONE:6ms)
+ 44/ 68: Method: sub_8048E70
+ 45/ 68: 45/68: sub_8048E70 (DONE:46ms)
+ 45/ 68: Method: sub_8049F27
+ 46/ 68: 46/68: sub_8049F27 (DONE:19ms)
+ 46/ 68: Method: start
+ 47/ 68: 47/68: start (DONE:15ms)
+ 47/ 68: Method: sub_8049E75
+ 48/ 68: 48/68: sub_8049E75 (DONE:203ms)
+ 48/ 68: Method: sub_8049EE2
+ 49/ 68: 49/68: sub_8049EE2 (DONE:72ms)
+ 49/ 68: Method: sub_8049FA5
+ 50/ 68: 50/68: sub_8049FA5 (DONE:22ms)
+ 50/ 68: Method: sub_80496C3
+ 51/ 68: 51/68: sub_80496C3 (DONE:65ms)
+ 51/ 68: Method: sub_8049721
+ 52/ 68: 52/68: sub_8049721 (DONE:370ms)
+ 52/ 68: Method: sub_80498AE
+ 53/ 68: 53/68: sub_80498AE (DONE:11ms)
+ 53/ 68: Method: sub_804995F
+ 54/ 68: 54/68: sub_804995F (DONE:20ms)
+ 54/ 68: Method: sub_80499F0
+ 55/ 68: 55/68: sub_80499F0 (DONE:38ms)
+ 55/ 68: Method: sub_8049A8B
+ 56/ 68: 56/68: sub_8049A8B (DONE:16ms)
+ 56/ 68: Method: sub_804998F
+ 57/ 68: 57/68: sub_804998F (DONE:22ms)
+ 57/ 68: Method: sub_80498DA
+ 58/ 68: 58/68: sub_80498DA (DONE:15ms)
+ 58/ 68: Method: sub_80499BE
+ 59/ 68: 59/68: sub_80499BE (DONE:16ms)
+[E] The routine close_stdout is not internal
+ 59/ 68: Method: sub_8048FF6
+[E] An optimizer failed: BD: java.lang.IndexOutOfBoundsException: Index -1 out of bounds for length 0
+ 60/ 68: 60/68: sub_8048FF6 (DONE:6140ms)
+ 60/ 68: Method: sub_8048AE4
+ 61/ 68: 61/68: sub_8048AE4 (DONE:23ms)
+ 61/ 68: Method: initializer_0
+ 62/ 68: 62/68: initializer_0 (DONE:11ms)
+ 62/ 68: Method: finalizer_0
+ 63/ 68: 63/68: finalizer_0 (DONE:11ms)
+ 63/ 68: Method: sub_804A0A0
+ 64/ 68: 64/68: sub_804A0A0 (DONE:14ms)
+ 64/ 68: Method: sub_8048C4A
+ 65/ 68: 65/68: sub_8048C4A (DONE:261ms)
+ 65/ 68: Method: sub_804A008
+ 66/ 68: 66/68: sub_804A008 (DONE:57ms)
+ 66/ 68: Method: sub_804A05C
+ 67/ 68: 67/68: sub_804A05C (DONE:48ms)
+Exectime: 9.956000 sec
+[I] Done.

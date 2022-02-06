@@ -1,101 +1,91 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/callchain/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (39 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 38 methods
 Output folder: jeb_output
-  0/ 39: Method: decode_uleb128
-  1/ 39: 1/39: decode_uleb128 (DONE:364ms)
-  1/ 39: Method: atexit
-  2/ 39: 2/39: atexit (DONE:14ms)
-  2/ 39: Method: abort
-  3/ 39: 3/39: abort (DONE:12ms)
-  3/ 39: Method: count_fdes
-  4/ 39: 4/39: count_fdes (DONE:167ms)
-  4/ 39: Method: __fpstart
-  5/ 39: 5/39: __fpstart (DONE:10ms)
-  5/ 39: Method: exit
-  6/ 39: 6/39: exit (DONE:13ms)
-  6/ 39: Method: printf
-  7/ 39: 7/39: printf (DONE:7ms)
-  7/ 39: Method: malloc
-  8/ 39: 8/39: malloc (DONE:8ms)
-  8/ 39: Method: free
-  9/ 39: 9/39: free (DONE:12ms)
-  9/ 39: Method: memset
- 10/ 39: 10/39: memset (DONE:8ms)
- 10/ 39: Method: add5
- 11/ 39: 11/39: add5 (DONE:32ms)
- 11/ 39: Method: add10
- 12/ 39: 12/39: add10 (DONE:30ms)
- 12/ 39: Method: add15
- 13/ 39: 13/39: add15 (DONE:35ms)
- 13/ 39: Method: decode_sleb128
- 14/ 39: 14/39: decode_sleb128 (DONE:143ms)
- 14/ 39: Method: fde_insert
- 15/ 39: 15/39: fde_insert (DONE:138ms)
- 15/ 39: Method: printarg
- 16/ 39: 16/39: printarg (DONE:46ms)
- 16/ 39: Method: main
- 17/ 39: 17/39: main (DONE:87ms)
- 17/ 39: Method: sub_80487D9
- 18/ 39: 18/39: sub_80487D9 (DONE:17ms)
- 18/ 39: Method: _cleanup
- 19/ 39: 19/39: _cleanup (DONE:9ms)
- 19/ 39: Method: sub_80488D8
- 20/ 39: 20/39: sub_80488D8 (DONE:13ms)
- 20/ 39: Method: _mcount
- 21/ 39: 21/39: _mcount (DONE:8ms)
- 21/ 39: Method: execute_cfa_insn
- 22/ 39: 22/39: execute_cfa_insn (DONE:1592ms)
- 22/ 39: Method: add_fdes
- 23/ 39: 23/39: add_fdes (DONE:229ms)
- 23/ 39: Method: __register_frame_info
- 24/ 39: 24/39: __register_frame_info (DONE:48ms)
- 24/ 39: Method: __do_global_ctors_aux
- 25/ 39: 25/39: __do_global_ctors_aux (DONE:120ms)
- 25/ 39: Method: __deregister_frame_info
- 26/ 39: 26/39: __deregister_frame_info (DONE:130ms)
- 26/ 39: Method: extract_cie_info
- 27/ 39: 27/39: extract_cie_info (DONE:872ms)
- 27/ 39: Method: frame_init
- 28/ 39: 28/39: frame_init (DONE:648ms)
- 28/ 39: Method: frame_dummy
- 29/ 39: 29/39: frame_dummy (DONE:60ms)
- 29/ 39: Method: initializer_0
- 30/ 39: 30/39: initializer_0 (DONE:66ms)
- 30/ 39: Method: _start
- 31/ 39: 31/39: _start (DONE:255ms)
- 31/ 39: Method: __do_global_dtors_aux
- 32/ 39: 32/39: __do_global_dtors_aux (DONE:133ms)
- 32/ 39: Method: finalizer_0
- 33/ 39: 33/39: finalizer_0 (DONE:15ms)
- 33/ 39: Method: find_fde
- 34/ 39: 34/39: find_fde (DONE:242ms)
- 34/ 39: Method: fini_dummy
- 35/ 39: 35/39: fini_dummy (DONE:23ms)
- 35/ 39: Method: init_dummy
- 36/ 39: 36/39: init_dummy (DONE:20ms)
- 36/ 39: Method: __register_frame_info_table
- 37/ 39: 37/39: __register_frame_info_table (DONE:46ms)
- 37/ 39: Method: init_dummy2
- 38/ 39: 38/39: init_dummy2 (DONE:41ms)
- 38/ 39: Method: __frame_state_for
- 39/ 39: 39/39: __frame_state_for (DONE:419ms)
-Exectime: 8.946000 sec
-Done.
+  0/ 38: Method: decode_uleb128
+  1/ 38: 1/38: decode_uleb128 (DONE:154ms)
+  1/ 38: Method: →atexit
+  2/ 38: 2/38: →atexit (DONE:8ms)
+  2/ 38: Method: →abort
+  3/ 38: 3/38: →abort (DONE:4ms)
+  3/ 38: Method: count_fdes
+  4/ 38: 4/38: count_fdes (DONE:68ms)
+  4/ 38: Method: →__fpstart
+  5/ 38: 5/38: →__fpstart (DONE:5ms)
+  5/ 38: Method: →exit
+  6/ 38: 6/38: →exit (DONE:4ms)
+  6/ 38: Method: →printf
+  7/ 38: 7/38: →printf (DONE:4ms)
+  7/ 38: Method: →malloc
+  8/ 38: 8/38: →malloc (DONE:4ms)
+  8/ 38: Method: →free
+  9/ 38: 9/38: →free (DONE:4ms)
+  9/ 38: Method: →memset
+ 10/ 38: 10/38: →memset (DONE:5ms)
+ 10/ 38: Method: add5
+ 11/ 38: 11/38: add5 (DONE:14ms)
+ 11/ 38: Method: add10
+ 12/ 38: 12/38: add10 (DONE:13ms)
+ 12/ 38: Method: add15
+ 13/ 38: 13/38: add15 (DONE:14ms)
+ 13/ 38: Method: decode_sleb128
+ 14/ 38: 14/38: decode_sleb128 (DONE:103ms)
+ 14/ 38: Method: fde_insert
+ 15/ 38: 15/38: fde_insert (DONE:94ms)
+ 15/ 38: Method: printarg
+ 16/ 38: 16/38: printarg (DONE:10ms)
+ 16/ 38: Method: main
+ 17/ 38: 17/38: main (DONE:21ms)
+ 17/ 38: Method: sub_80487DE
+ 18/ 38: 18/38: sub_80487DE (DONE:5ms)
+ 18/ 38: Method: →_cleanup
+ 19/ 38: 19/38: →_cleanup (DONE:3ms)
+ 19/ 38: Method: _mcount
+ 20/ 38: 20/38: _mcount (DONE:3ms)
+ 20/ 38: Method: execute_cfa_insn
+ 21/ 38: 21/38: execute_cfa_insn (DONE:261ms)
+ 21/ 38: Method: add_fdes
+ 22/ 38: 22/38: add_fdes (DONE:166ms)
+ 22/ 38: Method: __register_frame_info
+ 23/ 38: 23/38: __register_frame_info (DONE:22ms)
+ 23/ 38: Method: __do_global_ctors_aux
+ 24/ 38: 24/38: __do_global_ctors_aux (DONE:84ms)
+ 24/ 38: Method: __deregister_frame_info
+ 25/ 38: 25/38: __deregister_frame_info (DONE:71ms)
+ 25/ 38: Method: extract_cie_info
+ 26/ 38: 26/38: extract_cie_info (DONE:487ms)
+ 26/ 38: Method: frame_init
+ 27/ 38: 27/38: frame_init (DONE:174ms)
+ 27/ 38: Method: frame_dummy
+ 28/ 38: 28/38: frame_dummy (DONE:18ms)
+ 28/ 38: Method: initializer_0
+ 29/ 38: 29/38: initializer_0 (DONE:6ms)
+ 29/ 38: Method: _start
+ 30/ 38: 30/38: _start (DONE:109ms)
+ 30/ 38: Method: __do_global_dtors_aux
+ 31/ 38: 31/38: __do_global_dtors_aux (DONE:67ms)
+ 31/ 38: Method: finalizer_0
+ 32/ 38: 32/38: finalizer_0 (DONE:5ms)
+ 32/ 38: Method: find_fde
+ 33/ 38: 33/38: find_fde (DONE:160ms)
+ 33/ 38: Method: fini_dummy
+ 34/ 38: 34/38: fini_dummy (DONE:9ms)
+ 34/ 38: Method: init_dummy
+ 35/ 38: 35/38: init_dummy (DONE:8ms)
+ 35/ 38: Method: __register_frame_info_table
+ 36/ 38: 36/38: __register_frame_info_table (DONE:17ms)
+ 36/ 38: Method: init_dummy2
+ 37/ 38: 37/38: init_dummy2 (DONE:9ms)
+ 37/ 38: Method: __frame_state_for
+ 38/ 38: 38/38: __frame_state_for (DONE:292ms)
+Exectime: 3.481000 sec
+[I] Done.

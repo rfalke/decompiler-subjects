@@ -1,492 +1,486 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_snowman/malformed-elf-4/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (224 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (2s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 225 methods
 Output folder: jeb_output
-  0/224: Method: sub_8049660
-  1/224: 1/224: sub_8049660 (DONE:92ms)
-  1/224: Method: sub_80498E0
-  2/224: 2/224: sub_80498E0 (DONE:20ms)
-  2/224: Method: sub_8049870
-  3/224: 3/224: sub_8049870 (DONE:18ms)
-  3/224: Method: free
-  4/224: 4/224: free (DONE:468ms)
-  4/224: Method: sub_8049910
-  5/224: 5/224: sub_8049910 (DONE:16ms)
-  5/224: Method: sub_804BF90
-  6/224: 6/224: sub_804BF90 (DONE:209ms)
-  6/224: Method: sub_8049920
-  7/224: 7/224: sub_8049920 (DONE:7ms)
-  7/224: Method: sub_8049A00
-  8/224: 8/224: sub_8049A00 (DONE:19ms)
-  8/224: Method: sub_8049A60
-  9/224: 9/224: sub_8049A60 (DONE:14ms)
-  9/224: Method: sub_80497D0
- 10/224: 10/224: sub_80497D0 (DONE:15ms)
- 10/224: Method: sub_8049AC0
- 11/224: 11/224: sub_8049AC0 (DONE:9ms)
- 11/224: Method: sub_80495D0
- 12/224: 12/224: sub_80495D0 (DONE:15ms)
- 12/224: Method: sub_8049690
- 13/224: 13/224: sub_8049690 (DONE:11ms)
- 13/224: Method: sub_80497F0
- 14/224: 14/224: sub_80497F0 (DONE:12ms)
- 14/224: Method: sub_8049980
- 15/224: 15/224: sub_8049980 (DONE:15ms)
- 15/224: Method: malloc
- 16/224: 16/224: malloc (DONE:397ms)
- 16/224: Method: sub_8059C90
- 17/224: 17/224: sub_8059C90 (DONE:461ms)
- 17/224: Method: sub_80498D0
- 18/224: 18/224: sub_80498D0 (DONE:14ms)
- 18/224: Method: sub_8049B70
- 19/224: 19/224: sub_8049B70 (DONE:8ms)
- 19/224: Method: sub_8058C00
- 20/224: 20/224: sub_8058C00 (DONE:50ms)
- 20/224: Method: sub_8058A70
- 21/224: 21/224: sub_8058A70 (DONE:30ms)
- 21/224: Method: sub_8049970
- 22/224: 22/224: sub_8049970 (DONE:17ms)
- 22/224: Method: sub_8056430
- 23/224: 23/224: sub_8056430 (DONE:28ms)
- 23/224: Method: sub_8059DC0
- 24/224: 24/224: sub_8059DC0 (DONE:487ms)
- 24/224: Method: sub_8054C60
- 25/224: 25/224: sub_8054C60 (DONE:91ms)
- 25/224: Method: sub_8049650
- 26/224: 26/224: sub_8049650 (DONE:13ms)
- 26/224: Method: sub_8049B40
- 27/224: 27/224: sub_8049B40 (DONE:14ms)
- 27/224: Method: sub_8049B50
- 28/224: 28/224: sub_8049B50 (DONE:9ms)
- 28/224: Method: sub_8049630
- 29/224: 29/224: sub_8049630 (DONE:10ms)
- 29/224: Method: sub_8049770
- 30/224: 30/224: sub_8049770 (DONE:6ms)
- 30/224: Method: sub_8049AA0
- 31/224: 31/224: sub_8049AA0 (DONE:12ms)
- 31/224: Method: sub_80520B0
- 32/224: 32/224: sub_80520B0 (DONE:110ms)
- 32/224: Method: sub_8049780
- 33/224: 33/224: sub_8049780 (DONE:12ms)
- 33/224: Method: sub_8049AD0
- 34/224: 34/224: sub_8049AD0 (DONE:16ms)
- 34/224: Method: sub_8059140
- 35/224: 35/224: sub_8059140 (DONE:144ms)
- 35/224: Method: sub_80591F0
- 36/224: 36/224: sub_80591F0 (DONE:70ms)
- 36/224: Method: sub_8049500
- 37/224: 37/224: sub_8049500 (DONE:9ms)
- 37/224: Method: sub_8049510
- 38/224: 38/224: sub_8049510 (DONE:12ms)
- 38/224: Method: sub_8049590
- 39/224: 39/224: sub_8049590 (DONE:11ms)
- 39/224: Method: sub_80495E0
- 40/224: 40/224: sub_80495E0 (DONE:12ms)
- 40/224: Method: sub_80496A0
- 41/224: 41/224: sub_80496A0 (DONE:12ms)
- 41/224: Method: sub_80497B0
- 42/224: 42/224: sub_80497B0 (DONE:11ms)
- 42/224: Method: sub_8049860
- 43/224: 43/224: sub_8049860 (DONE:10ms)
- 43/224: Method: sub_8049990
- 44/224: 44/224: sub_8049990 (DONE:13ms)
- 44/224: Method: sub_80499D0
- 45/224: 45/224: sub_80499D0 (DONE:15ms)
- 45/224: Method: sub_8049A30
- 46/224: 46/224: sub_8049A30 (DONE:10ms)
- 46/224: Method: sub_8049AB0
- 47/224: 47/224: sub_8049AB0 (DONE:13ms)
- 47/224: Method: sub_8049B00
- 48/224: 48/224: sub_8049B00 (DONE:11ms)
- 48/224: Method: sub_804C010
- 49/224: 49/224: sub_804C010 (DONE:1228ms)
- 49/224: Method: sub_8052B60
- 50/224: 50/224: sub_8052B60 (DONE:116ms)
- 50/224: Method: sub_8056450
- 51/224: 51/224: sub_8056450 (DONE:68ms)
- 51/224: Method: sub_8052920
- 52/224: 52/224: sub_8052920 (DONE:75ms)
- 52/224: Method: sub_804C280
- 53/224: 53/224: sub_804C280 (DONE:18ms)
- 53/224: Method: sub_8051C00
- 54/224: 54/224: sub_8051C00 (DONE:343ms)
- 54/224: Method: sub_804C320
- 55/224: 55/224: sub_804C320 (DONE:66ms)
- 55/224: Method: sub_8052950
- 56/224: 56/224: sub_8052950 (DONE:318ms)
- 56/224: Method: sub_8052A50
- 57/224: 57/224: sub_8052A50 (DONE:340ms)
- 57/224: Method: sub_8049520
- 58/224: 58/224: sub_8049520 (DONE:13ms)
- 58/224: Method: sub_8049570
- 59/224: 59/224: sub_8049570 (DONE:12ms)
- 59/224: Method: sub_8049620
- 60/224: 60/224: sub_8049620 (DONE:10ms)
- 60/224: Method: sub_80496B0
- 61/224: 61/224: sub_80496B0 (DONE:10ms)
- 61/224: Method: sub_80496D0
- 62/224: 62/224: sub_80496D0 (DONE:10ms)
- 62/224: Method: sub_8049710
- 63/224: 63/224: sub_8049710 (DONE:10ms)
- 63/224: Method: sub_8049720
- 64/224: 64/224: sub_8049720 (DONE:8ms)
- 64/224: Method: sub_80497A0
- 65/224: 65/224: sub_80497A0 (DONE:10ms)
- 65/224: Method: sub_80498B0
- 66/224: 66/224: sub_80498B0 (DONE:10ms)
- 66/224: Method: sub_80499A0
- 67/224: 67/224: sub_80499A0 (DONE:10ms)
- 67/224: Method: sub_80499F0
- 68/224: 68/224: sub_80499F0 (DONE:10ms)
- 68/224: Method: sub_8049A10
- 69/224: 69/224: sub_8049A10 (DONE:11ms)
- 69/224: Method: sub_8049A80
- 70/224: 70/224: sub_8049A80 (DONE:11ms)
- 70/224: Method: sub_8049B30
- 71/224: 71/224: sub_8049B30 (DONE:7ms)
- 71/224: Method: sub_8049B60
- 72/224: 72/224: sub_8049B60 (DONE:10ms)
- 72/224: Method: sub_804D260
- 73/224: 73/224: sub_804D260 (DONE:250ms)
- 73/224: Method: sub_804D3A0
- 74/224: 74/224: sub_804D3A0 (DONE:86ms)
- 74/224: Method: sub_8052420
- 75/224: 75/224: sub_8052420 (DONE:155ms)
- 75/224: Method: sub_8052C10
- 76/224: 76/224: sub_8052C10 (DONE:211ms)
- 76/224: Method: sub_8056410
- 77/224: 77/224: sub_8056410 (DONE:17ms)
- 77/224: Method: sub_8059950
- 78/224: 78/224: sub_8059950 (DONE:397ms)
- 78/224: Method: sub_8059AC0
- 79/224: 79/224: sub_8059AC0 (DONE:578ms)
- 79/224: Method: sub_804C970
- 80/224: 80/224: sub_804C970 (DONE:242ms)
- 80/224: Method: sub_804CA20
- 81/224: 81/224: sub_804CA20 (DONE:174ms)
- 81/224: Method: sub_804D600
- 82/224: 82/224: sub_804D600 (DONE:59ms)
- 82/224: Method: sub_8058BA0
- 83/224: 83/224: sub_8058BA0 (DONE:19ms)
- 83/224: Method: sub_8058BD0
- 84/224: 84/224: sub_8058BD0 (DONE:29ms)
- 84/224: Method: sub_804C2B0
- 85/224: 85/224: sub_804C2B0 (DONE:21ms)
- 85/224: Method: sub_8052890
- 86/224: 86/224: sub_8052890 (DONE:75ms)
- 86/224: Method: sub_80513A0
- 87/224: 87/224: sub_80513A0 (DONE:5653ms)
- 87/224: Method: sub_8053370
- 88/224: 88/224: sub_8053370 (DONE:230ms)
- 88/224: Method: sub_80563C0
- 89/224: 89/224: sub_80563C0 (DONE:38ms)
- 89/224: Method: sub_80494E0
- 90/224: 90/224: sub_80494E0 (DONE:5ms)
- 90/224: Method: sub_8056B30
- 91/224: 91/224: sub_8056B30 (DONE:68ms)
- 91/224: Method: sub_8049530
- 92/224: 92/224: sub_8049530 (DONE:8ms)
- 92/224: Method: sub_8049540
- 93/224: 93/224: sub_8049540 (DONE:10ms)
- 93/224: Method: sub_8054860
- 94/224: 94/224: sub_8054860 (DONE:118ms)
- 94/224: Method: sub_8049580
- 95/224: 95/224: sub_8049580 (DONE:8ms)
- 95/224: Method: sub_80495A0
- 96/224: 96/224: sub_80495A0 (DONE:23ms)
- 96/224: Method: sub_80495B0
- 97/224: 97/224: sub_80495B0 (DONE:13ms)
- 97/224: Method: sub_80495F0
- 98/224: 98/224: sub_80495F0 (DONE:9ms)
- 98/224: Method: sub_8049640
- 99/224: 99/224: sub_8049640 (DONE:10ms)
- 99/224: Method: sub_8049670
-100/224: 100/224: sub_8049670 (DONE:9ms)
-100/224: Method: sub_8049680
-101/224: 101/224: sub_8049680 (DONE:11ms)
-101/224: Method: sub_80496E0
-102/224: 102/224: sub_80496E0 (DONE:10ms)
-102/224: Method: sub_8055160
-103/224: 103/224: sub_8055160 (DONE:739ms)
-103/224: Method: sub_8055350
-104/224: 104/224: sub_8055350 (DONE:29ms)
-104/224: Method: sub_804CAE0
-105/224: 105/224: sub_804CAE0 (DONE:119ms)
-105/224: Method: sub_804D660
-106/224: 106/224: sub_804D660 (DONE:37ms)
-106/224: Method: sub_804CBA0
-107/224: 107/224: sub_804CBA0 (DONE:48ms)
-107/224: Method: sub_80496F0
-108/224: 108/224: sub_80496F0 (DONE:7ms)
-108/224: Method: sub_8049700
-109/224: 109/224: sub_8049700 (DONE:6ms)
-109/224: Method: sub_8049730
-110/224: 110/224: sub_8049730 (DONE:9ms)
-110/224: Method: sub_8049750
-111/224: 111/224: sub_8049750 (DONE:9ms)
-111/224: Method: sub_8049760
-112/224: 112/224: sub_8049760 (DONE:7ms)
-112/224: Method: sub_80497C0
-113/224: 113/224: sub_80497C0 (DONE:7ms)
-113/224: Method: sub_8049800
-114/224: 114/224: sub_8049800 (DONE:8ms)
-114/224: Method: sub_8058AA0
-115/224: 115/224: sub_8058AA0 (DONE:41ms)
-115/224: Method: sub_8049810
-116/224: 116/224: sub_8049810 (DONE:10ms)
-116/224: Method: sub_8049840
-117/224: 117/224: sub_8049840 (DONE:7ms)
-117/224: Method: sub_8049850
-118/224: 118/224: sub_8049850 (DONE:5ms)
-118/224: Method: sub_8049880
-119/224: 119/224: sub_8049880 (DONE:9ms)
-119/224: Method: sub_8049890
-120/224: 120/224: sub_8049890 (DONE:7ms)
-120/224: Method: sub_80498A0
-121/224: 121/224: sub_80498A0 (DONE:6ms)
-121/224: Method: sub_80498C0
-122/224: 122/224: sub_80498C0 (DONE:8ms)
-122/224: Method: sub_8058C50
-123/224: 123/224: sub_8058C50 (DONE:1830ms)
-123/224: Method: sub_80498F0
-124/224: 124/224: sub_80498F0 (DONE:8ms)
-124/224: Method: sub_8049900
-125/224: 125/224: sub_8049900 (DONE:8ms)
-125/224: Method: sub_8049930
-126/224: 126/224: sub_8049930 (DONE:9ms)
-126/224: Method: sub_8049940
-127/224: 127/224: sub_8049940 (DONE:9ms)
-127/224: Method: sub_80499B0
-128/224: 128/224: sub_80499B0 (DONE:7ms)
-128/224: Method: sub_80499C0
-129/224: 129/224: sub_80499C0 (DONE:9ms)
-129/224: Method: sub_80499E0
-130/224: 130/224: sub_80499E0 (DONE:8ms)
-130/224: Method: sub_8049A20
-131/224: 131/224: sub_8049A20 (DONE:6ms)
-131/224: Method: sub_8053850
-132/224: 132/224: sub_8053850 (DONE:21496ms)
-132/224: Method: sub_8049A50
-133/224: 133/224: sub_8049A50 (DONE:10ms)
-133/224: Method: sub_8049A70
-134/224: 134/224: sub_8049A70 (DONE:10ms)
-134/224: Method: sub_8049A90
-135/224: 135/224: sub_8049A90 (DONE:10ms)
-135/224: Method: sub_8049AE0
-136/224: 136/224: sub_8049AE0 (DONE:11ms)
-136/224: Method: sub_8049B10
-137/224: 137/224: sub_8049B10 (DONE:9ms)
-137/224: Method: sub_8049B20
-138/224: 138/224: sub_8049B20 (DONE:8ms)
-138/224: Method: sub_80549F0
-139/224: 139/224: sub_80549F0 (DONE:90ms)
-139/224: Method: sub_804BE60
-140/224: 140/224: sub_804BE60 (DONE:39ms)
-140/224: Method: sub_804BEC0
-141/224: 141/224: sub_804BEC0 (DONE:23ms)
-141/224: Method: sub_80522D0
-142/224: 142/224: sub_80522D0 (DONE:270ms)
-142/224: Method: sub_8052D20
-143/224: 143/224: sub_8052D20 (DONE:9ms)
-143/224: Method: sub_8059FB2
-144/224: 144/224: sub_8059FB2 (DONE:8ms)
-144/224: Method: sub_805A000
-145/224: 145/224: sub_805A000 (DONE:61ms)
-145/224: Method: sub_8052100
-146/224: 146/224: sub_8052100 (DONE:36ms)
-146/224: Method: sub_80532B0
-147/224: 147/224: sub_80532B0 (DONE:116ms)
-147/224: Method: sub_80556E0
-148/224: 148/224: sub_80556E0 (DONE:89ms)
-148/224: Method: sub_8058370
-149/224: 149/224: sub_8058370 (DONE:722ms)
-149/224: Method: sub_8059090
-150/224: 150/224: sub_8059090 (DONE:95ms)
-150/224: Method: sub_8051DB0
-151/224: 151/224: sub_8051DB0 (DONE:204ms)
-151/224: Method: sub_8054CE0
-152/224: 152/224: sub_8054CE0 (DONE:484ms)
-152/224: Method: sub_8053140
-153/224: 153/224: sub_8053140 (DONE:25ms)
-153/224: Method: sub_8054B80
-154/224: 154/224: sub_8054B80 (DONE:109ms)
-154/224: Method: sub_8053710
-155/224: 155/224: sub_8053710 (DONE:106ms)
-155/224: Method: sub_80534F0
-156/224: 156/224: sub_80534F0 (DONE:215ms)
-156/224: Method: sub_8059230
-157/224: 157/224: sub_8059230 (DONE:924ms)
-157/224: Method: sub_8054660
-158/224: 158/224: sub_8054660 (DONE:344ms)
-158/224: Method: sub_8051B00
-159/224: 159/224: sub_8051B00 (DONE:22ms)
-159/224: Method: sub_80555D0
-160/224: 160/224: sub_80555D0 (DONE:178ms)
-160/224: Method: sub_80595E0
-161/224: 161/224: sub_80595E0 (DONE:86ms)
-161/224: Method: sub_8059550
-162/224: 162/224: sub_8059550 (DONE:81ms)
-162/224: Method: sub_8051AA0
-163/224: 163/224: sub_8051AA0 (DONE:49ms)
-163/224: Method: sub_8052840
-164/224: 164/224: sub_8052840 (DONE:34ms)
-164/224: Method: sub_8059FC0
-165/224: 165/224: sub_8059FC0 (DONE:29ms)
-165/224: Method: sub_8052310
-166/224: 166/224: sub_8052310 (DONE:84ms)
-166/224: Method: sub_8058920
-167/224: 167/224: sub_8058920 (DONE:47ms)
-167/224: Method: sub_80536D0
-168/224: 168/224: sub_80536D0 (DONE:32ms)
-168/224: Method: sub_80522E0
-169/224: 169/224: sub_80522E0 (DONE:15ms)
-169/224: Method: sub_804C810
-170/224: 170/224: sub_804C810 (DONE:258ms)
-170/224: Method: sub_8058980
-171/224: 171/224: sub_8058980 (DONE:25ms)
-171/224: Method: sub_80494D6
-172/224: 172/224: sub_80494D6 (DONE:6ms)
-172/224: Method: sub_80494F0
-173/224: 173/224: sub_80494F0 (DONE:8ms)
-173/224: Method: sub_8049550
-174/224: 174/224: sub_8049550 (DONE:8ms)
-174/224: Method: sub_8049560
-175/224: 175/224: sub_8049560 (DONE:8ms)
-175/224: Method: sub_8049600
-176/224: 176/224: sub_8049600 (DONE:6ms)
-176/224: Method: sub_8049610
-177/224: 177/224: sub_8049610 (DONE:8ms)
-177/224: Method: sub_80496C0
-178/224: 178/224: sub_80496C0 (DONE:7ms)
-178/224: Method: sub_8049740
-179/224: 179/224: sub_8049740 (DONE:5ms)
-179/224: Method: sub_8049790
-180/224: 180/224: sub_8049790 (DONE:8ms)
-180/224: Method: sub_80497E0
-181/224: 181/224: sub_80497E0 (DONE:7ms)
-181/224: Method: sub_8049830
-182/224: 182/224: sub_8049830 (DONE:7ms)
-182/224: Method: sub_8049950
-183/224: 183/224: sub_8049950 (DONE:7ms)
-183/224: Method: sub_8049960
-184/224: 184/224: sub_8049960 (DONE:6ms)
-184/224: Method: sub_8049A40
-185/224: 185/224: sub_8049A40 (DONE:11ms)
-185/224: Method: sub_8049AF0
-186/224: 186/224: sub_8049AF0 (DONE:8ms)
-186/224: Method: sub_8051F60
-187/224: 187/224: sub_8051F60 (DONE:63ms)
-187/224: Method: sub_80524B0
-188/224: 188/224: sub_80524B0 (DONE:1579ms)
-188/224: Method: start
-189/224: 189/224: start (DONE:24ms)
-189/224: Method: sub_804D980
-190/224: 190/224: sub_804D980 (DONE:39ms)
-190/224: Method: sub_804D9D0
-191/224: 191/224: sub_804D9D0 (DONE:17ms)
-191/224: Method: sub_804DF20
-192/224: 192/224: sub_804DF20 (DONE:33ms)
-192/224: Method: sub_804D940
-193/224: 193/224: sub_804D940 (DONE:27ms)
-193/224: Method: sub_8051EE0
-194/224: 194/224: sub_8051EE0 (DONE:75ms)
-194/224: Method: sub_8056780
-195/224: 195/224: sub_8056780 (DONE:10ms)
-195/224: Method: sub_804D570
-196/224: 196/224: sub_804D570 (DONE:68ms)
-196/224: Method: sub_804D3F0
-197/224: 197/224: sub_804D3F0 (DONE:401ms)
-197/224: Method: sub_804F7E0
-198/224: 198/224: sub_804F7E0 (DONE:697ms)
-198/224: Method: sub_804DF70
-199/224: 199/224: sub_804DF70 (DONE:414ms)
-199/224: Method: sub_8055760
-200/224: 200/224: sub_8055760 (DONE:14536ms)
-200/224: Method: sub_8056220
-201/224: 201/224: sub_8056220 (DONE:214ms)
-201/224: Method: sub_8056510
-202/224: 202/224: sub_8056510 (DONE:60ms)
-202/224: Method: sub_804CBF0
-203/224: 203/224: sub_804CBF0 (DONE:805ms)
-203/224: Method: sub_804D9F0
-204/224: 204/224: sub_804D9F0 (DONE:2172ms)
-204/224: Method: sub_80567D0
-205/224: 205/224: sub_80567D0 (DONE:23ms)
-205/224: Method: sub_8055690
-206/224: 206/224: sub_8055690 (DONE:19ms)
-206/224: Method: sub_8056740
-207/224: 207/224: sub_8056740 (DONE:11ms)
-207/224: Method: sub_8056890
-208/224: 208/224: sub_8056890 (DONE:84ms)
-208/224: Method: sub_80556C0
-209/224: 209/224: sub_80556C0 (DONE:16ms)
-209/224: Method: sub_8051D10
-210/224: 210/224: sub_8051D10 (DONE:63ms)
-210/224: Method: sub_8056950
-211/224: 211/224: sub_8056950 (DONE:18ms)
-211/224: Method: sub_8056980
-212/224: 212/224: sub_8056980 (DONE:12ms)
-212/224: Method: sub_804EB40
-213/224: 213/224: sub_804EB40 (DONE:21005ms)
-213/224: Method: sub_804C3F0
-214/224: 214/224: sub_804C3F0 (DONE:278ms)
-214/224: Method: sub_804FA80
-215/224: 215/224: sub_804FA80 (DONE:1810ms)
-215/224: Method: sub_8049B80
-216/224: 216/224: sub_8049B80 (DONE:8560ms)
-216/224: Method: sub_804E120
-217/224: 217/224: sub_804E120 (DONE:239ms)
-217/224: Method: sub_804E240
-218/224: 218/224: sub_804E240 (DONE:7876ms)
-218/224: Method: sub_80555B0
-219/224: 219/224: sub_80555B0 (DONE:54ms)
-219/224: Method: sub_8058320
-220/224: 220/224: sub_8058320 (DONE:599ms)
-220/224: Method: finalizer_0
-221/224: 221/224: finalizer_0 (DONE:30ms)
-221/224: Method: initializer_0
-222/224: 222/224: initializer_0 (DONE:45ms)
-222/224: Method: sub_8056B70
-223/224: 223/224: sub_8056B70 (DONE:60192ms)
-223/224: Method: sub_8055380
-224/224: 224/224: sub_8055380 (DONE:469ms)
-1/1 DECOMPILATION ERROR: METHOD sub_8056B70: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 60191 ms; max= 60000 ms
+  0/225: Method: →free
+  1/225: 1/225: →free (DONE:54ms)
+  1/225: Method: sub_804BF90
+  2/225: 2/225: sub_804BF90 (DONE:170ms)
+  2/225: Method: →malloc
+  3/225: 3/225: →malloc (DONE:5ms)
+  3/225: Method: sub_8059C90
+  4/225: 4/225: sub_8059C90 (DONE:501ms)
+  4/225: Method: sub_8056430
+  5/225: 5/225: sub_8056430 (DONE:7ms)
+  5/225: Method: sub_8059DC0
+  6/225: 6/225: sub_8059DC0 (DONE:472ms)
+  6/225: Method: sub_8054C60
+  7/225: 7/225: sub_8054C60 (DONE:52ms)
+  7/225: Method: sub_80520B0
+  8/225: 8/225: sub_80520B0 (DONE:167ms)
+  8/225: Method: sub_8059140
+  9/225: 9/225: sub_8059140 (DONE:72ms)
+  9/225: Method: sub_80591F0
+ 10/225: 10/225: sub_80591F0 (DONE:27ms)
+ 10/225: Method: sub_804C010
+ 11/225: 11/225: sub_804C010 (DONE:564ms)
+ 11/225: Method: sub_8056450
+ 12/225: 12/225: sub_8056450 (DONE:40ms)
+ 12/225: Method: sub_804D260
+ 13/225: 13/225: sub_804D260 (DONE:245ms)
+ 13/225: Method: sub_8052420
+ 14/225: 14/225: sub_8052420 (DONE:110ms)
+ 14/225: Method: sub_8052C10
+ 15/225: 15/225: sub_8052C10 (DONE:234ms)
+ 15/225: Method: sub_8056410
+ 16/225: 16/225: sub_8056410 (DONE:5ms)
+ 16/225: Method: sub_8059950
+ 17/225: 17/225: sub_8059950 (DONE:326ms)
+ 17/225: Method: sub_8059AC0
+ 18/225: 18/225: sub_8059AC0 (DONE:393ms)
+ 18/225: Method: sub_80494D6
+ 19/225: 19/225: sub_80494D6 (DONE:5ms)
+ 19/225: Method: →dcgettext
+ 20/225: 20/225: →dcgettext (DONE:6ms)
+ 20/225: Method: →strlen
+ 21/225: 21/225: →strlen (DONE:5ms)
+ 21/225: Method: →fputs_unlocked
+ 22/225: 22/225: →fputs_unlocked (DONE:5ms)
+ 22/225: Method: →memset
+ 23/225: 23/225: →memset (DONE:6ms)
+ 23/225: Method: →__errno_location
+ 24/225: 24/225: →__errno_location (DONE:4ms)
+ 24/225: Method: →__overflow
+ 25/225: 25/225: →__overflow (DONE:5ms)
+ 25/225: Method: →__fprintf_chk
+ 26/225: 26/225: →__fprintf_chk (DONE:5ms)
+ 26/225: Method: →error
+ 27/225: 27/225: →error (DONE:8ms)
+ 27/225: Method: →abort
+ 28/225: 28/225: →abort (DONE:4ms)
+ 28/225: Method: →memcpy
+ 29/225: 29/225: →memcpy (DONE:6ms)
+ 29/225: Method: →__stack_chk_fail
+ 30/225: 30/225: →__stack_chk_fail (DONE:5ms)
+ 30/225: Method: →getenv
+ 31/225: 31/225: →getenv (DONE:5ms)
+ 31/225: Method: →__printf_chk
+ 32/225: 32/225: →__printf_chk (DONE:5ms)
+ 32/225: Method: →strchr
+ 33/225: 33/225: →strchr (DONE:5ms)
+ 33/225: Method: →__sprintf_chk
+ 34/225: 34/225: →__sprintf_chk (DONE:6ms)
+ 34/225: Method: sub_8058C00
+ 35/225: 35/225: sub_8058C00 (DONE:35ms)
+ 35/225: Method: sub_8058A70
+ 36/225: 36/225: sub_8058A70 (DONE:59ms)
+ 36/225: Method: →fwrite_unlocked
+ 37/225: 37/225: →fwrite_unlocked (DONE:6ms)
+ 37/225: Method: →_obstack_newchunk
+ 38/225: 38/225: →_obstack_newchunk (DONE:5ms)
+ 38/225: Method: →__assert_fail
+ 39/225: 39/225: →__assert_fail (DONE:5ms)
+ 39/225: Method: →__ctype_b_loc
+ 40/225: 40/225: →__ctype_b_loc (DONE:5ms)
+ 40/225: Method: →memcmp
+ 41/225: 41/225: →memcmp (DONE:8ms)
+ 41/225: Method: →__ctype_get_mb_cur_max
+ 42/225: 42/225: →__ctype_get_mb_cur_max (DONE:5ms)
+ 42/225: Method: →strncmp
+ 43/225: 43/225: →strncmp (DONE:6ms)
+ 43/225: Method: →strcpy
+ 44/225: 44/225: →strcpy (DONE:6ms)
+ 44/225: Method: →__xstat64
+ 45/225: 45/225: →__xstat64 (DONE:6ms)
+ 45/225: Method: →raise
+ 46/225: 46/225: →raise (DONE:5ms)
+ 46/225: Method: →strstr
+ 47/225: 47/225: →strstr (DONE:5ms)
+ 47/225: Method: →wcwidth
+ 48/225: 48/225: →wcwidth (DONE:4ms)
+ 48/225: Method: →mbsinit
+ 49/225: 49/225: →mbsinit (DONE:4ms)
+ 49/225: Method: →_obstack_begin
+ 50/225: 50/225: →_obstack_begin (DONE:7ms)
+ 50/225: Method: →mbrtowc
+ 51/225: 51/225: →mbrtowc (DONE:6ms)
+ 51/225: Method: →exit
+ 52/225: 52/225: →exit (DONE:4ms)
+ 52/225: Method: →mempcpy
+ 53/225: 53/225: →mempcpy (DONE:5ms)
+ 53/225: Method: →setlocale
+ 54/225: 54/225: →setlocale (DONE:5ms)
+ 54/225: Method: →freecon
+ 55/225: 55/225: →freecon (DONE:5ms)
+ 55/225: Method: →isatty
+ 56/225: 56/225: →isatty (DONE:5ms)
+ 56/225: Method: →closedir
+ 57/225: 57/225: →closedir (DONE:5ms)
+ 57/225: Method: sub_804D3A0
+ 58/225: 58/225: sub_804D3A0 (DONE:44ms)
+ 58/225: Method: sub_8052920
+ 59/225: 59/225: sub_8052920 (DONE:61ms)
+ 59/225: Method: sub_804C280
+ 60/225: 60/225: sub_804C280 (DONE:18ms)
+ 60/225: Method: sub_8051C00
+ 61/225: 61/225: sub_8051C00 (DONE:138ms)
+ 61/225: Method: sub_804C320
+ 62/225: 62/225: sub_804C320 (DONE:45ms)
+ 62/225: Method: sub_8052950
+ 63/225: 63/225: sub_8052950 (DONE:140ms)
+ 63/225: Method: sub_8052A50
+ 64/225: 64/225: sub_8052A50 (DONE:158ms)
+ 64/225: Method: →strcmp
+ 65/225: 65/225: →strcmp (DONE:6ms)
+ 65/225: Method: →sigprocmask
+ 66/225: 66/225: →sigprocmask (DONE:7ms)
+ 66/225: Method: →signal
+ 67/225: 67/225: →signal (DONE:5ms)
+ 67/225: Method: →sigismember
+ 68/225: 68/225: →sigismember (DONE:5ms)
+ 68/225: Method: →fflush_unlocked
+ 69/225: 69/225: →fflush_unlocked (DONE:5ms)
+ 69/225: Method: →fnmatch
+ 70/225: 70/225: →fnmatch (DONE:9ms)
+ 70/225: Method: →iswprint
+ 71/225: 71/225: →iswprint (DONE:5ms)
+ 71/225: Method: →wcstombs
+ 72/225: 72/225: →wcstombs (DONE:5ms)
+ 72/225: Method: →localtime
+ 73/225: 73/225: →localtime (DONE:4ms)
+ 73/225: Method: →wcswidth
+ 74/225: 74/225: →wcswidth (DONE:4ms)
+ 74/225: Method: →strrchr
+ 75/225: 75/225: →strrchr (DONE:5ms)
+ 75/225: Method: →mbstowcs
+ 76/225: 76/225: →mbstowcs (DONE:6ms)
+ 76/225: Method: →sigaction
+ 77/225: 77/225: →sigaction (DONE:5ms)
+ 77/225: Method: →__ctype_tolower_loc
+ 78/225: 78/225: →__ctype_tolower_loc (DONE:4ms)
+ 78/225: Method: →calloc
+ 79/225: 79/225: →calloc (DONE:5ms)
+ 79/225: Method: sub_804C970
+ 80/225: 80/225: sub_804C970 (DONE:93ms)
+ 80/225: Method: sub_804CA20
+ 81/225: 81/225: sub_804CA20 (DONE:116ms)
+ 81/225: Method: sub_804D600
+ 82/225: 82/225: sub_804D600 (DONE:85ms)
+ 82/225: Method: sub_8058BA0
+ 83/225: 83/225: sub_8058BA0 (DONE:18ms)
+ 83/225: Method: sub_8058BD0
+ 84/225: 84/225: sub_8058BD0 (DONE:17ms)
+ 84/225: Method: sub_804C2B0
+ 85/225: 85/225: sub_804C2B0 (DONE:25ms)
+ 85/225: Method: sub_8052890
+ 86/225: 86/225: sub_8052890 (DONE:48ms)
+ 86/225: Method: sub_80513A0
+ 87/225: 87/225: sub_80513A0 (DONE:367ms)
+ 87/225: Method: sub_8053370
+ 88/225: 88/225: sub_8053370 (DONE:287ms)
+ 88/225: Method: sub_80563C0
+ 89/225: 89/225: sub_80563C0 (DONE:20ms)
+ 89/225: Method: sub_804BE60
+ 90/225: 90/225: sub_804BE60 (DONE:37ms)
+ 90/225: Method: sub_804BEC0
+ 91/225: 91/225: sub_804BEC0 (DONE:12ms)
+ 91/225: Method: sub_8052140
+ 92/225: 92/225: sub_8052140 (DONE:199ms)
+ 92/225: Method: sub_8052D20
+ 93/225: 93/225: sub_8052D20 (DONE:3ms)
+ 93/225: Method: sub_8059FB2
+ 94/225: 94/225: sub_8059FB2 (DONE:2ms)
+ 94/225: Method: sub_805A000
+ 95/225: 95/225: sub_805A000 (DONE:46ms)
+ 95/225: Method: sub_80532B0
+ 96/225: 96/225: sub_80532B0 (DONE:99ms)
+ 96/225: Method: sub_8054B80
+ 97/225: 97/225: sub_8054B80 (DONE:100ms)
+ 97/225: Method: →__ctype_toupper_loc
+ 98/225: 98/225: →__ctype_toupper_loc (DONE:5ms)
+ 98/225: Method: sub_8056B30
+ 99/225: 99/225: sub_8056B30 (DONE:19ms)
+ 99/225: Method: →__mempcpy_chk
+100/225: 100/225: →__mempcpy_chk (DONE:4ms)
+100/225: Method: →getpwuid
+101/225: 101/225: →getpwuid (DONE:4ms)
+101/225: Method: sub_8054860
+102/225: 102/225: sub_8054860 (DONE:67ms)
+102/225: Method: →dirfd
+103/225: 103/225: →dirfd (DONE:5ms)
+103/225: Method: →memmove
+104/225: 104/225: →memmove (DONE:5ms)
+104/225: Method: →_setjmp
+105/225: 105/225: →_setjmp (DONE:4ms)
+105/225: Method: →__strtoull_internal
+106/225: 106/225: →__strtoull_internal (DONE:4ms)
+106/225: Method: →gettimeofday
+107/225: 107/225: →gettimeofday (DONE:5ms)
+107/225: Method: →mktime
+108/225: 108/225: →mktime (DONE:5ms)
+108/225: Method: →stpcpy
+109/225: 109/225: →stpcpy (DONE:8ms)
+109/225: Method: →iswcntrl
+110/225: 110/225: →iswcntrl (DONE:5ms)
+110/225: Method: sub_8055160
+111/225: 111/225: sub_8055160 (DONE:1244ms)
+111/225: Method: sub_8055350
+112/225: 112/225: sub_8055350 (DONE:16ms)
+112/225: Method: sub_804CAE0
+113/225: 113/225: sub_804CAE0 (DONE:60ms)
+113/225: Method: sub_804D660
+114/225: 114/225: sub_804D660 (DONE:26ms)
+114/225: Method: sub_804CBA0
+115/225: 115/225: sub_804CBA0 (DONE:27ms)
+115/225: Method: →textdomain
+116/225: 116/225: →textdomain (DONE:5ms)
+116/225: Method: →readlink
+117/225: 117/225: →readlink (DONE:5ms)
+117/225: Method: →ioctl
+118/225: 118/225: →ioctl (DONE:6ms)
+118/225: Method: →fwrite
+119/225: 119/225: →fwrite (DONE:8ms)
+119/225: Method: →__fxstat64
+120/225: 120/225: →__fxstat64 (DONE:5ms)
+120/225: Method: →__cxa_atexit
+121/225: 121/225: →__cxa_atexit (DONE:4ms)
+121/225: Method: →realloc
+122/225: 122/225: →realloc (DONE:5ms)
+122/225: Method: sub_8058AA0
+123/225: 123/225: sub_8058AA0 (DONE:74ms)
+123/225: Method: →lgetfilecon
+124/225: 124/225: →lgetfilecon (DONE:5ms)
+124/225: Method: →__memcpy_chk
+125/225: 125/225: →__memcpy_chk (DONE:4ms)
+125/225: Method: →__gmon_start__
+126/225: 126/225: →__gmon_start__ (DONE:6ms)
+126/225: Method: →strftime
+127/225: 127/225: →strftime (DONE:6ms)
+127/225: Method: →getopt_long
+128/225: 128/225: →getopt_long (DONE:6ms)
+128/225: Method: →getfilecon
+129/225: 129/225: →getfilecon (DONE:4ms)
+129/225: Method: →strtoul
+130/225: 130/225: →strtoul (DONE:8ms)
+130/225: Method: sub_8058C50
+131/225: 131/225: sub_8058C50 (DONE:1336ms)
+131/225: Method: →__libc_start_main
+132/225: 132/225: →__libc_start_main (DONE:5ms)
+132/225: Method: →sigaddset
+133/225: 133/225: →sigaddset (DONE:5ms)
+133/225: Method: →tcgetpgrp
+134/225: 134/225: →tcgetpgrp (DONE:5ms)
+134/225: Method: →strncpy
+135/225: 135/225: →strncpy (DONE:5ms)
+135/225: Method: →sigemptyset
+136/225: 136/225: →sigemptyset (DONE:7ms)
+136/225: Method: →nl_langinfo
+137/225: 137/225: →nl_langinfo (DONE:5ms)
+137/225: Method: →acl_extended_file_nofollow
+138/225: 138/225: →acl_extended_file_nofollow (DONE:5ms)
+138/225: Method: →localeconv
+139/225: 139/225: →localeconv (DONE:4ms)
+139/225: Method: sub_8053850
+140/225: 140/225: sub_8053850 (DONE:11561ms)
+140/225: Method: →readdir64
+141/225: 141/225: →readdir64 (DONE:5ms)
+141/225: Method: →clock_gettime
+142/225: 142/225: →clock_gettime (DONE:5ms)
+142/225: Method: →bindtextdomain
+143/225: 143/225: →bindtextdomain (DONE:5ms)
+143/225: Method: →__lxstat64
+144/225: 144/225: →__lxstat64 (DONE:5ms)
+144/225: Method: →opendir
+145/225: 145/225: →opendir (DONE:4ms)
+145/225: Method: →getgrgid
+146/225: 146/225: →getgrgid (DONE:4ms)
+146/225: Method: sub_80549F0
+147/225: 147/225: sub_80549F0 (DONE:72ms)
+147/225: Method: sub_8052100
+148/225: 148/225: sub_8052100 (DONE:31ms)
+148/225: Method: sub_80556E0
+149/225: 149/225: sub_80556E0 (DONE:64ms)
+149/225: Method: sub_8058370
+150/225: 150/225: sub_8058370 (DONE:318ms)
+150/225: Method: sub_8059090
+151/225: 151/225: sub_8059090 (DONE:63ms)
+151/225: Method: sub_8051DB0
+152/225: 152/225: sub_8051DB0 (DONE:116ms)
+152/225: Method: sub_8054CE0
+153/225: 153/225: sub_8054CE0 (DONE:827ms)
+153/225: Method: sub_80522D0
+154/225: 154/225: sub_80522D0 (DONE:6ms)
+154/225: Method: sub_8059230
+155/225: 155/225: sub_8059230 (DONE:1008ms)
+155/225: Method: sub_8054660
+156/225: 156/225: sub_8054660 (DONE:177ms)
+156/225: Method: sub_8051B00
+157/225: 157/225: sub_8051B00 (DONE:115ms)
+157/225: Method: sub_80555D0
+158/225: 158/225: sub_80555D0 (DONE:165ms)
+158/225: Method: sub_8059FC0
+159/225: 159/225: sub_8059FC0 (DONE:20ms)
+159/225: Method: sub_80595E0
+160/225: 160/225: sub_80595E0 (DONE:45ms)
+160/225: Method: sub_8059550
+161/225: 161/225: sub_8059550 (DONE:44ms)
+161/225: Method: sub_8051AA0
+162/225: 162/225: sub_8051AA0 (DONE:42ms)
+162/225: Method: sub_8052840
+163/225: 163/225: sub_8052840 (DONE:26ms)
+163/225: Method: sub_8052310
+164/225: 164/225: sub_8052310 (DONE:137ms)
+164/225: Method: sub_8058920
+165/225: 165/225: sub_8058920 (DONE:28ms)
+165/225: Method: sub_80522E0
+166/225: 166/225: sub_80522E0 (DONE:33ms)
+166/225: Method: sub_804C810
+167/225: 167/225: sub_804C810 (DONE:317ms)
+167/225: Method: sub_8058980
+168/225: 168/225: sub_8058980 (DONE:13ms)
+168/225: Method: →getpwnam
+169/225: 169/225: →getpwnam (DONE:4ms)
+169/225: Method: →fflush
+170/225: 170/225: →fflush (DONE:4ms)
+170/225: Method: →_exit
+171/225: 171/225: →_exit (DONE:4ms)
+171/225: Method: →fclose
+172/225: 172/225: →fclose (DONE:5ms)
+172/225: Method: →fseeko64
+173/225: 173/225: →fseeko64 (DONE:5ms)
+173/225: Method: →fgetfilecon
+174/225: 174/225: →fgetfilecon (DONE:5ms)
+174/225: Method: →acl_get_tag_type
+175/225: 175/225: →acl_get_tag_type (DONE:4ms)
+175/225: Method: →__fpending
+176/225: 176/225: →__fpending (DONE:4ms)
+176/225: Method: →strcoll
+177/225: 177/225: →strcoll (DONE:4ms)
+177/225: Method: →__freading
+178/225: 178/225: →__freading (DONE:3ms)
+178/225: Method: →fileno
+179/225: 179/225: →fileno (DONE:3ms)
+179/225: Method: →acl_get_entry
+180/225: 180/225: →acl_get_entry (DONE:3ms)
+180/225: Method: →lseek64
+181/225: 181/225: →lseek64 (DONE:5ms)
+181/225: Method: →getgrnam
+182/225: 182/225: →getgrnam (DONE:4ms)
+182/225: Method: sub_8051F60
+183/225: 183/225: sub_8051F60 (DONE:29ms)
+183/225: Method: sub_80524B0
+184/225: 184/225: sub_80524B0 (DONE:1087ms)
+184/225: Method: start
+185/225: 185/225: start (DONE:14ms)
+185/225: Method: sub_804D980
+186/225: 186/225: sub_804D980 (DONE:19ms)
+186/225: Method: sub_804D9D0
+187/225: 187/225: sub_804D9D0 (DONE:9ms)
+187/225: Method: sub_804DF20
+188/225: 188/225: sub_804DF20 (DONE:23ms)
+188/225: Method: sub_804D940
+189/225: 189/225: sub_804D940 (DONE:23ms)
+189/225: Method: sub_8051EE0
+190/225: 190/225: sub_8051EE0 (DONE:30ms)
+190/225: Method: sub_8056780
+191/225: 191/225: sub_8056780 (DONE:10ms)
+191/225: Method: sub_804D570
+192/225: 192/225: sub_804D570 (DONE:31ms)
+192/225: Method: sub_804D3F0
+193/225: 193/225: sub_804D3F0 (DONE:569ms)
+193/225: Method: sub_804F7E0
+194/225: 194/225: sub_804F7E0 (DONE:1832ms)
+194/225: Method: sub_804DF70
+195/225: 195/225: sub_804DF70 (DONE:404ms)
+195/225: Method: sub_8055760
+196/225: 196/225: sub_8055760 (DONE:12447ms)
+196/225: Method: sub_8056220
+197/225: 197/225: sub_8056220 (DONE:331ms)
+197/225: Method: sub_8056510
+198/225: 198/225: sub_8056510 (DONE:30ms)
+198/225: Method: sub_804CBF0
+199/225: 199/225: sub_804CBF0 (DONE:1975ms)
+199/225: Method: sub_804D9F0
+200/225: 200/225: sub_804D9F0 (DONE:2868ms)
+200/225: Method: sub_80567D0
+201/225: 201/225: sub_80567D0 (DONE:15ms)
+201/225: Method: sub_8055690
+202/225: 202/225: sub_8055690 (DONE:10ms)
+202/225: Method: sub_8056740
+203/225: 203/225: sub_8056740 (DONE:2ms)
+203/225: Method: sub_8056890
+204/225: 204/225: sub_8056890 (DONE:54ms)
+204/225: Method: sub_80556C0
+205/225: 205/225: sub_80556C0 (DONE:10ms)
+205/225: Method: sub_8051D10
+206/225: 206/225: sub_8051D10 (DONE:28ms)
+206/225: Method: sub_8056950
+207/225: 207/225: sub_8056950 (DONE:12ms)
+207/225: Method: sub_8056980
+208/225: 208/225: sub_8056980 (DONE:10ms)
+208/225: Method: sub_804EB40
+209/225: 209/225: sub_804EB40 (DONE:11312ms)
+209/225: Method: sub_804C3F0
+210/225: 210/225: sub_804C3F0 (DONE:316ms)
+210/225: Method: sub_804FA80
+211/225: 211/225: sub_804FA80 (DONE:1576ms)
+211/225: Method: sub_804E120
+212/225: 212/225: sub_804E120 (DONE:154ms)
+212/225: Method: sub_804E240
+213/225: 213/225: sub_804E240 (DONE:7519ms)
+213/225: Method: sub_80536D0
+214/225: 214/225: sub_80536D0 (DONE:32ms)
+214/225: Method: sub_80555B0
+215/225: 215/225: sub_80555B0 (DONE:15ms)
+215/225: Method: sub_8058320
+216/225: 216/225: sub_8058320 (DONE:114ms)
+216/225: Method: sub_8053140
+217/225: 217/225: sub_8053140 (DONE:64ms)
+217/225: Method: sub_8053710
+218/225: 218/225: sub_8053710 (DONE:63ms)
+218/225: Method: sub_8049B80
+219/225: 219/225: sub_8049B80 (DONE:61508ms)
+219/225: Method: sub_80534F0
+220/225: 220/225: sub_80534F0 (DONE:132ms)
+220/225: Method: finalizer_0
+221/225: 221/225: finalizer_0 (DONE:14ms)
+221/225: Method: initializer_0
+222/225: 222/225: initializer_0 (DONE:19ms)
+222/225: Method: sub_8056B70
+223/225: 223/225: sub_8056B70 (DONE:74163ms)
+223/225: Method: sub_8055380
+224/225: 224/225: sub_8055380 (DONE:298ms)
+224/225: Method: sub_8052B60
+225/225: 225/225: sub_8052B60 (DONE:40ms)
+1/2 DECOMPILATION ERROR: METHOD sub_8049B80: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 61506 ms; max= 60000 ms
 	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:79)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
 	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
 	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:461)
@@ -512,8 +506,56 @@ Output folder: jeb_output
 	at org.python.core.PyObject._jcall(PyObject.java:3598)
 	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
 	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
 	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
 
-Exectime: 174.865000 sec
-Done.
+2/2 DECOMPILATION ERROR: METHOD sub_8056B70: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 74162 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 206.529000 sec
+[I] Done.

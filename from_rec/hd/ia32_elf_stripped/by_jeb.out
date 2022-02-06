@@ -1,111 +1,67 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_rec/hd/ia32_elf_stripped/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (44 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 26 methods
 Output folder: jeb_output
-  0/ 44: Method: sub_80484A8
-  1/ 44: 1/44: sub_80484A8 (DONE:102ms)
-  1/ 44: Method: strcpy
-  2/ 44: 2/44: strcpy (DONE:21ms)
-  2/ 44: Method: perror
-  3/ 44: 3/44: perror (DONE:18ms)
-  3/ 44: Method: sprintf
-  4/ 44: 4/44: sprintf (DONE:11ms)
-  4/ 44: Method: printf
-  5/ 44: 5/44: printf (DONE:18ms)
-  5/ 44: Method: _xstat
-  6/ 44: 6/44: _xstat (DONE:12ms)
-  6/ 44: Method: __libc_init
-  7/ 44: 7/44: __libc_init (DONE:11ms)
-  7/ 44: Method: strcat
-  8/ 44: 8/44: strcat (DONE:13ms)
-  8/ 44: Method: fread
-  9/ 44: 9/44: fread (DONE:11ms)
-  9/ 44: Method: fopen
- 10/ 44: 10/44: fopen (DONE:12ms)
- 10/ 44: Method: fclose
- 11/ 44: 11/44: fclose (DONE:9ms)
- 11/ 44: Method: atexit
- 12/ 44: 12/44: atexit (DONE:15ms)
- 12/ 44: Method: exit
- 13/ 44: 13/44: exit (DONE:17ms)
- 13/ 44: Method: __setfpucw
- 14/ 44: 14/44: __setfpucw (DONE:15ms)
- 14/ 44: Method: strlen
- 15/ 44: 15/44: strlen (DONE:15ms)
- 15/ 44: Method: sub_8048620
- 16/ 44: 16/44: sub_8048620 (DONE:160ms)
- 16/ 44: Method: sub_8048980
- 17/ 44: 17/44: sub_8048980 (DONE:183ms)
- 17/ 44: Method: sub_8048950
- 18/ 44: 18/44: sub_8048950 (DONE:76ms)
- 18/ 44: Method: sub_8048660
- 19/ 44: 19/44: sub_8048660 (DONE:664ms)
- 19/ 44: Method: initializer_0
- 20/ 44: 20/44: initializer_0 (DONE:19ms)
- 20/ 44: Method: sub_80487F0
- 21/ 44: 21/44: sub_80487F0 (DONE:223ms)
- 21/ 44: Method: sub_80488E0
- 22/ 44: 22/44: sub_80488E0 (DONE:85ms)
- 22/ 44: Method: sub_8048604
- 23/ 44: 23/44: sub_8048604 (DONE:11ms)
- 23/ 44: Method: sub_8048617
- 24/ 44: 24/44: sub_8048617 (DONE:12ms)
- 24/ 44: Method: sub_8048650
- 25/ 44: 25/44: sub_8048650 (DONE:16ms)
- 25/ 44: Method: sub_80489B0
- 26/ 44: 26/44: sub_80489B0 (DONE:14ms)
- 26/ 44: Method: sub_80484BE
- 27/ 44: 27/44: sub_80484BE (DONE:13ms)
- 27/ 44: Method: sub_80484CE
- 28/ 44: 28/44: sub_80484CE (DONE:13ms)
- 28/ 44: Method: sub_80484DE
- 29/ 44: 29/44: sub_80484DE (DONE:12ms)
- 29/ 44: Method: sub_80484EE
- 30/ 44: 30/44: sub_80484EE (DONE:17ms)
- 30/ 44: Method: sub_80484FE
- 31/ 44: 31/44: sub_80484FE (DONE:14ms)
- 31/ 44: Method: sub_804850E
- 32/ 44: 32/44: sub_804850E (DONE:15ms)
- 32/ 44: Method: sub_804851E
- 33/ 44: 33/44: sub_804851E (DONE:13ms)
- 33/ 44: Method: sub_804852E
- 34/ 44: 34/44: sub_804852E (DONE:13ms)
- 34/ 44: Method: sub_804853E
- 35/ 44: 35/44: sub_804853E (DONE:12ms)
- 35/ 44: Method: sub_804854E
- 36/ 44: 36/44: sub_804854E (DONE:10ms)
- 36/ 44: Method: sub_804855E
- 37/ 44: 37/44: sub_804855E (DONE:8ms)
- 37/ 44: Method: sub_804856E
- 38/ 44: 38/44: sub_804856E (DONE:10ms)
- 38/ 44: Method: sub_804857E
- 39/ 44: 39/44: sub_804857E (DONE:12ms)
- 39/ 44: Method: sub_804858E
- 40/ 44: 40/44: sub_804858E (DONE:13ms)
- 40/ 44: Method: sub_80486CE
- 41/ 44: 41/44: sub_80486CE (DONE:289ms)
- 41/ 44: Method: finalizer_0
- 42/ 44: 42/44: finalizer_0 (DONE:19ms)
- 42/ 44: Method: sub_80488FE
- 43/ 44: 43/44: sub_80488FE (DONE:74ms)
- 43/ 44: Method: start
- 44/ 44: 44/44: start (DONE:39ms)
-Exectime: 4.742000 sec
-Done.
+  0/ 26: Method: →strcpy
+  1/ 26: 1/26: →strcpy (DONE:51ms)
+  1/ 26: Method: →perror
+  2/ 26: 2/26: →perror (DONE:7ms)
+  2/ 26: Method: →sprintf
+  3/ 26: 3/26: →sprintf (DONE:8ms)
+  3/ 26: Method: →printf
+  4/ 26: 4/26: →printf (DONE:6ms)
+  4/ 26: Method: →_xstat
+  5/ 26: 5/26: →_xstat (DONE:9ms)
+  5/ 26: Method: →__libc_init
+  6/ 26: 6/26: →__libc_init (DONE:4ms)
+  6/ 26: Method: →strcat
+  7/ 26: 7/26: →strcat (DONE:5ms)
+  7/ 26: Method: →fread
+  8/ 26: 8/26: →fread (DONE:5ms)
+  8/ 26: Method: →fopen
+  9/ 26: 9/26: →fopen (DONE:5ms)
+  9/ 26: Method: →fclose
+ 10/ 26: 10/26: →fclose (DONE:7ms)
+ 10/ 26: Method: →atexit
+ 11/ 26: 11/26: →atexit (DONE:6ms)
+ 11/ 26: Method: →exit
+ 12/ 26: 12/26: →exit (DONE:5ms)
+ 12/ 26: Method: →__setfpucw
+ 13/ 26: 13/26: →__setfpucw (DONE:4ms)
+ 13/ 26: Method: →strlen
+ 14/ 26: 14/26: →strlen (DONE:8ms)
+ 14/ 26: Method: sub_8048620
+ 15/ 26: 15/26: sub_8048620 (DONE:89ms)
+ 15/ 26: Method: sub_8048980
+ 16/ 26: 16/26: sub_8048980 (DONE:101ms)
+ 16/ 26: Method: sub_8048950
+ 17/ 26: 17/26: sub_8048950 (DONE:30ms)
+ 17/ 26: Method: sub_8048660
+ 18/ 26: 18/26: sub_8048660 (DONE:444ms)
+ 18/ 26: Method: initializer_0
+ 19/ 26: 19/26: initializer_0 (DONE:5ms)
+ 19/ 26: Method: sub_80487F0
+ 20/ 26: 20/26: sub_80487F0 (DONE:134ms)
+ 20/ 26: Method: sub_80488E0
+ 21/ 26: 21/26: sub_80488E0 (DONE:48ms)
+ 21/ 26: Method: sub_80484AE
+ 22/ 26: 22/26: sub_80484AE (DONE:8ms)
+ 22/ 26: Method: sub_8048650
+ 23/ 26: 23/26: sub_8048650 (DONE:10ms)
+ 23/ 26: Method: sub_80489B0
+ 24/ 26: 24/26: sub_80489B0 (DONE:6ms)
+ 24/ 26: Method: finalizer_0
+ 25/ 26: 25/26: finalizer_0 (DONE:8ms)
+ 25/ 26: Method: start
+ 26/ 26: 26/26: start (DONE:24ms)
+Exectime: 1.717000 sec
+[I] Done.

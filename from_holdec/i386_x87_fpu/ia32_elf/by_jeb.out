@@ -1,188 +1,133 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/i386_x87_fpu/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (59 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 60 methods
 Output folder: jeb_output
-  0/ 59: Method: TOP
-  1/ 59: 1/59: TOP (DONE:112ms)
-  1/ 59: Method: sub_8049030
-  2/ 59: 2/59: sub_8049030 (DONE:25ms)
-  2/ 59: Method: __x86.get_pc_thunk.bx
-  3/ 59: 3/59: __x86.get_pc_thunk.bx (DONE:17ms)
-  3/ 59: Method: sub_80490C7
-  4/ 59: 4/59: sub_80490C7 (DONE:16ms)
-  4/ 59: Method: deregister_tm_clones
-  5/ 59: 5/59: deregister_tm_clones (DONE:50ms)
-  5/ 59: Method: register_tm_clones
-  6/ 59: 6/59: register_tm_clones (DONE:63ms)
-  6/ 59: Method: sub_8049046
-  7/ 59: 7/59: sub_8049046 (DONE:19ms)
-  7/ 59: Method: sub_8049040
-  8/ 59: 8/59: sub_8049040 (DONE:24ms)
-  8/ 59: Method: FCMOV
-  9/ 59: 9/59: FCMOV (DONE:412ms)
-  9/ 59: Method: sub_8049056
- 10/ 59: 10/59: sub_8049056 (DONE:15ms)
- 10/ 59: Method: sub_8049050
- 11/ 59: 11/59: sub_8049050 (DONE:15ms)
- 11/ 59: Method: sub_8049066
- 12/ 59: 12/59: sub_8049066 (DONE:13ms)
- 12/ 59: Method: sub_8049076
- 13/ 59: 13/59: sub_8049076 (DONE:13ms)
- 13/ 59: Method: sub_8049070
- 14/ 59: 14/59: sub_8049070 (DONE:15ms)
- 14/ 59: Method: sub_8049086
- 15/ 59: 15/59: sub_8049086 (DONE:12ms)
- 15/ 59: Method: sub_8049080
- 16/ 59: 16/59: sub_8049080 (DONE:16ms)
- 16/ 59: Method: initializer_0
- 17/ 59: 17/59: initializer_0 (DONE:55ms)
- 17/ 59: Method: initializer_1
- 18/ 59: 18/59: initializer_1 (DONE:13ms)
- 18/ 59: Method: FBSTP
- 19/ 59: 19/59: FBSTP (DONE:124ms)
- 19/ 59: Method: FBLD
- 20/ 59: 20/59: FBLD (DONE:92ms)
- 20/ 59: Method: FXCH
- 21/ 59: 21/59: FXCH (DONE:72ms)
- 21/ 59: Method: FCHS
- 22/ 59: 22/59: FCHS (DONE:94ms)
- 22/ 59: Method: FILD
- 23/ 59: 23/59: FILD (DONE:72ms)
- 23/ 59: Method: FLD
- 24/ 59: 24/59: FLD (DONE:76ms)
- 24/ 59: Method: FMUL
- 25/ 59: 25/59: FMUL (DONE:81ms)
- 25/ 59: Method: FPATAN
- 26/ 59: 26/59: FPATAN (DONE:56ms)
- 26/ 59: Method: FPREM
- 27/ 59: 27/59: FPREM (DONE:106ms)
- 27/ 59: Method: FSQRT
- 28/ 59: 28/59: FSQRT (DONE:73ms)
- 28/ 59: Method: FST
- 29/ 59: 29/59: FST (DONE:134ms)
- 29/ 59: Method: F2XM1
- 30/ 59: 30/59: F2XM1 (DONE:74ms)
- 30/ 59: Method: FABS
- 31/ 59: 31/59: FABS (DONE:66ms)
- 31/ 59: Method: FCOS
- 32/ 59: 32/59: FCOS (DONE:69ms)
- 32/ 59: Method: FDIV
- 33/ 59: 33/59: FDIV (DONE:98ms)
- 33/ 59: Method: FDIVR
- 34/ 59: 34/59: FDIVR (DONE:98ms)
- 34/ 59: Method: FPTAN
- 35/ 59: 35/59: FPTAN (DONE:92ms)
- 35/ 59: Method: FSIN
- 36/ 59: 36/59: FSIN (DONE:82ms)
- 36/ 59: Method: FSINCOS
- 37/ 59: 37/59: FSINCOS (DONE:84ms)
- 37/ 59: Method: FSUB
- 38/ 59: 38/59: FSUB (DONE:105ms)
- 38/ 59: Method: FXTRACT
- 39/ 59: 39/59: FXTRACT (DONE:104ms)
- 39/ 59: Method: FYL2X
- 40/ 59: 40/59: FYL2X (DONE:82ms)
- 40/ 59: Method: FYL2XP1
- 41/ 59: 41/59: FYL2XP1 (DONE:92ms)
- 41/ 59: Method: FSCALE
- 42/ 59: 42/59: FSCALE (DONE:122ms)
- 42/ 59: Method: FTST
- 43/ 59: 43/59: FTST (DONE:143ms)
- 43/ 59: Method: FCOMI
- 44/ 59: 44/59: FCOMI (DONE:172ms)
- 44/ 59: Method: FXAM
- 45/ 59: 45/59: FXAM (DONE:159ms)
- 45/ 59: Method: FLDC
- 46/ 59: 46/59: FLDC (DONE:81ms)
- 46/ 59: Method: FCOM
- 47/ 59: 47/59: FCOM (DONE:182ms)
- 47/ 59: Method: FRNDINT
- 48/ 59: 48/59: FRNDINT (DONE:388ms)
- 48/ 59: Method: FIST
- 49/ 59: 49/59: FIST (DONE:318ms)
- 49/ 59: Method: NOT_EXECUTED
- 50/ 59: 50/59: NOT_EXECUTED (DONE:139ms)
- 50/ 59: Method: sub_8049060
- 51/ 59: 51/59: sub_8049060 (DONE:10ms)
- 51/ 59: Method: _dl_relocate_static_pie
- 52/ 59: 52/59: _dl_relocate_static_pie (DONE:6ms)
- 52/ 59: Method: __libc_csu_fini
- 53/ 59: 53/59: __libc_csu_fini (DONE:9ms)
- 53/ 59: Method: finalizer_0
- 54/ 59: 54/59: finalizer_0 (DONE:13ms)
- 54/ 59: Method: finalizer_1
-Emulation failed!
- 55/ 59: 55/59: finalizer_1 (DONE:81ms)
- 55/ 59: Method: __libc_csu_init
- 56/ 59: 56/59: __libc_csu_init (DONE:96ms)
- 56/ 59: Method: main
- 57/ 59: 57/59: main (DONE:60071ms)
- 57/ 59: Method: _start
- 58/ 59: 58/59: _start (DONE:38ms)
-1/1 DECOMPILATION ERROR: METHOD main: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 60071 ms; max= 60000 ms
-	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:79)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-Exectime: 68.389000 sec
-Done.
+  0/ 60: Method: TOP
+  1/ 60: 1/60: TOP (DONE:65ms)
+  1/ 60: Method: __x86.get_pc_thunk.bx
+  2/ 60: 2/60: __x86.get_pc_thunk.bx (DONE:5ms)
+  2/ 60: Method: sub_8049120
+  3/ 60: 3/60: sub_8049120 (DONE:3ms)
+  3/ 60: Method: sub_8049168
+  4/ 60: 4/60: sub_8049168 (DONE:3ms)
+  4/ 60: Method: sub_8049036
+  5/ 60: 5/60: sub_8049036 (DONE:17ms)
+  5/ 60: Method: →printf
+  6/ 60: 6/60: →printf (DONE:21ms)
+  6/ 60: Method: →__assert_fail
+  7/ 60: 7/60: →__assert_fail (DONE:13ms)
+  7/ 60: Method: →putchar
+  8/ 60: 8/60: →putchar (DONE:9ms)
+  8/ 60: Method: →puts
+  9/ 60: 9/60: →puts (DONE:8ms)
+  9/ 60: Method: FCMOV
+ 10/ 60: 10/60: FCMOV (DONE:310ms)
+ 10/ 60: Method: sub_80490C7
+ 11/ 60: 11/60: sub_80490C7 (DONE:4ms)
+ 11/ 60: Method: sub_8049198
+ 12/ 60: 12/60: sub_8049198 (DONE:3ms)
+ 12/ 60: Method: initializer_0
+ 13/ 60: 13/60: initializer_0 (DONE:34ms)
+ 13/ 60: Method: sub_80490FC
+ 14/ 60: 14/60: sub_80490FC (DONE:15ms)
+ 14/ 60: Method: sub_8049148
+ 15/ 60: 15/60: sub_8049148 (DONE:14ms)
+ 15/ 60: Method: →__libc_start_main
+ 16/ 60: 16/60: →__libc_start_main (DONE:8ms)
+ 16/ 60: Method: FBSTP
+ 17/ 60: 17/60: FBSTP (DONE:58ms)
+ 17/ 60: Method: FBLD
+ 18/ 60: 18/60: FBLD (DONE:56ms)
+ 18/ 60: Method: FXCH
+ 19/ 60: 19/60: FXCH (DONE:31ms)
+ 19/ 60: Method: FCHS
+ 20/ 60: 20/60: FCHS (DONE:42ms)
+ 20/ 60: Method: FILD
+ 21/ 60: 21/60: FILD (DONE:38ms)
+ 21/ 60: Method: FLD
+ 22/ 60: 22/60: FLD (DONE:46ms)
+ 22/ 60: Method: FMUL
+ 23/ 60: 23/60: FMUL (DONE:48ms)
+ 23/ 60: Method: FPATAN
+ 24/ 60: 24/60: FPATAN (DONE:35ms)
+ 24/ 60: Method: FPREM
+ 25/ 60: 25/60: FPREM (DONE:61ms)
+ 25/ 60: Method: FSQRT
+ 26/ 60: 26/60: FSQRT (DONE:57ms)
+ 26/ 60: Method: FST
+ 27/ 60: 27/60: FST (DONE:107ms)
+ 27/ 60: Method: F2XM1
+ 28/ 60: 28/60: F2XM1 (DONE:67ms)
+ 28/ 60: Method: FABS
+ 29/ 60: 29/60: FABS (DONE:47ms)
+ 29/ 60: Method: FCOS
+ 30/ 60: 30/60: FCOS (DONE:51ms)
+ 30/ 60: Method: FDIV
+ 31/ 60: 31/60: FDIV (DONE:56ms)
+ 31/ 60: Method: FDIVR
+ 32/ 60: 32/60: FDIVR (DONE:53ms)
+ 32/ 60: Method: FPTAN
+ 33/ 60: 33/60: FPTAN (DONE:59ms)
+ 33/ 60: Method: FSIN
+ 34/ 60: 34/60: FSIN (DONE:54ms)
+ 34/ 60: Method: FSINCOS
+ 35/ 60: 35/60: FSINCOS (DONE:42ms)
+ 35/ 60: Method: FSUB
+ 36/ 60: 36/60: FSUB (DONE:52ms)
+ 36/ 60: Method: FXTRACT
+ 37/ 60: 37/60: FXTRACT (DONE:54ms)
+ 37/ 60: Method: FYL2X
+ 38/ 60: 38/60: FYL2X (DONE:45ms)
+ 38/ 60: Method: FYL2XP1
+ 39/ 60: 39/60: FYL2XP1 (DONE:49ms)
+ 39/ 60: Method: FSCALE
+ 40/ 60: 40/60: FSCALE (DONE:73ms)
+ 40/ 60: Method: FTST
+ 41/ 60: 41/60: FTST (DONE:85ms)
+ 41/ 60: Method: FCOMI
+ 42/ 60: 42/60: FCOMI (DONE:144ms)
+ 42/ 60: Method: FXAM
+ 43/ 60: 43/60: FXAM (DONE:93ms)
+ 43/ 60: Method: FLDC
+ 44/ 60: 44/60: FLDC (DONE:53ms)
+ 44/ 60: Method: FCOM
+ 45/ 60: 45/60: FCOM (DONE:153ms)
+ 45/ 60: Method: FRNDINT
+ 46/ 60: 46/60: FRNDINT (DONE:199ms)
+ 46/ 60: Method: FIST
+ 47/ 60: 47/60: FIST (DONE:205ms)
+ 47/ 60: Method: NOT_EXECUTED
+ 48/ 60: 48/60: NOT_EXECUTED (DONE:94ms)
+ 48/ 60: Method: deregister_tm_clones
+ 49/ 60: 49/60: deregister_tm_clones (DONE:7ms)
+ 49/ 60: Method: register_tm_clones
+ 50/ 60: 50/60: register_tm_clones (DONE:28ms)
+ 50/ 60: Method: sub_804917D
+ 51/ 60: 51/60: sub_804917D (DONE:21ms)
+ 51/ 60: Method: initializer_1
+ 52/ 60: 52/60: initializer_1 (DONE:2ms)
+ 52/ 60: Method: _dl_relocate_static_pie
+ 53/ 60: 53/60: _dl_relocate_static_pie (DONE:2ms)
+ 53/ 60: Method: __libc_csu_fini
+ 54/ 60: 54/60: __libc_csu_fini (DONE:3ms)
+ 54/ 60: Method: finalizer_0
+ 55/ 60: 55/60: finalizer_0 (DONE:10ms)
+ 55/ 60: Method: _start
+ 56/ 60: 56/60: _start (DONE:26ms)
+ 56/ 60: Method: main
+ 57/ 60: 57/60: main (DONE:18134ms)
+ 57/ 60: Method: finalizer_1
+ 58/ 60: 58/60: finalizer_1 (DONE:9ms)
+ 58/ 60: Method: __libc_csu_init
+ 59/ 60: 59/60: __libc_csu_init (DONE:70ms)
+Exectime: 22.326000 sec
+[I] Done.

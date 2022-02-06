@@ -1,0 +1,41 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/nm/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 5 methods
+Output folder: jeb_output
+  0/  5: Method: sub_8048260
+  1/  5: 1/5: sub_8048260 (DONE:85ms)
+  1/  5: Method: sub_804822F
+  2/  5: 2/5: sub_804822F (DONE:158ms)
+  2/  5: Method: sub_804822D
+  3/  5: 3/5: sub_804822D (DONE:9ms)
+  3/  5: Method: sub_8048211
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0xA
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0xA
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0xA
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0xA
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 1C: Targets do not point to instructions: 0xA (instruction: goto 000A)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0xA
+[E] The CFG could not be normalized!
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Gap found in CFG, before block 14h(8)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Gap found in CFG, before block 14h(8)
+  4/  5: 4/5: sub_8048211 (DONE:65ms)
+  4/  5: Method: start
+  5/  5: 5/5: start (DONE:95ms)
+Exectime: 0.967000 sec
+[I] Done.

@@ -1,32 +1,25 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_350/ia32_pe/subject.exe...
 Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at com.pnfsoftware.jeb.corei.parsers.winpe.mL.Vo(SourceFile:666)
-	at com.pnfsoftware.jeb.corei.parsers.winpe.mL.processInternal(SourceFile:322)
+	at com.pnfsoftware.jeb.corei.parsers.winpe.OR.oD(SourceFile:681)
+	at com.pnfsoftware.jeb.corei.parsers.winpe.OR.processInternal(SourceFile:328)
 	at com.pnfsoftware.jeb.core.units.AbstractUnit.process(SourceFile:447)
-	at com.pnfsoftware.jebglobal.Xc.process(SourceFile:652)
-	at com.pnfsoftware.jebglobal.al.load(SourceFile:125)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:474)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:453)
-	at com.pnfsoftware.jebglobal.Xb.processArtifact(SourceFile:67)
-	at com.pnfsoftware.jeb.client.AbstractClientContext.open(SourceFile:1391)
+	at com.pnfsoftware.jebglobal.GI.process(SourceFile:667)
+	at com.pnfsoftware.jebglobal.CP.load(SourceFile:125)
+	at com.pnfsoftware.jebglobal.zg.oD(SourceFile:488)
+	at com.pnfsoftware.jebglobal.zg.oD(SourceFile:467)
+	at com.pnfsoftware.jebglobal.zg.processArtifact(SourceFile:68)
+	at com.pnfsoftware.jeb.client.AbstractClientContext.open(SourceFile:1423)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:477)

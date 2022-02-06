@@ -1,113 +1,43 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/superstat/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (19 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 14 methods
 Output folder: jeb_output
-  0/ 19: Method: printf@@GLIBC_2.0
-  1/ 19: 1/19: printf@@GLIBC_2.0 (DONE:86ms)
-  1/ 19: Method: sub_804826C
-  2/ 19: 2/19: sub_804826C (DONE:37ms)
-  2/ 19: Method: __xstat@@GLIBC_2.0
-  3/ 19: 3/19: __xstat@@GLIBC_2.0 (DONE:20ms)
-  3/ 19: Method: __libc_start_main@@GLIBC_2.0
-  4/ 19: 4/19: __libc_start_main@@GLIBC_2.0 (DONE:13ms)
-  4/ 19: Method: __do_global_dtors_aux
-  5/ 19: 5/19: __do_global_dtors_aux (DONE:122ms)
-  5/ 19: Method: __do_global_ctors_aux
-  6/ 19: 6/19: __do_global_ctors_aux (DONE:243ms)
-  6/ 19: Method: sub_8048282
-  7/ 19: 7/19: sub_8048282 (DONE:27ms)
-  7/ 19: Method: sub_8048292
-  8/ 19: 8/19: sub_8048292 (DONE:27ms)
-  8/ 19: Method: sub_80482A2
-  9/ 19: 9/19: sub_80482A2 (DONE:16ms)
-  9/ 19: Method: main
- 10/ 19: 10/19: main (DONE:416ms)
- 10/ 19: Method: _start
- 11/ 19: 11/19: _start (DONE:85ms)
- 11/ 19: Method: frame_dummy
- 12/ 19: 12/19: frame_dummy (DONE:41ms)
- 12/ 19: Method: sub_804832E
- 13/ 19: 13/19: sub_804832E (DONE:8ms)
- 13/ 19: Method: call_gmon_start
- 14/ 19: 14/19: call_gmon_start (DONE:44ms)
- 14/ 19: Method: initializer_0
- 15/ 19: 15/19: initializer_0 (DONE:46ms)
- 15/ 19: Method: __libc_csu_init
- 16/ 19: 16/19: __libc_csu_init (DONE:56ms)
- 16/ 19: Method: finalizer_0
- 17/ 19: 17/19: finalizer_0 (DONE:44ms)
- 17/ 19: Method: __libc_csu_fini
- 18/ 19: 18/19: __libc_csu_fini (DONE:37ms)
- 18/ 19: Method: sub_80484A6
- 19/ 19: 19/19: sub_80484A6 (DONE:46ms)
-1/1 DECOMPILATION ERROR: METHOD __libc_csu_fini: java.lang.RuntimeException: FAIL - unexpected condition
-	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:30)
-	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:42)
-	at com.pnfsoftware.jebglobal.xk.registerAdditionalConvertedAddress(SourceFile:390)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.AbstractConverter.insertReturns(SourceFile:1103)
-	at com.pnfsoftware.jebglobal.cU.XP(SourceFile:67)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-Exectime: 3.415000 sec
-Done.
+  0/ 14: Method: →printf
+  1/ 14: 1/14: →printf (DONE:48ms)
+  1/ 14: Method: →__xstat
+  2/ 14: 2/14: →__xstat (DONE:10ms)
+  2/ 14: Method: →__libc_start_main
+  3/ 14: 3/14: →__libc_start_main (DONE:8ms)
+  3/ 14: Method: __do_global_dtors_aux
+  4/ 14: 4/14: __do_global_dtors_aux (DONE:119ms)
+  4/ 14: Method: __do_global_ctors_aux
+  5/ 14: 5/14: __do_global_ctors_aux (DONE:82ms)
+  5/ 14: Method: sub_8048272
+  6/ 14: 6/14: sub_8048272 (DONE:12ms)
+  6/ 14: Method: main
+  7/ 14: 7/14: main (DONE:225ms)
+  7/ 14: Method: _start
+  8/ 14: 8/14: _start (DONE:30ms)
+  8/ 14: Method: call_gmon_start
+  9/ 14: 9/14: call_gmon_start (DONE:25ms)
+  9/ 14: Method: frame_dummy
+ 10/ 14: 10/14: frame_dummy (DONE:20ms)
+ 10/ 14: Method: initializer_0
+ 11/ 14: 11/14: initializer_0 (DONE:16ms)
+ 11/ 14: Method: __libc_csu_init
+ 12/ 14: 12/14: __libc_csu_init (DONE:33ms)
+ 12/ 14: Method: finalizer_0
+ 13/ 14: 13/14: finalizer_0 (DONE:18ms)
+ 13/ 14: Method: __libc_csu_fini
+ 14/ 14: 14/14: __libc_csu_fini (DONE:35ms)
+Exectime: 1.166000 sec
+[I] Done.

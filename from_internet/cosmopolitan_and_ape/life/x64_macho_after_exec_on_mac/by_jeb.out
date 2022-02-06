@@ -1,46 +1,49 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_internet/cosmopolitan_and_ape/life/x64_macho_after_exec_on_mac/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (13 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 16 methods
 Output folder: jeb_output
-  0/ 13: Method: sub_401297
-  1/ 13: 1/13: sub_401297 (DONE:766ms)
-  1/ 13: Method: sub_40134D
-  2/ 13: 2/13: sub_40134D (DONE:24ms)
-  2/ 13: Method: sub_4013B4
-  3/ 13: 3/13: sub_4013B4 (DONE:38ms)
-  3/ 13: Method: sub_401A3C
-  4/ 13: 4/13: sub_401A3C (DONE:238ms)
-  4/ 13: Method: sub_4011A5
-  5/ 13: 5/13: sub_4011A5 (DONE:246ms)
-  5/ 13: Method: sub_401217
-  6/ 13: 6/13: sub_401217 (DONE:21ms)
-  6/ 13: Method: sub_401225
-  7/ 13: 7/13: sub_401225 (DONE:82ms)
-  7/ 13: Method: sub_401240
-  8/ 13: 8/13: sub_401240 (DONE:23ms)
-  8/ 13: Method: sub_401872
-  9/ 13: 9/13: sub_401872 (DONE:265ms)
-  9/ 13: Method: sub_4019FA
- 10/ 13: 10/13: sub_4019FA (DONE:45ms)
- 10/ 13: Method: sub_401907
- 11/ 13: 11/13: sub_401907 (DONE:372ms)
- 11/ 13: Method: sub_401AA1
- 12/ 13: 12/13: sub_401AA1 (DONE:97ms)
- 12/ 13: Method: start
- 13/ 13: 13/13: start (DONE:330ms)
-Exectime: 2.613000 sec
-Done.
+  0/ 16: Method: sub_401297
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+[W] Cannot set type ? on IR i8:00h
+  1/ 16: 1/16: sub_401297 (DONE:374ms)
+  1/ 16: Method: sub_40134D
+  2/ 16: 2/16: sub_40134D (DONE:6ms)
+  2/ 16: Method: sub_4013B4
+  3/ 16: 3/16: sub_4013B4 (DONE:12ms)
+  3/ 16: Method: sub_401A3C
+  4/ 16: 4/16: sub_401A3C (DONE:146ms)
+  4/ 16: Method: sub_401ABE
+  5/ 16: 5/16: sub_401ABE (DONE:5ms)
+  5/ 16: Method: sub_4011A5
+  6/ 16: 6/16: sub_4011A5 (DONE:120ms)
+  6/ 16: Method: sub_401217
+  7/ 16: 7/16: sub_401217 (DONE:9ms)
+  7/ 16: Method: sub_401225
+  8/ 16: 8/16: sub_401225 (DONE:26ms)
+  8/ 16: Method: sub_401240
+  9/ 16: 9/16: sub_401240 (DONE:5ms)
+  9/ 16: Method: sub_401872
+ 10/ 16: 10/16: sub_401872 (DONE:120ms)
+ 10/ 16: Method: sub_4019FA
+ 11/ 16: 11/16: sub_4019FA (DONE:14ms)
+ 11/ 16: Method: sub_401907
+ 12/ 16: 12/16: sub_401907 (DONE:190ms)
+ 12/ 16: Method: sub_401AB1
+ 13/ 16: 13/16: sub_401AB1 (DONE:33ms)
+ 13/ 16: Method: sub_401AA1
+ 14/ 16: 14/16: sub_401AA1 (DONE:9ms)
+ 14/ 16: Method: sub_40125E
+ 15/ 16: 15/16: sub_40125E (DONE:74ms)
+ 15/ 16: Method: start
+ 16/ 16: 16/16: start (DONE:4ms)
+Exectime: 1.169000 sec
+[I] Done.

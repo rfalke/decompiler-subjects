@@ -23,36 +23,6 @@ size_t proc1(size_t param0, char* __s) {
     return param0;
 }
 
-void sub_804826C() {
-    jump gvar_80495BC;
-}
-
-int sub_8048282() {
-    /*BAD_CALL!*/ sub_804826C();
-}
-
-int sub_8048292() {
-    /*BAD_CALL!*/ sub_804826C();
-}
-
-int sub_80482A2() {
-    /*BAD_CALL!*/ sub_804826C();
-}
-
-void sub_804832E() {
-}
-
-int sub_804845E() {
-    int result;
-    int v0;
-    int v1;
-    int v2;
-    do {
-        *(int*)(v1 * 4 + (int)&data_start)();
-        v0 = v1;
-        --v1;
-    }
-    while(v0);
-    finalizer_0(v2, 0);
-    return result;
+int sub_8048272() {
+    return gvar_80495BC();
 }

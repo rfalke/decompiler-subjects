@@ -1,476 +1,403 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_decompile-it.com/shor/ia32_elf_from_website/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (226 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 194 methods
 Output folder: jeb_output
-  0/226: Method: quantum_memman
-  1/226: 1/226: quantum_memman (DONE:204ms)
-  1/226: Method: sub_8048814
-  2/226: 2/226: sub_8048814 (DONE:19ms)
-  2/226: Method: quantum_int2char
-  3/226: 3/226: quantum_int2char (DONE:260ms)
-  3/226: Method: quantum_char2int
-  4/226: 4/226: quantum_char2int (DONE:105ms)
-  4/226: Method: quantum_set_decoherence
-  5/226: 5/226: quantum_set_decoherence (DONE:63ms)
-  5/226: Method: quantum_get_decoherence
-  6/226: 6/226: quantum_get_decoherence (DONE:24ms)
-  6/226: Method: quantum_qec_get_status
-  7/226: 7/226: quantum_qec_get_status (DONE:46ms)
-  7/226: Method: __i686.get_pc_thunk.bx
-  8/226: 8/226: __i686.get_pc_thunk.bx (DONE:9ms)
-  8/226: Method: __muldc3
-  9/226: 9/226: __muldc3 (DONE:10794ms)
-  9/226: Method: quantum_gcd
- 10/226: 10/226: quantum_gcd (DONE:58ms)
- 10/226: Method: quantum_real6
- 11/226: 11/226: quantum_real6 (DONE:22ms)
- 11/226: Method: quantum_imag6
- 12/226: 12/226: quantum_imag6 (DONE:29ms)
- 12/226: Method: __divdc3
- 13/226: 13/226: __divdc3 (DONE:3845ms)
- 13/226: Method: quantum_ipow
- 14/226: 14/226: quantum_ipow (DONE:57ms)
- 14/226: Method: quantum_getwidth
- 15/226: 15/226: quantum_getwidth (DONE:38ms)
- 15/226: Method: quantum_real
- 16/226: 16/226: quantum_real (DONE:29ms)
- 16/226: Method: quantum_imag
- 17/226: 17/226: quantum_imag (DONE:21ms)
- 17/226: Method: quantum_real2
- 18/226: 18/226: quantum_real2 (DONE:24ms)
- 18/226: Method: quantum_hash64
- 19/226: 19/226: quantum_hash64 (DONE:40ms)
- 19/226: Method: quantum_get_state
- 20/226: 20/226: quantum_get_state (DONE:157ms)
- 20/226: Method: quantum_hash642
- 21/226: 21/226: quantum_hash642 (DONE:39ms)
- 21/226: Method: quantum_get_state2
- 22/226: 22/226: quantum_get_state2 (DONE:145ms)
- 22/226: Method: quantum_double2char
- 23/226: 23/226: quantum_double2char (DONE:49ms)
- 23/226: Method: quantum_char2double
- 24/226: 24/226: quantum_char2double (DONE:18ms)
- 24/226: Method: quantum_qec_set_status
- 25/226: 25/226: quantum_qec_set_status (DONE:16ms)
- 25/226: Method: quantum_imag7
- 26/226: 26/226: quantum_imag7 (DONE:30ms)
- 26/226: Method: quantum_real7
- 27/226: 27/226: quantum_real7 (DONE:17ms)
- 27/226: Method: quantum_hash643
- 28/226: 28/226: quantum_hash643 (DONE:30ms)
- 28/226: Method: quantum_get_state3
- 29/226: 29/226: quantum_get_state3 (DONE:130ms)
- 29/226: Method: __i686.get_pc_thunk.cx
- 30/226: 30/226: __i686.get_pc_thunk.cx (DONE:8ms)
- 30/226: Method: __mulsc3
- 31/226: 31/226: __mulsc3 (DONE:8253ms)
- 31/226: Method: quantum_scalar_qureg
- 32/226: 32/226: quantum_scalar_qureg (DONE:99ms)
- 32/226: Method: __divsc3
- 33/226: 33/226: __divsc3 (DONE:3831ms)
- 33/226: Method: quantum_conj
- 34/226: 34/226: quantum_conj (DONE:86ms)
- 34/226: Method: quantum_prob_inline5
- 35/226: 35/226: quantum_prob_inline5 (DONE:39ms)
- 35/226: Method: __do_global_dtors_aux
- 36/226: 36/226: __do_global_dtors_aux (DONE:55ms)
- 36/226: Method: frame_dummy
- 37/226: 37/226: frame_dummy (DONE:35ms)
- 37/226: Method: quantum_frac_approx
- 38/226: 38/226: quantum_frac_approx (DONE:292ms)
- 38/226: Method: quantum_inverse_mod
- 39/226: 39/226: quantum_inverse_mod (DONE:54ms)
- 39/226: Method: quantum_imag2
- 40/226: 40/226: quantum_imag2 (DONE:19ms)
- 40/226: Method: quantum_error_handler
- 41/226: 41/226: quantum_error_handler (DONE:22ms)
- 41/226: Method: quantum_strerr
- 42/226: 42/226: quantum_strerr (DONE:114ms)
- 42/226: Method: quantum_real3
- 43/226: 43/226: quantum_real3 (DONE:32ms)
- 43/226: Method: quantum_imag3
- 44/226: 44/226: quantum_imag3 (DONE:23ms)
- 44/226: Method: quantum_prob_inline3
- 45/226: 45/226: quantum_prob_inline3 (DONE:47ms)
- 45/226: Method: quantum_bitmask
- 46/226: 46/226: quantum_bitmask (DONE:109ms)
- 46/226: Method: quantum_gate_counter
- 47/226: 47/226: quantum_gate_counter (DONE:45ms)
- 47/226: Method: quantum_imag4
- 48/226: 48/226: quantum_imag4 (DONE:19ms)
- 48/226: Method: quantum_real4
- 49/226: 49/226: quantum_real4 (DONE:19ms)
- 49/226: Method: quantum_real5
- 50/226: 50/226: quantum_real5 (DONE:19ms)
- 50/226: Method: quantum_imag5
- 51/226: 51/226: quantum_imag5 (DONE:25ms)
- 51/226: Method: quantum_prob_inline4
- 52/226: 52/226: quantum_prob_inline4 (DONE:30ms)
- 52/226: Method: quantum_mu2char
- 53/226: 53/226: quantum_mu2char (DONE:147ms)
- 53/226: Method: quantum_char2mu
- 54/226: 54/226: quantum_char2mu (DONE:126ms)
- 54/226: Method: quantum_objcode_file
- 55/226: 55/226: quantum_objcode_file (DONE:20ms)
- 55/226: Method: quantum_addscratch
- 56/226: 56/226: quantum_addscratch (DONE:103ms)
- 56/226: Method: __do_global_ctors_aux
- 57/226: 57/226: __do_global_ctors_aux (DONE:65ms)
- 57/226: Method: sub_804882A
- 58/226: 58/226: sub_804882A (DONE:8ms)
- 58/226: Method: sub_804883A
- 59/226: 59/226: sub_804883A (DONE:13ms)
- 59/226: Method: sub_804884A
- 60/226: 60/226: sub_804884A (DONE:10ms)
- 60/226: Method: sub_804885A
- 61/226: 61/226: sub_804885A (DONE:11ms)
- 61/226: Method: sub_804886A
- 62/226: 62/226: sub_804886A (DONE:8ms)
- 62/226: Method: sub_8048864
- 63/226: 63/226: sub_8048864 (DONE:12ms)
- 63/226: Method: sub_804887A
- 64/226: 64/226: sub_804887A (DONE:13ms)
- 64/226: Method: sub_804888A
- 65/226: 65/226: sub_804888A (DONE:12ms)
- 65/226: Method: sub_8048884
- 66/226: 66/226: sub_8048884 (DONE:10ms)
- 66/226: Method: sub_804889A
- 67/226: 67/226: sub_804889A (DONE:9ms)
- 67/226: Method: sub_8048894
- 68/226: 68/226: sub_8048894 (DONE:16ms)
- 68/226: Method: sub_80488AA
- 69/226: 69/226: sub_80488AA (DONE:12ms)
- 69/226: Method: sub_80488BA
- 70/226: 70/226: sub_80488BA (DONE:14ms)
- 70/226: Method: sub_80488CA
- 71/226: 71/226: sub_80488CA (DONE:12ms)
- 71/226: Method: sub_80488DA
- 72/226: 72/226: sub_80488DA (DONE:11ms)
- 72/226: Method: sub_80488D4
- 73/226: 73/226: sub_80488D4 (DONE:8ms)
- 73/226: Method: quantum_delete_matrix
- 74/226: 74/226: quantum_delete_matrix (DONE:44ms)
- 74/226: Method: quantum_delete_qureg_hashpreserve
- 75/226: 75/226: quantum_delete_qureg_hashpreserve (DONE:34ms)
- 75/226: Method: quantum_destroy_hash
- 76/226: 76/226: quantum_destroy_hash (DONE:40ms)
- 76/226: Method: quantum_delete_qureg
- 77/226: 77/226: quantum_delete_qureg (DONE:59ms)
- 77/226: Method: sub_80488EA
- 78/226: 78/226: sub_80488EA (DONE:11ms)
- 78/226: Method: sub_80488E4
- 79/226: 79/226: sub_80488E4 (DONE:9ms)
- 79/226: Method: sub_80488FA
- 80/226: 80/226: sub_80488FA (DONE:10ms)
- 80/226: Method: sub_80488F4
- 81/226: 81/226: sub_80488F4 (DONE:8ms)
- 81/226: Method: sub_804890A
- 82/226: 82/226: sub_804890A (DONE:14ms)
- 82/226: Method: sub_8048904
- 83/226: 83/226: sub_8048904 (DONE:13ms)
- 83/226: Method: sub_804891A
- 84/226: 84/226: sub_804891A (DONE:10ms)
- 84/226: Method: sub_8048914
- 85/226: 85/226: sub_8048914 (DONE:11ms)
- 85/226: Method: sub_804892A
- 86/226: 86/226: sub_804892A (DONE:8ms)
- 86/226: Method: sub_8048924
- 87/226: 87/226: sub_8048924 (DONE:7ms)
- 87/226: Method: sub_804893A
- 88/226: 88/226: sub_804893A (DONE:10ms)
- 88/226: Method: sub_8048934
- 89/226: 89/226: sub_8048934 (DONE:8ms)
- 89/226: Method: sub_804894A
- 90/226: 90/226: sub_804894A (DONE:17ms)
- 90/226: Method: sub_804895A
- 91/226: 91/226: sub_804895A (DONE:9ms)
- 91/226: Method: sub_804896A
- 92/226: 92/226: sub_804896A (DONE:10ms)
- 92/226: Method: sub_8048964
- 93/226: 93/226: sub_8048964 (DONE:19ms)
- 93/226: Method: quantum_print_matrix
- 94/226: 94/226: quantum_print_matrix (DONE:195ms)
- 94/226: Method: sub_804897A
- 95/226: 95/226: sub_804897A (DONE:7ms)
- 95/226: Method: sub_8048974
- 96/226: 96/226: sub_8048974 (DONE:13ms)
- 96/226: Method: sub_804898A
- 97/226: 97/226: sub_804898A (DONE:9ms)
- 97/226: Method: sub_8048984
- 98/226: 98/226: sub_8048984 (DONE:14ms)
- 98/226: Method: sub_804899A
- 99/226: 99/226: sub_804899A (DONE:18ms)
- 99/226: Method: sub_8048994
-100/226: 100/226: sub_8048994 (DONE:10ms)
-100/226: Method: sub_80489AA
-101/226: 101/226: sub_80489AA (DONE:10ms)
-101/226: Method: sub_80489BA
-102/226: 102/226: sub_80489BA (DONE:11ms)
-102/226: Method: sub_80489B4
-103/226: 103/226: sub_80489B4 (DONE:10ms)
-103/226: Method: sub_80489CA
-104/226: 104/226: sub_80489CA (DONE:9ms)
-104/226: Method: sub_80489C4
-105/226: 105/226: sub_80489C4 (DONE:10ms)
-105/226: Method: sub_80489DA
-106/226: 106/226: sub_80489DA (DONE:9ms)
-106/226: Method: sub_80489EA
-107/226: 107/226: sub_80489EA (DONE:13ms)
-107/226: Method: sub_80489E4
-108/226: 108/226: sub_80489E4 (DONE:11ms)
-108/226: Method: sub_80489FA
-109/226: 109/226: sub_80489FA (DONE:10ms)
-109/226: Method: sub_80489F4
-110/226: 110/226: sub_80489F4 (DONE:11ms)
-110/226: Method: quantum_frand
-111/226: 111/226: quantum_frand (DONE:31ms)
-111/226: Method: sub_8048A0A
-112/226: 112/226: sub_8048A0A (DONE:11ms)
-112/226: Method: sub_8048A04
-113/226: 113/226: sub_8048A04 (DONE:12ms)
-113/226: Method: sub_8048A1A
-114/226: 114/226: sub_8048A1A (DONE:8ms)
-114/226: Method: sub_8048A14
-115/226: 115/226: sub_8048A14 (DONE:12ms)
-115/226: Method: quantum_cexp
-116/226: 116/226: quantum_cexp (DONE:102ms)
-116/226: Method: quantum_prob_inline
-117/226: 117/226: quantum_prob_inline (DONE:39ms)
-117/226: Method: quantum_prob_inline2
-118/226: 118/226: quantum_prob_inline2 (DONE:34ms)
-118/226: Method: sub_8048824
-119/226: 119/226: sub_8048824 (DONE:9ms)
-119/226: Method: quantum_error
-120/226: 120/226: quantum_error (DONE:90ms)
-120/226: Method: quantum_objcode_put
-121/226: 121/226: quantum_objcode_put (DONE:642ms)
-121/226: Method: quantum_new_matrix
-122/226: 122/226: quantum_new_matrix (DONE:71ms)
-122/226: Method: quantum_copy_qureg
-123/226: 123/226: quantum_copy_qureg (DONE:125ms)
-123/226: Method: quantum_state_collapse
-124/226: 124/226: quantum_state_collapse (DONE:1533ms)
-124/226: Method: quantum_bmeasure
-125/226: 125/226: quantum_bmeasure (DONE:357ms)
-125/226: Method: quantum_add_hash2
-126/226: 126/226: quantum_add_hash2 (DONE:99ms)
-126/226: Method: quantum_measure
-127/226: 127/226: quantum_measure (DONE:149ms)
-127/226: Method: sub_8048834
-128/226: 128/226: sub_8048834 (DONE:7ms)
-128/226: Method: sub_8048844
-129/226: 129/226: sub_8048844 (DONE:6ms)
-129/226: Method: sub_8048854
-130/226: 130/226: sub_8048854 (DONE:6ms)
-130/226: Method: sub_8048874
-131/226: 131/226: sub_8048874 (DONE:7ms)
-131/226: Method: sub_80488A4
-132/226: 132/226: sub_80488A4 (DONE:10ms)
-132/226: Method: sub_80488B4
-133/226: 133/226: sub_80488B4 (DONE:9ms)
-133/226: Method: sub_80488C4
-134/226: 134/226: sub_80488C4 (DONE:7ms)
-134/226: Method: quantum_objcode_stop
-135/226: 135/226: quantum_objcode_stop (DONE:32ms)
-135/226: Method: sub_8048944
-136/226: 136/226: sub_8048944 (DONE:10ms)
-136/226: Method: sub_8048954
-137/226: 137/226: sub_8048954 (DONE:15ms)
-137/226: Method: quantum_objcode_write
-138/226: 138/226: quantum_objcode_write (DONE:60ms)
-138/226: Method: sub_80489A4
-139/226: 139/226: sub_80489A4 (DONE:10ms)
-139/226: Method: sub_80489D4
-140/226: 140/226: sub_80489D4 (DONE:9ms)
-140/226: Method: quantum_decohere
-141/226: 141/226: quantum_decohere (DONE:979ms)
-141/226: Method: quantum_sigma_z
-142/226: 142/226: quantum_sigma_z (DONE:127ms)
-142/226: Method: quantum_cond_phase
-143/226: 143/226: quantum_cond_phase (DONE:314ms)
-143/226: Method: quantum_prob
-144/226: 144/226: quantum_prob (DONE:23ms)
-144/226: Method: quantum_add_hash
-145/226: 145/226: quantum_add_hash (DONE:93ms)
-145/226: Method: quantum_add_hash3
-146/226: 146/226: quantum_add_hash3 (DONE:74ms)
-146/226: Method: quantum_reconstruct_hash3
-147/226: 147/226: quantum_reconstruct_hash3 (DONE:61ms)
-147/226: Method: quantum_vectoradd
-148/226: 148/226: quantum_vectoradd (DONE:528ms)
-148/226: Method: quantum_vectoradd_inplace
-149/226: 149/226: quantum_vectoradd_inplace (DONE:476ms)
-149/226: Method: quantum_objcode_start
-Emulation failed!
-150/226: 150/226: quantum_objcode_start (DONE:44ms)
-150/226: Method: quantum_new_density_op
-151/226: 151/226: quantum_new_density_op (DONE:355ms)
-151/226: Method: quantum_bmeasure_bitpreserve
-152/226: 152/226: quantum_bmeasure_bitpreserve (DONE:1290ms)
-152/226: Method: quantum_reconstruct_hash2
-153/226: 153/226: quantum_reconstruct_hash2 (DONE:81ms)
-153/226: Method: quantum_gate1
-154/226: 154/226: quantum_gate1 (DONE:9527ms)
-154/226: Method: quantum_hadamard
-155/226: 155/226: quantum_hadamard (DONE:105ms)
-155/226: Method: atexit
-156/226: 156/226: atexit (DONE:42ms)
-156/226: Method: quantum_new_qureg
-157/226: 157/226: quantum_new_qureg (DONE:157ms)
-157/226: Method: quantum_cond_phase_inv
-158/226: 158/226: quantum_cond_phase_inv (DONE:283ms)
-158/226: Method: quantum_sigma_y
-159/226: 159/226: quantum_sigma_y (DONE:238ms)
-159/226: Method: quantum_phase_scale
-160/226: 160/226: quantum_phase_scale (DONE:99ms)
-160/226: Method: quantum_phase_kick
-161/226: 161/226: quantum_phase_kick (DONE:155ms)
-161/226: Method: quantum_cond_phase_kick
-162/226: 162/226: quantum_cond_phase_kick (DONE:194ms)
-162/226: Method: quantum_r_z
-163/226: 163/226: quantum_r_z (DONE:242ms)
-163/226: Method: quantum_reconstruct_hash
-164/226: 164/226: quantum_reconstruct_hash (DONE:72ms)
-164/226: Method: quantum_dot_product_noconj
-165/226: 165/226: quantum_dot_product_noconj (DONE:205ms)
-165/226: Method: quantum_matrix_qureg
-166/226: 166/226: quantum_matrix_qureg (DONE:316ms)
-166/226: Method: quantum_rk4
-167/226: 167/226: quantum_rk4 (DONE:2384ms)
-167/226: Method: quantum_dot_product
-168/226: 168/226: quantum_dot_product (DONE:186ms)
-168/226: Method: quantum_r_y
-169/226: 169/226: quantum_r_y (DONE:157ms)
-169/226: Method: quantum_r_x
-170/226: 170/226: quantum_r_x (DONE:298ms)
-170/226: Method: quantum_qft
-171/226: 171/226: quantum_qft (DONE:60ms)
-171/226: Method: quantum_density_matrix
-172/226: 172/226: quantum_density_matrix (DONE:523ms)
-172/226: Method: quantum_get_version
-173/226: 173/226: quantum_get_version (DONE:8ms)
-173/226: Method: __libc_csu_fini
-174/226: 174/226: __libc_csu_fini (DONE:6ms)
-174/226: Method: quantum_delete_density_op
-175/226: 175/226: quantum_delete_density_op (DONE:83ms)
-175/226: Method: quantum_print_expn
-176/226: 176/226: quantum_print_expn (DONE:115ms)
-176/226: Method: quantum_print_hash
-177/226: 177/226: quantum_print_hash (DONE:95ms)
-177/226: Method: quantum_print_qureg
-178/226: 178/226: quantum_print_qureg (DONE:353ms)
-178/226: Method: quantum_new_qureg_size
-179/226: 179/226: quantum_new_qureg_size (DONE:57ms)
-179/226: Method: quantum_kronecker
-180/226: 180/226: quantum_kronecker (DONE:329ms)
-180/226: Method: quantum_matrix2qureg
-181/226: 181/226: quantum_matrix2qureg (DONE:423ms)
-181/226: Method: quantum_qureg2matrix
-182/226: 182/226: quantum_qureg2matrix (DONE:78ms)
-182/226: Method: quantum_mmult
-183/226: 183/226: quantum_mmult (DONE:255ms)
-183/226: Method: quantum_reduced_density_op
-184/226: 184/226: quantum_reduced_density_op (DONE:610ms)
-184/226: Method: _start
-185/226: 185/226: _start (DONE:21ms)
-185/226: Method: quantum_objcode_exit
-186/226: 186/226: quantum_objcode_exit (DONE:24ms)
-186/226: Method: quantum_unbounded_toffoli
-187/226: 187/226: quantum_unbounded_toffoli (DONE:341ms)
-187/226: Method: quantum_gate2
-188/226: 188/226: quantum_gate2 (DONE:5802ms)
-188/226: Method: quantum_qureg2density_op
-189/226: 189/226: quantum_qureg2density_op (DONE:34ms)
-189/226: Method: quantum_walsh
-190/226: 190/226: quantum_walsh (DONE:28ms)
-190/226: Method: quantum_print_timeop
-191/226: 191/226: quantum_print_timeop (DONE:199ms)
-191/226: Method: quantum_qft_inv
-192/226: 192/226: quantum_qft_inv (DONE:56ms)
-192/226: Method: quantum_rk4a
-193/226: 193/226: quantum_rk4a (DONE:2292ms)
-193/226: Method: quantum_purity
-194/226: 194/226: quantum_purity (DONE:529ms)
-194/226: Method: quantum_print_density_matrix
-195/226: 195/226: quantum_print_density_matrix (DONE:28ms)
-195/226: Method: quantum_toffoli
-196/226: 196/226: quantum_toffoli (DONE:223ms)
-196/226: Method: emul
-197/226: 197/226: emul (DONE:52ms)
-197/226: Method: quantum_swaptheleads_omuln_controlled
-198/226: 198/226: quantum_swaptheleads_omuln_controlled (DONE:88ms)
-198/226: Method: quantum_cnot
-199/226: 199/226: quantum_cnot (DONE:184ms)
-199/226: Method: quantum_swaptheleads
-200/226: 200/226: quantum_swaptheleads (DONE:285ms)
-200/226: Method: quantum_qec_encode
-201/226: 201/226: quantum_qec_encode (DONE:155ms)
-201/226: Method: quantum_qec_decode
-202/226: 202/226: quantum_qec_decode (DONE:371ms)
-202/226: Method: quantum_qec_counter
-203/226: 203/226: quantum_qec_counter (DONE:73ms)
-203/226: Method: quantum_toffoli_ft
-204/226: 204/226: quantum_toffoli_ft (DONE:678ms)
-204/226: Method: quantum_cnot_ft
-205/226: 205/226: quantum_cnot_ft (DONE:114ms)
-205/226: Method: quantum_sigma_x
-206/226: 206/226: quantum_sigma_x (DONE:167ms)
-206/226: Method: test_sum
-207/226: 207/226: test_sum (DONE:540ms)
-207/226: Method: muxha
-208/226: 208/226: muxha (DONE:107ms)
-208/226: Method: muxha_inv
-209/226: 209/226: muxha_inv (DONE:112ms)
-209/226: Method: muxfa
-210/226: 210/226: muxfa (DONE:255ms)
-210/226: Method: muxfa_inv
-211/226: 211/226: muxfa_inv (DONE:226ms)
-211/226: Method: quantum_sigma_x_ft
-212/226: 212/226: quantum_sigma_x_ft (DONE:66ms)
-212/226: Method: madd
-213/226: 213/226: madd (DONE:125ms)
-213/226: Method: madd_inv
-214/226: 214/226: madd_inv (DONE:126ms)
-214/226: Method: addn
-215/226: 215/226: addn (DONE:31ms)
-215/226: Method: addn_inv
-216/226: 216/226: addn_inv (DONE:42ms)
-216/226: Method: add_mod_n
-217/226: 217/226: add_mod_n (DONE:21ms)
-217/226: Method: muln
-218/226: 218/226: muln (DONE:140ms)
-218/226: Method: muln_inv
-219/226: 219/226: muln_inv (DONE:140ms)
-219/226: Method: mul_mod_n
-220/226: 220/226: mul_mod_n (DONE:30ms)
-220/226: Method: quantum_exp_mod_n
-221/226: 221/226: quantum_exp_mod_n (DONE:103ms)
-221/226: Method: quantum_objcode_run
-222/226: 222/226: quantum_objcode_run (DONE:4940ms)
-222/226: Method: main
-223/226: 223/226: main (DONE:2082ms)
-223/226: Method: initializer_0
-224/226: 224/226: initializer_0 (DONE:24ms)
-224/226: Method: __libc_csu_init
-225/226: 225/226: __libc_csu_init (DONE:30ms)
-225/226: Method: finalizer_0
-226/226: 226/226: finalizer_0 (DONE:18ms)
-Exectime: 84.168000 sec
-Done.
+  0/194: Method: quantum_memman
+  1/194: 1/194: quantum_memman (DONE:134ms)
+  1/194: Method: quantum_int2char
+  2/194: 2/194: quantum_int2char (DONE:208ms)
+  2/194: Method: quantum_char2int
+  3/194: 3/194: quantum_char2int (DONE:92ms)
+  3/194: Method: quantum_set_decoherence
+  4/194: 4/194: quantum_set_decoherence (DONE:42ms)
+  4/194: Method: quantum_get_decoherence
+  5/194: 5/194: quantum_get_decoherence (DONE:26ms)
+  5/194: Method: quantum_qec_get_status
+  6/194: 6/194: quantum_qec_get_status (DONE:35ms)
+  6/194: Method: __i686.get_pc_thunk.bx
+  7/194: 7/194: __i686.get_pc_thunk.bx (DONE:6ms)
+  7/194: Method: __muldc3
+  8/194: 8/194: __muldc3 (DONE:3958ms)
+  8/194: Method: quantum_gcd
+  9/194: 9/194: quantum_gcd (DONE:37ms)
+  9/194: Method: quantum_real6
+ 10/194: 10/194: quantum_real6 (DONE:10ms)
+ 10/194: Method: quantum_imag6
+ 11/194: 11/194: quantum_imag6 (DONE:13ms)
+ 11/194: Method: __divdc3
+ 12/194: 12/194: __divdc3 (DONE:2907ms)
+ 12/194: Method: quantum_ipow
+ 13/194: 13/194: quantum_ipow (DONE:34ms)
+ 13/194: Method: quantum_getwidth
+ 14/194: 14/194: quantum_getwidth (DONE:30ms)
+ 14/194: Method: quantum_real
+ 15/194: 15/194: quantum_real (DONE:12ms)
+ 15/194: Method: quantum_imag
+ 16/194: 16/194: quantum_imag (DONE:13ms)
+ 16/194: Method: quantum_real2
+ 17/194: 17/194: quantum_real2 (DONE:10ms)
+ 17/194: Method: quantum_hash64
+ 18/194: 18/194: quantum_hash64 (DONE:32ms)
+ 18/194: Method: quantum_get_state
+ 19/194: 19/194: quantum_get_state (DONE:135ms)
+ 19/194: Method: quantum_hash642
+ 20/194: 20/194: quantum_hash642 (DONE:30ms)
+ 20/194: Method: quantum_get_state2
+ 21/194: 21/194: quantum_get_state2 (DONE:107ms)
+ 21/194: Method: quantum_double2char
+ 22/194: 22/194: quantum_double2char (DONE:35ms)
+ 22/194: Method: quantum_char2double
+ 23/194: 23/194: quantum_char2double (DONE:9ms)
+ 23/194: Method: quantum_qec_set_status
+ 24/194: 24/194: quantum_qec_set_status (DONE:8ms)
+ 24/194: Method: quantum_imag7
+ 25/194: 25/194: quantum_imag7 (DONE:14ms)
+ 25/194: Method: quantum_real7
+ 26/194: 26/194: quantum_real7 (DONE:9ms)
+ 26/194: Method: quantum_hash643
+ 27/194: 27/194: quantum_hash643 (DONE:27ms)
+ 27/194: Method: quantum_get_state3
+ 28/194: 28/194: quantum_get_state3 (DONE:88ms)
+ 28/194: Method: __i686.get_pc_thunk.cx
+ 29/194: 29/194: __i686.get_pc_thunk.cx (DONE:2ms)
+ 29/194: Method: __mulsc3
+ 30/194: 30/194: __mulsc3 (DONE:4938ms)
+ 30/194: Method: quantum_scalar_qureg
+ 31/194: 31/194: quantum_scalar_qureg (DONE:58ms)
+ 31/194: Method: __divsc3
+ 32/194: 32/194: __divsc3 (DONE:3057ms)
+ 32/194: Method: quantum_conj
+ 33/194: 33/194: quantum_conj (DONE:46ms)
+ 33/194: Method: quantum_prob_inline5
+ 34/194: 34/194: quantum_prob_inline5 (DONE:18ms)
+ 34/194: Method: sub_804881A
+ 35/194: 35/194: sub_804881A (DONE:5ms)
+ 35/194: Method: →calloc
+ 36/194: 36/194: →calloc (DONE:14ms)
+ 36/194: Method: →fread
+ 37/194: 37/194: →fread (DONE:15ms)
+ 37/194: Method: →free
+ 38/194: 38/194: →free (DONE:7ms)
+ 38/194: Method: →printf
+ 39/194: 39/194: →printf (DONE:7ms)
+ 39/194: Method: →realloc
+ 40/194: 40/194: →realloc (DONE:5ms)
+ 40/194: Method: →puts
+ 41/194: 41/194: →puts (DONE:6ms)
+ 41/194: Method: →cos
+ 42/194: 42/194: →cos (DONE:7ms)
+ 42/194: Method: →sin
+ 43/194: 43/194: →sin (DONE:5ms)
+ 43/194: Method: quantum_cexp
+ 44/194: 44/194: quantum_cexp (DONE:49ms)
+ 44/194: Method: quantum_delete_matrix
+ 45/194: 45/194: quantum_delete_matrix (DONE:28ms)
+ 45/194: Method: →putchar
+ 46/194: 46/194: →putchar (DONE:5ms)
+ 46/194: Method: →sqrt
+ 47/194: 47/194: →sqrt (DONE:5ms)
+ 47/194: Method: quantum_delete_qureg_hashpreserve
+ 48/194: 48/194: quantum_delete_qureg_hashpreserve (DONE:22ms)
+ 48/194: Method: →memcpy
+ 49/194: 49/194: →memcpy (DONE:6ms)
+ 49/194: Method: →fprintf
+ 50/194: 50/194: →fprintf (DONE:5ms)
+ 50/194: Method: →fflush
+ 51/194: 51/194: →fflush (DONE:9ms)
+ 51/194: Method: →fclose
+ 52/194: 52/194: →fclose (DONE:5ms)
+ 52/194: Method: →fopen
+ 53/194: 53/194: →fopen (DONE:5ms)
+ 53/194: Method: →atoi
+ 54/194: 54/194: →atoi (DONE:5ms)
+ 54/194: Method: →fwrite
+ 55/194: 55/194: →fwrite (DONE:5ms)
+ 55/194: Method: →malloc
+ 56/194: 56/194: →malloc (DONE:5ms)
+ 56/194: Method: →__stack_chk_fail
+ 57/194: 57/194: →__stack_chk_fail (DONE:4ms)
+ 57/194: Method: →rand
+ 58/194: 58/194: →rand (DONE:3ms)
+ 58/194: Method: quantum_frand
+ 59/194: 59/194: quantum_frand (DONE:12ms)
+ 59/194: Method: quantum_destroy_hash
+ 60/194: 60/194: quantum_destroy_hash (DONE:28ms)
+ 60/194: Method: quantum_delete_qureg
+ 61/194: 61/194: quantum_delete_qureg (DONE:32ms)
+ 61/194: Method: __do_global_dtors_aux
+ 62/194: 62/194: __do_global_dtors_aux (DONE:29ms)
+ 62/194: Method: frame_dummy
+ 63/194: 63/194: frame_dummy (DONE:20ms)
+ 63/194: Method: quantum_frac_approx
+ 64/194: 64/194: quantum_frac_approx (DONE:178ms)
+ 64/194: Method: quantum_inverse_mod
+ 65/194: 65/194: quantum_inverse_mod (DONE:28ms)
+ 65/194: Method: quantum_imag2
+ 66/194: 66/194: quantum_imag2 (DONE:11ms)
+ 66/194: Method: quantum_error_handler
+ 67/194: 67/194: quantum_error_handler (DONE:8ms)
+ 67/194: Method: quantum_strerr
+ 68/194: 68/194: quantum_strerr (DONE:87ms)
+ 68/194: Method: quantum_real3
+ 69/194: 69/194: quantum_real3 (DONE:8ms)
+ 69/194: Method: quantum_imag3
+ 70/194: 70/194: quantum_imag3 (DONE:11ms)
+ 70/194: Method: quantum_prob_inline3
+ 71/194: 71/194: quantum_prob_inline3 (DONE:16ms)
+ 71/194: Method: quantum_bitmask
+ 72/194: 72/194: quantum_bitmask (DONE:77ms)
+ 72/194: Method: quantum_gate_counter
+ 73/194: 73/194: quantum_gate_counter (DONE:20ms)
+ 73/194: Method: quantum_imag4
+ 74/194: 74/194: quantum_imag4 (DONE:15ms)
+ 74/194: Method: quantum_real4
+ 75/194: 75/194: quantum_real4 (DONE:9ms)
+ 75/194: Method: quantum_print_matrix
+ 76/194: 76/194: quantum_print_matrix (DONE:148ms)
+ 76/194: Method: quantum_real5
+ 77/194: 77/194: quantum_real5 (DONE:9ms)
+ 77/194: Method: quantum_imag5
+ 78/194: 78/194: quantum_imag5 (DONE:11ms)
+ 78/194: Method: quantum_prob_inline4
+ 79/194: 79/194: quantum_prob_inline4 (DONE:16ms)
+ 79/194: Method: quantum_mu2char
+ 80/194: 80/194: quantum_mu2char (DONE:158ms)
+ 80/194: Method: quantum_char2mu
+ 81/194: 81/194: quantum_char2mu (DONE:83ms)
+ 81/194: Method: quantum_objcode_file
+ 82/194: 82/194: quantum_objcode_file (DONE:4ms)
+ 82/194: Method: quantum_addscratch
+ 83/194: 83/194: quantum_addscratch (DONE:70ms)
+ 83/194: Method: __do_global_ctors_aux
+ 84/194: 84/194: __do_global_ctors_aux (DONE:48ms)
+ 84/194: Method: quantum_prob_inline
+ 85/194: 85/194: quantum_prob_inline (DONE:17ms)
+ 85/194: Method: →abort
+ 86/194: 86/194: →abort (DONE:4ms)
+ 86/194: Method: quantum_error
+ 87/194: 87/194: quantum_error (DONE:91ms)
+ 87/194: Method: quantum_objcode_put
+ 88/194: 88/194: quantum_objcode_put (DONE:993ms)
+ 88/194: Method: quantum_new_matrix
+ 89/194: 89/194: quantum_new_matrix (DONE:40ms)
+ 89/194: Method: quantum_copy_qureg
+ 90/194: 90/194: quantum_copy_qureg (DONE:72ms)
+ 90/194: Method: quantum_state_collapse
+ 91/194: 91/194: quantum_state_collapse (DONE:1427ms)
+ 91/194: Method: quantum_bmeasure
+ 92/194: 92/194: quantum_bmeasure (DONE:240ms)
+ 92/194: Method: quantum_add_hash2
+ 93/194: 93/194: quantum_add_hash2 (DONE:78ms)
+ 93/194: Method: quantum_measure
+ 94/194: 94/194: quantum_measure (DONE:88ms)
+ 94/194: Method: →srand
+ 95/194: 95/194: →srand (DONE:5ms)
+ 95/194: Method: →__cxa_atexit
+ 96/194: 96/194: →__cxa_atexit (DONE:7ms)
+ 96/194: Method: →__gmon_start__
+ 97/194: 97/194: →__gmon_start__ (DONE:4ms)
+ 97/194: Method: →getenv
+ 98/194: 98/194: →getenv (DONE:4ms)
+ 98/194: Method: →pow
+ 99/194: 99/194: →pow (DONE:4ms)
+ 99/194: Method: →__libc_start_main
+100/194: 100/194: →__libc_start_main (DONE:4ms)
+100/194: Method: →perror
+101/194: 101/194: →perror (DONE:5ms)
+101/194: Method: →fgetc
+102/194: 102/194: →fgetc (DONE:4ms)
+102/194: Method: →feof
+103/194: 103/194: →feof (DONE:4ms)
+103/194: Method: →time
+104/194: 104/194: →time (DONE:4ms)
+104/194: Method: →log
+105/194: 105/194: →log (DONE:4ms)
+105/194: Method: quantum_decohere
+106/194: 106/194: quantum_decohere (DONE:916ms)
+106/194: Method: quantum_sigma_z
+107/194: 107/194: quantum_sigma_z (DONE:126ms)
+107/194: Method: quantum_cond_phase
+108/194: 108/194: quantum_cond_phase (DONE:378ms)
+108/194: Method: quantum_objcode_stop
+109/194: 109/194: quantum_objcode_stop (DONE:17ms)
+109/194: Method: quantum_objcode_write
+110/194: 110/194: quantum_objcode_write (DONE:37ms)
+110/194: Method: quantum_prob_inline2
+111/194: 111/194: quantum_prob_inline2 (DONE:16ms)
+111/194: Method: quantum_prob
+112/194: 112/194: quantum_prob (DONE:18ms)
+112/194: Method: quantum_add_hash
+113/194: 113/194: quantum_add_hash (DONE:78ms)
+113/194: Method: quantum_add_hash3
+114/194: 114/194: quantum_add_hash3 (DONE:78ms)
+114/194: Method: quantum_reconstruct_hash3
+115/194: 115/194: quantum_reconstruct_hash3 (DONE:70ms)
+115/194: Method: quantum_vectoradd
+116/194: 116/194: quantum_vectoradd (DONE:704ms)
+116/194: Method: quantum_vectoradd_inplace
+117/194: 117/194: quantum_vectoradd_inplace (DONE:638ms)
+117/194: Method: quantum_objcode_start
+118/194: 118/194: quantum_objcode_start (DONE:18ms)
+118/194: Method: quantum_new_density_op
+119/194: 119/194: quantum_new_density_op (DONE:396ms)
+119/194: Method: quantum_bmeasure_bitpreserve
+120/194: 120/194: quantum_bmeasure_bitpreserve (DONE:1683ms)
+120/194: Method: quantum_reconstruct_hash2
+121/194: 121/194: quantum_reconstruct_hash2 (DONE:67ms)
+121/194: Method: quantum_gate1
+122/194: 122/194: quantum_gate1 (DONE:17789ms)
+122/194: Method: quantum_hadamard
+123/194: 123/194: quantum_hadamard (DONE:43ms)
+123/194: Method: atexit
+124/194: 124/194: atexit (DONE:23ms)
+124/194: Method: quantum_new_qureg
+125/194: 125/194: quantum_new_qureg (DONE:88ms)
+125/194: Method: quantum_cond_phase_inv
+126/194: 126/194: quantum_cond_phase_inv (DONE:334ms)
+126/194: Method: quantum_sigma_y
+127/194: 127/194: quantum_sigma_y (DONE:290ms)
+127/194: Method: quantum_phase_scale
+128/194: 128/194: quantum_phase_scale (DONE:83ms)
+128/194: Method: quantum_phase_kick
+129/194: 129/194: quantum_phase_kick (DONE:132ms)
+129/194: Method: quantum_cond_phase_kick
+130/194: 130/194: quantum_cond_phase_kick (DONE:193ms)
+130/194: Method: quantum_r_z
+131/194: 131/194: quantum_r_z (DONE:228ms)
+131/194: Method: quantum_reconstruct_hash
+132/194: 132/194: quantum_reconstruct_hash (DONE:68ms)
+132/194: Method: quantum_dot_product_noconj
+133/194: 133/194: quantum_dot_product_noconj (DONE:165ms)
+133/194: Method: quantum_matrix_qureg
+134/194: 134/194: quantum_matrix_qureg (DONE:218ms)
+134/194: Method: quantum_rk4
+135/194: 135/194: quantum_rk4 (DONE:1940ms)
+135/194: Method: quantum_dot_product
+136/194: 136/194: quantum_dot_product (DONE:196ms)
+136/194: Method: quantum_r_y
+137/194: 137/194: quantum_r_y (DONE:104ms)
+137/194: Method: quantum_r_x
+138/194: 138/194: quantum_r_x (DONE:196ms)
+138/194: Method: quantum_qft
+139/194: 139/194: quantum_qft (DONE:46ms)
+139/194: Method: quantum_density_matrix
+140/194: 140/194: quantum_density_matrix (DONE:794ms)
+140/194: Method: quantum_get_version
+141/194: 141/194: quantum_get_version (DONE:3ms)
+141/194: Method: __libc_csu_fini
+142/194: 142/194: __libc_csu_fini (DONE:1ms)
+142/194: Method: quantum_print_expn
+143/194: 143/194: quantum_print_expn (DONE:83ms)
+143/194: Method: quantum_print_hash
+144/194: 144/194: quantum_print_hash (DONE:84ms)
+144/194: Method: quantum_print_qureg
+145/194: 145/194: quantum_print_qureg (DONE:257ms)
+145/194: Method: quantum_delete_density_op
+146/194: 146/194: quantum_delete_density_op (DONE:66ms)
+146/194: Method: quantum_new_qureg_size
+147/194: 147/194: quantum_new_qureg_size (DONE:35ms)
+147/194: Method: quantum_kronecker
+148/194: 148/194: quantum_kronecker (DONE:401ms)
+148/194: Method: quantum_matrix2qureg
+149/194: 149/194: quantum_matrix2qureg (DONE:449ms)
+149/194: Method: quantum_qureg2matrix
+150/194: 150/194: quantum_qureg2matrix (DONE:69ms)
+150/194: Method: quantum_mmult
+151/194: 151/194: quantum_mmult (DONE:225ms)
+151/194: Method: _start
+152/194: 152/194: _start (DONE:12ms)
+152/194: Method: quantum_unbounded_toffoli
+153/194: 153/194: quantum_unbounded_toffoli (DONE:403ms)
+153/194: Method: quantum_gate2
+154/194: 154/194: quantum_gate2 (DONE:13325ms)
+154/194: Method: quantum_objcode_exit
+155/194: 155/194: quantum_objcode_exit (DONE:10ms)
+155/194: Method: quantum_reduced_density_op
+156/194: 156/194: quantum_reduced_density_op (DONE:1095ms)
+156/194: Method: quantum_qureg2density_op
+157/194: 157/194: quantum_qureg2density_op (DONE:19ms)
+157/194: Method: quantum_walsh
+158/194: 158/194: quantum_walsh (DONE:24ms)
+158/194: Method: quantum_print_timeop
+159/194: 159/194: quantum_print_timeop (DONE:189ms)
+159/194: Method: quantum_qft_inv
+160/194: 160/194: quantum_qft_inv (DONE:47ms)
+160/194: Method: quantum_rk4a
+161/194: 161/194: quantum_rk4a (DONE:2573ms)
+161/194: Method: quantum_purity
+162/194: 162/194: quantum_purity (DONE:902ms)
+162/194: Method: quantum_print_density_matrix
+163/194: 163/194: quantum_print_density_matrix (DONE:21ms)
+163/194: Method: quantum_toffoli
+164/194: 164/194: quantum_toffoli (DONE:301ms)
+164/194: Method: emul
+165/194: 165/194: emul (DONE:40ms)
+165/194: Method: quantum_swaptheleads_omuln_controlled
+166/194: 166/194: quantum_swaptheleads_omuln_controlled (DONE:64ms)
+166/194: Method: quantum_cnot
+167/194: 167/194: quantum_cnot (DONE:200ms)
+167/194: Method: quantum_swaptheleads
+168/194: 168/194: quantum_swaptheleads (DONE:508ms)
+168/194: Method: quantum_qec_encode
+169/194: 169/194: quantum_qec_encode (DONE:177ms)
+169/194: Method: quantum_qec_decode
+170/194: 170/194: quantum_qec_decode (DONE:353ms)
+170/194: Method: quantum_qec_counter
+171/194: 171/194: quantum_qec_counter (DONE:39ms)
+171/194: Method: quantum_toffoli_ft
+172/194: 172/194: quantum_toffoli_ft (DONE:1004ms)
+172/194: Method: quantum_cnot_ft
+173/194: 173/194: quantum_cnot_ft (DONE:61ms)
+173/194: Method: quantum_sigma_x
+174/194: 174/194: quantum_sigma_x (DONE:132ms)
+174/194: Method: test_sum
+175/194: 175/194: test_sum (DONE:824ms)
+175/194: Method: muxha
+176/194: 176/194: muxha (DONE:63ms)
+176/194: Method: muxha_inv
+177/194: 177/194: muxha_inv (DONE:63ms)
+177/194: Method: muxfa
+178/194: 178/194: muxfa (DONE:202ms)
+178/194: Method: muxfa_inv
+179/194: 179/194: muxfa_inv (DONE:207ms)
+179/194: Method: quantum_sigma_x_ft
+180/194: 180/194: quantum_sigma_x_ft (DONE:43ms)
+180/194: Method: madd
+181/194: 181/194: madd (DONE:164ms)
+181/194: Method: madd_inv
+182/194: 182/194: madd_inv (DONE:158ms)
+182/194: Method: addn
+183/194: 183/194: addn (DONE:30ms)
+183/194: Method: addn_inv
+184/194: 184/194: addn_inv (DONE:42ms)
+184/194: Method: add_mod_n
+185/194: 185/194: add_mod_n (DONE:15ms)
+185/194: Method: muln
+186/194: 186/194: muln (DONE:134ms)
+186/194: Method: muln_inv
+187/194: 187/194: muln_inv (DONE:145ms)
+187/194: Method: mul_mod_n
+188/194: 188/194: mul_mod_n (DONE:21ms)
+188/194: Method: quantum_exp_mod_n
+189/194: 189/194: quantum_exp_mod_n (DONE:112ms)
+189/194: Method: quantum_objcode_run
+190/194: 190/194: quantum_objcode_run (DONE:1394ms)
+190/194: Method: main
+191/194: 191/194: main (DONE:2008ms)
+191/194: Method: initializer_0
+192/194: 192/194: initializer_0 (DONE:24ms)
+192/194: Method: __libc_csu_init
+193/194: 193/194: __libc_csu_init (DONE:33ms)
+193/194: Method: finalizer_0
+194/194: 194/194: finalizer_0 (DONE:13ms)
+Exectime: 80.105000 sec
+[I] Done.

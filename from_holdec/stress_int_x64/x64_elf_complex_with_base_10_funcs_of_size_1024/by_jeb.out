@@ -1,45 +1,41 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_complex_with_base_10_funcs_of_size_1024/subject.exe...
-The notes section ".gnu.build.attributes" was not processed
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (23 internal methods created)
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x401026 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 28 methods
 Output folder: jeb_output
-  0/ 23: Method: initializer_0
-  1/ 23: 1/23: initializer_0 (DONE:223ms)
-  1/ 23: Method: sub_401036
-  2/ 23: 2/23: sub_401036 (DONE:39ms)
-  2/ 23: Method: deregister_tm_clones
-  3/ 23: 3/23: deregister_tm_clones (DONE:40ms)
-  3/ 23: Method: register_tm_clones
-  4/ 23: 4/23: register_tm_clones (DONE:62ms)
-  4/ 23: Method: log_size_10_var_000
-  5/ 23: 5/23: log_size_10_var_000 (DONE:48338ms)
-  5/ 23: Method: log_size_10_var_001
-  6/ 23: 6/23: log_size_10_var_001 (DONE:49011ms)
-  6/ 23: Method: log_size_10_var_002
-  7/ 23: 7/23: log_size_10_var_002 (DONE:34623ms)
-  7/ 23: Method: log_size_10_var_003
-  8/ 23: 8/23: log_size_10_var_003 (DONE:27069ms)
-  8/ 23: Method: log_size_10_var_004
-  9/ 23: 9/23: log_size_10_var_004 (DONE:30315ms)
-  9/ 23: Method: log_size_10_var_005
- 10/ 23: 10/23: log_size_10_var_005 (DONE:54009ms)
- 10/ 23: Method: log_size_10_var_006
+  0/ 28: Method: sub_401110
+  1/ 28: 1/28: sub_401110 (DONE:46ms)
+  1/ 28: Method: sub_401150
+  2/ 28: 2/28: sub_401150 (DONE:6ms)
+  2/ 28: Method: initializer_0
+  3/ 28: 3/28: initializer_0 (DONE:77ms)
+  3/ 28: Method: →__assert_fail
+  4/ 28: 4/28: →__assert_fail (DONE:35ms)
+  4/ 28: Method: sub_401180
+  5/ 28: 5/28: sub_401180 (DONE:13ms)
+  5/ 28: Method: log_size_10_var_000
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
 
 === Killed because of time limit

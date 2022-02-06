@@ -1,14 +1,13 @@
 
-int countSetBits(int param0) {
-    int v0 = 0;
+long countSetBits(int param0) {
+    char v0;
     if(param0) {
-        do {
-            ++v0;
-            (unsigned int)v1 = blsr(param0, param0);
+        while(1) {
+            int v1 = blsr(param0);
+            jump v0 ? &sub_401155: &loc_40114C;
         }
-        while(v0);
     }
-    return 0;
+    return 0L;
 }
 
 long divideByThree(int param0) {
@@ -16,21 +15,23 @@ long divideByThree(int param0) {
 }
 
 char divisibleBy3(int param0) {
-    return (unsigned int)(param0 * 0xaaaaaaab) <= 0x55555555 ? 1: 0;
+    return (unsigned int)(param0 * 0xaaaaaaab) > 0x55555555 ? 0: 1;
 }
 
 long isWhitespace(long param0) {
-    long result;
+    long v0;
+    long result = 0L;
     if((unsigned char)param0 <= 32) {
-        long result = shrx(0x100002600L, 0x100002600L, param0);
+        long v0 = shrx(0x100002600L, param0);
+        result = (unsigned long)((unsigned int)v0 & 0x1);
     }
     return result;
 }
 
 char isWhitespace2(int param0) {
-    char result = ((unsigned char)param0 == 32 ? 1: 0) | ((unsigned char)param0 == 10 ? 1: 0);
-    if(!result) {
-        result = (unsigned char)(param0 & 0xfffffffb) == 9 ? 1: 0;
+    char result = ((unsigned char)param0 != 32 ? 0: 1) | ((unsigned char)param0 != 10 ? 0: 1);
+    if(!(((unsigned char)param0 != 32 ? 0: 1) | ((unsigned char)param0 != 10 ? 0: 1))) {
+        result = ((unsigned char)param0 & 0xfb) != 9 ? 0: 1;
     }
     return result;
 }
@@ -41,24 +42,44 @@ long main() {
     long v2 = divideByThree(100L);
     long v3 = divideByThree(99L);
     long v4 = divideByThree(0L);
-    →printf("divideByThree:  f(0)=%d f(99)=%d f(100)=%d f(101)=%d f(102)=%d\n", v4 & 0xffffffffL, (unsigned long)(unsigned int)v3, (unsigned long)(unsigned int)v2, (unsigned long)(unsigned int)v1, (unsigned long)(unsigned int)v0);
+    →printf("divideByThree:  f(0)=%d f(99)=%d f(100)=%d f(101)=%d f(102)=%d\n");
     char v5 = divisibleBy3(44L);
     char v6 = divisibleBy3(43L);
     char v7 = divisibleBy3(42L);
     char v8 = divisibleBy3(0L);
-    →printf("divisibleBy3:   f(0)=%d f(42)=%d f(43)=%d f(44)=%d\n", v8 & 0xffL, v7 & 0xffL, v6 & 0xffL, v5 & 0xffL);
-    int v9 = countSetBits(0x10101L);
-    int v10 = countSetBits(0xffffffffL);
-    int v11 = countSetBits(0xffL);
-    int v12 = countSetBits(0L);
-    →printf("countSetBits:   f(0)=%d f(0xff)=%d f(0xffffffff)=%d f(0x10101)=%d\n", v12 & 0xffffffffL, (unsigned long)(unsigned int)v11, (unsigned long)(unsigned int)v10, (unsigned long)(unsigned int)v9);
+    →printf("divisibleBy3:   f(0)=%d f(42)=%d f(43)=%d f(44)=%d\n");
+    long v9 = countSetBits(0x10101L);
+    long v10 = countSetBits(0xffffffffL);
+    long v11 = countSetBits(0xffL);
+    long v12 = countSetBits(0L);
+    →printf("countSetBits:   f(0)=%d f(0xff)=%d f(0xffffffff)=%d f(0x10101)=%d\n");
     long v13 = isWhitespace(97L);
     long v14 = isWhitespace(9L);
     long v15 = isWhitespace(32L);
-    →printf("isWhitespace:   f(\' \')=%d f(tab)=%d f(\'a\')=%d\n", v15 & 0xffL, v14 & 0xffL, v13 & 0xffL);
+    →printf("isWhitespace:   f(\' \')=%d f(tab)=%d f(\'a\')=%d\n");
     char v16 = isWhitespace2(97L);
     char v17 = isWhitespace2(9L);
     char v18 = isWhitespace2(32L);
-    →printf("isWhitespace2:  f(\' \')=%d f(tab)=%d f(\'a\')=%d\n", v18 & 0xffL, v17 & 0xffL, v16 & 0xffL);
+    →printf("isWhitespace2:  f(\' \')=%d f(tab)=%d f(\'a\')=%d\n");
     return 0L;
+}
+
+long sub_40108D() {
+    return 0L;
+}
+
+long sub_4010CF() {
+    return 0L;
+}
+
+long sub_4010FD() {
+    long result = deregister_tm_clones();
+    completed.7287 = 1;
+    return result;
+}
+
+void sub_401110() {
+}
+
+void sub_401155() {
 }

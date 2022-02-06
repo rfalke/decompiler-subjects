@@ -1,47 +1,37 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/switch/ia32_elf_by_boomerang_cc/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (12 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 11 methods
 Output folder: jeb_output
-  0/ 12: Method: printf
-  1/ 12: 1/12: printf (DONE:81ms)
-  1/ 12: Method: atexit
-  2/ 12: 2/12: atexit (DONE:26ms)
-  2/ 12: Method: __fpstart
-  3/ 12: 3/12: __fpstart (DONE:15ms)
-  3/ 12: Method: exit
-  4/ 12: 4/12: exit (DONE:11ms)
-  4/ 12: Method: __fsr
-  5/ 12: 5/12: __fsr (DONE:205ms)
-  5/ 12: Method: main
-  6/ 12: 6/12: main (DONE:373ms)
-  6/ 12: Method: sub_8048795
-  7/ 12: 7/12: sub_8048795 (DONE:15ms)
-  7/ 12: Method: sub_8048839
-  8/ 12: 8/12: sub_8048839 (DONE:13ms)
-  8/ 12: Method: _mcount
-  9/ 12: 9/12: _mcount (DONE:24ms)
-  9/ 12: Method: initializer_0
- 10/ 12: 10/12: initializer_0 (DONE:86ms)
- 10/ 12: Method: _start
- 11/ 12: 11/12: _start (DONE:116ms)
- 11/ 12: Method: finalizer_0
- 12/ 12: 12/12: finalizer_0 (DONE:90ms)
-Exectime: 3.145000 sec
-Done.
+  0/ 11: Method: →printf
+  1/ 11: 1/11: →printf (DONE:46ms)
+  1/ 11: Method: →atexit
+  2/ 11: 2/11: →atexit (DONE:6ms)
+  2/ 11: Method: →__fpstart
+  3/ 11: 3/11: →__fpstart (DONE:8ms)
+  3/ 11: Method: →exit
+  4/ 11: 4/11: →exit (DONE:14ms)
+  4/ 11: Method: __fsr
+  5/ 11: 5/11: __fsr (DONE:92ms)
+  5/ 11: Method: main
+  6/ 11: 6/11: main (DONE:176ms)
+  6/ 11: Method: sub_804879A
+  7/ 11: 7/11: sub_804879A (DONE:11ms)
+  7/ 11: Method: _mcount
+  8/ 11: 8/11: _mcount (DONE:14ms)
+  8/ 11: Method: initializer_0
+  9/ 11: 9/11: initializer_0 (DONE:44ms)
+  9/ 11: Method: _start
+ 10/ 11: 10/11: _start (DONE:106ms)
+ 10/ 11: Method: finalizer_0
+ 11/ 11: 11/11: finalizer_0 (DONE:43ms)
+Exectime: 1.056000 sec
+[I] Done.

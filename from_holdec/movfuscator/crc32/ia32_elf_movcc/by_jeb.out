@@ -1,102 +1,27 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/movfuscator/crc32/ia32_elf_movcc/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (13 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x8048216 no longer exists!
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 8 methods
 Output folder: jeb_output
-  0/ 13: Method: sub_8048210
-  1/ 13: 1/13: sub_8048210 (DONE:92ms)
-  1/ 13: Method: sub_8048256
-  2/ 13: 2/13: sub_8048256 (DONE:30ms)
-  2/ 13: Method: sub_8048250
-  3/ 13: 3/13: sub_8048250 (DONE:32ms)
-  3/ 13: Method: printf@@GLIBC_2.0
-  4/ 13: 4/13: printf@@GLIBC_2.0 (DONE:46ms)
-  4/ 13: Method: exit@@GLIBC_2.0
-  5/ 13: 5/13: exit@@GLIBC_2.0 (DONE:31ms)
-  5/ 13: Method: strlen@@GLIBC_2.0
-  6/ 13: 6/13: strlen@@GLIBC_2.0 (DONE:35ms)
-  6/ 13: Method: dispatch
-  7/ 13: 7/13: dispatch (DONE:13ms)
-  7/ 13: Method: rc_crc32
-  8/ 13: 8/13: rc_crc32 (DONE:16932ms)
-  8/ 13: Method: main
-  9/ 13: 9/13: main (DONE:1520ms)
-  9/ 13: Method: sub_8048226
- 10/ 13: 10/13: sub_8048226 (DONE:24ms)
- 10/ 13: Method: sub_8048236
- 11/ 13: 11/13: sub_8048236 (DONE:12ms)
- 11/ 13: Method: sub_8048246
- 12/ 13: 12/13: sub_8048246 (DONE:12ms)
- 12/ 13: Method: start
- 13/ 13: 13/13: start (DONE:208ms)
-1/1 DECOMPILATION ERROR: METHOD start: java.lang.RuntimeException: Illegal stack slot
-	at com.pnfsoftware.jebglobal.Se.canCreateVariable(SourceFile:122)
-	at com.pnfsoftware.jebglobal.Se.createStackItem(SourceFile:194)
-	at com.pnfsoftware.jebglobal.Mj.XP(SourceFile:186)
-	at com.pnfsoftware.jebglobal.Tw.Vo(SourceFile:167)
-	at com.pnfsoftware.jebglobal.Tw.Vo(SourceFile:91)
-	at com.pnfsoftware.jebglobal.YS.XP(SourceFile:43)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+  0/  8: Method: →sigaction
+  1/  8: 1/8: →sigaction (DONE:96ms)
+  1/  8: Method: →printf
+  2/  8: 2/8: →printf (DONE:22ms)
+  2/  8: Method: →exit
+  3/  8: 3/8: →exit (DONE:27ms)
+  3/  8: Method: →strlen
+  4/  8: 4/8: →strlen (DONE:13ms)
+  4/  8: Method: sub_8048266
+  5/  8: 5/8: sub_8048266 (DONE:9ms)
+  5/  8: Method: rc_crc32
 
-Exectime: 24.386000 sec
-Done.
+=== Killed because of time limit

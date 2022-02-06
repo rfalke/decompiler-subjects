@@ -1,7 +1,10 @@
 
 long start() {
-    for(int i = 0; i <= 9; ++i) {
-        *(char*)i = 7;
+    unsigned int v0 = 0;
+    do {
+        *(char*)v0 = 7;
+        ++v0;
     }
+    while((int)v0 <= 9);
     return 0L;
 }

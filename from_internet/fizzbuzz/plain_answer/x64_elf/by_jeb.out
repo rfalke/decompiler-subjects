@@ -1,0 +1,56 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/fizzbuzz/plain_answer/x64_elf/subject.exe...
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 20 methods
+Output folder: jeb_output
+  0/ 20: Method: sub_401150
+  1/ 20: 1/20: sub_401150 (DONE:42ms)
+  1/ 20: Method: sub_401190
+  2/ 20: 2/20: sub_401190 (DONE:5ms)
+  2/ 20: Method: initializer_0
+  3/ 20: 3/20: initializer_0 (DONE:65ms)
+  3/ 20: Method: sub_401026
+  4/ 20: 4/20: sub_401026 (DONE:8ms)
+  4/ 20: Method: →puts
+  5/ 20: 5/20: →puts (DONE:46ms)
+  5/ 20: Method: sub_4011C0
+  6/ 20: 6/20: sub_4011C0 (DONE:4ms)
+  6/ 20: Method: sub_40113D
+  7/ 20: 7/20: sub_40113D (DONE:24ms)
+  7/ 20: Method: sub_40117F
+  8/ 20: 8/20: sub_40117F (DONE:25ms)
+  8/ 20: Method: →printf
+  9/ 20: 9/20: →printf (DONE:20ms)
+  9/ 20: Method: deregister_tm_clones
+ 10/ 20: 10/20: deregister_tm_clones (DONE:14ms)
+ 10/ 20: Method: register_tm_clones
+ 11/ 20: 11/20: register_tm_clones (DONE:38ms)
+ 11/ 20: Method: sub_4011AD
+ 12/ 20: 12/20: sub_4011AD (DONE:13ms)
+ 12/ 20: Method: initializer_1
+ 13/ 20: 13/20: initializer_1 (DONE:4ms)
+ 13/ 20: Method: _dl_relocate_static_pie
+ 14/ 20: 14/20: _dl_relocate_static_pie (DONE:3ms)
+ 14/ 20: Method: __libc_csu_fini
+ 15/ 20: 15/20: __libc_csu_fini (DONE:3ms)
+ 15/ 20: Method: finalizer_0
+ 16/ 20: 16/20: finalizer_0 (DONE:9ms)
+ 16/ 20: Method: main
+ 17/ 20: 17/20: main (DONE:175ms)
+ 17/ 20: Method: finalizer_1
+ 18/ 20: 18/20: finalizer_1 (DONE:9ms)
+ 18/ 20: Method: __libc_csu_init
+ 19/ 20: 19/20: __libc_csu_init (DONE:94ms)
+ 19/ 20: Method: _start
+ 20/ 20: 20/20: _start (DONE:41ms)
+Exectime: 1.211000 sec
+[I] Done.

@@ -1,68 +1,67 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/i386_float_recog/ia32_elf_clang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (22 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 26 methods
 Output folder: jeb_output
-  0/ 22: Method: __x86.get_pc_thunk.bx
-  1/ 22: 1/22: __x86.get_pc_thunk.bx (DONE:88ms)
-  1/ 22: Method: sub_8049030
-  2/ 22: 2/22: sub_8049030 (DONE:34ms)
-  2/ 22: Method: sub_8049097
-  3/ 22: 3/22: sub_8049097 (DONE:30ms)
-  3/ 22: Method: deregister_tm_clones
-  4/ 22: 4/22: deregister_tm_clones (DONE:68ms)
-  4/ 22: Method: register_tm_clones
-  5/ 22: 5/22: register_tm_clones (DONE:78ms)
-  5/ 22: Method: initializer_0
-  6/ 22: 6/22: initializer_0 (DONE:116ms)
-  6/ 22: Method: sub_8049046
-  7/ 22: 7/22: sub_8049046 (DONE:22ms)
-  7/ 22: Method: sub_8049040
-  8/ 22: 8/22: sub_8049040 (DONE:17ms)
-  8/ 22: Method: sub_8049056
-  9/ 22: 9/22: sub_8049056 (DONE:18ms)
-  9/ 22: Method: initializer_1
- 10/ 22: 10/22: initializer_1 (DONE:11ms)
- 10/ 22: Method: unknown_to_unknown
- 11/ 22: 11/22: unknown_to_unknown (DONE:162ms)
- 11/ 22: Method: double_to_unknown
- 12/ 22: 12/22: double_to_unknown (DONE:131ms)
- 12/ 22: Method: unknown_to_double
- 13/ 22: 13/22: unknown_to_double (DONE:46ms)
- 13/ 22: Method: double_to_double
- 14/ 22: 14/22: double_to_double (DONE:43ms)
- 14/ 22: Method: sub_8049050
- 15/ 22: 15/22: sub_8049050 (DONE:12ms)
- 15/ 22: Method: _dl_relocate_static_pie
- 16/ 22: 16/22: _dl_relocate_static_pie (DONE:12ms)
- 16/ 22: Method: __libc_csu_fini
- 17/ 22: 17/22: __libc_csu_fini (DONE:13ms)
- 17/ 22: Method: finalizer_0
- 18/ 22: 18/22: finalizer_0 (DONE:23ms)
- 18/ 22: Method: finalizer_1
-Emulation failed!
- 19/ 22: 19/22: finalizer_1 (DONE:109ms)
- 19/ 22: Method: __libc_csu_init
- 20/ 22: 20/22: __libc_csu_init (DONE:147ms)
- 20/ 22: Method: main
- 21/ 22: 21/22: main (DONE:195ms)
- 21/ 22: Method: _start
- 22/ 22: 22/22: _start (DONE:40ms)
-Exectime: 3.050000 sec
-Done.
+  0/ 26: Method: __x86.get_pc_thunk.bx
+  1/ 26: 1/26: __x86.get_pc_thunk.bx (DONE:44ms)
+  1/ 26: Method: sub_80490F0
+  2/ 26: 2/26: sub_80490F0 (DONE:4ms)
+  2/ 26: Method: sub_8049138
+  3/ 26: 3/26: sub_8049138 (DONE:4ms)
+  3/ 26: Method: sub_8049036
+  4/ 26: 4/26: sub_8049036 (DONE:14ms)
+  4/ 26: Method: →printf
+  5/ 26: 5/26: →printf (DONE:18ms)
+  5/ 26: Method: sub_8049097
+  6/ 26: 6/26: sub_8049097 (DONE:4ms)
+  6/ 26: Method: sub_8049168
+  7/ 26: 7/26: sub_8049168 (DONE:3ms)
+  7/ 26: Method: initializer_0
+  8/ 26: 8/26: initializer_0 (DONE:57ms)
+  8/ 26: Method: sub_80490CC
+  9/ 26: 9/26: sub_80490CC (DONE:18ms)
+  9/ 26: Method: sub_8049118
+ 10/ 26: 10/26: sub_8049118 (DONE:15ms)
+ 10/ 26: Method: →__libc_start_main
+ 11/ 26: 11/26: →__libc_start_main (DONE:10ms)
+ 11/ 26: Method: unknown_to_unknown
+ 12/ 26: 12/26: unknown_to_unknown (DONE:82ms)
+ 12/ 26: Method: double_to_unknown
+ 13/ 26: 13/26: double_to_unknown (DONE:75ms)
+ 13/ 26: Method: unknown_to_double
+ 14/ 26: 14/26: unknown_to_double (DONE:26ms)
+ 14/ 26: Method: double_to_double
+ 15/ 26: 15/26: double_to_double (DONE:20ms)
+ 15/ 26: Method: deregister_tm_clones
+ 16/ 26: 16/26: deregister_tm_clones (DONE:13ms)
+ 16/ 26: Method: register_tm_clones
+ 17/ 26: 17/26: register_tm_clones (DONE:31ms)
+ 17/ 26: Method: sub_804914D
+ 18/ 26: 18/26: sub_804914D (DONE:11ms)
+ 18/ 26: Method: initializer_1
+ 19/ 26: 19/26: initializer_1 (DONE:3ms)
+ 19/ 26: Method: _dl_relocate_static_pie
+ 20/ 26: 20/26: _dl_relocate_static_pie (DONE:3ms)
+ 20/ 26: Method: __libc_csu_fini
+ 21/ 26: 21/26: __libc_csu_fini (DONE:2ms)
+ 21/ 26: Method: finalizer_0
+ 22/ 26: 22/26: finalizer_0 (DONE:14ms)
+ 22/ 26: Method: _start
+ 23/ 26: 23/26: _start (DONE:44ms)
+ 23/ 26: Method: main
+ 24/ 26: 24/26: main (DONE:103ms)
+ 24/ 26: Method: finalizer_1
+ 25/ 26: 25/26: finalizer_1 (DONE:13ms)
+ 25/ 26: Method: __libc_csu_init
+ 26/ 26: 26/26: __libc_csu_init (DONE:134ms)
+Exectime: 1.333000 sec
+[I] Done.

@@ -1,12 +1,12 @@
 
-long basic_operations(long param0, long param1) {
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
+long basic_operations() {
+    use();
+    use();
+    use();
+    use();
+    use();
+    use();
+    use();
     return 123L;
 }
 
@@ -37,7 +37,7 @@ long compare_floats() {
         v7 = 1;
         v6 = 1;
     }
-    use_int(v7 ? v6 ? 0L: 1L: 0L);
+    /*BAD_CALL!*/ use_int(v7 ? v6 ? 0L: 1L: 0L);
     if(v9 == v8) {
         v5 = 1;
         v4 = 0;
@@ -54,7 +54,7 @@ long compare_floats() {
         v5 = 1;
         v4 = 1;
     }
-    use_int(v5 ? v4 ? 1L: 0L: 1L);
+    /*BAD_CALL!*/ use_int(v5 ? v4 ? 1L: 0L: 1L);
     if(v9 == v8) {
         v3 = 1;
         v2 = 0;
@@ -68,7 +68,7 @@ long compare_floats() {
         v2 = 1;
     }
     use_int(v2 || v3 ? 0L: 1L);
-    use_int(v9 == v8 ? 0: v9 <= v8 ? 0L: 1L);
+    /*BAD_CALL!*/ use_int(v9 != v8 ? v9 <= v8: 0 ? 0L: 1L);
     if(v8 == v9) {
         v1 = 1;
         v0 = 0;
@@ -82,16 +82,16 @@ long compare_floats() {
         v0 = 1;
     }
     use_int(v0 || v1 ? 0L: 1L);
-    use_int(v8 == v9 ? 0: v8 <= v9 ? 0L: 1L);
+    use_int(v8 != v9 ? v8 <= v9: 0 ? 0L: 1L);
     return 124L;
 }
 
-long constants(long param0, long param1) {
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
-    use(param0, param1);
+long constants() {
+    use();
+    use();
+    use();
+    use();
+    use();
     return 125L;
 }
 
@@ -120,27 +120,41 @@ void converting_between_floats_l2() {
 }
 
 long main() {
-    →printf("%zu %zu %zu %zu %zu\n", 1L, 2L, 4L, 8L, 8L);
-    →printf((char*)0x40092E, 4L, 8L, 16L);
+    →printf("%zu %zu %zu %zu %zu\n");
+    →printf((char*)"%zu %zu %zu\n");
     return 0L;
 }
 
-long read_floats(long param0, long param1) {
-    use(param0, param1);
+long read_floats() {
+    use();
     return 122L;
 }
 
-long read_ints(long param0, long param1) {
-    use(param0, param1);
+long read_ints() {
+    use();
     return 120L;
 }
 
-int use(long param0, long param1) {
-    return →printf((char*)&gvar_400920, param1);
+long sub_4004B9() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6917 = 1;
+}
+
+void sub_4004CA() {
+}
+
+long sub_4004E0() {
+    return register_tm_clones();
+}
+
+int use() {
+    return →printf((char*)&gvar_400920);
 }
 
 int use_int(long param0) {
-    return →printf((char*)&gvar_400923, param0 & 0xffffffffL);
+    return →printf((char*)&gvar_400923);
 }
 
 void write_floats() {
@@ -151,11 +165,12 @@ void write_floats() {
 }
 
 long write_ints() {
-    double v0;
-    global_char = (unsigned char)(int)v0;
-    global_short = (unsigned short)(int)v0;
-    global_int = (int)v0;
-    global_long = (long)v0;
-    global_long_long = (long)v0;
+    int v0;
+    double v1;
+    global_char = (unsigned char)(int)v1;
+    global_short = (unsigned short)(int)v1;
+    global_int = (int)v1;
+    global_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
+    global_long_long = (unsigned long)(int)v1 | ((unsigned long)v0 << 32);
     return 121L;
 }

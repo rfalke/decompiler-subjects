@@ -1,121 +1,45 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/phi/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (23 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 15 methods
 Output folder: jeb_output
-  0/ 23: Method: printf@@GLIBC_2.0
-  1/ 23: 1/23: printf@@GLIBC_2.0 (DONE:93ms)
-  1/ 23: Method: sub_804826C
-  2/ 23: 2/23: sub_804826C (DONE:55ms)
-  2/ 23: Method: scanf@@GLIBC_2.0
-  3/ 23: 3/23: scanf@@GLIBC_2.0 (DONE:18ms)
-  3/ 23: Method: __libc_start_main@@GLIBC_2.0
-  4/ 23: 4/23: __libc_start_main@@GLIBC_2.0 (DONE:14ms)
-  4/ 23: Method: __do_global_dtors_aux
-  5/ 23: 5/23: __do_global_dtors_aux (DONE:86ms)
-  5/ 23: Method: __do_global_ctors_aux
-  6/ 23: 6/23: __do_global_ctors_aux (DONE:208ms)
-  6/ 23: Method: sub_8048282
-  7/ 23: 7/23: sub_8048282 (DONE:16ms)
-  7/ 23: Method: sub_8048292
-  8/ 23: 8/23: sub_8048292 (DONE:15ms)
-  8/ 23: Method: sub_80482A2
-  9/ 23: 9/23: sub_80482A2 (DONE:16ms)
-  9/ 23: Method: _start
- 10/ 23: 10/23: _start (DONE:79ms)
- 10/ 23: Method: frame_dummy
- 11/ 23: 11/23: frame_dummy (DONE:56ms)
- 11/ 23: Method: sub_804832E
- 12/ 23: 12/23: sub_804832E (DONE:8ms)
- 12/ 23: Method: call_gmon_start
- 13/ 23: 13/23: call_gmon_start (DONE:67ms)
- 13/ 23: Method: initializer_0
- 14/ 23: 14/23: initializer_0 (DONE:45ms)
- 14/ 23: Method: __libc_csu_init
- 15/ 23: 15/23: __libc_csu_init (DONE:84ms)
- 15/ 23: Method: finalizer_0
- 16/ 23: 16/23: finalizer_0 (DONE:41ms)
- 16/ 23: Method: __libc_csu_fini
- 17/ 23: 17/23: __libc_csu_fini (DONE:41ms)
- 17/ 23: Method: sub_804847E
- 18/ 23: 18/23: sub_804847E (DONE:62ms)
- 18/ 23: Method: sub_80483DE
- 19/ 23: 19/23: sub_80483DE (DONE:12ms)
- 19/ 23: Method: fib
- 20/ 23: 20/23: fib (DONE:122ms)
- 20/ 23: Method: sub_80483FE
- 21/ 23: 21/23: sub_80483FE (DONE:52ms)
- 21/ 23: Method: sub_80483AE
- 22/ 23: 22/23: sub_80483AE (DONE:89ms)
- 22/ 23: Method: main
- 23/ 23: 23/23: main (DONE:133ms)
-1/1 DECOMPILATION ERROR: METHOD __libc_csu_fini: java.lang.RuntimeException: FAIL - unexpected condition
-	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:30)
-	at com.pnfsoftware.jeb.util.base.Assert.a(SourceFile:42)
-	at com.pnfsoftware.jebglobal.xk.registerAdditionalConvertedAddress(SourceFile:390)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.AbstractConverter.insertReturns(SourceFile:1103)
-	at com.pnfsoftware.jebglobal.cU.XP(SourceFile:67)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-Exectime: 3.239000 sec
-Done.
+  0/ 15: Method: →printf
+  1/ 15: 1/15: →printf (DONE:58ms)
+  1/ 15: Method: →scanf
+  2/ 15: 2/15: →scanf (DONE:7ms)
+  2/ 15: Method: →__libc_start_main
+  3/ 15: 3/15: →__libc_start_main (DONE:8ms)
+  3/ 15: Method: __do_global_dtors_aux
+  4/ 15: 4/15: __do_global_dtors_aux (DONE:113ms)
+  4/ 15: Method: __do_global_ctors_aux
+  5/ 15: 5/15: __do_global_ctors_aux (DONE:126ms)
+  5/ 15: Method: sub_8048272
+  6/ 15: 6/15: sub_8048272 (DONE:9ms)
+  6/ 15: Method: _start
+  7/ 15: 7/15: _start (DONE:29ms)
+  7/ 15: Method: call_gmon_start
+  8/ 15: 8/15: call_gmon_start (DONE:29ms)
+  8/ 15: Method: frame_dummy
+  9/ 15: 9/15: frame_dummy (DONE:31ms)
+  9/ 15: Method: initializer_0
+ 10/ 15: 10/15: initializer_0 (DONE:24ms)
+ 10/ 15: Method: __libc_csu_init
+ 11/ 15: 11/15: __libc_csu_init (DONE:46ms)
+ 11/ 15: Method: finalizer_0
+ 12/ 15: 12/15: finalizer_0 (DONE:17ms)
+ 12/ 15: Method: __libc_csu_fini
+ 13/ 15: 13/15: __libc_csu_fini (DONE:22ms)
+ 13/ 15: Method: fib
+ 14/ 15: 14/15: fib (DONE:61ms)
+ 14/ 15: Method: main
+ 15/ 15: 15/15: main (DONE:123ms)
+Exectime: 1.193000 sec
+[I] Done.

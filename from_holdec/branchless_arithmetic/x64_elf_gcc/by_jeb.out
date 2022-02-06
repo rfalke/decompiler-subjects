@@ -1,0 +1,100 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_holdec/branchless_arithmetic/x64_elf_gcc/subject.exe...
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 42 methods
+Output folder: jeb_output
+  0/ 42: Method: sub_4012D0
+  1/ 42: 1/42: sub_4012D0 (DONE:45ms)
+  1/ 42: Method: sub_401310
+  2/ 42: 2/42: sub_401310 (DONE:5ms)
+  2/ 42: Method: initializer_0
+  3/ 42: 3/42: initializer_0 (DONE:70ms)
+  3/ 42: Method: sub_401026
+  4/ 42: 4/42: sub_401026 (DONE:8ms)
+  4/ 42: Method: →printf
+  5/ 42: 5/42: →printf (DONE:19ms)
+  5/ 42: Method: sub_401340
+  6/ 42: 6/42: sub_401340 (DONE:6ms)
+  6/ 42: Method: sat_addu32b
+  7/ 42: 7/42: sat_addu32b (DONE:24ms)
+  7/ 42: Method: sat_subu32b
+  8/ 42: 8/42: sat_subu32b (DONE:28ms)
+  8/ 42: Method: sat_divu32b
+  9/ 42: 9/42: sat_divu32b (DONE:9ms)
+  9/ 42: Method: sat_mulu32b
+ 10/ 42: 10/42: sat_mulu32b (DONE:75ms)
+ 10/ 42: Method: sat_addu64b
+ 11/ 42: 11/42: sat_addu64b (DONE:20ms)
+ 11/ 42: Method: sat_subu64b
+ 12/ 42: 12/42: sat_subu64b (DONE:26ms)
+ 12/ 42: Method: sat_divu64b
+ 13/ 42: 13/42: sat_divu64b (DONE:5ms)
+ 13/ 42: Method: sat_mulu64b
+ 14/ 42: 14/42: sat_mulu64b (DONE:25ms)
+ 14/ 42: Method: sat_adds32b_var1
+ 15/ 42: 15/42: sat_adds32b_var1 (DONE:30ms)
+ 15/ 42: Method: sat_adds32b_var2
+ 16/ 42: 16/42: sat_adds32b_var2 (DONE:35ms)
+ 16/ 42: Method: sat_adds32b_var3
+ 17/ 42: 17/42: sat_adds32b_var3 (DONE:21ms)
+ 17/ 42: Method: sat_subs32b
+ 18/ 42: 18/42: sat_subs32b (DONE:19ms)
+ 18/ 42: Method: sat_divs32b
+ 19/ 42: 19/42: sat_divs32b (DONE:26ms)
+ 19/ 42: Method: sat_muls32b
+ 20/ 42: 20/42: sat_muls32b (DONE:43ms)
+ 20/ 42: Method: sat_adds64b
+ 21/ 42: 21/42: sat_adds64b (DONE:15ms)
+ 21/ 42: Method: sat_subs64b
+ 22/ 42: 22/42: sat_subs64b (DONE:15ms)
+ 22/ 42: Method: sat_divs64b
+ 23/ 42: 23/42: sat_divs64b (DONE:18ms)
+ 23/ 42: Method: sat_muls64b
+ 24/ 42: 24/42: sat_muls64b (DONE:26ms)
+ 24/ 42: Method: abs32
+ 25/ 42: 25/42: abs32 (DONE:11ms)
+ 25/ 42: Method: abs64
+ 26/ 42: 26/42: abs64 (DONE:9ms)
+ 26/ 42: Method: sgn32
+ 27/ 42: 27/42: sgn32 (DONE:22ms)
+ 27/ 42: Method: sgn64
+ 28/ 42: 28/42: sgn64 (DONE:19ms)
+ 28/ 42: Method: sub_4012BD
+ 29/ 42: 29/42: sub_4012BD (DONE:14ms)
+ 29/ 42: Method: sub_4012FF
+ 30/ 42: 30/42: sub_4012FF (DONE:13ms)
+ 30/ 42: Method: →puts
+ 31/ 42: 31/42: →puts (DONE:10ms)
+ 31/ 42: Method: deregister_tm_clones
+ 32/ 42: 32/42: deregister_tm_clones (DONE:12ms)
+ 32/ 42: Method: register_tm_clones
+ 33/ 42: 33/42: register_tm_clones (DONE:33ms)
+ 33/ 42: Method: sub_40132D
+ 34/ 42: 34/42: sub_40132D (DONE:9ms)
+ 34/ 42: Method: initializer_1
+ 35/ 42: 35/42: initializer_1 (DONE:4ms)
+ 35/ 42: Method: _dl_relocate_static_pie
+ 36/ 42: 36/42: _dl_relocate_static_pie (DONE:10ms)
+ 36/ 42: Method: __libc_csu_fini
+ 37/ 42: 37/42: __libc_csu_fini (DONE:3ms)
+ 37/ 42: Method: finalizer_0
+ 38/ 42: 38/42: finalizer_0 (DONE:7ms)
+ 38/ 42: Method: main
+ 39/ 42: 39/42: main (DONE:422ms)
+ 39/ 42: Method: finalizer_1
+ 40/ 42: 40/42: finalizer_1 (DONE:23ms)
+ 40/ 42: Method: __libc_csu_init
+ 41/ 42: 41/42: __libc_csu_init (DONE:79ms)
+ 41/ 42: Method: _start
+ 42/ 42: 42/42: _start (DONE:37ms)
+Exectime: 2.064000 sec
+[I] Done.

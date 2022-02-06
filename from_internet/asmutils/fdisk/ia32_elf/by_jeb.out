@@ -1,0 +1,29 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/fdisk/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 7 methods
+Output folder: jeb_output
+  0/  7: Method: sub_80483FF
+  1/  7: 1/7: sub_80483FF (DONE:181ms)
+  1/  7: Method: sub_80483DF
+  2/  7: 2/7: sub_80483DF (DONE:34ms)
+  2/  7: Method: sub_804821D
+  3/  7: 3/7: sub_804821D (DONE:11ms)
+  3/  7: Method: sub_80481A6
+  4/  7: 4/7: sub_80481A6 (DONE:15ms)
+  4/  7: Method: sub_80481F6
+  5/  7: 5/7: sub_80481F6 (DONE:33ms)
+  5/  7: Method: sub_80481EB
+  6/  7: 6/7: sub_80481EB (DONE:21ms)
+  6/  7: Method: start
+  7/  7: 7/7: start (DONE:52ms)
+Exectime: 0.772000 sec
+[I] Done.

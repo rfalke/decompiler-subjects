@@ -1,57 +1,39 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/branch/ia32_elf_by_boomerang_linux/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (17 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 12 methods
 Output folder: jeb_output
-  0/ 17: Method: fwrite@@GLIBC_2.0
-  1/ 17: 1/17: fwrite@@GLIBC_2.0 (DONE:91ms)
-  1/ 17: Method: sub_80482B4
-  2/ 17: 2/17: sub_80482B4 (DONE:45ms)
-  2/ 17: Method: scanf@@GLIBC_2.0
-  3/ 17: 3/17: scanf@@GLIBC_2.0 (DONE:23ms)
-  3/ 17: Method: __libc_start_main@@GLIBC_2.0
-  4/ 17: 4/17: __libc_start_main@@GLIBC_2.0 (DONE:19ms)
-  4/ 17: Method: __do_global_ctors_aux
-  5/ 17: 5/17: __do_global_ctors_aux (DONE:276ms)
-  5/ 17: Method: sub_80482CA
-  6/ 17: 6/17: sub_80482CA (DONE:19ms)
-  6/ 17: Method: sub_80482DA
-  7/ 17: 7/17: sub_80482DA (DONE:24ms)
-  7/ 17: Method: sub_80482EA
-  8/ 17: 8/17: sub_80482EA (DONE:18ms)
-  8/ 17: Method: main
-  9/ 17: 9/17: main (DONE:763ms)
-  9/ 17: Method: start
- 10/ 17: 10/17: start (DONE:44ms)
- 10/ 17: Method: call_gmon_start
- 11/ 17: 11/17: call_gmon_start (DONE:70ms)
- 11/ 17: Method: sub_8048322
- 12/ 17: 12/17: sub_8048322 (DONE:9ms)
- 12/ 17: Method: __do_global_dtors_aux
- 13/ 17: 13/17: __do_global_dtors_aux (DONE:53ms)
- 13/ 17: Method: sub_8048346
- 14/ 17: 14/17: sub_8048346 (DONE:17ms)
- 14/ 17: Method: initializer_0
- 15/ 17: 15/17: initializer_0 (DONE:60ms)
- 15/ 17: Method: finalizer_0
- 16/ 17: 16/17: finalizer_0 (DONE:37ms)
- 16/ 17: Method: frame_dummy
- 17/ 17: 17/17: frame_dummy (DONE:86ms)
-Exectime: 3.848000 sec
-Done.
+  0/ 12: Method: →fwrite
+  1/ 12: 1/12: →fwrite (DONE:58ms)
+  1/ 12: Method: →scanf
+  2/ 12: 2/12: →scanf (DONE:12ms)
+  2/ 12: Method: →__libc_start_main
+  3/ 12: 3/12: →__libc_start_main (DONE:10ms)
+  3/ 12: Method: __do_global_ctors_aux
+  4/ 12: 4/12: __do_global_ctors_aux (DONE:137ms)
+  4/ 12: Method: sub_80482BA
+  5/ 12: 5/12: sub_80482BA (DONE:5ms)
+  5/ 12: Method: main
+  6/ 12: 6/12: main (DONE:366ms)
+  6/ 12: Method: start
+  7/ 12: 7/12: start (DONE:34ms)
+  7/ 12: Method: call_gmon_start
+  8/ 12: 8/12: call_gmon_start (DONE:28ms)
+  8/ 12: Method: __do_global_dtors_aux
+  9/ 12: 9/12: __do_global_dtors_aux (DONE:73ms)
+  9/ 12: Method: initializer_0
+ 10/ 12: 10/12: initializer_0 (DONE:15ms)
+ 10/ 12: Method: finalizer_0
+ 11/ 12: 11/12: finalizer_0 (DONE:16ms)
+ 11/ 12: Method: frame_dummy
+ 12/ 12: 12/12: frame_dummy (DONE:15ms)
+Exectime: 1.239000 sec
+[I] Done.

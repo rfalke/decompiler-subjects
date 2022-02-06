@@ -1,78 +1,93 @@
 
 // Stale decompilation - Refresh this view to re-decompile this code
 int start() {
+    int v0;
+    char v1;
+    int v2;
+    void* ptr0;
+    int* ptr1 = &v0;
+    int* ptr2 = &v0;
+    char v3 = &v1 == 12;
+    char v4 = (int)&v2 < 0;
+    char v5 = __parity__((unsigned char)&v1 - 12);
+    char v6 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v0 ^ 0x8) ^ (int)&v2) >>> 4) & 0x1);
+    char v7 = (unsigned int)&v0 < 8;
+    char v8 = (int)(int*)((int)(int*)((int)&v0 ^ (int)&v2) & (int)(int*)((int)&v0 ^ 0x8)) < 0;
     _set_app_type(1);
+    int* ptr3 = &ptr0;
     /*NO_RETURN*/ sub_401140();
 }
 
 int sub_401000(unsigned int* param0) {
     int _Signal;
     char v0;
+    int v1;
+    int v2 = v1;
     int result = 0;
-    int v1 = 0;
-    unsigned int v2 = **param0;
-    if(v2 > 3221225617) {
-        if(v2 == 0xc0000094) {
+    int v3 = 0;
+    unsigned int v4 = **param0;
+    if(v4 > 3221225617) {
+        if(v4 == 0xc0000094) {
         loc_401037:
-            _crt_signal_t v3 = signal(8, NULL);
-            if(v3 == 1) {
+            _crt_signal_t v5 = signal(8, NULL);
+            if(v5 == 1) {
                 signal(8, (_crt_signal_t)0x1);
-                if(v1) {
+                if(v3) {
                     sub_401580();
                 }
             }
-            else if(!v3) {
+            else if(!v5) {
                 return result;
             }
             else {
-                v3(8);
+                v5(8);
             }
         }
-        else if(v2 >= 3221225620) {
-            v0 = v2 == 0xc0000096;
+        else if(v4 >= 3221225620) {
+            v0 = v4 == 0xc0000096;
         loc_40108C:
             if(!v0) {
                 return result;
             }
-            _crt_signal_t v4 = signal(4, NULL);
-            if(v4 == 1) {
+            _crt_signal_t v6 = signal(4, NULL);
+            if(v6 == 1) {
                 _Signal = 4;
             loc_401122:
                 signal(_Signal, (_crt_signal_t)0x1);
             }
-            else if(!v4) {
+            else if(!v6) {
                 return result;
             }
             else {
-                v4(4);
+                v6(4);
             }
         }
-        else if(v2 != 0xc0000093) {
+        else if(v4 != 0xc0000093) {
             return 0;
         }
         else {
-            v1 = 1;
+            v3 = 1;
             goto loc_401037;
         }
     loc_40104F:
         result = -1;
     }
-    else if(v2 >= 3221225613) {
-        v1 = 1;
+    else if(v4 >= 3221225613) {
+        v3 = 1;
         goto loc_401037;
     }
-    else if(v2 != 0xc0000005) {
-        v0 = v2 == 0xc000001d;
+    else if(v4 != 0xc0000005) {
+        v0 = v4 == 0xc000001d;
         goto loc_40108C;
     }
     else {
-        _crt_signal_t v5 = signal(11, NULL);
-        if(v5 == 1) {
+        _crt_signal_t v7 = signal(11, NULL);
+        if(v7 == 1) {
             _Signal = 11;
             goto loc_401122;
         }
-        else if(v5) {
-            v5(11);
+        else if(v7) {
+            v7(11);
             goto loc_40104F;
         }
     }
@@ -88,56 +103,46 @@ void sub_401140() {
     int v2 = 0;
     int* ptr1 = &v2;
     unsigned int v3 = gvar_404000;
-    int v4 = &gvar_406004;
-    unsigned int v5 = v3;
     int* ptr2 = &v0;
-    int v6 = &gvar_406000;
-    unsigned int* ptr3 = &ptr0;
+    unsigned int v4 = &gvar_406000;
     →msvcrt.dll!__getmainargs();
-    int v7 = gvar_406040;
-    if(v7) {
-        gvar_404010 = v7;
-    }
-    else {
+    int v5 = gvar_406040;
+    if(!v5) {
     loc_4011F0:
-        --ptr3;
-        *ptr3 = &loc_4011F5;
-        int* ptr4 = /*BAD_CALL!*/ →msvcrt.dll!__p__fmode();
-        ptr4[0] = gvar_404010;
-        --ptr3;
-        *ptr3 = &loc_401202;
-        /*BAD_CALL!*/ sub_401550();
-        ptr3 = (unsigned int*)((int*)((int)ptr3 & 0xfffffff0) - 1);
-        *ptr3 = &loc_40120B;
-        char*** ptr5 = /*BAD_CALL!*/ __p__environ();
-        *(char***)(ptr3 + 2) = ptr5[0];
-        *(ptr3 + 1) = gvar_406000;
-        *ptr3 = gvar_406004;
-        --ptr3;
-        *ptr3 = 0x401227;
-        v7 = /*NO_RETURN*/ sub_4014D9(v1);
+        int* ptr3 = →msvcrt.dll!__p__fmode();
+        ptr3[0] = gvar_404010;
+        sub_401550();
+        char*** ptr4 = __p__environ();
+        *(char***)((int*)((int)&ptr0 & 0xfffffff0) + 1) = ptr4[0];
+        *(unsigned int*)((int)&ptr0 & 0xfffffff0) = gvar_406000;
+        *(unsigned int*)((int*)((int)&ptr0 & 0xfffffff0) - 1) = gvar_406004;
+        *((int*)((int)&ptr0 & 0xfffffff0) - 2) = 0x401227;
+        /*NO_RETURN*/ sub_4014D9(v1);
     }
-    *(int*)(ptr3 + 1) = v7;
-    *ptr3 = *(int*)0x7290;
-    --ptr3;
-    *ptr3 = &loc_40124C;
-    /*BAD_CALL!*/ msvcrt.dll!_setmode();
-    *(ptr3 + 1) = gvar_406040;
-    *ptr3 = *(int*)0x72B0;
-    --ptr3;
-    *ptr3 = &loc_4011C9;
-    /*BAD_CALL!*/ msvcrt.dll!_setmode();
-    *(ptr3 + 1) = gvar_406040;
-    *ptr3 = *(int*)0x72D0;
-    --ptr3;
-    *ptr3 = &loc_4011EE;
-    /*BAD_CALL!*/ msvcrt.dll!_setmode();
+    gvar_404010 = v5;
+    msvcrt.dll!_setmode();
+    msvcrt.dll!_setmode();
+    v4 = gvar_406040;
+    msvcrt.dll!_setmode();
     goto loc_4011F0;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
 int sub_401280() {
+    int v0;
+    char v1;
+    int v2;
+    void* ptr0;
+    int* ptr1 = &v0;
+    int* ptr2 = &v0;
+    char v3 = &v1 == 12;
+    char v4 = (int)&v2 < 0;
+    char v5 = __parity__((unsigned char)&v1 - 12);
+    char v6 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v0 ^ 0x8) ^ (int)&v2) >>> 4) & 0x1);
+    char v7 = (unsigned int)&v0 < 8;
+    char v8 = (int)(int*)((int)(int*)((int)&v0 ^ (int)&v2) & (int)(int*)((int)&v0 ^ 0x8)) < 0;
     _set_app_type(2);
+    int* ptr3 = &ptr0;
     /*NO_RETURN*/ sub_401140();
 }
 
@@ -145,13 +150,24 @@ int sub_4012A0(FUNCPTR _) {
     return atexit(_);
 }
 
+LONG sub_4012C0() {
+    sub_402C00();
+    return sub_4019F0((int*)&gvar_405160, (int*)0x406010);
+}
+
+int sub_4012F0() {
+    return sub_401D50((int*)&gvar_405160);
+}
+
 int sub_401310(int param0, int param1) {
     int v0 = 0;
     while(*(int*)(v0 * 4 + param1)) {
         int v1 = v0 * 4;
         ++v0;
-        int v2 = →msvcrt.dll!strncmp(*(char**)(v1 + param1), "LOLO", 3);
-        if(!v2) {
+        int v2 = 3;
+        int v3 = "LOLO";
+        int v4 = →msvcrt.dll!strncmp(*(char**)(v1 + param1), "LOLO", 3);
+        if(!v4) {
             gvar_406030 = 1;
             return 1;
         }
@@ -160,65 +176,128 @@ int sub_401310(int param0, int param1) {
 }
 
 int sub_401380() {
-    →msvcrt.dll!printf();
+    int v0;
+    char v1;
+    int v2;
+    void* ptr0;
+    int* ptr1 = &v0;
+    int* ptr2 = &v0;
+    char v3 = &v1 == 12;
+    char v4 = (int)&v2 < 0;
+    char v5 = __parity__((unsigned char)&v1 - 12);
+    char v6 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v0 ^ 0x8) ^ (int)&v2) >>> 4) & 0x1);
+    char v7 = (unsigned int)&v0 < 8;
+    char v8 = (int)(int*)((int)(int*)((int)&v0 ^ (int)&v2) & (int)(int*)((int)&v0 ^ 0x8)) < 0;
+    int v9 = →msvcrt.dll!printf("Password Incorrect!\n");
+    int* ptr3 = &ptr0;
     /*NO_RETURN*/ →msvcrt.dll!exit(0);
 }
 
-int sub_40139E(LPSTR buffer, int param1) {
+int sub_40139E(char* _Buffer, int param1) {
     int v0;
-    →msvcrt.dll!sscanf(buffer, (CHAR*)&gvar_40501A, &v0);
+    →msvcrt.dll!sscanf(_Buffer, (char*)&gvar_40501A, &v0);
     int result = sub_401310(v0, param1);
     if(result) {
-        for(int i = 0; i <= 9; ++i) {
+        unsigned int v1 = 0;
+        do {
             if(!(v0 & 0x1)) {
                 if(gvar_406030 == 1) {
-                    →msvcrt.dll!printf();
+                    →msvcrt.dll!printf("Password OK!\n");
                 }
                 /*NO_RETURN*/ →msvcrt.dll!exit(0);
             }
-            result = &i;
+            result = &v1;
+            ++v1;
         }
+        while((int)v1 > 9);
     }
     return result;
 }
 
-int sub_401415(char* _Str, int param1) {
-    int v0;
-    int v1 = 0;
-    unsigned int min = 0;
-    for(size_t i = →msvcrt.dll!strlen(_Str); i > min; i = →msvcrt.dll!strlen(_Str)) {
-        char v2 = _Str[min];
-        →msvcrt.dll!sscanf(&v2, (CHAR*)&gvar_40501A, &v0);
-        v1 += v0;
-        if(v1 == 16) {
-            sub_40139E((LPSTR)_Str, param1);
+int sub_401415(char* param0, int param1) {
+    char v0;
+    int v1;
+    int v2;
+    int v3;
+    int* ptr0 = &v1;
+    int* ptr1 = &v1;
+    char v4 = &v0 == 44;
+    char v5 = (int)&v3 < 0;
+    char v6 = __parity__((unsigned char)&v0 - 44);
+    char v7 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v1 ^ 0x28) ^ (int)&v3) >>> 4) & 0x1);
+    char v8 = (unsigned int)&v1 < 40;
+    char v9 = (int)(int*)((int)(int*)((int)&v1 ^ (int)&v3) & (int)(int*)((int)&v1 ^ 0x28)) < 0;
+    unsigned int v10 = 0;
+    int* ptr2 = NULL;
+    while(1) {
+        char* _Str = param0;
+        size_t v11 = →msvcrt.dll!strlen(_Str);
+        char v12 = v11 == ptr2;
+        char v13 = (int)v11 > (int)ptr2;
+        char v14 = __parity__((unsigned char)ptr2 - (unsigned char)v11);
+        char v15 = v11 > (unsigned int)ptr2;
+        char v16 = (int)(int*)((int)(int*)((int)(int*)((int)ptr2 - v11) ^ (int)ptr2) & (int)(int*)(v11 ^ (int)ptr2)) < 0;
+        char v17 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)ptr2 - v11) ^ (int)(int*)(v11 ^ (int)ptr2)) >>> 4) & 0x1);
+        if(!v15) {
+            break;
         }
-        ++min;
+        else {
+            int* ptr3 = ptr2;
+            int* ptr4 = ptr2;
+            char* ptr5 = &param0[ptr3];
+            char v18 = ptr5 ? 0: 1;
+            char v19 = (int)ptr5 < 0;
+            char v20 = __parity__((unsigned char)ptr5);
+            char v21 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)ptr4 ^ (int)param0) ^ (int)ptr5) >>> 4) & 0x1);
+            char v22 = (int*)__carry__((int)ptr4, (int)param0);
+            char v23 = (int)(int*)((int)(int*)((int)ptr5 ^ (int)ptr4) & (int*)~(int)(int*)((int)ptr4 ^ (int)param0)) < 0;
+            int v24 = (unsigned int)*ptr5;
+            char v25 = *ptr5;
+            int* ptr6 = &v2;
+            char* ptr7 = &v25;
+            int v26 = →msvcrt.dll!sscanf(&v25, (char*)&gvar_40501A, &v2);
+            int v27 = v2;
+            int* ptr8 = &v10;
+            v10 = (unsigned int)(v27 + v10);
+            char v28 = v10 == 16;
+            char v29 = (int)v10 < 16;
+            char v30 = __parity__((unsigned char)v10 - 16);
+            char v31 = v10 < 16;
+            char v32 = (((v10 - 16) ^ v10) & (v10 ^ 0x10)) < 0;
+            char v33 = (((v10 - 16) ^ (v10 ^ 0x10)) >>> 4) & 0x1;
+            if(v28) {
+                int v34 = param1;
+                char* _Buffer = param0;
+                int v35 = sub_40139E(_Buffer, v34);
+            }
+            int* ptr9 = &ptr2;
+            ptr1 = ptr2;
+            ptr2 = (int*)((char*)ptr2 + 1);
+            char v36 = ptr2 ? 0: 1;
+            char v37 = (int)ptr2 < 0;
+            char v38 = __parity__((unsigned char)ptr2);
+            char v39 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)ptr1 ^ 0x1) ^ (int)ptr2) >>> 4) & 0x1);
+            char v40 = (int)(int*)((int)(int*)((int)ptr1 ^ (int)ptr2) & (int*)~(int)(int*)((int)ptr1 ^ 0x1)) < 0;
+        }
     }
     /*NO_RETURN*/ sub_401380();
 }
 
 int sub_4014D9(int param0) {
-    char v0;
-    int v1;
+    int v0;
+    char v1;
     int v2 = 16;
     sub_402E20(param0);
     sub_401620();
-    →msvcrt.dll!printf();
-    →msvcrt.dll!printf();
-    →msvcrt.dll!scanf();
-    /*NO_RETURN*/ sub_401415(&v0, v1);
+    →msvcrt.dll!printf("IOLI Crackme Level 0x07\n");
+    →msvcrt.dll!printf("Password: ");
+    →msvcrt.dll!scanf((char*)&gvar_405055, &v1);
+    int v3 = v0;
+    /*NO_RETURN*/ sub_401415(&v1, v3);
 }
 
 int sub_401550() {
     int result;
-    int* ptr0 = (int*)&gvar_405310;
-    while((unsigned int)ptr0 < &gvar_405310) {
-        int v0 = *(ptr0 + 1);
-        result = *ptr0;
-        ptr0 += 2;
-        *(int*)((int)&MZHeader + v0) = *(int*)((int)&MZHeader + v0) + result;
-    }
     return result;
 }
 
@@ -226,34 +305,28 @@ void sub_401580() {
     fninit();
 }
 
-int sub_401590() {
-    int result;
+unsigned int* sub_401590() {
     int v0;
-    int* ptr0 = gvar_404020;
-    if(*ptr0) {
+    unsigned int* result = gvar_404020;
+    if(*result) {
         do {
-            result = *ptr0{sub_403020}();
+            *result{sub_403020}();
             unsigned int v1 = gvar_404020;
-            ptr0 = (int*)(v1 + 4);
+            result = (unsigned int*)(v1 + 4);
             v0 = *(int*)(v1 + 4);
-            gvar_404020 = ptr0;
+            gvar_404020 = result;
         }
         while(v0);
     }
     return result;
 }
 
-int sub_401620() {
-    int result1;
-    int result = gvar_406050;
-    if(result) {
-        return result;
-    }
-    gvar_406050 = 1;
+int sub_4015C0() {
     int v0 = 0;
-    for(char i = 0; !i; i = *(unsigned int*)(v0 * 4 + (int)&gvar_403034) ? 0: 1) {
+    do {
         ++v0;
     }
+    while(*(unsigned int*)(v0 * 4 + (int)&gvar_403034));
     int counter = v0;
     if(v0) {
         do {
@@ -262,26 +335,34 @@ int sub_401620() {
         }
         while(counter);
     }
-    sub_4012A0((void __cdecl (*_)())&sub_401590);
-    return result1;
+    return sub_4012A0((void __cdecl (*_)())&sub_401590);
+}
+
+int sub_401620() {
+    int result = gvar_406050;
+    if(!result) {
+        gvar_406050 = 1;
+        result = sub_4015C0();
+    }
+    return result;
 }
 
 int sub_401640() {
     int v0;
     int result = 0;
-    if((unsigned char)v0 != 0xFF) {
+    if((unsigned char)v0 != 0xff) {
         result = 2;
-        if((v0 & 0x7) != 2) {
-            if((v0 & 0x7) >= 2) {
+        if((unsigned int)(v0 & 0x7) != 2) {
+            if((int)(unsigned int)(v0 & 0x7) >= 2) {
                 result = 4;
-                if((v0 & 0x7) != 3) {
-                    if((v0 & 0x7) == 4) {
+                if((unsigned int)(v0 & 0x7) != 3) {
+                    if((unsigned int)(v0 & 0x7) == 4) {
                         return 8;
                     }
                     /*NO_RETURN*/ →msvcrt.dll!abort();
                 }
             }
-            else if(v0 & 0x7) {
+            else if((unsigned int)(v0 & 0x7)) {
                 /*NO_RETURN*/ →msvcrt.dll!abort();
             }
             else {
@@ -293,129 +374,104 @@ int sub_401640() {
 }
 
 char* sub_401690(int param0, int* param1) {
-    int v0;
+    char v0;
+    int v1;
     char* ptr0;
-    int v1 = 0;
+    int v2 = v1;
+    int v3 = 0;
     char* result = ptr0;
-    int v2 = 0;
+    int v4 = 0;
     do {
-        param0 = (unsigned int)(unsigned char)v1 | ((unsigned int)((param0 >>> 8) & 0xffffff) << 8);
-        v1 += 7;
-        v0 = (unsigned int)*result;
+        param0 = (unsigned int)(unsigned char)v3 | ((unsigned int)((param0 >>> 8) & 0xffffff) << 8);
+        v3 += 7;
+        v0 = *result;
         ++result;
-        v2 |= (v0 & 0x7f) << (param0 & 0x1f);
+        v4 |= ((unsigned int)v0 & 0x7f) << (param0 & 0x1f);
     }
-    while((unsigned char)v0 < 0);
-    *param1 = v2;
+    while(v0 < 0);
+    *param1 = v4;
     return result;
 }
 
 char* sub_4016E0(int param0, int* param1) {
     char v0;
+    int v1;
     char* ptr0;
+    int v2 = v1;
     char* result = ptr0;
-    unsigned int v1 = 0;
-    int v2 = 0;
+    int* ptr1 = param1;
+    unsigned int v3 = 0;
+    int v4 = 0;
     do {
-        unsigned int v3 = v1;
-        v1 += 7;
+        unsigned int v5 = v3;
+        v3 += 7;
         v0 = *result;
         ++result;
-        v2 |= ((unsigned int)v0 & 0x7f) << (v3 & 0x1f);
+        v4 |= ((unsigned int)v0 & 0x7f) << (v5 & 0x1f);
     }
     while(v0 < 0);
-    if(v1 <= 31 && (v0 & 0x40)) {
-        v2 |= -1 << (v1 & 0x1f);
+    if(v3 <= 31 && (v0 & 0x40)) {
+        v4 |= -1 << (v3 & 0x1f);
     }
-    *param1 = v2;
+    *param1 = v4;
     return result;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
 int* sub_401750(unsigned int* param0, unsigned int* param1) {
-    int* result;
-    unsigned int* ptr0;
-    unsigned int* ptr1;
-    unsigned int* ptr2;
     char v0;
-    int v1;
+    char v1;
     int v2;
-    int v3 = v2;
-    v2 = (unsigned int)v0 | ((unsigned int)((v2 >>> 8) & 0xffffff) << 8);
+    int v3;
+    int v4 = (unsigned int)v1 | ((unsigned int)v3 << 8);
     if(v0 != 80) {
-        switch((unsigned int)(v2 & 0xf)) {
-            case 1: {
-                int* ptr3 = (int*)sub_401690((int)param0, (int)&ptr1);
-                ptr0 = ptr1;
-                result = ptr3;
-                break;
-            }
-            case 9: {
-                int* ptr4 = (int*)sub_4016E0((int)param0, (int)&ptr2);
-                ptr0 = ptr2;
-                result = ptr4;
-                break;
-            }
-            case 2: 
-            case 10: {
-                ptr0 = (unsigned int*)*(short*)param0;
-                result = (int*)((char*)param0 + 2);
-                break;
-            }
-            case 0: 
-            case 3: 
-            case 11: {
-                ptr0 = *param0;
-                result = (int*)(param0 + 1);
-                break;
-            }
-            case 4: 
-            case 12: {
-                ptr0 = *param0;
-                result = (int*)(param0 + 2);
-                break;
-            }
-            default: {
-                /*NO_RETURN*/ →msvcrt.dll!abort();
+        if((unsigned int)(((unsigned int)v0 | ((unsigned int)v3 << 8)) & 0xf) <= 12) {
+            jump *(int*)((unsigned int)(((unsigned int)v0 | ((unsigned int)v3 << 8)) & 0xf) * 4 + 0x405060);
+        }
+        else {
+            /*NO_RETURN*/ →msvcrt.dll!abort();
+            ptr5 = (unsigned int*)*(short*)param0;
+            result = (int*)((char*)param0 + 2);
+        }
+        if(ptr5) {
+            ptr5 = (unsigned int)(((unsigned int)v0 | ((unsigned int)v3 << 8)) & 0x70) != 16 ? (unsigned int*)((int)ptr5 + v2): (unsigned int*)((int)ptr5 + (int)param0);
+            if(v0 < 0) {
+                ptr5 = *ptr5;
             }
         }
-        if(ptr0) {
-            ptr0 = (v2 & 0x70) != 16 ? (unsigned int*)((int)ptr0 + v1): (unsigned int*)((int)ptr0 + (int)param0);
-            if((unsigned char)v2 < 0) {
-                ptr0 = *ptr0;
-            }
-        }
-        *param1 = ptr0;
+        *param1 = ptr5;
         return result;
     }
-    unsigned int* ptr5 = (unsigned int*)((int)(int*)((char*)param0 + 3) & 0xfffffffc);
-    *param1 = *ptr5;
-    return (int*)(ptr5 + 1);
+    unsigned int* ptr0 = (unsigned int*)((int)(int*)((char*)param0 + 3) & 0xfffffffc);
+    *param1 = *ptr0;
+    return (int*)(ptr0 + 1);
 }
 
 HANDLE sub_401820() {
     unsigned int v0 = gvar_4060C0;
     *(int*)(v0 + 20) = -1;
-    HANDLE result = →KERNEL32.dll!CreateSemaphoreA(NULL, 0, 0xFFFF, NULL);
+    HANDLE result = →KERNEL32.dll!CreateSemaphoreA(NULL, 0, 0xffff, NULL);
     *(HANDLE*)(v0 + 24) = result;
     return result;
 }
 
 LONG sub_401870() {
+    int v0;
+    int v1 = v0;
     LONG result = gvar_4060A0;
-    unsigned int v0 = gvar_4060C0;
-    if(result && (int*)(v0 + 28)) {
-        result = *(LONG*)(v0 + 28);
+    unsigned int v2 = gvar_4060C0;
+    if(result && (int*)(v2 + 28)) {
+        result = *(LONG*)(v2 + 28);
         if(!result) {
-            result = →KERNEL32.dll!InterlockedIncrement((LONG*)(v0 + 32));
+            result = →KERNEL32.dll!InterlockedIncrement((LONG*)(v2 + 32));
             if(!result) {
                 result = (LONG)sub_401820();
-                *(int*)(v0 + 28) = 1;
+                *(int*)(v2 + 28) = 1;
             }
-            else if(!*(int*)(v0 + 28)) {
+            else if(!*(int*)(v2 + 28)) {
                 do {
                     →KERNEL32.dll!Sleep(0);
-                    result = *(LONG*)(v0 + 28);
+                    result = *(LONG*)(v2 + 28);
                 }
                 while(!result);
             }
@@ -428,37 +484,41 @@ LONG sub_401900(int* param0, int* param1, int param2, int param3) {
     LONG result;
     void* ptr0;
     int v0;
+    int v1;
+    int v2 = v1;
     int* ptr1 = param0;
     int* ptr2 = param1;
     if(ptr1 && *ptr1) {
         *ptr2 = -1;
         *(ptr2 + 1) = param2;
+        int v3 = param3;
         *(ptr2 + 4) = 0;
         *(unsigned int*)(ptr2 + 3) = ptr1;
-        *(ptr2 + 2) = param3;
-        *(short*)(ptr2 + 4) = (unsigned short)((unsigned int)*(short*)(ptr2 + 4) | 0x7f8);
+        *(ptr2 + 2) = v3;
+        *(short*)(ptr2 + 4) = *(short*)(ptr2 + 4) | 0x7f8;
         unsigned int* ptr3 = &ptr0;
         sub_401870();
-        unsigned int v1 = gvar_4060A0;
+        unsigned int v4 = gvar_4060A0;
         ptr1 = gvar_4060C0;
-        if(v1) {
-            LONG v2 = →KERNEL32.dll!InterlockedIncrement((LONG*)(ptr1 + 5));
+        if(v4) {
+            LONG v5 = →KERNEL32.dll!InterlockedIncrement((LONG*)(ptr1 + 5));
             ptr3 = &ptr0;
-            if(v2) {
-                DWORD v3 = →KERNEL32.dll!WaitForSingleObject(*(HANDLE*)(ptr1 + 6), 0xffffffff);
+            if(v5) {
+                int v6 = -1;
+                DWORD v7 = →KERNEL32.dll!WaitForSingleObject((HANDLE)*(long*)(ptr1 + 6), 0xffffffff);
                 ptr3 = &ptr0;
-                if(v3) {
+                if(v7) {
                     →KERNEL32.dll!InterlockedDecrement((LONG*)(ptr1 + 5));
                     ptr3 = &v0;
                 }
             }
             ptr1 = gvar_4060C0;
-            v1 = gvar_4060A0;
+            v4 = gvar_4060A0;
         }
         result = *(LONG*)(ptr1 + 3);
         *(LONG*)(ptr2 + 5) = *(LONG*)(ptr1 + 3);
         *(unsigned int*)(ptr1 + 3) = ptr2;
-        if(v1) {
+        if(v4) {
             *ptr3 = ptr1 + 5;
             --ptr3;
             *ptr3 = &loc_40197F;
@@ -481,70 +541,73 @@ LONG sub_4019F0(int* param0, int* param1) {
     return sub_401900(param0, param1, 0, 0);
 }
 
-int sub_401A20(int* param0) {
+LONG sub_401A20(int* param0) {
+    int v0;
+    int v1 = v0;
     if(!param0[0]) {
         return 0;
     }
     void* ptr0 = →msvcrt.dll!malloc(24);
-    sub_4019F0(param0, (int*)ptr0);
-    return (int)ptr0;
+    return sub_4019F0(param0, (int*)ptr0);
 }
 
 LONG sub_401A60(int param0, int* param1, int param2, int param3) {
-    LONG result1;
+    LONG result;
     void* ptr0;
     int v0;
+    int v1;
+    int v2 = v1;
     int* ptr1 = param1;
-    int v1 = param2;
+    int v3 = param2;
     *ptr1 = -1;
-    *(ptr1 + 1) = v1;
+    *(ptr1 + 1) = v3;
     *(ptr1 + 2) = param3;
+    int v4 = param0;
     *(ptr1 + 4) = 0;
     *(char*)(ptr1 + 4) = *(char*)(ptr1 + 4) | 0x2;
-    *(ptr1 + 3) = param0;
-    *(short*)(ptr1 + 4) = (unsigned short)((unsigned int)*(short*)(ptr1 + 4) | 0x7f8);
+    *(ptr1 + 3) = v4;
+    *(short*)(ptr1 + 4) = *(short*)(ptr1 + 4) | 0x7f8;
     sub_401870();
-    unsigned int v2 = gvar_4060C0;
+    unsigned int v5 = gvar_4060C0;
     if(!gvar_4060A0) {
-        result1 = *(LONG*)(v2 + 12);
-        *(LONG*)(ptr1 + 5) = *(LONG*)(v2 + 12);
-        *(unsigned int*)(v2 + 12) = ptr1;
+        result = *(LONG*)(v5 + 12);
+        *(LONG*)(ptr1 + 5) = *(LONG*)(v5 + 12);
+        *(unsigned int*)(v5 + 12) = ptr1;
     }
     else {
-        LONG v3 = →KERNEL32.dll!InterlockedIncrement((LONG*)(v2 + 20));
+        LONG v6 = →KERNEL32.dll!InterlockedIncrement((LONG*)(v5 + 20));
         unsigned int* ptr2 = &ptr0;
-        if(v3) {
-            DWORD v4 = →KERNEL32.dll!WaitForSingleObject(*(HANDLE*)(v2 + 24), 0xffffffff);
+        if(v6) {
+            int v7 = -1;
+            DWORD v8 = →KERNEL32.dll!WaitForSingleObject((HANDLE)*(long*)(v5 + 24), 0xffffffff);
             ptr2 = &ptr0;
-            if(v4) {
-                →KERNEL32.dll!InterlockedDecrement((LONG*)(v2 + 20));
+            if(v8) {
+                →KERNEL32.dll!InterlockedDecrement((LONG*)(v5 + 20));
                 ptr2 = &v0;
             }
         }
-        v2 = gvar_4060C0;
-        unsigned int v5 = gvar_4060A0;
-        result1 = *(LONG*)(v2 + 12);
-        *(LONG*)(ptr1 + 5) = *(LONG*)(v2 + 12);
-        *(unsigned int*)(v2 + 12) = ptr1;
-        if(v5) {
-            *ptr2 = v2 + 20;
+        v5 = gvar_4060C0;
+        result = *(LONG*)(v5 + 12);
+        char v9 = gvar_4060A0 ? 0: 1;
+        *(LONG*)(ptr1 + 5) = result;
+        *(unsigned int*)(v5 + 12) = ptr1;
+        if(!v9) {
+            *ptr2 = v5 + 20;
             --ptr2;
             *ptr2 = &loc_401B08;
-            result1 = /*BAD_CALL!*/ →KERNEL32.dll!InterlockedDecrement(*(LONG**)(ptr2 + 1));
+            result = /*BAD_CALL!*/ →KERNEL32.dll!InterlockedDecrement(*(LONG**)(ptr2 + 1));
             --ptr2;
-            if(result1 >= 0) {
+            if(result >= 0) {
                 *(int*)(ptr2 + 2) = 0;
                 *(int*)(ptr2 + 1) = 1;
-                int result = *(int*)(v2 + 24);
-                *ptr2 = *(int*)(v2 + 24);
+                *ptr2 = *(int*)(v5 + 24);
                 --ptr2;
                 *ptr2 = &loc_401B29;
-                /*BAD_CALL!*/ →KERNEL32.dll!ReleaseSemaphore(*(HANDLE*)(ptr2 + 1), *(LONG*)(ptr2 + 2), *(LPLONG*)(ptr2 + 3));
-                return result;
+                return (LONG)/*BAD_CALL!*/ →KERNEL32.dll!ReleaseSemaphore(*(HANDLE*)(ptr2 + 1), *(LONG*)(ptr2 + 2), *(LPLONG*)(ptr2 + 3));
             }
         }
     }
-    return result1;
+    return result;
 }
 
 LONG sub_401B60(int param0, int* param1) {
@@ -556,7 +619,7 @@ LONG sub_401B90(int param0) {
     return sub_401B60(param0, (int*)ptr0);
 }
 
-int sub_401D50(int* param0) {
+int sub_401BC0(int* param0) {
     DWORD v0;
     LONG v1;
     int result1;
@@ -677,7 +740,8 @@ int sub_401D50(int* param0) {
         goto loc_401BFB;
     }
     else {
-        v0 = →KERNEL32.dll!WaitForSingleObject(Addend[1], 0xffffffff);
+        int v11 = -1;
+        v0 = →KERNEL32.dll!WaitForSingleObject((HANDLE)Addend[1], 0xffffffff);
         ptr2 = &ptr0;
     }
     if(v0) {
@@ -688,35 +752,37 @@ int sub_401D50(int* param0) {
     goto loc_401BFB;
 }
 
-int* sub_401D60(int* param0) {
-    int result;
-    if(!param0[0]) {
-        return param0;
+int sub_401D50(int* param0) {
+    return sub_401BC0(param0);
+}
+
+int* sub_401D60(void* param0) {
+    if(*(int*)param0) {
+        int v0 = sub_401D50((int*)param0);
+        →msvcrt.dll!free((void*)v0);
     }
-    int v0 = sub_401D50(param0);
-    →msvcrt.dll!free((void*)v0);
-    return result;
+    return (int*)param0;
 }
 
 int sub_401D90(int param0, int param1) {
     char v0;
     int v1;
     int result = 0;
-    if((unsigned char)v1 == 0xFF) {
+    if((unsigned char)v1 == 0xff) {
         return result;
     }
-    else if((v1 & 0x70) == 32) {
+    else if((unsigned int)(v1 & 0x70) == 32) {
         return *(int*)(param1 + 4);
     }
-    else if((v1 & 0x70) < 32) {
-        if(!(v1 & 0x70)) {
+    else if((int)(unsigned int)(v1 & 0x70) < 32) {
+        if(!(unsigned int)(v1 & 0x70)) {
             return 0;
         }
-        v0 = (v1 & 0x70) == 16;
+        v0 = (unsigned int)(v1 & 0x70) == 16;
         goto loc_401DB8;
     }
-    else if((v1 & 0x70) != 48) {
-        v0 = (v1 & 0x70) == 80;
+    else if((unsigned int)(v1 & 0x70) != 48) {
+        v0 = (unsigned int)(v1 & 0x70) == 80;
     loc_401DB8:
         if(!v0) {
             /*NO_RETURN*/ →msvcrt.dll!abort();
@@ -740,12 +806,12 @@ int sub_401DF0() {
     if(*(char*)(v4 + 9) == 122) {
         size_t v7 = →msvcrt.dll!strlen((char*)(v4 + 9));
         sub_401690(v7 + v4 + 10, &v0);
-        char* ptr0 = (char*)(v4 + 10);
+        unsigned char* ptr0 = (unsigned char*)(v4 + 10);
         char* ptr1 = sub_4016E0(v5, &v1);
         char* ptr2 = sub_401690((int)(ptr1 + 1), &v0);
     loc_401E40:
-        char v8 = *ptr0;
-        while(v8 != 82) {
+        unsigned char v8 = *ptr0;
+        while(*ptr0 != 82) {
             switch(v8) {
                 case 76: {
                     ++ptr2;
@@ -772,13 +838,15 @@ int sub_401EA0(int param0, int param1, int param2) {
     unsigned int v0;
     unsigned int v1;
     int v2;
-    sub_401D90(v2, param0);
+    int v3;
+    int v4 = v2;
+    int v5 = sub_401D90(v3, param0);
     sub_401750((unsigned int*)(param1 + 8), &v0);
     sub_401750((unsigned int*)(param2 + 8), &v1);
     int result = 1;
-    char v3 = v1 > v0;
-    if((v3 || v1 == v0)) {
-        result = v3 ? -1: 0;
+    char v6 = v1 > v0;
+    if((v6 || v1 == v0)) {
+        result = v6 ? -1: 0;
     }
     return result;
 }
@@ -787,210 +855,225 @@ int sub_401F20(int param0, int param1, int param2) {
     unsigned int v0;
     unsigned int v1;
     int v2;
-    sub_401DF0();
-    sub_401D90(v2, param0);
+    int v3;
+    int v4 = v2;
+    int v5 = sub_401DF0();
+    int v6 = sub_401D90(v3, param0);
     sub_401750((unsigned int*)(param1 + 8), &v0);
-    sub_401DF0();
-    sub_401D90(v2, param0);
+    int v7 = sub_401DF0();
+    int v8 = sub_401D90(v3, param0);
     sub_401750((unsigned int*)(param2 + 8), &v1);
     int result = 1;
-    char v3 = v1 > v0;
-    if((v3 || v1 == v0)) {
-        result = v3 ? -1: 0;
+    char v9 = v1 > v0;
+    if((v9 || v1 == v0)) {
+        result = v9 ? -1: 0;
     }
     return result;
 }
 
-int sub_401FB0(int param0, int param1, int param2) {
+int sub_401FB0(int param0, unsigned int param1, unsigned int param2) {
     int v0;
     int result;
-    int v1 = param1;
-    int v2 = result;
-    int v3 = v0;
-    int v4 = v1 * 2 + 1;
-    if(v4 < param2) {
-        int v5 = param0;
+    int v1;
+    int v2;
+    int v3 = v2;
+    unsigned int v4 = param1;
+    int v5 = result;
+    int v6 = v1;
+    unsigned int v7 = (unsigned int)(v4 * 2 + 1);
+    if((int)v7 < (int)param2) {
+        int v8 = param0;
         do {
-            int v6 = v4 + 1;
-            if(v6 < param2) {
-                int v7 = v3(v2, *(int*)(v4 * 4 + v5), *(int*)(v4 * 4 + v5 + 4));
-                if(v7 < 0) {
-                    v4 = v6;
+            unsigned int v9 = v7 + 1;
+            if((int)v9 < (int)param2) {
+                int v10 = *(int*)(v7 * 4 + v8 + 4);
+                v0 = *(int*)(v7 * 4 + v8 + 4);
+                int v11 = v6(v5, *(int*)(v7 * 4 + v8), v10);
+                if(v11 < 0) {
+                    v7 = v9;
                 }
             }
-            result = v3(v2, *(int*)(v1 * 4 + v5), *(int*)(v4 * 4 + v5));
+            int v12 = *(int*)(v7 * 4 + v8);
+            v0 = *(int*)(v7 * 4 + v8);
+            result = v6(v5, *(int*)(v4 * 4 + v8), v12);
             if(result >= 0) {
                 return result;
             }
-            v0 = *(int*)(v1 * 4 + v5);
-            result = *(int*)(v4 * 4 + v5);
-            *(int*)(v1 * 4 + v5) = *(int*)(v4 * 4 + v5);
-            v1 = v4;
-            *(int*)(v4 * 4 + v5) = v0;
-            v4 = v4 * 2 + 1;
+            v1 = *(int*)(v4 * 4 + v8);
+            result = *(int*)(v7 * 4 + v8);
+            *(int*)(v4 * 4 + v8) = *(int*)(v7 * 4 + v8);
+            v4 = v7;
+            *(int*)(v7 * 4 + v8) = v1;
+            v7 = (unsigned int)(v7 * 2 + 1);
         }
-        while(v4 < param2);
+        while((int)v7 < (int)param2);
     }
     return result;
 }
 
 int sub_402040(int param0) {
     int v0;
-    int v1 = v0;
-    int v2 = *(int*)(param0 + 4);
-    int v3 = param0 + 8;
-    int result = v2 >>> 1;
-    int v4 = v2 >>> 1;
-    --v4;
-    while(v4 >= 0) {
-        result = sub_401FB0(v3, v4, v2);
-        --v4;
+    int v1;
+    int v2;
+    int v3 = v1;
+    int v4 = v2;
+    int v5 = v0;
+    unsigned int v6 = *(unsigned int*)(param0 + 4);
+    int v7 = param0 + 8;
+    int result = (int)(v6 >>> 1);
+    unsigned int v8 = (unsigned int)(int)(v6 >>> 1);
+    --v8;
+    while(v8 < 0x80000000) {
+        result = sub_401FB0(v7, v8, v6);
+        --v8;
     }
-    int v5 = v2 - 1;
-    while(v5 > 0) {
-        int v6 = *(int*)v3;
-        *(int*)v3 = *(int*)(v5 * 4 + v3);
-        *(int*)(v5 * 4 + v3) = v6;
-        int v7 = v5;
-        --v5;
-        result = sub_401FB0(v3, 0, v7);
+    unsigned int v9 = v6 - 1;
+    while((int)v9 > 0) {
+        int v10 = *(int*)v7;
+        *(int*)v7 = *(int*)(v9 * 4 + v7);
+        *(int*)(v9 * 4 + v7) = v10;
+        unsigned int v11 = v9;
+        --v9;
+        result = sub_401FB0(v7, 0, v11);
     }
     return result;
 }
 
-int sub_4020B0(int param0, int* param1) {
-    int* ptr0;
-    int v0;
+int sub_4020B0(int param0, unsigned int* param1) {
+    char v0;
+    unsigned int* ptr0;
     int v1;
     int v2;
-    int* ptr1 = param1;
-    int v3 = v2;
-    char v4 = *param1 ? 0: 1;
+    int v3;
+    unsigned int* ptr1 = param1;
+    int v4 = v3;
+    char v5 = *param1 ? 0: 1;
     int* ptr2 = NULL;
     int result = 0;
-    int v5 = 0;
+    *(int*)&v0 = 0;
     int v6 = 0;
-    while(!v4) {
-        int v7 = *(ptr1 + 1);
+    while(!v5) {
+        unsigned int v7 = *(ptr1 + 1);
         if(v7) {
             int* ptr3 = (int*)((int)ptr1 - v7) + 1;
             if(ptr3 != ptr2) {
                 ptr2 = ptr3;
-                v5 = sub_401DF0();
-                int v8 = sub_401D90(v0, v1);
-                int v9 = (unsigned int)*(short*)(v1 + 16);
-                v6 = v8;
-                if((unsigned int)(unsigned char)(v9 >>> 3) == 0xFF) {
-                    *(short*)(v1 + 16) = (unsigned short)(((unsigned int)(unsigned char)v5 * 8) | (v9 & 0xfffff807));
+                int v8 = sub_401DF0();
+                *(int*)&v0 = v8;
+                int v9 = sub_401D90(v1, v2);
+                int v10 = (unsigned int)*(short*)(v2 + 16);
+                v6 = v9;
+                if((unsigned char)(v10 >>> 3) == 0xff) {
+                    *(short*)(v2 + 16) = (unsigned short)(((unsigned int)v0 * 8) | (v10 & 0xfffff807));
                 }
-                else if((unsigned int)(unsigned char)(v9 >>> 3) != v5) {
-                    *(char*)(v1 + 16) = *(char*)(v1 + 16) | 0x4;
+                else if((unsigned int)(unsigned char)(v10 >>> 3) != *(int*)&v0) {
+                    *(char*)(v2 + 16) = *(char*)(v2 + 16) | 0x4;
                 }
             }
-            sub_401750((unsigned int*)(ptr1 + 2), &ptr0);
-            int v10 = /*BAD_CALL!*/ sub_401640();
-            if((int*)(((unsigned int)v10 <= 3 ? (1 << ((v10 * 8) & 0x1f)) - 1: -1) & (int)ptr0)) {
+            sub_401750(ptr1 + 2, &ptr0);
+            int v11 = sub_401640();
+            int v12 = (unsigned int)v11 <= 3 ? (1 << ((v11 * 8) & 0x1f)) - 1: -1;
+            if((int*)(v12 & (int)ptr0)) {
                 ++result;
-                if(*(unsigned int*)v1 > (unsigned int)ptr0) {
-                    *(int**)v1 = ptr0;
+                if(*(unsigned int*)v2 > (unsigned int)ptr0) {
+                    *(unsigned int**)v2 = ptr0;
                 }
             }
         }
         int* ptr4 = (int*)(*ptr1 + (int)ptr1);
-        ptr1 = ptr4 + 1;
-        v4 = *(ptr4 + 1) ? 0: 1;
+        ptr1 = (unsigned int*)(ptr4 + 1);
+        v5 = *(ptr4 + 1) ? 0: 1;
     }
     return result;
 }
 
-int sub_4021D0(int* param0) {
-    int result;
+int sub_4021D0(unsigned int* param0) {
     char v0;
     int v1;
-    int* ptr0;
     int v2;
-    int v3;
-    int* ptr1 = param0;
-    int v4 = v2;
-    int v5 = (unsigned int)*(short*)(v2 + 16);
-    int* ptr2 = ptr0;
-    int v6 = 0;
-    int v7 = (int)(unsigned char)(v5 >>> 3);
-    int v8 = sub_401D90(v3, v4);
-    char v9 = *ptr1 ? 0: 1;
-    int v10 = v8;
-    while(!v9) {
-        int v11 = *(ptr1 + 1);
-        if(v11) {
-            if((*(char*)(v4 + 16) & 0x4)) {
-                int v12 = (int)ptr1 - v11 + 4;
-                if(v12 != v6) {
-                    v6 = v12;
-                    v7 = sub_401DF0();
-                    v10 = sub_401D90(v3, v4);
-                }
-            }
-            if(!v7) {
-                v0 = *(ptr1 + 2) ? 0: 1;
-            }
-            else {
-                sub_401750((unsigned int*)(ptr1 + 2), &v1);
-                int v13 = sub_401640();
-                v0 = (unsigned int)v13 <= 3 ? ((1 << ((v13 * 8) & 0x1f)) - 1) & v1 ? 0: 1: v1 ? 0: 1;
-            }
-            if(!v0) {
-                int v14 = *ptr2;
-                if(v14) {
-                    int v15 = *(int*)(v14 + 4);
-                    *(unsigned int*)(v15 * 4 + v14 + 8) = ptr1;
-                    result = v15 + 1;
-                    *(int*)(v14 + 4) = v15 + 1;
-                }
-            }
-        }
-        int* ptr3 = (int*)(*ptr1 + (int)ptr1);
-        ptr1 = ptr3 + 1;
-        v9 = *(ptr3 + 1) ? 0: 1;
-    }
-    return result;
-}
-
-int* sub_4022D0(int param0) {
-    int v0;
-    unsigned int v1;
-    unsigned int v2;
     int v3;
     int v4;
     int v5;
-    int* ptr0;
-    int v6;
-    int v7;
-    int* result = ptr0;
-    int v8 = v7;
-    int v9 = v6;
-    int v10 = (unsigned int)*(short*)(v6 + 16);
-    int* ptr1 = NULL;
-    int v11 = (int)(unsigned char)(v10 >>> 3);
-    int v12 = sub_401D90(v5, v9);
-    char v13 = *result ? 0: 1;
-    int v14 = v12;
-    while(!v13) {
-        int v15 = *(result + 1);
-        if(v15) {
-            if((*(char*)(v9 + 16) & 0x4)) {
-                int* ptr2 = (int*)((int)result - v15) + 1;
-                if(ptr2 != ptr1) {
-                    ptr1 = ptr2;
+    int v6 = v3;
+    unsigned int* ptr0 = param0;
+    int v7 = v2;
+    int v8 = (unsigned int)*(short*)(v2 + 16);
+    int v9 = v4;
+    unsigned int v10 = 0;
+    int v11 = (int)(unsigned char)(v8 >>> 3);
+    int result = sub_401D90(v5, v7);
+    char v12 = *ptr0 ? 0: 1;
+    int v13 = result;
+    while(!v12) {
+        unsigned int v14 = *(ptr0 + 1);
+        if(v14) {
+            if((*(char*)(v7 + 16) & 0x4)) {
+                unsigned int v15 = (unsigned int)((int)ptr0 - v14 + 4);
+                if(v15 != v10) {
+                    v10 = v15;
                     v11 = sub_401DF0();
-                    v14 = sub_401D90(v5, v9);
+                    v13 = sub_401D90(v5, v7);
                 }
             }
             if(!v11) {
-                v4 = *(result + 2);
-                v3 = *(result + 2);
-                v2 = *(unsigned int*)(result + 3);
-                v1 = *(unsigned int*)(result + 3);
-                if(!v4) {
+                v0 = *(int*)(ptr0 + 2) ? 0: 1;
+            }
+            else {
+                sub_401750(ptr0 + 2, &v1);
+                int v16 = sub_401640();
+                v0 = (unsigned int)v16 <= 3 ? ((1 << ((v16 * 8) & 0x1f)) - 1) & v1 ? 0: 1: v1 ? 0: 1;
+            }
+            if(!v0) {
+                v4 = *(int*)v9;
+                if(v4) {
+                    int v17 = *(int*)(v4 + 4);
+                    *(unsigned int*)(v17 * 4 + v4 + 8) = ptr0;
+                    *(int*)(v4 + 4) = v17 + 1;
+                }
+            }
+        }
+        int* ptr1 = (int*)(*ptr0 + (int)ptr0);
+        ptr0 = (unsigned int*)(ptr1 + 1);
+        result = *(ptr1 + 1);
+        v12 = result ? 0: 1;
+    }
+    return result;
+}
+
+unsigned int* sub_4022D0(int param0) {
+    int v0;
+    int v1;
+    unsigned int* ptr0;
+    int v2;
+    unsigned int* ptr1;
+    int v3;
+    int v4;
+    unsigned int* result = ptr1;
+    int v5 = v3;
+    int v6 = v2;
+    int v7 = (unsigned int)*(short*)(v2 + 16);
+    int* ptr2 = NULL;
+    int v8 = (int)(unsigned char)(v7 >>> 3);
+    int v9 = sub_401D90(v4, v6);
+    char v10 = *result ? 0: 1;
+    int v11 = v9;
+    while(!v10) {
+        unsigned int v12 = *(result + 1);
+        if(v12) {
+            if((*(char*)(v6 + 16) & 0x4)) {
+                int* ptr3 = (int*)((int)result - v12) + 1;
+                if(ptr3 != ptr2) {
+                    ptr2 = ptr3;
+                    v8 = sub_401DF0();
+                    v11 = sub_401D90(v4, v6);
+                }
+            }
+            if(!v8) {
+                ptr1 = *(result + 2);
+                ptr0 = *(result + 2);
+                v4 = *(int*)(result + 3);
+                v1 = *(int*)(result + 3);
+                if(!ptr1) {
                     goto loc_402306;
                 }
                 else {
@@ -998,252 +1081,299 @@ int* sub_4022D0(int param0) {
                 }
             }
             else {
-                int* ptr3 = sub_401750((unsigned int*)(result + 2), &v3);
-                sub_401750((unsigned int*)ptr3, &v1);
-                v0 = sub_401640();
-                v4 = v3;
+                int* ptr4 = sub_401750(result + 2, &ptr0);
+                sub_401750((unsigned int*)ptr4, &v1);
+                int v13 = sub_401640();
+                v0 = (unsigned int)v13 <= 3 ? (1 << ((v13 * 8) & 0x1f)) - 1: -1;
+                ptr1 = ptr0;
             }
-            if((((unsigned int)v0 <= 3 ? (1 << ((v0 * 8) & 0x1f)) - 1: -1) & v4)) {
-                v2 = v1;
+            if((int*)(v0 & (int)ptr1)) {
+                v4 = v1;
             loc_40236B:
-                if((unsigned int)(param0 - v4) < v2) {
+                if((unsigned int)(int*)(param0 - (int)ptr1) < (unsigned int)v4) {
                     return result;
                 }
             }
         }
     loc_402306:
-        int* ptr4 = (int*)(*result + (int)result);
-        result = ptr4 + 1;
-        v13 = *(ptr4 + 1) ? 0: 1;
+        int* ptr5 = (int*)(*result + (int)result);
+        result = (unsigned int*)(ptr5 + 1);
+        v10 = *(ptr5 + 1) ? 0: 1;
     }
     return NULL;
 }
 
-int sub_4023F0(int param0, int param1) {
+// Stale decompilation - Refresh this view to re-decompile this code
+unsigned int* sub_4023F0(int param0, int param1) {
     unsigned int v0;
-    unsigned int v1;
+    int v1;
     unsigned int v2;
-    int v3;
-    int v4;
+    unsigned int v3;
+    unsigned int v4;
     unsigned int v5;
-    int* ptr0;
-    int v6;
+    unsigned int v6;
     int v7;
-    unsigned int v8;
+    char v8;
     int v9;
     int v10;
-    int result;
-    int* ptr1;
-    char v11;
-    int v12;
-    int* ptr2;
-    int* ptr3;
+    int v11;
+    void* ptr0;
+    void* ptr1;
+    void* ptr2;
+    void* ptr3;
+    unsigned int v12;
+    void* ptr4;
+    void* _Block;
+    void* ptr5;
+    unsigned int* ptr6;
     int v13;
-    int v14;
-    int v15 = param1;
-    int v16 = (int)*(char*)&ptr2[4];
-    int v17 = (int)ptr2;
-    if(!((unsigned char)v16 & 0x1)) {
-        int v18 = (int)ptr2;
-        void* ptr4 = (void*)(ptr2[4] >>> 11);
-        void* ptr5 = ptr4;
-        if(!ptr4) {
-            if(((unsigned char)v16 & 0x2)) {
-                unsigned int* ptr6 = *(unsigned int*)(v18 + 12);
-                if(*ptr6) {
-                    do {
-                        int* ptr7 = *ptr6;
-                        ++ptr6;
-                        result = sub_4020B0(v18, ptr7);
-                        ptr5 = (void*)(result + (int)ptr5);
-                    }
-                    while(*ptr6);
+    unsigned int* result;
+    unsigned int* ptr7;
+    char v14;
+    int v15;
+    int v16;
+    int v17 = v16;
+    int v18 = param1;
+    param1 = (int)*(char*)&result[4];
+    unsigned int* ptr8 = result;
+    if(!((unsigned char)param1 & 0x1)) {
+        int v19 = (int)result;
+        void* ptr9 = (void*)(result[4] >>> 11);
+        char v20 = ptr9 ? 0: 1;
+        void* ptr10 = ptr9;
+        if(v20) {
+            char i = (unsigned char)param1 & 0x2 ? 0: 1;
+            if(!i) {
+                unsigned int* ptr11 = *(unsigned int*)(v19 + 12);
+                for(i = *ptr11 ? 0: 1; !i; i = *ptr11 ? 0: 1) {
+                    unsigned int* ptr12 = *ptr11;
+                    ++ptr11;
+                    int v21 = sub_4020B0(v19, ptr12);
+                    ptr10 = (void*)(v21 + (int)ptr10);
                 }
             }
             else {
-                ptr5 = (void*)sub_4020B0(v18, *(int**)(v17 + 12));
+                unsigned int* ptr13 = ptr8;
+                unsigned int* ptr14 = (unsigned int*)ptr13[3];
+                ptr10 = (void*)sub_4020B0(v19, ptr14);
             }
-            int v19 = v17;
-            int* ptr8 = (int*)((int)(int*)((int)ptr5 * 0x800) | (*(int*)(v19 + 16) & 0x7ff));
-            if((int*)((int)ptr8 >>> 11) != ptr5) {
-                *(unsigned int*)(v19 + 16) = (int*)((int)ptr8 & 0x7ff);
-                param0 = (int)ptr5;
+            unsigned int* ptr15 = ptr8;
+            void* ptr16 = ptr10;
+            unsigned int v22 = (unsigned int)((int)(int*)((int)ptr16 * 0x800) | (ptr15[4] & 0x7ff));
+            if((void*)(v22 >>> 11) != ptr10) {
+                ptr15[4] = v22 & 0x7ff;
+                param0 = (int)ptr10;
                 if(!param0) {
                 loc_402424:
-                    int v20 = v17;
-                    if(*(unsigned int*)v20 > (unsigned int)v15) {
-                        return result;
+                    unsigned int* ptr17 = ptr8;
+                    result = NULL;
+                    if(ptr17[0] <= (unsigned int)v18) {
+                        param1 = (int)*(char*)&ptr17[4];
+                        goto loc_40243B;
                     }
-                    v16 = (int)*(char*)(v20 + 16);
-                    goto loc_40243B;
                 }
                 else {
                     goto loc_40258F;
                 }
             }
             else {
-                *(unsigned int*)(v17 + 16) = ptr8;
+                ptr8[4] = v22;
                 goto loc_402419;
             }
         }
         else {
         loc_402419:
-            param0 = (int)ptr5;
-            if(param0) {
+            param0 = (int)ptr10;
+            char v23 = param0 ? 0: 1;
+            if(!v23) {
             loc_40258F:
-                size_t _Size = (size_t)((int*)((int)ptr5 * 4) + 2);
-                ptr4 = →msvcrt.dll!malloc(_Size);
-                int v21 = (int)ptr4;
-                if(ptr4) {
-                    *(int*)((int)ptr4 + 4) = 0;
-                    void* ptr9 = →msvcrt.dll!malloc(_Size);
-                    void* ptr10 = ptr9;
-                    if(ptr9) {
-                        *(int*)((int)ptr9 + 4) = 0;
+                size_t _Size = (size_t)((int*)((int)ptr10 * 4) + 2);
+                ptr9 = →msvcrt.dll!malloc(_Size);
+                void* ptr18 = ptr9;
+                if(ptr9) {
+                    *(int*)((int)ptr9 + 4) = 0;
+                    void* ptr19 = →msvcrt.dll!malloc(_Size);
+                    void* ptr20 = ptr19;
+                    if(ptr19) {
+                        *(int*)((int)ptr19 + 4) = 0;
                     }
-                    int v22 = v17;
-                    if((*(char*)(v22 + 16) & 0x2)) {
-                        _Size = *(size_t*)(v22 + 12);
-                        int* ptr11 = *(int**)_Size;
-                        if(ptr11) {
+                    unsigned int* ptr21 = ptr8;
+                    if((*(char*)&ptr21[4] & 0x2)) {
+                        _Size = ptr21[3];
+                        unsigned int* ptr22 = *(unsigned int**)_Size;
+                        char v24 = ptr22 ? 0: 1;
+                        if(!v24) {
                             do {
                                 _Size += 4;
-                                sub_4021D0(ptr11);
-                                ptr11 = *(int**)_Size;
+                                sub_4021D0(ptr22);
+                                ptr22 = *(unsigned int**)_Size;
                             }
-                            while(ptr11);
+                            while(ptr22);
                         }
                     }
                     else {
-                        sub_4021D0(*(int**)(v17 + 12));
+                        unsigned int* ptr23 = ptr8;
+                        unsigned int* ptr24 = (unsigned int*)ptr23[3];
+                        sub_4021D0(ptr24);
                     }
-                    int v23 = v21;
-                    if(!v23 || *(int*)(v23 + 4) == ptr5) {
-                        int v24 = &sub_401F20;
-                        int v25 = v17;
-                        if(!(*(char*)(v25 + 16) & 0x4)) {
-                            v24 = !(unsigned char)(*(short*)(v25 + 16) >>> 3) ? &gvar_401E80: &sub_401EA0;
+                    void* ptr25 = ptr18;
+                    char v25 = ptr25 ? 0: 1;
+                    if(!v25) {
+                        ptr5 = ptr10;
+                        if(*(int*)((int)ptr25 + 4) == ptr5) {
+                            goto loc_4025FE;
                         }
-                        void* ptr12 = ptr10;
-                        v10 = (int)ptr12;
-                        void* ptr13 = ptr12;
-                        if(ptr12) {
-                            v9 = v21;
+                        else {
+                            /*NO_RETURN*/ →msvcrt.dll!abort();
+                            ptr2 = ptr20;
+                            ptr4 = ptr18;
+                            _Block = ptr2;
+                            ptr3 = ptr4;
+                            goto loc_40282C;
+                        }
+                    }
+                    else {
+                    loc_4025FE:
+                        int v26 = &sub_401F20;
+                        unsigned int* ptr26 = ptr8;
+                        if(!(*(char*)&ptr26[4] & 0x4)) {
+                            int v27 = (unsigned int)*(short*)&ptr26[4];
+                            v26 = &sub_401E80;
+                            if((unsigned char)(v27 >>> 3)) {
+                                v26 = &sub_401EA0;
+                            }
+                        }
+                        void* ptr27 = ptr20;
+                        char v28 = ptr27 ? 0: 1;
+                        _Block = ptr27;
+                        void* ptr28 = ptr27;
+                        if(!v28) {
+                            ptr4 = ptr18;
                             _Size = 0;
-                            v8 = gvar_4060C0;
-                            v7 = v9;
-                            unsigned int v26 = *(unsigned int*)(v9 + 4);
-                            v6 = v9;
-                            int v27 = v9;
-                            ptr0 = (int*)(v8 + 36);
-                            v5 = v26;
-                            if(v26 <= 0) {
+                            v12 = gvar_4060C0;
+                            ptr3 = ptr4;
+                            ptr2 = *(void**)((int)ptr4 + 4);
+                            ptr1 = ptr4;
+                            void* ptr29 = ptr4;
+                            ptr5 = (void*)(v12 + 36);
+                            char v29 = (unsigned int)ptr2 > 0;
+                            ptr0 = ptr2;
+                            if(!v29) {
                             loc_40282C:
-                                int v28 = 0;
-                                int v29 = 0;
+                                int v30 = 0;
+                                int v31 = 0;
                                 _Size = 0;
-                                if(v5 > 0) {
+                                if((unsigned int)ptr0 > 0) {
                                     do {
-                                        if(*((int*)(_Size * 4 + (int)ptr13) + 2)) {
-                                            int v30 = *(int*)(_Size * 4 + v27 + 8);
+                                        void* ptr30 = ptr28;
+                                        if(*((int*)(_Size * 4 + (int)ptr30) + 2)) {
+                                            void* ptr31 = ptr29;
+                                            int v32 = *((int*)(_Size * 4 + (int)ptr31) + 2);
                                             ++_Size;
-                                            *(int*)(v29 * 4 + v27 + 8) = v30;
-                                            ++v29;
+                                            *((int*)(v31 * 4 + (int)ptr31) + 2) = v32;
+                                            ++v31;
                                         }
                                         else {
-                                            int v31 = *(int*)(_Size * 4 + v27 + 8);
+                                            void* ptr32 = ptr29;
+                                            int v33 = *((int*)(_Size * 4 + (int)ptr32) + 2);
+                                            void* ptr33 = ptr28;
                                             ++_Size;
-                                            *((int*)(v28 * 4 + (int)ptr13) + 2) = v31;
-                                            ++v28;
+                                            *((int*)(v30 * 4 + (int)ptr33) + 2) = v33;
+                                            ++v30;
                                         }
-                                        v11 = _Size < v5;
+                                        v14 = _Size < (unsigned int)ptr0;
                                     }
-                                    while(v11);
+                                    while(v14);
                                 }
-                                ptr0 = (int*)v7;
-                                *(int*)(v27 + 4) = v29;
-                                *(int*)((int)ptr13 + 4) = v28;
-                                if(ptr0[1] + *(int*)(v10 + 4) != ptr5) {
+                                void* ptr34 = ptr29;
+                                ptr5 = ptr3;
+                                *(int*)((int)ptr34 + 4) = v31;
+                                *(int*)((int)ptr28 + 4) = v30;
+                                void* ptr35 = _Block;
+                                int v34 = *(int*)((int)ptr5 + 4);
+                                if((unsigned int)(*(int*)((int)ptr35 + 4) + v34) != ptr10) {
                                     /*NO_RETURN*/ →msvcrt.dll!abort();
                                 }
-                                sub_402040(v10);
-                                int v32 = v21;
-                                v6 = *(int*)((int)ptr10 + 4);
-                                v10 = (int)ptr10;
-                                if(v6) {
-                                    int v33 = *(int*)(v32 + 4);
+                                /*BAD_CALL!*/ sub_402040((int)_Block);
+                                void* ptr36 = ptr18;
+                                ptr1 = *(void**)((int)ptr20 + 4);
+                                _Block = ptr20;
+                                if(ptr1) {
+                                    int v35 = *(int*)((int)ptr36 + 4);
                                     do {
-                                        --v6;
-                                        int v34 = *(int*)(v6 * 4 + v10 + 8);
-                                        while(v33) {
-                                            int v35 = v24{sub_401EA0}(v17, *(int*)(v33 * 4 + v32 + 4), v34);
-                                            if(v35 <= 0) {
+                                        ptr1 = (void*)((int)ptr1 - 1);
+                                        int v36 = *((int*)((int)(int*)((int)ptr1 * 4) + (int)_Block) + 2);
+                                        while(v35) {
+                                            v11 = v36;
+                                            int v37 = v26{sub_401F20|sub_401E80|sub_401EA0}((int)ptr8, *((int*)(v35 * 4 + (int)ptr36) + 1), v36);
+                                            if(v37 <= 0) {
                                                 break;
                                             }
                                             else {
-                                                int v36 = *(int*)(v33 * 4 + v32 + 4);
-                                                int v37 = v33 + v6;
-                                                --v33;
-                                                *(int*)(v37 * 4 + v32 + 8) = v36;
+                                                int v38 = *((int*)(v35 * 4 + (int)ptr36) + 1);
+                                                int* ptr37 = (int*)(v35 + (int)ptr1);
+                                                --v35;
+                                                *((int*)((int)(int*)((int)ptr37 * 4) + (int)ptr36) + 2) = v38;
                                             }
                                         }
-                                        *(int*)((v33 + v6) * 4 + v32 + 8) = v34;
+                                        *((int*)((int)(int*)((int)(int*)(v35 + (int)ptr1) * 4) + (int)ptr36) + 2) = v36;
                                     }
-                                    while(v6);
-                                    void* ptr14 = ptr10;
-                                    *(int*)(v32 + 4) = *(int*)(v32 + 4) + *(int*)(v10 + 4);
-                                    v10 = (int)ptr14;
+                                    while(ptr1);
+                                    void* ptr38 = ptr20;
+                                    *(int*)((int)ptr36 + 4) = *(int*)((int)ptr36 + 4) + *(int*)((int)_Block + 4);
+                                    _Block = ptr38;
                                 }
-                                →msvcrt.dll!free((void*)v10);
-                                param0 = v17;
-                                int v38 = v21;
-                                *(int*)v38 = *(int*)(param0 + 12);
+                                →msvcrt.dll!free(_Block);
+                                param0 = (int)ptr8;
+                                void* ptr39 = ptr18;
+                                *(void**)ptr39 = *(void**)(param0 + 12);
                                 *(char*)(param0 + 16) = *(char*)(param0 + 16) | 0x1;
-                                *(int*)(param0 + 12) = v38;
+                                *(void**)(param0 + 12) = ptr39;
                                 goto loc_402424;
                             }
                         }
                         else {
-                            sub_402040(v21);
-                            param0 = v17;
-                            int v38 = v21;
-                            *(int*)v38 = *(int*)(param0 + 12);
+                            sub_402040((int)ptr18);
+                            param0 = (int)ptr8;
+                            void* ptr39 = ptr18;
+                            *(void**)ptr39 = *(void**)(param0 + 12);
                             *(char*)(param0 + 16) = *(char*)(param0 + 16) | 0x1;
-                            *(int*)(param0 + 12) = v38;
+                            *(void**)(param0 + 12) = ptr39;
                             goto loc_402424;
                         }
                         while(1) {
-                            if(v8 + 36 != ptr0) {
-                                int v39 = v24{sub_401EA0}(v17, *(int*)(_Size * 4 + v7 + 8), ptr0[0]);
-                                if(v39 < 0) {
-                                    int* ptr15 = (int*)((int)ptr0 - v7);
-                                    ptr0 = *(int**)((int)ptr15 + v10);
-                                    *(int*)((int)ptr15 + v10) = 0;
+                            if(v12 + 36 != ptr5) {
+                                int v39 = *(int*)ptr5;
+                                v11 = *(int*)ptr5;
+                                void* ptr40 = ptr3;
+                                int v40 = *((int*)(_Size * 4 + (int)ptr40) + 2);
+                                int v41 = v26{sub_401F20}((int)ptr8, v40, v39);
+                                if(v41 < 0) {
+                                    void* ptr41 = ptr3;
+                                    void* ptr42 = ptr5;
+                                    void* ptr43 = _Block;
+                                    int* ptr44 = (int*)((int)ptr42 - (int)ptr41);
+                                    ptr5 = *(void**)((int)ptr44 + (int)ptr43);
+                                    *(int*)((int)ptr44 + (int)ptr43) = 0;
                                     goto loc_402677;
                                 }
                             }
-                            *(int**)(_Size * 4 + v10 + 8) = ptr0;
+                            *(void**)((int*)(_Size * 4 + (int)_Block) + 2) = ptr5;
                             ++_Size;
-                            ptr0 = (int*)(v6 + 8);
-                            v6 += 4;
-                            if(_Size >= v5) {
-                                v9 = v21;
-                                v10 = (int)ptr10;
-                                v7 = v9;
+                            ptr5 = (void*)((int)ptr1 + 8);
+                            ptr1 = (void*)((int)ptr1 + 4);
+                            if(_Size >= (unsigned int)ptr0) {
+                                ptr2 = ptr20;
+                                ptr4 = ptr18;
+                                _Block = ptr2;
+                                ptr3 = ptr4;
                                 goto loc_40282C;
                             }
                             else {
                             loc_402677:
-                                v8 = gvar_4060C0;
+                                v12 = gvar_4060C0;
                             }
                         }
-                    }
-                    else {
-                        /*NO_RETURN*/ →msvcrt.dll!abort();
-                        v9 = v21;
-                        v10 = (int)ptr10;
-                        v7 = v9;
-                        goto loc_40282C;
                     }
                 }
             }
@@ -1252,166 +1382,170 @@ int sub_4023F0(int param0, int param1) {
     }
     else {
     loc_40243B:
-        if(!((unsigned char)v16 & 0x1)) {
-            if(!((unsigned char)v16 & 0x2)) {
-                sub_4022D0(v15);
-                return result;
+        if(!((unsigned char)param1 & 0x1)) {
+            if(!((unsigned char)param1 & 0x2)) {
+                return sub_4022D0(v18);
             }
-            unsigned int* ptr16 = *(unsigned int*)(v17 + 12);
-            while(*ptr16) {
-                ptr2 = sub_4022D0(v15);
-                if(ptr2) {
+            unsigned int* ptr45 = ptr8[3];
+            while(*ptr45) {
+                int v42 = v18;
+                result = sub_4022D0(v18);
+                if(result) {
                     return result;
                 }
-                ++ptr16;
+                ++ptr45;
             }
-            return result;
+            return NULL;
         loc_4026D1:
-            v4 = v17;
-            ptr2 = (int*)(unsigned char)(*(short*)(v4 + 16) >>> 3);
-            if(!ptr2) {
-                param0 = *(int*)(v4 + 12);
-                v16 = 0;
-                int v40 = *(int*)(param0 + 4);
-                int v41 = param0;
-                char v42 = (unsigned int)v40 > 0;
-                while(1) {
-                    if(!v42) {
-                        return result;
-                    }
-                    param0 = (v16 + v40) >>> 1;
-                    int v43 = *(int*)(param0 * 4 + v41 + 8);
-                    ptr2 = *(int**)(v43 + 8);
-                    int v44 = *(int*)(v43 + 12);
-                    if((unsigned int)ptr2 > (unsigned int)v15) {
-                        v40 = param0;
-                        v42 = (unsigned int)v16 < (unsigned int)v40;
-                    }
-                    else if((unsigned int)(int*)((int)ptr2 + v44) > (unsigned int)v15) {
-                        return result;
-                    }
-                    else {
-                        v16 = param0 + 1;
-                        v42 = (unsigned int)v16 < (unsigned int)v40;
-                        continue;
-                    loc_40277E:
-                        do {
-                            unsigned int v45 = (v1 + v2) >>> 1;
-                            int* ptr17 = sub_401750((unsigned int*)(*(int*)(v45 * 4 + v3 + 8) + 8), &ptr3);
-                            sub_401750((unsigned int*)ptr17, &v14);
-                            ptr2 = ptr3;
-                            if((unsigned int)ptr2 > (unsigned int)v15) {
-                                v1 = v45;
-                            loc_40276D:
-                                if(v1 <= v2) {
-                                    return result;
-                                }
-                            }
-                            else if((unsigned int)(int*)((int)ptr2 + v14) > (unsigned int)v15) {
-                                return result;
-                            }
-                            else {
-                                v2 = v45 + 1;
-                                goto loc_40276D;
-                            }
-                        }
-                        while(1);
-                    }
-                }
-                return result;
+            unsigned int* ptr46 = ptr8;
+            result = (unsigned int*)(unsigned char)(*(short*)&ptr46[4] >>> 3);
+            if(!result) {
+                param0 = (int)ptr46[3];
+                param1 = 0;
+                v10 = *(int*)(param0 + 4);
+                v9 = param0;
+                v8 = (unsigned int)v10 > 0;
+                goto loc_4026F0;
             }
-            int v46 = (unsigned int)(int*)(ptr2 & 0xFF);
-            v3 = *(int*)(v17 + 12);
-            ptr2 = (int*)sub_401D90(param0, v17);
-            v2 = 0;
-            param0 = v3;
-            int* ptr18 = ptr2;
-            v1 = *(unsigned int*)(param0 + 4);
-            if(v1 > 0) {
-                int v47 = v46;
-                int v48 = v46 & 0xf;
+            else {
+                v7 = (unsigned int)(unsigned char)result;
+                v6 = ptr8[3];
+                result = (unsigned int*)sub_401D90(param0, (int)ptr8);
+                v5 = 0;
+                unsigned int* ptr47 = result;
+                v4 = *(unsigned int*)(v6 + 4);
+            }
+            if(v4 > 0) {
+                int v43 = v7;
+                int v44 = v7 & 0xf;
                 goto loc_40277E;
-            }
-        }
-        else if(((unsigned char)v16 & 0x4)) {
-            param0 = *(int*)(v17 + 12);
-            unsigned int v49 = 0;
-            unsigned int v50 = *(unsigned int*)(param0 + 4);
-            int v51 = param0;
-            unsigned int v52 = v50;
-            if(v50 > 0) {
+            loc_40247B:
                 do {
-                    unsigned int v53 = (v52 + v49) >>> 1;
-                    int v54 = *(int*)(v53 * 4 + v51 + 8);
-                    sub_401DF0();
-                    sub_401D90(v13, v17);
-                    int* ptr19 = sub_401750((unsigned int*)(v54 + 8), &ptr1);
-                    sub_401750((unsigned int*)ptr19, &v12);
-                    ptr2 = ptr1;
-                    if((unsigned int)ptr2 > (unsigned int)v15) {
-                        v52 = v53;
-                        v0 = v52;
+                    unsigned int v45 = (v0 + v2) >>> 1;
+                    unsigned int* result1 = *(unsigned int**)(v45 * 4 + v1 + 8);
+                    int v46 = sub_401DF0();
+                    int v47 = sub_401D90(param0, (int)ptr8);
+                    int* ptr48 = sub_401750(result1 + 2, &ptr6);
+                    sub_401750((unsigned int*)ptr48, &v13);
+                    result = ptr6;
+                    if((unsigned int)result > (unsigned int)v18) {
+                        v0 = v45;
+                        v3 = v45;
                         goto loc_4024DE;
                     }
-                    else if((unsigned int)(int*)((int)ptr2 + v12) <= (unsigned int)v15) {
-                        v49 = v53 + 1;
-                        v0 = v52;
-                    loc_4024DE:
-                        if(v0 <= v49) {
-                            return result;
-                        }
+                    if((unsigned int)(unsigned int*)((int)result + v13) > (unsigned int)v18) {
+                        return result1;
+                    }
+                    v2 = v45 + 1;
+                    v3 = v0;
+                loc_4024DE:
+                    if(v3 > v2) {
+                        goto loc_40247B;
                     }
                     else {
-                        return result;
+                        break;
+                    }
+                loc_4026F0:
+                    while(v8) {
+                        param0 = (int)((unsigned int)(param1 + v10) >>> 1);
+                        unsigned int* result2 = *(unsigned int**)(param0 * 4 + v9 + 8);
+                        result = result2[2];
+                        unsigned int v48 = result2[3];
+                        if((unsigned int)result > (unsigned int)v18) {
+                            v10 = param0;
+                            v8 = (unsigned int)param1 < (unsigned int)v10;
+                        }
+                        else if((unsigned int)(unsigned int*)((int)result + v48) <= (unsigned int)v18) {
+                            param1 = param0 + 1;
+                            v8 = (unsigned int)param1 < (unsigned int)v10;
+                        }
+                        else {
+                            return result2;
+                        loc_40277E:
+                            do {
+                                unsigned int v49 = (v4 + v5) >>> 1;
+                                result1 = *(unsigned int**)(v49 * 4 + v6 + 8);
+                                int* ptr49 = sub_401750(result1 + 2, &ptr7);
+                                sub_401750((unsigned int*)ptr49, &v15);
+                                result = ptr7;
+                                if((unsigned int)result > (unsigned int)v18) {
+                                    v4 = v49;
+                                }
+                                else if((unsigned int)(unsigned int*)((int)result + v15) > (unsigned int)v18) {
+                                    return result1;
+                                }
+                                else {
+                                    v5 = v49 + 1;
+                                }
+                                if(v4 > v5) {
+                                    goto loc_40277E;
+                                }
+                            }
+                            while(v4 > v5);
+                        }
                     }
                 }
                 while(1);
-                return result;
             }
+            return NULL;
+        }
+        else if(!((unsigned char)param1 & 0x4)) {
+            goto loc_4026D1;
         }
         else {
-            goto loc_4026D1;
+            param0 = (int)ptr8[3];
+            v2 = 0;
+            unsigned int v50 = *(unsigned int*)(param0 + 4);
+            v1 = param0;
+            v0 = v50;
+            if(v50 <= 0) {
+                return NULL;
+            }
+            goto loc_40247B;
         }
     }
     return result;
 }
 
-int sub_402970(int param0, int* param1) {
-    int result;
+unsigned int* sub_402970(int param0, int* param1) {
+    unsigned int* result;
     void* ptr0;
     int v0;
     int v1;
     unsigned int* ptr1;
     int v2;
+    int v3 = v1;
     unsigned int* ptr2 = &ptr0;
     sub_401870();
-    unsigned int v3 = gvar_4060C0;
+    unsigned int v4 = gvar_4060C0;
+    LONG* Addend = (LONG*)(v4 + 20);
     if(gvar_4060A0) {
-        LONG v4 = →KERNEL32.dll!InterlockedIncrement((LONG*)(v3 + 20));
+        LONG v5 = →KERNEL32.dll!InterlockedIncrement(Addend);
         ptr2 = &ptr0;
-        if(v4) {
-            DWORD v5 = →KERNEL32.dll!WaitForSingleObject(*(HANDLE*)(v3 + 24), 0xffffffff);
+        if(v5) {
+            int v6 = -1;
+            DWORD v7 = →KERNEL32.dll!WaitForSingleObject((HANDLE)Addend[1], 0xffffffff);
             ptr2 = &ptr0;
-            if(v5) {
-                →KERNEL32.dll!InterlockedDecrement((LONG*)(v3 + 20));
+            if(v7) {
+                →KERNEL32.dll!InterlockedDecrement(Addend);
                 ptr2 = &v0;
             }
         }
-        v3 = gvar_4060C0;
+        v4 = gvar_4060C0;
     }
-    int v6 = *(int*)(v3 + 16);
-    while(v6) {
-        int v7 = param0;
-        if(*(unsigned int*)v6 > (unsigned int)v7) {
-            v6 = *(int*)(v6 + 20);
+    int v8 = *(int*)(v4 + 16);
+    while(v8) {
+        int v9 = param0;
+        if(*(unsigned int*)v8 > (unsigned int)v9) {
+            v8 = *(int*)(v8 + 20);
         }
         else {
             --ptr2;
             *ptr2 = &loc_402AF1;
-            int v8 = /*BAD_CALL!*/ sub_4023F0(v1, v7);
-            result = v8;
-            v3 = gvar_4060C0;
-            if(v8) {
+            unsigned int* ptr3 = /*BAD_CALL!*/ sub_4023F0(v2, v9);
+            result = ptr3;
+            v4 = gvar_4060C0;
+            if(ptr3) {
                 goto loc_402A14;
             }
             else {
@@ -1419,35 +1553,36 @@ int sub_402970(int param0, int* param1) {
             }
         }
     }
-    result = 0;
+    result = NULL;
 loc_4029C0:
     do {
-        v6 = *(int*)(v3 + 12);
-        if(!v6) {
+        v8 = *(int*)(v4 + 12);
+        if(!v8) {
             goto loc_402A14;
         }
         else {
-            *(int*)(v3 + 12) = *(int*)(v6 + 20);
+            int v10 = param0;
+            *(int*)(v4 + 12) = *(int*)(v8 + 20);
             --ptr2;
             *ptr2 = &loc_4029D7;
-            int v9 = /*BAD_CALL!*/ sub_4023F0(v2, param0);
-            v3 = gvar_4060C0;
-            result = v9;
-            int* ptr3 = (int*)(v3 + 16);
-            if(*(int*)(v3 + 16)) {
-                v2 = *(int*)v6;
+            unsigned int* ptr4 = /*BAD_CALL!*/ sub_4023F0(v2, v10);
+            v4 = gvar_4060C0;
+            result = ptr4;
+            unsigned int* ptr5 = (unsigned int*)(v4 + 16);
+            if(*(int*)(v4 + 16)) {
+                v2 = *(int*)v8;
                 do {
-                    ptr1 = *ptr3;
+                    ptr1 = *ptr5;
                     if(*ptr1 < (unsigned int)v2) {
                         goto loc_402A96;
                     }
                     else {
-                        ptr3 = (int*)(ptr1 + 5);
+                        ptr5 = ptr1 + 5;
                     }
                 }
                 while(*(int*)(ptr1 + 5));
-                *(int*)(v6 + 20) = 0;
-                *ptr3 = v6;
+                *(int*)(v8 + 20) = 0;
+                *ptr5 = v8;
                 if(!result) {
                     goto loc_4029C0;
                 }
@@ -1456,30 +1591,30 @@ loc_4029C0:
                 }
             }
             else {
-                ptr1 = *ptr3;
+                ptr1 = *ptr5;
             loc_402A96:
-                *(unsigned int*)(v6 + 20) = ptr1;
-                *ptr3 = v6;
+                *(unsigned int*)(v8 + 20) = ptr1;
+                *ptr5 = v8;
             }
         }
     }
     while(!result);
-    int v10 = v3 + 20;
+    int v11 = v4 + 20;
     if(gvar_4060A0) {
         goto loc_402AB3;
     loc_402A14:
-        v10 = v3 + 20;
+        v11 = v4 + 20;
         if(gvar_4060A0) {
         loc_402AB3:
-            *ptr2 = v10;
+            *ptr2 = v11;
             --ptr2;
             *ptr2 = &loc_402ABB;
-            LONG v11 = /*BAD_CALL!*/ →KERNEL32.dll!InterlockedDecrement(*(LONG**)(ptr2 + 1));
+            LONG v12 = /*BAD_CALL!*/ →KERNEL32.dll!InterlockedDecrement(*(LONG**)(ptr2 + 1));
             --ptr2;
-            if(v11 >= 0) {
+            if(v12 >= 0) {
                 *(int*)(ptr2 + 2) = 0;
                 *(int*)(ptr2 + 1) = 1;
-                *ptr2 = *(int*)(v10 + 4);
+                *ptr2 = *(int*)(v11 + 4);
                 --ptr2;
                 *ptr2 = &loc_402AE0;
                 /*BAD_CALL!*/ →KERNEL32.dll!ReleaseSemaphore(*(HANDLE*)(ptr2 + 1), *(LONG*)(ptr2 + 2), *(LPLONG*)(ptr2 + 3));
@@ -1488,18 +1623,19 @@ loc_4029C0:
         }
     }
     if(result) {
-        *param1 = *(int*)(v6 + 4);
-        *(param1 + 1) = *(int*)(v6 + 8);
-        if(*(char*)(v6 + 16) & 0x4) {
+        int* ptr6 = param1;
+        *ptr6 = *(int*)(v8 + 4);
+        *(ptr6 + 1) = *(int*)(v8 + 8);
+        if(*(char*)(v8 + 16) & 0x4) {
             --ptr2;
             *ptr2 = &loc_402B1C;
-            /*BAD_CALL!*/ sub_401DF0();
+            int v13 = /*BAD_CALL!*/ sub_401DF0();
         }
         --ptr2;
         *ptr2 = &loc_402A53;
-        /*BAD_CALL!*/ sub_401D90(v2, v6);
+        int v14 = /*BAD_CALL!*/ sub_401D90(v2, v8);
         *(ptr2 + 1) = param1 + 2;
-        *ptr2 = result + 8;
+        *ptr2 = (int*)(result + 2);
         --ptr2;
         *ptr2 = &loc_402A6C;
         /*BAD_CALL!*/ sub_401750(*(unsigned int**)(ptr2 + 1), *(unsigned int**)(ptr2 + 2));
@@ -1508,142 +1644,227 @@ loc_4029C0:
 }
 
 int sub_402B60() {
+    int* ptr0;
+    int* ptr1;
+    ATOM nAtom;
     char v0;
     int v1;
-    ATOM nAtom;
-    int v2 = v1;
+    short v2;
+    char v3;
+    int v4 = 61;
+    int* ptr2 = &ptr1;
+    int v5 = v1;
+    int v6 = (unsigned int)v2;
+    int* ptr3 = &v5;
+    char v7 = &ptr0 == 92;
+    char v8 = (int)&nAtom < 0;
+    char v9 = __parity__((unsigned char)&ptr0 - 92);
+    char v10 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v5 ^ 0x54) ^ (int)&nAtom) >>> 4) & 0x1);
+    char v11 = (unsigned int)&v5 < 84;
+    char v12 = (int)(int*)((int)(int*)((int)&v5 ^ (int)&nAtom) & (int)(int*)((int)&v5 ^ 0x54)) < 0;
+    LPSTR v13 = &v0;
     int result = 0;
-    UINT v3 = →KERNEL32.dll!GetAtomNameA(nAtom, &v0, 61);
-    int v4 = 31;
-    int v5 = 1;
-    if(v3) {
-    loc_402BA1:
+    char v14 = 1;
+    char v15 = 0;
+    char v16 = 1;
+    char v17 = 0;
+    char v18 = 0;
+    *(int*)&nAtom = v6;
+    UINT v19 = →KERNEL32.dll!GetAtomNameA(nAtom, &v0, 61);
+    char v20 = v19 ? 0: 1;
+    char v21 = v19 >= 0x80000000;
+    char v22 = __parity__((unsigned char)v19);
+    char v23 = 0;
+    char v24 = 0;
+    int* ptr4 = (int*)0x1F;
+    int v25 = 1;
+    if(!v20) {
+    loc_402B9C:
         do {
-            if(*(char*)(v4 + (int)&v0) == 65) {
-                result |= v5;
-                v5 *= 2;
-                --v4;
-                if(v4 >= 0) {
-                    goto loc_402BA1;
+            char v26 = *(char*)((int)ptr4 + (int)&v0) == 65;
+            char v27 = *(char*)((int)ptr4 + (int)&v0) < 65;
+            char v28 = __parity__(*(char*)((int)ptr4 + (int)&v0) - 65);
+            char v29 = (unsigned char)*(char*)((int)ptr4 + (int)&v0) < 65;
+            char v30 = (((*(char*)((int)ptr4 + (int)&v0) - 65) ^ *(char*)((int)ptr4 + (int)&v0)) & (*(char*)((int)ptr4 + (int)&v0) ^ 0x41)) < 0;
+            char v31 = (((*(char*)((int)ptr4 + (int)&v0) - 65) ^ (*(char*)((int)ptr4 + (int)&v0) ^ 0x41)) >>> 4) & 0x1;
+            if(v26) {
+                result |= v25;
+                int v32 = v25;
+                v25 *= 2;
+                char v33 = v25 ? 0: 1;
+                char v34 = v25 < 0;
+                char v35 = __parity__((unsigned char)v25);
+                char v36 = (v25 >>> 4) & 0x1;
+                char v37 = __carry__(v32, v32);
+                char v38 = (v25 ^ v32) < 0;
+                ptr3 = ptr4;
+                ptr4 = (int*)((char*)ptr4 - 1);
+                char v39 = ptr4 ? 0: 1;
+                char v40 = (int)ptr4 < 0;
+                char v41 = __parity__((unsigned char)ptr4);
+                char v42 = (((int*)~(int)ptr4 ^ (int*)~(int)ptr3) >>> 4) & 0x1;
+                char v43 = (int)(int*)((int)(int*)((int)ptr4 ^ (int)ptr3) & (int)ptr3) < 0;
+                if(!v40) {
+                    goto loc_402B9C;
                 }
             }
             else {
-                v5 *= 2;
-                --v4;
+                int v44 = v25;
+                v25 *= 2;
+                char v45 = v25 ? 0: 1;
+                char v46 = v25 < 0;
+                char v47 = __parity__((unsigned char)v25);
+                char v48 = (v25 >>> 4) & 0x1;
+                char v49 = __carry__(v44, v44);
+                char v50 = (v25 ^ v44) < 0;
+                ptr3 = ptr4;
+                ptr4 = (int*)((char*)ptr4 - 1);
+                char v51 = ptr4 ? 0: 1;
+                v3 = (int)ptr4 < 0;
+                char v52 = __parity__((unsigned char)ptr4);
+                char v53 = (((int*)~(int)ptr4 ^ (int*)~(int)ptr3) >>> 4) & 0x1;
+                char v54 = (int)(int*)((int)(int*)((int)ptr4 ^ (int)ptr3) & (int)ptr3) < 0;
             }
             break;
         }
-        while(v4 < 0);
-        if(*(int*)result == 64) {
+        while(v3);
+        v20 = *(int*)result == 64;
+        v21 = *(int*)result < 64;
+        v22 = __parity__((unsigned char)*(int*)result - 64);
+        v24 = *(unsigned int*)result < 64;
+        v23 = (((*(int*)result - 64) ^ *(int*)result) & (*(int*)result ^ 0x40)) < 0;
+        v10 = (((*(int*)result - 64) ^ (*(int*)result ^ 0x40)) >>> 4) & 0x1;
+        if(v20) {
             return result;
         }
-        →msvcrt.dll!_assert();
+        *(int*)&nAtom = "w32_sharedptr->size == sizeof(W32_EH_SHARED)";
+        int v55 = 247;
+        int v56 = "../../gcc-3.4.5-20060117-1/gcc/config/i386/w32-shared-ptr.c";
+        int v57 = →msvcrt.dll!_assert();
     }
+    *(int*)&nAtom = "GetAtomNameA (atom, s, sizeof(s)) != 0";
+    int v58 = 241;
+    int v59 = "../../gcc-3.4.5-20060117-1/gcc/config/i386/w32-shared-ptr.c";
     /*BAD_CALL!*/ →msvcrt.dll!_assert();
 }
 
 void sub_402C00() {
-    int v0;
     void* _Block;
     void* ptr0;
+    int* ptr1;
+    void* ptr2;
+    int* ptr3;
+    int v0;
     char v1;
-    void* ptr1 = ptr0;
+    int* ptr4 = &ptr3;
+    void* ptr5 = ptr0;
+    int* ptr6 = &ptr5;
+    char v2 = &ptr1 == 188;
+    char v3 = (int)&v0 < 0;
+    char v4 = __parity__((unsigned char)&ptr1 - 188);
+    char v5 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&ptr5 ^ 0xac) ^ (int)&v0) >>> 4) & 0x1);
+    char v6 = (unsigned int)&ptr5 < 172;
+    char v7 = (int)(int*)((int)(int*)((int)&ptr5 ^ (int)&v0) & (int)(int*)((int)&ptr5 ^ 0xac)) < 0;
     if(!gvar_4060C0) {
-        int v2 = 0x41414141;
-        int v3 = 0x41414141;
-        int v4 = 0x41414141;
-        int v5 = 1112099885;
-        int v6 = 0x41414141;
-        int v7 = 0x41414141;
-        int v8 = 0x57434347;
-        int v9 = 0x41414141;
-        int v10 = 0x41414141;
-        int v11 = 0x452d3233;
+        int v8 = 0x41414141;
+        int v9 = 1112099885;
+        LPCSTR v10 = &v8;
+        int v11 = 0x41414141;
         int v12 = 0x41414141;
-        int v13 = 0x2d332d48;
-        int v14 = 0x52485447;
-        int v15 = 1313426733;
-        int v16 = 0x32335747;
-        char v17 = 0;
-        ATOM v18 = →KERNEL32.dll!FindAtomA(&v2);
-        int v19 = (unsigned int)(ATOM)(v18 & 0xFFFF);
-        if(!(unsigned short)v18) {
-            void* ptr2 = →msvcrt.dll!malloc(64);
-            _Block = ptr2;
-            if(!ptr2) {
-                goto loc_402E13;
-            }
-            else {
-                void* ptr3 = ptr2;
-                int v20 = v19;
-                for(int i = 16; i != 0; --i) {
-                    *(int*)ptr3 = v20;
-                    ptr3 = (void*)((int)ptr3 + 4);
-                }
-                *(int*)((int)_Block + 4) = &→msvcrt.dll!abort;
-                int v21 = 1;
-                *(int*)((int)_Block + 8) = &gvar_402B50;
-                unsigned int v22 = gvar_406070;
-                *(int*)_Block = 64;
-                unsigned int v23 = gvar_406074;
-                *(unsigned int*)((int)_Block + 20) = v22;
-                unsigned int v24 = gvar_404030;
-                *(unsigned int*)((int)_Block + 24) = v23;
-                unsigned int v25 = gvar_404034;
-                *(unsigned int*)((int)_Block + 28) = v24;
-                unsigned int v26 = gvar_406080;
-                *(unsigned int*)((int)_Block + 32) = v25;
-                unsigned int v27 = gvar_406084;
-                *(unsigned int*)((int)_Block + 40) = v26;
-                unsigned int v28 = gvar_406090;
-                *(int*)((int)_Block + 48) = -1;
-                *(unsigned int*)((int)_Block + 44) = v27;
-                *(unsigned int*)((int)_Block + 52) = v28;
-                unsigned int v29 = gvar_404038;
-                *(unsigned int*)((int)_Block + 60) = gvar_40403C;
-                int v30 = 31;
-                *(unsigned int*)((int)_Block + 56) = v29;
-                do {
-                    int* ptr4 = (int*)(v21 & (int)_Block);
-                    v21 *= 2;
-                    *(char*)(v30 + (int)&v1) = (((unsigned int)ptr4 < 1 ? 0xFF: 0) & 0x20) + 65;
-                    --v30;
-                }
-                while(v30 >= 0);
-                int v31 = 1112099885;
-                int v32 = 0x57434347;
-                int v33 = 0x452d3233;
-                int v34 = 0x2d332d48;
-                int v35 = 0x52485447;
-                int v36 = 1313426733;
-                int v37 = 0x32335747;
-                char v38 = 0;
-                ATOM v39 = →KERNEL32.dll!AddAtomA(&v1);
-                int v40 = (unsigned int)(ATOM)(v39 & 0xFFFF);
-                if(v40) {
-                    int v41 = sub_402B60();
-                    v0 = v40;
-                    if(v41 != _Block) {
-                        goto loc_402DC3;
-                    }
-                }
-                else {
-                loc_402DC3:
-                    v0 = 0;
-                }
-            }
-            if(!v0) {
-                →msvcrt.dll!free(_Block);
-                →KERNEL32.dll!FindAtomA(&v2);
-                goto loc_402DDF;
-            loc_402E13:
+        int v13 = 1112099885;
+        int v14 = 0x57434347;
+        int v15 = 0x41414141;
+        int v16 = 0x41414141;
+        int v17 = 0x57434347;
+        int v18 = 0x452d3233;
+        int v19 = 0x41414141;
+        int v20 = 0x41414141;
+        int v21 = 0x452d3233;
+        int v22 = 0x2d332d48;
+        int v23 = 0x41414141;
+        int v24 = 0x2d332d48;
+        int v25 = 0x52485447;
+        int v26 = 0x52485447;
+        int v27 = 1313426733;
+        int v28 = 1313426733;
+        int v29 = 0x32335747;
+        int v30 = 0x32335747;
+        int v31 = 0;
+        char v32 = 0;
+        ATOM v33 = →KERNEL32.dll!FindAtomA(&v8);
+        int v34 = (unsigned int)(unsigned short)v33;
+        int v35 = (unsigned int)(unsigned short)v33;
+        if(!v34) {
+            void* ptr7 = →msvcrt.dll!malloc(64);
+            char v36 = ptr7 ? 0: 1;
+            char v37 = (int)ptr7 < 0;
+            char v38 = __parity__((unsigned char)ptr7);
+            char v39 = 0;
+            char v40 = 0;
+            _Block = ptr7;
+            if(v36) {
+                int* ptr8 = &ptr2;
                 /*NO_RETURN*/ →msvcrt.dll!abort();
             }
+            void* ptr9 = ptr7;
+            int v41 = v35;
+            int v42 = 16;
+            do {
+                *(int*)ptr9 = v41;
+                ptr9 = (void*)((int)ptr9 + 4);
+                --v42;
+            }
+            while(v42 == 0);
+            *(int*)((int)_Block + 4) = &→msvcrt.dll!abort;
+            int v43 = 1;
+            *(int*)((int)_Block + 8) = &gvar_402B50;
+            unsigned int v44 = gvar_406070;
+            *(int*)_Block = 64;
+            unsigned int v45 = gvar_406074;
+            *(unsigned int*)((int)_Block + 20) = v44;
+            unsigned int v46 = gvar_404030;
+            *(unsigned int*)((int)_Block + 24) = v45;
+            unsigned int v47 = gvar_404034;
+            *(unsigned int*)((int)_Block + 28) = v46;
+            unsigned int v48 = gvar_406080;
+            *(unsigned int*)((int)_Block + 32) = v47;
+            unsigned int v49 = gvar_406084;
+            *(unsigned int*)((int)_Block + 40) = v48;
+            unsigned int v50 = gvar_406090;
+            *(int*)((int)_Block + 48) = -1;
+            *(unsigned int*)((int)_Block + 44) = v49;
+            *(unsigned int*)((int)_Block + 52) = v50;
+            unsigned int v51 = gvar_404038;
+            *(unsigned int*)((int)_Block + 60) = gvar_40403C;
+            int v52 = 31;
+            *(unsigned int*)((int)_Block + 56) = v51;
+            do {
+                char v53 = (unsigned int)(int*)(v43 & (int)_Block) >= 1 ? 0: ' ';
+                v43 *= 2;
+                *(char*)(v52 + (int)&v1) = v53 + 65;
+                --v52;
+            }
+            while(v52 >= 0);
+            int v54 = 1112099885;
+            int v55 = 0x57434347;
+            int v56 = 0x452d3233;
+            int v57 = 0x2d332d48;
+            int v58 = 0x52485447;
+            int v59 = 1313426733;
+            int v60 = 0x32335747;
+            char v61 = 0;
+            ATOM v62 = →KERNEL32.dll!AddAtomA(&v1);
+            if((unsigned short)v62) {
+                int v63 = sub_402B60();
+                if(v63 == _Block && (unsigned short)v62) {
+                    goto loc_402DE6;
+                }
+            }
+            →msvcrt.dll!free(_Block);
+            ATOM v64 = →KERNEL32.dll!FindAtomA(&v8);
         }
-        else {
-        loc_402DDF:
-            _Block = (void*)sub_402B60();
-        }
+        _Block = (void*)sub_402B60();
+    loc_402DE6:
         gvar_4060C0 = _Block;
         gvar_4060B0 = (int*)((int)_Block + 4);
         gvar_4060D0 = (int*)((int)_Block + 8);
@@ -1653,20 +1874,19 @@ void sub_402C00() {
 int sub_402E20(int param0) {
     int result;
     char v0;
-    unsigned int v1;
-    int* ptr0 = &v0;
-    while(v1 >= 0x1000) {
+    int* ptr0;
+    int* ptr1 = &v0;
+    while((unsigned int)ptr0 >= 0x1000) {
+        ptr1 -= 0x400;
         ptr0 -= 0x400;
-        v1 -= 0x1000;
     }
     return result;
 }
 
 LONG sub_403010() {
-    sub_402C00();
-    return sub_4019F0((int*)&gvar_405160, (int*)0x406010);
+    return sub_4012C0();
 }
 
 int sub_403020() {
-    return sub_401D50((int*)&gvar_405160);
+    return sub_4012F0();
 }

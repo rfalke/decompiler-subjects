@@ -1,12 +1,62 @@
 
 int sub_91D12F(int param0, short param1) {
+    int* ptr0;
     int v0;
-    char* ptr0;
-    unsigned int v1;
-    int v2 = v0;
-    if(v1 < 0xf3f20201) {
-        (unsigned short)v3 = outsb(param1, *ptr0);
-        retf();
+    char v1;
+    char v2;
+    char v3;
+    char v4;
+    char v5;
+    char v6;
+    int v7;
+    int v8;
+    char v9;
+    char v10;
+    char* ptr1;
+    int v11;
+    unsigned int v12;
+    int v13 = v8;
+    int* ptr2 = &v13;
+    unsigned int v14 = v12;
+    char v15 = v14 == 0xf3f20201;
+    char v16 = (int)v14 < 0xf3f20201;
+    char v17 = __parity__((unsigned char)v14 - 1);
+    char v18 = v14 < 0xf3f20201;
+    char v19 = (((v14 + 0xc0dfdff) ^ v14) & (v14 ^ 0xf3f20201)) < 0;
+    char v20 = (((v14 + 0xc0dfdff) ^ (v14 ^ 0xf3f20201)) >>> 4) & 0x1;
+    if(v18) {
+        char v21 = v14 == 37576707;
+        char v22 = (int)v14 < 37576707;
+        char v23 = __parity__((unsigned char)v14 - 3);
+        char v24 = v14 < 37576707;
+        char v25 = (((v14 - 37576707) ^ v14) & (v14 ^ 0x23d6003)) < 0;
+        char v26 = (((v14 - 37576707) ^ (v14 ^ 0x23d6003)) >>> 4) & 0x1;
+        write_IO(param1, *ptr1);
+        ++ptr1;
+        v6 = v14 == 71134464;
+        v5 = (int)v14 < 71134464;
+        v4 = __parity__((unsigned char)v14);
+        v3 = v14 < 71134464;
+        v2 = (((v14 - 71134464) ^ v14) & (v14 ^ 0x43d6d00)) < 0;
+        v1 = (((v14 - 71134464) ^ (v14 ^ 0x43d6d00)) >>> 4) & 0x1;
+        v0 = v13;
+        int v27 = v7;
+        ptr0 = &v9;
+        short v28 = (unsigned short)v27;
+        jump v0;
     }
-    jump v2;
+    int v29 = (unsigned int)(((unsigned char)v14 + 19) | 0x6) | ((unsigned int)(((v14 - 0x14fd4fed) >>> 8) & 0xffffff) << 8);
+    ptr2 = (int*)(v11 + (int)&v13);
+    int v30 = (unsigned int)((unsigned char)v29 + 225) | ((unsigned int)(((v29 + 1032243125) >>> 8) & 0xffffff) << 8);
+    unsigned char v31 = (unsigned char)(v30 >>> 8);
+    v14 = (unsigned int)(unsigned char)v30 | ((unsigned int)((unsigned char)(v30 >>> 8) - *(char*)(param0 + 93)) << 8) | ((unsigned int)(unsigned short)(v30 >>> 16) << 16);
+    v6 = (unsigned char)(v14 >>> 8) ? 0: 1;
+    v5 = (v14 >>> 15) & 0x1;
+    v4 = __parity__((unsigned char)(v14 >>> 8));
+    v1 = (((*(char*)(param0 + 93) ^ v31) ^ (unsigned char)(v14 >>> 8)) >>> 4) & 0x1;
+    v3 = *(unsigned char*)(param0 + 93) > v31;
+    v2 = (((unsigned char)(v14 >>> 8) ^ v31) & (*(char*)(param0 + 93) ^ v31)) < 0;
+    v0 = v13;
+    ptr0 = &v10;
+    jump v0;
 }

@@ -1,55 +1,37 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/daysofxmas/ia32_elf_by_boomerang/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (16 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 11 methods
 Output folder: jeb_output
-  0/ 16: Method: sub_8048270
-  1/ 16: 1/16: sub_8048270 (DONE:148ms)
-  1/ 16: Method: __libc_start_main@@GLIBC_2.0
-  2/ 16: 2/16: __libc_start_main@@GLIBC_2.0 (DONE:25ms)
-  2/ 16: Method: _IO_putc@@GLIBC_2.0
-  3/ 16: 3/16: _IO_putc@@GLIBC_2.0 (DONE:23ms)
-  3/ 16: Method: __do_global_dtors_aux
-  4/ 16: 4/16: __do_global_dtors_aux (DONE:108ms)
-  4/ 16: Method: __do_global_ctors_aux
-  5/ 16: 5/16: __do_global_ctors_aux (DONE:311ms)
-  5/ 16: Method: sub_8048286
-  6/ 16: 6/16: sub_8048286 (DONE:16ms)
-  6/ 16: Method: sub_8048296
-  7/ 16: 7/16: sub_8048296 (DONE:15ms)
-  7/ 16: Method: _start
-  8/ 16: 8/16: _start (DONE:50ms)
-  8/ 16: Method: frame_dummy
-  9/ 16: 9/16: frame_dummy (DONE:57ms)
-  9/ 16: Method: sub_8048322
- 10/ 16: 10/16: sub_8048322 (DONE:15ms)
- 10/ 16: Method: call_gmon_start
- 11/ 16: 11/16: call_gmon_start (DONE:87ms)
- 11/ 16: Method: initializer_0
- 12/ 16: 12/16: initializer_0 (DONE:51ms)
- 12/ 16: Method: finalizer_0
- 13/ 16: 13/16: finalizer_0 (DONE:68ms)
- 13/ 16: Method: sub_804842A
- 14/ 16: 14/16: sub_804842A (DONE:338ms)
- 14/ 16: Method: sub_80483C6
- 15/ 16: 15/16: sub_80483C6 (DONE:267ms)
- 15/ 16: Method: main
- 16/ 16: 16/16: main (DONE:1493ms)
-Exectime: 6.307000 sec
-Done.
+  0/ 11: Method: →__libc_start_main
+  1/ 11: 1/11: →__libc_start_main (DONE:45ms)
+  1/ 11: Method: →_IO_putc
+  2/ 11: 2/11: →_IO_putc (DONE:25ms)
+  2/ 11: Method: __do_global_dtors_aux
+  3/ 11: 3/11: __do_global_dtors_aux (DONE:141ms)
+  3/ 11: Method: __do_global_ctors_aux
+  4/ 11: 4/11: __do_global_ctors_aux (DONE:88ms)
+  4/ 11: Method: sub_8048276
+  5/ 11: 5/11: sub_8048276 (DONE:6ms)
+  5/ 11: Method: _start
+  6/ 11: 6/11: _start (DONE:38ms)
+  6/ 11: Method: call_gmon_start
+  7/ 11: 7/11: call_gmon_start (DONE:34ms)
+  7/ 11: Method: frame_dummy
+  8/ 11: 8/11: frame_dummy (DONE:23ms)
+  8/ 11: Method: initializer_0
+  9/ 11: 9/11: initializer_0 (DONE:18ms)
+  9/ 11: Method: finalizer_0
+ 10/ 11: 10/11: finalizer_0 (DONE:28ms)
+ 10/ 11: Method: main
+ 11/ 11: 11/11: main (DONE:661ms)
+Exectime: 1.678000 sec
+[I] Done.

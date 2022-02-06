@@ -13,13 +13,14 @@ char* chomp(char* __s, int __n, FILE* __stream) {
     return __s1;
 }
 
-int main(int param0, int param1) {
+int main(unsigned int param0, int param1) {
     int result;
     char v0;
-    if(param0 <= 1) {
+    if((int)param0 <= 1) {
         result = 1;
     }
     else {
+        int v1 = &gvar_8048654;
         FILE* __stream = →fopen(*(char**)(param1 + 4), (char*)&gvar_8048654);
         if(!__stream) {
             result = 1;
@@ -35,33 +36,6 @@ int main(int param0, int param1) {
     return result;
 }
 
-void sub_8048314() {
-    jump gvar_8049750;
-}
-
-int sub_804832A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-int sub_804833A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-int sub_804834A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-int sub_804835A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-int sub_804836A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-int sub_804837A() {
-    /*BAD_CALL!*/ sub_8048314();
-}
-
-void sub_804841E() {
+int sub_804831A() {
+    return gvar_8049750();
 }

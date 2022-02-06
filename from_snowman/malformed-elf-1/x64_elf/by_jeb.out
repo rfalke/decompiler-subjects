@@ -1,61 +1,22 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_snowman/malformed-elf-1/x64_elf/subject.exe...
-{subject.exe > subject.exe}: The section ".dynstr" may be compressed: 47806 bytes were expected, only 11752 were read
-{subject.exe > subject.exe}: The section ".text" may be compressed: 49374 bytes were expected, only 10816 were read
-{subject.exe > subject.exe}: The section "section_20" may be compressed: 8 bytes were expected, only 0 were read
-java.lang.IllegalArgumentException: newLimit < 0: (-553727763 < 0)
-	at java.base/java.nio.Buffer.createLimitException(Buffer.java:391)
-	at java.base/java.nio.Buffer.limit(Buffer.java:365)
-	at java.base/java.nio.ByteBuffer.limit(ByteBuffer.java:1382)
-	at java.base/java.nio.ByteBuffer.limit(ByteBuffer.java:267)
-	at com.pnfsoftware.jeb.util.io.ChannelUtil.readBestEffort(SourceFile:58)
-	at com.pnfsoftware.jeb.corei.parsers.elf.PG.processInternal(SourceFile:402)
-	at com.pnfsoftware.jeb.core.units.AbstractUnit.process(SourceFile:447)
-	at com.pnfsoftware.jebglobal.Xc.process(SourceFile:652)
-	at com.pnfsoftware.jebglobal.al.load(SourceFile:125)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:474)
-	at com.pnfsoftware.jebglobal.Xb.Vo(SourceFile:453)
-	at com.pnfsoftware.jebglobal.Xb.processArtifact(SourceFile:67)
-	at com.pnfsoftware.jeb.client.AbstractClientContext.open(SourceFile:1391)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:477)
-	at org.python.core.PyObject.__call__(PyObject.java:481)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-subject.exe > subject.exe: The unit could not be processed (elf)
-Exectime: 0.006000 sec
-Done.
+[W] {subject.exe > subject.exe}: The section ".dynstr" may be compressed: 47806 bytes were expected, only 11752 were read
+[W] {subject.exe > subject.exe}: The section ".text" may be compressed: 49374 bytes were expected, only 10816 were read
+[W] {subject.exe > subject.exe}: The section "section_20" may be compressed: 8 bytes were expected, only 0 were read
+[C] java.lang.IllegalArgumentException: newLimit < 0: (-553727763 < 0)
+[C] 	at java.base/java.nio.Buffer.createLimitException(Buffer.java:395)
+[C] 	at java.base/java.nio.Buffer.limit(Buffer.java:369)
+[C] 	at java.base/java.nio.ByteBuffer.limit(ByteBuffer.java:1529)
+[C] 	at java.base/java.nio.ByteBuffer.limit(ByteBuffer.java:267)
+[C] 	at com.pnfsoftware.jeb.util.io.ChannelUtil.readBestEffort(SourceFile:58)
+[C] 	at com.pnfsoftware.jeb.corei.parsers.elf.OR.processInternal(SourceFile:422)
+[C] 	at com.pnfsoftware.jeb.core.units.AbstractUnit.process(SourceFile:447)
+[E] {subject.exe > subject.exe}: A processing error occurred: elf, error unspecified
+Exectime: 0.001000 sec
+[I] Done.

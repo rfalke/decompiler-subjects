@@ -1,157 +1,159 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_internet/ioli_crackmes/crackme0x04/ia32_pe/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (68 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 72 methods
 Output folder: jeb_output
-  0/ 68: Method: sub_402E30
-  1/ 68: 1/68: sub_402E30 (DONE:101ms)
-  1/ 68: Method: sub_402DE0
-  2/ 68: 2/68: sub_402DE0 (DONE:17ms)
-  2/ 68: Method: sub_401600
-  3/ 68: 3/68: sub_401600 (DONE:619ms)
-  3/ 68: Method: sub_401C40
-  4/ 68: 4/68: sub_401C40 (DONE:164ms)
-  4/ 68: Method: sub_402DD0
-  5/ 68: 5/68: sub_402DD0 (DONE:13ms)
-  5/ 68: Method: sub_402E20
-  6/ 68: 6/68: sub_402E20 (DONE:14ms)
-  6/ 68: Method: sub_402E70
-  7/ 68: 7/68: sub_402E70 (DONE:14ms)
-  7/ 68: Method: sub_402D90
-  8/ 68: 8/68: sub_402D90 (DONE:12ms)
-  8/ 68: Method: sub_402DC0
-  9/ 68: 9/68: sub_402DC0 (DONE:89ms)
-  9/ 68: Method: sub_402E40
- 10/ 68: 10/68: sub_402E40 (DONE:12ms)
- 10/ 68: Method: sub_4014F0
- 11/ 68: 11/68: sub_4014F0 (DONE:112ms)
- 11/ 68: Method: sub_401430
- 12/ 68: 12/68: sub_401430 (DONE:20ms)
- 12/ 68: Method: sub_401540
- 13/ 68: 13/68: sub_401540 (DONE:101ms)
- 13/ 68: Method: sub_401E60
- 14/ 68: 14/68: sub_401E60 (DONE:211ms)
- 14/ 68: Method: sub_402DB0
- 15/ 68: 15/68: sub_402DB0 (DONE:16ms)
- 15/ 68: Method: sub_402DF0
- 16/ 68: 16/68: sub_402DF0 (DONE:12ms)
- 16/ 68: Method: sub_402EA0
- 17/ 68: 17/68: sub_402EA0 (DONE:15ms)
- 17/ 68: Method: sub_401D50
- 18/ 68: 18/68: sub_401D50 (DONE:106ms)
- 18/ 68: Method: sub_401EF0
- 19/ 68: 19/68: sub_401EF0 (DONE:157ms)
- 19/ 68: Method: sub_4012A0
- 20/ 68: 20/68: sub_4012A0 (DONE:17ms)
- 20/ 68: Method: sub_401400
- 21/ 68: 21/68: sub_401400 (DONE:39ms)
- 21/ 68: Method: sub_401590
- 22/ 68: 22/68: sub_401590 (DONE:127ms)
- 22/ 68: Method: sub_401CA0
- 23/ 68: 23/68: sub_401CA0 (DONE:167ms)
- 23/ 68: Method: sub_401F60
- 24/ 68: 24/68: sub_401F60 (DONE:513ms)
- 24/ 68: Method: sub_402080
- 25/ 68: 25/68: sub_402080 (DONE:372ms)
- 25/ 68: Method: sub_402180
- 26/ 68: 26/68: sub_402180 (DONE:408ms)
- 26/ 68: Method: sub_4022A0
- 27/ 68: 27/68: sub_4022A0 (DONE:5172ms)
- 27/ 68: Method: sub_402CD0
- 28/ 68: 28/68: sub_402CD0 (DONE:41ms)
- 28/ 68: Method: sub_402D50
- 29/ 68: 29/68: sub_402D50 (DONE:12ms)
- 29/ 68: Method: sub_402D60
- 30/ 68: 30/68: sub_402D60 (DONE:17ms)
- 30/ 68: Method: sub_402D70
- 31/ 68: 31/68: sub_402D70 (DONE:10ms)
- 31/ 68: Method: sub_402D80
- 32/ 68: 32/68: sub_402D80 (DONE:12ms)
- 32/ 68: Method: sub_402DA0
- 33/ 68: 33/68: sub_402DA0 (DONE:19ms)
- 33/ 68: Method: sub_402E00
- 34/ 68: 34/68: sub_402E00 (DONE:12ms)
- 34/ 68: Method: sub_402E10
- 35/ 68: 35/68: sub_402E10 (DONE:14ms)
- 35/ 68: Method: sub_402E50
- 36/ 68: 36/68: sub_402E50 (DONE:11ms)
- 36/ 68: Method: sub_402E60
- 37/ 68: 37/68: sub_402E60 (DONE:9ms)
- 37/ 68: Method: sub_402E80
- 38/ 68: 38/68: sub_402E80 (DONE:10ms)
- 38/ 68: Method: sub_402E90
- 39/ 68: 39/68: sub_402E90 (DONE:7ms)
- 39/ 68: Method: sub_4014D0
- 40/ 68: 40/68: sub_4014D0 (DONE:102ms)
- 40/ 68: Method: sub_401310
- 41/ 68: 41/68: sub_401310 (DONE:101ms)
- 41/ 68: Method: sub_4016D0
- 42/ 68: 42/68: sub_4016D0 (DONE:39ms)
- 42/ 68: Method: sub_401720
- 43/ 68: 43/68: sub_401720 (DONE:96ms)
- 43/ 68: Method: sub_401C00
- 44/ 68: 44/68: sub_401C00 (DONE:644ms)
- 44/ 68: Method: sub_401395
- 45/ 68: 45/68: sub_401395 (DONE:51ms)
- 45/ 68: Method: sub_4017B0
- 46/ 68: 46/68: sub_4017B0 (DONE:238ms)
- 46/ 68: Method: sub_4018A0
- 47/ 68: 47/68: sub_4018A0 (DONE:29ms)
- 47/ 68: Method: sub_401910
- 48/ 68: 48/68: sub_401910 (DONE:222ms)
- 48/ 68: Method: sub_402EC0
- 49/ 68: 49/68: sub_402EC0 (DONE:21ms)
- 49/ 68: Method: sub_401A10
- 50/ 68: 50/68: sub_401A10 (DONE:30ms)
- 50/ 68: Method: sub_402D00
- 51/ 68: 51/68: sub_402D00 (DONE:12ms)
- 51/ 68: Method: sub_402D10
- 52/ 68: 52/68: sub_402D10 (DONE:7ms)
- 52/ 68: Method: sub_402D20
- 53/ 68: 53/68: sub_402D20 (DONE:13ms)
- 53/ 68: Method: sub_402D30
- 54/ 68: 54/68: sub_402D30 (DONE:8ms)
- 54/ 68: Method: sub_402D40
- 55/ 68: 55/68: sub_402D40 (DONE:9ms)
- 55/ 68: Method: sub_401DD0
- 56/ 68: 56/68: sub_401DD0 (DONE:136ms)
- 56/ 68: Method: sub_402820
- 57/ 68: 57/68: sub_402820 (DONE:505ms)
- 57/ 68: Method: sub_401C10
- 58/ 68: 58/68: sub_401C10 (DONE:43ms)
- 58/ 68: Method: sub_4018D0
- 59/ 68: 59/68: sub_4018D0 (DONE:43ms)
- 59/ 68: Method: sub_401440
- 60/ 68: 60/68: sub_401440 (DONE:58ms)
- 60/ 68: Method: sub_401A40
- 61/ 68: 61/68: sub_401A40 (DONE:22ms)
- 61/ 68: Method: sub_402A10
- 62/ 68: 62/68: sub_402A10 (DONE:94ms)
- 62/ 68: Method: sub_402AB0
- 63/ 68: 63/68: sub_402AB0 (DONE:557ms)
- 63/ 68: Method: sub_402EB0
- 64/ 68: 64/68: sub_402EB0 (DONE:28ms)
- 64/ 68: Method: start
- 65/ 68: 65/68: start (DONE:32ms)
- 65/ 68: Method: sub_401280
- 66/ 68: 66/68: sub_401280 (DONE:16ms)
- 66/ 68: Method: sub_401140
- 67/ 68: 67/68: sub_401140 (DONE:226ms)
- 67/ 68: Method: sub_401000
- 68/ 68: 68/68: sub_401000 (DONE:385ms)
-Exectime: 12.780000 sec
-Done.
+  0/ 72: Method: →KERNEL32.dll!InterlockedDecrement
+  1/ 72: 1/72: →KERNEL32.dll!InterlockedDecrement (DONE:53ms)
+  1/ 72: Method: →msvcrt.dll!abort
+  2/ 72: 2/72: →msvcrt.dll!abort (DONE:6ms)
+  2/ 72: Method: sub_401600
+  3/ 72: 3/72: sub_401600 (DONE:479ms)
+  3/ 72: Method: sub_401C40
+  4/ 72: 4/72: sub_401C40 (DONE:86ms)
+  4/ 72: Method: →msvcrt.dll!malloc
+  5/ 72: 5/72: →msvcrt.dll!malloc (DONE:4ms)
+  5/ 72: Method: →KERNEL32.dll!ReleaseSemaphore
+  6/ 72: 6/72: →KERNEL32.dll!ReleaseSemaphore (DONE:4ms)
+  6/ 72: Method: →KERNEL32.dll!InterlockedIncrement
+  7/ 72: 7/72: →KERNEL32.dll!InterlockedIncrement (DONE:3ms)
+  7/ 72: Method: →msvcrt.dll!printf
+  8/ 72: 8/72: →msvcrt.dll!printf (DONE:4ms)
+  8/ 72: Method: →msvcrt.dll!free
+  9/ 72: 9/72: →msvcrt.dll!free (DONE:3ms)
+  9/ 72: Method: →KERNEL32.dll!WaitForSingleObject
+ 10/ 72: 10/72: →KERNEL32.dll!WaitForSingleObject (DONE:4ms)
+ 10/ 72: Method: sub_4014F0
+ 11/ 72: 11/72: sub_4014F0 (DONE:53ms)
+ 11/ 72: Method: sub_401430
+ 12/ 72: 12/72: sub_401430 (DONE:4ms)
+ 12/ 72: Method: sub_401540
+ 13/ 72: 13/72: sub_401540 (DONE:88ms)
+ 13/ 72: Method: sub_401E60
+ 14/ 72: 14/72: sub_401E60 (DONE:121ms)
+ 14/ 72: Method: →msvcrt.dll!strlen
+ 15/ 72: 15/72: →msvcrt.dll!strlen (DONE:4ms)
+ 15/ 72: Method: →msvcrt.dll!_assert
+ 16/ 72: 16/72: →msvcrt.dll!_assert (DONE:3ms)
+ 16/ 72: Method: →KERNEL32.dll!FindAtomA
+ 17/ 72: 17/72: →KERNEL32.dll!FindAtomA (DONE:4ms)
+ 17/ 72: Method: sub_401EF0
+ 18/ 72: 18/72: sub_401EF0 (DONE:74ms)
+ 18/ 72: Method: sub_4012A0
+ 19/ 72: 19/72: sub_4012A0 (DONE:7ms)
+ 19/ 72: Method: sub_401400
+ 20/ 72: 20/72: sub_401400 (DONE:28ms)
+ 20/ 72: Method: sub_401590
+ 21/ 72: 21/72: sub_401590 (DONE:92ms)
+ 21/ 72: Method: sub_401CA0
+ 22/ 72: 22/72: sub_401CA0 (DONE:126ms)
+ 22/ 72: Method: sub_401F60
+ 23/ 72: 23/72: sub_401F60 (DONE:283ms)
+ 23/ 72: Method: sub_402080
+ 24/ 72: 24/72: sub_402080 (DONE:155ms)
+ 24/ 72: Method: sub_402180
+ 25/ 72: 25/72: sub_402180 (DONE:155ms)
+ 25/ 72: Method: sub_402CD0
+ 26/ 72: 26/72: sub_402CD0 (DONE:20ms)
+ 26/ 72: Method: →msvcrt.dll!__p__fmode
+ 27/ 72: 27/72: →msvcrt.dll!__p__fmode (DONE:2ms)
+ 27/ 72: Method: →msvcrt.dll!__getmainargs
+ 28/ 72: 28/72: →msvcrt.dll!__getmainargs (DONE:12ms)
+ 28/ 72: Method: →msvcrt.dll!scanf
+ 29/ 72: 29/72: →msvcrt.dll!scanf (DONE:3ms)
+ 29/ 72: Method: →msvcrt.dll!exit
+ 30/ 72: 30/72: →msvcrt.dll!exit (DONE:2ms)
+ 30/ 72: Method: →msvcrt.dll!sscanf
+ 31/ 72: 31/72: →msvcrt.dll!sscanf (DONE:2ms)
+ 31/ 72: Method: →KERNEL32.dll!ExitProcess
+ 32/ 72: 32/72: →KERNEL32.dll!ExitProcess (DONE:2ms)
+ 32/ 72: Method: →KERNEL32.dll!SetUnhandledExceptionFilter
+ 33/ 72: 33/72: →KERNEL32.dll!SetUnhandledExceptionFilter (DONE:3ms)
+ 33/ 72: Method: →KERNEL32.dll!CreateSemaphoreA
+ 34/ 72: 34/72: →KERNEL32.dll!CreateSemaphoreA (DONE:3ms)
+ 34/ 72: Method: →KERNEL32.dll!Sleep
+ 35/ 72: 35/72: →KERNEL32.dll!Sleep (DONE:2ms)
+ 35/ 72: Method: →KERNEL32.dll!GetAtomNameA
+ 36/ 72: 36/72: →KERNEL32.dll!GetAtomNameA (DONE:3ms)
+ 36/ 72: Method: →KERNEL32.dll!AddAtomA
+ 37/ 72: 37/72: →KERNEL32.dll!AddAtomA (DONE:3ms)
+ 37/ 72: Method: sub_401470
+ 38/ 72: 38/72: sub_401470 (DONE:50ms)
+ 38/ 72: Method: sub_401DD0
+ 39/ 72: 39/72: sub_401DD0 (DONE:80ms)
+ 39/ 72: Method: sub_4022A0
+ 40/ 72: 40/72: sub_4022A0 (DONE:4538ms)
+ 40/ 72: Method: sub_401310
+ 41/ 72: 41/72: sub_401310 (DONE:53ms)
+ 41/ 72: Method: sub_4016D0
+ 42/ 72: 42/72: sub_4016D0 (DONE:22ms)
+ 42/ 72: Method: sub_401720
+ 43/ 72: 43/72: sub_401720 (DONE:40ms)
+ 43/ 72: Method: sub_4014D0
+ 44/ 72: 44/72: sub_4014D0 (DONE:8ms)
+ 44/ 72: Method: sub_4017B0
+ 45/ 72: 45/72: sub_4017B0 (DONE:96ms)
+ 45/ 72: Method: sub_4018A0
+ 46/ 72: 46/72: sub_4018A0 (DONE:15ms)
+ 46/ 72: Method: sub_401910
+ 47/ 72: 47/72: sub_401910 (DONE:111ms)
+ 47/ 72: Method: sub_401A70
+ 48/ 72: 48/72: sub_401A70 (DONE:288ms)
+ 48/ 72: Method: sub_401C00
+ 49/ 72: 49/72: sub_401C00 (DONE:5ms)
+ 49/ 72: Method: sub_401395
+ 50/ 72: 50/72: sub_401395 (DONE:31ms)
+ 50/ 72: Method: sub_401A10
+ 51/ 72: 51/72: sub_401A10 (DONE:11ms)
+ 51/ 72: Method: sub_4012F0
+ 52/ 72: 52/72: sub_4012F0 (DONE:8ms)
+ 52/ 72: Method: sub_402EC0
+ 53/ 72: 53/72: sub_402EC0 (DONE:4ms)
+ 53/ 72: Method: →msvcrt.dll!signal
+ 54/ 72: 54/72: →msvcrt.dll!signal (DONE:5ms)
+ 54/ 72: Method: →msvcrt.dll!_setmode
+ 55/ 72: 55/72: →msvcrt.dll!_setmode (DONE:4ms)
+ 55/ 72: Method: →msvcrt.dll!__p__environ
+ 56/ 72: 56/72: →msvcrt.dll!__p__environ (DONE:2ms)
+ 56/ 72: Method: →msvcrt.dll!_cexit
+ 57/ 72: 57/72: →msvcrt.dll!_cexit (DONE:2ms)
+ 57/ 72: Method: →msvcrt.dll!__set_app_type
+ 58/ 72: 58/72: →msvcrt.dll!__set_app_type (DONE:2ms)
+ 58/ 72: Method: sub_401D50
+ 59/ 72: 59/72: sub_401D50 (DONE:55ms)
+ 59/ 72: Method: sub_402820
+ 60/ 72: 60/72: sub_402820 (DONE:293ms)
+ 60/ 72: Method: sub_4018D0
+ 61/ 72: 61/72: sub_4018D0 (DONE:27ms)
+ 61/ 72: Method: sub_401C10
+ 62/ 72: 62/72: sub_401C10 (DONE:18ms)
+ 62/ 72: Method: sub_401A40
+ 63/ 72: 63/72: sub_401A40 (DONE:12ms)
+ 63/ 72: Method: sub_401440
+ 64/ 72: 64/72: sub_401440 (DONE:17ms)
+ 64/ 72: Method: sub_402A10
+ 65/ 72: 65/72: sub_402A10 (DONE:95ms)
+ 65/ 72: Method: sub_402AB0
+ 66/ 72: 66/72: sub_402AB0 (DONE:563ms)
+ 66/ 72: Method: sub_4012C0
+ 67/ 72: 67/72: sub_4012C0 (DONE:11ms)
+ 67/ 72: Method: sub_402EB0
+ 68/ 72: 68/72: sub_402EB0 (DONE:3ms)
+ 68/ 72: Method: start
+ 69/ 72: 69/72: start (DONE:33ms)
+ 69/ 72: Method: sub_401280
+ 70/ 72: 70/72: sub_401280 (DONE:23ms)
+ 70/ 72: Method: sub_401140
+ 71/ 72: 71/72: sub_401140 (DONE:65ms)
+ 71/ 72: Method: sub_401000
+ 72/ 72: 72/72: sub_401000 (DONE:258ms)
+Exectime: 10.416000 sec
+[I] Done.

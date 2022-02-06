@@ -1,372 +1,426 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/nim/x64_elf/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (174 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (2s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 179 methods
 Output folder: jeb_output
-  0/174: Method: del_C66us4UEWCXp84lHW4tDLA.part.8
-  1/174: 1/174: del_C66us4UEWCXp84lHW4tDLA.part.8 (DONE:664ms)
-  1/174: Method: sub_400960
-  2/174: 2/174: sub_400960 (DONE:20ms)
-  2/174: Method: interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA
-  3/174: 3/174: interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA (DONE:352ms)
-  3/174: Method: isOnStack_dJJW59cIgsBmT59aZrOM71Mg
-  4/174: 4/174: isOnStack_dJJW59cIgsBmT59aZrOM71Mg (DONE:35ms)
-  4/174: Method: nimGC_setStackBottom
-  5/174: 5/174: nimGC_setStackBottom (DONE:38ms)
-  5/174: Method: removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2
-  6/174: 6/174: removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2 (DONE:265ms)
-  6/174: Method: systemDatInit000
-  7/174: 7/174: systemDatInit000 (DONE:1891ms)
-  7/174: Method: initializer_0
-  8/174: 8/174: initializer_0 (DONE:55ms)
-  8/174: Method: deregister_tm_clones
-  9/174: 9/174: deregister_tm_clones (DONE:20ms)
-  9/174: Method: register_tm_clones
- 10/174: 10/174: register_tm_clones (DONE:28ms)
- 10/174: Method: stackSize_61foY5fGmU9c2fC9c6wRIsrA
- 11/174: 11/174: stackSize_61foY5fGmU9c2fC9c6wRIsrA (DONE:25ms)
- 11/174: Method: stackSize_IV9bgfYkinlae0WZ2NZi5JA
- 12/174: 12/174: stackSize_IV9bgfYkinlae0WZ2NZi5JA (DONE:16ms)
- 12/174: Method: isObjSlowPath_yEa9cUwzxhGRtg9cspcfCIHg
- 13/174: 13/174: isObjSlowPath_yEa9cUwzxhGRtg9cspcfCIHg (DONE:38ms)
- 13/174: Method: sub_400976
- 14/174: 14/174: sub_400976 (DONE:15ms)
- 14/174: Method: sub_400970
- 15/174: 15/174: sub_400970 (DONE:21ms)
- 15/174: Method: sub_400986
- 16/174: 16/174: sub_400986 (DONE:26ms)
- 16/174: Method: sub_400980
- 17/174: 17/174: sub_400980 (DONE:17ms)
- 17/174: Method: sub_400996
- 18/174: 18/174: sub_400996 (DONE:26ms)
- 18/174: Method: sub_400990
- 19/174: 19/174: sub_400990 (DONE:24ms)
- 19/174: Method: sub_4009A6
- 20/174: 20/174: sub_4009A6 (DONE:23ms)
- 20/174: Method: sub_4009A0
- 21/174: 21/174: sub_4009A0 (DONE:20ms)
- 21/174: Method: sub_4009B6
- 22/174: 22/174: sub_4009B6 (DONE:24ms)
- 22/174: Method: sub_4009B0
- 23/174: 23/174: sub_4009B0 (DONE:18ms)
- 23/174: Method: sub_4009C6
- 24/174: 24/174: sub_4009C6 (DONE:15ms)
- 24/174: Method: sub_4009C0
- 25/174: 25/174: sub_4009C0 (DONE:18ms)
- 25/174: Method: sub_4009D6
- 26/174: 26/174: sub_4009D6 (DONE:13ms)
- 26/174: Method: sub_4009D0
- 27/174: 27/174: sub_4009D0 (DONE:17ms)
- 27/174: Method: sub_4009E6
- 28/174: 28/174: sub_4009E6 (DONE:20ms)
- 28/174: Method: sub_4009F6
- 29/174: 29/174: sub_4009F6 (DONE:15ms)
- 29/174: Method: sub_400A06
- 30/174: 30/174: sub_400A06 (DONE:18ms)
- 30/174: Method: sub_400A16
- 31/174: 31/174: sub_400A16 (DONE:23ms)
- 31/174: Method: sub_400A10
- 32/174: 32/174: sub_400A10 (DONE:19ms)
- 32/174: Method: sub_400A26
- 33/174: 33/174: sub_400A26 (DONE:27ms)
- 33/174: Method: sub_400A20
- 34/174: 34/174: sub_400A20 (DONE:19ms)
- 34/174: Method: sub_400A36
- 35/174: 35/174: sub_400A36 (DONE:19ms)
- 35/174: Method: sub_400A30
- 36/174: 36/174: sub_400A30 (DONE:20ms)
- 36/174: Method: sub_400A46
- 37/174: 37/174: sub_400A46 (DONE:23ms)
- 37/174: Method: sub_400A40
- 38/174: 38/174: sub_400A40 (DONE:16ms)
- 38/174: Method: sub_400A56
- 39/174: 39/174: sub_400A56 (DONE:33ms)
- 39/174: Method: sub_400A50
- 40/174: 40/174: sub_400A50 (DONE:19ms)
- 40/174: Method: sub_400A66
- 41/174: 41/174: sub_400A66 (DONE:18ms)
- 41/174: Method: sub_400A76
- 42/174: 42/174: sub_400A76 (DONE:20ms)
- 42/174: Method: sub_400A70
- 43/174: 43/174: sub_400A70 (DONE:21ms)
- 43/174: Method: sub_400A86
- 44/174: 44/174: sub_400A86 (DONE:25ms)
- 44/174: Method: sub_400A80
- 45/174: 45/174: sub_400A80 (DONE:20ms)
- 45/174: Method: echoBinSafe.constprop.24
- 46/174: 46/174: echoBinSafe.constprop.24 (DONE:155ms)
- 46/174: Method: raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g
- 47/174: 47/174: raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g (DONE:72ms)
- 47/174: Method: llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ
- 48/174: 48/174: llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ (DONE:212ms)
- 48/174: Method: splitChunk2_UxUTh1oy39boKK4NPJIGnLQ
- 49/174: 49/174: splitChunk2_UxUTh1oy39boKK4NPJIGnLQ (DONE:256ms)
- 49/174: Method: echoBinSafe
- 50/174: 50/174: echoBinSafe (DONE:249ms)
- 50/174: Method: nimRegisterThreadLocalMarker.part.14
- 51/174: 51/174: nimRegisterThreadLocalMarker.part.14 (DONE:38ms)
- 51/174: Method: requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2
- 52/174: 52/174: requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2 (DONE:955ms)
- 52/174: Method: getBigChunk_z9bCNjXTYllZ3pI24nEsw2g
- 53/174: 53/174: getBigChunk_z9bCNjXTYllZ3pI24nEsw2g (DONE:1761ms)
- 53/174: Method: freeBigChunk_CAqFS1jFL1RxG80t9bOGmAA
- 54/174: 54/174: freeBigChunk_CAqFS1jFL1RxG80t9bOGmAA (DONE:1850ms)
- 54/174: Method: initializer_1
- 55/174: 55/174: initializer_1 (DONE:10ms)
- 55/174: Method: sub_4009E0
- 56/174: 56/174: sub_4009E0 (DONE:16ms)
- 56/174: Method: sub_4009F0
- 57/174: 57/174: sub_4009F0 (DONE:12ms)
- 57/174: Method: sub_400A00
- 58/174: 58/174: sub_400A00 (DONE:10ms)
- 58/174: Method: sub_400A60
- 59/174: 59/174: sub_400A60 (DONE:13ms)
- 59/174: Method: nimRegisterGlobalMarker
- 60/174: 60/174: nimRegisterGlobalMarker (DONE:86ms)
- 60/174: Method: sourceDatInit000
- 61/174: 61/174: sourceDatInit000 (DONE:7ms)
- 61/174: Method: Marker_tySequence_uB9b75OUPRENsBAu4AnoePA
- 62/174: 62/174: Marker_tySequence_uB9b75OUPRENsBAu4AnoePA (DONE:6ms)
- 62/174: Method: getActiveStack_2XtoPjgvlHPkHLitAW2flw
- 63/174: 63/174: getActiveStack_2XtoPjgvlHPkHLitAW2flw (DONE:10ms)
- 63/174: Method: intSetGet_FhOZKj4Gih3qQ5OimZYOrg
- 64/174: 64/174: intSetGet_FhOZKj4Gih3qQ5OimZYOrg (DONE:32ms)
- 64/174: Method: contains_tGsWrN4DY41H9btt3FhjrNA
- 65/174: 65/174: contains_tGsWrN4DY41H9btt3FhjrNA (DONE:49ms)
- 65/174: Method: addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw
- 66/174: 66/174: addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw (DONE:144ms)
- 66/174: Method: removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw
- 67/174: 67/174: removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw (DONE:45ms)
- 67/174: Method: getBottom_QXg9anCfFuhk3avAkOOKNhQ
- 68/174: 68/174: getBottom_QXg9anCfFuhk3avAkOOKNhQ (DONE:34ms)
- 68/174: Method: skew_Cfx7NvEVZIhBjBm7i89boSg
- 69/174: 69/174: skew_Cfx7NvEVZIhBjBm7i89boSg (DONE:26ms)
- 69/174: Method: split_Cfx7NvEVZIhBjBm7i89boSg_2
- 70/174: 70/174: split_Cfx7NvEVZIhBjBm7i89boSg_2 (DONE:32ms)
- 70/174: Method: excl_Z9cZKmN1jjRFCzU0lgW9a1XA
- 71/174: 71/174: excl_Z9cZKmN1jjRFCzU0lgW9a1XA (DONE:49ms)
- 71/174: Method: getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg
- 72/174: 72/174: getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg (DONE:41ms)
- 72/174: Method: selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg
- 73/174: 73/174: selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg (DONE:59ms)
- 73/174: Method: setPosition_plJQLEbXvFqZv6Phpo1t1w
- 74/174: 74/174: setPosition_plJQLEbXvFqZv6Phpo1t1w (DONE:8ms)
- 74/174: Method: cellSetRawInsert_wqizyapnzNjHA3SIFqE8ow
- 75/174: 75/174: cellSetRawInsert_wqizyapnzNjHA3SIFqE8ow (DONE:27ms)
- 75/174: Method: cellSetGet_X4WTfs0wkld8wp8XcE9b8BA
- 76/174: 76/174: cellSetGet_X4WTfs0wkld8wp8XcE9b8BA (DONE:33ms)
- 76/174: Method: lowGauge_3mwQtFaBTgevFrybZdgUNw
- 77/174: 77/174: lowGauge_3mwQtFaBTgevFrybZdgUNw (DONE:25ms)
- 77/174: Method: highGauge_3mwQtFaBTgevFrybZdgUNw_2
- 78/174: 78/174: highGauge_3mwQtFaBTgevFrybZdgUNw_2 (DONE:24ms)
- 78/174: Method: setPosition_kuKlONPws1O0vpPB9adzcQw
- 79/174: 79/174: setPosition_kuKlONPws1O0vpPB9adzcQw (DONE:6ms)
- 79/174: Method: isActiveStack_deIRQymTVHcVwfHBKDbqEA
- 80/174: 80/174: isActiveStack_deIRQymTVHcVwfHBKDbqEA (DONE:6ms)
- 80/174: Method: inRange_Bc4Ua6HOMCIDGx9b15HSY4g
- 81/174: 81/174: inRange_Bc4Ua6HOMCIDGx9b15HSY4g (DONE:39ms)
- 81/174: Method: prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ
- 82/174: 82/174: prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ (DONE:45ms)
- 82/174: Method: contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw
- 83/174: 83/174: contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw (DONE:72ms)
- 83/174: Method: getOccupiedMem_9bFvoxSITMVCg7RY8KIar1Q
- 84/174: 84/174: getOccupiedMem_9bFvoxSITMVCg7RY8KIar1Q (DONE:9ms)
- 84/174: Method: getRefcount
- 85/174: 85/174: getRefcount (DONE:13ms)
- 85/174: Method: __libc_csu_fini
- 86/174: 86/174: __libc_csu_fini (DONE:8ms)
- 86/174: Method: finalizer_0
- 87/174: 87/174: finalizer_0 (DONE:7ms)
- 87/174: Method: finalizer_1
-Emulation failed!
- 88/174: 88/174: finalizer_1 (DONE:58ms)
- 88/174: Method: registerSignalHandler_njssp69aa7hvxte9bJ8uuDcg_2
- 89/174: 89/174: registerSignalHandler_njssp69aa7hvxte9bJ8uuDcg_2 (DONE:112ms)
- 89/174: Method: freeHugeChunk_jnrbguyViYONI3PJ1RZJjQ
- 90/174: 90/174: freeHugeChunk_jnrbguyViYONI3PJ1RZJjQ (DONE:75ms)
- 90/174: Method: addHeapLink_fJbggoVEhxEYh2HdNULF3Q
- 91/174: 91/174: addHeapLink_fJbggoVEhxEYh2HdNULF3Q (DONE:81ms)
- 91/174: Method: intSetPut_KWgRM9bUk6rwhAaHSiuK9aYA
- 92/174: 92/174: intSetPut_KWgRM9bUk6rwhAaHSiuK9aYA (DONE:65ms)
- 92/174: Method: incl_Iz1GYiOVKwItgr5CdCm0dQ
- 93/174: 93/174: incl_Iz1GYiOVKwItgr5CdCm0dQ (DONE:86ms)
- 93/174: Method: splitChunk_8QXhiy717OAl8WNA2X27EA
- 94/174: 94/174: splitChunk_8QXhiy717OAl8WNA2X27EA (DONE:349ms)
- 94/174: Method: allocAvlNode_neSuioWH6NDTp8E9cNgBmjg
- 95/174: 95/174: allocAvlNode_neSuioWH6NDTp8E9cNgBmjg (DONE:92ms)
- 95/174: Method: getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3
- 96/174: 96/174: getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3 (DONE:175ms)
- 96/174: Method: nimRegisterThreadLocalMarker
- 97/174: 97/174: nimRegisterThreadLocalMarker (DONE:32ms)
- 97/174: Method: getSmallChunk_h6cvXbfQjxIdThM5GthosA
- 98/174: 98/174: getSmallChunk_h6cvXbfQjxIdThM5GthosA (DONE:13ms)
- 98/174: Method: __libc_csu_init
- 99/174: 99/174: __libc_csu_init (DONE:90ms)
- 99/174: Method: rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg
-100/174: 100/174: rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg (DONE:636ms)
-100/174: Method: alloc_1iQ1Xo9cXsxq509b5gmDHLoQ
-101/174: 101/174: alloc_1iQ1Xo9cXsxq509b5gmDHLoQ (DONE:31ms)
-101/174: Method: alloc_sVm4rDImKK2ZDdylByayiA
-102/174: 102/174: alloc_sVm4rDImKK2ZDdylByayiA (DONE:29ms)
-102/174: Method: alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2
-103/174: 103/174: alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2 (DONE:45ms)
-103/174: Method: alloc0_sVm4rDImKK2ZDdylByayiA_2
-104/174: 104/174: alloc0_sVm4rDImKK2ZDdylByayiA_2 (DONE:55ms)
-104/174: Method: init_E1QNZGuo0DGFXyt4Y3MfqA
-105/174: 105/174: init_E1QNZGuo0DGFXyt4Y3MfqA (DONE:58ms)
-105/174: Method: addZCT_fCDI7oO1NNVXXURtxSzsRw
-106/174: 106/174: addZCT_fCDI7oO1NNVXXURtxSzsRw (DONE:391ms)
-106/174: Method: unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6
-107/174: 107/174: unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6 (DONE:76ms)
-107/174: Method: unsureAsgnRef
-108/174: 108/174: unsureAsgnRef (DONE:115ms)
-108/174: Method: add_Xuf47u3imOz8BOk5HURLWQ
-109/174: 109/174: add_Xuf47u3imOz8BOk5HURLWQ (DONE:216ms)
-109/174: Method: initGC_njssp69aa7hvxte9bJ8uuDcg
-110/174: 110/174: initGC_njssp69aa7hvxte9bJ8uuDcg (DONE:1222ms)
-110/174: Method: init_WHgd5C59bkXWDz3vnAxfzXQ
-111/174: 111/174: init_WHgd5C59bkXWDz3vnAxfzXQ (DONE:131ms)
-111/174: Method: copyString
-112/174: 112/174: copyString (DONE:89ms)
-112/174: Method: incl_m4q9b16kJJcoKe9c4ERtlpCg
-113/174: 113/174: incl_m4q9b16kJJcoKe9c4ERtlpCg (DONE:436ms)
-113/174: Method: containsOrIncl_CbGEjIBKJIi7knlaDzUluA
-114/174: 114/174: containsOrIncl_CbGEjIBKJIi7knlaDzUluA (DONE:85ms)
-114/174: Method: PreMainInner
-115/174: 115/174: PreMainInner (DONE:13ms)
-115/174: Method: PreMain
-116/174: 116/174: PreMain (DONE:32ms)
-116/174: Method: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw
-117/174: 117/174: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw (DONE:130ms)
-117/174: Method: newObj
-118/174: 118/174: newObj (DONE:55ms)
-118/174: Method: raiseEIO_PpfSiTIeNpMAb9a5o6SglJw
-119/174: 119/174: raiseEIO_PpfSiTIeNpMAb9a5o6SglJw (DONE:117ms)
-119/174: Method: checkErr_BWnr8V7RERYno9bIdPmw8Hw
-120/174: 120/174: checkErr_BWnr8V7RERYno9bIdPmw8Hw (DONE:59ms)
-120/174: Method: write_ADGLlEJAOtGNWWur8rrJfg
-121/174: 121/174: write_ADGLlEJAOtGNWWur8rrJfg (DONE:73ms)
-121/174: Method: writeToStdErr_7HRVfGfZT2rSmBdcLxl8TA
-122/174: 122/174: writeToStdErr_7HRVfGfZT2rSmBdcLxl8TA (DONE:67ms)
-122/174: Method: showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ
-123/174: 123/174: showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ (DONE:216ms)
-123/174: Method: signalHandler
-124/174: 124/174: signalHandler (DONE:71ms)
-124/174: Method: cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ
-125/174: 125/174: cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ (DONE:153ms)
-125/174: Method: cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ
-126/174: 126/174: cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ (DONE:361ms)
-126/174: Method: copyStringRC1
-127/174: 127/174: copyStringRC1 (DONE:170ms)
-127/174: Method: raiseEOF_9b10LwJKWsyrZIEKTB9b6PGQ
-128/174: 128/174: raiseEOF_9b10LwJKWsyrZIEKTB9b6PGQ (DONE:78ms)
-128/174: Method: NimMainInner
-129/174: 129/174: NimMainInner (DONE:22ms)
-129/174: Method: NimMain
-130/174: 130/174: NimMain (DONE:76ms)
-130/174: Method: main
-131/174: 131/174: main (DONE:27ms)
-131/174: Method: markGlobals_zoTIuavlrCHyw3B8MBaLJA_4
-132/174: 132/174: markGlobals_zoTIuavlrCHyw3B8MBaLJA_4 (DONE:130ms)
-132/174: Method: systemInit000
-133/174: 133/174: systemInit000 (DONE:203ms)
-133/174: Method: NimMainModule
-134/174: 134/174: NimMainModule (DONE:197ms)
-134/174: Method: _start
-135/174: 135/174: _start (DONE:31ms)
-135/174: Method: TM_2lQWYPc4hWuvSK7bVeWxSA_4
-136/174: 136/174: TM_2lQWYPc4hWuvSK7bVeWxSA_4 (DONE:32ms)
-136/174: Method: dealloc_jqYVOi4APb9cRx3G9a57AkRw
-137/174: 137/174: dealloc_jqYVOi4APb9cRx3G9a57AkRw (DONE:15ms)
-137/174: Method: dealloc_RCjNtRnHdRYntrcE7YtwWw
-138/174: 138/174: dealloc_RCjNtRnHdRYntrcE7YtwWw (DONE:13ms)
-138/174: Method: TM_Q5wkpxktOdTGvlSRo9bzt9aw_17
-139/174: 139/174: TM_Q5wkpxktOdTGvlSRo9bzt9aw_17 (DONE:21ms)
-139/174: Method: freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2
-140/174: 140/174: freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2 (DONE:68ms)
-140/174: Method: newObjNoInit
-141/174: 141/174: newObjNoInit (DONE:13ms)
-141/174: Method: rawNewStringNoInit
-142/174: 142/174: rawNewStringNoInit (DONE:36ms)
-142/174: Method: raiseException
-143/174: 143/174: raiseException (DONE:100ms)
-143/174: Method: collectCT_zoTIuavlrCHyw3B8MBaLJA
-144/174: 144/174: collectCT_zoTIuavlrCHyw3B8MBaLJA (DONE:40ms)
-144/174: Method: rawNewString
-145/174: 145/174: rawNewString (DONE:43ms)
-145/174: Method: mnewString
-146/174: 146/174: mnewString (DONE:62ms)
-146/174: Method: toNimStr
-147/174: 147/174: toNimStr (DONE:71ms)
-147/174: Method: cstrToNimstr
-148/174: 148/174: cstrToNimstr (DONE:97ms)
-148/174: Method: newObjRC1
-149/174: 149/174: newObjRC1 (DONE:118ms)
-149/174: Method: del_C66us4UEWCXp84lHW4tDLA
-150/174: 150/174: del_C66us4UEWCXp84lHW4tDLA (DONE:88ms)
-150/174: Method: rawDealloc_DA62HrGC5sdfCED505KyyQ
-151/174: 151/174: rawDealloc_DA62HrGC5sdfCED505KyyQ (DONE:10183ms)
-151/174: Method: sweep_zoTIuavlrCHyw3B8MBaLJA_5
-152/174: 152/174: sweep_zoTIuavlrCHyw3B8MBaLJA_5 (DONE:1547ms)
-152/174: Method: markStackAndRegisters_LdwvBL9bC9c0lik7K9bau9bX0Q
-153/174: 153/174: markStackAndRegisters_LdwvBL9bC9c0lik7K9bau9bX0Q (DONE:13912ms)
-153/174: Method: deinit_WHgd5C59bkXWDz3vnAxfzXQ_3
-154/174: 154/174: deinit_WHgd5C59bkXWDz3vnAxfzXQ_3 (DONE:63ms)
-154/174: Method: cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2
-155/174: 155/174: cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2 (DONE:233ms)
-155/174: Method: doOperation_3F8QeaTyYrJJF2gjBr6b8A
-156/174: 156/174: doOperation_3F8QeaTyYrJJF2gjBr6b8A (DONE:264ms)
-156/174: Method: rawNewObj_BpNS5yt3b9cMOponsUKh8aw
-157/174: 157/174: rawNewObj_BpNS5yt3b9cMOponsUKh8aw (DONE:443ms)
-157/174: Method: setLengthStr
-158/174: 158/174: setLengthStr (DONE:216ms)
-158/174: Method: readLine_sO1bQXVRA6RP9cdYJXNKeSw
-159/174: 159/174: readLine_sO1bQXVRA6RP9cdYJXNKeSw (DONE:1235ms)
-159/174: Method: readLine_fPRnXwDTqtynUYGl4OixAg
-160/174: 160/174: readLine_fPRnXwDTqtynUYGl4OixAg (DONE:141ms)
-160/174: Method: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw.part.16
-161/174: 161/174: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw.part.16 (DONE:1688ms)
-161/174: Method: nimGCvisit
-162/174: 162/174: nimGCvisit (DONE:244ms)
-162/174: Method: markS_NZr5o3Ubzrci4OmK29cHBJA
-163/174: 163/174: markS_NZr5o3Ubzrci4OmK29cHBJA (DONE:240ms)
-163/174: Method: Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ
-164/174: 164/174: Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ (DONE:514ms)
-164/174: Method: Marker_tyRef_LEclZrWX2FQAodlapxGITw
-165/174: 165/174: Marker_tyRef_LEclZrWX2FQAodlapxGITw (DONE:715ms)
-165/174: Method: Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw
-166/174: 166/174: Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw (DONE:801ms)
-166/174: Method: collectCycles_zoTIuavlrCHyw3B8MBaLJA_3
-167/174: 167/174: collectCycles_zoTIuavlrCHyw3B8MBaLJA_3 (DONE:382ms)
-167/174: Method: collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2
-168/174: 168/174: collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2 (DONE:252ms)
-168/174: Method: forAllChildren_yHFnLgI7q81iFxRlb3Iqlw
-169/174: 169/174: forAllChildren_yHFnLgI7q81iFxRlb3Iqlw (DONE:180ms)
-169/174: Method: collectZCT_evVbQ9bNF7LYMhoG9aWXu9bKw
-170/174: 170/174: collectZCT_evVbQ9bNF7LYMhoG9aWXu9bKw (DONE:429ms)
-170/174: Method: forAllChildrenAux_7ozEvYoq4I7fwvXfiSWM9aA
-171/174: 171/174: forAllChildrenAux_7ozEvYoq4I7fwvXfiSWM9aA (DONE:560ms)
-171/174: Method: forAllSlotsAux_yZE4CUR3NNCoSMnkWbtJrQ
-172/174: 172/174: forAllSlotsAux_yZE4CUR3NNCoSMnkWbtJrQ (DONE:456ms)
-172/174: Method: genericResetAux_ruA1rosalqf8AhzZPPTBQg
-173/174: 173/174: genericResetAux_ruA1rosalqf8AhzZPPTBQg (DONE:356ms)
-173/174: Method: genericReset
-174/174: 174/174: genericReset (DONE:582ms)
-Exectime: 59.434000 sec
-Done.
+  0/179: Method: isOnStack_dJJW59cIgsBmT59aZrOM71Mg
+  1/179: 1/179: isOnStack_dJJW59cIgsBmT59aZrOM71Mg (DONE:168ms)
+  1/179: Method: sub_400B10
+  2/179: 2/179: sub_400B10 (DONE:7ms)
+  2/179: Method: sub_400B50
+  3/179: 3/179: sub_400B50 (DONE:4ms)
+  3/179: Method: sub_4044F8
+  4/179: 4/179: sub_4044F8 (DONE:8ms)
+  4/179: Method: sub_4064BA
+  5/179: 5/179: sub_4064BA (DONE:4ms)
+  5/179: Method: initializer_0
+  6/179: 6/179: initializer_0 (DONE:53ms)
+  6/179: Method: sub_400966
+  7/179: 7/179: sub_400966 (DONE:9ms)
+  7/179: Method: →memcpy
+  8/179: 8/179: →memcpy (DONE:18ms)
+  8/179: Method: →memset
+  9/179: 9/179: →memset (DONE:20ms)
+  9/179: Method: →signal
+ 10/179: 10/179: →signal (DONE:13ms)
+ 10/179: Method: →mmap
+ 11/179: 11/179: →mmap (DONE:15ms)
+ 11/179: Method: →exit
+ 12/179: 12/179: →exit (DONE:13ms)
+ 12/179: Method: →ferror
+ 13/179: 13/179: →ferror (DONE:16ms)
+ 13/179: Method: →strlen
+ 14/179: 14/179: →strlen (DONE:15ms)
+ 14/179: Method: →clearerr
+ 15/179: 15/179: →clearerr (DONE:12ms)
+ 15/179: Method: →fwrite
+ 16/179: 16/179: →fwrite (DONE:10ms)
+ 16/179: Method: →fputs
+ 17/179: 17/179: →fputs (DONE:14ms)
+ 17/179: Method: →funlockfile
+ 18/179: 18/179: →funlockfile (DONE:9ms)
+ 18/179: Method: →flockfile
+ 19/179: 19/179: →flockfile (DONE:9ms)
+ 19/179: Method: →fflush
+ 20/179: 20/179: →fflush (DONE:13ms)
+ 20/179: Method: echoBinSafe.constprop.24
+ 21/179: 21/179: echoBinSafe.constprop.24 (DONE:72ms)
+ 21/179: Method: raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g
+ 22/179: 22/179: raiseOutOfMem_II46IjNZztN9bmbxUD8dt8g (DONE:71ms)
+ 22/179: Method: llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ
+ 23/179: 23/179: llAlloc_fTkVQ4Gj2glm9btLqR9bdQDQ (DONE:316ms)
+ 23/179: Method: splitChunk2_UxUTh1oy39boKK4NPJIGnLQ
+ 24/179: 24/179: splitChunk2_UxUTh1oy39boKK4NPJIGnLQ (DONE:320ms)
+ 24/179: Method: →munmap
+ 25/179: 25/179: →munmap (DONE:11ms)
+ 25/179: Method: nimRegisterThreadLocalMarker.part.14
+ 26/179: 26/179: nimRegisterThreadLocalMarker.part.14 (DONE:55ms)
+ 26/179: Method: requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2
+ 27/179: 27/179: requestOsChunks_z9bCNjXTYllZ3pI24nEsw2g_2 (DONE:953ms)
+ 27/179: Method: getBigChunk_z9bCNjXTYllZ3pI24nEsw2g
+ 28/179: 28/179: getBigChunk_z9bCNjXTYllZ3pI24nEsw2g (DONE:3615ms)
+ 28/179: Method: sub_400B80
+ 29/179: 29/179: sub_400B80 (DONE:4ms)
+ 29/179: Method: sub_401267
+ 30/179: 30/179: sub_401267 (DONE:3ms)
+ 30/179: Method: sub_4012C1
+ 31/179: 31/179: sub_4012C1 (DONE:3ms)
+ 31/179: Method: sub_405178
+ 32/179: 32/179: sub_405178 (DONE:2ms)
+ 32/179: Method: sub_405820
+ 33/179: 33/179: sub_405820 (DONE:2ms)
+ 33/179: Method: sub_40646F
+ 34/179: 34/179: sub_40646F (DONE:7ms)
+ 34/179: Method: sub_4064F8
+ 35/179: 35/179: sub_4064F8 (DONE:3ms)
+ 35/179: Method: sub_4088FF
+ 36/179: 36/179: sub_4088FF (DONE:6ms)
+ 36/179: Method: sub_40945B
+ 37/179: 37/179: sub_40945B (DONE:890ms)
+ 37/179: Method: sub_400AFD
+ 38/179: 38/179: sub_400AFD (DONE:12ms)
+ 38/179: Method: sub_400B3F
+ 39/179: 39/179: sub_400B3F (DONE:11ms)
+ 39/179: Method: sub_4044EC
+ 40/179: 40/179: sub_4044EC (DONE:8ms)
+ 40/179: Method: nimGC_setStackBottom
+ 41/179: 41/179: nimGC_setStackBottom (DONE:6ms)
+ 41/179: Method: sub_4064AF
+ 42/179: 42/179: sub_4064AF (DONE:7ms)
+ 42/179: Method: →memchr
+ 43/179: 43/179: →memchr (DONE:8ms)
+ 43/179: Method: →fgets
+ 44/179: 44/179: →fgets (DONE:7ms)
+ 44/179: Method: →_setjmp
+ 45/179: 45/179: →_setjmp (DONE:7ms)
+ 45/179: Method: →longjmp
+ 46/179: 46/179: →longjmp (DONE:7ms)
+ 46/179: Method: sub_408913
+ 47/179: 47/179: sub_408913 (DONE:25ms)
+ 47/179: Method: sub_406483
+ 48/179: 48/179: sub_406483 (DONE:10ms)
+ 48/179: Method: deregister_tm_clones
+ 49/179: 49/179: deregister_tm_clones (DONE:17ms)
+ 49/179: Method: register_tm_clones
+ 50/179: 50/179: register_tm_clones (DONE:30ms)
+ 50/179: Method: stackSize_61foY5fGmU9c2fC9c6wRIsrA
+ 51/179: 51/179: stackSize_61foY5fGmU9c2fC9c6wRIsrA (DONE:6ms)
+ 51/179: Method: stackSize_IV9bgfYkinlae0WZ2NZi5JA
+ 52/179: 52/179: stackSize_IV9bgfYkinlae0WZ2NZi5JA (DONE:4ms)
+ 52/179: Method: nimRegisterGlobalMarker
+ 53/179: 53/179: nimRegisterGlobalMarker (DONE:14ms)
+ 53/179: Method: sub_400B69
+ 54/179: 54/179: sub_400B69 (DONE:8ms)
+ 54/179: Method: →register_tm_clones
+ 55/179: 55/179: →register_tm_clones (DONE:3ms)
+ 55/179: Method: NimMainModule
+ 56/179: 56/179: NimMainModule (DONE:35ms)
+ 56/179: Method: →NimMainModule
+ 57/179: 57/179: →NimMainModule (DONE:3ms)
+ 57/179: Method: sourceDatInit000
+ 58/179: 58/179: sourceDatInit000 (DONE:1ms)
+ 58/179: Method: Marker_tySequence_uB9b75OUPRENsBAu4AnoePA
+ 59/179: 59/179: Marker_tySequence_uB9b75OUPRENsBAu4AnoePA (DONE:2ms)
+ 59/179: Method: getActiveStack_2XtoPjgvlHPkHLitAW2flw
+ 60/179: 60/179: getActiveStack_2XtoPjgvlHPkHLitAW2flw (DONE:2ms)
+ 60/179: Method: removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw
+ 61/179: 61/179: removeChunkFromMatrix2_NyesLqu7hqkgfLqcLrQpjw (DONE:39ms)
+ 61/179: Method: getBottom_QXg9anCfFuhk3avAkOOKNhQ
+ 62/179: 62/179: getBottom_QXg9anCfFuhk3avAkOOKNhQ (DONE:16ms)
+ 62/179: Method: skew_Cfx7NvEVZIhBjBm7i89boSg
+ 63/179: 63/179: skew_Cfx7NvEVZIhBjBm7i89boSg (DONE:13ms)
+ 63/179: Method: split_Cfx7NvEVZIhBjBm7i89boSg_2
+ 64/179: 64/179: split_Cfx7NvEVZIhBjBm7i89boSg_2 (DONE:17ms)
+ 64/179: Method: getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg
+ 65/179: 65/179: getDiscriminant_MBlSP9aCmxWSBuDOxawp8Sg (DONE:25ms)
+ 65/179: Method: setPosition_plJQLEbXvFqZv6Phpo1t1w
+ 66/179: 66/179: setPosition_plJQLEbXvFqZv6Phpo1t1w (DONE:3ms)
+ 66/179: Method: cellSetRawInsert_wqizyapnzNjHA3SIFqE8ow
+ 67/179: 67/179: cellSetRawInsert_wqizyapnzNjHA3SIFqE8ow (DONE:21ms)
+ 67/179: Method: highGauge_3mwQtFaBTgevFrybZdgUNw_2
+ 68/179: 68/179: highGauge_3mwQtFaBTgevFrybZdgUNw_2 (DONE:15ms)
+ 68/179: Method: setPosition_kuKlONPws1O0vpPB9adzcQw
+ 69/179: 69/179: setPosition_kuKlONPws1O0vpPB9adzcQw (DONE:1ms)
+ 69/179: Method: isActiveStack_deIRQymTVHcVwfHBKDbqEA
+ 70/179: 70/179: isActiveStack_deIRQymTVHcVwfHBKDbqEA (DONE:2ms)
+ 70/179: Method: prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ
+ 71/179: 71/179: prepareDealloc_0Ao1u9cpV0dTuUB5G9cEQ8eQ (DONE:23ms)
+ 71/179: Method: getOccupiedMem_9bFvoxSITMVCg7RY8KIar1Q
+ 72/179: 72/179: getOccupiedMem_9bFvoxSITMVCg7RY8KIar1Q (DONE:2ms)
+ 72/179: Method: getRefcount
+ 73/179: 73/179: getRefcount (DONE:4ms)
+ 73/179: Method: __libc_csu_fini
+ 74/179: 74/179: __libc_csu_fini (DONE:2ms)
+ 74/179: Method: finalizer_0
+ 75/179: 75/179: finalizer_0 (DONE:5ms)
+ 75/179: Method: registerSignalHandler_njssp69aa7hvxte9bJ8uuDcg_2
+ 76/179: 76/179: registerSignalHandler_njssp69aa7hvxte9bJ8uuDcg_2 (DONE:39ms)
+ 76/179: Method: echoBinSafe
+ 77/179: 77/179: echoBinSafe (DONE:65ms)
+ 77/179: Method: intSetPut_KWgRM9bUk6rwhAaHSiuK9aYA
+ 78/179: 78/179: intSetPut_KWgRM9bUk6rwhAaHSiuK9aYA (DONE:48ms)
+ 78/179: Method: incl_Iz1GYiOVKwItgr5CdCm0dQ
+ 79/179: 79/179: incl_Iz1GYiOVKwItgr5CdCm0dQ (DONE:54ms)
+ 79/179: Method: splitChunk_8QXhiy717OAl8WNA2X27EA
+ 80/179: 80/179: splitChunk_8QXhiy717OAl8WNA2X27EA (DONE:447ms)
+ 80/179: Method: allocAvlNode_neSuioWH6NDTp8E9cNgBmjg
+ 81/179: 81/179: allocAvlNode_neSuioWH6NDTp8E9cNgBmjg (DONE:53ms)
+ 81/179: Method: getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3
+ 82/179: 82/179: getHugeChunk_z9bCNjXTYllZ3pI24nEsw2g_3 (DONE:225ms)
+ 82/179: Method: getSmallChunk_h6cvXbfQjxIdThM5GthosA
+ 83/179: 83/179: getSmallChunk_h6cvXbfQjxIdThM5GthosA (DONE:5ms)
+ 83/179: Method: intSetGet_FhOZKj4Gih3qQ5OimZYOrg
+ 84/179: 84/179: intSetGet_FhOZKj4Gih3qQ5OimZYOrg (DONE:18ms)
+ 84/179: Method: contains_tGsWrN4DY41H9btt3FhjrNA
+ 85/179: 85/179: contains_tGsWrN4DY41H9btt3FhjrNA (DONE:38ms)
+ 85/179: Method: cellSetGet_X4WTfs0wkld8wp8XcE9b8BA
+ 86/179: 86/179: cellSetGet_X4WTfs0wkld8wp8XcE9b8BA (DONE:23ms)
+ 86/179: Method: lowGauge_3mwQtFaBTgevFrybZdgUNw
+ 87/179: 87/179: lowGauge_3mwQtFaBTgevFrybZdgUNw (DONE:12ms)
+ 87/179: Method: nimRegisterThreadLocalMarker
+ 88/179: 88/179: nimRegisterThreadLocalMarker (DONE:6ms)
+ 88/179: Method: finalizer_1
+ 89/179: 89/179: finalizer_1 (DONE:6ms)
+ 89/179: Method: __libc_csu_init
+ 90/179: 90/179: __libc_csu_init (DONE:55ms)
+ 90/179: Method: rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg
+ 91/179: 91/179: rawAlloc_yn9c8RLaS8vgVBeMBfmkdUg (DONE:1035ms)
+ 91/179: Method: alloc_1iQ1Xo9cXsxq509b5gmDHLoQ
+ 92/179: 92/179: alloc_1iQ1Xo9cXsxq509b5gmDHLoQ (DONE:17ms)
+ 92/179: Method: alloc_sVm4rDImKK2ZDdylByayiA
+ 93/179: 93/179: alloc_sVm4rDImKK2ZDdylByayiA (DONE:14ms)
+ 93/179: Method: alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2
+ 94/179: 94/179: alloc0_1iQ1Xo9cXsxq509b5gmDHLoQ_2 (DONE:18ms)
+ 94/179: Method: alloc0_sVm4rDImKK2ZDdylByayiA_2
+ 95/179: 95/179: alloc0_sVm4rDImKK2ZDdylByayiA_2 (DONE:17ms)
+ 95/179: Method: init_E1QNZGuo0DGFXyt4Y3MfqA
+ 96/179: 96/179: init_E1QNZGuo0DGFXyt4Y3MfqA (DONE:28ms)
+ 96/179: Method: addZCT_fCDI7oO1NNVXXURtxSzsRw
+ 97/179: 97/179: addZCT_fCDI7oO1NNVXXURtxSzsRw (DONE:134ms)
+ 97/179: Method: unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6
+ 98/179: 98/179: unmarkStackAndRegisters_zoTIuavlrCHyw3B8MBaLJA_6 (DONE:31ms)
+ 98/179: Method: unsureAsgnRef
+ 99/179: 99/179: unsureAsgnRef (DONE:56ms)
+ 99/179: Method: add_Xuf47u3imOz8BOk5HURLWQ
+100/179: 100/179: add_Xuf47u3imOz8BOk5HURLWQ (DONE:171ms)
+100/179: Method: initGC_njssp69aa7hvxte9bJ8uuDcg
+101/179: 101/179: initGC_njssp69aa7hvxte9bJ8uuDcg (DONE:761ms)
+101/179: Method: init_WHgd5C59bkXWDz3vnAxfzXQ
+102/179: 102/179: init_WHgd5C59bkXWDz3vnAxfzXQ (DONE:95ms)
+102/179: Method: incl_m4q9b16kJJcoKe9c4ERtlpCg
+103/179: 103/179: incl_m4q9b16kJJcoKe9c4ERtlpCg (DONE:335ms)
+103/179: Method: →systemInit000
+104/179: 104/179: →systemInit000 (DONE:6ms)
+104/179: Method: sub_406572
+105/179: 105/179: sub_406572 (DONE:22ms)
+105/179: Method: inRange_Bc4Ua6HOMCIDGx9b15HSY4g
+106/179: 106/179: inRange_Bc4Ua6HOMCIDGx9b15HSY4g (DONE:11ms)
+106/179: Method: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw
+107/179: 107/179: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw (DONE:47ms)
+107/179: Method: newObj
+108/179: 108/179: newObj (DONE:23ms)
+108/179: Method: raiseEIO_PpfSiTIeNpMAb9a5o6SglJw
+109/179: 109/179: raiseEIO_PpfSiTIeNpMAb9a5o6SglJw (DONE:48ms)
+109/179: Method: checkErr_BWnr8V7RERYno9bIdPmw8Hw
+110/179: 110/179: checkErr_BWnr8V7RERYno9bIdPmw8Hw (DONE:39ms)
+110/179: Method: write_ADGLlEJAOtGNWWur8rrJfg
+111/179: 111/179: write_ADGLlEJAOtGNWWur8rrJfg (DONE:51ms)
+111/179: Method: writeToStdErr_7HRVfGfZT2rSmBdcLxl8TA
+112/179: 112/179: writeToStdErr_7HRVfGfZT2rSmBdcLxl8TA (DONE:45ms)
+112/179: Method: showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ
+113/179: 113/179: showErrorMessage_rsUJ87b89bH0GlWKYL9c8wUQ (DONE:328ms)
+113/179: Method: signalHandler
+114/179: 114/179: signalHandler (DONE:44ms)
+114/179: Method: sub_4011CD
+115/179: 115/179: sub_4011CD (DONE:41ms)
+115/179: Method: addHeapLink_fJbggoVEhxEYh2HdNULF3Q
+116/179: 116/179: addHeapLink_fJbggoVEhxEYh2HdNULF3Q (DONE:5ms)
+116/179: Method: systemDatInit000
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Targets do not point to instructions: 0x2D (instruction: goto 002D)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x2D
+[E] The CFG could not be normalized!
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 0: Number of targets (1) differ from number of edges (0)
+117/179: 117/179: systemDatInit000 (DONE:498ms)
+117/179: Method: NimMain
+118/179: 118/179: NimMain (DONE:48ms)
+118/179: Method: PreMain
+119/179: 119/179: PreMain (DONE:18ms)
+119/179: Method: main
+120/179: 120/179: main (DONE:14ms)
+120/179: Method: cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ
+121/179: 121/179: cellSetEnlarge_ZCqaZEiX9aUtDCRoknrJ9bpQ (DONE:155ms)
+121/179: Method: cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ
+122/179: 122/179: cellSetPut_mFUFZ7eVLRT9bMaHzrsxFrQ (DONE:201ms)
+122/179: Method: copyStringRC1
+123/179: 123/179: copyStringRC1 (DONE:100ms)
+123/179: Method: raiseEOF_9b10LwJKWsyrZIEKTB9b6PGQ
+124/179: 124/179: raiseEOF_9b10LwJKWsyrZIEKTB9b6PGQ (DONE:47ms)
+124/179: Method: sub_40580C
+125/179: 125/179: sub_40580C (DONE:83ms)
+125/179: Method: TM_Q5wkpxktOdTGvlSRo9bzt9aw_17
+126/179: 126/179: TM_Q5wkpxktOdTGvlSRo9bzt9aw_17 (DONE:3ms)
+126/179: Method: markGlobals_zoTIuavlrCHyw3B8MBaLJA_4
+127/179: 127/179: markGlobals_zoTIuavlrCHyw3B8MBaLJA_4 (DONE:62ms)
+127/179: Method: isObjSlowPath_yEa9cUwzxhGRtg9cspcfCIHg
+128/179: 128/179: isObjSlowPath_yEa9cUwzxhGRtg9cspcfCIHg (DONE:24ms)
+128/179: Method: systemInit000
+129/179: 129/179: systemInit000 (DONE:153ms)
+129/179: Method: _start
+130/179: 130/179: _start (DONE:15ms)
+130/179: Method: TM_2lQWYPc4hWuvSK7bVeWxSA_4
+131/179: 131/179: TM_2lQWYPc4hWuvSK7bVeWxSA_4 (DONE:10ms)
+131/179: Method: excl_Z9cZKmN1jjRFCzU0lgW9a1XA
+132/179: 132/179: excl_Z9cZKmN1jjRFCzU0lgW9a1XA (DONE:33ms)
+132/179: Method: dealloc_jqYVOi4APb9cRx3G9a57AkRw
+133/179: 133/179: dealloc_jqYVOi4APb9cRx3G9a57AkRw (DONE:77ms)
+133/179: Method: dealloc_RCjNtRnHdRYntrcE7YtwWw
+134/179: 134/179: dealloc_RCjNtRnHdRYntrcE7YtwWw (DONE:4ms)
+134/179: Method: contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw
+135/179: 135/179: contains_9c4TZ2Zl3sU4TUeK9bR8E9ciw (DONE:40ms)
+135/179: Method: freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2
+136/179: 136/179: freeCyclicCell_NZr5o3Ubzrci4OmK29cHBJA_2 (DONE:38ms)
+136/179: Method: newObjNoInit
+137/179: 137/179: newObjNoInit (DONE:5ms)
+137/179: Method: rawNewStringNoInit
+138/179: 138/179: rawNewStringNoInit (DONE:12ms)
+138/179: Method: raiseException
+139/179: 139/179: raiseException (DONE:59ms)
+139/179: Method: toNimStr
+140/179: 140/179: toNimStr (DONE:35ms)
+140/179: Method: copyString
+141/179: 141/179: copyString (DONE:36ms)
+141/179: Method: rawNewString
+142/179: 142/179: rawNewString (DONE:25ms)
+142/179: Method: mnewString
+143/179: 143/179: mnewString (DONE:32ms)
+143/179: Method: cstrToNimstr
+144/179: 144/179: cstrToNimstr (DONE:45ms)
+144/179: Method: freeHugeChunk_jnrbguyViYONI3PJ1RZJjQ
+145/179: 145/179: freeHugeChunk_jnrbguyViYONI3PJ1RZJjQ (DONE:47ms)
+145/179: Method: collectCT_zoTIuavlrCHyw3B8MBaLJA
+146/179: 146/179: collectCT_zoTIuavlrCHyw3B8MBaLJA (DONE:45ms)
+146/179: Method: newObjRC1
+147/179: 147/179: newObjRC1 (DONE:77ms)
+147/179: Method: containsOrIncl_CbGEjIBKJIi7knlaDzUluA
+148/179: 148/179: containsOrIncl_CbGEjIBKJIi7knlaDzUluA (DONE:67ms)
+148/179: Method: rawNewObj_BpNS5yt3b9cMOponsUKh8aw
+149/179: 149/179: rawNewObj_BpNS5yt3b9cMOponsUKh8aw (DONE:279ms)
+149/179: Method: setLengthStr
+150/179: 150/179: setLengthStr (DONE:150ms)
+150/179: Method: readLine_sO1bQXVRA6RP9cdYJXNKeSw
+151/179: 151/179: readLine_sO1bQXVRA6RP9cdYJXNKeSw (DONE:759ms)
+151/179: Method: readLine_fPRnXwDTqtynUYGl4OixAg
+152/179: 152/179: readLine_fPRnXwDTqtynUYGl4OixAg (DONE:137ms)
+152/179: Method: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw.part.16
+[E] Prototype determination likely failed; too many parameters (1000)
+[E] Prototype determination likely failed; too many parameters (1000)
+[W] Can not optimize labeled block: goto found in independent block does not match a goto in this block
+[W] Can not optimize labeled block: goto found in independent block does not match a goto in this block
+[W] Can not optimize labeled block: goto found in independent block does not match a goto in this block
+[W] Can not optimize labeled block: goto found in independent block does not match a goto in this block
+[W] Can not optimize labeled block: goto found in independent block does not match a goto in this block
+153/179: 153/179: raiseExceptionAux_na8C8pUZ9cLQWVwk35l5vfw.part.16 (DONE:3356ms)
+153/179: Method: interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA
+154/179: 154/179: interiorAllocatedPtr_N7XNyRgfMLnCjS9bVeVc3bA (DONE:237ms)
+154/179: Method: markS_NZr5o3Ubzrci4OmK29cHBJA
+155/179: 155/179: markS_NZr5o3Ubzrci4OmK29cHBJA (DONE:172ms)
+155/179: Method: doOperation_3F8QeaTyYrJJF2gjBr6b8A
+156/179: 156/179: doOperation_3F8QeaTyYrJJF2gjBr6b8A (DONE:205ms)
+156/179: Method: removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2
+157/179: 157/179: removeChunkFromMatrix_v9bekLOkesgfrZC4aumfLXw_2 (DONE:125ms)
+157/179: Method: freeBigChunk_CAqFS1jFL1RxG80t9bOGmAA
+158/179: 158/179: freeBigChunk_CAqFS1jFL1RxG80t9bOGmAA (DONE:3128ms)
+158/179: Method: forAllChildren_yHFnLgI7q81iFxRlb3Iqlw
+159/179: 159/179: forAllChildren_yHFnLgI7q81iFxRlb3Iqlw (DONE:134ms)
+159/179: Method: sweep_zoTIuavlrCHyw3B8MBaLJA_5
+160/179: 160/179: sweep_zoTIuavlrCHyw3B8MBaLJA_5 (DONE:796ms)
+160/179: Method: nimGCvisit
+161/179: 161/179: nimGCvisit (DONE:368ms)
+161/179: Method: addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw
+162/179: 162/179: addChunkToMatrix_v9bekLOkesgfrZC4aumfLXw (DONE:95ms)
+162/179: Method: deinit_WHgd5C59bkXWDz3vnAxfzXQ_3
+163/179: 163/179: deinit_WHgd5C59bkXWDz3vnAxfzXQ_3 (DONE:43ms)
+163/179: Method: cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2
+164/179: 164/179: cellsetReset_WHgd5C59bkXWDz3vnAxfzXQ_2 (DONE:159ms)
+164/179: Method: del_C66us4UEWCXp84lHW4tDLA
+165/179: 165/179: del_C66us4UEWCXp84lHW4tDLA (DONE:57ms)
+165/179: Method: collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2
+166/179: 166/179: collectCTBody_zoTIuavlrCHyw3B8MBaLJA_2 (DONE:256ms)
+166/179: Method: collectZCT_evVbQ9bNF7LYMhoG9aWXu9bKw
+167/179: 167/179: collectZCT_evVbQ9bNF7LYMhoG9aWXu9bKw (DONE:236ms)
+167/179: Method: collectCycles_zoTIuavlrCHyw3B8MBaLJA_3
+168/179: 168/179: collectCycles_zoTIuavlrCHyw3B8MBaLJA_3 (DONE:424ms)
+168/179: Method: selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg
+169/179: 169/179: selectBranch_yDNUA0V9a9a9bVLtZ9bXPT0aEg (DONE:25ms)
+169/179: Method: Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ
+170/179: 170/179: Marker_tyRef_HMIVdYjdZYWskTmTQVo5BQ (DONE:441ms)
+170/179: Method: Marker_tyRef_LEclZrWX2FQAodlapxGITw
+171/179: 171/179: Marker_tyRef_LEclZrWX2FQAodlapxGITw (DONE:534ms)
+171/179: Method: Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw
+172/179: 172/179: Marker_tyRef_vU9aO9cTqOMn6CBzhV8rX7Sw (DONE:849ms)
+172/179: Method: del_C66us4UEWCXp84lHW4tDLA.part.8
+173/179: 173/179: del_C66us4UEWCXp84lHW4tDLA.part.8 (DONE:221ms)
+173/179: Method: rawDealloc_DA62HrGC5sdfCED505KyyQ
+174/179: 174/179: rawDealloc_DA62HrGC5sdfCED505KyyQ (DONE:13889ms)
+174/179: Method: markStackAndRegisters_LdwvBL9bC9c0lik7K9bau9bX0Q
+175/179: 175/179: markStackAndRegisters_LdwvBL9bC9c0lik7K9bau9bX0Q (DONE:3231ms)
+175/179: Method: forAllChildrenAux_7ozEvYoq4I7fwvXfiSWM9aA
+176/179: 176/179: forAllChildrenAux_7ozEvYoq4I7fwvXfiSWM9aA (DONE:638ms)
+176/179: Method: forAllSlotsAux_yZE4CUR3NNCoSMnkWbtJrQ
+177/179: 177/179: forAllSlotsAux_yZE4CUR3NNCoSMnkWbtJrQ (DONE:532ms)
+177/179: Method: genericResetAux_ruA1rosalqf8AhzZPPTBQg
+178/179: 178/179: genericResetAux_ruA1rosalqf8AhzZPPTBQg (DONE:493ms)
+178/179: Method: genericReset
+179/179: 179/179: genericReset (DONE:453ms)
+Exectime: 49.466000 sec
+[I] Done.

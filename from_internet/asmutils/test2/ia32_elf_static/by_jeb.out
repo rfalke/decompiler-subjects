@@ -1,0 +1,67 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/test2/ia32_elf_static/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 26 methods
+Output folder: jeb_output
+  0/ 26: Method: __get_GOT
+  1/ 26: 1/26: __get_GOT (DONE:42ms)
+  1/ 26: Method: __system_call
+  2/ 26: 2/26: __system_call (DONE:159ms)
+  2/ 26: Method: memset
+  3/ 26: 3/26: memset (DONE:61ms)
+  3/ 26: Method: strtol
+  4/ 26: 4/26: strtol (DONE:233ms)
+  4/ 26: Method: read
+  5/ 26: 5/26: read (DONE:22ms)
+  5/ 26: Method: _fastcall
+  6/ 26: 6/26: _fastcall (DONE:11ms)
+  6/ 26: Method: memcpy
+  7/ 26: 7/26: memcpy (DONE:46ms)
+  7/ 26: Method: getenv
+  8/ 26: 8/26: getenv (DONE:127ms)
+  8/ 26: Method: write
+  9/ 26: 9/26: write (DONE:20ms)
+  9/ 26: Method: rmdir
+ 10/ 26: 10/26: rmdir (DONE:14ms)
+ 10/ 26: Method: exit
+ 11/ 26: 11/26: exit (DONE:12ms)
+ 11/ 26: Method: __start_main
+ 12/ 26: 12/26: __start_main (DONE:52ms)
+ 12/ 26: Method: getgid
+ 13/ 26: 13/26: getgid (DONE:15ms)
+ 13/ 26: Method: memcmp
+ 14/ 26: 14/26: memcmp (DONE:42ms)
+ 14/ 26: Method: strlen
+ 15/ 26: 15/26: strlen (DONE:55ms)
+ 15/ 26: Method: close
+ 16/ 26: 16/26: close (DONE:16ms)
+ 16/ 26: Method: uname
+ 17/ 26: 17/26: uname (DONE:33ms)
+ 17/ 26: Method: fork
+ 18/ 26: 18/26: fork (DONE:30ms)
+ 18/ 26: Method: signal
+ 19/ 26: 19/26: signal (DONE:49ms)
+ 19/ 26: Method: mkdir
+ 20/ 26: 20/26: mkdir (DONE:15ms)
+ 20/ 26: Method: start
+ 21/ 26: 21/26: start (DONE:3ms)
+ 21/ 26: Method: printf
+ 22/ 26: 22/26: printf (DONE:47ms)
+ 22/ 26: Method: main
+ 23/ 26: 23/26: main (DONE:1102ms)
+ 23/ 26: Method: itoa.printB
+ 24/ 26: 24/26: itoa.printB (DONE:68ms)
+ 24/ 26: Method: sprintf
+ 25/ 26: 25/26: sprintf (DONE:212ms)
+ 25/ 26: Method: itoa
+ 26/ 26: 26/26: itoa (DONE:27ms)
+Exectime: 3.249000 sec
+[I] Done.

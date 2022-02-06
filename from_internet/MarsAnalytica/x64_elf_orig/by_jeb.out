@@ -1,31 +1,23 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_internet/MarsAnalytica/x64_elf_orig/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (4 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (2s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 4 methods
 Output folder: jeb_output
   0/  4: Method: sub_7F6872
-  1/  4: 1/4: sub_7F6872 (DONE:424ms)
+  1/  4: 1/4: sub_7F6872 (DONE:184ms)
   1/  4: Method: sub_7F68B0
-  2/  4: 2/4: sub_7F68B0 (DONE:1992ms)
+  2/  4: 2/4: sub_7F68B0 (DONE:1439ms)
   2/  4: Method: sub_7F6AC0
-  3/  4: 3/4: sub_7F6AC0 (DONE:53ms)
+  3/  4: 3/4: sub_7F6AC0 (DONE:43ms)
   3/  4: Method: start
-  4/  4: 4/4: start (DONE:127ms)
-Exectime: 8.077000 sec
-Done.
+  4/  4: 4/4: start (DONE:79ms)
+Exectime: 4.231000 sec
+[I] Done.

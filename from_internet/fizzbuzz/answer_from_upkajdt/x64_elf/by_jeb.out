@@ -1,0 +1,118 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/fizzbuzz/answer_from_upkajdt/x64_elf/subject.exe...
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[E] {subject.exe > subject.exe > x86_64 image}: 403088h: Itanium RTTI memory scanner: not parsed base type_info at 403088
+[I] {subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: 1 type_infos parsed - 1 vftables recovered
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 50 methods
+Output folder: jeb_output
+  0/ 50: Method: sub_401550
+  1/ 50: 1/50: sub_401550 (DONE:39ms)
+  1/ 50: Method: sub_401590
+  2/ 50: 2/50: sub_401590 (DONE:6ms)
+  2/ 50: Method: initializer_0
+  3/ 50: 3/50: initializer_0 (DONE:64ms)
+  3/ 50: Method: sub_401026
+  4/ 50: 4/50: sub_401026 (DONE:9ms)
+  4/ 50: Method: →operator delete
+  5/ 50: 5/50: →operator delete (DONE:17ms)
+  5/ 50: Method: →operator new
+  6/ 50: 6/50: →operator new (DONE:13ms)
+  6/ 50: Method: →std::terminate
+  7/ 50: 7/50: →std::terminate (DONE:11ms)
+  7/ 50: Method: →std::thread::_State::~_State
+  8/ 50: 8/50: →std::thread::_State::~_State (DONE:11ms)
+  8/ 50: Method: →std::__throw_length_error
+  9/ 50: 9/50: →std::__throw_length_error (DONE:10ms)
+  9/ 50: Method: →memcpy
+ 10/ 50: 10/50: →memcpy (DONE:12ms)
+ 10/ 50: Method: →std::thread::_M_start_thread
+ 11/ 50: 11/50: →std::thread::_M_start_thread (DONE:10ms)
+ 11/ 50: Method: sub_4015C0
+ 12/ 50: 12/50: sub_4015C0 (DONE:5ms)
+ 12/ 50: Method: sub_40153D
+ 13/ 50: 13/50: sub_40153D (DONE:15ms)
+ 13/ 50: Method: sub_40157F
+ 14/ 50: 14/50: sub_40157F (DONE:14ms)
+ 14/ 50: Method: →operator new[]
+ 15/ 50: 15/50: →operator new[] (DONE:11ms)
+ 15/ 50: Method: →write
+ 16/ 50: 16/50: →write (DONE:13ms)
+ 16/ 50: Method: →__cxa_begin_catch
+ 17/ 50: 17/50: →__cxa_begin_catch (DONE:9ms)
+ 17/ 50: Method: →std::ostream::_M_insert<unsigned long>
+ 18/ 50: 18/50: →std::ostream::_M_insert<unsigned long> (DONE:9ms)
+ 18/ 50: Method: →__cxa_atexit
+ 19/ 50: 19/50: →__cxa_atexit (DONE:9ms)
+ 19/ 50: Method: →std::__ostream_insert<char, std::char_traits<char> >
+ 20/ 50: 20/50: →std::__ostream_insert<char, std::char_traits<char> > (DONE:9ms)
+ 20/ 50: Method: →std::thread::hardware_concurrency
+ 21/ 50: 21/50: →std::thread::hardware_concurrency (DONE:8ms)
+ 21/ 50: Method: →__cxa_rethrow
+ 22/ 50: 22/50: →__cxa_rethrow (DONE:14ms)
+ 22/ 50: Method: →std::ios_base::Init::Init
+ 23/ 50: 23/50: →std::ios_base::Init::Init (DONE:9ms)
+ 23/ 50: Method: →memmove
+ 24/ 50: 24/50: →memmove (DONE:11ms)
+ 24/ 50: Method: →std::thread::join
+ 25/ 50: 25/50: →std::thread::join (DONE:15ms)
+ 25/ 50: Method: →_Unwind_Resume
+ 26/ 50: 26/50: →_Unwind_Resume (DONE:8ms)
+ 26/ 50: Method: deregister_tm_clones
+ 27/ 50: 27/50: deregister_tm_clones (DONE:24ms)
+ 27/ 50: Method: register_tm_clones
+ 28/ 50: 28/50: register_tm_clones (DONE:38ms)
+ 28/ 50: Method: std::vector<std::thread, std::allocator<std::thread> >::_M_realloc_insert<void (&)(worker*), worker*&>
+ 29/ 50: 29/50: std::vector<std::thread, std::allocator<std::thread> >::_M_realloc_insert<void (&)(worker*), worker*&> (DONE:1207ms)
+ 29/ 50: Method: sub_4015AD
+ 30/ 50: 30/50: sub_4015AD (DONE:15ms)
+ 30/ 50: Method: initializer_1
+ 31/ 50: 31/50: initializer_1 (DONE:5ms)
+ 31/ 50: Method: __libc_csu_init
+ 32/ 50: 32/50: __libc_csu_init (DONE:81ms)
+ 32/ 50: Method: _ZNSt6vectorIP6workerSaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_
+ 33/ 50: 33/50: _ZNSt6vectorIP6workerSaIS1_EE17_M_realloc_insertIJS1_EEEvN9__gnu_cxx17__normal_iteratorIPS1_S3_EEDpOT_ (DONE:454ms)
+ 33/ 50: Method: →pthread_create
+ 34/ 50: 34/50: →pthread_create (DONE:5ms)
+ 34/ 50: Method: →__gxx_personality_v0
+ 35/ 50: 35/50: →__gxx_personality_v0 (DONE:4ms)
+ 35/ 50: Method: →std::ios_base::Init::~Init
+ 36/ 50: 36/50: →std::ios_base::Init::~Init (DONE:4ms)
+ 36/ 50: Method: _dl_relocate_static_pie
+ 37/ 50: 37/50: _dl_relocate_static_pie (DONE:3ms)
+ 37/ 50: Method: _Z4taskP6worker
+ 38/ 50: 38/50: _Z4taskP6worker (DONE:3646ms)
+ 38/ 50: Method: _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv
+ 39/ 50: 39/50: _ZNSt6thread11_State_implINS_8_InvokerISt5tupleIJPFvP6workerES4_EEEEE6_M_runEv (DONE:4ms)
+ 39/ 50: Method: __libc_csu_fini
+ 40/ 50: 40/50: __libc_csu_fini (DONE:1ms)
+ 40/ 50: Method: finalizer_0
+ 41/ 50: 41/50: finalizer_0 (DONE:4ms)
+ 41/ 50: Method: →__cxa_end_catch
+ 42/ 50: 42/50: →__cxa_end_catch (DONE:7ms)
+ 42/ 50: Method: main.cold
+ 43/ 50: 43/50: main.cold (DONE:10ms)
+ 43/ 50: Method: std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> > >::~_State_impl
+ 44/ 50: 44/50: std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> > >::~_State_impl (DONE:4ms)
+ 44/ 50: Method: std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> > >::~_State_impl2
+ 45/ 50: 45/50: std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> > >::~_State_impl2 (DONE:10ms)
+ 45/ 50: Method: initializer_2
+ 46/ 50: 46/50: initializer_2 (DONE:14ms)
+ 46/ 50: Method: finalizer_1
+ 47/ 50: 47/50: finalizer_1 (DONE:10ms)
+ 47/ 50: Method: main
+ 48/ 50: 48/50: main (DONE:1242ms)
+ 48/ 50: Method: _start
+ 49/ 50: 49/50: _start (DONE:17ms)
+ 49/ 50: Method: sub_4011B0
+ 50/ 50: 50/50: sub_4011B0 (DONE:62ms)
+Exectime: 8.184000 sec
+[I] Done.

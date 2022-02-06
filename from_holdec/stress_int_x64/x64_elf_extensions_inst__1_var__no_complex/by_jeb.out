@@ -1,219 +1,269 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/stress_int_x64/x64_elf_extensions_inst__1_var__no_complex/subject.exe...
-The notes section ".gnu.build.attributes" was not processed
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (97 internal methods created)
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x401026 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 102 methods
 Output folder: jeb_output
-  0/ 97: Method: initializer_0
-  1/ 97: 1/97: initializer_0 (DONE:262ms)
-  1/ 97: Method: sub_401036
-  2/ 97: 2/97: sub_401036 (DONE:54ms)
-  2/ 97: Method: deregister_tm_clones
-  3/ 97: 3/97: deregister_tm_clones (DONE:74ms)
-  3/ 97: Method: register_tm_clones
-  4/ 97: 4/97: register_tm_clones (DONE:100ms)
-  4/ 97: Method: inst_0_values_var_0
-  5/ 97: 5/97: inst_0_values_var_0 (DONE:448ms)
-  5/ 97: Method: inst_0_flags_var_0
-  6/ 97: 6/97: inst_0_flags_var_0 (DONE:244ms)
-  6/ 97: Method: inst_1_values_var_0
-  7/ 97: 7/97: inst_1_values_var_0 (DONE:183ms)
-  7/ 97: Method: inst_1_flags_var_0
-  8/ 97: 8/97: inst_1_flags_var_0 (DONE:131ms)
-  8/ 97: Method: inst_2_values_var_0
-  9/ 97: 9/97: inst_2_values_var_0 (DONE:165ms)
-  9/ 97: Method: inst_2_flags_var_0
- 10/ 97: 10/97: inst_2_flags_var_0 (DONE:111ms)
- 10/ 97: Method: inst_3_values_var_0
- 11/ 97: 11/97: inst_3_values_var_0 (DONE:180ms)
- 11/ 97: Method: inst_3_flags_var_0
- 12/ 97: 12/97: inst_3_flags_var_0 (DONE:147ms)
- 12/ 97: Method: inst_4_values_var_0
- 13/ 97: 13/97: inst_4_values_var_0 (DONE:182ms)
- 13/ 97: Method: inst_4_flags_var_0
- 14/ 97: 14/97: inst_4_flags_var_0 (DONE:134ms)
- 14/ 97: Method: inst_5_values_var_0
- 15/ 97: 15/97: inst_5_values_var_0 (DONE:166ms)
- 15/ 97: Method: inst_5_flags_var_0
- 16/ 97: 16/97: inst_5_flags_var_0 (DONE:128ms)
- 16/ 97: Method: inst_6_values_var_0
- 17/ 97: 17/97: inst_6_values_var_0 (DONE:146ms)
- 17/ 97: Method: inst_6_flags_var_0
- 18/ 97: 18/97: inst_6_flags_var_0 (DONE:98ms)
- 18/ 97: Method: inst_7_values_var_0
- 19/ 97: 19/97: inst_7_values_var_0 (DONE:102ms)
- 19/ 97: Method: inst_7_flags_var_0
- 20/ 97: 20/97: inst_7_flags_var_0 (DONE:99ms)
- 20/ 97: Method: inst_8_values_var_0
- 21/ 97: 21/97: inst_8_values_var_0 (DONE:113ms)
- 21/ 97: Method: inst_8_flags_var_0
- 22/ 97: 22/97: inst_8_flags_var_0 (DONE:87ms)
- 22/ 97: Method: inst_9_values_var_0
- 23/ 97: 23/97: inst_9_values_var_0 (DONE:109ms)
- 23/ 97: Method: inst_9_flags_var_0
- 24/ 97: 24/97: inst_9_flags_var_0 (DONE:101ms)
- 24/ 97: Method: inst_10_values_var_0
- 25/ 97: 25/97: inst_10_values_var_0 (DONE:118ms)
- 25/ 97: Method: inst_10_flags_var_0
- 26/ 97: 26/97: inst_10_flags_var_0 (DONE:90ms)
- 26/ 97: Method: inst_11_values_var_0
- 27/ 97: 27/97: inst_11_values_var_0 (DONE:114ms)
- 27/ 97: Method: inst_11_flags_var_0
- 28/ 97: 28/97: inst_11_flags_var_0 (DONE:65ms)
- 28/ 97: Method: inst_12_values_var_0
- 29/ 97: 29/97: inst_12_values_var_0 (DONE:112ms)
- 29/ 97: Method: inst_12_flags_var_0
- 30/ 97: 30/97: inst_12_flags_var_0 (DONE:76ms)
- 30/ 97: Method: inst_13_values_var_0
- 31/ 97: 31/97: inst_13_values_var_0 (DONE:115ms)
- 31/ 97: Method: inst_13_flags_var_0
- 32/ 97: 32/97: inst_13_flags_var_0 (DONE:114ms)
- 32/ 97: Method: inst_14_values_var_0
- 33/ 97: 33/97: inst_14_values_var_0 (DONE:116ms)
- 33/ 97: Method: inst_14_flags_var_0
- 34/ 97: 34/97: inst_14_flags_var_0 (DONE:92ms)
- 34/ 97: Method: inst_15_values_var_0
- 35/ 97: 35/97: inst_15_values_var_0 (DONE:107ms)
- 35/ 97: Method: inst_15_flags_var_0
- 36/ 97: 36/97: inst_15_flags_var_0 (DONE:71ms)
- 36/ 97: Method: inst_16_values_var_0
- 37/ 97: 37/97: inst_16_values_var_0 (DONE:98ms)
- 37/ 97: Method: inst_16_flags_var_0
- 38/ 97: 38/97: inst_16_flags_var_0 (DONE:71ms)
- 38/ 97: Method: inst_17_values_var_0
- 39/ 97: 39/97: inst_17_values_var_0 (DONE:85ms)
- 39/ 97: Method: inst_17_flags_var_0
- 40/ 97: 40/97: inst_17_flags_var_0 (DONE:73ms)
- 40/ 97: Method: inst_18_values_var_0
- 41/ 97: 41/97: inst_18_values_var_0 (DONE:105ms)
- 41/ 97: Method: inst_18_flags_var_0
- 42/ 97: 42/97: inst_18_flags_var_0 (DONE:63ms)
- 42/ 97: Method: inst_19_values_var_0
- 43/ 97: 43/97: inst_19_values_var_0 (DONE:104ms)
- 43/ 97: Method: inst_19_flags_var_0
- 44/ 97: 44/97: inst_19_flags_var_0 (DONE:72ms)
- 44/ 97: Method: inst_20_values_var_0
- 45/ 97: 45/97: inst_20_values_var_0 (DONE:90ms)
- 45/ 97: Method: inst_20_flags_var_0
- 46/ 97: 46/97: inst_20_flags_var_0 (DONE:65ms)
- 46/ 97: Method: inst_21_values_var_0
- 47/ 97: 47/97: inst_21_values_var_0 (DONE:78ms)
- 47/ 97: Method: inst_21_flags_var_0
- 48/ 97: 48/97: inst_21_flags_var_0 (DONE:75ms)
- 48/ 97: Method: inst_22_values_var_0
- 49/ 97: 49/97: inst_22_values_var_0 (DONE:91ms)
- 49/ 97: Method: inst_22_flags_var_0
- 50/ 97: 50/97: inst_22_flags_var_0 (DONE:65ms)
- 50/ 97: Method: inst_23_values_var_0
- 51/ 97: 51/97: inst_23_values_var_0 (DONE:99ms)
- 51/ 97: Method: inst_23_flags_var_0
- 52/ 97: 52/97: inst_23_flags_var_0 (DONE:56ms)
- 52/ 97: Method: inst_24_values_var_0
- 53/ 97: 53/97: inst_24_values_var_0 (DONE:92ms)
- 53/ 97: Method: inst_24_flags_var_0
- 54/ 97: 54/97: inst_24_flags_var_0 (DONE:56ms)
- 54/ 97: Method: inst_25_values_var_0
- 55/ 97: 55/97: inst_25_values_var_0 (DONE:93ms)
- 55/ 97: Method: inst_25_flags_var_0
- 56/ 97: 56/97: inst_25_flags_var_0 (DONE:57ms)
- 56/ 97: Method: inst_26_values_var_0
- 57/ 97: 57/97: inst_26_values_var_0 (DONE:87ms)
- 57/ 97: Method: inst_26_flags_var_0
- 58/ 97: 58/97: inst_26_flags_var_0 (DONE:72ms)
- 58/ 97: Method: inst_27_values_var_0
- 59/ 97: 59/97: inst_27_values_var_0 (DONE:76ms)
- 59/ 97: Method: inst_27_flags_var_0
- 60/ 97: 60/97: inst_27_flags_var_0 (DONE:74ms)
- 60/ 97: Method: inst_28_values_var_0
- 61/ 97: 61/97: inst_28_values_var_0 (DONE:77ms)
- 61/ 97: Method: inst_28_flags_var_0
- 62/ 97: 62/97: inst_28_flags_var_0 (DONE:68ms)
- 62/ 97: Method: inst_29_values_var_0
- 63/ 97: 63/97: inst_29_values_var_0 (DONE:71ms)
- 63/ 97: Method: inst_29_flags_var_0
- 64/ 97: 64/97: inst_29_flags_var_0 (DONE:80ms)
- 64/ 97: Method: inst_30_values_var_0
- 65/ 97: 65/97: inst_30_values_var_0 (DONE:149ms)
- 65/ 97: Method: inst_30_flags_var_0
- 66/ 97: 66/97: inst_30_flags_var_0 (DONE:79ms)
- 66/ 97: Method: inst_31_values_var_0
- 67/ 97: 67/97: inst_31_values_var_0 (DONE:83ms)
- 67/ 97: Method: inst_31_flags_var_0
- 68/ 97: 68/97: inst_31_flags_var_0 (DONE:78ms)
- 68/ 97: Method: inst_32_values_var_0
- 69/ 97: 69/97: inst_32_values_var_0 (DONE:100ms)
- 69/ 97: Method: inst_32_flags_var_0
- 70/ 97: 70/97: inst_32_flags_var_0 (DONE:60ms)
- 70/ 97: Method: inst_33_values_var_0
- 71/ 97: 71/97: inst_33_values_var_0 (DONE:82ms)
- 71/ 97: Method: inst_33_flags_var_0
- 72/ 97: 72/97: inst_33_flags_var_0 (DONE:56ms)
- 72/ 97: Method: inst_34_values_var_0
- 73/ 97: 73/97: inst_34_values_var_0 (DONE:78ms)
- 73/ 97: Method: inst_34_flags_var_0
- 74/ 97: 74/97: inst_34_flags_var_0 (DONE:59ms)
- 74/ 97: Method: inst_35_values_var_0
- 75/ 97: 75/97: inst_35_values_var_0 (DONE:88ms)
- 75/ 97: Method: inst_35_flags_var_0
- 76/ 97: 76/97: inst_35_flags_var_0 (DONE:70ms)
- 76/ 97: Method: inst_36_values_var_0
- 77/ 97: 77/97: inst_36_values_var_0 (DONE:86ms)
- 77/ 97: Method: inst_36_flags_var_0
- 78/ 97: 78/97: inst_36_flags_var_0 (DONE:57ms)
- 78/ 97: Method: inst_37_values_var_0
- 79/ 97: 79/97: inst_37_values_var_0 (DONE:75ms)
- 79/ 97: Method: inst_37_flags_var_0
- 80/ 97: 80/97: inst_37_flags_var_0 (DONE:71ms)
- 80/ 97: Method: inst_38_values_var_0
- 81/ 97: 81/97: inst_38_values_var_0 (DONE:79ms)
- 81/ 97: Method: inst_38_flags_var_0
- 82/ 97: 82/97: inst_38_flags_var_0 (DONE:74ms)
- 82/ 97: Method: inst_39_values_var_0
- 83/ 97: 83/97: inst_39_values_var_0 (DONE:121ms)
- 83/ 97: Method: inst_39_flags_var_0
- 84/ 97: 84/97: inst_39_flags_var_0 (DONE:63ms)
- 84/ 97: Method: inst_40_values_var_0
- 85/ 97: 85/97: inst_40_values_var_0 (DONE:89ms)
- 85/ 97: Method: inst_40_flags_var_0
- 86/ 97: 86/97: inst_40_flags_var_0 (DONE:59ms)
- 86/ 97: Method: inst_41_values_var_0
- 87/ 97: 87/97: inst_41_values_var_0 (DONE:86ms)
- 87/ 97: Method: inst_41_flags_var_0
- 88/ 97: 88/97: inst_41_flags_var_0 (DONE:58ms)
- 88/ 97: Method: sub_401030
- 89/ 97: 89/97: sub_401030 (DONE:29ms)
- 89/ 97: Method: initializer_1
- 90/ 97: 90/97: initializer_1 (DONE:43ms)
- 90/ 97: Method: _dl_relocate_static_pie
- 91/ 97: 91/97: _dl_relocate_static_pie (DONE:9ms)
- 91/ 97: Method: __libc_csu_fini
- 92/ 97: 92/97: __libc_csu_fini (DONE:7ms)
- 92/ 97: Method: finalizer_0
- 93/ 97: 93/97: finalizer_0 (DONE:12ms)
- 93/ 97: Method: finalizer_1
-Emulation failed!
- 94/ 97: 94/97: finalizer_1 (DONE:175ms)
- 94/ 97: Method: main
- 95/ 97: 95/97: main (DONE:7977ms)
- 95/ 97: Method: __libc_csu_init
- 96/ 97: 96/97: __libc_csu_init (DONE:139ms)
- 96/ 97: Method: _start
- 97/ 97: 97/97: _start (DONE:39ms)
-Exectime: 21.279000 sec
-Done.
+  0/102: Method: sub_401360
+  1/102: 1/102: sub_401360 (DONE:50ms)
+  1/102: Method: sub_4013A0
+  2/102: 2/102: sub_4013A0 (DONE:6ms)
+  2/102: Method: initializer_0
+  3/102: 3/102: initializer_0 (DONE:64ms)
+  3/102: Method: →__assert_fail
+  4/102: 4/102: →__assert_fail (DONE:27ms)
+  4/102: Method: sub_4013D0
+  5/102: 5/102: sub_4013D0 (DONE:4ms)
+  5/102: Method: inst_0_values_var_0
+  6/102: 6/102: inst_0_values_var_0 (DONE:116ms)
+  6/102: Method: inst_0_flags_var_0
+  7/102: 7/102: inst_0_flags_var_0 (DONE:62ms)
+  7/102: Method: inst_1_values_var_0
+  8/102: 8/102: inst_1_values_var_0 (DONE:117ms)
+  8/102: Method: inst_1_flags_var_0
+  9/102: 9/102: inst_1_flags_var_0 (DONE:53ms)
+  9/102: Method: inst_2_values_var_0
+ 10/102: 10/102: inst_2_values_var_0 (DONE:80ms)
+ 10/102: Method: inst_2_flags_var_0
+ 11/102: 11/102: inst_2_flags_var_0 (DONE:41ms)
+ 11/102: Method: inst_3_values_var_0
+ 12/102: 12/102: inst_3_values_var_0 (DONE:76ms)
+ 12/102: Method: inst_3_flags_var_0
+ 13/102: 13/102: inst_3_flags_var_0 (DONE:53ms)
+ 13/102: Method: inst_4_values_var_0
+ 14/102: 14/102: inst_4_values_var_0 (DONE:65ms)
+ 14/102: Method: inst_4_flags_var_0
+ 15/102: 15/102: inst_4_flags_var_0 (DONE:42ms)
+ 15/102: Method: inst_5_values_var_0
+ 16/102: 16/102: inst_5_values_var_0 (DONE:77ms)
+ 16/102: Method: inst_5_flags_var_0
+ 17/102: 17/102: inst_5_flags_var_0 (DONE:39ms)
+ 17/102: Method: inst_6_values_var_0
+ 18/102: 18/102: inst_6_values_var_0 (DONE:73ms)
+ 18/102: Method: inst_6_flags_var_0
+ 19/102: 19/102: inst_6_flags_var_0 (DONE:37ms)
+ 19/102: Method: inst_7_values_var_0
+ 20/102: 20/102: inst_7_values_var_0 (DONE:76ms)
+ 20/102: Method: inst_7_flags_var_0
+ 21/102: 21/102: inst_7_flags_var_0 (DONE:33ms)
+ 21/102: Method: inst_8_values_var_0
+ 22/102: 22/102: inst_8_values_var_0 (DONE:37ms)
+ 22/102: Method: inst_8_flags_var_0
+ 23/102: 23/102: inst_8_flags_var_0 (DONE:32ms)
+ 23/102: Method: inst_9_values_var_0
+ 24/102: 24/102: inst_9_values_var_0 (DONE:42ms)
+ 24/102: Method: inst_9_flags_var_0
+ 25/102: 25/102: inst_9_flags_var_0 (DONE:41ms)
+ 25/102: Method: inst_10_values_var_0
+ 26/102: 26/102: inst_10_values_var_0 (DONE:54ms)
+ 26/102: Method: inst_10_flags_var_0
+ 27/102: 27/102: inst_10_flags_var_0 (DONE:34ms)
+ 27/102: Method: inst_11_values_var_0
+ 28/102: 28/102: inst_11_values_var_0 (DONE:52ms)
+ 28/102: Method: inst_11_flags_var_0
+ 29/102: 29/102: inst_11_flags_var_0 (DONE:34ms)
+ 29/102: Method: inst_12_values_var_0
+ 30/102: 30/102: inst_12_values_var_0 (DONE:44ms)
+ 30/102: Method: inst_12_flags_var_0
+ 31/102: 31/102: inst_12_flags_var_0 (DONE:33ms)
+ 31/102: Method: inst_13_values_var_0
+ 32/102: 32/102: inst_13_values_var_0 (DONE:52ms)
+ 32/102: Method: inst_13_flags_var_0
+ 33/102: 33/102: inst_13_flags_var_0 (DONE:35ms)
+ 33/102: Method: inst_14_values_var_0
+ 34/102: 34/102: inst_14_values_var_0 (DONE:42ms)
+ 34/102: Method: inst_14_flags_var_0
+ 35/102: 35/102: inst_14_flags_var_0 (DONE:35ms)
+ 35/102: Method: inst_15_values_var_0
+ 36/102: 36/102: inst_15_values_var_0 (DONE:47ms)
+ 36/102: Method: inst_15_flags_var_0
+ 37/102: 37/102: inst_15_flags_var_0 (DONE:33ms)
+ 37/102: Method: inst_16_values_var_0
+ 38/102: 38/102: inst_16_values_var_0 (DONE:53ms)
+ 38/102: Method: inst_16_flags_var_0
+ 39/102: 39/102: inst_16_flags_var_0 (DONE:26ms)
+ 39/102: Method: inst_17_values_var_0
+ 40/102: 40/102: inst_17_values_var_0 (DONE:63ms)
+ 40/102: Method: inst_17_flags_var_0
+ 41/102: 41/102: inst_17_flags_var_0 (DONE:24ms)
+ 41/102: Method: inst_18_values_var_0
+ 42/102: 42/102: inst_18_values_var_0 (DONE:60ms)
+ 42/102: Method: inst_18_flags_var_0
+ 43/102: 43/102: inst_18_flags_var_0 (DONE:26ms)
+ 43/102: Method: inst_19_values_var_0
+ 44/102: 44/102: inst_19_values_var_0 (DONE:30ms)
+ 44/102: Method: inst_19_flags_var_0
+ 45/102: 45/102: inst_19_flags_var_0 (DONE:29ms)
+ 45/102: Method: inst_20_values_var_0
+ 46/102: 46/102: inst_20_values_var_0 (DONE:57ms)
+ 46/102: Method: inst_20_flags_var_0
+ 47/102: 47/102: inst_20_flags_var_0 (DONE:26ms)
+ 47/102: Method: inst_21_values_var_0
+ 48/102: 48/102: inst_21_values_var_0 (DONE:36ms)
+ 48/102: Method: inst_21_flags_var_0
+ 49/102: 49/102: inst_21_flags_var_0 (DONE:28ms)
+ 49/102: Method: inst_22_values_var_0
+ 50/102: 50/102: inst_22_values_var_0 (DONE:53ms)
+ 50/102: Method: inst_22_flags_var_0
+ 51/102: 51/102: inst_22_flags_var_0 (DONE:28ms)
+ 51/102: Method: inst_23_values_var_0
+ 52/102: 52/102: inst_23_values_var_0 (DONE:70ms)
+ 52/102: Method: inst_23_flags_var_0
+ 53/102: 53/102: inst_23_flags_var_0 (DONE:28ms)
+ 53/102: Method: inst_24_values_var_0
+ 54/102: 54/102: inst_24_values_var_0 (DONE:30ms)
+ 54/102: Method: inst_24_flags_var_0
+ 55/102: 55/102: inst_24_flags_var_0 (DONE:25ms)
+ 55/102: Method: inst_25_values_var_0
+ 56/102: 56/102: inst_25_values_var_0 (DONE:49ms)
+ 56/102: Method: inst_25_flags_var_0
+ 57/102: 57/102: inst_25_flags_var_0 (DONE:27ms)
+ 57/102: Method: inst_26_values_var_0
+ 58/102: 58/102: inst_26_values_var_0 (DONE:64ms)
+ 58/102: Method: inst_26_flags_var_0
+ 59/102: 59/102: inst_26_flags_var_0 (DONE:25ms)
+ 59/102: Method: inst_27_values_var_0
+ 60/102: 60/102: inst_27_values_var_0 (DONE:49ms)
+ 60/102: Method: inst_27_flags_var_0
+ 61/102: 61/102: inst_27_flags_var_0 (DONE:24ms)
+ 61/102: Method: inst_28_values_var_0
+ 62/102: 62/102: inst_28_values_var_0 (DONE:50ms)
+ 62/102: Method: inst_28_flags_var_0
+ 63/102: 63/102: inst_28_flags_var_0 (DONE:23ms)
+ 63/102: Method: inst_29_values_var_0
+ 64/102: 64/102: inst_29_values_var_0 (DONE:65ms)
+ 64/102: Method: inst_29_flags_var_0
+ 65/102: 65/102: inst_29_flags_var_0 (DONE:28ms)
+ 65/102: Method: inst_30_values_var_0
+ 66/102: 66/102: inst_30_values_var_0 (DONE:65ms)
+ 66/102: Method: inst_30_flags_var_0
+ 67/102: 67/102: inst_30_flags_var_0 (DONE:32ms)
+ 67/102: Method: inst_31_values_var_0
+ 68/102: 68/102: inst_31_values_var_0 (DONE:63ms)
+ 68/102: Method: inst_31_flags_var_0
+ 69/102: 69/102: inst_31_flags_var_0 (DONE:24ms)
+ 69/102: Method: inst_32_values_var_0
+ 70/102: 70/102: inst_32_values_var_0 (DONE:66ms)
+ 70/102: Method: inst_32_flags_var_0
+ 71/102: 71/102: inst_32_flags_var_0 (DONE:24ms)
+ 71/102: Method: inst_33_values_var_0
+ 72/102: 72/102: inst_33_values_var_0 (DONE:63ms)
+ 72/102: Method: inst_33_flags_var_0
+ 73/102: 73/102: inst_33_flags_var_0 (DONE:24ms)
+ 73/102: Method: inst_34_values_var_0
+ 74/102: 74/102: inst_34_values_var_0 (DONE:63ms)
+ 74/102: Method: inst_34_flags_var_0
+ 75/102: 75/102: inst_34_flags_var_0 (DONE:24ms)
+ 75/102: Method: inst_35_values_var_0
+ 76/102: 76/102: inst_35_values_var_0 (DONE:68ms)
+ 76/102: Method: inst_35_flags_var_0
+ 77/102: 77/102: inst_35_flags_var_0 (DONE:24ms)
+ 77/102: Method: inst_36_values_var_0
+ 78/102: 78/102: inst_36_values_var_0 (DONE:63ms)
+ 78/102: Method: inst_36_flags_var_0
+ 79/102: 79/102: inst_36_flags_var_0 (DONE:25ms)
+ 79/102: Method: inst_37_values_var_0
+ 80/102: 80/102: inst_37_values_var_0 (DONE:62ms)
+ 80/102: Method: inst_37_flags_var_0
+ 81/102: 81/102: inst_37_flags_var_0 (DONE:23ms)
+ 81/102: Method: inst_38_values_var_0
+ 82/102: 82/102: inst_38_values_var_0 (DONE:65ms)
+ 82/102: Method: inst_38_flags_var_0
+ 83/102: 83/102: inst_38_flags_var_0 (DONE:24ms)
+ 83/102: Method: inst_39_values_var_0
+ 84/102: 84/102: inst_39_values_var_0 (DONE:34ms)
+ 84/102: Method: inst_39_flags_var_0
+ 85/102: 85/102: inst_39_flags_var_0 (DONE:28ms)
+ 85/102: Method: inst_40_values_var_0
+ 86/102: 86/102: inst_40_values_var_0 (DONE:35ms)
+ 86/102: Method: inst_40_flags_var_0
+ 87/102: 87/102: inst_40_flags_var_0 (DONE:25ms)
+ 87/102: Method: inst_41_values_var_0
+ 88/102: 88/102: inst_41_values_var_0 (DONE:33ms)
+ 88/102: Method: inst_41_flags_var_0
+ 89/102: 89/102: inst_41_flags_var_0 (DONE:25ms)
+ 89/102: Method: sub_40134D
+ 90/102: 90/102: sub_40134D (DONE:12ms)
+ 90/102: Method: sub_40138F
+ 91/102: 91/102: sub_40138F (DONE:19ms)
+ 91/102: Method: deregister_tm_clones
+ 92/102: 92/102: deregister_tm_clones (DONE:7ms)
+ 92/102: Method: register_tm_clones
+ 93/102: 93/102: register_tm_clones (DONE:31ms)
+ 93/102: Method: sub_4013BD
+ 94/102: 94/102: sub_4013BD (DONE:10ms)
+ 94/102: Method: initializer_1
+ 95/102: 95/102: initializer_1 (DONE:6ms)
+ 95/102: Method: _dl_relocate_static_pie
+ 96/102: 96/102: _dl_relocate_static_pie (DONE:3ms)
+ 96/102: Method: __libc_csu_fini
+ 97/102: 97/102: __libc_csu_fini (DONE:3ms)
+ 97/102: Method: finalizer_0
+ 98/102: 98/102: finalizer_0 (DONE:7ms)
+ 98/102: Method: main
+ 99/102: 99/102: main (DONE:362594ms)
+ 99/102: Method: finalizer_1
+100/102: 100/102: finalizer_1 (DONE:11ms)
+100/102: Method: __libc_csu_init
+101/102: 101/102: __libc_csu_init (DONE:107ms)
+101/102: Method: _start
+102/102: 102/102: _start (DONE:22ms)
+1/1 DECOMPILATION ERROR: METHOD main: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 362592 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 368.073000 sec
+[I] Done.

@@ -1,0 +1,64 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/fizzbuzz/answer_from_toby-speight/x64_elf/subject.exe...
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 24 methods
+Output folder: jeb_output
+  0/ 24: Method: sub_4012C0
+  1/ 24: 1/24: sub_4012C0 (DONE:42ms)
+  1/ 24: Method: sub_401300
+  2/ 24: 2/24: sub_401300 (DONE:6ms)
+  2/ 24: Method: initializer_0
+  3/ 24: 3/24: initializer_0 (DONE:101ms)
+  3/ 24: Method: sub_401026
+  4/ 24: 4/24: sub_401026 (DONE:14ms)
+  4/ 24: Method: →write
+  5/ 24: 5/24: →write (DONE:32ms)
+  5/ 24: Method: sub_401330
+  6/ 24: 6/24: sub_401330 (DONE:5ms)
+  6/ 24: Method: sub_4012AD
+  7/ 24: 7/24: sub_4012AD (DONE:19ms)
+  7/ 24: Method: sub_4012EF
+  8/ 24: 8/24: sub_4012EF (DONE:14ms)
+  8/ 24: Method: →omp_get_thread_num
+  9/ 24: 9/24: →omp_get_thread_num (DONE:14ms)
+  9/ 24: Method: →omp_get_num_threads
+ 10/ 24: 10/24: →omp_get_num_threads (DONE:12ms)
+ 10/ 24: Method: →sprintf
+ 11/ 24: 11/24: →sprintf (DONE:12ms)
+ 11/ 24: Method: →GOMP_parallel
+ 12/ 24: 12/24: →GOMP_parallel (DONE:11ms)
+ 12/ 24: Method: deregister_tm_clones
+ 13/ 24: 13/24: deregister_tm_clones (DONE:13ms)
+ 13/ 24: Method: register_tm_clones
+ 14/ 24: 14/24: register_tm_clones (DONE:42ms)
+ 14/ 24: Method: sub_40131D
+ 15/ 24: 15/24: sub_40131D (DONE:12ms)
+ 15/ 24: Method: initializer_1
+ 16/ 24: 16/24: initializer_1 (DONE:7ms)
+ 16/ 24: Method: _dl_relocate_static_pie
+ 17/ 24: 17/24: _dl_relocate_static_pie (DONE:3ms)
+ 17/ 24: Method: __libc_csu_fini
+ 18/ 24: 18/24: __libc_csu_fini (DONE:3ms)
+ 18/ 24: Method: finalizer_0
+ 19/ 24: 19/24: finalizer_0 (DONE:16ms)
+ 19/ 24: Method: main._omp_fn.0
+ 20/ 24: 20/24: main._omp_fn.0 (DONE:399ms)
+ 20/ 24: Method: main
+ 21/ 24: 21/24: main (DONE:260ms)
+ 21/ 24: Method: finalizer_1
+ 22/ 24: 22/24: finalizer_1 (DONE:10ms)
+ 22/ 24: Method: __libc_csu_init
+ 23/ 24: 23/24: __libc_csu_init (DONE:115ms)
+ 23/ 24: Method: _start
+ 24/ 24: 24/24: _start (DONE:63ms)
+Exectime: 1.841000 sec
+[I] Done.

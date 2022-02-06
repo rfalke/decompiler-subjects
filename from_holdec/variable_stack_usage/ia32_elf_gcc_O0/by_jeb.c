@@ -1,6 +1,8 @@
 
-void* fill(void* __s, int param1) {
-    return →memset(__s, 120, (size_t)(param1 * 4));
+int fill(int param0, int param1) {
+    int result;
+    →memset(param0, 120, param1 * 4);
+    return result;
 }
 
 int main(int param0) {
@@ -9,12 +11,33 @@ int main(int param0) {
     return 0;
 }
 
-void sub_80482D0() {
-    jump gvar_804A008;
+int sub_80482D6() {
+    return gvar_804A008();
 }
 
-void sub_8048300() {
-    jump __gmon_start__;
+int sub_8048300() {
+    return __gmon_start__();
+}
+
+int sub_804835F() {
+    return 0;
+}
+
+void sub_8048398() {
+}
+
+int sub_80483C9() {
+    int v0;
+    int v1 = v0;
+    deregister_tm_clones();
+    completed.6532 = 1;
+}
+
+void sub_80483DC() {
+}
+
+int sub_80483F0() {
+    return register_tm_clones();
 }
 
 unsigned int use(int* param0) {
@@ -26,22 +49,24 @@ unsigned int use(int* param0) {
 unsigned int with_alloca(int param0) {
     char v0;
     int v1 = 7;
-    void* __s = (void*)((int)(int*)((int)&v0 >>> 4) * 16);
-    int v2 = 8;
-    fill(__s, param0);
+    int v2 = (int)(int*)((int)&v0 >>> 4) * 16;
+    int v3 = 8;
+    fill(v2, param0);
     use(&v1);
-    use((int*)__s);
-    return use(&v2);
+    use((int*)v2);
+    return use(&v3);
 }
 
 unsigned int with_array(int param0) {
     char v0;
-    int v1 = 7;
-    int v2 = param0 - 1;
-    void* __s = (void*)((int)(int*)((int)&v0 >>> 2) * 4);
-    int v3 = 8;
-    fill(__s, param0);
-    use(&v1);
-    use((int*)__s);
-    return use(&v3);
+    int v1;
+    int v2 = v1;
+    int v3 = 7;
+    int v4 = param0 - 1;
+    int v5 = (int)(int*)((int)&v0 >>> 2) * 4;
+    int v6 = 8;
+    fill(v5, param0);
+    use(&v3);
+    use((int*)v5);
+    return use(&v6);
 }

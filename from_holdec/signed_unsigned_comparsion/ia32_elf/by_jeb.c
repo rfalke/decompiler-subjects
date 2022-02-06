@@ -1,29 +1,41 @@
 
 int main() {
-    int v0;
-    int v1;
-    char v2;
-    int v3;
-    int v4 = v0;
-    int v5 = v1;
-    int* ptr0 = &v2;
-    int v6 = 0;
+    unsigned int v0 = 0;
     do {
-        int v7 = v3;
-        int v8 = v3;
-        int v9 = v6;
-        int v10 = v6;
-        ++v6;
-        v3 = f(v10, v9);
+        unsigned int v1 = v0;
+        unsigned int v2 = v0;
+        ++v0;
+        int v3 = f((int)v2, (int)v1);
     }
-    while(v6 != 10);
+    while(v0 != 10);
     return 0;
 }
 
-void sub_80482D0() {
-    jump gvar_804A008;
+int sub_80482D6() {
+    return gvar_804A008();
 }
 
-void sub_8048300() {
-    jump __gmon_start__;
+int sub_8048300() {
+    return __gmon_start__();
+}
+
+int sub_804838F() {
+    return 0;
+}
+
+void sub_80483C8() {
+}
+
+int sub_80483F9() {
+    int v0;
+    int v1 = v0;
+    deregister_tm_clones();
+    completed.6532 = 1;
+}
+
+void sub_804840C() {
+}
+
+int sub_8048420() {
+    return register_tm_clones();
 }

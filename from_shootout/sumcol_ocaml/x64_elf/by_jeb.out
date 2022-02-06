@@ -1,97 +1,42 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_shootout/sumcol_ocaml/x64_elf/subject.exe...
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (1717 internal methods created)
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (44s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 1463 methods
 Output folder: jeb_output
-  0/1717: Method: caml_c_call
-  1/1717: 1/1717: caml_c_call (DONE:160ms)
-  1/1717: Method: caml_call_gc
-  2/1717: 2/1717: caml_call_gc (DONE:27ms)
-  2/1717: Method: sub_408CE0
-  3/1717: 3/1717: sub_408CE0 (DONE:22ms)
-  3/1717: Method: caml_ml_array_bound_error
-  4/1717: 4/1717: caml_ml_array_bound_error (DONE:37ms)
-  4/1717: Method: caml_apply2
-  5/1717: 5/1717: caml_apply2 (DONE:90ms)
-  5/1717: Method: caml_page_table_lookup
-  6/1717: 6/1717: caml_page_table_lookup (DONE:148ms)
-  6/1717: Method: caml_apply3
-  7/1717: 7/1717: caml_apply3 (DONE:112ms)
-  7/1717: Method: caml_string_length
-  8/1717: 8/1717: caml_string_length (DONE:35ms)
-  8/1717: Method: camlPervasives__output_string_215
-  9/1717: 9/1717: camlPervasives__output_string_215 (DONE:65ms)
-  9/1717: Method: caml_convert_flag_list
- 10/1717: 10/1717: caml_convert_flag_list (DONE:62ms)
- 10/1717: Method: camlList__rev_append_79
- 11/1717: 11/1717: camlList__rev_append_79 (DONE:134ms)
- 11/1717: Method: camlPervasives__exit_350
- 12/1717: 12/1717: camlPervasives__exit_350 (DONE:117ms)
- 12/1717: Method: camlPervasives__string_of_int_154
- 13/1717: 13/1717: camlPervasives__string_of_int_154 (DONE:36ms)
- 13/1717: Method: camlList__iter_102
- 14/1717: 14/1717: camlList__iter_102 (DONE:71ms)
- 14/1717: Method: caml_iterate_global_roots
- 15/1717: 15/1717: caml_iterate_global_roots (DONE:76ms)
- 15/1717: Method: camlList__mem_189
- 16/1717: 16/1717: camlList__mem_189 (DONE:61ms)
- 16/1717: Method: cst_to_constr
- 17/1717: 17/1717: cst_to_constr (DONE:78ms)
- 17/1717: Method: caml_urge_major_slice
- 18/1717: 18/1717: caml_urge_major_slice (DONE:19ms)
- 18/1717: Method: allocate_block
- 19/1717: 19/1717: allocate_block (DONE:185ms)
- 19/1717: Method: caml_string_equal
- 20/1717: 20/1717: caml_string_equal (DONE:63ms)
- 20/1717: Method: caml_string_compare
- 21/1717: 21/1717: caml_string_compare (DONE:163ms)
- 21/1717: Method: caml_MD5Transform
- 22/1717: 22/1717: caml_MD5Transform (DONE:122028ms)
-Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
-	at com.pnfsoftware.jebglobal.hG.Vo(SourceFile:225)
-	at com.pnfsoftware.jebglobal.hG.duplicate(SourceFile:34)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.xK.Vo(SourceFile:656)
-	at com.pnfsoftware.jebglobal.xK.duplicate(SourceFile:53)
-	at com.pnfsoftware.jebglobal.QH.XP(SourceFile:253)
-	at com.pnfsoftware.jebglobal.QH.duplicate(SourceFile:49)
+  0/1463: Method: caml_c_call
+  1/1463: 1/1463: caml_c_call (DONE:97ms)
+  1/1463: Method: caml_ml_array_bound_error
+  2/1463: 2/1463: caml_ml_array_bound_error (DONE:24ms)
+  2/1463: Method: caml_apply2
+  3/1463: 3/1463: caml_apply2 (DONE:78ms)
+  3/1463: Method: caml_string_length
+  4/1463: 4/1463: caml_string_length (DONE:18ms)
+  4/1463: Method: camlPervasives__output_string_215
+  5/1463: 5/1463: camlPervasives__output_string_215 (DONE:36ms)
+  5/1463: Method: caml_convert_flag_list
+  6/1463: 6/1463: caml_convert_flag_list (DONE:33ms)
+  6/1463: Method: camlPervasives__exit_350
+  7/1463: 7/1463: camlPervasives__exit_350 (DONE:28ms)
+  7/1463: Method: caml_apply3
+  8/1463: 8/1463: caml_apply3 (DONE:65ms)
+  8/1463: Method: camlPervasives__string_of_int_154
+  9/1463: 9/1463: camlPervasives__string_of_int_154 (DONE:18ms)
+  9/1463: Method: camlList__iter_102
+ 10/1463: 10/1463: camlList__iter_102 (DONE:33ms)
+ 10/1463: Method: caml_iterate_global_roots
+ 11/1463: 11/1463: caml_iterate_global_roots (DONE:35ms)
+ 11/1463: Method: camlList__mem_189
+ 12/1463: 12/1463: camlList__mem_189 (DONE:41ms)
+ 12/1463: Method: caml_urge_major_slice
+ 13/1463: 13/1463: caml_urge_major_slice (DONE:4ms)
+ 13/1463: Method: caml_MD5Transform
+
+=== Killed because of time limit

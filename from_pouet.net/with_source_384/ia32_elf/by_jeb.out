@@ -1,153 +1,93 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_384/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (65 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 39 methods
 Output folder: jeb_output
-  0/ 65: Method: sub_80487A4
-  1/ 65: 1/65: sub_80487A4 (DONE:84ms)
-  1/ 65: Method: sub_8048990
-  2/ 65: 2/65: sub_8048990 (DONE:236ms)
-  2/ 65: Method: sub_80489C0
-  3/ 65: 3/65: sub_80489C0 (DONE:54ms)
-  3/ 65: Method: sub_804940A
-  4/ 65: 4/65: sub_804940A (DONE:22ms)
-  4/ 65: Method: sub_8049410
-  5/ 65: 5/65: sub_8049410 (DONE:177ms)
-  5/ 65: Method: sub_80487BA
-  6/ 65: 6/65: sub_80487BA (DONE:19ms)
-  6/ 65: Method: sub_80487B4
-  7/ 65: 7/65: sub_80487B4 (DONE:16ms)
-  7/ 65: Method: sub_80487CA
-  8/ 65: 8/65: sub_80487CA (DONE:17ms)
-  8/ 65: Method: sub_80487C4
-  9/ 65: 9/65: sub_80487C4 (DONE:30ms)
-  9/ 65: Method: sub_80487DA
- 10/ 65: 10/65: sub_80487DA (DONE:15ms)
- 10/ 65: Method: sub_80487EA
- 11/ 65: 11/65: sub_80487EA (DONE:12ms)
- 11/ 65: Method: sub_80487FA
- 12/ 65: 12/65: sub_80487FA (DONE:13ms)
- 12/ 65: Method: sub_804880A
- 13/ 65: 13/65: sub_804880A (DONE:16ms)
- 13/ 65: Method: sub_8048804
- 14/ 65: 14/65: sub_8048804 (DONE:13ms)
- 14/ 65: Method: sub_804881A
- 15/ 65: 15/65: sub_804881A (DONE:16ms)
- 15/ 65: Method: sub_804882A
- 16/ 65: 16/65: sub_804882A (DONE:27ms)
- 16/ 65: Method: sub_804883A
- 17/ 65: 17/65: sub_804883A (DONE:17ms)
- 17/ 65: Method: sub_804884A
- 18/ 65: 18/65: sub_804884A (DONE:13ms)
- 18/ 65: Method: sub_804885A
- 19/ 65: 19/65: sub_804885A (DONE:13ms)
- 19/ 65: Method: sub_804886A
- 20/ 65: 20/65: sub_804886A (DONE:10ms)
- 20/ 65: Method: sub_804887A
- 21/ 65: 21/65: sub_804887A (DONE:11ms)
- 21/ 65: Method: sub_804888A
- 22/ 65: 22/65: sub_804888A (DONE:11ms)
- 22/ 65: Method: sub_804889A
- 23/ 65: 23/65: sub_804889A (DONE:13ms)
- 23/ 65: Method: sub_80488AA
- 24/ 65: 24/65: sub_80488AA (DONE:11ms)
- 24/ 65: Method: sub_80488A4
- 25/ 65: 25/65: sub_80488A4 (DONE:28ms)
- 25/ 65: Method: sub_80488BA
- 26/ 65: 26/65: sub_80488BA (DONE:15ms)
- 26/ 65: Method: sub_80488CA
- 27/ 65: 27/65: sub_80488CA (DONE:12ms)
- 27/ 65: Method: sub_80488C4
- 28/ 65: 28/65: sub_80488C4 (DONE:15ms)
- 28/ 65: Method: sub_80488DA
- 29/ 65: 29/65: sub_80488DA (DONE:14ms)
- 29/ 65: Method: sub_80488D4
- 30/ 65: 30/65: sub_80488D4 (DONE:12ms)
- 30/ 65: Method: sub_80488EA
- 31/ 65: 31/65: sub_80488EA (DONE:13ms)
- 31/ 65: Method: sub_80488FA
- 32/ 65: 32/65: sub_80488FA (DONE:21ms)
- 32/ 65: Method: sub_804890A
- 33/ 65: 33/65: sub_804890A (DONE:23ms)
- 33/ 65: Method: sub_804891A
- 34/ 65: 34/65: sub_804891A (DONE:12ms)
- 34/ 65: Method: sub_8048914
- 35/ 65: 35/65: sub_8048914 (DONE:15ms)
- 35/ 65: Method: sub_804892A
- 36/ 65: 36/65: sub_804892A (DONE:9ms)
- 36/ 65: Method: sub_804893A
- 37/ 65: 37/65: sub_804893A (DONE:7ms)
- 37/ 65: Method: sub_804894A
- 38/ 65: 38/65: sub_804894A (DONE:7ms)
- 38/ 65: Method: sub_80487D4
- 39/ 65: 39/65: sub_80487D4 (DONE:12ms)
- 39/ 65: Method: sub_80487E4
- 40/ 65: 40/65: sub_80487E4 (DONE:10ms)
- 40/ 65: Method: sub_80487F4
- 41/ 65: 41/65: sub_80487F4 (DONE:8ms)
- 41/ 65: Method: sub_8048814
- 42/ 65: 42/65: sub_8048814 (DONE:8ms)
- 42/ 65: Method: sub_8048824
- 43/ 65: 43/65: sub_8048824 (DONE:7ms)
- 43/ 65: Method: sub_8048834
- 44/ 65: 44/65: sub_8048834 (DONE:13ms)
- 44/ 65: Method: sub_8048844
- 45/ 65: 45/65: sub_8048844 (DONE:11ms)
- 45/ 65: Method: sub_8048854
- 46/ 65: 46/65: sub_8048854 (DONE:7ms)
- 46/ 65: Method: sub_8048864
- 47/ 65: 47/65: sub_8048864 (DONE:8ms)
- 47/ 65: Method: sub_8048874
- 48/ 65: 48/65: sub_8048874 (DONE:12ms)
- 48/ 65: Method: sub_8048884
- 49/ 65: 49/65: sub_8048884 (DONE:10ms)
- 49/ 65: Method: sub_8048894
- 50/ 65: 50/65: sub_8048894 (DONE:16ms)
- 50/ 65: Method: sub_80488B4
- 51/ 65: 51/65: sub_80488B4 (DONE:11ms)
- 51/ 65: Method: sub_80488E4
- 52/ 65: 52/65: sub_80488E4 (DONE:7ms)
- 52/ 65: Method: sub_80488F4
- 53/ 65: 53/65: sub_80488F4 (DONE:11ms)
- 53/ 65: Method: sub_8048904
- 54/ 65: 54/65: sub_8048904 (DONE:11ms)
- 54/ 65: Method: sub_8048924
- 55/ 65: 55/65: sub_8048924 (DONE:20ms)
- 55/ 65: Method: sub_8048934
- 56/ 65: 56/65: sub_8048934 (DONE:9ms)
- 56/ 65: Method: sub_8048944
- 57/ 65: 57/65: sub_8048944 (DONE:16ms)
- 57/ 65: Method: sub_80493A0
- 58/ 65: 58/65: sub_80493A0 (DONE:13ms)
- 58/ 65: Method: start
- 59/ 65: 59/65: start (DONE:38ms)
- 59/ 65: Method: initializer_0
- 60/ 65: 60/65: initializer_0 (DONE:75ms)
- 60/ 65: Method: sub_80493B0
- 61/ 65: 61/65: sub_80493B0 (DONE:92ms)
- 61/ 65: Method: finalizer_0
- 62/ 65: 62/65: finalizer_0 (DONE:43ms)
- 62/ 65: Method: sub_804922C
- 63/ 65: 63/65: sub_804922C (DONE:566ms)
- 63/ 65: Method: sub_80489E4
- 64/ 65: 64/65: sub_80489E4 (DONE:4842ms)
- 64/ 65: Method: sub_804908A
- 65/ 65: 65/65: sub_804908A (DONE:394ms)
-Exectime: 10.420000 sec
-Done.
+  0/ 39: Method: sub_80487AA
+  1/ 39: 1/39: sub_80487AA (DONE:67ms)
+  1/ 39: Method: →cosf
+  2/ 39: 2/39: →cosf (DONE:27ms)
+  2/ 39: Method: →sinf
+  3/ 39: 3/39: →sinf (DONE:24ms)
+  3/ 39: Method: →glEnable
+  4/ 39: 4/39: →glEnable (DONE:13ms)
+  4/ 39: Method: →glEnableClientState
+  5/ 39: 5/39: →glEnableClientState (DONE:9ms)
+  5/ 39: Method: →SDL_ShowCursor
+  6/ 39: 6/39: →SDL_ShowCursor (DONE:9ms)
+  6/ 39: Method: →glDrawElements
+  7/ 39: 7/39: →glDrawElements (DONE:11ms)
+  7/ 39: Method: →glColor4f
+  8/ 39: 8/39: →glColor4f (DONE:9ms)
+  8/ 39: Method: sub_8048990
+  9/ 39: 9/39: sub_8048990 (DONE:77ms)
+  9/ 39: Method: sub_80489C0
+ 10/ 39: 10/39: sub_80489C0 (DONE:25ms)
+ 10/ 39: Method: sub_804940A
+ 11/ 39: 11/39: sub_804940A (DONE:3ms)
+ 11/ 39: Method: sub_8049410
+ 12/ 39: 12/39: sub_8049410 (DONE:71ms)
+ 12/ 39: Method: →glMatrixMode
+ 13/ 39: 13/39: →glMatrixMode (DONE:7ms)
+ 13/ 39: Method: →__gmon_start__
+ 14/ 39: 14/39: →__gmon_start__ (DONE:7ms)
+ 14/ 39: Method: →glClear
+ 15/ 39: 15/39: →glClear (DONE:7ms)
+ 15/ 39: Method: →SDL_PollEvent
+ 16/ 39: 16/39: →SDL_PollEvent (DONE:7ms)
+ 16/ 39: Method: →__libc_start_main
+ 17/ 39: 17/39: →__libc_start_main (DONE:8ms)
+ 17/ 39: Method: →SDL_GL_SwapBuffers
+ 18/ 39: 18/39: →SDL_GL_SwapBuffers (DONE:10ms)
+ 18/ 39: Method: →glLoadIdentity
+ 19/ 39: 19/39: →glLoadIdentity (DONE:7ms)
+ 19/ 39: Method: →glClearColor
+ 20/ 39: 20/39: →glClearColor (DONE:7ms)
+ 20/ 39: Method: →SDL_SetVideoMode
+ 21/ 39: 21/39: →SDL_SetVideoMode (DONE:7ms)
+ 21/ 39: Method: →glNormalPointer
+ 22/ 39: 22/39: →glNormalPointer (DONE:6ms)
+ 22/ 39: Method: →SDL_Init
+ 23/ 39: 23/39: →SDL_Init (DONE:6ms)
+ 23/ 39: Method: →memcpy
+ 24/ 39: 24/39: →memcpy (DONE:9ms)
+ 24/ 39: Method: →glOrtho
+ 25/ 39: 25/39: →glOrtho (DONE:6ms)
+ 25/ 39: Method: →glRotatef
+ 26/ 39: 26/39: →glRotatef (DONE:6ms)
+ 26/ 39: Method: →glLightfv
+ 27/ 39: 27/39: →glLightfv (DONE:6ms)
+ 27/ 39: Method: →glPushMatrix
+ 28/ 39: 28/39: →glPushMatrix (DONE:7ms)
+ 28/ 39: Method: →SDL_Quit
+ 29/ 39: 29/39: →SDL_Quit (DONE:6ms)
+ 29/ 39: Method: →glVertexPointer
+ 30/ 39: 30/39: →glVertexPointer (DONE:12ms)
+ 30/ 39: Method: →glPopMatrix
+ 31/ 39: 31/39: →glPopMatrix (DONE:9ms)
+ 31/ 39: Method: sub_80493A0
+ 32/ 39: 32/39: sub_80493A0 (DONE:5ms)
+ 32/ 39: Method: start
+ 33/ 39: 33/39: start (DONE:38ms)
+ 33/ 39: Method: initializer_0
+ 34/ 39: 34/39: initializer_0 (DONE:48ms)
+ 34/ 39: Method: sub_80493B0
+ 35/ 39: 35/39: sub_80493B0 (DONE:91ms)
+ 35/ 39: Method: finalizer_0
+ 36/ 39: 36/39: finalizer_0 (DONE:23ms)
+ 36/ 39: Method: sub_8049236
+ 37/ 39: 37/39: sub_8049236 (DONE:498ms)
+ 37/ 39: Method: sub_80489E4
+ 38/ 39: 38/39: sub_80489E4 (DONE:7019ms)
+ 38/ 39: Method: sub_804908A
+ 39/ 39: 39/39: sub_804908A (DONE:256ms)
+Exectime: 9.474000 sec
+[I] Done.

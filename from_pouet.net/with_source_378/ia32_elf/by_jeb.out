@@ -1,97 +1,74 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_378/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (37 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 27 methods
 Output folder: jeb_output
-  0/ 37: Method: sub_8048440
-  1/ 37: 1/37: sub_8048440 (DONE:115ms)
-  1/ 37: Method: sub_804888C
-  2/ 37: 2/37: sub_804888C (DONE:32ms)
-  2/ 37: Method: SDL_GetTicks
-  3/ 37: 3/37: SDL_GetTicks (DONE:17ms)
-  3/ 37: Method: sub_80486E2
-  4/ 37: 4/37: sub_80486E2 (DONE:139ms)
-  4/ 37: Method: sub_8048706
-  5/ 37: 5/37: sub_8048706 (DONE:56ms)
-  5/ 37: Method: sub_8048A31
-  6/ 37: 6/37: sub_8048A31 (DONE:1067ms)
-  6/ 37: Method: SDL_Quit
-  7/ 37: 7/37: SDL_Quit (DONE:10ms)
-  7/ 37: Method: dlsym
-  8/ 37: 8/37: dlsym (DONE:11ms)
-  8/ 37: Method: SDL_PauseAudio
-  9/ 37: 9/37: SDL_PauseAudio (DONE:9ms)
-  9/ 37: Method: SDL_OpenAudio
- 10/ 37: 10/37: SDL_OpenAudio (DONE:11ms)
- 10/ 37: Method: SDL_GL_SwapBuffers
- 11/ 37: 11/37: SDL_GL_SwapBuffers (DONE:8ms)
- 11/ 37: Method: SDL_Init
- 12/ 37: 12/37: SDL_Init (DONE:10ms)
- 12/ 37: Method: SDL_PollEvent
- 13/ 37: 13/37: SDL_PollEvent (DONE:8ms)
- 13/ 37: Method: SDL_ShowCursor
- 14/ 37: 14/37: SDL_ShowCursor (DONE:13ms)
- 14/ 37: Method: SDL_SetVideoMode
- 15/ 37: 15/37: SDL_SetVideoMode (DONE:13ms)
- 15/ 37: Method: dlopen
- 16/ 37: 16/37: dlopen (DONE:10ms)
- 16/ 37: Method: sub_804890C
- 17/ 37: 17/37: sub_804890C (DONE:31ms)
- 17/ 37: Method: sub_80489C8
- 18/ 37: 18/37: sub_80489C8 (DONE:180ms)
- 18/ 37: Method: sub_80491C0
- 19/ 37: 19/37: sub_80491C0 (DONE:197ms)
- 19/ 37: Method: sub_8048456
- 20/ 37: 20/37: sub_8048456 (DONE:17ms)
- 20/ 37: Method: sub_8048466
- 21/ 37: 21/37: sub_8048466 (DONE:15ms)
- 21/ 37: Method: sub_8048476
- 22/ 37: 22/37: sub_8048476 (DONE:19ms)
- 22/ 37: Method: sub_8048486
- 23/ 37: 23/37: sub_8048486 (DONE:13ms)
- 23/ 37: Method: sub_8048496
- 24/ 37: 24/37: sub_8048496 (DONE:12ms)
- 24/ 37: Method: sub_80484A6
- 25/ 37: 25/37: sub_80484A6 (DONE:22ms)
- 25/ 37: Method: sub_80484B6
- 26/ 37: 26/37: sub_80484B6 (DONE:18ms)
- 26/ 37: Method: sub_80484C6
- 27/ 37: 27/37: sub_80484C6 (DONE:13ms)
- 27/ 37: Method: sub_80484D6
- 28/ 37: 28/37: sub_80484D6 (DONE:16ms)
- 28/ 37: Method: sub_80484E6
- 29/ 37: 29/37: sub_80484E6 (DONE:16ms)
- 29/ 37: Method: sub_80484F6
- 30/ 37: 30/37: sub_80484F6 (DONE:16ms)
- 30/ 37: Method: sub_8048500
- 31/ 37: 31/37: sub_8048500 (DONE:1493ms)
- 31/ 37: Method: sub_8048891
- 32/ 37: 32/37: sub_8048891 (DONE:163ms)
- 32/ 37: Method: sub_80487CB
- 33/ 37: 33/37: sub_80487CB (DONE:193ms)
- 33/ 37: Method: sub_8048714
- 34/ 37: 34/37: sub_8048714 (DONE:285ms)
- 34/ 37: Method: start
- 35/ 37: 35/37: start (DONE:236ms)
- 35/ 37: Method: sub_8048B1E
- 36/ 37: 36/37: sub_8048B1E (DONE:1538ms)
- 36/ 37: Method: sub_8048E99
- 37/ 37: 37/37: sub_8048E99 (DONE:1455ms)
-Exectime: 10.431000 sec
-Done.
+  0/ 27: Method: →SDL_GetTicks
+  1/ 27: 1/27: →SDL_GetTicks (DONE:50ms)
+  1/ 27: Method: sub_80486E2
+  2/ 27: 2/27: sub_80486E2 (DONE:79ms)
+  2/ 27: Method: sub_8048706
+  3/ 27: 3/27: sub_8048706 (DONE:14ms)
+  3/ 27: Method: sub_8048A31
+  4/ 27: 4/27: sub_8048A31 (DONE:326ms)
+  4/ 27: Method: →SDL_Quit
+  5/ 27: 5/27: →SDL_Quit (DONE:5ms)
+  5/ 27: Method: →dlsym
+  6/ 27: 6/27: →dlsym (DONE:7ms)
+  6/ 27: Method: →SDL_PauseAudio
+  7/ 27: 7/27: →SDL_PauseAudio (DONE:4ms)
+  7/ 27: Method: →SDL_OpenAudio
+  8/ 27: 8/27: →SDL_OpenAudio (DONE:4ms)
+  8/ 27: Method: →SDL_GL_SwapBuffers
+  9/ 27: 9/27: →SDL_GL_SwapBuffers (DONE:4ms)
+  9/ 27: Method: →SDL_Init
+ 10/ 27: 10/27: →SDL_Init (DONE:3ms)
+ 10/ 27: Method: →SDL_PollEvent
+ 11/ 27: 11/27: →SDL_PollEvent (DONE:3ms)
+ 11/ 27: Method: →SDL_ShowCursor
+ 12/ 27: 12/27: →SDL_ShowCursor (DONE:4ms)
+ 12/ 27: Method: →SDL_SetVideoMode
+ 13/ 27: 13/27: →SDL_SetVideoMode (DONE:6ms)
+ 13/ 27: Method: →dlopen
+ 14/ 27: 14/27: →dlopen (DONE:3ms)
+ 14/ 27: Method: sub_804890C
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 15/ 27: 15/27: sub_804890C (DONE:11ms)
+ 15/ 27: Method: sub_80489FC
+ 16/ 27: 16/27: sub_80489FC (DONE:57ms)
+ 16/ 27: Method: sub_80491C0
+ 17/ 27: 17/27: sub_80491C0 (DONE:94ms)
+ 17/ 27: Method: sub_8048446
+ 18/ 27: 18/27: sub_8048446 (DONE:6ms)
+ 18/ 27: Method: sub_804888C
+ 19/ 27: 19/27: sub_804888C (DONE:2ms)
+ 19/ 27: Method: sub_8048891
+ 20/ 27: 20/27: sub_8048891 (DONE:111ms)
+ 20/ 27: Method: sub_8048714
+ 21/ 27: 21/27: sub_8048714 (DONE:292ms)
+ 21/ 27: Method: sub_80489C8
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 2E: Number of targets (1) differ from number of edges (0)
+ 22/ 27: 22/27: sub_80489C8 (DONE:42ms)
+ 22/ 27: Method: sub_8048500
+ 23/ 27: 23/27: sub_8048500 (DONE:967ms)
+ 23/ 27: Method: sub_80487CB
+ 24/ 27: 24/27: sub_80487CB (DONE:107ms)
+ 24/ 27: Method: start
+ 25/ 27: 25/27: start (DONE:140ms)
+ 25/ 27: Method: sub_8048B1E
+ 26/ 27: 26/27: sub_8048B1E (DONE:1001ms)
+ 26/ 27: Method: sub_8048E99
+ 27/ 27: 27/27: sub_8048E99 (DONE:1089ms)
+Exectime: 5.353000 sec
+[I] Done.

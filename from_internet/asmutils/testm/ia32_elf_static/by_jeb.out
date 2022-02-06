@@ -1,0 +1,430 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/testm/ia32_elf_static/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 211 methods
+Output folder: jeb_output
+  0/211: Method: atan2
+  1/211: 1/211: atan2 (DONE:131ms)
+  1/211: Method: fmod
+  2/211: 2/211: fmod (DONE:108ms)
+  2/211: Method: lrint
+  3/211: 3/211: lrint (DONE:32ms)
+  3/211: Method: frac
+  4/211: 4/211: frac (DONE:48ms)
+  4/211: Method: scalbn
+  5/211: 5/211: scalbn (DONE:22ms)
+  5/211: Method: llrint
+  6/211: 6/211: llrint (DONE:19ms)
+  6/211: Method: hypot
+  7/211: 7/211: hypot (DONE:121ms)
+  7/211: Method: fmax
+  8/211: 8/211: fmax (DONE:46ms)
+  8/211: Method: fmin
+  9/211: 9/211: fmin (DONE:53ms)
+  9/211: Method: sinh
+ 10/211: 10/211: sinh (DONE:290ms)
+ 10/211: Method: tanh
+ 11/211: 11/211: tanh (DONE:125ms)
+ 11/211: Method: expm1
+ 12/211: 12/211: expm1 (DONE:61ms)
+ 12/211: Method: Lpow2
+ 13/211: 13/211: Lpow2 (DONE:14ms)
+ 13/211: Method: pow
+ 14/211: 14/211: pow (DONE:265ms)
+ 14/211: Method: cbrt
+ 15/211: 15/211: cbrt (DONE:151ms)
+ 15/211: Method: exp
+ 16/211: 16/211: exp (DONE:57ms)
+ 16/211: Method: exp10
+ 17/211: 17/211: exp10 (DONE:38ms)
+ 17/211: Method: exp2
+ 18/211: 18/211: exp2 (DONE:50ms)
+ 18/211: Method: sqrt
+ 19/211: 19/211: sqrt (DONE:17ms)
+ 19/211: Method: cosh
+ 20/211: 20/211: cosh (DONE:83ms)
+ 20/211: Method: log
+ 21/211: 21/211: log (DONE:17ms)
+ 21/211: Method: log10
+ 22/211: 22/211: log10 (DONE:13ms)
+ 22/211: Method: log1p
+ 23/211: 23/211: log1p (DONE:14ms)
+ 23/211: Method: log2
+ 24/211: 24/211: log2 (DONE:18ms)
+ 24/211: Method: rint
+ 25/211: 25/211: rint (DONE:11ms)
+ 25/211: Method: scalb
+ 26/211: 26/211: scalb (DONE:525ms)
+ 26/211: Method: acosh
+ 27/211: 27/211: acosh (DONE:19ms)
+ 27/211: Method: asinh
+ 28/211: 28/211: asinh (DONE:34ms)
+ 28/211: Method: __x86.get_pc_thunk.bx
+ 29/211: 29/211: __x86.get_pc_thunk.bx (DONE:2ms)
+ 29/211: Method: sub_8049120
+ 30/211: 30/211: sub_8049120 (DONE:1ms)
+ 30/211: Method: sub_8049168
+ 31/211: 31/211: sub_8049168 (DONE:1ms)
+ 31/211: Method: powf
+ 32/211: 32/211: powf (DONE:136ms)
+ 32/211: Method: powl
+ 33/211: 33/211: powl (DONE:116ms)
+ 33/211: Method: sub_8049036
+ 34/211: 34/211: sub_8049036 (DONE:5ms)
+ 34/211: Method: →printf
+ 35/211: 35/211: →printf (DONE:9ms)
+ 35/211: Method: →putchar
+ 36/211: 36/211: →putchar (DONE:10ms)
+ 36/211: Method: sub_80490C7
+ 37/211: 37/211: sub_80490C7 (DONE:8ms)
+ 37/211: Method: sub_8049198
+ 38/211: 38/211: sub_8049198 (DONE:1ms)
+ 38/211: Method: __x86.get_pc_thunk.bp
+ 39/211: 39/211: __x86.get_pc_thunk.bp (DONE:2ms)
+ 39/211: Method: initializer_0
+ 40/211: 40/211: initializer_0 (DONE:18ms)
+ 40/211: Method: sub_80490FC
+ 41/211: 41/211: sub_80490FC (DONE:12ms)
+ 41/211: Method: sub_8049148
+ 42/211: 42/211: sub_8049148 (DONE:11ms)
+ 42/211: Method: →puts
+ 43/211: 43/211: →puts (DONE:6ms)
+ 43/211: Method: →exit
+ 44/211: 44/211: →exit (DONE:6ms)
+ 44/211: Method: →__libc_start_main
+ 45/211: 45/211: →__libc_start_main (DONE:5ms)
+ 45/211: Method: deregister_tm_clones
+ 46/211: 46/211: deregister_tm_clones (DONE:7ms)
+ 46/211: Method: register_tm_clones
+ 47/211: 47/211: register_tm_clones (DONE:36ms)
+ 47/211: Method: sub_804917D
+ 48/211: 48/211: sub_804917D (DONE:11ms)
+ 48/211: Method: initializer_1
+ 49/211: 49/211: initializer_1 (DONE:2ms)
+ 49/211: Method: _dl_relocate_static_pie
+ 50/211: 50/211: _dl_relocate_static_pie (DONE:2ms)
+ 50/211: Method: isnanf
+ 51/211: 51/211: isnanf (DONE:16ms)
+ 51/211: Method: isnan
+ 52/211: 52/211: isnan (DONE:25ms)
+ 52/211: Method: isnanl
+ 53/211: 53/211: isnanl (DONE:14ms)
+ 53/211: Method: isfinitef
+ 54/211: 54/211: isfinitef (DONE:19ms)
+ 54/211: Method: isfinite
+ 55/211: 55/211: isfinite (DONE:24ms)
+ 55/211: Method: isfinitel
+ 56/211: 56/211: isfinitel (DONE:12ms)
+ 56/211: Method: isnormalf
+ 57/211: 57/211: isnormalf (DONE:14ms)
+ 57/211: Method: isnormal
+ 58/211: 58/211: isnormal (DONE:22ms)
+ 58/211: Method: isnormall
+ 59/211: 59/211: isnormall (DONE:11ms)
+ 59/211: Method: isinff
+ 60/211: 60/211: isinff (DONE:33ms)
+ 60/211: Method: isinf
+ 61/211: 61/211: isinf (DONE:43ms)
+ 61/211: Method: isinfl
+ 62/211: 62/211: isinfl (DONE:26ms)
+ 62/211: Method: __fpclassifyf
+ 63/211: 63/211: __fpclassifyf (DONE:50ms)
+ 63/211: Method: __fpclassify
+ 64/211: 64/211: __fpclassify (DONE:51ms)
+ 64/211: Method: __fpclassifyl
+ 65/211: 65/211: __fpclassifyl (DONE:47ms)
+ 65/211: Method: isgreaterf
+ 66/211: 66/211: isgreaterf (DONE:11ms)
+ 66/211: Method: isgreater
+ 67/211: 67/211: isgreater (DONE:22ms)
+ 67/211: Method: isgreaterl
+ 68/211: 68/211: isgreaterl (DONE:7ms)
+ 68/211: Method: isgreaterequalf
+ 69/211: 69/211: isgreaterequalf (DONE:10ms)
+ 69/211: Method: isgreaterequal
+ 70/211: 70/211: isgreaterequal (DONE:19ms)
+ 70/211: Method: isgreaterequall
+ 71/211: 71/211: isgreaterequall (DONE:6ms)
+ 71/211: Method: islessf
+ 72/211: 72/211: islessf (DONE:9ms)
+ 72/211: Method: isless
+ 73/211: 73/211: isless (DONE:17ms)
+ 73/211: Method: islessl
+ 74/211: 74/211: islessl (DONE:6ms)
+ 74/211: Method: islessequalf
+ 75/211: 75/211: islessequalf (DONE:10ms)
+ 75/211: Method: islessequal
+ 76/211: 76/211: islessequal (DONE:18ms)
+ 76/211: Method: islessequall
+ 77/211: 77/211: islessequall (DONE:6ms)
+ 77/211: Method: islessgreaterf
+ 78/211: 78/211: islessgreaterf (DONE:10ms)
+ 78/211: Method: islessgreater
+ 79/211: 79/211: islessgreater (DONE:18ms)
+ 79/211: Method: islessgreaterl
+ 80/211: 80/211: islessgreaterl (DONE:6ms)
+ 80/211: Method: isunorderedf
+ 81/211: 81/211: isunorderedf (DONE:9ms)
+ 81/211: Method: isunordered
+ 82/211: 82/211: isunordered (DONE:18ms)
+ 82/211: Method: isunorderedl
+ 83/211: 83/211: isunorderedl (DONE:6ms)
+ 83/211: Method: acosf
+ 84/211: 84/211: acosf (DONE:9ms)
+ 84/211: Method: acos
+ 85/211: 85/211: acos (DONE:14ms)
+ 85/211: Method: acosl
+ 86/211: 86/211: acosl (DONE:7ms)
+ 86/211: Method: asinf
+ 87/211: 87/211: asinf (DONE:8ms)
+ 87/211: Method: asin
+ 88/211: 88/211: asin (DONE:18ms)
+ 88/211: Method: asinl
+ 89/211: 89/211: asinl (DONE:8ms)
+ 89/211: Method: atan2f
+ 90/211: 90/211: atan2f (DONE:5ms)
+ 90/211: Method: atan2l
+ 91/211: 91/211: atan2l (DONE:5ms)
+ 91/211: Method: expf
+ 92/211: 92/211: expf (DONE:22ms)
+ 92/211: Method: expl
+ 93/211: 93/211: expl (DONE:23ms)
+ 93/211: Method: exp10f
+ 94/211: 94/211: exp10f (DONE:23ms)
+ 94/211: Method: exp10l
+ 95/211: 95/211: exp10l (DONE:26ms)
+ 95/211: Method: fmodf
+ 96/211: 96/211: fmodf (DONE:9ms)
+ 96/211: Method: fmodl
+ 97/211: 97/211: fmodl (DONE:14ms)
+ 97/211: Method: hypotf
+ 98/211: 98/211: hypotf (DONE:38ms)
+ 98/211: Method: hypotl
+ 99/211: 99/211: hypotl (DONE:38ms)
+ 99/211: Method: logf
+100/211: 100/211: logf (DONE:5ms)
+100/211: Method: logl
+101/211: 101/211: logl (DONE:6ms)
+101/211: Method: log10f
+102/211: 102/211: log10f (DONE:6ms)
+102/211: Method: log10l
+103/211: 103/211: log10l (DONE:12ms)
+103/211: Method: remainderf
+104/211: 104/211: remainderf (DONE:9ms)
+104/211: Method: remainder
+105/211: 105/211: remainder (DONE:18ms)
+105/211: Method: remainderl
+106/211: 106/211: remainderl (DONE:9ms)
+106/211: Method: dremf
+107/211: 107/211: dremf (DONE:10ms)
+107/211: Method: drem
+108/211: 108/211: drem (DONE:19ms)
+108/211: Method: dreml
+109/211: 109/211: dreml (DONE:8ms)
+109/211: Method: sqrtf
+110/211: 110/211: sqrtf (DONE:4ms)
+110/211: Method: sqrtl
+111/211: 111/211: sqrtl (DONE:4ms)
+111/211: Method: atanf
+112/211: 112/211: atanf (DONE:4ms)
+112/211: Method: atan
+113/211: 113/211: atan (DONE:10ms)
+113/211: Method: atanl
+114/211: 114/211: atanl (DONE:5ms)
+114/211: Method: ceilf
+115/211: 115/211: ceilf (DONE:13ms)
+115/211: Method: ceil
+116/211: 116/211: ceil (DONE:21ms)
+116/211: Method: ceill
+117/211: 117/211: ceill (DONE:13ms)
+117/211: Method: copysignf
+118/211: 118/211: copysignf (DONE:23ms)
+118/211: Method: copysign
+119/211: 119/211: copysign (DONE:34ms)
+119/211: Method: copysignl
+120/211: 120/211: copysignl (DONE:31ms)
+120/211: Method: cosf
+121/211: 121/211: cosf (DONE:20ms)
+121/211: Method: cos
+122/211: 122/211: cos (DONE:25ms)
+122/211: Method: cosl
+123/211: 123/211: cosl (DONE:15ms)
+123/211: Method: sinf
+124/211: 124/211: sinf (DONE:15ms)
+124/211: Method: sin
+125/211: 125/211: sin (DONE:25ms)
+125/211: Method: sinl
+126/211: 126/211: sinl (DONE:15ms)
+126/211: Method: tanf
+127/211: 127/211: tanf (DONE:17ms)
+127/211: Method: tan
+128/211: 128/211: tan (DONE:31ms)
+128/211: Method: tanl
+129/211: 129/211: tanl (DONE:17ms)
+129/211: Method: exp2f
+130/211: 130/211: exp2f (DONE:26ms)
+130/211: Method: exp2l
+131/211: 131/211: exp2l (DONE:22ms)
+131/211: Method: fdimf
+132/211: 132/211: fdimf (DONE:5ms)
+132/211: Method: fdim
+133/211: 133/211: fdim (DONE:13ms)
+133/211: Method: fdiml
+134/211: 134/211: fdiml (DONE:7ms)
+134/211: Method: floorf
+135/211: 135/211: floorf (DONE:13ms)
+135/211: Method: floor
+136/211: 136/211: floor (DONE:15ms)
+136/211: Method: floorl
+137/211: 137/211: floorl (DONE:13ms)
+137/211: Method: fmaf
+138/211: 138/211: fmaf (DONE:4ms)
+138/211: Method: fma
+139/211: 139/211: fma (DONE:14ms)
+139/211: Method: fmal
+140/211: 140/211: fmal (DONE:5ms)
+140/211: Method: fmaxf
+141/211: 141/211: fmaxf (DONE:17ms)
+141/211: Method: fmaxl
+142/211: 142/211: fmaxl (DONE:18ms)
+142/211: Method: fminf
+143/211: 143/211: fminf (DONE:15ms)
+143/211: Method: fminl
+144/211: 144/211: fminl (DONE:21ms)
+144/211: Method: frexpf
+145/211: 145/211: frexpf (DONE:24ms)
+145/211: Method: frexp
+146/211: 146/211: frexp (DONE:28ms)
+146/211: Method: frexpl
+147/211: 147/211: frexpl (DONE:21ms)
+147/211: Method: ilogbf
+148/211: 148/211: ilogbf (DONE:9ms)
+148/211: Method: ilogb
+149/211: 149/211: ilogb (DONE:11ms)
+149/211: Method: ilogbl
+150/211: 150/211: ilogbl (DONE:10ms)
+150/211: Method: llrintf
+151/211: 151/211: llrintf (DONE:11ms)
+151/211: Method: llrintl
+152/211: 152/211: llrintl (DONE:11ms)
+152/211: Method: log1pf
+153/211: 153/211: log1pf (DONE:9ms)
+153/211: Method: log1pl
+154/211: 154/211: log1pl (DONE:6ms)
+154/211: Method: log2f
+155/211: 155/211: log2f (DONE:5ms)
+155/211: Method: log2l
+156/211: 156/211: log2l (DONE:5ms)
+156/211: Method: logbf
+157/211: 157/211: logbf (DONE:4ms)
+157/211: Method: logb
+158/211: 158/211: logb (DONE:10ms)
+158/211: Method: logbl
+159/211: 159/211: logbl (DONE:5ms)
+159/211: Method: lrintf
+160/211: 160/211: lrintf (DONE:7ms)
+160/211: Method: lrintl
+161/211: 161/211: lrintl (DONE:8ms)
+161/211: Method: rintf
+162/211: 162/211: rintf (DONE:4ms)
+162/211: Method: rintl
+163/211: 163/211: rintl (DONE:4ms)
+163/211: Method: scalbnf
+164/211: 164/211: scalbnf (DONE:5ms)
+164/211: Method: scalbnl
+165/211: 165/211: scalbnl (DONE:5ms)
+165/211: Method: ldexpf
+166/211: 166/211: ldexpf (DONE:5ms)
+166/211: Method: ldexp
+167/211: 167/211: ldexp (DONE:10ms)
+167/211: Method: ldexpl
+168/211: 168/211: ldexpl (DONE:4ms)
+168/211: Method: significandf
+169/211: 169/211: significandf (DONE:8ms)
+169/211: Method: significand
+170/211: 170/211: significand (DONE:10ms)
+170/211: Method: significandl
+171/211: 171/211: significandl (DONE:9ms)
+171/211: Method: sincosf
+172/211: 172/211: sincosf (DONE:12ms)
+172/211: Method: sincos
+173/211: 173/211: sincos (DONE:16ms)
+173/211: Method: sincosl
+174/211: 174/211: sincosl (DONE:6ms)
+174/211: Method: truncf
+175/211: 175/211: truncf (DONE:13ms)
+175/211: Method: trunc
+176/211: 176/211: trunc (DONE:14ms)
+176/211: Method: truncl
+177/211: 177/211: truncl (DONE:12ms)
+177/211: Method: fabsf
+178/211: 178/211: fabsf (DONE:3ms)
+178/211: Method: fabs
+179/211: 179/211: fabs (DONE:14ms)
+179/211: Method: fabsl
+180/211: 180/211: fabsl (DONE:4ms)
+180/211: Method: acoshf
+181/211: 181/211: acoshf (DONE:15ms)
+181/211: Method: acoshl
+182/211: 182/211: acoshl (DONE:14ms)
+182/211: Method: asinhf
+183/211: 183/211: asinhf (DONE:28ms)
+183/211: Method: asinhl
+184/211: 184/211: asinhl (DONE:35ms)
+184/211: Method: atanhf
+185/211: 185/211: atanhf (DONE:17ms)
+185/211: Method: atanh
+186/211: 186/211: atanh (DONE:21ms)
+186/211: Method: atanhl
+187/211: 187/211: atanhl (DONE:13ms)
+187/211: Method: coshf
+188/211: 188/211: coshf (DONE:63ms)
+188/211: Method: coshl
+189/211: 189/211: coshl (DONE:49ms)
+189/211: Method: sinhf
+190/211: 190/211: sinhf (DONE:161ms)
+190/211: Method: sinhl
+191/211: 191/211: sinhl (DONE:173ms)
+191/211: Method: tanhf
+192/211: 192/211: tanhf (DONE:84ms)
+192/211: Method: tanhl
+193/211: 193/211: tanhl (DONE:92ms)
+193/211: Method: nearbyintf
+194/211: 194/211: nearbyintf (DONE:12ms)
+194/211: Method: nearbyint
+195/211: 195/211: nearbyint (DONE:14ms)
+195/211: Method: nearbyintl
+196/211: 196/211: nearbyintl (DONE:12ms)
+196/211: Method: expm1f
+197/211: 197/211: expm1f (DONE:37ms)
+197/211: Method: expm1l
+198/211: 198/211: expm1l (DONE:30ms)
+198/211: Method: __libc_csu_fini
+199/211: 199/211: __libc_csu_fini (DONE:1ms)
+199/211: Method: pow10f
+200/211: 200/211: pow10f (DONE:21ms)
+200/211: Method: pow10
+201/211: 201/211: pow10 (DONE:25ms)
+201/211: Method: pow10l
+202/211: 202/211: pow10l (DONE:19ms)
+202/211: Method: scalbf
+203/211: 203/211: scalbf (DONE:470ms)
+203/211: Method: scalbl
+204/211: 204/211: scalbl (DONE:420ms)
+204/211: Method: finalizer_0
+205/211: 205/211: finalizer_0 (DONE:8ms)
+205/211: Method: cbrtf
+206/211: 206/211: cbrtf (DONE:60ms)
+206/211: Method: cbrtl
+207/211: 207/211: cbrtl (DONE:59ms)
+207/211: Method: main
+
+=== Killed because of time limit

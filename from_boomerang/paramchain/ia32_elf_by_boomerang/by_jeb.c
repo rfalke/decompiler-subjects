@@ -22,11 +22,6 @@ int passem(int param0, int param1, int param2, int* param3) {
     return addem(param0, param1, param2, param3);
 }
 
-int sub_80487C9() {
-    jump gvar_80499DC;
-}
-
-int sub_804886D() {
-    call();
-    hlt();
+int sub_80487CE() {
+    return gvar_80499DC();
 }

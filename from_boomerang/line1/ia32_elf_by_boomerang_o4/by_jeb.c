@@ -3,6 +3,8 @@ void __i686.get_pc_thunk.bx() {
 }
 
 char* chomp(char* __s, int __n, FILE* __stream) {
+    int v0;
+    int v1 = v0;
     char* __s1 = →fgets(__s, __n, __stream);
     if(__s1) {
         char* ptr0 = →strchr(__s1, 10);
@@ -13,11 +15,15 @@ char* chomp(char* __s, int __n, FILE* __stream) {
     return __s1;
 }
 
-int main(int param0, int param1) {
+int main(unsigned int param0, int param1) {
     int result;
     char v0;
-    if(param0 > 1) {
+    int v1;
+    int v2 = v1;
+    if((int)param0 > 1) {
+        int v3 = &gvar_8048654;
         FILE* __stream = →fopen(*(char**)(param1 + 4), (char*)&gvar_8048654);
+        result = 1;
         if(__stream) {
             char* __s = →fgets(&v0, 0x400, __stream);
             if(__s) {
@@ -30,36 +36,12 @@ int main(int param0, int param1) {
             result = →fclose(__stream);
         }
     }
+    else {
+        result = 1;
+    }
     return result;
 }
 
-void sub_8048310() {
-    jump gvar_804974C;
-}
-
-int sub_8048326() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-int sub_8048336() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-int sub_8048346() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-int sub_8048356() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-int sub_8048366() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-int sub_8048376() {
-    /*BAD_CALL!*/ sub_8048310();
-}
-
-void sub_804840E() {
+int sub_8048316() {
+    return gvar_804974C();
 }

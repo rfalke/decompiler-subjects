@@ -1,33 +1,29 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_359/ia32_pe/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (6 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 7 methods
 Output folder: jeb_output
-  0/  6: Method: sub_40114A
-  1/  6: 1/6: sub_40114A (DONE:136ms)
-  1/  6: Method: sub_40115F
-  2/  6: 2/6: sub_40115F (DONE:128ms)
-  2/  6: Method: sub_401000
-  3/  6: 3/6: sub_401000 (DONE:185ms)
-  3/  6: Method: sub_40101B
-  4/  6: 4/6: sub_40101B (DONE:1276ms)
-  4/  6: Method: sub_4012AF
-  5/  6: 5/6: sub_4012AF (DONE:117ms)
-  5/  6: Method: start
-  6/  6: 6/6: start (DONE:344ms)
-Exectime: 2.243000 sec
-Done.
+  0/  7: Method: sub_40114A
+  1/  7: 1/7: sub_40114A (DONE:61ms)
+  1/  7: Method: sub_40115F
+  2/  7: 2/7: sub_40115F (DONE:51ms)
+  2/  7: Method: sub_401000
+  3/  7: 3/7: sub_401000 (DONE:64ms)
+  3/  7: Method: sub_40101B
+  4/  7: 4/7: sub_40101B (DONE:759ms)
+  4/  7: Method: sub_4012AF
+  5/  7: 5/7: sub_4012AF (DONE:87ms)
+  5/  7: Method: sub_401251
+  6/  7: 6/7: sub_401251 (DONE:49ms)
+  6/  7: Method: start
+  7/  7: 7/7: start (DONE:241ms)
+Exectime: 2.234000 sec
+[I] Done.

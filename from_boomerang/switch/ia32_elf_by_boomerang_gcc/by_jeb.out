@@ -1,174 +1,83 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/switch/ia32_elf_by_boomerang_gcc/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (49 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 34 methods
 Output folder: jeb_output
-  0/ 49: Method: decode_uleb128
-  1/ 49: 1/49: decode_uleb128 (DONE:268ms)
-  1/ 49: Method: atexit
-  2/ 49: 2/49: atexit (DONE:26ms)
-  2/ 49: Method: malloc
-  3/ 49: 3/49: malloc (DONE:14ms)
-  3/ 49: Method: free
-  4/ 49: 4/49: free (DONE:13ms)
-  4/ 49: Method: abort
-  5/ 49: 5/49: abort (DONE:14ms)
-  5/ 49: Method: count_fdes
-  6/ 49: 6/49: count_fdes (DONE:112ms)
-  6/ 49: Method: __fpstart
-  7/ 49: 7/49: __fpstart (DONE:14ms)
-  7/ 49: Method: exit
-  8/ 49: 8/49: exit (DONE:13ms)
-  8/ 49: Method: printf
-  9/ 49: 9/49: printf (DONE:15ms)
-  9/ 49: Method: memset
- 10/ 49: 10/49: memset (DONE:12ms)
- 10/ 49: Method: decode_sleb128
- 11/ 49: 11/49: decode_sleb128 (DONE:154ms)
- 11/ 49: Method: fde_insert
- 12/ 49: 12/49: fde_insert (DONE:136ms)
- 12/ 49: Method: main
- 13/ 49: 13/49: main (DONE:135ms)
- 13/ 49: Method: sub_8048771
- 14/ 49: 14/49: sub_8048771 (DONE:17ms)
- 14/ 49: Method: _cleanup
- 15/ 49: 15/49: _cleanup (DONE:6ms)
- 15/ 49: Method: sub_8048870
- 16/ 49: 16/49: sub_8048870 (DONE:15ms)
- 16/ 49: Method: _mcount
- 17/ 49: 17/49: _mcount (DONE:8ms)
- 17/ 49: Method: sub_8048EA0
- 18/ 49: 18/49: sub_8048EA0 (DONE:855ms)
- 18/ 49: Method: sub_8048F70
- 19/ 49: 19/49: sub_8048F70 (DONE:57ms)
- 19/ 49: Method: sub_8048F84
- 20/ 49: 20/49: sub_8048F84 (DONE:33ms)
- 20/ 49: Method: sub_8048F98
- 21/ 49: 21/49: sub_8048F98 (DONE:32ms)
- 21/ 49: Method: sub_804910C
- 22/ 49: 22/49: sub_804910C (DONE:72ms)
- 22/ 49: Method: sub_8048FFC
- 23/ 49: 23/49: sub_8048FFC (DONE:40ms)
- 23/ 49: Method: sub_8049090
- 24/ 49: 24/49: sub_8049090 (DONE:50ms)
- 24/ 49: Method: sub_80490B0
- 25/ 49: 25/49: sub_80490B0 (DONE:43ms)
- 25/ 49: Method: sub_8049140
- 26/ 49: 26/49: sub_8049140 (DONE:39ms)
- 26/ 49: Method: sub_8048FB0
- 27/ 49: 27/49: sub_8048FB0 (DONE:79ms)
- 27/ 49: Method: sub_804901C
- 28/ 49: 28/49: sub_804901C (DONE:56ms)
- 28/ 49: Method: sub_804905C
- 29/ 49: 29/49: sub_804905C (DONE:59ms)
- 29/ 49: Method: sub_80490D0
- 30/ 49: 30/49: sub_80490D0 (DONE:70ms)
- 30/ 49: Method: sub_80490F0
- 31/ 49: 31/49: sub_80490F0 (DONE:64ms)
- 31/ 49: Method: execute_cfa_insn
- 32/ 49: 32/49: execute_cfa_insn (DONE:1217ms)
- 32/ 49: Method: add_fdes
- 33/ 49: 33/49: add_fdes (DONE:178ms)
- 33/ 49: Method: __register_frame_info
- 34/ 49: 34/49: __register_frame_info (DONE:53ms)
- 34/ 49: Method: __do_global_ctors_aux
- 35/ 49: 35/49: __do_global_ctors_aux (DONE:103ms)
- 35/ 49: Method: __deregister_frame_info
- 36/ 49: 36/49: __deregister_frame_info (DONE:93ms)
- 36/ 49: Method: extract_cie_info
- 37/ 49: 37/49: extract_cie_info (DONE:561ms)
- 37/ 49: Method: frame_init
- 38/ 49: 38/49: frame_init (DONE:278ms)
- 38/ 49: Method: frame_dummy
- 39/ 49: 39/49: frame_dummy (DONE:37ms)
- 39/ 49: Method: initializer_0
- 40/ 49: 40/49: initializer_0 (DONE:26ms)
- 40/ 49: Method: _start
- 41/ 49: 41/49: _start (DONE:86ms)
- 41/ 49: Method: __do_global_dtors_aux
- 42/ 49: 42/49: __do_global_dtors_aux (DONE:115ms)
- 42/ 49: Method: finalizer_0
- 43/ 49: 43/49: finalizer_0 (DONE:13ms)
- 43/ 49: Method: find_fde
- 44/ 49: 44/49: find_fde (DONE:209ms)
- 44/ 49: Method: fini_dummy
- 45/ 49: 45/49: fini_dummy (DONE:21ms)
- 45/ 49: Method: init_dummy
- 46/ 49: 46/49: init_dummy (DONE:17ms)
- 46/ 49: Method: __register_frame_info_table
- 47/ 49: 47/49: __register_frame_info_table (DONE:51ms)
- 47/ 49: Method: init_dummy2
- 48/ 49: 48/49: init_dummy2 (DONE:17ms)
- 48/ 49: Method: __frame_state_for
- 49/ 49: 49/49: __frame_state_for (DONE:413ms)
-1/1 DECOMPILATION ERROR: METHOD sub_8048EA0: java.lang.RuntimeException: Illegal stack slot
-	at com.pnfsoftware.jebglobal.Se.canCreateVariable(SourceFile:122)
-	at com.pnfsoftware.jebglobal.Se.createStackItem(SourceFile:194)
-	at com.pnfsoftware.jebglobal.Mj.XP(SourceFile:196)
-	at com.pnfsoftware.jebglobal.Tw.Vo(SourceFile:167)
-	at com.pnfsoftware.jebglobal.Tw.Vo(SourceFile:91)
-	at com.pnfsoftware.jebglobal.YS.XP(SourceFile:43)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-Exectime: 8.538000 sec
-Done.
+  0/ 34: Method: decode_uleb128
+  1/ 34: 1/34: decode_uleb128 (DONE:184ms)
+  1/ 34: Method: →atexit
+  2/ 34: 2/34: →atexit (DONE:11ms)
+  2/ 34: Method: →abort
+  3/ 34: 3/34: →abort (DONE:5ms)
+  3/ 34: Method: count_fdes
+  4/ 34: 4/34: count_fdes (DONE:60ms)
+  4/ 34: Method: →__fpstart
+  5/ 34: 5/34: →__fpstart (DONE:5ms)
+  5/ 34: Method: →exit
+  6/ 34: 6/34: →exit (DONE:4ms)
+  6/ 34: Method: →printf
+  7/ 34: 7/34: →printf (DONE:4ms)
+  7/ 34: Method: →malloc
+  8/ 34: 8/34: →malloc (DONE:5ms)
+  8/ 34: Method: →free
+  9/ 34: 9/34: →free (DONE:4ms)
+  9/ 34: Method: →memset
+ 10/ 34: 10/34: →memset (DONE:5ms)
+ 10/ 34: Method: decode_sleb128
+ 11/ 34: 11/34: decode_sleb128 (DONE:87ms)
+ 11/ 34: Method: fde_insert
+ 12/ 34: 12/34: fde_insert (DONE:71ms)
+ 12/ 34: Method: main
+ 13/ 34: 13/34: main (DONE:47ms)
+ 13/ 34: Method: sub_8048776
+ 14/ 34: 14/34: sub_8048776 (DONE:5ms)
+ 14/ 34: Method: →_cleanup
+ 15/ 34: 15/34: →_cleanup (DONE:5ms)
+ 15/ 34: Method: _mcount
+ 16/ 34: 16/34: _mcount (DONE:3ms)
+ 16/ 34: Method: execute_cfa_insn
+ 17/ 34: 17/34: execute_cfa_insn (DONE:301ms)
+ 17/ 34: Method: add_fdes
+ 18/ 34: 18/34: add_fdes (DONE:111ms)
+ 18/ 34: Method: __register_frame_info
+ 19/ 34: 19/34: __register_frame_info (DONE:18ms)
+ 19/ 34: Method: __do_global_ctors_aux
+ 20/ 34: 20/34: __do_global_ctors_aux (DONE:72ms)
+ 20/ 34: Method: __deregister_frame_info
+ 21/ 34: 21/34: __deregister_frame_info (DONE:64ms)
+ 21/ 34: Method: extract_cie_info
+ 22/ 34: 22/34: extract_cie_info (DONE:348ms)
+ 22/ 34: Method: frame_init
+ 23/ 34: 23/34: frame_init (DONE:157ms)
+ 23/ 34: Method: frame_dummy
+ 24/ 34: 24/34: frame_dummy (DONE:16ms)
+ 24/ 34: Method: initializer_0
+ 25/ 34: 25/34: initializer_0 (DONE:5ms)
+ 25/ 34: Method: _start
+ 26/ 34: 26/34: _start (DONE:102ms)
+ 26/ 34: Method: __do_global_dtors_aux
+ 27/ 34: 27/34: __do_global_dtors_aux (DONE:49ms)
+ 27/ 34: Method: finalizer_0
+ 28/ 34: 28/34: finalizer_0 (DONE:4ms)
+ 28/ 34: Method: find_fde
+ 29/ 34: 29/34: find_fde (DONE:127ms)
+ 29/ 34: Method: fini_dummy
+ 30/ 34: 30/34: fini_dummy (DONE:11ms)
+ 30/ 34: Method: init_dummy
+ 31/ 34: 31/34: init_dummy (DONE:7ms)
+ 31/ 34: Method: __register_frame_info_table
+ 32/ 34: 32/34: __register_frame_info_table (DONE:15ms)
+ 32/ 34: Method: init_dummy2
+ 33/ 34: 33/34: init_dummy2 (DONE:8ms)
+ 33/ 34: Method: __frame_state_for
+ 34/ 34: 34/34: __frame_state_for (DONE:259ms)
+Exectime: 3.048000 sec
+[I] Done.

@@ -3,10 +3,10 @@ void __i686.get_pc_thunk.bx() {
 }
 
 int main() {
-    int v0;
+    unsigned int v0;
     →printf("IOLI Crackme Level 0x02\n");
     →printf("Password: ");
-    →scanf((char*)&gvar_804856C, &v0);
+    →scanf(&gvar_804856C);
     if(v0 == 0x52b24) {
         →printf("Password OK :)\n");
     }
@@ -16,8 +16,8 @@ int main() {
     return 0;
 }
 
-void sub_80482EC() {
-    jump gvar_8049FFC;
+int sub_80482F2() {
+    return gvar_8049FFC();
 }
 
 int sub_8048354(int param0, int param1) {

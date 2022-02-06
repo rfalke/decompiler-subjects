@@ -1,13 +1,14 @@
 
-long gcd(long param0, long param1) {
-    int v0 = (unsigned int)param0;
-    int v1 = (unsigned int)param1;
-    return (unsigned int)param1 ? gcd(param1 & 0xffffffffL, (((unsigned long)(unsigned int)param0 | ((unsigned long)((unsigned int)param0 >> 31) << 32)) % (long)(unsigned int)param1) & 0xffffffffL, (((unsigned long)(unsigned int)param0 | ((unsigned long)((unsigned int)param0 >> 31) << 32)) % (long)(unsigned int)param1) & 0xffffffffL): param0 & 0xffffffffL;
+int gcd(long param0, long param1) {
+    return (unsigned int)param1 ? (int)gcd((unsigned long)(unsigned int)param1, (unsigned long)((unsigned int)((unsigned long)(unsigned int)param0 | ((unsigned long)((unsigned int)param0 >> 31) << 32)) % (int)(unsigned int)param1), (unsigned long)((unsigned int)((unsigned long)(unsigned int)param0 | ((unsigned long)((unsigned int)param0 >> 31) << 32)) % (int)(unsigned int)param1)): (unsigned long)(unsigned int)param0;
 }
 
 long main() {
-    for(int i = 0; i <= 9; ++i) {
-        gcd((long)i, ((unsigned long)(i * 2) + 1L) & 0xffffffffL);
+    unsigned int v0 = 0;
+    do {
+        gcd((long)v0, (long)(v0 * 2 + 1));
+        ++v0;
     }
+    while((int)v0 <= 9);
     return 0L;
 }

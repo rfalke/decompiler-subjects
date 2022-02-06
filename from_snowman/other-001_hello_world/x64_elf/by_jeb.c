@@ -4,6 +4,6 @@ long main() {
     return 0L;
 }
 
-void sub_4003D0() {
-    jump gvar_600880;
+long sub_4003D6() {
+    return gvar_600880();
 }

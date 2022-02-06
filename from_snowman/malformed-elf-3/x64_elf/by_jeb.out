@@ -1,68 +1,58 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_snowman/malformed-elf-3/x64_elf/subject.exe...
-{subject.exe > subject.exe}: The section ".dynsym" may be compressed: 219540062 bytes were expected, only 12160 were read
-Symbol Table is corrupted: found 13 entries
-{subject.exe > subject.exe}: The section ".symtab" may be compressed: 1322197073 bytes were expected, only 0 were read
-{subject.exe > subject.exe > x86_64 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86_64 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86_64 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86_64 image}: Initial analysis completed (21 internal methods created)
+[W] {subject.exe > subject.exe}: The section ".dynsym" may be compressed: 219540062 bytes were expected, only 12160 were read
+[W] {subject.exe > subject.exe}: The section ".symtab" may be compressed: 1322197073 bytes were expected, only 0 were read
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] The routine at 0x400706 no longer exists!
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 20 methods
 Output folder: jeb_output
-  0/ 21: Method: sub_4007B0
-  1/ 21: 1/21: sub_4007B0 (DONE:150ms)
-  1/ 21: Method: sub_400706
-  2/ 21: 2/21: sub_400706 (DONE:17ms)
-  2/ 21: Method: sub_400710
-  3/ 21: 3/21: sub_400710 (DONE:48ms)
-  3/ 21: Method: sub_400720
-  4/ 21: 4/21: sub_400720 (DONE:49ms)
-  4/ 21: Method: sub_400730
-  5/ 21: 5/21: sub_400730 (DONE:39ms)
-  5/ 21: Method: sub_400740
-  6/ 21: 6/21: sub_400740 (DONE:47ms)
-  6/ 21: Method: sub_400750
-  7/ 21: 7/21: sub_400750 (DONE:38ms)
-  7/ 21: Method: sub_400760
-  8/ 21: 8/21: sub_400760 (DONE:35ms)
-  8/ 21: Method: sub_400770
-  9/ 21: 9/21: sub_400770 (DONE:45ms)
-  9/ 21: Method: sub_400780
- 10/ 21: 10/21: sub_400780 (DONE:30ms)
- 10/ 21: Method: sub_400790
- 11/ 21: 11/21: sub_400790 (DONE:36ms)
- 11/ 21: Method: sub_4007A0
- 12/ 21: 12/21: sub_4007A0 (DONE:45ms)
- 12/ 21: Method: sub_4007C0
- 13/ 21: 13/21: sub_4007C0 (DONE:30ms)
- 13/ 21: Method: sub_4007D0
- 14/ 21: 14/21: sub_4007D0 (DONE:33ms)
- 14/ 21: Method: sub_4007E0
- 15/ 21: 15/21: sub_4007E0 (DONE:27ms)
- 15/ 21: Method: sub_4007F0
- 16/ 21: 16/21: sub_4007F0 (DONE:29ms)
- 16/ 21: Method: start
- 17/ 21: 17/21: start (DONE:17ms)
- 17/ 21: Method: finalizer_1
- 18/ 21: 18/21: finalizer_1 (DONE:25ms)
- 18/ 21: Method: initializer_1
- 19/ 21: 19/21: initializer_1 (DONE:11ms)
- 19/ 21: Method: finalizer_0
- 20/ 21: 20/21: finalizer_0 (DONE:21ms)
- 20/ 21: Method: initializer_0
- 21/ 21: 21/21: initializer_0 (DONE:86ms)
-Exectime: 2.550000 sec
-Done.
+  0/ 20: Method: →__gmon_start__
+  1/ 20: 1/20: →__gmon_start__ (DONE:131ms)
+  1/ 20: Method: →strncpy
+  2/ 20: 2/20: →strncpy (DONE:61ms)
+  2/ 20: Method: →puts
+  3/ 20: 3/20: →puts (DONE:65ms)
+  3/ 20: Method: →strlen
+  4/ 20: 4/20: →strlen (DONE:46ms)
+  4/ 20: Method: →__stack_chk_fail
+  5/ 20: 5/20: →__stack_chk_fail (DONE:46ms)
+  5/ 20: Method: →printf
+  6/ 20: 6/20: →printf (DONE:43ms)
+  6/ 20: Method: →fputs
+  7/ 20: 7/20: →fputs (DONE:43ms)
+  7/ 20: Method: →strncat
+  8/ 20: 8/20: →strncat (DONE:41ms)
+  8/ 20: Method: →fputc
+  9/ 20: 9/20: →fputc (DONE:47ms)
+  9/ 20: Method: →__libc_start_main
+ 10/ 20: 10/20: →__libc_start_main (DONE:43ms)
+ 10/ 20: Method: →srand
+ 11/ 20: 11/20: →srand (DONE:41ms)
+ 11/ 20: Method: →time
+ 12/ 20: 12/20: →time (DONE:42ms)
+ 12/ 20: Method: →malloc
+ 13/ 20: 13/20: →malloc (DONE:54ms)
+ 13/ 20: Method: →exit
+ 14/ 20: 14/20: →exit (DONE:36ms)
+ 14/ 20: Method: →rand
+ 15/ 20: 15/20: →rand (DONE:37ms)
+ 15/ 20: Method: start
+ 16/ 20: 16/20: start (DONE:35ms)
+ 16/ 20: Method: finalizer_1
+ 17/ 20: 17/20: finalizer_1 (DONE:6ms)
+ 17/ 20: Method: initializer_1
+ 18/ 20: 18/20: initializer_1 (DONE:7ms)
+ 18/ 20: Method: finalizer_0
+ 19/ 20: 19/20: finalizer_0 (DONE:23ms)
+ 19/ 20: Method: initializer_0
+ 20/ 20: 20/20: initializer_0 (DONE:37ms)
+Exectime: 1.482000 sec
+[I] Done.

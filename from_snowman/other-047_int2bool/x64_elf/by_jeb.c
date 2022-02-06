@@ -13,6 +13,20 @@ long main() {
     return 0L;
 }
 
-void sub_400450() {
-    jump gvar_6009E0;
+long sub_400456() {
+    return gvar_6009E0();
+}
+
+long sub_400529() {
+    long v0;
+    long v1 = v0;
+    deregister_tm_clones();
+    completed.6392 = 1;
+}
+
+void sub_40053A() {
+}
+
+long sub_40054A() {
+    return register_tm_clones();
 }

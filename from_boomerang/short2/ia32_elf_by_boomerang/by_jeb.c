@@ -1,26 +1,20 @@
 
 int main() {
-    int v0 = test(4, 5, 6);
-    →printf("Result for 4, 5, 6: %d\n", v0);
-    int v1 = test(6, 5, 4);
-    →printf("Result for 6, 5, 4: %d\n", v1);
-    int v2 = test(4, 6, 5);
-    →printf("Result for 4, 6, 5: %d\n", v2);
-    int v3 = test(6, 4, 5);
-    →printf("Result for 6, 4, 5: %d\n", v3);
+    test(4, 5, 6);
+    →printf("Result for 4, 5, 6: %d\n");
+    test(6, 5, 4);
+    →printf("Result for 6, 5, 4: %d\n");
+    test(4, 6, 5);
+    →printf("Result for 4, 6, 5: %d\n");
+    int v0 = test(6, 4, 5);
+    →printf("Result for 6, 4, 5: %d\n");
     return 0;
 }
 
-void sub_8048298() {
-    jump gvar_80495FC;
+int sub_804829E() {
+    return gvar_80495FC();
 }
 
-void sub_8048352() {
-}
-
-int test(int param0, int param1, int param2) {
-    if(param0 < param1 && param1 < param2) {
-        return 1;
-    }
-    return 0;
+int test(unsigned int param0, unsigned int param1, unsigned int param2) {
+    return (int)param0 >= (int)param1 || (int)param1 >= (int)param2 ? 0: 1;
 }

@@ -1,65 +1,51 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/duffs_device/ia32_elf_gcc_O2/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (21 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 18 methods
 Output folder: jeb_output
-  0/ 21: Method: sub_80482C4
-  1/ 21: 1/21: sub_80482C4 (DONE:94ms)
-  1/ 21: Method: __do_global_dtors_aux
-  2/ 21: 2/21: __do_global_dtors_aux (DONE:167ms)
-  2/ 21: Method: frame_dummy
-  3/ 21: 3/21: frame_dummy (DONE:82ms)
-  3/ 21: Method: copy1_four_times
-  4/ 21: 4/21: copy1_four_times (DONE:411ms)
-  4/ 21: Method: copy1_eight_times
-  5/ 21: 5/21: copy1_eight_times (DONE:414ms)
-  5/ 21: Method: copy2_four_times
-  6/ 21: 6/21: copy2_four_times (DONE:180ms)
-  6/ 21: Method: copy2_eight_times
-  7/ 21: 7/21: copy2_eight_times (DONE:363ms)
-  7/ 21: Method: __i686.get_pc_thunk.bx
-  8/ 21: 8/21: __i686.get_pc_thunk.bx (DONE:12ms)
-  8/ 21: Method: __do_global_ctors_aux
-  9/ 21: 9/21: __do_global_ctors_aux (DONE:127ms)
-  9/ 21: Method: sub_80482DA
- 10/ 21: 10/21: sub_80482DA (DONE:18ms)
- 10/ 21: Method: sub_80482EA
- 11/ 21: 11/21: sub_80482EA (DONE:17ms)
- 11/ 21: Method: sub_80482FA
- 12/ 21: 12/21: sub_80482FA (DONE:15ms)
- 12/ 21: Method: sub_80482F4
- 13/ 21: 13/21: sub_80482F4 (DONE:15ms)
- 13/ 21: Method: sub_80482D4
- 14/ 21: 14/21: sub_80482D4 (DONE:14ms)
- 14/ 21: Method: sub_80482E4
- 15/ 21: 15/21: sub_80482E4 (DONE:13ms)
- 15/ 21: Method: __libc_csu_fini
- 16/ 21: 16/21: __libc_csu_fini (DONE:15ms)
- 16/ 21: Method: main
- 17/ 21: 17/21: main (DONE:145ms)
- 17/ 21: Method: _start
- 18/ 21: 18/21: _start (DONE:27ms)
- 18/ 21: Method: initializer_0
- 19/ 21: 19/21: initializer_0 (DONE:54ms)
- 19/ 21: Method: __libc_csu_init
- 20/ 21: 20/21: __libc_csu_init (DONE:87ms)
- 20/ 21: Method: finalizer_0
- 21/ 21: 21/21: finalizer_0 (DONE:37ms)
-Exectime: 4.183000 sec
-Done.
+  0/ 18: Method: sub_80482CA
+  1/ 18: 1/18: sub_80482CA (DONE:50ms)
+  1/ 18: Method: →malloc
+  2/ 18: 2/18: →malloc (DONE:26ms)
+  2/ 18: Method: __do_global_dtors_aux
+  3/ 18: 3/18: __do_global_dtors_aux (DONE:131ms)
+  3/ 18: Method: frame_dummy
+  4/ 18: 4/18: frame_dummy (DONE:30ms)
+  4/ 18: Method: copy1_four_times
+  5/ 18: 5/18: copy1_four_times (DONE:211ms)
+  5/ 18: Method: copy1_eight_times
+  6/ 18: 6/18: copy1_eight_times (DONE:230ms)
+  6/ 18: Method: copy2_four_times
+  7/ 18: 7/18: copy2_four_times (DONE:151ms)
+  7/ 18: Method: copy2_eight_times
+  8/ 18: 8/18: copy2_eight_times (DONE:200ms)
+  8/ 18: Method: __i686.get_pc_thunk.bx
+  9/ 18: 9/18: __i686.get_pc_thunk.bx (DONE:3ms)
+  9/ 18: Method: __do_global_ctors_aux
+ 10/ 18: 10/18: __do_global_ctors_aux (DONE:67ms)
+ 10/ 18: Method: →__gmon_start__
+ 11/ 18: 11/18: →__gmon_start__ (DONE:7ms)
+ 11/ 18: Method: →__libc_start_main
+ 12/ 18: 12/18: →__libc_start_main (DONE:8ms)
+ 12/ 18: Method: __libc_csu_fini
+ 13/ 18: 13/18: __libc_csu_fini (DONE:4ms)
+ 13/ 18: Method: main
+ 14/ 18: 14/18: main (DONE:132ms)
+ 14/ 18: Method: _start
+ 15/ 18: 15/18: _start (DONE:33ms)
+ 15/ 18: Method: initializer_0
+ 16/ 18: 16/18: initializer_0 (DONE:39ms)
+ 16/ 18: Method: __libc_csu_init
+ 17/ 18: 17/18: __libc_csu_init (DONE:77ms)
+ 17/ 18: Method: finalizer_0
+ 18/ 18: 18/18: finalizer_0 (DONE:19ms)
+Exectime: 2.054000 sec
+[I] Done.

@@ -1,10 +1,10 @@
 
-int fib(int param0) {
-    int result;
-    if(param0 > 1) {
+unsigned int fib(unsigned int param0) {
+    unsigned int result;
+    if((int)param0 > 1) {
         int v0 = fib(param0 - 1);
         int v1 = fib(param0 - 2);
-        result = v1 + v0;
+        result = (unsigned int)(v1 + v0);
     }
     else {
         result = param0;
@@ -14,20 +14,14 @@ int fib(int param0) {
 
 // Stale decompilation - Refresh this view to re-decompile this code
 int main() {
-    int v0;
-    int v1;
-    int v2;
-    int v3;
-    →printf("Input number: ", v0, v1, v2);
-    →scanf((char*)&gvar_8048517, &v3, v1, v2);
-    int v4 = fib(v3);
-    →printf("fibonacci(%d) = %d\n", v3, v4);
+    int* ptr0;
+    →printf("Input number: ");
+    →scanf(&gvar_8048517);
+    int v0 = fib((int)ptr0);
+    →printf("fibonacci(%d) = %d\n");
     return 0;
 }
 
-void sub_80482BC() {
-    jump gvar_804961C;
-}
-
-void sub_8048386() {
+int sub_80482C2() {
+    return gvar_804961C();
 }

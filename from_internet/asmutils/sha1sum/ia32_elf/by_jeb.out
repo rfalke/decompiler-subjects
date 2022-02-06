@@ -1,0 +1,43 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/sha1sum/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 14 methods
+Output folder: jeb_output
+  0/ 14: Method: sub_804812A
+  1/ 14: 1/14: sub_804812A (DONE:81ms)
+  1/ 14: Method: sub_8048141
+  2/ 14: 2/14: sub_8048141 (DONE:11ms)
+  2/ 14: Method: sub_8048172
+  3/ 14: 3/14: sub_8048172 (DONE:39ms)
+  3/ 14: Method: sub_8048283
+  4/ 14: 4/14: sub_8048283 (DONE:53ms)
+  4/ 14: Method: sub_8048290
+  5/ 14: 5/14: sub_8048290 (DONE:37ms)
+  5/ 14: Method: sub_8048157
+  6/ 14: 6/14: sub_8048157 (DONE:26ms)
+  6/ 14: Method: sub_8048109
+  7/ 14: 7/14: sub_8048109 (DONE:8ms)
+  7/ 14: Method: sub_804814B
+  8/ 14: 8/14: sub_804814B (DONE:10ms)
+  8/ 14: Method: sub_8048161
+  9/ 14: 9/14: sub_8048161 (DONE:14ms)
+  9/ 14: Method: sub_804819A
+ 10/ 14: 10/14: sub_804819A (DONE:403ms)
+ 10/ 14: Method: sub_804829F
+ 11/ 14: 11/14: sub_804829F (DONE:38ms)
+ 11/ 14: Method: sub_80482B3
+ 12/ 14: 12/14: sub_80482B3 (DONE:41ms)
+ 12/ 14: Method: start
+ 13/ 14: 13/14: start (DONE:38ms)
+ 13/ 14: Method: sub_804810F
+ 14/ 14: 14/14: sub_804810F (DONE:63ms)
+Exectime: 1.399000 sec
+[I] Done.

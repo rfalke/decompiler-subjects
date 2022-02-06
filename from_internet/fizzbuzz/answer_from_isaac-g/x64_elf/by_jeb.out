@@ -1,0 +1,116 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/fizzbuzz/answer_from_isaac-g/x64_elf/subject.exe...
+[W] {subject.exe > subject.exe}: The notes section ".gnu.build.attributes" was not processed
+[I] {subject.exe > subject.exe > x86_64 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[E] Error: Instruction cannot be converted: C5FC1044B500 vmovups ymm0, ss:[rbp+4*rsi]
+[I] {subject.exe > subject.exe > x86_64 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86_64 image}: Initial analysis created 20 methods
+Output folder: jeb_output
+  0/ 20: Method: sub_4010B0
+  1/ 20: 1/20: sub_4010B0 (DONE:38ms)
+  1/ 20: Method: sub_4010F0
+  2/ 20: 2/20: sub_4010F0 (DONE:6ms)
+  2/ 20: Method: initializer_0
+  3/ 20: 3/20: initializer_0 (DONE:62ms)
+  3/ 20: Method: sub_401026
+  4/ 20: 4/20: sub_401026 (DONE:9ms)
+  4/ 20: Method: →write
+  5/ 20: 5/20: →write (DONE:22ms)
+  5/ 20: Method: sub_401120
+  6/ 20: 6/20: sub_401120 (DONE:3ms)
+  6/ 20: Method: sub_40109D
+  7/ 20: 7/20: sub_40109D (DONE:14ms)
+  7/ 20: Method: sub_4010DF
+  8/ 20: 8/20: sub_4010DF (DONE:21ms)
+  8/ 20: Method: →memcpy
+  9/ 20: 9/20: →memcpy (DONE:15ms)
+  9/ 20: Method: deregister_tm_clones
+ 10/ 20: 10/20: deregister_tm_clones (DONE:12ms)
+ 10/ 20: Method: register_tm_clones
+ 11/ 20: 11/20: register_tm_clones (DONE:37ms)
+ 11/ 20: Method: sub_40110D
+ 12/ 20: 12/20: sub_40110D (DONE:12ms)
+ 12/ 20: Method: initializer_1
+ 13/ 20: 13/20: initializer_1 (DONE:6ms)
+ 13/ 20: Method: _dl_relocate_static_pie
+ 14/ 20: 14/20: _dl_relocate_static_pie (DONE:3ms)
+ 14/ 20: Method: __libc_csu_fini
+ 15/ 20: 15/20: __libc_csu_fini (DONE:3ms)
+ 15/ 20: Method: finalizer_0
+ 16/ 20: 16/20: finalizer_0 (DONE:10ms)
+ 16/ 20: Method: main
+[E] Error: Instruction cannot be converted: C5FC1044B500 vmovups ymm0, ss:[rbp+4*rsi]
+ 17/ 20: 17/20: main (DONE:4ms)
+ 17/ 20: Method: finalizer_1
+ 18/ 20: 18/20: finalizer_1 (DONE:16ms)
+ 18/ 20: Method: __libc_csu_init
+ 19/ 20: 19/20: __libc_csu_init (DONE:116ms)
+ 19/ 20: Method: _start
+ 20/ 20: 20/20: _start (DONE:29ms)
+1/1 DECOMPILATION ERROR: METHOD main: java.lang.RuntimeException: Illegal Slice with begin:0, end:256
+	at com.pnfsoftware.jebglobal.ds.slice(SourceFile:484)
+	at com.pnfsoftware.jebglobal.ds.part(SourceFile:467)
+	at com.pnfsoftware.jebglobal.my.oD(SourceFile:2298)
+	at com.pnfsoftware.jebglobal.my.oD(SourceFile:2039)
+	at com.pnfsoftware.jebglobal.my.oD(SourceFile:2020)
+	at com.pnfsoftware.jebglobal.my.oD(SourceFile:1956)
+	at com.pnfsoftware.jebglobal.my.oy(SourceFile:1932)
+	at com.pnfsoftware.jebglobal.my.convertInstruction(SourceFile:1086)
+	at com.pnfsoftware.jebglobal.my.convertBlock(SourceFile:1034)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.AbstractConverter.convert(SourceFile:436)
+	at com.pnfsoftware.jebglobal.t.Na(SourceFile:55)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:116)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 1.108000 sec
+[I] Done.

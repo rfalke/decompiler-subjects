@@ -1,736 +1,643 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/switch/ia32_pe_by_boomerang_borland/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (280 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (2s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 284 methods
 Output folder: jeb_output
-  0/280: Method: sub_401140
-  1/280: 1/280: sub_401140 (DONE:123ms)
-  1/280: Method: sub_40213C
-  2/280: 2/280: sub_40213C (DONE:164ms)
-  2/280: Method: sub_404690
-  3/280: 3/280: sub_404690 (DONE:153ms)
-  3/280: Method: sub_402250
-  4/280: 4/280: sub_402250 (DONE:168ms)
-  4/280: Method: sub_404DFC
-  5/280: 5/280: sub_404DFC (DONE:524ms)
-  5/280: Method: sub_4099C6
-  6/280: 6/280: sub_4099C6 (DONE:19ms)
-  6/280: Method: sub_4021AC
-  7/280: 7/280: sub_4021AC (DONE:250ms)
-  7/280: Method: sub_402414
-  8/280: 8/280: sub_402414 (DONE:44ms)
-  8/280: Method: sub_404434
-  9/280: 9/280: sub_404434 (DONE:116ms)
-  9/280: Method: sub_409A1A
- 10/280: 10/280: sub_409A1A (DONE:12ms)
- 10/280: Method: sub_40375C
- 11/280: 11/280: sub_40375C (DONE:55ms)
- 11/280: Method: sub_404F98
- 12/280: 12/280: sub_404F98 (DONE:41ms)
- 12/280: Method: sub_407A58
- 13/280: 13/280: sub_407A58 (DONE:289ms)
- 13/280: Method: sub_409978
- 14/280: 14/280: sub_409978 (DONE:14ms)
- 14/280: Method: sub_409A14
- 15/280: 15/280: sub_409A14 (DONE:16ms)
- 15/280: Method: sub_405144
- 16/280: 16/280: sub_405144 (DONE:330ms)
- 16/280: Method: sub_4023BC
- 17/280: 17/280: sub_4023BC (DONE:48ms)
- 17/280: Method: sub_406ED0
- 18/280: 18/280: sub_406ED0 (DONE:9ms)
- 18/280: Method: sub_409966
- 19/280: 19/280: sub_409966 (DONE:9ms)
- 19/280: Method: sub_409984
- 20/280: 20/280: sub_409984 (DONE:11ms)
- 20/280: Method: sub_409A08
- 21/280: 21/280: sub_409A08 (DONE:16ms)
- 21/280: Method: sub_402238
- 22/280: 22/280: sub_402238 (DONE:49ms)
- 22/280: Method: sub_403A20
- 23/280: 23/280: sub_403A20 (DONE:109ms)
- 23/280: Method: sub_403A68
- 24/280: 24/280: sub_403A68 (DONE:101ms)
- 24/280: Method: sub_405028
- 25/280: 25/280: sub_405028 (DONE:51ms)
- 25/280: Method: sub_405058
- 26/280: 26/280: sub_405058 (DONE:30ms)
- 26/280: Method: sub_40507C
- 27/280: 27/280: sub_40507C (DONE:16ms)
- 27/280: Method: sub_405360
- 28/280: 28/280: sub_405360 (DONE:61ms)
- 28/280: Method: sub_405388
- 29/280: 29/280: sub_405388 (DONE:72ms)
- 29/280: Method: sub_406ACC
- 30/280: 30/280: sub_406ACC (DONE:121ms)
- 30/280: Method: sub_4072C4
- 31/280: 31/280: sub_4072C4 (DONE:167ms)
- 31/280: Method: sub_4074E8
- 32/280: 32/280: sub_4074E8 (DONE:95ms)
- 32/280: Method: sub_407748
- 33/280: 33/280: sub_407748 (DONE:42ms)
- 33/280: Method: sub_408009
- 34/280: 34/280: sub_408009 (DONE:36ms)
- 34/280: Method: sub_409960
- 35/280: 35/280: sub_409960 (DONE:14ms)
- 35/280: Method: sub_4099CC
- 36/280: 36/280: sub_4099CC (DONE:14ms)
- 36/280: Method: sub_408021
- 37/280: 37/280: sub_408021 (DONE:33ms)
- 37/280: Method: sub_409A0E
- 38/280: 38/280: sub_409A0E (DONE:10ms)
- 38/280: Method: sub_40130C
- 39/280: 39/280: sub_40130C (DONE:35ms)
- 39/280: Method: sub_4012C0
- 40/280: 40/280: sub_4012C0 (DONE:77ms)
- 40/280: Method: sub_401324
- 41/280: 41/280: sub_401324 (DONE:25ms)
- 41/280: Method: sub_402D9C
- 42/280: 42/280: sub_402D9C (DONE:38ms)
- 42/280: Method: sub_4053B8
- 43/280: 43/280: sub_4053B8 (DONE:101ms)
- 43/280: Method: sub_4056B4
- 44/280: 44/280: sub_4056B4 (DONE:115ms)
- 44/280: Method: sub_405010
- 45/280: 45/280: sub_405010 (DONE:29ms)
- 45/280: Method: sub_4023D4
- 46/280: 46/280: sub_4023D4 (DONE:74ms)
- 46/280: Method: sub_4037C0
- 47/280: 47/280: sub_4037C0 (DONE:26ms)
- 47/280: Method: sub_4031E0
- 48/280: 48/280: sub_4031E0 (DONE:90ms)
- 48/280: Method: sub_4013DC
- 49/280: 49/280: sub_4013DC (DONE:11ms)
- 49/280: Method: sub_401418
- 50/280: 50/280: sub_401418 (DONE:32ms)
- 50/280: Method: sub_4014D0
- 51/280: 51/280: sub_4014D0 (DONE:7ms)
- 51/280: Method: sub_4014D4
- 52/280: 52/280: sub_4014D4 (DONE:57ms)
- 52/280: Method: sub_401EA0
- 53/280: 53/280: sub_401EA0 (DONE:334ms)
- 53/280: Method: sub_402134
- 54/280: 54/280: sub_402134 (DONE:9ms)
- 54/280: Method: sub_402138
- 55/280: 55/280: sub_402138 (DONE:12ms)
- 55/280: Method: sub_402160
- 56/280: 56/280: sub_402160 (DONE:117ms)
- 56/280: Method: sub_4022AC
- 57/280: 57/280: sub_4022AC (DONE:162ms)
- 57/280: Method: sub_40231C
- 58/280: 58/280: sub_40231C (DONE:127ms)
- 58/280: Method: sub_402BD8
- 59/280: 59/280: sub_402BD8 (DONE:21ms)
- 59/280: Method: sub_402F4C
- 60/280: 60/280: sub_402F4C (DONE:26ms)
- 60/280: Method: sub_402F61
- 61/280: 61/280: sub_402F61 (DONE:40ms)
- 61/280: Method: sub_402FAF
- 62/280: 62/280: sub_402FAF (DONE:22ms)
- 62/280: Method: sub_4033A0
- 63/280: 63/280: sub_4033A0 (DONE:19ms)
- 63/280: Method: sub_4033B0
- 64/280: 64/280: sub_4033B0 (DONE:27ms)
- 64/280: Method: sub_404C97
- 65/280: 65/280: sub_404C97 (DONE:151ms)
- 65/280: Method: sub_404D5A
- 66/280: 66/280: sub_404D5A (DONE:130ms)
- 66/280: Method: sub_404F84
- 67/280: 67/280: sub_404F84 (DONE:17ms)
- 67/280: Method: sub_40525C
- 68/280: 68/280: sub_40525C (DONE:150ms)
- 68/280: Method: sub_405348
- 69/280: 69/280: sub_405348 (DONE:21ms)
- 69/280: Method: sub_406F78
- 70/280: 70/280: sub_406F78 (DONE:25ms)
- 70/280: Method: sub_406F94
- 71/280: 71/280: sub_406F94 (DONE:31ms)
- 71/280: Method: sub_406FA8
- 72/280: 72/280: sub_406FA8 (DONE:25ms)
- 72/280: Method: sub_406FBC
- 73/280: 73/280: sub_406FBC (DONE:21ms)
- 73/280: Method: sub_407A50
- 74/280: 74/280: sub_407A50 (DONE:10ms)
- 74/280: Method: sub_407A54
- 75/280: 75/280: sub_407A54 (DONE:6ms)
- 75/280: Method: sub_409930
- 76/280: 76/280: sub_409930 (DONE:10ms)
- 76/280: Method: sub_409936
- 77/280: 77/280: sub_409936 (DONE:17ms)
- 77/280: Method: sub_40993C
- 78/280: 78/280: sub_40993C (DONE:10ms)
- 78/280: Method: sub_409942
- 79/280: 79/280: sub_409942 (DONE:10ms)
- 79/280: Method: sub_409948
- 80/280: 80/280: sub_409948 (DONE:9ms)
- 80/280: Method: sub_40994E
- 81/280: 81/280: sub_40994E (DONE:8ms)
- 81/280: Method: sub_409954
- 82/280: 82/280: sub_409954 (DONE:10ms)
- 82/280: Method: sub_40995A
- 83/280: 83/280: sub_40995A (DONE:6ms)
- 83/280: Method: sub_40996C
- 84/280: 84/280: sub_40996C (DONE:7ms)
- 84/280: Method: sub_409972
- 85/280: 85/280: sub_409972 (DONE:10ms)
- 85/280: Method: sub_40997E
- 86/280: 86/280: sub_40997E (DONE:8ms)
- 86/280: Method: sub_409990
- 87/280: 87/280: sub_409990 (DONE:9ms)
- 87/280: Method: sub_409996
- 88/280: 88/280: sub_409996 (DONE:8ms)
- 88/280: Method: sub_40999C
- 89/280: 89/280: sub_40999C (DONE:15ms)
- 89/280: Method: sub_4046D4
- 90/280: 90/280: sub_4046D4 (DONE:83ms)
- 90/280: Method: sub_4099A2
- 91/280: 91/280: sub_4099A2 (DONE:8ms)
- 91/280: Method: sub_4099AE
- 92/280: 92/280: sub_4099AE (DONE:9ms)
- 92/280: Method: sub_4099D2
- 93/280: 93/280: sub_4099D2 (DONE:9ms)
- 93/280: Method: sub_402F9A
- 94/280: 94/280: sub_402F9A (DONE:31ms)
- 94/280: Method: sub_4099D8
- 95/280: 95/280: sub_4099D8 (DONE:24ms)
- 95/280: Method: sub_4099DE
- 96/280: 96/280: sub_4099DE (DONE:17ms)
- 96/280: Method: sub_4099F0
- 97/280: 97/280: sub_4099F0 (DONE:9ms)
- 97/280: Method: sub_4099F6
- 98/280: 98/280: sub_4099F6 (DONE:8ms)
- 98/280: Method: sub_4099FC
- 99/280: 99/280: sub_4099FC (DONE:9ms)
- 99/280: Method: sub_409A02
-100/280: 100/280: sub_409A02 (DONE:8ms)
-100/280: Method: sub_409A20
-101/280: 101/280: sub_409A20 (DONE:9ms)
-101/280: Method: sub_409A26
-102/280: 102/280: sub_409A26 (DONE:10ms)
-102/280: Method: sub_409A2C
-103/280: 103/280: sub_409A2C (DONE:14ms)
-103/280: Method: sub_40454C
-104/280: 104/280: sub_40454C (DONE:24ms)
-104/280: Method: sub_40122C
-105/280: 105/280: sub_40122C (DONE:83ms)
-105/280: Method: sub_401298
-106/280: 106/280: sub_401298 (DONE:49ms)
-106/280: Method: sub_403AD0
-107/280: 107/280: sub_403AD0 (DONE:20984ms)
-107/280: Method: sub_4063AC
-108/280: 108/280: sub_4063AC (DONE:1757ms)
-108/280: Method: sub_406680
-109/280: 109/280: sub_406680 (DONE:1771ms)
-109/280: Method: sub_401514
-110/280: 110/280: sub_401514 (DONE:168ms)
-110/280: Method: sub_406B24
-111/280: 111/280: sub_406B24 (DONE:76ms)
-111/280: Method: sub_402D50
-112/280: 112/280: sub_402D50 (DONE:58ms)
-112/280: Method: sub_402EC0
-113/280: 113/280: sub_402EC0 (DONE:27ms)
-113/280: Method: sub_4052D0
-114/280: 114/280: sub_4052D0 (DONE:27ms)
-114/280: Method: sub_407B2C
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-115/280: 115/280: sub_407B2C (DONE:614ms)
-115/280: Method: sub_407A40
-116/280: 116/280: sub_407A40 (DONE:11ms)
-116/280: Method: sub_407D1C
-117/280: 117/280: sub_407D1C (DONE:27ms)
-117/280: Method: sub_404650
-118/280: 118/280: sub_404650 (DONE:20ms)
-118/280: Method: sub_401E28
-119/280: 119/280: sub_401E28 (DONE:18ms)
-119/280: Method: sub_403000
-120/280: 120/280: sub_403000 (DONE:96ms)
-120/280: Method: sub_403078
-121/280: 121/280: sub_403078 (DONE:269ms)
-121/280: Method: sub_406C98
-122/280: 122/280: sub_406C98 (DONE:58ms)
-122/280: Method: sub_406BCC
-123/280: 123/280: sub_406BCC (DONE:40ms)
-123/280: Method: sub_406AB0
-124/280: 124/280: sub_406AB0 (DONE:33ms)
-124/280: Method: sub_401BEC
-125/280: 125/280: sub_401BEC (DONE:49ms)
-125/280: Method: sub_4038E4
-126/280: 126/280: sub_4038E4 (DONE:27ms)
-126/280: Method: sub_401150
-127/280: 127/280: sub_401150 (DONE:143ms)
-127/280: Method: sub_402F38
-128/280: 128/280: sub_402F38 (DONE:17ms)
-128/280: Method: sub_403344
-129/280: 129/280: sub_403344 (DONE:116ms)
-129/280: Method: sub_4032C4
-130/280: 130/280: sub_4032C4 (DONE:133ms)
-130/280: Method: sub_406C1C
-131/280: 131/280: sub_406C1C (DONE:123ms)
-131/280: Method: sub_4031A8
-132/280: 132/280: sub_4031A8 (DONE:66ms)
-132/280: Method: sub_4037D4
-133/280: 133/280: sub_4037D4 (DONE:313ms)
-133/280: Method: sub_402118
-134/280: 134/280: sub_402118 (DONE:24ms)
-134/280: Method: sub_402DC4
-135/280: 135/280: sub_402DC4 (DONE:13ms)
-135/280: Method: sub_402EEC
-136/280: 136/280: sub_402EEC (DONE:12ms)
-136/280: Method: sub_403194
-137/280: 137/280: sub_403194 (DONE:16ms)
-137/280: Method: sub_4034A0
-138/280: 138/280: sub_4034A0 (DONE:55ms)
-138/280: Method: sub_4034E0
-139/280: 139/280: sub_4034E0 (DONE:63ms)
-139/280: Method: sub_403548
-140/280: 140/280: sub_403548 (DONE:34ms)
-140/280: Method: sub_403A9C
-141/280: 141/280: sub_403A9C (DONE:51ms)
-141/280: Method: sub_4044A0
-142/280: 142/280: sub_4044A0 (DONE:15ms)
-142/280: Method: sub_4045A4
-143/280: 143/280: sub_4045A4 (DONE:17ms)
-143/280: Method: sub_404A1C
-144/280: 144/280: sub_404A1C (DONE:65ms)
-144/280: Method: sub_404FC8
-145/280: 145/280: sub_404FC8 (DONE:24ms)
-145/280: Method: sub_404FCE
-146/280: 146/280: sub_404FCE (DONE:14ms)
-146/280: Method: sub_404FD4
-147/280: 147/280: sub_404FD4 (DONE:5ms)
-147/280: Method: sub_404FDA
-148/280: 148/280: sub_404FDA (DONE:7ms)
-148/280: Method: sub_4052EC
-149/280: 149/280: sub_4052EC (DONE:41ms)
-149/280: Method: sub_405318
-150/280: 150/280: sub_405318 (DONE:35ms)
-150/280: Method: sub_405684
-151/280: 151/280: sub_405684 (DONE:22ms)
-151/280: Method: sub_4059B8
-152/280: 152/280: sub_4059B8 (DONE:17ms)
-152/280: Method: sub_406C84
-153/280: 153/280: sub_406C84 (DONE:15ms)
-153/280: Method: sub_407D78
-154/280: 154/280: sub_407D78 (DONE:10ms)
-154/280: Method: sub_407D80
-155/280: 155/280: sub_407D80 (DONE:7ms)
-155/280: Method: sub_40998A
-156/280: 156/280: sub_40998A (DONE:7ms)
-156/280: Method: sub_4099A8
-157/280: 157/280: sub_4099A8 (DONE:7ms)
-157/280: Method: sub_4099B4
-158/280: 158/280: sub_4099B4 (DONE:15ms)
-158/280: Method: sub_4099BA
-159/280: 159/280: sub_4099BA (DONE:9ms)
-159/280: Method: sub_4099C0
-160/280: 160/280: sub_4099C0 (DONE:9ms)
-160/280: Method: sub_4099E4
-161/280: 161/280: sub_4099E4 (DONE:9ms)
-161/280: Method: sub_4099EA
-162/280: 162/280: sub_4099EA (DONE:7ms)
-162/280: Method: sub_403564
-163/280: 163/280: sub_403564 (DONE:154ms)
-163/280: Method: sub_404488
-164/280: 164/280: sub_404488 (DONE:17ms)
-164/280: Method: sub_4044B4
-165/280: 165/280: sub_4044B4 (DONE:20ms)
-165/280: Method: sub_4044CC
-166/280: 166/280: sub_4044CC (DONE:16ms)
-166/280: Method: sub_4044E0
-167/280: 167/280: sub_4044E0 (DONE:23ms)
-167/280: Method: sub_4044F4
-168/280: 168/280: sub_4044F4 (DONE:20ms)
-168/280: Method: sub_40450C
-169/280: 169/280: sub_40450C (DONE:20ms)
-169/280: Method: sub_404520
-170/280: 170/280: sub_404520 (DONE:20ms)
-170/280: Method: sub_404538
-171/280: 171/280: sub_404538 (DONE:20ms)
-171/280: Method: sub_404560
-172/280: 172/280: sub_404560 (DONE:19ms)
-172/280: Method: sub_404574
-173/280: 173/280: sub_404574 (DONE:23ms)
-173/280: Method: sub_40472C
-174/280: 174/280: sub_40472C (DONE:108ms)
-174/280: Method: sub_4047A8
-175/280: 175/280: sub_4047A8 (DONE:152ms)
-175/280: Method: sub_4025DB
-176/280: 176/280: sub_4025DB (DONE:75ms)
-176/280: Method: sub_40487C
-177/280: 177/280: sub_40487C (DONE:100ms)
-177/280: Method: sub_405E34
-178/280: 178/280: sub_405E34 (DONE:95ms)
-178/280: Method: sub_406314
-179/280: 179/280: sub_406314 (DONE:101ms)
-179/280: Method: sub_4048F0
-180/280: 180/280: sub_4048F0 (DONE:283ms)
-180/280: Method: sub_404A58
-181/280: 181/280: sub_404A58 (DONE:440ms)
-181/280: Method: sub_401360
-182/280: 182/280: sub_401360 (DONE:119ms)
-182/280: Method: sub_402FB8
-183/280: 183/280: sub_402FB8 (DONE:48ms)
-183/280: Method: sub_402FE8
-184/280: 184/280: sub_402FE8 (DONE:22ms)
-184/280: Method: __GetExceptDLLinfo
-185/280: 185/280: __GetExceptDLLinfo (DONE:7ms)
-185/280: Method: sub_4098DA
-186/280: 186/280: sub_4098DA (DONE:71ms)
-186/280: Method: sub_402EDC
-187/280: 187/280: sub_402EDC (DONE:21ms)
-187/280: Method: sub_405090
-188/280: 188/280: sub_405090 (DONE:223ms)
-188/280: Method: sub_407768
-189/280: 189/280: sub_407768 (DONE:521ms)
-189/280: Method: sub_40458C
-190/280: 190/280: sub_40458C (DONE:22ms)
-190/280: Method: sub_4045B8
-191/280: 191/280: sub_4045B8 (DONE:26ms)
-191/280: Method: sub_4045D0
-192/280: 192/280: sub_4045D0 (DONE:20ms)
-192/280: Method: sub_4045E4
-193/280: 193/280: sub_4045E4 (DONE:19ms)
-193/280: Method: sub_4045F8
-194/280: 194/280: sub_4045F8 (DONE:18ms)
-194/280: Method: sub_404610
-195/280: 195/280: sub_404610 (DONE:31ms)
-195/280: Method: sub_404624
-196/280: 196/280: sub_404624 (DONE:17ms)
-196/280: Method: sub_40463C
-197/280: 197/280: sub_40463C (DONE:21ms)
-197/280: Method: sub_404664
-198/280: 198/280: sub_404664 (DONE:19ms)
-198/280: Method: sub_404678
-199/280: 199/280: sub_404678 (DONE:18ms)
-199/280: Method: sub_40847C
-200/280: 200/280: sub_40847C (DONE:27ms)
-200/280: Method: sub_407970
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-201/280: 201/280: sub_407970 (DONE:83ms)
-201/280: Method: sub_407D44
-202/280: 202/280: sub_407D44 (DONE:19ms)
-202/280: Method: sub_407D54
-203/280: 203/280: sub_407D54 (DONE:15ms)
-203/280: Method: sub_407D64
-204/280: 204/280: sub_407D64 (DONE:15ms)
-204/280: Method: sub_4053FC
-205/280: 205/280: sub_4053FC (DONE:1457ms)
-205/280: Method: sub_405700
-206/280: 206/280: sub_405700 (DONE:936ms)
-206/280: Method: sub_405ECC
-207/280: 207/280: sub_405ECC (DONE:2310ms)
-207/280: Method: sub_403228
-208/280: 208/280: sub_403228 (DONE:24ms)
-208/280: Method: sub_4059E8
-209/280: 209/280: sub_4059E8 (DONE:1978ms)
-209/280: Method: sub_4033C4
-210/280: 210/280: sub_4033C4 (DONE:186ms)
-210/280: Method: sub_401614
-211/280: 211/280: sub_401614 (DONE:231ms)
-211/280: Method: sub_401700
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-212/280: 212/280: sub_401700 (DONE:780ms)
-212/280: Method: sub_4019C4
-213/280: 213/280: sub_4019C4 (DONE:199ms)
-213/280: Method: sub_401AE4
-214/280: 214/280: sub_401AE4 (DONE:184ms)
-214/280: Method: sub_401AB8
-215/280: 215/280: sub_401AB8 (DONE:38ms)
-215/280: Method: sub_408FB0
-216/280: 216/280: sub_408FB0 (DONE:125ms)
-216/280: Method: sub_406CDC
-217/280: 217/280: sub_406CDC (DONE:227ms)
-217/280: Method: sub_406DF8
-218/280: 218/280: sub_406DF8 (DONE:23ms)
-218/280: Method: sub_406974
-219/280: 219/280: sub_406974 (DONE:410ms)
-219/280: Method: sub_406B6C
-220/280: 220/280: sub_406B6C (DONE:56ms)
-220/280: Method: sub_402970
-221/280: 221/280: sub_402970 (DONE:167ms)
-221/280: Method: sub_402938
-222/280: 222/280: sub_402938 (DONE:50ms)
-222/280: Method: sub_40810E
-223/280: 223/280: sub_40810E (DONE:120ms)
-223/280: Method: sub_4093CF
-224/280: 224/280: sub_4093CF (DONE:92ms)
-224/280: Method: sub_407EFB
-225/280: 225/280: sub_407EFB (DONE:256ms)
-225/280: Method: sub_40803E
-226/280: 226/280: sub_40803E (DONE:219ms)
-226/280: Method: sub_4084BB
-227/280: 227/280: sub_4084BB (DONE:100ms)
-227/280: Method: sub_408530
-228/280: 228/280: sub_408530 (DONE:126ms)
-228/280: Method: sub_408EB9
-229/280: 229/280: sub_408EB9 (DONE:166ms)
-229/280: Method: sub_4085B8
-230/280: 230/280: sub_4085B8 (DONE:146ms)
-230/280: Method: sub_406E08
-231/280: 231/280: sub_406E08 (DONE:25ms)
-231/280: Method: sub_401C28
-232/280: 232/280: sub_401C28 (DONE:81ms)
-232/280: Method: sub_401FC8
-233/280: 233/280: sub_401FC8 (DONE:129ms)
-233/280: Method: sub_402080
-234/280: 234/280: sub_402080 (DONE:124ms)
-234/280: Method: sub_406F40
-235/280: 235/280: sub_406F40 (DONE:24ms)
-235/280: Method: sub_406EAC
-236/280: 236/280: sub_406EAC (DONE:14ms)
-236/280: Method: sub_4079D0
-237/280: 237/280: sub_4079D0 (DONE:93ms)
-237/280: Method: sub_406EC0
-238/280: 238/280: sub_406EC0 (DONE:17ms)
-238/280: Method: sub_402CA4
-239/280: 239/280: sub_402CA4 (DONE:67ms)
-239/280: Method: sub_402D18
-240/280: 240/280: sub_402D18 (DONE:56ms)
-240/280: Method: sub_407948
-241/280: 241/280: sub_407948 (DONE:19ms)
-241/280: Method: sub_402A4C
-242/280: 242/280: sub_402A4C (DONE:228ms)
-242/280: Method: sub_407E35
-243/280: 243/280: sub_407E35 (DONE:156ms)
-243/280: Method: sub_408B17
-244/280: 244/280: sub_408B17 (DONE:77ms)
-244/280: Method: sub_402895
-245/280: 245/280: sub_402895 (DONE:178ms)
-245/280: Method: sub_402B5C
-246/280: 246/280: sub_402B5C (DONE:83ms)
-246/280: Method: sub_4086A9
-247/280: 247/280: sub_4086A9 (DONE:760ms)
-247/280: Method: sub_40897D
-248/280: 248/280: sub_40897D (DONE:587ms)
-248/280: Method: sub_408AE8
-249/280: 249/280: sub_408AE8 (DONE:30ms)
-249/280: Method: sub_408AFB
-250/280: 250/280: sub_408AFB (DONE:22ms)
-250/280: Method: sub_408B5C
-251/280: 251/280: sub_408B5C (DONE:1813ms)
-251/280: Method: sub_40120C
-252/280: 252/280: sub_40120C (DONE:25ms)
-252/280: Method: sub_40121C
-253/280: 253/280: sub_40121C (DONE:14ms)
-253/280: Method: sub_406F28
-254/280: 254/280: sub_406F28 (DONE:26ms)
-254/280: Method: start
-255/280: 255/280: start (DONE:706ms)
-255/280: Method: sub_401C50
-256/280: 256/280: sub_401C50 (DONE:431ms)
-256/280: Method: sub_40818C
-257/280: 257/280: sub_40818C (DONE:735ms)
-257/280: Method: sub_408411
-258/280: 258/280: sub_408411 (DONE:133ms)
-258/280: Method: sub_407DBE
-259/280: 259/280: sub_407DBE (DONE:72ms)
-259/280: Method: sub_407E08
-260/280: 260/280: sub_407E08 (DONE:43ms)
-260/280: Method: sub_402388
-261/280: 261/280: sub_402388 (DONE:65ms)
-261/280: Method: sub_4011E0
-262/280: 262/280: sub_4011E0 (DONE:38ms)
-262/280: Method: sub_402C00
-263/280: 263/280: sub_402C00 (DONE:40ms)
-263/280: Method: sub_4013E0
-264/280: 264/280: sub_4013E0 (DONE:22ms)
-264/280: Method: sub_403244
-265/280: 265/280: sub_403244 (DONE:119ms)
-265/280: Method: sub_407150
-266/280: 266/280: sub_407150 (DONE:537ms)
-266/280: Method: sub_407338
-267/280: 267/280: sub_407338 (DONE:462ms)
-267/280: Method: sub_4070A0
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-268/280: 268/280: sub_4070A0 (DONE:281ms)
-268/280: Method: sub_408FFB
-269/280: 269/280: sub_408FFB (DONE:1020ms)
-269/280: Method: sub_4092AB
-270/280: 270/280: sub_4092AB (DONE:282ms)
-270/280: Method: sub_409456
-271/280: 271/280: sub_409456 (DONE:1759ms)
-271/280: Method: sub_4013F0
-272/280: 272/280: sub_4013F0 (DONE:14ms)
-272/280: Method: sub_402484
-273/280: 273/280: sub_402484 (DONE:395ms)
-273/280: Method: sub_401460
-274/280: 274/280: sub_401460 (DONE:24ms)
-274/280: Method: sub_401478
-275/280: 275/280: sub_401478 (DONE:32ms)
-275/280: Method: sub_401490
-276/280: 276/280: sub_401490 (DONE:37ms)
-276/280: Method: sub_401400
-277/280: 277/280: sub_401400 (DONE:21ms)
-277/280: Method: sub_40262E
-278/280: 278/280: sub_40262E (DONE:742ms)
-278/280: Method: sub_402DD0
-279/280: 279/280: sub_402DD0 (DONE:210ms)
-279/280: Method: sub_406ED4
-280/280: 280/280: sub_406ED4 (DONE:91ms)
-1/2 DECOMPILATION ERROR: METHOD sub_405058: java.lang.IllegalStateException: Cannot resolve wildcard type with group=POINTER,bitsize=32. Make sure to register adequate types to the primitive type manager in order to allow wildcard type resolution and high-level code generation.
-	at com.pnfsoftware.jebglobal.am.Vo(SourceFile:600)
-	at com.pnfsoftware.jebglobal.am.XP(SourceFile:533)
-	at com.pnfsoftware.jebglobal.Nl.W(SourceFile:299)
-	at com.pnfsoftware.jebglobal.Nl.resolve(SourceFile:35)
-	at com.pnfsoftware.jebglobal.qf.XP(SourceFile:48)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-2/2 DECOMPILATION ERROR: METHOD sub_40507C: java.lang.IllegalStateException: Cannot resolve wildcard type with group=POINTER,bitsize=32. Make sure to register adequate types to the primitive type manager in order to allow wildcard type resolution and high-level code generation.
-	at com.pnfsoftware.jebglobal.am.Vo(SourceFile:600)
-	at com.pnfsoftware.jebglobal.am.XP(SourceFile:533)
-	at com.pnfsoftware.jebglobal.Nl.W(SourceFile:299)
-	at com.pnfsoftware.jebglobal.Nl.resolve(SourceFile:35)
-	at com.pnfsoftware.jebglobal.qf.XP(SourceFile:48)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
-	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
-	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
-	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
-	at org.python.core.PyObject.__call__(PyObject.java:461)
-	at org.python.core.PyObject.__call__(PyObject.java:465)
-	at org.python.core.PyMethod.__call__(PyMethod.java:126)
-	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
-	at org.python.core.PyFunction.__call__(PyFunction.java:426)
-	at org.python.core.PyMethod.__call__(PyMethod.java:141)
-	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
-	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
-	at org.python.core.PyTableCode.call(PyTableCode.java:173)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
-	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
-	at org.python.core.PyFunction.__call__(PyFunction.java:485)
-	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
-	at org.python.core.PyMethod.__call__(PyMethod.java:228)
-	at org.python.core.PyMethod.__call__(PyMethod.java:218)
-	at org.python.core.PyMethod.__call__(PyMethod.java:213)
-	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
-	at org.python.core.PyObject._jcall(PyObject.java:3598)
-	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
-	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
-	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
-
-Exectime: 62.124000 sec
-Done.
+  0/284: Method: sub_401140
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+  1/284: 1/284: sub_401140 (DONE:67ms)
+  1/284: Method: sub_40213C
+  2/284: 2/284: sub_40213C (DONE:95ms)
+  2/284: Method: sub_404690
+  3/284: 3/284: sub_404690 (DONE:118ms)
+  3/284: Method: sub_404DFC
+  4/284: 4/284: sub_404DFC (DONE:763ms)
+  4/284: Method: →KERNEL32.DLL!MultiByteToWideChar
+  5/284: 5/284: →KERNEL32.DLL!MultiByteToWideChar (DONE:12ms)
+  5/284: Method: sub_4021AC
+  6/284: 6/284: sub_4021AC (DONE:127ms)
+  6/284: Method: sub_402414
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+  7/284: 7/284: sub_402414 (DONE:29ms)
+  7/284: Method: sub_404434
+  8/284: 8/284: sub_404434 (DONE:79ms)
+  8/284: Method: →KERNEL32.DLL!WriteFile
+  9/284: 9/284: →KERNEL32.DLL!WriteFile (DONE:5ms)
+  9/284: Method: sub_40375C
+ 10/284: 10/284: sub_40375C (DONE:43ms)
+ 10/284: Method: sub_404F98
+ 11/284: 11/284: sub_404F98 (DONE:23ms)
+ 11/284: Method: sub_407A58
+ 12/284: 12/284: sub_407A58 (DONE:204ms)
+ 12/284: Method: →KERNEL32.DLL!GetModuleHandleA
+ 13/284: 13/284: →KERNEL32.DLL!GetModuleHandleA (DONE:4ms)
+ 13/284: Method: →KERNEL32.DLL!WideCharToMultiByte
+ 14/284: 14/284: →KERNEL32.DLL!WideCharToMultiByte (DONE:7ms)
+ 14/284: Method: sub_405144
+ 15/284: 15/284: sub_405144 (DONE:214ms)
+ 15/284: Method: sub_4023BC
+ 16/284: 16/284: sub_4023BC (DONE:23ms)
+ 16/284: Method: →KERNEL32.DLL!GetLastError
+ 17/284: 17/284: →KERNEL32.DLL!GetLastError (DONE:3ms)
+ 17/284: Method: →KERNEL32.DLL!GetProcAddress
+ 18/284: 18/284: →KERNEL32.DLL!GetProcAddress (DONE:3ms)
+ 18/284: Method: →KERNEL32.DLL!VirtualAlloc
+ 19/284: 19/284: →KERNEL32.DLL!VirtualAlloc (DONE:4ms)
+ 19/284: Method: sub_402238
+ 20/284: 20/284: sub_402238 (DONE:14ms)
+ 20/284: Method: sub_402BEB
+ 21/284: 21/284: sub_402BEB (DONE:15ms)
+ 21/284: Method: sub_402F48
+ 22/284: 22/284: sub_402F48 (DONE:3ms)
+ 22/284: Method: sub_403A20
+ 23/284: 23/284: sub_403A20 (DONE:49ms)
+ 23/284: Method: sub_403A68
+ 24/284: 24/284: sub_403A68 (DONE:58ms)
+ 24/284: Method: sub_405028
+ 25/284: 25/284: sub_405028 (DONE:13ms)
+ 25/284: Method: sub_405058
+ 26/284: 26/284: sub_405058 (DONE:18ms)
+ 26/284: Method: sub_40507C
+ 27/284: 27/284: sub_40507C (DONE:5ms)
+ 27/284: Method: sub_405360
+ 28/284: 28/284: sub_405360 (DONE:24ms)
+ 28/284: Method: sub_405388
+ 29/284: 29/284: sub_405388 (DONE:43ms)
+ 29/284: Method: sub_406ACC
+ 30/284: 30/284: sub_406ACC (DONE:63ms)
+ 30/284: Method: sub_4072C4
+ 31/284: 31/284: sub_4072C4 (DONE:109ms)
+ 31/284: Method: sub_4074E8
+ 32/284: 32/284: sub_4074E8 (DONE:60ms)
+ 32/284: Method: sub_407748
+ 33/284: 33/284: sub_407748 (DONE:18ms)
+ 33/284: Method: sub_408009
+ 34/284: 34/284: sub_408009 (DONE:14ms)
+ 34/284: Method: →KERNEL32.DLL!GetFileType
+ 35/284: 35/284: →KERNEL32.DLL!GetFileType (DONE:3ms)
+ 35/284: Method: →KERNEL32.DLL!RaiseException
+ 36/284: 36/284: →KERNEL32.DLL!RaiseException (DONE:4ms)
+ 36/284: Method: sub_408021
+ 37/284: 37/284: sub_408021 (DONE:15ms)
+ 37/284: Method: →KERNEL32.DLL!VirtualFree
+ 38/284: 38/284: →KERNEL32.DLL!VirtualFree (DONE:4ms)
+ 38/284: Method: sub_40130C
+ 39/284: 39/284: sub_40130C (DONE:14ms)
+ 39/284: Method: sub_4012C0
+ 40/284: 40/284: sub_4012C0 (DONE:30ms)
+ 40/284: Method: sub_401324
+ 41/284: 41/284: sub_401324 (DONE:13ms)
+ 41/284: Method: sub_402D9C
+ 42/284: 42/284: sub_402D9C (DONE:14ms)
+ 42/284: Method: sub_4053B8
+ 43/284: 43/284: sub_4053B8 (DONE:62ms)
+ 43/284: Method: sub_4056B4
+ 44/284: 44/284: sub_4056B4 (DONE:60ms)
+ 44/284: Method: sub_405010
+ 45/284: 45/284: sub_405010 (DONE:9ms)
+ 45/284: Method: sub_4023D4
+ 46/284: 46/284: sub_4023D4 (DONE:31ms)
+ 46/284: Method: sub_4037C0
+ 47/284: 47/284: sub_4037C0 (DONE:11ms)
+ 47/284: Method: sub_4031E0
+ 48/284: 48/284: sub_4031E0 (DONE:37ms)
+ 48/284: Method: sub_4013DC
+ 49/284: 49/284: sub_4013DC (DONE:3ms)
+ 49/284: Method: sub_401418
+ 50/284: 50/284: sub_401418 (DONE:11ms)
+ 50/284: Method: sub_4014D0
+ 51/284: 51/284: sub_4014D0 (DONE:18ms)
+ 51/284: Method: sub_401EA0
+ 52/284: 52/284: sub_401EA0 (DONE:164ms)
+ 52/284: Method: sub_402134
+ 53/284: 53/284: sub_402134 (DONE:2ms)
+ 53/284: Method: sub_402138
+ 54/284: 54/284: sub_402138 (DONE:2ms)
+ 54/284: Method: sub_402160
+ 55/284: 55/284: sub_402160 (DONE:56ms)
+ 55/284: Method: sub_4022AC
+ 56/284: 56/284: sub_4022AC (DONE:80ms)
+ 56/284: Method: sub_40231C
+ 57/284: 57/284: sub_40231C (DONE:83ms)
+ 57/284: Method: sub_402F4C
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+ 58/284: 58/284: sub_402F4C (DONE:5ms)
+ 58/284: Method: sub_402F61
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+ 59/284: 59/284: sub_402F61 (DONE:20ms)
+ 59/284: Method: sub_402FAF
+ 60/284: 60/284: sub_402FAF (DONE:5ms)
+ 60/284: Method: sub_4033A0
+ 61/284: 61/284: sub_4033A0 (DONE:4ms)
+ 61/284: Method: sub_4033B0
+ 62/284: 62/284: sub_4033B0 (DONE:7ms)
+ 62/284: Method: sub_404C97
+ 63/284: 63/284: sub_404C97 (DONE:85ms)
+ 63/284: Method: sub_404D5A
+ 64/284: 64/284: sub_404D5A (DONE:62ms)
+ 64/284: Method: sub_404F84
+ 65/284: 65/284: sub_404F84 (DONE:6ms)
+ 65/284: Method: sub_40525C
+ 66/284: 66/284: sub_40525C (DONE:97ms)
+ 66/284: Method: sub_405348
+ 67/284: 67/284: sub_405348 (DONE:7ms)
+ 67/284: Method: sub_406F78
+ 68/284: 68/284: sub_406F78 (DONE:12ms)
+ 68/284: Method: sub_406F94
+ 69/284: 69/284: sub_406F94 (DONE:10ms)
+ 69/284: Method: sub_406FA8
+ 70/284: 70/284: sub_406FA8 (DONE:10ms)
+ 70/284: Method: sub_406FBC
+ 71/284: 71/284: sub_406FBC (DONE:6ms)
+ 71/284: Method: sub_407A50
+ 72/284: 72/284: sub_407A50 (DONE:3ms)
+ 72/284: Method: sub_407A54
+ 73/284: 73/284: sub_407A54 (DONE:2ms)
+ 73/284: Method: →KERNEL32.DLL!CloseHandle
+ 74/284: 74/284: →KERNEL32.DLL!CloseHandle (DONE:3ms)
+ 74/284: Method: →KERNEL32.DLL!CreateFileA
+ 75/284: 75/284: →KERNEL32.DLL!CreateFileA (DONE:4ms)
+ 75/284: Method: →KERNEL32.DLL!ExitProcess
+ 76/284: 76/284: →KERNEL32.DLL!ExitProcess (DONE:3ms)
+ 76/284: Method: →KERNEL32.DLL!GetACP
+ 77/284: 77/284: →KERNEL32.DLL!GetACP (DONE:2ms)
+ 77/284: Method: →KERNEL32.DLL!GetCPInfo
+ 78/284: 78/284: →KERNEL32.DLL!GetCPInfo (DONE:3ms)
+ 78/284: Method: →KERNEL32.DLL!GetCommandLineA
+ 79/284: 79/284: →KERNEL32.DLL!GetCommandLineA (DONE:2ms)
+ 79/284: Method: →KERNEL32.DLL!GetCurrentThreadId
+ 80/284: 80/284: →KERNEL32.DLL!GetCurrentThreadId (DONE:2ms)
+ 80/284: Method: →KERNEL32.DLL!GetEnvironmentStrings
+ 81/284: 81/284: →KERNEL32.DLL!GetEnvironmentStrings (DONE:2ms)
+ 81/284: Method: →KERNEL32.DLL!GetLocalTime
+ 82/284: 82/284: →KERNEL32.DLL!GetLocalTime (DONE:3ms)
+ 82/284: Method: →KERNEL32.DLL!GetModuleFileNameA
+ 83/284: 83/284: →KERNEL32.DLL!GetModuleFileNameA (DONE:3ms)
+ 83/284: Method: →KERNEL32.DLL!GetOEMCP
+ 84/284: 84/284: →KERNEL32.DLL!GetOEMCP (DONE:2ms)
+ 84/284: Method: →KERNEL32.DLL!GetStartupInfoA
+ 85/284: 85/284: →KERNEL32.DLL!GetStartupInfoA (DONE:3ms)
+ 85/284: Method: →KERNEL32.DLL!GetStdHandle
+ 86/284: 86/284: →KERNEL32.DLL!GetStdHandle (DONE:3ms)
+ 86/284: Method: →KERNEL32.DLL!GetStringTypeW
+ 87/284: 87/284: →KERNEL32.DLL!GetStringTypeW (DONE:3ms)
+ 87/284: Method: sub_4046D4
+ 88/284: 88/284: sub_4046D4 (DONE:55ms)
+ 88/284: Method: →KERNEL32.DLL!GetVersion
+ 89/284: 89/284: →KERNEL32.DLL!GetVersion (DONE:3ms)
+ 89/284: Method: →KERNEL32.DLL!GlobalMemoryStatus
+ 90/284: 90/284: →KERNEL32.DLL!GlobalMemoryStatus (DONE:3ms)
+ 90/284: Method: →KERNEL32.DLL!RtlUnwind
+ 91/284: 91/284: →KERNEL32.DLL!RtlUnwind (DONE:4ms)
+ 91/284: Method: sub_402F9A
+ 92/284: 92/284: sub_402F9A (DONE:9ms)
+ 92/284: Method: →KERNEL32.DLL!SetConsoleCtrlHandler
+ 93/284: 93/284: →KERNEL32.DLL!SetConsoleCtrlHandler (DONE:3ms)
+ 93/284: Method: →KERNEL32.DLL!SetFilePointer
+ 94/284: 94/284: →KERNEL32.DLL!SetFilePointer (DONE:4ms)
+ 94/284: Method: →KERNEL32.DLL!TlsFree
+ 95/284: 95/284: →KERNEL32.DLL!TlsFree (DONE:3ms)
+ 95/284: Method: →KERNEL32.DLL!TlsGetValue
+ 96/284: 96/284: →KERNEL32.DLL!TlsGetValue (DONE:3ms)
+ 96/284: Method: →KERNEL32.DLL!TlsSetValue
+ 97/284: 97/284: →KERNEL32.DLL!TlsSetValue (DONE:3ms)
+ 97/284: Method: →KERNEL32.DLL!UnhandledExceptionFilter
+ 98/284: 98/284: →KERNEL32.DLL!UnhandledExceptionFilter (DONE:2ms)
+ 98/284: Method: →USER32.DLL!EnumThreadWindows
+ 99/284: 99/284: →USER32.DLL!EnumThreadWindows (DONE:2ms)
+ 99/284: Method: →USER32.DLL!MessageBoxA
+100/284: 100/284: →USER32.DLL!MessageBoxA (DONE:6ms)
+100/284: Method: →USER32.DLL!wsprintfA
+101/284: 101/284: →USER32.DLL!wsprintfA (DONE:3ms)
+101/284: Method: sub_40454C
+102/284: 102/284: sub_40454C (DONE:10ms)
+102/284: Method: sub_40122C
+103/284: 103/284: sub_40122C (DONE:39ms)
+103/284: Method: sub_401298
+104/284: 104/284: sub_401298 (DONE:17ms)
+104/284: Method: sub_402BE1
+105/284: 105/284: sub_402BE1 (DONE:2ms)
+105/284: Method: sub_403AD0
+106/284: 106/284: sub_403AD0 (DONE:4774ms)
+106/284: Method: sub_4063AC
+107/284: 107/284: sub_4063AC (DONE:1362ms)
+107/284: Method: sub_406680
+108/284: 108/284: sub_406680 (DONE:1498ms)
+108/284: Method: sub_402EC0
+109/284: 109/284: sub_402EC0 (DONE:8ms)
+109/284: Method: sub_4052D0
+110/284: 110/284: sub_4052D0 (DONE:12ms)
+110/284: Method: sub_407B2C
+111/284: 111/284: sub_407B2C (DONE:103ms)
+111/284: Method: sub_407A40
+112/284: 112/284: sub_407A40 (DONE:10ms)
+112/284: Method: sub_407D1C
+113/284: 113/284: sub_407D1C (DONE:14ms)
+113/284: Method: sub_404650
+114/284: 114/284: sub_404650 (DONE:10ms)
+114/284: Method: sub_401E28
+115/284: 115/284: sub_401E28 (DONE:12ms)
+115/284: Method: sub_403000
+116/284: 116/284: sub_403000 (DONE:53ms)
+116/284: Method: sub_403078
+117/284: 117/284: sub_403078 (DONE:227ms)
+117/284: Method: sub_406C98
+118/284: 118/284: sub_406C98 (DONE:23ms)
+118/284: Method: sub_406BCC
+119/284: 119/284: sub_406BCC (DONE:23ms)
+119/284: Method: sub_406AB0
+120/284: 120/284: sub_406AB0 (DONE:13ms)
+120/284: Method: sub_401BEC
+121/284: 121/284: sub_401BEC (DONE:21ms)
+121/284: Method: sub_402BD8
+122/284: 122/284: sub_402BD8 (DONE:5ms)
+122/284: Method: sub_4038E4
+123/284: 123/284: sub_4038E4 (DONE:12ms)
+123/284: Method: sub_401150
+124/284: 124/284: sub_401150 (DONE:71ms)
+124/284: Method: sub_402F41
+125/284: 125/284: sub_402F41 (DONE:3ms)
+125/284: Method: sub_403344
+126/284: 126/284: sub_403344 (DONE:55ms)
+126/284: Method: sub_4032C4
+127/284: 127/284: sub_4032C4 (DONE:92ms)
+127/284: Method: sub_402D50
+128/284: 128/284: sub_402D50 (DONE:33ms)
+128/284: Method: sub_402F38
+129/284: 129/284: sub_402F38 (DONE:4ms)
+129/284: Method: sub_4031A8
+130/284: 130/284: sub_4031A8 (DONE:30ms)
+130/284: Method: sub_4037D4
+131/284: 131/284: sub_4037D4 (DONE:216ms)
+131/284: Method: sub_402118
+132/284: 132/284: sub_402118 (DONE:13ms)
+132/284: Method: sub_402DC4
+133/284: 133/284: sub_402DC4 (DONE:3ms)
+133/284: Method: sub_402EEC
+134/284: 134/284: sub_402EEC (DONE:3ms)
+134/284: Method: sub_403194
+135/284: 135/284: sub_403194 (DONE:7ms)
+135/284: Method: sub_4034A0
+136/284: 136/284: sub_4034A0 (DONE:33ms)
+136/284: Method: sub_4034E0
+137/284: 137/284: sub_4034E0 (DONE:55ms)
+137/284: Method: sub_403548
+138/284: 138/284: sub_403548 (DONE:11ms)
+138/284: Method: sub_403A9C
+139/284: 139/284: sub_403A9C (DONE:26ms)
+139/284: Method: sub_4044A0
+140/284: 140/284: sub_4044A0 (DONE:9ms)
+140/284: Method: sub_4045A4
+141/284: 141/284: sub_4045A4 (DONE:8ms)
+141/284: Method: sub_404A1C
+142/284: 142/284: sub_404A1C (DONE:41ms)
+142/284: Method: sub_4052EC
+143/284: 143/284: sub_4052EC (DONE:19ms)
+143/284: Method: sub_405318
+144/284: 144/284: sub_405318 (DONE:21ms)
+144/284: Method: sub_405684
+145/284: 145/284: sub_405684 (DONE:12ms)
+145/284: Method: sub_4059B8
+146/284: 146/284: sub_4059B8 (DONE:11ms)
+146/284: Method: sub_406C84
+147/284: 147/284: sub_406C84 (DONE:5ms)
+147/284: Method: sub_407D78
+148/284: 148/284: sub_407D78 (DONE:3ms)
+148/284: Method: sub_407D80
+149/284: 149/284: sub_407D80 (DONE:2ms)
+149/284: Method: →KERNEL32.DLL!GetProcessHeap
+150/284: 150/284: →KERNEL32.DLL!GetProcessHeap (DONE:2ms)
+150/284: Method: →KERNEL32.DLL!GetVersionExA
+151/284: 151/284: →KERNEL32.DLL!GetVersionExA (DONE:2ms)
+151/284: Method: →KERNEL32.DLL!HeapAlloc
+152/284: 152/284: →KERNEL32.DLL!HeapAlloc (DONE:3ms)
+152/284: Method: →KERNEL32.DLL!HeapFree
+153/284: 153/284: →KERNEL32.DLL!HeapFree (DONE:2ms)
+153/284: Method: →KERNEL32.DLL!LoadLibraryA
+154/284: 154/284: →KERNEL32.DLL!LoadLibraryA (DONE:2ms)
+154/284: Method: →KERNEL32.DLL!SetHandleCount
+155/284: 155/284: →KERNEL32.DLL!SetHandleCount (DONE:2ms)
+155/284: Method: →KERNEL32.DLL!TlsAlloc
+156/284: 156/284: →KERNEL32.DLL!TlsAlloc (DONE:2ms)
+156/284: Method: sub_403564
+157/284: 157/284: sub_403564 (DONE:115ms)
+157/284: Method: sub_404488
+158/284: 158/284: sub_404488 (DONE:9ms)
+158/284: Method: sub_4044B4
+159/284: 159/284: sub_4044B4 (DONE:8ms)
+159/284: Method: sub_4044CC
+160/284: 160/284: sub_4044CC (DONE:9ms)
+160/284: Method: sub_4044E0
+161/284: 161/284: sub_4044E0 (DONE:9ms)
+161/284: Method: sub_4044F4
+162/284: 162/284: sub_4044F4 (DONE:8ms)
+162/284: Method: sub_40450C
+163/284: 163/284: sub_40450C (DONE:9ms)
+163/284: Method: sub_404520
+164/284: 164/284: sub_404520 (DONE:9ms)
+164/284: Method: sub_404538
+165/284: 165/284: sub_404538 (DONE:9ms)
+165/284: Method: sub_404560
+166/284: 166/284: sub_404560 (DONE:8ms)
+166/284: Method: sub_404574
+167/284: 167/284: sub_404574 (DONE:8ms)
+167/284: Method: sub_40472C
+168/284: 168/284: sub_40472C (DONE:59ms)
+168/284: Method: sub_4047A8
+169/284: 169/284: sub_4047A8 (DONE:111ms)
+169/284: Method: sub_4025DB
+170/284: 170/284: sub_4025DB (DONE:38ms)
+170/284: Method: sub_40487C
+171/284: 171/284: sub_40487C (DONE:57ms)
+171/284: Method: sub_405E34
+172/284: 172/284: sub_405E34 (DONE:65ms)
+172/284: Method: sub_406314
+173/284: 173/284: sub_406314 (DONE:62ms)
+173/284: Method: sub_404A58
+174/284: 174/284: sub_404A58 (DONE:447ms)
+174/284: Method: sub_401360
+175/284: 175/284: sub_401360 (DONE:48ms)
+175/284: Method: sub_402FB8
+176/284: 176/284: sub_402FB8 (DONE:23ms)
+176/284: Method: sub_402FE8
+177/284: 177/284: sub_402FE8 (DONE:10ms)
+177/284: Method: →sub_402D9C
+178/284: 178/284: →sub_402D9C (DONE:1ms)
+178/284: Method: sub_4098DA
+179/284: 179/284: sub_4098DA (DONE:42ms)
+179/284: Method: sub_402EDC
+180/284: 180/284: sub_402EDC (DONE:5ms)
+180/284: Method: sub_405090
+181/284: 181/284: sub_405090 (DONE:164ms)
+181/284: Method: sub_407768
+182/284: 182/284: sub_407768 (DONE:553ms)
+182/284: Method: sub_40458C
+183/284: 183/284: sub_40458C (DONE:10ms)
+183/284: Method: sub_4045B8
+184/284: 184/284: sub_4045B8 (DONE:9ms)
+184/284: Method: sub_4045D0
+185/284: 185/284: sub_4045D0 (DONE:9ms)
+185/284: Method: sub_4045E4
+186/284: 186/284: sub_4045E4 (DONE:9ms)
+186/284: Method: sub_4045F8
+187/284: 187/284: sub_4045F8 (DONE:9ms)
+187/284: Method: sub_404610
+188/284: 188/284: sub_404610 (DONE:9ms)
+188/284: Method: sub_404624
+189/284: 189/284: sub_404624 (DONE:9ms)
+189/284: Method: sub_40463C
+190/284: 190/284: sub_40463C (DONE:9ms)
+190/284: Method: sub_404664
+191/284: 191/284: sub_404664 (DONE:8ms)
+191/284: Method: sub_404678
+192/284: 192/284: sub_404678 (DONE:8ms)
+192/284: Method: sub_40847C
+193/284: 193/284: sub_40847C (DONE:18ms)
+193/284: Method: sub_407970
+194/284: 194/284: sub_407970 (DONE:26ms)
+194/284: Method: sub_407D44
+195/284: 195/284: sub_407D44 (DONE:5ms)
+195/284: Method: sub_407D54
+196/284: 196/284: sub_407D54 (DONE:5ms)
+196/284: Method: sub_407D64
+197/284: 197/284: sub_407D64 (DONE:6ms)
+197/284: Method: sub_4053FC
+198/284: 198/284: sub_4053FC (DONE:1479ms)
+198/284: Method: sub_405700
+199/284: 199/284: sub_405700 (DONE:1193ms)
+199/284: Method: sub_405ECC
+200/284: 200/284: sub_405ECC (DONE:2230ms)
+200/284: Method: sub_403228
+201/284: 201/284: sub_403228 (DONE:11ms)
+201/284: Method: sub_4059E8
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+[W] Cannot set type ? on IR i32:00000000h
+202/284: 202/284: sub_4059E8 (DONE:2161ms)
+202/284: Method: sub_4033C4
+203/284: 203/284: sub_4033C4 (DONE:151ms)
+203/284: Method: sub_401614
+204/284: 204/284: sub_401614 (DONE:132ms)
+204/284: Method: sub_4019C4
+205/284: 205/284: sub_4019C4 (DONE:144ms)
+205/284: Method: sub_401AE4
+206/284: 206/284: sub_401AE4 (DONE:127ms)
+206/284: Method: sub_401AB8
+207/284: 207/284: sub_401AB8 (DONE:21ms)
+207/284: Method: sub_408FB0
+208/284: 208/284: sub_408FB0 (DONE:46ms)
+208/284: Method: sub_401C28
+209/284: 209/284: sub_401C28 (DONE:25ms)
+209/284: Method: sub_401FC8
+210/284: 210/284: sub_401FC8 (DONE:84ms)
+210/284: Method: sub_402080
+211/284: 211/284: sub_402080 (DONE:72ms)
+211/284: Method: sub_406F40
+212/284: 212/284: sub_406F40 (DONE:11ms)
+212/284: Method: sub_406E08
+213/284: 213/284: sub_406E08 (DONE:13ms)
+213/284: Method: sub_404FC8
+214/284: 214/284: sub_404FC8 (DONE:6ms)
+214/284: Method: sub_404FCE
+215/284: 215/284: sub_404FCE (DONE:5ms)
+215/284: Method: sub_404FD4
+216/284: 216/284: sub_404FD4 (DONE:5ms)
+216/284: Method: sub_404FDA
+217/284: 217/284: sub_404FDA (DONE:5ms)
+217/284: Method: sub_40120C
+218/284: 218/284: sub_40120C (DONE:5ms)
+218/284: Method: sub_40121C
+219/284: 219/284: sub_40121C (DONE:5ms)
+219/284: Method: sub_4014F1
+220/284: 220/284: sub_4014F1 (DONE:15ms)
+220/284: Method: sub_4014D4
+221/284: 221/284: sub_4014D4 (DONE:3ms)
+221/284: Method: sub_401514
+222/284: 222/284: sub_401514 (DONE:87ms)
+222/284: Method: sub_401700
+223/284: 223/284: sub_401700 (DONE:683ms)
+223/284: Method: sub_402938
+224/284: 224/284: sub_402938 (DONE:29ms)
+224/284: Method: sub_406F28
+225/284: 225/284: sub_406F28 (DONE:11ms)
+225/284: Method: start
+226/284: 226/284: start (DONE:819ms)
+226/284: Method: sub_402CA4
+227/284: 227/284: sub_402CA4 (DONE:38ms)
+227/284: Method: sub_406EAC
+228/284: 228/284: sub_406EAC (DONE:7ms)
+228/284: Method: sub_4079D0
+229/284: 229/284: sub_4079D0 (DONE:55ms)
+229/284: Method: sub_406EC0
+230/284: 230/284: sub_406EC0 (DONE:6ms)
+230/284: Method: sub_402D18
+231/284: 231/284: sub_402D18 (DONE:22ms)
+231/284: Method: sub_407948
+232/284: 232/284: sub_407948 (DONE:10ms)
+232/284: Method: sub_401C50
+233/284: 233/284: sub_401C50 (DONE:393ms)
+233/284: Method: sub_406B24
+234/284: 234/284: sub_406B24 (DONE:35ms)
+234/284: Method: sub_407DBE
+235/284: 235/284: sub_407DBE (DONE:29ms)
+235/284: Method: sub_406DF8
+236/284: 236/284: sub_406DF8 (DONE:5ms)
+236/284: Method: sub_408AE8
+237/284: 237/284: sub_408AE8 (DONE:16ms)
+237/284: Method: sub_408AFB
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+238/284: 238/284: sub_408AFB (DONE:11ms)
+238/284: Method: sub_408B17
+239/284: 239/284: sub_408B17 (DONE:34ms)
+239/284: Method: sub_407E08
+240/284: 240/284: sub_407E08 (DONE:25ms)
+240/284: Method: sub_4011E0
+241/284: 241/284: sub_4011E0 (DONE:24ms)
+241/284: Method: sub_4048F0
+242/284: 242/284: sub_4048F0 (DONE:250ms)
+242/284: Method: sub_406974
+243/284: 243/284: sub_406974 (DONE:218ms)
+243/284: Method: sub_408411
+244/284: 244/284: sub_408411 (DONE:71ms)
+244/284: Method: sub_402C00
+245/284: 245/284: sub_402C00 (DONE:22ms)
+245/284: Method: sub_406B6C
+246/284: 246/284: sub_406B6C (DONE:34ms)
+246/284: Method: sub_402970
+247/284: 247/284: sub_402970 (DONE:117ms)
+247/284: Method: sub_40810E
+248/284: 248/284: sub_40810E (DONE:78ms)
+248/284: Method: sub_4093CF
+249/284: 249/284: sub_4093CF (DONE:64ms)
+249/284: Method: sub_40803E
+250/284: 250/284: sub_40803E (DONE:183ms)
+250/284: Method: sub_4084BB
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+251/284: 251/284: sub_4084BB (DONE:32ms)
+251/284: Method: sub_407EFB
+252/284: 252/284: sub_407EFB (DONE:268ms)
+252/284: Method: sub_408530
+253/284: 253/284: sub_408530 (DONE:68ms)
+253/284: Method: sub_408EB9
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+254/284: 254/284: sub_408EB9 (DONE:103ms)
+254/284: Method: sub_40818C
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+255/284: 255/284: sub_40818C (DONE:603ms)
+255/284: Method: sub_4085B8
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+256/284: 256/284: sub_4085B8 (DONE:114ms)
+256/284: Method: sub_402A4C
+257/284: 257/284: sub_402A4C (DONE:153ms)
+257/284: Method: sub_407E35
+258/284: 258/284: sub_407E35 (DONE:82ms)
+258/284: Method: sub_402895
+259/284: 259/284: sub_402895 (DONE:75ms)
+259/284: Method: sub_402B5C
+260/284: 260/284: sub_402B5C (DONE:50ms)
+260/284: Method: sub_4086A9
+261/284: 261/284: sub_4086A9 (DONE:824ms)
+261/284: Method: sub_40897D
+262/284: 262/284: sub_40897D (DONE:291ms)
+262/284: Method: sub_408B5C
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+[E] An optimizer failed: nO: com.pnfsoftware.jeb.core.units.code.asm.decompiler.exceptions.IllegalIntermediateExpressionException: The operands op1 and op2 do not have the same bitsize: 32, 16 (operator: +)
+263/284: 263/284: sub_408B5C (DONE:2260ms)
+263/284: Method: sub_402250
+264/284: 264/284: sub_402250 (DONE:38ms)
+264/284: Method: sub_406C1C
+265/284: 265/284: sub_406C1C (DONE:50ms)
+265/284: Method: sub_406CDC
+266/284: 266/284: sub_406CDC (DONE:173ms)
+266/284: Method: sub_402388
+267/284: 267/284: sub_402388 (DONE:29ms)
+267/284: Method: sub_4013E0
+268/284: 268/284: sub_4013E0 (DONE:6ms)
+268/284: Method: sub_403244
+269/284: 269/284: sub_403244 (DONE:62ms)
+269/284: Method: sub_407338
+270/284: 270/284: sub_407338 (DONE:547ms)
+270/284: Method: sub_407150
+271/284: 271/284: sub_407150 (DONE:504ms)
+271/284: Method: sub_4070A0
+272/284: 272/284: sub_4070A0 (DONE:138ms)
+272/284: Method: sub_408FFB
+273/284: 273/284: sub_408FFB (DONE:993ms)
+273/284: Method: sub_4092AB
+274/284: 274/284: sub_4092AB (DONE:186ms)
+274/284: Method: sub_409456
+275/284: 275/284: sub_409456 (DONE:2134ms)
+275/284: Method: sub_4013F0
+276/284: 276/284: sub_4013F0 (DONE:6ms)
+276/284: Method: sub_402484
+277/284: 277/284: sub_402484 (DONE:242ms)
+277/284: Method: sub_401460
+278/284: 278/284: sub_401460 (DONE:10ms)
+278/284: Method: sub_401478
+279/284: 279/284: sub_401478 (DONE:9ms)
+279/284: Method: sub_401490
+280/284: 280/284: sub_401490 (DONE:13ms)
+280/284: Method: sub_401400
+281/284: 281/284: sub_401400 (DONE:9ms)
+281/284: Method: sub_40262E
+282/284: 282/284: sub_40262E (DONE:656ms)
+282/284: Method: sub_402DD0
+283/284: 283/284: sub_402DD0 (DONE:138ms)
+283/284: Method: sub_406ED4
+284/284: 284/284: sub_406ED4 (DONE:34ms)
+Exectime: 40.074000 sec
+[I] Done.

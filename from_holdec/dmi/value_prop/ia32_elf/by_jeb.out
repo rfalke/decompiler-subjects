@@ -1,105 +1,107 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/dmi/value_prop/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (41 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 46 methods
 Output folder: jeb_output
-  0/ 41: Method: sub_8048350
-  1/ 41: 1/41: sub_8048350 (DONE:88ms)
-  1/ 41: Method: __x86.get_pc_thunk.bx
-  2/ 41: 2/41: __x86.get_pc_thunk.bx (DONE:26ms)
-  2/ 41: Method: register_tm_clones
-  3/ 41: 3/41: register_tm_clones (DONE:78ms)
-  3/ 41: Method: sub_80483C0
-  4/ 41: 4/41: sub_80483C0 (DONE:10ms)
-  4/ 41: Method: deregister_tm_clones
-  5/ 41: 5/41: deregister_tm_clones (DONE:54ms)
-  5/ 41: Method: sub_8048366
-  6/ 41: 6/41: sub_8048366 (DONE:19ms)
-  6/ 41: Method: sub_8048376
-  7/ 41: 7/41: sub_8048376 (DONE:18ms)
-  7/ 41: Method: sub_8048370
-  8/ 41: 8/41: sub_8048370 (DONE:24ms)
-  8/ 41: Method: sub_8048386
-  9/ 41: 9/41: sub_8048386 (DONE:20ms)
-  9/ 41: Method: sub_8048396
- 10/ 41: 10/41: sub_8048396 (DONE:15ms)
- 10/ 41: Method: sub_80483A6
- 11/ 41: 11/41: sub_80483A6 (DONE:15ms)
- 11/ 41: Method: sub_80483B6
- 12/ 41: 12/41: sub_80483B6 (DONE:13ms)
- 12/ 41: Method: sub_80483B0
- 13/ 41: 13/41: sub_80483B0 (DONE:16ms)
- 13/ 41: Method: initializer_1
- 14/ 41: 14/41: initializer_1 (DONE:54ms)
- 14/ 41: Method: initializer_0
- 15/ 41: 15/41: initializer_0 (DONE:71ms)
- 15/ 41: Method: sub_8048360
- 16/ 41: 16/41: sub_8048360 (DONE:16ms)
- 16/ 41: Method: sub_8048380
- 17/ 41: 17/41: sub_8048380 (DONE:14ms)
- 17/ 41: Method: sub_8048390
- 18/ 41: 18/41: sub_8048390 (DONE:13ms)
- 18/ 41: Method: sub_80483A0
- 19/ 41: 19/41: sub_80483A0 (DONE:12ms)
- 19/ 41: Method: basic_1_reg_in_block
- 20/ 41: 20/41: basic_1_reg_in_block (DONE:35ms)
- 20/ 41: Method: basic_2_reg_in_prev_block
- 21/ 41: 21/41: basic_2_reg_in_prev_block (DONE:42ms)
- 21/ 41: Method: basic_3_reg_cond_overwrite
- 22/ 41: 22/41: basic_3_reg_cond_overwrite (DONE:34ms)
- 22/ 41: Method: basic_4_reg_cond_change
- 23/ 41: 23/41: basic_4_reg_cond_change (DONE:35ms)
- 23/ 41: Method: basic_5_reg_different_values
- 24/ 41: 24/41: basic_5_reg_different_values (DONE:40ms)
- 24/ 41: Method: basic_6_reg_overwrite_in_block
- 25/ 41: 25/41: basic_6_reg_overwrite_in_block (DONE:33ms)
- 25/ 41: Method: intermediate_1_mem_in_block
- 26/ 41: 26/41: intermediate_1_mem_in_block (DONE:50ms)
- 26/ 41: Method: intermediate_2_mem_in_prev_block
- 27/ 41: 27/41: intermediate_2_mem_in_prev_block (DONE:58ms)
- 27/ 41: Method: intermediate_3_mem_cond_overwrite
- 28/ 41: 28/41: intermediate_3_mem_cond_overwrite (DONE:41ms)
- 28/ 41: Method: intermediate_4_mem_cond_change
- 29/ 41: 29/41: intermediate_4_mem_cond_change (DONE:45ms)
- 29/ 41: Method: intermediate_5_mem_different_values
- 30/ 41: 30/41: intermediate_5_mem_different_values (DONE:44ms)
- 30/ 41: Method: intermediate_6_mem_overwrite_in_block
- 31/ 41: 31/41: intermediate_6_mem_overwrite_in_block (DONE:39ms)
- 31/ 41: Method: intermediate_10_subregs
- 32/ 41: 32/41: intermediate_10_subregs (DONE:62ms)
- 32/ 41: Method: advanced_3_value_range_analysis
- 33/ 41: 33/41: advanced_3_value_range_analysis (DONE:297ms)
- 33/ 41: Method: advanced_1_writes_can_be_omitted_for_non_mem_access_calls
- 34/ 41: 34/41: advanced_1_writes_can_be_omitted_for_non_mem_access_calls (DONE:44ms)
- 34/ 41: Method: advanced_2_mem_values_can_be_propagated_for_non_write_calls
- 35/ 41: 35/41: advanced_2_mem_values_can_be_propagated_for_non_write_calls (DONE:46ms)
- 35/ 41: Method: __libc_csu_fini
- 36/ 41: 36/41: __libc_csu_fini (DONE:9ms)
- 36/ 41: Method: finalizer_0
- 37/ 41: 37/41: finalizer_0 (DONE:13ms)
- 37/ 41: Method: finalizer_1
- 38/ 41: 38/41: finalizer_1 (DONE:36ms)
- 38/ 41: Method: __libc_csu_init
- 39/ 41: 39/41: __libc_csu_init (DONE:98ms)
- 39/ 41: Method: _start
- 40/ 41: 40/41: _start (DONE:38ms)
- 40/ 41: Method: main
- 41/ 41: 41/41: main (DONE:268ms)
-Exectime: 4.025000 sec
-Done.
+  0/ 46: Method: __x86.get_pc_thunk.bx
+  1/ 46: 1/46: __x86.get_pc_thunk.bx (DONE:47ms)
+  1/ 46: Method: sub_80484F9
+  2/ 46: 2/46: sub_80484F9 (DONE:5ms)
+  2/ 46: Method: sub_8048533
+  3/ 46: 3/46: sub_8048533 (DONE:4ms)
+  3/ 46: Method: sub_804855C
+  4/ 46: 4/46: sub_804855C (DONE:3ms)
+  4/ 46: Method: sub_8048356
+  5/ 46: 5/46: sub_8048356 (DONE:15ms)
+  5/ 46: Method: →putchar
+  6/ 46: 6/46: →putchar (DONE:21ms)
+  6/ 46: Method: →puts
+  7/ 46: 7/46: →puts (DONE:19ms)
+  7/ 46: Method: sub_80483C0
+  8/ 46: 8/46: sub_80483C0 (DONE:4ms)
+  8/ 46: Method: sub_80484DF
+  9/ 46: 9/46: sub_80484DF (DONE:22ms)
+  9/ 46: Method: sub_8048518
+ 10/ 46: 10/46: sub_8048518 (DONE:15ms)
+ 10/ 46: Method: register_tm_clones
+ 11/ 46: 11/46: register_tm_clones (DONE:45ms)
+ 11/ 46: Method: sub_804856B
+ 12/ 46: 12/46: sub_804856B (DONE:11ms)
+ 12/ 46: Method: →abs
+ 13/ 46: 13/46: →abs (DONE:10ms)
+ 13/ 46: Method: →exit
+ 14/ 46: 14/46: →exit (DONE:9ms)
+ 14/ 46: Method: →strlen
+ 15/ 46: 15/46: →strlen (DONE:8ms)
+ 15/ 46: Method: →__libc_start_main
+ 16/ 46: 16/46: →__libc_start_main (DONE:15ms)
+ 16/ 46: Method: basic_1_reg_in_block
+ 17/ 46: 17/46: basic_1_reg_in_block (DONE:32ms)
+ 17/ 46: Method: .b2_1
+ 18/ 46: 18/46: .b2_1 (DONE:14ms)
+ 18/ 46: Method: basic_3_reg_cond_overwrite
+ 19/ 46: 19/46: basic_3_reg_cond_overwrite (DONE:21ms)
+ 19/ 46: Method: basic_4_reg_cond_change
+ 20/ 46: 20/46: basic_4_reg_cond_change (DONE:27ms)
+ 20/ 46: Method: .b5_j
+ 21/ 46: 21/46: .b5_j (DONE:12ms)
+ 21/ 46: Method: basic_6_reg_overwrite_in_block
+ 22/ 46: 22/46: basic_6_reg_overwrite_in_block (DONE:13ms)
+ 22/ 46: Method: intermediate_1_mem_in_block
+ 23/ 46: 23/46: intermediate_1_mem_in_block (DONE:17ms)
+ 23/ 46: Method: intermediate_2_mem_in_prev_block
+ 24/ 46: 24/46: intermediate_2_mem_in_prev_block (DONE:34ms)
+ 24/ 46: Method: intermediate_3_mem_cond_overwrite
+ 25/ 46: 25/46: intermediate_3_mem_cond_overwrite (DONE:23ms)
+ 25/ 46: Method: intermediate_4_mem_cond_change
+ 26/ 46: 26/46: intermediate_4_mem_cond_change (DONE:25ms)
+ 26/ 46: Method: .i5_j
+ 27/ 46: 27/46: .i5_j (DONE:14ms)
+ 27/ 46: Method: intermediate_6_mem_overwrite_in_block
+ 28/ 46: 28/46: intermediate_6_mem_overwrite_in_block (DONE:15ms)
+ 28/ 46: Method: intermediate_10_subregs
+ 29/ 46: 29/46: intermediate_10_subregs (DONE:45ms)
+ 29/ 46: Method: advanced_3_value_range_analysis
+ 30/ 46: 30/46: advanced_3_value_range_analysis (DONE:261ms)
+ 30/ 46: Method: initializer_0
+ 31/ 46: 31/46: initializer_0 (DONE:46ms)
+ 31/ 46: Method: deregister_tm_clones
+ 32/ 46: 32/46: deregister_tm_clones (DONE:14ms)
+ 32/ 46: Method: sub_8048570
+ 33/ 46: 33/46: sub_8048570 (DONE:19ms)
+ 33/ 46: Method: advanced_1_writes_can_be_omitted_for_non_mem_access_calls
+ 34/ 46: 34/46: advanced_1_writes_can_be_omitted_for_non_mem_access_calls (DONE:26ms)
+ 34/ 46: Method: advanced_2_mem_values_can_be_propagated_for_non_write_calls
+ 35/ 46: 35/46: advanced_2_mem_values_can_be_propagated_for_non_write_calls (DONE:52ms)
+ 35/ 46: Method: basic_2_reg_in_prev_block
+ 36/ 46: 36/46: basic_2_reg_in_prev_block (DONE:4ms)
+ 36/ 46: Method: basic_5_reg_different_values
+ 37/ 46: 37/46: basic_5_reg_different_values (DONE:29ms)
+ 37/ 46: Method: intermediate_5_mem_different_values
+ 38/ 46: 38/46: intermediate_5_mem_different_values (DONE:30ms)
+ 38/ 46: Method: sub_8048549
+ 39/ 46: 39/46: sub_8048549 (DONE:21ms)
+ 39/ 46: Method: initializer_1
+ 40/ 46: 40/46: initializer_1 (DONE:21ms)
+ 40/ 46: Method: __libc_csu_fini
+ 41/ 46: 41/46: __libc_csu_fini (DONE:4ms)
+ 41/ 46: Method: finalizer_0
+ 42/ 46: 42/46: finalizer_0 (DONE:16ms)
+ 42/ 46: Method: _start
+ 43/ 46: 43/46: _start (DONE:34ms)
+ 43/ 46: Method: main
+ 44/ 46: 44/46: main (DONE:518ms)
+ 44/ 46: Method: finalizer_1
+ 45/ 46: 45/46: finalizer_1 (DONE:9ms)
+ 45/ 46: Method: __libc_csu_init
+ 46/ 46: 46/46: __libc_csu_init (DONE:88ms)
+Exectime: 2.474000 sec
+[I] Done.

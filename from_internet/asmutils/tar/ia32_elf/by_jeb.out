@@ -1,0 +1,51 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/tar/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 18 methods
+Output folder: jeb_output
+  0/ 18: Method: sub_80484FD
+  1/ 18: 1/18: sub_80484FD (DONE:199ms)
+  1/ 18: Method: sub_80480E5
+  2/ 18: 2/18: sub_80480E5 (DONE:179ms)
+  2/ 18: Method: sub_8048622
+  3/ 18: 3/18: sub_8048622 (DONE:88ms)
+  3/ 18: Method: sub_8048227
+  4/ 18: 4/18: sub_8048227 (DONE:7ms)
+  4/ 18: Method: sub_8048514
+  5/ 18: 5/18: sub_8048514 (DONE:14ms)
+  5/ 18: Method: sub_804865E
+  6/ 18: 6/18: sub_804865E (DONE:5ms)
+  6/ 18: Method: sub_804816C
+  7/ 18: 7/18: sub_804816C (DONE:61ms)
+  7/ 18: Method: sub_8048205
+  8/ 18: 8/18: sub_8048205 (DONE:26ms)
+  8/ 18: Method: sub_8048792
+  9/ 18: 9/18: sub_8048792 (DONE:10ms)
+  9/ 18: Method: sub_80487B2
+ 10/ 18: 10/18: sub_80487B2 (DONE:9ms)
+ 10/ 18: Method: sub_8048660
+ 11/ 18: 11/18: sub_8048660 (DONE:6ms)
+ 11/ 18: Method: sub_8048144
+ 12/ 18: 12/18: sub_8048144 (DONE:13ms)
+ 12/ 18: Method: sub_8048118
+ 13/ 18: 13/18: sub_8048118 (DONE:6ms)
+ 13/ 18: Method: sub_8048522
+ 14/ 18: 14/18: sub_8048522 (DONE:11ms)
+ 14/ 18: Method: sub_80487A5
+ 15/ 18: 15/18: sub_80487A5 (DONE:14ms)
+ 15/ 18: Method: sub_8048788
+ 16/ 18: 16/18: sub_8048788 (DONE:9ms)
+ 16/ 18: Method: sub_8048529
+ 17/ 18: 17/18: sub_8048529 (DONE:9ms)
+ 17/ 18: Method: sub_8048194
+ 18/ 18: 18/18: sub_8048194 (DONE:12ms)
+Exectime: 1.161000 sec
+[I] Done.

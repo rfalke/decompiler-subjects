@@ -1,135 +1,152 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/switch/ia32_pe_by_boomerang_msvc5/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Windows)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (53 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Windows)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 63 methods
 Output folder: jeb_output
-  0/ 53: Method: sub_401FF0
-  1/ 53: 1/53: sub_401FF0 (DONE:254ms)
-  1/ 53: Method: sub_402330
-  2/ 53: 2/53: sub_402330 (DONE:1919ms)
-  2/ 53: Method: sub_4028E0
-  3/ 53: 3/53: sub_4028E0 (DONE:123ms)
-  3/ 53: Method: sub_402940
-  4/ 53: 4/53: sub_402940 (DONE:56ms)
-  4/ 53: Method: sub_402C96
-  5/ 53: 5/53: sub_402C96 (DONE:32ms)
-  5/ 53: Method: sub_403060
-  6/ 53: 6/53: sub_403060 (DONE:61ms)
-  6/ 53: Method: sub_403B80
-  7/ 53: 7/53: sub_403B80 (DONE:621ms)
-  7/ 53: Method: sub_4043D0
-  8/ 53: 8/53: sub_4043D0 (DONE:74ms)
-  8/ 53: Method: sub_402C02
-  9/ 53: 9/53: sub_402C02 (DONE:138ms)
-  9/ 53: Method: sub_401330
- 10/ 53: 10/53: sub_401330 (DONE:22400ms)
- 10/ 53: Method: sub_402890
- 11/ 53: 11/53: sub_402890 (DONE:57ms)
- 11/ 53: Method: sub_403880
- 12/ 53: 12/53: sub_403880 (DONE:60ms)
- 12/ 53: Method: sub_403D90
- 13/ 53: 13/53: sub_403D90 (DONE:341ms)
- 13/ 53: Method: sub_403E90
- 14/ 53: 14/53: sub_403E90 (DONE:28ms)
- 14/ 53: Method: sub_404380
- 15/ 53: 15/53: sub_404380 (DONE:44ms)
- 15/ 53: Method: sub_404560
- 16/ 53: 16/53: sub_404560 (DONE:11ms)
- 16/ 53: Method: sub_401ED0
- 17/ 53: 17/53: sub_401ED0 (DONE:28ms)
- 17/ 53: Method: sub_402BC0
- 18/ 53: 18/53: sub_402BC0 (DONE:46ms)
- 18/ 53: Method: sub_402CB8
- 19/ 53: 19/53: sub_402CB8 (DONE:208ms)
- 19/ 53: Method: sub_402FB0
- 20/ 53: 20/53: sub_402FB0 (DONE:37ms)
- 20/ 53: Method: sub_404200
- 21/ 53: 21/53: sub_404200 (DONE:61ms)
- 21/ 53: Method: sub_401230
- 22/ 53: 22/53: sub_401230 (DONE:107ms)
- 22/ 53: Method: sub_401CC0
- 23/ 53: 23/53: sub_401CC0 (DONE:91ms)
- 23/ 53: Method: sub_401F00
- 24/ 53: 24/53: sub_401F00 (DONE:26ms)
- 24/ 53: Method: sub_4030E0
- 25/ 53: 25/53: sub_4030E0 (DONE:131ms)
- 25/ 53: Method: sub_4012D0
- 26/ 53: 26/53: sub_4012D0 (DONE:53ms)
- 26/ 53: Method: sub_4010A0
- 27/ 53: 27/53: sub_4010A0 (DONE:47ms)
- 27/ 53: Method: sub_401000
- 28/ 53: 28/53: sub_401000 (DONE:229ms)
- 28/ 53: Method: sub_401F20
- 29/ 53: 29/53: sub_401F20 (DONE:37ms)
- 29/ 53: Method: sub_402970
- 30/ 53: 30/53: sub_402970 (DONE:46ms)
- 30/ 53: Method: sub_4038E0
- 31/ 53: 31/53: sub_4038E0 (DONE:84ms)
- 31/ 53: Method: sub_403590
- 32/ 53: 32/53: sub_403590 (DONE:62ms)
- 32/ 53: Method: sub_4026A0
- 33/ 53: 33/53: sub_4026A0 (DONE:656ms)
- 33/ 53: Method: sub_402FD0
- 34/ 53: 34/53: sub_402FD0 (DONE:89ms)
- 34/ 53: Method: sub_404140
- 35/ 53: 35/53: sub_404140 (DONE:180ms)
- 35/ 53: Method: sub_402D90
- 36/ 53: 36/53: sub_402D90 (DONE:97ms)
- 36/ 53: Method: sub_401200
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
-Emulation failed!
- 37/ 53: 37/53: sub_401200 (DONE:64ms)
- 37/ 53: Method: sub_4021A0
- 38/ 53: 38/53: sub_4021A0 (DONE:499ms)
- 38/ 53: Method: sub_402290
- 39/ 53: 39/53: sub_402290 (DONE:99ms)
- 39/ 53: Method: sub_403020
- 40/ 53: 40/53: sub_403020 (DONE:109ms)
- 40/ 53: Method: sub_403750
- 41/ 53: 41/53: sub_403750 (DONE:59ms)
- 41/ 53: Method: sub_4037B0
- 42/ 53: 42/53: sub_4037B0 (DONE:223ms)
- 42/ 53: Method: sub_403D00
- 43/ 53: 43/53: sub_403D00 (DONE:141ms)
- 43/ 53: Method: sub_403940
- 44/ 53: 44/53: sub_403940 (DONE:847ms)
- 44/ 53: Method: sub_403350
- 45/ 53: 45/53: sub_403350 (DONE:414ms)
- 45/ 53: Method: sub_402DD0
- 46/ 53: 46/53: sub_402DD0 (DONE:1383ms)
- 46/ 53: Method: sub_4035E0
- 47/ 53: 47/53: sub_4035E0 (DONE:277ms)
- 47/ 53: Method: sub_402B80
- 48/ 53: 48/53: sub_402B80 (DONE:49ms)
- 48/ 53: Method: sub_401F40
- 49/ 53: 49/53: sub_401F40 (DONE:141ms)
- 49/ 53: Method: sub_403F10
- 50/ 53: 50/53: sub_403F10 (DONE:708ms)
- 50/ 53: Method: sub_402980
- 51/ 53: 51/53: sub_402980 (DONE:682ms)
- 51/ 53: Method: start
- 52/ 53: 52/53: start (DONE:232ms)
- 52/ 53: Method: sub_402540
- 53/ 53: 53/53: sub_402540 (DONE:541ms)
-Exectime: 35.150000 sec
-Done.
+  0/ 63: Method: sub_401FF0
+  1/ 63: 1/63: sub_401FF0 (DONE:163ms)
+  1/ 63: Method: sub_4038D6
+  2/ 63: 2/63: sub_4038D6 (DONE:14ms)
+  2/ 63: Method: sub_402330
+  3/ 63: 3/63: sub_402330 (DONE:1214ms)
+  3/ 63: Method: sub_4028E0
+  4/ 63: 4/63: sub_4028E0 (DONE:59ms)
+  4/ 63: Method: sub_402940
+  5/ 63: 5/63: sub_402940 (DONE:26ms)
+  5/ 63: Method: sub_402C96
+  6/ 63: 6/63: sub_402C96 (DONE:9ms)
+  6/ 63: Method: sub_403060
+  7/ 63: 7/63: sub_403060 (DONE:30ms)
+  7/ 63: Method: sub_403B80
+  8/ 63: 8/63: sub_403B80 (DONE:415ms)
+  8/ 63: Method: sub_403EAD
+  9/ 63: 9/63: sub_403EAD (DONE:4ms)
+  9/ 63: Method: sub_402C02
+ 10/ 63: 10/63: sub_402C02 (DONE:77ms)
+ 10/ 63: Method: sub_401330
+ 11/ 63: 11/63: sub_401330 (DONE:10905ms)
+ 11/ 63: Method: sub_401ED9
+ 12/ 63: 12/63: sub_401ED9 (DONE:11ms)
+ 12/ 63: Method: sub_402890
+ 13/ 63: 13/63: sub_402890 (DONE:26ms)
+ 13/ 63: Method: sub_403D90
+ 14/ 63: 14/63: sub_403D90 (DONE:213ms)
+ 14/ 63: Method: sub_404380
+ 15/ 63: 15/63: sub_404380 (DONE:36ms)
+ 15/ 63: Method: sub_4043F0
+ 16/ 63: 16/63: sub_4043F0 (DONE:15ms)
+ 16/ 63: Method: →KERNEL32.dll!RtlUnwind
+ 17/ 63: 17/63: →KERNEL32.dll!RtlUnwind (DONE:4ms)
+ 17/ 63: Method: sub_401EDB
+ 18/ 63: 18/63: sub_401EDB (DONE:14ms)
+ 18/ 63: Method: sub_403E99
+ 19/ 63: 19/63: sub_403E99 (DONE:6ms)
+ 19/ 63: Method: sub_402BC0
+ 20/ 63: 20/63: sub_402BC0 (DONE:11ms)
+ 20/ 63: Method: sub_401ED0
+ 21/ 63: 21/63: sub_401ED0 (DONE:5ms)
+ 21/ 63: Method: sub_403E90
+ 22/ 63: 22/63: sub_403E90 (DONE:4ms)
+ 22/ 63: Method: sub_402CB8
+ 23/ 63: 23/63: sub_402CB8 (DONE:149ms)
+ 23/ 63: Method: sub_402FB0
+ 24/ 63: 24/63: sub_402FB0 (DONE:11ms)
+ 24/ 63: Method: sub_404200
+ 25/ 63: 25/63: sub_404200 (DONE:27ms)
+ 25/ 63: Method: sub_401230
+ 26/ 63: 26/63: sub_401230 (DONE:60ms)
+ 26/ 63: Method: sub_401CC0
+ 27/ 63: 27/63: sub_401CC0 (DONE:80ms)
+ 27/ 63: Method: sub_401F00
+ 28/ 63: 28/63: sub_401F00 (DONE:14ms)
+ 28/ 63: Method: sub_4030E0
+ 29/ 63: 29/63: sub_4030E0 (DONE:65ms)
+ 29/ 63: Method: sub_4012D0
+ 30/ 63: 30/63: sub_4012D0 (DONE:29ms)
+ 30/ 63: Method: sub_4010A0
+ 31/ 63: 31/63: sub_4010A0 (DONE:23ms)
+ 31/ 63: Method: sub_401000
+ 32/ 63: 32/63: sub_401000 (DONE:116ms)
+ 32/ 63: Method: sub_4043D0
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Number of targets (1) differ from number of edges (0)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Targets do not point to instructions: 0x9 (instruction: goto 0009)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Targets do not point to instructions: 0x9 (instruction: goto 0009)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Targets do not point to instructions: 0x9 (instruction: goto 0009)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Block 10: Targets do not point to instructions: 0x9 (instruction: goto 0009)
+[C] java.lang.RuntimeException: Cannot convert old IR offset to normalized one: 0x9
+[E] The CFG could not be normalized!
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Gap found in CFG, before block 10h(16)
+[E] An optimizer failed: zH: com.pnfsoftware.jeb.core.units.code.asm.cfg.CfgVerificationException: Gap found in CFG, before block 10h(16)
+ 33/ 63: 33/63: sub_4043D0 (DONE:20ms)
+ 33/ 63: Method: sub_401209
+ 34/ 63: 34/63: sub_401209 (DONE:7ms)
+ 34/ 63: Method: sub_401200
+ 35/ 63: 35/63: sub_401200 (DONE:7ms)
+ 35/ 63: Method: sub_402970
+ 36/ 63: 36/63: sub_402970 (DONE:18ms)
+ 36/ 63: Method: sub_402D9A
+ 37/ 63: 37/63: sub_402D9A (DONE:17ms)
+ 37/ 63: Method: sub_4038E0
+ 38/ 63: 38/63: sub_4038E0 (DONE:46ms)
+ 38/ 63: Method: sub_403880
+ 39/ 63: 39/63: sub_403880 (DONE:56ms)
+ 39/ 63: Method: sub_403590
+ 40/ 63: 40/63: sub_403590 (DONE:40ms)
+ 40/ 63: Method: sub_4021A0
+ 41/ 63: 41/63: sub_4021A0 (DONE:331ms)
+ 41/ 63: Method: sub_40389C
+ 42/ 63: 42/63: sub_40389C (DONE:9ms)
+ 42/ 63: Method: sub_4026A0
+ 43/ 63: 43/63: sub_4026A0 (DONE:639ms)
+ 43/ 63: Method: sub_402FD0
+ 44/ 63: 44/63: sub_402FD0 (DONE:38ms)
+ 44/ 63: Method: sub_402290
+ 45/ 63: 45/63: sub_402290 (DONE:64ms)
+ 45/ 63: Method: sub_402D90
+ 46/ 63: 46/63: sub_402D90 (DONE:6ms)
+ 46/ 63: Method: sub_402DA7
+ 47/ 63: 47/63: sub_402DA7 (DONE:29ms)
+ 47/ 63: Method: sub_404140
+ 48/ 63: 48/63: sub_404140 (DONE:104ms)
+ 48/ 63: Method: sub_40120E
+ 49/ 63: 49/63: sub_40120E (DONE:17ms)
+ 49/ 63: Method: sub_403020
+ 50/ 63: 50/63: sub_403020 (DONE:35ms)
+ 50/ 63: Method: sub_403750
+ 51/ 63: 51/63: sub_403750 (DONE:27ms)
+ 51/ 63: Method: sub_4037B0
+ 52/ 63: 52/63: sub_4037B0 (DONE:129ms)
+ 52/ 63: Method: sub_403D00
+ 53/ 63: 53/63: sub_403D00 (DONE:76ms)
+ 53/ 63: Method: sub_403940
+ 54/ 63: 54/63: sub_403940 (DONE:859ms)
+ 54/ 63: Method: sub_403350
+ 55/ 63: 55/63: sub_403350 (DONE:369ms)
+ 55/ 63: Method: sub_402DD0
+ 56/ 63: 56/63: sub_402DD0 (DONE:806ms)
+ 56/ 63: Method: sub_4035E0
+ 57/ 63: 57/63: sub_4035E0 (DONE:196ms)
+ 57/ 63: Method: sub_402B80
+ 58/ 63: 58/63: sub_402B80 (DONE:26ms)
+ 58/ 63: Method: sub_401F40
+ 59/ 63: 59/63: sub_401F40 (DONE:60ms)
+ 59/ 63: Method: sub_403F10
+ 60/ 63: 60/63: sub_403F10 (DONE:642ms)
+ 60/ 63: Method: sub_402980
+ 61/ 63: 61/63: sub_402980 (DONE:564ms)
+ 61/ 63: Method: start
+ 62/ 63: 62/63: start (DONE:114ms)
+ 62/ 63: Method: sub_402540
+ 63/ 63: 63/63: sub_402540 (DONE:412ms)
+Exectime: 21.038000 sec
+[I] Done.

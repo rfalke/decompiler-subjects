@@ -1,117 +1,261 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_pouet.net/with_source_383/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (47 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 48 methods
 Output folder: jeb_output
-  0/ 47: Method: sub_804885C
-  1/ 47: 1/47: sub_804885C (DONE:111ms)
-  1/ 47: Method: sub_804881C
-  2/ 47: 2/47: sub_804881C (DONE:21ms)
-  2/ 47: Method: sub_804874C
-  3/ 47: 3/47: sub_804874C (DONE:26ms)
-  3/ 47: Method: sub_804876C
-  4/ 47: 4/47: sub_804876C (DONE:24ms)
-  4/ 47: Method: sub_804879C
-  5/ 47: 5/47: sub_804879C (DONE:18ms)
-  5/ 47: Method: sub_8048B68
-  6/ 47: 6/47: sub_8048B68 (DONE:299ms)
-  6/ 47: Method: sub_8048BE1
-  7/ 47: 7/47: sub_8048BE1 (DONE:156ms)
-  7/ 47: Method: sub_8048C24
-  8/ 47: 8/47: sub_8048C24 (DONE:115ms)
-  8/ 47: Method: sub_80487AC
-  9/ 47: 9/47: sub_80487AC (DONE:12ms)
-  9/ 47: Method: sub_804880C
- 10/ 47: 10/47: sub_804880C (DONE:23ms)
- 10/ 47: Method: sub_804887C
- 11/ 47: 11/47: sub_804887C (DONE:12ms)
- 11/ 47: Method: sub_804888C
- 12/ 47: 12/47: sub_804888C (DONE:10ms)
- 12/ 47: Method: sub_804937F
- 13/ 47: 13/47: sub_804937F (DONE:44ms)
- 13/ 47: Method: sub_804875C
- 14/ 47: 14/47: sub_804875C (DONE:13ms)
- 14/ 47: Method: sub_80487FC
- 15/ 47: 15/47: sub_80487FC (DONE:13ms)
- 15/ 47: Method: sub_804889C
- 16/ 47: 16/47: sub_804889C (DONE:16ms)
- 16/ 47: Method: sub_80488AC
- 17/ 47: 17/47: sub_80488AC (DONE:15ms)
- 17/ 47: Method: sub_80486FC
- 18/ 47: 18/47: sub_80486FC (DONE:13ms)
- 18/ 47: Method: sub_804870C
- 19/ 47: 19/47: sub_804870C (DONE:14ms)
- 19/ 47: Method: sub_804871C
- 20/ 47: 20/47: sub_804871C (DONE:20ms)
- 20/ 47: Method: sub_804872C
- 21/ 47: 21/47: sub_804872C (DONE:12ms)
- 21/ 47: Method: sub_804873C
- 22/ 47: 22/47: sub_804873C (DONE:14ms)
- 22/ 47: Method: sub_804877C
- 23/ 47: 23/47: sub_804877C (DONE:13ms)
- 23/ 47: Method: sub_804878C
- 24/ 47: 24/47: sub_804878C (DONE:12ms)
- 24/ 47: Method: sub_8049330
- 25/ 47: 25/47: sub_8049330 (DONE:98ms)
- 25/ 47: Method: sub_80487BC
- 26/ 47: 26/47: sub_80487BC (DONE:12ms)
- 26/ 47: Method: sub_80487CC
- 27/ 47: 27/47: sub_80487CC (DONE:12ms)
- 27/ 47: Method: sub_80487DC
- 28/ 47: 28/47: sub_80487DC (DONE:10ms)
- 28/ 47: Method: sub_80487EC
- 29/ 47: 29/47: sub_80487EC (DONE:14ms)
- 29/ 47: Method: sub_804882C
- 30/ 47: 30/47: sub_804882C (DONE:13ms)
- 30/ 47: Method: sub_804883C
- 31/ 47: 31/47: sub_804883C (DONE:12ms)
- 31/ 47: Method: sub_804884C
- 32/ 47: 32/47: sub_804884C (DONE:12ms)
- 32/ 47: Method: sub_804886C
- 33/ 47: 33/47: sub_804886C (DONE:17ms)
- 33/ 47: Method: sub_80488CC
- 34/ 47: 34/47: sub_80488CC (DONE:11ms)
- 34/ 47: Method: sub_8048903
- 35/ 47: 35/47: sub_8048903 (DONE:224ms)
- 35/ 47: Method: sub_8048C67
- 36/ 47: 36/47: sub_8048C67 (DONE:1843ms)
- 36/ 47: Method: sub_8048EB5
- 37/ 47: 37/47: sub_8048EB5 (DONE:1398ms)
- 37/ 47: Method: sub_80490D5
- 38/ 47: 38/47: sub_80490D5 (DONE:1107ms)
- 38/ 47: Method: sub_80492D1
- 39/ 47: 39/47: sub_80492D1 (DONE:105ms)
- 39/ 47: Method: sub_8049363
- 40/ 47: 40/47: sub_8049363 (DONE:27ms)
- 40/ 47: Method: sub_8049444
- 41/ 47: 41/47: sub_8049444 (DONE:1679ms)
- 41/ 47: Method: sub_804993D
- 42/ 47: 42/47: sub_804993D (DONE:654ms)
- 42/ 47: Method: sub_80489C3
- 43/ 47: 43/47: sub_80489C3 (DONE:228ms)
- 43/ 47: Method: sub_8048AA8
- 44/ 47: 44/47: sub_8048AA8 (DONE:282ms)
- 44/ 47: Method: sub_8049394
- 45/ 47: 45/47: sub_8049394 (DONE:112ms)
- 45/ 47: Method: sub_80486F2
- 46/ 47: 46/47: sub_80486F2 (DONE:8ms)
- 46/ 47: Method: start
- 47/ 47: 47/47: start (DONE:3590ms)
-Exectime: 15.620000 sec
-Done.
+  0/ 48: Method: sub_8048B68
+  1/ 48: 1/48: sub_8048B68 (DONE:235ms)
+  1/ 48: Method: sub_8048BE1
+  2/ 48: 2/48: sub_8048BE1 (DONE:90ms)
+  2/ 48: Method: sub_8048C24
+  3/ 48: 3/48: sub_8048C24 (DONE:51ms)
+  3/ 48: Method: sub_80486F2
+  4/ 48: 4/48: sub_80486F2 (DONE:8ms)
+  4/ 48: Method: →glVertex3f
+  5/ 48: 5/48: →glVertex3f (DONE:9ms)
+  5/ 48: Method: →glRotatef
+  6/ 48: 6/48: →glRotatef (DONE:7ms)
+  6/ 48: Method: →glColor3fv
+  7/ 48: 7/48: →glColor3fv (DONE:9ms)
+  7/ 48: Method: →glClear
+  8/ 48: 8/48: →glClear (DONE:7ms)
+  8/ 48: Method: →SDL_GL_SwapBuffers
+  9/ 48: 9/48: →SDL_GL_SwapBuffers (DONE:8ms)
+  9/ 48: Method: →glLoadIdentity
+ 10/ 48: 10/48: →glLoadIdentity (DONE:7ms)
+ 10/ 48: Method: →malloc
+ 11/ 48: 11/48: →malloc (DONE:7ms)
+ 11/ 48: Method: →glFlush
+ 12/ 48: 12/48: →glFlush (DONE:7ms)
+ 12/ 48: Method: →SDL_Delay
+ 13/ 48: 13/48: →SDL_Delay (DONE:7ms)
+ 13/ 48: Method: sub_804937F
+ 14/ 48: 14/48: sub_804937F (DONE:15ms)
+ 14/ 48: Method: →glMatrixMode
+ 15/ 48: 15/48: →glMatrixMode (DONE:7ms)
+ 15/ 48: Method: →glTranslatef
+ 16/ 48: 16/48: →glTranslatef (DONE:7ms)
+ 16/ 48: Method: →SDL_Quit
+ 17/ 48: 17/48: →SDL_Quit (DONE:7ms)
+ 17/ 48: Method: →rand
+ 18/ 48: 18/48: →rand (DONE:6ms)
+ 18/ 48: Method: →glPopMatrix
+ 19/ 48: 19/48: →glPopMatrix (DONE:9ms)
+ 19/ 48: Method: sub_8048C67
+[E] An optimizer failed: OU: java.lang.RuntimeException: replaceVar() failed, that should not happen
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+ 20/ 48: 20/48: sub_8048C67 (DONE:1826ms)
+ 20/ 48: Method: sub_8048EB5
+[E] An optimizer failed: OU: java.lang.RuntimeException: replaceVar() failed, that should not happen
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+ 21/ 48: 21/48: sub_8048EB5 (DONE:1196ms)
+ 21/ 48: Method: sub_80490D5
+[E] An optimizer failed: OU: java.lang.RuntimeException: replaceVar() failed, that should not happen
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st5
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st4
+[W] Cannot set type ? on IR s80:st7
+[W] Cannot set type ? on IR s80:st7
+ 22/ 48: 22/48: sub_80490D5 (DONE:1174ms)
+ 22/ 48: Method: sub_80492D1
+ 23/ 48: 23/48: sub_80492D1 (DONE:41ms)
+ 23/ 48: Method: →glTranslated
+ 24/ 48: 24/48: →glTranslated (DONE:6ms)
+ 24/ 48: Method: →glEnd
+ 25/ 48: 25/48: →glEnd (DONE:6ms)
+ 25/ 48: Method: →srand
+ 26/ 48: 26/48: →srand (DONE:5ms)
+ 26/ 48: Method: →glEnable
+ 27/ 48: 27/48: →glEnable (DONE:5ms)
+ 27/ 48: Method: →glHint
+ 28/ 48: 28/48: →glHint (DONE:4ms)
+ 28/ 48: Method: →SDL_ShowCursor
+ 29/ 48: 29/48: →SDL_ShowCursor (DONE:4ms)
+ 29/ 48: Method: →SDL_PollEvent
+ 30/ 48: 30/48: →SDL_PollEvent (DONE:6ms)
+ 30/ 48: Method: sub_8049330
+ 31/ 48: 31/48: sub_8049330 (DONE:36ms)
+ 31/ 48: Method: →glClearColor
+ 32/ 48: 32/48: →glClearColor (DONE:5ms)
+ 32/ 48: Method: →SDL_SetVideoMode
+ 33/ 48: 33/48: →SDL_SetVideoMode (DONE:5ms)
+ 33/ 48: Method: →glShadeModel
+ 34/ 48: 34/48: →glShadeModel (DONE:6ms)
+ 34/ 48: Method: →glFrustum
+ 35/ 48: 35/48: →glFrustum (DONE:5ms)
+ 35/ 48: Method: →glDepthFunc
+ 36/ 48: 36/48: →glDepthFunc (DONE:5ms)
+ 36/ 48: Method: →glClearDepth
+ 37/ 48: 37/48: →glClearDepth (DONE:7ms)
+ 37/ 48: Method: →glBegin
+ 38/ 48: 38/48: →glBegin (DONE:4ms)
+ 38/ 48: Method: →glPushMatrix
+ 39/ 48: 39/48: →glPushMatrix (DONE:5ms)
+ 39/ 48: Method: →glViewport
+ 40/ 48: 40/48: →glViewport (DONE:5ms)
+ 40/ 48: Method: sub_8049363
+ 41/ 48: 41/48: sub_8049363 (DONE:14ms)
+ 41/ 48: Method: sub_8049444
+ 42/ 48: 42/48: sub_8049444 (DONE:1308ms)
+ 42/ 48: Method: sub_804993D
+ 43/ 48: 43/48: sub_804993D (DONE:457ms)
+ 43/ 48: Method: sub_80489C3
+ 44/ 48: 44/48: sub_80489C3 (DONE:190ms)
+ 44/ 48: Method: sub_8048AA8
+ 45/ 48: 45/48: sub_8048AA8 (DONE:140ms)
+ 45/ 48: Method: sub_8049394
+ 46/ 48: 46/48: sub_8049394 (DONE:70ms)
+ 46/ 48: Method: start
+ 47/ 48: 47/48: start (DONE:1455ms)
+ 47/ 48: Method: sub_8048903
+ 48/ 48: 48/48: sub_8048903 (DONE:38ms)
+Exectime: 9.687000 sec
+[I] Done.

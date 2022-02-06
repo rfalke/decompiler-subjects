@@ -12,19 +12,8 @@ int main() {
     return 0;
 }
 
-void sub_8048248() {
-    jump gvar_80494D4;
-}
-
-int sub_804825E() {
-    /*BAD_CALL!*/ sub_8048248();
-}
-
-int sub_804826E() {
-    /*BAD_CALL!*/ sub_8048248();
-}
-
-void sub_80482FA() {
+int sub_804824E() {
+    return gvar_80494D4();
 }
 
 int world() {

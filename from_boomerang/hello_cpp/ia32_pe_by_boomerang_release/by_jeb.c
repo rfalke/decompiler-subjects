@@ -1,145 +1,161 @@
 
-int _abnormal_termination() {
-    int result = 0;
-    int v0 = *(int*)__FS_BASE;
-    if(*(int*)(v0 + 4) == &sub_401DAC && *(int*)(*(int*)(v0 + 12) + 12) == *(int*)(v0 + 8)) {
-        result = 1;
-    }
-    return result;
-}
-
 int _global_unwind2(PVOID TargetFrame) {
     int v0;
+    int v1;
     int result;
+    int v2 = v1;
     int* ptr0 = &v0;
     →KERNEL32.dll!RtlUnwind(TargetFrame, (PVOID)&loc_401DA4, NULL, NULL);
     return result;
 }
 
 int start() {
-    int v0;
-    int v1;
+    char v0;
+    char v1;
     int v2;
-    char v3;
-    short v4;
-    unsigned int* ptr0;
-    unsigned int j;
+    int v3;
+    int v4;
     int v5;
-    int v6;
-    int v7 = &gvar_4040F0;
-    int v8 = &sub_401E84;
-    int v9 = *(int*)__FS_BASE;
-    *(int**)__FS_BASE = &v9;
-    int v10 = v6;
-    unsigned int* ptr1 = &v1;
-    DWORD v11 = /*BAD_CALL!*/ GetVersion();
-    gvar_405580 = (unsigned int)(unsigned char)(v11 >>> 8);
-    gvar_40557C = (unsigned int)(unsigned char)v11;
-    gvar_405578 = (unsigned int)((unsigned int)(unsigned char)v11 * 0x100 + (unsigned int)(unsigned char)(v11 >>> 8));
-    gvar_405574 = (unsigned int)(v11 >>> 16);
-    int v12 = sub_401D50(0);
-    unsigned int* ptr2 = &v1;
-    if(!v12) {
-        ptr2 = &v2;  // } (starts at 4013BCh)
-        /*NO_RETURN*/ sub_40146B(28);  // } (starts at 4013BCh)
+    unsigned int v6;
+    short v7;
+    char v8;
+    int v9;
+    int v10;
+    _EXCEPTION_POINTERS* ptr0;
+    int v11;
+    int v12;
+    int* ptr1 = &v3;
+    int v13 = &gvar_4040F0;
+    int v14 = &sub_401E84;
+    int v15 = *(int*)__FS_BASE;
+    int v16 = *(int*)__FS_BASE;
+    *(int**)__FS_BASE = &v16;
+    int* ptr2 = &v16;
+    char v17 = &v0 == 108;
+    char v18 = (int)&v6 < 0;
+    char v19 = __parity__((unsigned char)&v0 - 108);
+    char v20 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v16 ^ 0x58) ^ (int)&v6) >>> 4) & 0x1);
+    char v21 = (unsigned int)&v16 < 88;
+    char v22 = (int)(int*)((int)(int*)((int)&v16 ^ (int)&v6) & (int)(int*)((int)&v16 ^ 0x58)) < 0;
+    int v23 = v9;
+    int* ptr3 = &v10;
+    DWORD v24 = GetVersion();
+    char v25 = 1;
+    char v26 = 0;
+    char v27 = 1;
+    char v28 = 0;
+    char v29 = 0;
+    unsigned int v30 = (unsigned int)(unsigned char)(v24 >>> 8);
+    gvar_405580 = (unsigned int)(unsigned char)(v24 >>> 8);
+    DWORD v31 = v24;
+    unsigned int v32 = (unsigned int)(unsigned char)v31;
+    char v33 = v32 ? 0: 1;
+    char v34 = v32 >= 0x80000000;
+    char v35 = __parity__((unsigned char)v32);
+    char v36 = 0;
+    char v37 = 0;
+    gvar_40557C = v32;
+    unsigned int v38 = v32;
+    int v39 = (int)(v32 * 0x100);
+    char v40 = (v38 >>> 24) & 0x1;
+    char v41 = 0;
+    char v42 = v39 ? 0: 1;
+    char v43 = v39 < 0;
+    char v44 = __parity__((unsigned char)v39);
+    int v45 = v39;
+    unsigned int v46 = (unsigned int)(v39 + v30);
+    char v47 = v46 ? 0: 1;
+    char v48 = v46 >= 0x80000000;
+    char v49 = __parity__((unsigned char)v46);
+    char v50 = (((v30 ^ v45) ^ v46) >>> 4) & 0x1;
+    char v51 = __carry__(v30, v45);
+    char v52 = ((v46 ^ v45) & ~(v30 ^ v45)) < 0;
+    gvar_405578 = v46;
+    DWORD v53 = v24;
+    unsigned int v54 = (unsigned int)(v24 >>> 16);
+    char v55 = (v53 >>> 15) & 0x1;
+    char v56 = v52;
+    char v57 = v54 ? 0: 1;
+    char v58 = v54 >= 0x80000000;
+    char v59 = __parity__((unsigned char)v54);
+    gvar_405574 = v54;
+    int v60 = 0;
+    char v61 = 1;
+    char v62 = 0;
+    char v63 = 1;
+    char v64 = 0;
+    char v65 = 0;
+    int v66 = sub_401D50(0);
+    unsigned int j = (unsigned int)v11;
+    char v67 = v66 ? 0: 1;
+    char v68 = v66 < 0;
+    char v69 = __parity__((unsigned char)v66);
+    char v70 = 0;
+    char v71 = 0;
+    if(v67) {
+        /*NO_RETURN*/ sub_40146B();  // } (starts at 4013BCh)
     }
-    int v13 = 0;  // __try{ (see __except:40143Bh)
-    --ptr2;
-    *ptr2 = &loc_4013C4;
-    /*BAD_CALL!*/ sub_401BA5(j);
-    --ptr2;
-    *ptr2 = &loc_4013CA;
-    LPSTR v14 = /*BAD_CALL!*/ GetCommandLineA();
-    gvar_405A78 = v14;
-    --ptr2;
-    *ptr2 = &loc_4013D4;
-    int v15 = /*BAD_CALL!*/ sub_401A73(v5);
-    gvar_40555C = v15;
-    --ptr2;
-    *ptr2 = &loc_4013DE;
-    /*BAD_CALL!*/ sub_401826(v5);
-    --ptr2;
-    *ptr2 = &loc_4013E3;
-    /*BAD_CALL!*/ sub_40176D();
-    --ptr2;
-    *ptr2 = &loc_4013E8;
-    /*BAD_CALL!*/ sub_40148F();
-    int v16 = 0;
-    --ptr2;
-    *ptr2 = &v3;
-    --ptr2;
-    *ptr2 = &loc_4013F5;
-    /*BAD_CALL!*/ GetStartupInfoA(*(LPSTARTUPINFOA*)(ptr2 + 1));
-    --ptr2;
-    *ptr2 = &loc_4013FA;
-    unsigned char* ptr3 = /*BAD_CALL!*/ sub_401715();
-    if(((unsigned char)v16 & 0x1)) {
-        v0 = (unsigned int)v4;
-    }
-    else {
-        --ptr2;
-        *ptr2 = 10;
-        v0 = *ptr2;
-        ++ptr2;
-    }
-    --ptr2;
-    *ptr2 = v0;
-    --ptr2;
-    *ptr2 = ptr3;
-    --ptr2;
-    *ptr2 = 0;
-    --ptr2;
-    *ptr2 = 0;
-    --ptr2;
-    *ptr2 = &loc_401418;
-    HMODULE v17 = /*BAD_CALL!*/ GetModuleHandleA(*(LPCSTR*)(ptr2 + 1));
-    --ptr2;
-    *ptr2 = v17;
-    --ptr2;
-    *ptr2 = &loc_40141E;
-    int v18 = /*BAD_CALL!*/ sub_401000(*(HINSTANCE*)(ptr2 + 1), *(int*)(ptr2 + 2), *(int*)(ptr2 + 3), *(int*)(ptr2 + 4));
-    int v19 = v18;
-    --ptr2;
-    *ptr2 = v18;
-    --ptr2;
-    *ptr2 = &loc_401427;
-    /*BAD_CALL!*/ sub_4014BC(*(int*)(ptr2 + 1));
-    int v20 = **ptr0;
-    int v21 = **ptr0;
-    --ptr2;
-    *ptr2 = ptr0;
-    --ptr2;
-    *ptr2 = v20;
-    --ptr2;
-    *ptr2 = &loc_401438;
-    /*BAD_CALL!*/ sub_401591(*(int*)(ptr2 + 1), *(_EXCEPTION_POINTERS**)(ptr2 + 2));
-    jump *(int*)(ptr2 + 2);  // } (starts at 4013BCh)
+    int v72 = 0;  // __try{ (see __except:40143Bh)
+    UINT v73 = sub_401BA5(j);
+    LPSTR v74 = GetCommandLineA();
+    gvar_405A78 = v74;
+    int v75 = sub_401A73(v12);
+    gvar_40555C = v75;
+    unsigned int v76 = sub_401826(v12);
+    unsigned int* ptr4 = sub_40176D();
+    int v77 = sub_40148F();
+    *(int*)&v8 = 0;
+    LPSTARTUPINFOA v78 = &v1;
+    GetStartupInfoA(&v1);
+    sub_401715();
+    int v79 = v5;
+    char v80 = v8 & 0x1 ? 0: 1;
+    char v81 = (v8 & 0x1) < 0;
+    char v82 = __parity__(v8 & 0x1);
+    char v83 = 0;
+    char v84 = 0;
+    int v85 = v80 ? 10: (int)v7;
+    HMODULE hInstance = GetModuleHandleA(NULL);
+    HWND v86 = sub_401000(hInstance, 0, v79, v80 ? 10: (int)v7);
+    HWND v87 = v86;
+    int v88 = sub_4014BC((int)v86);
+    _EXCEPTION_POINTERS* ExceptionInfo = ptr0;
+    EXCEPTION_RECORD* ptr5 = ExceptionInfo->ExceptionRecord;
+    unsigned int v89 = (unsigned int)ptr5->ExceptionCode;
+    v6 = (unsigned int)ptr5->ExceptionCode;
+    LONG v90 = sub_401591(v89, ExceptionInfo);
+    int v91 = v4;
+    int v92 = v2;
+    int v93 = v11;  // } (starts at 4013BCh)
+    int* ptr6 = &v10;  // } (starts at 4013BCh)
+    jump v93;  // } (starts at 4013BCh)
 }
 
-int sub_401000(HINSTANCE hInstance, int param1, int param2, int nCmdShow) {
+HWND sub_401000(HINSTANCE hInstance, int param1, int param2, int nCmdShow) {
     HWND hWnd;
-    BOOL result;
-    int v0;
+    HWND result;
+    BOOL v0;
+    int v1;
     LoadStringA(hInstance, 103, (LPSTR)0x4054F4, 100);
     LoadStringA(hInstance, 109, (LPSTR)0x405490, 100);
     sub_4010C0(hInstance);
-    int v1 = sub_401150(hInstance, nCmdShow);
-    if(!v1) {
+    HWND v2 = sub_401150(hInstance, nCmdShow);
+    if(!v2) {
         return 0;
     }
     HACCEL hAccTable = LoadAcceleratorsA(hInstance, (LPCSTR)0x6D);
-    BOOL v2 = GetMessageA(&hWnd, NULL, 0, 0);
-    if(v2) {
-        int v3 = v0;
+    BOOL v3 = GetMessageA(&hWnd, NULL, 0, 0);
+    if(v3) {
+        int v4 = v1;
         do {
-            int v4 = TranslateAcceleratorA(hWnd, hAccTable, &hWnd);
-            if(!v4) {
+            int v5 = TranslateAcceleratorA(hWnd, hAccTable, &hWnd);
+            if(!v5) {
                 TranslateMessage((MSG*)&hWnd);
                 DispatchMessageA((MSG*)&hWnd);
             }
-            result = GetMessageA(&hWnd, NULL, 0, 0);
+            v0 = GetMessageA(&hWnd, NULL, 0, 0);
         }
-        while(result);
+        while(v0);
     }
     return result;
 }
@@ -147,7 +163,7 @@ int sub_401000(HINSTANCE hInstance, int param1, int param2, int nCmdShow) {
 ATOM sub_4010C0(HINSTANCE hInstance) {
     int v0 = 48;
     int v1 = 3;
-    int v2 = &sub_4011B0;
+    int v2 = &gvar_4011B0;
     int v3 = 0;
     int v4 = 0;
     HINSTANCE hInstance1 = hInstance;
@@ -160,107 +176,82 @@ ATOM sub_4010C0(HINSTANCE hInstance) {
     return RegisterClassExA(&v0);
 }
 
-int sub_401150(HINSTANCE hInstance, int nCmdShow) {
+HWND sub_401150(HINSTANCE hInstance, int nCmdShow) {
     gvar_405558 = hInstance;
     HWND hWnd = CreateWindowExA(0, (LPCSTR)0x405490, (LPCSTR)0x4054F4, 0xcf0000, 0x80000000, 0, 0x80000000, 0, NULL, NULL, hInstance, NULL);
     if(!hWnd) {
         return 0;
     }
     ShowWindow(hWnd, nCmdShow);
-    return UpdateWindow(hWnd);
+    UpdateWindow(hWnd);
+    return (HWND)0x1;
 }
 
-LRESULT sub_4011B0(HWND hWnd1, UINT param1, WPARAM wParam, LPARAM lParam) {
-    char v0;
-    char v1;
-    char v2;
-    int v3;
-    LoadStringA(gvar_405558, 106, &v0, 100);
-    UINT Msg = param1;
-    int v4 = Msg - 2;
-    if(v4) {
-        int v5 = v4 - 13;
-        if(!v5) {
-            int v6 = v3;
-            HWND hWnd = hWnd1;
-            HDC hdc = BeginPaint(hWnd, &v1);
-            GetClientRect(hWnd, &v2);
-            UINT v7 = 1;
-            LPRECT lprc = &v2;
-            LPSTR v8 = &v0;
-            int v9 = -1;
-            while(v9 != 0) {
-                char v10 = v8[0] == 0;
-                ++v8;
-                --v9;
-                if(!~v10) {
-                    break;
-                }
-            }
-            DrawTextA(hdc, &v0, ~v9 - 1, lprc, 1);
-            EndPaint(hWnd, (PAINTSTRUCT*)&v1);
-        }
-        else if(v5 != 258) {
-            return DefWindowProcA(hWnd1, Msg, wParam, lParam);
-        }
-        else {
-            WPARAM wParam1 = wParam;
-            int v11 = (unsigned int)(WPARAM)(wParam1 & 0xFFFF) - 104;
-            if(!v11) {
-                DialogBoxParamA(gvar_405558, (LPCSTR)0x67, hWnd1, (DLGPROC)&sub_401310, 0);
-                return 0;
-            }
-            else if((v11 - 1)) {
-                return DefWindowProcA(hWnd1, 0x111, wParam1, lParam);
-            }
-            DestroyWindow(hWnd1);
-            return 0;
-        }
-    }
-    else {
-        PostQuitMessage(0);
-    }
-    return 0;
-}
-
-int sub_401310(HWND hDlg, int param1, int param2, int param3) {
-    if(param1 != 0x110) {
-        if(param1 != 0x111 || ((unsigned short)param2 != 1 && (unsigned short)param2 != 2)) {
-            return 0;
-        }
-        EndDialog(hDlg, (INT_PTR)(unsigned short)param2);
-    }
-    return 1;
-}
-
-int sub_40143B() {
-    int v0;
-    /*BAD_CALL!*/ sub_4014CD(*(int*)(v0 - 104));
+void sub_401446() {
+    char v0 = gvar_405564 == 1;
+    char v1 = (int)gvar_405564 < 1;
+    char v2 = __parity__((unsigned char)gvar_405564 - 1);
+    char v3 = gvar_405564 < 1;
+    char v4 = (((gvar_405564 - 1) ^ gvar_405564) & (gvar_405564 ^ 0x1)) < 0;
+    char v5 = (((gvar_405564 - 1) ^ (gvar_405564 ^ 0x1)) >>> 4) & 0x1;
+    jump v0 ? &sub_40144F: &sub_401454;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
-int sub_401446(int param0) {
-    if(gvar_405564 == 1) {
-        sub_401F5C();
-    }
+int sub_40144F() {
+    /*BAD_CALL!*/ sub_401F5C();
+}
+
+// Stale decompilation - Refresh this view to re-decompile this code
+int sub_401454(int param0) {
     sub_401F95(param0);
     return gvar_405030{sub_4014CD}(0xFF);
 }
 
+void sub_40146B() {
+    char v0 = gvar_405564 == 1;
+    char v1 = (int)gvar_405564 < 1;
+    char v2 = __parity__((unsigned char)gvar_405564 - 1);
+    char v3 = gvar_405564 < 1;
+    char v4 = (((gvar_405564 - 1) ^ gvar_405564) & (gvar_405564 ^ 0x1)) < 0;
+    char v5 = (((gvar_405564 - 1) ^ (gvar_405564 ^ 0x1)) >>> 4) & 0x1;
+    jump v0 ? &sub_401474: &sub_401479;
+}
+
 // Stale decompilation - Refresh this view to re-decompile this code
-int sub_40146B(int param0) {
-    if(gvar_405564 == 1) {
-        sub_401F5C();
-    }
-    sub_401F95(param0);
-    /*NO_RETURN*/ ExitProcess(0xff);
+int sub_401474() {
+    /*BAD_CALL!*/ sub_401F5C();
+}
+
+// Stale decompilation - Refresh this view to re-decompile this code
+int sub_401479(int param0) {
+    int v0;
+    void* ptr0;
+    int v1 = param0;
+    int v2 = sub_401F95(v1);
+    int v3 = v0;
+    v0 = 0xFF;
+    int* ptr1 = &ptr0;
+    /*BAD_CALL!*/ sub_40148E();
 }
 
 int sub_40148F() {
     unsigned int v0 = gvar_405A74;
-    if(v0) {
-        v0();
-    }
+    char v1 = v0 ? 0: 1;
+    char v2 = v0 >= 0x80000000;
+    char v3 = __parity__((unsigned char)v0);
+    char v4 = 0;
+    char v5 = 0;
+    jump v1 ? &sub_40149A: &sub_401498;
+}
+
+// Stale decompilation - Refresh this view to re-decompile this code
+int sub_401498() {
+    int v0;
+    /*BAD_CALL!*/ v0{sub_40149A}();
+}
+
+int sub_40149A() {
     sub_401577((int*)0x405008, 0x405010);
     return sub_401577((int*)0x405000, 4214788);
 }
@@ -275,8 +266,7 @@ int sub_4014CD(int param0) {
     return sub_4014DE(param0, 1, 0);
 }
 
-int sub_4014DE(UINT uExitCode, int param1, int param2) {
-    int result;
+int sub_4014DE(UINT uExitCode, unsigned int param1, int param2) {
     UINT v0;
     if(gvar_4055B0 == 1) {
         HANDLE hProcess = GetCurrentProcess();
@@ -302,7 +292,7 @@ int sub_4014DE(UINT uExitCode, int param1, int param2) {
         }
         sub_401577((int*)0x405014, 4214808);
     }
-    sub_401577((int*)0x40501C, 0x405020);
+    int result = sub_401577((int*)0x40501C, 0x405020);
     if(!param2) {
         gvar_4055B0 = 1;
         /*NO_RETURN*/ ExitProcess(uExitCode);
@@ -321,38 +311,40 @@ int sub_401577(int* param0, unsigned int param1) {
     return result;
 }
 
-LONG sub_401591(int param0, _EXCEPTION_POINTERS* ExceptionInfo) {
+LONG sub_401591(unsigned int param0, _EXCEPTION_POINTERS* ExceptionInfo) {
     LONG result;
-    int* ptr0 = sub_4016D2(param0);
-    if(ptr0) {
-        int v0 = ptr0[2];
-        if(!v0) {
+    int v0;
+    int v1 = v0;
+    int v2 = sub_4016D2(param0);
+    if(v2) {
+        unsigned int v3 = *(unsigned int*)(v2 + 8);
+        if(!v3) {
             return UnhandledExceptionFilter(ExceptionInfo);
         }
-        else if(v0 == 5) {
-            ptr0[2] = 0;
+        else if(v3 == 5) {
+            *(int*)(v2 + 8) = 0;
             result = 1;
         }
         else {
-            if(v0 != 1) {
+            if(v3 != 1) {
                 param0 = gvar_4055B4;
                 gvar_4055B4 = ExceptionInfo;
-                int v1 = ptr0[1];
-                if(v1 == 8) {
-                    int v2 = gvar_4050B0;
-                    int v3 = (int)(gvar_4050B4 + v2);
-                    if(v2 < v3) {
-                        int counter = v3 - v2;
-                        int* ptr1 = (int*)(v2 * 12 + &gvar_405040);
+                unsigned int v4 = *(unsigned int*)(v2 + 4);
+                if(v4 == 8) {
+                    unsigned int v5 = gvar_4050B0;
+                    unsigned int v6 = gvar_4050B4 + v5;
+                    if((int)v5 < (int)v6) {
+                        unsigned int counter = v6 - v5;
+                        int* ptr0 = (int*)(v5 * 12 + &gvar_405040);
                         do {
-                            *ptr1 = 0;
-                            ptr1 += 3;
+                            *ptr0 = 0;
+                            ptr0 += 3;
                             --counter;
                         }
                         while(counter);
                     }
-                    unsigned int v4 = gvar_4050BC;
-                    switch(ptr0[0]) {
+                    unsigned int v7 = gvar_4050BC;
+                    switch(*(unsigned int*)v2) {
                         case -1073741682: {
                             gvar_4050BC = 131;
                             break;
@@ -381,14 +373,14 @@ LONG sub_401591(int param0, _EXCEPTION_POINTERS* ExceptionInfo) {
                             gvar_4050BC = 134;
                         }
                     }
-                    v0(8, (int)gvar_4050BC);
-                    gvar_4050BC = v4;
+                    v3(8, (int)gvar_4050BC);
+                    gvar_4050BC = v7;
                 }
                 else {
-                    ptr0[2] = 0;
-                    v0(v1);
+                    *(int*)(v2 + 8) = 0;
+                    v3((int)v4);
                 }
-                gvar_4055B4 = param0;
+                gvar_4055B4 = (int)param0;
             }
             result = -1;
         }
@@ -399,29 +391,88 @@ LONG sub_401591(int param0, _EXCEPTION_POINTERS* ExceptionInfo) {
     return result;
 }
 
-int* sub_4016D2(int param0) {
-    unsigned int v0 = gvar_4050B8;
-    int* result = (int*)&gvar_405038;
-    if(gvar_405038 != param0) {
+int sub_4016D2(unsigned int param0) {
+    char v0;
+    int v1;
+    char v2;
+    unsigned int v3 = param0;
+    unsigned int v4 = gvar_4050B8;
+    char v5 = gvar_405038 == v3;
+    char v6 = (int)gvar_405038 < (int)v3;
+    char v7 = __parity__((unsigned char)gvar_405038 - (unsigned char)v3);
+    char v8 = gvar_405038 < v3;
+    char v9 = (int)(((gvar_405038 - v3) ^ gvar_405038) & (gvar_405038 ^ v3)) < 0;
+    char v10 = (((gvar_405038 - v3) ^ (gvar_405038 ^ v3)) >>> 4) & 0x1;
+    int v11 = v1;
+    unsigned int* ptr0 = (unsigned int*)&gvar_405038;
+    if(!v5) {
+        int v12 = v4 * 3;
+        unsigned int v13 = (unsigned int)(v12 * 4 + &gvar_405038);
         do {
-            result += 3;
+            ptr0 += 3;
+            char v14 = ptr0 == v13;
+            char v15 = (int)ptr0 < (int)v13;
+            char v16 = __parity__((unsigned char)ptr0 - (unsigned char)v13);
+            char v17 = (unsigned int)ptr0 < v13;
+            char v18 = (int)(int*)((int)(int*)((int)(int*)((int)ptr0 - v13) ^ (int)ptr0) & (int)(int*)((int)ptr0 ^ v13)) < 0;
+            char v19 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)ptr0 - v13) ^ (int)(int*)((int)ptr0 ^ v13)) >>> 4) & 0x1);
+            if(!v17) {
+                break;
+            }
+            else {
+                v2 = *ptr0 == v3;
+                char v20 = *ptr0 < (int)v3;
+                char v21 = __parity__((unsigned char)*ptr0 - (unsigned char)v3);
+                char v22 = *ptr0 < v3;
+                char v23 = (((*ptr0 - v3) ^ *ptr0) & (*ptr0 ^ v3)) < 0;
+                char v24 = (((*ptr0 - v3) ^ (*ptr0 ^ v3)) >>> 4) & 0x1;
+            }
         }
-        while((unsigned int)(v0 * 12 + &gvar_405038) > (unsigned int)result && *result != param0);
+        while(!v2);
     }
-    if((unsigned int)(v0 * 12 + &gvar_405038) <= (unsigned int)result || *result != param0) {
-        result = NULL;
-    }
+    int v25 = v4 * 3;
+    int v26 = v11;
+    int* ptr1 = &v0;
+    unsigned int v27 = (unsigned int)(v25 * 4 + &gvar_405038);
+    char v28 = ptr0 == v27;
+    char v29 = (int)ptr0 < (int)v27;
+    char v30 = __parity__((unsigned char)ptr0 - (unsigned char)v27);
+    char v31 = (unsigned int)ptr0 < v27;
+    char v32 = (int)(int*)((int)(int*)((int)(int*)((int)ptr0 - v27) ^ (int)ptr0) & (int)(int*)((int)ptr0 ^ v27)) < 0;
+    char v33 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)ptr0 - v27) ^ (int)(int*)((int)ptr0 ^ v27)) >>> 4) & 0x1);
+    jump v31 ? &sub_40170E: &sub_401712;
+}
+
+unsigned int* sub_40170E(int param0, unsigned int param1) {
+    unsigned int* result;
     return result;
 }
 
-unsigned char* sub_401715() {
-    int v0;
-    if(!gvar_405A68) {
-        v0 = sub_4024EE();
-    }
+int sub_401712() {
+    return 0;
+}
+
+void sub_401715() {
+    char v0 = gvar_405A68 ? 0: 1;
+    char v1 = gvar_405A68 >= 0x80000000;
+    char v2 = __parity__((unsigned char)gvar_405A68);
+    char v3 = gvar_405A68 < 0;
+    char v4 = 0;
+    char v5 = 0;
+    jump v0 ? &sub_40171E: &sub_401723;
+}
+
+int sub_40171E() {
+    void* ptr0;
+    int* ptr1 = &ptr0;
+    /*BAD_CALL!*/ sub_4024EE();
+}
+
+// Stale decompilation - Refresh this view to re-decompile this code
+unsigned char* sub_401723() {
     unsigned char* result = gvar_405A78;
-    v0 = (unsigned int)*result | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-    if((unsigned char)v0 == 34) {
+    int v0 = (unsigned int)*result | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
+    if(*result == 34) {
         while(1) {
             v0 = (unsigned int)*(char*)(result + 1) | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
             ++result;
@@ -433,7 +484,7 @@ unsigned char* sub_401715() {
                 goto loc_40175F;
             }
             else {
-                v0 = sub_4020E8((int)(unsigned char)v0);
+                v0 = sub_4020E8((unsigned int)(unsigned char)v0);
                 if(v0) {
                     ++result;
                 }
@@ -450,7 +501,7 @@ unsigned char* sub_401715() {
         }
     loc_40175F:
         v0 = (unsigned int)*result | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-        if(!(unsigned char)v0 || (unsigned char)v0 > 32) {
+        if(!*result || *result > 32) {
             return result;
         }
         ++result;
@@ -458,77 +509,79 @@ unsigned char* sub_401715() {
     }
 }
 
+// Stale decompilation - Refresh this view to re-decompile this code
 unsigned int* sub_40176D() {
-    int* ptr0;
-    int i;
+    int v0;
     if(gvar_405A68 == 0) {
-        i = sub_4024EE();
+        sub_4024EE();
     }
-    char* ptr1 = gvar_40555C;
-    int v0 = 0;
-    for(i = (unsigned int)ptr1[0] | ((unsigned int)((i >>> 8) & 0xffffff) << 8); (unsigned char)i != 0; i = (unsigned int)ptr1[0] | ((unsigned int)((i >>> 8) & 0xffffff) << 8)) {
+    char* ptr0 = gvar_40555C;
+    int v1 = 0;
+    for(int i = (unsigned int)*ptr0 | ((unsigned int)((i >>> 8) & 0xffffff) << 8); *ptr0 != 0; i = (unsigned int)*ptr0 | ((unsigned int)((i >>> 8) & 0xffffff) << 8)) {
         if((unsigned char)i != 61) {
-            ++v0;
+            ++v1;
         }
-        i = (int)sub_4026B0(ptr1);
-        ptr1 = (char*)(i + (int)ptr1) + 1;
+        i = sub_4026B0((int)ptr0);
+        ptr0 = (char*)((char*)(i + (int)ptr0) + 1);
     }
-    int v1 = sub_402630(v0 * 4 + 4);
-    gvar_405590 = v1;
-    if(v1 == 0) {
-        sub_401446(9);
+    int v2 = sub_402630(v1 * 4 + 4);
+    gvar_405590 = v2;
+    if(v2 == 0) {
+        sub_401446();
     }
-    for(char* j = gvar_40555C; j[0] != 0; j = (char*)((int)ptr0 + (int)j) + 1) {
-        ptr0 = sub_4026B0(j);
-        if(j[0] != 61) {
-            int v2 = sub_402630((int)((char*)ptr0 + 1));
-            *(int*)v1 = v2;
-            if(v2 == 0) {
-                sub_401446(9);
+    for(void* j = gvar_40555C; *(char*)j != 0; j = (void*)((char*)(v0 + (int)j) + 1)) {
+        v0 = sub_4026B0((int)j);
+        if(*(char*)j != 61) {
+            int v3 = sub_402630(v0 + 1);
+            *(int*)v2 = v3;
+            if(v3 == 0) {
+                sub_401446();
             }
-            sub_402540(*(char**)v1, j);
-            v1 += 4;
+            sub_402540(*(int*)v2, (int)j);
+            v2 += 4;
         }
     }
     unsigned int* result = sub_40250A(gvar_40555C);
     gvar_40555C = 0;
-    *(int*)v1 = 0;
+    *(int*)v2 = 0;
     gvar_405A64 = 1;
     return result;
 }
 
 unsigned int sub_401826(int param0) {
-    int v0 = param0;
+    int v0;
     int v1 = param0;
+    int v2 = param0;
+    int v3 = v0;
     if(gvar_405A68 == 0) {
         sub_4024EE();
     }
     GetModuleFileNameA(NULL, (LPSTR)0x4055B8, 260);
-    char* ptr0 = gvar_405A78;
+    unsigned char* ptr0 = gvar_405A78;
     gvar_4055A0 = 4216248;
-    char* ptr1 = ptr0[0] == 0 ? (char*)0x4055B8: ptr0;
-    sub_4018BF(ptr1, NULL, NULL, &v0, &v1);
-    int v2 = sub_402630(v0 * 4 + v1);
-    if(v2 == 0) {
-        sub_401446(8);
+    unsigned char* ptr1 = ptr0[0] != 0 ? ptr0: (unsigned char*)0x4055B8;
+    sub_4018BF(ptr1, NULL, NULL, &v1, &v2);
+    unsigned int* ptr2 = (unsigned int*)sub_402630(v1 * 4 + v2);
+    if(ptr2 == 0) {
+        sub_401446();
     }
-    sub_4018BF(ptr1, (unsigned int*)v2, (char*)(v0 * 4 + v2), &v0, &v1);
-    gvar_405588 = v2;
-    gvar_405584 = (unsigned int)(v0 - 1);
-    return (unsigned int)(v0 - 1);
+    sub_4018BF(ptr1, ptr2, (char*)&ptr2[v1], &v1, &v2);
+    gvar_405588 = ptr2;
+    gvar_405584 = (unsigned int)(v1 - 1);
+    return (unsigned int)(v1 - 1);
 }
 
-int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, int* param4) {
-    char* i;
+unsigned char* sub_4018BF(unsigned char* param0, unsigned int* param1, char* param2, unsigned char* param3, int* param4) {
+    unsigned char* i;
     int* ptr0;
     int* ptr1 = param4;
-    int* ptr2 = param3;
+    unsigned char* ptr2 = param3;
     int* ptr3 = ptr0;
     *ptr1 = 0;
     char* ptr4 = param2;
     unsigned int* ptr5 = param1;
-    *ptr2 = 1;
-    char* ptr6 = param0;
+    *(int*)ptr2 = 1;
+    unsigned char* ptr6 = param0;
     if(ptr5) {
         *ptr5 = ptr4;
         ++ptr5;
@@ -536,18 +589,18 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
     }
     if(*ptr6 == 34) {
         while(1) {
-            i = (unsigned int)*(ptr6 + 1) | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
+            i = (unsigned int)*(char*)(ptr6 + 1) | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
             ++ptr6;
             if((unsigned char)i == 34 || !(unsigned char)i) {
                 break;
             }
             else {
-                i = (char*)((int)i & 0xFF);
-                if((*(i + 0x405841) & 0x4)) {
+                i = (unsigned char*)(unsigned char)i;
+                if((*(char*)(i + 0x405841) & 0x4)) {
                     *ptr1 = *ptr1 + 1;
                     if(ptr4) {
                         i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
-                        *ptr4 = (unsigned char)i;
+                        *ptr4 = *ptr6;
                         ++ptr4;
                         ++ptr6;
                     }
@@ -555,7 +608,7 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                 *ptr1 = *ptr1 + 1;
                 if(ptr4) {
                     i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
-                    *ptr4 = (unsigned char)i;
+                    *ptr4 = *ptr6;
                     ++ptr4;
                 }
             }
@@ -574,12 +627,12 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
             *ptr1 = *ptr1 + 1;
             if(ptr4) {
                 i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
-                *ptr4 = (unsigned char)i;
+                *ptr4 = *ptr6;
                 ++ptr4;
             }
             i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
             ++ptr6;
-            if((*(char*)((char*)((int)(int*)((int)i & 0xFF) + (int)&gvar_405840) + 1) & 0x4)) {
+            if((*(char*)((char*)(unsigned char)i + 0x405841) & 0x4)) {
                 *ptr1 = *ptr1 + 1;
                 if(ptr4) {
                     *ptr4 = *ptr6;
@@ -605,7 +658,7 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
     }
     param4 = NULL;
     while(*ptr6) {
-        for(i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8); (unsigned char)i == 32 || (unsigned char)i == 9; i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8)) {
+        for(i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8); *ptr6 == 32 || *ptr6 == 9; i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8)) {
             ++ptr6;
         }
         if(!*ptr6) {
@@ -617,10 +670,10 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                 ++ptr5;
                 param1 = ptr5;
             }
-            *param3 = *param3 + 1;
+            *(int*)param3 = *(int*)param3 + 1;
             while(1) {
-                param0 = (char*)0x1;
-                char* j;
+                param0 = (unsigned char*)0x1;
+                unsigned char* j;
                 for(j = NULL; *ptr6 == 92; ++j) {
                     ++ptr6;
                 }
@@ -628,7 +681,7 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                     if(!((unsigned char)j & 0x1)) {
                         if(param4 != 0) {
                             i = ptr6 + 1;
-                            if(*(ptr6 + 1) != 34) {
+                            if(*(char*)(ptr6 + 1) != 34) {
                                 goto loc_4019DB;
                             }
                             else {
@@ -640,9 +693,9 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                             param0 = NULL;
                         }
                         ptr5 = param1;
-                        param4 = param4 == 0 ? (int*)0x1: NULL;
+                        param4 = param4 != 0 ? NULL: (int*)0x1;
                     }
-                    j = (char*)((int)j >>> 1);
+                    j = (unsigned char*)((int)j >>> 1);
                 }
                 i = j;
                 ptr0 = (int*)(j - 1);
@@ -659,13 +712,13 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                     while(ptr0);
                 }
                 i = (unsigned int)*ptr6 | ((unsigned int)(int*)((int)(int*)((int)i >>> 8) & 0xffffff) << 8);
-                if(!(unsigned char)i || (!param4 && ((unsigned char)i == 32 || (unsigned char)i == 9))) {
+                if(!*ptr6 || (!param4 && (*ptr6 == 32 || *ptr6 == 9))) {
                     break;
                 }
                 else {
                     if(param0) {
                         if(ptr4) {
-                            if((*(char*)((char*)((int)(int*)((int)i & 0xFF) + (int)&gvar_405840) + 1) & 0x4)) {
+                            if((*(char*)((char*)(unsigned char)i + 0x405841) & 0x4)) {
                                 *ptr4 = (unsigned char)i;
                                 ++ptr4;
                                 ++ptr6;
@@ -674,7 +727,7 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
                             *ptr4 = *ptr6;
                             ++ptr4;
                         }
-                        else if((*(char*)((char*)((int)(int*)((int)i & 0xFF) + (int)&gvar_405840) + 1) & 0x4)) {
+                        else if((*(char*)((unsigned char*)(unsigned char)i + 0x405841) & 0x4)) {
                             ++ptr6;
                             *ptr1 = *ptr1 + 1;
                         }
@@ -693,8 +746,8 @@ int* sub_4018BF(char* param0, unsigned int* param1, char* param2, int* param3, i
     if(ptr5) {
         *ptr5 = 0;
     }
-    int* result = param3;
-    *result = *result + 1;
+    unsigned char* result = param3;
+    *(int*)result = *(int*)result + 1;
     return result;
 }
 
@@ -703,11 +756,11 @@ int sub_401A73(int param0) {
     int v0;
     int cchWideChar = param0;
     int v1 = param0;
-    unsigned int v2 = gvar_4056BC;
+    LPCH v2 = gvar_4056BC;
     int v3 = v0;
     int result1 = 0;
-    LPWCH lpWideCharStr = NULL;
-    LPCH penv = NULL;
+    LPCWCH lpWideCharStr = NULL;
+    int* ptr0 = NULL;
     switch(v2) {
         case 0: {
             lpWideCharStr = GetEnvironmentStringsW();
@@ -715,8 +768,8 @@ int sub_401A73(int param0) {
                 gvar_4056BC = 1;
             }
             else {
-                penv = GetEnvironmentStrings();
-                if(penv == 0) {
+                ptr0 = (int*)GetEnvironmentStrings();
+                if(ptr0 == 0) {
                     return 0;
                 }
                 gvar_4056BC = 2;
@@ -731,7 +784,7 @@ int sub_401A73(int param0) {
                     return 0;
                 }
             }
-            LPWCH v4 = lpWideCharStr;
+            LPCWCH v4 = lpWideCharStr;
             if(lpWideCharStr[0] != 0) {
             loc_401AE2:
                 do {
@@ -753,7 +806,7 @@ int sub_401A73(int param0) {
                 if(v5 != 0) {
                     int v6 = WideCharToMultiByte(0, 0, lpWideCharStr, cchWideChar, (LPSTR)v5, cbMultiByte, NULL, NULL);
                     if(!v6) {
-                        sub_40250A(v1);
+                        sub_40250A((int*)v1);
                         v1 = 0;
                     }
                     result1 = v1;
@@ -764,36 +817,36 @@ int sub_401A73(int param0) {
         }
         case 2: {
         loc_401B52:
-            if(penv == 0) {
-                penv = GetEnvironmentStrings();
-                if(penv == 0) {
+            if(ptr0 == 0) {
+                ptr0 = (int*)GetEnvironmentStrings();
+                if(ptr0 == 0) {
                     return 0;
                 }
             }
-            LPCH v7 = penv;
-            if(penv[0] != 0) {
+            int* ptr1 = ptr0;
+            if(*(char*)&ptr0[0] != 0) {
             loc_401B66:
                 do {
-                    ++v7;
-                    if(v7[0] != 0) {
+                    ptr1 = (int*)((char*)ptr1 + 1);
+                    if(*(char*)&ptr1[0] != 0) {
                         goto loc_401B66;
                     }
                     else {
-                        ++v7;
+                        ptr1 = (int*)((char*)ptr1 + 1);
                     }
                 }
-                while(v7[0] != 0);
+                while(*(char*)&ptr1[0] != 0);
             }
-            int v8 = (int)((char*)((int)v7 - (int)penv) + 1);
-            int result2 = sub_402630(v8);
-            if(result2 == 0) {
-                result2 = 0;
+            int v7 = (int)((char*)((int)ptr1 - (int)ptr0) + 1);
+            int* ptr2 = (int*)sub_402630(v7);
+            if(ptr2 == 0) {
+                ptr2 = NULL;
             }
             else {
-                sub_402730((int*)result2, (int*)penv, (int*)v8);
+                sub_402730(ptr2, ptr0, (int*)v7);
             }
-            FreeEnvironmentStringsA(penv);
-            return result2;
+            FreeEnvironmentStringsA((LPCH)ptr0);
+            return (int)ptr2;
         }
         default: {
             return 0;
@@ -802,13 +855,16 @@ int sub_401A73(int param0) {
 }
 
 UINT sub_401BA5(unsigned int j) {
-    char v0;
-    int* ptr0;
-    unsigned int v1;
-    short v2;
+    unsigned int v0;
+    unsigned int* ptr0;
+    unsigned short v1;
+    char v2;
+    unsigned int* ptr1;
+    unsigned int* ptr2 = ptr1;
     int v3 = sub_402630(0x100);
     if(!v3) {
-        sub_401446(27);
+        v0 = 27;
+        sub_401446();
     }
     gvar_405960 = v3;
     gvar_405A60 = 32;
@@ -818,46 +874,46 @@ UINT sub_401BA5(unsigned int j) {
         *(char*)(v3 + 5) = 10;
         v3 += 8;
     }
-    GetStartupInfoA(&v0);
-    if(v2) {
-        int* ptr1 = ptr0;
-        if(ptr1) {
-            int v4 = *ptr1;
-            char* ptr2 = (char*)(ptr1 + 1);
-            unsigned int* ptr3 = (unsigned int*)((int)ptr2 + v4);
-            if(v4 >= 0x800) {
+    GetStartupInfoA(&v2);
+    if(v1) {
+        unsigned int* ptr3 = ptr0;
+        if(ptr3) {
+            unsigned int v4 = *ptr3;
+            char* ptr4 = (char*)(ptr3 + 1);
+            ptr1 = (unsigned int*)((int)ptr4 + v4);
+            if((int)v4 >= 0x800) {
                 v4 = 0x800;
             }
-            if(gvar_405A60 < v4) {
-                int* ptr4 = (int*)&gvar_405964;
+            if((int)gvar_405A60 < (int)v4) {
+                int* ptr5 = (int*)&gvar_405964;
                 do {
                     int v5 = sub_402630(0x100);
-                    j = v1;
+                    j = v0;
                     if(v5) {
                         gvar_405A60 += 32;
-                        *ptr4 = v5;
-                        for(j = (unsigned int)(v5 + 0x100); j > (unsigned int)v5; j = (unsigned int)(*ptr4 + 0x100)) {
+                        *ptr5 = v5;
+                        for(j = (unsigned int)(v5 + 0x100); j > (unsigned int)v5; j = (unsigned int)(*ptr5 + 0x100)) {
                             *(char*)(v5 + 4) = 0;
                             *(int*)v5 = -1;
                             *(char*)(v5 + 5) = 10;
                             v5 += 8;
                         }
-                        ++ptr4;
+                        ++ptr5;
                     }
                     else {
                         v4 = gvar_405A60;
                     }
                     break;
                 }
-                while(gvar_405A60 < v4);
+                while((int)gvar_405A60 < (int)v4);
             }
-            int v6 = 0;
-            if(v4 > 0) {
+            unsigned int v6 = 0;
+            if((int)v4 > 0) {
                 do {
-                    HANDLE hFile = *ptr3;
+                    HANDLE hFile = *ptr1;
                     if(hFile != -1) {
-                        j = (unsigned int)*ptr2 | ((unsigned int)((j >>> 8) & 0xffffff) << 8);
-                        if(((unsigned char)j & 0x1)) {
+                        j = (unsigned int)*ptr4 | ((unsigned int)((j >>> 8) & 0xffffff) << 8);
+                        if((*ptr4 & 0x1)) {
                             if(!((unsigned char)j & 0x8)) {
                                 DWORD v7 = GetFileType(hFile);
                                 if(v7) {
@@ -866,61 +922,62 @@ UINT sub_401BA5(unsigned int j) {
                             }
                             else {
                             loc_401CBF:
-                                unsigned int* ptr5 = (unsigned int*)((v6 & 0x1f) * 8 + *(unsigned int*)((v6 >> 5) * 4 + (int)&gvar_405960));
-                                j = *ptr3;
-                                *ptr5 = j;
-                                j = (unsigned int)*ptr2 | ((unsigned int)((j >>> 8) & 0xffffff) << 8);
-                                *(char*)(ptr5 + 1) = (unsigned char)j;
+                                unsigned int* ptr6 = (unsigned int*)((v6 & 0x1f) * 8 + *(unsigned int*)((v6 >> 5) * 4 + (int)&gvar_405960));
+                                j = *ptr1;
+                                *ptr6 = *ptr1;
+                                j = (unsigned int)*ptr4 | ((unsigned int)((j >>> 8) & 0xffffff) << 8);
+                                *(char*)(ptr6 + 1) = *ptr4;
                             }
                         }
                     }
                     ++v6;
-                    ++ptr2;
-                    ++ptr3;
+                    ++ptr4;
+                    ++ptr1;
                 }
-                while(v4 > v6);
+                while((int)v4 > (int)v6);
             }
         }
     }
-    int v8 = 0;
+    unsigned int v8 = 0;
     do {
         unsigned int v9 = gvar_405960;
-        unsigned int* ptr6 = (unsigned int*)(v8 * 8 + v9);
+        unsigned int* ptr7 = (unsigned int*)(v8 * 8 + v9);
         if(*(int*)(v8 * 8 + v9) == -1) {
-            *(char*)(ptr6 + 1) = 129;
-            HANDLE hFile1 = GetStdHandle(!v8 ? 0xfffffff6: (unsigned int)(v8 - 1) > 0 ? 0xfffffff4: 0xfffffff5);
+            *(char*)(ptr7 + 1) = 129;
+            DWORD nStdHandle = !v8 ? 0xfffffff6: v8 - 1 > 0 ? 0xfffffff4: 0xfffffff5;
+            HANDLE hFile1 = GetStdHandle(nStdHandle);
             if(hFile1 != -1) {
                 DWORD v10 = GetFileType(hFile1);
                 if(!v10) {
                     goto loc_401D21;
                 }
                 else {
-                    int v11 = (unsigned int)(DWORD)(v10 & 0xFF);
-                    *ptr6 = hFile1;
+                    unsigned int v11 = (unsigned int)(unsigned char)v10;
+                    *ptr7 = hFile1;
                     if(v11 == 2) {
                         goto loc_401D21;
                     }
                     else if(v11 == 3) {
-                        *(char*)(ptr6 + 1) = *(char*)(ptr6 + 1) | 0x8;
+                        *(char*)(ptr7 + 1) = *(char*)(ptr7 + 1) | 0x8;
                     }
                 }
             }
             else {
             loc_401D21:
-                *(char*)(ptr6 + 1) = *(char*)(ptr6 + 1) | 0x40;
+                *(char*)(ptr7 + 1) = *(char*)(ptr7 + 1) | 0x40;
             }
         }
         else {
-            *(char*)(ptr6 + 1) = *(char*)(ptr6 + 1) | 0x80;
+            *(char*)(ptr7 + 1) = *(char*)(ptr7 + 1) | 0x80;
         }
         ++v8;
     }
-    while(v8 < 3);
+    while((int)v8 < 3);
     return SetHandleCount(gvar_405A60);
 }
 
-int sub_401D50(int param0) {
-    HANDLE v0 = HeapCreate(param0 == 0 ? 1: 0, 0x1000, 0);
+int sub_401D50(unsigned int param0) {
+    HANDLE v0 = HeapCreate(param0 != 0 ? 0: 1, 0x1000, 0);
     gvar_405948 = v0;
     if(v0) {
         LPVOID v1 = sub_402A65();
@@ -933,32 +990,24 @@ int sub_401D50(int param0) {
     return 0;
 }
 
-int sub_401DAC(int param0, int param1, int param2, int* param3) {
-    int result;
-    if((*(int*)(param0 + 4) & 0x6)) {
-        result = param1;
-        *param3 = param1;
-    }
-    return result;
-}
-
-int sub_401DCE(int param0, int param1) {
+int sub_401DCE(int param0, unsigned int param1) {
     int result;
     int v0 = param0;
     int v1 = -2;
-    int v2 = &sub_401DAC;
+    int v2 = &gvar_401DAC;
     int v3 = *(int*)__FS_BASE;
     *(int**)__FS_BASE = &v3;
     while(1) {
-        int v4 = *(int*)(param0 + 8);
-        int v5 = *(int*)(param0 + 12);
+        result = param0;
+        int v4 = *(int*)(result + 8);
+        unsigned int v5 = *(unsigned int*)(result + 12);
         if(v5 == -1 || v5 == param1) {
             break;
         }
         else {
             int v6 = *(int*)(v5 * 12 + v4);
             v1 = *(int*)(v5 * 12 + v4);
-            *(int*)(param0 + 12) = v6;
+            *(int*)(result + 12) = v6;
             if(!*(int*)(v5 * 12 + v4 + 4)) {
                 sub_401E62(v6, 0x101);
                 *(int*)(v5 * 12 + v4 + 8)();
@@ -966,15 +1015,6 @@ int sub_401DCE(int param0, int param1) {
         }
     }
     *(int*)__FS_BASE = v3;
-    return result;
-}
-
-unsigned int sub_401E59(unsigned int param0, int param1) {
-    unsigned int v0;
-    unsigned int result;
-    gvar_4050D4 = param0;
-    gvar_4050D0 = result;
-    gvar_4050D8 = v0;
     return result;
 }
 
@@ -987,82 +1027,190 @@ unsigned int sub_401E62(int param0, int param1) {
     return result;
 }
 
-int sub_401E7C(int param0, int param1) {
-    char* ptr0;
-    char* ptr1;
-    *ptr0 = ((unsigned char)(param1 >>> 8) ^ *ptr1) ^ *ptr0;
-}
-
 int sub_401E84(int param0, PVOID param1, int param2) {
     int v0;
+    char v1;
+    char v2;
+    char v3;
+    char v4;
+    char v5;
+    char v6;
+    char v7;
     void* ptr0;
+    int v8;
+    int v9;
     void* ptr1;
-    int v1;
-    int v2;
-    int v3;
-    void* ptr2 = &v0;
-    int v4 = v1;
-    int v5 = v2;
-    void* ptr3 = &v0;
+    int v10;
+    int v11;
+    int v12;
+    int v13;
+    int v14;
+    void* ptr2 = &v9;
+    void* ptr3 = &v9;
+    char v15 = &v7 == 12;
+    char v16 = (int)&v13 < 0;
+    char v17 = __parity__((unsigned char)&v7 - 12);
+    char v18 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v9 ^ 0x8) ^ (int)&v13) >>> 4) & 0x1);
+    char v19 = (unsigned int)&v9 < 8;
+    char v20 = (int)(int*)((int)(int*)((int)&v9 ^ (int)&v13) & (int)(int*)((int)&v9 ^ 0x8)) < 0;
+    int v21 = v12;
+    int v22 = v14;
+    int v23 = v8;
+    void* ptr4 = &v9;
+    char v24 = 0;
     PVOID TargetFrame = param1;
-    if(!(*(int*)(param0 + 4) & 0x6)) {
-        int v6 = param0;
-        int v7 = param2;
-        *(unsigned int*)((int)TargetFrame - 4) = &v6;
-        int v8 = *(int*)((int)TargetFrame + 12);
-        int v9 = *(int*)((int)TargetFrame + 8);
-        while(v8 != -1) {
-            int v10 = v8 * 3;
-            if(*(int*)(v10 * 4 + v9 + 4)) {
-                int v11 = *(int*)(v10 * 4 + v9 + 4)((int)ptr2, v8);
-                ptr2 = ptr0;
-                v8 = (int)ptr1;
-                TargetFrame = *(PVOID*)((int)ptr2 + 12);
-                if(v11) {
-                    if(v11 < 0) {
-                        break;
-                    }
-                    else {
-                        int v12 = *(int*)((int)TargetFrame + 8);
-                        _global_unwind2(TargetFrame);
-                        ptr2 = (void*)((int)TargetFrame + 16);
-                        sub_401DCE((int)TargetFrame, v8);
-                        sub_401E62(v8 * 3, 1);
-                        *(int*)((int)TargetFrame + 12) = *(int*)(v3 * 4 + v12);
-                        *(int*)(v3 * 4 + v12 + 8)();
+    int v25 = param0;
+    char v26 = *(int*)(v25 + 4) & 0x6 ? 0: 1;
+    char v27 = (*(int*)(v25 + 4) & 0x6) < 0;
+    char v28 = __parity__((unsigned char)*(int*)(v25 + 4) & 0x6);
+    char v29 = 0;
+    char v30 = 0;
+    if(v26) {
+        v13 = v25;
+        int v31 = param2;
+        int v32 = param2;
+        int* ptr5 = &v13;
+        *(unsigned int*)((int)TargetFrame - 4) = &v13;
+        unsigned int v33 = *(unsigned int*)((int)TargetFrame + 12);
+        int v34 = *(int*)((int)TargetFrame + 8);
+        while(1) {
+            v6 = v33 == -1;
+            v5 = (int)v33 < -1;
+            v4 = __parity__((unsigned char)v33 - 0xFF);
+            v3 = v33 < 0xffffffff;
+            v2 = (((v33 + 1) ^ v33) & ~v33) < 0;
+            v1 = (((v33 + 1) ^ ~v33) >>> 4) & 0x1;
+            if(v6) {
+                break;
+            }
+            else {
+                int v35 = v33 * 3;
+                char v36 = *(int*)(v35 * 4 + v34 + 4) ? 0: 1;
+                char v37 = *(int*)(v35 * 4 + v34 + 4) < 0;
+                char v38 = __parity__((unsigned char)*(int*)(v35 * 4 + v34 + 4));
+                char v39 = *(unsigned int*)(v35 * 4 + v34 + 4) < 0;
+                char v40 = 0;
+                v1 = 0;
+                if(!v36) {
+                    int* ptr6 = (int*)((int)TargetFrame + 16);
+                    int v41 = *(int*)(v35 * 4 + v34 + 4)((int)ptr2, (int)v33);
+                    ptr2 = ptr1;
+                    v33 = (unsigned int)ptr0;
+                    TargetFrame = *(PVOID*)((int)ptr2 + 12);
+                    int v42 = v41;
+                    v6 = v42 ? 0: 1;
+                    v5 = v42 < 0;
+                    v4 = __parity__((unsigned char)v42);
+                    v2 = 0;
+                    v3 = 0;
+                    if(!v6) {
+                        if(!v5) {
+                            int v43 = *(int*)((int)TargetFrame + 8);
+                            int v44 = _global_unwind2(TargetFrame);
+                            int* ptr7 = &ptr0;
+                            char v45 = &v7 == 28;
+                            char v46 = (int)&ptr4 < 0;
+                            char v47 = __parity__((unsigned char)&v7 - 28);
+                            char v48 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&ptr0 ^ 0x4) ^ (int)&ptr4) >>> 4) & 0x1);
+                            char v49 = (unsigned int)&ptr0 >= 0xfffffffc;
+                            char v50 = (int)(int*)((int)(int*)((int)&ptr4 ^ (int)&ptr0) & (int*)~(int)(int*)((int)&ptr0 ^ 0x4)) < 0;
+                            ptr2 = (void*)((int)TargetFrame + 16);
+                            int v51 = sub_401DCE((int)TargetFrame, v33);
+                            int* ptr8 = &ptr1;
+                            char v52 = &v7 == 28;
+                            char v53 = (int)&ptr4 < 0;
+                            char v54 = __parity__((unsigned char)&v7 - 28);
+                            char v55 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&ptr1 ^ 0x8) ^ (int)&ptr4) >>> 4) & 0x1);
+                            char v56 = (unsigned int)&ptr1 >= 0xfffffff8;
+                            char v57 = (int)(int*)((int)(int*)((int)&ptr4 ^ (int)&ptr1) & (int*)~(int)(int*)((int)&ptr1 ^ 0x8)) < 0;
+                            int v58 = (int)(v33 * 3);
+                            int v59 = *(int*)(v58 * 4 + v43 + 8);
+                            unsigned int v60 = sub_401E62(v58, 1);
+                            int v61 = *(int*)(v10 * 4 + v43);
+                            *(int*)((int)TargetFrame + 12) = *(int*)(v10 * 4 + v43);
+                            *(int*)(v10 * 4 + v43 + 8)();
+                        }
+                        else {
+                            v0 = 0;
+                            goto loc_401F39;
+                        }
                     }
                 }
+                v34 = *(int*)((int)TargetFrame + 8);
+                v10 = v33 * 3;
+                v33 = *(unsigned int*)(v10 * 4 + v34);
             }
-            v9 = *(int*)((int)TargetFrame + 8);
-            v8 = *(int*)(v8 * 12 + v9);
         }
     }
     else {
-        ptr1 = &v0;
-        sub_401DCE((int)TargetFrame, -1);
+        ptr0 = &v9;
+        int* ptr9 = (int*)((int)TargetFrame + 16);
+        int v62 = sub_401DCE((int)TargetFrame, 0xffffffff);
+        int* ptr10 = &v11;
+        v6 = &v7 == 32;
+        v5 = (int)&ptr0 < 0;
+        v4 = __parity__((unsigned char)&v7 - 32);
+        v1 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&v11 ^ 0x8) ^ (int)&ptr0) >>> 4) & 0x1);
+        v3 = (unsigned int)&v11 >= 0xfffffff8;
+        v2 = (int)(int*)((int)(int*)((int)&ptr0 ^ (int)&v11) & (int*)~(int)(int*)((int)&v11 ^ 0x8)) < 0;
+        void* ptr11 = ptr0;
     }
-    jump v5;
+    v0 = 1;
+loc_401F39:
+    void* ptr12 = ptr4;
+    int v63 = v23;
+    int v64 = v22;
+    int v65 = v21;
+    int v66 = *(int*)ptr12;
+    int v67 = v22;
+    int* ptr13 = &v21;
+    jump v67;
 }
 
-int sub_401F41(int param0) {
-    return sub_401DCE(*(int*)(param0 + 24), *(int*)(param0 + 28));
+int sub_401F5C() {
+    unsigned int v0 = gvar_405564;
+    char v1 = v0 == 1;
+    char v2 = (int)v0 < 1;
+    char v3 = __parity__((unsigned char)v0 - 1);
+    char v4 = v0 < 1;
+    char v5 = (((v0 - 1) ^ v0) & (v0 ^ 0x1)) < 0;
+    char v6 = (((v0 - 1) ^ (v0 ^ 0x1)) >>> 4) & 0x1;
+    jump v1 ? &sub_401F73: &sub_401F66;
+}
+
+int sub_401F66() {
+    int v0;
+    char v1 = v0 ? 0: 1;
+    char v2 = v0 < 0;
+    char v3 = __parity__((unsigned char)v0);
+    char v4 = 0;
+    char v5 = 0;
+    char v6 = gvar_405034 == 1;
+    char v7 = (int)gvar_405034 < 1;
+    char v8 = __parity__((unsigned char)gvar_405034 - 1);
+    char v9 = gvar_405034 < 1;
+    char v10 = (((gvar_405034 - 1) ^ gvar_405034) & (gvar_405034 ^ 0x1)) < 0;
+    char v11 = (((gvar_405034 - 1) ^ (gvar_405034 ^ 0x1)) >>> 4) & 0x1;
+    jump v6 ? &sub_401F73: &sub_401F94;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
-unsigned int sub_401F5C() {
-    unsigned int result = gvar_405564;
-    if(result == 1 || (!result && gvar_405034 == 1)) {
-        sub_401F95(252);
-        unsigned int v0 = gvar_4056C0;
-        if(v0) {
-            v0();
-        }
-        result = (unsigned int)sub_401F95(0xFF);
-    }
-    return result;
+int sub_401F73() {
+    int v0;
+    char v1;
+    int v2 = sub_401F95(252);
+    unsigned int v3 = gvar_4056C0;
+    int v4 = v0;
+    int* ptr0 = &v1;
+    char v5 = v3 ? 0: 1;
+    char v6 = v3 >= 0x80000000;
+    char v7 = __parity__((unsigned char)v3);
+    char v8 = 0;
+    char v9 = 0;
+    jump v5 ? &sub_401F89: &sub_401F87;
 }
 
-int sub_401F95(int param0) {
+int sub_401F95(unsigned int param0) {
     char v0;
     char v1;
     char v2;
@@ -1071,7 +1219,7 @@ int sub_401F95(int param0) {
     while(*(int*)result != param0) {
         result += 8;
         ++v3;
-        if(result >= 4215152) {
+        if(result >= &gvar_405170) {
             break;
         }
     }
@@ -1080,74 +1228,74 @@ int sub_401F95(int param0) {
         if((result == 1 || (!result && gvar_405034 == 1))) {
             LPOVERLAPPED lpOverlapped = NULL;
             LPDWORD lpNumberOfBytesWritten = &param0;
-            DWORD nNumberOfBytesToWrite = (DWORD)sub_4026B0(*(char**)(v3 * 8 + (int)&ptr_aR6002____floati));
-            LPCVOID lpBuffer = *(char**)(v3 * 8 + (int)&ptr_aR6002____floati);
+            DWORD nNumberOfBytesToWrite = (DWORD)sub_4026B0((int)*(void**)(v3 * 8 + (int)&ptr_aR6002____floati));
+            LPCVOID lpBuffer = *(LPCVOID*)(v3 * 8 + (int)&ptr_aR6002____floati);
             HANDLE hFile = GetStdHandle(0xfffffff4);
             result = WriteFile(hFile, lpBuffer, nNumberOfBytesToWrite, lpNumberOfBytesWritten, lpOverlapped);
         }
         else if(param0 != 252) {
             DWORD v4 = GetModuleFileNameA(NULL, &v0, 260);
             if(!v4) {
-                sub_402540((char*)&v0, "<program name unknown>");
+                sub_402540((int)&v0, "<program name unknown>");
             }
-            int* ptr0 = sub_4026B0((char*)&v0);
-            if((unsigned int)(int*)((char*)ptr0 + 1) > 60) {
-                int* ptr1 = sub_4026B0((char*)&v0);
-                sub_403340((char*)((int)ptr1 + (int)&v2), (char*)&gvar_4043D0, 3);
+            int v5 = sub_4026B0((int)&v0);
+            if((unsigned int)(v5 + 1) > 60) {
+                int v6 = sub_4026B0((int)&v0);
+                sub_403340((int)&v2, &gvar_4043D0, 3);
             }
             sub_402540(&v1, "Runtime Error!\n\nProgram: ");
-            sub_402550(&v1, (char*)&v0);
-            sub_402550(&v1, (char*)&gvar_4043B0);
-            sub_402550(&v1, *(char**)(v3 * 8 + (int)&ptr_aR6002____floati));
-            result = sub_4032AE((int)&v1, "Microsoft Visual C++ Runtime Library", 0x12010);
+            sub_402550(&v1, (int)&v0);
+            sub_402550(&v1, &gvar_4043B0);
+            sub_402550(&v1, (int)*(void**)(v3 * 8 + (int)&ptr_aR6002____floati));
+            result = sub_4032AE(&v1, "Microsoft Visual C++ Runtime Library", 0x12010);
         }
     }
     return result;
 }
 
+// Stale decompilation - Refresh this view to re-decompile this code
 int sub_4020E8(int param0) {
-    return sub_4020F9((char)param0, 0, 4);
+    return sub_4020F9(param0, 0, 4);
 }
 
-int sub_4020F9(char param0, int param1, char param2) {
-    if(!(*(char*)((char*)((unsigned int)param0 + (int)&gvar_405840) + 1) & param2) && !(param1 != 0 ? (unsigned int)*(unsigned short*)((unsigned int)param0 * 2 + (int)&gvar_40528A) & param1: 0)) {
-        return 0;
+int sub_4020F9(int param0, unsigned int param1, int param2) {
+    if(!((unsigned char)param2 & *(char*)((char*)((unsigned int)(unsigned char)param0 + (int)&gvar_405840) + 1))) {
+        return !(param1 ? (unsigned int)*(unsigned short*)((unsigned int)(unsigned char)param0 * 2 + (int)&gvar_40528A) & param1: 0) ? 0: 1;
     }
     return 1;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
 int sub_40212A(UINT param0) {
-    int result;
-    int v0;
-    unsigned int v1;
-    char v2;
-    char v3;
+    unsigned int v0;
+    char v1;
+    unsigned char v2;
+    int v3;
+    int v4 = v3;
     UINT CodePage = sub_4022C3(param0);
-    char v4 = gvar_40571C == CodePage;
+    char v5 = gvar_40571C == CodePage;
     param0 = CodePage;
-    if(!v4) {
+    if(!v5) {
         if(CodePage != 0) {
-            int v5 = 0;
-            int* ptr0 = (int*)&gvar_405178;
+            int v6 = 0;
+            unsigned int* ptr0 = (unsigned int*)&gvar_405178;
             while(*ptr0 != CodePage) {
                 ptr0 += 12;
-                ++v5;
+                ++v6;
                 if((int)ptr0 >= 4215400) {
-                    BOOL v6 = GetCPInfo(CodePage, &v1);
-                    if(v6 == 1) {
-                        v0 = 64;
-                        int v7 = 64;
-                        int* ptr1 = (int*)&gvar_405840;
-                        char v8 = v1 == 1;
-                        char v9 = v1 < 1;
+                    BOOL v7 = GetCPInfo(CodePage, &v0);
+                    if(v7 == 1) {
+                        void* ptr1 = (void*)0x40;
+                        int* ptr2 = (int*)&gvar_405840;
+                        char v8 = v0 == 1;
+                        char v9 = v0 < 1;
                         gvar_40571C = CodePage;
-                        while(v7 != 0) {
-                            *ptr1 = 0;
-                            ++ptr1;
-                            --v7;
+                        while(ptr1 != 0) {
+                            *ptr2 = 0;
+                            ++ptr2;
+                            ptr1 = (void*)((int)ptr1 - 1);
                         }
-                        *(char*)ptr1 = 0;
+                        *(char*)ptr2 = 0;
                         gvar_405944 = 0;
                         if((v9 || v8)) {
                             gvar_40572C = 0;
@@ -1157,20 +1305,20 @@ int sub_40212A(UINT param0) {
                             sub_402369();
                             return 0;
                         }
-                        else if(v3) {
-                            char* ptr2 = &v2;
+                        else if(v2) {
+                            char* ptr3 = &v1;
                             do {
-                                unsigned int v10 = (unsigned int)*ptr2 | ((unsigned int)((v10 >>> 8) & 0xffffff) << 8);
-                                if(!(unsigned char)v10) {
+                                unsigned int v10 = (unsigned int)*ptr3 | ((unsigned int)((v10 >>> 8) & 0xffffff) << 8);
+                                if(!*ptr3) {
                                 loc_40226B:
-                                    int v11 = 1;
+                                    void* ptr4 = (void*)0x1;
                                     do {
-                                        *(char*)((char*)((int)&gvar_405840 + v11) + 1) = *(char*)((char*)((int)&gvar_405840 + v11) + 1) | 0x8;
-                                        ++v11;
+                                        *(char*)((int)ptr4 + 0x405841) = *(char*)((int)ptr4 + 0x405841) | 0x8;
+                                        ptr4 = (void*)((int)ptr4 + 1);
                                     }
-                                    while((unsigned int)v11 < 0xff);
-                                    int v12 = sub_40230D((int)CodePage);
-                                    gvar_405944 = v12;
+                                    while((unsigned int)ptr4 < 0xff);
+                                    int v11 = sub_40230D(CodePage);
+                                    gvar_405944 = v11;
                                     gvar_40572C = 1;
                                     gvar_405720 = 0;
                                     gvar_405724 = 0;
@@ -1178,15 +1326,15 @@ int sub_40212A(UINT param0) {
                                     sub_402369();
                                     return 0;
                                 }
-                                unsigned int v13 = (unsigned int)*(ptr2 - 1);
-                                v10 &= 0xFF;
-                                while(v13 <= v10) {
-                                    *(char*)((char*)((int)&gvar_405840 + v13) + 1) = *(char*)((char*)((int)&gvar_405840 + v13) + 1) | 0x4;
-                                    ++v13;
+                                unsigned int v12 = (unsigned int)*(ptr3 - 1);
+                                v10 = (unsigned int)(unsigned char)v10;
+                                while(v12 <= v10) {
+                                    *(char*)((char*)((int)&gvar_405840 + v12) + 1) = *(char*)((char*)((int)&gvar_405840 + v12) + 1) | 0x4;
+                                    ++v12;
                                 }
-                                ptr2 += 2;
+                                ptr3 += 2;
                             }
-                            while(*(ptr2 - 1));
+                            while(*(ptr3 - 1));
                             goto loc_40226B;
                         }
                         else {
@@ -1203,69 +1351,61 @@ int sub_40212A(UINT param0) {
                     }
                 }
             }
-            v0 = 64;
-            int v14 = 64;
-            int* ptr3 = (int*)&gvar_405840;
-            while(v14 != 0) {
-                *ptr3 = 0;
-                ++ptr3;
-                --v14;
+            void* ptr5 = (void*)0x40;
+            int* ptr6 = (int*)&gvar_405840;
+            while(ptr5 != 0) {
+                *ptr6 = 0;
+                ++ptr6;
+                ptr5 = (void*)((int)ptr5 - 1);
             }
-            unsigned int v15 = 0;
-            int v16 = v5 * 3 * 16;
-            *(char*)ptr3 = 0;
-            char* ptr4 = (char*)(v16 + &gvar_405188);
+            unsigned int v13 = 0;
+            int v14 = v6 * 3 * 16;
+            *(char*)ptr6 = 0;
+            unsigned char* ptr7 = (unsigned char*)(v14 + &gvar_405188);
             do {
-                char* ptr5 = ptr4;
-                if(*ptr4) {
+                unsigned char* ptr8 = ptr7;
+                if(*ptr7) {
                     do {
-                        v5 = (unsigned int)*(ptr5 + 1) | ((unsigned int)((v5 >>> 8) & 0xffffff) << 8);
-                        if(!(unsigned char)v5) {
+                        v6 = (unsigned int)*(char*)(ptr8 + 1) | ((unsigned int)((v6 >>> 8) & 0xffffff) << 8);
+                        if(!*(char*)(ptr8 + 1)) {
                             break;
                         }
                         else {
-                            unsigned int v17 = (unsigned int)*ptr5;
-                            unsigned int v18 = (unsigned int)(v5 & 0xFF);
-                            if(v17 <= v18) {
-                                v5 = (unsigned int)*(char*)(v15 + 4215152) | ((unsigned int)((v15 >>> 8) & 0xffffff) << 8);
+                            unsigned int v15 = (unsigned int)*ptr8;
+                            unsigned int v16 = (unsigned int)(unsigned char)v6;
+                            if(v15 <= v16) {
+                                v6 = (unsigned int)*(unsigned char*)((int)&gvar_405170 + v13) | ((unsigned int)((v13 >>> 8) & 0xffffff) << 8);
                                 do {
-                                    *(char*)((char*)((int)&gvar_405840 + v17) + 1) = (unsigned char)v5 | *(char*)((char*)((int)&gvar_405840 + v17) + 1);
-                                    ++v17;
+                                    *(char*)((char*)((int)&gvar_405840 + v15) + 1) = (unsigned char)v6 | *(char*)((char*)((int)&gvar_405840 + v15) + 1);
+                                    ++v15;
                                 }
-                                while(v17 <= v18);
+                                while(v15 <= v16);
                             }
-                            ptr5 += 2;
+                            ptr8 += 2;
                         }
                     }
-                    while(*ptr5);
+                    while(*ptr8);
                 }
-                ++v15;
-                ptr4 += 8;
+                ++v13;
+                ptr7 += 8;
             }
-            while(v15 < 4);
-            UINT v19 = param0;
+            while(v13 < 4);
             gvar_40572C = 1;
-            v0 = (int)v19;
-            gvar_40571C = v19;
-            int v20 = sub_40230D(v0);
-            unsigned int* ptr6 = (unsigned int*)(v16 + &gvar_40517C);
-            gvar_405720 = *ptr6;
-            unsigned int* ptr7 = ptr6 + 1;
-            gvar_405724 = *ptr7;
-            gvar_405944 = v20;
-            gvar_405728 = *(ptr7 + 1);
+            gvar_40571C = param0;
+            int v17 = sub_40230D(param0);
+            unsigned int* ptr9 = (unsigned int*)(v14 + &gvar_40517C);
+            gvar_405720 = *ptr9;
+            unsigned int* ptr10 = ptr9 + 1;
+            gvar_405724 = *ptr10;
+            gvar_405944 = v17;
+            gvar_405728 = *(ptr10 + 1);
         }
         else {
             sub_402340();
         }
         sub_402369();
-        goto loc_4022B7;
     }
-    else {
-    loc_4022B7:
-        result = 0;
-    }
-    return result;
+    return 0;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
@@ -1292,24 +1432,17 @@ UINT sub_4022C3(UINT param0) {
     }
 }
 
-int sub_40230D(int param0) {
-    switch(param0) {
-        case 932: {
-            return 0x411;
-        }
-        case 936: {
-            return 2052;
-        }
-        case 949: {
-            return 1042;
-        }
-        default: {
-            if(param0 != 950) {
-                return 0;
-            }
-            return 0x404;
-        }
+int sub_40230D(unsigned int param0) {
+    if(param0 == 932) {
+        return 0x411;
     }
+    else if(!(param0 - 936)) {
+        return 2052;
+    }
+    else if((param0 - 949)) {
+        return param0 - 950 ? 0: 0x404;
+    }
+    return 1042;
 }
 
 int sub_402340() {
@@ -1331,16 +1464,17 @@ int sub_402340() {
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
-unsigned int sub_402369(short* param0, int param1) {
+unsigned int sub_402369() {
+    short* ptr0;
     unsigned int result;
     char v0;
     char v1;
     char v2;
     char v3;
     char v4;
-    int v5;
+    char v5;
     char v6;
-    char v7;
+    int v7;
     BOOL v8 = GetCPInfo(gvar_40571C, &v0);
     if(v8 == 1) {
         unsigned int v9 = 0;
@@ -1349,245 +1483,115 @@ unsigned int sub_402369(short* param0, int param1) {
             ++v9;
         }
         while(v9 < 0x100);
-        v9 = (unsigned int)v7 | ((unsigned int)((v9 >>> 8) & 0xffffff) << 8);
+        v9 = (unsigned int)v6 | ((unsigned int)((v9 >>> 8) & 0xffffff) << 8);
         v1 = 32;
         if((unsigned char)v9) {
-            int v10 = v5;
-            char* ptr0 = &v6;
+            int v10 = v7;
+            char* ptr1 = &v5;
             do {
-                unsigned int v11 = (unsigned int)*ptr0;
-                v9 = (unsigned int)(v9 & 0xFF);
+                unsigned int v11 = (unsigned int)*ptr1;
+                v9 = (unsigned int)(unsigned char)v9;
                 if(v9 <= v11) {
-                    int* ptr1 = (int*)(v9 + (int)&v1);
+                    int* ptr2 = (int*)(v9 + (int)&v1);
                     int v12 = v11 - v9 + 1;
                     v9 = 0x20202020;
                     int v13 = v12;
                     for(int i = v12 >>> 2; i != 0; --i) {
-                        *ptr1 = 0x20202020;
-                        ++ptr1;
+                        *ptr2 = 0x20202020;
+                        ++ptr2;
                     }
                     for(int j = v13 & 0x3; j != 0; --j) {
-                        *(char*)ptr1 = 32;
-                        ptr1 = (int*)((char*)ptr1 + 1);
+                        *(char*)ptr2 = 32;
+                        ptr2 = (int*)((char*)ptr2 + 1);
                     }
                 }
-                ptr0 += 2;
-                v9 = (unsigned int)*(ptr0 - 1) | ((unsigned int)((v9 >>> 8) & 0xffffff) << 8);
+                ptr1 += 2;
+                v9 = (unsigned int)*(ptr1 - 1) | ((unsigned int)((v9 >>> 8) & 0xffffff) << 8);
             }
-            while((unsigned char)v9);
+            while(*(ptr1 - 1));
         }
         sub_40368D(1, (int)&v1, 0x100, (int)&v2, (int)gvar_40571C, (int)gvar_405944, 0);
         sub_40343E((int)gvar_405944, 0x100, (int)&v1, 0x100, (int)&v3, 0x100, (int)gvar_40571C, 0);
         sub_40343E((int)gvar_405944, 0x200, (int)&v1, 0x100, (int)&v4, 0x100, (int)gvar_40571C, 0);
         result = 0;
-        param0 = &v2;
+        ptr0 = &v2;
         do {
-            param1 = (unsigned int)*param0 | ((unsigned int)(unsigned short)(param1 >>> 16) << 16);
-            if(((unsigned char)param1 & 0x1)) {
+            int v14 = (unsigned int)*ptr0 | ((unsigned int)(unsigned short)(v14 >>> 16) << 16);
+            if(((unsigned char)v14 & 0x1)) {
                 *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x10;
-                param1 = (unsigned int)*(char*)(result + (int)&v3) | ((unsigned int)((param1 >>> 8) & 0xffffff) << 8);
+                v14 = (unsigned int)*(char*)(result + (int)&v3) | ((unsigned int)((v14 >>> 8) & 0xffffff) << 8);
                 goto loc_402475;
             }
-            else if(((unsigned char)param1 & 0x2)) {
+            else if(((unsigned char)v14 & 0x2)) {
                 *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x20;
-                param1 = (unsigned int)*(char*)(result + (int)&v4) | ((unsigned int)((param1 >>> 8) & 0xffffff) << 8);
+                v14 = (unsigned int)*(char*)(result + (int)&v4) | ((unsigned int)((v14 >>> 8) & 0xffffff) << 8);
             loc_402475:
-                *(unsigned char*)((int)&gvar_405740 + result) = (unsigned char)param1;
+                *(unsigned char*)((int)&gvar_405740 + result) = (unsigned char)v14;
             }
             else {
                 *(unsigned char*)((int)&gvar_405740 + result) = 0;
             }
             ++result;
-            ++param0;
+            ++ptr0;
         }
         while(result < 0x100);
     }
     else {
         result = 0;
         do {
-            if(result >= 65 && result <= 90) {
-                *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x10;
-                param0 = (unsigned int)((unsigned char)result + 32) | ((unsigned int)(int*)((int)(int*)((int)param0 >>> 8) & 0xffffff) << 8);
-                goto loc_4024BF;
+            *(unsigned char*)((int)&gvar_405740 + result) = 0;
+        loc_4024E6:
+            while(1) {
+                ++result;
+                if(result >= 0x100) {
+                    return result;
+                }
+                else if(result >= 65 && result <= 90) {
+                    *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x10;
+                    ptr0 = (unsigned int)((unsigned char)result + 32) | ((unsigned int)(int*)((int)(int*)((int)ptr0 >>> 8) & 0xffffff) << 8);
+                    *(unsigned char*)((int)&gvar_405740 + result) = (unsigned char)ptr0;
+                }
             }
-            else if(result >= 97 && result <= 122) {
-                *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x20;
-                param0 = (unsigned int)((unsigned char)result - 32) | ((unsigned int)(int*)((int)(int*)((int)param0 >>> 8) & 0xffffff) << 8);
-            loc_4024BF:
-                *(unsigned char*)((int)&gvar_405740 + result) = (unsigned char)param0;
-            }
-            else {
-                *(unsigned char*)((int)&gvar_405740 + result) = 0;
-            }
-            ++result;
         }
-        while(result < 0x100);
+        while(result < 97 || result > 122);
+        *(char*)((char*)((int)&gvar_405840 + result) + 1) = *(char*)((char*)((int)&gvar_405840 + result) + 1) | 0x20;
+        ptr0 = (unsigned int)((unsigned char)result - 32) | ((unsigned int)(int*)((int)(int*)((int)ptr0 >>> 8) & 0xffffff) << 8);
+        *(unsigned char*)((int)&gvar_405740 + result) = (unsigned char)ptr0;
+        goto loc_4024E6;
     }
     return result;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
-int sub_4024EE() {
-    int result;
-    if(!gvar_405A68) {
-        result = sub_40212A(-3);
-        gvar_405A68 = 1;
-    }
-    return result;
+void sub_4024EE() {
+    char v0 = gvar_405A68 ? 0: 1;
+    char v1 = gvar_405A68 >= 0x80000000;
+    char v2 = __parity__((unsigned char)gvar_405A68);
+    char v3 = gvar_405A68 < 0;
+    char v4 = 0;
+    char v5 = 0;
+    jump v0 ? &sub_4024F7: &sub_402509;
 }
 
-unsigned int* sub_40250A(int param0) {
+// Stale decompilation - Refresh this view to re-decompile this code
+int sub_4024F7() {
+    sub_40212A(-3);
+    gvar_405A68 = 1;
+}
+
+void sub_402509() {
+}
+
+unsigned int* sub_40250A(int* lpMem) {
     unsigned int* result;
-    if(param0) {
-        unsigned int v0 = sub_402AA3(param0);
-        if(v0) {
-            return sub_402ACE((unsigned int*)v0, (int*)param0);
+    if(lpMem) {
+        unsigned int* ptr0 = (unsigned int*)sub_402AA3();
+        if(ptr0) {
+            return sub_402ACE(ptr0, lpMem);
         }
-        result = (unsigned int*)HeapFree(gvar_405948, 0, (LPVOID)param0);
+        result = (unsigned int*)HeapFree(gvar_405948, 0, lpMem);
     }
     return result;
-}
-
-char* sub_402540(char* param0, char* param1) {
-    int v0;
-    char* ptr0 = param0;
-    char* ptr1 = param1;
-    if((int*)((int)ptr1 & 0x3)) {
-        do {
-            v0 = (unsigned int)*ptr1 | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-            ++ptr1;
-            if(!(unsigned char)v0) {
-                *ptr0 = (unsigned char)v0;
-                return param0;
-            }
-            *ptr0 = (unsigned char)v0;
-            ++ptr0;
-        }
-        while((int*)((int)ptr1 & 0x3));
-        goto loc_4025DB;
-    }
-    else {
-    loc_4025DB:
-        while(1) {
-            int v1 = *(int*)ptr1;
-            v0 = *(int*)ptr1;
-            ptr1 += 4;
-            if((((v1 + 0x7efefeff) ^ ~v1) & 0x81010100)) {
-                if(!(unsigned char)v0) {
-                    break;
-                }
-                else if(!(unsigned char)(v0 >>> 8)) {
-                    *(short*)ptr0 = (unsigned short)v0;
-                    return param0;
-                }
-                else if(!(v0 & 0xff0000)) {
-                    *(short*)ptr0 = (unsigned short)v0;
-                    *(ptr0 + 2) = 0;
-                    return param0;
-                }
-                else if(!(v0 & 0xff000000)) {
-                    *(int*)ptr0 = v0;
-                    return param0;
-                }
-            }
-            *(int*)ptr0 = v0;
-            ptr0 += 4;
-        }
-    }
-    *ptr0 = (unsigned char)v0;
-    return param0;
-}
-
-char* sub_402550(char* param0, char* param1) {
-    char* ptr0;
-    int v0;
-    char* ptr1 = param0;
-    if((int*)((int)ptr1 & 0x3)) {
-        do {
-            char v1 = *ptr1;
-            ++ptr1;
-            if(!v1) {
-                goto loc_40259F;
-            }
-        }
-        while((int*)((int)ptr1 & 0x3));
-    }
-    else {
-    loc_40256C:
-        do {
-            int v2 = *(int*)ptr1;
-            v0 = v2 + 0x7efefeff;
-            ptr1 += 4;
-            if(((~v2 ^ v0) & 0x81010100)) {
-                int v3 = *(int*)(ptr1 - 4);
-                if(!(unsigned char)v3) {
-                    ptr0 = ptr1 - 4;
-                }
-                else if(!(unsigned char)(v3 >>> 8)) {
-                    ptr0 = ptr1 - 3;
-                }
-                else if(!(v3 & 0xff0000)) {
-                    ptr0 = ptr1 - 2;
-                }
-                else if(v3 & 0xff000000) {
-                    goto loc_40256C;
-                }
-                else {
-                    break;
-                }
-                goto loc_4025B1;
-            }
-        }
-        while(1);
-    loc_40259F:
-        ptr0 = ptr1 - 1;
-    }
-loc_4025B1:
-    char* ptr2 = param1;
-    if((int*)((int)ptr2 & 0x3)) {
-        do {
-            v0 = (unsigned int)*ptr2 | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-            ++ptr2;
-            if(!(unsigned char)v0) {
-                *ptr0 = (unsigned char)v0;
-                return param0;
-            }
-            *ptr0 = (unsigned char)v0;
-            ++ptr0;
-        }
-        while((int*)((int)ptr2 & 0x3));
-        goto loc_4025DB;
-    }
-    else {
-    loc_4025DB:
-        while(1) {
-            int v4 = *(int*)ptr2;
-            v0 = *(int*)ptr2;
-            ptr2 += 4;
-            if((((v4 + 0x7efefeff) ^ ~v4) & 0x81010100)) {
-                if(!(unsigned char)v0) {
-                    break;
-                }
-                else if(!(unsigned char)(v0 >>> 8)) {
-                    *(short*)ptr0 = (unsigned short)v0;
-                    return param0;
-                }
-                else if(!(v0 & 0xff0000)) {
-                    *(short*)ptr0 = (unsigned short)v0;
-                    *(ptr0 + 2) = 0;
-                    return param0;
-                }
-                else if(!(v0 & 0xff000000)) {
-                    *(int*)ptr0 = v0;
-                    return param0;
-                }
-            }
-            *(int*)ptr0 = v0;
-            ptr0 += 4;
-        }
-    }
-    *ptr0 = (unsigned char)v0;
-    return param0;
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
@@ -1596,16 +1600,16 @@ int sub_402630(int param0) {
 }
 
 // Stale decompilation - Refresh this view to re-decompile this code
-int sub_402642(int param0, int param1) {
-    int result;
+unsigned int sub_402642(unsigned int param0, unsigned int param1) {
+    unsigned int result;
     int v0;
-    if((unsigned int)param0 <= 0xffffffe0) {
+    if(param0 <= 0xffffffe0) {
         do {
-            result = sub_40266E(param0);
-            if(result || param1 == 0) {
+            result = (unsigned int)sub_40266E((int)param0);
+            if(result || result == param1) {
                 return result;
             }
-            v0 = sub_4037D6(param0);
+            v0 = sub_4037D6();
         }
         while(v0);
     }
@@ -1634,72 +1638,40 @@ int* sub_40266E(int param0) {
     return result;
 }
 
-int* sub_4026B0(char* param0) {
-    char v0;
-    char* ptr0 = param0;
-    if((int*)((int)ptr0 & 0x3)) {
-        do {
-            v0 = *ptr0;
-            ++ptr0;
-        }
-        while(v0 && (int*)((int)ptr0 & 0x3));
-    }
-    else {
-        do {
-            int v1 = *(int*)ptr0;
-            ptr0 += 4;
-            if((((v1 + 0x7efefeff) ^ ~v1) & 0x81010100)) {
-                int v2 = *(int*)(ptr0 - 4);
-                if(!(unsigned char)v2) {
-                    return (int*)((int)(int*)(ptr0 - 4) - (int)param0);
-                }
-                else if(!(unsigned char)(v2 >>> 8)) {
-                    return (int*)((int)(int*)(ptr0 - 3) - (int)param0);
-                }
-                else if(!(v2 & 0xff0000)) {
-                    return (int*)((int)(int*)(ptr0 - 2) - (int)param0);
-                }
-                else if(!(v2 & 0xff000000)) {
-                    break;
-                }
-            }
-        }
-        while(1);
-    }
-    return (int*)((int)(int*)(ptr0 - 1) - (int)param0);
-}
-
 int* sub_402730(int* param0, int* param1, int* param2) {
     int* ptr0;
     int* ptr1;
     int* ptr2 = param1;
-    int* ptr3 = param0;
-    if(ptr2 >= ptr3 || (int*)((int)ptr2 + (int)param2) <= ptr3) {
-        if(!(int*)((int)ptr3 & 0x3)) {
-            ptr1 = (int*)((int)param2 >>> 2);
-            ptr0 = (int*)((int)param2 & 0x3);
-            if((unsigned int)ptr1 < 8) {
+    int* ptr3 = param2;
+    int* ptr4 = param0;
+    int* ptr5 = ptr3;
+    int* ptr6 = ptr3;
+    if(ptr2 >= ptr4 || (int*)((int)ptr5 + (int)ptr2) <= ptr4) {
+        if(!(int*)((int)ptr4 & 0x3)) {
+            ptr3 = (int*)((int)ptr3 >>> 2);
+            ptr1 = (int*)((int)ptr6 & 0x3);
+            if((unsigned int)ptr3 < 8) {
             loc_40278C:
-                switch(ptr1) {
+                switch(ptr3) {
                     case 0: {
                     loc_40286F:
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)ptr3 = *(char*)ptr2;
+                                *(char*)ptr4 = *(char*)ptr2;
                                 return param0;
                             }
                             case 2: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                 return param0;
                             }
                             default: {
@@ -1710,49 +1682,50 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                     }
                     case 1: {
                     loc_402860:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 1) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 1);
-                        ptr2 = (int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2);
-                        ptr3 = (int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 1) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 1);
+                        ptr0 = (int*)((int)ptr3 * 4);
+                        ptr2 = (int*)((int)ptr0 + (int)ptr2);
+                        ptr4 = (int*)((int)ptr0 + (int)ptr4);
                         break;
                     }
                     case 2: {
-                    loc_402858:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_402860;
                     }
                     case 3: {
-                    loc_402850:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_402860;
                     }
                     case 4: {
-                    loc_402848:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_402860;
                     }
                     case 5: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_402860;
                     }
                     case 6: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        goto loc_402858;
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                        goto loc_402860;
                     }
                     case 7: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 7) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 7);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        goto loc_402850;
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 7);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                        goto loc_402860;
                     }
                     default: {
                         throw 0;
@@ -1761,29 +1734,29 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                 goto loc_40286F;
             }
             else {
-                while(ptr1 != 0) {
-                    *ptr3 = *ptr2;
+                while(ptr3 != 0) {
+                    *ptr4 = *ptr2;
                     ++ptr2;
-                    ++ptr3;
-                    ptr1 = (int*)((char*)ptr1 - 1);
+                    ++ptr4;
+                    ptr3 = (int*)((char*)ptr3 - 1);
                 }
-                switch(ptr0) {
+                switch(ptr1) {
                     case 0: {
                         return param0;
                     }
                     case 1: {
-                        *(char*)ptr3 = *(char*)ptr2;
+                        *(char*)ptr4 = *(char*)ptr2;
                         return param0;
                     }
                     case 2: {
-                        *(char*)ptr3 = *(char*)ptr2;
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                         return param0;
                     }
                     case 3: {
-                        *(char*)ptr3 = *(char*)ptr2;
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                        *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                        *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                         return param0;
                     }
                     default: {
@@ -1792,41 +1765,45 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                 }
             }
         }
-        if((unsigned int)param2 >= 4) {
-            int* ptr4 = (int*)((int)(param2 - 1) + (int)(int*)((int)ptr3 & 0x3));
-            switch((int*)((int)ptr3 & 0x3)) {
+        ptr0 = ptr4;
+        int* ptr7 = ptr3;
+        --ptr3;
+        if((unsigned int)ptr7 >= 4) {
+            ptr0 = (int*)((int)ptr0 & 0x3);
+            int* ptr8 = (int*)((int)ptr0 + (int)ptr3);
+            switch(ptr0) {
                 case 1: {
-                    ptr0 = (int*)((int)ptr4 & 0x3);
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                    ptr1 = (int*)((int)ptr4 >>> 2);
-                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                    ptr1 = (int*)((int)ptr8 & 0x3);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                    ptr3 = (int*)((int)ptr8 >>> 2);
+                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                     ptr2 = (int*)((char*)ptr2 + 3);
-                    ptr3 = (int*)((char*)ptr3 + 3);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr3 = *ptr2;
+                    ptr4 = (int*)((char*)ptr4 + 3);
+                    if((unsigned int)ptr3 >= 8) {
+                        while(ptr3 != 0) {
+                            *ptr4 = *ptr2;
                             ++ptr2;
-                            ++ptr3;
-                            ptr1 = (int*)((char*)ptr1 - 1);
+                            ++ptr4;
+                            ptr3 = (int*)((char*)ptr3 - 1);
                         }
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)ptr3 = *(char*)ptr2;
+                                *(char*)ptr4 = *(char*)ptr2;
                                 return param0;
                             }
                             case 2: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                 return param0;
                             }
                             default: {
@@ -1834,36 +1811,36 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                             }
                         }
                     loc_4027CC:
-                        ptr0 = (int*)((int)ptr4 & 0x3);
-                        *(char*)ptr3 = *(char*)ptr2;
-                        ptr1 = (int*)((int)ptr4 >>> 2);
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                        ptr1 = (int*)((int)ptr8 & 0x3);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        ptr3 = (int*)((int)ptr8 >>> 2);
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                         ptr2 = (int*)((char*)ptr2 + 2);
-                        ptr3 = (int*)((char*)ptr3 + 2);
-                        if((unsigned int)ptr1 >= 8) {
-                            while(ptr1 != 0) {
-                                *ptr3 = *ptr2;
+                        ptr4 = (int*)((char*)ptr4 + 2);
+                        if((unsigned int)ptr3 >= 8) {
+                            while(ptr3 != 0) {
+                                *ptr4 = *ptr2;
                                 ++ptr2;
-                                ++ptr3;
-                                ptr1 = (int*)((char*)ptr1 - 1);
+                                ++ptr4;
+                                ptr3 = (int*)((char*)ptr3 - 1);
                             }
-                            switch(ptr0) {
+                            switch(ptr1) {
                                 case 0: {
                                     return param0;
                                 }
                                 case 1: {
-                                    *(char*)ptr3 = *(char*)ptr2;
+                                    *(char*)ptr4 = *(char*)ptr2;
                                     return param0;
                                 }
                                 case 2: {
-                                    *(char*)ptr3 = *(char*)ptr2;
-                                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                    *(char*)ptr4 = *(char*)ptr2;
+                                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                     return param0;
                                 }
                                 case 3: {
-                                    *(char*)ptr3 = *(char*)ptr2;
-                                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                    *(char*)ptr4 = *(char*)ptr2;
+                                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                     return param0;
                                 }
                                 default: {
@@ -1871,45 +1848,48 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                                 }
                             }
                         loc_4027F0:
-                            ptr0 = (int*)((int)ptr4 & 0x3);
-                            *(char*)ptr3 = *(char*)ptr2;
+                            ptr1 = (int*)((int)ptr8 & 0x3);
+                            *(char*)ptr4 = *(char*)ptr2;
                             ptr2 = (int*)((char*)ptr2 + 1);
-                            ptr1 = (int*)((int)ptr4 >>> 2);
-                            ptr3 = (int*)((char*)ptr3 + 1);
-                            if((unsigned int)ptr1 >= 8) {
-                                while(ptr1 != 0) {
-                                    *ptr3 = *ptr2;
+                            ptr3 = (int*)((int)ptr8 >>> 2);
+                            ptr4 = (int*)((char*)ptr4 + 1);
+                            if((unsigned int)ptr3 >= 8) {
+                                while(ptr3 != 0) {
+                                    *ptr4 = *ptr2;
                                     ++ptr2;
-                                    ++ptr3;
-                                    ptr1 = (int*)((char*)ptr1 - 1);
+                                    ++ptr4;
+                                    ptr3 = (int*)((char*)ptr3 - 1);
                                 }
-                                switch(ptr0) {
+                                switch(ptr1) {
                                     case 0: {
                                         return param0;
                                     }
                                     case 1: {
-                                        *(char*)ptr3 = *(char*)ptr2;
+                                        *(char*)ptr4 = *(char*)ptr2;
                                         return param0;
                                     }
                                     case 2: {
-                                        *(char*)ptr3 = *(char*)ptr2;
-                                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                        *(char*)ptr4 = *(char*)ptr2;
+                                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                         return param0;
                                     }
                                     case 3: {
-                                        *(char*)ptr3 = *(char*)ptr2;
-                                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                        *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                        *(char*)ptr4 = *(char*)ptr2;
+                                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                        *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                         return param0;
                                     }
                                     default: {
                                         throw 0;
                                     }
                                 }
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 7) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 7);
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                                goto loc_402848;
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 7);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                                goto loc_402860;
                             }
                         }
                     }
@@ -1929,20 +1909,20 @@ int* sub_402730(int* param0, int* param1, int* param2) {
         }
         else {
         loc_402784:
-            switch(param2 - 1) {
+            switch(ptr3) {
                 case -4: {
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                     return param0;
                 }
                 case -3: {
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                     return param0;
                 }
                 case -2: {
-                    *(char*)ptr3 = *(char*)ptr2;
+                    *(char*)ptr4 = *(char*)ptr2;
                     return param0;
                 }
                 case -1: {
@@ -1956,35 +1936,35 @@ int* sub_402730(int* param0, int* param1, int* param2) {
         }
     }
     else {
-        int* ptr5 = (int*)((int)ptr2 + (int)param2) - 1;
-        int* ptr6 = (int*)((int)ptr3 + (int)param2) - 1;
-        if(!(int*)((int)ptr6 & 0x3)) {
-            ptr1 = (int*)((int)param2 >>> 2);
-            ptr0 = (int*)((int)param2 & 0x3);
-            if((unsigned int)ptr1 >= 8) {
-                while(ptr1 != 0) {
-                    *ptr6 = *ptr5;
-                    --ptr5;
-                    --ptr6;
-                    ptr1 = (int*)((char*)ptr1 - 1);
+        int* ptr9 = (int*)((int)ptr3 + (int)ptr2) - 1;
+        int* ptr10 = (int*)((int)ptr3 + (int)ptr4) - 1;
+        if(!(int*)((int)ptr10 & 0x3)) {
+            ptr3 = (int*)((int)ptr3 >>> 2);
+            ptr1 = (int*)((int)ptr6 & 0x3);
+            if((unsigned int)ptr3 >= 8) {
+                while(ptr3 != 0) {
+                    *ptr10 = *ptr9;
+                    --ptr9;
+                    --ptr10;
+                    ptr3 = (int*)((char*)ptr3 - 1);
                 }
-                switch(ptr0) {
+                switch(ptr1) {
                     case 0: {
                         return param0;
                     }
                     case 1: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                         return param0;
                     }
                     case 2: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                         return param0;
                     }
                     case 3: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                        *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                         return param0;
                     }
                     default: {
@@ -1992,95 +1972,65 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                     }
                 }
             }
-        loc_4028F2:
-            switch((int*)(0 - (int)ptr1)) {
-                case 0: {
-                    switch(ptr0) {
-                        case 0: {
-                            return param0;
-                        }
-                        case 1: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            return param0;
-                        }
-                        case 2: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                            return param0;
-                        }
-                        case 3: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                            *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                            return param0;
-                        }
-                        default: {
-                            throw 0;
-                            return param0;
-                        }
-                    }
-                }
-                default: {
-                    throw 0;
-                }
-            }
-            goto loc_40290B;
+            ptr3 = (int*)(0 - (int)ptr3);
+            jump gvar_4029A4[(int*)((char*)ptr3 + 7)];
         }
         else {
+            ptr0 = ptr10;
         loc_402914:
-            switch(param2) {
+            switch(ptr3) {
                 case 0: {
                     return param0;
                 }
                 case 1: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                     return param0;
                 }
                 case 2: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                     return param0;
                 }
                 case 3: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                    *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                     return param0;
                 }
             }
-        loc_40290B:
-            int* ptr7 = (int*)((int)param2 - (int)(int*)((int)ptr6 & 0x3));
-            switch((int*)((int)ptr6 & 0x3)) {
+            ptr0 = (int*)((int)ptr0 & 0x3);
+            int* ptr11 = (int*)((int)ptr3 - (int)ptr0);
+            switch(ptr0) {
                 case 1: {
-                    ptr0 = (int*)((int)ptr7 & 0x3);
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    ptr5 = (int*)((char*)ptr5 - 1);
-                    ptr1 = (int*)((int)ptr7 >>> 2);
-                    ptr6 = (int*)((char*)ptr6 - 1);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr6 = *ptr5;
-                            --ptr5;
-                            --ptr6;
-                            ptr1 = (int*)((char*)ptr1 - 1);
+                    ptr1 = (int*)((int)ptr11 & 0x3);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    ptr9 = (int*)((char*)ptr9 - 1);
+                    ptr3 = (int*)((int)ptr11 >>> 2);
+                    ptr10 = (int*)((char*)ptr10 - 1);
+                    if((unsigned int)ptr3 >= 8) {
+                        while(ptr3 != 0) {
+                            *ptr10 = *ptr9;
+                            --ptr9;
+                            --ptr10;
+                            ptr3 = (int*)((char*)ptr3 - 1);
                         }
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                                 return param0;
                             }
                             case 2: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                                 return param0;
                             }
                             default: {
@@ -2088,91 +2038,125 @@ int* sub_402730(int* param0, int* param1, int* param2) {
                             }
                         }
                     loc_40294B:
-                        ptr0 = (int*)((int)ptr7 & 0x3);
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        ptr1 = (int*)((int)ptr7 >>> 2);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                        ptr5 = (int*)((char*)ptr5 - 2);
-                        ptr6 = (int*)((char*)ptr6 - 2);
-                        if((unsigned int)ptr1 >= 8) {
-                            while(ptr1 != 0) {
-                                *ptr6 = *ptr5;
-                                --ptr5;
-                                --ptr6;
-                                ptr1 = (int*)((char*)ptr1 - 1);
+                        ptr1 = (int*)((int)ptr11 & 0x3);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        ptr3 = (int*)((int)ptr11 >>> 2);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                        ptr9 = (int*)((char*)ptr9 - 2);
+                        ptr10 = (int*)((char*)ptr10 - 2);
+                        if((unsigned int)ptr3 >= 8) {
+                            while(ptr3 != 0) {
+                                *ptr10 = *ptr9;
+                                --ptr9;
+                                --ptr10;
+                                ptr3 = (int*)((char*)ptr3 - 1);
                             }
-                            switch(ptr0) {
+                            switch(ptr1) {
                                 case 0: {
                                     return param0;
                                 }
                                 case 1: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                                     return param0;
                                 }
                                 case 2: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                                     return param0;
                                 }
                                 case 3: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                    *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                                     return param0;
                                 }
                                 default: {
                                     throw 0;
                                 }
                             }
-                            goto loc_402973;
+                        loc_402973:
+                            ptr1 = (int*)((int)ptr11 & 0x3);
+                            *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                            *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                            ptr3 = (int*)((int)ptr11 >>> 2);
+                            *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                            ptr9 = (int*)((char*)ptr9 - 3);
+                            ptr10 = (int*)((char*)ptr10 - 3);
+                            if((unsigned int)ptr3 >= 8) {
+                                while(ptr3 != 0) {
+                                    *ptr10 = *ptr9;
+                                    --ptr9;
+                                    --ptr10;
+                                    ptr3 = (int*)((char*)ptr3 - 1);
+                                }
+                                switch(ptr1) {
+                                    case 0: {
+                                        return param0;
+                                    }
+                                    case 1: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        return param0;
+                                    }
+                                    case 2: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        return param0;
+                                    }
+                                    case 3: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                                        return param0;
+                                    }
+                                    default: {
+                                        throw 0;
+                                    }
+                                }
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 7);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 6);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 5);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 4);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 3);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 2);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 1) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 1);
+                                ptr0 = (int*)((int)ptr3 * 4);
+                                ptr9 = (int*)((int)ptr0 + (int)ptr9);
+                                ptr10 = (int*)((int)ptr0 + (int)ptr10);
+                                switch(ptr1) {
+                                    case 0: {
+                                        return param0;
+                                    }
+                                    case 1: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        return param0;
+                                    }
+                                    case 2: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        return param0;
+                                    }
+                                    case 3: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                                        return param0;
+                                    }
+                                    default: {
+                                        throw 0;
+                                        return param0;
+                                    }
+                                }
+                            }
                         }
                     }
-                    goto loc_4028F2;
+                    ptr3 = (int*)(0 - (int)ptr3);
+                    jump gvar_4029A4[(int*)((char*)ptr3 + 7)];
                 }
                 case 2: {
                     goto loc_40294B;
                 }
                 case 3: {
-                loc_402973:
-                    ptr0 = (int*)((int)ptr7 & 0x3);
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                    ptr1 = (int*)((int)ptr7 >>> 2);
-                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                    ptr5 = (int*)((char*)ptr5 - 3);
-                    ptr6 = (int*)((char*)ptr6 - 3);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr6 = *ptr5;
-                            --ptr5;
-                            --ptr6;
-                            ptr1 = (int*)((char*)ptr1 - 1);
-                        }
-                        switch(ptr0) {
-                            case 0: {
-                                return param0;
-                            }
-                            case 1: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                return param0;
-                            }
-                            case 2: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                return param0;
-                            }
-                            case 3: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                                return param0;
-                            }
-                            default: {
-                                throw 0;
-                            }
-                        }
-                    }
-                    goto loc_4028F2;
+                    goto loc_402973;
                 }
                 default: {
                     throw 0;
@@ -2196,15 +2180,16 @@ LPVOID sub_402A65() {
     return (LPVOID)0x1;
 }
 
-unsigned int sub_402AA3(int param0) {
-    unsigned int result = gvar_405718;
-    unsigned int v0 = (unsigned int)(gvar_405714 * 20 + result);
-    while(result < v0) {
-        if((unsigned int)(param0 - *(int*)(result + 12)) < 0x100000) {
-            return result;
-        }
-        result += 20;
+void* sub_402AB7(int param0) {
+    int v0;
+    void* result;
+    if((unsigned int)(param0 - *(int*)((int)result + 12)) >= 0x100000) {
+        result = (void*)sub_402AB3(v0);
     }
+    return result;
+}
+
+int sub_402ACB() {
     return 0;
 }
 
@@ -2217,53 +2202,52 @@ unsigned int* sub_402ACE(unsigned int* param0, int* param1) {
     unsigned int* ptr2 = (unsigned int*)(param1 - 1);
     int* ptr3 = (int*)((int)(int*)((int)param1 - *(int*)(param0 + 3)) >>> 15);
     int* ptr4 = (int*)(*(param1 - 1) - 1);
-    int v3 = *(int*)(ptr2 - 1);
+    unsigned int v3 = *(ptr2 - 1);
     int* ptr5 = ptr4;
     unsigned int* ptr6 = (unsigned int*)((int*)((int)(int*)((int)ptr3 * 516) + v2) + 81);
     unsigned int* ptr7 = *(unsigned int*)((int)ptr2 + (int)ptr4);
     unsigned int* ptr8 = *(unsigned int*)((int)ptr2 + (int)ptr4);
     if(!((unsigned char)ptr7 & 0x1)) {
         ptr1 = (int*)0x3F;
-        param1 = (int*)((char*)((int)ptr7 >> 4) - 1);
-        if((int*)((char*)((int)ptr7 >> 4) - 1) > (int*)0x3F) {
-            param1 = (int*)0x3F;
-        }
-        if(*((int*)((int)ptr2 + (int)ptr4) + 1) == *((int*)((int)ptr2 + (int)ptr4) + 2)) {
-            int* ptr9 = param1;
-            if((unsigned int)ptr9 < 32) {
-                char* ptr10 = (char*)((int*)(v2 + (int)ptr9) + 1);
-                *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr9 & 0x1f)) & *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17);
-                *ptr10 = *ptr10 + 0xFF;
-                if(!*ptr10) {
-                    *param0 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr9 & 0x1f)) & *param0;
+        int* ptr9 = (int*)((char*)((int)ptr7 >> 4) - 1);
+        param1 = ptr9 <= (int*)0x3F ? ptr9: (int*)0x3F;
+        if(*((int*)((int)ptr2 + (int)ptr4) + 2) == *(unsigned int*)((int*)((int)ptr2 + (int)ptr4) + 1)) {
+            int* ptr10 = param1;
+            if((unsigned int)ptr10 < 32) {
+                char* ptr11 = (char*)((int*)(v2 + (int)ptr10) + 1);
+                int v4 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr10 & 0x1f));
+                *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) = *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) & v4;
+                *ptr11 = *ptr11 + 0xFF;
+                if(!*ptr11) {
+                    *param0 = *param0 & v4;
                 }
             }
             else {
-                char* ptr11 = (char*)((int*)(v2 + (int)param1) + 1);
-                *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr9 - 8) & 0x1f)) & *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49);
-                *ptr11 = *ptr11 + 0xFF;
-                if(!*ptr11) {
-                    *(int*)(param0 + 1) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr9 - 8) & 0x1f)) & *(int*)(param0 + 1);
+                char* ptr12 = (char*)((int*)(v2 + (int)param1) + 1);
+                int v5 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr10 - 8) & 0x1f));
+                *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) = *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) & v5;
+                *ptr12 = *ptr12 + 0xFF;
+                if(!*ptr12) {
+                    *(int*)(param0 + 1) = *(int*)(param0 + 1) & v5;
                 }
             }
         }
         *(int*)(*((int*)((int)ptr2 + (int)ptr4) + 2) + 4) = *((int*)((int)ptr2 + (int)ptr4) + 1);
-        int v4 = *((int*)((int)ptr2 + (int)ptr4) + 1);
-        int v5 = *((int*)((int)ptr2 + (int)ptr4) + 2);
+        int v6 = *((int*)((int)ptr2 + (int)ptr4) + 1);
+        int v7 = *((int*)((int)ptr2 + (int)ptr4) + 2);
         ptr4 = (int*)((int)ptr4 + (int)ptr8);
-        *(int*)(v4 + 8) = v5;
+        *(int*)(v6 + 8) = v7;
         ptr5 = ptr4;
     }
-    int* ptr12 = (int*)((char*)((int)ptr4 >> 4) - 1);
-    if((unsigned int)ptr12 > 63) {
+    int* ptr13 = (int*)((char*)((int)ptr4 >> 4) - 1);
+    if((unsigned int)ptr13 > 63) {
         ptr1 = (int*)0x3F;
-        ptr12 = (int*)0x3F;
+        ptr13 = (int*)0x3F;
     }
-    int* ptr13 = (int*)(v3 & 0x1);
+    int* ptr14 = (int*)(v3 & 0x1);
     if(!(int*)(v3 & 0x1)) {
-        unsigned int* ptr14 = (unsigned int*)((int)ptr2 - v3);
         ptr1 = (int*)0x3F;
-        ptr8 = ptr14;
+        ptr8 = (unsigned int*)((int)ptr2 - v3);
         ptr0 = (int*)((v3 >> 4) - 1);
         param1 = (int*)((v3 >> 4) - 1);
         if(ptr0 > (int*)0x3F) {
@@ -2272,59 +2256,61 @@ unsigned int* sub_402ACE(unsigned int* param0, int* param1) {
         }
         ptr4 = (int*)((int)ptr4 + v3);
         ptr5 = ptr4;
-        ptr12 = (int*)((char*)((int)ptr4 >> 4) - 1);
-        if(ptr12 > (int*)0x3F) {
-            ptr12 = (int*)0x3F;
+        ptr13 = (int*)((char*)((int)ptr4 >> 4) - 1);
+        if(ptr13 > (int*)0x3F) {
+            ptr13 = (int*)0x3F;
         }
-        if(ptr0 != ptr12) {
-            if(*(int*)(ptr8 + 1) == *(int*)(ptr8 + 2)) {
+        if(ptr0 != ptr13) {
+            if(*(int*)(ptr8 + 2) == *(ptr8 + 1)) {
                 int* ptr15 = param1;
                 if((unsigned int)ptr15 < 32) {
                     char* ptr16 = (char*)((int*)(v2 + (int)ptr15) + 1);
-                    *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr15 & 0x1f)) & *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17);
+                    int v8 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr15 & 0x1f));
+                    *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) = *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17) & v8;
                     *ptr16 = *ptr16 + 0xFF;
                     if(!*ptr16) {
-                        *param0 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr15 & 0x1f)) & *param0;
+                        *param0 = *param0 & v8;
                     }
                 }
                 else {
                     char* ptr17 = (char*)((int*)(v2 + (int)param1) + 1);
-                    *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr15 - 8) & 0x1f)) & *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49);
+                    int v9 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr15 - 8) & 0x1f));
+                    *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) = *((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49) & v9;
                     *ptr17 = *ptr17 + 0xFF;
                     if(!*ptr17) {
-                        *(int*)(param0 + 1) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr15 - 8) & 0x1f)) & *(int*)(param0 + 1);
+                        *(int*)(param0 + 1) = *(int*)(param0 + 1) & v9;
                     }
                 }
             }
             *(int*)(*(int*)(ptr8 + 2) + 4) = *(int*)(ptr8 + 1);
-            *(int*)(*(int*)(ptr8 + 1) + 8) = *(int*)(ptr8 + 2);
+            *(unsigned int*)(*(int*)(ptr8 + 1) + 8) = *(ptr8 + 2);
         }
         ptr2 = ptr8;
     }
-    if(ptr13 || ptr12 != param1) {
-        *(int*)(ptr2 + 1) = *((int*)((int)(int*)((int)ptr12 * 8) + (int)ptr6) + 1);
-        int* ptr18 = (int*)((int)(int*)((int)ptr12 * 8) + (int)ptr6);
-        *(ptr2 + 2) = (int*)((int)(int*)((int)ptr12 * 8) + (int)ptr6);
+    if(ptr14 || ptr13 != param1) {
+        *(int*)(ptr2 + 1) = *((int*)((int)(int*)((int)ptr13 * 8) + (int)ptr6) + 1);
+        int* ptr18 = (int*)((int)(int*)((int)ptr13 * 8) + (int)ptr6);
+        *(ptr2 + 2) = (int*)((int)(int*)((int)ptr13 * 8) + (int)ptr6);
         *(unsigned int*)(ptr18 + 1) = ptr2;
         *(unsigned int*)(*(int*)(ptr2 + 1) + 8) = ptr2;
         ptr0 = *(ptr2 + 1);
         if(*(int*)(ptr2 + 2) == ptr0) {
-            ptr0 = (unsigned int)*(char*)((int*)(v2 + (int)ptr12) + 1) | ((unsigned int)(int*)((int)(int*)((int)ptr0 >>> 8) & 0xffffff) << 8);
-            (int*)((param1 >>> 24) & 0xFF) = (unsigned char)ptr0;
-            *(char*)((int*)(v2 + (int)ptr12) + 1) = (unsigned char)ptr0 + 1;
-            if((unsigned int)ptr12 < 32) {
+            ptr0 = (unsigned int)*(char*)((int*)(v2 + (int)ptr13) + 1) | ((unsigned int)(int*)((int)(int*)((int)ptr0 >>> 8) & 0xffffff) << 8);
+            (int*)((param1 >>> 24) & 0xFF) = *(char*)((int*)(v2 + (int)ptr13) + 1);
+            *(char*)((int*)(v2 + (int)ptr13) + 1) = (unsigned char)ptr0 + 1;
+            if((unsigned int)ptr13 < 32) {
                 if(!(unsigned char)(int*)((int)param1 >>> 24)) {
-                    *param0 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr12 & 0x1f)) | *param0);
+                    *param0 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr13 & 0x1f)) | *param0);
                 }
                 unsigned int* ptr19 = (unsigned int*)((int*)((int)(int*)((int)ptr3 * 4) + v2) + 17);
-                *ptr19 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr12 & 0x1f)) | *ptr19);
+                *ptr19 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr13 & 0x1f)) | *ptr19);
             }
             else {
                 if(!(unsigned char)(int*)((int)param1 >>> 24)) {
-                    *(param0 + 1) = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr12 - 8) & 0x1f)) | *(int*)(param0 + 1));
+                    *(param0 + 1) = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr13 - 8) & 0x1f)) | *(int*)(param0 + 1));
                 }
                 unsigned int* ptr20 = (unsigned int*)((int*)((int)(int*)((int)ptr3 * 4) + v2) + 49);
-                *ptr20 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr12 - 8) & 0x1f)) | *ptr20);
+                *ptr20 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(ptr13 - 8) & 0x1f)) | *ptr20);
             }
             ptr4 = ptr5;
         }
@@ -2334,29 +2320,31 @@ unsigned int* sub_402ACE(unsigned int* param0, int* param1) {
     *(unsigned int*)((int*)((int)ptr2 + (int)ptr4) - 1) = ptr4;
     *result = *result - 1;
     if(!*result) {
-        unsigned int v6 = gvar_405710;
-        if(v6) {
-            VirtualFree((LPVOID)(gvar_405708 * 0x8000 + *(int*)(v6 + 12)), 0x8000, 0x4000);
-            unsigned int v7 = gvar_405710;
-            *(int*)(v7 + 8) = (0x80000000 >>> (gvar_405708 & 0x1f)) | *(int*)(v7 + 8);
+        unsigned int v10 = gvar_405710;
+        if(v10) {
+            VirtualFree((LPVOID)(gvar_405708 * 0x8000 + *(int*)(v10 + 12)), 0x8000, 0x4000);
+            unsigned int v11 = gvar_405710;
+            *(unsigned int*)(v11 + 8) = (int*)((int)(unsigned int*)(0x80000000 >>> (gvar_405708 & 0x1f)) | *(int*)(v11 + 8));
             *(int*)(gvar_405708 * 4 + *(int*)(gvar_405710 + 16) + 196) = 0;
-            int v8 = *(int*)(gvar_405710 + 16);
-            *(char*)(v8 + 67) = *(char*)(v8 + 67) + 0xFF;
-            unsigned int v9 = gvar_405710;
-            if(!*(char*)(*(int*)(v9 + 16) + 67)) {
-                *(int*)(v9 + 4) = *(int*)(v9 + 4) & 0xfffffffe;
-                v9 = gvar_405710;
+            int v12 = *(int*)(gvar_405710 + 16);
+            *(char*)(v12 + 67) = *(char*)(v12 + 67) + 0xFF;
+            unsigned int v13 = gvar_405710;
+            if(!*(char*)((char*)*(unsigned int*)(v13 + 16) + 67)) {
+                *(int*)(v13 + 4) = *(int*)(v13 + 4) & 0xfffffffe;
+                v13 = gvar_405710;
             }
-            if(*(int*)(v9 + 8) != -1) {
+            if(*(int*)(v13 + 8) != -1) {
                 result = param0;
                 gvar_405710 = result;
                 gvar_405708 = ptr3;
                 return result;
             }
-            VirtualFree(*(LPVOID*)(v9 + 12), 0, 0x8000);
+            ptr1 = (int*)0x8000;
+            int v14 = 0;
+            VirtualFree(*(LPVOID*)(v13 + 12), 0, 0x8000);
             HeapFree(gvar_405948, 0, *(LPVOID*)(gvar_405710 + 16));
             int* ptr21 = gvar_405710;
-            sub_403800(ptr21, ptr21 + 5, (int*)((int)(int*)(gvar_405714 * 5 * 4 - (int)ptr21) + gvar_405718) - 5);
+            sub_403800(ptr21, ptr21 + 5, (int*)((int)(int*)((unsigned int)(gvar_405714 * 5 * 4) - (int)ptr21) + gvar_405718) - 5);
             result = param0;
             --gvar_405714;
             if(gvar_405710 < (unsigned int)result) {
@@ -2369,6 +2357,269 @@ unsigned int* sub_402ACE(unsigned int* param0, int* param1) {
         }
         gvar_405710 = result;
         gvar_405708 = ptr3;
+    }
+    return result;
+}
+
+// Stale decompilation - Refresh this view to re-decompile this code
+int* sub_402DF9(int param0) {
+    int v0;
+    int* result;
+    char v1;
+    char v2;
+    char v3;
+    int* ptr0;
+    unsigned int v4;
+    int* ptr1;
+    int v5;
+    char v6;
+    int v7;
+    unsigned int v8 = gvar_405714;
+    int v9 = gvar_405718;
+    int v10 = v7;
+    int* ptr2 = (int*)(v8 * 20 + v9);
+    int v11 = param0;
+    int* ptr3 = ptr2;
+    unsigned int v12 = (unsigned int)((v11 + 23) & 0xfffffff0);
+    unsigned int v13 = (unsigned int)((v11 + 23) & 0xfffffff0);
+    unsigned int v14 = (unsigned int)((v12 >> 4) - 1);
+    char v15 = (int)v14 < 32;
+    if((((v14 - 32) ^ v14) & (v14 ^ 0x20)) < 0 != v15) {
+        ptr1 = (int*)(-1 >>> (v14 & 0x1f));
+        v4 = 0xffffffff;
+        ptr0 = ptr1;
+    }
+    else {
+        int v16 = v14 - 32;
+        ptr1 = NULL;
+        unsigned int v17 = (unsigned int)(-1 >>> (v16 & 0x1f));
+        ptr0 = NULL;
+        v4 = v17;
+    }
+    int v18 = gvar_40570C;
+    int v19 = gvar_40570C;
+    char v20 = (unsigned int)v19 < (unsigned int)ptr2;
+    param0 = v19;
+    if(v20) {
+        do {
+            int v21 = *(int*)(v19 + 4);
+            int v22 = *(int*)v19;
+            int v23 = v21 & v4;
+            ptr2 = (int*)((int)ptr1 & v22);
+            if((int*)(v23 | (int)ptr2)) {
+                break;
+            }
+            else {
+                v19 += 20;
+                v6 = (unsigned int)v19 < (unsigned int)ptr3;
+                param0 = v19;
+            }
+        }
+        while(v6);
+    }
+    if(v19 == ptr3) {
+        v19 = v9;
+        while(1) {
+            v3 = v18 == v19;
+            char v24 = (unsigned int)v18 > (unsigned int)v19;
+            param0 = v19;
+            if(v24) {
+                int v25 = *(int*)(v19 + 4);
+                int v26 = *(int*)v19;
+                int v27 = v25 & v4;
+                ptr2 = (int*)((int)ptr1 & v26);
+                if(!(int*)(v27 | (int)ptr2)) {
+                    v19 += 20;
+                    continue;
+                }
+                else {
+                    v3 = v18 == v19;
+                }
+            }
+            break;
+        }
+        if(!v3) {
+            goto loc_402EEE;
+        }
+        else {
+            while(1) {
+                v2 = v19 == ptr3;
+                if((unsigned int)v19 < (unsigned int)ptr3) {
+                    if(!*(int*)(v19 + 8)) {
+                        v19 += 20;
+                        param0 = v19;
+                        continue;
+                    }
+                    else {
+                        v2 = v19 == ptr3;
+                    }
+                }
+                break;
+            }
+            if(v2) {
+                v19 = v9;
+                while(1) {
+                    v1 = v18 == v19;
+                    param0 = v19;
+                    if((unsigned int)v18 > (unsigned int)v19) {
+                        if(!*(int*)(v19 + 8)) {
+                            v19 += 20;
+                            continue;
+                        }
+                        else {
+                            v1 = v18 == v19;
+                        }
+                    }
+                    break;
+                }
+                if(v1) {
+                    v19 = sub_403102();
+                    param0 = v19;
+                    if(!v19) {
+                        goto loc_402EE7;
+                    }
+                }
+            }
+            int v28 = sub_4031B3(v19);
+            **(int**)(v19 + 16) = v28;
+            if(*(int*)*(int*)(v19 + 16) != -1) {
+                goto loc_402EEE;
+            }
+            else {
+            loc_402EE7:
+                result = NULL;
+            }
+        }
+    }
+    else {
+    loc_402EEE:
+        gvar_40570C = v19;
+        unsigned int* ptr4 = *(unsigned int*)(v19 + 16);
+        int* ptr5 = *ptr4;
+        ptr3 = *ptr4;
+        if(ptr5 == -1 || !(int*)((int)(int*)(*((int*)((int)(int*)((int)ptr5 * 4) + (int)ptr4) + 17) & (int)ptr1) | (*((int*)((int)(int*)((int)ptr5 * 4) + (int)ptr4) + 49) & v4))) {
+            int v29 = *(int*)(ptr4 + 49) & v4;
+            int* ptr6 = (int*)(*(int*)(ptr4 + 17) & (int)ptr0);
+            ptr3 = NULL;
+            int* ptr7 = (int*)(ptr4 + 17);
+            ptr1 = ptr0;
+            if(!(int*)(v29 | (int)ptr6)) {
+                do {
+                    v5 = *(ptr7 + 33);
+                    ptr3 = (int*)((char*)ptr3 + 1);
+                    ++ptr7;
+                }
+                while(!(int*)((int)(int*)(*ptr7 & (int)ptr1) | (v5 & v4)));
+            }
+            ptr5 = ptr3;
+        }
+        void* ptr8 = NULL;
+        ptr0 = (int*)((int)(int*)((int)ptr5 * 516) + (int)ptr4) + 81;
+        int* ptr9 = (int*)(*((int*)((int)(int*)((int)ptr5 * 4) + (int)ptr4) + 17) & (int)ptr1);
+        if(!ptr9) {
+            ptr9 = (int*)(*((int*)((int)(int*)((int)ptr5 * 4) + (int)ptr4) + 49) & v4);
+            ptr8 = (void*)0x20;
+        }
+        while((int)ptr9 >= 0) {
+            ptr9 = (int*)((int)ptr9 * 2);
+            ptr8 = (void*)((int)ptr8 + 1);
+        }
+        unsigned int* ptr10 = *(unsigned int*)((int*)((int)(int*)((int)ptr8 * 8) + (int)ptr0) + 1);
+        unsigned int v30 = *ptr10 - v13;
+        v4 = *ptr10 - v13;
+        void* ptr11 = (void*)((v30 >> 4) - 1);
+        if((int)ptr11 > 63) {
+            ptr11 = (void*)0x3F;
+        }
+        if(ptr11 != ptr8) {
+            if(*(int*)(ptr10 + 2) == *(ptr10 + 1)) {
+                if((int)ptr8 < 32) {
+                    char* ptr12 = (char*)((int*)((int)ptr4 + (int)ptr8) + 1);
+                    v0 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr8 & 0x1f));
+                    *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 17) = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)ptr8 & 0x1f)) & *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 17);
+                    *ptr12 = *ptr12 + 0xFF;
+                    if(*ptr12) {
+                        goto loc_403009;
+                    }
+                    else {
+                        v19 = param0;
+                        *(int*)v19 = *(int*)v19 & v0;
+                    }
+                }
+                else {
+                    char* ptr13 = (char*)((int*)((int)ptr4 + (int)ptr8) + 1);
+                    int* ptr14 = (int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 49;
+                    int v31 = (int*)~(int)(int*)(0x80000000 >>> (int)(int*)((int)(int*)((int)ptr8 - 32) & 0x1f));
+                    *ptr14 = *ptr14 & v31;
+                    *ptr13 = *ptr13 + 0xFF;
+                    char v32 = *ptr13 ? 0: 1;
+                    v0 = v31;
+                    if(v32) {
+                        v19 = param0;
+                        *(int*)(v19 + 4) = *(int*)(v19 + 4) & v0;
+                    }
+                    else {
+                    loc_403009:
+                        v19 = param0;
+                    }
+                }
+            }
+            char v33 = v4 ? 0: 1;
+            *(int*)(*(int*)(ptr10 + 2) + 4) = *(int*)(ptr10 + 1);
+            *(int*)(*(int*)(ptr10 + 1) + 8) = *(int*)(ptr10 + 2);
+            if(!v33) {
+                int* ptr15 = (int*)((int)(int*)((int)ptr11 * 8) + (int)ptr0);
+                *(int*)(ptr10 + 1) = *((int*)((int)(int*)((int)ptr11 * 8) + (int)ptr0) + 1);
+                *(ptr10 + 2) = ptr15;
+                *(unsigned int*)(ptr15 + 1) = ptr10;
+                *(unsigned int*)(*(int*)(ptr10 + 1) + 8) = ptr10;
+                unsigned int v34 = *(ptr10 + 1);
+                if(*(int*)(ptr10 + 2) == v34) {
+                    v34 = (unsigned int)*(char*)((int*)((int)ptr4 + (int)ptr11) + 1) | ((unsigned int)((v34 >>> 8) & 0xffffff) << 8);
+                    (param0 >>> 24) & 0xFF = *(char*)((int*)((int)ptr4 + (int)ptr11) + 1);
+                    if((int)ptr11 < 32) {
+                        char v35 = (unsigned char)(param0 >>> 24) ? 0: 1;
+                        *(char*)((int*)((int)ptr4 + (int)ptr11) + 1) = (unsigned char)v34 + 1;
+                        if(v35) {
+                            *(int**)v19 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr11 & 0x1f)) | *(int*)v19);
+                        }
+                        *(unsigned int*)((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 17) = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)ptr11 & 0x1f)) | *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 17));
+                    }
+                    else {
+                        char v36 = (unsigned char)(param0 >>> 24) ? 0: 1;
+                        *(char*)((int*)((int)ptr4 + (int)ptr11) + 1) = (unsigned char)v34 + 1;
+                        if(v36) {
+                            *(unsigned int*)(v19 + 4) = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(int*)((int)ptr11 - 32) & 0x1f)) | *(int*)(v19 + 4));
+                        }
+                        unsigned int* ptr16 = (unsigned int*)((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) + 49);
+                        *ptr16 = (int*)((int)(int*)(0x80000000 >>> (int)(int*)((int)(int*)((int)ptr11 - 32) & 0x1f)) | *ptr16);
+                    }
+                }
+                v30 = v4;
+                goto loc_4030B2;
+            }
+            else {
+                v30 = v4;
+            }
+        }
+        else {
+        loc_4030B2:
+            if(v30) {
+                *ptr10 = v30;
+                *(unsigned int*)((int*)(v30 + (int)ptr10) - 1) = v30;
+            }
+        }
+        unsigned int v37 = v13;
+        int* ptr17 = (int*)(v30 + (int)ptr10);
+        *ptr17 = v37 + 1;
+        *((int*)((int)ptr17 + v37) - 1) = v37 + 1;
+        int v38 = *ptr0;
+        *ptr0 = v38 + 1;
+        if(!v38 && gvar_405710 == v19 && gvar_405708 == ptr3) {
+            gvar_405710 = 0;
+        }
+        *ptr4 = ptr3;
+        result = ptr17 + 1;
     }
     return result;
 }
@@ -2417,28 +2668,30 @@ int* sub_403102() {
 int sub_4031B3(int param0) {
     int result;
     int v0;
-    int v1 = param0;
+    int v1;
     int v2 = v0;
-    int v3 = *(int*)(v1 + 16);
-    int v4 = *(int*)(v1 + 8);
+    int v3 = param0;
+    int v4 = v1;
+    int v5 = *(int*)(v3 + 16);
+    int v6 = *(int*)(v3 + 8);
     int i;
-    for(i = 0; v4 >= 0; ++i) {
-        v4 *= 2;
+    for(i = 0; v6 >= 0; ++i) {
+        v6 *= 2;
     }
     int counter = 63;
-    int v5 = i * 516 + v3 + 0x144;
-    int v6 = i * 516 + v3 + 0x144;
+    int v7 = i * 516 + v5 + 0x144;
+    v2 = i * 516 + v5 + 0x144;
     do {
-        *(int*)(v5 + 8) = v5;
-        *(int*)(v5 + 4) = v5;
-        v5 += 8;
+        *(int*)(v7 + 8) = v7;
+        *(int*)(v7 + 4) = v7;
+        v7 += 8;
         --counter;
     }
     while(counter);
-    int v7 = 4;
-    LPVOID lpAddress = (LPVOID)(i * 0x8000 + *(int*)(v1 + 12));
-    LPVOID v8 = VirtualAlloc(lpAddress, 0x8000, 0x1000, 4);
-    if(!v8) {
+    int v8 = 4;
+    LPVOID lpAddress = (LPVOID)(i * 0x8000 + *(int*)(v3 + 12));
+    LPVOID v9 = VirtualAlloc(lpAddress, 0x8000, 0x1000, 4);
+    if(!v9) {
         result = -1;
     }
     else {
@@ -2455,19 +2708,21 @@ int sub_4031B3(int param0) {
             }
             while((int*)(ptr0 - 4) <= (int*)((int)lpAddress + 0x7000));
         }
-        v7 = 1;
-        *(unsigned int*)(v6 + 508) = (int*)((int)lpAddress + 12);
-        *(int*)((int)lpAddress + 20) = v6 + 504;
-        *(unsigned int*)(v6 + 0x200) = (int*)((int)lpAddress + 0x700c);
-        *(int*)((int)lpAddress + 0x7010) = v6 + 504;
-        *(int*)(i * 4 + v3 + 68) = 0;
-        *(int*)(i * 4 + v3 + 196) = 1;
-        int v9 = (unsigned int)*(char*)(v3 + 67) | ((unsigned int)(((v6 + 504) >>> 8) & 0xffffff) << 8);
-        *(char*)(v3 + 67) = (unsigned char)v9 + 1;
-        if(!(unsigned char)v9) {
-            *(int*)(param0 + 4) = *(int*)(param0 + 4) | 0x1;
+        int v10 = v2 + 504;
+        v8 = 1;
+        *(unsigned int*)(v10 + 4) = (int*)((int)lpAddress + 12);
+        *(int*)((int)lpAddress + 20) = v10;
+        *(unsigned int*)(v10 + 8) = (int*)((int)lpAddress + 0x700c);
+        *(int*)((int)lpAddress + 0x7010) = v10;
+        *(int*)(i * 4 + v5 + 68) = 0;
+        *(int*)(i * 4 + v5 + 196) = 1;
+        char v11 = *(char*)(v5 + 67) ? 0: 1;
+        int v12 = param0;
+        *(char*)(v5 + 67) = *(char*)(v5 + 67) + 1;
+        if(v11) {
+            *(int*)(v12 + 4) = *(int*)(v12 + 4) | 0x1;
         }
-        *(int*)(param0 + 8) = ~(0x80000000 >>> (i & 0x1f)) & *(int*)(param0 + 8);
+        *(int*)(v12 + 8) = ~(0x80000000 >>> (i & 0x1f)) & *(int*)(v12 + 8);
         result = i;
     }
     return result;
@@ -2475,194 +2730,102 @@ int sub_4031B3(int param0) {
 
 int sub_4032AE(int param0, int param1, int param2) {
     int* ptr0;
-    int v0;
-    int v1 = 0;
-    if(gvar_4056C8 == 0) {
-        HMODULE hModule = LoadLibraryA("user32.dll");
-        if(hModule != 0) {
-            FARPROC v2 = GetProcAddress(hModule, "MessageBoxA");
-            gvar_4056C8 = v2;
-            if(v2) {
-                FARPROC v3 = GetProcAddress(hModule, "GetActiveWindow");
-                HMODULE hModule1 = hModule;
-                gvar_4056CC = v3;
-                FARPROC v4 = GetProcAddress(hModule1, "GetLastActivePopup");
-                gvar_4056D0 = v4;
+    char v0;
+    char v1;
+    char v2;
+    char v3;
+    char v4;
+    int v5;
+    int v6;
+    int v7;
+    int v8 = v7;
+    int v9 = 0;
+    char v10 = gvar_4056C8 == 0;
+    char v11 = gvar_4056C8 >= 0x80000000;
+    char v12 = __parity__((unsigned char)gvar_4056C8);
+    char v13 = gvar_4056C8 < 0;
+    char v14 = 0;
+    char v15 = 0;
+    if(v10) {
+        HMODULE v16 = LoadLibraryA("user32.dll");
+        HMODULE hModule = v16;
+        char v17 = hModule == 0;
+        char v18 = (int)hModule < 0;
+        char v19 = __parity__((unsigned char)hModule);
+        char v20 = (unsigned int)hModule < 0;
+        char v21 = 0;
+        v15 = 0;
+        if(!v17) {
+            int v22 = 18642;
+            v16 = (HMODULE)GetProcAddress(hModule, "MessageBoxA");
+            char v23 = v16 ? 0: 1;
+            char v24 = (int)v16 < 0;
+            char v25 = __parity__((unsigned char)v16);
+            char v26 = 0;
+            char v27 = 0;
+            gvar_4056C8 = v16;
+            if(!v23) {
+                FARPROC v28 = GetProcAddress(hModule, "GetActiveWindow");
+                gvar_4056CC = v28;
+                FARPROC v29 = GetProcAddress(hModule, "GetLastActivePopup");
+                gvar_4056D0 = v29;
                 goto loc_4032FD;
             }
         }
+        v5 = 0;
+        v4 = 1;
+        v3 = 0;
+        v2 = 1;
+        v1 = 0;
+        v0 = 0;
     }
     else {
     loc_4032FD:
-        unsigned int v5 = gvar_4056CC;
-        if(v5) {
-            v1 = v5();
-            if(v1) {
-                unsigned int v6 = gvar_4056D0;
-                if(v6) {
-                    v1 = v6(v1);
-                }
-            }
-        }
-        ptr0 = &v0;
-        gvar_4056C8(v1, param0, param1, param2);
-    }
-    jump *(ptr0 + 3);
-}
-
-char* sub_403340(char* param0, char* param1, int param2) {
-    int v0;
-    char* ptr0;
-    int v1;
-    int counter = param2;
-    if(counter) {
-        int v2 = v1;
-        int v3 = counter;
-        char* ptr1 = param1;
-        ptr0 = param0;
-        if(!(int*)((int)ptr1 & 0x3)) {
-            counter >>>= 2;
-            if(counter) {
-                goto loc_4033D6;
-            }
-            else {
-            loc_403385:
-                do {
-                    v0 = (unsigned int)*ptr1 | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-                    ++ptr1;
-                    *ptr0 = (unsigned char)v0;
-                    ++ptr0;
-                    if(!(unsigned char)v0) {
-                    loc_4033BE:
-                        --v3;
-                        if(!v3) {
-                            return param0;
-                        }
-                        *ptr0 = (unsigned char)v0;
-                        ++ptr0;
-                        goto loc_4033BE;
-                    }
-                    else {
-                        --v3;
-                    }
-                }
-                while(v3);
-                return param0;
-            }
-        }
-        else {
-            do {
-                v0 = (unsigned int)*ptr1 | ((unsigned int)((v0 >>> 8) & 0xffffff) << 8);
-                ++ptr1;
-                *ptr0 = (unsigned char)v0;
-                ++ptr0;
-                --counter;
-                if(!counter) {
-                    return param0;
-                }
-                else if(!(unsigned char)v0) {
-                    if((int*)((int)ptr0 & 0x3)) {
-                        do {
-                            *ptr0 = (unsigned char)v0;
-                            ++ptr0;
-                            --counter;
-                            if(!counter) {
-                                return param0;
-                            }
-                        }
-                        while((int*)((int)ptr0 & 0x3));
-                    }
-                    goto loc_4033B4;
-                }
-            }
-            while((int*)((int)ptr1 & 0x3));
-            v3 = counter;
-            counter >>>= 2;
-            if(!counter) {
-                goto loc_403380;
-            }
-            else {
-            loc_4033D6:
-                do {
-                    int v4 = *(int*)ptr1;
-                    v0 = (v4 + 0x7efefeff) ^ ~v4;
-                    int v5 = *(int*)ptr1;
-                    ptr1 += 4;
-                    if((v0 & 0x81010100)) {
-                        if(!(unsigned char)v5) {
-                            *(int*)ptr0 = 0;
-                        }
-                        else if(!(unsigned char)(v5 >>> 8)) {
-                            *(int*)ptr0 = (unsigned int)(unsigned char)v5;
-                        }
-                        else if(!(v5 & 0xff0000)) {
-                            *(int*)ptr0 = (unsigned int)(unsigned short)v5;
-                        }
-                        else if(v5 & 0xff000000) {
-                            goto loc_4033C9;
-                        }
-                        else {
-                            *(int*)ptr0 = v5;
-                        }
-                        ptr0 += 4;
-                        v0 = 0;
-                        --counter;
-                        if(!counter) {
-                            goto loc_403431;
-                        }
-                        else {
-                            goto loc_403427;
-                        }
-                    }
-                    else {
-                    loc_4033C9:
-                        *(int*)ptr0 = v5;
-                        ptr0 += 4;
-                        --counter;
-                    }
-                }
-                while(!counter);
-            loc_403380:
-                v3 &= 3;
-            }
-            if(!v3) {
-                return param0;
-            }
-            goto loc_403385;
-        loc_4033B4:
-            v3 = counter;
-            counter >>>= 2;
-            if(!counter) {
-                *ptr0 = (unsigned char)v0;
-                ++ptr0;
-                goto loc_4033BE;
-            }
-            else {
-            loc_403427:
+        unsigned int v30 = gvar_4056CC;
+        v4 = v30 ? 0: 1;
+        v3 = v30 >= 0x80000000;
+        v2 = __parity__((unsigned char)v30);
+        v1 = 0;
+        v0 = 0;
+        if(!v4) {
+            int v31 = v30();
+            v9 = v31;
+            v4 = v9 ? 0: 1;
+            v3 = v9 < 0;
+            v2 = __parity__((unsigned char)v9);
+            v1 = 0;
+            v0 = 0;
+            if(!v4) {
+                unsigned int v32 = gvar_4056D0;
+                v4 = v32 ? 0: 1;
+                v3 = v32 >= 0x80000000;
+                v2 = __parity__((unsigned char)v32);
+                v1 = 0;
                 v0 = 0;
-            }
-            do {
-                *(int*)ptr0 = 0;
-                ptr0 += 4;
-                --counter;
-            }
-            while(counter);
-        loc_403431:
-            v3 &= 3;
-            if(!v3) {
-                return param0;
+                if(!v4) {
+                    int v33 = v32(v9);
+                    v9 = v33;
+                }
             }
         }
+        int v34 = param2;
+        int v35 = param1;
+        int v36 = param0;
+        ptr0 = &v6;
+        v5 = gvar_4056C8(v9, v36, v35, v34);
     }
-    else {
-        return param0;
-    }
-    *ptr0 = (unsigned char)v0;
+    int v37 = *ptr0;
     ++ptr0;
-    goto loc_4033BE;
+    int v38 = *ptr0;
+    ++ptr0;
+    int v39 = *ptr0;
+    ++ptr0;
+    int v40 = *ptr0;
+    ++ptr0;
+    jump v40;
 }
 
-int sub_40343E(LCID Locale, DWORD dwMapFlags, char* param2, int* param3, LPSTR lpDestStr, int cchDest, UINT CodePage, unsigned int param7) {
+int sub_40343E(LCID Locale, DWORD dwMapFlags, unsigned char* param2, int* param3, LPSTR lpDestStr, int cchDest, UINT CodePage, unsigned int param7) {
     LPSTR lpMultiByteStr;
     int cbMultiByte;
     int result;
@@ -2709,12 +2872,13 @@ int sub_40343E(LCID Locale, DWORD dwMapFlags, char* param2, int* param3, LPSTR l
                 if(CodePage == 0) {
                     CodePage = gvar_4056EC;
                 }
-                int cchWideChar = MultiByteToWideChar(CodePage, (DWORD)(((param7 > 0 ? -1: 0) & 0x8) + 1), (LPCCH)param2, (int)param3, NULL, 0);
+                int cchWideChar = MultiByteToWideChar(CodePage, param7 <= 0 ? 1: 9, (LPCCH)param2, (int)param3, NULL, 0);
                 int cchSrc = cchWideChar;
                 if(cchWideChar != 0) {
                     sub_403B40(v4);
                     v10 = &v3;
                     LPWSTR lpWideCharStr = &v3;
+                    v5 = -1;  // } (starts at 403530h)
                     if(lpWideCharStr != 0) {
                         v0 = MultiByteToWideChar(CodePage, 1, (LPCCH)param2, (int)param3, lpWideCharStr, cchWideChar);
                         if(v0) {
@@ -2724,6 +2888,7 @@ int sub_40343E(LCID Locale, DWORD dwMapFlags, char* param2, int* param3, LPSTR l
                                     sub_403B40(v4);
                                     v10 = &v3;
                                     LPWSTR v12 = &v3;
+                                    v5 = -1;  // } (starts at 4035E0h)
                                 }
                                 else if(cchDest == 0) {
                                     result = cchDest1;
@@ -2774,72 +2939,8 @@ int sub_40343E(LCID Locale, DWORD dwMapFlags, char* param2, int* param3, LPSTR l
     return result;
 }
 
-int sub_40354E() {
-    return 1;
-}
-
-int sub_403552(int param0, int param1) {
-    LPSTR lpMultiByteStr;
-    int cbMultiByte;
-    int v0;
-    int* ptr0;
-    int v1;
-    *(ptr0 - 9) = 0;
-    *(ptr0 - 1) = -1;
-    int cchWideChar = *(ptr0 - 7);
-    if(*(ptr0 - 9) != 0) {
-        int v2 = MultiByteToWideChar(*(UINT*)(ptr0 + 8), 1, *(LPCCH*)(ptr0 + 4), *(ptr0 + 5), *(LPWSTR*)(ptr0 - 9), cchWideChar);
-        if(v2) {
-            int cchDest = LCMapStringW(*(LCID*)(ptr0 + 2), *(DWORD*)(ptr0 + 3), *(LPCWSTR*)(ptr0 - 9), cchWideChar, NULL, 0);
-            *(ptr0 - 10) = cchDest;
-            if(cchDest != 0) {
-                if(!(*(char*)((char*)ptr0 + 13) & 0x4)) {
-                    *(ptr0 - 1) = 1;  // __try{ (see __except:403606h)
-                    sub_403B40(v1);
-                    *(LPWSTR*)(ptr0 - 6) = &v0;
-                    *(LPWSTR*)(ptr0 - 8) = &v0;
-                    *(ptr0 - 1) = -1;  // } (starts at 4035E0h)
-                    if(&v0 != 0) {
-                        v2 = LCMapStringW(*(LCID*)(ptr0 + 2), *(DWORD*)(ptr0 + 3), *(LPCWSTR*)(ptr0 - 9), *(ptr0 - 7), &v0, cchDest);
-                        if(v2) {
-                            char v3 = *(ptr0 + 7) == 0;
-                            LPBOOL v4 = NULL;
-                            LPCCH v5 = NULL;
-                            if(v3) {
-                                cbMultiByte = 0;
-                                lpMultiByteStr = NULL;
-                            }
-                            else {
-                                cbMultiByte = *(ptr0 + 7);
-                                lpMultiByteStr = *(LPSTR*)(ptr0 + 6);
-                            }
-                            cchDest = WideCharToMultiByte(*(UINT*)(ptr0 + 8), 544, &v0, cchDest, lpMultiByteStr, cbMultiByte, NULL, NULL);
-                        }
-                    }
-                }
-                else if(*(ptr0 + 7) != 0 && *(ptr0 + 7) >= cchDest) {
-                    v2 = /*BAD_CALL!*/ LCMapStringW(*(LCID*)(ptr0 + 2), *(DWORD*)(ptr0 + 3), *(LPCWSTR*)(ptr0 - 9), cchWideChar, *(LPWSTR*)(ptr0 + 6), *(ptr0 + 7));
-                }
-            }
-        }
-    }
-    *(int*)__FS_BASE = *(ptr0 - 4);
-    jump param0;
-}
-
-int sub_403602() {
-    return 1;
-}
-
-int sub_403606(int param0, int param1) {
-    int* ptr0;
-    *(ptr0 - 1) = -1;
-    *(int*)__FS_BASE = *(ptr0 - 4);
-    jump param0;
-}
-
-int* sub_403662(char* param0, int* param1) {
-    char* ptr0 = param0;
+int* sub_403662(unsigned char* param0, int* param1) {
+    unsigned char* ptr0 = param0;
     int* ptr1 = (int*)((char*)param1 - 1);
     if(param1) {
         while(*ptr0) {
@@ -2851,74 +2952,80 @@ int* sub_403662(char* param0, int* param1) {
             }
         }
     }
-    if(!*ptr0) {
-        return (int*)((int)ptr0 - (int)param0);
-    }
-    return param1;
+    return !*ptr0 ? (int*)((int)ptr0 - (int)param0): param1;
 }
 
-BOOL sub_40368D(DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType, UINT CodePage, LCID param5, unsigned int param6) {
+BOOL sub_40368D(DWORD dwInfoType1, LPCSTR lpSrcStr, int cbMultiByte, LPWORD lpCharType, UINT CodePage, LCID param5, unsigned int param6) {
     BOOL result;
     int v0;
     char v1;
-    int v2;
+    char v2;
     int v3;
     int v4;
-    int v5 = -1;
-    int v6 = &gvar_404448;
-    int v7 = &sub_401E84;
-    int v8 = *(int*)__FS_BASE;
-    *(int**)__FS_BASE = &v8;
-    int v9 = v3;
+    int v5;
+    int v6 = -1;
+    int v7 = &gvar_404448;
+    int v8 = &sub_401E84;
+    int v9 = *(int*)__FS_BASE;
+    *(int**)__FS_BASE = &v9;
+    int v10 = v4;
     char* ptr0 = &v0;
-    BOOL cchSrc1 = gvar_4056F8;
-    if(cchSrc1 == 0) {
-        BOOL v10 = GetStringTypeW(1, (LPCWCH)0x40442C, 1, &v1);
-        if(v10) {
-            cchSrc1 = (BOOL)1;
-            gvar_4056F8 = cchSrc1;
+    BOOL v11 = gvar_4056F8;
+    if(v11 == 0) {
+        *(int*)&v1 = 1;
+        DWORD dwInfoType = *(DWORD*)&v1;
+        BOOL v12 = GetStringTypeW(dwInfoType, (LPCWCH)0x40442C, *(int*)&v1, &v2);
+        if(v12) {
+            v11 = (BOOL)dwInfoType;
+            gvar_4056F8 = v11;
             goto loc_4036FF;
         }
         else {
-            cchSrc1 = GetStringTypeA(0, 1, (LPCSTR)0x404428, 1, &v1);
+            *(DWORD*)&v1 = dwInfoType;
+            v11 = GetStringTypeA(0, dwInfoType, (LPCSTR)0x404428, *(int*)&v1, &v2);
         }
-        if(!cchSrc1) {
+        if(!v11) {
             result = 0;
-            *(int*)__FS_BASE = v8;
+            *(int*)__FS_BASE = v9;
             return result;
         }
-        cchSrc1 = 2;
-        gvar_4056F8 = cchSrc1;
+        v11 = 2;
+        gvar_4056F8 = v11;
         goto loc_4036FF;
     }
     else {
     loc_4036FF:
-        if(cchSrc1 == 2) {
+        if(v11 == 2) {
             LCID Locale = param5;
             if(Locale == 0) {
                 Locale = gvar_4056DC;
             }
-            result = GetStringTypeA(Locale, dwInfoType, lpSrcStr, cchSrc, lpCharType);
+            *(int*)&v1 = cbMultiByte;
+            result = GetStringTypeA(Locale, dwInfoType1, lpSrcStr, *(int*)&v1, lpCharType);
         }
         else {
-            if(cchSrc1 == 1) {
+            if(v11 == 1) {
                 if(CodePage == 0) {
                     CodePage = gvar_4056EC;
                 }
-                cchSrc1 = MultiByteToWideChar(CodePage, (DWORD)(((param6 > 0 ? -1: 0) & 0x8) + 1), lpSrcStr, cchSrc, NULL, 0);
-                int cchWideChar = cchSrc1;
-                if(cchSrc1 != 0) {
-                    v5 = 0;  // __try{ (see __except:40378Ah)
-                    sub_403B40(v4);
+                *(int*)&v1 = 0;
+                v11 = MultiByteToWideChar(CodePage, param6 <= 0 ? 1: 9, lpSrcStr, cbMultiByte, *(LPWSTR*)&v1, 0);
+                int cchWideChar = v11;
+                if(v11 != 0) {
+                    v6 = 0;  // __try{ (see __except:40378Ah)
+                    sub_403B40(v5);
                     ptr0 = &v0;
                     char* ptr1 = &v0;
-                    sub_403B70(&v0, 0, (int*)(cchSrc1 * 2));
-                    v5 = -1;
-                    if(&v2 != 56) {
-                        cchSrc1 = MultiByteToWideChar(CodePage, 1, lpSrcStr, cchSrc, (LPWSTR)&v0, cchWideChar);
-                        if(cchSrc1 != 0) {
-                            result = GetStringTypeW(dwInfoType, (LPCWCH)&v0, cchSrc1, lpCharType);
-                            *(int*)__FS_BASE = v8;
+                    *(int*)&v1 = 0;
+                    sub_403B70(&v0, 0, (int*)(v11 * 2));
+                    v6 = -1;  // } (starts at 40375Fh)
+                    if(&v3 != 56) {
+                        *(char**)&v1 = &v0;
+                        v11 = MultiByteToWideChar(CodePage, 1, lpSrcStr, cbMultiByte, *(LPWSTR*)&v1, cchWideChar);
+                        if(v11 != 0) {
+                            *(BOOL*)&v1 = v11;
+                            result = GetStringTypeW(dwInfoType1, (LPCWCH)&v0, *(int*)&v1, lpCharType);
+                            *(int*)__FS_BASE = v9;
                             return result;
                         }
                     }
@@ -2927,29 +3034,27 @@ BOOL sub_40368D(DWORD dwInfoType, LPCSTR lpSrcStr, int cchSrc, LPWORD lpCharType
             result = 0;
         }
     }
-    *(int*)__FS_BASE = v8;
+    *(int*)__FS_BASE = v9;
     return result;
 }
 
-int sub_403786() {
+int sub_4037D6() {
+    unsigned int v0 = gvar_405700;
+    char v1 = v0 ? 0: 1;
+    char v2 = v0 >= 0x80000000;
+    char v3 = __parity__((unsigned char)v0);
+    char v4 = 0;
+    char v5 = 0;
+    jump v1 ? &sub_4037EE: &sub_4037DF;
+}
+
+int sub_4037DF(int param0) {
+    int v0;
+    v0(param0);
     return 1;
 }
 
-int sub_40378A(int param0, int param1) {
-    int* ptr0;
-    *(ptr0 - 1) = -1;  // } (starts at 40375Fh)
-    *(int*)__FS_BASE = *(ptr0 - 4);
-    jump param0;
-}
-
-int sub_4037D6(int param0) {
-    unsigned int v0 = gvar_405700;
-    if(v0) {
-        v0 = (unsigned int)v0(param0);
-        if(v0) {
-            return 1;
-        }
-    }
+int sub_4037EE() {
     return 0;
 }
 
@@ -2957,33 +3062,36 @@ int* sub_403800(int* param0, int* param1, int* param2) {
     int* ptr0;
     int* ptr1;
     int* ptr2 = param1;
-    int* ptr3 = param0;
-    if(ptr2 >= ptr3 || (int*)((int)ptr2 + (int)param2) <= ptr3) {
-        if(!(int*)((int)ptr3 & 0x3)) {
-            ptr1 = (int*)((int)param2 >>> 2);
-            ptr0 = (int*)((int)param2 & 0x3);
-            if((unsigned int)ptr1 < 8) {
+    int* ptr3 = param2;
+    int* ptr4 = param0;
+    int* ptr5 = ptr3;
+    int* ptr6 = ptr3;
+    if(ptr2 >= ptr4 || (int*)((int)ptr5 + (int)ptr2) <= ptr4) {
+        if(!(int*)((int)ptr4 & 0x3)) {
+            ptr3 = (int*)((int)ptr3 >>> 2);
+            ptr1 = (int*)((int)ptr6 & 0x3);
+            if((unsigned int)ptr3 < 8) {
             loc_40385C:
-                switch(ptr1) {
+                switch(ptr3) {
                     case 0: {
                     loc_40393F:
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)ptr3 = *(char*)ptr2;
+                                *(char*)ptr4 = *(char*)ptr2;
                                 return param0;
                             }
                             case 2: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                 return param0;
                             }
                             default: {
@@ -2994,49 +3102,50 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                     }
                     case 1: {
                     loc_403930:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 1) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 1);
-                        ptr2 = (int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2);
-                        ptr3 = (int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 1) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 1);
+                        ptr0 = (int*)((int)ptr3 * 4);
+                        ptr2 = (int*)((int)ptr0 + (int)ptr2);
+                        ptr4 = (int*)((int)ptr0 + (int)ptr4);
                         break;
                     }
                     case 2: {
-                    loc_403928:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_403930;
                     }
                     case 3: {
-                    loc_403920:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_403930;
                     }
                     case 4: {
-                    loc_403918:
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_403930;
                     }
                     case 5: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 2) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 2);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
                         goto loc_403930;
                     }
                     case 6: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 3) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 3);
-                        goto loc_403928;
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                        goto loc_403930;
                     }
                     case 7: {
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 7) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 7);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                        *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 4) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 4);
-                        goto loc_403920;
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 7);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                        *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                        goto loc_403930;
                     }
                     default: {
                         throw 0;
@@ -3045,29 +3154,29 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                 goto loc_40393F;
             }
             else {
-                while(ptr1 != 0) {
-                    *ptr3 = *ptr2;
+                while(ptr3 != 0) {
+                    *ptr4 = *ptr2;
                     ++ptr2;
-                    ++ptr3;
-                    ptr1 = (int*)((char*)ptr1 - 1);
+                    ++ptr4;
+                    ptr3 = (int*)((char*)ptr3 - 1);
                 }
-                switch(ptr0) {
+                switch(ptr1) {
                     case 0: {
                         return param0;
                     }
                     case 1: {
-                        *(char*)ptr3 = *(char*)ptr2;
+                        *(char*)ptr4 = *(char*)ptr2;
                         return param0;
                     }
                     case 2: {
-                        *(char*)ptr3 = *(char*)ptr2;
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                         return param0;
                     }
                     case 3: {
-                        *(char*)ptr3 = *(char*)ptr2;
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                        *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                        *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                         return param0;
                     }
                     default: {
@@ -3076,41 +3185,45 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                 }
             }
         }
-        if((unsigned int)param2 >= 4) {
-            int* ptr4 = (int*)((int)(param2 - 1) + (int)(int*)((int)ptr3 & 0x3));
-            switch((int*)((int)ptr3 & 0x3)) {
+        ptr0 = ptr4;
+        int* ptr7 = ptr3;
+        --ptr3;
+        if((unsigned int)ptr7 >= 4) {
+            ptr0 = (int*)((int)ptr0 & 0x3);
+            int* ptr8 = (int*)((int)ptr0 + (int)ptr3);
+            switch(ptr0) {
                 case 1: {
-                    ptr0 = (int*)((int)ptr4 & 0x3);
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                    ptr1 = (int*)((int)ptr4 >>> 2);
-                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                    ptr1 = (int*)((int)ptr8 & 0x3);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                    ptr3 = (int*)((int)ptr8 >>> 2);
+                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                     ptr2 = (int*)((char*)ptr2 + 3);
-                    ptr3 = (int*)((char*)ptr3 + 3);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr3 = *ptr2;
+                    ptr4 = (int*)((char*)ptr4 + 3);
+                    if((unsigned int)ptr3 >= 8) {
+                        while(ptr3 != 0) {
+                            *ptr4 = *ptr2;
                             ++ptr2;
-                            ++ptr3;
-                            ptr1 = (int*)((char*)ptr1 - 1);
+                            ++ptr4;
+                            ptr3 = (int*)((char*)ptr3 - 1);
                         }
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)ptr3 = *(char*)ptr2;
+                                *(char*)ptr4 = *(char*)ptr2;
                                 return param0;
                             }
                             case 2: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)ptr3 = *(char*)ptr2;
-                                *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                *(char*)ptr4 = *(char*)ptr2;
+                                *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                 return param0;
                             }
                             default: {
@@ -3118,36 +3231,36 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                             }
                         }
                     loc_40389C:
-                        ptr0 = (int*)((int)ptr4 & 0x3);
-                        *(char*)ptr3 = *(char*)ptr2;
-                        ptr1 = (int*)((int)ptr4 >>> 2);
-                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                        ptr1 = (int*)((int)ptr8 & 0x3);
+                        *(char*)ptr4 = *(char*)ptr2;
+                        ptr3 = (int*)((int)ptr8 >>> 2);
+                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                         ptr2 = (int*)((char*)ptr2 + 2);
-                        ptr3 = (int*)((char*)ptr3 + 2);
-                        if((unsigned int)ptr1 >= 8) {
-                            while(ptr1 != 0) {
-                                *ptr3 = *ptr2;
+                        ptr4 = (int*)((char*)ptr4 + 2);
+                        if((unsigned int)ptr3 >= 8) {
+                            while(ptr3 != 0) {
+                                *ptr4 = *ptr2;
                                 ++ptr2;
-                                ++ptr3;
-                                ptr1 = (int*)((char*)ptr1 - 1);
+                                ++ptr4;
+                                ptr3 = (int*)((char*)ptr3 - 1);
                             }
-                            switch(ptr0) {
+                            switch(ptr1) {
                                 case 0: {
                                     return param0;
                                 }
                                 case 1: {
-                                    *(char*)ptr3 = *(char*)ptr2;
+                                    *(char*)ptr4 = *(char*)ptr2;
                                     return param0;
                                 }
                                 case 2: {
-                                    *(char*)ptr3 = *(char*)ptr2;
-                                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                    *(char*)ptr4 = *(char*)ptr2;
+                                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                     return param0;
                                 }
                                 case 3: {
-                                    *(char*)ptr3 = *(char*)ptr2;
-                                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                    *(char*)ptr4 = *(char*)ptr2;
+                                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                     return param0;
                                 }
                                 default: {
@@ -3155,45 +3268,48 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                                 }
                             }
                         loc_4038C0:
-                            ptr0 = (int*)((int)ptr4 & 0x3);
-                            *(char*)ptr3 = *(char*)ptr2;
+                            ptr1 = (int*)((int)ptr8 & 0x3);
+                            *(char*)ptr4 = *(char*)ptr2;
                             ptr2 = (int*)((char*)ptr2 + 1);
-                            ptr1 = (int*)((int)ptr4 >>> 2);
-                            ptr3 = (int*)((char*)ptr3 + 1);
-                            if((unsigned int)ptr1 >= 8) {
-                                while(ptr1 != 0) {
-                                    *ptr3 = *ptr2;
+                            ptr3 = (int*)((int)ptr8 >>> 2);
+                            ptr4 = (int*)((char*)ptr4 + 1);
+                            if((unsigned int)ptr3 >= 8) {
+                                while(ptr3 != 0) {
+                                    *ptr4 = *ptr2;
                                     ++ptr2;
-                                    ++ptr3;
-                                    ptr1 = (int*)((char*)ptr1 - 1);
+                                    ++ptr4;
+                                    ptr3 = (int*)((char*)ptr3 - 1);
                                 }
-                                switch(ptr0) {
+                                switch(ptr1) {
                                     case 0: {
                                         return param0;
                                     }
                                     case 1: {
-                                        *(char*)ptr3 = *(char*)ptr2;
+                                        *(char*)ptr4 = *(char*)ptr2;
                                         return param0;
                                     }
                                     case 2: {
-                                        *(char*)ptr3 = *(char*)ptr2;
-                                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                                        *(char*)ptr4 = *(char*)ptr2;
+                                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                                         return param0;
                                     }
                                     case 3: {
-                                        *(char*)ptr3 = *(char*)ptr2;
-                                        *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                                        *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                                        *(char*)ptr4 = *(char*)ptr2;
+                                        *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                                        *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                                         return param0;
                                     }
                                     default: {
                                         throw 0;
                                     }
                                 }
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 7) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 7);
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 6) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 6);
-                                *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr3) - 5) = *((int*)((int)(int*)((int)ptr1 * 4) + (int)ptr2) - 5);
-                                goto loc_403918;
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 7);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 6);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 5);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 4);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 3);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr4) - 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr2) - 2);
+                                goto loc_403930;
                             }
                         }
                     }
@@ -3213,20 +3329,20 @@ int* sub_403800(int* param0, int* param1, int* param2) {
         }
         else {
         loc_403854:
-            switch(param2 - 1) {
+            switch(ptr3) {
                 case -4: {
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
-                    *(char*)((char*)ptr3 + 2) = *(char*)((char*)ptr2 + 2);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
+                    *(char*)((char*)ptr4 + 2) = *(char*)((char*)ptr2 + 2);
                     return param0;
                 }
                 case -3: {
-                    *(char*)ptr3 = *(char*)ptr2;
-                    *(char*)((char*)ptr3 + 1) = *(char*)((char*)ptr2 + 1);
+                    *(char*)ptr4 = *(char*)ptr2;
+                    *(char*)((char*)ptr4 + 1) = *(char*)((char*)ptr2 + 1);
                     return param0;
                 }
                 case -2: {
-                    *(char*)ptr3 = *(char*)ptr2;
+                    *(char*)ptr4 = *(char*)ptr2;
                     return param0;
                 }
                 case -1: {
@@ -3240,35 +3356,35 @@ int* sub_403800(int* param0, int* param1, int* param2) {
         }
     }
     else {
-        int* ptr5 = (int*)((int)ptr2 + (int)param2) - 1;
-        int* ptr6 = (int*)((int)ptr3 + (int)param2) - 1;
-        if(!(int*)((int)ptr6 & 0x3)) {
-            ptr1 = (int*)((int)param2 >>> 2);
-            ptr0 = (int*)((int)param2 & 0x3);
-            if((unsigned int)ptr1 >= 8) {
-                while(ptr1 != 0) {
-                    *ptr6 = *ptr5;
-                    --ptr5;
-                    --ptr6;
-                    ptr1 = (int*)((char*)ptr1 - 1);
+        int* ptr9 = (int*)((int)ptr3 + (int)ptr2) - 1;
+        int* ptr10 = (int*)((int)ptr3 + (int)ptr4) - 1;
+        if(!(int*)((int)ptr10 & 0x3)) {
+            ptr3 = (int*)((int)ptr3 >>> 2);
+            ptr1 = (int*)((int)ptr6 & 0x3);
+            if((unsigned int)ptr3 >= 8) {
+                while(ptr3 != 0) {
+                    *ptr10 = *ptr9;
+                    --ptr9;
+                    --ptr10;
+                    ptr3 = (int*)((char*)ptr3 - 1);
                 }
-                switch(ptr0) {
+                switch(ptr1) {
                     case 0: {
                         return param0;
                     }
                     case 1: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                         return param0;
                     }
                     case 2: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                         return param0;
                     }
                     case 3: {
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                        *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                         return param0;
                     }
                     default: {
@@ -3276,95 +3392,65 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                     }
                 }
             }
-        loc_4039C2:
-            switch((int*)(0 - (int)ptr1)) {
-                case 0: {
-                    switch(ptr0) {
-                        case 0: {
-                            return param0;
-                        }
-                        case 1: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            return param0;
-                        }
-                        case 2: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                            return param0;
-                        }
-                        case 3: {
-                            *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                            *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                            *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                            return param0;
-                        }
-                        default: {
-                            throw 0;
-                            return param0;
-                        }
-                    }
-                }
-                default: {
-                    throw 0;
-                }
-            }
-            goto loc_4039DB;
+            ptr3 = (int*)(0 - (int)ptr3);
+            jump gvar_403A74[(int*)((char*)ptr3 + 7)];
         }
         else {
+            ptr0 = ptr10;
         loc_4039E4:
-            switch(param2) {
+            switch(ptr3) {
                 case 0: {
                     return param0;
                 }
                 case 1: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                     return param0;
                 }
                 case 2: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                     return param0;
                 }
                 case 3: {
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                    *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                     return param0;
                 }
             }
-        loc_4039DB:
-            int* ptr7 = (int*)((int)param2 - (int)(int*)((int)ptr6 & 0x3));
-            switch((int*)((int)ptr6 & 0x3)) {
+            ptr0 = (int*)((int)ptr0 & 0x3);
+            int* ptr11 = (int*)((int)ptr3 - (int)ptr0);
+            switch(ptr0) {
                 case 1: {
-                    ptr0 = (int*)((int)ptr7 & 0x3);
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    ptr5 = (int*)((char*)ptr5 - 1);
-                    ptr1 = (int*)((int)ptr7 >>> 2);
-                    ptr6 = (int*)((char*)ptr6 - 1);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr6 = *ptr5;
-                            --ptr5;
-                            --ptr6;
-                            ptr1 = (int*)((char*)ptr1 - 1);
+                    ptr1 = (int*)((int)ptr11 & 0x3);
+                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                    ptr9 = (int*)((char*)ptr9 - 1);
+                    ptr3 = (int*)((int)ptr11 >>> 2);
+                    ptr10 = (int*)((char*)ptr10 - 1);
+                    if((unsigned int)ptr3 >= 8) {
+                        while(ptr3 != 0) {
+                            *ptr10 = *ptr9;
+                            --ptr9;
+                            --ptr10;
+                            ptr3 = (int*)((char*)ptr3 - 1);
                         }
-                        switch(ptr0) {
+                        switch(ptr1) {
                             case 0: {
                                 return param0;
                             }
                             case 1: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                                 return param0;
                             }
                             case 2: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                                 return param0;
                             }
                             case 3: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                                *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                                 return param0;
                             }
                             default: {
@@ -3372,91 +3458,125 @@ int* sub_403800(int* param0, int* param1, int* param2) {
                             }
                         }
                     loc_403A1B:
-                        ptr0 = (int*)((int)ptr7 & 0x3);
-                        *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                        ptr1 = (int*)((int)ptr7 >>> 2);
-                        *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                        ptr5 = (int*)((char*)ptr5 - 2);
-                        ptr6 = (int*)((char*)ptr6 - 2);
-                        if((unsigned int)ptr1 >= 8) {
-                            while(ptr1 != 0) {
-                                *ptr6 = *ptr5;
-                                --ptr5;
-                                --ptr6;
-                                ptr1 = (int*)((char*)ptr1 - 1);
+                        ptr1 = (int*)((int)ptr11 & 0x3);
+                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                        ptr3 = (int*)((int)ptr11 >>> 2);
+                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                        ptr9 = (int*)((char*)ptr9 - 2);
+                        ptr10 = (int*)((char*)ptr10 - 2);
+                        if((unsigned int)ptr3 >= 8) {
+                            while(ptr3 != 0) {
+                                *ptr10 = *ptr9;
+                                --ptr9;
+                                --ptr10;
+                                ptr3 = (int*)((char*)ptr3 - 1);
                             }
-                            switch(ptr0) {
+                            switch(ptr1) {
                                 case 0: {
                                     return param0;
                                 }
                                 case 1: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
                                     return param0;
                                 }
                                 case 2: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
                                     return param0;
                                 }
                                 case 3: {
-                                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
+                                    *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                    *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                    *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
                                     return param0;
                                 }
                                 default: {
                                     throw 0;
                                 }
                             }
-                            goto loc_403A43;
+                        loc_403A43:
+                            ptr1 = (int*)((int)ptr11 & 0x3);
+                            *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                            *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                            ptr3 = (int*)((int)ptr11 >>> 2);
+                            *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                            ptr9 = (int*)((char*)ptr9 - 3);
+                            ptr10 = (int*)((char*)ptr10 - 3);
+                            if((unsigned int)ptr3 >= 8) {
+                                while(ptr3 != 0) {
+                                    *ptr10 = *ptr9;
+                                    --ptr9;
+                                    --ptr10;
+                                    ptr3 = (int*)((char*)ptr3 - 1);
+                                }
+                                switch(ptr1) {
+                                    case 0: {
+                                        return param0;
+                                    }
+                                    case 1: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        return param0;
+                                    }
+                                    case 2: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        return param0;
+                                    }
+                                    case 3: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                                        return param0;
+                                    }
+                                    default: {
+                                        throw 0;
+                                    }
+                                }
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 7) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 7);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 6) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 6);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 5) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 5);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 4) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 4);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 3) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 3);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 2) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 2);
+                                *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr10) + 1) = *((int*)((int)(int*)((int)ptr3 * 4) + (int)ptr9) + 1);
+                                ptr0 = (int*)((int)ptr3 * 4);
+                                ptr9 = (int*)((int)ptr0 + (int)ptr9);
+                                ptr10 = (int*)((int)ptr0 + (int)ptr10);
+                                switch(ptr1) {
+                                    case 0: {
+                                        return param0;
+                                    }
+                                    case 1: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        return param0;
+                                    }
+                                    case 2: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        return param0;
+                                    }
+                                    case 3: {
+                                        *(char*)((char*)ptr10 + 3) = *(char*)((char*)ptr9 + 3);
+                                        *(char*)((char*)ptr10 + 2) = *(char*)((char*)ptr9 + 2);
+                                        *(char*)((char*)ptr10 + 1) = *(char*)((char*)ptr9 + 1);
+                                        return param0;
+                                    }
+                                    default: {
+                                        throw 0;
+                                        return param0;
+                                    }
+                                }
+                            }
                         }
                     }
-                    goto loc_4039C2;
+                    ptr3 = (int*)(0 - (int)ptr3);
+                    jump gvar_403A74[(int*)((char*)ptr3 + 7)];
                 }
                 case 2: {
                     goto loc_403A1B;
                 }
                 case 3: {
-                loc_403A43:
-                    ptr0 = (int*)((int)ptr7 & 0x3);
-                    *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                    *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                    ptr1 = (int*)((int)ptr7 >>> 2);
-                    *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                    ptr5 = (int*)((char*)ptr5 - 3);
-                    ptr6 = (int*)((char*)ptr6 - 3);
-                    if((unsigned int)ptr1 >= 8) {
-                        while(ptr1 != 0) {
-                            *ptr6 = *ptr5;
-                            --ptr5;
-                            --ptr6;
-                            ptr1 = (int*)((char*)ptr1 - 1);
-                        }
-                        switch(ptr0) {
-                            case 0: {
-                                return param0;
-                            }
-                            case 1: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                return param0;
-                            }
-                            case 2: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                return param0;
-                            }
-                            case 3: {
-                                *(char*)((char*)ptr6 + 3) = *(char*)((char*)ptr5 + 3);
-                                *(char*)((char*)ptr6 + 2) = *(char*)((char*)ptr5 + 2);
-                                *(char*)((char*)ptr6 + 1) = *(char*)((char*)ptr5 + 1);
-                                return param0;
-                            }
-                            default: {
-                                throw 0;
-                            }
-                        }
-                    }
-                    goto loc_4039C2;
+                    goto loc_403A43;
                 }
                 default: {
                     throw 0;

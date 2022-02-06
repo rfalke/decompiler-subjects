@@ -1,382 +1,270 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_decompile-it.com/cat/ia32_elf_from_website/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (164 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (1s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 117 methods
 Output folder: jeb_output
-  0/164: Method: sub_8048ACC
-  1/164: 1/164: sub_8048ACC (DONE:95ms)
-  1/164: Method: xsum
-  2/164: 2/164: xsum (DONE:115ms)
-  2/164: Method: xsum2
-  3/164: 3/164: xsum2 (DONE:64ms)
-  3/164: Method: ptr_align
-  4/164: 4/164: ptr_align (DONE:80ms)
-  4/164: Method: __i686.get_pc_thunk.bx
-  5/164: 5/164: __i686.get_pc_thunk.bx (DONE:14ms)
-  5/164: Method: next_line_num
-  6/164: 6/164: next_line_num (DONE:203ms)
-  6/164: Method: fseterr
-  7/164: 7/164: fseterr (DONE:28ms)
-  7/164: Method: rpl_isnanl
-  8/164: 8/164: rpl_isnanl (DONE:115ms)
-  8/164: Method: __do_global_dtors_aux
-  9/164: 9/164: __do_global_dtors_aux (DONE:60ms)
-  9/164: Method: frame_dummy
- 10/164: 10/164: frame_dummy (DONE:44ms)
- 10/164: Method: set_char_quoting
- 11/164: 11/164: set_char_quoting (DONE:99ms)
- 11/164: Method: xmax
- 12/164: 12/164: xmax (DONE:52ms)
- 12/164: Method: printf_fetchargs
- 13/164: 13/164: printf_fetchargs (DONE:709ms)
- 13/164: Method: __do_global_ctors_aux
- 14/164: 14/164: __do_global_ctors_aux (DONE:98ms)
- 14/164: Method: sub_8048AE2
- 15/164: 15/164: sub_8048AE2 (DONE:11ms)
- 15/164: Method: sub_8048AF2
- 16/164: 16/164: sub_8048AF2 (DONE:10ms)
- 16/164: Method: sub_8048AEC
- 17/164: 17/164: sub_8048AEC (DONE:10ms)
- 17/164: Method: sub_8048B02
- 18/164: 18/164: sub_8048B02 (DONE:10ms)
- 18/164: Method: sub_8048AFC
- 19/164: 19/164: sub_8048AFC (DONE:9ms)
- 19/164: Method: sub_8048B12
- 20/164: 20/164: sub_8048B12 (DONE:8ms)
- 20/164: Method: sub_8048B22
- 21/164: 21/164: sub_8048B22 (DONE:15ms)
- 21/164: Method: sub_8048B32
- 22/164: 22/164: sub_8048B32 (DONE:13ms)
- 22/164: Method: sub_8048B42
- 23/164: 23/164: sub_8048B42 (DONE:12ms)
- 23/164: Method: sub_8048B3C
- 24/164: 24/164: sub_8048B3C (DONE:11ms)
- 24/164: Method: sub_8048B52
- 25/164: 25/164: sub_8048B52 (DONE:11ms)
- 25/164: Method: sub_8048B62
- 26/164: 26/164: sub_8048B62 (DONE:9ms)
- 26/164: Method: sub_8048B72
- 27/164: 27/164: sub_8048B72 (DONE:13ms)
- 27/164: Method: sub_8048B6C
- 28/164: 28/164: sub_8048B6C (DONE:12ms)
- 28/164: Method: sub_8048B82
- 29/164: 29/164: sub_8048B82 (DONE:12ms)
- 29/164: Method: sub_8048B92
- 30/164: 30/164: sub_8048B92 (DONE:10ms)
- 30/164: Method: sub_8048BA2
- 31/164: 31/164: sub_8048BA2 (DONE:17ms)
- 31/164: Method: sub_8048B9C
- 32/164: 32/164: sub_8048B9C (DONE:18ms)
- 32/164: Method: quoting_options_from_style
- 33/164: 33/164: quoting_options_from_style (DONE:80ms)
- 33/164: Method: sub_8048BB2
- 34/164: 34/164: sub_8048BB2 (DONE:10ms)
- 34/164: Method: sub_8048BC2
- 35/164: 35/164: sub_8048BC2 (DONE:14ms)
- 35/164: Method: sub_8048BBC
- 36/164: 36/164: sub_8048BBC (DONE:11ms)
- 36/164: Method: sub_8048BD2
- 37/164: 37/164: sub_8048BD2 (DONE:16ms)
- 37/164: Method: sub_8048BE2
- 38/164: 38/164: sub_8048BE2 (DONE:8ms)
- 38/164: Method: sub_8048BDC
- 39/164: 39/164: sub_8048BDC (DONE:9ms)
- 39/164: Method: sub_8048BF2
- 40/164: 40/164: sub_8048BF2 (DONE:11ms)
- 40/164: Method: sub_8048C02
- 41/164: 41/164: sub_8048C02 (DONE:9ms)
- 41/164: Method: sub_8048C12
- 42/164: 42/164: sub_8048C12 (DONE:10ms)
- 42/164: Method: sub_8048C22
- 43/164: 43/164: sub_8048C22 (DONE:10ms)
- 43/164: Method: sub_8048C1C
- 44/164: 44/164: sub_8048C1C (DONE:12ms)
- 44/164: Method: gettext_quote
- 45/164: 45/164: gettext_quote (DONE:53ms)
- 45/164: Method: sub_8048C32
- 46/164: 46/164: sub_8048C32 (DONE:9ms)
- 46/164: Method: sub_8048C2C
- 47/164: 47/164: sub_8048C2C (DONE:10ms)
- 47/164: Method: sub_8048C42
- 48/164: 48/164: sub_8048C42 (DONE:11ms)
- 48/164: Method: sub_8048C52
- 49/164: 49/164: sub_8048C52 (DONE:9ms)
- 49/164: Method: sub_8048C62
- 50/164: 50/164: sub_8048C62 (DONE:10ms)
- 50/164: Method: sub_8048C72
- 51/164: 51/164: sub_8048C72 (DONE:9ms)
- 51/164: Method: sub_8048C82
- 52/164: 52/164: sub_8048C82 (DONE:10ms)
- 52/164: Method: sub_8048C92
- 53/164: 53/164: sub_8048C92 (DONE:9ms)
- 53/164: Method: sub_8048C8C
- 54/164: 54/164: sub_8048C8C (DONE:10ms)
- 54/164: Method: sub_8048CA2
- 55/164: 55/164: sub_8048CA2 (DONE:14ms)
- 55/164: Method: sub_8048C9C
- 56/164: 56/164: sub_8048C9C (DONE:20ms)
- 56/164: Method: sub_8048CB2
- 57/164: 57/164: sub_8048CB2 (DONE:15ms)
- 57/164: Method: sub_8048CC2
- 58/164: 58/164: sub_8048CC2 (DONE:9ms)
- 58/164: Method: sub_8048CBC
- 59/164: 59/164: sub_8048CBC (DONE:8ms)
- 59/164: Method: sub_8048CD2
- 60/164: 60/164: sub_8048CD2 (DONE:11ms)
- 60/164: Method: sub_8048CE2
- 61/164: 61/164: sub_8048CE2 (DONE:10ms)
- 61/164: Method: sub_8048CDC
- 62/164: 62/164: sub_8048CDC (DONE:12ms)
- 62/164: Method: sub_8048CF2
- 63/164: 63/164: sub_8048CF2 (DONE:9ms)
- 63/164: Method: sub_8048D02
- 64/164: 64/164: sub_8048D02 (DONE:8ms)
- 64/164: Method: sub_8048CFC
- 65/164: 65/164: sub_8048CFC (DONE:17ms)
- 65/164: Method: sub_8048D12
- 66/164: 66/164: sub_8048D12 (DONE:10ms)
- 66/164: Method: sub_8048D0C
- 67/164: 67/164: sub_8048D0C (DONE:13ms)
- 67/164: Method: sub_8048D22
- 68/164: 68/164: sub_8048D22 (DONE:11ms)
- 68/164: Method: sub_8048D1C
- 69/164: 69/164: sub_8048D1C (DONE:8ms)
- 69/164: Method: sub_8048D32
- 70/164: 70/164: sub_8048D32 (DONE:8ms)
- 70/164: Method: sub_8048D42
- 71/164: 71/164: sub_8048D42 (DONE:9ms)
- 71/164: Method: sub_8048D3C
- 72/164: 72/164: sub_8048D3C (DONE:11ms)
- 72/164: Method: xalloc_die
- 73/164: 73/164: xalloc_die (DONE:31ms)
- 73/164: Method: xmalloc
- 74/164: 74/164: xmalloc (DONE:50ms)
- 74/164: Method: xrealloc
- 75/164: 75/164: xrealloc (DONE:42ms)
- 75/164: Method: xcharalloc
- 76/164: 76/164: xcharalloc (DONE:17ms)
- 76/164: Method: xmemdup
- 77/164: 77/164: xmemdup (DONE:31ms)
- 77/164: Method: sub_8048D52
- 78/164: 78/164: sub_8048D52 (DONE:14ms)
- 78/164: Method: sub_8048D62
- 79/164: 79/164: sub_8048D62 (DONE:8ms)
- 79/164: Method: sub_8048D72
- 80/164: 80/164: sub_8048D72 (DONE:11ms)
- 80/164: Method: sub_8048D82
- 81/164: 81/164: sub_8048D82 (DONE:9ms)
- 81/164: Method: sub_8048D7C
- 82/164: 82/164: sub_8048D7C (DONE:10ms)
- 82/164: Method: sub_8048D92
- 83/164: 83/164: sub_8048D92 (DONE:10ms)
- 83/164: Method: sub_8048DA2
- 84/164: 84/164: sub_8048DA2 (DONE:10ms)
- 84/164: Method: sub_8048D9C
- 85/164: 85/164: sub_8048D9C (DONE:11ms)
- 85/164: Method: sub_8048DB2
- 86/164: 86/164: sub_8048DB2 (DONE:11ms)
- 86/164: Method: sub_8048DAC
- 87/164: 87/164: sub_8048DAC (DONE:11ms)
- 87/164: Method: xsum4
- 88/164: 88/164: xsum4 (DONE:53ms)
- 88/164: Method: is_infinitel
- 89/164: 89/164: is_infinitel (DONE:117ms)
- 89/164: Method: sub_8048ADC
- 90/164: 90/164: sub_8048ADC (DONE:10ms)
- 90/164: Method: sub_8048B0C
- 91/164: 91/164: sub_8048B0C (DONE:7ms)
- 91/164: Method: sub_8048B1C
- 92/164: 92/164: sub_8048B1C (DONE:12ms)
- 92/164: Method: sub_8048B2C
- 93/164: 93/164: sub_8048B2C (DONE:10ms)
- 93/164: Method: sub_8048B4C
- 94/164: 94/164: sub_8048B4C (DONE:7ms)
- 94/164: Method: sub_8048B5C
- 95/164: 95/164: sub_8048B5C (DONE:7ms)
- 95/164: Method: sub_8048B7C
- 96/164: 96/164: sub_8048B7C (DONE:13ms)
- 96/164: Method: sub_8048B8C
- 97/164: 97/164: sub_8048B8C (DONE:12ms)
- 97/164: Method: sub_8048BAC
- 98/164: 98/164: sub_8048BAC (DONE:8ms)
- 98/164: Method: sub_8048BCC
- 99/164: 99/164: sub_8048BCC (DONE:8ms)
- 99/164: Method: sub_8048BEC
-100/164: 100/164: sub_8048BEC (DONE:11ms)
-100/164: Method: sub_8048BFC
-101/164: 101/164: sub_8048BFC (DONE:16ms)
-101/164: Method: sub_8048C0C
-102/164: 102/164: sub_8048C0C (DONE:14ms)
-102/164: Method: safe_read
-103/164: 103/164: safe_read (DONE:101ms)
-103/164: Method: sub_8048C3C
-104/164: 104/164: sub_8048C3C (DONE:16ms)
-104/164: Method: sub_8048C4C
-105/164: 105/164: sub_8048C4C (DONE:15ms)
-105/164: Method: sub_8048C5C
-106/164: 106/164: sub_8048C5C (DONE:10ms)
-106/164: Method: sub_8048C6C
-107/164: 107/164: sub_8048C6C (DONE:12ms)
-107/164: Method: sub_8048C7C
-108/164: 108/164: sub_8048C7C (DONE:8ms)
-108/164: Method: sub_8048CAC
-109/164: 109/164: sub_8048CAC (DONE:9ms)
-109/164: Method: emit_bug_reporting_address
-110/164: 110/164: emit_bug_reporting_address (DONE:35ms)
-110/164: Method: usage
-111/164: 111/164: usage (DONE:174ms)
-111/164: Method: sub_8048CCC
-112/164: 112/164: sub_8048CCC (DONE:12ms)
-112/164: Method: sub_8048CEC
-113/164: 113/164: sub_8048CEC (DONE:11ms)
-113/164: Method: printf_parse
-114/164: 114/164: printf_parse (DONE:35249ms)
-114/164: Method: sub_8048D2C
-115/164: 115/164: sub_8048D2C (DONE:8ms)
-115/164: Method: close_stream
-116/164: 116/164: close_stream (DONE:93ms)
-116/164: Method: x2nrealloc
-117/164: 117/164: x2nrealloc (DONE:176ms)
-117/164: Method: sub_8048D4C
-118/164: 118/164: sub_8048D4C (DONE:10ms)
-118/164: Method: sub_8048D5C
-119/164: 119/164: sub_8048D5C (DONE:7ms)
-119/164: Method: sub_8048D6C
-120/164: 120/164: sub_8048D6C (DONE:9ms)
-120/164: Method: fstat64
-121/164: 121/164: fstat64 (DONE:27ms)
-121/164: Method: sub_8048D8C
-122/164: 122/164: sub_8048D8C (DONE:9ms)
-122/164: Method: atexit
-123/164: 123/164: atexit (DONE:46ms)
-123/164: Method: safe_write
-124/164: 124/164: safe_write (DONE:74ms)
-124/164: Method: full_write
-125/164: 125/164: full_write (DONE:74ms)
-125/164: Method: write_pending
-126/164: 126/164: write_pending (DONE:72ms)
-126/164: Method: vasnprintf
-127/164: 127/164: vasnprintf (DONE:61533ms)
-127/164: Method: rpl_vfprintf
-128/164: 128/164: rpl_vfprintf (DONE:1454ms)
-128/164: Method: simple_cat
-129/164: 129/164: simple_cat (DONE:140ms)
-129/164: Method: version_etc_va
-130/164: 130/164: version_etc_va (DONE:494ms)
-130/164: Method: version_etc
-131/164: 131/164: version_etc (DONE:26ms)
-131/164: Method: close_stdout_set_file_name
-132/164: 132/164: close_stdout_set_file_name (DONE:9ms)
-132/164: Method: get_quoting_style
-133/164: 133/164: get_quoting_style (DONE:33ms)
-133/164: Method: set_quoting_style
-134/164: 134/164: set_quoting_style (DONE:22ms)
-134/164: Method: __libc_csu_fini
-135/164: 135/164: __libc_csu_fini (DONE:8ms)
-135/164: Method: quotearg_free
-136/164: 136/164: quotearg_free (DONE:77ms)
-136/164: Method: xzalloc
-137/164: 137/164: xzalloc (DONE:41ms)
-137/164: Method: xnmalloc
-138/164: 138/164: xnmalloc (DONE:35ms)
-138/164: Method: xnrealloc
-139/164: 139/164: xnrealloc (DONE:35ms)
-139/164: Method: clone_quoting_options
-140/164: 140/164: clone_quoting_options (DONE:38ms)
-140/164: Method: xstrdup
-141/164: 141/164: xstrdup (DONE:20ms)
-141/164: Method: xcalloc
-142/164: 142/164: xcalloc (DONE:23ms)
-142/164: Method: _start
-143/164: 143/164: _start (DONE:14ms)
-143/164: Method: x2realloc
-144/164: 144/164: x2realloc (DONE:15ms)
-144/164: Method: quotearg_buffer
-145/164: 145/164: quotearg_buffer (DONE:208ms)
-145/164: Method: quotearg_n_options
-146/164: 146/164: quotearg_n_options (DONE:285ms)
-146/164: Method: quotearg_n_style
-147/164: 147/164: quotearg_n_style (DONE:22ms)
-147/164: Method: quotearg_n
-148/164: 148/164: quotearg_n (DONE:15ms)
-148/164: Method: quotearg_char
-149/164: 149/164: quotearg_char (DONE:29ms)
-149/164: Method: quote_n
-150/164: 150/164: quote_n (DONE:14ms)
-150/164: Method: quotearg_colon
-151/164: 151/164: quotearg_colon (DONE:13ms)
-151/164: Method: quote
-152/164: 152/164: quote (DONE:17ms)
-152/164: Method: cat
-153/164: 153/164: cat (DONE:5801ms)
-153/164: Method: quotearg_alloc
-154/164: 154/164: quotearg_alloc (DONE:73ms)
-154/164: Method: quotearg_n_style_mem
-155/164: 155/164: quotearg_n_style_mem (DONE:32ms)
-155/164: Method: quotearg_style
-156/164: 156/164: quotearg_style (DONE:17ms)
-156/164: Method: quotearg
-157/164: 157/164: quotearg (DONE:17ms)
-157/164: Method: close_stdout
-158/164: 158/164: close_stdout (DONE:114ms)
-158/164: Method: sub_8049841
-159/164: 159/164: sub_8049841 (DONE:2165ms)
-159/164: Method: main
-160/164: 160/164: main (DONE:6079ms)
-160/164: Method: quotearg_buffer_restyled
-161/164: 161/164: quotearg_buffer_restyled (DONE:8745ms)
-161/164: Method: initializer_0
-162/164: 162/164: initializer_0 (DONE:61ms)
-162/164: Method: __libc_csu_init
-163/164: 163/164: __libc_csu_init (DONE:91ms)
-163/164: Method: finalizer_0
-164/164: 164/164: finalizer_0 (DONE:25ms)
-1/1 DECOMPILATION ERROR: METHOD vasnprintf: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 61532 ms; max= 60000 ms
+  0/117: Method: xsum
+  1/117: 1/117: xsum (DONE:123ms)
+  1/117: Method: xsum2
+  2/117: 2/117: xsum2 (DONE:54ms)
+  2/117: Method: ptr_align
+  3/117: 3/117: ptr_align (DONE:39ms)
+  3/117: Method: __i686.get_pc_thunk.bx
+  4/117: 4/117: __i686.get_pc_thunk.bx (DONE:3ms)
+  4/117: Method: next_line_num
+  5/117: 5/117: next_line_num (DONE:203ms)
+  5/117: Method: fseterr
+  6/117: 6/117: fseterr (DONE:17ms)
+  6/117: Method: rpl_isnanl
+  7/117: 7/117: rpl_isnanl (DONE:83ms)
+  7/117: Method: sub_8048AD2
+  8/117: 8/117: sub_8048AD2 (DONE:8ms)
+  8/117: Method: →snprintf
+  9/117: 9/117: →snprintf (DONE:11ms)
+  9/117: Method: →__errno_location
+ 10/117: 10/117: →__errno_location (DONE:6ms)
+ 10/117: Method: →abort
+ 11/117: 11/117: →abort (DONE:6ms)
+ 11/117: Method: →gettext
+ 12/117: 12/117: →gettext (DONE:8ms)
+ 12/117: Method: →free
+ 13/117: 13/117: →free (DONE:8ms)
+ 13/117: Method: →error
+ 14/117: 14/117: →error (DONE:10ms)
+ 14/117: Method: →malloc
+ 15/117: 15/117: →malloc (DONE:9ms)
+ 15/117: Method: →realloc
+ 16/117: 16/117: →realloc (DONE:7ms)
+ 16/117: Method: →memcpy
+ 17/117: 17/117: →memcpy (DONE:9ms)
+ 17/117: Method: xalloc_die
+ 18/117: 18/117: xalloc_die (DONE:49ms)
+ 18/117: Method: xmalloc
+ 19/117: 19/117: xmalloc (DONE:35ms)
+ 19/117: Method: →fputs_unlocked
+ 20/117: 20/117: →fputs_unlocked (DONE:8ms)
+ 20/117: Method: →memset
+ 21/117: 21/117: →memset (DONE:11ms)
+ 21/117: Method: →fprintf
+ 22/117: 22/117: →fprintf (DONE:8ms)
+ 22/117: Method: →strlen
+ 23/117: 23/117: →strlen (DONE:7ms)
+ 23/117: Method: →printf
+ 24/117: 24/117: →printf (DONE:8ms)
+ 24/117: Method: →exit
+ 25/117: 25/117: →exit (DONE:5ms)
+ 25/117: Method: xrealloc
+ 26/117: 26/117: xrealloc (DONE:29ms)
+ 26/117: Method: →stpcpy
+ 27/117: 27/117: →stpcpy (DONE:7ms)
+ 27/117: Method: →_exit
+ 28/117: 28/117: →_exit (DONE:6ms)
+ 28/117: Method: →close
+ 29/117: 29/117: →close (DONE:8ms)
+ 29/117: Method: →__stack_chk_fail
+ 30/117: 30/117: →__stack_chk_fail (DONE:6ms)
+ 30/117: Method: →strcmp
+ 31/117: 31/117: →strcmp (DONE:7ms)
+ 31/117: Method: gettext_quote
+ 32/117: 32/117: gettext_quote (DONE:32ms)
+ 32/117: Method: xcharalloc
+ 33/117: 33/117: xcharalloc (DONE:14ms)
+ 33/117: Method: xmemdup
+ 34/117: 34/117: xmemdup (DONE:17ms)
+ 34/117: Method: quoting_options_from_style
+ 35/117: 35/117: quoting_options_from_style (DONE:48ms)
+ 35/117: Method: __do_global_dtors_aux
+ 36/117: 36/117: __do_global_dtors_aux (DONE:48ms)
+ 36/117: Method: frame_dummy
+ 37/117: 37/117: frame_dummy (DONE:17ms)
+ 37/117: Method: set_char_quoting
+ 38/117: 38/117: set_char_quoting (DONE:106ms)
+ 38/117: Method: xmax
+ 39/117: 39/117: xmax (DONE:19ms)
+ 39/117: Method: printf_fetchargs
+ 40/117: 40/117: printf_fetchargs (DONE:772ms)
+ 40/117: Method: __do_global_ctors_aux
+ 41/117: 41/117: __do_global_ctors_aux (DONE:63ms)
+ 41/117: Method: xsum4
+ 42/117: 42/117: xsum4 (DONE:19ms)
+ 42/117: Method: is_infinitel
+ 43/117: 43/117: is_infinitel (DONE:46ms)
+ 43/117: Method: →getpagesize
+ 44/117: 44/117: →getpagesize (DONE:5ms)
+ 44/117: Method: →__cxa_atexit
+ 45/117: 45/117: →__cxa_atexit (DONE:4ms)
+ 45/117: Method: →memcmp
+ 46/117: 46/117: →memcmp (DONE:8ms)
+ 46/117: Method: →open64
+ 47/117: 47/117: →open64 (DONE:7ms)
+ 47/117: Method: →__ctype_get_mb_cur_max
+ 48/117: 48/117: →__ctype_get_mb_cur_max (DONE:4ms)
+ 48/117: Method: →__gmon_start__
+ 49/117: 49/117: →__gmon_start__ (DONE:4ms)
+ 49/117: Method: →calloc
+ 50/117: 50/117: →calloc (DONE:5ms)
+ 50/117: Method: →write
+ 51/117: 51/117: →write (DONE:6ms)
+ 51/117: Method: →__libc_start_main
+ 52/117: 52/117: →__libc_start_main (DONE:5ms)
+ 52/117: Method: →ferror_unlocked
+ 53/117: 53/117: →ferror_unlocked (DONE:8ms)
+ 53/117: Method: →bindtextdomain
+ 54/117: 54/117: →bindtextdomain (DONE:6ms)
+ 54/117: Method: →mbrtowc
+ 55/117: 55/117: →mbrtowc (DONE:6ms)
+ 55/117: Method: →read
+ 56/117: 56/117: →read (DONE:12ms)
+ 56/117: Method: safe_read
+ 57/117: 57/117: safe_read (DONE:64ms)
+ 57/117: Method: →getopt_long
+ 58/117: 58/117: →getopt_long (DONE:12ms)
+ 58/117: Method: →ioctl
+ 59/117: 59/117: →ioctl (DONE:5ms)
+ 59/117: Method: →__ctype_b_loc
+ 60/117: 60/117: →__ctype_b_loc (DONE:4ms)
+ 60/117: Method: →fclose
+ 61/117: 61/117: →fclose (DONE:7ms)
+ 61/117: Method: →mbsinit
+ 62/117: 62/117: →mbsinit (DONE:6ms)
+ 62/117: Method: →setlocale
+ 63/117: 63/117: →setlocale (DONE:6ms)
+ 63/117: Method: →__signbitl
+ 64/117: 64/117: →__signbitl (DONE:5ms)
+ 64/117: Method: →fwrite
+ 65/117: 65/117: →fwrite (DONE:6ms)
+ 65/117: Method: →__fpending
+ 66/117: 66/117: →__fpending (DONE:5ms)
+ 66/117: Method: close_stream
+ 67/117: 67/117: close_stream (DONE:71ms)
+ 67/117: Method: →memmove
+ 68/117: 68/117: →memmove (DONE:6ms)
+ 68/117: Method: →textdomain
+ 69/117: 69/117: →textdomain (DONE:5ms)
+ 69/117: Method: →__fxstat64
+ 70/117: 70/117: →__fxstat64 (DONE:10ms)
+ 70/117: Method: fstat64
+ 71/117: 71/117: fstat64 (DONE:23ms)
+ 71/117: Method: →iswprint
+ 72/117: 72/117: →iswprint (DONE:10ms)
+ 72/117: Method: printf_parse
+ 73/117: 73/117: printf_parse (DONE:51883ms)
+ 73/117: Method: emit_bug_reporting_address
+ 74/117: 74/117: emit_bug_reporting_address (DONE:11ms)
+ 74/117: Method: usage
+ 75/117: 75/117: usage (DONE:104ms)
+ 75/117: Method: x2nrealloc
+ 76/117: 76/117: x2nrealloc (DONE:187ms)
+ 76/117: Method: atexit
+ 77/117: 77/117: atexit (DONE:55ms)
+ 77/117: Method: safe_write
+ 78/117: 78/117: safe_write (DONE:55ms)
+ 78/117: Method: full_write
+ 79/117: 79/117: full_write (DONE:46ms)
+ 79/117: Method: write_pending
+ 80/117: 80/117: write_pending (DONE:44ms)
+ 80/117: Method: vasnprintf
+ 81/117: 81/117: vasnprintf (DONE:85584ms)
+ 81/117: Method: rpl_vfprintf
+ 82/117: 82/117: rpl_vfprintf (DONE:335ms)
+ 82/117: Method: simple_cat
+ 83/117: 83/117: simple_cat (DONE:62ms)
+ 83/117: Method: version_etc_va
+ 84/117: 84/117: version_etc_va (DONE:209ms)
+ 84/117: Method: version_etc
+ 85/117: 85/117: version_etc (DONE:14ms)
+ 85/117: Method: close_stdout_set_file_name
+ 86/117: 86/117: close_stdout_set_file_name (DONE:6ms)
+ 86/117: Method: get_quoting_style
+ 87/117: 87/117: get_quoting_style (DONE:9ms)
+ 87/117: Method: set_quoting_style
+ 88/117: 88/117: set_quoting_style (DONE:9ms)
+ 88/117: Method: __libc_csu_fini
+ 89/117: 89/117: __libc_csu_fini (DONE:2ms)
+ 89/117: Method: quotearg_free
+ 90/117: 90/117: quotearg_free (DONE:59ms)
+ 90/117: Method: xnmalloc
+ 91/117: 91/117: xnmalloc (DONE:30ms)
+ 91/117: Method: xzalloc
+ 92/117: 92/117: xzalloc (DONE:13ms)
+ 92/117: Method: xnrealloc
+ 93/117: 93/117: xnrealloc (DONE:25ms)
+ 93/117: Method: clone_quoting_options
+ 94/117: 94/117: clone_quoting_options (DONE:21ms)
+ 94/117: Method: xstrdup
+ 95/117: 95/117: xstrdup (DONE:17ms)
+ 95/117: Method: xcalloc
+ 96/117: 96/117: xcalloc (DONE:20ms)
+ 96/117: Method: _start
+ 97/117: 97/117: _start (DONE:14ms)
+ 97/117: Method: x2realloc
+ 98/117: 98/117: x2realloc (DONE:12ms)
+ 98/117: Method: quotearg_buffer
+ 99/117: 99/117: quotearg_buffer (DONE:58ms)
+ 99/117: Method: quotearg_n_options
+100/117: 100/117: quotearg_n_options (DONE:282ms)
+100/117: Method: quotearg_n_style
+101/117: 101/117: quotearg_n_style (DONE:18ms)
+101/117: Method: quotearg_n
+102/117: 102/117: quotearg_n (DONE:10ms)
+102/117: Method: quotearg_char
+103/117: 103/117: quotearg_char (DONE:25ms)
+103/117: Method: quote_n
+104/117: 104/117: quote_n (DONE:10ms)
+104/117: Method: quotearg_colon
+105/117: 105/117: quotearg_colon (DONE:9ms)
+105/117: Method: quote
+106/117: 106/117: quote (DONE:11ms)
+106/117: Method: cat
+107/117: 107/117: cat (DONE:1495ms)
+107/117: Method: quotearg_alloc
+108/117: 108/117: quotearg_alloc (DONE:33ms)
+108/117: Method: quotearg_n_style_mem
+109/117: 109/117: quotearg_n_style_mem (DONE:17ms)
+109/117: Method: quotearg_style
+110/117: 110/117: quotearg_style (DONE:11ms)
+110/117: Method: quotearg
+111/117: 111/117: quotearg (DONE:9ms)
+111/117: Method: close_stdout
+112/117: 112/117: close_stdout (DONE:47ms)
+112/117: Method: main
+113/117: 113/117: main (DONE:3641ms)
+113/117: Method: quotearg_buffer_restyled
+114/117: 114/117: quotearg_buffer_restyled (DONE:4284ms)
+114/117: Method: initializer_0
+115/117: 115/117: initializer_0 (DONE:21ms)
+115/117: Method: __libc_csu_init
+116/117: 116/117: __libc_csu_init (DONE:32ms)
+116/117: Method: finalizer_0
+117/117: 117/117: finalizer_0 (DONE:20ms)
+1/1 DECOMPILATION ERROR: METHOD vasnprintf: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 85583 ms; max= 60000 ms
 	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.calculateReachingRegisters(SourceFile:942)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.DFA.perform(SourceFile:454)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1818)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1786)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1772)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1761)
-	at com.pnfsoftware.jeb.core.units.code.asm.cfg.CFG.doDataFlowAnalysis(SourceFile:1697)
-	at com.pnfsoftware.jebglobal.av.Vo(SourceFile:271)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:181)
-	at com.pnfsoftware.jebglobal.tU.XP(SourceFile:30)
-	at com.pnfsoftware.jebglobal.NV.Vo(SourceFile:115)
-	at com.pnfsoftware.jebglobal.HK.FJ(SourceFile:181)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:134)
-	at com.pnfsoftware.jebglobal.HK.Vo(SourceFile:121)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:544)
-	at com.pnfsoftware.jebglobal.Qp.Vo(SourceFile:344)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:1119)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:597)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:519)
-	at com.pnfsoftware.jebglobal.Ue.Vo(SourceFile:505)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethod(SourceFile:861)
-	at com.pnfsoftware.jebglobal.Ue.decompileMethods(SourceFile:978)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
 	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
 	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
 	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
 	at org.python.core.PyObject.__call__(PyObject.java:461)
@@ -402,8 +290,8 @@ Output folder: jeb_output
 	at org.python.core.PyObject._jcall(PyObject.java:3598)
 	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
 	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
-	at com.pnfsoftware.jeb.cP.start(SourceFile:74)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
 	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
 
-Exectime: 132.330000 sec
-Done.
+Exectime: 152.858000 sec
+[I] Done.

@@ -1,19 +1,16 @@
 
 int main() {
     int v0 = 0;
-    for(int i = 0; i <= 4; ++i) {
-        v0 += (int)*(unsigned char*)((int)&gca + i);
+    unsigned int v1 = 0;
+    do {
+        v0 += (int)*(unsigned char*)((int)&gca + v1);
+        ++v1;
     }
-    →printf("Sum is %d\n", v0);
+    while((int)v1 > 4);
+    →printf("Sum is %d\n");
     return 0;
 }
 
-void sub_8048290() {
-    jump gvar_80495A4;
-}
-
-void sub_804833A() {
-}
-
-void sub_804841E() {
+int sub_8048296() {
+    return gvar_80495A4();
 }

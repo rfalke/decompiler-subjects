@@ -1,239 +1,163 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_boomerang/true/ia32_elf_from_suse/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (108 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 74 methods
 Output folder: jeb_output
-  0/108: Method: sub_80487C8
-  1/108: 1/108: sub_80487C8 (DONE:99ms)
-  1/108: Method: __i686.get_pc_thunk.bx
-  2/108: 2/108: __i686.get_pc_thunk.bx (DONE:29ms)
-  2/108: Method: quoting_options_from_style
-  3/108: 3/108: quoting_options_from_style (DONE:262ms)
-  3/108: Method: __do_global_dtors_aux
-  4/108: 4/108: __do_global_dtors_aux (DONE:69ms)
-  4/108: Method: set_char_quoting
-  5/108: 5/108: set_char_quoting (DONE:231ms)
-  5/108: Method: __do_global_ctors_aux
-  6/108: 6/108: __do_global_ctors_aux (DONE:139ms)
-  6/108: Method: sub_80487DE
-  7/108: 7/108: sub_80487DE (DONE:21ms)
-  7/108: Method: sub_80487EE
-  8/108: 8/108: sub_80487EE (DONE:15ms)
-  8/108: Method: sub_80487E8
-  9/108: 9/108: sub_80487E8 (DONE:14ms)
-  9/108: Method: sub_80487FE
- 10/108: 10/108: sub_80487FE (DONE:18ms)
- 10/108: Method: sub_80487F8
- 11/108: 11/108: sub_80487F8 (DONE:15ms)
- 11/108: Method: sub_804880E
- 12/108: 12/108: sub_804880E (DONE:14ms)
- 12/108: Method: sub_8048808
- 13/108: 13/108: sub_8048808 (DONE:14ms)
- 13/108: Method: sub_804881E
- 14/108: 14/108: sub_804881E (DONE:12ms)
- 14/108: Method: sub_804882E
- 15/108: 15/108: sub_804882E (DONE:19ms)
- 15/108: Method: sub_8048828
- 16/108: 16/108: sub_8048828 (DONE:14ms)
- 16/108: Method: gettext_quote
- 17/108: 17/108: gettext_quote (DONE:99ms)
- 17/108: Method: sub_804883E
- 18/108: 18/108: sub_804883E (DONE:20ms)
- 18/108: Method: sub_804884E
- 19/108: 19/108: sub_804884E (DONE:12ms)
- 19/108: Method: sub_804885E
- 20/108: 20/108: sub_804885E (DONE:14ms)
- 20/108: Method: sub_8048858
- 21/108: 21/108: sub_8048858 (DONE:17ms)
- 21/108: Method: sub_804886E
- 22/108: 22/108: sub_804886E (DONE:16ms)
- 22/108: Method: sub_8048868
- 23/108: 23/108: sub_8048868 (DONE:14ms)
- 23/108: Method: sub_804887E
- 24/108: 24/108: sub_804887E (DONE:13ms)
- 24/108: Method: sub_8048878
- 25/108: 25/108: sub_8048878 (DONE:10ms)
- 25/108: Method: sub_804888E
- 26/108: 26/108: sub_804888E (DONE:19ms)
- 26/108: Method: sub_804889E
- 27/108: 27/108: sub_804889E (DONE:13ms)
- 27/108: Method: sub_80488AE
- 28/108: 28/108: sub_80488AE (DONE:12ms)
- 28/108: Method: sub_80488A8
- 29/108: 29/108: sub_80488A8 (DONE:13ms)
- 29/108: Method: sub_80488BE
- 30/108: 30/108: sub_80488BE (DONE:15ms)
- 30/108: Method: sub_80488CE
- 31/108: 31/108: sub_80488CE (DONE:12ms)
- 31/108: Method: sub_80488DE
- 32/108: 32/108: sub_80488DE (DONE:12ms)
- 32/108: Method: sub_80488D8
- 33/108: 33/108: sub_80488D8 (DONE:9ms)
- 33/108: Method: sub_80488EE
- 34/108: 34/108: sub_80488EE (DONE:11ms)
- 34/108: Method: sub_80488FE
- 35/108: 35/108: sub_80488FE (DONE:9ms)
- 35/108: Method: sub_80488F8
- 36/108: 36/108: sub_80488F8 (DONE:14ms)
- 36/108: Method: sub_804890E
- 37/108: 37/108: sub_804890E (DONE:14ms)
- 37/108: Method: sub_804891E
- 38/108: 38/108: sub_804891E (DONE:10ms)
- 38/108: Method: sub_804892E
- 39/108: 39/108: sub_804892E (DONE:10ms)
- 39/108: Method: sub_804893E
- 40/108: 40/108: sub_804893E (DONE:8ms)
- 40/108: Method: sub_8048938
- 41/108: 41/108: sub_8048938 (DONE:16ms)
- 41/108: Method: sub_804894E
- 42/108: 42/108: sub_804894E (DONE:13ms)
- 42/108: Method: sub_804895E
- 43/108: 43/108: sub_804895E (DONE:10ms)
- 43/108: Method: sub_804896E
- 44/108: 44/108: sub_804896E (DONE:11ms)
- 44/108: Method: sub_804897E
- 45/108: 45/108: sub_804897E (DONE:14ms)
- 45/108: Method: sub_804898E
- 46/108: 46/108: sub_804898E (DONE:17ms)
- 46/108: Method: sub_804899E
- 47/108: 47/108: sub_804899E (DONE:12ms)
- 47/108: Method: sub_8048998
- 48/108: 48/108: sub_8048998 (DONE:11ms)
- 48/108: Method: xalloc_die
- 49/108: 49/108: xalloc_die (DONE:64ms)
- 49/108: Method: xmalloc
- 50/108: 50/108: xmalloc (DONE:43ms)
- 50/108: Method: xrealloc
- 51/108: 51/108: xrealloc (DONE:40ms)
- 51/108: Method: sub_80489AE
- 52/108: 52/108: sub_80489AE (DONE:12ms)
- 52/108: Method: sub_80487D8
- 53/108: 53/108: sub_80487D8 (DONE:12ms)
- 53/108: Method: sub_8048818
- 54/108: 54/108: sub_8048818 (DONE:9ms)
- 54/108: Method: sub_8048838
- 55/108: 55/108: sub_8048838 (DONE:11ms)
- 55/108: Method: sub_8048848
- 56/108: 56/108: sub_8048848 (DONE:9ms)
- 56/108: Method: sub_8048888
- 57/108: 57/108: sub_8048888 (DONE:15ms)
- 57/108: Method: sub_8048898
- 58/108: 58/108: sub_8048898 (DONE:14ms)
- 58/108: Method: sub_80488B8
- 59/108: 59/108: sub_80488B8 (DONE:13ms)
- 59/108: Method: sub_80488C8
- 60/108: 60/108: sub_80488C8 (DONE:8ms)
- 60/108: Method: sub_80488E8
- 61/108: 61/108: sub_80488E8 (DONE:13ms)
- 61/108: Method: sub_8048908
- 62/108: 62/108: sub_8048908 (DONE:10ms)
- 62/108: Method: sub_8048918
- 63/108: 63/108: sub_8048918 (DONE:13ms)
- 63/108: Method: sub_8048928
- 64/108: 64/108: sub_8048928 (DONE:11ms)
- 64/108: Method: usage
- 65/108: 65/108: usage (DONE:117ms)
- 65/108: Method: sub_8048948
- 66/108: 66/108: sub_8048948 (DONE:11ms)
- 66/108: Method: sub_8048958
- 67/108: 67/108: sub_8048958 (DONE:8ms)
- 67/108: Method: sub_8048968
- 68/108: 68/108: sub_8048968 (DONE:10ms)
- 68/108: Method: sub_8048978
- 69/108: 69/108: sub_8048978 (DONE:11ms)
- 69/108: Method: sub_8048988
- 70/108: 70/108: sub_8048988 (DONE:7ms)
- 70/108: Method: sub_80489A8
- 71/108: 71/108: sub_80489A8 (DONE:18ms)
- 71/108: Method: atexit
- 72/108: 72/108: atexit (DONE:44ms)
- 72/108: Method: version_etc_va
- 73/108: 73/108: version_etc_va (DONE:686ms)
- 73/108: Method: version_etc
- 74/108: 74/108: version_etc (DONE:48ms)
- 74/108: Method: close_stdout_set_file_name
- 75/108: 75/108: close_stdout_set_file_name (DONE:24ms)
- 75/108: Method: get_quoting_style
- 76/108: 76/108: get_quoting_style (DONE:33ms)
- 76/108: Method: sub_8048D5E
- 77/108: 77/108: sub_8048D5E (DONE:16ms)
- 77/108: Method: set_quoting_style
- 78/108: 78/108: set_quoting_style (DONE:38ms)
- 78/108: Method: sub_8049BDE
- 79/108: 79/108: sub_8049BDE (DONE:10ms)
- 79/108: Method: xnmalloc
- 80/108: 80/108: xnmalloc (DONE:95ms)
- 80/108: Method: xnrealloc
- 81/108: 81/108: xnrealloc (DONE:68ms)
- 81/108: Method: clone_quoting_options
- 82/108: 82/108: clone_quoting_options (DONE:94ms)
- 82/108: Method: x2realloc
- 83/108: 83/108: x2realloc (DONE:68ms)
- 83/108: Method: x2nrealloc
- 84/108: 84/108: x2nrealloc (DONE:108ms)
- 84/108: Method: _start
- 85/108: 85/108: _start (DONE:32ms)
- 85/108: Method: xclone
- 86/108: 86/108: xclone (DONE:37ms)
- 86/108: Method: xcalloc
- 87/108: 87/108: xcalloc (DONE:92ms)
- 87/108: Method: xzalloc
- 88/108: 88/108: xzalloc (DONE:56ms)
- 88/108: Method: sub_8048C59
- 89/108: 89/108: sub_8048C59 (DONE:91ms)
- 89/108: Method: main
- 90/108: 90/108: main (DONE:283ms)
- 90/108: Method: frame_dummy
- 91/108: 91/108: frame_dummy (DONE:31ms)
- 91/108: Method: sub_8048A4E
- 92/108: 92/108: sub_8048A4E (DONE:13ms)
- 92/108: Method: finalizer_0
- 93/108: 93/108: finalizer_0 (DONE:29ms)
- 93/108: Method: __libc_csu_fini
- 94/108: 94/108: __libc_csu_fini (DONE:63ms)
- 94/108: Method: quotearg_buffer
- 95/108: 95/108: quotearg_buffer (DONE:247ms)
- 95/108: Method: quotearg_n_options
- 96/108: 96/108: quotearg_n_options (DONE:507ms)
- 96/108: Method: quotearg_n
- 97/108: 97/108: quotearg_n (DONE:14ms)
- 97/108: Method: quotearg_n_style
- 98/108: 98/108: quotearg_n_style (DONE:29ms)
- 98/108: Method: quotearg_char
- 99/108: 99/108: quotearg_char (DONE:57ms)
- 99/108: Method: quotearg_colon
-100/108: 100/108: quotearg_colon (DONE:34ms)
-100/108: Method: quotearg_n_style_mem
-101/108: 101/108: quotearg_n_style_mem (DONE:32ms)
-101/108: Method: quotearg
-102/108: 102/108: quotearg (DONE:24ms)
-102/108: Method: quotearg_style
-103/108: 103/108: quotearg_style (DONE:34ms)
-103/108: Method: close_stdout
-104/108: 104/108: close_stdout (DONE:164ms)
-104/108: Method: quotearg_buffer_restyled
-105/108: 105/108: quotearg_buffer_restyled (DONE:8013ms)
-105/108: Method: call_gmon_start
-106/108: 106/108: call_gmon_start (DONE:50ms)
-106/108: Method: initializer_0
-107/108: 107/108: initializer_0 (DONE:26ms)
-107/108: Method: __libc_csu_init
-108/108: 108/108: __libc_csu_init (DONE:48ms)
-Exectime: 16.604000 sec
-Done.
+  0/ 74: Method: __i686.get_pc_thunk.bx
+  1/ 74: 1/74: __i686.get_pc_thunk.bx (DONE:46ms)
+  1/ 74: Method: quoting_options_from_style
+  2/ 74: 2/74: quoting_options_from_style (DONE:132ms)
+  2/ 74: Method: sub_80487CE
+  3/ 74: 3/74: sub_80487CE (DONE:14ms)
+  3/ 74: Method: →dcgettext
+  4/ 74: 4/74: →dcgettext (DONE:21ms)
+  4/ 74: Method: →__errno_location
+  5/ 74: 5/74: →__errno_location (DONE:10ms)
+  5/ 74: Method: →fputs_unlocked
+  6/ 74: 6/74: →fputs_unlocked (DONE:10ms)
+  6/ 74: Method: →abort
+  7/ 74: 7/74: →abort (DONE:7ms)
+  7/ 74: Method: →error
+  8/ 74: 8/74: →error (DONE:11ms)
+  8/ 74: Method: xalloc_die
+  9/ 74: 9/74: xalloc_die (DONE:34ms)
+  9/ 74: Method: →__overflow
+ 10/ 74: 10/74: →__overflow (DONE:15ms)
+ 10/ 74: Method: →fprintf
+ 11/ 74: 11/74: →fprintf (DONE:12ms)
+ 11/ 74: Method: →malloc
+ 12/ 74: 12/74: →malloc (DONE:13ms)
+ 12/ 74: Method: xmalloc
+ 13/ 74: 13/74: xmalloc (DONE:70ms)
+ 13/ 74: Method: →strlen
+ 14/ 74: 14/74: →strlen (DONE:13ms)
+ 14/ 74: Method: →realloc
+ 15/ 74: 15/74: →realloc (DONE:12ms)
+ 15/ 74: Method: xrealloc
+ 16/ 74: 16/74: xrealloc (DONE:67ms)
+ 16/ 74: Method: →printf
+ 17/ 74: 17/74: →printf (DONE:8ms)
+ 17/ 74: Method: →exit
+ 18/ 74: 18/74: →exit (DONE:8ms)
+ 18/ 74: Method: gettext_quote
+ 19/ 74: 19/74: gettext_quote (DONE:80ms)
+ 19/ 74: Method: __do_global_dtors_aux
+ 20/ 74: 20/74: __do_global_dtors_aux (DONE:70ms)
+ 20/ 74: Method: set_char_quoting
+ 21/ 74: 21/74: set_char_quoting (DONE:146ms)
+ 21/ 74: Method: __do_global_ctors_aux
+ 22/ 74: 22/74: __do_global_ctors_aux (DONE:70ms)
+ 22/ 74: Method: →__fpending
+ 23/ 74: 23/74: →__fpending (DONE:7ms)
+ 23/ 74: Method: →getenv
+ 24/ 74: 24/74: →getenv (DONE:7ms)
+ 24/ 74: Method: →setlocale
+ 25/ 74: 25/74: →setlocale (DONE:6ms)
+ 25/ 74: Method: →__cxa_atexit
+ 26/ 74: 26/74: →__cxa_atexit (DONE:5ms)
+ 26/ 74: Method: →vfprintf
+ 27/ 74: 27/74: →vfprintf (DONE:8ms)
+ 27/ 74: Method: →bindtextdomain
+ 28/ 74: 28/74: →bindtextdomain (DONE:7ms)
+ 28/ 74: Method: →mbrtowc
+ 29/ 74: 29/74: →mbrtowc (DONE:8ms)
+ 29/ 74: Method: →__libc_start_main
+ 30/ 74: 30/74: →__libc_start_main (DONE:7ms)
+ 30/ 74: Method: →textdomain
+ 31/ 74: 31/74: →textdomain (DONE:6ms)
+ 31/ 74: Method: →memcpy
+ 32/ 74: 32/74: →memcpy (DONE:7ms)
+ 32/ 74: Method: →fclose
+ 33/ 74: 33/74: →fclose (DONE:6ms)
+ 33/ 74: Method: →__ctype_get_mb_cur_max
+ 34/ 74: 34/74: →__ctype_get_mb_cur_max (DONE:6ms)
+ 34/ 74: Method: →calloc
+ 35/ 74: 35/74: →calloc (DONE:7ms)
+ 35/ 74: Method: →iswprint
+ 36/ 74: 36/74: →iswprint (DONE:7ms)
+ 36/ 74: Method: →free
+ 37/ 74: 37/74: →free (DONE:8ms)
+ 37/ 74: Method: →memset
+ 38/ 74: 38/74: →memset (DONE:6ms)
+ 38/ 74: Method: →mbsinit
+ 39/ 74: 39/74: →mbsinit (DONE:17ms)
+ 39/ 74: Method: →__ctype_b_loc
+ 40/ 74: 40/74: →__ctype_b_loc (DONE:5ms)
+ 40/ 74: Method: usage
+ 41/ 74: 41/74: usage (DONE:99ms)
+ 41/ 74: Method: atexit
+ 42/ 74: 42/74: atexit (DONE:36ms)
+ 42/ 74: Method: version_etc_va
+ 43/ 74: 43/74: version_etc_va (DONE:276ms)
+ 43/ 74: Method: version_etc
+ 44/ 74: 44/74: version_etc (DONE:17ms)
+ 44/ 74: Method: close_stdout_set_file_name
+ 45/ 74: 45/74: close_stdout_set_file_name (DONE:6ms)
+ 45/ 74: Method: get_quoting_style
+ 46/ 74: 46/74: get_quoting_style (DONE:10ms)
+ 46/ 74: Method: set_quoting_style
+ 47/ 74: 47/74: set_quoting_style (DONE:11ms)
+ 47/ 74: Method: xnmalloc
+ 48/ 74: 48/74: xnmalloc (DONE:116ms)
+ 48/ 74: Method: clone_quoting_options
+ 49/ 74: 49/74: clone_quoting_options (DONE:46ms)
+ 49/ 74: Method: xnrealloc
+ 50/ 74: 50/74: xnrealloc (DONE:104ms)
+ 50/ 74: Method: x2realloc
+ 51/ 74: 51/74: x2realloc (DONE:70ms)
+ 51/ 74: Method: x2nrealloc
+ 52/ 74: 52/74: x2nrealloc (DONE:159ms)
+ 52/ 74: Method: _start
+ 53/ 74: 53/74: _start (DONE:15ms)
+ 53/ 74: Method: xclone
+ 54/ 74: 54/74: xclone (DONE:18ms)
+ 54/ 74: Method: xcalloc
+ 55/ 74: 55/74: xcalloc (DONE:71ms)
+ 55/ 74: Method: xzalloc
+ 56/ 74: 56/74: xzalloc (DONE:20ms)
+ 56/ 74: Method: main
+ 57/ 74: 57/74: main (DONE:250ms)
+ 57/ 74: Method: quotearg_buffer
+ 58/ 74: 58/74: quotearg_buffer (DONE:80ms)
+ 58/ 74: Method: quotearg_n_options
+ 59/ 74: 59/74: quotearg_n_options (DONE:487ms)
+ 59/ 74: Method: quotearg_n
+ 60/ 74: 60/74: quotearg_n (DONE:6ms)
+ 60/ 74: Method: quotearg_n_style
+ 61/ 74: 61/74: quotearg_n_style (DONE:16ms)
+ 61/ 74: Method: quotearg_char
+ 62/ 74: 62/74: quotearg_char (DONE:31ms)
+ 62/ 74: Method: quotearg_colon
+ 63/ 74: 63/74: quotearg_colon (DONE:10ms)
+ 63/ 74: Method: quotearg_n_style_mem
+ 64/ 74: 64/74: quotearg_n_style_mem (DONE:16ms)
+ 64/ 74: Method: quotearg
+ 65/ 74: 65/74: quotearg (DONE:9ms)
+ 65/ 74: Method: quotearg_style
+ 66/ 74: 66/74: quotearg_style (DONE:10ms)
+ 66/ 74: Method: close_stdout
+ 67/ 74: 67/74: close_stdout (DONE:96ms)
+ 67/ 74: Method: finalizer_0
+ 68/ 74: 68/74: finalizer_0 (DONE:12ms)
+ 68/ 74: Method: __libc_csu_fini
+ 69/ 74: 69/74: __libc_csu_fini (DONE:31ms)
+ 69/ 74: Method: quotearg_buffer_restyled
+ 70/ 74: 70/74: quotearg_buffer_restyled (DONE:5682ms)
+ 70/ 74: Method: call_gmon_start
+ 71/ 74: 71/74: call_gmon_start (DONE:21ms)
+ 71/ 74: Method: frame_dummy
+ 72/ 74: 72/74: frame_dummy (DONE:16ms)
+ 72/ 74: Method: initializer_0
+ 73/ 74: 73/74: initializer_0 (DONE:12ms)
+ 73/ 74: Method: __libc_csu_init
+ 74/ 74: 74/74: __libc_csu_init (DONE:36ms)
+Exectime: 10.062000 sec
+[I] Done.

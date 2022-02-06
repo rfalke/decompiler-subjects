@@ -1,0 +1,55 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/ftpd/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 20 methods
+Output folder: jeb_output
+  0/ 20: Method: sub_8048B5D
+  1/ 20: 1/20: sub_8048B5D (DONE:183ms)
+  1/ 20: Method: sub_8048AF6
+  2/ 20: 2/20: sub_8048AF6 (DONE:63ms)
+  2/ 20: Method: sub_8048D0C
+  3/ 20: 3/20: sub_8048D0C (DONE:31ms)
+  3/ 20: Method: sub_8048CF0
+  4/ 20: 4/20: sub_8048CF0 (DONE:40ms)
+  4/ 20: Method: sub_8048B88
+  5/ 20: 5/20: sub_8048B88 (DONE:15ms)
+  5/ 20: Method: sub_8048ACC
+  6/ 20: 6/20: sub_8048ACC (DONE:56ms)
+  6/ 20: Method: sub_8048AB6
+  7/ 20: 7/20: sub_8048AB6 (DONE:32ms)
+  7/ 20: Method: sub_8048BBF
+  8/ 20: 8/20: sub_8048BBF (DONE:11ms)
+  8/ 20: Method: sub_804836F
+  9/ 20: 9/20: sub_804836F (DONE:10ms)
+  9/ 20: Method: sub_8048358
+ 10/ 20: 10/20: sub_8048358 (DONE:18ms)
+ 10/ 20: Method: sub_8048BD4
+ 11/ 20: 11/20: sub_8048BD4 (DONE:75ms)
+ 11/ 20: Method: sub_8048BC5
+ 12/ 20: 12/20: sub_8048BC5 (DONE:22ms)
+ 12/ 20: Method: sub_8048C29
+ 13/ 20: 13/20: sub_8048C29 (DONE:145ms)
+ 13/ 20: Method: sub_8048B0C
+ 14/ 20: 14/20: sub_8048B0C (DONE:139ms)
+ 14/ 20: Method: sub_8048B8E
+ 15/ 20: 15/20: sub_8048B8E (DONE:42ms)
+ 15/ 20: Method: sub_8048370
+ 16/ 20: 16/20: sub_8048370 (DONE:15ms)
+ 16/ 20: Method: sub_8048B78
+ 17/ 20: 17/20: sub_8048B78 (DONE:18ms)
+ 17/ 20: Method: sub_8048B7F
+ 18/ 20: 18/20: sub_8048B7F (DONE:34ms)
+ 18/ 20: Method: sub_8048CA2
+ 19/ 20: 19/20: sub_8048CA2 (DONE:16ms)
+ 19/ 20: Method: start
+ 20/ 20: 20/20: start (DONE:57ms)
+Exectime: 1.722000 sec
+[I] Done.

@@ -1,260 +1,505 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/stress_int_ia32/ia32_elf_complex_with_base_100_funcs_of_size_16/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (118 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 122 methods
 Output folder: jeb_output
-  0/118: Method: __x86.get_pc_thunk.bx
-  1/118: 1/118: __x86.get_pc_thunk.bx (DONE:97ms)
-  1/118: Method: sub_8049030
-  2/118: 2/118: sub_8049030 (DONE:27ms)
-  2/118: Method: sub_8049397
-  3/118: 3/118: sub_8049397 (DONE:16ms)
-  3/118: Method: deregister_tm_clones
-  4/118: 4/118: deregister_tm_clones (DONE:54ms)
-  4/118: Method: register_tm_clones
-  5/118: 5/118: register_tm_clones (DONE:69ms)
-  5/118: Method: log_size_4_var_000
-  6/118: 6/118: log_size_4_var_000 (DONE:154ms)
-  6/118: Method: log_size_4_var_001
-  7/118: 7/118: log_size_4_var_001 (DONE:172ms)
-  7/118: Method: log_size_4_var_002
-  8/118: 8/118: log_size_4_var_002 (DONE:110ms)
-  8/118: Method: log_size_4_var_003
-  9/118: 9/118: log_size_4_var_003 (DONE:94ms)
-  9/118: Method: log_size_4_var_004
- 10/118: 10/118: log_size_4_var_004 (DONE:87ms)
- 10/118: Method: log_size_4_var_005
- 11/118: 11/118: log_size_4_var_005 (DONE:102ms)
- 11/118: Method: log_size_4_var_006
- 12/118: 12/118: log_size_4_var_006 (DONE:125ms)
- 12/118: Method: log_size_4_var_007
- 13/118: 13/118: log_size_4_var_007 (DONE:141ms)
- 13/118: Method: log_size_4_var_008
- 14/118: 14/118: log_size_4_var_008 (DONE:86ms)
- 14/118: Method: log_size_4_var_009
- 15/118: 15/118: log_size_4_var_009 (DONE:99ms)
- 15/118: Method: log_size_4_var_010
- 16/118: 16/118: log_size_4_var_010 (DONE:98ms)
- 16/118: Method: log_size_4_var_011
- 17/118: 17/118: log_size_4_var_011 (DONE:97ms)
- 17/118: Method: log_size_4_var_012
- 18/118: 18/118: log_size_4_var_012 (DONE:89ms)
- 18/118: Method: log_size_4_var_013
- 19/118: 19/118: log_size_4_var_013 (DONE:94ms)
- 19/118: Method: log_size_4_var_014
- 20/118: 20/118: log_size_4_var_014 (DONE:92ms)
- 20/118: Method: log_size_4_var_015
- 21/118: 21/118: log_size_4_var_015 (DONE:95ms)
- 21/118: Method: log_size_4_var_016
- 22/118: 22/118: log_size_4_var_016 (DONE:90ms)
- 22/118: Method: log_size_4_var_017
- 23/118: 23/118: log_size_4_var_017 (DONE:99ms)
- 23/118: Method: log_size_4_var_018
- 24/118: 24/118: log_size_4_var_018 (DONE:154ms)
- 24/118: Method: log_size_4_var_019
- 25/118: 25/118: log_size_4_var_019 (DONE:98ms)
- 25/118: Method: log_size_4_var_020
- 26/118: 26/118: log_size_4_var_020 (DONE:102ms)
- 26/118: Method: log_size_4_var_021
- 27/118: 27/118: log_size_4_var_021 (DONE:95ms)
- 27/118: Method: log_size_4_var_022
- 28/118: 28/118: log_size_4_var_022 (DONE:102ms)
- 28/118: Method: log_size_4_var_023
- 29/118: 29/118: log_size_4_var_023 (DONE:86ms)
- 29/118: Method: log_size_4_var_024
- 30/118: 30/118: log_size_4_var_024 (DONE:84ms)
- 30/118: Method: log_size_4_var_025
- 31/118: 31/118: log_size_4_var_025 (DONE:78ms)
- 31/118: Method: log_size_4_var_026
- 32/118: 32/118: log_size_4_var_026 (DONE:84ms)
- 32/118: Method: log_size_4_var_027
- 33/118: 33/118: log_size_4_var_027 (DONE:122ms)
- 33/118: Method: log_size_4_var_028
- 34/118: 34/118: log_size_4_var_028 (DONE:127ms)
- 34/118: Method: log_size_4_var_029
- 35/118: 35/118: log_size_4_var_029 (DONE:105ms)
- 35/118: Method: log_size_4_var_030
- 36/118: 36/118: log_size_4_var_030 (DONE:89ms)
- 36/118: Method: log_size_4_var_031
- 37/118: 37/118: log_size_4_var_031 (DONE:68ms)
- 37/118: Method: log_size_4_var_032
- 38/118: 38/118: log_size_4_var_032 (DONE:83ms)
- 38/118: Method: log_size_4_var_033
- 39/118: 39/118: log_size_4_var_033 (DONE:86ms)
- 39/118: Method: log_size_4_var_034
- 40/118: 40/118: log_size_4_var_034 (DONE:84ms)
- 40/118: Method: log_size_4_var_035
- 41/118: 41/118: log_size_4_var_035 (DONE:87ms)
- 41/118: Method: log_size_4_var_036
- 42/118: 42/118: log_size_4_var_036 (DONE:65ms)
- 42/118: Method: log_size_4_var_037
- 43/118: 43/118: log_size_4_var_037 (DONE:86ms)
- 43/118: Method: log_size_4_var_038
- 44/118: 44/118: log_size_4_var_038 (DONE:60ms)
- 44/118: Method: log_size_4_var_039
- 45/118: 45/118: log_size_4_var_039 (DONE:82ms)
- 45/118: Method: log_size_4_var_040
- 46/118: 46/118: log_size_4_var_040 (DONE:70ms)
- 46/118: Method: log_size_4_var_041
- 47/118: 47/118: log_size_4_var_041 (DONE:68ms)
- 47/118: Method: log_size_4_var_042
- 48/118: 48/118: log_size_4_var_042 (DONE:66ms)
- 48/118: Method: log_size_4_var_043
- 49/118: 49/118: log_size_4_var_043 (DONE:69ms)
- 49/118: Method: log_size_4_var_044
- 50/118: 50/118: log_size_4_var_044 (DONE:69ms)
- 50/118: Method: log_size_4_var_045
- 51/118: 51/118: log_size_4_var_045 (DONE:52ms)
- 51/118: Method: log_size_4_var_046
- 52/118: 52/118: log_size_4_var_046 (DONE:76ms)
- 52/118: Method: log_size_4_var_047
- 53/118: 53/118: log_size_4_var_047 (DONE:56ms)
- 53/118: Method: log_size_4_var_048
- 54/118: 54/118: log_size_4_var_048 (DONE:76ms)
- 54/118: Method: log_size_4_var_049
- 55/118: 55/118: log_size_4_var_049 (DONE:63ms)
- 55/118: Method: log_size_4_var_050
- 56/118: 56/118: log_size_4_var_050 (DONE:75ms)
- 56/118: Method: log_size_4_var_051
- 57/118: 57/118: log_size_4_var_051 (DONE:74ms)
- 57/118: Method: log_size_4_var_052
- 58/118: 58/118: log_size_4_var_052 (DONE:65ms)
- 58/118: Method: log_size_4_var_053
- 59/118: 59/118: log_size_4_var_053 (DONE:59ms)
- 59/118: Method: log_size_4_var_054
- 60/118: 60/118: log_size_4_var_054 (DONE:60ms)
- 60/118: Method: log_size_4_var_055
- 61/118: 61/118: log_size_4_var_055 (DONE:57ms)
- 61/118: Method: log_size_4_var_056
- 62/118: 62/118: log_size_4_var_056 (DONE:84ms)
- 62/118: Method: log_size_4_var_057
- 63/118: 63/118: log_size_4_var_057 (DONE:66ms)
- 63/118: Method: log_size_4_var_058
- 64/118: 64/118: log_size_4_var_058 (DONE:82ms)
- 64/118: Method: log_size_4_var_059
- 65/118: 65/118: log_size_4_var_059 (DONE:63ms)
- 65/118: Method: log_size_4_var_060
- 66/118: 66/118: log_size_4_var_060 (DONE:69ms)
- 66/118: Method: log_size_4_var_061
- 67/118: 67/118: log_size_4_var_061 (DONE:70ms)
- 67/118: Method: log_size_4_var_062
- 68/118: 68/118: log_size_4_var_062 (DONE:60ms)
- 68/118: Method: log_size_4_var_063
- 69/118: 69/118: log_size_4_var_063 (DONE:52ms)
- 69/118: Method: log_size_4_var_064
- 70/118: 70/118: log_size_4_var_064 (DONE:57ms)
- 70/118: Method: log_size_4_var_065
- 71/118: 71/118: log_size_4_var_065 (DONE:68ms)
- 71/118: Method: log_size_4_var_066
- 72/118: 72/118: log_size_4_var_066 (DONE:66ms)
- 72/118: Method: log_size_4_var_067
- 73/118: 73/118: log_size_4_var_067 (DONE:73ms)
- 73/118: Method: log_size_4_var_068
- 74/118: 74/118: log_size_4_var_068 (DONE:57ms)
- 74/118: Method: log_size_4_var_069
- 75/118: 75/118: log_size_4_var_069 (DONE:59ms)
- 75/118: Method: log_size_4_var_070
- 76/118: 76/118: log_size_4_var_070 (DONE:63ms)
- 76/118: Method: log_size_4_var_071
- 77/118: 77/118: log_size_4_var_071 (DONE:67ms)
- 77/118: Method: log_size_4_var_072
- 78/118: 78/118: log_size_4_var_072 (DONE:65ms)
- 78/118: Method: log_size_4_var_073
- 79/118: 79/118: log_size_4_var_073 (DONE:60ms)
- 79/118: Method: log_size_4_var_074
- 80/118: 80/118: log_size_4_var_074 (DONE:83ms)
- 80/118: Method: log_size_4_var_075
- 81/118: 81/118: log_size_4_var_075 (DONE:54ms)
- 81/118: Method: log_size_4_var_076
- 82/118: 82/118: log_size_4_var_076 (DONE:64ms)
- 82/118: Method: log_size_4_var_077
- 83/118: 83/118: log_size_4_var_077 (DONE:75ms)
- 83/118: Method: log_size_4_var_078
- 84/118: 84/118: log_size_4_var_078 (DONE:68ms)
- 84/118: Method: log_size_4_var_079
- 85/118: 85/118: log_size_4_var_079 (DONE:67ms)
- 85/118: Method: log_size_4_var_080
- 86/118: 86/118: log_size_4_var_080 (DONE:52ms)
- 86/118: Method: log_size_4_var_081
- 87/118: 87/118: log_size_4_var_081 (DONE:89ms)
- 87/118: Method: log_size_4_var_082
- 88/118: 88/118: log_size_4_var_082 (DONE:82ms)
- 88/118: Method: log_size_4_var_083
- 89/118: 89/118: log_size_4_var_083 (DONE:80ms)
- 89/118: Method: log_size_4_var_084
- 90/118: 90/118: log_size_4_var_084 (DONE:68ms)
- 90/118: Method: log_size_4_var_085
- 91/118: 91/118: log_size_4_var_085 (DONE:69ms)
- 91/118: Method: log_size_4_var_086
- 92/118: 92/118: log_size_4_var_086 (DONE:62ms)
- 92/118: Method: log_size_4_var_087
- 93/118: 93/118: log_size_4_var_087 (DONE:70ms)
- 93/118: Method: log_size_4_var_088
- 94/118: 94/118: log_size_4_var_088 (DONE:70ms)
- 94/118: Method: log_size_4_var_089
- 95/118: 95/118: log_size_4_var_089 (DONE:69ms)
- 95/118: Method: log_size_4_var_090
- 96/118: 96/118: log_size_4_var_090 (DONE:81ms)
- 96/118: Method: log_size_4_var_091
- 97/118: 97/118: log_size_4_var_091 (DONE:72ms)
- 97/118: Method: log_size_4_var_092
- 98/118: 98/118: log_size_4_var_092 (DONE:56ms)
- 98/118: Method: log_size_4_var_093
- 99/118: 99/118: log_size_4_var_093 (DONE:81ms)
- 99/118: Method: log_size_4_var_094
-100/118: 100/118: log_size_4_var_094 (DONE:69ms)
-100/118: Method: log_size_4_var_095
-101/118: 101/118: log_size_4_var_095 (DONE:83ms)
-101/118: Method: log_size_4_var_096
-102/118: 102/118: log_size_4_var_096 (DONE:89ms)
-102/118: Method: log_size_4_var_097
-103/118: 103/118: log_size_4_var_097 (DONE:74ms)
-103/118: Method: log_size_4_var_098
-104/118: 104/118: log_size_4_var_098 (DONE:76ms)
-104/118: Method: log_size_4_var_099
-105/118: 105/118: log_size_4_var_099 (DONE:49ms)
-105/118: Method: initializer_0
-106/118: 106/118: initializer_0 (DONE:42ms)
-106/118: Method: sub_8049046
-107/118: 107/118: sub_8049046 (DONE:10ms)
-107/118: Method: sub_8049056
-108/118: 108/118: sub_8049056 (DONE:10ms)
-108/118: Method: initializer_1
-109/118: 109/118: initializer_1 (DONE:9ms)
-109/118: Method: sub_8049040
-110/118: 110/118: sub_8049040 (DONE:10ms)
-110/118: Method: sub_8049050
-111/118: 111/118: sub_8049050 (DONE:15ms)
-111/118: Method: _dl_relocate_static_pie
-112/118: 112/118: _dl_relocate_static_pie (DONE:8ms)
-112/118: Method: __libc_csu_fini
-113/118: 113/118: __libc_csu_fini (DONE:7ms)
-113/118: Method: finalizer_0
-114/118: 114/118: finalizer_0 (DONE:11ms)
-114/118: Method: finalizer_1
-Emulation failed!
-115/118: 115/118: finalizer_1 (DONE:72ms)
-115/118: Method: __libc_csu_init
-116/118: 116/118: __libc_csu_init (DONE:102ms)
-116/118: Method: _start
-117/118: 117/118: _start (DONE:35ms)
-117/118: Method: main
-118/118: 118/118: main (DONE:6467ms)
-Exectime: 19.111000 sec
-Done.
+  0/122: Method: __x86.get_pc_thunk.bx
+  1/122: 1/122: __x86.get_pc_thunk.bx (DONE:49ms)
+  1/122: Method: sub_80493F0
+  2/122: 2/122: sub_80493F0 (DONE:4ms)
+  2/122: Method: sub_8049438
+  3/122: 3/122: sub_8049438 (DONE:4ms)
+  3/122: Method: sub_8049036
+  4/122: 4/122: sub_8049036 (DONE:14ms)
+  4/122: Method: sub_8049397
+  5/122: 5/122: sub_8049397 (DONE:5ms)
+  5/122: Method: sub_8049468
+  6/122: 6/122: sub_8049468 (DONE:3ms)
+  6/122: Method: log_size_4_var_000
+  7/122: 7/122: log_size_4_var_000 (DONE:113ms)
+  7/122: Method: log_size_4_var_001
+  8/122: 8/122: log_size_4_var_001 (DONE:148ms)
+  8/122: Method: log_size_4_var_002
+  9/122: 9/122: log_size_4_var_002 (DONE:157ms)
+  9/122: Method: log_size_4_var_003
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 10/122: 10/122: log_size_4_var_003 (DONE:85ms)
+ 10/122: Method: log_size_4_var_004
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 11/122: 11/122: log_size_4_var_004 (DONE:89ms)
+ 11/122: Method: log_size_4_var_005
+ 12/122: 12/122: log_size_4_var_005 (DONE:80ms)
+ 12/122: Method: log_size_4_var_006
+ 13/122: 13/122: log_size_4_var_006 (DONE:72ms)
+ 13/122: Method: log_size_4_var_007
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 14/122: 14/122: log_size_4_var_007 (DONE:224ms)
+ 14/122: Method: log_size_4_var_008
+ 15/122: 15/122: log_size_4_var_008 (DONE:94ms)
+ 15/122: Method: log_size_4_var_009
+ 16/122: 16/122: log_size_4_var_009 (DONE:57ms)
+ 16/122: Method: log_size_4_var_010
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 17/122: 17/122: log_size_4_var_010 (DONE:74ms)
+ 17/122: Method: log_size_4_var_011
+ 18/122: 18/122: log_size_4_var_011 (DONE:69ms)
+ 18/122: Method: log_size_4_var_012
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 19/122: 19/122: log_size_4_var_012 (DONE:77ms)
+ 19/122: Method: log_size_4_var_013
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 20/122: 20/122: log_size_4_var_013 (DONE:51ms)
+ 20/122: Method: log_size_4_var_014
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 21/122: 21/122: log_size_4_var_014 (DONE:57ms)
+ 21/122: Method: log_size_4_var_015
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 22/122: 22/122: log_size_4_var_015 (DONE:63ms)
+ 22/122: Method: log_size_4_var_016
+ 23/122: 23/122: log_size_4_var_016 (DONE:61ms)
+ 23/122: Method: log_size_4_var_017
+ 24/122: 24/122: log_size_4_var_017 (DONE:63ms)
+ 24/122: Method: log_size_4_var_018
+ 25/122: 25/122: log_size_4_var_018 (DONE:89ms)
+ 25/122: Method: log_size_4_var_019
+ 26/122: 26/122: log_size_4_var_019 (DONE:59ms)
+ 26/122: Method: log_size_4_var_020
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 27/122: 27/122: log_size_4_var_020 (DONE:63ms)
+ 27/122: Method: log_size_4_var_021
+ 28/122: 28/122: log_size_4_var_021 (DONE:69ms)
+ 28/122: Method: log_size_4_var_022
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 29/122: 29/122: log_size_4_var_022 (DONE:65ms)
+ 29/122: Method: log_size_4_var_023
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 30/122: 30/122: log_size_4_var_023 (DONE:50ms)
+ 30/122: Method: log_size_4_var_024
+ 31/122: 31/122: log_size_4_var_024 (DONE:62ms)
+ 31/122: Method: log_size_4_var_025
+ 32/122: 32/122: log_size_4_var_025 (DONE:57ms)
+ 32/122: Method: log_size_4_var_026
+ 33/122: 33/122: log_size_4_var_026 (DONE:62ms)
+ 33/122: Method: log_size_4_var_027
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 34/122: 34/122: log_size_4_var_027 (DONE:61ms)
+ 34/122: Method: log_size_4_var_028
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 35/122: 35/122: log_size_4_var_028 (DONE:53ms)
+ 35/122: Method: log_size_4_var_029
+ 36/122: 36/122: log_size_4_var_029 (DONE:51ms)
+ 36/122: Method: log_size_4_var_030
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 37/122: 37/122: log_size_4_var_030 (DONE:65ms)
+ 37/122: Method: log_size_4_var_031
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 38/122: 38/122: log_size_4_var_031 (DONE:61ms)
+ 38/122: Method: log_size_4_var_032
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 39/122: 39/122: log_size_4_var_032 (DONE:47ms)
+ 39/122: Method: log_size_4_var_033
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 40/122: 40/122: log_size_4_var_033 (DONE:46ms)
+ 40/122: Method: log_size_4_var_034
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 41/122: 41/122: log_size_4_var_034 (DONE:58ms)
+ 41/122: Method: log_size_4_var_035
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 42/122: 42/122: log_size_4_var_035 (DONE:66ms)
+ 42/122: Method: log_size_4_var_036
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 43/122: 43/122: log_size_4_var_036 (DONE:44ms)
+ 43/122: Method: log_size_4_var_037
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 44/122: 44/122: log_size_4_var_037 (DONE:70ms)
+ 44/122: Method: log_size_4_var_038
+ 45/122: 45/122: log_size_4_var_038 (DONE:47ms)
+ 45/122: Method: log_size_4_var_039
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 46/122: 46/122: log_size_4_var_039 (DONE:53ms)
+ 46/122: Method: log_size_4_var_040
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 47/122: 47/122: log_size_4_var_040 (DONE:62ms)
+ 47/122: Method: log_size_4_var_041
+ 48/122: 48/122: log_size_4_var_041 (DONE:39ms)
+ 48/122: Method: log_size_4_var_042
+ 49/122: 49/122: log_size_4_var_042 (DONE:37ms)
+ 49/122: Method: log_size_4_var_043
+ 50/122: 50/122: log_size_4_var_043 (DONE:51ms)
+ 50/122: Method: log_size_4_var_044
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 51/122: 51/122: log_size_4_var_044 (DONE:47ms)
+ 51/122: Method: log_size_4_var_045
+ 52/122: 52/122: log_size_4_var_045 (DONE:34ms)
+ 52/122: Method: log_size_4_var_046
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 53/122: 53/122: log_size_4_var_046 (DONE:55ms)
+ 53/122: Method: log_size_4_var_047
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 54/122: 54/122: log_size_4_var_047 (DONE:39ms)
+ 54/122: Method: log_size_4_var_048
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 55/122: 55/122: log_size_4_var_048 (DONE:47ms)
+ 55/122: Method: log_size_4_var_049
+ 56/122: 56/122: log_size_4_var_049 (DONE:46ms)
+ 56/122: Method: log_size_4_var_050
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 57/122: 57/122: log_size_4_var_050 (DONE:53ms)
+ 57/122: Method: log_size_4_var_051
+ 58/122: 58/122: log_size_4_var_051 (DONE:50ms)
+ 58/122: Method: log_size_4_var_052
+ 59/122: 59/122: log_size_4_var_052 (DONE:57ms)
+ 59/122: Method: log_size_4_var_053
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 60/122: 60/122: log_size_4_var_053 (DONE:42ms)
+ 60/122: Method: log_size_4_var_054
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 61/122: 61/122: log_size_4_var_054 (DONE:59ms)
+ 61/122: Method: log_size_4_var_055
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 62/122: 62/122: log_size_4_var_055 (DONE:51ms)
+ 62/122: Method: log_size_4_var_056
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 63/122: 63/122: log_size_4_var_056 (DONE:61ms)
+ 63/122: Method: log_size_4_var_057
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 64/122: 64/122: log_size_4_var_057 (DONE:49ms)
+ 64/122: Method: log_size_4_var_058
+ 65/122: 65/122: log_size_4_var_058 (DONE:49ms)
+ 65/122: Method: log_size_4_var_059
+ 66/122: 66/122: log_size_4_var_059 (DONE:46ms)
+ 66/122: Method: log_size_4_var_060
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 67/122: 67/122: log_size_4_var_060 (DONE:53ms)
+ 67/122: Method: log_size_4_var_061
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 68/122: 68/122: log_size_4_var_061 (DONE:59ms)
+ 68/122: Method: log_size_4_var_062
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 69/122: 69/122: log_size_4_var_062 (DONE:54ms)
+ 69/122: Method: log_size_4_var_063
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 70/122: 70/122: log_size_4_var_063 (DONE:46ms)
+ 70/122: Method: log_size_4_var_064
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 71/122: 71/122: log_size_4_var_064 (DONE:45ms)
+ 71/122: Method: log_size_4_var_065
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 72/122: 72/122: log_size_4_var_065 (DONE:39ms)
+ 72/122: Method: log_size_4_var_066
+ 73/122: 73/122: log_size_4_var_066 (DONE:54ms)
+ 73/122: Method: log_size_4_var_067
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 74/122: 74/122: log_size_4_var_067 (DONE:62ms)
+ 74/122: Method: log_size_4_var_068
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 75/122: 75/122: log_size_4_var_068 (DONE:42ms)
+ 75/122: Method: log_size_4_var_069
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 76/122: 76/122: log_size_4_var_069 (DONE:47ms)
+ 76/122: Method: log_size_4_var_070
+ 77/122: 77/122: log_size_4_var_070 (DONE:48ms)
+ 77/122: Method: log_size_4_var_071
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 78/122: 78/122: log_size_4_var_071 (DONE:48ms)
+ 78/122: Method: log_size_4_var_072
+ 79/122: 79/122: log_size_4_var_072 (DONE:44ms)
+ 79/122: Method: log_size_4_var_073
+ 80/122: 80/122: log_size_4_var_073 (DONE:50ms)
+ 80/122: Method: log_size_4_var_074
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 81/122: 81/122: log_size_4_var_074 (DONE:69ms)
+ 81/122: Method: log_size_4_var_075
+ 82/122: 82/122: log_size_4_var_075 (DONE:38ms)
+ 82/122: Method: log_size_4_var_076
+ 83/122: 83/122: log_size_4_var_076 (DONE:49ms)
+ 83/122: Method: log_size_4_var_077
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 84/122: 84/122: log_size_4_var_077 (DONE:33ms)
+ 84/122: Method: log_size_4_var_078
+ 85/122: 85/122: log_size_4_var_078 (DONE:57ms)
+ 85/122: Method: log_size_4_var_079
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 86/122: 86/122: log_size_4_var_079 (DONE:48ms)
+ 86/122: Method: log_size_4_var_080
+ 87/122: 87/122: log_size_4_var_080 (DONE:41ms)
+ 87/122: Method: log_size_4_var_081
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+ 88/122: 88/122: log_size_4_var_081 (DONE:67ms)
+ 88/122: Method: log_size_4_var_082
+ 89/122: 89/122: log_size_4_var_082 (DONE:193ms)
+ 89/122: Method: log_size_4_var_083
+ 90/122: 90/122: log_size_4_var_083 (DONE:67ms)
+ 90/122: Method: log_size_4_var_084
+ 91/122: 91/122: log_size_4_var_084 (DONE:55ms)
+ 91/122: Method: log_size_4_var_085
+ 92/122: 92/122: log_size_4_var_085 (DONE:55ms)
+ 92/122: Method: log_size_4_var_086
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 93/122: 93/122: log_size_4_var_086 (DONE:52ms)
+ 93/122: Method: log_size_4_var_087
+ 94/122: 94/122: log_size_4_var_087 (DONE:58ms)
+ 94/122: Method: log_size_4_var_088
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+ 95/122: 95/122: log_size_4_var_088 (DONE:53ms)
+ 95/122: Method: log_size_4_var_089
+ 96/122: 96/122: log_size_4_var_089 (DONE:44ms)
+ 96/122: Method: log_size_4_var_090
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 97/122: 97/122: log_size_4_var_090 (DONE:43ms)
+ 97/122: Method: log_size_4_var_091
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+ 98/122: 98/122: log_size_4_var_091 (DONE:51ms)
+ 98/122: Method: log_size_4_var_092
+ 99/122: 99/122: log_size_4_var_092 (DONE:49ms)
+ 99/122: Method: log_size_4_var_093
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+100/122: 100/122: log_size_4_var_093 (DONE:62ms)
+100/122: Method: log_size_4_var_094
+101/122: 101/122: log_size_4_var_094 (DONE:87ms)
+101/122: Method: log_size_4_var_095
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+102/122: 102/122: log_size_4_var_095 (DONE:52ms)
+102/122: Method: log_size_4_var_096
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+103/122: 103/122: log_size_4_var_096 (DONE:48ms)
+103/122: Method: log_size_4_var_097
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+104/122: 104/122: log_size_4_var_097 (DONE:83ms)
+104/122: Method: log_size_4_var_098
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+105/122: 105/122: log_size_4_var_098 (DONE:65ms)
+105/122: Method: log_size_4_var_099
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:16, end:17
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:32, end:33
+106/122: 106/122: log_size_4_var_099 (DONE:47ms)
+106/122: Method: initializer_0
+107/122: 107/122: initializer_0 (DONE:34ms)
+107/122: Method: sub_80493CC
+108/122: 108/122: sub_80493CC (DONE:18ms)
+108/122: Method: sub_8049418
+109/122: 109/122: sub_8049418 (DONE:16ms)
+109/122: Method: →__libc_start_main
+110/122: 110/122: →__libc_start_main (DONE:8ms)
+110/122: Method: →__assert_fail
+111/122: 111/122: →__assert_fail (DONE:9ms)
+111/122: Method: deregister_tm_clones
+112/122: 112/122: deregister_tm_clones (DONE:7ms)
+112/122: Method: register_tm_clones
+113/122: 113/122: register_tm_clones (DONE:18ms)
+113/122: Method: sub_804944D
+114/122: 114/122: sub_804944D (DONE:10ms)
+114/122: Method: initializer_1
+115/122: 115/122: initializer_1 (DONE:4ms)
+115/122: Method: _dl_relocate_static_pie
+116/122: 116/122: _dl_relocate_static_pie (DONE:1ms)
+116/122: Method: __libc_csu_fini
+117/122: 117/122: __libc_csu_fini (DONE:1ms)
+117/122: Method: finalizer_0
+118/122: 118/122: finalizer_0 (DONE:9ms)
+118/122: Method: _start
+119/122: 119/122: _start (DONE:44ms)
+119/122: Method: main
+120/122: 120/122: main (DONE:8755ms)
+120/122: Method: finalizer_1
+121/122: 121/122: finalizer_1 (DONE:7ms)
+121/122: Method: __libc_csu_init
+122/122: 122/122: __libc_csu_init (DONE:88ms)
+Exectime: 16.573000 sec
+[I] Done.

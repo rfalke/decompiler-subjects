@@ -39,11 +39,6 @@ int main(int param0) {
     return 0;
 }
 
-int sub_8048795() {
-    jump gvar_8049A08;
-}
-
-int sub_8048839() {
-    call();
-    hlt();
+int sub_804879A() {
+    return gvar_8049A08();
 }

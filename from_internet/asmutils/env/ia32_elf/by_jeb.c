@@ -1,0 +1,83 @@
+
+char start(int param0, int param1) {
+    int* ptr0;
+    char v0;
+    int v1;
+    char v2;
+    char v3;
+    char v4;
+    char v5;
+    char v6;
+    char v7;
+    char v8;
+    char v9 = v7;
+    char v10 = v7;
+    int v11 = (int)(v9 + 1);
+    char v12 = v11 ? 0: 1;
+    char v13 = v11 < 0;
+    char v14 = __parity__((unsigned char)v11);
+    char v15 = (((v10 ^ 0x1) ^ v11) >>> 4) & 0x1;
+    char v16 = ((v11 ^ v10) & ~(v10 ^ 0x1)) < 0;
+    char* ptr1 = *(unsigned int*)(v11 * 4 + (int)&param0);
+    char v17 = ptr1 ? 0: 1;
+    char v18 = (int)ptr1 < 0;
+    char v19 = __parity__((unsigned char)ptr1);
+    char v20 = 0;
+    char v21 = 0;
+    if(!v17) {
+        char* ptr2 = ptr1;
+        int v22 = 0;
+        char v23 = 1;
+        char v24 = 0;
+        char v25 = 1;
+        char v26 = 0;
+        char v27 = 0;
+        int v28 = 0;
+        char v29 = -1;
+        char v30 = 0;
+        char v31 = 1;
+        char v32 = 1;
+        char v33 = 1;
+        char v34 = 0;
+        do {
+            char v35 = v29;
+            ++v29;
+            char v36 = v29 ? 0: 1;
+            char v37 = v29 < 0;
+            char v38 = __parity__((unsigned char)v29);
+            char v39 = (((v35 ^ 0x1) ^ v29) >>> 4) & 0x1;
+            char v40 = ((int)(v29 ^ v35) & ~(v35 ^ 0x1)) < 0;
+            char v41 = *ptr1;
+            ++ptr1;
+            v8 = v41 ? 0: 1;
+            char v42 = v41 < 0;
+            char v43 = __parity__(v41);
+            char v44 = 0;
+            v6 = 0;
+        }
+        while(!v8);
+        *(ptr1 - 1) = 10;
+        v10 = v29;
+        int v45 = (int)(v29 + 1);
+        v5 = v45 ? 0: 1;
+        v4 = v45 < 0;
+        v3 = __parity__((unsigned char)v45);
+        v15 = (((v10 ^ 0x1) ^ v45) >>> 4) & 0x1;
+        v2 = ((v45 ^ v10) & ~(v10 ^ 0x1)) < 0;
+        v1 = 1;
+        v7 = 4;
+        v0 = 4;
+        ptr0 = &param0;
+        interrupt(128);
+    }
+    v1 = 0;
+    v5 = 1;
+    v4 = 0;
+    v3 = 1;
+    v2 = 0;
+    v6 = 0;
+    v7 = 1;
+    v0 = 1;
+    ptr0 = &param0;
+    interrupt(128);
+}

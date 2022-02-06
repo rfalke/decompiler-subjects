@@ -1,0 +1,93 @@
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 39.2M used (224.8M free, 6.0G max)
+[I] Initializing Jython, please wait...
+Processing file: SUBJECTS/from_internet/asmutils/ls/ia32_elf/subject.exe...
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 8 methods
+Output folder: jeb_output
+  0/  8: Method: sub_80482A0
+  1/  8: 1/8: sub_80482A0 (DONE:137ms)
+  1/  8: Method: sub_80480F2
+  2/  8: 2/8: sub_80480F2 (DONE:49ms)
+  2/  8: Method: sub_804827F
+  3/  8: 3/8: sub_804827F (DONE:15ms)
+  3/  8: Method: sub_8048354
+  4/  8: 4/8: sub_8048354 (DONE:138ms)
+  4/  8: Method: sub_8048395
+  5/  8: 5/8: sub_8048395 (DONE:54ms)
+  5/  8: Method: start
+  6/  8: 6/8: start (DONE:9ms)
+  6/  8: Method: sub_80480C7
+  7/  8: 7/8: sub_80480C7 (DONE:90ms)
+  7/  8: Method: sub_804810A
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+[E] An optimizer failed: dy: java.lang.RuntimeException: Illegal Slice with begin:8, end:9
+  8/  8: 8/8: sub_804810A (DONE:298884ms)
+1/1 DECOMPILATION ERROR: METHOD sub_804810A: com.pnfsoftware.jeb.util.concurrent.OperationTimedOutException: Self interruption: exectime= 298882 ms; max= 60000 ms
+	at com.pnfsoftware.jeb.util.concurrent.TimedOperationVerifier.verify(SourceFile:64)
+	at com.pnfsoftware.jebglobal.ls.oD(SourceFile:80)
+	at com.pnfsoftware.jebglobal.yu.oy(SourceFile:182)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:135)
+	at com.pnfsoftware.jebglobal.yu.oD(SourceFile:122)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:561)
+	at com.pnfsoftware.jebglobal.WW.oD(SourceFile:349)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:1127)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:604)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:526)
+	at com.pnfsoftware.jebglobal.xF.oD(SourceFile:512)
+	at com.pnfsoftware.jebglobal.xF.decompileMethod(SourceFile:868)
+	at com.pnfsoftware.jebglobal.xF.decompileMethods(SourceFile:985)
+	at com.pnfsoftware.jeb.core.units.code.asm.decompiler.NativeDecompilerExporter.process(SourceFile:100)
+	at com.pnfsoftware.jeb.core.units.code.DecompilerExporter.export(SourceFile:223)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:190)
+	at org.python.core.PyReflectedFunction.__call__(PyReflectedFunction.java:208)
+	at org.python.core.PyObject.__call__(PyObject.java:461)
+	at org.python.core.PyObject.__call__(PyObject.java:465)
+	at org.python.core.PyMethod.__call__(PyMethod.java:126)
+	at jeb_DecompileFile$py.decompileCodeUnit$3(SUBJECTS/scripts/jeb_DecompileFile.py:103)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:150)
+	at org.python.core.PyFunction.__call__(PyFunction.java:426)
+	at org.python.core.PyMethod.__call__(PyMethod.java:141)
+	at jeb_DecompileFile$py.run$2(SUBJECTS/scripts/jeb_DecompileFile.py:65)
+	at jeb_DecompileFile$py.call_function(SUBJECTS/scripts/jeb_DecompileFile.py)
+	at org.python.core.PyTableCode.call(PyTableCode.java:173)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:306)
+	at org.python.core.PyBaseCode.call(PyBaseCode.java:197)
+	at org.python.core.PyFunction.__call__(PyFunction.java:485)
+	at org.python.core.PyMethod.instancemethod___call__(PyMethod.java:237)
+	at org.python.core.PyMethod.__call__(PyMethod.java:228)
+	at org.python.core.PyMethod.__call__(PyMethod.java:218)
+	at org.python.core.PyMethod.__call__(PyMethod.java:213)
+	at org.python.core.PyObject._jcallexc(PyObject.java:3565)
+	at org.python.core.PyObject._jcall(PyObject.java:3598)
+	at org.python.proxies.jeb_DecompileFile$jeb_DecompileFile$0.run(Unknown Source)
+	at com.pnfsoftware.jeb.client.script.ScriptLoader.execute(SourceFile:143)
+	at com.pnfsoftware.jeb.vd.start(SourceFile:74)
+	at com.pnfsoftware.jeb.Launcher.main(SourceFile:254)
+
+Exectime: 299.906000 sec
+[I] Done.

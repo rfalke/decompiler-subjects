@@ -1,22 +1,25 @@
 
-int __deregister_frame_info(int param0) {
+int __deregister_frame_info(unsigned int param0) {
     int result;
+    int v0;
+    int v1 = v0;
     unsigned int* ptr0 = (unsigned int*)&objects;
     if(!objects) {
     loc_804929D:
         /*NO_RETURN*/ →abort();
     }
     do {
-        int* ptr1 = *ptr0;
-        if(*(ptr1 + 2) == param0) {
-            *ptr0 = *(ptr1 + 5);
+        unsigned int* ptr1 = *ptr0;
+        if(*(int*)(ptr1 + 2) == param0) {
+            result = *(int*)(ptr1 + 5);
+            *ptr0 = *(int*)(ptr1 + 5);
             if(*ptr1) {
                 →free(*(void**)(ptr1 + 3));
             }
             return result;
         }
-        ptr0 = (unsigned int*)(ptr1 + 5);
-        if(!*(ptr1 + 5)) {
+        ptr0 = ptr1 + 5;
+        if(!*(int*)(ptr1 + 5)) {
             goto loc_804929D;
         }
     }
@@ -25,55 +28,60 @@ int __deregister_frame_info(int param0) {
 }
 
 int __frame_state_for(int param0, int param1) {
-    char* ptr0;
+    unsigned char* ptr0;
     int v0;
     int v1;
     char v2;
     int v3;
+    int v4;
+    int v5 = v4;
     int result = find_fde(param0);
-    int v4 = result;
+    unsigned int v6 = (unsigned int)result;
     if(result) {
         unsigned int* ptr1 = &ptr0;
-        result = (int)extract_cie_info(v4, &ptr0);
+        result = (int)extract_cie_info(v6, &ptr0);
         char* ptr2 = (char*)result;
         if(ptr2) {
             void* ptr3 = &v2;
             →memset(&v2, 0, 116);
-            short v5 = (unsigned short)v0;
-            int v6 = v3;
-            int* ptr4 = (int*)(v4 - (*(int*)(v4 + 4) - 4));
+            short v7 = (unsigned short)v0;
+            int v8 = v3;
+            int* ptr4 = (int*)(v6 - (unsigned int)(*(int*)(v6 + 4) - 4));
             int* ptr5 = (int*)(*ptr4 + (int)ptr4) + 1;
             if((unsigned int)ptr2 < (unsigned int)ptr5) {
-                int v7 = (int)ptr1;
-                char* ptr6 = (char*)ptr3;
+                int v9 = (int)&ptr0;
+                char* ptr6 = (char*)&v2;
                 do {
-                    ptr2 = execute_cfa_insn(ptr2, ptr6, v7, NULL);
+                    ptr2 = execute_cfa_insn(ptr2, ptr6, v9, NULL);
                 }
                 while((unsigned int)ptr2 < (unsigned int)ptr5);
             }
-            char* ptr7 = (char*)(v4 + 16);
+            char* ptr7 = (char*)(v6 + 16);
             if(*ptr0 == 122) {
-                int v8 = decode_uleb128((int)ptr7, (int)&v1);
-                ptr7 = (char*)(v8 + v1);
+                char* ptr8 = decode_uleb128(ptr7, &v1);
+                ptr7 = &ptr8[v1];
             }
-            unsigned int v9 = (unsigned int)(*(int*)v4 + v4 + 4);
-            unsigned int v10 = *(unsigned int*)(v4 + 8);
-            if((unsigned int)ptr7 < v9) {
-                void* ptr8 = &v10;
+            int* ptr9 = (int*)(*(int*)v6 + v6) + 1;
+            unsigned int v10 = *(unsigned int*)(v6 + 8);
+            if((unsigned int)ptr7 < (unsigned int)ptr9) {
+                unsigned int* ptr10 = &v10;
                 while(v10 <= (unsigned int)param0) {
-                    ptr7 = execute_cfa_insn(ptr7, (char*)&v2, (int)&ptr0, ptr8);
-                    if((unsigned int)ptr7 >= v9) {
+                    ptr7 = execute_cfa_insn(ptr7, (char*)&v2, (int)&ptr0, ptr10);
+                    if((unsigned int)ptr7 >= (unsigned int)ptr9) {
                         break;
                     }
                 }
             }
             int v11 = param1;
-            void* ptr9 = &v2;
-            for(int i = 28; i != 0; --i) {
-                *(int*)v11 = *(int*)ptr9;
-                ptr9 = (void*)((int)ptr9 + 4);
+            void* ptr11 = &v2;
+            int v12 = 28;
+            do {
+                *(int*)v11 = *(int*)ptr11;
+                ptr11 = (void*)((int)ptr11 + 4);
                 v11 += 4;
+                --v12;
             }
+            while(v12 == 0);
             result = param1;
         }
     }
@@ -122,52 +130,52 @@ int add5(int param0) {
     return param0 + 5;
 }
 
-unsigned int add_fdes(int param0, int param1, int* param2, unsigned int* param3, unsigned int* param4) {
-    unsigned int result;
+int add_fdes(unsigned int param0, int param1, int* param2, unsigned int* param3, unsigned int* param4) {
+    int result;
     int v0;
-    int v1 = &loc_8048B12;
-    int v2 = param0;
-    int v3 = *param2;
-    unsigned int v4 = *param3;
-    unsigned int v5 = *param4;
-    if(*(int*)v2) {
+    int v1 = v0;
+    int v2 = &loc_8048B12;
+    unsigned int v3 = param0;
+    int v4 = *param2;
+    unsigned int v5 = *param3;
+    unsigned int v6 = *param4;
+    if(*(int*)v3) {
         do {
-            if(*(int*)(v2 + 4) && *(int*)(v2 + 8)) {
-                v1 = v2;
-                int v6 = v3;
-                ++v3;
-                fde_insert(param1, v6, v1);
-                unsigned int v7 = *(unsigned int*)(v2 + 8);
-                if(v7 < v4) {
-                    v4 = v7;
+            if(*(int*)(v3 + 4) && *(int*)(v3 + 8)) {
+                int v7 = v4;
+                ++v4;
+                fde_insert(param1, v7, v3);
+                unsigned int v8 = *(unsigned int*)(v3 + 8);
+                if(v8 < v5) {
+                    v5 = v8;
                 }
-                result = (unsigned int)(*(int*)(v2 + 12) + v7);
-                if(result > v5) {
-                    v5 = result;
+                unsigned int v9 = (unsigned int)(*(int*)(v3 + 12) + v8);
+                if(v9 > v6) {
+                    v6 = v9;
                 }
             }
-            v0 = *(int*)v2 + v2;
-            v2 = v0 + 4;
+            result = *(int*)v3 + v3;
+            v3 = (unsigned int)(result + 4);
         }
-        while(*(int*)(v0 + 4));
+        while(*(int*)(result + 4));
     }
-    *param2 = v3;
-    *param3 = v4;
-    *param4 = v5;
+    *param2 = v4;
+    *param3 = v5;
+    *param4 = v6;
     return result;
 }
 
-int count_fdes(int* param0) {
+int count_fdes(unsigned int* param0) {
     int* ptr0;
-    int* ptr1 = param0;
+    unsigned int* ptr1 = param0;
     int result = 0;
     if(*ptr1) {
         do {
-            if(*(ptr1 + 1) && *(ptr1 + 2)) {
+            if(*(int*)(ptr1 + 1) && *(int*)(ptr1 + 2)) {
                 ++result;
             }
             ptr0 = (int*)(*ptr1 + (int)ptr1);
-            ptr1 = ptr0 + 1;
+            ptr1 = (unsigned int*)(ptr0 + 1);
         }
         while(*(ptr0 + 1));
     }
@@ -193,165 +201,151 @@ char* decode_sleb128(char* param0, unsigned int* param1) {
     return result;
 }
 
-char* execute_cfa_insn(char* param0, char* param1, int param2, void* param3) {
+char* decode_uleb128(char* param0, int* param1) {
+    int v0 = 0;
+    int v1 = 0;
+    while(1) {
+        char v2 = *param0;
+        ++param0;
+        v0 |= ((unsigned int)v2 & 0x7f) << (v1 & 0x1f);
+        if(v2 >= 0) {
+            break;
+        }
+        else {
+            v1 += 7;
+        }
+    }
+    *param1 = v0;
+    return param0;
+}
+
+char* execute_cfa_insn(char* param0, char* param1, int param2, unsigned int* param3) {
     char* ptr0;
-    char* ptr1;
-    int v0;
+    int* ptr1;
+    int* ptr2;
+    char v0;
+    int* ptr3;
     int v1;
-    char* ptr2;
-    unsigned int v2 = (unsigned int)*param0;
-    ++param0;
-    int v3 = v2 & 0x40;
-    if((v2 & 0x40)) {
-        *(int*)param3 = (v2 & 0x3f) * *(int*)(param2 + 8) + *(int*)param3;
+    int* ptr4 = &ptr2;
+    int* ptr5 = &ptr2;
+    char v2 = &ptr1 == 20;
+    char v3 = (int)&v0 < 0;
+    char v4 = __parity__((unsigned char)&ptr1 - 20);
+    char v5 = (int*)((int)(int*)((int)(int*)((int)(int*)((int)&ptr2 ^ 0x10) ^ (int)&v0) >>> 4) & 0x1);
+    char v6 = (unsigned int)&ptr2 < 16;
+    char v7 = (int)(int*)((int)(int*)((int)&ptr2 ^ (int)&v0) & (int)(int*)((int)&ptr2 ^ 0x10)) < 0;
+    int* ptr6 = ptr3;
+    void* ptr7 = (void*)&loc_8048E46;
+    int* ptr8 = &ptr6;
+    void* ptr9 = (void*)&loc_8048E46;
+    int* ptr10 = (int*)&_GLOBAL_OFFSET_TABLE_;
+    char v8 = 0;
+    char v9 = 0;
+    char v10 = 0;
+    char v11 = 1;
+    char v12 = 0;
+    char v13 = 0;
+    int v14 = param2;
+    unsigned int* ptr11 = param3;
+    char* ptr12 = param0;
+    char* ptr13 = (char*)ptr12[0];
+    char* ptr14 = ptr12;
+    char v15 = ptr12 + 1 ? 0: 1;
+    char v16 = (int)(ptr12 + 1) < 0;
+    char v17 = __parity__((unsigned char)ptr12 + 1);
+    char v18 = (int)(int*)((int)(int*)((int)(ptr12 + 1) ^ (int)ptr14) & (int*)~(int)(int*)((int)ptr14 ^ 0x1)) < 0;
+    param0 = ptr12 + 1;
+    char* ptr15 = ptr13;
+    int* ptr16 = (int*)((int)ptr15 & 0x40);
+    char v19 = ptr16 ? 0: 1;
+    char v20 = (int)ptr16 < 0;
+    char v21 = __parity__((unsigned char)ptr16);
+    char v22 = 0;
+    char v23 = 0;
+    *(int**)&v0 = ptr16;
+    if(!v19) {
+        *ptr11 = (int*)((int)(int*)((int)(int*)((int)ptr13 & 0x3f) * *(int*)(v14 + 8)) + *ptr11);
     }
-    else if((unsigned char)v2 < 0) {
-        ptr1 = (char*)(v2 & 0x3f);
-        param0 = (char*)decode_uleb128((int)param0, (int)&v0);
-        v0 *= *(int*)(param2 + 12);
-        ptr0 = param1;
-        *(char*)((int*)((int)ptr0 + (int)ptr1) + 23) = 1;
-        *((int*)((int)(void*)((int)ptr1 * 4) + (int)ptr0) + 4) = v0;
-    }
-    else if(((unsigned char)v2 & 0xc0)) {
-        *(char*)((int*)((int)(char*)(v2 & 0x3f) + (int)param1) + 23) = (unsigned char)v3;
-    }
-    else if(v2 == 1) {
-        char* ptr3 = param0;
-        *(int*)param3 = *(int*)ptr3;
-        param0 = ptr3 + 4;
-    }
-    else if(v2 == 2) {
-        char* ptr4 = param0;
-        *(int*)param3 = (unsigned int)*ptr4 + *(int*)param3;
-        param0 = ptr4 + 1;
-    }
-    else if(v2 == 3) {
-        char* ptr5 = param0;
-        *(int*)param3 = (unsigned int)*(short*)ptr5 + *(int*)param3;
-        param0 = ptr5 + 2;
-    }
-    else if(v2 == 4) {
-        char* ptr6 = param0;
-        *(int*)param3 = *(int*)ptr6 + *(int*)param3;
-        param0 = ptr6 + 4;
-    }
-    else if(v2 == 5) {
-        int v4 = decode_uleb128((int)param0, (int)&ptr1);
-        param0 = (char*)decode_uleb128(v4, (int)&v0);
-        v0 *= *(int*)(param2 + 12);
-        char* ptr7 = param1;
-        *(char*)((int*)((int)ptr7 + (int)ptr1) + 23) = 1;
-        *((int*)((int)(void*)((int)ptr1 * 4) + (int)ptr7) + 4) = v0;
-    }
-    else if(v2 == 6) {
-        param0 = (char*)decode_uleb128((int)param0, (int)&ptr1);
-        *(char*)((int*)((int)ptr1 + (int)param1) + 23) = 0;
-    }
-    else if(v2 == 9) {
-        int v5 = decode_uleb128((int)param0, (int)&ptr1);
-        param0 = (char*)decode_uleb128(v5, (int)&v1);
-        ptr0 = param1;
-        *(char*)((int*)((int)ptr0 + (int)ptr1) + 23) = 2;
-        *((int*)((int)(void*)((int)ptr1 * 4) + (int)ptr0) + 4) = v1;
-    }
-    else if(v2 == 10) {
-        void* ptr8 = →malloc(116);
-        void* ptr9 = ptr8;
-        char* ptr10 = param1;
-        for(int i = 29; i != 0; --i) {
-            *(int*)ptr9 = *(int*)ptr10;
-            ptr10 += 4;
-            ptr9 = (void*)((int)ptr9 + 4);
+    else {
+        char v24 = (unsigned char)ptr13 ? 0: 1;
+        char v25 = (unsigned char)ptr13 < 0;
+        char v26 = __parity__((unsigned char)ptr13);
+        char v27 = 0;
+        char v28 = 0;
+        if(v25 != 0) {
+            int* ptr17 = (int*)((int)ptr13 & 0x3f);
+            param0 = decode_uleb128(param0, &v1);
+            v1 *= *(int*)(v14 + 12);
+            ptr0 = param1;
+            ptr0[ptr17 + 23] = 1;
+            *(int*)&ptr0[(int*)((int)ptr17 * 4) + 16] = v1;
         }
-        *(void**)(param1 + 112) = ptr8;
-    }
-    else if(v2 == 11) {
-        void* __ptr = *(void**)(param1 + 112);
-        char* ptr11 = param1;
-        void* ptr12 = __ptr;
-        for(int j = 29; j != 0; --j) {
-            *(int*)ptr11 = *(int*)ptr12;
-            ptr12 = (void*)((int)ptr12 + 4);
-            ptr11 += 4;
+        else {
+            char v29 = (unsigned char)ptr13 & 0xc0 ? 0: 1;
+            char v30 = ((unsigned char)ptr13 & 0xc0) < 0;
+            char v31 = __parity__((unsigned char)ptr13 & 0xc0);
+            char v32 = 0;
+            char v33 = 0;
+            if(v29) {
+                if((unsigned int)ptr13 <= 46) {
+                    int* ptr18 = (int*)&_GLOBAL_OFFSET_TABLE_;
+                    int* ptr19 = (int*)&_GLOBAL_OFFSET_TABLE_;
+                    ptr0 = (char*)((int)(int*)&_GLOBAL_OFFSET_TABLE_ - *((int*)((int)ptr13 * 4) + 0x20123be));
+                    char v34 = ptr0 ? 0: 1;
+                    char v35 = (int)ptr0 < 0;
+                    char v36 = __parity__((unsigned char)ptr0);
+                    char v37 = (int*)((int)(int*)((int)(int*)((int)(int*)(*((int*)((int)ptr13 * 4) + 0x20123be) ^ (int)(int*)&_GLOBAL_OFFSET_TABLE_) ^ (int)ptr0) >>> 4) & 0x1);
+                    char v38 = *(unsigned int*)((int*)((int)ptr13 * 4) + 0x20123be) > (unsigned int)(int*)&_GLOBAL_OFFSET_TABLE_;
+                    char v39 = (int)(int*)((int)(int*)(*((int*)((int)ptr13 * 4) + 0x20123be) ^ (int)(int*)&_GLOBAL_OFFSET_TABLE_) & (int)(int*)((int)ptr0 ^ (int)(int*)&_GLOBAL_OFFSET_TABLE_)) < 0;
+                    jump ptr0;
+                }
+                /*NO_RETURN*/ →abort();
+            }
+            param1[(int*)((int)ptr13 & 0x3f) + 23] = v0;
         }
-        →free(__ptr);
-    }
-    else if(v2 == 12) {
-        int v6 = decode_uleb128((int)param0, (int)&ptr1);
-        param0 = (char*)decode_uleb128(v6, (int)&v0);
-        ptr0 = param1;
-        *(short*)(ptr0 + 88) = (unsigned short)ptr1;
-        *(int*)(ptr0 + 8) = v0;
-    }
-    else if(v2 == 13) {
-        param0 = (char*)decode_uleb128((int)param0, (int)&ptr1);
-        *(short*)(param1 + 88) = (unsigned short)ptr1;
-    }
-    else if(v2 == 14) {
-        param0 = (char*)decode_uleb128((int)param0, (int)&v0);
-        *(int*)(param1 + 8) = v0;
-    }
-    else if(v2 >= 15 && v2 <= 44) {
-    loc_80491B4:
-        /*NO_RETURN*/ →abort();
-    }
-    else if(v2 == 45) {
-        ptr1 = (char*)0x10;
-        do {
-            *(char*)((int*)((int)ptr1 + (int)param1) + 23) = 1;
-            *(void**)((int*)((int)(int*)((int)ptr1 * 4) + (int)param1) + 4) = (void*)((int*)((int)ptr1 * 4) - 16);
-            ptr2 = ptr1 + 1;
-            ++ptr1;
-        }
-        while((unsigned int)ptr2 <= 31);
-    }
-    else if(v2 == 46) {
-        param0 = (char*)decode_uleb128((int)param0, (int)&v0);
-        *(int*)(param1 + 12) = v0;
-    }
-    else if(v2 != 0 && v2 != 7 && v2 != 8) {
-        goto loc_80491B4;
     }
     return param0;
 }
 
-int* extract_cie_info(int param0, unsigned int* param1) {
-    int* result;
-    int v0;
-    int v1 = &loc_8048D2E;
-    int* ptr0 = (int*)(param0 - (*(int*)(param0 + 4) - 4));
-    char* ptr1 = (char*)((char*)ptr0 + 9);
-    char* ptr2 = (char*)((char*)ptr0 + 9);
+char* extract_cie_info(unsigned int param0, unsigned int* param1) {
+    char v0;
+    char* result;
+    int v1;
+    int v2;
+    int v3 = v2;
+    int v4 = &loc_8048D2E;
+    char* ptr0 = (char*)(param0 - (unsigned int)(*(int*)(param0 + 4) - 4));
+    unsigned char* ptr1 = (unsigned char*)(ptr0 + 9);
+    unsigned char* ptr2 = (unsigned char*)(ptr0 + 9);
     *param1 = ptr1;
-    char* ptr3 = (char*)0x80494CA;
-    int v2 = 1;
-    char* ptr4 = (char*)0x80494CA;
-    char v3 = 1;
-    while(v2 != 0) {
-        v3 = *ptr1 == *ptr4;
+    unsigned char* ptr3 = (unsigned char*)&gvar_80494CA;
+    int v5 = 1;
+    unsigned char* ptr4 = (unsigned char*)&gvar_80494CA;
+    char v6 = 1;
+    while(v5 != 0) {
+        v6 = *ptr1 == *ptr4;
         ++ptr1;
         ++ptr4;
-        --v2;
-        if(!v3) {
+        --v5;
+        if(!v6) {
             break;
         }
     }
-    if(!v3) {
-        char* ptr5 = ptr2;
-        char* ptr6 = (char*)0x80494CB;
-        int v4 = 3;
-        char v5 = 1;
-        while(v4 != 0) {
-            v5 = *ptr5 == *ptr6;
+    if(!v6) {
+        unsigned char* ptr5 = ptr2;
+        unsigned char* ptr6 = (unsigned char*)&gvar_80494CB;
+        int v7 = 3;
+        char v8 = 1;
+        while(v7 != 0) {
+            v8 = *ptr5 == *ptr6;
             ++ptr5;
             ++ptr6;
-            --v4;
-            if(!v5) {
+            --v7;
+            if(!v8) {
                 break;
             }
         }
-        if(v5 || *(char*)((char*)ptr0 + 9) == 122) {
+        if(v8 || ptr0[9] == 122) {
             goto loc_8048D8F;
         }
         else {
@@ -360,60 +354,59 @@ int* extract_cie_info(int param0, unsigned int* param1) {
     }
     else {
     loc_8048D8F:
-        char* ptr7 = *param1;
+        unsigned char* ptr7 = *param1;
         ptr3 = *param1;
-        char* ptr8 = ptr7;
-        int v6 = -1;
-        while(v6 != 0) {
-            char v7 = *ptr8 == 0;
+        unsigned char* ptr8 = ptr7;
+        int v9 = -1;
+        do {
+            v0 = *ptr8 == 0;
             ++ptr8;
-            --v6;
-            if(!~v7) {
-                break;
-            }
+            --v9;
         }
-        char* ptr9 = (char*)((char*)(~v6 + (int)ptr7) - 1);
-        ptr2 = (char*)((char*)(~v6 + (int)ptr7) - 1);
-        int* ptr10 = (int*)(ptr9 + 1);
-        char* ptr11 = ptr7;
-        char* ptr12 = (char*)0x80494CB;
-        ptr3 = (char*)0x80494CB;
-        int v8 = 3;
-        char v9 = 1;
-        while(v8 != 0) {
-            v9 = *ptr11 == *ptr12;
+        while(~v0 && v9 == 0);
+        unsigned char* ptr9 = (unsigned char*)((unsigned char*)(~v9 + (int)ptr7) - 1);
+        ptr2 = (unsigned char*)((unsigned char*)(~v9 + (int)ptr7) - 1);
+        char* ptr10 = (char*)(ptr9 + 1);
+        unsigned char* ptr11 = ptr7;
+        unsigned char* ptr12 = (unsigned char*)&gvar_80494CB;
+        ptr3 = (unsigned char*)&gvar_80494CB;
+        int v10 = 3;
+        char v11 = 1;
+        while(v10 != 0) {
+            v11 = *ptr11 == *ptr12;
             ++ptr11;
             ++ptr12;
-            --v8;
-            if(!v9) {
+            --v10;
+            if(!v11) {
                 break;
             }
         }
-        if(v9) {
+        if(v11) {
             *(int*)(param1 + 1) = *(int*)(ptr9 + 1);
-            ptr10 = (int*)(ptr2 + 5);
+            ptr10 = (char*)(ptr2 + 5);
         }
         else {
             *(int*)(param1 + 1) = 0;
         }
-        char* ptr13 = (char*)decode_uleb128((int)ptr10, (int)(int*)(param1 + 2));
+        char* ptr13 = decode_uleb128(ptr10, (int*)(param1 + 2));
         char* ptr14 = decode_sleb128(ptr13, param1 + 3);
-        *(int*)(param1 + 4) = (unsigned int)ptr14[0];
-        ptr0 = (int*)(ptr14 + 1);
-        if(**param1 == 122) {
-            int v10 = decode_uleb128((int)ptr0, (int)&v0);
-            ptr0 = (int*)(v10 + v0);
+        unsigned int* ptr15 = param1;
+        *(int*)(ptr15 + 4) = (unsigned int)ptr14[0];
+        ptr0 = ptr14 + 1;
+        if(**ptr15 == 122) {
+            char* ptr16 = decode_uleb128(ptr0, &v1);
+            ptr0 = &ptr16[v1];
         }
         result = ptr0;
     }
     return result;
 }
 
-int fde_insert(int param0, int param1, int param2) {
-    int result;
+unsigned int fde_insert(int param0, int param1, unsigned int param2) {
     int counter = param1;
+    unsigned int result = param2;
     int v0 = param0;
-    *(int*)(counter * 4 + v0) = param2;
+    *(unsigned int*)(counter * 4 + v0) = result;
     if(counter) {
         int* ptr0 = (int*)(counter * 4 + v0);
         do {
@@ -421,8 +414,8 @@ int fde_insert(int param0, int param1, int param2) {
             int v2 = *ptr0;
             int v3 = *(int*)(counter * 4 + param0 - 4);
             int v4 = *(int*)(counter * 4 + param0 - 4);
-            result = *(int*)(v1 + 8) - *(int*)(v3 + 8);
-            if(result >= 0) {
+            result = *(unsigned int*)(v1 + 8) - *(unsigned int*)(v3 + 8);
+            if(result < 0x80000000) {
                 return result;
             }
             *ptr0 = v4;
@@ -437,7 +430,9 @@ int fde_insert(int param0, int param1, int param2) {
 
 int find_fde(int param0) {
     int result1;
-    int v0 = &loc_8048C8E;
+    int v0;
+    int v1 = v0;
+    int v2 = &loc_8048C8E;
     int* ptr0 = objects;
     if(ptr0) {
         do {
@@ -455,26 +450,26 @@ int find_fde(int param0) {
         if(!ptr0) {
             return 0;
         }
-        unsigned int v1 = 0;
-        int v2 = ptr0[4];
-        int v3 = ptr0[4];
-        if((unsigned int)v2 <= 0) {
+        unsigned int v3 = 0;
+        int v4 = ptr0[4];
+        int v5 = ptr0[4];
+        if((unsigned int)v4 <= 0) {
             return 0;
         }
-        int v4 = ptr0[3];
+        int v6 = ptr0[3];
         do {
-            int v5 = (v1 + v3) >>> 1;
-            v2 = *(int*)(v5 * 4 + v4);
-            int result = *(int*)(v5 * 4 + v4);
-            int v6 = *(int*)(v2 + 8);
-            if((unsigned int)v6 > (unsigned int)param0) {
-                v3 = v5;
+            int v7 = (v3 + v5) >>> 1;
+            v4 = *(int*)(v7 * 4 + v6);
+            int result = *(int*)(v7 * 4 + v6);
+            int v8 = *(int*)(v4 + 8);
+            if((unsigned int)v8 > (unsigned int)param0) {
+                v5 = v7;
                 goto loc_8048D11;
             }
-            if((unsigned int)(*(int*)(result + 12) + v6) < (unsigned int)param0) {
-                v1 = (unsigned int)(v5 + 1);
+            if((unsigned int)(*(int*)(result + 12) + v8) < (unsigned int)param0) {
+                v3 = (unsigned int)(v7 + 1);
             loc_8048D11:
-                if(v1 >= (unsigned int)v3) {
+                if(v3 >= (unsigned int)v5) {
                     return 0;
                 }
             }
@@ -494,47 +489,60 @@ void fini_dummy() {
 }
 
 int frame_init(int* param0) {
+    int* ptr0;
+    unsigned int* ptr1;
     int v0;
-    int v1 = &loc_8048BA2;
-    unsigned int* ptr0 = *(unsigned int*)(param0 + 3);
-    if(ptr0) {
-        unsigned int* ptr1 = ptr0;
-        v0 = 0;
-        if(*ptr1) {
-            do {
-                int v2 = count_fdes(*ptr1);
-                v0 += v2;
-                ++ptr1;
-            }
-            while(*ptr1);
-        }
-    }
-    else {
-        v0 = count_fdes(*(int**)(param0 + 2));
-    }
-    *(param0 + 4) = v0;
-    void* ptr2 = →malloc((size_t)(v0 * 4));
-    int v3 = -1;
-    int result = 0;
-    v0 = 0;
-    int* ptr3 = *(unsigned int*)(param0 + 3);
+    int v1;
+    int v2 = v1;
+    unsigned int* ptr2 = (unsigned int*)&loc_8048BA2;
+    unsigned int* ptr3 = *(unsigned int*)(param0 + 3);
     if(ptr3) {
-        int* ptr4 = ptr3;
+        unsigned int* ptr4 = ptr3;
+        v0 = 0;
         if(*ptr4) {
-            unsigned int* ptr5 = &result;
             do {
-                add_fdes(*ptr4, (int)ptr2, &v0, &v3, ptr5);
+                int v3 = count_fdes(*ptr4);
+                v0 += v3;
                 ++ptr4;
             }
             while(*ptr4);
         }
     }
     else {
-        add_fdes(*(param0 + 2), (int)ptr2, &v0, &v3, &result);
+        v0 = count_fdes(*(unsigned int**)(param0 + 2));
     }
-    *(void**)(param0 + 3) = ptr2;
-    *param0 = v3;
-    *(param0 + 1) = result;
+    int v4 = v0;
+    *(param0 + 4) = v0;
+    int v5 = (int)→malloc((size_t)(v4 * 4));
+    int v6 = -1;
+    int v7 = 0;
+    v0 = 0;
+    unsigned int* ptr5 = *(unsigned int*)(param0 + 3);
+    if(ptr5) {
+        unsigned int* ptr6 = ptr5;
+        if(*ptr6) {
+            unsigned int* ptr7 = &v7;
+            do {
+                ptr2 = ptr7;
+                ptr1 = &v6;
+                ptr0 = &v0;
+                add_fdes(*ptr6, v5, &v0, &v6, ptr7);
+                ++ptr6;
+            }
+            while(*ptr6);
+        }
+    }
+    else {
+        ptr2 = &v7;
+        ptr1 = &v6;
+        ptr0 = &v0;
+        add_fdes(*(unsigned int*)(param0 + 2), v5, &v0, &v6, &v7);
+    }
+    int* ptr8 = param0;
+    *(ptr8 + 3) = v5;
+    *ptr8 = v6;
+    int result = v7;
+    *(ptr8 + 1) = v7;
     return result;
 }
 
@@ -556,11 +564,6 @@ int printarg(int param0) {
     return →printf("Fifty five is %d\n", param0);
 }
 
-int sub_80487D9() {
-    jump gvar_804A4D8;
-}
-
-int sub_80488D8() {
-    call();
-    hlt();
+int sub_80487DE() {
+    return gvar_804A4D8();
 }

@@ -1,82 +1,79 @@
-JEB 4.0-beta.3.202103090424 (jeb-ce) is starting...
-Current directory: SUBJECTS
-Base directory: JEBDIR
-Program directory: JEBDIR/bin
-Java: Oracle Corporation 15.0.1
-External plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
-External plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
-External plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
-External plugin loaded: com.pnf.plugin.oat.OATPlugin
-External plugin loaded: com.pnf.plugin.pdf.PdfPlugin
-External plugin loaded: com.pnf.diemvm.DiemIdentifier
-External plugin loaded: com.pnf.diemvm.DiemDisassemblerPlugin
-External plugin loaded: com.pnf.diemvm.DiemDecompilerPlugin
-Initializing Jython, please wait...
+[I] JEB 4.11.0.202201181921 (jeb-ce) is starting...
+[I] Current directory: SUBJECTS
+[I] Base directory: JEBDIR
+[I] System: Mac OS X 12.2 (aarch64) de_DE
+[I] Java: Homebrew 17.0.1
+[I] Memory Usage: 36.0M used (228.0M free, 6.0G max)
+[I] Initializing Jython, please wait...
 Processing file: SUBJECTS/from_holdec/local_overlaps/ia32_elf/subject.exe...
-{subject.exe > subject.exe > x86 image}: Compiler detected from file format analysis -> unknown (Linux)
-{subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: LINEAR_SWEEP - data gaps: DEFAULT
-{subject.exe > subject.exe > x86 image}: Itanium RTTI memory scanner: cannot find sections to scan
-{subject.exe > subject.exe > x86 image}: No RTTI information recovered
-{subject.exe > subject.exe > x86 image}: Initial analysis completed (29 internal methods created)
+[I] {subject.exe > subject.exe > x86 image}: Detected compiler: unknown (Linux)
+[I] {subject.exe > subject.exe > x86 image}: Initial native analysis styles: code gaps: PROLOGUES_ONLY, data gaps: DEFAULT
+[I] {subject.exe > subject.exe > x86 image}: Analysis completed (0s)
+[I] {subject.exe > subject.exe > x86 image}: Initial analysis created 32 methods
 Output folder: jeb_output
-  0/ 29: Method: sub_8049030
-  1/ 29: 1/29: sub_8049030 (DONE:116ms)
-  1/ 29: Method: __x86.get_pc_thunk.bx
-  2/ 29: 2/29: __x86.get_pc_thunk.bx (DONE:28ms)
-  2/ 29: Method: modify
-  3/ 29: 3/29: modify (DONE:64ms)
-  3/ 29: Method: sub_80490E7
-  4/ 29: 4/29: sub_80490E7 (DONE:20ms)
-  4/ 29: Method: deregister_tm_clones
-  5/ 29: 5/29: deregister_tm_clones (DONE:67ms)
-  5/ 29: Method: register_tm_clones
-  6/ 29: 6/29: register_tm_clones (DONE:98ms)
-  6/ 29: Method: sub_8049046
-  7/ 29: 7/29: sub_8049046 (DONE:23ms)
-  7/ 29: Method: sub_8049040
-  8/ 29: 8/29: sub_8049040 (DONE:22ms)
-  8/ 29: Method: dump1
-  9/ 29: 9/29: dump1 (DONE:54ms)
-  9/ 29: Method: sub_8049056
- 10/ 29: 10/29: sub_8049056 (DONE:14ms)
- 10/ 29: Method: sub_8049050
- 11/ 29: 11/29: sub_8049050 (DONE:21ms)
- 11/ 29: Method: sub_8049066
- 12/ 29: 12/29: sub_8049066 (DONE:17ms)
- 12/ 29: Method: initializer_0
- 13/ 29: 13/29: initializer_0 (DONE:55ms)
- 13/ 29: Method: initializer_1
- 14/ 29: 14/29: initializer_1 (DONE:13ms)
- 14/ 29: Method: dump2
- 15/ 29: 15/29: dump2 (DONE:37ms)
- 15/ 29: Method: test1
- 16/ 29: 16/29: test1 (DONE:81ms)
- 16/ 29: Method: test2
- 17/ 29: 17/29: test2 (DONE:80ms)
- 17/ 29: Method: test3
- 18/ 29: 18/29: test3 (DONE:93ms)
- 18/ 29: Method: test6
- 19/ 29: 19/29: test6 (DONE:81ms)
- 19/ 29: Method: test5
- 20/ 29: 20/29: test5 (DONE:82ms)
- 20/ 29: Method: sub_8049060
- 21/ 29: 21/29: sub_8049060 (DONE:13ms)
- 21/ 29: Method: test4
- 22/ 29: 22/29: test4 (DONE:65ms)
- 22/ 29: Method: _dl_relocate_static_pie
- 23/ 29: 23/29: _dl_relocate_static_pie (DONE:9ms)
- 23/ 29: Method: __libc_csu_fini
- 24/ 29: 24/29: __libc_csu_fini (DONE:8ms)
- 24/ 29: Method: finalizer_0
- 25/ 29: 25/29: finalizer_0 (DONE:23ms)
- 25/ 29: Method: finalizer_1
-Emulation failed!
- 26/ 29: 26/29: finalizer_1 (DONE:87ms)
- 26/ 29: Method: __libc_csu_init
- 27/ 29: 27/29: __libc_csu_init (DONE:143ms)
- 27/ 29: Method: _start
- 28/ 29: 28/29: _start (DONE:70ms)
- 28/ 29: Method: main
- 29/ 29: 29/29: main (DONE:49ms)
-Exectime: 3.474000 sec
-Done.
+  0/ 32: Method: __x86.get_pc_thunk.bx
+  1/ 32: 1/32: __x86.get_pc_thunk.bx (DONE:42ms)
+  1/ 32: Method: sub_8049140
+  2/ 32: 2/32: sub_8049140 (DONE:5ms)
+  2/ 32: Method: sub_8049188
+  3/ 32: 3/32: sub_8049188 (DONE:4ms)
+  3/ 32: Method: sub_8049036
+  4/ 32: 4/32: sub_8049036 (DONE:23ms)
+  4/ 32: Method: →puts
+  5/ 32: 5/32: →puts (DONE:23ms)
+  5/ 32: Method: →printf
+  6/ 32: 6/32: →printf (DONE:15ms)
+  6/ 32: Method: dump1
+  7/ 32: 7/32: dump1 (DONE:38ms)
+  7/ 32: Method: modify
+  8/ 32: 8/32: modify (DONE:12ms)
+  8/ 32: Method: sub_80490E7
+  9/ 32: 9/32: sub_80490E7 (DONE:4ms)
+  9/ 32: Method: sub_80491B8
+ 10/ 32: 10/32: sub_80491B8 (DONE:3ms)
+ 10/ 32: Method: initializer_0
+ 11/ 32: 11/32: initializer_0 (DONE:44ms)
+ 11/ 32: Method: sub_804911C
+ 12/ 32: 12/32: sub_804911C (DONE:16ms)
+ 12/ 32: Method: sub_8049168
+ 13/ 32: 13/32: sub_8049168 (DONE:14ms)
+ 13/ 32: Method: →__libc_start_main
+ 14/ 32: 14/32: →__libc_start_main (DONE:12ms)
+ 14/ 32: Method: dump2
+ 15/ 32: 15/32: dump2 (DONE:26ms)
+ 15/ 32: Method: test1
+ 16/ 32: 16/32: test1 (DONE:53ms)
+ 16/ 32: Method: test2
+ 17/ 32: 17/32: test2 (DONE:32ms)
+ 17/ 32: Method: test3
+ 18/ 32: 18/32: test3 (DONE:45ms)
+ 18/ 32: Method: test6
+ 19/ 32: 19/32: test6 (DONE:63ms)
+ 19/ 32: Method: test5
+ 20/ 32: 20/32: test5 (DONE:36ms)
+ 20/ 32: Method: deregister_tm_clones
+ 21/ 32: 21/32: deregister_tm_clones (DONE:8ms)
+ 21/ 32: Method: register_tm_clones
+ 22/ 32: 22/32: register_tm_clones (DONE:32ms)
+ 22/ 32: Method: test4
+ 23/ 32: 23/32: test4 (DONE:39ms)
+ 23/ 32: Method: sub_804919D
+ 24/ 32: 24/32: sub_804919D (DONE:15ms)
+ 24/ 32: Method: initializer_1
+ 25/ 32: 25/32: initializer_1 (DONE:4ms)
+ 25/ 32: Method: _dl_relocate_static_pie
+ 26/ 32: 26/32: _dl_relocate_static_pie (DONE:2ms)
+ 26/ 32: Method: __libc_csu_fini
+ 27/ 32: 27/32: __libc_csu_fini (DONE:2ms)
+ 27/ 32: Method: finalizer_0
+ 28/ 32: 28/32: finalizer_0 (DONE:11ms)
+ 28/ 32: Method: _start
+ 29/ 32: 29/32: _start (DONE:33ms)
+ 29/ 32: Method: main
+ 30/ 32: 30/32: main (DONE:24ms)
+ 30/ 32: Method: finalizer_1
+ 31/ 32: 31/32: finalizer_1 (DONE:10ms)
+ 31/ 32: Method: __libc_csu_init
+ 32/ 32: 32/32: __libc_csu_init (DONE:125ms)
+Exectime: 1.390000 sec
+[I] Done.
