@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 #set -x
@@ -53,7 +53,7 @@ do
     find jeb_output -type f -print0 | env -i LANG=C sort -z | xargs -0 cat >jeb_all.c
 
     cleanup jeb_all.c $dir/by_jeb.all.c
-    gzip -9 -n $dir/by_jeb.all.c    
+    gzip -9 -n $dir/by_jeb.all.c
 
     rm -f jeb_output/{__do_global_ctors_aux.c,__do_global_dtors_aux.c,__libc_csu_fini.c,__libc_csu_init.c,_start.c,call_gmon_start.c,finalizer_0.c,frame_dummy.c,initializer_0.c,__x86.get_pc_thunk.bx.c,_dl_relocate_static_pie.c,register_tm_clones.c,deregister_tm_clones.c,finalizer_1.c,initializer_1.c}
     rm -rf jeb_output/→* jeb_output/r→*

@@ -1,4 +1,0 @@
-
-void start() {
-    // Decompilation error
-}
