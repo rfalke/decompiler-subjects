@@ -59,7 +59,7 @@ d4 intermediate_10_double_word_signed_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 ARG_
     (void) puts("diff");
   }
   reg_h = __moddi3();
-  if((NARROW(UNSIGNED_EXTEND(reg_a) * UNSIGNED_EXTEND(reg_f) / 4294967296) + reg_a * reg_b + reg_c * reg_f ^ reg_d) == 0 && (reg_e ^ reg_h) == 0) {
+  if(reg_d == NARROW(UNSIGNED_EXTEND(reg_a) * UNSIGNED_EXTEND(reg_f) / 4294967296) + reg_a * reg_b + reg_c * reg_f && reg_e == reg_h) {
     (void) puts("modulo");
   }
   return 0;
@@ -95,7 +95,7 @@ d4 intermediate_10_double_word_unsigned_math(d4 ARG_0, d4 ARG_1, d4 ARG_2, d4 AR
     (void) puts("diff");
   }
   reg_h = __umoddi3();
-  if((NARROW(UNSIGNED_EXTEND(reg_a) * UNSIGNED_EXTEND(reg_f) / 4294967296) + reg_a * reg_b + reg_c * reg_f ^ reg_d) == 0 && (reg_e ^ reg_h) == 0) {
+  if(reg_d == NARROW(UNSIGNED_EXTEND(reg_a) * UNSIGNED_EXTEND(reg_f) / 4294967296) + reg_a * reg_b + reg_c * reg_f && reg_e == reg_h) {
     (void) puts("modulo");
   }
   return 0;
