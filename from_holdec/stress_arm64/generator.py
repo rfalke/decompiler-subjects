@@ -1,7 +1,7 @@
+import os
 import random
 import re
 import sys
-import os
 
 # x0 - scratch
 # x1 - scratch
@@ -61,7 +61,7 @@ random.seed(seed)
 expected = None
 if os.path.isfile(outputfn):
     partial_parsed = [x.split("=")[1].strip().split(" ") for x in open(outputfn).readlines()]
-    expected = [(x[0], x[2], x[4]) for x in partial_parsed]
+    expected = [(x[0], x[2], x[4], x[6]) for x in partial_parsed]
 
 lines = [x for x in open(inputfn).readlines() if x.strip() and x.strip()[0] != "#"]
 cblock = None
@@ -120,6 +120,7 @@ for i in lines:
         cblock["arr"] = ""
         cblock["counter"] = 0
         cblock["group"] = ""
+        cblock["satur"] = ""
         i = i.strip()
         for x in i.split(" "):
             k, v = x.split("=")
@@ -240,18 +241,15 @@ def load64Imm(hexValue, targetReg):
     assert hexValue.startswith("0x")
     hexValue = hexValue[2:]
     assert len(hexValue) == 16, [hexValue]
-    return """
-    movz %s, #0x%s
-    movk %s, #0x%s, lsl #16
-    movk %s, #0x%s, lsl #32
-    movk %s, #0x%s, lsl #48
-""" % (targetReg, hexValue[12:16],
-       targetReg, hexValue[8:12],
-       targetReg, hexValue[4:8],
-       targetReg, hexValue[0:4])
+    res = [
+        "movz %s, #0x%s" % (targetReg, hexValue[12:16]),
+        "movk %s, #0x%s, lsl #16" % (targetReg, hexValue[8:12]),
+        "movk %s, #0x%s, lsl #32" % (targetReg, hexValue[4:8]),
+        "movk %s, #0x%s, lsl #48" % (targetReg, hexValue[0:4])]
+    return "\n".join(["    " + x for x in res if "#0x0000, lsl" not in x]) + "\n"
 
 
-def write_function(name, lines):
+def write_function(name, lines, isSatur):
     formatching = "".join(lines).lower().replace(",", " , ").replace("{", " { ")
     formatching = formatching.strip().split(" ")
     formatching = " ".join(formatching[1:])
@@ -276,6 +274,13 @@ _a_method:
         out.write("; Setup GP registers %s\n" % gp_regs_used)
         for reg in gp_regs_used:
             out.write(load64Imm("0x%016x" % random.randint(0, 2 ** 64 - 1), "x%d" % reg))
+    if isSatur:
+        out.write("""
+; Clear FPSR.QC bit
+    mrs x0, FPSR
+    bic x0, x0, #(1<<27)
+    msr FPSR, x0
+    """)
 
     out.write("\n")
     for line in lines:
@@ -301,8 +306,19 @@ _a_method:
         firstGp = REG_GP_NUMBERS[0]
         out.write("    mov x%d, xzr\n" % (firstGp))
 
+    if isSatur:
+        out.write("""
+; Get FPSR.QC bit into x3
+    mrs x3, FPSR
+    asr x3, x3, #27
+    and x3, x3, #1
+
+""")
+    else:
+        out.write("    mov x3, xzr\n")
+
     if expected != None:
-        high, low, gp = expected[0]
+        high, low, gp, flags = expected[0]
         del expected[0]
         out.write(load64Imm(high, "x2"))
         out.write("    sub x0, x0, x2\n")
@@ -310,9 +326,14 @@ _a_method:
         out.write("    sub x1, x1, x2\n")
         if uses_gp:
             out.write(load64Imm(gp, "x2"))
-            out.write("  sub x%d, x%d, x2\n" % (firstGp, firstGp))
+            out.write("    sub x%d, x%d, x2\n" % (firstGp, firstGp))
         else:
             assert gp == "0x0000000000000000"
+        if isSatur:
+            out.write(load64Imm(flags, "x2"))
+            out.write("    sub x%d, x%d, x2\n" % (3, 3))
+        else:
+            assert flags == "0x0000000000000000"
 
     out.write("""
     adrp    x2, _dest_high@GOTPAGE
@@ -327,6 +348,10 @@ _a_method:
     ldr     x2, [x2, _dest_gp@GOTPAGEOFF]
     str     x%d, [x2]
 
+    adrp    x2, _dest_flags@GOTPAGE
+    ldr     x2, [x2, _dest_flags@GOTPAGEOFF]
+    str     x3, [x2]
+
     mov     w0, wzr
     ret
 """ % firstGp)
@@ -337,7 +362,7 @@ if 1:
         for i in range(numvariantsperinst):
             name = "inst_%d_var_%d" % (idx, i)
             lines = [expand(inst["inst"]) + (" ; %s MARKER FOR GREP" % name)]
-            write_function(name, lines)
+            write_function(name, lines, inst["satur"] != "")
 
     for var in range(numfunctions):
         name = "log_size_%d_var_%03d" % (logsize, var)
@@ -365,14 +390,15 @@ out.write("""
 long dest_high;
 long dest_low;
 long dest_gp;
+long dest_flags;
 """)
 if expected == None:
     out.write(r"""
 static void report(char *name) {
-  printf("h / l / gp = 0x%016lx / 0x%016lx / 0x%016lx = %15ld / %15ld / %15ld = %15lu / %15lu / %15lu %s\n", 
-    dest_high, dest_low, dest_gp,
-    dest_high, dest_low, dest_gp,
-    dest_high, dest_low, dest_gp,
+  printf("h / l / gp / flags = 0x%016lx / 0x%016lx / 0x%016lx / 0x%016lx = %15ld / %15ld / %15ld / %15ld = %15lu / %15lu / %15lu  / %15lu %s\n", 
+    dest_high, dest_low, dest_gp, dest_flags,
+    dest_high, dest_low, dest_gp, dest_flags,
+    dest_high, dest_low, dest_gp, dest_flags,
     name);
 }
 """)
@@ -388,7 +414,7 @@ for i in names:
     if expected == None:
         out.write('  %s(); report("%s");\n' % (i, i))
     else:
-        out.write('  {%s(); sum+=dest_high; sum+=dest_low; sum+=dest_gp;}\n' % (i))
+        out.write('  {%s(); sum+=dest_high; sum+=dest_low; sum+=dest_gp; sum+=dest_flags;}\n' % (i))
 out.write("""
   assert(sum==0);
   return 0;
