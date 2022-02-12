@@ -310,8 +310,8 @@ _a_method:
         out.write("""
 ; Get FPSR.QC bit into x3
     mrs x3, FPSR
+    and x3, x3, #(1<<27)
     asr x3, x3, #27
-    and x3, x3, #1
 
 """)
     else:

@@ -10892,7 +10892,7 @@ int main(int argc, char *argv[])
 {
   long sum=0;
   if(argc==2) {
-    puts("seed is 1644187116");
+    puts("seed is 1634801372");
   }
   {inst_0_var_0(); sum+=dest_high; sum+=dest_low; sum+=dest_gp; sum+=dest_flags;}
   {inst_0_var_1(); sum+=dest_high; sum+=dest_low; sum+=dest_gp; sum+=dest_flags;}
