@@ -74,20 +74,20 @@ Running phase: conversion of LLVM IR into BIR ( some time )
  -> converting function _fini ( some time )
 Running phase: removing functions from standard libraries ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = fib2_part_0(x22_0, x1_36_reload, x22_0)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = fib2_part_0()` -> skipping this edge
 Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = fib2_part_0(x22_0, x1_36_reload, x22_0)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var19 = fib2_part_0()` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_reg2mem = (fib2_part_0(x22_0, x1_36_reload, x22_0) & 4294967295)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_in_reg2mem = fib2_part_0()` -> skipping this edge
  -> running SimplifyArithmExprOptimizer ( some time )
  -> running IfStructureOptimizer ( some time )
  -> running LoopLastContinueOptimizer ( some time )
@@ -106,9 +106,9 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_reg2mem
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_reg2mem = (fib2_part_0(x22_0, x1_36_reload, x22_0) & 4294967295)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_in_reg2mem = fib2_part_0()` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_reg2mem = (fib2_part_0(x22_0, x1_36_reload, x22_0) & 4294967295)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x5_27_in_reg2mem = fib2_part_0()` -> skipping this edge
  -> running SelfAssignOptimizer ( some time )
  -> running VarDefForLoopOptimizer ( some time )
  -> running VarDefStmtOptimizer ( some time )

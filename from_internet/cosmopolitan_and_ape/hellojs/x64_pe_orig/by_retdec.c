@@ -4531,6 +4531,8 @@ int64_t function_40247a(int64_t * a1, int64_t a2, uint64_t a3) {
                         function_40241f();
                         // 0x40259d
                         function_40241f();
+                        // 0x40259d
+                        function_40241f();
                         goto lab_0x40259d;
                     }
                     goto lab_0x402556;

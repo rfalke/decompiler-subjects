@@ -2161,7 +2161,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -2459,28 +2459,23 @@ Running phase: variable renaming [readable] ( some time )
 Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
+Warning: In function_40105d(), found `break` outside of a loop or a switch statement.
+Warning: In function_4011d4(), found `break` outside of a loop or a switch statement.
+Warning: In function_402c35(), found `break` outside of a loop or a switch statement.
 Warning: In function_402c35(), found `break` outside of a loop or a switch statement.
 Warning: In function_4090ea(), found `break` outside of a loop or a switch statement.
 Warning: In function_4123ae(), found `break` outside of a loop or a switch statement.
-Warning: In function_413890(), found `break` outside of a loop or a switch statement.
-Warning: In function_413890(), found `break` outside of a loop or a switch statement.
-Warning: In function_413890(), found `break` outside of a loop or a switch statement.
-Warning: In function_4167ea(), found `break` outside of a loop or a switch statement.
-Warning: In function_4167ea(), found `break` outside of a loop or a switch statement.
+Warning: In function_417fe9(), found `break` outside of a loop or a switch statement.
+Warning: In function_417fe9(), found `break` outside of a loop or a switch statement.
 Warning: In function_418032(), found `break` outside of a loop or a switch statement.
-Warning: In function_418b4c(), found `break` outside of a loop or a switch statement.
-Warning: In function_418b4c(), found `break` outside of a loop or a switch statement.
-Warning: In function_418b4c(), found `break` outside of a loop or a switch statement.
 Warning: In function_41c942(), found `break` outside of a loop or a switch statement.
 Warning: In function_41c942(), found `break` outside of a loop or a switch statement.
 Warning: In function_41e537(), found `break` outside of a loop or a switch statement.
 Warning: In function_421efa(), found `break` outside of a loop or a switch statement.
 Warning: In function_427af5(), found `break` outside of a loop or a switch statement.
 Warning: In function_427af5(), found `break` outside of a loop or a switch statement.
-Warning: In function_42be33(), found `break` outside of a loop or a switch statement.
+Warning: In function_427af5(), found `break` outside of a loop or a switch statement.
 Warning: In function_42bf57(), found `break` outside of a loop or a switch statement.
-Warning: In function_42c4ea(), found `break` outside of a loop or a switch statement.
-Warning: In function_42c4ea(), found `break` outside of a loop or a switch statement.
 Warning: In function_431abe(), found `break` outside of a loop or a switch statement.
 Warning: In function_4328e9(), found `break` outside of a loop or a switch statement.
 Warning: In function_434f19(), found `break` outside of a loop or a switch statement.
@@ -2488,6 +2483,7 @@ Warning: In function_4352d4(), found `break` outside of a loop or a switch state
 Warning: In function_43588c(), found `break` outside of a loop or a switch statement.
 Warning: In function_43588c(), found `break` outside of a loop or a switch statement.
 Warning: In function_4396ed(), found `break` outside of a loop or a switch statement.
+Warning: In function_43a438(), found `break` outside of a loop or a switch statement.
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )

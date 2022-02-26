@@ -139,7 +139,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -205,7 +205,6 @@ Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
 Warning: In function_40105d(), found `break` outside of a loop or a switch statement.
-Warning: In function_4011d4(), found `break` outside of a loop or a switch statement.
 Warning: In function_401dd6(), found `break` outside of a loop or a switch statement.
 Warning: In function_40238e(), found `break` outside of a loop or a switch statement.
 Warning: In function_40238e(), found `break` outside of a loop or a switch statement.

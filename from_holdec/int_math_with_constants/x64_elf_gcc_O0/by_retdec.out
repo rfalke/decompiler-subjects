@@ -98,36 +98,35 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
  -> running CopyPropagationOptimizer ( some time )
-RETDECDIR/bin/retdec-decompiler[0xf3d44a]
-RETDECDIR/bin/retdec-decompiler[0xf3b4f4]
-RETDECDIR/bin/retdec-decompiler[0xf3b655]
-/lib64/libpthread.so.0(+0x12e70)[0x7f2022257e70]
-/lib64/libstdc++.so.6(_ZSt18_Rb_tree_incrementPSt18_Rb_tree_node_base+0x17)[0x7f202213c007]
-RETDECDIR/bin/retdec-decompiler[0x780938]
-RETDECDIR/bin/retdec-decompiler[0x9409e6]
-RETDECDIR/bin/retdec-decompiler[0x944bd8]
-RETDECDIR/bin/retdec-decompiler[0x945160]
-RETDECDIR/bin/retdec-decompiler[0x926a7d]
-RETDECDIR/bin/retdec-decompiler[0x93c914]
-RETDECDIR/bin/retdec-decompiler[0x926da9]
-RETDECDIR/bin/retdec-decompiler[0x9270b8]
-RETDECDIR/bin/retdec-decompiler[0x9296db]
-RETDECDIR/bin/retdec-decompiler[0x927775]
-RETDECDIR/bin/retdec-decompiler[0xaf048c]
-RETDECDIR/bin/retdec-decompiler[0xaf2601]
-RETDECDIR/bin/retdec-decompiler[0x16e7ec4]
-RETDECDIR/bin/retdec-decompiler[0x688e7f]
-RETDECDIR/bin/retdec-decompiler[0x621771]
-RETDECDIR/bin/retdec-decompiler[0x54a644]
-/lib64/libc.so.6(__libc_start_main+0xf3)[0x7f2021d4a413]
-RETDECDIR/bin/retdec-decompiler[0x62056e]
+ #0 0x000000000116d8cb llvm::sys::PrintStackTrace(llvm::raw_ostream&) (RETDECDIR/bin/retdec-decompiler+0x116d8cb)
+ #1 0x000000000116bcf4 llvm::sys::RunSignalHandlers() (RETDECDIR/bin/retdec-decompiler+0x116bcf4)
+ #2 0x000000000116be22 SignalHandler(int) (RETDECDIR/bin/retdec-decompiler+0x116be22)
+ #3 0x00007fc93bc5ea20 __restore_rt (/lib64/libpthread.so.0+0x13a20)
+ #4 0x00007fc93bad0087 std::_Rb_tree_increment(std::_Rb_tree_node_base*) (/lib64/libstdc++.so.6+0xc5087)
+ #5 0x0000000000817980 retdec::llvmir2hll::VarUsesVisitor::stmtHasBeenRemoved(std::shared_ptr<retdec::llvmir2hll::Statement>, std::shared_ptr<retdec::llvmir2hll::Function>) (RETDECDIR/bin/retdec-decompiler+0x817980)
+ #6 0x0000000000a3a3af retdec::llvmir2hll::CopyPropagationOptimizer::handleCaseEmptyUses(std::shared_ptr<retdec::llvmir2hll::Statement>, std::shared_ptr<retdec::llvmir2hll::Variable>) (RETDECDIR/bin/retdec-decompiler+0xa3a3af)
+ #7 0x0000000000a4202f retdec::llvmir2hll::CopyPropagationOptimizer::performOptimization() (RETDECDIR/bin/retdec-decompiler+0xa4202f)
+ #8 0x0000000000a42740 retdec::llvmir2hll::CopyPropagationOptimizer::runOnFunction(std::shared_ptr<retdec::llvmir2hll::Function>) (RETDECDIR/bin/retdec-decompiler+0xa42740)
+ #9 0x0000000000a1d94b retdec::llvmir2hll::FuncOptimizer::doOptimization() (RETDECDIR/bin/retdec-decompiler+0xa1d94b)
+#10 0x0000000000a1dbf9 retdec::llvmir2hll::Optimizer::optimize() (RETDECDIR/bin/retdec-decompiler+0xa1dbf9)
+#11 0x0000000000a1e730 retdec::llvmir2hll::OptimizerManager::runOptimizerProvidedItShouldBeRun(std::shared_ptr<retdec::llvmir2hll::Optimizer>) (RETDECDIR/bin/retdec-decompiler+0xa1e730)
+#12 0x0000000000a254f6 void retdec::llvmir2hll::OptimizerManager::run<retdec::llvmir2hll::CopyPropagationOptimizer, std::shared_ptr<retdec::llvmir2hll::ValueAnalysis>&, std::shared_ptr<retdec::llvmir2hll::CallInfoObtainer>&>(std::shared_ptr<retdec::llvmir2hll::Module>, std::shared_ptr<retdec::llvmir2hll::ValueAnalysis>&, std::shared_ptr<retdec::llvmir2hll::CallInfoObtainer>&) (RETDECDIR/bin/retdec-decompiler+0xa254f6)
+#13 0x0000000000a1e998 retdec::llvmir2hll::OptimizerManager::optimize(std::shared_ptr<retdec::llvmir2hll::Module>) (RETDECDIR/bin/retdec-decompiler+0xa1e998)
+#14 0x0000000000c5a04d retdec::llvmir2hll::LlvmIr2Hll::runOptimizations() (RETDECDIR/bin/retdec-decompiler+0xc5a04d)
+#15 0x0000000000c5b874 retdec::llvmir2hll::LlvmIr2Hll::runOnModule(llvm::Module&) (RETDECDIR/bin/retdec-decompiler+0xc5b874)
+#16 0x00000000019a246e llvm::legacy::PassManagerImpl::run(llvm::Module&) (RETDECDIR/bin/retdec-decompiler+0x19a246e)
+#17 0x00000000006cdb20 retdec::decompile(retdec::config::Config&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (RETDECDIR/bin/retdec-decompiler+0x6cdb20)
+#18 0x000000000065ae07 decompile(retdec::config::Config&, ProgramOptions&) (RETDECDIR/bin/retdec-decompiler+0x65ae07)
+#19 0x00000000005712d0 main (RETDECDIR/bin/retdec-decompiler+0x5712d0)
+#20 0x00007fc93b702b75 __libc_start_main (/lib64/libc.so.6+0x27b75)
+#21 0x000000000065279e _start (RETDECDIR/bin/retdec-decompiler+0x65279e)
 Stack dump:
 0.	Program arguments: RETDECDIR/bin/retdec-decompiler --cleanup --no-memory-limit -o from_holdec/int_math_with_constants/x64_elf_gcc_O0/retdec_subject.c from_holdec/int_math_with_constants/x64_elf_gcc_O0/subject.exe 
 1.	Running pass 'LLVM IR -> HLL' on module ''.

@@ -271,25 +271,25 @@ Running phase: conversion of LLVM IR into BIR ( some time )
 Running phase: removing functions from standard libraries ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(gfp, 3)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var235 = local_strcasecmp(var16, "nogapout")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(var1, 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var236 = local_strcasecmp(var17, "nogapout")` -> skipping this edge
 Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(gfp, 3)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var235 = local_strcasecmp(var16, "nogapout")` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(var1, 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var236 = local_strcasecmp(var17, "nogapout")` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(gfp, 3)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if ((local_strcasecmp(var16, "nogapout") == 0) == False):
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(var1, 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if ((local_strcasecmp(var17, "nogapout") == 0) == False):
 else:` -> skipping this edge
  -> running SimplifyArithmExprOptimizer ( some time )
  -> running IfStructureOptimizer ( some time )
@@ -310,21 +310,21 @@ else:` -> skipping this edge
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `iread__2d_24_043_reload = iread__2d_24_043_reg2mem` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(gfp, 3)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (local_strcasecmp(var16, "nogapout") != 0):
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(var1, 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (local_strcasecmp(var17, "nogapout") != 0):
 else:` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `iread__2d_24_043_reload = iread__2d_24_043_reg2mem` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(gfp, 3)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (local_strcasecmp(var16, "nogapout") != 0):
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = make_even_number_of_bytes_in_length(Read32BitsHighLow(sf))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `function_804a8ac(var1, 3)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `if (local_strcasecmp(var17, "nogapout") != 0):
 else:` -> skipping this edge
  -> running SelfAssignOptimizer ( some time )
  -> running VarDefForLoopOptimizer ( some time )
@@ -342,7 +342,6 @@ Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
 Warning: In parse_wave_header(), found `break` outside of a loop or a switch statement.
-Warning: In parse_args(), found `break` outside of a loop or a switch statement.
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )

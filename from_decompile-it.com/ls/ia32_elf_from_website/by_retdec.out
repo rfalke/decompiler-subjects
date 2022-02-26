@@ -219,7 +219,7 @@ Running phase: conversion of LLVM IR into BIR ( some time )
  -> converting function fstat64 ( some time )
  -> converting function lstat64 ( some time )
 Running phase: removing functions from standard libraries ( some time )
- -> removing atexit() ( some time )
+Running phase: removing atexit() ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(BitCastExpr<ptr>(&(print_with_color))) = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `q__2d_12 = IntToPtrCastExpr<ptr>((PtrToIntCastExpr<int32>(var4) + 1))` -> skipping this edge
@@ -229,7 +229,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge20 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8058364` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80583a1` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var111 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(IntToPtrCastExpr<ptr>(stack_var__2d_908_7_reload)) = 76` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805dcb8` -> skipping this edge
@@ -237,7 +237,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -251,7 +251,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge20 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8058364` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80583a1` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var111 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(IntToPtrCastExpr<ptr>(stack_var__2d_908_7_reload)) = 76` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805dcb8` -> skipping this edge
@@ -264,7 +264,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge20 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8058364` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80583a1` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var111 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(IntToPtrCastExpr<ptr>(stack_var__2d_908_7_reload)) = 76` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805dcb8` -> skipping this edge
@@ -295,7 +295,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge20 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8058364` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80583a1` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var111 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(IntToPtrCastExpr<ptr>(stack_var__2d_908_7_reload)) = 76` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge43238_reload = storemerge43238_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805dcb8` -> skipping this edge
@@ -309,7 +309,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge20 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8058364` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80583a1` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var112 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var111 = *(IntToPtrCastExpr<ptr>((storemerge_reload + 20)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(IntToPtrCastExpr<ptr>(stack_var__2d_908_7_reload)) = 76` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `storemerge43238_reload = storemerge43238_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805dcb8` -> skipping this edge

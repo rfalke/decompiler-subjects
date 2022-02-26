@@ -1,5 +1,5 @@
 Running phase: Unpacking ( some time )
-No matching plugins found for 'p7zip SFX'
+[ERROR] [UPX] Unsupported unpacking stub detected.
 Running phase: Initialization ( some time )
 Running phase: Providers initialization ( some time )
 Running phase: Input binary to LLVM IR decoding ( some time )
@@ -57,7 +57,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )

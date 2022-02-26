@@ -505,6 +505,6 @@ int main(int argc, char ** argv) {
 
 // --------------------- Meta-Information ---------------------
 
-// Detected compiler/packer: p7zip sfx
+// Detected compiler/packer: upx (3.93 [lzma])
 // Detected functions: 1
 

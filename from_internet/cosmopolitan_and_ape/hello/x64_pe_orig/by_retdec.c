@@ -1645,6 +1645,8 @@ int64_t function_401afe(int64_t * a1, int64_t a2, uint64_t a3) {
                         function_401aa3();
                         // 0x401c29
                         function_401aa3();
+                        // 0x401c29
+                        function_401aa3();
                         goto lab_0x401c29;
                     }
                     goto lab_0x401be3;

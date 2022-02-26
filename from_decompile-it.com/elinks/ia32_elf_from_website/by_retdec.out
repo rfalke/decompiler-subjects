@@ -349,30 +349,30 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806145
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var28)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), BitCastExpr<ptr>(&(var10)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = IntToPtrCastExpr<ptr>(var9)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var18 = *(IntToPtrCastExpr<ptr>((var2 + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var132 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var202 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var351 = mem_realloc(var341, var340)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
 Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -383,24 +383,24 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806145
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var28)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), BitCastExpr<ptr>(&(var10)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = IntToPtrCastExpr<ptr>(var9)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var18 = *(IntToPtrCastExpr<ptr>((var2 + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var132 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var202 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var351 = mem_realloc(var341, var340)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
@@ -408,24 +408,24 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806145
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `_reload49 = _reg2mem48` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var28)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), BitCastExpr<ptr>(&(var10)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var17 = *(IntToPtrCastExpr<ptr>((term + 44)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var134 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = IntToPtrCastExpr<ptr>(var9)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var18 = *(IntToPtrCastExpr<ptr>((var2 + 44)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var132 = *(IntToPtrCastExpr<ptr>(stack_var__2d_136_7_reload))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var202 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var351 = mem_realloc(var341, var340)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
  -> running SimplifyArithmExprOptimizer ( some time )
  -> running IfStructureOptimizer ( some time )
@@ -450,26 +450,26 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806145
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var28)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), BitCastExpr<ptr>(&(var10)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = IntToPtrCastExpr<ptr>(var9)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var202 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var351 = mem_realloc(var341, var340)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8061390` -> skipping this edge
@@ -477,26 +477,26 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806145
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x806b8f4` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `assert_failed = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var27)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `mem_free(var28)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b10d0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b1c6d` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), PtrToIntCastExpr<int32>(&(var10)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var45 = new_exp(var30, PtrToIntCastExpr<int32>(&(var10)), BitCastExpr<ptr>(&(var10)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80b3700` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reg2mem = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(string, 47)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var9 = IntToPtrCastExpr<ptr>(var8)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = IntToPtrCastExpr<ptr>(var9)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var57, 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `# empty statement` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_15_reload = esi_15_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e088b` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var204 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(var95, 32)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var353 = mem_realloc(var343, var342)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var202 = *(IntToPtrCastExpr<ptr>((stack_var__2d_120_1_reload + 4)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `add_char_to_string(BitCastExpr<ptr>(&(stack_var__2d_80)), 32)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var351 = mem_realloc(var341, var340)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80e0ed5` -> skipping this edge
  -> running SelfAssignOptimizer ( some time )
  -> running VarDefForLoopOptimizer ( some time )
@@ -513,21 +513,16 @@ Running phase: variable renaming [readable] ( some time )
 Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
+Warning: In bookmark_terminal(), found `break` outside of a loop or a switch statement.
 Warning: In shrink_format_cache(), found `break` outside of a loop or a switch statement.
-Warning: In get_entity_string(), found `break` outside of a loop or a switch statement.
-Warning: In _nl_find_msg(), found `break` outside of a loop or a switch statement.
-Warning: In _nl_find_msg(), found `break` outside of a loop or a switch statement.
-Warning: In _nl_normalize_codeset(), found `break` outside of a loop or a switch statement.
-Warning: In _nl_normalize_codeset(), found `break` outside of a loop or a switch statement.
+Warning: In T_163(), found `break` outside of a loop or a switch statement.
+Warning: In T_163(), found `break` outside of a loop or a switch statement.
+Warning: In dcigettext__(), found `break` outside of a loop or a switch statement.
 Warning: In _nl_make_l10nflist(), found `break` outside of a loop or a switch statement.
 Warning: In _nl_expand_alias(), found `break` outside of a loop or a switch statement.
 Warning: In select_loop(), found `break` outside of a loop or a switch statement.
 Warning: In get_user_program(), found `break` outside of a loop or a switch statement.
 Warning: In get_user_program(), found `break` outside of a loop or a switch statement.
-Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
-Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
-Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
-Warning: In set_term_color(), found `break` outside of a loop or a switch statement.
 Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
 Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.
 Warning: In fastfind_search(), found `break` outside of a loop or a switch statement.

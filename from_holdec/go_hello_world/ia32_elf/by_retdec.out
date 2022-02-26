@@ -650,7 +650,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -725,6 +725,7 @@ Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
 Warning: In runtime_gcDrain(), found `break` outside of a loop or a switch statement.
 Warning: In runtime_testdefersizes(), found `break` outside of a loop or a switch statement.
+Warning: In runtime_gopanic(), found `break` outside of a loop or a switch statement.
 Warning: In runtime_acquireSudog(), found `break` outside of a loop or a switch statement.
 Warning: In runtime_index(), found `break` outside of a loop or a switch statement.
 Warning: In runtime_findmoduledatap(), found `break` outside of a loop or a switch statement.

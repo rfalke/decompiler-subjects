@@ -99,7 +99,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -125,262 +125,53 @@ Running phase: optimizations [normal] ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
  -> running CopyPropagationOptimizer ( some time )
-RETDECDIR/bin/retdec-decompiler[0xf3d44a]
-RETDECDIR/bin/retdec-decompiler[0xf3b4f4]
-RETDECDIR/bin/retdec-decompiler[0xf3b655]
-/lib64/libpthread.so.0(+0x12e70)[0x7f892cf83e70]
-RETDECDIR/bin/retdec-decompiler[0x8a8685]
-RETDECDIR/bin/retdec-decompiler[0x8a927c]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
-RETDECDIR/bin/retdec-decompiler[0x8a937f]
+ -> running SelfAssignOptimizer ( some time )
+ -> running VarDefForLoopOptimizer ( some time )
+ -> running VarDefStmtOptimizer ( some time )
+ -> running EmptyStmtOptimizer ( some time )
+ -> running GotoStmtOptimizer ( some time )
+ -> running SimplifyArithmExprOptimizer ( some time )
+ -> running DeadCodeOptimizer ( some time )
+ -> running DerefToArrayIndexOptimizer ( some time )
+ -> running IfToSwitchOptimizer ( some time )
+ -> running CCastOptimizer ( some time )
+ -> running CArrayArgOptimizer ( some time )
+Running phase: variable renaming [readable] ( some time )
+Running phase: converting constants to symbolic names ( some time )
+Running phase: module validation ( some time )
+ -> running BreakOutsideLoopValidator ( some time )
+ -> running NoGlobalVarDefValidator ( some time )
+ -> running ReturnValidator ( some time )
+Running phase: emission of the target code [c] ( some time )
+ #0 0x000000000116d8cb llvm::sys::PrintStackTrace(llvm::raw_ostream&) (RETDECDIR/bin/retdec-decompiler+0x116d8cb)
+ #1 0x000000000116bcf4 llvm::sys::RunSignalHandlers() (RETDECDIR/bin/retdec-decompiler+0x116bcf4)
+ #2 0x000000000116be22 SignalHandler(int) (RETDECDIR/bin/retdec-decompiler+0x116be22)
+ #3 0x00007f5584c29a20 __restore_rt (/lib64/libpthread.so.0+0x13a20)
+ #4 0x000000000094a4b4 retdec::llvmir2hll::GlobalVarDef::getVar() const (RETDECDIR/bin/retdec-decompiler+0x94a4b4)
+ #5 0x000000000096da41 retdec::llvmir2hll::Module::isGlobalVar(std::shared_ptr<retdec::llvmir2hll::Variable>) const (RETDECDIR/bin/retdec-decompiler+0x96da41)
+ #6 0x00000000008b1ac2 retdec::llvmir2hll::CHLLWriter::visit(std::shared_ptr<retdec::llvmir2hll::Variable>) (RETDECDIR/bin/retdec-decompiler+0x8b1ac2)
+ #7 0x00000000009bbd28 retdec::llvmir2hll::Variable::accept(retdec::llvmir2hll::Visitor*) (RETDECDIR/bin/retdec-decompiler+0x9bbd28)
+ #8 0x00000000008a40e5 retdec::llvmir2hll::HLLWriter::emitBinaryOpExpr(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<retdec::llvmir2hll::BinaryOpExpr>, bool, bool) (RETDECDIR/bin/retdec-decompiler+0x8a40e5)
+ #9 0x00000000008b120d retdec::llvmir2hll::CHLLWriter::visit(std::shared_ptr<retdec::llvmir2hll::AddOpExpr>) (RETDECDIR/bin/retdec-decompiler+0x8b120d)
+#10 0x00000000008d24c8 retdec::llvmir2hll::AddOpExpr::accept(retdec::llvmir2hll::Visitor*) (RETDECDIR/bin/retdec-decompiler+0x8d24c8)
+#11 0x00000000008bdfe8 retdec::llvmir2hll::CHLLWriter::visit(std::shared_ptr<retdec::llvmir2hll::VarDefStmt>) (RETDECDIR/bin/retdec-decompiler+0x8bdfe8)
+#12 0x00000000009b5548 retdec::llvmir2hll::VarDefStmt::accept(retdec::llvmir2hll::Visitor*) (RETDECDIR/bin/retdec-decompiler+0x9b5548)
+#13 0x00000000008b38be retdec::llvmir2hll::CHLLWriter::emitBlock(std::shared_ptr<retdec::llvmir2hll::Statement>) (RETDECDIR/bin/retdec-decompiler+0x8b38be)
+#14 0x00000000008b94be retdec::llvmir2hll::CHLLWriter::emitFunctionDefinition(std::shared_ptr<retdec::llvmir2hll::Function>) (RETDECDIR/bin/retdec-decompiler+0x8b94be)
+#15 0x00000000008b95ad retdec::llvmir2hll::CHLLWriter::visit(std::shared_ptr<retdec::llvmir2hll::Function>) (RETDECDIR/bin/retdec-decompiler+0x8b95ad)
+#16 0x000000000093d835 retdec::llvmir2hll::Function::accept(retdec::llvmir2hll::Visitor*) (RETDECDIR/bin/retdec-decompiler+0x93d835)
+#17 0x00000000008add85 retdec::llvmir2hll::HLLWriter::emitFunction(std::shared_ptr<retdec::llvmir2hll::Function>) (RETDECDIR/bin/retdec-decompiler+0x8add85)
+#18 0x00000000008ad089 retdec::llvmir2hll::HLLWriter::emitFunctions() (RETDECDIR/bin/retdec-decompiler+0x8ad089)
+#19 0x00000000008ac617 retdec::llvmir2hll::HLLWriter::emitTargetCode(std::shared_ptr<retdec::llvmir2hll::Module>) (RETDECDIR/bin/retdec-decompiler+0x8ac617)
+#20 0x00000000008b5ab8 retdec::llvmir2hll::CHLLWriter::emitTargetCode(std::shared_ptr<retdec::llvmir2hll::Module>) (RETDECDIR/bin/retdec-decompiler+0x8b5ab8)
+#21 0x0000000000c56170 retdec::llvmir2hll::LlvmIr2Hll::emitTargetHLLCode() (RETDECDIR/bin/retdec-decompiler+0xc56170)
+#22 0x0000000000c5bb2d retdec::llvmir2hll::LlvmIr2Hll::runOnModule(llvm::Module&) (RETDECDIR/bin/retdec-decompiler+0xc5bb2d)
+#23 0x00000000019a246e llvm::legacy::PassManagerImpl::run(llvm::Module&) (RETDECDIR/bin/retdec-decompiler+0x19a246e)
+#24 0x00000000006cdb20 retdec::decompile(retdec::config::Config&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*) (RETDECDIR/bin/retdec-decompiler+0x6cdb20)
+#25 0x000000000065ae07 decompile(retdec::config::Config&, ProgramOptions&) (RETDECDIR/bin/retdec-decompiler+0x65ae07)
+#26 0x00000000005712d0 main (RETDECDIR/bin/retdec-decompiler+0x5712d0)
+#27 0x00007f55846cdb75 __libc_start_main (/lib64/libc.so.6+0x27b75)
+#28 0x000000000065279e _start (RETDECDIR/bin/retdec-decompiler+0x65279e)
 Stack dump:
 0.	Program arguments: RETDECDIR/bin/retdec-decompiler --cleanup --no-memory-limit -o from_holdec/int_math_with_constants/x64_elf_clang_O1/retdec_subject.c from_holdec/int_math_with_constants/x64_elf_clang_O1/subject.exe 
 1.	Running pass 'LLVM IR -> HLL' on module ''.

@@ -374,7 +374,7 @@ Running phase: conversion of LLVM IR into BIR ( some time )
  -> converting function __i686.get_pc_thunk.bx ( some time )
  -> converting function atexit ( some time )
 Running phase: removing functions from standard libraries ( some time )
- -> removing atexit() ( some time )
+Running phase: removing atexit() ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var61 = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
@@ -385,9 +385,9 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var833 = *(IntToPtrCastExpr<ptr>((var827 + 135580097)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var126)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
@@ -395,7 +395,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -410,9 +410,9 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var833 = *(IntToPtrCastExpr<ptr>((var827 + 135580097)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var126)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
@@ -426,9 +426,9 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload 
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_19_reload = eax_19_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var858 = *(IntToPtrCastExpr<ptr>((var850 + 135580097)))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var833 = *(IntToPtrCastExpr<ptr>((var827 + 135580097)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var126)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var30 = *(IntToPtrCastExpr<ptr>((eax_3_reload + 4)))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
@@ -453,20 +453,20 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d414
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var15 = strtok(NULL, ":")` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_1_reg2mem = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = var29` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = var45` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = eax_7_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = var60` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = eax_9_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var116 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ade06` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var831) = (var830 - 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `yynerrs = (var811 - 2)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_3220_5_reg2mem = eax_1_reload` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ca090_2` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var126)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80cfecc` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
@@ -475,20 +475,20 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `ebx_12_reload
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var33 = doing_pinout` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var15 = strtok(NULL, ":")` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_1_reg2mem = strlen(IntToPtrCastExpr<ptr>(edi_2_reload))` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = var29` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = var45` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_5_reload = eax_5_reg2mem` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_7_reload = eax_7_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = var60` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `eax_9_reload = eax_9_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a178a_2` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80a578f` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var116 = IntToPtrCastExpr<ptr>((eax_44_reg2mem + 96))` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_0_reload = edi_0_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80adad7` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ade06` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `*(var831) = (var830 - 2)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `yynerrs = (var811 - 2)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_3220_5_reg2mem = eax_1_reload` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80ca090_2` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var127)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `__frontend_reg_store_fpr(var27, var126)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80cfecc` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4084` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x80d4141` -> skipping this edge
@@ -509,23 +509,11 @@ Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
 Warning: In ResetFoundPinsViasAndPads(), found `break` outside of a loop or a switch statement.
-Warning: In print_defaults_1(), found `break` outside of a loop or a switch statement.
 Warning: In GetGroupOfLayer(), found `break` outside of a loop or a switch statement.
 Warning: In GetLayerGroupNumberByNumber(), found `break` outside of a loop or a switch statement.
-Warning: In yylex(), found `break` outside of a loop or a switch statement.
-Warning: In yylex(), found `break` outside of a loop or a switch statement.
-Warning: In original_poly(), found `break` outside of a loop or a switch statement.
 Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
 Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
 Warning: In clearPoly(), found `break` outside of a loop or a switch statement.
-Warning: In common_flags_to_string(), found `break` outside of a loop or a switch statement.
-Warning: In common_flags_to_string(), found `break` outside of a loop or a switch statement.
-Warning: In common_string_to_flags(), found `break` outside of a loop or a switch statement.
-Warning: In common_string_to_flags(), found `break` outside of a loop or a switch statement.
-Warning: In hid_parse_actions(), found `break` outside of a loop or a switch statement.
-Warning: In hid_parse_actions(), found `break` outside of a loop or a switch statement.
-Warning: In hid_find_exporter(), found `break` outside of a loop or a switch statement.
-Warning: In hid_find_exporter(), found `break` outside of a loop or a switch statement.
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )

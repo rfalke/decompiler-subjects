@@ -2681,9 +2681,6 @@ int32_t test_3_blocks_variant_37_edges_6(void) {
             // 0x8049622
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
-            // 0x8049622
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
             goto lab_0x8049622;
         }
         *v2 = (int32_t)"block 2";
@@ -2808,6 +2805,9 @@ int32_t test_3_blocks_variant_41_edges_6(void) {
     while (g2 != 0) {
         // 0x8049767
         if (g3 != 0) {
+            // 0x8049772
+            *v2 = (int32_t)"block 4";
+            puts((char *)&g11);
             // 0x8049772
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
@@ -3326,9 +3326,6 @@ int32_t test_3_blocks_variant_56_edges_6(void) {
         *v2 = (int32_t)"block 3";
         puts((char *)&g11);
         if (g3 != 0) {
-            // 0x8049c5e
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
             // 0x8049c5e
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
@@ -7272,15 +7269,6 @@ int32_t test_3_blocks_variant_158_edges_7(void) {
             // 0x804bfce
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
-            // 0x804bfce
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
-            // 0x804bfce
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
-            // 0x804bfce
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
             goto lab_0x804bfce;
         }
         *v2 = (int32_t)"block 2";
@@ -7661,9 +7649,6 @@ int32_t test_3_blocks_variant_166_edges_7(void) {
             // 0x804c2b6
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
-            // 0x804c2b6
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
             goto lab_0x804c2b6;
         }
         *v2 = (int32_t)"block 3";
@@ -7678,9 +7663,6 @@ int32_t test_3_blocks_variant_166_edges_7(void) {
         while (g3 != 0) {
             // 0x804c2ab
             if (g4 != 0) {
-                // 0x804c2b6
-                *v2 = (int32_t)"block 4";
-                puts((char *)&g11);
                 // 0x804c2b6
                 *v2 = (int32_t)"block 4";
                 puts((char *)&g11);
@@ -8349,6 +8331,12 @@ int32_t test_3_blocks_variant_185_edges_7(void) {
                 // 0x804c99d
                 *v2 = (int32_t)"block 4";
                 puts((char *)&g11);
+                // 0x804c99d
+                *v2 = (int32_t)"block 4";
+                puts((char *)&g11);
+                // 0x804c99d
+                *v2 = (int32_t)"block 4";
+                puts((char *)&g11);
                 goto lab_0x804c99d;
             }
         }
@@ -8491,6 +8479,9 @@ int32_t test_3_blocks_variant_189_edges_7(void) {
     while (g3 != 0) {
         // 0x804cb06
         if (g4 != 0) {
+            // 0x804cb11
+            *v2 = (int32_t)"block 4";
+            puts((char *)&g11);
             // 0x804cb11
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
@@ -9993,6 +9984,9 @@ int32_t test_3_blocks_variant_228_edges_7(void) {
                 // 0x804d93c
                 *v2 = (int32_t)"block 4";
                 puts((char *)&g11);
+                // 0x804d93c
+                *v2 = (int32_t)"block 4";
+                puts((char *)&g11);
                 goto lab_0x804d93c;
             }
         }
@@ -10196,9 +10190,6 @@ int32_t test_3_blocks_variant_232_edges_7(void) {
             // 0x804dab0
             *v2 = (int32_t)"block 4";
             puts((char *)&g11);
-            // 0x804dab0
-            *v2 = (int32_t)"block 4";
-            puts((char *)&g11);
             goto lab_0x804dab0;
         }
     }
@@ -10212,9 +10203,6 @@ int32_t test_3_blocks_variant_232_edges_7(void) {
             *v2 = (int32_t)"block 3";
             puts((char *)&g11);
             if (g4 != 0) {
-                // 0x804dab0
-                *v2 = (int32_t)"block 4";
-                puts((char *)&g11);
                 // 0x804dab0
                 *v2 = (int32_t)"block 4";
                 puts((char *)&g11);
@@ -11016,6 +11004,9 @@ int32_t test_3_blocks_variant_252_edges_7(void) {
         *v2 = (int32_t)"block 4";
         puts((char *)&g11);
         if (g4 != 0) {
+            // 0x804e1dc
+            *v2 = (int32_t)"block 3";
+            puts((char *)&g11);
             // 0x804e1dc
             *v2 = (int32_t)"block 3";
             puts((char *)&g11);

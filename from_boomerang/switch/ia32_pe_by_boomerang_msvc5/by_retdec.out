@@ -1,5 +1,4 @@
 Running phase: Unpacking ( some time )
-No matching plugins found for 'InstallShield 2000'
 No matching plugins found for 'Microsoft'
 No matching plugins found for 'MSVC'
 Running phase: Initialization ( some time )
@@ -138,7 +137,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -208,7 +207,6 @@ Warning: In function_4037b0(), found `break` outside of a loop or a switch state
 Warning: In function_403880(), found `break` outside of a loop or a switch statement.
 Warning: In function_403b80(), found `break` outside of a loop or a switch statement.
 Warning: In function_403b80(), found `break` outside of a loop or a switch statement.
-Warning: In function_403f10(), found `break` outside of a loop or a switch statement.
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )

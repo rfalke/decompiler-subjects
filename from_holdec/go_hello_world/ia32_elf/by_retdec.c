@@ -32485,17 +32485,18 @@ void runtime_typesEqual(int32_t * t, int32_t * v, int32_t * seen, bool _7e_r3) {
             return;
         }
         int32_t v73 = 4 * v9 + v6 + (*v14 % 2 == 0 ? 36 : 52);
-        int32_t v74 = 0; // 0x808a2c3
+        uint32_t v74 = 0;
         while (v74 < v72 == v74 < v71 - v9) {
             int32_t v75 = 4 * v74; // 0x808a2e0
             int32_t v76 = *(int32_t *)(4 * v13 + v3 + (v10 == 0 ? 36 : 52) + v75); // 0x808a2e0
             int32_t v77 = *(int32_t *)(v73 + v75); // 0x808a2ef
             runtime_typesEqual((int32_t *)v76, (int32_t *)v77, seen, (bool)&g652);
-            v74++;
-            if ((char)v3 != 0 != v74 < v72) {
+            int32_t v78 = v74 + 1; // 0x808a2c3
+            if ((char)v3 != 0 != v78 < v72) {
                 // 0x808a043
                 return;
             }
+            v74 = v78;
         }
         // 0x808aba1
         runtime_panicindex();
@@ -32985,8 +32986,8 @@ void runtime_gcMarkRootPrepare_func1(int32_t bytes, int32_t _7e_r1) {
 // Address range: 0x808dd80 - 0x808dfbe
 // Line range:    12 - 227
 void runtime_rt0_go(void) {
-    struct struct3 v1; // 0x808de2c
-    struct struct1 v2; // 0x808ddf4
+    struct struct2 v1; // 0x808de2c
+    struct struct3 v2; // 0x808ddf4
     // 0x808dd80
     int32_t v3; // bp-65560, 0x808dd80
     int32_t v4 = &v3; // 0x808dda5

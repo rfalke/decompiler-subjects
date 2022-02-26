@@ -113,8 +113,8 @@ Running phase: conversion of LLVM IR into BIR ( some time )
  -> converting function atexit ( some time )
  -> converting function stat ( some time )
 Running phase: removing functions from standard libraries ( some time )
- -> removing atexit() ( some time )
- -> removing stat() ( some time )
+Running phase: removing atexit() ( some time )
+Running phase: removing stat() ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `len__2d_10268_0_reg2mem = len__2d_10268_1_ph35_reload` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var60 = global_var_8059260` -> skipping this edge
@@ -122,7 +122,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -176,7 +176,6 @@ Running phase: module validation ( some time )
 Warning: In binaries_exist(), found `break` outside of a loop or a switch statement.
 Warning: In restore_entries_gisman(), found `break` outside of a loop or a switch statement.
 Warning: In restore_entries_gisman(), found `break` outside of a loop or a switch statement.
-Warning: In restore_html(), found `break` outside of a loop or a switch statement.
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )

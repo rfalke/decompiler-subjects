@@ -71,8 +71,8 @@ int64_t register_tm_clones(void);
 int32_t S(int32_t s);
 int32_t w(void);
 int32_t W(int32_t s, int32_t a);
-int32_t X(int32_t s);
 int32_t x(int32_t d, int32_t a);
+int32_t X(int32_t s);
 
 // --------------------- Global Variables ---------------------
 

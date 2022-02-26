@@ -1144,11 +1144,11 @@ int32_t FMUL(int32_t a1) {
 
 // Address range: 0x804ab10 - 0x804ab6c
 int32_t FPATAN(int32_t a1) {
-    float64_t v1 = __asm_fpatan(1.0L / (float80_t)(float64_t)(int64_t)a1); // 0x804ab1b
+    float64_t v1 = __asm_fpatan(1.0L, (float80_t)(float64_t)(int64_t)a1); // 0x804ab1b
     printf("FPATAN(y=1 x=para): should=                             is=%12f/%15e\n", v1, v1);
-    float64_t v2 = __asm_fpatan(INFINITY); // 0x804ab38
+    float64_t v2 = __asm_fpatan(1.0L, 0.0L); // 0x804ab38
     printf("FPATAN(y=1 x=0):    should=    1.570796/   1.570796e+00 is=%12f/%15e\n", v2, v2);
-    float64_t v3 = __asm_fpatan(1.0L); // 0x804ab55
+    float64_t v3 = __asm_fpatan(1.0L, 1.0L); // 0x804ab55
     printf("FPATAN(y=1 x=1):    should=    0.785398/   7.853982e-01 is=%12f/%15e\n", v3, v3);
     return 0;
 }
@@ -1479,15 +1479,15 @@ int32_t FXTRACT(int32_t a1) {
     __pseudo_get_exponent(v1);
     float64_t v3 = v2; // 0x804b469
     printf("FXTRACT(para)[0=signi]:  should=                             is=%12f/%15e\n", v3, v3);
-    __pseudo_get_significand_1(v1);
-    float64_t v4 = __pseudo_get_exponent_2(v1); // 0x804b48a
+    __pseudo_get_significand(v1);
+    float64_t v4 = __pseudo_get_exponent(v1); // 0x804b48a
     printf("FXTRACT(para)[1=exp]:    should=                             is=%12f/%15e\n", v4, v4);
-    float80_t v5 = __pseudo_get_significand_3(12.34L); // 0x804b4a7
-    __pseudo_get_exponent_4(12.34L);
+    float80_t v5 = __pseudo_get_significand(12.34L); // 0x804b4a7
+    __pseudo_get_exponent(12.34L);
     float64_t v6 = v5; // 0x804b4a9
     printf("FXTRACT(12.34)[0=signi]: should=    1.542500/   1.542500e+00 is=%12f/%15e\n", v6, v6);
-    __pseudo_get_significand_5(12.34L);
-    float64_t v7 = __pseudo_get_exponent_6(12.34L); // 0x804b4cc
+    __pseudo_get_significand(12.34L);
+    float64_t v7 = __pseudo_get_exponent(12.34L); // 0x804b4cc
     printf("FXTRACT(12.34)[1=exp]:   should=    3.000000/   3.000000e+00 is=%12f/%15e\n", v7, v7);
     return 0;
 }

@@ -69,8 +69,8 @@ int64_t register_tm_clones(void);
 int32_t S(int32_t s);
 int64_t W(void);
 int64_t w(int64_t a1);
-int64_t x(void);
 int64_t X(void);
+int64_t x(void);
 int64_t X_constprop_6(void);
 
 // --------------------- Global Variables ---------------------

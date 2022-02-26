@@ -495,7 +495,7 @@ Running phase: conversion of LLVM IR into BIR ( some time )
  -> converting function _fini ( some time )
 Running phase: removing functions from standard libraries ( some time )
 Running phase: removing code that is not reachable in a CFG ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = *(var104)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var102 = *(var98)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804b625` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `global_var_806234c = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `edi_4_reload = edi_4_reg2mem` -> skipping this edge
@@ -518,19 +518,19 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805599
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1180_6_reg2mem = stack_var__2d_1180_0_ph_reload` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) / 16777216) + -1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) >> 24) + -1)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ffe` -> skipping this edge
 Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = *(var104)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var102 = *(var98)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804b625` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `global_var_806234c = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
@@ -552,10 +552,10 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805599
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1180_6_reg2mem = stack_var__2d_1180_0_ph_reload` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) / 16777216) + -1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) >> 24) + -1)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ffe` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = *(var104)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var102 = *(var98)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804b625` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `global_var_806234c = 0` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
@@ -577,7 +577,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805599
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `while True:` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1180_6_reg2mem = stack_var__2d_1180_0_ph_reload` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) / 16777216) + -1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((var67 * 16777216) >> 24) + -1)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ffe` -> skipping this edge
  -> running SimplifyArithmExprOptimizer ( some time )
  -> running IfStructureOptimizer ( some time )
@@ -597,7 +597,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ff
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = *(var104)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var102 = *(var98)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_976_1_reload = stack_var__2d_976_1_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804b625` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_976_1_reload = stack_var__2d_976_1_reg2mem` -> skipping this edge
@@ -620,10 +620,10 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805599
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_1_reload = esi_1_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1180_6_reg2mem = stack_var__2d_1180_0_ph_reload` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((16777216 * var67) / 16777216) - 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((16777216 * var67) >> 24) - 1)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ffe` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var108 = *(var104)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var102 = *(var98)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_976_1_reload = stack_var__2d_976_1_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x804b625` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_976_1_reload = stack_var__2d_976_1_reg2mem` -> skipping this edge
@@ -646,7 +646,7 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x805599
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `esi_1_reload = esi_1_reg2mem` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `break` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `stack_var__2d_1180_6_reg2mem = stack_var__2d_1180_0_ph_reload` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((16777216 * var67) / 16777216) - 1)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var113 = (((16777216 * var67) >> 24) - 1)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `goto 0x8057ffe` -> skipping this edge
  -> running SelfAssignOptimizer ( some time )
  -> running VarDefForLoopOptimizer ( some time )
@@ -663,6 +663,7 @@ Running phase: variable renaming [readable] ( some time )
 Running phase: converting constants to symbolic names ( some time )
 Running phase: module validation ( some time )
  -> running BreakOutsideLoopValidator ( some time )
+Warning: In function_8052a50(), found `break` outside of a loop or a switch statement.
 Warning: In function_8052ff0(), found `break` outside of a loop or a switch statement.
 Warning: In function_8053050(), found `break` outside of a loop or a switch statement.
 Warning: In function_8053850(), found `break` outside of a loop or a switch statement.

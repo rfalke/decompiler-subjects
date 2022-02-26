@@ -89,7 +89,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -116,16 +116,16 @@ Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x2_1_reload =
  -> running UnusedGlobalVarOptimizer ( some time )
  -> running DeadLocalAssignOptimizer ( some time )
  -> running SimpleCopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var3 = (x25_0 + 4294967294)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var8 = (storemerge2_reg2mem + stack_var_4_0_reg2mem)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var12 = (x27_0_reg2mem + 4294967294)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var18 = ((var18 + 4294967294) & 4294967295)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var5 = (x25_0 + 4294967294)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = (storemerge2_reg2mem + stack_var_4_0_reg2mem)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var14 = (x27_0_reg2mem + 4294967294)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var20 = ((var20 + 4294967294) & 4294967295)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x2_1_reload = x2_1_reg2mem` -> skipping this edge
  -> running CopyPropagationOptimizer ( some time )
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var3 = (x25_0 + 4294967294)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var8 = (storemerge2_reg2mem + stack_var_4_0_reg2mem)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var12 = (x27_0_reg2mem + 4294967294)` -> skipping this edge
-Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var18 = ((var18 + 4294967294) & 4294967295)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var5 = (x25_0 + 4294967294)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var10 = (storemerge2_reg2mem + stack_var_4_0_reg2mem)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var14 = (x27_0_reg2mem + 4294967294)` -> skipping this edge
+Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `var20 = ((var20 + 4294967294) & 4294967295)` -> skipping this edge
 Warning: [NonRecursiveCFGBuilder] there is no node for an edge to `x2_1_reload = x2_1_reg2mem` -> skipping this edge
  -> running SelfAssignOptimizer ( some time )
  -> running VarDefForLoopOptimizer ( some time )

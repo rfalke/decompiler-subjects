@@ -98,7 +98,7 @@ Running phase: signed/unsigned types fixing ( some time )
 Running phase: converting LLVM intrinsic functions to standard functions ( some time )
 Running phase: obtaining debug information ( some time )
 Running phase: alias analysis [simple] ( some time )
-Running phase: optimizations [normal] ( some time )
+Running phase: optimizations ( some time )
  -> running GotoStmtOptimizer ( some time )
  -> running RemoveUselessCastsOptimizer ( some time )
  -> running UnusedGlobalVarOptimizer ( some time )
@@ -142,36 +142,5 @@ Running phase: module validation ( some time )
  -> running NoGlobalVarDefValidator ( some time )
  -> running ReturnValidator ( some time )
 Running phase: emission of the target code [c] ( some time )
-RETDECDIR/bin/retdec-decompiler[0xf3d44a]
-RETDECDIR/bin/retdec-decompiler[0xf3b4f4]
-RETDECDIR/bin/retdec-decompiler[0xf3b655]
-/lib64/libpthread.so.0(+0x12e70)[0x7fab6c1b6e70]
-RETDECDIR/bin/retdec-decompiler[0x873a76]
-RETDECDIR/bin/retdec-decompiler[0x893411]
-RETDECDIR/bin/retdec-decompiler[0x7f87f6]
-RETDECDIR/bin/retdec-decompiler[0x8d335b]
-RETDECDIR/bin/retdec-decompiler[0x7edcbf]
-RETDECDIR/bin/retdec-decompiler[0x7fa7aa]
-RETDECDIR/bin/retdec-decompiler[0x8140eb]
-RETDECDIR/bin/retdec-decompiler[0x7f8d71]
-RETDECDIR/bin/retdec-decompiler[0x7f8f87]
-RETDECDIR/bin/retdec-decompiler[0x81fde8]
-RETDECDIR/bin/retdec-decompiler[0x7fcbd3]
-RETDECDIR/bin/retdec-decompiler[0x800e15]
-RETDECDIR/bin/retdec-decompiler[0x800eff]
-RETDECDIR/bin/retdec-decompiler[0x868928]
-RETDECDIR/bin/retdec-decompiler[0x7f75fc]
-RETDECDIR/bin/retdec-decompiler[0x7f3bfe]
-RETDECDIR/bin/retdec-decompiler[0x7ed5b1]
-RETDECDIR/bin/retdec-decompiler[0x7fda3f]
-RETDECDIR/bin/retdec-decompiler[0xaed902]
-RETDECDIR/bin/retdec-decompiler[0xaf27fc]
-RETDECDIR/bin/retdec-decompiler[0x16e7ec4]
-RETDECDIR/bin/retdec-decompiler[0x688e7f]
-RETDECDIR/bin/retdec-decompiler[0x621771]
-RETDECDIR/bin/retdec-decompiler[0x54a644]
-/lib64/libc.so.6(__libc_start_main+0xf3)[0x7fab6bca9413]
-RETDECDIR/bin/retdec-decompiler[0x62056e]
-Stack dump:
-0.	Program arguments: RETDECDIR/bin/retdec-decompiler --cleanup --no-memory-limit -o from_holdec/int_math_with_constants/x64_elf_gcc_O2/retdec_subject.c from_holdec/int_math_with_constants/x64_elf_gcc_O2/subject.exe 
-1.	Running pass 'LLVM IR -> HLL' on module ''.
+Running phase: finalization ( some time )
+Running phase: cleanup ( some time )

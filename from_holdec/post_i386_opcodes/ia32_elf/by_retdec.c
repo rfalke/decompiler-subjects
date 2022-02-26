@@ -1445,7 +1445,7 @@ int32_t cpuid_plain(void) {
 
 // Address range: 0x804ab4a - 0x804ac3b
 int32_t cpuid_allregs(void) {
-    struct struct2 v1; // 0x804ab84
+    struct struct1 v1; // 0x804ab84
     int16_t v2 = *(int16_t *)0x1100; // 0x804ab4b
     uint32_t v3 = (int32_t)v2; // 0x804ab53
     int32_t v4; // 0x804ab4a
@@ -1518,7 +1518,7 @@ int32_t cpuid_constant_simple(void) {
 
 // Address range: 0x804ad21 - 0x804ae07
 int32_t cpuid_constant_complex1(void) {
-    struct struct4 v1; // 0x804ad50
+    struct struct5 v1; // 0x804ad50
     // 0x804ad21
     int32_t v2; // 0x804ad21
     *(int32_t *)0x2050 = (int32_t)&v2;
@@ -1554,7 +1554,7 @@ int32_t cpuid_constant_complex1(void) {
 
 // Address range: 0x804ae07 - 0x804aeee
 int32_t cpuid_constant_complex2(void) {
-    struct struct5 v1; // 0x804ae37
+    struct struct4 v1; // 0x804ae37
     // 0x804ae07
     int32_t v2; // 0x804ae07
     *(int32_t *)0x2050 = (int32_t)&v2;
