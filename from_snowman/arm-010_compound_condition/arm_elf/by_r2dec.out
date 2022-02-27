@@ -1,0 +1,15 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x8000 to 0x8564[[x] ... from 0x8000 to 0x8564
+[ ] 0x00008000-0x00008564 in 0x8000-0x8564 (aav)[[x] 0x00008000-0x00008564 in 0x8000-0x8564 (aav)
+[ ] Emulate functions to find computed references (aaef)[[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Stay indoors and await further instructions
+[2K[0x0000829c]> [0x0000829c]> [2K[0x0000829c]> p[0x0000829c]> p[2K[0x0000829c]> pd[0x0000829c]> pd[2K[0x0000829c]> pdd[0x0000829c]> pdd[2K[0x0000829c]> pdd [0x0000829c]> pdd [2K[0x0000829c]> pdd @[0x0000829c]> pdd @[2K[0x0000829c]> pdd @@[0x0000829c]> pdd @@[2K[0x0000829c]> pdd @@f[0x0000829c]> pdd @@f[2K[0x0000829c]> pdd @@f [0x0000829c]> pdd @@f [2K[0x0000829c]> pdd @@f >[0x0000829c]> pdd @@f >[2K[0x0000829c]> pdd @@f >r[0x0000829c]> pdd @@f >r[2K[0x0000829c]> pdd @@f >r2[0x0000829c]> pdd @@f >r2[2K[0x0000829c]> pdd @@f >r2d[0x0000829c]> pdd @@f >r2d[2K[0x0000829c]> pdd @@f >r2de[0x0000829c]> pdd @@f >r2de[2K[0x0000829c]> pdd @@f >r2dec[0x0000829c]> pdd @@f >r2dec[2K[0x0000829c]> pdd @@f >r2dec.[0x0000829c]> pdd @@f >r2dec.[2K[0x0000829c]> pdd @@f >r2dec.c[0x0000829c]> pdd @@f >r2dec.c[0x0000829c]> pdd @@f >r2dec.c
+[2K[0x0000829c]> [0x0000829c]> 

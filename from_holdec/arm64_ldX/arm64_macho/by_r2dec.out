@@ -1,0 +1,16 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Check for objc references (aao)[[x] Check for objc references (aao)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x100000000 to 0x100004000[[x] ... from 0x100000000 to 0x100004000
+[ ] 0x100000000-0x100004000 in 0x100000000-0x100004000 (aav)[[x] 0x100000000-0x100004000 in 0x100000000-0x100004000 (aav)
+[ ] Emulate functions to find computed references (aaef)[[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Wrong argument
+[2K[0x100001fcc]> [0x100001fcc]> [2K[0x100001fcc]> p[0x100001fcc]> p[2K[0x100001fcc]> pd[0x100001fcc]> pd[2K[0x100001fcc]> pdd[0x100001fcc]> pdd[2K[0x100001fcc]> pdd [0x100001fcc]> pdd [2K[0x100001fcc]> pdd @[0x100001fcc]> pdd @[2K[0x100001fcc]> pdd @@[0x100001fcc]> pdd @@[2K[0x100001fcc]> pdd @@f[0x100001fcc]> pdd @@f[2K[0x100001fcc]> pdd @@f [0x100001fcc]> pdd @@f [2K[0x100001fcc]> pdd @@f >[0x100001fcc]> pdd @@f >[2K[0x100001fcc]> pdd @@f >r[0x100001fcc]> pdd @@f >r[2K[0x100001fcc]> pdd @@f >r2[0x100001fcc]> pdd @@f >r2[2K[0x100001fcc]> pdd @@f >r2d[0x100001fcc]> pdd @@f >r2d[2K[0x100001fcc]> pdd @@f >r2de[0x100001fcc]> pdd @@f >r2de[2K[0x100001fcc]> pdd @@f >r2dec[0x100001fcc]> pdd @@f >r2dec[2K[0x100001fcc]> pdd @@f >r2dec.[0x100001fcc]> pdd @@f >r2dec.[2K[0x100001fcc]> pdd @@f >r2dec.c[0x100001fcc]> pdd @@f >r2dec.c[0x100001fcc]> pdd @@f >r2dec.c
+[2K[0x100001fcc]> [0x100001fcc]> 

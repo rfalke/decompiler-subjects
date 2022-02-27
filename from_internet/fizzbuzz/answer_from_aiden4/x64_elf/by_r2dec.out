@@ -1,0 +1,17 @@
+Warning: run r2 with -e bin.cache=true to fix relocations in disassembly
+[ ] Analyze all flags starting with sym. and entry0 (aa)[Cannot find basic block for switch case at 0x0000a3b1 bbdelta = 14
+Cannot find basic block for switch case at 0x000370a5 bbdelta = 14
+Cannot find basic block for switch case at 0x0002fb94 bbdelta = 32
+Cannot find basic block for switch case at 0x00034813 bbdelta = 3
+[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Integrate dwarf function information.[[x] Integrate dwarf function information.
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Insert coin to continue ...
+[2K[0x000072b0]> [0x000072b0]> [2K[0x000072b0]> p[0x000072b0]> p[2K[0x000072b0]> pd[0x000072b0]> pd[2K[0x000072b0]> pdd[0x000072b0]> pdd[2K[0x000072b0]> pdd [0x000072b0]> pdd [2K[0x000072b0]> pdd @[0x000072b0]> pdd @[2K[0x000072b0]> pdd @@[0x000072b0]> pdd @@[2K[0x000072b0]> pdd @@f[0x000072b0]> pdd @@f[2K[0x000072b0]> pdd @@f [0x000072b0]> pdd @@f [2K[0x000072b0]> pdd @@f >[0x000072b0]> pdd @@f >[2K[0x000072b0]> pdd @@f >r[0x000072b0]> pdd @@f >r[2K[0x000072b0]> pdd @@f >r2[0x000072b0]> pdd @@f >r2[2K[0x000072b0]> pdd @@f >r2d[0x000072b0]> pdd @@f >r2d[2K[0x000072b0]> pdd @@f >r2de[0x000072b0]> pdd @@f >r2de[2K[0x000072b0]> pdd @@f >r2dec[0x000072b0]> pdd @@f >r2dec[2K[0x000072b0]> pdd @@f >r2dec.[0x000072b0]> pdd @@f >r2dec.[2K[0x000072b0]> pdd @@f >r2dec.c[0x000072b0]> pdd @@f >r2dec.c[0x000072b0]> pdd @@f >r2dec.c
+
+=== Killed because of time limit

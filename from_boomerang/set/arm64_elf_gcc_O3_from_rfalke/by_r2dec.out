@@ -1,0 +1,17 @@
+Warning: run r2 with -e bin.cache=true to fix relocations in disassembly
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x0 to 0x914[[x] ... from 0x0 to 0x914
+[ ] 0x00000000-0x00000914 in 0x0-0x914 (aav)[[x] 0x00000000-0x00000914 in 0x0-0x914 (aav)
+[ ] Emulate functions to find computed references (aaef)[[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Integrate dwarf function information.[[x] Integrate dwarf function information.
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Send PR or GTFO
+[2K[0x00000724]> [0x00000724]> [2K[0x00000724]> p[0x00000724]> p[2K[0x00000724]> pd[0x00000724]> pd[2K[0x00000724]> pdd[0x00000724]> pdd[2K[0x00000724]> pdd [0x00000724]> pdd [2K[0x00000724]> pdd @[0x00000724]> pdd @[2K[0x00000724]> pdd @@[0x00000724]> pdd @@[2K[0x00000724]> pdd @@f[0x00000724]> pdd @@f[2K[0x00000724]> pdd @@f [0x00000724]> pdd @@f [2K[0x00000724]> pdd @@f >[0x00000724]> pdd @@f >[2K[0x00000724]> pdd @@f >r[0x00000724]> pdd @@f >r[2K[0x00000724]> pdd @@f >r2[0x00000724]> pdd @@f >r2[2K[0x00000724]> pdd @@f >r2d[0x00000724]> pdd @@f >r2d[2K[0x00000724]> pdd @@f >r2de[0x00000724]> pdd @@f >r2de[2K[0x00000724]> pdd @@f >r2dec[0x00000724]> pdd @@f >r2dec[2K[0x00000724]> pdd @@f >r2dec.[0x00000724]> pdd @@f >r2dec.[2K[0x00000724]> pdd @@f >r2dec.c[0x00000724]> pdd @@f >r2dec.c[0x00000724]> pdd @@f >r2dec.c
+[2K[0x00000724]> [0x00000724]> 

@@ -1,0 +1,63 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[Warning: set your favourite calling convention in `e anal.cc=?`
+Invalid address from 0x00000036
+Invalid address from 0x00000042
+[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[Invalid address from 0x00000036
+Invalid address from 0x00000042
+Invalid address from 0x0000016c
+Invalid address from 0x000001e8
+Invalid address from 0x00001be0
+Invalid address from 0x00006ad2
+Invalid address from 0x00007c32
+[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x0 to 0xefc8[[x] ... from 0x0 to 0xefc8
+[ ] 0x00000000-0x0000efc8 in 0x0-0xefc8 (aav)[[x] 0x00000000-0x0000efc8 in 0x0-0xefc8 (aav)
+[ ] Emulate functions to find computed references (aaef)[Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- You need some new glasses
+[2K[0x00000024]> [0x00000024]> [2K[0x00000024]> p[0x00000024]> p[2K[0x00000024]> pd[0x00000024]> pd[2K[0x00000024]> pdd[0x00000024]> pdd[2K[0x00000024]> pdd [0x00000024]> pdd [2K[0x00000024]> pdd @[0x00000024]> pdd @[2K[0x00000024]> pdd @@[0x00000024]> pdd @@[2K[0x00000024]> pdd @@f[0x00000024]> pdd @@f[2K[0x00000024]> pdd @@f [0x00000024]> pdd @@f [2K[0x00000024]> pdd @@f >[0x00000024]> pdd @@f >[2K[0x00000024]> pdd @@f >r[0x00000024]> pdd @@f >r[2K[0x00000024]> pdd @@f >r2[0x00000024]> pdd @@f >r2[2K[0x00000024]> pdd @@f >r2d[0x00000024]> pdd @@f >r2d[2K[0x00000024]> pdd @@f >r2de[0x00000024]> pdd @@f >r2de[2K[0x00000024]> pdd @@f >r2dec[0x00000024]> pdd @@f >r2dec[2K[0x00000024]> pdd @@f >r2dec.[0x00000024]> pdd @@f >r2dec.[2K[0x00000024]> pdd @@f >r2dec.c[0x00000024]> pdd @@f >r2dec.c[0x00000024]> pdd @@f >r2dec.c
+[2K[0x00000024]> [0x00000024]> 

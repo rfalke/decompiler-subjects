@@ -1,0 +1,216 @@
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80482c0 */
+#include <stdint.h>
+ 
+void entry0 (void) {
+    /* [12] -r-x section size 564 named .text */
+    ebp = 0;
+    ecx = esp;
+    return libc_start_main (main, esi, ecx, sym.__libc_csu_init, sym.__libc_csu_fini, edx, esp);
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80482a0 */
+#include <stdint.h>
+ 
+void libc_start_main (void) {
+    libc_start_main ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80482e4 */
+#include <stdint.h>
+ 
+void call_gmon_start (void) {
+    void (*0x80482ed)(uint32_t) (ebx);
+    ebx += 0x1347;
+    eax = *((ebx - 4));
+    if (eax != 0) {
+        void (*eax)() ();
+    }
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x8048308 */
+#include <stdint.h>
+ 
+int32_t do_global_dtors_aux (void) {
+    if (*(obj.completed.1) == 0) {
+        goto label_0;
+    }
+    goto label_1;
+    do {
+        eax += 4;
+        *(obj.p.0) = eax;
+        void (*edx)() ();
+label_0:
+        eax = *(obj.p.0);
+        edx = *(eax);
+    } while (edx != 0);
+    *(obj.completed.1) = 1;
+label_1:
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x804833c */
+#include <stdint.h>
+ 
+int32_t frame_dummy (void) {
+    eax = *(obj.__JCR_LIST__);
+    if (eax != 0) {
+        eax = 0;
+        if (eax == 0) {
+            goto label_0;
+        }
+        void (*eax)(uint32_t) (obj.__JCR_LIST__);
+    }
+label_0:
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80484d0 */
+#include <stdint.h>
+ 
+void do_global_ctors_aux (void) {
+    ebx = .ctors;
+    eax = .ctors;
+    while (eax != -1) {
+        ebx -= 4;
+        void (*eax)() ();
+        eax = *(ebx);
+    }
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x804838a */
+#include <stdint.h>
+ 
+int32_t fst (int32_t arg_8h) {
+    eax = *((ebp + 8));
+    eax += 0xa;
+    eax = *(eax);
+    printf ("First element is %d\n");
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80482b0 */
+#include <stdint.h>
+ 
+void printf (void) {
+    printf ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x804848c */
+#include <stdint.h>
+ 
+uint32_t libc_csu_fini (void) {
+    void (*0x8048497)(uint32_t, uint32_t, uint32_t) (ebx, esi, edi);
+    ebx += 0x119d;
+    eax = ebx - 0xe0;
+    edi = ebx - 0xe0;
+    eax -= edi;
+    eax >>= 2;
+    esi = eax - 1;
+    while (esi != -1) {
+        uint32_t (*edi + esi*4)() ();
+        esi--;
+    }
+    _fini ();
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x8048278 */
+#include <stdint.h>
+ 
+void init (void) {
+    /* [10] -r-x section size 23 named .init */
+    call_gmon_start ();
+    frame_dummy ();
+    _do_global_ctors_aux ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x8048438 */
+#include <stdint.h>
+ 
+uint32_t libc_csu_init (void) {
+    int32_t var_10h;
+    void (*0x8048446)(uint32_t, uint32_t, uint32_t) (ebx, esi, edi);
+    ebx += 0x11ee;
+    init ();
+    eax = ebx - 0xe0;
+    edx = ebx - 0xe0;
+    *((ebp - 0x10)) = eax;
+    eax -= edx;
+    esi = 0;
+    eax >>= 2;
+    if (esi >= eax) {
+        goto label_0;
+    }
+    edi = edx;
+    do {
+        uint32_t (*edx + esi*4)() ();
+        ecx = *((ebp - 0x10));
+        ecx -= edi;
+        esi++;
+        ecx >>= 2;
+        edx = edi;
+    } while (esi < ecx);
+label_0:
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80483ac */
+#include <stdint.h>
+ 
+int32_t main (void) {
+    int32_t var_ch;
+    int32_t var_8h;
+    int32_t var_4h;
+    eax = 0;
+    eax += 0xf;
+    eax += 0xf;
+    eax >>= 4;
+    eax <<= 4;
+    *((ebp - 8)) = 0;
+    mid (obj.gca);
+    eax = obj.gca;
+    eax -= 0xa;
+    fst (eax);
+    *((ebp - 0xc)) = 0x8049654;
+    *((ebp - 4)) = 0;
+    do {
+        if (*((ebp - 4)) > 4) {
+            goto label_0;
+        }
+        eax = *((ebp - 0xc));
+        edx = *(eax);
+        eax = ebp - 8;
+        *(eax) += edx;
+        eax = ebp - 0xc;
+        *(eax)++;
+        eax = ebp - 4;
+        *(eax)++;
+    } while (1);
+label_0:
+    printf ("Sum is %d\n");
+    eax = 0;
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x80484f4 */
+#include <stdint.h>
+ 
+uint32_t fini (void) {
+    /* [13] -r-x section size 26 named .fini */
+    eax = void (*0x80484fd)(uint32_t) (ebx);
+    ebx += 0x1137;
+    _do_global_dtors_aux (eax);
+    return eax;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_boomerang/testarray2/ia32_elf_by_boomerang/subject.exe @ 0x8048368 */
+#include <stdint.h>
+ 
+int32_t mid (int32_t arg_8h) {
+    eax = *((ebp + 8));
+    eax += 2;
+    eax = *(eax);
+    printf ("Middle elment is %d\n");
+    return eax;
+}

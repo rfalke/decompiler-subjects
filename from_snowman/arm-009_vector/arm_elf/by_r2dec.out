@@ -1,0 +1,15 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x8000 to 0xa3c8[[x] ... from 0x8000 to 0xa3c8
+[ ] 0x00008000-0x0000a3c8 in 0x8000-0xa3c8 (aav)[[x] 0x00008000-0x0000a3c8 in 0x8000-0xa3c8 (aav)
+[ ] Emulate functions to find computed references (aaef)[[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Order pizza for $12.48? [Y/n]
+[2K[0x0000866c]> [0x0000866c]> [2K[0x0000866c]> p[0x0000866c]> p[2K[0x0000866c]> pd[0x0000866c]> pd[2K[0x0000866c]> pdd[0x0000866c]> pdd[2K[0x0000866c]> pdd [0x0000866c]> pdd [2K[0x0000866c]> pdd @[0x0000866c]> pdd @[2K[0x0000866c]> pdd @@[0x0000866c]> pdd @@[2K[0x0000866c]> pdd @@f[0x0000866c]> pdd @@f[2K[0x0000866c]> pdd @@f [0x0000866c]> pdd @@f [2K[0x0000866c]> pdd @@f >[0x0000866c]> pdd @@f >[2K[0x0000866c]> pdd @@f >r[0x0000866c]> pdd @@f >r[2K[0x0000866c]> pdd @@f >r2[0x0000866c]> pdd @@f >r2[2K[0x0000866c]> pdd @@f >r2d[0x0000866c]> pdd @@f >r2d[2K[0x0000866c]> pdd @@f >r2de[0x0000866c]> pdd @@f >r2de[2K[0x0000866c]> pdd @@f >r2dec[0x0000866c]> pdd @@f >r2dec[2K[0x0000866c]> pdd @@f >r2dec.[0x0000866c]> pdd @@f >r2dec.[2K[0x0000866c]> pdd @@f >r2dec.c[0x0000866c]> pdd @@f >r2dec.c[0x0000866c]> pdd @@f >r2dec.c
+[2K[0x0000866c]> [0x0000866c]> 

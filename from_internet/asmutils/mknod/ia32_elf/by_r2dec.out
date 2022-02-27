@@ -1,0 +1,10 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- Everybody hates warnings. Mr. Pancake, tear down this -Wall
+[2K[0x0804804c]> [0x0804804c]> [2K[0x0804804c]> p[0x0804804c]> p[2K[0x0804804c]> pd[0x0804804c]> pd[2K[0x0804804c]> pdd[0x0804804c]> pdd[2K[0x0804804c]> pdd [0x0804804c]> pdd [2K[0x0804804c]> pdd @[0x0804804c]> pdd @[2K[0x0804804c]> pdd @@[0x0804804c]> pdd @@[2K[0x0804804c]> pdd @@f[0x0804804c]> pdd @@f[2K[0x0804804c]> pdd @@f [0x0804804c]> pdd @@f [2K[0x0804804c]> pdd @@f >[0x0804804c]> pdd @@f >[2K[0x0804804c]> pdd @@f >r[0x0804804c]> pdd @@f >r[2K[0x0804804c]> pdd @@f >r2[0x0804804c]> pdd @@f >r2[2K[0x0804804c]> pdd @@f >r2d[0x0804804c]> pdd @@f >r2d[2K[0x0804804c]> pdd @@f >r2de[0x0804804c]> pdd @@f >r2de[2K[0x0804804c]> pdd @@f >r2dec[0x0804804c]> pdd @@f >r2dec[2K[0x0804804c]> pdd @@f >r2dec.[0x0804804c]> pdd @@f >r2dec.[2K[0x0804804c]> pdd @@f >r2dec.c[0x0804804c]> pdd @@f >r2dec.c[0x0804804c]> pdd @@f >r2dec.c
+[2K[0x0804804c]> [0x0804804c]> 

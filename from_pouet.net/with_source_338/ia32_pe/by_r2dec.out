@@ -1,0 +1,12 @@
+Error parsing resource directory
+[ ] Analyze all flags starting with sym. and entry0 (aa)[af: Cannot find function at 0x00410002
+[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- To remove this message, put `dbxenv suppress_startup_message 7.5' in your .dbxrc
+[2K[0x00410002]> [0x00410002]> [2K[0x00410002]> p[0x00410002]> p[2K[0x00410002]> pd[0x00410002]> pd[2K[0x00410002]> pdd[0x00410002]> pdd[2K[0x00410002]> pdd [0x00410002]> pdd [2K[0x00410002]> pdd @[0x00410002]> pdd @[2K[0x00410002]> pdd @@[0x00410002]> pdd @@[2K[0x00410002]> pdd @@f[0x00410002]> pdd @@f[2K[0x00410002]> pdd @@f [0x00410002]> pdd @@f [2K[0x00410002]> pdd @@f >[0x00410002]> pdd @@f >[2K[0x00410002]> pdd @@f >r[0x00410002]> pdd @@f >r[2K[0x00410002]> pdd @@f >r2[0x00410002]> pdd @@f >r2[2K[0x00410002]> pdd @@f >r2d[0x00410002]> pdd @@f >r2d[2K[0x00410002]> pdd @@f >r2de[0x00410002]> pdd @@f >r2de[2K[0x00410002]> pdd @@f >r2dec[0x00410002]> pdd @@f >r2dec[2K[0x00410002]> pdd @@f >r2dec.[0x00410002]> pdd @@f >r2dec.[2K[0x00410002]> pdd @@f >r2dec.c[0x00410002]> pdd @@f >r2dec.c[0x00410002]> pdd @@f >r2dec.c
+[2K[0x00410002]> [0x00410002]> 

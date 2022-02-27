@@ -1,0 +1,11 @@
+ii 978 32
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- In soviet russia, radare2 debugs you!
+[2K[0000:025e]> [0000:025e]> [2K[0000:025e]> p[0000:025e]> p[2K[0000:025e]> pd[0000:025e]> pd[2K[0000:025e]> pdd[0000:025e]> pdd[2K[0000:025e]> pdd [0000:025e]> pdd [2K[0000:025e]> pdd @[0000:025e]> pdd @[2K[0000:025e]> pdd @@[0000:025e]> pdd @@[2K[0000:025e]> pdd @@f[0000:025e]> pdd @@f[2K[0000:025e]> pdd @@f [0000:025e]> pdd @@f [2K[0000:025e]> pdd @@f >[0000:025e]> pdd @@f >[2K[0000:025e]> pdd @@f >r[0000:025e]> pdd @@f >r[2K[0000:025e]> pdd @@f >r2[0000:025e]> pdd @@f >r2[2K[0000:025e]> pdd @@f >r2d[0000:025e]> pdd @@f >r2d[2K[0000:025e]> pdd @@f >r2de[0000:025e]> pdd @@f >r2de[2K[0000:025e]> pdd @@f >r2dec[0000:025e]> pdd @@f >r2dec[2K[0000:025e]> pdd @@f >r2dec.[0000:025e]> pdd @@f >r2dec.[2K[0000:025e]> pdd @@f >r2dec.c[0000:025e]> pdd @@f >r2dec.c[0000:025e]> pdd @@f >r2dec.c
+[2K[0000:025e]> [0000:025e]> 

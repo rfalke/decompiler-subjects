@@ -1,0 +1,26 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x1001094c to 0x100109b0[[x] ... from 0x1001094c to 0x100109b0
+[ ] 0x1001094c-0x100109b0 in 0x1001094c-0x100109b0 (aav)[[x] 0x1001094c-0x100109b0 in 0x1001094c-0x100109b0 (aav)
+[ ] 0x1001094c-0x100109b0 in 0x10010844-0x1001094c (aav)[[x] 0x1001094c-0x100109b0 in 0x10010844-0x1001094c (aav)
+[ ] 0x1001094c-0x100109b0 in 0x10000000-0x10000844 (aav)[[x] 0x1001094c-0x100109b0 in 0x10000000-0x10000844 (aav)
+[ ] ... from 0x10010844 to 0x1001094c[[x] ... from 0x10010844 to 0x1001094c
+[ ] 0x10010844-0x1001094c in 0x1001094c-0x100109b0 (aav)[[x] 0x10010844-0x1001094c in 0x1001094c-0x100109b0 (aav)
+[ ] 0x10010844-0x1001094c in 0x10010844-0x1001094c (aav)[[x] 0x10010844-0x1001094c in 0x10010844-0x1001094c (aav)
+[ ] 0x10010844-0x1001094c in 0x10000000-0x10000844 (aav)[[x] 0x10010844-0x1001094c in 0x10000000-0x10000844 (aav)
+[ ] ... from 0x10000000 to 0x10000844[[x] ... from 0x10000000 to 0x10000844
+[ ] 0x10000000-0x10000844 in 0x1001094c-0x100109b0 (aav)[[x] 0x10000000-0x10000844 in 0x1001094c-0x100109b0 (aav)
+[ ] 0x10000000-0x10000844 in 0x10010844-0x1001094c (aav)[[x] 0x10000000-0x10000844 in 0x10010844-0x1001094c (aav)
+[ ] 0x10000000-0x10000844 in 0x10000000-0x10000844 (aav)[[x] 0x10000000-0x10000844 in 0x10000000-0x10000844 (aav)
+[ ] Emulate functions to find computed references (aaef)[[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Integrate dwarf function information.[[x] Integrate dwarf function information.
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- phrack, better than java in the browser -- jvoisin
+[2K[0x100002c0]> [0x100002c0]> [2K[0x100002c0]> p[0x100002c0]> p[2K[0x100002c0]> pd[0x100002c0]> pd[2K[0x100002c0]> pdd[0x100002c0]> pdd[2K[0x100002c0]> pdd [0x100002c0]> pdd [2K[0x100002c0]> pdd @[0x100002c0]> pdd @[2K[0x100002c0]> pdd @@[0x100002c0]> pdd @@[2K[0x100002c0]> pdd @@f[0x100002c0]> pdd @@f[2K[0x100002c0]> pdd @@f [0x100002c0]> pdd @@f [2K[0x100002c0]> pdd @@f >[0x100002c0]> pdd @@f >[2K[0x100002c0]> pdd @@f >r[0x100002c0]> pdd @@f >r[2K[0x100002c0]> pdd @@f >r2[0x100002c0]> pdd @@f >r2[2K[0x100002c0]> pdd @@f >r2d[0x100002c0]> pdd @@f >r2d[2K[0x100002c0]> pdd @@f >r2de[0x100002c0]> pdd @@f >r2de[2K[0x100002c0]> pdd @@f >r2dec[0x100002c0]> pdd @@f >r2dec[2K[0x100002c0]> pdd @@f >r2dec.[0x100002c0]> pdd @@f >r2dec.[2K[0x100002c0]> pdd @@f >r2dec.c[0x100002c0]> pdd @@f >r2dec.c[0x100002c0]> pdd @@f >r2dec.c
+[2K[0x100002c0]> [0x100002c0]> 

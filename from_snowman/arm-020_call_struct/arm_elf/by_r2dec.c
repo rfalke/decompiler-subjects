@@ -1,0 +1,240 @@
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8350 */
+#include <stdint.h>
+ 
+void entry0 (int32_t argc) {
+    r1 = argc;
+    /* [12] -r-x section size 584 named .text */
+    lr = 0;
+    r1 = *(sp!);
+    r2 = sp;
+    __asm ("stmdb sp!, {r2}");
+    __asm ("stmdb sp!, {r0}");
+    ip = sym.__libc_csu_fini;
+    __asm ("stmdb sp!, {ip}");
+    r0 = $d;
+    r3 = main;
+    libc_start_main (r0, r1, r2, r3, r4, r5, r6);
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8338 */
+#include <stdint.h>
+ 
+void libc_start_main () {
+    pc = *((ip += 0x38c));
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x838c */
+#include <stdint.h>
+ 
+void call_weak_fn () {
+    r3 = *(0x83a4);
+    r2 = *(0x83a8);
+    r3 = pc + r3;
+    r2 = *(0x83a4);
+    if (r2 != 0) {
+        return;
+    }
+    return void (*0x8344)() ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x83b0 */
+#include <stdint.h>
+ 
+void deregister_tm_clones () {
+    r3 = *(0x83d8);
+    r0 = 0x106e0;
+    r3 -= r0;
+    if (r3 > 6) {
+        return;
+    }
+    if (r3 != 0) {
+        return;
+    }
+    return uint32_t (*r3)() ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x83e0 */
+#include <stdint.h>
+ 
+void register_tm_clones (int32_t arg2) {
+    r1 = arg2;
+    r3 = 0x106e0;
+    r0 = 0x106e0;
+    r1 = r3 - r0;
+    r1 >>= 2;
+    r1 += (r1 >> 31);
+    r1 >>= 1;
+    if (? != ?) {
+        return;
+    }
+    if (r3 != 0) {
+        return;
+    }
+    return uint32_t (*r3)() ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8418 */
+#include <stdint.h>
+ 
+void do_global_dtors_aux () {
+    r4 = 0x106e0;
+    r3 = *(r4);
+    deregister_tm_clones ();
+    r3 = 1;
+    *(r4) = r3;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8440 */
+#include <stdint.h>
+ 
+void entry_init0 (int32_t arg2) {
+    r1 = arg2;
+    r0 = 0x105b8;
+    r3 = .comment;
+    while (r3 == 0) {
+label_0:
+        void (*0x83e0)() ();
+    }
+    uint32_t (*r3)() ();
+    goto label_0;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8594 */
+#include <stdint.h>
+ 
+void libc_csu_fini () {
+    return;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8478 */
+#include <stdint.h>
+ 
+void f_A_B_ () {
+    int32_t var_ch;
+    int32_t var_4h;
+    int32_t var_0h;
+    int32_t var_sp_4h;
+    /* f(A, B) */
+    *((sp -= 4)) = fp;
+    *(ip) = r0;
+    *((ip + 4)) = r1;
+    r1 = fp + 4;
+    *(r1) = r2;
+    *((r1 + 4)) = r3;
+    return;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x84a8 */
+#include <stdint.h>
+ 
+void g_ () {
+    int32_t var_1ch;
+    int32_t var_18h;
+    int32_t var_16h;
+    int32_t var_14h;
+    int32_t var_10h;
+    int32_t var_ch;
+    int32_t var_8h;
+    int32_t var_0h;
+    int32_t var_4h_2;
+    int32_t var_4h;
+    /* g() */
+    r3 = 0;
+    *((fp - 0x1c)) = r3;
+    r3 = 0;
+    *((fp - 0x18)) = r3;
+    r3 = 0;
+    *((fp - 0x16)) = r3;
+    r3 = 0;
+    *((fp - 0x14)) = r3;
+    r3 = 0;
+    *((fp - 0x10)) = r3;
+    r3 = 0;
+    *((fp - 0xc)) = r3;
+    r3 = 0;
+    *((fp - 8)) = r3;
+    r2 = sp;
+    r3 = fp - 0xc;
+    r0 = *(r3);
+    r1 = *((r3 + 4));
+    *(r2) = r0;
+    *((r2 + 4)) = r1;
+    r3 = fp - 0x14;
+    r2 = *(r3);
+    r3 = *((r3 + 4));
+    r1 = fp - 0x1c;
+    r0 = *(r1);
+    r1 = *((r1 + 4));
+    sym ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8598 */
+#include <stdint.h>
+ 
+void fini () {
+    /* [13] -r-x section size 8 named .fini */
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8534 */
+#include <stdint.h>
+ 
+void libc_csu_init (int32_t arg1, int32_t arg2) {
+    r0 = arg1;
+    r1 = arg2;
+    r6 = r0;
+    r5 = *(0x8588);
+    r7 = r1;
+    r8 = r2;
+    sb = $d;
+    r5 = pc + r5;
+    init ();
+    sb = pc + sb;
+    r5 -= sb;
+    r5 >>= 2;
+    r4 = 0;
+    do {
+        offset_0 = r4 << 2;
+        r3 = *((sb + offset_0));
+        r0 = r6;
+        r4++;
+        r1 = r7;
+        r2 = r8;
+        uint32_t (*r3)(uint32_t, uint32_t, uint32_t, uint32_t) (r0, r1, r2, r3);
+    } while (r4 != r5);
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x830c */
+#include <stdint.h>
+ 
+void init () {
+    /* [10] -r-x section size 12 named .init */
+    call_weak_fn ();
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8518 */
+#include <stdint.h>
+ 
+int32_t main () {
+    *((sp -= 4)) = fp;
+    r3 = 0;
+    r0 = r3;
+    return;
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x832c */
+#include <stdint.h>
+ 
+void abort () {
+    pc = *((ip += 0x394));
+}
+/* r2dec pseudo code output */
+/* SUBJECTS/from_snowman/arm-020_call_struct/arm_elf/subject.exe @ 0x8318 */
+#include <stdint.h>
+ 
+void _plt () {
+    /* [11] -r-x section size 56 named .plt */
+    lr = *(0x8324);
+    lr = pc + lr;
+    pc = *(0x832c);
+}

@@ -1,0 +1,186 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x2adf0 to 0x2dabc[[x] ... from 0x2adf0 to 0x2dabc
+[ ] 0x0002adf0-0x0002dabc in 0x2adf0-0x2dabc (aav)[[x] 0x0002adf0-0x0002dabc in 0x2adf0-0x2dabc (aav)
+[ ] 0x0002adf0-0x0002dabc in 0x2a8e0-0x2adf0 (aav)[[x] 0x0002adf0-0x0002dabc in 0x2a8e0-0x2adf0 (aav)
+[ ] 0x0002adf0-0x0002dabc in 0x10000-0x1a8e0 (aav)[[x] 0x0002adf0-0x0002dabc in 0x10000-0x1a8e0 (aav)
+[ ] ... from 0x2a8e0 to 0x2adf0[[x] ... from 0x2a8e0 to 0x2adf0
+[ ] 0x0002a8e0-0x0002adf0 in 0x2adf0-0x2dabc (aav)[[x] 0x0002a8e0-0x0002adf0 in 0x2adf0-0x2dabc (aav)
+[ ] 0x0002a8e0-0x0002adf0 in 0x2a8e0-0x2adf0 (aav)[[x] 0x0002a8e0-0x0002adf0 in 0x2a8e0-0x2adf0 (aav)
+[ ] 0x0002a8e0-0x0002adf0 in 0x10000-0x1a8e0 (aav)[[x] 0x0002a8e0-0x0002adf0 in 0x10000-0x1a8e0 (aav)
+[ ] ... from 0x10000 to 0x1a8e0[[x] ... from 0x10000 to 0x1a8e0
+[ ] 0x00010000-0x0001a8e0 in 0x2adf0-0x2dabc (aav)[[x] 0x00010000-0x0001a8e0 in 0x2adf0-0x2dabc (aav)
+[ ] 0x00010000-0x0001a8e0 in 0x2a8e0-0x2adf0 (aav)[[x] 0x00010000-0x0001a8e0 in 0x2a8e0-0x2adf0 (aav)
+[ ] 0x00010000-0x0001a8e0 in 0x10000-0x1a8e0 (aav)[[x] 0x00010000-0x0001a8e0 in 0x10000-0x1a8e0 (aav)
+[ ] Emulate functions to find computed references (aaef)[Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- I nodejs so hard my exams. What a nodejs!
+[2K[0x000118a8]> [0x000118a8]> [2K[0x000118a8]> p[0x000118a8]> p[2K[0x000118a8]> pd[0x000118a8]> pd[2K[0x000118a8]> pdd[0x000118a8]> pdd[2K[0x000118a8]> pdd [0x000118a8]> pdd [2K[0x000118a8]> pdd @[0x000118a8]> pdd @[2K[0x000118a8]> pdd @@[0x000118a8]> pdd @@[2K[0x000118a8]> pdd @@f[0x000118a8]> pdd @@f[2K[0x000118a8]> pdd @@f [0x000118a8]> pdd @@f [2K[0x000118a8]> pdd @@f >[0x000118a8]> pdd @@f >[2K[0x000118a8]> pdd @@f >r[0x000118a8]> pdd @@f >r[2K[0x000118a8]> pdd @@f >r2[0x000118a8]> pdd @@f >r2[2K[0x000118a8]> pdd @@f >r2d[0x000118a8]> pdd @@f >r2d[2K[0x000118a8]> pdd @@f >r2de[0x000118a8]> pdd @@f >r2de[2K[0x000118a8]> pdd @@f >r2dec[0x000118a8]> pdd @@f >r2dec[2K[0x000118a8]> pdd @@f >r2dec.[0x000118a8]> pdd @@f >r2dec.[2K[0x000118a8]> pdd @@f >r2dec.c[0x000118a8]> pdd @@f >r2dec.c[0x000118a8]> pdd @@f >r2dec.c
+Missing type for sprintf
+Missing type for sprintf
+Missing type for sprintf
+[2K[0x000118a8]> [0x000118a8]> 

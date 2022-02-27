@@ -1,0 +1,28 @@
+[ ] Analyze all flags starting with sym. and entry0 (aa)[[x] Analyze all flags starting with sym. and entry0 (aa)
+[2K[ ] Analyze function calls (aac)[[x] Analyze function calls (aac)
+[ ] Analyze len bytes of instructions for references (aar)[[x] Analyze len bytes of instructions for references (aar)
+[ ] Finding and parsing C++ vtables (avrr)[[x] Finding and parsing C++ vtables (avrr)
+[ ] Finding xrefs in noncode section (e anal.in=io.maps.x)[[x] Finding xrefs in noncode section (e anal.in=io.maps.x)
+[ ] Analyze value pointers (aav)[[x] Analyze value pointers (aav)
+[ ] ... from 0x206e8 to 0x2085c[[x] ... from 0x206e8 to 0x2085c
+[ ] 0x000206e8-0x0002085c in 0x206e8-0x2085c (aav)[[x] 0x000206e8-0x0002085c in 0x206e8-0x2085c (aav)
+[ ] 0x000206e8-0x0002085c in 0x10000-0x106e8 (aav)[[x] 0x000206e8-0x0002085c in 0x10000-0x106e8 (aav)
+[ ] ... from 0x10000 to 0x106e8[[x] ... from 0x10000 to 0x106e8
+[ ] 0x00010000-0x000106e8 in 0x206e8-0x2085c (aav)[[x] 0x00010000-0x000106e8 in 0x206e8-0x2085c (aav)
+[ ] 0x00010000-0x000106e8 in 0x10000-0x106e8 (aav)[[x] 0x00010000-0x000106e8 in 0x10000-0x106e8 (aav)
+[ ] Emulate functions to find computed references (aaef)[Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+Warning: No SN reg alias for current architecture.
+[x] Emulate functions to find computed references (aaef)
+[ ] Type matching analysis for all functions (aaft)[[x] Type matching analysis for all functions (aaft)
+[ ] Propagate noreturn information (aanr)[[x] Propagate noreturn information (aanr)
+[ ] Use -AA or aaaa to perform additional experimental analysis.[[x] Use -AA or aaaa to perform additional experimental analysis.
+ -- r2 is a great OS, but a terrible hex editor
+[2K[0x00010538]> [0x00010538]> [2K[0x00010538]> p[0x00010538]> p[2K[0x00010538]> pd[0x00010538]> pd[2K[0x00010538]> pdd[0x00010538]> pdd[2K[0x00010538]> pdd [0x00010538]> pdd [2K[0x00010538]> pdd @[0x00010538]> pdd @[2K[0x00010538]> pdd @@[0x00010538]> pdd @@[2K[0x00010538]> pdd @@f[0x00010538]> pdd @@f[2K[0x00010538]> pdd @@f [0x00010538]> pdd @@f [2K[0x00010538]> pdd @@f >[0x00010538]> pdd @@f >[2K[0x00010538]> pdd @@f >r[0x00010538]> pdd @@f >r[2K[0x00010538]> pdd @@f >r2[0x00010538]> pdd @@f >r2[2K[0x00010538]> pdd @@f >r2d[0x00010538]> pdd @@f >r2d[2K[0x00010538]> pdd @@f >r2de[0x00010538]> pdd @@f >r2de[2K[0x00010538]> pdd @@f >r2dec[0x00010538]> pdd @@f >r2dec[2K[0x00010538]> pdd @@f >r2dec.[0x00010538]> pdd @@f >r2dec.[2K[0x00010538]> pdd @@f >r2dec.c[0x00010538]> pdd @@f >r2dec.c[0x00010538]> pdd @@f >r2dec.c
+[2K[0x00010538]> [0x00010538]> 
