@@ -7,3 +7,7 @@ signature: void copy_with_or(d2 src <si>, d2 dest <di>, d2 num_words <cx>, d1 va
 [activeFunctions]
 do_adlib_io
 copy_with_or
+
+[dataRanges]
+0x000520-0x000949
+0x00099b-0x000ef2

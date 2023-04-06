@@ -1,0 +1,10 @@
+[activeFunctions]
+0x000000
+0x00003b
+0x00003c
+
+[dataRanges]
+0x000021-0x00003b
+
+[readOnlyRanges]
+0x000021-0x00003b

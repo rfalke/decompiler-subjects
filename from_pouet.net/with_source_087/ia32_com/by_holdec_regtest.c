@@ -13,7 +13,7 @@ d2 main(void)
     reg_f = reg_var1 + 1;
     reg_var1++;
   } while(reg_f != 0);
-  reg_h = setVideoMode(19);
+  reg_h = msdos_setVideoMode(19);
   reg_var3 = WIDEN(reg_h);
   while(1) {
     reg_var4 = 255;
@@ -27,7 +27,7 @@ d2 main(void)
       reg_var7 = NARROW(reg_var6);
       reg_v = reg_var4 & 0xff00 | 0xa0;
       reg_var4 = 0;
-      (void) _holdec_memcpy2(UNSIGNED_EXTEND(reg_s), SEGMENT2ADDR(-24576) + UNSIGNED_EXTEND(reg_var5), reg_v * 2);
+      (void) _holdec_memcpy2(UNSIGNED_EXTEND(reg_s), UNSIGNED_EXTEND(reg_var5) + 655360, reg_v * 2);
       reg_var5 += reg_v * 2;
     } while(reg_var5 < -1536 || reg_var5 > -1);
     reg_var3 = reg_var6a;
