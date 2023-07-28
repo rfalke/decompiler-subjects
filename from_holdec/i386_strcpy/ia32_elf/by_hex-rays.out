@@ -1,0 +1,66 @@
+
+Database SUBJECTS/from_holdec/i386_strcpy/ia32_elf/subject.exe.idb already exists.
+Do you want to overwrite it? -> ~L~oad existing
+
+  bytes   pages size description
+--------- ----- ---- --------------------------------------------
+   524288    64 8192 allocating memory for b-tree...
+    65536     8 8192 allocating memory for virtual array...
+   262144    32 8192 allocating memory for name pointers...
+-----------------------------------------------------------------
+   851968            total memory allocated
+
+Loading processor module IDADIR/procs/pc.so for metapc...Initializing processor module metapc...OK
+Loading type libraries...
+Autoanalysis subsystem has been initialized.
+Database for file 'subject.exe' has been loaded.
+Hex-Rays Decompiler plugin has been loaded (v7.5.0.201028)
+  The hotkeys are F5: decompile, Ctrl-F5: decompile all.
+  Please check the Edit/Plugins menu for more informaton.
+IDAPython Hex-Rays bindings initialized.
+=== start of cleanup script -> OK
+  function at 08049000  LIB  with name '.init_proc'
+  function at 08049030       with name 'sub_8049030'
+  function at 08049040       with name '.puts'
+  function at 08049050  LIB  with name '.__libc_start_main'
+  function at 08049060       with name 'main'
+  function at 080490A0  LIB  with name '_start'
+  function at 080490D7       with name 'sub_80490D7'
+  function at 080490E0  LIB  with name '_dl_relocate_static_pie'
+  function at 080490F0  LIB  with name '__x86.get_pc_thunk.bx'
+  function at 08049100  LIB  with name 'deregister_tm_clones'
+  function at 08049140  LIB  with name 'register_tm_clones'
+  function at 08049180  LIB  with name '__do_global_dtors_aux'
+  function at 080491B0  LIB  with name 'frame_dummy'
+  function at 080491C0       with name 'mystrcpy'
+  function at 08049200  LIB  with name '__libc_csu_init'
+  function at 08049270  LIB  with name '__libc_csu_fini'
+  function at 08049275       with name '__x86.get_pc_thunk.bp'
+  function at 0804927C  LIB  with name '.term_proc'
+  function at 0804C0A8       with name 'puts'
+  function at 0804C0AC  LIB  with name '__libc_start_main'
+finished -> OK
+TIMESTAMP decompiling 8049030 size=0000000C times=0...
+The decompiler assumes that the segment '.got.plt' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP decompiling 80490D7 size=00000004 times=0...
+TIMESTAMP decompiling 80491C0 size=00000032 times=0...
+TIMESTAMP decompiling 8049275 size=00000004 times=0...
+TIMESTAMP decompiling 8049060 size=00000039 times=0...
+The decompiler assumes that the segment '.rodata' is read-only because of its NAME.
+All data references to the segment will be replaced by constant values.
+This may lead to drastic changes in the decompiler output.
+If the segment is not read-only, please change the segment NAME.
+
+In general, the decompiler checks the segment permissions, class, and name
+to determine if it is read-only.
+ -> OK
+TIMESTAMP The application has been completely decompiled.
+Flushing buffers, please wait...ok
+Unloading IDP module IDADIR/procs/pc.so...
