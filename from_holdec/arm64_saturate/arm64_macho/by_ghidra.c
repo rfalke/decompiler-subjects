@@ -183,8 +183,6 @@ struct dylinker_command {
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 undefined8 entry(void)
 
 {
@@ -193,55 +191,55 @@ undefined8 entry(void)
   long lVar3;
   long lVar4;
   
-  __stubs::_puts("=== signed add with saturation");
+  _puts("=== signed add with saturation");
   lVar4 = 0;
   do {
     lVar3 = (long)(int)(char)(&DAT_100003ea8)[lVar4];
     _inst_sqadd(lVar3,0xffffffffffffff80);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0xffffffffffffff81);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0xfffffffffffffffe);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0xffffffffffffffff);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,1);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,2);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0x7e);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     _inst_sqadd(lVar3,0x7f);
-    __stubs::_printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
+    _printf("%4d + %4d = (%4d/%4d) %4d/0x%02x %ld \n");
     lVar4 = lVar4 + 1;
   } while (lVar4 != 9);
-  __stubs::_puts("=== unsigned add with saturation");
+  _puts("=== unsigned add with saturation");
   lVar4 = 0;
   do {
     uVar1 = (&DAT_100003eb1)[lVar4];
     _inst_uqadd(uVar1,0);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,1);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,2);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0x7e);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0x7f);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0x80);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0x81);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0xfe);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     _inst_uqadd(uVar1,0xff);
-    __stubs::_printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
+    _printf("%4d - %4d = (%4d/%4d) %4d/0x%02x %ld\n");
     lVar4 = lVar4 + 1;
   } while (lVar4 != 9);
-  __stubs::_puts("=== left shift variants with saturation");
+  _puts("=== left shift variants with saturation");
   lVar4 = 0;
   do {
     uVar1 = (&DAT_100003eba)[lVar4];
@@ -253,29 +251,29 @@ undefined8 entry(void)
       else {
         pcVar2 = "0x%02x<<%d";
       }
-      __stubs::_printf(pcVar2);
-      __stubs::_printf(" || ");
+      _printf(pcVar2);
+      _printf(" || ");
       _inst_sshl(uVar1,lVar3);
-      __stubs::_printf("0x%02x");
+      _printf("0x%02x");
       _inst_srshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x");
+      _printf(" | 0x%02x");
       _inst_sqshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x %ld");
+      _printf(" | 0x%02x %ld");
       _inst_sqrshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x %ld");
-      __stubs::_printf(" || ");
+      _printf(" | 0x%02x %ld");
+      _printf(" || ");
       _inst_ushl(uVar1,lVar3);
-      __stubs::_printf("0x%02x");
+      _printf("0x%02x");
       _inst_urshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x");
+      _printf(" | 0x%02x");
       _inst_uqshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x %ld");
+      _printf(" | 0x%02x %ld");
       _inst_uqrshl(uVar1,lVar3);
-      __stubs::_printf(" | 0x%02x %ld");
-      __stubs::_putchar(10);
+      _printf(" | 0x%02x %ld");
+      _putchar(10);
       lVar3 = lVar3 + 1;
     } while (lVar3 != 9);
-    __stubs::_putchar(10);
+    _putchar(10);
     lVar4 = lVar4 + 1;
   } while (lVar4 != 5);
   return 0;
@@ -289,13 +287,18 @@ undefined8 _inst_sqadd(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_sqadd(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_signed_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_sqadd(auVar4,auVar3,1);
+  _dest_signed_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -307,13 +310,18 @@ undefined8 _inst_uqadd(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_uqadd(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_uqadd(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -325,13 +333,18 @@ undefined8 _inst_sshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_sshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_sshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -343,13 +356,18 @@ undefined8 _inst_srshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_srshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_srshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -361,13 +379,18 @@ undefined8 _inst_sqshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_sqshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_sqshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -379,13 +402,18 @@ undefined8 _inst_sqrshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_sqrshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_sqrshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -397,13 +425,18 @@ undefined8 _inst_ushl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_ushl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_ushl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -415,13 +448,18 @@ undefined8 _inst_urshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_urshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_urshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -433,13 +471,18 @@ undefined8 _inst_uqshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_uqshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_uqshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
@@ -451,52 +494,57 @@ undefined8 _inst_uqrshl(ulong param_1,ulong param_2)
   ulong uVar1;
   undefined8 uVar2;
   undefined auVar3 [16];
+  undefined auVar4 [16];
   
-  uVar1 = cRead_8(fpsr);
-  cWrite_8(fpsr,uVar1 & 0xfffffffff7ffffff);
-  auVar3 = NEON_uqrshl(ZEXT816(param_1),ZEXT816(param_2),1);
-  uVar2 = cRead_8(fpsr);
-  _dest_qc = ((uint)uVar2 >> 0x1b & 1) != 0;
-  _dest_unsigned_output = SUB161(auVar3,0);
+  uVar1 = fpsr;
+  fpsr = uVar1 & 0xfffffffff7ffffff;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = param_1;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = param_2;
+  auVar4 = NEON_uqrshl(auVar4,auVar3,1);
+  _dest_unsigned_output = auVar4[0];
+  uVar2 = fpsr;
+  _dest_qc._0_1_ = ((uint)uVar2 >> 0x1b & 1) != 0;
   return 0;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __stubs::_printf(char *param_1,...)
+int _printf(char *param_1,...)
 
 {
   int iVar1;
   
-  iVar1 = (*(code *)__got::_printf)((int)param_1);
+  iVar1 = (*(code *)PTR__printf_100004000)((int)param_1);
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __stubs::_putchar(int param_1)
+int _putchar(int param_1)
 
 {
   int iVar1;
   
-  iVar1 = (*(code *)__got::_putchar)(param_1);
+  iVar1 = (*(code *)PTR__putchar_100004008)(param_1);
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __stubs::_puts(char *param_1)
+int _puts(char *param_1)
 
 {
   int iVar1;
   
-  iVar1 = (*(code *)__got::_puts)((int)param_1);
+  iVar1 = (*(code *)PTR__puts_100004010)((int)param_1);
   return iVar1;
 }
 

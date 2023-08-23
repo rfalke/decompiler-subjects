@@ -79,6 +79,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -192,6 +193,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -199,14 +211,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -268,7 +280,7 @@ void FUN_080482f0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -290,7 +302,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -336,10 +348,13 @@ int main(int param_1,char **param_2)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -392,6 +407,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080484a9)
+// WARNING: Removing unreachable block (ram,0x080484a0)
 
 void frame_dummy(void)
 
@@ -644,14 +660,14 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; local_28 >> uVar9 == 0; uVar9 = uVar9 - 1) {
       }
     }
-    uVar9 = uVar9 ^ 0x1f;
-    if (uVar9 == 0) {
+    if ((uVar9 ^ 0x1f) == 0) {
+      uVar9 = 0;
       if ((local_28 < param_2) || (iVar6 = 0, local_2c <= param_1)) {
         iVar6 = 1;
       }
     }
     else {
-      bVar5 = (byte)uVar9;
+      bVar5 = (byte)(uVar9 ^ 0x1f);
       bVar7 = 0x20 - bVar5;
       uVar1 = (ulonglong)(local_2c >> (bVar7 & 0x1f) | local_28 << (bVar5 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar7 & 0x1f),
@@ -680,19 +696,18 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08048c39)
+
 undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
-  byte bVar3;
-  uint uVar4;
+  byte bVar2;
+  uint uVar3;
+  byte bVar4;
   uint uVar5;
-  byte bVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  bool bVar10;
+  int iVar6;
+  bool bVar7;
   uint local_3c;
   uint local_38;
   int local_30;
@@ -701,10 +716,10 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   local_3c = param_3;
   local_38 = param_4;
   if ((int)param_2 < 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
     local_30 = -1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   if ((int)param_4 < 0) {
     local_3c = -param_3;
@@ -725,44 +740,40 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     param_1 = local_3c;
   }
   else if (local_38 <= param_2) {
-    uVar4 = 0x1f;
+    uVar3 = 0x1f;
     if (local_38 != 0) {
-      for (; local_38 >> uVar4 == 0; uVar4 = uVar4 - 1) {
+      for (; local_38 >> uVar3 == 0; uVar3 = uVar3 - 1) {
       }
     }
-    if ((uVar4 ^ 0x1f) == 0) {
+    if ((uVar3 ^ 0x1f) == 0) {
       if ((local_38 < param_2) || (local_3c <= param_1)) {
-        bVar10 = param_1 < local_3c;
+        bVar7 = param_1 < local_3c;
         param_1 = param_1 - local_3c;
-        param_2 = (param_2 - local_38) - (uint)bVar10;
+        param_2 = (param_2 - local_38) - (uint)bVar7;
       }
     }
     else {
-      bVar3 = (byte)(uVar4 ^ 0x1f);
-      bVar6 = 0x20 - bVar3;
-      uVar7 = local_3c >> (bVar6 & 0x1f) | local_38 << (bVar3 & 0x1f);
-      local_3c = local_3c << (bVar3 & 0x1f);
-      uVar4 = param_1 << (bVar3 & 0x1f);
-      uVar1 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_2 << (bVar3 & 0x1f) | param_1 >> (bVar6 & 0x1f));
-      uVar8 = (uint)(uVar1 % (ulonglong)uVar7);
-      lVar2 = (uVar1 / uVar7 & 0xffffffff) * (ulonglong)local_3c;
-      uVar9 = (uint)((ulonglong)lVar2 >> 0x20);
-      uVar5 = (uint)lVar2;
-      if ((uVar8 < uVar9) || ((uVar8 == uVar9 && (uVar4 < uVar5)))) {
-        bVar10 = uVar5 < local_3c;
-        uVar5 = uVar5 - local_3c;
-        uVar9 = (uVar9 - uVar7) - (uint)bVar10;
+      bVar2 = (byte)(uVar3 ^ 0x1f);
+      bVar4 = 0x20 - bVar2;
+      uVar5 = local_3c >> (bVar4 & 0x1f) | local_38 << (bVar2 & 0x1f);
+      local_3c = local_3c << (bVar2 & 0x1f);
+      uVar3 = param_1 << (bVar2 & 0x1f);
+      uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),
+                       param_2 << (bVar2 & 0x1f) | param_1 >> (bVar4 & 0x1f));
+      iVar6 = (int)(uVar1 % (ulonglong)uVar5);
+      uVar1 = (uVar1 / uVar5 & 0xffffffff) * (ulonglong)local_3c;
+      if (CONCAT44(iVar6,uVar3) < uVar1) {
+        uVar1 = uVar1 - CONCAT44(uVar5,local_3c);
       }
-      param_2 = (uVar8 - uVar9) - (uint)(uVar4 < uVar5);
-      param_1 = param_2 << (bVar6 & 0x1f) | uVar4 - uVar5 >> (bVar3 & 0x1f);
-      param_2 = param_2 >> (bVar3 & 0x1f);
+      param_2 = (iVar6 - (int)(uVar1 >> 0x20)) - (uint)(uVar3 < (uint)uVar1);
+      param_1 = param_2 << (bVar4 & 0x1f) | uVar3 - (uint)uVar1 >> (bVar2 & 0x1f);
+      param_2 = param_2 >> (bVar2 & 0x1f);
     }
   }
   if (local_30 != 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   return CONCAT44(param_2,param_1);
 }
@@ -804,9 +815,8 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; param_4 >> uVar6 == 0; uVar6 = uVar6 - 1) {
       }
     }
-    uVar6 = uVar6 ^ 0x1f;
-    if (uVar6 != 0) {
-      bVar5 = (byte)uVar6;
+    if ((uVar6 ^ 0x1f) != 0) {
+      bVar5 = (byte)(uVar6 ^ 0x1f);
       bVar8 = 0x20 - bVar5;
       uVar1 = (ulonglong)(param_4 << (bVar5 & 0x1f) | param_3 >> (bVar8 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar8 & 0x1f),
@@ -821,6 +831,7 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       }
       return (ulonglong)uVar6;
     }
+    uVar6 = 0;
     if ((param_4 < param_2) || (uVar7 = 0, param_3 <= param_1)) {
       uVar7 = 1;
     }
@@ -830,66 +841,60 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08048eba)
+
 ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
+  byte bVar2;
   byte bVar3;
-  byte bVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  bool bVar9;
+  uint uVar4;
+  int iVar5;
   uint local_28;
   
   local_28 = param_1;
   if (param_4 == 0) {
     if (param_2 < param_3) {
-      uVar5 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
+      uVar4 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
     }
     else {
       if (param_3 == 0) {
         param_3 = (uint)(1 / 0);
       }
-      uVar5 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
+      uVar4 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
                     (ulonglong)param_3);
     }
-    return (ulonglong)uVar5;
+    return (ulonglong)uVar4;
   }
   if (param_4 <= param_2) {
-    uVar5 = 0x1f;
+    uVar4 = 0x1f;
     if (param_4 != 0) {
-      for (; param_4 >> uVar5 == 0; uVar5 = uVar5 - 1) {
+      for (; param_4 >> uVar4 == 0; uVar4 = uVar4 - 1) {
       }
     }
-    if ((uVar5 ^ 0x1f) == 0) {
+    if ((uVar4 ^ 0x1f) == 0) {
       if ((param_4 < param_2) || (param_3 <= param_1)) {
         local_28 = param_1 - param_3;
         param_2 = (param_2 - param_4) - (uint)(param_1 < param_3);
       }
       return CONCAT44(param_2,local_28);
     }
-    bVar3 = (byte)(uVar5 ^ 0x1f);
-    bVar4 = 0x20 - bVar3;
-    uVar6 = param_3 >> (bVar4 & 0x1f) | param_4 << (bVar3 & 0x1f);
-    param_3 = param_3 << (bVar3 & 0x1f);
-    uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),param_1 >> (bVar4 & 0x1f) | param_2 << (bVar3 & 0x1f)
+    bVar2 = (byte)(uVar4 ^ 0x1f);
+    bVar3 = 0x20 - bVar2;
+    uVar4 = param_3 >> (bVar3 & 0x1f) | param_4 << (bVar2 & 0x1f);
+    param_3 = param_3 << (bVar2 & 0x1f);
+    uVar1 = CONCAT44(param_2 >> (bVar3 & 0x1f),param_1 >> (bVar3 & 0x1f) | param_2 << (bVar2 & 0x1f)
                     );
-    uVar7 = (uint)(uVar1 % (ulonglong)uVar6);
-    param_1 = param_1 << (bVar3 & 0x1f);
-    lVar2 = (uVar1 / uVar6 & 0xffffffff) * (ulonglong)param_3;
-    uVar8 = (uint)((ulonglong)lVar2 >> 0x20);
-    uVar5 = (uint)lVar2;
-    if ((uVar7 < uVar8) || ((uVar7 == uVar8 && (param_1 < uVar5)))) {
-      bVar9 = uVar5 < param_3;
-      uVar5 = uVar5 - param_3;
-      uVar8 = (uVar8 - uVar6) - (uint)bVar9;
+    iVar5 = (int)(uVar1 % (ulonglong)uVar4);
+    param_1 = param_1 << (bVar2 & 0x1f);
+    uVar1 = (uVar1 / uVar4 & 0xffffffff) * (ulonglong)param_3;
+    if (CONCAT44(iVar5,param_1) < uVar1) {
+      uVar1 = uVar1 - CONCAT44(uVar4,param_3);
     }
-    uVar8 = (uVar7 - uVar8) - (uint)(param_1 < uVar5);
-    return CONCAT44(uVar8 >> (bVar3 & 0x1f),
-                    uVar8 << (bVar4 & 0x1f) | param_1 - uVar5 >> (bVar3 & 0x1f));
+    uVar4 = (iVar5 - (int)(uVar1 >> 0x20)) - (uint)(param_1 < (uint)uVar1);
+    return CONCAT44(uVar4 >> (bVar2 & 0x1f),
+                    uVar4 << (bVar3 & 0x1f) | param_1 - (uint)uVar1 >> (bVar2 & 0x1f));
   }
   return CONCAT44(param_2,param_1);
 }

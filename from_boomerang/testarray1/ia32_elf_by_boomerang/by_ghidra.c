@@ -110,6 +110,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -176,6 +177,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -232,6 +244,16 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
+void FUN_08048290(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __libc_start_main(void)
 
 {
@@ -241,7 +263,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -254,10 +276,13 @@ int printf(char *__format,...)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );

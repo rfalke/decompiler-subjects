@@ -3,6 +3,33 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,7 +61,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(undefined4 param_1,byte *param_2)
+void processEntry entry(undefined4 param_1,int param_2,undefined4 param_3,byte *param_4)
 
 {
   code *pcVar1;
@@ -43,13 +70,12 @@ void entry(undefined4 param_1,byte *param_2)
   undefined4 *puVar4;
   undefined4 *puVar5;
   byte *pbVar6;
-  int unaff_retaddr;
   
-  puVar4 = &param_1;
+  puVar4 = &param_3;
   _DAT_0804809b = 0x1e;
-  if (unaff_retaddr != 1) {
+  if (param_2 != 1) {
     iVar3 = 0;
-    pbVar6 = param_2;
+    pbVar6 = param_4;
     while( true ) {
       bVar2 = *pbVar6 - 0x30;
       if ((*pbVar6 < 0x30) || (9 < bVar2)) break;

@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
@@ -14,21 +15,44 @@ typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
 typedef short    wchar_t;
 typedef unsigned short    word;
+typedef uint ULONG;
+
+typedef ushort wint_t;
+
+typedef uchar BYTE;
+
+typedef uint size_t;
+
+typedef int mbstate_t;
+
+typedef ushort wctrans_t;
+
+typedef uint DWORD;
+
+typedef int int_type;
+
+typedef int WINBOOL;
+
+typedef int _Atomic_word;
+
+typedef int LONG;
+
+typedef ushort WORD;
+
+typedef char char_type;
+
+typedef uint ULONG_PTR;
+
 typedef uint sizetype;
+
+typedef int ptrdiff_t;
+
+typedef ushort wctype_t;
 
 typedef struct char_traits<char> char_traits<char>, *Pchar_traits<char>;
 
 struct char_traits<char> {
-    undefined field0_0x0;
 };
-
-typedef char char_type;
-
-typedef int int_type;
-
-typedef wchar_t wctrans_t;
-
-typedef wchar_t wctype_t;
 
 typedef struct _CRITICAL_SECTION _CRITICAL_SECTION, *P_CRITICAL_SECTION;
 
@@ -38,13 +62,7 @@ typedef struct _CRITICAL_SECTION_DEBUG _CRITICAL_SECTION_DEBUG, *P_CRITICAL_SECT
 
 typedef struct _CRITICAL_SECTION_DEBUG * PCRITICAL_SECTION_DEBUG;
 
-typedef long LONG;
-
 typedef void * HANDLE;
-
-typedef ulong DWORD;
-
-typedef ushort WORD;
 
 typedef struct _LIST_ENTRY _LIST_ENTRY, *P_LIST_ENTRY;
 
@@ -77,25 +95,21 @@ struct _CRITICAL_SECTION {
 typedef struct __numeric_traits_integer<long_unsigned_int> __numeric_traits_integer<long_unsigned_int>, *P__numeric_traits_integer<long_unsigned_int>;
 
 struct __numeric_traits_integer<long_unsigned_int> { // Original name: __numeric_traits_integer<long unsigned int>
-    undefined field0_0x0;
 };
 
 typedef struct __numeric_traits_integer<char> __numeric_traits_integer<char>, *P__numeric_traits_integer<char>;
 
 struct __numeric_traits_integer<char> {
-    undefined field0_0x0;
 };
 
 typedef struct __numeric_traits_integer<short_int> __numeric_traits_integer<short_int>, *P__numeric_traits_integer<short_int>;
 
 struct __numeric_traits_integer<short_int> { // Original name: __numeric_traits_integer<short int>
-    undefined field0_0x0;
 };
 
 typedef struct __numeric_traits_integer<int> __numeric_traits_integer<int>, *P__numeric_traits_integer<int>;
 
 struct __numeric_traits_integer<int> {
-    undefined field0_0x0;
 };
 
 typedef enum VARENUM {
@@ -152,10 +166,6 @@ typedef enum VARENUM {
     VT_ILLEGAL=65535
 } VARENUM;
 
-typedef int ptrdiff_t;
-
-typedef uint size_t;
-
 typedef struct _iobuf _iobuf, *P_iobuf;
 
 typedef struct _iobuf FILE;
@@ -171,12 +181,9 @@ struct _iobuf {
     char * _tmpfname;
 };
 
-typedef int _Atomic_word;
-
 typedef struct Init Init, *PInit;
 
 struct Init {
-    undefined field0_0x0;
 };
 
 typedef struct __mingwthr_key __mingwthr_key, *P__mingwthr_key;
@@ -189,7 +196,7 @@ struct __mingwthr_key {
     __mingwthr_key_t * next;
 };
 
-typedef int mbstate_t;
+typedef void (* _PVFV)(void);
 
 typedef struct tm tm, *Ptm;
 
@@ -205,11 +212,9 @@ struct tm {
     int tm_isdst;
 };
 
-typedef int WINBOOL;
+typedef void (* func_ptr)(void);
 
 typedef WINBOOL BOOL;
-
-typedef uchar BYTE;
 
 typedef struct ios_base ios_base, *Pios_base;
 
@@ -270,8 +275,6 @@ struct runtime_pseudo_reloc_item_v1 {
 typedef char * __gnuc_va_list;
 
 typedef __gnuc_va_list va_list;
-
-typedef ulong ULONG;
 
 typedef struct _MEMORY_BASIC_INFORMATION _MEMORY_BASIC_INFORMATION, *P_MEMORY_BASIC_INFORMATION;
 
@@ -378,17 +381,19 @@ typedef void * LPVOID;
 
 typedef IMAGE_TLS_DIRECTORY32 IMAGE_TLS_DIRECTORY;
 
+typedef void (* PIMAGE_TLS_CALLBACK)(PVOID, DWORD, PVOID);
+
 typedef struct _startupinfo _startupinfo, *P_startupinfo;
 
 struct _startupinfo {
     int newmode;
 };
 
-typedef ulong ULONG_PTR;
-
-typedef ushort wint_t;
+typedef void (* __p_sig_fn_t)(int);
 
 typedef struct basic_ostream<char,_std::char_traits<char>_> ostream;
+
+typedef int (* _onexit_t)(void);
 
 typedef struct _RTL_CRITICAL_SECTION _RTL_CRITICAL_SECTION, *P_RTL_CRITICAL_SECTION;
 
@@ -401,7 +406,16 @@ typedef struct _RTL_CRITICAL_SECTION_DEBUG _RTL_CRITICAL_SECTION_DEBUG, *P_RTL_C
 typedef struct _RTL_CRITICAL_SECTION_DEBUG * PRTL_CRITICAL_SECTION_DEBUG;
 
 
+// WARNING! conflicting data type names: /winnt.h/LONG - /DWARF/LONG
+
+
+// WARNING! conflicting data type names: /basetsd.h/ULONG_PTR - /DWARF/ULONG_PTR
+
+
 // WARNING! conflicting data type names: /winnt.h/LIST_ENTRY - /DWARF/winnt.h/LIST_ENTRY
+
+
+// WARNING! conflicting data type names: /WinDef.h/DWORD - /DWARF/DWORD
 
 struct _RTL_CRITICAL_SECTION {
     PRTL_CRITICAL_SECTION_DEBUG DebugInfo;
@@ -659,13 +673,26 @@ struct IMAGE_THUNK_DATA32 {
 
 // WARNING! conflicting data type names: /vadefs.h/va_list - /DWARF/stdarg.h/va_list
 
-typedef int (* _onexit_t)(void);
+typedef struct basic_ostream basic_ostream, *Pbasic_ostream;
+
+struct basic_ostream { // PlaceHolder Structure
+};
+
+typedef struct basic_ostream<char,std::char_traits<char>> basic_ostream<char,std::char_traits<char>>, *Pbasic_ostream<char,std::char_traits<char>>;
+
+struct basic_ostream<char,std::char_traits<char>> { // PlaceHolder Structure
+};
+
+
+// WARNING! conflicting data type names: /stdlib.h/_onexit_t - /DWARF/stdlib.h/_onexit_t
 
 
 // WARNING! conflicting data type names: /internal.h/_startupinfo - /DWARF/init.c/_startupinfo
 
 
 
+
+// WARNING: Unknown calling convention
 
 void __mingw_CRTStartup(void)
 
@@ -674,6 +701,7 @@ void __mingw_CRTStartup(void)
   int *piVar2;
   undefined4 *puVar3;
   UINT uExitCode;
+  int nRet;
   _startupinfo start_info;
   char **dummy_environ;
   
@@ -681,7 +709,7 @@ void __mingw_CRTStartup(void)
   _SetUnhandledExceptionFilter_4(_gnu_exception_handler);
   __cpu_features_init();
   _fpreset();
-  start_info = 0;
+  start_info.newmode = 0;
   ___getmainargs(&_argc,&_argv,&dummy_environ,_CRT_glob,(_startupinfo *)&start_info);
   pcVar1 = _iob_exref;
   if (_CRT_fmode != 0) {
@@ -703,10 +731,13 @@ void __mingw_CRTStartup(void)
 
 
 
+// WARNING: Unknown calling convention
+
 long _gnu_exception_handler(EXCEPTION_POINTERS *exception_data)
 
 {
   bool bVar1;
+  _func_void_int *old_handler;
   code *pcVar2;
   
   pcVar2 = (code *)exception_data->ExceptionRecord->ExceptionCode;
@@ -770,6 +801,8 @@ LAB_00401131:
 
 
 
+// WARNING: Unknown calling convention
+
 void mainCRTStartup(void)
 
 {
@@ -779,6 +812,8 @@ void mainCRTStartup(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void WinMainCRTStartup(void)
 
@@ -790,9 +825,7 @@ void WinMainCRTStartup(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-int atexit(anon_subr_void *pfn)
+int __cdecl atexit(_func_4879 *param_1)
 
 {
   int iVar1;
@@ -805,16 +838,14 @@ int atexit(anon_subr_void *pfn)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-_onexit_t * _onexit(_onexit_t *pfn)
+_onexit_t __cdecl _onexit(_onexit_t _Func)
 
 {
-  _onexit_t *p_Var1;
+  _onexit_t p_Var1;
   
                     // WARNING: Could not recover jumptable at 0x004012b8. Too many branches
                     // WARNING: Treating indirect jump as call
-  p_Var1 = (_onexit_t *)_onexit();
+  p_Var1 = (_onexit_t)_onexit();
   return p_Var1;
 }
 
@@ -823,34 +854,44 @@ _onexit_t * _onexit(_onexit_t *pfn)
 int __cdecl main(int _Argc,char **_Argv,char **_Env)
 
 {
+  basic_ostream *this;
+  
   __main();
-  __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(&_ZSt4cerr_exref,"Hello, World!");
-  __ZNSolsEPFRSoS_E(&__ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_);
+  this = std::operator<<((basic_ostream *)&cerr_exref,"Hello, World!");
+  std::basic_ostream<char,std::char_traits<char>>::operator<<
+            ((basic_ostream<char,std::char_traits<char>> *)this,
+             std::endl<char,std::char_traits<char>>);
   return 0;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void __tcf_0(void)
 
 {
-  __ZNSt8ios_base4InitD1Ev();
+  std::ios_base::Init::~Init((Init *)&std::__ioinit);
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void __static_initialization_and_destruction_0(int __initialize_p,int __priority)
 
 {
   if ((__initialize_p == 1) && (__priority == 0xffff)) {
-    __ZNSt8ios_base4InitC1Ev();
+    std::ios_base::Init::Init((Init *)&std::__ioinit);
     atexit(__tcf_0);
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _GLOBAL__sub_I_main(void)
 
@@ -861,49 +902,85 @@ void _GLOBAL__sub_I_main(void)
 
 
 
-void __ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc(void)
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+// std::basic_ostream<char, std::char_traits<char> >& std::endl<char, std::char_traits<char>
+// >(std::basic_ostream<char, std::char_traits<char> >&)
+
+basic_ostream * std::endl<char,std::char_traits<char>>(basic_ostream *param_1)
 
 {
-                    // WARNING: Could not recover jumptable at 0x00401438. Too many branches
+  basic_ostream *pbVar1;
+  
+                    // WARNING: Could not recover jumptable at 0x00401430. Too many branches
                     // WARNING: Treating indirect jump as call
-  _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc();
-  return;
+  pbVar1 = std::endl<char,std::char_traits<char>>(param_1);
+  return pbVar1;
 }
 
 
 
-void __ZNSolsEPFRSoS_E(void)
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+// std::basic_ostream<char, std::char_traits<char> >&
+// std::TEMPNAMEPLACEHOLDERVALUE(std::basic_ostream<char, std::char_traits<char> >&, char const*)
+
+basic_ostream * std::operator<<(basic_ostream *param_1,char *param_2)
+
+{
+  basic_ostream *pbVar1;
+  
+                    // WARNING: Could not recover jumptable at 0x00401438. Too many branches
+                    // WARNING: Treating indirect jump as call
+  pbVar1 = std::operator<<(param_1,param_2);
+  return pbVar1;
+}
+
+
+
+// std::basic_ostream<char, std::char_traits<char>
+// >::TEMPNAMEPLACEHOLDERVALUE(std::basic_ostream<char, std::char_traits<char> >&
+// (*)(std::basic_ostream<char, std::char_traits<char> >&))
+
+void __thiscall
+std::basic_ostream<char,std::char_traits<char>>::operator<<
+          (basic_ostream<char,std::char_traits<char>> *this,
+          _func_basic_ostream_ptr_basic_ostream_ptr *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401440. Too many branches
                     // WARNING: Treating indirect jump as call
-  _ZNSolsEPFRSoS_E();
+  std::basic_ostream<char,std::char_traits<char>>::operator<<(this,param_1);
   return;
 }
 
 
 
-void __ZNSt8ios_base4InitD1Ev(void)
+// std::ios_base::Init::~Init()
+
+void __thiscall std::ios_base::Init::~Init(Init *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401448. Too many branches
                     // WARNING: Treating indirect jump as call
-  _ZNSt8ios_base4InitD1Ev();
+  std::ios_base::Init::~Init(this);
   return;
 }
 
 
 
-void __ZNSt8ios_base4InitC1Ev(void)
+// std::ios_base::Init::Init()
+
+void __thiscall std::ios_base::Init::Init(Init *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401450. Too many branches
                     // WARNING: Treating indirect jump as call
-  _ZNSt8ios_base4InitC1Ev();
+  std::ios_base::Init::Init(this);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 BOOL __dyn_tls_dtor(HANDLE hDllHandle,DWORD dwReason,LPVOID lpreserved)
 
@@ -921,10 +998,13 @@ BOOL __dyn_tls_dtor(HANDLE hDllHandle,DWORD dwReason,LPVOID lpreserved)
 // WARNING: Removing unreachable block (ram,0x004014d6)
 // WARNING: Removing unreachable block (ram,0x004014d8)
 // WARNING: Removing unreachable block (ram,0x004014e3)
+// WARNING: Unknown calling convention
 
 BOOL __dyn_tls_init(HANDLE hDllHandle,DWORD dwReason,LPVOID lpreserved)
 
 {
+  _PVFV *pfunc;
+  
   if (_CRT_MT != 2) {
     _CRT_MT = 2;
   }
@@ -936,7 +1016,9 @@ BOOL __dyn_tls_init(HANDLE hDllHandle,DWORD dwReason,LPVOID lpreserved)
 
 
 
-int __tlregdtor(_PVFV *func)
+// WARNING: Unknown calling convention
+
+int __tlregdtor(_PVFV func)
 
 {
   return 0;
@@ -948,6 +1030,7 @@ int __tlregdtor(_PVFV *func)
 // WARNING: Removing unreachable block (ram,0x004015b1)
 // WARNING: Removing unreachable block (ram,0x00401545)
 // WARNING: Removing unreachable block (ram,0x00401536)
+// WARNING: Unknown calling convention
 
 void __cpu_features_init(void)
 
@@ -955,13 +1038,17 @@ void __cpu_features_init(void)
   int *piVar1;
   int iVar2;
   uint *puVar3;
+  uint eax;
+  uint ecx;
+  uint ebx;
   uint uVar4;
+  uint edx;
   byte in_VIP;
   byte in_ID;
   
   uVar4 = (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000;
-  if (((((uint)(((uVar4 ^ 0x200000) & 0x200000) != 0) * 0x200000 ^ uVar4) & 0x200000) != 0) &&
-     (piVar1 = (int *)cpuid_basic_info(0), *piVar1 != 0)) {
+  eax = (uint)(((uVar4 ^ 0x200000) & 0x200000) != 0) * 0x200000 ^ uVar4;
+  if (((eax & 0x200000) != 0) && (piVar1 = (int *)cpuid_basic_info(0), *piVar1 != 0)) {
     iVar2 = cpuid_Version_info(1);
     uVar4 = *(uint *)(iVar2 + 8);
     if ((uVar4 & 0x100) != 0) {
@@ -1012,10 +1099,13 @@ void __cdecl _fpreset(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void __report_error(char *msg,...)
 
 {
   FILE *_File;
+  va_list argp;
   
   _File = (FILE *)(_iob_exref + 0x40);
   _fwrite("Mingw runtime failure:\n",1,0x17,_File);
@@ -1026,35 +1116,36 @@ void __report_error(char *msg,...)
 
 
 
-void __fastcall __write_memory(void *addr,void *src,size_t len)
+// WARNING: Unknown calling convention
+
+void __write_memory(void *addr,void *src,size_t len)
 
 {
-  undefined *in_EAX;
   SIZE_T SVar1;
   MEMORY_BASIC_INFORMATION b;
   DWORD oldprot;
   
-  if (addr != (void *)0x0) {
-    SVar1 = _VirtualQuery_12(in_EAX,(PMEMORY_BASIC_INFORMATION)&b,0x1c);
+  if (len != 0) {
+    SVar1 = _VirtualQuery_12(addr,(PMEMORY_BASIC_INFORMATION)&b,0x1c);
     if (SVar1 == 0) {
                     // WARNING: Subroutine does not return
-      __report_error("  VirtualQuery failed for %d bytes at address %p",0x1c);
+      __report_error("  VirtualQuery failed for %d bytes at address %p",0x1c,addr);
     }
     if ((b.Protect == 0x40) || (b.Protect == 4)) {
                     // WARNING: Load size is inaccurate
-      for (; addr != (void *)0x0; addr = (void *)((int)addr + -1)) {
-        *in_EAX = *src;
+      for (; len != 0; len = len - 1) {
+        *(undefined *)addr = *src;
         src = (undefined *)((int)src + 1);
-        in_EAX = in_EAX + 1;
+        addr = (undefined *)((int)addr + 1);
       }
       return;
     }
     _VirtualProtect_16(b.BaseAddress,b.RegionSize,0x40,&oldprot);
                     // WARNING: Load size is inaccurate
-    for (; addr != (void *)0x0; addr = (void *)((int)addr + -1)) {
-      *in_EAX = *src;
+    for (; len != 0; len = len - 1) {
+      *(undefined *)addr = *src;
       src = (undefined *)((int)src + 1);
-      in_EAX = in_EAX + 1;
+      addr = (undefined *)((int)addr + 1);
     }
     if ((b.Protect != 0x40) && (b.Protect != 4)) {
       _VirtualProtect_16(b.BaseAddress,b.RegionSize,oldprot,&oldprot);
@@ -1074,32 +1165,38 @@ void __fastcall __write_memory(void *addr,void *src,size_t len)
 // WARNING: Removing unreachable block (ram,0x00401790)
 // WARNING: Removing unreachable block (ram,0x004017b3)
 // WARNING: Removing unreachable block (ram,0x004018e7)
+// WARNING: Unknown calling convention
 
 void _pei386_runtime_relocator(void)
 
 {
   int iVar1;
-  int *piVar2;
+  int iVar2;
+  ptrdiff_t reloc_target;
+  int *addr;
   uint uVar3;
+  runtime_pseudo_reloc_item_v1 *o;
+  runtime_pseudo_reloc_v2 *v2_hdr;
   int *piVar4;
+  runtime_pseudo_reloc_item_v2 *r;
+  ptrdiff_t addr_imp;
   uint uVar5;
-  size_t in_stack_ffffffc4;
   DWORD newval;
-  int local_20 [4];
+  ptrdiff_t reldata;
   
   if (_pei386_runtime_relocator::was_init == 0) {
     _pei386_runtime_relocator::was_init = 1;
     piVar4 = &DAT_00403134;
     do {
-      piVar2 = (int *)(piVar4[1] + 0x400000);
+      addr = (int *)(piVar4[1] + 0x400000);
       iVar1 = *piVar4;
-      local_20[0] = *(int *)(iVar1 + 0x400000);
+      iVar2 = *(int *)(iVar1 + 0x400000);
       uVar3 = piVar4[2] & 0xff;
       if (uVar3 == 0x10) {
-        uVar5 = (uint)*(ushort *)piVar2;
-        if ((*(ushort *)piVar2 & 0x8000) == 0) {
+        uVar5 = (uint)*(ushort *)addr;
+        if ((*(ushort *)addr & 0x8000) == 0) {
 LAB_00401863:
-          local_20[0] = (uVar5 - iVar1) + -0x400000 + local_20[0];
+          reldata = (uVar5 - iVar1) + -0x400000 + iVar2;
           if (uVar3 != 0x10) {
             if (uVar3 == 0x20) goto LAB_0040189f;
             if (uVar3 == 8) goto LAB_00401881;
@@ -1107,26 +1204,26 @@ LAB_00401863:
           }
         }
         else {
-          local_20[0] = ((uVar5 | 0xffff0000) - iVar1) + -0x400000 + local_20[0];
+          reldata = ((uVar5 | 0xffff0000) - iVar1) + -0x400000 + iVar2;
         }
-        __write_memory((void *)0x2,local_20,in_stack_ffffffc4);
+        __write_memory(addr,&reldata,2);
       }
       else if (uVar3 == 0x20) {
-        local_20[0] = (*piVar2 - iVar1) + -0x400000 + local_20[0];
+        reldata = (*addr - iVar1) + -0x400000 + iVar2;
 LAB_0040189f:
-        __write_memory((void *)0x4,local_20,in_stack_ffffffc4);
+        __write_memory(addr,&reldata,4);
       }
       else {
         if (uVar3 != 8) {
-          local_20[0] = 0;
+          reldata = 0;
                     // WARNING: Subroutine does not return
           __report_error("  Unknown pseudo relocation bit size %d.\n",uVar3);
         }
-        uVar5 = (uint)*(byte *)piVar2;
-        if ((*(byte *)piVar2 & 0x80) == 0) goto LAB_00401863;
-        local_20[0] = ((uVar5 | 0xffffff00) - iVar1) + -0x400000 + local_20[0];
+        uVar5 = (uint)*(byte *)addr;
+        if ((*(byte *)addr & 0x80) == 0) goto LAB_00401863;
+        reldata = ((uVar5 | 0xffffff00) - iVar1) + -0x400000 + iVar2;
 LAB_00401881:
-        __write_memory((void *)0x1,local_20,in_stack_ffffffc4);
+        __write_memory(addr,&reldata,1);
       }
 LAB_004018ac:
       piVar4 = piVar4 + 3;
@@ -1137,15 +1234,17 @@ LAB_004018ac:
 
 
 
+// WARNING: Unknown calling convention
+
 void __do_global_dtors(void)
 
 {
-  func_ptr *pfVar1;
+  func_ptr p_Var1;
   
-  pfVar1 = *__do_global_dtors::p;
-  while (pfVar1 != (func_ptr *)0x0) {
-    (*pfVar1)();
-    pfVar1 = __do_global_dtors::p[1];
+  p_Var1 = *__do_global_dtors::p;
+  while (p_Var1 != (func_ptr)0x0) {
+    (*p_Var1)();
+    p_Var1 = __do_global_dtors::p[1];
     __do_global_dtors::p = __do_global_dtors::p + 1;
   }
   return;
@@ -1153,10 +1252,13 @@ void __do_global_dtors(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void __do_global_ctors(void)
 
 {
   int iVar1;
+  ulong nptrs;
   int iVar2;
   
   iVar1 = 0;
@@ -1173,6 +1275,8 @@ void __do_global_ctors(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void __main(void)
 
 {
@@ -1186,19 +1290,22 @@ void __main(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void __mingwthr_run_key_dtors(void)
 
 {
   __mingwthr_key_t *p_Var1;
   LPVOID pvVar2;
-  DWORD DVar3;
+  LPVOID value;
   
   if (__mingwthr_cs_init != 0) {
     _EnterCriticalSection_4((LPCRITICAL_SECTION)&__mingwthr_cs);
-    for (p_Var1 = key_dtor_list; p_Var1 != (__mingwthr_key_t *)0x0; p_Var1 = p_Var1->next) {
+    for (p_Var1 = __mingwthr_run_key_dtors::keyp; p_Var1 != (__mingwthr_key_t *)0x0;
+        p_Var1 = p_Var1->next) {
       pvVar2 = _TlsGetValue_4(p_Var1->key);
-      DVar3 = _GetLastError_0();
-      if ((DVar3 == 0) && (pvVar2 != (LPVOID)0x0)) {
+      value = (LPVOID)_GetLastError_0();
+      if ((value == (LPVOID)0x0) && (pvVar2 != (LPVOID)0x0)) {
         (*p_Var1->dtor)(pvVar2);
       }
     }
@@ -1210,11 +1317,14 @@ void __mingwthr_run_key_dtors(void)
 
 
 
-int ___w64_mingwthr_add_key_dtor(DWORD key,anon_subr_void_void_ptr *dtor)
+// WARNING: Unknown calling convention
+
+int ___w64_mingwthr_add_key_dtor(DWORD key,_func_void_void_ptr *dtor)
 
 {
   int iVar1;
   __mingwthr_key_t *p_Var2;
+  __mingwthr_key_t *new_key;
   
   if (__mingwthr_cs_init == 0) {
     iVar1 = 0;
@@ -1226,10 +1336,10 @@ int ___w64_mingwthr_add_key_dtor(DWORD key,anon_subr_void_void_ptr *dtor)
     }
     else {
       p_Var2->key = key;
-      p_Var2->dtor = (anon_subr_void_void_ptr_for_dtor *)dtor;
+      p_Var2->dtor = dtor;
       _EnterCriticalSection_4((LPCRITICAL_SECTION)&__mingwthr_cs);
-      p_Var2->next = key_dtor_list;
-      key_dtor_list = p_Var2;
+      p_Var2->next = __mingwthr_run_key_dtors::keyp;
+      __mingwthr_run_key_dtors::keyp = p_Var2;
       _LeaveCriticalSection_4((LPCRITICAL_SECTION)&__mingwthr_cs);
       iVar1 = 0;
     }
@@ -1238,6 +1348,8 @@ int ___w64_mingwthr_add_key_dtor(DWORD key,anon_subr_void_void_ptr *dtor)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ___w64_mingwthr_remove_key_dtor(DWORD key)
 
@@ -1249,14 +1361,14 @@ int ___w64_mingwthr_remove_key_dtor(DWORD key)
     return 0;
   }
   _EnterCriticalSection_4((LPCRITICAL_SECTION)&__mingwthr_cs);
-  if (key_dtor_list == (__mingwthr_key_t *)0x0) {
+  if (__mingwthr_run_key_dtors::keyp == (__mingwthr_key_t *)0x0) {
 LAB_00401ac3:
     _LeaveCriticalSection_4((LPCRITICAL_SECTION)&__mingwthr_cs);
   }
   else {
-    _Memory = key_dtor_list;
-    if (key_dtor_list->key == key) {
-      key_dtor_list = key_dtor_list->next;
+    _Memory = __mingwthr_run_key_dtors::keyp;
+    if (__mingwthr_run_key_dtors::keyp->key == key) {
+      __mingwthr_run_key_dtors::keyp = __mingwthr_run_key_dtors::keyp->next;
     }
     else {
       do {
@@ -1273,6 +1385,8 @@ LAB_00401ac3:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 WINBOOL __mingw_TLScallback(HANDLE hDllHandle,DWORD reason,LPVOID reserved)
 
@@ -1299,19 +1413,6 @@ WINBOOL __mingw_TLScallback(HANDLE hDllHandle,DWORD reason,LPVOID reserved)
 
 
 
-void ___deregister_frame_info(void)
-
-{
-                    // WARNING: Could not recover jumptable at 0x00401b7c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  __deregister_frame_info();
-  return;
-}
-
-
-
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl
 ___getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinfo *_StartInfo)
 
@@ -1320,7 +1421,7 @@ ___getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinf
   
                     // WARNING: Could not recover jumptable at 0x00401b8c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = __getmainargs();
+  iVar1 = __getmainargs(_Argc,_Argv,_Env,_DoWildCard,_StartInfo);
   return iVar1;
 }
 
@@ -1348,8 +1449,6 @@ void ___p__environ(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl __cexit(void)
 
 {
@@ -1361,8 +1460,6 @@ void __cdecl __cexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl __setmode(int _FileHandle,int _Mode)
 
 {
@@ -1370,13 +1467,13 @@ int __cdecl __setmode(int _FileHandle,int _Mode)
   
                     // WARNING: Could not recover jumptable at 0x00401bac. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = _setmode();
+  iVar1 = _setmode(_FileHandle,_Mode);
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _signal(int param_1)
 
@@ -1389,8 +1486,6 @@ void _signal(int param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 size_t __cdecl _fwrite(void *_Str,size_t _Size,size_t _Count,FILE *_File)
 
 {
@@ -1398,13 +1493,11 @@ size_t __cdecl _fwrite(void *_Str,size_t _Size,size_t _Count,FILE *_File)
   
                     // WARNING: Could not recover jumptable at 0x00401bbc. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = fwrite();
+  sVar1 = fwrite(_Str,_Size,_Count,_File);
   return sVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl _vfprintf(FILE *_File,char *_Format,va_list _ArgList)
 
@@ -1413,26 +1506,23 @@ int __cdecl _vfprintf(FILE *_File,char *_Format,va_list _ArgList)
   
                     // WARNING: Could not recover jumptable at 0x00401bc4. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = vfprintf();
+  iVar1 = vfprintf(_File,_Format,_ArgList);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bcc. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
   abort();
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl _calloc(size_t _Count,size_t _Size)
 
@@ -1441,20 +1531,18 @@ void * __cdecl _calloc(size_t _Count,size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x00401bd4. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)calloc();
+  pvVar1 = calloc(_Count,_Size);
   return pvVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _free(void *_Memory)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bdc. Too many branches
                     // WARNING: Treating indirect jump as call
-  free();
+  free(_Memory);
   return;
 }
 
@@ -1474,14 +1562,13 @@ _SetUnhandledExceptionFilter_4(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionF
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void _ExitProcess_4(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bec. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  ExitProcess();
+  ExitProcess(uExitCode);
   return;
 }
 

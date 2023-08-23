@@ -75,16 +75,20 @@ void FUN_007ece5f(void)
 
 // WARNING: Removing unreachable block (ram,0x007f6864)
 
-void entry(long param_1,long param_2,undefined8 param_3,undefined8 param_4,undefined8 param_5,
-          undefined8 param_6)
+void processEntry entry(void)
 
 {
+  undefined8 in_RCX;
   undefined extraout_DL;
   undefined7 extraout_var;
+  long in_RSI;
+  long in_RDI;
+  undefined8 in_R8;
+  undefined8 in_R9;
   
   FUN_007f6ac0();
-  FUN_007f68b0(CONCAT71(extraout_var,extraout_DL),param_1,extraout_DL,0,param_5,param_6,
-               param_2 + param_1,CONCAT71(extraout_var,extraout_DL),param_4);
+  FUN_007f68b0(CONCAT71(extraout_var,extraout_DL),in_RDI,extraout_DL,0,in_R8,in_R9,in_RSI + in_RDI,
+               CONCAT71(extraout_var,extraout_DL),in_RCX);
   return;
 }
 
@@ -141,7 +145,7 @@ long FUN_007f68b0(byte *param_1,uint *param_2,undefined8 param_3,undefined8 para
   bool bVar5;
   byte bVar6;
   bool bVar7;
-  code *in_stack_00000000;
+  code *unaff_retaddr;
   
   if (param_5 == '\b') {
     do {
@@ -163,7 +167,7 @@ long FUN_007f68b0(byte *param_1,uint *param_2,undefined8 param_3,undefined8 para
         param_1 = param_1 + 1;
       }
       while( true ) {
-        iVar1 = (*in_stack_00000000)();
+        iVar1 = (*unaff_retaddr)();
         uVar2 = iVar1 * 2 + (uint)bVar4;
         bVar6 = CARRY4(unaff_EBX,unaff_EBX);
         unaff_EBX = unaff_EBX * 2;
@@ -177,7 +181,7 @@ long FUN_007f68b0(byte *param_1,uint *param_2,undefined8 param_3,undefined8 para
           uVar3 = (uint)*(byte *)param_2;
         }
         if ((bool)bVar6) break;
-        uVar3 = (*in_stack_00000000)();
+        uVar3 = (*unaff_retaddr)();
         bVar4 = CARRY4(uVar3,uVar3) || CARRY4(uVar3 * 2,(uint)bVar6);
       }
       if (uVar2 < 3) {
@@ -192,7 +196,7 @@ long FUN_007f68b0(byte *param_1,uint *param_2,undefined8 param_3,undefined8 para
         }
         if (!bVar5) goto LAB_007f6929;
 LAB_007f6951:
-        (*in_stack_00000000)();
+        (*unaff_retaddr)();
       }
       else {
         param_2 = (uint *)((long)param_2 + 1);
@@ -211,7 +215,7 @@ LAB_007f6929:
         }
         if (bVar5) goto LAB_007f6951;
         do {
-          (*in_stack_00000000)();
+          (*unaff_retaddr)();
           bVar5 = CARRY4(unaff_EBX,unaff_EBX);
           unaff_EBX = unaff_EBX * 2;
           if (unaff_EBX == 0) {

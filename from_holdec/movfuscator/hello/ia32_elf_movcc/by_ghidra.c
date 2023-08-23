@@ -4,6 +4,7 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
+typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
@@ -24,19 +25,13 @@ struct __sigset_t {
 
 typedef struct sigaction sigaction, *Psigaction;
 
-typedef union _union_1048 _union_1048, *P_union_1048;
+typedef union _union_1051 _union_1051, *P_union_1051;
 
 typedef struct siginfo siginfo, *Psiginfo;
 
 typedef struct siginfo siginfo_t;
 
-typedef union _union_1028 _union_1028, *P_union_1028;
-
-typedef struct _struct_1029 _struct_1029, *P_struct_1029;
-
-typedef struct _struct_1030 _struct_1030, *P_struct_1030;
-
-typedef struct _struct_1031 _struct_1031, *P_struct_1031;
+typedef union _union_1031 _union_1031, *P_union_1031;
 
 typedef struct _struct_1032 _struct_1032, *P_struct_1032;
 
@@ -44,17 +39,19 @@ typedef struct _struct_1033 _struct_1033, *P_struct_1033;
 
 typedef struct _struct_1034 _struct_1034, *P_struct_1034;
 
+typedef struct _struct_1035 _struct_1035, *P_struct_1035;
+
+typedef struct _struct_1036 _struct_1036, *P_struct_1036;
+
+typedef struct _struct_1037 _struct_1037, *P_struct_1037;
+
 typedef union sigval sigval, *Psigval;
 
 typedef union sigval sigval_t;
 
-struct _struct_1034 {
-    long si_band;
-    int si_fd;
-};
-
-struct _struct_1033 {
-    void * si_addr;
+struct _struct_1032 {
+    __pid_t si_pid;
+    __uid_t si_uid;
 };
 
 union sigval {
@@ -62,7 +59,13 @@ union sigval {
     void * sival_ptr;
 };
 
-struct _struct_1032 {
+struct _struct_1034 {
+    __pid_t si_pid;
+    __uid_t si_uid;
+    sigval_t si_sigval;
+};
+
+struct _struct_1035 {
     __pid_t si_pid;
     __uid_t si_uid;
     int si_status;
@@ -70,47 +73,45 @@ struct _struct_1032 {
     __clock_t si_stime;
 };
 
-struct _struct_1031 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-    sigval_t si_sigval;
+struct _struct_1037 {
+    long si_band;
+    int si_fd;
 };
 
-struct _struct_1029 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-};
-
-struct _struct_1030 {
+struct _struct_1033 {
     int si_tid;
     int si_overrun;
     sigval_t si_sigval;
 };
 
-union _union_1028 {
+struct _struct_1036 {
+    void * si_addr;
+};
+
+union _union_1031 {
     int _pad[29];
-    struct _struct_1029 _kill;
-    struct _struct_1030 _timer;
-    struct _struct_1031 _rt;
-    struct _struct_1032 _sigchld;
-    struct _struct_1033 _sigfault;
-    struct _struct_1034 _sigpoll;
+    struct _struct_1032 _kill;
+    struct _struct_1033 _timer;
+    struct _struct_1034 _rt;
+    struct _struct_1035 _sigchld;
+    struct _struct_1036 _sigfault;
+    struct _struct_1037 _sigpoll;
+};
+
+union _union_1051 {
+    __sighandler_t sa_handler;
+    void (* sa_sigaction)(int, siginfo_t *, void *);
 };
 
 struct siginfo {
     int si_signo;
     int si_errno;
     int si_code;
-    union _union_1028 _sifields;
-};
-
-union _union_1048 {
-    __sighandler_t sa_handler;
-    void (* sa_sigaction)(int, siginfo_t *, void *);
+    union _union_1031 _sifields;
 };
 
 struct sigaction {
-    union _union_1048 __sigaction_handler;
+    union _union_1051 __sigaction_handler;
     struct __sigset_t sa_mask;
     int sa_flags;
     void (* sa_restorer)(void);
@@ -173,6 +174,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -322,7 +324,17 @@ struct Elf32_Ehdr {
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_080481f0(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -334,7 +346,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -346,7 +358,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
@@ -375,22 +387,21 @@ void dispatch(void)
 // WARNING: Control flow encountered bad instruction data
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(void)
 
 {
   int *piVar1;
   undefined4 *puVar2;
   int iVar3;
   
-  piVar1 = *(int **)(*(int *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068) +
-                    -0x200068);
+  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(&push + *(int *)(sp + -0x200068))));
   sesp = (undefined4 *)register0x00000010;
   *piVar1 = 0xb;
   piVar1[1] = (int)&sa_dispatch;
   piVar1[2] = 0;
   piVar1[-1] = 0x8048280;
   sigaction(*piVar1,(sigaction *)piVar1[1],(sigaction *)piVar1[2]);
-  piVar1 = *(int **)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068);
+  piVar1 = *(int **)(&push + *(int *)(&push + *(int *)(sp + -0x200068)));
   *piVar1 = 4;
   piVar1[1] = (int)&sa_loop;
   piVar1[2] = 0;
@@ -398,11 +409,14 @@ void entry(void)
   sigaction(*piVar1,(sigaction *)piVar1[1],(sigaction *)piVar1[2]);
   *(undefined4 *)(&sel_on)[toggle_execution] = 1;
   toggle_execution = 0;
-  stack_temp = (char *)(*(uint *)(&alu_add16)[*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10)] &
-                        0xffff | *(int *)((&alu_add16)[*(int *)(&alu_add16)[(uint)sesp >> 0x10]] +
-                                         (*(uint *)(&alu_add16)
-                                                   [*(int *)((&alu_add16)[(uint)sesp & 0xffff] +
-                                                            0x10)] >> 0x10) * 4) << 0x10);
+  stack_temp = (char *)CONCAT22((short)*(undefined4 *)
+                                        ((&alu_add16)[*(int *)(&alu_add16)[(uint)sesp >> 0x10]] +
+                                        (*(uint *)(&alu_add16)
+                                                  [*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10
+                                                           )] >> 0x10) * 4),
+                                (short)*(uint *)(&alu_add16)
+                                                [*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10)]
+                               );
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
   stack_temp = (char *)*sesp;
@@ -485,7 +499,7 @@ void entry(void)
   *(char **)(&sel_data)[on] = stack_temp;
   stack_temp = (char *)D1;
   DAT_081f40f4 = DAT_0804b05c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f40f4;
@@ -494,9 +508,11 @@ void entry(void)
   stack_temp = s_Hello__world__0804b020;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
-  _alu_c = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
-                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] & 0xffff | _alu_c << 0x10;
+  _alu_c = *(undefined4 *)
+            ((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
+            (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
+  alu_s = CONCAT22((short)_alu_c,(short)*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0])
+  ;
   stack_temp = (char *)alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
@@ -528,7 +544,7 @@ void entry(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(char **)sp;
   DAT_081f40f4 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f40f4;
@@ -584,11 +600,14 @@ void _start0(void)
   
   *(undefined4 *)(&sel_on)[toggle_execution] = 1;
   toggle_execution = 0;
-  stack_temp = (char *)(*(uint *)(&alu_add16)[*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10)] &
-                        0xffff | *(int *)((&alu_add16)[*(int *)(&alu_add16)[(uint)sesp >> 0x10]] +
-                                         (*(uint *)(&alu_add16)
-                                                   [*(int *)((&alu_add16)[(uint)sesp & 0xffff] +
-                                                            0x10)] >> 0x10) * 4) << 0x10);
+  stack_temp = (char *)CONCAT22((short)*(undefined4 *)
+                                        ((&alu_add16)[*(int *)(&alu_add16)[(uint)sesp >> 0x10]] +
+                                        (*(uint *)(&alu_add16)
+                                                  [*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10
+                                                           )] >> 0x10) * 4),
+                                (short)*(uint *)(&alu_add16)
+                                                [*(int *)((&alu_add16)[(uint)sesp & 0xffff] + 0x10)]
+                               );
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
   stack_temp = (char *)*sesp;
@@ -671,7 +690,7 @@ void _start0(void)
   *(char **)(&sel_data)[on] = stack_temp;
   stack_temp = (char *)D1;
   DAT_081f40f4 = DAT_0804b05c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f40f4;
@@ -680,9 +699,11 @@ void _start0(void)
   stack_temp = s_Hello__world__0804b020;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
-  _alu_c = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
-                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] & 0xffff | _alu_c << 0x10;
+  _alu_c = *(undefined4 *)
+            ((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
+            (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
+  alu_s = CONCAT22((short)_alu_c,(short)*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0])
+  ;
   stack_temp = (char *)alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
@@ -714,7 +735,7 @@ void _start0(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(char **)sp;
   DAT_081f40f4 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar1 = (undefined4 *)(&sel_data)[on];
   *puVar1 = stack_temp;
   puVar1[1] = DAT_081f40f4;
@@ -804,7 +825,7 @@ void main(void)
   *(char **)(&sel_data)[on] = stack_temp;
   stack_temp = (char *)D1;
   DAT_081f40f4 = DAT_0804b05c;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f40f4;
@@ -813,9 +834,11 @@ void main(void)
   stack_temp = s_Hello__world__0804b020;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
-  _alu_c = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
-                   (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] & 0xffff | _alu_c << 0x10;
+  _alu_c = *(undefined4 *)
+            ((&alu_add16)[*(int *)(PTR_alu_add16_34820_08080f20 + 0x20000)] +
+            (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0] >> 0x10) * 4);
+  alu_s = CONCAT22((short)_alu_c,(short)*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_36004_080821a0])
+  ;
   stack_temp = (char *)alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(char **)(&sel_data)[on] = stack_temp;
@@ -847,7 +870,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(char **)sp;
   DAT_081f40f4 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_081f40f4;

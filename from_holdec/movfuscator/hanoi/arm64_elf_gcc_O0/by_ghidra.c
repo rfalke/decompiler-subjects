@@ -4,6 +4,7 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -54,7 +55,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -66,6 +67,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -83,10 +87,6 @@ typedef struct tower tower, *Ptower;
 struct tower {
     int * x;
     int n;
-    undefined field2_0xc;
-    undefined field3_0xd;
-    undefined field4_0xe;
-    undefined field5_0xf;
 };
 
 typedef uint __useconds_t;
@@ -231,6 +231,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -278,14 +279,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -346,7 +358,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atoi(char *__nptr)
 
@@ -368,7 +380,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -390,7 +402,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -401,7 +413,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -414,7 +426,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -427,7 +439,7 @@ int fflush(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int usleep(__useconds_t __useconds)
 
@@ -440,7 +452,7 @@ int usleep(__useconds_t __useconds)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -456,10 +468,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -525,16 +536,12 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100a28)
+// WARNING: Removing unreachable block (ram,0x00100a34)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
@@ -545,6 +552,7 @@ tower * new_tower(int cap)
 
 {
   tower *ptVar1;
+  int cap_local;
   tower *t;
   
   ptVar1 = (tower *)calloc(1,((long)cap + 4) * 4);
@@ -557,24 +565,31 @@ tower * new_tower(int cap)
 void text(int y,int i,int d,char *s)
 
 {
-  int local_c;
+  char *s_local;
+  int d_local;
+  int i_local;
+  int y_local;
   
   printf("\x1b[%d;%dH",(ulong)((height - y) + 1),(ulong)(uint)((height + 1) * (i * 2 + 1) - d));
-  local_c = d;
-  while (local_c != 0) {
+  d_local = d;
+  while (d_local != 0) {
     printf("%s",s);
-    local_c = local_c + -1;
+    d_local = d_local + -1;
   }
   return;
 }
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void add_disk(int i,int d)
 
 {
   int iVar1;
   int *piVar2;
+  int d_local;
+  int i_local;
   
   piVar2 = t[i]->x;
   iVar1 = t[i]->n;
@@ -582,7 +597,7 @@ void add_disk(int i,int d)
   piVar2[iVar1] = d;
   text(t[i]->n,i,d,"==");
   usleep(100000);
-  fflush(stdout);
+  fflush(_stdout);
   return;
 }
 
@@ -594,6 +609,7 @@ int remove_disk(int i)
   int d_00;
   tower *ptVar1;
   int *piVar2;
+  int i_local;
   int d;
   
   piVar2 = t[i]->x;
@@ -610,6 +626,10 @@ void move(int n,int from,int to,int via)
 
 {
   int d;
+  int via_local;
+  int to_local;
+  int from_local;
+  int n_local;
   
   if (n != 0) {
     move(n + -1,from,via,to);
@@ -626,7 +646,8 @@ int main(int c,char **v)
 
 {
   tower *ptVar1;
-  int local_4;
+  char **v_local;
+  int c_local;
   
   puts("\x1b[H\x1b[J");
   if (1 < c) {
@@ -635,12 +656,12 @@ int main(int c,char **v)
   }
   height = 8;
 LAB_00100d50:
-  for (local_4 = 0; local_4 < 3; local_4 = local_4 + 1) {
+  for (c_local = 0; c_local < 3; c_local = c_local + 1) {
     ptVar1 = new_tower(height);
-    t[local_4] = ptVar1;
+    t[c_local] = ptVar1;
   }
-  for (local_4 = height; local_4 != 0; local_4 = local_4 + -1) {
-    add_disk(0,local_4);
+  for (c_local = height; c_local != 0; c_local = c_local + -1) {
+    add_disk(0,c_local);
   }
   move(height,0,2,1);
   text(1,0,1,"\n");

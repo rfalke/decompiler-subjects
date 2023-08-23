@@ -81,6 +81,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -167,6 +168,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -201,14 +213,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -279,7 +291,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -1550,10 +1562,13 @@ undefined4 main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -1648,10 +1663,11 @@ void frame_dummy(void)
 int inst_0_values_var_0(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11((in_AF | 1) + 0x76,(in_AF | 1) * '\x06' + '<') & 0xff0f | 0x93910000) +
-         0x6c6e88fe;
+  uVar1 = CONCAT31(0x939176,(in_AF | 1) * '\x06' + '<') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11((in_AF | 1) + 0x76,(char)uVar1)) + 0x6c6e88fe;
 }
 
 
@@ -1711,10 +1727,11 @@ undefined4 inst_2_flags_var_0(void)
 int inst_3_values_var_0(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11(-0x4d - (in_AF | 1),(in_AF | 1) * -6 + -0x23) & 0xff0f | 0x3b690000) + 0xc4964df9
-  ;
+  uVar1 = CONCAT31(0x3b69b3,(in_AF | 1) * -6 + -0x23) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x4d - (in_AF | 1),(char)uVar1)) + -0x3b69b207;
 }
 
 
@@ -4177,7 +4194,7 @@ int inst_121_values_var_0(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x80,0x25) | 0x300) | 0xb4740000) + 0x4b8b6cdb;
+  return (CONCAT22(0xb474,CONCAT11(in_AF << 4 | 0x80,0x25)) | 0x300) + 0x4b8b6cdb;
 }
 
 

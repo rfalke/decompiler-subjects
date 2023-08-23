@@ -78,7 +78,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -137,7 +137,42 @@ struct stat64 {
     __ino64_t st_ino;
 };
 
+
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
+
+typedef uint wint_t;
+
+typedef int __pid_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__time_t - /types.h/__time_t
+
+typedef ulonglong uintmax_t;
+
+typedef int __ssize_t;
+
+typedef int __sig_atomic_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__off_t - /types.h/__off_t
+
+typedef longlong intmax_t;
+
+typedef ushort fpucw_t;
+
+typedef int __suseconds_t;
+
+typedef int __clock_t;
+
 typedef bool _Bool;
+
+typedef int ptrdiff_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__ino_t - /types.h/__ino_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
 
 typedef union memory_double memory_double, *Pmemory_double;
 
@@ -154,8 +189,6 @@ typedef struct stat stat, *Pstat;
 struct stat {
     __dev_t st_dev;
     ushort __pad1;
-    undefined field2_0xa;
-    undefined field3_0xb;
     __ino_t __st_ino;
     __mode_t st_mode;
     __nlink_t st_nlink;
@@ -163,8 +196,6 @@ struct stat {
     __gid_t st_gid;
     __dev_t st_rdev;
     ushort __pad2;
-    undefined field11_0x2a;
-    undefined field12_0x2b;
     __off64_t st_size;
     __blksize_t st_blksize;
     __blkcnt64_t st_blocks;
@@ -185,14 +216,17 @@ struct winsize {
 
 typedef struct hash_table hash_table, *Phash_table;
 
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
 typedef struct hash_entry hash_entry, *Phash_entry;
 
 typedef struct hash_tuning hash_tuning, *Phash_tuning;
 
 typedef struct hash_tuning Hash_tuning;
+
+typedef size_t (* Hash_hasher)(void *, size_t);
+
+typedef _Bool (* Hash_comparator)(void *, void *);
+
+typedef void (* Hash_data_freer)(void *);
 
 struct hash_table {
     struct hash_entry * bucket;
@@ -201,9 +235,9 @@ struct hash_table {
     size_t n_buckets_used;
     size_t n_entries;
     Hash_tuning * tuning;
-    size_t (* hasher)(void *, size_t);
-    _Bool (* comparator)(void *, void *);
-    void (* data_freer)(void *);
+    Hash_hasher hasher;
+    Hash_comparator comparator;
+    Hash_data_freer data_freer;
     struct hash_entry * free_entry_list;
 };
 
@@ -218,12 +252,11 @@ struct hash_tuning {
     float growth_threshold;
     float growth_factor;
     _Bool is_n_buckets;
-    undefined field5_0x11;
-    undefined field6_0x12;
-    undefined field7_0x13;
 };
 
 typedef struct hash_table Hash_table;
+
+typedef _Bool (* Hash_processor)(void *, void *);
 
 typedef struct _obstack_chunk _obstack_chunk, *P_obstack_chunk;
 
@@ -233,10 +266,10 @@ struct _obstack_chunk {
     char contents[4];
 };
 
-typedef union anon_union.conflicte3b anon_union.conflicte3b, *Panon_union.conflicte3b;
+typedef union anon_union_4_2_c760ea40_for_temp anon_union_4_2_c760ea40_for_temp, *Panon_union_4_2_c760ea40_for_temp;
 
-union anon_union.conflicte3b {
-    int tempint;
+union anon_union_4_2_c760ea40_for_temp {
+    wchar_t tempint;
     void * tempptr;
 };
 
@@ -274,7 +307,6 @@ struct fileinfo {
     _Bool stat_ok;
     _Bool linkok;
     _Bool have_acl;
-    undefined field9_0x77;
 };
 
 typedef struct color_ext_type color_ext_type, *Pcolor_ext_type;
@@ -343,9 +375,6 @@ typedef struct column_info column_info, *Pcolumn_info;
 
 struct column_info {
     _Bool valid_len;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
     size_t line_len;
     size_t * col_arr;
 };
@@ -357,6 +386,8 @@ typedef enum color_type {
 } color_type;
 
 typedef void * V;
+
+typedef wchar_t (* qsortFunc)(V, V);
 
 typedef struct ignore_pattern ignore_pattern, *Pignore_pattern;
 
@@ -387,13 +418,10 @@ struct pending {
     char * name;
     char * realname;
     _Bool command_line_arg;
-    undefined field3_0x9;
-    undefined field4_0xa;
-    undefined field5_0xb;
     struct pending * next;
 };
 
-typedef enum anon_enum_32.conflict1bd4 {
+typedef enum anon_enum_32 {
     ST_GND=0,
     ST_BACKSLASH=1,
     ST_OCTAL=2,
@@ -401,25 +429,17 @@ typedef enum anon_enum_32.conflict1bd4 {
     ST_CARET=4,
     ST_END=5,
     ST_ERROR=6
-} anon_enum_32.conflict1bd4;
-
-typedef int __ssize_t;
+} anon_enum_32;
 
 typedef __ssize_t ssize_t;
 
-typedef int __pid_t;
+typedef __ino64_t ino_t;
 
 typedef __uid_t uid_t;
-
-typedef __ino64_t ino_t;
 
 typedef __off64_t off_t;
 
 typedef __gid_t gid_t;
-
-typedef long __suseconds_t;
-
-typedef long __clock_t;
 
 typedef __dev_t dev_t;
 
@@ -435,86 +455,15 @@ struct passwd {
     char * pw_shell;
 };
 
+
+// WARNING! conflicting data type names: /DWARF/dirent.h/anon_enum_32 - /DWARF/ls.c/get_funky_string/anon_enum_32
+
 typedef struct __dirstream __dirstream, *P__dirstream;
 
 typedef struct __dirstream DIR;
 
 struct __dirstream {
 };
-
-typedef enum anon_enum_32.conflictc03 {
-    GETOPT_VERSION_CHAR=-131,
-    GETOPT_HELP_CHAR=-130,
-    DT_UNKNOWN=0,
-    IGNORE_DEFAULT=0,
-    NOT_AN_INODE_NUMBER=0,
-    __LC_CTYPE=0,
-    human_ceiling=0,
-    DT_FIFO=1,
-    HAVE_GNU_CALLOC=1,
-    IGNORE_DOT_AND_DOTDOT=1,
-    LS_MINOR_PROBLEM=1,
-    _ISblank=1,
-    __LC_NUMERIC=1,
-    human_round_to_nearest=1,
-    DT_CHR=2,
-    IGNORE_MINIMAL=2,
-    LS_FAILURE=2,
-    _IScntrl=2,
-    __LC_TIME=2,
-    human_floor=2,
-    __LC_COLLATE=3,
-    DT_DIR=4,
-    _ISpunct=4,
-    __LC_MONETARY=4,
-    human_group_digits=4,
-    __LC_MESSAGES=5,
-    DT_BLK=6,
-    __LC_ALL=6,
-    __LC_PAPER=7,
-    DT_REG=8,
-    _ISalnum=8,
-    __LC_NAME=8,
-    human_suppress_point_zero=8,
-    __LC_ADDRESS=9,
-    DT_LNK=10,
-    __LC_TELEPHONE=10,
-    __LC_MEASUREMENT=11,
-    DT_SOCK=12,
-    __LC_IDENTIFICATION=12,
-    DT_WHT=14,
-    human_autoscale=16,
-    human_base_1024=32,
-    human_space_before_unit=64,
-    AUTHOR_OPTION=128,
-    human_SI=128,
-    BLOCK_SIZE_OPTION=129,
-    COLOR_OPTION=130,
-    DEREFERENCE_COMMAND_LINE_SYMLINK_TO_DIR_OPTION=131,
-    FILE_TYPE_INDICATOR_OPTION=132,
-    FORMAT_OPTION=133,
-    FULL_TIME_OPTION=134,
-    GROUP_DIRECTORIES_FIRST_OPTION=135,
-    HIDE_OPTION=136,
-    INDICATOR_STYLE_OPTION=137,
-    QUOTING_STYLE_OPTION=138,
-    SHOW_CONTROL_CHARS_OPTION=139,
-    SI_OPTION=140,
-    SORT_OPTION=141,
-    TIME_OPTION=142,
-    TIME_STYLE_OPTION=143,
-    _ISupper=256,
-    human_B=256,
-    _ISlower=512,
-    TIME_STAMP_LEN_MAXIMUM=1000,
-    _ISalpha=1024,
-    COPYRIGHT_YEAR=2008,
-    _ISdigit=2048,
-    _ISxdigit=4096,
-    _ISspace=8192,
-    _ISprint=16384,
-    _ISgraph=32768
-} anon_enum_32.conflictc03;
 
 typedef struct dirent dirent, *Pdirent;
 
@@ -524,7 +473,6 @@ struct dirent {
     ushort d_reclen;
     uchar d_type;
     char d_name[256];
-    undefined field5_0x113;
 };
 
 typedef struct lconv lconv, *Plconv;
@@ -554,8 +502,6 @@ struct lconv {
     char int_n_sep_by_space;
     char int_p_sign_posn;
     char int_n_sign_posn;
-    undefined field24_0x36;
-    undefined field25_0x37;
 };
 
 typedef union sigval sigval, *Psigval;
@@ -563,92 +509,78 @@ typedef union sigval sigval, *Psigval;
 typedef union sigval sigval_t;
 
 union sigval {
-    int sival_int;
+    wchar_t sival_int;
     void * sival_ptr;
-};
-
-typedef struct anon_struct.conflict829 anon_struct.conflict829, *Panon_struct.conflict829;
-
-struct anon_struct.conflict829 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-    int si_status;
-    __clock_t si_utime;
-    __clock_t si_stime;
-};
-
-typedef struct anon_struct.conflict878 anon_struct.conflict878, *Panon_struct.conflict878;
-
-struct anon_struct.conflict878 {
-    void * si_addr;
 };
 
 typedef struct siginfo siginfo, *Psiginfo;
 
-typedef union anon_union.conflict8b4_for__sifields anon_union.conflict8b4_for__sifields, *Panon_union.conflict8b4_for__sifields;
+typedef union anon_union_116_7_b489c2e4_for__sifields anon_union_116_7_b489c2e4_for__sifields, *Panon_union_116_7_b489c2e4_for__sifields;
 
-typedef struct anon_struct.conflict79e anon_struct.conflict79e, *Panon_struct.conflict79e;
+typedef struct anon_struct_8_2_0a3d7222_for__kill anon_struct_8_2_0a3d7222_for__kill, *Panon_struct_8_2_0a3d7222_for__kill;
 
-typedef struct anon_struct.conflict7c3 anon_struct.conflict7c3, *Panon_struct.conflict7c3;
+typedef struct anon_struct_12_3_5124685d_for__timer anon_struct_12_3_5124685d_for__timer, *Panon_struct_12_3_5124685d_for__timer;
 
-typedef struct anon_struct.conflict7f6 anon_struct.conflict7f6, *Panon_struct.conflict7f6;
+typedef struct anon_struct_12_3_9bedbd60_for__rt anon_struct_12_3_9bedbd60_for__rt, *Panon_struct_12_3_9bedbd60_for__rt;
 
-typedef struct anon_struct.conflict88f anon_struct.conflict88f, *Panon_struct.conflict88f;
+typedef struct anon_struct_20_5_7a025f54_for__sigchld anon_struct_20_5_7a025f54_for__sigchld, *Panon_struct_20_5_7a025f54_for__sigchld;
 
-struct anon_struct.conflict7f6 {
+typedef struct anon_struct_4_1_ff5bff1a_for__sigfault anon_struct_4_1_ff5bff1a_for__sigfault, *Panon_struct_4_1_ff5bff1a_for__sigfault;
+
+typedef struct anon_struct_8_2_686959ae_for__sigpoll anon_struct_8_2_686959ae_for__sigpoll, *Panon_struct_8_2_686959ae_for__sigpoll;
+
+struct anon_struct_20_5_7a025f54_for__sigchld {
     __pid_t si_pid;
     __uid_t si_uid;
-    sigval_t si_sigval;
+    wchar_t si_status;
+    __clock_t si_utime;
+    __clock_t si_stime;
 };
 
-struct anon_struct.conflict88f {
+struct anon_struct_8_2_686959ae_for__sigpoll {
     long si_band;
-    int si_fd;
+    wchar_t si_fd;
 };
 
-struct anon_struct.conflict79e {
+struct anon_struct_4_1_ff5bff1a_for__sigfault {
+    void * si_addr;
+};
+
+struct anon_struct_12_3_9bedbd60_for__rt {
+    __pid_t si_pid;
+    __uid_t si_uid;
+    sigval_t si_sigval;
+};
+
+struct anon_struct_8_2_0a3d7222_for__kill {
     __pid_t si_pid;
     __uid_t si_uid;
 };
 
-struct anon_struct.conflict7c3 {
-    int si_tid;
-    int si_overrun;
+struct anon_struct_12_3_5124685d_for__timer {
+    wchar_t si_tid;
+    wchar_t si_overrun;
     sigval_t si_sigval;
 };
 
-union anon_union.conflict8b4_for__sifields {
-    int _pad[29];
-    struct anon_struct.conflict79e _kill;
-    struct anon_struct.conflict7c3 _timer;
-    struct anon_struct.conflict7f6 _rt;
-    struct anon_struct.conflict829 _sigchld;
-    struct anon_struct.conflict878 _sigfault;
-    struct anon_struct.conflict88f _sigpoll;
+union anon_union_116_7_b489c2e4_for__sifields {
+    wchar_t _pad[29];
+    struct anon_struct_8_2_0a3d7222_for__kill _kill;
+    struct anon_struct_12_3_5124685d_for__timer _timer;
+    struct anon_struct_12_3_9bedbd60_for__rt _rt;
+    struct anon_struct_20_5_7a025f54_for__sigchld _sigchld;
+    struct anon_struct_4_1_ff5bff1a_for__sigfault _sigfault;
+    struct anon_struct_8_2_686959ae_for__sigpoll _sigpoll;
 };
 
 struct siginfo {
-    int si_signo;
-    int si_errno;
-    int si_code;
-    union anon_union.conflict8b4_for__sifields _sifields;
+    wchar_t si_signo;
+    wchar_t si_errno;
+    wchar_t si_code;
+    union anon_union_116_7_b489c2e4_for__sifields _sifields;
 };
 
 typedef struct siginfo siginfo_t;
-
-typedef union anon_union.conflict8b4 anon_union.conflict8b4, *Panon_union.conflict8b4;
-
-union anon_union.conflict8b4 {
-    int _pad[29];
-    struct anon_struct.conflict79e _kill;
-    struct anon_struct.conflict7c3 _timer;
-    struct anon_struct.conflict7f6 _rt;
-    struct anon_struct.conflict829 _sigchld;
-    struct anon_struct.conflict878 _sigfault;
-    struct anon_struct.conflict88f _sigpoll;
-};
-
-typedef ushort fpucw_t;
 
 typedef struct char_directives char_directives, *Pchar_directives;
 
@@ -657,7 +589,7 @@ typedef struct char_directive char_directive, *Pchar_directive;
 struct char_directive {
     char * dir_start;
     char * dir_end;
-    int flags;
+    wchar_t flags;
     char * width_start;
     char * width_end;
     size_t width_arg_index;
@@ -665,9 +597,6 @@ struct char_directive {
     char * precision_end;
     size_t precision_arg_index;
     char conversion;
-    undefined field10_0x25;
-    undefined field11_0x26;
-    undefined field12_0x27;
     size_t arg_index;
 };
 
@@ -684,41 +613,27 @@ typedef __gnuc_va_list va_list;
 
 typedef struct sigaction sigaction, *Psigaction;
 
-typedef union anon_union.conflict96a_for___sigaction_handler anon_union.conflict96a_for___sigaction_handler, *Panon_union.conflict96a_for___sigaction_handler;
+typedef union anon_union_4_2_5ad2d23e_for___sigaction_handler anon_union_4_2_5ad2d23e_for___sigaction_handler, *Panon_union_4_2_5ad2d23e_for___sigaction_handler;
 
 typedef struct __sigset_t __sigset_t, *P__sigset_t;
+
+typedef void (* __sighandler_t)(wchar_t);
+
+union anon_union_4_2_5ad2d23e_for___sigaction_handler {
+    __sighandler_t sa_handler;
+    void (* sa_sigaction)(wchar_t, siginfo_t *, void *);
+};
 
 struct __sigset_t {
     ulong __val[32];
 };
 
-union anon_union.conflict96a_for___sigaction_handler {
-    void (* sa_handler)(int);
-    void (* sa_sigaction)(int, siginfo_t *, void *);
-};
-
 struct sigaction {
-    union anon_union.conflict96a_for___sigaction_handler __sigaction_handler;
+    union anon_union_4_2_5ad2d23e_for___sigaction_handler __sigaction_handler;
     struct __sigset_t sa_mask;
-    int sa_flags;
+    wchar_t sa_flags;
     void (* sa_restorer)(void);
 };
-
-typedef union anon_union.conflict96a anon_union.conflict96a, *Panon_union.conflict96a;
-
-union anon_union.conflict96a {
-    void (* sa_handler)(int);
-    void (* sa_sigaction)(int, siginfo_t *, void *);
-};
-
-typedef uint wint_t;
-
-typedef int ptrdiff_t;
-
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/wchar_t - /wchar_t
-
-typedef int __sig_atomic_t;
 
 typedef __sig_atomic_t sig_atomic_t;
 
@@ -732,24 +647,17 @@ struct slotvec {
     char * val;
 };
 
-typedef union anon_union.conflict83d2 anon_union.conflict83d2, *Panon_union.conflict83d2;
-
-union anon_union.conflict83d2 {
-    uid_t u;
-    gid_t g;
-};
-
 typedef struct userid userid, *Puserid;
 
-typedef union anon_union.conflict83d2_for_id anon_union.conflict83d2_for_id, *Panon_union.conflict83d2_for_id;
+typedef union anon_union_4_2_947300cf_for_id anon_union_4_2_947300cf_for_id, *Panon_union_4_2_947300cf_for_id;
 
-union anon_union.conflict83d2_for_id {
+union anon_union_4_2_947300cf_for_id {
     uid_t u;
     gid_t g;
 };
 
 struct userid {
-    union anon_union.conflict83d2_for_id id;
+    union anon_union_4_2_947300cf_for_id id;
     struct userid * next;
     char name[0];
 };
@@ -761,39 +669,29 @@ typedef struct _IO_FILE FILE;
 
 typedef struct obstack obstack, *Pobstack;
 
-typedef union anon_union.conflicte3b_for_temp anon_union.conflicte3b_for_temp, *Panon_union.conflicte3b_for_temp;
-
-union anon_union.conflicte3b_for_temp {
-    int tempint;
-    void * tempptr;
-};
-
 struct obstack {
     long chunk_size;
     struct _obstack_chunk * chunk;
     char * object_base;
     char * next_free;
     char * chunk_limit;
-    union anon_union.conflicte3b_for_temp temp;
-    int alignment_mask;
+    union anon_union_4_2_c760ea40_for_temp temp;
+    wchar_t alignment_mask;
     _obstack_chunk * (* chunkfun)(void *, long);
     void (* freefun)(void *, struct _obstack_chunk *);
     void * extra_arg;
     uint use_extra_arg:1;
     uint maybe_empty_object:1;
     uint alloc_failed:1;
-    undefined field13_0x29;
-    undefined field14_0x2a;
-    undefined field15_0x2b;
 };
 
-typedef int __jmp_buf[6];
+typedef wchar_t __jmp_buf[6];
 
 typedef struct __jmp_buf_tag __jmp_buf_tag, *P__jmp_buf_tag;
 
 struct __jmp_buf_tag {
     __jmp_buf __jmpbuf;
-    int __mask_was_saved;
+    wchar_t __mask_was_saved;
     struct __sigset_t __saved_mask;
 };
 
@@ -825,42 +723,46 @@ struct dev_ino {
 
 typedef struct __mbstate_t __mbstate_t, *P__mbstate_t;
 
-typedef union anon_union.conflict5b4_for___value anon_union.conflict5b4_for___value, *Panon_union.conflict5b4_for___value;
+typedef union anon_union_4_2_91654ee9_for___value anon_union_4_2_91654ee9_for___value, *Panon_union_4_2_91654ee9_for___value;
 
-union anon_union.conflict5b4_for___value {
+union anon_union_4_2_91654ee9_for___value {
     uint __wch;
     char __wchb[4];
 };
 
 struct __mbstate_t {
     int __count;
-    union anon_union.conflict5b4_for___value __value;
+    union anon_union_4_2_91654ee9_for___value __value;
 };
 
-typedef union anon_union.conflict5b4 anon_union.conflict5b4, *Panon_union.conflict5b4;
+typedef struct __mbstate_t.conflict __mbstate_t.conflict, *P__mbstate_t.conflict;
 
-union anon_union.conflict5b4 {
-    uint __wch;
-    char __wchb[4];
+struct __mbstate_t.conflict {
+    wchar_t __count;
+    union anon_union_4_2_91654ee9_for___value __value;
 };
+
+typedef struct __mbstate_t mbstate_t;
 
 typedef struct tm tm, *Ptm;
 
 struct tm {
-    int tm_sec;
-    int tm_min;
-    int tm_hour;
-    int tm_mday;
-    int tm_mon;
-    int tm_year;
-    int tm_wday;
-    int tm_yday;
-    int tm_isdst;
+    wchar_t tm_sec;
+    wchar_t tm_min;
+    wchar_t tm_hour;
+    wchar_t tm_mday;
+    wchar_t tm_mon;
+    wchar_t tm_year;
+    wchar_t tm_wday;
+    wchar_t tm_yday;
+    wchar_t tm_isdst;
     long tm_gmtoff;
     char * tm_zone;
 };
 
-typedef struct __mbstate_t mbstate_t;
+typedef struct __mbstate_t.conflict mbstate_t.conflict;
+
+typedef int (* comparison_function)(void *, void *);
 
 typedef enum strtol_error {
     LONGINT_OK=0,
@@ -874,9 +776,34 @@ typedef struct option option, *Poption;
 
 struct option {
     char * name;
+    wchar_t has_arg;
+    wchar_t * flag;
+    wchar_t val;
+};
+
+typedef struct option.conflict option.conflict, *Poption.conflict;
+
+struct option.conflict {
+    char * name;
     int has_arg;
     int * flag;
     int val;
+};
+
+typedef struct tm.conflict tm.conflict, *Ptm.conflict;
+
+struct tm.conflict {
+    int tm_sec;
+    int tm_min;
+    int tm_hour;
+    int tm_mday;
+    int tm_mon;
+    int tm_year;
+    int tm_wday;
+    int tm_yday;
+    int tm_isdst;
+    long tm_gmtoff;
+    char * tm_zone;
 };
 
 typedef struct timeval timeval, *Ptimeval;
@@ -887,6 +814,8 @@ struct timeval {
 };
 
 typedef __time_t time_t;
+
+typedef void (* argmatch_exit_fn)(void);
 
 typedef struct argument argument, *Pargument;
 
@@ -916,14 +845,14 @@ typedef enum arg_type {
     TYPE_COUNT_LONGLONGINT_POINTER=22
 } arg_type;
 
-typedef union anon_union.conflictb7e1_for_a anon_union.conflictb7e1_for_a, *Panon_union.conflictb7e1_for_a;
+typedef union anon_union_12_23_e1b98a05_for_a anon_union_12_23_e1b98a05_for_a, *Panon_union_12_23_e1b98a05_for_a;
 
-union anon_union.conflictb7e1_for_a {
+union anon_union_12_23_e1b98a05_for_a {
     char a_schar;
     uchar a_uchar;
     short a_short;
     ushort a_ushort;
-    int a_int;
+    wchar_t a_int;
     uint a_uint;
     long a_longint;
     ulong a_ulongint;
@@ -932,21 +861,21 @@ union anon_union.conflictb7e1_for_a {
     float a_float;
     double a_double;
     longdouble a_longdouble;
-    int a_char;
+    wchar_t a_char;
     wint_t a_wide_char;
     char * a_string;
     wchar_t * a_wide_string;
     void * a_pointer;
     char * a_count_schar_pointer;
     short * a_count_short_pointer;
-    int * a_count_int_pointer;
+    wchar_t * a_count_int_pointer;
     long * a_count_longint_pointer;
     longlong * a_count_longlongint_pointer;
 };
 
 struct argument {
     enum arg_type type;
-    union anon_union.conflictb7e1_for_a a;
+    union anon_union_12_23_e1b98a05_for_a a;
 };
 
 typedef struct arguments arguments, *Parguments;
@@ -956,39 +885,7 @@ struct arguments {
     struct argument * arg;
 };
 
-typedef union anon_union.conflictb7e1 anon_union.conflictb7e1, *Panon_union.conflictb7e1;
-
-union anon_union.conflictb7e1 {
-    char a_schar;
-    uchar a_uchar;
-    short a_short;
-    ushort a_ushort;
-    int a_int;
-    uint a_uint;
-    long a_longint;
-    ulong a_ulongint;
-    longlong a_longlongint;
-    ulonglong a_ulonglongint;
-    float a_float;
-    double a_double;
-    longdouble a_longdouble;
-    int a_char;
-    wint_t a_wide_char;
-    char * a_string;
-    wchar_t * a_wide_string;
-    void * a_pointer;
-    char * a_count_schar_pointer;
-    short * a_count_short_pointer;
-    int * a_count_int_pointer;
-    long * a_count_longint_pointer;
-    longlong * a_count_longlongint_pointer;
-};
-
 typedef struct __sigset_t sigset_t;
-
-typedef ulonglong uintmax_t;
-
-typedef longlong intmax_t;
 
 typedef struct group group, *Pgroup;
 
@@ -1006,6 +903,9 @@ struct timezone {
     int tz_dsttime;
 };
 
+
+// WARNING! conflicting data type names: /time.h/time_t - /DWARF/time.h/time_t
+
 typedef int __clockid_t;
 
 typedef __clockid_t clockid_t;
@@ -1021,14 +921,15 @@ typedef struct timezone * __timezone_ptr_t;
 
 // WARNING! conflicting data type names: /sigaction.h/sigaction - /DWARF/sigaction.h/sigaction
 
-typedef union _union_1048 _union_1048, *P_union_1048;
+typedef union _union_1051 _union_1051, *P_union_1051;
 
 
 // WARNING! conflicting data type names: /siginfo.h/siginfo_t - /DWARF/siginfo.h/siginfo_t
 
-typedef void (* __sighandler_t)(int);
 
-union _union_1048 {
+// WARNING! conflicting data type names: /signal.h/__sighandler_t - /DWARF/signal.h/__sighandler_t
+
+union _union_1051 {
     __sighandler_t sa_handler;
     void (* sa_sigaction)(int, siginfo_t *, void *);
 };
@@ -1040,10 +941,13 @@ union _union_1048 {
 // WARNING! conflicting data type names: /pthread.h/__jmp_buf_tag - /DWARF/setjmp.h/__jmp_buf_tag
 
 
-// WARNING! conflicting data type names: /select.h/sigset_t - /DWARF/select.h/sigset_t
+// WARNING! conflicting data type names: /setjmp.h/__jmp_buf - /DWARF/setjmp.h/__jmp_buf
 
 
-// WARNING! conflicting data type names: /pwd.h/passwd - /DWARF/pwd.h/passwd
+// WARNING! conflicting data type names: /types.h/__suseconds_t - /DWARF/__suseconds_t
+
+
+// WARNING! conflicting data type names: /types.h/__clock_t - /DWARF/__clock_t
 
 typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
 
@@ -1051,9 +955,6 @@ struct evp_pkey_ctx_st {
 };
 
 typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
-
-
-// WARNING! conflicting data type names: /sigset.h/__sigset_t - /DWARF/sigset.h/__sigset_t
 
 typedef struct dirent64 dirent64, *Pdirent64;
 
@@ -1071,15 +972,9 @@ struct dirent64 {
 
 // WARNING! conflicting data type names: /dirent.h/DIR - /DWARF/dirent.h/DIR
 
+typedef union _union_54 _union_54, *P_union_54;
 
-// WARNING! conflicting data type names: /wchar.h/__mbstate_t - /DWARF/wchar.h/__mbstate_t
-
-
-// WARNING! conflicting data type names: /wchar.h/mbstate_t - /DWARF/wchar.h/mbstate_t
-
-typedef union _union_27 _union_27, *P_union_27;
-
-union _union_27 {
+union _union_54 {
     uint __wch;
     char __wchb[4];
 };
@@ -1188,6 +1083,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -1254,6 +1150,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -1287,44 +1194,50 @@ struct Elf32_Ehdr {
     word e_shstrndx;
 };
 
+typedef union _union_1031 _union_1031, *P_union_1031;
 
-// WARNING! conflicting data type names: /locale.h/lconv - /DWARF/locale.h/lconv
+typedef struct _struct_1032 _struct_1032, *P_struct_1032;
 
+typedef struct _struct_1033 _struct_1033, *P_struct_1033;
 
-// WARNING! conflicting data type names: /grp.h/group - /DWARF/grp.h/group
+typedef struct _struct_1034 _struct_1034, *P_struct_1034;
+
+typedef struct _struct_1035 _struct_1035, *P_struct_1035;
+
+typedef struct _struct_1036 _struct_1036, *P_struct_1036;
+
+typedef struct _struct_1037 _struct_1037, *P_struct_1037;
 
 
 // WARNING! conflicting data type names: /siginfo.h/sigval_t - /DWARF/siginfo.h/sigval_t
 
-
-// WARNING! conflicting data type names: /siginfo.h/sigval - /DWARF/siginfo.h/sigval
-
-
-// WARNING! conflicting data type names: /siginfo.h/siginfo - /DWARF/siginfo.h/siginfo
-
-typedef struct _struct_1029 _struct_1029, *P_struct_1029;
-
-struct _struct_1029 {
+struct _struct_1032 {
     __pid_t si_pid;
     __uid_t si_uid;
 };
 
-typedef struct _struct_1034 _struct_1034, *P_struct_1034;
-
 struct _struct_1034 {
+    __pid_t si_pid;
+    __uid_t si_uid;
+    sigval_t si_sigval;
+};
+
+struct _struct_1036 {
+    void * si_addr;
+};
+
+struct _struct_1033 {
+    int si_tid;
+    int si_overrun;
+    sigval_t si_sigval;
+};
+
+struct _struct_1037 {
     long si_band;
     int si_fd;
 };
 
-typedef struct _struct_1033 _struct_1033, *P_struct_1033;
-
-struct _struct_1033 {
-    void * si_addr;
-};
-
-typedef struct _struct_1032 _struct_1032, *P_struct_1032;
-
-struct _struct_1032 {
+struct _struct_1035 {
     __pid_t si_pid;
     __uid_t si_uid;
     int si_status;
@@ -1332,33 +1245,21 @@ struct _struct_1032 {
     __clock_t si_stime;
 };
 
-typedef struct _struct_1031 _struct_1031, *P_struct_1031;
-
-struct _struct_1031 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-    sigval_t si_sigval;
-};
-
-typedef struct _struct_1030 _struct_1030, *P_struct_1030;
-
-struct _struct_1030 {
-    int si_tid;
-    int si_overrun;
-    sigval_t si_sigval;
-};
-
-typedef union _union_1028 _union_1028, *P_union_1028;
-
-union _union_1028 {
+union _union_1031 {
     int _pad[29];
-    struct _struct_1029 _kill;
-    struct _struct_1030 _timer;
-    struct _struct_1031 _rt;
-    struct _struct_1032 _sigchld;
-    struct _struct_1033 _sigfault;
-    struct _struct_1034 _sigpoll;
+    struct _struct_1032 _kill;
+    struct _struct_1033 _timer;
+    struct _struct_1034 _rt;
+    struct _struct_1035 _sigchld;
+    struct _struct_1036 _sigfault;
+    struct _struct_1037 _sigpoll;
 };
+
+
+// WARNING! conflicting data type names: /siginfo.h/sigval - /DWARF/siginfo.h/sigval
+
+
+// WARNING! conflicting data type names: /siginfo.h/siginfo - /DWARF/siginfo.h/siginfo
 
 
 
@@ -1366,17 +1267,27 @@ union _union_1028 {
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_080494ac(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -1387,7 +1298,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int * __errno_location(void)
 
@@ -1400,7 +1311,7 @@ int * __errno_location(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putc_unlocked(int __c,FILE *__stream)
 
@@ -1413,7 +1324,7 @@ int putc_unlocked(int __c,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigemptyset(sigset_t *__set)
 
@@ -1426,7 +1337,7 @@ int sigemptyset(sigset_t *__set)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -1439,7 +1350,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 lconv * localeconv(void)
 
@@ -1452,7 +1363,7 @@ lconv * localeconv(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int dirfd(DIR *__dirp)
 
@@ -1474,7 +1385,7 @@ void __cxa_atexit(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcoll(char *__s1,char *__s2)
 
@@ -1487,7 +1398,7 @@ int strcoll(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int memcmp(void *__s1,void *__s2,size_t __n)
 
@@ -1500,7 +1411,7 @@ int memcmp(void *__s1,void *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs_unlocked(char *__s,FILE *__stream)
 
@@ -1513,7 +1424,7 @@ int fputs_unlocked(char *__s,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t __ctype_get_mb_cur_max(void)
 
@@ -1526,7 +1437,7 @@ size_t __ctype_get_mb_cur_max(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __sighandler_t signal(int __sig,__sighandler_t __handler)
 
@@ -1539,7 +1450,7 @@ __sighandler_t signal(int __sig,__sighandler_t __handler)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigismember(sigset_t *__set,int __signo)
 
@@ -1561,7 +1472,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * realloc(void *__ptr,size_t __size)
 
@@ -1574,7 +1485,7 @@ void * realloc(void *__ptr,size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat64(int __ver,char *__filename,stat64 *__stat_buf)
 
@@ -1587,7 +1498,7 @@ int __xstat64(int __ver,char *__filename,stat64 *__stat_buf)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 tm * localtime(time_t *__timer)
 
@@ -1600,7 +1511,7 @@ tm * localtime(time_t *__timer)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 group * getgrnam(char *__name)
 
@@ -1613,7 +1524,7 @@ group * getgrnam(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strchr(char *__s,int __c)
 
@@ -1626,7 +1537,7 @@ char * strchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getenv(char *__name)
 
@@ -1639,7 +1550,7 @@ char * getenv(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -1652,7 +1563,7 @@ void * calloc(size_t __nmemb,size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strncpy(char *__dest,char *__src,size_t __n)
 
@@ -1665,7 +1576,7 @@ char * strncpy(char *__dest,char *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 uint gnu_dev_minor(ulonglong __dev)
 
@@ -1678,7 +1589,7 @@ uint gnu_dev_minor(ulonglong __dev)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int toupper(int __c)
 
@@ -1691,7 +1602,7 @@ int toupper(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -1713,7 +1624,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * mempcpy(void *__dest,void *__src,size_t __n)
 
@@ -1735,7 +1646,7 @@ void _obstack_begin(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ferror_unlocked(FILE *__stream)
 
@@ -1748,7 +1659,7 @@ int ferror_unlocked(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -1759,7 +1670,7 @@ void _exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strrchr(char *__s,int __c)
 
@@ -1772,7 +1683,7 @@ char * strrchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -1792,7 +1703,7 @@ void bindtextdomain(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t mbrtowc(wchar_t *__pwc,char *__s,size_t __n,mbstate_t *__p)
 
@@ -1814,7 +1725,7 @@ void gettext(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int gettimeofday(timeval *__tv,__timezone_ptr_t __tz)
 
@@ -1827,7 +1738,7 @@ int gettimeofday(timeval *__tv,__timezone_ptr_t __tz)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -1839,7 +1750,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __lxstat64(int __ver,char *__filename,stat64 *__stat_buf)
 
@@ -1852,7 +1763,7 @@ int __lxstat64(int __ver,char *__filename,stat64 *__stat_buf)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 uintmax_t strtoumax(char *__nptr,char **__endptr,int __base)
 
@@ -1884,7 +1795,7 @@ void dcgettext(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
@@ -1897,7 +1808,7 @@ int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strverscmp(char *__s1,char *__s2)
 
@@ -1910,7 +1821,7 @@ int strverscmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 DIR * opendir(char *__name)
 
@@ -1932,7 +1843,7 @@ void getopt_long(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ioctl(int __fd,ulong __request,...)
 
@@ -1945,7 +1856,7 @@ int ioctl(int __fd,ulong __request,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ushort ** __ctype_b_loc(void)
 
@@ -1958,7 +1869,7 @@ ushort ** __ctype_b_loc(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int iswcntrl(wint_t __wc)
 
@@ -1971,7 +1882,7 @@ int iswcntrl(wint_t __wc)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isatty(int __fd)
 
@@ -1984,7 +1895,7 @@ int isatty(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -1997,7 +1908,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int mbsinit(mbstate_t *__ps)
 
@@ -2010,7 +1921,7 @@ int mbsinit(mbstate_t *__ps)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _setjmp(__jmp_buf_tag *__env)
 
@@ -2023,7 +1934,7 @@ int _setjmp(__jmp_buf_tag *__env)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __pid_t tcgetpgrp(int __fd)
 
@@ -2036,7 +1947,7 @@ __pid_t tcgetpgrp(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 time_t mktime(tm *__tp)
 
@@ -2049,7 +1960,7 @@ time_t mktime(tm *__tp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 dirent64 * readdir64(DIR *__dirp)
 
@@ -2062,7 +1973,7 @@ dirent64 * readdir64(DIR *__dirp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -2075,7 +1986,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ulong strtoul(char *__nptr,char **__endptr,int __base)
 
@@ -2088,7 +1999,7 @@ ulong strtoul(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -2101,7 +2012,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 passwd * getpwuid(__uid_t __uid)
 
@@ -2114,7 +2025,7 @@ passwd * getpwuid(__uid_t __uid)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * setlocale(int __category,char *__locale)
 
@@ -2127,7 +2038,7 @@ char * setlocale(int __category,char *__locale)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -2140,7 +2051,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void longjmp(__jmp_buf_tag *__env,int __val)
 
@@ -2151,7 +2062,7 @@ void longjmp(__jmp_buf_tag *__env,int __val)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -2164,7 +2075,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int raise(int __sig)
 
@@ -2177,7 +2088,7 @@ int raise(int __sig)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t mbrlen(char *__s,size_t __n,mbstate_t *__ps)
 
@@ -2190,7 +2101,7 @@ size_t mbrlen(char *__s,size_t __n,mbstate_t *__ps)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite_unlocked(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -2212,7 +2123,7 @@ void __signbitl(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int clock_gettime(clockid_t __clock_id,timespec *__tp)
 
@@ -2225,7 +2136,7 @@ int clock_gettime(clockid_t __clock_id,timespec *__tp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int closedir(DIR *__dirp)
 
@@ -2238,7 +2149,7 @@ int closedir(DIR *__dirp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -2251,7 +2162,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -2264,7 +2175,7 @@ int fprintf(FILE *__stream,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -2276,7 +2187,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigprocmask(int __how,sigset_t *__set,sigset_t *__oset)
 
@@ -2316,7 +2227,7 @@ void error(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 group * getgrgid(__gid_t __gid)
 
@@ -2329,7 +2240,7 @@ group * getgrgid(__gid_t __gid)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigaddset(sigset_t *__set,int __signo)
 
@@ -2342,7 +2253,7 @@ int sigaddset(sigset_t *__set,int __signo)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t readlink(char *__path,char *__buf,size_t __len)
 
@@ -2355,7 +2266,7 @@ ssize_t readlink(char *__path,char *__buf,size_t __len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memmove(void *__dest,void *__src,size_t __n)
 
@@ -2368,7 +2279,7 @@ void * memmove(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strndup(char *__string,size_t __n)
 
@@ -2390,7 +2301,7 @@ void textdomain(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __fxstat64(int __ver,int __fildes,stat64 *__stat_buf)
 
@@ -2403,7 +2314,7 @@ int __fxstat64(int __ver,int __fildes,stat64 *__stat_buf)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 uint gnu_dev_major(ulonglong __dev)
 
@@ -2416,7 +2327,7 @@ uint gnu_dev_major(ulonglong __dev)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fnmatch(char *__pattern,char *__name,int __flags)
 
@@ -2429,7 +2340,7 @@ int fnmatch(char *__pattern,char *__name,int __flags)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strncmp(char *__s1,char *__s2,size_t __n)
 
@@ -2442,7 +2353,7 @@ int strncmp(char *__s1,char *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush_unlocked(FILE *__stream)
 
@@ -2455,7 +2366,7 @@ int fflush_unlocked(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strftime(char *__s,size_t __maxsize,char *__format,tm *__tp)
 
@@ -2468,7 +2379,7 @@ size_t strftime(char *__s,size_t __maxsize,char *__format,tm *__tp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int snprintf(char *__s,size_t __maxlen,char *__format,...)
 
@@ -2481,7 +2392,7 @@ int snprintf(char *__s,size_t __maxlen,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int wcwidth(wchar_t __c)
 
@@ -2494,7 +2405,7 @@ int wcwidth(wchar_t __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int iswprint(wint_t __wc)
 
@@ -2507,7 +2418,7 @@ int iswprint(wint_t __wc)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 passwd * getpwnam(char *__name)
 
@@ -2520,7 +2431,7 @@ passwd * getpwnam(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int tolower(int __c)
 
@@ -2533,7 +2444,7 @@ int tolower(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *__s1,char *__s2)
 
@@ -2545,7 +2456,7 @@ int strcmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -2556,7 +2467,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar_unlocked(int __c)
 
@@ -2569,10 +2480,13 @@ int putchar_unlocked(int __c)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -2594,6 +2508,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08049b6f)
 // WARNING: Removing unreachable block (ram,0x08049b78)
 
 void frame_dummy(void)
@@ -2604,12 +2519,15 @@ void frame_dummy(void)
 
 
 
-dev_ino * dev_ino_pop(dev_ino *__return_storage_ptr__)
+// WARNING: Unknown calling convention
+
+dev_ino * dev_ino_pop(void)
 
 {
+  dev_ino *in_stack_00000004;
   obstack *__o;
   obstack *__o_1;
-  int __len;
+  wchar_t __len;
   
   if ((uint)((int)dev_ino_obstack.next_free - (int)dev_ino_obstack.object_base) < 0x10) {
                     // WARNING: Subroutine does not return
@@ -2620,11 +2538,13 @@ dev_ino * dev_ino_pop(dev_ino *__return_storage_ptr__)
     _obstack_newchunk(&dev_ino_obstack,0xfffffff0);
   }
   dev_ino_obstack.next_free = dev_ino_obstack.next_free + -0x10;
-  memmove(__return_storage_ptr__,dev_ino_obstack.next_free,0x10);
-  return __return_storage_ptr__;
+  memmove(in_stack_00000004,dev_ino_obstack.next_free,0x10);
+  return in_stack_00000004;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void dired_dump_obstack(char *prefix,obstack *os)
 
@@ -2660,6 +2580,8 @@ void dired_dump_obstack(char *prefix,obstack *os)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t dev_ino_hash(void *x,size_t table_size)
 
 {
@@ -2672,6 +2594,8 @@ size_t dev_ino_hash(void *x,size_t table_size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool dev_ino_compare(void *x,void *y)
 
@@ -2695,6 +2619,8 @@ _Bool dev_ino_compare(void *x,void *y)
 
 
 
+// WARNING: Unknown calling convention
+
 void dev_ino_free(void *x)
 
 {
@@ -2707,28 +2633,30 @@ void dev_ino_free(void *x)
 _Bool visit_dir(dev_t dev,ino_t ino)
 
 {
-  undefined4 *entry;
-  undefined4 *puVar1;
+  ino_t *entry;
+  ino_t *piVar1;
+  ino_t ino_local;
+  dev_t dev_local;
   dev_ino *ent;
   dev_ino *ent_from_table;
   _Bool found_match;
   
-  entry = (undefined4 *)xmalloc(0x10);
-  *entry = (undefined4)ino;
-  entry[1] = ino._4_4_;
-  entry[2] = (undefined4)dev;
-  entry[3] = dev._4_4_;
-  puVar1 = (undefined4 *)hash_insert(active_dir_set,entry);
-  if (puVar1 == (undefined4 *)0x0) {
+  entry = (ino_t *)xmalloc(0x10);
+  *entry = ino;
+  entry[1] = dev;
+  piVar1 = (ino_t *)hash_insert(active_dir_set,entry);
+  if (piVar1 == (ino_t *)0x0) {
     xalloc_die();
   }
-  if (puVar1 != entry) {
+  if (piVar1 != entry) {
     free(entry);
   }
-  return puVar1 != entry;
+  return piVar1 != entry;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void free_pending_ent(pending *p)
 
@@ -2740,6 +2668,8 @@ void free_pending_ent(pending *p)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool is_colored(indicator_no type)
 
@@ -2767,6 +2697,8 @@ LAB_08049f31:
 
 
 
+// WARNING: Unknown calling convention
+
 void restore_default_color(void)
 
 {
@@ -2777,7 +2709,9 @@ void restore_default_color(void)
 
 
 
-void sighandler(int sig)
+// WARNING: Unknown calling convention
+
+void sighandler(wchar_t sig)
 
 {
   if (interrupt_signal == 0) {
@@ -2788,7 +2722,9 @@ void sighandler(int sig)
 
 
 
-void stophandler(int sig)
+// WARNING: Unknown calling convention
+
+void stophandler(wchar_t sig)
 
 {
   if (interrupt_signal == 0) {
@@ -2799,12 +2735,14 @@ void stophandler(int sig)
 
 
 
+// WARNING: Unknown calling convention
+
 void process_signals(void)
 
 {
   sigset_t oldset;
-  int sig;
-  int stops;
+  wchar_t sig;
+  wchar_t stops;
   
   while ((interrupt_signal | stop_signal_count) != 0) {
     restore_default_color();
@@ -2816,7 +2754,7 @@ void process_signals(void)
     }
     else {
       stop_signal_count = stop_signal_count + -1;
-      sig = 0x13;
+      sig = L'\x13';
     }
     raise(sig);
     sigprocmask(2,(sigset_t *)&oldset,(sigset_t *)0x0);
@@ -2828,90 +2766,94 @@ void process_signals(void)
 
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
-int main(int argc,char **argv)
+wchar_t main(wchar_t argc,char **argv)
 
 {
   _Bool *p_Var1;
   char **ppcVar2;
+  pending *p;
   _Bool _Var3;
   __pid_t _Var4;
   char **ppcVar5;
+  void *x;
   quoting_style qVar6;
   size_t sVar7;
   int iVar8;
-  sigset_t *psVar9;
-  ulong *puVar10;
+  anon_union_4_2_5ad2d23e_for___sigaction_handler *paVar9;
+  sigaction *psVar10;
   byte bVar11;
   code *local_e4;
   Dereference_symlink local_e0;
   _Bool local_dc;
   _Bool local_d8;
-  undefined local_c8 [132];
-  int local_44;
-  dev_ino local_3c;
-  int local_2c;
-  pending *local_28;
-  int local_24;
-  int local_20;
-  void *local_1c;
-  int local_18;
-  int *piStack20;
+  undefined local_c8 [4];
+  sigaction act;
+  dev_ino di;
+  wchar_t i;
+  pending *thispend;
+  wchar_t n_files;
+  wchar_t j;
+  dev_ino *found;
+  wchar_t j_1;
   
   bVar11 = 0;
-  piStack20 = &argc;
   program_name = *argv;
   setlocale(6,"");
   bindtextdomain("coreutils","/usr/local/share/locale");
   textdomain("coreutils");
-  initialize_exit_failure(2);
+  initialize_exit_failure(L'\x02');
   atexit(close_stdout);
-  exit_status = 0;
+  exit_status = L'\0';
   print_dir_name = true;
   pending_dirs = (pending *)0x0;
-  local_2c = decode_switches(argc,argv);
+  di.st_dev._4_4_ = decode_switches(argc,argv);
   if (print_with_color != false) {
     parse_ls_color();
   }
   if (print_with_color == false) goto LAB_0804a2af;
   _Var3 = is_colored(C_ORPHAN);
-  if (_Var3 == false) {
-    _Var3 = is_colored(C_EXEC);
-    if ((_Var3 == true) && (color_symlink_as_referent != false)) goto LAB_0804a166;
-    _Var3 = is_colored(C_MISSING);
-    if ((_Var3 == true) && (format == long_format)) goto LAB_0804a166;
-  }
-  else {
+  if (_Var3) {
 LAB_0804a166:
     check_symlink_color = true;
+  }
+  else {
+    _Var3 = is_colored(C_EXEC);
+    if ((_Var3) && (color_symlink_as_referent != false)) goto LAB_0804a166;
+    _Var3 = is_colored(C_MISSING);
+    if ((_Var3) && (format == long_format)) goto LAB_0804a166;
   }
   _Var4 = tcgetpgrp(1);
   if (-1 < _Var4) {
     sigemptyset((sigset_t *)&caught_signals);
-    for (local_20 = 0; local_20 < 0xc; local_20 = local_20 + 1) {
-      sigaction(main::sig[local_20],(sigaction *)0x0,(sigaction *)local_c8);
-      if (local_c8._0_4_ != (code *)0x1) {
-        sigaddset((sigset_t *)&caught_signals,main::sig[local_20]);
+    for (n_files = L'\0'; n_files < L'\f'; n_files = n_files + L'\x01') {
+      sigaction(L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[n_files],(sigaction *)0x0,
+                (sigaction *)local_c8);
+      if (local_c8 != (undefined  [4])0x1) {
+        sigaddset((sigset_t *)&caught_signals,
+                  L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[n_files]);
       }
     }
-    psVar9 = &caught_signals;
-    puVar10 = (ulong *)(local_c8 + 4);
+    paVar9 = (anon_union_4_2_5ad2d23e_for___sigaction_handler *)&caught_signals;
+    psVar10 = &act;
     for (iVar8 = 0x20; iVar8 != 0; iVar8 = iVar8 + -1) {
-      *puVar10 = psVar9->__val[0];
-      psVar9 = (sigset_t *)((int)psVar9 + ((uint)bVar11 * -2 + 1) * 4);
-      puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+      psVar10->__sigaction_handler = *paVar9;
+      paVar9 = paVar9 + (uint)bVar11 * -2 + 1;
+      psVar10 = (sigaction *)((int)psVar10 + (uint)bVar11 * -8 + 4);
     }
-    local_44 = 0x10000000;
-    for (local_20 = 0; local_20 < 0xc; local_20 = local_20 + 1) {
-      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[local_20]);
+    act.sa_mask.__val[31] = 0x10000000;
+    for (n_files = L'\0'; n_files < L'\f'; n_files = n_files + L'\x01') {
+      iVar8 = sigismember((sigset_t *)&caught_signals,
+                          L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[n_files]);
       if (iVar8 != 0) {
-        if (main::sig[local_20] == 0x14) {
+        if (L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[n_files] == L'\x14') {
           local_e4 = stophandler;
         }
         else {
           local_e4 = sighandler;
         }
-        local_c8._0_4_ = local_e4;
-        sigaction(main::sig[local_20],(sigaction *)local_c8,(sigaction *)0x0);
+        local_c8 = (undefined  [4])local_e4;
+        sigaction(L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[n_files],(sigaction *)local_c8,
+                  (sigaction *)0x0);
       }
     }
   }
@@ -2959,8 +2901,8 @@ LAB_0804a2af:
   cwd_file = (fileinfo *)xnmalloc(100,0x78);
   cwd_n_used = 0;
   clear_files();
-  local_24 = argc - local_2c;
-  if (local_24 < 1) {
+  iVar8 = argc - di.st_dev._4_4_;
+  if (iVar8 < 1) {
     if (immediate_dirs == false) {
       queue_directory(".",(char *)0x0,true);
     }
@@ -2970,10 +2912,10 @@ LAB_0804a2af:
   }
   else {
     do {
-      ppcVar5 = argv + local_2c;
-      local_2c = local_2c + 1;
+      ppcVar5 = argv + di.st_dev._4_4_;
+      di.st_dev._4_4_ = di.st_dev._4_4_ + L'\x01';
       gobble_file(*ppcVar5,unknown,0,true,"");
-    } while (local_2c < argc);
+    } while (di.st_dev._4_4_ < argc);
   }
   if (cwd_n_used != 0) {
     sort_files();
@@ -2982,8 +2924,8 @@ LAB_0804a2af:
     }
   }
   if (cwd_n_used == 0) {
-    if (((local_24 < 2) && (pending_dirs != (pending *)0x0)) &&
-       (pending_dirs->next == (pending *)0x0)) {
+    if (((iVar8 < 2) && (pending_dirs != (pending *)0x0)) && (pending_dirs->next == (pending *)0x0))
+    {
       print_dir_name = false;
     }
   }
@@ -2994,42 +2936,42 @@ LAB_0804a2af:
       dired_pos = dired_pos + 1;
     }
   }
-  while (pending_dirs != (pending *)0x0) {
-    local_28 = pending_dirs;
+  while (p = pending_dirs, pending_dirs != (pending *)0x0) {
     if ((active_dir_set == (Hash_table *)0x0) || (pending_dirs->name != (char *)0x0)) {
       p_Var1 = &pending_dirs->command_line_arg;
       ppcVar5 = &pending_dirs->realname;
       ppcVar2 = &pending_dirs->name;
       pending_dirs = pending_dirs->next;
       print_dir(*ppcVar2,*ppcVar5,*p_Var1);
-      free_pending_ent(local_28);
+      free_pending_ent(p);
       print_dir_name = true;
     }
     else {
       pending_dirs = pending_dirs->next;
-      dev_ino_pop(&local_3c);
-      local_1c = hash_delete(active_dir_set,&local_3c);
-      if (local_1c == (void *)0x0) {
+      dev_ino_pop();
+      x = hash_delete(active_dir_set,&act.sa_restorer);
+      if (x == (void *)0x0) {
                     // WARNING: Subroutine does not return
         __assert_fail("found","ls.c",0x51e,"main");
       }
-      dev_ino_free(local_1c);
-      free_pending_ent(local_28);
+      dev_ino_free(x);
+      free_pending_ent(p);
     }
   }
   if (print_with_color != false) {
     restore_default_color();
     fflush_unlocked(stdout);
-    for (local_18 = 0; local_18 < 0xc; local_18 = local_18 + 1) {
-      iVar8 = sigismember((sigset_t *)&caught_signals,main::sig[local_18]);
+    for (found = (dev_ino *)0x0; (int)found < 0xc; found = (dev_ino *)((int)&found->st_ino + 1)) {
+      iVar8 = sigismember((sigset_t *)&caught_signals,
+                          L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[(int)found]);
       if (iVar8 != 0) {
-        signal(main::sig[local_18],(__sighandler_t)0x0);
+        signal(L"\x14\x0e\x01\x02\r\x03\x0f\x1d\x1b\x1a\x18\x19"[(int)found],(__sighandler_t)0x0);
       }
     }
-    for (local_18 = stop_signal_count; local_18 != 0; local_18 = local_18 + -1) {
+    for (found = (dev_ino *)stop_signal_count; found != (dev_ino *)0x0;
+        found = (dev_ino *)((int)&found[-1].st_dev + 7)) {
       raise(0x13);
     }
-    local_18 = interrupt_signal;
     if (interrupt_signal != 0) {
       raise(interrupt_signal);
     }
@@ -3054,10 +2996,12 @@ LAB_0804a2af:
 
 
 
-void initialize_exit_failure(int status)
+// WARNING: Unknown calling convention
+
+void initialize_exit_failure(wchar_t status)
 
 {
-  if (status != 1) {
+  if (status != L'\x01') {
     exit_failure = status;
   }
   return;
@@ -3065,7 +3009,9 @@ void initialize_exit_failure(int status)
 
 
 
-int decode_switches(int argc,char **argv)
+// WARNING: Unknown calling convention
+
+wchar_t decode_switches(wchar_t argc,char **argv)
 
 {
   time_style tVar1;
@@ -3083,26 +3029,26 @@ int decode_switches(int argc,char **argv)
   uint local_74;
   ulong tmp_ulong_3;
   ulong tmp_ulong_2;
-  int oi;
+  wchar_t oi;
   ulong tmp_ulong_1;
   winsize ws;
   ulong tmp_ulong;
   char *time_style_option;
   _Bool sort_type_specified;
   char *q_style;
-  int i;
+  wchar_t i;
   char *ls_block_size;
   char *p;
   char *p_1;
-  int c;
+  wchar_t c;
   ignore_pattern *hide;
-  int i_1;
+  wchar_t i_1;
   strtol_error e;
   char *p_2;
   char *style;
   char *p0;
   char *p1;
-  int i_2;
+  wchar_t i_2;
   char *locale_format;
   
   time_style_option = (char *)0x0;
@@ -3148,7 +3094,7 @@ int decode_switches(int argc,char **argv)
   q_style = getenv("QUOTING_STYLE");
   if (q_style != (char *)0x0) {
     i = argmatch(q_style,quoting_style_args,(char *)quoting_style_vals,4);
-    if (i < 0) {
+    if (i < L'\0') {
       pcVar4 = quotearg(q_style);
       uVar7 = gettext("ignoring invalid value of environment variable QUOTING_STYLE: %s");
       error(0,0,uVar7,pcVar4);
@@ -3194,59 +3140,59 @@ int decode_switches(int argc,char **argv)
     }
   }
   while( true ) {
-    oi = -1;
+    oi = L'\xffffffff';
     c = getopt_long(argc,argv,"abcdfghiklmnopqrstuvw:xABCDFGHI:LNQRST:UXZ1",long_options,&oi);
-    if (c == -1) break;
+    if (c == L'\xffffffff') break;
     switch(c) {
-    case 0x31:
+    case L'1':
       if (format != long_format) {
         format = one_per_line;
       }
       break;
-    case 0x41:
+    case L'A':
       if (ignore_mode == DT_UNKNOWN) {
         ignore_mode = DT_FIFO;
       }
       break;
-    case 0x42:
+    case L'B':
       add_ignore_pattern("*~");
       add_ignore_pattern(".*~");
       break;
-    case 0x43:
+    case L'C':
       format = many_per_line;
       break;
-    case 0x44:
+    case L'D':
       dired = true;
       break;
-    case 0x46:
+    case L'F':
       indicator_style = classify;
       break;
-    case 0x47:
+    case L'G':
       print_group = false;
       break;
-    case 0x48:
+    case L'H':
       dereference = DEREF_COMMAND_LINE_ARGUMENTS;
       break;
-    case 0x49:
+    case L'I':
       add_ignore_pattern(optarg);
       break;
-    case 0x4c:
+    case L'L':
       dereference = DEREF_ALWAYS;
       break;
-    case 0x4e:
+    case L'N':
       set_quoting_style((quoting_options *)0x0,literal_quoting_style);
       break;
-    case 0x51:
+    case L'Q':
       set_quoting_style((quoting_options *)0x0,c_quoting_style);
       break;
-    case 0x52:
+    case L'R':
       recursive = true;
       break;
-    case 0x53:
+    case L'S':
       sort_type = sort_size;
       sort_type_specified = true;
       break;
-    case 0x54:
+    case L'T':
       sVar5 = xstrtoul(optarg,(char **)0x0,0,&tmp_ulong_3,(char *)0x0);
       if (sVar5 != LONGINT_OK) {
         pcVar4 = quotearg(optarg);
@@ -3255,30 +3201,30 @@ int decode_switches(int argc,char **argv)
       }
       tabsize = tmp_ulong_3;
       break;
-    case 0x55:
+    case L'U':
       sort_type = sort_none;
       sort_type_specified = true;
       break;
-    case 0x58:
+    case L'X':
       sort_type = sort_extension;
       sort_type_specified = true;
       break;
-    case 0x5a:
+    case L'Z':
       print_scontext = true;
       break;
-    case 0x61:
+    case L'a':
       ignore_mode = DT_CHR;
       break;
-    case 0x62:
+    case L'b':
       set_quoting_style((quoting_options *)0x0,escape_quoting_style);
       break;
-    case 99:
+    case L'c':
       time_type = time_ctime;
       break;
-    case 100:
+    case L'd':
       immediate_dirs = true;
       break;
-    case 0x66:
+    case L'f':
       ignore_mode = DT_CHR;
       sort_type = sort_none;
       sort_type_specified = true;
@@ -3295,65 +3241,65 @@ int decode_switches(int argc,char **argv)
       print_block_size = false;
       print_with_color = false;
       break;
-    case 0x67:
+    case L'g':
       format = long_format;
       print_owner = false;
       break;
-    case 0x68:
-      human_output_opts = 0xb0;
+    case L'h':
+      human_output_opts = L'°';
       output_block_size._0_4_ = 1;
       output_block_size._4_4_ = 0;
       file_output_block_size._0_4_ = 1;
       file_output_block_size._4_4_ = 0;
       break;
-    case 0x69:
+    case L'i':
       print_inode = true;
       break;
-    case 0x6b:
-      human_output_opts = 0;
+    case L'k':
+      human_output_opts = L'\0';
       output_block_size._0_4_ = 0x400;
       output_block_size._4_4_ = 0;
       file_output_block_size._0_4_ = 0x400;
       file_output_block_size._4_4_ = 0;
       break;
-    case 0x6c:
+    case L'l':
       format = long_format;
       break;
-    case 0x6d:
+    case L'm':
       format = with_commas;
       break;
-    case 0x6e:
+    case L'n':
       numeric_ids = true;
       format = long_format;
       break;
-    case 0x6f:
+    case L'o':
       format = long_format;
       print_group = false;
       break;
-    case 0x70:
+    case L'p':
       indicator_style = slash;
       break;
-    case 0x71:
+    case L'q':
       qmark_funny_chars = true;
       break;
-    case 0x72:
+    case L'r':
       sort_reverse = true;
       break;
-    case 0x73:
+    case L's':
       print_block_size = true;
       break;
-    case 0x74:
+    case L't':
       sort_type = sort_time;
       sort_type_specified = true;
       break;
-    case 0x75:
+    case L'u':
       time_type = time_atime;
       break;
-    case 0x76:
+    case L'v':
       sort_type = sort_version;
       sort_type_specified = true;
       break;
-    case 0x77:
+    case L'w':
       sVar5 = xstrtoul(optarg,(char **)0x0,0,&tmp_ulong_2,(char *)0x0);
       if ((sVar5 != LONGINT_OK) || (tmp_ulong_2 == 0)) {
         pcVar4 = quotearg(optarg);
@@ -3362,30 +3308,30 @@ int decode_switches(int argc,char **argv)
       }
       line_length = tmp_ulong_2;
       break;
-    case 0x78:
+    case L'x':
       format = horizontal;
       break;
-    case 0x80:
+    case L'\x80':
       print_author = true;
       break;
-    case 0x81:
+    case L'\x81':
       e = human_options(optarg,&human_output_opts,&output_block_size);
       if (e != LONGINT_OK) {
-        xstrtol_fatal(e,oi,'\0',long_options,optarg);
+        xstrtol_fatal(e,oi,'\0',(option_conflict *)long_options,optarg);
       }
       file_output_block_size._0_4_ = (undefined4)output_block_size;
       file_output_block_size._4_4_ = output_block_size._4_4_;
       break;
-    case 0x82:
+    case L'\x82':
       if (optarg == (char *)0x0) {
-        i_1 = 1;
+        i_1 = L'\x01';
       }
       else {
         pVar8 = __xargmatch_internal("--color",optarg,color_args,(char *)color_types,4,argmatch_die)
         ;
         i_1 = color_types[pVar8];
       }
-      if ((i_1 == 1) || ((i_1 == 2 && (iVar3 = isatty(1), iVar3 != 0)))) {
+      if ((i_1 == L'\x01') || ((i_1 == L'\x02' && (iVar3 = isatty(1), iVar3 != 0)))) {
         local_80 = true;
       }
       else {
@@ -3396,65 +3342,65 @@ int decode_switches(int argc,char **argv)
         tabsize = 0;
       }
       break;
-    case 0x83:
+    case L'\x83':
       dereference = DEREF_COMMAND_LINE_SYMLINK_TO_DIR;
       break;
-    case 0x84:
+    case L'\x84':
       indicator_style = file_type;
       break;
-    case 0x85:
+    case L'\x85':
       pVar8 = __xargmatch_internal
                         ("--format",optarg,format_args,(char *)format_types,4,argmatch_die);
       format = format_types[pVar8];
       break;
-    case 0x86:
+    case L'\x86':
       format = long_format;
       time_style_option = "full-iso";
       break;
-    case 0x87:
+    case L'\x87':
       directories_first = true;
       break;
-    case 0x88:
+    case L'\x88':
       hide = (ignore_pattern *)xmalloc(8);
       hide->pattern = optarg;
       hide->next = hide_patterns;
       hide_patterns = hide;
       break;
-    case 0x89:
+    case L'\x89':
       pVar8 = __xargmatch_internal
                         ("--indicator-style",optarg,indicator_style_args,
                          (char *)indicator_style_types,4,argmatch_die);
       indicator_style = indicator_style_types[pVar8];
       break;
-    case 0x8a:
+    case L'\x8a':
       pVar8 = __xargmatch_internal
                         ("--quoting-style",optarg,quoting_style_args,(char *)quoting_style_vals,4,
                          argmatch_die);
       set_quoting_style((quoting_options *)0x0,quoting_style_vals[pVar8]);
       break;
-    case 0x8b:
+    case L'\x8b':
       qmark_funny_chars = false;
       break;
-    case 0x8c:
-      human_output_opts = 0x90;
+    case L'\x8c':
+      human_output_opts = L'\x90';
       output_block_size._0_4_ = 1;
       output_block_size._4_4_ = 0;
       file_output_block_size._0_4_ = 1;
       file_output_block_size._4_4_ = 0;
       break;
-    case 0x8d:
+    case L'\x8d':
       pVar8 = __xargmatch_internal("--sort",optarg,sort_args,(char *)sort_types,4,argmatch_die);
       sort_type = sort_types[pVar8];
       sort_type_specified = true;
       break;
-    case 0x8e:
+    case L'\x8e':
       pVar8 = __xargmatch_internal("--time",optarg,time_args,(char *)time_types,4,argmatch_die);
       time_type = time_types[pVar8];
       break;
-    case 0x8f:
+    case L'\x8f':
       time_style_option = optarg;
       break;
-    case -0x83:
+    case L'\xffffff7d':
       if (ls_mode == 1) {
         local_7c = "ls";
       }
@@ -3470,11 +3416,11 @@ int decode_switches(int argc,char **argv)
       version_etc(stdout,local_7c,"GNU coreutils","6.10","Richard Stallman","David MacKenzie",0);
                     // WARNING: Subroutine does not return
       exit(0);
-    case -0x82:
-      usage(0);
+    case L'\xffffff7e':
+      usage(L'\0');
       break;
     default:
-      usage(2);
+      usage(L'\x02');
     }
   }
   if (line_length < 3) {
@@ -3487,15 +3433,15 @@ int decode_switches(int argc,char **argv)
   filename_quoting_options = clone_quoting_options((quoting_options *)0x0);
   qVar6 = get_quoting_style(filename_quoting_options);
   if (qVar6 == escape_quoting_style) {
-    set_char_quoting(filename_quoting_options,' ',1);
+    set_char_quoting(filename_quoting_options,' ',L'\x01');
   }
   if (slash < indicator_style) {
     for (p_2 = "GNU coreutils" + indicator_style + 0xc; *p_2 != '\0'; p_2 = p_2 + 1) {
-      set_char_quoting(filename_quoting_options,*p_2,1);
+      set_char_quoting(filename_quoting_options,*p_2,L'\x01');
     }
   }
   dirname_quoting_options = clone_quoting_options((quoting_options *)0x0);
-  set_char_quoting(dirname_quoting_options,':',1);
+  set_char_quoting(dirname_quoting_options,':',L'\x01');
   if ((dired != false) && (format != long_format)) {
     dired = false;
   }
@@ -3511,7 +3457,7 @@ int decode_switches(int argc,char **argv)
     }
     while (iVar3 = strncmp(style,"posix-",6), iVar3 == 0) {
       _Var2 = hard_locale(2);
-      if (_Var2 != true) {
+      if (!_Var2) {
         return optind;
       }
       style = style + 6;
@@ -3553,8 +3499,8 @@ case_long_iso_time_style:
         long_time_format[0] = "%Y-%m-%d ";
         long_time_format[1] = "%m-%d %H:%M";
       }
-      else if ((tVar1 == locale_time_style) && (_Var2 = hard_locale(2), _Var2 != false)) {
-        for (i_2 = 0; i_2 < 2; i_2 = i_2 + 1) {
+      else if ((tVar1 == locale_time_style) && (_Var2 = hard_locale(2), _Var2)) {
+        for (i_2 = L'\0'; i_2 < L'\x02'; i_2 = i_2 + L'\x01') {
           locale_format = (char *)dcgettext(0,long_time_format[i_2],2);
           if (long_time_format[i_2] == locale_format) goto case_long_iso_time_style;
           long_time_format[i_2] = locale_format;
@@ -3571,9 +3517,10 @@ _Bool get_funky_string(char **dest,char **src,_Bool equals_end,size_t *output_co
 
 {
   char cVar1;
+  _Bool equals_end_local;
   char num;
   size_t count;
-  anon_enum_32_conflict1bd4 state;
+  anon_enum_32 state;
   char *p;
   char *q;
   
@@ -3587,7 +3534,7 @@ _Bool get_funky_string(char **dest,char **src,_Bool equals_end,size_t *output_co
     case ST_GND:
       cVar1 = *p;
       if (cVar1 == '=') {
-        if (equals_end != false) {
+        if (equals_end) {
           state = ST_END;
           break;
         }
@@ -3762,6 +3709,8 @@ _Bool get_funky_string(char **dest,char **src,_Bool equals_end,size_t *output_co
 
 
 
+// WARNING: Unknown calling convention
+
 void parse_ls_color(void)
 
 {
@@ -3771,14 +3720,14 @@ void parse_ls_color(void)
   char *pcVar3;
   undefined4 uVar4;
   int iVar5;
-  int local_34;
-  int local_30;
-  int local_2c;
+  wchar_t local_34;
+  wchar_t local_30;
+  wchar_t local_2c;
   char label [3];
   char *buf;
   char *p;
-  int state;
-  int ind_no;
+  wchar_t state;
+  wchar_t ind_no;
   color_ext_type *ext;
   color_ext_type *e;
   color_ext_type *e2;
@@ -3788,21 +3737,21 @@ void parse_ls_color(void)
     ext = (color_ext_type *)0x0;
     memcpy(label,&DAT_0805f786,3);
     color_buf = xstrdup(p);
-    state = 1;
+    state = L'\x01';
     buf = color_buf;
-    while (0 < state) {
-      if (state == 2) {
+    while (L'\0' < state) {
+      if (state == L'\x02') {
         if (*p == '\0') {
-          state = -1;
+          state = L'\xffffffff';
         }
         else {
           label[1] = *p;
           p = p + 1;
-          state = 3;
+          state = L'\x03';
         }
       }
-      else if (state < 3) {
-        if (state == 1) {
+      else if (state < L'\x03') {
+        if (state == L'\x01') {
           cVar1 = *p;
           if (cVar1 == '*') {
             ext = (color_ext_type *)xmalloc(0x14);
@@ -3811,11 +3760,11 @@ void parse_ls_color(void)
             color_ext_list = ext;
             (ext->ext).string = buf;
             _Var2 = get_funky_string(&buf,&p,true,(size_t *)ext);
-            if (_Var2 == false) {
-              local_34 = -1;
+            if (_Var2) {
+              local_34 = L'\x04';
             }
             else {
-              local_34 = 4;
+              local_34 = L'\xffffffff';
             }
             state = local_34;
           }
@@ -3823,62 +3772,62 @@ void parse_ls_color(void)
             p = p + 1;
           }
           else if (cVar1 == '\0') {
-            state = 0;
+            state = L'\0';
           }
           else {
             label[0] = *p;
             p = p + 1;
-            state = 2;
+            state = L'\x02';
           }
         }
       }
-      else if (state == 3) {
-        state = -1;
+      else if (state == L'\x03') {
+        state = L'\xffffffff';
         cVar1 = *p;
         p = p + 1;
         if (cVar1 == '=') {
-          for (ind_no = 0; indicator_name[ind_no] != (char *)0x0; ind_no = ind_no + 1) {
+          for (ind_no = L'\0'; indicator_name[ind_no] != (char *)0x0; ind_no = ind_no + L'\x01') {
             iVar5 = strcmp(label,indicator_name[ind_no]);
             if (iVar5 == 0) {
               color_indicator[ind_no].string = buf;
               _Var2 = get_funky_string(&buf,&p,false,&color_indicator[ind_no].len);
-              if (_Var2 == false) {
-                local_30 = -1;
+              if (_Var2) {
+                local_30 = L'\x01';
               }
               else {
-                local_30 = 1;
+                local_30 = L'\xffffffff';
               }
               state = local_30;
               break;
             }
           }
-          if (state == -1) {
+          if (state == L'\xffffffff') {
             pcVar3 = quotearg(label);
             uVar4 = gettext("unrecognized prefix: %s");
             error(0,0,uVar4,pcVar3);
           }
         }
       }
-      else if (state == 4) {
+      else if (state == L'\x04') {
         cVar1 = *p;
         p = p + 1;
         if (cVar1 == '=') {
           (ext->seq).string = buf;
           _Var2 = get_funky_string(&buf,&p,false,&(ext->seq).len);
-          if (_Var2 == false) {
-            local_2c = -1;
+          if (_Var2) {
+            local_2c = L'\x01';
           }
           else {
-            local_2c = 1;
+            local_2c = L'\xffffffff';
           }
           state = local_2c;
         }
         else {
-          state = -1;
+          state = L'\xffffffff';
         }
       }
     }
-    if (state < 0) {
+    if (state < L'\0') {
       uVar4 = gettext("unparsable value for LS_COLORS environment variable");
       error(0,0,uVar4);
       free(color_buf);
@@ -3903,13 +3852,13 @@ void parse_ls_color(void)
 void set_exit_status(_Bool serious)
 
 {
-  if (serious == false) {
-    if (exit_status == 0) {
-      exit_status = 1;
-    }
+  _Bool serious_local;
+  
+  if (serious) {
+    exit_status = L'\x02';
   }
-  else {
-    exit_status = 2;
+  else if (exit_status == L'\0') {
+    exit_status = L'\x01';
   }
   return;
 }
@@ -3921,6 +3870,7 @@ void file_failure(_Bool serious,char *message,char *file)
 {
   char *pcVar1;
   int *piVar2;
+  _Bool serious_local;
   
   pcVar1 = quotearg_colon(file);
   piVar2 = __errno_location();
@@ -3937,6 +3887,7 @@ void queue_directory(char *name,char *realname,_Bool command_line_arg)
   pending *ppVar1;
   char *local_20;
   char *local_1c;
+  _Bool command_line_arg_local;
   pending *new;
   
   ppVar1 = (pending *)xmalloc(0x10);
@@ -3962,8 +3913,6 @@ void queue_directory(char *name,char *realname,_Bool command_line_arg)
 
 
 
-// WARNING (jumptable): Heritage AFTER dead removal. Example location: r0x0806462c : 0x0804c131
-// WARNING: Could not reconcile some variable overlaps
 // WARNING: Restarted to delay deadcode elimination for space: ram
 
 void print_dir(char *name,char *realname,_Bool command_line_arg)
@@ -3983,19 +3932,20 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
   size_t sVar10;
   uintmax_t uVar11;
   char *local_2e4;
+  _Bool command_line_arg_local;
   stat dir_stat;
   DIR *dirp;
   dirent *next;
   uintmax_t total_blocks;
-  int fd;
+  wchar_t fd;
   dev_ino *di;
   obstack *__o;
-  int __len;
+  wchar_t __len;
   filetype type;
   obstack *__o_1;
-  int __len_1;
+  wchar_t __len_1;
   obstack *__o_2;
-  int __len_2;
+  wchar_t __len_2;
   char *p;
   
   n = 0;
@@ -4025,7 +3975,7 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
     }
     _Var3 = visit_dir(CONCAT44(dir_stat.st_dev._4_4_,(undefined4)dir_stat.st_dev),
                       CONCAT44(dir_stat.st_ino._4_4_,(undefined4)dir_stat.st_ino));
-    if (_Var3 != false) {
+    if (_Var3) {
       pcVar5 = quotearg_colon(name);
       uVar7 = gettext("%s: not listing already-listed directory");
       error(0,0,uVar7,pcVar5);
@@ -4051,7 +4001,7 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
       pdVar8 = readdir64(__dirp);
       if (pdVar8 == (dirent64 *)0x0) break;
       _Var3 = file_ignored(pdVar8->d_name);
-      if (_Var3 != true) {
+      if (!_Var3) {
         type = unknown;
         switch(pdVar8->d_type) {
         case '\x01':
@@ -4159,6 +4109,8 @@ void print_dir(char *name,char *realname,_Bool command_line_arg)
 
 
 
+// WARNING: Unknown calling convention
+
 void add_ignore_pattern(char *pattern)
 
 {
@@ -4173,6 +4125,8 @@ void add_ignore_pattern(char *pattern)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool patterns_match(ignore_pattern *patterns,char *file)
 
@@ -4194,6 +4148,8 @@ _Bool patterns_match(ignore_pattern *patterns,char *file)
 
 
 
+// WARNING: Unknown calling convention
+
 _Bool file_ignored(char *name)
 
 {
@@ -4214,8 +4170,8 @@ _Bool file_ignored(char *name)
       return true;
     }
   }
-  if (((ignore_mode != DT_UNKNOWN) || (_Var1 = patterns_match(hide_patterns,name), _Var1 == false))
-     && (_Var1 = patterns_match(ignore_patterns,name), _Var1 == false)) {
+  if (((ignore_mode != DT_UNKNOWN) || (_Var1 = patterns_match(hide_patterns,name), !_Var1)) &&
+     (_Var1 = patterns_match(ignore_patterns,name), !_Var1)) {
     return false;
   }
   return true;
@@ -4226,10 +4182,14 @@ _Bool file_ignored(char *name)
 uintmax_t unsigned_file_size(off_t size)
 
 {
+  off_t size_local;
+  
   return size;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void clear_files(void)
 
@@ -4248,20 +4208,22 @@ void clear_files(void)
   }
   cwd_n_used = 0;
   any_has_acl = false;
-  inode_number_width = 0;
-  block_size_width = 0;
-  nlink_width = 0;
-  scontext_width = 0;
-  owner_width = 0;
-  group_width = 0;
-  author_width = 0;
-  major_device_number_width = 0;
-  minor_device_number_width = 0;
-  file_size_width = 0;
+  inode_number_width = L'\0';
+  block_size_width = L'\0';
+  nlink_width = L'\0';
+  owner_width = L'\0';
+  group_width = L'\0';
+  author_width = L'\0';
+  scontext_width = L'\0';
+  major_device_number_width = L'\0';
+  minor_device_number_width = L'\0';
+  file_size_width = L'\0';
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void freecon(char *con)
 
@@ -4272,7 +4234,6 @@ void freecon(char *con)
 
 
 // WARNING: Removing unreachable block (ram,0x0804ca00)
-// WARNING: Could not reconcile some variable overlaps
 
 uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_arg,char *dirname)
 
@@ -4282,88 +4243,88 @@ uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_ar
   undefined4 uVar3;
   _Bool _Var4;
   size_t sVar5;
-  char *pcVar6;
-  int iVar7;
-  int *piVar8;
-  char *pcVar9;
-  char **ppcVar10;
-  size_t sVar11;
-  uint uVar12;
-  uintmax_t *puVar13;
-  undefined4 uStackY912;
+  size_t sVar6;
+  char *pcVar7;
+  int iVar8;
+  int *piVar9;
+  char *pcVar10;
+  char **ppcVar11;
+  wchar_t wVar12;
+  uint uVar13;
+  uintmax_t *puVar14;
+  undefined4 uStackY_390;
   char *local_360;
   Dereference_symlink local_35c;
   undefined local_355;
   undefined4 local_354;
   char *local_350;
-  int local_34c;
-  byte local_348;
-  undefined8 local_344;
+  wchar_t local_34c;
+  _Bool command_line_arg_local;
+  ino_t inode_local;
   stat linkstats;
+  char buf_3 [21];
   char buf_1 [21];
-  char buf [21];
   char b [21];
   uintmax_t blocks;
   fileinfo *f;
   char *absolute_name;
   _Bool do_deref;
-  int err;
+  wchar_t err;
   _Bool need_lstat;
   _Bool have_acl;
-  int attr_len;
-  int n;
+  wchar_t attr_len;
+  wchar_t n;
   char *linkname;
-  int len;
-  int len_1;
-  int len_2;
-  int len_3;
-  int len_4;
-  int b_len;
-  int len_5;
+  wchar_t len;
+  wchar_t len_1;
+  wchar_t len_2;
+  wchar_t len_3;
+  wchar_t len_4;
+  wchar_t b_len;
+  wchar_t len_5;
   uintmax_t size;
-  int len_6;
-  int len_7;
+  wchar_t len_6;
+  wchar_t len_7;
   
-  local_348 = command_line_arg;
+  command_line_arg_local = command_line_arg;
   blocks._0_4_ = 0;
   blocks._4_4_ = (char *)0x0;
-  local_344 = inode;
-  if ((command_line_arg != false) && (inode != 0)) {
+  inode_local = inode;
+  if ((command_line_arg) && (inode != 0)) {
                     // WARNING: Subroutine does not return
-    uStackY912 = 0x804c8fa;
+    uStackY_390 = 0x804c8fa;
     __assert_fail("! command_line_arg || inode == NOT_AN_INODE_NUMBER","ls.c",0x9f7,"gobble_file");
   }
   if (cwd_n_used == cwd_n_alloc) {
-    uStackY912 = 0x804c928;
+    uStackY_390 = 0x804c928;
     cwd_file = (fileinfo *)xnrealloc(cwd_file,cwd_n_alloc,0xf0);
     cwd_n_alloc = cwd_n_alloc * 2;
-    inode = local_344;
+    inode = inode_local;
   }
   f = cwd_file + cwd_n_used;
-  uStackY912 = 0x804c973;
-  local_344 = inode;
+  uStackY_390 = 0x804c973;
+  inode_local = inode;
   memset(f,0,0x78);
-  *(undefined4 *)&(f->stat).st_ino = (undefined4)local_344;
-  *(undefined4 *)((int)&(f->stat).st_ino + 4) = local_344._4_4_;
+  (f->stat).st_ino = inode_local;
   f->filetype = type;
-  if (((((local_348 == 0) && (format_needs_stat == false)) &&
+  if (((((command_line_arg_local == false) && (format_needs_stat == false)) &&
        ((type != directory || (print_with_color == false)))) &&
       ((((print_inode == false && (format_needs_type == false)) ||
         ((type != symbolic_link && (type != unknown)))) ||
        (((dereference != DEREF_ALWAYS && (color_symlink_as_referent == false)) &&
-        (check_symlink_color == false)))))) && ((print_inode != true || (local_344 != 0)))) {
-    puVar13 = (uintmax_t *)&stack0xfffffc74;
+        (check_symlink_color == false)))))) && ((print_inode != true || (inode_local != 0)))) {
+    puVar14 = (uintmax_t *)&stack0xfffffc74;
     if (format_needs_type == true) {
       if (type == unknown) goto LAB_0804caa3;
-      puVar13 = (uintmax_t *)&stack0xfffffc74;
+      puVar14 = (uintmax_t *)&stack0xfffffc74;
       if (type == normal) {
         if (indicator_style == classify) goto LAB_0804caa3;
-        puVar13 = (uintmax_t *)&stack0xfffffc74;
+        puVar14 = (uintmax_t *)&stack0xfffffc74;
         if (print_with_color == true) {
-          uStackY912 = 0x804ca9b;
+          uStackY_390 = 0x804ca9b;
           _Var4 = is_colored(C_EXEC);
-          puVar13 = (uintmax_t *)&stack0xfffffc74;
-          if (_Var4 != false) goto LAB_0804caa3;
+          puVar14 = (uintmax_t *)&stack0xfffffc74;
+          if (_Var4) goto LAB_0804caa3;
         }
       }
     }
@@ -4372,56 +4333,56 @@ uintmax_t gobble_file(char *name,filetype type,ino_t inode,_Bool command_line_ar
 LAB_0804caa3:
     if ((*name == '/') || (*dirname == '\0')) {
       absolute_name = name;
-      puVar13 = (uintmax_t *)&stack0xfffffc74;
+      puVar14 = (uintmax_t *)&stack0xfffffc74;
     }
     else {
-      uStackY912 = 0x804caca;
-      sVar11 = strlen(name);
-      uStackY912 = 0x804cad7;
-      sVar5 = strlen(dirname);
-      iVar7 = -(sVar11 + sVar5 + 0x20 & 0xfffffff0);
-      puVar13 = (uintmax_t *)(&stack0xfffffc74 + iVar7);
-      absolute_name = (char *)((int)&local_360 + iVar7);
+      uStackY_390 = 0x804caca;
+      sVar5 = strlen(name);
+      uStackY_390 = 0x804cad7;
+      sVar6 = strlen(dirname);
+      iVar8 = -(sVar5 + sVar6 + 0x20 & 0xfffffff0);
+      puVar14 = (uintmax_t *)(&stack0xfffffc74 + iVar8);
+      absolute_name = (char *)((int)&local_360 + iVar8);
       local_360 = absolute_name;
-      *(char **)(&stack0xfffffc7c + iVar7) = name;
-      *(char **)(&stack0xfffffc78 + iVar7) = dirname;
-      *(char **)(&stack0xfffffc74 + iVar7) = absolute_name;
-      *(undefined4 *)((int)&uStackY912 + iVar7) = 0x804cb2c;
-      attach(*(char **)(&stack0xfffffc74 + iVar7),*(char **)(&stack0xfffffc78 + iVar7),
-             *(char **)(&stack0xfffffc7c + iVar7));
+      *(char **)(&stack0xfffffc7c + iVar8) = name;
+      *(char **)(&stack0xfffffc78 + iVar8) = dirname;
+      *(char **)(&stack0xfffffc74 + iVar8) = absolute_name;
+      *(undefined4 *)((int)&uStackY_390 + iVar8) = 0x804cb2c;
+      attach(*(char **)(&stack0xfffffc74 + iVar8),*(char **)(&stack0xfffffc78 + iVar8),
+             *(char **)(&stack0xfffffc7c + iVar8));
     }
     local_35c = dereference;
     if (dereference < DEREF_COMMAND_LINE_ARGUMENTS) {
 LAB_0804cbef:
-      *(stat **)((int)puVar13 + 4) = &f->stat;
-      *(char **)puVar13 = absolute_name;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cc04;
-      err = lstat64(*(char **)puVar13,*(stat64 **)((int)puVar13 + 4));
+      *(stat **)((int)puVar14 + 4) = &f->stat;
+      *(char **)puVar14 = absolute_name;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cc04;
+      err = lstat64(*(char **)puVar14,*(stat64 **)((int)puVar14 + 4));
       do_deref = false;
     }
     else {
       if (DEREF_COMMAND_LINE_SYMLINK_TO_DIR < dereference) {
         if (dereference == DEREF_ALWAYS) {
-          *(stat **)((int)puVar13 + 4) = &f->stat;
-          *(char **)puVar13 = absolute_name;
-          *(undefined4 *)((int)puVar13 + -4) = 0x804cb6f;
-          err = stat64(*(char **)puVar13,*(stat64 **)((int)puVar13 + 4));
+          *(stat **)((int)puVar14 + 4) = &f->stat;
+          *(char **)puVar14 = absolute_name;
+          *(undefined4 *)((int)puVar14 + -4) = 0x804cb6f;
+          err = stat64(*(char **)puVar14,*(stat64 **)((int)puVar14 + 4));
           do_deref = true;
           goto LAB_0804cc0b;
         }
         goto LAB_0804cbef;
       }
-      if (local_348 == 0) goto LAB_0804cbef;
-      *(stat **)((int)puVar13 + 4) = &f->stat;
-      *(char **)puVar13 = absolute_name;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cb99;
-      err = stat64(*(char **)puVar13,*(stat64 **)((int)puVar13 + 4));
+      if (command_line_arg_local == false) goto LAB_0804cbef;
+      *(stat **)((int)puVar14 + 4) = &f->stat;
+      *(char **)puVar14 = absolute_name;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cb99;
+      err = stat64(*(char **)puVar14,*(stat64 **)((int)puVar14 + 4));
       do_deref = true;
       if (dereference != DEREF_COMMAND_LINE_ARGUMENTS) {
-        if (err < 0) {
-          *(undefined4 *)((int)puVar13 + -4) = 0x804cbb5;
-          piVar8 = __errno_location();
-          local_355 = *piVar8 == 2;
+        if (err < L'\0') {
+          *(undefined4 *)((int)puVar14 + -4) = 0x804cbb5;
+          piVar9 = __errno_location();
+          local_355 = *piVar9 == 2;
         }
         else {
           local_355 = ((f->stat).st_mode & 0xf000) != 0x4000;
@@ -4430,21 +4391,21 @@ LAB_0804cbef:
       }
     }
 LAB_0804cc0b:
-    if (err != 0) {
-      *(char **)puVar13 = "cannot access %s";
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cc21;
-      pcVar6 = (char *)gettext();
-      uVar12 = (uint)local_348;
-      *(char **)(puVar13 + 1) = absolute_name;
-      *(char **)((int)puVar13 + 4) = pcVar6;
-      *(uint *)puVar13 = uVar12;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cc3b;
-      file_failure(*(_Bool *)puVar13,*(char **)((int)puVar13 + 4),*(char **)(puVar13 + 1));
-      if (local_348 == 0) {
-        *(char **)puVar13 = name;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cc68;
-        pcVar6 = xstrdup(*(char **)puVar13);
-        f->name = pcVar6;
+    if (err != L'\0') {
+      *(char **)puVar14 = "cannot access %s";
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cc21;
+      pcVar7 = (char *)gettext();
+      uVar13 = (uint)command_line_arg_local;
+      *(char **)(puVar14 + 1) = absolute_name;
+      *(char **)((int)puVar14 + 4) = pcVar7;
+      *(uint *)puVar14 = uVar13;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cc3b;
+      file_failure(*(_Bool *)puVar14,*(char **)((int)puVar14 + 4),*(char **)(puVar14 + 1));
+      if (command_line_arg_local == false) {
+        *(char **)puVar14 = name;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cc68;
+        pcVar7 = xstrdup(*(char **)puVar14);
+        f->name = pcVar7;
         cwd_n_used = cwd_n_used + 1;
         local_354 = 0;
         local_350 = (char *)0x0;
@@ -4459,88 +4420,88 @@ LAB_0804cc0b:
     if ((format == long_format) || (print_scontext != false)) {
       have_acl = false;
       if (do_deref == false) {
-        *(char ***)((int)puVar13 + 4) = &f->scontext;
-        *(char **)puVar13 = absolute_name;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804ccf0;
-        local_34c = lgetfilecon(*(char **)puVar13,*(char ***)((int)puVar13 + 4));
+        *(char ***)((int)puVar14 + 4) = &f->scontext;
+        *(char **)puVar14 = absolute_name;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804ccf0;
+        local_34c = lgetfilecon(*(char **)puVar14,*(char ***)((int)puVar14 + 4));
       }
       else {
-        *(char ***)((int)puVar13 + 4) = &f->scontext;
-        *(char **)puVar13 = absolute_name;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804ccd3;
-        local_34c = getfilecon(*(char **)puVar13,*(char ***)((int)puVar13 + 4));
+        *(char ***)((int)puVar14 + 4) = &f->scontext;
+        *(char **)puVar14 = absolute_name;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804ccd3;
+        local_34c = getfilecon(*(char **)puVar14,*(char ***)((int)puVar14 + 4));
       }
       err = -(local_34c >> 0x1f);
-      if (err == 0) {
-        *(char **)((int)puVar13 + 4) = f->scontext;
-        *(char **)puVar13 = "unlabeled";
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cd24;
-        iVar7 = strcmp(*(char **)puVar13,*(char **)((int)puVar13 + 4));
-        have_acl = iVar7 != 0;
+      if (err == L'\0') {
+        *(char **)((int)puVar14 + 4) = f->scontext;
+        *(char **)puVar14 = "unlabeled";
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cd24;
+        iVar8 = strcmp(*(char **)puVar14,*(char **)((int)puVar14 + 4));
+        have_acl = iVar8 != 0;
       }
       else {
         f->scontext = UNKNOWN_SECURITY_CONTEXT;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cd3d;
-        piVar8 = __errno_location();
-        if (*piVar8 != 0x5f) {
-          *(undefined4 *)((int)puVar13 + -4) = 0x804cd49;
-          piVar8 = __errno_location();
-          if (*piVar8 != 0x3d) goto LAB_0804cd57;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cd3d;
+        piVar9 = __errno_location();
+        if (*piVar9 != 0x5f) {
+          *(undefined4 *)((int)puVar14 + -4) = 0x804cd49;
+          piVar9 = __errno_location();
+          if (*piVar9 != 0x3d) goto LAB_0804cd57;
         }
-        err = 0;
+        err = L'\0';
       }
 LAB_0804cd57:
-      if (((err == 0) && (have_acl != true)) && (format == long_format)) {
-        *(stat **)((int)puVar13 + 4) = &f->stat;
-        *(char **)puVar13 = absolute_name;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cd86;
-        uVar12 = file_has_acl(*(char **)puVar13,*(stat **)((int)puVar13 + 4));
-        err = uVar12 >> 0x1f;
-        have_acl = 0 < (int)uVar12;
+      if (((err == L'\0') && (have_acl != true)) && (format == long_format)) {
+        *(stat **)((int)puVar14 + 4) = &f->stat;
+        *(char **)puVar14 = absolute_name;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cd86;
+        uVar13 = file_has_acl(*(char **)puVar14,*(stat **)((int)puVar14 + 4));
+        err = uVar13 >> 0x1f;
+        have_acl = 0 < (int)uVar13;
       }
       f->have_acl = have_acl;
       any_has_acl = (have_acl | any_has_acl) != 0;
-      if (err != 0) {
-        *(char **)puVar13 = absolute_name;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cdd1;
-        pcVar9 = quotearg_colon(*(char **)puVar13);
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cdd8;
-        ppcVar10 = (char **)__errno_location();
-        pcVar6 = *ppcVar10;
-        *(char **)((int)puVar13 + 0xc) = pcVar9;
-        *(char **)(puVar13 + 1) = "%s";
-        *(char **)((int)puVar13 + 4) = pcVar6;
-        *(undefined4 *)puVar13 = 0;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804cdf6;
+      if (err != L'\0') {
+        *(char **)puVar14 = absolute_name;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cdd1;
+        pcVar10 = quotearg_colon(*(char **)puVar14);
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cdd8;
+        ppcVar11 = (char **)__errno_location();
+        pcVar7 = *ppcVar11;
+        *(char **)((int)puVar14 + 0xc) = pcVar10;
+        *(char **)(puVar14 + 1) = "%s";
+        *(char **)((int)puVar14 + 4) = pcVar7;
+        *(undefined4 *)puVar14 = 0;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804cdf6;
         error();
       }
     }
     if ((((f->stat).st_mode & 0xf000) == 0xa000) &&
        ((format == long_format || (check_symlink_color != false)))) {
-      *(char **)(puVar13 + 1) = (char *)(uint)local_348;
-      *(fileinfo **)((int)puVar13 + 4) = f;
-      *(char **)puVar13 = absolute_name;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804ce41;
-      get_link_name(*(char **)puVar13,*(fileinfo **)((int)puVar13 + 4),*(_Bool *)(puVar13 + 1));
-      *(char **)((int)puVar13 + 4) = f->linkname;
-      *(char **)puVar13 = absolute_name;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804ce56;
-      linkname = make_link_name(*(char **)puVar13,*(char **)((int)puVar13 + 4));
+      *(char **)(puVar14 + 1) = (char *)(uint)command_line_arg_local;
+      *(fileinfo **)((int)puVar14 + 4) = f;
+      *(char **)puVar14 = absolute_name;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804ce41;
+      get_link_name(*(char **)puVar14,*(fileinfo **)((int)puVar14 + 4),*(_Bool *)(puVar14 + 1));
+      *(char **)((int)puVar14 + 4) = f->linkname;
+      *(char **)puVar14 = absolute_name;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804ce56;
+      linkname = make_link_name(*(char **)puVar14,*(char **)((int)puVar14 + 4));
       if ((linkname != (char *)0x0) && ((slash < indicator_style || (check_symlink_color != false)))
          ) {
-        *(stat **)((int)puVar13 + 4) = &linkstats;
-        *(char **)puVar13 = linkname;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804ce89;
-        iVar7 = stat64(*(char **)puVar13,*(stat64 **)((int)puVar13 + 4));
-        if ((iVar7 == 0) &&
-           (((f->linkok = true, local_348 != 1 || (format == long_format)) ||
+        *(stat **)((int)puVar14 + 4) = &linkstats;
+        *(char **)puVar14 = linkname;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804ce89;
+        iVar8 = stat64(*(char **)puVar14,*(stat64 **)((int)puVar14 + 4));
+        if ((iVar8 == 0) &&
+           (((f->linkok = true, command_line_arg_local != true || (format == long_format)) ||
             ((linkstats.st_mode & 0xf000) != 0x4000)))) {
           f->linkmode = linkstats.st_mode;
         }
       }
-      *(char **)puVar13 = linkname;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804ced4;
-      free(*(void **)puVar13);
+      *(char **)puVar14 = linkname;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804ced4;
+      free(*(void **)puVar14);
     }
     if ((((f->stat).st_mode & 0xf000) == 0xa000) && (check_symlink_color != true)) {
       f->linkok = true;
@@ -4549,7 +4510,7 @@ LAB_0804cd57:
       f->filetype = symbolic_link;
     }
     else if (((f->stat).st_mode & 0xf000) == 0x4000) {
-      if (((immediate_dirs ^ 1U) & local_348) == 0) {
+      if (((immediate_dirs ^ 1U) & command_line_arg_local) == 0) {
         f->filetype = directory;
       }
       else {
@@ -4562,134 +4523,134 @@ LAB_0804cd57:
     blocks._4_4_ = *(char **)((int)&(f->stat).st_blocks + 4);
     blocks._0_4_ = *(undefined4 *)&(f->stat).st_blocks;
     if ((format == long_format) || (print_block_size != false)) {
-      *(char **)(puVar13 + 3) = (char *)output_block_size;
-      *(char **)((int)puVar13 + 0x1c) = output_block_size._4_4_;
-      *(char **)(puVar13 + 2) = (char *)0x200;
-      *(char **)((int)puVar13 + 0x14) = (char *)0x0;
-      *(int *)((int)puVar13 + 0xc) = human_output_opts;
-      *(stat **)(puVar13 + 1) = &linkstats;
-      pcVar6 = blocks._4_4_;
-      *(undefined4 *)puVar13 = (undefined4)blocks;
-      *(char **)((int)puVar13 + 4) = pcVar6;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cfd3;
-      pcVar6 = human_readable(*puVar13,*(char **)(puVar13 + 1),(int)*(char **)((int)puVar13 + 0xc),
-                              puVar13[2],puVar13[3]);
-      *(char **)((int)puVar13 + 4) = (char *)0x0;
-      *(char **)puVar13 = pcVar6;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804cfe3;
-      iVar7 = gnu_mbswidth(*(char **)puVar13,(int)*(char **)((int)puVar13 + 4));
-      if (block_size_width < iVar7) {
-        block_size_width = iVar7;
+      *(char **)(puVar14 + 3) = (char *)output_block_size;
+      *(char **)((int)puVar14 + 0x1c) = output_block_size._4_4_;
+      *(char **)(puVar14 + 2) = (char *)0x200;
+      *(char **)((int)puVar14 + 0x14) = (char *)0x0;
+      *(wchar_t *)((int)puVar14 + 0xc) = human_output_opts;
+      *(stat **)(puVar14 + 1) = &linkstats;
+      pcVar7 = blocks._4_4_;
+      *(undefined4 *)puVar14 = (undefined4)blocks;
+      *(char **)((int)puVar14 + 4) = pcVar7;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cfd3;
+      pcVar7 = human_readable(*puVar14,*(char **)(puVar14 + 1),(int)*(char **)((int)puVar14 + 0xc),
+                              puVar14[2],puVar14[3]);
+      *(char **)((int)puVar14 + 4) = (char *)0x0;
+      *(char **)puVar14 = pcVar7;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804cfe3;
+      wVar12 = gnu_mbswidth(*(char **)puVar14,(wchar_t)*(char **)((int)puVar14 + 4));
+      if (block_size_width < wVar12) {
+        block_size_width = wVar12;
       }
     }
     if (format == long_format) {
       if (print_owner != false) {
-        *(__uid_t *)puVar13 = (f->stat).st_uid;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d01e;
-        iVar7 = format_user_width(*(uid_t *)puVar13);
-        if (owner_width < iVar7) {
-          owner_width = iVar7;
+        *(__uid_t *)puVar14 = (f->stat).st_uid;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d01e;
+        wVar12 = format_user_width(*(uid_t *)puVar14);
+        if (owner_width < wVar12) {
+          owner_width = wVar12;
         }
       }
       if (print_group != false) {
-        *(__gid_t *)puVar13 = (f->stat).st_gid;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d04c;
-        iVar7 = format_group_width(*(gid_t *)puVar13);
-        if (group_width < iVar7) {
-          group_width = iVar7;
+        *(__gid_t *)puVar14 = (f->stat).st_gid;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d04c;
+        wVar12 = format_group_width(*(gid_t *)puVar14);
+        if (group_width < wVar12) {
+          group_width = wVar12;
         }
       }
       if (print_author != false) {
-        *(__uid_t *)puVar13 = (f->stat).st_uid;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d07a;
-        iVar7 = format_user_width(*(uid_t *)puVar13);
-        if (author_width < iVar7) {
-          author_width = iVar7;
+        *(__uid_t *)puVar14 = (f->stat).st_uid;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d07a;
+        wVar12 = format_user_width(*(uid_t *)puVar14);
+        if (author_width < wVar12) {
+          author_width = wVar12;
         }
       }
     }
     if (print_scontext != false) {
-      *(char **)puVar13 = f->scontext;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804d0a8;
-      sVar11 = strlen(*(char **)puVar13);
-      if (scontext_width < (int)sVar11) {
-        scontext_width = sVar11;
+      *(char **)puVar14 = f->scontext;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804d0a8;
+      wVar12 = strlen(*(char **)puVar14);
+      if (scontext_width < wVar12) {
+        scontext_width = wVar12;
       }
     }
     if (format == long_format) {
       _Var1 = (f->stat).st_nlink;
-      *(char **)(puVar13 + 1) = b;
-      *(__nlink_t *)puVar13 = _Var1;
-      *(char **)((int)puVar13 + 4) = (char *)0x0;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804d0ea;
-      pcVar6 = umaxtostr(*puVar13,*(char **)(puVar13 + 1));
-      *(char **)puVar13 = pcVar6;
-      *(undefined4 *)((int)puVar13 + -4) = 0x804d0f2;
-      sVar11 = strlen(*(char **)puVar13);
-      if (nlink_width < (int)sVar11) {
-        nlink_width = sVar11;
+      *(char **)(puVar14 + 1) = b;
+      *(__nlink_t *)puVar14 = _Var1;
+      *(char **)((int)puVar14 + 4) = (char *)0x0;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804d0ea;
+      pcVar7 = umaxtostr(*puVar14,*(char **)(puVar14 + 1));
+      *(char **)puVar14 = pcVar7;
+      *(undefined4 *)((int)puVar14 + -4) = 0x804d0f2;
+      wVar12 = strlen(*(char **)puVar14);
+      if (nlink_width < wVar12) {
+        nlink_width = wVar12;
       }
       if ((((f->stat).st_mode & 0xf000) == 0x2000) || (((f->stat).st_mode & 0xf000) == 0x6000)) {
-        pcVar6 = *(char **)((int)&(f->stat).st_rdev + 4);
-        *(undefined4 *)puVar13 = *(undefined4 *)&(f->stat).st_rdev;
-        *(char **)((int)puVar13 + 4) = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d144;
-        uVar12 = gnu_dev_major(*puVar13);
-        *(char **)(puVar13 + 1) = buf;
-        *(uint *)puVar13 = uVar12;
-        *(char **)((int)puVar13 + 4) = (char *)0x0;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d161;
-        pcVar6 = umaxtostr(*puVar13,*(char **)(puVar13 + 1));
-        *(char **)puVar13 = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d169;
-        sVar11 = strlen(*(char **)puVar13);
-        if (major_device_number_width < (int)sVar11) {
-          major_device_number_width = sVar11;
+        pcVar7 = *(char **)((int)&(f->stat).st_rdev + 4);
+        *(undefined4 *)puVar14 = *(undefined4 *)&(f->stat).st_rdev;
+        *(char **)((int)puVar14 + 4) = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d144;
+        uVar13 = gnu_dev_major(*puVar14);
+        *(char **)(puVar14 + 1) = buf_1;
+        *(uint *)puVar14 = uVar13;
+        *(char **)((int)puVar14 + 4) = (char *)0x0;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d161;
+        pcVar7 = umaxtostr(*puVar14,*(char **)(puVar14 + 1));
+        *(char **)puVar14 = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d169;
+        wVar12 = strlen(*(char **)puVar14);
+        if (major_device_number_width < wVar12) {
+          major_device_number_width = wVar12;
         }
-        pcVar6 = *(char **)((int)&(f->stat).st_rdev + 4);
-        *(undefined4 *)puVar13 = *(undefined4 *)&(f->stat).st_rdev;
-        *(char **)((int)puVar13 + 4) = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d193;
-        uVar12 = gnu_dev_minor(*puVar13);
-        *(char **)(puVar13 + 1) = buf;
-        *(uint *)puVar13 = uVar12;
-        *(char **)((int)puVar13 + 4) = (char *)0x0;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d1b0;
-        pcVar6 = umaxtostr(*puVar13,*(char **)(puVar13 + 1));
-        *(char **)puVar13 = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d1b8;
-        sVar11 = strlen(*(char **)puVar13);
-        if (minor_device_number_width < (int)sVar11) {
-          minor_device_number_width = sVar11;
+        pcVar7 = *(char **)((int)&(f->stat).st_rdev + 4);
+        *(undefined4 *)puVar14 = *(undefined4 *)&(f->stat).st_rdev;
+        *(char **)((int)puVar14 + 4) = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d193;
+        uVar13 = gnu_dev_minor(*puVar14);
+        *(char **)(puVar14 + 1) = buf_1;
+        *(uint *)puVar14 = uVar13;
+        *(char **)((int)puVar14 + 4) = (char *)0x0;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d1b0;
+        pcVar7 = umaxtostr(*puVar14,*(char **)(puVar14 + 1));
+        *(char **)puVar14 = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d1b8;
+        wVar12 = strlen(*(char **)puVar14);
+        if (minor_device_number_width < wVar12) {
+          minor_device_number_width = wVar12;
         }
-        iVar7 = major_device_number_width + 2 + minor_device_number_width;
-        if (file_size_width < iVar7) {
-          file_size_width = iVar7;
+        wVar12 = major_device_number_width + L'\x02' + minor_device_number_width;
+        if (file_size_width < wVar12) {
+          file_size_width = wVar12;
         }
       }
       else {
-        pcVar6 = *(char **)((int)&(f->stat).st_size + 4);
-        *(undefined4 *)puVar13 = *(undefined4 *)&(f->stat).st_size;
-        *(char **)((int)puVar13 + 4) = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d210;
-        size = unsigned_file_size(*puVar13);
-        *(char **)(puVar13 + 3) = (char *)file_output_block_size;
-        *(char **)((int)puVar13 + 0x1c) = file_output_block_size._4_4_;
-        *(char **)(puVar13 + 2) = (char *)0x1;
-        *(char **)((int)puVar13 + 0x14) = (char *)0x0;
-        *(int *)((int)puVar13 + 0xc) = human_output_opts;
-        *(stat **)(puVar13 + 1) = &linkstats;
-        *(undefined4 *)puVar13 = (undefined4)size;
-        *(char **)((int)puVar13 + 4) = size._4_4_;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d25f;
-        pcVar6 = human_readable(*puVar13,*(char **)(puVar13 + 1),(int)*(char **)((int)puVar13 + 0xc)
-                                ,puVar13[2],puVar13[3]);
-        *(char **)((int)puVar13 + 4) = (char *)0x0;
-        *(char **)puVar13 = pcVar6;
-        *(undefined4 *)((int)puVar13 + -4) = 0x804d26f;
-        iVar7 = gnu_mbswidth(*(char **)puVar13,(int)*(char **)((int)puVar13 + 4));
-        if (file_size_width < iVar7) {
-          file_size_width = iVar7;
+        pcVar7 = *(char **)((int)&(f->stat).st_size + 4);
+        *(undefined4 *)puVar14 = *(undefined4 *)&(f->stat).st_size;
+        *(char **)((int)puVar14 + 4) = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d210;
+        size = unsigned_file_size(*puVar14);
+        *(char **)(puVar14 + 3) = (char *)file_output_block_size;
+        *(char **)((int)puVar14 + 0x1c) = file_output_block_size._4_4_;
+        *(char **)(puVar14 + 2) = (char *)0x1;
+        *(char **)((int)puVar14 + 0x14) = (char *)0x0;
+        *(wchar_t *)((int)puVar14 + 0xc) = human_output_opts;
+        *(stat **)(puVar14 + 1) = &linkstats;
+        *(undefined4 *)puVar14 = (undefined4)size;
+        *(char **)((int)puVar14 + 4) = size._4_4_;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d25f;
+        pcVar7 = human_readable(*puVar14,*(char **)(puVar14 + 1),(int)*(char **)((int)puVar14 + 0xc)
+                                ,puVar14[2],puVar14[3]);
+        *(char **)((int)puVar14 + 4) = (char *)0x0;
+        *(char **)puVar14 = pcVar7;
+        *(undefined4 *)((int)puVar14 + -4) = 0x804d26f;
+        wVar12 = gnu_mbswidth(*(char **)puVar14,(wchar_t)*(char **)((int)puVar14 + 4));
+        if (file_size_width < wVar12) {
+          file_size_width = wVar12;
         }
       }
     }
@@ -4697,22 +4658,22 @@ LAB_0804cd57:
   if (print_inode != false) {
     uVar2 = *(undefined4 *)&(f->stat).st_ino;
     uVar3 = *(undefined4 *)((int)&(f->stat).st_ino + 4);
-    *(char **)(puVar13 + 1) = buf_1;
-    *(undefined4 *)puVar13 = uVar2;
-    *(undefined4 *)((int)puVar13 + 4) = uVar3;
-    *(undefined4 *)((int)puVar13 + -4) = 0x804d2ae;
-    pcVar6 = umaxtostr(*puVar13,*(char **)(puVar13 + 1));
-    *(char **)puVar13 = pcVar6;
-    *(undefined4 *)((int)puVar13 + -4) = 0x804d2b6;
-    sVar11 = strlen(*(char **)puVar13);
-    if (inode_number_width < (int)sVar11) {
-      inode_number_width = sVar11;
+    *(char **)(puVar14 + 1) = buf_3;
+    *(undefined4 *)puVar14 = uVar2;
+    *(undefined4 *)((int)puVar14 + 4) = uVar3;
+    *(undefined4 *)((int)puVar14 + -4) = 0x804d2ae;
+    pcVar7 = umaxtostr(*puVar14,*(char **)(puVar14 + 1));
+    *(char **)puVar14 = pcVar7;
+    *(undefined4 *)((int)puVar14 + -4) = 0x804d2b6;
+    wVar12 = strlen(*(char **)puVar14);
+    if (inode_number_width < wVar12) {
+      inode_number_width = wVar12;
     }
   }
-  *(char **)puVar13 = name;
-  *(undefined4 *)((int)puVar13 + -4) = 0x804d2d6;
-  pcVar6 = xstrdup(*(char **)puVar13);
-  f->name = pcVar6;
+  *(char **)puVar14 = name;
+  *(undefined4 *)((int)puVar14 + -4) = 0x804d2d6;
+  pcVar7 = xstrdup(*(char **)puVar14);
+  f->name = pcVar7;
   cwd_n_used = cwd_n_used + 1;
   local_354 = (undefined4)blocks;
   local_350 = blocks._4_4_;
@@ -4722,29 +4683,35 @@ LAB_0804d2fc:
 
 
 
-int getfilecon(char *s,char **con)
+// WARNING: Unknown calling convention
+
+wchar_t getfilecon(char *s,char **con)
 
 {
   int *piVar1;
   
   piVar1 = __errno_location();
   *piVar1 = 0x5f;
-  return -1;
+  return L'\xffffffff';
 }
 
 
 
-int lgetfilecon(char *s,char **con)
+// WARNING: Unknown calling convention
+
+wchar_t lgetfilecon(char *s,char **con)
 
 {
   int *piVar1;
   
   piVar1 = __errno_location();
   *piVar1 = 0x5f;
-  return -1;
+  return L'\xffffffff';
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool is_directory(fileinfo *f)
 
@@ -4766,6 +4733,7 @@ void get_link_name(char *filename,fileinfo *f,_Bool command_line_arg)
 
 {
   char *pcVar1;
+  _Bool command_line_arg_local;
   
   pcVar1 = areadlink_with_size(filename,*(size_t *)&(f->stat).st_size);
   f->linkname = pcVar1;
@@ -4777,6 +4745,8 @@ void get_link_name(char *filename,fileinfo *f,_Bool command_line_arg)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * make_link_name(char *name,char *linkname)
 
@@ -4811,6 +4781,8 @@ char * make_link_name(char *name,char *linkname)
 
 
 
+// WARNING: Unknown calling convention
+
 _Bool basename_is_dot_or_dotdot(char *name)
 
 {
@@ -4824,6 +4796,8 @@ _Bool basename_is_dot_or_dotdot(char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool dot_or_dotdot(char *file_name)
 
@@ -4864,6 +4838,7 @@ void extract_dirs_from_files(char *dirname,_Bool command_line_arg)
   _Bool _Var2;
   char *name_00;
   bool bVar3;
+  _Bool command_line_arg_local;
   size_t i;
   size_t j;
   _Bool ignore_dot_and_dot_dot;
@@ -4891,12 +4866,12 @@ LAB_0804d647:
     }
     f_00 = (fileinfo *)sorted_file[i];
     _Var2 = is_directory(f_00);
-  } while (_Var2 == false);
+  } while (!_Var2);
   if (dirname != (char *)0x0) goto code_r0x0804d59d;
   goto LAB_0804d5b5;
 code_r0x0804d59d:
   _Var2 = basename_is_dot_or_dotdot(f_00->name);
-  if (_Var2 != true) {
+  if (!_Var2) {
 LAB_0804d5b5:
     if ((dirname == (char *)0x0) || (*f_00->name == '/')) {
       queue_directory(f_00->name,f_00->linkname,command_line_arg);
@@ -4915,19 +4890,21 @@ LAB_0804d5b5:
 
 
 
-int xstrcoll(char *a,char *b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll(char *a,char *b)
 
 {
   int *piVar1;
-  int iVar2;
+  wchar_t wVar2;
   char *pcVar3;
   char *pcVar4;
   undefined4 uVar5;
-  int diff;
+  wchar_t diff;
   
   piVar1 = __errno_location();
   *piVar1 = 0;
-  iVar2 = strcoll(a,b);
+  wVar2 = strcoll(a,b);
   piVar1 = __errno_location();
   if (*piVar1 != 0) {
     pcVar3 = quote_n(1,b);
@@ -4939,38 +4916,46 @@ int xstrcoll(char *a,char *b)
                     // WARNING: Subroutine does not return
     longjmp((__jmp_buf_tag *)failed_strcoll,1);
   }
-  return iVar2;
+  return wVar2;
 }
 
 
 
-int xstrcoll_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_ctime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_ctime((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_ctime((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_ctime(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_ctime(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
-  __mode_t local_28;
+  timespec a_00;
+  timespec b_00;
+  wchar_t local_28;
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  __ino_t local_c;
-  int diff;
+  undefined4 local_c;
+  wchar_t diff;
   
-  get_stat_ctime((stat *)&local_18);
-  get_stat_ctime((stat *)&local_10);
-  local_28 = timespec_cmp((timespec)CONCAT44(local_c,local_10),(timespec)CONCAT44(local_14,local_18)
-                         );
-  if (local_28 == 0) {
-    diff = local_28;
+  get_stat_ctime(&a->stat);
+  get_stat_ctime(&b->stat);
+  a_00.tv_nsec = local_c;
+  a_00.tv_sec = local_10;
+  b_00.tv_nsec = local_14;
+  b_00.tv_sec = local_18;
+  local_28 = timespec_cmp(a_00,b_00);
+  if (local_28 == L'\0') {
     local_28 = (*cmp)(a->name,b->name);
   }
   return local_28;
@@ -4978,32 +4963,39 @@ int cmp_ctime(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
 
 
 
+// WARNING: Unknown calling convention
+
 timespec get_stat_ctime(stat *st)
 
 {
-  undefined4 uVar1;
-  int in_stack_00000008;
+  long lVar1;
+  timespec tVar2;
+  __time_t *in_stack_00000004;
   
-  uVar1 = *(undefined4 *)(in_stack_00000008 + 0x54);
-  *(undefined4 *)&st->st_dev = *(undefined4 *)(in_stack_00000008 + 0x50);
-  *(undefined4 *)((int)&st->st_dev + 4) = uVar1;
-  return (timespec)CONCAT44(uVar1,st);
+  lVar1 = (st->st_ctim).tv_nsec;
+  *in_stack_00000004 = (st->st_ctim).tv_sec;
+  in_stack_00000004[1] = lVar1;
+  tVar2.tv_nsec = lVar1;
+  tVar2.tv_sec = (__time_t)in_stack_00000004;
+  return tVar2;
 }
 
 
 
-int timespec_cmp(timespec a,timespec b)
+// WARNING: Unknown calling convention
+
+wchar_t timespec_cmp(timespec a,timespec b)
 
 {
-  int local_c;
-  int local_8;
+  wchar_t local_c;
+  wchar_t local_8;
   
   if (a.tv_sec < b.tv_sec) {
-    local_c = -1;
+    local_c = L'\xffffffff';
   }
   else {
     if (b.tv_sec < a.tv_sec) {
-      local_8 = 1;
+      local_8 = L'\x01';
     }
     else {
       local_8 = a.tv_nsec - b.tv_nsec;
@@ -5015,363 +5007,412 @@ int timespec_cmp(timespec a,timespec b)
 
 
 
-int strcmp_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_ctime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_ctime((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_ctime((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_ctime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_ctime((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_ctime((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_ctime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_ctime((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_ctime((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_ctime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_ctime((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_ctime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_ctime((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_ctime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_ctime((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_ctime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_ctime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_ctime((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_mtime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_mtime((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_mtime((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_mtime(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_mtime(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
-  __mode_t local_28;
+  timespec a_00;
+  timespec b_00;
+  wchar_t local_28;
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  __ino_t local_c;
-  int diff;
+  undefined4 local_c;
+  wchar_t diff;
   
-  get_stat_mtime((stat *)&local_18);
-  get_stat_mtime((stat *)&local_10);
-  local_28 = timespec_cmp((timespec)CONCAT44(local_c,local_10),(timespec)CONCAT44(local_14,local_18)
-                         );
-  if (local_28 == 0) {
-    diff = local_28;
+  get_stat_mtime(&a->stat);
+  get_stat_mtime(&b->stat);
+  a_00.tv_nsec = local_c;
+  a_00.tv_sec = local_10;
+  b_00.tv_nsec = local_14;
+  b_00.tv_sec = local_18;
+  local_28 = timespec_cmp(a_00,b_00);
+  if (local_28 == L'\0') {
     local_28 = (*cmp)(a->name,b->name);
   }
   return local_28;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 timespec get_stat_mtime(stat *st)
 
 {
-  undefined4 uVar1;
-  int in_stack_00000008;
+  long lVar1;
+  timespec tVar2;
+  __time_t *in_stack_00000004;
   
-  uVar1 = *(undefined4 *)(in_stack_00000008 + 0x4c);
-  *(undefined4 *)&st->st_dev = *(undefined4 *)(in_stack_00000008 + 0x48);
-  *(undefined4 *)((int)&st->st_dev + 4) = uVar1;
-  return (timespec)CONCAT44(uVar1,st);
+  lVar1 = (st->st_mtim).tv_nsec;
+  *in_stack_00000004 = (st->st_mtim).tv_sec;
+  in_stack_00000004[1] = lVar1;
+  tVar2.tv_nsec = lVar1;
+  tVar2.tv_sec = (__time_t)in_stack_00000004;
+  return tVar2;
 }
 
 
 
-int strcmp_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_mtime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_mtime((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_mtime((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_mtime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_mtime((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_mtime((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_mtime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_mtime((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_mtime((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_mtime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_mtime((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_mtime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_mtime((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_mtime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_mtime((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_mtime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_mtime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_mtime((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_atime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_atime((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_atime((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_atime(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_atime(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
-  __mode_t local_28;
+  timespec a_00;
+  timespec b_00;
+  wchar_t local_28;
   undefined4 local_18;
   undefined4 local_14;
   undefined4 local_10;
-  __ino_t local_c;
-  int diff;
+  undefined4 local_c;
+  wchar_t diff;
   
-  get_stat_atime((stat *)&local_18);
-  get_stat_atime((stat *)&local_10);
-  local_28 = timespec_cmp((timespec)CONCAT44(local_c,local_10),(timespec)CONCAT44(local_14,local_18)
-                         );
-  if (local_28 == 0) {
-    diff = local_28;
+  get_stat_atime(&a->stat);
+  get_stat_atime(&b->stat);
+  a_00.tv_nsec = local_c;
+  a_00.tv_sec = local_10;
+  b_00.tv_nsec = local_14;
+  b_00.tv_sec = local_18;
+  local_28 = timespec_cmp(a_00,b_00);
+  if (local_28 == L'\0') {
     local_28 = (*cmp)(a->name,b->name);
   }
   return local_28;
@@ -5379,197 +5420,220 @@ int cmp_atime(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
 
 
 
+// WARNING: Unknown calling convention
+
 timespec get_stat_atime(stat *st)
 
 {
-  undefined4 uVar1;
-  int in_stack_00000008;
+  long lVar1;
+  timespec tVar2;
+  __time_t *in_stack_00000004;
   
-  uVar1 = *(undefined4 *)(in_stack_00000008 + 0x44);
-  *(undefined4 *)&st->st_dev = *(undefined4 *)(in_stack_00000008 + 0x40);
-  *(undefined4 *)((int)&st->st_dev + 4) = uVar1;
-  return (timespec)CONCAT44(uVar1,st);
+  lVar1 = (st->st_atim).tv_nsec;
+  *in_stack_00000004 = (st->st_atim).tv_sec;
+  in_stack_00000004[1] = lVar1;
+  tVar2.tv_nsec = lVar1;
+  tVar2.tv_sec = (__time_t)in_stack_00000004;
+  return tVar2;
 }
 
 
 
-int strcmp_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_atime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_atime((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_atime((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_atime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_atime((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_atime((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_atime(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_atime((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_atime((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_atime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_atime((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_atime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_atime((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_atime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_atime((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_atime(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_atime(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_atime((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_size(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_size((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_size((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_size(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_size(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
   int iVar1;
   int iVar2;
-  int local_40;
-  int local_18;
-  int diff;
+  wchar_t local_40;
+  wchar_t local_18;
+  wchar_t diff;
   
   iVar1 = *(int *)((int)&(b->stat).st_size + 4);
   iVar2 = *(int *)((int)&(a->stat).st_size + 4);
   if ((iVar1 < iVar2) ||
      ((iVar1 <= iVar2 && (*(uint *)&(b->stat).st_size < *(uint *)&(a->stat).st_size)))) {
-    local_40 = -1;
+    local_40 = L'\xffffffff';
   }
   else {
     iVar1 = *(int *)((int)&(b->stat).st_size + 4);
     iVar2 = *(int *)((int)&(a->stat).st_size + 4);
-    local_40 = 1;
+    local_40 = L'\x01';
     if ((iVar1 <= iVar2) &&
        ((iVar1 < iVar2 || (*(uint *)&(b->stat).st_size <= *(uint *)&(a->stat).st_size)))) {
-      local_40 = 0;
+      local_40 = L'\0';
     }
   }
-  if (local_40 == 0) {
+  if (local_40 == L'\0') {
     local_18 = (*cmp)(a->name,b->name);
   }
   else {
@@ -5580,330 +5644,366 @@ int cmp_size(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
 
 
 
-int strcmp_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_size(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_size((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_size((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_size(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_size((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_size((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_size(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_size((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_size((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_size(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_size((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_size(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_size((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_size(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_size((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_size(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_size(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_size((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_name(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_name((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_name((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_name(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_name(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = (*cmp)(a->name,b->name);
-  return iVar1;
+  wVar1 = (*cmp)(a->name,b->name);
+  return wVar1;
 }
 
 
 
-int strcmp_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_name(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_name((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_name((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_name(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_name((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_name((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_name(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_name((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_name((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_name(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_name((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_name(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_name((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_name(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_name((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_name(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_name(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_name((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_extension(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_extension((fileinfo *)a,(fileinfo *)b,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_extension((fileinfo *)a,(fileinfo *)b,xstrcoll);
+  return wVar1;
 }
 
 
 
-int cmp_extension(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_extension(fileinfo *a,fileinfo *b,_func_wchar_t_char_ptr_char_ptr *cmp)
 
 {
   char *local_20;
   char *local_1c;
-  int local_18;
+  wchar_t local_18;
   char *base1;
   char *base2;
-  int diff;
+  wchar_t diff;
   
   local_1c = strrchr(a->name,0x2e);
   local_20 = strrchr(b->name,0x2e);
@@ -5914,7 +6014,7 @@ int cmp_extension(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
     local_1c = "";
   }
   local_18 = (*cmp)(local_1c,local_20);
-  if (local_18 == 0) {
+  if (local_18 == L'\0') {
     local_18 = (*cmp)(a->name,b->name);
   }
   return local_18;
@@ -5922,233 +6022,259 @@ int cmp_extension(fileinfo *a,fileinfo *b,anon_subr_int_char_ptr_char_ptr *cmp)
 
 
 
-int strcmp_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_extension(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_extension((fileinfo *)a,(fileinfo *)b,strcmp);
-  return iVar1;
+  wVar1 = cmp_extension((fileinfo *)a,(fileinfo *)b,strcmp);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_extension(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_extension((fileinfo *)b,(fileinfo *)a,xstrcoll);
-  return iVar1;
+  wVar1 = cmp_extension((fileinfo *)b,(fileinfo *)a,xstrcoll);
+  return wVar1;
 }
 
 
 
-int rev_strcmp_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_extension(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_extension((fileinfo *)b,(fileinfo *)a,strcmp);
-  return iVar1;
+  wVar1 = cmp_extension((fileinfo *)b,(fileinfo *)a,strcmp);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_extension(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_extension((fileinfo *)a,(fileinfo *)b,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int strcmp_df_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t strcmp_df_extension(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_extension((fileinfo *)a,(fileinfo *)b,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_extension(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_extension((fileinfo *)b,(fileinfo *)a,xstrcoll);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_strcmp_df_extension(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_strcmp_df_extension(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_extension((fileinfo *)b,(fileinfo *)a,strcmp);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int xstrcoll_version(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_version(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_version((fileinfo *)a,(fileinfo *)b);
-  return iVar1;
+  wVar1 = cmp_version((fileinfo *)a,(fileinfo *)b);
+  return wVar1;
 }
 
 
 
-int cmp_version(fileinfo *a,fileinfo *b)
+// WARNING: Unknown calling convention
+
+wchar_t cmp_version(fileinfo *a,fileinfo *b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = strverscmp(a->name,b->name);
-  return iVar1;
+  wVar1 = strverscmp(a->name,b->name);
+  return wVar1;
 }
 
 
 
-int rev_xstrcoll_version(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_version(V a,V b)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   
-  iVar1 = cmp_version((fileinfo *)b,(fileinfo *)a);
-  return iVar1;
+  wVar1 = cmp_version((fileinfo *)b,(fileinfo *)a);
+  return wVar1;
 }
 
 
 
-int xstrcoll_df_version(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t xstrcoll_df_version(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_version((fileinfo *)a,(fileinfo *)b);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
 
-int rev_xstrcoll_df_version(V a,V b)
+// WARNING: Unknown calling convention
+
+wchar_t rev_xstrcoll_df_version(V a,V b)
 
 {
   _Bool _Var1;
   _Bool _Var2;
-  int local_18;
+  wchar_t local_18;
   _Bool a_is_dir;
   _Bool b_is_dir;
   
   _Var1 = is_directory((fileinfo *)a);
   _Var2 = is_directory((fileinfo *)b);
-  if ((_Var1 == false) || (_Var2 == true)) {
-    if ((_Var1 == true) || (_Var2 == false)) {
+  if ((!_Var1) || (_Var2)) {
+    if ((_Var1) || (!_Var2)) {
       local_18 = cmp_version((fileinfo *)b,(fileinfo *)a);
     }
     else {
-      local_18 = 1;
+      local_18 = L'\x01';
     }
   }
   else {
-    local_18 = -1;
+    local_18 = L'\xffffffff';
   }
   return local_18;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initialize_ordering_vector(void)
 
@@ -6162,6 +6288,8 @@ void initialize_ordering_vector(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void sort_files(void)
 
@@ -6196,13 +6324,15 @@ void sort_files(void)
       local_20 = time_mtime;
     }
     mpsort(sorted_file,cwd_n_used,
-           (comparison_function *)
+           (comparison_function)
            sort_functions[local_20 + sort_type][use_strcmp][sort_reverse][directories_first]);
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_current_files(void)
 
@@ -6237,7 +6367,9 @@ void print_current_files(void)
 
 
 
-int long_time_expected_width(void)
+// WARNING: Unknown calling convention
+
+wchar_t long_time_expected_width(void)
 
 {
   char buf [1001];
@@ -6245,23 +6377,25 @@ int long_time_expected_width(void)
   tm *tm;
   size_t len;
   
-  if (long_time_expected_width::width < 0) {
+  if (long_time_expected_width::width < L'\0') {
     epoch = 0;
     tm = (tm *)localtime(&epoch);
     if (tm != (tm *)0x0) {
-      len = nstrftime(buf,0x3e9,long_time_format[0],tm,0,0);
+      len = nstrftime(buf,0x3e9,long_time_format[0],(tm_conflict *)tm,0,0);
       if (len != 0) {
-        long_time_expected_width::width = mbsnwidth(buf,len,0);
+        long_time_expected_width::width = mbsnwidth(buf,len,L'\0');
       }
     }
-    if (long_time_expected_width::width < 0) {
-      long_time_expected_width::width = 0;
+    if (long_time_expected_width::width < L'\0') {
+      long_time_expected_width::width = L'\0';
     }
   }
   return long_time_expected_width::width;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void get_current_time(void)
 
@@ -6278,37 +6412,39 @@ void get_current_time(void)
   else {
     gettimeofday((timeval *)&timeval,(__timezone_ptr_t)0x0);
     current_time = timeval.tv_sec;
-    current_time_ns = timeval.tv_usec * 1000 + 999;
+    current_time_ns = timeval.tv_usec * 1000 + L'ϧ';
   }
   return;
 }
 
 
 
-void format_user_or_group(char *name,ulong id,int width)
+// WARNING: Unknown calling convention
+
+void format_user_or_group(char *name,ulong id,wchar_t width)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   size_t sVar2;
   bool bVar3;
   size_t len;
-  int width_gap;
-  int pad;
+  wchar_t width_gap;
+  wchar_t pad;
   
   if (name == (char *)0x0) {
     printf("%*lu ",width,id);
     len = width;
   }
   else {
-    iVar1 = gnu_mbswidth(name,0);
-    pad = ~(width - iVar1 >> 0x1f) & width - iVar1;
+    wVar1 = gnu_mbswidth(name,L'\0');
+    pad = ~(width - wVar1 >> 0x1f) & width - wVar1;
     fputs_unlocked(name,stdout);
     sVar2 = strlen(name);
     len = sVar2 + pad;
     do {
       putchar_unlocked(0x20);
-      bVar3 = pad != 0;
-      pad = pad + -1;
+      bVar3 = pad != L'\0';
+      pad = pad + L'\xffffffff';
     } while (bVar3);
   }
   dired_pos = dired_pos + len + 1;
@@ -6317,23 +6453,24 @@ void format_user_or_group(char *name,ulong id,int width)
 
 
 
-void format_user(uid_t u,int width,_Bool stat_ok)
+void format_user(uid_t u,wchar_t width,_Bool stat_ok)
 
 {
   char *local_10;
   char *local_c;
+  _Bool stat_ok_local;
   
-  if (stat_ok == false) {
-    local_10 = "?";
-  }
-  else {
-    if (numeric_ids == false) {
-      local_c = getuser(u);
-    }
-    else {
+  if (stat_ok) {
+    if (numeric_ids) {
       local_c = (char *)0x0;
     }
+    else {
+      local_c = getuser(u);
+    }
     local_10 = local_c;
+  }
+  else {
+    local_10 = "?";
   }
   format_user_or_group(local_10,u,width);
   return;
@@ -6341,23 +6478,24 @@ void format_user(uid_t u,int width,_Bool stat_ok)
 
 
 
-void format_group(gid_t g,int width,_Bool stat_ok)
+void format_group(gid_t g,wchar_t width,_Bool stat_ok)
 
 {
   char *local_10;
   char *local_c;
+  _Bool stat_ok_local;
   
-  if (stat_ok == false) {
-    local_10 = "?";
-  }
-  else {
-    if (numeric_ids == false) {
-      local_c = getgroup(g);
-    }
-    else {
+  if (stat_ok) {
+    if (numeric_ids) {
       local_c = (char *)0x0;
     }
+    else {
+      local_c = getgroup(g);
+    }
     local_10 = local_c;
+  }
+  else {
+    local_10 = "?";
   }
   format_user_or_group(local_10,g,width);
   return;
@@ -6365,62 +6503,69 @@ void format_group(gid_t g,int width,_Bool stat_ok)
 
 
 
-int format_user_or_group_width(char *name,ulong id)
+// WARNING: Unknown calling convention
+
+wchar_t format_user_or_group_width(char *name,ulong id)
 
 {
-  uint uVar1;
-  size_t local_18;
+  wchar_t local_18;
   char buf [11];
-  int len;
+  wchar_t len;
   
   if (name == (char *)0x0) {
     sprintf(buf,"%lu",id);
     local_18 = strlen(buf);
   }
   else {
-    uVar1 = gnu_mbswidth(name,0);
-    local_18 = uVar1 & ~((int)uVar1 >> 0x1f);
+    local_18 = gnu_mbswidth(name,L'\0');
+    local_18 = local_18 & ~(local_18 >> 0x1f);
   }
   return local_18;
 }
 
 
 
-int format_user_width(uid_t u)
+// WARNING: Unknown calling convention
+
+wchar_t format_user_width(uid_t u)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   char *local_8;
   
-  if (numeric_ids == false) {
+  if (numeric_ids) {
+    local_8 = (char *)0x0;
+  }
+  else {
     local_8 = getuser(u);
   }
-  else {
-    local_8 = (char *)0x0;
-  }
-  iVar1 = format_user_or_group_width(local_8,u);
-  return iVar1;
+  wVar1 = format_user_or_group_width(local_8,u);
+  return wVar1;
 }
 
 
 
-int format_group_width(gid_t g)
+// WARNING: Unknown calling convention
+
+wchar_t format_group_width(gid_t g)
 
 {
-  int iVar1;
+  wchar_t wVar1;
   char *local_8;
   
-  if (numeric_ids == false) {
-    local_8 = getgroup(g);
-  }
-  else {
+  if (numeric_ids) {
     local_8 = (char *)0x0;
   }
-  iVar1 = format_user_or_group_width(local_8,g);
-  return iVar1;
+  else {
+    local_8 = getgroup(g);
+  }
+  wVar1 = format_user_or_group_width(local_8,g);
+  return wVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_long_format(fileinfo *f)
 
@@ -6429,11 +6574,11 @@ void print_long_format(fileinfo *f)
   undefined4 uVar2;
   undefined4 uVar3;
   size_t sVar4;
-  int iVar5;
+  wchar_t wVar5;
   uint uVar6;
   char *pcVar7;
   char *pcVar8;
-  int iVar9;
+  wchar_t wVar9;
   uintmax_t n;
   char *local_11c8;
   char *local_11c4;
@@ -6442,10 +6587,10 @@ void print_long_format(fileinfo *f)
   int local_11b4;
   char *local_11b0;
   mode_t local_11a0;
-  __time_t local_119c;
-  long local_1198;
+  time_t local_119c;
+  wchar_t local_1198;
   char hbuf_1 [652];
-  char hbuf_3 [21];
+  char hbuf_4 [21];
   char minorbuf [21];
   char majorbuf [21];
   char hbuf_2 [21];
@@ -6456,13 +6601,13 @@ void print_long_format(fileinfo *f)
   size_t s;
   char *p;
   time_t when;
-  int when_ns;
+  wchar_t when_ns;
   tm *when_local;
   char *blocks;
-  int pad;
-  int blanks_width;
+  wchar_t pad;
+  wchar_t blanks_width;
   char *size;
-  int pad_1;
+  wchar_t pad_1;
   time_t six_months_ago;
   _Bool recent;
   char *fmt;
@@ -6484,26 +6629,20 @@ void print_long_format(fileinfo *f)
     modebuf[10] = '\0';
   }
   if (time_type == time_ctime) {
-    get_stat_ctime((stat *)&local_119c);
-    when_timespec.tv_sec = local_119c;
-    when_timespec.tv_nsec = local_1198;
+    get_stat_ctime(&f->stat);
   }
   else if (time_type == time_mtime) {
-    get_stat_mtime((stat *)&local_119c);
-    when_timespec.tv_sec = local_119c;
-    when_timespec.tv_nsec = local_1198;
+    get_stat_mtime(&f->stat);
   }
   else {
     if (time_type != time_atime) {
                     // WARNING: Subroutine does not return
       abort();
     }
-    get_stat_atime((stat *)&local_119c);
-    when_timespec.tv_sec = local_119c;
-    when_timespec.tv_nsec = local_1198;
+    get_stat_atime(&f->stat);
   }
-  when = when_timespec.tv_sec;
-  when_ns = when_timespec.tv_nsec;
+  when = local_119c;
+  when_ns = local_1198;
   p = buf;
   if (print_inode != false) {
     if ((*(uint *)&(f->stat).st_ino | *(uint *)((int)&(f->stat).st_ino + 4)) == 0) {
@@ -6524,10 +6663,10 @@ void print_long_format(fileinfo *f)
       local_11c4 = human_readable((f->stat).st_blocks,hbuf_1,human_output_opts,0x200,
                                   CONCAT44(output_block_size._4_4_,(undefined4)output_block_size));
     }
-    iVar9 = block_size_width;
+    wVar9 = block_size_width;
     blocks = local_11c4;
-    iVar5 = gnu_mbswidth(local_11c4,0);
-    for (pad = iVar9 - iVar5; pcVar7 = p, 0 < pad; pad = pad + -1) {
+    wVar5 = gnu_mbswidth(local_11c4,L'\0');
+    for (pad = wVar9 - wVar5; pcVar7 = p, L'\0' < pad; pad = pad + L'\xffffffff') {
       *p = ' ';
       p = p + 1;
     }
@@ -6570,7 +6709,7 @@ void print_long_format(fileinfo *f)
     }
     p = buf;
   }
-  iVar9 = human_output_opts;
+  wVar9 = human_output_opts;
   uVar3 = file_output_block_size._4_4_;
   uVar2 = (undefined4)file_output_block_size;
   if ((f->stat_ok == true) &&
@@ -6578,12 +6717,12 @@ void print_long_format(fileinfo *f)
     uVar1 = ((-2 - major_device_number_width) - minor_device_number_width) + file_size_width;
     uVar6 = gnu_dev_minor((f->stat).st_rdev);
     pcVar7 = umaxtostr((ulonglong)uVar6,minorbuf);
-    iVar9 = minor_device_number_width;
+    wVar9 = minor_device_number_width;
     uVar6 = gnu_dev_major((f->stat).st_rdev);
     pcVar8 = umaxtostr((ulonglong)uVar6,majorbuf);
-    sprintf(p,"%*s, %*s ",(~((int)uVar1 >> 0x1f) & uVar1) + major_device_number_width,pcVar8,iVar9,
+    sprintf(p,"%*s, %*s ",(~((int)uVar1 >> 0x1f) & uVar1) + major_device_number_width,pcVar8,wVar9,
             pcVar7);
-    p = p + file_size_width + 1;
+    p = p + file_size_width + L'\x01';
   }
   else {
     if (f->stat_ok == false) {
@@ -6591,12 +6730,12 @@ void print_long_format(fileinfo *f)
     }
     else {
       n = unsigned_file_size((f->stat).st_size);
-      local_11b8 = human_readable(n,hbuf_1,iVar9,1,CONCAT44(uVar3,uVar2));
+      local_11b8 = human_readable(n,hbuf_1,wVar9,1,CONCAT44(uVar3,uVar2));
     }
-    iVar9 = file_size_width;
+    wVar9 = file_size_width;
     size = local_11b8;
-    iVar5 = gnu_mbswidth(local_11b8,0);
-    for (pad_1 = iVar9 - iVar5; pcVar7 = p, 0 < pad_1; pad_1 = pad_1 + -1) {
+    wVar5 = gnu_mbswidth(local_11b8,L'\0');
+    for (pad_1 = wVar9 - wVar5; pcVar7 = p, L'\0' < pad_1; pad_1 = pad_1 + L'\xffffffff') {
       *p = ' ';
       p = p + 1;
     }
@@ -6623,17 +6762,17 @@ void print_long_format(fileinfo *f)
     else {
       local_11b4 = 1;
     }
-    s = nstrftime(p,0x3e9,long_time_format[local_11b4],when_local,0,when_ns);
+    s = nstrftime(p,0x3e9,long_time_format[local_11b4],(tm_conflict *)when_local,0,when_ns);
   }
   if ((s == 0) && (*p != '\0')) {
     if (f->stat_ok == false) {
       local_11b0 = "?";
     }
     else {
-      local_11b0 = imaxtostr((longlong)when,hbuf_3);
+      local_11b0 = imaxtostr((longlong)when,hbuf_4);
     }
-    iVar9 = long_time_expected_width();
-    sprintf(p,"%*s ",iVar9,local_11b0);
+    wVar9 = long_time_expected_width();
+    sprintf(p,"%*s ",wVar9,local_11b0);
     sVar4 = strlen(p);
     p = p + sVar4;
   }
@@ -6657,7 +6796,8 @@ void print_long_format(fileinfo *f)
       fwrite_unlocked(&DAT_0805f9bb,1,4,stdout);
       dired_pos = dired_pos + 4;
       print_name_with_quoting
-                (f->linkname,f->linkmode,f->linkok - 1,f->stat_ok,f->filetype,(obstack *)0x0);
+                (f->linkname,f->linkmode,(uint)f->linkok + L'\xffffffff',f->stat_ok,f->filetype,
+                 (obstack *)0x0);
       if (indicator_style != none) {
         print_type_indicator(true,f->linkmode,unknown);
       }
@@ -6671,6 +6811,8 @@ void print_long_format(fileinfo *f)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
 
 {
@@ -6681,7 +6823,7 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   int iVar5;
   ushort **ppuVar6;
   mbstate_t **ppmVar7;
-  undefined4 uStackY8304;
+  undefined4 uStackY_2070;
   char *local_2050;
   int local_204c;
   wchar_t wc;
@@ -6694,14 +6836,14 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
   char *plimit;
   char *q;
   size_t bytes;
-  int w;
+  wchar_t w;
   char *p_1;
   char *plimit_1;
   char *p_2;
   char *plimit_2;
   
   ppmVar7 = (mbstate_t **)&stack0xffffdf94;
-  uStackY8304 = 0x804fa8a;
+  uStackY_2070 = 0x804fa8a;
   len = quotearg_buffer(smallbuf,0x2000,name,0xffffffff,options);
   if (len < (mbstate_t *)0x2000) {
     buf = smallbuf;
@@ -6716,7 +6858,7 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
     *(char **)(&stack0xffffdf9c + iVar5) = name;
     *(char **)(&stack0xffffdf98 + iVar5) = (char *)((int)(int *)len + 1);
     *(char **)(&stack0xffffdf94 + iVar5) = buf;
-    *(undefined4 *)((int)&uStackY8304 + iVar5) = 0x804fb08;
+    *(undefined4 *)((int)&uStackY_2070 + iVar5) = 0x804fb08;
     quotearg_buffer(*(char **)(&stack0xffffdf94 + iVar5),*(size_t *)(&stack0xffffdf98 + iVar5),
                     *(char **)(&stack0xffffdf9c + iVar5),*(size_t *)(&stack0xffffdfa0 + iVar5),
                     *(quoting_options **)(&stack0xffffdfa4 + iVar5));
@@ -6744,7 +6886,7 @@ size_t quote_name(FILE *out,char *name,quoting_options *options,size_t *width)
         ppmVar7[1] = (mbstate_t *)len;
         *ppmVar7 = (mbstate_t *)buf;
         ppmVar7[-1] = (mbstate_t *)0x804fd54;
-        displayed_width = mbsnwidth((char *)*ppmVar7,(size_t)ppmVar7[1],(int)ppmVar7[2]);
+        displayed_width = mbsnwidth((char *)*ppmVar7,(size_t)ppmVar7[1],(wchar_t)ppmVar7[2]);
       }
     }
   }
@@ -6786,7 +6928,7 @@ LAB_0804fb99:
           if (local_204c - 0x61U < 0x1e) goto LAB_0804fb99;
 LAB_0804fbb5:
           mbstate.__count = 0;
-          mbstate.__value = 0;
+          mbstate.__value.__wch = 0;
           do {
             ppmVar7[3] = (mbstate_t *)&mbstate;
             ppmVar7[2] = (mbstate_t *)(pcVar4 + -(int)p);
@@ -6857,22 +6999,25 @@ LAB_0804fbb5:
 uchar to_uchar(char ch)
 
 {
+  char ch_local;
+  
   return ch;
 }
 
 
 
 void print_name_with_quoting
-               (char *p,mode_t mode,int linkok,_Bool stat_ok,filetype type,obstack *stack)
+               (char *p,mode_t mode,wchar_t linkok,_Bool stat_ok,filetype type,obstack *stack)
 
 {
   size_t sVar1;
+  _Bool stat_ok_local;
   obstack *__o;
-  int __len;
+  wchar_t __len;
   obstack *__o_1;
-  int __len_1;
+  wchar_t __len_1;
   
-  if (print_with_color != false) {
+  if (print_with_color) {
     print_color_indicator(p,mode,linkok,stat_ok,type);
   }
   if ((stack != (obstack *)0x0) && (dired != false)) {
@@ -6900,6 +7045,8 @@ void print_name_with_quoting
 
 
 
+// WARNING: Unknown calling convention
+
 void prep_non_filename_text(void)
 
 {
@@ -6916,20 +7063,22 @@ void prep_non_filename_text(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_file_name_and_frills(fileinfo *f)
 
 {
   char *pcVar1;
-  int local_2c8;
-  int local_2bc;
-  int local_2b4;
+  wchar_t local_2c8;
+  wchar_t local_2bc;
+  wchar_t local_2b4;
   mode_t local_2a4;
   char buf [652];
   
-  if (print_inode != false) {
+  if (print_inode) {
     pcVar1 = umaxtostr((f->stat).st_ino,buf);
     if (format == with_commas) {
-      local_2c8 = 0;
+      local_2c8 = L'\0';
     }
     else {
       local_2c8 = inode_number_width;
@@ -6940,7 +7089,7 @@ void print_file_name_and_frills(fileinfo *f)
     pcVar1 = human_readable((f->stat).st_blocks,buf,human_output_opts,0x200,
                             CONCAT44(output_block_size._4_4_,(undefined4)output_block_size));
     if (format == with_commas) {
-      local_2bc = 0;
+      local_2bc = L'\0';
     }
     else {
       local_2bc = block_size_width;
@@ -6949,7 +7098,7 @@ void print_file_name_and_frills(fileinfo *f)
   }
   if (print_scontext != false) {
     if (format == with_commas) {
-      local_2b4 = 0;
+      local_2b4 = L'\0';
     }
     else {
       local_2b4 = scontext_width;
@@ -6975,16 +7124,17 @@ char get_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
 
 {
   bool bVar1;
+  _Bool stat_ok_local;
   char c;
   
-  if (stat_ok == false) {
-    bVar1 = type == normal;
-  }
-  else {
+  if (stat_ok) {
     bVar1 = (mode & 0xf000) == 0x8000;
   }
+  else {
+    bVar1 = type == normal;
+  }
   if (bVar1) {
-    if (((stat_ok == true) && (indicator_style == classify)) && ((mode & 0x49) != 0)) {
+    if (((stat_ok) && (indicator_style == classify)) && ((mode & 0x49) != 0)) {
       c = '*';
     }
     else {
@@ -6992,16 +7142,14 @@ char get_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
     }
   }
   else {
-    if (stat_ok == false) {
-      if ((type == directory) || (type == arg_directory)) {
-        bVar1 = true;
-      }
-      else {
-        bVar1 = false;
-      }
+    if (stat_ok) {
+      bVar1 = (mode & 0xf000) == 0x4000;
+    }
+    else if ((type == directory) || (type == arg_directory)) {
+      bVar1 = true;
     }
     else {
-      bVar1 = (mode & 0xf000) == 0x4000;
+      bVar1 = false;
     }
     if (bVar1) {
       c = '/';
@@ -7010,31 +7158,31 @@ char get_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
       c = '\0';
     }
     else {
-      if (stat_ok == false) {
-        bVar1 = type == symbolic_link;
+      if (stat_ok) {
+        bVar1 = (mode & 0xf000) == 0xa000;
       }
       else {
-        bVar1 = (mode & 0xf000) == 0xa000;
+        bVar1 = type == symbolic_link;
       }
       if (bVar1) {
         c = '@';
       }
       else {
-        if (stat_ok == false) {
-          bVar1 = type == fifo;
+        if (stat_ok) {
+          bVar1 = (mode & 0xf000) == 0x1000;
         }
         else {
-          bVar1 = (mode & 0xf000) == 0x1000;
+          bVar1 = type == fifo;
         }
         if (bVar1) {
           c = '|';
         }
         else {
-          if (stat_ok == false) {
-            bVar1 = type == sock;
+          if (stat_ok) {
+            bVar1 = (mode & 0xf000) == 0xc000;
           }
           else {
-            bVar1 = (mode & 0xf000) == 0xc000;
+            bVar1 = type == sock;
           }
           if (bVar1) {
             c = '=';
@@ -7055,6 +7203,7 @@ void print_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
 
 {
   char cVar1;
+  _Bool stat_ok_local;
   char c;
   
   cVar1 = get_type_indicator(stat_ok,mode,type);
@@ -7067,85 +7216,86 @@ void print_type_indicator(_Bool stat_ok,mode_t mode,filetype type)
 
 
 
-void print_color_indicator(char *name,mode_t mode,int linkok,_Bool stat_ok,filetype filetype)
+void print_color_indicator(char *name,mode_t mode,wchar_t linkok,_Bool stat_ok,filetype filetype)
 
 {
   size_t sVar1;
   int iVar2;
-  int local_20;
+  wchar_t local_20;
   bin_str *local_1c;
-  int type;
+  _Bool stat_ok_local;
+  wchar_t type;
   color_ext_type *ext;
   size_t len;
   
-  if ((linkok == -1) && (color_indicator[11].string != (char *)0x0)) {
-    type = 0xb;
+  if ((linkok == L'\xffffffff') && (color_indicator[11].string != (char *)0x0)) {
+    type = L'\v';
   }
-  else if (stat_ok == true) {
+  else if (stat_ok) {
     if ((mode & 0xf000) == 0x8000) {
-      type = 4;
+      type = L'\x04';
       if ((mode & 0x800) == 0) {
         if ((mode & 0x400) == 0) {
           if ((mode & 0x49) != 0) {
-            type = 0xd;
+            type = L'\r';
           }
         }
         else {
-          type = 0x10;
+          type = L'\x10';
         }
       }
       else {
-        type = 0xf;
+        type = L'\x0f';
       }
     }
     else if ((mode & 0xf000) == 0x4000) {
       if (((mode & 0x200) == 0) || ((mode & 2) == 0)) {
         if ((mode & 2) == 0) {
           if ((mode & 0x200) == 0) {
-            type = 5;
+            type = L'\x05';
           }
           else {
-            type = 0x11;
+            type = L'\x11';
           }
         }
         else {
-          type = 0x12;
+          type = L'\x12';
         }
       }
       else {
-        type = 0x13;
+        type = L'\x13';
       }
     }
     else if ((mode & 0xf000) == 0xa000) {
-      if ((linkok == 0) && (color_indicator[12].string != (char *)0x0)) {
-        local_20 = 0xc;
+      if ((linkok == L'\0') && (color_indicator[12].string != (char *)0x0)) {
+        local_20 = L'\f';
       }
       else {
-        local_20 = 6;
+        local_20 = L'\x06';
       }
       type = local_20;
     }
     else if ((mode & 0xf000) == 0x1000) {
-      type = 7;
+      type = L'\a';
     }
     else if ((mode & 0xf000) == 0xc000) {
-      type = 8;
+      type = L'\b';
     }
     else if ((mode & 0xf000) == 0x6000) {
-      type = 9;
+      type = L'\t';
     }
     else if ((mode & 0xf000) == 0x2000) {
-      type = 10;
+      type = L'\n';
     }
     else {
-      type = 0xc;
+      type = L'\f';
     }
   }
   else {
     type = print_color_indicator::filetype_indicator[filetype];
   }
   ext = (color_ext_type *)0x0;
-  if (type == 4) {
+  if (type == L'\x04') {
     sVar1 = strlen(name);
     for (ext = color_ext_list; ext != (color_ext_type *)0x0; ext = ext->next) {
       if ((ext->ext).len <= sVar1) {
@@ -7168,6 +7318,8 @@ void print_color_indicator(char *name,mode_t mode,int linkok,_Bool stat_ok,filet
 
 
 
+// WARNING: Unknown calling convention
+
 void put_indicator(bin_str *ind)
 
 {
@@ -7186,12 +7338,15 @@ void put_indicator(bin_str *ind)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t length_of_file_name_and_frills(fileinfo *f)
 
 {
   char cVar1;
   char *pcVar2;
   size_t sVar3;
+  wchar_t wVar4;
   int local_2c0;
   int local_2bc;
   int local_2b4;
@@ -7201,33 +7356,33 @@ size_t length_of_file_name_and_frills(fileinfo *f)
   char c;
   
   len = 0;
-  if (print_inode != false) {
+  if (print_inode) {
     if (format == with_commas) {
       pcVar2 = umaxtostr((f->stat).st_ino,buf);
       sVar3 = strlen(pcVar2);
       local_2c0 = sVar3 + 1;
     }
     else {
-      local_2c0 = inode_number_width + 1;
+      local_2c0 = inode_number_width + L'\x01';
     }
     len = len + local_2c0;
   }
   if (print_block_size != false) {
-    sVar3 = block_size_width;
+    wVar4 = block_size_width;
     if (format == with_commas) {
       pcVar2 = human_readable((f->stat).st_blocks,buf,human_output_opts,0x200,
                               CONCAT44(output_block_size._4_4_,(undefined4)output_block_size));
-      sVar3 = strlen(pcVar2);
+      wVar4 = strlen(pcVar2);
     }
-    local_2bc = sVar3 + 1;
+    local_2bc = wVar4 + L'\x01';
     len = len + local_2bc;
   }
   if (print_scontext != false) {
-    sVar3 = scontext_width;
+    wVar4 = scontext_width;
     if (format == with_commas) {
-      sVar3 = strlen(f->scontext);
+      wVar4 = strlen(f->scontext);
     }
-    local_2b4 = sVar3 + 1;
+    local_2b4 = wVar4 + L'\x01';
     len = len + local_2b4;
   }
   quote_name((FILE *)0x0,f->name,filename_quoting_options,&name_width);
@@ -7240,6 +7395,8 @@ size_t length_of_file_name_and_frills(fileinfo *f)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_many_per_line(void)
 
@@ -7286,6 +7443,8 @@ void print_many_per_line(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_horizontal(void)
 
 {
@@ -7328,6 +7487,8 @@ void print_horizontal(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_with_commas(void)
 
 {
@@ -7364,6 +7525,8 @@ void print_with_commas(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void indent(size_t from,size_t to)
 
 {
@@ -7385,6 +7548,8 @@ LAB_08050b9d:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void attach(char *dest,char *dirname,char *name)
 
@@ -7411,6 +7576,8 @@ void attach(char *dest,char *dirname,char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_column_info(void)
 
@@ -7473,6 +7640,7 @@ size_t calculate_columns(_Bool by_columns)
   size_t local_40;
   uint local_38;
   int local_34;
+  _Bool by_columns_local;
   size_t filesno;
   size_t cols;
   size_t max_cols;
@@ -7491,11 +7659,11 @@ size_t calculate_columns(_Bool by_columns)
     sVar1 = length_of_file_name_and_frills((fileinfo *)sorted_file[filesno]);
     for (i = 0; i < local_40; i = i + 1) {
       if (column_info[i].valid_len != false) {
-        if (by_columns == false) {
-          local_38 = filesno % (i + 1);
+        if (by_columns) {
+          local_38 = filesno / ((i + cwd_n_used) / (i + 1));
         }
         else {
-          local_38 = filesno / ((i + cwd_n_used) / (i + 1));
+          local_38 = filesno % (i + 1);
         }
         if (local_38 == i) {
           local_34 = 0;
@@ -7522,7 +7690,9 @@ size_t calculate_columns(_Bool by_columns)
 
 
 
-void usage(int status)
+// WARNING: Unknown calling convention
+
+void usage(wchar_t status)
 
 {
   FILE *pFVar1;
@@ -7530,7 +7700,7 @@ void usage(int status)
   char *pcVar3;
   
   pcVar3 = program_name;
-  if (status == 0) {
+  if (status == L'\0') {
     pcVar2 = (char *)gettext("Usage: %s [OPTION]... [FILE]...\n");
     printf(pcVar2,pcVar3);
     pFVar1 = stdout;
@@ -7664,6 +7834,8 @@ void usage(int status)
 
 
 
+// WARNING: Unknown calling convention
+
 void emit_bug_reporting_address(void)
 
 {
@@ -7677,6 +7849,7 @@ void emit_bug_reporting_address(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080513ff)
+// WARNING: Unknown calling convention
 
 char * areadlink_with_size(char *file,size_t size)
 
@@ -7736,38 +7909,42 @@ char * areadlink_with_size(char *file,size_t size)
 
 
 
-int gnu_mbswidth(char *string,int flags)
+// WARNING: Unknown calling convention
+
+wchar_t gnu_mbswidth(char *string,wchar_t flags)
 
 {
   size_t nbytes;
-  int iVar1;
+  wchar_t wVar1;
   
   nbytes = strlen(string);
-  iVar1 = mbsnwidth(string,nbytes,flags);
-  return iVar1;
+  wVar1 = mbsnwidth(string,nbytes,flags);
+  return wVar1;
 }
 
 
 
-int mbsnwidth(char *string,size_t nbytes,int flags)
+// WARNING: Unknown calling convention
+
+wchar_t mbsnwidth(char *string,size_t nbytes,wchar_t flags)
 
 {
   size_t sVar1;
   int iVar2;
   ushort **ppuVar3;
-  int local_38;
-  mbstate_t mbstate;
-  int w;
+  wchar_t local_38;
+  mbstate_t_conflict mbstate;
+  wchar_t w;
   size_t bytes;
   wchar_t wc;
-  int width;
+  wchar_t width;
   char *plimit;
   char *p;
   uchar c;
   
   p = string;
   plimit = string + nbytes;
-  width = 0;
+  width = L'\0';
   sVar1 = __ctype_get_mb_cur_max();
   if (sVar1 < 2) {
     while (p < plimit) {
@@ -7776,13 +7953,13 @@ int mbsnwidth(char *string,size_t nbytes,int flags)
       ppuVar3 = __ctype_b_loc();
       if (((*ppuVar3)[c] & 0x4000) == 0) {
         if ((flags & 2U) != 0) {
-          return -1;
+          return L'\xffffffff';
         }
         ppuVar3 = __ctype_b_loc();
         width = width + (uint)(((*ppuVar3)[c] & 2) == 0);
       }
       else {
-        width = width + 1;
+        width = width + L'\x01';
       }
     }
     local_38 = width;
@@ -7800,18 +7977,18 @@ LAB_080515b1:
           bytes = mbrtowc(&wc,p,(int)plimit - (int)p,(mbstate_t *)&mbstate);
           if (bytes == 0xffffffff) {
             if ((flags & 1U) != 0) {
-              return -1;
+              return L'\xffffffff';
             }
             p = p + 1;
-            width = width + 1;
+            width = width + L'\x01';
             break;
           }
           if (bytes == 0xfffffffe) {
             if ((flags & 1U) != 0) {
-              return -1;
+              return L'\xffffffff';
             }
             p = plimit;
-            width = width + 1;
+            width = width + L'\x01';
             break;
           }
           if (bytes == 0) {
@@ -7820,7 +7997,7 @@ LAB_080515b1:
           iVar2 = wcwidth(wc);
           if (iVar2 < 0) {
             if ((flags & 2U) != 0) {
-              return -1;
+              return L'\xffffffff';
             }
             iVar2 = iswcntrl(wc);
             width = width + (uint)(iVar2 == 0);
@@ -7836,7 +8013,7 @@ LAB_080515b1:
         if (0x1d < iVar2 - 0x61U) goto LAB_080515b1;
 LAB_080515a4:
         p = p + 1;
-        width = width + 1;
+        width = width + L'\x01';
       }
       goto LAB_080516bb;
     }
@@ -7846,6 +8023,8 @@ LAB_080515a4:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void version_etc_va(FILE *stream,char *command_name,char *package,char *version,va_list authors)
 
@@ -7922,6 +8101,8 @@ void version_etc_va(FILE *stream,char *command_name,char *package,char *version,
 
 
 
+// WARNING: Unknown calling convention
+
 void version_etc(FILE *stream,char *command_name,char *package,char *version,...)
 
 {
@@ -7932,6 +8113,8 @@ void version_etc(FILE *stream,char *command_name,char *package,char *version,...
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void xalloc_die(void)
 
@@ -7946,14 +8129,18 @@ void xalloc_die(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void __argmatch_die(void)
 
 {
-  usage(1);
+  usage(L'\x01');
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 ptrdiff_t argmatch(char *arg,char **arglist,char *vallist,size_t valsize)
 
@@ -8003,6 +8190,8 @@ ptrdiff_t argmatch(char *arg,char **arglist,char *vallist,size_t valsize)
 
 
 
+// WARNING: Unknown calling convention
+
 void argmatch_invalid(char *context,char *value,ptrdiff_t problem)
 
 {
@@ -8018,12 +8207,14 @@ void argmatch_invalid(char *context,char *value,ptrdiff_t problem)
     local_1c = gettext("ambiguous argument %s for %s");
   }
   pcVar1 = quote_n(1,context);
-  pcVar2 = quotearg_n_style(0,locale_quoting_style,value);
+  pcVar2 = quotearg_n_style(L'\0',locale_quoting_style,value);
   error(0,0,local_1c,pcVar2,pcVar1);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void argmatch_valid(char **arglist,char *vallist,size_t valsize)
 
@@ -8058,9 +8249,11 @@ LAB_08051c0b:
 
 
 
+// WARNING: Unknown calling convention
+
 ptrdiff_t __xargmatch_internal
                     (char *context,char *arg,char **arglist,char *vallist,size_t valsize,
-                    argmatch_exit_fn *exit_fn)
+                    argmatch_exit_fn exit_fn)
 
 {
   ptrdiff_t local_18;
@@ -8077,6 +8270,8 @@ ptrdiff_t __xargmatch_internal
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * argmatch_to_argument(char *value,char **arglist,char *vallist,size_t valsize)
 
@@ -8097,6 +8292,8 @@ char * argmatch_to_argument(char *value,char **arglist,char *vallist,size_t vals
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * last_component(char *name)
 
@@ -8122,6 +8319,8 @@ char * last_component(char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * base_name(char *name)
 
@@ -8149,6 +8348,8 @@ char * base_name(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t base_len(char *name)
 
 {
@@ -8162,6 +8363,8 @@ size_t base_len(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 void close_stdout_set_file_name(char *file)
 
 {
@@ -8170,6 +8373,8 @@ void close_stdout_set_file_name(char *file)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void close_stdout(void)
 
@@ -8205,6 +8410,8 @@ void close_stdout(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int file_has_acl(char *name,stat *sb)
 
 {
@@ -8212,6 +8419,8 @@ int file_has_acl(char *name,stat *sb)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char ftypelet(mode_t bits)
 
@@ -8246,6 +8455,8 @@ char ftypelet(mode_t bits)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void strmode(mode_t mode,char *str)
 
@@ -8375,6 +8586,8 @@ void strmode(mode_t mode,char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 void filemodestring(stat *statp,char *str)
 
 {
@@ -8383,6 +8596,8 @@ void filemodestring(stat *statp,char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * longest_relative_suffix(char *f)
 
@@ -8393,6 +8608,8 @@ char * longest_relative_suffix(char *f)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * mfile_name_concat(char *dir,char *abase,char **base_in_result)
 
@@ -8441,6 +8658,8 @@ char * mfile_name_concat(char *dir,char *abase,char **base_in_result)
 
 
 
+// WARNING: Unknown calling convention
+
 char * file_name_concat(char *dir,char *abase,char **base_in_result)
 
 {
@@ -8455,6 +8674,8 @@ char * file_name_concat(char *dir,char *abase,char **base_in_result)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool hard_locale(int category)
 
@@ -8478,6 +8699,8 @@ _Bool hard_locale(int category)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t hash_get_n_buckets(Hash_table *table)
 
 {
@@ -8485,6 +8708,8 @@ size_t hash_get_n_buckets(Hash_table *table)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 size_t hash_get_n_buckets_used(Hash_table *table)
 
@@ -8494,6 +8719,8 @@ size_t hash_get_n_buckets_used(Hash_table *table)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t hash_get_n_entries(Hash_table *table)
 
 {
@@ -8501,6 +8728,8 @@ size_t hash_get_n_entries(Hash_table *table)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 size_t hash_get_max_bucket_length(Hash_table *table)
 
@@ -8527,6 +8756,8 @@ size_t hash_get_max_bucket_length(Hash_table *table)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool hash_table_ok(Hash_table *table)
 
@@ -8560,6 +8791,8 @@ _Bool hash_table_ok(Hash_table *table)
 
 
 
+// WARNING: Unknown calling convention
+
 void hash_print_statistics(Hash_table *table,FILE *stream)
 
 {
@@ -8586,6 +8819,8 @@ void hash_print_statistics(Hash_table *table,FILE *stream)
 
 
 
+// WARNING: Unknown calling convention
+
 void * hash_lookup(Hash_table *table,void *entry)
 
 {
@@ -8605,7 +8840,7 @@ void * hash_lookup(Hash_table *table,void *entry)
   if (cursor->data != (void *)0x0) {
     for (; cursor != (hash_entry *)0x0; cursor = cursor->next) {
       _Var2 = (*table->comparator)(entry,cursor->data);
-      if (_Var2 != false) {
+      if (_Var2) {
         return cursor->data;
       }
     }
@@ -8614,6 +8849,8 @@ void * hash_lookup(Hash_table *table,void *entry)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * hash_get_first(Hash_table *table)
 
@@ -8640,6 +8877,8 @@ void * hash_get_first(Hash_table *table)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * hash_get_next(Hash_table *table,void *entry)
 
@@ -8675,6 +8914,8 @@ void * hash_get_next(Hash_table *table,void *entry)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t hash_get_entries(Hash_table *table,void **buffer,size_t buffer_size)
 
 {
@@ -8703,7 +8944,9 @@ size_t hash_get_entries(Hash_table *table,void **buffer,size_t buffer_size)
 
 
 
-size_t hash_do_for_each(Hash_table *table,Hash_processor *processor,void *processor_data)
+// WARNING: Unknown calling convention
+
+size_t hash_do_for_each(Hash_table *table,Hash_processor processor,void *processor_data)
 
 {
   _Bool _Var1;
@@ -8720,7 +8963,7 @@ size_t hash_do_for_each(Hash_table *table,Hash_processor *processor,void *proces
     if (bucket->data != (void *)0x0) {
       for (cursor = bucket; cursor != (hash_entry *)0x0; cursor = cursor->next) {
         _Var1 = (*processor)(cursor->data,processor_data);
-        if (_Var1 != true) {
+        if (!_Var1) {
           return counter;
         }
         counter = counter + 1;
@@ -8731,6 +8974,8 @@ size_t hash_do_for_each(Hash_table *table,Hash_processor *processor,void *proces
 }
 
 
+
+// WARNING: Unknown calling convention
 
 size_t hash_string(char *string,size_t n_buckets)
 
@@ -8747,6 +8992,8 @@ size_t hash_string(char *string,size_t n_buckets)
 
 
 
+// WARNING: Unknown calling convention
+
 _Bool is_prime(size_t candidate)
 
 {
@@ -8762,6 +9009,8 @@ _Bool is_prime(size_t candidate)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t next_prime(size_t candidate)
 
 {
@@ -8773,13 +9022,15 @@ size_t next_prime(size_t candidate)
   candidate = candidate | 1;
   while( true ) {
     _Var1 = is_prime(candidate);
-    if (_Var1 == true) break;
+    if (_Var1) break;
     candidate = candidate + 2;
   }
   return candidate;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void hash_reset_tuning(Hash_tuning *tuning)
 
@@ -8793,6 +9044,8 @@ void hash_reset_tuning(Hash_tuning *tuning)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool check_tuning(Hash_table *table)
 
@@ -8819,9 +9072,11 @@ _Bool check_tuning(Hash_table *table)
 
 
 
+// WARNING: Unknown calling convention
+
 Hash_table *
-hash_initialize(size_t candidate,Hash_tuning *tuning,Hash_hasher *hasher,Hash_comparator *comparator
-               ,Hash_data_freer *data_freer)
+hash_initialize(size_t candidate,Hash_tuning *tuning,Hash_hasher hasher,Hash_comparator comparator,
+               Hash_data_freer data_freer)
 
 {
   float fVar1;
@@ -8833,7 +9088,7 @@ hash_initialize(size_t candidate,Hash_tuning *tuning,Hash_hasher *hasher,Hash_co
   float new_candidate;
   Hash_table *table;
   
-  if ((hasher == (Hash_hasher *)0x0) || (comparator == (Hash_comparator *)0x0)) {
+  if ((hasher == (Hash_hasher)0x0) || (comparator == (Hash_comparator)0x0)) {
     return (Hash_table *)0x0;
   }
   table_00 = (Hash_table *)malloc(0x28);
@@ -8845,7 +9100,7 @@ hash_initialize(size_t candidate,Hash_tuning *tuning,Hash_hasher *hasher,Hash_co
   }
   table_00->tuning = tuning;
   _Var2 = check_tuning(table_00);
-  if (_Var2 == true) {
+  if (_Var2) {
     if (tuning->is_n_buckets != true) {
       fVar1 = (float)(ulonglong)candidate / tuning->growth_threshold;
       if (4.294967e+09 <= fVar1) goto fail;
@@ -8878,6 +9133,8 @@ fail:
 
 
 
+// WARNING: Unknown calling convention
+
 void hash_clear(Hash_table *table)
 
 {
@@ -8890,7 +9147,7 @@ void hash_clear(Hash_table *table)
     if (bucket->data != (void *)0x0) {
       cursor = bucket->next;
       while (cursor != (hash_entry *)0x0) {
-        if (table->data_freer != (Hash_data_freer *)0x0) {
+        if (table->data_freer != (Hash_data_freer)0x0) {
           (*table->data_freer)(cursor->data);
         }
         cursor->data = (void *)0x0;
@@ -8899,7 +9156,7 @@ void hash_clear(Hash_table *table)
         table->free_entry_list = cursor;
         cursor = phVar1;
       }
-      if (table->data_freer != (Hash_data_freer *)0x0) {
+      if (table->data_freer != (Hash_data_freer)0x0) {
         (*table->data_freer)(bucket->data);
       }
       bucket->data = (void *)0x0;
@@ -8913,6 +9170,8 @@ void hash_clear(Hash_table *table)
 
 
 
+// WARNING: Unknown calling convention
+
 void hash_free(Hash_table *table)
 
 {
@@ -8921,7 +9180,7 @@ void hash_free(Hash_table *table)
   hash_entry *cursor;
   hash_entry *bucket;
   
-  if ((table->data_freer != (Hash_data_freer *)0x0) && (table->n_entries != 0)) {
+  if ((table->data_freer != (Hash_data_freer)0x0) && (table->n_entries != 0)) {
     for (bucket = table->bucket; bucket < table->bucket_limit; bucket = bucket + 1) {
       if (bucket->data != (void *)0x0) {
         for (cursor = bucket; cursor != (hash_entry *)0x0; cursor = cursor->next) {
@@ -8951,6 +9210,8 @@ void hash_free(Hash_table *table)
 
 
 
+// WARNING: Unknown calling convention
+
 hash_entry * allocate_entry(Hash_table *table)
 
 {
@@ -8967,6 +9228,8 @@ hash_entry * allocate_entry(Hash_table *table)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void free_entry(Hash_table *table,hash_entry *entry)
 
@@ -8988,6 +9251,7 @@ void * hash_find_entry(Hash_table *table,void *entry,hash_entry **bucket_head,_B
   _Bool _Var4;
   size_t sVar5;
   void *local_30;
+  _Bool delete_local;
   hash_entry *next_1;
   void *data_1;
   hash_entry *next;
@@ -9008,25 +9272,9 @@ void * hash_find_entry(Hash_table *table,void *entry,hash_entry **bucket_head,_B
   }
   else {
     _Var4 = (*table->comparator)(entry,cursor->data);
-    if (_Var4 == false) {
-      for (; cursor->next != (hash_entry *)0x0; cursor = cursor->next) {
-        _Var4 = (*table->comparator)(entry,cursor->next->data);
-        if (_Var4 != false) {
-          pvVar3 = cursor->next->data;
-          if (delete == false) {
-            return pvVar3;
-          }
-          phVar1 = cursor->next;
-          cursor->next = phVar1->next;
-          free_entry(table,phVar1);
-          return pvVar3;
-        }
-      }
-      local_30 = (void *)0x0;
-    }
-    else {
+    if (_Var4) {
       local_30 = cursor->data;
-      if (delete != false) {
+      if (delete) {
         if (cursor->next == (hash_entry *)0x0) {
           cursor->data = (void *)0x0;
         }
@@ -9039,11 +9287,29 @@ void * hash_find_entry(Hash_table *table,void *entry,hash_entry **bucket_head,_B
         }
       }
     }
+    else {
+      for (; cursor->next != (hash_entry *)0x0; cursor = cursor->next) {
+        _Var4 = (*table->comparator)(entry,cursor->next->data);
+        if (_Var4) {
+          pvVar3 = cursor->next->data;
+          if (!delete) {
+            return pvVar3;
+          }
+          phVar1 = cursor->next;
+          cursor->next = phVar1->next;
+          free_entry(table,phVar1);
+          return pvVar3;
+        }
+      }
+      local_30 = (void *)0x0;
+    }
   }
   return local_30;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 _Bool hash_rehash(Hash_table *table,size_t candidate)
 
@@ -9121,6 +9387,8 @@ _Bool hash_rehash(Hash_table *table,size_t candidate)
 
 
 
+// WARNING: Unknown calling convention
+
 void * hash_insert(Hash_table *table,void *entry)
 
 {
@@ -9165,7 +9433,7 @@ void * hash_insert(Hash_table *table,void *entry)
         }
         local_34 = (size_t)(longlong)ROUND(local_38);
         _Var2 = hash_rehash(table,local_34);
-        if (_Var2 != true) {
+        if (!_Var2) {
           entry = (void *)0x0;
         }
       }
@@ -9189,6 +9457,8 @@ void * hash_insert(Hash_table *table,void *entry)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * hash_delete(Hash_table *table,void *entry)
 
@@ -9239,49 +9509,46 @@ void * hash_delete(Hash_table *table,void *entry)
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Unknown calling convention
 
-longdouble * adjust_value(longdouble *__return_storage_ptr__,int inexact_style,longdouble value)
+longdouble adjust_value(int inexact_style,longdouble value)
 
 {
   int iVar1;
-  float10 local_4c;
+  longdouble local_4c;
   uint local_30;
-  float10 local_2c;
+  longdouble local_2c;
   uintmax_t u;
   
-  if (__return_storage_ptr__ == (longdouble *)0x1) {
-    return (longdouble *)inexact_style;
-  }
-  if (_DAT_08061970 <= (float10)CONCAT28(value._4_2_,CONCAT44(value._0_4_,inexact_style))) {
-    return (longdouble *)inexact_style;
-  }
-  if (_DAT_08061980 <= (float10)CONCAT28(value._4_2_,CONCAT44(value._0_4_,inexact_style))) {
-    u = (longlong)
-        ROUND((float10)CONCAT28(value._4_2_,CONCAT44(value._0_4_,inexact_style)) - _DAT_08061980) ^
-        0x8000000000000000;
+  if ((inexact_style == 1) || (_DAT_08061970 <= value)) goto LAB_080535e8;
+  if (_DAT_08061980 <= value) {
+    u = (longlong)ROUND(value - _DAT_08061980) ^ 0x8000000000000000;
   }
   else {
-    u = (uintmax_t)ROUND((float10)CONCAT28(value._4_2_,CONCAT44(value._0_4_,inexact_style)));
+    u = (uintmax_t)ROUND(value);
   }
-  if (__return_storage_ptr__ == (longdouble *)0x0) {
-    local_2c = (float10)u;
+  if (inexact_style == 0) {
+    local_2c = (longdouble)u;
     if ((longlong)u < 0) {
       local_2c = local_2c + _DAT_08061990;
     }
-    if (local_2c != (float10)CONCAT28(value._4_2_,CONCAT44(value._0_4_,inexact_style))) {
-      local_30 = 1;
-      goto LAB_080535aa;
-    }
+    if (local_2c == value) goto LAB_080535a3;
+    local_30 = 1;
   }
-  local_30 = 0;
-LAB_080535aa:
-  iVar1 = (int)(u >> 0x20) + (uint)CARRY4(local_30,(uint)u);
-  local_4c = (float10)CONCAT44(iVar1,local_30 + (uint)u);
+  else {
+LAB_080535a3:
+    local_30 = 0;
+  }
+  iVar1 = u._4_4_ + (uint)CARRY4(local_30,(uint)u);
+  local_4c = (longdouble)CONCAT44(iVar1,local_30 + (uint)u);
   if (iVar1 < 0) {
     local_4c = local_4c + _DAT_08061990;
   }
-  inexact_style = SUB104(local_4c,0);
-  return (longdouble *)inexact_style;
+  value._0_4_ = SUB104(local_4c,0);
+  value._4_4_ = (undefined4)((unkuint10)local_4c >> 0x20);
+  value._8_2_ = (undefined2)((unkuint10)local_4c >> 0x40);
+LAB_080535e8:
+  return (longdouble)CONCAT28(value._8_2_,CONCAT44(value._4_4_,value._0_4_));
 }
 
 
@@ -9295,14 +9562,16 @@ char * group_number(char *number,size_t numberlen,char *grouping,char *thousands
   int in_GS_OFFSET;
   uint local_58;
   char *local_54;
-  byte *local_4c;
+  char *thousands_sep_local;
+  char *grouping_local;
+  char *number_local;
   size_t i;
   size_t thousands_seplen;
   size_t grouplen;
   uchar g;
   char buf [41];
   
-  local_4c = (byte *)grouping;
+  grouping_local = grouping;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   grouplen = 0xffffffff;
   __n = strlen(thousands_sep);
@@ -9310,7 +9579,7 @@ char * group_number(char *number,size_t numberlen,char *grouping,char *thousands
   memcpy(buf,number,numberlen);
   local_54 = number + numberlen;
   while( true ) {
-    bVar2 = *local_4c;
+    bVar2 = *grouping_local;
     if (bVar2 != 0) {
       if (bVar2 < 0x7f) {
         local_58 = (uint)bVar2;
@@ -9319,7 +9588,7 @@ char * group_number(char *number,size_t numberlen,char *grouping,char *thousands
         local_58 = i;
       }
       grouplen = local_58;
-      local_4c = local_4c + 1;
+      grouping_local = grouping_local + 1;
     }
     if (i < grouplen) {
       grouplen = i;
@@ -9344,7 +9613,6 @@ char * group_number(char *number,size_t numberlen,char *grouping,char *thousands
 // WARNING: Removing unreachable block (ram,0x080542dc)
 // WARNING: Removing unreachable block (ram,0x08053acd)
 // WARNING: Removing unreachable block (ram,0x08053b24)
-// WARNING: Could not reconcile some variable overlaps
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 char * human_readable(uintmax_t n,char *buf,int opts,uintmax_t from_block_size,
@@ -9353,38 +9621,35 @@ char * human_readable(uintmax_t n,char *buf,int opts,uintmax_t from_block_size,
 {
   uint uVar1;
   char *grouping_00;
-  bool bVar2;
+  ulonglong uVar2;
   uintmax_t uVar3;
   char cVar4;
-  longdouble *__return_storage_ptr__;
+  uint inexact_style_00;
   lconv *plVar5;
   size_t sVar6;
   undefined4 uVar7;
   int iVar8;
   uint uVar9;
-  uint uVar10;
-  unkbyte10 extraout_ST0;
-  unkbyte10 extraout_ST0_00;
-  float10 extraout_ST0_01;
-  float10 fVar11;
-  longlong lVar12;
-  ulonglong uVar13;
-  undefined8 uVar14;
+  bool bVar10;
+  longdouble lVar11;
+  longdouble lVar12;
+  longlong lVar13;
+  longlong lVar14;
   ulonglong uVar15;
-  ulonglong uVar16;
+  undefined8 uVar16;
   undefined2 uVar17;
-  undefined2 in_stack_fffffe54;
-  undefined2 uVar18;
-  undefined2 in_stack_fffffe56;
-  float10 local_17c;
+  longdouble local_17c;
   uint local_148;
   uint local_144;
   uint local_140;
-  float10 local_13c;
-  float10 local_12c;
+  longdouble local_13c;
+  longdouble local_12c;
   uint local_10c;
   uint local_108;
   char local_e5;
+  uintmax_t to_block_size_local;
+  uintmax_t from_block_size_local;
+  uintmax_t n_local;
   longdouble e;
   longdouble damt;
   longdouble dto_block_size;
@@ -9415,7 +9680,7 @@ char * human_readable(uintmax_t n,char *buf,int opts,uintmax_t from_block_size,
   uint base;
   int inexact_style;
   
-  __return_storage_ptr__ = (longdouble *)(opts & 3);
+  inexact_style_00 = opts & 3;
   if ((opts & 0x20U) == 0) {
     local_148 = 1000;
   }
@@ -9441,23 +9706,23 @@ char * human_readable(uintmax_t n,char *buf,int opts,uintmax_t from_block_size,
   if (from_block_size < to_block_size) {
     if (from_block_size != 0) {
       uVar17 = (undefined2)(from_block_size >> 0x20);
-      lVar12 = __umoddi3(to_block_size,(undefined4)from_block_size,uVar17);
-      if (lVar12 == 0) {
-        uVar13 = __udivdi3(to_block_size,(undefined4)from_block_size,uVar17);
-        uVar7 = (undefined4)uVar13;
-        uVar17 = (undefined2)(uVar13 >> 0x20);
-        lVar12 = __umoddi3(n,uVar7,uVar17);
-        uVar14 = __umoddi3(lVar12 * 10,uVar7,uVar17);
-        uVar10 = (int)((ulonglong)uVar14 >> 0x20) << 1 | (uint)uVar14 >> 0x1f;
-        uVar1 = (uint)uVar14 * 2;
-        uVar16 = CONCAT44(uVar10,uVar1);
-        uVar15 = __udivdi3(n,uVar7,uVar17);
-        tenths = __udivdi3(lVar12 * 10,uVar7,uVar17);
-        if (uVar16 < uVar13) {
-          local_144 = (uint)((uVar1 | uVar10) != 0);
+      lVar13 = __umoddi3(to_block_size,(undefined4)from_block_size,uVar17);
+      if (lVar13 == 0) {
+        uVar15 = __udivdi3(to_block_size,(undefined4)from_block_size,uVar17);
+        uVar7 = (undefined4)uVar15;
+        uVar17 = (undefined2)(uVar15 >> 0x20);
+        lVar14 = __umoddi3(n,uVar7,uVar17);
+        uVar16 = __umoddi3(lVar14 * 10,uVar7,uVar17);
+        uVar9 = (int)((ulonglong)uVar16 >> 0x20) << 1 | (uint)uVar16 >> 0x1f;
+        uVar1 = (uint)uVar16 * 2;
+        uVar2 = CONCAT44(uVar9,uVar1);
+        lVar13 = __udivdi3(n,uVar7,uVar17);
+        tenths = __udivdi3(lVar14 * 10,uVar7,uVar17);
+        if (uVar2 < uVar15) {
+          local_144 = (uint)((uVar1 | uVar9) != 0);
         }
         else {
-          if (uVar13 < uVar16) {
+          if (uVar15 < uVar2) {
             local_140 = 3;
           }
           else {
@@ -9472,32 +9737,32 @@ char * human_readable(uintmax_t n,char *buf,int opts,uintmax_t from_block_size,
   }
   else {
     uVar17 = (undefined2)(to_block_size >> 0x20);
-    lVar12 = __umoddi3(from_block_size,(undefined4)to_block_size,uVar17);
-    if (lVar12 == 0) {
-      lVar12 = __udivdi3(from_block_size,(undefined4)to_block_size,uVar17);
-      uVar15 = n * lVar12;
-      uVar3 = __udivdi3(uVar15,(int)lVar12,(short)((ulonglong)lVar12 >> 0x20));
+    lVar13 = __umoddi3(from_block_size,(undefined4)to_block_size,uVar17);
+    if (lVar13 == 0) {
+      lVar14 = __udivdi3(from_block_size,(undefined4)to_block_size,uVar17);
+      lVar13 = n * lVar14;
+      uVar3 = __udivdi3(lVar13,(int)lVar14,(short)((ulonglong)lVar14 >> 0x20));
       if (n == uVar3) {
         tenths = 0;
         rounding = 0;
 use_integer_arithmetic:
-        amt._4_4_ = (int)(uVar15 >> 0x20);
-        amt._0_4_ = (uint)uVar15;
+        amt._4_4_ = (uint)((ulonglong)lVar13 >> 0x20);
+        amt._0_4_ = (uint)lVar13;
         p = psuffix;
         if (((opts & 0x10U) != 0) && ((exponent = 0, amt._4_4_ != 0 || (local_148 <= (uint)amt)))) {
           do {
-            iVar8 = __umoddi3(uVar15,local_148,0);
+            iVar8 = __umoddi3(lVar13,local_148,0);
             uVar1 = iVar8 * 10 + tenths;
-            uVar10 = (uVar1 % local_148) * 2 + (rounding >> 1);
-            uVar15 = __udivdi3(uVar15,local_148,0);
-            iVar8 = (int)(uVar15 >> 0x20);
-            uVar9 = (uint)uVar15;
+            uVar9 = (uVar1 % local_148) * 2 + (rounding >> 1);
+            lVar13 = __udivdi3(lVar13,local_148,0);
+            iVar8 = (int)((ulonglong)lVar13 >> 0x20);
+            amt._0_4_ = (uint)lVar13;
             tenths = uVar1 / local_148;
-            if (uVar10 < local_148) {
-              local_10c = (uint)(rounding + uVar10 != 0);
+            if (uVar9 < local_148) {
+              local_10c = (uint)(rounding + uVar9 != 0);
             }
             else {
-              if (local_148 < rounding + uVar10) {
+              if (local_148 < rounding + uVar9) {
                 local_108 = 3;
               }
               else {
@@ -9507,96 +9772,95 @@ use_integer_arithmetic:
             }
             rounding = local_10c;
             exponent = exponent + 1;
-          } while (((iVar8 != 0) || (local_148 <= uVar9)) && (exponent < 8));
-          if ((iVar8 == 0) && (uVar9 < 10)) {
-            if (__return_storage_ptr__ == (longdouble *)0x1) {
-              bVar2 = 2 < (tenths & 1U) + local_10c;
+          } while (((iVar8 != 0) || (local_148 <= (uint)amt)) && (exponent < 8));
+          if ((iVar8 == 0) && ((uint)amt < 10)) {
+            if (inexact_style_00 == 1) {
+              bVar10 = 2 < (tenths & 1U) + local_10c;
             }
-            else if ((__return_storage_ptr__ == (longdouble *)0x0) && (local_10c != 0)) {
-              bVar2 = true;
+            else if ((inexact_style_00 == 0) && (local_10c != 0)) {
+              bVar10 = true;
             }
             else {
-              bVar2 = false;
+              bVar10 = false;
             }
-            if (bVar2) {
+            amt._4_4_ = 0;
+            if (bVar10) {
               tenths = tenths + 1;
               rounding = 0;
               if (tenths == 10) {
-                uVar15 = (ulonglong)CONCAT14(0xfffffffe < uVar9,uVar9 + 1);
+                bVar10 = 0xfffffffe < (uint)amt;
+                amt._0_4_ = (uint)amt + 1;
+                amt._4_4_ = (uint)bVar10;
                 tenths = 0;
               }
             }
-            amt._4_4_ = (int)(uVar15 >> 0x20);
-            amt._0_4_ = (uint)uVar15;
-            if (((amt._4_4_ == 0) && ((uint)amt < 10)) && ((tenths != 0 || ((opts & 8U) == 0)))) {
+            lVar13 = CONCAT44(amt._4_4_,(uint)amt);
+            if (((amt._4_4_ == 0) && (lVar13 = CONCAT44(amt._4_4_,(uint)amt), (uint)amt < 10)) &&
+               ((tenths != 0 || (lVar13 = CONCAT44(amt._4_4_,(uint)amt), (opts & 8U) == 0)))) {
               buf[0x287] = (char)tenths + '0';
               p = buf + 0x287 + -decimal_pointlen;
               memcpy(p,decimal_point,decimal_pointlen);
               rounding = 0;
               tenths = 0;
+              lVar13 = CONCAT44(amt._4_4_,(uint)amt);
             }
           }
         }
-        amt._0_4_ = (uint)uVar15;
-        if (__return_storage_ptr__ == (longdouble *)0x1) {
-          bVar2 = 5 < (int)((uint)((((uint)amt & 1) + rounding |
-                                   (uint)CARRY4((uint)amt & 1,rounding)) != 0) + tenths);
+        amt._0_4_ = (uint)lVar13;
+        if (inexact_style_00 == 1) {
+          bVar10 = 5 < (int)((uint)((((uint)amt & 1) + rounding |
+                                    (uint)CARRY4((uint)amt & 1,rounding)) != 0) + tenths);
         }
-        else if ((__return_storage_ptr__ == (longdouble *)0x0) && (0 < tenths + rounding)) {
-          bVar2 = true;
+        else if ((inexact_style_00 == 0) && (0 < tenths + rounding)) {
+          bVar10 = true;
         }
         else {
-          bVar2 = false;
+          bVar10 = false;
         }
-        uVar16 = uVar15;
-        if (bVar2) {
-          uVar16 = uVar15 + 1;
+        lVar14 = lVar13;
+        if (bVar10) {
+          lVar14 = lVar13 + 1;
           if ((((opts & 0x10U) != 0) &&
-              (uVar16 = uVar15 + 1,
-              (local_148 ^ (uint)(uVar15 + 1) | (uint)(uVar15 + 1 >> 0x20)) == 0)) &&
-             (uVar16 = uVar15 + 1, exponent < 8)) {
+              (lVar14 = lVar13 + 1,
+              (local_148 ^ (uint)(lVar13 + 1) | (uint)((ulonglong)(lVar13 + 1) >> 0x20)) == 0)) &&
+             (lVar14 = lVar13 + 1, exponent < 8)) {
             exponent = exponent + 1;
             if ((opts & 8U) == 0) {
               p[-1] = '0';
               p = p + -1 + -decimal_pointlen;
               memcpy(p,decimal_point,decimal_pointlen);
             }
-            uVar16 = 1;
+            lVar14 = 1;
           }
         }
         integerlim = p;
         do {
-          cVar4 = __umoddi3(uVar16,10,0);
+          cVar4 = __umoddi3(lVar14,10,0);
           p = p + -1;
           *p = cVar4 + '0';
-          uVar16 = __udivdi3(uVar16,10,0);
-        } while (uVar16 != 0);
+          lVar14 = __udivdi3(lVar14,10,0);
+        } while (lVar14 != 0);
         goto do_grouping;
       }
     }
   }
-  local_17c = (float10)to_block_size;
+  local_17c = (longdouble)to_block_size;
   if ((longlong)to_block_size < 0) {
     local_17c = local_17c + _DAT_08061990;
   }
-  local_13c = (float10)n;
+  local_13c = (longdouble)n;
   if ((longlong)n < 0) {
     local_13c = local_13c + _DAT_08061990;
   }
-  local_12c = (float10)from_block_size;
+  local_12c = (longdouble)from_block_size;
   if ((longlong)from_block_size < 0) {
     local_12c = local_12c + _DAT_08061990;
   }
   local_13c = local_13c * (local_12c / local_17c);
-  damt._0_4_ = SUB104(local_13c,0);
   if ((opts & 0x10U) == 0) {
-    adjust_value(__return_storage_ptr__,damt._0_4_,
-                 (longdouble)
-                 CONCAT210(in_stack_fffffe56,
-                           CONCAT28(in_stack_fffffe54,
-                                    CONCAT26(damt._10_2_,(int6)((unkuint10)local_13c >> 0x20)))));
-    sprintf(buf,"%.0Lf",(int)extraout_ST0,(short)((unkuint10)extraout_ST0 >> 0x20),
-            (short)((unkuint10)extraout_ST0 >> 0x40));
+    lVar11 = adjust_value(inexact_style_00,local_13c);
+    sprintf(buf,"%.0Lf",SUB104(lVar11,0),(short)((unkuint10)lVar11 >> 0x20),
+            (short)((unkuint10)lVar11 >> 0x40));
     buflen = strlen(buf);
     nonintegerlen = 0;
   }
@@ -9606,36 +9870,25 @@ use_integer_arithmetic:
     e._8_2_ = 0x3fff;
     exponent = 0;
     do {
-      fVar11 = (float10)CONCAT28(e._8_2_,CONCAT44(e._4_4_,e._0_4_)) * (float10)(ulonglong)local_148;
-      e._0_4_ = SUB104(fVar11,0);
-      e._4_4_ = (undefined4)((unkuint10)fVar11 >> 0x20);
-      e._8_2_ = (undefined2)((unkuint10)fVar11 >> 0x40);
+      lVar11 = (longdouble)CONCAT28(e._8_2_,CONCAT44(e._4_4_,e._0_4_)) *
+               (longdouble)(ulonglong)local_148;
+      e._0_4_ = SUB104(lVar11,0);
+      e._4_4_ = (undefined4)((unkuint10)lVar11 >> 0x20);
+      e._8_2_ = (undefined2)((unkuint10)lVar11 >> 0x40);
       exponent = exponent + 1;
-      if (local_13c < fVar11 * (float10)(ulonglong)local_148) break;
+      if (local_13c < lVar11 * (longdouble)(ulonglong)local_148) break;
     } while (exponent < 8);
-    local_13c = local_13c / fVar11;
-    damt._0_4_ = SUB104(local_13c,0);
-    adjust_value(__return_storage_ptr__,damt._0_4_,
-                 (longdouble)
-                 CONCAT210(in_stack_fffffe56,
-                           CONCAT28(in_stack_fffffe54,
-                                    CONCAT26(damt._10_2_,(int6)((unkuint10)local_13c >> 0x20)))));
-    uVar17 = (undefined2)((unkuint10)extraout_ST0_00 >> 0x30);
-    uVar18 = (undefined2)((unkuint10)extraout_ST0_00 >> 0x40);
-    sprintf(buf,"%.1Lf",(int)extraout_ST0_00,(short)((unkuint10)extraout_ST0_00 >> 0x20));
+    lVar12 = adjust_value(inexact_style_00,local_13c / lVar11);
+    sprintf(buf,"%.1Lf",SUB104(lVar12,0),(short)((unkuint10)lVar12 >> 0x20),
+            (short)((unkuint10)lVar12 >> 0x40));
     buflen = strlen(buf);
     nonintegerlen = decimal_pointlen + 1;
     if ((((opts & 0x20U) == 0) + nonintegerlen + 1 < buflen) ||
        (((opts & 8U) != 0 && (buf[buflen - 1] == '0')))) {
-      adjust_value(__return_storage_ptr__,SUB104(_DAT_080619a0 * local_13c,0),
-                   (longdouble)
-                   CONCAT210(in_stack_fffffe56,
-                             CONCAT28(uVar18,CONCAT26(uVar17,(int6)((unkuint10)
-                                                                    (_DAT_080619a0 * local_13c) >>
-                                                                   0x20)))));
-      fVar11 = extraout_ST0_01 / _DAT_080619a0;
-      sprintf(buf,"%.0Lf",SUB104(fVar11,0),(short)((unkuint10)fVar11 >> 0x20),
-              (short)((unkuint10)fVar11 >> 0x40));
+      lVar11 = adjust_value(inexact_style_00,_DAT_080619a0 * (local_13c / lVar11));
+      lVar11 = lVar11 / _DAT_080619a0;
+      sprintf(buf,"%.0Lf",SUB104(lVar11,0),(short)((unkuint10)lVar11 >> 0x20),
+              (short)((unkuint10)lVar11 >> 0x40));
       buflen = strlen(buf);
       nonintegerlen = 0;
     }
@@ -9654,9 +9907,9 @@ do_grouping:
       power._4_4_ = 0;
       while ((CONCAT44(power._4_4_,(uint)power) < to_block_size &&
              (exponent = exponent + 1, exponent != 8))) {
-        uVar15 = (ulonglong)(uint)power;
-        power._0_4_ = (uint)(local_148 * uVar15);
-        power._4_4_ = power._4_4_ * local_148 + (int)(local_148 * uVar15 >> 0x20);
+        uVar2 = (ulonglong)(uint)power;
+        power._0_4_ = (uint)(local_148 * uVar2);
+        power._4_4_ = power._4_4_ * local_148 + (int)(local_148 * uVar2 >> 0x20);
       }
     }
     if (((opts & 0x100U | exponent) != 0) && ((opts & 0x40U) != 0)) {
@@ -9688,6 +9941,8 @@ do_grouping:
 
 
 
+// WARNING: Unknown calling convention
+
 uintmax_t default_block_size(void)
 
 {
@@ -9706,6 +9961,8 @@ uintmax_t default_block_size(void)
 
 
 
+// WARNING: Unknown calling convention
+
 strtol_error humblock(char *spec,uintmax_t *block_size,int *options)
 
 {
@@ -9721,8 +9978,7 @@ strtol_error humblock(char *spec,uintmax_t *block_size,int *options)
   if (((spec == (char *)0x0) && (spec = getenv("BLOCK_SIZE"), spec == (char *)0x0)) &&
      (spec = getenv("BLOCKSIZE"), spec == (char *)0x0)) {
     uVar3 = default_block_size();
-    *(int *)block_size = (int)uVar3;
-    *(int *)((int)block_size + 4) = (int)(uVar3 >> 0x20);
+    *block_size = uVar3;
   }
   else {
     if (*spec == '\'') {
@@ -9763,6 +10019,8 @@ LAB_0805451e:
 
 
 
+// WARNING: Unknown calling convention
+
 strtol_error human_options(char *spec,int *opts,uintmax_t *block_size)
 
 {
@@ -9772,14 +10030,15 @@ strtol_error human_options(char *spec,int *opts,uintmax_t *block_size)
   e = humblock(spec,block_size,opts);
   if ((*(uint *)block_size | *(uint *)((int)block_size + 4)) == 0) {
     uVar1 = default_block_size();
-    *(int *)block_size = (int)uVar1;
-    *(int *)((int)block_size + 4) = (int)(uVar1 >> 0x20);
+    *block_size = uVar1;
     e = LONGINT_INVALID;
   }
   return e;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getuser(uid_t uid)
 
@@ -9808,7 +10067,7 @@ LAB_080545b4:
         }
         sVar2 = strlen(local_1c);
         match = (userid *)xmalloc(sVar2 + 9);
-        match->id = uid;
+        (match->id).u = uid;
         strcpy((char *)(match + 1),local_1c);
         match->next = user_alist;
         user_alist = match;
@@ -9821,7 +10080,7 @@ LAB_080545b4:
       }
       return (char *)local_18;
     }
-    if (tail->id == uid) {
+    if ((tail->id).u == uid) {
       match = tail;
       goto LAB_080545b4;
     }
@@ -9830,6 +10089,8 @@ LAB_080545b4:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 uid_t * getuidbyname(char *user)
 
@@ -9858,7 +10119,7 @@ uid_t * getuidbyname(char *user)
             nouser_alist = puVar4;
           }
           else {
-            puVar4->id = ppVar2->pw_uid;
+            puVar4->id = (anon_union_4_2_947300cf_for_id)ppVar2->pw_uid;
             puVar4->next = user_alist;
             user_alist = puVar4;
             local_18 = puVar4;
@@ -9879,6 +10140,8 @@ uid_t * getuidbyname(char *user)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getgroup(gid_t gid)
 
@@ -9907,7 +10170,7 @@ LAB_080547b4:
         }
         sVar2 = strlen(local_1c);
         match = (userid *)xmalloc(sVar2 + 9);
-        match->id = gid;
+        (match->id).g = gid;
         strcpy((char *)(match + 1),local_1c);
         match->next = group_alist;
         group_alist = match;
@@ -9920,7 +10183,7 @@ LAB_080547b4:
       }
       return (char *)local_18;
     }
-    if (tail->id == gid) {
+    if ((tail->id).u == gid) {
       match = tail;
       goto LAB_080547b4;
     }
@@ -9929,6 +10192,8 @@ LAB_080547b4:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 gid_t * getgidbyname(char *group)
 
@@ -9957,7 +10222,7 @@ gid_t * getgidbyname(char *group)
             nogroup_alist = puVar4;
           }
           else {
-            puVar4->id = pgVar2->gr_gid;
+            puVar4->id = (anon_union_4_2_947300cf_for_id)pgVar2->gr_gid;
             puVar4->next = group_alist;
             group_alist = puVar4;
             local_18 = puVar4;
@@ -9984,6 +10249,7 @@ char * imaxtostr(intmax_t i,char *buf)
 {
   char *pcVar1;
   char cVar2;
+  intmax_t i_local;
   char *p;
   
   p = buf + 0x14;
@@ -10013,7 +10279,9 @@ char * imaxtostr(intmax_t i,char *buf)
 
 
 
-void mpsort_into_tmp(void **base,size_t n,void **tmp,comparison_function *cmp)
+// WARNING: Unknown calling convention
+
+void mpsort_into_tmp(void **base,size_t n,void **tmp,comparison_function cmp)
 
 {
   int iVar1;
@@ -10059,7 +10327,9 @@ LAB_08054b8e:
 
 
 
-void mpsort_with_tmp(void **base,size_t n,void **tmp,comparison_function *cmp)
+// WARNING: Unknown calling convention
+
+void mpsort_with_tmp(void **base,size_t n,void **tmp,comparison_function cmp)
 
 {
   void *pvVar1;
@@ -10126,7 +10396,9 @@ void mpsort_with_tmp(void **base,size_t n,void **tmp,comparison_function *cmp)
 
 
 
-void mpsort(void **base,size_t n,comparison_function *cmp)
+// WARNING: Unknown calling convention
+
+void mpsort(void **base,size_t n,comparison_function cmp)
 
 {
   mpsort_with_tmp(base,n,base + n,cmp);
@@ -10134,6 +10406,8 @@ void mpsort(void **base,size_t n,comparison_function *cmp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * quote_n(int n,char *name)
 
@@ -10146,6 +10420,8 @@ char * quote_n(int n,char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 char * quote(char *name)
 
 {
@@ -10157,6 +10433,8 @@ char * quote(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 quoting_options * clone_quoting_options(quoting_options *o)
 
 {
@@ -10165,7 +10443,7 @@ quoting_options * clone_quoting_options(quoting_options *o)
   quoting_options *pqVar3;
   quoting_options *local_18;
   quoting_options *p;
-  int e;
+  wchar_t e;
   
   piVar2 = __errno_location();
   iVar1 = *piVar2;
@@ -10183,6 +10461,8 @@ quoting_options * clone_quoting_options(quoting_options *o)
 
 
 
+// WARNING: Unknown calling convention
+
 quoting_style get_quoting_style(quoting_options *o)
 
 {
@@ -10198,6 +10478,8 @@ quoting_style get_quoting_style(quoting_options *o)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_quoting_style(quoting_options *o,quoting_style s)
 
@@ -10216,14 +10498,15 @@ void set_quoting_style(quoting_options *o,quoting_style s)
 
 
 
-int set_char_quoting(quoting_options *o,char c,int i)
+wchar_t set_char_quoting(quoting_options *o,char c,wchar_t i)
 
 {
   uint *puVar1;
-  uint uVar2;
+  wchar_t wVar2;
   quoting_options *local_1c;
-  int r;
-  int shift;
+  char c_local;
+  wchar_t r;
+  wchar_t shift;
   uint *p;
   uchar uc;
   
@@ -10234,12 +10517,14 @@ int set_char_quoting(quoting_options *o,char c,int i)
     local_1c = o;
   }
   puVar1 = local_1c->quote_these_too + ((byte)c >> 5);
-  uVar2 = *puVar1 >> (c & 0x1fU) & 1;
-  *puVar1 = *puVar1 ^ (i & 1U ^ uVar2) << (c & 0x1fU);
-  return uVar2;
+  wVar2 = *puVar1 >> (c & 0x1fU) & 1;
+  *puVar1 = *puVar1 ^ (i & 1U ^ wVar2) << (c & 0x1fU);
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * gettext_quote(char *msgid,quoting_style s)
 
@@ -10255,6 +10540,8 @@ char * gettext_quote(char *msgid,quoting_style s)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t quotearg_buffer_restyled
                  (char *buffer,size_t buffersize,char *arg,size_t argsize,
                  quoting_style quoting_style,quoting_options *o)
@@ -10267,7 +10554,7 @@ size_t quotearg_buffer_restyled
   size_t sVar5;
   bool bVar6;
   byte local_58;
-  mbstate_t mbstate;
+  mbstate_t_conflict mbstate;
   size_t ilim;
   size_t j;
   size_t bytes;
@@ -10644,6 +10931,8 @@ LAB_080553e4:
 
 
 
+// WARNING: Unknown calling convention
+
 size_t quotearg_buffer(char *buffer,size_t buffersize,char *arg,size_t argsize,quoting_options *o)
 
 {
@@ -10652,7 +10941,7 @@ size_t quotearg_buffer(char *buffer,size_t buffersize,char *arg,size_t argsize,q
   size_t sVar3;
   quoting_options *local_18;
   size_t r;
-  int e;
+  wchar_t e;
   quoting_options *p;
   
   if (o == (quoting_options *)0x0) {
@@ -10671,6 +10960,8 @@ size_t quotearg_buffer(char *buffer,size_t buffersize,char *arg,size_t argsize,q
 
 
 
+// WARNING: Unknown calling convention
+
 char * quotearg_alloc(char *arg,size_t argsize,quoting_options *o)
 
 {
@@ -10680,7 +10971,7 @@ char * quotearg_alloc(char *arg,size_t argsize,quoting_options *o)
   char *buffer;
   char *buf;
   size_t bufsize;
-  int e;
+  wchar_t e;
   
   piVar2 = __errno_location();
   iVar1 = *piVar2;
@@ -10693,6 +10984,8 @@ char * quotearg_alloc(char *arg,size_t argsize,quoting_options *o)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void quotearg_free(void)
 
@@ -10720,7 +11013,9 @@ void quotearg_free(void)
 
 
 
-char * quotearg_n_options(int n,char *arg,size_t argsize,quoting_options *options)
+// WARNING: Unknown calling convention
+
+char * quotearg_n_options(wchar_t n,char *arg,size_t argsize,quoting_options *options)
 
 {
   int iVar1;
@@ -10737,19 +11032,19 @@ char * quotearg_n_options(int n,char *arg,size_t argsize,quoting_options *option
   size_t n1;
   slotvec *sv;
   uint n0;
-  int e;
+  wchar_t e;
   _Bool preallocated;
   
   piVar3 = __errno_location();
   local_2c = slotvec;
   iVar1 = *piVar3;
   sv = slotvec;
-  if (n < 0) {
+  if (n < L'\0') {
                     // WARNING: Subroutine does not return
     abort();
   }
   if (nslots <= (uint)n) {
-    uVar4 = n + 1;
+    uVar4 = n + L'\x01';
     bVar6 = slotvec == &slotvec0;
     if (0x1fffffff < uVar4) {
       xalloc_die();
@@ -10789,7 +11084,9 @@ char * quotearg_n_options(int n,char *arg,size_t argsize,quoting_options *option
 
 
 
-char * quotearg_n(int n,char *arg)
+// WARNING: Unknown calling convention
+
+char * quotearg_n(wchar_t n,char *arg)
 
 {
   char *pcVar1;
@@ -10800,71 +11097,81 @@ char * quotearg_n(int n,char *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 char * quotearg(char *arg)
 
 {
   char *pcVar1;
   
-  pcVar1 = quotearg_n(0,arg);
+  pcVar1 = quotearg_n(L'\0',arg);
   return pcVar1;
 }
 
 
 
-quoting_options *
-quoting_options_from_style(quoting_options *__return_storage_ptr__,quoting_style style)
+// WARNING: Unknown calling convention
+
+quoting_options * quoting_options_from_style(quoting_style style)
 
 {
+  quoting_options *in_stack_00000004;
   quoting_options o;
   
   o.style = style;
   memset(o.quote_these_too,0,0x20);
-  __return_storage_ptr__->style = o.style;
-  __return_storage_ptr__->quote_these_too[0] = o.quote_these_too[0];
-  __return_storage_ptr__->quote_these_too[1] = o.quote_these_too[1];
-  __return_storage_ptr__->quote_these_too[2] = o.quote_these_too[2];
-  __return_storage_ptr__->quote_these_too[3] = o.quote_these_too[3];
-  __return_storage_ptr__->quote_these_too[4] = o.quote_these_too[4];
-  __return_storage_ptr__->quote_these_too[5] = o.quote_these_too[5];
-  __return_storage_ptr__->quote_these_too[6] = o.quote_these_too[6];
-  __return_storage_ptr__->quote_these_too[7] = o.quote_these_too[7];
-  return __return_storage_ptr__;
+  in_stack_00000004->style = o.style;
+  in_stack_00000004->quote_these_too[0] = o.quote_these_too[0];
+  in_stack_00000004->quote_these_too[1] = o.quote_these_too[1];
+  in_stack_00000004->quote_these_too[2] = o.quote_these_too[2];
+  in_stack_00000004->quote_these_too[3] = o.quote_these_too[3];
+  in_stack_00000004->quote_these_too[4] = o.quote_these_too[4];
+  in_stack_00000004->quote_these_too[5] = o.quote_these_too[5];
+  in_stack_00000004->quote_these_too[6] = o.quote_these_too[6];
+  in_stack_00000004->quote_these_too[7] = o.quote_these_too[7];
+  return in_stack_00000004;
 }
 
 
 
-char * quotearg_n_style(int n,quoting_style s,char *arg)
+// WARNING: Unknown calling convention
+
+char * quotearg_n_style(wchar_t n,quoting_style s,char *arg)
 
 {
   char *pcVar1;
   quoting_options o;
   
-  quoting_options_from_style(&o,s);
+  quoting_options_from_style(s);
   pcVar1 = quotearg_n_options(n,arg,0xffffffff,&o);
   return pcVar1;
 }
 
 
 
-char * quotearg_n_style_mem(int n,quoting_style s,char *arg,size_t argsize)
+// WARNING: Unknown calling convention
+
+char * quotearg_n_style_mem(wchar_t n,quoting_style s,char *arg,size_t argsize)
 
 {
   char *pcVar1;
   quoting_options o;
   
-  quoting_options_from_style(&o,s);
+  quoting_options_from_style(s);
   pcVar1 = quotearg_n_options(n,arg,argsize,&o);
   return pcVar1;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 char * quotearg_style(quoting_style s,char *arg)
 
 {
   char *pcVar1;
   
-  pcVar1 = quotearg_n_style(0,s,arg);
+  pcVar1 = quotearg_n_style(L'\0',s,arg);
   return pcVar1;
 }
 
@@ -10874,6 +11181,7 @@ char * quotearg_char(char *arg,char ch)
 
 {
   char *pcVar1;
+  char ch_local;
   quoting_options options;
   
   options.style = default_quoting_options.style;
@@ -10885,12 +11193,14 @@ char * quotearg_char(char *arg,char ch)
   options.quote_these_too[5] = default_quoting_options.quote_these_too[5];
   options.quote_these_too[6] = default_quoting_options.quote_these_too[6];
   options.quote_these_too[7] = default_quoting_options.quote_these_too[7];
-  set_char_quoting(&options,ch,1);
-  pcVar1 = quotearg_n_options(0,arg,0xffffffff,&options);
+  set_char_quoting(&options,ch,L'\x01');
+  pcVar1 = quotearg_n_options(L'\0',arg,0xffffffff,&options);
   return pcVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * quotearg_colon(char *arg)
 
@@ -10902,6 +11212,8 @@ char * quotearg_colon(char *arg)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * memcpy_lowcase(char *dest,char *src,size_t len)
 
@@ -10917,6 +11229,8 @@ char * memcpy_lowcase(char *dest,char *src,size_t len)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * memcpy_uppcase(char *dest,char *src,size_t len)
 
@@ -10942,9 +11256,9 @@ char * memcpy_uppcase(char *dest,char *src,size_t len)
 // WARNING: Removing unreachable block (ram,0x08056037)
 // WARNING: Removing unreachable block (ram,0x08056c1a)
 // WARNING: Removing unreachable block (ram,0x0805609a)
-// WARNING: Could not reconcile some variable overlaps
 
-size_t strftime_case_(_Bool upcase,char *s,size_t maxsize,char *format,tm *tp,int ut,int ns)
+size_t strftime_case_(_Bool upcase,char *s,size_t maxsize,char *format,tm_conflict *tp,int ut,int ns
+                     )
 
 {
   char cVar1;
@@ -10971,6 +11285,10 @@ size_t strftime_case_(_Bool upcase,char *s,size_t maxsize,char *format,tm *tp,in
   int local_5bc;
   int local_5b8;
   int local_5b0;
+  tm_conflict *tp_local;
+  char *format_local;
+  char *s_local;
+  _Bool upcase_local;
   mbstate_t mbstate;
   int _incr_13;
   int _delta_13;
@@ -11146,11 +11464,11 @@ LAB_08055eb4:
           memset(p,0x20,uVar6);
           p = p + uVar6;
         }
-        if (upcase == false) {
-          memcpy(p,f,len);
+        if (upcase) {
+          memcpy_uppcase(p,f,len);
         }
         else {
-          memcpy_uppcase(p,f,len);
+          memcpy(p,f,len);
         }
         p = p + len;
       }
@@ -11588,7 +11906,7 @@ do_number_spacepad:
     goto underlying_strftime;
   case 's':
     mbstate.__count = tp->tm_sec;
-    mbstate.__value = tp->tm_min;
+    mbstate.__value = (anon_union_4_2_91654ee9_for___value)tp->tm_min;
     t = mktime((tm *)&mbstate);
     bufp = (char *)&local_10;
     negative_number = (_Bool)-(char)(t >> 0x1f);
@@ -11962,6 +12280,8 @@ LAB_08058601:
 
 
 
+// WARNING: Unknown calling convention
+
 int iso_week_days(int yday,int wday)
 
 {
@@ -11972,7 +12292,9 @@ int iso_week_days(int yday,int wday)
 
 
 
-size_t nstrftime(char *s,size_t maxsize,char *format,tm *tp,int ut,int ns)
+// WARNING: Unknown calling convention
+
+size_t nstrftime(char *s,size_t maxsize,char *format,tm_conflict *tp,int ut,int ns)
 
 {
   size_t sVar1;
@@ -11987,6 +12309,7 @@ char * umaxtostr(uintmax_t i,char *buf)
 
 {
   char cVar1;
+  uintmax_t i_local;
   char *p;
   
   p = buf + 0x14;
@@ -12011,6 +12334,9 @@ int rpl_vfprintf(FILE *fp,char *format,va_list args)
   int *piVar4;
   int in_GS_OFFSET;
   size_t local_804;
+  va_list args_local;
+  char *format_local;
+  FILE *fp_local;
   int saved_errno;
   size_t lenbuf;
   size_t len;
@@ -12056,6 +12382,8 @@ int rpl_vfprintf(FILE *fp,char *format,va_list args)
 
 
 
+// WARNING: Unknown calling convention
+
 void * xnmalloc(size_t n,size_t s)
 
 {
@@ -12070,6 +12398,8 @@ void * xnmalloc(size_t n,size_t s)
 
 
 
+// WARNING: Unknown calling convention
+
 void * xnrealloc(void *p,size_t n,size_t s)
 
 {
@@ -12083,6 +12413,8 @@ void * xnrealloc(void *p,size_t n,size_t s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * x2nrealloc(void *p,size_t *pn,size_t s)
 
@@ -12109,6 +12441,8 @@ void * x2nrealloc(void *p,size_t *pn,size_t s)
 
 
 
+// WARNING: Unknown calling convention
+
 char * xcharalloc(size_t n)
 
 {
@@ -12119,6 +12453,8 @@ char * xcharalloc(size_t n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * xmalloc(size_t n)
 
@@ -12135,6 +12471,8 @@ void * xmalloc(size_t n)
 
 
 
+// WARNING: Unknown calling convention
+
 void * xrealloc(void *p,size_t n)
 
 {
@@ -12149,6 +12487,8 @@ void * xrealloc(void *p,size_t n)
 
 
 
+// WARNING: Unknown calling convention
+
 void * x2realloc(void *p,size_t *pn)
 
 {
@@ -12159,6 +12499,8 @@ void * x2realloc(void *p,size_t *pn)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * xzalloc(size_t s)
 
@@ -12171,6 +12513,8 @@ void * xzalloc(size_t s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * xcalloc(size_t n,size_t s)
 
@@ -12187,6 +12531,8 @@ void * xcalloc(size_t n,size_t s)
 
 
 
+// WARNING: Unknown calling convention
+
 void * xmemdup(void *p,size_t s)
 
 {
@@ -12198,6 +12544,8 @@ void * xmemdup(void *p,size_t s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * xstrdup(char *string)
 
@@ -12212,11 +12560,12 @@ char * xstrdup(char *string)
 
 
 
-void xstrtol_error(strtol_error err,int opt_idx,char c,option *long_options,char *arg,
+void xstrtol_error(strtol_error err,int opt_idx,char c,option_conflict *long_options,char *arg,
                   int exit_status)
 
 {
   undefined4 uVar1;
+  char c_local;
   char *option;
   char *msgid;
   char *hyphens;
@@ -12256,15 +12605,19 @@ LAB_08058b3b:
 
 
 
-void xstrtol_fatal(strtol_error err,int opt_idx,char c,option *long_options,char *arg)
+void xstrtol_fatal(strtol_error err,int opt_idx,char c,option_conflict *long_options,char *arg)
 
 {
+  char c_local;
+  
   xstrtol_error(err,opt_idx,c,long_options,arg,exit_failure);
                     // WARNING: Subroutine does not return
   abort();
 }
 
 
+
+// WARNING: Unknown calling convention
 
 strtol_error bkm_scale(ulong *x,int scale_factor)
 
@@ -12285,6 +12638,8 @@ strtol_error bkm_scale(ulong *x,int scale_factor)
 
 
 
+// WARNING: Unknown calling convention
+
 strtol_error bkm_scale_by_power(ulong *x,int base,int power)
 
 {
@@ -12301,6 +12656,8 @@ strtol_error bkm_scale_by_power(ulong *x,int base,int power)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 strtol_error xstrtoul(char *s,char **ptr,int strtol_base,ulong *val,char *valid_suffixes)
 
@@ -12444,6 +12801,8 @@ LAB_08059063:
 
 
 
+// WARNING: Unknown calling convention
+
 void fseterr(FILE *fp)
 
 {
@@ -12452,6 +12811,8 @@ void fseterr(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * xstrndup(char *string,size_t n)
 
@@ -12469,6 +12830,7 @@ char * xstrndup(char *string,size_t n)
 
 
 // WARNING: Removing unreachable block (ram,0x08059109)
+// WARNING: Unknown calling convention
 
 strtol_error bkm_scale(uintmax_t *x,int scale_factor)
 
@@ -12499,6 +12861,8 @@ strtol_error bkm_scale(uintmax_t *x,int scale_factor)
 
 
 
+// WARNING: Unknown calling convention
+
 strtol_error bkm_scale_by_power(uintmax_t *x,int base,int power)
 
 {
@@ -12516,7 +12880,7 @@ strtol_error bkm_scale_by_power(uintmax_t *x,int base,int power)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 strtol_error xstrtoumax(char *s,char **ptr,int strtol_base,uintmax_t *val,char *valid_suffixes)
 
@@ -12561,11 +12925,8 @@ strtol_error xstrtoumax(char *s,char **ptr,int strtol_base,uintmax_t *val,char *
   *piVar3 = 0;
   tmp = strtoumax(s,p,strtol_base);
   if (*p == s) {
-    if ((valid_suffixes == (char *)0x0) || (**p == '\0')) {
-      return LONGINT_INVALID;
-    }
-    pcVar4 = strchr(valid_suffixes,(int)**p);
-    if (pcVar4 == (char *)0x0) {
+    if (((valid_suffixes == (char *)0x0) || (**p == '\0')) ||
+       (pcVar4 = strchr(valid_suffixes,(int)**p), pcVar4 == (char *)0x0)) {
       return LONGINT_INVALID;
     }
     tmp = 1;
@@ -12580,7 +12941,6 @@ strtol_error xstrtoumax(char *s,char **ptr,int strtol_base,uintmax_t *val,char *
       err = LONGINT_OVERFLOW;
     }
   }
-  tmp._4_4_ = (undefined4)(tmp >> 0x20);
   if (valid_suffixes == (char *)0x0) {
     *(undefined4 *)val = (undefined4)tmp;
     *(undefined4 *)((int)val + 4) = tmp._4_4_;
@@ -12661,13 +13021,14 @@ LAB_080593b8:
     err = err | LONGINT_INVALID_SUFFIX_CHAR;
   }
 LAB_0805958b:
-  tmp._4_4_ = (undefined4)(tmp >> 0x20);
   *(undefined4 *)val = (undefined4)tmp;
   *(undefined4 *)((int)val + 4) = tmp._4_4_;
   return err;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int close_stream(FILE *stream)
 
@@ -12696,45 +13057,44 @@ int close_stream(FILE *stream)
 
 
 
-int is_infinitel(longdouble x)
+// WARNING: Unknown calling convention
+
+wchar_t is_infinitel(longdouble x)
 
 {
-  float10 fVar1;
-  int iVar2;
-  int local_8;
+  int iVar1;
+  wchar_t local_8;
   
-  iVar2 = rpl_isnanl(x);
-  if ((iVar2 == 0) &&
-     ((fVar1 = SUB1210((undefined  [12])x,0), fVar1 != fVar1 + fVar1 || (fVar1 == (float10)0)))) {
-    local_8 = 0;
+  iVar1 = rpl_isnanl(x);
+  if ((iVar1 == 0) && ((x != x + x || (x == (longdouble)0)))) {
+    local_8 = L'\0';
   }
   else {
-    local_8 = 1;
+    local_8 = L'\x01';
   }
   return local_8;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
 
 {
   char cVar1;
-  size_t *psVar2;
-  undefined4 uVar3;
-  undefined4 uVar4;
-  int iVar5;
-  int iVar6;
+  wchar_t *pwVar2;
+  void *pvVar3;
+  void *pvVar4;
+  wchar_t wVar5;
+  wchar_t wVar6;
   int *piVar7;
-  size_t sVar8;
-  char *pcVar9;
-  undefined (*pauVar10) [12];
+  int iVar8;
+  size_t sVar9;
+  char *pcVar10;
+  longdouble *plVar11;
   int in_GS_OFFSET;
   ushort in_FPUControlWord;
-  float10 fVar11;
-  char acStack1328 [12];
+  longdouble lVar12;
+  char acStack_530 [12];
   uint local_524;
   uint local_520;
   uint local_51c;
@@ -12760,9 +13120,9 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   uint local_4c8;
   uint local_4c4;
   uint local_4c0;
-  int local_4bc;
+  void *local_4bc;
   int local_4b8;
-  int local_4b4;
+  void *local_4b4;
   int local_4b0;
   uint local_4ac;
   uint local_4a8;
@@ -12771,22 +13131,23 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   int local_49c;
   uint local_498;
   uint local_494;
-  int local_490;
+  void *local_490;
   uint local_48c;
   uint local_488;
   size_t local_484;
   size_t local_480;
-  va_list local_47c;
-  char *local_478;
-  size_t *local_474;
-  char *local_470;
+  va_list args_local;
+  char *format_local;
+  size_t *lengthp_local;
+  char *resultbuf_local;
   char_directives d;
   longdouble arg_14;
   longdouble arg_2;
+  undefined2 uStack_442;
   double arg_13;
   ulonglong arg_12;
   longlong arg_11;
-  int prefixes [2];
+  wchar_t prefixes [2];
   arguments a;
   char *memory_7;
   char *memory_6;
@@ -12801,25 +13162,26 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   wchar_t *arg_18;
   char *arg_17;
   wint_t arg_16;
-  int arg_15;
+  wchar_t arg_15;
   ulong arg_10;
   long arg_9;
   uint arg_8;
-  int arg_7;
+  wchar_t arg_7;
   uint arg_6;
-  int arg_5;
+  wchar_t arg_5;
   uint arg_4;
-  int arg_3;
+  wchar_t arg_3;
   size_t maxlen;
-  int retcount;
+  wchar_t retcount;
   fpucw_t _cw;
+  undefined2 uStack_3aa;
   char *memory_3;
   size_t memory_size_3;
   size_t n_3;
   size_t n_2;
   uint prefix_count;
   char *fbp;
-  int flags_1;
+  wchar_t flags_1;
   arg_type type;
   char *memory_2;
   size_t memory_size_2;
@@ -12829,21 +13191,21 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   char *q;
   char *end;
   size_t pad;
-  int sign;
+  wchar_t sign;
   size_t tmp_memsize;
   char *digitp_1;
-  int arg_1;
+  wchar_t arg_1;
   char *digitp;
-  int arg;
+  wchar_t arg;
   char *p;
   char *pad_ptr;
   char *tmp;
   size_t tmp_length;
   size_t precision;
-  int has_precision;
+  wchar_t has_precision;
   size_t width;
-  int has_width;
-  int flags;
+  wchar_t has_width;
+  wchar_t flags;
   char *memory_1;
   size_t memory_size_1;
   size_t augmented_length_1;
@@ -12865,20 +13227,20 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
   char tmpbuf [700];
   int local_20;
   
-  pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
-  local_470 = resultbuf;
-  local_474 = lengthp;
-  local_478 = format;
-  local_47c = args;
+  plVar11 = (longdouble *)&stack0xfffffaa4;
+  resultbuf_local = resultbuf;
+  lengthp_local = lengthp;
+  format_local = format;
+  args_local = args;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  iVar6 = printf_parse(format,&d,&a);
-  if (iVar6 < 0) {
+  wVar6 = printf_parse(format,&d,&a);
+  if (wVar6 < L'\0') {
     local_4d4 = (char *)0x0;
-    pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
+    plVar11 = (longdouble *)&stack0xfffffaa4;
   }
   else {
-    iVar6 = printf_fetchargs(local_47c,&a);
-    if (iVar6 < 0) {
+    wVar6 = printf_fetchargs(args_local,&a);
+    if (wVar6 < L'\0') {
       free(d.dir);
       if (a.arg != (argument *)0x0) {
         free(a.arg);
@@ -12890,39 +13252,41 @@ char * vasnprintf(char *resultbuf,size_t *lengthp,char *format,va_list args)
     else {
       buf_neededlength = xsum4(7,d.max_width_length,d.max_precision_length,6);
       if (buf_neededlength < 4000) {
-        iVar6 = -(buf_neededlength + 0x1e & 0xfffffff0);
-        local_4d0 = acStack1328 + iVar6;
-        buf = acStack1328 + iVar6;
+        iVar8 = -(buf_neededlength + 0x1e & 0xfffffff0);
+        local_4d0 = acStack_530 + iVar8;
+        buf = acStack_530 + iVar8;
         buf_malloced = (char *)0x0;
-        pauVar10 = (undefined (*) [12])(&stack0xfffffaa4 + iVar6);
+        plVar11 = (longdouble *)(&stack0xfffffaa4 + iVar8);
+        oldcw = in_FPUControlWord;
 LAB_08059831:
-        if (local_470 == (char *)0x0) {
+        if (resultbuf_local == (char *)0x0) {
           result = (char *)0x0;
           allocated = 0;
         }
         else {
-          result = local_470;
-          allocated = *local_474;
+          result = resultbuf_local;
+          allocated = *lengthp_local;
         }
         length = 0;
-        cp = local_478;
+        cp = format_local;
         i = 0;
         dp = d.dir;
         do {
           if (dp->dir_start != cp) {
-            n = (int)dp->dir_start - (int)cp;
-            *(size_t *)(*pauVar10 + 4) = n;
-            *(size_t *)*pauVar10 = length;
-            *(undefined4 *)(pauVar10[-1] + 8) = 0x80598de;
-            augmented_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+            n = (size_t)(dp->dir_start + -(int)cp);
+            *(char **)((int)plVar11 + 4) = dp->dir_start + -(int)cp;
+            *(size_t *)plVar11 = length;
+            *(undefined4 *)((int)plVar11 + -4) = 0x80598de;
+            augmented_length = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
             if (augmented_length <= allocated) {
 LAB_08059a17:
-              pcVar9 = result + length;
-              *(size_t *)(*pauVar10 + 8) = n;
-              *(char **)(*pauVar10 + 4) = cp;
-              *(char **)*pauVar10 = pcVar9;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a42;
-              memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
+              pcVar10 = result + length;
+              *(size_t *)((int)plVar11 + 8) = n;
+              *(char **)((int)plVar11 + 4) = cp;
+              *(char **)plVar11 = pcVar10;
+              *(undefined4 *)((int)plVar11 + -4) = 0x8059a42;
+              memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                     (size_t)*(void **)((int)plVar11 + 8));
               length = augmented_length;
               goto LAB_08059a4e;
             }
@@ -12944,24 +13308,25 @@ LAB_08059a17:
             }
             memory_size = allocated;
             if (allocated != 0xffffffff) {
-              if ((result == local_470) || (result == (char *)0x0)) {
-                *(size_t *)*pauVar10 = allocated;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805999f;
-                memory = (char *)malloc(*(size_t *)*pauVar10);
+              if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                *(size_t *)plVar11 = allocated;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805999f;
+                memory = (char *)malloc(*(size_t *)plVar11);
               }
               else {
-                *(size_t *)(*pauVar10 + 4) = allocated;
-                *(char **)*pauVar10 = result;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x80599bf;
-                memory = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                *(size_t *)((int)plVar11 + 4) = allocated;
+                *(char **)plVar11 = result;
+                *(undefined4 *)((int)plVar11 + -4) = 0x80599bf;
+                memory = (char *)realloc(*(void **)plVar11,(size_t)*(void **)((int)plVar11 + 4));
               }
               if (memory != (char *)0x0) {
-                if ((result == local_470) && (length != 0)) {
-                  *(size_t *)(*pauVar10 + 8) = length;
-                  *(char **)(*pauVar10 + 4) = result;
-                  *(char **)*pauVar10 = memory;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a0b;
-                  memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
+                if ((result == resultbuf_local) && (length != 0)) {
+                  *(size_t *)((int)plVar11 + 8) = length;
+                  *(char **)((int)plVar11 + 4) = result;
+                  *(char **)plVar11 = memory;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x8059a0b;
+                  memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                         (size_t)*(void **)((int)plVar11 + 8));
                 }
                 result = memory;
                 goto LAB_08059a17;
@@ -12971,11 +13336,11 @@ LAB_08059a17:
           }
 LAB_08059a4e:
           if (d.count == i) {
-            *(undefined4 *)(*pauVar10 + 4) = 1;
-            *(size_t *)*pauVar10 = length;
-            *(undefined4 *)(pauVar10[-1] + 8) = 0x805c7b7;
-            sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-            if (allocated < sVar8) {
+            *(void **)((int)plVar11 + 4) = (void *)0x1;
+            *(size_t *)plVar11 = length;
+            *(undefined4 *)((int)plVar11 + -4) = 0x805c7b7;
+            sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+            if (allocated < sVar9) {
               if (allocated == 0) {
                 local_484 = 0xc;
               }
@@ -12989,92 +13354,93 @@ LAB_08059a4e:
                 local_484 = local_480;
               }
               allocated = local_484;
-              *(undefined4 *)(*pauVar10 + 4) = 1;
-              *(size_t *)*pauVar10 = length;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c82a;
-              sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-              if (allocated < sVar8) {
-                *(undefined4 *)(*pauVar10 + 4) = 1;
-                *(size_t *)*pauVar10 = length;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c848;
-                allocated = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+              *(void **)((int)plVar11 + 4) = (void *)0x1;
+              *(size_t *)plVar11 = length;
+              *(undefined4 *)((int)plVar11 + -4) = 0x805c82a;
+              sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+              if (allocated < sVar9) {
+                *(void **)((int)plVar11 + 4) = (void *)0x1;
+                *(size_t *)plVar11 = length;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c848;
+                allocated = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
               }
               if (allocated != 0xffffffff) {
-                if ((result == local_470) || (result == (char *)0x0)) {
-                  *(size_t *)*pauVar10 = allocated;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c88c;
-                  memory_6 = (char *)malloc(*(size_t *)*pauVar10);
+                if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                  *(size_t *)plVar11 = allocated;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c88c;
+                  memory_6 = (char *)malloc(*(size_t *)plVar11);
                 }
                 else {
-                  *(size_t *)(*pauVar10 + 4) = allocated;
-                  *(char **)*pauVar10 = result;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c8ac;
-                  memory_6 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                  *(size_t *)((int)plVar11 + 4) = allocated;
+                  *(char **)plVar11 = result;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c8ac;
+                  memory_6 = (char *)realloc(*(void **)plVar11,(size_t)*(void **)((int)plVar11 + 4))
+                  ;
                 }
                 if (memory_6 != (char *)0x0) {
-                  if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar10 + 8) = length;
-                    *(char **)(*pauVar10 + 4) = result;
-                    *(char **)*pauVar10 = memory_6;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c8f8;
-                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
-                    ;
+                  if ((result == resultbuf_local) && (length != 0)) {
+                    *(size_t *)((int)plVar11 + 8) = length;
+                    *(char **)((int)plVar11 + 4) = result;
+                    *(char **)plVar11 = memory_6;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c8f8;
+                    memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                           (size_t)*(void **)((int)plVar11 + 8));
                   }
                   result = memory_6;
                   goto LAB_0805c904;
                 }
               }
 out_of_memory:
-              if ((result != local_470) && (result != (char *)0x0)) {
-                *(char **)*pauVar10 = result;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca64;
-                free(*(void **)*pauVar10);
+              if ((result != resultbuf_local) && (result != (char *)0x0)) {
+                *(char **)plVar11 = result;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805ca64;
+                free(*(void **)plVar11);
               }
               if (buf_malloced != (char *)0x0) {
-                *(char **)*pauVar10 = buf_malloced;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca7b;
-                free(*(void **)*pauVar10);
+                *(char **)plVar11 = buf_malloced;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805ca7b;
+                free(*(void **)plVar11);
               }
               goto out_of_memory_1;
             }
 LAB_0805c904:
             result[length] = '\0';
-            if ((result != local_470) && (length + 1 < allocated)) {
-              *(size_t *)(*pauVar10 + 4) = length + 1;
-              *(char **)*pauVar10 = result;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c94f;
-              pcVar9 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
-              if (pcVar9 != (char *)0x0) {
-                result = pcVar9;
+            if ((result != resultbuf_local) && (length + 1 < allocated)) {
+              *(void **)((int)plVar11 + 4) = (void *)(length + 1);
+              *(char **)plVar11 = result;
+              *(undefined4 *)((int)plVar11 + -4) = 0x805c94f;
+              pcVar10 = (char *)realloc(*(void **)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+              if (pcVar10 != (char *)0x0) {
+                result = pcVar10;
               }
             }
             if (buf_malloced != (char *)0x0) {
-              *(char **)*pauVar10 = buf_malloced;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c981;
-              free(*(void **)*pauVar10);
+              *(char **)plVar11 = buf_malloced;
+              *(undefined4 *)((int)plVar11 + -4) = 0x805c981;
+              free(*(void **)plVar11);
             }
-            *(char_directive **)*pauVar10 = d.dir;
-            *(undefined4 *)(pauVar10[-1] + 8) = 0x805c98f;
-            free(*(void **)*pauVar10);
+            *(char_directive **)plVar11 = d.dir;
+            *(undefined4 *)((int)plVar11 + -4) = 0x805c98f;
+            free(*(void **)plVar11);
             if (a.arg != (argument *)0x0) {
-              *(argument **)*pauVar10 = a.arg;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x805c9a7;
-              free(*(void **)*pauVar10);
+              *(argument **)plVar11 = a.arg;
+              *(undefined4 *)((int)plVar11 + -4) = 0x805c9a7;
+              free(*(void **)plVar11);
             }
-            *local_474 = length;
+            *lengthp_local = length;
             local_4d4 = result;
             goto LAB_0805cab6;
           }
           if (dp->conversion == '%') {
             if (dp->arg_index != 0xffffffff) {
                     // WARNING: Subroutine does not return
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a85;
+              *(undefined4 *)((int)plVar11 + -4) = 0x8059a85;
               abort();
             }
-            *(undefined4 *)(*pauVar10 + 4) = 1;
-            *(size_t *)*pauVar10 = length;
-            *(undefined4 *)(pauVar10[-1] + 8) = 0x8059a9b;
-            augmented_length_1 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+            *(void **)((int)plVar11 + 4) = (void *)0x1;
+            *(size_t *)plVar11 = length;
+            *(undefined4 *)((int)plVar11 + -4) = 0x8059a9b;
+            augmented_length_1 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
             if (allocated < augmented_length_1) {
               if (allocated == 0) {
                 local_4c4 = 0xc;
@@ -13094,25 +13460,26 @@ LAB_0805c904:
               }
               memory_size_1 = allocated;
               if (allocated != 0xffffffff) {
-                if ((result == local_470) || (result == (char *)0x0)) {
-                  *(size_t *)*pauVar10 = allocated;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059b5c;
-                  memory_1 = (char *)malloc(*(size_t *)*pauVar10);
+                if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                  *(size_t *)plVar11 = allocated;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x8059b5c;
+                  memory_1 = (char *)malloc(*(size_t *)plVar11);
                 }
                 else {
-                  *(size_t *)(*pauVar10 + 4) = allocated;
-                  *(char **)*pauVar10 = result;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x8059b7c;
-                  memory_1 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                  *(size_t *)((int)plVar11 + 4) = allocated;
+                  *(char **)plVar11 = result;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x8059b7c;
+                  memory_1 = (char *)realloc(*(void **)plVar11,(size_t)*(void **)((int)plVar11 + 4))
+                  ;
                 }
                 if (memory_1 != (char *)0x0) {
-                  if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar10 + 8) = length;
-                    *(char **)(*pauVar10 + 4) = result;
-                    *(char **)*pauVar10 = memory_1;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x8059bc8;
-                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
-                    ;
+                  if ((result == resultbuf_local) && (length != 0)) {
+                    *(size_t *)((int)plVar11 + 8) = length;
+                    *(char **)((int)plVar11 + 4) = result;
+                    *(char **)plVar11 = memory_1;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x8059bc8;
+                    memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                           (size_t)*(void **)((int)plVar11 + 8));
                   }
                   result = memory_1;
                   goto LAB_08059bd4;
@@ -13127,32 +13494,32 @@ LAB_08059bd4:
           else {
             if (dp->arg_index == 0xffffffff) {
                     // WARNING: Subroutine does not return
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x8059c09;
+              *(undefined4 *)((int)plVar11 + -4) = 0x8059c09;
               abort();
             }
             if (dp->conversion == 'n') {
               local_4d8 = a.arg[dp->arg_index].type + ~TYPE_POINTER;
               switch(local_4d8) {
               case 0:
-                **(undefined **)&a.arg[dp->arg_index].a = (char)length;
+                *a.arg[dp->arg_index].a.a_string = (char)length;
                 break;
               case 1:
-                **(undefined2 **)&a.arg[dp->arg_index].a = (short)length;
+                *a.arg[dp->arg_index].a.a_count_short_pointer = (short)length;
                 break;
               case 2:
-                **(size_t **)&a.arg[dp->arg_index].a = length;
+                *a.arg[dp->arg_index].a.a_wide_string = length;
                 break;
               case 3:
-                **(size_t **)&a.arg[dp->arg_index].a = length;
+                *a.arg[dp->arg_index].a.a_wide_string = length;
                 break;
               case 4:
-                psVar2 = *(size_t **)&a.arg[dp->arg_index].a;
-                *psVar2 = length;
-                psVar2[1] = 0;
+                pwVar2 = a.arg[dp->arg_index].a.a_wide_string;
+                *pwVar2 = length;
+                pwVar2[1] = L'\0';
                 break;
               default:
                     // WARNING: Subroutine does not return
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x8059d1e;
+                *(undefined4 *)((int)plVar11 + -4) = 0x8059d1e;
                 abort();
               }
             }
@@ -13161,24 +13528,24 @@ LAB_08059bd4:
                     ) || ((dp->conversion == 'E' || (dp->conversion == 'g')))) ||
                   ((dp->conversion == 'G' || ((dp->conversion == 'a' || (dp->conversion == 'A'))))))
                  && (a.arg[dp->arg_index].type == TYPE_LONGDOUBLE)) {
-                sVar8 = dp->arg_index;
-                uVar3 = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
-                uVar4 = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
-                *(undefined4 *)*pauVar10 = *(undefined4 *)&a.arg[sVar8].a;
-                *(undefined4 *)(*pauVar10 + 4) = uVar4;
-                *(undefined4 *)(*pauVar10 + 8) = uVar3;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x8059de0;
-                iVar6 = is_infinitel((longdouble)*pauVar10);
-                if (iVar6 != 0) {
+                sVar9 = dp->arg_index;
+                pvVar3 = *(void **)((int)&a.arg[sVar9].a + 8);
+                pvVar4 = *(void **)((int)&a.arg[sVar9].a + 4);
+                *(wchar_t *)plVar11 = a.arg[sVar9].a.a_int;
+                *(void **)((int)plVar11 + 4) = pvVar4;
+                *(void **)((int)plVar11 + 8) = pvVar3;
+                *(undefined4 *)((int)plVar11 + -4) = 0x8059de0;
+                wVar6 = is_infinitel(*plVar11);
+                if (wVar6 != L'\0') {
                   flags = dp->flags;
-                  has_width = 0;
+                  has_width = L'\0';
                   width = 0;
                   if (dp->width_start != dp->width_end) {
                     if (dp->width_arg_index == 0xffffffff) {
                       digitp = dp->width_start;
                       do {
                         cVar1 = *digitp;
-                        local_4bc = cVar1 + -0x30;
+                        local_4bc = (void *)((int)cVar1 - 0x30U);
                         digitp = digitp + 1;
                         if (width < 0x1999999a) {
                           local_4b8 = width * 10;
@@ -13186,20 +13553,20 @@ LAB_08059bd4:
                         else {
                           local_4b8 = -1;
                         }
-                        *(int *)(*pauVar10 + 4) = cVar1 + -0x30;
-                        *(int *)*pauVar10 = local_4b8;
-                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059f17;
-                        width = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                        *(void **)((int)plVar11 + 4) = (void *)((int)cVar1 - 0x30U);
+                        *(int *)plVar11 = local_4b8;
+                        *(undefined4 *)((int)plVar11 + -4) = 0x8059f17;
+                        width = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                       } while (dp->width_end != digitp);
                     }
                     else {
                       if (a.arg[dp->width_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059e54;
+                        *(undefined4 *)((int)plVar11 + -4) = 0x8059e54;
                         abort();
                       }
-                      arg = *(int *)&a.arg[dp->width_arg_index].a;
-                      if (arg < 0) {
+                      arg = a.arg[dp->width_arg_index].a.a_int;
+                      if (arg < L'\0') {
                         flags = dp->flags | 2;
                         width = -arg;
                       }
@@ -13207,9 +13574,9 @@ LAB_08059bd4:
                         width = arg;
                       }
                     }
-                    has_width = 1;
+                    has_width = L'\x01';
                   }
-                  has_precision = 0;
+                  has_precision = L'\0';
                   precision = 0;
                   if (dp->precision_start != dp->precision_end) {
                     if (dp->precision_arg_index == 0xffffffff) {
@@ -13217,7 +13584,7 @@ LAB_08059bd4:
                       precision = 0;
                       while (dp->precision_end != digitp_1) {
                         cVar1 = *digitp_1;
-                        local_4b4 = cVar1 + -0x30;
+                        local_4b4 = (void *)((int)cVar1 - 0x30U);
                         digitp_1 = digitp_1 + 1;
                         if (precision < 0x1999999a) {
                           local_4b0 = precision * 10;
@@ -13225,50 +13592,50 @@ LAB_08059bd4:
                         else {
                           local_4b0 = -1;
                         }
-                        *(int *)(*pauVar10 + 4) = cVar1 + -0x30;
-                        *(int *)*pauVar10 = local_4b0;
-                        *(undefined4 *)(pauVar10[-1] + 8) = 0x805a05b;
-                        precision = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                        *(void **)((int)plVar11 + 4) = (void *)((int)cVar1 - 0x30U);
+                        *(int *)plVar11 = local_4b0;
+                        *(undefined4 *)((int)plVar11 + -4) = 0x805a05b;
+                        precision = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                       }
-                      has_precision = 1;
+                      has_precision = L'\x01';
                     }
                     else {
                       if (a.arg[dp->precision_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                        *(undefined4 *)(pauVar10[-1] + 8) = 0x8059f95;
+                        *(undefined4 *)((int)plVar11 + -4) = 0x8059f95;
                         abort();
                       }
-                      arg_1 = *(int *)&a.arg[dp->precision_arg_index].a;
-                      if (-1 < arg_1) {
+                      arg_1 = a.arg[dp->precision_arg_index].a.a_int;
+                      if (L'\xffffffff' < arg_1) {
                         precision = arg_1;
-                        has_precision = 1;
+                        has_precision = L'\x01';
                       }
                     }
                   }
-                  if (has_precision == 0) {
+                  if (has_precision == L'\0') {
                     precision = 6;
                   }
                   tmp_length = 0;
                   if (precision != 0) {
                     tmp_length = precision;
                   }
-                  *(undefined **)(*pauVar10 + 4) = &DAT_0000000c;
-                  *(size_t *)*pauVar10 = tmp_length;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a0c9;
-                  tmp_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                  *(void **)((int)plVar11 + 4) = (void *)0xc;
+                  *(size_t *)plVar11 = tmp_length;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805a0c9;
+                  tmp_length = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                   if (tmp_length < width) {
                     tmp_length = width;
                   }
-                  *(undefined4 *)(*pauVar10 + 4) = 1;
-                  *(size_t *)*pauVar10 = tmp_length;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a0ff;
-                  tmp_length = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                  *(void **)((int)plVar11 + 4) = (void *)0x1;
+                  *(size_t *)plVar11 = tmp_length;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805a0ff;
+                  tmp_length = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                   if (700 < tmp_length) {
                     tmp_memsize = tmp_length;
                     if (tmp_length != 0xffffffff) {
-                      *(size_t *)*pauVar10 = tmp_length;
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805a146;
-                      tmp = (char *)malloc(*(size_t *)*pauVar10);
+                      *(size_t *)plVar11 = tmp_length;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805a146;
+                      tmp = (char *)malloc(*(size_t *)plVar11);
                       if (tmp != (char *)0x0) goto LAB_0805a159;
                     }
                     goto out_of_memory;
@@ -13277,39 +13644,36 @@ LAB_08059bd4:
 LAB_0805a159:
                   pad_ptr = (char *)0x0;
                   p = tmp;
-                  sVar8 = dp->arg_index;
-                  uVar3 = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
-                  uVar4 = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
-                  arg_2._0_4_ = *(undefined4 *)&a.arg[sVar8].a;
-                  arg_2._8_2_ = (undefined2)uVar3;
-                  arg_2._10_2_ = (undefined2)((uint)uVar3 >> 0x10);
-                  arg_2._4_4_ = uVar4;
-                  *(undefined4 *)*pauVar10 = arg_2._0_4_;
-                  *(undefined4 *)(*pauVar10 + 4) = uVar4;
-                  *(undefined4 *)(*pauVar10 + 8) = uVar3;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a1c1;
-                  uVar3 = arg_2._4_4_;
-                  iVar6 = rpl_isnanl((longdouble)*pauVar10);
-                  if (iVar6 == 0) {
-                    sign = 0;
-                    oldcw = in_FPUControlWord;
-                    __cw = __cw & 0xffff0000 |
-                           (uint)(ushort)(in_FPUControlWord & 0xff |
-                                         (ushort)(byte)((uint)in_FPUControlWord >> 8) << 8) | 0x300;
-                    uVar4 = CONCAT22(arg_2._10_2_,arg_2._8_2_);
-                    *(undefined4 *)*pauVar10 = arg_2._0_4_;
-                    *(undefined4 *)(*pauVar10 + 4) = uVar3;
-                    *(undefined4 *)(*pauVar10 + 8) = uVar4;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a2a6;
-                    iVar6 = __signbitl();
-                    if (iVar6 != 0) {
-                      sign = -1;
-                      fVar11 = -(float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_));
-                      arg_2._0_4_ = SUB104(fVar11,0);
-                      arg_2._4_4_ = (undefined4)((unkuint10)fVar11 >> 0x20);
-                      arg_2._8_2_ = (undefined2)((unkuint10)fVar11 >> 0x40);
+                  sVar9 = dp->arg_index;
+                  pvVar3 = *(void **)((int)&a.arg[sVar9].a + 8);
+                  pvVar4 = *(void **)((int)&a.arg[sVar9].a + 4);
+                  arg_2._0_4_ = a.arg[sVar9].a.a_int;
+                  arg_2._8_2_ = SUB42(pvVar3,0);
+                  uStack_442 = (undefined2)((uint)pvVar3 >> 0x10);
+                  arg_2._4_4_ = pvVar4;
+                  *(wchar_t *)plVar11 = arg_2._0_4_;
+                  *(void **)((int)plVar11 + 4) = pvVar4;
+                  *(void **)((int)plVar11 + 8) = pvVar3;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805a1c1;
+                  pvVar3 = arg_2._4_4_;
+                  iVar8 = rpl_isnanl(*plVar11);
+                  if (iVar8 == 0) {
+                    sign = L'\0';
+                    _cw = oldcw | 0x300;
+                    pvVar4 = (void *)CONCAT22(uStack_442,arg_2._8_2_);
+                    *(wchar_t *)plVar11 = arg_2._0_4_;
+                    *(void **)((int)plVar11 + 4) = pvVar3;
+                    *(void **)((int)plVar11 + 8) = pvVar4;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805a2a6;
+                    iVar8 = __signbitl();
+                    if (iVar8 != 0) {
+                      sign = L'\xffffffff';
+                      lVar12 = -(longdouble)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_));
+                      arg_2._0_4_ = SUB104(lVar12,0);
+                      arg_2._4_4_ = (void *)((unkuint10)lVar12 >> 0x20);
+                      arg_2._8_2_ = (undefined2)((unkuint10)lVar12 >> 0x40);
                     }
-                    if (sign < 0) {
+                    if (sign < L'\0') {
                       *p = '-';
                       p = p + 1;
                     }
@@ -13323,13 +13687,13 @@ LAB_0805a159:
                       *p = '+';
                       p = p + 1;
                     }
-                    if (((float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) <=
-                         (float10)0) ||
-                       (fVar11 = (float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)),
-                       (float10)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) !=
-                       fVar11 + fVar11)) {
+                    if (((longdouble)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) <=
+                         (longdouble)0) ||
+                       (lVar12 = (longdouble)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_))
+                       , (longdouble)CONCAT28(arg_2._8_2_,CONCAT44(arg_2._4_4_,arg_2._0_4_)) !=
+                         lVar12 + lVar12)) {
                     // WARNING: Subroutine does not return
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805a3f7;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805a3f7;
                       abort();
                     }
                     if ((dp->conversion < 'A') || ('Z' < dp->conversion)) {
@@ -13344,8 +13708,7 @@ LAB_0805a159:
                       p[2] = 'F';
                       p = p + 3;
                     }
-                    __cw = __cw & 0xffff0000 | (uint)oldcw;
-                    in_FPUControlWord = oldcw;
+                    __cw = CONCAT22(uStack_3aa,oldcw);
                   }
                   else if ((dp->conversion < 'A') || ('Z' < dp->conversion)) {
                     *p = 'n';
@@ -13359,7 +13722,7 @@ LAB_0805a159:
                     p[2] = 'N';
                     p = p + 3;
                   }
-                  if ((has_width != 0) && ((uint)((int)p - (int)tmp) < width)) {
+                  if ((has_width != L'\0') && ((uint)((int)p - (int)tmp) < width)) {
                     pad = (size_t)(tmp + (width - (int)p));
                     end = p + (int)(tmp + (width - (int)p));
                     if ((flags & 2U) == 0) {
@@ -13399,14 +13762,14 @@ LAB_0805a159:
                   count = (size_t)(p + -(int)tmp);
                   if (tmp_length <= count) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a591;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805a591;
                     abort();
                   }
                   if ((char *)(allocated - length) <= count) {
-                    *(size_t *)(*pauVar10 + 4) = count;
-                    *(size_t *)*pauVar10 = length;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a5c7;
-                    n_1 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                    *(size_t *)((int)plVar11 + 4) = count;
+                    *(size_t *)plVar11 = length;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805a5c7;
+                    n_1 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                     if (allocated < n_1) {
                       if (allocated == 0) {
                         local_4ac = 0xc;
@@ -13426,26 +13789,26 @@ LAB_0805a159:
                       }
                       memory_size_2 = allocated;
                       if (allocated != 0xffffffff) {
-                        if ((result == local_470) || (result == (char *)0x0)) {
-                          *(size_t *)*pauVar10 = allocated;
-                          *(undefined4 *)(pauVar10[-1] + 8) = 0x805a688;
-                          memory_2 = (char *)malloc(*(size_t *)*pauVar10);
+                        if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                          *(size_t *)plVar11 = allocated;
+                          *(undefined4 *)((int)plVar11 + -4) = 0x805a688;
+                          memory_2 = (char *)malloc(*(size_t *)plVar11);
                         }
                         else {
-                          *(size_t *)(*pauVar10 + 4) = allocated;
-                          *(char **)*pauVar10 = result;
-                          *(undefined4 *)(pauVar10[-1] + 8) = 0x805a6a8;
-                          memory_2 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4))
-                          ;
+                          *(size_t *)((int)plVar11 + 4) = allocated;
+                          *(char **)plVar11 = result;
+                          *(undefined4 *)((int)plVar11 + -4) = 0x805a6a8;
+                          memory_2 = (char *)realloc(*(void **)plVar11,
+                                                     (size_t)*(void **)((int)plVar11 + 4));
                         }
                         if (memory_2 != (char *)0x0) {
-                          if ((result == local_470) && (length != 0)) {
-                            *(size_t *)(*pauVar10 + 8) = length;
-                            *(char **)(*pauVar10 + 4) = result;
-                            *(char **)*pauVar10 = memory_2;
-                            *(undefined4 *)(pauVar10[-1] + 8) = 0x805a6f4;
-                            memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
-                                   *(size_t *)(*pauVar10 + 8));
+                          if ((result == resultbuf_local) && (length != 0)) {
+                            *(size_t *)((int)plVar11 + 8) = length;
+                            *(char **)((int)plVar11 + 4) = result;
+                            *(char **)plVar11 = memory_2;
+                            *(undefined4 *)((int)plVar11 + -4) = 0x805a6f4;
+                            memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                                   (size_t)*(void **)((int)plVar11 + 8));
                           }
                           result = memory_2;
                           goto LAB_0805a700;
@@ -13455,16 +13818,17 @@ LAB_0805a159:
                     }
                   }
 LAB_0805a700:
-                  pcVar9 = result + length;
-                  *(size_t *)(*pauVar10 + 8) = count;
-                  *(char **)(*pauVar10 + 4) = tmp;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a72b;
-                  memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(size_t *)((int)plVar11 + 8) = count;
+                  *(char **)((int)plVar11 + 4) = tmp;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805a72b;
+                  memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                         (size_t)*(void **)((int)plVar11 + 8));
                   if (tmp != tmpbuf) {
-                    *(char **)*pauVar10 = tmp;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805a747;
-                    free(*(void **)*pauVar10);
+                    *(char **)plVar11 = tmp;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805a747;
+                    free(*(void **)plVar11);
                   }
                   length = length + count;
                   goto LAB_0805c77f;
@@ -13500,22 +13864,24 @@ LAB_0805a700:
               }
               if (dp->width_start != dp->width_end) {
                 n_2 = (size_t)(dp->width_end + -(int)dp->width_start);
-                pcVar9 = dp->width_start;
-                *(char **)(*pauVar10 + 8) = dp->width_end + -(int)dp->width_start;
-                *(char **)(*pauVar10 + 4) = pcVar9;
-                *(char **)*pauVar10 = fbp;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805a8a9;
-                memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
+                pcVar10 = dp->width_start;
+                *(char **)((int)plVar11 + 8) = dp->width_end + -(int)dp->width_start;
+                *(char **)((int)plVar11 + 4) = pcVar10;
+                *(char **)plVar11 = fbp;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805a8a9;
+                memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                       (size_t)*(void **)((int)plVar11 + 8));
                 fbp = fbp + n_2;
               }
               if (dp->precision_start != dp->precision_end) {
                 n_3 = (size_t)(dp->precision_end + -(int)dp->precision_start);
-                pcVar9 = dp->precision_start;
-                *(char **)(*pauVar10 + 8) = dp->precision_end + -(int)dp->precision_start;
-                *(char **)(*pauVar10 + 4) = pcVar9;
-                *(char **)*pauVar10 = fbp;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805a910;
-                memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8));
+                pcVar10 = dp->precision_start;
+                *(char **)((int)plVar11 + 8) = dp->precision_end + -(int)dp->precision_start;
+                *(char **)((int)plVar11 + 4) = pcVar10;
+                *(char **)plVar11 = fbp;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805a910;
+                memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                       (size_t)*(void **)((int)plVar11 + 8));
                 fbp = fbp + n_3;
               }
               if (type < TYPE_POINTER) {
@@ -13545,26 +13911,26 @@ LAB_0805a977:
               if (dp->width_arg_index != 0xffffffff) {
                 if (a.arg[dp->width_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805a9f0;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805a9f0;
                   abort();
                 }
-                prefixes[0] = *(int *)&a.arg[dp->width_arg_index].a;
+                prefixes[0] = a.arg[dp->width_arg_index].a.a_int;
                 prefix_count = 1;
               }
               if (dp->precision_arg_index != 0xffffffff) {
                 if (a.arg[dp->precision_arg_index].type != TYPE_INT) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805aa4b;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805aa4b;
                   abort();
                 }
-                prefixes[prefix_count] = *(int *)&a.arg[dp->precision_arg_index].a;
+                prefixes[prefix_count] = a.arg[dp->precision_arg_index].a.a_int;
                 prefix_count = prefix_count + 1;
               }
-              *(undefined4 *)(*pauVar10 + 4) = 2;
-              *(size_t *)*pauVar10 = length;
-              *(undefined4 *)(pauVar10[-1] + 8) = 0x805aa8d;
-              sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-              if (allocated < sVar8) {
+              *(void **)((int)plVar11 + 4) = (void *)0x2;
+              *(size_t *)plVar11 = length;
+              *(undefined4 *)((int)plVar11 + -4) = 0x805aa8d;
+              sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+              if (allocated < sVar9) {
                 if (allocated == 0) {
                   local_4a4 = 0xc;
                 }
@@ -13578,37 +13944,38 @@ LAB_0805a977:
                   local_4a4 = local_4a0;
                 }
                 allocated = local_4a4;
-                *(undefined4 *)(*pauVar10 + 4) = 2;
-                *(size_t *)*pauVar10 = length;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab00;
-                sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-                if (allocated < sVar8) {
-                  *(undefined4 *)(*pauVar10 + 4) = 2;
-                  *(size_t *)*pauVar10 = length;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab1e;
-                  allocated = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                *(void **)((int)plVar11 + 4) = (void *)0x2;
+                *(size_t *)plVar11 = length;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805ab00;
+                sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+                if (allocated < sVar9) {
+                  *(void **)((int)plVar11 + 4) = (void *)0x2;
+                  *(size_t *)plVar11 = length;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ab1e;
+                  allocated = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
                 }
                 memory_size_3 = allocated;
                 if (allocated != 0xffffffff) {
-                  if ((result == local_470) || (result == (char *)0x0)) {
-                    *(size_t *)*pauVar10 = allocated;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab62;
-                    memory_3 = (char *)malloc(*(size_t *)*pauVar10);
+                  if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                    *(size_t *)plVar11 = allocated;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805ab62;
+                    memory_3 = (char *)malloc(*(size_t *)plVar11);
                   }
                   else {
-                    *(size_t *)(*pauVar10 + 4) = allocated;
-                    *(char **)*pauVar10 = result;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ab82;
-                    memory_3 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                    *(size_t *)((int)plVar11 + 4) = allocated;
+                    *(char **)plVar11 = result;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805ab82;
+                    memory_3 = (char *)realloc(*(void **)plVar11,
+                                               (size_t)*(void **)((int)plVar11 + 4));
                   }
                   if (memory_3 != (char *)0x0) {
-                    if ((result == local_470) && (length != 0)) {
-                      *(size_t *)(*pauVar10 + 8) = length;
-                      *(char **)(*pauVar10 + 4) = result;
-                      *(char **)*pauVar10 = memory_3;
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805abce;
-                      memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
-                             *(size_t *)(*pauVar10 + 8));
+                    if ((result == resultbuf_local) && (length != 0)) {
+                      *(size_t *)((int)plVar11 + 8) = length;
+                      *(char **)((int)plVar11 + 4) = result;
+                      *(char **)plVar11 = memory_3;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805abce;
+                      memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                             (size_t)*(void **)((int)plVar11 + 8));
                     }
                     result = memory_3;
                     goto LAB_0805abda;
@@ -13619,9 +13986,9 @@ LAB_0805a977:
 LAB_0805abda:
               result[length] = '\0';
 LAB_0805abec:
-              iVar5 = prefixes[1];
-              iVar6 = prefixes[0];
-              __cw = 0xffffffff;
+              wVar5 = prefixes[1];
+              wVar6 = prefixes[0];
+              __cw = L'\xffffffff';
               maxlen = allocated - length;
               if ((int)maxlen < 0) {
                 maxlen = 0x7fffffff;
@@ -13629,807 +13996,807 @@ LAB_0805abec:
               switch(type) {
               default:
                     // WARNING: Subroutine does not return
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c32e;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c32e;
                 abort();
               case TYPE_SCHAR:
-                arg_3 = (int)*(char *)&a.arg[dp->arg_index].a;
+                arg_3 = (wchar_t)a.arg[dp->arg_index].a.a_schar;
                 local_4e4 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(int *)(pauVar10[1] + 4) = arg_3;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad2b;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0x10) = arg_3;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ad2b;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(int *)pauVar10[1] = arg_3;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805acd7;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0xc) = arg_3;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805acd7;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad99;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805ad99;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(int *)(pauVar10[1] + 8) = arg_3;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ad89;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wchar_t *)(plVar11 + 2) = arg_3;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ad89;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_UCHAR:
-                arg_4 = (uint)*(byte *)&a.arg[dp->arg_index].a;
+                arg_4 = (uint)a.arg[dp->arg_index].a.a_uchar;
                 local_4e8 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(uint *)(pauVar10[1] + 4) = arg_4;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ae7e;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(uint *)((int)plVar11 + 0x10) = arg_4;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ae7e;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(uint *)pauVar10[1] = arg_4;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ae2a;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(uint *)((int)plVar11 + 0xc) = arg_4;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ae2a;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805aeec;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805aeec;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(uint *)(pauVar10[1] + 8) = arg_4;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805aedc;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(uint *)(plVar11 + 2) = arg_4;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805aedc;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_SHORT:
-                arg_5 = (int)*(short *)&a.arg[dp->arg_index].a;
+                arg_5 = (wchar_t)a.arg[dp->arg_index].a.a_short;
                 local_4ec = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(int *)(pauVar10[1] + 4) = arg_5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805afcf;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0x10) = arg_5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805afcf;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(int *)pauVar10[1] = arg_5;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805af7b;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0xc) = arg_5;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805af7b;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b03d;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b03d;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(int *)(pauVar10[1] + 8) = arg_5;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b02d;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wchar_t *)(plVar11 + 2) = arg_5;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b02d;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_USHORT:
-                arg_6 = (uint)*(ushort *)&a.arg[dp->arg_index].a;
+                arg_6 = (uint)a.arg[dp->arg_index].a.a_ushort;
                 local_4f0 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(uint *)(pauVar10[1] + 4) = arg_6;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b122;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(uint *)((int)plVar11 + 0x10) = arg_6;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b122;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(uint *)pauVar10[1] = arg_6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b0ce;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(uint *)((int)plVar11 + 0xc) = arg_6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b0ce;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b190;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b190;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(uint *)(pauVar10[1] + 8) = arg_6;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b180;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(uint *)(plVar11 + 2) = arg_6;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b180;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_INT:
-                arg_7 = *(int *)&a.arg[dp->arg_index].a;
+                arg_7 = a.arg[dp->arg_index].a.a_int;
                 local_4f4 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(int *)(pauVar10[1] + 4) = arg_7;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b271;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0x10) = arg_7;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b271;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(int *)pauVar10[1] = arg_7;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b21d;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0xc) = arg_7;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b21d;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b2df;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b2df;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(int *)(pauVar10[1] + 8) = arg_7;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b2cf;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wchar_t *)(plVar11 + 2) = arg_7;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b2cf;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_UINT:
-                arg_8 = *(uint *)&a.arg[dp->arg_index].a;
+                arg_8 = a.arg[dp->arg_index].a.a_uint;
                 local_4f8 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(uint *)(pauVar10[1] + 4) = arg_8;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b3c0;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(uint *)((int)plVar11 + 0x10) = arg_8;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b3c0;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(uint *)pauVar10[1] = arg_8;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b36c;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(uint *)((int)plVar11 + 0xc) = arg_8;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b36c;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b42e;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b42e;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(uint *)(pauVar10[1] + 8) = arg_8;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b41e;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(uint *)(plVar11 + 2) = arg_8;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b41e;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_LONGINT:
-                arg_9 = *(long *)&a.arg[dp->arg_index].a;
+                arg_9 = a.arg[dp->arg_index].a.a_longint;
                 local_4fc = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(long *)(pauVar10[1] + 4) = arg_9;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b50f;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(long *)((int)plVar11 + 0x10) = arg_9;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b50f;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(long *)pauVar10[1] = arg_9;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b4bb;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(long *)((int)plVar11 + 0xc) = arg_9;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b4bb;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b57d;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b57d;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(long *)(pauVar10[1] + 8) = arg_9;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b56d;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(long *)(plVar11 + 2) = arg_9;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b56d;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_ULONGINT:
-                arg_10 = *(ulong *)&a.arg[dp->arg_index].a;
+                arg_10 = a.arg[dp->arg_index].a.a_ulongint;
                 local_500 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(ulong *)(pauVar10[1] + 4) = arg_10;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b65e;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(ulong *)((int)plVar11 + 0x10) = arg_10;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b65e;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(ulong *)pauVar10[1] = arg_10;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b60a;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(ulong *)((int)plVar11 + 0xc) = arg_10;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b60a;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b6cc;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b6cc;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(ulong *)(pauVar10[1] + 8) = arg_10;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b6bc;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(ulong *)(plVar11 + 2) = arg_10;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b6bc;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_LONGLONGINT:
-                arg_11._4_4_ = *(undefined4 *)((int)&a.arg[dp->arg_index].a + 4);
-                arg_11._0_4_ = *(undefined4 *)&a.arg[dp->arg_index].a;
+                arg_11._4_4_ = *(void **)((int)&a.arg[dp->arg_index].a + 4);
+                arg_11._0_4_ = (void *)a.arg[dp->arg_index].a.a_int;
                 local_504 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 4) = (undefined4)arg_11;
-                  *(undefined4 *)(pauVar10[1] + 8) = arg_11._4_4_;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b7ca;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(void **)((int)plVar11 + 0x10) = (void *)arg_11;
+                  *(void **)(plVar11 + 2) = arg_11._4_4_;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b7ca;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(undefined4 *)pauVar10[1] = (undefined4)arg_11;
-                  *(undefined4 *)(pauVar10[1] + 4) = arg_11._4_4_;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b76c;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(void **)((int)plVar11 + 0xc) = (void *)arg_11;
+                  *(void **)((int)plVar11 + 0x10) = arg_11._4_4_;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b76c;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b842;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b842;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 8) = (undefined4)arg_11;
-                  *(undefined4 *)pauVar10[2] = arg_11._4_4_;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b832;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x1c) = &_cw;
+                  *(void **)(plVar11 + 2) = (void *)arg_11;
+                  *(void **)((int)plVar11 + 0x18) = arg_11._4_4_;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b832;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_ULONGLONGINT:
-                arg_12._4_4_ = *(undefined4 *)((int)&a.arg[dp->arg_index].a + 4);
-                arg_12._0_4_ = *(undefined4 *)&a.arg[dp->arg_index].a;
+                arg_12._4_4_ = *(void **)((int)&a.arg[dp->arg_index].a + 4);
+                arg_12._0_4_ = (void *)a.arg[dp->arg_index].a.a_int;
                 local_508 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 4) = (undefined4)arg_12;
-                  *(undefined4 *)(pauVar10[1] + 8) = arg_12._4_4_;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b940;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(void **)((int)plVar11 + 0x10) = (void *)arg_12;
+                  *(void **)(plVar11 + 2) = arg_12._4_4_;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b940;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(undefined4 *)pauVar10[1] = (undefined4)arg_12;
-                  *(undefined4 *)(pauVar10[1] + 4) = arg_12._4_4_;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b8e2;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(void **)((int)plVar11 + 0xc) = (void *)arg_12;
+                  *(void **)((int)plVar11 + 0x10) = arg_12._4_4_;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b8e2;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805b9b8;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805b9b8;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 8) = (undefined4)arg_12;
-                  *(undefined4 *)pauVar10[2] = arg_12._4_4_;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805b9a8;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x1c) = &_cw;
+                  *(void **)(plVar11 + 2) = (void *)arg_12;
+                  *(void **)((int)plVar11 + 0x18) = arg_12._4_4_;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805b9a8;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_DOUBLE:
-                arg_13 = *(double *)&a.arg[dp->arg_index].a;
+                arg_13 = a.arg[dp->arg_index].a.a_double;
                 local_50c = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(double *)(pauVar10[1] + 4) = arg_13;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ba99;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(double *)((int)plVar11 + 0x10) = arg_13;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ba99;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(double *)pauVar10[1] = arg_13;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ba45;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(double *)((int)plVar11 + 0xc) = arg_13;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ba45;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bb07;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805bb07;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
-                  *(double *)(pauVar10[1] + 8) = arg_13;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805baf7;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x1c) = &_cw;
+                  *(double *)(plVar11 + 2) = arg_13;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805baf7;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_LONGDOUBLE:
-                sVar8 = dp->arg_index;
-                arg_14._8_4_ = *(undefined4 *)((int)&a.arg[sVar8].a + 8);
-                arg_14._4_4_ = *(undefined4 *)((int)&a.arg[sVar8].a + 4);
-                arg_14._0_4_ = *(undefined4 *)&a.arg[sVar8].a;
+                sVar9 = dp->arg_index;
+                unique0x00007a80 = *(void **)((int)&a.arg[sVar9].a + 8);
+                arg_14._4_4_ = *(void **)((int)&a.arg[sVar9].a + 4);
+                arg_14._0_4_ = (void *)a.arg[sVar9].a.a_int;
                 local_510 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[2] + 4) = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 4) = arg_14._0_4_;
-                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._4_4_;
-                  *(undefined4 *)pauVar10[2] = arg_14._8_4_;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bc22;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x1c) = &_cw;
+                  *(void **)((int)plVar11 + 0x10) = arg_14._0_4_;
+                  *(void **)(plVar11 + 2) = arg_14._4_4_;
+                  *(void **)((int)plVar11 + 0x18) = stack0xfffffbac;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bc22;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(undefined4 *)pauVar10[1] = arg_14._0_4_;
-                  *(undefined4 *)(pauVar10[1] + 4) = arg_14._4_4_;
-                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._8_4_;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bbba;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(void **)((int)plVar11 + 0xc) = arg_14._0_4_;
+                  *(void **)((int)plVar11 + 0x10) = arg_14._4_4_;
+                  *(void **)(plVar11 + 2) = stack0xfffffbac;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bbba;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bca4;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805bca4;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[2] + 8) = &_cw;
-                  *(undefined4 *)(pauVar10[1] + 8) = arg_14._0_4_;
-                  *(undefined4 *)pauVar10[2] = arg_14._4_4_;
-                  *(undefined4 *)(pauVar10[2] + 4) = arg_14._8_4_;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bc94;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x20) = &_cw;
+                  *(void **)(plVar11 + 2) = arg_14._0_4_;
+                  *(void **)((int)plVar11 + 0x18) = arg_14._4_4_;
+                  *(void **)((int)plVar11 + 0x1c) = stack0xfffffbac;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bc94;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_CHAR:
-                arg_15 = *(int *)&a.arg[dp->arg_index].a;
+                arg_15 = a.arg[dp->arg_index].a.a_int;
                 local_514 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(int *)(pauVar10[1] + 4) = arg_15;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bd85;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0x10) = arg_15;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bd85;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(int *)pauVar10[1] = arg_15;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bd31;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wchar_t *)((int)plVar11 + 0xc) = arg_15;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bd31;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bdf3;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805bdf3;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(int *)(pauVar10[1] + 8) = arg_15;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bde3;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wchar_t *)(plVar11 + 2) = arg_15;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bde3;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_WIDE_CHAR:
-                arg_16 = *(wint_t *)&a.arg[dp->arg_index].a;
+                arg_16 = a.arg[dp->arg_index].a.a_wide_char;
                 local_518 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(wint_t *)(pauVar10[1] + 4) = arg_16;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bed4;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wint_t *)((int)plVar11 + 0x10) = arg_16;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bed4;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(wint_t *)pauVar10[1] = arg_16;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805be80;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wint_t *)((int)plVar11 + 0xc) = arg_16;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805be80;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805bf42;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805bf42;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(wint_t *)(pauVar10[1] + 8) = arg_16;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bf32;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wint_t *)(plVar11 + 2) = arg_16;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bf32;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_STRING:
-                arg_17 = *(char **)&a.arg[dp->arg_index].a;
+                arg_17 = a.arg[dp->arg_index].a.a_string;
                 local_51c = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(char **)(pauVar10[1] + 4) = arg_17;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c023;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(char **)((int)plVar11 + 0x10) = arg_17;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c023;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(char **)pauVar10[1] = arg_17;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805bfcf;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(char **)((int)plVar11 + 0xc) = arg_17;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805bfcf;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c091;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c091;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(char **)(pauVar10[1] + 8) = arg_17;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c081;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(char **)(plVar11 + 2) = arg_17;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c081;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_WIDE_STRING:
-                arg_18 = *(wchar_t **)&a.arg[dp->arg_index].a;
+                arg_18 = a.arg[dp->arg_index].a.a_wide_string;
                 local_520 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(wchar_t **)(pauVar10[1] + 4) = arg_18;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c172;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(wchar_t **)((int)plVar11 + 0x10) = arg_18;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c172;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(wchar_t **)pauVar10[1] = arg_18;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c11e;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(wchar_t **)((int)plVar11 + 0xc) = arg_18;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c11e;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c1e0;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c1e0;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(wchar_t **)(pauVar10[1] + 8) = arg_18;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c1d0;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(wchar_t **)(plVar11 + 2) = arg_18;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c1d0;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 break;
               case TYPE_POINTER:
-                arg_19 = *(void **)&a.arg[dp->arg_index].a;
+                arg_19 = a.arg[dp->arg_index].a.a_pointer;
                 local_524 = prefix_count;
                 if (prefix_count == 1) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 8) = &_cw;
-                  *(void **)(pauVar10[1] + 4) = arg_19;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c2c1;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)(plVar11 + 2) = &_cw;
+                  *(void **)((int)plVar11 + 0x10) = arg_19;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c2c1;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else if (prefix_count == 0) {
-                  pcVar9 = result + length;
-                  *(fpucw_t **)(pauVar10[1] + 4) = &_cw;
-                  *(void **)pauVar10[1] = arg_19;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c26d;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x10) = &_cw;
+                  *(void **)((int)plVar11 + 0xc) = arg_19;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c26d;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
                 else {
                   if (prefix_count != 2) {
                     // WARNING: Subroutine does not return
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c329;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c329;
                     abort();
                   }
-                  pcVar9 = result + length;
-                  *(fpucw_t **)pauVar10[2] = &_cw;
-                  *(void **)(pauVar10[1] + 8) = arg_19;
-                  *(int *)(pauVar10[1] + 4) = iVar5;
-                  *(int *)pauVar10[1] = iVar6;
-                  *(char **)(*pauVar10 + 8) = buf;
-                  *(size_t *)(*pauVar10 + 4) = maxlen;
-                  *(char **)*pauVar10 = pcVar9;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c31c;
-                  retcount = snprintf(*(char **)*pauVar10,*(size_t *)(*pauVar10 + 4),
-                                      *(char **)(*pauVar10 + 8));
+                  pcVar10 = result + length;
+                  *(fpucw_t **)((int)plVar11 + 0x18) = &_cw;
+                  *(void **)(plVar11 + 2) = arg_19;
+                  *(wchar_t *)((int)plVar11 + 0x10) = wVar5;
+                  *(wchar_t *)((int)plVar11 + 0xc) = wVar6;
+                  *(char **)((int)plVar11 + 8) = buf;
+                  *(size_t *)((int)plVar11 + 4) = maxlen;
+                  *(char **)plVar11 = pcVar10;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c31c;
+                  retcount = snprintf(*(char **)plVar11,(size_t)*(void **)((int)plVar11 + 4),
+                                      *(char **)((int)plVar11 + 8));
                 }
               }
-              if ((int)__cw < 0) {
+              if (__cw < L'\0') {
                 if (fbp[1] != '\0') {
                   fbp[1] = '\0';
                   goto LAB_0805abec;
                 }
-                if (retcount < 0) {
+                if (retcount < L'\0') {
                   if ((int)allocated < 0) {
                     local_49c = -1;
                   }
                   else {
                     local_49c = allocated * 2;
                   }
-                  *(undefined **)(*pauVar10 + 4) = &DAT_0000000c;
-                  *(int *)*pauVar10 = local_49c;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c3ef;
-                  sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-                  if (allocated < sVar8) {
+                  *(void **)((int)plVar11 + 4) = (void *)0xc;
+                  *(int *)plVar11 = local_49c;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c3ef;
+                  sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+                  if (allocated < sVar9) {
                     if (allocated == 0) {
                       local_498 = 0xc;
                     }
@@ -14443,29 +14810,30 @@ LAB_0805abec:
                       local_498 = local_494;
                     }
                     allocated = local_498;
-                    if (local_498 < sVar8) {
-                      allocated = sVar8;
+                    if (local_498 < sVar9) {
+                      allocated = sVar9;
                     }
                     if (allocated == 0xffffffff) goto out_of_memory;
-                    if ((result == local_470) || (result == (char *)0x0)) {
-                      *(size_t *)*pauVar10 = allocated;
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c4b0;
-                      memory_4 = (char *)malloc(*(size_t *)*pauVar10);
+                    if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                      *(size_t *)plVar11 = allocated;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805c4b0;
+                      memory_4 = (char *)malloc(*(size_t *)plVar11);
                     }
                     else {
-                      *(size_t *)(*pauVar10 + 4) = allocated;
-                      *(char **)*pauVar10 = result;
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c4d0;
-                      memory_4 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                      *(size_t *)((int)plVar11 + 4) = allocated;
+                      *(char **)plVar11 = result;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805c4d0;
+                      memory_4 = (char *)realloc(*(void **)plVar11,
+                                                 (size_t)*(void **)((int)plVar11 + 4));
                     }
                     if (memory_4 == (char *)0x0) goto out_of_memory;
-                    if ((result == local_470) && (length != 0)) {
-                      *(size_t *)(*pauVar10 + 8) = length;
-                      *(char **)(*pauVar10 + 4) = result;
-                      *(char **)*pauVar10 = memory_4;
-                      *(undefined4 *)(pauVar10[-1] + 8) = 0x805c51c;
-                      memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),
-                             *(size_t *)(*pauVar10 + 8));
+                    if ((result == resultbuf_local) && (length != 0)) {
+                      *(size_t *)((int)plVar11 + 8) = length;
+                      *(char **)((int)plVar11 + 4) = result;
+                      *(char **)plVar11 = memory_4;
+                      *(undefined4 *)((int)plVar11 + -4) = 0x805c51c;
+                      memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                             (size_t)*(void **)((int)plVar11 + 8));
                     }
                     result = memory_4;
                   }
@@ -14474,81 +14842,81 @@ LAB_0805abec:
                 __cw = retcount;
               }
               else {
-                if ((__cw < maxlen) && (result[__cw + length] != '\0')) {
+                if (((uint)__cw < maxlen) && (result[__cw + length] != '\0')) {
                     // WARNING: Subroutine does not return
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c364;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c364;
                   abort();
                 }
-                if ((int)__cw < retcount) {
+                if (__cw < retcount) {
                   __cw = retcount;
                 }
               }
-              if ((int)__cw < 0) {
-                if ((result != local_470) && (result != (char *)0x0)) {
-                  *(char **)*pauVar10 = result;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c568;
-                  free(*(void **)*pauVar10);
+              if (__cw < L'\0') {
+                if ((result != resultbuf_local) && (result != (char *)0x0)) {
+                  *(char **)plVar11 = result;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c568;
+                  free(*(void **)plVar11);
                 }
                 if (buf_malloced != (char *)0x0) {
-                  *(char **)*pauVar10 = buf_malloced;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c57f;
-                  free(*(void **)*pauVar10);
+                  *(char **)plVar11 = buf_malloced;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c57f;
+                  free(*(void **)plVar11);
                 }
-                *(char_directive **)*pauVar10 = d.dir;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c58d;
-                free(*(void **)*pauVar10);
+                *(char_directive **)plVar11 = d.dir;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c58d;
+                free(*(void **)plVar11);
                 if (a.arg != (argument *)0x0) {
-                  *(argument **)*pauVar10 = a.arg;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805c5a5;
-                  free(*(void **)*pauVar10);
+                  *(argument **)plVar11 = a.arg;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805c5a5;
+                  free(*(void **)plVar11);
                 }
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c5aa;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c5aa;
                 piVar7 = __errno_location();
                 *piVar7 = 0x16;
                 local_4d4 = (char *)0x0;
                 goto LAB_0805cab6;
               }
-              if (maxlen <= __cw + 1) {
+              if (maxlen <= (uint)(__cw + L'\x01')) {
                 if (maxlen == 0x7fffffff) {
-                  if ((result != local_470) && (result != (char *)0x0)) {
-                    *(char **)*pauVar10 = result;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c9eb;
-                    free(*(void **)*pauVar10);
+                  if ((result != resultbuf_local) && (result != (char *)0x0)) {
+                    *(char **)plVar11 = result;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c9eb;
+                    free(*(void **)plVar11);
                   }
                   if (buf_malloced != (char *)0x0) {
-                    *(char **)*pauVar10 = buf_malloced;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca02;
-                    free(*(void **)*pauVar10);
+                    *(char **)plVar11 = buf_malloced;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805ca02;
+                    free(*(void **)plVar11);
                   }
-                  *(char_directive **)*pauVar10 = d.dir;
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca10;
-                  free(*(void **)*pauVar10);
+                  *(char_directive **)plVar11 = d.dir;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ca10;
+                  free(*(void **)plVar11);
                   if (a.arg != (argument *)0x0) {
-                    *(argument **)*pauVar10 = a.arg;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca28;
-                    free(*(void **)*pauVar10);
+                    *(argument **)plVar11 = a.arg;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805ca28;
+                    free(*(void **)plVar11);
                   }
-                  *(undefined4 *)(pauVar10[-1] + 8) = 0x805ca2d;
+                  *(undefined4 *)((int)plVar11 + -4) = 0x805ca2d;
                   piVar7 = __errno_location();
                   *piVar7 = 0x4b;
                   local_4d4 = (char *)0x0;
                   goto LAB_0805cab6;
                 }
                 if ((int)allocated < 0) {
-                  local_490 = -1;
+                  local_490 = (void *)0xffffffff;
                 }
                 else {
-                  local_490 = allocated * 2;
+                  local_490 = (void *)(allocated * 2);
                 }
-                *(uint *)(*pauVar10 + 4) = __cw + 2;
-                *(size_t *)*pauVar10 = length;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c623;
-                sVar8 = xsum(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-                *(int *)(*pauVar10 + 4) = local_490;
-                *(size_t *)*pauVar10 = sVar8;
-                *(undefined4 *)(pauVar10[-1] + 8) = 0x805c635;
-                sVar8 = xmax(*(size_t *)*pauVar10,*(size_t *)(*pauVar10 + 4));
-                if (allocated < sVar8) {
+                *(void **)((int)plVar11 + 4) = (void *)(__cw + L'\x02');
+                *(size_t *)plVar11 = length;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c623;
+                sVar9 = xsum(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+                *(void **)((int)plVar11 + 4) = local_490;
+                *(size_t *)plVar11 = sVar9;
+                *(undefined4 *)((int)plVar11 + -4) = 0x805c635;
+                sVar9 = xmax(*(size_t *)plVar11,(size_t)*(void **)((int)plVar11 + 4));
+                if (allocated < sVar9) {
                   if (allocated == 0) {
                     local_48c = 0xc;
                   }
@@ -14562,29 +14930,30 @@ LAB_0805abec:
                     local_48c = local_488;
                   }
                   allocated = local_48c;
-                  if (local_48c < sVar8) {
-                    allocated = sVar8;
+                  if (local_48c < sVar9) {
+                    allocated = sVar9;
                   }
                   if (allocated == 0xffffffff) goto out_of_memory;
-                  if ((result == local_470) || (result == (char *)0x0)) {
-                    *(size_t *)*pauVar10 = allocated;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c6f6;
-                    memory_5 = (char *)malloc(*(size_t *)*pauVar10);
+                  if ((result == resultbuf_local) || (result == (char *)0x0)) {
+                    *(size_t *)plVar11 = allocated;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c6f6;
+                    memory_5 = (char *)malloc(*(size_t *)plVar11);
                   }
                   else {
-                    *(size_t *)(*pauVar10 + 4) = allocated;
-                    *(char **)*pauVar10 = result;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c716;
-                    memory_5 = (char *)realloc(*(void **)*pauVar10,*(size_t *)(*pauVar10 + 4));
+                    *(size_t *)((int)plVar11 + 4) = allocated;
+                    *(char **)plVar11 = result;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c716;
+                    memory_5 = (char *)realloc(*(void **)plVar11,
+                                               (size_t)*(void **)((int)plVar11 + 4));
                   }
                   if (memory_5 == (char *)0x0) goto out_of_memory;
-                  if ((result == local_470) && (length != 0)) {
-                    *(size_t *)(*pauVar10 + 8) = length;
-                    *(char **)(*pauVar10 + 4) = result;
-                    *(char **)*pauVar10 = memory_5;
-                    *(undefined4 *)(pauVar10[-1] + 8) = 0x805c762;
-                    memcpy(*(void **)*pauVar10,*(void **)(*pauVar10 + 4),*(size_t *)(*pauVar10 + 8))
-                    ;
+                  if ((result == resultbuf_local) && (length != 0)) {
+                    *(size_t *)((int)plVar11 + 8) = length;
+                    *(char **)((int)plVar11 + 4) = result;
+                    *(char **)plVar11 = memory_5;
+                    *(undefined4 *)((int)plVar11 + -4) = 0x805c762;
+                    memcpy(*(void **)plVar11,*(void **)((int)plVar11 + 4),
+                           (size_t)*(void **)((int)plVar11 + 8));
                   }
                   result = memory_5;
                 }
@@ -14600,26 +14969,27 @@ LAB_0805c77f:
         } while( true );
       }
       buf_memsize = buf_neededlength;
-      pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
+      plVar11 = (longdouble *)&stack0xfffffaa4;
       if (buf_neededlength != 0xffffffff) {
         buf = (char *)malloc(buf_neededlength);
-        pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
+        plVar11 = (longdouble *)&stack0xfffffaa4;
         if (buf != (char *)0x0) {
           buf_malloced = buf;
-          pauVar10 = (undefined (*) [12])&stack0xfffffaa4;
+          plVar11 = (longdouble *)&stack0xfffffaa4;
+          oldcw = in_FPUControlWord;
           goto LAB_08059831;
         }
       }
 out_of_memory_1:
-      *(char_directive **)pauVar10 = d.dir;
-      *(undefined4 *)((int)pauVar10 + -4) = 0x805ca89;
-      free(*(void **)pauVar10);
+      *(char_directive **)plVar11 = d.dir;
+      *(undefined4 *)((int)plVar11 + -4) = 0x805ca89;
+      free(*(void **)plVar11);
       if (a.arg != (argument *)0x0) {
-        *(argument **)pauVar10 = a.arg;
-        *(undefined4 *)((int)pauVar10 + -4) = 0x805caa1;
-        free(*(void **)pauVar10);
+        *(argument **)plVar11 = a.arg;
+        *(undefined4 *)((int)plVar11 + -4) = 0x805caa1;
+        free(*(void **)plVar11);
       }
-      *(undefined4 *)((int)pauVar10 + -4) = 0x805caa6;
+      *(undefined4 *)((int)plVar11 + -4) = 0x805caa6;
       piVar7 = __errno_location();
       *piVar7 = 0xc;
       local_4d4 = (char *)0x0;
@@ -14630,11 +15000,13 @@ LAB_0805cab6:
     return local_4d4;
   }
                     // WARNING: Subroutine does not return
-  *(undefined4 *)((int)pauVar10 + -4) = 0x805cacd;
+  *(undefined4 *)((int)plVar11 + -4) = 0x805cacd;
   __stack_chk_fail();
 }
 
 
+
+// WARNING: Unknown calling convention
 
 size_t xsum4(size_t size1,size_t size2,size_t size3,size_t size4)
 
@@ -14649,6 +15021,8 @@ size_t xsum4(size_t size1,size_t size2,size_t size3,size_t size4)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t xmax(size_t size1,size_t size2)
 
 {
@@ -14662,6 +15036,8 @@ size_t xmax(size_t size1,size_t size2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 size_t xsum(size_t size1,size_t size2)
 
@@ -14678,6 +15054,8 @@ size_t xsum(size_t size1,size_t size2)
 
 
 
+// WARNING: Unknown calling convention
+
 int rpl_isnanl(longdouble x)
 
 {
@@ -14685,10 +15063,10 @@ int rpl_isnanl(longdouble x)
   memory_double m;
   uint exponent;
   
-  if (((undefined  [12])x & (undefined  [12])0x7fff) == (undefined  [12])0x0) {
+  if (((unkuint10)x & 0x7fff) == 0) {
     local_20 = x._4_4_ >> 0x1f;
   }
-  else if ((x._8_4_ & 0x7fff) == 0x7fff) {
+  else if ((x._8_2_ & 0x7fff) == 0x7fff) {
     local_20 = (uint)((x._0_4_ | x._4_4_ ^ 0x80000000) != 0);
   }
   else {
@@ -14699,7 +15077,9 @@ int rpl_isnanl(longdouble x)
 
 
 
-int printf_fetchargs(va_list args,arguments *a)
+// WARNING: Unknown calling convention
+
+wchar_t printf_fetchargs(va_list args,arguments *a)
 
 {
   va_list pcVar1;
@@ -14713,123 +15093,125 @@ int printf_fetchargs(va_list args,arguments *a)
   for (; i < a->count; i = i + 1) {
     switch(ap->type) {
     default:
-      return -1;
+      return L'\xffffffff';
     case TYPE_SCHAR:
-      *(char *)&ap->a = (char)*(undefined4 *)args;
+      (ap->a).a_schar = (char)*(undefined4 *)args;
       args = args + 4;
       break;
     case TYPE_UCHAR:
-      *(char *)&ap->a = (char)*(undefined4 *)args;
+      (ap->a).a_schar = (char)*(undefined4 *)args;
       args = args + 4;
       break;
     case TYPE_SHORT:
-      *(short *)&ap->a = (short)*(undefined4 *)args;
+      (ap->a).a_short = (short)*(undefined4 *)args;
       args = args + 4;
       break;
     case TYPE_USHORT:
-      *(short *)&ap->a = (short)*(undefined4 *)args;
+      (ap->a).a_short = (short)*(undefined4 *)args;
       args = args + 4;
       break;
     case TYPE_INT:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_UINT:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_LONGINT:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_ULONGINT:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_LONGLONGINT:
       uVar2 = *(undefined4 *)(args + 4);
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       *(undefined4 *)((int)&ap->a + 4) = uVar2;
       args = args + 8;
       break;
     case TYPE_ULONGLONGINT:
       uVar2 = *(undefined4 *)(args + 4);
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       *(undefined4 *)((int)&ap->a + 4) = uVar2;
       args = args + 8;
       break;
     case TYPE_DOUBLE:
-      *(undefined8 *)&ap->a = *(undefined8 *)args;
+      (ap->a).a_longlongint = *(longlong *)args;
       args = args + 8;
       break;
     case TYPE_LONGDOUBLE:
       uVar2 = *(undefined4 *)(args + 8);
       uVar3 = *(undefined4 *)(args + 4);
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       *(undefined4 *)((int)&ap->a + 4) = uVar3;
       *(undefined4 *)((int)&ap->a + 8) = uVar2;
       args = args + 0xc;
       break;
     case TYPE_CHAR:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_WIDE_CHAR:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_STRING:
       pcVar1 = args + 4;
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = pcVar1;
-      if (*(int *)&ap->a == 0) {
-        *(char **)&ap->a = "(NULL)";
+      if ((ap->a).a_int == L'\0') {
+        (ap->a).a_string = "(NULL)";
       }
       break;
     case TYPE_WIDE_STRING:
       pcVar1 = args + 4;
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = pcVar1;
-      if (*(int *)&ap->a == 0) {
-        *(wchar_t **)&ap->a = printf_fetchargs::wide_null_string;
+      if ((ap->a).a_int == L'\0') {
+        (ap->a).a_string = (char *)L"(NULL)";
       }
       break;
     case TYPE_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_COUNT_SCHAR_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_COUNT_SHORT_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_COUNT_INT_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_COUNT_LONGINT_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
       break;
     case TYPE_COUNT_LONGLONGINT_POINTER:
-      *(undefined4 *)&ap->a = *(undefined4 *)args;
+      (ap->a).a_int = *(wchar_t *)args;
       args = args + 4;
     }
     ap = ap + 1;
   }
-  return 0;
+  return L'\0';
 }
 
 
 
-int printf_parse(char *format,char_directives *d,arguments *a)
+// WARNING: Unknown calling convention
+
+wchar_t printf_parse(char *format,char_directives *d,arguments *a)
 
 {
-  size_t sVar1;
-  char *pcVar2;
+  char *pcVar1;
+  size_t sVar2;
   char_directive *pcVar3;
   int *piVar4;
   uint uVar5;
@@ -14852,7 +15234,7 @@ int printf_parse(char *format,char_directives *d,arguments *a)
   argument *memory_2;
   size_t memory_size_2;
   size_t n_5;
-  int flags;
+  wchar_t flags;
   arg_type type;
   size_t precision_length;
   argument *memory_1;
@@ -14890,27 +15272,27 @@ int printf_parse(char *format,char_directives *d,arguments *a)
 out_of_memory_1:
     piVar4 = __errno_location();
     *piVar4 = 0xc;
-    return -1;
+    return L'\xffffffff';
   }
   a->count = 0;
   a_allocated = 0;
   a->arg = (argument *)0x0;
-  pcVar2 = cp;
+  pcVar1 = cp;
 LAB_0805dc15:
   do {
-    cp = pcVar2;
+    cp = pcVar1;
     if (*cp == '\0') {
       d->dir[d->count].dir_start = cp;
       d->max_width_length = max_width_length;
       d->max_precision_length = max_precision_length;
-      return 0;
+      return L'\0';
     }
-    pcVar2 = cp + 1;
+    pcVar1 = cp + 1;
   } while (*cp != '%');
   arg_index = 0xffffffff;
   pcVar3 = d->dir + d->count;
   pcVar3->dir_start = cp;
-  pcVar3->flags = 0;
+  pcVar3->flags = L'\0';
   pcVar3->width_start = (char *)0x0;
   pcVar3->width_end = (char *)0x0;
   pcVar3->width_arg_index = 0xffffffff;
@@ -14918,13 +15300,13 @@ LAB_0805dc15:
   pcVar3->precision_end = (char *)0x0;
   pcVar3->precision_arg_index = 0xffffffff;
   pcVar3->arg_index = 0xffffffff;
-  cp = pcVar2;
-  if (('/' < *pcVar2) && (np = pcVar2, *pcVar2 < ':')) {
+  cp = pcVar1;
+  if (('/' < *pcVar1) && (np = pcVar1, *pcVar1 < ':')) {
     for (; ('/' < *np && (*np < ':')); np = np + 1) {
     }
     if (*np == '$') {
       n = 0;
-      for (np = pcVar2; ('/' < *np && (*np < ':')); np = np + 1) {
+      for (np = pcVar1; ('/' < *np && (*np < ':')); np = np + 1) {
         if (n < 0x1999999a) {
           local_c8 = n * 10;
         }
@@ -15001,9 +15383,9 @@ LAB_0805dc15:
     if (uVar5 < a_allocated) {
 LAB_0805d399:
       while (a->count <= uVar5) {
-        sVar1 = a->count;
-        a->arg[sVar1].type = TYPE_NONE;
-        a->count = sVar1 + 1;
+        sVar2 = a->count;
+        a->arg[sVar2].type = TYPE_NONE;
+        a->count = sVar2 + 1;
       }
       if (a->arg[uVar5].type == TYPE_NONE) {
         a->arg[uVar5].type = TYPE_INT;
@@ -15098,9 +15480,9 @@ LAB_0805d453:
     if (uVar5 < a_allocated) {
 LAB_0805d6b6:
       while (a->count <= uVar5) {
-        sVar1 = a->count;
-        a->arg[sVar1].type = TYPE_NONE;
-        a->count = sVar1 + 1;
+        sVar2 = a->count;
+        a->arg[sVar2].type = TYPE_NONE;
+        a->count = sVar2 + 1;
       }
       if (a->arg[uVar5].type == TYPE_NONE) {
         a->arg[uVar5].type = TYPE_INT;
@@ -15139,7 +15521,7 @@ LAB_0805d6b6:
     goto out_of_memory;
   }
 LAB_0805d75c:
-  flags = 0;
+  flags = L'\0';
   while( true ) {
     while( true ) {
       while( true ) {
@@ -15153,11 +15535,11 @@ LAB_0805d75c:
             cp = cp + 1;
           }
           if (*cp != 'l') break;
-          flags = flags + 8;
+          flags = flags + L'\b';
           cp = cp + 1;
         }
         if (*cp != 'j') break;
-        flags = flags + 0x10;
+        flags = flags + L'\x10';
         cp = cp + 1;
       }
       if ((*cp != 'z') && (*cp != 'Z')) break;
@@ -15167,7 +15549,7 @@ LAB_0805d75c:
     cp = cp + 1;
   }
   c = *cp;
-  pcVar2 = cp + 1;
+  pcVar1 = cp + 1;
   switch(c) {
   case '%':
     type = TYPE_NONE;
@@ -15182,7 +15564,7 @@ LAB_0805d75c:
   case 'e':
   case 'f':
   case 'g':
-    if ((flags < 0x10) && ((flags & 4U) == 0)) {
+    if ((flags < L'\x10') && ((flags & 4U) == 0)) {
       type = TYPE_DOUBLE;
     }
     else {
@@ -15201,8 +15583,8 @@ LAB_0805d75c:
   case 'o':
   case 'u':
   case 'x':
-    if ((flags < 0x10) && ((flags & 4U) == 0)) {
-      if (flags < 8) {
+    if ((flags < L'\x10') && ((flags & 4U) == 0)) {
+      if (flags < L'\b') {
         if ((flags & 2U) == 0) {
           if ((flags & 1U) == 0) {
             type = TYPE_UINT;
@@ -15224,7 +15606,7 @@ LAB_0805d75c:
     }
     break;
   case 'c':
-    if (flags < 8) {
+    if (flags < L'\b') {
       type = TYPE_CHAR;
     }
     else {
@@ -15233,8 +15615,8 @@ LAB_0805d75c:
     break;
   case 'd':
   case 'i':
-    if ((flags < 0x10) && ((flags & 4U) == 0)) {
-      if (flags < 8) {
+    if ((flags < L'\x10') && ((flags & 4U) == 0)) {
+      if (flags < L'\b') {
         if ((flags & 2U) == 0) {
           if ((flags & 1U) == 0) {
             type = TYPE_INT;
@@ -15256,8 +15638,8 @@ LAB_0805d75c:
     }
     break;
   case 'n':
-    if ((flags < 0x10) && ((flags & 4U) == 0)) {
-      if (flags < 8) {
+    if ((flags < L'\x10') && ((flags & 4U) == 0)) {
+      if (flags < L'\b') {
         if ((flags & 2U) == 0) {
           if ((flags & 1U) == 0) {
             type = TYPE_COUNT_INT_POINTER;
@@ -15282,7 +15664,7 @@ LAB_0805d75c:
     type = TYPE_POINTER;
     break;
   case 's':
-    if (flags < 8) {
+    if (flags < L'\b') {
       type = TYPE_STRING;
     }
     else {
@@ -15300,9 +15682,9 @@ LAB_0805d75c:
   if (uVar5 < a_allocated) {
 LAB_0805db13:
     while (a->count <= uVar5) {
-      sVar1 = a->count;
-      a->arg[sVar1].type = TYPE_NONE;
-      a->count = sVar1 + 1;
+      sVar2 = a->count;
+      a->arg[sVar2].type = TYPE_NONE;
+      a->count = sVar2 + 1;
     }
     if (a->arg[uVar5].type == TYPE_NONE) {
       a->arg[uVar5].type = type;
@@ -15317,7 +15699,7 @@ error:
       }
       piVar4 = __errno_location();
       *piVar4 = 0x16;
-      return -1;
+      return L'\xffffffff';
     }
     goto LAB_0805db61;
   }
@@ -15352,7 +15734,7 @@ error:
   goto out_of_memory;
 LAB_0805db61:
   pcVar3->conversion = c;
-  pcVar3->dir_end = pcVar2;
+  pcVar3->dir_end = pcVar1;
   d->count = d->count + 1;
   if (d_allocated <= d->count) {
     if ((int)d_allocated < 0) {
@@ -15386,6 +15768,8 @@ out_of_memory:
 
 
 
+// WARNING: Unknown calling convention
+
 size_t xsum(size_t size1,size_t size2)
 
 {
@@ -15415,7 +15799,7 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   bool bVar9;
   uint local_20;
   uint local_18;
-  byte bStack20;
+  byte bStack_14;
   
   local_20 = 0;
   if ((int)param_2 < 0) {
@@ -15453,17 +15837,17 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       }
     }
     if ((uVar8 ^ 0x1f) != 0) {
-      bStack20 = (byte)(uVar8 ^ 0x1f);
-      bVar6 = 0x20 - bStack20;
-      uVar1 = (ulonglong)(param_3 >> (bVar6 & 0x1f) | param_4 << (bStack20 & 0x1f));
+      bStack_14 = (byte)(uVar8 ^ 0x1f);
+      bVar6 = 0x20 - bStack_14;
+      uVar1 = (ulonglong)(param_3 >> (bVar6 & 0x1f) | param_4 << (bStack_14 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_1 >> (bVar6 & 0x1f) | param_2 << (bStack20 & 0x1f));
+                       param_1 >> (bVar6 & 0x1f) | param_2 << (bStack_14 & 0x1f));
       uVar3 = uVar2 / uVar1;
       iVar5 = (int)uVar3;
       uVar8 = (uint)(uVar2 % uVar1);
-      lVar4 = (ulonglong)(param_3 << (bStack20 & 0x1f)) * (uVar3 & 0xffffffff);
+      lVar4 = (ulonglong)(param_3 << (bStack_14 & 0x1f)) * (uVar3 & 0xffffffff);
       uVar7 = (uint)((ulonglong)lVar4 >> 0x20);
-      if ((uVar8 < uVar7) || ((uVar8 == uVar7 && (param_1 << (bStack20 & 0x1f) < (uint)lVar4)))) {
+      if ((uVar8 < uVar7) || ((uVar8 == uVar7 && (param_1 << (bStack_14 & 0x1f) < (uint)lVar4)))) {
         uVar8 = 0;
         iVar5 = iVar5 + -1;
       }
@@ -15491,21 +15875,20 @@ LAB_0805dd85:
 
 
 
+// WARNING: Removing unreachable block (ram,0x0805e07a)
+
 undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  bool bVar7;
+  uint uVar2;
+  int iVar3;
+  bool bVar4;
   uint local_44;
   uint local_40;
   int local_34;
-  byte bStack48;
-  byte bStack44;
+  byte bStack_30;
+  byte bStack_2c;
   uint local_24;
   uint local_14;
   uint local_10;
@@ -15540,46 +15923,42 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   else {
     local_14 = local_24;
     if (local_40 <= local_10) {
-      uVar3 = 0x1f;
+      uVar2 = 0x1f;
       if (local_40 != 0) {
-        for (; local_40 >> uVar3 == 0; uVar3 = uVar3 - 1) {
+        for (; local_40 >> uVar2 == 0; uVar2 = uVar2 - 1) {
         }
       }
-      if ((uVar3 ^ 0x1f) == 0) {
+      if ((uVar2 ^ 0x1f) == 0) {
         if ((local_40 < local_10) || (local_44 <= local_24)) {
-          bVar7 = local_24 < local_44;
+          bVar4 = local_24 < local_44;
           local_24 = local_24 - local_44;
-          local_10 = (local_10 - local_40) - (uint)bVar7;
+          local_10 = (local_10 - local_40) - (uint)bVar4;
         }
         local_14 = local_24;
       }
       else {
-        bStack44 = (byte)(uVar3 ^ 0x1f);
-        bStack48 = 0x20 - bStack44;
-        uVar3 = local_44 >> (bStack48 & 0x1f) | local_40 << (bStack44 & 0x1f);
-        local_44 = local_44 << (bStack44 & 0x1f);
-        uVar1 = CONCAT44(local_10 >> (bStack48 & 0x1f),
-                         local_24 >> (bStack48 & 0x1f) | local_10 << (bStack44 & 0x1f));
-        uVar5 = (uint)(uVar1 % (ulonglong)uVar3);
-        local_24 = local_24 << (bStack44 & 0x1f);
-        lVar2 = (uVar1 / uVar3 & 0xffffffff) * (ulonglong)local_44;
-        uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
-        uVar4 = (uint)lVar2;
-        if ((uVar5 < uVar6) || ((uVar5 == uVar6 && (local_24 < uVar4)))) {
-          bVar7 = uVar4 < local_44;
-          uVar4 = uVar4 - local_44;
-          uVar6 = (uVar6 - uVar3) - (uint)bVar7;
+        bStack_2c = (byte)(uVar2 ^ 0x1f);
+        bStack_30 = 0x20 - bStack_2c;
+        uVar2 = local_44 >> (bStack_30 & 0x1f) | local_40 << (bStack_2c & 0x1f);
+        local_44 = local_44 << (bStack_2c & 0x1f);
+        uVar1 = CONCAT44(local_10 >> (bStack_30 & 0x1f),
+                         local_24 >> (bStack_30 & 0x1f) | local_10 << (bStack_2c & 0x1f));
+        iVar3 = (int)(uVar1 % (ulonglong)uVar2);
+        local_24 = local_24 << (bStack_2c & 0x1f);
+        uVar1 = (uVar1 / uVar2 & 0xffffffff) * (ulonglong)local_44;
+        if (CONCAT44(iVar3,local_24) < uVar1) {
+          uVar1 = uVar1 - CONCAT44(uVar2,local_44);
         }
-        local_10 = (uVar5 - uVar6) - (uint)(local_24 < uVar4);
-        local_14 = local_24 - uVar4 >> (bStack44 & 0x1f) | local_10 << (bStack48 & 0x1f);
-        local_10 = local_10 >> (bStack44 & 0x1f);
+        local_10 = (iVar3 - (int)(uVar1 >> 0x20)) - (uint)(local_24 < (uint)uVar1);
+        local_14 = local_24 - (uint)uVar1 >> (bStack_2c & 0x1f) | local_10 << (bStack_30 & 0x1f);
+        local_10 = local_10 >> (bStack_2c & 0x1f);
       }
     }
   }
   if (local_34 != 0) {
-    bVar7 = local_14 != 0;
+    bVar4 = local_14 != 0;
     local_14 = -local_14;
-    local_10 = -(local_10 + bVar7);
+    local_10 = -(local_10 + bVar4);
   }
   return CONCAT44(local_10,local_14);
 }
@@ -15606,8 +15985,9 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
     if (param_3 == 0) {
       param_3 = (uint)(1 / 0);
     }
-    return ((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) /
-           (ulonglong)param_3 & 0xffffffff | (ulonglong)param_2 / (ulonglong)param_3 << 0x20;
+    return CONCAT44(param_2 / param_3,
+                    (int)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) /
+                         (ulonglong)param_3));
   }
   if (param_4 <= param_2) {
     uVar7 = 0x1f;
@@ -15643,68 +16023,63 @@ LAB_0805e0f1:
 
 
 
+// WARNING: Removing unreachable block (ram,0x0805e2e2)
+
 ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  bool bVar7;
-  byte bStack36;
-  byte bStack32;
+  uint uVar2;
+  int iVar3;
+  bool bVar4;
+  byte bStack_24;
+  byte bStack_20;
   
   if (param_4 != 0) {
     if (param_4 <= param_2) {
-      uVar4 = 0x1f;
+      uVar2 = 0x1f;
       if (param_4 != 0) {
-        for (; param_4 >> uVar4 == 0; uVar4 = uVar4 - 1) {
+        for (; param_4 >> uVar2 == 0; uVar2 = uVar2 - 1) {
         }
       }
-      if ((uVar4 ^ 0x1f) == 0) {
+      if ((uVar2 ^ 0x1f) == 0) {
         if ((param_4 < param_2) || (param_3 <= param_1)) {
-          bVar7 = param_1 < param_3;
+          bVar4 = param_1 < param_3;
           param_1 = param_1 - param_3;
-          param_2 = (param_2 - param_4) - (uint)bVar7;
+          param_2 = (param_2 - param_4) - (uint)bVar4;
         }
       }
       else {
-        bStack32 = (byte)(uVar4 ^ 0x1f);
-        bStack36 = 0x20 - bStack32;
-        uVar4 = param_3 >> (bStack36 & 0x1f) | param_4 << (bStack32 & 0x1f);
-        param_3 = param_3 << (bStack32 & 0x1f);
-        uVar1 = CONCAT44(param_2 >> (bStack36 & 0x1f),
-                         param_1 >> (bStack36 & 0x1f) | param_2 << (bStack32 & 0x1f));
-        uVar5 = (uint)(uVar1 % (ulonglong)uVar4);
-        param_1 = param_1 << (bStack32 & 0x1f);
-        lVar2 = (uVar1 / uVar4 & 0xffffffff) * (ulonglong)param_3;
-        uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
-        uVar3 = (uint)lVar2;
-        if ((uVar5 < uVar6) || ((uVar5 == uVar6 && (param_1 < uVar3)))) {
-          bVar7 = uVar3 < param_3;
-          uVar3 = uVar3 - param_3;
-          uVar6 = (uVar6 - uVar4) - (uint)bVar7;
+        bStack_20 = (byte)(uVar2 ^ 0x1f);
+        bStack_24 = 0x20 - bStack_20;
+        uVar2 = param_3 >> (bStack_24 & 0x1f) | param_4 << (bStack_20 & 0x1f);
+        param_3 = param_3 << (bStack_20 & 0x1f);
+        uVar1 = CONCAT44(param_2 >> (bStack_24 & 0x1f),
+                         param_1 >> (bStack_24 & 0x1f) | param_2 << (bStack_20 & 0x1f));
+        iVar3 = (int)(uVar1 % (ulonglong)uVar2);
+        param_1 = param_1 << (bStack_20 & 0x1f);
+        uVar1 = (uVar1 / uVar2 & 0xffffffff) * (ulonglong)param_3;
+        if (CONCAT44(iVar3,param_1) < uVar1) {
+          uVar1 = uVar1 - CONCAT44(uVar2,param_3);
         }
-        param_2 = (uVar5 - uVar6) - (uint)(param_1 < uVar3);
-        param_1 = param_2 << (bStack36 & 0x1f) | param_1 - uVar3 >> (bStack32 & 0x1f);
-        param_2 = param_2 >> (bStack32 & 0x1f);
+        param_2 = (iVar3 - (int)(uVar1 >> 0x20)) - (uint)(param_1 < (uint)uVar1);
+        param_1 = param_2 << (bStack_24 & 0x1f) | param_1 - (uint)uVar1 >> (bStack_20 & 0x1f);
+        param_2 = param_2 >> (bStack_20 & 0x1f);
       }
     }
     return CONCAT44(param_2,param_1);
   }
   if (param_2 < param_3) {
-    uVar4 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
+    uVar2 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
   }
   else {
     if (param_3 == 0) {
       param_3 = (uint)(1 / 0);
     }
-    uVar4 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
+    uVar2 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
                   (ulonglong)param_3);
   }
-  return (ulonglong)uVar4;
+  return (ulonglong)uVar2;
 }
 
 
@@ -15794,21 +16169,12 @@ int lstat64(char *__file,stat64 *__buf)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0805e491)
+// WARNING: Removing unreachable block (ram,0x0805e498)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

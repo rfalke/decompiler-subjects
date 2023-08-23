@@ -110,6 +110,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -176,6 +177,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -225,6 +237,16 @@ void _DT_INIT(void)
 
 
 
+void FUN_080483a0(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __libc_start_main(void)
 
 {
@@ -234,7 +256,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -247,7 +269,7 @@ int scanf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -260,7 +282,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -273,7 +295,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sscanf(char *__s,char *__format,...)
 
@@ -286,7 +308,7 @@ int sscanf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strncmp(char *__s1,char *__s2,size_t __n)
 
@@ -299,7 +321,7 @@ int strncmp(char *__s1,char *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -310,10 +332,13 @@ void exit(int __status)
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(FUN_080486ee);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(FUN_080486ee,param_2,&stack0x00000004,FUN_08048770,FUN_080487e0,param_1,
+                    auStack_4);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -347,6 +372,7 @@ void FUN_08048470(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080484af)
 // WARNING: Removing unreachable block (ram,0x080484b8)
 
 void FUN_080484a0(void)
@@ -513,16 +539,16 @@ undefined4 FUN_080487f0(void)
 {
   code *pcVar1;
   code **ppcVar2;
-  undefined4 uStack12;
+  undefined4 uStack_c;
   
-  ppcVar2 = &DAT_08049f08;
-  pcVar1 = DAT_08049f08;
+  ppcVar2 = (code **)&DAT_08049f08;
+  pcVar1 = (code *)0xffffffff;
   while (pcVar1 != (code *)0xffffffff) {
     ppcVar2 = ppcVar2 + -1;
     (*pcVar1)();
     pcVar1 = *ppcVar2;
   }
-  return uStack12;
+  return uStack_c;
 }
 
 

@@ -6,6 +6,7 @@ typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    word;
 typedef ulong size_t;
@@ -156,6 +157,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -184,6 +186,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -192,14 +205,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -258,7 +271,7 @@ void FUN_004004b0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -289,7 +302,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -300,7 +313,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -313,7 +326,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -329,10 +342,9 @@ int putchar(int __c)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -384,8 +396,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400658)
 // WARNING: Removing unreachable block (ram,0x00400660)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -395,6 +407,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -408,10 +422,11 @@ int main(void)
   long lVar7;
   long lVar8;
   undefined4 *puVar9;
+  int ind;
   long lVar10;
   int iVar11;
   char line [80];
-  undefined4 uStack144;
+  undefined4 uStack_90;
   undefined2 local_8c;
   undefined local_8a [74];
   
@@ -421,7 +436,7 @@ int main(void)
   do {
     lVar7 = *(long *)((long)pvVar6 + 8);
     lVar8 = 0;
-    puVar9 = &uStack144;
+    puVar9 = &uStack_90;
     do {
       pbVar1 = (byte *)(lVar7 + lVar8);
       lVar8 = lVar8 + 1;
@@ -436,7 +451,7 @@ int main(void)
       }
       puVar2 = (undefined4 *)
                (glyphs[(int)(((uVar5 & 0xfffffff8) - ((int)uVar5 >> 3)) + iVar11)] +
-               (int)((uVar3 - (uVar5 & 0xfffffff8)) * 7));
+               ((int)uVar3 % 8) * 7);
       *(undefined *)((long)puVar9 + 6) = *(undefined *)((long)puVar2 + 6);
       *(undefined2 *)(puVar9 + 1) = *(undefined2 *)(puVar2 + 1);
       uVar4 = *puVar2;
@@ -446,12 +461,12 @@ int main(void)
       puVar9 = puVar9 + 2;
     } while (lVar8 < 10);
     do {
-      if (*(char *)((long)&uStack144 + lVar10) != ' ') break;
-      *(undefined *)((long)&uStack144 + lVar10) = 0;
+      if (*(char *)((long)&uStack_90 + lVar10) != ' ') break;
+      *(undefined *)((long)&uStack_90 + lVar10) = 0;
       lVar8 = lVar10 + 1;
       lVar10 = lVar10 + -1;
     } while (1 < lVar8);
-    puts((char *)&uStack144);
+    puts((char *)&uStack_90);
     iVar11 = iVar11 + 1;
     if (iVar11 == 7) {
       putchar(10);

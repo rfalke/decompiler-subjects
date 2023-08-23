@@ -50,7 +50,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -129,6 +129,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -162,6 +163,33 @@ typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 struct Elf32_Rel {
     dword r_offset; // location to apply the relocation action
     dword r_info; // the symbol table index and the type of relocation
+};
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -258,6 +286,8 @@ void FUN_080482bc(int param_1,int param_2)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 undefined4 FUN_08048450(int param_1,undefined4 *param_2)
 
 {
@@ -287,7 +317,7 @@ undefined4 FUN_08048450(int param_1,undefined4 *param_2)
         bVar1 = false;
       }
       if (bVar1) {
-        fprintf(stderr,s_Invalid_base_08048104);
+        fprintf(_stderr,s_Invalid_base_08048104);
         return 1;
       }
     }

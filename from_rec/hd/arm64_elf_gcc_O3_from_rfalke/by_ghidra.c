@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -53,7 +54,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -109,7 +110,18 @@ struct stat {
     long __unused[3];
 };
 
+typedef long __syscall_slong_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
+
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__nlink_t - /types.h/__nlink_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -122,14 +134,6 @@ typedef ulong sizetype;
 
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
-
-typedef long __syscall_slong_t;
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__nlink_t - /types.h/__nlink_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/time.h/timespec - /time.h/timespec
@@ -287,6 +291,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -315,6 +320,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -326,14 +342,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -385,7 +401,7 @@ void FUN_00100800(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -398,7 +414,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -418,7 +434,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -431,7 +447,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -444,7 +460,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -475,7 +491,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -486,7 +502,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -499,7 +515,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -512,7 +528,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -525,6 +541,8 @@ int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
@@ -532,6 +550,8 @@ int main(int argc,char **argv)
   int iVar2;
   FILE *__stream;
   size_t sVar3;
+  FILE *fp;
+  int cnt;
   char *__filename;
   ulong offset;
   long lVar4;
@@ -579,10 +599,9 @@ int main(int argc,char **argv)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -648,21 +667,19 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100b20)
+// WARNING: Removing unreachable block (ram,0x00100b2c)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void dumpline(uchar *p,ulong offset,int cnt)
 
@@ -673,25 +690,34 @@ void dumpline(uchar *p,ulong offset,int cnt)
   long lVar4;
   uint uVar5;
   uchar uVar6;
-  undefined8 uVar7;
-  undefined8 uVar8;
-  int iVar9;
-  size_t sVar10;
-  uint uVar11;
-  ulong uVar12;
+  undefined auVar7 [16];
+  undefined auVar8 [16];
+  undefined auVar9 [16];
+  undefined auVar10 [16];
+  undefined8 uVar11;
+  undefined8 uVar12;
   int iVar13;
-  long lVar14;
+  int len;
+  size_t sVar14;
+  uint uVar15;
+  ulong uVar16;
+  int iVar17;
+  long lVar18;
   char *__s;
-  undefined auVar15 [16];
-  undefined auVar16 [16];
-  undefined auVar17 [16];
-  char cVar18;
-  char cVar19;
-  char cVar20;
-  char cVar21;
-  char cVar22;
-  char cVar23;
-  char cVar24;
+  undefined auVar19 [16];
+  undefined auVar20 [16];
+  undefined auVar21 [16];
+  undefined auVar22 [16];
+  undefined auVar23 [16];
+  undefined auVar24 [16];
+  undefined auVar25 [16];
+  char cVar26;
+  char cVar27;
+  char cVar28;
+  char cVar29;
+  char cVar30;
+  char cVar31;
+  char cVar32;
   char buff [80];
   
   sprintf(buff,"%08lX:",offset);
@@ -699,37 +725,37 @@ void dumpline(uchar *p,ulong offset,int cnt)
     cnt = 0x10;
   }
   if (cnt < 1) {
-    iVar9 = 1;
+    iVar13 = 1;
 LAB_00100bd0:
     do {
-      sVar10 = strlen(buff);
-      *(undefined4 *)(buff + sVar10) = 0x202020;
-      bVar1 = iVar9 < 0x10;
-      iVar9 = iVar9 + 1;
+      sVar14 = strlen(buff);
+      *(undefined4 *)(buff + sVar14) = 0x202020;
+      bVar1 = iVar13 < 0x10;
+      iVar13 = iVar13 + 1;
     } while (bVar1);
-    iVar9 = (int)sVar10 + 3;
-    lVar14 = (long)iVar9;
-    *(undefined4 *)(buff + lVar14) = 0x7c2020;
+    iVar13 = (int)sVar14 + 3;
+    lVar18 = (long)iVar13;
+    *(undefined4 *)(buff + lVar18) = 0x7c2020;
     if (0 < cnt) goto LAB_00100c10;
-    iVar13 = 2;
-    buff[lVar14] = ' ';
-    buff[(int)sVar10 + 4] = ' ';
+    iVar17 = 2;
+    buff[lVar18] = ' ';
+    buff[(int)sVar14 + 4] = ' ';
   }
   else {
-    lVar14 = 0;
+    lVar18 = 0;
     __s = buff + 9;
     do {
-      pbVar2 = p + lVar14;
-      lVar14 = lVar14 + 1;
+      pbVar2 = p + lVar18;
+      lVar18 = lVar18 + 1;
       sprintf(__s," %02lX",(ulong)*pbVar2);
       __s = __s + 3;
-    } while ((int)lVar14 < cnt);
-    iVar9 = cnt + 1;
+    } while ((int)lVar18 < cnt);
+    iVar13 = cnt + 1;
     if (cnt != 0x10) goto LAB_00100bd0;
-    sVar10 = strlen(buff);
-    iVar9 = (int)sVar10;
-    lVar14 = (long)iVar9;
-    *(undefined4 *)(buff + lVar14) = 0x7c2020;
+    sVar14 = strlen(buff);
+    iVar13 = (int)sVar14;
+    lVar18 = (long)iVar13;
+    *(undefined4 *)(buff + lVar18) = 0x7c2020;
 LAB_00100c10:
     uVar5 = -(int)p & 0xf;
     if ((uint)cnt < uVar5) {
@@ -739,297 +765,317 @@ LAB_00100c10:
       uVar5 = cnt;
     }
     if (uVar5 == 0) {
-      uVar11 = 0;
+      uVar15 = 0;
 LAB_00100e74:
-      uVar12 = (ulong)uVar5;
-      iVar13 = ((cnt - uVar5) - 0x10 >> 4) + 1;
+      uVar16 = (ulong)uVar5;
+      iVar17 = ((cnt - uVar5) - 0x10 >> 4) + 1;
       if (0xe < (cnt - 1U) - uVar5) {
-        uVar8 = *(undefined8 *)((long)(p + uVar5) + 8);
-        cVar18 = (char)((ulong)uVar8 >> 8);
-        cVar19 = (char)((ulong)uVar8 >> 0x10);
-        cVar20 = (char)((ulong)uVar8 >> 0x18);
-        cVar21 = (char)((ulong)uVar8 >> 0x20);
-        cVar22 = (char)((ulong)uVar8 >> 0x28);
-        cVar23 = (char)((ulong)uVar8 >> 0x30);
-        cVar24 = (char)((ulong)uVar8 >> 0x38);
-        uVar7 = *(undefined8 *)(p + uVar5);
-        lVar4 = uVar12 + lVar14;
-        auVar16 = CONCAT115(0x5e,CONCAT114(0x5e,CONCAT113(0x5e,CONCAT112(0x5e,CONCAT111(0x5e,
-                                                  CONCAT110(0x5e,CONCAT19(0x5e,CONCAT18(0x5e,
-                                                  0x5e5e5e5e5e5e5e5e))))))));
-        auVar15 = CONCAT115(0x2e,CONCAT114(0x2e,CONCAT113(0x2e,CONCAT112(0x2e,CONCAT111(0x2e,
-                                                  CONCAT110(0x2e,CONCAT19(0x2e,CONCAT18(0x2e,
-                                                  0x2e2e2e2e2e2e2e2e))))))));
-        auVar17 = NEON_cmhs(auVar16,CONCAT115(cVar24 + -0x20,
-                                              CONCAT114(cVar23 + -0x20,
-                                                        CONCAT113(cVar22 + -0x20,
-                                                                  CONCAT112(cVar21 + -0x20,
-                                                                            CONCAT111(cVar20 + -0x20
-                                                                                      ,CONCAT110(
-                                                  cVar19 + -0x20,
-                                                  CONCAT19(cVar18 + -0x20,
-                                                           CONCAT18((char)uVar8 + -0x20,
-                                                                    CONCAT17((char)((ulong)uVar7 >>
-                                                                                   0x38) + -0x20,
-                                                                             CONCAT16((char)((ulong)
-                                                  uVar7 >> 0x30) + -0x20,
-                                                  CONCAT15((char)((ulong)uVar7 >> 0x28) + -0x20,
-                                                           CONCAT14((char)((ulong)uVar7 >> 0x20) +
-                                                                    -0x20,CONCAT13((char)((ulong)
-                                                  uVar7 >> 0x18) + -0x20,
-                                                  CONCAT12((char)((ulong)uVar7 >> 0x10) + -0x20,
-                                                           CONCAT11((char)((ulong)uVar7 >> 8) +
-                                                                    -0x20,(char)uVar7 + -0x20)))))))
-                                                  )))))))),1);
-        auVar17 = NEON_bsl(auVar17,CONCAT115(cVar24,CONCAT114(cVar23,CONCAT113(cVar22,CONCAT112(
-                                                  cVar21,CONCAT111(cVar20,CONCAT110(cVar19,CONCAT19(
-                                                  cVar18,CONCAT18((char)uVar8,uVar7)))))))),auVar15,
-                           1);
-        *(long *)(buff + lVar4 + 8) = SUB168(auVar17 >> 0x40,0);
-        *(long *)(buff + lVar4) = SUB168(auVar17,0);
-        if (iVar13 != 1) {
-          uVar8 = *(undefined8 *)(p + uVar12 + 0x18);
-          cVar18 = (char)((ulong)uVar8 >> 8);
-          cVar19 = (char)((ulong)uVar8 >> 0x10);
-          cVar20 = (char)((ulong)uVar8 >> 0x18);
-          cVar21 = (char)((ulong)uVar8 >> 0x20);
-          cVar22 = (char)((ulong)uVar8 >> 0x28);
-          cVar23 = (char)((ulong)uVar8 >> 0x30);
-          cVar24 = (char)((ulong)uVar8 >> 0x38);
-          uVar7 = *(undefined8 *)(p + uVar12 + 0x10);
-          auVar17 = NEON_cmhs(auVar16,CONCAT115(cVar24 + -0x20,
-                                                CONCAT114(cVar23 + -0x20,
-                                                          CONCAT113(cVar22 + -0x20,
-                                                                    CONCAT112(cVar21 + -0x20,
-                                                                              CONCAT111(cVar20 + 
-                                                  -0x20,CONCAT110(cVar19 + -0x20,
-                                                                  CONCAT19(cVar18 + -0x20,
-                                                                           CONCAT18((char)uVar8 +
-                                                                                    -0x20,CONCAT17((
-                                                  char)((ulong)uVar7 >> 0x38) + -0x20,
-                                                  CONCAT16((char)((ulong)uVar7 >> 0x30) + -0x20,
-                                                           CONCAT15((char)((ulong)uVar7 >> 0x28) +
-                                                                    -0x20,CONCAT14((char)((ulong)
-                                                  uVar7 >> 0x20) + -0x20,
-                                                  CONCAT13((char)((ulong)uVar7 >> 0x18) + -0x20,
-                                                           CONCAT12((char)((ulong)uVar7 >> 0x10) +
-                                                                    -0x20,CONCAT11((char)((ulong)
-                                                  uVar7 >> 8) + -0x20,(char)uVar7 + -0x20)))))))))))
-                                                  )))),1);
-          auVar17 = NEON_bsl(auVar17,CONCAT115(cVar24,CONCAT114(cVar23,CONCAT113(cVar22,CONCAT112(
-                                                  cVar21,CONCAT111(cVar20,CONCAT110(cVar19,CONCAT19(
-                                                  cVar18,CONCAT18((char)uVar8,uVar7)))))))),auVar15,
-                             1);
-          *(long *)(buff + lVar4 + 0x18) = SUB168(auVar17 >> 0x40,0);
-          *(long *)(buff + lVar4 + 0x10) = SUB168(auVar17,0);
-          if (iVar13 != 2) {
-            uVar8 = *(undefined8 *)(p + uVar12 + 0x28);
-            cVar18 = (char)((ulong)uVar8 >> 8);
-            cVar19 = (char)((ulong)uVar8 >> 0x10);
-            cVar20 = (char)((ulong)uVar8 >> 0x18);
-            cVar21 = (char)((ulong)uVar8 >> 0x20);
-            cVar22 = (char)((ulong)uVar8 >> 0x28);
-            cVar23 = (char)((ulong)uVar8 >> 0x30);
-            cVar24 = (char)((ulong)uVar8 >> 0x38);
-            uVar7 = *(undefined8 *)(p + uVar12 + 0x20);
-            auVar17 = NEON_cmhs(auVar16,CONCAT115(cVar24 + -0x20,
-                                                  CONCAT114(cVar23 + -0x20,
-                                                            CONCAT113(cVar22 + -0x20,
-                                                                      CONCAT112(cVar21 + -0x20,
-                                                                                CONCAT111(cVar20 + 
-                                                  -0x20,CONCAT110(cVar19 + -0x20,
-                                                                  CONCAT19(cVar18 + -0x20,
-                                                                           CONCAT18((char)uVar8 +
-                                                                                    -0x20,CONCAT17((
-                                                  char)((ulong)uVar7 >> 0x38) + -0x20,
-                                                  CONCAT16((char)((ulong)uVar7 >> 0x30) + -0x20,
-                                                           CONCAT15((char)((ulong)uVar7 >> 0x28) +
-                                                                    -0x20,CONCAT14((char)((ulong)
-                                                  uVar7 >> 0x20) + -0x20,
-                                                  CONCAT13((char)((ulong)uVar7 >> 0x18) + -0x20,
-                                                           CONCAT12((char)((ulong)uVar7 >> 0x10) +
-                                                                    -0x20,CONCAT11((char)((ulong)
-                                                  uVar7 >> 8) + -0x20,(char)uVar7 + -0x20)))))))))))
-                                                  )))),1);
-            auVar17 = NEON_bsl(auVar17,CONCAT115(cVar24,CONCAT114(cVar23,CONCAT113(cVar22,CONCAT112(
-                                                  cVar21,CONCAT111(cVar20,CONCAT110(cVar19,CONCAT19(
-                                                  cVar18,CONCAT18((char)uVar8,uVar7)))))))),auVar15,
-                               1);
-            *(long *)(buff + lVar4 + 0x28) = SUB168(auVar17 >> 0x40,0);
-            *(long *)(buff + lVar4 + 0x20) = SUB168(auVar17,0);
-            if (iVar13 != 3) {
-              uVar8 = *(undefined8 *)(p + uVar12 + 0x38);
-              cVar18 = (char)((ulong)uVar8 >> 8);
-              cVar19 = (char)((ulong)uVar8 >> 0x10);
-              cVar20 = (char)((ulong)uVar8 >> 0x18);
-              cVar21 = (char)((ulong)uVar8 >> 0x20);
-              cVar22 = (char)((ulong)uVar8 >> 0x28);
-              cVar23 = (char)((ulong)uVar8 >> 0x30);
-              cVar24 = (char)((ulong)uVar8 >> 0x38);
-              uVar7 = *(undefined8 *)(p + uVar12 + 0x30);
-              auVar17 = NEON_cmhs(auVar16,CONCAT115(cVar24 + -0x20,
-                                                    CONCAT114(cVar23 + -0x20,
-                                                              CONCAT113(cVar22 + -0x20,
-                                                                        CONCAT112(cVar21 + -0x20,
-                                                                                  CONCAT111(cVar20 +
-                                                                                            -0x20,
-                                                  CONCAT110(cVar19 + -0x20,
-                                                            CONCAT19(cVar18 + -0x20,
-                                                                     CONCAT18((char)uVar8 + -0x20,
-                                                                              CONCAT17((char)((ulong
-                                                  )uVar7 >> 0x38) + -0x20,
-                                                  CONCAT16((char)((ulong)uVar7 >> 0x30) + -0x20,
-                                                           CONCAT15((char)((ulong)uVar7 >> 0x28) +
-                                                                    -0x20,CONCAT14((char)((ulong)
-                                                  uVar7 >> 0x20) + -0x20,
-                                                  CONCAT13((char)((ulong)uVar7 >> 0x18) + -0x20,
-                                                           CONCAT12((char)((ulong)uVar7 >> 0x10) +
-                                                                    -0x20,CONCAT11((char)((ulong)
-                                                  uVar7 >> 8) + -0x20,(char)uVar7 + -0x20)))))))))))
-                                                  )))),1);
-              auVar17 = NEON_bsl(auVar17,CONCAT115(cVar24,CONCAT114(cVar23,CONCAT113(cVar22,
-                                                  CONCAT112(cVar21,CONCAT111(cVar20,CONCAT110(cVar19
-                                                  ,CONCAT19(cVar18,CONCAT18((char)uVar8,uVar7)))))))
-                                                  ),auVar15,1);
-              *(long *)(buff + lVar4 + 0x38) = SUB168(auVar17 >> 0x40,0);
-              *(long *)(buff + lVar4 + 0x30) = SUB168(auVar17,0);
-              if (iVar13 != 4) {
-                auVar17 = *(undefined (*) [16])(p + uVar12 + 0x40);
-                auVar16 = NEON_cmhs(auVar16,CONCAT115(SUB161(auVar17 >> 0x78,0) + -0x20,
-                                                      CONCAT114(SUB161(auVar17 >> 0x70,0) + -0x20,
-                                                                CONCAT113(SUB161(auVar17 >> 0x68,0)
-                                                                          + -0x20,CONCAT112(SUB161(
-                                                  auVar17 >> 0x60,0) + -0x20,
-                                                  CONCAT111(SUB161(auVar17 >> 0x58,0) + -0x20,
-                                                            CONCAT110(SUB161(auVar17 >> 0x50,0) +
-                                                                      -0x20,CONCAT19(SUB161(auVar17 
-                                                  >> 0x48,0) + -0x20,
-                                                  CONCAT18(SUB161(auVar17 >> 0x40,0) + -0x20,
-                                                           CONCAT17(SUB161(auVar17 >> 0x38,0) +
-                                                                    -0x20,CONCAT16(SUB161(auVar17 >>
-                                                                                          0x30,0) +
-                                                                                   -0x20,CONCAT15(
-                                                  SUB161(auVar17 >> 0x28,0) + -0x20,
-                                                  CONCAT14(SUB161(auVar17 >> 0x20,0) + -0x20,
-                                                           CONCAT13(SUB161(auVar17 >> 0x18,0) +
-                                                                    -0x20,CONCAT12(SUB161(auVar17 >>
-                                                                                          0x10,0) +
-                                                                                   -0x20,CONCAT11(
-                                                  SUB161(auVar17 >> 8,0) + -0x20,
-                                                  SUB161(auVar17,0) + -0x20))))))))))))))),1);
-                auVar15 = NEON_bit(auVar15,auVar17,auVar16,1);
-                *(long *)(buff + lVar4 + 0x48) = SUB168(auVar15 >> 0x40,0);
-                *(long *)(buff + lVar4 + 0x40) = SUB168(auVar15,0);
+        uVar12 = *(undefined8 *)((long)(p + uVar5) + 8);
+        cVar26 = (char)((ulong)uVar12 >> 8);
+        cVar27 = (char)((ulong)uVar12 >> 0x10);
+        cVar28 = (char)((ulong)uVar12 >> 0x18);
+        cVar29 = (char)((ulong)uVar12 >> 0x20);
+        cVar30 = (char)((ulong)uVar12 >> 0x28);
+        cVar31 = (char)((ulong)uVar12 >> 0x30);
+        cVar32 = (char)((ulong)uVar12 >> 0x38);
+        uVar11 = *(undefined8 *)(p + uVar5);
+        lVar4 = uVar16 + lVar18;
+        auVar20[8] = 0x5e;
+        auVar20._0_8_ = 0x5e5e5e5e5e5e5e5e;
+        auVar20[9] = 0x5e;
+        auVar20[10] = 0x5e;
+        auVar20[11] = 0x5e;
+        auVar20[12] = 0x5e;
+        auVar20[13] = 0x5e;
+        auVar20[14] = 0x5e;
+        auVar20[15] = 0x5e;
+        auVar19[8] = 0x2e;
+        auVar19._0_8_ = 0x2e2e2e2e2e2e2e2e;
+        auVar19[9] = 0x2e;
+        auVar19[10] = 0x2e;
+        auVar19[11] = 0x2e;
+        auVar19[12] = 0x2e;
+        auVar19[13] = 0x2e;
+        auVar19[14] = 0x2e;
+        auVar19[15] = 0x2e;
+        auVar21[0] = (char)uVar11 + -0x20;
+        auVar21[1] = (char)((ulong)uVar11 >> 8) + -0x20;
+        auVar21[2] = (char)((ulong)uVar11 >> 0x10) + -0x20;
+        auVar21[3] = (char)((ulong)uVar11 >> 0x18) + -0x20;
+        auVar21[4] = (char)((ulong)uVar11 >> 0x20) + -0x20;
+        auVar21[5] = (char)((ulong)uVar11 >> 0x28) + -0x20;
+        auVar21[6] = (char)((ulong)uVar11 >> 0x30) + -0x20;
+        auVar21[7] = (char)((ulong)uVar11 >> 0x38) + -0x20;
+        auVar21[8] = (char)uVar12 + -0x20;
+        auVar21[9] = cVar26 + -0x20;
+        auVar21[10] = cVar27 + -0x20;
+        auVar21[11] = cVar28 + -0x20;
+        auVar21[12] = cVar29 + -0x20;
+        auVar21[13] = cVar30 + -0x20;
+        auVar21[14] = cVar31 + -0x20;
+        auVar21[15] = cVar32 + -0x20;
+        auVar21 = NEON_cmhs(auVar20,auVar21,1);
+        auVar22[8] = (char)uVar12;
+        auVar22._0_8_ = uVar11;
+        auVar22[9] = cVar26;
+        auVar22[10] = cVar27;
+        auVar22[11] = cVar28;
+        auVar22[12] = cVar29;
+        auVar22[13] = cVar30;
+        auVar22[14] = cVar31;
+        auVar22[15] = cVar32;
+        auVar22 = NEON_bsl(auVar21,auVar22,auVar19,1);
+        *(long *)(buff + lVar4 + 8) = auVar22._8_8_;
+        *(long *)(buff + lVar4) = auVar22._0_8_;
+        if (iVar17 != 1) {
+          uVar12 = *(undefined8 *)(p + uVar16 + 0x18);
+          cVar26 = (char)((ulong)uVar12 >> 8);
+          cVar27 = (char)((ulong)uVar12 >> 0x10);
+          cVar28 = (char)((ulong)uVar12 >> 0x18);
+          cVar29 = (char)((ulong)uVar12 >> 0x20);
+          cVar30 = (char)((ulong)uVar12 >> 0x28);
+          cVar31 = (char)((ulong)uVar12 >> 0x30);
+          cVar32 = (char)((ulong)uVar12 >> 0x38);
+          uVar11 = *(undefined8 *)(p + uVar16 + 0x10);
+          auVar23[0] = (char)uVar11 + -0x20;
+          auVar23[1] = (char)((ulong)uVar11 >> 8) + -0x20;
+          auVar23[2] = (char)((ulong)uVar11 >> 0x10) + -0x20;
+          auVar23[3] = (char)((ulong)uVar11 >> 0x18) + -0x20;
+          auVar23[4] = (char)((ulong)uVar11 >> 0x20) + -0x20;
+          auVar23[5] = (char)((ulong)uVar11 >> 0x28) + -0x20;
+          auVar23[6] = (char)((ulong)uVar11 >> 0x30) + -0x20;
+          auVar23[7] = (char)((ulong)uVar11 >> 0x38) + -0x20;
+          auVar23[8] = (char)uVar12 + -0x20;
+          auVar23[9] = cVar26 + -0x20;
+          auVar23[10] = cVar27 + -0x20;
+          auVar23[11] = cVar28 + -0x20;
+          auVar23[12] = cVar29 + -0x20;
+          auVar23[13] = cVar30 + -0x20;
+          auVar23[14] = cVar31 + -0x20;
+          auVar23[15] = cVar32 + -0x20;
+          auVar22 = NEON_cmhs(auVar20,auVar23,1);
+          auVar8[8] = (char)uVar12;
+          auVar8._0_8_ = uVar11;
+          auVar8[9] = cVar26;
+          auVar8[10] = cVar27;
+          auVar8[11] = cVar28;
+          auVar8[12] = cVar29;
+          auVar8[13] = cVar30;
+          auVar8[14] = cVar31;
+          auVar8[15] = cVar32;
+          auVar22 = NEON_bsl(auVar22,auVar8,auVar19,1);
+          *(long *)(buff + lVar4 + 0x18) = auVar22._8_8_;
+          *(long *)(buff + lVar4 + 0x10) = auVar22._0_8_;
+          if (iVar17 != 2) {
+            uVar12 = *(undefined8 *)(p + uVar16 + 0x28);
+            cVar26 = (char)((ulong)uVar12 >> 8);
+            cVar27 = (char)((ulong)uVar12 >> 0x10);
+            cVar28 = (char)((ulong)uVar12 >> 0x18);
+            cVar29 = (char)((ulong)uVar12 >> 0x20);
+            cVar30 = (char)((ulong)uVar12 >> 0x28);
+            cVar31 = (char)((ulong)uVar12 >> 0x30);
+            cVar32 = (char)((ulong)uVar12 >> 0x38);
+            uVar11 = *(undefined8 *)(p + uVar16 + 0x20);
+            auVar24[0] = (char)uVar11 + -0x20;
+            auVar24[1] = (char)((ulong)uVar11 >> 8) + -0x20;
+            auVar24[2] = (char)((ulong)uVar11 >> 0x10) + -0x20;
+            auVar24[3] = (char)((ulong)uVar11 >> 0x18) + -0x20;
+            auVar24[4] = (char)((ulong)uVar11 >> 0x20) + -0x20;
+            auVar24[5] = (char)((ulong)uVar11 >> 0x28) + -0x20;
+            auVar24[6] = (char)((ulong)uVar11 >> 0x30) + -0x20;
+            auVar24[7] = (char)((ulong)uVar11 >> 0x38) + -0x20;
+            auVar24[8] = (char)uVar12 + -0x20;
+            auVar24[9] = cVar26 + -0x20;
+            auVar24[10] = cVar27 + -0x20;
+            auVar24[11] = cVar28 + -0x20;
+            auVar24[12] = cVar29 + -0x20;
+            auVar24[13] = cVar30 + -0x20;
+            auVar24[14] = cVar31 + -0x20;
+            auVar24[15] = cVar32 + -0x20;
+            auVar22 = NEON_cmhs(auVar20,auVar24,1);
+            auVar9[8] = (char)uVar12;
+            auVar9._0_8_ = uVar11;
+            auVar9[9] = cVar26;
+            auVar9[10] = cVar27;
+            auVar9[11] = cVar28;
+            auVar9[12] = cVar29;
+            auVar9[13] = cVar30;
+            auVar9[14] = cVar31;
+            auVar9[15] = cVar32;
+            auVar22 = NEON_bsl(auVar22,auVar9,auVar19,1);
+            *(long *)(buff + lVar4 + 0x28) = auVar22._8_8_;
+            *(long *)(buff + lVar4 + 0x20) = auVar22._0_8_;
+            if (iVar17 != 3) {
+              uVar12 = *(undefined8 *)(p + uVar16 + 0x38);
+              cVar26 = (char)((ulong)uVar12 >> 8);
+              cVar27 = (char)((ulong)uVar12 >> 0x10);
+              cVar28 = (char)((ulong)uVar12 >> 0x18);
+              cVar29 = (char)((ulong)uVar12 >> 0x20);
+              cVar30 = (char)((ulong)uVar12 >> 0x28);
+              cVar31 = (char)((ulong)uVar12 >> 0x30);
+              cVar32 = (char)((ulong)uVar12 >> 0x38);
+              uVar11 = *(undefined8 *)(p + uVar16 + 0x30);
+              auVar25[0] = (char)uVar11 + -0x20;
+              auVar25[1] = (char)((ulong)uVar11 >> 8) + -0x20;
+              auVar25[2] = (char)((ulong)uVar11 >> 0x10) + -0x20;
+              auVar25[3] = (char)((ulong)uVar11 >> 0x18) + -0x20;
+              auVar25[4] = (char)((ulong)uVar11 >> 0x20) + -0x20;
+              auVar25[5] = (char)((ulong)uVar11 >> 0x28) + -0x20;
+              auVar25[6] = (char)((ulong)uVar11 >> 0x30) + -0x20;
+              auVar25[7] = (char)((ulong)uVar11 >> 0x38) + -0x20;
+              auVar25[8] = (char)uVar12 + -0x20;
+              auVar25[9] = cVar26 + -0x20;
+              auVar25[10] = cVar27 + -0x20;
+              auVar25[11] = cVar28 + -0x20;
+              auVar25[12] = cVar29 + -0x20;
+              auVar25[13] = cVar30 + -0x20;
+              auVar25[14] = cVar31 + -0x20;
+              auVar25[15] = cVar32 + -0x20;
+              auVar22 = NEON_cmhs(auVar20,auVar25,1);
+              auVar10[8] = (char)uVar12;
+              auVar10._0_8_ = uVar11;
+              auVar10[9] = cVar26;
+              auVar10[10] = cVar27;
+              auVar10[11] = cVar28;
+              auVar10[12] = cVar29;
+              auVar10[13] = cVar30;
+              auVar10[14] = cVar31;
+              auVar10[15] = cVar32;
+              auVar22 = NEON_bsl(auVar22,auVar10,auVar19,1);
+              *(long *)(buff + lVar4 + 0x38) = auVar22._8_8_;
+              *(long *)(buff + lVar4 + 0x30) = auVar22._0_8_;
+              if (iVar17 != 4) {
+                auVar22 = *(undefined (*) [16])(p + uVar16 + 0x40);
+                auVar7[1] = auVar22[1] + -0x20;
+                auVar7[0] = auVar22[0] + -0x20;
+                auVar7[2] = auVar22[2] + -0x20;
+                auVar7[3] = auVar22[3] + -0x20;
+                auVar7[4] = auVar22[4] + -0x20;
+                auVar7[5] = auVar22[5] + -0x20;
+                auVar7[6] = auVar22[6] + -0x20;
+                auVar7[7] = auVar22[7] + -0x20;
+                auVar7[8] = auVar22[8] + -0x20;
+                auVar7[9] = auVar22[9] + -0x20;
+                auVar7[10] = auVar22[10] + -0x20;
+                auVar7[11] = auVar22[11] + -0x20;
+                auVar7[12] = auVar22[12] + -0x20;
+                auVar7[13] = auVar22[13] + -0x20;
+                auVar7[14] = auVar22[14] + -0x20;
+                auVar7[15] = auVar22[15] + -0x20;
+                auVar20 = NEON_cmhs(auVar20,auVar7,1);
+                auVar22 = NEON_bit(auVar19,auVar22,auVar20,1);
+                *(long *)(buff + lVar4 + 0x48) = auVar22._8_8_;
+                *(long *)(buff + lVar4 + 0x40) = auVar22._0_8_;
               }
             }
           }
         }
-        uVar11 = uVar11 + iVar13 * 0x10;
-        if (iVar13 * 0x10 == cnt - uVar5) goto LAB_00101198;
+        uVar15 = uVar15 + iVar17 * 0x10;
+        if (iVar17 * 0x10 == cnt - uVar5) goto LAB_00101198;
       }
-      iVar13 = uVar11 + 1;
-      uVar6 = p[(int)uVar11];
-      if (0x5e < (byte)(p[(int)uVar11] - 0x20)) {
+      iVar17 = uVar15 + 1;
+      uVar6 = p[(int)uVar15];
+      if (0x5e < (byte)(p[(int)uVar15] - 0x20)) {
         uVar6 = '.';
       }
-      buff[(int)(uVar11 + iVar9)] = uVar6;
-      if (iVar13 < cnt) {
-        uVar6 = p[iVar13];
-        iVar3 = uVar11 + 2;
+      buff[(int)(uVar15 + iVar13)] = uVar6;
+      if (iVar17 < cnt) {
+        uVar6 = p[iVar17];
+        iVar3 = uVar15 + 2;
         if (0x5e < (byte)(uVar6 - 0x20)) {
           uVar6 = '.';
         }
-        buff[iVar13 + iVar9] = uVar6;
+        buff[iVar17 + iVar13] = uVar6;
         if (iVar3 < cnt) {
           uVar6 = p[iVar3];
-          iVar13 = uVar11 + 3;
+          iVar17 = uVar15 + 3;
           if (0x5e < (byte)(uVar6 - 0x20)) {
             uVar6 = '.';
           }
-          buff[iVar3 + iVar9] = uVar6;
-          if (iVar13 < cnt) {
-            uVar6 = p[iVar13];
-            iVar3 = uVar11 + 4;
+          buff[iVar3 + iVar13] = uVar6;
+          if (iVar17 < cnt) {
+            uVar6 = p[iVar17];
+            iVar3 = uVar15 + 4;
             if (0x5e < (byte)(uVar6 - 0x20)) {
               uVar6 = '.';
             }
-            buff[iVar13 + iVar9] = uVar6;
+            buff[iVar17 + iVar13] = uVar6;
             if (iVar3 < cnt) {
-              iVar13 = uVar11 + 5;
+              iVar17 = uVar15 + 5;
               uVar6 = p[iVar3];
               if (0x5e < (byte)(p[iVar3] - 0x20)) {
                 uVar6 = '.';
               }
-              buff[iVar3 + iVar9] = uVar6;
-              if (iVar13 < cnt) {
-                uVar6 = p[iVar13];
-                iVar3 = uVar11 + 6;
+              buff[iVar3 + iVar13] = uVar6;
+              if (iVar17 < cnt) {
+                uVar6 = p[iVar17];
+                iVar3 = uVar15 + 6;
                 if (0x5e < (byte)(uVar6 - 0x20)) {
                   uVar6 = '.';
                 }
-                buff[iVar13 + iVar9] = uVar6;
+                buff[iVar17 + iVar13] = uVar6;
                 if (iVar3 < cnt) {
                   uVar6 = p[iVar3];
-                  iVar13 = uVar11 + 7;
+                  iVar17 = uVar15 + 7;
                   if (0x5e < (byte)(uVar6 - 0x20)) {
                     uVar6 = '.';
                   }
-                  buff[iVar3 + iVar9] = uVar6;
-                  if (iVar13 < cnt) {
-                    uVar6 = p[iVar13];
-                    iVar3 = uVar11 + 8;
+                  buff[iVar3 + iVar13] = uVar6;
+                  if (iVar17 < cnt) {
+                    uVar6 = p[iVar17];
+                    iVar3 = uVar15 + 8;
                     if (0x5e < (byte)(uVar6 - 0x20)) {
                       uVar6 = '.';
                     }
-                    buff[iVar13 + iVar9] = uVar6;
+                    buff[iVar17 + iVar13] = uVar6;
                     if (iVar3 < cnt) {
                       uVar6 = p[iVar3];
-                      iVar13 = uVar11 + 9;
+                      iVar17 = uVar15 + 9;
                       if (0x5e < (byte)(uVar6 - 0x20)) {
                         uVar6 = '.';
                       }
-                      buff[iVar3 + iVar9] = uVar6;
-                      if (iVar13 < cnt) {
-                        uVar6 = p[iVar13];
-                        iVar3 = uVar11 + 10;
+                      buff[iVar3 + iVar13] = uVar6;
+                      if (iVar17 < cnt) {
+                        uVar6 = p[iVar17];
+                        iVar3 = uVar15 + 10;
                         if (0x5e < (byte)(uVar6 - 0x20)) {
                           uVar6 = '.';
                         }
-                        buff[iVar13 + iVar9] = uVar6;
+                        buff[iVar17 + iVar13] = uVar6;
                         if (iVar3 < cnt) {
-                          iVar13 = uVar11 + 0xb;
+                          iVar17 = uVar15 + 0xb;
                           uVar6 = p[iVar3];
                           if (0x5e < (byte)(p[iVar3] - 0x20)) {
                             uVar6 = '.';
                           }
-                          buff[iVar3 + iVar9] = uVar6;
-                          if (iVar13 < cnt) {
-                            uVar6 = p[iVar13];
-                            iVar3 = uVar11 + 0xc;
+                          buff[iVar3 + iVar13] = uVar6;
+                          if (iVar17 < cnt) {
+                            uVar6 = p[iVar17];
+                            iVar3 = uVar15 + 0xc;
                             if (0x5e < (byte)(uVar6 - 0x20)) {
                               uVar6 = '.';
                             }
-                            buff[iVar13 + iVar9] = uVar6;
+                            buff[iVar17 + iVar13] = uVar6;
                             if (iVar3 < cnt) {
                               uVar6 = p[iVar3];
-                              iVar13 = uVar11 + 0xd;
+                              iVar17 = uVar15 + 0xd;
                               if (0x5e < (byte)(uVar6 - 0x20)) {
                                 uVar6 = '.';
                               }
-                              buff[iVar3 + iVar9] = uVar6;
-                              if (iVar13 < cnt) {
-                                uVar6 = p[iVar13];
-                                iVar3 = uVar11 + 0xe;
+                              buff[iVar3 + iVar13] = uVar6;
+                              if (iVar17 < cnt) {
+                                uVar6 = p[iVar17];
+                                iVar3 = uVar15 + 0xe;
                                 if (0x5e < (byte)(uVar6 - 0x20)) {
                                   uVar6 = '.';
                                 }
-                                buff[iVar13 + iVar9] = uVar6;
+                                buff[iVar17 + iVar13] = uVar6;
                                 if (iVar3 < cnt) {
                                   uVar6 = p[iVar3];
                                   if (0x5e < (byte)(uVar6 - 0x20)) {
                                     uVar6 = '.';
                                   }
-                                  buff[iVar3 + iVar9] = uVar6;
+                                  buff[iVar3 + iVar13] = uVar6;
                                 }
                               }
                             }
@@ -1050,104 +1096,104 @@ LAB_00100e74:
       if (0x5e < (byte)(*p - 0x20)) {
         uVar6 = '.';
       }
-      buff[iVar9] = uVar6;
-      uVar11 = uVar5;
+      buff[iVar13] = uVar6;
+      uVar15 = uVar5;
       if (uVar5 != 1) {
         uVar6 = p[1];
         if (0x5e < (byte)(uVar6 - 0x20)) {
           uVar6 = '.';
         }
-        buff[iVar9 + 1] = uVar6;
+        buff[iVar13 + 1] = uVar6;
         if (uVar5 != 2) {
           uVar6 = p[2];
           if (0x5e < (byte)(uVar6 - 0x20)) {
             uVar6 = '.';
           }
-          buff[iVar9 + 2] = uVar6;
+          buff[iVar13 + 2] = uVar6;
           if (uVar5 != 3) {
             uVar6 = p[3];
             if (0x5e < (byte)(uVar6 - 0x20)) {
               uVar6 = '.';
             }
-            buff[iVar9 + 3] = uVar6;
+            buff[iVar13 + 3] = uVar6;
             if (uVar5 != 4) {
               uVar6 = p[4];
               if (0x5e < (byte)(p[4] - 0x20)) {
                 uVar6 = '.';
               }
-              buff[iVar9 + 4] = uVar6;
+              buff[iVar13 + 4] = uVar6;
               if (uVar5 != 5) {
                 uVar6 = p[5];
                 if (0x5e < (byte)(uVar6 - 0x20)) {
                   uVar6 = '.';
                 }
-                buff[iVar9 + 5] = uVar6;
+                buff[iVar13 + 5] = uVar6;
                 if (uVar5 != 6) {
                   uVar6 = p[6];
                   if (0x5e < (byte)(uVar6 - 0x20)) {
                     uVar6 = '.';
                   }
-                  buff[iVar9 + 6] = uVar6;
+                  buff[iVar13 + 6] = uVar6;
                   if (uVar5 != 7) {
                     uVar6 = p[7];
                     if (0x5e < (byte)(uVar6 - 0x20)) {
                       uVar6 = '.';
                     }
-                    buff[iVar9 + 7] = uVar6;
+                    buff[iVar13 + 7] = uVar6;
                     if (uVar5 != 8) {
                       uVar6 = p[8];
                       if (0x5e < (byte)(uVar6 - 0x20)) {
                         uVar6 = '.';
                       }
-                      buff[iVar9 + 8] = uVar6;
+                      buff[iVar13 + 8] = uVar6;
                       if (uVar5 == 9) {
-                        uVar11 = 9;
+                        uVar15 = 9;
                       }
                       else {
                         uVar6 = p[9];
                         if (0x5e < (byte)(p[9] - 0x20)) {
                           uVar6 = '.';
                         }
-                        buff[iVar9 + 9] = uVar6;
+                        buff[iVar13 + 9] = uVar6;
                         if (uVar5 != 10) {
                           uVar6 = p[10];
                           if (0x5e < (byte)(uVar6 - 0x20)) {
                             uVar6 = '.';
                           }
-                          buff[iVar9 + 10] = uVar6;
+                          buff[iVar13 + 10] = uVar6;
                           if (uVar5 != 0xb) {
                             uVar6 = p[0xb];
                             if (0x5e < (byte)(uVar6 - 0x20)) {
                               uVar6 = '.';
                             }
-                            buff[iVar9 + 0xb] = uVar6;
+                            buff[iVar13 + 0xb] = uVar6;
                             if (uVar5 != 0xc) {
                               uVar6 = p[0xc];
                               if (0x5e < (byte)(uVar6 - 0x20)) {
                                 uVar6 = '.';
                               }
-                              buff[iVar9 + 0xc] = uVar6;
+                              buff[iVar13 + 0xc] = uVar6;
                               if (uVar5 != 0xd) {
                                 uVar6 = p[0xd];
                                 if (0x5e < (byte)(p[0xd] - 0x20)) {
                                   uVar6 = '.';
                                 }
-                                buff[iVar9 + 0xd] = uVar6;
+                                buff[iVar13 + 0xd] = uVar6;
                                 if (uVar5 != 0xe) {
                                   uVar6 = p[0xe];
                                   if (0x5e < (byte)(uVar6 - 0x20)) {
                                     uVar6 = '.';
                                   }
-                                  buff[iVar9 + 0xe] = uVar6;
+                                  buff[iVar13 + 0xe] = uVar6;
                                   if (uVar5 == 0x10) {
                                     uVar6 = p[0xf];
                                     if (0x5e < (byte)(uVar6 - 0x20)) {
                                       uVar6 = '.';
                                     }
-                                    buff[iVar9 + 0xf] = uVar6;
+                                    buff[iVar13 + 0xf] = uVar6;
                                   }
                                   else {
-                                    uVar11 = 0xf;
+                                    uVar15 = 0xf;
                                   }
                                 }
                               }
@@ -1167,38 +1213,38 @@ LAB_00100e74:
     }
 LAB_00101198:
     if (cnt == 0x10) goto LAB_001012d8;
-    buff[cnt + iVar9] = ' ';
+    buff[cnt + iVar13] = ' ';
     if (cnt + 1U == 0x10) goto LAB_001012d8;
-    iVar13 = cnt + 2;
-    buff[(int)(cnt + 1U + iVar9)] = ' ';
-    if (iVar13 == 0x10) goto LAB_001012d8;
+    iVar17 = cnt + 2;
+    buff[(int)(cnt + 1U + iVar13)] = ' ';
+    if (iVar17 == 0x10) goto LAB_001012d8;
   }
-  buff[iVar13 + iVar9] = ' ';
-  if (iVar13 + 1 != 0x10) {
-    buff[iVar13 + 1 + iVar9] = ' ';
-    if (iVar13 + 2 != 0x10) {
-      buff[iVar13 + 2 + iVar9] = ' ';
-      if (iVar13 + 3 != 0x10) {
-        buff[iVar13 + 3 + iVar9] = ' ';
-        if (iVar13 + 4 != 0x10) {
-          buff[iVar13 + 4 + iVar9] = ' ';
-          if (iVar13 + 5 != 0x10) {
-            buff[iVar13 + 5 + iVar9] = ' ';
-            if (iVar13 + 6 != 0x10) {
-              buff[iVar13 + 6 + iVar9] = ' ';
-              if (iVar13 + 7 != 0x10) {
-                buff[iVar13 + 7 + iVar9] = ' ';
-                if (iVar13 + 8 != 0x10) {
-                  buff[iVar13 + 8 + iVar9] = ' ';
-                  if (iVar13 + 9 != 0x10) {
-                    buff[iVar13 + 9 + iVar9] = ' ';
-                    if (iVar13 + 10 != 0x10) {
-                      buff[iVar13 + 10 + iVar9] = ' ';
-                      if (iVar13 + 0xb != 0x10) {
-                        buff[iVar13 + 0xb + iVar9] = ' ';
-                        if ((iVar13 + 0xc != 0x10) &&
-                           (buff[iVar13 + 0xc + iVar9] = ' ', iVar13 == 2)) {
-                          buff[iVar9 + 0xf] = ' ';
+  buff[iVar17 + iVar13] = ' ';
+  if (iVar17 + 1 != 0x10) {
+    buff[iVar17 + 1 + iVar13] = ' ';
+    if (iVar17 + 2 != 0x10) {
+      buff[iVar17 + 2 + iVar13] = ' ';
+      if (iVar17 + 3 != 0x10) {
+        buff[iVar17 + 3 + iVar13] = ' ';
+        if (iVar17 + 4 != 0x10) {
+          buff[iVar17 + 4 + iVar13] = ' ';
+          if (iVar17 + 5 != 0x10) {
+            buff[iVar17 + 5 + iVar13] = ' ';
+            if (iVar17 + 6 != 0x10) {
+              buff[iVar17 + 6 + iVar13] = ' ';
+              if (iVar17 + 7 != 0x10) {
+                buff[iVar17 + 7 + iVar13] = ' ';
+                if (iVar17 + 8 != 0x10) {
+                  buff[iVar17 + 8 + iVar13] = ' ';
+                  if (iVar17 + 9 != 0x10) {
+                    buff[iVar17 + 9 + iVar13] = ' ';
+                    if (iVar17 + 10 != 0x10) {
+                      buff[iVar17 + 10 + iVar13] = ' ';
+                      if (iVar17 + 0xb != 0x10) {
+                        buff[iVar17 + 0xb + iVar13] = ' ';
+                        if ((iVar17 + 0xc != 0x10) &&
+                           (buff[iVar17 + 0xc + iVar13] = ' ', iVar17 == 2)) {
+                          buff[iVar13 + 0xf] = ' ';
                         }
                       }
                     }
@@ -1212,7 +1258,7 @@ LAB_00101198:
     }
   }
 LAB_001012d8:
-  *(undefined2 *)(buff + lVar14 + 0x10) = 0x7c;
+  *(undefined2 *)(buff + lVar18 + 0x10) = 0x7c;
   puts(buff);
   return;
 }
@@ -1227,8 +1273,8 @@ undefined8 FUN_0010136c(char *param_1)
   FILE *__stream;
   size_t sVar3;
   ulong offset;
-  uchar auStack144 [16];
-  ulong uStack80;
+  uchar auStack_90 [16];
+  ulong uStack_50;
   
   iVar2 = __xstat(0,param_1,(stat *)&stack0xffffffffffffff80);
   if ((iVar2 == 0) || (__stream = fopen(param_1,"rb"), __stream == (FILE *)0x0)) {
@@ -1236,21 +1282,23 @@ undefined8 FUN_0010136c(char *param_1)
     return 1;
   }
   offset = 0;
-  if (uStack80 != 0) {
+  if (uStack_50 != 0) {
     do {
-      sVar3 = fread(auStack144,1,0x10,__stream);
+      sVar3 = fread(auStack_90,1,0x10,__stream);
       iVar2 = (int)sVar3;
       uVar1 = offset + (long)iVar2;
       if (iVar2 == 0) break;
-      dumpline(auStack144,offset,iVar2);
+      dumpline(auStack_90,offset,iVar2);
       offset = uVar1;
-    } while (uVar1 < uStack80);
+    } while (uVar1 < uStack_50);
   }
   fclose(__stream);
   return 0;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int hexdump(char *fname)
 
@@ -1258,43 +1306,31 @@ int hexdump(char *fname)
   ulong uVar1;
   int iVar2;
   FILE *__stream;
+  FILE *fp;
   size_t sVar3;
+  int cnt;
   ulong offset;
-  uchar auStack144 [16];
-  ulong uStack80;
+  uchar buff [16];
+  stat st;
   
-  iVar2 = __xstat(0,fname,(stat *)&stack0xffffffffffffff80);
+  iVar2 = __xstat(0,fname,(stat *)&st);
   if ((iVar2 == 0) || (__stream = fopen(fname,"rb"), __stream == (FILE *)0x0)) {
     perror(fname);
     return 1;
   }
   offset = 0;
-  if (uStack80 != 0) {
+  if (st.st_size != 0) {
     do {
-      sVar3 = fread(auStack144,1,0x10,__stream);
+      sVar3 = fread(buff,1,0x10,__stream);
       iVar2 = (int)sVar3;
       uVar1 = offset + (long)iVar2;
       if (iVar2 == 0) break;
-      dumpline(auStack144,offset,iVar2);
+      dumpline(buff,offset,iVar2);
       offset = uVar1;
-    } while (uVar1 < uStack80);
+    } while (uVar1 < (ulong)st.st_size);
   }
   fclose(__stream);
   return 0;
-}
-
-
-
-void FUN_0010143c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0010143c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x10143c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

@@ -26,9 +26,9 @@ struct fde_table_entry {
     dword data_loc; // Data location
 };
 
-typedef struct tls_module tls_module, *Ptls_module;
-
 typedef ulong size_t;
+
+typedef struct tls_module tls_module, *Ptls_module;
 
 struct tls_module {
     struct tls_module * next;
@@ -215,6 +215,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -307,7 +308,7 @@ void FUN_001005b0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -359,13 +360,14 @@ void __register_frame_info(void)
 void _start(void)
 
 {
-  undefined in_stack_00000000;
-  
-  _start_c((long *)register0x00000008);
+  _start_c((long *)&stack0x00000000);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
+// Local variable argc:int *[x0:8] conflicts with parameter, skipped.
 
 void _start_c(long *p)
 
@@ -451,9 +453,9 @@ void add_long_double(void)
 undefined8 main(void)
 
 {
-  printf((char *)0x3ff19999a0000000,"float:       %2ld %f\n",4);
-  printf((char *)0x3ff199999999999a,"double:      %2ld %f\n",8);
-  printf((char *)0x9a00000000000000,"long double: %2ld %Lf\n",0x10);
+  printf("float:       %2ld %f\n",0x3ff19999a0000000,4);
+  printf("double:      %2ld %f\n",0x3ff199999999999a,8);
+  printf("long double: %2ld %Lf\n",0x9a00000000000000,0x10);
   return 0;
 }
 
@@ -488,7 +490,7 @@ ulong __addtf3(ulong param_1,ulong param_2)
   ulong in_register_00005008;
   ulong in_register_00005028;
   
-  uVar5 = cRead_8(fpcr);
+  uVar5 = fpcr;
   uVar9 = in_register_00005008 >> 0x30 & 0x7fff;
   uVar22 = in_register_00005028 >> 0x30 & 0x7fff;
   uVar3 = (in_register_00005008 & 0xffffffffffff) << 3;
@@ -571,6 +573,7 @@ LAB_001008a0:
           uVar11 = uVar5 & 0xc00000;
           if (uVar11 == 0) {
             uVar13 = 0;
+            uVar11 = 0;
           }
           else {
             if (uVar11 == 0x400000) {
@@ -671,12 +674,13 @@ LAB_00100b94:
         uVar13 = uVar13 >> 1;
         goto LAB_00100bcc;
       }
-      uVar11 = uVar5 & 0xc00000;
-      if (uVar11 == 0) {
+      uVar22 = uVar5 & 0xc00000;
+      if (uVar22 == 0) {
         uVar13 = 0;
+        uVar11 = 0;
       }
       else {
-        if (uVar11 == 0x400000) {
+        if (uVar22 == 0x400000) {
           if (uVar20 != 0) {
 LAB_00100c04:
             uVar13 = 0xffffffffffffffff;
@@ -685,7 +689,7 @@ LAB_00100c04:
             goto LAB_001010ac;
           }
         }
-        else if ((uVar11 != 0x800000) || (uVar20 == 0)) goto LAB_00100c04;
+        else if ((uVar22 != 0x800000) || (uVar20 == 0)) goto LAB_00100c04;
         uVar13 = 0;
         uVar11 = 0;
       }
@@ -848,8 +852,8 @@ LAB_00100edc:
           uVar20 = uVar21;
           goto LAB_00100f6c;
         }
-        uVar22 = uVar10 | uVar18;
-        if (uVar22 != 0) goto LAB_00100f6c;
+        if ((uVar10 | uVar18) != 0) goto LAB_00100f6c;
+        uVar22 = 0;
 LAB_00100ea4:
         uVar20 = (ulong)((uVar5 & 0xc00000) == 0x800000);
 LAB_00100eb0:
@@ -1098,28 +1102,31 @@ LAB_00101100:
 
 
 
-ulong __sfp_handle_exceptions(ulong param_1)
+undefined  [16] __sfp_handle_exceptions(ulong param_1,undefined8 param_2)
 
 {
   uint uVar1;
+  undefined auVar2 [16];
   
   uVar1 = (uint)param_1;
   if ((param_1 & 1) != 0) {
-    cRead(fpsr);
+    param_2 = fpsr;
   }
   if ((uVar1 >> 1 & 1) != 0) {
-    cRead(fpsr);
+    param_2 = fpsr;
   }
   if ((uVar1 >> 2 & 1) != 0) {
-    cRead(fpsr);
+    param_2 = fpsr;
   }
   if ((uVar1 >> 3 & 1) != 0) {
-    cRead(fpsr);
+    param_2 = fpsr;
   }
   if ((uVar1 >> 4 & 1) != 0) {
-    param_1 = cRead_8(fpsr);
+    param_1 = fpsr;
   }
-  return param_1;
+  auVar2._8_8_ = param_2;
+  auVar2._0_8_ = param_1;
+  return auVar2;
 }
 
 

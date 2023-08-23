@@ -136,6 +136,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -202,6 +203,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -209,14 +221,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -287,7 +299,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -309,10 +321,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -365,6 +380,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080483f9)
+// WARNING: Removing unreachable block (ram,0x080483f0)
 
 void frame_dummy(void)
 
@@ -374,6 +390,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_char_add(void)
 
@@ -1407,6 +1425,8 @@ void signed_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_mult(void)
 
 {
@@ -2439,66 +2459,14 @@ void signed_char_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_div(void)
 
 {
-  char cVar4;
-  char cVar5;
-  char cVar6;
-  char cVar7;
-  char cVar8;
-  char cVar9;
-  char cVar10;
-  char cVar11;
-  char cVar12;
-  char cVar13;
-  char cVar14;
-  char cVar15;
-  char cVar16;
-  char cVar17;
-  char cVar18;
-  char cVar19;
-  char cVar20;
-  char cVar21;
-  char cVar22;
-  char cVar23;
-  char cVar24;
-  char cVar25;
-  char cVar26;
-  char cVar27;
-  char cVar28;
+  char cVar2;
   int iVar1;
-  int iVar2;
-  int iVar3;
   
-  cVar4 = (char)((uint)(signed_char_src[6] * -0x6d) >> 8) + signed_char_src[6];
-  cVar5 = (char)((uint)(signed_char_src[10] * -0x45) >> 8) + signed_char_src[10];
-  cVar6 = (char)((uint)(signed_char_src[13] * -0x6d) >> 8) + signed_char_src[13];
-  cVar7 = (char)((uint)(signed_char_src[14] * -0x77) >> 8) + signed_char_src[14];
-  cVar8 = (char)((uint)(signed_char_src[21] * -0x45) >> 8) + signed_char_src[21];
-  cVar9 = (char)((uint)(signed_char_src[22] * -0x4d) >> 8) + signed_char_src[22];
-  cVar10 = (char)((uint)(signed_char_src[27] * -0x6d) >> 8) + signed_char_src[27];
-  cVar11 = (char)((uint)(signed_char_src[29] * -0x77) >> 8) + signed_char_src[29];
-  cVar12 = (char)((uint)(signed_char_src[30] * -0x7b) >> 8) + signed_char_src[30];
-  cVar13 = (char)((uint)(signed_char_src[38] * -0x2d) >> 8) + signed_char_src[38];
-  cVar14 = (char)((uint)(signed_char_src[55] * -0x6d) >> 8) + signed_char_src[55];
-  cVar15 = (char)((uint)(signed_char_src[59] * -0x77) >> 8) + signed_char_src[59];
-  cVar16 = (char)((uint)(signed_char_src[60] * -0x79) >> 8) + signed_char_src[60];
-  cVar17 = (char)((uint)(signed_char_src[61] * -0x7b) >> 8) + signed_char_src[61];
-  cVar18 = (char)((uint)(signed_char_src[62] * -0x7d) >> 8) + signed_char_src[62];
-  cVar19 = (char)((uint)(signed_char_src[100] * -0x5d) >> 8) + signed_char_src[100];
-  cVar20 = (char)((uint)(signed_char_src[104] * -99) >> 8) + signed_char_src[104];
-  cVar21 = (char)((uint)(signed_char_src[108] * -0x69) >> 8) + signed_char_src[108];
-  cVar22 = (char)((uint)(signed_char_src[111] * -0x6d) >> 8) + signed_char_src[111];
-  cVar23 = (char)((uint)(signed_char_src[114] * -0x71) >> 8) + signed_char_src[114];
-  cVar24 = (char)((uint)(signed_char_src[116] * -0x73) >> 8) + signed_char_src[116];
-  cVar25 = (char)((uint)(signed_char_src[119] * -0x77) >> 8) + signed_char_src[119];
-  cVar26 = (char)((uint)(signed_char_src[121] * -0x79) >> 8) + signed_char_src[121];
-  cVar27 = (char)((uint)(signed_char_src[123] * -0x7b) >> 8) + signed_char_src[123];
-  cVar28 = (char)((uint)(signed_char_src[125] * -0x7d) >> 8) + signed_char_src[125];
-  iVar1 = (int)signed_char_src[191];
-  iVar2 = (int)signed_char_src[383];
-  iVar3 = (int)signed_char_src[767];
   signed_char_dest[0] = signed_char_src[0];
   signed_char_dest[1] = signed_char_src[1] / '\x02';
   signed_char_dest[2] =
@@ -2511,7 +2479,8 @@ void signed_char_div(void)
   signed_char_dest[5] =
        (char)((signed_char_src[5] * 0x2b & 0x8000U) >> 0xf) +
        (char)((uint)(signed_char_src[5] * 0x2b) >> 8);
-  signed_char_dest[6] = (cVar4 >> 2) - (cVar4 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[6] * -0x6d) >> 8) + signed_char_src[6];
+  signed_char_dest[6] = (cVar2 >> 2) - (cVar2 >> 7);
   signed_char_dest[7] = (char)(((byte)(signed_char_src[7] >> 7) >> 5) + signed_char_src[7]) >> 3;
   signed_char_dest[8] =
        (char)((signed_char_src[8] * 0x39 & 0x8000U) >> 0xf) +
@@ -2519,15 +2488,18 @@ void signed_char_div(void)
   signed_char_dest[9] =
        (char)((signed_char_src[9] * 0x67 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[9] * 0x67) >> 8) >> 2);
-  signed_char_dest[10] = (cVar5 >> 3) - (cVar5 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[10] * -0x45) >> 8) + signed_char_src[10];
+  signed_char_dest[10] = (cVar2 >> 3) - (cVar2 >> 7);
   signed_char_dest[11] =
        (char)((signed_char_src[11] * 0x2b & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[11] * 0x2b) >> 8) >> 1);
   signed_char_dest[12] =
        (char)((signed_char_src[12] * 0x4f & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[12] * 0x4f) >> 8) >> 2);
-  signed_char_dest[13] = (cVar6 >> 3) - (cVar6 >> 7);
-  signed_char_dest[14] = (cVar7 >> 3) - (cVar7 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[13] * -0x6d) >> 8) + signed_char_src[13];
+  signed_char_dest[13] = (cVar2 >> 3) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[14] * -0x77) >> 8) + signed_char_src[14];
+  signed_char_dest[14] = (cVar2 >> 3) - (cVar2 >> 7);
   signed_char_dest[15] = (char)(((byte)(signed_char_src[15] >> 7) >> 4) + signed_char_src[15]) >> 4;
   signed_char_dest[16] =
        (char)((signed_char_src[16] * 0x79 & 0x8000U) >> 0xf) +
@@ -2544,8 +2516,10 @@ void signed_char_div(void)
   signed_char_dest[20] =
        (char)((signed_char_src[20] * 0x31 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[20] * 0x31) >> 8) >> 2);
-  signed_char_dest[21] = (cVar8 >> 4) - (cVar8 >> 7);
-  signed_char_dest[22] = (cVar9 >> 4) - (cVar9 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[21] * -0x45) >> 8) + signed_char_src[21];
+  signed_char_dest[21] = (cVar2 >> 4) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[22] * -0x4d) >> 8) + signed_char_src[22];
+  signed_char_dest[22] = (cVar2 >> 4) - (cVar2 >> 7);
   signed_char_dest[23] =
        (char)((signed_char_src[23] * 0x2b & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[23] * 0x2b) >> 8) >> 2);
@@ -2558,12 +2532,15 @@ void signed_char_div(void)
   signed_char_dest[26] =
        (char)((signed_char_src[26] * 0x13 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[26] * 0x13) >> 8) >> 1);
-  signed_char_dest[27] = (cVar10 >> 4) - (cVar10 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[27] * -0x6d) >> 8) + signed_char_src[27];
+  signed_char_dest[27] = (cVar2 >> 4) - (cVar2 >> 7);
   signed_char_dest[28] =
        (char)((signed_char_src[28] * 0x47 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[28] * 0x47) >> 8) >> 3);
-  signed_char_dest[29] = (cVar11 >> 4) - (cVar11 >> 7);
-  signed_char_dest[30] = (cVar12 >> 4) - (cVar12 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[29] * -0x77) >> 8) + signed_char_src[29];
+  signed_char_dest[29] = (cVar2 >> 4) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[30] * -0x7b) >> 8) + signed_char_src[30];
+  signed_char_dest[30] = (cVar2 >> 4) - (cVar2 >> 7);
   signed_char_dest[31] = (char)(((byte)(signed_char_src[31] >> 7) >> 3) + signed_char_src[31]) >> 5;
   signed_char_dest[32] =
        (char)((signed_char_src[32] * 0x7d & 0x8000U) >> 0xf) +
@@ -2583,7 +2560,8 @@ void signed_char_div(void)
   signed_char_dest[37] =
        (char)((signed_char_src[37] * 0x1b & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[37] * 0x1b) >> 8) >> 2);
-  signed_char_dest[38] = (cVar13 >> 5) - (cVar13 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[38] * -0x2d) >> 8) + signed_char_src[38];
+  signed_char_dest[38] = (cVar2 >> 5) - (cVar2 >> 7);
   signed_char_dest[39] =
        (char)((signed_char_src[39] * 0x67 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[39] * 0x67) >> 8) >> 4);
@@ -2632,7 +2610,8 @@ void signed_char_div(void)
   signed_char_dest[54] =
        (char)((signed_char_src[54] * 0x4b & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[54] * 0x4b) >> 8) >> 4);
-  signed_char_dest[55] = (cVar14 >> 5) - (cVar14 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[55] * -0x6d) >> 8) + signed_char_src[55];
+  signed_char_dest[55] = (cVar2 >> 5) - (cVar2 >> 7);
   signed_char_dest[56] =
        (char)((signed_char_src[56] * 9 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[56] * 9) >> 8) >> 1);
@@ -2642,10 +2621,14 @@ void signed_char_div(void)
   signed_char_dest[58] =
        (char)((signed_char_src[58] * 0x23 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[58] * 0x23) >> 8) >> 3);
-  signed_char_dest[59] = (cVar15 >> 5) - (cVar15 >> 7);
-  signed_char_dest[60] = (cVar16 >> 5) - (cVar16 >> 7);
-  signed_char_dest[61] = (cVar17 >> 5) - (cVar17 >> 7);
-  signed_char_dest[62] = (cVar18 >> 5) - (cVar18 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[59] * -0x77) >> 8) + signed_char_src[59];
+  signed_char_dest[59] = (cVar2 >> 5) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[60] * -0x79) >> 8) + signed_char_src[60];
+  signed_char_dest[60] = (cVar2 >> 5) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[61] * -0x7b) >> 8) + signed_char_src[61];
+  signed_char_dest[61] = (cVar2 >> 5) - (cVar2 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[62] * -0x7d) >> 8) + signed_char_src[62];
+  signed_char_dest[62] = (cVar2 >> 5) - (cVar2 >> 7);
   signed_char_dest[63] = (char)(((byte)(signed_char_src[63] >> 7) >> 2) + signed_char_src[63]) >> 6;
   signed_char_dest[64] =
        (char)((signed_char_src[64] * 0x7f & 0x8000U) >> 0xf) +
@@ -2755,7 +2738,8 @@ void signed_char_div(void)
   signed_char_dest[99] =
        (char)((signed_char_src[99] * 0x29 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[99] * 0x29) >> 8) >> 4);
-  signed_char_dest[100] = (cVar19 >> 6) - (cVar19 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[100] * -0x5d) >> 8) + signed_char_src[100];
+  signed_char_dest[100] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[101] =
        (char)((signed_char_src[101] * 0x51 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[101] * 0x51) >> 8) >> 5);
@@ -2765,7 +2749,8 @@ void signed_char_div(void)
   signed_char_dest[103] =
        (char)((signed_char_src[103] * 0x4f & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[103] * 0x4f) >> 8) >> 5);
-  signed_char_dest[104] = (cVar20 >> 6) - (cVar20 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[104] * -99) >> 8) + signed_char_src[104];
+  signed_char_dest[104] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[105] =
        (char)((signed_char_src[105] * 0x27 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[105] * 0x27) >> 8) >> 4);
@@ -2775,44 +2760,52 @@ void signed_char_div(void)
   signed_char_dest[107] =
        (char)((signed_char_src[107] * 0x13 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[107] * 0x13) >> 8) >> 3);
-  signed_char_dest[108] = (cVar21 >> 6) - (cVar21 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[108] * -0x69) >> 8) + signed_char_src[108];
+  signed_char_dest[108] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[109] =
        (char)((signed_char_src[109] * 0x4b & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[109] * 0x4b) >> 8) >> 5);
   signed_char_dest[110] =
        (char)((signed_char_src[110] * 0x25 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[110] * 0x25) >> 8) >> 4);
-  signed_char_dest[111] = (cVar22 >> 6) - (cVar22 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[111] * -0x6d) >> 8) + signed_char_src[111];
+  signed_char_dest[111] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[112] =
        (char)((signed_char_src[112] * 0x49 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[112] * 0x49) >> 8) >> 5);
   signed_char_dest[113] =
        (char)((signed_char_src[113] * 9 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[113] * 9) >> 8) >> 2);
-  signed_char_dest[114] = (cVar23 >> 6) - (cVar23 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[114] * -0x71) >> 8) + signed_char_src[114];
+  signed_char_dest[114] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[115] =
        (char)((signed_char_src[115] * 0x47 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[115] * 0x47) >> 8) >> 5);
-  signed_char_dest[116] = (cVar24 >> 6) - (cVar24 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[116] * -0x73) >> 8) + signed_char_src[116];
+  signed_char_dest[116] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[117] =
        (char)((signed_char_src[117] * 0x23 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[117] * 0x23) >> 8) >> 4);
   signed_char_dest[118] =
        (char)((signed_char_src[118] * 0x45 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[118] * 0x45) >> 8) >> 5);
-  signed_char_dest[119] = (cVar25 >> 6) - (cVar25 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[119] * -0x77) >> 8) + signed_char_src[119];
+  signed_char_dest[119] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[120] =
        (char)((signed_char_src[120] * 0x11 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[120] * 0x11) >> 8) >> 3);
-  signed_char_dest[121] = (cVar26 >> 6) - (cVar26 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[121] * -0x79) >> 8) + signed_char_src[121];
+  signed_char_dest[121] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[122] =
        (char)((signed_char_src[122] * 0x43 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[122] * 0x43) >> 8) >> 5);
-  signed_char_dest[123] = (cVar27 >> 6) - (cVar27 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[123] * -0x7b) >> 8) + signed_char_src[123];
+  signed_char_dest[123] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[124] =
        (char)((signed_char_src[124] * 0x21 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[124] * 0x21) >> 8) >> 4);
-  signed_char_dest[125] = (cVar28 >> 6) - (cVar28 >> 7);
+  cVar2 = (char)((uint)(signed_char_src[125] * -0x7d) >> 8) + signed_char_src[125];
+  signed_char_dest[125] = (cVar2 >> 6) - (cVar2 >> 7);
   signed_char_dest[126] =
        (char)((signed_char_src[126] * 0x41 & 0x8000U) >> 0xf) +
        ((char)((uint)(signed_char_src[126] * 0x41) >> 8) >> 5);
@@ -3004,6 +2997,7 @@ void signed_char_div(void)
   signed_char_dest[189] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[189] * 0xac769185) >> 0x27) -
        (char)((longlong)(int)signed_char_src[189] * 0xac769185 >> 0x3f);
+  iVar1 = (int)signed_char_src[191];
   signed_char_dest[190] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[190] * 0xab8f69e3) >> 0x27) -
        (char)((longlong)(int)signed_char_src[190] * 0xab8f69e3 >> 0x3f);
@@ -3579,12 +3573,13 @@ void signed_char_div(void)
   signed_char_dest[381] =
        (char)((ulonglong)((longlong)(int)signed_char_src[381] * 0xab8f69e3) >> 0x28) -
        (char)((longlong)(int)signed_char_src[381] * 0xab8f69e3 >> 0x3f);
+  iVar1 = (int)signed_char_src[383];
   signed_char_dest[382] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[382] * 0x2ac72f75) >> 0x26) -
        (char)((longlong)(int)signed_char_src[382] * 0x2ac72f75 >> 0x3f);
   signed_char_dest[383] =
-       (char)((uint)(iVar2 / 6 + (iVar2 >> 0x1f)) >> 6) -
-       (char)((longlong)iVar2 * 0x2aaaaaab >> 0x3f);
+       (char)((uint)(iVar1 / 6 + (iVar1 >> 0x1f)) >> 6) -
+       (char)((longlong)iVar1 * 0x2aaaaaab >> 0x3f);
   signed_char_dest[384] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[384] * 0x551c979b) >> 0x27) -
        (char)((longlong)(int)signed_char_src[384] * 0x551c979b >> 0x3f);
@@ -4728,12 +4723,13 @@ void signed_char_div(void)
   signed_char_dest[765] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[765] * 0x2ac72f75) >> 0x27) -
        (char)((longlong)(int)signed_char_src[765] * 0x2ac72f75 >> 0x3f);
+  iVar1 = (int)signed_char_src[767];
   signed_char_dest[766] =
        (char)((ulonglong)((longlong)(int)signed_char_src[766] * 0x5571d09b) >> 0x28) -
        (char)((longlong)(int)signed_char_src[766] * 0x5571d09b >> 0x3f);
   signed_char_dest[767] =
-       (char)((uint)(iVar3 / 6 + (iVar3 >> 0x1f)) >> 7) -
-       (char)((longlong)iVar3 * 0x2aaaaaab >> 0x3f);
+       (char)((uint)(iVar1 / 6 + (iVar1 >> 0x1f)) >> 7) -
+       (char)((longlong)iVar1 * 0x2aaaaaab >> 0x3f);
   signed_char_dest[768] =
        (char)(uint)((ulonglong)((longlong)(int)signed_char_src[768] * 0xaa71da0d) >> 0x29) -
        (char)((longlong)(int)signed_char_src[768] * 0xaa71da0d >> 0x3f);
@@ -5507,32 +5503,33 @@ void signed_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_modulo(void)
 
 {
   signed_char_dest[0] = '\0';
-  signed_char_dest[1] =
-       signed_char_src[1] - (signed_char_src[1] - (signed_char_src[1] >> 7) & 0xfeU);
+  signed_char_dest[1] = signed_char_src[1] % '\x02';
   signed_char_dest[2] = signed_char_src[2] % '\x03';
   signed_char_dest[3] = signed_char_src[3] % '\x04';
   signed_char_dest[4] =
        signed_char_src[4] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[4] * 0x66666667) >> 0x21) -
-       (char)((longlong)(int)signed_char_src[4] * 0x66666667 >> 0x3f)) * -5;
+       (signed_char_src[4] >> 7)) * -5;
   signed_char_dest[5] = signed_char_src[5] % '\x06';
   signed_char_dest[6] =
        signed_char_src[6] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[6] * 0x92492493) >> 0x22) -
-       (char)((longlong)(int)signed_char_src[6] * 0x92492493 >> 0x3f)) * -7;
+       (signed_char_src[6] >> 7)) * -7;
   signed_char_dest[7] = signed_char_src[7] % '\b';
   signed_char_dest[8] =
        signed_char_src[8] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[8] * 0x38e38e39) >> 0x21) -
-       (char)((longlong)(int)signed_char_src[8] * 0x38e38e39 >> 0x3f)) * -9;
+       (signed_char_src[8] >> 7)) * -9;
   signed_char_dest[9] =
        signed_char_src[9] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[9] * 0x66666667) >> 0x22) -
-       (char)((longlong)(int)signed_char_src[9] * 0x66666667 >> 0x3f)) * -10;
+       (signed_char_src[9] >> 7)) * -10;
   signed_char_dest[10] =
        signed_char_src[10] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[10] * 0x2e8ba2e9) >> 0x21) -
@@ -5552,16 +5549,16 @@ void signed_char_modulo(void)
   signed_char_dest[14] =
        signed_char_src[14] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[14] * 0x88888889) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[14] * 0x88888889 >> 0x3f)) * -0xf;
+       (signed_char_src[14] >> 7)) * -0xf;
   signed_char_dest[15] = signed_char_src[15] % '\x10';
   signed_char_dest[16] =
        signed_char_src[16] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[16] * 0x78787879) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[16] * 0x78787879 >> 0x3f)) * -0x11;
+       (signed_char_src[16] >> 7)) * -0x11;
   signed_char_dest[17] =
        signed_char_src[17] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[17] * 0x38e38e39) >> 0x22) -
-       (char)((longlong)(int)signed_char_src[17] * 0x38e38e39 >> 0x3f)) * -0x12;
+       (signed_char_src[17] >> 7)) * -0x12;
   signed_char_dest[18] =
        signed_char_src[18] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[18] * 0x6bca1af3) >> 0x23) -
@@ -5569,7 +5566,7 @@ void signed_char_modulo(void)
   signed_char_dest[19] =
        signed_char_src[19] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[19] * 0x66666667) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[19] * 0x66666667 >> 0x3f)) * -0x14;
+       (signed_char_src[19] >> 7)) * -0x14;
   signed_char_dest[20] =
        signed_char_src[20] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[20] * 0x30c30c31) >> 0x22) -
@@ -5589,7 +5586,7 @@ void signed_char_modulo(void)
   signed_char_dest[24] =
        signed_char_src[24] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[24] * 0x51eb851f) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[24] * 0x51eb851f >> 0x3f)) * -0x19;
+       (signed_char_src[24] >> 7)) * -0x19;
   signed_char_dest[25] =
        signed_char_src[25] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[25] * 0x4ec4ec4f) >> 0x23) -
@@ -5597,7 +5594,7 @@ void signed_char_modulo(void)
   signed_char_dest[26] =
        signed_char_src[26] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[26] * 0x4bda12f7) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[26] * 0x4bda12f7 >> 0x3f)) * -0x1b;
+       (signed_char_src[26] >> 7)) * -0x1b;
   signed_char_dest[27] =
        signed_char_src[27] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[27] * 0x92492493) >> 0x24) -
@@ -5613,12 +5610,12 @@ void signed_char_modulo(void)
   signed_char_dest[30] =
        signed_char_src[30] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[30] * 0x84210843) >> 0x24) -
-       (char)((longlong)(int)signed_char_src[30] * 0x84210843 >> 0x3f)) * -0x1f;
+       (signed_char_src[30] >> 7)) * -0x1f;
   signed_char_dest[31] = signed_char_src[31] % ' ';
   signed_char_dest[32] =
        signed_char_src[32] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[32] * 0x3e0f83e1) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[32] * 0x3e0f83e1 >> 0x3f)) * -0x21;
+       (signed_char_src[32] >> 7)) * -0x21;
   signed_char_dest[33] =
        signed_char_src[33] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[33] * 0x78787879) >> 0x24) -
@@ -5630,7 +5627,7 @@ void signed_char_modulo(void)
   signed_char_dest[35] =
        signed_char_src[35] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[35] * 0x38e38e39) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[35] * 0x38e38e39 >> 0x3f)) * -0x24;
+       (signed_char_src[35] >> 7)) * -0x24;
   signed_char_dest[36] =
        signed_char_src[36] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[36] * 0xdd67c8a7) >> 0x25) -
@@ -5646,7 +5643,7 @@ void signed_char_modulo(void)
   signed_char_dest[39] =
        signed_char_src[39] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[39] * 0x66666667) >> 0x24) -
-       (char)((longlong)(int)signed_char_src[39] * 0x66666667 >> 0x3f)) * -0x28;
+       (signed_char_src[39] >> 7)) * -0x28;
   signed_char_dest[40] =
        signed_char_src[40] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[40] * 0x63e7063f) >> 0x24) -
@@ -5738,12 +5735,12 @@ void signed_char_modulo(void)
   signed_char_dest[62] =
        signed_char_src[62] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[62] * 0x82082083) >> 0x25) -
-       (char)((longlong)(int)signed_char_src[62] * 0x82082083 >> 0x3f)) * -0x3f;
+       (signed_char_src[62] >> 7)) * -0x3f;
   signed_char_dest[63] = signed_char_src[63] % '@';
   signed_char_dest[64] =
        signed_char_src[64] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[64] * 0x7e07e07f) >> 0x25) -
-       (char)((longlong)(int)signed_char_src[64] * 0x7e07e07f >> 0x3f)) * -0x41;
+       (signed_char_src[64] >> 7)) * -0x41;
   signed_char_dest[65] =
        signed_char_src[65] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[65] * 0x3e0f83e1) >> 0x24) -
@@ -5771,7 +5768,7 @@ void signed_char_modulo(void)
   signed_char_dest[71] =
        signed_char_src[71] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[71] * 0x38e38e39) >> 0x24) -
-       (char)((longlong)(int)signed_char_src[71] * 0x38e38e39 >> 0x3f)) * -0x48;
+       (signed_char_src[71] >> 7)) * -0x48;
   signed_char_dest[72] =
        signed_char_src[72] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[72] * 0xe070381d) >> 0x26) -
@@ -5803,11 +5800,11 @@ void signed_char_modulo(void)
   signed_char_dest[79] =
        signed_char_src[79] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[79] * 0x66666667) >> 0x25) -
-       (char)((longlong)(int)signed_char_src[79] * 0x66666667 >> 0x3f)) * -0x50;
+       (signed_char_src[79] >> 7)) * -0x50;
   signed_char_dest[80] =
        signed_char_src[80] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[80] * 0x1948b0fd) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[80] * 0x1948b0fd >> 0x3f)) * -0x51;
+       (signed_char_src[80] >> 7)) * -0x51;
   signed_char_dest[81] =
        signed_char_src[81] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[81] * 0x63e7063f) >> 0x25) -
@@ -5991,12 +5988,12 @@ void signed_char_modulo(void)
   signed_char_dest[126] =
        signed_char_src[126] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[126] * 0x81020409) >> 0x26) -
-       (char)((longlong)(int)signed_char_src[126] * 0x81020409 >> 0x3f)) * -0x7f;
+       (signed_char_src[126] >> 7)) * -0x7f;
   signed_char_dest[127] = signed_char_src[127] % -0x80;
   signed_char_dest[128] =
        signed_char_src[128] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[128] * 0xfe03f81) >> 0x23) -
-       (char)((longlong)(int)signed_char_src[128] * 0xfe03f81 >> 0x3f)) * '\x7f';
+       (signed_char_src[128] >> 7)) * '\x7f';
   signed_char_dest[129] =
        signed_char_src[129] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[129] * 0x7e07e07f) >> 0x26) -
@@ -6056,7 +6053,7 @@ void signed_char_modulo(void)
   signed_char_dest[143] =
        signed_char_src[143] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[143] * 0x38e38e39) >> 0x25) -
-       (char)((longlong)(int)signed_char_src[143] * 0x38e38e39 >> 0x3f)) * 'p';
+       (signed_char_src[143] >> 7)) * 'p';
   signed_char_dest[144] =
        signed_char_src[144] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[144] * 0xe1fc780f) >> 0x27) -
@@ -6120,7 +6117,7 @@ void signed_char_modulo(void)
   signed_char_dest[159] =
        signed_char_src[159] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[159] * 0x66666667) >> 0x26) -
-       (char)((longlong)(int)signed_char_src[159] * 0x66666667 >> 0x3f)) * '`';
+       (signed_char_src[159] >> 7)) * '`';
   signed_char_dest[160] =
        signed_char_src[160] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[160] * 0xcb8727c1) >> 0x27) -
@@ -6500,12 +6497,12 @@ void signed_char_modulo(void)
   signed_char_dest[254] =
        signed_char_src[254] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[254] * 0x80808081) >> 0x27) -
-       (char)((longlong)(int)signed_char_src[254] * 0x80808081 >> 0x3f));
+       (signed_char_src[254] >> 7));
   signed_char_dest[255] = signed_char_src[255];
   signed_char_dest[256] =
        signed_char_src[256] -
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[256] * 0x7f807f81) >> 0x27) -
-       (char)((longlong)(int)signed_char_src[256] * 0x7f807f81 >> 0x3f));
+       (signed_char_src[256] >> 7));
   signed_char_dest[257] =
        signed_char_src[257] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[257] * 0xfe03f81) >> 0x24) -
@@ -6629,7 +6626,7 @@ void signed_char_modulo(void)
   signed_char_dest[287] =
        signed_char_src[287] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[287] * 0x38e38e39) >> 0x26) -
-       (char)((longlong)(int)signed_char_src[287] * 0x38e38e39 >> 0x3f)) * -0x20;
+       (signed_char_src[287] >> 7)) * -0x20;
   signed_char_dest[288] =
        signed_char_src[288] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[288] * 0x71625345) >> 0x27) -
@@ -6757,7 +6754,7 @@ void signed_char_modulo(void)
   signed_char_dest[319] =
        signed_char_src[319] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[319] * 0x66666667) >> 0x27) -
-       (char)((longlong)(int)signed_char_src[319] * 0x66666667 >> 0x3f)) * -0x40;
+       (signed_char_src[319] >> 7)) * -0x40;
   signed_char_dest[320] =
        signed_char_src[320] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[320] * 0x6614bc37) >> 0x27) -
@@ -7521,12 +7518,12 @@ void signed_char_modulo(void)
   signed_char_dest[510] =
        signed_char_src[510] +
        ((char)((ulonglong)((longlong)(int)signed_char_src[510] * 0x80402011) >> 0x28) -
-       (char)((longlong)(int)signed_char_src[510] * 0x80402011 >> 0x3f));
+       (signed_char_src[510] >> 7));
   signed_char_dest[511] = signed_char_src[511];
   signed_char_dest[512] =
        signed_char_src[512] -
        ((char)((ulonglong)((longlong)(int)signed_char_src[512] * 0x7fc01ff1) >> 0x28) -
-       (char)((longlong)(int)signed_char_src[512] * 0x7fc01ff1 >> 0x3f));
+       (signed_char_src[512] >> 7));
   signed_char_dest[513] =
        signed_char_src[513] +
        ((char)((ulonglong)((longlong)(int)signed_char_src[513] * 0x7f807f81) >> 0x28) -
@@ -7778,7 +7775,7 @@ void signed_char_modulo(void)
   signed_char_dest[575] =
        signed_char_src[575] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[575] * 0x38e38e39) >> 0x27) -
-       (char)((longlong)(int)signed_char_src[575] * 0x38e38e39 >> 0x3f)) * -0x40;
+       (signed_char_src[575] >> 7)) * -0x40;
   signed_char_dest[576] =
        signed_char_src[576] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[576] * 0xe32943) >> 0x21) -
@@ -8034,7 +8031,7 @@ void signed_char_modulo(void)
   signed_char_dest[639] =
        signed_char_src[639] +
        ((char)((ulonglong)((longlong)(int)signed_char_src[639] * 0x66666667) >> 0x28) -
-       (char)((longlong)(int)signed_char_src[639] * 0x66666667 >> 0x3f)) * -0x80;
+       (signed_char_src[639] >> 7)) * -0x80;
   signed_char_dest[640] = signed_char_src[640] + (char)((int)signed_char_src[640] / 0x281) * '\x7f';
   signed_char_dest[641] =
        signed_char_src[641] +
@@ -9560,12 +9557,14 @@ void signed_char_modulo(void)
   signed_char_dest[1022] =
        signed_char_src[1022] +
        ((char)(uint)((ulonglong)((longlong)(int)signed_char_src[1022] * 0x80200803) >> 0x29) -
-       (char)((longlong)(int)signed_char_src[1022] * 0x80200803 >> 0x3f));
+       (signed_char_src[1022] >> 7));
   signed_char_dest[1023] = signed_char_src[1023];
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_char_add(void)
 
@@ -10599,6 +10598,8 @@ void unsigned_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_mult(void)
 
 {
@@ -11631,6 +11632,8 @@ void unsigned_char_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_div(void)
 
 {
@@ -11651,7 +11654,7 @@ void unsigned_char_div(void)
   unsigned_char_dest[10] = (byte)(((byte)(unsigned_char_src[10] - cVar1) >> 1) + cVar1) >> 3;
   unsigned_char_dest[11] = unsigned_char_src[11] / 0xc;
   unsigned_char_dest[12] = unsigned_char_src[12] / 0xd;
-  unsigned_char_dest[13] = (unsigned_char_src[13] >> 1) / 7;
+  unsigned_char_dest[13] = unsigned_char_src[13] / 0xe;
   unsigned_char_dest[14] = unsigned_char_src[14] / 0xf;
   unsigned_char_dest[15] = unsigned_char_src[15] >> 4;
   unsigned_char_dest[16] = unsigned_char_src[16] / 0x11;
@@ -11660,7 +11663,7 @@ void unsigned_char_div(void)
   unsigned_char_dest[19] = unsigned_char_src[19] / 0x14;
   cVar1 = (char)((uint)unsigned_char_src[20] * 0x87 >> 8);
   unsigned_char_dest[20] = (byte)(((byte)(unsigned_char_src[20] - cVar1) >> 1) + cVar1) >> 4;
-  unsigned_char_dest[21] = (unsigned_char_src[21] >> 1) / 0xb;
+  unsigned_char_dest[21] = unsigned_char_src[21] / 0x16;
   cVar1 = (char)((uint)unsigned_char_src[22] * 0x65 >> 8);
   unsigned_char_dest[22] = (byte)(((byte)(unsigned_char_src[22] - cVar1) >> 1) + cVar1) >> 4;
   unsigned_char_dest[23] = unsigned_char_src[23] / 0x18;
@@ -11684,12 +11687,12 @@ void unsigned_char_div(void)
   unsigned_char_dest[38] = (byte)(((byte)(unsigned_char_src[38] - cVar1) >> 1) + cVar1) >> 5;
   unsigned_char_dest[39] = unsigned_char_src[39] / 0x28;
   unsigned_char_dest[40] = (uchar)((uint)unsigned_char_src[40] * 0x19 >> 10);
-  unsigned_char_dest[41] = (unsigned_char_src[41] >> 1) / 0x15;
+  unsigned_char_dest[41] = unsigned_char_src[41] / 0x2a;
   unsigned_char_dest[42] = unsigned_char_src[42] / 0x2b;
   unsigned_char_dest[43] = (uchar)((uint)unsigned_char_src[43] * 0xbb >> 0xd);
   cVar1 = (char)((uint)unsigned_char_src[44] * 0x6d >> 8);
   unsigned_char_dest[44] = (byte)(((byte)(unsigned_char_src[44] - cVar1) >> 1) + cVar1) >> 5;
-  unsigned_char_dest[45] = (unsigned_char_src[45] >> 1) / 0x17;
+  unsigned_char_dest[45] = unsigned_char_src[45] / 0x2e;
   unsigned_char_dest[46] = (uchar)((uint)unsigned_char_src[46] * 0xaf >> 0xd);
   unsigned_char_dest[47] = unsigned_char_src[47] / 0x30;
   cVar1 = (char)((uint)unsigned_char_src[48] * 0x4f >> 8);
@@ -11702,12 +11705,12 @@ void unsigned_char_div(void)
   unsigned_char_dest[54] = unsigned_char_src[54] / 0x37;
   unsigned_char_dest[55] = (uchar)((uint)(unsigned_char_src[55] >> 3) * 0x25 >> 8);
   unsigned_char_dest[56] = (uchar)((uint)unsigned_char_src[56] * 9 >> 9);
-  unsigned_char_dest[57] = (unsigned_char_src[57] >> 1) / 0x1d;
+  unsigned_char_dest[57] = unsigned_char_src[57] / 0x3a;
   unsigned_char_dest[58] = unsigned_char_src[58] / 0x3b;
   unsigned_char_dest[59] = unsigned_char_src[59] / 0x3c;
   cVar1 = (char)((uint)unsigned_char_src[60] * 0xd >> 8);
   unsigned_char_dest[60] = (byte)(((byte)(unsigned_char_src[60] - cVar1) >> 1) + cVar1) >> 5;
-  unsigned_char_dest[61] = (unsigned_char_src[61] >> 1) / 0x1f;
+  unsigned_char_dest[61] = unsigned_char_src[61] / 0x3e;
   cVar1 = (char)((uint)unsigned_char_src[62] * 5 >> 8);
   unsigned_char_dest[62] = (byte)(((byte)(unsigned_char_src[62] - cVar1) >> 1) + cVar1) >> 5;
   unsigned_char_dest[63] = unsigned_char_src[63] >> 6;
@@ -11724,13 +11727,13 @@ void unsigned_char_div(void)
   unsigned_char_dest[74] = unsigned_char_src[74] / 0x4b;
   unsigned_char_dest[75] = (uchar)((uint)unsigned_char_src[75] * 0x1b >> 0xb);
   unsigned_char_dest[76] = unsigned_char_src[76] / 0x4d;
-  unsigned_char_dest[77] = (unsigned_char_src[77] >> 1) / 0x27;
+  unsigned_char_dest[77] = unsigned_char_src[77] / 0x4e;
   unsigned_char_dest[78] = (uchar)((uint)unsigned_char_src[78] * 0xd >> 10);
   unsigned_char_dest[79] = unsigned_char_src[79] / 0x50;
   unsigned_char_dest[80] = unsigned_char_src[80] / 0x51;
   unsigned_char_dest[81] = (uchar)((uint)unsigned_char_src[81] * 0x19 >> 0xb);
   unsigned_char_dest[82] = unsigned_char_src[82] / 0x53;
-  unsigned_char_dest[83] = (unsigned_char_src[83] >> 2) / 0x15;
+  unsigned_char_dest[83] = unsigned_char_src[83] / 0x54;
   unsigned_char_dest[84] = unsigned_char_src[84] / 0x55;
   unsigned_char_dest[85] = unsigned_char_src[85] / 0x56;
   unsigned_char_dest[86] = unsigned_char_src[86] / 0x57;
@@ -11765,7 +11768,7 @@ void unsigned_char_div(void)
   unsigned_char_dest[112] = unsigned_char_src[112] / 0x71;
   unsigned_char_dest[113] = (uchar)((uint)unsigned_char_src[113] * 9 >> 10);
   unsigned_char_dest[114] = unsigned_char_src[114] / 0x73;
-  unsigned_char_dest[115] = (unsigned_char_src[115] >> 2) / 0x1d;
+  unsigned_char_dest[115] = unsigned_char_src[115] / 0x74;
   cVar1 = (char)((uint)unsigned_char_src[116] * 0x19 >> 8);
   unsigned_char_dest[116] = (byte)(((byte)(unsigned_char_src[116] - cVar1) >> 1) + cVar1) >> 6;
   unsigned_char_dest[117] = unsigned_char_src[117] / 0x76;
@@ -11773,13 +11776,13 @@ void unsigned_char_div(void)
   unsigned_char_dest[119] = unsigned_char_src[119] / 0x78;
   cVar1 = (char)((uint)unsigned_char_src[120] * 0xf >> 8);
   unsigned_char_dest[120] = (byte)(((byte)(unsigned_char_src[120] - cVar1) >> 1) + cVar1) >> 6;
-  unsigned_char_dest[121] = (unsigned_char_src[121] >> 1) / 0x3d;
+  unsigned_char_dest[121] = unsigned_char_src[121] / 0x7a;
   cVar1 = (char)((uint)unsigned_char_src[122] * 0xb >> 8);
   unsigned_char_dest[122] = (byte)(((byte)(unsigned_char_src[122] - cVar1) >> 1) + cVar1) >> 6;
-  unsigned_char_dest[123] = (unsigned_char_src[123] >> 2) / 0x1f;
+  unsigned_char_dest[123] = unsigned_char_src[123] / 0x7c;
   cVar1 = (char)((uint)unsigned_char_src[124] * 7 >> 8);
   unsigned_char_dest[124] = (byte)(((byte)(unsigned_char_src[124] - cVar1) >> 1) + cVar1) >> 6;
-  unsigned_char_dest[125] = (unsigned_char_src[125] >> 1) / 0x3f;
+  unsigned_char_dest[125] = unsigned_char_src[125] / 0x7e;
   cVar1 = (char)((uint)unsigned_char_src[126] * 3 >> 8);
   unsigned_char_dest[126] = (byte)(((byte)(unsigned_char_src[126] - cVar1) >> 1) + cVar1) >> 6;
   unsigned_char_dest[127] = unsigned_char_src[127] >> 7;
@@ -11916,95 +11919,48 @@ void unsigned_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_modulo(void)
 
 {
   char cVar1;
-  char cVar2;
-  char cVar3;
-  char cVar4;
-  char cVar5;
-  char cVar6;
-  char cVar7;
-  char cVar8;
-  char cVar9;
-  char cVar10;
-  char cVar11;
-  char cVar12;
-  char cVar13;
-  char cVar14;
-  char cVar15;
-  char cVar16;
-  char cVar17;
-  char cVar18;
-  char cVar19;
-  char cVar20;
-  char cVar21;
-  char cVar22;
-  char cVar23;
-  char cVar24;
-  char cVar25;
-  char cVar26;
-  char cVar27;
   
-  cVar1 = (char)((uint)unsigned_char_src[6] * 0x25 >> 8);
-  cVar2 = (char)((uint)unsigned_char_src[10] * 0x75 >> 8);
-  cVar3 = (char)((uint)unsigned_char_src[20] * 0x87 >> 8);
-  cVar4 = (char)((uint)unsigned_char_src[22] * 0x65 >> 8);
-  cVar5 = (char)((uint)unsigned_char_src[28] * 0x1b >> 8);
-  cVar6 = (char)((uint)unsigned_char_src[30] * 9 >> 8);
-  cVar7 = (char)((uint)unsigned_char_src[38] * 0xa5 >> 8);
-  cVar8 = (char)((uint)unsigned_char_src[44] * 0x6d >> 8);
-  cVar9 = (char)((uint)unsigned_char_src[48] * 0x4f >> 8);
-  cVar10 = (char)((uint)unsigned_char_src[60] * 0xd >> 8);
-  cVar11 = (char)((uint)unsigned_char_src[62] * 5 >> 8);
-  cVar12 = (char)((uint)unsigned_char_src[102] * 0x3f >> 8);
-  cVar13 = (char)((uint)unsigned_char_src[104] * 0x39 >> 8);
-  cVar14 = (char)((uint)unsigned_char_src[106] * 0x33 >> 8);
-  cVar15 = (char)((uint)unsigned_char_src[116] * 0x19 >> 8);
-  cVar16 = (char)((uint)unsigned_char_src[120] * 0xf >> 8);
-  cVar17 = (char)((uint)unsigned_char_src[122] * 0xb >> 8);
-  cVar18 = (char)((uint)unsigned_char_src[124] * 7 >> 8);
-  cVar19 = (char)((uint)unsigned_char_src[126] * 3 >> 8);
-  cVar20 = (char)((uint)unsigned_char_src[194] * 0x51 >> 8);
-  cVar21 = (char)((uint)unsigned_char_src[200] * 0x47 >> 8);
-  cVar22 = (char)((uint)unsigned_char_src[216] * 0x2f >> 8);
-  cVar23 = (char)((uint)unsigned_char_src[220] * 0x29 >> 8);
-  cVar24 = (char)((uint)unsigned_char_src[226] * 0x21 >> 8);
-  cVar25 = (char)((uint)unsigned_char_src[228] * 0x1f >> 8);
-  cVar26 = (char)((uint)unsigned_char_src[236] * 0x15 >> 8);
-  cVar27 = (char)((uint)unsigned_char_src[238] * 0x13 >> 8);
   unsigned_char_dest[0] = '\0';
   unsigned_char_dest[1] = unsigned_char_src[1] & 1;
   unsigned_char_dest[2] = unsigned_char_src[2] % 3;
   unsigned_char_dest[3] = unsigned_char_src[3] & 3;
   unsigned_char_dest[4] = unsigned_char_src[4] % 5;
   unsigned_char_dest[5] = unsigned_char_src[5] % 6;
+  cVar1 = (char)((uint)unsigned_char_src[6] * 0x25 >> 8);
   unsigned_char_dest[6] =
        unsigned_char_src[6] +
        ((byte)(((byte)(unsigned_char_src[6] - cVar1) >> 1) + cVar1) >> 2) * -7;
   unsigned_char_dest[7] = unsigned_char_src[7] & 7;
   unsigned_char_dest[8] = unsigned_char_src[8] % 9;
   unsigned_char_dest[9] = unsigned_char_src[9] % 10;
+  cVar1 = (char)((uint)unsigned_char_src[10] * 0x75 >> 8);
   unsigned_char_dest[10] =
        unsigned_char_src[10] +
-       ((byte)(((byte)(unsigned_char_src[10] - cVar2) >> 1) + cVar2) >> 3) * -0xb;
+       ((byte)(((byte)(unsigned_char_src[10] - cVar1) >> 1) + cVar1) >> 3) * -0xb;
   unsigned_char_dest[11] = unsigned_char_src[11] % 0xc;
   unsigned_char_dest[12] = unsigned_char_src[12] % 0xd;
-  unsigned_char_dest[13] = unsigned_char_src[13] + ((unsigned_char_src[13] >> 1) / 7) * -0xe;
+  unsigned_char_dest[13] = unsigned_char_src[13] % 0xe;
   unsigned_char_dest[14] = unsigned_char_src[14] % 0xf;
   unsigned_char_dest[15] = unsigned_char_src[15] & 0xf;
   unsigned_char_dest[16] = unsigned_char_src[16] % 0x11;
   unsigned_char_dest[17] = unsigned_char_src[17] % 0x12;
   unsigned_char_dest[18] = unsigned_char_src[18] % 0x13;
   unsigned_char_dest[19] = unsigned_char_src[19] % 0x14;
+  cVar1 = (char)((uint)unsigned_char_src[20] * 0x87 >> 8);
   unsigned_char_dest[20] =
        unsigned_char_src[20] +
-       ((byte)(((byte)(unsigned_char_src[20] - cVar3) >> 1) + cVar3) >> 4) * -0x15;
-  unsigned_char_dest[21] = unsigned_char_src[21] + ((unsigned_char_src[21] >> 1) / 0xb) * -0x16;
+       ((byte)(((byte)(unsigned_char_src[20] - cVar1) >> 1) + cVar1) >> 4) * -0x15;
+  unsigned_char_dest[21] = unsigned_char_src[21] % 0x16;
+  cVar1 = (char)((uint)unsigned_char_src[22] * 0x65 >> 8);
   unsigned_char_dest[22] =
        unsigned_char_src[22] +
-       ((byte)(((byte)(unsigned_char_src[22] - cVar4) >> 1) + cVar4) >> 4) * -0x17;
+       ((byte)(((byte)(unsigned_char_src[22] - cVar1) >> 1) + cVar1) >> 4) * -0x17;
   unsigned_char_dest[23] = unsigned_char_src[23] % 0x18;
   unsigned_char_dest[24] = unsigned_char_src[24] % 0x19;
   unsigned_char_dest[25] = unsigned_char_src[25] % 0x1a;
@@ -12012,13 +11968,15 @@ void unsigned_char_modulo(void)
        unsigned_char_src[26] + (char)((uint)unsigned_char_src[26] * 0x13 >> 9) * -0x1b;
   unsigned_char_dest[27] =
        unsigned_char_src[27] + (char)((uint)(unsigned_char_src[27] >> 2) * 0x25 >> 8) * -0x1c;
+  cVar1 = (char)((uint)unsigned_char_src[28] * 0x1b >> 8);
   unsigned_char_dest[28] =
        unsigned_char_src[28] +
-       ((byte)(((byte)(unsigned_char_src[28] - cVar5) >> 1) + cVar5) >> 4) * -0x1d;
+       ((byte)(((byte)(unsigned_char_src[28] - cVar1) >> 1) + cVar1) >> 4) * -0x1d;
   unsigned_char_dest[29] = unsigned_char_src[29] % 0x1e;
+  cVar1 = (char)((uint)unsigned_char_src[30] * 9 >> 8);
   unsigned_char_dest[30] =
        unsigned_char_src[30] +
-       ((byte)(((byte)(unsigned_char_src[30] - cVar6) >> 1) + cVar6) >> 4) * -0x1f;
+       ((byte)(((byte)(unsigned_char_src[30] - cVar1) >> 1) + cVar1) >> 4) * -0x1f;
   unsigned_char_dest[31] = unsigned_char_src[31] & 0x1f;
   unsigned_char_dest[32] = unsigned_char_src[32] % 0x21;
   unsigned_char_dest[33] = unsigned_char_src[33] % 0x22;
@@ -12028,26 +11986,29 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[36] = unsigned_char_src[36] % 0x25;
   unsigned_char_dest[37] =
        unsigned_char_src[37] + (char)((uint)unsigned_char_src[37] * 0x1b >> 10) * -0x26;
+  cVar1 = (char)((uint)unsigned_char_src[38] * 0xa5 >> 8);
   unsigned_char_dest[38] =
        unsigned_char_src[38] +
-       ((byte)(((byte)(unsigned_char_src[38] - cVar7) >> 1) + cVar7) >> 5) * -0x27;
+       ((byte)(((byte)(unsigned_char_src[38] - cVar1) >> 1) + cVar1) >> 5) * -0x27;
   unsigned_char_dest[39] = unsigned_char_src[39] % 0x28;
   unsigned_char_dest[40] =
        unsigned_char_src[40] + (char)((uint)unsigned_char_src[40] * 0x19 >> 10) * -0x29;
-  unsigned_char_dest[41] = unsigned_char_src[41] + ((unsigned_char_src[41] >> 1) / 0x15) * -0x2a;
+  unsigned_char_dest[41] = unsigned_char_src[41] % 0x2a;
   unsigned_char_dest[42] = unsigned_char_src[42] % 0x2b;
   unsigned_char_dest[43] =
        unsigned_char_src[43] + (char)((uint)unsigned_char_src[43] * 0xbb >> 0xd) * -0x2c;
+  cVar1 = (char)((uint)unsigned_char_src[44] * 0x6d >> 8);
   unsigned_char_dest[44] =
        unsigned_char_src[44] +
-       ((byte)(((byte)(unsigned_char_src[44] - cVar8) >> 1) + cVar8) >> 5) * -0x2d;
-  unsigned_char_dest[45] = unsigned_char_src[45] + ((unsigned_char_src[45] >> 1) / 0x17) * -0x2e;
+       ((byte)(((byte)(unsigned_char_src[44] - cVar1) >> 1) + cVar1) >> 5) * -0x2d;
+  unsigned_char_dest[45] = unsigned_char_src[45] % 0x2e;
   unsigned_char_dest[46] =
        unsigned_char_src[46] + (char)((uint)unsigned_char_src[46] * 0xaf >> 0xd) * -0x2f;
   unsigned_char_dest[47] = unsigned_char_src[47] % 0x30;
+  cVar1 = (char)((uint)unsigned_char_src[48] * 0x4f >> 8);
   unsigned_char_dest[48] =
        unsigned_char_src[48] +
-       ((byte)(((byte)(unsigned_char_src[48] - cVar9) >> 1) + cVar9) >> 5) * -0x31;
+       ((byte)(((byte)(unsigned_char_src[48] - cVar1) >> 1) + cVar1) >> 5) * -0x31;
   unsigned_char_dest[49] =
        unsigned_char_src[49] + (char)((uint)unsigned_char_src[49] * 0x29 >> 0xb) * -0x32;
   unsigned_char_dest[50] = unsigned_char_src[50] % 0x33;
@@ -12060,16 +12021,18 @@ void unsigned_char_modulo(void)
        unsigned_char_src[55] + (char)((uint)(unsigned_char_src[55] >> 3) * 0x25 >> 8) * -0x38;
   unsigned_char_dest[56] =
        unsigned_char_src[56] + (char)((uint)unsigned_char_src[56] * 9 >> 9) * -0x39;
-  unsigned_char_dest[57] = unsigned_char_src[57] + ((unsigned_char_src[57] >> 1) / 0x1d) * -0x3a;
+  unsigned_char_dest[57] = unsigned_char_src[57] % 0x3a;
   unsigned_char_dest[58] = unsigned_char_src[58] % 0x3b;
   unsigned_char_dest[59] = unsigned_char_src[59] % 0x3c;
+  cVar1 = (char)((uint)unsigned_char_src[60] * 0xd >> 8);
   unsigned_char_dest[60] =
        unsigned_char_src[60] +
-       ((byte)(((byte)(unsigned_char_src[60] - cVar10) >> 1) + cVar10) >> 5) * -0x3d;
-  unsigned_char_dest[61] = unsigned_char_src[61] + ((unsigned_char_src[61] >> 1) / 0x1f) * -0x3e;
+       ((byte)(((byte)(unsigned_char_src[60] - cVar1) >> 1) + cVar1) >> 5) * -0x3d;
+  unsigned_char_dest[61] = unsigned_char_src[61] % 0x3e;
+  cVar1 = (char)((uint)unsigned_char_src[62] * 5 >> 8);
   unsigned_char_dest[62] =
        unsigned_char_src[62] +
-       ((byte)(((byte)(unsigned_char_src[62] - cVar11) >> 1) + cVar11) >> 5) * -0x3f;
+       ((byte)(((byte)(unsigned_char_src[62] - cVar1) >> 1) + cVar1) >> 5) * -0x3f;
   unsigned_char_dest[63] = unsigned_char_src[63] & 0x3f;
   unsigned_char_dest[64] = unsigned_char_src[64] % 0x41;
   unsigned_char_dest[65] = unsigned_char_src[65] % 0x42;
@@ -12088,7 +12051,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[75] =
        unsigned_char_src[75] + (char)((uint)unsigned_char_src[75] * 0x1b >> 0xb) * -0x4c;
   unsigned_char_dest[76] = unsigned_char_src[76] % 0x4d;
-  unsigned_char_dest[77] = unsigned_char_src[77] + ((unsigned_char_src[77] >> 1) / 0x27) * -0x4e;
+  unsigned_char_dest[77] = unsigned_char_src[77] % 0x4e;
   unsigned_char_dest[78] =
        unsigned_char_src[78] + (char)((uint)unsigned_char_src[78] * 0xd >> 10) * -0x4f;
   unsigned_char_dest[79] = unsigned_char_src[79] % 0x50;
@@ -12096,7 +12059,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[81] =
        unsigned_char_src[81] + (char)((uint)unsigned_char_src[81] * 0x19 >> 0xb) * -0x52;
   unsigned_char_dest[82] = unsigned_char_src[82] % 0x53;
-  unsigned_char_dest[83] = unsigned_char_src[83] + ((unsigned_char_src[83] >> 2) / 0x15) * -0x54;
+  unsigned_char_dest[83] = unsigned_char_src[83] % 0x54;
   unsigned_char_dest[84] = unsigned_char_src[84] % 0x55;
   unsigned_char_dest[85] = unsigned_char_src[85] % 0x56;
   unsigned_char_dest[86] = unsigned_char_src[86] % 0x57;
@@ -12126,18 +12089,21 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[100] =
        unsigned_char_src[100] + (char)((uint)unsigned_char_src[100] * 0xa3 >> 0xe) * -0x65;
   unsigned_char_dest[101] = unsigned_char_src[101] % 0x66;
+  cVar1 = (char)((uint)unsigned_char_src[102] * 0x3f >> 8);
   unsigned_char_dest[102] =
        unsigned_char_src[102] +
-       ((byte)(((byte)(unsigned_char_src[102] - cVar12) >> 1) + cVar12) >> 6) * -0x67;
+       ((byte)(((byte)(unsigned_char_src[102] - cVar1) >> 1) + cVar1) >> 6) * -0x67;
   unsigned_char_dest[103] =
        unsigned_char_src[103] + (char)((uint)unsigned_char_src[103] * 0x4f >> 0xd) * -0x68;
+  cVar1 = (char)((uint)unsigned_char_src[104] * 0x39 >> 8);
   unsigned_char_dest[104] =
        unsigned_char_src[104] +
-       ((byte)(((byte)(unsigned_char_src[104] - cVar13) >> 1) + cVar13) >> 6) * -0x69;
+       ((byte)(((byte)(unsigned_char_src[104] - cVar1) >> 1) + cVar1) >> 6) * -0x69;
   unsigned_char_dest[105] = unsigned_char_src[105] % 0x6a;
+  cVar1 = (char)((uint)unsigned_char_src[106] * 0x33 >> 8);
   unsigned_char_dest[106] =
        unsigned_char_src[106] +
-       ((byte)(((byte)(unsigned_char_src[106] - cVar14) >> 1) + cVar14) >> 6) * -0x6b;
+       ((byte)(((byte)(unsigned_char_src[106] - cVar1) >> 1) + cVar1) >> 6) * -0x6b;
   unsigned_char_dest[107] =
        unsigned_char_src[107] + (char)((uint)unsigned_char_src[107] * 0x13 >> 0xb) * -0x6c;
   unsigned_char_dest[108] =
@@ -12151,29 +12117,34 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[113] =
        unsigned_char_src[113] + (char)((uint)unsigned_char_src[113] * 9 >> 10) * -0x72;
   unsigned_char_dest[114] = unsigned_char_src[114] % 0x73;
-  unsigned_char_dest[115] = unsigned_char_src[115] + ((unsigned_char_src[115] >> 2) / 0x1d) * -0x74;
+  unsigned_char_dest[115] = unsigned_char_src[115] % 0x74;
+  cVar1 = (char)((uint)unsigned_char_src[116] * 0x19 >> 8);
   unsigned_char_dest[116] =
        unsigned_char_src[116] +
-       ((byte)(((byte)(unsigned_char_src[116] - cVar15) >> 1) + cVar15) >> 6) * -0x75;
+       ((byte)(((byte)(unsigned_char_src[116] - cVar1) >> 1) + cVar1) >> 6) * -0x75;
   unsigned_char_dest[117] = unsigned_char_src[117] % 0x76;
   unsigned_char_dest[118] =
        unsigned_char_src[118] + (char)((uint)unsigned_char_src[118] * 0x45 >> 0xd) * -0x77;
   unsigned_char_dest[119] = unsigned_char_src[119] % 0x78;
+  cVar1 = (char)((uint)unsigned_char_src[120] * 0xf >> 8);
   unsigned_char_dest[120] =
        unsigned_char_src[120] +
-       ((byte)(((byte)(unsigned_char_src[120] - cVar16) >> 1) + cVar16) >> 6) * -0x79;
-  unsigned_char_dest[121] = unsigned_char_src[121] + ((unsigned_char_src[121] >> 1) / 0x3d) * -0x7a;
+       ((byte)(((byte)(unsigned_char_src[120] - cVar1) >> 1) + cVar1) >> 6) * -0x79;
+  unsigned_char_dest[121] = unsigned_char_src[121] % 0x7a;
+  cVar1 = (char)((uint)unsigned_char_src[122] * 0xb >> 8);
   unsigned_char_dest[122] =
        unsigned_char_src[122] +
-       ((byte)(((byte)(unsigned_char_src[122] - cVar17) >> 1) + cVar17) >> 6) * -0x7b;
-  unsigned_char_dest[123] = unsigned_char_src[123] + ((unsigned_char_src[123] >> 2) / 0x1f) * -0x7c;
+       ((byte)(((byte)(unsigned_char_src[122] - cVar1) >> 1) + cVar1) >> 6) * -0x7b;
+  unsigned_char_dest[123] = unsigned_char_src[123] % 0x7c;
+  cVar1 = (char)((uint)unsigned_char_src[124] * 7 >> 8);
   unsigned_char_dest[124] =
        unsigned_char_src[124] +
-       ((byte)(((byte)(unsigned_char_src[124] - cVar18) >> 1) + cVar18) >> 6) * -0x7d;
-  unsigned_char_dest[125] = unsigned_char_src[125] + ((unsigned_char_src[125] >> 1) / 0x3f) * -0x7e;
+       ((byte)(((byte)(unsigned_char_src[124] - cVar1) >> 1) + cVar1) >> 6) * -0x7d;
+  unsigned_char_dest[125] = unsigned_char_src[125] % 0x7e;
+  cVar1 = (char)((uint)unsigned_char_src[126] * 3 >> 8);
   unsigned_char_dest[126] =
        unsigned_char_src[126] +
-       ((byte)(((byte)(unsigned_char_src[126] - cVar19) >> 1) + cVar19) >> 6) * -0x7f;
+       ((byte)(((byte)(unsigned_char_src[126] - cVar1) >> 1) + cVar1) >> 6) * -0x7f;
   unsigned_char_dest[127] = unsigned_char_src[127] & 0x7f;
   unsigned_char_dest[128] = unsigned_char_src[128] % 0x81;
   unsigned_char_dest[129] =
@@ -12297,9 +12268,10 @@ void unsigned_char_modulo(void)
        unsigned_char_src[192] + (char)((uint)unsigned_char_src[192] * 0x55 >> 0xe) * '?';
   unsigned_char_dest[193] =
        unsigned_char_src[193] + (char)((uint)unsigned_char_src[193] * 0xa9 >> 0xf) * '>';
+  cVar1 = (char)((uint)unsigned_char_src[194] * 0x51 >> 8);
   unsigned_char_dest[194] =
        unsigned_char_src[194] +
-       ((char)(((byte)(unsigned_char_src[194] - cVar20) >> 1) + cVar20) >> 7) * -0x3d;
+       ((char)(((byte)(unsigned_char_src[194] - cVar1) >> 1) + cVar1) >> 7) * -0x3d;
   unsigned_char_dest[195] =
        unsigned_char_src[195] + (char)((uint)unsigned_char_src[195] * 0x15 >> 0xc) * '<';
   unsigned_char_dest[196] =
@@ -12310,9 +12282,10 @@ void unsigned_char_modulo(void)
        unsigned_char_src[198] + (char)((uint)unsigned_char_src[198] * 0xa5 >> 0xf) * '9';
   unsigned_char_dest[199] =
        unsigned_char_src[199] + (char)((uint)unsigned_char_src[199] * 0x29 >> 0xd) * '8';
+  cVar1 = (char)((uint)unsigned_char_src[200] * 0x47 >> 8);
   unsigned_char_dest[200] =
        unsigned_char_src[200] +
-       ((char)(((byte)(unsigned_char_src[200] - cVar21) >> 1) + cVar21) >> 7) * -0x37;
+       ((char)(((byte)(unsigned_char_src[200] - cVar1) >> 1) + cVar1) >> 7) * -0x37;
   unsigned_char_dest[201] =
        unsigned_char_src[201] + (char)((uint)unsigned_char_src[201] * 0xa3 >> 0xf) * '6';
   unsigned_char_dest[202] =
@@ -12342,18 +12315,20 @@ void unsigned_char_modulo(void)
        unsigned_char_src[214] + (char)((uint)unsigned_char_src[214] * 0x99 >> 0xf) * ')';
   unsigned_char_dest[215] =
        unsigned_char_src[215] + (char)((uint)unsigned_char_src[215] * 0x13 >> 0xc) * '(';
+  cVar1 = (char)((uint)unsigned_char_src[216] * 0x2f >> 8);
   unsigned_char_dest[216] =
        unsigned_char_src[216] +
-       ((char)(((byte)(unsigned_char_src[216] - cVar22) >> 1) + cVar22) >> 7) * -0x27;
+       ((char)(((byte)(unsigned_char_src[216] - cVar1) >> 1) + cVar1) >> 7) * -0x27;
   unsigned_char_dest[217] =
        unsigned_char_src[217] + (char)((uint)unsigned_char_src[217] * 0x97 >> 0xf) * '&';
   unsigned_char_dest[218] =
        unsigned_char_src[218] + (char)((uint)unsigned_char_src[218] * 0x4b >> 0xe) * '%';
   unsigned_char_dest[219] =
        unsigned_char_src[219] + (char)((uint)unsigned_char_src[219] * 0x95 >> 0xf) * '$';
+  cVar1 = (char)((uint)unsigned_char_src[220] * 0x29 >> 8);
   unsigned_char_dest[220] =
        unsigned_char_src[220] +
-       ((char)(((byte)(unsigned_char_src[220] - cVar23) >> 1) + cVar23) >> 7) * -0x23;
+       ((char)(((byte)(unsigned_char_src[220] - cVar1) >> 1) + cVar1) >> 7) * -0x23;
   unsigned_char_dest[221] =
        unsigned_char_src[221] + (char)((uint)unsigned_char_src[221] * 0x25 >> 0xd) * '\"';
   unsigned_char_dest[222] =
@@ -12364,14 +12339,16 @@ void unsigned_char_modulo(void)
        unsigned_char_src[224] + (char)((uint)unsigned_char_src[224] * 0x49 >> 0xe) * '\x1f';
   unsigned_char_dest[225] =
        unsigned_char_src[225] + (char)((uint)unsigned_char_src[225] * 0x91 >> 0xf) * '\x1e';
+  cVar1 = (char)((uint)unsigned_char_src[226] * 0x21 >> 8);
   unsigned_char_dest[226] =
        unsigned_char_src[226] +
-       ((char)(((byte)(unsigned_char_src[226] - cVar24) >> 1) + cVar24) >> 7) * -0x1d;
+       ((char)(((byte)(unsigned_char_src[226] - cVar1) >> 1) + cVar1) >> 7) * -0x1d;
   unsigned_char_dest[227] =
        unsigned_char_src[227] + (char)((uint)unsigned_char_src[227] * 9 >> 0xb) * '\x1c';
+  cVar1 = (char)((uint)unsigned_char_src[228] * 0x1f >> 8);
   unsigned_char_dest[228] =
        unsigned_char_src[228] +
-       ((char)(((byte)(unsigned_char_src[228] - cVar25) >> 1) + cVar25) >> 7) * -0x1b;
+       ((char)(((byte)(unsigned_char_src[228] - cVar1) >> 1) + cVar1) >> 7) * -0x1b;
   unsigned_char_dest[229] =
        unsigned_char_src[229] + (char)((uint)unsigned_char_src[229] * 0x8f >> 0xf) * '\x1a';
   unsigned_char_dest[230] =
@@ -12386,14 +12363,16 @@ void unsigned_char_modulo(void)
        unsigned_char_src[234] + (char)((uint)unsigned_char_src[234] * 0x23 >> 0xd) * '\x15';
   unsigned_char_dest[235] =
        unsigned_char_src[235] + (char)((uint)unsigned_char_src[235] * 0x8b >> 0xf) * '\x14';
+  cVar1 = (char)((uint)unsigned_char_src[236] * 0x15 >> 8);
   unsigned_char_dest[236] =
        unsigned_char_src[236] +
-       ((char)(((byte)(unsigned_char_src[236] - cVar26) >> 1) + cVar26) >> 7) * -0x13;
+       ((char)(((byte)(unsigned_char_src[236] - cVar1) >> 1) + cVar1) >> 7) * -0x13;
   unsigned_char_dest[237] =
        unsigned_char_src[237] + (char)((uint)unsigned_char_src[237] * 0x45 >> 0xe) * '\x12';
+  cVar1 = (char)((uint)unsigned_char_src[238] * 0x13 >> 8);
   unsigned_char_dest[238] =
        unsigned_char_src[238] +
-       ((char)(((byte)(unsigned_char_src[238] - cVar27) >> 1) + cVar27) >> 7) * -0x11;
+       ((char)(((byte)(unsigned_char_src[238] - cVar1) >> 1) + cVar1) >> 7) * -0x11;
   unsigned_char_dest[239] = unsigned_char_src[239] + (unsigned_char_src[239] / 0xf & 0x10);
   unsigned_char_dest[240] =
        unsigned_char_src[240] + (char)((uint)unsigned_char_src[240] * 0x11 >> 0xc) * '\x0f';
@@ -13078,7 +13057,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[904] = unsigned_char_src[904];
   unsigned_char_dest[905] = unsigned_char_src[905];
   unsigned_char_dest[906] = unsigned_char_src[906];
-  unsigned_char_dest[907] = unsigned_char_src[907];
+  unsigned_char_dest[907] = unsigned_char_src[907] % 0x8c;
   unsigned_char_dest[908] = unsigned_char_src[908];
   unsigned_char_dest[909] = unsigned_char_src[909];
   unsigned_char_dest[910] = unsigned_char_src[910];
@@ -13094,7 +13073,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[920] = unsigned_char_src[920];
   unsigned_char_dest[921] = unsigned_char_src[921];
   unsigned_char_dest[922] = unsigned_char_src[922];
-  unsigned_char_dest[923] = unsigned_char_src[923];
+  unsigned_char_dest[923] = unsigned_char_src[923] % 0x9c;
   unsigned_char_dest[924] = unsigned_char_src[924];
   unsigned_char_dest[925] = unsigned_char_src[925];
   unsigned_char_dest[926] = unsigned_char_src[926];
@@ -13102,7 +13081,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[928] = unsigned_char_src[928];
   unsigned_char_dest[929] = unsigned_char_src[929];
   unsigned_char_dest[930] = unsigned_char_src[930];
-  unsigned_char_dest[931] = unsigned_char_src[931];
+  unsigned_char_dest[931] = unsigned_char_src[931] % 0xa4;
   unsigned_char_dest[932] = unsigned_char_src[932];
   unsigned_char_dest[933] = unsigned_char_src[933];
   unsigned_char_dest[934] = unsigned_char_src[934];
@@ -13110,7 +13089,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[936] = unsigned_char_src[936];
   unsigned_char_dest[937] = unsigned_char_src[937];
   unsigned_char_dest[938] = unsigned_char_src[938];
-  unsigned_char_dest[939] = unsigned_char_src[939];
+  unsigned_char_dest[939] = unsigned_char_src[939] % 0xac;
   unsigned_char_dest[940] = unsigned_char_src[940];
   unsigned_char_dest[941] = unsigned_char_src[941];
   unsigned_char_dest[942] = unsigned_char_src[942];
@@ -13118,7 +13097,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[944] = unsigned_char_src[944];
   unsigned_char_dest[945] = unsigned_char_src[945];
   unsigned_char_dest[946] = unsigned_char_src[946];
-  unsigned_char_dest[947] = unsigned_char_src[947];
+  unsigned_char_dest[947] = unsigned_char_src[947] % 0xb4;
   unsigned_char_dest[948] = unsigned_char_src[948];
   unsigned_char_dest[949] = unsigned_char_src[949];
   unsigned_char_dest[950] = unsigned_char_src[950];
@@ -13150,7 +13129,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[976] = unsigned_char_src[976];
   unsigned_char_dest[977] = unsigned_char_src[977];
   unsigned_char_dest[978] = unsigned_char_src[978];
-  unsigned_char_dest[979] = unsigned_char_src[979];
+  unsigned_char_dest[979] = unsigned_char_src[979] % 0xd4;
   unsigned_char_dest[980] = unsigned_char_src[980];
   unsigned_char_dest[981] = unsigned_char_src[981];
   unsigned_char_dest[982] = unsigned_char_src[982];
@@ -13158,7 +13137,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[984] = unsigned_char_src[984];
   unsigned_char_dest[985] = unsigned_char_src[985];
   unsigned_char_dest[986] = unsigned_char_src[986];
-  unsigned_char_dest[987] = unsigned_char_src[987];
+  unsigned_char_dest[987] = unsigned_char_src[987] % 0xdc;
   unsigned_char_dest[988] = unsigned_char_src[988];
   unsigned_char_dest[989] = unsigned_char_src[989];
   unsigned_char_dest[990] = unsigned_char_src[990];
@@ -13166,7 +13145,7 @@ void unsigned_char_modulo(void)
   unsigned_char_dest[992] = unsigned_char_src[992];
   unsigned_char_dest[993] = unsigned_char_src[993];
   unsigned_char_dest[994] = unsigned_char_src[994];
-  unsigned_char_dest[995] = unsigned_char_src[995];
+  unsigned_char_dest[995] = unsigned_char_src[995] % 0xe4;
   unsigned_char_dest[996] = unsigned_char_src[996];
   unsigned_char_dest[997] = unsigned_char_src[997];
   unsigned_char_dest[998] = unsigned_char_src[998];
@@ -13199,6 +13178,8 @@ void unsigned_char_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_short_add(void)
 
@@ -14232,6 +14213,8 @@ void signed_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_mult(void)
 
 {
@@ -15264,3067 +15247,1391 @@ void signed_short_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_div(void)
 
 {
-  short sVar1;
-  short sVar2;
-  short sVar3;
-  short sVar4;
-  short sVar5;
-  short sVar6;
-  short sVar7;
-  short sVar8;
-  short sVar9;
-  short sVar10;
-  short sVar11;
-  short sVar12;
-  short sVar13;
-  short sVar14;
-  short sVar15;
-  short sVar16;
-  short sVar17;
-  short sVar18;
-  short sVar19;
-  short sVar20;
-  short sVar21;
-  short sVar22;
-  short sVar23;
-  short sVar24;
-  short sVar25;
-  uint uVar26;
-  uint uVar27;
-  uint uVar28;
-  uint uVar29;
-  uint uVar30;
-  uint uVar31;
-  uint uVar32;
-  uint uVar33;
-  uint uVar34;
-  uint uVar35;
-  uint uVar36;
-  uint uVar37;
-  uint uVar38;
-  uint uVar39;
-  uint uVar40;
-  uint uVar41;
-  uint uVar42;
-  uint uVar43;
-  uint uVar44;
-  uint uVar45;
-  uint uVar46;
-  uint uVar47;
-  uint uVar48;
-  uint uVar49;
-  uint uVar50;
-  uint uVar51;
-  uint uVar52;
-  uint uVar53;
-  uint uVar54;
-  uint uVar55;
-  uint uVar56;
-  uint uVar57;
-  uint uVar58;
-  uint uVar59;
-  uint uVar60;
-  uint uVar61;
-  uint uVar62;
-  uint uVar63;
-  uint uVar64;
-  uint uVar65;
-  uint uVar66;
-  uint uVar67;
-  uint uVar68;
-  uint uVar69;
-  uint uVar70;
-  uint uVar71;
-  uint uVar72;
-  uint uVar73;
-  uint uVar74;
-  uint uVar75;
-  uint uVar76;
-  uint uVar77;
-  uint uVar78;
-  uint uVar79;
-  uint uVar80;
-  uint uVar81;
-  uint uVar82;
-  uint uVar83;
-  uint uVar84;
-  uint uVar85;
-  uint uVar86;
-  uint uVar87;
-  uint uVar88;
-  uint uVar89;
-  uint uVar90;
-  uint uVar91;
-  uint uVar92;
-  uint uVar93;
-  uint uVar94;
-  uint uVar95;
-  uint uVar96;
-  uint uVar97;
-  uint uVar98;
-  uint uVar99;
-  uint uVar100;
-  uint uVar101;
-  uint uVar102;
-  uint uVar103;
-  uint uVar104;
-  uint uVar105;
-  uint uVar106;
-  uint uVar107;
-  uint uVar108;
-  uint uVar109;
-  uint uVar110;
-  uint uVar111;
-  uint uVar112;
-  uint uVar113;
-  uint uVar114;
-  uint uVar115;
-  uint uVar116;
-  uint uVar117;
-  uint uVar118;
-  uint uVar119;
-  uint uVar120;
-  uint uVar121;
-  uint uVar122;
-  uint uVar123;
-  uint uVar124;
-  uint uVar125;
-  uint uVar126;
-  uint uVar127;
-  uint uVar128;
-  uint uVar129;
-  uint uVar130;
-  uint uVar131;
-  uint uVar132;
-  uint uVar133;
-  uint uVar134;
-  uint uVar135;
-  uint uVar136;
-  uint uVar137;
-  uint uVar138;
-  uint uVar139;
-  uint uVar140;
-  uint uVar141;
-  uint uVar142;
-  uint uVar143;
-  uint uVar144;
-  uint uVar145;
-  uint uVar146;
-  uint uVar147;
-  uint uVar148;
-  uint uVar149;
-  uint uVar150;
-  uint uVar151;
-  uint uVar152;
-  uint uVar153;
-  uint uVar154;
-  uint uVar155;
-  uint uVar156;
-  uint uVar157;
-  uint uVar158;
-  uint uVar159;
-  uint uVar160;
-  uint uVar161;
-  uint uVar162;
-  uint uVar163;
-  uint uVar164;
-  uint uVar165;
-  uint uVar166;
-  uint uVar167;
-  uint uVar168;
-  uint uVar169;
-  uint uVar170;
-  uint uVar171;
-  uint uVar172;
-  uint uVar173;
-  uint uVar174;
-  uint uVar175;
-  uint uVar176;
-  uint uVar177;
-  uint uVar178;
-  uint uVar179;
-  uint uVar180;
-  uint uVar181;
-  uint uVar182;
-  uint uVar183;
-  uint uVar184;
-  uint uVar185;
-  uint uVar186;
-  uint uVar187;
-  uint uVar188;
-  uint uVar189;
-  uint uVar190;
-  uint uVar191;
-  uint uVar192;
-  uint uVar193;
-  uint uVar194;
-  uint uVar195;
-  uint uVar196;
-  uint uVar197;
-  uint uVar198;
-  uint uVar199;
-  uint uVar200;
-  uint uVar201;
-  uint uVar202;
-  uint uVar203;
-  uint uVar204;
-  uint uVar205;
-  uint uVar206;
-  uint uVar207;
-  uint uVar208;
-  uint uVar209;
-  uint uVar210;
-  uint uVar211;
-  uint uVar212;
-  uint uVar213;
-  uint uVar214;
-  uint uVar215;
-  uint uVar216;
-  uint uVar217;
-  uint uVar218;
-  uint uVar219;
-  uint uVar220;
-  uint uVar221;
-  uint uVar222;
-  uint uVar223;
-  uint uVar224;
-  uint uVar225;
-  uint uVar226;
-  uint uVar227;
-  uint uVar228;
-  uint uVar229;
-  uint uVar230;
-  uint uVar231;
-  uint uVar232;
-  uint uVar233;
-  uint uVar234;
-  uint uVar235;
-  uint uVar236;
-  uint uVar237;
-  uint uVar238;
-  uint uVar239;
-  uint uVar240;
-  uint uVar241;
-  uint uVar242;
-  uint uVar243;
-  uint uVar244;
-  uint uVar245;
-  uint uVar246;
-  uint uVar247;
-  uint uVar248;
-  uint uVar249;
-  uint uVar250;
-  uint uVar251;
-  uint uVar252;
-  uint uVar253;
-  uint uVar254;
-  uint uVar255;
-  uint uVar256;
-  uint uVar257;
-  uint uVar258;
-  uint uVar259;
-  uint uVar260;
-  uint uVar261;
-  uint uVar262;
-  uint uVar263;
-  uint uVar264;
-  uint uVar265;
-  uint uVar266;
-  uint uVar267;
-  uint uVar268;
-  uint uVar269;
-  uint uVar270;
-  uint uVar271;
-  uint uVar272;
-  uint uVar273;
-  uint uVar274;
-  uint uVar275;
-  uint uVar276;
-  uint uVar277;
-  uint uVar278;
-  uint uVar279;
-  uint uVar280;
-  uint uVar281;
-  uint uVar282;
-  uint uVar283;
-  uint uVar284;
-  uint uVar285;
-  uint uVar286;
-  uint uVar287;
-  uint uVar288;
-  uint uVar289;
-  uint uVar290;
-  uint uVar291;
-  uint uVar292;
-  uint uVar293;
-  uint uVar294;
-  uint uVar295;
-  uint uVar296;
-  uint uVar297;
-  uint uVar298;
-  uint uVar299;
-  uint uVar300;
-  uint uVar301;
-  uint uVar302;
-  uint uVar303;
-  uint uVar304;
-  uint uVar305;
-  uint uVar306;
-  uint uVar307;
-  uint uVar308;
-  uint uVar309;
-  uint uVar310;
-  uint uVar311;
-  uint uVar312;
-  uint uVar313;
-  uint uVar314;
-  uint uVar315;
-  uint uVar316;
-  uint uVar317;
-  uint uVar318;
-  uint uVar319;
-  uint uVar320;
-  uint uVar321;
-  uint uVar322;
-  uint uVar323;
-  uint uVar324;
-  uint uVar325;
-  uint uVar326;
-  uint uVar327;
-  uint uVar328;
-  uint uVar329;
-  uint uVar330;
-  uint uVar331;
-  uint uVar332;
-  uint uVar333;
-  uint uVar334;
-  uint uVar335;
-  uint uVar336;
-  uint uVar337;
-  uint uVar338;
-  uint uVar339;
-  uint uVar340;
-  uint uVar341;
-  uint uVar342;
-  uint uVar343;
-  uint uVar344;
-  uint uVar345;
-  uint uVar346;
-  uint uVar347;
-  uint uVar348;
-  uint uVar349;
-  uint uVar350;
-  uint uVar351;
-  uint uVar352;
-  uint uVar353;
-  uint uVar354;
-  uint uVar355;
-  uint uVar356;
-  uint uVar357;
+  uint uVar1;
   
-  sVar1 = (short)((uint)(signed_short_src[2] * 0x5556) >> 0x10);
-  sVar2 = (short)((uint)(signed_short_src[5] * 0x2aab) >> 0x10);
-  sVar3 = (short)((uint)(signed_short_src[8] * 0x1c72) >> 0x10);
-  sVar4 = (short)((uint)(signed_short_src[10] * 0x1746) >> 0x10);
-  uVar26 = ((uint)(signed_short_src[14] * -0x7777) >> 0x10) + (int)signed_short_src[14];
-  sVar5 = (short)((uint)(signed_short_src[17] * 0xe39) >> 0x10);
-  uVar27 = ((uint)(signed_short_src[18] * -0x286b) >> 0x10) + (int)signed_short_src[18];
-  uVar28 = ((uint)(signed_short_src[20] * -0x3cf3) >> 0x10) + (int)signed_short_src[20];
-  sVar6 = (short)((uint)(signed_short_src[21] * 0xba3) >> 0x10);
-  uVar29 = ((uint)(signed_short_src[22] * -0x4de9) >> 0x10) + (int)signed_short_src[22];
-  uVar30 = ((uint)(signed_short_src[26] * -0x684b) >> 0x10) + (int)signed_short_src[26];
-  uVar31 = ((uint)(signed_short_src[29] * -0x7777) >> 0x10) + (int)signed_short_src[29];
-  sVar7 = (short)((uint)(signed_short_src[32] * 0x7c2) >> 0x10);
-  uVar32 = ((uint)(signed_short_src[37] * -0x286b) >> 0x10) + (int)signed_short_src[37];
-  uVar33 = ((uint)(signed_short_src[40] * -0x3831) >> 0x10) + (int)signed_short_src[40];
-  uVar34 = ((uint)(signed_short_src[41] * -0x3cf3) >> 0x10) + (int)signed_short_src[41];
-  uVar35 = ((uint)(signed_short_src[45] * -0x4de9) >> 0x10) + (int)signed_short_src[45];
-  uVar36 = ((uint)(signed_short_src[46] * -0x51b3) >> 0x10) + (int)signed_short_src[46];
-  uVar37 = ((uint)(signed_short_src[50] * -0x5f5f) >> 0x10) + (int)signed_short_src[50];
-  uVar38 = ((uint)(signed_short_src[53] * -0x684b) >> 0x10) + (int)signed_short_src[53];
-  uVar39 = ((uint)(signed_short_src[54] * -0x6b0d) >> 0x10) + (int)signed_short_src[54];
-  uVar40 = ((uint)(signed_short_src[56] * -0x7047) >> 0x10) + (int)signed_short_src[56];
-  uVar41 = ((uint)(signed_short_src[59] * -0x7777) >> 0x10) + (int)signed_short_src[59];
-  uVar42 = ((uint)(signed_short_src[62] * -0x7df7) >> 0x10) + (int)signed_short_src[62];
-  sVar8 = (short)((uint)(signed_short_src[65] * 0x3e1) >> 0x10);
-  uVar43 = ((uint)(signed_short_src[72] * -0x1f8f) >> 0x10) + (int)signed_short_src[72];
-  uVar44 = ((uint)(signed_short_src[74] * -0x258b) >> 0x10) + (int)signed_short_src[74];
-  uVar45 = ((uint)(signed_short_src[75] * -0x286b) >> 0x10) + (int)signed_short_src[75];
-  uVar46 = ((uint)(signed_short_src[81] * -0x3831) >> 0x10) + (int)signed_short_src[81];
-  uVar47 = ((uint)(signed_short_src[83] * -0x3cf3) >> 0x10) + (int)signed_short_src[83];
-  uVar48 = ((uint)(signed_short_src[86] * -0x43ad) >> 0x10) + (int)signed_short_src[86];
-  uVar49 = ((uint)(signed_short_src[91] * -0x4de9) >> 0x10) + (int)signed_short_src[91];
-  uVar50 = ((uint)(signed_short_src[92] * -0x4fd3) >> 0x10) + (int)signed_short_src[92];
-  uVar51 = ((uint)(signed_short_src[93] * -0x51b3) >> 0x10) + (int)signed_short_src[93];
-  uVar52 = ((uint)(signed_short_src[94] * -0x5389) >> 0x10) + (int)signed_short_src[94];
-  uVar53 = ((uint)(signed_short_src[96] * -0x5717) >> 0x10) + (int)signed_short_src[96];
-  sVar9 = (short)((uint)(signed_short_src[98] * 0x296) >> 0x10);
-  uVar54 = ((uint)(signed_short_src[101] * -0x5f5f) >> 0x10) + (int)signed_short_src[101];
-  uVar55 = ((uint)(signed_short_src[107] * -0x684b) >> 0x10) + (int)signed_short_src[107];
-  uVar56 = ((uint)(signed_short_src[109] * -0x6b0d) >> 0x10) + (int)signed_short_src[109];
-  uVar57 = ((uint)(signed_short_src[110] * -0x6c65) >> 0x10) + (int)signed_short_src[110];
-  uVar58 = ((uint)(signed_short_src[113] * -0x7047) >> 0x10) + (int)signed_short_src[113];
-  uVar59 = ((uint)(signed_short_src[114] * -0x7187) >> 0x10) + (int)signed_short_src[114];
-  uVar60 = ((uint)(signed_short_src[116] * -0x73f7) >> 0x10) + (int)signed_short_src[116];
-  uVar61 = ((uint)(signed_short_src[118] * -0x7651) >> 0x10) + (int)signed_short_src[118];
-  uVar62 = ((uint)(signed_short_src[119] * -0x7777) >> 0x10) + (int)signed_short_src[119];
-  uVar63 = ((uint)(signed_short_src[122] * -0x7acb) >> 0x10) + (int)signed_short_src[122];
-  uVar64 = ((uint)(signed_short_src[124] * -0x7ced) >> 0x10) + (int)signed_short_src[124];
-  uVar65 = ((uint)(signed_short_src[125] * -0x7df7) >> 0x10) + (int)signed_short_src[125];
-  uVar66 = ((uint)(signed_short_src[126] * -0x7efd) >> 0x10) + (int)signed_short_src[126];
-  uVar67 = ((uint)(signed_short_src[145] * -0x1f8f) >> 0x10) + (int)signed_short_src[145];
-  uVar68 = ((uint)(signed_short_src[149] * -0x258b) >> 0x10) + (int)signed_short_src[149];
-  uVar69 = ((uint)(signed_short_src[151] * -0x286b) >> 0x10) + (int)signed_short_src[151];
-  uVar70 = ((uint)(signed_short_src[154] * -0x2c97) >> 0x10) + (int)signed_short_src[154];
-  uVar71 = ((uint)(signed_short_src[163] * -0x3831) >> 0x10) + (int)signed_short_src[163];
-  uVar72 = ((uint)(signed_short_src[164] * -0x3967) >> 0x10) + (int)signed_short_src[164];
-  uVar73 = ((uint)(signed_short_src[167] * -0x3cf3) >> 0x10) + (int)signed_short_src[167];
-  uVar74 = ((uint)(signed_short_src[170] * -0x405f) >> 0x10) + (int)signed_short_src[170];
-  uVar75 = ((uint)(signed_short_src[173] * -0x43ad) >> 0x10) + (int)signed_short_src[173];
-  uVar76 = ((uint)(signed_short_src[183] * -0x4de9) >> 0x10) + (int)signed_short_src[183];
-  uVar77 = ((uint)(signed_short_src[185] * -0x4fd3) >> 0x10) + (int)signed_short_src[185];
-  uVar78 = ((uint)(signed_short_src[187] * -0x51b3) >> 0x10) + (int)signed_short_src[187];
-  uVar79 = ((uint)(signed_short_src[188] * -0x529f) >> 0x10) + (int)signed_short_src[188];
-  uVar80 = ((uint)(signed_short_src[189] * -0x5389) >> 0x10) + (int)signed_short_src[189];
-  uVar81 = ((uint)(signed_short_src[192] * -0x5637) >> 0x10) + (int)signed_short_src[192];
-  uVar82 = ((uint)(signed_short_src[193] * -0x5717) >> 0x10) + (int)signed_short_src[193];
-  uVar83 = ((uint)(signed_short_src[194] * -0x57f5) >> 0x10) + (int)signed_short_src[194];
-  sVar10 = (short)((uint)(signed_short_src[197] * 0x14b) >> 0x10);
-  uVar84 = ((uint)(signed_short_src[200] * -0x5cf9) >> 0x10) + (int)signed_short_src[200];
-  uVar85 = ((uint)(signed_short_src[203] * -0x5f5f) >> 0x10) + (int)signed_short_src[203];
-  uVar86 = ((uint)(signed_short_src[204] * -0x6027) >> 0x10) + (int)signed_short_src[204];
-  uVar87 = ((uint)(signed_short_src[206] * -0x61b3) >> 0x10) + (int)signed_short_src[206];
-  uVar88 = ((uint)(signed_short_src[210] * -0x64b3) >> 0x10) + (int)signed_short_src[210];
-  uVar89 = ((uint)(signed_short_src[214] * -0x6797) >> 0x10) + (int)signed_short_src[214];
-  uVar90 = ((uint)(signed_short_src[215] * -0x684b) >> 0x10) + (int)signed_short_src[215];
-  uVar91 = ((uint)(signed_short_src[218] * -0x6a5f) >> 0x10) + (int)signed_short_src[218];
-  uVar92 = ((uint)(signed_short_src[219] * -0x6b0d) >> 0x10) + (int)signed_short_src[219];
-  uVar93 = ((uint)(signed_short_src[221] * -0x6c65) >> 0x10) + (int)signed_short_src[221];
-  uVar94 = ((uint)(signed_short_src[224] * -0x6e5d) >> 0x10) + (int)signed_short_src[224];
-  uVar95 = ((uint)(signed_short_src[226] * -0x6fa5) >> 0x10) + (int)signed_short_src[226];
-  uVar96 = ((uint)(signed_short_src[227] * -0x7047) >> 0x10) + (int)signed_short_src[227];
-  uVar97 = ((uint)(signed_short_src[229] * -0x7187) >> 0x10) + (int)signed_short_src[229];
-  uVar98 = ((uint)(signed_short_src[230] * -0x7225) >> 0x10) + (int)signed_short_src[230];
-  uVar99 = ((uint)(signed_short_src[232] * -0x735d) >> 0x10) + (int)signed_short_src[232];
-  uVar100 = ((uint)(signed_short_src[233] * -0x73f7) >> 0x10) + (int)signed_short_src[233];
-  uVar101 = ((uint)(signed_short_src[234] * -0x748f) >> 0x10) + (int)signed_short_src[234];
-  uVar102 = ((uint)(signed_short_src[237] * -0x7651) >> 0x10) + (int)signed_short_src[237];
-  uVar103 = ((uint)(signed_short_src[238] * -0x76e5) >> 0x10) + (int)signed_short_src[238];
-  uVar104 = ((uint)(signed_short_src[239] * -0x7777) >> 0x10) + (int)signed_short_src[239];
-  uVar105 = ((uint)(signed_short_src[245] * -0x7acb) >> 0x10) + (int)signed_short_src[245];
-  uVar106 = ((uint)(signed_short_src[249] * -0x7ced) >> 0x10) + (int)signed_short_src[249];
-  uVar107 = ((uint)(signed_short_src[250] * -0x7d73) >> 0x10) + (int)signed_short_src[250];
-  uVar108 = ((uint)(signed_short_src[251] * -0x7df7) >> 0x10) + (int)signed_short_src[251];
-  uVar109 = ((uint)(signed_short_src[252] * -0x7e7b) >> 0x10) + (int)signed_short_src[252];
-  uVar110 = ((uint)(signed_short_src[253] * -0x7efd) >> 0x10) + (int)signed_short_src[253];
-  uVar111 = ((uint)(signed_short_src[254] * -0x7f7f) >> 0x10) + (int)signed_short_src[254];
-  uVar112 = ((uint)(signed_short_src[266] * -0xa8b) >> 0x10) + (int)signed_short_src[266];
-  uVar113 = ((uint)(signed_short_src[274] * -0x11af) >> 0x10) + (int)signed_short_src[274];
-  uVar114 = ((uint)(signed_short_src[291] * -0x1f8f) >> 0x10) + (int)signed_short_src[291];
-  uVar115 = ((uint)(signed_short_src[292] * -0x2053) >> 0x10) + (int)signed_short_src[292];
-  uVar116 = ((uint)(signed_short_src[299] * -0x258b) >> 0x10) + (int)signed_short_src[299];
-  uVar117 = ((uint)(signed_short_src[300] * -0x2645) >> 0x10) + (int)signed_short_src[300];
-  uVar118 = ((uint)(signed_short_src[303] * -0x286b) >> 0x10) + (int)signed_short_src[303];
-  uVar119 = ((uint)(signed_short_src[309] * -0x2c97) >> 0x10) + (int)signed_short_src[309];
-  uVar120 = ((uint)(signed_short_src[310] * -0x2d45) >> 0x10) + (int)signed_short_src[310];
-  uVar121 = ((uint)(signed_short_src[324] * -0x3659) >> 0x10) + (int)signed_short_src[324];
-  uVar122 = ((uint)(signed_short_src[327] * -0x3831) >> 0x10) + (int)signed_short_src[327];
-  uVar123 = ((uint)(signed_short_src[329] * -0x3967) >> 0x10) + (int)signed_short_src[329];
-  sVar11 = (short)((uint)(signed_short_src[330] * 0xc6) >> 0x10);
-  uVar124 = ((uint)(signed_short_src[332] * -0x3b31) >> 0x10) + (int)signed_short_src[332];
-  uVar125 = ((uint)(signed_short_src[335] * -0x3cf3) >> 0x10) + (int)signed_short_src[335];
-  uVar126 = ((uint)(signed_short_src[336] * -0x3d87) >> 0x10) + (int)signed_short_src[336];
-  uVar127 = ((uint)(signed_short_src[338] * -0x3ead) >> 0x10) + (int)signed_short_src[338];
-  uVar128 = ((uint)(signed_short_src[340] * -0x3fcf) >> 0x10) + (int)signed_short_src[340];
-  uVar129 = ((uint)(signed_short_src[341] * -0x405f) >> 0x10) + (int)signed_short_src[341];
-  uVar130 = ((uint)(signed_short_src[347] * -0x43ad) >> 0x10) + (int)signed_short_src[347];
-  uVar131 = ((uint)(signed_short_src[348] * -0x4437) >> 0x10) + (int)signed_short_src[348];
-  uVar132 = ((uint)(signed_short_src[350] * -0x4549) >> 0x10) + (int)signed_short_src[350];
-  uVar133 = ((uint)(signed_short_src[360] * -0x4a75) >> 0x10) + (int)signed_short_src[360];
-  uVar134 = ((uint)(signed_short_src[362] * -0x4b75) >> 0x10) + (int)signed_short_src[362];
-  uVar135 = ((uint)(signed_short_src[366] * -0x4d6d) >> 0x10) + (int)signed_short_src[366];
-  uVar136 = ((uint)(signed_short_src[367] * -0x4de9) >> 0x10) + (int)signed_short_src[367];
-  uVar137 = ((uint)(signed_short_src[371] * -0x4fd3) >> 0x10) + (int)signed_short_src[371];
-  uVar138 = ((uint)(signed_short_src[375] * -0x51b3) >> 0x10) + (int)signed_short_src[375];
-  uVar139 = ((uint)(signed_short_src[377] * -0x529f) >> 0x10) + (int)signed_short_src[377];
-  uVar140 = ((uint)(signed_short_src[379] * -0x5389) >> 0x10) + (int)signed_short_src[379];
-  uVar141 = ((uint)(signed_short_src[385] * -0x5637) >> 0x10) + (int)signed_short_src[385];
-  uVar142 = ((uint)(signed_short_src[387] * -0x5717) >> 0x10) + (int)signed_short_src[387];
-  uVar143 = ((uint)(signed_short_src[389] * -0x57f5) >> 0x10) + (int)signed_short_src[389];
-  uVar144 = ((uint)(signed_short_src[390] * -0x5863) >> 0x10) + (int)signed_short_src[390];
-  uVar145 = ((uint)(signed_short_src[392] * -0x593d) >> 0x10) + (int)signed_short_src[392];
-  sVar14 = (short)((uint)(signed_short_src[395] * 0x14b) >> 0x10);
-  uVar146 = ((uint)(signed_short_src[398] * -0x5bbf) >> 0x10) + (int)signed_short_src[398];
-  uVar147 = ((uint)(signed_short_src[400] * -0x5c91) >> 0x10) + (int)signed_short_src[400];
-  uVar148 = ((uint)(signed_short_src[401] * -0x5cf9) >> 0x10) + (int)signed_short_src[401];
-  uVar149 = ((uint)(signed_short_src[407] * -0x5f5f) >> 0x10) + (int)signed_short_src[407];
-  uVar150 = ((uint)(signed_short_src[408] * -0x5fc3) >> 0x10) + (int)signed_short_src[408];
-  uVar151 = ((uint)(signed_short_src[409] * -0x6027) >> 0x10) + (int)signed_short_src[409];
-  uVar152 = ((uint)(signed_short_src[410] * -0x608b) >> 0x10) + (int)signed_short_src[410];
-  uVar153 = ((uint)(signed_short_src[413] * -0x61b3) >> 0x10) + (int)signed_short_src[413];
-  uVar154 = ((uint)(signed_short_src[421] * -0x64b3) >> 0x10) + (int)signed_short_src[421];
-  uVar155 = ((uint)(signed_short_src[422] * -0x6511) >> 0x10) + (int)signed_short_src[422];
-  uVar156 = ((uint)(signed_short_src[429] * -0x6797) >> 0x10) + (int)signed_short_src[429];
-  uVar157 = ((uint)(signed_short_src[430] * -0x67f1) >> 0x10) + (int)signed_short_src[430];
-  uVar158 = ((uint)(signed_short_src[431] * -0x684b) >> 0x10) + (int)signed_short_src[431];
-  uVar159 = ((uint)(signed_short_src[432] * -0x68a5) >> 0x10) + (int)signed_short_src[432];
-  uVar160 = ((uint)(signed_short_src[434] * -0x6957) >> 0x10) + (int)signed_short_src[434];
-  uVar161 = ((uint)(signed_short_src[437] * -0x6a5f) >> 0x10) + (int)signed_short_src[437];
-  uVar162 = ((uint)(signed_short_src[439] * -0x6b0d) >> 0x10) + (int)signed_short_src[439];
-  uVar163 = ((uint)(signed_short_src[443] * -0x6c65) >> 0x10) + (int)signed_short_src[443];
-  uVar164 = ((uint)(signed_short_src[449] * -0x6e5d) >> 0x10) + (int)signed_short_src[449];
-  uVar165 = ((uint)(signed_short_src[450] * -0x6eaf) >> 0x10) + (int)signed_short_src[450];
-  uVar166 = ((uint)(signed_short_src[453] * -0x6fa5) >> 0x10) + (int)signed_short_src[453];
-  uVar167 = ((uint)(signed_short_src[455] * -0x7047) >> 0x10) + (int)signed_short_src[455];
-  uVar168 = ((uint)(signed_short_src[459] * -0x7187) >> 0x10) + (int)signed_short_src[459];
-  uVar169 = ((uint)(signed_short_src[461] * -0x7225) >> 0x10) + (int)signed_short_src[461];
-  uVar170 = ((uint)(signed_short_src[464] * -0x730f) >> 0x10) + (int)signed_short_src[464];
-  uVar171 = ((uint)(signed_short_src[465] * -0x735d) >> 0x10) + (int)signed_short_src[465];
-  uVar172 = ((uint)(signed_short_src[467] * -0x73f7) >> 0x10) + (int)signed_short_src[467];
-  uVar173 = ((uint)(signed_short_src[468] * -0x7443) >> 0x10) + (int)signed_short_src[468];
-  uVar174 = ((uint)(signed_short_src[469] * -0x748f) >> 0x10) + (int)signed_short_src[469];
-  uVar175 = ((uint)(signed_short_src[470] * -0x74db) >> 0x10) + (int)signed_short_src[470];
-  uVar176 = ((uint)(signed_short_src[474] * -0x7607) >> 0x10) + (int)signed_short_src[474];
-  uVar177 = ((uint)(signed_short_src[475] * -0x7651) >> 0x10) + (int)signed_short_src[475];
-  uVar178 = ((uint)(signed_short_src[476] * -0x769b) >> 0x10) + (int)signed_short_src[476];
-  uVar179 = ((uint)(signed_short_src[477] * -0x76e5) >> 0x10) + (int)signed_short_src[477];
-  uVar180 = ((uint)(signed_short_src[479] * -0x7777) >> 0x10) + (int)signed_short_src[479];
-  uVar181 = ((uint)(signed_short_src[484] * -0x78df) >> 0x10) + (int)signed_short_src[484];
-  uVar182 = ((uint)(signed_short_src[486] * -0x796d) >> 0x10) + (int)signed_short_src[486];
-  uVar183 = ((uint)(signed_short_src[491] * -0x7acb) >> 0x10) + (int)signed_short_src[491];
-  uVar184 = ((uint)(signed_short_src[492] * -0x7b11) >> 0x10) + (int)signed_short_src[492];
-  uVar185 = ((uint)(signed_short_src[499] * -0x7ced) >> 0x10) + (int)signed_short_src[499];
-  uVar186 = ((uint)(signed_short_src[501] * -0x7d73) >> 0x10) + (int)signed_short_src[501];
-  uVar187 = ((uint)(signed_short_src[502] * -0x7db5) >> 0x10) + (int)signed_short_src[502];
-  uVar188 = ((uint)(signed_short_src[503] * -0x7df7) >> 0x10) + (int)signed_short_src[503];
-  uVar189 = ((uint)(signed_short_src[504] * -0x7e39) >> 0x10) + (int)signed_short_src[504];
-  uVar190 = ((uint)(signed_short_src[505] * -0x7e7b) >> 0x10) + (int)signed_short_src[505];
-  uVar191 = ((uint)(signed_short_src[507] * -0x7efd) >> 0x10) + (int)signed_short_src[507];
-  uVar192 = ((uint)(signed_short_src[509] * -0x7f7f) >> 0x10) + (int)signed_short_src[509];
-  uVar193 = ((uint)(signed_short_src[510] * -0x7fbf) >> 0x10) + (int)signed_short_src[510];
-  uVar194 = ((uint)(signed_short_src[533] * -0xa8b) >> 0x10) + (int)signed_short_src[533];
-  sVar15 = (short)((uint)(signed_short_src[534] * 0xf5) >> 0x10);
-  sVar16 = (short)((uint)(signed_short_src[544] * 0x1e1) >> 0x10);
-  uVar195 = ((uint)(signed_short_src[549] * -0x11af) >> 0x10) + (int)signed_short_src[549];
-  uVar196 = ((uint)(signed_short_src[583] * -0x1f8f) >> 0x10) + (int)signed_short_src[583];
-  uVar197 = ((uint)(signed_short_src[584] * -0x1ff1) >> 0x10) + (int)signed_short_src[584];
-  uVar198 = ((uint)(signed_short_src[585] * -0x2053) >> 0x10) + (int)signed_short_src[585];
-  uVar199 = ((uint)(signed_short_src[592] * -0x22f7) >> 0x10) + (int)signed_short_src[592];
-  uVar200 = ((uint)(signed_short_src[594] * -0x23b5) >> 0x10) + (int)signed_short_src[594];
-  uVar201 = ((uint)(signed_short_src[599] * -0x258b) >> 0x10) + (int)signed_short_src[599];
-  uVar202 = ((uint)(signed_short_src[601] * -0x2645) >> 0x10) + (int)signed_short_src[601];
-  uVar203 = ((uint)(signed_short_src[607] * -0x286b) >> 0x10) + (int)signed_short_src[607];
-  uVar204 = ((uint)(signed_short_src[612] * -0x2a2d) >> 0x10) + (int)signed_short_src[612];
-  uVar205 = ((uint)(signed_short_src[614] * -0x2adf) >> 0x10) + (int)signed_short_src[614];
-  uVar206 = ((uint)(signed_short_src[619] * -0x2c97) >> 0x10) + (int)signed_short_src[619];
-  uVar207 = ((uint)(signed_short_src[621] * -0x2d45) >> 0x10) + (int)signed_short_src[621];
-  uVar208 = ((uint)(signed_short_src[642] * -0x3427) >> 0x10) + (int)signed_short_src[642];
-  uVar209 = ((uint)(signed_short_src[644] * -0x34c9) >> 0x10) + (int)signed_short_src[644];
-  uVar210 = ((uint)(signed_short_src[649] * -0x3659) >> 0x10) + (int)signed_short_src[649];
-  uVar211 = ((uint)(signed_short_src[654] * -0x37e3) >> 0x10) + (int)signed_short_src[654];
-  uVar212 = ((uint)(signed_short_src[655] * -0x3831) >> 0x10) + (int)signed_short_src[655];
-  uVar213 = ((uint)(signed_short_src[656] * -0x387f) >> 0x10) + (int)signed_short_src[656];
-  uVar214 = ((uint)(signed_short_src[659] * -0x3967) >> 0x10) + (int)signed_short_src[659];
-  sVar12 = (short)((uint)(signed_short_src[661] * 99) >> 0x10);
-  uVar215 = ((uint)(signed_short_src[662] * -0x3a4d) >> 0x10) + (int)signed_short_src[662];
-  uVar216 = ((uint)(signed_short_src[665] * -0x3b31) >> 0x10) + (int)signed_short_src[665];
-  uVar217 = ((uint)(signed_short_src[668] * -0x3c13) >> 0x10) + (int)signed_short_src[668];
-  uVar218 = ((uint)(signed_short_src[671] * -0x3cf3) >> 0x10) + (int)signed_short_src[671];
-  uVar219 = ((uint)(signed_short_src[673] * -0x3d87) >> 0x10) + (int)signed_short_src[673];
-  uVar220 = ((uint)(signed_short_src[674] * -0x3dd1) >> 0x10) + (int)signed_short_src[674];
-  uVar221 = ((uint)(signed_short_src[677] * -0x3ead) >> 0x10) + (int)signed_short_src[677];
-  uVar222 = ((uint)(signed_short_src[680] * -0x3f87) >> 0x10) + (int)signed_short_src[680];
-  uVar223 = ((uint)(signed_short_src[681] * -0x3fcf) >> 0x10) + (int)signed_short_src[681];
-  uVar224 = ((uint)(signed_short_src[682] * -0x4017) >> 0x10) + (int)signed_short_src[682];
-  uVar225 = ((uint)(signed_short_src[683] * -0x405f) >> 0x10) + (int)signed_short_src[683];
-  uVar226 = ((uint)(signed_short_src[688] * -0x41c3) >> 0x10) + (int)signed_short_src[688];
-  uVar227 = ((uint)(signed_short_src[695] * -0x43ad) >> 0x10) + (int)signed_short_src[695];
-  uVar228 = ((uint)(signed_short_src[697] * -0x4437) >> 0x10) + (int)signed_short_src[697];
-  sVar17 = (short)((uint)(signed_short_src[700] * 0x2ebf) >> 0x10);
-  uVar229 = ((uint)(signed_short_src[701] * -0x4549) >> 0x10) + (int)signed_short_src[701];
-  uVar230 = ((uint)(signed_short_src[702] * -0x458d) >> 0x10) + (int)signed_short_src[702];
-  uVar231 = ((uint)(signed_short_src[706] * -0x469b) >> 0x10) + (int)signed_short_src[706];
-  uVar232 = ((uint)(signed_short_src[708] * -0x4721) >> 0x10) + (int)signed_short_src[708];
-  uVar233 = ((uint)(signed_short_src[716] * -0x4931) >> 0x10) + (int)signed_short_src[716];
-  uVar234 = ((uint)(signed_short_src[718] * -0x49b3) >> 0x10) + (int)signed_short_src[718];
-  uVar235 = ((uint)(signed_short_src[721] * -0x4a75) >> 0x10) + (int)signed_short_src[721];
-  uVar236 = ((uint)(signed_short_src[722] * -0x4ab5) >> 0x10) + (int)signed_short_src[722];
-  uVar237 = ((uint)(signed_short_src[725] * -0x4b75) >> 0x10) + (int)signed_short_src[725];
-  uVar238 = ((uint)(signed_short_src[728] * -0x4c33) >> 0x10) + (int)signed_short_src[728];
-  uVar239 = ((uint)(signed_short_src[730] * -0x4cb1) >> 0x10) + (int)signed_short_src[730];
-  uVar240 = ((uint)(signed_short_src[733] * -0x4d6d) >> 0x10) + (int)signed_short_src[733];
-  uVar241 = ((uint)(signed_short_src[734] * -0x4dab) >> 0x10) + (int)signed_short_src[734];
-  uVar242 = ((uint)(signed_short_src[735] * -0x4de9) >> 0x10) + (int)signed_short_src[735];
-  uVar243 = ((uint)(signed_short_src[736] * -0x4e27) >> 0x10) + (int)signed_short_src[736];
-  uVar244 = ((uint)(signed_short_src[743] * -0x4fd3) >> 0x10) + (int)signed_short_src[743];
-  sVar18 = (short)((uint)(signed_short_src[748] * 0xaf) >> 0x10);
-  uVar245 = ((uint)(signed_short_src[751] * -0x51b3) >> 0x10) + (int)signed_short_src[751];
-  uVar246 = ((uint)(signed_short_src[755] * -0x529f) >> 0x10) + (int)signed_short_src[755];
-  uVar247 = ((uint)(signed_short_src[759] * -0x5389) >> 0x10) + (int)signed_short_src[759];
-  uVar248 = ((uint)(signed_short_src[760] * -0x53c3) >> 0x10) + (int)signed_short_src[760];
-  uVar249 = ((uint)(signed_short_src[764] * -0x54a9) >> 0x10) + (int)signed_short_src[764];
-  sVar19 = (short)((uint)(signed_short_src[770] * 0x5501) >> 0x10);
-  uVar250 = ((uint)(signed_short_src[771] * -0x5637) >> 0x10) + (int)signed_short_src[771];
-  uVar251 = ((uint)(signed_short_src[772] * -0x566f) >> 0x10) + (int)signed_short_src[772];
-  uVar252 = ((uint)(signed_short_src[774] * -0x56df) >> 0x10) + (int)signed_short_src[774];
-  uVar253 = ((uint)(signed_short_src[775] * -0x5717) >> 0x10) + (int)signed_short_src[775];
-  uVar254 = ((uint)(signed_short_src[776] * -0x574f) >> 0x10) + (int)signed_short_src[776];
-  uVar255 = ((uint)(signed_short_src[779] * -0x57f5) >> 0x10) + (int)signed_short_src[779];
-  uVar256 = ((uint)(signed_short_src[781] * -0x5863) >> 0x10) + (int)signed_short_src[781];
-  uVar257 = ((uint)(signed_short_src[784] * -0x5907) >> 0x10) + (int)signed_short_src[784];
-  uVar258 = ((uint)(signed_short_src[785] * -0x593d) >> 0x10) + (int)signed_short_src[785];
-  uVar259 = ((uint)(signed_short_src[790] * -0x5a4b) >> 0x10) + (int)signed_short_src[790];
-  sVar20 = (short)((uint)(signed_short_src[791] * 0x14b) >> 0x10);
-  uVar260 = ((uint)(signed_short_src[797] * -0x5bbf) >> 0x10) + (int)signed_short_src[797];
-  uVar261 = ((uint)(signed_short_src[800] * -0x5c5d) >> 0x10) + (int)signed_short_src[800];
-  uVar262 = ((uint)(signed_short_src[801] * -0x5c91) >> 0x10) + (int)signed_short_src[801];
-  uVar263 = ((uint)(signed_short_src[802] * -0x5cc5) >> 0x10) + (int)signed_short_src[802];
-  uVar264 = ((uint)(signed_short_src[803] * -0x5cf9) >> 0x10) + (int)signed_short_src[803];
-  uVar265 = ((uint)(signed_short_src[804] * -0x5d2d) >> 0x10) + (int)signed_short_src[804];
-  uVar266 = ((uint)(signed_short_src[808] * -0x5dfb) >> 0x10) + (int)signed_short_src[808];
-  uVar267 = ((uint)(signed_short_src[810] * -0x5e61) >> 0x10) + (int)signed_short_src[810];
-  uVar268 = ((uint)(signed_short_src[812] * -0x5ec7) >> 0x10) + (int)signed_short_src[812];
-  uVar269 = ((uint)(signed_short_src[815] * -0x5f5f) >> 0x10) + (int)signed_short_src[815];
-  uVar270 = ((uint)(signed_short_src[816] * -0x5f91) >> 0x10) + (int)signed_short_src[816];
-  uVar271 = ((uint)(signed_short_src[817] * -0x5fc3) >> 0x10) + (int)signed_short_src[817];
-  uVar272 = ((uint)(signed_short_src[818] * -0x5ff5) >> 0x10) + (int)signed_short_src[818];
-  uVar273 = ((uint)(signed_short_src[819] * -0x6027) >> 0x10) + (int)signed_short_src[819];
-  uVar274 = ((uint)(signed_short_src[820] * -0x6059) >> 0x10) + (int)signed_short_src[820];
-  uVar275 = ((uint)(signed_short_src[821] * -0x608b) >> 0x10) + (int)signed_short_src[821];
-  uVar276 = ((uint)(signed_short_src[824] * -0x611f) >> 0x10) + (int)signed_short_src[824];
-  uVar277 = ((uint)(signed_short_src[827] * -0x61b3) >> 0x10) + (int)signed_short_src[827];
-  uVar278 = ((uint)(signed_short_src[830] * -0x6245) >> 0x10) + (int)signed_short_src[830];
-  uVar279 = ((uint)(signed_short_src[840] * -0x6425) >> 0x10) + (int)signed_short_src[840];
-  uVar280 = ((uint)(signed_short_src[843] * -0x64b3) >> 0x10) + (int)signed_short_src[843];
-  uVar281 = ((uint)(signed_short_src[845] * -0x6511) >> 0x10) + (int)signed_short_src[845];
-  sVar21 = (short)((uint)(signed_short_src[846] * 0x26b) >> 0x10);
-  uVar282 = ((uint)(signed_short_src[848] * -0x659d) >> 0x10) + (int)signed_short_src[848];
-  uVar283 = ((uint)(signed_short_src[858] * -0x6769) >> 0x10) + (int)signed_short_src[858];
-  uVar284 = ((uint)(signed_short_src[859] * -0x6797) >> 0x10) + (int)signed_short_src[859];
-  uVar285 = ((uint)(signed_short_src[861] * -0x67f1) >> 0x10) + (int)signed_short_src[861];
-  uVar286 = ((uint)(signed_short_src[863] * -0x684b) >> 0x10) + (int)signed_short_src[863];
-  uVar287 = ((uint)(signed_short_src[865] * -0x68a5) >> 0x10) + (int)signed_short_src[865];
-  uVar288 = ((uint)(signed_short_src[868] * -0x692b) >> 0x10) + (int)signed_short_src[868];
-  uVar289 = ((uint)(signed_short_src[869] * -0x6957) >> 0x10) + (int)signed_short_src[869];
-  uVar290 = ((uint)(signed_short_src[870] * -0x6983) >> 0x10) + (int)signed_short_src[870];
-  uVar291 = ((uint)(signed_short_src[875] * -0x6a5f) >> 0x10) + (int)signed_short_src[875];
-  uVar292 = ((uint)(signed_short_src[876] * -0x6a8b) >> 0x10) + (int)signed_short_src[876];
-  uVar293 = ((uint)(signed_short_src[879] * -0x6b0d) >> 0x10) + (int)signed_short_src[879];
-  uVar294 = ((uint)(signed_short_src[880] * -0x6b39) >> 0x10) + (int)signed_short_src[880];
-  uVar295 = ((uint)(signed_short_src[882] * -0x6b8f) >> 0x10) + (int)signed_short_src[882];
-  uVar296 = ((uint)(signed_short_src[884] * -0x6be5) >> 0x10) + (int)signed_short_src[884];
-  uVar297 = ((uint)(signed_short_src[887] * -0x6c65) >> 0x10) + (int)signed_short_src[887];
-  uVar298 = ((uint)(signed_short_src[888] * -0x6c8f) >> 0x10) + (int)signed_short_src[888];
-  uVar299 = ((uint)(signed_short_src[898] * -0x6e33) >> 0x10) + (int)signed_short_src[898];
-  uVar300 = ((uint)(signed_short_src[899] * -0x6e5d) >> 0x10) + (int)signed_short_src[899];
-  uVar301 = ((uint)(signed_short_src[901] * -0x6eaf) >> 0x10) + (int)signed_short_src[901];
-  uVar302 = ((uint)(signed_short_src[902] * -0x6ed9) >> 0x10) + (int)signed_short_src[902];
-  uVar303 = ((uint)(signed_short_src[904] * -0x6f2b) >> 0x10) + (int)signed_short_src[904];
-  uVar304 = ((uint)(signed_short_src[907] * -0x6fa5) >> 0x10) + (int)signed_short_src[907];
-  uVar305 = ((uint)(signed_short_src[910] * -0x701f) >> 0x10) + (int)signed_short_src[910];
-  uVar306 = ((uint)(signed_short_src[911] * -0x7047) >> 0x10) + (int)signed_short_src[911];
-  sVar22 = (short)((uint)(signed_short_src[914] * 0x23d) >> 0x10);
-  uVar307 = ((uint)(signed_short_src[919] * -0x7187) >> 0x10) + (int)signed_short_src[919];
-  uVar308 = ((uint)(signed_short_src[920] * -0x71af) >> 0x10) + (int)signed_short_src[920];
-  uVar309 = ((uint)(signed_short_src[923] * -0x7225) >> 0x10) + (int)signed_short_src[923];
-  uVar310 = ((uint)(signed_short_src[926] * -0x729b) >> 0x10) + (int)signed_short_src[926];
-  uVar311 = ((uint)(signed_short_src[928] * -0x72e9) >> 0x10) + (int)signed_short_src[928];
-  uVar312 = ((uint)(signed_short_src[929] * -0x730f) >> 0x10) + (int)signed_short_src[929];
-  uVar313 = ((uint)(signed_short_src[931] * -0x735d) >> 0x10) + (int)signed_short_src[931];
-  uVar314 = ((uint)(signed_short_src[932] * -0x7383) >> 0x10) + (int)signed_short_src[932];
-  uVar315 = ((uint)(signed_short_src[935] * -0x73f7) >> 0x10) + (int)signed_short_src[935];
-  uVar316 = ((uint)(signed_short_src[936] * -0x741d) >> 0x10) + (int)signed_short_src[936];
-  uVar317 = ((uint)(signed_short_src[937] * -0x7443) >> 0x10) + (int)signed_short_src[937];
-  uVar318 = ((uint)(signed_short_src[938] * -0x7469) >> 0x10) + (int)signed_short_src[938];
-  uVar319 = ((uint)(signed_short_src[939] * -0x748f) >> 0x10) + (int)signed_short_src[939];
-  uVar320 = ((uint)(signed_short_src[940] * -0x74b5) >> 0x10) + (int)signed_short_src[940];
-  uVar321 = ((uint)(signed_short_src[941] * -0x74db) >> 0x10) + (int)signed_short_src[941];
-  uVar322 = ((uint)(signed_short_src[942] * -0x7501) >> 0x10) + (int)signed_short_src[942];
-  uVar323 = ((uint)(signed_short_src[946] * -0x7597) >> 0x10) + (int)signed_short_src[946];
-  uVar324 = ((uint)(signed_short_src[949] * -0x7607) >> 0x10) + (int)signed_short_src[949];
-  uVar325 = ((uint)(signed_short_src[951] * -0x7651) >> 0x10) + (int)signed_short_src[951];
-  uVar326 = ((uint)(signed_short_src[953] * -0x769b) >> 0x10) + (int)signed_short_src[953];
-  sVar23 = (short)((uint)(signed_short_src[954] * 0x225) >> 0x10);
-  uVar327 = ((uint)(signed_short_src[955] * -0x76e5) >> 0x10) + (int)signed_short_src[955];
-  uVar328 = ((uint)(signed_short_src[956] * -0x7709) >> 0x10) + (int)signed_short_src[956];
-  uVar329 = ((uint)(signed_short_src[959] * -0x7777) >> 0x10) + (int)signed_short_src[959];
-  uVar330 = ((uint)(signed_short_src[960] * -0x779b) >> 0x10) + (int)signed_short_src[960];
-  sVar24 = (short)((uint)(signed_short_src[961] * 0x221) >> 0x10);
-  uVar331 = ((uint)(signed_short_src[969] * -0x78df) >> 0x10) + (int)signed_short_src[969];
-  uVar332 = ((uint)(signed_short_src[970] * -0x7903) >> 0x10) + (int)signed_short_src[970];
-  uVar333 = ((uint)(signed_short_src[973] * -0x796d) >> 0x10) + (int)signed_short_src[973];
-  uVar334 = ((uint)(signed_short_src[974] * -0x7991) >> 0x10) + (int)signed_short_src[974];
-  uVar335 = ((uint)(signed_short_src[976] * -0x79d7) >> 0x10) + (int)signed_short_src[976];
-  uVar336 = ((uint)(signed_short_src[978] * -0x7a1d) >> 0x10) + (int)signed_short_src[978];
-  sVar25 = (short)((uint)(signed_short_src[979] * 0x217) >> 0x10);
-  uVar337 = ((uint)(signed_short_src[980] * -0x7a63) >> 0x10) + (int)signed_short_src[980];
-  uVar338 = ((uint)(signed_short_src[982] * -0x7aa9) >> 0x10) + (int)signed_short_src[982];
-  uVar339 = ((uint)(signed_short_src[983] * -0x7acb) >> 0x10) + (int)signed_short_src[983];
-  uVar340 = ((uint)(signed_short_src[985] * -0x7b11) >> 0x10) + (int)signed_short_src[985];
-  uVar341 = ((uint)(signed_short_src[986] * -0x7b33) >> 0x10) + (int)signed_short_src[986];
-  sVar13 = (short)((uint)(signed_short_src[992] * 0x42) >> 0x10);
-  uVar342 = ((uint)(signed_short_src[998] * -0x7ccb) >> 0x10) + (int)signed_short_src[998];
-  uVar343 = ((uint)(signed_short_src[999] * -0x7ced) >> 0x10) + (int)signed_short_src[999];
-  uVar344 = ((uint)(signed_short_src[1000] * -0x7d0f) >> 0x10) + (int)signed_short_src[1000];
-  uVar345 = ((uint)(signed_short_src[1002] * -0x7d51) >> 0x10) + (int)signed_short_src[1002];
-  uVar346 = ((uint)(signed_short_src[1003] * -0x7d73) >> 0x10) + (int)signed_short_src[1003];
-  uVar347 = ((uint)(signed_short_src[1005] * -0x7db5) >> 0x10) + (int)signed_short_src[1005];
-  uVar348 = ((uint)(signed_short_src[1007] * -0x7df7) >> 0x10) + (int)signed_short_src[1007];
-  uVar349 = ((uint)(signed_short_src[1009] * -0x7e39) >> 0x10) + (int)signed_short_src[1009];
-  uVar350 = ((uint)(signed_short_src[1011] * -0x7e7b) >> 0x10) + (int)signed_short_src[1011];
-  uVar351 = ((uint)(signed_short_src[1014] * -0x7edd) >> 0x10) + (int)signed_short_src[1014];
-  uVar352 = ((uint)(signed_short_src[1015] * -0x7efd) >> 0x10) + (int)signed_short_src[1015];
-  uVar353 = ((uint)(signed_short_src[1018] * -0x7f5f) >> 0x10) + (int)signed_short_src[1018];
-  uVar354 = ((uint)(signed_short_src[1019] * -0x7f7f) >> 0x10) + (int)signed_short_src[1019];
-  uVar355 = ((uint)(signed_short_src[1020] * -0x7f9f) >> 0x10) + (int)signed_short_src[1020];
-  uVar356 = ((uint)(signed_short_src[1021] * -0x7fbf) >> 0x10) + (int)signed_short_src[1021];
-  uVar357 = ((uint)(signed_short_src[1022] * -0x7fdf) >> 0x10) + (int)signed_short_src[1022];
   signed_short_dest[0] = signed_short_src[0];
   signed_short_dest[1] = signed_short_src[1] / 2;
-  signed_short_dest[2] = sVar1 - (sVar1 >> 0xf);
+  signed_short_dest[2] = signed_short_src[2] / 3;
   signed_short_dest[3] =
        (short)(((ushort)(signed_short_src[3] >> 0xf) >> 0xe) + signed_short_src[3]) >> 2;
-  signed_short_dest[4] =
-       (signed_short_src[4] / 5 + (signed_short_src[4] >> 0xf)) -
-       (short)(signed_short_src[4] * 0x6667 >> 0x1f);
-  signed_short_dest[5] = sVar2 - (sVar2 >> 0xf);
-  signed_short_dest[6] =
-       (signed_short_src[6] / 7 + (signed_short_src[6] >> 0xf)) -
-       (short)(signed_short_src[6] * 0x4925 >> 0x1f);
+  signed_short_dest[4] = signed_short_src[4] / 5;
+  signed_short_dest[5] = signed_short_src[5] / 6;
+  signed_short_dest[6] = signed_short_src[6] / 7;
   signed_short_dest[7] =
        (short)(((ushort)(signed_short_src[7] >> 0xf) >> 0xd) + signed_short_src[7]) >> 3;
-  signed_short_dest[8] = sVar3 - (sVar3 >> 0xf);
-  signed_short_dest[9] =
-       (signed_short_src[9] / 10 + (signed_short_src[9] >> 0xf)) -
-       (short)(signed_short_src[9] * 0x6667 >> 0x1f);
-  signed_short_dest[10] = sVar4 - (sVar4 >> 0xf);
-  signed_short_dest[11] =
-       (signed_short_src[11] / 0xc + (signed_short_src[11] >> 0xf)) -
-       (short)(signed_short_src[11] * 0x2aab >> 0x1f);
-  signed_short_dest[12] =
-       (signed_short_src[12] / 0xd + (signed_short_src[12] >> 0xf)) -
-       (short)(signed_short_src[12] * 0x4ec5 >> 0x1f);
-  signed_short_dest[13] =
-       (signed_short_src[13] / 0xe + (signed_short_src[13] >> 0xf)) -
-       (short)(signed_short_src[13] * 0x4925 >> 0x1f);
-  signed_short_dest[14] = (short)((uVar26 & 0x8000) >> 0xf) + ((short)uVar26 >> 3);
+  signed_short_dest[8] = signed_short_src[8] / 9;
+  signed_short_dest[9] = signed_short_src[9] / 10;
+  signed_short_dest[10] = signed_short_src[10] / 0xb;
+  signed_short_dest[11] = signed_short_src[11] / 0xc;
+  signed_short_dest[12] = signed_short_src[12] / 0xd;
+  signed_short_dest[13] = signed_short_src[13] / 0xe;
+  uVar1 = ((uint)(signed_short_src[14] * -0x7777) >> 0x10) + (int)signed_short_src[14];
+  signed_short_dest[14] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 3);
   signed_short_dest[15] =
        (short)(((ushort)(signed_short_src[15] >> 0xf) >> 0xc) + signed_short_src[15]) >> 4;
-  signed_short_dest[16] =
-       (signed_short_src[16] / 0x11 + (signed_short_src[16] >> 0xf)) -
-       (short)(signed_short_src[16] * 0x7879 >> 0x1f);
-  signed_short_dest[17] = sVar5 - (sVar5 >> 0xf);
-  signed_short_dest[18] = (short)((uVar27 & 0x8000) >> 0xf) + ((short)uVar27 >> 4);
-  signed_short_dest[19] =
-       (signed_short_src[19] / 0x14 + (signed_short_src[19] >> 0xf)) -
-       (short)(signed_short_src[19] * 0x6667 >> 0x1f);
-  signed_short_dest[20] = (short)((uVar28 & 0x8000) >> 0xf) + ((short)uVar28 >> 4);
-  signed_short_dest[21] = sVar6 - (sVar6 >> 0xf);
-  signed_short_dest[22] = (short)((uVar29 & 0x8000) >> 0xf) + ((short)uVar29 >> 4);
-  signed_short_dest[23] =
-       (signed_short_src[23] / 0x18 + (signed_short_src[23] >> 0xf)) -
-       (short)(signed_short_src[23] * 0x2aab >> 0x1f);
-  signed_short_dest[24] =
-       (signed_short_src[24] / 0x19 + (signed_short_src[24] >> 0xf)) -
-       (short)(signed_short_src[24] * 0x147b >> 0x1f);
-  signed_short_dest[25] =
-       (signed_short_src[25] / 0x1a + (signed_short_src[25] >> 0xf)) -
-       (short)(signed_short_src[25] * 0x4ec5 >> 0x1f);
-  signed_short_dest[26] = (short)((uVar30 & 0x8000) >> 0xf) + ((short)uVar30 >> 4);
-  signed_short_dest[27] =
-       (signed_short_src[27] / 0x1c + (signed_short_src[27] >> 0xf)) -
-       (short)(signed_short_src[27] * 0x4925 >> 0x1f);
-  signed_short_dest[28] =
-       (signed_short_src[28] / 0x1d + (signed_short_src[28] >> 0xf)) -
-       (short)(signed_short_src[28] * 0x469f >> 0x1f);
-  signed_short_dest[29] = (short)((uVar31 & 0x8000) >> 0xf) + ((short)uVar31 >> 4);
-  signed_short_dest[30] =
-       (signed_short_src[30] / 0x1f + (signed_short_src[30] >> 0xf)) -
-       (short)(signed_short_src[30] * 0x4211 >> 0x1f);
+  signed_short_dest[16] = signed_short_src[16] / 0x11;
+  signed_short_dest[17] = signed_short_src[17] / 0x12;
+  uVar1 = ((uint)(signed_short_src[18] * -0x286b) >> 0x10) + (int)signed_short_src[18];
+  signed_short_dest[18] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 4);
+  signed_short_dest[19] = signed_short_src[19] / 0x14;
+  uVar1 = ((uint)(signed_short_src[20] * -0x3cf3) >> 0x10) + (int)signed_short_src[20];
+  signed_short_dest[20] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 4);
+  signed_short_dest[21] = signed_short_src[21] / 0x16;
+  uVar1 = ((uint)(signed_short_src[22] * -0x4de9) >> 0x10) + (int)signed_short_src[22];
+  signed_short_dest[22] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 4);
+  signed_short_dest[23] = signed_short_src[23] / 0x18;
+  signed_short_dest[24] = signed_short_src[24] / 0x19;
+  signed_short_dest[25] = signed_short_src[25] / 0x1a;
+  uVar1 = ((uint)(signed_short_src[26] * -0x684b) >> 0x10) + (int)signed_short_src[26];
+  signed_short_dest[26] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 4);
+  signed_short_dest[27] = signed_short_src[27] / 0x1c;
+  signed_short_dest[28] = signed_short_src[28] / 0x1d;
+  uVar1 = ((uint)(signed_short_src[29] * -0x7777) >> 0x10) + (int)signed_short_src[29];
+  signed_short_dest[29] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 4);
+  signed_short_dest[30] = signed_short_src[30] / 0x1f;
   signed_short_dest[31] =
        (short)(((ushort)(signed_short_src[31] >> 0xf) >> 0xb) + signed_short_src[31]) >> 5;
-  signed_short_dest[32] = sVar7 - (sVar7 >> 0xf);
-  signed_short_dest[33] =
-       (signed_short_src[33] / 0x22 + (signed_short_src[33] >> 0xf)) -
-       (short)(signed_short_src[33] * 0x7879 >> 0x1f);
-  signed_short_dest[34] =
-       (signed_short_src[34] / 0x23 + (signed_short_src[34] >> 0xf)) -
-       (short)(signed_short_src[34] * 0xea1 >> 0x1f);
-  signed_short_dest[35] =
-       (signed_short_src[35] / 0x24 + (signed_short_src[35] >> 0xf)) -
-       (short)(signed_short_src[35] * 0xe39 >> 0x1f);
-  signed_short_dest[36] =
-       (signed_short_src[36] / 0x25 + (signed_short_src[36] >> 0xf)) -
-       (short)(signed_short_src[36] * 0x1bad >> 0x1f);
-  signed_short_dest[37] = (short)((uVar32 & 0x8000) >> 0xf) + ((short)uVar32 >> 5);
-  signed_short_dest[38] =
-       (signed_short_src[38] / 0x27 + (signed_short_src[38] >> 0xf)) -
-       (short)(signed_short_src[38] * 0x6907 >> 0x1f);
-  signed_short_dest[39] =
-       (signed_short_src[39] / 0x28 + (signed_short_src[39] >> 0xf)) -
-       (short)(signed_short_src[39] * 0x6667 >> 0x1f);
-  signed_short_dest[40] = (short)((uVar33 & 0x8000) >> 0xf) + ((short)uVar33 >> 5);
-  signed_short_dest[41] = (short)((uVar34 & 0x8000) >> 0xf) + ((short)uVar34 >> 5);
-  signed_short_dest[42] =
-       (signed_short_src[42] / 0x2b + (signed_short_src[42] >> 0xf)) -
-       (short)(signed_short_src[42] * 0x2fa1 >> 0x1f);
-  signed_short_dest[43] =
-       (signed_short_src[43] / 0x2c + (signed_short_src[43] >> 0xf)) -
-       (short)(signed_short_src[43] * 0xba3 >> 0x1f);
-  signed_short_dest[44] =
-       (signed_short_src[44] / 0x2d + (signed_short_src[44] >> 0xf)) -
-       (short)(signed_short_src[44] * 0x2d83 >> 0x1f);
-  signed_short_dest[45] = (short)((uVar35 & 0x8000) >> 0xf) + ((short)uVar35 >> 5);
-  signed_short_dest[46] = (short)((uVar36 & 0x8000) >> 0xf) + ((short)uVar36 >> 5);
-  signed_short_dest[47] =
-       (signed_short_src[47] / 0x30 + (signed_short_src[47] >> 0xf)) -
-       (short)(signed_short_src[47] * 0x2aab >> 0x1f);
-  signed_short_dest[48] =
-       (signed_short_src[48] / 0x31 + (signed_short_src[48] >> 0xf)) -
-       (short)(signed_short_src[48] * 0xa73 >> 0x1f);
-  signed_short_dest[49] =
-       (signed_short_src[49] / 0x32 + (signed_short_src[49] >> 0xf)) -
-       (short)(signed_short_src[49] * 0x147b >> 0x1f);
-  signed_short_dest[50] = (short)((uVar37 & 0x8000) >> 0xf) + ((short)uVar37 >> 5);
-  signed_short_dest[51] =
-       (signed_short_src[51] / 0x34 + (signed_short_src[51] >> 0xf)) -
-       (short)(signed_short_src[51] * 0x4ec5 >> 0x1f);
-  signed_short_dest[52] =
-       (signed_short_src[52] / 0x35 + (signed_short_src[52] >> 0xf)) -
-       (short)(signed_short_src[52] * 0x4d49 >> 0x1f);
-  signed_short_dest[53] = (short)((uVar38 & 0x8000) >> 0xf) + ((short)uVar38 >> 5);
-  signed_short_dest[54] = (short)((uVar39 & 0x8000) >> 0xf) + ((short)uVar39 >> 5);
-  signed_short_dest[55] =
-       (signed_short_src[55] / 0x38 + (signed_short_src[55] >> 0xf)) -
-       (short)(signed_short_src[55] * 0x4925 >> 0x1f);
-  signed_short_dest[56] = (short)((uVar40 & 0x8000) >> 0xf) + ((short)uVar40 >> 5);
-  signed_short_dest[57] =
-       (signed_short_src[57] / 0x3a + (signed_short_src[57] >> 0xf)) -
-       (short)(signed_short_src[57] * 0x469f >> 0x1f);
-  signed_short_dest[58] =
-       (signed_short_src[58] / 0x3b + (signed_short_src[58] >> 0xf)) -
-       (short)(signed_short_src[58] * 0x456d >> 0x1f);
-  signed_short_dest[59] = (short)((uVar41 & 0x8000) >> 0xf) + ((short)uVar41 >> 5);
-  signed_short_dest[60] =
-       (signed_short_src[60] / 0x3d + (signed_short_src[60] >> 0xf)) -
-       (short)(signed_short_src[60] * 0x2193 >> 0x1f);
-  signed_short_dest[61] =
-       (signed_short_src[61] / 0x3e + (signed_short_src[61] >> 0xf)) -
-       (short)(signed_short_src[61] * 0x4211 >> 0x1f);
-  signed_short_dest[62] = (short)((uVar42 & 0x8000) >> 0xf) + ((short)uVar42 >> 5);
+  signed_short_dest[32] = signed_short_src[32] / 0x21;
+  signed_short_dest[33] = signed_short_src[33] / 0x22;
+  signed_short_dest[34] = signed_short_src[34] / 0x23;
+  signed_short_dest[35] = signed_short_src[35] / 0x24;
+  signed_short_dest[36] = signed_short_src[36] / 0x25;
+  uVar1 = ((uint)(signed_short_src[37] * -0x286b) >> 0x10) + (int)signed_short_src[37];
+  signed_short_dest[37] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[38] = signed_short_src[38] / 0x27;
+  signed_short_dest[39] = signed_short_src[39] / 0x28;
+  uVar1 = ((uint)(signed_short_src[40] * -0x3831) >> 0x10) + (int)signed_short_src[40];
+  signed_short_dest[40] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  uVar1 = ((uint)(signed_short_src[41] * -0x3cf3) >> 0x10) + (int)signed_short_src[41];
+  signed_short_dest[41] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[42] = signed_short_src[42] / 0x2b;
+  signed_short_dest[43] = signed_short_src[43] / 0x2c;
+  signed_short_dest[44] = signed_short_src[44] / 0x2d;
+  uVar1 = ((uint)(signed_short_src[45] * -0x4de9) >> 0x10) + (int)signed_short_src[45];
+  signed_short_dest[45] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  uVar1 = ((uint)(signed_short_src[46] * -0x51b3) >> 0x10) + (int)signed_short_src[46];
+  signed_short_dest[46] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[47] = signed_short_src[47] / 0x30;
+  signed_short_dest[48] = signed_short_src[48] / 0x31;
+  signed_short_dest[49] = signed_short_src[49] / 0x32;
+  uVar1 = ((uint)(signed_short_src[50] * -0x5f5f) >> 0x10) + (int)signed_short_src[50];
+  signed_short_dest[50] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[51] = signed_short_src[51] / 0x34;
+  signed_short_dest[52] = signed_short_src[52] / 0x35;
+  uVar1 = ((uint)(signed_short_src[53] * -0x684b) >> 0x10) + (int)signed_short_src[53];
+  signed_short_dest[53] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  uVar1 = ((uint)(signed_short_src[54] * -0x6b0d) >> 0x10) + (int)signed_short_src[54];
+  signed_short_dest[54] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[55] = signed_short_src[55] / 0x38;
+  uVar1 = ((uint)(signed_short_src[56] * -0x7047) >> 0x10) + (int)signed_short_src[56];
+  signed_short_dest[56] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[57] = signed_short_src[57] / 0x3a;
+  signed_short_dest[58] = signed_short_src[58] / 0x3b;
+  uVar1 = ((uint)(signed_short_src[59] * -0x7777) >> 0x10) + (int)signed_short_src[59];
+  signed_short_dest[59] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
+  signed_short_dest[60] = signed_short_src[60] / 0x3d;
+  signed_short_dest[61] = signed_short_src[61] / 0x3e;
+  uVar1 = ((uint)(signed_short_src[62] * -0x7df7) >> 0x10) + (int)signed_short_src[62];
+  signed_short_dest[62] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 5);
   signed_short_dest[63] =
        (short)(((ushort)(signed_short_src[63] >> 0xf) >> 10) + signed_short_src[63]) >> 6;
-  signed_short_dest[64] =
-       (signed_short_src[64] / 0x41 + (signed_short_src[64] >> 0xf)) -
-       (short)(signed_short_src[64] * 0xfc1 >> 0x1f);
-  signed_short_dest[65] = sVar8 - (sVar8 >> 0xf);
-  signed_short_dest[66] =
-       (signed_short_src[66] / 0x43 + (signed_short_src[66] >> 0xf)) -
-       (short)(signed_short_src[66] * 0x7a45 >> 0x1f);
-  signed_short_dest[67] =
-       (signed_short_src[67] / 0x44 + (signed_short_src[67] >> 0xf)) -
-       (short)(signed_short_src[67] * 0x7879 >> 0x1f);
-  signed_short_dest[68] =
-       (signed_short_src[68] / 0x45 + (signed_short_src[68] >> 0xf)) -
-       (short)(signed_short_src[68] * 0x3b5d >> 0x1f);
-  signed_short_dest[69] =
-       (signed_short_src[69] / 0x46 + (signed_short_src[69] >> 0xf)) -
-       (short)(signed_short_src[69] * 0xea1 >> 0x1f);
-  signed_short_dest[70] =
-       (signed_short_src[70] / 0x47 + (signed_short_src[70] >> 0xf)) -
-       (short)(signed_short_src[70] * 0x39b1 >> 0x1f);
-  signed_short_dest[71] =
-       (signed_short_src[71] / 0x48 + (signed_short_src[71] >> 0xf)) -
-       (short)(signed_short_src[71] * 0xe39 >> 0x1f);
-  signed_short_dest[72] = (short)((uVar43 & 0x8000) >> 0xf) + ((short)uVar43 >> 6);
-  signed_short_dest[73] =
-       (signed_short_src[73] / 0x4a + (signed_short_src[73] >> 0xf)) -
-       (short)(signed_short_src[73] * 0x1bad >> 0x1f);
-  signed_short_dest[74] = (short)((uVar44 & 0x8000) >> 0xf) + ((short)uVar44 >> 6);
-  signed_short_dest[75] = (short)((uVar45 & 0x8000) >> 0xf) + ((short)uVar45 >> 6);
-  signed_short_dest[76] =
-       (signed_short_src[76] / 0x4d + (signed_short_src[76] >> 0xf)) -
-       (short)(signed_short_src[76] * 0x1a99 >> 0x1f);
-  signed_short_dest[77] =
-       (signed_short_src[77] / 0x4e + (signed_short_src[77] >> 0xf)) -
-       (short)(signed_short_src[77] * 0x6907 >> 0x1f);
-  signed_short_dest[78] =
-       (signed_short_src[78] / 0x4f + (signed_short_src[78] >> 0xf)) -
-       (short)(signed_short_src[78] * 0x67b3 >> 0x1f);
-  signed_short_dest[79] =
-       (signed_short_src[79] / 0x50 + (signed_short_src[79] >> 0xf)) -
-       (short)(signed_short_src[79] * 0x6667 >> 0x1f);
-  signed_short_dest[80] =
-       (signed_short_src[80] / 0x51 + (signed_short_src[80] >> 0xf)) -
-       (short)(signed_short_src[80] * 0x6523 >> 0x1f);
-  signed_short_dest[81] = (short)((uVar46 & 0x8000) >> 0xf) + ((short)uVar46 >> 6);
-  signed_short_dest[82] =
-       (signed_short_src[82] / 0x53 + (signed_short_src[82] >> 0xf)) -
-       (short)(signed_short_src[82] * 0x62b3 >> 0x1f);
-  signed_short_dest[83] = (short)((uVar47 & 0x8000) >> 0xf) + ((short)uVar47 >> 6);
-  signed_short_dest[84] =
-       (signed_short_src[84] / 0x55 + (signed_short_src[84] >> 0xf)) -
-       (short)(signed_short_src[84] * 0x6061 >> 0x1f);
-  signed_short_dest[85] =
-       (signed_short_src[85] / 0x56 + (signed_short_src[85] >> 0xf)) -
-       (short)(signed_short_src[85] * 0x2fa1 >> 0x1f);
-  signed_short_dest[86] = (short)((uVar48 & 0x8000) >> 0xf) + ((short)uVar48 >> 6);
-  signed_short_dest[87] =
-       (signed_short_src[87] / 0x58 + (signed_short_src[87] >> 0xf)) -
-       (short)(signed_short_src[87] * 0xba3 >> 0x1f);
-  signed_short_dest[88] =
-       (signed_short_src[88] / 0x59 + (signed_short_src[88] >> 0xf)) -
-       (short)(signed_short_src[88] * 0x1703 >> 0x1f);
-  signed_short_dest[89] =
-       (signed_short_src[89] / 0x5a + (signed_short_src[89] >> 0xf)) -
-       (short)(signed_short_src[89] * 0x2d83 >> 0x1f);
-  signed_short_dest[90] =
-       (signed_short_src[90] / 0x5b + (signed_short_src[90] >> 0xf)) -
-       (short)(signed_short_src[90] * 0x2d03 >> 0x1f);
-  signed_short_dest[91] = (short)((uVar49 & 0x8000) >> 0xf) + ((short)uVar49 >> 6);
-  signed_short_dest[92] = (short)((uVar50 & 0x8000) >> 0xf) + ((short)uVar50 >> 6);
-  signed_short_dest[93] = (short)((uVar51 & 0x8000) >> 0xf) + ((short)uVar51 >> 6);
-  signed_short_dest[94] = (short)((uVar52 & 0x8000) >> 0xf) + ((short)uVar52 >> 6);
-  signed_short_dest[95] =
-       (signed_short_src[95] / 0x60 + (signed_short_src[95] >> 0xf)) -
-       (short)(signed_short_src[95] * 0x2aab >> 0x1f);
-  signed_short_dest[96] = (short)((uVar53 & 0x8000) >> 0xf) + ((short)uVar53 >> 6);
-  signed_short_dest[97] =
-       (signed_short_src[97] / 0x62 + (signed_short_src[97] >> 0xf)) -
-       (short)(signed_short_src[97] * 0xa73 >> 0x1f);
-  signed_short_dest[98] = sVar9 - (sVar9 >> 0xf);
-  signed_short_dest[99] =
-       (signed_short_src[99] / 100 + (signed_short_src[99] >> 0xf)) -
-       (short)(signed_short_src[99] * 0x147b >> 0x1f);
-  signed_short_dest[100] =
-       (signed_short_src[100] / 0x65 + (signed_short_src[100] >> 0xf)) -
-       (short)(signed_short_src[100] * 0x1447 >> 0x1f);
-  signed_short_dest[101] = (short)((uVar54 & 0x8000) >> 0xf) + ((short)uVar54 >> 6);
-  signed_short_dest[102] =
-       (signed_short_src[102] / 0x67 + (signed_short_src[102] >> 0xf)) -
-       (short)(signed_short_src[102] * 0x4f89 >> 0x1f);
-  signed_short_dest[103] =
-       (signed_short_src[103] / 0x68 + (signed_short_src[103] >> 0xf)) -
-       (short)(signed_short_src[103] * 0x4ec5 >> 0x1f);
-  signed_short_dest[104] =
-       (signed_short_src[104] / 0x69 + (signed_short_src[104] >> 0xf)) -
-       (short)(signed_short_src[104] * 0x4e05 >> 0x1f);
-  signed_short_dest[105] =
-       (signed_short_src[105] / 0x6a + (signed_short_src[105] >> 0xf)) -
-       (short)(signed_short_src[105] * 0x4d49 >> 0x1f);
-  signed_short_dest[106] =
-       (signed_short_src[106] / 0x6b + (signed_short_src[106] >> 0xf)) -
-       (short)(signed_short_src[106] * 0x4c9 >> 0x1f);
-  signed_short_dest[107] = (short)((uVar55 & 0x8000) >> 0xf) + ((short)uVar55 >> 6);
-  signed_short_dest[108] =
-       (signed_short_src[108] / 0x6d + (signed_short_src[108] >> 0xf)) -
-       (short)(signed_short_src[108] * 0x965 >> 0x1f);
-  signed_short_dest[109] = (short)((uVar56 & 0x8000) >> 0xf) + ((short)uVar56 >> 6);
-  signed_short_dest[110] = (short)((uVar57 & 0x8000) >> 0xf) + ((short)uVar57 >> 6);
-  signed_short_dest[111] =
-       (signed_short_src[111] / 0x70 + (signed_short_src[111] >> 0xf)) -
-       (short)(signed_short_src[111] * 0x4925 >> 0x1f);
-  signed_short_dest[112] =
-       (signed_short_src[112] / 0x71 + (signed_short_src[112] >> 0xf)) -
-       (short)(signed_short_src[112] * 0x487f >> 0x1f);
-  signed_short_dest[113] = (short)((uVar58 & 0x8000) >> 0xf) + ((short)uVar58 >> 6);
-  signed_short_dest[114] = (short)((uVar59 & 0x8000) >> 0xf) + ((short)uVar59 >> 6);
-  signed_short_dest[115] =
-       (signed_short_src[115] / 0x74 + (signed_short_src[115] >> 0xf)) -
-       (short)(signed_short_src[115] * 0x469f >> 0x1f);
-  signed_short_dest[116] = (short)((uVar60 & 0x8000) >> 0xf) + ((short)uVar60 >> 6);
-  signed_short_dest[117] =
-       (signed_short_src[117] / 0x76 + (signed_short_src[117] >> 0xf)) -
-       (short)(signed_short_src[117] * 0x456d >> 0x1f);
-  signed_short_dest[118] = (short)((uVar61 & 0x8000) >> 0xf) + ((short)uVar61 >> 6);
-  signed_short_dest[119] = (short)((uVar62 & 0x8000) >> 0xf) + ((short)uVar62 >> 6);
-  signed_short_dest[120] =
-       (signed_short_src[120] / 0x79 + (signed_short_src[120] >> 0xf)) -
-       (short)(signed_short_src[120] * 0x10ed >> 0x1f);
-  signed_short_dest[121] =
-       (signed_short_src[121] / 0x7a + (signed_short_src[121] >> 0xf)) -
-       (short)(signed_short_src[121] * 0x2193 >> 0x1f);
-  signed_short_dest[122] = (short)((uVar63 & 0x8000) >> 0xf) + ((short)uVar63 >> 6);
-  signed_short_dest[123] =
-       (signed_short_src[123] / 0x7c + (signed_short_src[123] >> 0xf)) -
-       (short)(signed_short_src[123] * 0x4211 >> 0x1f);
-  signed_short_dest[124] = (short)((uVar64 & 0x8000) >> 0xf) + ((short)uVar64 >> 6);
-  signed_short_dest[125] = (short)((uVar65 & 0x8000) >> 0xf) + ((short)uVar65 >> 6);
-  signed_short_dest[126] = (short)((uVar66 & 0x8000) >> 0xf) + ((short)uVar66 >> 6);
+  signed_short_dest[64] = signed_short_src[64] / 0x41;
+  signed_short_dest[65] = signed_short_src[65] / 0x42;
+  signed_short_dest[66] = signed_short_src[66] / 0x43;
+  signed_short_dest[67] = signed_short_src[67] / 0x44;
+  signed_short_dest[68] = signed_short_src[68] / 0x45;
+  signed_short_dest[69] = signed_short_src[69] / 0x46;
+  signed_short_dest[70] = signed_short_src[70] / 0x47;
+  signed_short_dest[71] = signed_short_src[71] / 0x48;
+  uVar1 = ((uint)(signed_short_src[72] * -0x1f8f) >> 0x10) + (int)signed_short_src[72];
+  signed_short_dest[72] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[73] = signed_short_src[73] / 0x4a;
+  uVar1 = ((uint)(signed_short_src[74] * -0x258b) >> 0x10) + (int)signed_short_src[74];
+  signed_short_dest[74] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[75] * -0x286b) >> 0x10) + (int)signed_short_src[75];
+  signed_short_dest[75] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[76] = signed_short_src[76] / 0x4d;
+  signed_short_dest[77] = signed_short_src[77] / 0x4e;
+  signed_short_dest[78] = signed_short_src[78] / 0x4f;
+  signed_short_dest[79] = signed_short_src[79] / 0x50;
+  signed_short_dest[80] = signed_short_src[80] / 0x51;
+  uVar1 = ((uint)(signed_short_src[81] * -0x3831) >> 0x10) + (int)signed_short_src[81];
+  signed_short_dest[81] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[82] = signed_short_src[82] / 0x53;
+  uVar1 = ((uint)(signed_short_src[83] * -0x3cf3) >> 0x10) + (int)signed_short_src[83];
+  signed_short_dest[83] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[84] = signed_short_src[84] / 0x55;
+  signed_short_dest[85] = signed_short_src[85] / 0x56;
+  uVar1 = ((uint)(signed_short_src[86] * -0x43ad) >> 0x10) + (int)signed_short_src[86];
+  signed_short_dest[86] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[87] = signed_short_src[87] / 0x58;
+  signed_short_dest[88] = signed_short_src[88] / 0x59;
+  signed_short_dest[89] = signed_short_src[89] / 0x5a;
+  signed_short_dest[90] = signed_short_src[90] / 0x5b;
+  uVar1 = ((uint)(signed_short_src[91] * -0x4de9) >> 0x10) + (int)signed_short_src[91];
+  signed_short_dest[91] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[92] * -0x4fd3) >> 0x10) + (int)signed_short_src[92];
+  signed_short_dest[92] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[93] * -0x51b3) >> 0x10) + (int)signed_short_src[93];
+  signed_short_dest[93] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[94] * -0x5389) >> 0x10) + (int)signed_short_src[94];
+  signed_short_dest[94] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[95] = signed_short_src[95] / 0x60;
+  uVar1 = ((uint)(signed_short_src[96] * -0x5717) >> 0x10) + (int)signed_short_src[96];
+  signed_short_dest[96] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[97] = signed_short_src[97] / 0x62;
+  signed_short_dest[98] = signed_short_src[98] / 99;
+  signed_short_dest[99] = signed_short_src[99] / 100;
+  signed_short_dest[100] = signed_short_src[100] / 0x65;
+  uVar1 = ((uint)(signed_short_src[101] * -0x5f5f) >> 0x10) + (int)signed_short_src[101];
+  signed_short_dest[101] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[102] = signed_short_src[102] / 0x67;
+  signed_short_dest[103] = signed_short_src[103] / 0x68;
+  signed_short_dest[104] = signed_short_src[104] / 0x69;
+  signed_short_dest[105] = signed_short_src[105] / 0x6a;
+  signed_short_dest[106] = signed_short_src[106] / 0x6b;
+  uVar1 = ((uint)(signed_short_src[107] * -0x684b) >> 0x10) + (int)signed_short_src[107];
+  signed_short_dest[107] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[108] = signed_short_src[108] / 0x6d;
+  uVar1 = ((uint)(signed_short_src[109] * -0x6b0d) >> 0x10) + (int)signed_short_src[109];
+  signed_short_dest[109] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[110] * -0x6c65) >> 0x10) + (int)signed_short_src[110];
+  signed_short_dest[110] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[111] = signed_short_src[111] / 0x70;
+  signed_short_dest[112] = signed_short_src[112] / 0x71;
+  uVar1 = ((uint)(signed_short_src[113] * -0x7047) >> 0x10) + (int)signed_short_src[113];
+  signed_short_dest[113] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[114] * -0x7187) >> 0x10) + (int)signed_short_src[114];
+  signed_short_dest[114] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[115] = signed_short_src[115] / 0x74;
+  uVar1 = ((uint)(signed_short_src[116] * -0x73f7) >> 0x10) + (int)signed_short_src[116];
+  signed_short_dest[116] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[117] = signed_short_src[117] / 0x76;
+  uVar1 = ((uint)(signed_short_src[118] * -0x7651) >> 0x10) + (int)signed_short_src[118];
+  signed_short_dest[118] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[119] * -0x7777) >> 0x10) + (int)signed_short_src[119];
+  signed_short_dest[119] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[120] = signed_short_src[120] / 0x79;
+  signed_short_dest[121] = signed_short_src[121] / 0x7a;
+  uVar1 = ((uint)(signed_short_src[122] * -0x7acb) >> 0x10) + (int)signed_short_src[122];
+  signed_short_dest[122] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  signed_short_dest[123] = signed_short_src[123] / 0x7c;
+  uVar1 = ((uint)(signed_short_src[124] * -0x7ced) >> 0x10) + (int)signed_short_src[124];
+  signed_short_dest[124] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[125] * -0x7df7) >> 0x10) + (int)signed_short_src[125];
+  signed_short_dest[125] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
+  uVar1 = ((uint)(signed_short_src[126] * -0x7efd) >> 0x10) + (int)signed_short_src[126];
+  signed_short_dest[126] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 6);
   signed_short_dest[127] =
        (short)(((ushort)(signed_short_src[127] >> 0xf) >> 9) + signed_short_src[127]) >> 7;
-  signed_short_dest[128] =
-       (signed_short_src[128] / 0x81 + (signed_short_src[128] >> 0xf)) -
-       (short)(signed_short_src[128] * 0x3f81 >> 0x1f);
-  signed_short_dest[129] =
-       (signed_short_src[129] / 0x82 + (signed_short_src[129] >> 0xf)) -
-       (short)(signed_short_src[129] * 0xfc1 >> 0x1f);
-  signed_short_dest[130] =
-       (signed_short_src[130] / 0x83 + (signed_short_src[130] >> 0xf)) -
-       (short)(signed_short_src[130] * 0x3e89 >> 0x1f);
-  signed_short_dest[131] =
-       (signed_short_src[131] / 0x84 + (signed_short_src[131] >> 0xf)) -
-       (short)(signed_short_src[131] * 0x3e1 >> 0x1f);
-  signed_short_dest[132] =
-       (signed_short_src[132] / 0x85 + (signed_short_src[132] >> 0xf)) -
-       (short)(signed_short_src[132] * 0x7b31 >> 0x1f);
-  signed_short_dest[133] =
-       (signed_short_src[133] / 0x86 + (signed_short_src[133] >> 0xf)) -
-       (short)(signed_short_src[133] * 0x7a45 >> 0x1f);
-  signed_short_dest[134] =
-       (signed_short_src[134] / 0x87 + (signed_short_src[134] >> 0xf)) -
-       (short)(signed_short_src[134] * 0x795d >> 0x1f);
-  signed_short_dest[135] =
-       (signed_short_src[135] / 0x88 + (signed_short_src[135] >> 0xf)) -
-       (short)(signed_short_src[135] * 0x7879 >> 0x1f);
-  signed_short_dest[136] =
-       (signed_short_src[136] / 0x89 + (signed_short_src[136] >> 0xf)) -
-       (short)(signed_short_src[136] * 0xef3 >> 0x1f);
-  signed_short_dest[137] =
-       (signed_short_src[137] / 0x8a + (signed_short_src[137] >> 0xf)) -
-       (short)(signed_short_src[137] * 0x3b5d >> 0x1f);
-  signed_short_dest[138] =
-       (signed_short_src[138] / 0x8b + (signed_short_src[138] >> 0xf)) -
-       (short)(signed_short_src[138] * 0x75df >> 0x1f);
-  signed_short_dest[139] =
-       (signed_short_src[139] / 0x8c + (signed_short_src[139] >> 0xf)) -
-       (short)(signed_short_src[139] * 0xea1 >> 0x1f);
-  signed_short_dest[140] =
-       (signed_short_src[140] / 0x8d + (signed_short_src[140] >> 0xf)) -
-       (short)(signed_short_src[140] * 0x7433 >> 0x1f);
-  signed_short_dest[141] =
-       (signed_short_src[141] / 0x8e + (signed_short_src[141] >> 0xf)) -
-       (short)(signed_short_src[141] * 0x39b1 >> 0x1f);
-  signed_short_dest[142] =
-       (signed_short_src[142] / 0x8f + (signed_short_src[142] >> 0xf)) -
-       (short)(signed_short_src[142] * 0x7293 >> 0x1f);
-  signed_short_dest[143] =
-       (signed_short_src[143] / 0x90 + (signed_short_src[143] >> 0xf)) -
-       (short)(signed_short_src[143] * 0xe39 >> 0x1f);
-  signed_short_dest[144] =
-       (signed_short_src[144] / 0x91 + (signed_short_src[144] >> 0xf)) -
-       (short)(signed_short_src[144] * 0x70ff >> 0x1f);
-  signed_short_dest[145] = (short)((uVar67 & 0x8000) >> 0xf) + ((short)uVar67 >> 7);
-  signed_short_dest[146] =
-       (signed_short_src[146] / 0x93 + (signed_short_src[146] >> 0xf)) -
-       (short)(signed_short_src[146] * 0x6f75 >> 0x1f);
-  signed_short_dest[147] =
-       (signed_short_src[147] / 0x94 + (signed_short_src[147] >> 0xf)) -
-       (short)(signed_short_src[147] * 0x1bad >> 0x1f);
-  signed_short_dest[148] =
-       (signed_short_src[148] / 0x95 + (signed_short_src[148] >> 0xf)) -
-       (short)(signed_short_src[148] * 0x36fb >> 0x1f);
-  signed_short_dest[149] = (short)((uVar68 & 0x8000) >> 0xf) + ((short)uVar68 >> 7);
-  signed_short_dest[150] =
-       (signed_short_src[150] / 0x97 + (signed_short_src[150] >> 0xf)) -
-       (short)(signed_short_src[150] * 0x6c81 >> 0x1f);
-  signed_short_dest[151] = (short)((uVar69 & 0x8000) >> 0xf) + ((short)uVar69 >> 7);
-  signed_short_dest[152] =
-       (signed_short_src[152] / 0x99 + (signed_short_src[152] >> 0xf)) -
-       (short)(signed_short_src[152] * 0x358b >> 0x1f);
-  signed_short_dest[153] =
-       (signed_short_src[153] / 0x9a + (signed_short_src[153] >> 0xf)) -
-       (short)(signed_short_src[153] * 0x1a99 >> 0x1f);
-  signed_short_dest[154] = (short)((uVar70 & 0x8000) >> 0xf) + ((short)uVar70 >> 7);
-  signed_short_dest[155] =
-       (signed_short_src[155] / 0x9c + (signed_short_src[155] >> 0xf)) -
-       (short)(signed_short_src[155] * 0x6907 >> 0x1f);
-  signed_short_dest[156] =
-       (signed_short_src[156] / 0x9d + (signed_short_src[156] >> 0xf)) -
-       (short)(signed_short_src[156] * 0x1a17 >> 0x1f);
-  signed_short_dest[157] =
-       (signed_short_src[157] / 0x9e + (signed_short_src[157] >> 0xf)) -
-       (short)(signed_short_src[157] * 0x67b3 >> 0x1f);
-  signed_short_dest[158] =
-       (signed_short_src[158] / 0x9f + (signed_short_src[158] >> 0xf)) -
-       (short)(signed_short_src[158] * 0x19c3 >> 0x1f);
-  signed_short_dest[159] =
-       (signed_short_src[159] / 0xa0 + (signed_short_src[159] >> 0xf)) -
-       (short)(signed_short_src[159] * 0x6667 >> 0x1f);
-  signed_short_dest[160] =
-       (signed_short_src[160] / 0xa1 + (signed_short_src[160] >> 0xf)) -
-       (short)(signed_short_src[160] * 0x1971 >> 0x1f);
-  signed_short_dest[161] =
-       (signed_short_src[161] / 0xa2 + (signed_short_src[161] >> 0xf)) -
-       (short)(signed_short_src[161] * 0x6523 >> 0x1f);
-  signed_short_dest[162] =
-       (signed_short_src[162] / 0xa3 + (signed_short_src[162] >> 0xf)) -
-       (short)(signed_short_src[162] * 0x1921 >> 0x1f);
-  signed_short_dest[163] = (short)((uVar71 & 0x8000) >> 0xf) + ((short)uVar71 >> 7);
-  signed_short_dest[164] = (short)((uVar72 & 0x8000) >> 0xf) + ((short)uVar72 >> 7);
-  signed_short_dest[165] =
-       (signed_short_src[165] / 0xa6 + (signed_short_src[165] >> 0xf)) -
-       (short)(signed_short_src[165] * 0x62b3 >> 0x1f);
-  signed_short_dest[166] =
-       (signed_short_src[166] / 0xa7 + (signed_short_src[166] >> 0xf)) -
-       (short)(signed_short_src[166] * 0x1887 >> 0x1f);
-  signed_short_dest[167] = (short)((uVar73 & 0x8000) >> 0xf) + ((short)uVar73 >> 7);
-  signed_short_dest[168] =
-       (signed_short_src[168] / 0xa9 + (signed_short_src[168] >> 0xf)) -
-       (short)(signed_short_src[168] * 0x60f3 >> 0x1f);
-  signed_short_dest[169] =
-       (signed_short_src[169] / 0xaa + (signed_short_src[169] >> 0xf)) -
-       (short)(signed_short_src[169] * 0x6061 >> 0x1f);
-  signed_short_dest[170] = (short)((uVar74 & 0x8000) >> 0xf) + ((short)uVar74 >> 7);
-  signed_short_dest[171] =
-       (signed_short_src[171] / 0xac + (signed_short_src[171] >> 0xf)) -
-       (short)(signed_short_src[171] * 0x2fa1 >> 0x1f);
-  signed_short_dest[172] =
-       (signed_short_src[172] / 0xad + (signed_short_src[172] >> 0xf)) -
-       (short)(signed_short_src[172] * 0x5eb5 >> 0x1f);
-  signed_short_dest[173] = (short)((uVar75 & 0x8000) >> 0xf) + ((short)uVar75 >> 7);
-  signed_short_dest[174] =
-       (signed_short_src[174] / 0xaf + (signed_short_src[174] >> 0xf)) -
-       (short)(signed_short_src[174] * 0x2ed >> 0x1f);
-  signed_short_dest[175] =
-       (signed_short_src[175] / 0xb0 + (signed_short_src[175] >> 0xf)) -
-       (short)(signed_short_src[175] * 0xba3 >> 0x1f);
-  signed_short_dest[176] =
-       (signed_short_src[176] / 0xb1 + (signed_short_src[176] >> 0xf)) -
-       (short)(signed_short_src[176] * 0x5c91 >> 0x1f);
-  signed_short_dest[177] =
-       (signed_short_src[177] / 0xb2 + (signed_short_src[177] >> 0xf)) -
-       (short)(signed_short_src[177] * 0x1703 >> 0x1f);
-  signed_short_dest[178] =
-       (signed_short_src[178] / 0xb3 + (signed_short_src[178] >> 0xf)) -
-       (short)(signed_short_src[178] * 0xb71 >> 0x1f);
-  signed_short_dest[179] =
-       (signed_short_src[179] / 0xb4 + (signed_short_src[179] >> 0xf)) -
-       (short)(signed_short_src[179] * 0x2d83 >> 0x1f);
-  signed_short_dest[180] =
-       (signed_short_src[180] / 0xb5 + (signed_short_src[180] >> 0xf)) -
-       (short)(signed_short_src[180] * 0x5a85 >> 0x1f);
-  signed_short_dest[181] =
-       (signed_short_src[181] / 0xb6 + (signed_short_src[181] >> 0xf)) -
-       (short)(signed_short_src[181] * 0x2d03 >> 0x1f);
-  signed_short_dest[182] =
-       (signed_short_src[182] / 0xb7 + (signed_short_src[182] >> 0xf)) -
-       (short)(signed_short_src[182] * 0xb31 >> 0x1f);
-  signed_short_dest[183] = (short)((uVar76 & 0x8000) >> 0xf) + ((short)uVar76 >> 7);
-  signed_short_dest[184] =
-       (signed_short_src[184] / 0xb9 + (signed_short_src[184] >> 0xf)) -
-       (short)(signed_short_src[184] * 0x589 >> 0x1f);
-  signed_short_dest[185] = (short)((uVar77 & 0x8000) >> 0xf) + ((short)uVar77 >> 7);
-  signed_short_dest[186] =
-       (signed_short_src[186] / 0xbb + (signed_short_src[186] >> 0xf)) -
-       (short)(signed_short_src[186] * 0x2bcf >> 0x1f);
-  signed_short_dest[187] = (short)((uVar78 & 0x8000) >> 0xf) + ((short)uVar78 >> 7);
-  signed_short_dest[188] = (short)((uVar79 & 0x8000) >> 0xf) + ((short)uVar79 >> 7);
-  signed_short_dest[189] = (short)((uVar80 & 0x8000) >> 0xf) + ((short)uVar80 >> 7);
-  signed_short_dest[190] =
-       (signed_short_src[190] / 0xbf + (signed_short_src[190] >> 0xf)) -
-       (short)(signed_short_src[190] * 0xab9 >> 0x1f);
-  signed_short_dest[191] =
-       (signed_short_src[191] / 0xc0 + (signed_short_src[191] >> 0xf)) -
-       (short)(signed_short_src[191] * 0x2aab >> 0x1f);
-  signed_short_dest[192] = (short)((uVar81 & 0x8000) >> 0xf) + ((short)uVar81 >> 7);
-  signed_short_dest[193] = (short)((uVar82 & 0x8000) >> 0xf) + ((short)uVar82 >> 7);
-  signed_short_dest[194] = (short)((uVar83 & 0x8000) >> 0xf) + ((short)uVar83 >> 7);
-  signed_short_dest[195] =
-       (signed_short_src[195] / 0xc4 + (signed_short_src[195] >> 0xf)) -
-       (short)(signed_short_src[195] * 0xa73 >> 0x1f);
-  signed_short_dest[196] =
-       (signed_short_src[196] / 0xc5 + (signed_short_src[196] >> 0xf)) -
-       (short)(signed_short_src[196] * 0x532b >> 0x1f);
-  signed_short_dest[197] = sVar10 - (sVar10 >> 0xf);
-  signed_short_dest[198] =
-       (signed_short_src[198] / 199 + (signed_short_src[198] >> 0xf)) -
-       (short)(signed_short_src[198] * 0x5255 >> 0x1f);
-  signed_short_dest[199] =
-       (signed_short_src[199] / 200 + (signed_short_src[199] >> 0xf)) -
-       (short)(signed_short_src[199] * 0x147b >> 0x1f);
-  signed_short_dest[200] = (short)((uVar84 & 0x8000) >> 0xf) + ((short)uVar84 >> 7);
-  signed_short_dest[201] =
-       (signed_short_src[201] / 0xca + (signed_short_src[201] >> 0xf)) -
-       (short)(signed_short_src[201] * 0x1447 >> 0x1f);
-  signed_short_dest[202] =
-       (signed_short_src[202] / 0xcb + (signed_short_src[202] >> 0xf)) -
-       (short)(signed_short_src[202] * 0x285b >> 0x1f);
-  signed_short_dest[203] = (short)((uVar85 & 0x8000) >> 0xf) + ((short)uVar85 >> 7);
-  signed_short_dest[204] = (short)((uVar86 & 0x8000) >> 0xf) + ((short)uVar86 >> 7);
-  signed_short_dest[205] =
-       (signed_short_src[205] / 0xce + (signed_short_src[205] >> 0xf)) -
-       (short)(signed_short_src[205] * 0x4f89 >> 0x1f);
-  signed_short_dest[206] = (short)((uVar87 & 0x8000) >> 0xf) + ((short)uVar87 >> 7);
-  signed_short_dest[207] =
-       (signed_short_src[207] / 0xd0 + (signed_short_src[207] >> 0xf)) -
-       (short)(signed_short_src[207] * 0x4ec5 >> 0x1f);
-  signed_short_dest[208] =
-       (signed_short_src[208] / 0xd1 + (signed_short_src[208] >> 0xf)) -
-       (short)(signed_short_src[208] * 0x4e65 >> 0x1f);
-  signed_short_dest[209] =
-       (signed_short_src[209] / 0xd2 + (signed_short_src[209] >> 0xf)) -
-       (short)(signed_short_src[209] * 0x4e05 >> 0x1f);
-  signed_short_dest[210] = (short)((uVar88 & 0x8000) >> 0xf) + ((short)uVar88 >> 7);
-  signed_short_dest[211] =
-       (signed_short_src[211] / 0xd4 + (signed_short_src[211] >> 0xf)) -
-       (short)(signed_short_src[211] * 0x4d49 >> 0x1f);
-  signed_short_dest[212] =
-       (signed_short_src[212] / 0xd5 + (signed_short_src[212] >> 0xf)) -
-       (short)(signed_short_src[212] * 0x133b >> 0x1f);
-  signed_short_dest[213] =
-       (signed_short_src[213] / 0xd6 + (signed_short_src[213] >> 0xf)) -
-       (short)(signed_short_src[213] * 0x4c9 >> 0x1f);
-  signed_short_dest[214] = (short)((uVar89 & 0x8000) >> 0xf) + ((short)uVar89 >> 7);
-  signed_short_dest[215] = (short)((uVar90 & 0x8000) >> 0xf) + ((short)uVar90 >> 7);
-  signed_short_dest[216] =
-       (signed_short_src[216] / 0xd9 + (signed_short_src[216] >> 0xf)) -
-       (short)(signed_short_src[216] * 0x4b81 >> 0x1f);
-  signed_short_dest[217] =
-       (signed_short_src[217] / 0xda + (signed_short_src[217] >> 0xf)) -
-       (short)(signed_short_src[217] * 0x965 >> 0x1f);
-  signed_short_dest[218] = (short)((uVar91 & 0x8000) >> 0xf) + ((short)uVar91 >> 7);
-  signed_short_dest[219] = (short)((uVar92 & 0x8000) >> 0xf) + ((short)uVar92 >> 7);
-  signed_short_dest[220] =
-       (signed_short_src[220] / 0xdd + (signed_short_src[220] >> 0xf)) -
-       (short)(signed_short_src[220] * 0x4a23 >> 0x1f);
-  signed_short_dest[221] = (short)((uVar93 & 0x8000) >> 0xf) + ((short)uVar93 >> 7);
-  signed_short_dest[222] =
-       (signed_short_src[222] / 0xdf + (signed_short_src[222] >> 0xf)) -
-       (short)(signed_short_src[222] * 0x4979 >> 0x1f);
-  signed_short_dest[223] =
-       (signed_short_src[223] / 0xe0 + (signed_short_src[223] >> 0xf)) -
-       (short)(signed_short_src[223] * 0x4925 >> 0x1f);
-  signed_short_dest[224] = (short)((uVar94 & 0x8000) >> 0xf) + ((short)uVar94 >> 7);
-  signed_short_dest[225] =
-       (signed_short_src[225] / 0xe2 + (signed_short_src[225] >> 0xf)) -
-       (short)(signed_short_src[225] * 0x487f >> 0x1f);
-  signed_short_dest[226] = (short)((uVar95 & 0x8000) >> 0xf) + ((short)uVar95 >> 7);
-  signed_short_dest[227] = (short)((uVar96 & 0x8000) >> 0xf) + ((short)uVar96 >> 7);
-  signed_short_dest[228] =
-       (signed_short_src[228] / 0xe5 + (signed_short_src[228] >> 0xf)) -
-       (short)(signed_short_src[228] * 0x11e3 >> 0x1f);
-  signed_short_dest[229] = (short)((uVar97 & 0x8000) >> 0xf) + ((short)uVar97 >> 7);
-  signed_short_dest[230] = (short)((uVar98 & 0x8000) >> 0xf) + ((short)uVar98 >> 7);
-  signed_short_dest[231] =
-       (signed_short_src[231] / 0xe8 + (signed_short_src[231] >> 0xf)) -
-       (short)(signed_short_src[231] * 0x469f >> 0x1f);
-  signed_short_dest[232] = (short)((uVar99 & 0x8000) >> 0xf) + ((short)uVar99 >> 7);
-  signed_short_dest[233] = (short)((uVar100 & 0x8000) >> 0xf) + ((short)uVar100 >> 7);
-  signed_short_dest[234] = (short)((uVar101 & 0x8000) >> 0xf) + ((short)uVar101 >> 7);
-  signed_short_dest[235] =
-       (signed_short_src[235] / 0xec + (signed_short_src[235] >> 0xf)) -
-       (short)(signed_short_src[235] * 0x456d >> 0x1f);
-  signed_short_dest[236] =
-       (signed_short_src[236] / 0xed + (signed_short_src[236] >> 0xf)) -
-       (short)(signed_short_src[236] * 0x2291 >> 0x1f);
-  signed_short_dest[237] = (short)((uVar102 & 0x8000) >> 0xf) + ((short)uVar102 >> 7);
-  signed_short_dest[238] = (short)((uVar103 & 0x8000) >> 0xf) + ((short)uVar103 >> 7);
-  signed_short_dest[239] = (short)((uVar104 & 0x8000) >> 0xf) + ((short)uVar104 >> 7);
-  signed_short_dest[240] =
-       (signed_short_src[240] / 0xf1 + (signed_short_src[240] >> 0xf)) -
-       (short)(signed_short_src[240] * 0x10ff >> 0x1f);
-  signed_short_dest[241] =
-       (signed_short_src[241] / 0xf2 + (signed_short_src[241] >> 0xf)) -
-       (short)(signed_short_src[241] * 0x10ed >> 0x1f);
-  signed_short_dest[242] =
-       (signed_short_src[242] / 0xf3 + (signed_short_src[242] >> 0xf)) -
-       (short)(signed_short_src[242] * 0x436d >> 0x1f);
-  signed_short_dest[243] =
-       (signed_short_src[243] / 0xf4 + (signed_short_src[243] >> 0xf)) -
-       (short)(signed_short_src[243] * 0x2193 >> 0x1f);
-  signed_short_dest[244] =
-       (signed_short_src[244] / 0xf5 + (signed_short_src[244] >> 0xf)) -
-       (short)(signed_short_src[244] * 0x217 >> 0x1f);
-  signed_short_dest[245] = (short)((uVar105 & 0x8000) >> 0xf) + ((short)uVar105 >> 7);
-  signed_short_dest[246] =
-       (signed_short_src[246] / 0xf7 + (signed_short_src[246] >> 0xf)) -
-       (short)(signed_short_src[246] * 0x4255 >> 0x1f);
-  signed_short_dest[247] =
-       (signed_short_src[247] / 0xf8 + (signed_short_src[247] >> 0xf)) -
-       (short)(signed_short_src[247] * 0x4211 >> 0x1f);
-  signed_short_dest[248] =
-       (signed_short_src[248] / 0xf9 + (signed_short_src[248] >> 0xf)) -
-       (short)(signed_short_src[248] * 0x41cd >> 0x1f);
-  signed_short_dest[249] = (short)((uVar106 & 0x8000) >> 0xf) + ((short)uVar106 >> 7);
-  signed_short_dest[250] = (short)((uVar107 & 0x8000) >> 0xf) + ((short)uVar107 >> 7);
-  signed_short_dest[251] = (short)((uVar108 & 0x8000) >> 0xf) + ((short)uVar108 >> 7);
-  signed_short_dest[252] = (short)((uVar109 & 0x8000) >> 0xf) + ((short)uVar109 >> 7);
-  signed_short_dest[253] = (short)((uVar110 & 0x8000) >> 0xf) + ((short)uVar110 >> 7);
-  signed_short_dest[254] = (short)((uVar111 & 0x8000) >> 0xf) + ((short)uVar111 >> 7);
+  signed_short_dest[128] = signed_short_src[128] / 0x81;
+  signed_short_dest[129] = signed_short_src[129] / 0x82;
+  signed_short_dest[130] = signed_short_src[130] / 0x83;
+  signed_short_dest[131] = signed_short_src[131] / 0x84;
+  signed_short_dest[132] = signed_short_src[132] / 0x85;
+  signed_short_dest[133] = signed_short_src[133] / 0x86;
+  signed_short_dest[134] = signed_short_src[134] / 0x87;
+  signed_short_dest[135] = signed_short_src[135] / 0x88;
+  signed_short_dest[136] = signed_short_src[136] / 0x89;
+  signed_short_dest[137] = signed_short_src[137] / 0x8a;
+  signed_short_dest[138] = signed_short_src[138] / 0x8b;
+  signed_short_dest[139] = signed_short_src[139] / 0x8c;
+  signed_short_dest[140] = signed_short_src[140] / 0x8d;
+  signed_short_dest[141] = signed_short_src[141] / 0x8e;
+  signed_short_dest[142] = signed_short_src[142] / 0x8f;
+  signed_short_dest[143] = signed_short_src[143] / 0x90;
+  signed_short_dest[144] = signed_short_src[144] / 0x91;
+  uVar1 = ((uint)(signed_short_src[145] * -0x1f8f) >> 0x10) + (int)signed_short_src[145];
+  signed_short_dest[145] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[146] = signed_short_src[146] / 0x93;
+  signed_short_dest[147] = signed_short_src[147] / 0x94;
+  signed_short_dest[148] = signed_short_src[148] / 0x95;
+  uVar1 = ((uint)(signed_short_src[149] * -0x258b) >> 0x10) + (int)signed_short_src[149];
+  signed_short_dest[149] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[150] = signed_short_src[150] / 0x97;
+  uVar1 = ((uint)(signed_short_src[151] * -0x286b) >> 0x10) + (int)signed_short_src[151];
+  signed_short_dest[151] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[152] = signed_short_src[152] / 0x99;
+  signed_short_dest[153] = signed_short_src[153] / 0x9a;
+  uVar1 = ((uint)(signed_short_src[154] * -0x2c97) >> 0x10) + (int)signed_short_src[154];
+  signed_short_dest[154] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[155] = signed_short_src[155] / 0x9c;
+  signed_short_dest[156] = signed_short_src[156] / 0x9d;
+  signed_short_dest[157] = signed_short_src[157] / 0x9e;
+  signed_short_dest[158] = signed_short_src[158] / 0x9f;
+  signed_short_dest[159] = signed_short_src[159] / 0xa0;
+  signed_short_dest[160] = signed_short_src[160] / 0xa1;
+  signed_short_dest[161] = signed_short_src[161] / 0xa2;
+  signed_short_dest[162] = signed_short_src[162] / 0xa3;
+  uVar1 = ((uint)(signed_short_src[163] * -0x3831) >> 0x10) + (int)signed_short_src[163];
+  signed_short_dest[163] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[164] * -0x3967) >> 0x10) + (int)signed_short_src[164];
+  signed_short_dest[164] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[165] = signed_short_src[165] / 0xa6;
+  signed_short_dest[166] = signed_short_src[166] / 0xa7;
+  uVar1 = ((uint)(signed_short_src[167] * -0x3cf3) >> 0x10) + (int)signed_short_src[167];
+  signed_short_dest[167] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[168] = signed_short_src[168] / 0xa9;
+  signed_short_dest[169] = signed_short_src[169] / 0xaa;
+  uVar1 = ((uint)(signed_short_src[170] * -0x405f) >> 0x10) + (int)signed_short_src[170];
+  signed_short_dest[170] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[171] = signed_short_src[171] / 0xac;
+  signed_short_dest[172] = signed_short_src[172] / 0xad;
+  uVar1 = ((uint)(signed_short_src[173] * -0x43ad) >> 0x10) + (int)signed_short_src[173];
+  signed_short_dest[173] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[174] = signed_short_src[174] / 0xaf;
+  signed_short_dest[175] = signed_short_src[175] / 0xb0;
+  signed_short_dest[176] = signed_short_src[176] / 0xb1;
+  signed_short_dest[177] = signed_short_src[177] / 0xb2;
+  signed_short_dest[178] = signed_short_src[178] / 0xb3;
+  signed_short_dest[179] = signed_short_src[179] / 0xb4;
+  signed_short_dest[180] = signed_short_src[180] / 0xb5;
+  signed_short_dest[181] = signed_short_src[181] / 0xb6;
+  signed_short_dest[182] = signed_short_src[182] / 0xb7;
+  uVar1 = ((uint)(signed_short_src[183] * -0x4de9) >> 0x10) + (int)signed_short_src[183];
+  signed_short_dest[183] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[184] = signed_short_src[184] / 0xb9;
+  uVar1 = ((uint)(signed_short_src[185] * -0x4fd3) >> 0x10) + (int)signed_short_src[185];
+  signed_short_dest[185] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[186] = signed_short_src[186] / 0xbb;
+  uVar1 = ((uint)(signed_short_src[187] * -0x51b3) >> 0x10) + (int)signed_short_src[187];
+  signed_short_dest[187] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[188] * -0x529f) >> 0x10) + (int)signed_short_src[188];
+  signed_short_dest[188] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[189] * -0x5389) >> 0x10) + (int)signed_short_src[189];
+  signed_short_dest[189] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[190] = signed_short_src[190] / 0xbf;
+  signed_short_dest[191] = signed_short_src[191] / 0xc0;
+  uVar1 = ((uint)(signed_short_src[192] * -0x5637) >> 0x10) + (int)signed_short_src[192];
+  signed_short_dest[192] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[193] * -0x5717) >> 0x10) + (int)signed_short_src[193];
+  signed_short_dest[193] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[194] * -0x57f5) >> 0x10) + (int)signed_short_src[194];
+  signed_short_dest[194] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[195] = signed_short_src[195] / 0xc4;
+  signed_short_dest[196] = signed_short_src[196] / 0xc5;
+  signed_short_dest[197] = signed_short_src[197] / 0xc6;
+  signed_short_dest[198] = signed_short_src[198] / 199;
+  signed_short_dest[199] = signed_short_src[199] / 200;
+  uVar1 = ((uint)(signed_short_src[200] * -0x5cf9) >> 0x10) + (int)signed_short_src[200];
+  signed_short_dest[200] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[201] = signed_short_src[201] / 0xca;
+  signed_short_dest[202] = signed_short_src[202] / 0xcb;
+  uVar1 = ((uint)(signed_short_src[203] * -0x5f5f) >> 0x10) + (int)signed_short_src[203];
+  signed_short_dest[203] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[204] * -0x6027) >> 0x10) + (int)signed_short_src[204];
+  signed_short_dest[204] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[205] = signed_short_src[205] / 0xce;
+  uVar1 = ((uint)(signed_short_src[206] * -0x61b3) >> 0x10) + (int)signed_short_src[206];
+  signed_short_dest[206] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[207] = signed_short_src[207] / 0xd0;
+  signed_short_dest[208] = signed_short_src[208] / 0xd1;
+  signed_short_dest[209] = signed_short_src[209] / 0xd2;
+  uVar1 = ((uint)(signed_short_src[210] * -0x64b3) >> 0x10) + (int)signed_short_src[210];
+  signed_short_dest[210] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[211] = signed_short_src[211] / 0xd4;
+  signed_short_dest[212] = signed_short_src[212] / 0xd5;
+  signed_short_dest[213] = signed_short_src[213] / 0xd6;
+  uVar1 = ((uint)(signed_short_src[214] * -0x6797) >> 0x10) + (int)signed_short_src[214];
+  signed_short_dest[214] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[215] * -0x684b) >> 0x10) + (int)signed_short_src[215];
+  signed_short_dest[215] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[216] = signed_short_src[216] / 0xd9;
+  signed_short_dest[217] = signed_short_src[217] / 0xda;
+  uVar1 = ((uint)(signed_short_src[218] * -0x6a5f) >> 0x10) + (int)signed_short_src[218];
+  signed_short_dest[218] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[219] * -0x6b0d) >> 0x10) + (int)signed_short_src[219];
+  signed_short_dest[219] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[220] = signed_short_src[220] / 0xdd;
+  uVar1 = ((uint)(signed_short_src[221] * -0x6c65) >> 0x10) + (int)signed_short_src[221];
+  signed_short_dest[221] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[222] = signed_short_src[222] / 0xdf;
+  signed_short_dest[223] = signed_short_src[223] / 0xe0;
+  uVar1 = ((uint)(signed_short_src[224] * -0x6e5d) >> 0x10) + (int)signed_short_src[224];
+  signed_short_dest[224] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[225] = signed_short_src[225] / 0xe2;
+  uVar1 = ((uint)(signed_short_src[226] * -0x6fa5) >> 0x10) + (int)signed_short_src[226];
+  signed_short_dest[226] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[227] * -0x7047) >> 0x10) + (int)signed_short_src[227];
+  signed_short_dest[227] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[228] = signed_short_src[228] / 0xe5;
+  uVar1 = ((uint)(signed_short_src[229] * -0x7187) >> 0x10) + (int)signed_short_src[229];
+  signed_short_dest[229] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[230] * -0x7225) >> 0x10) + (int)signed_short_src[230];
+  signed_short_dest[230] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[231] = signed_short_src[231] / 0xe8;
+  uVar1 = ((uint)(signed_short_src[232] * -0x735d) >> 0x10) + (int)signed_short_src[232];
+  signed_short_dest[232] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[233] * -0x73f7) >> 0x10) + (int)signed_short_src[233];
+  signed_short_dest[233] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[234] * -0x748f) >> 0x10) + (int)signed_short_src[234];
+  signed_short_dest[234] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[235] = signed_short_src[235] / 0xec;
+  signed_short_dest[236] = signed_short_src[236] / 0xed;
+  uVar1 = ((uint)(signed_short_src[237] * -0x7651) >> 0x10) + (int)signed_short_src[237];
+  signed_short_dest[237] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[238] * -0x76e5) >> 0x10) + (int)signed_short_src[238];
+  signed_short_dest[238] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[239] * -0x7777) >> 0x10) + (int)signed_short_src[239];
+  signed_short_dest[239] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[240] = signed_short_src[240] / 0xf1;
+  signed_short_dest[241] = signed_short_src[241] / 0xf2;
+  signed_short_dest[242] = signed_short_src[242] / 0xf3;
+  signed_short_dest[243] = signed_short_src[243] / 0xf4;
+  signed_short_dest[244] = signed_short_src[244] / 0xf5;
+  uVar1 = ((uint)(signed_short_src[245] * -0x7acb) >> 0x10) + (int)signed_short_src[245];
+  signed_short_dest[245] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  signed_short_dest[246] = signed_short_src[246] / 0xf7;
+  signed_short_dest[247] = signed_short_src[247] / 0xf8;
+  signed_short_dest[248] = signed_short_src[248] / 0xf9;
+  uVar1 = ((uint)(signed_short_src[249] * -0x7ced) >> 0x10) + (int)signed_short_src[249];
+  signed_short_dest[249] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[250] * -0x7d73) >> 0x10) + (int)signed_short_src[250];
+  signed_short_dest[250] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[251] * -0x7df7) >> 0x10) + (int)signed_short_src[251];
+  signed_short_dest[251] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[252] * -0x7e7b) >> 0x10) + (int)signed_short_src[252];
+  signed_short_dest[252] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[253] * -0x7efd) >> 0x10) + (int)signed_short_src[253];
+  signed_short_dest[253] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
+  uVar1 = ((uint)(signed_short_src[254] * -0x7f7f) >> 0x10) + (int)signed_short_src[254];
+  signed_short_dest[254] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 7);
   signed_short_dest[255] =
        (short)(((ushort)(signed_short_src[255] >> 0xf) >> 8) + signed_short_src[255]) >> 8;
-  signed_short_dest[256] =
-       (signed_short_src[256] / 0x101 + (signed_short_src[256] >> 0xf)) -
-       (short)(signed_short_src[256] * 0x7f81 >> 0x1f);
-  signed_short_dest[257] =
-       (signed_short_src[257] / 0x102 + (signed_short_src[257] >> 0xf)) -
-       (short)(signed_short_src[257] * 0x3f81 >> 0x1f);
-  signed_short_dest[258] =
-       (signed_short_src[258] / 0x103 + (signed_short_src[258] >> 0xf)) -
-       (short)(signed_short_src[258] * 0x7e85 >> 0x1f);
-  signed_short_dest[259] =
-       (signed_short_src[259] / 0x104 + (signed_short_src[259] >> 0xf)) -
-       (short)(signed_short_src[259] * 0xfc1 >> 0x1f);
-  signed_short_dest[260] =
-       (signed_short_src[260] / 0x105 + (signed_short_src[260] >> 0xf)) -
-       (short)(signed_short_src[260] * 0x7d8d >> 0x1f);
-  signed_short_dest[261] =
-       (signed_short_src[261] / 0x106 + (signed_short_src[261] >> 0xf)) -
-       (short)(signed_short_src[261] * 0x3e89 >> 0x1f);
-  signed_short_dest[262] =
-       (signed_short_src[262] / 0x107 + (signed_short_src[262] >> 0xf)) -
-       (short)(signed_short_src[262] * 0xf93 >> 0x1f);
-  signed_short_dest[263] =
-       (signed_short_src[263] / 0x108 + (signed_short_src[263] >> 0xf)) -
-       (short)(signed_short_src[263] * 0x3e1 >> 0x1f);
-  signed_short_dest[264] =
-       (signed_short_src[264] / 0x109 + (signed_short_src[264] >> 0xf)) -
-       (short)(signed_short_src[264] * 0xf75 >> 0x1f);
-  signed_short_dest[265] =
-       (signed_short_src[265] / 0x10a + (signed_short_src[265] >> 0xf)) -
-       (short)(signed_short_src[265] * 0x7b31 >> 0x1f);
-  signed_short_dest[266] = (short)((uVar112 & 0x8000) >> 0xf) + ((short)uVar112 >> 8);
-  signed_short_dest[267] =
-       (signed_short_src[267] / 0x10c + (signed_short_src[267] >> 0xf)) -
-       (short)(signed_short_src[267] * 0x7a45 >> 0x1f);
-  signed_short_dest[268] =
-       (signed_short_src[268] / 0x10d + (signed_short_src[268] >> 0xf)) -
-       (short)(signed_short_src[268] * 0x79d1 >> 0x1f);
-  signed_short_dest[269] =
-       (signed_short_src[269] / 0x10e + (signed_short_src[269] >> 0xf)) -
-       (short)(signed_short_src[269] * 0x795d >> 0x1f);
-  signed_short_dest[270] =
-       (signed_short_src[270] / 0x10f + (signed_short_src[270] >> 0xf)) -
-       (short)(signed_short_src[270] * 0x78eb >> 0x1f);
-  signed_short_dest[271] =
-       (signed_short_src[271] / 0x110 + (signed_short_src[271] >> 0xf)) -
-       (short)(signed_short_src[271] * 0x7879 >> 0x1f);
-  signed_short_dest[272] =
-       (signed_short_src[272] / 0x111 + (signed_short_src[272] >> 0xf)) -
-       (short)(signed_short_src[272] * 0xf01 >> 0x1f);
-  signed_short_dest[273] =
-       (signed_short_src[273] / 0x112 + (signed_short_src[273] >> 0xf)) -
-       (short)(signed_short_src[273] * 0xef3 >> 0x1f);
-  signed_short_dest[274] = (short)((uVar113 & 0x8000) >> 0xf) + ((short)uVar113 >> 8);
-  signed_short_dest[275] =
-       (signed_short_src[275] / 0x114 + (signed_short_src[275] >> 0xf)) -
-       (short)(signed_short_src[275] * 0x3b5d >> 0x1f);
-  signed_short_dest[276] =
-       (signed_short_src[276] / 0x115 + (signed_short_src[276] >> 0xf)) -
-       (short)(signed_short_src[276] * 0x1d93 >> 0x1f);
-  signed_short_dest[277] =
-       (signed_short_src[277] / 0x116 + (signed_short_src[277] >> 0xf)) -
-       (short)(signed_short_src[277] * 0x75df >> 0x1f);
-  signed_short_dest[278] =
-       (signed_short_src[278] / 0x117 + (signed_short_src[278] >> 0xf)) -
-       (short)(signed_short_src[278] * 0x7573 >> 0x1f);
-  signed_short_dest[279] =
-       (signed_short_src[279] / 0x118 + (signed_short_src[279] >> 0xf)) -
-       (short)(signed_short_src[279] * 0xea1 >> 0x1f);
-  signed_short_dest[280] =
-       (signed_short_src[280] / 0x119 + (signed_short_src[280] >> 0xf)) -
-       (short)(signed_short_src[280] * 0x749d >> 0x1f);
-  signed_short_dest[281] =
-       (signed_short_src[281] / 0x11a + (signed_short_src[281] >> 0xf)) -
-       (short)(signed_short_src[281] * 0x7433 >> 0x1f);
-  signed_short_dest[282] =
-       (signed_short_src[282] / 0x11b + (signed_short_src[282] >> 0xf)) -
-       (short)(signed_short_src[282] * 0x39e5 >> 0x1f);
-  signed_short_dest[283] =
-       (signed_short_src[283] / 0x11c + (signed_short_src[283] >> 0xf)) -
-       (short)(signed_short_src[283] * 0x39b1 >> 0x1f);
-  signed_short_dest[284] =
-       (signed_short_src[284] / 0x11d + (signed_short_src[284] >> 0xf)) -
-       (short)(signed_short_src[284] * 0x397d >> 0x1f);
-  signed_short_dest[285] =
-       (signed_short_src[285] / 0x11e + (signed_short_src[285] >> 0xf)) -
-       (short)(signed_short_src[285] * 0x7293 >> 0x1f);
-  signed_short_dest[286] =
-       (signed_short_src[286] / 0x11f + (signed_short_src[286] >> 0xf)) -
-       (short)(signed_short_src[286] * 0x722d >> 0x1f);
-  signed_short_dest[287] =
-       (signed_short_src[287] / 0x120 + (signed_short_src[287] >> 0xf)) -
-       (short)(signed_short_src[287] * 0xe39 >> 0x1f);
-  signed_short_dest[288] =
-       (signed_short_src[288] / 0x121 + (signed_short_src[288] >> 0xf)) -
-       (short)(signed_short_src[288] * 0x7163 >> 0x1f);
-  signed_short_dest[289] =
-       (signed_short_src[289] / 0x122 + (signed_short_src[289] >> 0xf)) -
-       (short)(signed_short_src[289] * 0x70ff >> 0x1f);
-  signed_short_dest[290] =
-       (signed_short_src[290] / 0x123 + (signed_short_src[290] >> 0xf)) -
-       (short)(signed_short_src[290] * 0x709b >> 0x1f);
-  signed_short_dest[291] = (short)((uVar114 & 0x8000) >> 0xf) + ((short)uVar114 >> 8);
-  signed_short_dest[292] = (short)((uVar115 & 0x8000) >> 0xf) + ((short)uVar115 >> 8);
-  signed_short_dest[293] =
-       (signed_short_src[293] / 0x126 + (signed_short_src[293] >> 0xf)) -
-       (short)(signed_short_src[293] * 0x6f75 >> 0x1f);
-  signed_short_dest[294] =
-       (signed_short_src[294] / 0x127 + (signed_short_src[294] >> 0xf)) -
-       (short)(signed_short_src[294] * 0x1bc5 >> 0x1f);
-  signed_short_dest[295] =
-       (signed_short_src[295] / 0x128 + (signed_short_src[295] >> 0xf)) -
-       (short)(signed_short_src[295] * 0x1bad >> 0x1f);
-  signed_short_dest[296] =
-       (signed_short_src[296] / 0x129 + (signed_short_src[296] >> 0xf)) -
-       (short)(signed_short_src[296] * 0x6e55 >> 0x1f);
-  signed_short_dest[297] =
-       (signed_short_src[297] / 0x12a + (signed_short_src[297] >> 0xf)) -
-       (short)(signed_short_src[297] * 0x36fb >> 0x1f);
-  signed_short_dest[298] =
-       (signed_short_src[298] / 299 + (signed_short_src[298] >> 0xf)) -
-       (short)(signed_short_src[298] * 0xdb3 >> 0x1f);
-  signed_short_dest[299] = (short)((uVar116 & 0x8000) >> 0xf) + ((short)uVar116 >> 8);
-  signed_short_dest[300] = (short)((uVar117 & 0x8000) >> 0xf) + ((short)uVar117 >> 8);
-  signed_short_dest[301] =
-       (signed_short_src[301] / 0x12e + (signed_short_src[301] >> 0xf)) -
-       (short)(signed_short_src[301] * 0x6c81 >> 0x1f);
-  signed_short_dest[302] =
-       (signed_short_src[302] / 0x12f + (signed_short_src[302] >> 0xf)) -
-       (short)(signed_short_src[302] * 0x3613 >> 0x1f);
-  signed_short_dest[303] = (short)((uVar118 & 0x8000) >> 0xf) + ((short)uVar118 >> 8);
-  signed_short_dest[304] =
-       (signed_short_src[304] / 0x131 + (signed_short_src[304] >> 0xf)) -
-       (short)(signed_short_src[304] * 0x6b7 >> 0x1f);
-  signed_short_dest[305] =
-       (signed_short_src[305] / 0x132 + (signed_short_src[305] >> 0xf)) -
-       (short)(signed_short_src[305] * 0x358b >> 0x1f);
-  signed_short_dest[306] =
-       (signed_short_src[306] / 0x133 + (signed_short_src[306] >> 0xf)) -
-       (short)(signed_short_src[306] * 0x6abd >> 0x1f);
-  signed_short_dest[307] =
-       (signed_short_src[307] / 0x134 + (signed_short_src[307] >> 0xf)) -
-       (short)(signed_short_src[307] * 0x1a99 >> 0x1f);
-  signed_short_dest[308] =
-       (signed_short_src[308] / 0x135 + (signed_short_src[308] >> 0xf)) -
-       (short)(signed_short_src[308] * 0x1a83 >> 0x1f);
-  signed_short_dest[309] = (short)((uVar119 & 0x8000) >> 0xf) + ((short)uVar119 >> 8);
-  signed_short_dest[310] = (short)((uVar120 & 0x8000) >> 0xf) + ((short)uVar120 >> 8);
-  signed_short_dest[311] =
-       (signed_short_src[311] / 0x138 + (signed_short_src[311] >> 0xf)) -
-       (short)(signed_short_src[311] * 0x6907 >> 0x1f);
-  signed_short_dest[312] =
-       (signed_short_src[312] / 0x139 + (signed_short_src[312] >> 0xf)) -
-       (short)(signed_short_src[312] * 0x68b1 >> 0x1f);
-  signed_short_dest[313] =
-       (signed_short_src[313] / 0x13a + (signed_short_src[313] >> 0xf)) -
-       (short)(signed_short_src[313] * 0x1a17 >> 0x1f);
-  signed_short_dest[314] =
-       (signed_short_src[314] / 0x13b + (signed_short_src[314] >> 0xf)) -
-       (short)(signed_short_src[314] * 0x6807 >> 0x1f);
-  signed_short_dest[315] =
-       (signed_short_src[315] / 0x13c + (signed_short_src[315] >> 0xf)) -
-       (short)(signed_short_src[315] * 0x67b3 >> 0x1f);
-  signed_short_dest[316] =
-       (signed_short_src[316] / 0x13d + (signed_short_src[316] >> 0xf)) -
-       (short)(signed_short_src[316] * 0x675f >> 0x1f);
-  signed_short_dest[317] =
-       (signed_short_src[317] / 0x13e + (signed_short_src[317] >> 0xf)) -
-       (short)(signed_short_src[317] * 0x19c3 >> 0x1f);
-  signed_short_dest[318] =
-       (signed_short_src[318] / 0x13f + (signed_short_src[318] >> 0xf)) -
-       (short)(signed_short_src[318] * 0x66b9 >> 0x1f);
-  signed_short_dest[319] =
-       (signed_short_src[319] / 0x140 + (signed_short_src[319] >> 0xf)) -
-       (short)(signed_short_src[319] * 0x6667 >> 0x1f);
-  signed_short_dest[320] =
-       (signed_short_src[320] / 0x141 + (signed_short_src[320] >> 0xf)) -
-       (short)(signed_short_src[320] * 0x6615 >> 0x1f);
-  signed_short_dest[321] =
-       (signed_short_src[321] / 0x142 + (signed_short_src[321] >> 0xf)) -
-       (short)(signed_short_src[321] * 0x1971 >> 0x1f);
-  signed_short_dest[322] =
-       (signed_short_src[322] / 0x143 + (signed_short_src[322] >> 0xf)) -
-       (short)(signed_short_src[322] * 0x6573 >> 0x1f);
-  signed_short_dest[323] =
-       (signed_short_src[323] / 0x144 + (signed_short_src[323] >> 0xf)) -
-       (short)(signed_short_src[323] * 0x6523 >> 0x1f);
-  signed_short_dest[324] = (short)((uVar121 & 0x8000) >> 0xf) + ((short)uVar121 >> 8);
-  signed_short_dest[325] =
-       (signed_short_src[325] / 0x146 + (signed_short_src[325] >> 0xf)) -
-       (short)(signed_short_src[325] * 0x1921 >> 0x1f);
-  signed_short_dest[326] =
-       (signed_short_src[326] / 0x147 + (signed_short_src[326] >> 0xf)) -
-       (short)(signed_short_src[326] * 0x321b >> 0x1f);
-  signed_short_dest[327] = (short)((uVar122 & 0x8000) >> 0xf) + ((short)uVar122 >> 8);
-  signed_short_dest[328] =
-       (signed_short_src[328] / 0x149 + (signed_short_src[328] >> 0xf)) -
-       (short)(signed_short_src[328] * 0x31cd >> 0x1f);
-  signed_short_dest[329] = (short)((uVar123 & 0x8000) >> 0xf) + ((short)uVar123 >> 8);
-  signed_short_dest[330] = sVar11 - (sVar11 >> 0xf);
-  signed_short_dest[331] =
-       (signed_short_src[331] / 0x14c + (signed_short_src[331] >> 0xf)) -
-       (short)(signed_short_src[331] * 0x62b3 >> 0x1f);
-  signed_short_dest[332] = (short)((uVar124 & 0x8000) >> 0xf) + ((short)uVar124 >> 8);
-  signed_short_dest[333] =
-       (signed_short_src[333] / 0x14e + (signed_short_src[333] >> 0xf)) -
-       (short)(signed_short_src[333] * 0x1887 >> 0x1f);
-  signed_short_dest[334] =
-       (signed_short_src[334] / 0x14f + (signed_short_src[334] >> 0xf)) -
-       (short)(signed_short_src[334] * 0x61d1 >> 0x1f);
-  signed_short_dest[335] = (short)((uVar125 & 0x8000) >> 0xf) + ((short)uVar125 >> 8);
-  signed_short_dest[336] = (short)((uVar126 & 0x8000) >> 0xf) + ((short)uVar126 >> 8);
-  signed_short_dest[337] =
-       (signed_short_src[337] / 0x152 + (signed_short_src[337] >> 0xf)) -
-       (short)(signed_short_src[337] * 0x60f3 >> 0x1f);
-  signed_short_dest[338] = (short)((uVar127 & 0x8000) >> 0xf) + ((short)uVar127 >> 8);
-  signed_short_dest[339] =
-       (signed_short_src[339] / 0x154 + (signed_short_src[339] >> 0xf)) -
-       (short)(signed_short_src[339] * 0x6061 >> 0x1f);
-  signed_short_dest[340] = (short)((uVar128 & 0x8000) >> 0xf) + ((short)uVar128 >> 8);
-  signed_short_dest[341] = (short)((uVar129 & 0x8000) >> 0xf) + ((short)uVar129 >> 8);
-  signed_short_dest[342] =
-       (signed_short_src[342] / 0x157 + (signed_short_src[342] >> 0xf)) -
-       (short)(signed_short_src[342] * 0x5f89 >> 0x1f);
-  signed_short_dest[343] =
-       (signed_short_src[343] / 0x158 + (signed_short_src[343] >> 0xf)) -
-       (short)(signed_short_src[343] * 0x2fa1 >> 0x1f);
-  signed_short_dest[344] =
-       (signed_short_src[344] / 0x159 + (signed_short_src[344] >> 0xf)) -
-       (short)(signed_short_src[344] * 0x5efb >> 0x1f);
-  signed_short_dest[345] =
-       (signed_short_src[345] / 0x15a + (signed_short_src[345] >> 0xf)) -
-       (short)(signed_short_src[345] * 0x5eb5 >> 0x1f);
-  signed_short_dest[346] =
-       (signed_short_src[346] / 0x15b + (signed_short_src[346] >> 0xf)) -
-       (short)(signed_short_src[346] * 0x5e6f >> 0x1f);
-  signed_short_dest[347] = (short)((uVar130 & 0x8000) >> 0xf) + ((short)uVar130 >> 8);
-  signed_short_dest[348] = (short)((uVar131 & 0x8000) >> 0xf) + ((short)uVar131 >> 8);
-  signed_short_dest[349] =
-       (signed_short_src[349] / 0x15e + (signed_short_src[349] >> 0xf)) -
-       (short)(signed_short_src[349] * 0x2ed >> 0x1f);
-  signed_short_dest[350] = (short)((uVar132 & 0x8000) >> 0xf) + ((short)uVar132 >> 8);
-  signed_short_dest[351] =
-       (signed_short_src[351] / 0x160 + (signed_short_src[351] >> 0xf)) -
-       (short)(signed_short_src[351] * 0xba3 >> 0x1f);
-  signed_short_dest[352] =
-       (signed_short_src[352] / 0x161 + (signed_short_src[352] >> 0xf)) -
-       (short)(signed_short_src[352] * 0x1735 >> 0x1f);
-  signed_short_dest[353] =
-       (signed_short_src[353] / 0x162 + (signed_short_src[353] >> 0xf)) -
-       (short)(signed_short_src[353] * 0x5c91 >> 0x1f);
-  signed_short_dest[354] =
-       (signed_short_src[354] / 0x163 + (signed_short_src[354] >> 0xf)) -
-       (short)(signed_short_src[354] * 0x2e27 >> 0x1f);
-  signed_short_dest[355] =
-       (signed_short_src[355] / 0x164 + (signed_short_src[355] >> 0xf)) -
-       (short)(signed_short_src[355] * 0x1703 >> 0x1f);
-  signed_short_dest[356] =
-       (signed_short_src[356] / 0x165 + (signed_short_src[356] >> 0xf)) -
-       (short)(signed_short_src[356] * 0x2de5 >> 0x1f);
-  signed_short_dest[357] =
-       (signed_short_src[357] / 0x166 + (signed_short_src[357] >> 0xf)) -
-       (short)(signed_short_src[357] * 0xb71 >> 0x1f);
-  signed_short_dest[358] =
-       (signed_short_src[358] / 0x167 + (signed_short_src[358] >> 0xf)) -
-       (short)(signed_short_src[358] * 0x5b47 >> 0x1f);
-  signed_short_dest[359] =
-       (signed_short_src[359] / 0x168 + (signed_short_src[359] >> 0xf)) -
-       (short)(signed_short_src[359] * 0x2d83 >> 0x1f);
-  signed_short_dest[360] = (short)((uVar133 & 0x8000) >> 0xf) + ((short)uVar133 >> 8);
-  signed_short_dest[361] =
-       (signed_short_src[361] / 0x16a + (signed_short_src[361] >> 0xf)) -
-       (short)(signed_short_src[361] * 0x5a85 >> 0x1f);
-  signed_short_dest[362] = (short)((uVar134 & 0x8000) >> 0xf) + ((short)uVar134 >> 8);
-  signed_short_dest[363] =
-       (signed_short_src[363] / 0x16c + (signed_short_src[363] >> 0xf)) -
-       (short)(signed_short_src[363] * 0x2d03 >> 0x1f);
-  signed_short_dest[364] =
-       (signed_short_src[364] / 0x16d + (signed_short_src[364] >> 0xf)) -
-       (short)(signed_short_src[364] * 0x59c7 >> 0x1f);
-  signed_short_dest[365] =
-       (signed_short_src[365] / 0x16e + (signed_short_src[365] >> 0xf)) -
-       (short)(signed_short_src[365] * 0xb31 >> 0x1f);
-  signed_short_dest[366] = (short)((uVar135 & 0x8000) >> 0xf) + ((short)uVar135 >> 8);
-  signed_short_dest[367] = (short)((uVar136 & 0x8000) >> 0xf) + ((short)uVar136 >> 8);
-  signed_short_dest[368] =
-       (signed_short_src[368] / 0x171 + (signed_short_src[368] >> 0xf)) -
-       (short)(signed_short_src[368] * 0x2c67 >> 0x1f);
-  signed_short_dest[369] =
-       (signed_short_src[369] / 0x172 + (signed_short_src[369] >> 0xf)) -
-       (short)(signed_short_src[369] * 0x589 >> 0x1f);
-  signed_short_dest[370] =
-       (signed_short_src[370] / 0x173 + (signed_short_src[370] >> 0xf)) -
-       (short)(signed_short_src[370] * 0x5853 >> 0x1f);
-  signed_short_dest[371] = (short)((uVar137 & 0x8000) >> 0xf) + ((short)uVar137 >> 8);
-  signed_short_dest[372] =
-       (signed_short_src[372] / 0x175 + (signed_short_src[372] >> 0xf)) -
-       (short)(signed_short_src[372] * 0x2bed >> 0x1f);
-  signed_short_dest[373] =
-       (signed_short_src[373] / 0x176 + (signed_short_src[373] >> 0xf)) -
-       (short)(signed_short_src[373] * 0x2bcf >> 0x1f);
-  signed_short_dest[374] =
-       (signed_short_src[374] / 0x177 + (signed_short_src[374] >> 0xf)) -
-       (short)(signed_short_src[374] * 0x2bb1 >> 0x1f);
-  signed_short_dest[375] = (short)((uVar138 & 0x8000) >> 0xf) + ((short)uVar138 >> 8);
-  signed_short_dest[376] =
-       (signed_short_src[376] / 0x179 + (signed_short_src[376] >> 0xf)) -
-       (short)(signed_short_src[376] * 0x56eb >> 0x1f);
-  signed_short_dest[377] = (short)((uVar139 & 0x8000) >> 0xf) + ((short)uVar139 >> 8);
-  signed_short_dest[378] =
-       (signed_short_src[378] / 0x17b + (signed_short_src[378] >> 0xf)) -
-       (short)(signed_short_src[378] * 0x2b3b >> 0x1f);
-  signed_short_dest[379] = (short)((uVar140 & 0x8000) >> 0xf) + ((short)uVar140 >> 8);
-  signed_short_dest[380] =
-       (signed_short_src[380] / 0x17d + (signed_short_src[380] >> 0xf)) -
-       (short)(signed_short_src[380] * 0x2b01 >> 0x1f);
-  signed_short_dest[381] =
-       (signed_short_src[381] / 0x17e + (signed_short_src[381] >> 0xf)) -
-       (short)(signed_short_src[381] * 0xab9 >> 0x1f);
-  signed_short_dest[382] =
-       (signed_short_src[382] / 0x17f + (signed_short_src[382] >> 0xf)) -
-       (short)(signed_short_src[382] * 0x558f >> 0x1f);
-  signed_short_dest[383] =
-       (signed_short_src[383] / 0x180 + (signed_short_src[383] >> 0xf)) -
-       (short)(signed_short_src[383] * 0x2aab >> 0x1f);
-  signed_short_dest[384] =
-       (signed_short_src[384] / 0x181 + (signed_short_src[384] >> 0xf)) -
-       (short)(signed_short_src[384] * 0x551d >> 0x1f);
-  signed_short_dest[385] = (short)((uVar141 & 0x8000) >> 0xf) + ((short)uVar141 >> 8);
-  signed_short_dest[386] =
-       (signed_short_src[386] / 0x183 + (signed_short_src[386] >> 0xf)) -
-       (short)(signed_short_src[386] * 0x152b >> 0x1f);
-  signed_short_dest[387] = (short)((uVar142 & 0x8000) >> 0xf) + ((short)uVar142 >> 8);
-  signed_short_dest[388] =
-       (signed_short_src[388] / 0x185 + (signed_short_src[388] >> 0xf)) -
-       (short)(signed_short_src[388] * 0x543d >> 0x1f);
-  signed_short_dest[389] = (short)((uVar143 & 0x8000) >> 0xf) + ((short)uVar143 >> 8);
-  signed_short_dest[390] = (short)((uVar144 & 0x8000) >> 0xf) + ((short)uVar144 >> 8);
-  signed_short_dest[391] =
-       (signed_short_src[391] / 0x188 + (signed_short_src[391] >> 0xf)) -
-       (short)(signed_short_src[391] * 0xa73 >> 0x1f);
-  signed_short_dest[392] = (short)((uVar145 & 0x8000) >> 0xf) + ((short)uVar145 >> 8);
-  signed_short_dest[393] =
-       (signed_short_src[393] / 0x18a + (signed_short_src[393] >> 0xf)) -
-       (short)(signed_short_src[393] * 0x532b >> 0x1f);
-  signed_short_dest[394] =
-       (signed_short_src[394] / 0x18b + (signed_short_src[394] >> 0xf)) -
-       (short)(signed_short_src[394] * 0x52f5 >> 0x1f);
-  signed_short_dest[395] = (sVar14 >> 1) - (sVar14 >> 0xf);
-  signed_short_dest[396] =
-       (signed_short_src[396] / 0x18d + (signed_short_src[396] >> 0xf)) -
-       (short)(signed_short_src[396] * 0x2945 >> 0x1f);
-  signed_short_dest[397] =
-       (signed_short_src[397] / 0x18e + (signed_short_src[397] >> 0xf)) -
-       (short)(signed_short_src[397] * 0x5255 >> 0x1f);
-  signed_short_dest[398] = (short)((uVar146 & 0x8000) >> 0xf) + ((short)uVar146 >> 8);
-  signed_short_dest[399] =
-       (signed_short_src[399] / 400 + (signed_short_src[399] >> 0xf)) -
-       (short)(signed_short_src[399] * 0x147b >> 0x1f);
-  signed_short_dest[400] = (short)((uVar147 & 0x8000) >> 0xf) + ((short)uVar147 >> 8);
-  signed_short_dest[401] = (short)((uVar148 & 0x8000) >> 0xf) + ((short)uVar148 >> 8);
-  signed_short_dest[402] =
-       (signed_short_src[402] / 0x193 + (signed_short_src[402] >> 0xf)) -
-       (short)(signed_short_src[402] * 0x515 >> 0x1f);
-  signed_short_dest[403] =
-       (signed_short_src[403] / 0x194 + (signed_short_src[403] >> 0xf)) -
-       (short)(signed_short_src[403] * 0x1447 >> 0x1f);
-  signed_short_dest[404] =
-       (signed_short_src[404] / 0x195 + (signed_short_src[404] >> 0xf)) -
-       (short)(signed_short_src[404] * 0x50e9 >> 0x1f);
-  signed_short_dest[405] =
-       (signed_short_src[405] / 0x196 + (signed_short_src[405] >> 0xf)) -
-       (short)(signed_short_src[405] * 0x285b >> 0x1f);
-  signed_short_dest[406] =
-       (signed_short_src[406] / 0x197 + (signed_short_src[406] >> 0xf)) -
-       (short)(signed_short_src[406] * 0x5083 >> 0x1f);
-  signed_short_dest[407] = (short)((uVar149 & 0x8000) >> 0xf) + ((short)uVar149 >> 8);
-  signed_short_dest[408] = (short)((uVar150 & 0x8000) >> 0xf) + ((short)uVar150 >> 8);
-  signed_short_dest[409] = (short)((uVar151 & 0x8000) >> 0xf) + ((short)uVar151 >> 8);
-  signed_short_dest[410] = (short)((uVar152 & 0x8000) >> 0xf) + ((short)uVar152 >> 8);
-  signed_short_dest[411] =
-       (signed_short_src[411] / 0x19c + (signed_short_src[411] >> 0xf)) -
-       (short)(signed_short_src[411] * 0x4f89 >> 0x1f);
-  signed_short_dest[412] =
-       (signed_short_src[412] / 0x19d + (signed_short_src[412] >> 0xf)) -
-       (short)(signed_short_src[412] * 0x9eb >> 0x1f);
-  signed_short_dest[413] = (short)((uVar153 & 0x8000) >> 0xf) + ((short)uVar153 >> 8);
-  signed_short_dest[414] =
-       (signed_short_src[414] / 0x19f + (signed_short_src[414] >> 0xf)) -
-       (short)(signed_short_src[414] * 0x277b >> 0x1f);
-  signed_short_dest[415] =
-       (signed_short_src[415] / 0x1a0 + (signed_short_src[415] >> 0xf)) -
-       (short)(signed_short_src[415] * 0x4ec5 >> 0x1f);
-  signed_short_dest[416] =
-       (signed_short_src[416] / 0x1a1 + (signed_short_src[416] >> 0xf)) -
-       (short)(signed_short_src[416] * 0x4e95 >> 0x1f);
-  signed_short_dest[417] =
-       (signed_short_src[417] / 0x1a2 + (signed_short_src[417] >> 0xf)) -
-       (short)(signed_short_src[417] * 0x4e65 >> 0x1f);
-  signed_short_dest[418] =
-       (signed_short_src[418] / 0x1a3 + (signed_short_src[418] >> 0xf)) -
-       (short)(signed_short_src[418] * 0x4e35 >> 0x1f);
-  signed_short_dest[419] =
-       (signed_short_src[419] / 0x1a4 + (signed_short_src[419] >> 0xf)) -
-       (short)(signed_short_src[419] * 0x4e05 >> 0x1f);
-  signed_short_dest[420] =
-       (signed_short_src[420] / 0x1a5 + (signed_short_src[420] >> 0xf)) -
-       (short)(signed_short_src[420] * 0x26eb >> 0x1f);
-  signed_short_dest[421] = (short)((uVar154 & 0x8000) >> 0xf) + ((short)uVar154 >> 8);
-  signed_short_dest[422] = (short)((uVar155 & 0x8000) >> 0xf) + ((short)uVar155 >> 8);
-  signed_short_dest[423] =
-       (signed_short_src[423] / 0x1a8 + (signed_short_src[423] >> 0xf)) -
-       (short)(signed_short_src[423] * 0x4d49 >> 0x1f);
-  signed_short_dest[424] =
-       (signed_short_src[424] / 0x1a9 + (signed_short_src[424] >> 0xf)) -
-       (short)(signed_short_src[424] * 0x268d >> 0x1f);
-  signed_short_dest[425] =
-       (signed_short_src[425] / 0x1aa + (signed_short_src[425] >> 0xf)) -
-       (short)(signed_short_src[425] * 0x133b >> 0x1f);
-  signed_short_dest[426] =
-       (signed_short_src[426] / 0x1ab + (signed_short_src[426] >> 0xf)) -
-       (short)(signed_short_src[426] * 0x265f >> 0x1f);
-  signed_short_dest[427] =
-       (signed_short_src[427] / 0x1ac + (signed_short_src[427] >> 0xf)) -
-       (short)(signed_short_src[427] * 0x4c9 >> 0x1f);
-  signed_short_dest[428] =
-       (signed_short_src[428] / 0x1ad + (signed_short_src[428] >> 0xf)) -
-       (short)(signed_short_src[428] * 0x2631 >> 0x1f);
-  signed_short_dest[429] = (short)((uVar156 & 0x8000) >> 0xf) + ((short)uVar156 >> 8);
-  signed_short_dest[430] = (short)((uVar157 & 0x8000) >> 0xf) + ((short)uVar157 >> 8);
-  signed_short_dest[431] = (short)((uVar158 & 0x8000) >> 0xf) + ((short)uVar158 >> 8);
-  signed_short_dest[432] = (short)((uVar159 & 0x8000) >> 0xf) + ((short)uVar159 >> 8);
-  signed_short_dest[433] =
-       (signed_short_src[433] / 0x1b2 + (signed_short_src[433] >> 0xf)) -
-       (short)(signed_short_src[433] * 0x4b81 >> 0x1f);
-  signed_short_dest[434] = (short)((uVar160 & 0x8000) >> 0xf) + ((short)uVar160 >> 8);
-  signed_short_dest[435] =
-       (signed_short_src[435] / 0x1b4 + (signed_short_src[435] >> 0xf)) -
-       (short)(signed_short_src[435] * 0x965 >> 0x1f);
-  signed_short_dest[436] =
-       (signed_short_src[436] / 0x1b5 + (signed_short_src[436] >> 0xf)) -
-       (short)(signed_short_src[436] * 0x12bf >> 0x1f);
-  signed_short_dest[437] = (short)((uVar161 & 0x8000) >> 0xf) + ((short)uVar161 >> 8);
-  signed_short_dest[438] =
-       (signed_short_src[438] / 0x1b7 + (signed_short_src[438] >> 0xf)) -
-       (short)(signed_short_src[438] * 0x4aa5 >> 0x1f);
-  signed_short_dest[439] = (short)((uVar162 & 0x8000) >> 0xf) + ((short)uVar162 >> 8);
-  signed_short_dest[440] =
-       (signed_short_src[440] / 0x1b9 + (signed_short_src[440] >> 0xf)) -
-       (short)(signed_short_src[440] * 0x2527 >> 0x1f);
-  signed_short_dest[441] =
-       (signed_short_src[441] / 0x1ba + (signed_short_src[441] >> 0xf)) -
-       (short)(signed_short_src[441] * 0x4a23 >> 0x1f);
-  signed_short_dest[442] =
-       (signed_short_src[442] / 0x1bb + (signed_short_src[442] >> 0xf)) -
-       (short)(signed_short_src[442] * 0x93f >> 0x1f);
-  signed_short_dest[443] = (short)((uVar163 & 0x8000) >> 0xf) + ((short)uVar163 >> 8);
-  signed_short_dest[444] =
-       (signed_short_src[444] / 0x1bd + (signed_short_src[444] >> 0xf)) -
-       (short)(signed_short_src[444] * 0x49a3 >> 0x1f);
-  signed_short_dest[445] =
-       (signed_short_src[445] / 0x1be + (signed_short_src[445] >> 0xf)) -
-       (short)(signed_short_src[445] * 0x4979 >> 0x1f);
-  signed_short_dest[446] =
-       (signed_short_src[446] / 0x1bf + (signed_short_src[446] >> 0xf)) -
-       (short)(signed_short_src[446] * 0x494f >> 0x1f);
-  signed_short_dest[447] =
-       (signed_short_src[447] / 0x1c0 + (signed_short_src[447] >> 0xf)) -
-       (short)(signed_short_src[447] * 0x4925 >> 0x1f);
-  signed_short_dest[448] =
-       (signed_short_src[448] / 0x1c1 + (signed_short_src[448] >> 0xf)) -
-       (short)(signed_short_src[448] * 0x48fb >> 0x1f);
-  signed_short_dest[449] = (short)((uVar164 & 0x8000) >> 0xf) + ((short)uVar164 >> 8);
-  signed_short_dest[450] = (short)((uVar165 & 0x8000) >> 0xf) + ((short)uVar165 >> 8);
-  signed_short_dest[451] =
-       (signed_short_src[451] / 0x1c4 + (signed_short_src[451] >> 0xf)) -
-       (short)(signed_short_src[451] * 0x487f >> 0x1f);
-  signed_short_dest[452] =
-       (signed_short_src[452] / 0x1c5 + (signed_short_src[452] >> 0xf)) -
-       (short)(signed_short_src[452] * 0x242b >> 0x1f);
-  signed_short_dest[453] = (short)((uVar166 & 0x8000) >> 0xf) + ((short)uVar166 >> 8);
-  signed_short_dest[454] =
-       (signed_short_src[454] / 0x1c7 + (signed_short_src[454] >> 0xf)) -
-       (short)(signed_short_src[454] * 0x4805 >> 0x1f);
-  signed_short_dest[455] = (short)((uVar167 & 0x8000) >> 0xf) + ((short)uVar167 >> 8);
-  signed_short_dest[456] =
-       (signed_short_src[456] / 0x1c9 + (signed_short_src[456] >> 0xf)) -
-       (short)(signed_short_src[456] * 0x11ed >> 0x1f);
-  signed_short_dest[457] =
-       (signed_short_src[457] / 0x1ca + (signed_short_src[457] >> 0xf)) -
-       (short)(signed_short_src[457] * 0x11e3 >> 0x1f);
-  signed_short_dest[458] =
-       (signed_short_src[458] / 0x1cb + (signed_short_src[458] >> 0xf)) -
-       (short)(signed_short_src[458] * 0x11d9 >> 0x1f);
-  signed_short_dest[459] = (short)((uVar168 & 0x8000) >> 0xf) + ((short)uVar168 >> 8);
-  signed_short_dest[460] =
-       (signed_short_src[460] / 0x1cd + (signed_short_src[460] >> 0xf)) -
-       (short)(signed_short_src[460] * 0x4715 >> 0x1f);
-  signed_short_dest[461] = (short)((uVar169 & 0x8000) >> 0xf) + ((short)uVar169 >> 8);
-  signed_short_dest[462] =
-       (signed_short_src[462] / 0x1cf + (signed_short_src[462] >> 0xf)) -
-       (short)(signed_short_src[462] * 0x2363 >> 0x1f);
-  signed_short_dest[463] =
-       (signed_short_src[463] / 0x1d0 + (signed_short_src[463] >> 0xf)) -
-       (short)(signed_short_src[463] * 0x469f >> 0x1f);
-  signed_short_dest[464] = (short)((uVar170 & 0x8000) >> 0xf) + ((short)uVar170 >> 8);
-  signed_short_dest[465] = (short)((uVar171 & 0x8000) >> 0xf) + ((short)uVar171 >> 8);
-  signed_short_dest[466] =
-       (signed_short_src[466] / 0x1d3 + (signed_short_src[466] >> 0xf)) -
-       (short)(signed_short_src[466] * 0x462b >> 0x1f);
-  signed_short_dest[467] = (short)((uVar172 & 0x8000) >> 0xf) + ((short)uVar172 >> 8);
-  signed_short_dest[468] = (short)((uVar173 & 0x8000) >> 0xf) + ((short)uVar173 >> 8);
-  signed_short_dest[469] = (short)((uVar174 & 0x8000) >> 0xf) + ((short)uVar174 >> 8);
-  signed_short_dest[470] = (short)((uVar175 & 0x8000) >> 0xf) + ((short)uVar175 >> 8);
-  signed_short_dest[471] =
-       (signed_short_src[471] / 0x1d8 + (signed_short_src[471] >> 0xf)) -
-       (short)(signed_short_src[471] * 0x456d >> 0x1f);
-  signed_short_dest[472] =
-       (signed_short_src[472] / 0x1d9 + (signed_short_src[472] >> 0xf)) -
-       (short)(signed_short_src[472] * 0x4547 >> 0x1f);
-  signed_short_dest[473] =
-       (signed_short_src[473] / 0x1da + (signed_short_src[473] >> 0xf)) -
-       (short)(signed_short_src[473] * 0x2291 >> 0x1f);
-  signed_short_dest[474] = (short)((uVar176 & 0x8000) >> 0xf) + ((short)uVar176 >> 8);
-  signed_short_dest[475] = (short)((uVar177 & 0x8000) >> 0xf) + ((short)uVar177 >> 8);
-  signed_short_dest[476] = (short)((uVar178 & 0x8000) >> 0xf) + ((short)uVar178 >> 8);
-  signed_short_dest[477] = (short)((uVar179 & 0x8000) >> 0xf) + ((short)uVar179 >> 8);
-  signed_short_dest[478] =
-       (signed_short_src[478] / 0x1df + (signed_short_src[478] >> 0xf)) -
-       (short)(signed_short_src[478] * 0x4469 >> 0x1f);
-  signed_short_dest[479] = (short)((uVar180 & 0x8000) >> 0xf) + ((short)uVar180 >> 8);
-  signed_short_dest[480] =
-       (signed_short_src[480] / 0x1e1 + (signed_short_src[480] >> 0xf)) -
-       (short)(signed_short_src[480] * 0x221 >> 0x1f);
-  signed_short_dest[481] =
-       (signed_short_src[481] / 0x1e2 + (signed_short_src[481] >> 0xf)) -
-       (short)(signed_short_src[481] * 0x10ff >> 0x1f);
-  signed_short_dest[482] =
-       (signed_short_src[482] / 0x1e3 + (signed_short_src[482] >> 0xf)) -
-       (short)(signed_short_src[482] * 0x87b >> 0x1f);
-  signed_short_dest[483] =
-       (signed_short_src[483] / 0x1e4 + (signed_short_src[483] >> 0xf)) -
-       (short)(signed_short_src[483] * 0x10ed >> 0x1f);
-  signed_short_dest[484] = (short)((uVar181 & 0x8000) >> 0xf) + ((short)uVar181 >> 8);
-  signed_short_dest[485] =
-       (signed_short_src[485] / 0x1e6 + (signed_short_src[485] >> 0xf)) -
-       (short)(signed_short_src[485] * 0x436d >> 0x1f);
-  signed_short_dest[486] = (short)((uVar182 & 0x8000) >> 0xf) + ((short)uVar182 >> 8);
-  signed_short_dest[487] =
-       (signed_short_src[487] / 0x1e8 + (signed_short_src[487] >> 0xf)) -
-       (short)(signed_short_src[487] * 0x2193 >> 0x1f);
-  signed_short_dest[488] =
-       (signed_short_src[488] / 0x1e9 + (signed_short_src[488] >> 0xf)) -
-       (short)(signed_short_src[488] * 0x4303 >> 0x1f);
-  signed_short_dest[489] =
-       (signed_short_src[489] / 0x1ea + (signed_short_src[489] >> 0xf)) -
-       (short)(signed_short_src[489] * 0x217 >> 0x1f);
-  signed_short_dest[490] =
-       (signed_short_src[490] / 0x1eb + (signed_short_src[490] >> 0xf)) -
-       (short)(signed_short_src[490] * 0x42bd >> 0x1f);
-  signed_short_dest[491] = (short)((uVar183 & 0x8000) >> 0xf) + ((short)uVar183 >> 8);
-  signed_short_dest[492] = (short)((uVar184 & 0x8000) >> 0xf) + ((short)uVar184 >> 8);
-  signed_short_dest[493] =
-       (signed_short_src[493] / 0x1ee + (signed_short_src[493] >> 0xf)) -
-       (short)(signed_short_src[493] * 0x4255 >> 0x1f);
-  signed_short_dest[494] =
-       (signed_short_src[494] / 0x1ef + (signed_short_src[494] >> 0xf)) -
-       (short)(signed_short_src[494] * 0x4233 >> 0x1f);
-  signed_short_dest[495] =
-       (signed_short_src[495] / 0x1f0 + (signed_short_src[495] >> 0xf)) -
-       (short)(signed_short_src[495] * 0x4211 >> 0x1f);
-  signed_short_dest[496] =
-       (signed_short_src[496] / 0x1f1 + (signed_short_src[496] >> 0xf)) -
-       (short)(signed_short_src[496] * 0x41ef >> 0x1f);
-  signed_short_dest[497] =
-       (signed_short_src[497] / 0x1f2 + (signed_short_src[497] >> 0xf)) -
-       (short)(signed_short_src[497] * 0x41cd >> 0x1f);
-  signed_short_dest[498] =
-       (signed_short_src[498] / 499 + (signed_short_src[498] >> 0xf)) -
-       (short)(signed_short_src[498] * 0x41ab >> 0x1f);
-  signed_short_dest[499] = (short)((uVar185 & 0x8000) >> 0xf) + ((short)uVar185 >> 8);
-  signed_short_dest[500] =
-       (signed_short_src[500] / 0x1f5 + (signed_short_src[500] >> 0xf)) -
-       (short)(signed_short_src[500] * 0x82d >> 0x1f);
-  signed_short_dest[501] = (short)((uVar186 & 0x8000) >> 0xf) + ((short)uVar186 >> 8);
-  signed_short_dest[502] = (short)((uVar187 & 0x8000) >> 0xf) + ((short)uVar187 >> 8);
-  signed_short_dest[503] = (short)((uVar188 & 0x8000) >> 0xf) + ((short)uVar188 >> 8);
-  signed_short_dest[504] = (short)((uVar189 & 0x8000) >> 0xf) + ((short)uVar189 >> 8);
-  signed_short_dest[505] = (short)((uVar190 & 0x8000) >> 0xf) + ((short)uVar190 >> 8);
-  signed_short_dest[506] =
-       (signed_short_src[506] / 0x1fb + (signed_short_src[506] >> 0xf)) -
-       (short)(signed_short_src[506] * 0x2051 >> 0x1f);
-  signed_short_dest[507] = (short)((uVar191 & 0x8000) >> 0xf) + ((short)uVar191 >> 8);
-  signed_short_dest[508] =
-       (signed_short_src[508] / 0x1fd + (signed_short_src[508] >> 0xf)) -
-       (short)(signed_short_src[508] * 0x4061 >> 0x1f);
-  signed_short_dest[509] = (short)((uVar192 & 0x8000) >> 0xf) + ((short)uVar192 >> 8);
-  signed_short_dest[510] = (short)((uVar193 & 0x8000) >> 0xf) + ((short)uVar193 >> 8);
+  signed_short_dest[256] = signed_short_src[256] / 0x101;
+  signed_short_dest[257] = signed_short_src[257] / 0x102;
+  signed_short_dest[258] = signed_short_src[258] / 0x103;
+  signed_short_dest[259] = signed_short_src[259] / 0x104;
+  signed_short_dest[260] = signed_short_src[260] / 0x105;
+  signed_short_dest[261] = signed_short_src[261] / 0x106;
+  signed_short_dest[262] = signed_short_src[262] / 0x107;
+  signed_short_dest[263] = signed_short_src[263] / 0x108;
+  signed_short_dest[264] = signed_short_src[264] / 0x109;
+  signed_short_dest[265] = signed_short_src[265] / 0x10a;
+  uVar1 = ((uint)(signed_short_src[266] * -0xa8b) >> 0x10) + (int)signed_short_src[266];
+  signed_short_dest[266] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[267] = signed_short_src[267] / 0x10c;
+  signed_short_dest[268] = signed_short_src[268] / 0x10d;
+  signed_short_dest[269] = signed_short_src[269] / 0x10e;
+  signed_short_dest[270] = signed_short_src[270] / 0x10f;
+  signed_short_dest[271] = signed_short_src[271] / 0x110;
+  signed_short_dest[272] = signed_short_src[272] / 0x111;
+  signed_short_dest[273] = signed_short_src[273] / 0x112;
+  uVar1 = ((uint)(signed_short_src[274] * -0x11af) >> 0x10) + (int)signed_short_src[274];
+  signed_short_dest[274] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[275] = signed_short_src[275] / 0x114;
+  signed_short_dest[276] = signed_short_src[276] / 0x115;
+  signed_short_dest[277] = signed_short_src[277] / 0x116;
+  signed_short_dest[278] = signed_short_src[278] / 0x117;
+  signed_short_dest[279] = signed_short_src[279] / 0x118;
+  signed_short_dest[280] = signed_short_src[280] / 0x119;
+  signed_short_dest[281] = signed_short_src[281] / 0x11a;
+  signed_short_dest[282] = signed_short_src[282] / 0x11b;
+  signed_short_dest[283] = signed_short_src[283] / 0x11c;
+  signed_short_dest[284] = signed_short_src[284] / 0x11d;
+  signed_short_dest[285] = signed_short_src[285] / 0x11e;
+  signed_short_dest[286] = signed_short_src[286] / 0x11f;
+  signed_short_dest[287] = signed_short_src[287] / 0x120;
+  signed_short_dest[288] = signed_short_src[288] / 0x121;
+  signed_short_dest[289] = signed_short_src[289] / 0x122;
+  signed_short_dest[290] = signed_short_src[290] / 0x123;
+  uVar1 = ((uint)(signed_short_src[291] * -0x1f8f) >> 0x10) + (int)signed_short_src[291];
+  signed_short_dest[291] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[292] * -0x2053) >> 0x10) + (int)signed_short_src[292];
+  signed_short_dest[292] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[293] = signed_short_src[293] / 0x126;
+  signed_short_dest[294] = signed_short_src[294] / 0x127;
+  signed_short_dest[295] = signed_short_src[295] / 0x128;
+  signed_short_dest[296] = signed_short_src[296] / 0x129;
+  signed_short_dest[297] = signed_short_src[297] / 0x12a;
+  signed_short_dest[298] = signed_short_src[298] / 299;
+  uVar1 = ((uint)(signed_short_src[299] * -0x258b) >> 0x10) + (int)signed_short_src[299];
+  signed_short_dest[299] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[300] * -0x2645) >> 0x10) + (int)signed_short_src[300];
+  signed_short_dest[300] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[301] = signed_short_src[301] / 0x12e;
+  signed_short_dest[302] = signed_short_src[302] / 0x12f;
+  uVar1 = ((uint)(signed_short_src[303] * -0x286b) >> 0x10) + (int)signed_short_src[303];
+  signed_short_dest[303] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[304] = signed_short_src[304] / 0x131;
+  signed_short_dest[305] = signed_short_src[305] / 0x132;
+  signed_short_dest[306] = signed_short_src[306] / 0x133;
+  signed_short_dest[307] = signed_short_src[307] / 0x134;
+  signed_short_dest[308] = signed_short_src[308] / 0x135;
+  uVar1 = ((uint)(signed_short_src[309] * -0x2c97) >> 0x10) + (int)signed_short_src[309];
+  signed_short_dest[309] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[310] * -0x2d45) >> 0x10) + (int)signed_short_src[310];
+  signed_short_dest[310] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[311] = signed_short_src[311] / 0x138;
+  signed_short_dest[312] = signed_short_src[312] / 0x139;
+  signed_short_dest[313] = signed_short_src[313] / 0x13a;
+  signed_short_dest[314] = signed_short_src[314] / 0x13b;
+  signed_short_dest[315] = signed_short_src[315] / 0x13c;
+  signed_short_dest[316] = signed_short_src[316] / 0x13d;
+  signed_short_dest[317] = signed_short_src[317] / 0x13e;
+  signed_short_dest[318] = signed_short_src[318] / 0x13f;
+  signed_short_dest[319] = signed_short_src[319] / 0x140;
+  signed_short_dest[320] = signed_short_src[320] / 0x141;
+  signed_short_dest[321] = signed_short_src[321] / 0x142;
+  signed_short_dest[322] = signed_short_src[322] / 0x143;
+  signed_short_dest[323] = signed_short_src[323] / 0x144;
+  uVar1 = ((uint)(signed_short_src[324] * -0x3659) >> 0x10) + (int)signed_short_src[324];
+  signed_short_dest[324] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[325] = signed_short_src[325] / 0x146;
+  signed_short_dest[326] = signed_short_src[326] / 0x147;
+  uVar1 = ((uint)(signed_short_src[327] * -0x3831) >> 0x10) + (int)signed_short_src[327];
+  signed_short_dest[327] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[328] = signed_short_src[328] / 0x149;
+  uVar1 = ((uint)(signed_short_src[329] * -0x3967) >> 0x10) + (int)signed_short_src[329];
+  signed_short_dest[329] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[330] =
+       (short)((uint)(signed_short_src[330] * 0xc6) >> 0x10) - (signed_short_src[330] >> 0xf);
+  signed_short_dest[331] = signed_short_src[331] / 0x14c;
+  uVar1 = ((uint)(signed_short_src[332] * -0x3b31) >> 0x10) + (int)signed_short_src[332];
+  signed_short_dest[332] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[333] = signed_short_src[333] / 0x14e;
+  signed_short_dest[334] = signed_short_src[334] / 0x14f;
+  uVar1 = ((uint)(signed_short_src[335] * -0x3cf3) >> 0x10) + (int)signed_short_src[335];
+  signed_short_dest[335] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[336] * -0x3d87) >> 0x10) + (int)signed_short_src[336];
+  signed_short_dest[336] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[337] = signed_short_src[337] / 0x152;
+  uVar1 = ((uint)(signed_short_src[338] * -0x3ead) >> 0x10) + (int)signed_short_src[338];
+  signed_short_dest[338] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[339] = signed_short_src[339] / 0x154;
+  uVar1 = ((uint)(signed_short_src[340] * -0x3fcf) >> 0x10) + (int)signed_short_src[340];
+  signed_short_dest[340] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[341] * -0x405f) >> 0x10) + (int)signed_short_src[341];
+  signed_short_dest[341] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[342] = signed_short_src[342] / 0x157;
+  signed_short_dest[343] = signed_short_src[343] / 0x158;
+  signed_short_dest[344] = signed_short_src[344] / 0x159;
+  signed_short_dest[345] = signed_short_src[345] / 0x15a;
+  signed_short_dest[346] = signed_short_src[346] / 0x15b;
+  uVar1 = ((uint)(signed_short_src[347] * -0x43ad) >> 0x10) + (int)signed_short_src[347];
+  signed_short_dest[347] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[348] * -0x4437) >> 0x10) + (int)signed_short_src[348];
+  signed_short_dest[348] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[349] = signed_short_src[349] / 0x15e;
+  uVar1 = ((uint)(signed_short_src[350] * -0x4549) >> 0x10) + (int)signed_short_src[350];
+  signed_short_dest[350] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[351] = signed_short_src[351] / 0x160;
+  signed_short_dest[352] = signed_short_src[352] / 0x161;
+  signed_short_dest[353] = signed_short_src[353] / 0x162;
+  signed_short_dest[354] = signed_short_src[354] / 0x163;
+  signed_short_dest[355] = signed_short_src[355] / 0x164;
+  signed_short_dest[356] = signed_short_src[356] / 0x165;
+  signed_short_dest[357] = signed_short_src[357] / 0x166;
+  signed_short_dest[358] = signed_short_src[358] / 0x167;
+  signed_short_dest[359] = signed_short_src[359] / 0x168;
+  uVar1 = ((uint)(signed_short_src[360] * -0x4a75) >> 0x10) + (int)signed_short_src[360];
+  signed_short_dest[360] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[361] = signed_short_src[361] / 0x16a;
+  uVar1 = ((uint)(signed_short_src[362] * -0x4b75) >> 0x10) + (int)signed_short_src[362];
+  signed_short_dest[362] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[363] = signed_short_src[363] / 0x16c;
+  signed_short_dest[364] = signed_short_src[364] / 0x16d;
+  signed_short_dest[365] = signed_short_src[365] / 0x16e;
+  uVar1 = ((uint)(signed_short_src[366] * -0x4d6d) >> 0x10) + (int)signed_short_src[366];
+  signed_short_dest[366] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[367] * -0x4de9) >> 0x10) + (int)signed_short_src[367];
+  signed_short_dest[367] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[368] = signed_short_src[368] / 0x171;
+  signed_short_dest[369] = signed_short_src[369] / 0x172;
+  signed_short_dest[370] = signed_short_src[370] / 0x173;
+  uVar1 = ((uint)(signed_short_src[371] * -0x4fd3) >> 0x10) + (int)signed_short_src[371];
+  signed_short_dest[371] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[372] = signed_short_src[372] / 0x175;
+  signed_short_dest[373] = signed_short_src[373] / 0x176;
+  signed_short_dest[374] = signed_short_src[374] / 0x177;
+  uVar1 = ((uint)(signed_short_src[375] * -0x51b3) >> 0x10) + (int)signed_short_src[375];
+  signed_short_dest[375] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[376] = signed_short_src[376] / 0x179;
+  uVar1 = ((uint)(signed_short_src[377] * -0x529f) >> 0x10) + (int)signed_short_src[377];
+  signed_short_dest[377] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[378] = signed_short_src[378] / 0x17b;
+  uVar1 = ((uint)(signed_short_src[379] * -0x5389) >> 0x10) + (int)signed_short_src[379];
+  signed_short_dest[379] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[380] = signed_short_src[380] / 0x17d;
+  signed_short_dest[381] = signed_short_src[381] / 0x17e;
+  signed_short_dest[382] = signed_short_src[382] / 0x17f;
+  signed_short_dest[383] = signed_short_src[383] / 0x180;
+  signed_short_dest[384] = signed_short_src[384] / 0x181;
+  uVar1 = ((uint)(signed_short_src[385] * -0x5637) >> 0x10) + (int)signed_short_src[385];
+  signed_short_dest[385] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[386] = signed_short_src[386] / 0x183;
+  uVar1 = ((uint)(signed_short_src[387] * -0x5717) >> 0x10) + (int)signed_short_src[387];
+  signed_short_dest[387] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[388] = signed_short_src[388] / 0x185;
+  uVar1 = ((uint)(signed_short_src[389] * -0x57f5) >> 0x10) + (int)signed_short_src[389];
+  signed_short_dest[389] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[390] * -0x5863) >> 0x10) + (int)signed_short_src[390];
+  signed_short_dest[390] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[391] = signed_short_src[391] / 0x188;
+  uVar1 = ((uint)(signed_short_src[392] * -0x593d) >> 0x10) + (int)signed_short_src[392];
+  signed_short_dest[392] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[393] = signed_short_src[393] / 0x18a;
+  signed_short_dest[394] = signed_short_src[394] / 0x18b;
+  signed_short_dest[395] =
+       (short)(signed_short_src[395] * 0x14b >> 0x11) - (signed_short_src[395] >> 0xf);
+  signed_short_dest[396] = signed_short_src[396] / 0x18d;
+  signed_short_dest[397] = signed_short_src[397] / 0x18e;
+  uVar1 = ((uint)(signed_short_src[398] * -0x5bbf) >> 0x10) + (int)signed_short_src[398];
+  signed_short_dest[398] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[399] = signed_short_src[399] / 400;
+  uVar1 = ((uint)(signed_short_src[400] * -0x5c91) >> 0x10) + (int)signed_short_src[400];
+  signed_short_dest[400] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[401] * -0x5cf9) >> 0x10) + (int)signed_short_src[401];
+  signed_short_dest[401] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[402] = signed_short_src[402] / 0x193;
+  signed_short_dest[403] = signed_short_src[403] / 0x194;
+  signed_short_dest[404] = signed_short_src[404] / 0x195;
+  signed_short_dest[405] = signed_short_src[405] / 0x196;
+  signed_short_dest[406] = signed_short_src[406] / 0x197;
+  uVar1 = ((uint)(signed_short_src[407] * -0x5f5f) >> 0x10) + (int)signed_short_src[407];
+  signed_short_dest[407] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[408] * -0x5fc3) >> 0x10) + (int)signed_short_src[408];
+  signed_short_dest[408] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[409] * -0x6027) >> 0x10) + (int)signed_short_src[409];
+  signed_short_dest[409] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[410] * -0x608b) >> 0x10) + (int)signed_short_src[410];
+  signed_short_dest[410] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[411] = signed_short_src[411] / 0x19c;
+  signed_short_dest[412] = signed_short_src[412] / 0x19d;
+  uVar1 = ((uint)(signed_short_src[413] * -0x61b3) >> 0x10) + (int)signed_short_src[413];
+  signed_short_dest[413] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[414] = signed_short_src[414] / 0x19f;
+  signed_short_dest[415] = signed_short_src[415] / 0x1a0;
+  signed_short_dest[416] = signed_short_src[416] / 0x1a1;
+  signed_short_dest[417] = signed_short_src[417] / 0x1a2;
+  signed_short_dest[418] = signed_short_src[418] / 0x1a3;
+  signed_short_dest[419] = signed_short_src[419] / 0x1a4;
+  signed_short_dest[420] = signed_short_src[420] / 0x1a5;
+  uVar1 = ((uint)(signed_short_src[421] * -0x64b3) >> 0x10) + (int)signed_short_src[421];
+  signed_short_dest[421] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[422] * -0x6511) >> 0x10) + (int)signed_short_src[422];
+  signed_short_dest[422] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[423] = signed_short_src[423] / 0x1a8;
+  signed_short_dest[424] = signed_short_src[424] / 0x1a9;
+  signed_short_dest[425] = signed_short_src[425] / 0x1aa;
+  signed_short_dest[426] = signed_short_src[426] / 0x1ab;
+  signed_short_dest[427] = signed_short_src[427] / 0x1ac;
+  signed_short_dest[428] = signed_short_src[428] / 0x1ad;
+  uVar1 = ((uint)(signed_short_src[429] * -0x6797) >> 0x10) + (int)signed_short_src[429];
+  signed_short_dest[429] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[430] * -0x67f1) >> 0x10) + (int)signed_short_src[430];
+  signed_short_dest[430] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[431] * -0x684b) >> 0x10) + (int)signed_short_src[431];
+  signed_short_dest[431] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[432] * -0x68a5) >> 0x10) + (int)signed_short_src[432];
+  signed_short_dest[432] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[433] = signed_short_src[433] / 0x1b2;
+  uVar1 = ((uint)(signed_short_src[434] * -0x6957) >> 0x10) + (int)signed_short_src[434];
+  signed_short_dest[434] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[435] = signed_short_src[435] / 0x1b4;
+  signed_short_dest[436] = signed_short_src[436] / 0x1b5;
+  uVar1 = ((uint)(signed_short_src[437] * -0x6a5f) >> 0x10) + (int)signed_short_src[437];
+  signed_short_dest[437] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[438] = signed_short_src[438] / 0x1b7;
+  uVar1 = ((uint)(signed_short_src[439] * -0x6b0d) >> 0x10) + (int)signed_short_src[439];
+  signed_short_dest[439] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[440] = signed_short_src[440] / 0x1b9;
+  signed_short_dest[441] = signed_short_src[441] / 0x1ba;
+  signed_short_dest[442] = signed_short_src[442] / 0x1bb;
+  uVar1 = ((uint)(signed_short_src[443] * -0x6c65) >> 0x10) + (int)signed_short_src[443];
+  signed_short_dest[443] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[444] = signed_short_src[444] / 0x1bd;
+  signed_short_dest[445] = signed_short_src[445] / 0x1be;
+  signed_short_dest[446] = signed_short_src[446] / 0x1bf;
+  signed_short_dest[447] = signed_short_src[447] / 0x1c0;
+  signed_short_dest[448] = signed_short_src[448] / 0x1c1;
+  uVar1 = ((uint)(signed_short_src[449] * -0x6e5d) >> 0x10) + (int)signed_short_src[449];
+  signed_short_dest[449] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[450] * -0x6eaf) >> 0x10) + (int)signed_short_src[450];
+  signed_short_dest[450] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[451] = signed_short_src[451] / 0x1c4;
+  signed_short_dest[452] = signed_short_src[452] / 0x1c5;
+  uVar1 = ((uint)(signed_short_src[453] * -0x6fa5) >> 0x10) + (int)signed_short_src[453];
+  signed_short_dest[453] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[454] = signed_short_src[454] / 0x1c7;
+  uVar1 = ((uint)(signed_short_src[455] * -0x7047) >> 0x10) + (int)signed_short_src[455];
+  signed_short_dest[455] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[456] = signed_short_src[456] / 0x1c9;
+  signed_short_dest[457] = signed_short_src[457] / 0x1ca;
+  signed_short_dest[458] = signed_short_src[458] / 0x1cb;
+  uVar1 = ((uint)(signed_short_src[459] * -0x7187) >> 0x10) + (int)signed_short_src[459];
+  signed_short_dest[459] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[460] = signed_short_src[460] / 0x1cd;
+  uVar1 = ((uint)(signed_short_src[461] * -0x7225) >> 0x10) + (int)signed_short_src[461];
+  signed_short_dest[461] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[462] = signed_short_src[462] / 0x1cf;
+  signed_short_dest[463] = signed_short_src[463] / 0x1d0;
+  uVar1 = ((uint)(signed_short_src[464] * -0x730f) >> 0x10) + (int)signed_short_src[464];
+  signed_short_dest[464] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[465] * -0x735d) >> 0x10) + (int)signed_short_src[465];
+  signed_short_dest[465] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[466] = signed_short_src[466] / 0x1d3;
+  uVar1 = ((uint)(signed_short_src[467] * -0x73f7) >> 0x10) + (int)signed_short_src[467];
+  signed_short_dest[467] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[468] * -0x7443) >> 0x10) + (int)signed_short_src[468];
+  signed_short_dest[468] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[469] * -0x748f) >> 0x10) + (int)signed_short_src[469];
+  signed_short_dest[469] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[470] * -0x74db) >> 0x10) + (int)signed_short_src[470];
+  signed_short_dest[470] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[471] = signed_short_src[471] / 0x1d8;
+  signed_short_dest[472] = signed_short_src[472] / 0x1d9;
+  signed_short_dest[473] = signed_short_src[473] / 0x1da;
+  uVar1 = ((uint)(signed_short_src[474] * -0x7607) >> 0x10) + (int)signed_short_src[474];
+  signed_short_dest[474] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[475] * -0x7651) >> 0x10) + (int)signed_short_src[475];
+  signed_short_dest[475] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[476] * -0x769b) >> 0x10) + (int)signed_short_src[476];
+  signed_short_dest[476] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[477] * -0x76e5) >> 0x10) + (int)signed_short_src[477];
+  signed_short_dest[477] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[478] = signed_short_src[478] / 0x1df;
+  uVar1 = ((uint)(signed_short_src[479] * -0x7777) >> 0x10) + (int)signed_short_src[479];
+  signed_short_dest[479] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[480] = signed_short_src[480] / 0x1e1;
+  signed_short_dest[481] = signed_short_src[481] / 0x1e2;
+  signed_short_dest[482] = signed_short_src[482] / 0x1e3;
+  signed_short_dest[483] = signed_short_src[483] / 0x1e4;
+  uVar1 = ((uint)(signed_short_src[484] * -0x78df) >> 0x10) + (int)signed_short_src[484];
+  signed_short_dest[484] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[485] = signed_short_src[485] / 0x1e6;
+  uVar1 = ((uint)(signed_short_src[486] * -0x796d) >> 0x10) + (int)signed_short_src[486];
+  signed_short_dest[486] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[487] = signed_short_src[487] / 0x1e8;
+  signed_short_dest[488] = signed_short_src[488] / 0x1e9;
+  signed_short_dest[489] = signed_short_src[489] / 0x1ea;
+  signed_short_dest[490] = signed_short_src[490] / 0x1eb;
+  uVar1 = ((uint)(signed_short_src[491] * -0x7acb) >> 0x10) + (int)signed_short_src[491];
+  signed_short_dest[491] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[492] * -0x7b11) >> 0x10) + (int)signed_short_src[492];
+  signed_short_dest[492] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[493] = signed_short_src[493] / 0x1ee;
+  signed_short_dest[494] = signed_short_src[494] / 0x1ef;
+  signed_short_dest[495] = signed_short_src[495] / 0x1f0;
+  signed_short_dest[496] = signed_short_src[496] / 0x1f1;
+  signed_short_dest[497] = signed_short_src[497] / 0x1f2;
+  signed_short_dest[498] = signed_short_src[498] / 499;
+  uVar1 = ((uint)(signed_short_src[499] * -0x7ced) >> 0x10) + (int)signed_short_src[499];
+  signed_short_dest[499] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[500] = signed_short_src[500] / 0x1f5;
+  uVar1 = ((uint)(signed_short_src[501] * -0x7d73) >> 0x10) + (int)signed_short_src[501];
+  signed_short_dest[501] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[502] * -0x7db5) >> 0x10) + (int)signed_short_src[502];
+  signed_short_dest[502] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[503] * -0x7df7) >> 0x10) + (int)signed_short_src[503];
+  signed_short_dest[503] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[504] * -0x7e39) >> 0x10) + (int)signed_short_src[504];
+  signed_short_dest[504] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[505] * -0x7e7b) >> 0x10) + (int)signed_short_src[505];
+  signed_short_dest[505] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[506] = signed_short_src[506] / 0x1fb;
+  uVar1 = ((uint)(signed_short_src[507] * -0x7efd) >> 0x10) + (int)signed_short_src[507];
+  signed_short_dest[507] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  signed_short_dest[508] = signed_short_src[508] / 0x1fd;
+  uVar1 = ((uint)(signed_short_src[509] * -0x7f7f) >> 0x10) + (int)signed_short_src[509];
+  signed_short_dest[509] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
+  uVar1 = ((uint)(signed_short_src[510] * -0x7fbf) >> 0x10) + (int)signed_short_src[510];
+  signed_short_dest[510] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 8);
   signed_short_dest[511] =
        (short)(((ushort)(signed_short_src[511] >> 0xf) >> 7) + signed_short_src[511]) >> 9;
-  signed_short_dest[512] =
-       (signed_short_src[512] / 0x201 + (signed_short_src[512] >> 0xf)) -
-       (short)(signed_short_src[512] * 0x7fc1 >> 0x1f);
-  signed_short_dest[513] =
-       (signed_short_src[513] / 0x202 + (signed_short_src[513] >> 0xf)) -
-       (short)(signed_short_src[513] * 0x7f81 >> 0x1f);
-  signed_short_dest[514] =
-       (signed_short_src[514] / 0x203 + (signed_short_src[514] >> 0xf)) -
-       (short)(signed_short_src[514] * 0x3fa1 >> 0x1f);
-  signed_short_dest[515] =
-       (signed_short_src[515] / 0x204 + (signed_short_src[515] >> 0xf)) -
-       (short)(signed_short_src[515] * 0x3f81 >> 0x1f);
-  signed_short_dest[516] =
-       (signed_short_src[516] / 0x205 + (signed_short_src[516] >> 0xf)) -
-       (short)(signed_short_src[516] * 0x1fb1 >> 0x1f);
-  signed_short_dest[517] =
-       (signed_short_src[517] / 0x206 + (signed_short_src[517] >> 0xf)) -
-       (short)(signed_short_src[517] * 0x7e85 >> 0x1f);
-  signed_short_dest[518] =
-       (signed_short_src[518] / 0x207 + (signed_short_src[518] >> 0xf)) -
-       (short)(signed_short_src[518] * 0x7e47 >> 0x1f);
-  signed_short_dest[519] =
-       (signed_short_src[519] / 0x208 + (signed_short_src[519] >> 0xf)) -
-       (short)(signed_short_src[519] * 0xfc1 >> 0x1f);
-  signed_short_dest[520] =
-       (signed_short_src[520] / 0x209 + (signed_short_src[520] >> 0xf)) -
-       (short)(signed_short_src[520] * 0x3ee5 >> 0x1f);
-  signed_short_dest[521] =
-       (signed_short_src[521] / 0x20a + (signed_short_src[521] >> 0xf)) -
-       (short)(signed_short_src[521] * 0x7d8d >> 0x1f);
-  signed_short_dest[522] =
-       (signed_short_src[522] / 0x20b + (signed_short_src[522] >> 0xf)) -
-       (short)(signed_short_src[522] * 0x7d4f >> 0x1f);
-  signed_short_dest[523] =
-       (signed_short_src[523] / 0x20c + (signed_short_src[523] >> 0xf)) -
-       (short)(signed_short_src[523] * 0x3e89 >> 0x1f);
-  signed_short_dest[524] =
-       (signed_short_src[524] / 0x20d + (signed_short_src[524] >> 0xf)) -
-       (short)(signed_short_src[524] * 0x7cd5 >> 0x1f);
-  signed_short_dest[525] =
-       (signed_short_src[525] / 0x20e + (signed_short_src[525] >> 0xf)) -
-       (short)(signed_short_src[525] * 0xf93 >> 0x1f);
-  signed_short_dest[526] =
-       (signed_short_src[526] / 0x20f + (signed_short_src[526] >> 0xf)) -
-       (short)(signed_short_src[526] * 0x1f17 >> 0x1f);
-  signed_short_dest[527] =
-       (signed_short_src[527] / 0x210 + (signed_short_src[527] >> 0xf)) -
-       (short)(signed_short_src[527] * 0x3e1 >> 0x1f);
-  signed_short_dest[528] =
-       (signed_short_src[528] / 0x211 + (signed_short_src[528] >> 0xf)) -
-       (short)(signed_short_src[528] * 0x7be3 >> 0x1f);
-  signed_short_dest[529] =
-       (signed_short_src[529] / 0x212 + (signed_short_src[529] >> 0xf)) -
-       (short)(signed_short_src[529] * 0xf75 >> 0x1f);
-  signed_short_dest[530] =
-       (signed_short_src[530] / 0x213 + (signed_short_src[530] >> 0xf)) -
-       (short)(signed_short_src[530] * 0x1edb >> 0x1f);
-  signed_short_dest[531] =
-       (signed_short_src[531] / 0x214 + (signed_short_src[531] >> 0xf)) -
-       (short)(signed_short_src[531] * 0x7b31 >> 0x1f);
-  signed_short_dest[532] =
-       (signed_short_src[532] / 0x215 + (signed_short_src[532] >> 0xf)) -
-       (short)(signed_short_src[532] * 0x7af5 >> 0x1f);
-  signed_short_dest[533] = (short)((uVar194 & 0x8000) >> 0xf) + ((short)uVar194 >> 9);
-  signed_short_dest[534] = (sVar15 >> 1) - (sVar15 >> 0xf);
-  signed_short_dest[535] =
-       (signed_short_src[535] / 0x218 + (signed_short_src[535] >> 0xf)) -
-       (short)(signed_short_src[535] * 0x7a45 >> 0x1f);
-  signed_short_dest[536] =
-       (signed_short_src[536] / 0x219 + (signed_short_src[536] >> 0xf)) -
-       (short)(signed_short_src[536] * 0x7a0b >> 0x1f);
-  signed_short_dest[537] =
-       (signed_short_src[537] / 0x21a + (signed_short_src[537] >> 0xf)) -
-       (short)(signed_short_src[537] * 0x79d1 >> 0x1f);
-  signed_short_dest[538] =
-       (signed_short_src[538] / 0x21b + (signed_short_src[538] >> 0xf)) -
-       (short)(signed_short_src[538] * 0x7997 >> 0x1f);
-  signed_short_dest[539] =
-       (signed_short_src[539] / 0x21c + (signed_short_src[539] >> 0xf)) -
-       (short)(signed_short_src[539] * 0x795d >> 0x1f);
-  signed_short_dest[540] =
-       (signed_short_src[540] / 0x21d + (signed_short_src[540] >> 0xf)) -
-       (short)(signed_short_src[540] * 0x1e49 >> 0x1f);
-  signed_short_dest[541] =
-       (signed_short_src[541] / 0x21e + (signed_short_src[541] >> 0xf)) -
-       (short)(signed_short_src[541] * 0x78eb >> 0x1f);
-  signed_short_dest[542] =
-       (signed_short_src[542] / 0x21f + (signed_short_src[542] >> 0xf)) -
-       (short)(signed_short_src[542] * 0x3c59 >> 0x1f);
-  signed_short_dest[543] =
-       (signed_short_src[543] / 0x220 + (signed_short_src[543] >> 0xf)) -
-       (short)(signed_short_src[543] * 0x7879 >> 0x1f);
-  signed_short_dest[544] = (sVar16 >> 2) - (sVar16 >> 0xf);
-  signed_short_dest[545] =
-       (signed_short_src[545] / 0x222 + (signed_short_src[545] >> 0xf)) -
-       (short)(signed_short_src[545] * 0xf01 >> 0x1f);
-  signed_short_dest[546] =
-       (signed_short_src[546] / 0x223 + (signed_short_src[546] >> 0xf)) -
-       (short)(signed_short_src[546] * 0x77d >> 0x1f);
-  signed_short_dest[547] =
-       (signed_short_src[547] / 0x224 + (signed_short_src[547] >> 0xf)) -
-       (short)(signed_short_src[547] * 0xef3 >> 0x1f);
-  signed_short_dest[548] =
-       (signed_short_src[548] / 0x225 + (signed_short_src[548] >> 0xf)) -
-       (short)(signed_short_src[548] * 0x3bb >> 0x1f);
-  signed_short_dest[549] = (short)((uVar195 & 0x8000) >> 0xf) + ((short)uVar195 >> 9);
-  signed_short_dest[550] =
-       (signed_short_src[550] / 0x227 + (signed_short_src[550] >> 0xf)) -
-       (short)(signed_short_src[550] * 0x76f1 >> 0x1f);
-  signed_short_dest[551] =
-       (signed_short_src[551] / 0x228 + (signed_short_src[551] >> 0xf)) -
-       (short)(signed_short_src[551] * 0x3b5d >> 0x1f);
-  signed_short_dest[552] =
-       (signed_short_src[552] / 0x229 + (signed_short_src[552] >> 0xf)) -
-       (short)(signed_short_src[552] * 0x7683 >> 0x1f);
-  signed_short_dest[553] =
-       (signed_short_src[553] / 0x22a + (signed_short_src[553] >> 0xf)) -
-       (short)(signed_short_src[553] * 0x1d93 >> 0x1f);
-  signed_short_dest[554] =
-       (signed_short_src[554] / 0x22b + (signed_short_src[554] >> 0xf)) -
-       (short)(signed_short_src[554] * 0x3b0b >> 0x1f);
-  signed_short_dest[555] =
-       (signed_short_src[555] / 0x22c + (signed_short_src[555] >> 0xf)) -
-       (short)(signed_short_src[555] * 0x75df >> 0x1f);
-  signed_short_dest[556] =
-       (signed_short_src[556] / 0x22d + (signed_short_src[556] >> 0xf)) -
-       (short)(signed_short_src[556] * 0x75a9 >> 0x1f);
-  signed_short_dest[557] =
-       (signed_short_src[557] / 0x22e + (signed_short_src[557] >> 0xf)) -
-       (short)(signed_short_src[557] * 0x7573 >> 0x1f);
-  signed_short_dest[558] =
-       (signed_short_src[558] / 0x22f + (signed_short_src[558] >> 0xf)) -
-       (short)(signed_short_src[558] * 0x753d >> 0x1f);
-  signed_short_dest[559] =
-       (signed_short_src[559] / 0x230 + (signed_short_src[559] >> 0xf)) -
-       (short)(signed_short_src[559] * 0xea1 >> 0x1f);
-  signed_short_dest[560] =
-       (signed_short_src[560] / 0x231 + (signed_short_src[560] >> 0xf)) -
-       (short)(signed_short_src[560] * 0x3a69 >> 0x1f);
-  signed_short_dest[561] =
-       (signed_short_src[561] / 0x232 + (signed_short_src[561] >> 0xf)) -
-       (short)(signed_short_src[561] * 0x749d >> 0x1f);
-  signed_short_dest[562] =
-       (signed_short_src[562] / 0x233 + (signed_short_src[562] >> 0xf)) -
-       (short)(signed_short_src[562] * 0xe8d >> 0x1f);
-  signed_short_dest[563] =
-       (signed_short_src[563] / 0x234 + (signed_short_src[563] >> 0xf)) -
-       (short)(signed_short_src[563] * 0x7433 >> 0x1f);
-  signed_short_dest[564] =
-       (signed_short_src[564] / 0x235 + (signed_short_src[564] >> 0xf)) -
-       (short)(signed_short_src[564] * 0x73ff >> 0x1f);
-  signed_short_dest[565] =
-       (signed_short_src[565] / 0x236 + (signed_short_src[565] >> 0xf)) -
-       (short)(signed_short_src[565] * 0x39e5 >> 0x1f);
-  signed_short_dest[566] =
-       (signed_short_src[566] / 0x237 + (signed_short_src[566] >> 0xf)) -
-       (short)(signed_short_src[566] * 0x39cb >> 0x1f);
-  signed_short_dest[567] =
-       (signed_short_src[567] / 0x238 + (signed_short_src[567] >> 0xf)) -
-       (short)(signed_short_src[567] * 0x39b1 >> 0x1f);
-  signed_short_dest[568] =
-       (signed_short_src[568] / 0x239 + (signed_short_src[568] >> 0xf)) -
-       (short)(signed_short_src[568] * 0x3997 >> 0x1f);
-  signed_short_dest[569] =
-       (signed_short_src[569] / 0x23a + (signed_short_src[569] >> 0xf)) -
-       (short)(signed_short_src[569] * 0x397d >> 0x1f);
-  signed_short_dest[570] =
-       (signed_short_src[570] / 0x23b + (signed_short_src[570] >> 0xf)) -
-       (short)(signed_short_src[570] * 0x72c7 >> 0x1f);
-  signed_short_dest[571] =
-       (signed_short_src[571] / 0x23c + (signed_short_src[571] >> 0xf)) -
-       (short)(signed_short_src[571] * 0x7293 >> 0x1f);
-  signed_short_dest[572] =
-       (signed_short_src[572] / 0x23d + (signed_short_src[572] >> 0xf)) -
-       (short)(signed_short_src[572] * 0x393 >> 0x1f);
-  signed_short_dest[573] =
-       (signed_short_src[573] / 0x23e + (signed_short_src[573] >> 0xf)) -
-       (short)(signed_short_src[573] * 0x722d >> 0x1f);
-  signed_short_dest[574] =
-       (signed_short_src[574] / 0x23f + (signed_short_src[574] >> 0xf)) -
-       (short)(signed_short_src[574] * 0x38fd >> 0x1f);
-  signed_short_dest[575] =
-       (signed_short_src[575] / 0x240 + (signed_short_src[575] >> 0xf)) -
-       (short)(signed_short_src[575] * 0xe39 >> 0x1f);
-  signed_short_dest[576] =
-       (signed_short_src[576] / 0x241 + (signed_short_src[576] >> 0xf)) -
-       (short)(signed_short_src[576] * 0x7195 >> 0x1f);
-  signed_short_dest[577] =
-       (signed_short_src[577] / 0x242 + (signed_short_src[577] >> 0xf)) -
-       (short)(signed_short_src[577] * 0x7163 >> 0x1f);
-  signed_short_dest[578] =
-       (signed_short_src[578] / 0x243 + (signed_short_src[578] >> 0xf)) -
-       (short)(signed_short_src[578] * 0x7131 >> 0x1f);
-  signed_short_dest[579] =
-       (signed_short_src[579] / 0x244 + (signed_short_src[579] >> 0xf)) -
-       (short)(signed_short_src[579] * 0x70ff >> 0x1f);
-  signed_short_dest[580] =
-       (signed_short_src[580] / 0x245 + (signed_short_src[580] >> 0xf)) -
-       (short)(signed_short_src[580] * 0x70cd >> 0x1f);
-  signed_short_dest[581] =
-       (signed_short_src[581] / 0x246 + (signed_short_src[581] >> 0xf)) -
-       (short)(signed_short_src[581] * 0x709b >> 0x1f);
-  signed_short_dest[582] =
-       (signed_short_src[582] / 0x247 + (signed_short_src[582] >> 0xf)) -
-       (short)(signed_short_src[582] * 0x3835 >> 0x1f);
-  signed_short_dest[583] = (short)((uVar196 & 0x8000) >> 0xf) + ((short)uVar196 >> 9);
-  signed_short_dest[584] = (short)((uVar197 & 0x8000) >> 0xf) + ((short)uVar197 >> 9);
-  signed_short_dest[585] = (short)((uVar198 & 0x8000) >> 0xf) + ((short)uVar198 >> 9);
-  signed_short_dest[586] =
-       (signed_short_src[586] / 0x24b + (signed_short_src[586] >> 0xf)) -
-       (short)(signed_short_src[586] * 0x37d3 >> 0x1f);
-  signed_short_dest[587] =
-       (signed_short_src[587] / 0x24c + (signed_short_src[587] >> 0xf)) -
-       (short)(signed_short_src[587] * 0x6f75 >> 0x1f);
-  signed_short_dest[588] =
-       (signed_short_src[588] / 0x24d + (signed_short_src[588] >> 0xf)) -
-       (short)(signed_short_src[588] * 0x6f45 >> 0x1f);
-  signed_short_dest[589] =
-       (signed_short_src[589] / 0x24e + (signed_short_src[589] >> 0xf)) -
-       (short)(signed_short_src[589] * 0x1bc5 >> 0x1f);
-  signed_short_dest[590] =
-       (signed_short_src[590] / 0x24f + (signed_short_src[590] >> 0xf)) -
-       (short)(signed_short_src[590] * 0x1bb9 >> 0x1f);
-  signed_short_dest[591] =
-       (signed_short_src[591] / 0x250 + (signed_short_src[591] >> 0xf)) -
-       (short)(signed_short_src[591] * 0x1bad >> 0x1f);
-  signed_short_dest[592] = (short)((uVar199 & 0x8000) >> 0xf) + ((short)uVar199 >> 9);
-  signed_short_dest[593] =
-       (signed_short_src[593] / 0x252 + (signed_short_src[593] >> 0xf)) -
-       (short)(signed_short_src[593] * 0x6e55 >> 0x1f);
-  signed_short_dest[594] = (short)((uVar200 & 0x8000) >> 0xf) + ((short)uVar200 >> 9);
-  signed_short_dest[595] =
-       (signed_short_src[595] / 0x254 + (signed_short_src[595] >> 0xf)) -
-       (short)(signed_short_src[595] * 0x36fb >> 0x1f);
-  signed_short_dest[596] =
-       (signed_short_src[596] / 0x255 + (signed_short_src[596] >> 0xf)) -
-       (short)(signed_short_src[596] * 0x6dc7 >> 0x1f);
-  signed_short_dest[597] =
-       (signed_short_src[597] / 0x256 + (signed_short_src[597] >> 0xf)) -
-       (short)(signed_short_src[597] * 0xdb3 >> 0x1f);
-  signed_short_dest[598] =
-       (signed_short_src[598] / 599 + (signed_short_src[598] >> 0xf)) -
-       (short)(signed_short_src[598] * 0x6d69 >> 0x1f);
-  signed_short_dest[599] = (short)((uVar201 & 0x8000) >> 0xf) + ((short)uVar201 >> 9);
-  signed_short_dest[600] =
-       (signed_short_src[600] / 0x259 + (signed_short_src[600] >> 0xf)) -
-       (short)(signed_short_src[600] * 0x1b43 >> 0x1f);
-  signed_short_dest[601] = (short)((uVar202 & 0x8000) >> 0xf) + ((short)uVar202 >> 9);
-  signed_short_dest[602] =
-       (signed_short_src[602] / 0x25b + (signed_short_src[602] >> 0xf)) -
-       (short)(signed_short_src[602] * 0x6caf >> 0x1f);
-  signed_short_dest[603] =
-       (signed_short_src[603] / 0x25c + (signed_short_src[603] >> 0xf)) -
-       (short)(signed_short_src[603] * 0x6c81 >> 0x1f);
-  signed_short_dest[604] =
-       (signed_short_src[604] / 0x25d + (signed_short_src[604] >> 0xf)) -
-       (short)(signed_short_src[604] * 0x6c53 >> 0x1f);
-  signed_short_dest[605] =
-       (signed_short_src[605] / 0x25e + (signed_short_src[605] >> 0xf)) -
-       (short)(signed_short_src[605] * 0x3613 >> 0x1f);
-  signed_short_dest[606] =
-       (signed_short_src[606] / 0x25f + (signed_short_src[606] >> 0xf)) -
-       (short)(signed_short_src[606] * 0xd7f >> 0x1f);
-  signed_short_dest[607] = (short)((uVar203 & 0x8000) >> 0xf) + ((short)uVar203 >> 9);
-  signed_short_dest[608] =
-       (signed_short_src[608] / 0x261 + (signed_short_src[608] >> 0xf)) -
-       (short)(signed_short_src[608] * 0x6b9d >> 0x1f);
-  signed_short_dest[609] =
-       (signed_short_src[609] / 0x262 + (signed_short_src[609] >> 0xf)) -
-       (short)(signed_short_src[609] * 0x6b7 >> 0x1f);
-  signed_short_dest[610] =
-       (signed_short_src[610] / 0x263 + (signed_short_src[610] >> 0xf)) -
-       (short)(signed_short_src[610] * 0x6b43 >> 0x1f);
-  signed_short_dest[611] =
-       (signed_short_src[611] / 0x264 + (signed_short_src[611] >> 0xf)) -
-       (short)(signed_short_src[611] * 0x358b >> 0x1f);
-  signed_short_dest[612] = (short)((uVar204 & 0x8000) >> 0xf) + ((short)uVar204 >> 9);
-  signed_short_dest[613] =
-       (signed_short_src[613] / 0x266 + (signed_short_src[613] >> 0xf)) -
-       (short)(signed_short_src[613] * 0x6abd >> 0x1f);
-  signed_short_dest[614] = (short)((uVar205 & 0x8000) >> 0xf) + ((short)uVar205 >> 9);
-  signed_short_dest[615] =
-       (signed_short_src[615] / 0x268 + (signed_short_src[615] >> 0xf)) -
-       (short)(signed_short_src[615] * 0x1a99 >> 0x1f);
-  signed_short_dest[616] =
-       (signed_short_src[616] / 0x269 + (signed_short_src[616] >> 0xf)) -
-       (short)(signed_short_src[616] * 0xd47 >> 0x1f);
-  signed_short_dest[617] =
-       (signed_short_src[617] / 0x26a + (signed_short_src[617] >> 0xf)) -
-       (short)(signed_short_src[617] * 0x1a83 >> 0x1f);
-  signed_short_dest[618] =
-       (signed_short_src[618] / 0x26b + (signed_short_src[618] >> 0xf)) -
-       (short)(signed_short_src[618] * 0x34f >> 0x1f);
-  signed_short_dest[619] = (short)((uVar206 & 0x8000) >> 0xf) + ((short)uVar206 >> 9);
-  signed_short_dest[620] =
-       (signed_short_src[620] / 0x26d + (signed_short_src[620] >> 0xf)) -
-       (short)(signed_short_src[620] * 0x6989 >> 0x1f);
-  signed_short_dest[621] = (short)((uVar207 & 0x8000) >> 0xf) + ((short)uVar207 >> 9);
-  signed_short_dest[622] =
-       (signed_short_src[622] / 0x26f + (signed_short_src[622] >> 0xf)) -
-       (short)(signed_short_src[622] * 0x3499 >> 0x1f);
-  signed_short_dest[623] =
-       (signed_short_src[623] / 0x270 + (signed_short_src[623] >> 0xf)) -
-       (short)(signed_short_src[623] * 0x6907 >> 0x1f);
-  signed_short_dest[624] =
-       (signed_short_src[624] / 0x271 + (signed_short_src[624] >> 0xf)) -
-       (short)(signed_short_src[624] * 0x1a37 >> 0x1f);
-  signed_short_dest[625] =
-       (signed_short_src[625] / 0x272 + (signed_short_src[625] >> 0xf)) -
-       (short)(signed_short_src[625] * 0x68b1 >> 0x1f);
-  signed_short_dest[626] =
-       (signed_short_src[626] / 0x273 + (signed_short_src[626] >> 0xf)) -
-       (short)(signed_short_src[626] * 0x3443 >> 0x1f);
-  signed_short_dest[627] =
-       (signed_short_src[627] / 0x274 + (signed_short_src[627] >> 0xf)) -
-       (short)(signed_short_src[627] * 0x1a17 >> 0x1f);
-  signed_short_dest[628] =
-       (signed_short_src[628] / 0x275 + (signed_short_src[628] >> 0xf)) -
-       (short)(signed_short_src[628] * 0x6831 >> 0x1f);
-  signed_short_dest[629] =
-       (signed_short_src[629] / 0x276 + (signed_short_src[629] >> 0xf)) -
-       (short)(signed_short_src[629] * 0x6807 >> 0x1f);
-  signed_short_dest[630] =
-       (signed_short_src[630] / 0x277 + (signed_short_src[630] >> 0xf)) -
-       (short)(signed_short_src[630] * 0x67dd >> 0x1f);
-  signed_short_dest[631] =
-       (signed_short_src[631] / 0x278 + (signed_short_src[631] >> 0xf)) -
-       (short)(signed_short_src[631] * 0x67b3 >> 0x1f);
-  signed_short_dest[632] =
-       (signed_short_src[632] / 0x279 + (signed_short_src[632] >> 0xf)) -
-       (short)(signed_short_src[632] * 0x6789 >> 0x1f);
-  signed_short_dest[633] =
-       (signed_short_src[633] / 0x27a + (signed_short_src[633] >> 0xf)) -
-       (short)(signed_short_src[633] * 0x675f >> 0x1f);
-  signed_short_dest[634] =
-       (signed_short_src[634] / 0x27b + (signed_short_src[634] >> 0xf)) -
-       (short)(signed_short_src[634] * 0x6735 >> 0x1f);
-  signed_short_dest[635] =
-       (signed_short_src[635] / 0x27c + (signed_short_src[635] >> 0xf)) -
-       (short)(signed_short_src[635] * 0x19c3 >> 0x1f);
-  signed_short_dest[636] =
-       (signed_short_src[636] / 0x27d + (signed_short_src[636] >> 0xf)) -
-       (short)(signed_short_src[636] * 0x3371 >> 0x1f);
-  signed_short_dest[637] =
-       (signed_short_src[637] / 0x27e + (signed_short_src[637] >> 0xf)) -
-       (short)(signed_short_src[637] * 0x66b9 >> 0x1f);
-  signed_short_dest[638] =
-       (signed_short_src[638] / 0x27f + (signed_short_src[638] >> 0xf)) -
-       (short)(signed_short_src[638] * 0x669 >> 0x1f);
-  signed_short_dest[639] =
-       (signed_short_src[639] / 0x280 + (signed_short_src[639] >> 0xf)) -
-       (short)(signed_short_src[639] * 0x6667 >> 0x1f);
-  signed_short_dest[640] =
-       (signed_short_src[640] / 0x281 + (signed_short_src[640] >> 0xf)) -
-       (short)(signed_short_src[640] * 0x331f >> 0x1f);
-  signed_short_dest[641] =
-       (signed_short_src[641] / 0x282 + (signed_short_src[641] >> 0xf)) -
-       (short)(signed_short_src[641] * 0x6615 >> 0x1f);
-  signed_short_dest[642] = (short)((uVar208 & 0x8000) >> 0xf) + ((short)uVar208 >> 9);
-  signed_short_dest[643] =
-       (signed_short_src[643] / 0x284 + (signed_short_src[643] >> 0xf)) -
-       (short)(signed_short_src[643] * 0x1971 >> 0x1f);
-  signed_short_dest[644] = (short)((uVar209 & 0x8000) >> 0xf) + ((short)uVar209 >> 9);
-  signed_short_dest[645] =
-       (signed_short_src[645] / 0x286 + (signed_short_src[645] >> 0xf)) -
-       (short)(signed_short_src[645] * 0x6573 >> 0x1f);
-  signed_short_dest[646] =
-       (signed_short_src[646] / 0x287 + (signed_short_src[646] >> 0xf)) -
-       (short)(signed_short_src[646] * 0x654b >> 0x1f);
-  signed_short_dest[647] =
-       (signed_short_src[647] / 0x288 + (signed_short_src[647] >> 0xf)) -
-       (short)(signed_short_src[647] * 0x6523 >> 0x1f);
-  signed_short_dest[648] =
-       (signed_short_src[648] / 0x289 + (signed_short_src[648] >> 0xf)) -
-       (short)(signed_short_src[648] * 0x64fb >> 0x1f);
-  signed_short_dest[649] = (short)((uVar210 & 0x8000) >> 0xf) + ((short)uVar210 >> 9);
-  signed_short_dest[650] =
-       (signed_short_src[650] / 0x28b + (signed_short_src[650] >> 0xf)) -
-       (short)(signed_short_src[650] * 0x192b >> 0x1f);
-  signed_short_dest[651] =
-       (signed_short_src[651] / 0x28c + (signed_short_src[651] >> 0xf)) -
-       (short)(signed_short_src[651] * 0x1921 >> 0x1f);
-  signed_short_dest[652] =
-       (signed_short_src[652] / 0x28d + (signed_short_src[652] >> 0xf)) -
-       (short)(signed_short_src[652] * 0x645d >> 0x1f);
-  signed_short_dest[653] =
-       (signed_short_src[653] / 0x28e + (signed_short_src[653] >> 0xf)) -
-       (short)(signed_short_src[653] * 0x321b >> 0x1f);
-  signed_short_dest[654] = (short)((uVar211 & 0x8000) >> 0xf) + ((short)uVar211 >> 9);
-  signed_short_dest[655] = (short)((uVar212 & 0x8000) >> 0xf) + ((short)uVar212 >> 9);
-  signed_short_dest[656] = (short)((uVar213 & 0x8000) >> 0xf) + ((short)uVar213 >> 9);
-  signed_short_dest[657] =
-       (signed_short_src[657] / 0x292 + (signed_short_src[657] >> 0xf)) -
-       (short)(signed_short_src[657] * 0x31cd >> 0x1f);
-  signed_short_dest[658] =
-       (signed_short_src[658] / 0x293 + (signed_short_src[658] >> 0xf)) -
-       (short)(signed_short_src[658] * 0x6373 >> 0x1f);
-  signed_short_dest[659] = (short)((uVar214 & 0x8000) >> 0xf) + ((short)uVar214 >> 9);
-  signed_short_dest[660] =
-       (signed_short_src[660] / 0x295 + (signed_short_src[660] >> 0xf)) -
-       (short)(signed_short_src[660] * 0x3193 >> 0x1f);
-  signed_short_dest[661] = sVar12 - (sVar12 >> 0xf);
-  signed_short_dest[662] = (short)((uVar215 & 0x8000) >> 0xf) + ((short)uVar215 >> 9);
-  signed_short_dest[663] =
-       (signed_short_src[663] / 0x298 + (signed_short_src[663] >> 0xf)) -
-       (short)(signed_short_src[663] * 0x62b3 >> 0x1f);
-  signed_short_dest[664] =
-       (signed_short_src[664] / 0x299 + (signed_short_src[664] >> 0xf)) -
-       (short)(signed_short_src[664] * 0x628d >> 0x1f);
-  signed_short_dest[665] = (short)((uVar216 & 0x8000) >> 0xf) + ((short)uVar216 >> 9);
-  signed_short_dest[666] =
-       (signed_short_src[666] / 0x29b + (signed_short_src[666] >> 0xf)) -
-       (short)(signed_short_src[666] * 0x3121 >> 0x1f);
-  signed_short_dest[667] =
-       (signed_short_src[667] / 0x29c + (signed_short_src[667] >> 0xf)) -
-       (short)(signed_short_src[667] * 0x1887 >> 0x1f);
-  signed_short_dest[668] = (short)((uVar217 & 0x8000) >> 0xf) + ((short)uVar217 >> 9);
-  signed_short_dest[669] =
-       (signed_short_src[669] / 0x29e + (signed_short_src[669] >> 0xf)) -
-       (short)(signed_short_src[669] * 0x61d1 >> 0x1f);
-  signed_short_dest[670] =
-       (signed_short_src[670] / 0x29f + (signed_short_src[670] >> 0xf)) -
-       (short)(signed_short_src[670] * 0x186b >> 0x1f);
-  signed_short_dest[671] = (short)((uVar218 & 0x8000) >> 0xf) + ((short)uVar218 >> 9);
-  signed_short_dest[672] =
-       (signed_short_src[672] / 0x2a1 + (signed_short_src[672] >> 0xf)) -
-       (short)(signed_short_src[672] * 0x6161 >> 0x1f);
-  signed_short_dest[673] = (short)((uVar219 & 0x8000) >> 0xf) + ((short)uVar219 >> 9);
-  signed_short_dest[674] = (short)((uVar220 & 0x8000) >> 0xf) + ((short)uVar220 >> 9);
-  signed_short_dest[675] =
-       (signed_short_src[675] / 0x2a4 + (signed_short_src[675] >> 0xf)) -
-       (short)(signed_short_src[675] * 0x60f3 >> 0x1f);
-  signed_short_dest[676] =
-       (signed_short_src[676] / 0x2a5 + (signed_short_src[676] >> 0xf)) -
-       (short)(signed_short_src[676] * 0x3067 >> 0x1f);
-  signed_short_dest[677] = (short)((uVar221 & 0x8000) >> 0xf) + ((short)uVar221 >> 9);
-  signed_short_dest[678] =
-       (signed_short_src[678] / 0x2a7 + (signed_short_src[678] >> 0xf)) -
-       (short)(signed_short_src[678] * 0x6085 >> 0x1f);
-  signed_short_dest[679] =
-       (signed_short_src[679] / 0x2a8 + (signed_short_src[679] >> 0xf)) -
-       (short)(signed_short_src[679] * 0x6061 >> 0x1f);
-  signed_short_dest[680] = (short)((uVar222 & 0x8000) >> 0xf) + ((short)uVar222 >> 9);
-  signed_short_dest[681] = (short)((uVar223 & 0x8000) >> 0xf) + ((short)uVar223 >> 9);
-  signed_short_dest[682] = (short)((uVar224 & 0x8000) >> 0xf) + ((short)uVar224 >> 9);
-  signed_short_dest[683] = (short)((uVar225 & 0x8000) >> 0xf) + ((short)uVar225 >> 9);
-  signed_short_dest[684] =
-       (signed_short_src[684] / 0x2ad + (signed_short_src[684] >> 0xf)) -
-       (short)(signed_short_src[684] * 0x5fad >> 0x1f);
-  signed_short_dest[685] =
-       (signed_short_src[685] / 0x2ae + (signed_short_src[685] >> 0xf)) -
-       (short)(signed_short_src[685] * 0x5f89 >> 0x1f);
-  signed_short_dest[686] =
-       (signed_short_src[686] / 0x2af + (signed_short_src[686] >> 0xf)) -
-       (short)(signed_short_src[686] * 0x5f65 >> 0x1f);
-  signed_short_dest[687] =
-       (signed_short_src[687] / 0x2b0 + (signed_short_src[687] >> 0xf)) -
-       (short)(signed_short_src[687] * 0x2fa1 >> 0x1f);
-  signed_short_dest[688] = (short)((uVar226 & 0x8000) >> 0xf) + ((short)uVar226 >> 9);
-  signed_short_dest[689] =
-       (signed_short_src[689] / 0x2b2 + (signed_short_src[689] >> 0xf)) -
-       (short)(signed_short_src[689] * 0x5efb >> 0x1f);
-  signed_short_dest[690] =
-       (signed_short_src[690] / 0x2b3 + (signed_short_src[690] >> 0xf)) -
-       (short)(signed_short_src[690] * 0xbdb >> 0x1f);
-  signed_short_dest[691] =
-       (signed_short_src[691] / 0x2b4 + (signed_short_src[691] >> 0xf)) -
-       (short)(signed_short_src[691] * 0x5eb5 >> 0x1f);
-  signed_short_dest[692] =
-       (signed_short_src[692] / 0x2b5 + (signed_short_src[692] >> 0xf)) -
-       (short)(signed_short_src[692] * 0x2f49 >> 0x1f);
-  signed_short_dest[693] =
-       (signed_short_src[693] / 0x2b6 + (signed_short_src[693] >> 0xf)) -
-       (short)(signed_short_src[693] * 0x5e6f >> 0x1f);
-  signed_short_dest[694] =
-       (signed_short_src[694] / 0x2b7 + (signed_short_src[694] >> 0xf)) -
-       (short)(signed_short_src[694] * 0x1793 >> 0x1f);
-  signed_short_dest[695] = (short)((uVar227 & 0x8000) >> 0xf) + ((short)uVar227 >> 9);
-  signed_short_dest[696] =
-       (signed_short_src[696] / 0x2b9 + (signed_short_src[696] >> 0xf)) -
-       (short)(signed_short_src[696] * 0x5e07 >> 0x1f);
-  signed_short_dest[697] = (short)((uVar228 & 0x8000) >> 0xf) + ((short)uVar228 >> 9);
-  signed_short_dest[698] =
-       (signed_short_src[698] / 699 + (signed_short_src[698] >> 0xf)) -
-       (short)(signed_short_src[698] * 0x2ee1 >> 0x1f);
-  signed_short_dest[699] =
-       (signed_short_src[699] / 700 + (signed_short_src[699] >> 0xf)) -
-       (short)(signed_short_src[699] * 0x2ed >> 0x1f);
-  signed_short_dest[700] = (sVar17 >> 7) - (sVar17 >> 0xf);
-  signed_short_dest[701] = (short)((uVar229 & 0x8000) >> 0xf) + ((short)uVar229 >> 9);
-  signed_short_dest[702] = (short)((uVar230 & 0x8000) >> 0xf) + ((short)uVar230 >> 9);
-  signed_short_dest[703] =
-       (signed_short_src[703] / 0x2c0 + (signed_short_src[703] >> 0xf)) -
-       (short)(signed_short_src[703] * 0xba3 >> 0x1f);
-  signed_short_dest[704] =
-       (signed_short_src[704] / 0x2c1 + (signed_short_src[704] >> 0xf)) -
-       (short)(signed_short_src[704] * 0x2e7b >> 0x1f);
-  signed_short_dest[705] =
-       (signed_short_src[705] / 0x2c2 + (signed_short_src[705] >> 0xf)) -
-       (short)(signed_short_src[705] * 0x1735 >> 0x1f);
-  signed_short_dest[706] = (short)((uVar231 & 0x8000) >> 0xf) + ((short)uVar231 >> 9);
-  signed_short_dest[707] =
-       (signed_short_src[707] / 0x2c4 + (signed_short_src[707] >> 0xf)) -
-       (short)(signed_short_src[707] * 0x5c91 >> 0x1f);
-  signed_short_dest[708] = (short)((uVar232 & 0x8000) >> 0xf) + ((short)uVar232 >> 9);
-  signed_short_dest[709] =
-       (signed_short_src[709] / 0x2c6 + (signed_short_src[709] >> 0xf)) -
-       (short)(signed_short_src[709] * 0x2e27 >> 0x1f);
-  signed_short_dest[710] =
-       (signed_short_src[710] / 0x2c7 + (signed_short_src[710] >> 0xf)) -
-       (short)(signed_short_src[710] * 0x5c2d >> 0x1f);
-  signed_short_dest[711] =
-       (signed_short_src[711] / 0x2c8 + (signed_short_src[711] >> 0xf)) -
-       (short)(signed_short_src[711] * 0x1703 >> 0x1f);
-  signed_short_dest[712] =
-       (signed_short_src[712] / 0x2c9 + (signed_short_src[712] >> 0xf)) -
-       (short)(signed_short_src[712] * 0x5beb >> 0x1f);
-  signed_short_dest[713] =
-       (signed_short_src[713] / 0x2ca + (signed_short_src[713] >> 0xf)) -
-       (short)(signed_short_src[713] * 0x2de5 >> 0x1f);
-  signed_short_dest[714] =
-       (signed_short_src[714] / 0x2cb + (signed_short_src[714] >> 0xf)) -
-       (short)(signed_short_src[714] * 0x5ba9 >> 0x1f);
-  signed_short_dest[715] =
-       (signed_short_src[715] / 0x2cc + (signed_short_src[715] >> 0xf)) -
-       (short)(signed_short_src[715] * 0xb71 >> 0x1f);
-  signed_short_dest[716] = (short)((uVar233 & 0x8000) >> 0xf) + ((short)uVar233 >> 9);
-  signed_short_dest[717] =
-       (signed_short_src[717] / 0x2ce + (signed_short_src[717] >> 0xf)) -
-       (short)(signed_short_src[717] * 0x5b47 >> 0x1f);
-  signed_short_dest[718] = (short)((uVar234 & 0x8000) >> 0xf) + ((short)uVar234 >> 9);
-  signed_short_dest[719] =
-       (signed_short_src[719] / 0x2d0 + (signed_short_src[719] >> 0xf)) -
-       (short)(signed_short_src[719] * 0x2d83 >> 0x1f);
-  signed_short_dest[720] =
-       (signed_short_src[720] / 0x2d1 + (signed_short_src[720] >> 0xf)) -
-       (short)(signed_short_src[720] * 0x2d73 >> 0x1f);
-  signed_short_dest[721] = (short)((uVar235 & 0x8000) >> 0xf) + ((short)uVar235 >> 9);
-  signed_short_dest[722] = (short)((uVar236 & 0x8000) >> 0xf) + ((short)uVar236 >> 9);
-  signed_short_dest[723] =
-       (signed_short_src[723] / 0x2d4 + (signed_short_src[723] >> 0xf)) -
-       (short)(signed_short_src[723] * 0x5a85 >> 0x1f);
-  signed_short_dest[724] =
-       (signed_short_src[724] / 0x2d5 + (signed_short_src[724] >> 0xf)) -
-       (short)(signed_short_src[724] * 0x5a65 >> 0x1f);
-  signed_short_dest[725] = (short)((uVar237 & 0x8000) >> 0xf) + ((short)uVar237 >> 9);
-  signed_short_dest[726] =
-       (signed_short_src[726] / 0x2d7 + (signed_short_src[726] >> 0xf)) -
-       (short)(signed_short_src[726] * 0x2d13 >> 0x1f);
-  signed_short_dest[727] =
-       (signed_short_src[727] / 0x2d8 + (signed_short_src[727] >> 0xf)) -
-       (short)(signed_short_src[727] * 0x2d03 >> 0x1f);
-  signed_short_dest[728] = (short)((uVar238 & 0x8000) >> 0xf) + ((short)uVar238 >> 9);
-  signed_short_dest[729] =
-       (signed_short_src[729] / 0x2da + (signed_short_src[729] >> 0xf)) -
-       (short)(signed_short_src[729] * 0x59c7 >> 0x1f);
-  signed_short_dest[730] = (short)((uVar239 & 0x8000) >> 0xf) + ((short)uVar239 >> 9);
-  signed_short_dest[731] =
-       (signed_short_src[731] / 0x2dc + (signed_short_src[731] >> 0xf)) -
-       (short)(signed_short_src[731] * 0xb31 >> 0x1f);
-  signed_short_dest[732] =
-       (signed_short_src[732] / 0x2dd + (signed_short_src[732] >> 0xf)) -
-       (short)(signed_short_src[732] * 0x5969 >> 0x1f);
-  signed_short_dest[733] = (short)((uVar240 & 0x8000) >> 0xf) + ((short)uVar240 >> 9);
-  signed_short_dest[734] = (short)((uVar241 & 0x8000) >> 0xf) + ((short)uVar241 >> 9);
-  signed_short_dest[735] = (short)((uVar242 & 0x8000) >> 0xf) + ((short)uVar242 >> 9);
-  signed_short_dest[736] = (short)((uVar243 & 0x8000) >> 0xf) + ((short)uVar243 >> 9);
-  signed_short_dest[737] =
-       (signed_short_src[737] / 0x2e2 + (signed_short_src[737] >> 0xf)) -
-       (short)(signed_short_src[737] * 0x2c67 >> 0x1f);
-  signed_short_dest[738] =
-       (signed_short_src[738] / 0x2e3 + (signed_short_src[738] >> 0xf)) -
-       (short)(signed_short_src[738] * 0x58af >> 0x1f);
-  signed_short_dest[739] =
-       (signed_short_src[739] / 0x2e4 + (signed_short_src[739] >> 0xf)) -
-       (short)(signed_short_src[739] * 0x589 >> 0x1f);
-  signed_short_dest[740] =
-       (signed_short_src[740] / 0x2e5 + (signed_short_src[740] >> 0xf)) -
-       (short)(signed_short_src[740] * 0x2c39 >> 0x1f);
-  signed_short_dest[741] =
-       (signed_short_src[741] / 0x2e6 + (signed_short_src[741] >> 0xf)) -
-       (short)(signed_short_src[741] * 0x5853 >> 0x1f);
-  signed_short_dest[742] =
-       (signed_short_src[742] / 0x2e7 + (signed_short_src[742] >> 0xf)) -
-       (short)(signed_short_src[742] * 0x5835 >> 0x1f);
-  signed_short_dest[743] = (short)((uVar244 & 0x8000) >> 0xf) + ((short)uVar244 >> 9);
-  signed_short_dest[744] =
-       (signed_short_src[744] / 0x2e9 + (signed_short_src[744] >> 0xf)) -
-       (short)(signed_short_src[744] * 0xaff >> 0x1f);
-  signed_short_dest[745] =
-       (signed_short_src[745] / 0x2ea + (signed_short_src[745] >> 0xf)) -
-       (short)(signed_short_src[745] * 0x2bed >> 0x1f);
-  signed_short_dest[746] =
-       (signed_short_src[746] / 0x2eb + (signed_short_src[746] >> 0xf)) -
-       (short)(signed_short_src[746] * 0x15ef >> 0x1f);
-  signed_short_dest[747] =
-       (signed_short_src[747] / 0x2ec + (signed_short_src[747] >> 0xf)) -
-       (short)(signed_short_src[747] * 0x2bcf >> 0x1f);
-  signed_short_dest[748] = (sVar18 >> 1) - (sVar18 >> 0xf);
-  signed_short_dest[749] =
-       (signed_short_src[749] / 0x2ee + (signed_short_src[749] >> 0xf)) -
-       (short)(signed_short_src[749] * 0x2bb1 >> 0x1f);
-  signed_short_dest[750] =
-       (signed_short_src[750] / 0x2ef + (signed_short_src[750] >> 0xf)) -
-       (short)(signed_short_src[750] * 0x15d1 >> 0x1f);
-  signed_short_dest[751] = (short)((uVar245 & 0x8000) >> 0xf) + ((short)uVar245 >> 9);
-  signed_short_dest[752] =
-       (signed_short_src[752] / 0x2f1 + (signed_short_src[752] >> 0xf)) -
-       (short)(signed_short_src[752] * 0x5709 >> 0x1f);
-  signed_short_dest[753] =
-       (signed_short_src[753] / 0x2f2 + (signed_short_src[753] >> 0xf)) -
-       (short)(signed_short_src[753] * 0x56eb >> 0x1f);
-  signed_short_dest[754] =
-       (signed_short_src[754] / 0x2f3 + (signed_short_src[754] >> 0xf)) -
-       (short)(signed_short_src[754] * 0x2b67 >> 0x1f);
-  signed_short_dest[755] = (short)((uVar246 & 0x8000) >> 0xf) + ((short)uVar246 >> 9);
-  signed_short_dest[756] =
-       (signed_short_src[756] / 0x2f5 + (signed_short_src[756] >> 0xf)) -
-       (short)(signed_short_src[756] * 0x5693 >> 0x1f);
-  signed_short_dest[757] =
-       (signed_short_src[757] / 0x2f6 + (signed_short_src[757] >> 0xf)) -
-       (short)(signed_short_src[757] * 0x2b3b >> 0x1f);
-  signed_short_dest[758] =
-       (signed_short_src[758] / 0x2f7 + (signed_short_src[758] >> 0xf)) -
-       (short)(signed_short_src[758] * 0x5659 >> 0x1f);
-  signed_short_dest[759] = (short)((uVar247 & 0x8000) >> 0xf) + ((short)uVar247 >> 9);
-  signed_short_dest[760] = (short)((uVar248 & 0x8000) >> 0xf) + ((short)uVar248 >> 9);
-  signed_short_dest[761] =
-       (signed_short_src[761] / 0x2fa + (signed_short_src[761] >> 0xf)) -
-       (short)(signed_short_src[761] * 0x2b01 >> 0x1f);
-  signed_short_dest[762] =
-       (signed_short_src[762] / 0x2fb + (signed_short_src[762] >> 0xf)) -
-       (short)(signed_short_src[762] * 0x55e5 >> 0x1f);
-  signed_short_dest[763] =
-       (signed_short_src[763] / 0x2fc + (signed_short_src[763] >> 0xf)) -
-       (short)(signed_short_src[763] * 0xab9 >> 0x1f);
-  signed_short_dest[764] = (short)((uVar249 & 0x8000) >> 0xf) + ((short)uVar249 >> 9);
-  signed_short_dest[765] =
-       (signed_short_src[765] / 0x2fe + (signed_short_src[765] >> 0xf)) -
-       (short)(signed_short_src[765] * 0x558f >> 0x1f);
-  signed_short_dest[766] =
-       (signed_short_src[766] / 0x2ff + (signed_short_src[766] >> 0xf)) -
-       (short)(signed_short_src[766] * 0x2ab9 >> 0x1f);
-  signed_short_dest[767] =
-       (signed_short_src[767] / 0x300 + (signed_short_src[767] >> 0xf)) -
-       (short)(signed_short_src[767] * 0x2aab >> 0x1f);
-  signed_short_dest[768] =
-       (signed_short_src[768] / 0x301 + (signed_short_src[768] >> 0xf)) -
-       (short)(signed_short_src[768] * 0x5539 >> 0x1f);
-  signed_short_dest[769] =
-       (signed_short_src[769] / 0x302 + (signed_short_src[769] >> 0xf)) -
-       (short)(signed_short_src[769] * 0x551d >> 0x1f);
-  signed_short_dest[770] = (sVar19 >> 8) - (sVar19 >> 0xf);
-  signed_short_dest[771] = (short)((uVar250 & 0x8000) >> 0xf) + ((short)uVar250 >> 9);
-  signed_short_dest[772] = (short)((uVar251 & 0x8000) >> 0xf) + ((short)uVar251 >> 9);
-  signed_short_dest[773] =
-       (signed_short_src[773] / 0x306 + (signed_short_src[773] >> 0xf)) -
-       (short)(signed_short_src[773] * 0x152b >> 0x1f);
-  signed_short_dest[774] = (short)((uVar252 & 0x8000) >> 0xf) + ((short)uVar252 >> 9);
-  signed_short_dest[775] = (short)((uVar253 & 0x8000) >> 0xf) + ((short)uVar253 >> 9);
-  signed_short_dest[776] = (short)((uVar254 & 0x8000) >> 0xf) + ((short)uVar254 >> 9);
-  signed_short_dest[777] =
-       (signed_short_src[777] / 0x30a + (signed_short_src[777] >> 0xf)) -
-       (short)(signed_short_src[777] * 0x543d >> 0x1f);
-  signed_short_dest[778] =
-       (signed_short_src[778] / 0x30b + (signed_short_src[778] >> 0xf)) -
-       (short)(signed_short_src[778] * 0x5421 >> 0x1f);
-  signed_short_dest[779] = (short)((uVar255 & 0x8000) >> 0xf) + ((short)uVar255 >> 9);
-  signed_short_dest[780] =
-       (signed_short_src[780] / 0x30d + (signed_short_src[780] >> 0xf)) -
-       (short)(signed_short_src[780] * 0x29f5 >> 0x1f);
-  signed_short_dest[781] = (short)((uVar256 & 0x8000) >> 0xf) + ((short)uVar256 >> 9);
-  signed_short_dest[782] =
-       (signed_short_src[782] / 0x30f + (signed_short_src[782] >> 0xf)) -
-       (short)(signed_short_src[782] * 0x53b3 >> 0x1f);
-  signed_short_dest[783] =
-       (signed_short_src[783] / 0x310 + (signed_short_src[783] >> 0xf)) -
-       (short)(signed_short_src[783] * 0xa73 >> 0x1f);
-  signed_short_dest[784] = (short)((uVar257 & 0x8000) >> 0xf) + ((short)uVar257 >> 9);
-  signed_short_dest[785] = (short)((uVar258 & 0x8000) >> 0xf) + ((short)uVar258 >> 9);
-  signed_short_dest[786] =
-       (signed_short_src[786] / 0x313 + (signed_short_src[786] >> 0xf)) -
-       (short)(signed_short_src[786] * 0x29a3 >> 0x1f);
-  signed_short_dest[787] =
-       (signed_short_src[787] / 0x314 + (signed_short_src[787] >> 0xf)) -
-       (short)(signed_short_src[787] * 0x532b >> 0x1f);
-  signed_short_dest[788] =
-       (signed_short_src[788] / 0x315 + (signed_short_src[788] >> 0xf)) -
-       (short)(signed_short_src[788] * 0x531 >> 0x1f);
-  signed_short_dest[789] =
-       (signed_short_src[789] / 0x316 + (signed_short_src[789] >> 0xf)) -
-       (short)(signed_short_src[789] * 0x52f5 >> 0x1f);
-  signed_short_dest[790] = (short)((uVar259 & 0x8000) >> 0xf) + ((short)uVar259 >> 9);
-  signed_short_dest[791] = (sVar20 >> 2) - (sVar20 >> 0xf);
-  signed_short_dest[792] =
-       (signed_short_src[792] / 0x319 + (signed_short_src[792] >> 0xf)) -
-       (short)(signed_short_src[792] * 0x52a5 >> 0x1f);
-  signed_short_dest[793] =
-       (signed_short_src[793] / 0x31a + (signed_short_src[793] >> 0xf)) -
-       (short)(signed_short_src[793] * 0x2945 >> 0x1f);
-  signed_short_dest[794] =
-       (signed_short_src[794] / 0x31b + (signed_short_src[794] >> 0xf)) -
-       (short)(signed_short_src[794] * 0x527 >> 0x1f);
-  signed_short_dest[795] =
-       (signed_short_src[795] / 0x31c + (signed_short_src[795] >> 0xf)) -
-       (short)(signed_short_src[795] * 0x5255 >> 0x1f);
-  signed_short_dest[796] =
-       (signed_short_src[796] / 0x31d + (signed_short_src[796] >> 0xf)) -
-       (short)(signed_short_src[796] * 0x523b >> 0x1f);
-  signed_short_dest[797] = (short)((uVar260 & 0x8000) >> 0xf) + ((short)uVar260 >> 9);
-  signed_short_dest[798] =
-       (signed_short_src[798] / 799 + (signed_short_src[798] >> 0xf)) -
-       (short)(signed_short_src[798] * 0x2903 >> 0x1f);
-  signed_short_dest[799] =
-       (signed_short_src[799] / 800 + (signed_short_src[799] >> 0xf)) -
-       (short)(signed_short_src[799] * 0x147b >> 0x1f);
-  signed_short_dest[800] = (short)((uVar261 & 0x8000) >> 0xf) + ((short)uVar261 >> 9);
-  signed_short_dest[801] = (short)((uVar262 & 0x8000) >> 0xf) + ((short)uVar262 >> 9);
-  signed_short_dest[802] = (short)((uVar263 & 0x8000) >> 0xf) + ((short)uVar263 >> 9);
-  signed_short_dest[803] = (short)((uVar264 & 0x8000) >> 0xf) + ((short)uVar264 >> 9);
-  signed_short_dest[804] = (short)((uVar265 & 0x8000) >> 0xf) + ((short)uVar265 >> 9);
-  signed_short_dest[805] =
-       (signed_short_src[805] / 0x326 + (signed_short_src[805] >> 0xf)) -
-       (short)(signed_short_src[805] * 0x515 >> 0x1f);
-  signed_short_dest[806] =
-       (signed_short_src[806] / 0x327 + (signed_short_src[806] >> 0xf)) -
-       (short)(signed_short_src[806] * 0x289b >> 0x1f);
-  signed_short_dest[807] =
-       (signed_short_src[807] / 0x328 + (signed_short_src[807] >> 0xf)) -
-       (short)(signed_short_src[807] * 0x1447 >> 0x1f);
-  signed_short_dest[808] = (short)((uVar266 & 0x8000) >> 0xf) + ((short)uVar266 >> 9);
-  signed_short_dest[809] =
-       (signed_short_src[809] / 0x32a + (signed_short_src[809] >> 0xf)) -
-       (short)(signed_short_src[809] * 0x50e9 >> 0x1f);
-  signed_short_dest[810] = (short)((uVar267 & 0x8000) >> 0xf) + ((short)uVar267 >> 9);
-  signed_short_dest[811] =
-       (signed_short_src[811] / 0x32c + (signed_short_src[811] >> 0xf)) -
-       (short)(signed_short_src[811] * 0x285b >> 0x1f);
-  signed_short_dest[812] = (short)((uVar268 & 0x8000) >> 0xf) + ((short)uVar268 >> 9);
-  signed_short_dest[813] =
-       (signed_short_src[813] / 0x32e + (signed_short_src[813] >> 0xf)) -
-       (short)(signed_short_src[813] * 0x5083 >> 0x1f);
-  signed_short_dest[814] =
-       (signed_short_src[814] / 0x32f + (signed_short_src[814] >> 0xf)) -
-       (short)(signed_short_src[814] * 0x2835 >> 0x1f);
-  signed_short_dest[815] = (short)((uVar269 & 0x8000) >> 0xf) + ((short)uVar269 >> 9);
-  signed_short_dest[816] = (short)((uVar270 & 0x8000) >> 0xf) + ((short)uVar270 >> 9);
-  signed_short_dest[817] = (short)((uVar271 & 0x8000) >> 0xf) + ((short)uVar271 >> 9);
-  signed_short_dest[818] = (short)((uVar272 & 0x8000) >> 0xf) + ((short)uVar272 >> 9);
-  signed_short_dest[819] = (short)((uVar273 & 0x8000) >> 0xf) + ((short)uVar273 >> 9);
-  signed_short_dest[820] = (short)((uVar274 & 0x8000) >> 0xf) + ((short)uVar274 >> 9);
-  signed_short_dest[821] = (short)((uVar275 & 0x8000) >> 0xf) + ((short)uVar275 >> 9);
-  signed_short_dest[822] =
-       (signed_short_src[822] / 0x337 + (signed_short_src[822] >> 0xf)) -
-       (short)(signed_short_src[822] * 0x27d1 >> 0x1f);
-  signed_short_dest[823] =
-       (signed_short_src[823] / 0x338 + (signed_short_src[823] >> 0xf)) -
-       (short)(signed_short_src[823] * 0x4f89 >> 0x1f);
-  signed_short_dest[824] = (short)((uVar276 & 0x8000) >> 0xf) + ((short)uVar276 >> 9);
-  signed_short_dest[825] =
-       (signed_short_src[825] / 0x33a + (signed_short_src[825] >> 0xf)) -
-       (short)(signed_short_src[825] * 0x9eb >> 0x1f);
-  signed_short_dest[826] =
-       (signed_short_src[826] / 0x33b + (signed_short_src[826] >> 0xf)) -
-       (short)(signed_short_src[826] * 0x4f3f >> 0x1f);
-  signed_short_dest[827] = (short)((uVar277 & 0x8000) >> 0xf) + ((short)uVar277 >> 9);
-  signed_short_dest[828] =
-       (signed_short_src[828] / 0x33d + (signed_short_src[828] >> 0xf)) -
-       (short)(signed_short_src[828] * 0x2787 >> 0x1f);
-  signed_short_dest[829] =
-       (signed_short_src[829] / 0x33e + (signed_short_src[829] >> 0xf)) -
-       (short)(signed_short_src[829] * 0x277b >> 0x1f);
-  signed_short_dest[830] = (short)((uVar278 & 0x8000) >> 0xf) + ((short)uVar278 >> 9);
-  signed_short_dest[831] =
-       (signed_short_src[831] / 0x340 + (signed_short_src[831] >> 0xf)) -
-       (short)(signed_short_src[831] * 0x4ec5 >> 0x1f);
-  signed_short_dest[832] =
-       (signed_short_src[832] / 0x341 + (signed_short_src[832] >> 0xf)) -
-       (short)(signed_short_src[832] * 0x4ead >> 0x1f);
-  signed_short_dest[833] =
-       (signed_short_src[833] / 0x342 + (signed_short_src[833] >> 0xf)) -
-       (short)(signed_short_src[833] * 0x4e95 >> 0x1f);
-  signed_short_dest[834] =
-       (signed_short_src[834] / 0x343 + (signed_short_src[834] >> 0xf)) -
-       (short)(signed_short_src[834] * 0x4e7d >> 0x1f);
-  signed_short_dest[835] =
-       (signed_short_src[835] / 0x344 + (signed_short_src[835] >> 0xf)) -
-       (short)(signed_short_src[835] * 0x4e65 >> 0x1f);
-  signed_short_dest[836] =
-       (signed_short_src[836] / 0x345 + (signed_short_src[836] >> 0xf)) -
-       (short)(signed_short_src[836] * 0x4e4d >> 0x1f);
-  signed_short_dest[837] =
-       (signed_short_src[837] / 0x346 + (signed_short_src[837] >> 0xf)) -
-       (short)(signed_short_src[837] * 0x4e35 >> 0x1f);
-  signed_short_dest[838] =
-       (signed_short_src[838] / 0x347 + (signed_short_src[838] >> 0xf)) -
-       (short)(signed_short_src[838] * 0x4e1d >> 0x1f);
-  signed_short_dest[839] =
-       (signed_short_src[839] / 0x348 + (signed_short_src[839] >> 0xf)) -
-       (short)(signed_short_src[839] * 0x4e05 >> 0x1f);
-  signed_short_dest[840] = (short)((uVar279 & 0x8000) >> 0xf) + ((short)uVar279 >> 9);
-  signed_short_dest[841] =
-       (signed_short_src[841] / 0x34a + (signed_short_src[841] >> 0xf)) -
-       (short)(signed_short_src[841] * 0x26eb >> 0x1f);
-  signed_short_dest[842] =
-       (signed_short_src[842] / 0x34b + (signed_short_src[842] >> 0xf)) -
-       (short)(signed_short_src[842] * 0x26df >> 0x1f);
-  signed_short_dest[843] = (short)((uVar280 & 0x8000) >> 0xf) + ((short)uVar280 >> 9);
-  signed_short_dest[844] =
-       (signed_short_src[844] / 0x34d + (signed_short_src[844] >> 0xf)) -
-       (short)(signed_short_src[844] * 0x4d8f >> 0x1f);
-  signed_short_dest[845] = (short)((uVar281 & 0x8000) >> 0xf) + ((short)uVar281 >> 9);
-  signed_short_dest[846] = (sVar21 >> 3) - (sVar21 >> 0xf);
-  signed_short_dest[847] =
-       (signed_short_src[847] / 0x350 + (signed_short_src[847] >> 0xf)) -
-       (short)(signed_short_src[847] * 0x4d49 >> 0x1f);
-  signed_short_dest[848] = (short)((uVar282 & 0x8000) >> 0xf) + ((short)uVar282 >> 9);
-  signed_short_dest[849] =
-       (signed_short_src[849] / 0x352 + (signed_short_src[849] >> 0xf)) -
-       (short)(signed_short_src[849] * 0x268d >> 0x1f);
-  signed_short_dest[850] =
-       (signed_short_src[850] / 0x353 + (signed_short_src[850] >> 0xf)) -
-       (short)(signed_short_src[850] * 0x4d03 >> 0x1f);
-  signed_short_dest[851] =
-       (signed_short_src[851] / 0x354 + (signed_short_src[851] >> 0xf)) -
-       (short)(signed_short_src[851] * 0x133b >> 0x1f);
-  signed_short_dest[852] =
-       (signed_short_src[852] / 0x355 + (signed_short_src[852] >> 0xf)) -
-       (short)(signed_short_src[852] * 0x4cd5 >> 0x1f);
-  signed_short_dest[853] =
-       (signed_short_src[853] / 0x356 + (signed_short_src[853] >> 0xf)) -
-       (short)(signed_short_src[853] * 0x265f >> 0x1f);
-  signed_short_dest[854] =
-       (signed_short_src[854] / 0x357 + (signed_short_src[854] >> 0xf)) -
-       (short)(signed_short_src[854] * 0x4ca7 >> 0x1f);
-  signed_short_dest[855] =
-       (signed_short_src[855] / 0x358 + (signed_short_src[855] >> 0xf)) -
-       (short)(signed_short_src[855] * 0x4c9 >> 0x1f);
-  signed_short_dest[856] =
-       (signed_short_src[856] / 0x359 + (signed_short_src[856] >> 0xf)) -
-       (short)(signed_short_src[856] * 0x4c79 >> 0x1f);
-  signed_short_dest[857] =
-       (signed_short_src[857] / 0x35a + (signed_short_src[857] >> 0xf)) -
-       (short)(signed_short_src[857] * 0x2631 >> 0x1f);
-  signed_short_dest[858] = (short)((uVar283 & 0x8000) >> 0xf) + ((short)uVar283 >> 9);
-  signed_short_dest[859] = (short)((uVar284 & 0x8000) >> 0xf) + ((short)uVar284 >> 9);
-  signed_short_dest[860] =
-       (signed_short_src[860] / 0x35d + (signed_short_src[860] >> 0xf)) -
-       (short)(signed_short_src[860] * 0x260f >> 0x1f);
-  signed_short_dest[861] = (short)((uVar285 & 0x8000) >> 0xf) + ((short)uVar285 >> 9);
-  signed_short_dest[862] =
-       (signed_short_src[862] / 0x35f + (signed_short_src[862] >> 0xf)) -
-       (short)(signed_short_src[862] * 0x4bf1 >> 0x1f);
-  signed_short_dest[863] = (short)((uVar286 & 0x8000) >> 0xf) + ((short)uVar286 >> 9);
-  signed_short_dest[864] =
-       (signed_short_src[864] / 0x361 + (signed_short_src[864] >> 0xf)) -
-       (short)(signed_short_src[864] * 0x12f1 >> 0x1f);
-  signed_short_dest[865] = (short)((uVar287 & 0x8000) >> 0xf) + ((short)uVar287 >> 9);
-  signed_short_dest[866] =
-       (signed_short_src[866] / 0x363 + (signed_short_src[866] >> 0xf)) -
-       (short)(signed_short_src[866] * 0x4b97 >> 0x1f);
-  signed_short_dest[867] =
-       (signed_short_src[867] / 0x364 + (signed_short_src[867] >> 0xf)) -
-       (short)(signed_short_src[867] * 0x4b81 >> 0x1f);
-  signed_short_dest[868] = (short)((uVar288 & 0x8000) >> 0xf) + ((short)uVar288 >> 9);
-  signed_short_dest[869] = (short)((uVar289 & 0x8000) >> 0xf) + ((short)uVar289 >> 9);
-  signed_short_dest[870] = (short)((uVar290 & 0x8000) >> 0xf) + ((short)uVar290 >> 9);
-  signed_short_dest[871] =
-       (signed_short_src[871] / 0x368 + (signed_short_src[871] >> 0xf)) -
-       (short)(signed_short_src[871] * 0x965 >> 0x1f);
-  signed_short_dest[872] =
-       (signed_short_src[872] / 0x369 + (signed_short_src[872] >> 0xf)) -
-       (short)(signed_short_src[872] * 0x2589 >> 0x1f);
-  signed_short_dest[873] =
-       (signed_short_src[873] / 0x36a + (signed_short_src[873] >> 0xf)) -
-       (short)(signed_short_src[873] * 0x12bf >> 0x1f);
-  signed_short_dest[874] =
-       (signed_short_src[874] / 0x36b + (signed_short_src[874] >> 0xf)) -
-       (short)(signed_short_src[874] * 0x2573 >> 0x1f);
-  signed_short_dest[875] = (short)((uVar291 & 0x8000) >> 0xf) + ((short)uVar291 >> 9);
-  signed_short_dest[876] = (short)((uVar292 & 0x8000) >> 0xf) + ((short)uVar292 >> 9);
-  signed_short_dest[877] =
-       (signed_short_src[877] / 0x36e + (signed_short_src[877] >> 0xf)) -
-       (short)(signed_short_src[877] * 0x4aa5 >> 0x1f);
-  signed_short_dest[878] =
-       (signed_short_src[878] / 0x36f + (signed_short_src[878] >> 0xf)) -
-       (short)(signed_short_src[878] * 0x4a8f >> 0x1f);
-  signed_short_dest[879] = (short)((uVar293 & 0x8000) >> 0xf) + ((short)uVar293 >> 9);
-  signed_short_dest[880] = (short)((uVar294 & 0x8000) >> 0xf) + ((short)uVar294 >> 9);
-  signed_short_dest[881] =
-       (signed_short_src[881] / 0x372 + (signed_short_src[881] >> 0xf)) -
-       (short)(signed_short_src[881] * 0x2527 >> 0x1f);
-  signed_short_dest[882] = (short)((uVar295 & 0x8000) >> 0xf) + ((short)uVar295 >> 9);
-  signed_short_dest[883] =
-       (signed_short_src[883] / 0x374 + (signed_short_src[883] >> 0xf)) -
-       (short)(signed_short_src[883] * 0x4a23 >> 0x1f);
-  signed_short_dest[884] = (short)((uVar296 & 0x8000) >> 0xf) + ((short)uVar296 >> 9);
-  signed_short_dest[885] =
-       (signed_short_src[885] / 0x376 + (signed_short_src[885] >> 0xf)) -
-       (short)(signed_short_src[885] * 0x93f >> 0x1f);
-  signed_short_dest[886] =
-       (signed_short_src[886] / 0x377 + (signed_short_src[886] >> 0xf)) -
-       (short)(signed_short_src[886] * 0x49e3 >> 0x1f);
-  signed_short_dest[887] = (short)((uVar297 & 0x8000) >> 0xf) + ((short)uVar297 >> 9);
-  signed_short_dest[888] = (short)((uVar298 & 0x8000) >> 0xf) + ((short)uVar298 >> 9);
-  signed_short_dest[889] =
-       (signed_short_src[889] / 0x37a + (signed_short_src[889] >> 0xf)) -
-       (short)(signed_short_src[889] * 0x49a3 >> 0x1f);
-  signed_short_dest[890] =
-       (signed_short_src[890] / 0x37b + (signed_short_src[890] >> 0xf)) -
-       (short)(signed_short_src[890] * 0x24c7 >> 0x1f);
-  signed_short_dest[891] =
-       (signed_short_src[891] / 0x37c + (signed_short_src[891] >> 0xf)) -
-       (short)(signed_short_src[891] * 0x4979 >> 0x1f);
-  signed_short_dest[892] =
-       (signed_short_src[892] / 0x37d + (signed_short_src[892] >> 0xf)) -
-       (short)(signed_short_src[892] * 0x1259 >> 0x1f);
-  signed_short_dest[893] =
-       (signed_short_src[893] / 0x37e + (signed_short_src[893] >> 0xf)) -
-       (short)(signed_short_src[893] * 0x494f >> 0x1f);
-  signed_short_dest[894] =
-       (signed_short_src[894] / 0x37f + (signed_short_src[894] >> 0xf)) -
-       (short)(signed_short_src[894] * 0x249d >> 0x1f);
-  signed_short_dest[895] =
-       (signed_short_src[895] / 0x380 + (signed_short_src[895] >> 0xf)) -
-       (short)(signed_short_src[895] * 0x4925 >> 0x1f);
-  signed_short_dest[896] =
-       (signed_short_src[896] / 0x381 + (signed_short_src[896] >> 0xf)) -
-       (short)(signed_short_src[896] * 0x491 >> 0x1f);
-  signed_short_dest[897] =
-       (signed_short_src[897] / 0x382 + (signed_short_src[897] >> 0xf)) -
-       (short)(signed_short_src[897] * 0x48fb >> 0x1f);
-  signed_short_dest[898] = (short)((uVar299 & 0x8000) >> 0xf) + ((short)uVar299 >> 9);
-  signed_short_dest[899] = (short)((uVar300 & 0x8000) >> 0xf) + ((short)uVar300 >> 9);
-  signed_short_dest[900] =
-       (signed_short_src[900] / 0x385 + (signed_short_src[900] >> 0xf)) -
-       (short)(signed_short_src[900] * 0x48bd >> 0x1f);
-  signed_short_dest[901] = (short)((uVar301 & 0x8000) >> 0xf) + ((short)uVar301 >> 9);
-  signed_short_dest[902] = (short)((uVar302 & 0x8000) >> 0xf) + ((short)uVar302 >> 9);
-  signed_short_dest[903] =
-       (signed_short_src[903] / 0x388 + (signed_short_src[903] >> 0xf)) -
-       (short)(signed_short_src[903] * 0x487f >> 0x1f);
-  signed_short_dest[904] = (short)((uVar303 & 0x8000) >> 0xf) + ((short)uVar303 >> 9);
-  signed_short_dest[905] =
-       (signed_short_src[905] / 0x38a + (signed_short_src[905] >> 0xf)) -
-       (short)(signed_short_src[905] * 0x242b >> 0x1f);
-  signed_short_dest[906] =
-       (signed_short_src[906] / 0x38b + (signed_short_src[906] >> 0xf)) -
-       (short)(signed_short_src[906] * 0x2421 >> 0x1f);
-  signed_short_dest[907] = (short)((uVar304 & 0x8000) >> 0xf) + ((short)uVar304 >> 9);
-  signed_short_dest[908] =
-       (signed_short_src[908] / 0x38d + (signed_short_src[908] >> 0xf)) -
-       (short)(signed_short_src[908] * 0x4819 >> 0x1f);
-  signed_short_dest[909] =
-       (signed_short_src[909] / 0x38e + (signed_short_src[909] >> 0xf)) -
-       (short)(signed_short_src[909] * 0x4805 >> 0x1f);
-  signed_short_dest[910] = (short)((uVar305 & 0x8000) >> 0xf) + ((short)uVar305 >> 9);
-  signed_short_dest[911] = (short)((uVar306 & 0x8000) >> 0xf) + ((short)uVar306 >> 9);
-  signed_short_dest[912] =
-       (signed_short_src[912] / 0x391 + (signed_short_src[912] >> 0xf)) -
-       (short)(signed_short_src[912] * 0x8f9 >> 0x1f);
-  signed_short_dest[913] =
-       (signed_short_src[913] / 0x392 + (signed_short_src[913] >> 0xf)) -
-       (short)(signed_short_src[913] * 0x11ed >> 0x1f);
-  signed_short_dest[914] = (sVar22 >> 3) - (sVar22 >> 0xf);
-  signed_short_dest[915] =
-       (signed_short_src[915] / 0x394 + (signed_short_src[915] >> 0xf)) -
-       (short)(signed_short_src[915] * 0x11e3 >> 0x1f);
-  signed_short_dest[916] =
-       (signed_short_src[916] / 0x395 + (signed_short_src[916] >> 0xf)) -
-       (short)(signed_short_src[916] * 0x8ef >> 0x1f);
-  signed_short_dest[917] =
-       (signed_short_src[917] / 0x396 + (signed_short_src[917] >> 0xf)) -
-       (short)(signed_short_src[917] * 0x11d9 >> 0x1f);
-  signed_short_dest[918] =
-       (signed_short_src[918] / 0x397 + (signed_short_src[918] >> 0xf)) -
-       (short)(signed_short_src[918] * 0x475 >> 0x1f);
-  signed_short_dest[919] = (short)((uVar307 & 0x8000) >> 0xf) + ((short)uVar307 >> 9);
-  signed_short_dest[920] = (short)((uVar308 & 0x8000) >> 0xf) + ((short)uVar308 >> 9);
-  signed_short_dest[921] =
-       (signed_short_src[921] / 0x39a + (signed_short_src[921] >> 0xf)) -
-       (short)(signed_short_src[921] * 0x4715 >> 0x1f);
-  signed_short_dest[922] =
-       (signed_short_src[922] / 0x39b + (signed_short_src[922] >> 0xf)) -
-       (short)(signed_short_src[922] * 0x4701 >> 0x1f);
-  signed_short_dest[923] = (short)((uVar309 & 0x8000) >> 0xf) + ((short)uVar309 >> 9);
-  signed_short_dest[924] =
-       (signed_short_src[924] / 0x39d + (signed_short_src[924] >> 0xf)) -
-       (short)(signed_short_src[924] * 0x236d >> 0x1f);
-  signed_short_dest[925] =
-       (signed_short_src[925] / 0x39e + (signed_short_src[925] >> 0xf)) -
-       (short)(signed_short_src[925] * 0x2363 >> 0x1f);
-  signed_short_dest[926] = (short)((uVar310 & 0x8000) >> 0xf) + ((short)uVar310 >> 9);
-  signed_short_dest[927] =
-       (signed_short_src[927] / 0x3a0 + (signed_short_src[927] >> 0xf)) -
-       (short)(signed_short_src[927] * 0x469f >> 0x1f);
-  signed_short_dest[928] = (short)((uVar311 & 0x8000) >> 0xf) + ((short)uVar311 >> 9);
-  signed_short_dest[929] = (short)((uVar312 & 0x8000) >> 0xf) + ((short)uVar312 >> 9);
-  signed_short_dest[930] =
-       (signed_short_src[930] / 0x3a3 + (signed_short_src[930] >> 0xf)) -
-       (short)(signed_short_src[930] * 0x4665 >> 0x1f);
-  signed_short_dest[931] = (short)((uVar313 & 0x8000) >> 0xf) + ((short)uVar313 >> 9);
-  signed_short_dest[932] = (short)((uVar314 & 0x8000) >> 0xf) + ((short)uVar314 >> 9);
-  signed_short_dest[933] =
-       (signed_short_src[933] / 0x3a6 + (signed_short_src[933] >> 0xf)) -
-       (short)(signed_short_src[933] * 0x462b >> 0x1f);
-  signed_short_dest[934] =
-       (signed_short_src[934] / 0x3a7 + (signed_short_src[934] >> 0xf)) -
-       (short)(signed_short_src[934] * 0x8c3 >> 0x1f);
-  signed_short_dest[935] = (short)((uVar315 & 0x8000) >> 0xf) + ((short)uVar315 >> 9);
-  signed_short_dest[936] = (short)((uVar316 & 0x8000) >> 0xf) + ((short)uVar316 >> 9);
-  signed_short_dest[937] = (short)((uVar317 & 0x8000) >> 0xf) + ((short)uVar317 >> 9);
-  signed_short_dest[938] = (short)((uVar318 & 0x8000) >> 0xf) + ((short)uVar318 >> 9);
-  signed_short_dest[939] = (short)((uVar319 & 0x8000) >> 0xf) + ((short)uVar319 >> 9);
-  signed_short_dest[940] = (short)((uVar320 & 0x8000) >> 0xf) + ((short)uVar320 >> 9);
-  signed_short_dest[941] = (short)((uVar321 & 0x8000) >> 0xf) + ((short)uVar321 >> 9);
-  signed_short_dest[942] = (short)((uVar322 & 0x8000) >> 0xf) + ((short)uVar322 >> 9);
-  signed_short_dest[943] =
-       (signed_short_src[943] / 0x3b0 + (signed_short_src[943] >> 0xf)) -
-       (short)(signed_short_src[943] * 0x456d >> 0x1f);
-  signed_short_dest[944] =
-       (signed_short_src[944] / 0x3b1 + (signed_short_src[944] >> 0xf)) -
-       (short)(signed_short_src[944] * 0x22ad >> 0x1f);
-  signed_short_dest[945] =
-       (signed_short_src[945] / 0x3b2 + (signed_short_src[945] >> 0xf)) -
-       (short)(signed_short_src[945] * 0x4547 >> 0x1f);
-  signed_short_dest[946] = (short)((uVar323 & 0x8000) >> 0xf) + ((short)uVar323 >> 9);
-  signed_short_dest[947] =
-       (signed_short_src[947] / 0x3b4 + (signed_short_src[947] >> 0xf)) -
-       (short)(signed_short_src[947] * 0x2291 >> 0x1f);
-  signed_short_dest[948] =
-       (signed_short_src[948] / 0x3b5 + (signed_short_src[948] >> 0xf)) -
-       (short)(signed_short_src[948] * 0x450f >> 0x1f);
-  signed_short_dest[949] = (short)((uVar324 & 0x8000) >> 0xf) + ((short)uVar324 >> 9);
-  signed_short_dest[950] =
-       (signed_short_src[950] / 0x3b7 + (signed_short_src[950] >> 0xf)) -
-       (short)(signed_short_src[950] * 0x2275 >> 0x1f);
-  signed_short_dest[951] = (short)((uVar325 & 0x8000) >> 0xf) + ((short)uVar325 >> 9);
-  signed_short_dest[952] =
-       (signed_short_src[952] / 0x3b9 + (signed_short_src[952] >> 0xf)) -
-       (short)(signed_short_src[952] * 0x44c5 >> 0x1f);
-  signed_short_dest[953] = (short)((uVar326 & 0x8000) >> 0xf) + ((short)uVar326 >> 9);
-  signed_short_dest[954] = (sVar23 >> 3) - (sVar23 >> 0xf);
-  signed_short_dest[955] = (short)((uVar327 & 0x8000) >> 0xf) + ((short)uVar327 >> 9);
-  signed_short_dest[956] = (short)((uVar328 & 0x8000) >> 0xf) + ((short)uVar328 >> 9);
-  signed_short_dest[957] =
-       (signed_short_src[957] / 0x3be + (signed_short_src[957] >> 0xf)) -
-       (short)(signed_short_src[957] * 0x4469 >> 0x1f);
-  signed_short_dest[958] =
-       (signed_short_src[958] / 0x3bf + (signed_short_src[958] >> 0xf)) -
-       (short)(signed_short_src[958] * 0x4457 >> 0x1f);
-  signed_short_dest[959] = (short)((uVar329 & 0x8000) >> 0xf) + ((short)uVar329 >> 9);
-  signed_short_dest[960] = (short)((uVar330 & 0x8000) >> 0xf) + ((short)uVar330 >> 9);
-  signed_short_dest[961] = (sVar24 >> 3) - (sVar24 >> 0xf);
-  signed_short_dest[962] =
-       (signed_short_src[962] / 0x3c3 + (signed_short_src[962] >> 0xf)) -
-       (short)(signed_short_src[962] * 0x2207 >> 0x1f);
-  signed_short_dest[963] =
-       (signed_short_src[963] / 0x3c4 + (signed_short_src[963] >> 0xf)) -
-       (short)(signed_short_src[963] * 0x10ff >> 0x1f);
-  signed_short_dest[964] =
-       (signed_short_src[964] / 0x3c5 + (signed_short_src[964] >> 0xf)) -
-       (short)(signed_short_src[964] * 0x21f5 >> 0x1f);
-  signed_short_dest[965] =
-       (signed_short_src[965] / 0x3c6 + (signed_short_src[965] >> 0xf)) -
-       (short)(signed_short_src[965] * 0x87b >> 0x1f);
-  signed_short_dest[966] =
-       (signed_short_src[966] / 0x3c7 + (signed_short_src[966] >> 0xf)) -
-       (short)(signed_short_src[966] * 0x21e3 >> 0x1f);
-  signed_short_dest[967] =
-       (signed_short_src[967] / 0x3c8 + (signed_short_src[967] >> 0xf)) -
-       (short)(signed_short_src[967] * 0x10ed >> 0x1f);
-  signed_short_dest[968] =
-       (signed_short_src[968] / 0x3c9 + (signed_short_src[968] >> 0xf)) -
-       (short)(signed_short_src[968] * 0x21d1 >> 0x1f);
-  signed_short_dest[969] = (short)((uVar331 & 0x8000) >> 0xf) + ((short)uVar331 >> 9);
-  signed_short_dest[970] = (short)((uVar332 & 0x8000) >> 0xf) + ((short)uVar332 >> 9);
-  signed_short_dest[971] =
-       (signed_short_src[971] / 0x3cc + (signed_short_src[971] >> 0xf)) -
-       (short)(signed_short_src[971] * 0x436d >> 0x1f);
-  signed_short_dest[972] =
-       (signed_short_src[972] / 0x3cd + (signed_short_src[972] >> 0xf)) -
-       (short)(signed_short_src[972] * 0x435b >> 0x1f);
-  signed_short_dest[973] = (short)((uVar333 & 0x8000) >> 0xf) + ((short)uVar333 >> 9);
-  signed_short_dest[974] = (short)((uVar334 & 0x8000) >> 0xf) + ((short)uVar334 >> 9);
-  signed_short_dest[975] =
-       (signed_short_src[975] / 0x3d0 + (signed_short_src[975] >> 0xf)) -
-       (short)(signed_short_src[975] * 0x2193 >> 0x1f);
-  signed_short_dest[976] = (short)((uVar335 & 0x8000) >> 0xf) + ((short)uVar335 >> 9);
-  signed_short_dest[977] =
-       (signed_short_src[977] / 0x3d2 + (signed_short_src[977] >> 0xf)) -
-       (short)(signed_short_src[977] * 0x4303 >> 0x1f);
-  signed_short_dest[978] = (short)((uVar336 & 0x8000) >> 0xf) + ((short)uVar336 >> 9);
-  signed_short_dest[979] = (sVar25 >> 3) - (sVar25 >> 0xf);
-  signed_short_dest[980] = (short)((uVar337 & 0x8000) >> 0xf) + ((short)uVar337 >> 9);
-  signed_short_dest[981] =
-       (signed_short_src[981] / 0x3d6 + (signed_short_src[981] >> 0xf)) -
-       (short)(signed_short_src[981] * 0x42bd >> 0x1f);
-  signed_short_dest[982] = (short)((uVar338 & 0x8000) >> 0xf) + ((short)uVar338 >> 9);
-  signed_short_dest[983] = (short)((uVar339 & 0x8000) >> 0xf) + ((short)uVar339 >> 9);
-  signed_short_dest[984] =
-       (signed_short_src[984] / 0x3d9 + (signed_short_src[984] >> 0xf)) -
-       (short)(signed_short_src[984] * 0x4289 >> 0x1f);
-  signed_short_dest[985] = (short)((uVar340 & 0x8000) >> 0xf) + ((short)uVar340 >> 9);
-  signed_short_dest[986] = (short)((uVar341 & 0x8000) >> 0xf) + ((short)uVar341 >> 9);
-  signed_short_dest[987] =
-       (signed_short_src[987] / 0x3dc + (signed_short_src[987] >> 0xf)) -
-       (short)(signed_short_src[987] * 0x4255 >> 0x1f);
-  signed_short_dest[988] =
-       (signed_short_src[988] / 0x3dd + (signed_short_src[988] >> 0xf)) -
-       (short)(signed_short_src[988] * 0x1091 >> 0x1f);
-  signed_short_dest[989] =
-       (signed_short_src[989] / 0x3de + (signed_short_src[989] >> 0xf)) -
-       (short)(signed_short_src[989] * 0x4233 >> 0x1f);
-  signed_short_dest[990] =
-       (signed_short_src[990] / 0x3df + (signed_short_src[990] >> 0xf)) -
-       (short)(signed_short_src[990] * 0x2111 >> 0x1f);
-  signed_short_dest[991] =
-       (signed_short_src[991] / 0x3e0 + (signed_short_src[991] >> 0xf)) -
-       (short)(signed_short_src[991] * 0x4211 >> 0x1f);
-  signed_short_dest[992] = sVar13 - (sVar13 >> 0xf);
-  signed_short_dest[993] =
-       (signed_short_src[993] / 0x3e2 + (signed_short_src[993] >> 0xf)) -
-       (short)(signed_short_src[993] * 0x41ef >> 0x1f);
-  signed_short_dest[994] =
-       (signed_short_src[994] / 0x3e3 + (signed_short_src[994] >> 0xf)) -
-       (short)(signed_short_src[994] * 0x20ef >> 0x1f);
-  signed_short_dest[995] =
-       (signed_short_src[995] / 0x3e4 + (signed_short_src[995] >> 0xf)) -
-       (short)(signed_short_src[995] * 0x41cd >> 0x1f);
-  signed_short_dest[996] =
-       (signed_short_src[996] / 0x3e5 + (signed_short_src[996] >> 0xf)) -
-       (short)(signed_short_src[996] * 0x106f >> 0x1f);
-  signed_short_dest[997] =
-       (signed_short_src[997] / 0x3e6 + (signed_short_src[997] >> 0xf)) -
-       (short)(signed_short_src[997] * 0x41ab >> 0x1f);
-  signed_short_dest[998] = (short)((uVar342 & 0x8000) >> 0xf) + ((short)uVar342 >> 9);
-  signed_short_dest[999] = (short)((uVar343 & 0x8000) >> 0xf) + ((short)uVar343 >> 9);
-  signed_short_dest[1000] = (short)((uVar344 & 0x8000) >> 0xf) + ((short)uVar344 >> 9);
-  signed_short_dest[1001] =
-       (signed_short_src[1001] / 0x3ea + (signed_short_src[1001] >> 0xf)) -
-       (short)(signed_short_src[1001] * 0x82d >> 0x1f);
-  signed_short_dest[1002] = (short)((uVar345 & 0x8000) >> 0xf) + ((short)uVar345 >> 9);
-  signed_short_dest[1003] = (short)((uVar346 & 0x8000) >> 0xf) + ((short)uVar346 >> 9);
-  signed_short_dest[1004] =
-       (signed_short_src[1004] / 0x3ed + (signed_short_src[1004] >> 0xf)) -
-       (short)(signed_short_src[1004] * 0x209b >> 0x1f);
-  signed_short_dest[1005] = (short)((uVar347 & 0x8000) >> 0xf) + ((short)uVar347 >> 9);
-  signed_short_dest[1006] =
-       (signed_short_src[1006] / 0x3ef + (signed_short_src[1006] >> 0xf)) -
-       (short)(signed_short_src[1006] * 0x4115 >> 0x1f);
-  signed_short_dest[1007] = (short)((uVar348 & 0x8000) >> 0xf) + ((short)uVar348 >> 9);
-  signed_short_dest[1008] =
-       (signed_short_src[1008] / 0x3f1 + (signed_short_src[1008] >> 0xf)) -
-       (short)(signed_short_src[1008] * 0x103d >> 0x1f);
-  signed_short_dest[1009] = (short)((uVar349 & 0x8000) >> 0xf) + ((short)uVar349 >> 9);
-  signed_short_dest[1010] =
-       (signed_short_src[1010] / 0x3f3 + (signed_short_src[1010] >> 0xf)) -
-       (short)(signed_short_src[1010] * 0x40d3 >> 0x1f);
-  signed_short_dest[1011] = (short)((uVar350 & 0x8000) >> 0xf) + ((short)uVar350 >> 9);
-  signed_short_dest[1012] =
-       (signed_short_src[1012] / 0x3f5 + (signed_short_src[1012] >> 0xf)) -
-       (short)(signed_short_src[1012] * 0x2059 >> 0x1f);
-  signed_short_dest[1013] =
-       (signed_short_src[1013] / 0x3f6 + (signed_short_src[1013] >> 0xf)) -
-       (short)(signed_short_src[1013] * 0x2051 >> 0x1f);
-  signed_short_dest[1014] = (short)((uVar351 & 0x8000) >> 0xf) + ((short)uVar351 >> 9);
-  signed_short_dest[1015] = (short)((uVar352 & 0x8000) >> 0xf) + ((short)uVar352 >> 9);
-  signed_short_dest[1016] =
-       (signed_short_src[1016] / 0x3f9 + (signed_short_src[1016] >> 0xf)) -
-       (short)(signed_short_src[1016] * 0x4071 >> 0x1f);
-  signed_short_dest[1017] =
-       (signed_short_src[1017] / 0x3fa + (signed_short_src[1017] >> 0xf)) -
-       (short)(signed_short_src[1017] * 0x4061 >> 0x1f);
-  signed_short_dest[1018] = (short)((uVar353 & 0x8000) >> 0xf) + ((short)uVar353 >> 9);
-  signed_short_dest[1019] = (short)((uVar354 & 0x8000) >> 0xf) + ((short)uVar354 >> 9);
-  signed_short_dest[1020] = (short)((uVar355 & 0x8000) >> 0xf) + ((short)uVar355 >> 9);
-  signed_short_dest[1021] = (short)((uVar356 & 0x8000) >> 0xf) + ((short)uVar356 >> 9);
-  signed_short_dest[1022] = (short)((uVar357 & 0x8000) >> 0xf) + ((short)uVar357 >> 9);
+  signed_short_dest[512] = signed_short_src[512] / 0x201;
+  signed_short_dest[513] = signed_short_src[513] / 0x202;
+  signed_short_dest[514] = signed_short_src[514] / 0x203;
+  signed_short_dest[515] = signed_short_src[515] / 0x204;
+  signed_short_dest[516] = signed_short_src[516] / 0x205;
+  signed_short_dest[517] = signed_short_src[517] / 0x206;
+  signed_short_dest[518] = signed_short_src[518] / 0x207;
+  signed_short_dest[519] = signed_short_src[519] / 0x208;
+  signed_short_dest[520] = signed_short_src[520] / 0x209;
+  signed_short_dest[521] = signed_short_src[521] / 0x20a;
+  signed_short_dest[522] = signed_short_src[522] / 0x20b;
+  signed_short_dest[523] = signed_short_src[523] / 0x20c;
+  signed_short_dest[524] = signed_short_src[524] / 0x20d;
+  signed_short_dest[525] = signed_short_src[525] / 0x20e;
+  signed_short_dest[526] = signed_short_src[526] / 0x20f;
+  signed_short_dest[527] = signed_short_src[527] / 0x210;
+  signed_short_dest[528] = signed_short_src[528] / 0x211;
+  signed_short_dest[529] = signed_short_src[529] / 0x212;
+  signed_short_dest[530] = signed_short_src[530] / 0x213;
+  signed_short_dest[531] = signed_short_src[531] / 0x214;
+  signed_short_dest[532] = signed_short_src[532] / 0x215;
+  uVar1 = ((uint)(signed_short_src[533] * -0xa8b) >> 0x10) + (int)signed_short_src[533];
+  signed_short_dest[533] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[534] =
+       (short)(signed_short_src[534] * 0xf5 >> 0x11) - (signed_short_src[534] >> 0xf);
+  signed_short_dest[535] = signed_short_src[535] / 0x218;
+  signed_short_dest[536] = signed_short_src[536] / 0x219;
+  signed_short_dest[537] = signed_short_src[537] / 0x21a;
+  signed_short_dest[538] = signed_short_src[538] / 0x21b;
+  signed_short_dest[539] = signed_short_src[539] / 0x21c;
+  signed_short_dest[540] = signed_short_src[540] / 0x21d;
+  signed_short_dest[541] = signed_short_src[541] / 0x21e;
+  signed_short_dest[542] = signed_short_src[542] / 0x21f;
+  signed_short_dest[543] = signed_short_src[543] / 0x220;
+  signed_short_dest[544] =
+       (short)(signed_short_src[544] * 0x1e1 >> 0x12) - (signed_short_src[544] >> 0xf);
+  signed_short_dest[545] = signed_short_src[545] / 0x222;
+  signed_short_dest[546] = signed_short_src[546] / 0x223;
+  signed_short_dest[547] = signed_short_src[547] / 0x224;
+  signed_short_dest[548] = signed_short_src[548] / 0x225;
+  uVar1 = ((uint)(signed_short_src[549] * -0x11af) >> 0x10) + (int)signed_short_src[549];
+  signed_short_dest[549] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[550] = signed_short_src[550] / 0x227;
+  signed_short_dest[551] = signed_short_src[551] / 0x228;
+  signed_short_dest[552] = signed_short_src[552] / 0x229;
+  signed_short_dest[553] = signed_short_src[553] / 0x22a;
+  signed_short_dest[554] = signed_short_src[554] / 0x22b;
+  signed_short_dest[555] = signed_short_src[555] / 0x22c;
+  signed_short_dest[556] = signed_short_src[556] / 0x22d;
+  signed_short_dest[557] = signed_short_src[557] / 0x22e;
+  signed_short_dest[558] = signed_short_src[558] / 0x22f;
+  signed_short_dest[559] = signed_short_src[559] / 0x230;
+  signed_short_dest[560] = signed_short_src[560] / 0x231;
+  signed_short_dest[561] = signed_short_src[561] / 0x232;
+  signed_short_dest[562] = signed_short_src[562] / 0x233;
+  signed_short_dest[563] = signed_short_src[563] / 0x234;
+  signed_short_dest[564] = signed_short_src[564] / 0x235;
+  signed_short_dest[565] = signed_short_src[565] / 0x236;
+  signed_short_dest[566] = signed_short_src[566] / 0x237;
+  signed_short_dest[567] = signed_short_src[567] / 0x238;
+  signed_short_dest[568] = signed_short_src[568] / 0x239;
+  signed_short_dest[569] = signed_short_src[569] / 0x23a;
+  signed_short_dest[570] = signed_short_src[570] / 0x23b;
+  signed_short_dest[571] = signed_short_src[571] / 0x23c;
+  signed_short_dest[572] = signed_short_src[572] / 0x23d;
+  signed_short_dest[573] = signed_short_src[573] / 0x23e;
+  signed_short_dest[574] = signed_short_src[574] / 0x23f;
+  signed_short_dest[575] = signed_short_src[575] / 0x240;
+  signed_short_dest[576] = signed_short_src[576] / 0x241;
+  signed_short_dest[577] = signed_short_src[577] / 0x242;
+  signed_short_dest[578] = signed_short_src[578] / 0x243;
+  signed_short_dest[579] = signed_short_src[579] / 0x244;
+  signed_short_dest[580] = signed_short_src[580] / 0x245;
+  signed_short_dest[581] = signed_short_src[581] / 0x246;
+  signed_short_dest[582] = signed_short_src[582] / 0x247;
+  uVar1 = ((uint)(signed_short_src[583] * -0x1f8f) >> 0x10) + (int)signed_short_src[583];
+  signed_short_dest[583] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[584] * -0x1ff1) >> 0x10) + (int)signed_short_src[584];
+  signed_short_dest[584] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[585] * -0x2053) >> 0x10) + (int)signed_short_src[585];
+  signed_short_dest[585] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[586] = signed_short_src[586] / 0x24b;
+  signed_short_dest[587] = signed_short_src[587] / 0x24c;
+  signed_short_dest[588] = signed_short_src[588] / 0x24d;
+  signed_short_dest[589] = signed_short_src[589] / 0x24e;
+  signed_short_dest[590] = signed_short_src[590] / 0x24f;
+  signed_short_dest[591] = signed_short_src[591] / 0x250;
+  uVar1 = ((uint)(signed_short_src[592] * -0x22f7) >> 0x10) + (int)signed_short_src[592];
+  signed_short_dest[592] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[593] = signed_short_src[593] / 0x252;
+  uVar1 = ((uint)(signed_short_src[594] * -0x23b5) >> 0x10) + (int)signed_short_src[594];
+  signed_short_dest[594] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[595] = signed_short_src[595] / 0x254;
+  signed_short_dest[596] = signed_short_src[596] / 0x255;
+  signed_short_dest[597] = signed_short_src[597] / 0x256;
+  signed_short_dest[598] = signed_short_src[598] / 599;
+  uVar1 = ((uint)(signed_short_src[599] * -0x258b) >> 0x10) + (int)signed_short_src[599];
+  signed_short_dest[599] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[600] = signed_short_src[600] / 0x259;
+  uVar1 = ((uint)(signed_short_src[601] * -0x2645) >> 0x10) + (int)signed_short_src[601];
+  signed_short_dest[601] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[602] = signed_short_src[602] / 0x25b;
+  signed_short_dest[603] = signed_short_src[603] / 0x25c;
+  signed_short_dest[604] = signed_short_src[604] / 0x25d;
+  signed_short_dest[605] = signed_short_src[605] / 0x25e;
+  signed_short_dest[606] = signed_short_src[606] / 0x25f;
+  uVar1 = ((uint)(signed_short_src[607] * -0x286b) >> 0x10) + (int)signed_short_src[607];
+  signed_short_dest[607] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[608] = signed_short_src[608] / 0x261;
+  signed_short_dest[609] = signed_short_src[609] / 0x262;
+  signed_short_dest[610] = signed_short_src[610] / 0x263;
+  signed_short_dest[611] = signed_short_src[611] / 0x264;
+  uVar1 = ((uint)(signed_short_src[612] * -0x2a2d) >> 0x10) + (int)signed_short_src[612];
+  signed_short_dest[612] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[613] = signed_short_src[613] / 0x266;
+  uVar1 = ((uint)(signed_short_src[614] * -0x2adf) >> 0x10) + (int)signed_short_src[614];
+  signed_short_dest[614] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[615] = signed_short_src[615] / 0x268;
+  signed_short_dest[616] = signed_short_src[616] / 0x269;
+  signed_short_dest[617] = signed_short_src[617] / 0x26a;
+  signed_short_dest[618] = signed_short_src[618] / 0x26b;
+  uVar1 = ((uint)(signed_short_src[619] * -0x2c97) >> 0x10) + (int)signed_short_src[619];
+  signed_short_dest[619] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[620] = signed_short_src[620] / 0x26d;
+  uVar1 = ((uint)(signed_short_src[621] * -0x2d45) >> 0x10) + (int)signed_short_src[621];
+  signed_short_dest[621] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[622] = signed_short_src[622] / 0x26f;
+  signed_short_dest[623] = signed_short_src[623] / 0x270;
+  signed_short_dest[624] = signed_short_src[624] / 0x271;
+  signed_short_dest[625] = signed_short_src[625] / 0x272;
+  signed_short_dest[626] = signed_short_src[626] / 0x273;
+  signed_short_dest[627] = signed_short_src[627] / 0x274;
+  signed_short_dest[628] = signed_short_src[628] / 0x275;
+  signed_short_dest[629] = signed_short_src[629] / 0x276;
+  signed_short_dest[630] = signed_short_src[630] / 0x277;
+  signed_short_dest[631] = signed_short_src[631] / 0x278;
+  signed_short_dest[632] = signed_short_src[632] / 0x279;
+  signed_short_dest[633] = signed_short_src[633] / 0x27a;
+  signed_short_dest[634] = signed_short_src[634] / 0x27b;
+  signed_short_dest[635] = signed_short_src[635] / 0x27c;
+  signed_short_dest[636] = signed_short_src[636] / 0x27d;
+  signed_short_dest[637] = signed_short_src[637] / 0x27e;
+  signed_short_dest[638] = signed_short_src[638] / 0x27f;
+  signed_short_dest[639] = signed_short_src[639] / 0x280;
+  signed_short_dest[640] = signed_short_src[640] / 0x281;
+  signed_short_dest[641] = signed_short_src[641] / 0x282;
+  uVar1 = ((uint)(signed_short_src[642] * -0x3427) >> 0x10) + (int)signed_short_src[642];
+  signed_short_dest[642] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[643] = signed_short_src[643] / 0x284;
+  uVar1 = ((uint)(signed_short_src[644] * -0x34c9) >> 0x10) + (int)signed_short_src[644];
+  signed_short_dest[644] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[645] = signed_short_src[645] / 0x286;
+  signed_short_dest[646] = signed_short_src[646] / 0x287;
+  signed_short_dest[647] = signed_short_src[647] / 0x288;
+  signed_short_dest[648] = signed_short_src[648] / 0x289;
+  uVar1 = ((uint)(signed_short_src[649] * -0x3659) >> 0x10) + (int)signed_short_src[649];
+  signed_short_dest[649] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[650] = signed_short_src[650] / 0x28b;
+  signed_short_dest[651] = signed_short_src[651] / 0x28c;
+  signed_short_dest[652] = signed_short_src[652] / 0x28d;
+  signed_short_dest[653] = signed_short_src[653] / 0x28e;
+  uVar1 = ((uint)(signed_short_src[654] * -0x37e3) >> 0x10) + (int)signed_short_src[654];
+  signed_short_dest[654] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[655] * -0x3831) >> 0x10) + (int)signed_short_src[655];
+  signed_short_dest[655] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[656] * -0x387f) >> 0x10) + (int)signed_short_src[656];
+  signed_short_dest[656] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[657] = signed_short_src[657] / 0x292;
+  signed_short_dest[658] = signed_short_src[658] / 0x293;
+  uVar1 = ((uint)(signed_short_src[659] * -0x3967) >> 0x10) + (int)signed_short_src[659];
+  signed_short_dest[659] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[660] = signed_short_src[660] / 0x295;
+  signed_short_dest[661] =
+       (short)((uint)(signed_short_src[661] * 99) >> 0x10) - (signed_short_src[661] >> 0xf);
+  uVar1 = ((uint)(signed_short_src[662] * -0x3a4d) >> 0x10) + (int)signed_short_src[662];
+  signed_short_dest[662] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[663] = signed_short_src[663] / 0x298;
+  signed_short_dest[664] = signed_short_src[664] / 0x299;
+  uVar1 = ((uint)(signed_short_src[665] * -0x3b31) >> 0x10) + (int)signed_short_src[665];
+  signed_short_dest[665] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[666] = signed_short_src[666] / 0x29b;
+  signed_short_dest[667] = signed_short_src[667] / 0x29c;
+  uVar1 = ((uint)(signed_short_src[668] * -0x3c13) >> 0x10) + (int)signed_short_src[668];
+  signed_short_dest[668] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[669] = signed_short_src[669] / 0x29e;
+  signed_short_dest[670] = signed_short_src[670] / 0x29f;
+  uVar1 = ((uint)(signed_short_src[671] * -0x3cf3) >> 0x10) + (int)signed_short_src[671];
+  signed_short_dest[671] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[672] = signed_short_src[672] / 0x2a1;
+  uVar1 = ((uint)(signed_short_src[673] * -0x3d87) >> 0x10) + (int)signed_short_src[673];
+  signed_short_dest[673] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[674] * -0x3dd1) >> 0x10) + (int)signed_short_src[674];
+  signed_short_dest[674] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[675] = signed_short_src[675] / 0x2a4;
+  signed_short_dest[676] = signed_short_src[676] / 0x2a5;
+  uVar1 = ((uint)(signed_short_src[677] * -0x3ead) >> 0x10) + (int)signed_short_src[677];
+  signed_short_dest[677] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[678] = signed_short_src[678] / 0x2a7;
+  signed_short_dest[679] = signed_short_src[679] / 0x2a8;
+  uVar1 = ((uint)(signed_short_src[680] * -0x3f87) >> 0x10) + (int)signed_short_src[680];
+  signed_short_dest[680] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[681] * -0x3fcf) >> 0x10) + (int)signed_short_src[681];
+  signed_short_dest[681] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[682] * -0x4017) >> 0x10) + (int)signed_short_src[682];
+  signed_short_dest[682] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[683] * -0x405f) >> 0x10) + (int)signed_short_src[683];
+  signed_short_dest[683] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[684] = signed_short_src[684] / 0x2ad;
+  signed_short_dest[685] = signed_short_src[685] / 0x2ae;
+  signed_short_dest[686] = signed_short_src[686] / 0x2af;
+  signed_short_dest[687] = signed_short_src[687] / 0x2b0;
+  uVar1 = ((uint)(signed_short_src[688] * -0x41c3) >> 0x10) + (int)signed_short_src[688];
+  signed_short_dest[688] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[689] = signed_short_src[689] / 0x2b2;
+  signed_short_dest[690] = signed_short_src[690] / 0x2b3;
+  signed_short_dest[691] = signed_short_src[691] / 0x2b4;
+  signed_short_dest[692] = signed_short_src[692] / 0x2b5;
+  signed_short_dest[693] = signed_short_src[693] / 0x2b6;
+  signed_short_dest[694] = signed_short_src[694] / 0x2b7;
+  uVar1 = ((uint)(signed_short_src[695] * -0x43ad) >> 0x10) + (int)signed_short_src[695];
+  signed_short_dest[695] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[696] = signed_short_src[696] / 0x2b9;
+  uVar1 = ((uint)(signed_short_src[697] * -0x4437) >> 0x10) + (int)signed_short_src[697];
+  signed_short_dest[697] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[698] = signed_short_src[698] / 699;
+  signed_short_dest[699] = signed_short_src[699] / 700;
+  signed_short_dest[700] =
+       (short)(signed_short_src[700] * 0x2ebf >> 0x17) - (signed_short_src[700] >> 0xf);
+  uVar1 = ((uint)(signed_short_src[701] * -0x4549) >> 0x10) + (int)signed_short_src[701];
+  signed_short_dest[701] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[702] * -0x458d) >> 0x10) + (int)signed_short_src[702];
+  signed_short_dest[702] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[703] = signed_short_src[703] / 0x2c0;
+  signed_short_dest[704] = signed_short_src[704] / 0x2c1;
+  signed_short_dest[705] = signed_short_src[705] / 0x2c2;
+  uVar1 = ((uint)(signed_short_src[706] * -0x469b) >> 0x10) + (int)signed_short_src[706];
+  signed_short_dest[706] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[707] = signed_short_src[707] / 0x2c4;
+  uVar1 = ((uint)(signed_short_src[708] * -0x4721) >> 0x10) + (int)signed_short_src[708];
+  signed_short_dest[708] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[709] = signed_short_src[709] / 0x2c6;
+  signed_short_dest[710] = signed_short_src[710] / 0x2c7;
+  signed_short_dest[711] = signed_short_src[711] / 0x2c8;
+  signed_short_dest[712] = signed_short_src[712] / 0x2c9;
+  signed_short_dest[713] = signed_short_src[713] / 0x2ca;
+  signed_short_dest[714] = signed_short_src[714] / 0x2cb;
+  signed_short_dest[715] = signed_short_src[715] / 0x2cc;
+  uVar1 = ((uint)(signed_short_src[716] * -0x4931) >> 0x10) + (int)signed_short_src[716];
+  signed_short_dest[716] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[717] = signed_short_src[717] / 0x2ce;
+  uVar1 = ((uint)(signed_short_src[718] * -0x49b3) >> 0x10) + (int)signed_short_src[718];
+  signed_short_dest[718] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[719] = signed_short_src[719] / 0x2d0;
+  signed_short_dest[720] = signed_short_src[720] / 0x2d1;
+  uVar1 = ((uint)(signed_short_src[721] * -0x4a75) >> 0x10) + (int)signed_short_src[721];
+  signed_short_dest[721] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[722] * -0x4ab5) >> 0x10) + (int)signed_short_src[722];
+  signed_short_dest[722] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[723] = signed_short_src[723] / 0x2d4;
+  signed_short_dest[724] = signed_short_src[724] / 0x2d5;
+  uVar1 = ((uint)(signed_short_src[725] * -0x4b75) >> 0x10) + (int)signed_short_src[725];
+  signed_short_dest[725] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[726] = signed_short_src[726] / 0x2d7;
+  signed_short_dest[727] = signed_short_src[727] / 0x2d8;
+  uVar1 = ((uint)(signed_short_src[728] * -0x4c33) >> 0x10) + (int)signed_short_src[728];
+  signed_short_dest[728] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[729] = signed_short_src[729] / 0x2da;
+  uVar1 = ((uint)(signed_short_src[730] * -0x4cb1) >> 0x10) + (int)signed_short_src[730];
+  signed_short_dest[730] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[731] = signed_short_src[731] / 0x2dc;
+  signed_short_dest[732] = signed_short_src[732] / 0x2dd;
+  uVar1 = ((uint)(signed_short_src[733] * -0x4d6d) >> 0x10) + (int)signed_short_src[733];
+  signed_short_dest[733] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[734] * -0x4dab) >> 0x10) + (int)signed_short_src[734];
+  signed_short_dest[734] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[735] * -0x4de9) >> 0x10) + (int)signed_short_src[735];
+  signed_short_dest[735] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[736] * -0x4e27) >> 0x10) + (int)signed_short_src[736];
+  signed_short_dest[736] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[737] = signed_short_src[737] / 0x2e2;
+  signed_short_dest[738] = signed_short_src[738] / 0x2e3;
+  signed_short_dest[739] = signed_short_src[739] / 0x2e4;
+  signed_short_dest[740] = signed_short_src[740] / 0x2e5;
+  signed_short_dest[741] = signed_short_src[741] / 0x2e6;
+  signed_short_dest[742] = signed_short_src[742] / 0x2e7;
+  uVar1 = ((uint)(signed_short_src[743] * -0x4fd3) >> 0x10) + (int)signed_short_src[743];
+  signed_short_dest[743] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[744] = signed_short_src[744] / 0x2e9;
+  signed_short_dest[745] = signed_short_src[745] / 0x2ea;
+  signed_short_dest[746] = signed_short_src[746] / 0x2eb;
+  signed_short_dest[747] = signed_short_src[747] / 0x2ec;
+  signed_short_dest[748] =
+       (short)(signed_short_src[748] * 0xaf >> 0x11) - (signed_short_src[748] >> 0xf);
+  signed_short_dest[749] = signed_short_src[749] / 0x2ee;
+  signed_short_dest[750] = signed_short_src[750] / 0x2ef;
+  uVar1 = ((uint)(signed_short_src[751] * -0x51b3) >> 0x10) + (int)signed_short_src[751];
+  signed_short_dest[751] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[752] = signed_short_src[752] / 0x2f1;
+  signed_short_dest[753] = signed_short_src[753] / 0x2f2;
+  signed_short_dest[754] = signed_short_src[754] / 0x2f3;
+  uVar1 = ((uint)(signed_short_src[755] * -0x529f) >> 0x10) + (int)signed_short_src[755];
+  signed_short_dest[755] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[756] = signed_short_src[756] / 0x2f5;
+  signed_short_dest[757] = signed_short_src[757] / 0x2f6;
+  signed_short_dest[758] = signed_short_src[758] / 0x2f7;
+  uVar1 = ((uint)(signed_short_src[759] * -0x5389) >> 0x10) + (int)signed_short_src[759];
+  signed_short_dest[759] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[760] * -0x53c3) >> 0x10) + (int)signed_short_src[760];
+  signed_short_dest[760] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[761] = signed_short_src[761] / 0x2fa;
+  signed_short_dest[762] = signed_short_src[762] / 0x2fb;
+  signed_short_dest[763] = signed_short_src[763] / 0x2fc;
+  uVar1 = ((uint)(signed_short_src[764] * -0x54a9) >> 0x10) + (int)signed_short_src[764];
+  signed_short_dest[764] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[765] = signed_short_src[765] / 0x2fe;
+  signed_short_dest[766] = signed_short_src[766] / 0x2ff;
+  signed_short_dest[767] = signed_short_src[767] / 0x300;
+  signed_short_dest[768] = signed_short_src[768] / 0x301;
+  signed_short_dest[769] = signed_short_src[769] / 0x302;
+  signed_short_dest[770] =
+       (short)(signed_short_src[770] * 0x5501 >> 0x18) - (signed_short_src[770] >> 0xf);
+  uVar1 = ((uint)(signed_short_src[771] * -0x5637) >> 0x10) + (int)signed_short_src[771];
+  signed_short_dest[771] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[772] * -0x566f) >> 0x10) + (int)signed_short_src[772];
+  signed_short_dest[772] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[773] = signed_short_src[773] / 0x306;
+  uVar1 = ((uint)(signed_short_src[774] * -0x56df) >> 0x10) + (int)signed_short_src[774];
+  signed_short_dest[774] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[775] * -0x5717) >> 0x10) + (int)signed_short_src[775];
+  signed_short_dest[775] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[776] * -0x574f) >> 0x10) + (int)signed_short_src[776];
+  signed_short_dest[776] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[777] = signed_short_src[777] / 0x30a;
+  signed_short_dest[778] = signed_short_src[778] / 0x30b;
+  uVar1 = ((uint)(signed_short_src[779] * -0x57f5) >> 0x10) + (int)signed_short_src[779];
+  signed_short_dest[779] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[780] = signed_short_src[780] / 0x30d;
+  uVar1 = ((uint)(signed_short_src[781] * -0x5863) >> 0x10) + (int)signed_short_src[781];
+  signed_short_dest[781] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[782] = signed_short_src[782] / 0x30f;
+  signed_short_dest[783] = signed_short_src[783] / 0x310;
+  uVar1 = ((uint)(signed_short_src[784] * -0x5907) >> 0x10) + (int)signed_short_src[784];
+  signed_short_dest[784] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[785] * -0x593d) >> 0x10) + (int)signed_short_src[785];
+  signed_short_dest[785] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[786] = signed_short_src[786] / 0x313;
+  signed_short_dest[787] = signed_short_src[787] / 0x314;
+  signed_short_dest[788] = signed_short_src[788] / 0x315;
+  signed_short_dest[789] = signed_short_src[789] / 0x316;
+  uVar1 = ((uint)(signed_short_src[790] * -0x5a4b) >> 0x10) + (int)signed_short_src[790];
+  signed_short_dest[790] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[791] =
+       (short)(signed_short_src[791] * 0x14b >> 0x12) - (signed_short_src[791] >> 0xf);
+  signed_short_dest[792] = signed_short_src[792] / 0x319;
+  signed_short_dest[793] = signed_short_src[793] / 0x31a;
+  signed_short_dest[794] = signed_short_src[794] / 0x31b;
+  signed_short_dest[795] = signed_short_src[795] / 0x31c;
+  signed_short_dest[796] = signed_short_src[796] / 0x31d;
+  uVar1 = ((uint)(signed_short_src[797] * -0x5bbf) >> 0x10) + (int)signed_short_src[797];
+  signed_short_dest[797] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[798] = signed_short_src[798] / 799;
+  signed_short_dest[799] = signed_short_src[799] / 800;
+  uVar1 = ((uint)(signed_short_src[800] * -0x5c5d) >> 0x10) + (int)signed_short_src[800];
+  signed_short_dest[800] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[801] * -0x5c91) >> 0x10) + (int)signed_short_src[801];
+  signed_short_dest[801] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[802] * -0x5cc5) >> 0x10) + (int)signed_short_src[802];
+  signed_short_dest[802] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[803] * -0x5cf9) >> 0x10) + (int)signed_short_src[803];
+  signed_short_dest[803] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[804] * -0x5d2d) >> 0x10) + (int)signed_short_src[804];
+  signed_short_dest[804] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[805] = signed_short_src[805] / 0x326;
+  signed_short_dest[806] = signed_short_src[806] / 0x327;
+  signed_short_dest[807] = signed_short_src[807] / 0x328;
+  uVar1 = ((uint)(signed_short_src[808] * -0x5dfb) >> 0x10) + (int)signed_short_src[808];
+  signed_short_dest[808] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[809] = signed_short_src[809] / 0x32a;
+  uVar1 = ((uint)(signed_short_src[810] * -0x5e61) >> 0x10) + (int)signed_short_src[810];
+  signed_short_dest[810] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[811] = signed_short_src[811] / 0x32c;
+  uVar1 = ((uint)(signed_short_src[812] * -0x5ec7) >> 0x10) + (int)signed_short_src[812];
+  signed_short_dest[812] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[813] = signed_short_src[813] / 0x32e;
+  signed_short_dest[814] = signed_short_src[814] / 0x32f;
+  uVar1 = ((uint)(signed_short_src[815] * -0x5f5f) >> 0x10) + (int)signed_short_src[815];
+  signed_short_dest[815] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[816] * -0x5f91) >> 0x10) + (int)signed_short_src[816];
+  signed_short_dest[816] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[817] * -0x5fc3) >> 0x10) + (int)signed_short_src[817];
+  signed_short_dest[817] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[818] * -0x5ff5) >> 0x10) + (int)signed_short_src[818];
+  signed_short_dest[818] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[819] * -0x6027) >> 0x10) + (int)signed_short_src[819];
+  signed_short_dest[819] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[820] * -0x6059) >> 0x10) + (int)signed_short_src[820];
+  signed_short_dest[820] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[821] * -0x608b) >> 0x10) + (int)signed_short_src[821];
+  signed_short_dest[821] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[822] = signed_short_src[822] / 0x337;
+  signed_short_dest[823] = signed_short_src[823] / 0x338;
+  uVar1 = ((uint)(signed_short_src[824] * -0x611f) >> 0x10) + (int)signed_short_src[824];
+  signed_short_dest[824] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[825] = signed_short_src[825] / 0x33a;
+  signed_short_dest[826] = signed_short_src[826] / 0x33b;
+  uVar1 = ((uint)(signed_short_src[827] * -0x61b3) >> 0x10) + (int)signed_short_src[827];
+  signed_short_dest[827] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[828] = signed_short_src[828] / 0x33d;
+  signed_short_dest[829] = signed_short_src[829] / 0x33e;
+  uVar1 = ((uint)(signed_short_src[830] * -0x6245) >> 0x10) + (int)signed_short_src[830];
+  signed_short_dest[830] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[831] = signed_short_src[831] / 0x340;
+  signed_short_dest[832] = signed_short_src[832] / 0x341;
+  signed_short_dest[833] = signed_short_src[833] / 0x342;
+  signed_short_dest[834] = signed_short_src[834] / 0x343;
+  signed_short_dest[835] = signed_short_src[835] / 0x344;
+  signed_short_dest[836] = signed_short_src[836] / 0x345;
+  signed_short_dest[837] = signed_short_src[837] / 0x346;
+  signed_short_dest[838] = signed_short_src[838] / 0x347;
+  signed_short_dest[839] = signed_short_src[839] / 0x348;
+  uVar1 = ((uint)(signed_short_src[840] * -0x6425) >> 0x10) + (int)signed_short_src[840];
+  signed_short_dest[840] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[841] = signed_short_src[841] / 0x34a;
+  signed_short_dest[842] = signed_short_src[842] / 0x34b;
+  uVar1 = ((uint)(signed_short_src[843] * -0x64b3) >> 0x10) + (int)signed_short_src[843];
+  signed_short_dest[843] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[844] = signed_short_src[844] / 0x34d;
+  uVar1 = ((uint)(signed_short_src[845] * -0x6511) >> 0x10) + (int)signed_short_src[845];
+  signed_short_dest[845] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[846] =
+       (short)(signed_short_src[846] * 0x26b >> 0x13) - (signed_short_src[846] >> 0xf);
+  signed_short_dest[847] = signed_short_src[847] / 0x350;
+  uVar1 = ((uint)(signed_short_src[848] * -0x659d) >> 0x10) + (int)signed_short_src[848];
+  signed_short_dest[848] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[849] = signed_short_src[849] / 0x352;
+  signed_short_dest[850] = signed_short_src[850] / 0x353;
+  signed_short_dest[851] = signed_short_src[851] / 0x354;
+  signed_short_dest[852] = signed_short_src[852] / 0x355;
+  signed_short_dest[853] = signed_short_src[853] / 0x356;
+  signed_short_dest[854] = signed_short_src[854] / 0x357;
+  signed_short_dest[855] = signed_short_src[855] / 0x358;
+  signed_short_dest[856] = signed_short_src[856] / 0x359;
+  signed_short_dest[857] = signed_short_src[857] / 0x35a;
+  uVar1 = ((uint)(signed_short_src[858] * -0x6769) >> 0x10) + (int)signed_short_src[858];
+  signed_short_dest[858] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[859] * -0x6797) >> 0x10) + (int)signed_short_src[859];
+  signed_short_dest[859] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[860] = signed_short_src[860] / 0x35d;
+  uVar1 = ((uint)(signed_short_src[861] * -0x67f1) >> 0x10) + (int)signed_short_src[861];
+  signed_short_dest[861] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[862] = signed_short_src[862] / 0x35f;
+  uVar1 = ((uint)(signed_short_src[863] * -0x684b) >> 0x10) + (int)signed_short_src[863];
+  signed_short_dest[863] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[864] = signed_short_src[864] / 0x361;
+  uVar1 = ((uint)(signed_short_src[865] * -0x68a5) >> 0x10) + (int)signed_short_src[865];
+  signed_short_dest[865] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[866] = signed_short_src[866] / 0x363;
+  signed_short_dest[867] = signed_short_src[867] / 0x364;
+  uVar1 = ((uint)(signed_short_src[868] * -0x692b) >> 0x10) + (int)signed_short_src[868];
+  signed_short_dest[868] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[869] * -0x6957) >> 0x10) + (int)signed_short_src[869];
+  signed_short_dest[869] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[870] * -0x6983) >> 0x10) + (int)signed_short_src[870];
+  signed_short_dest[870] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[871] = signed_short_src[871] / 0x368;
+  signed_short_dest[872] = signed_short_src[872] / 0x369;
+  signed_short_dest[873] = signed_short_src[873] / 0x36a;
+  signed_short_dest[874] = signed_short_src[874] / 0x36b;
+  uVar1 = ((uint)(signed_short_src[875] * -0x6a5f) >> 0x10) + (int)signed_short_src[875];
+  signed_short_dest[875] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[876] * -0x6a8b) >> 0x10) + (int)signed_short_src[876];
+  signed_short_dest[876] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[877] = signed_short_src[877] / 0x36e;
+  signed_short_dest[878] = signed_short_src[878] / 0x36f;
+  uVar1 = ((uint)(signed_short_src[879] * -0x6b0d) >> 0x10) + (int)signed_short_src[879];
+  signed_short_dest[879] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[880] * -0x6b39) >> 0x10) + (int)signed_short_src[880];
+  signed_short_dest[880] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[881] = signed_short_src[881] / 0x372;
+  uVar1 = ((uint)(signed_short_src[882] * -0x6b8f) >> 0x10) + (int)signed_short_src[882];
+  signed_short_dest[882] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[883] = signed_short_src[883] / 0x374;
+  uVar1 = ((uint)(signed_short_src[884] * -0x6be5) >> 0x10) + (int)signed_short_src[884];
+  signed_short_dest[884] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[885] = signed_short_src[885] / 0x376;
+  signed_short_dest[886] = signed_short_src[886] / 0x377;
+  uVar1 = ((uint)(signed_short_src[887] * -0x6c65) >> 0x10) + (int)signed_short_src[887];
+  signed_short_dest[887] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[888] * -0x6c8f) >> 0x10) + (int)signed_short_src[888];
+  signed_short_dest[888] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[889] = signed_short_src[889] / 0x37a;
+  signed_short_dest[890] = signed_short_src[890] / 0x37b;
+  signed_short_dest[891] = signed_short_src[891] / 0x37c;
+  signed_short_dest[892] = signed_short_src[892] / 0x37d;
+  signed_short_dest[893] = signed_short_src[893] / 0x37e;
+  signed_short_dest[894] = signed_short_src[894] / 0x37f;
+  signed_short_dest[895] = signed_short_src[895] / 0x380;
+  signed_short_dest[896] = signed_short_src[896] / 0x381;
+  signed_short_dest[897] = signed_short_src[897] / 0x382;
+  uVar1 = ((uint)(signed_short_src[898] * -0x6e33) >> 0x10) + (int)signed_short_src[898];
+  signed_short_dest[898] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[899] * -0x6e5d) >> 0x10) + (int)signed_short_src[899];
+  signed_short_dest[899] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[900] = signed_short_src[900] / 0x385;
+  uVar1 = ((uint)(signed_short_src[901] * -0x6eaf) >> 0x10) + (int)signed_short_src[901];
+  signed_short_dest[901] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[902] * -0x6ed9) >> 0x10) + (int)signed_short_src[902];
+  signed_short_dest[902] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[903] = signed_short_src[903] / 0x388;
+  uVar1 = ((uint)(signed_short_src[904] * -0x6f2b) >> 0x10) + (int)signed_short_src[904];
+  signed_short_dest[904] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[905] = signed_short_src[905] / 0x38a;
+  signed_short_dest[906] = signed_short_src[906] / 0x38b;
+  uVar1 = ((uint)(signed_short_src[907] * -0x6fa5) >> 0x10) + (int)signed_short_src[907];
+  signed_short_dest[907] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[908] = signed_short_src[908] / 0x38d;
+  signed_short_dest[909] = signed_short_src[909] / 0x38e;
+  uVar1 = ((uint)(signed_short_src[910] * -0x701f) >> 0x10) + (int)signed_short_src[910];
+  signed_short_dest[910] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[911] * -0x7047) >> 0x10) + (int)signed_short_src[911];
+  signed_short_dest[911] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[912] = signed_short_src[912] / 0x391;
+  signed_short_dest[913] = signed_short_src[913] / 0x392;
+  signed_short_dest[914] =
+       (short)(signed_short_src[914] * 0x23d >> 0x13) - (signed_short_src[914] >> 0xf);
+  signed_short_dest[915] = signed_short_src[915] / 0x394;
+  signed_short_dest[916] = signed_short_src[916] / 0x395;
+  signed_short_dest[917] = signed_short_src[917] / 0x396;
+  signed_short_dest[918] = signed_short_src[918] / 0x397;
+  uVar1 = ((uint)(signed_short_src[919] * -0x7187) >> 0x10) + (int)signed_short_src[919];
+  signed_short_dest[919] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[920] * -0x71af) >> 0x10) + (int)signed_short_src[920];
+  signed_short_dest[920] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[921] = signed_short_src[921] / 0x39a;
+  signed_short_dest[922] = signed_short_src[922] / 0x39b;
+  uVar1 = ((uint)(signed_short_src[923] * -0x7225) >> 0x10) + (int)signed_short_src[923];
+  signed_short_dest[923] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[924] = signed_short_src[924] / 0x39d;
+  signed_short_dest[925] = signed_short_src[925] / 0x39e;
+  uVar1 = ((uint)(signed_short_src[926] * -0x729b) >> 0x10) + (int)signed_short_src[926];
+  signed_short_dest[926] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[927] = signed_short_src[927] / 0x3a0;
+  uVar1 = ((uint)(signed_short_src[928] * -0x72e9) >> 0x10) + (int)signed_short_src[928];
+  signed_short_dest[928] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[929] * -0x730f) >> 0x10) + (int)signed_short_src[929];
+  signed_short_dest[929] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[930] = signed_short_src[930] / 0x3a3;
+  uVar1 = ((uint)(signed_short_src[931] * -0x735d) >> 0x10) + (int)signed_short_src[931];
+  signed_short_dest[931] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[932] * -0x7383) >> 0x10) + (int)signed_short_src[932];
+  signed_short_dest[932] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[933] = signed_short_src[933] / 0x3a6;
+  signed_short_dest[934] = signed_short_src[934] / 0x3a7;
+  uVar1 = ((uint)(signed_short_src[935] * -0x73f7) >> 0x10) + (int)signed_short_src[935];
+  signed_short_dest[935] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[936] * -0x741d) >> 0x10) + (int)signed_short_src[936];
+  signed_short_dest[936] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[937] * -0x7443) >> 0x10) + (int)signed_short_src[937];
+  signed_short_dest[937] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[938] * -0x7469) >> 0x10) + (int)signed_short_src[938];
+  signed_short_dest[938] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[939] * -0x748f) >> 0x10) + (int)signed_short_src[939];
+  signed_short_dest[939] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[940] * -0x74b5) >> 0x10) + (int)signed_short_src[940];
+  signed_short_dest[940] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[941] * -0x74db) >> 0x10) + (int)signed_short_src[941];
+  signed_short_dest[941] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[942] * -0x7501) >> 0x10) + (int)signed_short_src[942];
+  signed_short_dest[942] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[943] = signed_short_src[943] / 0x3b0;
+  signed_short_dest[944] = signed_short_src[944] / 0x3b1;
+  signed_short_dest[945] = signed_short_src[945] / 0x3b2;
+  uVar1 = ((uint)(signed_short_src[946] * -0x7597) >> 0x10) + (int)signed_short_src[946];
+  signed_short_dest[946] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[947] = signed_short_src[947] / 0x3b4;
+  signed_short_dest[948] = signed_short_src[948] / 0x3b5;
+  uVar1 = ((uint)(signed_short_src[949] * -0x7607) >> 0x10) + (int)signed_short_src[949];
+  signed_short_dest[949] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[950] = signed_short_src[950] / 0x3b7;
+  uVar1 = ((uint)(signed_short_src[951] * -0x7651) >> 0x10) + (int)signed_short_src[951];
+  signed_short_dest[951] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[952] = signed_short_src[952] / 0x3b9;
+  uVar1 = ((uint)(signed_short_src[953] * -0x769b) >> 0x10) + (int)signed_short_src[953];
+  signed_short_dest[953] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[954] =
+       (short)(signed_short_src[954] * 0x225 >> 0x13) - (signed_short_src[954] >> 0xf);
+  uVar1 = ((uint)(signed_short_src[955] * -0x76e5) >> 0x10) + (int)signed_short_src[955];
+  signed_short_dest[955] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[956] * -0x7709) >> 0x10) + (int)signed_short_src[956];
+  signed_short_dest[956] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[957] = signed_short_src[957] / 0x3be;
+  signed_short_dest[958] = signed_short_src[958] / 0x3bf;
+  uVar1 = ((uint)(signed_short_src[959] * -0x7777) >> 0x10) + (int)signed_short_src[959];
+  signed_short_dest[959] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[960] * -0x779b) >> 0x10) + (int)signed_short_src[960];
+  signed_short_dest[960] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[961] =
+       (short)(signed_short_src[961] * 0x221 >> 0x13) - (signed_short_src[961] >> 0xf);
+  signed_short_dest[962] = signed_short_src[962] / 0x3c3;
+  signed_short_dest[963] = signed_short_src[963] / 0x3c4;
+  signed_short_dest[964] = signed_short_src[964] / 0x3c5;
+  signed_short_dest[965] = signed_short_src[965] / 0x3c6;
+  signed_short_dest[966] = signed_short_src[966] / 0x3c7;
+  signed_short_dest[967] = signed_short_src[967] / 0x3c8;
+  signed_short_dest[968] = signed_short_src[968] / 0x3c9;
+  uVar1 = ((uint)(signed_short_src[969] * -0x78df) >> 0x10) + (int)signed_short_src[969];
+  signed_short_dest[969] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[970] * -0x7903) >> 0x10) + (int)signed_short_src[970];
+  signed_short_dest[970] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[971] = signed_short_src[971] / 0x3cc;
+  signed_short_dest[972] = signed_short_src[972] / 0x3cd;
+  uVar1 = ((uint)(signed_short_src[973] * -0x796d) >> 0x10) + (int)signed_short_src[973];
+  signed_short_dest[973] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[974] * -0x7991) >> 0x10) + (int)signed_short_src[974];
+  signed_short_dest[974] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[975] = signed_short_src[975] / 0x3d0;
+  uVar1 = ((uint)(signed_short_src[976] * -0x79d7) >> 0x10) + (int)signed_short_src[976];
+  signed_short_dest[976] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[977] = signed_short_src[977] / 0x3d2;
+  uVar1 = ((uint)(signed_short_src[978] * -0x7a1d) >> 0x10) + (int)signed_short_src[978];
+  signed_short_dest[978] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[979] =
+       (short)(signed_short_src[979] * 0x217 >> 0x13) - (signed_short_src[979] >> 0xf);
+  uVar1 = ((uint)(signed_short_src[980] * -0x7a63) >> 0x10) + (int)signed_short_src[980];
+  signed_short_dest[980] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[981] = signed_short_src[981] / 0x3d6;
+  uVar1 = ((uint)(signed_short_src[982] * -0x7aa9) >> 0x10) + (int)signed_short_src[982];
+  signed_short_dest[982] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[983] * -0x7acb) >> 0x10) + (int)signed_short_src[983];
+  signed_short_dest[983] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[984] = signed_short_src[984] / 0x3d9;
+  uVar1 = ((uint)(signed_short_src[985] * -0x7b11) >> 0x10) + (int)signed_short_src[985];
+  signed_short_dest[985] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[986] * -0x7b33) >> 0x10) + (int)signed_short_src[986];
+  signed_short_dest[986] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[987] = signed_short_src[987] / 0x3dc;
+  signed_short_dest[988] = signed_short_src[988] / 0x3dd;
+  signed_short_dest[989] = signed_short_src[989] / 0x3de;
+  signed_short_dest[990] = signed_short_src[990] / 0x3df;
+  signed_short_dest[991] = signed_short_src[991] / 0x3e0;
+  signed_short_dest[992] =
+       (short)((uint)(signed_short_src[992] * 0x42) >> 0x10) - (signed_short_src[992] >> 0xf);
+  signed_short_dest[993] = signed_short_src[993] / 0x3e2;
+  signed_short_dest[994] = signed_short_src[994] / 0x3e3;
+  signed_short_dest[995] = signed_short_src[995] / 0x3e4;
+  signed_short_dest[996] = signed_short_src[996] / 0x3e5;
+  signed_short_dest[997] = signed_short_src[997] / 0x3e6;
+  uVar1 = ((uint)(signed_short_src[998] * -0x7ccb) >> 0x10) + (int)signed_short_src[998];
+  signed_short_dest[998] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[999] * -0x7ced) >> 0x10) + (int)signed_short_src[999];
+  signed_short_dest[999] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1000] * -0x7d0f) >> 0x10) + (int)signed_short_src[1000];
+  signed_short_dest[1000] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1001] = signed_short_src[1001] / 0x3ea;
+  uVar1 = ((uint)(signed_short_src[1002] * -0x7d51) >> 0x10) + (int)signed_short_src[1002];
+  signed_short_dest[1002] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1003] * -0x7d73) >> 0x10) + (int)signed_short_src[1003];
+  signed_short_dest[1003] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1004] = signed_short_src[1004] / 0x3ed;
+  uVar1 = ((uint)(signed_short_src[1005] * -0x7db5) >> 0x10) + (int)signed_short_src[1005];
+  signed_short_dest[1005] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1006] = signed_short_src[1006] / 0x3ef;
+  uVar1 = ((uint)(signed_short_src[1007] * -0x7df7) >> 0x10) + (int)signed_short_src[1007];
+  signed_short_dest[1007] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1008] = signed_short_src[1008] / 0x3f1;
+  uVar1 = ((uint)(signed_short_src[1009] * -0x7e39) >> 0x10) + (int)signed_short_src[1009];
+  signed_short_dest[1009] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1010] = signed_short_src[1010] / 0x3f3;
+  uVar1 = ((uint)(signed_short_src[1011] * -0x7e7b) >> 0x10) + (int)signed_short_src[1011];
+  signed_short_dest[1011] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1012] = signed_short_src[1012] / 0x3f5;
+  signed_short_dest[1013] = signed_short_src[1013] / 0x3f6;
+  uVar1 = ((uint)(signed_short_src[1014] * -0x7edd) >> 0x10) + (int)signed_short_src[1014];
+  signed_short_dest[1014] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1015] * -0x7efd) >> 0x10) + (int)signed_short_src[1015];
+  signed_short_dest[1015] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  signed_short_dest[1016] = signed_short_src[1016] / 0x3f9;
+  signed_short_dest[1017] = signed_short_src[1017] / 0x3fa;
+  uVar1 = ((uint)(signed_short_src[1018] * -0x7f5f) >> 0x10) + (int)signed_short_src[1018];
+  signed_short_dest[1018] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1019] * -0x7f7f) >> 0x10) + (int)signed_short_src[1019];
+  signed_short_dest[1019] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1020] * -0x7f9f) >> 0x10) + (int)signed_short_src[1020];
+  signed_short_dest[1020] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1021] * -0x7fbf) >> 0x10) + (int)signed_short_src[1021];
+  signed_short_dest[1021] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
+  uVar1 = ((uint)(signed_short_src[1022] * -0x7fdf) >> 0x10) + (int)signed_short_src[1022];
+  signed_short_dest[1022] = (short)((uVar1 & 0x8000) >> 0xf) + ((short)uVar1 >> 9);
   signed_short_dest[1023] =
        (short)(((ushort)(signed_short_src[1023] >> 0xf) >> 6) + signed_short_src[1023]) >> 10;
   return;
@@ -18332,32 +16639,33 @@ void signed_short_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_modulo(void)
 
 {
   signed_short_dest[0] = 0;
-  signed_short_dest[1] =
-       signed_short_src[1] - (signed_short_src[1] - (signed_short_src[1] >> 0xf) & 0xfffeU);
+  signed_short_dest[1] = signed_short_src[1] % 2;
   signed_short_dest[2] = signed_short_src[2] % 3;
   signed_short_dest[3] = signed_short_src[3] % 4;
   signed_short_dest[4] =
        signed_short_src[4] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[4] * 0x66666667) >> 0x21) -
-       (short)((longlong)(int)signed_short_src[4] * 0x66666667 >> 0x3f)) * -5;
+       (signed_short_src[4] >> 0xf)) * -5;
   signed_short_dest[5] = signed_short_src[5] % 6;
   signed_short_dest[6] =
        signed_short_src[6] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[6] * 0x92492493) >> 0x22) -
-       (short)((longlong)(int)signed_short_src[6] * 0x92492493 >> 0x3f)) * -7;
+       (signed_short_src[6] >> 0xf)) * -7;
   signed_short_dest[7] = signed_short_src[7] % 8;
   signed_short_dest[8] =
        signed_short_src[8] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[8] * 0x38e38e39) >> 0x21) -
-       (short)((longlong)(int)signed_short_src[8] * 0x38e38e39 >> 0x3f)) * -9;
+       (signed_short_src[8] >> 0xf)) * -9;
   signed_short_dest[9] =
        signed_short_src[9] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[9] * 0x66666667) >> 0x22) -
-       (short)((longlong)(int)signed_short_src[9] * 0x66666667 >> 0x3f)) * -10;
+       (signed_short_src[9] >> 0xf)) * -10;
   signed_short_dest[10] =
        signed_short_src[10] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[10] * 0x2e8ba2e9) >> 0x21) -
@@ -18377,16 +16685,16 @@ void signed_short_modulo(void)
   signed_short_dest[14] =
        signed_short_src[14] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[14] * 0x88888889) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[14] * 0x88888889 >> 0x3f)) * -0xf;
+       (signed_short_src[14] >> 0xf)) * -0xf;
   signed_short_dest[15] = signed_short_src[15] % 0x10;
   signed_short_dest[16] =
        signed_short_src[16] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[16] * 0x78787879) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[16] * 0x78787879 >> 0x3f)) * -0x11;
+       (signed_short_src[16] >> 0xf)) * -0x11;
   signed_short_dest[17] =
        signed_short_src[17] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[17] * 0x38e38e39) >> 0x22) -
-       (short)((longlong)(int)signed_short_src[17] * 0x38e38e39 >> 0x3f)) * -0x12;
+       (signed_short_src[17] >> 0xf)) * -0x12;
   signed_short_dest[18] =
        signed_short_src[18] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[18] * 0x6bca1af3) >> 0x23) -
@@ -18394,7 +16702,7 @@ void signed_short_modulo(void)
   signed_short_dest[19] =
        signed_short_src[19] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[19] * 0x66666667) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[19] * 0x66666667 >> 0x3f)) * -0x14;
+       (signed_short_src[19] >> 0xf)) * -0x14;
   signed_short_dest[20] =
        signed_short_src[20] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[20] * 0x30c30c31) >> 0x22) -
@@ -18414,7 +16722,7 @@ void signed_short_modulo(void)
   signed_short_dest[24] =
        signed_short_src[24] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[24] * 0x51eb851f) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[24] * 0x51eb851f >> 0x3f)) * -0x19;
+       (signed_short_src[24] >> 0xf)) * -0x19;
   signed_short_dest[25] =
        signed_short_src[25] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[25] * 0x4ec4ec4f) >> 0x23) -
@@ -18422,7 +16730,7 @@ void signed_short_modulo(void)
   signed_short_dest[26] =
        signed_short_src[26] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[26] * 0x4bda12f7) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[26] * 0x4bda12f7 >> 0x3f)) * -0x1b;
+       (signed_short_src[26] >> 0xf)) * -0x1b;
   signed_short_dest[27] =
        signed_short_src[27] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[27] * 0x92492493) >> 0x24) -
@@ -18438,12 +16746,12 @@ void signed_short_modulo(void)
   signed_short_dest[30] =
        signed_short_src[30] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[30] * 0x84210843) >> 0x24) -
-       (short)((longlong)(int)signed_short_src[30] * 0x84210843 >> 0x3f)) * -0x1f;
+       (signed_short_src[30] >> 0xf)) * -0x1f;
   signed_short_dest[31] = signed_short_src[31] % 0x20;
   signed_short_dest[32] =
        signed_short_src[32] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[32] * 0x3e0f83e1) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[32] * 0x3e0f83e1 >> 0x3f)) * -0x21;
+       (signed_short_src[32] >> 0xf)) * -0x21;
   signed_short_dest[33] =
        signed_short_src[33] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[33] * 0x78787879) >> 0x24) -
@@ -18455,7 +16763,7 @@ void signed_short_modulo(void)
   signed_short_dest[35] =
        signed_short_src[35] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[35] * 0x38e38e39) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[35] * 0x38e38e39 >> 0x3f)) * -0x24;
+       (signed_short_src[35] >> 0xf)) * -0x24;
   signed_short_dest[36] =
        signed_short_src[36] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[36] * 0xdd67c8a7) >> 0x25) -
@@ -18471,7 +16779,7 @@ void signed_short_modulo(void)
   signed_short_dest[39] =
        signed_short_src[39] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[39] * 0x66666667) >> 0x24) -
-       (short)((longlong)(int)signed_short_src[39] * 0x66666667 >> 0x3f)) * -0x28;
+       (signed_short_src[39] >> 0xf)) * -0x28;
   signed_short_dest[40] =
        signed_short_src[40] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[40] * 0x63e7063f) >> 0x24) -
@@ -18563,12 +16871,12 @@ void signed_short_modulo(void)
   signed_short_dest[62] =
        signed_short_src[62] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[62] * 0x82082083) >> 0x25) -
-       (short)((longlong)(int)signed_short_src[62] * 0x82082083 >> 0x3f)) * -0x3f;
+       (signed_short_src[62] >> 0xf)) * -0x3f;
   signed_short_dest[63] = signed_short_src[63] % 0x40;
   signed_short_dest[64] =
        signed_short_src[64] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[64] * 0x7e07e07f) >> 0x25) -
-       (short)((longlong)(int)signed_short_src[64] * 0x7e07e07f >> 0x3f)) * -0x41;
+       (signed_short_src[64] >> 0xf)) * -0x41;
   signed_short_dest[65] =
        signed_short_src[65] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[65] * 0x3e0f83e1) >> 0x24) -
@@ -18596,7 +16904,7 @@ void signed_short_modulo(void)
   signed_short_dest[71] =
        signed_short_src[71] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[71] * 0x38e38e39) >> 0x24) -
-       (short)((longlong)(int)signed_short_src[71] * 0x38e38e39 >> 0x3f)) * -0x48;
+       (signed_short_src[71] >> 0xf)) * -0x48;
   signed_short_dest[72] =
        signed_short_src[72] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[72] * 0xe070381d) >> 0x26) -
@@ -18628,11 +16936,11 @@ void signed_short_modulo(void)
   signed_short_dest[79] =
        signed_short_src[79] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[79] * 0x66666667) >> 0x25) -
-       (short)((longlong)(int)signed_short_src[79] * 0x66666667 >> 0x3f)) * -0x50;
+       (signed_short_src[79] >> 0xf)) * -0x50;
   signed_short_dest[80] =
        signed_short_src[80] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[80] * 0x1948b0fd) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[80] * 0x1948b0fd >> 0x3f)) * -0x51;
+       (signed_short_src[80] >> 0xf)) * -0x51;
   signed_short_dest[81] =
        signed_short_src[81] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[81] * 0x63e7063f) >> 0x25) -
@@ -18816,12 +17124,12 @@ void signed_short_modulo(void)
   signed_short_dest[126] =
        signed_short_src[126] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[126] * 0x81020409) >> 0x26) -
-       (short)((longlong)(int)signed_short_src[126] * 0x81020409 >> 0x3f)) * -0x7f;
+       (signed_short_src[126] >> 0xf)) * -0x7f;
   signed_short_dest[127] = signed_short_src[127] % 0x80;
   signed_short_dest[128] =
        signed_short_src[128] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[128] * 0xfe03f81) >> 0x23) -
-       (short)((longlong)(int)signed_short_src[128] * 0xfe03f81 >> 0x3f)) * -0x81;
+       (signed_short_src[128] >> 0xf)) * -0x81;
   signed_short_dest[129] =
        signed_short_src[129] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[129] * 0x7e07e07f) >> 0x26) -
@@ -18885,7 +17193,7 @@ void signed_short_modulo(void)
   signed_short_dest[143] =
        signed_short_src[143] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[143] * 0x38e38e39) >> 0x25) -
-       (short)((longlong)(int)signed_short_src[143] * 0x38e38e39 >> 0x3f)) * -0x90;
+       (signed_short_src[143] >> 0xf)) * -0x90;
   signed_short_dest[144] =
        signed_short_src[144] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[144] * 0xe1fc780f) >> 0x27) -
@@ -18954,7 +17262,7 @@ void signed_short_modulo(void)
   signed_short_dest[159] =
        signed_short_src[159] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[159] * 0x66666667) >> 0x26) -
-       (short)((longlong)(int)signed_short_src[159] * 0x66666667 >> 0x3f)) * -0xa0;
+       (signed_short_src[159] >> 0xf)) * -0xa0;
   signed_short_dest[160] =
        signed_short_src[160] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[160] * 0xcb8727c1) >> 0x27) -
@@ -19340,12 +17648,14 @@ void signed_short_modulo(void)
   signed_short_dest[254] =
        signed_short_src[254] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[254] * 0x80808081) >> 0x27) -
-       (short)((longlong)(int)signed_short_src[254] * 0x80808081 >> 0x3f)) * -0xff;
-  signed_short_dest[255] = signed_short_src[255] % 0x100;
+       (signed_short_src[254] >> 0xf)) * -0xff;
+  signed_short_dest[255] =
+       signed_short_src[255] -
+       ((ushort)(byte)(signed_short_src[255] >> 7) + signed_short_src[255] & 0xff00);
   signed_short_dest[256] =
        signed_short_src[256] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[256] * 0x7f807f81) >> 0x27) -
-       (short)((longlong)(int)signed_short_src[256] * 0x7f807f81 >> 0x3f)) * -0x101;
+       (signed_short_src[256] >> 0xf)) * -0x101;
   signed_short_dest[257] =
        signed_short_src[257] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[257] * 0xfe03f81) >> 0x24) -
@@ -19476,7 +17786,7 @@ void signed_short_modulo(void)
   signed_short_dest[287] =
        signed_short_src[287] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[287] * 0x38e38e39) >> 0x26) -
-       (short)((longlong)(int)signed_short_src[287] * 0x38e38e39 >> 0x3f)) * -0x120;
+       (signed_short_src[287] >> 0xf)) * -0x120;
   signed_short_dest[288] =
        signed_short_src[288] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[288] * 0x71625345) >> 0x27) -
@@ -19614,7 +17924,7 @@ void signed_short_modulo(void)
   signed_short_dest[319] =
        signed_short_src[319] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[319] * 0x66666667) >> 0x27) -
-       (short)((longlong)(int)signed_short_src[319] * 0x66666667 >> 0x3f)) * -0x140;
+       (signed_short_src[319] >> 0xf)) * -0x140;
   signed_short_dest[320] =
        signed_short_src[320] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[320] * 0x6614bc37) >> 0x27) -
@@ -20391,12 +18701,12 @@ void signed_short_modulo(void)
   signed_short_dest[510] =
        signed_short_src[510] +
        ((short)((ulonglong)((longlong)(int)signed_short_src[510] * 0x80402011) >> 0x28) -
-       (short)((longlong)(int)signed_short_src[510] * 0x80402011 >> 0x3f)) * -0x1ff;
+       (signed_short_src[510] >> 0xf)) * -0x1ff;
   signed_short_dest[511] = signed_short_src[511] % 0x200;
   signed_short_dest[512] =
        signed_short_src[512] +
        ((short)((ulonglong)((longlong)(int)signed_short_src[512] * 0x7fc01ff1) >> 0x28) -
-       (short)((longlong)(int)signed_short_src[512] * 0x7fc01ff1 >> 0x3f)) * -0x201;
+       (signed_short_src[512] >> 0xf)) * -0x201;
   signed_short_dest[513] =
        signed_short_src[513] +
        ((short)((ulonglong)((longlong)(int)signed_short_src[513] * 0x7f807f81) >> 0x28) -
@@ -20660,7 +18970,7 @@ void signed_short_modulo(void)
   signed_short_dest[575] =
        signed_short_src[575] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[575] * 0x38e38e39) >> 0x27) -
-       (short)((longlong)(int)signed_short_src[575] * 0x38e38e39 >> 0x3f)) * -0x240;
+       (signed_short_src[575] >> 0xf)) * -0x240;
   signed_short_dest[576] =
        signed_short_src[576] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[576] * 0xe32943) >> 0x21) -
@@ -20933,7 +19243,7 @@ void signed_short_modulo(void)
   signed_short_dest[639] =
        signed_short_src[639] +
        ((short)((ulonglong)((longlong)(int)signed_short_src[639] * 0x66666667) >> 0x28) -
-       (short)((longlong)(int)signed_short_src[639] * 0x66666667 >> 0x3f)) * -0x280;
+       (signed_short_src[639] >> 0xf)) * -0x280;
   signed_short_dest[640] = signed_short_src[640] % 0x281;
   signed_short_dest[641] =
        signed_short_src[641] +
@@ -22485,12 +20795,14 @@ void signed_short_modulo(void)
   signed_short_dest[1022] =
        signed_short_src[1022] +
        ((short)(uint)((ulonglong)((longlong)(int)signed_short_src[1022] * 0x80200803) >> 0x29) -
-       (short)((longlong)(int)signed_short_src[1022] * 0x80200803 >> 0x3f)) * -0x3ff;
+       (signed_short_src[1022] >> 0xf)) * -0x3ff;
   signed_short_dest[1023] = signed_short_src[1023] % 0x400;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_short_add(void)
 
@@ -23524,6 +21836,8 @@ void unsigned_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_mult(void)
 
 {
@@ -24556,384 +22870,20 @@ void unsigned_short_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_div(void)
 
 {
   uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  uint uVar11;
-  uint uVar12;
-  uint uVar13;
-  uint uVar14;
-  uint uVar15;
-  uint uVar16;
-  uint uVar17;
-  uint uVar18;
-  uint uVar19;
-  uint uVar20;
-  uint uVar21;
-  uint uVar22;
-  uint uVar23;
-  uint uVar24;
-  uint uVar25;
-  uint uVar26;
-  uint uVar27;
-  uint uVar28;
-  uint uVar29;
-  uint uVar30;
-  uint uVar31;
-  uint uVar32;
-  uint uVar33;
-  uint uVar34;
-  uint uVar35;
-  uint uVar36;
-  uint uVar37;
-  uint uVar38;
-  uint uVar39;
-  uint uVar40;
-  uint uVar41;
-  uint uVar42;
-  uint uVar43;
-  uint uVar44;
-  uint uVar45;
-  uint uVar46;
-  uint uVar47;
-  uint uVar48;
-  uint uVar49;
-  uint uVar50;
-  uint uVar51;
-  uint uVar52;
-  uint uVar53;
-  uint uVar54;
-  uint uVar55;
-  uint uVar56;
-  uint uVar57;
-  uint uVar58;
-  uint uVar59;
-  uint uVar60;
-  uint uVar61;
-  uint uVar62;
-  uint uVar63;
-  uint uVar64;
-  uint uVar65;
-  uint uVar66;
-  uint uVar67;
-  uint uVar68;
-  uint uVar69;
-  uint uVar70;
-  uint uVar71;
-  uint uVar72;
-  uint uVar73;
-  uint uVar74;
-  uint uVar75;
-  uint uVar76;
-  uint uVar77;
-  uint uVar78;
-  uint uVar79;
-  uint uVar80;
-  uint uVar81;
-  uint uVar82;
-  uint uVar83;
-  uint uVar84;
-  uint uVar85;
-  uint uVar86;
-  uint uVar87;
-  uint uVar88;
-  uint uVar89;
-  uint uVar90;
-  uint uVar91;
-  uint uVar92;
-  uint uVar93;
-  uint uVar94;
-  uint uVar95;
-  uint uVar96;
-  uint uVar97;
-  uint uVar98;
-  uint uVar99;
-  uint uVar100;
-  uint uVar101;
-  uint uVar102;
-  uint uVar103;
-  uint uVar104;
-  uint uVar105;
-  uint uVar106;
-  uint uVar107;
-  uint uVar108;
-  uint uVar109;
-  uint uVar110;
-  uint uVar111;
-  uint uVar112;
-  uint uVar113;
-  uint uVar114;
-  uint uVar115;
-  uint uVar116;
-  uint uVar117;
-  uint uVar118;
-  uint uVar119;
-  uint uVar120;
-  uint uVar121;
-  uint uVar122;
-  uint uVar123;
-  uint uVar124;
-  uint uVar125;
-  uint uVar126;
-  uint uVar127;
-  uint uVar128;
-  uint uVar129;
-  uint uVar130;
-  uint uVar131;
-  uint uVar132;
-  uint uVar133;
-  uint uVar134;
-  uint uVar135;
-  uint uVar136;
-  uint uVar137;
-  uint uVar138;
-  uint uVar139;
-  uint uVar140;
-  uint uVar141;
-  uint uVar142;
-  uint uVar143;
-  uint uVar144;
-  uint uVar145;
-  uint uVar146;
-  uint uVar147;
-  uint uVar148;
-  uint uVar149;
-  uint uVar150;
-  uint uVar151;
-  uint uVar152;
-  uint uVar153;
-  uint uVar154;
-  uint uVar155;
-  uint uVar156;
-  uint uVar157;
-  uint uVar158;
-  uint uVar159;
-  uint uVar160;
-  uint uVar161;
-  uint uVar162;
-  uint uVar163;
-  uint uVar164;
-  uint uVar165;
-  uint uVar166;
-  uint uVar167;
-  uint uVar168;
-  uint uVar169;
-  uint uVar170;
-  uint uVar171;
-  uint uVar172;
-  uint uVar173;
-  uint uVar174;
-  uint uVar175;
-  uint uVar176;
-  uint uVar177;
-  uint uVar178;
-  uint uVar179;
-  uint uVar180;
-  uint uVar181;
-  uint uVar182;
-  uint uVar183;
-  uint uVar184;
   
-  uVar1 = (uint)unsigned_short_src[6] * 0x2493 >> 0x10;
-  uVar2 = (uint)unsigned_short_src[20] * 0x8619 >> 0x10;
-  uVar3 = (uint)unsigned_short_src[22] * 0x642d >> 0x10;
-  uVar4 = (uint)unsigned_short_src[24] * 0x47af >> 0x10;
-  uVar5 = (uint)unsigned_short_src[26] * 0x2f69 >> 0x10;
-  uVar6 = (uint)unsigned_short_src[30] * 0x843 >> 0x10;
-  uVar7 = (uint)unsigned_short_src[38] * 0xa41b >> 0x10;
-  uVar8 = (uint)unsigned_short_src[40] * 0x8f9d >> 0x10;
-  uVar9 = (uint)unsigned_short_src[46] * 0x5c99 >> 0x10;
-  uVar10 = (uint)unsigned_short_src[48] * 0x4e5f >> 0x10;
-  uVar11 = (uint)unsigned_short_src[54] * 0x29e5 >> 0x10;
-  uVar12 = (uint)unsigned_short_src[56] * 0x1f71 >> 0x10;
-  uVar13 = (uint)unsigned_short_src[62] * 0x411 >> 0x10;
-  uVar14 = (uint)unsigned_short_src[68] * 0xdae7 >> 0x10;
-  uVar15 = (uint)unsigned_short_src[74] * 0xb4e9 >> 0x10;
-  uVar16 = (uint)unsigned_short_src[88] * 0x702f >> 0x10;
-  uVar17 = (uint)unsigned_short_src[90] * 0x6817 >> 0x10;
-  uVar18 = (uint)unsigned_short_src[92] * 0x6059 >> 0x10;
-  uVar19 = (uint)unsigned_short_src[96] * 0x51d1 >> 0x10;
-  uVar20 = (uint)unsigned_short_src[106] * 0x323f >> 0x10;
-  uVar21 = (uint)unsigned_short_src[114] * 0x1cf1 >> 0x10;
-  uVar22 = (uint)unsigned_short_src[118] * 0x135d >> 0x10;
-  uVar23 = (uint)unsigned_short_src[122] * 0xa69 >> 0x10;
-  uVar24 = (uint)unsigned_short_src[124] * 0x625 >> 0x10;
-  uVar25 = (uint)unsigned_short_src[126] * 0x205 >> 0x10;
-  uVar26 = (uint)unsigned_short_src[154] * 0xa6d1 >> 0x10;
-  uVar27 = (uint)unsigned_short_src[160] * 0x970f >> 0x10;
-  uVar28 = (uint)unsigned_short_src[164] * 0x8d31 >> 0x10;
-  uVar29 = (uint)unsigned_short_src[166] * 0x886f >> 0x10;
-  uVar30 = (uint)unsigned_short_src[170] * 0x7f41 >> 0x10;
-  uVar31 = (uint)unsigned_short_src[172] * 0x7ad3 >> 0x10;
-  uVar32 = (uint)unsigned_short_src[176] * 0x7243 >> 0x10;
-  uVar33 = (uint)unsigned_short_src[188] * 0x5ac1 >> 0x10;
-  uVar34 = (uint)unsigned_short_src[192] * 0x5391 >> 0x10;
-  uVar35 = (uint)unsigned_short_src[202] * 0x42d7 >> 0x10;
-  uVar36 = (uint)unsigned_short_src[204] * 0x3fb1 >> 0x10;
-  uVar37 = (uint)unsigned_short_src[212] * 0x33af >> 0x10;
-  uVar38 = (uint)unsigned_short_src[216] * 0x2e03 >> 0x10;
-  uVar39 = (uint)unsigned_short_src[218] * 0x2b41 >> 0x10;
-  uVar40 = (uint)unsigned_short_src[222] * 0x25e3 >> 0x10;
-  uVar41 = (uint)unsigned_short_src[226] * 0x20b5 >> 0x10;
-  uVar42 = (uint)unsigned_short_src[230] * 0x1bb5 >> 0x10;
-  uVar43 = (uint)unsigned_short_src[234] * 0x16e1 >> 0x10;
-  uVar44 = (uint)unsigned_short_src[242] * 0xdb3 >> 0x10;
-  uVar45 = (uint)unsigned_short_src[244] * 0xb7f >> 0x10;
-  uVar46 = (uint)unsigned_short_src[248] * 0x733 >> 0x10;
-  uVar47 = (uint)unsigned_short_src[266] * 0xeae9 >> 0x10;
-  uVar48 = (uint)unsigned_short_src[272] * 0xe01f >> 0x10;
-  uVar49 = (uint)unsigned_short_src[274] * 0xdca1 >> 0x10;
-  uVar50 = (uint)unsigned_short_src[292] * 0xbf59 >> 0x10;
-  uVar51 = (uint)unsigned_short_src[298] * 0xb65f >> 0x10;
-  uVar52 = (uint)unsigned_short_src[310] * 0xa575 >> 0x10;
-  uVar53 = (uint)unsigned_short_src[314] * 0xa01b >> 0x10;
-  uVar54 = (uint)unsigned_short_src[318] * 0x9ae3 >> 0x10;
-  uVar55 = (uint)unsigned_short_src[324] * 0x934d >> 0x10;
-  uVar56 = (uint)unsigned_short_src[332] * 0x899d >> 0x10;
-  uVar57 = (uint)unsigned_short_src[336] * 0x84f1 >> 0x10;
-  uVar58 = (uint)unsigned_short_src[340] * 0x8061 >> 0x10;
-  uVar59 = (uint)unsigned_short_src[342] * 0x7e23 >> 0x10;
-  uVar60 = (uint)unsigned_short_src[348] * 0x7791 >> 0x10;
-  uVar61 = (uint)unsigned_short_src[356] * 0x6f27 >> 0x10;
-  uVar62 = (uint)unsigned_short_src[358] * 0x6d1b >> 0x10;
-  uVar63 = (uint)unsigned_short_src[360] * 0x6b15 >> 0x10;
-  uVar64 = (uint)unsigned_short_src[362] * 0x6915 >> 0x10;
-  uVar65 = (uint)unsigned_short_src[372] * 0x5f67 >> 0x10;
-  uVar66 = (uint)unsigned_short_src[374] * 0x5d87 >> 0x10;
-  uVar67 = (uint)unsigned_short_src[378] * 22999 >> 0x10;
-  uVar68 = (uint)unsigned_short_src[384] * 0x5473 >> 0x10;
-  uVar69 = (uint)unsigned_short_src[388] * 0x50f3 >> 0x10;
-  uVar70 = (uint)unsigned_short_src[392] * 0x4d85 >> 0x10;
-  uVar71 = (uint)unsigned_short_src[398] * 0x4881 >> 0x10;
-  uVar72 = (uint)unsigned_short_src[404] * 0x43a3 >> 0x10;
-  uVar73 = (uint)unsigned_short_src[408] * 0x4079 >> 0x10;
-  uVar74 = (uint)unsigned_short_src[414] * 0x3bd7 >> 0x10;
-  uVar75 = (uint)unsigned_short_src[416] * 0x3a53 >> 0x10;
-  uVar76 = (uint)unsigned_short_src[418] * 0x38d3 >> 0x10;
-  uVar77 = (uint)unsigned_short_src[430] * 0x301d >> 0x10;
-  uVar78 = (uint)unsigned_short_src[434] * 0x2d51 >> 0x10;
-  uVar79 = (uint)unsigned_short_src[450] * 0x22a1 >> 0x10;
-  uVar80 = (uint)unsigned_short_src[454] * 0x2013 >> 0x10;
-  uVar81 = (uint)unsigned_short_src[460] * 0x1c53 >> 0x10;
-  uVar82 = (uint)unsigned_short_src[464] * 0x19e1 >> 0x10;
-  uVar83 = (uint)unsigned_short_src[468] * 0x1779 >> 0x10;
-  uVar84 = (uint)unsigned_short_src[470] * 0x1649 >> 0x10;
-  uVar85 = (uint)unsigned_short_src[474] * 0x13f1 >> 0x10;
-  uVar86 = (uint)unsigned_short_src[476] * 0x12c9 >> 0x10;
-  uVar87 = (uint)unsigned_short_src[482] * 0xf5f >> 0x10;
-  uVar88 = (uint)unsigned_short_src[484] * 0xe41 >> 0x10;
-  uVar89 = (uint)unsigned_short_src[486] * 0xd25 >> 0x10;
-  uVar90 = (uint)unsigned_short_src[488] * 0xc0b >> 0x10;
-  uVar91 = (uint)unsigned_short_src[494] * 0x8cb >> 0x10;
-  uVar92 = (uint)unsigned_short_src[500] * 0x59f >> 0x10;
-  uVar93 = (uint)unsigned_short_src[502] * 0x495 >> 0x10;
-  uVar94 = (uint)unsigned_short_src[504] * 0x38d >> 0x10;
-  uVar95 = (uint)unsigned_short_src[506] * 0x287 >> 0x10;
-  uVar96 = (uint)unsigned_short_src[508] * 0x183 >> 0x10;
-  uVar97 = (uint)unsigned_short_src[510] * 0x81 >> 0x10;
-  uVar98 = (uint)unsigned_short_src[530] * 0xedaf >> 0x10;
-  uVar99 = (uint)unsigned_short_src[584] * 0xc01d >> 0x10;
-  uVar100 = (uint)unsigned_short_src[594] * 0xb895 >> 0x10;
-  uVar101 = (uint)unsigned_short_src[596] * 0xb71b >> 0x10;
-  uVar102 = (uint)unsigned_short_src[600] * 0xb42f >> 0x10;
-  uVar103 = (uint)unsigned_short_src[606] * 0xafdf >> 0x10;
-  uVar104 = (uint)unsigned_short_src[612] * 0xaba5 >> 0x10;
-  uVar105 = (uint)unsigned_short_src[614] * 0xaa41 >> 0x10;
-  uVar106 = (uint)unsigned_short_src[624] * 0xa36f >> 0x10;
-  uVar107 = (uint)unsigned_short_src[640] * 0x98f7 >> 0x10;
-  uVar108 = (uint)unsigned_short_src[642] * 0x97b1 >> 0x10;
-  uVar109 = (uint)unsigned_short_src[652] * 0x9173 >> 0x10;
-  uVar110 = (uint)unsigned_short_src[654] * 0x9039 >> 0x10;
-  uVar111 = (uint)unsigned_short_src[656] * 0x8f01 >> 0x10;
-  uVar112 = (uint)unsigned_short_src[658] * 0x8dcb >> 0x10;
-  uVar113 = (uint)unsigned_short_src[660] * 0x8c97 >> 0x10;
-  uVar114 = (uint)unsigned_short_src[662] * 0x8b65 >> 0x10;
-  uVar115 = (uint)unsigned_short_src[668] * 0x87d9 >> 0x10;
-  uVar116 = (uint)unsigned_short_src[682] * 0x7fd1 >> 0x10;
-  uVar117 = (uint)unsigned_short_src[688] * 0x7c79 >> 0x10;
-  uVar118 = (uint)unsigned_short_src[690] * 0x7b5f >> 0x10;
-  uVar119 = (uint)unsigned_short_src[692] * 0x7a47 >> 0x10;
-  uVar120 = (uint)unsigned_short_src[696] * 0x781b >> 0x10;
-  uVar121 = (uint)unsigned_short_src[714] * 0x6ea3 >> 0x10;
-  uVar122 = (uint)unsigned_short_src[718] * 0x6c99 >> 0x10;
-  uVar123 = (uint)unsigned_short_src[722] * 0x6a95 >> 0x10;
-  uVar124 = (uint)unsigned_short_src[728] * 0x6799 >> 0x10;
-  uVar125 = (uint)unsigned_short_src[730] * 0x669d >> 0x10;
-  uVar126 = (uint)unsigned_short_src[734] * 0x64a9 >> 0x10;
-  uVar127 = (uint)unsigned_short_src[738] * 0x62bb >> 0x10;
-  uVar128 = (uint)unsigned_short_src[764] * 0x56ad >> 0x10;
-  uVar129 = (uint)unsigned_short_src[772] * 0x5321 >> 0x10;
-  uVar130 = (uint)unsigned_short_src[774] * 0x5241 >> 0x10;
-  uVar131 = (uint)unsigned_short_src[790] * 0x4b69 >> 0x10;
-  uVar132 = (uint)unsigned_short_src[792] * 0x4a93 >> 0x10;
-  uVar133 = (uint)unsigned_short_src[802] * 0x4675 >> 0x10;
-  uVar134 = (uint)unsigned_short_src[806] * 0x44d7 >> 0x10;
-  uVar135 = (uint)unsigned_short_src[810] * 0x433d >> 0x10;
-  uVar136 = (uint)unsigned_short_src[812] * 0x4271 >> 0x10;
-  uVar137 = (uint)unsigned_short_src[814] * 0x41a7 >> 0x10;
-  uVar138 = (uint)unsigned_short_src[816] * 0x40dd >> 0x10;
-  uVar139 = (uint)unsigned_short_src[818] * 0x4015 >> 0x10;
-  uVar140 = (uint)unsigned_short_src[820] * 0x3f4d >> 0x10;
-  uVar141 = (uint)unsigned_short_src[824] * 0x3dc1 >> 0x10;
-  uVar142 = (uint)unsigned_short_src[838] * 0x3873 >> 0x10;
-  uVar143 = (uint)unsigned_short_src[840] * 0x37b5 >> 0x10;
-  uVar144 = (uint)unsigned_short_src[844] * 0x363b >> 0x10;
-  uVar145 = (uint)unsigned_short_src[848] * 0x34c5 >> 0x10;
-  uVar146 = (uint)unsigned_short_src[856] * 0x31e3 >> 0x10;
-  uVar147 = (uint)unsigned_short_src[858] * 0x312d >> 0x10;
-  uVar148 = (uint)unsigned_short_src[862] * 0x2fc3 >> 0x10;
-  uVar149 = (uint)unsigned_short_src[864] * 0x2f0f >> 0x10;
-  uVar150 = (uint)unsigned_short_src[870] * 0x2cf9 >> 0x10;
-  uVar151 = (uint)unsigned_short_src[886] * 0x278b >> 0x10;
-  uVar152 = (uint)unsigned_short_src[888] * 0x26e1 >> 0x10;
-  uVar153 = (uint)unsigned_short_src[890] * 0x2637 >> 0x10;
-  uVar154 = (uint)unsigned_short_src[896] * 0x243f >> 0x10;
-  uVar155 = (uint)unsigned_short_src[898] * 0x2399 >> 0x10;
-  uVar156 = (uint)unsigned_short_src[900] * 0x22f3 >> 0x10;
-  uVar157 = (uint)unsigned_short_src[924] * 0x1b67 >> 0x10;
-  uVar158 = (uint)unsigned_short_src[930] * 0x1993 >> 0x10;
-  uVar159 = (uint)unsigned_short_src[932] * 0x18f9 >> 0x10;
-  uVar160 = (uint)unsigned_short_src[934] * 0x185f >> 0x10;
-  uVar161 = (uint)unsigned_short_src[938] * 0x172d >> 0x10;
-  uVar162 = (uint)unsigned_short_src[940] * 0x1695 >> 0x10;
-  uVar163 = (uint)unsigned_short_src[944] * 0x1567 >> 0x10;
-  uVar164 = (uint)unsigned_short_src[946] * 0x14d1 >> 0x10;
-  uVar165 = (uint)unsigned_short_src[950] * 0x13a7 >> 0x10;
-  uVar166 = (uint)unsigned_short_src[952] * 0x1313 >> 0x10;
-  uVar167 = (uint)unsigned_short_src[956] * 0x11ed >> 0x10;
-  uVar168 = (uint)unsigned_short_src[960] * 0x10c9 >> 0x10;
-  uVar169 = (uint)unsigned_short_src[964] * 0xfa7 >> 0x10;
-  uVar170 = (uint)unsigned_short_src[976] * 0xc51 >> 0x10;
-  uVar171 = (uint)unsigned_short_src[978] * 0xbc5 >> 0x10;
-  uVar172 = (uint)unsigned_short_src[980] * 0xb39 >> 0x10;
-  uVar173 = (uint)unsigned_short_src[984] * 0xa23 >> 0x10;
-  uVar174 = (uint)unsigned_short_src[986] * 0x999 >> 0x10;
-  uVar175 = (uint)unsigned_short_src[990] * 0x887 >> 0x10;
-  uVar176 = (uint)unsigned_short_src[994] * 0x777 >> 0x10;
-  uVar177 = (uint)unsigned_short_src[996] * 0x6ef >> 0x10;
-  uVar178 = (uint)unsigned_short_src[998] * 0x669 >> 0x10;
-  uVar179 = (uint)unsigned_short_src[1002] * 0x55d >> 0x10;
-  uVar180 = (uint)unsigned_short_src[1006] * 0x453 >> 0x10;
-  uVar181 = (uint)unsigned_short_src[1008] * 0x3cf >> 0x10;
-  uVar182 = (uint)unsigned_short_src[1010] * 0x34b >> 0x10;
-  uVar183 = (uint)unsigned_short_src[1020] * 0xc1 >> 0x10;
-  uVar184 = (uint)unsigned_short_src[1022] * 0x41 >> 0x10;
   unsigned_short_dest[0] = unsigned_short_src[0];
   unsigned_short_dest[1] = unsigned_short_src[1] >> 1;
   unsigned_short_dest[2] = unsigned_short_src[2] / 3;
   unsigned_short_dest[3] = unsigned_short_src[3] >> 2;
   unsigned_short_dest[4] = unsigned_short_src[4] / 5;
   unsigned_short_dest[5] = unsigned_short_src[5] / 6;
+  uVar1 = (uint)unsigned_short_src[6] * 0x2493 >> 0x10;
   unsigned_short_dest[6] =
        (unsigned_short)(((unsigned_short_src[6] - uVar1 & 0xfffe) >> 1) + uVar1 >> 2);
   unsigned_short_dest[7] = unsigned_short_src[7] >> 3;
@@ -24942,29 +22892,34 @@ void unsigned_short_div(void)
   unsigned_short_dest[10] = unsigned_short_src[10] / 0xb;
   unsigned_short_dest[11] = unsigned_short_src[11] / 0xc;
   unsigned_short_dest[12] = unsigned_short_src[12] / 0xd;
-  unsigned_short_dest[13] = (unsigned_short_src[13] >> 1) / 7;
+  unsigned_short_dest[13] = unsigned_short_src[13] / 0xe;
   unsigned_short_dest[14] = unsigned_short_src[14] / 0xf;
   unsigned_short_dest[15] = unsigned_short_src[15] >> 4;
   unsigned_short_dest[16] = unsigned_short_src[16] / 0x11;
   unsigned_short_dest[17] = unsigned_short_src[17] / 0x12;
   unsigned_short_dest[18] = unsigned_short_src[18] / 0x13;
   unsigned_short_dest[19] = unsigned_short_src[19] / 0x14;
+  uVar1 = (uint)unsigned_short_src[20] * 0x8619 >> 0x10;
   unsigned_short_dest[20] =
-       (unsigned_short)((((unsigned_short_src[20] - uVar2 & 0xfffe) >> 1) + uVar2 & 0xfff0) >> 4);
+       (unsigned_short)((((unsigned_short_src[20] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfff0) >> 4);
   unsigned_short_dest[21] = unsigned_short_src[21] / 0x16;
+  uVar1 = (uint)unsigned_short_src[22] * 0x642d >> 0x10;
   unsigned_short_dest[22] =
-       (unsigned_short)(((unsigned_short_src[22] - uVar3 & 0xfffe) >> 1) + uVar3 >> 4);
+       (unsigned_short)(((unsigned_short_src[22] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4);
   unsigned_short_dest[23] = unsigned_short_src[23] / 0x18;
+  uVar1 = (uint)unsigned_short_src[24] * 0x47af >> 0x10;
   unsigned_short_dest[24] =
-       (unsigned_short)(((unsigned_short_src[24] - uVar4 & 0xfffe) >> 1) + uVar4 >> 4);
+       (unsigned_short)(((unsigned_short_src[24] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4);
   unsigned_short_dest[25] = unsigned_short_src[25] / 0x1a;
+  uVar1 = (uint)unsigned_short_src[26] * 0x2f69 >> 0x10;
   unsigned_short_dest[26] =
-       (unsigned_short)(((unsigned_short_src[26] - uVar5 & 0xfffe) >> 1) + uVar5 >> 4);
-  unsigned_short_dest[27] = (unsigned_short_src[27] >> 2) / 7;
+       (unsigned_short)(((unsigned_short_src[26] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4);
+  unsigned_short_dest[27] = unsigned_short_src[27] / 0x1c;
   unsigned_short_dest[28] = unsigned_short_src[28] / 0x1d;
   unsigned_short_dest[29] = unsigned_short_src[29] / 0x1e;
+  uVar1 = (uint)unsigned_short_src[30] * 0x843 >> 0x10;
   unsigned_short_dest[30] =
-       (unsigned_short)(((unsigned_short_src[30] - uVar6 & 0xfffe) >> 1) + uVar6 >> 4);
+       (unsigned_short)(((unsigned_short_src[30] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4);
   unsigned_short_dest[31] = unsigned_short_src[31] >> 5;
   unsigned_short_dest[32] = unsigned_short_src[32] / 0x21;
   unsigned_short_dest[33] = unsigned_short_src[33] / 0x22;
@@ -24972,114 +22927,133 @@ void unsigned_short_div(void)
   unsigned_short_dest[35] = unsigned_short_src[35] / 0x24;
   unsigned_short_dest[36] = unsigned_short_src[36] / 0x25;
   unsigned_short_dest[37] = unsigned_short_src[37] / 0x26;
+  uVar1 = (uint)unsigned_short_src[38] * 0xa41b >> 0x10;
   unsigned_short_dest[38] =
-       (unsigned_short)((((unsigned_short_src[38] - uVar7 & 0xfffe) >> 1) + uVar7 & 0xffe0) >> 5);
+       (unsigned_short)((((unsigned_short_src[38] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffe0) >> 5);
   unsigned_short_dest[39] = unsigned_short_src[39] / 0x28;
+  uVar1 = (uint)unsigned_short_src[40] * 0x8f9d >> 0x10;
   unsigned_short_dest[40] =
-       (unsigned_short)((((unsigned_short_src[40] - uVar8 & 0xfffe) >> 1) + uVar8 & 0xffe0) >> 5);
-  unsigned_short_dest[41] = (unsigned_short_src[41] >> 1) / 0x15;
+       (unsigned_short)((((unsigned_short_src[40] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffe0) >> 5);
+  unsigned_short_dest[41] = unsigned_short_src[41] / 0x2a;
   unsigned_short_dest[42] = unsigned_short_src[42] / 0x2b;
   unsigned_short_dest[43] = unsigned_short_src[43] / 0x2c;
   unsigned_short_dest[44] = unsigned_short_src[44] / 0x2d;
-  unsigned_short_dest[45] = (unsigned_short_src[45] >> 1) / 0x17;
+  unsigned_short_dest[45] = unsigned_short_src[45] / 0x2e;
+  uVar1 = (uint)unsigned_short_src[46] * 0x5c99 >> 0x10;
   unsigned_short_dest[46] =
-       (unsigned_short)(((unsigned_short_src[46] - uVar9 & 0xfffe) >> 1) + uVar9 >> 5);
+       (unsigned_short)(((unsigned_short_src[46] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5);
   unsigned_short_dest[47] = unsigned_short_src[47] / 0x30;
+  uVar1 = (uint)unsigned_short_src[48] * 0x4e5f >> 0x10;
   unsigned_short_dest[48] =
-       (unsigned_short)(((unsigned_short_src[48] - uVar10 & 0xfffe) >> 1) + uVar10 >> 5);
-  unsigned_short_dest[49] = (unsigned_short_src[49] >> 1) / 0x19;
+       (unsigned_short)(((unsigned_short_src[48] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5);
+  unsigned_short_dest[49] = unsigned_short_src[49] / 0x32;
   unsigned_short_dest[50] = unsigned_short_src[50] / 0x33;
   unsigned_short_dest[51] = unsigned_short_src[51] / 0x34;
   unsigned_short_dest[52] = unsigned_short_src[52] / 0x35;
-  unsigned_short_dest[53] = (unsigned_short_src[53] >> 1) / 0x1b;
+  unsigned_short_dest[53] = unsigned_short_src[53] / 0x36;
+  uVar1 = (uint)unsigned_short_src[54] * 0x29e5 >> 0x10;
   unsigned_short_dest[54] =
-       (unsigned_short)(((unsigned_short_src[54] - uVar11 & 0xfffe) >> 1) + uVar11 >> 5);
-  unsigned_short_dest[55] = (unsigned_short_src[55] >> 3) / 7;
+       (unsigned_short)(((unsigned_short_src[54] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5);
+  unsigned_short_dest[55] = unsigned_short_src[55] / 0x38;
+  uVar1 = (uint)unsigned_short_src[56] * 0x1f71 >> 0x10;
   unsigned_short_dest[56] =
-       (unsigned_short)(((unsigned_short_src[56] - uVar12 & 0xfffe) >> 1) + uVar12 >> 5);
+       (unsigned_short)(((unsigned_short_src[56] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5);
   unsigned_short_dest[57] = unsigned_short_src[57] / 0x3a;
   unsigned_short_dest[58] = unsigned_short_src[58] / 0x3b;
   unsigned_short_dest[59] = unsigned_short_src[59] / 0x3c;
   unsigned_short_dest[60] = unsigned_short_src[60] / 0x3d;
-  unsigned_short_dest[61] = (unsigned_short_src[61] >> 1) / 0x1f;
+  unsigned_short_dest[61] = unsigned_short_src[61] / 0x3e;
+  uVar1 = (uint)unsigned_short_src[62] * 0x411 >> 0x10;
   unsigned_short_dest[62] =
-       (unsigned_short)(((unsigned_short_src[62] - uVar13 & 0xfffe) >> 1) + uVar13 >> 5);
+       (unsigned_short)(((unsigned_short_src[62] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5);
   unsigned_short_dest[63] = unsigned_short_src[63] >> 6;
   unsigned_short_dest[64] = unsigned_short_src[64] / 0x41;
   unsigned_short_dest[65] = unsigned_short_src[65] / 0x42;
   unsigned_short_dest[66] = unsigned_short_src[66] / 0x43;
   unsigned_short_dest[67] = unsigned_short_src[67] / 0x44;
+  uVar1 = (uint)unsigned_short_src[68] * 0xdae7 >> 0x10;
   unsigned_short_dest[68] =
-       (unsigned_short)((((unsigned_short_src[68] - uVar14 & 0xfffe) >> 1) + uVar14 & 0xffc0) >> 6);
+       (unsigned_short)((((unsigned_short_src[68] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffc0) >> 6);
   unsigned_short_dest[69] = unsigned_short_src[69] / 0x46;
   unsigned_short_dest[70] = unsigned_short_src[70] / 0x47;
   unsigned_short_dest[71] = unsigned_short_src[71] / 0x48;
   unsigned_short_dest[72] = unsigned_short_src[72] / 0x49;
   unsigned_short_dest[73] = unsigned_short_src[73] / 0x4a;
+  uVar1 = (uint)unsigned_short_src[74] * 0xb4e9 >> 0x10;
   unsigned_short_dest[74] =
-       (unsigned_short)((((unsigned_short_src[74] - uVar15 & 0xfffe) >> 1) + uVar15 & 0xffc0) >> 6);
+       (unsigned_short)((((unsigned_short_src[74] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffc0) >> 6);
   unsigned_short_dest[75] = unsigned_short_src[75] / 0x4c;
   unsigned_short_dest[76] = unsigned_short_src[76] / 0x4d;
-  unsigned_short_dest[77] = (unsigned_short_src[77] >> 1) / 0x27;
+  unsigned_short_dest[77] = unsigned_short_src[77] / 0x4e;
   unsigned_short_dest[78] = unsigned_short_src[78] / 0x4f;
   unsigned_short_dest[79] = unsigned_short_src[79] / 0x50;
   unsigned_short_dest[80] = unsigned_short_src[80] / 0x51;
-  unsigned_short_dest[81] = (unsigned_short_src[81] >> 1) / 0x29;
+  unsigned_short_dest[81] = unsigned_short_src[81] / 0x52;
   unsigned_short_dest[82] = unsigned_short_src[82] / 0x53;
-  unsigned_short_dest[83] = (unsigned_short_src[83] >> 2) / 0x15;
+  unsigned_short_dest[83] = unsigned_short_src[83] / 0x54;
   unsigned_short_dest[84] = unsigned_short_src[84] / 0x55;
   unsigned_short_dest[85] = unsigned_short_src[85] / 0x56;
   unsigned_short_dest[86] = unsigned_short_src[86] / 0x57;
   unsigned_short_dest[87] = unsigned_short_src[87] / 0x58;
+  uVar1 = (uint)unsigned_short_src[88] * 0x702f >> 0x10;
   unsigned_short_dest[88] =
-       (unsigned_short)(((unsigned_short_src[88] - uVar16 & 0xfffe) >> 1) + uVar16 >> 6);
+       (unsigned_short)(((unsigned_short_src[88] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
   unsigned_short_dest[89] = unsigned_short_src[89] / 0x5a;
+  uVar1 = (uint)unsigned_short_src[90] * 0x6817 >> 0x10;
   unsigned_short_dest[90] =
-       (unsigned_short)(((unsigned_short_src[90] - uVar17 & 0xfffe) >> 1) + uVar17 >> 6);
-  unsigned_short_dest[91] = (unsigned_short_src[91] >> 2) / 0x17;
+       (unsigned_short)(((unsigned_short_src[90] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[91] = unsigned_short_src[91] / 0x5c;
+  uVar1 = (uint)unsigned_short_src[92] * 0x6059 >> 0x10;
   unsigned_short_dest[92] =
-       (unsigned_short)(((unsigned_short_src[92] - uVar18 & 0xfffe) >> 1) + uVar18 >> 6);
-  unsigned_short_dest[93] = (unsigned_short_src[93] >> 1) / 0x2f;
+       (unsigned_short)(((unsigned_short_src[92] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[93] = unsigned_short_src[93] / 0x5e;
   unsigned_short_dest[94] = unsigned_short_src[94] / 0x5f;
   unsigned_short_dest[95] = unsigned_short_src[95] / 0x60;
+  uVar1 = (uint)unsigned_short_src[96] * 0x51d1 >> 0x10;
   unsigned_short_dest[96] =
-       (unsigned_short)(((unsigned_short_src[96] - uVar19 & 0xfffe) >> 1) + uVar19 >> 6);
-  unsigned_short_dest[97] = (unsigned_short_src[97] >> 1) / 0x31;
+       (unsigned_short)(((unsigned_short_src[96] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[97] = unsigned_short_src[97] / 0x62;
   unsigned_short_dest[98] = unsigned_short_src[98] / 99;
-  unsigned_short_dest[99] = (unsigned_short_src[99] >> 2) / 0x19;
+  unsigned_short_dest[99] = unsigned_short_src[99] / 100;
   unsigned_short_dest[100] = unsigned_short_src[100] / 0x65;
   unsigned_short_dest[101] = unsigned_short_src[101] / 0x66;
   unsigned_short_dest[102] = unsigned_short_src[102] / 0x67;
   unsigned_short_dest[103] = unsigned_short_src[103] / 0x68;
   unsigned_short_dest[104] = unsigned_short_src[104] / 0x69;
   unsigned_short_dest[105] = unsigned_short_src[105] / 0x6a;
+  uVar1 = (uint)unsigned_short_src[106] * 0x323f >> 0x10;
   unsigned_short_dest[106] =
-       (unsigned_short)(((unsigned_short_src[106] - uVar20 & 0xfffe) >> 1) + uVar20 >> 6);
-  unsigned_short_dest[107] = (unsigned_short_src[107] >> 2) / 0x1b;
+       (unsigned_short)(((unsigned_short_src[106] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[107] = unsigned_short_src[107] / 0x6c;
   unsigned_short_dest[108] = unsigned_short_src[108] / 0x6d;
-  unsigned_short_dest[109] = (unsigned_short_src[109] >> 1) / 0x37;
+  unsigned_short_dest[109] = unsigned_short_src[109] / 0x6e;
   unsigned_short_dest[110] = unsigned_short_src[110] / 0x6f;
-  unsigned_short_dest[111] = (unsigned_short_src[111] >> 4) / 7;
+  unsigned_short_dest[111] = unsigned_short_src[111] / 0x70;
   unsigned_short_dest[112] = unsigned_short_src[112] / 0x71;
-  unsigned_short_dest[113] = (unsigned_short_src[113] >> 1) / 0x39;
+  unsigned_short_dest[113] = unsigned_short_src[113] / 0x72;
+  uVar1 = (uint)unsigned_short_src[114] * 0x1cf1 >> 0x10;
   unsigned_short_dest[114] =
-       (unsigned_short)(((unsigned_short_src[114] - uVar21 & 0xfffe) >> 1) + uVar21 >> 6);
+       (unsigned_short)(((unsigned_short_src[114] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
   unsigned_short_dest[115] = unsigned_short_src[115] / 0x74;
   unsigned_short_dest[116] = unsigned_short_src[116] / 0x75;
   unsigned_short_dest[117] = unsigned_short_src[117] / 0x76;
+  uVar1 = (uint)unsigned_short_src[118] * 0x135d >> 0x10;
   unsigned_short_dest[118] =
-       (unsigned_short)(((unsigned_short_src[118] - uVar22 & 0xfffe) >> 1) + uVar22 >> 6);
+       (unsigned_short)(((unsigned_short_src[118] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
   unsigned_short_dest[119] = unsigned_short_src[119] / 0x78;
   unsigned_short_dest[120] = unsigned_short_src[120] / 0x79;
   unsigned_short_dest[121] = unsigned_short_src[121] / 0x7a;
+  uVar1 = (uint)unsigned_short_src[122] * 0xa69 >> 0x10;
   unsigned_short_dest[122] =
-       (unsigned_short)(((unsigned_short_src[122] - uVar23 & 0xfffe) >> 1) + uVar23 >> 6);
-  unsigned_short_dest[123] = (unsigned_short_src[123] >> 2) / 0x1f;
+       (unsigned_short)(((unsigned_short_src[122] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[123] = unsigned_short_src[123] / 0x7c;
+  uVar1 = (uint)unsigned_short_src[124] * 0x625 >> 0x10;
   unsigned_short_dest[124] =
-       (unsigned_short)(((unsigned_short_src[124] - uVar24 & 0xfffe) >> 1) + uVar24 >> 6);
-  unsigned_short_dest[125] = (unsigned_short_src[125] >> 1) / 0x3f;
+       (unsigned_short)(((unsigned_short_src[124] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
+  unsigned_short_dest[125] = unsigned_short_src[125] / 0x7e;
+  uVar1 = (uint)unsigned_short_src[126] * 0x205 >> 0x10;
   unsigned_short_dest[126] =
-       (unsigned_short)(((unsigned_short_src[126] - uVar25 & 0xfffe) >> 1) + uVar25 >> 6);
+       (unsigned_short)(((unsigned_short_src[126] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6);
   unsigned_short_dest[127] = unsigned_short_src[127] >> 7;
   unsigned_short_dest[128] = unsigned_short_src[128] / 0x81;
   unsigned_short_dest[129] = unsigned_short_src[129] / 0x82;
@@ -25090,7 +23064,7 @@ void unsigned_short_div(void)
   unsigned_short_dest[134] = unsigned_short_src[134] / 0x87;
   unsigned_short_dest[135] = unsigned_short_src[135] / 0x88;
   unsigned_short_dest[136] = unsigned_short_src[136] / 0x89;
-  unsigned_short_dest[137] = (unsigned_short_src[137] >> 1) / 0x45;
+  unsigned_short_dest[137] = unsigned_short_src[137] / 0x8a;
   unsigned_short_dest[138] = unsigned_short_src[138] / 0x8b;
   unsigned_short_dest[139] = unsigned_short_src[139] / 0x8c;
   unsigned_short_dest[140] = unsigned_short_src[140] / 0x8d;
@@ -25102,77 +23076,84 @@ void unsigned_short_div(void)
   unsigned_short_dest[146] = unsigned_short_src[146] / 0x93;
   unsigned_short_dest[147] = unsigned_short_src[147] / 0x94;
   unsigned_short_dest[148] = unsigned_short_src[148] / 0x95;
-  unsigned_short_dest[149] = (unsigned_short_src[149] >> 1) / 0x4b;
+  unsigned_short_dest[149] = unsigned_short_src[149] / 0x96;
   unsigned_short_dest[150] = unsigned_short_src[150] / 0x97;
   unsigned_short_dest[151] = unsigned_short_src[151] / 0x98;
   unsigned_short_dest[152] = unsigned_short_src[152] / 0x99;
   unsigned_short_dest[153] = unsigned_short_src[153] / 0x9a;
+  uVar1 = (uint)unsigned_short_src[154] * 0xa6d1 >> 0x10;
   unsigned_short_dest[154] =
-       (unsigned_short)((((unsigned_short_src[154] - uVar26 & 0xfffe) >> 1) + uVar26 & 0xff80) >> 7)
-  ;
-  unsigned_short_dest[155] = (unsigned_short_src[155] >> 2) / 0x27;
+       (unsigned_short)((((unsigned_short_src[154] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7);
+  unsigned_short_dest[155] = unsigned_short_src[155] / 0x9c;
   unsigned_short_dest[156] = unsigned_short_src[156] / 0x9d;
   unsigned_short_dest[157] = unsigned_short_src[157] / 0x9e;
   unsigned_short_dest[158] = unsigned_short_src[158] / 0x9f;
   unsigned_short_dest[159] = unsigned_short_src[159] / 0xa0;
+  uVar1 = (uint)unsigned_short_src[160] * 0x970f >> 0x10;
   unsigned_short_dest[160] =
-       (unsigned_short)((((unsigned_short_src[160] - uVar27 & 0xfffe) >> 1) + uVar27 & 0xff80) >> 7)
-  ;
+       (unsigned_short)((((unsigned_short_src[160] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7);
   unsigned_short_dest[161] = unsigned_short_src[161] / 0xa2;
   unsigned_short_dest[162] = unsigned_short_src[162] / 0xa3;
-  unsigned_short_dest[163] = (unsigned_short_src[163] >> 2) / 0x29;
+  unsigned_short_dest[163] = unsigned_short_src[163] / 0xa4;
+  uVar1 = (uint)unsigned_short_src[164] * 0x8d31 >> 0x10;
   unsigned_short_dest[164] =
-       (unsigned_short)((((unsigned_short_src[164] - uVar28 & 0xfffe) >> 1) + uVar28 & 0xff80) >> 7)
-  ;
+       (unsigned_short)((((unsigned_short_src[164] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7);
   unsigned_short_dest[165] = unsigned_short_src[165] / 0xa6;
+  uVar1 = (uint)unsigned_short_src[166] * 0x886f >> 0x10;
   unsigned_short_dest[166] =
-       (unsigned_short)((((unsigned_short_src[166] - uVar29 & 0xfffe) >> 1) + uVar29 & 0xff80) >> 7)
-  ;
-  unsigned_short_dest[167] = (unsigned_short_src[167] >> 3) / 0x15;
+       (unsigned_short)((((unsigned_short_src[166] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7);
+  unsigned_short_dest[167] = unsigned_short_src[167] / 0xa8;
   unsigned_short_dest[168] = unsigned_short_src[168] / 0xa9;
   unsigned_short_dest[169] = unsigned_short_src[169] / 0xaa;
+  uVar1 = (uint)unsigned_short_src[170] * 0x7f41 >> 0x10;
   unsigned_short_dest[170] =
-       (unsigned_short)(((unsigned_short_src[170] - uVar30 & 0xfffe) >> 1) + uVar30 >> 7);
+       (unsigned_short)(((unsigned_short_src[170] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[171] = unsigned_short_src[171] / 0xac;
+  uVar1 = (uint)unsigned_short_src[172] * 0x7ad3 >> 0x10;
   unsigned_short_dest[172] =
-       (unsigned_short)(((unsigned_short_src[172] - uVar31 & 0xfffe) >> 1) + uVar31 >> 7);
+       (unsigned_short)(((unsigned_short_src[172] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[173] = unsigned_short_src[173] / 0xae;
   unsigned_short_dest[174] = unsigned_short_src[174] / 0xaf;
   unsigned_short_dest[175] = unsigned_short_src[175] / 0xb0;
+  uVar1 = (uint)unsigned_short_src[176] * 0x7243 >> 0x10;
   unsigned_short_dest[176] =
-       (unsigned_short)(((unsigned_short_src[176] - uVar32 & 0xfffe) >> 1) + uVar32 >> 7);
-  unsigned_short_dest[177] = (unsigned_short_src[177] >> 1) / 0x59;
+       (unsigned_short)(((unsigned_short_src[176] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[177] = unsigned_short_src[177] / 0xb2;
   unsigned_short_dest[178] = unsigned_short_src[178] / 0xb3;
   unsigned_short_dest[179] = unsigned_short_src[179] / 0xb4;
   unsigned_short_dest[180] = unsigned_short_src[180] / 0xb5;
-  unsigned_short_dest[181] = (unsigned_short_src[181] >> 1) / 0x5b;
+  unsigned_short_dest[181] = unsigned_short_src[181] / 0xb6;
   unsigned_short_dest[182] = unsigned_short_src[182] / 0xb7;
-  unsigned_short_dest[183] = (unsigned_short_src[183] >> 3) / 0x17;
+  unsigned_short_dest[183] = unsigned_short_src[183] / 0xb8;
   unsigned_short_dest[184] = unsigned_short_src[184] / 0xb9;
-  unsigned_short_dest[185] = (unsigned_short_src[185] >> 1) / 0x5d;
+  unsigned_short_dest[185] = unsigned_short_src[185] / 0xba;
   unsigned_short_dest[186] = unsigned_short_src[186] / 0xbb;
-  unsigned_short_dest[187] = (unsigned_short_src[187] >> 2) / 0x2f;
+  unsigned_short_dest[187] = unsigned_short_src[187] / 0xbc;
+  uVar1 = (uint)unsigned_short_src[188] * 0x5ac1 >> 0x10;
   unsigned_short_dest[188] =
-       (unsigned_short)(((unsigned_short_src[188] - uVar33 & 0xfffe) >> 1) + uVar33 >> 7);
+       (unsigned_short)(((unsigned_short_src[188] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[189] = unsigned_short_src[189] / 0xbe;
   unsigned_short_dest[190] = unsigned_short_src[190] / 0xbf;
   unsigned_short_dest[191] = unsigned_short_src[191] / 0xc0;
+  uVar1 = (uint)unsigned_short_src[192] * 0x5391 >> 0x10;
   unsigned_short_dest[192] =
-       (unsigned_short)(((unsigned_short_src[192] - uVar34 & 0xfffe) >> 1) + uVar34 >> 7);
-  unsigned_short_dest[193] = (unsigned_short_src[193] >> 1) / 0x61;
+       (unsigned_short)(((unsigned_short_src[192] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[193] = unsigned_short_src[193] / 0xc2;
   unsigned_short_dest[194] = unsigned_short_src[194] / 0xc3;
-  unsigned_short_dest[195] = (unsigned_short_src[195] >> 2) / 0x31;
+  unsigned_short_dest[195] = unsigned_short_src[195] / 0xc4;
   unsigned_short_dest[196] = unsigned_short_src[196] / 0xc5;
   unsigned_short_dest[197] = unsigned_short_src[197] / 0xc6;
   unsigned_short_dest[198] = unsigned_short_src[198] / 199;
-  unsigned_short_dest[199] = (unsigned_short_src[199] >> 3) / 0x19;
+  unsigned_short_dest[199] = unsigned_short_src[199] / 200;
   unsigned_short_dest[200] = unsigned_short_src[200] / 0xc9;
   unsigned_short_dest[201] = unsigned_short_src[201] / 0xca;
+  uVar1 = (uint)unsigned_short_src[202] * 0x42d7 >> 0x10;
   unsigned_short_dest[202] =
-       (unsigned_short)(((unsigned_short_src[202] - uVar35 & 0xfffe) >> 1) + uVar35 >> 7);
+       (unsigned_short)(((unsigned_short_src[202] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[203] = unsigned_short_src[203] / 0xcc;
+  uVar1 = (uint)unsigned_short_src[204] * 0x3fb1 >> 0x10;
   unsigned_short_dest[204] =
-       (unsigned_short)(((unsigned_short_src[204] - uVar36 & 0xfffe) >> 1) + uVar36 >> 7);
+       (unsigned_short)(((unsigned_short_src[204] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[205] = unsigned_short_src[205] / 0xce;
   unsigned_short_dest[206] = unsigned_short_src[206] / 0xcf;
   unsigned_short_dest[207] = unsigned_short_src[207] / 0xd0;
@@ -25180,58 +23161,68 @@ void unsigned_short_div(void)
   unsigned_short_dest[209] = unsigned_short_src[209] / 0xd2;
   unsigned_short_dest[210] = unsigned_short_src[210] / 0xd3;
   unsigned_short_dest[211] = unsigned_short_src[211] / 0xd4;
+  uVar1 = (uint)unsigned_short_src[212] * 0x33af >> 0x10;
   unsigned_short_dest[212] =
-       (unsigned_short)(((unsigned_short_src[212] - uVar37 & 0xfffe) >> 1) + uVar37 >> 7);
-  unsigned_short_dest[213] = (unsigned_short_src[213] >> 1) / 0x6b;
+       (unsigned_short)(((unsigned_short_src[212] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[213] = unsigned_short_src[213] / 0xd6;
   unsigned_short_dest[214] = unsigned_short_src[214] / 0xd7;
-  unsigned_short_dest[215] = (unsigned_short_src[215] >> 3) / 0x1b;
+  unsigned_short_dest[215] = unsigned_short_src[215] / 0xd8;
+  uVar1 = (uint)unsigned_short_src[216] * 0x2e03 >> 0x10;
   unsigned_short_dest[216] =
-       (unsigned_short)(((unsigned_short_src[216] - uVar38 & 0xfffe) >> 1) + uVar38 >> 7);
+       (unsigned_short)(((unsigned_short_src[216] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[217] = unsigned_short_src[217] / 0xda;
+  uVar1 = (uint)unsigned_short_src[218] * 0x2b41 >> 0x10;
   unsigned_short_dest[218] =
-       (unsigned_short)(((unsigned_short_src[218] - uVar39 & 0xfffe) >> 1) + uVar39 >> 7);
-  unsigned_short_dest[219] = (unsigned_short_src[219] >> 2) / 0x37;
+       (unsigned_short)(((unsigned_short_src[218] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[219] = unsigned_short_src[219] / 0xdc;
   unsigned_short_dest[220] = unsigned_short_src[220] / 0xdd;
   unsigned_short_dest[221] = unsigned_short_src[221] / 0xde;
+  uVar1 = (uint)unsigned_short_src[222] * 0x25e3 >> 0x10;
   unsigned_short_dest[222] =
-       (unsigned_short)(((unsigned_short_src[222] - uVar40 & 0xfffe) >> 1) + uVar40 >> 7);
-  unsigned_short_dest[223] = (unsigned_short_src[223] >> 5) / 7;
+       (unsigned_short)(((unsigned_short_src[222] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[223] = unsigned_short_src[223] / 0xe0;
   unsigned_short_dest[224] = unsigned_short_src[224] / 0xe1;
   unsigned_short_dest[225] = unsigned_short_src[225] / 0xe2;
+  uVar1 = (uint)unsigned_short_src[226] * 0x20b5 >> 0x10;
   unsigned_short_dest[226] =
-       (unsigned_short)(((unsigned_short_src[226] - uVar41 & 0xfffe) >> 1) + uVar41 >> 7);
-  unsigned_short_dest[227] = (unsigned_short_src[227] >> 2) / 0x39;
+       (unsigned_short)(((unsigned_short_src[226] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[227] = unsigned_short_src[227] / 0xe4;
   unsigned_short_dest[228] = unsigned_short_src[228] / 0xe5;
-  unsigned_short_dest[229] = (unsigned_short_src[229] >> 1) / 0x73;
+  unsigned_short_dest[229] = unsigned_short_src[229] / 0xe6;
+  uVar1 = (uint)unsigned_short_src[230] * 0x1bb5 >> 0x10;
   unsigned_short_dest[230] =
-       (unsigned_short)(((unsigned_short_src[230] - uVar42 & 0xfffe) >> 1) + uVar42 >> 7);
+       (unsigned_short)(((unsigned_short_src[230] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[231] = unsigned_short_src[231] / 0xe8;
   unsigned_short_dest[232] = unsigned_short_src[232] / 0xe9;
   unsigned_short_dest[233] = unsigned_short_src[233] / 0xea;
+  uVar1 = (uint)unsigned_short_src[234] * 0x16e1 >> 0x10;
   unsigned_short_dest[234] =
-       (unsigned_short)(((unsigned_short_src[234] - uVar43 & 0xfffe) >> 1) + uVar43 >> 7);
+       (unsigned_short)(((unsigned_short_src[234] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[235] = unsigned_short_src[235] / 0xec;
   unsigned_short_dest[236] = unsigned_short_src[236] / 0xed;
-  unsigned_short_dest[237] = (unsigned_short_src[237] >> 1) / 0x77;
+  unsigned_short_dest[237] = unsigned_short_src[237] / 0xee;
   unsigned_short_dest[238] = unsigned_short_src[238] / 0xef;
   unsigned_short_dest[239] = unsigned_short_src[239] / 0xf0;
   unsigned_short_dest[240] = unsigned_short_src[240] / 0xf1;
   unsigned_short_dest[241] = unsigned_short_src[241] / 0xf2;
+  uVar1 = (uint)unsigned_short_src[242] * 0xdb3 >> 0x10;
   unsigned_short_dest[242] =
-       (unsigned_short)(((unsigned_short_src[242] - uVar44 & 0xfffe) >> 1) + uVar44 >> 7);
+       (unsigned_short)(((unsigned_short_src[242] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
   unsigned_short_dest[243] = unsigned_short_src[243] / 0xf4;
+  uVar1 = (uint)unsigned_short_src[244] * 0xb7f >> 0x10;
   unsigned_short_dest[244] =
-       (unsigned_short)(((unsigned_short_src[244] - uVar45 & 0xfffe) >> 1) + uVar45 >> 7);
-  unsigned_short_dest[245] = (unsigned_short_src[245] >> 1) / 0x7b;
+       (unsigned_short)(((unsigned_short_src[244] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[245] = unsigned_short_src[245] / 0xf6;
   unsigned_short_dest[246] = unsigned_short_src[246] / 0xf7;
-  unsigned_short_dest[247] = (unsigned_short_src[247] >> 3) / 0x1f;
+  unsigned_short_dest[247] = unsigned_short_src[247] / 0xf8;
+  uVar1 = (uint)unsigned_short_src[248] * 0x733 >> 0x10;
   unsigned_short_dest[248] =
-       (unsigned_short)(((unsigned_short_src[248] - uVar46 & 0xfffe) >> 1) + uVar46 >> 7);
-  unsigned_short_dest[249] = (unsigned_short_src[249] >> 1) / 0x7d;
+       (unsigned_short)(((unsigned_short_src[248] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7);
+  unsigned_short_dest[249] = unsigned_short_src[249] / 0xfa;
   unsigned_short_dest[250] = unsigned_short_src[250] / 0xfb;
-  unsigned_short_dest[251] = (unsigned_short_src[251] >> 2) / 0x3f;
+  unsigned_short_dest[251] = unsigned_short_src[251] / 0xfc;
   unsigned_short_dest[252] = unsigned_short_src[252] / 0xfd;
-  unsigned_short_dest[253] = (unsigned_short_src[253] >> 1) / 0x7f;
+  unsigned_short_dest[253] = unsigned_short_src[253] / 0xfe;
   unsigned_short_dest[254] = unsigned_short_src[254] / 0xff;
   unsigned_short_dest[255] = (ushort)unsigned_short_src[255]._1_1_;
   unsigned_short_dest[256] = unsigned_short_src[256] / 0x101;
@@ -25244,19 +23235,22 @@ void unsigned_short_div(void)
   unsigned_short_dest[263] = unsigned_short_src[263] / 0x108;
   unsigned_short_dest[264] = unsigned_short_src[264] / 0x109;
   unsigned_short_dest[265] = unsigned_short_src[265] / 0x10a;
+  uVar1 = (uint)unsigned_short_src[266] * 0xeae9 >> 0x10;
   unsigned_short_dest[266] =
-       (ushort)(((unsigned_short_src[266] - uVar47 & 0xfffe) >> 1) + uVar47 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[266] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[267] = unsigned_short_src[267] / 0x10c;
   unsigned_short_dest[268] = unsigned_short_src[268] / 0x10d;
   unsigned_short_dest[269] = unsigned_short_src[269] / 0x10e;
   unsigned_short_dest[270] = unsigned_short_src[270] / 0x10f;
   unsigned_short_dest[271] = unsigned_short_src[271] / 0x110;
+  uVar1 = (uint)unsigned_short_src[272] * 0xe01f >> 0x10;
   unsigned_short_dest[272] =
-       (ushort)(((unsigned_short_src[272] - uVar48 & 0xfffe) >> 1) + uVar48 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[272] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[273] = unsigned_short_src[273] / 0x112;
+  uVar1 = (uint)unsigned_short_src[274] * 0xdca1 >> 0x10;
   unsigned_short_dest[274] =
-       (ushort)(((unsigned_short_src[274] - uVar49 & 0xfffe) >> 1) + uVar49 >> 8) & 0xff;
-  unsigned_short_dest[275] = (unsigned_short_src[275] >> 2) / 0x45;
+       (ushort)(((unsigned_short_src[274] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
+  unsigned_short_dest[275] = unsigned_short_src[275] / 0x114;
   unsigned_short_dest[276] = unsigned_short_src[276] / 0x115;
   unsigned_short_dest[277] = unsigned_short_src[277] / 0x116;
   unsigned_short_dest[278] = unsigned_short_src[278] / 0x117;
@@ -25273,16 +23267,18 @@ void unsigned_short_div(void)
   unsigned_short_dest[289] = unsigned_short_src[289] / 0x122;
   unsigned_short_dest[290] = unsigned_short_src[290] / 0x123;
   unsigned_short_dest[291] = unsigned_short_src[291] / 0x124;
+  uVar1 = (uint)unsigned_short_src[292] * 0xbf59 >> 0x10;
   unsigned_short_dest[292] =
-       (ushort)(((unsigned_short_src[292] - uVar50 & 0xfffe) >> 1) + uVar50 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[292] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[293] = unsigned_short_src[293] / 0x126;
   unsigned_short_dest[294] = unsigned_short_src[294] / 0x127;
   unsigned_short_dest[295] = unsigned_short_src[295] / 0x128;
   unsigned_short_dest[296] = unsigned_short_src[296] / 0x129;
   unsigned_short_dest[297] = unsigned_short_src[297] / 0x12a;
+  uVar1 = (uint)unsigned_short_src[298] * 0xb65f >> 0x10;
   unsigned_short_dest[298] =
-       (ushort)(((unsigned_short_src[298] - uVar51 & 0xfffe) >> 1) + uVar51 >> 8) & 0xff;
-  unsigned_short_dest[299] = (unsigned_short_src[299] >> 2) / 0x4b;
+       (ushort)(((unsigned_short_src[298] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
+  unsigned_short_dest[299] = unsigned_short_src[299] / 300;
   unsigned_short_dest[300] = unsigned_short_src[300] / 0x12d;
   unsigned_short_dest[301] = unsigned_short_src[301] / 0x12e;
   unsigned_short_dest[302] = unsigned_short_src[302] / 0x12f;
@@ -25292,254 +23288,300 @@ void unsigned_short_div(void)
   unsigned_short_dest[306] = unsigned_short_src[306] / 0x133;
   unsigned_short_dest[307] = unsigned_short_src[307] / 0x134;
   unsigned_short_dest[308] = unsigned_short_src[308] / 0x135;
-  unsigned_short_dest[309] = (unsigned_short_src[309] >> 1) / 0x9b;
+  unsigned_short_dest[309] = unsigned_short_src[309] / 0x136;
+  uVar1 = (uint)unsigned_short_src[310] * 0xa575 >> 0x10;
   unsigned_short_dest[310] =
-       (ushort)(((unsigned_short_src[310] - uVar52 & 0xfffe) >> 1) + uVar52 >> 8) & 0xff;
-  unsigned_short_dest[311] = (unsigned_short_src[311] >> 3) / 0x27;
+       (ushort)(((unsigned_short_src[310] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
+  unsigned_short_dest[311] = unsigned_short_src[311] / 0x138;
   unsigned_short_dest[312] = unsigned_short_src[312] / 0x139;
   unsigned_short_dest[313] = unsigned_short_src[313] / 0x13a;
+  uVar1 = (uint)unsigned_short_src[314] * 0xa01b >> 0x10;
   unsigned_short_dest[314] =
-       (ushort)(((unsigned_short_src[314] - uVar53 & 0xfffe) >> 1) + uVar53 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[314] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[315] = unsigned_short_src[315] / 0x13c;
   unsigned_short_dest[316] = unsigned_short_src[316] / 0x13d;
   unsigned_short_dest[317] = unsigned_short_src[317] / 0x13e;
+  uVar1 = (uint)unsigned_short_src[318] * 0x9ae3 >> 0x10;
   unsigned_short_dest[318] =
-       (ushort)(((unsigned_short_src[318] - uVar54 & 0xfffe) >> 1) + uVar54 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[318] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[319] = unsigned_short_src[319] / 0x140;
   unsigned_short_dest[320] = unsigned_short_src[320] / 0x141;
-  unsigned_short_dest[321] = (unsigned_short_src[321] >> 1) / 0xa1;
+  unsigned_short_dest[321] = unsigned_short_src[321] / 0x142;
   unsigned_short_dest[322] = unsigned_short_src[322] / 0x143;
   unsigned_short_dest[323] = unsigned_short_src[323] / 0x144;
+  uVar1 = (uint)unsigned_short_src[324] * 0x934d >> 0x10;
   unsigned_short_dest[324] =
-       (ushort)(((unsigned_short_src[324] - uVar55 & 0xfffe) >> 1) + uVar55 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[324] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[325] = unsigned_short_src[325] / 0x146;
   unsigned_short_dest[326] = unsigned_short_src[326] / 0x147;
-  unsigned_short_dest[327] = (unsigned_short_src[327] >> 3) / 0x29;
+  unsigned_short_dest[327] = unsigned_short_src[327] / 0x148;
   unsigned_short_dest[328] = unsigned_short_src[328] / 0x149;
-  unsigned_short_dest[329] = (unsigned_short_src[329] >> 1) / 0xa5;
+  unsigned_short_dest[329] = unsigned_short_src[329] / 0x14a;
   unsigned_short_dest[330] = unsigned_short_src[330] / 0x14b;
   unsigned_short_dest[331] = unsigned_short_src[331] / 0x14c;
+  uVar1 = (uint)unsigned_short_src[332] * 0x899d >> 0x10;
   unsigned_short_dest[332] =
-       (ushort)(((unsigned_short_src[332] - uVar56 & 0xfffe) >> 1) + uVar56 >> 8) & 0xff;
-  unsigned_short_dest[333] = (unsigned_short_src[333] >> 1) / 0xa7;
+       (ushort)(((unsigned_short_src[332] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
+  unsigned_short_dest[333] = unsigned_short_src[333] / 0x14e;
   unsigned_short_dest[334] = unsigned_short_src[334] / 0x14f;
-  unsigned_short_dest[335] = (unsigned_short_src[335] >> 4) / 0x15;
+  unsigned_short_dest[335] = unsigned_short_src[335] / 0x150;
+  uVar1 = (uint)unsigned_short_src[336] * 0x84f1 >> 0x10;
   unsigned_short_dest[336] =
-       (ushort)(((unsigned_short_src[336] - uVar57 & 0xfffe) >> 1) + uVar57 >> 8) & 0xff;
+       (ushort)(((unsigned_short_src[336] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
   unsigned_short_dest[337] = unsigned_short_src[337] / 0x152;
   unsigned_short_dest[338] = unsigned_short_src[338] / 0x153;
   unsigned_short_dest[339] = unsigned_short_src[339] / 0x154;
+  uVar1 = (uint)unsigned_short_src[340] * 0x8061 >> 0x10;
   unsigned_short_dest[340] =
-       (ushort)(((unsigned_short_src[340] - uVar58 & 0xfffe) >> 1) + uVar58 >> 8) & 0xff;
-  unsigned_short_dest[341] = (unsigned_short_src[341] >> 1) / 0xab;
+       (ushort)(((unsigned_short_src[340] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff;
+  unsigned_short_dest[341] = unsigned_short_src[341] / 0x156;
+  uVar1 = (uint)unsigned_short_src[342] * 0x7e23 >> 0x10;
   unsigned_short_dest[342] =
-       (unsigned_short)(((unsigned_short_src[342] - uVar59 & 0xfffe) >> 1) + uVar59 >> 8);
+       (unsigned_short)(((unsigned_short_src[342] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[343] = unsigned_short_src[343] / 0x158;
   unsigned_short_dest[344] = unsigned_short_src[344] / 0x159;
-  unsigned_short_dest[345] = (unsigned_short_src[345] >> 1) / 0xad;
+  unsigned_short_dest[345] = unsigned_short_src[345] / 0x15a;
   unsigned_short_dest[346] = unsigned_short_src[346] / 0x15b;
   unsigned_short_dest[347] = unsigned_short_src[347] / 0x15c;
+  uVar1 = (uint)unsigned_short_src[348] * 0x7791 >> 0x10;
   unsigned_short_dest[348] =
-       (unsigned_short)(((unsigned_short_src[348] - uVar60 & 0xfffe) >> 1) + uVar60 >> 8);
+       (unsigned_short)(((unsigned_short_src[348] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[349] = unsigned_short_src[349] / 0x15e;
   unsigned_short_dest[350] = unsigned_short_src[350] / 0x15f;
   unsigned_short_dest[351] = unsigned_short_src[351] / 0x160;
   unsigned_short_dest[352] = unsigned_short_src[352] / 0x161;
-  unsigned_short_dest[353] = (unsigned_short_src[353] >> 1) / 0xb1;
+  unsigned_short_dest[353] = unsigned_short_src[353] / 0x162;
   unsigned_short_dest[354] = unsigned_short_src[354] / 0x163;
-  unsigned_short_dest[355] = (unsigned_short_src[355] >> 2) / 0x59;
+  unsigned_short_dest[355] = unsigned_short_src[355] / 0x164;
+  uVar1 = (uint)unsigned_short_src[356] * 0x6f27 >> 0x10;
   unsigned_short_dest[356] =
-       (unsigned_short)(((unsigned_short_src[356] - uVar61 & 0xfffe) >> 1) + uVar61 >> 8);
+       (unsigned_short)(((unsigned_short_src[356] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[357] = unsigned_short_src[357] / 0x166;
+  uVar1 = (uint)unsigned_short_src[358] * 0x6d1b >> 0x10;
   unsigned_short_dest[358] =
-       (unsigned_short)(((unsigned_short_src[358] - uVar62 & 0xfffe) >> 1) + uVar62 >> 8);
+       (unsigned_short)(((unsigned_short_src[358] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[359] = unsigned_short_src[359] / 0x168;
+  uVar1 = (uint)unsigned_short_src[360] * 0x6b15 >> 0x10;
   unsigned_short_dest[360] =
-       (unsigned_short)(((unsigned_short_src[360] - uVar63 & 0xfffe) >> 1) + uVar63 >> 8);
+       (unsigned_short)(((unsigned_short_src[360] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[361] = unsigned_short_src[361] / 0x16a;
+  uVar1 = (uint)unsigned_short_src[362] * 0x6915 >> 0x10;
   unsigned_short_dest[362] =
-       (unsigned_short)(((unsigned_short_src[362] - uVar64 & 0xfffe) >> 1) + uVar64 >> 8);
-  unsigned_short_dest[363] = (unsigned_short_src[363] >> 2) / 0x5b;
+       (unsigned_short)(((unsigned_short_src[362] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[363] = unsigned_short_src[363] / 0x16c;
   unsigned_short_dest[364] = unsigned_short_src[364] / 0x16d;
   unsigned_short_dest[365] = unsigned_short_src[365] / 0x16e;
   unsigned_short_dest[366] = unsigned_short_src[366] / 0x16f;
-  unsigned_short_dest[367] = (unsigned_short_src[367] >> 4) / 0x17;
+  unsigned_short_dest[367] = unsigned_short_src[367] / 0x170;
   unsigned_short_dest[368] = unsigned_short_src[368] / 0x171;
   unsigned_short_dest[369] = unsigned_short_src[369] / 0x172;
   unsigned_short_dest[370] = unsigned_short_src[370] / 0x173;
-  unsigned_short_dest[371] = (unsigned_short_src[371] >> 2) / 0x5d;
+  unsigned_short_dest[371] = unsigned_short_src[371] / 0x174;
+  uVar1 = (uint)unsigned_short_src[372] * 0x5f67 >> 0x10;
   unsigned_short_dest[372] =
-       (unsigned_short)(((unsigned_short_src[372] - uVar65 & 0xfffe) >> 1) + uVar65 >> 8);
+       (unsigned_short)(((unsigned_short_src[372] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[373] = unsigned_short_src[373] / 0x176;
+  uVar1 = (uint)unsigned_short_src[374] * 0x5d87 >> 0x10;
   unsigned_short_dest[374] =
-       (unsigned_short)(((unsigned_short_src[374] - uVar66 & 0xfffe) >> 1) + uVar66 >> 8);
-  unsigned_short_dest[375] = (unsigned_short_src[375] >> 3) / 0x2f;
+       (unsigned_short)(((unsigned_short_src[374] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[375] = unsigned_short_src[375] / 0x178;
   unsigned_short_dest[376] = unsigned_short_src[376] / 0x179;
-  unsigned_short_dest[377] = (unsigned_short_src[377] >> 1) / 0xbd;
+  unsigned_short_dest[377] = unsigned_short_src[377] / 0x17a;
+  uVar1 = (uint)unsigned_short_src[378] * 22999 >> 0x10;
   unsigned_short_dest[378] =
-       (unsigned_short)(((unsigned_short_src[378] - uVar67 & 0xfffe) >> 1) + uVar67 >> 8);
+       (unsigned_short)(((unsigned_short_src[378] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[379] = unsigned_short_src[379] / 0x17c;
   unsigned_short_dest[380] = unsigned_short_src[380] / 0x17d;
   unsigned_short_dest[381] = unsigned_short_src[381] / 0x17e;
   unsigned_short_dest[382] = unsigned_short_src[382] / 0x17f;
   unsigned_short_dest[383] = unsigned_short_src[383] / 0x180;
+  uVar1 = (uint)unsigned_short_src[384] * 0x5473 >> 0x10;
   unsigned_short_dest[384] =
-       (unsigned_short)(((unsigned_short_src[384] - uVar68 & 0xfffe) >> 1) + uVar68 >> 8);
-  unsigned_short_dest[385] = (unsigned_short_src[385] >> 1) / 0xc1;
+       (unsigned_short)(((unsigned_short_src[384] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[385] = unsigned_short_src[385] / 0x182;
   unsigned_short_dest[386] = unsigned_short_src[386] / 0x183;
-  unsigned_short_dest[387] = (unsigned_short_src[387] >> 2) / 0x61;
+  unsigned_short_dest[387] = unsigned_short_src[387] / 0x184;
+  uVar1 = (uint)unsigned_short_src[388] * 0x50f3 >> 0x10;
   unsigned_short_dest[388] =
-       (unsigned_short)(((unsigned_short_src[388] - uVar69 & 0xfffe) >> 1) + uVar69 >> 8);
+       (unsigned_short)(((unsigned_short_src[388] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[389] = unsigned_short_src[389] / 0x186;
   unsigned_short_dest[390] = unsigned_short_src[390] / 0x187;
-  unsigned_short_dest[391] = (unsigned_short_src[391] >> 3) / 0x31;
+  unsigned_short_dest[391] = unsigned_short_src[391] / 0x188;
+  uVar1 = (uint)unsigned_short_src[392] * 0x4d85 >> 0x10;
   unsigned_short_dest[392] =
-       (unsigned_short)(((unsigned_short_src[392] - uVar70 & 0xfffe) >> 1) + uVar70 >> 8);
+       (unsigned_short)(((unsigned_short_src[392] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[393] = unsigned_short_src[393] / 0x18a;
   unsigned_short_dest[394] = unsigned_short_src[394] / 0x18b;
   unsigned_short_dest[395] = unsigned_short_src[395] / 0x18c;
   unsigned_short_dest[396] = unsigned_short_src[396] / 0x18d;
   unsigned_short_dest[397] = unsigned_short_src[397] / 0x18e;
+  uVar1 = (uint)unsigned_short_src[398] * 0x4881 >> 0x10;
   unsigned_short_dest[398] =
-       (unsigned_short)(((unsigned_short_src[398] - uVar71 & 0xfffe) >> 1) + uVar71 >> 8);
-  unsigned_short_dest[399] = (unsigned_short_src[399] >> 4) / 0x19;
+       (unsigned_short)(((unsigned_short_src[398] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[399] = unsigned_short_src[399] / 400;
   unsigned_short_dest[400] = unsigned_short_src[400] / 0x191;
   unsigned_short_dest[401] = unsigned_short_src[401] / 0x192;
   unsigned_short_dest[402] = unsigned_short_src[402] / 0x193;
   unsigned_short_dest[403] = unsigned_short_src[403] / 0x194;
+  uVar1 = (uint)unsigned_short_src[404] * 0x43a3 >> 0x10;
   unsigned_short_dest[404] =
-       (unsigned_short)(((unsigned_short_src[404] - uVar72 & 0xfffe) >> 1) + uVar72 >> 8);
-  unsigned_short_dest[405] = (unsigned_short_src[405] >> 1) / 0xcb;
+       (unsigned_short)(((unsigned_short_src[404] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[405] = unsigned_short_src[405] / 0x196;
   unsigned_short_dest[406] = unsigned_short_src[406] / 0x197;
   unsigned_short_dest[407] = unsigned_short_src[407] / 0x198;
+  uVar1 = (uint)unsigned_short_src[408] * 0x4079 >> 0x10;
   unsigned_short_dest[408] =
-       (unsigned_short)(((unsigned_short_src[408] - uVar73 & 0xfffe) >> 1) + uVar73 >> 8);
-  unsigned_short_dest[409] = (unsigned_short_src[409] >> 1) / 0xcd;
+       (unsigned_short)(((unsigned_short_src[408] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[409] = unsigned_short_src[409] / 0x19a;
   unsigned_short_dest[410] = unsigned_short_src[410] / 0x19b;
   unsigned_short_dest[411] = unsigned_short_src[411] / 0x19c;
   unsigned_short_dest[412] = unsigned_short_src[412] / 0x19d;
   unsigned_short_dest[413] = unsigned_short_src[413] / 0x19e;
+  uVar1 = (uint)unsigned_short_src[414] * 0x3bd7 >> 0x10;
   unsigned_short_dest[414] =
-       (unsigned_short)(((unsigned_short_src[414] - uVar74 & 0xfffe) >> 1) + uVar74 >> 8);
+       (unsigned_short)(((unsigned_short_src[414] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[415] = unsigned_short_src[415] / 0x1a0;
+  uVar1 = (uint)unsigned_short_src[416] * 0x3a53 >> 0x10;
   unsigned_short_dest[416] =
-       (unsigned_short)(((unsigned_short_src[416] - uVar75 & 0xfffe) >> 1) + uVar75 >> 8);
+       (unsigned_short)(((unsigned_short_src[416] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[417] = unsigned_short_src[417] / 0x1a2;
+  uVar1 = (uint)unsigned_short_src[418] * 0x38d3 >> 0x10;
   unsigned_short_dest[418] =
-       (unsigned_short)(((unsigned_short_src[418] - uVar76 & 0xfffe) >> 1) + uVar76 >> 8);
+       (unsigned_short)(((unsigned_short_src[418] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[419] = unsigned_short_src[419] / 0x1a4;
   unsigned_short_dest[420] = unsigned_short_src[420] / 0x1a5;
   unsigned_short_dest[421] = unsigned_short_src[421] / 0x1a6;
   unsigned_short_dest[422] = unsigned_short_src[422] / 0x1a7;
   unsigned_short_dest[423] = unsigned_short_src[423] / 0x1a8;
   unsigned_short_dest[424] = unsigned_short_src[424] / 0x1a9;
-  unsigned_short_dest[425] = (unsigned_short_src[425] >> 1) / 0xd5;
+  unsigned_short_dest[425] = unsigned_short_src[425] / 0x1aa;
   unsigned_short_dest[426] = unsigned_short_src[426] / 0x1ab;
-  unsigned_short_dest[427] = (unsigned_short_src[427] >> 2) / 0x6b;
+  unsigned_short_dest[427] = unsigned_short_src[427] / 0x1ac;
   unsigned_short_dest[428] = unsigned_short_src[428] / 0x1ad;
   unsigned_short_dest[429] = unsigned_short_src[429] / 0x1ae;
+  uVar1 = (uint)unsigned_short_src[430] * 0x301d >> 0x10;
   unsigned_short_dest[430] =
-       (unsigned_short)(((unsigned_short_src[430] - uVar77 & 0xfffe) >> 1) + uVar77 >> 8);
-  unsigned_short_dest[431] = (unsigned_short_src[431] >> 4) / 0x1b;
+       (unsigned_short)(((unsigned_short_src[430] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[431] = unsigned_short_src[431] / 0x1b0;
   unsigned_short_dest[432] = unsigned_short_src[432] / 0x1b1;
-  unsigned_short_dest[433] = (unsigned_short_src[433] >> 1) / 0xd9;
+  unsigned_short_dest[433] = unsigned_short_src[433] / 0x1b2;
+  uVar1 = (uint)unsigned_short_src[434] * 0x2d51 >> 0x10;
   unsigned_short_dest[434] =
-       (unsigned_short)(((unsigned_short_src[434] - uVar78 & 0xfffe) >> 1) + uVar78 >> 8);
+       (unsigned_short)(((unsigned_short_src[434] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[435] = unsigned_short_src[435] / 0x1b4;
   unsigned_short_dest[436] = unsigned_short_src[436] / 0x1b5;
-  unsigned_short_dest[437] = (unsigned_short_src[437] >> 1) / 0xdb;
+  unsigned_short_dest[437] = unsigned_short_src[437] / 0x1b6;
   unsigned_short_dest[438] = unsigned_short_src[438] / 0x1b7;
-  unsigned_short_dest[439] = (unsigned_short_src[439] >> 3) / 0x37;
+  unsigned_short_dest[439] = unsigned_short_src[439] / 0x1b8;
   unsigned_short_dest[440] = unsigned_short_src[440] / 0x1b9;
   unsigned_short_dest[441] = unsigned_short_src[441] / 0x1ba;
   unsigned_short_dest[442] = unsigned_short_src[442] / 0x1bb;
   unsigned_short_dest[443] = unsigned_short_src[443] / 0x1bc;
   unsigned_short_dest[444] = unsigned_short_src[444] / 0x1bd;
-  unsigned_short_dest[445] = (unsigned_short_src[445] >> 1) / 0xdf;
+  unsigned_short_dest[445] = unsigned_short_src[445] / 0x1be;
   unsigned_short_dest[446] = unsigned_short_src[446] / 0x1bf;
-  unsigned_short_dest[447] = (unsigned_short_src[447] >> 6) / 7;
+  unsigned_short_dest[447] = unsigned_short_src[447] / 0x1c0;
   unsigned_short_dest[448] = unsigned_short_src[448] / 0x1c1;
   unsigned_short_dest[449] = unsigned_short_src[449] / 0x1c2;
+  uVar1 = (uint)unsigned_short_src[450] * 0x22a1 >> 0x10;
   unsigned_short_dest[450] =
-       (unsigned_short)(((unsigned_short_src[450] - uVar79 & 0xfffe) >> 1) + uVar79 >> 8);
+       (unsigned_short)(((unsigned_short_src[450] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[451] = unsigned_short_src[451] / 0x1c4;
   unsigned_short_dest[452] = unsigned_short_src[452] / 0x1c5;
-  unsigned_short_dest[453] = (unsigned_short_src[453] >> 1) / 0xe3;
+  unsigned_short_dest[453] = unsigned_short_src[453] / 0x1c6;
+  uVar1 = (uint)unsigned_short_src[454] * 0x2013 >> 0x10;
   unsigned_short_dest[454] =
-       (unsigned_short)(((unsigned_short_src[454] - uVar80 & 0xfffe) >> 1) + uVar80 >> 8);
-  unsigned_short_dest[455] = (unsigned_short_src[455] >> 3) / 0x39;
+       (unsigned_short)(((unsigned_short_src[454] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[455] = unsigned_short_src[455] / 0x1c8;
   unsigned_short_dest[456] = unsigned_short_src[456] / 0x1c9;
   unsigned_short_dest[457] = unsigned_short_src[457] / 0x1ca;
   unsigned_short_dest[458] = unsigned_short_src[458] / 0x1cb;
-  unsigned_short_dest[459] = (unsigned_short_src[459] >> 2) / 0x73;
+  unsigned_short_dest[459] = unsigned_short_src[459] / 0x1cc;
+  uVar1 = (uint)unsigned_short_src[460] * 0x1c53 >> 0x10;
   unsigned_short_dest[460] =
-       (unsigned_short)(((unsigned_short_src[460] - uVar81 & 0xfffe) >> 1) + uVar81 >> 8);
-  unsigned_short_dest[461] = (unsigned_short_src[461] >> 1) / 0xe7;
+       (unsigned_short)(((unsigned_short_src[460] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[461] = unsigned_short_src[461] / 0x1ce;
   unsigned_short_dest[462] = unsigned_short_src[462] / 0x1cf;
   unsigned_short_dest[463] = unsigned_short_src[463] / 0x1d0;
+  uVar1 = (uint)unsigned_short_src[464] * 0x19e1 >> 0x10;
   unsigned_short_dest[464] =
-       (unsigned_short)(((unsigned_short_src[464] - uVar82 & 0xfffe) >> 1) + uVar82 >> 8);
+       (unsigned_short)(((unsigned_short_src[464] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[465] = unsigned_short_src[465] / 0x1d2;
   unsigned_short_dest[466] = unsigned_short_src[466] / 0x1d3;
   unsigned_short_dest[467] = unsigned_short_src[467] / 0x1d4;
+  uVar1 = (uint)unsigned_short_src[468] * 0x1779 >> 0x10;
   unsigned_short_dest[468] =
-       (unsigned_short)(((unsigned_short_src[468] - uVar83 & 0xfffe) >> 1) + uVar83 >> 8);
-  unsigned_short_dest[469] = (unsigned_short_src[469] >> 1) / 0xeb;
+       (unsigned_short)(((unsigned_short_src[468] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[469] = unsigned_short_src[469] / 0x1d6;
+  uVar1 = (uint)unsigned_short_src[470] * 0x1649 >> 0x10;
   unsigned_short_dest[470] =
-       (unsigned_short)(((unsigned_short_src[470] - uVar84 & 0xfffe) >> 1) + uVar84 >> 8);
+       (unsigned_short)(((unsigned_short_src[470] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[471] = unsigned_short_src[471] / 0x1d8;
   unsigned_short_dest[472] = unsigned_short_src[472] / 0x1d9;
   unsigned_short_dest[473] = unsigned_short_src[473] / 0x1da;
+  uVar1 = (uint)unsigned_short_src[474] * 0x13f1 >> 0x10;
   unsigned_short_dest[474] =
-       (unsigned_short)(((unsigned_short_src[474] - uVar85 & 0xfffe) >> 1) + uVar85 >> 8);
-  unsigned_short_dest[475] = (unsigned_short_src[475] >> 2) / 0x77;
+       (unsigned_short)(((unsigned_short_src[474] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[475] = unsigned_short_src[475] / 0x1dc;
+  uVar1 = (uint)unsigned_short_src[476] * 0x12c9 >> 0x10;
   unsigned_short_dest[476] =
-       (unsigned_short)(((unsigned_short_src[476] - uVar86 & 0xfffe) >> 1) + uVar86 >> 8);
+       (unsigned_short)(((unsigned_short_src[476] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[477] = unsigned_short_src[477] / 0x1de;
   unsigned_short_dest[478] = unsigned_short_src[478] / 0x1df;
   unsigned_short_dest[479] = unsigned_short_src[479] / 0x1e0;
   unsigned_short_dest[480] = unsigned_short_src[480] / 0x1e1;
   unsigned_short_dest[481] = unsigned_short_src[481] / 0x1e2;
+  uVar1 = (uint)unsigned_short_src[482] * 0xf5f >> 0x10;
   unsigned_short_dest[482] =
-       (unsigned_short)(((unsigned_short_src[482] - uVar87 & 0xfffe) >> 1) + uVar87 >> 8);
+       (unsigned_short)(((unsigned_short_src[482] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[483] = unsigned_short_src[483] / 0x1e4;
+  uVar1 = (uint)unsigned_short_src[484] * 0xe41 >> 0x10;
   unsigned_short_dest[484] =
-       (unsigned_short)(((unsigned_short_src[484] - uVar88 & 0xfffe) >> 1) + uVar88 >> 8);
-  unsigned_short_dest[485] = (unsigned_short_src[485] >> 1) / 0xf3;
+       (unsigned_short)(((unsigned_short_src[484] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[485] = unsigned_short_src[485] / 0x1e6;
+  uVar1 = (uint)unsigned_short_src[486] * 0xd25 >> 0x10;
   unsigned_short_dest[486] =
-       (unsigned_short)(((unsigned_short_src[486] - uVar89 & 0xfffe) >> 1) + uVar89 >> 8);
+       (unsigned_short)(((unsigned_short_src[486] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[487] = unsigned_short_src[487] / 0x1e8;
+  uVar1 = (uint)unsigned_short_src[488] * 0xc0b >> 0x10;
   unsigned_short_dest[488] =
-       (unsigned_short)(((unsigned_short_src[488] - uVar90 & 0xfffe) >> 1) + uVar90 >> 8);
-  unsigned_short_dest[489] = (unsigned_short_src[489] >> 1) / 0xf5;
+       (unsigned_short)(((unsigned_short_src[488] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[489] = unsigned_short_src[489] / 0x1ea;
   unsigned_short_dest[490] = unsigned_short_src[490] / 0x1eb;
-  unsigned_short_dest[491] = (unsigned_short_src[491] >> 2) / 0x7b;
+  unsigned_short_dest[491] = unsigned_short_src[491] / 0x1ec;
   unsigned_short_dest[492] = unsigned_short_src[492] / 0x1ed;
   unsigned_short_dest[493] = unsigned_short_src[493] / 0x1ee;
+  uVar1 = (uint)unsigned_short_src[494] * 0x8cb >> 0x10;
   unsigned_short_dest[494] =
-       (unsigned_short)(((unsigned_short_src[494] - uVar91 & 0xfffe) >> 1) + uVar91 >> 8);
-  unsigned_short_dest[495] = (unsigned_short_src[495] >> 4) / 0x1f;
+       (unsigned_short)(((unsigned_short_src[494] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[495] = unsigned_short_src[495] / 0x1f0;
   unsigned_short_dest[496] = unsigned_short_src[496] / 0x1f1;
-  unsigned_short_dest[497] = (unsigned_short_src[497] >> 1) / 0xf9;
+  unsigned_short_dest[497] = unsigned_short_src[497] / 0x1f2;
   unsigned_short_dest[498] = unsigned_short_src[498] / 499;
-  unsigned_short_dest[499] = (unsigned_short_src[499] >> 2) / 0x7d;
+  unsigned_short_dest[499] = unsigned_short_src[499] / 500;
+  uVar1 = (uint)unsigned_short_src[500] * 0x59f >> 0x10;
   unsigned_short_dest[500] =
-       (unsigned_short)(((unsigned_short_src[500] - uVar92 & 0xfffe) >> 1) + uVar92 >> 8);
+       (unsigned_short)(((unsigned_short_src[500] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[501] = unsigned_short_src[501] / 0x1f6;
+  uVar1 = (uint)unsigned_short_src[502] * 0x495 >> 0x10;
   unsigned_short_dest[502] =
-       (unsigned_short)(((unsigned_short_src[502] - uVar93 & 0xfffe) >> 1) + uVar93 >> 8);
-  unsigned_short_dest[503] = (unsigned_short_src[503] >> 3) / 0x3f;
+       (unsigned_short)(((unsigned_short_src[502] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[503] = unsigned_short_src[503] / 0x1f8;
+  uVar1 = (uint)unsigned_short_src[504] * 0x38d >> 0x10;
   unsigned_short_dest[504] =
-       (unsigned_short)(((unsigned_short_src[504] - uVar94 & 0xfffe) >> 1) + uVar94 >> 8);
+       (unsigned_short)(((unsigned_short_src[504] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[505] = unsigned_short_src[505] / 0x1fa;
+  uVar1 = (uint)unsigned_short_src[506] * 0x287 >> 0x10;
   unsigned_short_dest[506] =
-       (unsigned_short)(((unsigned_short_src[506] - uVar95 & 0xfffe) >> 1) + uVar95 >> 8);
-  unsigned_short_dest[507] = (unsigned_short_src[507] >> 2) / 0x7f;
+       (unsigned_short)(((unsigned_short_src[506] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
+  unsigned_short_dest[507] = unsigned_short_src[507] / 0x1fc;
+  uVar1 = (uint)unsigned_short_src[508] * 0x183 >> 0x10;
   unsigned_short_dest[508] =
-       (unsigned_short)(((unsigned_short_src[508] - uVar96 & 0xfffe) >> 1) + uVar96 >> 8);
+       (unsigned_short)(((unsigned_short_src[508] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[509] = unsigned_short_src[509] / 0x1fe;
+  uVar1 = (uint)unsigned_short_src[510] * 0x81 >> 0x10;
   unsigned_short_dest[510] =
-       (unsigned_short)(((unsigned_short_src[510] - uVar97 & 0xfffe) >> 1) + uVar97 >> 8);
+       (unsigned_short)(((unsigned_short_src[510] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8);
   unsigned_short_dest[511] = unsigned_short_src[511] >> 9;
   unsigned_short_dest[512] = unsigned_short_src[512] / 0x201;
   unsigned_short_dest[513] = unsigned_short_src[513] / 0x202;
@@ -25559,12 +23601,12 @@ void unsigned_short_div(void)
   unsigned_short_dest[527] = unsigned_short_src[527] / 0x210;
   unsigned_short_dest[528] = unsigned_short_src[528] / 0x211;
   unsigned_short_dest[529] = unsigned_short_src[529] / 0x212;
+  uVar1 = (uint)unsigned_short_src[530] * 0xedaf >> 0x10;
   unsigned_short_dest[530] =
-       (unsigned_short)((((unsigned_short_src[530] - uVar98 & 0xfffe) >> 1) + uVar98 & 0xfe00) >> 9)
-  ;
+       (unsigned_short)((((unsigned_short_src[530] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[531] = unsigned_short_src[531] / 0x214;
   unsigned_short_dest[532] = unsigned_short_src[532] / 0x215;
-  unsigned_short_dest[533] = (unsigned_short_src[533] >> 1) / 0x10b;
+  unsigned_short_dest[533] = (ushort)(byte)(unsigned_short_src[533] / 0x216);
   unsigned_short_dest[534] = unsigned_short_src[534] / 0x217;
   unsigned_short_dest[535] = unsigned_short_src[535] / 0x218;
   unsigned_short_dest[536] = unsigned_short_src[536] / 0x219;
@@ -25576,13 +23618,13 @@ void unsigned_short_div(void)
   unsigned_short_dest[542] = unsigned_short_src[542] / 0x21f;
   unsigned_short_dest[543] = unsigned_short_src[543] / 0x220;
   unsigned_short_dest[544] = (ushort)((uint)unsigned_short_src[544] * 0x1e1 >> 0x12);
-  unsigned_short_dest[545] = (unsigned_short_src[545] >> 1) / 0x111;
+  unsigned_short_dest[545] = unsigned_short_src[545] / 0x222;
   unsigned_short_dest[546] = unsigned_short_src[546] / 0x223;
   unsigned_short_dest[547] = unsigned_short_src[547] / 0x224;
   unsigned_short_dest[548] = unsigned_short_src[548] / 0x225;
-  unsigned_short_dest[549] = (unsigned_short_src[549] >> 1) / 0x113;
+  unsigned_short_dest[549] = (ushort)(byte)(unsigned_short_src[549] / 0x226);
   unsigned_short_dest[550] = unsigned_short_src[550] / 0x227;
-  unsigned_short_dest[551] = (unsigned_short_src[551] >> 3) / 0x45;
+  unsigned_short_dest[551] = unsigned_short_src[551] / 0x228;
   unsigned_short_dest[552] = unsigned_short_src[552] / 0x229;
   unsigned_short_dest[553] = unsigned_short_src[553] / 0x22a;
   unsigned_short_dest[554] = unsigned_short_src[554] / 0x22b;
@@ -25615,9 +23657,9 @@ void unsigned_short_div(void)
   unsigned_short_dest[581] = unsigned_short_src[581] / 0x246;
   unsigned_short_dest[582] = unsigned_short_src[582] / 0x247;
   unsigned_short_dest[583] = unsigned_short_src[583] / 0x248;
+  uVar1 = (uint)unsigned_short_src[584] * 0xc01d >> 0x10;
   unsigned_short_dest[584] =
-       (unsigned_short)((((unsigned_short_src[584] - uVar99 & 0xfffe) >> 1) + uVar99 & 0xfe00) >> 9)
-  ;
+       (unsigned_short)((((unsigned_short_src[584] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[585] = (ushort)((uint)unsigned_short_src[585] * 0xdfad >> 0x19);
   unsigned_short_dest[586] = unsigned_short_src[586] / 0x24b;
   unsigned_short_dest[587] = unsigned_short_src[587] / 0x24c;
@@ -25627,56 +23669,56 @@ void unsigned_short_div(void)
   unsigned_short_dest[591] = unsigned_short_src[591] / 0x250;
   unsigned_short_dest[592] = unsigned_short_src[592] / 0x251;
   unsigned_short_dest[593] = unsigned_short_src[593] / 0x252;
+  uVar1 = (uint)unsigned_short_src[594] * 0xb895 >> 0x10;
   unsigned_short_dest[594] =
-       (unsigned_short)
-       ((((unsigned_short_src[594] - uVar100 & 0xfffe) >> 1) + uVar100 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[594] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[595] = unsigned_short_src[595] / 0x254;
+  uVar1 = (uint)unsigned_short_src[596] * 0xb71b >> 0x10;
   unsigned_short_dest[596] =
-       (unsigned_short)
-       ((((unsigned_short_src[596] - uVar101 & 0xfffe) >> 1) + uVar101 & 0xfe00) >> 9);
-  unsigned_short_dest[597] = (unsigned_short_src[597] >> 1) / 299;
+       (unsigned_short)((((unsigned_short_src[596] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
+  unsigned_short_dest[597] = unsigned_short_src[597] / 0x256;
   unsigned_short_dest[598] = unsigned_short_src[598] / 599;
-  unsigned_short_dest[599] = (unsigned_short_src[599] >> 3) / 0x4b;
+  unsigned_short_dest[599] = unsigned_short_src[599] / 600;
+  uVar1 = (uint)unsigned_short_src[600] * 0xb42f >> 0x10;
   unsigned_short_dest[600] =
-       (unsigned_short)
-       ((((unsigned_short_src[600] - uVar102 & 0xfffe) >> 1) + uVar102 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[600] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[601] = unsigned_short_src[601] / 0x25a;
   unsigned_short_dest[602] = unsigned_short_src[602] / 0x25b;
   unsigned_short_dest[603] = unsigned_short_src[603] / 0x25c;
   unsigned_short_dest[604] = unsigned_short_src[604] / 0x25d;
   unsigned_short_dest[605] = unsigned_short_src[605] / 0x25e;
+  uVar1 = (uint)unsigned_short_src[606] * 0xafdf >> 0x10;
   unsigned_short_dest[606] =
-       (unsigned_short)
-       ((((unsigned_short_src[606] - uVar103 & 0xfffe) >> 1) + uVar103 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[606] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[607] = unsigned_short_src[607] / 0x260;
   unsigned_short_dest[608] = unsigned_short_src[608] / 0x261;
   unsigned_short_dest[609] = unsigned_short_src[609] / 0x262;
   unsigned_short_dest[610] = unsigned_short_src[610] / 0x263;
   unsigned_short_dest[611] = unsigned_short_src[611] / 0x264;
+  uVar1 = (uint)unsigned_short_src[612] * 0xaba5 >> 0x10;
   unsigned_short_dest[612] =
-       (unsigned_short)
-       ((((unsigned_short_src[612] - uVar104 & 0xfffe) >> 1) + uVar104 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[612] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[613] = unsigned_short_src[613] / 0x266;
+  uVar1 = (uint)unsigned_short_src[614] * 0xaa41 >> 0x10;
   unsigned_short_dest[614] =
-       (unsigned_short)
-       ((((unsigned_short_src[614] - uVar105 & 0xfffe) >> 1) + uVar105 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[614] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[615] = unsigned_short_src[615] / 0x268;
   unsigned_short_dest[616] = unsigned_short_src[616] / 0x269;
   unsigned_short_dest[617] = unsigned_short_src[617] / 0x26a;
   unsigned_short_dest[618] = unsigned_short_src[618] / 0x26b;
-  unsigned_short_dest[619] = (unsigned_short_src[619] >> 2) / 0x9b;
+  unsigned_short_dest[619] = unsigned_short_src[619] / 0x26c;
   unsigned_short_dest[620] = unsigned_short_src[620] / 0x26d;
-  unsigned_short_dest[621] = (unsigned_short_src[621] >> 1) / 0x137;
+  unsigned_short_dest[621] = (ushort)(byte)(unsigned_short_src[621] / 0x26e);
   unsigned_short_dest[622] = unsigned_short_src[622] / 0x26f;
-  unsigned_short_dest[623] = (unsigned_short_src[623] >> 4) / 0x27;
+  unsigned_short_dest[623] = unsigned_short_src[623] / 0x270;
+  uVar1 = (uint)unsigned_short_src[624] * 0xa36f >> 0x10;
   unsigned_short_dest[624] =
-       (unsigned_short)
-       ((((unsigned_short_src[624] - uVar106 & 0xfffe) >> 1) + uVar106 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[624] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[625] = unsigned_short_src[625] / 0x272;
   unsigned_short_dest[626] = unsigned_short_src[626] / 0x273;
   unsigned_short_dest[627] = unsigned_short_src[627] / 0x274;
   unsigned_short_dest[628] = unsigned_short_src[628] / 0x275;
-  unsigned_short_dest[629] = (unsigned_short_src[629] >> 1) / 0x13b;
+  unsigned_short_dest[629] = unsigned_short_src[629] / 0x276;
   unsigned_short_dest[630] = unsigned_short_src[630] / 0x277;
   unsigned_short_dest[631] = unsigned_short_src[631] / 0x278;
   unsigned_short_dest[632] = unsigned_short_src[632] / 0x279;
@@ -25684,61 +23726,61 @@ void unsigned_short_div(void)
   unsigned_short_dest[634] = unsigned_short_src[634] / 0x27b;
   unsigned_short_dest[635] = unsigned_short_src[635] / 0x27c;
   unsigned_short_dest[636] = unsigned_short_src[636] / 0x27d;
-  unsigned_short_dest[637] = (unsigned_short_src[637] >> 1) / 0x13f;
+  unsigned_short_dest[637] = unsigned_short_src[637] / 0x27e;
   unsigned_short_dest[638] = unsigned_short_src[638] / 0x27f;
   unsigned_short_dest[639] = unsigned_short_src[639] / 0x280;
+  uVar1 = (uint)unsigned_short_src[640] * 0x98f7 >> 0x10;
   unsigned_short_dest[640] =
-       (unsigned_short)
-       ((((unsigned_short_src[640] - uVar107 & 0xfffe) >> 1) + uVar107 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[640] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[641] = unsigned_short_src[641] / 0x282;
+  uVar1 = (uint)unsigned_short_src[642] * 0x97b1 >> 0x10;
   unsigned_short_dest[642] =
-       (unsigned_short)
-       ((((unsigned_short_src[642] - uVar108 & 0xfffe) >> 1) + uVar108 & 0xfe00) >> 9);
-  unsigned_short_dest[643] = (unsigned_short_src[643] >> 2) / 0xa1;
+       (unsigned_short)((((unsigned_short_src[642] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
+  unsigned_short_dest[643] = unsigned_short_src[643] / 0x284;
   unsigned_short_dest[644] = unsigned_short_src[644] / 0x285;
   unsigned_short_dest[645] = unsigned_short_src[645] / 0x286;
   unsigned_short_dest[646] = unsigned_short_src[646] / 0x287;
   unsigned_short_dest[647] = unsigned_short_src[647] / 0x288;
   unsigned_short_dest[648] = unsigned_short_src[648] / 0x289;
-  unsigned_short_dest[649] = (unsigned_short_src[649] >> 1) / 0x145;
+  unsigned_short_dest[649] = (ushort)(byte)(unsigned_short_src[649] / 0x28a);
   unsigned_short_dest[650] = unsigned_short_src[650] / 0x28b;
   unsigned_short_dest[651] = unsigned_short_src[651] / 0x28c;
+  uVar1 = (uint)unsigned_short_src[652] * 0x9173 >> 0x10;
   unsigned_short_dest[652] =
-       (unsigned_short)
-       ((((unsigned_short_src[652] - uVar109 & 0xfffe) >> 1) + uVar109 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[652] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[653] = unsigned_short_src[653] / 0x28e;
+  uVar1 = (uint)unsigned_short_src[654] * 0x9039 >> 0x10;
   unsigned_short_dest[654] =
-       (unsigned_short)
-       ((((unsigned_short_src[654] - uVar110 & 0xfffe) >> 1) + uVar110 & 0xfe00) >> 9);
-  unsigned_short_dest[655] = (unsigned_short_src[655] >> 4) / 0x29;
+       (unsigned_short)((((unsigned_short_src[654] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
+  unsigned_short_dest[655] = unsigned_short_src[655] / 0x290;
+  uVar1 = (uint)unsigned_short_src[656] * 0x8f01 >> 0x10;
   unsigned_short_dest[656] =
-       (unsigned_short)
-       ((((unsigned_short_src[656] - uVar111 & 0xfffe) >> 1) + uVar111 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[656] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[657] = unsigned_short_src[657] / 0x292;
+  uVar1 = (uint)unsigned_short_src[658] * 0x8dcb >> 0x10;
   unsigned_short_dest[658] =
-       (unsigned_short)
-       ((((unsigned_short_src[658] - uVar112 & 0xfffe) >> 1) + uVar112 & 0xfe00) >> 9);
-  unsigned_short_dest[659] = (unsigned_short_src[659] >> 2) / 0xa5;
+       (unsigned_short)((((unsigned_short_src[658] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
+  unsigned_short_dest[659] = unsigned_short_src[659] / 0x294;
+  uVar1 = (uint)unsigned_short_src[660] * 0x8c97 >> 0x10;
   unsigned_short_dest[660] =
-       (unsigned_short)
-       ((((unsigned_short_src[660] - uVar113 & 0xfffe) >> 1) + uVar113 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[660] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[661] = unsigned_short_src[661] / 0x296;
+  uVar1 = (uint)unsigned_short_src[662] * 0x8b65 >> 0x10;
   unsigned_short_dest[662] =
-       (unsigned_short)
-       ((((unsigned_short_src[662] - uVar114 & 0xfffe) >> 1) + uVar114 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[662] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[663] = unsigned_short_src[663] / 0x298;
   unsigned_short_dest[664] = unsigned_short_src[664] / 0x299;
-  unsigned_short_dest[665] = (unsigned_short_src[665] >> 1) / 0x14d;
+  unsigned_short_dest[665] = (ushort)(byte)(unsigned_short_src[665] / 0x29a);
   unsigned_short_dest[666] = unsigned_short_src[666] / 0x29b;
-  unsigned_short_dest[667] = (unsigned_short_src[667] >> 2) / 0xa7;
+  unsigned_short_dest[667] = unsigned_short_src[667] / 0x29c;
+  uVar1 = (uint)unsigned_short_src[668] * 0x87d9 >> 0x10;
   unsigned_short_dest[668] =
-       (unsigned_short)
-       ((((unsigned_short_src[668] - uVar115 & 0xfffe) >> 1) + uVar115 & 0xfe00) >> 9);
+       (unsigned_short)((((unsigned_short_src[668] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9);
   unsigned_short_dest[669] = unsigned_short_src[669] / 0x29e;
   unsigned_short_dest[670] = unsigned_short_src[670] / 0x29f;
-  unsigned_short_dest[671] = (unsigned_short_src[671] >> 5) / 0x15;
+  unsigned_short_dest[671] = unsigned_short_src[671] / 0x2a0;
   unsigned_short_dest[672] = unsigned_short_src[672] / 0x2a1;
-  unsigned_short_dest[673] = (unsigned_short_src[673] >> 1) / 0x151;
+  unsigned_short_dest[673] = (ushort)(byte)(unsigned_short_src[673] / 0x2a2);
   unsigned_short_dest[674] = unsigned_short_src[674] / 0x2a3;
   unsigned_short_dest[675] = unsigned_short_src[675] / 0x2a4;
   unsigned_short_dest[676] = unsigned_short_src[676] / 0x2a5;
@@ -25746,28 +23788,33 @@ void unsigned_short_div(void)
   unsigned_short_dest[678] = unsigned_short_src[678] / 0x2a7;
   unsigned_short_dest[679] = unsigned_short_src[679] / 0x2a8;
   unsigned_short_dest[680] = unsigned_short_src[680] / 0x2a9;
-  unsigned_short_dest[681] = (unsigned_short_src[681] >> 1) / 0x155;
+  unsigned_short_dest[681] = (ushort)(byte)(unsigned_short_src[681] / 0x2aa);
+  uVar1 = (uint)unsigned_short_src[682] * 0x7fd1 >> 0x10;
   unsigned_short_dest[682] =
-       (unsigned_short)(((unsigned_short_src[682] - uVar116 & 0xfffe) >> 1) + uVar116 >> 9);
-  unsigned_short_dest[683] = (unsigned_short_src[683] >> 2) / 0xab;
+       (unsigned_short)(((unsigned_short_src[682] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[683] = unsigned_short_src[683] / 0x2ac;
   unsigned_short_dest[684] = unsigned_short_src[684] / 0x2ad;
-  unsigned_short_dest[685] = (unsigned_short_src[685] >> 1) / 0x157;
+  unsigned_short_dest[685] = unsigned_short_src[685] / 0x2ae;
   unsigned_short_dest[686] = unsigned_short_src[686] / 0x2af;
   unsigned_short_dest[687] = unsigned_short_src[687] / 0x2b0;
+  uVar1 = (uint)unsigned_short_src[688] * 0x7c79 >> 0x10;
   unsigned_short_dest[688] =
-       (unsigned_short)(((unsigned_short_src[688] - uVar117 & 0xfffe) >> 1) + uVar117 >> 9);
+       (unsigned_short)(((unsigned_short_src[688] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[689] = unsigned_short_src[689] / 0x2b2;
+  uVar1 = (uint)unsigned_short_src[690] * 0x7b5f >> 0x10;
   unsigned_short_dest[690] =
-       (unsigned_short)(((unsigned_short_src[690] - uVar118 & 0xfffe) >> 1) + uVar118 >> 9);
-  unsigned_short_dest[691] = (unsigned_short_src[691] >> 2) / 0xad;
+       (unsigned_short)(((unsigned_short_src[690] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[691] = unsigned_short_src[691] / 0x2b4;
+  uVar1 = (uint)unsigned_short_src[692] * 0x7a47 >> 0x10;
   unsigned_short_dest[692] =
-       (unsigned_short)(((unsigned_short_src[692] - uVar119 & 0xfffe) >> 1) + uVar119 >> 9);
+       (unsigned_short)(((unsigned_short_src[692] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[693] = unsigned_short_src[693] / 0x2b6;
   unsigned_short_dest[694] = unsigned_short_src[694] / 0x2b7;
   unsigned_short_dest[695] = unsigned_short_src[695] / 0x2b8;
+  uVar1 = (uint)unsigned_short_src[696] * 0x781b >> 0x10;
   unsigned_short_dest[696] =
-       (unsigned_short)(((unsigned_short_src[696] - uVar120 & 0xfffe) >> 1) + uVar120 >> 9);
-  unsigned_short_dest[697] = (unsigned_short_src[697] >> 1) / 0x15d;
+       (unsigned_short)(((unsigned_short_src[696] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[697] = (ushort)(byte)(unsigned_short_src[697] / 0x2ba);
   unsigned_short_dest[698] = unsigned_short_src[698] / 699;
   unsigned_short_dest[699] = unsigned_short_src[699] / 700;
   unsigned_short_dest[700] = unsigned_short_src[700] / 0x2bd;
@@ -25777,247 +23824,283 @@ void unsigned_short_div(void)
   unsigned_short_dest[704] = unsigned_short_src[704] / 0x2c1;
   unsigned_short_dest[705] = unsigned_short_src[705] / 0x2c2;
   unsigned_short_dest[706] = unsigned_short_src[706] / 0x2c3;
-  unsigned_short_dest[707] = (unsigned_short_src[707] >> 2) / 0xb1;
+  unsigned_short_dest[707] = unsigned_short_src[707] / 0x2c4;
   unsigned_short_dest[708] = unsigned_short_src[708] / 0x2c5;
   unsigned_short_dest[709] = unsigned_short_src[709] / 0x2c6;
   unsigned_short_dest[710] = unsigned_short_src[710] / 0x2c7;
-  unsigned_short_dest[711] = (unsigned_short_src[711] >> 3) / 0x59;
+  unsigned_short_dest[711] = unsigned_short_src[711] / 0x2c8;
   unsigned_short_dest[712] = unsigned_short_src[712] / 0x2c9;
-  unsigned_short_dest[713] = (unsigned_short_src[713] >> 1) / 0x165;
+  unsigned_short_dest[713] = unsigned_short_src[713] / 0x2ca;
+  uVar1 = (uint)unsigned_short_src[714] * 0x6ea3 >> 0x10;
   unsigned_short_dest[714] =
-       (unsigned_short)(((unsigned_short_src[714] - uVar121 & 0xfffe) >> 1) + uVar121 >> 9);
+       (unsigned_short)(((unsigned_short_src[714] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[715] = unsigned_short_src[715] / 0x2cc;
   unsigned_short_dest[716] = unsigned_short_src[716] / 0x2cd;
-  unsigned_short_dest[717] = (unsigned_short_src[717] >> 1) / 0x167;
+  unsigned_short_dest[717] = unsigned_short_src[717] / 0x2ce;
+  uVar1 = (uint)unsigned_short_src[718] * 0x6c99 >> 0x10;
   unsigned_short_dest[718] =
-       (unsigned_short)(((unsigned_short_src[718] - uVar122 & 0xfffe) >> 1) + uVar122 >> 9);
+       (unsigned_short)(((unsigned_short_src[718] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[719] = unsigned_short_src[719] / 0x2d0;
   unsigned_short_dest[720] = unsigned_short_src[720] / 0x2d1;
-  unsigned_short_dest[721] = (unsigned_short_src[721] >> 1) / 0x169;
+  unsigned_short_dest[721] = (ushort)(byte)(unsigned_short_src[721] / 0x2d2);
+  uVar1 = (uint)unsigned_short_src[722] * 0x6a95 >> 0x10;
   unsigned_short_dest[722] =
-       (unsigned_short)(((unsigned_short_src[722] - uVar123 & 0xfffe) >> 1) + uVar123 >> 9);
+       (unsigned_short)(((unsigned_short_src[722] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[723] = unsigned_short_src[723] / 0x2d4;
   unsigned_short_dest[724] = unsigned_short_src[724] / 0x2d5;
-  unsigned_short_dest[725] = (unsigned_short_src[725] >> 1) / 0x16b;
+  unsigned_short_dest[725] = (ushort)(byte)(unsigned_short_src[725] / 0x2d6);
   unsigned_short_dest[726] = unsigned_short_src[726] / 0x2d7;
-  unsigned_short_dest[727] = (unsigned_short_src[727] >> 3) / 0x5b;
+  unsigned_short_dest[727] = unsigned_short_src[727] / 0x2d8;
+  uVar1 = (uint)unsigned_short_src[728] * 0x6799 >> 0x10;
   unsigned_short_dest[728] =
-       (unsigned_short)(((unsigned_short_src[728] - uVar124 & 0xfffe) >> 1) + uVar124 >> 9);
+       (unsigned_short)(((unsigned_short_src[728] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[729] = unsigned_short_src[729] / 0x2da;
+  uVar1 = (uint)unsigned_short_src[730] * 0x669d >> 0x10;
   unsigned_short_dest[730] =
-       (unsigned_short)(((unsigned_short_src[730] - uVar125 & 0xfffe) >> 1) + uVar125 >> 9);
+       (unsigned_short)(((unsigned_short_src[730] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[731] = unsigned_short_src[731] / 0x2dc;
   unsigned_short_dest[732] = unsigned_short_src[732] / 0x2dd;
   unsigned_short_dest[733] = unsigned_short_src[733] / 0x2de;
+  uVar1 = (uint)unsigned_short_src[734] * 0x64a9 >> 0x10;
   unsigned_short_dest[734] =
-       (unsigned_short)(((unsigned_short_src[734] - uVar126 & 0xfffe) >> 1) + uVar126 >> 9);
-  unsigned_short_dest[735] = (unsigned_short_src[735] >> 5) / 0x17;
+       (unsigned_short)(((unsigned_short_src[734] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[735] = unsigned_short_src[735] / 0x2e0;
   unsigned_short_dest[736] = unsigned_short_src[736] / 0x2e1;
   unsigned_short_dest[737] = unsigned_short_src[737] / 0x2e2;
+  uVar1 = (uint)unsigned_short_src[738] * 0x62bb >> 0x10;
   unsigned_short_dest[738] =
-       (unsigned_short)(((unsigned_short_src[738] - uVar127 & 0xfffe) >> 1) + uVar127 >> 9);
+       (unsigned_short)(((unsigned_short_src[738] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[739] = unsigned_short_src[739] / 0x2e4;
   unsigned_short_dest[740] = unsigned_short_src[740] / 0x2e5;
   unsigned_short_dest[741] = unsigned_short_src[741] / 0x2e6;
   unsigned_short_dest[742] = unsigned_short_src[742] / 0x2e7;
-  unsigned_short_dest[743] = (unsigned_short_src[743] >> 3) / 0x5d;
+  unsigned_short_dest[743] = unsigned_short_src[743] / 0x2e8;
   unsigned_short_dest[744] = unsigned_short_src[744] / 0x2e9;
-  unsigned_short_dest[745] = (unsigned_short_src[745] >> 1) / 0x175;
+  unsigned_short_dest[745] = unsigned_short_src[745] / 0x2ea;
   unsigned_short_dest[746] = unsigned_short_src[746] / 0x2eb;
   unsigned_short_dest[747] = unsigned_short_src[747] / 0x2ec;
   unsigned_short_dest[748] = unsigned_short_src[748] / 0x2ed;
-  unsigned_short_dest[749] = (unsigned_short_src[749] >> 1) / 0x177;
+  unsigned_short_dest[749] = unsigned_short_src[749] / 0x2ee;
   unsigned_short_dest[750] = unsigned_short_src[750] / 0x2ef;
-  unsigned_short_dest[751] = (unsigned_short_src[751] >> 4) / 0x2f;
+  unsigned_short_dest[751] = unsigned_short_src[751] / 0x2f0;
   unsigned_short_dest[752] = unsigned_short_src[752] / 0x2f1;
   unsigned_short_dest[753] = unsigned_short_src[753] / 0x2f2;
   unsigned_short_dest[754] = unsigned_short_src[754] / 0x2f3;
-  unsigned_short_dest[755] = (unsigned_short_src[755] >> 2) / 0xbd;
+  unsigned_short_dest[755] = unsigned_short_src[755] / 0x2f4;
   unsigned_short_dest[756] = unsigned_short_src[756] / 0x2f5;
-  unsigned_short_dest[757] = (unsigned_short_src[757] >> 1) / 0x17b;
+  unsigned_short_dest[757] = unsigned_short_src[757] / 0x2f6;
   unsigned_short_dest[758] = unsigned_short_src[758] / 0x2f7;
   unsigned_short_dest[759] = unsigned_short_src[759] / 0x2f8;
   unsigned_short_dest[760] = unsigned_short_src[760] / 0x2f9;
   unsigned_short_dest[761] = unsigned_short_src[761] / 0x2fa;
   unsigned_short_dest[762] = unsigned_short_src[762] / 0x2fb;
   unsigned_short_dest[763] = unsigned_short_src[763] / 0x2fc;
+  uVar1 = (uint)unsigned_short_src[764] * 0x56ad >> 0x10;
   unsigned_short_dest[764] =
-       (unsigned_short)(((unsigned_short_src[764] - uVar128 & 0xfffe) >> 1) + uVar128 >> 9);
+       (unsigned_short)(((unsigned_short_src[764] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[765] = unsigned_short_src[765] / 0x2fe;
   unsigned_short_dest[766] = unsigned_short_src[766] / 0x2ff;
   unsigned_short_dest[767] = unsigned_short_src[767] / 0x300;
   unsigned_short_dest[768] = unsigned_short_src[768] / 0x301;
-  unsigned_short_dest[769] = (unsigned_short_src[769] >> 1) / 0x181;
+  unsigned_short_dest[769] = unsigned_short_src[769] / 0x302;
   unsigned_short_dest[770] = unsigned_short_src[770] / 0x303;
-  unsigned_short_dest[771] = (unsigned_short_src[771] >> 2) / 0xc1;
+  unsigned_short_dest[771] = unsigned_short_src[771] / 0x304;
+  uVar1 = (uint)unsigned_short_src[772] * 0x5321 >> 0x10;
   unsigned_short_dest[772] =
-       (unsigned_short)(((unsigned_short_src[772] - uVar129 & 0xfffe) >> 1) + uVar129 >> 9);
+       (unsigned_short)(((unsigned_short_src[772] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[773] = unsigned_short_src[773] / 0x306;
+  uVar1 = (uint)unsigned_short_src[774] * 0x5241 >> 0x10;
   unsigned_short_dest[774] =
-       (unsigned_short)(((unsigned_short_src[774] - uVar130 & 0xfffe) >> 1) + uVar130 >> 9);
-  unsigned_short_dest[775] = (unsigned_short_src[775] >> 3) / 0x61;
+       (unsigned_short)(((unsigned_short_src[774] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[775] = unsigned_short_src[775] / 0x308;
   unsigned_short_dest[776] = unsigned_short_src[776] / 0x309;
-  unsigned_short_dest[777] = (unsigned_short_src[777] >> 1) / 0x185;
+  unsigned_short_dest[777] = unsigned_short_src[777] / 0x30a;
   unsigned_short_dest[778] = unsigned_short_src[778] / 0x30b;
   unsigned_short_dest[779] = unsigned_short_src[779] / 0x30c;
   unsigned_short_dest[780] = unsigned_short_src[780] / 0x30d;
   unsigned_short_dest[781] = unsigned_short_src[781] / 0x30e;
   unsigned_short_dest[782] = unsigned_short_src[782] / 0x30f;
-  unsigned_short_dest[783] = (unsigned_short_src[783] >> 4) / 0x31;
+  unsigned_short_dest[783] = unsigned_short_src[783] / 0x310;
   unsigned_short_dest[784] = unsigned_short_src[784] / 0x311;
-  unsigned_short_dest[785] = (unsigned_short_src[785] >> 1) / 0x189;
+  unsigned_short_dest[785] = (ushort)(byte)(unsigned_short_src[785] / 0x312);
   unsigned_short_dest[786] = unsigned_short_src[786] / 0x313;
   unsigned_short_dest[787] = unsigned_short_src[787] / 0x314;
   unsigned_short_dest[788] = unsigned_short_src[788] / 0x315;
   unsigned_short_dest[789] = unsigned_short_src[789] / 0x316;
+  uVar1 = (uint)unsigned_short_src[790] * 0x4b69 >> 0x10;
   unsigned_short_dest[790] =
-       (unsigned_short)(((unsigned_short_src[790] - uVar131 & 0xfffe) >> 1) + uVar131 >> 9);
+       (unsigned_short)(((unsigned_short_src[790] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[791] = unsigned_short_src[791] / 0x318;
+  uVar1 = (uint)unsigned_short_src[792] * 0x4a93 >> 0x10;
   unsigned_short_dest[792] =
-       (unsigned_short)(((unsigned_short_src[792] - uVar132 & 0xfffe) >> 1) + uVar132 >> 9);
+       (unsigned_short)(((unsigned_short_src[792] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[793] = unsigned_short_src[793] / 0x31a;
   unsigned_short_dest[794] = unsigned_short_src[794] / 0x31b;
   unsigned_short_dest[795] = unsigned_short_src[795] / 0x31c;
   unsigned_short_dest[796] = unsigned_short_src[796] / 0x31d;
-  unsigned_short_dest[797] = (unsigned_short_src[797] >> 1) / 399;
+  unsigned_short_dest[797] = (ushort)(byte)(unsigned_short_src[797] / 0x31e);
   unsigned_short_dest[798] = unsigned_short_src[798] / 799;
-  unsigned_short_dest[799] = (unsigned_short_src[799] >> 5) / 0x19;
+  unsigned_short_dest[799] = unsigned_short_src[799] / 800;
   unsigned_short_dest[800] = unsigned_short_src[800] / 0x321;
   unsigned_short_dest[801] = unsigned_short_src[801] / 0x322;
+  uVar1 = (uint)unsigned_short_src[802] * 0x4675 >> 0x10;
   unsigned_short_dest[802] =
-       (unsigned_short)(((unsigned_short_src[802] - uVar133 & 0xfffe) >> 1) + uVar133 >> 9);
+       (unsigned_short)(((unsigned_short_src[802] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[803] = unsigned_short_src[803] / 0x324;
   unsigned_short_dest[804] = unsigned_short_src[804] / 0x325;
   unsigned_short_dest[805] = unsigned_short_src[805] / 0x326;
+  uVar1 = (uint)unsigned_short_src[806] * 0x44d7 >> 0x10;
   unsigned_short_dest[806] =
-       (unsigned_short)(((unsigned_short_src[806] - uVar134 & 0xfffe) >> 1) + uVar134 >> 9);
+       (unsigned_short)(((unsigned_short_src[806] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[807] = unsigned_short_src[807] / 0x328;
   unsigned_short_dest[808] = unsigned_short_src[808] / 0x329;
-  unsigned_short_dest[809] = (unsigned_short_src[809] >> 1) / 0x195;
+  unsigned_short_dest[809] = unsigned_short_src[809] / 0x32a;
+  uVar1 = (uint)unsigned_short_src[810] * 0x433d >> 0x10;
   unsigned_short_dest[810] =
-       (unsigned_short)(((unsigned_short_src[810] - uVar135 & 0xfffe) >> 1) + uVar135 >> 9);
-  unsigned_short_dest[811] = (unsigned_short_src[811] >> 2) / 0xcb;
+       (unsigned_short)(((unsigned_short_src[810] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[811] = unsigned_short_src[811] / 0x32c;
+  uVar1 = (uint)unsigned_short_src[812] * 0x4271 >> 0x10;
   unsigned_short_dest[812] =
-       (unsigned_short)(((unsigned_short_src[812] - uVar136 & 0xfffe) >> 1) + uVar136 >> 9);
+       (unsigned_short)(((unsigned_short_src[812] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[813] = unsigned_short_src[813] / 0x32e;
+  uVar1 = (uint)unsigned_short_src[814] * 0x41a7 >> 0x10;
   unsigned_short_dest[814] =
-       (unsigned_short)(((unsigned_short_src[814] - uVar137 & 0xfffe) >> 1) + uVar137 >> 9);
+       (unsigned_short)(((unsigned_short_src[814] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[815] = unsigned_short_src[815] / 0x330;
+  uVar1 = (uint)unsigned_short_src[816] * 0x40dd >> 0x10;
   unsigned_short_dest[816] =
-       (unsigned_short)(((unsigned_short_src[816] - uVar138 & 0xfffe) >> 1) + uVar138 >> 9);
-  unsigned_short_dest[817] = (unsigned_short_src[817] >> 1) / 0x199;
+       (unsigned_short)(((unsigned_short_src[816] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[817] = (ushort)(byte)(unsigned_short_src[817] / 0x332);
+  uVar1 = (uint)unsigned_short_src[818] * 0x4015 >> 0x10;
   unsigned_short_dest[818] =
-       (unsigned_short)(((unsigned_short_src[818] - uVar139 & 0xfffe) >> 1) + uVar139 >> 9);
-  unsigned_short_dest[819] = (unsigned_short_src[819] >> 2) / 0xcd;
+       (unsigned_short)(((unsigned_short_src[818] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[819] = unsigned_short_src[819] / 0x334;
+  uVar1 = (uint)unsigned_short_src[820] * 0x3f4d >> 0x10;
   unsigned_short_dest[820] =
-       (unsigned_short)(((unsigned_short_src[820] - uVar140 & 0xfffe) >> 1) + uVar140 >> 9);
+       (unsigned_short)(((unsigned_short_src[820] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[821] = unsigned_short_src[821] / 0x336;
   unsigned_short_dest[822] = unsigned_short_src[822] / 0x337;
   unsigned_short_dest[823] = unsigned_short_src[823] / 0x338;
+  uVar1 = (uint)unsigned_short_src[824] * 0x3dc1 >> 0x10;
   unsigned_short_dest[824] =
-       (unsigned_short)(((unsigned_short_src[824] - uVar141 & 0xfffe) >> 1) + uVar141 >> 9);
+       (unsigned_short)(((unsigned_short_src[824] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[825] = unsigned_short_src[825] / 0x33a;
   unsigned_short_dest[826] = unsigned_short_src[826] / 0x33b;
   unsigned_short_dest[827] = unsigned_short_src[827] / 0x33c;
   unsigned_short_dest[828] = unsigned_short_src[828] / 0x33d;
-  unsigned_short_dest[829] = (unsigned_short_src[829] >> 1) / 0x19f;
+  unsigned_short_dest[829] = unsigned_short_src[829] / 0x33e;
   unsigned_short_dest[830] = (ushort)((uint)unsigned_short_src[830] * 0x9dbb >> 0x19);
   unsigned_short_dest[831] = unsigned_short_src[831] / 0x340;
   unsigned_short_dest[832] = unsigned_short_src[832] / 0x341;
-  unsigned_short_dest[833] = (unsigned_short_src[833] >> 1) / 0x1a1;
+  unsigned_short_dest[833] = unsigned_short_src[833] / 0x342;
   unsigned_short_dest[834] = unsigned_short_src[834] / 0x343;
   unsigned_short_dest[835] = unsigned_short_src[835] / 0x344;
   unsigned_short_dest[836] = unsigned_short_src[836] / 0x345;
-  unsigned_short_dest[837] = (unsigned_short_src[837] >> 1) / 0x1a3;
+  unsigned_short_dest[837] = unsigned_short_src[837] / 0x346;
+  uVar1 = (uint)unsigned_short_src[838] * 0x3873 >> 0x10;
   unsigned_short_dest[838] =
-       (unsigned_short)(((unsigned_short_src[838] - uVar142 & 0xfffe) >> 1) + uVar142 >> 9);
+       (unsigned_short)(((unsigned_short_src[838] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[839] = unsigned_short_src[839] / 0x348;
+  uVar1 = (uint)unsigned_short_src[840] * 0x37b5 >> 0x10;
   unsigned_short_dest[840] =
-       (unsigned_short)(((unsigned_short_src[840] - uVar143 & 0xfffe) >> 1) + uVar143 >> 9);
+       (unsigned_short)(((unsigned_short_src[840] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[841] = unsigned_short_src[841] / 0x34a;
   unsigned_short_dest[842] = unsigned_short_src[842] / 0x34b;
   unsigned_short_dest[843] = unsigned_short_src[843] / 0x34c;
+  uVar1 = (uint)unsigned_short_src[844] * 0x363b >> 0x10;
   unsigned_short_dest[844] =
-       (unsigned_short)(((unsigned_short_src[844] - uVar144 & 0xfffe) >> 1) + uVar144 >> 9);
+       (unsigned_short)(((unsigned_short_src[844] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[845] = unsigned_short_src[845] / 0x34e;
   unsigned_short_dest[846] = (ushort)((uint)unsigned_short_src[846] * 0x26b >> 0x13);
   unsigned_short_dest[847] = unsigned_short_src[847] / 0x350;
+  uVar1 = (uint)unsigned_short_src[848] * 0x34c5 >> 0x10;
   unsigned_short_dest[848] =
-       (unsigned_short)(((unsigned_short_src[848] - uVar145 & 0xfffe) >> 1) + uVar145 >> 9);
+       (unsigned_short)(((unsigned_short_src[848] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[849] = unsigned_short_src[849] / 0x352;
   unsigned_short_dest[850] = unsigned_short_src[850] / 0x353;
-  unsigned_short_dest[851] = (unsigned_short_src[851] >> 2) / 0xd5;
+  unsigned_short_dest[851] = unsigned_short_src[851] / 0x354;
   unsigned_short_dest[852] = unsigned_short_src[852] / 0x355;
   unsigned_short_dest[853] = unsigned_short_src[853] / 0x356;
   unsigned_short_dest[854] = unsigned_short_src[854] / 0x357;
-  unsigned_short_dest[855] = (unsigned_short_src[855] >> 3) / 0x6b;
+  unsigned_short_dest[855] = unsigned_short_src[855] / 0x358;
+  uVar1 = (uint)unsigned_short_src[856] * 0x31e3 >> 0x10;
   unsigned_short_dest[856] =
-       (unsigned_short)(((unsigned_short_src[856] - uVar146 & 0xfffe) >> 1) + uVar146 >> 9);
+       (unsigned_short)(((unsigned_short_src[856] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[857] = unsigned_short_src[857] / 0x35a;
+  uVar1 = (uint)unsigned_short_src[858] * 0x312d >> 0x10;
   unsigned_short_dest[858] =
-       (unsigned_short)(((unsigned_short_src[858] - uVar147 & 0xfffe) >> 1) + uVar147 >> 9);
+       (unsigned_short)(((unsigned_short_src[858] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[859] = unsigned_short_src[859] / 0x35c;
   unsigned_short_dest[860] = unsigned_short_src[860] / 0x35d;
-  unsigned_short_dest[861] = (unsigned_short_src[861] >> 1) / 0x1af;
+  unsigned_short_dest[861] = (ushort)(byte)(unsigned_short_src[861] / 0x35e);
+  uVar1 = (uint)unsigned_short_src[862] * 0x2fc3 >> 0x10;
   unsigned_short_dest[862] =
-       (unsigned_short)(((unsigned_short_src[862] - uVar148 & 0xfffe) >> 1) + uVar148 >> 9);
-  unsigned_short_dest[863] = (unsigned_short_src[863] >> 5) / 0x1b;
+       (unsigned_short)(((unsigned_short_src[862] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[863] = unsigned_short_src[863] / 0x360;
+  uVar1 = (uint)unsigned_short_src[864] * 0x2f0f >> 0x10;
   unsigned_short_dest[864] =
-       (unsigned_short)(((unsigned_short_src[864] - uVar149 & 0xfffe) >> 1) + uVar149 >> 9);
+       (unsigned_short)(((unsigned_short_src[864] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[865] = unsigned_short_src[865] / 0x362;
   unsigned_short_dest[866] = unsigned_short_src[866] / 0x363;
-  unsigned_short_dest[867] = (unsigned_short_src[867] >> 2) / 0xd9;
+  unsigned_short_dest[867] = unsigned_short_src[867] / 0x364;
   unsigned_short_dest[868] = unsigned_short_src[868] / 0x365;
-  unsigned_short_dest[869] = (unsigned_short_src[869] >> 1) / 0x1b3;
+  unsigned_short_dest[869] = (ushort)(byte)(unsigned_short_src[869] / 0x366);
+  uVar1 = (uint)unsigned_short_src[870] * 0x2cf9 >> 0x10;
   unsigned_short_dest[870] =
-       (unsigned_short)(((unsigned_short_src[870] - uVar150 & 0xfffe) >> 1) + uVar150 >> 9);
+       (unsigned_short)(((unsigned_short_src[870] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[871] = unsigned_short_src[871] / 0x368;
   unsigned_short_dest[872] = unsigned_short_src[872] / 0x369;
   unsigned_short_dest[873] = unsigned_short_src[873] / 0x36a;
   unsigned_short_dest[874] = unsigned_short_src[874] / 0x36b;
-  unsigned_short_dest[875] = (unsigned_short_src[875] >> 2) / 0xdb;
+  unsigned_short_dest[875] = unsigned_short_src[875] / 0x36c;
   unsigned_short_dest[876] = unsigned_short_src[876] / 0x36d;
   unsigned_short_dest[877] = unsigned_short_src[877] / 0x36e;
-  unsigned_short_dest[878] = (ushort)((uint)unsigned_short_src[878] * 0x4a8f >> 0x18);
-  unsigned_short_dest[879] = (unsigned_short_src[879] >> 4) / 0x37;
+  unsigned_short_dest[878] = (ushort)(byte)((uint)unsigned_short_src[878] * 0x4a8f >> 0x18);
+  unsigned_short_dest[879] = unsigned_short_src[879] / 0x370;
   unsigned_short_dest[880] = unsigned_short_src[880] / 0x371;
   unsigned_short_dest[881] = unsigned_short_src[881] / 0x372;
   unsigned_short_dest[882] = unsigned_short_src[882] / 0x373;
   unsigned_short_dest[883] = unsigned_short_src[883] / 0x374;
   unsigned_short_dest[884] = unsigned_short_src[884] / 0x375;
   unsigned_short_dest[885] = unsigned_short_src[885] / 0x376;
+  uVar1 = (uint)unsigned_short_src[886] * 0x278b >> 0x10;
   unsigned_short_dest[886] =
-       (unsigned_short)(((unsigned_short_src[886] - uVar151 & 0xfffe) >> 1) + uVar151 >> 9);
+       (unsigned_short)(((unsigned_short_src[886] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[887] = unsigned_short_src[887] / 0x378;
+  uVar1 = (uint)unsigned_short_src[888] * 0x26e1 >> 0x10;
   unsigned_short_dest[888] =
-       (unsigned_short)(((unsigned_short_src[888] - uVar152 & 0xfffe) >> 1) + uVar152 >> 9);
+       (unsigned_short)(((unsigned_short_src[888] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[889] = unsigned_short_src[889] / 0x37a;
+  uVar1 = (uint)unsigned_short_src[890] * 0x2637 >> 0x10;
   unsigned_short_dest[890] =
-       (unsigned_short)(((unsigned_short_src[890] - uVar153 & 0xfffe) >> 1) + uVar153 >> 9);
-  unsigned_short_dest[891] = (unsigned_short_src[891] >> 2) / 0xdf;
+       (unsigned_short)(((unsigned_short_src[890] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[891] = unsigned_short_src[891] / 0x37c;
   unsigned_short_dest[892] = unsigned_short_src[892] / 0x37d;
   unsigned_short_dest[893] = unsigned_short_src[893] / 0x37e;
   unsigned_short_dest[894] = unsigned_short_src[894] / 0x37f;
-  unsigned_short_dest[895] = (unsigned_short_src[895] >> 7) / 7;
+  unsigned_short_dest[895] = unsigned_short_src[895] / 0x380;
+  uVar1 = (uint)unsigned_short_src[896] * 0x243f >> 0x10;
   unsigned_short_dest[896] =
-       (unsigned_short)(((unsigned_short_src[896] - uVar154 & 0xfffe) >> 1) + uVar154 >> 9);
+       (unsigned_short)(((unsigned_short_src[896] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[897] = unsigned_short_src[897] / 0x382;
+  uVar1 = (uint)unsigned_short_src[898] * 0x2399 >> 0x10;
   unsigned_short_dest[898] =
-       (unsigned_short)(((unsigned_short_src[898] - uVar155 & 0xfffe) >> 1) + uVar155 >> 9);
+       (unsigned_short)(((unsigned_short_src[898] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[899] = unsigned_short_src[899] / 900;
+  uVar1 = (uint)unsigned_short_src[900] * 0x22f3 >> 0x10;
   unsigned_short_dest[900] =
-       (unsigned_short)(((unsigned_short_src[900] - uVar156 & 0xfffe) >> 1) + uVar156 >> 9);
-  unsigned_short_dest[901] = (unsigned_short_src[901] >> 1) / 0x1c3;
+       (unsigned_short)(((unsigned_short_src[900] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[901] = (ushort)(byte)(unsigned_short_src[901] / 0x386);
   unsigned_short_dest[902] = unsigned_short_src[902] / 0x387;
   unsigned_short_dest[903] = unsigned_short_src[903] / 0x388;
   unsigned_short_dest[904] = unsigned_short_src[904] / 0x389;
   unsigned_short_dest[905] = unsigned_short_src[905] / 0x38a;
   unsigned_short_dest[906] = unsigned_short_src[906] / 0x38b;
-  unsigned_short_dest[907] = (unsigned_short_src[907] >> 2) / 0xe3;
+  unsigned_short_dest[907] = unsigned_short_src[907] / 0x38c;
   unsigned_short_dest[908] = unsigned_short_src[908] / 0x38d;
-  unsigned_short_dest[909] = (unsigned_short_src[909] >> 1) / 0x1c7;
+  unsigned_short_dest[909] = unsigned_short_src[909] / 0x38e;
   unsigned_short_dest[910] = unsigned_short_src[910] / 0x38f;
-  unsigned_short_dest[911] = (unsigned_short_src[911] >> 4) / 0x39;
+  unsigned_short_dest[911] = unsigned_short_src[911] / 0x390;
   unsigned_short_dest[912] = unsigned_short_src[912] / 0x391;
   unsigned_short_dest[913] = unsigned_short_src[913] / 0x392;
   unsigned_short_dest[914] = (ushort)((uint)unsigned_short_src[914] * 0x23d >> 0x13);
@@ -26025,527 +24108,186 @@ void unsigned_short_div(void)
   unsigned_short_dest[916] = unsigned_short_src[916] / 0x395;
   unsigned_short_dest[917] = unsigned_short_src[917] / 0x396;
   unsigned_short_dest[918] = unsigned_short_src[918] / 0x397;
-  unsigned_short_dest[919] = (unsigned_short_src[919] >> 3) / 0x73;
+  unsigned_short_dest[919] = unsigned_short_src[919] / 0x398;
   unsigned_short_dest[920] = unsigned_short_src[920] / 0x399;
-  unsigned_short_dest[921] = (unsigned_short_src[921] >> 1) / 0x1cd;
+  unsigned_short_dest[921] = unsigned_short_src[921] / 0x39a;
   unsigned_short_dest[922] = unsigned_short_src[922] / 0x39b;
-  unsigned_short_dest[923] = (unsigned_short_src[923] >> 2) / 0xe7;
+  unsigned_short_dest[923] = unsigned_short_src[923] / 0x39c;
+  uVar1 = (uint)unsigned_short_src[924] * 0x1b67 >> 0x10;
   unsigned_short_dest[924] =
-       (unsigned_short)(((unsigned_short_src[924] - uVar157 & 0xfffe) >> 1) + uVar157 >> 9);
+       (unsigned_short)(((unsigned_short_src[924] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[925] = unsigned_short_src[925] / 0x39e;
   unsigned_short_dest[926] = unsigned_short_src[926] / 0x39f;
   unsigned_short_dest[927] = unsigned_short_src[927] / 0x3a0;
   unsigned_short_dest[928] = unsigned_short_src[928] / 0x3a1;
-  unsigned_short_dest[929] = (unsigned_short_src[929] >> 1) / 0x1d1;
+  unsigned_short_dest[929] = (ushort)(byte)(unsigned_short_src[929] / 0x3a2);
+  uVar1 = (uint)unsigned_short_src[930] * 0x1993 >> 0x10;
   unsigned_short_dest[930] =
-       (unsigned_short)(((unsigned_short_src[930] - uVar158 & 0xfffe) >> 1) + uVar158 >> 9);
+       (unsigned_short)(((unsigned_short_src[930] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[931] = unsigned_short_src[931] / 0x3a4;
+  uVar1 = (uint)unsigned_short_src[932] * 0x18f9 >> 0x10;
   unsigned_short_dest[932] =
-       (unsigned_short)(((unsigned_short_src[932] - uVar159 & 0xfffe) >> 1) + uVar159 >> 9);
+       (unsigned_short)(((unsigned_short_src[932] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[933] = unsigned_short_src[933] / 0x3a6;
+  uVar1 = (uint)unsigned_short_src[934] * 0x185f >> 0x10;
   unsigned_short_dest[934] =
-       (unsigned_short)(((unsigned_short_src[934] - uVar160 & 0xfffe) >> 1) + uVar160 >> 9);
+       (unsigned_short)(((unsigned_short_src[934] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[935] = unsigned_short_src[935] / 0x3a8;
   unsigned_short_dest[936] = unsigned_short_src[936] / 0x3a9;
-  unsigned_short_dest[937] = (unsigned_short_src[937] >> 1) / 0x1d5;
+  unsigned_short_dest[937] = (ushort)(byte)(unsigned_short_src[937] / 0x3aa);
+  uVar1 = (uint)unsigned_short_src[938] * 0x172d >> 0x10;
   unsigned_short_dest[938] =
-       (unsigned_short)(((unsigned_short_src[938] - uVar161 & 0xfffe) >> 1) + uVar161 >> 9);
-  unsigned_short_dest[939] = (unsigned_short_src[939] >> 2) / 0xeb;
+       (unsigned_short)(((unsigned_short_src[938] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[939] = unsigned_short_src[939] / 0x3ac;
+  uVar1 = (uint)unsigned_short_src[940] * 0x1695 >> 0x10;
   unsigned_short_dest[940] =
-       (unsigned_short)(((unsigned_short_src[940] - uVar162 & 0xfffe) >> 1) + uVar162 >> 9);
-  unsigned_short_dest[941] = (unsigned_short_src[941] >> 1) / 0x1d7;
+       (unsigned_short)(((unsigned_short_src[940] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[941] = (ushort)(byte)(unsigned_short_src[941] / 0x3ae);
   unsigned_short_dest[942] = unsigned_short_src[942] / 0x3af;
   unsigned_short_dest[943] = unsigned_short_src[943] / 0x3b0;
+  uVar1 = (uint)unsigned_short_src[944] * 0x1567 >> 0x10;
   unsigned_short_dest[944] =
-       (unsigned_short)(((unsigned_short_src[944] - uVar163 & 0xfffe) >> 1) + uVar163 >> 9);
+       (unsigned_short)(((unsigned_short_src[944] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[945] = unsigned_short_src[945] / 0x3b2;
+  uVar1 = (uint)unsigned_short_src[946] * 0x14d1 >> 0x10;
   unsigned_short_dest[946] =
-       (unsigned_short)(((unsigned_short_src[946] - uVar164 & 0xfffe) >> 1) + uVar164 >> 9);
+       (unsigned_short)(((unsigned_short_src[946] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[947] = unsigned_short_src[947] / 0x3b4;
   unsigned_short_dest[948] = unsigned_short_src[948] / 0x3b5;
   unsigned_short_dest[949] = (ushort)((uint)unsigned_short_src[949] * 0x89f9 >> 0x19);
+  uVar1 = (uint)unsigned_short_src[950] * 0x13a7 >> 0x10;
   unsigned_short_dest[950] =
-       (unsigned_short)(((unsigned_short_src[950] - uVar165 & 0xfffe) >> 1) + uVar165 >> 9);
-  unsigned_short_dest[951] = (unsigned_short_src[951] >> 3) / 0x77;
+       (unsigned_short)(((unsigned_short_src[950] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[951] = unsigned_short_src[951] / 0x3b8;
+  uVar1 = (uint)unsigned_short_src[952] * 0x1313 >> 0x10;
   unsigned_short_dest[952] =
-       (unsigned_short)(((unsigned_short_src[952] - uVar166 & 0xfffe) >> 1) + uVar166 >> 9);
-  unsigned_short_dest[953] = (unsigned_short_src[953] >> 1) / 0x1dd;
+       (unsigned_short)(((unsigned_short_src[952] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[953] = (ushort)(byte)(unsigned_short_src[953] / 0x3ba);
   unsigned_short_dest[954] = (ushort)((uint)unsigned_short_src[954] * 0x225 >> 0x13);
   unsigned_short_dest[955] = unsigned_short_src[955] / 0x3bc;
+  uVar1 = (uint)unsigned_short_src[956] * 0x11ed >> 0x10;
   unsigned_short_dest[956] =
-       (unsigned_short)(((unsigned_short_src[956] - uVar167 & 0xfffe) >> 1) + uVar167 >> 9);
+       (unsigned_short)(((unsigned_short_src[956] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[957] = unsigned_short_src[957] / 0x3be;
   unsigned_short_dest[958] = unsigned_short_src[958] / 0x3bf;
   unsigned_short_dest[959] = unsigned_short_src[959] / 0x3c0;
+  uVar1 = (uint)unsigned_short_src[960] * 0x10c9 >> 0x10;
   unsigned_short_dest[960] =
-       (unsigned_short)(((unsigned_short_src[960] - uVar168 & 0xfffe) >> 1) + uVar168 >> 9);
+       (unsigned_short)(((unsigned_short_src[960] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[961] = (ushort)((uint)unsigned_short_src[961] * 0x221 >> 0x13);
   unsigned_short_dest[962] = unsigned_short_src[962] / 0x3c3;
   unsigned_short_dest[963] = unsigned_short_src[963] / 0x3c4;
+  uVar1 = (uint)unsigned_short_src[964] * 0xfa7 >> 0x10;
   unsigned_short_dest[964] =
-       (unsigned_short)(((unsigned_short_src[964] - uVar169 & 0xfffe) >> 1) + uVar169 >> 9);
-  unsigned_short_dest[965] = (unsigned_short_src[965] >> 1) / 0x1e3;
+       (unsigned_short)(((unsigned_short_src[964] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[965] = unsigned_short_src[965] / 0x3c6;
   unsigned_short_dest[966] = unsigned_short_src[966] / 0x3c7;
   unsigned_short_dest[967] = unsigned_short_src[967] / 0x3c8;
   unsigned_short_dest[968] = unsigned_short_src[968] / 0x3c9;
-  unsigned_short_dest[969] = (unsigned_short_src[969] >> 1) / 0x1e5;
+  unsigned_short_dest[969] = (ushort)(byte)(unsigned_short_src[969] / 0x3ca);
   unsigned_short_dest[970] = unsigned_short_src[970] / 0x3cb;
-  unsigned_short_dest[971] = (unsigned_short_src[971] >> 2) / 0xf3;
+  unsigned_short_dest[971] = unsigned_short_src[971] / 0x3cc;
   unsigned_short_dest[972] = unsigned_short_src[972] / 0x3cd;
-  unsigned_short_dest[973] = (unsigned_short_src[973] >> 1) / 0x1e7;
+  unsigned_short_dest[973] = (ushort)(byte)(unsigned_short_src[973] / 0x3ce);
   unsigned_short_dest[974] = unsigned_short_src[974] / 0x3cf;
   unsigned_short_dest[975] = unsigned_short_src[975] / 0x3d0;
+  uVar1 = (uint)unsigned_short_src[976] * 0xc51 >> 0x10;
   unsigned_short_dest[976] =
-       (unsigned_short)(((unsigned_short_src[976] - uVar170 & 0xfffe) >> 1) + uVar170 >> 9);
-  unsigned_short_dest[977] = (unsigned_short_src[977] >> 1) / 0x1e9;
+       (unsigned_short)(((unsigned_short_src[976] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[977] = unsigned_short_src[977] / 0x3d2;
+  uVar1 = (uint)unsigned_short_src[978] * 0xbc5 >> 0x10;
   unsigned_short_dest[978] =
-       (unsigned_short)(((unsigned_short_src[978] - uVar171 & 0xfffe) >> 1) + uVar171 >> 9);
-  unsigned_short_dest[979] = (unsigned_short_src[979] >> 2) / 0xf5;
+       (unsigned_short)(((unsigned_short_src[978] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[979] = unsigned_short_src[979] / 0x3d4;
+  uVar1 = (uint)unsigned_short_src[980] * 0xb39 >> 0x10;
   unsigned_short_dest[980] =
-       (unsigned_short)(((unsigned_short_src[980] - uVar172 & 0xfffe) >> 1) + uVar172 >> 9);
+       (unsigned_short)(((unsigned_short_src[980] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[981] = unsigned_short_src[981] / 0x3d6;
   unsigned_short_dest[982] = unsigned_short_src[982] / 0x3d7;
-  unsigned_short_dest[983] = (unsigned_short_src[983] >> 3) / 0x7b;
+  unsigned_short_dest[983] = unsigned_short_src[983] / 0x3d8;
+  uVar1 = (uint)unsigned_short_src[984] * 0xa23 >> 0x10;
   unsigned_short_dest[984] =
-       (unsigned_short)(((unsigned_short_src[984] - uVar173 & 0xfffe) >> 1) + uVar173 >> 9);
+       (unsigned_short)(((unsigned_short_src[984] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[985] = unsigned_short_src[985] / 0x3da;
+  uVar1 = (uint)unsigned_short_src[986] * 0x999 >> 0x10;
   unsigned_short_dest[986] =
-       (unsigned_short)(((unsigned_short_src[986] - uVar174 & 0xfffe) >> 1) + uVar174 >> 9);
+       (unsigned_short)(((unsigned_short_src[986] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[987] = unsigned_short_src[987] / 0x3dc;
   unsigned_short_dest[988] = unsigned_short_src[988] / 0x3dd;
-  unsigned_short_dest[989] = (unsigned_short_src[989] >> 1) / 0x1ef;
+  unsigned_short_dest[989] = unsigned_short_src[989] / 0x3de;
+  uVar1 = (uint)unsigned_short_src[990] * 0x887 >> 0x10;
   unsigned_short_dest[990] =
-       (unsigned_short)(((unsigned_short_src[990] - uVar175 & 0xfffe) >> 1) + uVar175 >> 9);
-  unsigned_short_dest[991] = (unsigned_short_src[991] >> 5) / 0x1f;
+       (unsigned_short)(((unsigned_short_src[990] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[991] = unsigned_short_src[991] / 0x3e0;
   unsigned_short_dest[992] = unsigned_short_src[992] / 0x3e1;
   unsigned_short_dest[993] = unsigned_short_src[993] / 0x3e2;
+  uVar1 = (uint)unsigned_short_src[994] * 0x777 >> 0x10;
   unsigned_short_dest[994] =
-       (unsigned_short)(((unsigned_short_src[994] - uVar176 & 0xfffe) >> 1) + uVar176 >> 9);
-  unsigned_short_dest[995] = (unsigned_short_src[995] >> 2) / 0xf9;
+       (unsigned_short)(((unsigned_short_src[994] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[995] = unsigned_short_src[995] / 0x3e4;
+  uVar1 = (uint)unsigned_short_src[996] * 0x6ef >> 0x10;
   unsigned_short_dest[996] =
-       (unsigned_short)(((unsigned_short_src[996] - uVar177 & 0xfffe) >> 1) + uVar177 >> 9);
+       (unsigned_short)(((unsigned_short_src[996] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[997] = unsigned_short_src[997] / 0x3e6;
+  uVar1 = (uint)unsigned_short_src[998] * 0x669 >> 0x10;
   unsigned_short_dest[998] =
-       (unsigned_short)(((unsigned_short_src[998] - uVar178 & 0xfffe) >> 1) + uVar178 >> 9);
-  unsigned_short_dest[999] = (unsigned_short_src[999] >> 3) / 0x7d;
+       (unsigned_short)(((unsigned_short_src[998] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[999] = unsigned_short_src[999] / 1000;
   unsigned_short_dest[1000] = unsigned_short_src[1000] / 0x3e9;
-  unsigned_short_dest[1001] = (unsigned_short_src[1001] >> 1) / 0x1f5;
+  unsigned_short_dest[1001] = unsigned_short_src[1001] / 0x3ea;
+  uVar1 = (uint)unsigned_short_src[1002] * 0x55d >> 0x10;
   unsigned_short_dest[1002] =
-       (unsigned_short)(((unsigned_short_src[1002] - uVar179 & 0xfffe) >> 1) + uVar179 >> 9);
+       (unsigned_short)(((unsigned_short_src[1002] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[1003] = unsigned_short_src[1003] / 0x3ec;
   unsigned_short_dest[1004] = unsigned_short_src[1004] / 0x3ed;
-  unsigned_short_dest[1005] = (unsigned_short_src[1005] >> 1) / 0x1f7;
+  unsigned_short_dest[1005] = (ushort)(byte)(unsigned_short_src[1005] / 0x3ee);
+  uVar1 = (uint)unsigned_short_src[1006] * 0x453 >> 0x10;
   unsigned_short_dest[1006] =
-       (unsigned_short)(((unsigned_short_src[1006] - uVar180 & 0xfffe) >> 1) + uVar180 >> 9);
-  unsigned_short_dest[1007] = (unsigned_short_src[1007] >> 4) / 0x3f;
+       (unsigned_short)(((unsigned_short_src[1006] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[1007] = unsigned_short_src[1007] / 0x3f0;
+  uVar1 = (uint)unsigned_short_src[1008] * 0x3cf >> 0x10;
   unsigned_short_dest[1008] =
-       (unsigned_short)(((unsigned_short_src[1008] - uVar181 & 0xfffe) >> 1) + uVar181 >> 9);
-  unsigned_short_dest[1009] = (unsigned_short_src[1009] >> 1) / 0x1f9;
+       (unsigned_short)(((unsigned_short_src[1008] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[1009] = (ushort)(byte)(unsigned_short_src[1009] / 0x3f2);
+  uVar1 = (uint)unsigned_short_src[1010] * 0x34b >> 0x10;
   unsigned_short_dest[1010] =
-       (unsigned_short)(((unsigned_short_src[1010] - uVar182 & 0xfffe) >> 1) + uVar182 >> 9);
+       (unsigned_short)(((unsigned_short_src[1010] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[1011] = unsigned_short_src[1011] / 0x3f4;
   unsigned_short_dest[1012] = unsigned_short_src[1012] / 0x3f5;
-  unsigned_short_dest[1013] = (unsigned_short_src[1013] >> 1) / 0x1fb;
+  unsigned_short_dest[1013] = unsigned_short_src[1013] / 0x3f6;
   unsigned_short_dest[1014] = unsigned_short_src[1014] / 0x3f7;
-  unsigned_short_dest[1015] = (unsigned_short_src[1015] >> 3) / 0x7f;
+  unsigned_short_dest[1015] = unsigned_short_src[1015] / 0x3f8;
   unsigned_short_dest[1016] = unsigned_short_src[1016] / 0x3f9;
-  unsigned_short_dest[1017] = (unsigned_short_src[1017] >> 1) / 0x1fd;
+  unsigned_short_dest[1017] = unsigned_short_src[1017] / 0x3fa;
   unsigned_short_dest[1018] = unsigned_short_src[1018] / 0x3fb;
   unsigned_short_dest[1019] = unsigned_short_src[1019] / 0x3fc;
+  uVar1 = (uint)unsigned_short_src[1020] * 0xc1 >> 0x10;
   unsigned_short_dest[1020] =
-       (unsigned_short)(((unsigned_short_src[1020] - uVar183 & 0xfffe) >> 1) + uVar183 >> 9);
-  unsigned_short_dest[1021] = (unsigned_short_src[1021] >> 1) / 0x1ff;
+       (unsigned_short)(((unsigned_short_src[1020] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
+  unsigned_short_dest[1021] = (ushort)(byte)(unsigned_short_src[1021] / 0x3fe);
+  uVar1 = (uint)unsigned_short_src[1022] * 0x41 >> 0x10;
   unsigned_short_dest[1022] =
-       (unsigned_short)(((unsigned_short_src[1022] - uVar184 & 0xfffe) >> 1) + uVar184 >> 9);
+       (unsigned_short)(((unsigned_short_src[1022] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9);
   unsigned_short_dest[1023] = unsigned_short_src[1023] >> 10;
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_modulo(void)
 
 {
   uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  uint uVar11;
-  uint uVar12;
-  uint uVar13;
-  uint uVar14;
-  uint uVar15;
-  uint uVar16;
-  uint uVar17;
-  uint uVar18;
-  uint uVar19;
-  uint uVar20;
-  uint uVar21;
-  uint uVar22;
-  uint uVar23;
-  uint uVar24;
-  uint uVar25;
-  uint uVar26;
-  uint uVar27;
-  uint uVar28;
-  uint uVar29;
-  uint uVar30;
-  uint uVar31;
-  uint uVar32;
-  uint uVar33;
-  uint uVar34;
-  uint uVar35;
-  uint uVar36;
-  uint uVar37;
-  uint uVar38;
-  uint uVar39;
-  uint uVar40;
-  uint uVar41;
-  uint uVar42;
-  uint uVar43;
-  uint uVar44;
-  uint uVar45;
-  uint uVar46;
-  uint uVar47;
-  uint uVar48;
-  uint uVar49;
-  uint uVar50;
-  uint uVar51;
-  uint uVar52;
-  uint uVar53;
-  uint uVar54;
-  uint uVar55;
-  uint uVar56;
-  uint uVar57;
-  uint uVar58;
-  uint uVar59;
-  uint uVar60;
-  uint uVar61;
-  uint uVar62;
-  uint uVar63;
-  uint uVar64;
-  uint uVar65;
-  uint uVar66;
-  uint uVar67;
-  uint uVar68;
-  uint uVar69;
-  uint uVar70;
-  uint uVar71;
-  uint uVar72;
-  uint uVar73;
-  uint uVar74;
-  uint uVar75;
-  uint uVar76;
-  uint uVar77;
-  uint uVar78;
-  uint uVar79;
-  uint uVar80;
-  uint uVar81;
-  uint uVar82;
-  uint uVar83;
-  uint uVar84;
-  uint uVar85;
-  uint uVar86;
-  uint uVar87;
-  uint uVar88;
-  uint uVar89;
-  uint uVar90;
-  uint uVar91;
-  uint uVar92;
-  uint uVar93;
-  uint uVar94;
-  uint uVar95;
-  uint uVar96;
-  uint uVar97;
-  uint uVar98;
-  uint uVar99;
-  uint uVar100;
-  uint uVar101;
-  uint uVar102;
-  uint uVar103;
-  uint uVar104;
-  uint uVar105;
-  uint uVar106;
-  uint uVar107;
-  uint uVar108;
-  uint uVar109;
-  uint uVar110;
-  uint uVar111;
-  uint uVar112;
-  uint uVar113;
-  uint uVar114;
-  uint uVar115;
-  uint uVar116;
-  uint uVar117;
-  uint uVar118;
-  uint uVar119;
-  uint uVar120;
-  uint uVar121;
-  uint uVar122;
-  uint uVar123;
-  uint uVar124;
-  uint uVar125;
-  uint uVar126;
-  uint uVar127;
-  uint uVar128;
-  uint uVar129;
-  uint uVar130;
-  uint uVar131;
-  uint uVar132;
-  uint uVar133;
-  uint uVar134;
-  uint uVar135;
-  uint uVar136;
-  uint uVar137;
-  uint uVar138;
-  uint uVar139;
-  uint uVar140;
-  uint uVar141;
-  uint uVar142;
-  uint uVar143;
-  uint uVar144;
-  uint uVar145;
-  uint uVar146;
-  uint uVar147;
-  uint uVar148;
-  uint uVar149;
-  uint uVar150;
-  uint uVar151;
-  uint uVar152;
-  uint uVar153;
-  uint uVar154;
-  uint uVar155;
-  uint uVar156;
-  uint uVar157;
-  uint uVar158;
-  uint uVar159;
-  uint uVar160;
-  uint uVar161;
-  uint uVar162;
-  uint uVar163;
-  uint uVar164;
-  uint uVar165;
-  uint uVar166;
-  uint uVar167;
-  uint uVar168;
-  uint uVar169;
-  uint uVar170;
-  uint uVar171;
-  uint uVar172;
-  uint uVar173;
-  uint uVar174;
-  uint uVar175;
-  uint uVar176;
-  uint uVar177;
-  uint uVar178;
-  uint uVar179;
-  uint uVar180;
-  uint uVar181;
-  uint uVar182;
-  uint uVar183;
-  uint uVar184;
   
-  uVar1 = (uint)unsigned_short_src[6] * 0x2493 >> 0x10;
-  uVar2 = (uint)unsigned_short_src[20] * 0x8619 >> 0x10;
-  uVar3 = (uint)unsigned_short_src[22] * 0x642d >> 0x10;
-  uVar4 = (uint)unsigned_short_src[24] * 0x47af >> 0x10;
-  uVar5 = (uint)unsigned_short_src[26] * 0x2f69 >> 0x10;
-  uVar6 = (uint)unsigned_short_src[30] * 0x843 >> 0x10;
-  uVar132 = ((unsigned_short_src[30] - uVar6 & 0xfffe) >> 1) + uVar6 >> 4;
-  uVar7 = (uint)unsigned_short_src[38] * 0xa41b >> 0x10;
-  uVar8 = (uint)unsigned_short_src[40] * 0x8f9d >> 0x10;
-  uVar9 = (uint)unsigned_short_src[46] * 0x5c99 >> 0x10;
-  uVar10 = (uint)unsigned_short_src[48] * 0x4e5f >> 0x10;
-  uVar11 = (uint)unsigned_short_src[54] * 0x29e5 >> 0x10;
-  uVar12 = (uint)unsigned_short_src[56] * 0x1f71 >> 0x10;
-  uVar6 = (uint)unsigned_short_src[62] * 0x411 >> 0x10;
-  uVar133 = ((unsigned_short_src[62] - uVar6 & 0xfffe) >> 1) + uVar6 >> 5;
-  uVar13 = (uint)unsigned_short_src[68] * 0xdae7 >> 0x10;
-  uVar14 = (uint)unsigned_short_src[74] * 0xb4e9 >> 0x10;
-  uVar15 = (uint)unsigned_short_src[88] * 0x702f >> 0x10;
-  uVar16 = (uint)unsigned_short_src[90] * 0x6817 >> 0x10;
-  uVar17 = (uint)unsigned_short_src[92] * 0x6059 >> 0x10;
-  uVar18 = (uint)unsigned_short_src[96] * 0x51d1 >> 0x10;
-  uVar19 = (uint)unsigned_short_src[106] * 0x323f >> 0x10;
-  uVar20 = (uint)unsigned_short_src[114] * 0x1cf1 >> 0x10;
-  uVar21 = (uint)unsigned_short_src[118] * 0x135d >> 0x10;
-  uVar22 = (uint)unsigned_short_src[122] * 0xa69 >> 0x10;
-  uVar23 = (uint)unsigned_short_src[124] * 0x625 >> 0x10;
-  uVar6 = (uint)unsigned_short_src[126] * 0x205 >> 0x10;
-  uVar134 = ((unsigned_short_src[126] - uVar6 & 0xfffe) >> 1) + uVar6 >> 6;
-  uVar24 = (uint)unsigned_short_src[154] * 0xa6d1 >> 0x10;
-  uVar25 = (uint)unsigned_short_src[160] * 0x970f >> 0x10;
-  uVar26 = (uint)unsigned_short_src[164] * 0x8d31 >> 0x10;
-  uVar27 = (uint)unsigned_short_src[166] * 0x886f >> 0x10;
-  uVar28 = (uint)unsigned_short_src[170] * 0x7f41 >> 0x10;
-  uVar29 = (uint)unsigned_short_src[172] * 0x7ad3 >> 0x10;
-  uVar30 = (uint)unsigned_short_src[176] * 0x7243 >> 0x10;
-  uVar31 = (uint)unsigned_short_src[188] * 0x5ac1 >> 0x10;
-  uVar32 = (uint)unsigned_short_src[192] * 0x5391 >> 0x10;
-  uVar33 = (uint)unsigned_short_src[202] * 0x42d7 >> 0x10;
-  uVar34 = (uint)unsigned_short_src[204] * 0x3fb1 >> 0x10;
-  uVar35 = (uint)unsigned_short_src[212] * 0x33af >> 0x10;
-  uVar36 = (uint)unsigned_short_src[216] * 0x2e03 >> 0x10;
-  uVar37 = (uint)unsigned_short_src[218] * 0x2b41 >> 0x10;
-  uVar38 = (uint)unsigned_short_src[222] * 0x25e3 >> 0x10;
-  uVar39 = (uint)unsigned_short_src[226] * 0x20b5 >> 0x10;
-  uVar40 = (uint)unsigned_short_src[230] * 0x1bb5 >> 0x10;
-  uVar41 = (uint)unsigned_short_src[234] * 0x16e1 >> 0x10;
-  uVar42 = (uint)unsigned_short_src[242] * 0xdb3 >> 0x10;
-  uVar43 = (uint)unsigned_short_src[244] * 0xb7f >> 0x10;
-  uVar44 = (uint)unsigned_short_src[248] * 0x733 >> 0x10;
-  uVar135 = (uint)unsigned_short_src[266] * 0xeae9 >> 0x10;
-  uVar136 = (uint)unsigned_short_src[272] * 0xe01f >> 0x10;
-  uVar137 = (uint)unsigned_short_src[274] * 0xdca1 >> 0x10;
-  uVar138 = (uint)unsigned_short_src[292] * 0xbf59 >> 0x10;
-  uVar139 = (uint)unsigned_short_src[298] * 0xb65f >> 0x10;
-  uVar140 = (uint)unsigned_short_src[310] * 0xa575 >> 0x10;
-  uVar141 = (uint)unsigned_short_src[314] * 0xa01b >> 0x10;
-  uVar142 = (uint)unsigned_short_src[318] * 0x9ae3 >> 0x10;
-  uVar143 = (uint)unsigned_short_src[324] * 0x934d >> 0x10;
-  uVar144 = (uint)unsigned_short_src[332] * 0x899d >> 0x10;
-  uVar145 = (uint)unsigned_short_src[336] * 0x84f1 >> 0x10;
-  uVar146 = (uint)unsigned_short_src[340] * 0x8061 >> 0x10;
-  uVar147 = (uint)unsigned_short_src[342] * 0x7e23 >> 0x10;
-  uVar148 = (uint)unsigned_short_src[348] * 0x7791 >> 0x10;
-  uVar149 = (uint)unsigned_short_src[356] * 0x6f27 >> 0x10;
-  uVar150 = (uint)unsigned_short_src[358] * 0x6d1b >> 0x10;
-  uVar151 = (uint)unsigned_short_src[360] * 0x6b15 >> 0x10;
-  uVar152 = (uint)unsigned_short_src[362] * 0x6915 >> 0x10;
-  uVar153 = (uint)unsigned_short_src[372] * 0x5f67 >> 0x10;
-  uVar154 = (uint)unsigned_short_src[374] * 0x5d87 >> 0x10;
-  uVar155 = (uint)unsigned_short_src[378] * 22999 >> 0x10;
-  uVar156 = (uint)unsigned_short_src[384] * 0x5473 >> 0x10;
-  uVar157 = (uint)unsigned_short_src[388] * 0x50f3 >> 0x10;
-  uVar158 = (uint)unsigned_short_src[392] * 0x4d85 >> 0x10;
-  uVar159 = (uint)unsigned_short_src[398] * 0x4881 >> 0x10;
-  uVar160 = (uint)unsigned_short_src[404] * 0x43a3 >> 0x10;
-  uVar161 = (uint)unsigned_short_src[408] * 0x4079 >> 0x10;
-  uVar162 = (uint)unsigned_short_src[414] * 0x3bd7 >> 0x10;
-  uVar163 = (uint)unsigned_short_src[416] * 0x3a53 >> 0x10;
-  uVar164 = (uint)unsigned_short_src[418] * 0x38d3 >> 0x10;
-  uVar165 = (uint)unsigned_short_src[430] * 0x301d >> 0x10;
-  uVar166 = (uint)unsigned_short_src[434] * 0x2d51 >> 0x10;
-  uVar167 = (uint)unsigned_short_src[450] * 0x22a1 >> 0x10;
-  uVar168 = (uint)unsigned_short_src[454] * 0x2013 >> 0x10;
-  uVar169 = (uint)unsigned_short_src[460] * 0x1c53 >> 0x10;
-  uVar170 = (uint)unsigned_short_src[464] * 0x19e1 >> 0x10;
-  uVar171 = (uint)unsigned_short_src[468] * 0x1779 >> 0x10;
-  uVar172 = (uint)unsigned_short_src[470] * 0x1649 >> 0x10;
-  uVar173 = (uint)unsigned_short_src[474] * 0x13f1 >> 0x10;
-  uVar174 = (uint)unsigned_short_src[476] * 0x12c9 >> 0x10;
-  uVar175 = (uint)unsigned_short_src[482] * 0xf5f >> 0x10;
-  uVar176 = (uint)unsigned_short_src[484] * 0xe41 >> 0x10;
-  uVar177 = (uint)unsigned_short_src[486] * 0xd25 >> 0x10;
-  uVar178 = (uint)unsigned_short_src[488] * 0xc0b >> 0x10;
-  uVar179 = (uint)unsigned_short_src[494] * 0x8cb >> 0x10;
-  uVar180 = (uint)unsigned_short_src[500] * 0x59f >> 0x10;
-  uVar181 = (uint)unsigned_short_src[502] * 0x495 >> 0x10;
-  uVar182 = (uint)unsigned_short_src[504] * 0x38d >> 0x10;
-  uVar183 = (uint)unsigned_short_src[506] * 0x287 >> 0x10;
-  uVar184 = (uint)unsigned_short_src[508] * 0x183 >> 0x10;
-  uVar6 = (uint)unsigned_short_src[510] * 0x81 >> 0x10;
-  uVar6 = ((unsigned_short_src[510] - uVar6 & 0xfffe) >> 1) + uVar6;
-  uVar45 = (uint)unsigned_short_src[530] * 0xedaf >> 0x10;
-  uVar46 = (uint)unsigned_short_src[584] * 0xc01d >> 0x10;
-  uVar47 = (uint)unsigned_short_src[594] * 0xb895 >> 0x10;
-  uVar48 = (uint)unsigned_short_src[596] * 0xb71b >> 0x10;
-  uVar49 = (uint)unsigned_short_src[600] * 0xb42f >> 0x10;
-  uVar50 = (uint)unsigned_short_src[606] * 0xafdf >> 0x10;
-  uVar51 = (uint)unsigned_short_src[612] * 0xaba5 >> 0x10;
-  uVar52 = (uint)unsigned_short_src[614] * 0xaa41 >> 0x10;
-  uVar53 = (uint)unsigned_short_src[624] * 0xa36f >> 0x10;
-  uVar54 = (uint)unsigned_short_src[640] * 0x98f7 >> 0x10;
-  uVar55 = (uint)unsigned_short_src[642] * 0x97b1 >> 0x10;
-  uVar56 = (uint)unsigned_short_src[652] * 0x9173 >> 0x10;
-  uVar57 = (uint)unsigned_short_src[654] * 0x9039 >> 0x10;
-  uVar58 = (uint)unsigned_short_src[656] * 0x8f01 >> 0x10;
-  uVar59 = (uint)unsigned_short_src[658] * 0x8dcb >> 0x10;
-  uVar60 = (uint)unsigned_short_src[660] * 0x8c97 >> 0x10;
-  uVar61 = (uint)unsigned_short_src[662] * 0x8b65 >> 0x10;
-  uVar62 = (uint)unsigned_short_src[668] * 0x87d9 >> 0x10;
-  uVar63 = (uint)unsigned_short_src[682] * 0x7fd1 >> 0x10;
-  uVar64 = (uint)unsigned_short_src[688] * 0x7c79 >> 0x10;
-  uVar65 = (uint)unsigned_short_src[690] * 0x7b5f >> 0x10;
-  uVar66 = (uint)unsigned_short_src[692] * 0x7a47 >> 0x10;
-  uVar67 = (uint)unsigned_short_src[696] * 0x781b >> 0x10;
-  uVar68 = (uint)unsigned_short_src[714] * 0x6ea3 >> 0x10;
-  uVar69 = (uint)unsigned_short_src[718] * 0x6c99 >> 0x10;
-  uVar70 = (uint)unsigned_short_src[722] * 0x6a95 >> 0x10;
-  uVar71 = (uint)unsigned_short_src[728] * 0x6799 >> 0x10;
-  uVar72 = (uint)unsigned_short_src[730] * 0x669d >> 0x10;
-  uVar73 = (uint)unsigned_short_src[734] * 0x64a9 >> 0x10;
-  uVar74 = (uint)unsigned_short_src[738] * 0x62bb >> 0x10;
-  uVar75 = (uint)unsigned_short_src[764] * 0x56ad >> 0x10;
-  uVar76 = (uint)unsigned_short_src[772] * 0x5321 >> 0x10;
-  uVar77 = (uint)unsigned_short_src[774] * 0x5241 >> 0x10;
-  uVar78 = (uint)unsigned_short_src[790] * 0x4b69 >> 0x10;
-  uVar79 = (uint)unsigned_short_src[792] * 0x4a93 >> 0x10;
-  uVar80 = (uint)unsigned_short_src[802] * 0x4675 >> 0x10;
-  uVar81 = (uint)unsigned_short_src[806] * 0x44d7 >> 0x10;
-  uVar82 = (uint)unsigned_short_src[810] * 0x433d >> 0x10;
-  uVar83 = (uint)unsigned_short_src[812] * 0x4271 >> 0x10;
-  uVar84 = (uint)unsigned_short_src[814] * 0x41a7 >> 0x10;
-  uVar85 = (uint)unsigned_short_src[816] * 0x40dd >> 0x10;
-  uVar86 = (uint)unsigned_short_src[818] * 0x4015 >> 0x10;
-  uVar87 = (uint)unsigned_short_src[820] * 0x3f4d >> 0x10;
-  uVar88 = (uint)unsigned_short_src[824] * 0x3dc1 >> 0x10;
-  uVar89 = (uint)unsigned_short_src[838] * 0x3873 >> 0x10;
-  uVar90 = (uint)unsigned_short_src[840] * 0x37b5 >> 0x10;
-  uVar91 = (uint)unsigned_short_src[844] * 0x363b >> 0x10;
-  uVar92 = (uint)unsigned_short_src[848] * 0x34c5 >> 0x10;
-  uVar93 = (uint)unsigned_short_src[856] * 0x31e3 >> 0x10;
-  uVar94 = (uint)unsigned_short_src[858] * 0x312d >> 0x10;
-  uVar95 = (uint)unsigned_short_src[862] * 0x2fc3 >> 0x10;
-  uVar96 = (uint)unsigned_short_src[864] * 0x2f0f >> 0x10;
-  uVar97 = (uint)unsigned_short_src[870] * 0x2cf9 >> 0x10;
-  uVar98 = (uint)unsigned_short_src[886] * 0x278b >> 0x10;
-  uVar99 = (uint)unsigned_short_src[888] * 0x26e1 >> 0x10;
-  uVar100 = (uint)unsigned_short_src[890] * 0x2637 >> 0x10;
-  uVar101 = (uint)unsigned_short_src[896] * 0x243f >> 0x10;
-  uVar102 = (uint)unsigned_short_src[898] * 0x2399 >> 0x10;
-  uVar103 = (uint)unsigned_short_src[900] * 0x22f3 >> 0x10;
-  uVar104 = (uint)unsigned_short_src[924] * 0x1b67 >> 0x10;
-  uVar105 = (uint)unsigned_short_src[930] * 0x1993 >> 0x10;
-  uVar106 = (uint)unsigned_short_src[932] * 0x18f9 >> 0x10;
-  uVar107 = (uint)unsigned_short_src[934] * 0x185f >> 0x10;
-  uVar108 = (uint)unsigned_short_src[938] * 0x172d >> 0x10;
-  uVar109 = (uint)unsigned_short_src[940] * 0x1695 >> 0x10;
-  uVar110 = (uint)unsigned_short_src[944] * 0x1567 >> 0x10;
-  uVar111 = (uint)unsigned_short_src[946] * 0x14d1 >> 0x10;
-  uVar112 = (uint)unsigned_short_src[950] * 0x13a7 >> 0x10;
-  uVar113 = (uint)unsigned_short_src[952] * 0x1313 >> 0x10;
-  uVar114 = (uint)unsigned_short_src[956] * 0x11ed >> 0x10;
-  uVar115 = (uint)unsigned_short_src[960] * 0x10c9 >> 0x10;
-  uVar116 = (uint)unsigned_short_src[964] * 0xfa7 >> 0x10;
-  uVar117 = (uint)unsigned_short_src[976] * 0xc51 >> 0x10;
-  uVar118 = (uint)unsigned_short_src[978] * 0xbc5 >> 0x10;
-  uVar119 = (uint)unsigned_short_src[980] * 0xb39 >> 0x10;
-  uVar120 = (uint)unsigned_short_src[984] * 0xa23 >> 0x10;
-  uVar121 = (uint)unsigned_short_src[986] * 0x999 >> 0x10;
-  uVar122 = (uint)unsigned_short_src[990] * 0x887 >> 0x10;
-  uVar123 = (uint)unsigned_short_src[994] * 0x777 >> 0x10;
-  uVar124 = (uint)unsigned_short_src[996] * 0x6ef >> 0x10;
-  uVar125 = (uint)unsigned_short_src[998] * 0x669 >> 0x10;
-  uVar126 = (uint)unsigned_short_src[1002] * 0x55d >> 0x10;
-  uVar127 = (uint)unsigned_short_src[1006] * 0x453 >> 0x10;
-  uVar128 = (uint)unsigned_short_src[1008] * 0x3cf >> 0x10;
-  uVar129 = (uint)unsigned_short_src[1010] * 0x34b >> 0x10;
-  uVar130 = (uint)unsigned_short_src[1020] * 0xc1 >> 0x10;
-  uVar131 = (uint)unsigned_short_src[1022] * 0x41 >> 0x10;
-  uVar131 = ((unsigned_short_src[1022] - uVar131 & 0xfffe) >> 1) + uVar131 >> 9;
   unsigned_short_dest[0] = 0;
   unsigned_short_dest[1] = unsigned_short_src[1] & 1;
   unsigned_short_dest[2] = unsigned_short_src[2] % 3;
   unsigned_short_dest[3] = unsigned_short_src[3] & 3;
   unsigned_short_dest[4] = unsigned_short_src[4] % 5;
   unsigned_short_dest[5] = unsigned_short_src[5] % 6;
+  uVar1 = (uint)unsigned_short_src[6] * 0x2493 >> 0x10;
   unsigned_short_dest[6] =
        unsigned_short_src[6] +
        (short)(((unsigned_short_src[6] - uVar1 & 0xfffe) >> 1) + uVar1 >> 2) * -7;
@@ -26555,7 +24297,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[10] = unsigned_short_src[10] % 0xb;
   unsigned_short_dest[11] = unsigned_short_src[11] % 0xc;
   unsigned_short_dest[12] = unsigned_short_src[12] % 0xd;
-  unsigned_short_dest[13] = unsigned_short_src[13] + ((unsigned_short_src[13] >> 1) / 7) * -0xe;
+  unsigned_short_dest[13] = unsigned_short_src[13] % 0xe;
   unsigned_short_dest[14] = unsigned_short_src[14] % 0xf;
   unsigned_short_dest[15] = unsigned_short_src[15] & 0xf;
   unsigned_short_dest[16] =
@@ -26564,25 +24306,31 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[17] = unsigned_short_src[17] % 0x12;
   unsigned_short_dest[18] = unsigned_short_src[18] % 0x13;
   unsigned_short_dest[19] = unsigned_short_src[19] % 0x14;
+  uVar1 = (uint)unsigned_short_src[20] * 0x8619 >> 0x10;
   unsigned_short_dest[20] =
        unsigned_short_src[20] +
-       (short)((((unsigned_short_src[20] - uVar2 & 0xfffe) >> 1) + uVar2 & 0xfff0) >> 4) * -0x15;
+       (short)((((unsigned_short_src[20] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfff0) >> 4) * -0x15;
   unsigned_short_dest[21] = unsigned_short_src[21] % 0x16;
+  uVar1 = (uint)unsigned_short_src[22] * 0x642d >> 0x10;
   unsigned_short_dest[22] =
        unsigned_short_src[22] +
-       (short)(((unsigned_short_src[22] - uVar3 & 0xfffe) >> 1) + uVar3 >> 4) * -0x17;
+       (short)(((unsigned_short_src[22] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4) * -0x17;
   unsigned_short_dest[23] = unsigned_short_src[23] % 0x18;
+  uVar1 = (uint)unsigned_short_src[24] * 0x47af >> 0x10;
   unsigned_short_dest[24] =
        unsigned_short_src[24] +
-       (short)(((unsigned_short_src[24] - uVar4 & 0xfffe) >> 1) + uVar4 >> 4) * -0x19;
+       (short)(((unsigned_short_src[24] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4) * -0x19;
   unsigned_short_dest[25] = unsigned_short_src[25] % 0x1a;
+  uVar1 = (uint)unsigned_short_src[26] * 0x2f69 >> 0x10;
   unsigned_short_dest[26] =
        unsigned_short_src[26] +
-       (short)(((unsigned_short_src[26] - uVar5 & 0xfffe) >> 1) + uVar5 >> 4) * -0x1b;
-  unsigned_short_dest[27] = unsigned_short_src[27] + ((unsigned_short_src[27] >> 2) / 7) * -0x1c;
+       (short)(((unsigned_short_src[26] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4) * -0x1b;
+  unsigned_short_dest[27] = unsigned_short_src[27] % 0x1c;
   unsigned_short_dest[28] = unsigned_short_src[28] % 0x1d;
   unsigned_short_dest[29] = unsigned_short_src[29] % 0x1e;
-  unsigned_short_dest[30] = unsigned_short_src[30] - ((short)(uVar132 << 5) - (short)uVar132);
+  uVar1 = (uint)unsigned_short_src[30] * 0x843 >> 0x10;
+  uVar1 = ((unsigned_short_src[30] - uVar1 & 0xfffe) >> 1) + uVar1 >> 4;
+  unsigned_short_dest[30] = unsigned_short_src[30] - ((short)(uVar1 << 5) - (short)uVar1);
   unsigned_short_dest[31] = unsigned_short_src[31] & 0x1f;
   unsigned_short_dest[32] =
        unsigned_short_src[32] -
@@ -26592,43 +24340,51 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[35] = unsigned_short_src[35] % 0x24;
   unsigned_short_dest[36] = unsigned_short_src[36] % 0x25;
   unsigned_short_dest[37] = unsigned_short_src[37] % 0x26;
+  uVar1 = (uint)unsigned_short_src[38] * 0xa41b >> 0x10;
   unsigned_short_dest[38] =
        unsigned_short_src[38] +
-       (short)((((unsigned_short_src[38] - uVar7 & 0xfffe) >> 1) + uVar7 & 0xffe0) >> 5) * -0x27;
+       (short)((((unsigned_short_src[38] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffe0) >> 5) * -0x27;
   unsigned_short_dest[39] = unsigned_short_src[39] % 0x28;
+  uVar1 = (uint)unsigned_short_src[40] * 0x8f9d >> 0x10;
   unsigned_short_dest[40] =
        unsigned_short_src[40] +
-       (short)((((unsigned_short_src[40] - uVar8 & 0xfffe) >> 1) + uVar8 & 0xffe0) >> 5) * -0x29;
-  unsigned_short_dest[41] = unsigned_short_src[41] + ((unsigned_short_src[41] >> 1) / 0x15) * -0x2a;
+       (short)((((unsigned_short_src[40] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffe0) >> 5) * -0x29;
+  unsigned_short_dest[41] = unsigned_short_src[41] % 0x2a;
   unsigned_short_dest[42] = unsigned_short_src[42] % 0x2b;
   unsigned_short_dest[43] = unsigned_short_src[43] % 0x2c;
   unsigned_short_dest[44] = unsigned_short_src[44] % 0x2d;
-  unsigned_short_dest[45] = unsigned_short_src[45] + ((unsigned_short_src[45] >> 1) / 0x17) * -0x2e;
+  unsigned_short_dest[45] = unsigned_short_src[45] % 0x2e;
+  uVar1 = (uint)unsigned_short_src[46] * 0x5c99 >> 0x10;
   unsigned_short_dest[46] =
        unsigned_short_src[46] +
-       (short)(((unsigned_short_src[46] - uVar9 & 0xfffe) >> 1) + uVar9 >> 5) * -0x2f;
+       (short)(((unsigned_short_src[46] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5) * -0x2f;
   unsigned_short_dest[47] = unsigned_short_src[47] % 0x30;
+  uVar1 = (uint)unsigned_short_src[48] * 0x4e5f >> 0x10;
   unsigned_short_dest[48] =
        unsigned_short_src[48] +
-       (short)(((unsigned_short_src[48] - uVar10 & 0xfffe) >> 1) + uVar10 >> 5) * -0x31;
-  unsigned_short_dest[49] = unsigned_short_src[49] + ((unsigned_short_src[49] >> 1) / 0x19) * -0x32;
+       (short)(((unsigned_short_src[48] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5) * -0x31;
+  unsigned_short_dest[49] = unsigned_short_src[49] % 0x32;
   unsigned_short_dest[50] = unsigned_short_src[50] % 0x33;
   unsigned_short_dest[51] = unsigned_short_src[51] % 0x34;
   unsigned_short_dest[52] = unsigned_short_src[52] % 0x35;
-  unsigned_short_dest[53] = unsigned_short_src[53] + ((unsigned_short_src[53] >> 1) / 0x1b) * -0x36;
+  unsigned_short_dest[53] = unsigned_short_src[53] % 0x36;
+  uVar1 = (uint)unsigned_short_src[54] * 0x29e5 >> 0x10;
   unsigned_short_dest[54] =
        unsigned_short_src[54] +
-       (short)(((unsigned_short_src[54] - uVar11 & 0xfffe) >> 1) + uVar11 >> 5) * -0x37;
-  unsigned_short_dest[55] = unsigned_short_src[55] + ((unsigned_short_src[55] >> 3) / 7) * -0x38;
+       (short)(((unsigned_short_src[54] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5) * -0x37;
+  unsigned_short_dest[55] = unsigned_short_src[55] % 0x38;
+  uVar1 = (uint)unsigned_short_src[56] * 0x1f71 >> 0x10;
   unsigned_short_dest[56] =
        unsigned_short_src[56] +
-       (short)(((unsigned_short_src[56] - uVar12 & 0xfffe) >> 1) + uVar12 >> 5) * -0x39;
+       (short)(((unsigned_short_src[56] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5) * -0x39;
   unsigned_short_dest[57] = unsigned_short_src[57] % 0x3a;
   unsigned_short_dest[58] = unsigned_short_src[58] % 0x3b;
   unsigned_short_dest[59] = unsigned_short_src[59] % 0x3c;
   unsigned_short_dest[60] = unsigned_short_src[60] % 0x3d;
-  unsigned_short_dest[61] = unsigned_short_src[61] + ((unsigned_short_src[61] >> 1) / 0x1f) * -0x3e;
-  unsigned_short_dest[62] = unsigned_short_src[62] - ((short)(uVar133 << 6) - (short)uVar133);
+  unsigned_short_dest[61] = unsigned_short_src[61] % 0x3e;
+  uVar1 = (uint)unsigned_short_src[62] * 0x411 >> 0x10;
+  uVar1 = ((unsigned_short_src[62] - uVar1 & 0xfffe) >> 1) + uVar1 >> 5;
+  unsigned_short_dest[62] = unsigned_short_src[62] - ((short)(uVar1 << 6) - (short)uVar1);
   unsigned_short_dest[63] = unsigned_short_src[63] & 0x3f;
   unsigned_short_dest[64] =
        unsigned_short_src[64] -
@@ -26636,92 +24392,100 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[65] = unsigned_short_src[65] % 0x42;
   unsigned_short_dest[66] = unsigned_short_src[66] % 0x43;
   unsigned_short_dest[67] = unsigned_short_src[67] % 0x44;
+  uVar1 = (uint)unsigned_short_src[68] * 0xdae7 >> 0x10;
   unsigned_short_dest[68] =
        unsigned_short_src[68] +
-       (short)((((unsigned_short_src[68] - uVar13 & 0xfffe) >> 1) + uVar13 & 0xffc0) >> 6) * -0x45;
+       (short)((((unsigned_short_src[68] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffc0) >> 6) * -0x45;
   unsigned_short_dest[69] = unsigned_short_src[69] % 0x46;
   unsigned_short_dest[70] = unsigned_short_src[70] % 0x47;
   unsigned_short_dest[71] = unsigned_short_src[71] % 0x48;
   unsigned_short_dest[72] = unsigned_short_src[72] % 0x49;
   unsigned_short_dest[73] = unsigned_short_src[73] % 0x4a;
+  uVar1 = (uint)unsigned_short_src[74] * 0xb4e9 >> 0x10;
   unsigned_short_dest[74] =
        unsigned_short_src[74] +
-       (short)((((unsigned_short_src[74] - uVar14 & 0xfffe) >> 1) + uVar14 & 0xffc0) >> 6) * -0x4b;
+       (short)((((unsigned_short_src[74] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xffc0) >> 6) * -0x4b;
   unsigned_short_dest[75] = unsigned_short_src[75] % 0x4c;
   unsigned_short_dest[76] = unsigned_short_src[76] % 0x4d;
-  unsigned_short_dest[77] = unsigned_short_src[77] + ((unsigned_short_src[77] >> 1) / 0x27) * -0x4e;
+  unsigned_short_dest[77] = unsigned_short_src[77] % 0x4e;
   unsigned_short_dest[78] = unsigned_short_src[78] % 0x4f;
   unsigned_short_dest[79] = unsigned_short_src[79] % 0x50;
   unsigned_short_dest[80] = unsigned_short_src[80] % 0x51;
-  unsigned_short_dest[81] = unsigned_short_src[81] + ((unsigned_short_src[81] >> 1) / 0x29) * -0x52;
+  unsigned_short_dest[81] = unsigned_short_src[81] % 0x52;
   unsigned_short_dest[82] = unsigned_short_src[82] % 0x53;
-  unsigned_short_dest[83] = unsigned_short_src[83] + ((unsigned_short_src[83] >> 2) / 0x15) * -0x54;
+  unsigned_short_dest[83] = unsigned_short_src[83] % 0x54;
   unsigned_short_dest[84] = unsigned_short_src[84] % 0x55;
   unsigned_short_dest[85] = unsigned_short_src[85] % 0x56;
   unsigned_short_dest[86] = unsigned_short_src[86] % 0x57;
   unsigned_short_dest[87] = unsigned_short_src[87] % 0x58;
+  uVar1 = (uint)unsigned_short_src[88] * 0x702f >> 0x10;
   unsigned_short_dest[88] =
        unsigned_short_src[88] +
-       (short)(((unsigned_short_src[88] - uVar15 & 0xfffe) >> 1) + uVar15 >> 6) * -0x59;
+       (short)(((unsigned_short_src[88] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x59;
   unsigned_short_dest[89] = unsigned_short_src[89] % 0x5a;
+  uVar1 = (uint)unsigned_short_src[90] * 0x6817 >> 0x10;
   unsigned_short_dest[90] =
        unsigned_short_src[90] +
-       (short)(((unsigned_short_src[90] - uVar16 & 0xfffe) >> 1) + uVar16 >> 6) * -0x5b;
-  unsigned_short_dest[91] = unsigned_short_src[91] + ((unsigned_short_src[91] >> 2) / 0x17) * -0x5c;
+       (short)(((unsigned_short_src[90] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x5b;
+  unsigned_short_dest[91] = unsigned_short_src[91] % 0x5c;
+  uVar1 = (uint)unsigned_short_src[92] * 0x6059 >> 0x10;
   unsigned_short_dest[92] =
        unsigned_short_src[92] +
-       (short)(((unsigned_short_src[92] - uVar17 & 0xfffe) >> 1) + uVar17 >> 6) * -0x5d;
-  unsigned_short_dest[93] = unsigned_short_src[93] + ((unsigned_short_src[93] >> 1) / 0x2f) * -0x5e;
+       (short)(((unsigned_short_src[92] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x5d;
+  unsigned_short_dest[93] = unsigned_short_src[93] % 0x5e;
   unsigned_short_dest[94] = unsigned_short_src[94] % 0x5f;
   unsigned_short_dest[95] = unsigned_short_src[95] % 0x60;
+  uVar1 = (uint)unsigned_short_src[96] * 0x51d1 >> 0x10;
   unsigned_short_dest[96] =
        unsigned_short_src[96] +
-       (short)(((unsigned_short_src[96] - uVar18 & 0xfffe) >> 1) + uVar18 >> 6) * -0x61;
-  unsigned_short_dest[97] = unsigned_short_src[97] + ((unsigned_short_src[97] >> 1) / 0x31) * -0x62;
+       (short)(((unsigned_short_src[96] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x61;
+  unsigned_short_dest[97] = unsigned_short_src[97] % 0x62;
   unsigned_short_dest[98] = unsigned_short_src[98] % 99;
-  unsigned_short_dest[99] = unsigned_short_src[99] + ((unsigned_short_src[99] >> 2) / 0x19) * -100;
+  unsigned_short_dest[99] = unsigned_short_src[99] % 100;
   unsigned_short_dest[100] = unsigned_short_src[100] % 0x65;
   unsigned_short_dest[101] = unsigned_short_src[101] % 0x66;
   unsigned_short_dest[102] = unsigned_short_src[102] % 0x67;
   unsigned_short_dest[103] = unsigned_short_src[103] % 0x68;
   unsigned_short_dest[104] = unsigned_short_src[104] % 0x69;
   unsigned_short_dest[105] = unsigned_short_src[105] % 0x6a;
+  uVar1 = (uint)unsigned_short_src[106] * 0x323f >> 0x10;
   unsigned_short_dest[106] =
        unsigned_short_src[106] +
-       (short)(((unsigned_short_src[106] - uVar19 & 0xfffe) >> 1) + uVar19 >> 6) * -0x6b;
-  unsigned_short_dest[107] =
-       unsigned_short_src[107] + ((unsigned_short_src[107] >> 2) / 0x1b) * -0x6c;
+       (short)(((unsigned_short_src[106] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x6b;
+  unsigned_short_dest[107] = unsigned_short_src[107] % 0x6c;
   unsigned_short_dest[108] = unsigned_short_src[108] % 0x6d;
-  unsigned_short_dest[109] =
-       unsigned_short_src[109] + ((unsigned_short_src[109] >> 1) / 0x37) * -0x6e;
+  unsigned_short_dest[109] = unsigned_short_src[109] % 0x6e;
   unsigned_short_dest[110] = unsigned_short_src[110] % 0x6f;
-  unsigned_short_dest[111] = unsigned_short_src[111] + ((unsigned_short_src[111] >> 4) / 7) * -0x70;
+  unsigned_short_dest[111] = unsigned_short_src[111] % 0x70;
   unsigned_short_dest[112] = unsigned_short_src[112] % 0x71;
-  unsigned_short_dest[113] =
-       unsigned_short_src[113] + ((unsigned_short_src[113] >> 1) / 0x39) * -0x72;
+  unsigned_short_dest[113] = unsigned_short_src[113] % 0x72;
+  uVar1 = (uint)unsigned_short_src[114] * 0x1cf1 >> 0x10;
   unsigned_short_dest[114] =
        unsigned_short_src[114] +
-       (short)(((unsigned_short_src[114] - uVar20 & 0xfffe) >> 1) + uVar20 >> 6) * -0x73;
+       (short)(((unsigned_short_src[114] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x73;
   unsigned_short_dest[115] = unsigned_short_src[115] % 0x74;
   unsigned_short_dest[116] = unsigned_short_src[116] % 0x75;
   unsigned_short_dest[117] = unsigned_short_src[117] % 0x76;
+  uVar1 = (uint)unsigned_short_src[118] * 0x135d >> 0x10;
   unsigned_short_dest[118] =
        unsigned_short_src[118] +
-       (short)(((unsigned_short_src[118] - uVar21 & 0xfffe) >> 1) + uVar21 >> 6) * -0x77;
+       (short)(((unsigned_short_src[118] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x77;
   unsigned_short_dest[119] = unsigned_short_src[119] % 0x78;
   unsigned_short_dest[120] = unsigned_short_src[120] % 0x79;
   unsigned_short_dest[121] = unsigned_short_src[121] % 0x7a;
+  uVar1 = (uint)unsigned_short_src[122] * 0xa69 >> 0x10;
   unsigned_short_dest[122] =
        unsigned_short_src[122] +
-       (short)(((unsigned_short_src[122] - uVar22 & 0xfffe) >> 1) + uVar22 >> 6) * -0x7b;
-  unsigned_short_dest[123] =
-       unsigned_short_src[123] + ((unsigned_short_src[123] >> 2) / 0x1f) * -0x7c;
+       (short)(((unsigned_short_src[122] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x7b;
+  unsigned_short_dest[123] = unsigned_short_src[123] % 0x7c;
+  uVar1 = (uint)unsigned_short_src[124] * 0x625 >> 0x10;
   unsigned_short_dest[124] =
        unsigned_short_src[124] +
-       (short)(((unsigned_short_src[124] - uVar23 & 0xfffe) >> 1) + uVar23 >> 6) * -0x7d;
-  unsigned_short_dest[125] =
-       unsigned_short_src[125] + ((unsigned_short_src[125] >> 1) / 0x3f) * -0x7e;
-  unsigned_short_dest[126] = unsigned_short_src[126] - ((short)(uVar134 << 7) - (short)uVar134);
+       (short)(((unsigned_short_src[124] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6) * -0x7d;
+  unsigned_short_dest[125] = unsigned_short_src[125] % 0x7e;
+  uVar1 = (uint)unsigned_short_src[126] * 0x205 >> 0x10;
+  uVar1 = ((unsigned_short_src[126] - uVar1 & 0xfffe) >> 1) + uVar1 >> 6;
+  unsigned_short_dest[126] = unsigned_short_src[126] - ((short)(uVar1 << 7) - (short)uVar1);
   unsigned_short_dest[127] = unsigned_short_src[127] & 0x7f;
   unsigned_short_dest[128] =
        unsigned_short_src[128] -
@@ -26734,8 +24498,7 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[134] = unsigned_short_src[134] % 0x87;
   unsigned_short_dest[135] = unsigned_short_src[135] % 0x88;
   unsigned_short_dest[136] = unsigned_short_src[136] % 0x89;
-  unsigned_short_dest[137] =
-       unsigned_short_src[137] + ((unsigned_short_src[137] >> 1) / 0x45) * -0x8a;
+  unsigned_short_dest[137] = unsigned_short_src[137] % 0x8a;
   unsigned_short_dest[138] = unsigned_short_src[138] % 0x8b;
   unsigned_short_dest[139] = unsigned_short_src[139] % 0x8c;
   unsigned_short_dest[140] = unsigned_short_src[140] % 0x8d;
@@ -26747,96 +24510,95 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[146] = unsigned_short_src[146] % 0x93;
   unsigned_short_dest[147] = unsigned_short_src[147] % 0x94;
   unsigned_short_dest[148] = unsigned_short_src[148] % 0x95;
-  unsigned_short_dest[149] =
-       unsigned_short_src[149] + ((unsigned_short_src[149] >> 1) / 0x4b) * -0x96;
+  unsigned_short_dest[149] = unsigned_short_src[149] % 0x96;
   unsigned_short_dest[150] = unsigned_short_src[150] % 0x97;
   unsigned_short_dest[151] = unsigned_short_src[151] % 0x98;
   unsigned_short_dest[152] = unsigned_short_src[152] % 0x99;
   unsigned_short_dest[153] = unsigned_short_src[153] % 0x9a;
+  uVar1 = (uint)unsigned_short_src[154] * 0xa6d1 >> 0x10;
   unsigned_short_dest[154] =
        unsigned_short_src[154] +
-       (short)((((unsigned_short_src[154] - uVar24 & 0xfffe) >> 1) + uVar24 & 0xff80) >> 7) * -0x9b;
-  unsigned_short_dest[155] =
-       unsigned_short_src[155] + ((unsigned_short_src[155] >> 2) / 0x27) * -0x9c;
+       (short)((((unsigned_short_src[154] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7) * -0x9b;
+  unsigned_short_dest[155] = unsigned_short_src[155] % 0x9c;
   unsigned_short_dest[156] = unsigned_short_src[156] % 0x9d;
   unsigned_short_dest[157] = unsigned_short_src[157] % 0x9e;
   unsigned_short_dest[158] = unsigned_short_src[158] % 0x9f;
   unsigned_short_dest[159] = unsigned_short_src[159] % 0xa0;
+  uVar1 = (uint)unsigned_short_src[160] * 0x970f >> 0x10;
   unsigned_short_dest[160] =
        unsigned_short_src[160] +
-       (short)((((unsigned_short_src[160] - uVar25 & 0xfffe) >> 1) + uVar25 & 0xff80) >> 7) * -0xa1;
+       (short)((((unsigned_short_src[160] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7) * -0xa1;
   unsigned_short_dest[161] = unsigned_short_src[161] % 0xa2;
   unsigned_short_dest[162] = unsigned_short_src[162] % 0xa3;
-  unsigned_short_dest[163] =
-       unsigned_short_src[163] + ((unsigned_short_src[163] >> 2) / 0x29) * -0xa4;
+  unsigned_short_dest[163] = unsigned_short_src[163] % 0xa4;
+  uVar1 = (uint)unsigned_short_src[164] * 0x8d31 >> 0x10;
   unsigned_short_dest[164] =
        unsigned_short_src[164] +
-       (short)((((unsigned_short_src[164] - uVar26 & 0xfffe) >> 1) + uVar26 & 0xff80) >> 7) * -0xa5;
+       (short)((((unsigned_short_src[164] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7) * -0xa5;
   unsigned_short_dest[165] = unsigned_short_src[165] % 0xa6;
+  uVar1 = (uint)unsigned_short_src[166] * 0x886f >> 0x10;
   unsigned_short_dest[166] =
        unsigned_short_src[166] +
-       (short)((((unsigned_short_src[166] - uVar27 & 0xfffe) >> 1) + uVar27 & 0xff80) >> 7) * -0xa7;
-  unsigned_short_dest[167] =
-       unsigned_short_src[167] + ((unsigned_short_src[167] >> 3) / 0x15) * -0xa8;
+       (short)((((unsigned_short_src[166] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xff80) >> 7) * -0xa7;
+  unsigned_short_dest[167] = unsigned_short_src[167] % 0xa8;
   unsigned_short_dest[168] = unsigned_short_src[168] % 0xa9;
   unsigned_short_dest[169] = unsigned_short_src[169] % 0xaa;
+  uVar1 = (uint)unsigned_short_src[170] * 0x7f41 >> 0x10;
   unsigned_short_dest[170] =
        unsigned_short_src[170] +
-       (short)(((unsigned_short_src[170] - uVar28 & 0xfffe) >> 1) + uVar28 >> 7) * -0xab;
+       (short)(((unsigned_short_src[170] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xab;
   unsigned_short_dest[171] = unsigned_short_src[171] % 0xac;
+  uVar1 = (uint)unsigned_short_src[172] * 0x7ad3 >> 0x10;
   unsigned_short_dest[172] =
        unsigned_short_src[172] +
-       (short)(((unsigned_short_src[172] - uVar29 & 0xfffe) >> 1) + uVar29 >> 7) * -0xad;
+       (short)(((unsigned_short_src[172] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xad;
   unsigned_short_dest[173] = unsigned_short_src[173] % 0xae;
   unsigned_short_dest[174] = unsigned_short_src[174] % 0xaf;
   unsigned_short_dest[175] = unsigned_short_src[175] % 0xb0;
+  uVar1 = (uint)unsigned_short_src[176] * 0x7243 >> 0x10;
   unsigned_short_dest[176] =
        unsigned_short_src[176] +
-       (short)(((unsigned_short_src[176] - uVar30 & 0xfffe) >> 1) + uVar30 >> 7) * -0xb1;
-  unsigned_short_dest[177] =
-       unsigned_short_src[177] + ((unsigned_short_src[177] >> 1) / 0x59) * -0xb2;
+       (short)(((unsigned_short_src[176] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xb1;
+  unsigned_short_dest[177] = unsigned_short_src[177] % 0xb2;
   unsigned_short_dest[178] = unsigned_short_src[178] % 0xb3;
   unsigned_short_dest[179] = unsigned_short_src[179] % 0xb4;
   unsigned_short_dest[180] = unsigned_short_src[180] % 0xb5;
-  unsigned_short_dest[181] =
-       unsigned_short_src[181] + ((unsigned_short_src[181] >> 1) / 0x5b) * -0xb6;
+  unsigned_short_dest[181] = unsigned_short_src[181] % 0xb6;
   unsigned_short_dest[182] = unsigned_short_src[182] % 0xb7;
-  unsigned_short_dest[183] =
-       unsigned_short_src[183] + ((unsigned_short_src[183] >> 3) / 0x17) * -0xb8;
+  unsigned_short_dest[183] = unsigned_short_src[183] % 0xb8;
   unsigned_short_dest[184] = unsigned_short_src[184] % 0xb9;
-  unsigned_short_dest[185] =
-       unsigned_short_src[185] + ((unsigned_short_src[185] >> 1) / 0x5d) * -0xba;
+  unsigned_short_dest[185] = unsigned_short_src[185] % 0xba;
   unsigned_short_dest[186] = unsigned_short_src[186] % 0xbb;
-  unsigned_short_dest[187] =
-       unsigned_short_src[187] + ((unsigned_short_src[187] >> 2) / 0x2f) * -0xbc;
+  unsigned_short_dest[187] = unsigned_short_src[187] % 0xbc;
+  uVar1 = (uint)unsigned_short_src[188] * 0x5ac1 >> 0x10;
   unsigned_short_dest[188] =
        unsigned_short_src[188] +
-       (short)(((unsigned_short_src[188] - uVar31 & 0xfffe) >> 1) + uVar31 >> 7) * -0xbd;
+       (short)(((unsigned_short_src[188] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xbd;
   unsigned_short_dest[189] = unsigned_short_src[189] % 0xbe;
   unsigned_short_dest[190] = unsigned_short_src[190] % 0xbf;
   unsigned_short_dest[191] = unsigned_short_src[191] % 0xc0;
+  uVar1 = (uint)unsigned_short_src[192] * 0x5391 >> 0x10;
   unsigned_short_dest[192] =
        unsigned_short_src[192] +
-       (short)(((unsigned_short_src[192] - uVar32 & 0xfffe) >> 1) + uVar32 >> 7) * -0xc1;
-  unsigned_short_dest[193] =
-       unsigned_short_src[193] + ((unsigned_short_src[193] >> 1) / 0x61) * -0xc2;
+       (short)(((unsigned_short_src[192] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xc1;
+  unsigned_short_dest[193] = unsigned_short_src[193] % 0xc2;
   unsigned_short_dest[194] = unsigned_short_src[194] % 0xc3;
-  unsigned_short_dest[195] =
-       unsigned_short_src[195] + ((unsigned_short_src[195] >> 2) / 0x31) * -0xc4;
+  unsigned_short_dest[195] = unsigned_short_src[195] % 0xc4;
   unsigned_short_dest[196] = unsigned_short_src[196] % 0xc5;
   unsigned_short_dest[197] = unsigned_short_src[197] % 0xc6;
   unsigned_short_dest[198] = unsigned_short_src[198] % 199;
-  unsigned_short_dest[199] =
-       unsigned_short_src[199] + ((unsigned_short_src[199] >> 3) / 0x19) * -200;
+  unsigned_short_dest[199] = unsigned_short_src[199] % 200;
   unsigned_short_dest[200] = unsigned_short_src[200] % 0xc9;
   unsigned_short_dest[201] = unsigned_short_src[201] % 0xca;
+  uVar1 = (uint)unsigned_short_src[202] * 0x42d7 >> 0x10;
   unsigned_short_dest[202] =
        unsigned_short_src[202] +
-       (short)(((unsigned_short_src[202] - uVar33 & 0xfffe) >> 1) + uVar33 >> 7) * -0xcb;
+       (short)(((unsigned_short_src[202] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xcb;
   unsigned_short_dest[203] = unsigned_short_src[203] % 0xcc;
+  uVar1 = (uint)unsigned_short_src[204] * 0x3fb1 >> 0x10;
   unsigned_short_dest[204] =
        unsigned_short_src[204] +
-       (short)(((unsigned_short_src[204] - uVar34 & 0xfffe) >> 1) + uVar34 >> 7) * -0xcd;
+       (short)(((unsigned_short_src[204] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xcd;
   unsigned_short_dest[205] = unsigned_short_src[205] % 0xce;
   unsigned_short_dest[206] = unsigned_short_src[206] % 0xcf;
   unsigned_short_dest[207] = unsigned_short_src[207] % 0xd0;
@@ -26844,79 +24606,78 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[209] = unsigned_short_src[209] % 0xd2;
   unsigned_short_dest[210] = unsigned_short_src[210] % 0xd3;
   unsigned_short_dest[211] = unsigned_short_src[211] % 0xd4;
+  uVar1 = (uint)unsigned_short_src[212] * 0x33af >> 0x10;
   unsigned_short_dest[212] =
        unsigned_short_src[212] +
-       (short)(((unsigned_short_src[212] - uVar35 & 0xfffe) >> 1) + uVar35 >> 7) * -0xd5;
-  unsigned_short_dest[213] =
-       unsigned_short_src[213] + ((unsigned_short_src[213] >> 1) / 0x6b) * -0xd6;
+       (short)(((unsigned_short_src[212] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xd5;
+  unsigned_short_dest[213] = unsigned_short_src[213] % 0xd6;
   unsigned_short_dest[214] = unsigned_short_src[214] % 0xd7;
-  unsigned_short_dest[215] =
-       unsigned_short_src[215] + ((unsigned_short_src[215] >> 3) / 0x1b) * -0xd8;
+  unsigned_short_dest[215] = unsigned_short_src[215] % 0xd8;
+  uVar1 = (uint)unsigned_short_src[216] * 0x2e03 >> 0x10;
   unsigned_short_dest[216] =
        unsigned_short_src[216] +
-       (short)(((unsigned_short_src[216] - uVar36 & 0xfffe) >> 1) + uVar36 >> 7) * -0xd9;
+       (short)(((unsigned_short_src[216] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xd9;
   unsigned_short_dest[217] = unsigned_short_src[217] % 0xda;
+  uVar1 = (uint)unsigned_short_src[218] * 0x2b41 >> 0x10;
   unsigned_short_dest[218] =
        unsigned_short_src[218] +
-       (short)(((unsigned_short_src[218] - uVar37 & 0xfffe) >> 1) + uVar37 >> 7) * -0xdb;
-  unsigned_short_dest[219] =
-       unsigned_short_src[219] + ((unsigned_short_src[219] >> 2) / 0x37) * -0xdc;
+       (short)(((unsigned_short_src[218] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xdb;
+  unsigned_short_dest[219] = unsigned_short_src[219] % 0xdc;
   unsigned_short_dest[220] = unsigned_short_src[220] % 0xdd;
   unsigned_short_dest[221] = unsigned_short_src[221] % 0xde;
+  uVar1 = (uint)unsigned_short_src[222] * 0x25e3 >> 0x10;
   unsigned_short_dest[222] =
        unsigned_short_src[222] +
-       (short)(((unsigned_short_src[222] - uVar38 & 0xfffe) >> 1) + uVar38 >> 7) * -0xdf;
-  unsigned_short_dest[223] = unsigned_short_src[223] + ((unsigned_short_src[223] >> 5) / 7) * -0xe0;
+       (short)(((unsigned_short_src[222] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xdf;
+  unsigned_short_dest[223] = unsigned_short_src[223] % 0xe0;
   unsigned_short_dest[224] = unsigned_short_src[224] % 0xe1;
   unsigned_short_dest[225] = unsigned_short_src[225] % 0xe2;
+  uVar1 = (uint)unsigned_short_src[226] * 0x20b5 >> 0x10;
   unsigned_short_dest[226] =
        unsigned_short_src[226] +
-       (short)(((unsigned_short_src[226] - uVar39 & 0xfffe) >> 1) + uVar39 >> 7) * -0xe3;
-  unsigned_short_dest[227] =
-       unsigned_short_src[227] + ((unsigned_short_src[227] >> 2) / 0x39) * -0xe4;
+       (short)(((unsigned_short_src[226] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xe3;
+  unsigned_short_dest[227] = unsigned_short_src[227] % 0xe4;
   unsigned_short_dest[228] = unsigned_short_src[228] % 0xe5;
-  unsigned_short_dest[229] =
-       unsigned_short_src[229] + ((unsigned_short_src[229] >> 1) / 0x73) * -0xe6;
+  unsigned_short_dest[229] = unsigned_short_src[229] % 0xe6;
+  uVar1 = (uint)unsigned_short_src[230] * 0x1bb5 >> 0x10;
   unsigned_short_dest[230] =
        unsigned_short_src[230] +
-       (short)(((unsigned_short_src[230] - uVar40 & 0xfffe) >> 1) + uVar40 >> 7) * -0xe7;
+       (short)(((unsigned_short_src[230] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xe7;
   unsigned_short_dest[231] = unsigned_short_src[231] % 0xe8;
   unsigned_short_dest[232] = unsigned_short_src[232] % 0xe9;
   unsigned_short_dest[233] = unsigned_short_src[233] % 0xea;
+  uVar1 = (uint)unsigned_short_src[234] * 0x16e1 >> 0x10;
   unsigned_short_dest[234] =
        unsigned_short_src[234] +
-       (short)(((unsigned_short_src[234] - uVar41 & 0xfffe) >> 1) + uVar41 >> 7) * -0xeb;
+       (short)(((unsigned_short_src[234] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xeb;
   unsigned_short_dest[235] = unsigned_short_src[235] % 0xec;
   unsigned_short_dest[236] = unsigned_short_src[236] % 0xed;
-  unsigned_short_dest[237] =
-       unsigned_short_src[237] + ((unsigned_short_src[237] >> 1) / 0x77) * -0xee;
+  unsigned_short_dest[237] = unsigned_short_src[237] % 0xee;
   unsigned_short_dest[238] = unsigned_short_src[238] % 0xef;
   unsigned_short_dest[239] = unsigned_short_src[239] % 0xf0;
   unsigned_short_dest[240] = unsigned_short_src[240] % 0xf1;
   unsigned_short_dest[241] = unsigned_short_src[241] % 0xf2;
+  uVar1 = (uint)unsigned_short_src[242] * 0xdb3 >> 0x10;
   unsigned_short_dest[242] =
        unsigned_short_src[242] +
-       (short)(((unsigned_short_src[242] - uVar42 & 0xfffe) >> 1) + uVar42 >> 7) * -0xf3;
+       (short)(((unsigned_short_src[242] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xf3;
   unsigned_short_dest[243] = unsigned_short_src[243] % 0xf4;
+  uVar1 = (uint)unsigned_short_src[244] * 0xb7f >> 0x10;
   unsigned_short_dest[244] =
        unsigned_short_src[244] +
-       (short)(((unsigned_short_src[244] - uVar43 & 0xfffe) >> 1) + uVar43 >> 7) * -0xf5;
-  unsigned_short_dest[245] =
-       unsigned_short_src[245] + ((unsigned_short_src[245] >> 1) / 0x7b) * -0xf6;
+       (short)(((unsigned_short_src[244] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xf5;
+  unsigned_short_dest[245] = unsigned_short_src[245] % 0xf6;
   unsigned_short_dest[246] = unsigned_short_src[246] % 0xf7;
-  unsigned_short_dest[247] =
-       unsigned_short_src[247] + ((unsigned_short_src[247] >> 3) / 0x1f) * -0xf8;
+  unsigned_short_dest[247] = unsigned_short_src[247] % 0xf8;
+  uVar1 = (uint)unsigned_short_src[248] * 0x733 >> 0x10;
   unsigned_short_dest[248] =
        unsigned_short_src[248] +
-       (short)(((unsigned_short_src[248] - uVar44 & 0xfffe) >> 1) + uVar44 >> 7) * -0xf9;
-  unsigned_short_dest[249] =
-       unsigned_short_src[249] + ((unsigned_short_src[249] >> 1) / 0x7d) * -0xfa;
+       (short)(((unsigned_short_src[248] - uVar1 & 0xfffe) >> 1) + uVar1 >> 7) * -0xf9;
+  unsigned_short_dest[249] = unsigned_short_src[249] % 0xfa;
   unsigned_short_dest[250] = unsigned_short_src[250] % 0xfb;
-  unsigned_short_dest[251] =
-       unsigned_short_src[251] + ((unsigned_short_src[251] >> 2) / 0x3f) * -0xfc;
+  unsigned_short_dest[251] = unsigned_short_src[251] % 0xfc;
   unsigned_short_dest[252] = unsigned_short_src[252] % 0xfd;
-  unsigned_short_dest[253] =
-       unsigned_short_src[253] + ((unsigned_short_src[253] >> 1) / 0x7f) * -0xfe;
+  unsigned_short_dest[253] = unsigned_short_src[253] % 0xfe;
   unsigned_short_dest[254] =
        unsigned_short_src[254] -
        ((short)(unsigned_short_src[254] / 0xff << 8) - unsigned_short_src[254] / 0xff);
@@ -26933,26 +24694,25 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[263] = unsigned_short_src[263] % 0x108;
   unsigned_short_dest[264] = unsigned_short_src[264] % 0x109;
   unsigned_short_dest[265] = unsigned_short_src[265] % 0x10a;
+  uVar1 = (uint)unsigned_short_src[266] * 0xeae9 >> 0x10;
   unsigned_short_dest[266] =
        unsigned_short_src[266] +
-       ((ushort)(((unsigned_short_src[266] - uVar135 & 0xfffe) >> 1) + uVar135 >> 8) & 0xff) *
-       -0x10b;
+       ((ushort)(((unsigned_short_src[266] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x10b;
   unsigned_short_dest[267] = unsigned_short_src[267] % 0x10c;
   unsigned_short_dest[268] = unsigned_short_src[268] % 0x10d;
   unsigned_short_dest[269] = unsigned_short_src[269] % 0x10e;
   unsigned_short_dest[270] = unsigned_short_src[270] % 0x10f;
   unsigned_short_dest[271] = unsigned_short_src[271] % 0x110;
+  uVar1 = (uint)unsigned_short_src[272] * 0xe01f >> 0x10;
   unsigned_short_dest[272] =
        unsigned_short_src[272] +
-       ((ushort)(((unsigned_short_src[272] - uVar136 & 0xfffe) >> 1) + uVar136 >> 8) & 0xff) *
-       -0x111;
+       ((ushort)(((unsigned_short_src[272] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x111;
   unsigned_short_dest[273] = unsigned_short_src[273] % 0x112;
+  uVar1 = (uint)unsigned_short_src[274] * 0xdca1 >> 0x10;
   unsigned_short_dest[274] =
        unsigned_short_src[274] +
-       ((ushort)(((unsigned_short_src[274] - uVar137 & 0xfffe) >> 1) + uVar137 >> 8) & 0xff) *
-       -0x113;
-  unsigned_short_dest[275] =
-       unsigned_short_src[275] + ((unsigned_short_src[275] >> 2) / 0x45) * -0x114;
+       ((ushort)(((unsigned_short_src[274] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x113;
+  unsigned_short_dest[275] = unsigned_short_src[275] % 0x114;
   unsigned_short_dest[276] = unsigned_short_src[276] % 0x115;
   unsigned_short_dest[277] = unsigned_short_src[277] % 0x116;
   unsigned_short_dest[278] = unsigned_short_src[278] % 0x117;
@@ -26969,20 +24729,20 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[289] = unsigned_short_src[289] % 0x122;
   unsigned_short_dest[290] = unsigned_short_src[290] % 0x123;
   unsigned_short_dest[291] = unsigned_short_src[291] % 0x124;
+  uVar1 = (uint)unsigned_short_src[292] * 0xbf59 >> 0x10;
   unsigned_short_dest[292] =
        unsigned_short_src[292] +
-       ((ushort)(((unsigned_short_src[292] - uVar138 & 0xfffe) >> 1) + uVar138 >> 8) & 0xff) *
-       -0x125;
+       ((ushort)(((unsigned_short_src[292] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x125;
   unsigned_short_dest[293] = unsigned_short_src[293] % 0x126;
   unsigned_short_dest[294] = unsigned_short_src[294] % 0x127;
   unsigned_short_dest[295] = unsigned_short_src[295] % 0x128;
   unsigned_short_dest[296] = unsigned_short_src[296] % 0x129;
   unsigned_short_dest[297] = unsigned_short_src[297] % 0x12a;
+  uVar1 = (uint)unsigned_short_src[298] * 0xb65f >> 0x10;
   unsigned_short_dest[298] =
        unsigned_short_src[298] +
-       ((ushort)(((unsigned_short_src[298] - uVar139 & 0xfffe) >> 1) + uVar139 >> 8) & 0xff) * -299;
-  unsigned_short_dest[299] =
-       unsigned_short_src[299] + ((unsigned_short_src[299] >> 2) / 0x4b) * -300;
+       ((ushort)(((unsigned_short_src[298] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -299;
+  unsigned_short_dest[299] = unsigned_short_src[299] % 300;
   unsigned_short_dest[300] = unsigned_short_src[300] % 0x12d;
   unsigned_short_dest[301] = unsigned_short_src[301] % 0x12e;
   unsigned_short_dest[302] = unsigned_short_src[302] % 0x12f;
@@ -26992,350 +24752,346 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[306] = unsigned_short_src[306] % 0x133;
   unsigned_short_dest[307] = unsigned_short_src[307] % 0x134;
   unsigned_short_dest[308] = unsigned_short_src[308] % 0x135;
-  unsigned_short_dest[309] =
-       unsigned_short_src[309] + ((unsigned_short_src[309] >> 1) / 0x9b) * -0x136;
+  unsigned_short_dest[309] = unsigned_short_src[309] % 0x136;
+  uVar1 = (uint)unsigned_short_src[310] * 0xa575 >> 0x10;
   unsigned_short_dest[310] =
        unsigned_short_src[310] +
-       ((ushort)(((unsigned_short_src[310] - uVar140 & 0xfffe) >> 1) + uVar140 >> 8) & 0xff) *
-       -0x137;
-  unsigned_short_dest[311] =
-       unsigned_short_src[311] + ((unsigned_short_src[311] >> 3) / 0x27) * -0x138;
+       ((ushort)(((unsigned_short_src[310] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x137;
+  unsigned_short_dest[311] = unsigned_short_src[311] % 0x138;
   unsigned_short_dest[312] = unsigned_short_src[312] % 0x139;
   unsigned_short_dest[313] = unsigned_short_src[313] % 0x13a;
+  uVar1 = (uint)unsigned_short_src[314] * 0xa01b >> 0x10;
   unsigned_short_dest[314] =
        unsigned_short_src[314] +
-       ((ushort)(((unsigned_short_src[314] - uVar141 & 0xfffe) >> 1) + uVar141 >> 8) & 0xff) *
-       -0x13b;
+       ((ushort)(((unsigned_short_src[314] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x13b;
   unsigned_short_dest[315] = unsigned_short_src[315] % 0x13c;
   unsigned_short_dest[316] = unsigned_short_src[316] % 0x13d;
   unsigned_short_dest[317] = unsigned_short_src[317] % 0x13e;
+  uVar1 = (uint)unsigned_short_src[318] * 0x9ae3 >> 0x10;
   unsigned_short_dest[318] =
        unsigned_short_src[318] +
-       ((ushort)(((unsigned_short_src[318] - uVar142 & 0xfffe) >> 1) + uVar142 >> 8) & 0xff) *
-       -0x13f;
+       ((ushort)(((unsigned_short_src[318] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x13f;
   unsigned_short_dest[319] = unsigned_short_src[319] % 0x140;
   unsigned_short_dest[320] = unsigned_short_src[320] % 0x141;
-  unsigned_short_dest[321] =
-       unsigned_short_src[321] + ((unsigned_short_src[321] >> 1) / 0xa1) * -0x142;
+  unsigned_short_dest[321] = unsigned_short_src[321] % 0x142;
   unsigned_short_dest[322] = unsigned_short_src[322] % 0x143;
   unsigned_short_dest[323] = unsigned_short_src[323] % 0x144;
+  uVar1 = (uint)unsigned_short_src[324] * 0x934d >> 0x10;
   unsigned_short_dest[324] =
        unsigned_short_src[324] +
-       ((ushort)(((unsigned_short_src[324] - uVar143 & 0xfffe) >> 1) + uVar143 >> 8) & 0xff) *
-       -0x145;
+       ((ushort)(((unsigned_short_src[324] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x145;
   unsigned_short_dest[325] = unsigned_short_src[325] % 0x146;
   unsigned_short_dest[326] = unsigned_short_src[326] % 0x147;
-  unsigned_short_dest[327] =
-       unsigned_short_src[327] + ((unsigned_short_src[327] >> 3) / 0x29) * -0x148;
+  unsigned_short_dest[327] = unsigned_short_src[327] % 0x148;
   unsigned_short_dest[328] = unsigned_short_src[328] % 0x149;
-  unsigned_short_dest[329] =
-       unsigned_short_src[329] + ((unsigned_short_src[329] >> 1) / 0xa5) * -0x14a;
+  unsigned_short_dest[329] = unsigned_short_src[329] % 0x14a;
   unsigned_short_dest[330] = unsigned_short_src[330] % 0x14b;
   unsigned_short_dest[331] = unsigned_short_src[331] % 0x14c;
+  uVar1 = (uint)unsigned_short_src[332] * 0x899d >> 0x10;
   unsigned_short_dest[332] =
        unsigned_short_src[332] +
-       ((ushort)(((unsigned_short_src[332] - uVar144 & 0xfffe) >> 1) + uVar144 >> 8) & 0xff) *
-       -0x14d;
-  unsigned_short_dest[333] =
-       unsigned_short_src[333] + ((unsigned_short_src[333] >> 1) / 0xa7) * -0x14e;
+       ((ushort)(((unsigned_short_src[332] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x14d;
+  unsigned_short_dest[333] = unsigned_short_src[333] % 0x14e;
   unsigned_short_dest[334] = unsigned_short_src[334] % 0x14f;
-  unsigned_short_dest[335] =
-       unsigned_short_src[335] + ((unsigned_short_src[335] >> 4) / 0x15) * -0x150;
+  unsigned_short_dest[335] = unsigned_short_src[335] % 0x150;
+  uVar1 = (uint)unsigned_short_src[336] * 0x84f1 >> 0x10;
   unsigned_short_dest[336] =
        unsigned_short_src[336] +
-       ((ushort)(((unsigned_short_src[336] - uVar145 & 0xfffe) >> 1) + uVar145 >> 8) & 0xff) *
-       -0x151;
+       ((ushort)(((unsigned_short_src[336] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x151;
   unsigned_short_dest[337] = unsigned_short_src[337] % 0x152;
   unsigned_short_dest[338] = unsigned_short_src[338] % 0x153;
   unsigned_short_dest[339] = unsigned_short_src[339] % 0x154;
+  uVar1 = (uint)unsigned_short_src[340] * 0x8061 >> 0x10;
   unsigned_short_dest[340] =
        unsigned_short_src[340] +
-       ((ushort)(((unsigned_short_src[340] - uVar146 & 0xfffe) >> 1) + uVar146 >> 8) & 0xff) *
-       -0x155;
-  unsigned_short_dest[341] =
-       unsigned_short_src[341] + ((unsigned_short_src[341] >> 1) / 0xab) * -0x156;
+       ((ushort)(((unsigned_short_src[340] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) & 0xff) * -0x155;
+  unsigned_short_dest[341] = unsigned_short_src[341] % 0x156;
+  uVar1 = (uint)unsigned_short_src[342] * 0x7e23 >> 0x10;
   unsigned_short_dest[342] =
        unsigned_short_src[342] +
-       (short)(((unsigned_short_src[342] - uVar147 & 0xfffe) >> 1) + uVar147 >> 8) * -0x157;
+       (short)(((unsigned_short_src[342] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x157;
   unsigned_short_dest[343] = unsigned_short_src[343] % 0x158;
   unsigned_short_dest[344] = unsigned_short_src[344] % 0x159;
-  unsigned_short_dest[345] =
-       unsigned_short_src[345] + ((unsigned_short_src[345] >> 1) / 0xad) * -0x15a;
+  unsigned_short_dest[345] = unsigned_short_src[345] % 0x15a;
   unsigned_short_dest[346] = unsigned_short_src[346] % 0x15b;
   unsigned_short_dest[347] = unsigned_short_src[347] % 0x15c;
+  uVar1 = (uint)unsigned_short_src[348] * 0x7791 >> 0x10;
   unsigned_short_dest[348] =
        unsigned_short_src[348] +
-       (short)(((unsigned_short_src[348] - uVar148 & 0xfffe) >> 1) + uVar148 >> 8) * -0x15d;
+       (short)(((unsigned_short_src[348] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x15d;
   unsigned_short_dest[349] = unsigned_short_src[349] % 0x15e;
   unsigned_short_dest[350] = unsigned_short_src[350] % 0x15f;
   unsigned_short_dest[351] = unsigned_short_src[351] % 0x160;
   unsigned_short_dest[352] = unsigned_short_src[352] % 0x161;
-  unsigned_short_dest[353] =
-       unsigned_short_src[353] + ((unsigned_short_src[353] >> 1) / 0xb1) * -0x162;
+  unsigned_short_dest[353] = unsigned_short_src[353] % 0x162;
   unsigned_short_dest[354] = unsigned_short_src[354] % 0x163;
-  unsigned_short_dest[355] =
-       unsigned_short_src[355] + ((unsigned_short_src[355] >> 2) / 0x59) * -0x164;
+  unsigned_short_dest[355] = unsigned_short_src[355] % 0x164;
+  uVar1 = (uint)unsigned_short_src[356] * 0x6f27 >> 0x10;
   unsigned_short_dest[356] =
        unsigned_short_src[356] +
-       (short)(((unsigned_short_src[356] - uVar149 & 0xfffe) >> 1) + uVar149 >> 8) * -0x165;
+       (short)(((unsigned_short_src[356] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x165;
   unsigned_short_dest[357] = unsigned_short_src[357] % 0x166;
+  uVar1 = (uint)unsigned_short_src[358] * 0x6d1b >> 0x10;
   unsigned_short_dest[358] =
        unsigned_short_src[358] +
-       (short)(((unsigned_short_src[358] - uVar150 & 0xfffe) >> 1) + uVar150 >> 8) * -0x167;
+       (short)(((unsigned_short_src[358] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x167;
   unsigned_short_dest[359] = unsigned_short_src[359] % 0x168;
+  uVar1 = (uint)unsigned_short_src[360] * 0x6b15 >> 0x10;
   unsigned_short_dest[360] =
        unsigned_short_src[360] +
-       (short)(((unsigned_short_src[360] - uVar151 & 0xfffe) >> 1) + uVar151 >> 8) * -0x169;
+       (short)(((unsigned_short_src[360] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x169;
   unsigned_short_dest[361] = unsigned_short_src[361] % 0x16a;
+  uVar1 = (uint)unsigned_short_src[362] * 0x6915 >> 0x10;
   unsigned_short_dest[362] =
        unsigned_short_src[362] +
-       (short)(((unsigned_short_src[362] - uVar152 & 0xfffe) >> 1) + uVar152 >> 8) * -0x16b;
-  unsigned_short_dest[363] =
-       unsigned_short_src[363] + ((unsigned_short_src[363] >> 2) / 0x5b) * -0x16c;
+       (short)(((unsigned_short_src[362] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x16b;
+  unsigned_short_dest[363] = unsigned_short_src[363] % 0x16c;
   unsigned_short_dest[364] = unsigned_short_src[364] % 0x16d;
   unsigned_short_dest[365] = unsigned_short_src[365] % 0x16e;
   unsigned_short_dest[366] = unsigned_short_src[366] % 0x16f;
-  unsigned_short_dest[367] =
-       unsigned_short_src[367] + ((unsigned_short_src[367] >> 4) / 0x17) * -0x170;
+  unsigned_short_dest[367] = unsigned_short_src[367] % 0x170;
   unsigned_short_dest[368] = unsigned_short_src[368] % 0x171;
   unsigned_short_dest[369] = unsigned_short_src[369] % 0x172;
   unsigned_short_dest[370] = unsigned_short_src[370] % 0x173;
-  unsigned_short_dest[371] =
-       unsigned_short_src[371] + ((unsigned_short_src[371] >> 2) / 0x5d) * -0x174;
+  unsigned_short_dest[371] = unsigned_short_src[371] % 0x174;
+  uVar1 = (uint)unsigned_short_src[372] * 0x5f67 >> 0x10;
   unsigned_short_dest[372] =
        unsigned_short_src[372] +
-       (short)(((unsigned_short_src[372] - uVar153 & 0xfffe) >> 1) + uVar153 >> 8) * -0x175;
+       (short)(((unsigned_short_src[372] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x175;
   unsigned_short_dest[373] = unsigned_short_src[373] % 0x176;
+  uVar1 = (uint)unsigned_short_src[374] * 0x5d87 >> 0x10;
   unsigned_short_dest[374] =
        unsigned_short_src[374] +
-       (short)(((unsigned_short_src[374] - uVar154 & 0xfffe) >> 1) + uVar154 >> 8) * -0x177;
-  unsigned_short_dest[375] =
-       unsigned_short_src[375] + ((unsigned_short_src[375] >> 3) / 0x2f) * -0x178;
+       (short)(((unsigned_short_src[374] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x177;
+  unsigned_short_dest[375] = unsigned_short_src[375] % 0x178;
   unsigned_short_dest[376] = unsigned_short_src[376] % 0x179;
-  unsigned_short_dest[377] =
-       unsigned_short_src[377] + ((unsigned_short_src[377] >> 1) / 0xbd) * -0x17a;
+  unsigned_short_dest[377] = unsigned_short_src[377] % 0x17a;
+  uVar1 = (uint)unsigned_short_src[378] * 22999 >> 0x10;
   unsigned_short_dest[378] =
        unsigned_short_src[378] +
-       (short)(((unsigned_short_src[378] - uVar155 & 0xfffe) >> 1) + uVar155 >> 8) * -0x17b;
+       (short)(((unsigned_short_src[378] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x17b;
   unsigned_short_dest[379] = unsigned_short_src[379] % 0x17c;
   unsigned_short_dest[380] = unsigned_short_src[380] % 0x17d;
   unsigned_short_dest[381] = unsigned_short_src[381] % 0x17e;
   unsigned_short_dest[382] = unsigned_short_src[382] % 0x17f;
   unsigned_short_dest[383] = unsigned_short_src[383] % 0x180;
+  uVar1 = (uint)unsigned_short_src[384] * 0x5473 >> 0x10;
   unsigned_short_dest[384] =
        unsigned_short_src[384] +
-       (short)(((unsigned_short_src[384] - uVar156 & 0xfffe) >> 1) + uVar156 >> 8) * -0x181;
-  unsigned_short_dest[385] =
-       unsigned_short_src[385] + ((unsigned_short_src[385] >> 1) / 0xc1) * -0x182;
+       (short)(((unsigned_short_src[384] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x181;
+  unsigned_short_dest[385] = unsigned_short_src[385] % 0x182;
   unsigned_short_dest[386] = unsigned_short_src[386] % 0x183;
-  unsigned_short_dest[387] =
-       unsigned_short_src[387] + ((unsigned_short_src[387] >> 2) / 0x61) * -0x184;
+  unsigned_short_dest[387] = unsigned_short_src[387] % 0x184;
+  uVar1 = (uint)unsigned_short_src[388] * 0x50f3 >> 0x10;
   unsigned_short_dest[388] =
        unsigned_short_src[388] +
-       (short)(((unsigned_short_src[388] - uVar157 & 0xfffe) >> 1) + uVar157 >> 8) * -0x185;
+       (short)(((unsigned_short_src[388] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x185;
   unsigned_short_dest[389] = unsigned_short_src[389] % 0x186;
   unsigned_short_dest[390] = unsigned_short_src[390] % 0x187;
-  unsigned_short_dest[391] =
-       unsigned_short_src[391] + ((unsigned_short_src[391] >> 3) / 0x31) * -0x188;
+  unsigned_short_dest[391] = unsigned_short_src[391] % 0x188;
+  uVar1 = (uint)unsigned_short_src[392] * 0x4d85 >> 0x10;
   unsigned_short_dest[392] =
        unsigned_short_src[392] +
-       (short)(((unsigned_short_src[392] - uVar158 & 0xfffe) >> 1) + uVar158 >> 8) * -0x189;
+       (short)(((unsigned_short_src[392] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x189;
   unsigned_short_dest[393] = unsigned_short_src[393] % 0x18a;
   unsigned_short_dest[394] = unsigned_short_src[394] % 0x18b;
   unsigned_short_dest[395] = unsigned_short_src[395] % 0x18c;
   unsigned_short_dest[396] = unsigned_short_src[396] % 0x18d;
   unsigned_short_dest[397] = unsigned_short_src[397] % 0x18e;
+  uVar1 = (uint)unsigned_short_src[398] * 0x4881 >> 0x10;
   unsigned_short_dest[398] =
        unsigned_short_src[398] +
-       (short)(((unsigned_short_src[398] - uVar159 & 0xfffe) >> 1) + uVar159 >> 8) * -399;
-  unsigned_short_dest[399] =
-       unsigned_short_src[399] + ((unsigned_short_src[399] >> 4) / 0x19) * -400;
+       (short)(((unsigned_short_src[398] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -399;
+  unsigned_short_dest[399] = unsigned_short_src[399] % 400;
   unsigned_short_dest[400] = unsigned_short_src[400] % 0x191;
   unsigned_short_dest[401] = unsigned_short_src[401] % 0x192;
   unsigned_short_dest[402] = unsigned_short_src[402] % 0x193;
   unsigned_short_dest[403] = unsigned_short_src[403] % 0x194;
+  uVar1 = (uint)unsigned_short_src[404] * 0x43a3 >> 0x10;
   unsigned_short_dest[404] =
        unsigned_short_src[404] +
-       (short)(((unsigned_short_src[404] - uVar160 & 0xfffe) >> 1) + uVar160 >> 8) * -0x195;
-  unsigned_short_dest[405] =
-       unsigned_short_src[405] + ((unsigned_short_src[405] >> 1) / 0xcb) * -0x196;
+       (short)(((unsigned_short_src[404] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x195;
+  unsigned_short_dest[405] = unsigned_short_src[405] % 0x196;
   unsigned_short_dest[406] = unsigned_short_src[406] % 0x197;
   unsigned_short_dest[407] = unsigned_short_src[407] % 0x198;
+  uVar1 = (uint)unsigned_short_src[408] * 0x4079 >> 0x10;
   unsigned_short_dest[408] =
        unsigned_short_src[408] +
-       (short)(((unsigned_short_src[408] - uVar161 & 0xfffe) >> 1) + uVar161 >> 8) * -0x199;
-  unsigned_short_dest[409] =
-       unsigned_short_src[409] + ((unsigned_short_src[409] >> 1) / 0xcd) * -0x19a;
+       (short)(((unsigned_short_src[408] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x199;
+  unsigned_short_dest[409] = unsigned_short_src[409] % 0x19a;
   unsigned_short_dest[410] = unsigned_short_src[410] % 0x19b;
   unsigned_short_dest[411] = unsigned_short_src[411] % 0x19c;
   unsigned_short_dest[412] = unsigned_short_src[412] % 0x19d;
   unsigned_short_dest[413] = unsigned_short_src[413] % 0x19e;
+  uVar1 = (uint)unsigned_short_src[414] * 0x3bd7 >> 0x10;
   unsigned_short_dest[414] =
        unsigned_short_src[414] +
-       (short)(((unsigned_short_src[414] - uVar162 & 0xfffe) >> 1) + uVar162 >> 8) * -0x19f;
+       (short)(((unsigned_short_src[414] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x19f;
   unsigned_short_dest[415] = unsigned_short_src[415] % 0x1a0;
+  uVar1 = (uint)unsigned_short_src[416] * 0x3a53 >> 0x10;
   unsigned_short_dest[416] =
        unsigned_short_src[416] +
-       (short)(((unsigned_short_src[416] - uVar163 & 0xfffe) >> 1) + uVar163 >> 8) * -0x1a1;
+       (short)(((unsigned_short_src[416] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1a1;
   unsigned_short_dest[417] = unsigned_short_src[417] % 0x1a2;
+  uVar1 = (uint)unsigned_short_src[418] * 0x38d3 >> 0x10;
   unsigned_short_dest[418] =
        unsigned_short_src[418] +
-       (short)(((unsigned_short_src[418] - uVar164 & 0xfffe) >> 1) + uVar164 >> 8) * -0x1a3;
+       (short)(((unsigned_short_src[418] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1a3;
   unsigned_short_dest[419] = unsigned_short_src[419] % 0x1a4;
   unsigned_short_dest[420] = unsigned_short_src[420] % 0x1a5;
   unsigned_short_dest[421] = unsigned_short_src[421] % 0x1a6;
   unsigned_short_dest[422] = unsigned_short_src[422] % 0x1a7;
   unsigned_short_dest[423] = unsigned_short_src[423] % 0x1a8;
   unsigned_short_dest[424] = unsigned_short_src[424] % 0x1a9;
-  unsigned_short_dest[425] =
-       unsigned_short_src[425] + ((unsigned_short_src[425] >> 1) / 0xd5) * -0x1aa;
+  unsigned_short_dest[425] = unsigned_short_src[425] % 0x1aa;
   unsigned_short_dest[426] = unsigned_short_src[426] % 0x1ab;
-  unsigned_short_dest[427] =
-       unsigned_short_src[427] + ((unsigned_short_src[427] >> 2) / 0x6b) * -0x1ac;
+  unsigned_short_dest[427] = unsigned_short_src[427] % 0x1ac;
   unsigned_short_dest[428] = unsigned_short_src[428] % 0x1ad;
   unsigned_short_dest[429] = unsigned_short_src[429] % 0x1ae;
+  uVar1 = (uint)unsigned_short_src[430] * 0x301d >> 0x10;
   unsigned_short_dest[430] =
        unsigned_short_src[430] +
-       (short)(((unsigned_short_src[430] - uVar165 & 0xfffe) >> 1) + uVar165 >> 8) * -0x1af;
-  unsigned_short_dest[431] =
-       unsigned_short_src[431] + ((unsigned_short_src[431] >> 4) / 0x1b) * -0x1b0;
+       (short)(((unsigned_short_src[430] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1af;
+  unsigned_short_dest[431] = unsigned_short_src[431] % 0x1b0;
   unsigned_short_dest[432] = unsigned_short_src[432] % 0x1b1;
-  unsigned_short_dest[433] =
-       unsigned_short_src[433] + ((unsigned_short_src[433] >> 1) / 0xd9) * -0x1b2;
+  unsigned_short_dest[433] = unsigned_short_src[433] % 0x1b2;
+  uVar1 = (uint)unsigned_short_src[434] * 0x2d51 >> 0x10;
   unsigned_short_dest[434] =
        unsigned_short_src[434] +
-       (short)(((unsigned_short_src[434] - uVar166 & 0xfffe) >> 1) + uVar166 >> 8) * -0x1b3;
+       (short)(((unsigned_short_src[434] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1b3;
   unsigned_short_dest[435] = unsigned_short_src[435] % 0x1b4;
   unsigned_short_dest[436] = unsigned_short_src[436] % 0x1b5;
-  unsigned_short_dest[437] =
-       unsigned_short_src[437] + ((unsigned_short_src[437] >> 1) / 0xdb) * -0x1b6;
+  unsigned_short_dest[437] = unsigned_short_src[437] % 0x1b6;
   unsigned_short_dest[438] = unsigned_short_src[438] % 0x1b7;
-  unsigned_short_dest[439] =
-       unsigned_short_src[439] + ((unsigned_short_src[439] >> 3) / 0x37) * -0x1b8;
+  unsigned_short_dest[439] = unsigned_short_src[439] % 0x1b8;
   unsigned_short_dest[440] = unsigned_short_src[440] % 0x1b9;
   unsigned_short_dest[441] = unsigned_short_src[441] % 0x1ba;
   unsigned_short_dest[442] = unsigned_short_src[442] % 0x1bb;
   unsigned_short_dest[443] = unsigned_short_src[443] % 0x1bc;
   unsigned_short_dest[444] = unsigned_short_src[444] % 0x1bd;
-  unsigned_short_dest[445] =
-       unsigned_short_src[445] + ((unsigned_short_src[445] >> 1) / 0xdf) * -0x1be;
+  unsigned_short_dest[445] = unsigned_short_src[445] % 0x1be;
   unsigned_short_dest[446] = unsigned_short_src[446] % 0x1bf;
-  unsigned_short_dest[447] = unsigned_short_src[447] + ((unsigned_short_src[447] >> 6) / 7) * -0x1c0
-  ;
+  unsigned_short_dest[447] = unsigned_short_src[447] % 0x1c0;
   unsigned_short_dest[448] = unsigned_short_src[448] % 0x1c1;
   unsigned_short_dest[449] = unsigned_short_src[449] % 0x1c2;
+  uVar1 = (uint)unsigned_short_src[450] * 0x22a1 >> 0x10;
   unsigned_short_dest[450] =
        unsigned_short_src[450] +
-       (short)(((unsigned_short_src[450] - uVar167 & 0xfffe) >> 1) + uVar167 >> 8) * -0x1c3;
+       (short)(((unsigned_short_src[450] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1c3;
   unsigned_short_dest[451] = unsigned_short_src[451] % 0x1c4;
   unsigned_short_dest[452] = unsigned_short_src[452] % 0x1c5;
-  unsigned_short_dest[453] =
-       unsigned_short_src[453] + ((unsigned_short_src[453] >> 1) / 0xe3) * -0x1c6;
+  unsigned_short_dest[453] = unsigned_short_src[453] % 0x1c6;
+  uVar1 = (uint)unsigned_short_src[454] * 0x2013 >> 0x10;
   unsigned_short_dest[454] =
        unsigned_short_src[454] +
-       (short)(((unsigned_short_src[454] - uVar168 & 0xfffe) >> 1) + uVar168 >> 8) * -0x1c7;
-  unsigned_short_dest[455] =
-       unsigned_short_src[455] + ((unsigned_short_src[455] >> 3) / 0x39) * -0x1c8;
+       (short)(((unsigned_short_src[454] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1c7;
+  unsigned_short_dest[455] = unsigned_short_src[455] % 0x1c8;
   unsigned_short_dest[456] = unsigned_short_src[456] % 0x1c9;
   unsigned_short_dest[457] = unsigned_short_src[457] % 0x1ca;
   unsigned_short_dest[458] = unsigned_short_src[458] % 0x1cb;
-  unsigned_short_dest[459] =
-       unsigned_short_src[459] + ((unsigned_short_src[459] >> 2) / 0x73) * -0x1cc;
+  unsigned_short_dest[459] = unsigned_short_src[459] % 0x1cc;
+  uVar1 = (uint)unsigned_short_src[460] * 0x1c53 >> 0x10;
   unsigned_short_dest[460] =
        unsigned_short_src[460] +
-       (short)(((unsigned_short_src[460] - uVar169 & 0xfffe) >> 1) + uVar169 >> 8) * -0x1cd;
-  unsigned_short_dest[461] =
-       unsigned_short_src[461] + ((unsigned_short_src[461] >> 1) / 0xe7) * -0x1ce;
+       (short)(((unsigned_short_src[460] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1cd;
+  unsigned_short_dest[461] = unsigned_short_src[461] % 0x1ce;
   unsigned_short_dest[462] = unsigned_short_src[462] % 0x1cf;
   unsigned_short_dest[463] = unsigned_short_src[463] % 0x1d0;
+  uVar1 = (uint)unsigned_short_src[464] * 0x19e1 >> 0x10;
   unsigned_short_dest[464] =
        unsigned_short_src[464] +
-       (short)(((unsigned_short_src[464] - uVar170 & 0xfffe) >> 1) + uVar170 >> 8) * -0x1d1;
+       (short)(((unsigned_short_src[464] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1d1;
   unsigned_short_dest[465] = unsigned_short_src[465] % 0x1d2;
   unsigned_short_dest[466] = unsigned_short_src[466] % 0x1d3;
   unsigned_short_dest[467] = unsigned_short_src[467] % 0x1d4;
+  uVar1 = (uint)unsigned_short_src[468] * 0x1779 >> 0x10;
   unsigned_short_dest[468] =
        unsigned_short_src[468] +
-       (short)(((unsigned_short_src[468] - uVar171 & 0xfffe) >> 1) + uVar171 >> 8) * -0x1d5;
-  unsigned_short_dest[469] =
-       unsigned_short_src[469] + ((unsigned_short_src[469] >> 1) / 0xeb) * -0x1d6;
+       (short)(((unsigned_short_src[468] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1d5;
+  unsigned_short_dest[469] = unsigned_short_src[469] % 0x1d6;
+  uVar1 = (uint)unsigned_short_src[470] * 0x1649 >> 0x10;
   unsigned_short_dest[470] =
        unsigned_short_src[470] +
-       (short)(((unsigned_short_src[470] - uVar172 & 0xfffe) >> 1) + uVar172 >> 8) * -0x1d7;
+       (short)(((unsigned_short_src[470] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1d7;
   unsigned_short_dest[471] = unsigned_short_src[471] % 0x1d8;
   unsigned_short_dest[472] = unsigned_short_src[472] % 0x1d9;
   unsigned_short_dest[473] = unsigned_short_src[473] % 0x1da;
+  uVar1 = (uint)unsigned_short_src[474] * 0x13f1 >> 0x10;
   unsigned_short_dest[474] =
        unsigned_short_src[474] +
-       (short)(((unsigned_short_src[474] - uVar173 & 0xfffe) >> 1) + uVar173 >> 8) * -0x1db;
-  unsigned_short_dest[475] =
-       unsigned_short_src[475] + ((unsigned_short_src[475] >> 2) / 0x77) * -0x1dc;
+       (short)(((unsigned_short_src[474] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1db;
+  unsigned_short_dest[475] = unsigned_short_src[475] % 0x1dc;
+  uVar1 = (uint)unsigned_short_src[476] * 0x12c9 >> 0x10;
   unsigned_short_dest[476] =
        unsigned_short_src[476] +
-       (short)(((unsigned_short_src[476] - uVar174 & 0xfffe) >> 1) + uVar174 >> 8) * -0x1dd;
+       (short)(((unsigned_short_src[476] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1dd;
   unsigned_short_dest[477] = unsigned_short_src[477] % 0x1de;
   unsigned_short_dest[478] = unsigned_short_src[478] % 0x1df;
   unsigned_short_dest[479] = unsigned_short_src[479] % 0x1e0;
   unsigned_short_dest[480] = unsigned_short_src[480] % 0x1e1;
   unsigned_short_dest[481] = unsigned_short_src[481] % 0x1e2;
+  uVar1 = (uint)unsigned_short_src[482] * 0xf5f >> 0x10;
   unsigned_short_dest[482] =
        unsigned_short_src[482] +
-       (short)(((unsigned_short_src[482] - uVar175 & 0xfffe) >> 1) + uVar175 >> 8) * -0x1e3;
+       (short)(((unsigned_short_src[482] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1e3;
   unsigned_short_dest[483] = unsigned_short_src[483] % 0x1e4;
+  uVar1 = (uint)unsigned_short_src[484] * 0xe41 >> 0x10;
   unsigned_short_dest[484] =
        unsigned_short_src[484] +
-       (short)(((unsigned_short_src[484] - uVar176 & 0xfffe) >> 1) + uVar176 >> 8) * -0x1e5;
-  unsigned_short_dest[485] =
-       unsigned_short_src[485] + ((unsigned_short_src[485] >> 1) / 0xf3) * -0x1e6;
+       (short)(((unsigned_short_src[484] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1e5;
+  unsigned_short_dest[485] = unsigned_short_src[485] % 0x1e6;
+  uVar1 = (uint)unsigned_short_src[486] * 0xd25 >> 0x10;
   unsigned_short_dest[486] =
        unsigned_short_src[486] +
-       (short)(((unsigned_short_src[486] - uVar177 & 0xfffe) >> 1) + uVar177 >> 8) * -0x1e7;
+       (short)(((unsigned_short_src[486] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1e7;
   unsigned_short_dest[487] = unsigned_short_src[487] % 0x1e8;
+  uVar1 = (uint)unsigned_short_src[488] * 0xc0b >> 0x10;
   unsigned_short_dest[488] =
        unsigned_short_src[488] +
-       (short)(((unsigned_short_src[488] - uVar178 & 0xfffe) >> 1) + uVar178 >> 8) * -0x1e9;
-  unsigned_short_dest[489] =
-       unsigned_short_src[489] + ((unsigned_short_src[489] >> 1) / 0xf5) * -0x1ea;
+       (short)(((unsigned_short_src[488] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1e9;
+  unsigned_short_dest[489] = unsigned_short_src[489] % 0x1ea;
   unsigned_short_dest[490] = unsigned_short_src[490] % 0x1eb;
-  unsigned_short_dest[491] =
-       unsigned_short_src[491] + ((unsigned_short_src[491] >> 2) / 0x7b) * -0x1ec;
+  unsigned_short_dest[491] = unsigned_short_src[491] % 0x1ec;
   unsigned_short_dest[492] = unsigned_short_src[492] % 0x1ed;
   unsigned_short_dest[493] = unsigned_short_src[493] % 0x1ee;
+  uVar1 = (uint)unsigned_short_src[494] * 0x8cb >> 0x10;
   unsigned_short_dest[494] =
        unsigned_short_src[494] +
-       (short)(((unsigned_short_src[494] - uVar179 & 0xfffe) >> 1) + uVar179 >> 8) * -0x1ef;
-  unsigned_short_dest[495] =
-       unsigned_short_src[495] + ((unsigned_short_src[495] >> 4) / 0x1f) * -0x1f0;
+       (short)(((unsigned_short_src[494] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1ef;
+  unsigned_short_dest[495] = unsigned_short_src[495] % 0x1f0;
   unsigned_short_dest[496] = unsigned_short_src[496] % 0x1f1;
-  unsigned_short_dest[497] =
-       unsigned_short_src[497] + ((unsigned_short_src[497] >> 1) / 0xf9) * -0x1f2;
+  unsigned_short_dest[497] = unsigned_short_src[497] % 0x1f2;
   unsigned_short_dest[498] = unsigned_short_src[498] % 499;
-  unsigned_short_dest[499] =
-       unsigned_short_src[499] + ((unsigned_short_src[499] >> 2) / 0x7d) * -500;
+  unsigned_short_dest[499] = unsigned_short_src[499] % 500;
+  uVar1 = (uint)unsigned_short_src[500] * 0x59f >> 0x10;
   unsigned_short_dest[500] =
        unsigned_short_src[500] +
-       (short)(((unsigned_short_src[500] - uVar180 & 0xfffe) >> 1) + uVar180 >> 8) * -0x1f5;
+       (short)(((unsigned_short_src[500] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1f5;
   unsigned_short_dest[501] = unsigned_short_src[501] % 0x1f6;
+  uVar1 = (uint)unsigned_short_src[502] * 0x495 >> 0x10;
   unsigned_short_dest[502] =
        unsigned_short_src[502] +
-       (short)(((unsigned_short_src[502] - uVar181 & 0xfffe) >> 1) + uVar181 >> 8) * -0x1f7;
-  unsigned_short_dest[503] =
-       unsigned_short_src[503] + ((unsigned_short_src[503] >> 3) / 0x3f) * -0x1f8;
+       (short)(((unsigned_short_src[502] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1f7;
+  unsigned_short_dest[503] = unsigned_short_src[503] % 0x1f8;
+  uVar1 = (uint)unsigned_short_src[504] * 0x38d >> 0x10;
   unsigned_short_dest[504] =
        unsigned_short_src[504] +
-       (short)(((unsigned_short_src[504] - uVar182 & 0xfffe) >> 1) + uVar182 >> 8) * -0x1f9;
+       (short)(((unsigned_short_src[504] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1f9;
   unsigned_short_dest[505] = unsigned_short_src[505] % 0x1fa;
+  uVar1 = (uint)unsigned_short_src[506] * 0x287 >> 0x10;
   unsigned_short_dest[506] =
        unsigned_short_src[506] +
-       (short)(((unsigned_short_src[506] - uVar183 & 0xfffe) >> 1) + uVar183 >> 8) * -0x1fb;
-  unsigned_short_dest[507] =
-       unsigned_short_src[507] + ((unsigned_short_src[507] >> 2) / 0x7f) * -0x1fc;
+       (short)(((unsigned_short_src[506] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1fb;
+  unsigned_short_dest[507] = unsigned_short_src[507] % 0x1fc;
+  uVar1 = (uint)unsigned_short_src[508] * 0x183 >> 0x10;
   unsigned_short_dest[508] =
        unsigned_short_src[508] +
-       (short)(((unsigned_short_src[508] - uVar184 & 0xfffe) >> 1) + uVar184 >> 8) * -0x1fd;
+       (short)(((unsigned_short_src[508] - uVar1 & 0xfffe) >> 1) + uVar1 >> 8) * -0x1fd;
   unsigned_short_dest[509] = unsigned_short_src[509] % 0x1fe;
+  uVar1 = (uint)unsigned_short_src[510] * 0x81 >> 0x10;
+  uVar1 = ((unsigned_short_src[510] - uVar1 & 0xfffe) >> 1) + uVar1;
   unsigned_short_dest[510] =
-       unsigned_short_src[510] - ((short)((uVar6 >> 8) << 9) - (short)(uVar6 >> 8));
+       unsigned_short_src[510] - ((short)((uVar1 >> 8) << 9) - (short)(uVar1 >> 8));
   unsigned_short_dest[511] = unsigned_short_src[511] & 0x1ff;
   unsigned_short_dest[512] =
        unsigned_short_src[512] -
@@ -27357,14 +25113,14 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[527] = unsigned_short_src[527] % 0x210;
   unsigned_short_dest[528] = unsigned_short_src[528] % 0x211;
   unsigned_short_dest[529] = unsigned_short_src[529] % 0x212;
+  uVar1 = (uint)unsigned_short_src[530] * 0xedaf >> 0x10;
   unsigned_short_dest[530] =
        unsigned_short_src[530] +
-       (short)((((unsigned_short_src[530] - uVar45 & 0xfffe) >> 1) + uVar45 & 0xfe00) >> 9) * -0x213
-  ;
+       (short)((((unsigned_short_src[530] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x213;
   unsigned_short_dest[531] = unsigned_short_src[531] % 0x214;
   unsigned_short_dest[532] = unsigned_short_src[532] % 0x215;
   unsigned_short_dest[533] =
-       unsigned_short_src[533] + ((unsigned_short_src[533] >> 1) / 0x10b) * -0x216;
+       unsigned_short_src[533] + (ushort)(byte)(unsigned_short_src[533] / 0x216) * -0x216;
   unsigned_short_dest[534] = unsigned_short_src[534] % 0x217;
   unsigned_short_dest[535] = unsigned_short_src[535] % 0x218;
   unsigned_short_dest[536] = unsigned_short_src[536] % 0x219;
@@ -27377,16 +25133,14 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[543] = unsigned_short_src[543] % 0x220;
   unsigned_short_dest[544] =
        unsigned_short_src[544] + (ushort)((uint)unsigned_short_src[544] * 0x1e1 >> 0x12) * -0x221;
-  unsigned_short_dest[545] =
-       unsigned_short_src[545] + ((unsigned_short_src[545] >> 1) / 0x111) * -0x222;
+  unsigned_short_dest[545] = unsigned_short_src[545] % 0x222;
   unsigned_short_dest[546] = unsigned_short_src[546] % 0x223;
   unsigned_short_dest[547] = unsigned_short_src[547] % 0x224;
   unsigned_short_dest[548] = unsigned_short_src[548] % 0x225;
   unsigned_short_dest[549] =
-       unsigned_short_src[549] + ((unsigned_short_src[549] >> 1) / 0x113) * -0x226;
+       unsigned_short_src[549] + (ushort)(byte)(unsigned_short_src[549] / 0x226) * -0x226;
   unsigned_short_dest[550] = unsigned_short_src[550] % 0x227;
-  unsigned_short_dest[551] =
-       unsigned_short_src[551] + ((unsigned_short_src[551] >> 3) / 0x45) * -0x228;
+  unsigned_short_dest[551] = unsigned_short_src[551] % 0x228;
   unsigned_short_dest[552] = unsigned_short_src[552] % 0x229;
   unsigned_short_dest[553] = unsigned_short_src[553] % 0x22a;
   unsigned_short_dest[554] = unsigned_short_src[554] % 0x22b;
@@ -27419,10 +25173,10 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[581] = unsigned_short_src[581] % 0x246;
   unsigned_short_dest[582] = unsigned_short_src[582] % 0x247;
   unsigned_short_dest[583] = unsigned_short_src[583] % 0x248;
+  uVar1 = (uint)unsigned_short_src[584] * 0xc01d >> 0x10;
   unsigned_short_dest[584] =
        unsigned_short_src[584] +
-       (short)((((unsigned_short_src[584] - uVar46 & 0xfffe) >> 1) + uVar46 & 0xfe00) >> 9) * -0x249
-  ;
+       (short)((((unsigned_short_src[584] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x249;
   unsigned_short_dest[585] =
        unsigned_short_src[585] + (ushort)((uint)unsigned_short_src[585] * 0xdfad >> 0x19) * -0x24a;
   unsigned_short_dest[586] = unsigned_short_src[586] % 0x24b;
@@ -27433,69 +25187,64 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[591] = unsigned_short_src[591] % 0x250;
   unsigned_short_dest[592] = unsigned_short_src[592] % 0x251;
   unsigned_short_dest[593] = unsigned_short_src[593] % 0x252;
+  uVar1 = (uint)unsigned_short_src[594] * 0xb895 >> 0x10;
   unsigned_short_dest[594] =
        unsigned_short_src[594] +
-       (short)((((unsigned_short_src[594] - uVar47 & 0xfffe) >> 1) + uVar47 & 0xfe00) >> 9) * -0x253
-  ;
+       (short)((((unsigned_short_src[594] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x253;
   unsigned_short_dest[595] = unsigned_short_src[595] % 0x254;
+  uVar1 = (uint)unsigned_short_src[596] * 0xb71b >> 0x10;
   unsigned_short_dest[596] =
        unsigned_short_src[596] +
-       (short)((((unsigned_short_src[596] - uVar48 & 0xfffe) >> 1) + uVar48 & 0xfe00) >> 9) * -0x255
-  ;
-  unsigned_short_dest[597] =
-       unsigned_short_src[597] + ((unsigned_short_src[597] >> 1) / 299) * -0x256;
+       (short)((((unsigned_short_src[596] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x255;
+  unsigned_short_dest[597] = unsigned_short_src[597] % 0x256;
   unsigned_short_dest[598] = unsigned_short_src[598] % 599;
-  unsigned_short_dest[599] =
-       unsigned_short_src[599] + ((unsigned_short_src[599] >> 3) / 0x4b) * -600;
+  unsigned_short_dest[599] = unsigned_short_src[599] % 600;
+  uVar1 = (uint)unsigned_short_src[600] * 0xb42f >> 0x10;
   unsigned_short_dest[600] =
        unsigned_short_src[600] +
-       (short)((((unsigned_short_src[600] - uVar49 & 0xfffe) >> 1) + uVar49 & 0xfe00) >> 9) * -0x259
-  ;
+       (short)((((unsigned_short_src[600] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x259;
   unsigned_short_dest[601] = unsigned_short_src[601] % 0x25a;
   unsigned_short_dest[602] = unsigned_short_src[602] % 0x25b;
   unsigned_short_dest[603] = unsigned_short_src[603] % 0x25c;
   unsigned_short_dest[604] = unsigned_short_src[604] % 0x25d;
   unsigned_short_dest[605] = unsigned_short_src[605] % 0x25e;
+  uVar1 = (uint)unsigned_short_src[606] * 0xafdf >> 0x10;
   unsigned_short_dest[606] =
        unsigned_short_src[606] +
-       (short)((((unsigned_short_src[606] - uVar50 & 0xfffe) >> 1) + uVar50 & 0xfe00) >> 9) * -0x25f
-  ;
+       (short)((((unsigned_short_src[606] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x25f;
   unsigned_short_dest[607] = unsigned_short_src[607] % 0x260;
   unsigned_short_dest[608] = unsigned_short_src[608] % 0x261;
   unsigned_short_dest[609] = unsigned_short_src[609] % 0x262;
   unsigned_short_dest[610] = unsigned_short_src[610] % 0x263;
   unsigned_short_dest[611] = unsigned_short_src[611] % 0x264;
+  uVar1 = (uint)unsigned_short_src[612] * 0xaba5 >> 0x10;
   unsigned_short_dest[612] =
        unsigned_short_src[612] +
-       (short)((((unsigned_short_src[612] - uVar51 & 0xfffe) >> 1) + uVar51 & 0xfe00) >> 9) * -0x265
-  ;
+       (short)((((unsigned_short_src[612] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x265;
   unsigned_short_dest[613] = unsigned_short_src[613] % 0x266;
+  uVar1 = (uint)unsigned_short_src[614] * 0xaa41 >> 0x10;
   unsigned_short_dest[614] =
        unsigned_short_src[614] +
-       (short)((((unsigned_short_src[614] - uVar52 & 0xfffe) >> 1) + uVar52 & 0xfe00) >> 9) * -0x267
-  ;
+       (short)((((unsigned_short_src[614] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x267;
   unsigned_short_dest[615] = unsigned_short_src[615] % 0x268;
   unsigned_short_dest[616] = unsigned_short_src[616] % 0x269;
   unsigned_short_dest[617] = unsigned_short_src[617] % 0x26a;
   unsigned_short_dest[618] = unsigned_short_src[618] % 0x26b;
-  unsigned_short_dest[619] =
-       unsigned_short_src[619] + ((unsigned_short_src[619] >> 2) / 0x9b) * -0x26c;
+  unsigned_short_dest[619] = unsigned_short_src[619] % 0x26c;
   unsigned_short_dest[620] = unsigned_short_src[620] % 0x26d;
   unsigned_short_dest[621] =
-       unsigned_short_src[621] + ((unsigned_short_src[621] >> 1) / 0x137) * -0x26e;
+       unsigned_short_src[621] + (ushort)(byte)(unsigned_short_src[621] / 0x26e) * -0x26e;
   unsigned_short_dest[622] = unsigned_short_src[622] % 0x26f;
-  unsigned_short_dest[623] =
-       unsigned_short_src[623] + ((unsigned_short_src[623] >> 4) / 0x27) * -0x270;
+  unsigned_short_dest[623] = unsigned_short_src[623] % 0x270;
+  uVar1 = (uint)unsigned_short_src[624] * 0xa36f >> 0x10;
   unsigned_short_dest[624] =
        unsigned_short_src[624] +
-       (short)((((unsigned_short_src[624] - uVar53 & 0xfffe) >> 1) + uVar53 & 0xfe00) >> 9) * -0x271
-  ;
+       (short)((((unsigned_short_src[624] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x271;
   unsigned_short_dest[625] = unsigned_short_src[625] % 0x272;
   unsigned_short_dest[626] = unsigned_short_src[626] % 0x273;
   unsigned_short_dest[627] = unsigned_short_src[627] % 0x274;
   unsigned_short_dest[628] = unsigned_short_src[628] % 0x275;
-  unsigned_short_dest[629] =
-       unsigned_short_src[629] + ((unsigned_short_src[629] >> 1) / 0x13b) * -0x276;
+  unsigned_short_dest[629] = unsigned_short_src[629] % 0x276;
   unsigned_short_dest[630] = unsigned_short_src[630] % 0x277;
   unsigned_short_dest[631] = unsigned_short_src[631] % 0x278;
   unsigned_short_dest[632] = unsigned_short_src[632] % 0x279;
@@ -27503,79 +25252,73 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[634] = unsigned_short_src[634] % 0x27b;
   unsigned_short_dest[635] = unsigned_short_src[635] % 0x27c;
   unsigned_short_dest[636] = unsigned_short_src[636] % 0x27d;
-  unsigned_short_dest[637] =
-       unsigned_short_src[637] + ((unsigned_short_src[637] >> 1) / 0x13f) * -0x27e;
+  unsigned_short_dest[637] = unsigned_short_src[637] % 0x27e;
   unsigned_short_dest[638] = unsigned_short_src[638] % 0x27f;
   unsigned_short_dest[639] = unsigned_short_src[639] % 0x280;
+  uVar1 = (uint)unsigned_short_src[640] * 0x98f7 >> 0x10;
   unsigned_short_dest[640] =
        unsigned_short_src[640] +
-       (short)((((unsigned_short_src[640] - uVar54 & 0xfffe) >> 1) + uVar54 & 0xfe00) >> 9) * -0x281
-  ;
+       (short)((((unsigned_short_src[640] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x281;
   unsigned_short_dest[641] = unsigned_short_src[641] % 0x282;
+  uVar1 = (uint)unsigned_short_src[642] * 0x97b1 >> 0x10;
   unsigned_short_dest[642] =
        unsigned_short_src[642] +
-       (short)((((unsigned_short_src[642] - uVar55 & 0xfffe) >> 1) + uVar55 & 0xfe00) >> 9) * -0x283
-  ;
-  unsigned_short_dest[643] =
-       unsigned_short_src[643] + ((unsigned_short_src[643] >> 2) / 0xa1) * -0x284;
+       (short)((((unsigned_short_src[642] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x283;
+  unsigned_short_dest[643] = unsigned_short_src[643] % 0x284;
   unsigned_short_dest[644] = unsigned_short_src[644] % 0x285;
   unsigned_short_dest[645] = unsigned_short_src[645] % 0x286;
   unsigned_short_dest[646] = unsigned_short_src[646] % 0x287;
   unsigned_short_dest[647] = unsigned_short_src[647] % 0x288;
   unsigned_short_dest[648] = unsigned_short_src[648] % 0x289;
   unsigned_short_dest[649] =
-       unsigned_short_src[649] + ((unsigned_short_src[649] >> 1) / 0x145) * -0x28a;
+       unsigned_short_src[649] + (ushort)(byte)(unsigned_short_src[649] / 0x28a) * -0x28a;
   unsigned_short_dest[650] = unsigned_short_src[650] % 0x28b;
   unsigned_short_dest[651] = unsigned_short_src[651] % 0x28c;
+  uVar1 = (uint)unsigned_short_src[652] * 0x9173 >> 0x10;
   unsigned_short_dest[652] =
        unsigned_short_src[652] +
-       (short)((((unsigned_short_src[652] - uVar56 & 0xfffe) >> 1) + uVar56 & 0xfe00) >> 9) * -0x28d
-  ;
+       (short)((((unsigned_short_src[652] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x28d;
   unsigned_short_dest[653] = unsigned_short_src[653] % 0x28e;
+  uVar1 = (uint)unsigned_short_src[654] * 0x9039 >> 0x10;
   unsigned_short_dest[654] =
        unsigned_short_src[654] +
-       (short)((((unsigned_short_src[654] - uVar57 & 0xfffe) >> 1) + uVar57 & 0xfe00) >> 9) * -0x28f
-  ;
-  unsigned_short_dest[655] =
-       unsigned_short_src[655] + ((unsigned_short_src[655] >> 4) / 0x29) * -0x290;
+       (short)((((unsigned_short_src[654] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x28f;
+  unsigned_short_dest[655] = unsigned_short_src[655] % 0x290;
+  uVar1 = (uint)unsigned_short_src[656] * 0x8f01 >> 0x10;
   unsigned_short_dest[656] =
        unsigned_short_src[656] +
-       (short)((((unsigned_short_src[656] - uVar58 & 0xfffe) >> 1) + uVar58 & 0xfe00) >> 9) * -0x291
-  ;
+       (short)((((unsigned_short_src[656] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x291;
   unsigned_short_dest[657] = unsigned_short_src[657] % 0x292;
+  uVar1 = (uint)unsigned_short_src[658] * 0x8dcb >> 0x10;
   unsigned_short_dest[658] =
        unsigned_short_src[658] +
-       (short)((((unsigned_short_src[658] - uVar59 & 0xfffe) >> 1) + uVar59 & 0xfe00) >> 9) * -0x293
-  ;
-  unsigned_short_dest[659] =
-       unsigned_short_src[659] + ((unsigned_short_src[659] >> 2) / 0xa5) * -0x294;
+       (short)((((unsigned_short_src[658] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x293;
+  unsigned_short_dest[659] = unsigned_short_src[659] % 0x294;
+  uVar1 = (uint)unsigned_short_src[660] * 0x8c97 >> 0x10;
   unsigned_short_dest[660] =
        unsigned_short_src[660] +
-       (short)((((unsigned_short_src[660] - uVar60 & 0xfffe) >> 1) + uVar60 & 0xfe00) >> 9) * -0x295
-  ;
+       (short)((((unsigned_short_src[660] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x295;
   unsigned_short_dest[661] = unsigned_short_src[661] % 0x296;
+  uVar1 = (uint)unsigned_short_src[662] * 0x8b65 >> 0x10;
   unsigned_short_dest[662] =
        unsigned_short_src[662] +
-       (short)((((unsigned_short_src[662] - uVar61 & 0xfffe) >> 1) + uVar61 & 0xfe00) >> 9) * -0x297
-  ;
+       (short)((((unsigned_short_src[662] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x297;
   unsigned_short_dest[663] = unsigned_short_src[663] % 0x298;
   unsigned_short_dest[664] = unsigned_short_src[664] % 0x299;
   unsigned_short_dest[665] =
-       unsigned_short_src[665] + ((unsigned_short_src[665] >> 1) / 0x14d) * -0x29a;
+       unsigned_short_src[665] + (ushort)(byte)(unsigned_short_src[665] / 0x29a) * -0x29a;
   unsigned_short_dest[666] = unsigned_short_src[666] % 0x29b;
-  unsigned_short_dest[667] =
-       unsigned_short_src[667] + ((unsigned_short_src[667] >> 2) / 0xa7) * -0x29c;
+  unsigned_short_dest[667] = unsigned_short_src[667] % 0x29c;
+  uVar1 = (uint)unsigned_short_src[668] * 0x87d9 >> 0x10;
   unsigned_short_dest[668] =
        unsigned_short_src[668] +
-       (short)((((unsigned_short_src[668] - uVar62 & 0xfffe) >> 1) + uVar62 & 0xfe00) >> 9) * -0x29d
-  ;
+       (short)((((unsigned_short_src[668] - uVar1 & 0xfffe) >> 1) + uVar1 & 0xfe00) >> 9) * -0x29d;
   unsigned_short_dest[669] = unsigned_short_src[669] % 0x29e;
   unsigned_short_dest[670] = unsigned_short_src[670] % 0x29f;
-  unsigned_short_dest[671] =
-       unsigned_short_src[671] + ((unsigned_short_src[671] >> 5) / 0x15) * -0x2a0;
+  unsigned_short_dest[671] = unsigned_short_src[671] % 0x2a0;
   unsigned_short_dest[672] = unsigned_short_src[672] % 0x2a1;
   unsigned_short_dest[673] =
-       unsigned_short_src[673] + ((unsigned_short_src[673] >> 1) / 0x151) * -0x2a2;
+       unsigned_short_src[673] + (ushort)(byte)(unsigned_short_src[673] / 0x2a2) * -0x2a2;
   unsigned_short_dest[674] = unsigned_short_src[674] % 0x2a3;
   unsigned_short_dest[675] = unsigned_short_src[675] % 0x2a4;
   unsigned_short_dest[676] = unsigned_short_src[676] % 0x2a5;
@@ -27584,37 +25327,39 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[679] = unsigned_short_src[679] % 0x2a8;
   unsigned_short_dest[680] = unsigned_short_src[680] % 0x2a9;
   unsigned_short_dest[681] =
-       unsigned_short_src[681] + ((unsigned_short_src[681] >> 1) / 0x155) * -0x2aa;
+       unsigned_short_src[681] + (ushort)(byte)(unsigned_short_src[681] / 0x2aa) * -0x2aa;
+  uVar1 = (uint)unsigned_short_src[682] * 0x7fd1 >> 0x10;
   unsigned_short_dest[682] =
        unsigned_short_src[682] +
-       (short)(((unsigned_short_src[682] - uVar63 & 0xfffe) >> 1) + uVar63 >> 9) * -0x2ab;
-  unsigned_short_dest[683] =
-       unsigned_short_src[683] + ((unsigned_short_src[683] >> 2) / 0xab) * -0x2ac;
+       (short)(((unsigned_short_src[682] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2ab;
+  unsigned_short_dest[683] = unsigned_short_src[683] % 0x2ac;
   unsigned_short_dest[684] = unsigned_short_src[684] % 0x2ad;
-  unsigned_short_dest[685] =
-       unsigned_short_src[685] + ((unsigned_short_src[685] >> 1) / 0x157) * -0x2ae;
+  unsigned_short_dest[685] = unsigned_short_src[685] % 0x2ae;
   unsigned_short_dest[686] = unsigned_short_src[686] % 0x2af;
   unsigned_short_dest[687] = unsigned_short_src[687] % 0x2b0;
+  uVar1 = (uint)unsigned_short_src[688] * 0x7c79 >> 0x10;
   unsigned_short_dest[688] =
        unsigned_short_src[688] +
-       (short)(((unsigned_short_src[688] - uVar64 & 0xfffe) >> 1) + uVar64 >> 9) * -0x2b1;
+       (short)(((unsigned_short_src[688] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2b1;
   unsigned_short_dest[689] = unsigned_short_src[689] % 0x2b2;
+  uVar1 = (uint)unsigned_short_src[690] * 0x7b5f >> 0x10;
   unsigned_short_dest[690] =
        unsigned_short_src[690] +
-       (short)(((unsigned_short_src[690] - uVar65 & 0xfffe) >> 1) + uVar65 >> 9) * -0x2b3;
-  unsigned_short_dest[691] =
-       unsigned_short_src[691] + ((unsigned_short_src[691] >> 2) / 0xad) * -0x2b4;
+       (short)(((unsigned_short_src[690] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2b3;
+  unsigned_short_dest[691] = unsigned_short_src[691] % 0x2b4;
+  uVar1 = (uint)unsigned_short_src[692] * 0x7a47 >> 0x10;
   unsigned_short_dest[692] =
        unsigned_short_src[692] +
-       (short)(((unsigned_short_src[692] - uVar66 & 0xfffe) >> 1) + uVar66 >> 9) * -0x2b5;
+       (short)(((unsigned_short_src[692] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2b5;
   unsigned_short_dest[693] = unsigned_short_src[693] % 0x2b6;
   unsigned_short_dest[694] = unsigned_short_src[694] % 0x2b7;
   unsigned_short_dest[695] = unsigned_short_src[695] % 0x2b8;
+  uVar1 = (uint)unsigned_short_src[696] * 0x781b >> 0x10;
   unsigned_short_dest[696] =
        unsigned_short_src[696] +
-       (short)(((unsigned_short_src[696] - uVar67 & 0xfffe) >> 1) + uVar67 >> 9) * -0x2b9;
+       (short)(((unsigned_short_src[696] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2b9;
   unsigned_short_dest[697] =
-       unsigned_short_src[697] + ((unsigned_short_src[697] >> 1) / 0x15d) * -0x2ba;
+       unsigned_short_src[697] + (ushort)(byte)(unsigned_short_src[697] / 0x2ba) * -0x2ba;
   unsigned_short_dest[698] = unsigned_short_src[698] % 699;
   unsigned_short_dest[699] = unsigned_short_src[699] % 700;
   unsigned_short_dest[700] = unsigned_short_src[700] % 0x2bd;
@@ -27624,329 +25369,331 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[704] = unsigned_short_src[704] % 0x2c1;
   unsigned_short_dest[705] = unsigned_short_src[705] % 0x2c2;
   unsigned_short_dest[706] = unsigned_short_src[706] % 0x2c3;
-  unsigned_short_dest[707] =
-       unsigned_short_src[707] + ((unsigned_short_src[707] >> 2) / 0xb1) * -0x2c4;
+  unsigned_short_dest[707] = unsigned_short_src[707] % 0x2c4;
   unsigned_short_dest[708] = unsigned_short_src[708] % 0x2c5;
   unsigned_short_dest[709] = unsigned_short_src[709] % 0x2c6;
   unsigned_short_dest[710] = unsigned_short_src[710] % 0x2c7;
-  unsigned_short_dest[711] =
-       unsigned_short_src[711] + ((unsigned_short_src[711] >> 3) / 0x59) * -0x2c8;
+  unsigned_short_dest[711] = unsigned_short_src[711] % 0x2c8;
   unsigned_short_dest[712] = unsigned_short_src[712] % 0x2c9;
-  unsigned_short_dest[713] =
-       unsigned_short_src[713] + ((unsigned_short_src[713] >> 1) / 0x165) * -0x2ca;
+  unsigned_short_dest[713] = unsigned_short_src[713] % 0x2ca;
+  uVar1 = (uint)unsigned_short_src[714] * 0x6ea3 >> 0x10;
   unsigned_short_dest[714] =
        unsigned_short_src[714] +
-       (short)(((unsigned_short_src[714] - uVar68 & 0xfffe) >> 1) + uVar68 >> 9) * -0x2cb;
+       (short)(((unsigned_short_src[714] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2cb;
   unsigned_short_dest[715] = unsigned_short_src[715] % 0x2cc;
   unsigned_short_dest[716] = unsigned_short_src[716] % 0x2cd;
-  unsigned_short_dest[717] =
-       unsigned_short_src[717] + ((unsigned_short_src[717] >> 1) / 0x167) * -0x2ce;
+  unsigned_short_dest[717] = unsigned_short_src[717] % 0x2ce;
+  uVar1 = (uint)unsigned_short_src[718] * 0x6c99 >> 0x10;
   unsigned_short_dest[718] =
        unsigned_short_src[718] +
-       (short)(((unsigned_short_src[718] - uVar69 & 0xfffe) >> 1) + uVar69 >> 9) * -0x2cf;
+       (short)(((unsigned_short_src[718] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2cf;
   unsigned_short_dest[719] = unsigned_short_src[719] % 0x2d0;
   unsigned_short_dest[720] = unsigned_short_src[720] % 0x2d1;
   unsigned_short_dest[721] =
-       unsigned_short_src[721] + ((unsigned_short_src[721] >> 1) / 0x169) * -0x2d2;
+       unsigned_short_src[721] + (ushort)(byte)(unsigned_short_src[721] / 0x2d2) * -0x2d2;
+  uVar1 = (uint)unsigned_short_src[722] * 0x6a95 >> 0x10;
   unsigned_short_dest[722] =
        unsigned_short_src[722] +
-       (short)(((unsigned_short_src[722] - uVar70 & 0xfffe) >> 1) + uVar70 >> 9) * -0x2d3;
+       (short)(((unsigned_short_src[722] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2d3;
   unsigned_short_dest[723] = unsigned_short_src[723] % 0x2d4;
   unsigned_short_dest[724] = unsigned_short_src[724] % 0x2d5;
   unsigned_short_dest[725] =
-       unsigned_short_src[725] + ((unsigned_short_src[725] >> 1) / 0x16b) * -0x2d6;
+       unsigned_short_src[725] + (ushort)(byte)(unsigned_short_src[725] / 0x2d6) * -0x2d6;
   unsigned_short_dest[726] = unsigned_short_src[726] % 0x2d7;
-  unsigned_short_dest[727] =
-       unsigned_short_src[727] + ((unsigned_short_src[727] >> 3) / 0x5b) * -0x2d8;
+  unsigned_short_dest[727] = unsigned_short_src[727] % 0x2d8;
+  uVar1 = (uint)unsigned_short_src[728] * 0x6799 >> 0x10;
   unsigned_short_dest[728] =
        unsigned_short_src[728] +
-       (short)(((unsigned_short_src[728] - uVar71 & 0xfffe) >> 1) + uVar71 >> 9) * -0x2d9;
+       (short)(((unsigned_short_src[728] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2d9;
   unsigned_short_dest[729] = unsigned_short_src[729] % 0x2da;
+  uVar1 = (uint)unsigned_short_src[730] * 0x669d >> 0x10;
   unsigned_short_dest[730] =
        unsigned_short_src[730] +
-       (short)(((unsigned_short_src[730] - uVar72 & 0xfffe) >> 1) + uVar72 >> 9) * -0x2db;
+       (short)(((unsigned_short_src[730] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2db;
   unsigned_short_dest[731] = unsigned_short_src[731] % 0x2dc;
   unsigned_short_dest[732] = unsigned_short_src[732] % 0x2dd;
   unsigned_short_dest[733] = unsigned_short_src[733] % 0x2de;
+  uVar1 = (uint)unsigned_short_src[734] * 0x64a9 >> 0x10;
   unsigned_short_dest[734] =
        unsigned_short_src[734] +
-       (short)(((unsigned_short_src[734] - uVar73 & 0xfffe) >> 1) + uVar73 >> 9) * -0x2df;
-  unsigned_short_dest[735] =
-       unsigned_short_src[735] + ((unsigned_short_src[735] >> 5) / 0x17) * -0x2e0;
+       (short)(((unsigned_short_src[734] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2df;
+  unsigned_short_dest[735] = unsigned_short_src[735] % 0x2e0;
   unsigned_short_dest[736] = unsigned_short_src[736] % 0x2e1;
   unsigned_short_dest[737] = unsigned_short_src[737] % 0x2e2;
+  uVar1 = (uint)unsigned_short_src[738] * 0x62bb >> 0x10;
   unsigned_short_dest[738] =
        unsigned_short_src[738] +
-       (short)(((unsigned_short_src[738] - uVar74 & 0xfffe) >> 1) + uVar74 >> 9) * -0x2e3;
+       (short)(((unsigned_short_src[738] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2e3;
   unsigned_short_dest[739] = unsigned_short_src[739] % 0x2e4;
   unsigned_short_dest[740] = unsigned_short_src[740] % 0x2e5;
   unsigned_short_dest[741] = unsigned_short_src[741] % 0x2e6;
   unsigned_short_dest[742] = unsigned_short_src[742] % 0x2e7;
-  unsigned_short_dest[743] =
-       unsigned_short_src[743] + ((unsigned_short_src[743] >> 3) / 0x5d) * -0x2e8;
+  unsigned_short_dest[743] = unsigned_short_src[743] % 0x2e8;
   unsigned_short_dest[744] = unsigned_short_src[744] % 0x2e9;
-  unsigned_short_dest[745] =
-       unsigned_short_src[745] + ((unsigned_short_src[745] >> 1) / 0x175) * -0x2ea;
+  unsigned_short_dest[745] = unsigned_short_src[745] % 0x2ea;
   unsigned_short_dest[746] = unsigned_short_src[746] % 0x2eb;
   unsigned_short_dest[747] = unsigned_short_src[747] % 0x2ec;
   unsigned_short_dest[748] = unsigned_short_src[748] % 0x2ed;
-  unsigned_short_dest[749] =
-       unsigned_short_src[749] + ((unsigned_short_src[749] >> 1) / 0x177) * -0x2ee;
+  unsigned_short_dest[749] = unsigned_short_src[749] % 0x2ee;
   unsigned_short_dest[750] = unsigned_short_src[750] % 0x2ef;
-  unsigned_short_dest[751] =
-       unsigned_short_src[751] + ((unsigned_short_src[751] >> 4) / 0x2f) * -0x2f0;
+  unsigned_short_dest[751] = unsigned_short_src[751] % 0x2f0;
   unsigned_short_dest[752] = unsigned_short_src[752] % 0x2f1;
   unsigned_short_dest[753] = unsigned_short_src[753] % 0x2f2;
   unsigned_short_dest[754] = unsigned_short_src[754] % 0x2f3;
-  unsigned_short_dest[755] =
-       unsigned_short_src[755] + ((unsigned_short_src[755] >> 2) / 0xbd) * -0x2f4;
+  unsigned_short_dest[755] = unsigned_short_src[755] % 0x2f4;
   unsigned_short_dest[756] = unsigned_short_src[756] % 0x2f5;
-  unsigned_short_dest[757] =
-       unsigned_short_src[757] + ((unsigned_short_src[757] >> 1) / 0x17b) * -0x2f6;
+  unsigned_short_dest[757] = unsigned_short_src[757] % 0x2f6;
   unsigned_short_dest[758] = unsigned_short_src[758] % 0x2f7;
   unsigned_short_dest[759] = unsigned_short_src[759] % 0x2f8;
   unsigned_short_dest[760] = unsigned_short_src[760] % 0x2f9;
   unsigned_short_dest[761] = unsigned_short_src[761] % 0x2fa;
   unsigned_short_dest[762] = unsigned_short_src[762] % 0x2fb;
   unsigned_short_dest[763] = unsigned_short_src[763] % 0x2fc;
+  uVar1 = (uint)unsigned_short_src[764] * 0x56ad >> 0x10;
   unsigned_short_dest[764] =
        unsigned_short_src[764] +
-       (short)(((unsigned_short_src[764] - uVar75 & 0xfffe) >> 1) + uVar75 >> 9) * -0x2fd;
+       (short)(((unsigned_short_src[764] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x2fd;
   unsigned_short_dest[765] = unsigned_short_src[765] % 0x2fe;
   unsigned_short_dest[766] = unsigned_short_src[766] % 0x2ff;
   unsigned_short_dest[767] = unsigned_short_src[767] % 0x300;
   unsigned_short_dest[768] = unsigned_short_src[768] % 0x301;
-  unsigned_short_dest[769] =
-       unsigned_short_src[769] + ((unsigned_short_src[769] >> 1) / 0x181) * -0x302;
+  unsigned_short_dest[769] = unsigned_short_src[769] % 0x302;
   unsigned_short_dest[770] = unsigned_short_src[770] % 0x303;
-  unsigned_short_dest[771] =
-       unsigned_short_src[771] + ((unsigned_short_src[771] >> 2) / 0xc1) * -0x304;
+  unsigned_short_dest[771] = unsigned_short_src[771] % 0x304;
+  uVar1 = (uint)unsigned_short_src[772] * 0x5321 >> 0x10;
   unsigned_short_dest[772] =
        unsigned_short_src[772] +
-       (short)(((unsigned_short_src[772] - uVar76 & 0xfffe) >> 1) + uVar76 >> 9) * -0x305;
+       (short)(((unsigned_short_src[772] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x305;
   unsigned_short_dest[773] = unsigned_short_src[773] % 0x306;
+  uVar1 = (uint)unsigned_short_src[774] * 0x5241 >> 0x10;
   unsigned_short_dest[774] =
        unsigned_short_src[774] +
-       (short)(((unsigned_short_src[774] - uVar77 & 0xfffe) >> 1) + uVar77 >> 9) * -0x307;
-  unsigned_short_dest[775] =
-       unsigned_short_src[775] + ((unsigned_short_src[775] >> 3) / 0x61) * -0x308;
+       (short)(((unsigned_short_src[774] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x307;
+  unsigned_short_dest[775] = unsigned_short_src[775] % 0x308;
   unsigned_short_dest[776] = unsigned_short_src[776] % 0x309;
-  unsigned_short_dest[777] =
-       unsigned_short_src[777] + ((unsigned_short_src[777] >> 1) / 0x185) * -0x30a;
+  unsigned_short_dest[777] = unsigned_short_src[777] % 0x30a;
   unsigned_short_dest[778] = unsigned_short_src[778] % 0x30b;
   unsigned_short_dest[779] = unsigned_short_src[779] % 0x30c;
   unsigned_short_dest[780] = unsigned_short_src[780] % 0x30d;
   unsigned_short_dest[781] = unsigned_short_src[781] % 0x30e;
   unsigned_short_dest[782] = unsigned_short_src[782] % 0x30f;
-  unsigned_short_dest[783] =
-       unsigned_short_src[783] + ((unsigned_short_src[783] >> 4) / 0x31) * -0x310;
+  unsigned_short_dest[783] = unsigned_short_src[783] % 0x310;
   unsigned_short_dest[784] = unsigned_short_src[784] % 0x311;
   unsigned_short_dest[785] =
-       unsigned_short_src[785] + ((unsigned_short_src[785] >> 1) / 0x189) * -0x312;
+       unsigned_short_src[785] + (ushort)(byte)(unsigned_short_src[785] / 0x312) * -0x312;
   unsigned_short_dest[786] = unsigned_short_src[786] % 0x313;
   unsigned_short_dest[787] = unsigned_short_src[787] % 0x314;
   unsigned_short_dest[788] = unsigned_short_src[788] % 0x315;
   unsigned_short_dest[789] = unsigned_short_src[789] % 0x316;
+  uVar1 = (uint)unsigned_short_src[790] * 0x4b69 >> 0x10;
   unsigned_short_dest[790] =
        unsigned_short_src[790] +
-       (short)(((unsigned_short_src[790] - uVar78 & 0xfffe) >> 1) + uVar78 >> 9) * -0x317;
+       (short)(((unsigned_short_src[790] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x317;
   unsigned_short_dest[791] = unsigned_short_src[791] % 0x318;
+  uVar1 = (uint)unsigned_short_src[792] * 0x4a93 >> 0x10;
   unsigned_short_dest[792] =
        unsigned_short_src[792] +
-       (short)(((unsigned_short_src[792] - uVar79 & 0xfffe) >> 1) + uVar79 >> 9) * -0x319;
+       (short)(((unsigned_short_src[792] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x319;
   unsigned_short_dest[793] = unsigned_short_src[793] % 0x31a;
   unsigned_short_dest[794] = unsigned_short_src[794] % 0x31b;
   unsigned_short_dest[795] = unsigned_short_src[795] % 0x31c;
   unsigned_short_dest[796] = unsigned_short_src[796] % 0x31d;
   unsigned_short_dest[797] =
-       unsigned_short_src[797] + ((unsigned_short_src[797] >> 1) / 399) * -0x31e;
+       unsigned_short_src[797] + (ushort)(byte)(unsigned_short_src[797] / 0x31e) * -0x31e;
   unsigned_short_dest[798] = unsigned_short_src[798] % 799;
-  unsigned_short_dest[799] =
-       unsigned_short_src[799] + ((unsigned_short_src[799] >> 5) / 0x19) * -800;
+  unsigned_short_dest[799] = unsigned_short_src[799] % 800;
   unsigned_short_dest[800] = unsigned_short_src[800] % 0x321;
   unsigned_short_dest[801] = unsigned_short_src[801] % 0x322;
+  uVar1 = (uint)unsigned_short_src[802] * 0x4675 >> 0x10;
   unsigned_short_dest[802] =
        unsigned_short_src[802] +
-       (short)(((unsigned_short_src[802] - uVar80 & 0xfffe) >> 1) + uVar80 >> 9) * -0x323;
+       (short)(((unsigned_short_src[802] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x323;
   unsigned_short_dest[803] = unsigned_short_src[803] % 0x324;
   unsigned_short_dest[804] = unsigned_short_src[804] % 0x325;
   unsigned_short_dest[805] = unsigned_short_src[805] % 0x326;
+  uVar1 = (uint)unsigned_short_src[806] * 0x44d7 >> 0x10;
   unsigned_short_dest[806] =
        unsigned_short_src[806] +
-       (short)(((unsigned_short_src[806] - uVar81 & 0xfffe) >> 1) + uVar81 >> 9) * -0x327;
+       (short)(((unsigned_short_src[806] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x327;
   unsigned_short_dest[807] = unsigned_short_src[807] % 0x328;
   unsigned_short_dest[808] = unsigned_short_src[808] % 0x329;
-  unsigned_short_dest[809] =
-       unsigned_short_src[809] + ((unsigned_short_src[809] >> 1) / 0x195) * -0x32a;
+  unsigned_short_dest[809] = unsigned_short_src[809] % 0x32a;
+  uVar1 = (uint)unsigned_short_src[810] * 0x433d >> 0x10;
   unsigned_short_dest[810] =
        unsigned_short_src[810] +
-       (short)(((unsigned_short_src[810] - uVar82 & 0xfffe) >> 1) + uVar82 >> 9) * -0x32b;
-  unsigned_short_dest[811] =
-       unsigned_short_src[811] + ((unsigned_short_src[811] >> 2) / 0xcb) * -0x32c;
+       (short)(((unsigned_short_src[810] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x32b;
+  unsigned_short_dest[811] = unsigned_short_src[811] % 0x32c;
+  uVar1 = (uint)unsigned_short_src[812] * 0x4271 >> 0x10;
   unsigned_short_dest[812] =
        unsigned_short_src[812] +
-       (short)(((unsigned_short_src[812] - uVar83 & 0xfffe) >> 1) + uVar83 >> 9) * -0x32d;
+       (short)(((unsigned_short_src[812] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x32d;
   unsigned_short_dest[813] = unsigned_short_src[813] % 0x32e;
+  uVar1 = (uint)unsigned_short_src[814] * 0x41a7 >> 0x10;
   unsigned_short_dest[814] =
        unsigned_short_src[814] +
-       (short)(((unsigned_short_src[814] - uVar84 & 0xfffe) >> 1) + uVar84 >> 9) * -0x32f;
+       (short)(((unsigned_short_src[814] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x32f;
   unsigned_short_dest[815] = unsigned_short_src[815] % 0x330;
+  uVar1 = (uint)unsigned_short_src[816] * 0x40dd >> 0x10;
   unsigned_short_dest[816] =
        unsigned_short_src[816] +
-       (short)(((unsigned_short_src[816] - uVar85 & 0xfffe) >> 1) + uVar85 >> 9) * -0x331;
+       (short)(((unsigned_short_src[816] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x331;
   unsigned_short_dest[817] =
-       unsigned_short_src[817] + ((unsigned_short_src[817] >> 1) / 0x199) * -0x332;
+       unsigned_short_src[817] + (ushort)(byte)(unsigned_short_src[817] / 0x332) * -0x332;
+  uVar1 = (uint)unsigned_short_src[818] * 0x4015 >> 0x10;
   unsigned_short_dest[818] =
        unsigned_short_src[818] +
-       (short)(((unsigned_short_src[818] - uVar86 & 0xfffe) >> 1) + uVar86 >> 9) * -0x333;
-  unsigned_short_dest[819] =
-       unsigned_short_src[819] + ((unsigned_short_src[819] >> 2) / 0xcd) * -0x334;
+       (short)(((unsigned_short_src[818] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x333;
+  unsigned_short_dest[819] = unsigned_short_src[819] % 0x334;
+  uVar1 = (uint)unsigned_short_src[820] * 0x3f4d >> 0x10;
   unsigned_short_dest[820] =
        unsigned_short_src[820] +
-       (short)(((unsigned_short_src[820] - uVar87 & 0xfffe) >> 1) + uVar87 >> 9) * -0x335;
+       (short)(((unsigned_short_src[820] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x335;
   unsigned_short_dest[821] = unsigned_short_src[821] % 0x336;
   unsigned_short_dest[822] = unsigned_short_src[822] % 0x337;
   unsigned_short_dest[823] = unsigned_short_src[823] % 0x338;
+  uVar1 = (uint)unsigned_short_src[824] * 0x3dc1 >> 0x10;
   unsigned_short_dest[824] =
        unsigned_short_src[824] +
-       (short)(((unsigned_short_src[824] - uVar88 & 0xfffe) >> 1) + uVar88 >> 9) * -0x339;
+       (short)(((unsigned_short_src[824] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x339;
   unsigned_short_dest[825] = unsigned_short_src[825] % 0x33a;
   unsigned_short_dest[826] = unsigned_short_src[826] % 0x33b;
   unsigned_short_dest[827] = unsigned_short_src[827] % 0x33c;
   unsigned_short_dest[828] = unsigned_short_src[828] % 0x33d;
-  unsigned_short_dest[829] =
-       unsigned_short_src[829] + ((unsigned_short_src[829] >> 1) / 0x19f) * -0x33e;
+  unsigned_short_dest[829] = unsigned_short_src[829] % 0x33e;
   unsigned_short_dest[830] =
        unsigned_short_src[830] + (ushort)((uint)unsigned_short_src[830] * 0x9dbb >> 0x19) * -0x33f;
   unsigned_short_dest[831] = unsigned_short_src[831] % 0x340;
   unsigned_short_dest[832] = unsigned_short_src[832] % 0x341;
-  unsigned_short_dest[833] =
-       unsigned_short_src[833] + ((unsigned_short_src[833] >> 1) / 0x1a1) * -0x342;
+  unsigned_short_dest[833] = unsigned_short_src[833] % 0x342;
   unsigned_short_dest[834] = unsigned_short_src[834] % 0x343;
   unsigned_short_dest[835] = unsigned_short_src[835] % 0x344;
   unsigned_short_dest[836] = unsigned_short_src[836] % 0x345;
-  unsigned_short_dest[837] =
-       unsigned_short_src[837] + ((unsigned_short_src[837] >> 1) / 0x1a3) * -0x346;
+  unsigned_short_dest[837] = unsigned_short_src[837] % 0x346;
+  uVar1 = (uint)unsigned_short_src[838] * 0x3873 >> 0x10;
   unsigned_short_dest[838] =
        unsigned_short_src[838] +
-       (short)(((unsigned_short_src[838] - uVar89 & 0xfffe) >> 1) + uVar89 >> 9) * -0x347;
+       (short)(((unsigned_short_src[838] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x347;
   unsigned_short_dest[839] = unsigned_short_src[839] % 0x348;
+  uVar1 = (uint)unsigned_short_src[840] * 0x37b5 >> 0x10;
   unsigned_short_dest[840] =
        unsigned_short_src[840] +
-       (short)(((unsigned_short_src[840] - uVar90 & 0xfffe) >> 1) + uVar90 >> 9) * -0x349;
+       (short)(((unsigned_short_src[840] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x349;
   unsigned_short_dest[841] = unsigned_short_src[841] % 0x34a;
   unsigned_short_dest[842] = unsigned_short_src[842] % 0x34b;
   unsigned_short_dest[843] = unsigned_short_src[843] % 0x34c;
+  uVar1 = (uint)unsigned_short_src[844] * 0x363b >> 0x10;
   unsigned_short_dest[844] =
        unsigned_short_src[844] +
-       (short)(((unsigned_short_src[844] - uVar91 & 0xfffe) >> 1) + uVar91 >> 9) * -0x34d;
+       (short)(((unsigned_short_src[844] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x34d;
   unsigned_short_dest[845] = unsigned_short_src[845] % 0x34e;
   unsigned_short_dest[846] =
        unsigned_short_src[846] + (ushort)((uint)unsigned_short_src[846] * 0x26b >> 0x13) * -0x34f;
   unsigned_short_dest[847] = unsigned_short_src[847] % 0x350;
+  uVar1 = (uint)unsigned_short_src[848] * 0x34c5 >> 0x10;
   unsigned_short_dest[848] =
        unsigned_short_src[848] +
-       (short)(((unsigned_short_src[848] - uVar92 & 0xfffe) >> 1) + uVar92 >> 9) * -0x351;
+       (short)(((unsigned_short_src[848] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x351;
   unsigned_short_dest[849] = unsigned_short_src[849] % 0x352;
   unsigned_short_dest[850] = unsigned_short_src[850] % 0x353;
-  unsigned_short_dest[851] =
-       unsigned_short_src[851] + ((unsigned_short_src[851] >> 2) / 0xd5) * -0x354;
+  unsigned_short_dest[851] = unsigned_short_src[851] % 0x354;
   unsigned_short_dest[852] = unsigned_short_src[852] % 0x355;
   unsigned_short_dest[853] = unsigned_short_src[853] % 0x356;
   unsigned_short_dest[854] = unsigned_short_src[854] % 0x357;
-  unsigned_short_dest[855] =
-       unsigned_short_src[855] + ((unsigned_short_src[855] >> 3) / 0x6b) * -0x358;
+  unsigned_short_dest[855] = unsigned_short_src[855] % 0x358;
+  uVar1 = (uint)unsigned_short_src[856] * 0x31e3 >> 0x10;
   unsigned_short_dest[856] =
        unsigned_short_src[856] +
-       (short)(((unsigned_short_src[856] - uVar93 & 0xfffe) >> 1) + uVar93 >> 9) * -0x359;
+       (short)(((unsigned_short_src[856] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x359;
   unsigned_short_dest[857] = unsigned_short_src[857] % 0x35a;
+  uVar1 = (uint)unsigned_short_src[858] * 0x312d >> 0x10;
   unsigned_short_dest[858] =
        unsigned_short_src[858] +
-       (short)(((unsigned_short_src[858] - uVar94 & 0xfffe) >> 1) + uVar94 >> 9) * -0x35b;
+       (short)(((unsigned_short_src[858] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x35b;
   unsigned_short_dest[859] = unsigned_short_src[859] % 0x35c;
   unsigned_short_dest[860] = unsigned_short_src[860] % 0x35d;
   unsigned_short_dest[861] =
-       unsigned_short_src[861] + ((unsigned_short_src[861] >> 1) / 0x1af) * -0x35e;
+       unsigned_short_src[861] + (ushort)(byte)(unsigned_short_src[861] / 0x35e) * -0x35e;
+  uVar1 = (uint)unsigned_short_src[862] * 0x2fc3 >> 0x10;
   unsigned_short_dest[862] =
        unsigned_short_src[862] +
-       (short)(((unsigned_short_src[862] - uVar95 & 0xfffe) >> 1) + uVar95 >> 9) * -0x35f;
-  unsigned_short_dest[863] =
-       unsigned_short_src[863] + ((unsigned_short_src[863] >> 5) / 0x1b) * -0x360;
+       (short)(((unsigned_short_src[862] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x35f;
+  unsigned_short_dest[863] = unsigned_short_src[863] % 0x360;
+  uVar1 = (uint)unsigned_short_src[864] * 0x2f0f >> 0x10;
   unsigned_short_dest[864] =
        unsigned_short_src[864] +
-       (short)(((unsigned_short_src[864] - uVar96 & 0xfffe) >> 1) + uVar96 >> 9) * -0x361;
+       (short)(((unsigned_short_src[864] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x361;
   unsigned_short_dest[865] = unsigned_short_src[865] % 0x362;
   unsigned_short_dest[866] = unsigned_short_src[866] % 0x363;
-  unsigned_short_dest[867] =
-       unsigned_short_src[867] + ((unsigned_short_src[867] >> 2) / 0xd9) * -0x364;
+  unsigned_short_dest[867] = unsigned_short_src[867] % 0x364;
   unsigned_short_dest[868] = unsigned_short_src[868] % 0x365;
   unsigned_short_dest[869] =
-       unsigned_short_src[869] + ((unsigned_short_src[869] >> 1) / 0x1b3) * -0x366;
+       unsigned_short_src[869] + (ushort)(byte)(unsigned_short_src[869] / 0x366) * -0x366;
+  uVar1 = (uint)unsigned_short_src[870] * 0x2cf9 >> 0x10;
   unsigned_short_dest[870] =
        unsigned_short_src[870] +
-       (short)(((unsigned_short_src[870] - uVar97 & 0xfffe) >> 1) + uVar97 >> 9) * -0x367;
+       (short)(((unsigned_short_src[870] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x367;
   unsigned_short_dest[871] = unsigned_short_src[871] % 0x368;
   unsigned_short_dest[872] = unsigned_short_src[872] % 0x369;
   unsigned_short_dest[873] = unsigned_short_src[873] % 0x36a;
   unsigned_short_dest[874] = unsigned_short_src[874] % 0x36b;
-  unsigned_short_dest[875] =
-       unsigned_short_src[875] + ((unsigned_short_src[875] >> 2) / 0xdb) * -0x36c;
+  unsigned_short_dest[875] = unsigned_short_src[875] % 0x36c;
   unsigned_short_dest[876] = unsigned_short_src[876] % 0x36d;
   unsigned_short_dest[877] = unsigned_short_src[877] % 0x36e;
   unsigned_short_dest[878] =
-       unsigned_short_src[878] + (ushort)((uint)unsigned_short_src[878] * 0x4a8f >> 0x18) * -0x36f;
-  unsigned_short_dest[879] =
-       unsigned_short_src[879] + ((unsigned_short_src[879] >> 4) / 0x37) * -0x370;
+       unsigned_short_src[878] +
+       (ushort)(byte)((uint)unsigned_short_src[878] * 0x4a8f >> 0x18) * -0x36f;
+  unsigned_short_dest[879] = unsigned_short_src[879] % 0x370;
   unsigned_short_dest[880] = unsigned_short_src[880] % 0x371;
   unsigned_short_dest[881] = unsigned_short_src[881] % 0x372;
   unsigned_short_dest[882] = unsigned_short_src[882] % 0x373;
   unsigned_short_dest[883] = unsigned_short_src[883] % 0x374;
   unsigned_short_dest[884] = unsigned_short_src[884] % 0x375;
   unsigned_short_dest[885] = unsigned_short_src[885] % 0x376;
+  uVar1 = (uint)unsigned_short_src[886] * 0x278b >> 0x10;
   unsigned_short_dest[886] =
        unsigned_short_src[886] +
-       (short)(((unsigned_short_src[886] - uVar98 & 0xfffe) >> 1) + uVar98 >> 9) * -0x377;
+       (short)(((unsigned_short_src[886] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x377;
   unsigned_short_dest[887] = unsigned_short_src[887] % 0x378;
+  uVar1 = (uint)unsigned_short_src[888] * 0x26e1 >> 0x10;
   unsigned_short_dest[888] =
        unsigned_short_src[888] +
-       (short)(((unsigned_short_src[888] - uVar99 & 0xfffe) >> 1) + uVar99 >> 9) * -0x379;
+       (short)(((unsigned_short_src[888] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x379;
   unsigned_short_dest[889] = unsigned_short_src[889] % 0x37a;
+  uVar1 = (uint)unsigned_short_src[890] * 0x2637 >> 0x10;
   unsigned_short_dest[890] =
        unsigned_short_src[890] +
-       (short)(((unsigned_short_src[890] - uVar100 & 0xfffe) >> 1) + uVar100 >> 9) * -0x37b;
-  unsigned_short_dest[891] =
-       unsigned_short_src[891] + ((unsigned_short_src[891] >> 2) / 0xdf) * -0x37c;
+       (short)(((unsigned_short_src[890] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x37b;
+  unsigned_short_dest[891] = unsigned_short_src[891] % 0x37c;
   unsigned_short_dest[892] = unsigned_short_src[892] % 0x37d;
   unsigned_short_dest[893] = unsigned_short_src[893] % 0x37e;
   unsigned_short_dest[894] = unsigned_short_src[894] % 0x37f;
-  unsigned_short_dest[895] = unsigned_short_src[895] + ((unsigned_short_src[895] >> 7) / 7) * -0x380
-  ;
+  unsigned_short_dest[895] = unsigned_short_src[895] % 0x380;
+  uVar1 = (uint)unsigned_short_src[896] * 0x243f >> 0x10;
   unsigned_short_dest[896] =
        unsigned_short_src[896] +
-       (short)(((unsigned_short_src[896] - uVar101 & 0xfffe) >> 1) + uVar101 >> 9) * -0x381;
+       (short)(((unsigned_short_src[896] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x381;
   unsigned_short_dest[897] = unsigned_short_src[897] % 0x382;
+  uVar1 = (uint)unsigned_short_src[898] * 0x2399 >> 0x10;
   unsigned_short_dest[898] =
        unsigned_short_src[898] +
-       (short)(((unsigned_short_src[898] - uVar102 & 0xfffe) >> 1) + uVar102 >> 9) * -899;
+       (short)(((unsigned_short_src[898] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -899;
   unsigned_short_dest[899] = unsigned_short_src[899] % 900;
+  uVar1 = (uint)unsigned_short_src[900] * 0x22f3 >> 0x10;
   unsigned_short_dest[900] =
        unsigned_short_src[900] +
-       (short)(((unsigned_short_src[900] - uVar103 & 0xfffe) >> 1) + uVar103 >> 9) * -0x385;
+       (short)(((unsigned_short_src[900] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x385;
   unsigned_short_dest[901] =
-       unsigned_short_src[901] + ((unsigned_short_src[901] >> 1) / 0x1c3) * -0x386;
+       unsigned_short_src[901] + (ushort)(byte)(unsigned_short_src[901] / 0x386) * -0x386;
   unsigned_short_dest[902] = unsigned_short_src[902] % 0x387;
   unsigned_short_dest[903] = unsigned_short_src[903] % 0x388;
   unsigned_short_dest[904] = unsigned_short_src[904] % 0x389;
   unsigned_short_dest[905] = unsigned_short_src[905] % 0x38a;
   unsigned_short_dest[906] = unsigned_short_src[906] % 0x38b;
-  unsigned_short_dest[907] =
-       unsigned_short_src[907] + ((unsigned_short_src[907] >> 2) / 0xe3) * -0x38c;
+  unsigned_short_dest[907] = unsigned_short_src[907] % 0x38c;
   unsigned_short_dest[908] = unsigned_short_src[908] % 0x38d;
-  unsigned_short_dest[909] =
-       unsigned_short_src[909] + ((unsigned_short_src[909] >> 1) / 0x1c7) * -0x38e;
+  unsigned_short_dest[909] = unsigned_short_src[909] % 0x38e;
   unsigned_short_dest[910] = unsigned_short_src[910] % 0x38f;
-  unsigned_short_dest[911] =
-       unsigned_short_src[911] + ((unsigned_short_src[911] >> 4) / 0x39) * -0x390;
+  unsigned_short_dest[911] = unsigned_short_src[911] % 0x390;
   unsigned_short_dest[912] = unsigned_short_src[912] % 0x391;
   unsigned_short_dest[913] = unsigned_short_src[913] % 0x392;
   unsigned_short_dest[914] =
@@ -27955,200 +25702,212 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[916] = unsigned_short_src[916] % 0x395;
   unsigned_short_dest[917] = unsigned_short_src[917] % 0x396;
   unsigned_short_dest[918] = unsigned_short_src[918] % 0x397;
-  unsigned_short_dest[919] =
-       unsigned_short_src[919] + ((unsigned_short_src[919] >> 3) / 0x73) * -0x398;
+  unsigned_short_dest[919] = unsigned_short_src[919] % 0x398;
   unsigned_short_dest[920] = unsigned_short_src[920] % 0x399;
-  unsigned_short_dest[921] =
-       unsigned_short_src[921] + ((unsigned_short_src[921] >> 1) / 0x1cd) * -0x39a;
+  unsigned_short_dest[921] = unsigned_short_src[921] % 0x39a;
   unsigned_short_dest[922] = unsigned_short_src[922] % 0x39b;
-  unsigned_short_dest[923] =
-       unsigned_short_src[923] + ((unsigned_short_src[923] >> 2) / 0xe7) * -0x39c;
+  unsigned_short_dest[923] = unsigned_short_src[923] % 0x39c;
+  uVar1 = (uint)unsigned_short_src[924] * 0x1b67 >> 0x10;
   unsigned_short_dest[924] =
        unsigned_short_src[924] +
-       (short)(((unsigned_short_src[924] - uVar104 & 0xfffe) >> 1) + uVar104 >> 9) * -0x39d;
+       (short)(((unsigned_short_src[924] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x39d;
   unsigned_short_dest[925] = unsigned_short_src[925] % 0x39e;
   unsigned_short_dest[926] = unsigned_short_src[926] % 0x39f;
   unsigned_short_dest[927] = unsigned_short_src[927] % 0x3a0;
   unsigned_short_dest[928] = unsigned_short_src[928] % 0x3a1;
   unsigned_short_dest[929] =
-       unsigned_short_src[929] + ((unsigned_short_src[929] >> 1) / 0x1d1) * -0x3a2;
+       unsigned_short_src[929] + (ushort)(byte)(unsigned_short_src[929] / 0x3a2) * -0x3a2;
+  uVar1 = (uint)unsigned_short_src[930] * 0x1993 >> 0x10;
   unsigned_short_dest[930] =
        unsigned_short_src[930] +
-       (short)(((unsigned_short_src[930] - uVar105 & 0xfffe) >> 1) + uVar105 >> 9) * -0x3a3;
+       (short)(((unsigned_short_src[930] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3a3;
   unsigned_short_dest[931] = unsigned_short_src[931] % 0x3a4;
+  uVar1 = (uint)unsigned_short_src[932] * 0x18f9 >> 0x10;
   unsigned_short_dest[932] =
        unsigned_short_src[932] +
-       (short)(((unsigned_short_src[932] - uVar106 & 0xfffe) >> 1) + uVar106 >> 9) * -0x3a5;
+       (short)(((unsigned_short_src[932] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3a5;
   unsigned_short_dest[933] = unsigned_short_src[933] % 0x3a6;
+  uVar1 = (uint)unsigned_short_src[934] * 0x185f >> 0x10;
   unsigned_short_dest[934] =
        unsigned_short_src[934] +
-       (short)(((unsigned_short_src[934] - uVar107 & 0xfffe) >> 1) + uVar107 >> 9) * -0x3a7;
+       (short)(((unsigned_short_src[934] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3a7;
   unsigned_short_dest[935] = unsigned_short_src[935] % 0x3a8;
   unsigned_short_dest[936] = unsigned_short_src[936] % 0x3a9;
   unsigned_short_dest[937] =
-       unsigned_short_src[937] + ((unsigned_short_src[937] >> 1) / 0x1d5) * -0x3aa;
+       unsigned_short_src[937] + (ushort)(byte)(unsigned_short_src[937] / 0x3aa) * -0x3aa;
+  uVar1 = (uint)unsigned_short_src[938] * 0x172d >> 0x10;
   unsigned_short_dest[938] =
        unsigned_short_src[938] +
-       (short)(((unsigned_short_src[938] - uVar108 & 0xfffe) >> 1) + uVar108 >> 9) * -0x3ab;
-  unsigned_short_dest[939] =
-       unsigned_short_src[939] + ((unsigned_short_src[939] >> 2) / 0xeb) * -0x3ac;
+       (short)(((unsigned_short_src[938] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3ab;
+  unsigned_short_dest[939] = unsigned_short_src[939] % 0x3ac;
+  uVar1 = (uint)unsigned_short_src[940] * 0x1695 >> 0x10;
   unsigned_short_dest[940] =
        unsigned_short_src[940] +
-       (short)(((unsigned_short_src[940] - uVar109 & 0xfffe) >> 1) + uVar109 >> 9) * -0x3ad;
+       (short)(((unsigned_short_src[940] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3ad;
   unsigned_short_dest[941] =
-       unsigned_short_src[941] + ((unsigned_short_src[941] >> 1) / 0x1d7) * -0x3ae;
+       unsigned_short_src[941] + (ushort)(byte)(unsigned_short_src[941] / 0x3ae) * -0x3ae;
   unsigned_short_dest[942] = unsigned_short_src[942] % 0x3af;
   unsigned_short_dest[943] = unsigned_short_src[943] % 0x3b0;
+  uVar1 = (uint)unsigned_short_src[944] * 0x1567 >> 0x10;
   unsigned_short_dest[944] =
        unsigned_short_src[944] +
-       (short)(((unsigned_short_src[944] - uVar110 & 0xfffe) >> 1) + uVar110 >> 9) * -0x3b1;
+       (short)(((unsigned_short_src[944] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3b1;
   unsigned_short_dest[945] = unsigned_short_src[945] % 0x3b2;
+  uVar1 = (uint)unsigned_short_src[946] * 0x14d1 >> 0x10;
   unsigned_short_dest[946] =
        unsigned_short_src[946] +
-       (short)(((unsigned_short_src[946] - uVar111 & 0xfffe) >> 1) + uVar111 >> 9) * -0x3b3;
+       (short)(((unsigned_short_src[946] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3b3;
   unsigned_short_dest[947] = unsigned_short_src[947] % 0x3b4;
   unsigned_short_dest[948] = unsigned_short_src[948] % 0x3b5;
   unsigned_short_dest[949] =
        unsigned_short_src[949] + (ushort)((uint)unsigned_short_src[949] * 0x89f9 >> 0x19) * -0x3b6;
+  uVar1 = (uint)unsigned_short_src[950] * 0x13a7 >> 0x10;
   unsigned_short_dest[950] =
        unsigned_short_src[950] +
-       (short)(((unsigned_short_src[950] - uVar112 & 0xfffe) >> 1) + uVar112 >> 9) * -0x3b7;
-  unsigned_short_dest[951] =
-       unsigned_short_src[951] + ((unsigned_short_src[951] >> 3) / 0x77) * -0x3b8;
+       (short)(((unsigned_short_src[950] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3b7;
+  unsigned_short_dest[951] = unsigned_short_src[951] % 0x3b8;
+  uVar1 = (uint)unsigned_short_src[952] * 0x1313 >> 0x10;
   unsigned_short_dest[952] =
        unsigned_short_src[952] +
-       (short)(((unsigned_short_src[952] - uVar113 & 0xfffe) >> 1) + uVar113 >> 9) * -0x3b9;
+       (short)(((unsigned_short_src[952] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3b9;
   unsigned_short_dest[953] =
-       unsigned_short_src[953] + ((unsigned_short_src[953] >> 1) / 0x1dd) * -0x3ba;
+       unsigned_short_src[953] + (ushort)(byte)(unsigned_short_src[953] / 0x3ba) * -0x3ba;
   unsigned_short_dest[954] =
        unsigned_short_src[954] + (ushort)((uint)unsigned_short_src[954] * 0x225 >> 0x13) * -0x3bb;
   unsigned_short_dest[955] = unsigned_short_src[955] % 0x3bc;
+  uVar1 = (uint)unsigned_short_src[956] * 0x11ed >> 0x10;
   unsigned_short_dest[956] =
        unsigned_short_src[956] +
-       (short)(((unsigned_short_src[956] - uVar114 & 0xfffe) >> 1) + uVar114 >> 9) * -0x3bd;
+       (short)(((unsigned_short_src[956] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3bd;
   unsigned_short_dest[957] = unsigned_short_src[957] % 0x3be;
   unsigned_short_dest[958] = unsigned_short_src[958] % 0x3bf;
   unsigned_short_dest[959] = unsigned_short_src[959] % 0x3c0;
+  uVar1 = (uint)unsigned_short_src[960] * 0x10c9 >> 0x10;
   unsigned_short_dest[960] =
        unsigned_short_src[960] +
-       (short)(((unsigned_short_src[960] - uVar115 & 0xfffe) >> 1) + uVar115 >> 9) * -0x3c1;
+       (short)(((unsigned_short_src[960] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3c1;
   unsigned_short_dest[961] =
        unsigned_short_src[961] + (ushort)((uint)unsigned_short_src[961] * 0x221 >> 0x13) * -0x3c2;
   unsigned_short_dest[962] = unsigned_short_src[962] % 0x3c3;
   unsigned_short_dest[963] = unsigned_short_src[963] % 0x3c4;
+  uVar1 = (uint)unsigned_short_src[964] * 0xfa7 >> 0x10;
   unsigned_short_dest[964] =
        unsigned_short_src[964] +
-       (short)(((unsigned_short_src[964] - uVar116 & 0xfffe) >> 1) + uVar116 >> 9) * -0x3c5;
-  unsigned_short_dest[965] =
-       unsigned_short_src[965] + ((unsigned_short_src[965] >> 1) / 0x1e3) * -0x3c6;
+       (short)(((unsigned_short_src[964] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3c5;
+  unsigned_short_dest[965] = unsigned_short_src[965] % 0x3c6;
   unsigned_short_dest[966] = unsigned_short_src[966] % 0x3c7;
   unsigned_short_dest[967] = unsigned_short_src[967] % 0x3c8;
   unsigned_short_dest[968] = unsigned_short_src[968] % 0x3c9;
   unsigned_short_dest[969] =
-       unsigned_short_src[969] + ((unsigned_short_src[969] >> 1) / 0x1e5) * -0x3ca;
+       unsigned_short_src[969] + (ushort)(byte)(unsigned_short_src[969] / 0x3ca) * -0x3ca;
   unsigned_short_dest[970] = unsigned_short_src[970] % 0x3cb;
-  unsigned_short_dest[971] =
-       unsigned_short_src[971] + ((unsigned_short_src[971] >> 2) / 0xf3) * -0x3cc;
+  unsigned_short_dest[971] = unsigned_short_src[971] % 0x3cc;
   unsigned_short_dest[972] = unsigned_short_src[972] % 0x3cd;
   unsigned_short_dest[973] =
-       unsigned_short_src[973] + ((unsigned_short_src[973] >> 1) / 0x1e7) * -0x3ce;
+       unsigned_short_src[973] + (ushort)(byte)(unsigned_short_src[973] / 0x3ce) * -0x3ce;
   unsigned_short_dest[974] = unsigned_short_src[974] % 0x3cf;
   unsigned_short_dest[975] = unsigned_short_src[975] % 0x3d0;
+  uVar1 = (uint)unsigned_short_src[976] * 0xc51 >> 0x10;
   unsigned_short_dest[976] =
        unsigned_short_src[976] +
-       (short)(((unsigned_short_src[976] - uVar117 & 0xfffe) >> 1) + uVar117 >> 9) * -0x3d1;
-  unsigned_short_dest[977] =
-       unsigned_short_src[977] + ((unsigned_short_src[977] >> 1) / 0x1e9) * -0x3d2;
+       (short)(((unsigned_short_src[976] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3d1;
+  unsigned_short_dest[977] = unsigned_short_src[977] % 0x3d2;
+  uVar1 = (uint)unsigned_short_src[978] * 0xbc5 >> 0x10;
   unsigned_short_dest[978] =
        unsigned_short_src[978] +
-       (short)(((unsigned_short_src[978] - uVar118 & 0xfffe) >> 1) + uVar118 >> 9) * -0x3d3;
-  unsigned_short_dest[979] =
-       unsigned_short_src[979] + ((unsigned_short_src[979] >> 2) / 0xf5) * -0x3d4;
+       (short)(((unsigned_short_src[978] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3d3;
+  unsigned_short_dest[979] = unsigned_short_src[979] % 0x3d4;
+  uVar1 = (uint)unsigned_short_src[980] * 0xb39 >> 0x10;
   unsigned_short_dest[980] =
        unsigned_short_src[980] +
-       (short)(((unsigned_short_src[980] - uVar119 & 0xfffe) >> 1) + uVar119 >> 9) * -0x3d5;
+       (short)(((unsigned_short_src[980] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3d5;
   unsigned_short_dest[981] = unsigned_short_src[981] % 0x3d6;
   unsigned_short_dest[982] = unsigned_short_src[982] % 0x3d7;
-  unsigned_short_dest[983] =
-       unsigned_short_src[983] + ((unsigned_short_src[983] >> 3) / 0x7b) * -0x3d8;
+  unsigned_short_dest[983] = unsigned_short_src[983] % 0x3d8;
+  uVar1 = (uint)unsigned_short_src[984] * 0xa23 >> 0x10;
   unsigned_short_dest[984] =
        unsigned_short_src[984] +
-       (short)(((unsigned_short_src[984] - uVar120 & 0xfffe) >> 1) + uVar120 >> 9) * -0x3d9;
+       (short)(((unsigned_short_src[984] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3d9;
   unsigned_short_dest[985] = unsigned_short_src[985] % 0x3da;
+  uVar1 = (uint)unsigned_short_src[986] * 0x999 >> 0x10;
   unsigned_short_dest[986] =
        unsigned_short_src[986] +
-       (short)(((unsigned_short_src[986] - uVar121 & 0xfffe) >> 1) + uVar121 >> 9) * -0x3db;
+       (short)(((unsigned_short_src[986] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3db;
   unsigned_short_dest[987] = unsigned_short_src[987] % 0x3dc;
   unsigned_short_dest[988] = unsigned_short_src[988] % 0x3dd;
-  unsigned_short_dest[989] =
-       unsigned_short_src[989] + ((unsigned_short_src[989] >> 1) / 0x1ef) * -0x3de;
+  unsigned_short_dest[989] = unsigned_short_src[989] % 0x3de;
+  uVar1 = (uint)unsigned_short_src[990] * 0x887 >> 0x10;
   unsigned_short_dest[990] =
        unsigned_short_src[990] +
-       (short)(((unsigned_short_src[990] - uVar122 & 0xfffe) >> 1) + uVar122 >> 9) * -0x3df;
-  unsigned_short_dest[991] =
-       unsigned_short_src[991] + ((unsigned_short_src[991] >> 5) / 0x1f) * -0x3e0;
+       (short)(((unsigned_short_src[990] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3df;
+  unsigned_short_dest[991] = unsigned_short_src[991] % 0x3e0;
   unsigned_short_dest[992] = unsigned_short_src[992] % 0x3e1;
   unsigned_short_dest[993] = unsigned_short_src[993] % 0x3e2;
+  uVar1 = (uint)unsigned_short_src[994] * 0x777 >> 0x10;
   unsigned_short_dest[994] =
        unsigned_short_src[994] +
-       (short)(((unsigned_short_src[994] - uVar123 & 0xfffe) >> 1) + uVar123 >> 9) * -0x3e3;
-  unsigned_short_dest[995] =
-       unsigned_short_src[995] + ((unsigned_short_src[995] >> 2) / 0xf9) * -0x3e4;
+       (short)(((unsigned_short_src[994] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3e3;
+  unsigned_short_dest[995] = unsigned_short_src[995] % 0x3e4;
+  uVar1 = (uint)unsigned_short_src[996] * 0x6ef >> 0x10;
   unsigned_short_dest[996] =
        unsigned_short_src[996] +
-       (short)(((unsigned_short_src[996] - uVar124 & 0xfffe) >> 1) + uVar124 >> 9) * -0x3e5;
+       (short)(((unsigned_short_src[996] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3e5;
   unsigned_short_dest[997] = unsigned_short_src[997] % 0x3e6;
+  uVar1 = (uint)unsigned_short_src[998] * 0x669 >> 0x10;
   unsigned_short_dest[998] =
        unsigned_short_src[998] +
-       (short)(((unsigned_short_src[998] - uVar125 & 0xfffe) >> 1) + uVar125 >> 9) * -999;
-  unsigned_short_dest[999] =
-       unsigned_short_src[999] + ((unsigned_short_src[999] >> 3) / 0x7d) * -1000;
+       (short)(((unsigned_short_src[998] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -999;
+  unsigned_short_dest[999] = unsigned_short_src[999] % 1000;
   unsigned_short_dest[1000] = unsigned_short_src[1000] % 0x3e9;
-  unsigned_short_dest[1001] =
-       unsigned_short_src[1001] + ((unsigned_short_src[1001] >> 1) / 0x1f5) * -0x3ea;
+  unsigned_short_dest[1001] = unsigned_short_src[1001] % 0x3ea;
+  uVar1 = (uint)unsigned_short_src[1002] * 0x55d >> 0x10;
   unsigned_short_dest[1002] =
        unsigned_short_src[1002] +
-       (short)(((unsigned_short_src[1002] - uVar126 & 0xfffe) >> 1) + uVar126 >> 9) * -0x3eb;
+       (short)(((unsigned_short_src[1002] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3eb;
   unsigned_short_dest[1003] = unsigned_short_src[1003] % 0x3ec;
   unsigned_short_dest[1004] = unsigned_short_src[1004] % 0x3ed;
   unsigned_short_dest[1005] =
-       unsigned_short_src[1005] + ((unsigned_short_src[1005] >> 1) / 0x1f7) * -0x3ee;
+       unsigned_short_src[1005] + (ushort)(byte)(unsigned_short_src[1005] / 0x3ee) * -0x3ee;
+  uVar1 = (uint)unsigned_short_src[1006] * 0x453 >> 0x10;
   unsigned_short_dest[1006] =
        unsigned_short_src[1006] +
-       (short)(((unsigned_short_src[1006] - uVar127 & 0xfffe) >> 1) + uVar127 >> 9) * -0x3ef;
-  unsigned_short_dest[1007] =
-       unsigned_short_src[1007] + ((unsigned_short_src[1007] >> 4) / 0x3f) * -0x3f0;
+       (short)(((unsigned_short_src[1006] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3ef;
+  unsigned_short_dest[1007] = unsigned_short_src[1007] % 0x3f0;
+  uVar1 = (uint)unsigned_short_src[1008] * 0x3cf >> 0x10;
   unsigned_short_dest[1008] =
        unsigned_short_src[1008] +
-       (short)(((unsigned_short_src[1008] - uVar128 & 0xfffe) >> 1) + uVar128 >> 9) * -0x3f1;
+       (short)(((unsigned_short_src[1008] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3f1;
   unsigned_short_dest[1009] =
-       unsigned_short_src[1009] + ((unsigned_short_src[1009] >> 1) / 0x1f9) * -0x3f2;
+       unsigned_short_src[1009] + (ushort)(byte)(unsigned_short_src[1009] / 0x3f2) * -0x3f2;
+  uVar1 = (uint)unsigned_short_src[1010] * 0x34b >> 0x10;
   unsigned_short_dest[1010] =
        unsigned_short_src[1010] +
-       (short)(((unsigned_short_src[1010] - uVar129 & 0xfffe) >> 1) + uVar129 >> 9) * -0x3f3;
+       (short)(((unsigned_short_src[1010] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3f3;
   unsigned_short_dest[1011] = unsigned_short_src[1011] % 0x3f4;
   unsigned_short_dest[1012] = unsigned_short_src[1012] % 0x3f5;
-  unsigned_short_dest[1013] =
-       unsigned_short_src[1013] + ((unsigned_short_src[1013] >> 1) / 0x1fb) * -0x3f6;
+  unsigned_short_dest[1013] = unsigned_short_src[1013] % 0x3f6;
   unsigned_short_dest[1014] = unsigned_short_src[1014] % 0x3f7;
-  unsigned_short_dest[1015] =
-       unsigned_short_src[1015] + ((unsigned_short_src[1015] >> 3) / 0x7f) * -0x3f8;
+  unsigned_short_dest[1015] = unsigned_short_src[1015] % 0x3f8;
   unsigned_short_dest[1016] = unsigned_short_src[1016] % 0x3f9;
-  unsigned_short_dest[1017] =
-       unsigned_short_src[1017] + ((unsigned_short_src[1017] >> 1) / 0x1fd) * -0x3fa;
+  unsigned_short_dest[1017] = unsigned_short_src[1017] % 0x3fa;
   unsigned_short_dest[1018] = unsigned_short_src[1018] % 0x3fb;
   unsigned_short_dest[1019] = unsigned_short_src[1019] % 0x3fc;
+  uVar1 = (uint)unsigned_short_src[1020] * 0xc1 >> 0x10;
   unsigned_short_dest[1020] =
        unsigned_short_src[1020] +
-       (short)(((unsigned_short_src[1020] - uVar130 & 0xfffe) >> 1) + uVar130 >> 9) * -0x3fd;
+       (short)(((unsigned_short_src[1020] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9) * -0x3fd;
   unsigned_short_dest[1021] =
-       unsigned_short_src[1021] + ((unsigned_short_src[1021] >> 1) / 0x1ff) * -0x3fe;
-  unsigned_short_dest[1022] = unsigned_short_src[1022] - ((short)(uVar131 << 10) - (short)uVar131);
+       unsigned_short_src[1021] + (ushort)(byte)(unsigned_short_src[1021] / 0x3fe) * -0x3fe;
+  uVar1 = (uint)unsigned_short_src[1022] * 0x41 >> 0x10;
+  uVar1 = ((unsigned_short_src[1022] - uVar1 & 0xfffe) >> 1) + uVar1 >> 9;
+  unsigned_short_dest[1022] = unsigned_short_src[1022] - ((short)(uVar1 << 10) - (short)uVar1);
   unsigned_short_dest[1023] = unsigned_short_src[1023] & 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_int_add(void)
 
@@ -29182,6 +26941,8 @@ void signed_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_mult(void)
 
 {
@@ -30214,22 +27975,17 @@ void signed_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_div(void)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  
-  iVar1 = (int)((ulonglong)((longlong)signed_int_src[2] * 0x55555556) >> 0x20);
-  iVar2 = (int)((ulonglong)((longlong)signed_int_src[5] * 0x2aaaaaab) >> 0x20);
-  iVar3 = (int)((ulonglong)((longlong)signed_int_src[640] * 0x663d81) >> 0x20);
   signed_int_dest[0] = signed_int_src[0];
   signed_int_dest[1] = signed_int_src[1] / 2;
-  signed_int_dest[2] = iVar1 - (iVar1 >> 0x1f);
+  signed_int_dest[2] = signed_int_src[2] / 3;
   signed_int_dest[3] = (int)(((uint)(signed_int_src[3] >> 0x1f) >> 0x1e) + signed_int_src[3]) >> 2;
   signed_int_dest[4] = signed_int_src[4] / 5;
-  signed_int_dest[5] = iVar2 - (iVar2 >> 0x1f);
+  signed_int_dest[5] = signed_int_src[5] / 6;
   signed_int_dest[6] = signed_int_src[6] / 7;
   signed_int_dest[7] = (int)(((uint)(signed_int_src[7] >> 0x1f) >> 0x1d) + signed_int_src[7]) >> 3;
   signed_int_dest[8] = signed_int_src[8] / 9;
@@ -30870,7 +28626,7 @@ void signed_int_div(void)
   signed_int_dest[637] = signed_int_src[637] / 0x27e;
   signed_int_dest[638] = signed_int_src[638] / 0x27f;
   signed_int_dest[639] = signed_int_src[639] / 0x280;
-  signed_int_dest[640] = iVar3 - (iVar3 >> 0x1f);
+  signed_int_dest[640] = signed_int_src[640] / 0x281;
   signed_int_dest[641] = signed_int_src[641] / 0x282;
   signed_int_dest[642] = signed_int_src[642] / 0x283;
   signed_int_dest[643] = signed_int_src[643] / 0x284;
@@ -31260,12 +29016,13 @@ void signed_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_modulo(void)
 
 {
   signed_int_dest[0] = 0;
-  signed_int_dest[1] =
-       signed_int_src[1] - (signed_int_src[1] - (signed_int_src[1] >> 0x1f) & 0xfffffffeU);
+  signed_int_dest[1] = signed_int_src[1] % 2;
   signed_int_dest[2] = signed_int_src[2] % 3;
   signed_int_dest[3] = signed_int_src[3] % 4;
   signed_int_dest[4] = signed_int_src[4] % 5;
@@ -32292,6 +30049,8 @@ void signed_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_add(void)
 
@@ -33325,6 +31084,8 @@ void unsigned_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_mult(void)
 
 {
@@ -34357,6 +32118,8 @@ void unsigned_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_div(void)
 
 {
@@ -34373,7 +32136,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[10] = unsigned_int_src[10] / 0xb;
   unsigned_int_dest[11] = unsigned_int_src[11] / 0xc;
   unsigned_int_dest[12] = unsigned_int_src[12] / 0xd;
-  unsigned_int_dest[13] = (unsigned_int_src[13] >> 1) / 7;
+  unsigned_int_dest[13] = unsigned_int_src[13] / 0xe;
   unsigned_int_dest[14] = unsigned_int_src[14] / 0xf;
   unsigned_int_dest[15] = unsigned_int_src[15] >> 4;
   unsigned_int_dest[16] = unsigned_int_src[16] / 0x11;
@@ -34387,7 +32150,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[24] = unsigned_int_src[24] / 0x19;
   unsigned_int_dest[25] = unsigned_int_src[25] / 0x1a;
   unsigned_int_dest[26] = unsigned_int_src[26] / 0x1b;
-  unsigned_int_dest[27] = (unsigned_int_src[27] >> 2) / 7;
+  unsigned_int_dest[27] = unsigned_int_src[27] / 0x1c;
   unsigned_int_dest[28] = unsigned_int_src[28] / 0x1d;
   unsigned_int_dest[29] = unsigned_int_src[29] / 0x1e;
   unsigned_int_dest[30] = unsigned_int_src[30] / 0x1f;
@@ -34397,11 +32160,11 @@ void unsigned_int_div(void)
   unsigned_int_dest[34] = unsigned_int_src[34] / 0x23;
   unsigned_int_dest[35] = unsigned_int_src[35] / 0x24;
   unsigned_int_dest[36] = unsigned_int_src[36] / 0x25;
-  unsigned_int_dest[37] = (unsigned_int_src[37] >> 1) / 0x13;
+  unsigned_int_dest[37] = unsigned_int_src[37] / 0x26;
   unsigned_int_dest[38] = unsigned_int_src[38] / 0x27;
   unsigned_int_dest[39] = unsigned_int_src[39] / 0x28;
   unsigned_int_dest[40] = unsigned_int_src[40] / 0x29;
-  unsigned_int_dest[41] = (unsigned_int_src[41] >> 1) / 0x15;
+  unsigned_int_dest[41] = unsigned_int_src[41] / 0x2a;
   unsigned_int_dest[42] = unsigned_int_src[42] / 0x2b;
   unsigned_int_dest[43] = unsigned_int_src[43] / 0x2c;
   unsigned_int_dest[44] = unsigned_int_src[44] / 0x2d;
@@ -34413,15 +32176,15 @@ void unsigned_int_div(void)
   unsigned_int_dest[50] = unsigned_int_src[50] / 0x33;
   unsigned_int_dest[51] = unsigned_int_src[51] / 0x34;
   unsigned_int_dest[52] = unsigned_int_src[52] / 0x35;
-  unsigned_int_dest[53] = (unsigned_int_src[53] >> 1) / 0x1b;
+  unsigned_int_dest[53] = unsigned_int_src[53] / 0x36;
   unsigned_int_dest[54] = unsigned_int_src[54] / 0x37;
-  unsigned_int_dest[55] = (unsigned_int_src[55] >> 3) / 7;
+  unsigned_int_dest[55] = unsigned_int_src[55] / 0x38;
   unsigned_int_dest[56] = unsigned_int_src[56] / 0x39;
   unsigned_int_dest[57] = unsigned_int_src[57] / 0x3a;
   unsigned_int_dest[58] = unsigned_int_src[58] / 0x3b;
   unsigned_int_dest[59] = unsigned_int_src[59] / 0x3c;
   unsigned_int_dest[60] = unsigned_int_src[60] / 0x3d;
-  unsigned_int_dest[61] = (unsigned_int_src[61] >> 1) / 0x1f;
+  unsigned_int_dest[61] = unsigned_int_src[61] / 0x3e;
   unsigned_int_dest[62] = unsigned_int_src[62] / 0x3f;
   unsigned_int_dest[63] = unsigned_int_src[63] >> 6;
   unsigned_int_dest[64] = unsigned_int_src[64] / 0x41;
@@ -34429,27 +32192,27 @@ void unsigned_int_div(void)
   unsigned_int_dest[66] = unsigned_int_src[66] / 0x43;
   unsigned_int_dest[67] = unsigned_int_src[67] / 0x44;
   unsigned_int_dest[68] = unsigned_int_src[68] / 0x45;
-  unsigned_int_dest[69] = (unsigned_int_src[69] >> 1) / 0x23;
+  unsigned_int_dest[69] = unsigned_int_src[69] / 0x46;
   unsigned_int_dest[70] = unsigned_int_src[70] / 0x47;
   unsigned_int_dest[71] = unsigned_int_src[71] / 0x48;
   unsigned_int_dest[72] = unsigned_int_src[72] / 0x49;
-  unsigned_int_dest[73] = (unsigned_int_src[73] >> 1) / 0x25;
+  unsigned_int_dest[73] = unsigned_int_src[73] / 0x4a;
   unsigned_int_dest[74] = unsigned_int_src[74] / 0x4b;
-  unsigned_int_dest[75] = (unsigned_int_src[75] >> 2) / 0x13;
+  unsigned_int_dest[75] = unsigned_int_src[75] / 0x4c;
   unsigned_int_dest[76] = unsigned_int_src[76] / 0x4d;
-  unsigned_int_dest[77] = (unsigned_int_src[77] >> 1) / 0x27;
+  unsigned_int_dest[77] = unsigned_int_src[77] / 0x4e;
   unsigned_int_dest[78] = unsigned_int_src[78] / 0x4f;
   unsigned_int_dest[79] = unsigned_int_src[79] / 0x50;
   unsigned_int_dest[80] = unsigned_int_src[80] / 0x51;
   unsigned_int_dest[81] = unsigned_int_src[81] / 0x52;
   unsigned_int_dest[82] = unsigned_int_src[82] / 0x53;
-  unsigned_int_dest[83] = (unsigned_int_src[83] >> 2) / 0x15;
+  unsigned_int_dest[83] = unsigned_int_src[83] / 0x54;
   unsigned_int_dest[84] = unsigned_int_src[84] / 0x55;
   unsigned_int_dest[85] = unsigned_int_src[85] / 0x56;
   unsigned_int_dest[86] = unsigned_int_src[86] / 0x57;
   unsigned_int_dest[87] = unsigned_int_src[87] / 0x58;
   unsigned_int_dest[88] = unsigned_int_src[88] / 0x59;
-  unsigned_int_dest[89] = (unsigned_int_src[89] >> 1) / 0x2d;
+  unsigned_int_dest[89] = unsigned_int_src[89] / 0x5a;
   unsigned_int_dest[90] = unsigned_int_src[90] / 0x5b;
   unsigned_int_dest[91] = unsigned_int_src[91] / 0x5c;
   unsigned_int_dest[92] = unsigned_int_src[92] / 0x5d;
@@ -34465,15 +32228,15 @@ void unsigned_int_div(void)
   unsigned_int_dest[102] = unsigned_int_src[102] / 0x67;
   unsigned_int_dest[103] = unsigned_int_src[103] / 0x68;
   unsigned_int_dest[104] = unsigned_int_src[104] / 0x69;
-  unsigned_int_dest[105] = (unsigned_int_src[105] >> 1) / 0x35;
+  unsigned_int_dest[105] = unsigned_int_src[105] / 0x6a;
   unsigned_int_dest[106] = unsigned_int_src[106] / 0x6b;
-  unsigned_int_dest[107] = (unsigned_int_src[107] >> 2) / 0x1b;
+  unsigned_int_dest[107] = unsigned_int_src[107] / 0x6c;
   unsigned_int_dest[108] = unsigned_int_src[108] / 0x6d;
-  unsigned_int_dest[109] = (unsigned_int_src[109] >> 1) / 0x37;
+  unsigned_int_dest[109] = unsigned_int_src[109] / 0x6e;
   unsigned_int_dest[110] = unsigned_int_src[110] / 0x6f;
-  unsigned_int_dest[111] = (unsigned_int_src[111] >> 4) / 7;
+  unsigned_int_dest[111] = unsigned_int_src[111] / 0x70;
   unsigned_int_dest[112] = unsigned_int_src[112] / 0x71;
-  unsigned_int_dest[113] = (unsigned_int_src[113] >> 1) / 0x39;
+  unsigned_int_dest[113] = unsigned_int_src[113] / 0x72;
   unsigned_int_dest[114] = unsigned_int_src[114] / 0x73;
   unsigned_int_dest[115] = unsigned_int_src[115] / 0x74;
   unsigned_int_dest[116] = unsigned_int_src[116] / 0x75;
@@ -34483,9 +32246,9 @@ void unsigned_int_div(void)
   unsigned_int_dest[120] = unsigned_int_src[120] / 0x79;
   unsigned_int_dest[121] = unsigned_int_src[121] / 0x7a;
   unsigned_int_dest[122] = unsigned_int_src[122] / 0x7b;
-  unsigned_int_dest[123] = (unsigned_int_src[123] >> 2) / 0x1f;
+  unsigned_int_dest[123] = unsigned_int_src[123] / 0x7c;
   unsigned_int_dest[124] = unsigned_int_src[124] / 0x7d;
-  unsigned_int_dest[125] = (unsigned_int_src[125] >> 1) / 0x3f;
+  unsigned_int_dest[125] = unsigned_int_src[125] / 0x7e;
   unsigned_int_dest[126] = unsigned_int_src[126] / 0x7f;
   unsigned_int_dest[127] = unsigned_int_src[127] >> 7;
   unsigned_int_dest[128] = unsigned_int_src[128] / 0x81;
@@ -34499,23 +32262,23 @@ void unsigned_int_div(void)
   unsigned_int_dest[136] = unsigned_int_src[136] / 0x89;
   unsigned_int_dest[137] = unsigned_int_src[137] / 0x8a;
   unsigned_int_dest[138] = unsigned_int_src[138] / 0x8b;
-  unsigned_int_dest[139] = (unsigned_int_src[139] >> 2) / 0x23;
+  unsigned_int_dest[139] = unsigned_int_src[139] / 0x8c;
   unsigned_int_dest[140] = unsigned_int_src[140] / 0x8d;
   unsigned_int_dest[141] = unsigned_int_src[141] / 0x8e;
   unsigned_int_dest[142] = unsigned_int_src[142] / 0x8f;
   unsigned_int_dest[143] = unsigned_int_src[143] / 0x90;
   unsigned_int_dest[144] = unsigned_int_src[144] / 0x91;
-  unsigned_int_dest[145] = (unsigned_int_src[145] >> 1) / 0x49;
+  unsigned_int_dest[145] = unsigned_int_src[145] / 0x92;
   unsigned_int_dest[146] = unsigned_int_src[146] / 0x93;
-  unsigned_int_dest[147] = (unsigned_int_src[147] >> 2) / 0x25;
+  unsigned_int_dest[147] = unsigned_int_src[147] / 0x94;
   unsigned_int_dest[148] = unsigned_int_src[148] / 0x95;
   unsigned_int_dest[149] = unsigned_int_src[149] / 0x96;
   unsigned_int_dest[150] = unsigned_int_src[150] / 0x97;
-  unsigned_int_dest[151] = (unsigned_int_src[151] >> 3) / 0x13;
+  unsigned_int_dest[151] = unsigned_int_src[151] / 0x98;
   unsigned_int_dest[152] = unsigned_int_src[152] / 0x99;
   unsigned_int_dest[153] = unsigned_int_src[153] / 0x9a;
   unsigned_int_dest[154] = unsigned_int_src[154] / 0x9b;
-  unsigned_int_dest[155] = (unsigned_int_src[155] >> 2) / 0x27;
+  unsigned_int_dest[155] = unsigned_int_src[155] / 0x9c;
   unsigned_int_dest[156] = unsigned_int_src[156] / 0x9d;
   unsigned_int_dest[157] = unsigned_int_src[157] / 0x9e;
   unsigned_int_dest[158] = unsigned_int_src[158] / 0x9f;
@@ -34527,7 +32290,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[164] = unsigned_int_src[164] / 0xa5;
   unsigned_int_dest[165] = unsigned_int_src[165] / 0xa6;
   unsigned_int_dest[166] = unsigned_int_src[166] / 0xa7;
-  unsigned_int_dest[167] = (unsigned_int_src[167] >> 3) / 0x15;
+  unsigned_int_dest[167] = unsigned_int_src[167] / 0xa8;
   unsigned_int_dest[168] = unsigned_int_src[168] / 0xa9;
   unsigned_int_dest[169] = unsigned_int_src[169] / 0xaa;
   unsigned_int_dest[170] = unsigned_int_src[170] / 0xab;
@@ -34539,9 +32302,9 @@ void unsigned_int_div(void)
   unsigned_int_dest[176] = unsigned_int_src[176] / 0xb1;
   unsigned_int_dest[177] = unsigned_int_src[177] / 0xb2;
   unsigned_int_dest[178] = unsigned_int_src[178] / 0xb3;
-  unsigned_int_dest[179] = (unsigned_int_src[179] >> 2) / 0x2d;
+  unsigned_int_dest[179] = unsigned_int_src[179] / 0xb4;
   unsigned_int_dest[180] = unsigned_int_src[180] / 0xb5;
-  unsigned_int_dest[181] = (unsigned_int_src[181] >> 1) / 0x5b;
+  unsigned_int_dest[181] = unsigned_int_src[181] / 0xb6;
   unsigned_int_dest[182] = unsigned_int_src[182] / 0xb7;
   unsigned_int_dest[183] = unsigned_int_src[183] / 0xb8;
   unsigned_int_dest[184] = unsigned_int_src[184] / 0xb9;
@@ -34549,11 +32312,11 @@ void unsigned_int_div(void)
   unsigned_int_dest[186] = unsigned_int_src[186] / 0xbb;
   unsigned_int_dest[187] = unsigned_int_src[187] / 0xbc;
   unsigned_int_dest[188] = unsigned_int_src[188] / 0xbd;
-  unsigned_int_dest[189] = (unsigned_int_src[189] >> 1) / 0x5f;
+  unsigned_int_dest[189] = unsigned_int_src[189] / 0xbe;
   unsigned_int_dest[190] = unsigned_int_src[190] / 0xbf;
   unsigned_int_dest[191] = unsigned_int_src[191] / 0xc0;
   unsigned_int_dest[192] = unsigned_int_src[192] / 0xc1;
-  unsigned_int_dest[193] = (unsigned_int_src[193] >> 1) / 0x61;
+  unsigned_int_dest[193] = unsigned_int_src[193] / 0xc2;
   unsigned_int_dest[194] = unsigned_int_src[194] / 0xc3;
   unsigned_int_dest[195] = unsigned_int_src[195] / 0xc4;
   unsigned_int_dest[196] = unsigned_int_src[196] / 0xc5;
@@ -34561,39 +32324,39 @@ void unsigned_int_div(void)
   unsigned_int_dest[198] = unsigned_int_src[198] / 199;
   unsigned_int_dest[199] = unsigned_int_src[199] / 200;
   unsigned_int_dest[200] = unsigned_int_src[200] / 0xc9;
-  unsigned_int_dest[201] = (unsigned_int_src[201] >> 1) / 0x65;
+  unsigned_int_dest[201] = unsigned_int_src[201] / 0xca;
   unsigned_int_dest[202] = unsigned_int_src[202] / 0xcb;
   unsigned_int_dest[203] = unsigned_int_src[203] / 0xcc;
   unsigned_int_dest[204] = unsigned_int_src[204] / 0xcd;
-  unsigned_int_dest[205] = (unsigned_int_src[205] >> 1) / 0x67;
+  unsigned_int_dest[205] = unsigned_int_src[205] / 0xce;
   unsigned_int_dest[206] = unsigned_int_src[206] / 0xcf;
   unsigned_int_dest[207] = unsigned_int_src[207] / 0xd0;
   unsigned_int_dest[208] = unsigned_int_src[208] / 0xd1;
-  unsigned_int_dest[209] = (unsigned_int_src[209] >> 1) / 0x69;
+  unsigned_int_dest[209] = unsigned_int_src[209] / 0xd2;
   unsigned_int_dest[210] = unsigned_int_src[210] / 0xd3;
-  unsigned_int_dest[211] = (unsigned_int_src[211] >> 2) / 0x35;
+  unsigned_int_dest[211] = unsigned_int_src[211] / 0xd4;
   unsigned_int_dest[212] = unsigned_int_src[212] / 0xd5;
-  unsigned_int_dest[213] = (unsigned_int_src[213] >> 1) / 0x6b;
+  unsigned_int_dest[213] = unsigned_int_src[213] / 0xd6;
   unsigned_int_dest[214] = unsigned_int_src[214] / 0xd7;
-  unsigned_int_dest[215] = (unsigned_int_src[215] >> 3) / 0x1b;
+  unsigned_int_dest[215] = unsigned_int_src[215] / 0xd8;
   unsigned_int_dest[216] = unsigned_int_src[216] / 0xd9;
-  unsigned_int_dest[217] = (unsigned_int_src[217] >> 1) / 0x6d;
+  unsigned_int_dest[217] = unsigned_int_src[217] / 0xda;
   unsigned_int_dest[218] = unsigned_int_src[218] / 0xdb;
-  unsigned_int_dest[219] = (unsigned_int_src[219] >> 2) / 0x37;
+  unsigned_int_dest[219] = unsigned_int_src[219] / 0xdc;
   unsigned_int_dest[220] = unsigned_int_src[220] / 0xdd;
-  unsigned_int_dest[221] = (unsigned_int_src[221] >> 1) / 0x6f;
+  unsigned_int_dest[221] = unsigned_int_src[221] / 0xde;
   unsigned_int_dest[222] = unsigned_int_src[222] / 0xdf;
-  unsigned_int_dest[223] = (unsigned_int_src[223] >> 5) / 7;
+  unsigned_int_dest[223] = unsigned_int_src[223] / 0xe0;
   unsigned_int_dest[224] = unsigned_int_src[224] / 0xe1;
-  unsigned_int_dest[225] = (unsigned_int_src[225] >> 1) / 0x71;
+  unsigned_int_dest[225] = unsigned_int_src[225] / 0xe2;
   unsigned_int_dest[226] = unsigned_int_src[226] / 0xe3;
-  unsigned_int_dest[227] = (unsigned_int_src[227] >> 2) / 0x39;
+  unsigned_int_dest[227] = unsigned_int_src[227] / 0xe4;
   unsigned_int_dest[228] = unsigned_int_src[228] / 0xe5;
-  unsigned_int_dest[229] = (unsigned_int_src[229] >> 1) / 0x73;
+  unsigned_int_dest[229] = unsigned_int_src[229] / 0xe6;
   unsigned_int_dest[230] = unsigned_int_src[230] / 0xe7;
   unsigned_int_dest[231] = unsigned_int_src[231] / 0xe8;
   unsigned_int_dest[232] = unsigned_int_src[232] / 0xe9;
-  unsigned_int_dest[233] = (unsigned_int_src[233] >> 1) / 0x75;
+  unsigned_int_dest[233] = unsigned_int_src[233] / 0xea;
   unsigned_int_dest[234] = unsigned_int_src[234] / 0xeb;
   unsigned_int_dest[235] = unsigned_int_src[235] / 0xec;
   unsigned_int_dest[236] = unsigned_int_src[236] / 0xed;
@@ -34601,19 +32364,19 @@ void unsigned_int_div(void)
   unsigned_int_dest[238] = unsigned_int_src[238] / 0xef;
   unsigned_int_dest[239] = unsigned_int_src[239] / 0xf0;
   unsigned_int_dest[240] = unsigned_int_src[240] / 0xf1;
-  unsigned_int_dest[241] = (unsigned_int_src[241] >> 1) / 0x79;
+  unsigned_int_dest[241] = unsigned_int_src[241] / 0xf2;
   unsigned_int_dest[242] = unsigned_int_src[242] / 0xf3;
   unsigned_int_dest[243] = unsigned_int_src[243] / 0xf4;
   unsigned_int_dest[244] = unsigned_int_src[244] / 0xf5;
-  unsigned_int_dest[245] = (unsigned_int_src[245] >> 1) / 0x7b;
+  unsigned_int_dest[245] = unsigned_int_src[245] / 0xf6;
   unsigned_int_dest[246] = unsigned_int_src[246] / 0xf7;
-  unsigned_int_dest[247] = (unsigned_int_src[247] >> 3) / 0x1f;
+  unsigned_int_dest[247] = unsigned_int_src[247] / 0xf8;
   unsigned_int_dest[248] = unsigned_int_src[248] / 0xf9;
   unsigned_int_dest[249] = unsigned_int_src[249] / 0xfa;
   unsigned_int_dest[250] = unsigned_int_src[250] / 0xfb;
-  unsigned_int_dest[251] = (unsigned_int_src[251] >> 2) / 0x3f;
+  unsigned_int_dest[251] = unsigned_int_src[251] / 0xfc;
   unsigned_int_dest[252] = unsigned_int_src[252] / 0xfd;
-  unsigned_int_dest[253] = (unsigned_int_src[253] >> 1) / 0x7f;
+  unsigned_int_dest[253] = unsigned_int_src[253] / 0xfe;
   unsigned_int_dest[254] = unsigned_int_src[254] / 0xff;
   unsigned_int_dest[255] = unsigned_int_src[255] >> 8;
   unsigned_int_dest[256] = unsigned_int_src[256] / 0x101;
@@ -34639,7 +32402,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[276] = unsigned_int_src[276] / 0x115;
   unsigned_int_dest[277] = unsigned_int_src[277] / 0x116;
   unsigned_int_dest[278] = unsigned_int_src[278] / 0x117;
-  unsigned_int_dest[279] = (unsigned_int_src[279] >> 3) / 0x23;
+  unsigned_int_dest[279] = unsigned_int_src[279] / 0x118;
   unsigned_int_dest[280] = unsigned_int_src[280] / 0x119;
   unsigned_int_dest[281] = unsigned_int_src[281] / 0x11a;
   unsigned_int_dest[282] = unsigned_int_src[282] / 0x11b;
@@ -34651,11 +32414,11 @@ void unsigned_int_div(void)
   unsigned_int_dest[288] = unsigned_int_src[288] / 0x121;
   unsigned_int_dest[289] = unsigned_int_src[289] / 0x122;
   unsigned_int_dest[290] = unsigned_int_src[290] / 0x123;
-  unsigned_int_dest[291] = (unsigned_int_src[291] >> 2) / 0x49;
+  unsigned_int_dest[291] = unsigned_int_src[291] / 0x124;
   unsigned_int_dest[292] = unsigned_int_src[292] / 0x125;
   unsigned_int_dest[293] = unsigned_int_src[293] / 0x126;
   unsigned_int_dest[294] = unsigned_int_src[294] / 0x127;
-  unsigned_int_dest[295] = (unsigned_int_src[295] >> 3) / 0x25;
+  unsigned_int_dest[295] = unsigned_int_src[295] / 0x128;
   unsigned_int_dest[296] = unsigned_int_src[296] / 0x129;
   unsigned_int_dest[297] = unsigned_int_src[297] / 0x12a;
   unsigned_int_dest[298] = unsigned_int_src[298] / 299;
@@ -34663,7 +32426,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[300] = unsigned_int_src[300] / 0x12d;
   unsigned_int_dest[301] = unsigned_int_src[301] / 0x12e;
   unsigned_int_dest[302] = unsigned_int_src[302] / 0x12f;
-  unsigned_int_dest[303] = (unsigned_int_src[303] >> 4) / 0x13;
+  unsigned_int_dest[303] = unsigned_int_src[303] / 0x130;
   unsigned_int_dest[304] = unsigned_int_src[304] / 0x131;
   unsigned_int_dest[305] = unsigned_int_src[305] / 0x132;
   unsigned_int_dest[306] = unsigned_int_src[306] / 0x133;
@@ -34671,13 +32434,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[308] = unsigned_int_src[308] / 0x135;
   unsigned_int_dest[309] = unsigned_int_src[309] / 0x136;
   unsigned_int_dest[310] = unsigned_int_src[310] / 0x137;
-  unsigned_int_dest[311] = (unsigned_int_src[311] >> 3) / 0x27;
+  unsigned_int_dest[311] = unsigned_int_src[311] / 0x138;
   unsigned_int_dest[312] = unsigned_int_src[312] / 0x139;
   unsigned_int_dest[313] = unsigned_int_src[313] / 0x13a;
   unsigned_int_dest[314] = unsigned_int_src[314] / 0x13b;
   unsigned_int_dest[315] = unsigned_int_src[315] / 0x13c;
   unsigned_int_dest[316] = unsigned_int_src[316] / 0x13d;
-  unsigned_int_dest[317] = (unsigned_int_src[317] >> 1) / 0x9f;
+  unsigned_int_dest[317] = unsigned_int_src[317] / 0x13e;
   unsigned_int_dest[318] = unsigned_int_src[318] / 0x13f;
   unsigned_int_dest[319] = unsigned_int_src[319] / 0x140;
   unsigned_int_dest[320] = unsigned_int_src[320] / 0x141;
@@ -34695,17 +32458,17 @@ void unsigned_int_div(void)
   unsigned_int_dest[332] = unsigned_int_src[332] / 0x14d;
   unsigned_int_dest[333] = unsigned_int_src[333] / 0x14e;
   unsigned_int_dest[334] = unsigned_int_src[334] / 0x14f;
-  unsigned_int_dest[335] = (unsigned_int_src[335] >> 4) / 0x15;
+  unsigned_int_dest[335] = unsigned_int_src[335] / 0x150;
   unsigned_int_dest[336] = unsigned_int_src[336] / 0x151;
   unsigned_int_dest[337] = unsigned_int_src[337] / 0x152;
   unsigned_int_dest[338] = unsigned_int_src[338] / 0x153;
   unsigned_int_dest[339] = unsigned_int_src[339] / 0x154;
   unsigned_int_dest[340] = unsigned_int_src[340] / 0x155;
-  unsigned_int_dest[341] = (unsigned_int_src[341] >> 1) / 0xab;
+  unsigned_int_dest[341] = unsigned_int_src[341] / 0x156;
   unsigned_int_dest[342] = unsigned_int_src[342] / 0x157;
   unsigned_int_dest[343] = unsigned_int_src[343] / 0x158;
   unsigned_int_dest[344] = unsigned_int_src[344] / 0x159;
-  unsigned_int_dest[345] = (unsigned_int_src[345] >> 1) / 0xad;
+  unsigned_int_dest[345] = unsigned_int_src[345] / 0x15a;
   unsigned_int_dest[346] = unsigned_int_src[346] / 0x15b;
   unsigned_int_dest[347] = unsigned_int_src[347] / 0x15c;
   unsigned_int_dest[348] = unsigned_int_src[348] / 0x15d;
@@ -34713,23 +32476,23 @@ void unsigned_int_div(void)
   unsigned_int_dest[350] = unsigned_int_src[350] / 0x15f;
   unsigned_int_dest[351] = unsigned_int_src[351] / 0x160;
   unsigned_int_dest[352] = unsigned_int_src[352] / 0x161;
-  unsigned_int_dest[353] = (unsigned_int_src[353] >> 1) / 0xb1;
+  unsigned_int_dest[353] = unsigned_int_src[353] / 0x162;
   unsigned_int_dest[354] = unsigned_int_src[354] / 0x163;
   unsigned_int_dest[355] = unsigned_int_src[355] / 0x164;
   unsigned_int_dest[356] = unsigned_int_src[356] / 0x165;
-  unsigned_int_dest[357] = (unsigned_int_src[357] >> 1) / 0xb3;
+  unsigned_int_dest[357] = unsigned_int_src[357] / 0x166;
   unsigned_int_dest[358] = unsigned_int_src[358] / 0x167;
-  unsigned_int_dest[359] = (unsigned_int_src[359] >> 3) / 0x2d;
+  unsigned_int_dest[359] = unsigned_int_src[359] / 0x168;
   unsigned_int_dest[360] = unsigned_int_src[360] / 0x169;
   unsigned_int_dest[361] = unsigned_int_src[361] / 0x16a;
   unsigned_int_dest[362] = unsigned_int_src[362] / 0x16b;
-  unsigned_int_dest[363] = (unsigned_int_src[363] >> 2) / 0x5b;
+  unsigned_int_dest[363] = unsigned_int_src[363] / 0x16c;
   unsigned_int_dest[364] = unsigned_int_src[364] / 0x16d;
   unsigned_int_dest[365] = unsigned_int_src[365] / 0x16e;
   unsigned_int_dest[366] = unsigned_int_src[366] / 0x16f;
   unsigned_int_dest[367] = unsigned_int_src[367] / 0x170;
   unsigned_int_dest[368] = unsigned_int_src[368] / 0x171;
-  unsigned_int_dest[369] = (unsigned_int_src[369] >> 1) / 0xb9;
+  unsigned_int_dest[369] = unsigned_int_src[369] / 0x172;
   unsigned_int_dest[370] = unsigned_int_src[370] / 0x173;
   unsigned_int_dest[371] = unsigned_int_src[371] / 0x174;
   unsigned_int_dest[372] = unsigned_int_src[372] / 0x175;
@@ -34737,9 +32500,9 @@ void unsigned_int_div(void)
   unsigned_int_dest[374] = unsigned_int_src[374] / 0x177;
   unsigned_int_dest[375] = unsigned_int_src[375] / 0x178;
   unsigned_int_dest[376] = unsigned_int_src[376] / 0x179;
-  unsigned_int_dest[377] = (unsigned_int_src[377] >> 1) / 0xbd;
+  unsigned_int_dest[377] = unsigned_int_src[377] / 0x17a;
   unsigned_int_dest[378] = unsigned_int_src[378] / 0x17b;
-  unsigned_int_dest[379] = (unsigned_int_src[379] >> 2) / 0x5f;
+  unsigned_int_dest[379] = unsigned_int_src[379] / 0x17c;
   unsigned_int_dest[380] = unsigned_int_src[380] / 0x17d;
   unsigned_int_dest[381] = unsigned_int_src[381] / 0x17e;
   unsigned_int_dest[382] = unsigned_int_src[382] / 0x17f;
@@ -34747,13 +32510,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[384] = unsigned_int_src[384] / 0x181;
   unsigned_int_dest[385] = unsigned_int_src[385] / 0x182;
   unsigned_int_dest[386] = unsigned_int_src[386] / 0x183;
-  unsigned_int_dest[387] = (unsigned_int_src[387] >> 2) / 0x61;
+  unsigned_int_dest[387] = unsigned_int_src[387] / 0x184;
   unsigned_int_dest[388] = unsigned_int_src[388] / 0x185;
-  unsigned_int_dest[389] = (unsigned_int_src[389] >> 1) / 0xc3;
+  unsigned_int_dest[389] = unsigned_int_src[389] / 0x186;
   unsigned_int_dest[390] = unsigned_int_src[390] / 0x187;
   unsigned_int_dest[391] = unsigned_int_src[391] / 0x188;
   unsigned_int_dest[392] = unsigned_int_src[392] / 0x189;
-  unsigned_int_dest[393] = (unsigned_int_src[393] >> 1) / 0xc5;
+  unsigned_int_dest[393] = unsigned_int_src[393] / 0x18a;
   unsigned_int_dest[394] = unsigned_int_src[394] / 0x18b;
   unsigned_int_dest[395] = unsigned_int_src[395] / 0x18c;
   unsigned_int_dest[396] = unsigned_int_src[396] / 0x18d;
@@ -34763,7 +32526,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[400] = unsigned_int_src[400] / 0x191;
   unsigned_int_dest[401] = unsigned_int_src[401] / 0x192;
   unsigned_int_dest[402] = unsigned_int_src[402] / 0x193;
-  unsigned_int_dest[403] = (unsigned_int_src[403] >> 2) / 0x65;
+  unsigned_int_dest[403] = unsigned_int_src[403] / 0x194;
   unsigned_int_dest[404] = unsigned_int_src[404] / 0x195;
   unsigned_int_dest[405] = unsigned_int_src[405] / 0x196;
   unsigned_int_dest[406] = unsigned_int_src[406] / 0x197;
@@ -34771,7 +32534,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[408] = unsigned_int_src[408] / 0x199;
   unsigned_int_dest[409] = unsigned_int_src[409] / 0x19a;
   unsigned_int_dest[410] = unsigned_int_src[410] / 0x19b;
-  unsigned_int_dest[411] = (unsigned_int_src[411] >> 2) / 0x67;
+  unsigned_int_dest[411] = unsigned_int_src[411] / 0x19c;
   unsigned_int_dest[412] = unsigned_int_src[412] / 0x19d;
   unsigned_int_dest[413] = unsigned_int_src[413] / 0x19e;
   unsigned_int_dest[414] = unsigned_int_src[414] / 0x19f;
@@ -34779,61 +32542,61 @@ void unsigned_int_div(void)
   unsigned_int_dest[416] = unsigned_int_src[416] / 0x1a1;
   unsigned_int_dest[417] = unsigned_int_src[417] / 0x1a2;
   unsigned_int_dest[418] = unsigned_int_src[418] / 0x1a3;
-  unsigned_int_dest[419] = (unsigned_int_src[419] >> 2) / 0x69;
+  unsigned_int_dest[419] = unsigned_int_src[419] / 0x1a4;
   unsigned_int_dest[420] = unsigned_int_src[420] / 0x1a5;
   unsigned_int_dest[421] = unsigned_int_src[421] / 0x1a6;
   unsigned_int_dest[422] = unsigned_int_src[422] / 0x1a7;
-  unsigned_int_dest[423] = (unsigned_int_src[423] >> 3) / 0x35;
+  unsigned_int_dest[423] = unsigned_int_src[423] / 0x1a8;
   unsigned_int_dest[424] = unsigned_int_src[424] / 0x1a9;
   unsigned_int_dest[425] = unsigned_int_src[425] / 0x1aa;
   unsigned_int_dest[426] = unsigned_int_src[426] / 0x1ab;
-  unsigned_int_dest[427] = (unsigned_int_src[427] >> 2) / 0x6b;
+  unsigned_int_dest[427] = unsigned_int_src[427] / 0x1ac;
   unsigned_int_dest[428] = unsigned_int_src[428] / 0x1ad;
   unsigned_int_dest[429] = unsigned_int_src[429] / 0x1ae;
   unsigned_int_dest[430] = unsigned_int_src[430] / 0x1af;
-  unsigned_int_dest[431] = (unsigned_int_src[431] >> 4) / 0x1b;
+  unsigned_int_dest[431] = unsigned_int_src[431] / 0x1b0;
   unsigned_int_dest[432] = unsigned_int_src[432] / 0x1b1;
-  unsigned_int_dest[433] = (unsigned_int_src[433] >> 1) / 0xd9;
+  unsigned_int_dest[433] = unsigned_int_src[433] / 0x1b2;
   unsigned_int_dest[434] = unsigned_int_src[434] / 0x1b3;
-  unsigned_int_dest[435] = (unsigned_int_src[435] >> 2) / 0x6d;
+  unsigned_int_dest[435] = unsigned_int_src[435] / 0x1b4;
   unsigned_int_dest[436] = unsigned_int_src[436] / 0x1b5;
-  unsigned_int_dest[437] = (unsigned_int_src[437] >> 1) / 0xdb;
+  unsigned_int_dest[437] = unsigned_int_src[437] / 0x1b6;
   unsigned_int_dest[438] = unsigned_int_src[438] / 0x1b7;
-  unsigned_int_dest[439] = (unsigned_int_src[439] >> 3) / 0x37;
+  unsigned_int_dest[439] = unsigned_int_src[439] / 0x1b8;
   unsigned_int_dest[440] = unsigned_int_src[440] / 0x1b9;
-  unsigned_int_dest[441] = (unsigned_int_src[441] >> 1) / 0xdd;
+  unsigned_int_dest[441] = unsigned_int_src[441] / 0x1ba;
   unsigned_int_dest[442] = unsigned_int_src[442] / 0x1bb;
-  unsigned_int_dest[443] = (unsigned_int_src[443] >> 2) / 0x6f;
+  unsigned_int_dest[443] = unsigned_int_src[443] / 0x1bc;
   unsigned_int_dest[444] = unsigned_int_src[444] / 0x1bd;
-  unsigned_int_dest[445] = (unsigned_int_src[445] >> 1) / 0xdf;
+  unsigned_int_dest[445] = unsigned_int_src[445] / 0x1be;
   unsigned_int_dest[446] = unsigned_int_src[446] / 0x1bf;
-  unsigned_int_dest[447] = (unsigned_int_src[447] >> 6) / 7;
+  unsigned_int_dest[447] = unsigned_int_src[447] / 0x1c0;
   unsigned_int_dest[448] = unsigned_int_src[448] / 0x1c1;
   unsigned_int_dest[449] = unsigned_int_src[449] / 0x1c2;
   unsigned_int_dest[450] = unsigned_int_src[450] / 0x1c3;
-  unsigned_int_dest[451] = (unsigned_int_src[451] >> 2) / 0x71;
+  unsigned_int_dest[451] = unsigned_int_src[451] / 0x1c4;
   unsigned_int_dest[452] = unsigned_int_src[452] / 0x1c5;
-  unsigned_int_dest[453] = (unsigned_int_src[453] >> 1) / 0xe3;
+  unsigned_int_dest[453] = unsigned_int_src[453] / 0x1c6;
   unsigned_int_dest[454] = unsigned_int_src[454] / 0x1c7;
-  unsigned_int_dest[455] = (unsigned_int_src[455] >> 3) / 0x39;
+  unsigned_int_dest[455] = unsigned_int_src[455] / 0x1c8;
   unsigned_int_dest[456] = unsigned_int_src[456] / 0x1c9;
   unsigned_int_dest[457] = unsigned_int_src[457] / 0x1ca;
   unsigned_int_dest[458] = unsigned_int_src[458] / 0x1cb;
-  unsigned_int_dest[459] = (unsigned_int_src[459] >> 2) / 0x73;
+  unsigned_int_dest[459] = unsigned_int_src[459] / 0x1cc;
   unsigned_int_dest[460] = unsigned_int_src[460] / 0x1cd;
-  unsigned_int_dest[461] = (unsigned_int_src[461] >> 1) / 0xe7;
+  unsigned_int_dest[461] = unsigned_int_src[461] / 0x1ce;
   unsigned_int_dest[462] = unsigned_int_src[462] / 0x1cf;
   unsigned_int_dest[463] = unsigned_int_src[463] / 0x1d0;
   unsigned_int_dest[464] = unsigned_int_src[464] / 0x1d1;
-  unsigned_int_dest[465] = (unsigned_int_src[465] >> 1) / 0xe9;
+  unsigned_int_dest[465] = unsigned_int_src[465] / 0x1d2;
   unsigned_int_dest[466] = unsigned_int_src[466] / 0x1d3;
-  unsigned_int_dest[467] = (unsigned_int_src[467] >> 2) / 0x75;
+  unsigned_int_dest[467] = unsigned_int_src[467] / 0x1d4;
   unsigned_int_dest[468] = unsigned_int_src[468] / 0x1d5;
-  unsigned_int_dest[469] = (unsigned_int_src[469] >> 1) / 0xeb;
+  unsigned_int_dest[469] = unsigned_int_src[469] / 0x1d6;
   unsigned_int_dest[470] = unsigned_int_src[470] / 0x1d7;
   unsigned_int_dest[471] = unsigned_int_src[471] / 0x1d8;
   unsigned_int_dest[472] = unsigned_int_src[472] / 0x1d9;
-  unsigned_int_dest[473] = (unsigned_int_src[473] >> 1) / 0xed;
+  unsigned_int_dest[473] = unsigned_int_src[473] / 0x1da;
   unsigned_int_dest[474] = unsigned_int_src[474] / 0x1db;
   unsigned_int_dest[475] = unsigned_int_src[475] / 0x1dc;
   unsigned_int_dest[476] = unsigned_int_src[476] / 0x1dd;
@@ -34843,31 +32606,31 @@ void unsigned_int_div(void)
   unsigned_int_dest[480] = unsigned_int_src[480] / 0x1e1;
   unsigned_int_dest[481] = unsigned_int_src[481] / 0x1e2;
   unsigned_int_dest[482] = unsigned_int_src[482] / 0x1e3;
-  unsigned_int_dest[483] = (unsigned_int_src[483] >> 2) / 0x79;
+  unsigned_int_dest[483] = unsigned_int_src[483] / 0x1e4;
   unsigned_int_dest[484] = unsigned_int_src[484] / 0x1e5;
   unsigned_int_dest[485] = unsigned_int_src[485] / 0x1e6;
   unsigned_int_dest[486] = unsigned_int_src[486] / 0x1e7;
   unsigned_int_dest[487] = unsigned_int_src[487] / 0x1e8;
   unsigned_int_dest[488] = unsigned_int_src[488] / 0x1e9;
-  unsigned_int_dest[489] = (unsigned_int_src[489] >> 1) / 0xf5;
+  unsigned_int_dest[489] = unsigned_int_src[489] / 0x1ea;
   unsigned_int_dest[490] = unsigned_int_src[490] / 0x1eb;
-  unsigned_int_dest[491] = (unsigned_int_src[491] >> 2) / 0x7b;
+  unsigned_int_dest[491] = unsigned_int_src[491] / 0x1ec;
   unsigned_int_dest[492] = unsigned_int_src[492] / 0x1ed;
-  unsigned_int_dest[493] = (unsigned_int_src[493] >> 1) / 0xf7;
+  unsigned_int_dest[493] = unsigned_int_src[493] / 0x1ee;
   unsigned_int_dest[494] = unsigned_int_src[494] / 0x1ef;
-  unsigned_int_dest[495] = (unsigned_int_src[495] >> 4) / 0x1f;
+  unsigned_int_dest[495] = unsigned_int_src[495] / 0x1f0;
   unsigned_int_dest[496] = unsigned_int_src[496] / 0x1f1;
-  unsigned_int_dest[497] = (unsigned_int_src[497] >> 1) / 0xf9;
+  unsigned_int_dest[497] = unsigned_int_src[497] / 0x1f2;
   unsigned_int_dest[498] = unsigned_int_src[498] / 499;
   unsigned_int_dest[499] = unsigned_int_src[499] / 500;
   unsigned_int_dest[500] = unsigned_int_src[500] / 0x1f5;
   unsigned_int_dest[501] = unsigned_int_src[501] / 0x1f6;
   unsigned_int_dest[502] = unsigned_int_src[502] / 0x1f7;
-  unsigned_int_dest[503] = (unsigned_int_src[503] >> 3) / 0x3f;
+  unsigned_int_dest[503] = unsigned_int_src[503] / 0x1f8;
   unsigned_int_dest[504] = unsigned_int_src[504] / 0x1f9;
   unsigned_int_dest[505] = unsigned_int_src[505] / 0x1fa;
   unsigned_int_dest[506] = unsigned_int_src[506] / 0x1fb;
-  unsigned_int_dest[507] = (unsigned_int_src[507] >> 2) / 0x7f;
+  unsigned_int_dest[507] = unsigned_int_src[507] / 0x1fc;
   unsigned_int_dest[508] = unsigned_int_src[508] / 0x1fd;
   unsigned_int_dest[509] = unsigned_int_src[509] / 0x1fe;
   unsigned_int_dest[510] = unsigned_int_src[510] / 0x1ff;
@@ -34905,11 +32668,11 @@ void unsigned_int_div(void)
   unsigned_int_dest[542] = unsigned_int_src[542] / 0x21f;
   unsigned_int_dest[543] = unsigned_int_src[543] / 0x220;
   unsigned_int_dest[544] = unsigned_int_src[544] / 0x221;
-  unsigned_int_dest[545] = (unsigned_int_src[545] >> 1) / 0x111;
+  unsigned_int_dest[545] = unsigned_int_src[545] / 0x222;
   unsigned_int_dest[546] = unsigned_int_src[546] / 0x223;
   unsigned_int_dest[547] = unsigned_int_src[547] / 0x224;
   unsigned_int_dest[548] = unsigned_int_src[548] / 0x225;
-  unsigned_int_dest[549] = (unsigned_int_src[549] >> 1) / 0x113;
+  unsigned_int_dest[549] = unsigned_int_src[549] / 0x226;
   unsigned_int_dest[550] = unsigned_int_src[550] / 0x227;
   unsigned_int_dest[551] = unsigned_int_src[551] / 0x228;
   unsigned_int_dest[552] = unsigned_int_src[552] / 0x229;
@@ -34919,7 +32682,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[556] = unsigned_int_src[556] / 0x22d;
   unsigned_int_dest[557] = unsigned_int_src[557] / 0x22e;
   unsigned_int_dest[558] = unsigned_int_src[558] / 0x22f;
-  unsigned_int_dest[559] = (unsigned_int_src[559] >> 4) / 0x23;
+  unsigned_int_dest[559] = unsigned_int_src[559] / 0x230;
   unsigned_int_dest[560] = unsigned_int_src[560] / 0x231;
   unsigned_int_dest[561] = unsigned_int_src[561] / 0x232;
   unsigned_int_dest[562] = unsigned_int_src[562] / 0x233;
@@ -34929,7 +32692,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[566] = unsigned_int_src[566] / 0x237;
   unsigned_int_dest[567] = unsigned_int_src[567] / 0x238;
   unsigned_int_dest[568] = unsigned_int_src[568] / 0x239;
-  unsigned_int_dest[569] = (unsigned_int_src[569] >> 1) / 0x11d;
+  unsigned_int_dest[569] = unsigned_int_src[569] / 0x23a;
   unsigned_int_dest[570] = unsigned_int_src[570] / 0x23b;
   unsigned_int_dest[571] = unsigned_int_src[571] / 0x23c;
   unsigned_int_dest[572] = unsigned_int_src[572] / 0x23d;
@@ -34943,7 +32706,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[580] = unsigned_int_src[580] / 0x245;
   unsigned_int_dest[581] = unsigned_int_src[581] / 0x246;
   unsigned_int_dest[582] = unsigned_int_src[582] / 0x247;
-  unsigned_int_dest[583] = (unsigned_int_src[583] >> 3) / 0x49;
+  unsigned_int_dest[583] = unsigned_int_src[583] / 0x248;
   unsigned_int_dest[584] = unsigned_int_src[584] / 0x249;
   unsigned_int_dest[585] = unsigned_int_src[585] / 0x24a;
   unsigned_int_dest[586] = unsigned_int_src[586] / 0x24b;
@@ -34951,7 +32714,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[588] = unsigned_int_src[588] / 0x24d;
   unsigned_int_dest[589] = unsigned_int_src[589] / 0x24e;
   unsigned_int_dest[590] = unsigned_int_src[590] / 0x24f;
-  unsigned_int_dest[591] = (unsigned_int_src[591] >> 4) / 0x25;
+  unsigned_int_dest[591] = unsigned_int_src[591] / 0x250;
   unsigned_int_dest[592] = unsigned_int_src[592] / 0x251;
   unsigned_int_dest[593] = unsigned_int_src[593] / 0x252;
   unsigned_int_dest[594] = unsigned_int_src[594] / 0x253;
@@ -34967,7 +32730,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[604] = unsigned_int_src[604] / 0x25d;
   unsigned_int_dest[605] = unsigned_int_src[605] / 0x25e;
   unsigned_int_dest[606] = unsigned_int_src[606] / 0x25f;
-  unsigned_int_dest[607] = (unsigned_int_src[607] >> 5) / 0x13;
+  unsigned_int_dest[607] = unsigned_int_src[607] / 0x260;
   unsigned_int_dest[608] = unsigned_int_src[608] / 0x261;
   unsigned_int_dest[609] = unsigned_int_src[609] / 0x262;
   unsigned_int_dest[610] = unsigned_int_src[610] / 0x263;
@@ -34983,19 +32746,19 @@ void unsigned_int_div(void)
   unsigned_int_dest[620] = unsigned_int_src[620] / 0x26d;
   unsigned_int_dest[621] = unsigned_int_src[621] / 0x26e;
   unsigned_int_dest[622] = unsigned_int_src[622] / 0x26f;
-  unsigned_int_dest[623] = (unsigned_int_src[623] >> 4) / 0x27;
+  unsigned_int_dest[623] = unsigned_int_src[623] / 0x270;
   unsigned_int_dest[624] = unsigned_int_src[624] / 0x271;
-  unsigned_int_dest[625] = (unsigned_int_src[625] >> 1) / 0x139;
+  unsigned_int_dest[625] = unsigned_int_src[625] / 0x272;
   unsigned_int_dest[626] = unsigned_int_src[626] / 0x273;
   unsigned_int_dest[627] = unsigned_int_src[627] / 0x274;
   unsigned_int_dest[628] = unsigned_int_src[628] / 0x275;
-  unsigned_int_dest[629] = (unsigned_int_src[629] >> 1) / 0x13b;
+  unsigned_int_dest[629] = unsigned_int_src[629] / 0x276;
   unsigned_int_dest[630] = unsigned_int_src[630] / 0x277;
   unsigned_int_dest[631] = unsigned_int_src[631] / 0x278;
   unsigned_int_dest[632] = unsigned_int_src[632] / 0x279;
   unsigned_int_dest[633] = unsigned_int_src[633] / 0x27a;
   unsigned_int_dest[634] = unsigned_int_src[634] / 0x27b;
-  unsigned_int_dest[635] = (unsigned_int_src[635] >> 2) / 0x9f;
+  unsigned_int_dest[635] = unsigned_int_src[635] / 0x27c;
   unsigned_int_dest[636] = unsigned_int_src[636] / 0x27d;
   unsigned_int_dest[637] = unsigned_int_src[637] / 0x27e;
   unsigned_int_dest[638] = unsigned_int_src[638] / 0x27f;
@@ -35005,7 +32768,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[642] = unsigned_int_src[642] / 0x283;
   unsigned_int_dest[643] = unsigned_int_src[643] / 0x284;
   unsigned_int_dest[644] = unsigned_int_src[644] / 0x285;
-  unsigned_int_dest[645] = (unsigned_int_src[645] >> 1) / 0x143;
+  unsigned_int_dest[645] = unsigned_int_src[645] / 0x286;
   unsigned_int_dest[646] = unsigned_int_src[646] / 0x287;
   unsigned_int_dest[647] = unsigned_int_src[647] / 0x288;
   unsigned_int_dest[648] = unsigned_int_src[648] / 0x289;
@@ -35013,7 +32776,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[650] = unsigned_int_src[650] / 0x28b;
   unsigned_int_dest[651] = unsigned_int_src[651] / 0x28c;
   unsigned_int_dest[652] = unsigned_int_src[652] / 0x28d;
-  unsigned_int_dest[653] = (unsigned_int_src[653] >> 1) / 0x147;
+  unsigned_int_dest[653] = unsigned_int_src[653] / 0x28e;
   unsigned_int_dest[654] = unsigned_int_src[654] / 0x28f;
   unsigned_int_dest[655] = unsigned_int_src[655] / 0x290;
   unsigned_int_dest[656] = unsigned_int_src[656] / 0x291;
@@ -35021,29 +32784,29 @@ void unsigned_int_div(void)
   unsigned_int_dest[658] = unsigned_int_src[658] / 0x293;
   unsigned_int_dest[659] = unsigned_int_src[659] / 0x294;
   unsigned_int_dest[660] = unsigned_int_src[660] / 0x295;
-  unsigned_int_dest[661] = (unsigned_int_src[661] >> 1) / 0x14b;
+  unsigned_int_dest[661] = unsigned_int_src[661] / 0x296;
   unsigned_int_dest[662] = unsigned_int_src[662] / 0x297;
   unsigned_int_dest[663] = unsigned_int_src[663] / 0x298;
   unsigned_int_dest[664] = unsigned_int_src[664] / 0x299;
-  unsigned_int_dest[665] = (unsigned_int_src[665] >> 1) / 0x14d;
+  unsigned_int_dest[665] = unsigned_int_src[665] / 0x29a;
   unsigned_int_dest[666] = unsigned_int_src[666] / 0x29b;
   unsigned_int_dest[667] = unsigned_int_src[667] / 0x29c;
   unsigned_int_dest[668] = unsigned_int_src[668] / 0x29d;
-  unsigned_int_dest[669] = (unsigned_int_src[669] >> 1) / 0x14f;
+  unsigned_int_dest[669] = unsigned_int_src[669] / 0x29e;
   unsigned_int_dest[670] = unsigned_int_src[670] / 0x29f;
-  unsigned_int_dest[671] = (unsigned_int_src[671] >> 5) / 0x15;
+  unsigned_int_dest[671] = unsigned_int_src[671] / 0x2a0;
   unsigned_int_dest[672] = unsigned_int_src[672] / 0x2a1;
   unsigned_int_dest[673] = unsigned_int_src[673] / 0x2a2;
   unsigned_int_dest[674] = unsigned_int_src[674] / 0x2a3;
   unsigned_int_dest[675] = unsigned_int_src[675] / 0x2a4;
   unsigned_int_dest[676] = unsigned_int_src[676] / 0x2a5;
-  unsigned_int_dest[677] = (unsigned_int_src[677] >> 1) / 0x153;
+  unsigned_int_dest[677] = unsigned_int_src[677] / 0x2a6;
   unsigned_int_dest[678] = unsigned_int_src[678] / 0x2a7;
   unsigned_int_dest[679] = unsigned_int_src[679] / 0x2a8;
   unsigned_int_dest[680] = unsigned_int_src[680] / 0x2a9;
-  unsigned_int_dest[681] = (unsigned_int_src[681] >> 1) / 0x155;
+  unsigned_int_dest[681] = unsigned_int_src[681] / 0x2aa;
   unsigned_int_dest[682] = unsigned_int_src[682] / 0x2ab;
-  unsigned_int_dest[683] = (unsigned_int_src[683] >> 2) / 0xab;
+  unsigned_int_dest[683] = unsigned_int_src[683] / 0x2ac;
   unsigned_int_dest[684] = unsigned_int_src[684] / 0x2ad;
   unsigned_int_dest[685] = unsigned_int_src[685] / 0x2ae;
   unsigned_int_dest[686] = unsigned_int_src[686] / 0x2af;
@@ -35051,7 +32814,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[688] = unsigned_int_src[688] / 0x2b1;
   unsigned_int_dest[689] = unsigned_int_src[689] / 0x2b2;
   unsigned_int_dest[690] = unsigned_int_src[690] / 0x2b3;
-  unsigned_int_dest[691] = (unsigned_int_src[691] >> 2) / 0xad;
+  unsigned_int_dest[691] = unsigned_int_src[691] / 0x2b4;
   unsigned_int_dest[692] = unsigned_int_src[692] / 0x2b5;
   unsigned_int_dest[693] = unsigned_int_src[693] / 0x2b6;
   unsigned_int_dest[694] = unsigned_int_src[694] / 0x2b7;
@@ -35061,13 +32824,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[698] = unsigned_int_src[698] / 699;
   unsigned_int_dest[699] = unsigned_int_src[699] / 700;
   unsigned_int_dest[700] = unsigned_int_src[700] / 0x2bd;
-  unsigned_int_dest[701] = (unsigned_int_src[701] >> 1) / 0x15f;
+  unsigned_int_dest[701] = unsigned_int_src[701] / 0x2be;
   unsigned_int_dest[702] = unsigned_int_src[702] / 0x2bf;
   unsigned_int_dest[703] = unsigned_int_src[703] / 0x2c0;
   unsigned_int_dest[704] = unsigned_int_src[704] / 0x2c1;
-  unsigned_int_dest[705] = (unsigned_int_src[705] >> 1) / 0x161;
+  unsigned_int_dest[705] = unsigned_int_src[705] / 0x2c2;
   unsigned_int_dest[706] = unsigned_int_src[706] / 0x2c3;
-  unsigned_int_dest[707] = (unsigned_int_src[707] >> 2) / 0xb1;
+  unsigned_int_dest[707] = unsigned_int_src[707] / 0x2c4;
   unsigned_int_dest[708] = unsigned_int_src[708] / 0x2c5;
   unsigned_int_dest[709] = unsigned_int_src[709] / 0x2c6;
   unsigned_int_dest[710] = unsigned_int_src[710] / 0x2c7;
@@ -35075,21 +32838,21 @@ void unsigned_int_div(void)
   unsigned_int_dest[712] = unsigned_int_src[712] / 0x2c9;
   unsigned_int_dest[713] = unsigned_int_src[713] / 0x2ca;
   unsigned_int_dest[714] = unsigned_int_src[714] / 0x2cb;
-  unsigned_int_dest[715] = (unsigned_int_src[715] >> 2) / 0xb3;
+  unsigned_int_dest[715] = unsigned_int_src[715] / 0x2cc;
   unsigned_int_dest[716] = unsigned_int_src[716] / 0x2cd;
-  unsigned_int_dest[717] = (unsigned_int_src[717] >> 1) / 0x167;
+  unsigned_int_dest[717] = unsigned_int_src[717] / 0x2ce;
   unsigned_int_dest[718] = unsigned_int_src[718] / 0x2cf;
-  unsigned_int_dest[719] = (unsigned_int_src[719] >> 4) / 0x2d;
+  unsigned_int_dest[719] = unsigned_int_src[719] / 0x2d0;
   unsigned_int_dest[720] = unsigned_int_src[720] / 0x2d1;
-  unsigned_int_dest[721] = (unsigned_int_src[721] >> 1) / 0x169;
+  unsigned_int_dest[721] = unsigned_int_src[721] / 0x2d2;
   unsigned_int_dest[722] = unsigned_int_src[722] / 0x2d3;
   unsigned_int_dest[723] = unsigned_int_src[723] / 0x2d4;
   unsigned_int_dest[724] = unsigned_int_src[724] / 0x2d5;
-  unsigned_int_dest[725] = (unsigned_int_src[725] >> 1) / 0x16b;
+  unsigned_int_dest[725] = unsigned_int_src[725] / 0x2d6;
   unsigned_int_dest[726] = unsigned_int_src[726] / 0x2d7;
-  unsigned_int_dest[727] = (unsigned_int_src[727] >> 3) / 0x5b;
+  unsigned_int_dest[727] = unsigned_int_src[727] / 0x2d8;
   unsigned_int_dest[728] = unsigned_int_src[728] / 0x2d9;
-  unsigned_int_dest[729] = (unsigned_int_src[729] >> 1) / 0x16d;
+  unsigned_int_dest[729] = unsigned_int_src[729] / 0x2da;
   unsigned_int_dest[730] = unsigned_int_src[730] / 0x2db;
   unsigned_int_dest[731] = unsigned_int_src[731] / 0x2dc;
   unsigned_int_dest[732] = unsigned_int_src[732] / 0x2dd;
@@ -35099,13 +32862,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[736] = unsigned_int_src[736] / 0x2e1;
   unsigned_int_dest[737] = unsigned_int_src[737] / 0x2e2;
   unsigned_int_dest[738] = unsigned_int_src[738] / 0x2e3;
-  unsigned_int_dest[739] = (unsigned_int_src[739] >> 2) / 0xb9;
+  unsigned_int_dest[739] = unsigned_int_src[739] / 0x2e4;
   unsigned_int_dest[740] = unsigned_int_src[740] / 0x2e5;
   unsigned_int_dest[741] = unsigned_int_src[741] / 0x2e6;
   unsigned_int_dest[742] = unsigned_int_src[742] / 0x2e7;
   unsigned_int_dest[743] = unsigned_int_src[743] / 0x2e8;
   unsigned_int_dest[744] = unsigned_int_src[744] / 0x2e9;
-  unsigned_int_dest[745] = (unsigned_int_src[745] >> 1) / 0x175;
+  unsigned_int_dest[745] = unsigned_int_src[745] / 0x2ea;
   unsigned_int_dest[746] = unsigned_int_src[746] / 0x2eb;
   unsigned_int_dest[747] = unsigned_int_src[747] / 0x2ec;
   unsigned_int_dest[748] = unsigned_int_src[748] / 0x2ed;
@@ -35113,13 +32876,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[750] = unsigned_int_src[750] / 0x2ef;
   unsigned_int_dest[751] = unsigned_int_src[751] / 0x2f0;
   unsigned_int_dest[752] = unsigned_int_src[752] / 0x2f1;
-  unsigned_int_dest[753] = (unsigned_int_src[753] >> 1) / 0x179;
+  unsigned_int_dest[753] = unsigned_int_src[753] / 0x2f2;
   unsigned_int_dest[754] = unsigned_int_src[754] / 0x2f3;
-  unsigned_int_dest[755] = (unsigned_int_src[755] >> 2) / 0xbd;
+  unsigned_int_dest[755] = unsigned_int_src[755] / 0x2f4;
   unsigned_int_dest[756] = unsigned_int_src[756] / 0x2f5;
-  unsigned_int_dest[757] = (unsigned_int_src[757] >> 1) / 0x17b;
+  unsigned_int_dest[757] = unsigned_int_src[757] / 0x2f6;
   unsigned_int_dest[758] = unsigned_int_src[758] / 0x2f7;
-  unsigned_int_dest[759] = (unsigned_int_src[759] >> 3) / 0x5f;
+  unsigned_int_dest[759] = unsigned_int_src[759] / 0x2f8;
   unsigned_int_dest[760] = unsigned_int_src[760] / 0x2f9;
   unsigned_int_dest[761] = unsigned_int_src[761] / 0x2fa;
   unsigned_int_dest[762] = unsigned_int_src[762] / 0x2fb;
@@ -35133,13 +32896,13 @@ void unsigned_int_div(void)
   unsigned_int_dest[770] = unsigned_int_src[770] / 0x303;
   unsigned_int_dest[771] = unsigned_int_src[771] / 0x304;
   unsigned_int_dest[772] = unsigned_int_src[772] / 0x305;
-  unsigned_int_dest[773] = (unsigned_int_src[773] >> 1) / 0x183;
+  unsigned_int_dest[773] = unsigned_int_src[773] / 0x306;
   unsigned_int_dest[774] = unsigned_int_src[774] / 0x307;
-  unsigned_int_dest[775] = (unsigned_int_src[775] >> 3) / 0x61;
+  unsigned_int_dest[775] = unsigned_int_src[775] / 0x308;
   unsigned_int_dest[776] = unsigned_int_src[776] / 0x309;
   unsigned_int_dest[777] = unsigned_int_src[777] / 0x30a;
   unsigned_int_dest[778] = unsigned_int_src[778] / 0x30b;
-  unsigned_int_dest[779] = (unsigned_int_src[779] >> 2) / 0xc3;
+  unsigned_int_dest[779] = unsigned_int_src[779] / 0x30c;
   unsigned_int_dest[780] = unsigned_int_src[780] / 0x30d;
   unsigned_int_dest[781] = unsigned_int_src[781] / 0x30e;
   unsigned_int_dest[782] = unsigned_int_src[782] / 0x30f;
@@ -35147,9 +32910,9 @@ void unsigned_int_div(void)
   unsigned_int_dest[784] = unsigned_int_src[784] / 0x311;
   unsigned_int_dest[785] = unsigned_int_src[785] / 0x312;
   unsigned_int_dest[786] = unsigned_int_src[786] / 0x313;
-  unsigned_int_dest[787] = (unsigned_int_src[787] >> 2) / 0xc5;
+  unsigned_int_dest[787] = unsigned_int_src[787] / 0x314;
   unsigned_int_dest[788] = unsigned_int_src[788] / 0x315;
-  unsigned_int_dest[789] = (unsigned_int_src[789] >> 1) / 0x18b;
+  unsigned_int_dest[789] = unsigned_int_src[789] / 0x316;
   unsigned_int_dest[790] = unsigned_int_src[790] / 0x317;
   unsigned_int_dest[791] = unsigned_int_src[791] / 0x318;
   unsigned_int_dest[792] = unsigned_int_src[792] / 0x319;
@@ -35157,7 +32920,7 @@ void unsigned_int_div(void)
   unsigned_int_dest[794] = unsigned_int_src[794] / 0x31b;
   unsigned_int_dest[795] = unsigned_int_src[795] / 0x31c;
   unsigned_int_dest[796] = unsigned_int_src[796] / 0x31d;
-  unsigned_int_dest[797] = (unsigned_int_src[797] >> 1) / 399;
+  unsigned_int_dest[797] = unsigned_int_src[797] / 0x31e;
   unsigned_int_dest[798] = unsigned_int_src[798] / 799;
   unsigned_int_dest[799] = unsigned_int_src[799] / 800;
   unsigned_int_dest[800] = unsigned_int_src[800] / 0x321;
@@ -35165,9 +32928,9 @@ void unsigned_int_div(void)
   unsigned_int_dest[802] = unsigned_int_src[802] / 0x323;
   unsigned_int_dest[803] = unsigned_int_src[803] / 0x324;
   unsigned_int_dest[804] = unsigned_int_src[804] / 0x325;
-  unsigned_int_dest[805] = (unsigned_int_src[805] >> 1) / 0x193;
+  unsigned_int_dest[805] = unsigned_int_src[805] / 0x326;
   unsigned_int_dest[806] = unsigned_int_src[806] / 0x327;
-  unsigned_int_dest[807] = (unsigned_int_src[807] >> 3) / 0x65;
+  unsigned_int_dest[807] = unsigned_int_src[807] / 0x328;
   unsigned_int_dest[808] = unsigned_int_src[808] / 0x329;
   unsigned_int_dest[809] = unsigned_int_src[809] / 0x32a;
   unsigned_int_dest[810] = unsigned_int_src[810] / 0x32b;
@@ -35181,15 +32944,15 @@ void unsigned_int_div(void)
   unsigned_int_dest[818] = unsigned_int_src[818] / 0x333;
   unsigned_int_dest[819] = unsigned_int_src[819] / 0x334;
   unsigned_int_dest[820] = unsigned_int_src[820] / 0x335;
-  unsigned_int_dest[821] = (unsigned_int_src[821] >> 1) / 0x19b;
+  unsigned_int_dest[821] = unsigned_int_src[821] / 0x336;
   unsigned_int_dest[822] = unsigned_int_src[822] / 0x337;
-  unsigned_int_dest[823] = (unsigned_int_src[823] >> 3) / 0x67;
+  unsigned_int_dest[823] = unsigned_int_src[823] / 0x338;
   unsigned_int_dest[824] = unsigned_int_src[824] / 0x339;
-  unsigned_int_dest[825] = (unsigned_int_src[825] >> 1) / 0x19d;
+  unsigned_int_dest[825] = unsigned_int_src[825] / 0x33a;
   unsigned_int_dest[826] = unsigned_int_src[826] / 0x33b;
   unsigned_int_dest[827] = unsigned_int_src[827] / 0x33c;
   unsigned_int_dest[828] = unsigned_int_src[828] / 0x33d;
-  unsigned_int_dest[829] = (unsigned_int_src[829] >> 1) / 0x19f;
+  unsigned_int_dest[829] = unsigned_int_src[829] / 0x33e;
   unsigned_int_dest[830] = unsigned_int_src[830] / 0x33f;
   unsigned_int_dest[831] = unsigned_int_src[831] / 0x340;
   unsigned_int_dest[832] = unsigned_int_src[832] / 0x341;
@@ -35197,81 +32960,81 @@ void unsigned_int_div(void)
   unsigned_int_dest[834] = unsigned_int_src[834] / 0x343;
   unsigned_int_dest[835] = unsigned_int_src[835] / 0x344;
   unsigned_int_dest[836] = unsigned_int_src[836] / 0x345;
-  unsigned_int_dest[837] = (unsigned_int_src[837] >> 1) / 0x1a3;
+  unsigned_int_dest[837] = unsigned_int_src[837] / 0x346;
   unsigned_int_dest[838] = unsigned_int_src[838] / 0x347;
-  unsigned_int_dest[839] = (unsigned_int_src[839] >> 3) / 0x69;
+  unsigned_int_dest[839] = unsigned_int_src[839] / 0x348;
   unsigned_int_dest[840] = unsigned_int_src[840] / 0x349;
-  unsigned_int_dest[841] = (unsigned_int_src[841] >> 1) / 0x1a5;
+  unsigned_int_dest[841] = unsigned_int_src[841] / 0x34a;
   unsigned_int_dest[842] = unsigned_int_src[842] / 0x34b;
   unsigned_int_dest[843] = unsigned_int_src[843] / 0x34c;
   unsigned_int_dest[844] = unsigned_int_src[844] / 0x34d;
   unsigned_int_dest[845] = unsigned_int_src[845] / 0x34e;
   unsigned_int_dest[846] = unsigned_int_src[846] / 0x34f;
-  unsigned_int_dest[847] = (unsigned_int_src[847] >> 4) / 0x35;
+  unsigned_int_dest[847] = unsigned_int_src[847] / 0x350;
   unsigned_int_dest[848] = unsigned_int_src[848] / 0x351;
-  unsigned_int_dest[849] = (unsigned_int_src[849] >> 1) / 0x1a9;
+  unsigned_int_dest[849] = unsigned_int_src[849] / 0x352;
   unsigned_int_dest[850] = unsigned_int_src[850] / 0x353;
   unsigned_int_dest[851] = unsigned_int_src[851] / 0x354;
   unsigned_int_dest[852] = unsigned_int_src[852] / 0x355;
-  unsigned_int_dest[853] = (unsigned_int_src[853] >> 1) / 0x1ab;
+  unsigned_int_dest[853] = unsigned_int_src[853] / 0x356;
   unsigned_int_dest[854] = unsigned_int_src[854] / 0x357;
-  unsigned_int_dest[855] = (unsigned_int_src[855] >> 3) / 0x6b;
+  unsigned_int_dest[855] = unsigned_int_src[855] / 0x358;
   unsigned_int_dest[856] = unsigned_int_src[856] / 0x359;
-  unsigned_int_dest[857] = (unsigned_int_src[857] >> 1) / 0x1ad;
+  unsigned_int_dest[857] = unsigned_int_src[857] / 0x35a;
   unsigned_int_dest[858] = unsigned_int_src[858] / 0x35b;
   unsigned_int_dest[859] = unsigned_int_src[859] / 0x35c;
   unsigned_int_dest[860] = unsigned_int_src[860] / 0x35d;
-  unsigned_int_dest[861] = (unsigned_int_src[861] >> 1) / 0x1af;
+  unsigned_int_dest[861] = unsigned_int_src[861] / 0x35e;
   unsigned_int_dest[862] = unsigned_int_src[862] / 0x35f;
-  unsigned_int_dest[863] = (unsigned_int_src[863] >> 5) / 0x1b;
+  unsigned_int_dest[863] = unsigned_int_src[863] / 0x360;
   unsigned_int_dest[864] = unsigned_int_src[864] / 0x361;
   unsigned_int_dest[865] = unsigned_int_src[865] / 0x362;
   unsigned_int_dest[866] = unsigned_int_src[866] / 0x363;
-  unsigned_int_dest[867] = (unsigned_int_src[867] >> 2) / 0xd9;
+  unsigned_int_dest[867] = unsigned_int_src[867] / 0x364;
   unsigned_int_dest[868] = unsigned_int_src[868] / 0x365;
   unsigned_int_dest[869] = unsigned_int_src[869] / 0x366;
   unsigned_int_dest[870] = unsigned_int_src[870] / 0x367;
-  unsigned_int_dest[871] = (unsigned_int_src[871] >> 3) / 0x6d;
+  unsigned_int_dest[871] = unsigned_int_src[871] / 0x368;
   unsigned_int_dest[872] = unsigned_int_src[872] / 0x369;
   unsigned_int_dest[873] = unsigned_int_src[873] / 0x36a;
   unsigned_int_dest[874] = unsigned_int_src[874] / 0x36b;
-  unsigned_int_dest[875] = (unsigned_int_src[875] >> 2) / 0xdb;
+  unsigned_int_dest[875] = unsigned_int_src[875] / 0x36c;
   unsigned_int_dest[876] = unsigned_int_src[876] / 0x36d;
   unsigned_int_dest[877] = unsigned_int_src[877] / 0x36e;
   unsigned_int_dest[878] = unsigned_int_src[878] / 0x36f;
-  unsigned_int_dest[879] = (unsigned_int_src[879] >> 4) / 0x37;
+  unsigned_int_dest[879] = unsigned_int_src[879] / 0x370;
   unsigned_int_dest[880] = unsigned_int_src[880] / 0x371;
   unsigned_int_dest[881] = unsigned_int_src[881] / 0x372;
   unsigned_int_dest[882] = unsigned_int_src[882] / 0x373;
-  unsigned_int_dest[883] = (unsigned_int_src[883] >> 2) / 0xdd;
+  unsigned_int_dest[883] = unsigned_int_src[883] / 0x374;
   unsigned_int_dest[884] = unsigned_int_src[884] / 0x375;
-  unsigned_int_dest[885] = (unsigned_int_src[885] >> 1) / 0x1bb;
+  unsigned_int_dest[885] = unsigned_int_src[885] / 0x376;
   unsigned_int_dest[886] = unsigned_int_src[886] / 0x377;
-  unsigned_int_dest[887] = (unsigned_int_src[887] >> 3) / 0x6f;
+  unsigned_int_dest[887] = unsigned_int_src[887] / 0x378;
   unsigned_int_dest[888] = unsigned_int_src[888] / 0x379;
   unsigned_int_dest[889] = unsigned_int_src[889] / 0x37a;
   unsigned_int_dest[890] = unsigned_int_src[890] / 0x37b;
-  unsigned_int_dest[891] = (unsigned_int_src[891] >> 2) / 0xdf;
+  unsigned_int_dest[891] = unsigned_int_src[891] / 0x37c;
   unsigned_int_dest[892] = unsigned_int_src[892] / 0x37d;
   unsigned_int_dest[893] = unsigned_int_src[893] / 0x37e;
   unsigned_int_dest[894] = unsigned_int_src[894] / 0x37f;
-  unsigned_int_dest[895] = (unsigned_int_src[895] >> 7) / 7;
+  unsigned_int_dest[895] = unsigned_int_src[895] / 0x380;
   unsigned_int_dest[896] = unsigned_int_src[896] / 0x381;
   unsigned_int_dest[897] = unsigned_int_src[897] / 0x382;
   unsigned_int_dest[898] = unsigned_int_src[898] / 899;
   unsigned_int_dest[899] = unsigned_int_src[899] / 900;
   unsigned_int_dest[900] = unsigned_int_src[900] / 0x385;
-  unsigned_int_dest[901] = (unsigned_int_src[901] >> 1) / 0x1c3;
+  unsigned_int_dest[901] = unsigned_int_src[901] / 0x386;
   unsigned_int_dest[902] = unsigned_int_src[902] / 0x387;
-  unsigned_int_dest[903] = (unsigned_int_src[903] >> 3) / 0x71;
+  unsigned_int_dest[903] = unsigned_int_src[903] / 0x388;
   unsigned_int_dest[904] = unsigned_int_src[904] / 0x389;
-  unsigned_int_dest[905] = (unsigned_int_src[905] >> 1) / 0x1c5;
+  unsigned_int_dest[905] = unsigned_int_src[905] / 0x38a;
   unsigned_int_dest[906] = unsigned_int_src[906] / 0x38b;
-  unsigned_int_dest[907] = (unsigned_int_src[907] >> 2) / 0xe3;
+  unsigned_int_dest[907] = unsigned_int_src[907] / 0x38c;
   unsigned_int_dest[908] = unsigned_int_src[908] / 0x38d;
-  unsigned_int_dest[909] = (unsigned_int_src[909] >> 1) / 0x1c7;
+  unsigned_int_dest[909] = unsigned_int_src[909] / 0x38e;
   unsigned_int_dest[910] = unsigned_int_src[910] / 0x38f;
-  unsigned_int_dest[911] = (unsigned_int_src[911] >> 4) / 0x39;
+  unsigned_int_dest[911] = unsigned_int_src[911] / 0x390;
   unsigned_int_dest[912] = unsigned_int_src[912] / 0x391;
   unsigned_int_dest[913] = unsigned_int_src[913] / 0x392;
   unsigned_int_dest[914] = unsigned_int_src[914] / 0x393;
@@ -35279,27 +33042,27 @@ void unsigned_int_div(void)
   unsigned_int_dest[916] = unsigned_int_src[916] / 0x395;
   unsigned_int_dest[917] = unsigned_int_src[917] / 0x396;
   unsigned_int_dest[918] = unsigned_int_src[918] / 0x397;
-  unsigned_int_dest[919] = (unsigned_int_src[919] >> 3) / 0x73;
+  unsigned_int_dest[919] = unsigned_int_src[919] / 0x398;
   unsigned_int_dest[920] = unsigned_int_src[920] / 0x399;
   unsigned_int_dest[921] = unsigned_int_src[921] / 0x39a;
   unsigned_int_dest[922] = unsigned_int_src[922] / 0x39b;
-  unsigned_int_dest[923] = (unsigned_int_src[923] >> 2) / 0xe7;
+  unsigned_int_dest[923] = unsigned_int_src[923] / 0x39c;
   unsigned_int_dest[924] = unsigned_int_src[924] / 0x39d;
   unsigned_int_dest[925] = unsigned_int_src[925] / 0x39e;
   unsigned_int_dest[926] = unsigned_int_src[926] / 0x39f;
   unsigned_int_dest[927] = unsigned_int_src[927] / 0x3a0;
   unsigned_int_dest[928] = unsigned_int_src[928] / 0x3a1;
-  unsigned_int_dest[929] = (unsigned_int_src[929] >> 1) / 0x1d1;
+  unsigned_int_dest[929] = unsigned_int_src[929] / 0x3a2;
   unsigned_int_dest[930] = unsigned_int_src[930] / 0x3a3;
-  unsigned_int_dest[931] = (unsigned_int_src[931] >> 2) / 0xe9;
+  unsigned_int_dest[931] = unsigned_int_src[931] / 0x3a4;
   unsigned_int_dest[932] = unsigned_int_src[932] / 0x3a5;
   unsigned_int_dest[933] = unsigned_int_src[933] / 0x3a6;
   unsigned_int_dest[934] = unsigned_int_src[934] / 0x3a7;
-  unsigned_int_dest[935] = (unsigned_int_src[935] >> 3) / 0x75;
+  unsigned_int_dest[935] = unsigned_int_src[935] / 0x3a8;
   unsigned_int_dest[936] = unsigned_int_src[936] / 0x3a9;
   unsigned_int_dest[937] = unsigned_int_src[937] / 0x3aa;
   unsigned_int_dest[938] = unsigned_int_src[938] / 0x3ab;
-  unsigned_int_dest[939] = (unsigned_int_src[939] >> 2) / 0xeb;
+  unsigned_int_dest[939] = unsigned_int_src[939] / 0x3ac;
   unsigned_int_dest[940] = unsigned_int_src[940] / 0x3ad;
   unsigned_int_dest[941] = unsigned_int_src[941] / 0x3ae;
   unsigned_int_dest[942] = unsigned_int_src[942] / 0x3af;
@@ -35307,29 +33070,29 @@ void unsigned_int_div(void)
   unsigned_int_dest[944] = unsigned_int_src[944] / 0x3b1;
   unsigned_int_dest[945] = unsigned_int_src[945] / 0x3b2;
   unsigned_int_dest[946] = unsigned_int_src[946] / 0x3b3;
-  unsigned_int_dest[947] = (unsigned_int_src[947] >> 2) / 0xed;
+  unsigned_int_dest[947] = unsigned_int_src[947] / 0x3b4;
   unsigned_int_dest[948] = unsigned_int_src[948] / 0x3b5;
   unsigned_int_dest[949] = unsigned_int_src[949] / 0x3b6;
   unsigned_int_dest[950] = unsigned_int_src[950] / 0x3b7;
   unsigned_int_dest[951] = unsigned_int_src[951] / 0x3b8;
   unsigned_int_dest[952] = unsigned_int_src[952] / 0x3b9;
-  unsigned_int_dest[953] = (unsigned_int_src[953] >> 1) / 0x1dd;
+  unsigned_int_dest[953] = unsigned_int_src[953] / 0x3ba;
   unsigned_int_dest[954] = unsigned_int_src[954] / 0x3bb;
   unsigned_int_dest[955] = unsigned_int_src[955] / 0x3bc;
   unsigned_int_dest[956] = unsigned_int_src[956] / 0x3bd;
-  unsigned_int_dest[957] = (unsigned_int_src[957] >> 1) / 0x1df;
+  unsigned_int_dest[957] = unsigned_int_src[957] / 0x3be;
   unsigned_int_dest[958] = unsigned_int_src[958] / 0x3bf;
   unsigned_int_dest[959] = unsigned_int_src[959] / 0x3c0;
   unsigned_int_dest[960] = unsigned_int_src[960] / 0x3c1;
-  unsigned_int_dest[961] = (unsigned_int_src[961] >> 1) / 0x1e1;
+  unsigned_int_dest[961] = unsigned_int_src[961] / 0x3c2;
   unsigned_int_dest[962] = unsigned_int_src[962] / 0x3c3;
   unsigned_int_dest[963] = unsigned_int_src[963] / 0x3c4;
   unsigned_int_dest[964] = unsigned_int_src[964] / 0x3c5;
   unsigned_int_dest[965] = unsigned_int_src[965] / 0x3c6;
   unsigned_int_dest[966] = unsigned_int_src[966] / 0x3c7;
-  unsigned_int_dest[967] = (unsigned_int_src[967] >> 3) / 0x79;
+  unsigned_int_dest[967] = unsigned_int_src[967] / 0x3c8;
   unsigned_int_dest[968] = unsigned_int_src[968] / 0x3c9;
-  unsigned_int_dest[969] = (unsigned_int_src[969] >> 1) / 0x1e5;
+  unsigned_int_dest[969] = unsigned_int_src[969] / 0x3ca;
   unsigned_int_dest[970] = unsigned_int_src[970] / 0x3cb;
   unsigned_int_dest[971] = unsigned_int_src[971] / 0x3cc;
   unsigned_int_dest[972] = unsigned_int_src[972] / 0x3cd;
@@ -35337,25 +33100,25 @@ void unsigned_int_div(void)
   unsigned_int_dest[974] = unsigned_int_src[974] / 0x3cf;
   unsigned_int_dest[975] = unsigned_int_src[975] / 0x3d0;
   unsigned_int_dest[976] = unsigned_int_src[976] / 0x3d1;
-  unsigned_int_dest[977] = (unsigned_int_src[977] >> 1) / 0x1e9;
+  unsigned_int_dest[977] = unsigned_int_src[977] / 0x3d2;
   unsigned_int_dest[978] = unsigned_int_src[978] / 0x3d3;
-  unsigned_int_dest[979] = (unsigned_int_src[979] >> 2) / 0xf5;
+  unsigned_int_dest[979] = unsigned_int_src[979] / 0x3d4;
   unsigned_int_dest[980] = unsigned_int_src[980] / 0x3d5;
-  unsigned_int_dest[981] = (unsigned_int_src[981] >> 1) / 0x1eb;
+  unsigned_int_dest[981] = unsigned_int_src[981] / 0x3d6;
   unsigned_int_dest[982] = unsigned_int_src[982] / 0x3d7;
-  unsigned_int_dest[983] = (unsigned_int_src[983] >> 3) / 0x7b;
+  unsigned_int_dest[983] = unsigned_int_src[983] / 0x3d8;
   unsigned_int_dest[984] = unsigned_int_src[984] / 0x3d9;
   unsigned_int_dest[985] = unsigned_int_src[985] / 0x3da;
   unsigned_int_dest[986] = unsigned_int_src[986] / 0x3db;
-  unsigned_int_dest[987] = (unsigned_int_src[987] >> 2) / 0xf7;
+  unsigned_int_dest[987] = unsigned_int_src[987] / 0x3dc;
   unsigned_int_dest[988] = unsigned_int_src[988] / 0x3dd;
   unsigned_int_dest[989] = unsigned_int_src[989] / 0x3de;
   unsigned_int_dest[990] = unsigned_int_src[990] / 0x3df;
-  unsigned_int_dest[991] = (unsigned_int_src[991] >> 5) / 0x1f;
+  unsigned_int_dest[991] = unsigned_int_src[991] / 0x3e0;
   unsigned_int_dest[992] = unsigned_int_src[992] / 0x3e1;
   unsigned_int_dest[993] = unsigned_int_src[993] / 0x3e2;
   unsigned_int_dest[994] = unsigned_int_src[994] / 0x3e3;
-  unsigned_int_dest[995] = (unsigned_int_src[995] >> 2) / 0xf9;
+  unsigned_int_dest[995] = unsigned_int_src[995] / 0x3e4;
   unsigned_int_dest[996] = unsigned_int_src[996] / 0x3e5;
   unsigned_int_dest[997] = unsigned_int_src[997] / 0x3e6;
   unsigned_int_dest[998] = unsigned_int_src[998] / 999;
@@ -35367,27 +33130,29 @@ void unsigned_int_div(void)
   unsigned_int_dest[1004] = unsigned_int_src[1004] / 0x3ed;
   unsigned_int_dest[1005] = unsigned_int_src[1005] / 0x3ee;
   unsigned_int_dest[1006] = unsigned_int_src[1006] / 0x3ef;
-  unsigned_int_dest[1007] = (unsigned_int_src[1007] >> 4) / 0x3f;
+  unsigned_int_dest[1007] = unsigned_int_src[1007] / 0x3f0;
   unsigned_int_dest[1008] = unsigned_int_src[1008] / 0x3f1;
-  unsigned_int_dest[1009] = (unsigned_int_src[1009] >> 1) / 0x1f9;
+  unsigned_int_dest[1009] = unsigned_int_src[1009] / 0x3f2;
   unsigned_int_dest[1010] = unsigned_int_src[1010] / 0x3f3;
   unsigned_int_dest[1011] = unsigned_int_src[1011] / 0x3f4;
   unsigned_int_dest[1012] = unsigned_int_src[1012] / 0x3f5;
   unsigned_int_dest[1013] = unsigned_int_src[1013] / 0x3f6;
   unsigned_int_dest[1014] = unsigned_int_src[1014] / 0x3f7;
-  unsigned_int_dest[1015] = (unsigned_int_src[1015] >> 3) / 0x7f;
+  unsigned_int_dest[1015] = unsigned_int_src[1015] / 0x3f8;
   unsigned_int_dest[1016] = unsigned_int_src[1016] / 0x3f9;
   unsigned_int_dest[1017] = unsigned_int_src[1017] / 0x3fa;
   unsigned_int_dest[1018] = unsigned_int_src[1018] / 0x3fb;
   unsigned_int_dest[1019] = unsigned_int_src[1019] / 0x3fc;
   unsigned_int_dest[1020] = unsigned_int_src[1020] / 0x3fd;
-  unsigned_int_dest[1021] = (unsigned_int_src[1021] >> 1) / 0x1ff;
+  unsigned_int_dest[1021] = unsigned_int_src[1021] / 0x3fe;
   unsigned_int_dest[1022] = unsigned_int_src[1022] / 0x3ff;
   unsigned_int_dest[1023] = unsigned_int_src[1023] >> 10;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_modulo(void)
 
@@ -35405,7 +33170,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[10] = unsigned_int_src[10] % 0xb;
   unsigned_int_dest[11] = unsigned_int_src[11] % 0xc;
   unsigned_int_dest[12] = unsigned_int_src[12] % 0xd;
-  unsigned_int_dest[13] = unsigned_int_src[13] + ((unsigned_int_src[13] >> 1) / 7) * -0xe;
+  unsigned_int_dest[13] = unsigned_int_src[13] % 0xe;
   unsigned_int_dest[14] = unsigned_int_src[14] % 0xf;
   unsigned_int_dest[15] = unsigned_int_src[15] & 0xf;
   unsigned_int_dest[16] = unsigned_int_src[16] % 0x11;
@@ -35419,7 +33184,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[24] = unsigned_int_src[24] % 0x19;
   unsigned_int_dest[25] = unsigned_int_src[25] % 0x1a;
   unsigned_int_dest[26] = unsigned_int_src[26] % 0x1b;
-  unsigned_int_dest[27] = unsigned_int_src[27] + ((unsigned_int_src[27] >> 2) / 7) * -0x1c;
+  unsigned_int_dest[27] = unsigned_int_src[27] % 0x1c;
   unsigned_int_dest[28] = unsigned_int_src[28] % 0x1d;
   unsigned_int_dest[29] = unsigned_int_src[29] % 0x1e;
   unsigned_int_dest[30] = unsigned_int_src[30] % 0x1f;
@@ -35429,11 +33194,11 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[34] = unsigned_int_src[34] % 0x23;
   unsigned_int_dest[35] = unsigned_int_src[35] % 0x24;
   unsigned_int_dest[36] = unsigned_int_src[36] % 0x25;
-  unsigned_int_dest[37] = unsigned_int_src[37] + ((unsigned_int_src[37] >> 1) / 0x13) * -0x26;
+  unsigned_int_dest[37] = unsigned_int_src[37] % 0x26;
   unsigned_int_dest[38] = unsigned_int_src[38] % 0x27;
   unsigned_int_dest[39] = unsigned_int_src[39] % 0x28;
   unsigned_int_dest[40] = unsigned_int_src[40] % 0x29;
-  unsigned_int_dest[41] = unsigned_int_src[41] + ((unsigned_int_src[41] >> 1) / 0x15) * -0x2a;
+  unsigned_int_dest[41] = unsigned_int_src[41] % 0x2a;
   unsigned_int_dest[42] = unsigned_int_src[42] % 0x2b;
   unsigned_int_dest[43] = unsigned_int_src[43] % 0x2c;
   unsigned_int_dest[44] = unsigned_int_src[44] % 0x2d;
@@ -35445,15 +33210,15 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[50] = unsigned_int_src[50] % 0x33;
   unsigned_int_dest[51] = unsigned_int_src[51] % 0x34;
   unsigned_int_dest[52] = unsigned_int_src[52] % 0x35;
-  unsigned_int_dest[53] = unsigned_int_src[53] + ((unsigned_int_src[53] >> 1) / 0x1b) * -0x36;
+  unsigned_int_dest[53] = unsigned_int_src[53] % 0x36;
   unsigned_int_dest[54] = unsigned_int_src[54] % 0x37;
-  unsigned_int_dest[55] = unsigned_int_src[55] + ((unsigned_int_src[55] >> 3) / 7) * -0x38;
+  unsigned_int_dest[55] = unsigned_int_src[55] % 0x38;
   unsigned_int_dest[56] = unsigned_int_src[56] % 0x39;
   unsigned_int_dest[57] = unsigned_int_src[57] % 0x3a;
   unsigned_int_dest[58] = unsigned_int_src[58] % 0x3b;
   unsigned_int_dest[59] = unsigned_int_src[59] % 0x3c;
   unsigned_int_dest[60] = unsigned_int_src[60] % 0x3d;
-  unsigned_int_dest[61] = unsigned_int_src[61] + ((unsigned_int_src[61] >> 1) / 0x1f) * -0x3e;
+  unsigned_int_dest[61] = unsigned_int_src[61] % 0x3e;
   unsigned_int_dest[62] = unsigned_int_src[62] % 0x3f;
   unsigned_int_dest[63] = unsigned_int_src[63] & 0x3f;
   unsigned_int_dest[64] = unsigned_int_src[64] % 0x41;
@@ -35461,27 +33226,27 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[66] = unsigned_int_src[66] % 0x43;
   unsigned_int_dest[67] = unsigned_int_src[67] % 0x44;
   unsigned_int_dest[68] = unsigned_int_src[68] % 0x45;
-  unsigned_int_dest[69] = unsigned_int_src[69] + ((unsigned_int_src[69] >> 1) / 0x23) * -0x46;
+  unsigned_int_dest[69] = unsigned_int_src[69] % 0x46;
   unsigned_int_dest[70] = unsigned_int_src[70] % 0x47;
   unsigned_int_dest[71] = unsigned_int_src[71] % 0x48;
   unsigned_int_dest[72] = unsigned_int_src[72] % 0x49;
-  unsigned_int_dest[73] = unsigned_int_src[73] + ((unsigned_int_src[73] >> 1) / 0x25) * -0x4a;
+  unsigned_int_dest[73] = unsigned_int_src[73] % 0x4a;
   unsigned_int_dest[74] = unsigned_int_src[74] % 0x4b;
-  unsigned_int_dest[75] = unsigned_int_src[75] + ((unsigned_int_src[75] >> 2) / 0x13) * -0x4c;
+  unsigned_int_dest[75] = unsigned_int_src[75] % 0x4c;
   unsigned_int_dest[76] = unsigned_int_src[76] % 0x4d;
-  unsigned_int_dest[77] = unsigned_int_src[77] + ((unsigned_int_src[77] >> 1) / 0x27) * -0x4e;
+  unsigned_int_dest[77] = unsigned_int_src[77] % 0x4e;
   unsigned_int_dest[78] = unsigned_int_src[78] % 0x4f;
   unsigned_int_dest[79] = unsigned_int_src[79] % 0x50;
   unsigned_int_dest[80] = unsigned_int_src[80] % 0x51;
   unsigned_int_dest[81] = unsigned_int_src[81] % 0x52;
   unsigned_int_dest[82] = unsigned_int_src[82] % 0x53;
-  unsigned_int_dest[83] = unsigned_int_src[83] + ((unsigned_int_src[83] >> 2) / 0x15) * -0x54;
+  unsigned_int_dest[83] = unsigned_int_src[83] % 0x54;
   unsigned_int_dest[84] = unsigned_int_src[84] % 0x55;
   unsigned_int_dest[85] = unsigned_int_src[85] % 0x56;
   unsigned_int_dest[86] = unsigned_int_src[86] % 0x57;
   unsigned_int_dest[87] = unsigned_int_src[87] % 0x58;
   unsigned_int_dest[88] = unsigned_int_src[88] % 0x59;
-  unsigned_int_dest[89] = unsigned_int_src[89] + ((unsigned_int_src[89] >> 1) / 0x2d) * -0x5a;
+  unsigned_int_dest[89] = unsigned_int_src[89] % 0x5a;
   unsigned_int_dest[90] = unsigned_int_src[90] % 0x5b;
   unsigned_int_dest[91] = unsigned_int_src[91] % 0x5c;
   unsigned_int_dest[92] = unsigned_int_src[92] % 0x5d;
@@ -35497,15 +33262,15 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[102] = unsigned_int_src[102] % 0x67;
   unsigned_int_dest[103] = unsigned_int_src[103] % 0x68;
   unsigned_int_dest[104] = unsigned_int_src[104] % 0x69;
-  unsigned_int_dest[105] = unsigned_int_src[105] + ((unsigned_int_src[105] >> 1) / 0x35) * -0x6a;
+  unsigned_int_dest[105] = unsigned_int_src[105] % 0x6a;
   unsigned_int_dest[106] = unsigned_int_src[106] % 0x6b;
-  unsigned_int_dest[107] = unsigned_int_src[107] + ((unsigned_int_src[107] >> 2) / 0x1b) * -0x6c;
+  unsigned_int_dest[107] = unsigned_int_src[107] % 0x6c;
   unsigned_int_dest[108] = unsigned_int_src[108] % 0x6d;
-  unsigned_int_dest[109] = unsigned_int_src[109] + ((unsigned_int_src[109] >> 1) / 0x37) * -0x6e;
+  unsigned_int_dest[109] = unsigned_int_src[109] % 0x6e;
   unsigned_int_dest[110] = unsigned_int_src[110] % 0x6f;
-  unsigned_int_dest[111] = unsigned_int_src[111] + ((unsigned_int_src[111] >> 4) / 7) * -0x70;
+  unsigned_int_dest[111] = unsigned_int_src[111] % 0x70;
   unsigned_int_dest[112] = unsigned_int_src[112] % 0x71;
-  unsigned_int_dest[113] = unsigned_int_src[113] + ((unsigned_int_src[113] >> 1) / 0x39) * -0x72;
+  unsigned_int_dest[113] = unsigned_int_src[113] % 0x72;
   unsigned_int_dest[114] = unsigned_int_src[114] % 0x73;
   unsigned_int_dest[115] = unsigned_int_src[115] % 0x74;
   unsigned_int_dest[116] = unsigned_int_src[116] % 0x75;
@@ -35515,9 +33280,9 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[120] = unsigned_int_src[120] % 0x79;
   unsigned_int_dest[121] = unsigned_int_src[121] % 0x7a;
   unsigned_int_dest[122] = unsigned_int_src[122] % 0x7b;
-  unsigned_int_dest[123] = unsigned_int_src[123] + ((unsigned_int_src[123] >> 2) / 0x1f) * -0x7c;
+  unsigned_int_dest[123] = unsigned_int_src[123] % 0x7c;
   unsigned_int_dest[124] = unsigned_int_src[124] % 0x7d;
-  unsigned_int_dest[125] = unsigned_int_src[125] + ((unsigned_int_src[125] >> 1) / 0x3f) * -0x7e;
+  unsigned_int_dest[125] = unsigned_int_src[125] % 0x7e;
   unsigned_int_dest[126] = unsigned_int_src[126] % 0x7f;
   unsigned_int_dest[127] = unsigned_int_src[127] & 0x7f;
   unsigned_int_dest[128] = unsigned_int_src[128] % 0x81;
@@ -35531,23 +33296,23 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[136] = unsigned_int_src[136] % 0x89;
   unsigned_int_dest[137] = unsigned_int_src[137] % 0x8a;
   unsigned_int_dest[138] = unsigned_int_src[138] % 0x8b;
-  unsigned_int_dest[139] = unsigned_int_src[139] + ((unsigned_int_src[139] >> 2) / 0x23) * -0x8c;
+  unsigned_int_dest[139] = unsigned_int_src[139] % 0x8c;
   unsigned_int_dest[140] = unsigned_int_src[140] % 0x8d;
   unsigned_int_dest[141] = unsigned_int_src[141] % 0x8e;
   unsigned_int_dest[142] = unsigned_int_src[142] % 0x8f;
   unsigned_int_dest[143] = unsigned_int_src[143] % 0x90;
   unsigned_int_dest[144] = unsigned_int_src[144] % 0x91;
-  unsigned_int_dest[145] = unsigned_int_src[145] + ((unsigned_int_src[145] >> 1) / 0x49) * -0x92;
+  unsigned_int_dest[145] = unsigned_int_src[145] % 0x92;
   unsigned_int_dest[146] = unsigned_int_src[146] % 0x93;
-  unsigned_int_dest[147] = unsigned_int_src[147] + ((unsigned_int_src[147] >> 2) / 0x25) * -0x94;
+  unsigned_int_dest[147] = unsigned_int_src[147] % 0x94;
   unsigned_int_dest[148] = unsigned_int_src[148] % 0x95;
   unsigned_int_dest[149] = unsigned_int_src[149] % 0x96;
   unsigned_int_dest[150] = unsigned_int_src[150] % 0x97;
-  unsigned_int_dest[151] = unsigned_int_src[151] + ((unsigned_int_src[151] >> 3) / 0x13) * -0x98;
+  unsigned_int_dest[151] = unsigned_int_src[151] % 0x98;
   unsigned_int_dest[152] = unsigned_int_src[152] % 0x99;
   unsigned_int_dest[153] = unsigned_int_src[153] % 0x9a;
   unsigned_int_dest[154] = unsigned_int_src[154] % 0x9b;
-  unsigned_int_dest[155] = unsigned_int_src[155] + ((unsigned_int_src[155] >> 2) / 0x27) * -0x9c;
+  unsigned_int_dest[155] = unsigned_int_src[155] % 0x9c;
   unsigned_int_dest[156] = unsigned_int_src[156] % 0x9d;
   unsigned_int_dest[157] = unsigned_int_src[157] % 0x9e;
   unsigned_int_dest[158] = unsigned_int_src[158] % 0x9f;
@@ -35559,7 +33324,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[164] = unsigned_int_src[164] % 0xa5;
   unsigned_int_dest[165] = unsigned_int_src[165] % 0xa6;
   unsigned_int_dest[166] = unsigned_int_src[166] % 0xa7;
-  unsigned_int_dest[167] = unsigned_int_src[167] + ((unsigned_int_src[167] >> 3) / 0x15) * -0xa8;
+  unsigned_int_dest[167] = unsigned_int_src[167] % 0xa8;
   unsigned_int_dest[168] = unsigned_int_src[168] % 0xa9;
   unsigned_int_dest[169] = unsigned_int_src[169] % 0xaa;
   unsigned_int_dest[170] = unsigned_int_src[170] % 0xab;
@@ -35571,9 +33336,9 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[176] = unsigned_int_src[176] % 0xb1;
   unsigned_int_dest[177] = unsigned_int_src[177] % 0xb2;
   unsigned_int_dest[178] = unsigned_int_src[178] % 0xb3;
-  unsigned_int_dest[179] = unsigned_int_src[179] + ((unsigned_int_src[179] >> 2) / 0x2d) * -0xb4;
+  unsigned_int_dest[179] = unsigned_int_src[179] % 0xb4;
   unsigned_int_dest[180] = unsigned_int_src[180] % 0xb5;
-  unsigned_int_dest[181] = unsigned_int_src[181] + ((unsigned_int_src[181] >> 1) / 0x5b) * -0xb6;
+  unsigned_int_dest[181] = unsigned_int_src[181] % 0xb6;
   unsigned_int_dest[182] = unsigned_int_src[182] % 0xb7;
   unsigned_int_dest[183] = unsigned_int_src[183] % 0xb8;
   unsigned_int_dest[184] = unsigned_int_src[184] % 0xb9;
@@ -35581,11 +33346,11 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[186] = unsigned_int_src[186] % 0xbb;
   unsigned_int_dest[187] = unsigned_int_src[187] % 0xbc;
   unsigned_int_dest[188] = unsigned_int_src[188] % 0xbd;
-  unsigned_int_dest[189] = unsigned_int_src[189] + ((unsigned_int_src[189] >> 1) / 0x5f) * -0xbe;
+  unsigned_int_dest[189] = unsigned_int_src[189] % 0xbe;
   unsigned_int_dest[190] = unsigned_int_src[190] % 0xbf;
   unsigned_int_dest[191] = unsigned_int_src[191] % 0xc0;
   unsigned_int_dest[192] = unsigned_int_src[192] % 0xc1;
-  unsigned_int_dest[193] = unsigned_int_src[193] + ((unsigned_int_src[193] >> 1) / 0x61) * -0xc2;
+  unsigned_int_dest[193] = unsigned_int_src[193] % 0xc2;
   unsigned_int_dest[194] = unsigned_int_src[194] % 0xc3;
   unsigned_int_dest[195] = unsigned_int_src[195] % 0xc4;
   unsigned_int_dest[196] = unsigned_int_src[196] % 0xc5;
@@ -35593,39 +33358,39 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[198] = unsigned_int_src[198] % 199;
   unsigned_int_dest[199] = unsigned_int_src[199] % 200;
   unsigned_int_dest[200] = unsigned_int_src[200] % 0xc9;
-  unsigned_int_dest[201] = unsigned_int_src[201] + ((unsigned_int_src[201] >> 1) / 0x65) * -0xca;
+  unsigned_int_dest[201] = unsigned_int_src[201] % 0xca;
   unsigned_int_dest[202] = unsigned_int_src[202] % 0xcb;
   unsigned_int_dest[203] = unsigned_int_src[203] % 0xcc;
   unsigned_int_dest[204] = unsigned_int_src[204] % 0xcd;
-  unsigned_int_dest[205] = unsigned_int_src[205] + ((unsigned_int_src[205] >> 1) / 0x67) * -0xce;
+  unsigned_int_dest[205] = unsigned_int_src[205] % 0xce;
   unsigned_int_dest[206] = unsigned_int_src[206] % 0xcf;
   unsigned_int_dest[207] = unsigned_int_src[207] % 0xd0;
   unsigned_int_dest[208] = unsigned_int_src[208] % 0xd1;
-  unsigned_int_dest[209] = unsigned_int_src[209] + ((unsigned_int_src[209] >> 1) / 0x69) * -0xd2;
+  unsigned_int_dest[209] = unsigned_int_src[209] % 0xd2;
   unsigned_int_dest[210] = unsigned_int_src[210] % 0xd3;
-  unsigned_int_dest[211] = unsigned_int_src[211] + ((unsigned_int_src[211] >> 2) / 0x35) * -0xd4;
+  unsigned_int_dest[211] = unsigned_int_src[211] % 0xd4;
   unsigned_int_dest[212] = unsigned_int_src[212] % 0xd5;
-  unsigned_int_dest[213] = unsigned_int_src[213] + ((unsigned_int_src[213] >> 1) / 0x6b) * -0xd6;
+  unsigned_int_dest[213] = unsigned_int_src[213] % 0xd6;
   unsigned_int_dest[214] = unsigned_int_src[214] % 0xd7;
-  unsigned_int_dest[215] = unsigned_int_src[215] + ((unsigned_int_src[215] >> 3) / 0x1b) * -0xd8;
+  unsigned_int_dest[215] = unsigned_int_src[215] % 0xd8;
   unsigned_int_dest[216] = unsigned_int_src[216] % 0xd9;
-  unsigned_int_dest[217] = unsigned_int_src[217] + ((unsigned_int_src[217] >> 1) / 0x6d) * -0xda;
+  unsigned_int_dest[217] = unsigned_int_src[217] % 0xda;
   unsigned_int_dest[218] = unsigned_int_src[218] % 0xdb;
-  unsigned_int_dest[219] = unsigned_int_src[219] + ((unsigned_int_src[219] >> 2) / 0x37) * -0xdc;
+  unsigned_int_dest[219] = unsigned_int_src[219] % 0xdc;
   unsigned_int_dest[220] = unsigned_int_src[220] % 0xdd;
-  unsigned_int_dest[221] = unsigned_int_src[221] + ((unsigned_int_src[221] >> 1) / 0x6f) * -0xde;
+  unsigned_int_dest[221] = unsigned_int_src[221] % 0xde;
   unsigned_int_dest[222] = unsigned_int_src[222] % 0xdf;
-  unsigned_int_dest[223] = unsigned_int_src[223] + ((unsigned_int_src[223] >> 5) / 7) * -0xe0;
+  unsigned_int_dest[223] = unsigned_int_src[223] % 0xe0;
   unsigned_int_dest[224] = unsigned_int_src[224] % 0xe1;
-  unsigned_int_dest[225] = unsigned_int_src[225] + ((unsigned_int_src[225] >> 1) / 0x71) * -0xe2;
+  unsigned_int_dest[225] = unsigned_int_src[225] % 0xe2;
   unsigned_int_dest[226] = unsigned_int_src[226] % 0xe3;
-  unsigned_int_dest[227] = unsigned_int_src[227] + ((unsigned_int_src[227] >> 2) / 0x39) * -0xe4;
+  unsigned_int_dest[227] = unsigned_int_src[227] % 0xe4;
   unsigned_int_dest[228] = unsigned_int_src[228] % 0xe5;
-  unsigned_int_dest[229] = unsigned_int_src[229] + ((unsigned_int_src[229] >> 1) / 0x73) * -0xe6;
+  unsigned_int_dest[229] = unsigned_int_src[229] % 0xe6;
   unsigned_int_dest[230] = unsigned_int_src[230] % 0xe7;
   unsigned_int_dest[231] = unsigned_int_src[231] % 0xe8;
   unsigned_int_dest[232] = unsigned_int_src[232] % 0xe9;
-  unsigned_int_dest[233] = unsigned_int_src[233] + ((unsigned_int_src[233] >> 1) / 0x75) * -0xea;
+  unsigned_int_dest[233] = unsigned_int_src[233] % 0xea;
   unsigned_int_dest[234] = unsigned_int_src[234] % 0xeb;
   unsigned_int_dest[235] = unsigned_int_src[235] % 0xec;
   unsigned_int_dest[236] = unsigned_int_src[236] % 0xed;
@@ -35633,19 +33398,19 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[238] = unsigned_int_src[238] % 0xef;
   unsigned_int_dest[239] = unsigned_int_src[239] % 0xf0;
   unsigned_int_dest[240] = unsigned_int_src[240] % 0xf1;
-  unsigned_int_dest[241] = unsigned_int_src[241] + ((unsigned_int_src[241] >> 1) / 0x79) * -0xf2;
+  unsigned_int_dest[241] = unsigned_int_src[241] % 0xf2;
   unsigned_int_dest[242] = unsigned_int_src[242] % 0xf3;
   unsigned_int_dest[243] = unsigned_int_src[243] % 0xf4;
   unsigned_int_dest[244] = unsigned_int_src[244] % 0xf5;
-  unsigned_int_dest[245] = unsigned_int_src[245] + ((unsigned_int_src[245] >> 1) / 0x7b) * -0xf6;
+  unsigned_int_dest[245] = unsigned_int_src[245] % 0xf6;
   unsigned_int_dest[246] = unsigned_int_src[246] % 0xf7;
-  unsigned_int_dest[247] = unsigned_int_src[247] + ((unsigned_int_src[247] >> 3) / 0x1f) * -0xf8;
+  unsigned_int_dest[247] = unsigned_int_src[247] % 0xf8;
   unsigned_int_dest[248] = unsigned_int_src[248] % 0xf9;
   unsigned_int_dest[249] = unsigned_int_src[249] % 0xfa;
   unsigned_int_dest[250] = unsigned_int_src[250] % 0xfb;
-  unsigned_int_dest[251] = unsigned_int_src[251] + ((unsigned_int_src[251] >> 2) / 0x3f) * -0xfc;
+  unsigned_int_dest[251] = unsigned_int_src[251] % 0xfc;
   unsigned_int_dest[252] = unsigned_int_src[252] % 0xfd;
-  unsigned_int_dest[253] = unsigned_int_src[253] + ((unsigned_int_src[253] >> 1) / 0x7f) * -0xfe;
+  unsigned_int_dest[253] = unsigned_int_src[253] % 0xfe;
   unsigned_int_dest[254] = unsigned_int_src[254] % 0xff;
   unsigned_int_dest[255] = (uint)(byte)unsigned_int_src[255];
   unsigned_int_dest[256] = unsigned_int_src[256] % 0x101;
@@ -35671,7 +33436,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[276] = unsigned_int_src[276] % 0x115;
   unsigned_int_dest[277] = unsigned_int_src[277] % 0x116;
   unsigned_int_dest[278] = unsigned_int_src[278] % 0x117;
-  unsigned_int_dest[279] = unsigned_int_src[279] + ((unsigned_int_src[279] >> 3) / 0x23) * -0x118;
+  unsigned_int_dest[279] = unsigned_int_src[279] % 0x118;
   unsigned_int_dest[280] = unsigned_int_src[280] % 0x119;
   unsigned_int_dest[281] = unsigned_int_src[281] % 0x11a;
   unsigned_int_dest[282] = unsigned_int_src[282] % 0x11b;
@@ -35683,11 +33448,11 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[288] = unsigned_int_src[288] % 0x121;
   unsigned_int_dest[289] = unsigned_int_src[289] % 0x122;
   unsigned_int_dest[290] = unsigned_int_src[290] % 0x123;
-  unsigned_int_dest[291] = unsigned_int_src[291] + ((unsigned_int_src[291] >> 2) / 0x49) * -0x124;
+  unsigned_int_dest[291] = unsigned_int_src[291] % 0x124;
   unsigned_int_dest[292] = unsigned_int_src[292] % 0x125;
   unsigned_int_dest[293] = unsigned_int_src[293] % 0x126;
   unsigned_int_dest[294] = unsigned_int_src[294] % 0x127;
-  unsigned_int_dest[295] = unsigned_int_src[295] + ((unsigned_int_src[295] >> 3) / 0x25) * -0x128;
+  unsigned_int_dest[295] = unsigned_int_src[295] % 0x128;
   unsigned_int_dest[296] = unsigned_int_src[296] % 0x129;
   unsigned_int_dest[297] = unsigned_int_src[297] % 0x12a;
   unsigned_int_dest[298] = unsigned_int_src[298] % 299;
@@ -35695,7 +33460,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[300] = unsigned_int_src[300] % 0x12d;
   unsigned_int_dest[301] = unsigned_int_src[301] % 0x12e;
   unsigned_int_dest[302] = unsigned_int_src[302] % 0x12f;
-  unsigned_int_dest[303] = unsigned_int_src[303] + ((unsigned_int_src[303] >> 4) / 0x13) * -0x130;
+  unsigned_int_dest[303] = unsigned_int_src[303] % 0x130;
   unsigned_int_dest[304] = unsigned_int_src[304] % 0x131;
   unsigned_int_dest[305] = unsigned_int_src[305] % 0x132;
   unsigned_int_dest[306] = unsigned_int_src[306] % 0x133;
@@ -35703,13 +33468,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[308] = unsigned_int_src[308] % 0x135;
   unsigned_int_dest[309] = unsigned_int_src[309] % 0x136;
   unsigned_int_dest[310] = unsigned_int_src[310] % 0x137;
-  unsigned_int_dest[311] = unsigned_int_src[311] + ((unsigned_int_src[311] >> 3) / 0x27) * -0x138;
+  unsigned_int_dest[311] = unsigned_int_src[311] % 0x138;
   unsigned_int_dest[312] = unsigned_int_src[312] % 0x139;
   unsigned_int_dest[313] = unsigned_int_src[313] % 0x13a;
   unsigned_int_dest[314] = unsigned_int_src[314] % 0x13b;
   unsigned_int_dest[315] = unsigned_int_src[315] % 0x13c;
   unsigned_int_dest[316] = unsigned_int_src[316] % 0x13d;
-  unsigned_int_dest[317] = unsigned_int_src[317] + ((unsigned_int_src[317] >> 1) / 0x9f) * -0x13e;
+  unsigned_int_dest[317] = unsigned_int_src[317] % 0x13e;
   unsigned_int_dest[318] = unsigned_int_src[318] % 0x13f;
   unsigned_int_dest[319] = unsigned_int_src[319] % 0x140;
   unsigned_int_dest[320] = unsigned_int_src[320] % 0x141;
@@ -35727,17 +33492,17 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[332] = unsigned_int_src[332] % 0x14d;
   unsigned_int_dest[333] = unsigned_int_src[333] % 0x14e;
   unsigned_int_dest[334] = unsigned_int_src[334] % 0x14f;
-  unsigned_int_dest[335] = unsigned_int_src[335] + ((unsigned_int_src[335] >> 4) / 0x15) * -0x150;
+  unsigned_int_dest[335] = unsigned_int_src[335] % 0x150;
   unsigned_int_dest[336] = unsigned_int_src[336] % 0x151;
   unsigned_int_dest[337] = unsigned_int_src[337] % 0x152;
   unsigned_int_dest[338] = unsigned_int_src[338] % 0x153;
   unsigned_int_dest[339] = unsigned_int_src[339] % 0x154;
   unsigned_int_dest[340] = unsigned_int_src[340] % 0x155;
-  unsigned_int_dest[341] = unsigned_int_src[341] + ((unsigned_int_src[341] >> 1) / 0xab) * -0x156;
+  unsigned_int_dest[341] = unsigned_int_src[341] % 0x156;
   unsigned_int_dest[342] = unsigned_int_src[342] % 0x157;
   unsigned_int_dest[343] = unsigned_int_src[343] % 0x158;
   unsigned_int_dest[344] = unsigned_int_src[344] % 0x159;
-  unsigned_int_dest[345] = unsigned_int_src[345] + ((unsigned_int_src[345] >> 1) / 0xad) * -0x15a;
+  unsigned_int_dest[345] = unsigned_int_src[345] % 0x15a;
   unsigned_int_dest[346] = unsigned_int_src[346] % 0x15b;
   unsigned_int_dest[347] = unsigned_int_src[347] % 0x15c;
   unsigned_int_dest[348] = unsigned_int_src[348] % 0x15d;
@@ -35745,23 +33510,23 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[350] = unsigned_int_src[350] % 0x15f;
   unsigned_int_dest[351] = unsigned_int_src[351] % 0x160;
   unsigned_int_dest[352] = unsigned_int_src[352] % 0x161;
-  unsigned_int_dest[353] = unsigned_int_src[353] + ((unsigned_int_src[353] >> 1) / 0xb1) * -0x162;
+  unsigned_int_dest[353] = unsigned_int_src[353] % 0x162;
   unsigned_int_dest[354] = unsigned_int_src[354] % 0x163;
   unsigned_int_dest[355] = unsigned_int_src[355] % 0x164;
   unsigned_int_dest[356] = unsigned_int_src[356] % 0x165;
-  unsigned_int_dest[357] = unsigned_int_src[357] + ((unsigned_int_src[357] >> 1) / 0xb3) * -0x166;
+  unsigned_int_dest[357] = unsigned_int_src[357] % 0x166;
   unsigned_int_dest[358] = unsigned_int_src[358] % 0x167;
-  unsigned_int_dest[359] = unsigned_int_src[359] + ((unsigned_int_src[359] >> 3) / 0x2d) * -0x168;
+  unsigned_int_dest[359] = unsigned_int_src[359] % 0x168;
   unsigned_int_dest[360] = unsigned_int_src[360] % 0x169;
   unsigned_int_dest[361] = unsigned_int_src[361] % 0x16a;
   unsigned_int_dest[362] = unsigned_int_src[362] % 0x16b;
-  unsigned_int_dest[363] = unsigned_int_src[363] + ((unsigned_int_src[363] >> 2) / 0x5b) * -0x16c;
+  unsigned_int_dest[363] = unsigned_int_src[363] % 0x16c;
   unsigned_int_dest[364] = unsigned_int_src[364] % 0x16d;
   unsigned_int_dest[365] = unsigned_int_src[365] % 0x16e;
   unsigned_int_dest[366] = unsigned_int_src[366] % 0x16f;
   unsigned_int_dest[367] = unsigned_int_src[367] % 0x170;
   unsigned_int_dest[368] = unsigned_int_src[368] % 0x171;
-  unsigned_int_dest[369] = unsigned_int_src[369] + ((unsigned_int_src[369] >> 1) / 0xb9) * -0x172;
+  unsigned_int_dest[369] = unsigned_int_src[369] % 0x172;
   unsigned_int_dest[370] = unsigned_int_src[370] % 0x173;
   unsigned_int_dest[371] = unsigned_int_src[371] % 0x174;
   unsigned_int_dest[372] = unsigned_int_src[372] % 0x175;
@@ -35769,9 +33534,9 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[374] = unsigned_int_src[374] % 0x177;
   unsigned_int_dest[375] = unsigned_int_src[375] % 0x178;
   unsigned_int_dest[376] = unsigned_int_src[376] % 0x179;
-  unsigned_int_dest[377] = unsigned_int_src[377] + ((unsigned_int_src[377] >> 1) / 0xbd) * -0x17a;
+  unsigned_int_dest[377] = unsigned_int_src[377] % 0x17a;
   unsigned_int_dest[378] = unsigned_int_src[378] % 0x17b;
-  unsigned_int_dest[379] = unsigned_int_src[379] + ((unsigned_int_src[379] >> 2) / 0x5f) * -0x17c;
+  unsigned_int_dest[379] = unsigned_int_src[379] % 0x17c;
   unsigned_int_dest[380] = unsigned_int_src[380] % 0x17d;
   unsigned_int_dest[381] = unsigned_int_src[381] % 0x17e;
   unsigned_int_dest[382] = unsigned_int_src[382] % 0x17f;
@@ -35779,13 +33544,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[384] = unsigned_int_src[384] % 0x181;
   unsigned_int_dest[385] = unsigned_int_src[385] % 0x182;
   unsigned_int_dest[386] = unsigned_int_src[386] % 0x183;
-  unsigned_int_dest[387] = unsigned_int_src[387] + ((unsigned_int_src[387] >> 2) / 0x61) * -0x184;
+  unsigned_int_dest[387] = unsigned_int_src[387] % 0x184;
   unsigned_int_dest[388] = unsigned_int_src[388] % 0x185;
-  unsigned_int_dest[389] = unsigned_int_src[389] + ((unsigned_int_src[389] >> 1) / 0xc3) * -0x186;
+  unsigned_int_dest[389] = unsigned_int_src[389] % 0x186;
   unsigned_int_dest[390] = unsigned_int_src[390] % 0x187;
   unsigned_int_dest[391] = unsigned_int_src[391] % 0x188;
   unsigned_int_dest[392] = unsigned_int_src[392] % 0x189;
-  unsigned_int_dest[393] = unsigned_int_src[393] + ((unsigned_int_src[393] >> 1) / 0xc5) * -0x18a;
+  unsigned_int_dest[393] = unsigned_int_src[393] % 0x18a;
   unsigned_int_dest[394] = unsigned_int_src[394] % 0x18b;
   unsigned_int_dest[395] = unsigned_int_src[395] % 0x18c;
   unsigned_int_dest[396] = unsigned_int_src[396] % 0x18d;
@@ -35795,7 +33560,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[400] = unsigned_int_src[400] % 0x191;
   unsigned_int_dest[401] = unsigned_int_src[401] % 0x192;
   unsigned_int_dest[402] = unsigned_int_src[402] % 0x193;
-  unsigned_int_dest[403] = unsigned_int_src[403] + ((unsigned_int_src[403] >> 2) / 0x65) * -0x194;
+  unsigned_int_dest[403] = unsigned_int_src[403] % 0x194;
   unsigned_int_dest[404] = unsigned_int_src[404] % 0x195;
   unsigned_int_dest[405] = unsigned_int_src[405] % 0x196;
   unsigned_int_dest[406] = unsigned_int_src[406] % 0x197;
@@ -35803,7 +33568,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[408] = unsigned_int_src[408] % 0x199;
   unsigned_int_dest[409] = unsigned_int_src[409] % 0x19a;
   unsigned_int_dest[410] = unsigned_int_src[410] % 0x19b;
-  unsigned_int_dest[411] = unsigned_int_src[411] + ((unsigned_int_src[411] >> 2) / 0x67) * -0x19c;
+  unsigned_int_dest[411] = unsigned_int_src[411] % 0x19c;
   unsigned_int_dest[412] = unsigned_int_src[412] % 0x19d;
   unsigned_int_dest[413] = unsigned_int_src[413] % 0x19e;
   unsigned_int_dest[414] = unsigned_int_src[414] % 0x19f;
@@ -35811,61 +33576,61 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[416] = unsigned_int_src[416] % 0x1a1;
   unsigned_int_dest[417] = unsigned_int_src[417] % 0x1a2;
   unsigned_int_dest[418] = unsigned_int_src[418] % 0x1a3;
-  unsigned_int_dest[419] = unsigned_int_src[419] + ((unsigned_int_src[419] >> 2) / 0x69) * -0x1a4;
+  unsigned_int_dest[419] = unsigned_int_src[419] % 0x1a4;
   unsigned_int_dest[420] = unsigned_int_src[420] % 0x1a5;
   unsigned_int_dest[421] = unsigned_int_src[421] % 0x1a6;
   unsigned_int_dest[422] = unsigned_int_src[422] % 0x1a7;
-  unsigned_int_dest[423] = unsigned_int_src[423] + ((unsigned_int_src[423] >> 3) / 0x35) * -0x1a8;
+  unsigned_int_dest[423] = unsigned_int_src[423] % 0x1a8;
   unsigned_int_dest[424] = unsigned_int_src[424] % 0x1a9;
   unsigned_int_dest[425] = unsigned_int_src[425] % 0x1aa;
   unsigned_int_dest[426] = unsigned_int_src[426] % 0x1ab;
-  unsigned_int_dest[427] = unsigned_int_src[427] + ((unsigned_int_src[427] >> 2) / 0x6b) * -0x1ac;
+  unsigned_int_dest[427] = unsigned_int_src[427] % 0x1ac;
   unsigned_int_dest[428] = unsigned_int_src[428] % 0x1ad;
   unsigned_int_dest[429] = unsigned_int_src[429] % 0x1ae;
   unsigned_int_dest[430] = unsigned_int_src[430] % 0x1af;
-  unsigned_int_dest[431] = unsigned_int_src[431] + ((unsigned_int_src[431] >> 4) / 0x1b) * -0x1b0;
+  unsigned_int_dest[431] = unsigned_int_src[431] % 0x1b0;
   unsigned_int_dest[432] = unsigned_int_src[432] % 0x1b1;
-  unsigned_int_dest[433] = unsigned_int_src[433] + ((unsigned_int_src[433] >> 1) / 0xd9) * -0x1b2;
+  unsigned_int_dest[433] = unsigned_int_src[433] % 0x1b2;
   unsigned_int_dest[434] = unsigned_int_src[434] % 0x1b3;
-  unsigned_int_dest[435] = unsigned_int_src[435] + ((unsigned_int_src[435] >> 2) / 0x6d) * -0x1b4;
+  unsigned_int_dest[435] = unsigned_int_src[435] % 0x1b4;
   unsigned_int_dest[436] = unsigned_int_src[436] % 0x1b5;
-  unsigned_int_dest[437] = unsigned_int_src[437] + ((unsigned_int_src[437] >> 1) / 0xdb) * -0x1b6;
+  unsigned_int_dest[437] = unsigned_int_src[437] % 0x1b6;
   unsigned_int_dest[438] = unsigned_int_src[438] % 0x1b7;
-  unsigned_int_dest[439] = unsigned_int_src[439] + ((unsigned_int_src[439] >> 3) / 0x37) * -0x1b8;
+  unsigned_int_dest[439] = unsigned_int_src[439] % 0x1b8;
   unsigned_int_dest[440] = unsigned_int_src[440] % 0x1b9;
-  unsigned_int_dest[441] = unsigned_int_src[441] + ((unsigned_int_src[441] >> 1) / 0xdd) * -0x1ba;
+  unsigned_int_dest[441] = unsigned_int_src[441] % 0x1ba;
   unsigned_int_dest[442] = unsigned_int_src[442] % 0x1bb;
-  unsigned_int_dest[443] = unsigned_int_src[443] + ((unsigned_int_src[443] >> 2) / 0x6f) * -0x1bc;
+  unsigned_int_dest[443] = unsigned_int_src[443] % 0x1bc;
   unsigned_int_dest[444] = unsigned_int_src[444] % 0x1bd;
-  unsigned_int_dest[445] = unsigned_int_src[445] + ((unsigned_int_src[445] >> 1) / 0xdf) * -0x1be;
+  unsigned_int_dest[445] = unsigned_int_src[445] % 0x1be;
   unsigned_int_dest[446] = unsigned_int_src[446] % 0x1bf;
-  unsigned_int_dest[447] = unsigned_int_src[447] + ((unsigned_int_src[447] >> 6) / 7) * -0x1c0;
+  unsigned_int_dest[447] = unsigned_int_src[447] % 0x1c0;
   unsigned_int_dest[448] = unsigned_int_src[448] % 0x1c1;
   unsigned_int_dest[449] = unsigned_int_src[449] % 0x1c2;
   unsigned_int_dest[450] = unsigned_int_src[450] % 0x1c3;
-  unsigned_int_dest[451] = unsigned_int_src[451] + ((unsigned_int_src[451] >> 2) / 0x71) * -0x1c4;
+  unsigned_int_dest[451] = unsigned_int_src[451] % 0x1c4;
   unsigned_int_dest[452] = unsigned_int_src[452] % 0x1c5;
-  unsigned_int_dest[453] = unsigned_int_src[453] + ((unsigned_int_src[453] >> 1) / 0xe3) * -0x1c6;
+  unsigned_int_dest[453] = unsigned_int_src[453] % 0x1c6;
   unsigned_int_dest[454] = unsigned_int_src[454] % 0x1c7;
-  unsigned_int_dest[455] = unsigned_int_src[455] + ((unsigned_int_src[455] >> 3) / 0x39) * -0x1c8;
+  unsigned_int_dest[455] = unsigned_int_src[455] % 0x1c8;
   unsigned_int_dest[456] = unsigned_int_src[456] % 0x1c9;
   unsigned_int_dest[457] = unsigned_int_src[457] % 0x1ca;
   unsigned_int_dest[458] = unsigned_int_src[458] % 0x1cb;
-  unsigned_int_dest[459] = unsigned_int_src[459] + ((unsigned_int_src[459] >> 2) / 0x73) * -0x1cc;
+  unsigned_int_dest[459] = unsigned_int_src[459] % 0x1cc;
   unsigned_int_dest[460] = unsigned_int_src[460] % 0x1cd;
-  unsigned_int_dest[461] = unsigned_int_src[461] + ((unsigned_int_src[461] >> 1) / 0xe7) * -0x1ce;
+  unsigned_int_dest[461] = unsigned_int_src[461] % 0x1ce;
   unsigned_int_dest[462] = unsigned_int_src[462] % 0x1cf;
   unsigned_int_dest[463] = unsigned_int_src[463] % 0x1d0;
   unsigned_int_dest[464] = unsigned_int_src[464] % 0x1d1;
-  unsigned_int_dest[465] = unsigned_int_src[465] + ((unsigned_int_src[465] >> 1) / 0xe9) * -0x1d2;
+  unsigned_int_dest[465] = unsigned_int_src[465] % 0x1d2;
   unsigned_int_dest[466] = unsigned_int_src[466] % 0x1d3;
-  unsigned_int_dest[467] = unsigned_int_src[467] + ((unsigned_int_src[467] >> 2) / 0x75) * -0x1d4;
+  unsigned_int_dest[467] = unsigned_int_src[467] % 0x1d4;
   unsigned_int_dest[468] = unsigned_int_src[468] % 0x1d5;
-  unsigned_int_dest[469] = unsigned_int_src[469] + ((unsigned_int_src[469] >> 1) / 0xeb) * -0x1d6;
+  unsigned_int_dest[469] = unsigned_int_src[469] % 0x1d6;
   unsigned_int_dest[470] = unsigned_int_src[470] % 0x1d7;
   unsigned_int_dest[471] = unsigned_int_src[471] % 0x1d8;
   unsigned_int_dest[472] = unsigned_int_src[472] % 0x1d9;
-  unsigned_int_dest[473] = unsigned_int_src[473] + ((unsigned_int_src[473] >> 1) / 0xed) * -0x1da;
+  unsigned_int_dest[473] = unsigned_int_src[473] % 0x1da;
   unsigned_int_dest[474] = unsigned_int_src[474] % 0x1db;
   unsigned_int_dest[475] = unsigned_int_src[475] % 0x1dc;
   unsigned_int_dest[476] = unsigned_int_src[476] % 0x1dd;
@@ -35875,31 +33640,31 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[480] = unsigned_int_src[480] % 0x1e1;
   unsigned_int_dest[481] = unsigned_int_src[481] % 0x1e2;
   unsigned_int_dest[482] = unsigned_int_src[482] % 0x1e3;
-  unsigned_int_dest[483] = unsigned_int_src[483] + ((unsigned_int_src[483] >> 2) / 0x79) * -0x1e4;
+  unsigned_int_dest[483] = unsigned_int_src[483] % 0x1e4;
   unsigned_int_dest[484] = unsigned_int_src[484] % 0x1e5;
   unsigned_int_dest[485] = unsigned_int_src[485] % 0x1e6;
   unsigned_int_dest[486] = unsigned_int_src[486] % 0x1e7;
   unsigned_int_dest[487] = unsigned_int_src[487] % 0x1e8;
   unsigned_int_dest[488] = unsigned_int_src[488] % 0x1e9;
-  unsigned_int_dest[489] = unsigned_int_src[489] + ((unsigned_int_src[489] >> 1) / 0xf5) * -0x1ea;
+  unsigned_int_dest[489] = unsigned_int_src[489] % 0x1ea;
   unsigned_int_dest[490] = unsigned_int_src[490] % 0x1eb;
-  unsigned_int_dest[491] = unsigned_int_src[491] + ((unsigned_int_src[491] >> 2) / 0x7b) * -0x1ec;
+  unsigned_int_dest[491] = unsigned_int_src[491] % 0x1ec;
   unsigned_int_dest[492] = unsigned_int_src[492] % 0x1ed;
-  unsigned_int_dest[493] = unsigned_int_src[493] + ((unsigned_int_src[493] >> 1) / 0xf7) * -0x1ee;
+  unsigned_int_dest[493] = unsigned_int_src[493] % 0x1ee;
   unsigned_int_dest[494] = unsigned_int_src[494] % 0x1ef;
-  unsigned_int_dest[495] = unsigned_int_src[495] + ((unsigned_int_src[495] >> 4) / 0x1f) * -0x1f0;
+  unsigned_int_dest[495] = unsigned_int_src[495] % 0x1f0;
   unsigned_int_dest[496] = unsigned_int_src[496] % 0x1f1;
-  unsigned_int_dest[497] = unsigned_int_src[497] + ((unsigned_int_src[497] >> 1) / 0xf9) * -0x1f2;
+  unsigned_int_dest[497] = unsigned_int_src[497] % 0x1f2;
   unsigned_int_dest[498] = unsigned_int_src[498] % 499;
   unsigned_int_dest[499] = unsigned_int_src[499] % 500;
   unsigned_int_dest[500] = unsigned_int_src[500] % 0x1f5;
   unsigned_int_dest[501] = unsigned_int_src[501] % 0x1f6;
   unsigned_int_dest[502] = unsigned_int_src[502] % 0x1f7;
-  unsigned_int_dest[503] = unsigned_int_src[503] + ((unsigned_int_src[503] >> 3) / 0x3f) * -0x1f8;
+  unsigned_int_dest[503] = unsigned_int_src[503] % 0x1f8;
   unsigned_int_dest[504] = unsigned_int_src[504] % 0x1f9;
   unsigned_int_dest[505] = unsigned_int_src[505] % 0x1fa;
   unsigned_int_dest[506] = unsigned_int_src[506] % 0x1fb;
-  unsigned_int_dest[507] = unsigned_int_src[507] + ((unsigned_int_src[507] >> 2) / 0x7f) * -0x1fc;
+  unsigned_int_dest[507] = unsigned_int_src[507] % 0x1fc;
   unsigned_int_dest[508] = unsigned_int_src[508] % 0x1fd;
   unsigned_int_dest[509] = unsigned_int_src[509] % 0x1fe;
   unsigned_int_dest[510] = unsigned_int_src[510] % 0x1ff;
@@ -35937,11 +33702,11 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[542] = unsigned_int_src[542] % 0x21f;
   unsigned_int_dest[543] = unsigned_int_src[543] % 0x220;
   unsigned_int_dest[544] = unsigned_int_src[544] % 0x221;
-  unsigned_int_dest[545] = unsigned_int_src[545] + ((unsigned_int_src[545] >> 1) / 0x111) * -0x222;
+  unsigned_int_dest[545] = unsigned_int_src[545] % 0x222;
   unsigned_int_dest[546] = unsigned_int_src[546] % 0x223;
   unsigned_int_dest[547] = unsigned_int_src[547] % 0x224;
   unsigned_int_dest[548] = unsigned_int_src[548] % 0x225;
-  unsigned_int_dest[549] = unsigned_int_src[549] + ((unsigned_int_src[549] >> 1) / 0x113) * -0x226;
+  unsigned_int_dest[549] = unsigned_int_src[549] % 0x226;
   unsigned_int_dest[550] = unsigned_int_src[550] % 0x227;
   unsigned_int_dest[551] = unsigned_int_src[551] % 0x228;
   unsigned_int_dest[552] = unsigned_int_src[552] % 0x229;
@@ -35951,7 +33716,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[556] = unsigned_int_src[556] % 0x22d;
   unsigned_int_dest[557] = unsigned_int_src[557] % 0x22e;
   unsigned_int_dest[558] = unsigned_int_src[558] % 0x22f;
-  unsigned_int_dest[559] = unsigned_int_src[559] + ((unsigned_int_src[559] >> 4) / 0x23) * -0x230;
+  unsigned_int_dest[559] = unsigned_int_src[559] % 0x230;
   unsigned_int_dest[560] = unsigned_int_src[560] % 0x231;
   unsigned_int_dest[561] = unsigned_int_src[561] % 0x232;
   unsigned_int_dest[562] = unsigned_int_src[562] % 0x233;
@@ -35961,7 +33726,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[566] = unsigned_int_src[566] % 0x237;
   unsigned_int_dest[567] = unsigned_int_src[567] % 0x238;
   unsigned_int_dest[568] = unsigned_int_src[568] % 0x239;
-  unsigned_int_dest[569] = unsigned_int_src[569] + ((unsigned_int_src[569] >> 1) / 0x11d) * -0x23a;
+  unsigned_int_dest[569] = unsigned_int_src[569] % 0x23a;
   unsigned_int_dest[570] = unsigned_int_src[570] % 0x23b;
   unsigned_int_dest[571] = unsigned_int_src[571] % 0x23c;
   unsigned_int_dest[572] = unsigned_int_src[572] % 0x23d;
@@ -35975,7 +33740,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[580] = unsigned_int_src[580] % 0x245;
   unsigned_int_dest[581] = unsigned_int_src[581] % 0x246;
   unsigned_int_dest[582] = unsigned_int_src[582] % 0x247;
-  unsigned_int_dest[583] = unsigned_int_src[583] + ((unsigned_int_src[583] >> 3) / 0x49) * -0x248;
+  unsigned_int_dest[583] = unsigned_int_src[583] % 0x248;
   unsigned_int_dest[584] = unsigned_int_src[584] % 0x249;
   unsigned_int_dest[585] = unsigned_int_src[585] % 0x24a;
   unsigned_int_dest[586] = unsigned_int_src[586] % 0x24b;
@@ -35983,7 +33748,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[588] = unsigned_int_src[588] % 0x24d;
   unsigned_int_dest[589] = unsigned_int_src[589] % 0x24e;
   unsigned_int_dest[590] = unsigned_int_src[590] % 0x24f;
-  unsigned_int_dest[591] = unsigned_int_src[591] + ((unsigned_int_src[591] >> 4) / 0x25) * -0x250;
+  unsigned_int_dest[591] = unsigned_int_src[591] % 0x250;
   unsigned_int_dest[592] = unsigned_int_src[592] % 0x251;
   unsigned_int_dest[593] = unsigned_int_src[593] % 0x252;
   unsigned_int_dest[594] = unsigned_int_src[594] % 0x253;
@@ -35999,7 +33764,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[604] = unsigned_int_src[604] % 0x25d;
   unsigned_int_dest[605] = unsigned_int_src[605] % 0x25e;
   unsigned_int_dest[606] = unsigned_int_src[606] % 0x25f;
-  unsigned_int_dest[607] = unsigned_int_src[607] + ((unsigned_int_src[607] >> 5) / 0x13) * -0x260;
+  unsigned_int_dest[607] = unsigned_int_src[607] % 0x260;
   unsigned_int_dest[608] = unsigned_int_src[608] % 0x261;
   unsigned_int_dest[609] = unsigned_int_src[609] % 0x262;
   unsigned_int_dest[610] = unsigned_int_src[610] % 0x263;
@@ -36015,19 +33780,19 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[620] = unsigned_int_src[620] % 0x26d;
   unsigned_int_dest[621] = unsigned_int_src[621] % 0x26e;
   unsigned_int_dest[622] = unsigned_int_src[622] % 0x26f;
-  unsigned_int_dest[623] = unsigned_int_src[623] + ((unsigned_int_src[623] >> 4) / 0x27) * -0x270;
+  unsigned_int_dest[623] = unsigned_int_src[623] % 0x270;
   unsigned_int_dest[624] = unsigned_int_src[624] % 0x271;
-  unsigned_int_dest[625] = unsigned_int_src[625] + ((unsigned_int_src[625] >> 1) / 0x139) * -0x272;
+  unsigned_int_dest[625] = unsigned_int_src[625] % 0x272;
   unsigned_int_dest[626] = unsigned_int_src[626] % 0x273;
   unsigned_int_dest[627] = unsigned_int_src[627] % 0x274;
   unsigned_int_dest[628] = unsigned_int_src[628] % 0x275;
-  unsigned_int_dest[629] = unsigned_int_src[629] + ((unsigned_int_src[629] >> 1) / 0x13b) * -0x276;
+  unsigned_int_dest[629] = unsigned_int_src[629] % 0x276;
   unsigned_int_dest[630] = unsigned_int_src[630] % 0x277;
   unsigned_int_dest[631] = unsigned_int_src[631] % 0x278;
   unsigned_int_dest[632] = unsigned_int_src[632] % 0x279;
   unsigned_int_dest[633] = unsigned_int_src[633] % 0x27a;
   unsigned_int_dest[634] = unsigned_int_src[634] % 0x27b;
-  unsigned_int_dest[635] = unsigned_int_src[635] + ((unsigned_int_src[635] >> 2) / 0x9f) * -0x27c;
+  unsigned_int_dest[635] = unsigned_int_src[635] % 0x27c;
   unsigned_int_dest[636] = unsigned_int_src[636] % 0x27d;
   unsigned_int_dest[637] = unsigned_int_src[637] % 0x27e;
   unsigned_int_dest[638] = unsigned_int_src[638] % 0x27f;
@@ -36037,7 +33802,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[642] = unsigned_int_src[642] % 0x283;
   unsigned_int_dest[643] = unsigned_int_src[643] % 0x284;
   unsigned_int_dest[644] = unsigned_int_src[644] % 0x285;
-  unsigned_int_dest[645] = unsigned_int_src[645] + ((unsigned_int_src[645] >> 1) / 0x143) * -0x286;
+  unsigned_int_dest[645] = unsigned_int_src[645] % 0x286;
   unsigned_int_dest[646] = unsigned_int_src[646] % 0x287;
   unsigned_int_dest[647] = unsigned_int_src[647] % 0x288;
   unsigned_int_dest[648] = unsigned_int_src[648] % 0x289;
@@ -36045,7 +33810,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[650] = unsigned_int_src[650] % 0x28b;
   unsigned_int_dest[651] = unsigned_int_src[651] % 0x28c;
   unsigned_int_dest[652] = unsigned_int_src[652] % 0x28d;
-  unsigned_int_dest[653] = unsigned_int_src[653] + ((unsigned_int_src[653] >> 1) / 0x147) * -0x28e;
+  unsigned_int_dest[653] = unsigned_int_src[653] % 0x28e;
   unsigned_int_dest[654] = unsigned_int_src[654] % 0x28f;
   unsigned_int_dest[655] = unsigned_int_src[655] % 0x290;
   unsigned_int_dest[656] = unsigned_int_src[656] % 0x291;
@@ -36053,29 +33818,29 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[658] = unsigned_int_src[658] % 0x293;
   unsigned_int_dest[659] = unsigned_int_src[659] % 0x294;
   unsigned_int_dest[660] = unsigned_int_src[660] % 0x295;
-  unsigned_int_dest[661] = unsigned_int_src[661] + ((unsigned_int_src[661] >> 1) / 0x14b) * -0x296;
+  unsigned_int_dest[661] = unsigned_int_src[661] % 0x296;
   unsigned_int_dest[662] = unsigned_int_src[662] % 0x297;
   unsigned_int_dest[663] = unsigned_int_src[663] % 0x298;
   unsigned_int_dest[664] = unsigned_int_src[664] % 0x299;
-  unsigned_int_dest[665] = unsigned_int_src[665] + ((unsigned_int_src[665] >> 1) / 0x14d) * -0x29a;
+  unsigned_int_dest[665] = unsigned_int_src[665] % 0x29a;
   unsigned_int_dest[666] = unsigned_int_src[666] % 0x29b;
   unsigned_int_dest[667] = unsigned_int_src[667] % 0x29c;
   unsigned_int_dest[668] = unsigned_int_src[668] % 0x29d;
-  unsigned_int_dest[669] = unsigned_int_src[669] + ((unsigned_int_src[669] >> 1) / 0x14f) * -0x29e;
+  unsigned_int_dest[669] = unsigned_int_src[669] % 0x29e;
   unsigned_int_dest[670] = unsigned_int_src[670] % 0x29f;
-  unsigned_int_dest[671] = unsigned_int_src[671] + ((unsigned_int_src[671] >> 5) / 0x15) * -0x2a0;
+  unsigned_int_dest[671] = unsigned_int_src[671] % 0x2a0;
   unsigned_int_dest[672] = unsigned_int_src[672] % 0x2a1;
   unsigned_int_dest[673] = unsigned_int_src[673] % 0x2a2;
   unsigned_int_dest[674] = unsigned_int_src[674] % 0x2a3;
   unsigned_int_dest[675] = unsigned_int_src[675] % 0x2a4;
   unsigned_int_dest[676] = unsigned_int_src[676] % 0x2a5;
-  unsigned_int_dest[677] = unsigned_int_src[677] + ((unsigned_int_src[677] >> 1) / 0x153) * -0x2a6;
+  unsigned_int_dest[677] = unsigned_int_src[677] % 0x2a6;
   unsigned_int_dest[678] = unsigned_int_src[678] % 0x2a7;
   unsigned_int_dest[679] = unsigned_int_src[679] % 0x2a8;
   unsigned_int_dest[680] = unsigned_int_src[680] % 0x2a9;
-  unsigned_int_dest[681] = unsigned_int_src[681] + ((unsigned_int_src[681] >> 1) / 0x155) * -0x2aa;
+  unsigned_int_dest[681] = unsigned_int_src[681] % 0x2aa;
   unsigned_int_dest[682] = unsigned_int_src[682] % 0x2ab;
-  unsigned_int_dest[683] = unsigned_int_src[683] + ((unsigned_int_src[683] >> 2) / 0xab) * -0x2ac;
+  unsigned_int_dest[683] = unsigned_int_src[683] % 0x2ac;
   unsigned_int_dest[684] = unsigned_int_src[684] % 0x2ad;
   unsigned_int_dest[685] = unsigned_int_src[685] % 0x2ae;
   unsigned_int_dest[686] = unsigned_int_src[686] % 0x2af;
@@ -36083,7 +33848,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[688] = unsigned_int_src[688] % 0x2b1;
   unsigned_int_dest[689] = unsigned_int_src[689] % 0x2b2;
   unsigned_int_dest[690] = unsigned_int_src[690] % 0x2b3;
-  unsigned_int_dest[691] = unsigned_int_src[691] + ((unsigned_int_src[691] >> 2) / 0xad) * -0x2b4;
+  unsigned_int_dest[691] = unsigned_int_src[691] % 0x2b4;
   unsigned_int_dest[692] = unsigned_int_src[692] % 0x2b5;
   unsigned_int_dest[693] = unsigned_int_src[693] % 0x2b6;
   unsigned_int_dest[694] = unsigned_int_src[694] % 0x2b7;
@@ -36093,13 +33858,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[698] = unsigned_int_src[698] % 699;
   unsigned_int_dest[699] = unsigned_int_src[699] % 700;
   unsigned_int_dest[700] = unsigned_int_src[700] % 0x2bd;
-  unsigned_int_dest[701] = unsigned_int_src[701] + ((unsigned_int_src[701] >> 1) / 0x15f) * -0x2be;
+  unsigned_int_dest[701] = unsigned_int_src[701] % 0x2be;
   unsigned_int_dest[702] = unsigned_int_src[702] % 0x2bf;
   unsigned_int_dest[703] = unsigned_int_src[703] % 0x2c0;
   unsigned_int_dest[704] = unsigned_int_src[704] % 0x2c1;
-  unsigned_int_dest[705] = unsigned_int_src[705] + ((unsigned_int_src[705] >> 1) / 0x161) * -0x2c2;
+  unsigned_int_dest[705] = unsigned_int_src[705] % 0x2c2;
   unsigned_int_dest[706] = unsigned_int_src[706] % 0x2c3;
-  unsigned_int_dest[707] = unsigned_int_src[707] + ((unsigned_int_src[707] >> 2) / 0xb1) * -0x2c4;
+  unsigned_int_dest[707] = unsigned_int_src[707] % 0x2c4;
   unsigned_int_dest[708] = unsigned_int_src[708] % 0x2c5;
   unsigned_int_dest[709] = unsigned_int_src[709] % 0x2c6;
   unsigned_int_dest[710] = unsigned_int_src[710] % 0x2c7;
@@ -36107,21 +33872,21 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[712] = unsigned_int_src[712] % 0x2c9;
   unsigned_int_dest[713] = unsigned_int_src[713] % 0x2ca;
   unsigned_int_dest[714] = unsigned_int_src[714] % 0x2cb;
-  unsigned_int_dest[715] = unsigned_int_src[715] + ((unsigned_int_src[715] >> 2) / 0xb3) * -0x2cc;
+  unsigned_int_dest[715] = unsigned_int_src[715] % 0x2cc;
   unsigned_int_dest[716] = unsigned_int_src[716] % 0x2cd;
-  unsigned_int_dest[717] = unsigned_int_src[717] + ((unsigned_int_src[717] >> 1) / 0x167) * -0x2ce;
+  unsigned_int_dest[717] = unsigned_int_src[717] % 0x2ce;
   unsigned_int_dest[718] = unsigned_int_src[718] % 0x2cf;
-  unsigned_int_dest[719] = unsigned_int_src[719] + ((unsigned_int_src[719] >> 4) / 0x2d) * -0x2d0;
+  unsigned_int_dest[719] = unsigned_int_src[719] % 0x2d0;
   unsigned_int_dest[720] = unsigned_int_src[720] % 0x2d1;
-  unsigned_int_dest[721] = unsigned_int_src[721] + ((unsigned_int_src[721] >> 1) / 0x169) * -0x2d2;
+  unsigned_int_dest[721] = unsigned_int_src[721] % 0x2d2;
   unsigned_int_dest[722] = unsigned_int_src[722] % 0x2d3;
   unsigned_int_dest[723] = unsigned_int_src[723] % 0x2d4;
   unsigned_int_dest[724] = unsigned_int_src[724] % 0x2d5;
-  unsigned_int_dest[725] = unsigned_int_src[725] + ((unsigned_int_src[725] >> 1) / 0x16b) * -0x2d6;
+  unsigned_int_dest[725] = unsigned_int_src[725] % 0x2d6;
   unsigned_int_dest[726] = unsigned_int_src[726] % 0x2d7;
-  unsigned_int_dest[727] = unsigned_int_src[727] + ((unsigned_int_src[727] >> 3) / 0x5b) * -0x2d8;
+  unsigned_int_dest[727] = unsigned_int_src[727] % 0x2d8;
   unsigned_int_dest[728] = unsigned_int_src[728] % 0x2d9;
-  unsigned_int_dest[729] = unsigned_int_src[729] + ((unsigned_int_src[729] >> 1) / 0x16d) * -0x2da;
+  unsigned_int_dest[729] = unsigned_int_src[729] % 0x2da;
   unsigned_int_dest[730] = unsigned_int_src[730] % 0x2db;
   unsigned_int_dest[731] = unsigned_int_src[731] % 0x2dc;
   unsigned_int_dest[732] = unsigned_int_src[732] % 0x2dd;
@@ -36131,13 +33896,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[736] = unsigned_int_src[736] % 0x2e1;
   unsigned_int_dest[737] = unsigned_int_src[737] % 0x2e2;
   unsigned_int_dest[738] = unsigned_int_src[738] % 0x2e3;
-  unsigned_int_dest[739] = unsigned_int_src[739] + ((unsigned_int_src[739] >> 2) / 0xb9) * -0x2e4;
+  unsigned_int_dest[739] = unsigned_int_src[739] % 0x2e4;
   unsigned_int_dest[740] = unsigned_int_src[740] % 0x2e5;
   unsigned_int_dest[741] = unsigned_int_src[741] % 0x2e6;
   unsigned_int_dest[742] = unsigned_int_src[742] % 0x2e7;
   unsigned_int_dest[743] = unsigned_int_src[743] % 0x2e8;
   unsigned_int_dest[744] = unsigned_int_src[744] % 0x2e9;
-  unsigned_int_dest[745] = unsigned_int_src[745] + ((unsigned_int_src[745] >> 1) / 0x175) * -0x2ea;
+  unsigned_int_dest[745] = unsigned_int_src[745] % 0x2ea;
   unsigned_int_dest[746] = unsigned_int_src[746] % 0x2eb;
   unsigned_int_dest[747] = unsigned_int_src[747] % 0x2ec;
   unsigned_int_dest[748] = unsigned_int_src[748] % 0x2ed;
@@ -36145,13 +33910,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[750] = unsigned_int_src[750] % 0x2ef;
   unsigned_int_dest[751] = unsigned_int_src[751] % 0x2f0;
   unsigned_int_dest[752] = unsigned_int_src[752] % 0x2f1;
-  unsigned_int_dest[753] = unsigned_int_src[753] + ((unsigned_int_src[753] >> 1) / 0x179) * -0x2f2;
+  unsigned_int_dest[753] = unsigned_int_src[753] % 0x2f2;
   unsigned_int_dest[754] = unsigned_int_src[754] % 0x2f3;
-  unsigned_int_dest[755] = unsigned_int_src[755] + ((unsigned_int_src[755] >> 2) / 0xbd) * -0x2f4;
+  unsigned_int_dest[755] = unsigned_int_src[755] % 0x2f4;
   unsigned_int_dest[756] = unsigned_int_src[756] % 0x2f5;
-  unsigned_int_dest[757] = unsigned_int_src[757] + ((unsigned_int_src[757] >> 1) / 0x17b) * -0x2f6;
+  unsigned_int_dest[757] = unsigned_int_src[757] % 0x2f6;
   unsigned_int_dest[758] = unsigned_int_src[758] % 0x2f7;
-  unsigned_int_dest[759] = unsigned_int_src[759] + ((unsigned_int_src[759] >> 3) / 0x5f) * -0x2f8;
+  unsigned_int_dest[759] = unsigned_int_src[759] % 0x2f8;
   unsigned_int_dest[760] = unsigned_int_src[760] % 0x2f9;
   unsigned_int_dest[761] = unsigned_int_src[761] % 0x2fa;
   unsigned_int_dest[762] = unsigned_int_src[762] % 0x2fb;
@@ -36165,13 +33930,13 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[770] = unsigned_int_src[770] % 0x303;
   unsigned_int_dest[771] = unsigned_int_src[771] % 0x304;
   unsigned_int_dest[772] = unsigned_int_src[772] % 0x305;
-  unsigned_int_dest[773] = unsigned_int_src[773] + ((unsigned_int_src[773] >> 1) / 0x183) * -0x306;
+  unsigned_int_dest[773] = unsigned_int_src[773] % 0x306;
   unsigned_int_dest[774] = unsigned_int_src[774] % 0x307;
-  unsigned_int_dest[775] = unsigned_int_src[775] + ((unsigned_int_src[775] >> 3) / 0x61) * -0x308;
+  unsigned_int_dest[775] = unsigned_int_src[775] % 0x308;
   unsigned_int_dest[776] = unsigned_int_src[776] % 0x309;
   unsigned_int_dest[777] = unsigned_int_src[777] % 0x30a;
   unsigned_int_dest[778] = unsigned_int_src[778] % 0x30b;
-  unsigned_int_dest[779] = unsigned_int_src[779] + ((unsigned_int_src[779] >> 2) / 0xc3) * -0x30c;
+  unsigned_int_dest[779] = unsigned_int_src[779] % 0x30c;
   unsigned_int_dest[780] = unsigned_int_src[780] % 0x30d;
   unsigned_int_dest[781] = unsigned_int_src[781] % 0x30e;
   unsigned_int_dest[782] = unsigned_int_src[782] % 0x30f;
@@ -36179,9 +33944,9 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[784] = unsigned_int_src[784] % 0x311;
   unsigned_int_dest[785] = unsigned_int_src[785] % 0x312;
   unsigned_int_dest[786] = unsigned_int_src[786] % 0x313;
-  unsigned_int_dest[787] = unsigned_int_src[787] + ((unsigned_int_src[787] >> 2) / 0xc5) * -0x314;
+  unsigned_int_dest[787] = unsigned_int_src[787] % 0x314;
   unsigned_int_dest[788] = unsigned_int_src[788] % 0x315;
-  unsigned_int_dest[789] = unsigned_int_src[789] + ((unsigned_int_src[789] >> 1) / 0x18b) * -0x316;
+  unsigned_int_dest[789] = unsigned_int_src[789] % 0x316;
   unsigned_int_dest[790] = unsigned_int_src[790] % 0x317;
   unsigned_int_dest[791] = unsigned_int_src[791] % 0x318;
   unsigned_int_dest[792] = unsigned_int_src[792] % 0x319;
@@ -36189,7 +33954,7 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[794] = unsigned_int_src[794] % 0x31b;
   unsigned_int_dest[795] = unsigned_int_src[795] % 0x31c;
   unsigned_int_dest[796] = unsigned_int_src[796] % 0x31d;
-  unsigned_int_dest[797] = unsigned_int_src[797] + ((unsigned_int_src[797] >> 1) / 399) * -0x31e;
+  unsigned_int_dest[797] = unsigned_int_src[797] % 0x31e;
   unsigned_int_dest[798] = unsigned_int_src[798] % 799;
   unsigned_int_dest[799] = unsigned_int_src[799] % 800;
   unsigned_int_dest[800] = unsigned_int_src[800] % 0x321;
@@ -36197,9 +33962,9 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[802] = unsigned_int_src[802] % 0x323;
   unsigned_int_dest[803] = unsigned_int_src[803] % 0x324;
   unsigned_int_dest[804] = unsigned_int_src[804] % 0x325;
-  unsigned_int_dest[805] = unsigned_int_src[805] + ((unsigned_int_src[805] >> 1) / 0x193) * -0x326;
+  unsigned_int_dest[805] = unsigned_int_src[805] % 0x326;
   unsigned_int_dest[806] = unsigned_int_src[806] % 0x327;
-  unsigned_int_dest[807] = unsigned_int_src[807] + ((unsigned_int_src[807] >> 3) / 0x65) * -0x328;
+  unsigned_int_dest[807] = unsigned_int_src[807] % 0x328;
   unsigned_int_dest[808] = unsigned_int_src[808] % 0x329;
   unsigned_int_dest[809] = unsigned_int_src[809] % 0x32a;
   unsigned_int_dest[810] = unsigned_int_src[810] % 0x32b;
@@ -36213,15 +33978,15 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[818] = unsigned_int_src[818] % 0x333;
   unsigned_int_dest[819] = unsigned_int_src[819] % 0x334;
   unsigned_int_dest[820] = unsigned_int_src[820] % 0x335;
-  unsigned_int_dest[821] = unsigned_int_src[821] + ((unsigned_int_src[821] >> 1) / 0x19b) * -0x336;
+  unsigned_int_dest[821] = unsigned_int_src[821] % 0x336;
   unsigned_int_dest[822] = unsigned_int_src[822] % 0x337;
-  unsigned_int_dest[823] = unsigned_int_src[823] + ((unsigned_int_src[823] >> 3) / 0x67) * -0x338;
+  unsigned_int_dest[823] = unsigned_int_src[823] % 0x338;
   unsigned_int_dest[824] = unsigned_int_src[824] % 0x339;
-  unsigned_int_dest[825] = unsigned_int_src[825] + ((unsigned_int_src[825] >> 1) / 0x19d) * -0x33a;
+  unsigned_int_dest[825] = unsigned_int_src[825] % 0x33a;
   unsigned_int_dest[826] = unsigned_int_src[826] % 0x33b;
   unsigned_int_dest[827] = unsigned_int_src[827] % 0x33c;
   unsigned_int_dest[828] = unsigned_int_src[828] % 0x33d;
-  unsigned_int_dest[829] = unsigned_int_src[829] + ((unsigned_int_src[829] >> 1) / 0x19f) * -0x33e;
+  unsigned_int_dest[829] = unsigned_int_src[829] % 0x33e;
   unsigned_int_dest[830] = unsigned_int_src[830] % 0x33f;
   unsigned_int_dest[831] = unsigned_int_src[831] % 0x340;
   unsigned_int_dest[832] = unsigned_int_src[832] % 0x341;
@@ -36229,81 +33994,81 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[834] = unsigned_int_src[834] % 0x343;
   unsigned_int_dest[835] = unsigned_int_src[835] % 0x344;
   unsigned_int_dest[836] = unsigned_int_src[836] % 0x345;
-  unsigned_int_dest[837] = unsigned_int_src[837] + ((unsigned_int_src[837] >> 1) / 0x1a3) * -0x346;
+  unsigned_int_dest[837] = unsigned_int_src[837] % 0x346;
   unsigned_int_dest[838] = unsigned_int_src[838] % 0x347;
-  unsigned_int_dest[839] = unsigned_int_src[839] + ((unsigned_int_src[839] >> 3) / 0x69) * -0x348;
+  unsigned_int_dest[839] = unsigned_int_src[839] % 0x348;
   unsigned_int_dest[840] = unsigned_int_src[840] % 0x349;
-  unsigned_int_dest[841] = unsigned_int_src[841] + ((unsigned_int_src[841] >> 1) / 0x1a5) * -0x34a;
+  unsigned_int_dest[841] = unsigned_int_src[841] % 0x34a;
   unsigned_int_dest[842] = unsigned_int_src[842] % 0x34b;
   unsigned_int_dest[843] = unsigned_int_src[843] % 0x34c;
   unsigned_int_dest[844] = unsigned_int_src[844] % 0x34d;
   unsigned_int_dest[845] = unsigned_int_src[845] % 0x34e;
   unsigned_int_dest[846] = unsigned_int_src[846] % 0x34f;
-  unsigned_int_dest[847] = unsigned_int_src[847] + ((unsigned_int_src[847] >> 4) / 0x35) * -0x350;
+  unsigned_int_dest[847] = unsigned_int_src[847] % 0x350;
   unsigned_int_dest[848] = unsigned_int_src[848] % 0x351;
-  unsigned_int_dest[849] = unsigned_int_src[849] + ((unsigned_int_src[849] >> 1) / 0x1a9) * -0x352;
+  unsigned_int_dest[849] = unsigned_int_src[849] % 0x352;
   unsigned_int_dest[850] = unsigned_int_src[850] % 0x353;
   unsigned_int_dest[851] = unsigned_int_src[851] % 0x354;
   unsigned_int_dest[852] = unsigned_int_src[852] % 0x355;
-  unsigned_int_dest[853] = unsigned_int_src[853] + ((unsigned_int_src[853] >> 1) / 0x1ab) * -0x356;
+  unsigned_int_dest[853] = unsigned_int_src[853] % 0x356;
   unsigned_int_dest[854] = unsigned_int_src[854] % 0x357;
-  unsigned_int_dest[855] = unsigned_int_src[855] + ((unsigned_int_src[855] >> 3) / 0x6b) * -0x358;
+  unsigned_int_dest[855] = unsigned_int_src[855] % 0x358;
   unsigned_int_dest[856] = unsigned_int_src[856] % 0x359;
-  unsigned_int_dest[857] = unsigned_int_src[857] + ((unsigned_int_src[857] >> 1) / 0x1ad) * -0x35a;
+  unsigned_int_dest[857] = unsigned_int_src[857] % 0x35a;
   unsigned_int_dest[858] = unsigned_int_src[858] % 0x35b;
   unsigned_int_dest[859] = unsigned_int_src[859] % 0x35c;
   unsigned_int_dest[860] = unsigned_int_src[860] % 0x35d;
-  unsigned_int_dest[861] = unsigned_int_src[861] + ((unsigned_int_src[861] >> 1) / 0x1af) * -0x35e;
+  unsigned_int_dest[861] = unsigned_int_src[861] % 0x35e;
   unsigned_int_dest[862] = unsigned_int_src[862] % 0x35f;
-  unsigned_int_dest[863] = unsigned_int_src[863] + ((unsigned_int_src[863] >> 5) / 0x1b) * -0x360;
+  unsigned_int_dest[863] = unsigned_int_src[863] % 0x360;
   unsigned_int_dest[864] = unsigned_int_src[864] % 0x361;
   unsigned_int_dest[865] = unsigned_int_src[865] % 0x362;
   unsigned_int_dest[866] = unsigned_int_src[866] % 0x363;
-  unsigned_int_dest[867] = unsigned_int_src[867] + ((unsigned_int_src[867] >> 2) / 0xd9) * -0x364;
+  unsigned_int_dest[867] = unsigned_int_src[867] % 0x364;
   unsigned_int_dest[868] = unsigned_int_src[868] % 0x365;
   unsigned_int_dest[869] = unsigned_int_src[869] % 0x366;
   unsigned_int_dest[870] = unsigned_int_src[870] % 0x367;
-  unsigned_int_dest[871] = unsigned_int_src[871] + ((unsigned_int_src[871] >> 3) / 0x6d) * -0x368;
+  unsigned_int_dest[871] = unsigned_int_src[871] % 0x368;
   unsigned_int_dest[872] = unsigned_int_src[872] % 0x369;
   unsigned_int_dest[873] = unsigned_int_src[873] % 0x36a;
   unsigned_int_dest[874] = unsigned_int_src[874] % 0x36b;
-  unsigned_int_dest[875] = unsigned_int_src[875] + ((unsigned_int_src[875] >> 2) / 0xdb) * -0x36c;
+  unsigned_int_dest[875] = unsigned_int_src[875] % 0x36c;
   unsigned_int_dest[876] = unsigned_int_src[876] % 0x36d;
   unsigned_int_dest[877] = unsigned_int_src[877] % 0x36e;
   unsigned_int_dest[878] = unsigned_int_src[878] % 0x36f;
-  unsigned_int_dest[879] = unsigned_int_src[879] + ((unsigned_int_src[879] >> 4) / 0x37) * -0x370;
+  unsigned_int_dest[879] = unsigned_int_src[879] % 0x370;
   unsigned_int_dest[880] = unsigned_int_src[880] % 0x371;
   unsigned_int_dest[881] = unsigned_int_src[881] % 0x372;
   unsigned_int_dest[882] = unsigned_int_src[882] % 0x373;
-  unsigned_int_dest[883] = unsigned_int_src[883] + ((unsigned_int_src[883] >> 2) / 0xdd) * -0x374;
+  unsigned_int_dest[883] = unsigned_int_src[883] % 0x374;
   unsigned_int_dest[884] = unsigned_int_src[884] % 0x375;
-  unsigned_int_dest[885] = unsigned_int_src[885] + ((unsigned_int_src[885] >> 1) / 0x1bb) * -0x376;
+  unsigned_int_dest[885] = unsigned_int_src[885] % 0x376;
   unsigned_int_dest[886] = unsigned_int_src[886] % 0x377;
-  unsigned_int_dest[887] = unsigned_int_src[887] + ((unsigned_int_src[887] >> 3) / 0x6f) * -0x378;
+  unsigned_int_dest[887] = unsigned_int_src[887] % 0x378;
   unsigned_int_dest[888] = unsigned_int_src[888] % 0x379;
   unsigned_int_dest[889] = unsigned_int_src[889] % 0x37a;
   unsigned_int_dest[890] = unsigned_int_src[890] % 0x37b;
-  unsigned_int_dest[891] = unsigned_int_src[891] + ((unsigned_int_src[891] >> 2) / 0xdf) * -0x37c;
+  unsigned_int_dest[891] = unsigned_int_src[891] % 0x37c;
   unsigned_int_dest[892] = unsigned_int_src[892] % 0x37d;
   unsigned_int_dest[893] = unsigned_int_src[893] % 0x37e;
   unsigned_int_dest[894] = unsigned_int_src[894] % 0x37f;
-  unsigned_int_dest[895] = unsigned_int_src[895] + ((unsigned_int_src[895] >> 7) / 7) * -0x380;
+  unsigned_int_dest[895] = unsigned_int_src[895] % 0x380;
   unsigned_int_dest[896] = unsigned_int_src[896] % 0x381;
   unsigned_int_dest[897] = unsigned_int_src[897] % 0x382;
   unsigned_int_dest[898] = unsigned_int_src[898] % 899;
   unsigned_int_dest[899] = unsigned_int_src[899] % 900;
   unsigned_int_dest[900] = unsigned_int_src[900] % 0x385;
-  unsigned_int_dest[901] = unsigned_int_src[901] + ((unsigned_int_src[901] >> 1) / 0x1c3) * -0x386;
+  unsigned_int_dest[901] = unsigned_int_src[901] % 0x386;
   unsigned_int_dest[902] = unsigned_int_src[902] % 0x387;
-  unsigned_int_dest[903] = unsigned_int_src[903] + ((unsigned_int_src[903] >> 3) / 0x71) * -0x388;
+  unsigned_int_dest[903] = unsigned_int_src[903] % 0x388;
   unsigned_int_dest[904] = unsigned_int_src[904] % 0x389;
-  unsigned_int_dest[905] = unsigned_int_src[905] + ((unsigned_int_src[905] >> 1) / 0x1c5) * -0x38a;
+  unsigned_int_dest[905] = unsigned_int_src[905] % 0x38a;
   unsigned_int_dest[906] = unsigned_int_src[906] % 0x38b;
-  unsigned_int_dest[907] = unsigned_int_src[907] + ((unsigned_int_src[907] >> 2) / 0xe3) * -0x38c;
+  unsigned_int_dest[907] = unsigned_int_src[907] % 0x38c;
   unsigned_int_dest[908] = unsigned_int_src[908] % 0x38d;
-  unsigned_int_dest[909] = unsigned_int_src[909] + ((unsigned_int_src[909] >> 1) / 0x1c7) * -0x38e;
+  unsigned_int_dest[909] = unsigned_int_src[909] % 0x38e;
   unsigned_int_dest[910] = unsigned_int_src[910] % 0x38f;
-  unsigned_int_dest[911] = unsigned_int_src[911] + ((unsigned_int_src[911] >> 4) / 0x39) * -0x390;
+  unsigned_int_dest[911] = unsigned_int_src[911] % 0x390;
   unsigned_int_dest[912] = unsigned_int_src[912] % 0x391;
   unsigned_int_dest[913] = unsigned_int_src[913] % 0x392;
   unsigned_int_dest[914] = unsigned_int_src[914] % 0x393;
@@ -36311,27 +34076,27 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[916] = unsigned_int_src[916] % 0x395;
   unsigned_int_dest[917] = unsigned_int_src[917] % 0x396;
   unsigned_int_dest[918] = unsigned_int_src[918] % 0x397;
-  unsigned_int_dest[919] = unsigned_int_src[919] + ((unsigned_int_src[919] >> 3) / 0x73) * -0x398;
+  unsigned_int_dest[919] = unsigned_int_src[919] % 0x398;
   unsigned_int_dest[920] = unsigned_int_src[920] % 0x399;
   unsigned_int_dest[921] = unsigned_int_src[921] % 0x39a;
   unsigned_int_dest[922] = unsigned_int_src[922] % 0x39b;
-  unsigned_int_dest[923] = unsigned_int_src[923] + ((unsigned_int_src[923] >> 2) / 0xe7) * -0x39c;
+  unsigned_int_dest[923] = unsigned_int_src[923] % 0x39c;
   unsigned_int_dest[924] = unsigned_int_src[924] % 0x39d;
   unsigned_int_dest[925] = unsigned_int_src[925] % 0x39e;
   unsigned_int_dest[926] = unsigned_int_src[926] % 0x39f;
   unsigned_int_dest[927] = unsigned_int_src[927] % 0x3a0;
   unsigned_int_dest[928] = unsigned_int_src[928] % 0x3a1;
-  unsigned_int_dest[929] = unsigned_int_src[929] + ((unsigned_int_src[929] >> 1) / 0x1d1) * -0x3a2;
+  unsigned_int_dest[929] = unsigned_int_src[929] % 0x3a2;
   unsigned_int_dest[930] = unsigned_int_src[930] % 0x3a3;
-  unsigned_int_dest[931] = unsigned_int_src[931] + ((unsigned_int_src[931] >> 2) / 0xe9) * -0x3a4;
+  unsigned_int_dest[931] = unsigned_int_src[931] % 0x3a4;
   unsigned_int_dest[932] = unsigned_int_src[932] % 0x3a5;
   unsigned_int_dest[933] = unsigned_int_src[933] % 0x3a6;
   unsigned_int_dest[934] = unsigned_int_src[934] % 0x3a7;
-  unsigned_int_dest[935] = unsigned_int_src[935] + ((unsigned_int_src[935] >> 3) / 0x75) * -0x3a8;
+  unsigned_int_dest[935] = unsigned_int_src[935] % 0x3a8;
   unsigned_int_dest[936] = unsigned_int_src[936] % 0x3a9;
   unsigned_int_dest[937] = unsigned_int_src[937] % 0x3aa;
   unsigned_int_dest[938] = unsigned_int_src[938] % 0x3ab;
-  unsigned_int_dest[939] = unsigned_int_src[939] + ((unsigned_int_src[939] >> 2) / 0xeb) * -0x3ac;
+  unsigned_int_dest[939] = unsigned_int_src[939] % 0x3ac;
   unsigned_int_dest[940] = unsigned_int_src[940] % 0x3ad;
   unsigned_int_dest[941] = unsigned_int_src[941] % 0x3ae;
   unsigned_int_dest[942] = unsigned_int_src[942] % 0x3af;
@@ -36339,29 +34104,29 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[944] = unsigned_int_src[944] % 0x3b1;
   unsigned_int_dest[945] = unsigned_int_src[945] % 0x3b2;
   unsigned_int_dest[946] = unsigned_int_src[946] % 0x3b3;
-  unsigned_int_dest[947] = unsigned_int_src[947] + ((unsigned_int_src[947] >> 2) / 0xed) * -0x3b4;
+  unsigned_int_dest[947] = unsigned_int_src[947] % 0x3b4;
   unsigned_int_dest[948] = unsigned_int_src[948] % 0x3b5;
   unsigned_int_dest[949] = unsigned_int_src[949] % 0x3b6;
   unsigned_int_dest[950] = unsigned_int_src[950] % 0x3b7;
   unsigned_int_dest[951] = unsigned_int_src[951] % 0x3b8;
   unsigned_int_dest[952] = unsigned_int_src[952] % 0x3b9;
-  unsigned_int_dest[953] = unsigned_int_src[953] + ((unsigned_int_src[953] >> 1) / 0x1dd) * -0x3ba;
+  unsigned_int_dest[953] = unsigned_int_src[953] % 0x3ba;
   unsigned_int_dest[954] = unsigned_int_src[954] % 0x3bb;
   unsigned_int_dest[955] = unsigned_int_src[955] % 0x3bc;
   unsigned_int_dest[956] = unsigned_int_src[956] % 0x3bd;
-  unsigned_int_dest[957] = unsigned_int_src[957] + ((unsigned_int_src[957] >> 1) / 0x1df) * -0x3be;
+  unsigned_int_dest[957] = unsigned_int_src[957] % 0x3be;
   unsigned_int_dest[958] = unsigned_int_src[958] % 0x3bf;
   unsigned_int_dest[959] = unsigned_int_src[959] % 0x3c0;
   unsigned_int_dest[960] = unsigned_int_src[960] % 0x3c1;
-  unsigned_int_dest[961] = unsigned_int_src[961] + ((unsigned_int_src[961] >> 1) / 0x1e1) * -0x3c2;
+  unsigned_int_dest[961] = unsigned_int_src[961] % 0x3c2;
   unsigned_int_dest[962] = unsigned_int_src[962] % 0x3c3;
   unsigned_int_dest[963] = unsigned_int_src[963] % 0x3c4;
   unsigned_int_dest[964] = unsigned_int_src[964] % 0x3c5;
   unsigned_int_dest[965] = unsigned_int_src[965] % 0x3c6;
   unsigned_int_dest[966] = unsigned_int_src[966] % 0x3c7;
-  unsigned_int_dest[967] = unsigned_int_src[967] + ((unsigned_int_src[967] >> 3) / 0x79) * -0x3c8;
+  unsigned_int_dest[967] = unsigned_int_src[967] % 0x3c8;
   unsigned_int_dest[968] = unsigned_int_src[968] % 0x3c9;
-  unsigned_int_dest[969] = unsigned_int_src[969] + ((unsigned_int_src[969] >> 1) / 0x1e5) * -0x3ca;
+  unsigned_int_dest[969] = unsigned_int_src[969] % 0x3ca;
   unsigned_int_dest[970] = unsigned_int_src[970] % 0x3cb;
   unsigned_int_dest[971] = unsigned_int_src[971] % 0x3cc;
   unsigned_int_dest[972] = unsigned_int_src[972] % 0x3cd;
@@ -36369,25 +34134,25 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[974] = unsigned_int_src[974] % 0x3cf;
   unsigned_int_dest[975] = unsigned_int_src[975] % 0x3d0;
   unsigned_int_dest[976] = unsigned_int_src[976] % 0x3d1;
-  unsigned_int_dest[977] = unsigned_int_src[977] + ((unsigned_int_src[977] >> 1) / 0x1e9) * -0x3d2;
+  unsigned_int_dest[977] = unsigned_int_src[977] % 0x3d2;
   unsigned_int_dest[978] = unsigned_int_src[978] % 0x3d3;
-  unsigned_int_dest[979] = unsigned_int_src[979] + ((unsigned_int_src[979] >> 2) / 0xf5) * -0x3d4;
+  unsigned_int_dest[979] = unsigned_int_src[979] % 0x3d4;
   unsigned_int_dest[980] = unsigned_int_src[980] % 0x3d5;
-  unsigned_int_dest[981] = unsigned_int_src[981] + ((unsigned_int_src[981] >> 1) / 0x1eb) * -0x3d6;
+  unsigned_int_dest[981] = unsigned_int_src[981] % 0x3d6;
   unsigned_int_dest[982] = unsigned_int_src[982] % 0x3d7;
-  unsigned_int_dest[983] = unsigned_int_src[983] + ((unsigned_int_src[983] >> 3) / 0x7b) * -0x3d8;
+  unsigned_int_dest[983] = unsigned_int_src[983] % 0x3d8;
   unsigned_int_dest[984] = unsigned_int_src[984] % 0x3d9;
   unsigned_int_dest[985] = unsigned_int_src[985] % 0x3da;
   unsigned_int_dest[986] = unsigned_int_src[986] % 0x3db;
-  unsigned_int_dest[987] = unsigned_int_src[987] + ((unsigned_int_src[987] >> 2) / 0xf7) * -0x3dc;
+  unsigned_int_dest[987] = unsigned_int_src[987] % 0x3dc;
   unsigned_int_dest[988] = unsigned_int_src[988] % 0x3dd;
   unsigned_int_dest[989] = unsigned_int_src[989] % 0x3de;
   unsigned_int_dest[990] = unsigned_int_src[990] % 0x3df;
-  unsigned_int_dest[991] = unsigned_int_src[991] + ((unsigned_int_src[991] >> 5) / 0x1f) * -0x3e0;
+  unsigned_int_dest[991] = unsigned_int_src[991] % 0x3e0;
   unsigned_int_dest[992] = unsigned_int_src[992] % 0x3e1;
   unsigned_int_dest[993] = unsigned_int_src[993] % 0x3e2;
   unsigned_int_dest[994] = unsigned_int_src[994] % 0x3e3;
-  unsigned_int_dest[995] = unsigned_int_src[995] + ((unsigned_int_src[995] >> 2) / 0xf9) * -0x3e4;
+  unsigned_int_dest[995] = unsigned_int_src[995] % 0x3e4;
   unsigned_int_dest[996] = unsigned_int_src[996] % 0x3e5;
   unsigned_int_dest[997] = unsigned_int_src[997] % 0x3e6;
   unsigned_int_dest[998] = unsigned_int_src[998] % 999;
@@ -36399,31 +34164,29 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[1004] = unsigned_int_src[1004] % 0x3ed;
   unsigned_int_dest[1005] = unsigned_int_src[1005] % 0x3ee;
   unsigned_int_dest[1006] = unsigned_int_src[1006] % 0x3ef;
-  unsigned_int_dest[1007] = unsigned_int_src[1007] + ((unsigned_int_src[1007] >> 4) / 0x3f) * -0x3f0
-  ;
+  unsigned_int_dest[1007] = unsigned_int_src[1007] % 0x3f0;
   unsigned_int_dest[1008] = unsigned_int_src[1008] % 0x3f1;
-  unsigned_int_dest[1009] =
-       unsigned_int_src[1009] + ((unsigned_int_src[1009] >> 1) / 0x1f9) * -0x3f2;
+  unsigned_int_dest[1009] = unsigned_int_src[1009] % 0x3f2;
   unsigned_int_dest[1010] = unsigned_int_src[1010] % 0x3f3;
   unsigned_int_dest[1011] = unsigned_int_src[1011] % 0x3f4;
   unsigned_int_dest[1012] = unsigned_int_src[1012] % 0x3f5;
   unsigned_int_dest[1013] = unsigned_int_src[1013] % 0x3f6;
   unsigned_int_dest[1014] = unsigned_int_src[1014] % 0x3f7;
-  unsigned_int_dest[1015] = unsigned_int_src[1015] + ((unsigned_int_src[1015] >> 3) / 0x7f) * -0x3f8
-  ;
+  unsigned_int_dest[1015] = unsigned_int_src[1015] % 0x3f8;
   unsigned_int_dest[1016] = unsigned_int_src[1016] % 0x3f9;
   unsigned_int_dest[1017] = unsigned_int_src[1017] % 0x3fa;
   unsigned_int_dest[1018] = unsigned_int_src[1018] % 0x3fb;
   unsigned_int_dest[1019] = unsigned_int_src[1019] % 0x3fc;
   unsigned_int_dest[1020] = unsigned_int_src[1020] % 0x3fd;
-  unsigned_int_dest[1021] =
-       unsigned_int_src[1021] + ((unsigned_int_src[1021] >> 1) / 0x1ff) * -0x3fe;
+  unsigned_int_dest[1021] = unsigned_int_src[1021] % 0x3fe;
   unsigned_int_dest[1022] = unsigned_int_src[1022] % 0x3ff;
   unsigned_int_dest[1023] = unsigned_int_src[1023] & 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_int_add(void)
 
@@ -37457,6 +35220,8 @@ void signed_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_mult(void)
 
 {
@@ -38489,23 +36254,18 @@ void signed_long_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_div(void)
 
 {
-  int iVar1;
-  int iVar2;
-  int iVar3;
-  
-  iVar1 = (int)((ulonglong)((longlong)signed_long_int_src[2] * 0x55555556) >> 0x20);
-  iVar2 = (int)((ulonglong)((longlong)signed_long_int_src[5] * 0x2aaaaaab) >> 0x20);
-  iVar3 = (int)((ulonglong)((longlong)signed_long_int_src[640] * 0x663d81) >> 0x20);
   signed_long_int_dest[0] = signed_long_int_src[0];
   signed_long_int_dest[1] = signed_long_int_src[1] / 2;
-  signed_long_int_dest[2] = iVar1 - (iVar1 >> 0x1f);
+  signed_long_int_dest[2] = signed_long_int_src[2] / 3;
   signed_long_int_dest[3] =
        (int)(((uint)(signed_long_int_src[3] >> 0x1f) >> 0x1e) + signed_long_int_src[3]) >> 2;
   signed_long_int_dest[4] = signed_long_int_src[4] / 5;
-  signed_long_int_dest[5] = iVar2 - (iVar2 >> 0x1f);
+  signed_long_int_dest[5] = signed_long_int_src[5] / 6;
   signed_long_int_dest[6] = signed_long_int_src[6] / 7;
   signed_long_int_dest[7] =
        (int)(((uint)(signed_long_int_src[7] >> 0x1f) >> 0x1d) + signed_long_int_src[7]) >> 3;
@@ -39147,7 +36907,7 @@ void signed_long_int_div(void)
   signed_long_int_dest[637] = signed_long_int_src[637] / 0x27e;
   signed_long_int_dest[638] = signed_long_int_src[638] / 0x27f;
   signed_long_int_dest[639] = signed_long_int_src[639] / 0x280;
-  signed_long_int_dest[640] = iVar3 - (iVar3 >> 0x1f);
+  signed_long_int_dest[640] = signed_long_int_src[640] / 0x281;
   signed_long_int_dest[641] = signed_long_int_src[641] / 0x282;
   signed_long_int_dest[642] = signed_long_int_src[642] / 0x283;
   signed_long_int_dest[643] = signed_long_int_src[643] / 0x284;
@@ -39537,13 +37297,13 @@ void signed_long_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_modulo(void)
 
 {
   signed_long_int_dest[0] = 0;
-  signed_long_int_dest[1] =
-       signed_long_int_src[1] -
-       (signed_long_int_src[1] - (signed_long_int_src[1] >> 0x1f) & 0xfffffffeU);
+  signed_long_int_dest[1] = signed_long_int_src[1] % 2;
   signed_long_int_dest[2] = signed_long_int_src[2] % 3;
   signed_long_int_dest[3] = signed_long_int_src[3] % 4;
   signed_long_int_dest[4] = signed_long_int_src[4] % 5;
@@ -40570,6 +38330,8 @@ void signed_long_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_add(void)
 
@@ -41603,6 +39365,8 @@ void unsigned_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_mult(void)
 
 {
@@ -42635,6 +40399,8 @@ void unsigned_long_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_div(void)
 
 {
@@ -42651,7 +40417,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[10] = unsigned_long_int_src[10] / 0xb;
   unsigned_long_int_dest[11] = unsigned_long_int_src[11] / 0xc;
   unsigned_long_int_dest[12] = unsigned_long_int_src[12] / 0xd;
-  unsigned_long_int_dest[13] = (unsigned_long_int_src[13] >> 1) / 7;
+  unsigned_long_int_dest[13] = unsigned_long_int_src[13] / 0xe;
   unsigned_long_int_dest[14] = unsigned_long_int_src[14] / 0xf;
   unsigned_long_int_dest[15] = unsigned_long_int_src[15] >> 4;
   unsigned_long_int_dest[16] = unsigned_long_int_src[16] / 0x11;
@@ -42665,7 +40431,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[24] = unsigned_long_int_src[24] / 0x19;
   unsigned_long_int_dest[25] = unsigned_long_int_src[25] / 0x1a;
   unsigned_long_int_dest[26] = unsigned_long_int_src[26] / 0x1b;
-  unsigned_long_int_dest[27] = (unsigned_long_int_src[27] >> 2) / 7;
+  unsigned_long_int_dest[27] = unsigned_long_int_src[27] / 0x1c;
   unsigned_long_int_dest[28] = unsigned_long_int_src[28] / 0x1d;
   unsigned_long_int_dest[29] = unsigned_long_int_src[29] / 0x1e;
   unsigned_long_int_dest[30] = unsigned_long_int_src[30] / 0x1f;
@@ -42675,11 +40441,11 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[34] = unsigned_long_int_src[34] / 0x23;
   unsigned_long_int_dest[35] = unsigned_long_int_src[35] / 0x24;
   unsigned_long_int_dest[36] = unsigned_long_int_src[36] / 0x25;
-  unsigned_long_int_dest[37] = (unsigned_long_int_src[37] >> 1) / 0x13;
+  unsigned_long_int_dest[37] = unsigned_long_int_src[37] / 0x26;
   unsigned_long_int_dest[38] = unsigned_long_int_src[38] / 0x27;
   unsigned_long_int_dest[39] = unsigned_long_int_src[39] / 0x28;
   unsigned_long_int_dest[40] = unsigned_long_int_src[40] / 0x29;
-  unsigned_long_int_dest[41] = (unsigned_long_int_src[41] >> 1) / 0x15;
+  unsigned_long_int_dest[41] = unsigned_long_int_src[41] / 0x2a;
   unsigned_long_int_dest[42] = unsigned_long_int_src[42] / 0x2b;
   unsigned_long_int_dest[43] = unsigned_long_int_src[43] / 0x2c;
   unsigned_long_int_dest[44] = unsigned_long_int_src[44] / 0x2d;
@@ -42691,15 +40457,15 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[50] = unsigned_long_int_src[50] / 0x33;
   unsigned_long_int_dest[51] = unsigned_long_int_src[51] / 0x34;
   unsigned_long_int_dest[52] = unsigned_long_int_src[52] / 0x35;
-  unsigned_long_int_dest[53] = (unsigned_long_int_src[53] >> 1) / 0x1b;
+  unsigned_long_int_dest[53] = unsigned_long_int_src[53] / 0x36;
   unsigned_long_int_dest[54] = unsigned_long_int_src[54] / 0x37;
-  unsigned_long_int_dest[55] = (unsigned_long_int_src[55] >> 3) / 7;
+  unsigned_long_int_dest[55] = unsigned_long_int_src[55] / 0x38;
   unsigned_long_int_dest[56] = unsigned_long_int_src[56] / 0x39;
   unsigned_long_int_dest[57] = unsigned_long_int_src[57] / 0x3a;
   unsigned_long_int_dest[58] = unsigned_long_int_src[58] / 0x3b;
   unsigned_long_int_dest[59] = unsigned_long_int_src[59] / 0x3c;
   unsigned_long_int_dest[60] = unsigned_long_int_src[60] / 0x3d;
-  unsigned_long_int_dest[61] = (unsigned_long_int_src[61] >> 1) / 0x1f;
+  unsigned_long_int_dest[61] = unsigned_long_int_src[61] / 0x3e;
   unsigned_long_int_dest[62] = unsigned_long_int_src[62] / 0x3f;
   unsigned_long_int_dest[63] = unsigned_long_int_src[63] >> 6;
   unsigned_long_int_dest[64] = unsigned_long_int_src[64] / 0x41;
@@ -42707,27 +40473,27 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[66] = unsigned_long_int_src[66] / 0x43;
   unsigned_long_int_dest[67] = unsigned_long_int_src[67] / 0x44;
   unsigned_long_int_dest[68] = unsigned_long_int_src[68] / 0x45;
-  unsigned_long_int_dest[69] = (unsigned_long_int_src[69] >> 1) / 0x23;
+  unsigned_long_int_dest[69] = unsigned_long_int_src[69] / 0x46;
   unsigned_long_int_dest[70] = unsigned_long_int_src[70] / 0x47;
   unsigned_long_int_dest[71] = unsigned_long_int_src[71] / 0x48;
   unsigned_long_int_dest[72] = unsigned_long_int_src[72] / 0x49;
-  unsigned_long_int_dest[73] = (unsigned_long_int_src[73] >> 1) / 0x25;
+  unsigned_long_int_dest[73] = unsigned_long_int_src[73] / 0x4a;
   unsigned_long_int_dest[74] = unsigned_long_int_src[74] / 0x4b;
-  unsigned_long_int_dest[75] = (unsigned_long_int_src[75] >> 2) / 0x13;
+  unsigned_long_int_dest[75] = unsigned_long_int_src[75] / 0x4c;
   unsigned_long_int_dest[76] = unsigned_long_int_src[76] / 0x4d;
-  unsigned_long_int_dest[77] = (unsigned_long_int_src[77] >> 1) / 0x27;
+  unsigned_long_int_dest[77] = unsigned_long_int_src[77] / 0x4e;
   unsigned_long_int_dest[78] = unsigned_long_int_src[78] / 0x4f;
   unsigned_long_int_dest[79] = unsigned_long_int_src[79] / 0x50;
   unsigned_long_int_dest[80] = unsigned_long_int_src[80] / 0x51;
   unsigned_long_int_dest[81] = unsigned_long_int_src[81] / 0x52;
   unsigned_long_int_dest[82] = unsigned_long_int_src[82] / 0x53;
-  unsigned_long_int_dest[83] = (unsigned_long_int_src[83] >> 2) / 0x15;
+  unsigned_long_int_dest[83] = unsigned_long_int_src[83] / 0x54;
   unsigned_long_int_dest[84] = unsigned_long_int_src[84] / 0x55;
   unsigned_long_int_dest[85] = unsigned_long_int_src[85] / 0x56;
   unsigned_long_int_dest[86] = unsigned_long_int_src[86] / 0x57;
   unsigned_long_int_dest[87] = unsigned_long_int_src[87] / 0x58;
   unsigned_long_int_dest[88] = unsigned_long_int_src[88] / 0x59;
-  unsigned_long_int_dest[89] = (unsigned_long_int_src[89] >> 1) / 0x2d;
+  unsigned_long_int_dest[89] = unsigned_long_int_src[89] / 0x5a;
   unsigned_long_int_dest[90] = unsigned_long_int_src[90] / 0x5b;
   unsigned_long_int_dest[91] = unsigned_long_int_src[91] / 0x5c;
   unsigned_long_int_dest[92] = unsigned_long_int_src[92] / 0x5d;
@@ -42743,15 +40509,15 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[102] = unsigned_long_int_src[102] / 0x67;
   unsigned_long_int_dest[103] = unsigned_long_int_src[103] / 0x68;
   unsigned_long_int_dest[104] = unsigned_long_int_src[104] / 0x69;
-  unsigned_long_int_dest[105] = (unsigned_long_int_src[105] >> 1) / 0x35;
+  unsigned_long_int_dest[105] = unsigned_long_int_src[105] / 0x6a;
   unsigned_long_int_dest[106] = unsigned_long_int_src[106] / 0x6b;
-  unsigned_long_int_dest[107] = (unsigned_long_int_src[107] >> 2) / 0x1b;
+  unsigned_long_int_dest[107] = unsigned_long_int_src[107] / 0x6c;
   unsigned_long_int_dest[108] = unsigned_long_int_src[108] / 0x6d;
-  unsigned_long_int_dest[109] = (unsigned_long_int_src[109] >> 1) / 0x37;
+  unsigned_long_int_dest[109] = unsigned_long_int_src[109] / 0x6e;
   unsigned_long_int_dest[110] = unsigned_long_int_src[110] / 0x6f;
-  unsigned_long_int_dest[111] = (unsigned_long_int_src[111] >> 4) / 7;
+  unsigned_long_int_dest[111] = unsigned_long_int_src[111] / 0x70;
   unsigned_long_int_dest[112] = unsigned_long_int_src[112] / 0x71;
-  unsigned_long_int_dest[113] = (unsigned_long_int_src[113] >> 1) / 0x39;
+  unsigned_long_int_dest[113] = unsigned_long_int_src[113] / 0x72;
   unsigned_long_int_dest[114] = unsigned_long_int_src[114] / 0x73;
   unsigned_long_int_dest[115] = unsigned_long_int_src[115] / 0x74;
   unsigned_long_int_dest[116] = unsigned_long_int_src[116] / 0x75;
@@ -42761,9 +40527,9 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[120] = unsigned_long_int_src[120] / 0x79;
   unsigned_long_int_dest[121] = unsigned_long_int_src[121] / 0x7a;
   unsigned_long_int_dest[122] = unsigned_long_int_src[122] / 0x7b;
-  unsigned_long_int_dest[123] = (unsigned_long_int_src[123] >> 2) / 0x1f;
+  unsigned_long_int_dest[123] = unsigned_long_int_src[123] / 0x7c;
   unsigned_long_int_dest[124] = unsigned_long_int_src[124] / 0x7d;
-  unsigned_long_int_dest[125] = (unsigned_long_int_src[125] >> 1) / 0x3f;
+  unsigned_long_int_dest[125] = unsigned_long_int_src[125] / 0x7e;
   unsigned_long_int_dest[126] = unsigned_long_int_src[126] / 0x7f;
   unsigned_long_int_dest[127] = unsigned_long_int_src[127] >> 7;
   unsigned_long_int_dest[128] = unsigned_long_int_src[128] / 0x81;
@@ -42777,23 +40543,23 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[136] = unsigned_long_int_src[136] / 0x89;
   unsigned_long_int_dest[137] = unsigned_long_int_src[137] / 0x8a;
   unsigned_long_int_dest[138] = unsigned_long_int_src[138] / 0x8b;
-  unsigned_long_int_dest[139] = (unsigned_long_int_src[139] >> 2) / 0x23;
+  unsigned_long_int_dest[139] = unsigned_long_int_src[139] / 0x8c;
   unsigned_long_int_dest[140] = unsigned_long_int_src[140] / 0x8d;
   unsigned_long_int_dest[141] = unsigned_long_int_src[141] / 0x8e;
   unsigned_long_int_dest[142] = unsigned_long_int_src[142] / 0x8f;
   unsigned_long_int_dest[143] = unsigned_long_int_src[143] / 0x90;
   unsigned_long_int_dest[144] = unsigned_long_int_src[144] / 0x91;
-  unsigned_long_int_dest[145] = (unsigned_long_int_src[145] >> 1) / 0x49;
+  unsigned_long_int_dest[145] = unsigned_long_int_src[145] / 0x92;
   unsigned_long_int_dest[146] = unsigned_long_int_src[146] / 0x93;
-  unsigned_long_int_dest[147] = (unsigned_long_int_src[147] >> 2) / 0x25;
+  unsigned_long_int_dest[147] = unsigned_long_int_src[147] / 0x94;
   unsigned_long_int_dest[148] = unsigned_long_int_src[148] / 0x95;
   unsigned_long_int_dest[149] = unsigned_long_int_src[149] / 0x96;
   unsigned_long_int_dest[150] = unsigned_long_int_src[150] / 0x97;
-  unsigned_long_int_dest[151] = (unsigned_long_int_src[151] >> 3) / 0x13;
+  unsigned_long_int_dest[151] = unsigned_long_int_src[151] / 0x98;
   unsigned_long_int_dest[152] = unsigned_long_int_src[152] / 0x99;
   unsigned_long_int_dest[153] = unsigned_long_int_src[153] / 0x9a;
   unsigned_long_int_dest[154] = unsigned_long_int_src[154] / 0x9b;
-  unsigned_long_int_dest[155] = (unsigned_long_int_src[155] >> 2) / 0x27;
+  unsigned_long_int_dest[155] = unsigned_long_int_src[155] / 0x9c;
   unsigned_long_int_dest[156] = unsigned_long_int_src[156] / 0x9d;
   unsigned_long_int_dest[157] = unsigned_long_int_src[157] / 0x9e;
   unsigned_long_int_dest[158] = unsigned_long_int_src[158] / 0x9f;
@@ -42805,7 +40571,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[164] = unsigned_long_int_src[164] / 0xa5;
   unsigned_long_int_dest[165] = unsigned_long_int_src[165] / 0xa6;
   unsigned_long_int_dest[166] = unsigned_long_int_src[166] / 0xa7;
-  unsigned_long_int_dest[167] = (unsigned_long_int_src[167] >> 3) / 0x15;
+  unsigned_long_int_dest[167] = unsigned_long_int_src[167] / 0xa8;
   unsigned_long_int_dest[168] = unsigned_long_int_src[168] / 0xa9;
   unsigned_long_int_dest[169] = unsigned_long_int_src[169] / 0xaa;
   unsigned_long_int_dest[170] = unsigned_long_int_src[170] / 0xab;
@@ -42817,9 +40583,9 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[176] = unsigned_long_int_src[176] / 0xb1;
   unsigned_long_int_dest[177] = unsigned_long_int_src[177] / 0xb2;
   unsigned_long_int_dest[178] = unsigned_long_int_src[178] / 0xb3;
-  unsigned_long_int_dest[179] = (unsigned_long_int_src[179] >> 2) / 0x2d;
+  unsigned_long_int_dest[179] = unsigned_long_int_src[179] / 0xb4;
   unsigned_long_int_dest[180] = unsigned_long_int_src[180] / 0xb5;
-  unsigned_long_int_dest[181] = (unsigned_long_int_src[181] >> 1) / 0x5b;
+  unsigned_long_int_dest[181] = unsigned_long_int_src[181] / 0xb6;
   unsigned_long_int_dest[182] = unsigned_long_int_src[182] / 0xb7;
   unsigned_long_int_dest[183] = unsigned_long_int_src[183] / 0xb8;
   unsigned_long_int_dest[184] = unsigned_long_int_src[184] / 0xb9;
@@ -42827,11 +40593,11 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[186] = unsigned_long_int_src[186] / 0xbb;
   unsigned_long_int_dest[187] = unsigned_long_int_src[187] / 0xbc;
   unsigned_long_int_dest[188] = unsigned_long_int_src[188] / 0xbd;
-  unsigned_long_int_dest[189] = (unsigned_long_int_src[189] >> 1) / 0x5f;
+  unsigned_long_int_dest[189] = unsigned_long_int_src[189] / 0xbe;
   unsigned_long_int_dest[190] = unsigned_long_int_src[190] / 0xbf;
   unsigned_long_int_dest[191] = unsigned_long_int_src[191] / 0xc0;
   unsigned_long_int_dest[192] = unsigned_long_int_src[192] / 0xc1;
-  unsigned_long_int_dest[193] = (unsigned_long_int_src[193] >> 1) / 0x61;
+  unsigned_long_int_dest[193] = unsigned_long_int_src[193] / 0xc2;
   unsigned_long_int_dest[194] = unsigned_long_int_src[194] / 0xc3;
   unsigned_long_int_dest[195] = unsigned_long_int_src[195] / 0xc4;
   unsigned_long_int_dest[196] = unsigned_long_int_src[196] / 0xc5;
@@ -42839,39 +40605,39 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[198] = unsigned_long_int_src[198] / 199;
   unsigned_long_int_dest[199] = unsigned_long_int_src[199] / 200;
   unsigned_long_int_dest[200] = unsigned_long_int_src[200] / 0xc9;
-  unsigned_long_int_dest[201] = (unsigned_long_int_src[201] >> 1) / 0x65;
+  unsigned_long_int_dest[201] = unsigned_long_int_src[201] / 0xca;
   unsigned_long_int_dest[202] = unsigned_long_int_src[202] / 0xcb;
   unsigned_long_int_dest[203] = unsigned_long_int_src[203] / 0xcc;
   unsigned_long_int_dest[204] = unsigned_long_int_src[204] / 0xcd;
-  unsigned_long_int_dest[205] = (unsigned_long_int_src[205] >> 1) / 0x67;
+  unsigned_long_int_dest[205] = unsigned_long_int_src[205] / 0xce;
   unsigned_long_int_dest[206] = unsigned_long_int_src[206] / 0xcf;
   unsigned_long_int_dest[207] = unsigned_long_int_src[207] / 0xd0;
   unsigned_long_int_dest[208] = unsigned_long_int_src[208] / 0xd1;
-  unsigned_long_int_dest[209] = (unsigned_long_int_src[209] >> 1) / 0x69;
+  unsigned_long_int_dest[209] = unsigned_long_int_src[209] / 0xd2;
   unsigned_long_int_dest[210] = unsigned_long_int_src[210] / 0xd3;
-  unsigned_long_int_dest[211] = (unsigned_long_int_src[211] >> 2) / 0x35;
+  unsigned_long_int_dest[211] = unsigned_long_int_src[211] / 0xd4;
   unsigned_long_int_dest[212] = unsigned_long_int_src[212] / 0xd5;
-  unsigned_long_int_dest[213] = (unsigned_long_int_src[213] >> 1) / 0x6b;
+  unsigned_long_int_dest[213] = unsigned_long_int_src[213] / 0xd6;
   unsigned_long_int_dest[214] = unsigned_long_int_src[214] / 0xd7;
-  unsigned_long_int_dest[215] = (unsigned_long_int_src[215] >> 3) / 0x1b;
+  unsigned_long_int_dest[215] = unsigned_long_int_src[215] / 0xd8;
   unsigned_long_int_dest[216] = unsigned_long_int_src[216] / 0xd9;
-  unsigned_long_int_dest[217] = (unsigned_long_int_src[217] >> 1) / 0x6d;
+  unsigned_long_int_dest[217] = unsigned_long_int_src[217] / 0xda;
   unsigned_long_int_dest[218] = unsigned_long_int_src[218] / 0xdb;
-  unsigned_long_int_dest[219] = (unsigned_long_int_src[219] >> 2) / 0x37;
+  unsigned_long_int_dest[219] = unsigned_long_int_src[219] / 0xdc;
   unsigned_long_int_dest[220] = unsigned_long_int_src[220] / 0xdd;
-  unsigned_long_int_dest[221] = (unsigned_long_int_src[221] >> 1) / 0x6f;
+  unsigned_long_int_dest[221] = unsigned_long_int_src[221] / 0xde;
   unsigned_long_int_dest[222] = unsigned_long_int_src[222] / 0xdf;
-  unsigned_long_int_dest[223] = (unsigned_long_int_src[223] >> 5) / 7;
+  unsigned_long_int_dest[223] = unsigned_long_int_src[223] / 0xe0;
   unsigned_long_int_dest[224] = unsigned_long_int_src[224] / 0xe1;
-  unsigned_long_int_dest[225] = (unsigned_long_int_src[225] >> 1) / 0x71;
+  unsigned_long_int_dest[225] = unsigned_long_int_src[225] / 0xe2;
   unsigned_long_int_dest[226] = unsigned_long_int_src[226] / 0xe3;
-  unsigned_long_int_dest[227] = (unsigned_long_int_src[227] >> 2) / 0x39;
+  unsigned_long_int_dest[227] = unsigned_long_int_src[227] / 0xe4;
   unsigned_long_int_dest[228] = unsigned_long_int_src[228] / 0xe5;
-  unsigned_long_int_dest[229] = (unsigned_long_int_src[229] >> 1) / 0x73;
+  unsigned_long_int_dest[229] = unsigned_long_int_src[229] / 0xe6;
   unsigned_long_int_dest[230] = unsigned_long_int_src[230] / 0xe7;
   unsigned_long_int_dest[231] = unsigned_long_int_src[231] / 0xe8;
   unsigned_long_int_dest[232] = unsigned_long_int_src[232] / 0xe9;
-  unsigned_long_int_dest[233] = (unsigned_long_int_src[233] >> 1) / 0x75;
+  unsigned_long_int_dest[233] = unsigned_long_int_src[233] / 0xea;
   unsigned_long_int_dest[234] = unsigned_long_int_src[234] / 0xeb;
   unsigned_long_int_dest[235] = unsigned_long_int_src[235] / 0xec;
   unsigned_long_int_dest[236] = unsigned_long_int_src[236] / 0xed;
@@ -42879,19 +40645,19 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[238] = unsigned_long_int_src[238] / 0xef;
   unsigned_long_int_dest[239] = unsigned_long_int_src[239] / 0xf0;
   unsigned_long_int_dest[240] = unsigned_long_int_src[240] / 0xf1;
-  unsigned_long_int_dest[241] = (unsigned_long_int_src[241] >> 1) / 0x79;
+  unsigned_long_int_dest[241] = unsigned_long_int_src[241] / 0xf2;
   unsigned_long_int_dest[242] = unsigned_long_int_src[242] / 0xf3;
   unsigned_long_int_dest[243] = unsigned_long_int_src[243] / 0xf4;
   unsigned_long_int_dest[244] = unsigned_long_int_src[244] / 0xf5;
-  unsigned_long_int_dest[245] = (unsigned_long_int_src[245] >> 1) / 0x7b;
+  unsigned_long_int_dest[245] = unsigned_long_int_src[245] / 0xf6;
   unsigned_long_int_dest[246] = unsigned_long_int_src[246] / 0xf7;
-  unsigned_long_int_dest[247] = (unsigned_long_int_src[247] >> 3) / 0x1f;
+  unsigned_long_int_dest[247] = unsigned_long_int_src[247] / 0xf8;
   unsigned_long_int_dest[248] = unsigned_long_int_src[248] / 0xf9;
   unsigned_long_int_dest[249] = unsigned_long_int_src[249] / 0xfa;
   unsigned_long_int_dest[250] = unsigned_long_int_src[250] / 0xfb;
-  unsigned_long_int_dest[251] = (unsigned_long_int_src[251] >> 2) / 0x3f;
+  unsigned_long_int_dest[251] = unsigned_long_int_src[251] / 0xfc;
   unsigned_long_int_dest[252] = unsigned_long_int_src[252] / 0xfd;
-  unsigned_long_int_dest[253] = (unsigned_long_int_src[253] >> 1) / 0x7f;
+  unsigned_long_int_dest[253] = unsigned_long_int_src[253] / 0xfe;
   unsigned_long_int_dest[254] = unsigned_long_int_src[254] / 0xff;
   unsigned_long_int_dest[255] = unsigned_long_int_src[255] >> 8;
   unsigned_long_int_dest[256] = unsigned_long_int_src[256] / 0x101;
@@ -42917,7 +40683,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[276] = unsigned_long_int_src[276] / 0x115;
   unsigned_long_int_dest[277] = unsigned_long_int_src[277] / 0x116;
   unsigned_long_int_dest[278] = unsigned_long_int_src[278] / 0x117;
-  unsigned_long_int_dest[279] = (unsigned_long_int_src[279] >> 3) / 0x23;
+  unsigned_long_int_dest[279] = unsigned_long_int_src[279] / 0x118;
   unsigned_long_int_dest[280] = unsigned_long_int_src[280] / 0x119;
   unsigned_long_int_dest[281] = unsigned_long_int_src[281] / 0x11a;
   unsigned_long_int_dest[282] = unsigned_long_int_src[282] / 0x11b;
@@ -42929,11 +40695,11 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[288] = unsigned_long_int_src[288] / 0x121;
   unsigned_long_int_dest[289] = unsigned_long_int_src[289] / 0x122;
   unsigned_long_int_dest[290] = unsigned_long_int_src[290] / 0x123;
-  unsigned_long_int_dest[291] = (unsigned_long_int_src[291] >> 2) / 0x49;
+  unsigned_long_int_dest[291] = unsigned_long_int_src[291] / 0x124;
   unsigned_long_int_dest[292] = unsigned_long_int_src[292] / 0x125;
   unsigned_long_int_dest[293] = unsigned_long_int_src[293] / 0x126;
   unsigned_long_int_dest[294] = unsigned_long_int_src[294] / 0x127;
-  unsigned_long_int_dest[295] = (unsigned_long_int_src[295] >> 3) / 0x25;
+  unsigned_long_int_dest[295] = unsigned_long_int_src[295] / 0x128;
   unsigned_long_int_dest[296] = unsigned_long_int_src[296] / 0x129;
   unsigned_long_int_dest[297] = unsigned_long_int_src[297] / 0x12a;
   unsigned_long_int_dest[298] = unsigned_long_int_src[298] / 299;
@@ -42941,7 +40707,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[300] = unsigned_long_int_src[300] / 0x12d;
   unsigned_long_int_dest[301] = unsigned_long_int_src[301] / 0x12e;
   unsigned_long_int_dest[302] = unsigned_long_int_src[302] / 0x12f;
-  unsigned_long_int_dest[303] = (unsigned_long_int_src[303] >> 4) / 0x13;
+  unsigned_long_int_dest[303] = unsigned_long_int_src[303] / 0x130;
   unsigned_long_int_dest[304] = unsigned_long_int_src[304] / 0x131;
   unsigned_long_int_dest[305] = unsigned_long_int_src[305] / 0x132;
   unsigned_long_int_dest[306] = unsigned_long_int_src[306] / 0x133;
@@ -42949,13 +40715,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[308] = unsigned_long_int_src[308] / 0x135;
   unsigned_long_int_dest[309] = unsigned_long_int_src[309] / 0x136;
   unsigned_long_int_dest[310] = unsigned_long_int_src[310] / 0x137;
-  unsigned_long_int_dest[311] = (unsigned_long_int_src[311] >> 3) / 0x27;
+  unsigned_long_int_dest[311] = unsigned_long_int_src[311] / 0x138;
   unsigned_long_int_dest[312] = unsigned_long_int_src[312] / 0x139;
   unsigned_long_int_dest[313] = unsigned_long_int_src[313] / 0x13a;
   unsigned_long_int_dest[314] = unsigned_long_int_src[314] / 0x13b;
   unsigned_long_int_dest[315] = unsigned_long_int_src[315] / 0x13c;
   unsigned_long_int_dest[316] = unsigned_long_int_src[316] / 0x13d;
-  unsigned_long_int_dest[317] = (unsigned_long_int_src[317] >> 1) / 0x9f;
+  unsigned_long_int_dest[317] = unsigned_long_int_src[317] / 0x13e;
   unsigned_long_int_dest[318] = unsigned_long_int_src[318] / 0x13f;
   unsigned_long_int_dest[319] = unsigned_long_int_src[319] / 0x140;
   unsigned_long_int_dest[320] = unsigned_long_int_src[320] / 0x141;
@@ -42973,17 +40739,17 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[332] = unsigned_long_int_src[332] / 0x14d;
   unsigned_long_int_dest[333] = unsigned_long_int_src[333] / 0x14e;
   unsigned_long_int_dest[334] = unsigned_long_int_src[334] / 0x14f;
-  unsigned_long_int_dest[335] = (unsigned_long_int_src[335] >> 4) / 0x15;
+  unsigned_long_int_dest[335] = unsigned_long_int_src[335] / 0x150;
   unsigned_long_int_dest[336] = unsigned_long_int_src[336] / 0x151;
   unsigned_long_int_dest[337] = unsigned_long_int_src[337] / 0x152;
   unsigned_long_int_dest[338] = unsigned_long_int_src[338] / 0x153;
   unsigned_long_int_dest[339] = unsigned_long_int_src[339] / 0x154;
   unsigned_long_int_dest[340] = unsigned_long_int_src[340] / 0x155;
-  unsigned_long_int_dest[341] = (unsigned_long_int_src[341] >> 1) / 0xab;
+  unsigned_long_int_dest[341] = unsigned_long_int_src[341] / 0x156;
   unsigned_long_int_dest[342] = unsigned_long_int_src[342] / 0x157;
   unsigned_long_int_dest[343] = unsigned_long_int_src[343] / 0x158;
   unsigned_long_int_dest[344] = unsigned_long_int_src[344] / 0x159;
-  unsigned_long_int_dest[345] = (unsigned_long_int_src[345] >> 1) / 0xad;
+  unsigned_long_int_dest[345] = unsigned_long_int_src[345] / 0x15a;
   unsigned_long_int_dest[346] = unsigned_long_int_src[346] / 0x15b;
   unsigned_long_int_dest[347] = unsigned_long_int_src[347] / 0x15c;
   unsigned_long_int_dest[348] = unsigned_long_int_src[348] / 0x15d;
@@ -42991,23 +40757,23 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[350] = unsigned_long_int_src[350] / 0x15f;
   unsigned_long_int_dest[351] = unsigned_long_int_src[351] / 0x160;
   unsigned_long_int_dest[352] = unsigned_long_int_src[352] / 0x161;
-  unsigned_long_int_dest[353] = (unsigned_long_int_src[353] >> 1) / 0xb1;
+  unsigned_long_int_dest[353] = unsigned_long_int_src[353] / 0x162;
   unsigned_long_int_dest[354] = unsigned_long_int_src[354] / 0x163;
   unsigned_long_int_dest[355] = unsigned_long_int_src[355] / 0x164;
   unsigned_long_int_dest[356] = unsigned_long_int_src[356] / 0x165;
-  unsigned_long_int_dest[357] = (unsigned_long_int_src[357] >> 1) / 0xb3;
+  unsigned_long_int_dest[357] = unsigned_long_int_src[357] / 0x166;
   unsigned_long_int_dest[358] = unsigned_long_int_src[358] / 0x167;
-  unsigned_long_int_dest[359] = (unsigned_long_int_src[359] >> 3) / 0x2d;
+  unsigned_long_int_dest[359] = unsigned_long_int_src[359] / 0x168;
   unsigned_long_int_dest[360] = unsigned_long_int_src[360] / 0x169;
   unsigned_long_int_dest[361] = unsigned_long_int_src[361] / 0x16a;
   unsigned_long_int_dest[362] = unsigned_long_int_src[362] / 0x16b;
-  unsigned_long_int_dest[363] = (unsigned_long_int_src[363] >> 2) / 0x5b;
+  unsigned_long_int_dest[363] = unsigned_long_int_src[363] / 0x16c;
   unsigned_long_int_dest[364] = unsigned_long_int_src[364] / 0x16d;
   unsigned_long_int_dest[365] = unsigned_long_int_src[365] / 0x16e;
   unsigned_long_int_dest[366] = unsigned_long_int_src[366] / 0x16f;
   unsigned_long_int_dest[367] = unsigned_long_int_src[367] / 0x170;
   unsigned_long_int_dest[368] = unsigned_long_int_src[368] / 0x171;
-  unsigned_long_int_dest[369] = (unsigned_long_int_src[369] >> 1) / 0xb9;
+  unsigned_long_int_dest[369] = unsigned_long_int_src[369] / 0x172;
   unsigned_long_int_dest[370] = unsigned_long_int_src[370] / 0x173;
   unsigned_long_int_dest[371] = unsigned_long_int_src[371] / 0x174;
   unsigned_long_int_dest[372] = unsigned_long_int_src[372] / 0x175;
@@ -43015,9 +40781,9 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[374] = unsigned_long_int_src[374] / 0x177;
   unsigned_long_int_dest[375] = unsigned_long_int_src[375] / 0x178;
   unsigned_long_int_dest[376] = unsigned_long_int_src[376] / 0x179;
-  unsigned_long_int_dest[377] = (unsigned_long_int_src[377] >> 1) / 0xbd;
+  unsigned_long_int_dest[377] = unsigned_long_int_src[377] / 0x17a;
   unsigned_long_int_dest[378] = unsigned_long_int_src[378] / 0x17b;
-  unsigned_long_int_dest[379] = (unsigned_long_int_src[379] >> 2) / 0x5f;
+  unsigned_long_int_dest[379] = unsigned_long_int_src[379] / 0x17c;
   unsigned_long_int_dest[380] = unsigned_long_int_src[380] / 0x17d;
   unsigned_long_int_dest[381] = unsigned_long_int_src[381] / 0x17e;
   unsigned_long_int_dest[382] = unsigned_long_int_src[382] / 0x17f;
@@ -43025,13 +40791,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[384] = unsigned_long_int_src[384] / 0x181;
   unsigned_long_int_dest[385] = unsigned_long_int_src[385] / 0x182;
   unsigned_long_int_dest[386] = unsigned_long_int_src[386] / 0x183;
-  unsigned_long_int_dest[387] = (unsigned_long_int_src[387] >> 2) / 0x61;
+  unsigned_long_int_dest[387] = unsigned_long_int_src[387] / 0x184;
   unsigned_long_int_dest[388] = unsigned_long_int_src[388] / 0x185;
-  unsigned_long_int_dest[389] = (unsigned_long_int_src[389] >> 1) / 0xc3;
+  unsigned_long_int_dest[389] = unsigned_long_int_src[389] / 0x186;
   unsigned_long_int_dest[390] = unsigned_long_int_src[390] / 0x187;
   unsigned_long_int_dest[391] = unsigned_long_int_src[391] / 0x188;
   unsigned_long_int_dest[392] = unsigned_long_int_src[392] / 0x189;
-  unsigned_long_int_dest[393] = (unsigned_long_int_src[393] >> 1) / 0xc5;
+  unsigned_long_int_dest[393] = unsigned_long_int_src[393] / 0x18a;
   unsigned_long_int_dest[394] = unsigned_long_int_src[394] / 0x18b;
   unsigned_long_int_dest[395] = unsigned_long_int_src[395] / 0x18c;
   unsigned_long_int_dest[396] = unsigned_long_int_src[396] / 0x18d;
@@ -43041,7 +40807,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[400] = unsigned_long_int_src[400] / 0x191;
   unsigned_long_int_dest[401] = unsigned_long_int_src[401] / 0x192;
   unsigned_long_int_dest[402] = unsigned_long_int_src[402] / 0x193;
-  unsigned_long_int_dest[403] = (unsigned_long_int_src[403] >> 2) / 0x65;
+  unsigned_long_int_dest[403] = unsigned_long_int_src[403] / 0x194;
   unsigned_long_int_dest[404] = unsigned_long_int_src[404] / 0x195;
   unsigned_long_int_dest[405] = unsigned_long_int_src[405] / 0x196;
   unsigned_long_int_dest[406] = unsigned_long_int_src[406] / 0x197;
@@ -43049,7 +40815,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[408] = unsigned_long_int_src[408] / 0x199;
   unsigned_long_int_dest[409] = unsigned_long_int_src[409] / 0x19a;
   unsigned_long_int_dest[410] = unsigned_long_int_src[410] / 0x19b;
-  unsigned_long_int_dest[411] = (unsigned_long_int_src[411] >> 2) / 0x67;
+  unsigned_long_int_dest[411] = unsigned_long_int_src[411] / 0x19c;
   unsigned_long_int_dest[412] = unsigned_long_int_src[412] / 0x19d;
   unsigned_long_int_dest[413] = unsigned_long_int_src[413] / 0x19e;
   unsigned_long_int_dest[414] = unsigned_long_int_src[414] / 0x19f;
@@ -43057,61 +40823,61 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[416] = unsigned_long_int_src[416] / 0x1a1;
   unsigned_long_int_dest[417] = unsigned_long_int_src[417] / 0x1a2;
   unsigned_long_int_dest[418] = unsigned_long_int_src[418] / 0x1a3;
-  unsigned_long_int_dest[419] = (unsigned_long_int_src[419] >> 2) / 0x69;
+  unsigned_long_int_dest[419] = unsigned_long_int_src[419] / 0x1a4;
   unsigned_long_int_dest[420] = unsigned_long_int_src[420] / 0x1a5;
   unsigned_long_int_dest[421] = unsigned_long_int_src[421] / 0x1a6;
   unsigned_long_int_dest[422] = unsigned_long_int_src[422] / 0x1a7;
-  unsigned_long_int_dest[423] = (unsigned_long_int_src[423] >> 3) / 0x35;
+  unsigned_long_int_dest[423] = unsigned_long_int_src[423] / 0x1a8;
   unsigned_long_int_dest[424] = unsigned_long_int_src[424] / 0x1a9;
   unsigned_long_int_dest[425] = unsigned_long_int_src[425] / 0x1aa;
   unsigned_long_int_dest[426] = unsigned_long_int_src[426] / 0x1ab;
-  unsigned_long_int_dest[427] = (unsigned_long_int_src[427] >> 2) / 0x6b;
+  unsigned_long_int_dest[427] = unsigned_long_int_src[427] / 0x1ac;
   unsigned_long_int_dest[428] = unsigned_long_int_src[428] / 0x1ad;
   unsigned_long_int_dest[429] = unsigned_long_int_src[429] / 0x1ae;
   unsigned_long_int_dest[430] = unsigned_long_int_src[430] / 0x1af;
-  unsigned_long_int_dest[431] = (unsigned_long_int_src[431] >> 4) / 0x1b;
+  unsigned_long_int_dest[431] = unsigned_long_int_src[431] / 0x1b0;
   unsigned_long_int_dest[432] = unsigned_long_int_src[432] / 0x1b1;
-  unsigned_long_int_dest[433] = (unsigned_long_int_src[433] >> 1) / 0xd9;
+  unsigned_long_int_dest[433] = unsigned_long_int_src[433] / 0x1b2;
   unsigned_long_int_dest[434] = unsigned_long_int_src[434] / 0x1b3;
-  unsigned_long_int_dest[435] = (unsigned_long_int_src[435] >> 2) / 0x6d;
+  unsigned_long_int_dest[435] = unsigned_long_int_src[435] / 0x1b4;
   unsigned_long_int_dest[436] = unsigned_long_int_src[436] / 0x1b5;
-  unsigned_long_int_dest[437] = (unsigned_long_int_src[437] >> 1) / 0xdb;
+  unsigned_long_int_dest[437] = unsigned_long_int_src[437] / 0x1b6;
   unsigned_long_int_dest[438] = unsigned_long_int_src[438] / 0x1b7;
-  unsigned_long_int_dest[439] = (unsigned_long_int_src[439] >> 3) / 0x37;
+  unsigned_long_int_dest[439] = unsigned_long_int_src[439] / 0x1b8;
   unsigned_long_int_dest[440] = unsigned_long_int_src[440] / 0x1b9;
-  unsigned_long_int_dest[441] = (unsigned_long_int_src[441] >> 1) / 0xdd;
+  unsigned_long_int_dest[441] = unsigned_long_int_src[441] / 0x1ba;
   unsigned_long_int_dest[442] = unsigned_long_int_src[442] / 0x1bb;
-  unsigned_long_int_dest[443] = (unsigned_long_int_src[443] >> 2) / 0x6f;
+  unsigned_long_int_dest[443] = unsigned_long_int_src[443] / 0x1bc;
   unsigned_long_int_dest[444] = unsigned_long_int_src[444] / 0x1bd;
-  unsigned_long_int_dest[445] = (unsigned_long_int_src[445] >> 1) / 0xdf;
+  unsigned_long_int_dest[445] = unsigned_long_int_src[445] / 0x1be;
   unsigned_long_int_dest[446] = unsigned_long_int_src[446] / 0x1bf;
-  unsigned_long_int_dest[447] = (unsigned_long_int_src[447] >> 6) / 7;
+  unsigned_long_int_dest[447] = unsigned_long_int_src[447] / 0x1c0;
   unsigned_long_int_dest[448] = unsigned_long_int_src[448] / 0x1c1;
   unsigned_long_int_dest[449] = unsigned_long_int_src[449] / 0x1c2;
   unsigned_long_int_dest[450] = unsigned_long_int_src[450] / 0x1c3;
-  unsigned_long_int_dest[451] = (unsigned_long_int_src[451] >> 2) / 0x71;
+  unsigned_long_int_dest[451] = unsigned_long_int_src[451] / 0x1c4;
   unsigned_long_int_dest[452] = unsigned_long_int_src[452] / 0x1c5;
-  unsigned_long_int_dest[453] = (unsigned_long_int_src[453] >> 1) / 0xe3;
+  unsigned_long_int_dest[453] = unsigned_long_int_src[453] / 0x1c6;
   unsigned_long_int_dest[454] = unsigned_long_int_src[454] / 0x1c7;
-  unsigned_long_int_dest[455] = (unsigned_long_int_src[455] >> 3) / 0x39;
+  unsigned_long_int_dest[455] = unsigned_long_int_src[455] / 0x1c8;
   unsigned_long_int_dest[456] = unsigned_long_int_src[456] / 0x1c9;
   unsigned_long_int_dest[457] = unsigned_long_int_src[457] / 0x1ca;
   unsigned_long_int_dest[458] = unsigned_long_int_src[458] / 0x1cb;
-  unsigned_long_int_dest[459] = (unsigned_long_int_src[459] >> 2) / 0x73;
+  unsigned_long_int_dest[459] = unsigned_long_int_src[459] / 0x1cc;
   unsigned_long_int_dest[460] = unsigned_long_int_src[460] / 0x1cd;
-  unsigned_long_int_dest[461] = (unsigned_long_int_src[461] >> 1) / 0xe7;
+  unsigned_long_int_dest[461] = unsigned_long_int_src[461] / 0x1ce;
   unsigned_long_int_dest[462] = unsigned_long_int_src[462] / 0x1cf;
   unsigned_long_int_dest[463] = unsigned_long_int_src[463] / 0x1d0;
   unsigned_long_int_dest[464] = unsigned_long_int_src[464] / 0x1d1;
-  unsigned_long_int_dest[465] = (unsigned_long_int_src[465] >> 1) / 0xe9;
+  unsigned_long_int_dest[465] = unsigned_long_int_src[465] / 0x1d2;
   unsigned_long_int_dest[466] = unsigned_long_int_src[466] / 0x1d3;
-  unsigned_long_int_dest[467] = (unsigned_long_int_src[467] >> 2) / 0x75;
+  unsigned_long_int_dest[467] = unsigned_long_int_src[467] / 0x1d4;
   unsigned_long_int_dest[468] = unsigned_long_int_src[468] / 0x1d5;
-  unsigned_long_int_dest[469] = (unsigned_long_int_src[469] >> 1) / 0xeb;
+  unsigned_long_int_dest[469] = unsigned_long_int_src[469] / 0x1d6;
   unsigned_long_int_dest[470] = unsigned_long_int_src[470] / 0x1d7;
   unsigned_long_int_dest[471] = unsigned_long_int_src[471] / 0x1d8;
   unsigned_long_int_dest[472] = unsigned_long_int_src[472] / 0x1d9;
-  unsigned_long_int_dest[473] = (unsigned_long_int_src[473] >> 1) / 0xed;
+  unsigned_long_int_dest[473] = unsigned_long_int_src[473] / 0x1da;
   unsigned_long_int_dest[474] = unsigned_long_int_src[474] / 0x1db;
   unsigned_long_int_dest[475] = unsigned_long_int_src[475] / 0x1dc;
   unsigned_long_int_dest[476] = unsigned_long_int_src[476] / 0x1dd;
@@ -43121,31 +40887,31 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[480] = unsigned_long_int_src[480] / 0x1e1;
   unsigned_long_int_dest[481] = unsigned_long_int_src[481] / 0x1e2;
   unsigned_long_int_dest[482] = unsigned_long_int_src[482] / 0x1e3;
-  unsigned_long_int_dest[483] = (unsigned_long_int_src[483] >> 2) / 0x79;
+  unsigned_long_int_dest[483] = unsigned_long_int_src[483] / 0x1e4;
   unsigned_long_int_dest[484] = unsigned_long_int_src[484] / 0x1e5;
   unsigned_long_int_dest[485] = unsigned_long_int_src[485] / 0x1e6;
   unsigned_long_int_dest[486] = unsigned_long_int_src[486] / 0x1e7;
   unsigned_long_int_dest[487] = unsigned_long_int_src[487] / 0x1e8;
   unsigned_long_int_dest[488] = unsigned_long_int_src[488] / 0x1e9;
-  unsigned_long_int_dest[489] = (unsigned_long_int_src[489] >> 1) / 0xf5;
+  unsigned_long_int_dest[489] = unsigned_long_int_src[489] / 0x1ea;
   unsigned_long_int_dest[490] = unsigned_long_int_src[490] / 0x1eb;
-  unsigned_long_int_dest[491] = (unsigned_long_int_src[491] >> 2) / 0x7b;
+  unsigned_long_int_dest[491] = unsigned_long_int_src[491] / 0x1ec;
   unsigned_long_int_dest[492] = unsigned_long_int_src[492] / 0x1ed;
-  unsigned_long_int_dest[493] = (unsigned_long_int_src[493] >> 1) / 0xf7;
+  unsigned_long_int_dest[493] = unsigned_long_int_src[493] / 0x1ee;
   unsigned_long_int_dest[494] = unsigned_long_int_src[494] / 0x1ef;
-  unsigned_long_int_dest[495] = (unsigned_long_int_src[495] >> 4) / 0x1f;
+  unsigned_long_int_dest[495] = unsigned_long_int_src[495] / 0x1f0;
   unsigned_long_int_dest[496] = unsigned_long_int_src[496] / 0x1f1;
-  unsigned_long_int_dest[497] = (unsigned_long_int_src[497] >> 1) / 0xf9;
+  unsigned_long_int_dest[497] = unsigned_long_int_src[497] / 0x1f2;
   unsigned_long_int_dest[498] = unsigned_long_int_src[498] / 499;
   unsigned_long_int_dest[499] = unsigned_long_int_src[499] / 500;
   unsigned_long_int_dest[500] = unsigned_long_int_src[500] / 0x1f5;
   unsigned_long_int_dest[501] = unsigned_long_int_src[501] / 0x1f6;
   unsigned_long_int_dest[502] = unsigned_long_int_src[502] / 0x1f7;
-  unsigned_long_int_dest[503] = (unsigned_long_int_src[503] >> 3) / 0x3f;
+  unsigned_long_int_dest[503] = unsigned_long_int_src[503] / 0x1f8;
   unsigned_long_int_dest[504] = unsigned_long_int_src[504] / 0x1f9;
   unsigned_long_int_dest[505] = unsigned_long_int_src[505] / 0x1fa;
   unsigned_long_int_dest[506] = unsigned_long_int_src[506] / 0x1fb;
-  unsigned_long_int_dest[507] = (unsigned_long_int_src[507] >> 2) / 0x7f;
+  unsigned_long_int_dest[507] = unsigned_long_int_src[507] / 0x1fc;
   unsigned_long_int_dest[508] = unsigned_long_int_src[508] / 0x1fd;
   unsigned_long_int_dest[509] = unsigned_long_int_src[509] / 0x1fe;
   unsigned_long_int_dest[510] = unsigned_long_int_src[510] / 0x1ff;
@@ -43183,11 +40949,11 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[542] = unsigned_long_int_src[542] / 0x21f;
   unsigned_long_int_dest[543] = unsigned_long_int_src[543] / 0x220;
   unsigned_long_int_dest[544] = unsigned_long_int_src[544] / 0x221;
-  unsigned_long_int_dest[545] = (unsigned_long_int_src[545] >> 1) / 0x111;
+  unsigned_long_int_dest[545] = unsigned_long_int_src[545] / 0x222;
   unsigned_long_int_dest[546] = unsigned_long_int_src[546] / 0x223;
   unsigned_long_int_dest[547] = unsigned_long_int_src[547] / 0x224;
   unsigned_long_int_dest[548] = unsigned_long_int_src[548] / 0x225;
-  unsigned_long_int_dest[549] = (unsigned_long_int_src[549] >> 1) / 0x113;
+  unsigned_long_int_dest[549] = unsigned_long_int_src[549] / 0x226;
   unsigned_long_int_dest[550] = unsigned_long_int_src[550] / 0x227;
   unsigned_long_int_dest[551] = unsigned_long_int_src[551] / 0x228;
   unsigned_long_int_dest[552] = unsigned_long_int_src[552] / 0x229;
@@ -43197,7 +40963,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[556] = unsigned_long_int_src[556] / 0x22d;
   unsigned_long_int_dest[557] = unsigned_long_int_src[557] / 0x22e;
   unsigned_long_int_dest[558] = unsigned_long_int_src[558] / 0x22f;
-  unsigned_long_int_dest[559] = (unsigned_long_int_src[559] >> 4) / 0x23;
+  unsigned_long_int_dest[559] = unsigned_long_int_src[559] / 0x230;
   unsigned_long_int_dest[560] = unsigned_long_int_src[560] / 0x231;
   unsigned_long_int_dest[561] = unsigned_long_int_src[561] / 0x232;
   unsigned_long_int_dest[562] = unsigned_long_int_src[562] / 0x233;
@@ -43207,7 +40973,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[566] = unsigned_long_int_src[566] / 0x237;
   unsigned_long_int_dest[567] = unsigned_long_int_src[567] / 0x238;
   unsigned_long_int_dest[568] = unsigned_long_int_src[568] / 0x239;
-  unsigned_long_int_dest[569] = (unsigned_long_int_src[569] >> 1) / 0x11d;
+  unsigned_long_int_dest[569] = unsigned_long_int_src[569] / 0x23a;
   unsigned_long_int_dest[570] = unsigned_long_int_src[570] / 0x23b;
   unsigned_long_int_dest[571] = unsigned_long_int_src[571] / 0x23c;
   unsigned_long_int_dest[572] = unsigned_long_int_src[572] / 0x23d;
@@ -43221,7 +40987,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[580] = unsigned_long_int_src[580] / 0x245;
   unsigned_long_int_dest[581] = unsigned_long_int_src[581] / 0x246;
   unsigned_long_int_dest[582] = unsigned_long_int_src[582] / 0x247;
-  unsigned_long_int_dest[583] = (unsigned_long_int_src[583] >> 3) / 0x49;
+  unsigned_long_int_dest[583] = unsigned_long_int_src[583] / 0x248;
   unsigned_long_int_dest[584] = unsigned_long_int_src[584] / 0x249;
   unsigned_long_int_dest[585] = unsigned_long_int_src[585] / 0x24a;
   unsigned_long_int_dest[586] = unsigned_long_int_src[586] / 0x24b;
@@ -43229,7 +40995,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[588] = unsigned_long_int_src[588] / 0x24d;
   unsigned_long_int_dest[589] = unsigned_long_int_src[589] / 0x24e;
   unsigned_long_int_dest[590] = unsigned_long_int_src[590] / 0x24f;
-  unsigned_long_int_dest[591] = (unsigned_long_int_src[591] >> 4) / 0x25;
+  unsigned_long_int_dest[591] = unsigned_long_int_src[591] / 0x250;
   unsigned_long_int_dest[592] = unsigned_long_int_src[592] / 0x251;
   unsigned_long_int_dest[593] = unsigned_long_int_src[593] / 0x252;
   unsigned_long_int_dest[594] = unsigned_long_int_src[594] / 0x253;
@@ -43245,7 +41011,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[604] = unsigned_long_int_src[604] / 0x25d;
   unsigned_long_int_dest[605] = unsigned_long_int_src[605] / 0x25e;
   unsigned_long_int_dest[606] = unsigned_long_int_src[606] / 0x25f;
-  unsigned_long_int_dest[607] = (unsigned_long_int_src[607] >> 5) / 0x13;
+  unsigned_long_int_dest[607] = unsigned_long_int_src[607] / 0x260;
   unsigned_long_int_dest[608] = unsigned_long_int_src[608] / 0x261;
   unsigned_long_int_dest[609] = unsigned_long_int_src[609] / 0x262;
   unsigned_long_int_dest[610] = unsigned_long_int_src[610] / 0x263;
@@ -43261,19 +41027,19 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[620] = unsigned_long_int_src[620] / 0x26d;
   unsigned_long_int_dest[621] = unsigned_long_int_src[621] / 0x26e;
   unsigned_long_int_dest[622] = unsigned_long_int_src[622] / 0x26f;
-  unsigned_long_int_dest[623] = (unsigned_long_int_src[623] >> 4) / 0x27;
+  unsigned_long_int_dest[623] = unsigned_long_int_src[623] / 0x270;
   unsigned_long_int_dest[624] = unsigned_long_int_src[624] / 0x271;
-  unsigned_long_int_dest[625] = (unsigned_long_int_src[625] >> 1) / 0x139;
+  unsigned_long_int_dest[625] = unsigned_long_int_src[625] / 0x272;
   unsigned_long_int_dest[626] = unsigned_long_int_src[626] / 0x273;
   unsigned_long_int_dest[627] = unsigned_long_int_src[627] / 0x274;
   unsigned_long_int_dest[628] = unsigned_long_int_src[628] / 0x275;
-  unsigned_long_int_dest[629] = (unsigned_long_int_src[629] >> 1) / 0x13b;
+  unsigned_long_int_dest[629] = unsigned_long_int_src[629] / 0x276;
   unsigned_long_int_dest[630] = unsigned_long_int_src[630] / 0x277;
   unsigned_long_int_dest[631] = unsigned_long_int_src[631] / 0x278;
   unsigned_long_int_dest[632] = unsigned_long_int_src[632] / 0x279;
   unsigned_long_int_dest[633] = unsigned_long_int_src[633] / 0x27a;
   unsigned_long_int_dest[634] = unsigned_long_int_src[634] / 0x27b;
-  unsigned_long_int_dest[635] = (unsigned_long_int_src[635] >> 2) / 0x9f;
+  unsigned_long_int_dest[635] = unsigned_long_int_src[635] / 0x27c;
   unsigned_long_int_dest[636] = unsigned_long_int_src[636] / 0x27d;
   unsigned_long_int_dest[637] = unsigned_long_int_src[637] / 0x27e;
   unsigned_long_int_dest[638] = unsigned_long_int_src[638] / 0x27f;
@@ -43283,7 +41049,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[642] = unsigned_long_int_src[642] / 0x283;
   unsigned_long_int_dest[643] = unsigned_long_int_src[643] / 0x284;
   unsigned_long_int_dest[644] = unsigned_long_int_src[644] / 0x285;
-  unsigned_long_int_dest[645] = (unsigned_long_int_src[645] >> 1) / 0x143;
+  unsigned_long_int_dest[645] = unsigned_long_int_src[645] / 0x286;
   unsigned_long_int_dest[646] = unsigned_long_int_src[646] / 0x287;
   unsigned_long_int_dest[647] = unsigned_long_int_src[647] / 0x288;
   unsigned_long_int_dest[648] = unsigned_long_int_src[648] / 0x289;
@@ -43291,7 +41057,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[650] = unsigned_long_int_src[650] / 0x28b;
   unsigned_long_int_dest[651] = unsigned_long_int_src[651] / 0x28c;
   unsigned_long_int_dest[652] = unsigned_long_int_src[652] / 0x28d;
-  unsigned_long_int_dest[653] = (unsigned_long_int_src[653] >> 1) / 0x147;
+  unsigned_long_int_dest[653] = unsigned_long_int_src[653] / 0x28e;
   unsigned_long_int_dest[654] = unsigned_long_int_src[654] / 0x28f;
   unsigned_long_int_dest[655] = unsigned_long_int_src[655] / 0x290;
   unsigned_long_int_dest[656] = unsigned_long_int_src[656] / 0x291;
@@ -43299,29 +41065,29 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[658] = unsigned_long_int_src[658] / 0x293;
   unsigned_long_int_dest[659] = unsigned_long_int_src[659] / 0x294;
   unsigned_long_int_dest[660] = unsigned_long_int_src[660] / 0x295;
-  unsigned_long_int_dest[661] = (unsigned_long_int_src[661] >> 1) / 0x14b;
+  unsigned_long_int_dest[661] = unsigned_long_int_src[661] / 0x296;
   unsigned_long_int_dest[662] = unsigned_long_int_src[662] / 0x297;
   unsigned_long_int_dest[663] = unsigned_long_int_src[663] / 0x298;
   unsigned_long_int_dest[664] = unsigned_long_int_src[664] / 0x299;
-  unsigned_long_int_dest[665] = (unsigned_long_int_src[665] >> 1) / 0x14d;
+  unsigned_long_int_dest[665] = unsigned_long_int_src[665] / 0x29a;
   unsigned_long_int_dest[666] = unsigned_long_int_src[666] / 0x29b;
   unsigned_long_int_dest[667] = unsigned_long_int_src[667] / 0x29c;
   unsigned_long_int_dest[668] = unsigned_long_int_src[668] / 0x29d;
-  unsigned_long_int_dest[669] = (unsigned_long_int_src[669] >> 1) / 0x14f;
+  unsigned_long_int_dest[669] = unsigned_long_int_src[669] / 0x29e;
   unsigned_long_int_dest[670] = unsigned_long_int_src[670] / 0x29f;
-  unsigned_long_int_dest[671] = (unsigned_long_int_src[671] >> 5) / 0x15;
+  unsigned_long_int_dest[671] = unsigned_long_int_src[671] / 0x2a0;
   unsigned_long_int_dest[672] = unsigned_long_int_src[672] / 0x2a1;
   unsigned_long_int_dest[673] = unsigned_long_int_src[673] / 0x2a2;
   unsigned_long_int_dest[674] = unsigned_long_int_src[674] / 0x2a3;
   unsigned_long_int_dest[675] = unsigned_long_int_src[675] / 0x2a4;
   unsigned_long_int_dest[676] = unsigned_long_int_src[676] / 0x2a5;
-  unsigned_long_int_dest[677] = (unsigned_long_int_src[677] >> 1) / 0x153;
+  unsigned_long_int_dest[677] = unsigned_long_int_src[677] / 0x2a6;
   unsigned_long_int_dest[678] = unsigned_long_int_src[678] / 0x2a7;
   unsigned_long_int_dest[679] = unsigned_long_int_src[679] / 0x2a8;
   unsigned_long_int_dest[680] = unsigned_long_int_src[680] / 0x2a9;
-  unsigned_long_int_dest[681] = (unsigned_long_int_src[681] >> 1) / 0x155;
+  unsigned_long_int_dest[681] = unsigned_long_int_src[681] / 0x2aa;
   unsigned_long_int_dest[682] = unsigned_long_int_src[682] / 0x2ab;
-  unsigned_long_int_dest[683] = (unsigned_long_int_src[683] >> 2) / 0xab;
+  unsigned_long_int_dest[683] = unsigned_long_int_src[683] / 0x2ac;
   unsigned_long_int_dest[684] = unsigned_long_int_src[684] / 0x2ad;
   unsigned_long_int_dest[685] = unsigned_long_int_src[685] / 0x2ae;
   unsigned_long_int_dest[686] = unsigned_long_int_src[686] / 0x2af;
@@ -43329,7 +41095,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[688] = unsigned_long_int_src[688] / 0x2b1;
   unsigned_long_int_dest[689] = unsigned_long_int_src[689] / 0x2b2;
   unsigned_long_int_dest[690] = unsigned_long_int_src[690] / 0x2b3;
-  unsigned_long_int_dest[691] = (unsigned_long_int_src[691] >> 2) / 0xad;
+  unsigned_long_int_dest[691] = unsigned_long_int_src[691] / 0x2b4;
   unsigned_long_int_dest[692] = unsigned_long_int_src[692] / 0x2b5;
   unsigned_long_int_dest[693] = unsigned_long_int_src[693] / 0x2b6;
   unsigned_long_int_dest[694] = unsigned_long_int_src[694] / 0x2b7;
@@ -43339,13 +41105,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[698] = unsigned_long_int_src[698] / 699;
   unsigned_long_int_dest[699] = unsigned_long_int_src[699] / 700;
   unsigned_long_int_dest[700] = unsigned_long_int_src[700] / 0x2bd;
-  unsigned_long_int_dest[701] = (unsigned_long_int_src[701] >> 1) / 0x15f;
+  unsigned_long_int_dest[701] = unsigned_long_int_src[701] / 0x2be;
   unsigned_long_int_dest[702] = unsigned_long_int_src[702] / 0x2bf;
   unsigned_long_int_dest[703] = unsigned_long_int_src[703] / 0x2c0;
   unsigned_long_int_dest[704] = unsigned_long_int_src[704] / 0x2c1;
-  unsigned_long_int_dest[705] = (unsigned_long_int_src[705] >> 1) / 0x161;
+  unsigned_long_int_dest[705] = unsigned_long_int_src[705] / 0x2c2;
   unsigned_long_int_dest[706] = unsigned_long_int_src[706] / 0x2c3;
-  unsigned_long_int_dest[707] = (unsigned_long_int_src[707] >> 2) / 0xb1;
+  unsigned_long_int_dest[707] = unsigned_long_int_src[707] / 0x2c4;
   unsigned_long_int_dest[708] = unsigned_long_int_src[708] / 0x2c5;
   unsigned_long_int_dest[709] = unsigned_long_int_src[709] / 0x2c6;
   unsigned_long_int_dest[710] = unsigned_long_int_src[710] / 0x2c7;
@@ -43353,21 +41119,21 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[712] = unsigned_long_int_src[712] / 0x2c9;
   unsigned_long_int_dest[713] = unsigned_long_int_src[713] / 0x2ca;
   unsigned_long_int_dest[714] = unsigned_long_int_src[714] / 0x2cb;
-  unsigned_long_int_dest[715] = (unsigned_long_int_src[715] >> 2) / 0xb3;
+  unsigned_long_int_dest[715] = unsigned_long_int_src[715] / 0x2cc;
   unsigned_long_int_dest[716] = unsigned_long_int_src[716] / 0x2cd;
-  unsigned_long_int_dest[717] = (unsigned_long_int_src[717] >> 1) / 0x167;
+  unsigned_long_int_dest[717] = unsigned_long_int_src[717] / 0x2ce;
   unsigned_long_int_dest[718] = unsigned_long_int_src[718] / 0x2cf;
-  unsigned_long_int_dest[719] = (unsigned_long_int_src[719] >> 4) / 0x2d;
+  unsigned_long_int_dest[719] = unsigned_long_int_src[719] / 0x2d0;
   unsigned_long_int_dest[720] = unsigned_long_int_src[720] / 0x2d1;
-  unsigned_long_int_dest[721] = (unsigned_long_int_src[721] >> 1) / 0x169;
+  unsigned_long_int_dest[721] = unsigned_long_int_src[721] / 0x2d2;
   unsigned_long_int_dest[722] = unsigned_long_int_src[722] / 0x2d3;
   unsigned_long_int_dest[723] = unsigned_long_int_src[723] / 0x2d4;
   unsigned_long_int_dest[724] = unsigned_long_int_src[724] / 0x2d5;
-  unsigned_long_int_dest[725] = (unsigned_long_int_src[725] >> 1) / 0x16b;
+  unsigned_long_int_dest[725] = unsigned_long_int_src[725] / 0x2d6;
   unsigned_long_int_dest[726] = unsigned_long_int_src[726] / 0x2d7;
-  unsigned_long_int_dest[727] = (unsigned_long_int_src[727] >> 3) / 0x5b;
+  unsigned_long_int_dest[727] = unsigned_long_int_src[727] / 0x2d8;
   unsigned_long_int_dest[728] = unsigned_long_int_src[728] / 0x2d9;
-  unsigned_long_int_dest[729] = (unsigned_long_int_src[729] >> 1) / 0x16d;
+  unsigned_long_int_dest[729] = unsigned_long_int_src[729] / 0x2da;
   unsigned_long_int_dest[730] = unsigned_long_int_src[730] / 0x2db;
   unsigned_long_int_dest[731] = unsigned_long_int_src[731] / 0x2dc;
   unsigned_long_int_dest[732] = unsigned_long_int_src[732] / 0x2dd;
@@ -43377,13 +41143,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[736] = unsigned_long_int_src[736] / 0x2e1;
   unsigned_long_int_dest[737] = unsigned_long_int_src[737] / 0x2e2;
   unsigned_long_int_dest[738] = unsigned_long_int_src[738] / 0x2e3;
-  unsigned_long_int_dest[739] = (unsigned_long_int_src[739] >> 2) / 0xb9;
+  unsigned_long_int_dest[739] = unsigned_long_int_src[739] / 0x2e4;
   unsigned_long_int_dest[740] = unsigned_long_int_src[740] / 0x2e5;
   unsigned_long_int_dest[741] = unsigned_long_int_src[741] / 0x2e6;
   unsigned_long_int_dest[742] = unsigned_long_int_src[742] / 0x2e7;
   unsigned_long_int_dest[743] = unsigned_long_int_src[743] / 0x2e8;
   unsigned_long_int_dest[744] = unsigned_long_int_src[744] / 0x2e9;
-  unsigned_long_int_dest[745] = (unsigned_long_int_src[745] >> 1) / 0x175;
+  unsigned_long_int_dest[745] = unsigned_long_int_src[745] / 0x2ea;
   unsigned_long_int_dest[746] = unsigned_long_int_src[746] / 0x2eb;
   unsigned_long_int_dest[747] = unsigned_long_int_src[747] / 0x2ec;
   unsigned_long_int_dest[748] = unsigned_long_int_src[748] / 0x2ed;
@@ -43391,13 +41157,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[750] = unsigned_long_int_src[750] / 0x2ef;
   unsigned_long_int_dest[751] = unsigned_long_int_src[751] / 0x2f0;
   unsigned_long_int_dest[752] = unsigned_long_int_src[752] / 0x2f1;
-  unsigned_long_int_dest[753] = (unsigned_long_int_src[753] >> 1) / 0x179;
+  unsigned_long_int_dest[753] = unsigned_long_int_src[753] / 0x2f2;
   unsigned_long_int_dest[754] = unsigned_long_int_src[754] / 0x2f3;
-  unsigned_long_int_dest[755] = (unsigned_long_int_src[755] >> 2) / 0xbd;
+  unsigned_long_int_dest[755] = unsigned_long_int_src[755] / 0x2f4;
   unsigned_long_int_dest[756] = unsigned_long_int_src[756] / 0x2f5;
-  unsigned_long_int_dest[757] = (unsigned_long_int_src[757] >> 1) / 0x17b;
+  unsigned_long_int_dest[757] = unsigned_long_int_src[757] / 0x2f6;
   unsigned_long_int_dest[758] = unsigned_long_int_src[758] / 0x2f7;
-  unsigned_long_int_dest[759] = (unsigned_long_int_src[759] >> 3) / 0x5f;
+  unsigned_long_int_dest[759] = unsigned_long_int_src[759] / 0x2f8;
   unsigned_long_int_dest[760] = unsigned_long_int_src[760] / 0x2f9;
   unsigned_long_int_dest[761] = unsigned_long_int_src[761] / 0x2fa;
   unsigned_long_int_dest[762] = unsigned_long_int_src[762] / 0x2fb;
@@ -43411,13 +41177,13 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[770] = unsigned_long_int_src[770] / 0x303;
   unsigned_long_int_dest[771] = unsigned_long_int_src[771] / 0x304;
   unsigned_long_int_dest[772] = unsigned_long_int_src[772] / 0x305;
-  unsigned_long_int_dest[773] = (unsigned_long_int_src[773] >> 1) / 0x183;
+  unsigned_long_int_dest[773] = unsigned_long_int_src[773] / 0x306;
   unsigned_long_int_dest[774] = unsigned_long_int_src[774] / 0x307;
-  unsigned_long_int_dest[775] = (unsigned_long_int_src[775] >> 3) / 0x61;
+  unsigned_long_int_dest[775] = unsigned_long_int_src[775] / 0x308;
   unsigned_long_int_dest[776] = unsigned_long_int_src[776] / 0x309;
   unsigned_long_int_dest[777] = unsigned_long_int_src[777] / 0x30a;
   unsigned_long_int_dest[778] = unsigned_long_int_src[778] / 0x30b;
-  unsigned_long_int_dest[779] = (unsigned_long_int_src[779] >> 2) / 0xc3;
+  unsigned_long_int_dest[779] = unsigned_long_int_src[779] / 0x30c;
   unsigned_long_int_dest[780] = unsigned_long_int_src[780] / 0x30d;
   unsigned_long_int_dest[781] = unsigned_long_int_src[781] / 0x30e;
   unsigned_long_int_dest[782] = unsigned_long_int_src[782] / 0x30f;
@@ -43425,9 +41191,9 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[784] = unsigned_long_int_src[784] / 0x311;
   unsigned_long_int_dest[785] = unsigned_long_int_src[785] / 0x312;
   unsigned_long_int_dest[786] = unsigned_long_int_src[786] / 0x313;
-  unsigned_long_int_dest[787] = (unsigned_long_int_src[787] >> 2) / 0xc5;
+  unsigned_long_int_dest[787] = unsigned_long_int_src[787] / 0x314;
   unsigned_long_int_dest[788] = unsigned_long_int_src[788] / 0x315;
-  unsigned_long_int_dest[789] = (unsigned_long_int_src[789] >> 1) / 0x18b;
+  unsigned_long_int_dest[789] = unsigned_long_int_src[789] / 0x316;
   unsigned_long_int_dest[790] = unsigned_long_int_src[790] / 0x317;
   unsigned_long_int_dest[791] = unsigned_long_int_src[791] / 0x318;
   unsigned_long_int_dest[792] = unsigned_long_int_src[792] / 0x319;
@@ -43435,7 +41201,7 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[794] = unsigned_long_int_src[794] / 0x31b;
   unsigned_long_int_dest[795] = unsigned_long_int_src[795] / 0x31c;
   unsigned_long_int_dest[796] = unsigned_long_int_src[796] / 0x31d;
-  unsigned_long_int_dest[797] = (unsigned_long_int_src[797] >> 1) / 399;
+  unsigned_long_int_dest[797] = unsigned_long_int_src[797] / 0x31e;
   unsigned_long_int_dest[798] = unsigned_long_int_src[798] / 799;
   unsigned_long_int_dest[799] = unsigned_long_int_src[799] / 800;
   unsigned_long_int_dest[800] = unsigned_long_int_src[800] / 0x321;
@@ -43443,9 +41209,9 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[802] = unsigned_long_int_src[802] / 0x323;
   unsigned_long_int_dest[803] = unsigned_long_int_src[803] / 0x324;
   unsigned_long_int_dest[804] = unsigned_long_int_src[804] / 0x325;
-  unsigned_long_int_dest[805] = (unsigned_long_int_src[805] >> 1) / 0x193;
+  unsigned_long_int_dest[805] = unsigned_long_int_src[805] / 0x326;
   unsigned_long_int_dest[806] = unsigned_long_int_src[806] / 0x327;
-  unsigned_long_int_dest[807] = (unsigned_long_int_src[807] >> 3) / 0x65;
+  unsigned_long_int_dest[807] = unsigned_long_int_src[807] / 0x328;
   unsigned_long_int_dest[808] = unsigned_long_int_src[808] / 0x329;
   unsigned_long_int_dest[809] = unsigned_long_int_src[809] / 0x32a;
   unsigned_long_int_dest[810] = unsigned_long_int_src[810] / 0x32b;
@@ -43459,15 +41225,15 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[818] = unsigned_long_int_src[818] / 0x333;
   unsigned_long_int_dest[819] = unsigned_long_int_src[819] / 0x334;
   unsigned_long_int_dest[820] = unsigned_long_int_src[820] / 0x335;
-  unsigned_long_int_dest[821] = (unsigned_long_int_src[821] >> 1) / 0x19b;
+  unsigned_long_int_dest[821] = unsigned_long_int_src[821] / 0x336;
   unsigned_long_int_dest[822] = unsigned_long_int_src[822] / 0x337;
-  unsigned_long_int_dest[823] = (unsigned_long_int_src[823] >> 3) / 0x67;
+  unsigned_long_int_dest[823] = unsigned_long_int_src[823] / 0x338;
   unsigned_long_int_dest[824] = unsigned_long_int_src[824] / 0x339;
-  unsigned_long_int_dest[825] = (unsigned_long_int_src[825] >> 1) / 0x19d;
+  unsigned_long_int_dest[825] = unsigned_long_int_src[825] / 0x33a;
   unsigned_long_int_dest[826] = unsigned_long_int_src[826] / 0x33b;
   unsigned_long_int_dest[827] = unsigned_long_int_src[827] / 0x33c;
   unsigned_long_int_dest[828] = unsigned_long_int_src[828] / 0x33d;
-  unsigned_long_int_dest[829] = (unsigned_long_int_src[829] >> 1) / 0x19f;
+  unsigned_long_int_dest[829] = unsigned_long_int_src[829] / 0x33e;
   unsigned_long_int_dest[830] = unsigned_long_int_src[830] / 0x33f;
   unsigned_long_int_dest[831] = unsigned_long_int_src[831] / 0x340;
   unsigned_long_int_dest[832] = unsigned_long_int_src[832] / 0x341;
@@ -43475,81 +41241,81 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[834] = unsigned_long_int_src[834] / 0x343;
   unsigned_long_int_dest[835] = unsigned_long_int_src[835] / 0x344;
   unsigned_long_int_dest[836] = unsigned_long_int_src[836] / 0x345;
-  unsigned_long_int_dest[837] = (unsigned_long_int_src[837] >> 1) / 0x1a3;
+  unsigned_long_int_dest[837] = unsigned_long_int_src[837] / 0x346;
   unsigned_long_int_dest[838] = unsigned_long_int_src[838] / 0x347;
-  unsigned_long_int_dest[839] = (unsigned_long_int_src[839] >> 3) / 0x69;
+  unsigned_long_int_dest[839] = unsigned_long_int_src[839] / 0x348;
   unsigned_long_int_dest[840] = unsigned_long_int_src[840] / 0x349;
-  unsigned_long_int_dest[841] = (unsigned_long_int_src[841] >> 1) / 0x1a5;
+  unsigned_long_int_dest[841] = unsigned_long_int_src[841] / 0x34a;
   unsigned_long_int_dest[842] = unsigned_long_int_src[842] / 0x34b;
   unsigned_long_int_dest[843] = unsigned_long_int_src[843] / 0x34c;
   unsigned_long_int_dest[844] = unsigned_long_int_src[844] / 0x34d;
   unsigned_long_int_dest[845] = unsigned_long_int_src[845] / 0x34e;
   unsigned_long_int_dest[846] = unsigned_long_int_src[846] / 0x34f;
-  unsigned_long_int_dest[847] = (unsigned_long_int_src[847] >> 4) / 0x35;
+  unsigned_long_int_dest[847] = unsigned_long_int_src[847] / 0x350;
   unsigned_long_int_dest[848] = unsigned_long_int_src[848] / 0x351;
-  unsigned_long_int_dest[849] = (unsigned_long_int_src[849] >> 1) / 0x1a9;
+  unsigned_long_int_dest[849] = unsigned_long_int_src[849] / 0x352;
   unsigned_long_int_dest[850] = unsigned_long_int_src[850] / 0x353;
   unsigned_long_int_dest[851] = unsigned_long_int_src[851] / 0x354;
   unsigned_long_int_dest[852] = unsigned_long_int_src[852] / 0x355;
-  unsigned_long_int_dest[853] = (unsigned_long_int_src[853] >> 1) / 0x1ab;
+  unsigned_long_int_dest[853] = unsigned_long_int_src[853] / 0x356;
   unsigned_long_int_dest[854] = unsigned_long_int_src[854] / 0x357;
-  unsigned_long_int_dest[855] = (unsigned_long_int_src[855] >> 3) / 0x6b;
+  unsigned_long_int_dest[855] = unsigned_long_int_src[855] / 0x358;
   unsigned_long_int_dest[856] = unsigned_long_int_src[856] / 0x359;
-  unsigned_long_int_dest[857] = (unsigned_long_int_src[857] >> 1) / 0x1ad;
+  unsigned_long_int_dest[857] = unsigned_long_int_src[857] / 0x35a;
   unsigned_long_int_dest[858] = unsigned_long_int_src[858] / 0x35b;
   unsigned_long_int_dest[859] = unsigned_long_int_src[859] / 0x35c;
   unsigned_long_int_dest[860] = unsigned_long_int_src[860] / 0x35d;
-  unsigned_long_int_dest[861] = (unsigned_long_int_src[861] >> 1) / 0x1af;
+  unsigned_long_int_dest[861] = unsigned_long_int_src[861] / 0x35e;
   unsigned_long_int_dest[862] = unsigned_long_int_src[862] / 0x35f;
-  unsigned_long_int_dest[863] = (unsigned_long_int_src[863] >> 5) / 0x1b;
+  unsigned_long_int_dest[863] = unsigned_long_int_src[863] / 0x360;
   unsigned_long_int_dest[864] = unsigned_long_int_src[864] / 0x361;
   unsigned_long_int_dest[865] = unsigned_long_int_src[865] / 0x362;
   unsigned_long_int_dest[866] = unsigned_long_int_src[866] / 0x363;
-  unsigned_long_int_dest[867] = (unsigned_long_int_src[867] >> 2) / 0xd9;
+  unsigned_long_int_dest[867] = unsigned_long_int_src[867] / 0x364;
   unsigned_long_int_dest[868] = unsigned_long_int_src[868] / 0x365;
   unsigned_long_int_dest[869] = unsigned_long_int_src[869] / 0x366;
   unsigned_long_int_dest[870] = unsigned_long_int_src[870] / 0x367;
-  unsigned_long_int_dest[871] = (unsigned_long_int_src[871] >> 3) / 0x6d;
+  unsigned_long_int_dest[871] = unsigned_long_int_src[871] / 0x368;
   unsigned_long_int_dest[872] = unsigned_long_int_src[872] / 0x369;
   unsigned_long_int_dest[873] = unsigned_long_int_src[873] / 0x36a;
   unsigned_long_int_dest[874] = unsigned_long_int_src[874] / 0x36b;
-  unsigned_long_int_dest[875] = (unsigned_long_int_src[875] >> 2) / 0xdb;
+  unsigned_long_int_dest[875] = unsigned_long_int_src[875] / 0x36c;
   unsigned_long_int_dest[876] = unsigned_long_int_src[876] / 0x36d;
   unsigned_long_int_dest[877] = unsigned_long_int_src[877] / 0x36e;
   unsigned_long_int_dest[878] = unsigned_long_int_src[878] / 0x36f;
-  unsigned_long_int_dest[879] = (unsigned_long_int_src[879] >> 4) / 0x37;
+  unsigned_long_int_dest[879] = unsigned_long_int_src[879] / 0x370;
   unsigned_long_int_dest[880] = unsigned_long_int_src[880] / 0x371;
   unsigned_long_int_dest[881] = unsigned_long_int_src[881] / 0x372;
   unsigned_long_int_dest[882] = unsigned_long_int_src[882] / 0x373;
-  unsigned_long_int_dest[883] = (unsigned_long_int_src[883] >> 2) / 0xdd;
+  unsigned_long_int_dest[883] = unsigned_long_int_src[883] / 0x374;
   unsigned_long_int_dest[884] = unsigned_long_int_src[884] / 0x375;
-  unsigned_long_int_dest[885] = (unsigned_long_int_src[885] >> 1) / 0x1bb;
+  unsigned_long_int_dest[885] = unsigned_long_int_src[885] / 0x376;
   unsigned_long_int_dest[886] = unsigned_long_int_src[886] / 0x377;
-  unsigned_long_int_dest[887] = (unsigned_long_int_src[887] >> 3) / 0x6f;
+  unsigned_long_int_dest[887] = unsigned_long_int_src[887] / 0x378;
   unsigned_long_int_dest[888] = unsigned_long_int_src[888] / 0x379;
   unsigned_long_int_dest[889] = unsigned_long_int_src[889] / 0x37a;
   unsigned_long_int_dest[890] = unsigned_long_int_src[890] / 0x37b;
-  unsigned_long_int_dest[891] = (unsigned_long_int_src[891] >> 2) / 0xdf;
+  unsigned_long_int_dest[891] = unsigned_long_int_src[891] / 0x37c;
   unsigned_long_int_dest[892] = unsigned_long_int_src[892] / 0x37d;
   unsigned_long_int_dest[893] = unsigned_long_int_src[893] / 0x37e;
   unsigned_long_int_dest[894] = unsigned_long_int_src[894] / 0x37f;
-  unsigned_long_int_dest[895] = (unsigned_long_int_src[895] >> 7) / 7;
+  unsigned_long_int_dest[895] = unsigned_long_int_src[895] / 0x380;
   unsigned_long_int_dest[896] = unsigned_long_int_src[896] / 0x381;
   unsigned_long_int_dest[897] = unsigned_long_int_src[897] / 0x382;
   unsigned_long_int_dest[898] = unsigned_long_int_src[898] / 899;
   unsigned_long_int_dest[899] = unsigned_long_int_src[899] / 900;
   unsigned_long_int_dest[900] = unsigned_long_int_src[900] / 0x385;
-  unsigned_long_int_dest[901] = (unsigned_long_int_src[901] >> 1) / 0x1c3;
+  unsigned_long_int_dest[901] = unsigned_long_int_src[901] / 0x386;
   unsigned_long_int_dest[902] = unsigned_long_int_src[902] / 0x387;
-  unsigned_long_int_dest[903] = (unsigned_long_int_src[903] >> 3) / 0x71;
+  unsigned_long_int_dest[903] = unsigned_long_int_src[903] / 0x388;
   unsigned_long_int_dest[904] = unsigned_long_int_src[904] / 0x389;
-  unsigned_long_int_dest[905] = (unsigned_long_int_src[905] >> 1) / 0x1c5;
+  unsigned_long_int_dest[905] = unsigned_long_int_src[905] / 0x38a;
   unsigned_long_int_dest[906] = unsigned_long_int_src[906] / 0x38b;
-  unsigned_long_int_dest[907] = (unsigned_long_int_src[907] >> 2) / 0xe3;
+  unsigned_long_int_dest[907] = unsigned_long_int_src[907] / 0x38c;
   unsigned_long_int_dest[908] = unsigned_long_int_src[908] / 0x38d;
-  unsigned_long_int_dest[909] = (unsigned_long_int_src[909] >> 1) / 0x1c7;
+  unsigned_long_int_dest[909] = unsigned_long_int_src[909] / 0x38e;
   unsigned_long_int_dest[910] = unsigned_long_int_src[910] / 0x38f;
-  unsigned_long_int_dest[911] = (unsigned_long_int_src[911] >> 4) / 0x39;
+  unsigned_long_int_dest[911] = unsigned_long_int_src[911] / 0x390;
   unsigned_long_int_dest[912] = unsigned_long_int_src[912] / 0x391;
   unsigned_long_int_dest[913] = unsigned_long_int_src[913] / 0x392;
   unsigned_long_int_dest[914] = unsigned_long_int_src[914] / 0x393;
@@ -43557,27 +41323,27 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[916] = unsigned_long_int_src[916] / 0x395;
   unsigned_long_int_dest[917] = unsigned_long_int_src[917] / 0x396;
   unsigned_long_int_dest[918] = unsigned_long_int_src[918] / 0x397;
-  unsigned_long_int_dest[919] = (unsigned_long_int_src[919] >> 3) / 0x73;
+  unsigned_long_int_dest[919] = unsigned_long_int_src[919] / 0x398;
   unsigned_long_int_dest[920] = unsigned_long_int_src[920] / 0x399;
   unsigned_long_int_dest[921] = unsigned_long_int_src[921] / 0x39a;
   unsigned_long_int_dest[922] = unsigned_long_int_src[922] / 0x39b;
-  unsigned_long_int_dest[923] = (unsigned_long_int_src[923] >> 2) / 0xe7;
+  unsigned_long_int_dest[923] = unsigned_long_int_src[923] / 0x39c;
   unsigned_long_int_dest[924] = unsigned_long_int_src[924] / 0x39d;
   unsigned_long_int_dest[925] = unsigned_long_int_src[925] / 0x39e;
   unsigned_long_int_dest[926] = unsigned_long_int_src[926] / 0x39f;
   unsigned_long_int_dest[927] = unsigned_long_int_src[927] / 0x3a0;
   unsigned_long_int_dest[928] = unsigned_long_int_src[928] / 0x3a1;
-  unsigned_long_int_dest[929] = (unsigned_long_int_src[929] >> 1) / 0x1d1;
+  unsigned_long_int_dest[929] = unsigned_long_int_src[929] / 0x3a2;
   unsigned_long_int_dest[930] = unsigned_long_int_src[930] / 0x3a3;
-  unsigned_long_int_dest[931] = (unsigned_long_int_src[931] >> 2) / 0xe9;
+  unsigned_long_int_dest[931] = unsigned_long_int_src[931] / 0x3a4;
   unsigned_long_int_dest[932] = unsigned_long_int_src[932] / 0x3a5;
   unsigned_long_int_dest[933] = unsigned_long_int_src[933] / 0x3a6;
   unsigned_long_int_dest[934] = unsigned_long_int_src[934] / 0x3a7;
-  unsigned_long_int_dest[935] = (unsigned_long_int_src[935] >> 3) / 0x75;
+  unsigned_long_int_dest[935] = unsigned_long_int_src[935] / 0x3a8;
   unsigned_long_int_dest[936] = unsigned_long_int_src[936] / 0x3a9;
   unsigned_long_int_dest[937] = unsigned_long_int_src[937] / 0x3aa;
   unsigned_long_int_dest[938] = unsigned_long_int_src[938] / 0x3ab;
-  unsigned_long_int_dest[939] = (unsigned_long_int_src[939] >> 2) / 0xeb;
+  unsigned_long_int_dest[939] = unsigned_long_int_src[939] / 0x3ac;
   unsigned_long_int_dest[940] = unsigned_long_int_src[940] / 0x3ad;
   unsigned_long_int_dest[941] = unsigned_long_int_src[941] / 0x3ae;
   unsigned_long_int_dest[942] = unsigned_long_int_src[942] / 0x3af;
@@ -43585,29 +41351,29 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[944] = unsigned_long_int_src[944] / 0x3b1;
   unsigned_long_int_dest[945] = unsigned_long_int_src[945] / 0x3b2;
   unsigned_long_int_dest[946] = unsigned_long_int_src[946] / 0x3b3;
-  unsigned_long_int_dest[947] = (unsigned_long_int_src[947] >> 2) / 0xed;
+  unsigned_long_int_dest[947] = unsigned_long_int_src[947] / 0x3b4;
   unsigned_long_int_dest[948] = unsigned_long_int_src[948] / 0x3b5;
   unsigned_long_int_dest[949] = unsigned_long_int_src[949] / 0x3b6;
   unsigned_long_int_dest[950] = unsigned_long_int_src[950] / 0x3b7;
   unsigned_long_int_dest[951] = unsigned_long_int_src[951] / 0x3b8;
   unsigned_long_int_dest[952] = unsigned_long_int_src[952] / 0x3b9;
-  unsigned_long_int_dest[953] = (unsigned_long_int_src[953] >> 1) / 0x1dd;
+  unsigned_long_int_dest[953] = unsigned_long_int_src[953] / 0x3ba;
   unsigned_long_int_dest[954] = unsigned_long_int_src[954] / 0x3bb;
   unsigned_long_int_dest[955] = unsigned_long_int_src[955] / 0x3bc;
   unsigned_long_int_dest[956] = unsigned_long_int_src[956] / 0x3bd;
-  unsigned_long_int_dest[957] = (unsigned_long_int_src[957] >> 1) / 0x1df;
+  unsigned_long_int_dest[957] = unsigned_long_int_src[957] / 0x3be;
   unsigned_long_int_dest[958] = unsigned_long_int_src[958] / 0x3bf;
   unsigned_long_int_dest[959] = unsigned_long_int_src[959] / 0x3c0;
   unsigned_long_int_dest[960] = unsigned_long_int_src[960] / 0x3c1;
-  unsigned_long_int_dest[961] = (unsigned_long_int_src[961] >> 1) / 0x1e1;
+  unsigned_long_int_dest[961] = unsigned_long_int_src[961] / 0x3c2;
   unsigned_long_int_dest[962] = unsigned_long_int_src[962] / 0x3c3;
   unsigned_long_int_dest[963] = unsigned_long_int_src[963] / 0x3c4;
   unsigned_long_int_dest[964] = unsigned_long_int_src[964] / 0x3c5;
   unsigned_long_int_dest[965] = unsigned_long_int_src[965] / 0x3c6;
   unsigned_long_int_dest[966] = unsigned_long_int_src[966] / 0x3c7;
-  unsigned_long_int_dest[967] = (unsigned_long_int_src[967] >> 3) / 0x79;
+  unsigned_long_int_dest[967] = unsigned_long_int_src[967] / 0x3c8;
   unsigned_long_int_dest[968] = unsigned_long_int_src[968] / 0x3c9;
-  unsigned_long_int_dest[969] = (unsigned_long_int_src[969] >> 1) / 0x1e5;
+  unsigned_long_int_dest[969] = unsigned_long_int_src[969] / 0x3ca;
   unsigned_long_int_dest[970] = unsigned_long_int_src[970] / 0x3cb;
   unsigned_long_int_dest[971] = unsigned_long_int_src[971] / 0x3cc;
   unsigned_long_int_dest[972] = unsigned_long_int_src[972] / 0x3cd;
@@ -43615,25 +41381,25 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[974] = unsigned_long_int_src[974] / 0x3cf;
   unsigned_long_int_dest[975] = unsigned_long_int_src[975] / 0x3d0;
   unsigned_long_int_dest[976] = unsigned_long_int_src[976] / 0x3d1;
-  unsigned_long_int_dest[977] = (unsigned_long_int_src[977] >> 1) / 0x1e9;
+  unsigned_long_int_dest[977] = unsigned_long_int_src[977] / 0x3d2;
   unsigned_long_int_dest[978] = unsigned_long_int_src[978] / 0x3d3;
-  unsigned_long_int_dest[979] = (unsigned_long_int_src[979] >> 2) / 0xf5;
+  unsigned_long_int_dest[979] = unsigned_long_int_src[979] / 0x3d4;
   unsigned_long_int_dest[980] = unsigned_long_int_src[980] / 0x3d5;
-  unsigned_long_int_dest[981] = (unsigned_long_int_src[981] >> 1) / 0x1eb;
+  unsigned_long_int_dest[981] = unsigned_long_int_src[981] / 0x3d6;
   unsigned_long_int_dest[982] = unsigned_long_int_src[982] / 0x3d7;
-  unsigned_long_int_dest[983] = (unsigned_long_int_src[983] >> 3) / 0x7b;
+  unsigned_long_int_dest[983] = unsigned_long_int_src[983] / 0x3d8;
   unsigned_long_int_dest[984] = unsigned_long_int_src[984] / 0x3d9;
   unsigned_long_int_dest[985] = unsigned_long_int_src[985] / 0x3da;
   unsigned_long_int_dest[986] = unsigned_long_int_src[986] / 0x3db;
-  unsigned_long_int_dest[987] = (unsigned_long_int_src[987] >> 2) / 0xf7;
+  unsigned_long_int_dest[987] = unsigned_long_int_src[987] / 0x3dc;
   unsigned_long_int_dest[988] = unsigned_long_int_src[988] / 0x3dd;
   unsigned_long_int_dest[989] = unsigned_long_int_src[989] / 0x3de;
   unsigned_long_int_dest[990] = unsigned_long_int_src[990] / 0x3df;
-  unsigned_long_int_dest[991] = (unsigned_long_int_src[991] >> 5) / 0x1f;
+  unsigned_long_int_dest[991] = unsigned_long_int_src[991] / 0x3e0;
   unsigned_long_int_dest[992] = unsigned_long_int_src[992] / 0x3e1;
   unsigned_long_int_dest[993] = unsigned_long_int_src[993] / 0x3e2;
   unsigned_long_int_dest[994] = unsigned_long_int_src[994] / 0x3e3;
-  unsigned_long_int_dest[995] = (unsigned_long_int_src[995] >> 2) / 0xf9;
+  unsigned_long_int_dest[995] = unsigned_long_int_src[995] / 0x3e4;
   unsigned_long_int_dest[996] = unsigned_long_int_src[996] / 0x3e5;
   unsigned_long_int_dest[997] = unsigned_long_int_src[997] / 0x3e6;
   unsigned_long_int_dest[998] = unsigned_long_int_src[998] / 999;
@@ -43645,27 +41411,29 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[1004] = unsigned_long_int_src[1004] / 0x3ed;
   unsigned_long_int_dest[1005] = unsigned_long_int_src[1005] / 0x3ee;
   unsigned_long_int_dest[1006] = unsigned_long_int_src[1006] / 0x3ef;
-  unsigned_long_int_dest[1007] = (unsigned_long_int_src[1007] >> 4) / 0x3f;
+  unsigned_long_int_dest[1007] = unsigned_long_int_src[1007] / 0x3f0;
   unsigned_long_int_dest[1008] = unsigned_long_int_src[1008] / 0x3f1;
-  unsigned_long_int_dest[1009] = (unsigned_long_int_src[1009] >> 1) / 0x1f9;
+  unsigned_long_int_dest[1009] = unsigned_long_int_src[1009] / 0x3f2;
   unsigned_long_int_dest[1010] = unsigned_long_int_src[1010] / 0x3f3;
   unsigned_long_int_dest[1011] = unsigned_long_int_src[1011] / 0x3f4;
   unsigned_long_int_dest[1012] = unsigned_long_int_src[1012] / 0x3f5;
   unsigned_long_int_dest[1013] = unsigned_long_int_src[1013] / 0x3f6;
   unsigned_long_int_dest[1014] = unsigned_long_int_src[1014] / 0x3f7;
-  unsigned_long_int_dest[1015] = (unsigned_long_int_src[1015] >> 3) / 0x7f;
+  unsigned_long_int_dest[1015] = unsigned_long_int_src[1015] / 0x3f8;
   unsigned_long_int_dest[1016] = unsigned_long_int_src[1016] / 0x3f9;
   unsigned_long_int_dest[1017] = unsigned_long_int_src[1017] / 0x3fa;
   unsigned_long_int_dest[1018] = unsigned_long_int_src[1018] / 0x3fb;
   unsigned_long_int_dest[1019] = unsigned_long_int_src[1019] / 0x3fc;
   unsigned_long_int_dest[1020] = unsigned_long_int_src[1020] / 0x3fd;
-  unsigned_long_int_dest[1021] = (unsigned_long_int_src[1021] >> 1) / 0x1ff;
+  unsigned_long_int_dest[1021] = unsigned_long_int_src[1021] / 0x3fe;
   unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] / 0x3ff;
   unsigned_long_int_dest[1023] = unsigned_long_int_src[1023] >> 10;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_modulo(void)
 
@@ -43683,8 +41451,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[10] = unsigned_long_int_src[10] % 0xb;
   unsigned_long_int_dest[11] = unsigned_long_int_src[11] % 0xc;
   unsigned_long_int_dest[12] = unsigned_long_int_src[12] % 0xd;
-  unsigned_long_int_dest[13] =
-       unsigned_long_int_src[13] + ((unsigned_long_int_src[13] >> 1) / 7) * -0xe;
+  unsigned_long_int_dest[13] = unsigned_long_int_src[13] % 0xe;
   unsigned_long_int_dest[14] = unsigned_long_int_src[14] % 0xf;
   unsigned_long_int_dest[15] = unsigned_long_int_src[15] & 0xf;
   unsigned_long_int_dest[16] = unsigned_long_int_src[16] % 0x11;
@@ -43698,8 +41465,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[24] = unsigned_long_int_src[24] % 0x19;
   unsigned_long_int_dest[25] = unsigned_long_int_src[25] % 0x1a;
   unsigned_long_int_dest[26] = unsigned_long_int_src[26] % 0x1b;
-  unsigned_long_int_dest[27] =
-       unsigned_long_int_src[27] + ((unsigned_long_int_src[27] >> 2) / 7) * -0x1c;
+  unsigned_long_int_dest[27] = unsigned_long_int_src[27] % 0x1c;
   unsigned_long_int_dest[28] = unsigned_long_int_src[28] % 0x1d;
   unsigned_long_int_dest[29] = unsigned_long_int_src[29] % 0x1e;
   unsigned_long_int_dest[30] = unsigned_long_int_src[30] % 0x1f;
@@ -43709,13 +41475,11 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[34] = unsigned_long_int_src[34] % 0x23;
   unsigned_long_int_dest[35] = unsigned_long_int_src[35] % 0x24;
   unsigned_long_int_dest[36] = unsigned_long_int_src[36] % 0x25;
-  unsigned_long_int_dest[37] =
-       unsigned_long_int_src[37] + ((unsigned_long_int_src[37] >> 1) / 0x13) * -0x26;
+  unsigned_long_int_dest[37] = unsigned_long_int_src[37] % 0x26;
   unsigned_long_int_dest[38] = unsigned_long_int_src[38] % 0x27;
   unsigned_long_int_dest[39] = unsigned_long_int_src[39] % 0x28;
   unsigned_long_int_dest[40] = unsigned_long_int_src[40] % 0x29;
-  unsigned_long_int_dest[41] =
-       unsigned_long_int_src[41] + ((unsigned_long_int_src[41] >> 1) / 0x15) * -0x2a;
+  unsigned_long_int_dest[41] = unsigned_long_int_src[41] % 0x2a;
   unsigned_long_int_dest[42] = unsigned_long_int_src[42] % 0x2b;
   unsigned_long_int_dest[43] = unsigned_long_int_src[43] % 0x2c;
   unsigned_long_int_dest[44] = unsigned_long_int_src[44] % 0x2d;
@@ -43727,18 +41491,15 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[50] = unsigned_long_int_src[50] % 0x33;
   unsigned_long_int_dest[51] = unsigned_long_int_src[51] % 0x34;
   unsigned_long_int_dest[52] = unsigned_long_int_src[52] % 0x35;
-  unsigned_long_int_dest[53] =
-       unsigned_long_int_src[53] + ((unsigned_long_int_src[53] >> 1) / 0x1b) * -0x36;
+  unsigned_long_int_dest[53] = unsigned_long_int_src[53] % 0x36;
   unsigned_long_int_dest[54] = unsigned_long_int_src[54] % 0x37;
-  unsigned_long_int_dest[55] =
-       unsigned_long_int_src[55] + ((unsigned_long_int_src[55] >> 3) / 7) * -0x38;
+  unsigned_long_int_dest[55] = unsigned_long_int_src[55] % 0x38;
   unsigned_long_int_dest[56] = unsigned_long_int_src[56] % 0x39;
   unsigned_long_int_dest[57] = unsigned_long_int_src[57] % 0x3a;
   unsigned_long_int_dest[58] = unsigned_long_int_src[58] % 0x3b;
   unsigned_long_int_dest[59] = unsigned_long_int_src[59] % 0x3c;
   unsigned_long_int_dest[60] = unsigned_long_int_src[60] % 0x3d;
-  unsigned_long_int_dest[61] =
-       unsigned_long_int_src[61] + ((unsigned_long_int_src[61] >> 1) / 0x1f) * -0x3e;
+  unsigned_long_int_dest[61] = unsigned_long_int_src[61] % 0x3e;
   unsigned_long_int_dest[62] = unsigned_long_int_src[62] % 0x3f;
   unsigned_long_int_dest[63] = unsigned_long_int_src[63] & 0x3f;
   unsigned_long_int_dest[64] = unsigned_long_int_src[64] % 0x41;
@@ -43746,33 +41507,27 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[66] = unsigned_long_int_src[66] % 0x43;
   unsigned_long_int_dest[67] = unsigned_long_int_src[67] % 0x44;
   unsigned_long_int_dest[68] = unsigned_long_int_src[68] % 0x45;
-  unsigned_long_int_dest[69] =
-       unsigned_long_int_src[69] + ((unsigned_long_int_src[69] >> 1) / 0x23) * -0x46;
+  unsigned_long_int_dest[69] = unsigned_long_int_src[69] % 0x46;
   unsigned_long_int_dest[70] = unsigned_long_int_src[70] % 0x47;
   unsigned_long_int_dest[71] = unsigned_long_int_src[71] % 0x48;
   unsigned_long_int_dest[72] = unsigned_long_int_src[72] % 0x49;
-  unsigned_long_int_dest[73] =
-       unsigned_long_int_src[73] + ((unsigned_long_int_src[73] >> 1) / 0x25) * -0x4a;
+  unsigned_long_int_dest[73] = unsigned_long_int_src[73] % 0x4a;
   unsigned_long_int_dest[74] = unsigned_long_int_src[74] % 0x4b;
-  unsigned_long_int_dest[75] =
-       unsigned_long_int_src[75] + ((unsigned_long_int_src[75] >> 2) / 0x13) * -0x4c;
+  unsigned_long_int_dest[75] = unsigned_long_int_src[75] % 0x4c;
   unsigned_long_int_dest[76] = unsigned_long_int_src[76] % 0x4d;
-  unsigned_long_int_dest[77] =
-       unsigned_long_int_src[77] + ((unsigned_long_int_src[77] >> 1) / 0x27) * -0x4e;
+  unsigned_long_int_dest[77] = unsigned_long_int_src[77] % 0x4e;
   unsigned_long_int_dest[78] = unsigned_long_int_src[78] % 0x4f;
   unsigned_long_int_dest[79] = unsigned_long_int_src[79] % 0x50;
   unsigned_long_int_dest[80] = unsigned_long_int_src[80] % 0x51;
   unsigned_long_int_dest[81] = unsigned_long_int_src[81] % 0x52;
   unsigned_long_int_dest[82] = unsigned_long_int_src[82] % 0x53;
-  unsigned_long_int_dest[83] =
-       unsigned_long_int_src[83] + ((unsigned_long_int_src[83] >> 2) / 0x15) * -0x54;
+  unsigned_long_int_dest[83] = unsigned_long_int_src[83] % 0x54;
   unsigned_long_int_dest[84] = unsigned_long_int_src[84] % 0x55;
   unsigned_long_int_dest[85] = unsigned_long_int_src[85] % 0x56;
   unsigned_long_int_dest[86] = unsigned_long_int_src[86] % 0x57;
   unsigned_long_int_dest[87] = unsigned_long_int_src[87] % 0x58;
   unsigned_long_int_dest[88] = unsigned_long_int_src[88] % 0x59;
-  unsigned_long_int_dest[89] =
-       unsigned_long_int_src[89] + ((unsigned_long_int_src[89] >> 1) / 0x2d) * -0x5a;
+  unsigned_long_int_dest[89] = unsigned_long_int_src[89] % 0x5a;
   unsigned_long_int_dest[90] = unsigned_long_int_src[90] % 0x5b;
   unsigned_long_int_dest[91] = unsigned_long_int_src[91] % 0x5c;
   unsigned_long_int_dest[92] = unsigned_long_int_src[92] % 0x5d;
@@ -43788,20 +41543,15 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[102] = unsigned_long_int_src[102] % 0x67;
   unsigned_long_int_dest[103] = unsigned_long_int_src[103] % 0x68;
   unsigned_long_int_dest[104] = unsigned_long_int_src[104] % 0x69;
-  unsigned_long_int_dest[105] =
-       unsigned_long_int_src[105] + ((unsigned_long_int_src[105] >> 1) / 0x35) * -0x6a;
+  unsigned_long_int_dest[105] = unsigned_long_int_src[105] % 0x6a;
   unsigned_long_int_dest[106] = unsigned_long_int_src[106] % 0x6b;
-  unsigned_long_int_dest[107] =
-       unsigned_long_int_src[107] + ((unsigned_long_int_src[107] >> 2) / 0x1b) * -0x6c;
+  unsigned_long_int_dest[107] = unsigned_long_int_src[107] % 0x6c;
   unsigned_long_int_dest[108] = unsigned_long_int_src[108] % 0x6d;
-  unsigned_long_int_dest[109] =
-       unsigned_long_int_src[109] + ((unsigned_long_int_src[109] >> 1) / 0x37) * -0x6e;
+  unsigned_long_int_dest[109] = unsigned_long_int_src[109] % 0x6e;
   unsigned_long_int_dest[110] = unsigned_long_int_src[110] % 0x6f;
-  unsigned_long_int_dest[111] =
-       unsigned_long_int_src[111] + ((unsigned_long_int_src[111] >> 4) / 7) * -0x70;
+  unsigned_long_int_dest[111] = unsigned_long_int_src[111] % 0x70;
   unsigned_long_int_dest[112] = unsigned_long_int_src[112] % 0x71;
-  unsigned_long_int_dest[113] =
-       unsigned_long_int_src[113] + ((unsigned_long_int_src[113] >> 1) / 0x39) * -0x72;
+  unsigned_long_int_dest[113] = unsigned_long_int_src[113] % 0x72;
   unsigned_long_int_dest[114] = unsigned_long_int_src[114] % 0x73;
   unsigned_long_int_dest[115] = unsigned_long_int_src[115] % 0x74;
   unsigned_long_int_dest[116] = unsigned_long_int_src[116] % 0x75;
@@ -43811,11 +41561,9 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[120] = unsigned_long_int_src[120] % 0x79;
   unsigned_long_int_dest[121] = unsigned_long_int_src[121] % 0x7a;
   unsigned_long_int_dest[122] = unsigned_long_int_src[122] % 0x7b;
-  unsigned_long_int_dest[123] =
-       unsigned_long_int_src[123] + ((unsigned_long_int_src[123] >> 2) / 0x1f) * -0x7c;
+  unsigned_long_int_dest[123] = unsigned_long_int_src[123] % 0x7c;
   unsigned_long_int_dest[124] = unsigned_long_int_src[124] % 0x7d;
-  unsigned_long_int_dest[125] =
-       unsigned_long_int_src[125] + ((unsigned_long_int_src[125] >> 1) / 0x3f) * -0x7e;
+  unsigned_long_int_dest[125] = unsigned_long_int_src[125] % 0x7e;
   unsigned_long_int_dest[126] = unsigned_long_int_src[126] % 0x7f;
   unsigned_long_int_dest[127] = unsigned_long_int_src[127] & 0x7f;
   unsigned_long_int_dest[128] = unsigned_long_int_src[128] % 0x81;
@@ -43829,28 +41577,23 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[136] = unsigned_long_int_src[136] % 0x89;
   unsigned_long_int_dest[137] = unsigned_long_int_src[137] % 0x8a;
   unsigned_long_int_dest[138] = unsigned_long_int_src[138] % 0x8b;
-  unsigned_long_int_dest[139] =
-       unsigned_long_int_src[139] + ((unsigned_long_int_src[139] >> 2) / 0x23) * -0x8c;
+  unsigned_long_int_dest[139] = unsigned_long_int_src[139] % 0x8c;
   unsigned_long_int_dest[140] = unsigned_long_int_src[140] % 0x8d;
   unsigned_long_int_dest[141] = unsigned_long_int_src[141] % 0x8e;
   unsigned_long_int_dest[142] = unsigned_long_int_src[142] % 0x8f;
   unsigned_long_int_dest[143] = unsigned_long_int_src[143] % 0x90;
   unsigned_long_int_dest[144] = unsigned_long_int_src[144] % 0x91;
-  unsigned_long_int_dest[145] =
-       unsigned_long_int_src[145] + ((unsigned_long_int_src[145] >> 1) / 0x49) * -0x92;
+  unsigned_long_int_dest[145] = unsigned_long_int_src[145] % 0x92;
   unsigned_long_int_dest[146] = unsigned_long_int_src[146] % 0x93;
-  unsigned_long_int_dest[147] =
-       unsigned_long_int_src[147] + ((unsigned_long_int_src[147] >> 2) / 0x25) * -0x94;
+  unsigned_long_int_dest[147] = unsigned_long_int_src[147] % 0x94;
   unsigned_long_int_dest[148] = unsigned_long_int_src[148] % 0x95;
   unsigned_long_int_dest[149] = unsigned_long_int_src[149] % 0x96;
   unsigned_long_int_dest[150] = unsigned_long_int_src[150] % 0x97;
-  unsigned_long_int_dest[151] =
-       unsigned_long_int_src[151] + ((unsigned_long_int_src[151] >> 3) / 0x13) * -0x98;
+  unsigned_long_int_dest[151] = unsigned_long_int_src[151] % 0x98;
   unsigned_long_int_dest[152] = unsigned_long_int_src[152] % 0x99;
   unsigned_long_int_dest[153] = unsigned_long_int_src[153] % 0x9a;
   unsigned_long_int_dest[154] = unsigned_long_int_src[154] % 0x9b;
-  unsigned_long_int_dest[155] =
-       unsigned_long_int_src[155] + ((unsigned_long_int_src[155] >> 2) / 0x27) * -0x9c;
+  unsigned_long_int_dest[155] = unsigned_long_int_src[155] % 0x9c;
   unsigned_long_int_dest[156] = unsigned_long_int_src[156] % 0x9d;
   unsigned_long_int_dest[157] = unsigned_long_int_src[157] % 0x9e;
   unsigned_long_int_dest[158] = unsigned_long_int_src[158] % 0x9f;
@@ -43862,8 +41605,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[164] = unsigned_long_int_src[164] % 0xa5;
   unsigned_long_int_dest[165] = unsigned_long_int_src[165] % 0xa6;
   unsigned_long_int_dest[166] = unsigned_long_int_src[166] % 0xa7;
-  unsigned_long_int_dest[167] =
-       unsigned_long_int_src[167] + ((unsigned_long_int_src[167] >> 3) / 0x15) * -0xa8;
+  unsigned_long_int_dest[167] = unsigned_long_int_src[167] % 0xa8;
   unsigned_long_int_dest[168] = unsigned_long_int_src[168] % 0xa9;
   unsigned_long_int_dest[169] = unsigned_long_int_src[169] % 0xaa;
   unsigned_long_int_dest[170] = unsigned_long_int_src[170] % 0xab;
@@ -43875,11 +41617,9 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[176] = unsigned_long_int_src[176] % 0xb1;
   unsigned_long_int_dest[177] = unsigned_long_int_src[177] % 0xb2;
   unsigned_long_int_dest[178] = unsigned_long_int_src[178] % 0xb3;
-  unsigned_long_int_dest[179] =
-       unsigned_long_int_src[179] + ((unsigned_long_int_src[179] >> 2) / 0x2d) * -0xb4;
+  unsigned_long_int_dest[179] = unsigned_long_int_src[179] % 0xb4;
   unsigned_long_int_dest[180] = unsigned_long_int_src[180] % 0xb5;
-  unsigned_long_int_dest[181] =
-       unsigned_long_int_src[181] + ((unsigned_long_int_src[181] >> 1) / 0x5b) * -0xb6;
+  unsigned_long_int_dest[181] = unsigned_long_int_src[181] % 0xb6;
   unsigned_long_int_dest[182] = unsigned_long_int_src[182] % 0xb7;
   unsigned_long_int_dest[183] = unsigned_long_int_src[183] % 0xb8;
   unsigned_long_int_dest[184] = unsigned_long_int_src[184] % 0xb9;
@@ -43887,13 +41627,11 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[186] = unsigned_long_int_src[186] % 0xbb;
   unsigned_long_int_dest[187] = unsigned_long_int_src[187] % 0xbc;
   unsigned_long_int_dest[188] = unsigned_long_int_src[188] % 0xbd;
-  unsigned_long_int_dest[189] =
-       unsigned_long_int_src[189] + ((unsigned_long_int_src[189] >> 1) / 0x5f) * -0xbe;
+  unsigned_long_int_dest[189] = unsigned_long_int_src[189] % 0xbe;
   unsigned_long_int_dest[190] = unsigned_long_int_src[190] % 0xbf;
   unsigned_long_int_dest[191] = unsigned_long_int_src[191] % 0xc0;
   unsigned_long_int_dest[192] = unsigned_long_int_src[192] % 0xc1;
-  unsigned_long_int_dest[193] =
-       unsigned_long_int_src[193] + ((unsigned_long_int_src[193] >> 1) / 0x61) * -0xc2;
+  unsigned_long_int_dest[193] = unsigned_long_int_src[193] % 0xc2;
   unsigned_long_int_dest[194] = unsigned_long_int_src[194] % 0xc3;
   unsigned_long_int_dest[195] = unsigned_long_int_src[195] % 0xc4;
   unsigned_long_int_dest[196] = unsigned_long_int_src[196] % 0xc5;
@@ -43901,53 +41639,39 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[198] = unsigned_long_int_src[198] % 199;
   unsigned_long_int_dest[199] = unsigned_long_int_src[199] % 200;
   unsigned_long_int_dest[200] = unsigned_long_int_src[200] % 0xc9;
-  unsigned_long_int_dest[201] =
-       unsigned_long_int_src[201] + ((unsigned_long_int_src[201] >> 1) / 0x65) * -0xca;
+  unsigned_long_int_dest[201] = unsigned_long_int_src[201] % 0xca;
   unsigned_long_int_dest[202] = unsigned_long_int_src[202] % 0xcb;
   unsigned_long_int_dest[203] = unsigned_long_int_src[203] % 0xcc;
   unsigned_long_int_dest[204] = unsigned_long_int_src[204] % 0xcd;
-  unsigned_long_int_dest[205] =
-       unsigned_long_int_src[205] + ((unsigned_long_int_src[205] >> 1) / 0x67) * -0xce;
+  unsigned_long_int_dest[205] = unsigned_long_int_src[205] % 0xce;
   unsigned_long_int_dest[206] = unsigned_long_int_src[206] % 0xcf;
   unsigned_long_int_dest[207] = unsigned_long_int_src[207] % 0xd0;
   unsigned_long_int_dest[208] = unsigned_long_int_src[208] % 0xd1;
-  unsigned_long_int_dest[209] =
-       unsigned_long_int_src[209] + ((unsigned_long_int_src[209] >> 1) / 0x69) * -0xd2;
+  unsigned_long_int_dest[209] = unsigned_long_int_src[209] % 0xd2;
   unsigned_long_int_dest[210] = unsigned_long_int_src[210] % 0xd3;
-  unsigned_long_int_dest[211] =
-       unsigned_long_int_src[211] + ((unsigned_long_int_src[211] >> 2) / 0x35) * -0xd4;
+  unsigned_long_int_dest[211] = unsigned_long_int_src[211] % 0xd4;
   unsigned_long_int_dest[212] = unsigned_long_int_src[212] % 0xd5;
-  unsigned_long_int_dest[213] =
-       unsigned_long_int_src[213] + ((unsigned_long_int_src[213] >> 1) / 0x6b) * -0xd6;
+  unsigned_long_int_dest[213] = unsigned_long_int_src[213] % 0xd6;
   unsigned_long_int_dest[214] = unsigned_long_int_src[214] % 0xd7;
-  unsigned_long_int_dest[215] =
-       unsigned_long_int_src[215] + ((unsigned_long_int_src[215] >> 3) / 0x1b) * -0xd8;
+  unsigned_long_int_dest[215] = unsigned_long_int_src[215] % 0xd8;
   unsigned_long_int_dest[216] = unsigned_long_int_src[216] % 0xd9;
-  unsigned_long_int_dest[217] =
-       unsigned_long_int_src[217] + ((unsigned_long_int_src[217] >> 1) / 0x6d) * -0xda;
+  unsigned_long_int_dest[217] = unsigned_long_int_src[217] % 0xda;
   unsigned_long_int_dest[218] = unsigned_long_int_src[218] % 0xdb;
-  unsigned_long_int_dest[219] =
-       unsigned_long_int_src[219] + ((unsigned_long_int_src[219] >> 2) / 0x37) * -0xdc;
+  unsigned_long_int_dest[219] = unsigned_long_int_src[219] % 0xdc;
   unsigned_long_int_dest[220] = unsigned_long_int_src[220] % 0xdd;
-  unsigned_long_int_dest[221] =
-       unsigned_long_int_src[221] + ((unsigned_long_int_src[221] >> 1) / 0x6f) * -0xde;
+  unsigned_long_int_dest[221] = unsigned_long_int_src[221] % 0xde;
   unsigned_long_int_dest[222] = unsigned_long_int_src[222] % 0xdf;
-  unsigned_long_int_dest[223] =
-       unsigned_long_int_src[223] + ((unsigned_long_int_src[223] >> 5) / 7) * -0xe0;
+  unsigned_long_int_dest[223] = unsigned_long_int_src[223] % 0xe0;
   unsigned_long_int_dest[224] = unsigned_long_int_src[224] % 0xe1;
-  unsigned_long_int_dest[225] =
-       unsigned_long_int_src[225] + ((unsigned_long_int_src[225] >> 1) / 0x71) * -0xe2;
+  unsigned_long_int_dest[225] = unsigned_long_int_src[225] % 0xe2;
   unsigned_long_int_dest[226] = unsigned_long_int_src[226] % 0xe3;
-  unsigned_long_int_dest[227] =
-       unsigned_long_int_src[227] + ((unsigned_long_int_src[227] >> 2) / 0x39) * -0xe4;
+  unsigned_long_int_dest[227] = unsigned_long_int_src[227] % 0xe4;
   unsigned_long_int_dest[228] = unsigned_long_int_src[228] % 0xe5;
-  unsigned_long_int_dest[229] =
-       unsigned_long_int_src[229] + ((unsigned_long_int_src[229] >> 1) / 0x73) * -0xe6;
+  unsigned_long_int_dest[229] = unsigned_long_int_src[229] % 0xe6;
   unsigned_long_int_dest[230] = unsigned_long_int_src[230] % 0xe7;
   unsigned_long_int_dest[231] = unsigned_long_int_src[231] % 0xe8;
   unsigned_long_int_dest[232] = unsigned_long_int_src[232] % 0xe9;
-  unsigned_long_int_dest[233] =
-       unsigned_long_int_src[233] + ((unsigned_long_int_src[233] >> 1) / 0x75) * -0xea;
+  unsigned_long_int_dest[233] = unsigned_long_int_src[233] % 0xea;
   unsigned_long_int_dest[234] = unsigned_long_int_src[234] % 0xeb;
   unsigned_long_int_dest[235] = unsigned_long_int_src[235] % 0xec;
   unsigned_long_int_dest[236] = unsigned_long_int_src[236] % 0xed;
@@ -43955,24 +41679,19 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[238] = unsigned_long_int_src[238] % 0xef;
   unsigned_long_int_dest[239] = unsigned_long_int_src[239] % 0xf0;
   unsigned_long_int_dest[240] = unsigned_long_int_src[240] % 0xf1;
-  unsigned_long_int_dest[241] =
-       unsigned_long_int_src[241] + ((unsigned_long_int_src[241] >> 1) / 0x79) * -0xf2;
+  unsigned_long_int_dest[241] = unsigned_long_int_src[241] % 0xf2;
   unsigned_long_int_dest[242] = unsigned_long_int_src[242] % 0xf3;
   unsigned_long_int_dest[243] = unsigned_long_int_src[243] % 0xf4;
   unsigned_long_int_dest[244] = unsigned_long_int_src[244] % 0xf5;
-  unsigned_long_int_dest[245] =
-       unsigned_long_int_src[245] + ((unsigned_long_int_src[245] >> 1) / 0x7b) * -0xf6;
+  unsigned_long_int_dest[245] = unsigned_long_int_src[245] % 0xf6;
   unsigned_long_int_dest[246] = unsigned_long_int_src[246] % 0xf7;
-  unsigned_long_int_dest[247] =
-       unsigned_long_int_src[247] + ((unsigned_long_int_src[247] >> 3) / 0x1f) * -0xf8;
+  unsigned_long_int_dest[247] = unsigned_long_int_src[247] % 0xf8;
   unsigned_long_int_dest[248] = unsigned_long_int_src[248] % 0xf9;
   unsigned_long_int_dest[249] = unsigned_long_int_src[249] % 0xfa;
   unsigned_long_int_dest[250] = unsigned_long_int_src[250] % 0xfb;
-  unsigned_long_int_dest[251] =
-       unsigned_long_int_src[251] + ((unsigned_long_int_src[251] >> 2) / 0x3f) * -0xfc;
+  unsigned_long_int_dest[251] = unsigned_long_int_src[251] % 0xfc;
   unsigned_long_int_dest[252] = unsigned_long_int_src[252] % 0xfd;
-  unsigned_long_int_dest[253] =
-       unsigned_long_int_src[253] + ((unsigned_long_int_src[253] >> 1) / 0x7f) * -0xfe;
+  unsigned_long_int_dest[253] = unsigned_long_int_src[253] % 0xfe;
   unsigned_long_int_dest[254] = unsigned_long_int_src[254] % 0xff;
   unsigned_long_int_dest[255] = (uint)(byte)unsigned_long_int_src[255];
   unsigned_long_int_dest[256] = unsigned_long_int_src[256] % 0x101;
@@ -43998,8 +41717,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[276] = unsigned_long_int_src[276] % 0x115;
   unsigned_long_int_dest[277] = unsigned_long_int_src[277] % 0x116;
   unsigned_long_int_dest[278] = unsigned_long_int_src[278] % 0x117;
-  unsigned_long_int_dest[279] =
-       unsigned_long_int_src[279] + ((unsigned_long_int_src[279] >> 3) / 0x23) * -0x118;
+  unsigned_long_int_dest[279] = unsigned_long_int_src[279] % 0x118;
   unsigned_long_int_dest[280] = unsigned_long_int_src[280] % 0x119;
   unsigned_long_int_dest[281] = unsigned_long_int_src[281] % 0x11a;
   unsigned_long_int_dest[282] = unsigned_long_int_src[282] % 0x11b;
@@ -44011,13 +41729,11 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[288] = unsigned_long_int_src[288] % 0x121;
   unsigned_long_int_dest[289] = unsigned_long_int_src[289] % 0x122;
   unsigned_long_int_dest[290] = unsigned_long_int_src[290] % 0x123;
-  unsigned_long_int_dest[291] =
-       unsigned_long_int_src[291] + ((unsigned_long_int_src[291] >> 2) / 0x49) * -0x124;
+  unsigned_long_int_dest[291] = unsigned_long_int_src[291] % 0x124;
   unsigned_long_int_dest[292] = unsigned_long_int_src[292] % 0x125;
   unsigned_long_int_dest[293] = unsigned_long_int_src[293] % 0x126;
   unsigned_long_int_dest[294] = unsigned_long_int_src[294] % 0x127;
-  unsigned_long_int_dest[295] =
-       unsigned_long_int_src[295] + ((unsigned_long_int_src[295] >> 3) / 0x25) * -0x128;
+  unsigned_long_int_dest[295] = unsigned_long_int_src[295] % 0x128;
   unsigned_long_int_dest[296] = unsigned_long_int_src[296] % 0x129;
   unsigned_long_int_dest[297] = unsigned_long_int_src[297] % 0x12a;
   unsigned_long_int_dest[298] = unsigned_long_int_src[298] % 299;
@@ -44025,8 +41741,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[300] = unsigned_long_int_src[300] % 0x12d;
   unsigned_long_int_dest[301] = unsigned_long_int_src[301] % 0x12e;
   unsigned_long_int_dest[302] = unsigned_long_int_src[302] % 0x12f;
-  unsigned_long_int_dest[303] =
-       unsigned_long_int_src[303] + ((unsigned_long_int_src[303] >> 4) / 0x13) * -0x130;
+  unsigned_long_int_dest[303] = unsigned_long_int_src[303] % 0x130;
   unsigned_long_int_dest[304] = unsigned_long_int_src[304] % 0x131;
   unsigned_long_int_dest[305] = unsigned_long_int_src[305] % 0x132;
   unsigned_long_int_dest[306] = unsigned_long_int_src[306] % 0x133;
@@ -44034,15 +41749,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[308] = unsigned_long_int_src[308] % 0x135;
   unsigned_long_int_dest[309] = unsigned_long_int_src[309] % 0x136;
   unsigned_long_int_dest[310] = unsigned_long_int_src[310] % 0x137;
-  unsigned_long_int_dest[311] =
-       unsigned_long_int_src[311] + ((unsigned_long_int_src[311] >> 3) / 0x27) * -0x138;
+  unsigned_long_int_dest[311] = unsigned_long_int_src[311] % 0x138;
   unsigned_long_int_dest[312] = unsigned_long_int_src[312] % 0x139;
   unsigned_long_int_dest[313] = unsigned_long_int_src[313] % 0x13a;
   unsigned_long_int_dest[314] = unsigned_long_int_src[314] % 0x13b;
   unsigned_long_int_dest[315] = unsigned_long_int_src[315] % 0x13c;
   unsigned_long_int_dest[316] = unsigned_long_int_src[316] % 0x13d;
-  unsigned_long_int_dest[317] =
-       unsigned_long_int_src[317] + ((unsigned_long_int_src[317] >> 1) / 0x9f) * -0x13e;
+  unsigned_long_int_dest[317] = unsigned_long_int_src[317] % 0x13e;
   unsigned_long_int_dest[318] = unsigned_long_int_src[318] % 0x13f;
   unsigned_long_int_dest[319] = unsigned_long_int_src[319] % 0x140;
   unsigned_long_int_dest[320] = unsigned_long_int_src[320] % 0x141;
@@ -44060,20 +41773,17 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[332] = unsigned_long_int_src[332] % 0x14d;
   unsigned_long_int_dest[333] = unsigned_long_int_src[333] % 0x14e;
   unsigned_long_int_dest[334] = unsigned_long_int_src[334] % 0x14f;
-  unsigned_long_int_dest[335] =
-       unsigned_long_int_src[335] + ((unsigned_long_int_src[335] >> 4) / 0x15) * -0x150;
+  unsigned_long_int_dest[335] = unsigned_long_int_src[335] % 0x150;
   unsigned_long_int_dest[336] = unsigned_long_int_src[336] % 0x151;
   unsigned_long_int_dest[337] = unsigned_long_int_src[337] % 0x152;
   unsigned_long_int_dest[338] = unsigned_long_int_src[338] % 0x153;
   unsigned_long_int_dest[339] = unsigned_long_int_src[339] % 0x154;
   unsigned_long_int_dest[340] = unsigned_long_int_src[340] % 0x155;
-  unsigned_long_int_dest[341] =
-       unsigned_long_int_src[341] + ((unsigned_long_int_src[341] >> 1) / 0xab) * -0x156;
+  unsigned_long_int_dest[341] = unsigned_long_int_src[341] % 0x156;
   unsigned_long_int_dest[342] = unsigned_long_int_src[342] % 0x157;
   unsigned_long_int_dest[343] = unsigned_long_int_src[343] % 0x158;
   unsigned_long_int_dest[344] = unsigned_long_int_src[344] % 0x159;
-  unsigned_long_int_dest[345] =
-       unsigned_long_int_src[345] + ((unsigned_long_int_src[345] >> 1) / 0xad) * -0x15a;
+  unsigned_long_int_dest[345] = unsigned_long_int_src[345] % 0x15a;
   unsigned_long_int_dest[346] = unsigned_long_int_src[346] % 0x15b;
   unsigned_long_int_dest[347] = unsigned_long_int_src[347] % 0x15c;
   unsigned_long_int_dest[348] = unsigned_long_int_src[348] % 0x15d;
@@ -44081,28 +41791,23 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[350] = unsigned_long_int_src[350] % 0x15f;
   unsigned_long_int_dest[351] = unsigned_long_int_src[351] % 0x160;
   unsigned_long_int_dest[352] = unsigned_long_int_src[352] % 0x161;
-  unsigned_long_int_dest[353] =
-       unsigned_long_int_src[353] + ((unsigned_long_int_src[353] >> 1) / 0xb1) * -0x162;
+  unsigned_long_int_dest[353] = unsigned_long_int_src[353] % 0x162;
   unsigned_long_int_dest[354] = unsigned_long_int_src[354] % 0x163;
   unsigned_long_int_dest[355] = unsigned_long_int_src[355] % 0x164;
   unsigned_long_int_dest[356] = unsigned_long_int_src[356] % 0x165;
-  unsigned_long_int_dest[357] =
-       unsigned_long_int_src[357] + ((unsigned_long_int_src[357] >> 1) / 0xb3) * -0x166;
+  unsigned_long_int_dest[357] = unsigned_long_int_src[357] % 0x166;
   unsigned_long_int_dest[358] = unsigned_long_int_src[358] % 0x167;
-  unsigned_long_int_dest[359] =
-       unsigned_long_int_src[359] + ((unsigned_long_int_src[359] >> 3) / 0x2d) * -0x168;
+  unsigned_long_int_dest[359] = unsigned_long_int_src[359] % 0x168;
   unsigned_long_int_dest[360] = unsigned_long_int_src[360] % 0x169;
   unsigned_long_int_dest[361] = unsigned_long_int_src[361] % 0x16a;
   unsigned_long_int_dest[362] = unsigned_long_int_src[362] % 0x16b;
-  unsigned_long_int_dest[363] =
-       unsigned_long_int_src[363] + ((unsigned_long_int_src[363] >> 2) / 0x5b) * -0x16c;
+  unsigned_long_int_dest[363] = unsigned_long_int_src[363] % 0x16c;
   unsigned_long_int_dest[364] = unsigned_long_int_src[364] % 0x16d;
   unsigned_long_int_dest[365] = unsigned_long_int_src[365] % 0x16e;
   unsigned_long_int_dest[366] = unsigned_long_int_src[366] % 0x16f;
   unsigned_long_int_dest[367] = unsigned_long_int_src[367] % 0x170;
   unsigned_long_int_dest[368] = unsigned_long_int_src[368] % 0x171;
-  unsigned_long_int_dest[369] =
-       unsigned_long_int_src[369] + ((unsigned_long_int_src[369] >> 1) / 0xb9) * -0x172;
+  unsigned_long_int_dest[369] = unsigned_long_int_src[369] % 0x172;
   unsigned_long_int_dest[370] = unsigned_long_int_src[370] % 0x173;
   unsigned_long_int_dest[371] = unsigned_long_int_src[371] % 0x174;
   unsigned_long_int_dest[372] = unsigned_long_int_src[372] % 0x175;
@@ -44110,11 +41815,9 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[374] = unsigned_long_int_src[374] % 0x177;
   unsigned_long_int_dest[375] = unsigned_long_int_src[375] % 0x178;
   unsigned_long_int_dest[376] = unsigned_long_int_src[376] % 0x179;
-  unsigned_long_int_dest[377] =
-       unsigned_long_int_src[377] + ((unsigned_long_int_src[377] >> 1) / 0xbd) * -0x17a;
+  unsigned_long_int_dest[377] = unsigned_long_int_src[377] % 0x17a;
   unsigned_long_int_dest[378] = unsigned_long_int_src[378] % 0x17b;
-  unsigned_long_int_dest[379] =
-       unsigned_long_int_src[379] + ((unsigned_long_int_src[379] >> 2) / 0x5f) * -0x17c;
+  unsigned_long_int_dest[379] = unsigned_long_int_src[379] % 0x17c;
   unsigned_long_int_dest[380] = unsigned_long_int_src[380] % 0x17d;
   unsigned_long_int_dest[381] = unsigned_long_int_src[381] % 0x17e;
   unsigned_long_int_dest[382] = unsigned_long_int_src[382] % 0x17f;
@@ -44122,16 +41825,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[384] = unsigned_long_int_src[384] % 0x181;
   unsigned_long_int_dest[385] = unsigned_long_int_src[385] % 0x182;
   unsigned_long_int_dest[386] = unsigned_long_int_src[386] % 0x183;
-  unsigned_long_int_dest[387] =
-       unsigned_long_int_src[387] + ((unsigned_long_int_src[387] >> 2) / 0x61) * -0x184;
+  unsigned_long_int_dest[387] = unsigned_long_int_src[387] % 0x184;
   unsigned_long_int_dest[388] = unsigned_long_int_src[388] % 0x185;
-  unsigned_long_int_dest[389] =
-       unsigned_long_int_src[389] + ((unsigned_long_int_src[389] >> 1) / 0xc3) * -0x186;
+  unsigned_long_int_dest[389] = unsigned_long_int_src[389] % 0x186;
   unsigned_long_int_dest[390] = unsigned_long_int_src[390] % 0x187;
   unsigned_long_int_dest[391] = unsigned_long_int_src[391] % 0x188;
   unsigned_long_int_dest[392] = unsigned_long_int_src[392] % 0x189;
-  unsigned_long_int_dest[393] =
-       unsigned_long_int_src[393] + ((unsigned_long_int_src[393] >> 1) / 0xc5) * -0x18a;
+  unsigned_long_int_dest[393] = unsigned_long_int_src[393] % 0x18a;
   unsigned_long_int_dest[394] = unsigned_long_int_src[394] % 0x18b;
   unsigned_long_int_dest[395] = unsigned_long_int_src[395] % 0x18c;
   unsigned_long_int_dest[396] = unsigned_long_int_src[396] % 0x18d;
@@ -44141,8 +41841,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[400] = unsigned_long_int_src[400] % 0x191;
   unsigned_long_int_dest[401] = unsigned_long_int_src[401] % 0x192;
   unsigned_long_int_dest[402] = unsigned_long_int_src[402] % 0x193;
-  unsigned_long_int_dest[403] =
-       unsigned_long_int_src[403] + ((unsigned_long_int_src[403] >> 2) / 0x65) * -0x194;
+  unsigned_long_int_dest[403] = unsigned_long_int_src[403] % 0x194;
   unsigned_long_int_dest[404] = unsigned_long_int_src[404] % 0x195;
   unsigned_long_int_dest[405] = unsigned_long_int_src[405] % 0x196;
   unsigned_long_int_dest[406] = unsigned_long_int_src[406] % 0x197;
@@ -44150,8 +41849,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[408] = unsigned_long_int_src[408] % 0x199;
   unsigned_long_int_dest[409] = unsigned_long_int_src[409] % 0x19a;
   unsigned_long_int_dest[410] = unsigned_long_int_src[410] % 0x19b;
-  unsigned_long_int_dest[411] =
-       unsigned_long_int_src[411] + ((unsigned_long_int_src[411] >> 2) / 0x67) * -0x19c;
+  unsigned_long_int_dest[411] = unsigned_long_int_src[411] % 0x19c;
   unsigned_long_int_dest[412] = unsigned_long_int_src[412] % 0x19d;
   unsigned_long_int_dest[413] = unsigned_long_int_src[413] % 0x19e;
   unsigned_long_int_dest[414] = unsigned_long_int_src[414] % 0x19f;
@@ -44159,82 +41857,61 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[416] = unsigned_long_int_src[416] % 0x1a1;
   unsigned_long_int_dest[417] = unsigned_long_int_src[417] % 0x1a2;
   unsigned_long_int_dest[418] = unsigned_long_int_src[418] % 0x1a3;
-  unsigned_long_int_dest[419] =
-       unsigned_long_int_src[419] + ((unsigned_long_int_src[419] >> 2) / 0x69) * -0x1a4;
+  unsigned_long_int_dest[419] = unsigned_long_int_src[419] % 0x1a4;
   unsigned_long_int_dest[420] = unsigned_long_int_src[420] % 0x1a5;
   unsigned_long_int_dest[421] = unsigned_long_int_src[421] % 0x1a6;
   unsigned_long_int_dest[422] = unsigned_long_int_src[422] % 0x1a7;
-  unsigned_long_int_dest[423] =
-       unsigned_long_int_src[423] + ((unsigned_long_int_src[423] >> 3) / 0x35) * -0x1a8;
+  unsigned_long_int_dest[423] = unsigned_long_int_src[423] % 0x1a8;
   unsigned_long_int_dest[424] = unsigned_long_int_src[424] % 0x1a9;
   unsigned_long_int_dest[425] = unsigned_long_int_src[425] % 0x1aa;
   unsigned_long_int_dest[426] = unsigned_long_int_src[426] % 0x1ab;
-  unsigned_long_int_dest[427] =
-       unsigned_long_int_src[427] + ((unsigned_long_int_src[427] >> 2) / 0x6b) * -0x1ac;
+  unsigned_long_int_dest[427] = unsigned_long_int_src[427] % 0x1ac;
   unsigned_long_int_dest[428] = unsigned_long_int_src[428] % 0x1ad;
   unsigned_long_int_dest[429] = unsigned_long_int_src[429] % 0x1ae;
   unsigned_long_int_dest[430] = unsigned_long_int_src[430] % 0x1af;
-  unsigned_long_int_dest[431] =
-       unsigned_long_int_src[431] + ((unsigned_long_int_src[431] >> 4) / 0x1b) * -0x1b0;
+  unsigned_long_int_dest[431] = unsigned_long_int_src[431] % 0x1b0;
   unsigned_long_int_dest[432] = unsigned_long_int_src[432] % 0x1b1;
-  unsigned_long_int_dest[433] =
-       unsigned_long_int_src[433] + ((unsigned_long_int_src[433] >> 1) / 0xd9) * -0x1b2;
+  unsigned_long_int_dest[433] = unsigned_long_int_src[433] % 0x1b2;
   unsigned_long_int_dest[434] = unsigned_long_int_src[434] % 0x1b3;
-  unsigned_long_int_dest[435] =
-       unsigned_long_int_src[435] + ((unsigned_long_int_src[435] >> 2) / 0x6d) * -0x1b4;
+  unsigned_long_int_dest[435] = unsigned_long_int_src[435] % 0x1b4;
   unsigned_long_int_dest[436] = unsigned_long_int_src[436] % 0x1b5;
-  unsigned_long_int_dest[437] =
-       unsigned_long_int_src[437] + ((unsigned_long_int_src[437] >> 1) / 0xdb) * -0x1b6;
+  unsigned_long_int_dest[437] = unsigned_long_int_src[437] % 0x1b6;
   unsigned_long_int_dest[438] = unsigned_long_int_src[438] % 0x1b7;
-  unsigned_long_int_dest[439] =
-       unsigned_long_int_src[439] + ((unsigned_long_int_src[439] >> 3) / 0x37) * -0x1b8;
+  unsigned_long_int_dest[439] = unsigned_long_int_src[439] % 0x1b8;
   unsigned_long_int_dest[440] = unsigned_long_int_src[440] % 0x1b9;
-  unsigned_long_int_dest[441] =
-       unsigned_long_int_src[441] + ((unsigned_long_int_src[441] >> 1) / 0xdd) * -0x1ba;
+  unsigned_long_int_dest[441] = unsigned_long_int_src[441] % 0x1ba;
   unsigned_long_int_dest[442] = unsigned_long_int_src[442] % 0x1bb;
-  unsigned_long_int_dest[443] =
-       unsigned_long_int_src[443] + ((unsigned_long_int_src[443] >> 2) / 0x6f) * -0x1bc;
+  unsigned_long_int_dest[443] = unsigned_long_int_src[443] % 0x1bc;
   unsigned_long_int_dest[444] = unsigned_long_int_src[444] % 0x1bd;
-  unsigned_long_int_dest[445] =
-       unsigned_long_int_src[445] + ((unsigned_long_int_src[445] >> 1) / 0xdf) * -0x1be;
+  unsigned_long_int_dest[445] = unsigned_long_int_src[445] % 0x1be;
   unsigned_long_int_dest[446] = unsigned_long_int_src[446] % 0x1bf;
-  unsigned_long_int_dest[447] =
-       unsigned_long_int_src[447] + ((unsigned_long_int_src[447] >> 6) / 7) * -0x1c0;
+  unsigned_long_int_dest[447] = unsigned_long_int_src[447] % 0x1c0;
   unsigned_long_int_dest[448] = unsigned_long_int_src[448] % 0x1c1;
   unsigned_long_int_dest[449] = unsigned_long_int_src[449] % 0x1c2;
   unsigned_long_int_dest[450] = unsigned_long_int_src[450] % 0x1c3;
-  unsigned_long_int_dest[451] =
-       unsigned_long_int_src[451] + ((unsigned_long_int_src[451] >> 2) / 0x71) * -0x1c4;
+  unsigned_long_int_dest[451] = unsigned_long_int_src[451] % 0x1c4;
   unsigned_long_int_dest[452] = unsigned_long_int_src[452] % 0x1c5;
-  unsigned_long_int_dest[453] =
-       unsigned_long_int_src[453] + ((unsigned_long_int_src[453] >> 1) / 0xe3) * -0x1c6;
+  unsigned_long_int_dest[453] = unsigned_long_int_src[453] % 0x1c6;
   unsigned_long_int_dest[454] = unsigned_long_int_src[454] % 0x1c7;
-  unsigned_long_int_dest[455] =
-       unsigned_long_int_src[455] + ((unsigned_long_int_src[455] >> 3) / 0x39) * -0x1c8;
+  unsigned_long_int_dest[455] = unsigned_long_int_src[455] % 0x1c8;
   unsigned_long_int_dest[456] = unsigned_long_int_src[456] % 0x1c9;
   unsigned_long_int_dest[457] = unsigned_long_int_src[457] % 0x1ca;
   unsigned_long_int_dest[458] = unsigned_long_int_src[458] % 0x1cb;
-  unsigned_long_int_dest[459] =
-       unsigned_long_int_src[459] + ((unsigned_long_int_src[459] >> 2) / 0x73) * -0x1cc;
+  unsigned_long_int_dest[459] = unsigned_long_int_src[459] % 0x1cc;
   unsigned_long_int_dest[460] = unsigned_long_int_src[460] % 0x1cd;
-  unsigned_long_int_dest[461] =
-       unsigned_long_int_src[461] + ((unsigned_long_int_src[461] >> 1) / 0xe7) * -0x1ce;
+  unsigned_long_int_dest[461] = unsigned_long_int_src[461] % 0x1ce;
   unsigned_long_int_dest[462] = unsigned_long_int_src[462] % 0x1cf;
   unsigned_long_int_dest[463] = unsigned_long_int_src[463] % 0x1d0;
   unsigned_long_int_dest[464] = unsigned_long_int_src[464] % 0x1d1;
-  unsigned_long_int_dest[465] =
-       unsigned_long_int_src[465] + ((unsigned_long_int_src[465] >> 1) / 0xe9) * -0x1d2;
+  unsigned_long_int_dest[465] = unsigned_long_int_src[465] % 0x1d2;
   unsigned_long_int_dest[466] = unsigned_long_int_src[466] % 0x1d3;
-  unsigned_long_int_dest[467] =
-       unsigned_long_int_src[467] + ((unsigned_long_int_src[467] >> 2) / 0x75) * -0x1d4;
+  unsigned_long_int_dest[467] = unsigned_long_int_src[467] % 0x1d4;
   unsigned_long_int_dest[468] = unsigned_long_int_src[468] % 0x1d5;
-  unsigned_long_int_dest[469] =
-       unsigned_long_int_src[469] + ((unsigned_long_int_src[469] >> 1) / 0xeb) * -0x1d6;
+  unsigned_long_int_dest[469] = unsigned_long_int_src[469] % 0x1d6;
   unsigned_long_int_dest[470] = unsigned_long_int_src[470] % 0x1d7;
   unsigned_long_int_dest[471] = unsigned_long_int_src[471] % 0x1d8;
   unsigned_long_int_dest[472] = unsigned_long_int_src[472] % 0x1d9;
-  unsigned_long_int_dest[473] =
-       unsigned_long_int_src[473] + ((unsigned_long_int_src[473] >> 1) / 0xed) * -0x1da;
+  unsigned_long_int_dest[473] = unsigned_long_int_src[473] % 0x1da;
   unsigned_long_int_dest[474] = unsigned_long_int_src[474] % 0x1db;
   unsigned_long_int_dest[475] = unsigned_long_int_src[475] % 0x1dc;
   unsigned_long_int_dest[476] = unsigned_long_int_src[476] % 0x1dd;
@@ -44244,39 +41921,31 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[480] = unsigned_long_int_src[480] % 0x1e1;
   unsigned_long_int_dest[481] = unsigned_long_int_src[481] % 0x1e2;
   unsigned_long_int_dest[482] = unsigned_long_int_src[482] % 0x1e3;
-  unsigned_long_int_dest[483] =
-       unsigned_long_int_src[483] + ((unsigned_long_int_src[483] >> 2) / 0x79) * -0x1e4;
+  unsigned_long_int_dest[483] = unsigned_long_int_src[483] % 0x1e4;
   unsigned_long_int_dest[484] = unsigned_long_int_src[484] % 0x1e5;
   unsigned_long_int_dest[485] = unsigned_long_int_src[485] % 0x1e6;
   unsigned_long_int_dest[486] = unsigned_long_int_src[486] % 0x1e7;
   unsigned_long_int_dest[487] = unsigned_long_int_src[487] % 0x1e8;
   unsigned_long_int_dest[488] = unsigned_long_int_src[488] % 0x1e9;
-  unsigned_long_int_dest[489] =
-       unsigned_long_int_src[489] + ((unsigned_long_int_src[489] >> 1) / 0xf5) * -0x1ea;
+  unsigned_long_int_dest[489] = unsigned_long_int_src[489] % 0x1ea;
   unsigned_long_int_dest[490] = unsigned_long_int_src[490] % 0x1eb;
-  unsigned_long_int_dest[491] =
-       unsigned_long_int_src[491] + ((unsigned_long_int_src[491] >> 2) / 0x7b) * -0x1ec;
+  unsigned_long_int_dest[491] = unsigned_long_int_src[491] % 0x1ec;
   unsigned_long_int_dest[492] = unsigned_long_int_src[492] % 0x1ed;
-  unsigned_long_int_dest[493] =
-       unsigned_long_int_src[493] + ((unsigned_long_int_src[493] >> 1) / 0xf7) * -0x1ee;
+  unsigned_long_int_dest[493] = unsigned_long_int_src[493] % 0x1ee;
   unsigned_long_int_dest[494] = unsigned_long_int_src[494] % 0x1ef;
-  unsigned_long_int_dest[495] =
-       unsigned_long_int_src[495] + ((unsigned_long_int_src[495] >> 4) / 0x1f) * -0x1f0;
+  unsigned_long_int_dest[495] = unsigned_long_int_src[495] % 0x1f0;
   unsigned_long_int_dest[496] = unsigned_long_int_src[496] % 0x1f1;
-  unsigned_long_int_dest[497] =
-       unsigned_long_int_src[497] + ((unsigned_long_int_src[497] >> 1) / 0xf9) * -0x1f2;
+  unsigned_long_int_dest[497] = unsigned_long_int_src[497] % 0x1f2;
   unsigned_long_int_dest[498] = unsigned_long_int_src[498] % 499;
   unsigned_long_int_dest[499] = unsigned_long_int_src[499] % 500;
   unsigned_long_int_dest[500] = unsigned_long_int_src[500] % 0x1f5;
   unsigned_long_int_dest[501] = unsigned_long_int_src[501] % 0x1f6;
   unsigned_long_int_dest[502] = unsigned_long_int_src[502] % 0x1f7;
-  unsigned_long_int_dest[503] =
-       unsigned_long_int_src[503] + ((unsigned_long_int_src[503] >> 3) / 0x3f) * -0x1f8;
+  unsigned_long_int_dest[503] = unsigned_long_int_src[503] % 0x1f8;
   unsigned_long_int_dest[504] = unsigned_long_int_src[504] % 0x1f9;
   unsigned_long_int_dest[505] = unsigned_long_int_src[505] % 0x1fa;
   unsigned_long_int_dest[506] = unsigned_long_int_src[506] % 0x1fb;
-  unsigned_long_int_dest[507] =
-       unsigned_long_int_src[507] + ((unsigned_long_int_src[507] >> 2) / 0x7f) * -0x1fc;
+  unsigned_long_int_dest[507] = unsigned_long_int_src[507] % 0x1fc;
   unsigned_long_int_dest[508] = unsigned_long_int_src[508] % 0x1fd;
   unsigned_long_int_dest[509] = unsigned_long_int_src[509] % 0x1fe;
   unsigned_long_int_dest[510] = unsigned_long_int_src[510] % 0x1ff;
@@ -44314,13 +41983,11 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[542] = unsigned_long_int_src[542] % 0x21f;
   unsigned_long_int_dest[543] = unsigned_long_int_src[543] % 0x220;
   unsigned_long_int_dest[544] = unsigned_long_int_src[544] % 0x221;
-  unsigned_long_int_dest[545] =
-       unsigned_long_int_src[545] + ((unsigned_long_int_src[545] >> 1) / 0x111) * -0x222;
+  unsigned_long_int_dest[545] = unsigned_long_int_src[545] % 0x222;
   unsigned_long_int_dest[546] = unsigned_long_int_src[546] % 0x223;
   unsigned_long_int_dest[547] = unsigned_long_int_src[547] % 0x224;
   unsigned_long_int_dest[548] = unsigned_long_int_src[548] % 0x225;
-  unsigned_long_int_dest[549] =
-       unsigned_long_int_src[549] + ((unsigned_long_int_src[549] >> 1) / 0x113) * -0x226;
+  unsigned_long_int_dest[549] = unsigned_long_int_src[549] % 0x226;
   unsigned_long_int_dest[550] = unsigned_long_int_src[550] % 0x227;
   unsigned_long_int_dest[551] = unsigned_long_int_src[551] % 0x228;
   unsigned_long_int_dest[552] = unsigned_long_int_src[552] % 0x229;
@@ -44330,8 +41997,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[556] = unsigned_long_int_src[556] % 0x22d;
   unsigned_long_int_dest[557] = unsigned_long_int_src[557] % 0x22e;
   unsigned_long_int_dest[558] = unsigned_long_int_src[558] % 0x22f;
-  unsigned_long_int_dest[559] =
-       unsigned_long_int_src[559] + ((unsigned_long_int_src[559] >> 4) / 0x23) * -0x230;
+  unsigned_long_int_dest[559] = unsigned_long_int_src[559] % 0x230;
   unsigned_long_int_dest[560] = unsigned_long_int_src[560] % 0x231;
   unsigned_long_int_dest[561] = unsigned_long_int_src[561] % 0x232;
   unsigned_long_int_dest[562] = unsigned_long_int_src[562] % 0x233;
@@ -44341,8 +42007,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[566] = unsigned_long_int_src[566] % 0x237;
   unsigned_long_int_dest[567] = unsigned_long_int_src[567] % 0x238;
   unsigned_long_int_dest[568] = unsigned_long_int_src[568] % 0x239;
-  unsigned_long_int_dest[569] =
-       unsigned_long_int_src[569] + ((unsigned_long_int_src[569] >> 1) / 0x11d) * -0x23a;
+  unsigned_long_int_dest[569] = unsigned_long_int_src[569] % 0x23a;
   unsigned_long_int_dest[570] = unsigned_long_int_src[570] % 0x23b;
   unsigned_long_int_dest[571] = unsigned_long_int_src[571] % 0x23c;
   unsigned_long_int_dest[572] = unsigned_long_int_src[572] % 0x23d;
@@ -44356,8 +42021,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[580] = unsigned_long_int_src[580] % 0x245;
   unsigned_long_int_dest[581] = unsigned_long_int_src[581] % 0x246;
   unsigned_long_int_dest[582] = unsigned_long_int_src[582] % 0x247;
-  unsigned_long_int_dest[583] =
-       unsigned_long_int_src[583] + ((unsigned_long_int_src[583] >> 3) / 0x49) * -0x248;
+  unsigned_long_int_dest[583] = unsigned_long_int_src[583] % 0x248;
   unsigned_long_int_dest[584] = unsigned_long_int_src[584] % 0x249;
   unsigned_long_int_dest[585] = unsigned_long_int_src[585] % 0x24a;
   unsigned_long_int_dest[586] = unsigned_long_int_src[586] % 0x24b;
@@ -44365,8 +42029,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[588] = unsigned_long_int_src[588] % 0x24d;
   unsigned_long_int_dest[589] = unsigned_long_int_src[589] % 0x24e;
   unsigned_long_int_dest[590] = unsigned_long_int_src[590] % 0x24f;
-  unsigned_long_int_dest[591] =
-       unsigned_long_int_src[591] + ((unsigned_long_int_src[591] >> 4) / 0x25) * -0x250;
+  unsigned_long_int_dest[591] = unsigned_long_int_src[591] % 0x250;
   unsigned_long_int_dest[592] = unsigned_long_int_src[592] % 0x251;
   unsigned_long_int_dest[593] = unsigned_long_int_src[593] % 0x252;
   unsigned_long_int_dest[594] = unsigned_long_int_src[594] % 0x253;
@@ -44382,8 +42045,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[604] = unsigned_long_int_src[604] % 0x25d;
   unsigned_long_int_dest[605] = unsigned_long_int_src[605] % 0x25e;
   unsigned_long_int_dest[606] = unsigned_long_int_src[606] % 0x25f;
-  unsigned_long_int_dest[607] =
-       unsigned_long_int_src[607] + ((unsigned_long_int_src[607] >> 5) / 0x13) * -0x260;
+  unsigned_long_int_dest[607] = unsigned_long_int_src[607] % 0x260;
   unsigned_long_int_dest[608] = unsigned_long_int_src[608] % 0x261;
   unsigned_long_int_dest[609] = unsigned_long_int_src[609] % 0x262;
   unsigned_long_int_dest[610] = unsigned_long_int_src[610] % 0x263;
@@ -44399,23 +42061,19 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[620] = unsigned_long_int_src[620] % 0x26d;
   unsigned_long_int_dest[621] = unsigned_long_int_src[621] % 0x26e;
   unsigned_long_int_dest[622] = unsigned_long_int_src[622] % 0x26f;
-  unsigned_long_int_dest[623] =
-       unsigned_long_int_src[623] + ((unsigned_long_int_src[623] >> 4) / 0x27) * -0x270;
+  unsigned_long_int_dest[623] = unsigned_long_int_src[623] % 0x270;
   unsigned_long_int_dest[624] = unsigned_long_int_src[624] % 0x271;
-  unsigned_long_int_dest[625] =
-       unsigned_long_int_src[625] + ((unsigned_long_int_src[625] >> 1) / 0x139) * -0x272;
+  unsigned_long_int_dest[625] = unsigned_long_int_src[625] % 0x272;
   unsigned_long_int_dest[626] = unsigned_long_int_src[626] % 0x273;
   unsigned_long_int_dest[627] = unsigned_long_int_src[627] % 0x274;
   unsigned_long_int_dest[628] = unsigned_long_int_src[628] % 0x275;
-  unsigned_long_int_dest[629] =
-       unsigned_long_int_src[629] + ((unsigned_long_int_src[629] >> 1) / 0x13b) * -0x276;
+  unsigned_long_int_dest[629] = unsigned_long_int_src[629] % 0x276;
   unsigned_long_int_dest[630] = unsigned_long_int_src[630] % 0x277;
   unsigned_long_int_dest[631] = unsigned_long_int_src[631] % 0x278;
   unsigned_long_int_dest[632] = unsigned_long_int_src[632] % 0x279;
   unsigned_long_int_dest[633] = unsigned_long_int_src[633] % 0x27a;
   unsigned_long_int_dest[634] = unsigned_long_int_src[634] % 0x27b;
-  unsigned_long_int_dest[635] =
-       unsigned_long_int_src[635] + ((unsigned_long_int_src[635] >> 2) / 0x9f) * -0x27c;
+  unsigned_long_int_dest[635] = unsigned_long_int_src[635] % 0x27c;
   unsigned_long_int_dest[636] = unsigned_long_int_src[636] % 0x27d;
   unsigned_long_int_dest[637] = unsigned_long_int_src[637] % 0x27e;
   unsigned_long_int_dest[638] = unsigned_long_int_src[638] % 0x27f;
@@ -44425,8 +42083,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[642] = unsigned_long_int_src[642] % 0x283;
   unsigned_long_int_dest[643] = unsigned_long_int_src[643] % 0x284;
   unsigned_long_int_dest[644] = unsigned_long_int_src[644] % 0x285;
-  unsigned_long_int_dest[645] =
-       unsigned_long_int_src[645] + ((unsigned_long_int_src[645] >> 1) / 0x143) * -0x286;
+  unsigned_long_int_dest[645] = unsigned_long_int_src[645] % 0x286;
   unsigned_long_int_dest[646] = unsigned_long_int_src[646] % 0x287;
   unsigned_long_int_dest[647] = unsigned_long_int_src[647] % 0x288;
   unsigned_long_int_dest[648] = unsigned_long_int_src[648] % 0x289;
@@ -44434,8 +42091,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[650] = unsigned_long_int_src[650] % 0x28b;
   unsigned_long_int_dest[651] = unsigned_long_int_src[651] % 0x28c;
   unsigned_long_int_dest[652] = unsigned_long_int_src[652] % 0x28d;
-  unsigned_long_int_dest[653] =
-       unsigned_long_int_src[653] + ((unsigned_long_int_src[653] >> 1) / 0x147) * -0x28e;
+  unsigned_long_int_dest[653] = unsigned_long_int_src[653] % 0x28e;
   unsigned_long_int_dest[654] = unsigned_long_int_src[654] % 0x28f;
   unsigned_long_int_dest[655] = unsigned_long_int_src[655] % 0x290;
   unsigned_long_int_dest[656] = unsigned_long_int_src[656] % 0x291;
@@ -44443,36 +42099,29 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[658] = unsigned_long_int_src[658] % 0x293;
   unsigned_long_int_dest[659] = unsigned_long_int_src[659] % 0x294;
   unsigned_long_int_dest[660] = unsigned_long_int_src[660] % 0x295;
-  unsigned_long_int_dest[661] =
-       unsigned_long_int_src[661] + ((unsigned_long_int_src[661] >> 1) / 0x14b) * -0x296;
+  unsigned_long_int_dest[661] = unsigned_long_int_src[661] % 0x296;
   unsigned_long_int_dest[662] = unsigned_long_int_src[662] % 0x297;
   unsigned_long_int_dest[663] = unsigned_long_int_src[663] % 0x298;
   unsigned_long_int_dest[664] = unsigned_long_int_src[664] % 0x299;
-  unsigned_long_int_dest[665] =
-       unsigned_long_int_src[665] + ((unsigned_long_int_src[665] >> 1) / 0x14d) * -0x29a;
+  unsigned_long_int_dest[665] = unsigned_long_int_src[665] % 0x29a;
   unsigned_long_int_dest[666] = unsigned_long_int_src[666] % 0x29b;
   unsigned_long_int_dest[667] = unsigned_long_int_src[667] % 0x29c;
   unsigned_long_int_dest[668] = unsigned_long_int_src[668] % 0x29d;
-  unsigned_long_int_dest[669] =
-       unsigned_long_int_src[669] + ((unsigned_long_int_src[669] >> 1) / 0x14f) * -0x29e;
+  unsigned_long_int_dest[669] = unsigned_long_int_src[669] % 0x29e;
   unsigned_long_int_dest[670] = unsigned_long_int_src[670] % 0x29f;
-  unsigned_long_int_dest[671] =
-       unsigned_long_int_src[671] + ((unsigned_long_int_src[671] >> 5) / 0x15) * -0x2a0;
+  unsigned_long_int_dest[671] = unsigned_long_int_src[671] % 0x2a0;
   unsigned_long_int_dest[672] = unsigned_long_int_src[672] % 0x2a1;
   unsigned_long_int_dest[673] = unsigned_long_int_src[673] % 0x2a2;
   unsigned_long_int_dest[674] = unsigned_long_int_src[674] % 0x2a3;
   unsigned_long_int_dest[675] = unsigned_long_int_src[675] % 0x2a4;
   unsigned_long_int_dest[676] = unsigned_long_int_src[676] % 0x2a5;
-  unsigned_long_int_dest[677] =
-       unsigned_long_int_src[677] + ((unsigned_long_int_src[677] >> 1) / 0x153) * -0x2a6;
+  unsigned_long_int_dest[677] = unsigned_long_int_src[677] % 0x2a6;
   unsigned_long_int_dest[678] = unsigned_long_int_src[678] % 0x2a7;
   unsigned_long_int_dest[679] = unsigned_long_int_src[679] % 0x2a8;
   unsigned_long_int_dest[680] = unsigned_long_int_src[680] % 0x2a9;
-  unsigned_long_int_dest[681] =
-       unsigned_long_int_src[681] + ((unsigned_long_int_src[681] >> 1) / 0x155) * -0x2aa;
+  unsigned_long_int_dest[681] = unsigned_long_int_src[681] % 0x2aa;
   unsigned_long_int_dest[682] = unsigned_long_int_src[682] % 0x2ab;
-  unsigned_long_int_dest[683] =
-       unsigned_long_int_src[683] + ((unsigned_long_int_src[683] >> 2) / 0xab) * -0x2ac;
+  unsigned_long_int_dest[683] = unsigned_long_int_src[683] % 0x2ac;
   unsigned_long_int_dest[684] = unsigned_long_int_src[684] % 0x2ad;
   unsigned_long_int_dest[685] = unsigned_long_int_src[685] % 0x2ae;
   unsigned_long_int_dest[686] = unsigned_long_int_src[686] % 0x2af;
@@ -44480,8 +42129,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[688] = unsigned_long_int_src[688] % 0x2b1;
   unsigned_long_int_dest[689] = unsigned_long_int_src[689] % 0x2b2;
   unsigned_long_int_dest[690] = unsigned_long_int_src[690] % 0x2b3;
-  unsigned_long_int_dest[691] =
-       unsigned_long_int_src[691] + ((unsigned_long_int_src[691] >> 2) / 0xad) * -0x2b4;
+  unsigned_long_int_dest[691] = unsigned_long_int_src[691] % 0x2b4;
   unsigned_long_int_dest[692] = unsigned_long_int_src[692] % 0x2b5;
   unsigned_long_int_dest[693] = unsigned_long_int_src[693] % 0x2b6;
   unsigned_long_int_dest[694] = unsigned_long_int_src[694] % 0x2b7;
@@ -44491,16 +42139,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[698] = unsigned_long_int_src[698] % 699;
   unsigned_long_int_dest[699] = unsigned_long_int_src[699] % 700;
   unsigned_long_int_dest[700] = unsigned_long_int_src[700] % 0x2bd;
-  unsigned_long_int_dest[701] =
-       unsigned_long_int_src[701] + ((unsigned_long_int_src[701] >> 1) / 0x15f) * -0x2be;
+  unsigned_long_int_dest[701] = unsigned_long_int_src[701] % 0x2be;
   unsigned_long_int_dest[702] = unsigned_long_int_src[702] % 0x2bf;
   unsigned_long_int_dest[703] = unsigned_long_int_src[703] % 0x2c0;
   unsigned_long_int_dest[704] = unsigned_long_int_src[704] % 0x2c1;
-  unsigned_long_int_dest[705] =
-       unsigned_long_int_src[705] + ((unsigned_long_int_src[705] >> 1) / 0x161) * -0x2c2;
+  unsigned_long_int_dest[705] = unsigned_long_int_src[705] % 0x2c2;
   unsigned_long_int_dest[706] = unsigned_long_int_src[706] % 0x2c3;
-  unsigned_long_int_dest[707] =
-       unsigned_long_int_src[707] + ((unsigned_long_int_src[707] >> 2) / 0xb1) * -0x2c4;
+  unsigned_long_int_dest[707] = unsigned_long_int_src[707] % 0x2c4;
   unsigned_long_int_dest[708] = unsigned_long_int_src[708] % 0x2c5;
   unsigned_long_int_dest[709] = unsigned_long_int_src[709] % 0x2c6;
   unsigned_long_int_dest[710] = unsigned_long_int_src[710] % 0x2c7;
@@ -44508,28 +42153,21 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[712] = unsigned_long_int_src[712] % 0x2c9;
   unsigned_long_int_dest[713] = unsigned_long_int_src[713] % 0x2ca;
   unsigned_long_int_dest[714] = unsigned_long_int_src[714] % 0x2cb;
-  unsigned_long_int_dest[715] =
-       unsigned_long_int_src[715] + ((unsigned_long_int_src[715] >> 2) / 0xb3) * -0x2cc;
+  unsigned_long_int_dest[715] = unsigned_long_int_src[715] % 0x2cc;
   unsigned_long_int_dest[716] = unsigned_long_int_src[716] % 0x2cd;
-  unsigned_long_int_dest[717] =
-       unsigned_long_int_src[717] + ((unsigned_long_int_src[717] >> 1) / 0x167) * -0x2ce;
+  unsigned_long_int_dest[717] = unsigned_long_int_src[717] % 0x2ce;
   unsigned_long_int_dest[718] = unsigned_long_int_src[718] % 0x2cf;
-  unsigned_long_int_dest[719] =
-       unsigned_long_int_src[719] + ((unsigned_long_int_src[719] >> 4) / 0x2d) * -0x2d0;
+  unsigned_long_int_dest[719] = unsigned_long_int_src[719] % 0x2d0;
   unsigned_long_int_dest[720] = unsigned_long_int_src[720] % 0x2d1;
-  unsigned_long_int_dest[721] =
-       unsigned_long_int_src[721] + ((unsigned_long_int_src[721] >> 1) / 0x169) * -0x2d2;
+  unsigned_long_int_dest[721] = unsigned_long_int_src[721] % 0x2d2;
   unsigned_long_int_dest[722] = unsigned_long_int_src[722] % 0x2d3;
   unsigned_long_int_dest[723] = unsigned_long_int_src[723] % 0x2d4;
   unsigned_long_int_dest[724] = unsigned_long_int_src[724] % 0x2d5;
-  unsigned_long_int_dest[725] =
-       unsigned_long_int_src[725] + ((unsigned_long_int_src[725] >> 1) / 0x16b) * -0x2d6;
+  unsigned_long_int_dest[725] = unsigned_long_int_src[725] % 0x2d6;
   unsigned_long_int_dest[726] = unsigned_long_int_src[726] % 0x2d7;
-  unsigned_long_int_dest[727] =
-       unsigned_long_int_src[727] + ((unsigned_long_int_src[727] >> 3) / 0x5b) * -0x2d8;
+  unsigned_long_int_dest[727] = unsigned_long_int_src[727] % 0x2d8;
   unsigned_long_int_dest[728] = unsigned_long_int_src[728] % 0x2d9;
-  unsigned_long_int_dest[729] =
-       unsigned_long_int_src[729] + ((unsigned_long_int_src[729] >> 1) / 0x16d) * -0x2da;
+  unsigned_long_int_dest[729] = unsigned_long_int_src[729] % 0x2da;
   unsigned_long_int_dest[730] = unsigned_long_int_src[730] % 0x2db;
   unsigned_long_int_dest[731] = unsigned_long_int_src[731] % 0x2dc;
   unsigned_long_int_dest[732] = unsigned_long_int_src[732] % 0x2dd;
@@ -44539,15 +42177,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[736] = unsigned_long_int_src[736] % 0x2e1;
   unsigned_long_int_dest[737] = unsigned_long_int_src[737] % 0x2e2;
   unsigned_long_int_dest[738] = unsigned_long_int_src[738] % 0x2e3;
-  unsigned_long_int_dest[739] =
-       unsigned_long_int_src[739] + ((unsigned_long_int_src[739] >> 2) / 0xb9) * -0x2e4;
+  unsigned_long_int_dest[739] = unsigned_long_int_src[739] % 0x2e4;
   unsigned_long_int_dest[740] = unsigned_long_int_src[740] % 0x2e5;
   unsigned_long_int_dest[741] = unsigned_long_int_src[741] % 0x2e6;
   unsigned_long_int_dest[742] = unsigned_long_int_src[742] % 0x2e7;
   unsigned_long_int_dest[743] = unsigned_long_int_src[743] % 0x2e8;
   unsigned_long_int_dest[744] = unsigned_long_int_src[744] % 0x2e9;
-  unsigned_long_int_dest[745] =
-       unsigned_long_int_src[745] + ((unsigned_long_int_src[745] >> 1) / 0x175) * -0x2ea;
+  unsigned_long_int_dest[745] = unsigned_long_int_src[745] % 0x2ea;
   unsigned_long_int_dest[746] = unsigned_long_int_src[746] % 0x2eb;
   unsigned_long_int_dest[747] = unsigned_long_int_src[747] % 0x2ec;
   unsigned_long_int_dest[748] = unsigned_long_int_src[748] % 0x2ed;
@@ -44555,17 +42191,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[750] = unsigned_long_int_src[750] % 0x2ef;
   unsigned_long_int_dest[751] = unsigned_long_int_src[751] % 0x2f0;
   unsigned_long_int_dest[752] = unsigned_long_int_src[752] % 0x2f1;
-  unsigned_long_int_dest[753] =
-       unsigned_long_int_src[753] + ((unsigned_long_int_src[753] >> 1) / 0x179) * -0x2f2;
+  unsigned_long_int_dest[753] = unsigned_long_int_src[753] % 0x2f2;
   unsigned_long_int_dest[754] = unsigned_long_int_src[754] % 0x2f3;
-  unsigned_long_int_dest[755] =
-       unsigned_long_int_src[755] + ((unsigned_long_int_src[755] >> 2) / 0xbd) * -0x2f4;
+  unsigned_long_int_dest[755] = unsigned_long_int_src[755] % 0x2f4;
   unsigned_long_int_dest[756] = unsigned_long_int_src[756] % 0x2f5;
-  unsigned_long_int_dest[757] =
-       unsigned_long_int_src[757] + ((unsigned_long_int_src[757] >> 1) / 0x17b) * -0x2f6;
+  unsigned_long_int_dest[757] = unsigned_long_int_src[757] % 0x2f6;
   unsigned_long_int_dest[758] = unsigned_long_int_src[758] % 0x2f7;
-  unsigned_long_int_dest[759] =
-       unsigned_long_int_src[759] + ((unsigned_long_int_src[759] >> 3) / 0x5f) * -0x2f8;
+  unsigned_long_int_dest[759] = unsigned_long_int_src[759] % 0x2f8;
   unsigned_long_int_dest[760] = unsigned_long_int_src[760] % 0x2f9;
   unsigned_long_int_dest[761] = unsigned_long_int_src[761] % 0x2fa;
   unsigned_long_int_dest[762] = unsigned_long_int_src[762] % 0x2fb;
@@ -44579,16 +42211,13 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[770] = unsigned_long_int_src[770] % 0x303;
   unsigned_long_int_dest[771] = unsigned_long_int_src[771] % 0x304;
   unsigned_long_int_dest[772] = unsigned_long_int_src[772] % 0x305;
-  unsigned_long_int_dest[773] =
-       unsigned_long_int_src[773] + ((unsigned_long_int_src[773] >> 1) / 0x183) * -0x306;
+  unsigned_long_int_dest[773] = unsigned_long_int_src[773] % 0x306;
   unsigned_long_int_dest[774] = unsigned_long_int_src[774] % 0x307;
-  unsigned_long_int_dest[775] =
-       unsigned_long_int_src[775] + ((unsigned_long_int_src[775] >> 3) / 0x61) * -0x308;
+  unsigned_long_int_dest[775] = unsigned_long_int_src[775] % 0x308;
   unsigned_long_int_dest[776] = unsigned_long_int_src[776] % 0x309;
   unsigned_long_int_dest[777] = unsigned_long_int_src[777] % 0x30a;
   unsigned_long_int_dest[778] = unsigned_long_int_src[778] % 0x30b;
-  unsigned_long_int_dest[779] =
-       unsigned_long_int_src[779] + ((unsigned_long_int_src[779] >> 2) / 0xc3) * -0x30c;
+  unsigned_long_int_dest[779] = unsigned_long_int_src[779] % 0x30c;
   unsigned_long_int_dest[780] = unsigned_long_int_src[780] % 0x30d;
   unsigned_long_int_dest[781] = unsigned_long_int_src[781] % 0x30e;
   unsigned_long_int_dest[782] = unsigned_long_int_src[782] % 0x30f;
@@ -44596,11 +42225,9 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[784] = unsigned_long_int_src[784] % 0x311;
   unsigned_long_int_dest[785] = unsigned_long_int_src[785] % 0x312;
   unsigned_long_int_dest[786] = unsigned_long_int_src[786] % 0x313;
-  unsigned_long_int_dest[787] =
-       unsigned_long_int_src[787] + ((unsigned_long_int_src[787] >> 2) / 0xc5) * -0x314;
+  unsigned_long_int_dest[787] = unsigned_long_int_src[787] % 0x314;
   unsigned_long_int_dest[788] = unsigned_long_int_src[788] % 0x315;
-  unsigned_long_int_dest[789] =
-       unsigned_long_int_src[789] + ((unsigned_long_int_src[789] >> 1) / 0x18b) * -0x316;
+  unsigned_long_int_dest[789] = unsigned_long_int_src[789] % 0x316;
   unsigned_long_int_dest[790] = unsigned_long_int_src[790] % 0x317;
   unsigned_long_int_dest[791] = unsigned_long_int_src[791] % 0x318;
   unsigned_long_int_dest[792] = unsigned_long_int_src[792] % 0x319;
@@ -44608,8 +42235,7 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[794] = unsigned_long_int_src[794] % 0x31b;
   unsigned_long_int_dest[795] = unsigned_long_int_src[795] % 0x31c;
   unsigned_long_int_dest[796] = unsigned_long_int_src[796] % 0x31d;
-  unsigned_long_int_dest[797] =
-       unsigned_long_int_src[797] + ((unsigned_long_int_src[797] >> 1) / 399) * -0x31e;
+  unsigned_long_int_dest[797] = unsigned_long_int_src[797] % 0x31e;
   unsigned_long_int_dest[798] = unsigned_long_int_src[798] % 799;
   unsigned_long_int_dest[799] = unsigned_long_int_src[799] % 800;
   unsigned_long_int_dest[800] = unsigned_long_int_src[800] % 0x321;
@@ -44617,11 +42243,9 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[802] = unsigned_long_int_src[802] % 0x323;
   unsigned_long_int_dest[803] = unsigned_long_int_src[803] % 0x324;
   unsigned_long_int_dest[804] = unsigned_long_int_src[804] % 0x325;
-  unsigned_long_int_dest[805] =
-       unsigned_long_int_src[805] + ((unsigned_long_int_src[805] >> 1) / 0x193) * -0x326;
+  unsigned_long_int_dest[805] = unsigned_long_int_src[805] % 0x326;
   unsigned_long_int_dest[806] = unsigned_long_int_src[806] % 0x327;
-  unsigned_long_int_dest[807] =
-       unsigned_long_int_src[807] + ((unsigned_long_int_src[807] >> 3) / 0x65) * -0x328;
+  unsigned_long_int_dest[807] = unsigned_long_int_src[807] % 0x328;
   unsigned_long_int_dest[808] = unsigned_long_int_src[808] % 0x329;
   unsigned_long_int_dest[809] = unsigned_long_int_src[809] % 0x32a;
   unsigned_long_int_dest[810] = unsigned_long_int_src[810] % 0x32b;
@@ -44635,19 +42259,15 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[818] = unsigned_long_int_src[818] % 0x333;
   unsigned_long_int_dest[819] = unsigned_long_int_src[819] % 0x334;
   unsigned_long_int_dest[820] = unsigned_long_int_src[820] % 0x335;
-  unsigned_long_int_dest[821] =
-       unsigned_long_int_src[821] + ((unsigned_long_int_src[821] >> 1) / 0x19b) * -0x336;
+  unsigned_long_int_dest[821] = unsigned_long_int_src[821] % 0x336;
   unsigned_long_int_dest[822] = unsigned_long_int_src[822] % 0x337;
-  unsigned_long_int_dest[823] =
-       unsigned_long_int_src[823] + ((unsigned_long_int_src[823] >> 3) / 0x67) * -0x338;
+  unsigned_long_int_dest[823] = unsigned_long_int_src[823] % 0x338;
   unsigned_long_int_dest[824] = unsigned_long_int_src[824] % 0x339;
-  unsigned_long_int_dest[825] =
-       unsigned_long_int_src[825] + ((unsigned_long_int_src[825] >> 1) / 0x19d) * -0x33a;
+  unsigned_long_int_dest[825] = unsigned_long_int_src[825] % 0x33a;
   unsigned_long_int_dest[826] = unsigned_long_int_src[826] % 0x33b;
   unsigned_long_int_dest[827] = unsigned_long_int_src[827] % 0x33c;
   unsigned_long_int_dest[828] = unsigned_long_int_src[828] % 0x33d;
-  unsigned_long_int_dest[829] =
-       unsigned_long_int_src[829] + ((unsigned_long_int_src[829] >> 1) / 0x19f) * -0x33e;
+  unsigned_long_int_dest[829] = unsigned_long_int_src[829] % 0x33e;
   unsigned_long_int_dest[830] = unsigned_long_int_src[830] % 0x33f;
   unsigned_long_int_dest[831] = unsigned_long_int_src[831] % 0x340;
   unsigned_long_int_dest[832] = unsigned_long_int_src[832] % 0x341;
@@ -44655,106 +42275,81 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[834] = unsigned_long_int_src[834] % 0x343;
   unsigned_long_int_dest[835] = unsigned_long_int_src[835] % 0x344;
   unsigned_long_int_dest[836] = unsigned_long_int_src[836] % 0x345;
-  unsigned_long_int_dest[837] =
-       unsigned_long_int_src[837] + ((unsigned_long_int_src[837] >> 1) / 0x1a3) * -0x346;
+  unsigned_long_int_dest[837] = unsigned_long_int_src[837] % 0x346;
   unsigned_long_int_dest[838] = unsigned_long_int_src[838] % 0x347;
-  unsigned_long_int_dest[839] =
-       unsigned_long_int_src[839] + ((unsigned_long_int_src[839] >> 3) / 0x69) * -0x348;
+  unsigned_long_int_dest[839] = unsigned_long_int_src[839] % 0x348;
   unsigned_long_int_dest[840] = unsigned_long_int_src[840] % 0x349;
-  unsigned_long_int_dest[841] =
-       unsigned_long_int_src[841] + ((unsigned_long_int_src[841] >> 1) / 0x1a5) * -0x34a;
+  unsigned_long_int_dest[841] = unsigned_long_int_src[841] % 0x34a;
   unsigned_long_int_dest[842] = unsigned_long_int_src[842] % 0x34b;
   unsigned_long_int_dest[843] = unsigned_long_int_src[843] % 0x34c;
   unsigned_long_int_dest[844] = unsigned_long_int_src[844] % 0x34d;
   unsigned_long_int_dest[845] = unsigned_long_int_src[845] % 0x34e;
   unsigned_long_int_dest[846] = unsigned_long_int_src[846] % 0x34f;
-  unsigned_long_int_dest[847] =
-       unsigned_long_int_src[847] + ((unsigned_long_int_src[847] >> 4) / 0x35) * -0x350;
+  unsigned_long_int_dest[847] = unsigned_long_int_src[847] % 0x350;
   unsigned_long_int_dest[848] = unsigned_long_int_src[848] % 0x351;
-  unsigned_long_int_dest[849] =
-       unsigned_long_int_src[849] + ((unsigned_long_int_src[849] >> 1) / 0x1a9) * -0x352;
+  unsigned_long_int_dest[849] = unsigned_long_int_src[849] % 0x352;
   unsigned_long_int_dest[850] = unsigned_long_int_src[850] % 0x353;
   unsigned_long_int_dest[851] = unsigned_long_int_src[851] % 0x354;
   unsigned_long_int_dest[852] = unsigned_long_int_src[852] % 0x355;
-  unsigned_long_int_dest[853] =
-       unsigned_long_int_src[853] + ((unsigned_long_int_src[853] >> 1) / 0x1ab) * -0x356;
+  unsigned_long_int_dest[853] = unsigned_long_int_src[853] % 0x356;
   unsigned_long_int_dest[854] = unsigned_long_int_src[854] % 0x357;
-  unsigned_long_int_dest[855] =
-       unsigned_long_int_src[855] + ((unsigned_long_int_src[855] >> 3) / 0x6b) * -0x358;
+  unsigned_long_int_dest[855] = unsigned_long_int_src[855] % 0x358;
   unsigned_long_int_dest[856] = unsigned_long_int_src[856] % 0x359;
-  unsigned_long_int_dest[857] =
-       unsigned_long_int_src[857] + ((unsigned_long_int_src[857] >> 1) / 0x1ad) * -0x35a;
+  unsigned_long_int_dest[857] = unsigned_long_int_src[857] % 0x35a;
   unsigned_long_int_dest[858] = unsigned_long_int_src[858] % 0x35b;
   unsigned_long_int_dest[859] = unsigned_long_int_src[859] % 0x35c;
   unsigned_long_int_dest[860] = unsigned_long_int_src[860] % 0x35d;
-  unsigned_long_int_dest[861] =
-       unsigned_long_int_src[861] + ((unsigned_long_int_src[861] >> 1) / 0x1af) * -0x35e;
+  unsigned_long_int_dest[861] = unsigned_long_int_src[861] % 0x35e;
   unsigned_long_int_dest[862] = unsigned_long_int_src[862] % 0x35f;
-  unsigned_long_int_dest[863] =
-       unsigned_long_int_src[863] + ((unsigned_long_int_src[863] >> 5) / 0x1b) * -0x360;
+  unsigned_long_int_dest[863] = unsigned_long_int_src[863] % 0x360;
   unsigned_long_int_dest[864] = unsigned_long_int_src[864] % 0x361;
   unsigned_long_int_dest[865] = unsigned_long_int_src[865] % 0x362;
   unsigned_long_int_dest[866] = unsigned_long_int_src[866] % 0x363;
-  unsigned_long_int_dest[867] =
-       unsigned_long_int_src[867] + ((unsigned_long_int_src[867] >> 2) / 0xd9) * -0x364;
+  unsigned_long_int_dest[867] = unsigned_long_int_src[867] % 0x364;
   unsigned_long_int_dest[868] = unsigned_long_int_src[868] % 0x365;
   unsigned_long_int_dest[869] = unsigned_long_int_src[869] % 0x366;
   unsigned_long_int_dest[870] = unsigned_long_int_src[870] % 0x367;
-  unsigned_long_int_dest[871] =
-       unsigned_long_int_src[871] + ((unsigned_long_int_src[871] >> 3) / 0x6d) * -0x368;
+  unsigned_long_int_dest[871] = unsigned_long_int_src[871] % 0x368;
   unsigned_long_int_dest[872] = unsigned_long_int_src[872] % 0x369;
   unsigned_long_int_dest[873] = unsigned_long_int_src[873] % 0x36a;
   unsigned_long_int_dest[874] = unsigned_long_int_src[874] % 0x36b;
-  unsigned_long_int_dest[875] =
-       unsigned_long_int_src[875] + ((unsigned_long_int_src[875] >> 2) / 0xdb) * -0x36c;
+  unsigned_long_int_dest[875] = unsigned_long_int_src[875] % 0x36c;
   unsigned_long_int_dest[876] = unsigned_long_int_src[876] % 0x36d;
   unsigned_long_int_dest[877] = unsigned_long_int_src[877] % 0x36e;
   unsigned_long_int_dest[878] = unsigned_long_int_src[878] % 0x36f;
-  unsigned_long_int_dest[879] =
-       unsigned_long_int_src[879] + ((unsigned_long_int_src[879] >> 4) / 0x37) * -0x370;
+  unsigned_long_int_dest[879] = unsigned_long_int_src[879] % 0x370;
   unsigned_long_int_dest[880] = unsigned_long_int_src[880] % 0x371;
   unsigned_long_int_dest[881] = unsigned_long_int_src[881] % 0x372;
   unsigned_long_int_dest[882] = unsigned_long_int_src[882] % 0x373;
-  unsigned_long_int_dest[883] =
-       unsigned_long_int_src[883] + ((unsigned_long_int_src[883] >> 2) / 0xdd) * -0x374;
+  unsigned_long_int_dest[883] = unsigned_long_int_src[883] % 0x374;
   unsigned_long_int_dest[884] = unsigned_long_int_src[884] % 0x375;
-  unsigned_long_int_dest[885] =
-       unsigned_long_int_src[885] + ((unsigned_long_int_src[885] >> 1) / 0x1bb) * -0x376;
+  unsigned_long_int_dest[885] = unsigned_long_int_src[885] % 0x376;
   unsigned_long_int_dest[886] = unsigned_long_int_src[886] % 0x377;
-  unsigned_long_int_dest[887] =
-       unsigned_long_int_src[887] + ((unsigned_long_int_src[887] >> 3) / 0x6f) * -0x378;
+  unsigned_long_int_dest[887] = unsigned_long_int_src[887] % 0x378;
   unsigned_long_int_dest[888] = unsigned_long_int_src[888] % 0x379;
   unsigned_long_int_dest[889] = unsigned_long_int_src[889] % 0x37a;
   unsigned_long_int_dest[890] = unsigned_long_int_src[890] % 0x37b;
-  unsigned_long_int_dest[891] =
-       unsigned_long_int_src[891] + ((unsigned_long_int_src[891] >> 2) / 0xdf) * -0x37c;
+  unsigned_long_int_dest[891] = unsigned_long_int_src[891] % 0x37c;
   unsigned_long_int_dest[892] = unsigned_long_int_src[892] % 0x37d;
   unsigned_long_int_dest[893] = unsigned_long_int_src[893] % 0x37e;
   unsigned_long_int_dest[894] = unsigned_long_int_src[894] % 0x37f;
-  unsigned_long_int_dest[895] =
-       unsigned_long_int_src[895] + ((unsigned_long_int_src[895] >> 7) / 7) * -0x380;
+  unsigned_long_int_dest[895] = unsigned_long_int_src[895] % 0x380;
   unsigned_long_int_dest[896] = unsigned_long_int_src[896] % 0x381;
   unsigned_long_int_dest[897] = unsigned_long_int_src[897] % 0x382;
   unsigned_long_int_dest[898] = unsigned_long_int_src[898] % 899;
   unsigned_long_int_dest[899] = unsigned_long_int_src[899] % 900;
   unsigned_long_int_dest[900] = unsigned_long_int_src[900] % 0x385;
-  unsigned_long_int_dest[901] =
-       unsigned_long_int_src[901] + ((unsigned_long_int_src[901] >> 1) / 0x1c3) * -0x386;
+  unsigned_long_int_dest[901] = unsigned_long_int_src[901] % 0x386;
   unsigned_long_int_dest[902] = unsigned_long_int_src[902] % 0x387;
-  unsigned_long_int_dest[903] =
-       unsigned_long_int_src[903] + ((unsigned_long_int_src[903] >> 3) / 0x71) * -0x388;
+  unsigned_long_int_dest[903] = unsigned_long_int_src[903] % 0x388;
   unsigned_long_int_dest[904] = unsigned_long_int_src[904] % 0x389;
-  unsigned_long_int_dest[905] =
-       unsigned_long_int_src[905] + ((unsigned_long_int_src[905] >> 1) / 0x1c5) * -0x38a;
+  unsigned_long_int_dest[905] = unsigned_long_int_src[905] % 0x38a;
   unsigned_long_int_dest[906] = unsigned_long_int_src[906] % 0x38b;
-  unsigned_long_int_dest[907] =
-       unsigned_long_int_src[907] + ((unsigned_long_int_src[907] >> 2) / 0xe3) * -0x38c;
+  unsigned_long_int_dest[907] = unsigned_long_int_src[907] % 0x38c;
   unsigned_long_int_dest[908] = unsigned_long_int_src[908] % 0x38d;
-  unsigned_long_int_dest[909] =
-       unsigned_long_int_src[909] + ((unsigned_long_int_src[909] >> 1) / 0x1c7) * -0x38e;
+  unsigned_long_int_dest[909] = unsigned_long_int_src[909] % 0x38e;
   unsigned_long_int_dest[910] = unsigned_long_int_src[910] % 0x38f;
-  unsigned_long_int_dest[911] =
-       unsigned_long_int_src[911] + ((unsigned_long_int_src[911] >> 4) / 0x39) * -0x390;
+  unsigned_long_int_dest[911] = unsigned_long_int_src[911] % 0x390;
   unsigned_long_int_dest[912] = unsigned_long_int_src[912] % 0x391;
   unsigned_long_int_dest[913] = unsigned_long_int_src[913] % 0x392;
   unsigned_long_int_dest[914] = unsigned_long_int_src[914] % 0x393;
@@ -44762,33 +42357,27 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[916] = unsigned_long_int_src[916] % 0x395;
   unsigned_long_int_dest[917] = unsigned_long_int_src[917] % 0x396;
   unsigned_long_int_dest[918] = unsigned_long_int_src[918] % 0x397;
-  unsigned_long_int_dest[919] =
-       unsigned_long_int_src[919] + ((unsigned_long_int_src[919] >> 3) / 0x73) * -0x398;
+  unsigned_long_int_dest[919] = unsigned_long_int_src[919] % 0x398;
   unsigned_long_int_dest[920] = unsigned_long_int_src[920] % 0x399;
   unsigned_long_int_dest[921] = unsigned_long_int_src[921] % 0x39a;
   unsigned_long_int_dest[922] = unsigned_long_int_src[922] % 0x39b;
-  unsigned_long_int_dest[923] =
-       unsigned_long_int_src[923] + ((unsigned_long_int_src[923] >> 2) / 0xe7) * -0x39c;
+  unsigned_long_int_dest[923] = unsigned_long_int_src[923] % 0x39c;
   unsigned_long_int_dest[924] = unsigned_long_int_src[924] % 0x39d;
   unsigned_long_int_dest[925] = unsigned_long_int_src[925] % 0x39e;
   unsigned_long_int_dest[926] = unsigned_long_int_src[926] % 0x39f;
   unsigned_long_int_dest[927] = unsigned_long_int_src[927] % 0x3a0;
   unsigned_long_int_dest[928] = unsigned_long_int_src[928] % 0x3a1;
-  unsigned_long_int_dest[929] =
-       unsigned_long_int_src[929] + ((unsigned_long_int_src[929] >> 1) / 0x1d1) * -0x3a2;
+  unsigned_long_int_dest[929] = unsigned_long_int_src[929] % 0x3a2;
   unsigned_long_int_dest[930] = unsigned_long_int_src[930] % 0x3a3;
-  unsigned_long_int_dest[931] =
-       unsigned_long_int_src[931] + ((unsigned_long_int_src[931] >> 2) / 0xe9) * -0x3a4;
+  unsigned_long_int_dest[931] = unsigned_long_int_src[931] % 0x3a4;
   unsigned_long_int_dest[932] = unsigned_long_int_src[932] % 0x3a5;
   unsigned_long_int_dest[933] = unsigned_long_int_src[933] % 0x3a6;
   unsigned_long_int_dest[934] = unsigned_long_int_src[934] % 0x3a7;
-  unsigned_long_int_dest[935] =
-       unsigned_long_int_src[935] + ((unsigned_long_int_src[935] >> 3) / 0x75) * -0x3a8;
+  unsigned_long_int_dest[935] = unsigned_long_int_src[935] % 0x3a8;
   unsigned_long_int_dest[936] = unsigned_long_int_src[936] % 0x3a9;
   unsigned_long_int_dest[937] = unsigned_long_int_src[937] % 0x3aa;
   unsigned_long_int_dest[938] = unsigned_long_int_src[938] % 0x3ab;
-  unsigned_long_int_dest[939] =
-       unsigned_long_int_src[939] + ((unsigned_long_int_src[939] >> 2) / 0xeb) * -0x3ac;
+  unsigned_long_int_dest[939] = unsigned_long_int_src[939] % 0x3ac;
   unsigned_long_int_dest[940] = unsigned_long_int_src[940] % 0x3ad;
   unsigned_long_int_dest[941] = unsigned_long_int_src[941] % 0x3ae;
   unsigned_long_int_dest[942] = unsigned_long_int_src[942] % 0x3af;
@@ -44796,35 +42385,29 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[944] = unsigned_long_int_src[944] % 0x3b1;
   unsigned_long_int_dest[945] = unsigned_long_int_src[945] % 0x3b2;
   unsigned_long_int_dest[946] = unsigned_long_int_src[946] % 0x3b3;
-  unsigned_long_int_dest[947] =
-       unsigned_long_int_src[947] + ((unsigned_long_int_src[947] >> 2) / 0xed) * -0x3b4;
+  unsigned_long_int_dest[947] = unsigned_long_int_src[947] % 0x3b4;
   unsigned_long_int_dest[948] = unsigned_long_int_src[948] % 0x3b5;
   unsigned_long_int_dest[949] = unsigned_long_int_src[949] % 0x3b6;
   unsigned_long_int_dest[950] = unsigned_long_int_src[950] % 0x3b7;
   unsigned_long_int_dest[951] = unsigned_long_int_src[951] % 0x3b8;
   unsigned_long_int_dest[952] = unsigned_long_int_src[952] % 0x3b9;
-  unsigned_long_int_dest[953] =
-       unsigned_long_int_src[953] + ((unsigned_long_int_src[953] >> 1) / 0x1dd) * -0x3ba;
+  unsigned_long_int_dest[953] = unsigned_long_int_src[953] % 0x3ba;
   unsigned_long_int_dest[954] = unsigned_long_int_src[954] % 0x3bb;
   unsigned_long_int_dest[955] = unsigned_long_int_src[955] % 0x3bc;
   unsigned_long_int_dest[956] = unsigned_long_int_src[956] % 0x3bd;
-  unsigned_long_int_dest[957] =
-       unsigned_long_int_src[957] + ((unsigned_long_int_src[957] >> 1) / 0x1df) * -0x3be;
+  unsigned_long_int_dest[957] = unsigned_long_int_src[957] % 0x3be;
   unsigned_long_int_dest[958] = unsigned_long_int_src[958] % 0x3bf;
   unsigned_long_int_dest[959] = unsigned_long_int_src[959] % 0x3c0;
   unsigned_long_int_dest[960] = unsigned_long_int_src[960] % 0x3c1;
-  unsigned_long_int_dest[961] =
-       unsigned_long_int_src[961] + ((unsigned_long_int_src[961] >> 1) / 0x1e1) * -0x3c2;
+  unsigned_long_int_dest[961] = unsigned_long_int_src[961] % 0x3c2;
   unsigned_long_int_dest[962] = unsigned_long_int_src[962] % 0x3c3;
   unsigned_long_int_dest[963] = unsigned_long_int_src[963] % 0x3c4;
   unsigned_long_int_dest[964] = unsigned_long_int_src[964] % 0x3c5;
   unsigned_long_int_dest[965] = unsigned_long_int_src[965] % 0x3c6;
   unsigned_long_int_dest[966] = unsigned_long_int_src[966] % 0x3c7;
-  unsigned_long_int_dest[967] =
-       unsigned_long_int_src[967] + ((unsigned_long_int_src[967] >> 3) / 0x79) * -0x3c8;
+  unsigned_long_int_dest[967] = unsigned_long_int_src[967] % 0x3c8;
   unsigned_long_int_dest[968] = unsigned_long_int_src[968] % 0x3c9;
-  unsigned_long_int_dest[969] =
-       unsigned_long_int_src[969] + ((unsigned_long_int_src[969] >> 1) / 0x1e5) * -0x3ca;
+  unsigned_long_int_dest[969] = unsigned_long_int_src[969] % 0x3ca;
   unsigned_long_int_dest[970] = unsigned_long_int_src[970] % 0x3cb;
   unsigned_long_int_dest[971] = unsigned_long_int_src[971] % 0x3cc;
   unsigned_long_int_dest[972] = unsigned_long_int_src[972] % 0x3cd;
@@ -44832,32 +42415,25 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[974] = unsigned_long_int_src[974] % 0x3cf;
   unsigned_long_int_dest[975] = unsigned_long_int_src[975] % 0x3d0;
   unsigned_long_int_dest[976] = unsigned_long_int_src[976] % 0x3d1;
-  unsigned_long_int_dest[977] =
-       unsigned_long_int_src[977] + ((unsigned_long_int_src[977] >> 1) / 0x1e9) * -0x3d2;
+  unsigned_long_int_dest[977] = unsigned_long_int_src[977] % 0x3d2;
   unsigned_long_int_dest[978] = unsigned_long_int_src[978] % 0x3d3;
-  unsigned_long_int_dest[979] =
-       unsigned_long_int_src[979] + ((unsigned_long_int_src[979] >> 2) / 0xf5) * -0x3d4;
+  unsigned_long_int_dest[979] = unsigned_long_int_src[979] % 0x3d4;
   unsigned_long_int_dest[980] = unsigned_long_int_src[980] % 0x3d5;
-  unsigned_long_int_dest[981] =
-       unsigned_long_int_src[981] + ((unsigned_long_int_src[981] >> 1) / 0x1eb) * -0x3d6;
+  unsigned_long_int_dest[981] = unsigned_long_int_src[981] % 0x3d6;
   unsigned_long_int_dest[982] = unsigned_long_int_src[982] % 0x3d7;
-  unsigned_long_int_dest[983] =
-       unsigned_long_int_src[983] + ((unsigned_long_int_src[983] >> 3) / 0x7b) * -0x3d8;
+  unsigned_long_int_dest[983] = unsigned_long_int_src[983] % 0x3d8;
   unsigned_long_int_dest[984] = unsigned_long_int_src[984] % 0x3d9;
   unsigned_long_int_dest[985] = unsigned_long_int_src[985] % 0x3da;
   unsigned_long_int_dest[986] = unsigned_long_int_src[986] % 0x3db;
-  unsigned_long_int_dest[987] =
-       unsigned_long_int_src[987] + ((unsigned_long_int_src[987] >> 2) / 0xf7) * -0x3dc;
+  unsigned_long_int_dest[987] = unsigned_long_int_src[987] % 0x3dc;
   unsigned_long_int_dest[988] = unsigned_long_int_src[988] % 0x3dd;
   unsigned_long_int_dest[989] = unsigned_long_int_src[989] % 0x3de;
   unsigned_long_int_dest[990] = unsigned_long_int_src[990] % 0x3df;
-  unsigned_long_int_dest[991] =
-       unsigned_long_int_src[991] + ((unsigned_long_int_src[991] >> 5) / 0x1f) * -0x3e0;
+  unsigned_long_int_dest[991] = unsigned_long_int_src[991] % 0x3e0;
   unsigned_long_int_dest[992] = unsigned_long_int_src[992] % 0x3e1;
   unsigned_long_int_dest[993] = unsigned_long_int_src[993] % 0x3e2;
   unsigned_long_int_dest[994] = unsigned_long_int_src[994] % 0x3e3;
-  unsigned_long_int_dest[995] =
-       unsigned_long_int_src[995] + ((unsigned_long_int_src[995] >> 2) / 0xf9) * -0x3e4;
+  unsigned_long_int_dest[995] = unsigned_long_int_src[995] % 0x3e4;
   unsigned_long_int_dest[996] = unsigned_long_int_src[996] % 0x3e5;
   unsigned_long_int_dest[997] = unsigned_long_int_src[997] % 0x3e6;
   unsigned_long_int_dest[998] = unsigned_long_int_src[998] % 999;
@@ -44869,31 +42445,29 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[1004] = unsigned_long_int_src[1004] % 0x3ed;
   unsigned_long_int_dest[1005] = unsigned_long_int_src[1005] % 0x3ee;
   unsigned_long_int_dest[1006] = unsigned_long_int_src[1006] % 0x3ef;
-  unsigned_long_int_dest[1007] =
-       unsigned_long_int_src[1007] + ((unsigned_long_int_src[1007] >> 4) / 0x3f) * -0x3f0;
+  unsigned_long_int_dest[1007] = unsigned_long_int_src[1007] % 0x3f0;
   unsigned_long_int_dest[1008] = unsigned_long_int_src[1008] % 0x3f1;
-  unsigned_long_int_dest[1009] =
-       unsigned_long_int_src[1009] + ((unsigned_long_int_src[1009] >> 1) / 0x1f9) * -0x3f2;
+  unsigned_long_int_dest[1009] = unsigned_long_int_src[1009] % 0x3f2;
   unsigned_long_int_dest[1010] = unsigned_long_int_src[1010] % 0x3f3;
   unsigned_long_int_dest[1011] = unsigned_long_int_src[1011] % 0x3f4;
   unsigned_long_int_dest[1012] = unsigned_long_int_src[1012] % 0x3f5;
   unsigned_long_int_dest[1013] = unsigned_long_int_src[1013] % 0x3f6;
   unsigned_long_int_dest[1014] = unsigned_long_int_src[1014] % 0x3f7;
-  unsigned_long_int_dest[1015] =
-       unsigned_long_int_src[1015] + ((unsigned_long_int_src[1015] >> 3) / 0x7f) * -0x3f8;
+  unsigned_long_int_dest[1015] = unsigned_long_int_src[1015] % 0x3f8;
   unsigned_long_int_dest[1016] = unsigned_long_int_src[1016] % 0x3f9;
   unsigned_long_int_dest[1017] = unsigned_long_int_src[1017] % 0x3fa;
   unsigned_long_int_dest[1018] = unsigned_long_int_src[1018] % 0x3fb;
   unsigned_long_int_dest[1019] = unsigned_long_int_src[1019] % 0x3fc;
   unsigned_long_int_dest[1020] = unsigned_long_int_src[1020] % 0x3fd;
-  unsigned_long_int_dest[1021] =
-       unsigned_long_int_src[1021] + ((unsigned_long_int_src[1021] >> 1) / 0x1ff) * -0x3fe;
+  unsigned_long_int_dest[1021] = unsigned_long_int_src[1021] % 0x3fe;
   unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] % 0x3ff;
   unsigned_long_int_dest[1023] = unsigned_long_int_src[1023] & 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_long_add(void)
 
@@ -47975,20 +45549,22 @@ void signed_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_long_mult(void)
 
 {
   signed_long_long_dest[0] = signed_long_long_src[0];
-  signed_long_long_dest[1]._0_4_ = (uint)signed_long_long_src[1] * 2;
   signed_long_long_dest[1]._4_4_ =
        signed_long_long_src[1]._4_4_ << 1 | (uint)signed_long_long_src[1] >> 0x1f;
+  signed_long_long_dest[1]._0_4_ = (uint)signed_long_long_src[1] * 2;
   signed_long_long_dest[2]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[2] * 3);
   signed_long_long_dest[2]._4_4_ =
        signed_long_long_src[2]._4_4_ * 3 +
        (int)((ulonglong)(uint)signed_long_long_src[2] * 3 >> 0x20);
-  signed_long_long_dest[3]._0_4_ = (uint)signed_long_long_src[3] << 2;
   signed_long_long_dest[3]._4_4_ =
        signed_long_long_src[3]._4_4_ << 2 | (uint)signed_long_long_src[3] >> 0x1e;
+  signed_long_long_dest[3]._0_4_ = (uint)signed_long_long_src[3] << 2;
   signed_long_long_dest[4]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[4] * 5);
   signed_long_long_dest[4]._4_4_ =
        signed_long_long_src[4]._4_4_ * 5 +
@@ -48001,9 +45577,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[6]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[6] * 7 >> 0x20) +
        signed_long_long_src[6]._4_4_ * 7;
-  signed_long_long_dest[7]._0_4_ = (uint)signed_long_long_src[7] << 3;
   signed_long_long_dest[7]._4_4_ =
        signed_long_long_src[7]._4_4_ << 3 | (uint)signed_long_long_src[7] >> 0x1d;
+  signed_long_long_dest[7]._0_4_ = (uint)signed_long_long_src[7] << 3;
   signed_long_long_dest[8]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[8] * 9);
   signed_long_long_dest[8]._4_4_ =
        signed_long_long_src[8]._4_4_ * 9 +
@@ -48032,9 +45608,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[14]._4_4_ =
        signed_long_long_src[14]._4_4_ * 0xf +
        (int)((ulonglong)(uint)signed_long_long_src[14] * 0xf >> 0x20);
-  signed_long_long_dest[15]._0_4_ = (uint)signed_long_long_src[15] << 4;
   signed_long_long_dest[15]._4_4_ =
        signed_long_long_src[15]._4_4_ << 4 | (uint)signed_long_long_src[15] >> 0x1c;
+  signed_long_long_dest[15]._0_4_ = (uint)signed_long_long_src[15] << 4;
   signed_long_long_dest[16]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[16] * 0x11);
   signed_long_long_dest[16]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[16] * 0x11 >> 0x20) +
@@ -48095,9 +45671,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[30]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[30] * 0x1f >> 0x20) +
        signed_long_long_src[30]._4_4_ * 0x1f;
-  signed_long_long_dest[31]._0_4_ = (uint)signed_long_long_src[31] << 5;
   signed_long_long_dest[31]._4_4_ =
        signed_long_long_src[31]._4_4_ << 5 | (uint)signed_long_long_src[31] >> 0x1b;
+  signed_long_long_dest[31]._0_4_ = (uint)signed_long_long_src[31] << 5;
   signed_long_long_dest[32]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[32] * 0x21);
   signed_long_long_dest[32]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[32] * 0x21 >> 0x20) +
@@ -48222,9 +45798,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[62]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[62] * 0x3f >> 0x20) +
        signed_long_long_src[62]._4_4_ * 0x3f;
-  signed_long_long_dest[63]._0_4_ = (uint)signed_long_long_src[63] << 6;
   signed_long_long_dest[63]._4_4_ =
        signed_long_long_src[63]._4_4_ << 6 | (uint)signed_long_long_src[63] >> 0x1a;
+  signed_long_long_dest[63]._0_4_ = (uint)signed_long_long_src[63] << 6;
   signed_long_long_dest[64]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[64] * 0x41);
   signed_long_long_dest[64]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[64] * 0x41 >> 0x20) +
@@ -48477,9 +46053,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[126]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[126] * 0x7f >> 0x20) +
        signed_long_long_src[126]._4_4_ * 0x7f;
-  signed_long_long_dest[127]._0_4_ = (uint)signed_long_long_src[127] << 7;
   signed_long_long_dest[127]._4_4_ =
        signed_long_long_src[127]._4_4_ << 7 | (uint)signed_long_long_src[127] >> 0x19;
+  signed_long_long_dest[127]._0_4_ = (uint)signed_long_long_src[127] << 7;
   signed_long_long_dest[128]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[128] * 0x81);
   signed_long_long_dest[128]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[128] * 0x81 >> 0x20) +
@@ -48988,9 +46564,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[254]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[254] * 0xff >> 0x20) +
        signed_long_long_src[254]._4_4_ * 0xff;
-  signed_long_long_dest[255]._0_4_ = (uint)signed_long_long_src[255] << 8;
   signed_long_long_dest[255]._4_4_ =
        signed_long_long_src[255]._4_4_ << 8 | (uint)signed_long_long_src[255] >> 0x18;
+  signed_long_long_dest[255]._0_4_ = (uint)signed_long_long_src[255] << 8;
   signed_long_long_dest[256]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[256] * 0x101);
   signed_long_long_dest[256]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[256] * 0x101 >> 0x20) +
@@ -50011,9 +47587,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[510]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[510] * 0x1ff >> 0x20) +
        signed_long_long_src[510]._4_4_ * 0x1ff;
-  signed_long_long_dest[511]._0_4_ = (uint)signed_long_long_src[511] << 9;
   signed_long_long_dest[511]._4_4_ =
        signed_long_long_src[511]._4_4_ << 9 | (uint)signed_long_long_src[511] >> 0x17;
+  signed_long_long_dest[511]._0_4_ = (uint)signed_long_long_src[511] << 9;
   signed_long_long_dest[512]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[512] * 0x201);
   signed_long_long_dest[512]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[512] * 0x201 >> 0x20) +
@@ -52058,9 +49634,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[1022]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[1022] * 0x3ff >> 0x20) +
        signed_long_long_src[1022]._4_4_ * 0x3ff;
-  signed_long_long_dest[1023]._0_4_ = (uint)signed_long_long_src[1023] << 10;
   signed_long_long_dest[1023]._4_4_ =
        signed_long_long_src[1023]._4_4_ << 10 | (uint)signed_long_long_src[1023] >> 0x16;
+  signed_long_long_dest[1023]._0_4_ = (uint)signed_long_long_src[1023] << 10;
   return;
 }
 
@@ -52077,6 +49653,8 @@ Cause: Exception while decompiling 0811cbe0: process: timeout
 
 */
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_long_add(void)
 
@@ -55158,20 +52736,22 @@ void unsigned_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_long_mult(void)
 
 {
   unsigned_long_long_dest[0] = unsigned_long_long_src[0];
-  unsigned_long_long_dest[1]._0_4_ = (uint)unsigned_long_long_src[1] * 2;
   unsigned_long_long_dest[1]._4_4_ =
        unsigned_long_long_src[1]._4_4_ << 1 | (uint)unsigned_long_long_src[1] >> 0x1f;
+  unsigned_long_long_dest[1]._0_4_ = (uint)unsigned_long_long_src[1] * 2;
   unsigned_long_long_dest[2]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[2] * 3);
   unsigned_long_long_dest[2]._4_4_ =
        unsigned_long_long_src[2]._4_4_ * 3 +
        (int)((ulonglong)(uint)unsigned_long_long_src[2] * 3 >> 0x20);
-  unsigned_long_long_dest[3]._0_4_ = (uint)unsigned_long_long_src[3] << 2;
   unsigned_long_long_dest[3]._4_4_ =
        unsigned_long_long_src[3]._4_4_ << 2 | (uint)unsigned_long_long_src[3] >> 0x1e;
+  unsigned_long_long_dest[3]._0_4_ = (uint)unsigned_long_long_src[3] << 2;
   unsigned_long_long_dest[4]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[4] * 5);
   unsigned_long_long_dest[4]._4_4_ =
        unsigned_long_long_src[4]._4_4_ * 5 +
@@ -55184,9 +52764,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[6]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[6] * 7 >> 0x20) +
        unsigned_long_long_src[6]._4_4_ * 7;
-  unsigned_long_long_dest[7]._0_4_ = (uint)unsigned_long_long_src[7] << 3;
   unsigned_long_long_dest[7]._4_4_ =
        unsigned_long_long_src[7]._4_4_ << 3 | (uint)unsigned_long_long_src[7] >> 0x1d;
+  unsigned_long_long_dest[7]._0_4_ = (uint)unsigned_long_long_src[7] << 3;
   unsigned_long_long_dest[8]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[8] * 9);
   unsigned_long_long_dest[8]._4_4_ =
        unsigned_long_long_src[8]._4_4_ * 9 +
@@ -55215,9 +52795,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[14]._4_4_ =
        unsigned_long_long_src[14]._4_4_ * 0xf +
        (int)((ulonglong)(uint)unsigned_long_long_src[14] * 0xf >> 0x20);
-  unsigned_long_long_dest[15]._0_4_ = (uint)unsigned_long_long_src[15] << 4;
   unsigned_long_long_dest[15]._4_4_ =
        unsigned_long_long_src[15]._4_4_ << 4 | (uint)unsigned_long_long_src[15] >> 0x1c;
+  unsigned_long_long_dest[15]._0_4_ = (uint)unsigned_long_long_src[15] << 4;
   unsigned_long_long_dest[16]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[16] * 0x11);
   unsigned_long_long_dest[16]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[16] * 0x11 >> 0x20) +
@@ -55278,9 +52858,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[30]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[30] * 0x1f >> 0x20) +
        unsigned_long_long_src[30]._4_4_ * 0x1f;
-  unsigned_long_long_dest[31]._0_4_ = (uint)unsigned_long_long_src[31] << 5;
   unsigned_long_long_dest[31]._4_4_ =
        unsigned_long_long_src[31]._4_4_ << 5 | (uint)unsigned_long_long_src[31] >> 0x1b;
+  unsigned_long_long_dest[31]._0_4_ = (uint)unsigned_long_long_src[31] << 5;
   unsigned_long_long_dest[32]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[32] * 0x21);
   unsigned_long_long_dest[32]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[32] * 0x21 >> 0x20) +
@@ -55405,9 +52985,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[62]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[62] * 0x3f >> 0x20) +
        unsigned_long_long_src[62]._4_4_ * 0x3f;
-  unsigned_long_long_dest[63]._0_4_ = (uint)unsigned_long_long_src[63] << 6;
   unsigned_long_long_dest[63]._4_4_ =
        unsigned_long_long_src[63]._4_4_ << 6 | (uint)unsigned_long_long_src[63] >> 0x1a;
+  unsigned_long_long_dest[63]._0_4_ = (uint)unsigned_long_long_src[63] << 6;
   unsigned_long_long_dest[64]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[64] * 0x41);
   unsigned_long_long_dest[64]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[64] * 0x41 >> 0x20) +
@@ -55660,9 +53240,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[126]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[126] * 0x7f >> 0x20) +
        unsigned_long_long_src[126]._4_4_ * 0x7f;
-  unsigned_long_long_dest[127]._0_4_ = (uint)unsigned_long_long_src[127] << 7;
   unsigned_long_long_dest[127]._4_4_ =
        unsigned_long_long_src[127]._4_4_ << 7 | (uint)unsigned_long_long_src[127] >> 0x19;
+  unsigned_long_long_dest[127]._0_4_ = (uint)unsigned_long_long_src[127] << 7;
   unsigned_long_long_dest[128]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[128] * 0x81);
   unsigned_long_long_dest[128]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[128] * 0x81 >> 0x20) +
@@ -56171,9 +53751,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[254]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[254] * 0xff >> 0x20) +
        unsigned_long_long_src[254]._4_4_ * 0xff;
-  unsigned_long_long_dest[255]._0_4_ = (uint)unsigned_long_long_src[255] << 8;
   unsigned_long_long_dest[255]._4_4_ =
        unsigned_long_long_src[255]._4_4_ << 8 | (uint)unsigned_long_long_src[255] >> 0x18;
+  unsigned_long_long_dest[255]._0_4_ = (uint)unsigned_long_long_src[255] << 8;
   unsigned_long_long_dest[256]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[256] * 0x101);
   unsigned_long_long_dest[256]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[256] * 0x101 >> 0x20) +
@@ -57194,9 +54774,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[510]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[510] * 0x1ff >> 0x20) +
        unsigned_long_long_src[510]._4_4_ * 0x1ff;
-  unsigned_long_long_dest[511]._0_4_ = (uint)unsigned_long_long_src[511] << 9;
   unsigned_long_long_dest[511]._4_4_ =
        unsigned_long_long_src[511]._4_4_ << 9 | (uint)unsigned_long_long_src[511] >> 0x17;
+  unsigned_long_long_dest[511]._0_4_ = (uint)unsigned_long_long_src[511] << 9;
   unsigned_long_long_dest[512]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[512] * 0x201);
   unsigned_long_long_dest[512]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[512] * 0x201 >> 0x20) +
@@ -59264,9 +56844,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[1022]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[1022] * 0x3ff >> 0x20) +
        unsigned_long_long_src[1022]._4_4_ * 0x3ff;
-  unsigned_long_long_dest[1023]._0_4_ = (uint)unsigned_long_long_src[1023] << 10;
   unsigned_long_long_dest[1023]._4_4_ =
        unsigned_long_long_src[1023]._4_4_ << 10 | (uint)unsigned_long_long_src[1023] >> 0x16;
+  unsigned_long_long_dest[1023]._0_4_ = (uint)unsigned_long_long_src[1023] << 10;
   return;
 }
 
@@ -59283,6 +56863,8 @@ Cause: Exception while decompiling 0813f6e0: process: timeout
 
 */
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -59387,14 +56969,14 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; local_28 >> uVar9 == 0; uVar9 = uVar9 - 1) {
       }
     }
-    uVar9 = uVar9 ^ 0x1f;
-    if (uVar9 == 0) {
+    if ((uVar9 ^ 0x1f) == 0) {
+      uVar9 = 0;
       if ((local_28 < param_2) || (iVar6 = 0, local_2c <= param_1)) {
         iVar6 = 1;
       }
     }
     else {
-      bVar5 = (byte)uVar9;
+      bVar5 = (byte)(uVar9 ^ 0x1f);
       bVar7 = 0x20 - bVar5;
       uVar1 = (ulonglong)(local_2c >> (bVar7 & 0x1f) | local_28 << (bVar5 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar7 & 0x1f),
@@ -59423,19 +57005,18 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x081490b9)
+
 undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
-  byte bVar3;
-  uint uVar4;
+  byte bVar2;
+  uint uVar3;
+  byte bVar4;
   uint uVar5;
-  byte bVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  bool bVar10;
+  int iVar6;
+  bool bVar7;
   uint local_3c;
   uint local_38;
   int local_30;
@@ -59444,10 +57025,10 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   local_3c = param_3;
   local_38 = param_4;
   if ((int)param_2 < 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
     local_30 = -1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   if ((int)param_4 < 0) {
     local_3c = -param_3;
@@ -59468,44 +57049,40 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     param_1 = local_3c;
   }
   else if (local_38 <= param_2) {
-    uVar4 = 0x1f;
+    uVar3 = 0x1f;
     if (local_38 != 0) {
-      for (; local_38 >> uVar4 == 0; uVar4 = uVar4 - 1) {
+      for (; local_38 >> uVar3 == 0; uVar3 = uVar3 - 1) {
       }
     }
-    if ((uVar4 ^ 0x1f) == 0) {
+    if ((uVar3 ^ 0x1f) == 0) {
       if ((local_38 < param_2) || (local_3c <= param_1)) {
-        bVar10 = param_1 < local_3c;
+        bVar7 = param_1 < local_3c;
         param_1 = param_1 - local_3c;
-        param_2 = (param_2 - local_38) - (uint)bVar10;
+        param_2 = (param_2 - local_38) - (uint)bVar7;
       }
     }
     else {
-      bVar3 = (byte)(uVar4 ^ 0x1f);
-      bVar6 = 0x20 - bVar3;
-      uVar7 = local_3c >> (bVar6 & 0x1f) | local_38 << (bVar3 & 0x1f);
-      local_3c = local_3c << (bVar3 & 0x1f);
-      uVar4 = param_1 << (bVar3 & 0x1f);
-      uVar1 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_2 << (bVar3 & 0x1f) | param_1 >> (bVar6 & 0x1f));
-      uVar8 = (uint)(uVar1 % (ulonglong)uVar7);
-      lVar2 = (uVar1 / uVar7 & 0xffffffff) * (ulonglong)local_3c;
-      uVar9 = (uint)((ulonglong)lVar2 >> 0x20);
-      uVar5 = (uint)lVar2;
-      if ((uVar8 < uVar9) || ((uVar8 == uVar9 && (uVar4 < uVar5)))) {
-        bVar10 = uVar5 < local_3c;
-        uVar5 = uVar5 - local_3c;
-        uVar9 = (uVar9 - uVar7) - (uint)bVar10;
+      bVar2 = (byte)(uVar3 ^ 0x1f);
+      bVar4 = 0x20 - bVar2;
+      uVar5 = local_3c >> (bVar4 & 0x1f) | local_38 << (bVar2 & 0x1f);
+      local_3c = local_3c << (bVar2 & 0x1f);
+      uVar3 = param_1 << (bVar2 & 0x1f);
+      uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),
+                       param_2 << (bVar2 & 0x1f) | param_1 >> (bVar4 & 0x1f));
+      iVar6 = (int)(uVar1 % (ulonglong)uVar5);
+      uVar1 = (uVar1 / uVar5 & 0xffffffff) * (ulonglong)local_3c;
+      if (CONCAT44(iVar6,uVar3) < uVar1) {
+        uVar1 = uVar1 - CONCAT44(uVar5,local_3c);
       }
-      param_2 = (uVar8 - uVar9) - (uint)(uVar4 < uVar5);
-      param_1 = param_2 << (bVar6 & 0x1f) | uVar4 - uVar5 >> (bVar3 & 0x1f);
-      param_2 = param_2 >> (bVar3 & 0x1f);
+      param_2 = (iVar6 - (int)(uVar1 >> 0x20)) - (uint)(uVar3 < (uint)uVar1);
+      param_1 = param_2 << (bVar4 & 0x1f) | uVar3 - (uint)uVar1 >> (bVar2 & 0x1f);
+      param_2 = param_2 >> (bVar2 & 0x1f);
     }
   }
   if (local_30 != 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   return CONCAT44(param_2,param_1);
 }
@@ -59547,9 +57124,8 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; param_4 >> uVar6 == 0; uVar6 = uVar6 - 1) {
       }
     }
-    uVar6 = uVar6 ^ 0x1f;
-    if (uVar6 != 0) {
-      bVar5 = (byte)uVar6;
+    if ((uVar6 ^ 0x1f) != 0) {
+      bVar5 = (byte)(uVar6 ^ 0x1f);
       bVar8 = 0x20 - bVar5;
       uVar1 = (ulonglong)(param_4 << (bVar5 & 0x1f) | param_3 >> (bVar8 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar8 & 0x1f),
@@ -59564,6 +57140,7 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       }
       return (ulonglong)uVar6;
     }
+    uVar6 = 0;
     if ((param_4 < param_2) || (uVar7 = 0, param_3 <= param_1)) {
       uVar7 = 1;
     }
@@ -59573,66 +57150,60 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0814933a)
+
 ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
+  byte bVar2;
   byte bVar3;
-  byte bVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  bool bVar9;
+  uint uVar4;
+  int iVar5;
   uint local_28;
   
   local_28 = param_1;
   if (param_4 == 0) {
     if (param_2 < param_3) {
-      uVar5 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
+      uVar4 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
     }
     else {
       if (param_3 == 0) {
         param_3 = (uint)(1 / 0);
       }
-      uVar5 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
+      uVar4 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
                     (ulonglong)param_3);
     }
-    return (ulonglong)uVar5;
+    return (ulonglong)uVar4;
   }
   if (param_4 <= param_2) {
-    uVar5 = 0x1f;
+    uVar4 = 0x1f;
     if (param_4 != 0) {
-      for (; param_4 >> uVar5 == 0; uVar5 = uVar5 - 1) {
+      for (; param_4 >> uVar4 == 0; uVar4 = uVar4 - 1) {
       }
     }
-    if ((uVar5 ^ 0x1f) == 0) {
+    if ((uVar4 ^ 0x1f) == 0) {
       if ((param_4 < param_2) || (param_3 <= param_1)) {
         local_28 = param_1 - param_3;
         param_2 = (param_2 - param_4) - (uint)(param_1 < param_3);
       }
       return CONCAT44(param_2,local_28);
     }
-    bVar3 = (byte)(uVar5 ^ 0x1f);
-    bVar4 = 0x20 - bVar3;
-    uVar6 = param_3 >> (bVar4 & 0x1f) | param_4 << (bVar3 & 0x1f);
-    param_3 = param_3 << (bVar3 & 0x1f);
-    uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),param_1 >> (bVar4 & 0x1f) | param_2 << (bVar3 & 0x1f)
+    bVar2 = (byte)(uVar4 ^ 0x1f);
+    bVar3 = 0x20 - bVar2;
+    uVar4 = param_3 >> (bVar3 & 0x1f) | param_4 << (bVar2 & 0x1f);
+    param_3 = param_3 << (bVar2 & 0x1f);
+    uVar1 = CONCAT44(param_2 >> (bVar3 & 0x1f),param_1 >> (bVar3 & 0x1f) | param_2 << (bVar2 & 0x1f)
                     );
-    uVar7 = (uint)(uVar1 % (ulonglong)uVar6);
-    param_1 = param_1 << (bVar3 & 0x1f);
-    lVar2 = (uVar1 / uVar6 & 0xffffffff) * (ulonglong)param_3;
-    uVar8 = (uint)((ulonglong)lVar2 >> 0x20);
-    uVar5 = (uint)lVar2;
-    if ((uVar7 < uVar8) || ((uVar7 == uVar8 && (param_1 < uVar5)))) {
-      bVar9 = uVar5 < param_3;
-      uVar5 = uVar5 - param_3;
-      uVar8 = (uVar8 - uVar6) - (uint)bVar9;
+    iVar5 = (int)(uVar1 % (ulonglong)uVar4);
+    param_1 = param_1 << (bVar2 & 0x1f);
+    uVar1 = (uVar1 / uVar4 & 0xffffffff) * (ulonglong)param_3;
+    if (CONCAT44(iVar5,param_1) < uVar1) {
+      uVar1 = uVar1 - CONCAT44(uVar4,param_3);
     }
-    uVar8 = (uVar7 - uVar8) - (uint)(param_1 < uVar5);
-    return CONCAT44(uVar8 >> (bVar3 & 0x1f),
-                    uVar8 << (bVar4 & 0x1f) | param_1 - uVar5 >> (bVar3 & 0x1f));
+    uVar4 = (iVar5 - (int)(uVar1 >> 0x20)) - (uint)(param_1 < (uint)uVar1);
+    return CONCAT44(uVar4 >> (bVar2 & 0x1f),
+                    uVar4 << (bVar3 & 0x1f) | param_1 - (uint)uVar1 >> (bVar2 & 0x1f));
   }
   return CONCAT44(param_2,param_1);
 }

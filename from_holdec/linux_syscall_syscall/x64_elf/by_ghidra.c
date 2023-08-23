@@ -109,7 +109,7 @@ struct Elf64_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(void)
+void processEntry entry(void)
 
 {
   syscall();

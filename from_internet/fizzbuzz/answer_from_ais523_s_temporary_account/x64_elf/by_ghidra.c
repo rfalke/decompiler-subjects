@@ -3,6 +3,9 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef unsigned char    undefined1;
+typedef unsigned int    undefined4;
+typedef unsigned long    undefined8;
 typedef unsigned short    word;
 typedef enum Elf_ProgramHeaderType {
     PT_NULL=0,
@@ -124,532 +127,171 @@ struct Elf64_Ehdr {
 // WARNING: Removing unreachable block (ram,0x00401a12)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(undefined8 param_1)
+void processEntry entry(void)
 
 {
   undefined (*pauVar1) [16];
-  uint *puVar2;
-  undefined auVar3 [16];
-  undefined auVar4 [16];
-  undefined uVar5;
-  int iVar6;
-  ulong uVar7;
+  undefined4 *puVar2;
+  uint *puVar3;
+  long lVar4;
+  undefined auVar5 [16];
+  undefined auVar6 [16];
+  undefined auVar7 [16];
   ulong uVar8;
   uint uVar9;
-  uint uVar10;
-  ulong uVar11;
-  undefined (*pauVar12) [32];
-  undefined (*pauVar13) [32];
-  undefined (*pauVar14) [32];
-  undefined (*pauVar15) [32];
-  undefined8 *puVar16;
-  undefined4 *puVar17;
-  undefined (*pauVar18) [32];
-  ulong uVar19;
-  ulong uVar20;
-  undefined8 uVar21;
-  undefined8 uVar22;
-  long lVar23;
-  undefined (*pauVar24) [32];
-  undefined (*pauVar25) [32];
-  ulong uVar26;
+  int iVar10;
+  undefined8 *puVar11;
+  undefined8 in_RDI;
+  int iVar12;
   undefined in_YMM0 [32];
-  undefined auVar27 [32];
-  undefined auVar28 [32];
-  undefined auVar29 [32];
-  undefined auVar30 [16];
-  undefined auVar31 [32];
-  undefined auVar32 [32];
-  undefined auVar33 [32];
-  undefined auVar34 [32];
-  undefined in_YMM5 [32];
-  undefined auVar35 [32];
-  undefined auVar36 [16];
-  undefined auVar37 [32];
-  undefined auVar38 [16];
-  undefined auVar39 [32];
-  undefined in_YMM9 [32];
-  undefined auVar40 [32];
-  undefined auVar41 [32];
-  undefined auVar42 [16];
-  undefined auVar43 [32];
-  undefined auVar44 [32];
+  undefined auVar13 [32];
+  undefined auVar14 [16];
+  undefined auVar15 [16];
+  undefined auVar16 [32];
+  undefined auVar17 [16];
   
-  auVar27 = vpand_avx2(in_YMM0,in_YMM0);
-  auVar42 = SUB3216(ascii_offset._0_32_,0);
-  puVar2 = (uint *)cpuid(0x80000000);
-  uVar9 = puVar2[3];
-  if (0x80000005 < *puVar2) {
-    lVar23 = cpuid(0x80000006);
-    uVar9 = *(uint *)(lVar23 + 0xc) >> 0x10;
+  auVar13 = vpand_avx2(in_YMM0,in_YMM0);
+  auVar17 = SUB3216(ascii_offset._0_32_,0);
+  auVar14 = SUB3216(_lineno_top_init,0);
+  puVar3 = (uint *)cpuid(0x80000000);
+  uVar9 = puVar3[3];
+  if (0x80000005 < *puVar3) {
+    lVar4 = cpuid(0x80000006);
+    uVar9 = *(uint *)(lVar4 + 0xc) >> 0x10;
     if (uVar9 != 0) {
-      uVar9 = uVar9 << 9;
-      uVar11 = (ulong)uVar9;
       syscall();
-      auVar37 = _lineno_top_init;
-      auVar39 = _endian_shuffle_init;
-      auVar29 = ram0x00402080;
-      auVar40 = _lineno_mid_base;
-      auVar41 = _lineno_top_max;
-      auVar43 = biascii_offset._0_32_;
-      auVar44 = _bascii_offset;
-      uVar7 = exit_on_error(SUB328(auVar27,0),1,0x407,uVar9);
-      if (uVar7 != uVar11) {
-        write_stderr();
-        inefficiently_write_as_hex();
-        write_stderr();
-        inefficiently_write_as_hex();
-        write_stderr();
-                    // WARNING: Subroutine does not return
-        exit(0x49);
-      }
-      syscall();
-      exit_on_error(0x800000,0x600000,0xe);
-      auVar30 = _second_phase_constants;
-      auVar27 = vmovdqu_avx(_fizzbuzz_intro);
-      _io_buffers = vmovdqu_avx(auVar27);
-      pauVar12 = (undefined (*) [32])&DAT_0080001e;
-      uVar26 = 2;
-      uVar7 = 6;
-      auVar27 = ZEXT1632(_line_number_init);
-      uVar19 = uVar7;
-      do {
+      auVar16 = _endian_shuffle_init;
+      uVar8 = exit_on_error(auVar13._0_8_,1,0x407,uVar9 << 9);
+      if (uVar8 == uVar9 << 9) {
+        syscall();
+        exit_on_error(0x800000,0x600000,0xe);
+        auVar7 = _second_phase_constants;
+        auVar13 = vmovdqu_avx(_fizzbuzz_intro);
+        _io_buffers = vmovdqu_avx(auVar13);
+        puVar11 = &DAT_0080001e;
+        uVar8 = 2;
+        iVar10 = 6;
+        auVar13 = ZEXT1632(_line_number_init);
+        iVar12 = iVar10;
         do {
-          *(undefined8 *)*pauVar12 = 0xa7a7a7542;
-          auVar3 = vpaddq_avx(auVar30,SUB3216(auVar27,0));
-          auVar36 = SUB3216(auVar37,0);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar38 = SUB3216(auVar39,0);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *(undefined (*) [16])(*pauVar12 + 5) = auVar3;
-          puVar16 = (undefined8 *)(*pauVar12 + uVar26 + 6);
-          *(undefined *)((long)puVar16 + -1) = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *puVar16 = 0xa7a7a6946;
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar3;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 6);
-          pauVar1[-1][0xf] = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *pauVar1 = auVar3;
-          puVar17 = (undefined4 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar17 + -1) = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *puVar17 = 0x7a7a6946;
-          *(undefined8 *)(puVar17 + 1) = 0xa7a7a7542;
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *(undefined (*) [16])((long)puVar17 + 9) = auVar3;
-          pauVar1 = (undefined (*) [16])((long)puVar17 + uVar26 + 10);
-          pauVar1[-1][0xf] = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *pauVar1 = auVar3;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -1) = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *puVar16 = 0xa7a7a6946;
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar3;
-          puVar16 = (undefined8 *)((long)puVar16 + uVar26 + 6);
-          *(undefined *)((long)puVar16 + -1) = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *puVar16 = 0xa7a7a7542;
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *(undefined8 *)((long)puVar16 + 5) = 0xa7a7a6946;
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar3 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar3);
-          *(undefined (*) [16])((long)puVar16 + 10) = auVar3;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 0xb);
-          pauVar1[-1][0xf] = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar4 = vpmaxub_avx(auVar36,auVar3);
-          auVar3 = vpaddb_avx(auVar42,auVar4);
-          auVar38 = vpshufb_avx(auVar3,auVar38);
-          auVar3 = vmovdqu_avx(auVar38);
-          *pauVar1 = auVar3;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -1) = 10;
-          auVar3 = vpaddq_avx(auVar30,auVar4);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          *puVar16 = 0xa7a7a6946;
-          pauVar12 = (undefined (*) [32])((long)puVar16 + 5);
-          auVar3 = vpaddq_avx(auVar30,auVar3);
-          auVar3 = vpmaxub_avx(auVar36,auVar3);
-          auVar27 = ZEXT1632(auVar3);
-          uVar10 = (int)uVar7 - 1;
-          uVar7 = (ulong)uVar10;
-        } while (uVar10 != 0);
-        uVar7 = (ulong)(uint)((int)uVar19 * 10);
-        uVar10 = (int)uVar26 + 1;
-        uVar26 = (ulong)uVar10;
-        auVar4 = vpcmpeqb_avx(auVar38,auVar38);
-        auVar28 = ZEXT1632(auVar4);
-        auVar39 = vpsubb_avx2(auVar39,auVar28);
-        uVar19 = uVar7;
-      } while (uVar10 != 6);
-      swap_buffers(SUB168(auVar4,0),SUB168(auVar3,0));
-      auVar27 = vpermq_avx2(auVar39,0xee);
-      pauVar25 = (undefined (*) [32])(uVar11 + 0xc00000);
-      pauVar24 = (undefined (*) [32])(uVar11 + 0xc00ed8);
-      uVar19 = 0xffffffffffffffff;
-third_phase_per_width_init:
-      uVar10 = (uint)uVar26;
-      uVar20 = (uVar7 >> 5) * (ulong)(uVar10 * 8 + 0x2f);
-      auVar39 = vpxor_avx2(in_YMM9,in_YMM9);
-      auVar42 = vpinsrq_avx(SUB3216(auVar39,0),0,0);
-      in_YMM9 = vpermq_avx2(ZEXT1632(auVar42),0);
-      iVar6 = 0xb - uVar10;
-      if (0xb < uVar10 || iVar6 == 0) {
-        iVar6 = 1;
-      }
-      auVar42 = vpxor_avx(SUB3216(auVar28,0),SUB3216(auVar28,0));
-      auVar42 = vpinsrq_avx(auVar42,(ulong)(uint)(iVar6 << 3),0);
-      auVar39 = vpermq_avx2(ZEXT1632(auVar42),0);
-      auVar28 = vpcmpeqb_avx2(in_YMM5,in_YMM5);
-      auVar39 = vpsrlq_avx2(auVar28,SUB3216(auVar39,0));
-      auVar28 = vpmaxub_avx2(auVar40,auVar39);
-      auVar39 = vpermq_avx2(auVar40,0x55);
-      auVar39 = vpsubb_avx2(auVar39,auVar40);
-      auVar39 = vpaddq_avx2(auVar28,auVar39);
-      in_YMM5 = vpmaxub_avx2(auVar40,auVar39);
-      pauVar15 = pauVar25;
-      auVar39 = auVar29;
-      do {
-        uVar22 = 0xf6868697ba;
-        uVar21 = 0xf686868bbe;
-        auVar28 = vpsubb_avx2(auVar44,auVar37);
-        auVar28 = vpshufb_avx2(auVar28,auVar27);
-        uVar5 = 0xd0;
-        iVar6 = 0x14;
-        pauVar18 = pauVar25;
-        do {
-          *(undefined8 *)*pauVar18 = uVar21;
-          auVar30 = SUB3216(auVar28,0);
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])(*pauVar18 + 5) = auVar42;
-          puVar16 = (undefined8 *)(*pauVar18 + uVar26 + 6);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6cf;
-          *puVar16 = uVar22;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 6);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cd;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar17 = (undefined4 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar17 + -3) = uVar5;
-          *(undefined2 *)((long)puVar17 + -2) = 0xf6cc;
-          *puVar17 = (int)uVar22;
-          *(undefined8 *)(puVar17 + 1) = uVar21;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar17 + 9) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar17 + uVar26 + 10);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ca;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6c9;
-          *puVar16 = uVar22;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar42;
-          puVar16 = (undefined8 *)((long)puVar16 + uVar26 + 6);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6c7;
-          uVar5 = inc_tens_digit();
-          *puVar16 = uVar21;
-          *(undefined8 *)((long)puVar16 + 5) = uVar22;
-          auVar30 = SUB3216(auVar28,0);
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 10) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 0xb);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ce;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6cd;
-          *puVar16 = uVar22;
-          *(undefined8 *)((long)puVar16 + 5) = uVar21;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 10) = auVar42;
-          puVar16 = (undefined8 *)((long)puVar16 + uVar26 + 0xb);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6ca;
-          *puVar16 = uVar22;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 6);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c8;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar17 = (undefined4 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar17 + -3) = uVar5;
-          *(undefined2 *)((long)puVar17 + -2) = 0xf6c7;
-          uVar5 = inc_tens_digit();
-          *puVar17 = (int)uVar22;
-          *(undefined8 *)(puVar17 + 1) = uVar21;
-          auVar30 = SUB3216(auVar28,0);
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar17 + 9) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar17 + uVar26 + 10);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cf;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6ce;
-          *puVar16 = uVar22;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 5) = auVar42;
-          puVar16 = (undefined8 *)((long)puVar16 + uVar26 + 6);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6cc;
-          *puVar16 = uVar21;
-          *(undefined8 *)((long)puVar16 + 5) = uVar22;
-          auVar42 = vmovdqu_avx(auVar30);
-          *(undefined (*) [16])((long)puVar16 + 10) = auVar42;
-          pauVar1 = (undefined (*) [16])((long)puVar16 + uVar26 + 0xb);
-          pauVar1[-1][0xd] = uVar5;
-          *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c9;
-          auVar42 = vmovdqu_avx(auVar30);
-          *pauVar1 = auVar42;
-          puVar16 = (undefined8 *)(*pauVar1 + uVar26 + 1);
-          *(undefined *)((long)puVar16 + -3) = uVar5;
-          *(undefined2 *)((long)puVar16 + -2) = 0xf6c8;
-          *puVar16 = uVar22;
-          pauVar18 = (undefined (*) [32])((long)puVar16 + 5);
-          uVar5 = inc_tens_digit();
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc00020);
-        auVar31 = vmovdqu_avx(*pauVar25);
-        *pauVar18 = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[1] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc00060);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc00040));
-        pauVar18[2] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[3] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc000a0);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc00080));
-        pauVar18[4] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[5] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc000e0);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc000c0));
-        pauVar18[6] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[7] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc00120);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc00100));
-        pauVar18[8] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[9] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc00160);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc00140));
-        pauVar18[10] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[0xb] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc001a0);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc00180));
-        pauVar18[0xc] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[0xd] = auVar28;
-        auVar28 = *(undefined (*) [32])(uVar11 + 0xc001e0);
-        auVar31 = vmovdqu_avx(*(undefined (*) [32])(uVar11 + 0xc001c0));
-        pauVar18[0xe] = auVar31;
-        auVar28 = vmovdqu_avx(auVar28);
-        pauVar18[0xf] = auVar28;
-        pauVar18 = pauVar12;
-        do {
-          uVar8 = (ulong)(uVar9 >> 5);
-          if (uVar20 <= uVar9 >> 5) {
-            uVar8 = uVar20;
-          }
-          lVar23 = uVar8 - (((uint)pauVar18 & 0x1ffe00) >> 5);
-          uVar20 = uVar20 - lVar23;
-          pauVar12 = pauVar18[lVar23];
-          auVar28 = vpaddb_avx2(auVar43,in_YMM5);
-          pauVar14 = pauVar15;
           do {
-            auVar34 = auVar29;
-            auVar31 = vmovdqu_avx(*pauVar14);
-            auVar29 = vpshufb_avx2(auVar28,auVar31);
-            auVar29 = vpsubb_avx2(auVar29,auVar31);
-            *pauVar18 = auVar29;
-            auVar31 = vmovdqu_avx(pauVar14[1]);
-            auVar29 = vpshufb_avx2(auVar28,auVar31);
-            auVar29 = vpsubb_avx2(auVar29,auVar31);
-            pauVar18[1] = auVar29;
-            auVar29 = vpaddq_avx2(in_YMM9,auVar34);
-            auVar32 = vmovdqu_avx(pauVar14[2]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[2] = auVar31;
-            auVar33 = vpandn_avx2(auVar34,auVar29);
-            auVar32 = vmovdqu_avx(pauVar14[3]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[3] = auVar31;
-            auVar33 = vpsrlq_avx2(auVar33,0x3f);
-            auVar32 = vmovdqu_avx(pauVar14[4]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[4] = auVar31;
-            auVar33 = vpaddb_avx2(auVar33,auVar33);
-            auVar32 = vmovdqu_avx(pauVar14[5]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[5] = auVar31;
-            auVar35 = vpaddq_avx2(in_YMM5,auVar33);
-            auVar32 = vmovdqu_avx(pauVar14[6]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[6] = auVar31;
-            in_YMM5 = vpmaxub_avx2(auVar40,auVar35);
-            auVar31 = vmovdqu_avx(pauVar14[7]);
-            auVar28 = vpshufb_avx2(auVar28,auVar31);
-            auVar28 = vpsubb_avx2(auVar28,auVar31);
-            pauVar18[7] = auVar28;
-            auVar28 = vpaddb_avx2(auVar43,in_YMM5);
-            auVar32 = vmovdqu_avx(pauVar14[8]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[8] = auVar31;
-            pauVar13 = pauVar18[0x10];
-            auVar32 = vmovdqu_avx(pauVar14[9]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[9] = auVar31;
-            pauVar15 = pauVar14[0x10];
-            auVar32 = vmovdqu_avx(pauVar14[10]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[10] = auVar31;
-            auVar32 = vmovdqu_avx(pauVar14[0xb]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[0xb] = auVar31;
-            auVar32 = vmovdqu_avx(pauVar14[0xc]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[0xc] = auVar31;
-            if (pauVar24 <= pauVar15) {
-              pauVar15 = (undefined (*) [32])((long)pauVar15 + ((long)pauVar25 - (long)pauVar24));
-            }
-            auVar32 = vmovdqu_avx(pauVar14[0xd]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[0xd] = auVar31;
-            auVar32 = vmovdqu_avx(pauVar14[0xe]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[0xe] = auVar31;
-            auVar32 = vmovdqu_avx(pauVar14[0xf]);
-            auVar31 = vpshufb_avx2(auVar28,auVar32);
-            auVar31 = vpsubb_avx2(auVar31,auVar32);
-            pauVar18[0xf] = auVar31;
-            pauVar18 = pauVar13;
-            pauVar14 = pauVar15;
-          } while (pauVar13 < pauVar12);
-          if ((uint)-(0xc00000 - (int)pauVar25) <= ((uint)pauVar12 & 0x1fffff)) {
-            swap_buffers(SUB328(auVar31,0),SUB328(auVar34,0),SUB328(auVar32,0),SUB328(auVar33,0),
-                         SUB328(auVar29,0),SUB328(in_YMM5,0));
-          }
-          if (uVar20 == 0) {
-            if (uVar10 == 0x12) {
-              syscall();
-              exit_on_error(1,"Buzz\nFizz\n7\n8\nFizz\n",5);
+            *puVar11 = 0xa7a7a7542;
+            auVar5 = vpaddq_avx(auVar7,auVar13._0_16_);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar15 = auVar16._0_16_;
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *(undefined (*) [16])((long)puVar11 + 5) = auVar5;
+            puVar11 = (undefined8 *)((long)puVar11 + uVar8 + 6);
+            *(undefined *)((long)puVar11 + -1) = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *puVar11 = 0xa7a7a6946;
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *(undefined (*) [16])((long)puVar11 + 5) = auVar5;
+            pauVar1 = (undefined (*) [16])((long)puVar11 + uVar8 + 6);
+            pauVar1[-1][0xf] = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *pauVar1 = auVar5;
+            puVar2 = (undefined4 *)(*pauVar1 + uVar8 + 1);
+            *(undefined *)((long)puVar2 + -1) = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *puVar2 = 0x7a7a6946;
+            *(undefined8 *)(puVar2 + 1) = 0xa7a7a7542;
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *(undefined (*) [16])((long)puVar2 + 9) = auVar5;
+            pauVar1 = (undefined (*) [16])((long)puVar2 + uVar8 + 10);
+            pauVar1[-1][0xf] = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *pauVar1 = auVar5;
+            puVar11 = (undefined8 *)(*pauVar1 + uVar8 + 1);
+            *(undefined *)((long)puVar11 + -1) = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *puVar11 = 0xa7a7a6946;
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *(undefined (*) [16])((long)puVar11 + 5) = auVar5;
+            puVar11 = (undefined8 *)((long)puVar11 + uVar8 + 6);
+            *(undefined *)((long)puVar11 + -1) = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *puVar11 = 0xa7a7a7542;
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *(undefined8 *)((long)puVar11 + 5) = 0xa7a7a6946;
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar5 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar5);
+            *(undefined (*) [16])((long)puVar11 + 10) = auVar5;
+            pauVar1 = (undefined (*) [16])((long)puVar11 + uVar8 + 0xb);
+            pauVar1[-1][0xf] = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar6 = vpmaxub_avx(auVar14,auVar5);
+            auVar5 = vpaddb_avx(auVar17,auVar6);
+            auVar15 = vpshufb_avx(auVar5,auVar15);
+            auVar5 = vmovdqu_avx(auVar15);
+            *pauVar1 = auVar5;
+            puVar11 = (undefined8 *)(*pauVar1 + uVar8 + 1);
+            *(undefined *)((long)puVar11 + -1) = 10;
+            auVar5 = vpaddq_avx(auVar7,auVar6);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            *puVar11 = 0xa7a7a6946;
+            puVar11 = (undefined8 *)((long)puVar11 + 5);
+            auVar5 = vpaddq_avx(auVar7,auVar5);
+            auVar5 = vpmaxub_avx(auVar14,auVar5);
+            auVar13 = ZEXT1632(auVar5);
+            iVar10 = iVar10 + -1;
+          } while (iVar10 != 0);
+          iVar10 = iVar12 * 10;
+          uVar9 = (int)uVar8 + 1;
+          uVar8 = (ulong)uVar9;
+          auVar5 = vpcmpeqb_avx(auVar15,auVar15);
+          auVar16 = vpsubb_avx2(auVar16,ZEXT1632(auVar5));
+          iVar12 = iVar10;
+        } while (uVar9 != 6);
+        swap_buffers();
+        third_phase_init();
+        return;
+      }
+      write_stderr();
+      inefficiently_write_as_hex();
+      write_stderr();
+      inefficiently_write_as_hex();
+      write_stderr();
                     // WARNING: Subroutine does not return
-              exit(0);
-            }
-            uVar26 = (ulong)(uVar10 + 1);
-            auVar28 = vpcmpeqb_avx2(auVar31,auVar31);
-            auVar27 = vpsubb_avx2(auVar27,auVar28);
-            uVar7 = uVar7 * 10;
-            pauVar24 = pauVar24[10];
-            auVar29 = auVar39;
-            goto third_phase_per_width_init;
-          }
-          auVar42 = vpshufd_avx(SUB3216(in_YMM5,0),0xed);
-          uVar8 = vpextrq_avx(auVar42,0);
-          pauVar18 = pauVar12;
-        } while ((uVar8 | 0xffff0000ffff) != uVar19);
-        if (uVar19 == 0xffffffffffffffff) {
-          uVar8 = vpextrq_avx(SUB3216(auVar37,0),1);
-          uVar19 = 0;
-          if (~(uVar8 & 0x7fffffffffffffff) != 0) {
-            for (; (~(uVar8 & 0x7fffffffffffffff) >> uVar19 & 1) == 0; uVar19 = uVar19 + 1) {
-            }
-          }
-          auVar37 = vpshufb_avx2(auVar37,*(undefined (*) [32])
-                                          (":;<=>?@ABCDEFGHI:;<=>?@ABCDEFGHI" +
-                                          (uVar19 & 0xfffffffffffffff8) * 4 + 0x20));
-          iVar6 = (int)(uVar8 >> ((byte)(uVar19 & 0xfffffffffffffff8) & 0x3f));
-          auVar42 = vpinsrb_avx(SUB3216(in_YMM5,0),iVar6,7);
-          auVar42 = vpinsrb_avx(auVar42,iVar6,0xf);
-          in_YMM5 = vpermq_avx2(ZEXT1632(auVar42),0x44);
-          iVar6 = (iVar6 + 1) * 0x1000000;
-          uVar19 = CONCAT44(iVar6,iVar6) | 0xf6ffff00f6ffff;
-        }
-        else {
-          auVar28 = vpsubb_avx2(auVar44,auVar37);
-          auVar28 = vpshufb_avx2(in_YMM5,auVar28);
-          auVar37 = vpmaxub_avx2(auVar37,auVar28);
-          auVar37 = vpminub_avx2(auVar41,auVar37);
-          auVar28 = vpsllq_avx2(in_YMM5,8);
-          auVar28 = vpsrlq_avx2(auVar28,8);
-          in_YMM5 = vpmaxub_avx2(auVar40,auVar28);
-          uVar19 = 0xffffffffffffffff;
-        }
-      } while( true );
+      exit(0x49);
     }
   }
-  write_stderr(SUB328(auVar27,0),param_1,&cpuid_error_message,0x60,uVar9);
+  write_stderr(in_RDI,&cpuid_error_message,0x60,uVar9);
                     // WARNING: Subroutine does not return
   exit(0x3b);
 }
 
 
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void swap_buffers(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
@@ -659,9 +301,9 @@ void swap_buffers(undefined8 param_1,undefined8 param_2,undefined8 param_3)
   ulong unaff_RBX;
   long *plVar3;
   
-  _iovec_base = unaff_RBX & 0xffffffffffe00000;
+  iovec_base = unaff_RBX & 0xffffffffffe00000;
   plVar3 = (long *)&iovec_base;
-  _DAT_00c00008 = param_3;
+  DAT_00c00008 = param_3;
   do {
     syscall();
     lVar2 = exit_on_error();
@@ -670,6 +312,379 @@ void swap_buffers(undefined8 param_1,undefined8 param_2,undefined8 param_3)
     *plVar1 = *plVar1 - lVar2;
   } while (*plVar1 != 0);
   return;
+}
+
+
+
+void third_phase_init(void)
+
+{
+  undefined (*pauVar1) [16];
+  undefined auVar2 [16];
+  uint uVar3;
+  undefined uVar4;
+  int iVar5;
+  ulong uVar6;
+  undefined (*unaff_RBX) [32];
+  undefined (*pauVar7) [32];
+  undefined (*pauVar8) [32];
+  undefined (*pauVar9) [32];
+  undefined8 *puVar10;
+  undefined4 *puVar11;
+  undefined (*pauVar12) [32];
+  ulong uVar13;
+  ulong uVar14;
+  undefined8 uVar15;
+  undefined8 uVar16;
+  long lVar17;
+  undefined (*pauVar18) [32];
+  ulong unaff_R13;
+  undefined (*pauVar19) [32];
+  ulong unaff_R14;
+  ulong unaff_R15;
+  undefined in_YMM0 [32];
+  undefined auVar20 [32];
+  undefined extraout_var [24];
+  undefined auVar21 [16];
+  undefined auVar22 [32];
+  undefined in_YMM5 [32];
+  undefined auVar23 [32];
+  undefined in_YMM6 [32];
+  undefined auVar24 [32];
+  undefined in_YMM8 [32];
+  undefined auVar25 [32];
+  undefined in_YMM9 [32];
+  undefined auVar26 [32];
+  undefined in_YMM10 [32];
+  undefined in_YMM11 [32];
+  undefined in_YMM12 [32];
+  undefined in_YMM14 [32];
+  undefined in_YMM15 [32];
+  
+  auVar25 = vpermq_avx2(in_YMM8,0xee);
+  pauVar19 = (undefined (*) [32])(unaff_R13 + 0xc00000);
+  pauVar18 = (undefined (*) [32])(unaff_R13 + 0xc00ed8);
+  uVar13 = 0xffffffffffffffff;
+third_phase_per_width_init:
+  uVar3 = (uint)unaff_R14;
+  uVar14 = (unaff_R15 >> 5) * (ulong)(uVar3 * 8 + 0x2f);
+  auVar26 = vpxor_avx2(in_YMM9,in_YMM9);
+  auVar2 = vpinsrq_avx(auVar26._0_16_,0,0);
+  in_YMM9 = vpermq_avx2(ZEXT1632(auVar2),0);
+  iVar5 = 0xb - uVar3;
+  if (0xb < uVar3 || iVar5 == 0) {
+    iVar5 = 1;
+  }
+  auVar2 = vpxor_avx(in_YMM0._0_16_,in_YMM0._0_16_);
+  auVar2 = vpinsrq_avx(auVar2,(ulong)(uint)(iVar5 << 3),0);
+  auVar26 = vpermq_avx2(ZEXT1632(auVar2),0);
+  auVar23 = vpcmpeqb_avx2(in_YMM5,in_YMM5);
+  auVar26 = vpsrlq_avx2(auVar23,auVar26._0_16_);
+  auVar23 = vpmaxub_avx2(in_YMM11,auVar26);
+  auVar26 = vpermq_avx2(in_YMM11,0x55);
+  auVar26 = vpsubb_avx2(auVar26,in_YMM11);
+  auVar26 = vpaddq_avx2(auVar23,auVar26);
+  in_YMM5 = vpmaxub_avx2(in_YMM11,auVar26);
+  pauVar9 = pauVar19;
+  auVar26 = in_YMM10;
+  do {
+    uVar16 = 0xf6868697ba;
+    uVar15 = 0xf686868bbe;
+    auVar23 = vpsubb_avx2(in_YMM15,in_YMM6);
+    auVar23 = vpshufb_avx2(auVar23,auVar25);
+    uVar4 = 0xd0;
+    iVar5 = 0x14;
+    pauVar12 = pauVar19;
+    do {
+      *(undefined8 *)*pauVar12 = uVar15;
+      auVar21 = auVar23._0_16_;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])(*pauVar12 + 5) = auVar2;
+      puVar10 = (undefined8 *)(*pauVar12 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cf;
+      *puVar10 = uVar16;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 6);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cd;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar11 = (undefined4 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar11 + -3) = uVar4;
+      *(undefined2 *)((long)puVar11 + -2) = 0xf6cc;
+      *puVar11 = (int)uVar16;
+      *(undefined8 *)(puVar11 + 1) = uVar15;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar11 + 9) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar11 + unaff_R14 + 10);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ca;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c9;
+      *puVar10 = uVar16;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c7;
+      uVar4 = inc_tens_digit();
+      *puVar10 = uVar15;
+      *(undefined8 *)((long)puVar10 + 5) = uVar16;
+      auVar21 = auVar23._0_16_;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 0xb);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ce;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cd;
+      *puVar10 = uVar16;
+      *(undefined8 *)((long)puVar10 + 5) = uVar15;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 0xb);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6ca;
+      *puVar10 = uVar16;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 6);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c8;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar11 = (undefined4 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar11 + -3) = uVar4;
+      *(undefined2 *)((long)puVar11 + -2) = 0xf6c7;
+      uVar4 = inc_tens_digit();
+      *puVar11 = (int)uVar16;
+      *(undefined8 *)(puVar11 + 1) = uVar15;
+      auVar21 = auVar23._0_16_;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar11 + 9) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar11 + unaff_R14 + 10);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cf;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6ce;
+      *puVar10 = uVar16;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cc;
+      *puVar10 = uVar15;
+      *(undefined8 *)((long)puVar10 + 5) = uVar16;
+      auVar2 = vmovdqu_avx(auVar21);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 0xb);
+      pauVar1[-1][0xd] = uVar4;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c9;
+      auVar2 = vmovdqu_avx(auVar21);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar4;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c8;
+      *puVar10 = uVar16;
+      pauVar12 = (undefined (*) [32])((long)puVar10 + 5);
+      uVar4 = inc_tens_digit();
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc00020);
+    auVar24 = vmovdqu_avx(*pauVar19);
+    *pauVar12 = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[1] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc00060);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc00040));
+    pauVar12[2] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[3] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc000a0);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc00080));
+    pauVar12[4] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[5] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc000e0);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc000c0));
+    pauVar12[6] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[7] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc00120);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc00100));
+    pauVar12[8] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[9] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc00160);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc00140));
+    pauVar12[10] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[0xb] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc001a0);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc00180));
+    pauVar12[0xc] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[0xd] = auVar23;
+    auVar23 = *(undefined (*) [32])(unaff_R13 + 0xc001e0);
+    auVar24 = vmovdqu_avx(*(undefined (*) [32])(unaff_R13 + 0xc001c0));
+    pauVar12[0xe] = auVar24;
+    auVar23 = vmovdqu_avx(auVar23);
+    pauVar12[0xf] = auVar23;
+    pauVar12 = unaff_RBX;
+    do {
+      uVar6 = unaff_R13 >> 5;
+      if (uVar14 <= unaff_R13 >> 5) {
+        uVar6 = uVar14;
+      }
+      lVar17 = uVar6 - (((uint)pauVar12 & 0x1ffe00) >> 5);
+      uVar14 = uVar14 - lVar17;
+      unaff_RBX = pauVar12[lVar17];
+      auVar24 = vpaddb_avx2(in_YMM14,in_YMM5);
+      pauVar8 = pauVar9;
+      auVar23 = in_YMM10;
+      do {
+        auVar22 = vmovdqu_avx(*pauVar8);
+        auVar20 = vpshufb_avx2(auVar24,auVar22);
+        auVar20 = vpsubb_avx2(auVar20,auVar22);
+        *pauVar12 = auVar20;
+        auVar22 = vmovdqu_avx(pauVar8[1]);
+        auVar20 = vpshufb_avx2(auVar24,auVar22);
+        auVar20 = vpsubb_avx2(auVar20,auVar22);
+        pauVar12[1] = auVar20;
+        in_YMM10 = vpaddq_avx2(in_YMM9,auVar23);
+        auVar22 = vmovdqu_avx(pauVar8[2]);
+        auVar20 = vpshufb_avx2(auVar24,auVar22);
+        auVar20 = vpsubb_avx2(auVar20,auVar22);
+        pauVar12[2] = auVar20;
+        auVar22 = vpandn_avx2(auVar23,in_YMM10);
+        auVar20 = vmovdqu_avx(pauVar8[3]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[3] = auVar23;
+        auVar22 = vpsrlq_avx2(auVar22,0x3f);
+        auVar20 = vmovdqu_avx(pauVar8[4]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[4] = auVar23;
+        auVar22 = vpaddb_avx2(auVar22,auVar22);
+        auVar20 = vmovdqu_avx(pauVar8[5]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[5] = auVar23;
+        auVar22 = vpaddq_avx2(in_YMM5,auVar22);
+        auVar20 = vmovdqu_avx(pauVar8[6]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[6] = auVar23;
+        in_YMM5 = vpmaxub_avx2(in_YMM11,auVar22);
+        auVar20 = vmovdqu_avx(pauVar8[7]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[7] = auVar23;
+        auVar24 = vpaddb_avx2(in_YMM14,in_YMM5);
+        auVar20 = vmovdqu_avx(pauVar8[8]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[8] = auVar23;
+        pauVar7 = pauVar12[0x10];
+        auVar20 = vmovdqu_avx(pauVar8[9]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[9] = auVar23;
+        pauVar9 = pauVar8[0x10];
+        auVar20 = vmovdqu_avx(pauVar8[10]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[10] = auVar23;
+        auVar20 = vmovdqu_avx(pauVar8[0xb]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[0xb] = auVar23;
+        auVar20 = vmovdqu_avx(pauVar8[0xc]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[0xc] = auVar23;
+        if (pauVar18 <= pauVar9) {
+          pauVar9 = (undefined (*) [32])((long)pauVar9 + ((long)pauVar19 - (long)pauVar18));
+        }
+        auVar20 = vmovdqu_avx(pauVar8[0xd]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[0xd] = auVar23;
+        auVar20 = vmovdqu_avx(pauVar8[0xe]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar23 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[0xe] = auVar23;
+        auVar20 = vmovdqu_avx(pauVar8[0xf]);
+        auVar23 = vpshufb_avx2(auVar24,auVar20);
+        auVar20 = vpsubb_avx2(auVar23,auVar20);
+        pauVar12[0xf] = auVar20;
+        pauVar12 = pauVar7;
+        pauVar8 = pauVar9;
+        auVar23 = in_YMM10;
+      } while (pauVar7 < unaff_RBX);
+      if ((uint)-(0xc00000 - (int)pauVar19) <= ((uint)unaff_RBX & 0x1fffff)) {
+        auVar20._0_8_ = swap_buffers();
+        auVar20._8_24_ = extraout_var;
+      }
+      if (uVar14 == 0) {
+        if (uVar3 == 0x12) {
+          syscall();
+          exit_on_error(1,"Buzz\nFizz\n7\n8\nFizz\n",5);
+                    // WARNING: Subroutine does not return
+          exit(0);
+        }
+        unaff_R14 = (ulong)(uVar3 + 1);
+        in_YMM0 = vpcmpeqb_avx2(auVar20,auVar20);
+        auVar25 = vpsubb_avx2(auVar25,in_YMM0);
+        unaff_R15 = unaff_R15 * 10;
+        pauVar18 = pauVar18[10];
+        in_YMM10 = auVar26;
+        goto third_phase_per_width_init;
+      }
+      auVar2 = vpshufd_avx(in_YMM5._0_16_,0xed);
+      uVar6 = vpextrq_avx(auVar2,0);
+      pauVar12 = unaff_RBX;
+    } while ((uVar6 | 0xffff0000ffff) != uVar13);
+    if (uVar13 == 0xffffffffffffffff) {
+      uVar6 = vpextrq_avx(in_YMM6._0_16_,1);
+      uVar13 = 0;
+      if (~(uVar6 & 0x7fffffffffffffff) != 0) {
+        for (; (~(uVar6 & 0x7fffffffffffffff) >> uVar13 & 1) == 0; uVar13 = uVar13 + 1) {
+        }
+      }
+      in_YMM6 = vpshufb_avx2(in_YMM6,*(undefined (*) [32])
+                                      (":;<=>?@ABCDEFGHI:;<=>?@ABCDEFGHI" +
+                                      (uVar13 & 0xfffffffffffffff8) * 4 + 0x20));
+      iVar5 = (int)(uVar6 >> ((byte)(uVar13 & 0xfffffffffffffff8) & 0x3f));
+      auVar2 = vpinsrb_avx(in_YMM5._0_16_,iVar5,7);
+      auVar2 = vpinsrb_avx(auVar2,iVar5,0xf);
+      in_YMM5 = vpermq_avx2(ZEXT1632(auVar2),0x44);
+      iVar5 = (iVar5 + 1) * 0x1000000;
+      uVar13 = CONCAT44(iVar5,iVar5) | 0xf6ffff00f6ffff;
+    }
+    else {
+      auVar23 = vpsubb_avx2(in_YMM15,in_YMM6);
+      auVar23 = vpshufb_avx2(in_YMM5,auVar23);
+      auVar23 = vpmaxub_avx2(in_YMM6,auVar23);
+      in_YMM6 = vpminub_avx2(in_YMM12,auVar23);
+      auVar23 = vpsllq_avx2(in_YMM5,8);
+      auVar23 = vpsrlq_avx2(auVar23,8);
+      in_YMM5 = vpmaxub_avx2(in_YMM11,auVar23);
+      uVar13 = 0xffffffffffffffff;
+    }
+  } while( true );
 }
 
 
@@ -685,6 +700,374 @@ int inc_tens_digit(void)
   }
   vpermq_avx2(in_YMM2,0x4e);
   return 0xd0;
+}
+
+
+
+void FUN_004013b1(undefined (*param_1) [32])
+
+{
+  undefined (*pauVar1) [16];
+  undefined auVar2 [16];
+  undefined in_AL;
+  undefined uVar3;
+  ulong uVar4;
+  int iVar5;
+  ulong uVar6;
+  undefined (*unaff_RBX) [32];
+  undefined (*pauVar7) [32];
+  undefined (*pauVar8) [32];
+  undefined (*unaff_RBP) [32];
+  undefined (*pauVar9) [32];
+  undefined8 *puVar10;
+  undefined4 *puVar11;
+  ulong in_R8;
+  ulong in_R9;
+  undefined8 in_R10;
+  undefined8 in_R11;
+  long lVar12;
+  undefined (*unaff_R12) [32];
+  undefined (*unaff_R13) [32];
+  uint uVar13;
+  ulong unaff_R14;
+  ulong unaff_R15;
+  undefined auVar14 [32];
+  undefined auVar15 [32];
+  undefined extraout_var [24];
+  undefined auVar16 [16];
+  undefined in_YMM2 [32];
+  undefined auVar17 [32];
+  undefined in_YMM4 [32];
+  undefined in_YMM5 [32];
+  undefined in_YMM6 [32];
+  undefined auVar18 [32];
+  undefined in_YMM8 [32];
+  undefined in_YMM9 [32];
+  undefined in_YMM10 [32];
+  undefined in_YMM11 [32];
+  undefined in_YMM12 [32];
+  undefined in_YMM14 [32];
+  undefined in_YMM15 [32];
+  
+  do {
+    iVar5 = 0x14;
+    do {
+      *(undefined8 *)*param_1 = in_R10;
+      auVar16 = in_YMM2._0_16_;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])(*param_1 + 5) = auVar2;
+      puVar10 = (undefined8 *)(*param_1 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = in_AL;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cf;
+      *puVar10 = in_R11;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 6);
+      pauVar1[-1][0xd] = in_AL;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cd;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar11 = (undefined4 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar11 + -3) = in_AL;
+      *(undefined2 *)((long)puVar11 + -2) = 0xf6cc;
+      *puVar11 = (int)in_R11;
+      *(undefined8 *)(puVar11 + 1) = in_R10;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar11 + 9) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar11 + unaff_R14 + 10);
+      pauVar1[-1][0xd] = in_AL;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ca;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = in_AL;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c9;
+      *puVar10 = in_R11;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = in_AL;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c7;
+      uVar3 = inc_tens_digit();
+      *puVar10 = in_R10;
+      *(undefined8 *)((long)puVar10 + 5) = in_R11;
+      auVar16 = in_YMM2._0_16_;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 0xb);
+      pauVar1[-1][0xd] = uVar3;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6ce;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar3;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cd;
+      *puVar10 = in_R11;
+      *(undefined8 *)((long)puVar10 + 5) = in_R10;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 0xb);
+      *(undefined *)((long)puVar10 + -3) = uVar3;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6ca;
+      *puVar10 = in_R11;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 6);
+      pauVar1[-1][0xd] = uVar3;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c8;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar11 = (undefined4 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar11 + -3) = uVar3;
+      *(undefined2 *)((long)puVar11 + -2) = 0xf6c7;
+      uVar3 = inc_tens_digit();
+      *puVar11 = (int)in_R11;
+      *(undefined8 *)(puVar11 + 1) = in_R10;
+      auVar16 = in_YMM2._0_16_;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar11 + 9) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar11 + unaff_R14 + 10);
+      pauVar1[-1][0xd] = uVar3;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6cf;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar3;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6ce;
+      *puVar10 = in_R11;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 5) = auVar2;
+      puVar10 = (undefined8 *)((long)puVar10 + unaff_R14 + 6);
+      *(undefined *)((long)puVar10 + -3) = uVar3;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6cc;
+      *puVar10 = in_R10;
+      *(undefined8 *)((long)puVar10 + 5) = in_R11;
+      auVar2 = vmovdqu_avx(auVar16);
+      *(undefined (*) [16])((long)puVar10 + 10) = auVar2;
+      pauVar1 = (undefined (*) [16])((long)puVar10 + unaff_R14 + 0xb);
+      pauVar1[-1][0xd] = uVar3;
+      *(undefined2 *)(pauVar1[-1] + 0xe) = 0xf6c9;
+      auVar2 = vmovdqu_avx(auVar16);
+      *pauVar1 = auVar2;
+      puVar10 = (undefined8 *)(*pauVar1 + unaff_R14 + 1);
+      *(undefined *)((long)puVar10 + -3) = uVar3;
+      *(undefined2 *)((long)puVar10 + -2) = 0xf6c8;
+      *puVar10 = in_R11;
+      param_1 = (undefined (*) [32])((long)puVar10 + 5);
+      in_AL = inc_tens_digit();
+      iVar5 = iVar5 + -1;
+    } while (iVar5 != 0);
+    auVar15 = unaff_R13[1];
+    auVar18 = vmovdqu_avx(*unaff_R13);
+    *param_1 = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[1] = auVar15;
+    auVar15 = unaff_R13[3];
+    auVar18 = vmovdqu_avx(unaff_R13[2]);
+    param_1[2] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[3] = auVar15;
+    auVar15 = unaff_R13[5];
+    auVar18 = vmovdqu_avx(unaff_R13[4]);
+    param_1[4] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[5] = auVar15;
+    auVar15 = unaff_R13[7];
+    auVar18 = vmovdqu_avx(unaff_R13[6]);
+    param_1[6] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[7] = auVar15;
+    auVar15 = unaff_R13[9];
+    auVar18 = vmovdqu_avx(unaff_R13[8]);
+    param_1[8] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[9] = auVar15;
+    auVar15 = unaff_R13[0xb];
+    auVar18 = vmovdqu_avx(unaff_R13[10]);
+    param_1[10] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[0xb] = auVar15;
+    auVar15 = unaff_R13[0xd];
+    auVar18 = vmovdqu_avx(unaff_R13[0xc]);
+    param_1[0xc] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[0xd] = auVar15;
+    auVar15 = unaff_R13[0xf];
+    auVar18 = vmovdqu_avx(unaff_R13[0xe]);
+    param_1[0xe] = auVar18;
+    auVar15 = vmovdqu_avx(auVar15);
+    param_1[0xf] = auVar15;
+    pauVar7 = unaff_RBX;
+    do {
+      uVar4 = (ulong)unaff_R13[-0x60000] >> 5;
+      if (in_R9 <= (ulong)unaff_R13[-0x60000] >> 5) {
+        uVar4 = in_R9;
+      }
+      lVar12 = uVar4 - (((uint)pauVar7 & 0x1ffe00) >> 5);
+      in_R9 = in_R9 - lVar12;
+      unaff_RBX = pauVar7[lVar12];
+      auVar18 = vpaddb_avx2(in_YMM14,in_YMM5);
+      pauVar9 = unaff_RBP;
+      auVar15 = in_YMM4;
+      do {
+        auVar17 = vmovdqu_avx(*pauVar9);
+        auVar14 = vpshufb_avx2(auVar18,auVar17);
+        auVar14 = vpsubb_avx2(auVar14,auVar17);
+        *pauVar7 = auVar14;
+        auVar17 = vmovdqu_avx(pauVar9[1]);
+        auVar14 = vpshufb_avx2(auVar18,auVar17);
+        auVar14 = vpsubb_avx2(auVar14,auVar17);
+        pauVar7[1] = auVar14;
+        in_YMM4 = vpaddq_avx2(in_YMM9,auVar15);
+        auVar17 = vmovdqu_avx(pauVar9[2]);
+        auVar14 = vpshufb_avx2(auVar18,auVar17);
+        auVar14 = vpsubb_avx2(auVar14,auVar17);
+        pauVar7[2] = auVar14;
+        auVar17 = vpandn_avx2(auVar15,in_YMM4);
+        auVar14 = vmovdqu_avx(pauVar9[3]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[3] = auVar15;
+        auVar17 = vpsrlq_avx2(auVar17,0x3f);
+        auVar14 = vmovdqu_avx(pauVar9[4]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[4] = auVar15;
+        auVar17 = vpaddb_avx2(auVar17,auVar17);
+        auVar14 = vmovdqu_avx(pauVar9[5]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[5] = auVar15;
+        auVar17 = vpaddq_avx2(in_YMM5,auVar17);
+        auVar14 = vmovdqu_avx(pauVar9[6]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[6] = auVar15;
+        in_YMM5 = vpmaxub_avx2(in_YMM11,auVar17);
+        auVar14 = vmovdqu_avx(pauVar9[7]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[7] = auVar15;
+        auVar18 = vpaddb_avx2(in_YMM14,in_YMM5);
+        auVar14 = vmovdqu_avx(pauVar9[8]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[8] = auVar15;
+        pauVar8 = pauVar7[0x10];
+        auVar14 = vmovdqu_avx(pauVar9[9]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[9] = auVar15;
+        unaff_RBP = pauVar9[0x10];
+        auVar14 = vmovdqu_avx(pauVar9[10]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[10] = auVar15;
+        auVar14 = vmovdqu_avx(pauVar9[0xb]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[0xb] = auVar15;
+        auVar14 = vmovdqu_avx(pauVar9[0xc]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[0xc] = auVar15;
+        if (unaff_R12 <= unaff_RBP) {
+          unaff_RBP = (undefined (*) [32])((long)unaff_RBP + ((long)unaff_R13 - (long)unaff_R12));
+        }
+        auVar14 = vmovdqu_avx(pauVar9[0xd]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[0xd] = auVar15;
+        auVar14 = vmovdqu_avx(pauVar9[0xe]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar15 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[0xe] = auVar15;
+        auVar14 = vmovdqu_avx(pauVar9[0xf]);
+        auVar15 = vpshufb_avx2(auVar18,auVar14);
+        auVar14 = vpsubb_avx2(auVar15,auVar14);
+        pauVar7[0xf] = auVar14;
+        pauVar7 = pauVar8;
+        pauVar9 = unaff_RBP;
+        auVar15 = in_YMM4;
+      } while (pauVar8 < unaff_RBX);
+      if ((uint)-(0xc00000 - (int)unaff_R13) <= ((uint)unaff_RBX & 0x1fffff)) {
+        auVar14._0_8_ = swap_buffers();
+        auVar14._8_24_ = extraout_var;
+      }
+      if (in_R9 == 0) {
+        if ((int)unaff_R14 == 0x12) {
+          syscall();
+          exit_on_error(1,"Buzz\nFizz\n7\n8\nFizz\n",5);
+                    // WARNING: Subroutine does not return
+          exit(0);
+        }
+        uVar13 = (int)unaff_R14 + 1;
+        unaff_R14 = (ulong)uVar13;
+        auVar15 = vpcmpeqb_avx2(auVar14,auVar14);
+        in_YMM8 = vpsubb_avx2(in_YMM8,auVar15);
+        unaff_R15 = unaff_R15 * 10;
+        unaff_R12 = unaff_R12[10];
+        in_R9 = (unaff_R15 >> 5) * (ulong)(uVar13 * 8 + 0x2f);
+        auVar18 = vpxor_avx2(in_YMM9,in_YMM9);
+        auVar2 = vpinsrq_avx(auVar18._0_16_,0,0);
+        in_YMM9 = vpermq_avx2(ZEXT1632(auVar2),0);
+        iVar5 = 0xb - uVar13;
+        if (0xb < uVar13 || iVar5 == 0) {
+          iVar5 = 1;
+        }
+        auVar2 = vpxor_avx(auVar15._0_16_,auVar15._0_16_);
+        auVar2 = vpinsrq_avx(auVar2,(ulong)(uint)(iVar5 << 3),0);
+        auVar15 = vpermq_avx2(ZEXT1632(auVar2),0);
+        auVar18 = vpcmpeqb_avx2(in_YMM5,in_YMM5);
+        auVar15 = vpsrlq_avx2(auVar18,auVar15._0_16_);
+        auVar18 = vpmaxub_avx2(in_YMM11,auVar15);
+        auVar15 = vpermq_avx2(in_YMM11,0x55);
+        auVar15 = vpsubb_avx2(auVar15,in_YMM11);
+        auVar15 = vpaddq_avx2(auVar18,auVar15);
+        in_YMM5 = vpmaxub_avx2(in_YMM11,auVar15);
+        unaff_RBP = unaff_R13;
+        in_YMM4 = in_YMM10;
+        goto generate_bytecode;
+      }
+      auVar2 = vpshufd_avx(in_YMM5._0_16_,0xed);
+      uVar4 = vpextrq_avx(auVar2,0);
+      pauVar7 = unaff_RBX;
+    } while ((uVar4 | 0xffff0000ffff) != in_R8);
+    if (in_R8 == 0xffffffffffffffff) {
+      uVar6 = vpextrq_avx(in_YMM6._0_16_,1);
+      uVar4 = 0;
+      if (~(uVar6 & 0x7fffffffffffffff) != 0) {
+        for (; (~(uVar6 & 0x7fffffffffffffff) >> uVar4 & 1) == 0; uVar4 = uVar4 + 1) {
+        }
+      }
+      in_YMM6 = vpshufb_avx2(in_YMM6,*(undefined (*) [32])
+                                      (":;<=>?@ABCDEFGHI:;<=>?@ABCDEFGHI" +
+                                      (uVar4 & 0xfffffffffffffff8) * 4 + 0x20));
+      iVar5 = (int)(uVar6 >> ((byte)(uVar4 & 0xfffffffffffffff8) & 0x3f));
+      auVar2 = vpinsrb_avx(in_YMM5._0_16_,iVar5,7);
+      auVar2 = vpinsrb_avx(auVar2,iVar5,0xf);
+      in_YMM5 = vpermq_avx2(ZEXT1632(auVar2),0x44);
+      iVar5 = (iVar5 + 1) * 0x1000000;
+      in_R8 = CONCAT44(iVar5,iVar5) | 0xf6ffff00f6ffff;
+    }
+    else {
+      auVar15 = vpsubb_avx2(in_YMM15,in_YMM6);
+      auVar15 = vpshufb_avx2(in_YMM5,auVar15);
+      auVar15 = vpmaxub_avx2(in_YMM6,auVar15);
+      in_YMM6 = vpminub_avx2(in_YMM12,auVar15);
+      auVar15 = vpsllq_avx2(in_YMM5,8);
+      auVar15 = vpsrlq_avx2(auVar15,8);
+      in_YMM5 = vpmaxub_avx2(in_YMM11,auVar15);
+      in_R8 = 0xffffffffffffffff;
+    }
+generate_bytecode:
+    in_R11 = 0xf6868697ba;
+    in_R10 = 0xf686868bbe;
+    auVar15 = vpsubb_avx2(in_YMM15,in_YMM6);
+    in_YMM2 = vpshufb_avx2(auVar15,in_YMM8);
+    in_AL = 0xd0;
+    param_1 = unaff_R13;
+  } while( true );
 }
 
 

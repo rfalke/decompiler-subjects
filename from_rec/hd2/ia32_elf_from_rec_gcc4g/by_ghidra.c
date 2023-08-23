@@ -54,7 +54,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -115,6 +115,24 @@ struct stat {
 };
 
 
+// WARNING! conflicting data type names: /DWARF/__blkcnt_t - /types.h/__blkcnt_t
+
+
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
+
+
+// WARNING! conflicting data type names: /DWARF/__time_t - /types.h/__time_t
+
+
+// WARNING! conflicting data type names: /DWARF/__ino_t - /types.h/__ino_t
+
+
+// WARNING! conflicting data type names: /DWARF/__off_t - /types.h/__off_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
+
+
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 
@@ -125,9 +143,6 @@ struct stat {
 
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
-
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
 
 
 // WARNING! conflicting data type names: /DWARF/time.h/timespec - /time.h/timespec
@@ -243,6 +258,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -309,6 +325,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -316,14 +343,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -358,17 +385,27 @@ struct Elf32_Ehdr {
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_08048498(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -381,7 +418,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -412,7 +449,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -423,7 +460,7 @@ void perror(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -436,7 +473,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -449,7 +486,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -462,7 +499,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -484,7 +521,7 @@ void __stack_chk_fail(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -497,7 +534,7 @@ char * strcat(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -510,7 +547,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -523,10 +560,13 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -548,6 +588,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804861f)
 // WARNING: Removing unreachable block (ram,0x08048628)
 
 void frame_dummy(void)
@@ -566,6 +607,7 @@ void dumpline(uchar *p,ulong offset,int cnt)
   uchar uVar3;
   size_t sVar4;
   int in_GS_OFFSET;
+  uchar *p_local;
   int len;
   int c;
   char buff [80];
@@ -616,6 +658,7 @@ int hexdump(char *fname)
   FILE *__stream;
   size_t cnt_00;
   int in_GS_OFFSET;
+  char *fname_local;
   stat st;
   int cnt;
   FILE *fp;
@@ -652,6 +695,8 @@ int hexdump(char *fname)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(int argc,char **argv)
 
@@ -718,21 +763,12 @@ int stat(char *__file,stat *__buf)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080489e1)
+// WARNING: Removing unreachable block (ram,0x080489e8)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

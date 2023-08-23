@@ -3,8 +3,36 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    undefined1;
+typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -66,7 +94,257 @@ int FUN_0804804c(void)
 
 
 
-void entry(char *param_1)
+void processEntry entry(undefined4 param_1,undefined4 param_2,char *param_3)
+
+{
+  char cVar1;
+  int iVar2;
+  char *pcVar3;
+  
+  DAT_080484ef = 0xf;
+  iVar2 = -1;
+  do {
+    pcVar3 = param_3;
+    if (iVar2 == 0) break;
+    iVar2 = iVar2 + -1;
+    pcVar3 = param_3 + 1;
+    cVar1 = *param_3;
+    param_3 = pcVar3;
+  } while (cVar1 != '\0');
+  if (*(int *)(pcVar3 + -5) == 0x666f6469) {
+    DAT_080484df._0_1_ = 1;
+    FUN_08048259();
+    return;
+  }
+  if (pcVar3[-2] != '5') {
+    FUN_08048259();
+    return;
+  }
+  FUN_08048259();
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void FUN_080480ae(void)
+
+{
+  DAT_080484e7 = FUN_080480c7;
+  _DAT_080484eb = 0x80483bf;
+  FUN_08048183();
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void FUN_080480c7(void)
+
+{
+  char cVar1;
+  code *pcVar2;
+  uint uVar3;
+  int iVar4;
+  int *piVar5;
+  char *pcVar6;
+  byte bVar7;
+  int iStack_4;
+  
+  uVar3 = _DAT_080484e3;
+  bVar7 = 0;
+  iStack_4 = 0x80480d7;
+  iStack_4 = FUN_0804804c();
+  if ((uVar3 >> 8 & 1) != 0) {
+    iStack_4 = -iStack_4;
+  }
+  piVar5 = &iStack_4;
+  if ((uVar3 >> 7 & 1) != 0) {
+    pcVar2 = (code *)swi(0x80);
+    (*pcVar2)();
+    iVar4 = -1;
+    pcVar6 = &DAT_08048afb;
+    do {
+      if (iVar4 == 0) break;
+      iVar4 = iVar4 + -1;
+      cVar1 = *pcVar6;
+      pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
+    } while (cVar1 != ' ');
+    iStack_4 = 4;
+    pcVar2 = (code *)swi(0x80);
+    (*pcVar2)();
+    pcVar2 = (code *)swi(0x80);
+    (*pcVar2)();
+    pcVar2 = (code *)swi(0x80);
+    (*pcVar2)();
+    piVar5 = (int *)&stack0x0000000c;
+    if (DAT_08048afb != 'y') {
+      return;
+    }
+  }
+  *piVar5 = 0x25;
+  pcVar2 = (code *)swi(0x80);
+  iVar4 = (*pcVar2)();
+  if (iVar4 == 0) {
+    if ((uVar3 >> 5 & 1) != 0) {
+      piVar5[1] = 1;
+      piVar5[1] = 4;
+      pcVar2 = (code *)swi(0x80);
+      (*pcVar2)();
+    }
+  }
+  else if ((uVar3 >> 6 & 1) == 0) {
+    piVar5[1] = 1;
+    piVar5[1] = 4;
+    pcVar2 = (code *)swi(0x80);
+    (*pcVar2)();
+    return;
+  }
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void FUN_08048183(void)
+
+{
+  char cVar1;
+  code *pcVar2;
+  undefined4 *puVar3;
+  char cVar4;
+  int iVar5;
+  undefined *puVar6;
+  undefined4 *puVar7;
+  undefined1 *puVar8;
+  char *pcVar9;
+  int *unaff_EDI;
+  undefined *puVar11;
+  char *pcVar12;
+  byte bVar13;
+  char *pcVar10;
+  
+  bVar13 = 0;
+  pcVar2 = (code *)swi(0x80);
+  iVar5 = (*pcVar2)();
+  puVar6 = &stack0x00000004;
+  if (-1 < iVar5) {
+    pcVar2 = (code *)swi(0x80);
+    DAT_080484f7 = iVar5;
+    (*pcVar2)();
+    puVar7 = (undefined4 *)&stack0x00000008;
+    puVar6 = &stack0x00000008;
+    if (*unaff_EDI != 0) {
+      do {
+        puVar11 = &DAT_080484fb;
+        for (iVar5 = 0x600; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *puVar11 = 0;
+          puVar11 = puVar11 + (uint)bVar13 * -2 + 1;
+        }
+        pcVar2 = (code *)swi(0x80);
+        iVar5 = (*pcVar2)();
+        if (iVar5 == 0) {
+                    // WARNING: Could not recover jumptable at 0x08048253. Too many branches
+                    // WARNING: Treating indirect jump as call
+          (*_DAT_080484eb)();
+          return;
+        }
+        puVar8 = &DAT_080484fb;
+        puVar3 = (undefined4 *)((int)puVar7 + 4);
+        while (puVar7 = puVar3, puVar8[8] != '\0') {
+          puVar8 = (undefined1 *)
+                   CONCAT22((short)((uint)puVar8 >> 0x10),(short)puVar8 + *(short *)(puVar8 + 8));
+          cVar4 = puVar8[10];
+          puVar3 = puVar7;
+          if (('0' < cVar4) &&
+             (pcVar10 = puVar8 + (uint)bVar13 * -2 + 0xb, pcVar9 = &DAT_08048afb, cVar4 < ':')) {
+            do {
+              pcVar12 = pcVar9 + (uint)bVar13 * -2 + 1;
+              *pcVar9 = cVar4;
+              cVar4 = *pcVar10;
+              pcVar10 = pcVar10 + (uint)bVar13 * -2 + 1;
+              pcVar9 = pcVar12;
+            } while (cVar4 != '\0');
+            pcVar10 = s__stat_080483d0;
+            do {
+              cVar4 = *pcVar10;
+              *pcVar12 = cVar4;
+              pcVar10 = pcVar10 + (uint)bVar13 * -2 + 1;
+              pcVar12 = pcVar12 + (uint)bVar13 * -2 + 1;
+            } while (cVar4 != '\0');
+            puVar7[-1] = 5;
+            pcVar2 = (code *)swi(0x80);
+            iVar5 = (*pcVar2)();
+            puVar3 = puVar7 + 1;
+            if (-1 < iVar5) {
+              *puVar7 = 3;
+              pcVar2 = (code *)swi(0x80);
+              _DAT_080484f3 = iVar5;
+              (*pcVar2)();
+              pcVar10 = &DAT_08048afb;
+              do {
+                pcVar9 = pcVar10 + (uint)bVar13 * -2 + 1;
+                cVar4 = *pcVar10;
+                pcVar10 = pcVar9;
+              } while (cVar4 != '(');
+              iVar5 = -1;
+              pcVar10 = (char *)puVar7[2];
+              do {
+                pcVar12 = pcVar9;
+                if (iVar5 == 0) break;
+                iVar5 = iVar5 + -1;
+                pcVar12 = pcVar9 + (uint)bVar13 * -2 + 1;
+                cVar4 = *pcVar9;
+                cVar1 = *pcVar10;
+                pcVar9 = pcVar12;
+                pcVar10 = pcVar10 + (uint)bVar13 * -2 + 1;
+              } while (cVar4 == cVar1);
+              puVar3 = puVar7 + 2;
+              if (pcVar12[-1] == ')') {
+                puVar7[1] = 0x8048251;
+                (*DAT_080484e7)();
+                puVar3 = puVar7 + 2;
+              }
+            }
+          }
+        }
+      } while( true );
+    }
+  }
+  *(undefined4 *)(puVar6 + -4) = 2;
+  *(undefined4 *)(puVar6 + -4) = 1;
+  pcVar2 = (code *)swi(0x80);
+  (*pcVar2)();
+  DAT_080484ef = 0xf;
+  iVar5 = -1;
+  pcVar10 = *(char **)(puVar6 + 8);
+  do {
+    pcVar9 = pcVar10;
+    if (iVar5 == 0) break;
+    iVar5 = iVar5 + -1;
+    pcVar9 = pcVar10 + (uint)bVar13 * -2 + 1;
+    cVar4 = *pcVar10;
+    pcVar10 = pcVar9;
+  } while (cVar4 != '\0');
+  if (*(int *)(pcVar9 + -5) == 0x666f6469) {
+    DAT_080484df._0_1_ = 1;
+    FUN_08048259();
+    return;
+  }
+  if (pcVar9[-2] != '5') {
+    FUN_08048259();
+    return;
+  }
+  FUN_08048259();
+  return;
+}
+
+
+
+void FUN_08048259(void)
 
 {
   uint uVar1;
@@ -78,46 +356,22 @@ void entry(char *param_1)
   int extraout_ECX;
   char **ppcVar7;
   char **ppcVar8;
-  code *UNRECOVERED_JUMPTABLE;
+  code *unaff_EBP;
   char *pcVar9;
   char *pcVar10;
   int *piVar11;
   byte bVar12;
   
   bVar12 = 0;
-  DAT_080484ef = 0xf;
-  iVar6 = -1;
-  do {
-    pcVar9 = param_1;
-    if (iVar6 == 0) break;
-    iVar6 = iVar6 + -1;
-    pcVar9 = param_1 + 1;
-    cVar2 = *param_1;
-    param_1 = pcVar9;
-  } while (cVar2 != '\0');
-  if (*(int *)(pcVar9 + -5) == 0x666f6469) {
-    DAT_080484df._0_1_ = 1;
-    UNRECOVERED_JUMPTABLE = (code *)&DAT_08048367;
-    ppcVar4 = (char **)&stack0x00000008;
-  }
-  else if (pcVar9[-2] == '5') {
-    UNRECOVERED_JUMPTABLE = (code *)&DAT_0804833f;
-    ppcVar4 = (char **)&stack0x00000008;
-  }
-  else {
-    UNRECOVERED_JUMPTABLE = (code *)&LAB_080480ae;
-    ppcVar4 = (char **)&stack0x00000008;
-  }
-LAB_08048259:
+  ppcVar4 = (char **)register0x00000010;
+code_r0x08048259:
   do {
     ppcVar7 = ppcVar4;
     pcVar9 = *ppcVar7;
     ppcVar8 = ppcVar7 + 1;
     if (pcVar9 == (char *)0x0) {
 LAB_08048333:
-                    // WARNING: Could not recover jumptable at 0x08048333. Too many branches
-                    // WARNING: Treating indirect jump as call
-      (*UNRECOVERED_JUMPTABLE)();
+      (*unaff_EBP)();
       return;
     }
     iVar6 = 0;
@@ -150,8 +404,8 @@ LAB_08048320:
     if (cVar2 == 'i') goto LAB_0804831b;
     if (cVar2 == 'l') {
 LAB_0804832e:
-      UNRECOVERED_JUMPTABLE = (code *)swi(3);
-      (*UNRECOVERED_JUMPTABLE)();
+      pcVar3 = (code *)swi(3);
+      (*pcVar3)();
       return;
     }
     ppcVar8 = ppcVar7 + 1;
@@ -161,7 +415,7 @@ LAB_0804832e:
     ppcVar8 = ppcVar7 + 1;
     if (cVar2 == 'V') goto LAB_0804831e;
     ppcVar4 = ppcVar7 + 1;
-    if (cVar2 == 'w') goto LAB_08048259;
+    if (cVar2 == 'w') goto code_r0x08048259;
     ppcVar8 = ppcVar7 + 1;
     if (cVar2 == 's') goto LAB_0804831f;
     ppcVar8 = ppcVar7 + 1;
@@ -174,8 +428,7 @@ LAB_0804832e:
         if (*piVar11 == 0) break;
         piVar5 = (int *)((int)piVar11 + (uint)bVar12 * -8 + 5);
         if (*piVar11 == *(int *)(pcVar10 + uVar1 * -2)) {
-          DAT_080484ef = DAT_080484ef & 0xffffff00 |
-                         (uint)*(byte *)(piVar11 + (uint)bVar12 * -2 + 1);
+          DAT_080484ef._0_1_ = *(undefined *)(piVar11 + (uint)bVar12 * -2 + 1);
           goto LAB_08048333;
         }
       }
@@ -201,75 +454,7 @@ LAB_0804832e:
   (&DAT_080484e3)[(int)(iVar6 + 1U) >> 3] =
        (&DAT_080484e3)[(int)(iVar6 + 1U) >> 3] | '\x01' << (iVar6 + 1U & 7);
   ppcVar4 = ppcVar8;
-  goto LAB_08048259;
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void FUN_080480c7(void)
-
-{
-  char cVar1;
-  code *pcVar2;
-  uint uVar3;
-  int iVar4;
-  int *piVar5;
-  char *pcVar6;
-  byte bVar7;
-  int iStack4;
-  
-  uVar3 = _DAT_080484e3;
-  bVar7 = 0;
-  iStack4 = 0x80480d7;
-  iStack4 = FUN_0804804c();
-  if ((uVar3 >> 8 & 1) != 0) {
-    iStack4 = -iStack4;
-  }
-  piVar5 = &iStack4;
-  if ((uVar3 >> 7 & 1) != 0) {
-    pcVar2 = (code *)swi(0x80);
-    (*pcVar2)();
-    iVar4 = -1;
-    pcVar6 = &DAT_08048afb;
-    do {
-      if (iVar4 == 0) break;
-      iVar4 = iVar4 + -1;
-      cVar1 = *pcVar6;
-      pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
-    } while (cVar1 != ' ');
-    iStack4 = 4;
-    pcVar2 = (code *)swi(0x80);
-    (*pcVar2)();
-    pcVar2 = (code *)swi(0x80);
-    (*pcVar2)();
-    pcVar2 = (code *)swi(0x80);
-    (*pcVar2)();
-    piVar5 = (int *)&stack0x0000000c;
-    if (DAT_08048afb != 'y') {
-      return;
-    }
-  }
-  *piVar5 = 0x25;
-  pcVar2 = (code *)swi(0x80);
-  iVar4 = (*pcVar2)();
-  if (iVar4 == 0) {
-    if ((uVar3 >> 5 & 1) != 0) {
-      piVar5[1] = 1;
-      piVar5[1] = 4;
-      pcVar2 = (code *)swi(0x80);
-      (*pcVar2)();
-    }
-  }
-  else if ((uVar3 >> 6 & 1) == 0) {
-    piVar5[1] = 1;
-    piVar5[1] = 4;
-    pcVar2 = (code *)swi(0x80);
-    (*pcVar2)();
-    return;
-  }
-  return;
+  goto code_r0x08048259;
 }
 
 

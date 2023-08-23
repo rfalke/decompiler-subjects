@@ -61,6 +61,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -205,7 +206,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void thunk_FUN_080482f6(void)
+void FUN_080482f0(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x080482f0. Too many branches
@@ -216,38 +217,12 @@ void thunk_FUN_080482f6(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void FUN_080482f6(void)
-
-{
-                    // WARNING: Could not recover jumptable at 0x080482e6. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*_DAT_08049ffc)(0);
-  return;
-}
-
-
-
-void thunk_FUN_08048306(void)
+void FUN_08048300(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x08048300. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*(code *)PTR_FUN_0804a004)();
-  return;
-}
-
-
-
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-void FUN_08048306(void)
-
-{
-                    // WARNING: Could not recover jumptable at 0x080482e6. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*_DAT_08049ffc)(8);
+  (*(code *)PTR_LAB_0804a004)();
   return;
 }
 
@@ -268,6 +243,7 @@ void FUN_08048350(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080483bf)
 // WARNING: Removing unreachable block (ram,0x080483c8)
 
 void FUN_080483b0(void)
@@ -281,27 +257,18 @@ void FUN_080483b0(void)
 undefined4 FUN_080483d4(void)
 
 {
-  thunk_FUN_080482f6("It could be a malicious program }:)");
+  FUN_080482f0("It could be a malicious program }:)");
   return 0;
 }
 
 
 
+// WARNING: Removing unreachable block (ram,0x08048481)
+// WARNING: Removing unreachable block (ram,0x08048488)
+
 void FUN_08048470(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (DAT_08049f14 != (code *)0xffffffff) {
-    ppcVar2 = &DAT_08049f14;
-    pcVar1 = DAT_08049f14;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

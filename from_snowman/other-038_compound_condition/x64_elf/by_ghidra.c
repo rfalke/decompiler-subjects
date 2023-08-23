@@ -96,14 +96,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -146,7 +146,7 @@ struct Elf64_Sym {
 
 
 
-void g(void)
+void processEntry g(void)
 
 {
   return;
@@ -165,16 +165,44 @@ void h(void)
 void f(int param_1,int param_2,int param_3,int param_4)
 
 {
+  undefined8 *puVar1;
+  undefined8 *puVar2;
+  undefined *puVar3;
+  undefined *puVar4;
+  undefined8 auStack_30 [3];
+  int local_18;
+  int local_14;
+  int local_10;
+  int local_c;
+  
+  puVar3 = &stack0xfffffffffffffff8;
+  puVar4 = &stack0xfffffffffffffff8;
+  puVar2 = (undefined8 *)&local_18;
+  local_18 = param_4;
+  local_14 = param_3;
+  local_10 = param_2;
+  local_c = param_1;
   if (((param_1 == 0) || (param_2 == 0)) && ((param_3 == 0 || (param_4 == 0)))) {
+    auStack_30[2] = 0x400192;
     h();
   }
   else {
+    puVar2 = auStack_30 + 2;
+    auStack_30[2] = 0x400186;
+    g();
+    puVar4 = puVar3;
+  }
+  if (((*(int *)(puVar4 + -4) != 0) || (*(int *)(puVar4 + -8) != 0)) &&
+     ((*(int *)(puVar4 + -0xc) != 0 || (*(int *)(puVar4 + -0x10) != 0)))) {
+    puVar1 = (undefined8 *)((long)puVar2 + -8);
+    puVar2 = (undefined8 *)((long)puVar2 + -8);
+    *puVar1 = 0x4001b4;
     g();
   }
-  if (((param_1 != 0) || (param_2 != 0)) && ((param_3 != 0 || (param_4 != 0)))) {
-    g();
-  }
-  if ((param_1 != 0) || (((param_2 != 0 && (param_3 != 0)) || (param_4 != 0)))) {
+  if ((*(int *)(puVar4 + -4) != 0) ||
+     (((*(int *)(puVar4 + -8) != 0 && (*(int *)(puVar4 + -0xc) != 0)) ||
+      (*(int *)(puVar4 + -0x10) != 0)))) {
+    *(undefined8 *)((long)puVar2 + -8) = 0x4001d6;
     h();
   }
   return;

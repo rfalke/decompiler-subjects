@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -87,7 +114,7 @@ void FUN_08048070(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(undefined4 param_1,int param_2)
 
 {
   char cVar1;
@@ -110,11 +137,10 @@ void entry(void)
   char **ppcVar16;
   byte bVar17;
   undefined8 uVar18;
-  int unaff_retaddr;
   
   bVar17 = 0;
   ppcVar11 = (char **)&stack0x00000004;
-  if (unaff_retaddr < 3) {
+  if (param_2 < 3) {
 LAB_080481f4:
     *(undefined4 *)((int)ppcVar11 + -4) = 2;
   }

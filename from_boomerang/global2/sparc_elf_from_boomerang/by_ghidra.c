@@ -146,6 +146,7 @@ typedef enum Elf32_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -232,16 +233,16 @@ void _start(void)
   EVP_PKEY_CTX *ctx;
   int __status;
   int local_res40;
-  undefined auStackX68 [4];
-  undefined auStackX72 [20];
+  undefined auStackX_44 [4];
+  undefined auStackX_48 [20];
   
   if (unaff_g1 != (__func *)0x0) {
     atexit(unaff_g1);
   }
   ctx = (EVP_PKEY_CTX *)atexit(_fini);
   _init(ctx);
-  environ = auStackX68 + local_res40 * 4 + 4;
-  __status = main(local_res40,auStackX68);
+  environ = auStackX_44 + local_res40 * 4 + 4;
+  __status = main(local_res40,auStackX_44);
                     // WARNING: Subroutine does not return
   exit(__status);
 }
@@ -269,6 +270,7 @@ undefined4 __do_global_dtors_aux(undefined4 param_1)
   code *pcVar1;
   
   if (completed_1 == '\0') {
+    completed_1 = 0;
     pcVar1 = *(code **)p_0;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
@@ -330,12 +332,13 @@ undefined4 call_frame_dummy(undefined4 param_1)
 
 // WARNING: Removing unreachable block (ram,0x000106fc)
 // WARNING: Removing unreachable block (ram,0x00010728)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 foo2(undefined4 param_1)
 
 {
   b = 0xc;
-  printf("a = %f\n",a._0_4_,a._4_4_);
+  printf("a = %f\n",a,_DAT_000209b4);
   return param_1;
 }
 
@@ -449,7 +452,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -460,7 +463,7 @@ int atexit(__func *__func)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -471,7 +474,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -509,7 +512,7 @@ void FUN_000208d4(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 

@@ -114,6 +114,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -233,7 +234,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _cleanup(EVP_PKEY_CTX *ctx)
 
@@ -245,7 +246,7 @@ void _cleanup(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -267,7 +268,7 @@ void __fpstart(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -279,7 +280,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -291,7 +292,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -303,7 +304,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -315,7 +316,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -327,7 +328,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -339,11 +340,10 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-void __regparm3 _start(undefined4 param_1,__func *param_2)
+void processEntry _start(__func *param_1,EVP_PKEY_CTX *param_2)
 
 {
   int __status;
-  EVP_PKEY_CTX *unaff_retaddr;
   undefined *puVar1;
   undefined *puVar2;
   code *pcVar3;
@@ -353,14 +353,14 @@ void __regparm3 _start(undefined4 param_1,__func *param_2)
   uVar5 = 0;
   uVar4 = 0;
   atexit(_cleanup);
-  atexit(param_2);
+  atexit(param_1);
   pcVar3 = _fini;
   atexit(_fini);
-  environ = &stack0x00000008 + (int)unaff_retaddr * 4;
+  environ = &stack0x00000008 + (int)param_2 * 4;
   puVar1 = &stack0x00000004;
   puVar2 = environ;
-  _init(unaff_retaddr);
-  __fpstart(unaff_retaddr,puVar1,puVar2,pcVar3,param_2,uVar4,uVar5);
+  _init(param_2);
+  __fpstart(param_2,puVar1,puVar2,pcVar3,param_1,uVar4,uVar5);
   __status = main();
                     // WARNING: Subroutine does not return
   exit(__status);
@@ -769,8 +769,6 @@ byte * extract_cie_info(int param_1,char **param_2)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int * execute_cfa_insn(int *param_1,undefined4 *param_2,int param_3,int *param_4)
 
 {
@@ -1058,159 +1056,6 @@ void _fini(void)
 {
   gcc2_compiled_();
   return;
-}
-
-
-
-// WARNING: Control flow encountered bad instruction data
-// WARNING: Type propagation algorithm not settling
-
-void __regparm3 __DTOR_END__(char **param_1,int param_2,byte *param_3)
-
-{
-  uint uVar1;
-  byte bVar2;
-  char cVar3;
-  byte bVar4;
-  char *pcVar6;
-  char *pcVar7;
-  char **ppcVar8;
-  char cVar9;
-  char **unaff_EBX;
-  int unaff_EBP;
-  char *unaff_ESI;
-  int *unaff_EDI;
-  byte *pbVar5;
-  
-  bVar2 = (byte)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar2;
-  bVar4 = *(byte *)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar2;
-  *(byte *)param_1 = *(char *)param_1 + bVar2 + CARRY1(bVar4,bVar2);
-  *(byte *)param_1 = *(char *)param_1 + bVar2;
-  *(byte *)param_1 = *(char *)param_1 + bVar2;
-  *(byte *)param_1 = *(char *)param_1 + bVar2;
-  do {
-    *param_1 = *param_1 + (int)param_1;
-    *(int *)((int)(param_1 + 3) + (int)param_3) =
-         *(int *)((int)(param_1 + 3) + (int)param_3) + (int)unaff_EDI;
-    bVar2 = (char)param_1 + 4;
-    uVar1 = (uint)param_1 & 0xffffff00;
-    pbVar5 = (byte *)(uVar1 | bVar2);
-    *param_3 = bVar2;
-    *pbVar5 = *pbVar5 + bVar2;
-    bVar4 = *pbVar5;
-    *pbVar5 = *pbVar5 + bVar2;
-    *pbVar5 = (*pbVar5 - bVar2) - CARRY1(bVar4,bVar2);
-    *pbVar5 = *pbVar5 + bVar2;
-    cVar3 = in(0x89);
-    pcVar7 = (char *)(uVar1 | (byte)(cVar3 + 8U));
-    *pcVar7 = *pcVar7 + cVar3 + 8U;
-    bVar4 = cVar3 + 9;
-    pcVar6 = (char *)(uVar1 | bVar4);
-    *pcVar6 = *pcVar6 + bVar4;
-    bVar2 = (byte)param_3;
-    *unaff_ESI = *unaff_ESI + bVar2;
-    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
-    *pcVar6 = *pcVar6 + bVar4;
-    pcVar6 = (char *)((uint)pcVar6 | 0x10405);
-    *pcVar6 = *pcVar6 + (char)pcVar6;
-    pcVar7 = *unaff_EBX;
-    *unaff_EBX = pcVar6;
-    cVar3 = (char)pcVar7;
-    bVar4 = cVar3 + 1;
-    uVar1 = (uint)pcVar7 & 0xffffff00;
-    pcVar7 = (char *)(uVar1 | bVar4);
-    *pcVar7 = *pcVar7 + bVar4;
-    unaff_ESI[0x2c000004] = unaff_ESI[0x2c000004] + bVar4;
-    *pcVar7 = *pcVar7 + bVar4;
-    *pcVar7 = *pcVar7 + bVar2;
-    *pcVar7 = *pcVar7 + bVar4;
-    *(byte *)(param_2 + 0x590804) = *(byte *)(param_2 + 0x590804) & bVar2;
-    *pcVar7 = *pcVar7 + bVar4;
-    bVar4 = cVar3 + 2;
-    pcVar7 = (char *)(uVar1 | bVar4);
-    *pcVar7 = *pcVar7 + bVar4;
-    *unaff_ESI = *unaff_ESI + bVar2;
-    *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
-    *pcVar7 = *pcVar7 + bVar4;
-    pcVar7 = (char *)((uint)pcVar7 | 0x40405);
-    *pcVar7 = *pcVar7 + (char)pcVar7;
-    ppcVar8 = *(char ***)(pcVar7 + (int)&stack0x00000000);
-    *(char **)(pcVar7 + (int)&stack0x00000000) = pcVar7;
-    *ppcVar8 = *ppcVar8 + (int)ppcVar8;
-    *(byte *)ppcVar8 = *(char *)ppcVar8 + (byte)ppcVar8;
-    bVar4 = bRam002c0000;
-    param_1 = (char **)((uint)ppcVar8 & 0xffffff00 | (uint)bRam002c0000);
-    cVar3 = *(char *)param_1 + bRam002c0000;
-    bRam002c0000 = (byte)ppcVar8;
-    *(char *)param_1 = cVar3;
-    cVar3 = *(char *)param_1;
-    *(byte *)param_1 = *(char *)param_1 + bVar4;
-  } while (SCARRY1(cVar3,bVar4) != *(char *)param_1 < '\0');
-  bVar4 = bVar4 + 8;
-  pcVar6 = (char *)((uint)ppcVar8 & 0xffffff00 | (uint)bVar4);
-  *pcVar6 = *pcVar6 + bVar4;
-  param_3[(int)pcVar6] = param_3[(int)pcVar6] + bVar4;
-  *pcVar6 = *pcVar6 + bVar4;
-  *unaff_ESI = *unaff_ESI + bVar2;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
-  *pcVar6 = *pcVar6 + bVar4;
-  pcVar6 = (char *)((uint)pcVar6 | 0x40405);
-  *pcVar6 = *pcVar6 + (char)pcVar6;
-  pcVar7 = pcRam00000104;
-  cVar3 = (char)pcRam00000104;
-  pcRam00000104 = pcVar6;
-  unaff_ESI[0x1c000006] = unaff_ESI[0x1c000006] + cVar3;
-  *pcVar7 = *pcVar7 + cVar3;
-  cVar9 = (char)((uint)param_3 >> 8);
-  pcVar7[-0x2c000000] = pcVar7[-0x2c000000] + cVar9;
-  bVar4 = pcVar7[(int)param_3];
-  pcVar7 = (char *)((uint)pcVar7 & 0xffffff00 | (uint)bVar4);
-  *pcVar7 = *pcVar7 + bVar4;
-  param_3[(int)pcVar7] = param_3[(int)pcVar7] + bVar4;
-  *pcVar7 = *pcVar7 + bVar4;
-  *unaff_ESI = *unaff_ESI + bVar2;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
-  *pcVar7 = *pcVar7 + bVar4;
-  bVar4 = (char)((uint)pcVar7 | 0x5005) + bVar2;
-  uVar1 = ((uint)pcVar7 | 0x5005) & 0xffffff00;
-  *(char *)(uVar1 | bVar4) = *(char *)(uVar1 | bVar4) + bVar4;
-  *(byte *)(unaff_EBX + (int)param_3) = *(char *)(unaff_EBX + (int)param_3) + bVar4;
-  pcVar7 = (char *)(uVar1 | (byte)(bVar4 + 8));
-  *pcVar7 = *pcVar7 + bVar4 + 8;
-  bVar4 = bVar4 + 9;
-  pcVar6 = (char *)(uVar1 | bVar4);
-  *pcVar6 = *pcVar6 + bVar4;
-  *unaff_ESI = *unaff_ESI + bVar2;
-  *(byte *)(unaff_EBP + 0x20402) = *(byte *)(unaff_EBP + 0x20402) | bVar4;
-  *pcVar6 = *pcVar6 + bVar4;
-  pcVar6 = (char *)((uint)pcVar6 | 0x40405);
-  *pcVar6 = *pcVar6 + (char)pcVar6;
-  pcVar7 = pcRam00000104;
-  cVar3 = (char)pcRam00000104;
-  pcRam00000104 = pcVar6;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar3;
-  *pcVar7 = *pcVar7 + cVar3;
-  *unaff_EDI = *unaff_EDI + 4;
-  *pcVar7 = *pcVar7 + cVar3;
-  bVar4 = cVar3 + 4;
-  ppcVar8 = (char **)((uint)pcVar7 & 0xffffff00 | (uint)bVar4);
-  *ppcVar8 = *ppcVar8 + (int)ppcVar8;
-  *(byte *)ppcVar8 = *(char *)ppcVar8 + bVar4;
-  (&stack0xfffffffc)[(int)ppcVar8] = (&stack0xfffffffc)[(int)ppcVar8] | bVar4;
-  *(byte *)ppcVar8 = *(char *)ppcVar8 + bVar4;
-  *unaff_ESI = *unaff_ESI + cVar9;
-  pcVar7 = (char *)((uint)(uint *)((uint)ppcVar8 | 4) | *(uint *)((uint)ppcVar8 | 4));
-  cVar3 = (char)pcVar7;
-  *pcVar7 = *pcVar7 + cVar3;
-  *pcVar7 = *pcVar7 + cVar3;
-  *pcVar7 = *pcVar7 + cVar3;
-  *(undefined *)((uint)pcVar7 & 0xffffff00) = *(undefined *)((uint)pcVar7 & 0xffffff00);
-  pcVar7 = (char *)((uint)pcVar7 & 0xffffff00 | 0xff);
-  *pcVar7 = *pcVar7 + -1;
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
 }
 
 

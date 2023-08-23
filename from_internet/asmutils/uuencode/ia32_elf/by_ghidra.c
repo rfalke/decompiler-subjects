@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -37,7 +64,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(undefined4 param_1,short *param_2)
+void processEntry entry(undefined4 param_1,int param_2,undefined4 param_3,short *param_4)
 
 {
   byte bVar1;
@@ -67,28 +94,27 @@ void entry(undefined4 param_1,short *param_2)
   char *pcVar20;
   undefined2 *puVar21;
   byte bVar22;
-  int unaff_retaddr;
   
   bVar22 = 0;
   DAT_0804d9c4 = 0x69676562;
   DAT_0804d9c8 = 0x6e;
-  puVar17 = &DAT_0804d9c9;
-  puVar10 = (uint *)&param_2;
-  if (1 < unaff_retaddr) {
-    uVar7 = unaff_retaddr - 1;
+  puVar17 = (undefined4 *)&DAT_0804d9c9;
+  puVar10 = (uint *)&param_4;
+  if (1 < param_2) {
+    uVar7 = param_2 - 1;
     puVar10 = (uint *)&stack0x0000000c;
-    if (*param_2 == 0x6d2d) {
-      DAT_0804854c = s_________________0123456789_______0804843b + 0x40;
-      DAT_0804d9c9 = 0x7361622d;
+    if (*param_4 == 0x6d2d) {
+      DAT_0804854c = s_________________0123456789__<_>__0804843b + 0x40;
+      _DAT_0804d9c9 = 0x7361622d;
       DAT_0804d9cd = 0x20343665;
-      puVar17 = (undefined4 *)&DAT_0804d9d1;
-      DAT_0804d9d1 = 0;
+      puVar17 = &DAT_0804d9d1;
+      DAT_0804d9d1._0_1_ = 0;
       puVar10 = (uint *)&stack0x00000010;
-      uVar7 = unaff_retaddr - 2;
+      uVar7 = param_2 - 2;
     }
     else {
-      DAT_0804854c = s_________________0123456789_______0804843b;
-      DAT_0804d9c9 = CONCAT22(DAT_0804d9c9._2_2_,0x20);
+      DAT_0804854c = s_________________0123456789__<_>__0804843b;
+      _DAT_0804d9c9 = CONCAT22(DAT_0804d9c9_2,0x20);
       puVar17 = (undefined4 *)((int)&DAT_0804d9c9 + 1);
     }
     if (uVar7 < 3) {
@@ -140,7 +166,7 @@ void entry(undefined4 param_1,short *param_2)
           FUN_08048374();
           puVar10[1] = 0x8048404;
           FUN_08048368();
-          *(undefined2 *)((int)&DAT_0804d1c4 + extraout_EDX_03) = 10;
+          *(undefined2 *)(&DAT_0804d1c4 + extraout_EDX_03) = 10;
           puVar10[1] = 2;
           puVar10[1] = 4;
           pcVar4 = (code *)swi(0x80);
@@ -183,12 +209,12 @@ void entry(undefined4 param_1,short *param_2)
           break;
         }
         pcVar5 = DAT_0804854c;
-        puVar16 = &DAT_08048560;
+        puVar16 = (uint *)&DAT_08048560;
         puVar18 = (undefined2 *)&DAT_0804a560;
         uVar7 = 0x1ffe - iVar8;
         if (uVar7 != 0) {
           _DAT_08048558 = 0;
-          if (DAT_0804854c != s_________________0123456789_______0804843b + 0x40) {
+          if (DAT_0804854c != s_________________0123456789__<_>__0804843b + 0x40) {
             uVar9 = uVar7;
             if (0x2c < uVar7) {
               uVar9 = 0x2d;
@@ -227,7 +253,7 @@ void entry(undefined4 param_1,short *param_2)
               *(char *)puVar18 = pcVar5[(byte)((ushort)((ushort)bVar1 << 4) >> 6)];
               puVar21 = (undefined2 *)(pcVar19 + (uint)bVar22 * -2 + 1);
               *pcVar19 = pcVar5[(byte)((ushort)bVar1 << 4) & 0x3f];
-              if (pcVar5 == s_________________0123456789_______0804843b + 0x40) {
+              if (pcVar5 == s_________________0123456789__<_>__0804843b + 0x40) {
                 cVar6 = '=';
               }
               else {
@@ -238,13 +264,14 @@ void entry(undefined4 param_1,short *param_2)
             }
             else {
               uVar7 = (uint)CONCAT11((char)*(undefined2 *)puVar16,
-                                     (char)((ushort)*(undefined2 *)puVar16 >> 8)) << 2;
+                                     (char)((ushort)*(undefined2 *)puVar16 >> 8));
+              uVar9 = uVar7 << 2;
               pcVar19 = (char *)((int)puVar18 + (uint)bVar22 * -2 + 1);
-              *(char *)puVar18 = pcVar5[uVar7 >> 0xc];
+              *(char *)puVar18 = pcVar5[((uVar7 & 0xfc00) << 2) >> 0xc];
               pcVar20 = pcVar19 + (uint)bVar22 * -2 + 1;
-              *pcVar19 = pcVar5[(uVar7 & 0xfc0) >> 6];
-              *pcVar20 = pcVar5[uVar7 & 0x3f];
-              if (pcVar5 == s_________________0123456789_______0804843b + 0x40) {
+              *pcVar19 = pcVar5[(uVar9 & 0xfc0) >> 6];
+              *pcVar20 = pcVar5[uVar9 & 0x3f];
+              if (pcVar5 == s_________________0123456789__<_>__0804843b + 0x40) {
                 cVar6 = '=';
               }
               else {
@@ -267,7 +294,7 @@ void entry(undefined4 param_1,short *param_2)
         puVar11 = (undefined *)((int)puVar13 + 4);
       } while (DAT_08048554 != 0);
       puVar17 = (undefined4 *)&DAT_0804a560;
-      if (DAT_0804854c == s_________________0123456789_______0804843b) {
+      if (DAT_0804854c == s_________________0123456789__<_>__0804843b) {
         DAT_0804a560 = '`';
         DAT_0804a561 = 10;
         _DAT_0804a562 = 0x6e65;
@@ -310,7 +337,7 @@ LAB_08048306:
   pcVar4 = (code *)swi(0x80);
   (*pcVar4)();
   *(undefined *)puVar17 = 10;
-  if (pcVar5 != s_________________0123456789_______0804843b + 0x40) {
+  if (pcVar5 != s_________________0123456789__<_>__0804843b + 0x40) {
     if (extraout_EDX_02 < 0x2d) {
       cVar6 = (char)extraout_EDX_02;
     }
@@ -335,7 +362,7 @@ void __regparm3 FUN_0804831c(undefined4 param_1,uint param_2)
   undefined *unaff_EDI;
   
   *unaff_EDI = 10;
-  if (unaff_EBX != s_________________0123456789_______0804843b + 0x40) {
+  if (unaff_EBX != s_________________0123456789__<_>__0804843b + 0x40) {
     if (param_2 < 0x2d) {
       cVar1 = (char)param_2;
     }
@@ -353,15 +380,14 @@ void __regparm3 FUN_0804831c(undefined4 param_1,uint param_2)
 void __regparm3 FUN_08048340(uint param_1)
 
 {
-  ushort uVar2;
-  uint uVar1;
+  uint3 uVar1;
+  uint uVar2;
   uint *unaff_EDI;
   
-  uVar2 = (ushort)(((param_1 & 0x1c0) << 10) >> 0x10);
-  uVar1 = (param_1 & 7 |
-          (uint)(uint3)((uint3)uVar2 << 8 | (CONCAT21(uVar2,(char)param_1) & 0xffff38) >> 3 & 0x1f)
-          << 8) << 8 | 0x30303000;
-  *unaff_EDI = uVar1 >> 0x18 | (uVar1 & 0xff0000) >> 8 | (uVar1 & 0xff00) << 8;
+  uVar1 = CONCAT21((short)(((param_1 & 0x1c0) << 10) >> 0x10),(char)param_1) & 0xffff38;
+  uVar2 = (CONCAT31(CONCAT21((short)(uVar1 >> 8),(byte)uVar1 >> 3),(char)param_1) & 0xffffff07) << 8
+          | 0x30303000;
+  *unaff_EDI = uVar2 >> 0x18 | (uVar2 & 0xff0000) >> 8 | (uVar2 & 0xff00) << 8;
   return;
 }
 

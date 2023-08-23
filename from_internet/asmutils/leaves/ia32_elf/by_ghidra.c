@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -55,11 +82,12 @@ void FUN_0804805c(float param_1,float param_2,char param_3)
   int *extraout_EDX;
   int extraout_EDX_00;
   float *unaff_EBP;
-  float10 fVar3;
+  longdouble lVar3;
   
   if (param_3 != '\0') {
-    fVar3 = (float10)FUN_0804804c((int)ROUND(unaff_EBP[5] - unaff_EBP[4] * param_2));
-    *extraout_EDX = (int)ROUND(fVar3 * (float10)(float)extraout_EDX[5] + (float10)unaff_EBP[7]);
+    lVar3 = (longdouble)FUN_0804804c((int)ROUND(unaff_EBP[5] - unaff_EBP[4] * param_2));
+    *extraout_EDX =
+         (int)ROUND(lVar3 * (longdouble)(float)extraout_EDX[5] + (longdouble)unaff_EBP[7]);
     FUN_0804804c();
     fVar1 = unaff_EBP[1];
     fVar2 = *unaff_EBP;
@@ -79,7 +107,7 @@ void FUN_0804805c(float param_1,float param_2,char param_3)
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(void)
+void processEntry entry(void)
 
 {
   char cVar1;
@@ -93,23 +121,22 @@ void entry(void)
   int iVar9;
   int extraout_ECX_00;
   byte *pbVar10;
-  undefined2 in_CS;
   byte in_AF;
   undefined8 uVar11;
   undefined4 local_14;
-  undefined4 uStack16;
-  undefined4 uStack12;
-  undefined4 uStack8;
-  undefined4 uStack4;
+  undefined4 uStack_10;
+  undefined4 uStack_c;
+  undefined4 uStack_8;
+  undefined4 uStack_4;
   char *pcVar8;
   
   bVar4 = 0;
-  uStack4 = 5;
+  uStack_4 = 5;
   pcVar2 = (code *)swi(0x80);
-  uStack4 = (*pcVar2)();
-  uStack8 = 1;
-  uStack12 = 3;
-  uStack16 = 0x4b000;
+  uStack_4 = (*pcVar2)();
+  uStack_8 = 1;
+  uStack_c = 3;
+  uStack_10 = 0x4b000;
   local_14 = 0;
   pcVar2 = (code *)swi(0x80);
   puVar6 = (undefined *)(*pcVar2)();
@@ -125,13 +152,12 @@ void entry(void)
   pcVar7 = (char *)(*pcVar2)();
   *pcVar7 = *pcVar7 + (char)pcVar7;
   DAT_0806817a = DAT_0806817a + (char)((uint)&local_14 >> 8);
-  uVar11 = func_0x003e9999(in_CS);
+  uVar11 = func_0x003e9999();
   pbVar10 = (byte *)((ulonglong)uVar11 >> 0x20);
-  puVar6 = (undefined *)uVar11;
-  *puVar6 = *puVar6;
+  *(undefined *)uVar11 = *(undefined *)uVar11;
   cVar3 = (char)uVar11;
-  pcVar8 = (char *)((uint)puVar6 & 0xffff0000 |
-                   (uint)CONCAT11((char)((ulonglong)uVar11 >> 8) + -0x14,cVar3));
+  pcVar8 = (char *)CONCAT22((short)((ulonglong)uVar11 >> 0x10),
+                            CONCAT11((char)((ulonglong)uVar11 >> 8) + (char)&local_14,cVar3));
   pcVar7 = pcVar8 + 0x43e2;
   *pcVar7 = *pcVar7 + cVar3;
   if (extraout_ECX_00 == 1 || *pcVar7 == '\0') {

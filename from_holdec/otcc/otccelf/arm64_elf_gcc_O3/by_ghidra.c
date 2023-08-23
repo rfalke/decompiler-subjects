@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -53,7 +54,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -65,6 +66,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -225,6 +229,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -253,6 +258,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -264,14 +280,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -323,7 +339,7 @@ void FUN_00100d20(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -345,7 +361,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -358,7 +374,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -371,7 +387,7 @@ FILE * fopen(char *__filename,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isspace(int param_1)
 
@@ -393,7 +409,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fgetc(FILE *__stream)
 
@@ -406,7 +422,7 @@ int fgetc(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -428,7 +444,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -439,7 +455,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -452,7 +468,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long strtol(char *__nptr,char **__endptr,int __base)
 
@@ -465,7 +481,7 @@ long strtol(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -478,7 +494,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strstr(char *__haystack,char *__needle)
 
@@ -491,7 +507,7 @@ char * strstr(char *__haystack,char *__needle)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isalnum(int param_1)
 
@@ -503,6 +519,8 @@ int isalnum(int param_1)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(int d,int a)
 
@@ -552,10 +570,9 @@ int main(int d,int a)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -621,21 +638,19 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x001010d8)
+// WARNING: Removing unreachable block (ram,0x001010e4)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int L(int a)
 
@@ -651,6 +666,8 @@ int L(int a)
 
 
 
+// WARNING: Unknown calling convention
+
 int w(void)
 
 {
@@ -661,9 +678,9 @@ int w(void)
     return m;
   }
   pbVar1 = (byte *)(long)V;
+  V = V + 1;
+  m = (uint)*pbVar1;
   if (*pbVar1 != 2) {
-    V = V + 1;
-    m = (uint)*pbVar1;
     return 0x11609c;
   }
   V = 0;
@@ -672,6 +689,8 @@ int w(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int am(void)
 
@@ -685,6 +704,8 @@ int am(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int an(void)
 
@@ -710,38 +731,43 @@ int an(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int av(void)
 
 {
   byte bVar1;
-  byte bVar2;
-  uint uVar3;
-  bool bVar4;
-  uint uVar5;
-  byte *pbVar6;
-  char *pcVar7;
-  long lVar8;
-  undefined *puVar9;
+  uint uVar2;
+  bool bVar3;
+  uint uVar4;
+  byte *pbVar5;
+  char *pcVar6;
+  long lVar7;
+  undefined *puVar8;
+  int iVar9;
+  int a;
+  int h;
+  int s;
   int iVar10;
   
-  uVar5 = m;
+  uVar4 = m;
 LAB_001012c0:
   do {
-    m = uVar5;
-    uVar3 = m;
-    uVar5 = isspace(m);
-    bVar4 = uVar3 == 0x23;
-    for (uVar5 = bVar4 | uVar5; uVar5 != 0; uVar5 = bVar4 | uVar5) {
-      if (bVar4) {
+    m = uVar4;
+    uVar2 = m;
+    uVar4 = isspace(m);
+    bVar3 = uVar2 == 0x23;
+    for (uVar4 = bVar3 | uVar4; uVar4 != 0; uVar4 = bVar3 | uVar4) {
+      if (bVar3) {
         if (V == 0) {
           m = fgetc((FILE *)(long)ak);
           av();
         }
         else {
-          pbVar6 = (byte *)(long)V;
+          pbVar5 = (byte *)(long)V;
           V = V + 1;
-          m = (uint)*pbVar6;
-          if (*pbVar6 == 2) {
+          m = (uint)*pbVar5;
+          if (*pbVar5 == 2) {
             V = 0;
             m = al;
           }
@@ -749,18 +775,18 @@ LAB_001012c0:
         }
         if (e == 0x218) {
           av();
-          puVar9 = (undefined *)(long)D;
+          puVar8 = (undefined *)(long)D;
           D = D + 1;
-          *puVar9 = 0x20;
+          *puVar8 = 0x20;
           *(undefined4 *)(long)e = 1;
           *(int *)(long)(e + 4) = D;
         }
 LAB_0010158c:
         if (m != 10) {
           while( true ) {
-            puVar9 = (undefined *)(long)D;
+            puVar8 = (undefined *)(long)D;
             D = D + 1;
-            *puVar9 = (char)m;
+            *puVar8 = (char)m;
             if (V == 0) break;
             m = (int)*(byte *)(long)V;
             V = V + 1;
@@ -773,34 +799,34 @@ LAB_0010158c:
           goto LAB_0010158c;
         }
 LAB_001015e8:
-        puVar9 = (undefined *)(long)D;
+        puVar8 = (undefined *)(long)D;
         D = D + 1;
-        *puVar9 = (char)m;
-        puVar9 = (undefined *)(long)D;
+        *puVar8 = (char)m;
+        puVar8 = (undefined *)(long)D;
         D = D + 1;
-        *puVar9 = 2;
+        *puVar8 = 2;
       }
-      uVar3 = al;
+      uVar2 = al;
       if (V == 0) {
-        uVar5 = fgetc((FILE *)(long)ak);
+        uVar4 = fgetc((FILE *)(long)ak);
         goto LAB_001012c0;
       }
-      pbVar6 = (byte *)(long)V;
+      pbVar5 = (byte *)(long)V;
       V = V + 1;
-      uVar5 = (uint)*pbVar6;
-      if (*pbVar6 != 2) goto LAB_001012c0;
+      uVar4 = (uint)*pbVar5;
+      if (*pbVar5 != 2) goto LAB_001012c0;
       V = 0;
       m = al;
-      uVar5 = isspace(al);
-      bVar4 = uVar3 == 0x23;
+      uVar4 = isspace(al);
+      bVar3 = uVar2 == 0x23;
     }
     J = 0;
-    e = uVar3;
-    uVar5 = isalnum(uVar3);
-    if ((uVar3 == 0x5f | uVar5) == 0) {
+    e = uVar2;
+    uVar4 = isalnum(uVar2);
+    if ((uVar2 == 0x5f | uVar4) == 0) {
       if (V == 0) {
         m = fgetc((FILE *)(long)ak);
-        uVar3 = e;
+        uVar2 = e;
       }
       else {
         m = (int)*(byte *)(long)V;
@@ -810,7 +836,7 @@ LAB_001015e8:
           m = al;
         }
       }
-      if (uVar3 == 0x27) {
+      if (uVar2 == 0x27) {
         e = 2;
         if (m == 0x5c) {
           if (V == 0) {
@@ -836,20 +862,20 @@ LAB_00101b98:
 LAB_001018d4:
           C = m;
           if (V == 0) goto LAB_00101b98;
-          pbVar6 = (byte *)(long)V;
+          pbVar5 = (byte *)(long)V;
           V = V + 1;
-          m = (uint)*pbVar6;
-          if (*pbVar6 == 2) {
+          m = (uint)*pbVar5;
+          if (*pbVar5 == 2) {
             V = 0;
             m = al;
             goto LAB_00101b38;
           }
         }
         if (V != 0) {
-          pbVar6 = (byte *)(long)V;
-          if (*pbVar6 != 2) {
+          pbVar5 = (byte *)(long)V;
+          if (*pbVar5 != 2) {
             V = V + 1;
-            m = (uint)*pbVar6;
+            m = (uint)*pbVar5;
             return 0;
           }
           V = 0;
@@ -860,7 +886,7 @@ LAB_00101b38:
         m = fgetc((FILE *)(long)ak);
         return 0;
       }
-      if (uVar3 != 0x2f || m != 0x2a) {
+      if (uVar2 != 0x2f || m != 0x2a) {
         iVar10 = 0x1058e0;
         break;
       }
@@ -898,32 +924,32 @@ LAB_00101830:
       m = 0;
 LAB_001017bc:
       if (V == 0) {
-        uVar5 = fgetc((FILE *)(long)ak);
+        uVar4 = fgetc((FILE *)(long)ak);
       }
       else {
-        pbVar6 = (byte *)(long)V;
+        pbVar5 = (byte *)(long)V;
         V = V + 1;
-        uVar5 = (uint)*pbVar6;
-        if (*pbVar6 == 2) {
+        uVar4 = (uint)*pbVar5;
+        if (*pbVar5 == 2) {
           V = 0;
           m = al;
-          uVar5 = m;
+          uVar4 = m;
         }
       }
       goto LAB_001012c0;
     }
-    puVar9 = (undefined *)(long)D;
+    puVar8 = (undefined *)(long)D;
     D = D + 1;
-    *puVar9 = 0x20;
+    *puVar8 = 0x20;
     Z = D;
 LAB_001013a8:
     iVar10 = m;
-    uVar5 = isalnum(m);
-    if ((iVar10 == 0x5f | uVar5) != 0) {
+    uVar4 = isalnum(m);
+    if ((iVar10 == 0x5f | uVar4) != 0) {
       while( true ) {
-        puVar9 = (undefined *)(long)D;
+        puVar8 = (undefined *)(long)D;
         D = D + 1;
-        *puVar9 = (char)iVar10;
+        *puVar8 = (char)iVar10;
         iVar10 = al;
         if (V == 0) break;
         m = (int)*(byte *)(long)V;
@@ -931,23 +957,23 @@ LAB_001013a8:
         if (m != 2) goto LAB_001013a8;
         V = 0;
         m = al;
-        uVar5 = isalnum(al);
-        if ((iVar10 == 0x5f | uVar5) == 0) goto LAB_00101428;
+        uVar4 = isalnum(al);
+        if ((iVar10 == 0x5f | uVar4) == 0) goto LAB_00101428;
       }
       m = fgetc((FILE *)(long)ak);
       goto LAB_001013a8;
     }
 LAB_00101428:
     if (e - 0x30U < 10) {
-      lVar8 = strtol((char *)(ulong)(uint)Z,(char **)0x0,0);
-      C = (int)lVar8;
+      lVar7 = strtol((char *)(ulong)(uint)Z,(char **)0x0,0);
       e = 2;
+      C = (int)lVar7;
       return 0;
     }
     *(undefined *)(long)D = 0x20;
     iVar10 = Q;
-    pcVar7 = strstr((char *)(long)Q,(char *)(long)(Z + -1));
-    e = (int)pcVar7 - iVar10;
+    pcVar6 = strstr((char *)(long)Q,(char *)(long)(Z + -1));
+    e = (int)pcVar6 - iVar10;
     *(undefined *)(long)D = 0;
     e = (e + 0x20) * 8;
     if (e < 0x219) {
@@ -960,47 +986,48 @@ LAB_00101428:
     V = *(int *)(long)(e + 4);
     al = m;
     if (V == 0) {
-      uVar5 = fgetc((FILE *)(long)ak);
+      uVar4 = fgetc((FILE *)(long)ak);
     }
     else {
-      pbVar6 = (byte *)(long)V;
+      pbVar5 = (byte *)(long)V;
       V = V + 1;
-      uVar5 = (uint)*pbVar6;
-      if (*pbVar6 == 2) {
+      uVar4 = (uint)*pbVar5;
+      if (*pbVar5 == 2) {
         V = 0;
-        uVar5 = m;
+        uVar4 = m;
       }
     }
   } while( true );
 LAB_00101a24:
-  bVar1 = *(byte *)(long)iVar10;
-  if (bVar1 == 0) {
+  s = (int)*(byte *)(long)iVar10;
+  if (s == 0) {
     return 0;
   }
-  bVar2 = *(byte *)(long)(iVar10 + 1);
+  bVar1 = *(byte *)(long)(iVar10 + 1);
   C = 0;
   J = *(byte *)(long)(iVar10 + 2) - 0x62;
-  uVar5 = (uint)bVar2;
+  uVar4 = (uint)bVar1;
   if (-1 < J) {
     iVar10 = iVar10 + 3;
-    if ((uVar5 == 0x40 || uVar5 == m) && bVar1 == uVar3) goto LAB_00101a9c;
+    if ((uVar4 == 0x40 || uVar4 == m) && s == uVar2) goto LAB_00101a9c;
     goto LAB_00101a24;
   }
   C = 0;
-  lVar8 = (long)(iVar10 + 4);
+  lVar7 = (long)(iVar10 + 4);
   do {
-    iVar10 = (int)lVar8;
+    iVar9 = (int)lVar7;
     C = J + C * 0x40 + 0x40;
-    J = *(byte *)(lVar8 + -1) - 0x62;
-    lVar8 = lVar8 + 1;
+    J = *(byte *)(lVar7 + -1) - 0x62;
+    lVar7 = lVar7 + 1;
   } while (J < 0);
-  bVar4 = false;
-  if (bVar2 == 0x40 || (uint)bVar2 == m) {
-    bVar4 = bVar1 == uVar3;
+  bVar3 = false;
+  if (bVar1 == 0x40 || (uint)bVar1 == m) {
+    bVar3 = *(byte *)(long)iVar10 == uVar2;
   }
-  if (bVar4) {
+  iVar10 = iVar9;
+  if (bVar3) {
 LAB_00101a9c:
-    if (uVar5 != m) {
+    if (uVar4 != m) {
       return 0;
     }
     w();
@@ -1023,6 +1050,8 @@ LAB_00101814:
 
 
 
+// WARNING: Unknown calling convention
+
 int aw(int d)
 
 {
@@ -1042,6 +1071,8 @@ int aw(int d)
 
 
 
+// WARNING: Unknown calling convention
+
 int E(int a,int d)
 
 {
@@ -1054,6 +1085,8 @@ int E(int a,int d)
 
 
 
+// WARNING: Unknown calling convention
+
 int ao(int a)
 
 {
@@ -1062,6 +1095,8 @@ int ao(int a)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ap(int a,int z)
 
@@ -1116,6 +1151,8 @@ joined_r0x00101dec:
 
 
 
+// WARNING: Unknown calling convention
+
 int H(int a)
 
 {
@@ -1126,6 +1163,8 @@ int H(int a)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int x(int d,int a)
 
@@ -1144,19 +1183,21 @@ int x(int d,int a)
     d = d >> 8;
     uVar1 = d + 1;
   }
-  iVar4 = v + 1;
-  iVar2 = v + 2;
-  iVar3 = v + 3;
+  iVar2 = v + 1;
+  iVar3 = v + 2;
+  iVar4 = v + 3;
   *(char *)(long)v = (char)a;
-  *(char *)(long)iVar4 = (char)((uint)a >> 8);
-  *(char *)(long)iVar2 = (char)((uint)a >> 0x10);
-  *(char *)(long)iVar3 = (char)((uint)a >> 0x18);
-  iVar4 = v;
+  *(char *)(long)iVar2 = (char)((uint)a >> 8);
+  *(char *)(long)iVar3 = (char)((uint)a >> 0x10);
+  *(char *)(long)iVar4 = (char)((uint)a >> 0x18);
+  iVar2 = v;
   v = v + 4;
-  return iVar4;
+  return iVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int M(int a)
 
@@ -1183,6 +1224,8 @@ int M(int a)
 
 
 
+// WARNING: Unknown calling convention
+
 int I(int a)
 
 {
@@ -1194,19 +1237,21 @@ int I(int a)
   puVar4 = (undefined *)(long)v;
   v = v + 1;
   *puVar4 = 0xe9;
-  iVar3 = v + 1;
-  iVar1 = v + 2;
-  iVar2 = v + 3;
+  iVar1 = v + 1;
+  iVar2 = v + 2;
+  iVar3 = v + 3;
   *(char *)(long)v = (char)a;
-  *(char *)(long)iVar3 = (char)((uint)a >> 8);
-  *(char *)(long)iVar1 = (char)((uint)a >> 0x10);
-  *(char *)(long)iVar2 = (char)((uint)a >> 0x18);
-  iVar3 = v;
+  *(char *)(long)iVar1 = (char)((uint)a >> 8);
+  *(char *)(long)iVar2 = (char)((uint)a >> 0x10);
+  *(char *)(long)iVar3 = (char)((uint)a >> 0x18);
+  iVar1 = v;
   v = v + 4;
-  return iVar3;
+  return iVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int aa(int s,int a)
 
@@ -1217,7 +1262,7 @@ int aa(int s,int a)
   int iVar4;
   undefined *puVar5;
   
-  iVar4 = s + 0x84;
+  iVar2 = s + 0x84;
   puVar5 = (undefined *)(long)v;
   v = v + 1;
   *puVar5 = 0x85;
@@ -1231,23 +1276,25 @@ int aa(int s,int a)
   while (1 < uVar1) {
     puVar5 = (undefined *)(long)v;
     v = v + 1;
-    *puVar5 = (char)iVar4;
-    iVar4 = iVar4 >> 8;
-    uVar1 = iVar4 + 1;
+    *puVar5 = (char)iVar2;
+    iVar2 = iVar2 >> 8;
+    uVar1 = iVar2 + 1;
   }
-  iVar4 = v + 1;
-  iVar2 = v + 2;
-  iVar3 = v + 3;
+  iVar2 = v + 1;
+  iVar3 = v + 2;
+  iVar4 = v + 3;
   *(char *)(long)v = (char)a;
-  *(char *)(long)iVar4 = (char)((uint)a >> 8);
-  *(char *)(long)iVar2 = (char)((uint)a >> 0x10);
-  *(char *)(long)iVar3 = (char)((uint)a >> 0x18);
-  iVar4 = v;
+  *(char *)(long)iVar2 = (char)((uint)a >> 8);
+  *(char *)(long)iVar3 = (char)((uint)a >> 0x10);
+  *(char *)(long)iVar4 = (char)((uint)a >> 0x18);
+  iVar2 = v;
   v = v + 4;
-  return iVar4;
+  return iVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int aq(int a)
 
@@ -1295,6 +1342,8 @@ int aq(int a)
 
 
 
+// WARNING: Unknown calling convention
+
 int W(int s,int a)
 
 {
@@ -1303,6 +1352,7 @@ int W(int s,int a)
   int iVar3;
   int iVar4;
   int iVar5;
+  int d;
   undefined *puVar6;
   
   iVar2 = s + 0x83;
@@ -1348,6 +1398,8 @@ int W(int s,int a)
 
 
 
+// WARNING: Unknown calling convention
+
 int X(int s)
 
 {
@@ -1362,8 +1414,9 @@ int X(int s)
   bool bVar9;
   int iVar10;
   undefined *puVar11;
-  int unaff_w20;
+  int a;
   int iVar12;
+  int d;
   
   if (s == 1) {
     iVar10 = ab(1);
@@ -1377,10 +1430,10 @@ LAB_00102314:
     uVar5 = (undefined)((uint)iVar12 >> 8);
     uVar6 = (undefined)((uint)iVar12 >> 0x10);
     uVar7 = (undefined)((uint)iVar12 >> 0x18);
-    iVar1 = unaff_w20;
+    iVar1 = a;
     while( true ) {
       iVar4 = e;
-      unaff_w20 = C;
+      a = C;
       if (iVar10 != J) {
         bVar9 = iVar12 != 0;
         bVar8 = false;
@@ -1460,9 +1513,9 @@ LAB_00102314:
       puVar11 = (undefined *)(long)v;
       v = v + 1;
       *puVar11 = 0x59;
-      iVar1 = unaff_w20;
+      iVar1 = a;
       if (s - 5U < 2) {
-        aq(unaff_w20);
+        aq(a);
         goto LAB_00102314;
       }
       for (; 1 < iVar1 + 1U; iVar1 = iVar1 >> 8) {
@@ -1474,10 +1527,10 @@ LAB_00102314:
       puVar11 = (undefined *)(long)v;
       v = v + 1;
       *puVar11 = 0x92;
-      iVar1 = unaff_w20;
+      iVar1 = a;
     }
-    uVar3 = unaff_w20 + 0x85;
-    iVar1 = unaff_w20 + 0x84;
+    uVar3 = a + 0x85;
+    iVar1 = a + 0x84;
     puVar11 = (undefined *)(long)v;
     v = v + 1;
     *puVar11 = 0x85;
@@ -1523,6 +1576,8 @@ int X(int s)
   undefined uVar9;
   int iVar10;
   undefined *puVar11;
+  int a;
+  int d;
   int iVar12;
   
   X(10);
@@ -1628,6 +1683,8 @@ int X(int s)
 
 
 
+// WARNING: Unknown calling convention
+
 int ab(int s)
 
 {
@@ -1637,11 +1694,14 @@ int ab(int s)
   int iVar4;
   undefined *puVar5;
   undefined uVar6;
+  int h;
   undefined uVar7;
+  int a;
   int iVar8;
   undefined uVar9;
   undefined uVar10;
-  uint uVar11;
+  int F;
+  bool bVar11;
   uint uVar12;
   ulong uVar13;
   
@@ -1744,13 +1804,13 @@ LAB_00102e7c:
         aq(iVar4);
       }
       else {
-        uVar11 = iVar4 + 1;
-        while (1 < uVar11) {
+        uVar12 = iVar4 + 1;
+        while (1 < uVar12) {
           puVar5 = (undefined *)(long)v;
           v = v + 1;
           *puVar5 = (char)iVar4;
           iVar4 = iVar4 >> 8;
-          uVar11 = iVar4 + 1;
+          uVar12 = iVar4 + 1;
         }
       }
     }
@@ -1814,29 +1874,31 @@ LAB_00103364:
     }
     else {
       if (iVar8 != 0x26) {
-        uVar11 = (uint)(e == 0x3d) & s;
-        if (uVar11 == 0) {
-          if (e == 0x28) goto LAB_00102b14;
-          W(8,iVar8);
-          if (J == 0xb) {
-            W(0,iVar8);
-            for (iVar4 = C; 1 < iVar4 + 1U; iVar4 = iVar4 >> 8) {
-              puVar5 = (undefined *)(long)v;
-              v = v + 1;
-              *puVar5 = (char)iVar4;
+        if (((uint)(e == 0x3d) & s) == 0) {
+          if (e != 0x28) {
+            W(8,iVar8);
+            if (J == 0xb) {
+              W(0,iVar8);
+              for (iVar4 = C; 1 < iVar4 + 1U; iVar4 = iVar4 >> 8) {
+                puVar5 = (undefined *)(long)v;
+                v = v + 1;
+                *puVar5 = (char)iVar4;
+              }
+              av();
             }
-            av();
+            goto LAB_00102afc;
           }
         }
         else {
           iVar4 = av();
           X(iVar4);
           W(6,iVar8);
+LAB_00102afc:
+          if (e != 0x28) {
+            return 0;
+          }
         }
-        if (e != 0x28) {
-          return 0;
-        }
-        uVar11 = 0;
+        bVar11 = false;
         goto LAB_00102b14;
       }
       W(10,e);
@@ -1846,7 +1908,7 @@ LAB_00103364:
   if (e != 0x28) {
     return 0;
   }
-  uVar11 = 1;
+  bVar11 = true;
   puVar5 = (undefined *)(long)v;
   v = v + 1;
   *puVar5 = 0x50;
@@ -1916,25 +1978,7 @@ LAB_00102c60:
   *(undefined *)(long)(iVar4 + 2) = uVar7;
   *(undefined *)(long)(iVar4 + 3) = uVar6;
   av();
-  if (uVar11 == 0) {
-    iVar3 = *(int *)(long)(iVar8 + 4);
-    puVar5 = (undefined *)(long)v;
-    v = v + 1;
-    *puVar5 = 0xe8;
-    iVar2 = v;
-    iVar4 = v + 1;
-    *(char *)(long)v = (char)iVar3;
-    *(char *)(long)iVar4 = (char)((uint)iVar3 >> 8);
-    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar3 >> 0x10);
-    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar3 >> 0x18);
-    iVar4 = v + 4;
-    *(int *)(long)(iVar8 + 4) = v;
-    v = iVar4;
-    if (uVar12 == 0) {
-      return 0;
-    }
-  }
-  else {
+  if (bVar11) {
     iVar4 = uVar12 + 4;
     puVar5 = (undefined *)(long)v;
     v = v + 1;
@@ -1958,6 +2002,24 @@ LAB_00102c60:
     uVar6 = (undefined)((uint)iVar4 >> 0x18);
     v = v + 4;
   }
+  else {
+    iVar3 = *(int *)(long)(iVar8 + 4);
+    puVar5 = (undefined *)(long)v;
+    v = v + 1;
+    *puVar5 = 0xe8;
+    iVar2 = v;
+    iVar4 = v + 1;
+    *(char *)(long)v = (char)iVar3;
+    *(char *)(long)iVar4 = (char)((uint)iVar3 >> 8);
+    *(char *)(long)(iVar2 + 2) = (char)((uint)iVar3 >> 0x10);
+    *(char *)(long)(iVar2 + 3) = (char)((uint)iVar3 >> 0x18);
+    iVar4 = v + 4;
+    *(int *)(long)(iVar8 + 4) = v;
+    v = iVar4;
+    if (uVar12 == 0) {
+      return 0;
+    }
+  }
   puVar5 = (undefined *)(long)v;
   v = v + 1;
   *puVar5 = 0x81;
@@ -1977,7 +2039,9 @@ LAB_00102c60:
 
 
 
-int B(int s)
+// WARNING: Unknown calling convention
+
+int B(void)
 
 {
   uint uVar1;
@@ -2130,13 +2194,15 @@ void FUN_001033ec(int param_1)
 
 
 
+// WARNING: Unknown calling convention
+
 int ac(void)
 
 {
   int iVar1;
   int iVar2;
-  int in_w0;
   int iVar3;
+  int in_w0;
   undefined *puVar4;
   
   X(in_w0);
@@ -2152,19 +2218,21 @@ int ac(void)
   puVar4 = (undefined *)(long)v;
   v = v + 1;
   *puVar4 = 0x84;
-  iVar3 = v + 1;
-  iVar1 = v + 2;
-  iVar2 = v + 3;
+  iVar1 = v + 1;
+  iVar2 = v + 2;
+  iVar3 = v + 3;
   *(undefined *)(long)v = 0;
-  *(undefined *)(long)iVar3 = 0;
   *(undefined *)(long)iVar1 = 0;
   *(undefined *)(long)iVar2 = 0;
-  iVar3 = v;
+  *(undefined *)(long)iVar3 = 0;
+  iVar1 = v;
   v = v + 4;
-  return iVar3;
+  return iVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ar(int s)
 
@@ -2268,14 +2336,17 @@ LAB_00103740:
 
 
 
+// WARNING: Unknown calling convention
+
 int S(int s)
 
 {
   int iVar1;
-  int a;
+  int a_00;
   int iVar2;
   int iVar3;
   undefined *puVar4;
+  int a;
   int iVar5;
   int h;
   
@@ -2303,7 +2374,7 @@ int S(int s)
     *(undefined *)(long)iVar2 = 0;
     *(undefined *)(long)iVar5 = 0;
     *(undefined *)(long)iVar3 = 0;
-    iVar2 = v;
+    h = v;
     v = v + 4;
     av();
     S(s);
@@ -2312,21 +2383,21 @@ int S(int s)
       puVar4 = (undefined *)(long)v;
       v = v + 1;
       *puVar4 = 0xe9;
-      iVar5 = v + 1;
-      iVar3 = v + 2;
-      iVar1 = v + 3;
+      iVar2 = v + 1;
+      iVar5 = v + 2;
+      iVar3 = v + 3;
       *(undefined *)(long)v = 0;
+      *(undefined *)(long)iVar2 = 0;
       *(undefined *)(long)iVar5 = 0;
       *(undefined *)(long)iVar3 = 0;
-      *(undefined *)(long)iVar1 = 0;
-      iVar5 = v;
+      iVar2 = v;
       v = v + 4;
-      ap(iVar2,v);
+      ap(h,v);
       S(s);
-      iVar2 = ap(iVar5,v);
+      iVar2 = ap(iVar2,v);
     }
     else {
-      iVar2 = ap(iVar2,v);
+      iVar2 = ap(h,v);
     }
   }
   else {
@@ -2402,7 +2473,7 @@ int S(int s)
           *(undefined *)(long)iVar5 = 0;
           *(undefined *)(long)iVar3 = 0;
           *(undefined *)(long)iVar1 = 0;
-          a = v;
+          a_00 = v;
           iVar5 = v + 4;
           v = iVar5;
           X(iVar1);
@@ -2417,11 +2488,11 @@ int S(int s)
           *(char *)(long)(iVar1 + 2) = (char)((uint)iVar3 >> 0x10);
           *(char *)(long)(iVar1 + 3) = (char)((uint)iVar3 >> 0x18);
           v = v + 4;
-          ap(a,v);
+          ap(a_00,v);
         }
       }
       av();
-      S((int)register0x00000008 + -4);
+      S((int)&h);
       puVar4 = (undefined *)(long)v;
       iVar1 = (iVar5 - v) + -5;
       v = v + 1;
@@ -2489,6 +2560,8 @@ int S(int s)
 
 
 
+// WARNING: Unknown calling convention
+
 int ax(int d)
 
 {
@@ -2510,6 +2583,8 @@ int ax(int d)
 
 
 
+// WARNING: Unknown calling convention
+
 int ad(int d,int a)
 
 {
@@ -2517,17 +2592,16 @@ int ad(int d,int a)
   int iVar2;
   int iVar3;
   int iVar4;
-  uint uVar5;
+  undefined uVar5;
   undefined uVar6;
   undefined uVar7;
   undefined uVar8;
-  undefined uVar9;
   
   iVar2 = i;
-  uVar5 = d + 0x8048000;
-  uVar6 = (undefined)(uVar5 >> 8);
-  uVar7 = (undefined)(uVar5 >> 0x10);
-  uVar8 = (undefined)((ulong)uVar5 >> 0x18);
+  iVar4 = d + 0x8048000;
+  uVar5 = (undefined)((uint)iVar4 >> 8);
+  uVar6 = (undefined)((uint)iVar4 >> 0x10);
+  uVar7 = (undefined)((uint)iVar4 >> 0x18);
   iVar1 = i + 1;
   *(char *)(long)i = (char)d;
   *(char *)(long)iVar1 = (char)((uint)d >> 8);
@@ -2537,39 +2611,39 @@ int ad(int d,int a)
   iVar1 = i + 4;
   iVar2 = i + 5;
   i = iVar1;
-  *(char *)(long)iVar1 = (char)uVar5;
-  *(undefined *)(long)iVar2 = uVar6;
-  *(undefined *)(long)(iVar3 + 6) = uVar7;
-  *(undefined *)(long)(iVar3 + 7) = uVar8;
+  *(char *)(long)iVar1 = (char)iVar4;
+  *(undefined *)(long)iVar2 = uVar5;
+  *(undefined *)(long)(iVar3 + 6) = uVar6;
+  *(undefined *)(long)(iVar3 + 7) = uVar7;
   iVar3 = i;
   iVar1 = i + 4;
   iVar2 = i + 5;
   i = iVar1;
-  *(char *)(long)iVar1 = (char)uVar5;
-  *(undefined *)(long)iVar2 = uVar6;
-  uVar9 = (undefined)((uint)a >> 0x10);
-  *(undefined *)(long)(iVar3 + 6) = uVar7;
-  uVar6 = (undefined)((uint)a >> 8);
-  *(undefined *)(long)(iVar3 + 7) = uVar8;
-  uVar7 = (undefined)((ulong)(uint)a >> 0x18);
+  *(char *)(long)iVar1 = (char)iVar4;
+  *(undefined *)(long)iVar2 = uVar5;
+  uVar8 = (undefined)((uint)a >> 0x10);
+  *(undefined *)(long)(iVar3 + 6) = uVar6;
+  uVar5 = (undefined)((uint)a >> 8);
+  *(undefined *)(long)(iVar3 + 7) = uVar7;
+  uVar6 = (undefined)((uint)a >> 0x18);
   iVar1 = i + 4;
   iVar2 = i + 5;
-  iVar3 = i + 6;
-  iVar4 = i + 7;
+  iVar4 = i + 6;
+  iVar3 = i + 7;
   i = iVar1;
   *(char *)(long)iVar1 = (char)a;
-  *(undefined *)(long)iVar2 = uVar6;
-  *(undefined *)(long)iVar3 = uVar9;
-  *(undefined *)(long)iVar4 = uVar7;
+  *(undefined *)(long)iVar2 = uVar5;
+  *(undefined *)(long)iVar4 = uVar8;
+  *(undefined *)(long)iVar3 = uVar6;
   iVar1 = i + 4;
   iVar2 = i + 5;
-  iVar3 = i + 6;
-  iVar4 = i + 7;
+  iVar4 = i + 6;
+  iVar3 = i + 7;
   i = iVar1;
   *(char *)(long)iVar1 = (char)a;
-  *(undefined *)(long)iVar2 = uVar6;
-  *(undefined *)(long)iVar3 = uVar9;
-  *(undefined *)(long)iVar4 = uVar7;
+  *(undefined *)(long)iVar2 = uVar5;
+  *(undefined *)(long)iVar4 = uVar8;
+  *(undefined *)(long)iVar3 = uVar6;
   i = i + 4;
   return d;
 }
@@ -2712,6 +2786,8 @@ LAB_00103fd8:
 
 
 
+// WARNING: Unknown calling convention
+
 int ae(int s)
 
 {
@@ -2723,13 +2799,18 @@ int ae(int s)
   byte bVar6;
   byte bVar7;
   int iVar8;
-  uint a;
+  int d;
+  uint a_00;
   byte *pbVar9;
   byte *__src;
+  int z;
+  int F;
   uint uVar10;
   int iVar11;
+  int a;
   int iVar12;
   int iVar13;
+  int h;
   
   iVar13 = 0;
   iVar12 = Q;
@@ -2759,10 +2840,10 @@ LAB_001041f8:
     }
     iVar2 = T + (iVar1 - Q) * 8;
     e = iVar2 + 0xf8;
-    a = *(uint *)(long)(iVar2 + 0xfc);
+    a_00 = *(uint *)(long)(iVar2 + 0xfc);
     iVar2 = *(int *)(long)e;
     i = iVar8;
-    if (a == 0 || iVar2 == 1) goto LAB_00103fd8;
+    if (a_00 == 0 || iVar2 == 1) goto LAB_00103fd8;
     if (iVar2 == 0) {
       if (s == 0) {
         memcpy((void *)(long)iVar8,__src,(long)(iVar12 - iVar1));
@@ -2801,19 +2882,19 @@ LAB_001041f8:
       }
       iVar13 = iVar13 + 1;
       do {
-        bVar4 = *(byte *)(long)(int)(a + 2);
-        bVar5 = *(byte *)(long)(int)(a + 3);
-        bVar6 = *(byte *)(long)(int)a;
-        uVar10 = (uint)(*(char *)(long)(int)(a - 1) != '\x05');
-        bVar7 = *(byte *)(long)(int)(a + 1);
+        bVar4 = *(byte *)(long)(int)(a_00 + 2);
+        bVar5 = *(byte *)(long)(int)(a_00 + 3);
+        bVar6 = *(byte *)(long)(int)a_00;
+        uVar10 = (uint)(*(char *)(long)(int)(a_00 - 1) != '\x05');
+        bVar7 = *(byte *)(long)(int)(a_00 + 1);
         iVar11 = uVar10 + iVar13 * 0x100 + 1;
         iVar1 = uVar10 * -4;
-        *(byte *)(long)(int)a = (byte)iVar1;
-        *(byte *)(long)(int)(a + 1) = (byte)((uint)iVar1 >> 8);
-        *(byte *)(long)(int)(a + 2) = (byte)((uint)iVar1 >> 0x10);
-        *(byte *)(long)(int)(a + 3) = (byte)((uint)iVar1 >> 0x18);
-        iVar8 = a - K;
-        a = (uint)bVar4 << 0x10 | (uint)bVar7 << 8 | (uint)bVar6 | (uint)bVar5 << 0x18;
+        *(byte *)(long)(int)a_00 = (byte)iVar1;
+        *(byte *)(long)(int)(a_00 + 1) = (byte)((uint)iVar1 >> 8);
+        *(byte *)(long)(int)(a_00 + 2) = (byte)((uint)iVar1 >> 0x10);
+        *(byte *)(long)(int)(a_00 + 3) = (byte)((uint)iVar1 >> 0x18);
+        iVar8 = a_00 - K;
+        a_00 = (uint)bVar4 << 0x10 | (uint)bVar7 << 8 | (uint)bVar6 | (uint)bVar5 << 0x18;
         iVar1 = i + 1;
         iVar3 = iVar8 + R + y;
         iVar8 = i + 2;
@@ -2832,11 +2913,11 @@ LAB_001041f8:
         *(char *)(long)iVar2 = (char)((uint)iVar11 >> 0x10);
         *(char *)(long)iVar3 = (char)((uint)iVar11 >> 0x18);
         i = i + 4;
-      } while (a != 0);
+      } while (a_00 != 0);
     }
     else {
       if (s != 0) goto LAB_00103fd8;
-      ap(a,iVar2);
+      ap(a_00,iVar2);
     }
     iVar1 = iVar12 + 1;
     __src = (byte *)(long)iVar1;
@@ -3479,6 +3560,8 @@ LAB_00104680:
 
 
 
+// WARNING: Unknown calling convention
+
 int au(int F)
 
 {
@@ -3497,23 +3580,34 @@ int au(int F)
   byte bVar13;
   int iVar14;
   char *pcVar15;
+  int d_1;
   int iVar16;
   undefined *puVar17;
   FILE *pFVar18;
   int iVar19;
   char *pcVar20;
   undefined8 *puVar21;
+  int z;
+  int F_1;
   uint uVar22;
   int iVar23;
   int iVar24;
   int iVar25;
   uint uVar26;
+  int d;
+  int as;
   undefined extraout_w14;
   undefined extraout_w14_00;
   undefined extraout_w15;
   undefined extraout_w15_00;
+  int ai;
   undefined extraout_w18;
   undefined extraout_w18_00;
+  int a;
+  int af;
+  int Y;
+  int h;
+  int ag;
   int ah;
   
   iVar7 = K;

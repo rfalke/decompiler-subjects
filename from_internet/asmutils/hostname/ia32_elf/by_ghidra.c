@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -35,7 +62,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(char *param_1,char *param_2)
+void processEntry entry(undefined4 param_1,int param_2,char *param_3,char *param_4)
 
 {
   int iVar1;
@@ -44,15 +71,14 @@ void entry(char *param_1,char *param_2)
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  int unaff_retaddr;
   
   bVar6 = 0;
   do {
-    pcVar4 = param_1;
-    param_1 = pcVar4 + 1;
+    pcVar4 = param_3;
+    param_3 = pcVar4 + 1;
   } while (*pcVar4 != '\0');
   iVar1 = *(int *)(pcVar4 + -8);
-  if (unaff_retaddr == 1) {
+  if (param_2 == 1) {
     pcVar2 = (code *)swi(0x80);
     (*pcVar2)();
     pcVar4 = &DAT_080480fa;
@@ -70,8 +96,8 @@ void entry(char *param_1,char *param_2)
   }
   else {
     do {
-      cVar3 = *param_2;
-      param_2 = param_2 + 1;
+      cVar3 = *param_4;
+      param_4 = param_4 + 1;
     } while (cVar3 != '\0');
     if (iVar1 != 0x74736f68) {
       pcVar2 = (code *)swi(0x80);

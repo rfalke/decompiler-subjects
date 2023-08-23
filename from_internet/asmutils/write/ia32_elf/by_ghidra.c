@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -53,7 +80,7 @@ struct Elf32_Ehdr {
 // WARNING: Removing unreachable block (ram,0x0804824a)
 // WARNING: Removing unreachable block (ram,0x0804824e)
 
-void entry(void)
+void processEntry entry(void)
 
 {
   byte *pbVar1;
@@ -65,31 +92,32 @@ void entry(void)
   char cVar7;
   byte bVar10;
   byte *pbVar8;
-  char *pcVar9;
-  int iVar11;
+  undefined3 uVar11;
   int iVar12;
-  undefined2 uVar13;
-  undefined4 *puVar14;
+  int iVar13;
+  undefined2 uVar14;
   undefined4 *puVar15;
-  int *piVar16;
-  undefined4 unaff_EBP;
-  undefined2 uVar17;
-  int **ppiVar18;
-  undefined4 *puVar20;
+  undefined4 *puVar16;
+  int *piVar17;
+  undefined4 unaff_retaddr;
+  undefined2 uVar18;
+  int **ppiVar19;
   undefined4 *puVar21;
   undefined4 *puVar22;
   undefined4 *puVar23;
+  undefined4 *puVar24;
   undefined2 in_GS;
-  bool bVar24;
+  bool bVar25;
   byte in_AF;
-  byte bVar25;
-  undefined6 uVar26;
-  int **ppiVar19;
+  byte bVar26;
+  undefined6 uVar27;
+  char *pcVar9;
+  int **ppiVar20;
   
-  bVar25 = 0;
+  bVar26 = 0;
   while( true ) {
-    iVar11 = *(int *)register0x00000010;
-    if ((iVar11 < 4) && (iVar11 != 1)) break;
+    iVar12 = *(int *)register0x00000010;
+    if ((iVar12 < 4) && (iVar12 != 1)) break;
     *(undefined4 *)register0x00000010 = 1;
     *(undefined4 *)register0x00000010 = 4;
     pcVar5 = (code *)swi(0x80);
@@ -100,37 +128,37 @@ void entry(void)
     (*pcVar5)();
     register0x00000010 = (BADSPACEBASE *)((int)register0x00000010 + 0xc);
   }
-  ppiVar18 = (int **)((int)register0x00000010 + (iVar11 + 2) * 4);
+  ppiVar19 = (int **)((int)register0x00000010 + (iVar12 + 2) * 4);
   do {
-    ppiVar19 = ppiVar18 + (uint)bVar25 * -2 + 1;
-    piVar2 = *ppiVar18;
-    iVar11 = iRam08048274;
+    ppiVar20 = ppiVar19 + (uint)bVar26 * -2 + 1;
+    piVar2 = *ppiVar19;
+    iVar12 = iRam08048274;
     if (piVar2 == (int *)0x0) break;
-    ppiVar18 = ppiVar19;
-  } while ((*piVar2 != 0x52455355) || (iVar11 = (int)piVar2 + 5, *(char *)(piVar2 + 1) != '='));
-  iRam08048274 = iVar11;
-  puVar20 = *(undefined4 **)((int)register0x00000010 + 8);
+    ppiVar19 = ppiVar20;
+  } while ((*piVar2 != 0x52455355) || (iVar12 = (int)piVar2 + 5, *(char *)(piVar2 + 1) != '='));
+  iRam08048274 = iVar12;
+  puVar21 = *(undefined4 **)((int)register0x00000010 + 8);
                     // WARNING: Read-only address (ram,0x08048270) is written
   uRam08048270 = *(int *)((int)register0x00000010 + 0xc);
-  piVar16 = (int *)((int)register0x00000010 + 0xc);
-  *(undefined4 **)((int)register0x00000010 + 0xc) = puVar20;
-  iVar11 = 0x20;
-  puVar21 = puVar20;
+  piVar17 = (int *)((int)register0x00000010 + 0xc);
+  *(undefined4 **)((int)register0x00000010 + 0xc) = puVar21;
+  iVar12 = 0x20;
+  puVar22 = puVar21;
   do {
-    puVar22 = puVar21;
-    if (iVar11 == 0) break;
-    iVar11 = iVar11 + -1;
-    puVar22 = (undefined4 *)((int)puVar21 + (uint)bVar25 * -2 + 1);
-    cVar7 = *(char *)puVar21;
-    puVar21 = puVar22;
+    puVar23 = puVar22;
+    if (iVar12 == 0) break;
+    iVar12 = iVar12 + -1;
+    puVar23 = (undefined4 *)((int)puVar22 + (uint)bVar26 * -2 + 1);
+    cVar7 = *(char *)puVar22;
+    puVar22 = puVar23;
   } while (cVar7 != '\0');
-  if (~(iVar11 - 0x20U) == 0) {
+  if (~(iVar12 - 0x20U) == 0) {
 LAB_080481d4:
-    uVar17 = SUB42(puVar20,0);
-    *(undefined4 *)((int)piVar16 + -4) = 2;
+    uVar18 = SUB42(puVar21,0);
+    *(undefined4 *)((int)piVar17 + -4) = 2;
   }
   else {
-    *(uint *)((int)register0x00000010 + 8) = ~(iVar11 - 0x20U);
+    *(uint *)((int)register0x00000010 + 8) = ~(iVar12 - 0x20U);
     *(undefined4 *)((int)register0x00000010 + 4) = 5;
     pcVar5 = (code *)swi(0x80);
     uRam08048278 = (*pcVar5)();
@@ -141,78 +169,79 @@ LAB_080481d4:
     piVar2 = (int *)((int)register0x00000010 + 0x10);
     do {
       do {
-        puVar14 = piVar2;
-        puVar14[-1] = 3;
+        puVar15 = piVar2;
+        puVar15[-1] = 3;
         pcVar5 = (code *)swi(0x80);
-        iVar11 = (*pcVar5)();
-        piVar16 = puVar14 + 1;
-        if (iVar11 == 0) goto LAB_080481d4;
-        iVar11 = puVar14[1];
-        puVar21 = (undefined4 *)puVar14[2];
-        puVar23 = (undefined4 *)&DAT_080482ac;
+        iVar12 = (*pcVar5)();
+        piVar17 = puVar15 + 1;
+        if (iVar12 == 0) goto LAB_080481d4;
+        iVar12 = puVar15[1];
+        puVar22 = (undefined4 *)puVar15[2];
+        puVar24 = (undefined4 *)&DAT_080482ac;
         do {
-          puVar20 = puVar21;
-          puVar22 = puVar23;
-          if (iVar11 == 0) break;
-          iVar11 = iVar11 + -1;
-          puVar22 = (undefined4 *)((int)puVar23 + (uint)bVar25 * -2 + 1);
-          puVar20 = (undefined4 *)((int)puVar21 + (uint)bVar25 * -2 + 1);
-          cVar7 = *(char *)puVar21;
-          cVar3 = *(char *)puVar23;
-          puVar21 = puVar20;
-          puVar23 = puVar22;
+          puVar21 = puVar22;
+          puVar23 = puVar24;
+          if (iVar12 == 0) break;
+          iVar12 = iVar12 + -1;
+          puVar23 = (undefined4 *)((int)puVar24 + (uint)bVar26 * -2 + 1);
+          puVar21 = (undefined4 *)((int)puVar22 + (uint)bVar26 * -2 + 1);
+          cVar7 = *(char *)puVar22;
+          cVar3 = *(char *)puVar24;
+          puVar22 = puVar21;
+          puVar24 = puVar23;
         } while (cVar7 == cVar3);
-        piVar2 = puVar14 + 1;
-      } while (iVar11 != 0);
-      puVar20 = (undefined4 *)0x0;
-      *puVar14 = 1;
-      *puVar14 = 5;
+        piVar2 = puVar15 + 1;
+      } while (iVar12 != 0);
+      puVar21 = (undefined4 *)0x0;
+      *puVar15 = 1;
+      *puVar15 = 5;
       pcVar5 = (code *)swi(0x80);
-      iVar11 = (*pcVar5)();
-      piVar2 = puVar14 + 2;
-    } while (iVar11 < 1);
+      iVar12 = (*pcVar5)();
+      piVar2 = puVar15 + 2;
+    } while (iVar12 < 1);
                     // WARNING: Read-only address (ram,0x0804827c) is written
     pcVar9 = "Message from \x1b[m\x1b[4l\a\n";
-    puVar22 = (undefined4 *)&DAT_08048400;
-    iRam0804827c = iVar11;
-    for (iVar12 = 0xd; iVar12 != 0; iVar12 = iVar12 + -1) {
-      *(char *)puVar22 = *pcVar9;
-      pcVar9 = pcVar9 + (uint)bVar25 * -2 + 1;
-      puVar22 = (undefined4 *)((int)puVar22 + (uint)bVar25 * -2 + 1);
+    puVar23 = (undefined4 *)&DAT_08048400;
+    iRam0804827c = iVar12;
+    for (iVar13 = 0xd; iVar13 != 0; iVar13 = iVar13 + -1) {
+      *(char *)puVar23 = *pcVar9;
+      pcVar9 = pcVar9 + (uint)bVar26 * -2 + 1;
+      puVar23 = (undefined4 *)((int)puVar23 + (uint)bVar26 * -2 + 1);
     }
-    uVar17 = 0;
-    puVar14[1] = 4;
+    uVar18 = 0;
+    puVar15[1] = 4;
     pcVar5 = (code *)swi(0x80);
     (*pcVar5)();
-    puVar15 = puVar14 + 3;
+    puVar16 = puVar15 + 3;
     while( true ) {
-      puVar15[-1] = 3;
+      puVar16[-1] = 3;
       pcVar5 = (code *)swi(0x80);
-      iVar11 = (*pcVar5)();
-      piVar16 = puVar15 + 1;
-      if (iVar11 == 0) break;
-      *puVar15 = 4;
+      iVar12 = (*pcVar5)();
+      piVar17 = puVar16 + 1;
+      if (iVar12 == 0) break;
+      *puVar16 = 4;
       pcVar5 = (code *)swi(0x80);
       (*pcVar5)();
-      puVar15 = puVar15 + 2;
+      puVar16 = puVar16 + 2;
     }
   }
-  piVar16[-1] = 4;
+  piVar17[-1] = 4;
   pcVar5 = (code *)swi(0x80);
   (*pcVar5)();
-  bVar24 = false;
-  *piVar16 = 1;
+  bVar25 = false;
+  *piVar17 = 1;
   pcVar5 = (code *)swi(0x80);
-  uVar26 = (*pcVar5)();
-  uVar13 = (undefined2)((uint6)uVar26 >> 0x20);
-  pbVar8 = (byte *)uVar26;
-  piVar16[1] = unaff_EBP;
-  bVar6 = (byte)uVar26;
-  if (bVar24) {
-    pbVar1 = (byte *)segment(in_GS,uVar17);
-    bVar10 = (byte)((uint6)uVar26 >> 8);
+  uVar27 = (*pcVar5)();
+  uVar14 = (undefined2)((uint6)uVar27 >> 0x20);
+  pbVar8 = (byte *)uVar27;
+  piVar17[1] = unaff_retaddr;
+  bVar6 = (byte)uVar27;
+  uVar11 = (undefined3)((uint6)uVar27 >> 8);
+  if (bVar25) {
+    pbVar1 = (byte *)segment(in_GS,uVar18);
+    bVar10 = (byte)((uint6)uVar27 >> 8);
     if (bVar10 < *pbVar1 || bVar10 == *pbVar1) {
-      DAT_00000074 = 0;
+      uRam00000074 = 0;
       *pbVar8 = *pbVar8 + bVar6;
       *pbVar8 = *pbVar8 + bVar6;
       *pbVar8 = *pbVar8 + bVar6;
@@ -542,12 +571,12 @@ LAB_080481d4:
                     // WARNING: Bad instruction - Truncating control flow here
       halt_baddata();
     }
-    uVar4 = in(uVar13);
-    *puVar22 = uVar4;
-    cVar7 = in(uVar13);
-    *(char *)(puVar22 + (uint)bVar25 * -2 + 1) = cVar7;
+    uVar4 = in(uVar14);
+    *puVar23 = uVar4;
+    cVar7 = in(uVar14);
+    *(char *)(puVar23 + (uint)bVar26 * -2 + 1) = cVar7;
     bVar6 = bVar6 | *pbVar8;
-    pcVar9 = (char *)((uint)pbVar8 & 0xffffff00 | (uint)bVar6);
+    pcVar9 = (char *)CONCAT31(uVar11,bVar6);
     *pcVar9 = *pcVar9 + bVar6;
     *pcVar9 = *pcVar9 + bVar6;
     *pcVar9 = *pcVar9 + bVar6;
@@ -612,8 +641,7 @@ LAB_080481d4:
                     // WARNING: Read-only address (ram,0x0804827c) is written
     in_AF = 9 < (bVar6 & 0xf) | in_AF;
     bVar6 = bVar6 + in_AF * -6;
-    pcVar9 = (char *)((uint)pbVar8 & 0xffffff00 |
-                     (uint)(byte)(bVar6 + (0x9f < bVar6 | bVar24 | in_AF * (bVar6 < 6)) * -0x60));
+    pcVar9 = (char *)CONCAT31(uVar11,bVar6 + (0x9f < bVar6 | bVar25 | in_AF * (bVar6 < 6)) * -0x60);
   }
   cVar7 = (char)pcVar9;
   *pcVar9 = *pcVar9 + cVar7;

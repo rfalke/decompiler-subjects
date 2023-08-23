@@ -115,7 +115,7 @@ void f(A param_1,B param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 // g()
 
 void g(void)

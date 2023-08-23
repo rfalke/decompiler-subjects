@@ -1,64 +1,82 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:32:default:gcc (AutoImporter)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
-WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 6aab6] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
 WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
-WARN  Enum ROOT(Namespace)::html_special_type(Class)[DWARF DIE 9058a] does not have a size specified, forcing to 1 (DWARFDataTypeImporter)  
-ERROR Failed to get function signature information, leaving undefined: done_keybinding_listboxes@08070cc0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: load_cookies@08076e80 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: update_status@0807ffc0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: save_formhist_to_file@080ab770 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: load_formhist_from_file@080ab9b0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: read_global_history@080acba0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: elinks_locale_charset@080b2a10 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: init_interlink@080b4a40 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: check_queue@080baf50 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: resize_terminal@080de6c0 (DWARFFunctionImporter)  
+ERROR Error updating function get_opt_@08074670 with params: Variable storage conflict between EAX:4 and: EAX:4 (DWARFFunctionImporter)  
+ERROR DIE info: DIEAgregrate of: DIE [3e07c], DIE [3d530], 
+DebugInfoEntry - Offset: 0x3e07c
+AbbreviationCode: 0x47 DW_TAG_subprogram
+	Attribute: DW_AT_abstract_origin DWARFNumericAttribute: 251184 [0003d530] DW_FORM_ref4
+	Attribute: DW_AT_low_pc DWARFNumericAttribute: 134694512 [08074670] DW_FORM_addr
+	Attribute: DW_AT_high_pc DWARFNumericAttribute: 134694541 [0807468d] DW_FORM_addr
+	Attribute: DW_AT_frame_base DWARFNumericAttribute: 90195 [00016053] DW_FORM_data4
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 3
+DebugInfoEntry - Offset: 0x3d530
+AbbreviationCode: 0x26 DW_TAG_subprogram
+	Attribute: DW_AT_external DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_name DWARFDeferredStringAttribute [ offset=33541, value=get_opt_] DW_FORM_strp
+	Attribute: DW_AT_decl_file DWARFNumericAttribute: 1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_decl_line DWARFNumericAttribute: 275 [00000113] DW_FORM_data2
+	Attribute: DW_AT_prototyped DWARFBooleanAttribute: true DW_FORM_flag
+	Attribute: DW_AT_type DWARFNumericAttribute: 251240 [0003d568] DW_FORM_ref4
+	Attribute: DW_AT_inline DWARFNumericAttribute: 1 [00000001] DW_FORM_data1
+	Attribute: DW_AT_sibling DWARFBooleanAttribute: true DW_FORM_ref4
+	Child count: 3
+ (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 1552 (DWARFImportSummary)  
-INFO  DWARF function signatures added: 2555 (DWARFImportSummary)  
-ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 973 (DWARFImportSummary)  
-ERROR DWARF expression failed to read: 7 (DWARFImportSummary)  
+INFO  DWARF types imported: 1379 (DWARFImportSummary)  
+INFO  DWARF function signatures added: 2556 (DWARFImportSummary)  
+ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 1118 (DWARFImportSummary)  
+ERROR DWARF expression failed to read: 24 (DWARFImportSummary)  
 INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
@@ -72,13 +90,15 @@ INFO  -----------------------------------------------------
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time     some time
     Demangler GNU                              some time
-    Disassemble Entry Points                  some time
+    Disassemble Entry Points                   some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time
     Function Start Search                      some time
+    Function Start Search After Code           some time
+    Function Start Search After Data           some time
     GCC Exception Handlers                     some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
@@ -98,4 +118,5 @@ INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)
 INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/elinks/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for: /subject.exe (project_name:/subject.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

@@ -89,14 +89,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -130,18 +130,23 @@ struct Elf64_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(undefined4 *param_1,undefined4 *param_2,undefined8 param_3,long param_4)
+void processEntry entry(void)
 
 {
-  for (; param_4 != 0; param_4 = param_4 + -1) {
-    *param_1 = *param_2;
-    param_2 = param_2 + 1;
-    param_1 = param_1 + 1;
+  long in_RCX;
+  long lVar1;
+  undefined4 *in_RSI;
+  undefined4 *in_RDI;
+  
+  for (; in_RCX != 0; in_RCX = in_RCX + -1) {
+    *in_RDI = *in_RSI;
+    in_RSI = in_RSI + 1;
+    in_RDI = in_RDI + 1;
   }
-  for (; param_4 != 0; param_4 = param_4 + -1) {
-    *param_1 = *param_2;
-    param_2 = param_2 + -1;
-    param_1 = param_1 + -1;
+  for (lVar1 = 0; lVar1 != 0; lVar1 = lVar1 + -1) {
+    *in_RDI = *in_RSI;
+    in_RSI = in_RSI + -1;
+    in_RDI = in_RDI + -1;
   }
                     // WARNING: Bad instruction - Truncating control flow here
   halt_baddata();

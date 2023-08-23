@@ -154,6 +154,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -193,14 +194,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -259,7 +271,7 @@ void FUN_001006b0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -299,7 +311,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -310,7 +322,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -322,6 +334,8 @@ int printf(char *__format,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -343,10 +357,9 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -412,43 +425,44 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x001008a8)
+// WARNING: Removing unreachable block (ram,0x001008b4)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 pair twofib(int n)
 
 {
   int iVar1;
-  pair pVar2;
-  long lVar3;
-  int iVar4;
+  int iVar2;
+  int a;
+  pair pVar3;
+  long lVar4;
   
-  lVar3 = 1;
-  if ((n != 0) && (lVar3 = 1, n != 1)) {
+  lVar4 = 1;
+  if ((n != 0) && (lVar4 = 1, n != 1)) {
     if (n != 2) {
-      pVar2 = twofib(n + -3);
-      iVar4 = (int)((ulong)pVar2 >> 0x20);
-      iVar1 = iVar4 + SUB84(pVar2,0);
-      iVar4 = iVar1 + iVar4;
-      return (pair)CONCAT44(iVar1 + iVar4,iVar4);
+      pVar3 = twofib(n + -3);
+      a = pVar3.a;
+      iVar1 = pVar3.b + a;
+      iVar2 = iVar1 + pVar3.b;
+      pVar3.b = iVar1 + iVar2;
+      pVar3.a = iVar2;
+      return pVar3;
     }
-    lVar3 = 2;
+    lVar4 = 2;
     n = 1;
   }
-  return (pair)((ulong)(uint)n | lVar3 << 0x20);
+  return (pair)((ulong)(uint)n | lVar4 << 0x20);
 }
 
 
@@ -457,28 +471,13 @@ undefined8 FUN_00100904(int param_1)
 
 {
   int iVar1;
-  pair pVar2;
-  int iVar3;
+  int iVar2;
+  pair pVar3;
   
-  pVar2 = twofib(param_1 + -3);
-  iVar3 = (int)((ulong)pVar2 >> 0x20);
-  iVar1 = iVar3 + SUB84(pVar2,0);
-  iVar3 = iVar1 + iVar3;
-  return CONCAT44(iVar1 + iVar3,iVar3);
-}
-
-
-
-void FUN_0010093c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0010093c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x10093c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
+  pVar3 = twofib(param_1 + -3);
+  iVar1 = pVar3.b + pVar3.a;
+  iVar2 = iVar1 + pVar3.b;
+  return CONCAT44(iVar1 + iVar2,iVar2);
 }
 
 

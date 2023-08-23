@@ -3,6 +3,10 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
+typedef unsigned long long    qword;
+typedef int    sdword;
+typedef long long    sqword;
+typedef short    sword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -10,12 +14,125 @@ typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
+typedef int    wchar_t;
 typedef unsigned short    word;
-typedef uint size_t;
-
 typedef uint wint_t;
 
-typedef long wchar_t;
+typedef uint __fsfilcnt_t;
+
+typedef int __pid_t;
+
+typedef int __blkcnt_t;
+
+typedef uint size_t;
+
+typedef int __time_t;
+
+typedef int __clockid_t;
+
+typedef int __ssize_t;
+
+typedef ulonglong __u_quad_t;
+
+typedef uint __rlim_t;
+
+typedef int __off_t;
+
+typedef ushort __u_short;
+
+typedef qword __fsfilcnt64_t;
+
+typedef longlong __quad_t;
+
+typedef uint __useconds_t;
+
+typedef qword __rlim64_t;
+
+typedef int __key_t;
+
+typedef dword _G_uint32_t;
+
+typedef uchar __uint8_t;
+
+typedef int __suseconds_t;
+
+typedef int __clock_t;
+
+typedef int __daddr_t;
+
+typedef sdword __int32_t;
+
+typedef word __uint16_t;
+
+typedef uint __id_t;
+
+typedef sword _G_int16_t;
+
+typedef uint __gid_t;
+
+typedef int __timer_t;
+
+typedef int __blksize_t;
+
+typedef qword __uint64_t;
+
+typedef uint __uid_t;
+
+typedef qword __fsblkcnt64_t;
+
+typedef char __int8_t;
+
+typedef uchar __u_char;
+
+typedef sqword __off64_t;
+
+typedef uint __nlink_t;
+
+typedef sqword __int64_t;
+
+typedef ulonglong __dev_t;
+
+typedef uint __fsblkcnt_t;
+
+typedef int __swblk_t;
+
+typedef dword __uint32_t;
+
+typedef word _G_uint16_t;
+
+typedef sqword __blkcnt64_t;
+
+typedef sdword _G_int32_t;
+
+typedef uint __socklen_t;
+
+typedef uint __u_int;
+
+typedef qword __ino64_t;
+
+typedef uint __u_long;
+
+typedef uint __mode_t;
+
+typedef int __intptr_t;
+
+typedef uint __ino_t;
+
+typedef sword __int16_t;
+
+typedef struct __mbstate_t __mbstate_t, *P__mbstate_t;
+
+typedef union anon_union_4_2_91654ee9_for___value anon_union_4_2_91654ee9_for___value, *Panon_union_4_2_91654ee9_for___value;
+
+union anon_union_4_2_91654ee9_for___value {
+    wint_t __wch;
+    char __wchb[4];
+};
+
+struct __mbstate_t {
+    int __count;
+    union anon_union_4_2_91654ee9_for___value __value;
+};
 
 typedef struct __gconv_info __gconv_info, *P__gconv_info;
 
@@ -25,26 +142,26 @@ typedef struct __gconv_step_data __gconv_step_data, *P__gconv_step_data;
 
 typedef struct __gconv_loaded_object __gconv_loaded_object, *P__gconv_loaded_object;
 
-typedef struct __mbstate_t __mbstate_t, *P__mbstate_t;
+typedef int (* __gconv_fct)(struct __gconv_step *, struct __gconv_step_data *, uchar * *, uchar *, uchar * *, size_t *, int, int);
+
+typedef wint_t (* __gconv_btowc_fct)(struct __gconv_step *, uchar);
+
+typedef int (* __gconv_init_fct)(struct __gconv_step *);
+
+typedef void (* __gconv_end_fct)(struct __gconv_step *);
 
 typedef struct __gconv_trans_data __gconv_trans_data, *P__gconv_trans_data;
 
-typedef union anon_union.conflict3a0_for___value anon_union.conflict3a0_for___value, *Panon_union.conflict3a0_for___value;
+typedef int (* __gconv_trans_fct)(struct __gconv_step *, struct __gconv_step_data *, void *, uchar *, uchar * *, uchar *, uchar * *, size_t *);
 
-union anon_union.conflict3a0_for___value {
-    wint_t __wch;
-    char __wchb[4];
-};
+typedef int (* __gconv_trans_context_fct)(void *, uchar *, uchar *, uchar *, uchar *);
 
-struct __mbstate_t {
-    int __count;
-    union anon_union.conflict3a0_for___value __value;
-};
+typedef void (* __gconv_trans_end_fct)(void *);
 
 struct __gconv_trans_data {
-    int (* __trans_fct)(struct __gconv_step *, struct __gconv_step_data *, void *, uchar *, uchar * *, uchar *, uchar * *, size_t *);
-    int (* __trans_context_fct)(void *, uchar *, uchar *, uchar *, uchar *);
-    void (* __trans_end_fct)(void *);
+    __gconv_trans_fct __trans_fct;
+    __gconv_trans_context_fct __trans_context_fct;
+    __gconv_trans_end_fct __trans_end_fct;
     void * __data;
     struct __gconv_trans_data * __next;
 };
@@ -72,10 +189,10 @@ struct __gconv_step {
     int __counter;
     char * __from_name;
     char * __to_name;
-    int (* __fct)(struct __gconv_step *, struct __gconv_step_data *, uchar * *, uchar *, uchar * *, size_t *, int, int);
-    wint_t (* __btowc_fct)(struct __gconv_step *, uchar);
-    int (* __init_fct)(struct __gconv_step *);
-    void (* __end_fct)(struct __gconv_step *);
+    __gconv_fct __fct;
+    __gconv_btowc_fct __btowc_fct;
+    __gconv_init_fct __init_fct;
+    __gconv_end_fct __end_fct;
     int __min_needed_from;
     int __max_needed_from;
     int __min_needed_to;
@@ -87,7 +204,11 @@ struct __gconv_step {
 struct __gconv_loaded_object {
 };
 
-typedef enum anon_enum_32.conflict45f {
+typedef int (* __gconv_trans_init_fct)(void * *, char *);
+
+typedef struct __gconv_info * __gconv_t;
+
+typedef enum anon_enum_32 {
     __GCONV_OK=0,
     __GCONV_IS_LAST=1,
     __GCONV_NOCONV=1,
@@ -100,95 +221,13 @@ typedef enum anon_enum_32.conflict45f {
     __GCONV_INCOMPLETE_INPUT=7,
     __GCONV_ILLEGAL_DESCRIPTOR=8,
     __GCONV_INTERNAL_ERROR=9
-} anon_enum_32.conflict45f;
+} anon_enum_32;
 
-typedef struct __gconv_info * __gconv_t;
-
-typedef ulong __fsfilcnt_t;
-
-typedef int __pid_t;
-
-typedef long __blkcnt_t;
-
-typedef long __time_t;
-
-typedef longlong __off64_t;
-
-typedef __off64_t __loff_t;
-
-typedef int __clockid_t;
-
-typedef int __ssize_t;
-
-typedef ulonglong __u_quad_t;
-
-typedef ulong __rlim_t;
-
-typedef long __off_t;
-
-typedef ushort __u_short;
-
-typedef ulonglong __fsfilcnt64_t;
-
-typedef longlong __quad_t;
-
-typedef uint __useconds_t;
-
-typedef ulonglong __rlim64_t;
-
-typedef int __key_t;
-
-typedef uchar __uint8_t;
-
-typedef long __suseconds_t;
-
-typedef long __clock_t;
-
-typedef int __daddr_t;
-
-typedef int __int32_t;
-
-typedef uint __id_t;
-
-typedef ushort __uint16_t;
+typedef int (* __gconv_trans_query_fct)(char *, char * * *, size_t *);
 
 typedef __quad_t * __qaddr_t;
 
-typedef int __timer_t;
-
-typedef uint __gid_t;
-
-typedef long __blksize_t;
-
-typedef ulonglong __uint64_t;
-
-typedef uint __uid_t;
-
-typedef ulonglong __fsblkcnt64_t;
-
-typedef char __int8_t;
-
-typedef uchar __u_char;
-
-typedef uint __nlink_t;
-
-typedef longlong __int64_t;
-
-typedef ulonglong __dev_t;
-
-typedef ulong __fsblkcnt_t;
-
-typedef long __swblk_t;
-
 typedef char * __caddr_t;
-
-typedef uint __uint32_t;
-
-typedef longlong __blkcnt64_t;
-
-typedef uint __socklen_t;
-
-typedef uint __u_int;
 
 typedef struct __fsid_t __fsid_t, *P__fsid_t;
 
@@ -196,40 +235,21 @@ struct __fsid_t {
     int __val[2];
 };
 
-typedef ulonglong __ino64_t;
-
-typedef ulong __u_long;
-
-typedef uint __mode_t;
-
-typedef int __intptr_t;
-
-typedef short __int16_t;
-
-typedef ulong __ino_t;
-
-typedef union anon_union.conflict3a0 anon_union.conflict3a0, *Panon_union.conflict3a0;
-
-union anon_union.conflict3a0 {
-    wint_t __wch;
-    char __wchb[4];
-};
+typedef __off64_t __loff_t;
 
 typedef union _G_iconv_t _G_iconv_t, *P_G_iconv_t;
 
-typedef struct anon_struct.conflict8b4 anon_struct.conflict8b4, *Panon_struct.conflict8b4;
+typedef struct anon_struct_44_2_2f34be42_for___combined anon_struct_44_2_2f34be42_for___combined, *Panon_struct_44_2_2f34be42_for___combined;
 
-struct anon_struct.conflict8b4 {
+struct anon_struct_44_2_2f34be42_for___combined {
     struct __gconv_info __cd;
     struct __gconv_step_data __data;
 };
 
 union _G_iconv_t {
     struct __gconv_info __cd;
-    struct anon_struct.conflict8b4 __combined;
+    struct anon_struct_44_2_2f34be42_for___combined __combined;
 };
-
-typedef ushort _G_uint16_t;
 
 typedef struct _G_fpos64_t _G_fpos64_t, *P_G_fpos64_t;
 
@@ -237,12 +257,6 @@ struct _G_fpos64_t {
     __off64_t __pos;
     struct __mbstate_t __state;
 };
-
-typedef int _G_int32_t;
-
-typedef short _G_int16_t;
-
-typedef uint _G_uint32_t;
 
 typedef struct _G_fpos_t _G_fpos_t, *P_G_fpos_t;
 
@@ -308,6 +322,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -421,6 +436,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -477,6 +503,16 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
+void FUN_08048268(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __libc_start_main(void)
 
 {
@@ -487,7 +523,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -499,10 +535,13 @@ int printf(char *__format,...)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -525,6 +564,7 @@ void __do_global_dtors_aux(void)
   code *pcVar1;
   
   if (completed_1 == '\0') {
+    completed_1 = 0;
     pcVar1 = *(code **)p_0;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
@@ -600,7 +640,7 @@ undefined4 __do_global_ctors_aux(void)
 {
   code *pcVar1;
   code **ppcVar2;
-  undefined4 uStack12;
+  undefined4 uStack_c;
   
   ppcVar2 = &__CTOR_LIST__;
   pcVar1 = __CTOR_LIST__;
@@ -611,7 +651,7 @@ undefined4 __do_global_ctors_aux(void)
       pcVar1 = *ppcVar2;
     } while (*ppcVar2 != (code *)0xffffffff);
   }
-  return uStack12;
+  return uStack_c;
 }
 
 

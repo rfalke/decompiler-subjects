@@ -5,7 +5,6 @@ typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
 typedef unsigned int    undefined4;
-typedef unsigned long    undefined8;
 typedef unsigned short    word;
 typedef enum Elf_ProgramHeaderType {
     PT_NULL=0,
@@ -20,6 +19,14 @@ typedef enum Elf_ProgramHeaderType {
     PT_GNU_STACK=1685382481,
     PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType;
+
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
@@ -121,29 +128,29 @@ struct Elf64_Sym {
 
 
 
-void g(int *param_1,int *param_2,int *param_3)
+void f(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
-  *param_1 = *param_1 + 1;
-  *param_2 = *param_2 + -1;
-  *param_3 = *param_1 * *param_2;
-  return;
-}
-
-
-
-void f(int param_1,int param_2,int param_3)
-
-{
-  int local_14;
-  int local_10;
-  int local_c;
+  undefined8 *puVar1;
+  undefined *puVar2;
+  undefined *puVar3;
+  undefined8 uStack_20;
+  undefined auStack_18 [4];
+  undefined4 local_14;
+  undefined4 local_10;
+  undefined4 local_c;
   
-  local_14 = param_3;
-  local_10 = param_2;
+  puVar3 = &stack0xfffffffffffffff8;
+  puVar2 = auStack_18;
   local_c = param_1;
-  while (((local_c != 0 && (local_10 != 0)) && (local_14 != 0))) {
-    g(&local_c,&local_10,&local_14);
+  local_10 = param_2;
+  local_14 = param_3;
+  while (((*(int *)(puVar3 + -4) != 0 && (*(int *)(puVar3 + -8) != 0)) &&
+         (*(int *)(puVar3 + -0xc) != 0))) {
+    puVar1 = (undefined8 *)(puVar2 + -8);
+    puVar2 = puVar2 + -8;
+    *puVar1 = 0x400157;
+    g(puVar3 + -0xc);
   }
   return;
 }

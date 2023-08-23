@@ -89,14 +89,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -130,31 +130,34 @@ struct Elf64_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(int *param_1,int *param_2,undefined8 param_3,long param_4)
+void processEntry entry(void)
 
 {
   int iVar1;
   int iVar2;
+  long in_RCX;
+  int *in_RSI;
   int *piVar3;
+  int *in_RDI;
   int *piVar4;
   
   do {
-    piVar3 = param_2;
-    piVar4 = param_1;
-    if (param_4 == 0) break;
-    param_4 = param_4 + -1;
-    piVar4 = param_1 + 1;
-    piVar3 = param_2 + 1;
-    iVar1 = *param_2;
-    iVar2 = *param_1;
-    param_2 = piVar3;
-    param_1 = piVar4;
+    piVar3 = in_RSI;
+    piVar4 = in_RDI;
+    if (in_RCX == 0) break;
+    in_RCX = in_RCX + -1;
+    piVar4 = in_RDI + 1;
+    piVar3 = in_RSI + 1;
+    iVar1 = *in_RSI;
+    iVar2 = *in_RDI;
+    in_RSI = piVar3;
+    in_RDI = piVar4;
   } while (iVar1 == iVar2);
   do {
-    if (param_4 == 0) {
+    if (in_RCX == 0) {
       return;
     }
-    param_4 = param_4 + -1;
+    in_RCX = in_RCX + -1;
     iVar1 = *piVar3;
     iVar2 = *piVar4;
     piVar3 = piVar3 + -1;

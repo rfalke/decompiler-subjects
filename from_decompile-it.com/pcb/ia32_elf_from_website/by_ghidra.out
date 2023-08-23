@@ -1,88 +1,56 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:32:default:gcc (AutoImporter)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-ERROR Failed to get function signature information, leaving undefined: ClearWarnings@08064f90 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: NotifyMode@08068ae0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: AutoPlaceSelected@0806c650 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ChangeSelectedPaste@0807af90 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: simple_optimizations@08085730 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: debumpify@080859f0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: unjaggy@080861d0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: viatrim@080867e0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: vianudge@08086d70 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: edifparse@0808f2e0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ParseLibraryTree@08093910 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ReadLibraryContents@08093ec0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: InitComponentLookup@08099760 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: DRCAll@0809b920 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: usage@080a1000 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ResetStackAndVisibility@080a4dc0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: yylex@080ad470 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: yyparse@080adf30 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: PrintFab@080be4c0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: AddNet@080beef0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: resparse@080c4c70 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: reslex@080c58e0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: SelectObject@080ce850 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: apply_vendor_map@080d42b0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: print_actions@080d5a50 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_mod1_is_pressed@080ee8a0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_control_is_pressed@080ee8f0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_shift_is_pressed@080ee940 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_invalidate_all@080f0150 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: config_layer_group_button_state_update@080f4e50 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_config_groups_changed@080f5180 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_config_window_show@080f5e30 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: config_file_read@080f74c0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_config_init@080f7af0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_dialog_export@080f7fe0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: net_model_create@080fec70 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_layer_buttons_color_update@08104d30 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_layer_buttons_update@08105c00 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_update_toggle_flags@081069d0 (DWARFFunctionImporter)  
-ERROR Failed to get function signature information, leaving undefined: ghid_create_pcb_widgets@08108740 (DWARFFunctionImporter)  
 INFO  DWARF import - total elapsed: some time (DWARFImportSummary)  
 INFO  DWARF data type import - elapsed: some time (DWARFImportSummary)  
 INFO  DWARF func & symbol import - elapsed: some time (DWARFImportSummary)  
-INFO  DWARF types imported: 3252 (DWARFImportSummary)  
+INFO  DWARF types imported: 2315 (DWARFImportSummary)  
 INFO  DWARF function signatures added: 2759 (DWARFImportSummary)  
-ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 1520 (DWARFImportSummary)  
+ERROR DWARF variable definitions that failed because they depended on the dynamic value of a register: 1854 (DWARFImportSummary)  
 ERROR DWARF expression failed to read: 7 (DWARFImportSummary)  
 INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
@@ -96,7 +64,6 @@ INFO  -----------------------------------------------------
     Decompiler Switch Analysis                 some time
     Decompiler Switch Analysis - One Time     some time
     Demangler GNU                              some time
-    Disassemble                                some time
     Disassemble Entry Points                  some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
@@ -104,7 +71,8 @@ INFO  -----------------------------------------------------
     External Entry References                  some time
     Function ID                                some time
     Function Start Search                      some time
-    Function Start Search delayed - One Time   some time
+    Function Start Search After Code           some time
+    Function Start Search After Data           some time
     GCC Exception Handlers                     some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
@@ -112,7 +80,6 @@ INFO  -----------------------------------------------------
     Shared Return Calls                        some time
     Stack                                     some time
     Subroutine References                      some time
-    Subroutine References - One Time           some time
     X86 Function Callee Purge                  some time
     x86 Constant Reference Analyzer           some time
 -----------------------------------------------------
@@ -121,59 +88,8 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Error decompiling: Exception while decompiling 080da0e0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080db090: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080dc0f0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080de390: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080df910: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080df4c0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e1210: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e14a0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e2660: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e3460: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e4fc0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e5450: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e78a0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e7ac0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e82e0: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e6860: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080ea520: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 080e8f80: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08120d90: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08120f40: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08121350: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08121490: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08122e70: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08122d40: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 08124170: Decompiler process died
- (CppExporter)  
-WARN  Error decompiling: Exception while decompiling 081344f0: Decompiler process died
- (CppExporter)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_decompile-it.com/pcb/ia32_elf_from_website/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for: /subject.exe (project_name:/subject.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

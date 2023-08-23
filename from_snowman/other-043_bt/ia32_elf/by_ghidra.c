@@ -88,14 +88,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -130,10 +130,12 @@ struct Elf32_Ehdr {
 // WARNING: Control flow encountered bad instruction data
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __regparm3 entry(uint param_1)
+void processEntry entry(void)
 
 {
-  if ((param_1 >> 3 & 1) != 0) {
+  uint in_EAX;
+  
+  if ((in_EAX >> 3 & 1) != 0) {
     _DAT_000001f4 = 10;
   }
                     // WARNING: Bad instruction - Truncating control flow here

@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -36,124 +63,123 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(undefined4 param_1,int param_2)
 
 {
   code *pcVar1;
   undefined4 *puVar2;
   undefined uVar3;
   int iVar4;
-  short **ppsVar5;
+  int iVar5;
   short **ppsVar6;
-  undefined *puVar7;
-  short **ppsVar8;
+  short **ppsVar7;
+  undefined *puVar8;
   short **ppsVar9;
-  int iVar10;
+  short **ppsVar10;
   int iVar11;
-  int unaff_retaddr;
   
-  ppsVar6 = (short **)&stack0x00000004;
-  iVar10 = unaff_retaddr + -1;
-  if (iVar10 != 0) {
+  ppsVar7 = (short **)&stack0x00000004;
+  param_2 = param_2 + -1;
+  if (param_2 != 0) {
     iVar11 = 0;
     DAT_080495e5 = 9;
-    ppsVar5 = (short **)&stack0x00000008;
+    ppsVar6 = (short **)&stack0x00000008;
     do {
-      ppsVar6 = ppsVar5 + 1;
-      if (**ppsVar5 == 0x642d) {
-        iVar10 = iVar10 + -1;
-        if (iVar10 == 0) goto LAB_0804808f;
-        DAT_080495e5 = *(undefined *)ppsVar5[1];
+      ppsVar7 = ppsVar6 + 1;
+      if (**ppsVar6 == 0x642d) {
+        param_2 = param_2 + -1;
+        if (param_2 == 0) goto LAB_0804808f;
+        DAT_080495e5 = *(undefined *)ppsVar6[1];
       }
       else {
-        *ppsVar5 = (short *)0x5;
+        *ppsVar6 = (short *)0x5;
         pcVar1 = (code *)swi(0x80);
         iVar4 = (*pcVar1)();
-        ppsVar8 = ppsVar5 + 2;
+        ppsVar9 = ppsVar6 + 2;
         if (iVar4 < 0) goto LAB_080480ae;
         *(int *)((int)&DAT_080485dc + iVar11) = iVar4;
         iVar11 = iVar11 + 4;
       }
-      ppsVar6 = ppsVar5 + 2;
-      ppsVar9 = ppsVar5 + 2;
-      iVar10 = iVar10 + -1;
-      ppsVar5 = ppsVar5 + 2;
-    } while (iVar10 != 0);
+      ppsVar7 = ppsVar6 + 2;
+      ppsVar10 = ppsVar6 + 2;
+      param_2 = param_2 + -1;
+      ppsVar6 = ppsVar6 + 2;
+    } while (param_2 != 0);
     if (iVar11 != 0) {
       DAT_080495dc = 0;
-      iVar10 = 0;
+      iVar4 = 0;
       _DAT_080495e0 = iVar11;
       do {
-        puVar2 = ppsVar9;
-        if (*(int *)((int)&DAT_080485dc + iVar10) != 0) {
+        puVar2 = ppsVar10;
+        if (*(int *)((int)&DAT_080485dc + iVar4) != 0) {
           while( true ) {
-            ppsVar9[-1] = (short *)0x3;
+            ppsVar10[-1] = (short *)0x3;
             pcVar1 = (code *)swi(0x80);
-            iVar4 = (*pcVar1)();
-            ppsVar8 = ppsVar9 + 1;
-            if (iVar4 < 0) goto LAB_080480ae;
-            if (iVar4 == 0) break;
-            puVar2 = ppsVar9 + 1;
+            iVar5 = (*pcVar1)();
+            ppsVar9 = ppsVar10 + 1;
+            if (iVar5 < 0) goto LAB_080480ae;
+            if (iVar5 == 0) break;
+            puVar2 = ppsVar10 + 1;
             if (DAT_080495e4 == '\n') goto LAB_0804811e;
-            *ppsVar9 = (short *)0x804810d;
+            *ppsVar10 = (short *)0x804810d;
             FUN_08048156();
-            ppsVar9 = ppsVar9 + 1;
+            ppsVar10 = ppsVar10 + 1;
           }
           _DAT_080495e0 = _DAT_080495e0 + -4;
           if (_DAT_080495e0 == 0) {
-            *ppsVar9 = (short *)0x1;
+            *ppsVar10 = (short *)0x1;
             pcVar1 = (code *)swi(0x80);
             uVar3 = (*pcVar1)();
-            iVar10 = DAT_080495dc;
+            iVar11 = DAT_080495dc;
             (&DAT_080481dc)[DAT_080495dc] = uVar3;
-            if (iVar10 + 1 == 0x400) {
-              ppsVar9[1] = (short *)0x1;
-              ppsVar9[1] = (short *)0x4;
+            if (iVar11 + 1 == 0x400) {
+              ppsVar10[1] = (short *)0x1;
+              ppsVar10[1] = (short *)0x4;
               pcVar1 = (code *)swi(0x80);
               (*pcVar1)();
               DAT_080495dc = 0;
               return;
             }
-            DAT_080495dc = iVar10 + 1;
+            DAT_080495dc = iVar11 + 1;
             return;
           }
-          *(undefined4 *)((int)&DAT_080485dc + iVar10) = 0;
-          puVar2 = ppsVar9 + 1;
+          *(undefined4 *)((int)&DAT_080485dc + iVar4) = 0;
+          puVar2 = ppsVar10 + 1;
         }
 LAB_0804811e:
-        ppsVar9 = (short **)puVar2;
-        iVar10 = iVar10 + 4;
-        if (iVar10 == iVar11) {
-          *(undefined4 *)((int)ppsVar9 + -4) = 0x804813e;
+        ppsVar10 = (short **)puVar2;
+        iVar4 = iVar4 + 4;
+        if (iVar4 == iVar11) {
+          *(undefined4 *)((int)ppsVar10 + -4) = 0x804813e;
           FUN_08048156();
-          *(undefined4 *)((int)ppsVar9 + -4) = 0x8048143;
+          *(undefined4 *)((int)ppsVar10 + -4) = 0x8048143;
           FUN_08048172();
-          iVar10 = 0;
+          iVar4 = 0;
         }
         else {
-          *(undefined4 *)((int)ppsVar9 + -4) = 0x8048135;
+          *(undefined4 *)((int)ppsVar10 + -4) = 0x8048135;
           FUN_08048156();
         }
       } while( true );
     }
   }
 LAB_0804808f:
-  *(undefined4 *)((int)ppsVar6 + -4) = 2;
-  *(undefined4 *)((int)ppsVar6 + -4) = 4;
+  *(undefined4 *)((int)ppsVar7 + -4) = 2;
+  *(undefined4 *)((int)ppsVar7 + -4) = 4;
   pcVar1 = (code *)swi(0x80);
   (*pcVar1)();
-  puVar7 = (undefined *)((int)ppsVar6 + 4);
+  puVar8 = (undefined *)((int)ppsVar7 + 4);
   do {
-    *(undefined4 *)(puVar7 + -4) = 1;
+    *(undefined4 *)(puVar8 + -4) = 1;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    ppsVar8 = (short **)(puVar7 + 4);
+    ppsVar9 = (short **)(puVar8 + 4);
 LAB_080480ae:
-    *(undefined4 *)((int)ppsVar8 + -4) = 2;
-    *(undefined4 *)((int)ppsVar8 + -4) = 4;
+    *(undefined4 *)((int)ppsVar9 + -4) = 2;
+    *(undefined4 *)((int)ppsVar9 + -4) = 4;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    puVar7 = (undefined *)((int)ppsVar8 + 4);
+    puVar8 = (undefined *)((int)ppsVar9 + 4);
   } while( true );
 }
 

@@ -50,7 +50,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -154,6 +154,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -235,18 +236,26 @@ struct Elf64_Sym {
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  undefined *puVar1;
+  int iVar1;
   
-  puVar1 = PTR___gmon_start___0105dff8;
-  if (PTR___gmon_start___0105dff8 != (undefined *)0x0) {
-    puVar1 = (undefined *)(*(code *)PTR___gmon_start___0105dff8)();
-  }
-  return (int)puVar1;
+  iVar1 = __gmon_start__();
+  return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_00400840(void)
+
+{
+                    // WARNING: Could not recover jumptable at 0x00400846. Too many branches
+                    // WARNING: Treating indirect jump as call
+  (*(code *)PTR_0105e010)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -257,7 +266,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -270,7 +279,7 @@ int putchar(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void srand(uint __seed)
 
@@ -281,7 +290,7 @@ void srand(uint __seed)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -294,7 +303,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 time_t time(time_t *__timer)
 
@@ -307,7 +316,7 @@ time_t time(time_t *__timer)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -320,7 +329,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -333,7 +342,7 @@ int fflush(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -344,15 +353,13 @@ void exit(int __status)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  (*(code *)PTR___libc_start_main_0105dff0)
-            (FUN_00400da9,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3
-             ,auStack8);
+  __libc_start_main(FUN_00400da9,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,
+                    auStack_8);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -364,6 +371,17 @@ void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 // WARNING: Removing unreachable block (ram,0x0040094b)
 
 void FUN_00400930(void)
+
+{
+  return;
+}
+
+
+
+// WARNING: Removing unreachable block (ram,0x00400983)
+// WARNING: Removing unreachable block (ram,0x0040098d)
+
+void FUN_00400960(void)
 
 {
   return;
@@ -384,12 +402,10 @@ void _FINI_0(void)
 
 
 
-// WARNING: Removing unreachable block (ram,0x00400983)
-// WARNING: Removing unreachable block (ram,0x0040098d)
-
 void _INIT_0(void)
 
 {
+  FUN_00400960();
   return;
 }
 
@@ -607,19 +623,19 @@ void FUN_00400da9(void)
 
 {
   time_t tVar1;
-  undefined auStack184456 [9536];
-  undefined auStack174920 [9536];
-  undefined auStack165384 [11104];
-  undefined auStack154280 [11104];
-  undefined auStack143176 [143160];
+  undefined auStack_2d088 [9536];
+  undefined auStack_2ab48 [9536];
+  undefined auStack_28608 [11104];
+  undefined auStack_25aa8 [11104];
+  undefined auStack_22f48 [143160];
   
   tVar1 = time((time_t *)0x0);
   srand((uint)tVar1);
-  memcpy(auStack184456,&DAT_00e4dc00,0x253c);
-  memcpy(auStack174920,&DAT_00e50140,0x253c);
-  memcpy(auStack165384,&DAT_00e52680,0x2b5c);
-  memcpy(auStack154280,&DAT_00e551e0,0x2b5c);
-  memcpy(auStack143176,&PTR_LAB_00e57d40,0x56b8);
+  memcpy(auStack_2d088,&DAT_00e4dc00,0x253c);
+  memcpy(auStack_2ab48,&DAT_00e50140,0x253c);
+  memcpy(auStack_28608,&DAT_00e52680,0x2b5c);
+  memcpy(auStack_25aa8,&DAT_00e551e0,0x2b5c);
+  memcpy(auStack_22f48,&PTR_LAB_00e57d40,0x56b8);
   return;
 }
 

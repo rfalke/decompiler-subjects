@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,9 +61,9 @@ struct Elf32_Ehdr {
 
 
 
-undefined8
-entry(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,
-     undefined param_5)
+undefined4 processEntry
+entry(undefined4 param_1,int param_2,undefined4 *param_3,undefined4 *param_4,undefined4 param_5,
+     undefined4 param_6)
 
 {
   undefined4 *puVar1;
@@ -44,26 +71,25 @@ entry(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 para
   undefined4 extraout_ECX;
   undefined4 *puVar3;
   int iVar4;
-  undefined4 unaff_ESI;
+  undefined4 in_ESI;
   byte bVar5;
   undefined8 uVar6;
-  int unaff_retaddr;
   
-  puVar1 = param_2;
+  puVar1 = param_4;
   bVar5 = 0;
   iVar4 = 0;
   DAT_080483ef._0_1_ = 1;
-  puVar3 = &param_2;
-  if (-1 < unaff_retaddr + -2) {
-    puVar3 = &param_3;
-    param_1 = puVar1;
-    if (-1 < unaff_retaddr + -3) {
-      param_3 = 5;
-      puVar3 = (undefined4 *)&param_5;
+  puVar3 = &param_4;
+  if (-1 < param_2 + -2) {
+    puVar3 = &param_5;
+    param_3 = puVar1;
+    if (-1 < param_2 + -3) {
+      param_5 = 5;
+      puVar3 = (undefined4 *)&stack0x00000014;
       pcVar2 = (code *)swi(0x80);
       iVar4 = (*pcVar2)();
       if (iVar4 < 0) {
-        param_4 = 4;
+        param_6 = 4;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
         puVar3 = (undefined4 *)&stack0x00000018;
@@ -94,20 +120,20 @@ LAB_080480d8:
   puVar3[-3] = 0;
   puVar3[-4] = puVar3 + 1;
   puVar3[-5] = iVar4;
-  puVar3[-6] = unaff_ESI;
-  puVar3[-7] = param_1;
-  param_1[-2] = 0x1f;
-  param_1[-1] = 0;
-  param_1[-3] = 0;
+  puVar3[-6] = in_ESI;
+  puVar3[-7] = param_3;
+  param_3[-2] = 0x1f;
+  param_3[-1] = 0;
+  param_3[-3] = 0;
   for (iVar4 = 0x2004; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *param_1 = 0;
-    param_1 = param_1 + (uint)bVar5 * -2 + 1;
+    *param_3 = 0;
+    param_3 = param_3 + (uint)bVar5 * -2 + 1;
   }
   for (iVar4 = 0x18002; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *param_1 = 0x8000;
-    param_1 = param_1 + (uint)bVar5 * -2 + 1;
+    *param_3 = 0x8000;
+    param_3 = param_3 + (uint)bVar5 * -2 + 1;
   }
-  return CONCAT44(puVar3[-2],*puVar3);
+  return *puVar3;
 }
 
 

@@ -154,6 +154,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -182,6 +183,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -190,14 +202,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -256,7 +268,7 @@ void FUN_00400480(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -287,7 +299,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -298,7 +310,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int memcmp(void *__s1,void *__s2,size_t __n)
 
@@ -314,10 +326,9 @@ int memcmp(void *__s1,void *__s2,size_t __n)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -369,8 +380,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400618)
 // WARNING: Removing unreachable block (ram,0x00400620)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -381,30 +392,39 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void copy1_four_times(short *to,short *from,int count)
 
 {
-  uint uVar1;
+  undefined2 *in_x0;
+  undefined2 *in_x1;
+  int in_w2;
   int n;
   int local_18;
-  short *local_10;
-  short *local_8;
+  undefined2 *local_10;
+  undefined2 *local_8;
   
-  local_18 = count + 6;
-  if (-1 < count + 3) {
-    local_18 = count + 3;
+  local_18 = in_w2 + 6;
+  if (-1 < in_w2 + 3) {
+    local_18 = in_w2 + 3;
   }
   local_18 = local_18 >> 2;
-  uVar1 = count + 3;
-  if (-1 < count) {
-    uVar1 = count;
-  }
-  local_10 = from;
-  local_8 = to;
-  switch(count - (uVar1 & 0xfffffffc)) {
-  case 0:
-    local_10 = from;
-    local_8 = to;
+  if ((uint)(in_w2 % 4) < 4) {
+    local_10 = in_x1;
+    local_8 = in_x0;
+    switch(in_w2 % 4) {
+    case 0:
+      local_10 = in_x1;
+      local_8 = in_x0;
+      break;
+    case 1:
+      goto switchD_004006ac_caseD_1;
+    case 2:
+      goto switchD_004006ac_caseD_2;
+    case 3:
+      goto switchD_004006ac_caseD_3;
+    }
     do {
       *local_8 = *local_10;
       local_10 = local_10 + 1;
@@ -423,43 +443,53 @@ switchD_004006ac_caseD_1:
       local_10 = local_10 + 1;
       local_8 = local_8 + 1;
     } while (0 < local_18);
-    break;
-  case 1:
-    goto switchD_004006ac_caseD_1;
-  case 2:
-    goto switchD_004006ac_caseD_2;
-  case 3:
-    goto switchD_004006ac_caseD_3;
   }
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void copy1_eight_times(short *to,short *from,int count)
 
 {
-  uint uVar1;
+  undefined2 *in_x0;
+  undefined2 *in_x1;
+  int in_w2;
   int n;
   int local_18;
-  short *local_10;
-  short *local_8;
+  undefined2 *local_10;
+  undefined2 *local_8;
   
-  local_18 = count + 0xe;
-  if (-1 < count + 7) {
-    local_18 = count + 7;
+  local_18 = in_w2 + 0xe;
+  if (-1 < in_w2 + 7) {
+    local_18 = in_w2 + 7;
   }
   local_18 = local_18 >> 3;
-  uVar1 = count + 7;
-  if (-1 < count) {
-    uVar1 = count;
-  }
-  local_10 = from;
-  local_8 = to;
-  switch(count - (uVar1 & 0xfffffff8)) {
-  case 0:
-    local_10 = from;
-    local_8 = to;
+  if ((uint)(in_w2 % 8) < 8) {
+    local_10 = in_x1;
+    local_8 = in_x0;
+    switch(in_w2 % 8) {
+    case 0:
+      local_10 = in_x1;
+      local_8 = in_x0;
+      break;
+    case 1:
+      goto switchD_004007c0_caseD_1;
+    case 2:
+      goto switchD_004007c0_caseD_2;
+    case 3:
+      goto switchD_004007c0_caseD_3;
+    case 4:
+      goto switchD_004007c0_caseD_4;
+    case 5:
+      goto switchD_004007c0_caseD_5;
+    case 6:
+      goto switchD_004007c0_caseD_6;
+    case 7:
+      goto switchD_004007c0_caseD_7;
+    }
     do {
       *local_8 = *local_10;
       local_10 = local_10 + 1;
@@ -494,38 +524,28 @@ switchD_004007c0_caseD_1:
       local_10 = local_10 + 1;
       local_8 = local_8 + 1;
     } while (0 < local_18);
-    break;
-  case 1:
-    goto switchD_004007c0_caseD_1;
-  case 2:
-    goto switchD_004007c0_caseD_2;
-  case 3:
-    goto switchD_004007c0_caseD_3;
-  case 4:
-    goto switchD_004007c0_caseD_4;
-  case 5:
-    goto switchD_004007c0_caseD_5;
-  case 6:
-    goto switchD_004007c0_caseD_6;
-  case 7:
-    goto switchD_004007c0_caseD_7;
   }
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void copy2_four_times(short *to,short *from,int n)
 
 {
+  undefined2 *in_x0;
+  undefined2 *in_x1;
+  int in_w2;
   int local_14;
-  short *local_10;
-  short *local_8;
+  undefined2 *local_10;
+  undefined2 *local_8;
   
-  local_14 = n;
-  local_10 = from;
-  local_8 = to;
-  if (0 < n) {
+  local_14 = in_w2;
+  local_10 = in_x1;
+  local_8 = in_x0;
+  if (0 < in_w2) {
     for (; local_14 != 0; local_14 = local_14 + -4) {
       if (local_14 == 3) {
 LAB_00400990:
@@ -556,20 +576,25 @@ LAB_004009b0:
 
 
 
+// WARNING: Unknown calling convention
+
 void copy2_eight_times(short *to,short *from,int n)
 
 {
-  short *psVar1;
-  short *psVar2;
+  undefined2 *puVar1;
+  undefined2 *puVar2;
   uint uVar3;
+  undefined2 *in_x0;
+  undefined2 *in_x1;
+  int in_w2;
   int local_14;
-  short *local_10;
-  short *local_8;
+  undefined2 *local_10;
+  undefined2 *local_8;
   
-  local_14 = n;
-  local_10 = from;
-  local_8 = to;
-  if (0 < n) {
+  local_14 = in_w2;
+  local_10 = in_x1;
+  local_8 = in_x0;
+  if (0 < in_w2) {
     for (; local_14 != 0; local_14 = local_14 + -8) {
       uVar3 = -local_14 + 7;
       if (uVar3 < 6 || -local_14 == -1) {
@@ -584,12 +609,12 @@ void copy2_eight_times(short *to,short *from,int n)
       local_8[3] = local_10[3];
       local_8[4] = local_10[4];
       local_8[5] = local_10[5];
-      psVar1 = local_10 + 7;
-      psVar2 = local_8 + 7;
+      puVar1 = local_10 + 7;
+      puVar2 = local_8 + 7;
       local_8[6] = local_10[6];
       local_10 = local_10 + 8;
       local_8 = local_8 + 8;
-      *psVar2 = *psVar1;
+      *puVar2 = *puVar1;
     }
   }
   return;
@@ -597,23 +622,30 @@ void copy2_eight_times(short *to,short *from,int n)
 
 
 
+// WARNING: Variable defined which should be unmapped: argv-local
+// WARNING: Variable defined which should be unmapped: argc-local
+
 int main(int argc,char **argv)
 
 {
   int iVar1;
-  short *from;
-  short *to;
+  void *__s1;
+  void *__s2;
   short *dest;
   short *src;
   size_t size;
+  undefined4 uVar2;
+  char **argv_local;
+  int argc_local;
   
-  from = (short *)malloc(200);
-  to = (short *)malloc(200);
-  copy1_four_times(to,from,100);
-  copy1_eight_times(to,from,100);
-  copy2_four_times(to,from,100);
-  copy2_eight_times(to,from,100);
-  iVar1 = memcmp(from,to,200);
+  uVar2 = 0;
+  __s1 = malloc(200);
+  __s2 = malloc(200);
+  copy1_four_times((short *)CONCAT44(uVar2,argc),(short *)argv,0);
+  copy1_eight_times((short *)CONCAT44(uVar2,argc),(short *)argv,0);
+  copy2_four_times((short *)CONCAT44(uVar2,argc),(short *)argv,0);
+  copy2_eight_times((short *)CONCAT44(uVar2,argc),(short *)argv,0);
+  iVar1 = memcmp(__s1,__s2,200);
   return iVar1;
 }
 

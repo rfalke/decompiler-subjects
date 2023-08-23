@@ -1,13 +1,25 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef unsigned long long    GUID;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
+typedef unsigned char    uchar;
 typedef unsigned int    uint;
-typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
+typedef unsigned long long    undefined8;
+typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef char CHAR;
 
 typedef CHAR * LPCSTR;
@@ -196,8 +208,8 @@ struct IMAGE_NT_HEADERS32 {
 // WARNING: Type propagation algorithm not settling
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-ulonglong __fastcall
-FUN_0041d3ec(uint param_1,char param_2,undefined param_3,undefined param_4,undefined param_5,
+undefined8 __fastcall
+FUN_0041d3ec(undefined4 param_1,char param_2,undefined param_3,undefined param_4,undefined param_5,
             undefined param_6,undefined param_7,undefined param_8,undefined param_9,
             undefined param_10,uint param_11)
 
@@ -205,23 +217,25 @@ FUN_0041d3ec(uint param_1,char param_2,undefined param_3,undefined param_4,undef
   int *piVar1;
   byte **ppbVar2;
   byte *pbVar3;
-  int iVar5;
+  longlong lVar5;
   code *pcVar6;
   undefined uVar7;
   byte bVar8;
   byte bVar9;
   uint in_EAX;
   uint uVar10;
-  uint uVar11;
+  int iVar11;
+  undefined2 uVar13;
+  uint uVar12;
   undefined4 extraout_EDX;
   uint extraout_EDX_00;
   uint unaff_EBX;
-  uint unaff_EBP;
+  undefined4 unaff_EBP;
   undefined2 *unaff_ESI;
-  uint *unaff_EDI;
+  int *unaff_EDI;
   undefined2 in_CS;
   byte in_AF;
-  bool bVar12;
+  bool bVar14;
   byte in_TF;
   byte in_IF;
   byte in_NT;
@@ -230,115 +244,104 @@ FUN_0041d3ec(uint param_1,char param_2,undefined param_3,undefined param_4,undef
   byte in_VIP;
   byte in_ID;
   undefined2 in_FPUControlWord;
-  ulonglong uVar13;
+  undefined8 uVar15;
   byte in_stack_7544d00e;
   uint local_5f;
-  undefined auStack24 [12];
-  undefined4 uStack12;
-  byte bStack8;
-  ushort uStack7;
-  undefined local_5;
-  undefined uStack4;
-  undefined uStack3;
-  undefined uStack2;
-  undefined uStack1;
+  undefined auStack_18 [12];
+  undefined4 uStack_c;
+  uint uStack_8;
+  undefined2 uStack_4;
+  undefined uStack_2;
+  undefined uStack_1;
   byte *pbVar4;
   
-  uStack4 = (undefined)unaff_EBP;
-  uStack3 = (undefined)(unaff_EBP >> 8);
-  uStack2 = (undefined)(unaff_EBP >> 0x10);
-  uStack1 = (undefined)(unaff_EBP >> 0x18);
+  uStack_4 = (undefined2)unaff_EBP;
+  uStack_2 = (undefined)((uint)unaff_EBP >> 0x10);
+  uStack_1 = (undefined)((uint)unaff_EBP >> 0x18);
   while( true ) {
-    bVar12 = param_11 == 0xffffffb7;
+    bVar14 = param_11 == 0xffffffb7;
     if (param_11 < 0xffffffb8) {
-      bStack8 = 0x7c;
-      uStack7 = 0x41d3;
-      local_5 = 0;
+      uStack_8 = 0x41d37c;
       func_0xe8ccea64();
-      if (!bVar12) {
+      if (!bVar14) {
         pcVar6 = (code *)swi(3);
-        uVar13 = (*pcVar6)();
-        return uVar13;
+        uVar15 = (*pcVar6)();
+        return uVar15;
       }
       uVar7 = in(0xb);
       return CONCAT44(extraout_EDX,CONCAT31(0x927b08,uVar7) + 0x601517e4);
     }
     uVar10 = in_EAX | 0xc18ffef;
-    iVar5 = (uint)((int)uVar10 < 0) * 0x80;
-    bStack8 = (byte)iVar5 | (uVar10 == 0) * '@' | (in_AF & 1) * '\x10' |
-              ((POPCOUNT(uVar10 & 0xff) & 1U) == 0) * '\x04';
-    uStack7 = (ushort)((uint)(in_NT & 1) * 0x4000 >> 8) | (ushort)((uint)(in_IF & 1) * 0x200 >> 8) |
-              (ushort)((uint)(in_TF & 1) * 0x100 >> 8) | (ushort)((uint)iVar5 >> 8) |
-              (ushort)(in_ID & 1) * 0x2000 | (ushort)(in_VIP & 1) * 0x1000 |
-              (ushort)(in_VIF & 1) * 0x800 | (ushort)(in_AC & 1) * 0x400;
-    local_5 = 0;
+    uStack_8 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 |
+               (uint)((int)uVar10 < 0) * 0x80 | (uint)(uVar10 == 0) * 0x40 |
+               (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT(uVar10 & 0xff) & 1U) == 0) * 4 |
+               (uint)(in_ID & 1) * 0x200000 | (uint)(in_VIP & 1) * 0x100000 |
+               (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
     bVar8 = (byte)(char *)(uVar10 + 0x2a5fa337);
-    bVar12 = CARRY1(in_stack_7544d00e,bVar8);
+    bVar14 = CARRY1(in_stack_7544d00e,bVar8);
     bVar9 = in_stack_7544d00e + bVar8;
     in_stack_7544d00e = bVar9 + (uVar10 < 0xd5a05cc9);
     ppbVar2 = (byte **)((int)unaff_ESI + -0x7b4cc1b1);
-    uVar11 = (uint)(bVar12 || CARRY1(bVar9,uVar10 < 0xd5a05cc9));
+    uVar12 = (uint)(bVar14 || CARRY1(bVar9,uVar10 < 0xd5a05cc9));
     pbVar3 = *ppbVar2;
     pbVar4 = *ppbVar2;
-    *ppbVar2 = pbVar4 + (int)unaff_ESI + uVar11;
+    *ppbVar2 = pbVar4 + (int)unaff_ESI + uVar12;
     piVar1 = (int *)(uVar10 + 0x2a5fa336);
     *piVar1 = (*piVar1 - (int)unaff_EDI) -
               (uint)(CARRY4((uint)pbVar3,(uint)unaff_ESI) ||
-                    CARRY4((uint)(pbVar4 + (int)unaff_ESI),uVar11));
+                    CARRY4((uint)(pbVar4 + (int)unaff_ESI),uVar12));
     if (*piVar1 == 0) {
       *(byte *)unaff_ESI = *(byte *)unaff_ESI | param_2 + *(char *)(uVar10 + 0x2a5fa337);
     }
     else {
-      unaff_EDI = (uint *)0xf3c0322f;
+      unaff_EDI = (int *)0xf3c0322f;
       bRamf3c0322e = bVar8;
     }
     param_2 = -0x5d;
-    unaff_EBX = unaff_EBX & 0xffffff00 ^ (uint)&uStack4;
+    unaff_EBX = unaff_EBX & 0xffffff00 ^ (uint)&uStack_4;
+    uVar13 = (undefined2)((uint)param_1 >> 0x10);
     in_EAX = 0x1af99f7a;
-    uStack4 = (undefined)in_CS;
-    uStack3 = (undefined)((ushort)in_CS >> 8);
     *(char *)unaff_EDI = '\0';
     if (*(char *)unaff_EDI != '\0') break;
-    param_1 = param_1 & 0xffff00ff;
+    param_1 = CONCAT22(uVar13,(ushort)(byte)param_1);
     *(byte *)(unaff_EBX + 0xec8b55c3) = *(byte *)(unaff_EBX + 0xec8b55c3) & 0xa3;
     unaff_ESI = (undefined2 *)((int)unaff_ESI + -1);
+    uStack_4 = in_CS;
   }
   *(char *)((int)unaff_EDI + 9) = *(char *)((int)unaff_EDI + 9) + (char)(unaff_EBX >> 8);
-  pbVar4 = (byte *)(unaff_EBP & 0xff000000 | (uint)CONCAT12(uStack2,in_CS));
-  uVar10 = (param_1 & 0xffff0000 | (uint)CONCAT11(199,(char)param_1)) ^ _DAT_841fb1e4;
-  pbVar3 = (byte *)(uVar10 * 4 + -0x273953e4);
+  pbVar4 = (byte *)CONCAT13(uStack_1,CONCAT12(uStack_2,in_CS));
+  uVar12 = CONCAT22(uVar13,CONCAT11(199,(byte)param_1)) ^ _DAT_841fb1e4;
+  pbVar3 = (byte *)(uVar12 * 4 + -0x273953e4);
   bVar9 = *pbVar3;
-  bVar12 = CARRY1(*pbVar3 + 0x96,local_5f < 0xffffff84);
+  bVar14 = CARRY1(*pbVar3 + 0x96,local_5f < 0xffffff84);
   *pbVar3 = *pbVar3 + 0x96 + (local_5f < 0xffffff84);
-  uVar11 = in(0x80a4);
-  if ((0x69 < bVar9 || bVar12) || *pbVar3 == 0) {
-    bVar9 = ((char)uVar11 + 'u') - (0x69 < bVar9 || bVar12);
-    pbVar3 = (byte *)((uVar11 & 0xffffff00 |
-                      (uint)(byte)((byte)(bVar9 + 0x23) >> 1 | (0xdc < bVar9) << 7)) * 9 +
-                     -0x243b035d);
-    *pbVar3 = *pbVar3 ^ (byte)((uVar11 & 0xffffff00) >> 8);
-    if (uVar10 != 0) {
-      uStack12 = 0x41d4e3;
+  iVar11 = in(0x80a4);
+  if ((0x69 < bVar9 || bVar14) || *pbVar3 == 0) {
+    bVar9 = ((char)iVar11 + 'u') - (0x69 < bVar9 || bVar14);
+    pbVar3 = (byte *)(CONCAT31((int3)((uint)iVar11 >> 8),
+                               (byte)(bVar9 + 0x23) >> 1 | (0xdc < bVar9) << 7) * 9 + -0x243b035d);
+    *pbVar3 = *pbVar3 ^ (byte)((uint)iVar11 >> 8);
+    if (uVar12 != 0) {
+      uStack_c = 0x41d4e3;
       func_0x887257f9();
       *(uint *)((int)unaff_ESI + -0x64dc8bfd) =
            *(uint *)((int)unaff_ESI + -0x64dc8bfd) | extraout_EDX_00;
       pcVar6 = (code *)swi(3);
-      uVar13 = (*pcVar6)();
-      return uVar13;
+      uVar15 = (*pcVar6)();
+      return uVar15;
     }
     *unaff_ESI = in_FPUControlWord;
-    *pbVar4 = *pbVar4 | (byte)((uint)CONCAT12(uStack2,in_CS) >> 8);
+    *pbVar4 = *pbVar4 | (byte)((ushort)in_CS >> 8);
     do {
                     // WARNING: Do nothing block with infinite loop
     } while( true );
   }
-  *unaff_EDI = uVar11;
+  *unaff_EDI = iVar11;
   *(int *)(unaff_ESI + 0x26083bde) = -*(int *)(unaff_ESI + 0x26083bde);
-  uVar13 = (longlong)(int)uVar11 * (longlong)(int)auStack24;
-  return uVar13 & 0xffffffff00000000 |
-         (ulonglong)
-         CONCAT22((short)(uVar13 >> 0x10),CONCAT11((char)(uVar13 >> 8) + (char)uVar10,(char)uVar13))
-  ;
+  lVar5 = (longlong)iVar11 * (longlong)(int)auStack_18;
+  return CONCAT44((int)((ulonglong)lVar5 >> 0x20),
+                  CONCAT22((short)((ulonglong)lVar5 >> 0x10),
+                           CONCAT11((char)((ulonglong)lVar5 >> 8) + (char)uVar12,(char)lVar5)));
 }
 
 
@@ -415,18 +418,18 @@ void entry(void)
           puVar14 = (uint *)((int)puVar14 + 1);
           uVar13 = CONCAT31((int3)uVar5 + -3,uVar2) ^ 0xffffffff;
           if (uVar13 == 0) {
-            puVar14 = (uint *)&DAT_00401000;
+            puVar15 = (undefined4 *)&DAT_00401000;
             iVar7 = 0x19;
             do {
-              cVar3 = *(char *)puVar14;
-              puVar14 = (uint *)((int)puVar14 + 1);
-              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar14 == '\0'))) {
-                uVar13 = *puVar14;
-                cVar3 = *(char *)(puVar14 + 1);
-                *puVar14 = (uint)(&DAT_00401000 +
-                                 (((uint)(CONCAT21((short)(uVar13 >> 8),(char)(uVar13 >> 0x10)) &
-                                         0xffff) << 8 | uVar13 >> 0x18) - (int)puVar14));
-                puVar14 = (uint *)((int)puVar14 + 5);
+              cVar3 = *(char *)puVar15;
+              puVar15 = (undefined4 *)((int)puVar15 + 1);
+              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar15 == '\0'))) {
+                uVar4 = *puVar15;
+                cVar3 = *(char *)(puVar15 + 1);
+                *puVar15 = &DAT_00401000 +
+                           (CONCAT31(CONCAT21((ushort)uVar4 >> 8,(char)((uint)uVar4 >> 0x10)),
+                                     (char)((uint)uVar4 >> 0x18)) - (int)puVar15);
+                puVar15 = (undefined4 *)((int)puVar15 + 5);
                 iVar7 = iVar7 + -1;
                 if (iVar7 == 0) {
                   lpProcName = &DAT_0041c000;

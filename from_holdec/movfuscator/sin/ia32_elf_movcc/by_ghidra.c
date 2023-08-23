@@ -5,6 +5,7 @@ typedef unsigned int    dword;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
+typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
 typedef unsigned int    wchar32;
@@ -24,19 +25,13 @@ struct __sigset_t {
 
 typedef struct sigaction sigaction, *Psigaction;
 
-typedef union _union_1048 _union_1048, *P_union_1048;
+typedef union _union_1051 _union_1051, *P_union_1051;
 
 typedef struct siginfo siginfo, *Psiginfo;
 
 typedef struct siginfo siginfo_t;
 
-typedef union _union_1028 _union_1028, *P_union_1028;
-
-typedef struct _struct_1029 _struct_1029, *P_struct_1029;
-
-typedef struct _struct_1030 _struct_1030, *P_struct_1030;
-
-typedef struct _struct_1031 _struct_1031, *P_struct_1031;
+typedef union _union_1031 _union_1031, *P_union_1031;
 
 typedef struct _struct_1032 _struct_1032, *P_struct_1032;
 
@@ -44,17 +39,19 @@ typedef struct _struct_1033 _struct_1033, *P_struct_1033;
 
 typedef struct _struct_1034 _struct_1034, *P_struct_1034;
 
+typedef struct _struct_1035 _struct_1035, *P_struct_1035;
+
+typedef struct _struct_1036 _struct_1036, *P_struct_1036;
+
+typedef struct _struct_1037 _struct_1037, *P_struct_1037;
+
 typedef union sigval sigval, *Psigval;
 
 typedef union sigval sigval_t;
 
-struct _struct_1034 {
-    long si_band;
-    int si_fd;
-};
-
-struct _struct_1033 {
-    void * si_addr;
+struct _struct_1032 {
+    __pid_t si_pid;
+    __uid_t si_uid;
 };
 
 union sigval {
@@ -62,7 +59,13 @@ union sigval {
     void * sival_ptr;
 };
 
-struct _struct_1032 {
+struct _struct_1034 {
+    __pid_t si_pid;
+    __uid_t si_uid;
+    sigval_t si_sigval;
+};
+
+struct _struct_1035 {
     __pid_t si_pid;
     __uid_t si_uid;
     int si_status;
@@ -70,47 +73,45 @@ struct _struct_1032 {
     __clock_t si_stime;
 };
 
-struct _struct_1031 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-    sigval_t si_sigval;
+struct _struct_1037 {
+    long si_band;
+    int si_fd;
 };
 
-struct _struct_1029 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-};
-
-struct _struct_1030 {
+struct _struct_1033 {
     int si_tid;
     int si_overrun;
     sigval_t si_sigval;
 };
 
-union _union_1028 {
+struct _struct_1036 {
+    void * si_addr;
+};
+
+union _union_1031 {
     int _pad[29];
-    struct _struct_1029 _kill;
-    struct _struct_1030 _timer;
-    struct _struct_1031 _rt;
-    struct _struct_1032 _sigchld;
-    struct _struct_1033 _sigfault;
-    struct _struct_1034 _sigpoll;
+    struct _struct_1032 _kill;
+    struct _struct_1033 _timer;
+    struct _struct_1034 _rt;
+    struct _struct_1035 _sigchld;
+    struct _struct_1036 _sigfault;
+    struct _struct_1037 _sigpoll;
+};
+
+union _union_1051 {
+    __sighandler_t sa_handler;
+    void (* sa_sigaction)(int, siginfo_t *, void *);
 };
 
 struct siginfo {
     int si_signo;
     int si_errno;
     int si_code;
-    union _union_1028 _sifields;
-};
-
-union _union_1048 {
-    __sighandler_t sa_handler;
-    void (* sa_sigaction)(int, siginfo_t *, void *);
+    union _union_1031 _sifields;
 };
 
 struct sigaction {
-    union _union_1048 __sigaction_handler;
+    union _union_1051 __sigaction_handler;
     struct __sigset_t sa_mask;
     int sa_flags;
     void (* sa_restorer)(void);
@@ -173,6 +174,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -322,7 +324,17 @@ struct Elf32_Ehdr {
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_08048200(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -334,7 +346,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -346,7 +358,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
@@ -897,6 +909,7 @@ void float64_lt_quiet(void)
   undefined *puVar7;
   uint uVar8;
   uint uVar9;
+  undefined4 uVar10;
   
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x5b]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0x3a] *
@@ -934,24 +947,26 @@ void float64_lt_quiet(void)
   *(undefined4 **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined4 *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)(*(int *)(*(int *)(sp + -0x200068) + -0x200068) + -0x200068);
+       *(undefined4 *)(&push + *(int *)(&push + *(int *)(sp + -0x200068)));
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -994,24 +1009,23 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
   R2 = 0x7ff;
   uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)uRam0834c4ae * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[R0 >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                                     (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[R0 >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)alu_inv16 * 4
+                                                     )] + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]]);
   b0 = *(int *)((&and)[*(int *)(&alu_false + zf * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88225103;
   iVar1 = b0;
@@ -1030,16 +1044,18 @@ void float64_lt_quiet(void)
   puVar2[3] = DAT_082374dc;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1082,19 +1098,21 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
-  R2 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) +
-                                                                      -0x200060) + -0x200060) +
-                                                    -0x200060) + -0x200060) + -0x200060) + -0x200060
-                         ) + -0x200060);
+  R2 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
+                                                  pop + *(int *)(&pop + *(int *)(fp + -0x200060)))))
+                                                )));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1137,7 +1155,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   alu_s._0_2_ = CONCAT11((&alu_bor8)[(uint)R3 >> 8 & 0xff][R0 >> 8 & 0xff],
                          (&alu_bor8)[(uint)R3 & 0xff][R0 & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)[(uint)R3 >> 0x10 & 0xff][R0 >> 0x10 & 0xff],(undefined2)alu_s);
@@ -1145,21 +1163,21 @@ void float64_lt_quiet(void)
   R3 = (undefined *)alu_s;
   R2 = 0;
   uVar5 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)alu_inv16 * 4)] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                     (uint)alu_inv16 * 4)] + (uVar5 >> 0x10) * 4) >>
+                                  8 & 0xff)]]);
   b0 = *(int *)((&and)[*(int *)(&alu_false + zf * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88226577;
   iVar1 = b0;
@@ -1197,17 +1215,19 @@ void float64_lt_quiet(void)
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200060) + -0x200060) + -0x200060) + -0x200060)
-                                                  + -0x200060) + -0x200060) + -0x200060) + -0x200060
-                          ) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(fp + -0x200060))))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1250,24 +1270,23 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
   R2 = 0x7ff;
   uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)uRam0834c4ae * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[R0 >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                                     (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[R0 >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)alu_inv16 * 4
+                                                     )] + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]]);
   b0 = *(int *)((&and)[*(int *)(&alu_false + zf * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88227cad;
   iVar1 = b0;
@@ -1286,17 +1305,19 @@ void float64_lt_quiet(void)
   puVar2[3] = DAT_082374dc;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200060) + -0x200060) + -0x200060) + -0x200060)
-                                                  + -0x200060) + -0x200060) + -0x200060) + -0x200060
-                          ) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(fp + -0x200060))))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1339,20 +1360,21 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
-  R2 = *(uint *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp
-                                                                                                 + 
-                                                  -0x200060) + -0x200060) + -0x200060) + -0x200060)
-                                                  + -0x200060) + -0x200060) + -0x200060) + -0x200060
-                                  ) + -0x200060) + -0x200060);
+  R2 = *(uint *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
+                                                  pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&
+                                                  pop + *(int *)(fp + -0x200060))))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1395,7 +1417,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   alu_s._0_2_ = CONCAT11((&alu_bor8)[(uint)R3 >> 8 & 0xff][R0 >> 8 & 0xff],
                          (&alu_bor8)[(uint)R3 & 0xff][R0 & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)[(uint)R3 >> 0x10 & 0xff][R0 >> 0x10 & 0xff],(undefined2)alu_s);
@@ -1403,21 +1425,21 @@ void float64_lt_quiet(void)
   R3 = (undefined *)alu_s;
   R2 = 0;
   uVar5 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)alu_inv16 * 4)] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                     (uint)alu_inv16 * 4)] + (uVar5 >> 0x10) * 4) >>
+                                  8 & 0xff)]]);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88227cad;
   iVar1 = b0;
@@ -1455,16 +1477,18 @@ void float64_lt_quiet(void)
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1507,24 +1531,23 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
   R2 = 0;
-  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[R0 >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                                     (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)alu_inv16 * 4)] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[R0 >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)alu_inv16 * 4
+                                                     )] + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]]);
   b0 = *(int *)((&and)[*(int *)(&alu_false + zf * 4)] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x882274bc;
   iVar1 = b0;
@@ -1543,17 +1566,19 @@ void float64_lt_quiet(void)
   puVar2[3] = DAT_082374dc;
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200060) + -0x200060) + -0x200060) + -0x200060)
-                                                  + -0x200060) + -0x200060) + -0x200060) + -0x200060
-                          ) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(fp + -0x200060))))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1596,24 +1621,23 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   R3 = (undefined *)R0;
   R2 = 0;
-  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[R0 >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)_alu_inv16 * 4)] +
-                                     (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[R0 & 0xffff] + (uint)alu_inv16 * 4)] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[R0 >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[R0 >> 0x10] + (uint)alu_inv16 * 4
+                                                     )] + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]]);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88227a09;
   iVar1 = b0;
@@ -1749,16 +1773,18 @@ void float64_lt_quiet(void)
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1801,20 +1827,22 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200060) + -0x200060) + -0x200060) + -0x200060)
-                                                  + -0x200060) + -0x200060) + -0x200060) + -0x200060
-                          ) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(fp + -0x200060))))))))));
   *(uint *)(&sel_data)[on] =
-       *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] +
-                4) & 0xffff |
-       *(int *)((&alu_add16)[*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)_alu_inv16 * 4)] +
-               (*(uint *)((&alu_add16)
-                          [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)] + 4)
-               >> 0x10) * 4) << 0x10;
+       CONCAT22((short)*(undefined4 *)
+                        ((&alu_add16)
+                         [*(int *)((&alu_add16)[(uint)sp >> 0x10] + (uint)alu_inv16 * 4)] +
+                        (*(uint *)((&alu_add16)
+                                   [*(int *)((&alu_add16)[(uint)sp & 0xffff] +
+                                            (uint)uRam0834b4c0 * 4)] + 4) >> 0x10) * 4),
+                (short)*(uint *)((&alu_add16)
+                                 [*(int *)((&alu_add16)[(uint)sp & 0xffff] + (uint)uRam0834b4c0 * 4)
+                                 ] + 4));
   puVar2 = (undefined4 *)(&sel_data)[on];
   puVar3 = (undefined4 *)(&sel_data)[on];
   *puVar2 = *puVar3;
@@ -1857,29 +1885,27 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = *(uint *)(&sel_data)[on];
   uVar5 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint)R3 & 0xffff] +
-                             (uint)*(ushort *)(&alu_inv16 + (R2 & 0xffff) * 2) * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
-                                                            (uint)*(ushort *)
-                                                                   (&alu_inv16 + (R2 >> 0x10) * 2) *
-                                                            4)] + (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
-                                               (uint)*(ushort *)(&alu_inv16 + (R2 >> 0x10) * 2) * 4)
-                                      ] + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+                    [*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)(&alu_inv16)[R2 & 0xffff] * 4)
+                    ] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
+                                                                  (uint)(&alu_inv16)[R2 >> 0x10] * 4
+                                                                  )] + (uVar5 >> 0x10) * 4) & 0xff)]
+                                 + (*(uint *)((&alu_add16)
+                                              [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
+                                                       (uint)(&alu_inv16)[R2 >> 0x10] * 4)] +
+                                             (uVar5 >> 0x10) * 4) >> 8 & 0xff)]]);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88229b70;
   iVar1 = b0;
@@ -1899,23 +1925,22 @@ void float64_lt_quiet(void)
   *(undefined4 *)(&sel_on)[b0] = 0;
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0;
-  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)_alu_inv16 * 4)] +
+  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)alu_inv16 * 4)] +
                    4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
-                                               (uint)_alu_inv16 * 4)] + (uVar5 >> 0x10) * 4) >> 8 &
-                           0xff)]];
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[(uint)R3 >> 0x10] +
+                                                     (uint)alu_inv16 * 4)] + (uVar5 >> 0x10) * 4) >>
+                                  8 & 0xff)]]);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88229687;
   iVar1 = b0;
@@ -1939,17 +1964,17 @@ void float64_lt_quiet(void)
                          (&alu_bor8)[uVar5 & 0xff][uVar6 & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)[uVar5 >> 0x10 & 0xff][uVar6 >> 0x10 & 0xff],(undefined2)alu_s);
   _alu_sx = 1;
-  _alu_sc = (uint)(byte)*alu_bor8;
-  _alu_sc = (uint)(byte)*(&alu_bor8)[_alu_sc];
-  _alu_sc = (uint)(byte)*(&alu_bor8)[_alu_sc];
-  _alu_sc = CONCAT31((uint3)(byte)(&alu_true)[_alu_sc],1);
+  alu_sc = (uint)(byte)*alu_bor8;
+  alu_sc = (uint)(byte)*(&alu_bor8)[alu_sc];
+  alu_sc = (uint)(byte)*(&alu_bor8)[alu_sc];
+  alu_sc = CONCAT31((uint3)(byte)(&alu_true)[alu_sc],1);
   alu_s1 = 0;
   alu_s2 = 0;
   DAT_083e048d = 0;
   alu_s3 = 0;
   DAT_083e0499 = 0;
   DAT_083e049a = 0;
-  puVar7 = (&alu_lshu8)[(&alu_clamp32)[_alu_sc]];
+  puVar7 = (&alu_lshu8)[(&alu_clamp32)[alu_sc]];
   _alu_s0 = *(uint *)(puVar7 + ((uint3)alu_s & 0xff) * 4);
   uVar8 = *(uint *)(puVar7 + (uint)(byte)(&alu_bor8)[uVar5 >> 8 & 0xff][uVar6 >> 8 & 0xff] * 4);
   DAT_083e0481 = (undefined)uVar8;
@@ -1965,27 +1990,35 @@ void float64_lt_quiet(void)
   alu_s._0_2_ = CONCAT11((&alu_bor8)[_alu_s0 >> 8 & 0xff][uVar8 & 0xff],*(&alu_bor8)[_alu_s0 & 0xff]
                         );
   alu_s._0_3_ = CONCAT12((&alu_bor8)[_alu_s0 >> 0x10 & 0xff][DAT_083e0482],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11(*(&alu_bor8)[((uint3)alu_s & 0xff00) >> 8],
+  alu_s._0_2_ = CONCAT11(*(&alu_bor8)[(byte)(&alu_bor8)[_alu_s0 >> 8 & 0xff][uVar8 & 0xff]],
                          *(&alu_bor8)[(uint3)alu_s & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)[(byte)(&alu_bor8)[_alu_s0 >> 0x10 & 0xff][DAT_083e0482]]
                          [uVar9 & 0xff],(undefined2)alu_s);
-  alu_s._0_2_ = CONCAT11(*(&alu_bor8)[((uint3)alu_s & 0xff00) >> 8],
-                         *(&alu_bor8)[(uint3)alu_s & 0xff]);
+  alu_s._0_2_ = CONCAT11(*(&alu_bor8)
+                          [(byte)*(&alu_bor8)[(byte)(&alu_bor8)[_alu_s0 >> 8 & 0xff][uVar8 & 0xff]]]
+                         ,*(&alu_bor8)[(uint3)alu_s & 0xff]);
   alu_s._0_3_ = CONCAT12(*(&alu_bor8)
                           [(byte)(&alu_bor8)
                                  [(byte)(&alu_bor8)[_alu_s0 >> 0x10 & 0xff][DAT_083e0482]]
                                  [uVar9 & 0xff]],(undefined2)alu_s);
-  uVar8 = (uint)(uint3)alu_s;
   uVar5 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[(uVar8 & 0xff00) >> 8][uVar5 >> 8 & 0xff],
-                         (&alu_bor8)[uVar8 & 0xff][uVar5 & 0xff]);
+  alu_s._0_2_ = CONCAT11((&alu_bor8)
+                         [(byte)*(&alu_bor8)
+                                 [(byte)*(&alu_bor8)
+                                         [(byte)(&alu_bor8)[_alu_s0 >> 8 & 0xff][uVar8 & 0xff]]]]
+                         [uVar5 >> 8 & 0xff],(&alu_bor8)[(uint3)alu_s & 0xff][uVar5 & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)
                          [(byte)*(&alu_bor8)
                                  [(byte)(&alu_bor8)
                                         [(byte)(&alu_bor8)[_alu_s0 >> 0x10 & 0xff][DAT_083e0482]]
                                         [uVar9 & 0xff]]][uVar5 >> 0x10 & 0xff],(undefined2)alu_s);
   uVar6 = *(uint *)(&sel_data)[on];
-  alu_s._0_2_ = CONCAT11((&alu_bor8)[(byte)(&alu_bor8)[(uVar8 & 0xff00) >> 8][uVar5 >> 8 & 0xff]]
+  alu_s._0_2_ = CONCAT11((&alu_bor8)
+                         [(byte)(&alu_bor8)
+                                [(byte)*(&alu_bor8)
+                                        [(byte)*(&alu_bor8)
+                                                [(byte)(&alu_bor8)[_alu_s0 >> 8 & 0xff]
+                                                       [uVar8 & 0xff]]]][uVar5 >> 8 & 0xff]]
                          [uVar6 >> 8 & 0xff],(&alu_bor8)[(uint3)alu_s & 0xff][uVar6 & 0xff]);
   alu_s._0_3_ = CONCAT12((&alu_bor8)
                          [(byte)(&alu_bor8)
@@ -2004,21 +2037,21 @@ void float64_lt_quiet(void)
   R3 = (undefined *)alu_s;
   R2 = 0;
   uVar5 = *(uint *)((&alu_add16)
-                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)_alu_inv16 * 4)] + 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] +
-                                        (*(uint *)((&alu_add16)
-                                                   [*(int *)((&alu_add16)[alu_s >> 0x10] +
-                                                            (uint)_alu_inv16 * 4)] +
-                                                  (uVar5 >> 0x10) * 4) & 0xff)] +
-                           (*(uint *)((&alu_add16)
-                                      [*(int *)((&alu_add16)[alu_s >> 0x10] + (uint)_alu_inv16 * 4)]
-                                     + (uVar5 >> 0x10) * 4) >> 8 & 0xff)]];
+                    [*(int *)((&alu_add16)[(uint3)alu_s & 0xffff] + (uint)alu_inv16 * 4)] + 4);
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] +
+                                              (*(uint *)((&alu_add16)
+                                                         [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                                  (uint)alu_inv16 * 4)] +
+                                                        (uVar5 >> 0x10) * 4) & 0xff)] +
+                                 (*(uint *)((&alu_add16)
+                                            [*(int *)((&alu_add16)[alu_s >> 0x10] +
+                                                     (uint)alu_inv16 * 4)] + (uVar5 >> 0x10) * 4) >>
+                                  8 & 0xff)]]);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x88229687;
   iVar1 = b0;
@@ -2093,7 +2126,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   R0 = *(uint *)(&sel_data)[on];
   *(undefined4 *)(&sel_target)[on] = 0x8822b0ba;
   iVar1 = on;
@@ -2133,32 +2166,30 @@ void float64_lt_quiet(void)
   R3 = *(undefined **)(&sel_data)[on];
   R2 = 0;
   alu_t = 0;
-  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)_alu_inv16 * 4)] +
+  uVar5 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 & 0xffff] + (uint)alu_inv16 * 4)] +
                    4);
-  uVar6 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)_alu_inv16 * 4)] +
+  uVar6 = *(uint *)((&alu_add16)[*(int *)((&alu_add16)[(uint)R3 >> 0x10] + (uint)alu_inv16 * 4)] +
                    (uVar5 >> 0x10) * 4);
   _DAT_083e045e = (undefined2)uVar6;
   cf._0_1_ = (&alu_false)[uVar6 >> 0x10 & 0xff];
   alu_s._3_1_ = (byte)(uVar6 >> 8);
   sf._0_1_ = (undefined)*(undefined4 *)(&alu_b7 + (uint)alu_s._3_1_ * 4);
-  zf = zf & 0xffffff00 |
-       (uint)(byte)(&alu_false)
-                   [(byte)(&alu_true)
-                          [(uint)(byte)(&alu_true)
-                                       [(uint)(byte)(&alu_true)
-                                                    [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
-                                                     (uVar5 >> 8 & 0xff)] + (uVar6 & 0xff)] +
-                           (uint)alu_s._3_1_]];
+  zf = CONCAT31(zf._1_3_,(&alu_false)
+                         [(byte)(&alu_true)
+                                [(uint)(byte)(&alu_true)
+                                             [(uint)(byte)(&alu_true)
+                                                          [(uint)(byte)(&alu_true)[uVar5 & 0xff] +
+                                                           (uVar5 >> 8 & 0xff)] + (uVar6 & 0xff)] +
+                                 (uint)alu_s._3_1_]]);
   of._0_1_ = (undefined)
              **(undefined4 **)
                (*(int *)((&alu_cmp_of)[*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4)] +
-                        *(uint *)(&alu_b7 +
-                                 (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4) * 4
-                        ) +
+                        *(int *)(&alu_b7 +
+                                (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) >> 8) * 0x400) * 4) +
                *(int *)(&alu_b7 +
-                       (*(uint *)(&alu_b7 +
-                                 (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) & 0xffffff00) * 4) &
-                        0xffffff00 | (uint)alu_s._3_1_) * 4) * 4);
+                       CONCAT31((int3)((uint)*(int *)(&alu_b7 +
+                                                     (*(uint *)(&alu_b7 + ((uint)R3 >> 0x18) * 4) >>
+                                                     8) * 0x400) >> 8),alu_s._3_1_) * 4) * 4);
   b0 = *(int *)((&and)[zf] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x8822a6a2;
   iVar1 = b0;
@@ -2228,8 +2259,7 @@ void float64_lt_quiet(void)
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
+       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
   R3 = (undefined *)R0;
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_target)[on] = 0x8822aea6;
@@ -2319,8 +2349,7 @@ void float64_lt_quiet(void)
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] =
-       *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060);
+       *(undefined4 *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060))));
   *(uint *)(&sel_data)[on] = R0;
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xa6]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xae] *
@@ -2341,7 +2370,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   R0 = *(uint *)(&sel_data)[on];
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0xba]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xb0] *
@@ -2365,7 +2394,7 @@ void float64_lt_quiet(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined4 **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -2438,12 +2467,12 @@ void float64_lt_quiet(void)
   *(undefined4 **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined4 *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   R3 = &DAT_082374a5;
   F1 = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = F1;
@@ -2527,7 +2556,7 @@ void float64_lt_quiet(void)
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
   *(undefined4 *)(&sel_data)[on] = F0;
-  R3 = *(undefined **)(*(int *)(fp + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(fp + -0x200068));
   F1 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F1;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -2573,12 +2602,12 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   D1 = D0;
   DAT_082374dc = DAT_082374d4;
   stack_temp = (undefined4 *)D0;
   DAT_083e0574 = DAT_082374d4;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -2628,24 +2657,26 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   D1 = D0;
   DAT_082374dc = DAT_082374d4;
   stack_temp = (undefined4 *)D0;
   DAT_083e0574 = DAT_082374d4;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
-  stack_temp = (undefined4 *)(s_I_sin___4f_____4f_08237492 + 2);
+  stack_temp = (undefined4 *)(s_I>sin___4f_____4f_08237492 + 2);
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined4 **)(&sel_data)[on] = stack_temp;
-  iVar1 = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34850_0826d418 + 0x20000)] +
-                  (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] & 0xffff | iVar1 << 0x10;
-  alu_c._0_1_ = (undefined)iVar1;
-  alu_c._1_1_ = (undefined)((uint)iVar1 >> 8);
-  alu_c._2_2_ = (undefined2)((uint)iVar1 >> 0x10);
+  uVar10 = *(undefined4 *)
+            ((&alu_add16)[*(int *)(PTR_alu_add16_34850_0826d418 + 0x20000)] +
+            (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] >> 0x10) * 4);
+  alu_s = CONCAT22((short)uVar10,(short)*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8])
+  ;
+  alu_c = (undefined)uVar10;
+  uRam083e0461 = (undefined)((uint)uVar10 >> 8);
+  DAT_083e0462 = (undefined2)((uint)uVar10 >> 0x10);
   stack_temp = (undefined4 *)alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined4 **)(&sel_data)[on] = stack_temp;
@@ -2654,8 +2685,7 @@ void float64_lt_quiet(void)
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060)
-        + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))));
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x18]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xcb] *
                                                   4)] +
@@ -2722,7 +2752,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x36]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xd1] *
@@ -2790,7 +2820,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   b0 = *(int *)((&and)[(byte)(&alu_true)[R0 & 0xff]] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x8822bace;
   iVar1 = b0;
@@ -2831,7 +2861,7 @@ void float64_lt_quiet(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined4 **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -2904,27 +2934,26 @@ void float64_lt_quiet(void)
   *(undefined4 **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined4 *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(sp + -0x200068))))))))))))))))))
+                         ));
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -2970,7 +2999,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)(fp + -0x200068);
@@ -3019,7 +3048,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -3070,15 +3099,15 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                  -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(fp + -0x200068)))))))))))
+                                          )));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3124,14 +3153,14 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(fp + -0x200068)))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3177,10 +3206,10 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3226,7 +3255,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -3276,16 +3305,15 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(fp + -0x200068))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3330,16 +3358,15 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068)
-                                                                           + -0x200068) + -0x200068)
-                                                         + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                            + -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068)))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3384,7 +3411,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823747c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -3432,10 +3459,10 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3481,7 +3508,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -3532,17 +3559,16 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3588,16 +3614,16 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(fp + -0x200068))))))))))
+                                                  )))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3643,7 +3669,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_08237474;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -3691,10 +3717,10 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3740,7 +3766,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -3791,18 +3817,18 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(fp + -0x200068))))))))))))))))))
+                         ));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3848,17 +3874,17 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                    + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (fp + -0x200068)))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -3904,7 +3930,7 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823746c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -3952,14 +3978,14 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                     + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(fp + -0x200068))))))))
+  ;
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4005,13 +4031,12 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(fp + -0x200068)))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4057,12 +4082,12 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4108,10 +4133,10 @@ void float64_lt_quiet(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   *(uint *)(&sel_data)[on] = R0;
-  R3 = *(undefined **)(*(int *)(fp + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(fp + -0x200068));
   F0 = *(undefined4 *)(&sel_data)[on];
   _alu_x = target;
   _alu_y = 0x88234c7a;
@@ -4137,7 +4162,7 @@ void float64_lt_quiet(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined4 **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -4228,12 +4253,12 @@ void main(void)
   *(undefined4 **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined4 *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   R3 = &DAT_082374a5;
   F1 = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = F1;
@@ -4317,7 +4342,7 @@ void main(void)
   *(undefined4 *)(&sel_on)[b0] = 1;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
   *(undefined4 *)(&sel_data)[on] = F0;
-  R3 = *(undefined **)(*(int *)(fp + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(fp + -0x200068));
   F1 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F1;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4363,12 +4388,12 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   D1 = D0;
   DAT_082374dc = DAT_082374d4;
   stack_temp = (undefined4 *)D0;
   DAT_083e0574 = DAT_082374d4;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -4418,21 +4443,23 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   D1 = D0;
   DAT_082374dc = DAT_082374d4;
   stack_temp = (undefined4 *)D0;
   DAT_083e0574 = DAT_082374d4;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
-  stack_temp = (undefined4 *)(s_I_sin___4f_____4f_08237492 + 2);
+  stack_temp = (undefined4 *)(s_I>sin___4f_____4f_08237492 + 2);
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined4 **)(&sel_data)[on] = stack_temp;
-  alu_c = *(int *)((&alu_add16)[*(int *)(PTR_alu_add16_34850_0826d418 + 0x20000)] +
-                  (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] >> 0x10) * 4);
-  alu_s = *(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] & 0xffff | alu_c << 0x10;
+  _alu_c = *(undefined4 *)
+            ((&alu_add16)[*(int *)(PTR_alu_add16_34850_0826d418 + 0x20000)] +
+            (*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8] >> 0x10) * 4);
+  alu_s = CONCAT22((short)_alu_c,(short)*(uint *)(&alu_add16)[*(int *)PTR_alu_add16_51858_0827ddd8])
+  ;
   stack_temp = (undefined4 *)alu_s;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
   *(undefined4 **)(&sel_data)[on] = stack_temp;
@@ -4441,8 +4468,7 @@ void main(void)
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200060);
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(*(int *)(sp + -0x200060) + -0x200060) + -0x200060) + -0x200060)
-        + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(sp + -0x200060)))));
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x18]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xcb] *
                                                   4)] +
@@ -4509,7 +4535,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   iVar1 = *(int *)((&and)[*(int *)((&and)[*(int *)((&and)[(byte)(&alu_eq)[target & 0xff][0x36]] +
                                                   (uint)(byte)(&alu_eq)[target >> 8 & 0xff][0xd1] *
@@ -4577,7 +4603,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   b0 = *(int *)((&and)[(byte)(&alu_true)[R0 & 0xff]] + on * 4);
   *(undefined4 *)(&sel_target)[b0] = 0x8822bace;
   iVar1 = b0;
@@ -4618,7 +4644,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined4 **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -4691,27 +4717,26 @@ void main(void)
   *(undefined4 **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined4 *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(sp + -0x200068))))))))))))))))))
+                         ));
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4757,7 +4782,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)(fp + -0x200068);
@@ -4806,7 +4831,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -4857,15 +4882,15 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                  -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(fp + -0x200068)))))))))))
+                                          )));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4911,14 +4936,14 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(fp + -0x200068)))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -4964,10 +4989,10 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5013,7 +5038,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -5063,16 +5088,15 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(fp + -0x200068))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5117,16 +5141,15 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068)
-                                                                           + -0x200068) + -0x200068)
-                                                         + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                            + -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068)))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5171,7 +5194,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823747c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -5219,10 +5242,10 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5268,7 +5291,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -5319,17 +5342,16 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5375,16 +5397,16 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(fp + -0x200068))))))))))
+                                                  )))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5430,7 +5452,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_08237474;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -5478,10 +5500,10 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5527,7 +5549,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -5578,18 +5600,18 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(fp + -0x200068))))))))))))))))))
+                         ));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5635,17 +5657,17 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                    + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (fp + -0x200068)))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5691,7 +5713,7 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823746c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -5739,14 +5761,14 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                     + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(fp + -0x200068))))))))
+  ;
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5792,13 +5814,12 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(fp + -0x200068)))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5844,12 +5865,12 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(uint *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined4 *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -5895,10 +5916,10 @@ void main(void)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   *(uint *)(&sel_data)[on] = R0;
-  R3 = *(undefined **)(*(int *)(fp + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(fp + -0x200068));
   F0 = *(undefined4 *)(&sel_data)[on];
   _alu_x = target;
   _alu_y = 0x88234c7a;
@@ -5924,7 +5945,7 @@ void main(void)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined4 **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
@@ -6014,27 +6035,26 @@ double sin(double __x)
   *(undefined **)(&sel_data)[on] = stack_temp;
   stack_temp = (undefined *)D1;
   DAT_083e0574 = DAT_082374dc;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200068) + -0x200068);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&push + *(int *)(sp + -0x200068));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;
   *(undefined **)(&sel_data)[on] = sp;
   *(undefined4 *)(&sel_data)[on] =
        *(undefined4 *)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(sp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(sp + -0x200068))))))))))))))))))
+                         ));
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200060) + -0x200060)
-                                                     + -0x200060) + -0x200060) + -0x200060) +
-                          -0x200060) + -0x200060) + -0x200060);
+        (&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(int *)(&pop + *(
+                                                  int *)(&pop + *(int *)(fp + -0x200060))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6080,7 +6100,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)(fp + -0x200068);
@@ -6129,7 +6149,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -6180,15 +6200,15 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                  -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(fp + -0x200068)))))))))))
+                                          )));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6234,14 +6254,14 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                   ) + -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(fp + -0x200068)))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6287,10 +6307,10 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6336,7 +6356,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -6386,16 +6406,15 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + 
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(fp + -0x200068))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6440,16 +6459,15 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068)
-                                                                           + -0x200068) + -0x200068)
-                                                         + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                            + -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068)))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6494,7 +6512,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823747c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -6542,10 +6560,10 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6591,7 +6609,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -6642,17 +6660,16 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6698,16 +6715,16 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(fp + -0x200068))))))))))
+                                                  )))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6753,7 +6770,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_08237474;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -6801,10 +6818,10 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
-  R3 = *(undefined **)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(&push + *(int *)(fp + -0x200068)));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6850,7 +6867,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
@@ -6901,18 +6918,18 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) +
-                                                                      -0x200068) + -0x200068) +
-                                                    -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                          ) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (&push + *(int *)(fp + -0x200068))))))))))))))))))
+                         ));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -6958,17 +6975,17 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*
-                                                  (int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int 
-                                                  *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                    + -0x200068) + -0x200068) + -0x200068) +
-                                                  -0x200068) + -0x200068) + -0x200068) + -0x200068)
-                                                  + -0x200068) + -0x200068) + -0x200068) + -0x200068
-                                                  ) + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(&push + *(int *)(&push
+                                                                                              + *(
+                                                  int *)(&push + *(int *)(&push + *(int *)(&push + *
+                                                  (int *)(&push + *(int *)(&push + *(int *)(&push + 
+                                                  *(int *)(&push + *(int *)(&push + *(int *)(&push +
+                                                                                            *(int *)
+                                                  (fp + -0x200068)))))))))))))))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -7014,7 +7031,7 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   R3 = &DAT_0823746c;
   F0 = *(undefined4 *)(&sel_data)[on];
@@ -7062,14 +7079,14 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&sel_data)[on];
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068)
-                                                     + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(&push + *(int *)(fp + -0x200068))))))))
+  ;
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -7115,13 +7132,12 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) +
-                                            -0x200068) + -0x200068) + -0x200068) + -0x200068) +
-        -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push 
+                                                  + *(int *)(fp + -0x200068)))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -7167,12 +7183,12 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   *(undefined4 *)(&sel_data)[on] = R0;
   F1 = *(undefined4 *)(&sel_data)[on];
   R3 = *(undefined **)
-        (*(int *)(*(int *)(*(int *)(*(int *)(*(int *)(fp + -0x200068) + -0x200068) + -0x200068) +
-                          -0x200068) + -0x200068) + -0x200068);
+        (&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(&push + *(int *)(fp + 
+                                                  -0x200068))))));
   F0 = *(undefined4 *)(&sel_data)[on];
   stack_temp = (undefined *)F0;
   *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(sp + -0x200068);
@@ -7218,10 +7234,10 @@ double sin(double __x)
   *puVar2 = jmp_d1;
   puVar2[1] = DAT_087e0614;
   *(undefined4 *)(&sel_on)[b0] = 1;
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   F1 = R0;
   *(undefined4 *)(&sel_data)[on] = R0;
-  R3 = *(undefined **)(*(int *)(fp + -0x200068) + -0x200068);
+  R3 = *(undefined **)(&push + *(int *)(fp + -0x200068));
   F0 = *(undefined4 *)(&sel_data)[on];
   _alu_x = target;
   _alu_y = 0x88234c7a;
@@ -7247,7 +7263,7 @@ double sin(double __x)
   *(undefined **)(&sel_data)[on] = fp;
   stack_temp = *(undefined **)sp;
   DAT_083e0574 = *(undefined4 *)(sp + 4);
-  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(*(int *)(sp + -0x200060) + -0x200060);
+  *(undefined4 *)(&sel_data)[on] = *(undefined4 *)(&pop + *(int *)(sp + -0x200060));
   puVar2 = (undefined4 *)(&sel_data)[on];
   *puVar2 = stack_temp;
   puVar2[1] = DAT_083e0574;

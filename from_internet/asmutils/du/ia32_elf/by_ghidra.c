@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,7 +61,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   char cVar1;
@@ -166,9 +193,9 @@ uint FUN_08048102(void)
   char *pcVar13;
   bool bVar14;
   byte bVar15;
-  uint uStack24;
-  char *pcStack20;
-  uint auStack16 [3];
+  uint uStack_18;
+  char *pcStack_14;
+  uint auStack_10 [3];
   
   bVar15 = 0;
   pcVar2 = (code *)swi(0x80);
@@ -192,16 +219,16 @@ uint FUN_08048102(void)
       }
     }
     if ((DAT_080482e7 < 2) && ((DAT_080482f5 & 0xf000) == 0x4000)) {
-      auStack16[2] = 5;
+      auStack_10[2] = 5;
       pcVar2 = (code *)swi(0x80);
       iVar6 = (*pcVar2)();
       if (-1 < iVar6) {
         *unaff_EDI = 0x2f;
         pcVar12 = unaff_EDI + 1;
-        auStack16[2] = 0x80481cb;
+        auStack_10[2] = 0x80481cb;
         FUN_0804825f();
-        auStack16[2] = extraout_ECX;
-        puVar4 = auStack16 + 2;
+        auStack_10[2] = extraout_ECX;
+        puVar4 = auStack_10 + 2;
         do {
           puVar10 = puVar4;
           *puVar10 = *puVar10;

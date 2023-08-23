@@ -68,7 +68,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -186,6 +186,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -290,6 +291,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -309,14 +321,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -361,7 +373,17 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_00400540(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -374,7 +396,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -396,7 +418,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -409,7 +431,7 @@ int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -422,7 +444,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -435,7 +457,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -448,7 +470,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -459,14 +481,13 @@ void perror(char *__s)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -522,12 +543,12 @@ void dumpline(byte *param_1,undefined8 param_2,int param_3)
   int iVar9;
   int iVar10;
   byte bVar11;
-  undefined auStack144 [8];
+  undefined auStack_90 [8];
   undefined4 local_88 [2];
   char local_7f [79];
   
   bVar11 = 0;
-  auStack144 = 0x4006e8;
+  auStack_90 = (undefined  [8])0x4006e8;
   sprintf((char *)local_88,"%08lX:",param_2);
   iVar9 = 0x10;
   if (param_3 < 0x11) {
@@ -568,7 +589,7 @@ LAB_00400759:
     iVar6 = 0;
     pbVar5 = param_1;
     do {
-      auStack144 = 0x400727;
+      auStack_90 = (undefined  [8])0x400727;
       sprintf(local_7f + iVar6," %02lX",(ulong)*pbVar5);
       pbVar5 = pbVar5 + 1;
       iVar6 = iVar6 + 3;
@@ -608,7 +629,7 @@ LAB_004007af:
   } while (iVar9 < 0x10);
 LAB_00400801:
   *(undefined2 *)((long)local_88 + (long)iVar9 + (long)iVar7) = 0x7c;
-  auStack144 = 0x400818;
+  auStack_90 = (undefined  [8])0x400818;
   puts((char *)local_88);
   return;
 }
@@ -623,10 +644,10 @@ undefined8 hexdump(char *param_1)
   FILE *__stream;
   size_t sVar3;
   ulong uVar4;
-  stat sStack200;
+  stat sStack_c8;
   undefined local_38 [24];
   
-  iVar1 = __xstat(1,param_1,&sStack200);
+  iVar1 = __xstat(1,param_1,&sStack_c8);
   if (iVar1 == 0) {
     __stream = fopen(param_1,"rb");
     if (__stream == (FILE *)0x0) {
@@ -635,13 +656,13 @@ undefined8 hexdump(char *param_1)
     }
     else {
       uVar4 = 0;
-      if (sStack200.st_size != 0) {
+      if (sStack_c8.st_size != 0) {
         do {
           sVar3 = fread(local_38,1,0x10,__stream);
           if ((int)sVar3 == 0) break;
           dumpline(local_38,uVar4,sVar3 & 0xffffffff);
           uVar4 = uVar4 + (long)(int)sVar3;
-        } while (uVar4 < (ulong)sStack200.st_size);
+        } while (uVar4 < (ulong)sStack_c8.st_size);
       }
       fclose(__stream);
       uVar2 = 0;
@@ -698,17 +719,15 @@ void __libc_csu_init(EVP_PKEY_CTX *param_1)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 void __do_global_ctors_aux(void)
 
 {
   code *pcVar1;
   code **ppcVar2;
   
-  if (___CTOR_LIST__ != (code *)0xffffffffffffffff) {
-    ppcVar2 = (code **)&__CTOR_LIST__;
-    pcVar1 = ___CTOR_LIST__;
+  if (__CTOR_LIST__ != (code *)0xffffffffffffffff) {
+    ppcVar2 = &__CTOR_LIST__;
+    pcVar1 = __CTOR_LIST__;
     do {
       ppcVar2 = ppcVar2 + -1;
       (*pcVar1)();

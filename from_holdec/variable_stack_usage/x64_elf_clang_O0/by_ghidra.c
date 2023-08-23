@@ -158,6 +158,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -199,6 +200,17 @@ struct Elf64_Dyn {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -207,14 +219,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -274,7 +286,7 @@ void FUN_004003e0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -287,14 +299,13 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -337,6 +348,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x004004ea)
+// WARNING: Removing unreachable block (ram,0x004004e0)
 
 void frame_dummy(void)
 
@@ -347,18 +359,27 @@ void frame_dummy(void)
 
 
 
+// WARNING: Variable defined which should be unmapped: x-local
+
 void use(int *x)
 
 {
+  int *x_local;
+  
   sum = *x + sum;
   return;
 }
 
 
 
+// WARNING: Variable defined which should be unmapped: dest-local
+
 void fill(int *dest,int n)
 
 {
+  int n_local;
+  int *dest_local;
+  
   memset(dest,0x78,(long)n << 2);
   return;
 }
@@ -366,36 +387,37 @@ void fill(int *dest,int n)
 
 
 // WARNING: Variable defined which should be unmapped: fixed1
-// WARNING: Could not reconcile some variable overlaps
 
 void with_array(int n)
 
 {
   long lVar1;
   int *x;
-  undefined8 uStack48;
+  int_0_ *dynamic;
+  undefined8 uStack_30;
   int *local_28;
   int local_1c;
+  int **ppiStack_18;
   int fixed2;
-  undefined *puStack24;
   int local_10;
   int local_c;
   int fixed1;
+  int n_local;
   
-  local_c = n;
+  ppiStack_18 = &local_28;
   local_10 = 7;
-  puStack24 = (undefined *)&local_28;
   lVar1 = -((ulong)(uint)n * 4 + 0xf & 0x7fffffff0);
   local_1c = 8;
   local_28 = (int *)((long)&local_28 + lVar1);
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x4005a2;
+  local_c = n;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x4005a2;
   fill((int *)((long)&local_28 + lVar1),n);
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x4005ab;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x4005ab;
   use(&local_10);
   x = local_28;
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x4005b4;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x4005b4;
   use(x);
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x4005bd;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x4005bd;
   use(&local_1c);
   return;
 }
@@ -403,42 +425,47 @@ void with_array(int n)
 
 
 // WARNING: Variable defined which should be unmapped: fixed1
-// WARNING: Could not reconcile some variable overlaps
 
 void with_alloca(int n)
 
 {
   long lVar1;
   int *x;
-  undefined8 uStack48;
-  int aiStack40 [4];
+  undefined8 uStack_30;
+  int aiStack_28 [4];
+  int *piStack_18;
   int fixed2;
-  int *piStack24;
   int *dynamic;
   int fixed1;
+  int n_local;
   
-  dynamic._4_4_ = n;
   dynamic._0_4_ = 7;
   lVar1 = -((long)n * 4 + 0xfU & 0xfffffffffffffff0);
-  piStack24 = (int *)((long)aiStack40 + lVar1);
-  aiStack40[3] = 8;
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x400612;
-  fill((int *)((long)aiStack40 + lVar1),n);
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x40061b;
+  aiStack_28[3] = 8;
+  piStack_18 = (int *)((long)aiStack_28 + lVar1);
+  dynamic._4_4_ = n;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x400612;
+  fill((int *)((long)aiStack_28 + lVar1),n);
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x40061b;
   use((int *)&dynamic);
-  x = piStack24;
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x400624;
+  x = piStack_18;
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x400624;
   use(x);
-  *(undefined8 *)((long)&uStack48 + lVar1) = 0x40062d;
-  use(aiStack40 + 3);
+  *(undefined8 *)((long)&uStack_30 + lVar1) = 0x40062d;
+  use(aiStack_28 + 3);
   return;
 }
 
 
 
+// WARNING: Variable defined which should be unmapped: argc-local
+
 int main(int argc,char **argv)
 
 {
+  char **argv_local;
+  int argc_local;
+  
   with_alloca(argc);
   with_array(argc);
   return 0;

@@ -1,32 +1,37 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_225/ia32_pe/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_225/ia32_pe/project_loc/project_name (DefaultProject)  
@@ -37,9 +42,30 @@ WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl)
 WARN  Non-standard # of data directories: 0 (OptionalHeaderImpl)  
 WARN  Non-standard optional header size: 4 bytes (FileHeader)  
 WARN  DataDirectory RVA outside of image (RVA: 0x6467ddeb, Size: 0x323369).  Could be a file-only data directory. (COMDescriptorDataDirectory)  
-WARN  Unusual file alignment: 0x4 (OptionalHeaderImpl)  
-WARN  Non-standard # of data directories: 0 (OptionalHeaderImpl)  
-WARN  Non-standard optional header size: 4 bytes (FileHeader)  
-INFO  No load spec found for import file: SUBJECTS/from_pouet.net/with_source_225/ia32_pe/subject.exe (AutoImporter)  
-ERROR The AutoImporter could not successfully load SUBJECTS/from_pouet.net/with_source_225/ia32_pe/subject.exe with the provided import parameters. Please ensure that any specified processor/cspec arguments are compatible with the loader that is used during import and try again. (HeadlessAnalyzer)  
+INFO  Using Loader: Old-style DOS Executable (MZ) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:16:Real Mode:default (AutoImporter)  
+ERROR REPORT: java.lang.IndexOutOfBoundsException: Offset must be in range [0,253], got 5312 (HeadlessAnalyzer) java.io.IOException: java.lang.IndexOutOfBoundsException: Offset must be in range [0,253], got 5312
+	at ghidra.app.util.opinion.MzLoader.load(MzLoader.java:113)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:811)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:100)
+	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:131)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:502)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:414)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:86)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadPrograms(HeadlessAnalyzer.java:1638)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1517)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1662)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1727)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:448)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:127)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:77)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+Caused by: java.lang.IndexOutOfBoundsException: Offset must be in range [0,253], got 5312
+	at ghidra.program.database.mem.MemoryMapDB.checkFileBytesRange(MemoryMapDB.java:693)
+	at ghidra.program.database.mem.MemoryMapDB.createInitializedBlock(MemoryMapDB.java:660)
+	at ghidra.app.util.MemoryBlockUtils.createInitializedBlock(MemoryBlockUtils.java:227)
+	at ghidra.app.util.opinion.MzLoader.processMemoryBlocks(MzLoader.java:223)
+	at ghidra.app.util.opinion.MzLoader.load(MzLoader.java:99)
+	... 14 more
+ 
 ERROR REPORT: Import failed for file: SUBJECTS/from_pouet.net/with_source_225/ia32_pe/subject.exe (HeadlessAnalyzer)  

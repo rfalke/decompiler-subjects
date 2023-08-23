@@ -81,6 +81,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -167,6 +168,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -201,14 +213,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -279,7 +291,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -515,10 +527,13 @@ undefined4 main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -770,7 +785,7 @@ int log_size_4_var_017(void)
 {
   char in_AF;
   
-  return CONCAT22(0x4e03,(ushort)(byte)(in_AF << 4 | 0x83) << 8 | 0x80) + -0x4e038380;
+  return CONCAT22(0x4e03,CONCAT11(in_AF << 4 | 0x83,0x40) ^ 0xc0) + -0x4e038380;
 }
 
 
@@ -778,17 +793,19 @@ int log_size_4_var_017(void)
 int log_size_4_var_018(void)
 
 {
-  uint uVar1;
-  uint uVar2;
-  ushort uVar3;
+  int iVar1;
+  ushort uVar2;
+  uint uVar3;
+  ushort uVar4;
   
-  for (uVar1 = 0; (0xbec3eebfU >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
+  for (iVar1 = 0; (0xbec3eebfU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
-  uVar3 = (ushort)uVar1;
-  uVar2 = (uint)(ushort)((uVar3 & 0x3fff) / 0xff | (uVar3 & 0x3fff) % 0xff << 8);
-  return (uVar2 << 0x14 | (uVar2 | 0x3d620000) >> 0xc) +
-         (uVar1 & 0xffff0000 | (uint)(ushort)(uVar3 + 0x265a)) +
-         CONCAT22(0x2b87,0xd9a5 < uVar3 | 0x8f04) + -0x2b8b8b7e;
+  uVar4 = (ushort)iVar1;
+  uVar3 = CONCAT22(0x3d62,uVar4) & 0xffff3fff;
+  uVar2 = (ushort)uVar3;
+  uVar3 = CONCAT22((short)(uVar3 >> 0x10),CONCAT11((char)(uVar2 % 0xff),(char)(uVar2 / 0xff)));
+  return (uVar3 << 0x14 | uVar3 >> 0xc) + CONCAT22((short)((uint)iVar1 >> 0x10),uVar4 + 0x265a) +
+         CONCAT22(0x2b87,0xd9a5 < uVar4 | 0x8f04) + -0x2b8b8b7e;
 }
 
 
@@ -868,13 +885,13 @@ undefined4 log_size_4_var_027(void)
 int log_size_4_var_028(void)
 
 {
-  uint uVar1;
+  int iVar1;
   char in_AF;
   
-  for (uVar1 = 0x1f; 0xce1d0521U >> uVar1 == 0; uVar1 = uVar1 - 1) {
+  for (iVar1 = 0x1f; 0xce1d0521U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
-  return (CONCAT22(0xba53,(ushort)(byte)(in_AF << 4) << 8 | 0x1b) | 0x200) +
-         (uVar1 & 0xffff0000 | uVar1 >> 7 & 0x1ff) + 0x45acfde5;
+  return (CONCAT22(0xba53,CONCAT11(in_AF << 4,0x1b)) | 0x200) +
+         CONCAT22((short)((uint)iVar1 >> 0x10),(ushort)iVar1 >> 7) + 0x45acfde5;
 }
 
 
@@ -1235,12 +1252,12 @@ int log_size_4_var_066(void)
 
 {
   int iVar1;
-  ushort uVar2;
+  short sVar2;
   char in_AF;
   
   iVar1 = CONCAT22(0x3c33,CONCAT11(in_AF << 4 | 0x82,0xff)) + 0x54bbe33a;
-  uVar2 = -(short)(char)((uint)iVar1 >> 8);
-  return CONCAT22(0x3c33,uVar2 & 0xff | (ushort)(byte)-(char)(uVar2 >> 8) << 8) + iVar1 +
+  sVar2 = -(short)(char)((uint)iVar1 >> 8);
+  return CONCAT22(0x3c33,CONCAT11(-(char)((ushort)sVar2 >> 8),(char)sVar2)) + iVar1 +
          (-0x91dcdad >> ((byte)iVar1 & 0x1f)) + 0x32dd9832;
 }
 
@@ -1378,15 +1395,16 @@ undefined4 log_size_4_var_080(void)
 int log_size_4_var_081(void)
 
 {
-  uint uVar1;
+  int iVar1;
   ushort uVar2;
   char cVar3;
   
-  for (uVar1 = 0x1f; 0xba05a0a7U >> uVar1 == 0; uVar1 = uVar1 - 1) {
+  for (iVar1 = 0x1f; 0xba05a0a7U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
-  cVar3 = (char)(uVar1 >> 8);
-  uVar2 = CONCAT11(cVar3 << 7 | (byte)(CONCAT11(1,cVar3) >> 2),(char)uVar1);
-  return (uVar1 & 0xffff0000 | (uint)uVar2) + CONCAT22(0xe09e,uVar2 >> 3 | 0xc000) + 0x1f60f7de;
+  cVar3 = (char)((uint)iVar1 >> 8);
+  uVar2 = CONCAT11(cVar3 << 7 | (byte)(CONCAT11(1,cVar3) >> 2),(char)iVar1);
+  return CONCAT22((short)((uint)iVar1 >> 0x10),uVar2) + CONCAT22(0xe09e,uVar2 >> 3 | 0xc000) +
+         0x1f60f7de;
 }
 
 
@@ -1520,14 +1538,14 @@ undefined4 log_size_4_var_095(void)
 int log_size_4_var_096(void)
 
 {
-  uint uVar1;
+  int iVar1;
   uint uVar2;
   
-  for (uVar1 = 0; (0x65227600U >> uVar1 & 1) == 0; uVar1 = uVar1 + 1) {
+  for (iVar1 = 0; (0x65227600U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
-  uVar2 = uVar1 & 0xffff | 0x27c0000;
+  uVar2 = CONCAT22(0x27c,(short)iVar1);
   return CONCAT22(0x3a60,((ushort)((ushort)(uVar2 < 0x80b80327) << 8) >> 5) << 8) +
-         (uVar1 & 0xffff0000 | 0x7565) + uVar2 + -0x3cdc7d6e;
+         CONCAT22((short)((uint)iVar1 >> 0x10),0x7565) + uVar2 + -0x3cdc7d6e;
 }
 
 
@@ -1542,14 +1560,16 @@ undefined4 log_size_4_var_097(void)
 
 
 
-uint log_size_4_var_098(void)
+undefined4 log_size_4_var_098(void)
 
 {
   int iVar1;
+  ushort uVar2;
   
   for (iVar1 = 0x1f; 0x5920c8a9U >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
-  return iVar1 >> 0x1f & 0xffff0000U | (uint)(iVar1 >> 0x1f) >> 8 & 0xff;
+  uVar2 = (ushort)(iVar1 >> 0x1f);
+  return CONCAT22(uVar2,uVar2 >> 8);
 }
 
 

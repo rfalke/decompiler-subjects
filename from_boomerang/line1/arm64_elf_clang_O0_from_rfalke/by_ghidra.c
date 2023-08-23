@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
@@ -50,7 +51,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -62,6 +63,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -223,6 +227,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -251,6 +256,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -259,14 +275,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -318,7 +334,7 @@ void FUN_00400530(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -331,7 +347,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -362,7 +378,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -373,7 +389,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strchr(char *__s,int __c)
 
@@ -386,7 +402,7 @@ char * strchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -399,7 +415,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * fgets(char *__s,int __n,FILE *__stream)
 
@@ -415,10 +431,9 @@ char * fgets(char *__s,int __n,FILE *__stream)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -470,8 +485,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x004006f8)
 // WARNING: Removing unreachable block (ram,0x00400700)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -482,6 +497,9 @@ void frame_dummy(void)
 
 
 
+// WARNING: Variable defined which should be unmapped: size-local
+// WARNING: Variable defined which should be unmapped: s-local
+
 char * chomp(char *s,int size,FILE *f)
 
 {
@@ -489,6 +507,8 @@ char * chomp(char *s,int size,FILE *f)
   char *pcVar1;
   char *p;
   char *res;
+  int size_local;
+  char *s_local;
   
   __s = fgets(s,size,(FILE *)f);
   if ((__s != (char *)0x0) && (pcVar1 = strchr(__s,10), pcVar1 != (char *)0x0)) {
@@ -499,17 +519,20 @@ char * chomp(char *s,int size,FILE *f)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Variable defined which should be unmapped: argc-local
+// WARNING: Variable defined which should be unmapped: argv-local
 
 int main(int argc,char **argv)
 
 {
   char *pcVar1;
   char line [1024];
-  char acStack1080 [1024];
+  char acStack_438 [1024];
   FILE *local_38;
   char **local_30;
   FILE *f;
+  char **argv_local;
+  int argc_local;
   
   f._4_4_ = 0;
   if (argc < 2) {
@@ -523,9 +546,9 @@ int main(int argc,char **argv)
       f._4_4_ = 1;
     }
     else {
-      pcVar1 = chomp(acStack1080,0x400,(FILE *)local_38);
+      pcVar1 = chomp(acStack_438,0x400,(FILE *)local_38);
       if (pcVar1 != (char *)0x0) {
-        printf("%s\n",acStack1080);
+        printf("%s\n",acStack_438);
       }
       fclose(local_38);
     }

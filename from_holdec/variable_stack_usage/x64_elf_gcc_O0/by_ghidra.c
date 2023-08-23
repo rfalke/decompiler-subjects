@@ -112,6 +112,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -200,6 +201,17 @@ struct Elf64_Dyn {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -208,14 +220,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -275,7 +287,7 @@ void FUN_004003e0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -288,14 +300,13 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -338,6 +349,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x004004ea)
+// WARNING: Removing unreachable block (ram,0x004004e0)
 
 void frame_dummy(void)
 
@@ -351,6 +363,8 @@ void frame_dummy(void)
 void use(int *x)
 
 {
+  int *x_local;
+  
   sum = sum + *x;
   return;
 }
@@ -360,6 +374,9 @@ void use(int *x)
 void fill(int *dest,int n)
 
 {
+  int n_local;
+  int *dest_local;
+  
   memset(dest,0x78,(long)n * 4);
   return;
 }
@@ -371,27 +388,28 @@ void with_array(int n)
 {
   int_0_ *x;
   ulong uVar1;
-  undefined8 uStack80;
-  int aiStack72 [6];
+  undefined8 uStack_50;
+  int aiStack_48 [3];
+  int n_local;
   int fixed2;
   int fixed1;
   int_0_ *dynamic;
   long local_20;
   
-  aiStack72[3] = n;
   fixed1 = 7;
   local_20 = (long)n + -1;
   uVar1 = ((long)n * 4 + 0x12U) / 0x10;
-  dynamic = (int_0_ *)(aiStack72 + uVar1 * -4);
   fixed2 = 8;
-  (&uStack80)[uVar1 * -2] = 0x4005d9;
-  fill(aiStack72 + uVar1 * -4,n);
-  (&uStack80)[uVar1 * -2] = 0x4005e5;
+  n_local = n;
+  dynamic = (int_0_ *)(aiStack_48 + uVar1 * -4);
+  (&uStack_50)[uVar1 * -2] = 0x4005d9;
+  fill(aiStack_48 + uVar1 * -4,n);
+  (&uStack_50)[uVar1 * -2] = 0x4005e5;
   use(&fixed1);
   x = dynamic;
-  (&uStack80)[uVar1 * -2] = 0x4005f1;
+  (&uStack_50)[uVar1 * -2] = 0x4005f1;
   use((int *)x);
-  (&uStack80)[uVar1 * -2] = 0x4005fd;
+  (&uStack_50)[uVar1 * -2] = 0x4005fd;
   use(&fixed2);
   return;
 }
@@ -403,25 +421,26 @@ void with_alloca(int n)
 {
   int *x;
   ulong uVar1;
-  undefined8 auStack48 [2];
-  int aiStack32 [2];
+  undefined8 auStack_30 [2];
+  int iStack_20;
+  int n_local;
   int fixed2;
   int fixed1;
   int *dynamic;
   
-  aiStack32[1] = n;
   fixed1 = 7;
   uVar1 = ((long)n * 4 + 0x1eU) / 0x10;
-  dynamic = aiStack32 + uVar1 * -4;
   fixed2 = 8;
-  auStack48[uVar1 * -2] = 0x400671;
-  fill(aiStack32 + uVar1 * -4,n);
-  auStack48[uVar1 * -2] = 0x40067d;
+  n_local = n;
+  dynamic = &iStack_20 + uVar1 * -4;
+  auStack_30[uVar1 * -2] = 0x400671;
+  fill(&iStack_20 + uVar1 * -4,n);
+  auStack_30[uVar1 * -2] = 0x40067d;
   use(&fixed1);
   x = dynamic;
-  auStack48[uVar1 * -2] = 0x400689;
+  auStack_30[uVar1 * -2] = 0x400689;
   use(x);
-  auStack48[uVar1 * -2] = 0x400695;
+  auStack_30[uVar1 * -2] = 0x400695;
   use(&fixed2);
   return;
 }
@@ -431,6 +450,9 @@ void with_alloca(int n)
 int main(int argc,char **argv)
 
 {
+  char **argv_local;
+  int argc_local;
+  
   with_alloca(argc);
   with_array(argc);
   return 0;

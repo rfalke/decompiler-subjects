@@ -1,39 +1,46 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "windows" for file: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Portable Executable (PE) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:32:default:windows (AutoImporter)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe (HeadlessAnalyzer)  
 INFO  Skipping PDB processing: failed to locate PDB file in configured locations (PdbUniversalAnalyzer)  
 INFO  Use a script to set the PDB file location. I.e.,
@@ -41,35 +48,37 @@ INFO  Use a script to set the PDB file location. I.e.,
     PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
 Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
  This must be done using a pre-script (prior to analysis). (PdbUniversalAnalyzer)  
-WARN  java.lang.NumberFormatException: For input string: "" (java
-For input string: "")  
-java.lang.NumberFormatException: For input string: ""
-	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
-	at java.base/java.lang.Integer.parseInt(Integer.java:662)
-	at WindowsResourceReference.findResource(WindowsResourceReference.java:575)
-	at WindowsResourceReference.addResourceTableReferences(WindowsResourceReference.java:520)
-	at WindowsResourceReference.run(WindowsResourceReference.java:209)
-	at ghidra.app.script.GhidraScript.executeNormal(GhidraScript.java:379)
-	at ghidra.app.script.GhidraScript.doExecute(GhidraScript.java:234)
-	at ghidra.app.script.GhidraScript.execute(GhidraScript.java:212)
-	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:832)
-	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:742)
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+WARN  java.lang.NumberFormatException: For input string: "" under radix 16 (java
+For input string: "" under radix 16)  
+java.lang.NumberFormatException: For input string: "" under radix 16
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+	at java.base/java.lang.Integer.parseInt(Integer.java:678)
+	at WindowsResourceReference.findResource(WindowsResourceReference.java:584)
+	at WindowsResourceReference.addResourceTableReferences(WindowsResourceReference.java:529)
+	at WindowsResourceReference.run(WindowsResourceReference.java:211)
+	at ghidra.app.script.GhidraScript.executeNormal(GhidraScript.java:399)
+	at ghidra.app.script.GhidraScript.doExecute(GhidraScript.java:254)
+	at ghidra.app.script.GhidraScript.execute(GhidraScript.java:232)
+	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:852)
+	at ghidra.app.script.GhidraScript.runScript(GhidraScript.java:762)
 	at ghidra.app.plugin.prototype.MicrosoftCodeAnalyzerPlugin.WindowsResourceReferenceAnalyzer.runScript(WindowsResourceReferenceAnalyzer.java:103)
 	at ghidra.app.plugin.prototype.MicrosoftCodeAnalyzerPlugin.WindowsResourceReferenceAnalyzer.added(WindowsResourceReferenceAnalyzer.java:72)
 	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
 	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:39)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:688)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:788)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:667)
-	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:632)
-	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1016)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1550)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
-	at ghidra.Ghidra.main(Ghidra.java:47)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:690)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:790)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:669)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:634)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1019)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1544)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1662)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1727)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:448)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:127)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:77)
+	at ghidra.Ghidra.main(Ghidra.java:54)
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
@@ -87,6 +96,7 @@ INFO  -----------------------------------------------------
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time
+    Function Start Pre Search                  some time
     Function Start Search                      some time
     Function Start Search After Code           some time
     Function Start Search After Data           some time
@@ -102,6 +112,7 @@ INFO  -----------------------------------------------------
     Subroutine References - One Time           some time
     Windows x86 PE Exception Handling          some time
     Windows x86 PE RTTI Analyzer               some time
+    Windows x86 Thread Environment Block (TEB) Analyzer     some time
     WindowsResourceReference                   some time
     X86 Function Callee Purge                  some time
     x86 Constant Reference Analyzer            some time
@@ -114,4 +125,5 @@ INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)
 INFO  ghidra_script.java> Wrote SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_boomerang/hello_cpp/ia32_pe_by_boomerang/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for: /subject.exe (project_name:/subject.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

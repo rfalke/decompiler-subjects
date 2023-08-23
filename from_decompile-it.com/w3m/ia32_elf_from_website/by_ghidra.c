@@ -99,7 +99,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -250,24 +250,7 @@ struct utimbuf {
     __time_t modtime;
 };
 
-typedef union sigval sigval, *Psigval;
-
-typedef union sigval sigval_t;
-
-union sigval {
-    int sival_int;
-    void * sival_ptr;
-};
-
-typedef struct siginfo siginfo, *Psiginfo;
-
-typedef union _union_1028 _union_1028, *P_union_1028;
-
-typedef struct _struct_1029 _struct_1029, *P_struct_1029;
-
-typedef struct _struct_1030 _struct_1030, *P_struct_1030;
-
-typedef struct _struct_1031 _struct_1031, *P_struct_1031;
+typedef union _union_1031 _union_1031, *P_union_1031;
 
 typedef struct _struct_1032 _struct_1032, *P_struct_1032;
 
@@ -275,16 +258,33 @@ typedef struct _struct_1033 _struct_1033, *P_struct_1033;
 
 typedef struct _struct_1034 _struct_1034, *P_struct_1034;
 
-struct _struct_1034 {
-    long si_band;
-    int si_fd;
+typedef struct _struct_1035 _struct_1035, *P_struct_1035;
+
+typedef struct _struct_1036 _struct_1036, *P_struct_1036;
+
+typedef struct _struct_1037 _struct_1037, *P_struct_1037;
+
+typedef union sigval sigval, *Psigval;
+
+typedef union sigval sigval_t;
+
+struct _struct_1032 {
+    __pid_t si_pid;
+    __uid_t si_uid;
+};
+
+union sigval {
+    int sival_int;
+    void * sival_ptr;
 };
 
 struct _struct_1033 {
-    void * si_addr;
+    int si_tid;
+    int si_overrun;
+    sigval_t si_sigval;
 };
 
-struct _struct_1032 {
+struct _struct_1035 {
     __pid_t si_pid;
     __uid_t si_uid;
     int si_status;
@@ -292,41 +292,89 @@ struct _struct_1032 {
     __clock_t si_stime;
 };
 
-struct _struct_1031 {
+struct _struct_1037 {
+    long si_band;
+    int si_fd;
+};
+
+struct _struct_1036 {
+    void * si_addr;
+};
+
+struct _struct_1034 {
     __pid_t si_pid;
     __uid_t si_uid;
     sigval_t si_sigval;
 };
 
-struct _struct_1029 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-};
-
-struct _struct_1030 {
-    int si_tid;
-    int si_overrun;
-    sigval_t si_sigval;
-};
-
-union _union_1028 {
+union _union_1031 {
     int _pad[29];
-    struct _struct_1029 _kill;
-    struct _struct_1030 _timer;
-    struct _struct_1031 _rt;
-    struct _struct_1032 _sigchld;
-    struct _struct_1033 _sigfault;
-    struct _struct_1034 _sigpoll;
+    struct _struct_1032 _kill;
+    struct _struct_1033 _timer;
+    struct _struct_1034 _rt;
+    struct _struct_1035 _sigchld;
+    struct _struct_1036 _sigfault;
+    struct _struct_1037 _sigpoll;
 };
+
+typedef struct siginfo siginfo, *Psiginfo;
 
 struct siginfo {
     int si_signo;
     int si_errno;
     int si_code;
-    union _union_1028 _sifields;
+    union _union_1031 _sifields;
 };
 
 typedef struct siginfo siginfo_t;
+
+typedef ushort table_attr;
+
+
+// WARNING! conflicting data type names: /DWARF/__blkcnt_t - /types.h/__blkcnt_t
+
+
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
+
+typedef int PERM;
+
+
+// WARNING! conflicting data type names: /DWARF/__time_t - /types.h/__time_t
+
+typedef uchar wc_uchar;
+
+typedef uchar Linecolor;
+
+
+// WARNING! conflicting data type names: /DWARF/__off_t - /types.h/__off_t
+
+typedef dword uint32_t;
+
+typedef ushort Lineprop;
+
+typedef uchar uint8_t;
+
+typedef uint GC_word;
+
+
+// WARNING! conflicting data type names: /DWARF/__suseconds_t - /types.h/__suseconds_t
+
+typedef int __fd_mask;
+
+
+// WARNING! conflicting data type names: /DWARF/__clock_t - /types.h/__clock_t
+
+typedef word uint16_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
+
+typedef longlong clen_t;
+
+typedef ushort l_prop;
+
+
+// WARNING! conflicting data type names: /DWARF/__ino_t - /types.h/__ino_t
 
 typedef struct _Str _Str, *P_Str;
 
@@ -375,8 +423,6 @@ struct encoded_stream {
     struct ens_handle * handle;
     char type;
     char iseos;
-    undefined field4_0x16;
-    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -386,8 +432,6 @@ struct base_stream {
     void * handle;
     char type;
     char iseos;
-    undefined field4_0x16;
-    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -397,8 +441,6 @@ struct file_stream {
     struct file_handle * handle;
     char type;
     char iseos;
-    undefined field4_0x16;
-    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -408,8 +450,6 @@ struct str_stream {
     Str handle;
     char type;
     char iseos;
-    undefined field4_0x16;
-    undefined field5_0x17;
     int (* read)(...);
     void (* close)(...);
 };
@@ -426,9 +466,6 @@ struct ens_handle {
     Str s;
     int pos;
     char encoding;
-    undefined field4_0xd;
-    undefined field5_0xe;
-    undefined field6_0xf;
 };
 
 struct file_handle {
@@ -468,8 +505,6 @@ typedef __pid_t pid_t;
 
 typedef struct symbol_set symbol_set, *Psymbol_set;
 
-typedef uint uint32_t;
-
 typedef uint32_t wc_uint32;
 
 typedef wc_uint32 wc_ces;
@@ -477,14 +512,8 @@ typedef wc_uint32 wc_ces;
 struct symbol_set {
     wc_ces ces;
     char width;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * * item;
     char encode;
-    undefined field7_0xd;
-    undefined field8_0xe;
-    undefined field9_0xf;
 };
 
 typedef struct charset_symbol_set charset_symbol_set, *Pcharset_symbol_set;
@@ -495,49 +524,26 @@ struct charset_symbol_set {
 };
 
 
-// WARNING! conflicting data type names: /DWARF/siginfo.h/sigval_t - /siginfo.h/sigval_t
-
-typedef struct anon_struct.conflict15648 anon_struct.conflict15648, *Panon_struct.conflict15648;
-
-struct anon_struct.conflict15648 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-};
-
-typedef struct anon_struct.conflict15722 anon_struct.conflict15722, *Panon_struct.conflict15722;
-
-struct anon_struct.conflict15722 {
-    void * si_addr;
-};
-
-
-// WARNING! conflicting data type names: /DWARF/siginfo.h/sigval - /siginfo.h/sigval
-
-
 // WARNING! conflicting data type names: /DWARF/siginfo.h/siginfo - /siginfo.h/siginfo
 
 
 // WARNING! conflicting data type names: /DWARF/siginfo.h/siginfo_t - /siginfo.h/siginfo_t
 
-typedef struct anon_struct.conflict1566d anon_struct.conflict1566d, *Panon_struct.conflict1566d;
+typedef union anon_union_116_7_b489c2e4_for__sifields anon_union_116_7_b489c2e4_for__sifields, *Panon_union_116_7_b489c2e4_for__sifields;
 
-struct anon_struct.conflict1566d {
-    int si_tid;
-    int si_overrun;
-    sigval_t si_sigval;
-};
+typedef struct anon_struct_8_2_0a3d7222_for__kill anon_struct_8_2_0a3d7222_for__kill, *Panon_struct_8_2_0a3d7222_for__kill;
 
-typedef struct anon_struct.conflict156a0 anon_struct.conflict156a0, *Panon_struct.conflict156a0;
+typedef struct anon_struct_12_3_5124685d_for__timer anon_struct_12_3_5124685d_for__timer, *Panon_struct_12_3_5124685d_for__timer;
 
-struct anon_struct.conflict156a0 {
-    __pid_t si_pid;
-    __uid_t si_uid;
-    sigval_t si_sigval;
-};
+typedef struct anon_struct_12_3_9bedbd60_for__rt anon_struct_12_3_9bedbd60_for__rt, *Panon_struct_12_3_9bedbd60_for__rt;
 
-typedef struct anon_struct.conflict156d3 anon_struct.conflict156d3, *Panon_struct.conflict156d3;
+typedef struct anon_struct_20_5_7a025f54_for__sigchld anon_struct_20_5_7a025f54_for__sigchld, *Panon_struct_20_5_7a025f54_for__sigchld;
 
-struct anon_struct.conflict156d3 {
+typedef struct anon_struct_4_1_ff5bff1a_for__sigfault anon_struct_4_1_ff5bff1a_for__sigfault, *Panon_struct_4_1_ff5bff1a_for__sigfault;
+
+typedef struct anon_struct_8_2_686959ae_for__sigpoll anon_struct_8_2_686959ae_for__sigpoll, *Panon_struct_8_2_686959ae_for__sigpoll;
+
+struct anon_struct_20_5_7a025f54_for__sigchld {
     __pid_t si_pid;
     __uid_t si_uid;
     int si_status;
@@ -545,66 +551,66 @@ struct anon_struct.conflict156d3 {
     __clock_t si_stime;
 };
 
-typedef union anon_union.conflict1575e anon_union.conflict1575e, *Panon_union.conflict1575e;
-
-typedef struct anon_struct.conflict15739 anon_struct.conflict15739, *Panon_struct.conflict15739;
-
-struct anon_struct.conflict15739 {
+struct anon_struct_8_2_686959ae_for__sigpoll {
     long si_band;
     int si_fd;
 };
 
-union anon_union.conflict1575e {
-    int _pad[29];
-    struct anon_struct.conflict15648 _kill;
-    struct anon_struct.conflict1566d _timer;
-    struct anon_struct.conflict156a0 _rt;
-    struct anon_struct.conflict156d3 _sigchld;
-    struct anon_struct.conflict15722 _sigfault;
-    struct anon_struct.conflict15739 _sigpoll;
+struct anon_struct_4_1_ff5bff1a_for__sigfault {
+    void * si_addr;
 };
 
-typedef union anon_union.conflict1575e_for__sifields anon_union.conflict1575e_for__sifields, *Panon_union.conflict1575e_for__sifields;
+struct anon_struct_12_3_9bedbd60_for__rt {
+    __pid_t si_pid;
+    __uid_t si_uid;
+    sigval_t si_sigval;
+};
 
-union anon_union.conflict1575e_for__sifields {
+struct anon_struct_8_2_0a3d7222_for__kill {
+    __pid_t si_pid;
+    __uid_t si_uid;
+};
+
+struct anon_struct_12_3_5124685d_for__timer {
+    int si_tid;
+    int si_overrun;
+    sigval_t si_sigval;
+};
+
+union anon_union_116_7_b489c2e4_for__sifields {
     int _pad[29];
-    struct anon_struct.conflict15648 _kill;
-    struct anon_struct.conflict1566d _timer;
-    struct anon_struct.conflict156a0 _rt;
-    struct anon_struct.conflict156d3 _sigchld;
-    struct anon_struct.conflict15722 _sigfault;
-    struct anon_struct.conflict15739 _sigpoll;
+    struct anon_struct_8_2_0a3d7222_for__kill _kill;
+    struct anon_struct_12_3_5124685d_for__timer _timer;
+    struct anon_struct_12_3_9bedbd60_for__rt _rt;
+    struct anon_struct_20_5_7a025f54_for__sigchld _sigchld;
+    struct anon_struct_4_1_ff5bff1a_for__sigfault _sigfault;
+    struct anon_struct_8_2_686959ae_for__sigpoll _sigpoll;
 };
 
 typedef char * __gnuc_va_list;
 
 typedef struct sigaction sigaction, *Psigaction;
 
-typedef union anon_union.conflict15831_for___sigaction_handler anon_union.conflict15831_for___sigaction_handler, *Panon_union.conflict15831_for___sigaction_handler;
+typedef union anon_union_4_2_5ad2d23e_for___sigaction_handler anon_union_4_2_5ad2d23e_for___sigaction_handler, *Panon_union_4_2_5ad2d23e_for___sigaction_handler;
 
 typedef struct __sigset_t __sigset_t, *P__sigset_t;
+
+typedef void (* __sighandler_t)(int);
+
+union anon_union_4_2_5ad2d23e_for___sigaction_handler {
+    __sighandler_t sa_handler;
+    void (* sa_sigaction)(int, siginfo_t *, void *);
+};
 
 struct __sigset_t {
     ulong __val[32];
 };
 
-union anon_union.conflict15831_for___sigaction_handler {
-    void (* sa_handler)(int);
-    void (* sa_sigaction)(int, siginfo_t *, void *);
-};
-
 struct sigaction {
-    union anon_union.conflict15831_for___sigaction_handler __sigaction_handler;
+    union anon_union_4_2_5ad2d23e_for___sigaction_handler __sigaction_handler;
     struct __sigset_t sa_mask;
     int sa_flags;
     void (* sa_restorer)(void);
-};
-
-typedef union anon_union.conflict15831 anon_union.conflict15831, *Panon_union.conflict15831;
-
-union anon_union.conflict15831 {
-    void (* sa_handler)(int);
-    void (* sa_sigaction)(int, siginfo_t *, void *);
 };
 
 typedef struct _anchor _anchor, *P_anchor;
@@ -637,18 +643,12 @@ struct _anchor {
     char * referer;
     char * title;
     uchar accesskey;
-    undefined field5_0x11;
-    undefined field6_0x12;
-    undefined field7_0x13;
     struct BufferPoint start;
     struct BufferPoint end;
     int hseq;
     char slave;
-    undefined field12_0x31;
     short y;
     short rows;
-    undefined field15_0x36;
-    undefined field16_0x37;
     Image * image;
 };
 
@@ -672,9 +672,6 @@ struct _imageCache {
     char * touch;
     pid_t pid;
     char loaded;
-    undefined field6_0x15;
-    undefined field7_0x16;
-    undefined field8_0x17;
     int index;
     short width;
     short height;
@@ -691,9 +688,6 @@ struct _image {
     short rows;
     char * map;
     char ismap;
-    undefined field10_0x19;
-    undefined field11_0x1a;
-    undefined field12_0x1b;
     int touch;
     ImageCache * cache;
 };
@@ -703,8 +697,6 @@ typedef struct _AlarmEvent _AlarmEvent, *P_AlarmEvent;
 struct _AlarmEvent {
     int sec;
     short status;
-    undefined field2_0x6;
-    undefined field3_0x7;
     int cmd;
     void * data;
 };
@@ -712,8 +704,6 @@ struct _AlarmEvent {
 typedef struct _DownloadList _DownloadList, *P_DownloadList;
 
 typedef struct _DownloadList DownloadList;
-
-typedef longlong clen_t;
 
 typedef __time_t time_t;
 
@@ -731,8 +721,6 @@ struct _DownloadList {
 
 typedef struct readbuffer readbuffer, *Preadbuffer;
 
-typedef ushort Lineprop;
-
 typedef struct Breakpoint Breakpoint, *PBreakpoint;
 
 typedef struct cmdtable cmdtable, *Pcmdtable;
@@ -745,15 +733,11 @@ struct Breakpoint {
     Anchor anchor;
     Str img_alt;
     char fontstat[7];
-    undefined field7_0x57;
     short nobr_level;
     Lineprop prev_ctype;
     char init_flag;
-    undefined field11_0x5d;
     short top_margin;
     short bottom_margin;
-    undefined field14_0x62;
-    undefined field15_0x63;
 };
 
 struct cmdtable {
@@ -771,21 +755,14 @@ struct readbuffer {
     int flag_sp;
     int status;
     uchar end_tag;
-    undefined field9_0x41;
     short table_level;
     short nobr_level;
-    undefined field12_0x46;
-    undefined field13_0x47;
     Anchor anchor;
     Str img_alt;
     char fontstat[7];
     char fontstat_stack[5][7];
-    undefined field18_0xb2;
-    undefined field19_0xb3;
     int fontstat_sp;
     Lineprop prev_ctype;
-    undefined field22_0xba;
-    undefined field23_0xbb;
     struct Breakpoint bp;
     struct cmdtable * tag_stack[10];
     int tag_sp;
@@ -854,8 +831,6 @@ struct form_item_list {
 struct http_request {
     char command;
     char flag;
-    undefined field2_0x2;
-    undefined field3_0x3;
     char * referer;
     FormList * request;
 };
@@ -890,15 +865,11 @@ struct cookie {
     struct portlist * portl;
     char version;
     char flag;
-    undefined field11_0x4a;
-    undefined field12_0x4b;
     struct cookie * next;
 };
 
 struct portlist {
     ushort port;
-    undefined field1_0x2;
-    undefined field2_0x3;
     struct portlist * next;
 };
 
@@ -955,21 +926,13 @@ struct _textlinelist {
     TextLineListItem * first;
     TextLineListItem * last;
     short nitem;
-    undefined field3_0xa;
-    undefined field4_0xb;
 };
 
 struct environment {
     uchar env;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
     int type;
     int count;
     char indent;
-    undefined field7_0xd;
-    undefined field8_0xe;
-    undefined field9_0xf;
 };
 
 struct _textlinelistitem {
@@ -981,8 +944,6 @@ struct _textlinelistitem {
 struct _TextLine {
     Str line;
     short pos;
-    undefined field2_0x6;
-    undefined field3_0x7;
 };
 
 typedef struct _MapList _MapList, *P_MapList;
@@ -1011,11 +972,7 @@ struct _generallist {
     ListItem * first;
     ListItem * last;
     short nitem;
-    undefined field3_0xa;
-    undefined field4_0xb;
 };
-
-typedef uchar Linecolor;
 
 typedef struct _Buffer _Buffer, *P_Buffer;
 
@@ -1038,11 +995,6 @@ typedef struct _MapList MapList;
 typedef struct frameset frameset, *Pframeset;
 
 typedef struct frameset_queue frameset_queue, *Pframeset_queue;
-
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
-typedef uchar uint8_t;
 
 typedef uint8_t wc_uint8;
 
@@ -1078,16 +1030,12 @@ struct frameset_queue {
 struct frame_element {
     char attr;
     char dummy;
-    undefined field2_0x2;
-    undefined field3_0x3;
     char * name;
 };
 
 struct frameset {
     char attr;
     char dummy;
-    undefined field2_0x2;
-    undefined field3_0x3;
     char * name;
     ParsedURL * currentURL;
     char * * width;
@@ -1102,8 +1050,6 @@ struct _textlist {
     TextListItem * first;
     TextListItem * last;
     short nitem;
-    undefined field3_0xa;
-    undefined field4_0xb;
 };
 
 struct _anchorList {
@@ -1137,8 +1083,6 @@ struct mailcap {
 struct frame_body {
     char attr;
     char flags;
-    undefined field2_0x2;
-    undefined field3_0x3;
     char * name;
     char * url;
     ParsedURL * baseURL;
@@ -1160,8 +1104,6 @@ struct _Line {
     long linenumber;
     long real_linenumber;
     ushort usrflags;
-    undefined field10_0x26;
-    undefined field11_0x27;
     int size;
     int bpos;
     int bwidth;
@@ -1172,9 +1114,6 @@ struct _LinkList {
     char * title;
     char * ctype;
     char type;
-    undefined field4_0xd;
-    undefined field5_0xe;
-    undefined field6_0xf;
     struct _LinkList * next;
 };
 
@@ -1193,8 +1132,6 @@ struct _Buffer {
     char * real_type;
     int allLine;
     short bufferprop;
-    undefined field14_0x42;
-    undefined field15_0x43;
     int currentColumn;
     short cursorX;
     short cursorY;
@@ -1224,14 +1161,8 @@ struct _Buffer {
     int * clone;
     size_t trbyte;
     char check_url;
-    undefined field45_0xcd;
-    undefined field46_0xce;
-    undefined field47_0xcf;
     wc_ces document_charset;
     wc_uint8 auto_detect;
-    undefined field50_0xd5;
-    undefined field51_0xd6;
-    undefined field52_0xd7;
     TextList * document_header;
     FormItemList * form_submit;
     char * savecache;
@@ -1259,9 +1190,6 @@ struct _MapArea {
     char * target;
     char * alt;
     char shape;
-    undefined field4_0xd;
-    undefined field5_0xe;
-    undefined field6_0xf;
     short * coords;
     int ncoords;
     short center_x;
@@ -1298,15 +1226,13 @@ struct _TabBuffer {
     short x1;
     short x2;
     short y;
-    undefined field7_0x16;
-    undefined field8_0x17;
 };
 
 typedef struct _MouseAction MouseAction;
 
-typedef struct anon_struct_for_cell anon_struct_for_cell, *Panon_struct_for_cell;
+typedef struct anon_struct_20_6_64f41a67 anon_struct_20_6_64f41a67, *Panon_struct_20_6_64f41a67;
 
-struct anon_struct_for_cell {
+struct anon_struct_20_6_64f41a67 {
     short * row;
     short * rowspan;
     short * indexarray;
@@ -1324,14 +1250,9 @@ typedef struct table_linfo table_linfo, *Ptable_linfo;
 struct table_linfo {
     Lineprop prev_ctype;
     char prev_spaces;
-    undefined field2_0x3;
     Str prevchar;
     short length;
-    undefined field5_0xa;
-    undefined field6_0xb;
 };
-
-typedef ushort table_attr;
 
 typedef struct table_mode table_mode, *Ptable_mode;
 
@@ -1341,12 +1262,8 @@ struct table_mode {
     char caption;
     short nobr_offset;
     char nobr_level;
-    undefined field5_0x9;
     short anchor_offset;
     uchar end_tag;
-    undefined field8_0xd;
-    undefined field9_0xe;
-    undefined field10_0xf;
 };
 
 typedef struct table_cell table_cell, *Ptable_cell;
@@ -1416,16 +1333,12 @@ struct table {
     GeneralList * * * tabdata;
     table_attr * * tabattr;
     table_attr trattr;
-    undefined field20_0x4e;
-    undefined field21_0x4f;
     Str * * tabidvalue;
     Str * tridvalue;
     short tabwidth[50];
     short minimum_width[50];
     short fixed_width[50];
     struct table_cell cell;
-    undefined field28_0x2a2;
-    undefined field29_0x2a3;
     short * tabheight;
     struct table_in * tables;
     short ntable;
@@ -1445,11 +1358,24 @@ typedef struct regexchar regexchar, *Pregexchar;
 
 typedef struct longchar longchar, *Plongchar;
 
-typedef union anon_union.conflict218b8_for_p anon_union.conflict218b8_for_p, *Panon_union.conflict218b8_for_p;
+typedef union anon_union_4_2_ec4e2911_for_p anon_union_4_2_ec4e2911_for_p, *Panon_union_4_2_ec4e2911_for_p;
 
 typedef struct wc_wchar_t wc_wchar_t, *Pwc_wchar_t;
 
 typedef wc_uint32 wc_ccs;
+
+union anon_union_4_2_ec4e2911_for_p {
+    struct longchar * pattern;
+    struct regex * sub;
+};
+
+struct regexchar {
+    union anon_union_4_2_ec4e2911_for_p p;
+    uchar mode;
+    undefined field2_0x5;
+    undefined field3_0x6;
+    undefined field4_0x7;
+};
 
 struct wc_wchar_t {
     wc_ccs ccs;
@@ -1458,26 +1384,8 @@ struct wc_wchar_t {
 
 struct longchar {
     char type;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
     struct wc_wchar_t wch;
     uchar ch;
-    undefined field6_0xd;
-    undefined field7_0xe;
-    undefined field8_0xf;
-};
-
-union anon_union.conflict218b8_for_p {
-    struct longchar * pattern;
-};
-
-struct regexchar {
-    union anon_union.conflict218b8_for_p p;
-    uchar mode;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
 };
 
 struct regex {
@@ -1486,13 +1394,6 @@ struct regex {
     char * position;
     char * lposition;
     struct regex * alt_regex;
-};
-
-typedef union anon_union.conflict218b8 anon_union.conflict218b8, *Panon_union.conflict218b8;
-
-union anon_union.conflict218b8 {
-    struct longchar * pattern;
-    struct regex * sub;
 };
 
 typedef struct Gpm_Connect Gpm_Connect, *PGpm_Connect;
@@ -1565,37 +1466,30 @@ typedef __gnuc_va_list va_list;
 
 // WARNING! conflicting data type names: /DWARF/stdio.h/_IO_FILE - /stdio.h/_IO_FILE
 
-
-// WARNING! conflicting data type names: /DWARF/socket.h/sockaddr - /socket.h/sockaddr
-
 typedef struct sockaddr_storage sockaddr_storage, *Psockaddr_storage;
 
 struct sockaddr_storage {
     sa_family_t ss_family;
-    undefined field1_0x2;
-    undefined field2_0x3;
     ulong __ss_align;
     char __ss_padding[120];
 };
 
 typedef struct sockaddr_in6 sockaddr_in6, *Psockaddr_in6;
 
-typedef ushort uint16_t;
-
 typedef uint16_t in_port_t;
 
 typedef struct in6_addr in6_addr, *Pin6_addr;
 
-typedef union anon_union.conflict33826_for___in6_u anon_union.conflict33826_for___in6_u, *Panon_union.conflict33826_for___in6_u;
+typedef union anon_union_16_3_a3f0114d_for___in6_u anon_union_16_3_a3f0114d_for___in6_u, *Panon_union_16_3_a3f0114d_for___in6_u;
 
-union anon_union.conflict33826_for___in6_u {
+union anon_union_16_3_a3f0114d_for___in6_u {
     uint8_t __u6_addr8[16];
     uint16_t __u6_addr16[8];
     uint32_t __u6_addr32[4];
 };
 
 struct in6_addr {
-    union anon_union.conflict33826_for___in6_u __in6_u;
+    union anon_union_16_3_a3f0114d_for___in6_u __in6_u;
 };
 
 struct sockaddr_in6 {
@@ -1749,21 +1643,21 @@ struct timeval {
 
 // WARNING! conflicting data type names: /DWARF/time.h/timespec - /time.h/timespec
 
-typedef struct anon_struct.conflict3f14d anon_struct.conflict3f14d, *Panon_struct.conflict3f14d;
+typedef struct anon_struct_16_4_049aef2f anon_struct_16_4_049aef2f, *Panon_struct_16_4_049aef2f;
 
-struct anon_struct.conflict3f14d {
-    char * name;
-    void (* set_func)(TextList *);
-    void (* show_func)(TextList *);
-};
-
-typedef struct anon_struct.conflict3f0fa anon_struct.conflict3f0fa, *Panon_struct.conflict3f0fa;
-
-struct anon_struct.conflict3f0fa {
+struct anon_struct_16_4_049aef2f {
     char * name;
     char * option_string;
     char * help;
     void (* func)(TextList *);
+};
+
+typedef struct anon_struct_12_3_4dac31bc anon_struct_12_3_4dac31bc, *Panon_struct_12_3_4dac31bc;
+
+struct anon_struct_12_3_4dac31bc {
+    char * name;
+    void (* set_func)(TextList *);
+    void (* show_func)(TextList *);
 };
 
 typedef struct _News _News, *P_News;
@@ -1816,15 +1710,12 @@ struct compression_decoder {
     char * encodings[4];
 };
 
-typedef struct anon_struct.conflict4705b anon_struct.conflict4705b, *Panon_struct.conflict4705b;
+typedef struct anon_struct_8_2_628f382a anon_struct_8_2_628f382a, *Panon_struct_8_2_628f382a;
 
-struct anon_struct.conflict4705b {
+struct anon_struct_8_2_628f382a {
     char * lang;
     wc_ces ces;
 };
-
-
-// WARNING! conflicting data type names: /DWARF/termios.h/termios - /termios.h/termios
 
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
@@ -1903,8 +1794,6 @@ struct wc_table {
     wc_wchar_t (* conv)(...);
 };
 
-typedef uchar wc_uchar;
-
 typedef struct wc_gset wc_gset, *Pwc_gset;
 
 typedef wc_uchar wc_bool;
@@ -1913,8 +1802,6 @@ struct wc_gset {
     wc_ccs ccs;
     wc_uchar g;
     wc_bool init;
-    undefined field3_0x6;
-    undefined field4_0x7;
 };
 
 typedef struct wc_ces_info wc_ces_info, *Pwc_ces_info;
@@ -1945,7 +1832,6 @@ struct wc_status {
     wc_uint8 gr;
     wc_uint8 gl;
     wc_uint8 ss;
-    undefined field4_0x7;
     wc_ccs g0_ccs;
     wc_ccs g1_ccs;
     wc_ccs design[4];
@@ -1989,9 +1875,6 @@ struct wc_ces_list {
 
 typedef wc_uint32 wc_locale;
 
-
-// WARNING! conflicting data type names: /DWARF/pwd.h/passwd - /pwd.h/passwd
-
 typedef struct w3m_term_info w3m_term_info, *Pw3m_term_info;
 
 struct w3m_term_info {
@@ -2003,8 +1886,6 @@ struct w3m_term_info {
 typedef struct termios TerminalMode;
 
 typedef struct scline scline, *Pscline;
-
-typedef ushort l_prop;
 
 struct scline {
     char * * lineimage;
@@ -2023,7 +1904,7 @@ typedef struct auth_cookie auth_cookie, *Pauth_cookie;
 struct auth_cookie {
 };
 
-typedef enum anon_enum_32.conflictd1f {
+typedef enum anon_enum_32 {
     AUTHCHR_NUL=0,
     WC_CES_N_US_ASCII=0,
     _NL_CTYPE_CLASS=0,
@@ -2446,7 +2327,7 @@ typedef enum anon_enum_32.conflictd1f {
     _NL_IDENTIFICATION_CODESET=786447,
     _NL_NUM_LC_IDENTIFICATION=786448,
     _NL_NUM=786449
-} anon_enum_32.conflictd1f;
+} anon_enum_32;
 
 typedef struct MatchingContext2 MatchingContext2, *PMatchingContext2;
 
@@ -2479,9 +2360,6 @@ struct MatchingContext1 {
 
 
 // WARNING! conflicting data type names: /DWARF/netdb.h/addrinfo - /netdb.h/addrinfo
-
-
-// WARNING! conflicting data type names: /DWARF/netdb.h/hostent - /bio.h/hostent
 
 typedef struct __jmp_buf_tag __jmp_buf_tag, *P__jmp_buf_tag;
 
@@ -2524,24 +2402,16 @@ typedef struct rc_search_table rc_search_table, *Prc_search_table;
 struct rc_search_table {
     struct param_ptr * param;
     short uniq_pos;
-    undefined field2_0x6;
-    undefined field3_0x7;
 };
 
 typedef struct parsed_tag parsed_tag, *Pparsed_tag;
 
 struct parsed_tag {
     uchar tagid;
-    undefined field1_0x1;
-    undefined field2_0x2;
-    undefined field3_0x3;
     uchar * attrid;
     char * * value;
     uchar * map;
     char need_reconstruct;
-    undefined field8_0x11;
-    undefined field9_0x12;
-    undefined field10_0x13;
 };
 
 typedef struct form_select_option form_select_option, *Pform_select_option;
@@ -2563,20 +2433,18 @@ struct _Event {
     struct _Event * next;
 };
 
-typedef struct anon_struct_0 anon_struct_0, *Panon_struct_0;
+typedef struct anon_struct_8_2_43e48cda anon_struct_8_2_43e48cda, *Panon_struct_8_2_43e48cda;
 
-typedef ulong GC_word;
-
-struct anon_struct_0 {
+struct anon_struct_8_2_43e48cda {
     char * msg;
     GC_word arg;
 };
 
-typedef struct anon_struct.conflict21997 anon_struct.conflict21997, *Panon_struct.conflict21997;
+typedef struct anon_struct_8_2_ce7f1003 anon_struct_8_2_ce7f1003, *Panon_struct_8_2_ce7f1003;
 
 typedef struct parsed_tagarg parsed_tagarg, *Pparsed_tagarg;
 
-struct anon_struct.conflict21997 {
+struct anon_struct_8_2_ce7f1003 {
     char * action;
     void (* rout)(struct parsed_tagarg *);
 };
@@ -2608,13 +2476,14 @@ struct pre_form {
     struct pre_form * next;
 };
 
+typedef void (* GC_warn_proc)(char *, GC_word);
+
 typedef struct URLFile URLFile, *PURLFile;
 
 struct URLFile {
     uchar scheme;
     char is_cgi;
     char encoding;
-    undefined field3_0x3;
     InputStream stream;
     char * ext;
     int compression;
@@ -2647,8 +2516,6 @@ struct html_tag_info {
     uchar * accept_attribute;
     uchar max_attribute;
     uchar flag;
-    undefined field4_0xa;
-    undefined field5_0xb;
 };
 
 typedef struct tag_attribute_info tag_attribute_info, *Ptag_attribute_info;
@@ -2657,29 +2524,15 @@ struct tag_attribute_info {
     char * name;
     uchar vtype;
     uchar flag;
-    undefined field3_0x6;
-    undefined field4_0x7;
 };
 
 typedef struct tag_attribute_info TagAttrInfo;
-
-typedef union anon_union.conflict33826 anon_union.conflict33826, *Panon_union.conflict33826;
-
-union anon_union.conflict33826 {
-    uint8_t __u6_addr8[16];
-    uint16_t __u6_addr16[8];
-    uint32_t __u6_addr32[4];
-};
-
-typedef long __fd_mask;
 
 typedef struct fd_set fd_set, *Pfd_set;
 
 struct fd_set {
     __fd_mask __fds_bits[32];
 };
-
-typedef int PERM;
 
 typedef struct matrix * Matrix;
 
@@ -2692,16 +2545,17 @@ typedef struct vector * Vector;
 // WARNING! conflicting data type names: /time.h/timeval - /DWARF/time.h/timeval
 
 
-// WARNING! conflicting data type names: /time.h/tm - /DWARF/time.h/tm
+// WARNING! conflicting data type names: /time.h/time_t - /DWARF/time.h/time_t
 
 
 // WARNING! conflicting data type names: /sigaction.h/sigaction - /DWARF/sigaction.h/sigaction
 
-typedef union _union_1048 _union_1048, *P_union_1048;
+typedef union _union_1051 _union_1051, *P_union_1051;
 
-typedef void (* __sighandler_t)(int);
 
-union _union_1048 {
+// WARNING! conflicting data type names: /signal.h/__sighandler_t - /DWARF/signal.h/__sighandler_t
+
+union _union_1051 {
     __sighandler_t sa_handler;
     void (* sa_sigaction)(int, siginfo_t *, void *);
 };
@@ -2710,10 +2564,10 @@ union _union_1048 {
 // WARNING! conflicting data type names: /in.h/in_addr - /DWARF/in.h/in_addr
 
 
-// WARNING! conflicting data type names: /pthread.h/__jmp_buf_tag - /DWARF/setjmp.h/__jmp_buf_tag
+// WARNING! conflicting data type names: /in.h/in_addr_t - /DWARF/in.h/in_addr_t
 
 
-// WARNING! conflicting data type names: /sigset.h/__sigset_t - /DWARF/sigset.h/__sigset_t
+// WARNING! conflicting data type names: /select.h/__fd_mask - /DWARF/__fd_mask
 
 typedef struct __sigset_t sigset_t;
 
@@ -2826,6 +2680,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -2892,6 +2747,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -2899,14 +2765,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -2936,22 +2802,35 @@ struct Elf32_Ehdr {
 };
 
 
+// WARNING! conflicting data type names: /stdint.h/uint32_t - /DWARF/uint32_t
+
+
 
 
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_08049c2c(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fileno(FILE *__stream)
 
@@ -2964,7 +2843,7 @@ int fileno(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs(char *__s,FILE *__stream)
 
@@ -2977,7 +2856,7 @@ int fputs(char *__s,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -2988,7 +2867,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int * __errno_location(void)
 
@@ -3001,7 +2880,7 @@ int * __errno_location(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigemptyset(sigset_t *__set)
 
@@ -3014,7 +2893,7 @@ int sigemptyset(sigset_t *__set)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * inet_ntop(int __af,void *__cp,char *__buf,socklen_t __len)
 
@@ -3027,7 +2906,7 @@ char * inet_ntop(int __af,void *__cp,char *__buf,socklen_t __len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -3040,7 +2919,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * popen(char *__command,char *__modes)
 
@@ -3053,7 +2932,7 @@ FILE * popen(char *__command,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int open(char *__file,int __oflag,...)
 
@@ -3066,7 +2945,7 @@ int open(char *__file,int __oflag,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int connect(int __fd,sockaddr *__addr,socklen_t __len)
 
@@ -3079,7 +2958,7 @@ int connect(int __fd,sockaddr *__addr,socklen_t __len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __pid_t getpid(void)
 
@@ -3092,7 +2971,7 @@ __pid_t getpid(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int mkdir(char *__path,__mode_t __mode)
 
@@ -3105,7 +2984,7 @@ int mkdir(char *__path,__mode_t __mode)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void srand48(long __seedval)
 
@@ -3116,7 +2995,7 @@ void srand48(long __seedval)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strerror(int __errnum)
 
@@ -3129,7 +3008,7 @@ char * strerror(int __errnum)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int getsockname(int __fd,sockaddr *__addr,socklen_t *__len)
 
@@ -3142,7 +3021,7 @@ int getsockname(int __fd,sockaddr *__addr,socklen_t *__len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int memcmp(void *__s1,void *__s2,size_t __n)
 
@@ -3155,7 +3034,7 @@ int memcmp(void *__s1,void *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void qsort(void *__base,size_t __nmemb,size_t __size,__compar_fn_t __compar)
 
@@ -3166,20 +3045,20 @@ void qsort(void *__base,size_t __nmemb,size_t __size,__compar_fn_t __compar)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * inet_ntoa(in_addr __in)
 
 {
   char *pcVar1;
   
-  pcVar1 = inet_ntoa((in_addr)__in);
+  pcVar1 = inet_ntoa(__in);
   return pcVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void freeaddrinfo(addrinfo *__ai)
 
@@ -3190,7 +3069,7 @@ void freeaddrinfo(addrinfo *__ai)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * bsearch(void *__key,void *__base,size_t __nmemb,size_t __size,__compar_fn_t __compar)
 
@@ -3212,7 +3091,7 @@ void tgetflag(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -3234,7 +3113,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __lxstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -3256,7 +3135,7 @@ void __isoc99_sscanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int vsprintf(char *__s,char *__format,__gnuc_va_list __arg)
 
@@ -3269,7 +3148,7 @@ int vsprintf(char *__s,char *__format,__gnuc_va_list __arg)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 tm * localtime(time_t *__timer)
 
@@ -3282,7 +3161,7 @@ tm * localtime(time_t *__timer)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getpass(char *__prompt)
 
@@ -3295,7 +3174,7 @@ char * getpass(char *__prompt)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strchr(char *__s,int __c)
 
@@ -3308,7 +3187,7 @@ char * strchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getenv(char *__name)
 
@@ -3321,7 +3200,7 @@ char * getenv(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int system(char *__command)
 
@@ -3334,7 +3213,7 @@ int system(char *__command)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strncpy(char *__dest,char *__src,size_t __n)
 
@@ -3347,7 +3226,7 @@ char * strncpy(char *__dest,char *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -3360,7 +3239,7 @@ int putchar(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * ttyname(int __fd)
 
@@ -3373,7 +3252,7 @@ char * ttyname(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t write(int __fd,void *__buf,size_t __n)
 
@@ -3395,7 +3274,7 @@ void GC_realloc(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int rename(char *__old,char *__new)
 
@@ -3408,7 +3287,7 @@ int rename(char *__old,char *__new)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -3430,7 +3309,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int execl(char *__path,char *__arg,...)
 
@@ -3443,7 +3322,7 @@ int execl(char *__path,char *__arg,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _IO_getc(_IO_FILE *__fp)
 
@@ -3456,12 +3335,12 @@ int _IO_getc(_IO_FILE *__fp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double floor(double __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   floor(__x);
   return (double)extraout_ST0;
@@ -3469,7 +3348,7 @@ double floor(double __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strrchr(char *__s,int __c)
 
@@ -3482,7 +3361,7 @@ char * strrchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int tcgetattr(int __fd,termios *__termios_p)
 
@@ -3495,7 +3374,7 @@ int tcgetattr(int __fd,termios *__termios_p)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int chmod(char *__file,__mode_t __mode)
 
@@ -3535,7 +3414,7 @@ void GC_malloc(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t read(int __fd,void *__buf,size_t __nbytes)
 
@@ -3548,7 +3427,7 @@ ssize_t read(int __fd,void *__buf,size_t __nbytes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 longlong strtoll(char *__nptr,char **__endptr,int __base)
 
@@ -3571,7 +3450,7 @@ void gettext(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ungetc(int __c,FILE *__stream)
 
@@ -3584,7 +3463,7 @@ int ungetc(int __c,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 dirent * readdir(DIR *__dirp)
 
@@ -3597,7 +3476,7 @@ dirent * readdir(DIR *__dirp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long strtol(char *__nptr,char **__endptr,int __base)
 
@@ -3610,7 +3489,7 @@ long strtol(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fdopen(int __fd,char *__modes)
 
@@ -3623,7 +3502,7 @@ FILE * fdopen(int __fd,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void siglongjmp(__jmp_buf_tag *__env,int __val)
 
@@ -3643,7 +3522,7 @@ void tgetent(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
@@ -3656,7 +3535,7 @@ int sigaction(int __sig,sigaction *__act,sigaction *__oact)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -3669,12 +3548,12 @@ int fflush(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double sqrt(double __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   sqrt(__x);
   return (double)extraout_ST0;
@@ -3682,7 +3561,7 @@ double sqrt(double __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 DIR * opendir(char *__name)
 
@@ -3695,7 +3574,7 @@ DIR * opendir(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int symlink(char *__from,char *__to)
 
@@ -3708,7 +3587,7 @@ int symlink(char *__from,char *__to)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ioctl(int __fd,ulong __request,...)
 
@@ -3721,7 +3600,7 @@ int ioctl(int __fd,ulong __request,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int socket(int __domain,int __type,int __protocol)
 
@@ -3734,7 +3613,7 @@ int socket(int __domain,int __type,int __protocol)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int dup2(int __fd,int __fd2)
 
@@ -3747,7 +3626,7 @@ int dup2(int __fd,int __fd2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fseek(FILE *__stream,long __off,int __whence)
 
@@ -3760,7 +3639,7 @@ int fseek(FILE *__stream,long __off,int __whence)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int execlp(char *__file,char *__arg,...)
 
@@ -3773,7 +3652,7 @@ int execlp(char *__file,char *__arg,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isatty(int __fd)
 
@@ -3786,7 +3665,7 @@ int isatty(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int getaddrinfo(char *__name,char *__service,addrinfo *__req,addrinfo **__pai)
 
@@ -3799,7 +3678,7 @@ int getaddrinfo(char *__name,char *__service,addrinfo *__req,addrinfo **__pai)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -3811,7 +3690,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void bcopy(void *__src,void *__dest,size_t __n)
 
@@ -3822,7 +3701,7 @@ void bcopy(void *__src,void *__dest,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int dup(int __fd)
 
@@ -3835,7 +3714,7 @@ int dup(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 time_t mktime(tm *__tp)
 
@@ -3848,7 +3727,7 @@ time_t mktime(tm *__tp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -3861,7 +3740,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int utime(char *__file,utimbuf *__file_times)
 
@@ -3874,7 +3753,7 @@ int utime(char *__file,utimbuf *__file_times)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -3887,7 +3766,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -3900,7 +3779,7 @@ FILE * fopen(char *__filename,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 uint alarm(uint __seconds)
 
@@ -3913,7 +3792,7 @@ uint alarm(uint __seconds)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int unlink(char *__name)
 
@@ -3926,7 +3805,7 @@ int unlink(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 passwd * getpwuid(__uid_t __uid)
 
@@ -3939,7 +3818,7 @@ passwd * getpwuid(__uid_t __uid)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * freopen(char *__filename,char *__modes,FILE *__stream)
 
@@ -3952,7 +3831,7 @@ FILE * freopen(char *__filename,char *__modes,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * setlocale(int __category,char *__locale)
 
@@ -3965,7 +3844,7 @@ char * setlocale(int __category,char *__locale)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __pid_t waitpid(__pid_t __pid,int *__stat_loc,int __options)
 
@@ -3978,7 +3857,7 @@ __pid_t waitpid(__pid_t __pid,int *__stat_loc,int __options)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fgetc(FILE *__stream)
 
@@ -3991,7 +3870,7 @@ int fgetc(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int feof(FILE *__stream)
 
@@ -4004,7 +3883,7 @@ int feof(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -4017,7 +3896,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __gid_t getegid(void)
 
@@ -4030,7 +3909,7 @@ __gid_t getegid(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -4043,7 +3922,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int chdir(char *__path)
 
@@ -4056,7 +3935,7 @@ int chdir(char *__path)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * ctime(time_t *__timer)
 
@@ -4078,7 +3957,7 @@ void tputs(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __uid_t getuid(void)
 
@@ -4091,7 +3970,7 @@ __uid_t getuid(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long atol(char *__nptr)
 
@@ -4104,7 +3983,7 @@ long atol(char *__nptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long lrand48(void)
 
@@ -4117,7 +3996,7 @@ long lrand48(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 hostent * gethostbyaddr(void *__addr,__socklen_t __len,int __type)
 
@@ -4130,7 +4009,7 @@ hostent * gethostbyaddr(void *__addr,__socklen_t __len,int __type)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atoi(char *__nptr)
 
@@ -4143,7 +4022,7 @@ int atoi(char *__nptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcasecmp(char *__s1,char *__s2)
 
@@ -4156,12 +4035,12 @@ int strcasecmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double atof(char *__nptr)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   atof(__nptr);
   return (double)extraout_ST0;
@@ -4178,7 +4057,7 @@ void GC_free(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int select(int __nfds,fd_set *__readfds,fd_set *__writefds,fd_set *__exceptfds,timeval *__timeout)
 
@@ -4191,7 +4070,7 @@ int select(int __nfds,fd_set *__readfds,fd_set *__writefds,fd_set *__exceptfds,t
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int closedir(DIR *__dirp)
 
@@ -4213,7 +4092,7 @@ void Gpm_Wgetch(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int close(int __fd)
 
@@ -4226,7 +4105,7 @@ int close(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -4239,7 +4118,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -4252,7 +4131,7 @@ int fprintf(FILE *__stream,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strstr(char *__haystack,char *__needle)
 
@@ -4265,7 +4144,7 @@ char * strstr(char *__haystack,char *__needle)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 time_t time(time_t *__timer)
 
@@ -4278,7 +4157,7 @@ time_t time(time_t *__timer)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * nl_langinfo(nl_item __item)
 
@@ -4309,7 +4188,7 @@ void Gpm_Close(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int gethostname(char *__name,size_t __len)
 
@@ -4322,12 +4201,12 @@ int gethostname(char *__name,size_t __len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double atan2(double __y,double __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   atan2(__y,__x);
   return (double)extraout_ST0;
@@ -4335,7 +4214,7 @@ double atan2(double __y,double __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputc(int __c,FILE *__stream)
 
@@ -4348,7 +4227,7 @@ int fputc(int __c,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strtok(char *__s,char *__delim)
 
@@ -4370,7 +4249,7 @@ void tgoto(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcasestr(char *__haystack,char *__needle)
 
@@ -4383,7 +4262,7 @@ char * strcasestr(char *__haystack,char *__needle)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 uint sleep(uint __seconds)
 
@@ -4405,7 +4284,7 @@ void tgetnum(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t readlink(char *__path,char *__buf,size_t __len)
 
@@ -4418,7 +4297,7 @@ ssize_t readlink(char *__path,char *__buf,size_t __len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strncasecmp(char *__s1,char *__s2,size_t __n)
 
@@ -4431,7 +4310,7 @@ int strncasecmp(char *__s1,char *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int getnameinfo(sockaddr *__sa,socklen_t __salen,char *__host,socklen_t __hostlen,char *__serv,
                socklen_t __servlen,uint __flags)
@@ -4445,7 +4324,7 @@ int getnameinfo(sockaddr *__sa,socklen_t __salen,char *__host,socklen_t __hostle
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -4458,7 +4337,7 @@ char * strcat(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getcwd(char *__buf,size_t __size)
 
@@ -4471,12 +4350,12 @@ char * getcwd(char *__buf,size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double log(double __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   log(__x);
   return (double)extraout_ST0;
@@ -4484,7 +4363,7 @@ double log(double __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -4497,7 +4376,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __pid_t fork(void)
 
@@ -4510,7 +4389,7 @@ __pid_t fork(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int setpgrp(void)
 
@@ -4532,7 +4411,7 @@ void textdomain(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int tcsetattr(int __fd,int __optional_actions,termios *__termios_p)
 
@@ -4545,7 +4424,7 @@ int tcsetattr(int __fd,int __optional_actions,termios *__termios_p)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void bzero(void *__s,size_t __n)
 
@@ -4556,7 +4435,7 @@ void bzero(void *__s,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strspn(char *__s,char *__accept)
 
@@ -4569,7 +4448,7 @@ size_t strspn(char *__s,char *__accept)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sscanf(char *__s,char *__format,...)
 
@@ -4582,7 +4461,7 @@ int sscanf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __fxstat(int __ver,int __fildes,stat *__stat_buf)
 
@@ -4595,7 +4474,7 @@ int __fxstat(int __ver,int __fildes,stat *__stat_buf)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 tm * gmtime(time_t *__timer)
 
@@ -4608,7 +4487,7 @@ tm * gmtime(time_t *__timer)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fscanf(FILE *__stream,char *__format,...)
 
@@ -4621,7 +4500,7 @@ int fscanf(FILE *__stream,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memchr(void *__s,int __c,size_t __n)
 
@@ -4634,7 +4513,7 @@ void * memchr(void *__s,int __c,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strncmp(char *__s1,char *__s2,size_t __n)
 
@@ -4647,7 +4526,7 @@ int strncmp(char *__s1,char *__s2,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _IO_putc(int __c,_IO_FILE *__fp)
 
@@ -4660,7 +4539,7 @@ int _IO_putc(int __c,_IO_FILE *__fp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pipe(int *__pipedes)
 
@@ -4682,7 +4561,7 @@ void Gpm_Open(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -4695,7 +4574,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strftime(char *__s,size_t __maxsize,char *__format,tm *__tp)
 
@@ -4726,7 +4605,7 @@ void tgetstr(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int kill(__pid_t __pid,int __sig)
 
@@ -4739,7 +4618,7 @@ int kill(__pid_t __pid,int __sig)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strcspn(char *__s,char *__reject)
 
@@ -4752,7 +4631,7 @@ size_t strcspn(char *__s,char *__reject)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strdup(char *__s)
 
@@ -4765,7 +4644,7 @@ char * strdup(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int getpeername(int __fd,sockaddr *__addr,socklen_t *__len)
 
@@ -4778,7 +4657,7 @@ int getpeername(int __fd,sockaddr *__addr,socklen_t *__len)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ferror(FILE *__stream)
 
@@ -4791,7 +4670,7 @@ int ferror(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 passwd * getpwnam(char *__name)
 
@@ -4804,7 +4683,7 @@ passwd * getpwnam(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int tolower(int __c)
 
@@ -4817,7 +4696,7 @@ int tolower(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *__s1,char *__s2)
 
@@ -4839,7 +4718,7 @@ void __sigsetjmp(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int setenv(char *__name,char *__value,int __replace)
 
@@ -4852,7 +4731,7 @@ int setenv(char *__name,char *__value,int __replace)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -4863,7 +4742,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pclose(FILE *__stream)
 
@@ -4875,12 +4754,12 @@ int pclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double ceil(double __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   ceil(__x);
   return (double)extraout_ST0;
@@ -4888,7 +4767,7 @@ double ceil(double __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __uid_t geteuid(void)
 
@@ -4901,10 +4780,13 @@ __uid_t geteuid(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -4926,6 +4808,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804a6bf)
 // WARNING: Removing unreachable block (ram,0x0804a6c8)
 
 void frame_dummy(void)
@@ -4935,6 +4818,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void fversion(FILE *f)
 
@@ -4946,6 +4831,8 @@ void fversion(FILE *f)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void fusage(FILE *f,int err)
 
@@ -5008,24 +4895,28 @@ void fusage(FILE *f,int err)
 
 
 
-void wrap_GC_warn_proc(char *param_1,GC_word param_2)
+// WARNING: Unknown calling convention
+
+void wrap_GC_warn_proc(char *msg,GC_word arg)
 
 {
   uint uVar1;
+  int j;
   
   if (fmInitialized == '\0') {
-    if (orig_GC_warn_proc == (GC_warn_proc *)0x0) {
-      fprintf(stderr,param_1,param_2);
+    if (orig_GC_warn_proc == (GC_warn_proc)0x0) {
+      fprintf(stderr,msg,arg);
     }
     else {
-      (*orig_GC_warn_proc)(param_1,param_2);
+      (*orig_GC_warn_proc)(msg,arg);
     }
   }
   else {
-    uVar1 = (wrap_GC_warn_proc::lexical_block_0::i + wrap_GC_warn_proc::lexical_block_0::n) % 0x14;
-    wrap_GC_warn_proc::lexical_block_0::msg_ring[uVar1].msg = param_1;
-    wrap_GC_warn_proc::lexical_block_0::msg_ring[uVar1].arg = param_2;
-    if (wrap_GC_warn_proc::lexical_block_0::n < 0x14) {
+    uVar1 = (uint)(wrap_GC_warn_proc::lexical_block_0::i + wrap_GC_warn_proc::lexical_block_0::n) %
+            0x14;
+    wrap_GC_warn_proc::lexical_block_0::msg_ring[uVar1].msg = msg;
+    wrap_GC_warn_proc::lexical_block_0::msg_ring[uVar1].arg = arg;
+    if ((uint)wrap_GC_warn_proc::lexical_block_0::n < 0x14) {
       wrap_GC_warn_proc::lexical_block_0::n = wrap_GC_warn_proc::lexical_block_0::n + 1;
     }
     else {
@@ -5033,9 +4924,9 @@ void wrap_GC_warn_proc(char *param_1,GC_word param_2)
     }
     if (wrap_GC_warn_proc::lexical_block_0::lock == 0) {
       wrap_GC_warn_proc::lexical_block_0::lock = 1;
-      for (; 0 < (int)wrap_GC_warn_proc::lexical_block_0::n;
-          wrap_GC_warn_proc::lexical_block_0::n = wrap_GC_warn_proc::lexical_block_0::n - 1) {
-        wrap_GC_warn_proc::lexical_block_0::i = wrap_GC_warn_proc::lexical_block_0::i % 0x14;
+      for (; 0 < wrap_GC_warn_proc::lexical_block_0::n;
+          wrap_GC_warn_proc::lexical_block_0::n = wrap_GC_warn_proc::lexical_block_0::n + -1) {
+        wrap_GC_warn_proc::lexical_block_0::i = (uint)wrap_GC_warn_proc::lexical_block_0::i % 0x14;
         printf(wrap_GC_warn_proc::lexical_block_0::msg_ring[wrap_GC_warn_proc::lexical_block_0::i].
                msg,wrap_GC_warn_proc::lexical_block_0::msg_ring
                    [wrap_GC_warn_proc::lexical_block_0::i].arg);
@@ -5049,6 +4940,8 @@ void wrap_GC_warn_proc(char *param_1,GC_word param_2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void sig_chld(int signo)
 
@@ -5065,6 +4958,8 @@ void sig_chld(int signo)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str make_optional_header_string(char *s)
 
@@ -5109,6 +5004,8 @@ Str make_optional_header_string(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(int argc,char **argv,char **envp)
 
@@ -5197,7 +5094,7 @@ int main(int argc,char **argv,char **envp)
         argv[local_30] = "-dummy";
         local_30 = local_30 + 1;
         if (argc <= local_30) {
-          fusage((FILE *)stderr,1);
+          fusage(stderr,1);
         }
         config_file = argv[local_30];
         argv[local_30] = "-dummy";
@@ -5295,7 +5192,7 @@ LAB_0804b3a3:
       if (iVar8 == 0) {
         local_30 = local_30 + 1;
         if (argc <= local_30) {
-          fusage((FILE *)stderr,1);
+          fusage(stderr,1);
         }
         iVar8 = atoi(argv[local_30]);
         if (0 < iVar8) {
@@ -5312,7 +5209,7 @@ LAB_0804b3a3:
           if (iVar8 == 0) {
             local_30 = local_30 + 1;
             if (argc <= local_30) {
-              fusage((FILE *)stderr,1);
+              fusage(stderr,1);
             }
             iVar8 = atoi(argv[local_30]);
             if (0 < iVar8) {
@@ -5325,7 +5222,7 @@ LAB_0804b3a3:
               if (argv[local_30][2] == '\0') {
                 local_30 = local_30 + 1;
                 if (argc <= local_30) {
-                  fusage((FILE *)stderr,1);
+                  fusage(stderr,1);
                 }
                 local_2c = argv[local_30];
               }
@@ -5342,7 +5239,7 @@ LAB_0804b3a3:
                 if (argv[local_30][2] == '\0') {
                   local_30 = local_30 + 1;
                   if (argc <= local_30) {
-                    fusage((FILE *)stderr,1);
+                    fusage(stderr,1);
                   }
                   local_2c = argv[local_30];
                 }
@@ -5366,7 +5263,7 @@ LAB_0804b3a3:
                     if (iVar8 == 0) {
                       local_30 = local_30 + 1;
                       if (argc <= local_30) {
-                        fusage((FILE *)stderr,1);
+                        fusage(stderr,1);
                       }
                       DefaultType = argv[local_30];
                       local_54 = DefaultType;
@@ -5402,7 +5299,7 @@ LAB_0804b3a3:
                                 if (iVar8 == 0) {
                                   local_30 = local_30 + 1;
                                   if (argc <= local_30) {
-                                    fusage((FILE *)stderr,1);
+                                    fusage(stderr,1);
                                   }
                                   BookmarkFile = argv[local_30];
                                   if ((*BookmarkFile != '~') && (*BookmarkFile != '/')) {
@@ -5486,7 +5383,7 @@ LAB_0804b3a3:
                                                         w3m_backend = 1;
                                                         local_30 = local_30 + 1;
                                                         if (argc <= local_30) {
-                                                          fusage((FILE *)stderr,1);
+                                                          fusage(stderr,1);
                                                         }
                                                         if (backend_batch_commands ==
                                                             (TextList *)0x0) {
@@ -5502,7 +5399,7 @@ LAB_0804b3a3:
                                                         if (iVar8 == 0) {
                                                           local_30 = local_30 + 1;
                                                           if (argc <= local_30) {
-                                                            fusage((FILE *)stderr,1);
+                                                            fusage(stderr,1);
                                                           }
                                                           COLS = atoi(argv[local_30]);
                                                         }
@@ -5511,7 +5408,7 @@ LAB_0804b3a3:
                                                           if (iVar8 == 0) {
                                                             local_30 = local_30 + 1;
                                                             if (argc <= local_30) {
-                                                              fusage((FILE *)stderr,1);
+                                                              fusage(stderr,1);
                                                             }
                                                             dVar15 = atof(argv[local_30]);
                                                             if ((4.0 <= dVar15) && (dVar15 <= 32.0))
@@ -5525,7 +5422,7 @@ LAB_0804b3a3:
                                                             if (iVar8 == 0) {
                                                               local_30 = local_30 + 1;
                                                               if (argc <= local_30) {
-                                                                fusage((FILE *)stderr,1);
+                                                                fusage(stderr,1);
                                                               }
                                                               dVar15 = atof(argv[local_30]);
                                                               if ((4.0 <= dVar15) &&
@@ -5560,7 +5457,7 @@ LAB_0804b3a3:
                                                     if (iVar8 == 0) {
                                                       local_30 = local_30 + 1;
                                                       if (argc <= local_30) {
-                                                        fusage((FILE *)stderr,1);
+                                                        fusage(stderr,1);
                                                       }
                                                       local_58 = argv[local_30];
                                                     }
@@ -5569,7 +5466,7 @@ LAB_0804b3a3:
                                                       if (iVar8 == 0) {
                                                         local_30 = local_30 + 1;
                                                         if (argc <= local_30) {
-                                                          fusage((FILE *)stderr,1);
+                                                          fusage(stderr,1);
                                                         }
                                                         p_Var11 = make_optional_header_string
                                                                             (argv[local_30]);
@@ -5612,7 +5509,7 @@ LAB_0804b3a3:
                                                               if (iVar8 == 0) {
                                                                 local_30 = local_30 + 1;
                                                                 if (argc <= local_30) {
-                                                                  fusage((FILE *)stderr,1);
+                                                                  fusage(stderr,1);
                                                                 }
                                                                 p_Var10 = encodeB(argv[local_30]);
                                                                 proxy_auth_cookie =
@@ -5664,10 +5561,10 @@ LAB_0804b3a3:
                                                               iVar8 = set_param_option(argv[local_30
                                                   ]);
                                                   if (iVar8 == 0) {
-                                                    fprintf(stderr,"%s: bad option\n",argv[local_30]
-                                                           );
+                                                    fprintf((FILE *)stderr,"%s: bad option\n",
+                                                            argv[local_30]);
                                                     show_params_p = 1;
-                                                    fusage((FILE *)stderr,1);
+                                                    fusage(stderr,1);
                                                   }
                                                   }
                                                   else {
@@ -5683,7 +5580,7 @@ LAB_0804b3a3:
                                                           w3m_reqlog = rcFile("request.log");
                                                         }
                                                         else {
-                                                          fusage((FILE *)stderr,1);
+                                                          fusage(stderr,1);
                                                         }
                                                       }
                                                     }
@@ -5770,11 +5667,11 @@ LAB_0804b3a3:
     backend();
   }
   if (w3m_dump != 0) {
-    mySignal(2,(anon_subr_void_int *)0x1);
+    mySignal(2,(_func_void_int *)0x1);
   }
   mySignal(0x11,sig_chld);
   mySignal(0xd,SigPipe);
-  orig_GC_warn_proc = (GC_warn_proc *)GC_set_warn_proc(wrap_GC_warn_proc);
+  orig_GC_warn_proc = (GC_warn_proc)GC_set_warn_proc(wrap_GC_warn_proc);
   p_Var10 = Strnew();
   if (local_44 == 0) {
     iVar8 = isatty(0);
@@ -5816,7 +5713,7 @@ LAB_0804b3a3:
         if (fmInitialized != '\0') {
           fmTerm();
         }
-        fusage((FILE *)stderr,1);
+        fusage(stderr,1);
       }
       else {
         local_28 = loadGeneralFile(local_2c,(ParsedURL *)0x0,(char *)0xffffffff,0,(FormList *)0x0);
@@ -5835,7 +5732,7 @@ LAB_0804b3a3:
         fmTerm();
       }
       if (p_Var10->length != 0) {
-        fputs(p_Var10->ptr,stderr);
+        fputs(p_Var10->ptr,(FILE *)stderr);
       }
       w3m_exit(2);
     }
@@ -5900,7 +5797,7 @@ LAB_0804cfee:
         else {
           iVar8 = strcmp(local_58,"-");
           if (iVar8 == 0) {
-            local_70 = stdin;
+            local_70 = (FILE *)stdin;
           }
           else {
             local_70 = fopen(local_58,"r");
@@ -5911,7 +5808,7 @@ LAB_0804cfee:
             goto LAB_0804d16a;
           }
           p_Var11 = Strfgetall((FILE *)local_70);
-          if (local_70 != stdin) {
+          if (local_70 != (FILE *)stdin) {
             fclose(local_70);
           }
           local_40 = newFormList((char *)0x0,"post",(char *)0x0,(char *)0x0,(char *)0x0,(char *)0x0,
@@ -5948,7 +5845,7 @@ LAB_0804d16a:
   }
   if (w3m_dump != 0) {
     if (p_Var10->length != 0) {
-      fputs(p_Var10->ptr,stderr);
+      fputs(p_Var10->ptr,(FILE *)stderr);
     }
     save_cookies();
     w3m_exit(0);
@@ -5992,13 +5889,13 @@ LAB_0804d16a:
      (CurrentTab->firstBuffer == (Buffer *)0x1)) {
     if ((local_28 == (_Buffer *)0x1) && (fmInitialized != '\0')) {
       inputLineHistSearch("Hit any key to quit w3m:","",0x200,(Hist *)0x0,
-                          (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                          (_func_int_int_Str_Lineprop_ptr *)0x0);
     }
     if (fmInitialized != '\0') {
       fmTerm();
     }
     if (p_Var10->length != 0) {
-      fputs(p_Var10->ptr,stderr);
+      fputs(p_Var10->ptr,(FILE *)stderr);
     }
     if ((local_28 == (_Buffer *)0x1) && (save_cookies(), p_Var10->length == 0)) {
       w3m_exit(0);
@@ -6122,6 +6019,8 @@ LAB_0804d5ae:
 
 
 
+// WARNING: Unknown calling convention
+
 void keyPressEventProc(int c)
 
 {
@@ -6131,6 +6030,8 @@ void keyPressEventProc(int c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pushEvent(int cmd,void *data)
 
@@ -6155,6 +6056,8 @@ void pushEvent(int cmd,void *data)
 
 
 
+// WARNING: Unknown calling convention
+
 void dump_source(Buffer *buf)
 
 {
@@ -6178,6 +6081,8 @@ void dump_source(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void dump_head(Buffer *buf)
 
@@ -6207,6 +6112,8 @@ void dump_head(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void dump_extra(Buffer *buf)
 
 {
@@ -6226,12 +6133,14 @@ void dump_extra(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void do_dump(Buffer *buf)
 
 {
-  anon_subr_void_int *action;
+  _func_void_int *action;
   int iVar1;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   
   action = mySignal(2,intTrap);
   iVar1 = __sigsetjmp(IntReturn,1);
@@ -6258,6 +6167,8 @@ void do_dump(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void nulcmd(void)
 
 {
@@ -6266,6 +6177,8 @@ void nulcmd(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void pcmap(void)
 
 {
@@ -6273,6 +6186,8 @@ void pcmap(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void escKeyProc(int c,int esc,uchar *map)
 
@@ -6306,6 +6221,8 @@ void escKeyProc(int c,int esc,uchar *map)
 
 
 
+// WARNING: Unknown calling convention
+
 void escmap(void)
 
 {
@@ -6320,6 +6237,8 @@ void escmap(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void escbmap(void)
 
@@ -6346,24 +6265,26 @@ void escdmap(char c)
 {
   uint uVar1;
   int iVar2;
-  char local_20;
+  char c_local;
   int d;
   
   d = c + -0x30;
   uVar1 = do_getch();
-  local_20 = (char)uVar1;
+  c_local = (char)uVar1;
   if ((MYCTYPE_MAP[uVar1 & 0xff] & 8) != 0) {
-    d = d * 10 + (int)local_20 + -0x30;
+    d = d * 10 + (int)c_local + -0x30;
     iVar2 = do_getch();
-    local_20 = (char)iVar2;
+    c_local = (char)iVar2;
   }
-  if (local_20 == '~') {
+  if (c_local == '~') {
     escKeyProc(d,0x400,EscDKeymap);
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void multimap(void)
 
@@ -6380,6 +6301,8 @@ void multimap(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void tmpClearBuffer(Buffer *buf)
 
@@ -6399,6 +6322,8 @@ void tmpClearBuffer(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pushBuffer(Buffer *buf)
 
@@ -6430,6 +6355,8 @@ void pushBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void delBuffer(Buffer *buf)
 
 {
@@ -6452,6 +6379,8 @@ void delBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void repBuffer(Buffer *oldbuf,Buffer *buf)
 
 {
@@ -6467,6 +6396,8 @@ void repBuffer(Buffer *oldbuf,Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void intTrap(int _dummy)
 
 {
@@ -6476,7 +6407,9 @@ void intTrap(int _dummy)
 
 
 
-void resize_hook(void)
+// WARNING: Unknown calling convention
+
+void resize_hook(int _dummy)
 
 {
   need_resize_screen = 1;
@@ -6485,6 +6418,8 @@ void resize_hook(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void resize_screen(void)
 
@@ -6500,6 +6435,8 @@ void resize_screen(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void SigPipe(int _dummy)
 
 {
@@ -6509,6 +6446,8 @@ void SigPipe(int _dummy)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nscroll(int n,int mode)
 
@@ -6589,6 +6528,8 @@ void nscroll(int n,int mode)
 
 
 
+// WARNING: Unknown calling convention
+
 void pgFore(void)
 
 {
@@ -6615,6 +6556,8 @@ void pgFore(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pgBack(void)
 
@@ -6644,6 +6587,8 @@ void pgBack(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void lup1(void)
 
 {
@@ -6656,6 +6601,8 @@ void lup1(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ldown1(void)
 
 {
@@ -6667,6 +6614,8 @@ void ldown1(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ctrCsrV(void)
 
@@ -6690,6 +6639,8 @@ void ctrCsrV(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ctrCsrH(void)
 
 {
@@ -6708,6 +6659,8 @@ void ctrCsrH(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void rdrwSc(void)
 
 {
@@ -6718,6 +6671,8 @@ void rdrwSc(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void clear_mark(Line *l)
 
@@ -6734,15 +6689,17 @@ void clear_mark(Line *l)
 
 
 
-int srchcore(char *str,anon_subr_int_Buffer_ptr_char_ptr *func)
+// WARNING: Unknown calling convention
+
+int srchcore(char *str,_func_int_Buffer_ptr_char_ptr *func)
 
 {
   char *pcVar1;
-  anon_subr_void_int *action;
+  _func_void_int *action;
   int iVar2;
   int result;
   int i;
-  anon_subr_void_varargs *prevtrap;
+  _func_void_varargs *prevtrap;
   
   result = 2;
   if ((str != (char *)0x0) && (str != SearchString)) {
@@ -6785,6 +6742,8 @@ int srchcore(char *str,anon_subr_int_Buffer_ptr_char_ptr *func)
 
 
 
+// WARNING: Unknown calling convention
+
 void disp_srchresult(int result,char *prompt,char *str)
 
 {
@@ -6813,6 +6772,8 @@ void disp_srchresult(int result,char *prompt,char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int dispincsrch(int ch,Str buf,Lineprop *prop)
 
@@ -6916,7 +6877,9 @@ LAB_0804eb53:
 
 
 
-void isrch(anon_subr_int_Buffer_ptr_char_ptr *func,char *prompt)
+// WARNING: Unknown calling convention
+
+void isrch(_func_int_Buffer_ptr_char_ptr *func,char *prompt)
 
 {
   short sVar1;
@@ -6955,7 +6918,9 @@ void isrch(anon_subr_int_Buffer_ptr_char_ptr *func,char *prompt)
 
 
 
-void srch(anon_subr_int_Buffer_ptr_char_ptr *func,char *prompt)
+// WARNING: Unknown calling convention
+
+void srch(_func_int_Buffer_ptr_char_ptr *func,char *prompt)
 
 {
   int iVar1;
@@ -6969,8 +6934,8 @@ void srch(anon_subr_int_Buffer_ptr_char_ptr *func,char *prompt)
   bVar2 = false;
   str = searchKeyData();
   if ((str == (char *)0x0) || (*str == '\0')) {
-    str = inputLineHistSearch(prompt,(char *)0x0,0x10,TextHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+    str = inputLineHistSearch(prompt,(char *)0x0,0x10,TextHist,(_func_int_int_Str_Lineprop_ptr *)0x0
+                             );
     if ((str != (char *)0x0) && (*str == '\0')) {
       str = SearchString;
     }
@@ -7001,6 +6966,8 @@ void srch(anon_subr_int_Buffer_ptr_char_ptr *func,char *prompt)
 
 
 
+// WARNING: Unknown calling convention
+
 void srchfor(void)
 
 {
@@ -7009,6 +6976,8 @@ void srchfor(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void isrchfor(void)
 
@@ -7019,6 +6988,8 @@ void isrchfor(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void srchbak(void)
 
 {
@@ -7027,6 +6998,8 @@ void srchbak(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void isrchbak(void)
 
@@ -7037,6 +7010,8 @@ void isrchbak(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void srch_nxtprv(int reverse)
 
 {
@@ -7044,7 +7019,7 @@ void srch_nxtprv(int reverse)
   char *prompt;
   int result;
   
-  if (searchRoutine == (anon_subr_int_Buffer_ptr_char_ptr *)0x0) {
+  if (searchRoutine == (_func_int_Buffer_ptr_char_ptr *)0x0) {
     disp_message("No previous regular expression",1);
   }
   else {
@@ -7075,6 +7050,8 @@ void srch_nxtprv(int reverse)
 
 
 
+// WARNING: Unknown calling convention
+
 void srchnxt(void)
 
 {
@@ -7084,6 +7061,8 @@ void srchnxt(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void srchprv(void)
 
 {
@@ -7092,6 +7071,8 @@ void srchprv(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void shiftvisualpos(Buffer *buf,int shift)
 
@@ -7118,6 +7099,8 @@ void shiftvisualpos(Buffer *buf,int shift)
 
 
 
+// WARNING: Unknown calling convention
+
 void shiftl(void)
 
 {
@@ -7137,6 +7120,8 @@ void shiftl(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void shiftr(void)
 
 {
@@ -7155,6 +7140,8 @@ void shiftr(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void col1R(void)
 
@@ -7187,6 +7174,8 @@ void col1R(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void col1L(void)
 
 {
@@ -7215,6 +7204,8 @@ void col1L(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void setEnv(void)
 
 {
@@ -7234,7 +7225,7 @@ void setEnv(void)
       env = p_Var2->ptr;
     }
     env = inputLineHistSearch("Set environ: ",env,0x10,TextHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
     if ((env == (char *)0x0) || (*env == '\0')) {
       displayBuffer(CurrentTab->currentBuffer,0);
       return;
@@ -7251,13 +7242,15 @@ void setEnv(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void pipeBuf(void)
 
 {
   wc_ces wVar1;
   wc_ces wVar2;
   Str p_Var3;
-  FILE *__stream;
+  FILE *f_00;
   char *pcVar4;
   Buffer *buf_00;
   FILE *f;
@@ -7269,7 +7262,7 @@ void pipeBuf(void)
   cmd = searchKeyData();
   if ((cmd == (char *)0x0) || (*cmd == '\0')) {
     cmd = inputLineHistSearch("Pipe buffer to: ","",0x80,ShellHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   wVar2 = SystemCharset;
   wVar1 = InnerCharset;
@@ -7284,14 +7277,14 @@ void pipeBuf(void)
   else {
     p_Var3 = tmpfname(0,(char *)0x0);
     pcVar4 = p_Var3->ptr;
-    __stream = fopen(pcVar4,"w");
-    if (__stream == (FILE *)0x0) {
+    f_00 = fopen(pcVar4,"w");
+    if (f_00 == (FILE *)0x0) {
       p_Var3 = Sprintf("Can\'t save buffer to %s",cmd);
       disp_message(p_Var3->ptr,1);
     }
     else {
-      saveBuffer(CurrentTab->currentBuffer,(FILE *)__stream,1);
-      fclose(__stream);
+      saveBuffer(CurrentTab->currentBuffer,(FILE *)f_00,1);
+      fclose(f_00);
       pcVar4 = shell_quote(pcVar4);
       p_Var3 = myExtCommand(cmd,pcVar4,1);
       buf_00 = getpipe(p_Var3->ptr);
@@ -7321,6 +7314,8 @@ void pipeBuf(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void pipesh(void)
 
 {
@@ -7335,7 +7330,7 @@ void pipesh(void)
   cmd = searchKeyData();
   if ((cmd == (char *)0x0) || (*cmd == '\0')) {
     cmd = inputLineHistSearch("(read shell[pipe])!","",0x80,ShellHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   t_ces = SystemCharset;
   f_ces = InnerCharset;
@@ -7366,23 +7361,25 @@ void pipesh(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void readsh(void)
 
 {
   wc_ces f_ces;
   wc_ces t_ces;
   Str p_Var1;
-  anon_subr_void_int *action;
+  _func_void_int *action;
   Buffer *buf_00;
   char *cmd;
-  anon_subr_void_varargs *prevtrap;
+  _func_void_varargs *prevtrap;
   Buffer *buf;
   
   CurrentKeyData = (char *)0x0;
   cmd = searchKeyData();
   if ((cmd == (char *)0x0) || (*cmd == '\0')) {
     cmd = inputLineHistSearch("(read shell)!","",0x80,ShellHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   t_ces = SystemCharset;
   f_ces = InnerCharset;
@@ -7417,6 +7414,8 @@ void readsh(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void execsh(void)
 
 {
@@ -7429,7 +7428,7 @@ void execsh(void)
   cmd = searchKeyData();
   if ((cmd == (char *)0x0) || (*cmd == '\0')) {
     cmd = inputLineHistSearch("(exec shell)!","",0x80,ShellHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   t_ces = SystemCharset;
   f_ces = InnerCharset;
@@ -7453,6 +7452,8 @@ void execsh(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ldfile(void)
 
 {
@@ -7464,7 +7465,7 @@ void ldfile(void)
   fn = searchKeyData();
   if ((fn == (char *)0x0) || (*fn == '\0')) {
     fn = inputLineHistSearch("(Load)Filename? ",(char *)0x0,0x20,LoadHist,
-                             (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                             (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   t_ces = SystemCharset;
   f_ces = InnerCharset;
@@ -7483,6 +7484,8 @@ void ldfile(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ldhelp(void)
 
@@ -7507,6 +7510,8 @@ void ldhelp(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cmd_loadfile(char *fn)
 
@@ -7541,6 +7546,8 @@ void cmd_loadfile(char *fn)
 
 
 
+// WARNING: Unknown calling convention
+
 void _movL(int n)
 
 {
@@ -7560,6 +7567,8 @@ void _movL(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void movL(void)
 
 {
@@ -7569,6 +7578,8 @@ void movL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void movL1(void)
 
 {
@@ -7577,6 +7588,8 @@ void movL1(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _movD(int n)
 
@@ -7597,6 +7610,8 @@ void _movD(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void movD(void)
 
 {
@@ -7606,6 +7621,8 @@ void movD(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void movD1(void)
 
 {
@@ -7614,6 +7631,8 @@ void movD1(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _movU(int n)
 
@@ -7634,6 +7653,8 @@ void _movU(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void movU(void)
 
 {
@@ -7643,6 +7664,8 @@ void movU(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void movU1(void)
 
 {
@@ -7651,6 +7674,8 @@ void movU1(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _movR(int n)
 
@@ -7671,6 +7696,8 @@ void _movR(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void movR(void)
 
 {
@@ -7680,6 +7707,8 @@ void movR(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void movR1(void)
 
 {
@@ -7688,6 +7717,8 @@ void movR1(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int prev_nonnull_line(Line *line)
 
@@ -7711,6 +7742,8 @@ int prev_nonnull_line(Line *line)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void movLW(void)
 
@@ -7769,6 +7802,8 @@ end:
 
 
 
+// WARNING: Unknown calling convention
+
 int next_nonnull_line(Line *line)
 
 {
@@ -7791,6 +7826,8 @@ int next_nonnull_line(Line *line)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void movRW(void)
 
@@ -7847,6 +7884,8 @@ end:
 
 
 
+// WARNING: Unknown calling convention
+
 void _quitfm(int confirm)
 
 {
@@ -7859,12 +7898,12 @@ void _quitfm(int confirm)
   if (iVar2 == 0) {
     if (confirm != 0) {
       ans = inputLineHistSearch("Do you want to exit w3m? (y/n)","",0x200,(Hist *)0x0,
-                                (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                                (_func_int_int_Str_Lineprop_ptr *)0x0);
     }
   }
   else {
     ans = inputLineHistSearch("Download process retains. Do you want to exit w3m? (y/n)","",0x200,
-                              (Hist *)0x0,(anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (Hist *)0x0,(_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   if (ans != (char *)0x0) {
     if ((MYCTYPE_MAP[(byte)*ans] & 4) == 0) {
@@ -7893,6 +7932,8 @@ void _quitfm(int confirm)
 
 
 
+// WARNING: Unknown calling convention
+
 void quitfm(void)
 
 {
@@ -7902,6 +7943,8 @@ void quitfm(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void qquitfm(void)
 
 {
@@ -7910,6 +7953,8 @@ void qquitfm(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void selBuf(void)
 
@@ -7960,6 +8005,8 @@ void selBuf(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void susp(void)
 
 {
@@ -7974,6 +8021,8 @@ void susp(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _goLine(char *l)
 
@@ -8017,6 +8066,8 @@ void _goLine(char *l)
 
 
 
+// WARNING: Unknown calling convention
+
 void goLine(void)
 
 {
@@ -8027,7 +8078,7 @@ void goLine(void)
   if (prec_num == 0) {
     if (pcVar1 == (char *)0x0) {
       pcVar1 = inputLineHistSearch("Goto line: ","",0x10,(Hist *)0x0,
-                                   (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                                   (_func_int_int_Str_Lineprop_ptr *)0x0);
       _goLine(pcVar1);
     }
     else {
@@ -8042,6 +8093,8 @@ void goLine(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void goLineF(void)
 
 {
@@ -8051,6 +8104,8 @@ void goLineF(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void goLineL(void)
 
 {
@@ -8059,6 +8114,8 @@ void goLineL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void linbeg(void)
 
@@ -8077,6 +8134,8 @@ void linbeg(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void linend(void)
 
 {
@@ -8093,6 +8152,8 @@ void linend(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int cur_real_linenumber(Buffer *buf)
 
@@ -8124,6 +8185,8 @@ int cur_real_linenumber(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void editBf(void)
 
@@ -8164,12 +8227,14 @@ void editBf(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void editScr(void)
 
 {
   char *__filename;
   Str p_Var1;
-  FILE *__stream;
+  FILE *f_00;
   int line;
   char *file;
   FILE *f;
@@ -8177,14 +8242,14 @@ void editScr(void)
   
   p_Var1 = tmpfname(0,(char *)0x0);
   __filename = p_Var1->ptr;
-  __stream = fopen(__filename,"w");
-  if (__stream == (FILE *)0x0) {
+  f_00 = fopen(__filename,"w");
+  if (f_00 == (FILE *)0x0) {
     p_Var1 = Sprintf("Can\'t open %s",__filename);
     disp_err_message(p_Var1->ptr,1);
   }
   else {
-    saveBuffer(CurrentTab->currentBuffer,(FILE *)__stream,1);
-    fclose(__stream);
+    saveBuffer(CurrentTab->currentBuffer,(FILE *)f_00,1);
+    fclose(f_00);
     fmTerm();
     line = cur_real_linenumber(CurrentTab->currentBuffer);
     file = shell_quote(__filename);
@@ -8198,6 +8263,8 @@ void editScr(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _mark(void)
 
@@ -8215,6 +8282,8 @@ void _mark(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nextMk(void)
 
@@ -8248,6 +8317,8 @@ void nextMk(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void prevMk(void)
 
@@ -8283,6 +8354,8 @@ void prevMk(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void reMark(void)
 
 {
@@ -8297,7 +8370,7 @@ void reMark(void)
     str = searchKeyData();
     if (((str == (char *)0x0) || (*str == '\0')) &&
        ((str = inputLineHistSearch("(Mark)Regexp: ",MarkString,0x10,TextHist,
-                                   (anon_subr_int_int_Str_Lineprop_ptr *)0x0), str == (char *)0x0 ||
+                                   (_func_int_int_Str_Lineprop_ptr *)0x0), str == (char *)0x0 ||
         (*str == '\0')))) {
       displayBuffer(CurrentTab->currentBuffer,0);
       return;
@@ -8305,7 +8378,8 @@ void reMark(void)
     str = conv_search_string(str,DisplayCharset);
     str = regexCompile(str,1);
     if (str == (char *)0x0) {
-      MarkString = str;
+      MarkString = (char *)0x0;
+      str = (char *)0x0;
       for (l = CurrentTab->currentBuffer->firstLine; l != (Line *)0x0; l = l->next) {
         p = l->lineBuf;
         while (iVar1 = regexMatch(p,(int)(l->lineBuf + (l->len - (int)p)),(uint)(l->lineBuf == p)),
@@ -8326,6 +8400,8 @@ void reMark(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * loadNormalBuf(Buffer *buf,int renderframe)
 
 {
@@ -8339,6 +8415,8 @@ Buffer * loadNormalBuf(Buffer *buf,int renderframe)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
 
 {
@@ -8349,7 +8427,7 @@ Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
   ParsedURL *current_00;
   Buffer *pBVar4;
   int iVar5;
-  char **f_element_00;
+  frameset_element *f_element_00;
   frameset *fs;
   Line *pLVar6;
   ParsedURL pu;
@@ -8398,8 +8476,8 @@ Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
           pBVar4 = loadNormalBuf(pBVar4,1);
           return pBVar4;
         }
-        f_element_00 = (char **)search_frame(p_Var1->frameset,target);
-        if (f_element_00 == (char **)0x0) {
+        f_element_00 = search_frame(p_Var1->frameset,target);
+        if (f_element_00 == (frameset_element *)0x0) {
           pBVar4 = loadNormalBuf(pBVar4,1);
           return pBVar4;
         }
@@ -8412,8 +8490,8 @@ Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
         discardBuffer(pBVar4);
         rFrame();
         al = (Anchor *)0x0;
-        if ((pu.label != (char *)0x0) && (**f_element_00 == '\x01')) {
-          al = searchAnchor(*(AnchorList **)(*f_element_00 + 0x1c),pu.label);
+        if ((pu.label != (char *)0x0) && (f_element_00->element->attr == '\x01')) {
+          al = searchAnchor(f_element_00->body->nameList,pu.label);
         }
         if (al == (Anchor *)0x0) {
           p_Var3 = Strnew_m_charp("_",target,0);
@@ -8444,6 +8522,8 @@ Buffer * loadLink(char *url,char *target,char *referer,FormList *request)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void gotoLabel(char *label)
 
@@ -8490,6 +8570,8 @@ void gotoLabel(char *label)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void followA(void)
 
@@ -8588,6 +8670,8 @@ void followA(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void bufferA(void)
 
 {
@@ -8598,6 +8682,8 @@ void bufferA(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void followI(void)
 
@@ -8631,6 +8717,8 @@ void followI(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 FormItemList * save_submit_formlist(FormItemList *src)
 
@@ -8723,6 +8811,8 @@ FormItemList * save_submit_formlist(FormItemList *src)
 
 
 
+// WARNING: Unknown calling convention
+
 Str conv_form_encoding(Str val,FormItemList *fi,Buffer *buf)
 
 {
@@ -8744,6 +8834,8 @@ Str conv_form_encoding(Str val,FormItemList *fi,Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void query_from_followform(Str *query,FormItemList *fi,int multipart)
 
 {
@@ -8763,7 +8855,7 @@ void query_from_followform(Str *query,FormItemList *fi,int multipart)
     p_Var4 = tmpfname(0,(char *)0x0);
     *query = p_Var4;
     body = (FILE *)fopen((*query)->ptr,"w");
-    if ((FILE *)body == (FILE *)0x0) {
+    if (body == (FILE *)0x0) {
       return;
     }
     fi->parent->body = (*query)->ptr;
@@ -8904,6 +8996,8 @@ joined_r0x08052064:
 
 
 
+// WARNING: Unknown calling convention
+
 void submitForm(void)
 
 {
@@ -8913,6 +9007,8 @@ void submitForm(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void followForm(void)
 
 {
@@ -8921,6 +9017,8 @@ void followForm(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _followForm(int submit)
 
@@ -8965,8 +9063,7 @@ void _followForm(int submit)
       else {
         pcVar1 = fi->value->ptr;
       }
-      p = inputLineHistSearch("TEXT:",pcVar1,0x10,TextHist,(anon_subr_int_int_Str_Lineprop_ptr *)0x0
-                             );
+      p = inputLineHistSearch("TEXT:",pcVar1,0x10,TextHist,(_func_int_int_Str_Lineprop_ptr *)0x0);
       if ((p == (char *)0x0) || (fi->readonly != 0)) goto switchD_080526c4_caseD_6;
       p_Var2 = Strnew_charp(p);
       fi->value = p_Var2;
@@ -8990,7 +9087,7 @@ void _followForm(int submit)
         pcVar1 = fi->value->ptr;
       }
       p = inputLineHistSearch("Password:",pcVar1,0x40,(Hist *)0x0,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
       if (p == (char *)0x0) goto switchD_080526c4_caseD_6;
       p_Var2 = Strnew_charp(p);
       fi->value = p_Var2;
@@ -9077,7 +9174,7 @@ joined_r0x08052b70:
         pcVar1 = fi->value->ptr;
       }
       p = inputLineHistSearch("Filename:",pcVar1,0x20,(Hist *)0x0,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
       if ((p == (char *)0x0) || (fi->readonly != 0)) goto switchD_080526c4_caseD_6;
       p_Var2 = Strnew_charp(p);
       fi->value = p_Var2;
@@ -9149,6 +9246,8 @@ switchD_080526c4_caseD_6:
 
 
 
+// WARNING: Unknown calling convention
+
 void topA(void)
 
 {
@@ -9189,6 +9288,8 @@ void topA(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void lastA(void)
 
@@ -9235,6 +9336,8 @@ void lastA(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nextA(void)
 
 {
@@ -9243,6 +9346,8 @@ void nextA(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void prevA(void)
 
@@ -9253,6 +9358,8 @@ void prevA(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nextVA(void)
 
 {
@@ -9262,6 +9369,8 @@ void nextVA(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void prevVA(void)
 
 {
@@ -9270,6 +9379,8 @@ void prevVA(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _nextA(int visited)
 
@@ -9371,6 +9482,8 @@ _end:
 
 
 
+// WARNING: Unknown calling convention
+
 void _prevA(int visited)
 
 {
@@ -9471,6 +9584,8 @@ _end:
 
 
 
+// WARNING: Unknown calling convention
+
 void nextX(int d,int dy)
 
 {
@@ -9554,6 +9669,8 @@ LAB_08053b55:
 
 
 
+// WARNING: Unknown calling convention
+
 void nextY(int d)
 
 {
@@ -9613,6 +9730,8 @@ LAB_08053d36:
 
 
 
+// WARNING: Unknown calling convention
+
 void nextL(void)
 
 {
@@ -9621,6 +9740,8 @@ void nextL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nextLU(void)
 
@@ -9631,6 +9752,8 @@ void nextLU(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nextR(void)
 
 {
@@ -9639,6 +9762,8 @@ void nextR(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nextRD(void)
 
@@ -9649,6 +9774,8 @@ void nextRD(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nextD(void)
 
 {
@@ -9658,6 +9785,8 @@ void nextD(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nextU(void)
 
 {
@@ -9666,6 +9795,8 @@ void nextU(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nextBf(void)
 
@@ -9696,6 +9827,8 @@ LAB_08053ea5:
 
 
 
+// WARNING: Unknown calling convention
+
 void prevBf(void)
 
 {
@@ -9725,6 +9858,8 @@ LAB_08053f16:
 
 
 
+// WARNING: Unknown calling convention
+
 int checkBackBuffer(Buffer *buf)
 
 {
@@ -9747,6 +9882,8 @@ int checkBackBuffer(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void backBf(void)
 
@@ -9817,6 +9954,8 @@ void backBf(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void deletePrevBuf(void)
 
 {
@@ -9831,6 +9970,8 @@ void deletePrevBuf(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cmd_loadURL(char *url,ParsedURL *current,char *referer,FormList *request)
 
@@ -9879,6 +10020,8 @@ void cmd_loadURL(char *url,ParsedURL *current,char *referer,FormList *request)
 
 
 
+// WARNING: Unknown calling convention
+
 void goURL0(char *prompt,int relative)
 
 {
@@ -9905,6 +10048,7 @@ void goURL0(char *prompt,int relative)
   if (url == (char *)0x0) {
     hist_00 = copyHist(URLHist);
     pu = baseURL(CurrentTab->currentBuffer);
+    url = (char *)0x0;
     if (pu != (ParsedURL *)0x0) {
       p_Var4 = parsedURL2Str(pu);
       pcVar2 = p_Var4->ptr;
@@ -9933,7 +10077,7 @@ void goURL0(char *prompt,int relative)
         pushHist(hist_00,pcVar2);
       }
     }
-    url = inputLineHistSearch(prompt,url,0x100,hist_00,(anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+    url = inputLineHistSearch(prompt,url,0x100,hist_00,(_func_int_int_Str_Lineprop_ptr *)0x0);
     if (url != (char *)0x0) {
       while ((*url != '\0' && ((MYCTYPE_MAP[(byte)*url] & 2) != 0))) {
         url = url + 1;
@@ -9985,6 +10129,8 @@ void goURL0(char *prompt,int relative)
 
 
 
+// WARNING: Unknown calling convention
+
 void goURL(void)
 
 {
@@ -9994,6 +10140,8 @@ void goURL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void gorURL(void)
 
 {
@@ -10002,6 +10150,8 @@ void gorURL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cmd_loadBuffer(Buffer *buf,int prop,int linkid)
 
@@ -10026,6 +10176,8 @@ void cmd_loadBuffer(Buffer *buf,int prop,int linkid)
 
 
 
+// WARNING: Unknown calling convention
+
 void ldBmark(void)
 
 {
@@ -10034,6 +10186,8 @@ void ldBmark(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void adBmark(void)
 
@@ -10076,6 +10230,8 @@ void adBmark(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ldOpt(void)
 
 {
@@ -10087,6 +10243,8 @@ void ldOpt(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void setOpt(void)
 
@@ -10109,8 +10267,8 @@ void setOpt(void)
       p_Var2 = Sprintf("%s=%s",opt,pcVar1);
       opt = p_Var2->ptr;
     }
-    opt = inputLineHistSearch("Set option: ",opt,0x10,TextHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+    opt = inputLineHistSearch("Set option: ",opt,0x10,TextHist,(_func_int_int_Str_Lineprop_ptr *)0x0
+                             );
     if ((opt == (char *)0x0) || (*opt == '\0')) {
       displayBuffer(CurrentTab->currentBuffer,0);
       return;
@@ -10126,6 +10284,8 @@ void setOpt(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void msgs(void)
 
 {
@@ -10137,6 +10297,8 @@ void msgs(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pginfo(void)
 
@@ -10162,6 +10324,8 @@ void pginfo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void follow_map(parsed_tagarg *arg)
 
@@ -10228,6 +10392,8 @@ void follow_map(parsed_tagarg *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 void linkMn(void)
 
 {
@@ -10259,7 +10425,9 @@ void linkMn(void)
 
 
 
-void anchorMn(anon_subr_Anchor_ptr_Buffer_ptr *menu_func,int go)
+// WARNING: Unknown calling convention
+
+void anchorMn(_func_Anchor_ptr_Buffer_ptr *menu_func,int go)
 
 {
   BufferPoint *pBVar1;
@@ -10285,6 +10453,8 @@ void anchorMn(anon_subr_Anchor_ptr_Buffer_ptr *menu_func,int go)
 
 
 
+// WARNING: Unknown calling convention
+
 void accessKey(void)
 
 {
@@ -10293,6 +10463,8 @@ void accessKey(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void listMn(void)
 
@@ -10303,6 +10475,8 @@ void listMn(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void movlistMn(void)
 
 {
@@ -10311,6 +10485,8 @@ void movlistMn(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void linkLst(void)
 
@@ -10328,6 +10504,8 @@ void linkLst(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void cooLst(void)
 
 {
@@ -10343,6 +10521,8 @@ void cooLst(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ldHist(void)
 
 {
@@ -10354,6 +10534,8 @@ void ldHist(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void svA(void)
 
@@ -10367,6 +10549,8 @@ void svA(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void svI(void)
 
 {
@@ -10378,6 +10562,8 @@ void svI(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void svBuf(void)
 
@@ -10399,8 +10585,8 @@ void svBuf(void)
   p = searchKeyData();
   if (((p == (char *)0x0) || (*p == '\0')) &&
      ((qfile = inputLineHistSearch("Save buffer to: ",(char *)0x0,0x80,SaveHist,
-                                   (anon_subr_int_int_Str_Lineprop_ptr *)0x0), qfile == (char *)0x0
-      || (*qfile == '\0')))) {
+                                   (_func_int_int_Str_Lineprop_ptr *)0x0), qfile == (char *)0x0 ||
+      (*qfile == '\0')))) {
     displayBuffer(CurrentTab->currentBuffer,0);
   }
   else {
@@ -10459,6 +10645,8 @@ void svBuf(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void svSrc(void)
 
 {
@@ -10491,6 +10679,8 @@ void svSrc(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _peekURL(int only_img)
 
@@ -10566,6 +10756,8 @@ void _peekURL(int only_img)
 
 
 
+// WARNING: Unknown calling convention
+
 void peekURL(void)
 
 {
@@ -10575,6 +10767,8 @@ void peekURL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void peekIMG(void)
 
 {
@@ -10583,6 +10777,8 @@ void peekIMG(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str currentURL(void)
 
@@ -10599,6 +10795,8 @@ Str currentURL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void curURL(void)
 
@@ -10642,6 +10840,8 @@ void curURL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void vwSrc(void)
 
 {
@@ -10650,7 +10850,7 @@ void vwSrc(void)
   wc_bool wVar3;
   int iVar4;
   Str p_Var5;
-  FILE *__stream;
+  FILE *f_00;
   Buffer *buf_00;
   Str tmpf;
   FILE *f;
@@ -10672,10 +10872,10 @@ void vwSrc(void)
           return;
         }
         p_Var5 = tmpfname(1,(char *)0x0);
-        __stream = fopen(p_Var5->ptr,"w");
+        f_00 = fopen(p_Var5->ptr,"w");
         wVar3 = WcOption.fix_width_conv;
         wVar2 = DisplayCharset;
-        if (__stream == (FILE *)0x0) {
+        if (f_00 == (FILE *)0x0) {
           return;
         }
         if (CurrentTab->currentBuffer->document_charset == 0x100) {
@@ -10685,10 +10885,10 @@ void vwSrc(void)
           DisplayCharset = CurrentTab->currentBuffer->document_charset;
         }
         WcOption.fix_width_conv = '\0';
-        saveBufferBody(CurrentTab->currentBuffer,(FILE *)__stream,1);
+        saveBufferBody(CurrentTab->currentBuffer,(FILE *)f_00,1);
         DisplayCharset = wVar2;
         WcOption.fix_width_conv = wVar3;
-        fclose(__stream);
+        fclose(f_00);
         CurrentTab->currentBuffer->sourcefile = p_Var5->ptr;
       }
       if (showLineNum == 0) {
@@ -10768,6 +10968,8 @@ void vwSrc(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void reload(void)
 
@@ -10903,6 +11105,8 @@ void reload(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void reshape(void)
 
 {
@@ -10913,6 +11117,8 @@ void reshape(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _docCSet(wc_ces charset)
 
@@ -10931,6 +11137,8 @@ void _docCSet(wc_ces charset)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void change_charset(parsed_tagarg *arg)
 
@@ -10960,6 +11168,8 @@ void change_charset(parsed_tagarg *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 void docCSet(void)
 
 {
@@ -10972,7 +11182,7 @@ void docCSet(void)
   if ((cs == (char *)0x0) || (*cs == '\0')) {
     def_str = wc_ces_to_charset(CurrentTab->currentBuffer->document_charset);
     cs = inputLineHistSearch("Document charset: ",def_str,0x10,(Hist *)0x0,
-                             (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                             (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   charset_00 = wc_guess_charset_short(cs,0);
   if (charset_00 == 0) {
@@ -10986,6 +11196,8 @@ void docCSet(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void defCSet(void)
 
 {
@@ -10998,7 +11210,7 @@ void defCSet(void)
   if ((cs == (char *)0x0) || (*cs == '\0')) {
     def_str = wc_ces_to_charset(DocumentCharset);
     cs = inputLineHistSearch("Default document charset: ",def_str,0x10,(Hist *)0x0,
-                             (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                             (_func_int_int_Str_Lineprop_ptr *)0x0);
   }
   wVar1 = wc_guess_charset_short(cs,0);
   if (wVar1 != 0) {
@@ -11009,6 +11221,8 @@ void defCSet(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void chkURLBuffer(Buffer *buf)
 
@@ -11025,6 +11239,8 @@ void chkURLBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void chkURL(void)
 
 {
@@ -11034,6 +11250,8 @@ void chkURL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void chkWORD(void)
 
@@ -11052,6 +11270,8 @@ void chkWORD(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void chkNMIDBuffer(Buffer *buf)
 
 {
@@ -11066,6 +11286,8 @@ void chkNMIDBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void chkNMID(void)
 
 {
@@ -11075,6 +11297,8 @@ void chkNMID(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void rFrame(void)
 
@@ -11120,6 +11344,8 @@ void rFrame(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void invoke_browser(char *url)
 
 {
@@ -11152,8 +11378,8 @@ void invoke_browser(char *url)
     }
     if (((browser == (char *)0x0) || (*browser == '\0')) &&
        (browser = inputLineHistSearch("Browse command: ",(char *)0x0,0x10,(Hist *)0x0,
-                                      (anon_subr_int_int_Str_Lineprop_ptr *)0x0),
-       wVar2 = SystemCharset, wVar1 = InnerCharset, browser != (char *)0x0)) {
+                                      (_func_int_int_Str_Lineprop_ptr *)0x0), wVar2 = SystemCharset,
+       wVar1 = InnerCharset, browser != (char *)0x0)) {
       p_Var3 = Strnew_charp(browser);
       p_Var3 = wc_Str_conv_strict(p_Var3,wVar1,wVar2);
       browser = p_Var3->ptr;
@@ -11186,6 +11412,8 @@ void invoke_browser(char *url)
 
 
 
+// WARNING: Unknown calling convention
+
 void extbrz(void)
 
 {
@@ -11209,6 +11437,8 @@ void extbrz(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void linkbrz(void)
 
 {
@@ -11229,6 +11459,8 @@ void linkbrz(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void curlno(void)
 
@@ -11287,6 +11519,8 @@ void curlno(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void dispI(void)
 
 {
@@ -11304,6 +11538,8 @@ void dispI(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void stopI(void)
 
 {
@@ -11315,6 +11551,8 @@ void stopI(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int mouse_scroll_line(void)
 
@@ -11329,6 +11567,8 @@ int mouse_scroll_line(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 TabBuffer * posTab(int x,int y)
 
@@ -11356,6 +11596,8 @@ TabBuffer * posTab(int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void do_mouse_action(int btn,int x,int y)
 
@@ -11415,7 +11657,7 @@ void do_mouse_action(int btn,int x,int y)
       if (((pAVar3 != (Anchor *)0x0) ||
           (pAVar3 = retrieveCurrentForm(CurrentTab->currentBuffer), pAVar3 != (Anchor *)0x0)) &&
          ((map = mouse_action.active_map + btn, map == (MouseActionMap *)0x0 ||
-          (map->func == (anon_subr_void_varargs_for_func *)0x0)))) {
+          (map->func == (_func_void_varargs *)0x0)))) {
         map = mouse_action.anchor_map + btn;
       }
     }
@@ -11438,10 +11680,10 @@ void do_mouse_action(int btn,int x,int y)
       cursorXY(CurrentTab->currentBuffer,(int)sVar1,(int)sVar2);
     }
   }
-  if ((map == (MouseActionMap *)0x0) || (map->func == (anon_subr_void_varargs_for_func *)0x0)) {
+  if ((map == (MouseActionMap *)0x0) || (map->func == (_func_void_varargs *)0x0)) {
     map = mouse_action.default_map + btn;
   }
-  if ((map != (MouseActionMap *)0x0) && (map->func != (anon_subr_void_varargs_for_func *)0x0)) {
+  if ((map != (MouseActionMap *)0x0) && (map->func != (_func_void_varargs *)0x0)) {
     mouse_action.in_action = 1;
     mouse_action.cursorX = x;
     mouse_action.cursorY = y;
@@ -11455,6 +11697,8 @@ void do_mouse_action(int btn,int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void process_mouse(int btn,int x,int y)
 
@@ -11612,6 +11856,8 @@ void process_mouse(int btn,int x,int y)
 
 
 
+// WARNING: Unknown calling convention
+
 void msToggle(void)
 
 {
@@ -11621,6 +11867,8 @@ void msToggle(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void mouse(void)
 
@@ -11649,6 +11897,8 @@ void mouse(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int gpm_process_mouse(Gpm_Event *event,void *data)
 
@@ -11696,6 +11946,8 @@ int gpm_process_mouse(Gpm_Event *event,void *data)
 
 
 
+// WARNING: Unknown calling convention
+
 void movMs(void)
 
 {
@@ -11713,6 +11965,8 @@ void movMs(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void menuMs(void)
 
@@ -11737,6 +11991,8 @@ void menuMs(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabMs(void)
 
 {
@@ -11753,6 +12009,8 @@ void tabMs(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void closeTMs(void)
 
@@ -11771,6 +12029,8 @@ void closeTMs(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void dispVer(void)
 
 {
@@ -11782,6 +12042,8 @@ void dispVer(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wrapToggle(void)
 
@@ -11798,6 +12060,8 @@ void wrapToggle(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_wordchar(int c,char *badchars)
 
@@ -11819,6 +12083,8 @@ int is_wordchar(int c,char *badchars)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getCurWord(Buffer *buf,int *spos,int *epos,char *badchars)
 
@@ -11865,6 +12131,8 @@ char * getCurWord(Buffer *buf,int *spos,int *epos,char *badchars)
 
 
 
+// WARNING: Unknown calling convention
+
 char * GetWord(Buffer *buf)
 
 {
@@ -11886,6 +12154,8 @@ char * GetWord(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void execdict(char *word)
 
@@ -11936,18 +12206,22 @@ void execdict(char *word)
 
 
 
+// WARNING: Unknown calling convention
+
 void dictword(void)
 
 {
   char *word;
   
   word = inputLineHistSearch("(dictionary)!","",0x10,(Hist *)0x0,
-                             (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                             (_func_int_int_Str_Lineprop_ptr *)0x0);
   execdict(word);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void dictwordat(void)
 
@@ -11960,6 +12234,8 @@ void dictwordat(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_buffer_environ(Buffer *buf)
 
@@ -12052,6 +12328,8 @@ void set_buffer_environ(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 char * searchKeyData(void)
 
 {
@@ -12085,6 +12363,8 @@ char * searchKeyData(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int searchKeyNum(void)
 
 {
@@ -12106,6 +12386,8 @@ int searchKeyNum(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void deleteFiles(void)
 
@@ -12131,6 +12413,8 @@ void deleteFiles(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void w3m_exit(int i)
 
 {
@@ -12145,6 +12429,8 @@ void w3m_exit(int i)
 
 
 
+// WARNING: Unknown calling convention
+
 void execCmd(void)
 
 {
@@ -12158,7 +12444,7 @@ void execCmd(void)
   data = searchKeyData();
   if (((data == (char *)0x0) || (*data == '\0')) &&
      (data = inputLineHistSearch("command [; ...]: ","",0x10,TextHist,
-                                 (anon_subr_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0)) {
+                                 (_func_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0)) {
     displayBuffer(CurrentTab->currentBuffer,0);
   }
   else {
@@ -12195,6 +12481,8 @@ void execCmd(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void SigAlarm(int _dummy)
 
@@ -12238,6 +12526,8 @@ void SigAlarm(int _dummy)
 
 
 
+// WARNING: Unknown calling convention
+
 void setAlarm(void)
 
 {
@@ -12253,7 +12543,7 @@ void setAlarm(void)
   data = searchKeyData();
   if (((data == (char *)0x0) || (*data == '\0')) &&
      (data = inputLineHistSearch("(Alarm)sec command: ","",0x10,TextHist,
-                                 (anon_subr_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0)) {
+                                 (_func_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0)) {
     displayBuffer(CurrentTab->currentBuffer,0);
     return;
   }
@@ -12283,6 +12573,8 @@ void setAlarm(void)
 AlarmEvent * setAlarmEvent(AlarmEvent *event,int sec,short status,int cmd,void *data)
 
 {
+  short status_local;
+  
   if (event == (AlarmEvent *)0x0) {
     event = (AlarmEvent *)GC_malloc(0x10);
   }
@@ -12294,6 +12586,8 @@ AlarmEvent * setAlarmEvent(AlarmEvent *event,int sec,short status,int cmd,void *
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void reinit(void)
 
@@ -12362,6 +12656,8 @@ void reinit(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void defKey(void)
 
 {
@@ -12372,7 +12668,7 @@ void defKey(void)
   data = searchKeyData();
   if (((data == (char *)0x0) || (*data == '\0')) &&
      ((data = inputLineHistSearch("Key definition: ","",0x10,TextHist,
-                                  (anon_subr_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0 ||
+                                  (_func_int_int_Str_Lineprop_ptr *)0x0), data == (char *)0x0 ||
       (*data == '\0')))) {
     displayBuffer(CurrentTab->currentBuffer,0);
     return;
@@ -12384,6 +12680,8 @@ void defKey(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 TabBuffer * newTab(void)
 
@@ -12404,6 +12702,8 @@ TabBuffer * newTab(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _newT(void)
 
@@ -12443,6 +12743,8 @@ void _newT(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void newT(void)
 
 {
@@ -12452,6 +12754,8 @@ void newT(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 TabBuffer * numTab(int n)
 
@@ -12474,6 +12778,8 @@ TabBuffer * numTab(int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void calcTabPos(void)
 
@@ -12545,6 +12851,8 @@ void calcTabPos(void)
 
 
 
+// WARNING: Unknown calling convention
+
 TabBuffer * deleteTab(TabBuffer *tab)
 
 {
@@ -12585,6 +12893,8 @@ TabBuffer * deleteTab(TabBuffer *tab)
 
 
 
+// WARNING: Unknown calling convention
+
 void closeT(void)
 
 {
@@ -12611,6 +12921,8 @@ void closeT(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void nextT(void)
 
@@ -12641,6 +12953,8 @@ void nextT(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void prevT(void)
 
 {
@@ -12669,6 +12983,8 @@ void prevT(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void followTab(TabBuffer *tab)
 
@@ -12725,6 +13041,8 @@ void followTab(TabBuffer *tab)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabA(void)
 
 {
@@ -12746,6 +13064,8 @@ void tabA(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void tabURL0(TabBuffer *tab,char *prompt,int relative)
 
@@ -12791,6 +13111,8 @@ void tabURL0(TabBuffer *tab,char *prompt,int relative)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabURL(void)
 
 {
@@ -12813,6 +13135,8 @@ void tabURL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabrURL(void)
 
 {
@@ -12834,6 +13158,8 @@ void tabrURL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void moveTab(TabBuffer *t,TabBuffer *t2,int right)
 
@@ -12885,6 +13211,8 @@ void moveTab(TabBuffer *t,TabBuffer *t2,int right)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabR(void)
 
 {
@@ -12911,6 +13239,8 @@ void tabR(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void tabL(void)
 
@@ -12947,6 +13277,7 @@ void addDownloadList(pid_t pid,char *url,char *save,char *lock,clen_t size)
   Str p_Var3;
   char *pcVar4;
   time_t tVar5;
+  clen_t size_local;
   DownloadList *d;
   
   pDVar2 = (DownloadList *)GC_malloc(0x28);
@@ -12959,8 +13290,7 @@ void addDownloadList(pid_t pid,char *url,char *save,char *lock,clen_t size)
   pcVar4 = expandPath(save);
   pDVar2->save = pcVar4;
   pDVar2->lock = lock;
-  *(undefined4 *)&pDVar2->size = (undefined4)size;
-  *(undefined4 *)((int)&pDVar2->size + 4) = size._4_4_;
+  pDVar2->size = size;
   tVar5 = time((time_t *)0x0);
   pDVar2->time = tVar5;
   pDVar2->ok = 0;
@@ -12978,6 +13308,8 @@ void addDownloadList(pid_t pid,char *url,char *save,char *lock,clen_t size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int checkDownloadList(void)
 
@@ -13003,6 +13335,7 @@ char * convert_size3(clen_t size)
 {
   undefined4 uVar1;
   char *fmt;
+  clen_t size_local;
   int n;
   Str tmp;
   
@@ -13022,6 +13355,8 @@ char * convert_size3(clen_t size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * DownloadListBuffer(void)
 
@@ -13090,7 +13425,7 @@ Buffer * DownloadListBuffer(void)
         iVar5 = *(int *)((int)&d->size + 4);
         i = iVar9;
         if ((-1 < iVar5) && ((0 < iVar5 || (size < *(uint *)&d->size)))) {
-          i = (int)ROUND(((float10)(ulonglong)size * (float10)iVar9) / (float10)d->size);
+          i = (int)ROUND(((longdouble)(ulonglong)size * (longdouble)iVar9) / (longdouble)d->size);
         }
         l = iVar9 - i;
         while (bVar1 = 0 < i, i = i + -1, bVar1) {
@@ -13186,6 +13521,8 @@ LAB_08059fc1:
 
 
 
+// WARNING: Unknown calling convention
+
 void download_action(parsed_tagarg *arg)
 
 {
@@ -13235,6 +13572,8 @@ LAB_0805a3de:
 
 
 
+// WARNING: Unknown calling convention
+
 void stopDownload(void)
 
 {
@@ -13252,6 +13591,8 @@ void stopDownload(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ldDL(void)
 
@@ -13322,6 +13663,8 @@ void ldDL(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void save_buffer_position(Buffer *buf)
 
 {
@@ -13388,6 +13731,8 @@ void save_buffer_position(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void resetPos(BufferPos *b)
 
 {
@@ -13409,6 +13754,8 @@ void resetPos(BufferPos *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void undoPos(void)
 
@@ -13437,6 +13784,8 @@ void undoPos(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void redoPos(void)
 
 {
@@ -13464,6 +13813,8 @@ void redoPos(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void KeyAbort(int _dummy)
 
 {
@@ -13472,6 +13823,8 @@ void KeyAbort(int _dummy)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void UFhalfclose(URLFile *f)
 
@@ -13497,6 +13850,8 @@ void UFhalfclose(URLFile *f)
 
 
 
+// WARNING: Unknown calling convention
+
 int currentLn(Buffer *buf)
 
 {
@@ -13513,7 +13868,9 @@ int currentLn(Buffer *buf)
 
 
 
-Buffer * loadSomething(URLFile *f,char *path,anon_subr_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadproc,
+// WARNING: Unknown calling convention
+
+Buffer * loadSomething(URLFile *f,char *path,_func_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadproc,
                       Buffer *defaultbuf)
 
 {
@@ -13555,6 +13912,8 @@ Buffer * loadSomething(URLFile *f,char *path,anon_subr_Buffer_ptr_URLFile_ptr_Bu
 
 
 
+// WARNING: Unknown calling convention
+
 int dir_exist(char *path)
 
 {
@@ -13579,6 +13938,8 @@ int dir_exist(char *path)
 
 
 
+// WARNING: Unknown calling convention
+
 int is_dump_text_type(char *type)
 
 {
@@ -13594,6 +13955,8 @@ int is_dump_text_type(char *type)
 
 
 
+// WARNING: Unknown calling convention
+
 int is_text_type(char *type)
 
 {
@@ -13608,6 +13971,8 @@ int is_text_type(char *type)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_plain_text_type(char *type)
 
@@ -13634,6 +13999,8 @@ LAB_0805acb7:
 
 
 
+// WARNING: Unknown calling convention
+
 int is_html_type(char *type)
 
 {
@@ -13655,6 +14022,8 @@ LAB_0805ad06:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_compression(char *path,URLFile *uf)
 
@@ -13683,6 +14052,8 @@ void check_compression(char *path,URLFile *uf)
 
 
 
+// WARNING: Unknown calling convention
+
 char * compress_application_type(int compression)
 
 {
@@ -13700,6 +14071,8 @@ char * compress_application_type(int compression)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * uncompressed_file_type(char *path,char **ext)
 
@@ -13747,6 +14120,8 @@ char * uncompressed_file_type(char *path,char **ext)
 
 
 
+// WARNING: Unknown calling convention
+
 int setModtime(char *path,time_t modtime)
 
 {
@@ -13767,6 +14142,8 @@ int setModtime(char *path,time_t modtime)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void examineFile(char *path,URLFile *uf)
 
@@ -13827,6 +14204,8 @@ void examineFile(char *path,URLFile *uf)
 
 
 
+// WARNING: Unknown calling convention
+
 int check_command(char *cmd,int auxbin_p)
 
 {
@@ -13878,6 +14257,8 @@ int check_command(char *cmd,int auxbin_p)
 
 
 
+// WARNING: Unknown calling convention
+
 char * acceptableEncoding(void)
 
 {
@@ -13916,6 +14297,8 @@ char * acceptableEncoding(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str convertLine(URLFile *uf,Str line,int mode,wc_ces *charset,wc_ces doc_charset)
 
 {
@@ -13932,6 +14315,8 @@ Str convertLine(URLFile *uf,Str line,int mode,wc_ces *charset,wc_ces doc_charset
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * loadFile(char *path)
 
@@ -13968,6 +14353,8 @@ Buffer * loadFile(char *path)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int matchattr(char *p,char *attr,int len,Str *value)
 
@@ -14028,6 +14415,8 @@ int matchattr(char *p,char *attr,int len,Str *value)
 
 
 
+// WARNING: Unknown calling convention
+
 char * xface2xpm(char *xface)
 
 {
@@ -14080,6 +14469,8 @@ char * xface2xpm(char *xface)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void readHeader(URLFile *uf,Buffer *newBuf,int thru,ParsedURL *pu)
 
@@ -14149,7 +14540,7 @@ void readHeader(URLFile *uf,Buffer *newBuf,int thru,ParsedURL *pu)
     p_Var4 = tmpfname(0,(char *)0x0);
     tmpf = p_Var4->ptr;
     src = (FILE *)fopen(tmpf,"w");
-    if ((FILE *)src != (FILE *)0x0) {
+    if (src != (FILE *)0x0) {
       newBuf->header_source = tmpf;
     }
   }
@@ -14572,6 +14963,8 @@ LAB_0805ca92:
 
 
 
+// WARNING: Unknown calling convention
+
 char * checkHeader(Buffer *buf,char *field)
 
 {
@@ -14597,6 +14990,8 @@ char * checkHeader(Buffer *buf,char *field)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * checkContentType(Buffer *buf)
 
@@ -14648,6 +15043,8 @@ char * checkContentType(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int skip_auth_token(char **pp)
 
 {
@@ -14697,6 +15094,8 @@ switchD_0805cd85_caseD_9:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str extract_auth_val(char **q)
 
@@ -14777,6 +15176,7 @@ end_token:
       default:
         if ((*qq < 0x20) || (*qq == '\x7f')) {
           qq = qq + 1;
+          goto end_token;
         }
         break;
       case ',':
@@ -14795,6 +15195,8 @@ end_token:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str qstr_unquote(Str s)
 
@@ -14833,6 +15235,8 @@ Str qstr_unquote(Str s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * extract_auth_param(char *q,auth_param *auth)
 
@@ -14907,6 +15311,8 @@ LAB_0805d21c:
 
 
 
+// WARNING: Unknown calling convention
+
 Str get_auth_param(auth_param *auth,char *name)
 
 {
@@ -14926,6 +15332,8 @@ Str get_auth_param(auth_param *auth,char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str AuthBasicCred(http_auth *ha,Str uname,Str pw,ParsedURL *pu,HRequest *hr,FormList *request)
 
@@ -14949,6 +15357,8 @@ Str AuthBasicCred(http_auth *ha,Str uname,Str pw,ParsedURL *pu,HRequest *hr,Form
 }
 
 
+
+// WARNING: Unknown calling convention
 
 http_auth * findAuthentication(http_auth *hauth,Buffer *buf,char *auth_field)
 
@@ -15014,6 +15424,8 @@ http_auth * findAuthentication(http_auth *hauth,Buffer *buf,char *auth_field)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void getAuthCookie(http_auth *hauth,char *auth_header,TextList *extra_header,ParsedURL *pu,
                   HRequest *hr,FormList *request,Str *uname,Str *pwd)
@@ -15105,7 +15517,7 @@ LAB_0805d6e1:
           term_raw();
           p_Var4 = Sprintf("Username for %s: ",realm);
           pcVar6 = inputLineHistSearch(p_Var4->ptr,(char *)0x0,0x10,(Hist *)0x0,
-                                       (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                                       (_func_int_int_Str_Lineprop_ptr *)0x0);
           wVar3 = SystemCharset;
           wVar2 = InnerCharset;
           if (pcVar6 == (char *)0x0) {
@@ -15116,7 +15528,7 @@ LAB_0805d6e1:
           *uname = p_Var4;
           p_Var4 = Sprintf("Password for %s: ",realm);
           pcVar6 = inputLineHistSearch(p_Var4->ptr,(char *)0x0,0x40,(Hist *)0x0,
-                                       (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                                       (_func_int_int_Str_Lineprop_ptr *)0x0);
           wVar3 = SystemCharset;
           wVar2 = InnerCharset;
           if (pcVar6 == (char *)0x0) {
@@ -15153,6 +15565,8 @@ LAB_0805d6e1:
 
 
 
+// WARNING: Unknown calling convention
+
 int same_url_p(ParsedURL *pu1,ParsedURL *pu2)
 
 {
@@ -15169,6 +15583,8 @@ int same_url_p(ParsedURL *pu1,ParsedURL *pu2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int checkRedirection(ParsedURL *pu)
 
@@ -15215,26 +15631,32 @@ int checkRedirection(ParsedURL *pu)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,FormList *request)
 
 {
   char cVar1;
-  wc_ces wVar2;
+  URLFile uf;
+  URLFile uf_00;
+  URLFile uf_01;
+  URLFile uf_02;
+  clen_t cVar2;
   wc_ces wVar3;
+  wc_ces wVar4;
   Str uname_00;
-  Str p_Var4;
-  http_auth *phVar5;
+  uint uVar5;
+  Str p_Var6;
+  http_auth *phVar7;
   ParsedURL *pu_00;
   FILE *__s;
-  Str p_Var6;
-  int iVar7;
-  char *pcVar8;
-  mailcap *pmVar9;
-  Anchor *pAVar10;
-  Line *pLVar11;
-  Buffer *pBVar12;
+  Str p_Var8;
+  int iVar9;
+  char *pcVar10;
+  mailcap *pmVar11;
+  Anchor *pAVar12;
+  Line *pLVar13;
+  Buffer *pBVar14;
   uint local_16c;
   InputStream local_168;
   char *local_164;
@@ -15267,7 +15689,7 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
   Str pwd;
   Str uname;
   TextList *extra_header;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int searchHeader_through;
   int searchHeader;
   Buffer *t_buf;
@@ -15275,7 +15697,7 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
   char *p;
   char *t;
   char *tpath;
-  anon_subr_Buffer_ptr_varargs *proc;
+  _func_Buffer_ptr_varargs *proc;
   Buffer *b;
   URLFile *of;
   uchar status;
@@ -15288,7 +15710,7 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
   t_buf = (Buffer *)0x0;
   searchHeader = (int)SearchHeader;
   searchHeader_through = 1;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   extra_header = (TextList *)newGeneralList();
   uname = (Str)0x0;
   pwd = (Str)0x0;
@@ -15297,7 +15719,7 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
   page = (Str)0x0;
   charset = 0x100;
   tpath = path;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   add_auth_cookie_flag = 0;
   checkRedirection((ParsedURL *)0x0);
   while( true ) {
@@ -15309,14 +15731,13 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
               if (fmInitialized != '\0') {
                 term_raw();
               }
-              if (prevtrap != (anon_subr_void_int *)0x0) {
+              if (prevtrap != (_func_void_int *)0x0) {
                 mySignal(2,prevtrap);
               }
             }
             url_option.referer = referer;
             url_option.flag = flag;
-            openURL((URLFile *)&local_16c,tpath,&pu,current,&url_option,request,extra_header,of,&hr,
-                    &status);
+            openURL(tpath,&pu,current,&url_option,request,extra_header,of,&hr,&status);
             f._0_4_ = local_16c;
             f.stream = local_168;
             f.ext = local_164;
@@ -15328,23 +15749,26 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
             of = (URLFile *)0x0;
             content_charset = 0;
             if (local_168 == (InputStream)0x0) {
-              local_16c = local_16c & 0xff;
-              if (local_16c == 4) {
-                iVar7 = stat(pu.real_file,(stat *)&st);
-                if (iVar7 < 0) {
-                  pBVar12 = (Buffer *)0x0;
+              uVar5 = local_16c & 0xff;
+              if (uVar5 == 4) {
+                iVar9 = stat(pu.real_file,(stat *)&st);
+                if (iVar9 < 0) {
+                  pBVar14 = (Buffer *)0x0;
+                  cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
                   goto LAB_0805fa43;
                 }
                 if ((st.st_mode & 0xf000) == 0x4000) {
                   if (UseExternalDirBuffer != 0) {
-                    p_Var6 = Sprintf("%s?dir=%s#current",DirBufferCommand,pu.file);
-                    b = loadGeneralFile(p_Var6->ptr,(ParsedURL *)0x0,(char *)0xffffffff,0,
+                    p_Var8 = Sprintf("%s?dir=%s#current",DirBufferCommand,pu.file);
+                    b = loadGeneralFile(p_Var8->ptr,(ParsedURL *)0x0,(char *)0xffffffff,0,
                                         (FormList *)0x0);
                     if ((b != (Buffer *)0x0) && (b != (Buffer *)0x1)) {
                       copyParsedURL(&b->currentURL,&pu);
                       b->filename = (b->currentURL).real_file;
                     }
-                    pBVar12 = b;
+                    pBVar14 = b;
+                    cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length
+                                    );
                     goto LAB_0805fa43;
                   }
                   page = loadLocalDir(pu.real_file);
@@ -15352,32 +15776,34 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                   charset = SystemCharset;
                 }
               }
-              else if (local_16c < 5) {
-                if (local_16c == 3) {
+              else if (uVar5 < 5) {
+                if (uVar5 == 3) {
                   page = loadFTPDir(&pu,&charset);
                   t = "ftp:directory";
                 }
               }
-              else if (local_16c == 10) {
+              else if (uVar5 == 10) {
                 page = loadNewsgroup(&pu,&charset);
                 t = "news:group";
               }
-              else if (local_16c == 0xff) {
+              else if (uVar5 == 0xff) {
                 tmp = searchURIMethods(&pu);
                 if (tmp != (Str)0x0) {
                   b = loadGeneralFile(tmp->ptr,current,referer,flag,request);
                   if ((b != (Buffer *)0x0) && (b != (Buffer *)0x1)) {
                     copyParsedURL(&b->currentURL,&pu);
                   }
-                  pBVar12 = b;
+                  pBVar14 = b;
+                  cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
                   goto LAB_0805fa43;
                 }
-                p_Var6 = parsedURL2Str(&pu);
-                p_Var6 = Sprintf("Unknown URI: %s",p_Var6->ptr);
-                disp_err_message(p_Var6->ptr,0);
+                p_Var8 = parsedURL2Str(&pu);
+                p_Var8 = Sprintf("Unknown URI: %s",p_Var8->ptr);
+                disp_err_message(p_Var8->ptr,0);
               }
               if ((page != (Str)0x0) && (0 < page->length)) goto page_loaded;
-              pBVar12 = (Buffer *)0x0;
+              pBVar14 = (Buffer *)0x0;
+              cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
               goto LAB_0805fa43;
             }
             if (status == 0xfe) {
@@ -15385,21 +15811,22 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                 if (fmInitialized != '\0') {
                   term_raw();
                 }
-                if (prevtrap != (anon_subr_void_int *)0x0) {
+                if (prevtrap != (_func_void_int *)0x0) {
                   mySignal(2,prevtrap);
                 }
               }
               ISclose(f.stream);
-              pBVar12 = (Buffer *)0x0;
+              pBVar14 = (Buffer *)0x0;
+              cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
               goto LAB_0805fa43;
             }
-            iVar7 = __sigsetjmp(AbortLoading,1);
-            if (iVar7 != 0) {
+            iVar9 = __sigsetjmp(AbortLoading,1);
+            if (iVar9 != 0) {
               if (TrapSignal != '\0') {
                 if (fmInitialized != '\0') {
                   term_raw();
                 }
-                if (prevtrap != (anon_subr_void_int *)0x0) {
+                if (prevtrap != (_func_void_int *)0x0) {
                   mySignal(2,prevtrap);
                 }
               }
@@ -15407,7 +15834,8 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                 discardBuffer(b);
               }
               ISclose(f.stream);
-              pBVar12 = (Buffer *)0x0;
+              pBVar14 = (Buffer *)0x0;
+              cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
               goto LAB_0805fa43;
             }
             b = (Buffer *)0x0;
@@ -15422,22 +15850,22 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
               term_cbreak();
             }
             if ((pu.scheme == 0) ||
-               ((((pu.scheme == 1 && (iVar7 = non_null(GOPHER_proxy), iVar7 != 0)) ||
-                 ((pu.scheme == 2 && (iVar7 = non_null(FTP_proxy), iVar7 != 0)))) &&
-                ((use_proxy != '\0' && (iVar7 = check_no_proxy(pu.host), iVar7 == 0)))))) break;
+               ((((pu.scheme == 1 && (iVar9 = non_null(GOPHER_proxy), iVar9 != 0)) ||
+                 ((pu.scheme == 2 && (iVar9 = non_null(FTP_proxy), iVar9 != 0)))) &&
+                ((use_proxy != '\0' && (iVar9 = check_no_proxy(pu.host), iVar9 == 0)))))) break;
             if ((pu.scheme == 9) || (pu.scheme == 7)) {
               if (t_buf == (Buffer *)0x0) {
                 if (showLineNum == 0) {
-                  iVar7 = 1;
+                  iVar9 = 1;
                 }
                 else {
-                  iVar7 = 6;
+                  iVar9 = 6;
                 }
-                iVar7 = COLS - iVar7;
-                if (iVar7 < 0) {
-                  iVar7 = 0;
+                iVar9 = COLS - iVar9;
+                if (iVar9 < 0) {
+                  iVar9 = 0;
                 }
-                t_buf = newBuffer(iVar7);
+                t_buf = newBuffer(iVar9);
               }
               readHeader(&f,t_buf,1,&pu);
               t = checkContentType(t_buf);
@@ -15474,7 +15902,7 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
                 if (fmInitialized != '\0') {
                   term_raw();
                 }
-                if (prevtrap != (anon_subr_void_int *)0x0) {
+                if (prevtrap != (_func_void_int *)0x0) {
                   mySignal(2,prevtrap);
                 }
               }
@@ -15523,99 +15951,99 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
             searchHeader = 0;
             if (t_buf == (Buffer *)0x0) {
               if (showLineNum == 0) {
-                iVar7 = 1;
+                iVar9 = 1;
               }
               else {
-                iVar7 = 6;
+                iVar9 = 6;
               }
-              iVar7 = COLS - iVar7;
-              if (iVar7 < 0) {
-                iVar7 = 0;
+              iVar9 = COLS - iVar9;
+              if (iVar9 < 0) {
+                iVar9 = 0;
               }
-              t_buf = newBuffer(iVar7);
+              t_buf = newBuffer(iVar9);
             }
             readHeader(&f,t_buf,searchHeader_through,&pu);
             if (((f.is_cgi == '\0') || (p = checkHeader(t_buf,"Location:"), p == (char *)0x0)) ||
-               (iVar7 = checkRedirection(&pu), wVar3 = DocumentCharset, wVar2 = InnerCharset,
-               iVar7 == 0)) {
+               (iVar9 = checkRedirection(&pu), wVar4 = DocumentCharset, wVar3 = InnerCharset,
+               iVar9 == 0)) {
               t = checkContentType(t_buf);
               if (t == (char *)0x0) {
                 t = "text/plain";
               }
               goto LAB_0805ecf5;
             }
-            pcVar8 = remove_space(p);
-            p_Var6 = Strnew_charp(pcVar8);
-            p_Var6 = wc_Str_conv_strict(p_Var6,wVar2,wVar3);
-            tpath = url_quote(p_Var6->ptr);
+            pcVar10 = remove_space(p);
+            p_Var8 = Strnew_charp(pcVar10);
+            p_Var8 = wc_Str_conv_strict(p_Var8,wVar3,wVar4);
+            tpath = url_quote(p_Var8->ptr);
             request = (FormList *)0x0;
-            iVar7 = ISclose(f.stream);
-            if (iVar7 == 0) {
+            iVar9 = ISclose(f.stream);
+            if (iVar9 == 0) {
               f.stream = (InputStream)0x0;
             }
             add_auth_cookie_flag = 0;
             current = (ParsedURL *)GC_malloc(0x28);
             copyParsedURL(current,&pu);
             if (showLineNum == 0) {
-              iVar7 = 1;
+              iVar9 = 1;
             }
             else {
-              iVar7 = 6;
+              iVar9 = 6;
             }
-            iVar7 = COLS - iVar7;
-            if (iVar7 < 0) {
-              iVar7 = 0;
+            iVar9 = COLS - iVar9;
+            if (iVar9 < 0) {
+              iVar9 = 0;
             }
-            t_buf = newBuffer(iVar7);
+            t_buf = newBuffer(iVar9);
             t_buf->bufferprop = t_buf->bufferprop | 0x20;
             status = '\0';
           }
           if (fmInitialized != '\0') {
             term_cbreak();
-            p_Var6 = Sprintf("%s contacted. Waiting for reply...",pu.host);
-            message(p_Var6->ptr,0,0);
+            p_Var8 = Sprintf("%s contacted. Waiting for reply...",pu.host);
+            message(p_Var8->ptr,0,0);
             refresh();
           }
           if (t_buf == (Buffer *)0x0) {
             if (showLineNum == 0) {
-              iVar7 = 1;
+              iVar9 = 1;
             }
             else {
-              iVar7 = 6;
+              iVar9 = 6;
             }
-            iVar7 = COLS - iVar7;
-            if (iVar7 < 0) {
-              iVar7 = 0;
+            iVar9 = COLS - iVar9;
+            if (iVar9 < 0) {
+              iVar9 = 0;
             }
-            t_buf = newBuffer(iVar7);
+            t_buf = newBuffer(iVar9);
           }
           readHeader(&f,t_buf,0,&pu);
           if ((((http_response_code < 0x12d) || (0x12f < http_response_code)) &&
               (http_response_code != 0x133)) ||
              ((p = checkHeader(t_buf,"Location:"), p == (char *)0x0 ||
-              (iVar7 = checkRedirection(&pu), wVar3 = DocumentCharset, wVar2 = InnerCharset,
-              iVar7 == 0)))) break;
-          p_Var6 = Strnew_charp(p);
-          p_Var6 = wc_Str_conv_strict(p_Var6,wVar2,wVar3);
-          tpath = url_quote(p_Var6->ptr);
+              (iVar9 = checkRedirection(&pu), wVar4 = DocumentCharset, wVar3 = InnerCharset,
+              iVar9 == 0)))) break;
+          p_Var8 = Strnew_charp(p);
+          p_Var8 = wc_Str_conv_strict(p_Var8,wVar3,wVar4);
+          tpath = url_quote(p_Var8->ptr);
           request = (FormList *)0x0;
-          iVar7 = ISclose(f.stream);
-          if (iVar7 == 0) {
+          iVar9 = ISclose(f.stream);
+          if (iVar9 == 0) {
             f.stream = (InputStream)0x0;
           }
           current = (ParsedURL *)GC_malloc(0x28);
           copyParsedURL(current,&pu);
           if (showLineNum == 0) {
-            iVar7 = 1;
+            iVar9 = 1;
           }
           else {
-            iVar7 = 6;
+            iVar9 = 6;
           }
-          iVar7 = COLS - iVar7;
-          if (iVar7 < 0) {
-            iVar7 = 0;
+          iVar9 = COLS - iVar9;
+          if (iVar9 < 0) {
+            iVar9 = 0;
           }
-          t_buf = newBuffer(iVar7);
+          t_buf = newBuffer(iVar9);
           t_buf->bufferprop = t_buf->bufferprop | 0x20;
           status = '\0';
         }
@@ -15626,35 +16054,35 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
           t = guessContentType(pu.file);
         }
         uname_00 = uname;
-        p_Var6 = pwd;
+        p_Var8 = pwd;
         if (t == (char *)0x0) {
           t = "text/plain";
         }
         if ((((add_auth_cookie_flag != 0) && (realm != (Str)0x0)) && (uname != (Str)0x0)) &&
            (pwd != (Str)0x0)) {
-          p_Var4 = qstr_unquote(realm);
-          add_auth_user_passwd(&pu,p_Var4->ptr,uname_00,p_Var6,0);
+          p_Var6 = qstr_unquote(realm);
+          add_auth_user_passwd(&pu,p_Var6->ptr,uname_00,p_Var8,0);
           add_auth_cookie_flag = 0;
         }
         p = checkHeader(t_buf,"WWW-Authenticate:");
         if (((p == (char *)0x0) || (http_response_code != 0x191)) ||
-           ((phVar5 = findAuthentication((http_auth *)&st,t_buf,"WWW-Authenticate:"),
-            phVar5 == (http_auth *)0x0 ||
-            (realm = get_auth_param(st._8_4_,"realm"), realm == (Str)0x0)))) break;
+           ((phVar7 = findAuthentication((http_auth *)&st,t_buf,"WWW-Authenticate:"),
+            phVar7 == (http_auth *)0x0 ||
+            (realm = get_auth_param((auth_param *)st._8_4_,"realm"), realm == (Str)0x0)))) break;
         getAuthCookie((http_auth *)&st,"Authorization:",extra_header,&pu,&hr,request,&uname,&pwd);
         if (uname == (Str)0x0) {
           if (TrapSignal != '\0') {
             if (fmInitialized != '\0') {
               term_raw();
             }
-            if (prevtrap != (anon_subr_void_int *)0x0) {
+            if (prevtrap != (_func_void_int *)0x0) {
               mySignal(2,prevtrap);
             }
           }
           goto page_loaded;
         }
-        iVar7 = ISclose(f.stream);
-        if (iVar7 == 0) {
+        iVar9 = ISclose(f.stream);
+        if (iVar9 == 0) {
           f.stream = (InputStream)0x0;
         }
         add_auth_cookie_flag = 1;
@@ -15662,9 +16090,9 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
       }
       p = checkHeader(t_buf,"Proxy-Authenticate:");
       if (((p == (char *)0x0) || (http_response_code != 0x197)) ||
-         ((phVar5 = findAuthentication((http_auth *)&st,t_buf,"Proxy-Authenticate:"),
-          phVar5 == (http_auth *)0x0 ||
-          (realm = get_auth_param(st._8_4_,"realm"), realm == (Str)0x0)))) break;
+         ((phVar7 = findAuthentication((http_auth *)&st,t_buf,"Proxy-Authenticate:"),
+          phVar7 == (http_auth *)0x0 ||
+          (realm = get_auth_param((auth_param *)st._8_4_,"realm"), realm == (Str)0x0)))) break;
       pu_00 = schemeToProxy(pu.scheme);
       getAuthCookie((http_auth *)&st,"Proxy-Authorization:",extra_header,pu_00,&hr,request,&uname,
                     &pwd);
@@ -15673,14 +16101,14 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
           if (fmInitialized != '\0') {
             term_raw();
           }
-          if (prevtrap != (anon_subr_void_int *)0x0) {
+          if (prevtrap != (_func_void_int *)0x0) {
             mySignal(2,prevtrap);
           }
         }
         goto page_loaded;
       }
-      iVar7 = ISclose(f.stream);
-      if (iVar7 == 0) {
+      iVar9 = ISclose(f.stream);
+      if (iVar9 == 0) {
         f.stream = (InputStream)0x0;
       }
       add_auth_cookie_flag = 1;
@@ -15689,8 +16117,8 @@ Buffer * loadGeneralFile(char *path,ParsedURL *current,char *referer,int flag,Fo
     if (status != '\x01') break;
     of = &f;
   }
-  pcVar8 = checkHeader(t_buf,"Last-Modified:");
-  f.modtime = mymktime(pcVar8);
+  pcVar10 = checkHeader(t_buf,"Last-Modified:");
+  f.modtime = mymktime(pcVar10);
 LAB_0805ecf5:
   f.guess_type = t;
 page_loaded:
@@ -15699,8 +16127,8 @@ page_loaded:
       tmp = tmpfname(1,".html");
       __s = fopen(tmp->ptr,"w");
       if (__s != (FILE *)0x0) {
-        p_Var6 = wc_Str_conv_strict(page,InnerCharset,charset);
-        fwrite(p_Var6->ptr,1,p_Var6->length,__s);
+        p_Var8 = wc_Str_conv_strict(page,InnerCharset,charset);
+        fwrite(p_Var8->ptr,1,p_Var8->length,__s);
         fclose(__s);
       }
       if (do_download == 0) {
@@ -15714,27 +16142,31 @@ page_loaded:
           }
           b->document_charset = charset;
         }
-        pBVar12 = b;
+        pBVar14 = b;
+        cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
       }
       else if (__s == (FILE *)0x0) {
-        pBVar12 = (Buffer *)0x0;
+        pBVar14 = (Buffer *)0x0;
+        cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
       }
       else {
         file = guess_filename(pu.file);
         if (f.scheme == '\x01') {
-          p_Var6 = Sprintf("%s.html",file);
-          file = p_Var6->ptr;
+          p_Var8 = Sprintf("%s.html",file);
+          file = p_Var8->ptr;
         }
         if (f.scheme == '\n') {
-          p_Var6 = Sprintf("%s.html",file);
-          file = p_Var6->ptr;
+          p_Var8 = Sprintf("%s.html",file);
+          file = p_Var8->ptr;
         }
         doFileMove(tmp->ptr,file);
-        pBVar12 = (Buffer *)0x1;
+        pBVar14 = (Buffer *)0x1;
+        cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
       }
     }
     else {
-      pBVar12 = (Buffer *)0x0;
+      pBVar14 = (Buffer *)0x0;
+      cVar2 = CONCAT44(current_content_length._4_4_,(undefined4)current_content_length);
     }
     goto LAB_0805fa43;
   }
@@ -15755,68 +16187,74 @@ page_loaded:
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
-    if ((DecodeCTE != '\0') && ((f.stream)->field_0x14 != '\x04')) {
+    if ((DecodeCTE != '\0') && (((f.stream)->base).type != '\x04')) {
       f.stream = newEncodedStream(f.stream,f.encoding);
     }
     if (pu.scheme == 4) {
       if (PreserveTimestamp != '\0') {
-        iVar7 = stat(pu.real_file,(stat *)&st);
-        if (iVar7 == 0) {
+        iVar9 = stat(pu.real_file,(stat *)&st);
+        if (iVar9 == 0) {
           f.modtime = st.st_mtim.tv_sec;
         }
       }
-      wVar3 = SystemCharset;
-      wVar2 = InnerCharset;
-      pcVar8 = guess_save_name((Buffer *)0x0,pu.real_file);
-      p_Var6 = Strnew_charp(pcVar8);
-      p_Var6 = wc_Str_conv(p_Var6,wVar3,wVar2);
-      file_1 = p_Var6->ptr;
+      wVar4 = SystemCharset;
+      wVar3 = InnerCharset;
+      pcVar10 = guess_save_name((Buffer *)0x0,pu.real_file);
+      p_Var8 = Strnew_charp(pcVar10);
+      p_Var8 = wc_Str_conv(p_Var8,wVar4,wVar3);
+      file_1 = p_Var8->ptr;
     }
     else {
       file_1 = guess_save_name(t_buf,pu.file);
     }
-    iVar7 = doFileSave((URLFile)CONCAT428(f.modtime,
-                                          CONCAT424(f.url,CONCAT420(f.guess_type,
-                                                                    CONCAT416(f.content_encoding,
-                                                                              CONCAT412(f.
-                                                  compression,
-                                                  CONCAT48(f.ext,CONCAT44(f.stream,f._0_4_))))))),
-                       file_1);
-    if (iVar7 == 0) {
+    uf.stream = f.stream;
+    uf.scheme = f.scheme;
+    uf.is_cgi = f.is_cgi;
+    uf.encoding = f.encoding;
+    uf._3_1_ = f._3_1_;
+    uf.ext = f.ext;
+    uf.compression = f.compression;
+    uf.content_encoding = f.content_encoding;
+    uf.guess_type = f.guess_type;
+    uf.url = f.url;
+    uf.modtime = f.modtime;
+    iVar9 = doFileSave(uf,file_1);
+    if (iVar9 == 0) {
       UFhalfclose(&f);
     }
     else {
       ISclose(f.stream);
     }
-    pBVar12 = (Buffer *)0x1;
+    pBVar14 = (Buffer *)0x1;
+    cVar2 = current_content_length;
     goto LAB_0805fa43;
   }
   if (((f.content_encoding == 0) || (AutoUncompress == '\0')) || ((w3m_dump & 8U) != 0)) {
     if (f.compression != 0) {
       if ((w3m_dump & 4U) == 0) {
         if ((w3m_dump & 0xffffffdfU) == 0) {
-          iVar7 = is_text_type(t);
-          if (iVar7 == 0) {
-            pmVar9 = searchExtViewer(t);
-            if (pmVar9 == (mailcap *)0x0) goto LAB_0805f1f5;
+          iVar9 = is_text_type(t);
+          if (iVar9 == 0) {
+            pmVar11 = searchExtViewer(t);
+            if (pmVar11 == (mailcap *)0x0) goto LAB_0805f1f5;
           }
         }
         if (t_buf == (Buffer *)0x0) {
           if (showLineNum == 0) {
-            iVar7 = 1;
+            iVar9 = 1;
           }
           else {
-            iVar7 = 6;
+            iVar9 = 6;
           }
-          iVar7 = COLS - iVar7;
-          if (iVar7 < 0) {
-            iVar7 = 0;
+          iVar9 = COLS - iVar9;
+          if (iVar9 < 0) {
+            iVar9 = 0;
           }
-          t_buf = newBuffer(iVar7);
+          t_buf = newBuffer(iVar9);
         }
         uncompress_stream(&f,&t_buf->sourcefile);
         uncompressed_file_type(pu.file,&f.ext);
@@ -15833,84 +16271,98 @@ LAB_0805f1f5:
   }
   if (image_source != (char *)0x0) {
     b_1 = (Buffer *)0x0;
-    if ((f.stream)->field_0x14 != '\x04') {
+    if (((f.stream)->base).type != '\x04') {
       f.stream = newEncodedStream(f.stream,f.encoding);
     }
-    iVar7 = save2tmp((URLFile)CONCAT428(f.modtime,
-                                        CONCAT424(f.url,CONCAT420(f.guess_type,
-                                                                  CONCAT416(f.content_encoding,
-                                                                            CONCAT412(f.compression,
-                                                                                      CONCAT48(f.ext
-                                                  ,CONCAT44(f.stream,f._0_4_))))))),image_source);
-    if (iVar7 == 0) {
+    uf_00.stream = f.stream;
+    uf_00.scheme = f.scheme;
+    uf_00.is_cgi = f.is_cgi;
+    uf_00.encoding = f.encoding;
+    uf_00._3_1_ = f._3_1_;
+    uf_00.ext = f.ext;
+    uf_00.compression = f.compression;
+    uf_00.content_encoding = f.content_encoding;
+    uf_00.guess_type = f.guess_type;
+    uf_00.url = f.url;
+    uf_00.modtime = f.modtime;
+    iVar9 = save2tmp(uf_00,image_source);
+    if (iVar9 == 0) {
       if (showLineNum == 0) {
-        iVar7 = 1;
+        iVar9 = 1;
       }
       else {
-        iVar7 = 6;
+        iVar9 = 6;
       }
-      iVar7 = COLS - iVar7;
-      if (iVar7 < 0) {
-        iVar7 = 0;
+      iVar9 = COLS - iVar9;
+      if (iVar9 < 0) {
+        iVar9 = 0;
       }
-      b_1 = newBuffer(iVar7);
+      b_1 = newBuffer(iVar9);
       b_1->sourcefile = image_source;
       b_1->real_type = t;
     }
-    iVar7 = ISclose(f.stream);
-    if (iVar7 == 0) {
+    iVar9 = ISclose(f.stream);
+    if (iVar9 == 0) {
       f.stream = (InputStream)0x0;
     }
-    pBVar12 = b_1;
+    pBVar14 = b_1;
+    cVar2 = current_content_length;
     if (TrapSignal != '\0') {
       if (fmInitialized != '\0') {
         term_raw();
       }
-      pBVar12 = b_1;
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      pBVar14 = b_1;
+      cVar2 = current_content_length;
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
-        pBVar12 = b_1;
+        pBVar14 = b_1;
+        cVar2 = current_content_length;
       }
     }
     goto LAB_0805fa43;
   }
-  iVar7 = is_html_type(t);
-  if (iVar7 == 0) {
-    iVar7 = is_plain_text_type(t);
-    if (iVar7 == 0) {
+  iVar9 = is_html_type(t);
+  if (iVar9 == 0) {
+    iVar9 = is_plain_text_type(t);
+    if (iVar9 == 0) {
       if ((((activeImage != 0) && (displayImage != 0)) && (useExtImageViewer == 0)) &&
          ((w3m_dump & 0xffffffdfU) == 0)) {
-        iVar7 = strncasecmp(t,"image/",6);
-        if (iVar7 == 0) {
+        iVar9 = strncasecmp(t,"image/",6);
+        if (iVar9 == 0) {
           proc = loadImageBuffer;
           goto LAB_0805f744;
         }
       }
       if (w3m_backend == 0) {
         if ((w3m_dump & 0xffffffdfU) != 0) {
-          iVar7 = is_dump_text_type(t);
-          if (iVar7 == 0) {
+          iVar9 = is_dump_text_type(t);
+          if (iVar9 == 0) {
             if ((w3m_dump & 0x20U) != 0) {
-              pBVar12 = (Buffer *)0x0;
+              pBVar14 = (Buffer *)0x0;
+              cVar2 = current_content_length;
               goto LAB_0805fa43;
             }
             goto LAB_0805f744;
           }
         }
         if (do_download == 0) {
-          pcVar8 = pu.file;
+          pcVar10 = pu.file;
           if (pu.real_file != (char *)0x0) {
-            pcVar8 = pu.real_file;
+            pcVar10 = pu.real_file;
           }
-          iVar7 = doExternal((URLFile)CONCAT428(f.modtime,
-                                                CONCAT424(f.url,CONCAT420(f.guess_type,
-                                                                          CONCAT416(f.
-                                                  content_encoding,
-                                                  CONCAT412(f.compression,
-                                                            CONCAT48(f.ext,CONCAT44(f.stream,f._0_4_
-                                                                                   ))))))),pcVar8,t,
-                             &b,t_buf);
-          if (iVar7 != 0) {
+          uf_01.stream = f.stream;
+          uf_01.scheme = f.scheme;
+          uf_01.is_cgi = f.is_cgi;
+          uf_01.encoding = f.encoding;
+          uf_01._3_1_ = f._3_1_;
+          uf_01.ext = f.ext;
+          uf_01.compression = f.compression;
+          uf_01.content_encoding = f.content_encoding;
+          uf_01.guess_type = f.guess_type;
+          uf_01.url = f.url;
+          uf_01.modtime = f.modtime;
+          iVar9 = doExternal(uf_01,pcVar10,t,&b,t_buf);
+          if (iVar9 != 0) {
             if ((b != (Buffer *)0x0) && (b != (Buffer *)0x1)) {
               b->real_scheme = f._0_4_ & 0xff;
               b->real_type = real_type;
@@ -15918,19 +16370,22 @@ LAB_0805f1f5:
                 copyParsedURL(&b->currentURL,&pu);
               }
             }
-            iVar7 = ISclose(f.stream);
-            if (iVar7 == 0) {
+            iVar9 = ISclose(f.stream);
+            if (iVar9 == 0) {
               f.stream = (InputStream)0x0;
             }
-            pBVar12 = b;
+            pBVar14 = b;
+            cVar2 = current_content_length;
             if (TrapSignal != '\0') {
               if (fmInitialized != '\0') {
                 term_raw();
               }
-              pBVar12 = b;
-              if (prevtrap != (anon_subr_void_int *)0x0) {
+              pBVar14 = b;
+              cVar2 = current_content_length;
+              if (prevtrap != (_func_void_int *)0x0) {
                 mySignal(2,prevtrap);
-                pBVar12 = b;
+                pBVar14 = b;
+                cVar2 = current_content_length;
               }
             }
             goto LAB_0805fa43;
@@ -15940,42 +16395,48 @@ LAB_0805f1f5:
           if (fmInitialized != '\0') {
             term_raw();
           }
-          if (prevtrap != (anon_subr_void_int *)0x0) {
+          if (prevtrap != (_func_void_int *)0x0) {
             mySignal(2,prevtrap);
           }
         }
         if (pu.scheme == 4) {
-          iVar7 = ISclose(f.stream);
-          wVar3 = SystemCharset;
-          wVar2 = InnerCharset;
-          if (iVar7 == 0) {
+          iVar9 = ISclose(f.stream);
+          wVar4 = SystemCharset;
+          wVar3 = InnerCharset;
+          if (iVar9 == 0) {
             f.stream = (InputStream)0x0;
           }
-          pcVar8 = guess_save_name((Buffer *)0x0,pu.real_file);
-          p_Var6 = Strnew_charp(pcVar8);
-          p_Var6 = wc_Str_conv(p_Var6,wVar3,wVar2);
-          _doFileCopy(pu.real_file,p_Var6->ptr,1);
+          pcVar10 = guess_save_name((Buffer *)0x0,pu.real_file);
+          p_Var8 = Strnew_charp(pcVar10);
+          p_Var8 = wc_Str_conv(p_Var8,wVar4,wVar3);
+          _doFileCopy(pu.real_file,p_Var8->ptr,1);
         }
         else {
-          if ((DecodeCTE != '\0') && ((f.stream)->field_0x14 != '\x04')) {
+          if ((DecodeCTE != '\0') && (((f.stream)->base).type != '\x04')) {
             f.stream = newEncodedStream(f.stream,f.encoding);
           }
-          pcVar8 = guess_save_name(t_buf,pu.file);
-          iVar7 = doFileSave((URLFile)CONCAT428(f.modtime,
-                                                CONCAT424(f.url,CONCAT420(f.guess_type,
-                                                                          CONCAT416(f.
-                                                  content_encoding,
-                                                  CONCAT412(f.compression,
-                                                            CONCAT48(f.ext,CONCAT44(f.stream,f._0_4_
-                                                                                   ))))))),pcVar8);
-          if (iVar7 == 0) {
+          pcVar10 = guess_save_name(t_buf,pu.file);
+          uf_02.stream = f.stream;
+          uf_02.scheme = f.scheme;
+          uf_02.is_cgi = f.is_cgi;
+          uf_02.encoding = f.encoding;
+          uf_02._3_1_ = f._3_1_;
+          uf_02.ext = f.ext;
+          uf_02.compression = f.compression;
+          uf_02.content_encoding = f.content_encoding;
+          uf_02.guess_type = f.guess_type;
+          uf_02.url = f.url;
+          uf_02.modtime = f.modtime;
+          iVar9 = doFileSave(uf_02,pcVar10);
+          if (iVar9 == 0) {
             UFhalfclose(&f);
           }
           else {
             ISclose(f.stream);
           }
         }
-        pBVar12 = (Buffer *)0x1;
+        pBVar14 = (Buffer *)0x1;
+        cVar2 = current_content_length;
         goto LAB_0805fa43;
       }
     }
@@ -15990,16 +16451,16 @@ LAB_0805f744:
   if ((flag & 2U) != 0) {
     if (t_buf == (Buffer *)0x0) {
       if (showLineNum == 0) {
-        iVar7 = 1;
+        iVar9 = 1;
       }
       else {
-        iVar7 = 6;
+        iVar9 = 6;
       }
-      iVar7 = COLS - iVar7;
-      if (iVar7 < 0) {
-        iVar7 = 0;
+      iVar9 = COLS - iVar9;
+      if (iVar9 < 0) {
+        iVar9 = 0;
       }
-      t_buf = newBuffer(iVar7);
+      t_buf = newBuffer(iVar9);
     }
     t_buf->bufferprop = t_buf->bufferprop | 2;
   }
@@ -16007,9 +16468,9 @@ LAB_0805f744:
   if (pu.real_file != (char *)0x0) {
     pu.file = pu.real_file;
   }
-  b = loadSomething(&f,pu.file,(anon_subr_Buffer_ptr_URLFile_ptr_Buffer_ptr *)proc,t_buf);
-  iVar7 = ISclose(f.stream);
-  if (iVar7 == 0) {
+  b = loadSomething(&f,pu.file,(_func_Buffer_ptr_URLFile_ptr_Buffer_ptr *)proc,t_buf);
+  iVar9 = ISclose(f.stream);
+  if (iVar9 == 0) {
     f.stream = (InputStream)0x0;
   }
   frame_source = 0;
@@ -16019,8 +16480,8 @@ LAB_0805f744:
     if (((b->currentURL).host == (char *)0x0) && ((b->currentURL).file == (char *)0x0)) {
       copyParsedURL(&b->currentURL,&pu);
     }
-    iVar7 = is_html_type(t);
-    if (iVar7 == 0) {
+    iVar9 = is_html_type(t);
+    if (iVar9 == 0) {
       if (w3m_backend == 0) {
         if (proc == loadImageBuffer) {
           b->type = "text/html";
@@ -16030,8 +16491,8 @@ LAB_0805f744:
         }
       }
       else {
-        p_Var6 = Strnew_charp(t);
-        b->type = p_Var6->ptr;
+        p_Var8 = Strnew_charp(t);
+        b->type = p_Var8->ptr;
       }
     }
     else {
@@ -16039,21 +16500,21 @@ LAB_0805f744:
     }
     if (pu.label != (char *)0x0) {
       if (proc == loadHTMLBuffer) {
-        pAVar10 = searchURLLabel(b,pu.label);
-        if (pAVar10 != (Anchor *)0x0) {
-          gotoLine(b,(pAVar10->start).line);
-          pBVar12 = b;
+        pAVar12 = searchURLLabel(b,pu.label);
+        if (pAVar12 != (Anchor *)0x0) {
+          gotoLine(b,(pAVar12->start).line);
+          pBVar14 = b;
           if (label_topline != 0) {
-            pLVar11 = lineSkip(b,b->topLine,b->currentLine->linenumber - b->topLine->linenumber,0);
-            pBVar12->topLine = pLVar11;
+            pLVar13 = lineSkip(b,b->topLine,b->currentLine->linenumber - b->topLine->linenumber,0);
+            pBVar14->topLine = pLVar13;
           }
-          b->pos = (pAVar10->start).pos;
+          b->pos = (pAVar12->start).pos;
           arrangeCursor(b);
         }
       }
       else {
-        iVar7 = atoi(pu.label);
-        gotoRealLine(b,iVar7);
+        iVar9 = atoi(pu.label);
+        gotoRealLine(b,iVar9);
         b->pos = 0;
         arrangeCursor(b);
       }
@@ -16066,23 +16527,29 @@ LAB_0805f744:
     reAnchorNewsheader(b);
   }
   preFormUpdateBuffer(b);
-  pBVar12 = b;
+  pBVar14 = b;
+  cVar2 = current_content_length;
   if (TrapSignal != '\0') {
     if (fmInitialized != '\0') {
       term_raw();
     }
-    pBVar12 = b;
-    if (prevtrap != (anon_subr_void_int *)0x0) {
+    pBVar14 = b;
+    cVar2 = current_content_length;
+    if (prevtrap != (_func_void_int *)0x0) {
       mySignal(2,prevtrap);
-      pBVar12 = b;
+      pBVar14 = b;
+      cVar2 = current_content_length;
     }
   }
 LAB_0805fa43:
-  current_content_length._4_4_ = (undefined4)((ulonglong)current_content_length >> 0x20);
-  return pBVar12;
+  current_content_length._4_4_ = (undefined4)((ulonglong)cVar2 >> 0x20);
+  current_content_length._0_4_ = (undefined4)cVar2;
+  return pBVar14;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * has_hidden_link(readbuffer *obuf,int cmd)
 
@@ -16114,6 +16581,8 @@ char * has_hidden_link(readbuffer *obuf,int cmd)
 
 
 
+// WARNING: Unknown calling convention
+
 void push_link(int cmd,int offset,int pos)
 
 {
@@ -16130,6 +16599,8 @@ void push_link(int cmd,int offset,int pos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_period_char(uchar *ch)
 
@@ -16157,6 +16628,8 @@ int is_period_char(uchar *ch)
 
 
 
+// WARNING: Unknown calling convention
+
 int is_beginning_char(uchar *ch)
 
 {
@@ -16179,6 +16652,8 @@ LAB_0805fb86:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_word_char(uchar *ch)
 
@@ -16230,6 +16705,8 @@ int is_word_char(uchar *ch)
 
 
 
+// WARNING: Unknown calling convention
+
 int is_combining_char(uchar *ch)
 
 {
@@ -16239,6 +16716,8 @@ int is_combining_char(uchar *ch)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_boundary(uchar *ch1,uchar *ch2)
 
@@ -16275,6 +16754,8 @@ int is_boundary(uchar *ch1,uchar *ch2)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_breakpoint(readbuffer *obuf,int tag_length)
 
 {
@@ -16301,6 +16782,8 @@ void set_breakpoint(readbuffer *obuf,int tag_length)
 
 
 
+// WARNING: Unknown calling convention
+
 void back_to_breakpoint(readbuffer *obuf)
 
 {
@@ -16323,6 +16806,8 @@ void back_to_breakpoint(readbuffer *obuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void append_tags(readbuffer *obuf)
 
@@ -16369,6 +16854,8 @@ LAB_08060067:
 
 
 
+// WARNING: Unknown calling convention
+
 void push_tag(readbuffer *obuf,char *cmdname,int cmd)
 
 {
@@ -16395,6 +16882,8 @@ void push_tag(readbuffer *obuf,char *cmdname,int cmd)
 void push_nchars(readbuffer *obuf,int width,char *str,int len,Lineprop mode)
 
 {
+  Lineprop mode_local;
+  
   append_tags(obuf);
   Strcat_charp_n(obuf->line,str,len);
   obuf->pos = obuf->pos + (short)width;
@@ -16407,6 +16896,8 @@ void push_nchars(readbuffer *obuf,int width,char *str,int len,Lineprop mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_breakpoint(readbuffer *obuf,int pre_mode,char *ch)
 
@@ -16436,21 +16927,21 @@ void push_char(readbuffer *obuf,int pre_mode,char ch)
 {
   Str p_Var1;
   int iVar2;
-  char local_10 [8];
+  char ch_local;
   
-  local_10[0] = ch;
-  check_breakpoint(obuf,pre_mode,local_10);
+  ch_local = ch;
+  check_breakpoint(obuf,pre_mode,&ch_local);
   if (obuf->line->area_size <= obuf->line->length + 1) {
     Strgrow(obuf->line);
   }
   p_Var1 = obuf->line;
   iVar2 = p_Var1->length;
-  obuf->line->ptr[iVar2] = local_10[0];
+  obuf->line->ptr[iVar2] = ch_local;
   p_Var1->length = iVar2 + 1;
   obuf->line->ptr[obuf->line->length] = '\0';
   obuf->pos = obuf->pos + 1;
-  Strcopy_charp_n(obuf->prevchar,local_10,1);
-  if (local_10[0] != ' ') {
+  Strcopy_charp_n(obuf->prevchar,&ch_local,1);
+  if (ch_local != ' ') {
     obuf->prev_ctype = 0;
   }
   obuf->flag = obuf->flag | 0x8000;
@@ -16458,6 +16949,8 @@ void push_char(readbuffer *obuf,int pre_mode,char ch)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void push_spaces(readbuffer *obuf,int pre_mode,int width)
 
@@ -16490,6 +16983,8 @@ void push_spaces(readbuffer *obuf,int pre_mode,int width)
 void proc_mchar(readbuffer *obuf,int pre_mode,int width,char **str,Lineprop mode)
 
 {
+  Lineprop mode_local;
+  
   check_breakpoint(obuf,pre_mode,*str);
   obuf->pos = obuf->pos + (short)width;
   Strcat_charp_n(obuf->line,*str,(uint)WTF_LEN_MAP[(byte)**str]);
@@ -16505,6 +17000,8 @@ void proc_mchar(readbuffer *obuf,int pre_mode,int width,char **str,Lineprop mode
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void push_render_image(Str str,int width,int limit,html_feed_environ *h_env)
 
@@ -16526,6 +17023,8 @@ void push_render_image(Str str,int width,int limit,html_feed_environ *h_env)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int sloppy_parse_line(char **str)
 
@@ -16551,6 +17050,8 @@ int sloppy_parse_line(char **str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void passthrough(readbuffer *obuf,char *str,int back)
 
@@ -16599,6 +17100,8 @@ void passthrough(readbuffer *obuf,char *str,int back)
 
 
 
+// WARNING: Unknown calling convention
+
 void fillline(readbuffer *obuf,int indent)
 
 {
@@ -16608,6 +17111,8 @@ void fillline(readbuffer *obuf,int indent)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,int width)
 
@@ -16948,6 +17453,8 @@ void flushline(html_feed_environ *h_env,readbuffer *obuf,int indent,int force,in
 
 
 
+// WARNING: Unknown calling convention
+
 void do_blankline(html_feed_environ *h_env,readbuffer *obuf,int indent,int indent_incr,int width)
 
 {
@@ -16958,6 +17465,8 @@ void do_blankline(html_feed_environ *h_env,readbuffer *obuf,int indent,int inden
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void purgeline(html_feed_environ *h_env)
 
@@ -16987,6 +17496,8 @@ void purgeline(html_feed_environ *h_env)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int close_effect0(readbuffer *obuf,int cmd)
 
@@ -17021,6 +17532,8 @@ int close_effect0(readbuffer *obuf,int cmd)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void close_anchor(html_feed_environ *h_env,readbuffer *obuf)
 
@@ -17083,6 +17596,8 @@ void close_anchor(html_feed_environ *h_env,readbuffer *obuf)
 
 
 
+// WARNING: Unknown calling convention
+
 void save_fonteffect(html_feed_environ *h_env,readbuffer *obuf)
 
 {
@@ -17110,6 +17625,8 @@ void save_fonteffect(html_feed_environ *h_env,readbuffer *obuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void restore_fonteffect(html_feed_environ *h_env,readbuffer *obuf)
 
@@ -17140,6 +17657,8 @@ void restore_fonteffect(html_feed_environ *h_env,readbuffer *obuf)
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_title(parsed_tag *tag)
 
 {
@@ -17148,6 +17667,8 @@ Str process_title(parsed_tag *tag)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_n_title(parsed_tag *tag)
 
@@ -17170,6 +17691,8 @@ Str process_n_title(parsed_tag *tag)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void feed_title(char *str)
 
@@ -17212,6 +17735,8 @@ void feed_title(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_img(parsed_tag *tag,int width)
 
@@ -17678,6 +18203,8 @@ img_end:
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_anchor(parsed_tag *tag,char *tagbuf)
 
 {
@@ -17701,6 +18228,8 @@ Str process_anchor(parsed_tag *tag,char *tagbuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_input(parsed_tag *tag)
 
@@ -18017,6 +18546,8 @@ LAB_08063ce1:
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_select(parsed_tag *tag)
 
 {
@@ -18071,13 +18602,15 @@ Str process_select(parsed_tag *tag)
   else {
     select_str = Strnew();
   }
-  n_selectitem = 0;
   cur_option = (Str)0x0;
   cur_status = 0;
+  n_selectitem = 0;
   return tmp;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_n_select(void)
 
@@ -18110,6 +18643,8 @@ Str process_n_select(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void feed_select(char *str)
 
@@ -18193,6 +18728,8 @@ void feed_select(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void process_option(void)
 
@@ -18284,6 +18821,8 @@ void process_option(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_textarea(parsed_tag *tag,int width)
 
 {
@@ -18348,6 +18887,8 @@ Str process_textarea(parsed_tag *tag,int width)
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_n_textarea(void)
 
 {
@@ -18404,6 +18945,8 @@ Str process_n_textarea(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void feed_textarea(char *str)
 
 {
@@ -18447,6 +18990,8 @@ void feed_textarea(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_hr(parsed_tag *tag,int width,int indent_width)
 
@@ -18493,6 +19038,8 @@ Str process_hr(parsed_tag *tag,int width,int indent_width)
 
 
 
+// WARNING: Unknown calling convention
+
 char * check_charset(char *p)
 
 {
@@ -18506,6 +19053,8 @@ char * check_charset(char *p)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * check_accept_charset(char *ac)
 
@@ -18536,6 +19085,8 @@ char * check_accept_charset(char *ac)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str process_form_int(parsed_tag *tag,int fid)
 
@@ -18636,6 +19187,8 @@ Str process_form_int(parsed_tag *tag,int fid)
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_form(parsed_tag *tag)
 
 {
@@ -18647,6 +19200,8 @@ Str process_form(parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 Str process_n_form(void)
 
 {
@@ -18657,6 +19212,8 @@ Str process_n_form(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void clear_ignore_p_flag(int cmd,readbuffer *obuf)
 
@@ -18676,6 +19233,8 @@ void clear_ignore_p_flag(int cmd,readbuffer *obuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_alignment(readbuffer *obuf,parsed_tag *tag)
 
@@ -18711,6 +19270,8 @@ void set_alignment(readbuffer *obuf,parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 void process_idattr(readbuffer *obuf,int cmd,parsed_tag *tag)
 
 {
@@ -18743,6 +19304,8 @@ void process_idattr(readbuffer *obuf,int cmd,parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 int ul_type(parsed_tag *tag,int default_type)
 
 {
@@ -18772,6 +19335,8 @@ int ul_type(parsed_tag *tag,int default_type)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int getMetaRefreshParam(char *q,Str *refresh_uri)
 
@@ -18826,6 +19391,8 @@ int getMetaRefreshParam(char *q,Str *refresh_uri)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int HTMLtagproc1(parsed_tag *tag,html_feed_environ *h_env)
 
@@ -20219,6 +20786,8 @@ LAB_0806955d:
 
 
 
+// WARNING: Unknown calling convention
+
 Str textlist_feed(void)
 
 {
@@ -20238,6 +20807,8 @@ Str textlist_feed(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ex_efct(int ex)
 
@@ -20264,7 +20835,9 @@ int ex_efct(int ex)
 
 
 
-void HTMLlineproc2body(Buffer *buf_1,anon_subr_Str_varargs *feed,int llimit)
+// WARNING: Unknown calling convention
+
+void HTMLlineproc2body(Buffer *buf,_func_Str_varargs *feed,int llimit)
 
 {
   Lineprop *pLVar1;
@@ -20274,23 +20847,24 @@ void HTMLlineproc2body(Buffer *buf_1,anon_subr_Str_varargs *feed,int llimit)
   wc_ces wVar5;
   FormItemList *fi;
   wc_ces wVar6;
-  ushort uVar7;
-  uint uVar8;
-  int iVar9;
-  HmarkerList *pHVar10;
-  char *pcVar11;
-  ImageCache *pIVar12;
-  GeneralList *pGVar13;
-  frameset *pfVar14;
-  ParsedURL *pPVar15;
-  AlarmEvent *pAVar16;
+  frame_body *pfVar7;
+  ushort uVar8;
+  uint uVar9;
+  int iVar10;
+  int iVar11;
+  HmarkerList *pHVar12;
+  char *pcVar13;
+  ImageCache *pIVar14;
+  GeneralList *pGVar15;
+  frameset *pfVar16;
+  ParsedURL *pPVar17;
+  AlarmEvent *pAVar18;
   Str value;
-  Str p_Var17;
-  int iVar18;
-  AnchorList *pAVar19;
-  FormList *pFVar20;
-  uint uVar21;
-  bool bVar22;
+  Str p_Var19;
+  AnchorList *pAVar20;
+  FormList *pFVar21;
+  uint uVar22;
+  bool bVar23;
   ParsedURL u;
   frameset *frameset_s [10];
   int selected;
@@ -20298,7 +20872,7 @@ void HTMLlineproc2body(Buffer *buf_1,anon_subr_Str_varargs *feed,int llimit)
   FormItemList *item_1;
   int refresh_interval;
   Str tmp;
-  frame_body *element;
+  frameset_element element;
   MapArea *a;
   MapList *m;
   int hpos;
@@ -20318,7 +20892,7 @@ void HTMLlineproc2body(Buffer *buf_1,anon_subr_Str_varargs *feed,int llimit)
   int len_2;
   int len_1;
   int len;
-  char **buf;
+  char **buf_1;
   Anchor **a_select;
   Anchor **a_textarea;
   int internal;
@@ -20384,16 +20958,16 @@ LAB_0806bffb:
         forms[form_id]->next = forms[form_id + -1];
       }
       if (form_max < 0) {
-        pFVar20 = (FormList *)0x0;
+        pFVar21 = (FormList *)0x0;
       }
       else {
-        pFVar20 = forms[form_max];
+        pFVar21 = forms[form_max];
       }
-      buf_1->formlist = pFVar20;
+      buf->formlist = pFVar21;
       if (n_textarea != 0) {
-        addMultirowsForm(buf_1,buf_1->formitem);
+        addMultirowsForm(buf,buf->formitem);
       }
-      addMultirowsImg(buf_1,buf_1->img);
+      addMultirowsImg(buf,buf->img);
       return;
     }
     if ((n_textarea < 0) || (*line->ptr == '<')) {
@@ -20413,13 +20987,13 @@ LAB_0806bffb:
                  (Lineprop *)GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
           }
           mode = (ushort)WTF_TYPE_MAP[(byte)*str] << 8;
-          uVar21 = (uint)effect;
-          uVar8 = ex_efct((uint)ex_effect);
-          if ((((uVar8 | uVar21) & 0x8000) == 0) || (*str == '<')) {
+          uVar22 = (uint)effect;
+          uVar9 = ex_efct((uint)ex_effect);
+          if ((((uVar9 | uVar22) & 0x8000) == 0) || (*str == '<')) {
             if ((mode == 0x100) || (mode == 0x2000)) {
               pLVar1 = HTMLlineproc2body::outp + pos;
-              iVar9 = ex_efct((uint)ex_effect);
-              *pLVar1 = effect | (ushort)iVar9;
+              iVar10 = ex_efct((uint)ex_effect);
+              *pLVar1 = effect | (ushort)iVar10;
               HTMLlineproc2body::outc[pos] = ' ';
               pos = pos + 1;
               str = str + 1;
@@ -20441,8 +21015,8 @@ LAB_0806bffb:
                     mode = (ushort)bVar4 << 8;
                     if ((bVar4 == 1) || (bVar4 == 0x20)) {
                       pLVar1 = HTMLlineproc2body::outp + pos;
-                      iVar9 = ex_efct((uint)ex_effect);
-                      *pLVar1 = effect | (ushort)iVar9;
+                      iVar10 = ex_efct((uint)ex_effect);
+                      *pLVar1 = effect | (ushort)iVar10;
                       HTMLlineproc2body::outc[pos] = ' ';
                       pos = pos + 1;
                       p = p + 1;
@@ -20450,16 +21024,16 @@ LAB_0806bffb:
                     else if ((mode & 0x1000) == 0) {
                       len_2 = (int)WTF_LEN_MAP[(byte)*p];
                       pLVar1 = HTMLlineproc2body::outp + pos;
-                      uVar7 = effect | mode;
-                      iVar9 = ex_efct((uint)ex_effect);
-                      *pLVar1 = (ushort)iVar9 | uVar7;
+                      uVar8 = effect | mode;
+                      iVar10 = ex_efct((uint)ex_effect);
+                      *pLVar1 = (ushort)iVar10 | uVar8;
                       HTMLlineproc2body::outc[pos] = *p;
                       p = p + 1;
                       pos = pos + 1;
                       len_2 = len_2 + -1;
                       if (len_2 != 0) {
-                        mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
-                        while (bVar22 = len_2 != 0, len_2 = len_2 + -1, bVar22) {
+                        mode = mode & 63999 | 0x400;
+                        while (bVar23 = len_2 != 0, len_2 = len_2 + -1, bVar23) {
                           if (HTMLlineproc2body::out_size <= pos + 1) {
                             HTMLlineproc2body::out_size = (pos * 3) / 2;
                             HTMLlineproc2body::outc =
@@ -20471,9 +21045,9 @@ LAB_0806bffb:
                             ;
                           }
                           pLVar1 = HTMLlineproc2body::outp + pos;
-                          uVar7 = effect | mode;
-                          iVar9 = ex_efct((uint)ex_effect);
-                          *pLVar1 = (ushort)iVar9 | uVar7;
+                          uVar8 = effect | mode;
+                          iVar10 = ex_efct((uint)ex_effect);
+                          *pLVar1 = (ushort)iVar10 | uVar8;
                           HTMLlineproc2body::outc[pos] = *p;
                           p = p + 1;
                           pos = pos + 1;
@@ -20482,8 +21056,8 @@ LAB_0806bffb:
                     }
                     else {
                       pLVar1 = HTMLlineproc2body::outp + pos;
-                      iVar9 = ex_efct((uint)ex_effect);
-                      *pLVar1 = effect | (ushort)iVar9;
+                      iVar10 = ex_efct((uint)ex_effect);
+                      *pLVar1 = effect | (ushort)iVar10;
                       HTMLlineproc2body::outc[pos] = ' ';
                       pos = pos + 1;
                       p = p + WTF_LEN_MAP[(byte)*p];
@@ -20496,93 +21070,94 @@ LAB_0806bffb:
                     switch(tag->tagid) {
                     case '\x01':
                       if ((renderFrameSet != (frameset *)0x0) &&
-                         (iVar9 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset, iVar9 != 0
-                         )) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(p);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        p = url_quote(p_Var17->ptr);
+                         (iVar10 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset,
+                         iVar10 != 0)) {
+                        wVar6 = buf->document_charset;
+                        p_Var19 = Strnew_charp(p);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        p = url_quote(p_Var19->ptr);
                         if (((idFrame == (frameset_element *)0x0) ||
-                            (iVar9 = strcmp(*(char **)(*idFrame + 4),p), iVar9 != 0)) &&
+                            (iVar10 = strcmp(idFrame->element->name,p), iVar10 != 0)) &&
                            ((idFrame = search_frame(renderFrameSet,p),
-                            (char **)idFrame != (char **)0x0 && (*(char *)*idFrame != '\x01')))) {
+                            idFrame != (frameset_element *)0x0 && (idFrame->element->attr != '\x01')
+                            ))) {
                           idFrame = (frameset_element *)0x0;
                         }
                       }
                       s = (char *)0x0;
                       r = (char *)0x0;
                       p = (char *)0x0;
-                      q = buf_1->baseTarget;
+                      q = buf->baseTarget;
                       t = "";
                       hseq = 0;
                       id = (char *)0x0;
-                      iVar9 = parsedtag_get_value(tag,0x19,&id);
+                      iVar10 = parsedtag_get_value(tag,0x19,&id);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(id);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        id = url_quote(p_Var17->ptr);
-                        iVar9 = currentLn(buf_1);
-                        registerName(buf_1,id,iVar9,pos);
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        p_Var19 = Strnew_charp(id);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        id = url_quote(p_Var19->ptr);
+                        iVar10 = currentLn(buf);
+                        registerName(buf,id,iVar10,pos);
                       }
-                      iVar9 = parsedtag_get_value(tag,0x12,&p);
+                      iVar10 = parsedtag_get_value(tag,0x12,&p);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        pcVar11 = remove_space(p);
-                        p_Var17 = Strnew_charp(pcVar11);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        p = url_quote(p_Var17->ptr);
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        pcVar13 = remove_space(p);
+                        p_Var19 = Strnew_charp(pcVar13);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        p = url_quote(p_Var19->ptr);
                       }
-                      iVar9 = parsedtag_get_value(tag,0x20,&q);
+                      iVar10 = parsedtag_get_value(tag,0x20,&q);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(q);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        q = url_quote(p_Var17->ptr);
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        p_Var19 = Strnew_charp(q);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        q = url_quote(p_Var19->ptr);
                       }
-                      iVar9 = parsedtag_get_value(tag,0x47,&r);
+                      iVar10 = parsedtag_get_value(tag,0x47,&r);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(r);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        r = url_quote(p_Var17->ptr);
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        p_Var19 = Strnew_charp(r);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        r = url_quote(p_Var19->ptr);
                       }
                       parsedtag_get_value(tag,0x31,&s);
                       parsedtag_get_value(tag,0x32,&t);
                       parsedtag_get_value(tag,0x45,&hseq);
                       if (hseq < 1) {
-                        if ((((hseq < 0) && (h_1 = ~hseq, buf_1->hmarklist != (HmarkerList *)0x0))
-                            && (h_1 < buf_1->hmarklist->nmark)) &&
-                           (buf_1->hmarklist->marks[h_1].invalid != 0)) {
-                          buf_1->hmarklist->marks[h_1].pos = pos;
-                          pBVar2 = buf_1->hmarklist->marks + h_1;
-                          iVar9 = currentLn(buf_1);
-                          pBVar2->line = iVar9;
-                          buf_1->hmarklist->marks[h_1].invalid = 0;
+                        if ((((hseq < 0) && (h_1 = ~hseq, buf->hmarklist != (HmarkerList *)0x0)) &&
+                            (h_1 < buf->hmarklist->nmark)) &&
+                           (buf->hmarklist->marks[h_1].invalid != 0)) {
+                          buf->hmarklist->marks[h_1].pos = pos;
+                          pBVar2 = buf->hmarklist->marks + h_1;
+                          iVar10 = currentLn(buf);
+                          pBVar2->line = iVar10;
+                          buf->hmarklist->marks[h_1].invalid = 0;
                           hseq = -hseq;
                         }
                       }
                       else {
-                        iVar9 = hseq + -1;
-                        iVar18 = currentLn(buf_1);
-                        pHVar10 = putHmarker(buf_1->hmarklist,iVar18,pos,iVar9);
-                        buf_1->hmarklist = pHVar10;
+                        iVar10 = hseq + -1;
+                        iVar11 = currentLn(buf);
+                        pHVar12 = putHmarker(buf->hmarklist,iVar11,pos,iVar10);
+                        buf->hmarklist = pHVar12;
                       }
                       if ((id != (char *)0x0) && (idFrame != (frameset_element *)0x0)) {
-                        iVar9 = *idFrame;
-                        iVar18 = currentLn(buf_1);
-                        pAVar19 = putAnchor(*(AnchorList **)(*idFrame + 0x1c),id,(char *)0x0,
-                                            (Anchor **)0x0,(char *)0x0,(char *)0x0,'\0',iVar18,pos);
-                        *(AnchorList **)(iVar9 + 0x1c) = pAVar19;
+                        pfVar7 = idFrame->body;
+                        iVar10 = currentLn(buf);
+                        pAVar20 = putAnchor(idFrame->body->nameList,id,(char *)0x0,(Anchor **)0x0,
+                                            (char *)0x0,(char *)0x0,'\0',iVar10,pos);
+                        pfVar7->nameList = pAVar20;
                       }
                       if (p != (char *)0x0) {
                         effect = effect | 0x10;
-                        iVar9 = currentLn(buf_1);
-                        a_href = registerHref(buf_1,p,q,r,s,*t,iVar9,pos);
+                        iVar10 = currentLn(buf);
+                        a_href = registerHref(buf,p,q,r,s,*t,iVar10,pos);
                         a_href->hseq = ((hseq ^ hseq >> 0x1f) - (hseq >> 0x1f)) + -1;
                         a_href->slave = hseq < 1;
                       }
@@ -20590,14 +21165,14 @@ LAB_0806bffb:
                     case '\x02':
                       effect = effect & 0xffef;
                       if (a_href != (Anchor *)0x0) {
-                        iVar9 = currentLn(buf_1);
-                        (a_href->end).line = iVar9;
+                        iVar10 = currentLn(buf);
+                        (a_href->end).line = iVar10;
                         (a_href->end).pos = pos;
                         if (((a_href->start).line == (a_href->end).line) &&
                            ((a_href->start).pos == (a_href->end).pos)) {
-                          if ((buf_1->hmarklist != (HmarkerList *)0x0) &&
-                             (a_href->hseq < buf_1->hmarklist->nmark)) {
-                            buf_1->hmarklist->marks[a_href->hseq].invalid = 1;
+                          if ((buf->hmarklist != (HmarkerList *)0x0) &&
+                             (a_href->hseq < buf->hmarklist->nmark)) {
+                            buf->hmarklist->marks[a_href->hseq].invalid = 1;
                           }
                           a_href->hseq = -1;
                         }
@@ -20616,51 +21191,52 @@ LAB_0806bffb:
                       parsedtag_get_value(tag,0x13,&p);
                       parsedtag_get_value(tag,0xf,&q);
                       if ((((p != (char *)0x0) && (q != (char *)0x0)) &&
-                          (iVar9 = strcasecmp(p,"refresh"), iVar9 == 0)) && (MetaRefresh != '\0')) {
+                          (iVar10 = strcasecmp(p,"refresh"), iVar10 == 0)) && (MetaRefresh != '\0'))
+                      {
                         tmp = (Str)0x0;
-                        iVar9 = getMetaRefreshParam(q,&tmp);
+                        iVar10 = getMetaRefreshParam(q,&tmp);
                         wVar5 = InnerCharset;
                         if (tmp == (Str)0x0) {
-                          if (0 < iVar9) {
-                            pAVar16 = setAlarmEvent(buf_1->event,iVar9,2,0x70,(void *)0x0);
-                            buf_1->event = pAVar16;
+                          if (0 < iVar10) {
+                            pAVar18 = setAlarmEvent(buf->event,iVar10,2,0x70,(void *)0x0);
+                            buf->event = pAVar18;
                           }
                         }
                         else {
-                          wVar6 = buf_1->document_charset;
-                          pcVar11 = remove_space(tmp->ptr);
-                          p_Var17 = Strnew_charp(pcVar11);
-                          p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                          p = url_quote(p_Var17->ptr);
-                          pAVar16 = setAlarmEvent(buf_1->event,iVar9,3,0x25,p);
-                          buf_1->event = pAVar16;
+                          wVar6 = buf->document_charset;
+                          pcVar13 = remove_space(tmp->ptr);
+                          p_Var19 = Strnew_charp(pcVar13);
+                          p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                          p = url_quote(p_Var19->ptr);
+                          pAVar18 = setAlarmEvent(buf->event,iVar10,3,0x25,p);
+                          buf->event = pAVar18;
                         }
                       }
                       break;
                     case '#':
                       if ((-1 < frameset_sp) && (frameset_sp < 10)) {
-                        element = newFrame(tag,buf_1);
+                        element.body = newFrame(tag,buf);
                         addFrameSetElement(frameset_s[frameset_sp],element);
                       }
                       break;
                     case '$':
-                      iVar9 = frameset_sp + 1;
-                      frameset_sp = iVar9;
-                      if (iVar9 < 10) {
-                        pfVar14 = newFrameSet(tag);
-                        frameset_s[iVar9] = pfVar14;
+                      iVar10 = frameset_sp + 1;
+                      frameset_sp = iVar10;
+                      if (iVar10 < 10) {
+                        pfVar16 = newFrameSet(tag);
+                        frameset_s[iVar10] = pfVar16;
                         if (frameset_s[frameset_sp] != (frameset *)0x0) {
                           if (frameset_sp == 0) {
-                            if (buf_1->frameset == (frameset *)0x0) {
-                              buf_1->frameset = frameset_s[0];
+                            if (buf->frameset == (frameset *)0x0) {
+                              buf->frameset = frameset_s[0];
                             }
                             else {
-                              pushFrameTree(&buf_1->frameQ,frameset_s[0],(Buffer *)0x0);
+                              pushFrameTree(&buf->frameQ,frameset_s[0],(Buffer *)0x0);
                             }
                           }
                           else {
-                            addFrameSetElement(frameset_s[frameset_sp + -1],frameset_s[frameset_sp])
-                            ;
+                            addFrameSetElement(frameset_s[frameset_sp + -1],
+                                               *(frameset_element *)(frameset_s + frameset_sp));
                           }
                         }
                       }
@@ -20671,26 +21247,26 @@ LAB_0806bffb:
                       }
                       break;
                     case '7':
-                      iVar9 = parsedtag_get_value(tag,0x19,&p);
-                      if (iVar9 != 0) {
+                      iVar10 = parsedtag_get_value(tag,0x19,&p);
+                      if (iVar10 != 0) {
                         m = (MapList *)GC_malloc(0xc);
-                        p_Var17 = Strnew_charp(p);
-                        m->name = p_Var17;
-                        pGVar13 = newGeneralList();
-                        m->area = pGVar13;
-                        m->next = buf_1->maplist;
-                        buf_1->maplist = m;
+                        p_Var19 = Strnew_charp(p);
+                        m->name = p_Var19;
+                        pGVar15 = newGeneralList();
+                        m->area = pGVar15;
+                        m->next = buf->maplist;
+                        buf->maplist = m;
                       }
                       break;
                     case '9':
-                      if ((buf_1->maplist != (MapList *)0x0) &&
-                         (iVar9 = parsedtag_get_value(tag,0x12,&p), wVar5 = InnerCharset, iVar9 != 0
-                         )) {
-                        wVar6 = buf_1->document_charset;
-                        pcVar11 = remove_space(p);
-                        p_Var17 = Strnew_charp(pcVar11);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        p = url_quote(p_Var17->ptr);
+                      if ((buf->maplist != (MapList *)0x0) &&
+                         (iVar10 = parsedtag_get_value(tag,0x12,&p), wVar5 = InnerCharset,
+                         iVar10 != 0)) {
+                        wVar6 = buf->document_charset;
+                        pcVar13 = remove_space(p);
+                        p_Var19 = Strnew_charp(pcVar13);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        p = url_quote(p_Var19->ptr);
                         t = (char *)0x0;
                         parsedtag_get_value(tag,0x20,&t);
                         q = "";
@@ -20700,32 +21276,32 @@ LAB_0806bffb:
                         parsedtag_get_value(tag,0x2c,&r);
                         parsedtag_get_value(tag,0x2d,&s);
                         a = newMapArea(p,t,q,r,s);
-                        pushValue(buf_1->maplist->area,a);
+                        pushValue(buf->maplist->area,a);
                       }
                       break;
                     case '<':
-                      iVar9 = parsedtag_get_value(tag,0x12,&p);
+                      iVar10 = parsedtag_get_value(tag,0x12,&p);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        pcVar11 = remove_space(p);
-                        p_Var17 = Strnew_charp(pcVar11);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        p = url_quote(p_Var17->ptr);
-                        if (buf_1->baseURL == (ParsedURL *)0x0) {
-                          pPVar15 = (ParsedURL *)GC_malloc(0x28);
-                          buf_1->baseURL = pPVar15;
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        pcVar13 = remove_space(p);
+                        p_Var19 = Strnew_charp(pcVar13);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        p = url_quote(p_Var19->ptr);
+                        if (buf->baseURL == (ParsedURL *)0x0) {
+                          pPVar17 = (ParsedURL *)GC_malloc(0x28);
+                          buf->baseURL = pPVar17;
                         }
-                        parseURL(p,buf_1->baseURL,(ParsedURL *)0x0);
+                        parseURL(p,buf->baseURL,(ParsedURL *)0x0);
                       }
-                      iVar9 = parsedtag_get_value(tag,0x20,&p);
+                      iVar10 = parsedtag_get_value(tag,0x20,&p);
                       wVar5 = InnerCharset;
-                      if (iVar9 != 0) {
-                        wVar6 = buf_1->document_charset;
-                        p_Var17 = Strnew_charp(p);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                        pcVar11 = url_quote(p_Var17->ptr);
-                        buf_1->baseTarget = pcVar11;
+                      if (iVar10 != 0) {
+                        wVar6 = buf->document_charset;
+                        p_Var19 = Strnew_charp(p);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                        pcVar13 = url_quote(p_Var19->ptr);
+                        buf->baseTarget = pcVar13;
                       }
                       break;
                     case '?':
@@ -20741,7 +21317,7 @@ LAB_0806bffb:
                       effect = effect & 0xfffd;
                       break;
                     case 'h':
-                      addLink(buf_1,tag);
+                      addLink(buf,tag);
                       break;
                     case 'i':
                       ex_effect = ex_effect | 4;
@@ -20756,8 +21332,8 @@ LAB_0806bffb:
                       ex_effect = ex_effect & 0xfffe;
                       break;
                     case 'x':
-                      iVar9 = parsedtag_get_value(tag,0x48,&n_select);
-                      if ((iVar9 == 0) || (max_select <= n_select)) {
+                      iVar10 = parsedtag_get_value(tag,0x48,&n_select);
+                      if ((iVar10 == 0) || (max_select <= n_select)) {
                         n_select = -1;
                       }
                       else {
@@ -20783,55 +21359,55 @@ LAB_0806bffb:
                         parsedtag_get_value(tag,0x24,&p);
                         if (((tag->map == (uchar *)0x0) || (tag->map[0x29] == 'K')) ||
                            (tag->attrid[tag->map[0x29]] == '\0')) {
-                          iVar9 = 0;
+                          iVar10 = 0;
                         }
                         else {
-                          iVar9 = 1;
+                          iVar10 = 1;
                         }
-                        p_Var17 = Strnew_charp(q);
+                        p_Var19 = Strnew_charp(q);
                         value = Strnew_charp(p);
-                        addSelectOption(select_option + n_select,value,p_Var17,iVar9);
+                        addSelectOption(select_option + n_select,value,p_Var19,iVar10);
                       }
                       break;
                     case '{':
-                      iVar9 = parsedtag_get_value(tag,0x49,&n_textarea);
-                      if ((iVar9 == 0) || (max_textarea <= n_textarea)) {
+                      iVar10 = parsedtag_get_value(tag,0x49,&n_textarea);
+                      if ((iVar10 == 0) || (max_textarea <= n_textarea)) {
                         n_textarea = -1;
                       }
                       else {
                         pp_Var3 = textarea_str + n_textarea;
-                        p_Var17 = Strnew();
-                        *pp_Var3 = p_Var17;
+                        p_Var19 = Strnew();
+                        *pp_Var3 = p_Var19;
                       }
                       break;
                     case '|':
                       if (-1 < n_textarea) {
-                        pcVar11 = a_textarea[n_textarea]->url;
-                        *(Str *)(pcVar11 + 8) = textarea_str[n_textarea];
-                        *(undefined4 *)(pcVar11 + 0xc) = *(undefined4 *)(pcVar11 + 8);
+                        pcVar13 = a_textarea[n_textarea]->url;
+                        *(Str *)(pcVar13 + 8) = textarea_str[n_textarea];
+                        *(undefined4 *)(pcVar13 + 0xc) = *(undefined4 *)(pcVar13 + 8);
                       }
                       break;
                     case '~':
                       effect = effect | 0x8000;
-                      iVar9 = parsedtag_get_value(tag,0x21,&p);
-                      if (iVar9 != 0) {
-                        iVar9 = atoi(p);
-                        symbol = (char)iVar9;
+                      iVar10 = parsedtag_get_value(tag,0x21,&p);
+                      if (iVar10 != 0) {
+                        iVar10 = atoi(p);
+                        symbol = (char)iVar10;
                       }
                       break;
                     case '\x7f':
                       effect = effect & 0x7fff;
                       break;
                     case 0x82:
-                      iVar9 = parsedtag_get_value(tag,0x31,&p);
-                      if (iVar9 != 0) {
-                        pcVar11 = html_unquote(p);
-                        buf_1->buffername = pcVar11;
+                      iVar10 = parsedtag_get_value(tag,0x31,&p);
+                      if (iVar10 != 0) {
+                        pcVar13 = html_unquote(p);
+                        buf->buffername = pcVar13;
                       }
                       break;
                     case 0x83:
-                      iVar9 = parsedtag_get_value(tag,0x41,&form_id);
-                      if (iVar9 != 0) {
+                      iVar10 = parsedtag_get_value(tag,0x41,&form_id);
+                      if (iVar10 != 0) {
                         process_form_int(tag,form_id);
                       }
                       break;
@@ -20854,31 +21430,31 @@ LAB_0806bffb:
                           if (*str == '[') {
                             hpos = pos + 1;
                           }
-                          iVar9 = hseq + -1;
-                          iVar18 = currentLn(buf_1);
-                          pHVar10 = putHmarker(buf_1->hmarklist,iVar18,hpos,iVar9);
-                          buf_1->hmarklist = pHVar10;
+                          iVar10 = hseq + -1;
+                          iVar11 = currentLn(buf);
+                          pHVar12 = putHmarker(buf->hmarklist,iVar11,hpos,iVar10);
+                          buf->hmarklist = pHVar12;
                         }
                         if (form->target == (char *)0x0) {
-                          form->target = buf_1->baseTarget;
+                          form->target = buf->baseTarget;
                         }
                         if (((a_textarea != (Anchor **)0x0) &&
-                            (iVar9 = parsedtag_get_value(tag,0x49,&textareanumber), iVar9 != 0)) &&
-                           (max_textarea <= textareanumber)) {
+                            (iVar10 = parsedtag_get_value(tag,0x49,&textareanumber), iVar10 != 0))
+                           && (max_textarea <= textareanumber)) {
                           max_textarea = textareanumber * 2;
                           textarea_str = (Str *)GC_realloc(textarea_str,textareanumber << 3);
                           a_textarea = (Anchor **)GC_realloc(a_textarea,max_textarea << 2);
                         }
                         if (((a_select != (Anchor **)0x0) &&
-                            (iVar9 = parsedtag_get_value(tag,0x48,&tmp), iVar9 != 0)) &&
+                            (iVar10 = parsedtag_get_value(tag,0x48,&tmp), iVar10 != 0)) &&
                            (max_select <= (int)tmp)) {
                           max_select = (int)tmp * 2;
                           select_option =
                                (FormSelectOption *)GC_realloc(select_option,(int)tmp << 4);
                           a_select = (Anchor **)GC_realloc(a_select,max_select << 2);
                         }
-                        iVar9 = currentLn(buf_1);
-                        a_form = registerForm(buf_1,form,tag,iVar9,pos);
+                        iVar10 = currentLn(buf);
+                        a_form = registerForm(buf,form,tag,iVar10,pos);
                         if ((a_textarea != (Anchor **)0x0) && (-1 < textareanumber)) {
                           a_textarea[textareanumber] = a_form;
                         }
@@ -20887,8 +21463,8 @@ LAB_0806bffb:
                         }
                         if (a_form == (Anchor *)0x0) goto switchD_0806a4ec_caseD_87;
                         a_form->hseq = hseq + -1;
-                        iVar9 = currentLn(buf_1);
-                        a_form->y = (short)iVar9 - (short)top;
+                        iVar10 = currentLn(buf);
+                        a_form->y = (short)iVar10 - (short)top;
                         a_form->rows = (short)top + (short)bottom + 1;
                         if (((tag->map == (uchar *)0x0) || (tag->map[0x46] == 'K')) ||
                            (tag->attrid[tag->map[0x46]] == '\0')) {
@@ -20900,8 +21476,8 @@ LAB_0806bffb:
 switchD_0806a4ec_caseD_87:
                       effect = effect & 0xffbf;
                       if (a_form != (Anchor *)0x0) {
-                        iVar9 = currentLn(buf_1);
-                        (a_form->end).line = iVar9;
+                        iVar10 = currentLn(buf);
+                        (a_form->end).line = iVar10;
                         (a_form->end).pos = pos;
                         if (((a_form->start).line == (a_form->end).line) &&
                            ((a_form->start).pos == (a_form->end).pos)) {
@@ -20911,8 +21487,8 @@ switchD_0806a4ec_caseD_87:
                       a_form = (Anchor *)0x0;
                       break;
                     case 0x88:
-                      iVar9 = parsedtag_get_value(tag,0x1f,&p);
-                      if (iVar9 != 0) {
+                      iVar10 = parsedtag_get_value(tag,0x1f,&p);
+                      if (iVar10 != 0) {
                         w = -1;
                         h = -1;
                         iseq = 0;
@@ -20935,27 +21511,27 @@ switchD_0806a4ec_caseD_87:
                         q = (char *)0x0;
                         parsedtag_get_value(tag,0x22,&q);
                         if (0 < iseq) {
-                          iVar9 = iseq + -1;
-                          iVar18 = currentLn(buf_1);
-                          pHVar10 = putHmarker(buf_1->imarklist,iVar18,pos,iVar9);
-                          buf_1->imarklist = pHVar10;
+                          iVar10 = iseq + -1;
+                          iVar11 = currentLn(buf);
+                          pHVar12 = putHmarker(buf->imarklist,iVar11,pos,iVar10);
+                          buf->imarklist = pHVar12;
                         }
                         s = (char *)0x0;
                         parsedtag_get_value(tag,0x31,&s);
                         wVar6 = InnerCharset;
-                        wVar5 = buf_1->document_charset;
-                        pcVar11 = remove_space(p);
-                        p_Var17 = Strnew_charp(pcVar11);
-                        p_Var17 = wc_Str_conv_strict(p_Var17,wVar6,wVar5);
-                        p = url_quote(p_Var17->ptr);
-                        iVar9 = currentLn(buf_1);
-                        a_img = registerImg(buf_1,p,s,iVar9,pos);
+                        wVar5 = buf->document_charset;
+                        pcVar13 = remove_space(p);
+                        p_Var19 = Strnew_charp(pcVar13);
+                        p_Var19 = wc_Str_conv_strict(p_Var19,wVar6,wVar5);
+                        p = url_quote(p_Var19->ptr);
+                        iVar10 = currentLn(buf);
+                        a_img = registerImg(buf,p,s,iVar10,pos);
                         a_img->hseq = iseq;
                         a_img->image = (Image *)0x0;
                         if (iseq < 1) {
                           if (iseq < 0) {
-                            po = buf_1->imarklist->marks + (-1 - iseq);
-                            a_1 = retrieveAnchor(buf_1->img,po->line,po->pos);
+                            po = buf->imarklist->marks + (-1 - iseq);
+                            a_1 = retrieveAnchor(buf->img,po->line,po->pos);
                             if (a_1 != (Anchor *)0x0) {
                               a_img->url = a_1->url;
                               a_img->image = a_1->image;
@@ -20966,28 +21542,28 @@ switchD_0806a4ec_caseD_87:
                           parseURL2(a_img->url,&u,cur_baseURL);
                           image = (Image *)GC_malloc(0x24);
                           a_img->image = image;
-                          p_Var17 = parsedURL2Str(&u);
-                          image->url = p_Var17->ptr;
-                          pcVar11 = uncompressed_file_type(u.file,&image->ext);
-                          if (pcVar11 == (char *)0x0) {
-                            pcVar11 = filename_extension(u.file,1);
-                            image->ext = pcVar11;
+                          p_Var19 = parsedURL2Str(&u);
+                          image->url = p_Var19->ptr;
+                          pcVar13 = uncompressed_file_type(u.file,&image->ext);
+                          if (pcVar13 == (char *)0x0) {
+                            pcVar13 = filename_extension(u.file,1);
+                            image->ext = pcVar13;
                           }
                           image->cache = (ImageCache *)0x0;
-                          iVar9 = w;
+                          iVar10 = w;
                           if (0x800 < w) {
-                            iVar9 = 0x800;
+                            iVar10 = 0x800;
                           }
-                          image->width = (short)iVar9;
-                          iVar9 = h;
+                          image->width = (short)iVar10;
+                          iVar10 = h;
                           if (0x800 < h) {
-                            iVar9 = 0x800;
+                            iVar10 = 0x800;
                           }
-                          image->height = (short)iVar9;
+                          image->height = (short)iVar10;
                           image->xoffset = (short)tmp;
                           image->yoffset = (short)textareanumber;
-                          iVar9 = currentLn(buf_1);
-                          image->y = (short)iVar9 - (short)bottom;
+                          iVar10 = currentLn(buf);
+                          image->y = (short)iVar10 - (short)bottom;
                           if ((image->xoffset < 0) && (pos == 0)) {
                             image->xoffset = 0;
                           }
@@ -20998,8 +21574,8 @@ switchD_0806a4ec_caseD_87:
                           image->map = q;
                           image->ismap = (char)ismap;
                           image->touch = 0;
-                          pIVar12 = getImage(image,cur_baseURL,1);
-                          image->cache = pIVar12;
+                          pIVar14 = getImage(image,cur_baseURL,1);
+                          image->cache = pIVar14;
                         }
                       }
                       effect = effect | 0x20;
@@ -21007,8 +21583,8 @@ switchD_0806a4ec_caseD_87:
                     case 0x89:
                       effect = effect & 0xffdf;
                       if (a_img != (Anchor *)0x0) {
-                        iVar9 = currentLn(buf_1);
-                        (a_img->end).line = iVar9;
+                        iVar10 = currentLn(buf);
+                        (a_img->end).line = iVar10;
                         (a_img->end).pos = pos;
                       }
                       a_img = (Anchor *)0x0;
@@ -21020,36 +21596,37 @@ switchD_0806a4ec_caseD_87:
                       internal = 0x8e;
                     }
                     id = (char *)0x0;
-                    iVar9 = parsedtag_get_value(tag,0x14,&id);
+                    iVar10 = parsedtag_get_value(tag,0x14,&id);
                     wVar5 = InnerCharset;
-                    if (iVar9 != 0) {
-                      wVar6 = buf_1->document_charset;
-                      p_Var17 = Strnew_charp(id);
-                      p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                      id = url_quote(p_Var17->ptr);
-                      iVar9 = currentLn(buf_1);
-                      registerName(buf_1,id,iVar9,pos);
+                    if (iVar10 != 0) {
+                      wVar6 = buf->document_charset;
+                      p_Var19 = Strnew_charp(id);
+                      p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                      id = url_quote(p_Var19->ptr);
+                      iVar10 = currentLn(buf);
+                      registerName(buf,id,iVar10,pos);
                     }
                     if ((renderFrameSet != (frameset *)0x0) &&
-                       (iVar9 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset, iVar9 != 0))
-                    {
-                      wVar6 = buf_1->document_charset;
-                      p_Var17 = Strnew_charp(p);
-                      p_Var17 = wc_Str_conv_strict(p_Var17,wVar5,wVar6);
-                      p = url_quote(p_Var17->ptr);
+                       (iVar10 = parsedtag_get_value(tag,0x43,&p), wVar5 = InnerCharset, iVar10 != 0
+                       )) {
+                      wVar6 = buf->document_charset;
+                      p_Var19 = Strnew_charp(p);
+                      p_Var19 = wc_Str_conv_strict(p_Var19,wVar5,wVar6);
+                      p = url_quote(p_Var19->ptr);
                       if (((idFrame == (frameset_element *)0x0) ||
-                          (iVar9 = strcmp(*(char **)(*idFrame + 4),p), iVar9 != 0)) &&
+                          (iVar10 = strcmp(idFrame->element->name,p), iVar10 != 0)) &&
                          ((idFrame = search_frame(renderFrameSet,p),
-                          (char **)idFrame != (char **)0x0 && (*(char *)*idFrame != '\x01')))) {
+                          idFrame != (frameset_element *)0x0 && (idFrame->element->attr != '\x01')))
+                         ) {
                         idFrame = (frameset_element *)0x0;
                       }
                     }
                     if ((id != (char *)0x0) && (idFrame != (frameset_element *)0x0)) {
-                      iVar9 = *idFrame;
-                      iVar18 = currentLn(buf_1);
-                      pAVar19 = putAnchor(*(AnchorList **)(*idFrame + 0x1c),id,(char *)0x0,
-                                          (Anchor **)0x0,(char *)0x0,(char *)0x0,'\0',iVar18,pos);
-                      *(AnchorList **)(iVar9 + 0x1c) = pAVar19;
+                      pfVar7 = idFrame->body;
+                      iVar10 = currentLn(buf);
+                      pAVar20 = putAnchor(idFrame->body->nameList,id,(char *)0x0,(Anchor **)0x0,
+                                          (char *)0x0,(char *)0x0,'\0',iVar10,pos);
+                      pfVar7->nameList = pAVar20;
                     }
                   }
                 }
@@ -21057,16 +21634,19 @@ switchD_0806a4ec_caseD_87:
               else {
                 len_1 = (int)WTF_LEN_MAP[(byte)*str];
                 pLVar1 = HTMLlineproc2body::outp + pos;
-                uVar7 = effect | mode;
-                iVar9 = ex_efct((uint)ex_effect);
-                *pLVar1 = (ushort)iVar9 | uVar7;
+                uVar8 = effect | mode;
+                iVar10 = ex_efct((uint)ex_effect);
+                *pLVar1 = (ushort)iVar10 | uVar8;
                 HTMLlineproc2body::outc[pos] = *str;
                 str = str + 1;
                 pos = pos + 1;
                 len_1 = len_1 + -1;
-                if (len_1 != 0) {
-                  mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
-                  while (bVar22 = len_1 != 0, len_1 = len_1 + -1, bVar22) {
+                if (len_1 == 0) {
+                  len_1 = 0;
+                }
+                else {
+                  mode = mode & 63999 | 0x400;
+                  while (bVar23 = len_1 != 0, len_1 = len_1 + -1, bVar23) {
                     if (HTMLlineproc2body::out_size <= pos + 1) {
                       HTMLlineproc2body::out_size = (pos * 3) / 2;
                       HTMLlineproc2body::outc =
@@ -21076,9 +21656,9 @@ switchD_0806a4ec_caseD_87:
                            GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
                     }
                     pLVar1 = HTMLlineproc2body::outp + pos;
-                    uVar7 = effect | mode;
-                    iVar9 = ex_efct((uint)ex_effect);
-                    *pLVar1 = (ushort)iVar9 | uVar7;
+                    uVar8 = effect | mode;
+                    iVar10 = ex_efct((uint)ex_effect);
+                    *pLVar1 = (ushort)iVar10 | uVar8;
                     HTMLlineproc2body::outc[pos] = *str;
                     str = str + 1;
                     pos = pos + 1;
@@ -21088,29 +21668,29 @@ switchD_0806a4ec_caseD_87:
             }
             else {
               pLVar1 = HTMLlineproc2body::outp + pos;
-              iVar9 = ex_efct((uint)ex_effect);
-              *pLVar1 = effect | (ushort)iVar9;
+              iVar10 = ex_efct((uint)ex_effect);
+              *pLVar1 = effect | (ushort)iVar10;
               HTMLlineproc2body::outc[pos] = ' ';
               pos = pos + 1;
               str = str + WTF_LEN_MAP[(byte)*str];
             }
           }
           else {
-            buf = set_symbol(symbol_width0);
-            p = buf[symbol];
+            buf_1 = set_symbol(symbol_width0);
+            p = buf_1[symbol];
             len = (int)WTF_LEN_MAP[(byte)*p];
             mode = (ushort)WTF_TYPE_MAP[(byte)*p] << 8;
             pLVar1 = HTMLlineproc2body::outp + pos;
-            uVar7 = effect | mode;
-            iVar9 = ex_efct((uint)ex_effect);
-            *pLVar1 = (ushort)iVar9 | uVar7;
+            uVar8 = effect | mode;
+            iVar10 = ex_efct((uint)ex_effect);
+            *pLVar1 = (ushort)iVar10 | uVar8;
             HTMLlineproc2body::outc[pos] = *p;
             p = p + 1;
             pos = pos + 1;
             len = len + -1;
             if (len != 0) {
-              mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
-              while (bVar22 = len != 0, len = len + -1, bVar22) {
+              mode = mode & 63999 | 0x400;
+              while (bVar23 = len != 0, len = len + -1, bVar23) {
                 if (HTMLlineproc2body::out_size <= pos + 1) {
                   HTMLlineproc2body::out_size = (pos * 3) / 2;
                   HTMLlineproc2body::outc =
@@ -21120,9 +21700,9 @@ switchD_0806a4ec_caseD_87:
                        GC_realloc(HTMLlineproc2body::outp,HTMLlineproc2body::out_size * 2);
                 }
                 pLVar1 = HTMLlineproc2body::outp + pos;
-                uVar7 = effect | mode;
-                iVar9 = ex_efct((uint)ex_effect);
-                *pLVar1 = (ushort)iVar9 | uVar7;
+                uVar8 = effect | mode;
+                iVar10 = ex_efct((uint)ex_effect);
+                *pLVar1 = (ushort)iVar10 | uVar8;
                 HTMLlineproc2body::outc[pos] = *p;
                 p = p + 1;
                 pos = pos + 1;
@@ -21132,7 +21712,7 @@ switchD_0806a4ec_caseD_87:
           }
         }
         if (internal == 0) {
-          addnewline(buf_1,HTMLlineproc2body::outc,HTMLlineproc2body::outp,(Linecolor *)0x0,pos,-1,
+          addnewline(buf,HTMLlineproc2body::outc,HTMLlineproc2body::outp,(Linecolor *)0x0,pos,-1,
                      nlines);
         }
         if (internal == 0x8e) {
@@ -21147,6 +21727,8 @@ switchD_0806a4ec_caseD_87:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addLink(Buffer *buf,parsed_tag *tag)
 
@@ -21209,6 +21791,8 @@ void addLink(Buffer *buf,parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 void HTMLlineproc2(Buffer *buf,TextLineList *tl)
 
 {
@@ -21218,6 +21802,8 @@ void HTMLlineproc2(Buffer *buf,TextLineList *tl)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str file_feed(void)
 
@@ -21235,6 +21821,8 @@ Str file_feed(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void HTMLlineproc3(Buffer *buf,InputStream stream)
 
 {
@@ -21244,6 +21832,8 @@ void HTMLlineproc3(Buffer *buf,InputStream stream)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void proc_escape(readbuffer *obuf,char **str_return)
 
@@ -21302,6 +21892,7 @@ int need_flushline(html_feed_environ *h_env,readbuffer *obuf,Lineprop mode)
 {
   char cVar1;
   int iVar2;
+  Lineprop mode_local;
   char ch;
   
   if ((obuf->flag & 0x200U) == 0) {
@@ -21332,6 +21923,8 @@ int need_flushline(html_feed_environ *h_env,readbuffer *obuf,Lineprop mode)
 
 
 
+// WARNING: Unknown calling convention
+
 int table_width(html_feed_environ *h_env,int table_level)
 
 {
@@ -21352,7 +21945,9 @@ int table_width(html_feed_environ *h_env,int table_level)
 
 
 
-void HTMLlineproc0(char *line_1,html_feed_environ *h_env,int internal)
+// WARNING: Unknown calling convention
+
+void HTMLlineproc0(char *line,html_feed_environ *h_env,int internal)
 
 {
   char *pcVar1;
@@ -21364,7 +21959,7 @@ void HTMLlineproc0(char *line_1,html_feed_environ *h_env,int internal)
   byte bVar6;
   int i_1;
   char *tp_1;
-  Str line;
+  Str line_1;
   int i;
   char *tp;
   char *bp;
@@ -21412,7 +22007,7 @@ void HTMLlineproc0(char *line_1,html_feed_environ *h_env,int internal)
       tbl_width = table_width(h_env,level);
     }
 LAB_0806d451:
-    if (*line_1 == '\0') {
+    if (*line == '\0') {
       if ((obuf->flag & 0x1a8fU) == 0) {
         i_1 = 0;
         if ((obuf->bp).pos == (int)obuf->pos) {
@@ -21445,12 +22040,12 @@ LAB_0806d451:
       bVar2 = tbl_mode->end_tag;
     }
     end_tag = (int)bVar2;
-    if ((*line_1 == '<') || (obuf->status != 0)) {
+    if ((*line == '<') || (obuf->status != 0)) {
       if (obuf->status == 7) {
         obuf->status = 0;
       }
       else {
-        read_token(h_env->tagbuf,&line_1,&obuf->status,pre_mode & 0xa0f,(uint)(obuf->status != 0));
+        read_token(h_env->tagbuf,&line,&obuf->status,pre_mode & 0xa0f,(uint)(obuf->status != 0));
         if (obuf->status != 0) {
           return;
         }
@@ -21462,8 +22057,8 @@ LAB_0806d451:
            ((((((MYCTYPE_MAP[(byte)str[1]] & 4) == 0 && (str[1] != '/')) && (str[1] != '!')) &&
              ((str[1] != '?' && (str[1] != '\0')))) && (str[1] != '_')))) {
           if ((pre_mode & 0x580eU) == 0) {
-            p_Var5 = Strnew_m_charp(str + 1,line_1,0);
-            line_1 = p_Var5->ptr;
+            p_Var5 = Strnew_m_charp(str + 1,line,0);
+            line = p_Var5->ptr;
             str = "&lt;";
           }
         }
@@ -21473,7 +22068,7 @@ LAB_0806d451:
       }
     }
     else {
-      read_token(tokbuf,&line_1,&obuf->status,pre_mode & 0xa0f,0);
+      read_token(tokbuf,&line,&obuf->status,pre_mode & 0xa0f,0);
       if (obuf->status != 0) {
         obuf->status = 0;
       }
@@ -21498,8 +22093,8 @@ LAB_0806d451:
           if ((iVar4 != 0) && (p = strchr(str + 1,0x3c), p != (char *)0x0)) {
             p_Var5 = Strnew_charp_n(str,(int)p - (int)str);
             str = p_Var5->ptr;
-            p_Var5 = Strnew_m_charp(p,line_1,0);
-            line_1 = p_Var5->ptr;
+            p_Var5 = Strnew_m_charp(p,line,0);
+            line = p_Var5->ptr;
           }
           is_tag = 0;
         }
@@ -21718,6 +22313,8 @@ LAB_0806d2f8:
 
 
 
+// WARNING: Unknown calling convention
+
 void addnewline2(Buffer *buf,char *line,Lineprop *prop,Linecolor *color,int pos,int nlines)
 
 {
@@ -21762,6 +22359,8 @@ void addnewline2(Buffer *buf,char *line,Lineprop *prop,Linecolor *color,int pos,
 
 
 
+// WARNING: Unknown calling convention
+
 void addnewline(Buffer *buf,char *line,Lineprop *prop,Linecolor *color,int pos,int width,int nlines)
 
 {
@@ -21803,6 +22402,7 @@ LAB_0806d712:
     line_00->bwidth = bwidth;
     i = columnLen(line_00,width);
     if (i == 0) {
+      i = 0;
       do {
         i = i + 1;
         if (line_00->len <= i) break;
@@ -21827,6 +22427,8 @@ LAB_0806d712:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * loadHTMLBuffer(URLFile *f,Buffer *newBuf)
 
@@ -21854,7 +22456,7 @@ Buffer * loadHTMLBuffer(URLFile *f,Buffer *newBuf)
      ((f->scheme != '\x04' || (newBuf->mailcap != (mailcap *)0x0)))) {
     p_Var2 = tmpfname(1,".html");
     src = (FILE *)fopen(p_Var2->ptr,"w");
-    if ((FILE *)src != (FILE *)0x0) {
+    if (src != (FILE *)0x0) {
       newBuf->sourcefile = p_Var2->ptr;
     }
   }
@@ -21880,6 +22482,7 @@ char * convert_size(clen_t size,int usefloat)
   char *fmt;
   Str p_Var2;
   double dVar3;
+  clen_t size_local;
   char **sizes;
   int sizepos;
   float csize;
@@ -21914,6 +22517,8 @@ char * convert_size2(clen_t size1,clen_t size2,int usefloat)
   Str p_Var3;
   double dVar4;
   double dVar5;
+  clen_t size2_local;
+  clen_t size1_local;
   int sizepos;
   float factor;
   float csize;
@@ -21944,6 +22549,8 @@ char * convert_size2(clen_t size1,clen_t size2,int usefloat)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void showProgress(clen_t *linelen,clen_t *trbyte)
 
@@ -21991,13 +22598,14 @@ void showProgress(clen_t *linelen,clen_t *trbyte)
           showProgress::last_time = tVar4;
           move(LINES + -1,0);
           pcVar5 = convert_size(*trbyte,1);
-          if (tVar4 == showProgress::start_time) {
+          if (tVar4 - showProgress::start_time == 0) {
             messages = Sprintf("%7s loaded",pcVar5);
           }
           else {
-            size = __divdi3(*(undefined4 *)trbyte,*(undefined4 *)((int)trbyte + 4));
-            convert_size(size,1);
-            messages = Sprintf("%7s loaded %7s/s",pcVar5);
+            size = __divdi3(*(undefined4 *)trbyte,*(undefined4 *)((int)trbyte + 4),
+                            tVar4 - showProgress::start_time);
+            pcVar7 = convert_size(size,1);
+            messages = Sprintf("%7s loaded %7s/s",pcVar5,pcVar7);
           }
           message(messages->ptr,0,0);
           refresh();
@@ -22024,11 +22632,12 @@ void showProgress(clen_t *linelen,clen_t *trbyte)
                   (double)CONCAT44(current_content_length._4_4_,(uint)current_content_length);
           pcVar5 = convert_size2(*trbyte,CONCAT44(current_content_length._4_4_,
                                                   (uint)current_content_length),1);
-          if (tVar4 == showProgress::start_time) {
+          if (tVar4 - showProgress::start_time == 0) {
             messages = Sprintf("%11s %3.0f%%                          ",pcVar5,dVar3);
           }
           else {
-            iVar6 = __divdi3(*(undefined4 *)trbyte,*(undefined4 *)((int)trbyte + 4));
+            iVar6 = __divdi3(*(undefined4 *)trbyte,*(undefined4 *)((int)trbyte + 4),
+                             tVar4 - showProgress::start_time);
             pcVar7 = convert_size((longlong)iVar6,1);
             if (iVar6 == 0) {
               iVar6 = -1;
@@ -22065,6 +22674,8 @@ void showProgress(clen_t *linelen,clen_t *trbyte)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_henv(html_feed_environ *h_env,readbuffer *obuf,environment *envs,int nenv,
               TextLineList *buf,int limit,int indent)
@@ -22117,6 +22728,8 @@ void init_henv(html_feed_environ *h_env,readbuffer *obuf,environment *envs,int n
 
 
 
+// WARNING: Unknown calling convention
+
 void completeHTMLstream(html_feed_environ *h_env,readbuffer *obuf)
 
 {
@@ -22165,6 +22778,8 @@ void completeHTMLstream(html_feed_environ *h_env,readbuffer *obuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_internal_information(html_feed_environ *henv)
 
@@ -22256,7 +22871,7 @@ void print_internal_information(html_feed_environ *henv)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
 
@@ -22271,7 +22886,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
   html_feed_environ htmlenv1;
   clen_t trbyte;
   clen_t linelen;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int image_flag;
   wc_ces doc_charset;
   wc_ces charset;
@@ -22284,7 +22899,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
   lineBuf2 = Strnew();
   charset = 0x100;
   doc_charset = DocumentCharset;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if ((fmInitialized == '\0') || (iVar2 = graph_ok(), iVar2 == 0)) {
     symbol_width0 = 0;
     get_symbol(DisplayCharset,&symbol_width0);
@@ -22368,7 +22983,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
       doc_charset = content_charset;
     }
     meta_charset = 0;
-    if (f->stream->field_0x14 != '\x04') {
+    if ((f->stream->base).type != '\x04') {
       piVar3 = newEncodedStream(f->stream,f->encoding);
       f->stream = piVar3;
     }
@@ -22418,7 +23033,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
         if (fmInitialized != '\0') {
           term_raw();
         }
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
         }
       }
@@ -22430,7 +23045,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
         if (fmInitialized != '\0') {
           term_raw();
         }
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
         }
       }
@@ -22447,7 +23062,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
     if (fmInitialized != '\0') {
       term_raw();
     }
-    if (prevtrap != (anon_subr_void_int *)0x0) {
+    if (prevtrap != (_func_void_int *)0x0) {
       mySignal(2,prevtrap);
     }
   }
@@ -22462,6 +23077,7 @@ void loadHTMLstream(URLFile *f,Buffer *newBuf,FILE *src,int internal)
 
 
 // WARNING: Removing unreachable block (ram,0x0806efc1)
+// WARNING: Unknown calling convention
 
 Buffer * loadHTMLString(Str page)
 
@@ -22471,9 +23087,9 @@ Buffer * loadHTMLString(Str page)
   InputStream stream;
   URLFile f;
   Buffer *newBuf;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (showLineNum == 0) {
     iVar1 = 1;
   }
@@ -22499,7 +23115,7 @@ Buffer * loadHTMLString(Str page)
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -22524,6 +23140,8 @@ Buffer * loadHTMLString(Str page)
 
 
 
+// WARNING: Unknown calling convention
+
 Str loadGopherDir(URLFile *uf,ParsedURL *pu,wc_ces *charset)
 
 {
@@ -22540,7 +23158,7 @@ Str loadGopherDir(URLFile *uf,ParsedURL *pu,wc_ces *charset)
   Str p_Var8;
   Str p_Var9;
   wc_ces doc_charset;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   char *q;
   char *p;
   Str port;
@@ -22551,7 +23169,7 @@ Str loadGopherDir(URLFile *uf,ParsedURL *pu,wc_ces *charset)
   Str tmp;
   
   doc_charset_00 = DocumentCharset;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   p_Var2 = parsedURL2Str(pu);
   pcVar3 = html_quote(p_Var2->ptr);
   pcVar4 = file_unquote(p_Var2->ptr);
@@ -22634,7 +23252,7 @@ LAB_0806f46f:
     if (fmInitialized != '\0') {
       term_raw();
     }
-    if (prevtrap != (anon_subr_void_int *)0x0) {
+    if (prevtrap != (_func_void_int *)0x0) {
       mySignal(2,prevtrap);
     }
   }
@@ -22644,7 +23262,7 @@ LAB_0806f46f:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 Buffer * loadBuffer(URLFile *uf,Buffer *newBuf)
 
@@ -22656,7 +23274,7 @@ Buffer * loadBuffer(URLFile *uf,Buffer *newBuf)
   bool bVar5;
   clen_t trbyte;
   clen_t linelen;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   Linecolor *colorBuffer;
   Lineprop *propBuffer;
   Str tmpf;
@@ -22677,7 +23295,7 @@ Buffer * loadBuffer(URLFile *uf,Buffer *newBuf)
   trbyte._4_4_ = 0;
   propBuffer = (Lineprop *)0x0;
   colorBuffer = (Linecolor *)0x0;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (newBuf == (Buffer *)0x0) {
     if (showLineNum == 0) {
       iVar2 = 1;
@@ -22699,7 +23317,7 @@ _end:
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -22720,7 +23338,7 @@ _end:
      ((uf->scheme != '\x04' || (newBuf->mailcap != (mailcap *)0x0)))) {
     tmpf = tmpfname(1,(char *)0x0);
     src = (FILE *)fopen(tmpf->ptr,"w");
-    if ((FILE *)src != (FILE *)0x0) {
+    if (src != (FILE *)0x0) {
       newBuf->sourcefile = tmpf->ptr;
     }
   }
@@ -22732,7 +23350,7 @@ _end:
     doc_charset = content_charset;
   }
   nlines = 0;
-  if (uf->stream->field_0x14 != '\x04') {
+  if ((uf->stream->base).type != '\x04') {
     piVar3 = newEncodedStream(uf->stream,uf->encoding);
     uf->stream = piVar3;
   }
@@ -22790,6 +23408,8 @@ LAB_0806f99d:
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
 
 {
@@ -22799,17 +23419,17 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
   char *pcVar4;
   Str s;
   Str p_Var5;
-  FILE *__stream;
+  FILE *src_00;
   stat st;
   Image image;
   URLFile f;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   FILE *src;
   Str tmpf;
   Str tmp;
   ImageCache *cache;
   
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   loadImage(newBuf,1);
   image.url = uf->url;
   image.ext = uf->ext;
@@ -22822,7 +23442,7 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
     if ((TrapSignal != '\0') && (prevtrap = mySignal(2,KeyAbort), fmInitialized != '\0')) {
       term_cbreak();
     }
-    if (uf->stream->field_0x14 != '\x04') {
+    if ((uf->stream->base).type != '\x04') {
       piVar3 = newEncodedStream(uf->stream,uf->encoding);
       uf->stream = piVar3;
     }
@@ -22836,7 +23456,7 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
         if (fmInitialized != '\0') {
           term_raw();
         }
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
         }
       }
@@ -22850,7 +23470,7 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -22877,13 +23497,13 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
   pcVar4 = html_quote(image.url);
   s = Sprintf("<img src=\"%s\"><br><br>",pcVar4);
   p_Var5 = tmpfname(1,".html");
-  __stream = fopen(p_Var5->ptr,"w");
+  src_00 = fopen(p_Var5->ptr,"w");
   newBuf->mailcap_source = p_Var5->ptr;
   piVar3 = newStrStream(s);
   init_stream(&f,4,piVar3);
-  loadHTMLstream(&f,newBuf,(FILE *)__stream,1);
-  if (__stream != (FILE *)0x0) {
-    fclose(__stream);
+  loadHTMLstream(&f,newBuf,(FILE *)src_00,1);
+  if (src_00 != (FILE *)0x0) {
+    fclose(src_00);
   }
   newBuf->topLine = newBuf->firstLine;
   newBuf->lastLine = newBuf->currentLine;
@@ -22893,6 +23513,8 @@ Buffer * loadImageBuffer(URLFile *uf,Buffer *newBuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str conv_symbol(Line *l)
 
@@ -22953,6 +23575,8 @@ Str conv_symbol(Line *l)
 
 
 
+// WARNING: Unknown calling convention
+
 void _saveBuffer(Buffer *buf,Line *l,FILE *f,int cont)
 
 {
@@ -22996,6 +23620,8 @@ void _saveBuffer(Buffer *buf,Line *l,FILE *f,int cont)
 
 
 
+// WARNING: Unknown calling convention
+
 void saveBuffer(Buffer *buf,FILE *f,int cont)
 
 {
@@ -23004,6 +23630,8 @@ void saveBuffer(Buffer *buf,FILE *f,int cont)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void saveBufferBody(Buffer *buf,FILE *f,int cont)
 
@@ -23018,8 +23646,9 @@ void saveBufferBody(Buffer *buf,FILE *f,int cont)
 
 
 
-Buffer * loadcmdout(char *cmd,anon_subr_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadproc,
-                   Buffer *defaultbuf)
+// WARNING: Unknown calling convention
+
+Buffer * loadcmdout(char *cmd,_func_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadproc,Buffer *defaultbuf)
 
 {
   Buffer *pBVar1;
@@ -23049,6 +23678,8 @@ Buffer * loadcmdout(char *cmd,anon_subr_Buffer_ptr_URLFile_ptr_Buffer_ptr *loadp
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * getshell(char *cmd)
 
 {
@@ -23075,6 +23706,8 @@ Buffer * getshell(char *cmd)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * getpipe(char *cmd)
 
@@ -23127,6 +23760,8 @@ Buffer * getpipe(char *cmd)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * openPagerBuffer(InputStream stream,Buffer *buf)
 
 {
@@ -23175,11 +23810,12 @@ Buffer * openPagerBuffer(InputStream stream,Buffer *buf)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 Buffer * openGeneralPagerBuffer(InputStream stream)
 
 {
+  URLFile uf_00;
   int iVar1;
   URLFile uf;
   Buffer *t_buf;
@@ -23225,16 +23861,20 @@ Buffer * openGeneralPagerBuffer(InputStream stream)
     if (iVar1 == 0) {
       if ((((activeImage == 0) || (displayImage == 0)) || (useExtImageViewer != 0)) ||
          (((w3m_dump & 0xffffffdfU) != 0 || (iVar1 = strncasecmp(t,"image/",6), iVar1 != 0)))) {
-        iVar1 = doExternal((URLFile)CONCAT428(uf.modtime,
-                                              CONCAT424(uf.url,CONCAT420(uf.guess_type,
-                                                                         CONCAT416(uf.
-                                                  content_encoding,
-                                                  CONCAT412(uf.compression,
-                                                            CONCAT48(uf.ext,CONCAT44(uf.stream,
-                                                                                     uf._0_4_)))))))
-                           ,"-",t,&buf,t_buf);
+        uf_00.stream = uf.stream;
+        uf_00.scheme = uf.scheme;
+        uf_00.is_cgi = uf.is_cgi;
+        uf_00.encoding = uf.encoding;
+        uf_00._3_1_ = uf._3_1_;
+        uf_00.ext = uf.ext;
+        uf_00.compression = uf.compression;
+        uf_00.content_encoding = uf.content_encoding;
+        uf_00.guess_type = uf.guess_type;
+        uf_00.url = uf.url;
+        uf_00.modtime = uf.modtime;
+        iVar1 = doExternal(uf_00,"-",t,&buf,t_buf);
         if (iVar1 == 0) {
-          if (stream->field_0x14 != '\x04') {
+          if ((stream->base).type != '\x04') {
             stream = newEncodedStream(stream,uf.encoding);
           }
           buf = openPagerBuffer(stream,t_buf);
@@ -23258,7 +23898,7 @@ Buffer * openGeneralPagerBuffer(InputStream stream)
       }
     }
     else {
-      if (stream->field_0x14 != '\x04') {
+      if ((stream->base).type != '\x04') {
         stream = newEncodedStream(stream,uf.encoding);
       }
       buf = openPagerBuffer(stream,t_buf);
@@ -23277,7 +23917,7 @@ Buffer * openGeneralPagerBuffer(InputStream stream)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 Line * getNextPage(Buffer *buf,int plen)
 
@@ -23293,7 +23933,7 @@ Line * getNextPage(Buffer *buf,int plen)
   clen_t trbyte;
   clen_t linelen;
   Line *l;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   Linecolor *colorBuffer;
   Lineprop *propBuffer;
   int squeeze_flag;
@@ -23322,7 +23962,7 @@ Line * getNextPage(Buffer *buf,int plen)
   squeeze_flag = 0;
   propBuffer = (Lineprop *)0x0;
   colorBuffer = (Linecolor *)0x0;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (buf->pagerSource == (InputStream)0x0) {
     last = (Line *)0x0;
   }
@@ -23441,7 +24081,7 @@ LAB_08070aaf:
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -23462,7 +24102,7 @@ LAB_08070aaf:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int save2tmp(URLFile uf,char *tmpf)
 
@@ -23473,7 +24113,7 @@ int save2tmp(URLFile uf,char *tmpf)
   clen_t trbyte;
   clen_t linelen;
   Str buf;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int check;
   FILE *ff;
   char c;
@@ -23482,9 +24122,9 @@ int save2tmp(URLFile uf,char *tmpf)
   linelen._4_4_ = 0;
   trbyte._0_4_ = 0;
   trbyte._4_4_ = 0;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   ff = (FILE *)fopen(tmpf,"wb");
-  if ((FILE *)ff == (FILE *)0x0) {
+  if (ff == (FILE *)0x0) {
     iVar2 = -1;
   }
   else {
@@ -23499,7 +24139,7 @@ int save2tmp(URLFile uf,char *tmpf)
         while( true ) {
           iVar2 = ISgetc(uf.stream);
           c = (char)iVar2;
-          if ((uf.stream)->field_0x15 != '\0') break;
+          if (((uf.stream)->base).iseos != '\0') break;
           if (c == '\n') {
             if (check == 0) {
               check = 1;
@@ -23539,7 +24179,7 @@ int save2tmp(URLFile uf,char *tmpf)
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -23553,15 +24193,20 @@ int save2tmp(URLFile uf,char *tmpf)
 
 
 
+// WARNING: Unknown calling convention
+
 int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf)
 
 {
-  wc_ces wVar1;
-  wc_ces wVar2;
-  int iVar3;
-  Str p_Var4;
-  char *pcVar5;
-  __pid_t _Var6;
+  undefined4 uVar1;
+  URLFile uf_00;
+  URLFile UVar2;
+  wc_ces wVar3;
+  wc_ces wVar4;
+  int iVar5;
+  Str p_Var6;
+  char *pcVar7;
+  __pid_t _Var8;
   Str tmp;
   char *ext;
   char *src;
@@ -23572,11 +24217,12 @@ int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf
   Str command;
   Str tmpf;
   
+  UVar2 = uf;
   src = (char *)0x0;
   ext = uf.ext;
   mcap = searchExtViewer(type);
   if (mcap == (mailcap *)0x0) {
-    iVar3 = 0;
+    iVar5 = 0;
   }
   else {
     if ((mcap->nametemplate != (char *)0x0) &&
@@ -23588,36 +24234,42 @@ int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf
       ext = (char *)0x0;
     }
     tmpf = tmpfname(0,ext);
-    if ((uf.stream)->field_0x14 != '\x04') {
+    if (((uf.stream)->base).type != '\x04') {
       uf.stream = newEncodedStream(uf.stream,uf.encoding);
     }
     header = checkHeader(defaultbuf,"Content-Type:");
-    wVar2 = SystemCharset;
-    wVar1 = InnerCharset;
+    wVar4 = SystemCharset;
+    wVar3 = InnerCharset;
     if (header != (char *)0x0) {
-      p_Var4 = Strnew_charp(header);
-      p_Var4 = wc_Str_conv_strict(p_Var4,wVar1,wVar2);
-      header = p_Var4->ptr;
+      p_Var6 = Strnew_charp(header);
+      p_Var6 = wc_Str_conv_strict(p_Var6,wVar3,wVar4);
+      header = p_Var6->ptr;
     }
     command = unquote_mailcap(mcap->viewer,type,tmpf->ptr,header,&mc_stat);
     if ((mc_stat & 1U) == 0) {
-      pcVar5 = shell_quote(tmpf->ptr);
-      command = Sprintf("(%s) < %s",command->ptr,pcVar5);
+      pcVar7 = shell_quote(tmpf->ptr);
+      command = Sprintf("(%s) < %s",command->ptr,pcVar7);
     }
+    uVar1 = UVar2._0_4_;
     if ((((mcap->flags & 6U) == 0) && ((mcap->flags & 1U) == 0)) && (BackgroundExtViewer != 0)) {
       flush_tty();
-      _Var6 = fork();
-      if (_Var6 == 0) {
-        iVar3 = ISfileno(uf.stream);
-        setup_child(0,0,iVar3);
-        iVar3 = save2tmp((URLFile)CONCAT428(uf.modtime,
-                                            CONCAT424(uf.url,CONCAT420(uf.guess_type,
-                                                                       CONCAT416(uf.content_encoding
-                                                                                 ,CONCAT412(uf.
-                                                  compression,
-                                                  CONCAT48(uf.ext,CONCAT44(uf.stream,uf._0_4_)))))))
-                         ,tmpf->ptr);
-        if (iVar3 < 0) {
+      _Var8 = fork();
+      if (_Var8 == 0) {
+        iVar5 = ISfileno(uf.stream);
+        setup_child(0,0,iVar5);
+        uf_00.stream = uf.stream;
+        uf_00.scheme = (char)uVar1;
+        uf_00.is_cgi = (char)((uint)uVar1 >> 8);
+        uf_00.encoding = (char)((uint)uVar1 >> 0x10);
+        uf_00._3_1_ = (char)((uint)uVar1 >> 0x18);
+        uf_00.ext = uf.ext;
+        uf_00.compression = uf.compression;
+        uf_00.content_encoding = uf.content_encoding;
+        uf_00.guess_type = uf.guess_type;
+        uf_00.url = uf.url;
+        uf_00.modtime = uf.modtime;
+        iVar5 = save2tmp(uf_00,tmpf->ptr);
+        if (iVar5 < 0) {
                     // WARNING: Subroutine does not return
           exit(1);
         }
@@ -23625,34 +24277,39 @@ int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf
         myExec(command->ptr);
       }
       *bufp = (Buffer *)0x1;
-      iVar3 = 1;
+      iVar5 = 1;
     }
     else {
-      iVar3 = save2tmp((URLFile)CONCAT428(uf.modtime,
-                                          CONCAT424(uf.url,CONCAT420(uf.guess_type,
-                                                                     CONCAT416(uf.content_encoding,
-                                                                               CONCAT412(uf.
-                                                  compression,
-                                                  CONCAT48(uf.ext,CONCAT44(uf.stream,uf._0_4_)))))))
-                       ,tmpf->ptr);
-      if (iVar3 < 0) {
+      UVar2.stream = uf.stream;
+      UVar2.scheme = (char)uVar1;
+      UVar2.is_cgi = (char)((uint)uVar1 >> 8);
+      UVar2.encoding = (char)((uint)uVar1 >> 0x10);
+      UVar2._3_1_ = (char)((uint)uVar1 >> 0x18);
+      UVar2.ext = uf.ext;
+      UVar2.compression = uf.compression;
+      UVar2.content_encoding = uf.content_encoding;
+      UVar2.guess_type = uf.guess_type;
+      UVar2.url = uf.url;
+      UVar2.modtime = uf.modtime;
+      iVar5 = save2tmp(UVar2,tmpf->ptr);
+      if (iVar5 < 0) {
         *bufp = (Buffer *)0x0;
-        iVar3 = 1;
+        iVar5 = 1;
       }
       else {
         if ((mcap->flags & 6U) != 0) {
           if (defaultbuf == (Buffer *)0x0) {
             if (showLineNum == 0) {
-              iVar3 = 1;
+              iVar5 = 1;
             }
             else {
-              iVar3 = 6;
+              iVar5 = 6;
             }
-            iVar3 = COLS - iVar3;
-            if (iVar3 < 0) {
-              iVar3 = 0;
+            iVar5 = COLS - iVar5;
+            if (iVar5 < 0) {
+              iVar5 = 0;
             }
-            defaultbuf = newBuffer(iVar3);
+            defaultbuf = newBuffer(iVar5);
           }
           if (defaultbuf->sourcefile == (char *)0x0) {
             src = tmpf->ptr;
@@ -23698,28 +24355,28 @@ int doExternal(URLFile uf,char *path,char *type,Buffer **bufp,Buffer *defaultbuf
         }
         if ((buf != (Buffer *)0x0) && (buf != (Buffer *)0x1)) {
           buf->filename = path;
-          wVar2 = SystemCharset;
-          wVar1 = InnerCharset;
+          wVar4 = SystemCharset;
+          wVar3 = InnerCharset;
           if ((buf->buffername == (char *)0x0) || (*buf->buffername == '\0')) {
-            pcVar5 = lastFileName(path);
-            p_Var4 = Strnew_charp(pcVar5);
-            p_Var4 = wc_Str_conv(p_Var4,wVar2,wVar1);
-            buf->buffername = p_Var4->ptr;
+            pcVar7 = lastFileName(path);
+            p_Var6 = Strnew_charp(pcVar7);
+            p_Var6 = wc_Str_conv(p_Var6,wVar4,wVar3);
+            buf->buffername = p_Var6->ptr;
           }
           buf->edit = mcap->edit;
           buf->mailcap = mcap;
         }
         *bufp = buf;
-        iVar3 = 1;
+        iVar5 = 1;
       }
     }
   }
-  return iVar3;
+  return iVar5;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int _MoveFile(char *path1,char *path2)
 
@@ -23785,7 +24442,7 @@ int _MoveFile(char *path1,char *path2)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int _doFileCopy(char *tmpf,char *defstr,int download)
 
@@ -23861,7 +24518,7 @@ int _doFileCopy(char *tmpf,char *defstr,int download)
     p = searchKeyData();
     if ((p == (char *)0x0) || (*p == '\0')) {
       q = inputLineHistSearch("(Download)Save file to: ",defstr,0x80,SaveHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
       wVar4 = SystemCharset;
       wVar3 = InnerCharset;
       if ((q == (char *)0x0) || (*q == '\0')) {
@@ -23949,6 +24606,8 @@ int _doFileCopy(char *tmpf,char *defstr,int download)
 
 
 
+// WARNING: Unknown calling convention
+
 int doFileMove(char *tmpf,char *defstr)
 
 {
@@ -23962,9 +24621,13 @@ int doFileMove(char *tmpf,char *defstr)
 
 
 
+// WARNING: Unknown calling convention
+
 int doFileSave(URLFile uf,char *defstr)
 
 {
+  URLFile uf_00;
+  URLFile uf_01;
   wc_ces wVar1;
   wc_ces wVar2;
   Str p_Var3;
@@ -24013,13 +24676,18 @@ int doFileSave(URLFile uf,char *defstr)
        (uncompress_stream(&uf,&tmpf), tmpf != (char *)0x0)) {
       unlink(tmpf);
     }
-    iVar4 = save2tmp((URLFile)CONCAT428(uf.modtime,
-                                        CONCAT424(uf.url,CONCAT420(uf.guess_type,
-                                                                   CONCAT416(uf.content_encoding,
-                                                                             CONCAT412(uf.
-                                                  compression,
-                                                  CONCAT48(uf.ext,CONCAT44(uf.stream,uf._0_4_)))))))
-                     ,p);
+    uf_01.stream = uf.stream;
+    uf_01.scheme = uf.scheme;
+    uf_01.is_cgi = uf.is_cgi;
+    uf_01.encoding = uf.encoding;
+    uf_01._3_1_ = uf._3_1_;
+    uf_01.ext = uf.ext;
+    uf_01.compression = uf.compression;
+    uf_01.content_encoding = uf.content_encoding;
+    uf_01.guess_type = uf.guess_type;
+    uf_01.url = uf.url;
+    uf_01.modtime = uf.modtime;
+    iVar4 = save2tmp(uf_01,p);
     if (iVar4 < 0) {
       printf("Can\'t save to %s\n",p);
       return -1;
@@ -24032,7 +24700,7 @@ int doFileSave(URLFile uf,char *defstr)
     p = searchKeyData();
     if ((p == (char *)0x0) || (*p == '\0')) {
       p = inputLineHistSearch("(Download)Save file to: ",defstr,0x20,SaveHist,
-                              (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                              (_func_int_int_Str_Lineprop_ptr *)0x0);
       wVar2 = SystemCharset;
       wVar1 = InnerCharset;
       if ((p == (char *)0x0) || (*p == '\0')) {
@@ -24068,13 +24736,18 @@ int doFileSave(URLFile uf,char *defstr)
       }
       iVar4 = ISfileno(uf.stream);
       setup_child(0,0,iVar4);
-      iVar4 = save2tmp((URLFile)CONCAT428(uf.modtime,
-                                          CONCAT424(uf.url,CONCAT420(uf.guess_type,
-                                                                     CONCAT416(uf.content_encoding,
-                                                                               CONCAT412(uf.
-                                                  compression,
-                                                  CONCAT48(uf.ext,CONCAT44(uf.stream,uf._0_4_)))))))
-                       ,p);
+      uf_00.stream = uf.stream;
+      uf_00.scheme = uf.scheme;
+      uf_00.is_cgi = uf.is_cgi;
+      uf_00.encoding = uf.encoding;
+      uf_00._3_1_ = uf._3_1_;
+      uf_00.ext = uf.ext;
+      uf_00.compression = uf.compression;
+      uf_00.content_encoding = uf.content_encoding;
+      uf_00.guess_type = uf.guess_type;
+      uf_00.url = uf.url;
+      uf_00.modtime = uf.modtime;
+      iVar4 = save2tmp(uf_00,p);
       if (((iVar4 == 0) && (PreserveTimestamp != '\0')) && (uf.modtime != -1)) {
         setModtime(p,uf.modtime);
       }
@@ -24094,6 +24767,8 @@ int doFileSave(URLFile uf,char *defstr)
 
 
 
+// WARNING: Unknown calling convention
+
 int checkCopyFile(char *path1,char *path2)
 
 {
@@ -24110,6 +24785,8 @@ int checkCopyFile(char *path1,char *path2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int checkSaveFile(InputStream stream,char *path2)
 
@@ -24130,6 +24807,8 @@ int checkSaveFile(InputStream stream,char *path2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int checkOverWrite(char *path)
 
@@ -24164,6 +24843,8 @@ int checkOverWrite(char *path)
 
 
 
+// WARNING: Unknown calling convention
+
 char * inputAnswer(char *prompt)
 
 {
@@ -24180,8 +24861,8 @@ char * inputAnswer(char *prompt)
     }
     else {
       term_raw();
-      pcVar1 = inputLineHistSearch(prompt,"",0x200,(Hist *)0x0,
-                                   (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+      pcVar1 = inputLineHistSearch(prompt,"",0x200,(Hist *)0x0,(_func_int_int_Str_Lineprop_ptr *)0x0
+                                  );
     }
   }
   else {
@@ -24191,6 +24872,8 @@ char * inputAnswer(char *prompt)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void uncompress_stream(URLFile *uf,char **src)
 
@@ -24214,7 +24897,7 @@ void uncompress_stream(URLFile *uf,char **src)
   expand_name = "gunzip";
   tmpf = (char *)0x0;
   ext = (char *)0x0;
-  if (uf->stream->field_0x14 != '\x04') {
+  if ((uf->stream->base).type != '\x04') {
     piVar1 = newEncodedStream(uf->stream,uf->encoding);
     uf->stream = piVar1;
     uf->encoding = '\0';
@@ -24310,6 +24993,8 @@ LAB_080722d7:
 
 
 
+// WARNING: Unknown calling convention
+
 FILE * lessopen_stream(char *path)
 
 {
@@ -24333,7 +25018,7 @@ FILE * lessopen_stream(char *path)
     pcVar2 = shell_quote(path);
     p_Var3 = Sprintf(pcVar1 + 1,pcVar2);
     fp = (FILE *)popen(p_Var3->ptr,"r");
-    if ((FILE *)fp == (FILE *)0x0) {
+    if (fp == (FILE *)0x0) {
       fp = (FILE *)0x0;
     }
     else {
@@ -24354,6 +25039,8 @@ FILE * lessopen_stream(char *path)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * guess_filename(char *file)
 
@@ -24385,6 +25072,8 @@ char * guess_filename(char *file)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * guess_save_name(Buffer *buf,char *path)
 
@@ -24431,6 +25120,8 @@ LAB_08072834:
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * newBuffer(int width)
 
 {
@@ -24463,6 +25154,8 @@ Buffer * newBuffer(int width)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * nullBuffer(void)
 
 {
@@ -24476,6 +25169,8 @@ Buffer * nullBuffer(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clearBuffer(Buffer *buf)
 
 {
@@ -24488,6 +25183,8 @@ void clearBuffer(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void discardBuffer(Buffer *buf)
 
@@ -24537,6 +25234,8 @@ void discardBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * namedBuffer(Buffer *first,char *name)
 
 {
@@ -24557,6 +25256,8 @@ Buffer * namedBuffer(Buffer *first,char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * deleteBuffer(Buffer *first,Buffer *delbuf)
 
@@ -24583,6 +25284,8 @@ Buffer * deleteBuffer(Buffer *first,Buffer *delbuf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * replaceBuffer(Buffer *first,Buffer *delbuf,Buffer *newbuf)
 
@@ -24611,6 +25314,8 @@ Buffer * replaceBuffer(Buffer *first,Buffer *delbuf,Buffer *newbuf)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * nthBuffer(Buffer *firstbuf,int n)
 
 {
@@ -24630,6 +25335,8 @@ Buffer * nthBuffer(Buffer *firstbuf,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void writeBufferName(Buffer *buf,int n)
 
@@ -24693,6 +25400,7 @@ void gotoLine(Buffer *buf,int n)
   int iVar1;
   Line *pLVar2;
   int in_GS_OFFSET;
+  Buffer *buf_local;
   Line *l;
   char msg [32];
   
@@ -24750,6 +25458,7 @@ void gotoRealLine(Buffer *buf,int n)
   int iVar1;
   Line *pLVar2;
   int in_GS_OFFSET;
+  Buffer *buf_local;
   Line *l;
   char msg [32];
   
@@ -24802,6 +25511,8 @@ void gotoRealLine(Buffer *buf,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * listBuffer(Buffer *top,Buffer *current)
 
 {
@@ -24853,6 +25564,8 @@ LAB_080733bb:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * selectBuffer(Buffer *firstbuf,Buffer *currentbuf,char *selectchar)
 
@@ -24981,6 +25694,8 @@ LAB_080736de:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void reshapeBuffer(Buffer *buf)
 
@@ -25126,6 +25841,8 @@ void reshapeBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void copyBuffer(Buffer *a,Buffer *b)
 
 {
@@ -25135,6 +25852,8 @@ void copyBuffer(Buffer *a,Buffer *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * prevBuffer(Buffer *first,Buffer *buf)
 
@@ -25147,6 +25866,8 @@ Buffer * prevBuffer(Buffer *first,Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int writeBufferCache(Buffer *buf)
 
@@ -25163,7 +25884,7 @@ int writeBufferCache(Buffer *buf)
       tmp = tmpfname(3,(char *)0x0);
       buf->savecache = tmp->ptr;
       cache = (FILE *)fopen(buf->savecache,"w");
-      if ((FILE *)cache != (FILE *)0x0) {
+      if (cache != (FILE *)0x0) {
         sVar1 = fwrite(&buf->currentLine->linenumber,4,1,(FILE *)cache);
         if ((sVar1 != 0) &&
            (sVar1 = fwrite(&buf->topLine->linenumber,4,1,(FILE *)cache), sVar1 != 0)) {
@@ -25204,6 +25925,8 @@ int writeBufferCache(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int readBufferCache(Buffer *buf)
 
 {
@@ -25230,7 +25953,7 @@ int readBufferCache(Buffer *buf)
   }
   else {
     cache = (FILE *)fopen(buf->savecache,"r");
-    if ((((FILE *)cache == (FILE *)0x0) || (sVar2 = fread(&clnum,4,1,(FILE *)cache), sVar2 == 0)) ||
+    if (((cache == (FILE *)0x0) || (sVar2 = fread(&clnum,4,1,(FILE *)cache), sVar2 == 0)) ||
        (sVar2 = fread(&tlnum,4,1,(FILE *)cache), sVar2 == 0)) {
       buf->savecache = (char *)0x0;
       iVar1 = -1;
@@ -25303,6 +26026,8 @@ int readBufferCache(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_anchor_start(void)
 
 {
@@ -25316,6 +26041,8 @@ void effect_anchor_start(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void effect_anchor_end(void)
 
@@ -25331,6 +26058,8 @@ void effect_anchor_end(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_image_start(void)
 
 {
@@ -25344,6 +26073,8 @@ void effect_image_start(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void effect_image_end(void)
 
@@ -25359,6 +26090,8 @@ void effect_image_end(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_form_start(void)
 
 {
@@ -25372,6 +26105,8 @@ void effect_form_start(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void effect_form_end(void)
 
@@ -25387,6 +26122,8 @@ void effect_form_end(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_mark_start(void)
 
 {
@@ -25401,6 +26138,8 @@ void effect_mark_start(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_mark_end(void)
 
 {
@@ -25414,6 +26153,8 @@ void effect_mark_end(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void effect_active_start(void)
 
@@ -25433,6 +26174,8 @@ void effect_active_start(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_active_end(void)
 
 {
@@ -25451,6 +26194,8 @@ void effect_active_end(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_visited_start(void)
 
 {
@@ -25462,6 +26207,8 @@ void effect_visited_start(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void effect_visited_end(void)
 
 {
@@ -25472,6 +26219,8 @@ void effect_visited_end(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void fmTerm(void)
 
@@ -25494,6 +26243,8 @@ void fmTerm(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void fmInit(void)
 
 {
@@ -25510,6 +26261,8 @@ void fmInit(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str make_lastline_link(Buffer *buf,char *title,char *url)
 
@@ -25582,6 +26335,8 @@ Str make_lastline_link(Buffer *buf,char *title,char *url)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str make_lastline_message(Buffer *buf)
 
@@ -25693,6 +26448,8 @@ Str make_lastline_message(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void displayBuffer(Buffer *buf,int mode)
 
@@ -25825,6 +26582,8 @@ void displayBuffer(Buffer *buf,int mode)
 
 
 
+// WARNING: Unknown calling convention
+
 void drawAnchorCursor0(Buffer *buf,AnchorList *al,int hseq,int prevhseq,int tline,int eline,
                       int active)
 
@@ -25882,6 +26641,8 @@ void drawAnchorCursor0(Buffer *buf,AnchorList *al,int hseq,int prevhseq,int tlin
 
 
 
+// WARNING: Unknown calling convention
+
 void drawAnchorCursor(Buffer *buf)
 
 {
@@ -25923,6 +26684,8 @@ void drawAnchorCursor(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void redrawNLine(Buffer *buf,int n)
 
@@ -26028,7 +26791,8 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
   int iVar9;
   int in_GS_OFFSET;
   double dVar10;
-  Line *local_84;
+  Line *l_local;
+  Buffer *buf_local;
   ParsedURL url;
   int vpos;
   int k;
@@ -26044,18 +26808,18 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
   int j;
   char tmp [16];
   
-  local_84 = l;
+  l_local = l;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   column_00 = buf->currentColumn;
   vpos = -1;
   if (l == (Line *)0x0) {
     if (buf->pagerSource == (InputStream)0x0) {
-      local_84 = (Line *)0x0;
+      l_local = (Line *)0x0;
       goto LAB_08075f17;
     }
-    local_84 = getNextPage(buf,((int)buf->LINES + (int)buf->rootY) - i);
-    if (local_84 == (Line *)0x0) {
-      local_84 = (Line *)0x0;
+    l_local = getNextPage(buf,((int)buf->LINES + (int)buf->rootY) - i);
+    if (l_local == (Line *)0x0) {
+      l_local = (Line *)0x0;
       goto LAB_08075f17;
     }
   }
@@ -26074,51 +26838,51 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
       }
       buf->COLS = (short)COLS - buf->rootX;
     }
-    if ((local_84->real_linenumber == 0) || (local_84->bpos != 0)) {
+    if ((l_local->real_linenumber == 0) || (l_local->bpos != 0)) {
       sprintf(tmp,"%*s ",buf->rootX + -1,&DAT_080cac72);
     }
     else {
-      sprintf(tmp,"%*ld:",buf->rootX + -1,local_84->real_linenumber);
+      sprintf(tmp,"%*ld:",buf->rootX + -1,l_local->real_linenumber);
     }
     addstr(tmp);
   }
   move(i,(int)buf->rootX);
-  if (local_84->width < 0) {
-    iVar5 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,local_84->len,0,0);
-    local_84->width = iVar5;
+  if (l_local->width < 0) {
+    iVar5 = calcPosition(l_local->lineBuf,l_local->propBuf,l_local->len,l_local->len,0,0);
+    l_local->width = iVar5;
   }
-  if ((local_84->len == 0) || (local_84->width + -1 < column_00)) {
+  if ((l_local->len == 0) || (l_local->width + -1 < column_00)) {
     clrtoeolx();
   }
   else {
-    iVar5 = columnPos(local_84,column_00);
-    pcVar2 = local_84->lineBuf;
-    pLVar3 = local_84->propBuf;
-    if ((useColor == 0) || (local_84->colorBuf == (Linecolor *)0x0)) {
+    iVar5 = columnPos(l_local,column_00);
+    pcVar2 = l_local->lineBuf;
+    pLVar3 = l_local->propBuf;
+    if ((useColor == 0) || (l_local->colorBuf == (Linecolor *)0x0)) {
       pc = (Linecolor *)0x0;
     }
     else {
-      pc = local_84->colorBuf + iVar5;
+      pc = l_local->colorBuf + iVar5;
     }
-    rcol = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar5,0,0);
-    for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar5 + j < local_84->len)); j = j + len) {
+    rcol = calcPosition(l_local->lineBuf,l_local->propBuf,l_local->len,iVar5,0,0);
+    for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar5 + j < l_local->len)); j = j + len) {
       if ((useVisitedColor != 0) &&
          (((vpos <= iVar5 + j && ((pLVar3[iVar5 + j] & 0x4000) == 0)) &&
-          (pAVar6 = retrieveAnchor(buf->href,local_84->linenumber,iVar5 + j),
-          pAVar6 != (Anchor *)0x0)))) {
+          (pAVar6 = retrieveAnchor(buf->href,l_local->linenumber,iVar5 + j), pAVar6 != (Anchor *)0x0
+          )))) {
         current = baseURL(buf);
         parseURL2(pAVar6->url,&url,current);
         p_Var7 = parsedURL2Str(&url);
         pHVar8 = getHashHist(URLHist,p_Var7->ptr);
         if (pHVar8 != (HistItem *)0x0) {
           for (k = (pAVar6->start).pos; k < (pAVar6->end).pos; k = k + 1) {
-            pLVar3[k] = pLVar3[k] & 0xff | (ushort)(byte)((uint)pLVar3[k] >> 8) << 8 | 0x4000;
+            pLVar3[k] = pLVar3[k] | 0x4000;
           }
         }
         vpos = (pAVar6->end).pos;
       }
       len = wtf_len((wc_uchar *)(pcVar2 + j + iVar5));
-      iVar9 = calcPosition(local_84->lineBuf,local_84->propBuf,local_84->len,iVar5 + j + len,0,0);
+      iVar9 = calcPosition(l_local->lineBuf,l_local->propBuf,l_local->len,iVar5 + j + len,0,0);
       if ((int)buf->COLS < iVar9 - column_00) break;
       if (pc != (Linecolor *)0x0) {
         do_color(pc[j]);
@@ -26196,7 +26960,7 @@ Line * redrawLine(Buffer *buf,Line *l,int i)
   }
 LAB_08075f17:
   if (iVar1 == *(int *)(in_GS_OFFSET + 0x14)) {
-    return local_84;
+    return l_local;
   }
                     // WARNING: Subroutine does not return
   __stack_chk_fail();
@@ -26204,17 +26968,20 @@ LAB_08075f17:
 
 
 
+// WARNING: Unknown calling convention
+
 Line * redrawLineImage(Buffer *buf,Line *l,int i)
 
 {
-  char cVar1;
+  int iVar1;
+  char cVar2;
   int column_00;
   Image *image_00;
-  int iVar2;
-  Anchor *pAVar3;
+  int iVar3;
+  Anchor *pAVar4;
   ParsedURL *current;
-  ImageCache *pIVar4;
-  int iVar5;
+  ImageCache *pIVar5;
+  int iVar6;
   ImageCache *cache;
   Image *image;
   int h;
@@ -26235,49 +27002,51 @@ Line * redrawLineImage(Buffer *buf,Line *l,int i)
   }
   else {
     if (l->width < 0) {
-      iVar2 = calcPosition(l->lineBuf,l->propBuf,l->len,l->len,0,0);
-      l->width = iVar2;
+      iVar3 = calcPosition(l->lineBuf,l->propBuf,l->len,l->len,0,0);
+      l->width = iVar3;
     }
     if ((l->len != 0) && (column_00 <= l->width + -1)) {
-      iVar2 = columnPos(l,column_00);
-      rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2,0,0);
-      for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar2 + j < l->len)); j = j + 1) {
+      iVar3 = columnPos(l,column_00);
+      rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar3,0,0);
+      for (j = 0; (rcol - column_00 < (int)buf->COLS && (iVar3 + j < l->len)); j = j + 1) {
         if (rcol - column_00 < 0) {
-          rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2 + j + 1,0,0);
+          rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar3 + j + 1,0,0);
         }
         else {
-          pAVar3 = retrieveAnchor(buf->img,l->linenumber,iVar2 + j);
-          if (((pAVar3 != (Anchor *)0x0) && (pAVar3->image != (Image *)0x0)) &&
-             (pAVar3->image->touch < image_touch)) {
-            image_00 = pAVar3->image;
-            cVar1 = buf->image_flag;
+          pAVar4 = retrieveAnchor(buf->img,l->linenumber,iVar3 + j);
+          if (((pAVar4 != (Anchor *)0x0) && (pAVar4->image != (Image *)0x0)) &&
+             (pAVar4->image->touch < image_touch)) {
+            image_00 = pAVar4->image;
+            cVar2 = buf->image_flag;
             current = baseURL(buf);
-            pIVar4 = getImage(image_00,current,(int)cVar1);
-            image_00->cache = pIVar4;
-            pIVar4 = image_00->cache;
-            if (pIVar4 != (ImageCache *)0x0) {
-              if (((image_00->width < 0) && (0 < pIVar4->width)) ||
-                 ((image_00->height < 0 && (0 < pIVar4->height)))) {
-                image_00->width = pIVar4->width;
-                image_00->height = pIVar4->height;
+            pIVar5 = getImage(image_00,current,(int)cVar2);
+            image_00->cache = pIVar5;
+            pIVar5 = image_00->cache;
+            if (pIVar5 != (ImageCache *)0x0) {
+              if (((image_00->width < 0) && (0 < pIVar5->width)) ||
+                 ((image_00->height < 0 && (0 < pIVar5->height)))) {
+                image_00->width = pIVar5->width;
+                image_00->height = pIVar5->height;
                 buf->need_reshape = '\x01';
               }
               x = (int)ROUND(pixel_per_char * (double)((rcol - column_00) + (int)buf->rootX));
               y = (int)ROUND(pixel_per_line * (double)i);
-              iVar5 = calcPosition(l->lineBuf,l->propBuf,l->len,(pAVar3->start).pos,0,0);
-              sx = (int)ROUND(pixel_per_char * (double)(rcol - iVar5));
-              sy = (int)ROUND(pixel_per_line * (double)(l->linenumber - (int)image_00->y));
-              if ((sx == 0) && (-1 < image_00->xoffset + x)) {
+              iVar6 = calcPosition(l->lineBuf,l->propBuf,l->len,(pAVar4->start).pos,0,0);
+              iVar6 = (int)ROUND(pixel_per_char * (double)(rcol - iVar6));
+              iVar1 = (int)ROUND(pixel_per_line * (double)(l->linenumber - (int)image_00->y));
+              if ((iVar6 == 0) && (-1 < image_00->xoffset + x)) {
                 x = x + image_00->xoffset;
+                sx = 0;
               }
               else {
-                sx = sx - image_00->xoffset;
+                sx = iVar6 - image_00->xoffset;
               }
-              if ((sy == 0) && (-1 < image_00->yoffset + y)) {
+              if ((iVar1 == 0) && (-1 < image_00->yoffset + y)) {
                 y = y + image_00->yoffset;
+                sy = 0;
               }
               else {
-                sy = sy - image_00->yoffset;
+                sy = iVar1 - image_00->yoffset;
               }
               if (image_00->width < 1) {
                 w = (int)ROUND(pixel_per_char * 8.0 - (double)sx);
@@ -26299,12 +27068,12 @@ Line * redrawLineImage(Buffer *buf,Line *l,int i)
               if ((int)ROUND(pixel_per_line * (double)(LINES + -1) - (double)y) < h) {
                 h = (int)ROUND(pixel_per_line * (double)(LINES + -1) - (double)y);
               }
-              addImage(pIVar4,x,y,sx,sy,w,h);
+              addImage(pIVar5,x,y,sx,sy,w,h);
               image_00->touch = image_touch;
               draw_image_flag = 1;
             }
           }
-          rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar2 + j + 1,0,0);
+          rcol = calcPosition(l->lineBuf,l->propBuf,l->len,iVar3 + j + 1,0,0);
         }
       }
     }
@@ -26313,6 +27082,8 @@ Line * redrawLineImage(Buffer *buf,Line *l,int i)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
 
@@ -26371,7 +27142,7 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
         pHVar7 = getHashHist(URLHist,p_Var6->ptr);
         if (pHVar7 != (HistItem *)0x0) {
           for (k = (pAVar5->start).pos; k < (pAVar5->end).pos; k = k + 1) {
-            pLVar2[k] = pLVar2[k] & 0xff | (ushort)(byte)((uint)pLVar2[k] >> 8) << 8 | 0x4000;
+            pLVar2[k] = pLVar2[k] | 0x4000;
           }
         }
         vpos = (pAVar5->end).pos;
@@ -26461,6 +27232,8 @@ int redrawLineRegion(Buffer *buf,Line *l,int i,int bpos,int epos)
 void do_effects(Lineprop m)
 
 {
+  Lineprop m_local;
+  
   if (ulmode != 0) {
     underlineend();
     ulmode = 0;
@@ -26553,6 +27326,8 @@ void do_effects(Lineprop m)
 void do_color(Linecolor c)
 
 {
+  Linecolor c_local;
+  
   if ((c & 8) == 0) {
     if ((color_mode & 8) != 0) {
       setfcolor(basic_color);
@@ -26576,10 +27351,11 @@ void do_color(Linecolor c)
 void addChar(char c,Lineprop mode)
 
 {
-  char local_10 [12];
+  Lineprop mode_local;
+  char c_local;
   
-  local_10[0] = c;
-  addMChar(local_10,mode,1);
+  c_local = c;
+  addMChar(&c_local,mode,1);
   return;
 }
 
@@ -26590,13 +27366,14 @@ void addMChar(char *p,Lineprop mode,size_t len)
 {
   wc_uint32 wVar1;
   int iVar2;
+  Lineprop mode_local;
   char buf [5];
   int w;
   char **symbol;
   Lineprop m;
   char c;
   
-  m = mode & 0xff | ((byte)((uint)mode >> 8) & 0xc0) << 8;
+  m = mode & 0xc0ff;
   c = *p;
   if ((mode & 0x400) == 0) {
     do_effects(m);
@@ -26665,6 +27442,8 @@ void addMChar(char *p,Lineprop mode,size_t len)
 
 
 
+// WARNING: Unknown calling convention
+
 void record_err_message(char *s)
 
 {
@@ -26684,6 +27463,8 @@ void record_err_message(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * message_list_panel(void)
 
@@ -26714,6 +27495,8 @@ Buffer * message_list_panel(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void message(char *s,int return_x,int return_y)
 
 {
@@ -26728,6 +27511,8 @@ void message(char *s,int return_x,int return_y)
 
 
 
+// WARNING: Unknown calling convention
+
 void disp_err_message(char *s,int redraw_current)
 
 {
@@ -26737,6 +27522,8 @@ void disp_err_message(char *s,int redraw_current)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void disp_message_nsec(char *s,int redraw_current,int sec,int purge,int mouse)
 
@@ -26780,6 +27567,8 @@ void disp_message_nsec(char *s,int redraw_current,int sec,int purge,int mouse)
 
 
 
+// WARNING: Unknown calling convention
+
 void disp_message(char *s,int redraw_current)
 
 {
@@ -26788,6 +27577,8 @@ void disp_message(char *s,int redraw_current)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void disp_message_nomouse(char *s,int redraw_current)
 
@@ -26798,6 +27589,8 @@ void disp_message_nomouse(char *s,int redraw_current)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_delayed_message(char *s)
 
 {
@@ -26806,6 +27599,8 @@ void set_delayed_message(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cursorUp0(Buffer *buf,int n)
 
@@ -26827,6 +27622,8 @@ void cursorUp0(Buffer *buf,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cursorUp(Buffer *buf,int n)
 
@@ -26856,6 +27653,8 @@ void cursorUp(Buffer *buf,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void cursorDown0(Buffer *buf,int n)
 
 {
@@ -26876,6 +27675,8 @@ void cursorDown0(Buffer *buf,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cursorDown(Buffer *buf,int n)
 
@@ -26906,6 +27707,8 @@ void cursorDown(Buffer *buf,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void cursorUpDown(Buffer *buf,int n)
 
 {
@@ -26925,6 +27728,8 @@ void cursorUpDown(Buffer *buf,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cursorRight(Buffer *buf,int n)
 
@@ -26986,6 +27791,8 @@ void cursorRight(Buffer *buf,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void cursorLeft(Buffer *buf,int n)
 
 {
@@ -27031,6 +27838,8 @@ void cursorLeft(Buffer *buf,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void cursorHome(Buffer *buf)
 
 {
@@ -27041,6 +27850,8 @@ void cursorHome(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void arrangeCursor(Buffer *buf)
 
@@ -27107,6 +27918,8 @@ void arrangeCursor(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void arrangeLine(Buffer *buf)
 
 {
@@ -27142,6 +27955,8 @@ void arrangeLine(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void cursorXY(Buffer *buf,int x,int y)
 
 {
@@ -27168,6 +27983,8 @@ void cursorXY(Buffer *buf,int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void restorePosition(Buffer *buf,Buffer *orig)
 
@@ -27200,6 +28017,8 @@ void restorePosition(Buffer *buf,Buffer *orig)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int columnSkip(Buffer *buf,int offset)
 
@@ -27244,6 +28063,8 @@ int columnSkip(Buffer *buf,int offset)
 
 
 
+// WARNING: Unknown calling convention
+
 int columnPos(Line *line,int column)
 
 {
@@ -27266,6 +28087,8 @@ int columnPos(Line *line,int column)
 
 
 
+// WARNING: Unknown calling convention
+
 Line * lineSkip(Buffer *buf,Line *line,int offset,int last)
 
 {
@@ -27283,6 +28106,8 @@ Line * lineSkip(Buffer *buf,Line *line,int offset,int last)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Line * currentLineSkip(Buffer *buf,Line *line,int offset,int last)
 
@@ -27337,6 +28162,7 @@ int gethtmlcmd(char **s)
   byte bVar3;
   int iVar4;
   int in_GS_OFFSET;
+  char **s_local;
   int cmd;
   char *save;
   char *p;
@@ -27399,6 +28225,8 @@ int gethtmlcmd(char **s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int parse_ansi_color(char **str,Lineprop *effect,Linecolor *color)
 
@@ -27495,6 +28323,8 @@ LAB_080788ab:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str checkType(Str s,Lineprop **oprop,Linecolor **ocolor)
 
@@ -27748,7 +28578,7 @@ LAB_08079182:
     str = str + 1;
   }
   else {
-    mode = mode & 0xff | (ushort)((byte)((uint)mode >> 8) & 0xf9) << 8 | 0x400;
+    mode = mode & 63999 | 0x400;
     for (i = 1; i < plen; i = i + 1) {
       *prop = mode;
       prop = prop + 1;
@@ -27767,6 +28597,8 @@ LAB_08079182:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int nextColumn(int n,char *p,Lineprop *pr)
 
@@ -27800,6 +28632,8 @@ int nextColumn(int n,char *p,Lineprop *pr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int calcPosition(char *l,Lineprop *pr,int len,int pos,int bpos,int mode)
 
@@ -27850,6 +28684,8 @@ int calcPosition(char *l,Lineprop *pr,int len,int pos,int bpos,int mode)
 
 
 
+// WARNING: Unknown calling convention
+
 int columnLen(Line *line,int column)
 
 {
@@ -27875,6 +28711,8 @@ int columnLen(Line *line,int column)
 
 
 
+// WARNING: Unknown calling convention
+
 char * lastFileName(char *path)
 
 {
@@ -27893,6 +28731,8 @@ char * lastFileName(char *path)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * mybasename(char *s)
 
@@ -27915,6 +28755,8 @@ char * mybasename(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * mydirname(char *s)
 
@@ -27952,6 +28794,7 @@ int next_status(char c,int *status)
 
 {
   int iVar1;
+  char c_local;
   
   switch(*status) {
   case 0:
@@ -28117,6 +28960,8 @@ int next_status(char c,int *status)
 
 
 
+// WARNING: Unknown calling convention
+
 int read_token(Str buf,char **instr,int *status,int pre,int append)
 
 {
@@ -28264,6 +29109,8 @@ proc_end:
 
 
 
+// WARNING: Unknown calling convention
+
 Str correct_irrtag(int status)
 
 {
@@ -28314,6 +29161,8 @@ Str correct_irrtag(int status)
 
 
 
+// WARNING: Unknown calling convention
+
 void add_auth_pass_entry(auth_pass *ent,int netrc,int override)
 
 {
@@ -28351,6 +29200,8 @@ void add_auth_pass_entry(auth_pass *ent,int netrc,int override)
 
 
 
+// WARNING: Unknown calling convention
+
 auth_pass * find_auth_pass_entry(char *host,int port,char *realm,char *uname,int is_proxy)
 
 {
@@ -28384,6 +29235,8 @@ auth_pass * find_auth_pass_entry(char *host,int port,char *realm,char *uname,int
 
 
 
+// WARNING: Unknown calling convention
+
 int find_auth_user_passwd(ParsedURL *pu,char *realm,Str *uname,Str *pwd,int is_proxy)
 
 {
@@ -28415,6 +29268,8 @@ int find_auth_user_passwd(ParsedURL *pu,char *realm,Str *uname,Str *pwd,int is_p
 
 
 
+// WARNING: Unknown calling convention
+
 void add_auth_user_passwd(ParsedURL *pu,char *realm,Str uname,Str pwd,int is_proxy)
 
 {
@@ -28433,6 +29288,8 @@ void add_auth_user_passwd(ParsedURL *pu,char *realm,Str uname,Str pwd,int is_pro
 
 
 
+// WARNING: Unknown calling convention
+
 void invalidate_auth_user_passwd(ParsedURL *pu,char *realm,Str uname,Str pwd,int is_proxy)
 
 {
@@ -28447,6 +29304,8 @@ void invalidate_auth_user_passwd(ParsedURL *pu,char *realm,Str uname,Str pwd,int
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str next_token(Str arg)
 
@@ -28479,6 +29338,8 @@ Str next_token(Str arg)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void parsePasswd(FILE *fp,int netrc)
 
@@ -28575,9 +29436,12 @@ void parsePasswd(FILE *fp,int netrc)
 
 
 
+// WARNING: Unknown calling convention
+
 FILE * openSecretFile(char *fname)
 
 {
+  FILE *__stream;
   FILE *pFVar1;
   char *__file;
   int iVar2;
@@ -28591,14 +29455,14 @@ FILE * openSecretFile(char *fname)
   else {
     __file = expandPath(fname);
     iVar2 = stat(__file,(stat *)&st);
-    pFVar1 = stderr;
+    __stream = stderr;
     if (iVar2 < 0) {
       pFVar1 = (FILE *)0x0;
     }
     else if ((disable_secret_security_check == 0) && ((st.st_mode & 0x3f) != 0)) {
       if (fmInitialized == '\0') {
         p_Var3 = Sprintf("SECURITY NOTE: file %s must not be accessible by others",fname);
-        fputs(p_Var3->ptr,pFVar1);
+        fputs(p_Var3->ptr,__stream);
         fputc(10,stderr);
       }
       else {
@@ -28610,13 +29474,15 @@ FILE * openSecretFile(char *fname)
       pFVar1 = (FILE *)0x0;
     }
     else {
-      pFVar1 = fopen(__file,"r");
+      pFVar1 = (FILE *)fopen(__file,"r");
     }
   }
-  return (FILE *)pFVar1;
+  return pFVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void loadPasswd(void)
 
@@ -28625,20 +29491,22 @@ void loadPasswd(void)
   FILE *fp;
   
   passwords = (auth_pass *)0x0;
-  pFVar1 = (FILE *)openSecretFile(passwd_file);
+  pFVar1 = openSecretFile(passwd_file);
   if (pFVar1 != (FILE *)0x0) {
-    parsePasswd((FILE *)pFVar1,0);
-    fclose(pFVar1);
+    parsePasswd(pFVar1,0);
+    fclose((FILE *)pFVar1);
   }
-  pFVar1 = (FILE *)openSecretFile("~/.netrc");
+  pFVar1 = openSecretFile("~/.netrc");
   if (pFVar1 != (FILE *)0x0) {
-    parsePasswd((FILE *)pFVar1,1);
-    fclose(pFVar1);
+    parsePasswd(pFVar1,1);
+    fclose((FILE *)pFVar1);
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * last_modified(Buffer *buf)
 
@@ -28675,6 +29543,8 @@ char * last_modified(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str romanNum2(int l,int n)
 
@@ -28756,6 +29626,8 @@ Str romanNum2(int l,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 Str romanNumeral(int n)
 
 {
@@ -28784,6 +29656,8 @@ Str romanNumeral(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 Str romanAlphabet(int n)
 
 {
@@ -28793,7 +29667,7 @@ Str romanAlphabet(int n)
   int in_GS_OFFSET;
   int l;
   Str r;
-  char cStack31;
+  char cStack_1f;
   char buf [14];
   int local_10;
   
@@ -28825,23 +29699,27 @@ Str romanAlphabet(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void reset_signals(void)
 
 {
-  mySignal(1,(anon_subr_void_int *)0x0);
-  mySignal(2,(anon_subr_void_int *)0x0);
-  mySignal(3,(anon_subr_void_int *)0x0);
-  mySignal(0xf,(anon_subr_void_int *)0x0);
-  mySignal(4,(anon_subr_void_int *)0x0);
-  mySignal(6,(anon_subr_void_int *)0x0);
-  mySignal(8,(anon_subr_void_int *)0x0);
-  mySignal(7,(anon_subr_void_int *)0x0);
-  mySignal(0x11,(anon_subr_void_int *)0x1);
-  mySignal(0xd,(anon_subr_void_int *)0x1);
+  mySignal(1,(_func_void_int *)0x0);
+  mySignal(2,(_func_void_int *)0x0);
+  mySignal(3,(_func_void_int *)0x0);
+  mySignal(0xf,(_func_void_int *)0x0);
+  mySignal(4,(_func_void_int *)0x0);
+  mySignal(6,(_func_void_int *)0x0);
+  mySignal(8,(_func_void_int *)0x0);
+  mySignal(7,(_func_void_int *)0x0);
+  mySignal(0x11,(_func_void_int *)0x1);
+  mySignal(0xd,(_func_void_int *)0x1);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void close_all_fds_except(int i,int f)
 
@@ -28872,23 +29750,27 @@ LAB_0807aec8:
 
 
 
+// WARNING: Unknown calling convention
+
 void setup_child(int child,int i,int f)
 
 {
   reset_signals();
-  mySignal(2,(anon_subr_void_int *)0x1);
+  mySignal(2,(_func_void_int *)0x1);
   if (child == 0) {
     setpgrp();
   }
   close_tty();
   close_all_fds_except(i,f);
-  TrapSignal = '\0';
-  fmInitialized = '\0';
   QuietMessage = '\x01';
+  fmInitialized = '\0';
+  TrapSignal = '\0';
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 pid_t open_pipe_rw(FILE **fr,FILE **fw)
 
@@ -28954,16 +29836,20 @@ pid_t open_pipe_rw(FILE **fr,FILE **fw)
 
 
 
+// WARNING: Unknown calling convention
+
 void myExec(char *command)
 
 {
-  mySignal(2,(anon_subr_void_int *)0x0);
+  mySignal(2,(_func_void_int *)0x0);
   execl("/bin/sh","sh",&DAT_080caf33,command,0);
                     // WARNING: Subroutine does not return
   exit(0x7f);
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void mySystem(char *command,int background)
 
@@ -28985,6 +29871,8 @@ void mySystem(char *command,int background)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str myExtCommand(char *cmd,char *arg,int redirect)
 
@@ -29030,6 +29918,8 @@ Str myExtCommand(char *cmd,char *arg,int redirect)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str myEditor(char *cmd,char *file,int line)
 
@@ -29099,6 +29989,7 @@ Str myEditor(char *cmd,char *file,int line)
 
 // WARNING: Variable defined which should be unmapped: q
 // WARNING: Variable defined which should be unmapped: extpath
+// WARNING: Unknown calling convention
 
 char * expandName(char *name)
 
@@ -29151,6 +30042,8 @@ char * expandName(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 char * file_to_url(char *file)
 
 {
@@ -29183,6 +30076,8 @@ char * file_to_url(char *file)
 
 
 
+// WARNING: Unknown calling convention
+
 char * url_unquote_conv(char *url,wc_ces charset)
 
 {
@@ -29205,6 +30100,8 @@ char * url_unquote_conv(char *url,wc_ces charset)
 
 
 
+// WARNING: Unknown calling convention
+
 Str tmpfname(int type,char *ext)
 
 {
@@ -29225,6 +30122,8 @@ Str tmpfname(int type,char *ext)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int get_day(char **s)
 
@@ -29264,6 +30163,8 @@ int get_day(char **s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int get_month(char **s)
 
@@ -29323,6 +30224,8 @@ int get_month(char **s)
 
 
 
+// WARNING: Unknown calling convention
+
 int get_year(char **s)
 
 {
@@ -29371,6 +30274,8 @@ int get_year(char **s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int get_time(char **s,int *hour,int *min,int *sec)
 
@@ -29457,6 +30362,8 @@ int get_time(char **s,int *hour,int *min,int *sec)
 
 
 
+// WARNING: Unknown calling convention
+
 int get_zone(char **s,int *z_hour,int *z_min)
 
 {
@@ -29512,6 +30419,8 @@ int get_zone(char **s,int *z_hour,int *z_min)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 time_t mymktime(char *timestr)
 
@@ -29623,6 +30532,8 @@ time_t mymktime(char *timestr)
 
 
 
+// WARNING: Unknown calling convention
+
 char * FQDN(char *host)
 
 {
@@ -29678,14 +30589,16 @@ char * FQDN(char *host)
 
 
 
-anon_subr_void_int * mySignal(int signal_number,anon_subr_void_int *action)
+// WARNING: Unknown calling convention
+
+_func_void_int * mySignal(int signal_number,_func_void_int *action)
 
 {
   sigaction old_action;
   sigaction new_action;
   
   sigemptyset((sigset_t *)&new_action.sa_mask);
-  new_action.__sigaction_handler = action;
+  new_action.__sigaction_handler.sa_handler = action;
   if (signal_number == 0xe) {
     new_action.sa_flags = 0x20000000;
   }
@@ -29693,10 +30606,12 @@ anon_subr_void_int * mySignal(int signal_number,anon_subr_void_int *action)
     new_action.sa_flags = 0x10000000;
   }
   sigaction(signal_number,(sigaction *)&new_action,(sigaction *)&old_action);
-  return old_action.__sigaction_handler;
+  return old_action.__sigaction_handler.sa_handler;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_mark(Line *l,int pos,int epos)
 
@@ -29708,6 +30623,8 @@ void set_mark(Line *l,int pos,int epos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_migemo(void)
 
@@ -29730,6 +30647,8 @@ void init_migemo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int open_migemo(char *migemo_command)
 
@@ -29754,6 +30673,8 @@ int open_migemo(char *migemo_command)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * migemostr(char *str)
 
@@ -29798,6 +30719,8 @@ char * migemostr(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 char * conv_search_string(char *str,wc_ces f_ces)
 
 {
@@ -29809,6 +30732,8 @@ char * conv_search_string(char *str,wc_ces f_ces)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int forwardSearch(Buffer *buf,char *str)
 
@@ -29923,6 +30848,7 @@ int forwardSearch(Buffer *buf,char *str)
 
 
 // WARNING: Type propagation algorithm not settling
+// WARNING: Unknown calling convention
 
 int backwardSearch(Buffer *buf,char *str)
 
@@ -30058,8 +30984,10 @@ LAB_0807d150:
 
 
 
+// WARNING: Unknown calling convention
+
 char * inputLineHistSearch(char *prompt,char *def_str,int flag,Hist *hist,
-                          anon_subr_int_int_Str_Lineprop_ptr *incrfunc)
+                          _func_int_int_Str_Lineprop_ptr *incrfunc)
 
 {
   int iVar1;
@@ -30203,7 +31131,7 @@ next_char:
         goto LAB_0807d862;
       }
       if ((i_quote == 0) && (c < 0x20)) {
-        if (incrfunc == (anon_subr_int_int_Str_Lineprop_ptr *)0x0) {
+        if (incrfunc == (_func_int_int_Str_Lineprop_ptr *)0x0) {
 LAB_0807d750:
           (*InputKeymap[c])((uint)c);
         }
@@ -30212,8 +31140,7 @@ LAB_0807d750:
           c = (uchar)iVar4;
           if (c < 0x20) goto LAB_0807d750;
         }
-        if (((incrfunc != (anon_subr_int_int_Str_Lineprop_ptr *)0x0) && (c != 0xff)) && (c != '\n'))
-        {
+        if (((incrfunc != (_func_int_int_Str_Lineprop_ptr *)0x0) && (c != 0xff)) && (c != '\n')) {
           (*incrfunc)(-1,strBuf,strProp);
         }
         if (cm_clear != 0) {
@@ -30234,7 +31161,7 @@ LAB_0807d750:
       cm_disp_next = -1;
     } while ((0x400 < str->length + CLen) || (str->length == 0));
     ins_char(str);
-    if (incrfunc != (anon_subr_int_int_Str_Lineprop_ptr *)0x0) {
+    if (incrfunc != (_func_int_int_Str_Lineprop_ptr *)0x0) {
       (*incrfunc)(-1,strBuf,strProp);
     }
 LAB_0807d862:
@@ -30273,6 +31200,8 @@ LAB_0807d862:
 
 
 
+// WARNING: Unknown calling convention
+
 void addPasswd(char *p,Lineprop *pr,int len,int offset,int limit)
 
 {
@@ -30295,6 +31224,8 @@ void addPasswd(char *p,Lineprop *pr,int len,int offset,int limit)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addStr(char *p,Lineprop *pr,int len,int offset,int limit)
 
@@ -30348,6 +31279,8 @@ void addStr(char *p,Lineprop *pr,int len,int offset,int limit)
 
 
 
+// WARNING: Unknown calling convention
+
 void ins_char(Str str)
 
 {
@@ -30384,7 +31317,7 @@ void ins_char(Str str)
           insC();
           strBuf->ptr[CPos] = *p;
           p = p + 1;
-          strProp[CPos] = (ushort)((byte)((uint)ctype >> 8) & 0xf9) << 8 | 0x400;
+          strProp[CPos] = ctype & 63999 | 0x400;
           CPos = CPos + 1;
         }
       }
@@ -30394,6 +31327,8 @@ void ins_char(Str str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _esc(void)
 
@@ -30494,6 +31429,8 @@ LAB_0807deb2:
 
 
 
+// WARNING: Unknown calling convention
+
 void insC(void)
 
 {
@@ -30508,6 +31445,8 @@ void insC(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void delC(void)
 
@@ -30531,6 +31470,8 @@ void delC(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _mvL(void)
 
 {
@@ -30543,6 +31484,8 @@ void _mvL(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _mvLw(void)
 
@@ -30572,6 +31515,8 @@ void _mvLw(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _mvRw(void)
 
 {
@@ -30600,6 +31545,8 @@ void _mvRw(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _mvR(void)
 
 {
@@ -30613,6 +31560,8 @@ void _mvR(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _bs(void)
 
 {
@@ -30624,6 +31573,8 @@ void _bs(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _bsw(void)
 
@@ -30653,6 +31604,8 @@ LAB_0807e24e:
 
 
 
+// WARNING: Unknown calling convention
+
 void _enter(void)
 
 {
@@ -30666,6 +31619,7 @@ void insertself(char c)
 
 {
   Lineprop LVar1;
+  char c_local;
   
   if (CLen < 0x400) {
     insC();
@@ -30684,6 +31638,8 @@ void insertself(char c)
 
 
 
+// WARNING: Unknown calling convention
+
 void _quo(void)
 
 {
@@ -30692,6 +31648,8 @@ void _quo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _mvB(void)
 
@@ -30702,6 +31660,8 @@ void _mvB(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _mvE(void)
 
 {
@@ -30710,6 +31670,8 @@ void _mvE(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void killn(void)
 
@@ -30720,6 +31682,8 @@ void killn(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void killb(void)
 
@@ -30732,6 +31696,8 @@ void killb(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _inbrk(void)
 
 {
@@ -30742,6 +31708,8 @@ void _inbrk(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _compl(void)
 
 {
@@ -30751,6 +31719,8 @@ void _compl(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _rcompl(void)
 
 {
@@ -30759,6 +31729,8 @@ void _rcompl(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _tcompl(void)
 
@@ -30775,6 +31747,8 @@ void _tcompl(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void next_compl(int next)
 
@@ -30829,6 +31803,8 @@ void next_compl(int next)
 
 
 
+// WARNING: Unknown calling convention
+
 void _dcompl(void)
 
 {
@@ -30838,6 +31814,8 @@ void _dcompl(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _rdcompl(void)
 
 {
@@ -30846,6 +31824,8 @@ void _rdcompl(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void next_dcompl(int next)
 
@@ -31020,6 +32000,8 @@ void next_dcompl(int next)
 
 
 
+// WARNING: Unknown calling convention
+
 Str escape_spaces(Str s)
 
 {
@@ -31061,6 +32043,8 @@ Str escape_spaces(Str s)
 
 
 
+// WARNING: Unknown calling convention
+
 Str unescape_spaces(Str s)
 
 {
@@ -31094,6 +32078,8 @@ Str unescape_spaces(Str s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str doComplete(Str ifn,int *status,int next)
 
@@ -31279,6 +32265,8 @@ Str doComplete(Str ifn,int *status,int next)
 
 
 
+// WARNING: Unknown calling convention
+
 void _prev(void)
 
 {
@@ -31312,6 +32300,8 @@ void _prev(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void _next(void)
 
 {
@@ -31338,6 +32328,8 @@ void _next(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int setStrType(Str str,Lineprop *prop)
 
@@ -31370,7 +32362,7 @@ int setStrType(Str str,Lineprop *prop)
     len = uVar2 - 1;
     if (len != 0) {
       while (bVar3 = len != 0, len = len + -1, bVar3) {
-        prop[i] = (ushort)((byte)((uint)ctype >> 8) & 0xf9) << 8 | 0x400;
+        prop[i] = ctype & 63999 | 0x400;
         i = i + 1;
       }
     }
@@ -31383,6 +32375,7 @@ int setStrType(Str str,Lineprop *prop)
 int terminated(uchar c)
 
 {
+  uchar c_local;
   int termchar [5];
   int *tp;
   
@@ -31398,6 +32391,8 @@ int terminated(uchar c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void _editor(void)
 
@@ -31441,6 +32436,8 @@ void _editor(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int LUfactor(Matrix A,int *indexarray)
 
@@ -31519,6 +32516,8 @@ int LUfactor(Matrix A,int *indexarray)
 
 
 
+// WARNING: Unknown calling convention
+
 int LUsolve(Matrix A,int *indexarray,Vector b,Vector x)
 
 {
@@ -31538,6 +32537,8 @@ int LUsolve(Matrix A,int *indexarray,Vector b,Vector x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Matrix LUinverse(Matrix A,int *indexarray,Matrix out)
 
@@ -31583,6 +32584,7 @@ int Usolve(Matrix mat,Vector b,Vector out,double diag)
 
 {
   int iVar1;
+  double diag_local;
   double sum;
   int dim;
   int i_lim;
@@ -31622,6 +32624,7 @@ int Lsolve(Matrix mat,Vector b,Vector out,double diag)
 {
   int iVar1;
   int iVar2;
+  double diag_local;
   double sum;
   int dim;
   int i_lim;
@@ -31655,6 +32658,8 @@ int Lsolve(Matrix mat,Vector b,Vector out,double diag)
 
 
 
+// WARNING: Unknown calling convention
+
 Matrix new_matrix(int n)
 
 {
@@ -31671,6 +32676,8 @@ Matrix new_matrix(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 Vector new_vector(int n)
 
 {
@@ -31686,6 +32693,8 @@ Vector new_vector(int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 double weight(int x)
 
@@ -31706,6 +32715,8 @@ double weight(int x)
 
 
 
+// WARNING: Unknown calling convention
+
 double weight2(int a)
 
 {
@@ -31720,6 +32731,8 @@ int bsearch_2short(short e1,short *ent1,short e2,short *ent2,int base,short *ind
   int iVar1;
   int iVar2;
   uint uVar3;
+  short e2_local;
+  short e1_local;
   int ne;
   int idx;
   int nn;
@@ -31753,6 +32766,7 @@ int bsearch_double(double e,double *ent,short *indexarray,int nent)
 
 {
   uint uVar1;
+  double e_local;
   double ne;
   int idx;
   int nn;
@@ -31779,6 +32793,8 @@ int bsearch_double(double e,double *ent,short *indexarray,int nent)
 
 
 
+// WARNING: Unknown calling convention
+
 int ceil_at_intervals(int x,int step)
 
 {
@@ -31798,6 +32814,8 @@ int ceil_at_intervals(int x,int step)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int floor_at_intervals(int x,int step)
 
@@ -31819,6 +32837,8 @@ int floor_at_intervals(int x,int step)
 
 
 
+// WARNING: Unknown calling convention
+
 int table_colspan(table *t,int row,int col)
 
 {
@@ -31830,6 +32850,8 @@ int table_colspan(table *t,int row,int col)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int table_rowspan(table *t,int row,int col)
 
@@ -31853,6 +32875,8 @@ int table_rowspan(table *t,int row,int col)
 
 
 
+// WARNING: Unknown calling convention
+
 int minimum_cellspacing(int border_mode)
 
 {
@@ -31868,6 +32892,8 @@ int minimum_cellspacing(int border_mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int table_border_width(table *t)
 
@@ -31889,6 +32915,8 @@ LAB_080805d1:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 table * newTable(void)
 
@@ -31947,6 +32975,8 @@ table * newTable(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_row(table *t,int row)
 
@@ -32021,6 +33051,8 @@ void check_row(table *t,int row)
 
 
 
+// WARNING: Unknown calling convention
+
 void pushdata(table *t,int row,int col,char *data)
 
 {
@@ -32043,6 +33075,8 @@ void pushdata(table *t,int row,int col,char *data)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void suspend_or_pushdata(table *tbl,char *line)
 
@@ -32068,6 +33102,8 @@ void suspend_or_pushdata(table *tbl,char *line)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int visible_length(char *str)
 
@@ -32174,6 +33210,8 @@ int visible_length(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 int visible_length_plain(char *str)
 
 {
@@ -32216,6 +33254,8 @@ int visible_length_plain(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 int maximum_visible_length(char *str,int offset)
 
 {
@@ -32228,6 +33268,8 @@ int maximum_visible_length(char *str,int offset)
 
 
 
+// WARNING: Unknown calling convention
+
 int maximum_visible_length_plain(char *str,int offset)
 
 {
@@ -32239,6 +33281,8 @@ int maximum_visible_length_plain(char *str,int offset)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void align(TextLine *lbuf,int width,int mode)
 
@@ -32328,6 +33372,8 @@ void align(TextLine *lbuf,int width,int mode)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_item(table *t,int row,int col,int width,Str buf)
 
 {
@@ -32366,7 +33412,7 @@ void print_item(table *t,int row,int col,int width,Str buf)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 void print_sep(table *t,int row,int type,int maxcol,Str buf)
 
@@ -32486,6 +33532,8 @@ void print_sep(table *t,int row,int type,int maxcol,Str buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int get_spec_cell_width(table *tbl,int row,int col)
 
 {
@@ -32501,6 +33549,8 @@ int get_spec_cell_width(table *tbl,int row,int col)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void do_refill(table *tbl,int row,int col,int maxlimit)
 
@@ -32636,6 +33686,8 @@ void do_refill(table *tbl,int row,int col,int maxlimit)
 
 
 
+// WARNING: Unknown calling convention
+
 int table_rule_width(table *t)
 
 {
@@ -32659,6 +33711,7 @@ void check_cell_width(short *tabwidth,short *cellwidth,short *col,short *colspan
   short sVar3;
   int iVar4;
   int iVar5;
+  short maxcell_local;
   int r;
   int w;
   int width;
@@ -32699,6 +33752,8 @@ void check_cell_width(short *tabwidth,short *cellwidth,short *col,short *colspan
 
 
 
+// WARNING: Unknown calling convention
+
 void check_minimum_width(table *t,short *tabwidth)
 
 {
@@ -32716,6 +33771,8 @@ void check_minimum_width(table *t,short *tabwidth)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_maximum_width(table *t)
 
@@ -32747,22 +33804,21 @@ void check_maximum_width(table *t)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_integered_width(table *t,double *dwidth,short *iwidth)
 
 {
   short sVar1;
   short sVar2;
-  ulonglong uVar3;
   int step_00;
   short *indexarray_00;
   double *ent;
   void *__s;
-  size_t __n;
+  int iVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
-  double dVar7;
-  ulonglong uVar8;
+  double dVar6;
   double nsum;
   double x;
   double sum;
@@ -32793,30 +33849,28 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
   
   x = 0.0;
   step_00 = table_rule_width(t);
-  indexarray_00 = (short *)GC_malloc_atomic();
-  ent = (double *)GC_malloc_atomic();
+  indexarray_00 = (short *)GC_malloc_atomic((t->maxcol + 1) * 2);
+  ent = (double *)GC_malloc_atomic((t->maxcol + 1) * 8);
   for (i = 0; i <= t->maxcol; i = i + 1) {
-    dVar7 = ceil(dwidth[i]);
-    iVar4 = ceil_at_intervals((int)ROUND(dVar7),step_00);
-    iwidth[i] = (short)iVar4;
+    dVar6 = ceil(dwidth[i]);
+    iVar3 = ceil_at_intervals((int)ROUND(dVar6),step_00);
+    iwidth[i] = (short)iVar3;
     ent[i] = (double)iwidth[i] - dwidth[i];
   }
   sum = 0.0;
   for (k = 0; k <= t->maxcol; k = k + 1) {
     x = ent[k];
     sum = sum + x;
-    iVar4 = bsearch_double(x,ent,indexarray_00,k);
-    if (iVar4 < k) {
-      for (ii = k; iVar4 < ii; ii = ii + -1) {
+    iVar3 = bsearch_double(x,ent,indexarray_00,k);
+    if (iVar3 < k) {
+      for (ii = k; iVar3 < ii; ii = ii + -1) {
         indexarray_00[ii] = indexarray_00[ii + -1];
       }
     }
-    indexarray_00[iVar4] = (short)k;
+    indexarray_00[iVar3] = (short)k;
   }
-  __s = (void *)GC_malloc_atomic();
-  __n = t->maxcol + 1;
-  uVar8 = CONCAT44(__n,__s);
-  bzero(__s,__n);
+  __s = (void *)GC_malloc_atomic(t->maxcol + 1);
+  bzero(__s,t->maxcol + 1);
   step = 0;
   do {
     if (1 < step) {
@@ -32833,62 +33887,60 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
         else if (1e-06 < ABS(ent[indexarray_00[i + n]] - x)) break;
       }
       for (k = 0; k < n; k = k + 1) {
-        iVar4 = (int)indexarray_00[i + k];
-        if ((*(char *)(iVar4 + (int)__s) < '\x02') &&
-           (iwidth[iVar4] - step_00 < (int)t->minimum_width[iVar4])) {
-          *(undefined *)(iVar4 + (int)__s) = 2;
+        iVar3 = (int)indexarray_00[i + k];
+        if ((*(char *)(iVar3 + (int)__s) < '\x02') &&
+           (iwidth[iVar3] - step_00 < (int)t->minimum_width[iVar3])) {
+          *(undefined *)(iVar3 + (int)__s) = 2;
         }
-        if (((*(char *)(iVar4 + (int)__s) < '\x01') &&
-            (iwidth[iVar4] - step_00 < (int)t->tabwidth[iVar4])) &&
-           (0.5 < (double)step_00 - ent[iVar4])) {
-          *(undefined *)(iVar4 + (int)__s) = 1;
+        if (((*(char *)(iVar3 + (int)__s) < '\x01') &&
+            (iwidth[iVar3] - step_00 < (int)t->tabwidth[iVar3])) &&
+           (0.5 < (double)step_00 - ent[iVar3])) {
+          *(undefined *)(iVar3 + (int)__s) = 1;
         }
       }
-      uVar3 = uVar8 >> 0x20;
-      uVar8 = uVar8 & 0xffffffff00000000;
-      iVar4 = GC_malloc_atomic(n,(int)uVar3);
+      iVar3 = GC_malloc_atomic(n);
       for (k = 0; k < (t->cell).maxcell; k = k + 1) {
         sVar1 = (t->cell).index[k];
-        iVar5 = (int)(t->cell).col[sVar1];
-        iVar6 = (t->cell).colspan[sVar1] + iVar5;
+        iVar4 = (int)(t->cell).col[sVar1];
+        iVar5 = (t->cell).colspan[sVar1] + iVar4;
         m = 0;
         for (kk = 0; kk < n; kk = kk + 1) {
           sVar2 = indexarray_00[i + kk];
-          if ((iVar5 <= sVar2) && (sVar2 < iVar6)) {
-            *(char *)(m + iVar4) = (char)sVar2;
+          if ((iVar4 <= sVar2) && (sVar2 < iVar5)) {
+            *(char *)(m + iVar3) = (char)sVar2;
             m = m + 1;
           }
         }
         if (m != 0) {
           width = t->cellspacing * ((t->cell).colspan[sVar1] + -1);
-          for (kk = iVar5; kk < iVar6; kk = kk + 1) {
+          for (kk = iVar4; kk < iVar5; kk = kk + 1) {
             width = width + iwidth[kk];
           }
           w = 0;
           for (kk = 0; kk < m; kk = kk + 1) {
-            if (*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x02') {
+            if (*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x02') {
               w = w + step_00;
             }
           }
           if (width - w < (int)(t->cell).minimum_width[sVar1]) {
             for (kk = 0; kk < m; kk = kk + 1) {
-              if (*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x02') {
-                *(undefined *)((int)*(char *)(kk + iVar4) + (int)__s) = 2;
+              if (*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x02') {
+                *(undefined *)((int)*(char *)(kk + iVar3) + (int)__s) = 2;
               }
             }
           }
           w = 0;
           for (kk = 0; kk < m; kk = kk + 1) {
-            if ((*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x01') &&
-               (0.5 < (double)step_00 - ent[*(char *)(kk + iVar4)])) {
+            if ((*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x01') &&
+               (0.5 < (double)step_00 - ent[*(char *)(kk + iVar3)])) {
               w = w + step_00;
             }
           }
           if (width - w < (int)(t->cell).width[sVar1]) {
             for (kk = 0; kk < m; kk = kk + 1) {
-              if ((*(char *)((int)*(char *)(kk + iVar4) + (int)__s) < '\x01') &&
-                 (0.5 < (double)step_00 - ent[*(char *)(kk + iVar4)])) {
-                *(undefined *)((int)*(char *)(kk + iVar4) + (int)__s) = 1;
+              if ((*(char *)((int)*(char *)(kk + iVar3) + (int)__s) < '\x01') &&
+                 (0.5 < (double)step_00 - ent[*(char *)(kk + iVar3)])) {
+                *(undefined *)((int)*(char *)(kk + iVar3) + (int)__s) = 1;
               }
             }
           }
@@ -32900,18 +33952,18 @@ void set_integered_width(table *t,double *dwidth,short *iwidth)
           nn = nn + 1;
         }
       }
-      dVar7 = sum - (double)(nn * step_00);
-      if ((dVar7 < 0.0) && (ABS(sum) <= ABS(dVar7))) {
+      dVar6 = sum - (double)(nn * step_00);
+      if ((dVar6 < 0.0) && (ABS(sum) <= ABS(dVar6))) {
         return;
       }
       for (k = 0; k < n; k = k + 1) {
-        iVar4 = (int)indexarray_00[i + k];
-        if (*(char *)(iVar4 + (int)__s) <= step) {
-          iwidth[iVar4] = iwidth[iVar4] - (short)step_00;
-          *(undefined *)(iVar4 + (int)__s) = 3;
+        iVar3 = (int)indexarray_00[i + k];
+        if (*(char *)(iVar3 + (int)__s) <= step) {
+          iwidth[iVar3] = iwidth[iVar3] - (short)step_00;
+          *(undefined *)(iVar3 + (int)__s) = 3;
         }
       }
-      sum = dVar7;
+      sum = dVar6;
     }
     step = step + 1;
   } while( true );
@@ -32927,6 +33979,9 @@ double correlation_coefficient(double sxx,double syy,double sxy)
 
 {
   double dVar1;
+  double sxy_local;
+  double syy_local;
+  double sxx_local;
   double tmp;
   double coe;
   
@@ -32952,6 +34007,9 @@ double correlation_coefficient2(double sxx,double syy,double sxy)
 
 {
   double dVar1;
+  double sxy_local;
+  double syy_local;
+  double sxx_local;
   double tmp;
   double coe;
   
@@ -32981,7 +34039,11 @@ double recalc_width(double old,double swidth,int cwidth,double sxx,double syy,do
   double dVar1;
   double dVar2;
   double dVar3;
-  double local_54;
+  double sxy_local;
+  double syy_local;
+  double sxx_local;
+  double swidth_local;
+  double old_local;
   double wmin_1;
   double coe1;
   double wmin;
@@ -32991,19 +34053,19 @@ double recalc_width(double old,double swidth,int cwidth,double sxx,double syy,do
   double rat;
   double delta;
   
-  local_54 = old;
+  old_local = old;
   ww = swidth - (double)cwidth;
   dVar1 = sxy / sxx;
   dVar2 = correlation_coefficient(sxx,syy,sxy);
   if (old < 0.0) {
-    local_54 = 0.0;
+    old_local = 0.0;
   }
   if (1e-05 <= ABS(dVar2)) {
-    if (dVar1 * local_54 <= 0.0) {
+    if (dVar1 * old_local <= 0.0) {
       dVar3 = sqrt(syy);
       wmin_1 = ABS(dVar2) * dVar3 * 0.005;
       if (-0.001 < dVar1) {
-        return local_54;
+        return old_local;
       }
       if (0.01 < wmin_1) {
         wmin_1 = 0.01;
@@ -33028,11 +34090,11 @@ double recalc_width(double old,double swidth,int cwidth,double sxx,double syy,do
       }
       ww = ww + wmin;
     }
-    if (ww < dVar1 * local_54) {
-      local_54 = ww / dVar1;
+    if (ww < dVar1 * old_local) {
+      old_local = ww / dVar1;
     }
   }
-  return local_54;
+  return old_local;
 }
 
 
@@ -33047,6 +34109,8 @@ int check_compressible_cell
   int iVar3;
   int iVar4;
   double dVar5;
+  double sxx_local;
+  double totalwidth_local;
   double sxy;
   double dmin;
   double dmax;
@@ -33171,15 +34235,15 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   int in_GS_OFFSET;
   undefined2 in_FPUControlWord;
   double dVar9;
-  table *ptStack384;
-  undefined8 uStack380;
-  double *apdStack372 [2];
-  undefined auStack364 [12];
-  double *pdStack352;
-  int aiStack348 [2];
-  double dStack340;
-  int aiStack332 [3];
-  short_0_ asStack320 [4];
+  table *ptStack_180;
+  undefined8 uStack_17c;
+  double *apdStack_174 [2];
+  undefined auStack_16c [12];
+  double *pdStack_160;
+  int aiStack_15c [2];
+  double dStack_154;
+  int aiStack_14c [3];
+  short_0_ asStack_140 [4];
   int local_13c;
   uint local_138;
   uint local_134;
@@ -33213,9 +34277,9 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   int local_c0;
   undefined2 local_bc;
   undefined2 local_ba;
-  MAT *local_b8;
-  double *local_b4;
-  table *local_b0;
+  MAT *minv_local;
+  double *newwidth_local;
+  table *t_local;
   double w_1;
   double sx_1;
   double w;
@@ -33244,54 +34308,51 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
   int i;
   int local_20;
   
-  local_b0 = t;
-  local_b4 = newwidth;
-  local_b8 = minv;
+  t_local = t;
+  newwidth_local = newwidth;
+  minv_local = minv;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
   corr = 0;
   cell = &t->cell;
-  local_d4 = t->maxcol + 1;
   local_50 = t->maxcol;
-  local_cc = local_d4 * 0x10;
+  local_d4 = local_50 + 1;
   local_c8 = local_d4 >> 0x1c;
+  local_cc = local_d4 * 0x10;
   local_d0 = 0;
-  local_dc = local_d4 * 0x10;
   local_d8 = local_d4 >> 0x1c;
+  local_dc = local_d4 * 0x10;
   iVar2 = -(local_d4 * 2 + 0x1e & 0xfffffff0);
-  orgwidth = asStack320 + iVar2;
-  local_e4 = t->maxcol + 1;
+  orgwidth = asStack_140 + iVar2;
   local_58 = t->maxcol;
+  local_f4 = local_58 + 1;
   local_e0 = 0;
-  local_ec = local_e4 * 0x10;
-  local_e8 = local_e4 >> 0x1c;
-  local_f4 = local_e4;
+  local_e8 = local_f4 >> 0x1c;
+  local_ec = local_f4 * 0x10;
   local_f0 = 0;
-  local_fc = local_e4 * 0x10;
-  local_f8 = local_e4 >> 0x1c;
-  iVar3 = -(local_e4 * 2 + 0x1e & 0xfffffff0);
-  corwidth = asStack320 + iVar3 + iVar2;
+  local_f8 = local_f4 >> 0x1c;
+  local_fc = local_f4 * 0x10;
+  iVar3 = -(local_f4 * 2 + 0x1e & 0xfffffff0);
+  corwidth = asStack_140 + iVar3 + iVar2;
   local_60 = (int)(t->cell).maxcell;
-  local_104 = local_60 + 1;
+  local_114 = local_60 + 1;
   local_100 = 0;
-  local_10c = local_104 * 0x10;
-  local_108 = local_104 >> 0x1c;
-  local_114 = local_104;
+  local_108 = local_114 >> 0x1c;
+  local_10c = local_114 * 0x10;
   local_110 = 0;
-  local_11c = local_104 * 0x10;
-  local_118 = local_104 >> 0x1c;
-  iVar4 = -(local_104 * 2 + 0x1e & 0xfffffff0);
-  cwidth = asStack320 + iVar4 + iVar3 + iVar2;
+  local_118 = local_114 >> 0x1c;
+  local_11c = local_114 * 0x10;
+  iVar4 = -(local_114 * 2 + 0x1e & 0xfffffff0);
+  cwidth = asStack_140 + iVar4 + iVar3 + iVar2;
   local_68 = (int)(t->cell).maxcell;
-  local_124 = local_68 + 1;
+  local_134 = local_68 + 1;
   local_120 = 0;
-  local_12c = local_124 * 0x40;
-  local_128 = local_124 >> 0x1a & 0xf;
-  local_134 = local_124;
+  local_12c = local_134 * 0x40;
+  local_128 = local_134 >> 0x1a & 0xf;
   local_130 = 0;
-  local_13c = local_124 * 0x40;
-  local_138 = local_124 >> 0x1a & 0xf;
-  iVar5 = -(local_124 * 8 + 0x1e & 0xfffffff0);
-  swidth = asStack320 + iVar5 + iVar4 + iVar3 + iVar2;
+  local_13c = local_134 * 0x40;
+  local_138 = local_134 >> 0x1a & 0xf;
+  iVar5 = -(local_134 * 8 + 0x1e & 0xfffffff0);
+  swidth = asStack_140 + iVar5 + iVar4 + iVar3 + iVar2;
   twidth = 0.0;
   stotal = 0.0;
   for (i = 0; i <= t->maxcol; i = i + 1) {
@@ -33301,8 +34362,11 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
       stotal = stotal + minv->me[minv->dim * i + m] + minv->me[minv->dim * i + m];
     }
   }
-  *(int *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = ((t->cell).maxcell + 1) * 8;
-  *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083737;
+  local_124 = local_134;
+  local_104 = local_114;
+  local_e4 = local_f4;
+  *(int *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = ((t->cell).maxcell + 1) * 8;
+  *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083737;
   Sxx = (double *)GC_malloc_atomic();
   psVar7 = cwidth;
   pdVar6 = swidth;
@@ -33312,126 +34376,126 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
     ecol = cell->colspan[j] + bcol;
     *(undefined8 *)(swidth + j * 8) = 0;
     for (i = bcol; i < ecol; i = i + 1) {
-      *(double *)(swidth + j * 8) = local_b4[i] + *(double *)(swidth + j * 8);
+      *(double *)(swidth + j * 8) = newwidth_local[i] + *(double *)(swidth + j * 8);
     }
     *(short *)(cwidth + j * 2) =
-         cell->width[j] + (short)local_b0->cellspacing * (1 - cell->colspan[j]);
+         cell->width[j] + (short)t_local->cellspacing * (1 - cell->colspan[j]);
     Sxx[j] = 0.0;
     for (i = bcol; i < ecol; i = i + 1) {
-      Sxx[j] = *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i) + Sxx[j];
+      Sxx[j] = *(double *)((int)minv_local->me + (minv_local->dim + 1) * 8 * i) + Sxx[j];
       for (m = bcol; m <= ecol; m = m + 1) {
         if (m < i) {
-          Sxx[j] = local_b8->me[local_b8->dim * i + m] + local_b8->me[local_b8->dim * i + m] +
-                   Sxx[j];
+          Sxx[j] = minv_local->me[minv_local->dim * i + m] + minv_local->me[minv_local->dim * i + m]
+                   + Sxx[j];
         }
       }
     }
   }
-  *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
-  *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2) = stotal;
-  *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = 0xffffffff;
-  *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
-  *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
-  *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-  *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
-  *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
-  *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-  *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
-  *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-  *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083929;
+  *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2) = corr;
+  *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2) = stotal;
+  *(undefined4 *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = 0xffffffff;
+  *(undefined4 *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
+  *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
+  *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
+  *(short_0_ **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+  *(double_0_ **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+  *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2) = newwidth_local;
+  *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = minv_local;
+  *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+  *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083929;
   iVar8 = check_compressible_cell
-                    (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
-                     *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
+                    (*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                     *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                     *(short **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                     *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                     *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2));
   corr = iVar8;
   if ((9 < itr) || (iVar8 < 1)) {
     for (k = (int)cell->maxcell; psVar7 = cwidth, pdVar6 = swidth, -1 < k; k = k + -1) {
       j = (int)cell->index[k];
       dVar9 = Sxx[cell->index[k]];
-      *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
-      *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2) = dVar9;
-      *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = j;
-      *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
-      *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
-      *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-      *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
-      *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
-      *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-      *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
-      *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-      *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x80839c4;
+      *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2) = corr;
+      *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2) = dVar9;
+      *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = j;
+      *(undefined4 *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2) = 0xffffffff;
+      *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
+      *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
+      *(short_0_ **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+      *(double_0_ **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+      *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2) = newwidth_local;
+      *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = minv_local;
+      *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+      *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x80839c4;
       corr = check_compressible_cell
-                       (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
-                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
+                       (*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                        *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(short **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2));
       if ((itr < 10) && (iVar8 = corr, 0 < corr)) goto LAB_08083eda;
     }
-    for (i = 0; psVar7 = cwidth, pdVar6 = swidth, i <= local_b0->maxcol; i = i + 1) {
-      dVar9 = *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i);
-      *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2) = corr;
-      *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2) = dVar9;
-      *(undefined4 *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = 0xffffffff;
-      *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2) = i;
-      *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
-      *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
-      *(short_0_ **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
-      *(double_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
-      *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4;
-      *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = local_b8;
-      *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-      *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083a6d;
+    for (i = 0; psVar7 = cwidth, pdVar6 = swidth, i <= t_local->maxcol; i = i + 1) {
+      dVar9 = *(double *)((int)minv_local->me + (minv_local->dim + 1) * 8 * i);
+      *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2) = corr;
+      *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2) = dVar9;
+      *(undefined4 *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = 0xffffffff;
+      *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2) = i;
+      *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx;
+      *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4) = twidth;
+      *(short_0_ **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2) = psVar7;
+      *(double_0_ **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = pdVar6;
+      *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2) = newwidth_local;
+      *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = minv_local;
+      *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+      *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083a6d;
       corr = check_compressible_cell
-                       (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(MAT **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
-                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(short **)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double **)((int)&pdStack352 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack348 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                        *(double *)((int)&dStack340 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(int *)((int)aiStack332 + iVar5 + iVar4 + iVar3 + iVar2));
+                       (*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(MAT **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                        *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(short **)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(double **)((int)&pdStack_160 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_15c + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                        *(double *)((int)&dStack_154 + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(int *)((int)aiStack_14c + iVar5 + iVar4 + iVar3 + iVar2));
       if ((itr < 10) && (iVar8 = corr, 0 < corr)) goto LAB_08083eda;
     }
-    for (i = 0; iVar8 = i, i <= local_b0->maxcol; i = i + 1) {
-      *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b4[i] + 0.5;
-      *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ac7;
-      dVar9 = floor(*(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2));
+    for (i = 0; iVar8 = i, i <= t_local->maxcol; i = i + 1) {
+      *(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = newwidth_local[i] + 0.5;
+      *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ac7;
+      dVar9 = floor(*(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2));
       local_ba = in_FPUControlWord;
       local_bc = CONCAT11(0xc,(char)in_FPUControlWord);
       local_c0 = (int)ROUND(dVar9);
       *(short *)(orgwidth + iVar8 * 2) = (short)(int)ROUND(dVar9);
       *(undefined2 *)(corwidth + iVar8 * 2) = *(undefined2 *)(orgwidth + iVar8 * 2);
     }
-    *(short_0_ **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = corwidth;
-    *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-    *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b33;
-    check_minimum_width(*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                        *(short **)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4));
-    for (i = 0; i <= local_b0->maxcol; i = i + 1) {
-      *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) =
-           *(double *)((int)local_b8->me + (local_b8->dim + 1) * 8 * i);
-      *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b67;
-      sx = sqrt(*(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2));
-      if (((0.1 <= sx) && (*(short *)(orgwidth + i * 2) < local_b0->minimum_width[i])) &&
-         (*(short *)(corwidth + i * 2) == local_b0->minimum_width[i])) {
+    *(short_0_ **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = corwidth;
+    *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+    *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b33;
+    check_minimum_width(*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                        *(short **)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4));
+    for (i = 0; i <= t_local->maxcol; i = i + 1) {
+      *(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) =
+           *(double *)((int)minv_local->me + (minv_local->dim + 1) * 8 * i);
+      *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083b67;
+      sx = sqrt(*(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2));
+      if (((0.1 <= sx) && (*(short *)(orgwidth + i * 2) < t_local->minimum_width[i])) &&
+         (*(short *)(corwidth + i * 2) == t_local->minimum_width[i])) {
         if (sx <= 0.5) {
           w = sx * 0.2;
         }
@@ -33439,25 +34503,25 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
           w = 0.5;
         }
         sxy = 0.0;
-        for (m = 0; m <= local_b0->maxcol; m = m + 1) {
+        for (m = 0; m <= t_local->maxcol; m = m + 1) {
           if (m != i) {
-            sxy = sxy + local_b8->me[local_b8->dim * i + m];
+            sxy = sxy + minv_local->me[minv_local->dim * i + m];
           }
         }
         if (sxy <= 0.0) {
-          sVar1 = local_b0->minimum_width[i];
-          *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = w;
-          *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = (int)sVar1;
-          *(undefined4 *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = 1;
-          *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = i;
-          *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-          *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ca5;
+          sVar1 = t_local->minimum_width[i];
+          *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2) = w;
+          *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = (int)sVar1;
+          *(undefined4 *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2) = 1;
+          *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = i;
+          *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+          *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083ca5;
           correct_table_matrix
-                    (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
-                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                     *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                     *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2));
+                    (*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                     *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2),
+                     *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                     *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2));
           corr = corr + 1;
         }
       }
@@ -33465,16 +34529,16 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
     for (k = 0; k <= cell->maxcell; k = k + 1) {
       nwidth = 0;
       j = (int)cell->index[k];
-      *(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = Sxx[cell->index[k]];
-      *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083cf9;
-      sx_1 = sqrt(*(double *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2));
+      *(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = Sxx[cell->index[k]];
+      *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083cf9;
+      sx_1 = sqrt(*(double *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2));
       if (0.1 <= sx_1) {
         bcol = (int)cell->col[j];
         ecol = cell->colspan[j] + bcol;
         for (i = bcol; i < ecol; i = i + 1) {
           nwidth = nwidth + *(short *)(corwidth + i * 2);
         }
-        mwidth = (int)cell->minimum_width[j] + local_b0->cellspacing * (1 - cell->colspan[j]);
+        mwidth = (int)cell->minimum_width[j] + t_local->cellspacing * (1 - cell->colspan[j]);
         if ((*(double *)(swidth + j * 8) < (double)mwidth) && (mwidth == nwidth)) {
           if (sx_1 <= 0.5) {
             w_1 = sx_1 * 0.2;
@@ -33484,26 +34548,26 @@ int check_table_width(table *t,double *newwidth,MAT *minv,int itr)
           }
           sxy = 0.0;
           for (i = bcol; i < ecol; i = i + 1) {
-            for (m = 0; m <= local_b0->maxcol; m = m + 1) {
+            for (m = 0; m <= t_local->maxcol; m = m + 1) {
               if ((m < bcol) || (ecol <= m)) {
-                sxy = sxy + local_b8->me[local_b8->dim * i + m];
+                sxy = sxy + minv_local->me[minv_local->dim * i + m];
               }
             }
           }
           if (sxy <= 0.0) {
             sVar1 = cell->colspan[j];
-            *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2) = w_1;
-            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = mwidth;
-            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2) = (int)sVar1;
-            *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = bcol;
-            *(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2) = local_b0;
-            *(undefined4 *)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083eae;
+            *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2) = w_1;
+            *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4) = mwidth;
+            *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2) = (int)sVar1;
+            *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4) = bcol;
+            *(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2) = t_local;
+            *(undefined4 *)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2 + -4) = 0x8083eae;
             correct_table_matrix
-                      (*(table **)((int)&uStack380 + iVar5 + iVar4 + iVar3 + iVar2),
-                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
-                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2),
-                       *(int *)((int)apdStack372 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
-                       *(double *)(auStack364 + iVar5 + iVar4 + iVar3 + iVar2));
+                      (*(table **)((int)&uStack_17c + iVar5 + iVar4 + iVar3 + iVar2),
+                       *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + -4),
+                       *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2),
+                       *(int *)((int)apdStack_174 + iVar5 + iVar4 + iVar3 + iVar2 + 4),
+                       *(double *)(auStack_16c + iVar5 + iVar4 + iVar3 + iVar2));
             corr = corr + 1;
           }
         }
@@ -33519,11 +34583,13 @@ LAB_08083eda:
     return iVar8;
   }
                     // WARNING: Subroutine does not return
-  ptStack384 = (table *)0x8083eed;
+  ptStack_180 = (table *)0x8083eed;
   __stack_chk_fail();
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_table_height(table *t)
 
@@ -33531,7 +34597,7 @@ void check_table_height(table *t)
   int iVar1;
   int iVar2;
   int iVar3;
-  anon_struct_for_cell cell;
+  anon_struct_20_6_64f41a67 cell;
   int ii;
   int idx;
   int c;
@@ -33644,14 +34710,14 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   short sVar9;
   table **pptVar10;
   int in_GS_OFFSET;
-  undefined4 uStack192;
-  table *ptStack188;
-  short *psStack184;
-  table_cell *ptStack180;
-  short *psStack176;
-  int iStack172;
-  short *psStack168;
-  int aiStack164 [5];
+  undefined4 uStack_c0;
+  table *ptStack_bc;
+  short *psStack_b8;
+  table_cell *ptStack_b4;
+  short *psStack_b0;
+  int iStack_ac;
+  short *psStack_a8;
+  int aiStack_a4 [5];
   undefined4 local_90;
   int local_8c;
   uint local_88;
@@ -33666,9 +34732,9 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   short *local_64;
   undefined *local_60;
   undefined *local_5c;
-  short *local_58;
-  short *local_54;
-  table *local_50;
+  short *cellwidth_local;
+  short *orgwidth_local;
+  table *t_local;
   short_0_ *ccellwidth;
   int local_3c;
   short_0_ *newwidth;
@@ -33679,11 +34745,11 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   int i;
   int local_20;
   
-  local_50 = t;
-  local_54 = orgwidth;
-  local_58 = cellwidth;
+  t_local = t;
+  orgwidth_local = orgwidth;
+  cellwidth_local = cellwidth;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  local_5c = (undefined *)&ptStack188;
+  local_5c = (undefined *)&ptStack_bc;
   local_74 = t->maxcol + 1;
   local_34 = t->maxcol;
   local_6c = local_74 * 0x10;
@@ -33692,96 +34758,96 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
   local_7c = local_74 * 0x10;
   local_78 = local_74 >> 0x1c;
   iVar8 = -(local_74 * 2 + 0x1e & 0xfffffff0);
-  pptVar10 = (table **)((int)&ptStack188 + iVar8);
+  pptVar10 = (table **)((int)&ptStack_bc + iVar8);
   newwidth = (short_0_ *)((int)&local_90 + iVar8);
   cell = &t->cell;
-  *(table **)((int)&ptStack188 + iVar8) = t;
-  *(undefined4 *)((int)&uStack192 + iVar8) = 0x808440a;
-  rulewidth = table_rule_width(*(table **)((int)&ptStack188 + iVar8));
+  *(table **)((int)&ptStack_bc + iVar8) = t;
+  *(undefined4 *)((int)&uStack_c0 + iVar8) = 0x808440a;
+  rulewidth = table_rule_width(*(table **)((int)&ptStack_bc + iVar8));
   ptVar6 = cell;
   psVar5 = newwidth;
-  for (i = 0; i <= local_50->maxcol; i = i + 1) {
+  for (i = 0; i <= t_local->maxcol; i = i + 1) {
     sVar9 = 0;
-    if (-1 < local_54[i]) {
-      sVar9 = local_54[i];
+    if (-1 < orgwidth_local[i]) {
+      sVar9 = orgwidth_local[i];
     }
     *(short *)(newwidth + i * 2) = sVar9;
   }
   if ((flag & 2U) == 0) {
-    iVar4 = local_50->cellspacing;
+    iVar4 = t_local->cellspacing;
     psVar1 = cell->index;
     sVar9 = cell->maxcell;
     psVar2 = cell->colspan;
-    *(undefined4 *)((int)aiStack164 + iVar8 + 4) = 0;
-    *(int *)((int)aiStack164 + iVar8) = iVar4;
-    *(short **)((int)&psStack168 + iVar8) = psVar1;
-    *(int *)((int)&iStack172 + iVar8) = (int)sVar9;
-    *(short **)((int)&psStack176 + iVar8) = psVar2;
-    *(table_cell **)((int)&ptStack180 + iVar8) = ptVar6;
-    *(short **)((int)&psStack184 + iVar8) = local_58;
-    *(short_0_ **)((int)&ptStack188 + iVar8) = psVar5;
-    *(undefined4 *)((int)&uStack192 + iVar8) = 0x808467d;
-    check_cell_width(*(short **)((int)&ptStack188 + iVar8),*(short **)((int)&psStack184 + iVar8),
-                     *(short **)((int)&ptStack180 + iVar8),*(short **)((int)&psStack176 + iVar8),
-                     *(short *)((int)&iStack172 + iVar8),*(short **)((int)&psStack168 + iVar8),
-                     *(int *)((int)aiStack164 + iVar8),*(int *)((int)aiStack164 + iVar8 + 4));
+    *(undefined4 *)((int)aiStack_a4 + iVar8 + 4) = 0;
+    *(int *)((int)aiStack_a4 + iVar8) = iVar4;
+    *(short **)((int)&psStack_a8 + iVar8) = psVar1;
+    *(int *)((int)&iStack_ac + iVar8) = (int)sVar9;
+    *(short **)((int)&psStack_b0 + iVar8) = psVar2;
+    *(table_cell **)((int)&ptStack_b4 + iVar8) = ptVar6;
+    *(short **)((int)&psStack_b8 + iVar8) = cellwidth_local;
+    *(short_0_ **)((int)&ptStack_bc + iVar8) = psVar5;
+    *(undefined4 *)((int)&uStack_c0 + iVar8) = 0x808467d;
+    check_cell_width(*(short **)((int)&ptStack_bc + iVar8),*(short **)((int)&psStack_b8 + iVar8),
+                     *(short **)((int)&ptStack_b4 + iVar8),*(short **)((int)&psStack_b0 + iVar8),
+                     *(short *)((int)&iStack_ac + iVar8),*(short **)((int)&psStack_a8 + iVar8),
+                     *(int *)((int)aiStack_a4 + iVar8),*(int *)((int)aiStack_a4 + iVar8 + 4));
   }
   else {
-    local_60 = (undefined *)((int)&ptStack188 + iVar8);
+    local_60 = (undefined *)((int)&ptStack_bc + iVar8);
     local_84 = (int)cell->maxcell + 1;
     local_3c = (int)cell->maxcell;
     local_80 = 0;
     local_8c = local_84 * 0x10;
     local_88 = local_84 >> 0x1c;
-    aiStack164[4] = local_84;
+    aiStack_a4[4] = local_84;
     local_90 = 0;
-    aiStack164[2] = local_84 * 0x10;
-    aiStack164[3] = local_84 >> 0x1c;
+    aiStack_a4[2] = local_84 * 0x10;
+    aiStack_a4[3] = local_84 >> 0x1c;
     iVar4 = -(local_84 * 2 + 0x1e & 0xfffffff0);
     psVar7 = (short_0_ *)((int)&local_90 + iVar4 + iVar8);
     ccellwidth = psVar7;
-    for (i = 0; i <= local_50->maxcol; i = i + 1) {
-      if (*(short *)(newwidth + i * 2) < local_50->fixed_width[i]) {
-        *(short *)(newwidth + i * 2) = local_50->fixed_width[i];
+    for (i = 0; i <= t_local->maxcol; i = i + 1) {
+      if (*(short *)(newwidth + i * 2) < t_local->fixed_width[i]) {
+        *(short *)(newwidth + i * 2) = t_local->fixed_width[i];
       }
     }
     for (i = 0; i <= cell->maxcell; i = i + 1) {
-      *(short *)(psVar7 + i * 2) = local_58[i];
+      *(short *)(psVar7 + i * 2) = cellwidth_local[i];
       if (*(short *)(psVar7 + i * 2) < cell->fixed_width[i]) {
         *(short *)(psVar7 + i * 2) = cell->fixed_width[i];
       }
     }
-    iVar3 = local_50->cellspacing;
+    iVar3 = t_local->cellspacing;
     psVar1 = cell->index;
     sVar9 = cell->maxcell;
     local_64 = cell->colspan;
-    *(undefined4 *)((int)aiStack164 + iVar4 + iVar8 + 4) = 0;
-    *(int *)((int)aiStack164 + iVar4 + iVar8) = iVar3;
-    *(short **)((int)aiStack164 + iVar4 + iVar8 + -4) = psVar1;
-    *(int *)((int)&iStack172 + iVar4 + iVar8) = (int)sVar9;
-    *(short **)((int)&psStack176 + iVar4 + iVar8) = local_64;
-    *(table_cell **)((int)&ptStack180 + iVar4 + iVar8) = ptVar6;
-    *(short_0_ **)((int)&psStack184 + iVar4 + iVar8) = psVar7;
-    *(short_0_ **)((int)&ptStack188 + iVar4 + iVar8) = psVar5;
-    *(undefined4 *)((int)&uStack192 + iVar4 + iVar8) = 0x808462b;
-    check_cell_width(*(short **)((int)&ptStack188 + iVar4 + iVar8),
-                     *(short **)((int)&psStack184 + iVar4 + iVar8),
-                     *(short **)((int)&ptStack180 + iVar4 + iVar8),
-                     *(short **)((int)&psStack176 + iVar4 + iVar8),
-                     *(short *)((int)&iStack172 + iVar4 + iVar8),
-                     *(short **)((int)aiStack164 + iVar4 + iVar8 + -4),
-                     *(int *)((int)aiStack164 + iVar4 + iVar8),
-                     *(int *)((int)aiStack164 + iVar4 + iVar8 + 4));
+    *(undefined4 *)((int)aiStack_a4 + iVar4 + iVar8 + 4) = 0;
+    *(int *)((int)aiStack_a4 + iVar4 + iVar8) = iVar3;
+    *(short **)((int)aiStack_a4 + iVar4 + iVar8 + -4) = psVar1;
+    *(int *)((int)&iStack_ac + iVar4 + iVar8) = (int)sVar9;
+    *(short **)((int)&psStack_b0 + iVar4 + iVar8) = local_64;
+    *(table_cell **)((int)&ptStack_b4 + iVar4 + iVar8) = ptVar6;
+    *(short_0_ **)((int)&psStack_b8 + iVar4 + iVar8) = psVar7;
+    *(short_0_ **)((int)&ptStack_bc + iVar4 + iVar8) = psVar5;
+    *(undefined4 *)((int)&uStack_c0 + iVar4 + iVar8) = 0x808462b;
+    check_cell_width(*(short **)((int)&ptStack_bc + iVar4 + iVar8),
+                     *(short **)((int)&psStack_b8 + iVar4 + iVar8),
+                     *(short **)((int)&ptStack_b4 + iVar4 + iVar8),
+                     *(short **)((int)&psStack_b0 + iVar4 + iVar8),
+                     *(short *)((int)&iStack_ac + iVar4 + iVar8),
+                     *(short **)((int)aiStack_a4 + iVar4 + iVar8 + -4),
+                     *(int *)((int)aiStack_a4 + iVar4 + iVar8),
+                     *(int *)((int)aiStack_a4 + iVar4 + iVar8 + 4));
     pptVar10 = (table **)local_60;
   }
   if ((flag & 1U) != 0) {
     pptVar10[1] = (table *)newwidth;
-    *pptVar10 = local_50;
+    *pptVar10 = t_local;
     pptVar10[-1] = (table *)0x8084699;
     check_minimum_width(*pptVar10,(short *)pptVar10[1]);
   }
   swidth = 0;
-  for (i = 0; i <= local_50->maxcol; i = i + 1) {
+  for (i = 0; i <= t_local->maxcol; i = i + 1) {
     sVar9 = *(short *)(newwidth + i * 2);
     pptVar10[1] = (table *)rulewidth;
     *pptVar10 = (table *)(int)sVar9;
@@ -33789,7 +34855,7 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
     iVar8 = ceil_at_intervals((int)*pptVar10,(int)pptVar10[1]);
     swidth = swidth + iVar8;
   }
-  *pptVar10 = local_50;
+  *pptVar10 = t_local;
   pptVar10[-1] = (table *)0x80846e0;
   iVar8 = table_border_width(*pptVar10);
   swidth = swidth + iVar8;
@@ -33802,6 +34868,8 @@ int get_table_width(table *t,short *orgwidth,short *cellwidth,int flag)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void renderCoTable(table *tbl,int maxlimit)
 
@@ -33847,6 +34915,8 @@ void renderCoTable(table *tbl,int maxlimit)
 
 
 
+// WARNING: Unknown calling convention
+
 void make_caption(table *t,html_feed_environ *h_env)
 
 {
@@ -33885,6 +34955,8 @@ void make_caption(table *t,html_feed_environ *h_env)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void renderTable(table *t,int max_width,html_feed_environ *h_env)
 
@@ -34196,6 +35268,8 @@ LAB_0808546e:
 
 
 
+// WARNING: Unknown calling convention
+
 table * begin_table(int border,int spacing,int padding,int vspace)
 
 {
@@ -34282,6 +35356,8 @@ table * begin_table(int border,int spacing,int padding,int vspace)
 
 
 
+// WARNING: Unknown calling convention
+
 void end_table(table *tbl)
 
 {
@@ -34328,6 +35404,8 @@ void end_table(table *tbl)
 
 
 
+// WARNING: Unknown calling convention
+
 void check_minimum0(table *t,int min)
 
 {
@@ -34358,6 +35436,8 @@ void check_minimum0(table *t,int min)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int setwidth0(table *t,table_mode *mode)
 
@@ -34394,6 +35474,8 @@ int setwidth0(table *t,table_mode *mode)
 
 
 
+// WARNING: Unknown calling convention
+
 void setwidth(table *t,table_mode *mode)
 
 {
@@ -34414,6 +35496,8 @@ void setwidth(table *t,table_mode *mode)
 
 
 
+// WARNING: Unknown calling convention
+
 void addcontentssize(table *t,int width)
 
 {
@@ -34425,6 +35509,8 @@ void addcontentssize(table *t,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void clearcontentssize(table *t,table_mode *mode)
 
@@ -34440,6 +35526,8 @@ void clearcontentssize(table *t,table_mode *mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void begin_cell(table *t,table_mode *mode)
 
@@ -34469,6 +35557,8 @@ void begin_cell(table *t,table_mode *mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_rowcol(table *tbl,table_mode *mode)
 
@@ -34517,6 +35607,8 @@ void check_rowcol(table *tbl,table_mode *mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int skip_space(table *t,char *line,table_linfo *linfo,int checkminimum)
 
@@ -34625,6 +35717,8 @@ int skip_space(table *t,char *line,table_linfo *linfo,int checkminimum)
 
 
 
+// WARNING: Unknown calling convention
+
 void feed_table_inline_tag(table *tbl,char *line,table_mode *mode,int width)
 
 {
@@ -34639,6 +35733,8 @@ void feed_table_inline_tag(table *tbl,char *line,table_mode *mode,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void feed_table_block_tag(table *tbl,char *line,table_mode *mode,int indent,int cmd)
 
@@ -34673,6 +35769,8 @@ void feed_table_block_tag(table *tbl,char *line,table_mode *mode,int indent,int 
 
 
 
+// WARNING: Unknown calling convention
+
 void table_close_select(table *tbl,table_mode *mode,int width)
 
 {
@@ -34688,6 +35786,8 @@ void table_close_select(table *tbl,table_mode *mode,int width)
 
 
 
+// WARNING: Unknown calling convention
+
 void table_close_textarea(table *tbl,table_mode *mode,int width)
 
 {
@@ -34702,6 +35802,8 @@ void table_close_textarea(table *tbl,table_mode *mode,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void table_close_anchor0(table *tbl,table_mode *mode)
 
@@ -34723,6 +35825,8 @@ void table_close_anchor0(table *tbl,table_mode *mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int feed_table_tag(table *tbl,char *line,table_mode *mode,int width,parsed_tag *tag)
 
@@ -35433,6 +36537,8 @@ switchD_08086b90_caseD_1f:
 
 
 
+// WARNING: Unknown calling convention
+
 int feed_table(table *tbl,char *line,table_mode *mode,int width,int internal)
 
 {
@@ -35666,6 +36772,8 @@ LAB_08088639:
 
 
 
+// WARNING: Unknown calling convention
+
 void feed_table1(table *tbl,Str tok,table_mode *mode,int width)
 
 {
@@ -35686,6 +36794,8 @@ void feed_table1(table *tbl,Str tok,table_mode *mode,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pushTable(table *tbl,table *tbl1)
 
@@ -35734,6 +36844,7 @@ int correct_table_matrix(table *t,int col,int cspan,int a,double b)
 
 {
   double dVar1;
+  double b_local;
   double w;
   int ecol;
   int j;
@@ -35757,6 +36868,8 @@ void correct_table_matrix2(table *t,int col,int cspan,double s,double b)
 {
   int iVar1;
   int iVar2;
+  double b_local;
+  double s_local;
   double ss;
   double w;
   int size;
@@ -35793,6 +36906,8 @@ void correct_table_matrix3(table *t,int col,char *flags,double s,double b)
 {
   int iVar1;
   bool bVar2;
+  double b_local;
+  double s_local;
   double w;
   double ss;
   int flg;
@@ -35831,6 +36946,8 @@ void correct_table_matrix4(table *t,int col,int cspan,char *flags,double s,doubl
 {
   int iVar1;
   int iVar2;
+  double b_local;
+  double s_local;
   double w;
   double ss;
   int size;
@@ -35877,12 +36994,12 @@ void set_table_matrix0(table *t,int maxwidth)
   int in_GS_OFFSET;
   undefined2 in_FPUControlWord;
   double dVar6;
-  undefined4 uStack240;
-  table *ptStack236;
-  size_t sStack232;
-  char *pcStack228;
-  undefined auStack224 [8];
-  undefined auStack216 [20];
+  undefined4 uStack_f0;
+  table *ptStack_ec;
+  size_t sStack_e8;
+  char *pcStack_e4;
+  undefined auStack_e0 [8];
+  undefined auStack_d8 [20];
   int local_c4;
   uint local_c0;
   uint local_bc;
@@ -35901,7 +37018,7 @@ void set_table_matrix0(table *t,int maxwidth)
   int local_88;
   undefined2 local_84;
   undefined2 local_82;
-  table *local_80;
+  table *t_local;
   double b;
   double s;
   double w;
@@ -35921,9 +37038,9 @@ void set_table_matrix0(table *t,int maxwidth)
   int size;
   int local_20;
   
-  local_80 = t;
+  t_local = t;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  local_90 = (undefined *)&ptStack236;
+  local_90 = (undefined *)&ptStack_ec;
   local_44 = t->maxcol;
   size = local_44 + 1;
   local_94 = size;
@@ -35947,9 +37064,9 @@ void set_table_matrix0(table *t,int maxwidth)
   cell = &t->cell;
   w0 = 0.0;
   for (i = 0; iVar5 = i, pcVar4 = expand, i < size; i = i + 1) {
-    *(int *)((int)&ptStack236 + iVar3 + iVar2) = (int)local_80->tabwidth[i];
-    *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80894d5;
-    dVar6 = weight(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+    *(int *)((int)&ptStack_ec + iVar3 + iVar2) = (int)t_local->tabwidth[i];
+    *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x80894d5;
+    dVar6 = weight(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
     *(double *)(we + iVar5 * 8) = dVar6;
     w0 = w0 + *(double *)(we + i * 8);
   }
@@ -35962,48 +37079,48 @@ void set_table_matrix0(table *t,int maxwidth)
       local_82 = in_FPUControlWord;
       local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
       local_88 = (int)ROUND((double)maxwidth * (*(double *)(we + i * 8) / w0));
-      *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089565;
-      dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+      *(int *)((int)&ptStack_ec + iVar3 + iVar2) = local_88;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089565;
+      dVar6 = weight2(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
       b = dVar6 * 32.0;
-      *(double *)(auStack216 + iVar3 + iVar2) = dVar6 * 32.0;
-      *(double *)(auStack224 + iVar3 + iVar2) = s;
-      *(undefined4 *)((int)&pcStack228 + iVar3 + iVar2) = 1;
-      *(int *)((int)&sStack232 + iVar3 + iVar2) = i;
-      *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089598;
+      *(double *)(auStack_d8 + iVar3 + iVar2) = dVar6 * 32.0;
+      *(double *)(auStack_e0 + iVar3 + iVar2) = s;
+      *(undefined4 *)((int)&pcStack_e4 + iVar3 + iVar2) = 1;
+      *(int *)((int)&sStack_e8 + iVar3 + iVar2) = i;
+      *(table **)((int)&ptStack_ec + iVar3 + iVar2) = t_local;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089598;
       correct_table_matrix2
-                (*(table **)((int)&ptStack236 + iVar3 + iVar2),
-                 *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(int *)((int)&pcStack228 + iVar3 + iVar2),*(double *)(auStack224 + iVar3 + iVar2),
-                 *(double *)(auStack216 + iVar3 + iVar2));
+                (*(table **)((int)&ptStack_ec + iVar3 + iVar2),
+                 *(int *)((int)&sStack_e8 + iVar3 + iVar2),
+                 *(int *)((int)&pcStack_e4 + iVar3 + iVar2),*(double *)(auStack_e0 + iVar3 + iVar2),
+                 *(double *)(auStack_d8 + iVar3 + iVar2));
     }
   }
   else {
-    *(int *)((int)&sStack232 + iVar3 + iVar2) = size;
-    *(char_0_ **)((int)&ptStack236 + iVar3 + iVar2) = pcVar4;
-    *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80895bb;
-    bzero(*(void **)((int)&ptStack236 + iVar3 + iVar2),*(size_t *)((int)&sStack232 + iVar3 + iVar2))
+    *(int *)((int)&sStack_e8 + iVar3 + iVar2) = size;
+    *(char_0_ **)((int)&ptStack_ec + iVar3 + iVar2) = pcVar4;
+    *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x80895bb;
+    bzero(*(void **)((int)&ptStack_ec + iVar3 + iVar2),*(size_t *)((int)&sStack_e8 + iVar3 + iVar2))
     ;
     for (k = 0; k < cell->necell; k = k + 1) {
       j = (int)cell->eindex[k];
       bcol = (int)cell->col[j];
       ecol = cell->colspan[j] + bcol;
-      width = (int)cell->width[j] + local_80->cellspacing * (1 - cell->colspan[j]);
+      width = (int)cell->width[j] + t_local->cellspacing * (1 - cell->colspan[j]);
       w1 = 0.0;
       for (i = bcol; i < ecol; i = i + 1) {
-        local_8a = local_80->tabwidth[i];
-        w1 = w1 + (double)local_80->tabwidth[i] + 0.1;
+        local_8a = t_local->tabwidth[i];
+        w1 = w1 + (double)t_local->tabwidth[i] + 0.1;
         expand[i] = expand[i] + '\x01';
       }
       for (i = bcol; i < ecol; i = i + 1) {
-        local_8a = local_80->tabwidth[i];
+        local_8a = t_local->tabwidth[i];
         local_82 = in_FPUControlWord;
         local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
-        local_88 = (int)ROUND((((double)local_80->tabwidth[i] + 0.1) * (double)width) / w1);
-        *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
-        *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x80896e3;
-        w = weight(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+        local_88 = (int)ROUND((((double)t_local->tabwidth[i] + 0.1) * (double)width) / w1);
+        *(int *)((int)&ptStack_ec + iVar3 + iVar2) = local_88;
+        *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x80896e3;
+        w = weight(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
         if (*(double *)(we + i * 8) < w) {
           *(double *)(we + i * 8) = w;
         }
@@ -36023,33 +37140,33 @@ void set_table_matrix0(table *t,int maxwidth)
     for (k = 0; k < cell->necell; k = k + 1) {
       j = (int)cell->eindex[k];
       bcol = (int)cell->col[j];
-      width = (int)cell->width[j] + local_80->cellspacing * (1 - cell->colspan[j]);
-      *(int *)((int)&ptStack236 + iVar3 + iVar2) = width;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089802;
-      w = weight(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+      width = (int)cell->width[j] + t_local->cellspacing * (1 - cell->colspan[j]);
+      *(int *)((int)&ptStack_ec + iVar3 + iVar2) = width;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089802;
+      w = weight(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
       s = w / (w1 + w);
       local_82 = in_FPUControlWord;
       local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
       local_88 = (int)ROUND((double)maxwidth * s);
-      *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089840;
-      dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+      *(int *)((int)&ptStack_ec + iVar3 + iVar2) = local_88;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089840;
+      dVar6 = weight2(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
       pcVar4 = expand;
       b = dVar6 * 32.0;
       sVar1 = cell->colspan[j];
-      *(double *)(auStack216 + iVar3 + iVar2 + 4) = dVar6 * 32.0;
-      *(double *)(auStack224 + iVar3 + iVar2 + 4) = s;
-      *(char_0_ **)(auStack224 + iVar3 + iVar2) = pcVar4;
-      *(int *)((int)&pcStack228 + iVar3 + iVar2) = (int)sVar1;
-      *(int *)((int)&sStack232 + iVar3 + iVar2) = bcol;
-      *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089885;
+      *(double *)(auStack_d8 + iVar3 + iVar2 + 4) = dVar6 * 32.0;
+      *(double *)(auStack_e0 + iVar3 + iVar2 + 4) = s;
+      *(char_0_ **)(auStack_e0 + iVar3 + iVar2) = pcVar4;
+      *(int *)((int)&pcStack_e4 + iVar3 + iVar2) = (int)sVar1;
+      *(int *)((int)&sStack_e8 + iVar3 + iVar2) = bcol;
+      *(table **)((int)&ptStack_ec + iVar3 + iVar2) = t_local;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089885;
       correct_table_matrix4
-                (*(table **)((int)&ptStack236 + iVar3 + iVar2),
-                 *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(int *)((int)&pcStack228 + iVar3 + iVar2),*(char **)(auStack224 + iVar3 + iVar2),
-                 *(double *)(auStack224 + iVar3 + iVar2 + 4),
-                 *(double *)(auStack216 + iVar3 + iVar2 + 4));
+                (*(table **)((int)&ptStack_ec + iVar3 + iVar2),
+                 *(int *)((int)&sStack_e8 + iVar3 + iVar2),
+                 *(int *)((int)&pcStack_e4 + iVar3 + iVar2),*(char **)(auStack_e0 + iVar3 + iVar2),
+                 *(double *)(auStack_e0 + iVar3 + iVar2 + 4),
+                 *(double *)(auStack_d8 + iVar3 + iVar2 + 4));
     }
     for (i = 0; i < size; i = i + 1) {
       if (expand[i] == '\0') {
@@ -36061,9 +37178,9 @@ void set_table_matrix0(table *t,int maxwidth)
         local_82 = in_FPUControlWord;
         local_84 = CONCAT11(0xc,(char)in_FPUControlWord);
         local_88 = (int)ROUND((double)maxwidth * (*(double *)(we + i * 8) / dVar6));
-        *(int *)((int)&ptStack236 + iVar3 + iVar2) = local_88;
-        *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x808990b;
-        dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+        *(int *)((int)&ptStack_ec + iVar3 + iVar2) = local_88;
+        *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x808990b;
+        dVar6 = weight2(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
         b = dVar6 * 32.0;
       }
       else {
@@ -36074,23 +37191,23 @@ void set_table_matrix0(table *t,int maxwidth)
           dVar6 = w0 - w1;
         }
         s = *(double *)(we + i * 8) / dVar6;
-        *(int *)((int)&ptStack236 + iVar3 + iVar2) = maxwidth;
-        *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089950;
-        dVar6 = weight2(*(int *)((int)&ptStack236 + iVar3 + iVar2));
+        *(int *)((int)&ptStack_ec + iVar3 + iVar2) = maxwidth;
+        *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089950;
+        dVar6 = weight2(*(int *)((int)&ptStack_ec + iVar3 + iVar2));
         b = dVar6 * 32.0;
       }
       pcVar4 = expand;
-      *(double *)(auStack216 + iVar3 + iVar2) = b;
-      *(double *)(auStack224 + iVar3 + iVar2) = s;
-      *(char_0_ **)((int)&pcStack228 + iVar3 + iVar2) = pcVar4;
-      *(int *)((int)&sStack232 + iVar3 + iVar2) = i;
-      *(table **)((int)&ptStack236 + iVar3 + iVar2) = local_80;
-      *(undefined4 *)((int)&uStack240 + iVar3 + iVar2) = 0x8089982;
+      *(double *)(auStack_d8 + iVar3 + iVar2) = b;
+      *(double *)(auStack_e0 + iVar3 + iVar2) = s;
+      *(char_0_ **)((int)&pcStack_e4 + iVar3 + iVar2) = pcVar4;
+      *(int *)((int)&sStack_e8 + iVar3 + iVar2) = i;
+      *(table **)((int)&ptStack_ec + iVar3 + iVar2) = t_local;
+      *(undefined4 *)((int)&uStack_f0 + iVar3 + iVar2) = 0x8089982;
       correct_table_matrix3
-                (*(table **)((int)&ptStack236 + iVar3 + iVar2),
-                 *(int *)((int)&sStack232 + iVar3 + iVar2),
-                 *(char **)((int)&pcStack228 + iVar3 + iVar2),
-                 *(double *)(auStack224 + iVar3 + iVar2),*(double *)(auStack216 + iVar3 + iVar2));
+                (*(table **)((int)&ptStack_ec + iVar3 + iVar2),
+                 *(int *)((int)&sStack_e8 + iVar3 + iVar2),
+                 *(char **)((int)&pcStack_e4 + iVar3 + iVar2),
+                 *(double *)(auStack_e0 + iVar3 + iVar2),*(double *)(auStack_d8 + iVar3 + iVar2));
     }
   }
   if (local_20 == *(int *)(in_GS_OFFSET + 0x14)) {
@@ -36102,6 +37219,8 @@ void set_table_matrix0(table *t,int maxwidth)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_relative_width(table *t,int maxwidth)
 
@@ -36201,6 +37320,8 @@ void check_relative_width(table *t,int maxwidth)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_table_matrix(table *t,int width)
 
 {
@@ -36285,6 +37406,8 @@ void set_table_matrix(table *t,int width)
 
 
 
+// WARNING: Unknown calling convention
+
 void writeLocalCookie(void)
 
 {
@@ -36308,6 +37431,8 @@ void writeLocalCookie(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str localCookie(void)
 
@@ -36355,6 +37480,7 @@ Str loadLocalDir(char *dname)
   ssize_t sVar10;
   int in_GS_OFFSET;
   bool bVar11;
+  char *dname_local;
   stat lst;
   stat st;
   Str dirname;
@@ -36539,6 +37665,8 @@ Str loadLocalDir(char *dname)
 
 
 
+// WARNING: Unknown calling convention
+
 int check_local_cgi(char *file,int status)
 
 {
@@ -36573,6 +37701,8 @@ int check_local_cgi(char *file,int status)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_environ(char *var,char *value)
 
 {
@@ -36583,6 +37713,8 @@ void set_environ(char *var,char *value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_cgi_environ(char *name,char *fn,char *req_uri)
 
@@ -36601,6 +37733,8 @@ void set_cgi_environ(char *name,char *fn,char *req_uri)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str checkPath(char *fn,char *path)
 
@@ -36647,6 +37781,8 @@ Str checkPath(char *fn,char *path)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int cgi_filename(char *uri,char **fn,char **name,char **path_info)
 
@@ -36733,6 +37869,8 @@ int cgi_filename(char *uri,char **fn,char **name,char **path_info)
 
 
 
+// WARNING: Unknown calling convention
+
 FILE * localcgi_post(char *uri,char *qstr,FormList *request,char *referer)
 
 {
@@ -36767,7 +37905,7 @@ FILE * localcgi_post(char *uri,char *qstr,FormList *request,char *referer)
       p_Var2 = tmpfname(0,(char *)0x0);
       tmpf = p_Var2->ptr;
       fw = (FILE *)fopen(tmpf,"w");
-      if ((FILE *)fw == (FILE *)0x0) {
+      if (fw == (FILE *)0x0) {
         return (FILE *)0x0;
       }
     }
@@ -36843,6 +37981,8 @@ FILE * localcgi_post(char *uri,char *qstr,FormList *request,char *referer)
 
 
 
+// WARNING: Unknown calling convention
+
 form_list *
 newFormList(char *action,char *method,char *charset,char *enctype,char *target,char *name,
            form_list *_next)
@@ -36905,6 +38045,8 @@ LAB_0808b67d:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 form_item_list * formList_addInput(form_list *fl,parsed_tag *tag)
 
@@ -37028,6 +38170,8 @@ form_item_list * formList_addInput(form_list *fl,parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 char * form2str(FormItemList *fi)
 
 {
@@ -37052,6 +38196,8 @@ char * form2str(FormItemList *fi)
 
 
 
+// WARNING: Unknown calling convention
+
 int formtype(char *typestr)
 
 {
@@ -37071,6 +38217,8 @@ int formtype(char *typestr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void formRecheckRadio(Anchor *a,Buffer *buf,FormItemList *fi)
 
@@ -37099,6 +38247,8 @@ void formRecheckRadio(Anchor *a,Buffer *buf,FormItemList *fi)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void formResetBuffer(Buffer *buf,AnchorList *formitem)
 
@@ -37182,11 +38332,13 @@ LAB_0808bf93:
 
 
 
+// WARNING: Unknown calling convention
+
 int form_update_line(Line *line,char **str,int spos,int epos,int width,int newline,int password)
 
 {
-  byte bVar1;
-  char cVar2;
+  char cVar1;
+  ushort uVar2;
   ushort uVar3;
   int iVar4;
   char *__dest;
@@ -37247,13 +38399,13 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
   __dest_00 = (Lineprop *)GC_malloc(iVar4 * 2);
   bcopy(line->lineBuf,__dest,spos);
   bcopy(line->propBuf,__dest_00,spos * 2);
-  uVar3 = line->propBuf[spos] & 0xff | ((byte)((uint)line->propBuf[spos] >> 8) & 0xc0) << 8;
+  uVar2 = line->propBuf[spos] & 0xc0ff;
   p = *str;
   w = 0;
   pos = spos;
   while ((*p != '\0' && (w < width))) {
-    bVar6 = WTF_TYPE_MAP[(byte)*p];
-    bVar1 = WTF_LEN_MAP[(byte)*p];
+    uVar3 = (ushort)WTF_TYPE_MAP[(byte)*p] << 8;
+    bVar6 = WTF_LEN_MAP[(byte)*p];
     if (WcOption.use_wide == '\0') {
       bVar7 = WTF_WIDTH_MAP[(byte)*p] != '\0';
     }
@@ -37261,35 +38413,35 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
       bVar7 = WTF_WIDTH_MAP[(byte)*p];
     }
     uVar5 = (uint)bVar7;
-    if (bVar6 == 1) {
+    if (WTF_TYPE_MAP[(byte)*p] == 1) {
       if ((newline != 0) && (*p == '\n')) break;
       if (*p != '\r') {
         if (password == 0) {
-          cVar2 = ' ';
+          cVar1 = ' ';
         }
         else {
-          cVar2 = '*';
+          cVar1 = '*';
         }
-        __dest[pos] = cVar2;
-        __dest_00[pos] = uVar3;
+        __dest[pos] = cVar1;
+        __dest_00[pos] = uVar2;
         pos = pos + 1;
         w = w + 1;
       }
     }
     else if (password == 0) {
-      if (((ushort)bVar6 << 8 & 0x1000) == 0) {
+      if ((uVar3 & 0x1000) == 0) {
         if (width < (int)(w + uVar5)) break;
         __dest[pos] = *p;
-        __dest_00[pos] = (ushort)bVar6 << 8 | uVar3;
-        for (i = 1; pos = pos + 1, i < (int)(uint)bVar1; i = i + 1) {
+        __dest_00[pos] = uVar3 | uVar2;
+        for (i = 1; pos = pos + 1, i < (int)(uint)bVar6; i = i + 1) {
           __dest[pos] = p[i];
-          __dest_00[pos] = (ushort)(bVar6 & 0xf9) << 8 | 0x400 | uVar3;
+          __dest_00[pos] = uVar3 & 63999 | 0x400 | uVar2;
         }
         w = w + uVar5;
       }
       else {
         __dest[pos] = ' ';
-        __dest_00[pos] = uVar3;
+        __dest_00[pos] = uVar2;
         pos = pos + 1;
         w = w + 1;
       }
@@ -37298,16 +38450,16 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
       if (width < (int)(w + uVar5)) break;
       for (i = 0; i < (int)uVar5; i = i + 1) {
         __dest[pos] = '*';
-        __dest_00[pos] = uVar3;
+        __dest_00[pos] = uVar2;
         pos = pos + 1;
         w = w + 1;
       }
     }
-    p = p + bVar1;
+    p = p + bVar6;
   }
   for (; w < width; w = w + 1) {
     __dest[pos] = ' ';
-    __dest_00[pos] = uVar3;
+    __dest_00[pos] = uVar2;
     pos = pos + 1;
   }
   if (newline != 0) {
@@ -37333,6 +38485,8 @@ int form_update_line(Line *line,char **str,int spos,int epos,int width,int newli
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void formUpdateBuffer(Anchor *a,Buffer *buf,FormItemList *form)
 
@@ -37437,6 +38591,8 @@ LAB_0808c8a3:
 
 
 
+// WARNING: Unknown calling convention
+
 Str textfieldrep(Str s,int width)
 
 {
@@ -37513,6 +38669,8 @@ Str textfieldrep(Str s,int width)
 
 
 
+// WARNING: Unknown calling convention
+
 void form_fputs_decode(Str s,FILE *f)
 
 {
@@ -37541,6 +38699,8 @@ void form_fputs_decode(Str s,FILE *f)
 
 
 
+// WARNING: Unknown calling convention
+
 void input_textarea(FormItemList *fi)
 
 {
@@ -37555,7 +38715,7 @@ void input_textarea(FormItemList *fi)
   tmpf = p_Var1->ptr;
   charset = DisplayCharset;
   f = (FILE *)fopen(tmpf,"w");
-  if ((FILE *)f == (FILE *)0x0) {
+  if (f == (FILE *)0x0) {
     disp_err_message("Can\'t open temporary file",0);
   }
   else {
@@ -37569,7 +38729,7 @@ void input_textarea(FormItemList *fi)
     fmInit();
     if (fi->readonly == 0) {
       f = (FILE *)fopen(tmpf,"r");
-      if ((FILE *)f == (FILE *)0x0) {
+      if (f == (FILE *)0x0) {
         disp_err_message("Can\'t open temporary file",0);
       }
       else {
@@ -37602,10 +38762,12 @@ void input_textarea(FormItemList *fi)
 
 
 
+// WARNING: Unknown calling convention
+
 void do_internal(char *action,char *data)
 
 {
-  anon_subr_void_parsed_tagarg_ptr_for_rout *paVar1;
+  _func_void_parsed_tagarg_ptr *p_Var1;
   int iVar2;
   parsed_tagarg *ppVar3;
   int i;
@@ -37619,16 +38781,18 @@ void do_internal(char *action,char *data)
     if (iVar2 == 0) break;
     i = i + 1;
   }
-  if (internal_action[i].rout == (anon_subr_void_parsed_tagarg_ptr_for_rout *)0x0) {
+  if (internal_action[i].rout == (_func_void_parsed_tagarg_ptr *)0x0) {
     return;
   }
-  paVar1 = internal_action[i].rout;
+  p_Var1 = internal_action[i].rout;
   ppVar3 = cgistr2tagarg(data);
-  (*paVar1)(ppVar3);
+  (*p_Var1)(ppVar3);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addSelectOption(FormSelectOption *fso,Str value,Str label,int chk)
 
@@ -37658,6 +38822,8 @@ void addSelectOption(FormSelectOption *fso,Str value,Str label,int chk)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void chooseSelectOption(FormItemList *fi,FormSelectOptionItem *item)
 
@@ -37693,6 +38859,8 @@ void chooseSelectOption(FormItemList *fi,FormSelectOptionItem *item)
 
 
 
+// WARNING: Unknown calling convention
+
 void updateSelectOption(FormItemList *fi,FormSelectOptionItem *item)
 
 {
@@ -37714,6 +38882,8 @@ void updateSelectOption(FormItemList *fi,FormSelectOptionItem *item)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int formChooseOptionByMenu(form_item_list *fi,int x,int y)
 
@@ -37740,7 +38910,7 @@ int formChooseOptionByMenu(form_item_list *fi,int x,int y)
     i = i + 1;
   }
   label_00[n] = (char *)0x0;
-  optionMenu(x,y,label_00,&selected,iVar1,(anon_subr_void_varargs *)0x0);
+  optionMenu(x,y,label_00,&selected,iVar1,(_func_void_varargs *)0x0);
   if (selected < 0) {
     iVar1 = 0;
   }
@@ -37763,6 +38933,8 @@ int formChooseOptionByMenu(form_item_list *fi,int x,int y)
 
 
 
+// WARNING: Unknown calling convention
+
 void form_write_data(FILE *f,char *boundary,char *name,char *value)
 
 {
@@ -37773,6 +38945,8 @@ void form_write_data(FILE *f,char *boundary,char *name,char *value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void form_write_from_file(FILE *f,char *boundary,char *name,char *filename,char *file)
 
@@ -37807,6 +38981,8 @@ void form_write_from_file(FILE *f,char *boundary,char *name,char *filename,char 
 }
 
 
+
+// WARNING: Unknown calling convention
 
 pre_form * add_pre_form(pre_form *prev,char *url,char *name,char *action)
 
@@ -37867,6 +39043,8 @@ pre_form * add_pre_form(pre_form *prev,char *url,char *name,char *action)
 
 
 
+// WARNING: Unknown calling convention
+
 pre_form_item *
 add_pre_form_item(pre_form *pf,pre_form_item *prev,int type,char *name,char *value,char *checked)
 
@@ -37905,6 +39083,8 @@ add_pre_form_item(pre_form *pf,pre_form_item *prev,int type,char *name,char *val
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void loadPreForm(void)
 
@@ -38060,6 +39240,8 @@ LAB_0808d618:
 
 
 
+// WARNING: Unknown calling convention
+
 void preFormUpdateBuffer(Buffer *buf)
 
 {
@@ -38171,6 +39353,8 @@ LAB_0808db3c:
 
 
 
+// WARNING: Unknown calling convention
+
 MapList * searchMapList(Buffer *buf,char *name)
 
 {
@@ -38194,6 +39378,7 @@ MapList * searchMapList(Buffer *buf,char *name)
 // WARNING: Removing unreachable block (ram,0x0808e170)
 // WARNING: Removing unreachable block (ram,0x0808e16c)
 // WARNING: Removing unreachable block (ram,0x0808e172)
+// WARNING: Unknown calling convention
 
 int inMapArea(MapArea *a,int x,int y)
 
@@ -38254,6 +39439,8 @@ int inMapArea(MapArea *a,int x,int y)
 
 
 
+// WARNING: Unknown calling convention
+
 int nearestMapArea(MapList *ml,int x,int y)
 
 {
@@ -38292,6 +39479,8 @@ int nearestMapArea(MapList *ml,int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int searchMapArea(Buffer *buf,MapList *ml,Anchor *a_img)
 
@@ -38342,6 +39531,8 @@ int searchMapArea(Buffer *buf,MapList *ml,Anchor *a_img)
 
 
 
+// WARNING: Unknown calling convention
+
 MapArea * retrieveCurrentMapArea(Buffer *buf)
 
 {
@@ -38387,6 +39578,8 @@ MapArea * retrieveCurrentMapArea(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int getMapXY(Buffer *buf,Anchor *a,int *x,int *y)
 
 {
@@ -38421,6 +39614,8 @@ int getMapXY(Buffer *buf,Anchor *a,int *x,int *y)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * retrieveCurrentMap(Buffer *buf)
 
 {
@@ -38441,6 +39636,8 @@ Anchor * retrieveCurrentMap(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 MapArea * follow_map_menu(Buffer *buf,char *name,Anchor *a_img,int x,int y)
 
@@ -38489,7 +39686,7 @@ MapArea * follow_map_menu(Buffer *buf,char *name,Anchor *a_img,int x,int y)
     i = i + 1;
   }
   label_00[ml->area->nitem] = (char *)0x0;
-  optionMenu(x,y,label_00,&selected,initial,(anon_subr_void_varargs *)0x0);
+  optionMenu(x,y,label_00,&selected,initial,(_func_void_varargs *)0x0);
   iVar2 = selected;
 map_end:
   selected = iVar2;
@@ -38506,6 +39703,8 @@ map_end:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 MapArea * newMapArea(char *url,char *target,char *alt,char *shape,char *coords)
 
@@ -38642,6 +39841,8 @@ MapArea * newMapArea(char *url,char *target,char *alt,char *shape,char *coords)
 
 
 
+// WARNING: Unknown calling convention
+
 void append_map_info(Buffer *buf,Str tmp,FormItemList *fi)
 
 {
@@ -38699,6 +39900,8 @@ void append_map_info(Buffer *buf,Str tmp,FormItemList *fi)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void append_link_info(Buffer *buf,Str html,LinkList *link)
 
@@ -38764,6 +39967,8 @@ void append_link_info(Buffer *buf,Str html,LinkList *link)
 
 
 
+// WARNING: Unknown calling convention
+
 void append_frame_info(Buffer *buf,Str html,frameset *set,int level)
 
 {
@@ -38779,7 +39984,7 @@ void append_frame_info(Buffer *buf,Str html,frameset *set,int level)
   
   if (set != (frameset *)0x0) {
     for (i = 0; iVar3 = set->row * set->col, iVar3 - i != 0 && i <= iVar3; i = i + 1) {
-      set_00 = (frameset *)set->frame[i];
+      set_00 = (frameset *)set->frame[i].body;
       if ((set_00 != (frameset *)0x0) && (cVar1 = set_00->attr, -1 < cVar1)) {
         if (cVar1 < '\x02') {
           if (set_00->currentURL != (ParsedURL *)0x0) {
@@ -38831,6 +40036,7 @@ Buffer * page_info_panel(Buffer *buf)
   char *pcVar11;
   char *pcVar12;
   undefined4 uVar13;
+  Buffer *buf_local;
   ParsedURL pu;
   FormItemList *fi;
   Buffer *newbuf;
@@ -38986,6 +40192,8 @@ Buffer * page_info_panel(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void KeyAbort(int _dummy)
 
 {
@@ -38995,12 +40203,14 @@ void KeyAbort(int _dummy)
 
 
 
+// WARNING: Unknown calling convention
+
 int parseFrameSetLength(char *s,char ***ret)
 
 {
-  char **ppcVar1;
-  Str p_Var2;
-  char *pcVar3;
+  char *pcVar1;
+  char **ppcVar2;
+  Str p_Var3;
   char **ppcVar4;
   char **lv;
   char *q;
@@ -39014,12 +40224,15 @@ int parseFrameSetLength(char *s,char ***ret)
   }
   else {
     p = s;
-    while (p = strchr(p,0x2c), p != (char *)0x0) {
+    while( true ) {
+      pcVar1 = strchr(p,0x2c);
+      if (pcVar1 == (char *)0x0) break;
       i = i + 1;
-      p = p + 1;
+      p = pcVar1 + 1;
     }
+    p = (char *)0x0;
   }
-  ppcVar1 = (char **)GC_malloc(i << 2);
+  ppcVar2 = (char **)GC_malloc(i << 2);
   i = 0;
   p = s;
   while( true ) {
@@ -39028,30 +40241,32 @@ int parseFrameSetLength(char *s,char ***ret)
     }
     len = strtol(p,&q,10);
     if (*q == '%') {
-      ppcVar4 = ppcVar1 + i;
-      p_Var2 = Sprintf("%d%%",len);
-      *ppcVar4 = p_Var2->ptr;
+      ppcVar4 = ppcVar2 + i;
+      p_Var3 = Sprintf("%d%%",len);
+      *ppcVar4 = p_Var3->ptr;
       i = i + 1;
     }
     else if (*q == '*') {
-      ppcVar1[i] = "*";
+      ppcVar2[i] = "*";
       i = i + 1;
     }
     else {
-      ppcVar4 = ppcVar1 + i;
-      p_Var2 = Sprintf("%d",len);
-      *ppcVar4 = p_Var2->ptr;
+      ppcVar4 = ppcVar2 + i;
+      p_Var3 = Sprintf("%d",len);
+      *ppcVar4 = p_Var3->ptr;
       i = i + 1;
     }
-    pcVar3 = strchr(q,0x2c);
-    if (pcVar3 == (char *)0x0) break;
-    p = pcVar3 + 1;
+    pcVar1 = strchr(q,0x2c);
+    if (pcVar1 == (char *)0x0) break;
+    p = pcVar1 + 1;
   }
-  *ret = ppcVar1;
+  *ret = ppcVar2;
   return i;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 frameset * newFrameSet(parsed_tag *tag)
 
@@ -39081,12 +40296,14 @@ frameset * newFrameSet(parsed_tag *tag)
   f->frame = pfVar2;
   do {
     i = i + -1;
-    f->frame[i] = 0;
+    f->frame[i].element = (frame_element *)0x0;
   } while (i != 0);
   return f;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 frame_body * newFrame(parsed_tag *tag,Buffer *buf)
 
@@ -39132,6 +40349,8 @@ frame_body * newFrame(parsed_tag *tag,Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 void unloadFrame(frame_body *b)
 
 {
@@ -39140,6 +40359,8 @@ void unloadFrame(frame_body *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void deleteFrame(frame_body *b)
 
@@ -39153,7 +40374,9 @@ void deleteFrame(frame_body *b)
 
 
 
-void addFrameSetElement(frameset *f,undefined4 element)
+// WARNING: Unknown calling convention
+
+void addFrameSetElement(frameset *f,frameset_element element)
 
 {
   int iVar1;
@@ -39169,6 +40392,8 @@ void addFrameSetElement(frameset *f,undefined4 element)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void deleteFrameSet(frameset *f)
 
@@ -39188,21 +40413,25 @@ void deleteFrameSet(frameset *f)
 
 
 
-void deleteFrameSetElement(frameset *e)
+// WARNING: Unknown calling convention
+
+void deleteFrameSetElement(frameset_element e)
 
 {
-  if (e != (frameset *)0x0) {
-    if (e->attr == '\x01') {
-      deleteFrame((frame_body *)e);
+  if (e.element != (frame_element *)0x0) {
+    if ((e.element)->attr == '\x01') {
+      deleteFrame(e.body);
     }
-    else if (e->attr == '\x02') {
-      deleteFrameSet(e);
+    else if ((e.element)->attr == '\x02') {
+      deleteFrameSet(e.set);
     }
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 frame_body * copyFrame(frame_body *ob)
 
@@ -39216,6 +40445,8 @@ frame_body * copyFrame(frame_body *ob)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 frameset * copyFrameSet(frameset *of)
 
@@ -39246,25 +40477,28 @@ frameset * copyFrameSet(frameset *of)
         return __dest;
       }
       n = n + -1;
-      if ((of->frame[n] != 0) && (cVar1 = *(char *)of->frame[n], -1 < cVar1)) break;
+      if ((of->frame[n].element != (frame_element *)0x0) &&
+         (cVar1 = (of->frame[n].element)->attr, -1 < cVar1)) break;
 attr_default:
-      __dest->frame[n] = 0;
+      __dest->frame[n].element = (frame_element *)0x0;
     }
     if (cVar1 < '\x02') {
       pfVar3 = __dest->frame;
-      pfVar4 = copyFrame((frame_body *)of->frame[n]);
-      pfVar3[n] = pfVar4;
+      pfVar4 = copyFrame(of->frame[n].body);
+      pfVar3[n].body = pfVar4;
     }
     else {
       if (cVar1 != '\x02') goto attr_default;
       pfVar3 = __dest->frame;
-      pfVar5 = copyFrameSet((frameset *)of->frame[n]);
-      pfVar3[n] = pfVar5;
+      pfVar5 = copyFrameSet(of->frame[n].set);
+      pfVar3[n].set = pfVar5;
     }
   } while( true );
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void flushFrameSet(frameset *fs)
 
@@ -39275,12 +40509,13 @@ void flushFrameSet(frameset *fs)
   n = fs->i;
   while (n != 0) {
     n = n + -1;
-    if ((fs->frame[n] != 0) && (cVar1 = *(char *)fs->frame[n], -1 < cVar1)) {
+    if ((fs->frame[n].element != (frame_element *)0x0) &&
+       (cVar1 = (fs->frame[n].element)->attr, -1 < cVar1)) {
       if (cVar1 < '\x02') {
-        *(undefined4 *)(fs->frame[n] + 0x1c) = 0;
+        (fs->frame[n].body)->nameList = (_anchorList *)0x0;
       }
       else if (cVar1 == '\x02') {
-        flushFrameSet((frameset *)fs->frame[n]);
+        flushFrameSet(fs->frame[n].set);
       }
     }
   }
@@ -39288,6 +40523,8 @@ void flushFrameSet(frameset *fs)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pushFrameTree(frameset_queue **fqpp,frameset *fs,Buffer *buf)
 
@@ -39357,6 +40594,8 @@ void pushFrameTree(frameset_queue **fqpp,frameset *fs,Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 frameset * popFrameTree(frameset_queue **fqpp)
 
 {
@@ -39389,52 +40628,55 @@ frameset * popFrameTree(frameset_queue **fqpp)
 
 
 
+// WARNING: Unknown calling convention
+
 void resetFrameElement(frameset_element *f_element,Buffer *buf,char *referer,FormList *request)
 
 {
   char *pcVar1;
-  int iVar2;
-  undefined4 uVar3;
-  frameset *pfVar4;
-  frame_body *pfVar5;
-  Str p_Var6;
+  char *pcVar2;
+  frameset *pfVar3;
+  frame_body *pfVar4;
+  Str p_Var5;
   frame_body *f_body;
   char *f_name;
   
-  pcVar1 = *(char **)(*f_element + 4);
+  pcVar1 = f_element->element->name;
   if (buf->frameset == (frameset *)0x0) {
-    pfVar5 = newFrame((parsed_tag *)0x0,buf);
-    pfVar5->attr = '\x01';
-    pfVar5->name = pcVar1;
-    p_Var6 = parsedURL2Str(&buf->currentURL);
-    pfVar5->url = p_Var6->ptr;
-    pfVar5->source = buf->sourcefile;
+    pfVar4 = newFrame((parsed_tag *)0x0,buf);
+    pfVar4->attr = '\x01';
+    pfVar4->name = pcVar1;
+    p_Var5 = parsedURL2Str(&buf->currentURL);
+    pfVar4->url = p_Var5->ptr;
+    pfVar4->source = buf->sourcefile;
     buf->sourcefile = (char *)0x0;
     if (buf->mailcap_source != (char *)0x0) {
-      pfVar5->source = buf->mailcap_source;
+      pfVar4->source = buf->mailcap_source;
       buf->mailcap_source = (char *)0x0;
     }
-    pfVar5->type = buf->type;
-    pfVar5->referer = referer;
-    pfVar5->request = request;
+    pfVar4->type = buf->type;
+    pfVar4->referer = referer;
+    pfVar4->request = request;
     deleteFrameSetElement(*f_element);
-    *f_element = pfVar5;
+    f_element->body = pfVar4;
   }
   else {
     deleteFrameSetElement(*f_element);
-    *f_element = buf->frameset;
-    iVar2 = *f_element;
-    uVar3 = GC_malloc(0x28);
-    *(undefined4 *)(iVar2 + 8) = uVar3;
-    copyParsedURL(*(ParsedURL **)(*f_element + 8),&buf->currentURL);
-    pfVar4 = popFrameTree(&buf->frameQ);
-    buf->frameset = pfVar4;
-    *(char **)(*f_element + 4) = pcVar1;
+    *f_element = (frameset_element)buf->frameset;
+    pfVar4 = f_element->body;
+    pcVar2 = (char *)GC_malloc(0x28);
+    pfVar4->url = pcVar2;
+    copyParsedURL(f_element->set->currentURL,&buf->currentURL);
+    pfVar3 = popFrameTree(&buf->frameQ);
+    buf->frameset = pfVar3;
+    f_element->element->name = pcVar1;
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 frameset * frame_download_source(frame_body *b,ParsedURL *currentURL,ParsedURL *baseURL,int flag)
 
@@ -39500,12 +40742,14 @@ frameset * frame_download_source(frame_body *b,ParsedURL *currentURL,ParsedURL *
 
 
 
+// WARNING: Unknown calling convention
+
 int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_reload)
 
 {
   char **ppcVar1;
   char cVar2;
-  frameset *pfVar3;
+  frameset_element fVar3;
   wc_ces wVar4;
   int iVar5;
   char *pcVar6;
@@ -39534,9 +40778,9 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
   char *p;
   int i;
   frameset *f_frameset;
-  frameset *frame;
+  frameset_element frame;
   int flag;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   ParsedURL *currentURL;
   char *t_target;
   char *s_target;
@@ -39548,7 +40792,7 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
   int c;
   int r;
   
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (f == (frameset *)0x0) {
     iVar5 = -1;
   }
@@ -39560,7 +40804,7 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
           if (fmInitialized != '\0') {
             term_raw();
           }
-          if (prevtrap != (anon_subr_void_int *)0x0) {
+          if (prevtrap != (_func_void_int *)0x0) {
             mySignal(2,prevtrap);
           }
         }
@@ -39595,14 +40839,14 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
           tok = Strnew();
           pre_mode = 0;
           end_tag = 0;
-          frame = (frameset *)f->frame[i];
-          if (frame == (frameset *)0x0) {
+          frame = f->frame[i];
+          if (frame.element == (frame_element *)0x0) {
             fwrite("<td>\n</td>\n",1,0xb,(FILE *)f1);
           }
           else {
             fwrite(&DAT_080cc0d5,1,3,(FILE *)f1);
-            if (frame->name != (char *)0x0) {
-              pcVar6 = html_quote(frame->name);
+            if ((frame.element)->name != (char *)0x0) {
+              pcVar6 = html_quote((frame.element)->name);
               fprintf((FILE *)f1," id=\"_%s\"",pcVar6);
             }
             if (r == 0) {
@@ -39610,44 +40854,44 @@ int createFrameFile(frameset *f,FILE *f1,Buffer *current,int level,int force_rel
             }
             fwrite(&DAT_080cc0ef,1,2,(FILE *)f1);
             flag = 0;
-            if ((force_reload != 0) && (flag = 1, frame->attr == '\x01')) {
-              unloadFrame((frame_body *)frame);
+            if ((force_reload != 0) && (flag = 1, (frame.element)->attr == '\x01')) {
+              unloadFrame(frame.body);
             }
-            pfVar3 = frame;
-            cVar2 = frame->attr;
+            fVar3 = frame;
+            cVar2 = (frame.element)->attr;
             if (cVar2 == '\x01') {
 LAB_08090c14:
               init_stream(&f2,4,(InputStream)0x0);
-              if (frame->height != (char **)0x0) {
+              if ((frame.body)->source != (char *)0x0) {
                 fflush((FILE *)f1);
-                examineFile((char *)frame->height,&f2);
+                examineFile((frame.body)->source,&f2);
               }
               if (f2.stream == (InputStream)0x0) {
-                frame->attr = '\0';
-                if ((frame->dummy & 1U) == 0) {
-                  if (frame->currentURL == (ParsedURL *)0x0) {
-                    if (frame->name == (char *)0x0) {
+                (frame.element)->attr = '\0';
+                if (((frame.element)->dummy & 1U) == 0) {
+                  if ((frame.body)->url == (char *)0x0) {
+                    if ((frame.element)->name == (char *)0x0) {
                       pcVar6 = "(no name)";
                     }
                     else {
-                      pcVar6 = html_quote(frame->name);
+                      pcVar6 = html_quote((frame.element)->name);
                     }
                     fprintf((FILE *)f1,"This frame (%s) contains no src attribute",pcVar6);
                   }
                   else {
-                    pcVar6 = html_quote((char *)frame->currentURL);
+                    pcVar6 = html_quote((frame.body)->url);
                     fprintf((FILE *)f1,"Can\'t open %s",pcVar6);
                   }
                 }
                 else {
-                  pcVar6 = html_quote((char *)frame->currentURL);
+                  pcVar6 = html_quote((frame.body)->url);
                   fprintf((FILE *)f1,"Open %s with other method",pcVar6);
                 }
               }
               else {
-                parseURL2((char *)frame->currentURL,&base,currentURL);
+                parseURL2((frame.body)->url,&base,currentURL);
                 p_target = f->name;
-                s_target = frame->name;
+                s_target = (frame.element)->name;
                 t_target = "_blank";
                 d_target = s_target;
                 if (TargetSelf == '\0') {
@@ -39661,8 +40905,8 @@ LAB_08090c14:
                   doc_charset = current->document_charset;
                 }
                 t_stack = 0;
-                if ((frame->col == 0) ||
-                   (iVar5 = strcasecmp((char *)frame->col,"text/plain"), iVar5 != 0)) {
+                if (((frame.body)->type == (char *)0x0) ||
+                   (iVar5 = strcasecmp((frame.body)->type,"text/plain"), iVar5 != 0)) {
                   do {
                     is_tag = 0;
                     do {
@@ -39988,7 +41232,7 @@ switchD_08091292_caseD_10:
 token_end:
                     Strclear(tok);
 LAB_08091c5a:
-                  } while ((*p != '\0') || ((f2.stream)->field_0x15 == '\0'));
+                  } while ((*p != '\0') || (((f2.stream)->base).iseos == '\0'));
                   if ((pre_mode & 8U) == 0) {
                     if ((pre_mode & 0x800U) == 0) {
                       if ((pre_mode & 0x1000U) == 0) {
@@ -40049,24 +41293,23 @@ LAB_08091c5a:
                   fprintf((FILE *)f1,"Frameset \"%s\" frame %d: type unrecognized",pcVar6,iVar5);
                   goto LAB_08091e70;
                 }
-                if ((frame->name == (char *)0x0) && (f->name != (char *)0x0)) {
+                if (((frame.element)->name == (char *)0x0) && (f->name != (char *)0x0)) {
                   p_Var7 = Sprintf("%s_%d",f->name,i);
-                  pfVar3->name = p_Var7->ptr;
+                  (fVar3.element)->name = p_Var7->ptr;
                 }
                 fflush((FILE *)f1);
-                f_frameset = frame_download_source
-                                       ((frame_body *)frame,currentURL,current->baseURL,flag);
+                f_frameset = frame_download_source(frame.body,currentURL,current->baseURL,flag);
                 if (f_frameset == (frameset *)0x0) goto LAB_08090c14;
-                deleteFrame((frame_body *)frame);
-                frame = f_frameset;
-                f->frame[i] = f_frameset;
+                deleteFrame(frame.body);
+                frame.set = f_frameset;
+                f->frame[i].set = f_frameset;
               }
-              pfVar3 = frame;
-              if ((frame->name == (char *)0x0) && (f->name != (char *)0x0)) {
+              fVar3 = frame;
+              if (((frame.element)->name == (char *)0x0) && (f->name != (char *)0x0)) {
                 p_Var7 = Sprintf("%s_%d",f->name,i);
-                pfVar3->name = p_Var7->ptr;
+                (fVar3.element)->name = p_Var7->ptr;
               }
-              createFrameFile(frame,f1,current,level + 1,force_reload);
+              createFrameFile(frame.set,f1,current,level + 1,force_reload);
             }
 LAB_08091e70:
             fwrite("</td>\n",1,6,(FILE *)f1);
@@ -40079,7 +41322,7 @@ LAB_08091e70:
         if (fmInitialized != '\0') {
           term_raw();
         }
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
         }
       }
@@ -40095,12 +41338,14 @@ LAB_08091e70:
 
 
 
+// WARNING: Unknown calling convention
+
 Buffer * renderFrame(Buffer *Cbuf,int force_reload)
 
 {
   wc_ces wVar1;
   Str p_Var2;
-  FILE *__stream;
+  FILE *f1;
   int iVar3;
   Buffer *buf_00;
   wc_ces doc_charset;
@@ -40112,12 +41357,12 @@ Buffer * renderFrame(Buffer *Cbuf,int force_reload)
   
   wVar1 = DocumentCharset;
   p_Var2 = tmpfname(2,".html");
-  __stream = fopen(p_Var2->ptr,"w");
-  if (((__stream == (FILE *)0x0) || (Cbuf->frameset == (frameset *)0x0)) ||
-     (iVar3 = createFrameFile(Cbuf->frameset,(FILE *)__stream,Cbuf,0,force_reload), iVar3 < 0)) {
+  f1 = fopen(p_Var2->ptr,"w");
+  if (((f1 == (FILE *)0x0) || (Cbuf->frameset == (frameset *)0x0)) ||
+     (iVar3 = createFrameFile(Cbuf->frameset,(FILE *)f1,Cbuf,0,force_reload), iVar3 < 0)) {
     return (Buffer *)0x0;
   }
-  fclose(__stream);
+  fclose(f1);
   flag = 2;
   if ((Cbuf->currentURL).is_nocache != 0) {
     flag = 3;
@@ -40142,30 +41387,31 @@ Buffer * renderFrame(Buffer *Cbuf,int force_reload)
 
 
 
+// WARNING: Unknown calling convention
+
 frameset_element * search_frame(frameset *fset,char *name)
 
 {
-  frameset **ppfVar1;
-  frameset_element *pfVar2;
-  int iVar3;
+  frameset_element *pfVar1;
+  int iVar2;
   frameset_element *e;
   int i;
   
   i = 0;
   do {
-    iVar3 = fset->row * fset->col;
-    if (iVar3 - i == 0 || iVar3 < i) {
+    iVar2 = fset->row * fset->col;
+    if (iVar2 - i == 0 || iVar2 < i) {
       return (frameset_element *)0x0;
     }
-    ppfVar1 = (frameset **)(fset->frame + i);
-    if (*ppfVar1 != (frameset *)0x0) {
-      if (((*ppfVar1)->name != (char *)0x0) && (iVar3 = strcmp((*ppfVar1)->name,name), iVar3 == 0))
-      {
-        return ppfVar1;
+    pfVar1 = fset->frame + i;
+    if ((frameset *)pfVar1->element != (frameset *)0x0) {
+      if ((((frameset *)pfVar1->element)->name != (char *)0x0) &&
+         (iVar2 = strcmp(((frameset *)pfVar1->element)->name,name), iVar2 == 0)) {
+        return pfVar1;
       }
-      if (((*ppfVar1)->attr == '\x02') &&
-         (pfVar2 = search_frame(*ppfVar1,name), pfVar2 != (frameset_element *)0x0)) {
-        return pfVar2;
+      if ((((frameset *)pfVar1->element)->attr == '\x02') &&
+         (pfVar1 = search_frame(pfVar1->set,name), pfVar1 != (frameset_element *)0x0)) {
+        return pfVar1;
       }
     }
     i = i + 1;
@@ -40173,6 +41419,8 @@ frameset_element * search_frame(frameset *fset,char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int compare_table(rc_search_table *a,rc_search_table *b)
 
@@ -40184,6 +41432,8 @@ int compare_table(rc_search_table *a,rc_search_table *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void create_option_search_table(void)
 
@@ -40232,6 +41482,8 @@ void create_option_search_table(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 param_ptr * search_param(char *name)
 
@@ -40282,6 +41534,8 @@ param_ptr * search_param(char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void show_params(FILE *fp)
 
@@ -40377,6 +41631,8 @@ void show_params(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 int str_to_bool(char *value,int old)
 
 {
@@ -40441,6 +41697,8 @@ int str_to_bool(char *value,int old)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int str_to_color(char *value)
 
@@ -40510,6 +41768,8 @@ int str_to_color(char *value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int set_param(char *name,char *value)
 
@@ -40622,6 +41882,8 @@ int set_param(char *name,char *value)
 
 
 
+// WARNING: Unknown calling convention
+
 int set_param_option(char *option)
 
 {
@@ -40680,6 +41942,8 @@ int set_param_option(char *option)
 
 
 
+// WARNING: Unknown calling convention
+
 char * get_param_option(char *name)
 
 {
@@ -40700,6 +41964,8 @@ char * get_param_option(char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void interpret_rc(FILE *f)
 
@@ -40741,6 +42007,8 @@ void interpret_rc(FILE *f)
 
 
 
+// WARNING: Unknown calling convention
+
 void parse_proxy(void)
 
 {
@@ -40767,6 +42035,8 @@ void parse_proxy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void parse_cookie(void)
 
 {
@@ -40784,6 +42054,8 @@ void parse_cookie(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void sync_with_option(void)
 
@@ -40821,6 +42093,8 @@ void sync_with_option(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_rc(void)
 
@@ -40913,6 +42187,8 @@ open_rc:
 
 
 
+// WARNING: Unknown calling convention
+
 Str to_str(param_ptr *p)
 
 {
@@ -40963,6 +42239,8 @@ Str to_str(param_ptr *p)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * load_option_panel(void)
 
@@ -41130,6 +42408,8 @@ Buffer * load_option_panel(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void panel_set_option(parsed_tagarg *arg)
 
 {
@@ -41144,7 +42424,7 @@ void panel_set_option(parsed_tagarg *arg)
   f = (FILE *)0x0;
   if (no_rc_dir == 0) {
     f = (FILE *)fopen(config_file,"wt");
-    if ((FILE *)f == (FILE *)0x0) {
+    if (f == (FILE *)0x0) {
       disp_message("Can\'t write option!",0);
     }
   }
@@ -41173,6 +42453,8 @@ void panel_set_option(parsed_tagarg *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 char * rcFile(char *base)
 
 {
@@ -41194,6 +42476,8 @@ char * rcFile(char *base)
 
 
 
+// WARNING: Unknown calling convention
+
 char * auxbinFile(char *base)
 
 {
@@ -41207,6 +42491,8 @@ char * auxbinFile(char *base)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * etcFile(char *base)
 
@@ -41222,6 +42508,8 @@ char * etcFile(char *base)
 
 
 
+// WARNING: Unknown calling convention
+
 char * confFile(char *base)
 
 {
@@ -41235,6 +42523,8 @@ char * confFile(char *base)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void new_menu(Menu *menu,MenuItem *item)
 
@@ -41284,6 +42574,8 @@ void new_menu(Menu *menu,MenuItem *item)
 
 
 
+// WARNING: Unknown calling convention
+
 void geom_menu(Menu *menu,int x,int y,int mselect)
 
 {
@@ -41324,6 +42616,8 @@ void geom_menu(Menu *menu,int x,int y,int mselect)
 
 
 
+// WARNING: Unknown calling convention
+
 void draw_all_menu(Menu *menu)
 
 {
@@ -41335,6 +42629,8 @@ void draw_all_menu(Menu *menu)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void draw_menu(Menu *menu)
 
@@ -41457,6 +42753,8 @@ void draw_menu(Menu *menu)
 
 
 
+// WARNING: Unknown calling convention
+
 void draw_menu_item(Menu *menu,int mselect)
 
 {
@@ -41466,6 +42764,8 @@ void draw_menu_item(Menu *menu,int mselect)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int select_menu(Menu *menu,int mselect)
 
@@ -41498,6 +42798,8 @@ int select_menu(Menu *menu,int mselect)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void goto_menu(Menu *menu,int mselect,int down)
 
@@ -41541,6 +42843,8 @@ LAB_0809497b:
 
 
 
+// WARNING: Unknown calling convention
+
 void up_menu(Menu *menu,int n)
 
 {
@@ -41555,6 +42859,8 @@ void up_menu(Menu *menu,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void down_menu(Menu *menu,int n)
 
@@ -41571,12 +42877,14 @@ void down_menu(Menu *menu,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 int action_menu(Menu *menu)
 
 {
   int *piVar1;
   int iVar2;
-  anon_subr_void_varargs_for_func *paVar3;
+  _func_void_varargs *p_Var3;
   char *pcVar4;
   char cVar5;
   uint uVar6;
@@ -41615,7 +42923,7 @@ int action_menu(Menu *menu)
       uVar6 = pMVar7->type;
       piVar1 = pMVar7->variable;
       iVar2 = pMVar7->value;
-      paVar3 = pMVar7->func;
+      p_Var3 = pMVar7->func;
       pcVar4 = pMVar7->data;
       if ((uVar6 & 8) != 0) {
         popup_menu(menu,pMVar7->popup);
@@ -41631,7 +42939,7 @@ int action_menu(Menu *menu)
         CurrentKey = -1;
         CurrentKeyData = (char *)0x0;
         CurrentCmdData = pcVar4;
-        (*paVar3)();
+        (*p_Var3)();
         CurrentCmdData = (char *)0x0;
       }
     }
@@ -41640,6 +42948,8 @@ int action_menu(Menu *menu)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void popup_menu(Menu *parent,Menu *menu)
 
@@ -41675,6 +42985,8 @@ void popup_menu(Menu *parent,Menu *menu)
 
 
 
+// WARNING: Unknown calling convention
+
 void guess_menu_xy(Menu *parent,int width,int *x,int *y)
 
 {
@@ -41690,7 +43002,9 @@ void guess_menu_xy(Menu *parent,int width,int *x,int *y)
 
 
 
-void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_varargs *func)
+// WARNING: Unknown calling convention
+
+void new_option_menu(Menu *menu,char **label,int *variable,_func_void_varargs *func)
 
 {
   int iVar1;
@@ -41708,7 +43022,7 @@ void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_vararg
     item_00 = (MenuItem *)GC_malloc((i + 1) * 0x20);
     p = label;
     for (i = 0; i < iVar1; i = i + 1) {
-      if (func == (anon_subr_void_varargs *)0x0) {
+      if (func == (_func_void_varargs *)0x0) {
         item_00[i].type = 2;
       }
       else {
@@ -41717,7 +43031,7 @@ void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_vararg
       item_00[i].label = *p;
       item_00[i].variable = variable;
       item_00[i].value = i;
-      item_00[i].func = (anon_subr_void_varargs_for_func *)func;
+      item_00[i].func = func;
       item_00[i].popup = (_Menu *)0x0;
       item_00[i].keys = "";
       p = p + 1;
@@ -41729,6 +43043,8 @@ void new_option_menu(Menu *menu,char **label,int *variable,anon_subr_void_vararg
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_menu_frame(void)
 
@@ -41758,6 +43074,7 @@ int mEsc(char c)
 
 {
   int iVar1;
+  char c_local;
   
   iVar1 = do_getch();
   iVar1 = (*MenuEscKeymap[(char)iVar1])((char)iVar1);
@@ -41772,6 +43089,7 @@ int mEscB(char c)
   char c_00;
   uint uVar1;
   int iVar2;
+  char c_local;
   
   uVar1 = do_getch();
   c_00 = (char)uVar1;
@@ -41791,18 +43109,18 @@ int mEscD(char c)
 {
   uint uVar1;
   int iVar2;
-  char local_20;
+  char c_local;
   int d;
   
   d = c + -0x30;
   uVar1 = do_getch();
-  local_20 = (char)uVar1;
+  c_local = (char)uVar1;
   if ((MYCTYPE_MAP[uVar1 & 0xff] & 8) != 0) {
-    d = d * 10 + (int)local_20 + -0x30;
+    d = d * 10 + (int)c_local + -0x30;
     iVar2 = do_getch();
-    local_20 = (char)iVar2;
+    c_local = (char)iVar2;
   }
-  if (local_20 == '~') {
+  if (c_local == '~') {
     iVar2 = (*MenuEscDKeymap[d])('~');
   }
   else {
@@ -41816,6 +43134,8 @@ int mEscD(char c)
 int mNull(char c)
 
 {
+  char c_local;
+  
   return -1;
 }
 
@@ -41825,6 +43145,7 @@ int mSelect(char c)
 
 {
   int iVar1;
+  char c_local;
   
   if ((MYCTYPE_MAP[(byte)c] & 0x11) == 0) {
     iVar1 = -1;
@@ -41840,6 +43161,8 @@ int mSelect(char c)
 int mDown(char c)
 
 {
+  char c_local;
+  
   if (CurrentMenu->select < CurrentMenu->nitem + -1) {
     goto_menu(CurrentMenu,CurrentMenu->select + 1,1);
   }
@@ -41851,6 +43174,8 @@ int mDown(char c)
 int mUp(char c)
 
 {
+  char c_local;
+  
   if (0 < CurrentMenu->select) {
     goto_menu(CurrentMenu,CurrentMenu->select + -1,-1);
   }
@@ -41862,6 +43187,8 @@ int mUp(char c)
 int mLast(char c)
 
 {
+  char c_local;
+  
   goto_menu(CurrentMenu,CurrentMenu->nitem + -1,-1);
   return -1;
 }
@@ -41871,6 +43198,8 @@ int mLast(char c)
 int mTop(char c)
 
 {
+  char c_local;
+  
   goto_menu(CurrentMenu,0,1);
   return -1;
 }
@@ -41881,6 +43210,7 @@ int mNext(char c)
 
 {
   int iVar1;
+  char c_local;
   int mselect;
   
   iVar1 = CurrentMenu->select + CurrentMenu->height;
@@ -41901,6 +43231,7 @@ int mPrev(char c)
 
 {
   int iVar1;
+  char c_local;
   int mselect;
   
   iVar1 = CurrentMenu->select - CurrentMenu->height;
@@ -41920,6 +43251,8 @@ int mPrev(char c)
 int mFore(char c)
 
 {
+  char c_local;
+  
   if (CurrentMenu->select < CurrentMenu->nitem + -1) {
     goto_menu(CurrentMenu,CurrentMenu->select + CurrentMenu->height + -1,CurrentMenu->height + 1);
   }
@@ -41931,6 +43264,8 @@ int mFore(char c)
 int mBack(char c)
 
 {
+  char c_local;
+  
   if (0 < CurrentMenu->select) {
     goto_menu(CurrentMenu,(CurrentMenu->select - CurrentMenu->height) + 1,~CurrentMenu->height);
   }
@@ -41943,6 +43278,7 @@ int mLineU(char c)
 
 {
   int iVar1;
+  char c_local;
   int mselect;
   
   mselect = CurrentMenu->select;
@@ -41971,6 +43307,7 @@ int mLineD(char c)
 
 {
   int iVar1;
+  char c_local;
   int mselect;
   
   mselect = CurrentMenu->select;
@@ -41999,6 +43336,7 @@ int mOk(char c)
 
 {
   int iVar1;
+  char c_local;
   int mselect;
   
   iVar1 = CurrentMenu->select;
@@ -42013,6 +43351,8 @@ int mOk(char c)
 int mCancel(char c)
 
 {
+  char c_local;
+  
   return -2;
 }
 
@@ -42021,6 +43361,8 @@ int mCancel(char c)
 int mClose(char c)
 
 {
+  char c_local;
+  
   return -3;
 }
 
@@ -42029,6 +43371,8 @@ int mClose(char c)
 int mSusp(char c)
 
 {
+  char c_local;
+  
   susp();
   draw_all_menu(CurrentMenu);
   select_menu(CurrentMenu,CurrentMenu->select);
@@ -42036,6 +43380,8 @@ int mSusp(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int menuForwardSearch(Menu *menu,char *str,int from)
 
@@ -42064,6 +43410,8 @@ int menuForwardSearch(Menu *menu,char *str,int from)
 
 
 
+// WARNING: Unknown calling convention
+
 int menu_search_forward(Menu *menu,int from)
 
 {
@@ -42072,7 +43420,7 @@ int menu_search_forward(Menu *menu,int from)
   char *str;
   
   str = inputLineHistSearch("Forward: ",(char *)0x0,0x10,TextHist,
-                            (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                            (_func_int_int_Str_Lineprop_ptr *)0x0);
   if ((str != (char *)0x0) && (*str == '\0')) {
     str = SearchString;
   }
@@ -42101,6 +43449,7 @@ int mSrchF(char c)
 
 {
   int mselect_00;
+  char c_local;
   int mselect;
   
   mselect_00 = menu_search_forward(CurrentMenu,CurrentMenu->select);
@@ -42111,6 +43460,8 @@ int mSrchF(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int menuBackwardSearch(Menu *menu,char *str,int from)
 
@@ -42139,6 +43490,8 @@ int menuBackwardSearch(Menu *menu,char *str,int from)
 
 
 
+// WARNING: Unknown calling convention
+
 int menu_search_backward(Menu *menu,int from)
 
 {
@@ -42147,7 +43500,7 @@ int menu_search_backward(Menu *menu,int from)
   char *str;
   
   str = inputLineHistSearch("Backward: ",(char *)0x0,0x10,TextHist,
-                            (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                            (_func_int_int_Str_Lineprop_ptr *)0x0);
   if ((str != (char *)0x0) && (*str == '\0')) {
     str = SearchString;
   }
@@ -42176,6 +43529,7 @@ int mSrchB(char c)
 
 {
   int mselect_00;
+  char c_local;
   int mselect;
   
   mselect_00 = menu_search_backward(CurrentMenu,CurrentMenu->select);
@@ -42187,6 +43541,8 @@ int mSrchB(char c)
 
 
 
+// WARNING: Unknown calling convention
+
 int menu_search_next_previous(Menu *menu,int from,int reverse)
 
 {
@@ -42195,7 +43551,7 @@ int menu_search_next_previous(Menu *menu,int from,int reverse)
   char *str;
   int found;
   
-  if (menuSearchRoutine == (anon_subr_int_Menu_ptr_char_ptr_int *)0x0) {
+  if (menuSearchRoutine == (_func_int_Menu_ptr_char_ptr_int *)0x0) {
     disp_message("No previous regular expression",1);
     found = -1;
   }
@@ -42231,6 +43587,7 @@ int mSrchN(char c)
 
 {
   int mselect_00;
+  char c_local;
   int mselect;
   
   mselect_00 = menu_search_next_previous(CurrentMenu,CurrentMenu->select,0);
@@ -42246,6 +43603,7 @@ int mSrchP(char c)
 
 {
   int mselect_00;
+  char c_local;
   int mselect;
   
   mselect_00 = menu_search_next_previous(CurrentMenu,CurrentMenu->select,1);
@@ -42256,6 +43614,8 @@ int mSrchP(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int mMouse_scroll_line(void)
 
@@ -42275,6 +43635,8 @@ int mMouse_scroll_line(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int process_mMouse(int btn,int x,int y)
 
@@ -42371,6 +43733,7 @@ int mMouse(char c)
   uint uVar1;
   uint uVar2;
   int iVar3;
+  char c_local;
   int y;
   int x;
   int btn;
@@ -42391,6 +43754,8 @@ int mMouse(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int gpm_process_menu_mouse(Gpm_Event *event,void *data)
 
@@ -42438,6 +43803,8 @@ int gpm_process_menu_mouse(Gpm_Event *event,void *data)
 
 
 
+// WARNING: Unknown calling convention
+
 void popupMenu(int x,int y,Menu *menu)
 
 {
@@ -42454,6 +43821,8 @@ void popupMenu(int x,int y,Menu *menu)
 
 
 
+// WARNING: Unknown calling convention
+
 void mainMenu(int x,int y)
 
 {
@@ -42462,6 +43831,8 @@ void mainMenu(int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void mainMn(void)
 
@@ -42495,6 +43866,8 @@ void mainMn(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void selMn(void)
 
 {
@@ -42512,6 +43885,8 @@ void selMn(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initSelectMenu(void)
 
@@ -42636,6 +44011,8 @@ void initSelectMenu(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void smChBuf(void)
 
 {
@@ -42668,6 +44045,7 @@ int smDelBuf(char c)
   TabBuffer *pTVar2;
   Buffer *pBVar3;
   int iVar4;
+  char c_local;
   Buffer *buf;
   int mselect;
   int y;
@@ -42718,6 +44096,8 @@ int smDelBuf(char c)
 
 
 
+// WARNING: Unknown calling convention
+
 void tabMn(void)
 
 {
@@ -42735,6 +44115,8 @@ void tabMn(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initSelTabMenu(void)
 
@@ -42855,6 +44237,8 @@ void initSelTabMenu(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void smChTab(void)
 
 {
@@ -42890,6 +44274,7 @@ int smDelTab(char c)
   int iVar1;
   int y_00;
   int iVar2;
+  char c_local;
   TabBuffer *tab;
   int mselect;
   int y;
@@ -42924,7 +44309,9 @@ int smDelTab(char c)
 
 
 
-void optionMenu(int x,int y,char **label,int *variable,int initial,anon_subr_void_varargs *func)
+// WARNING: Unknown calling convention
+
+void optionMenu(int x,int y,char **label,int *variable,int initial,_func_void_varargs *func)
 
 {
   Menu menu;
@@ -42941,6 +44328,8 @@ void optionMenu(int x,int y,char **label,int *variable,int initial,anon_subr_voi
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void interpret_menu(FILE *mf)
 
@@ -43024,6 +44413,8 @@ void interpret_menu(FILE *mf)
 
 
 
+// WARNING: Unknown calling convention
+
 void initMenu(void)
 
 {
@@ -43080,6 +44471,8 @@ void initMenu(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int setMenuItem(MenuItem *item,char *type,char *line)
 
 {
@@ -43132,7 +44525,7 @@ int setMenuItem(MenuItem *item,char *type,char *line)
             if (-1 < iVar6) {
               iVar1 = iVar6;
             }
-            item->func = (anon_subr_void_varargs_for_func *)w3mFuncList[iVar1].func;
+            item->func = w3mFuncList[iVar1].func;
             item->keys = pcVar4;
             item->data = pcVar5;
             iVar1 = 4;
@@ -43171,6 +44564,8 @@ int setMenuItem(MenuItem *item,char *type,char *line)
 
 
 
+// WARNING: Unknown calling convention
+
 int addMenuList(MenuList **mlist,char *id)
 
 {
@@ -43199,6 +44594,8 @@ int addMenuList(MenuList **mlist,char *id)
 
 
 
+// WARNING: Unknown calling convention
+
 int getMenuN(MenuList *list,char *id)
 
 {
@@ -43219,6 +44616,8 @@ int getMenuN(MenuList *list,char *id)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 LinkList * link_menu(Buffer *buf)
 
@@ -43281,7 +44680,7 @@ LinkList * link_menu(Buffer *buf)
     }
     label_00[nitem] = (char *)0x0;
     set_menu_frame();
-    new_option_menu(&menu,label_00,&linkV,(anon_subr_void_varargs *)0x0);
+    new_option_menu(&menu,label_00,&linkV,(_func_void_varargs *)0x0);
     menu.initial = 0;
     menu.cursorX = (int)buf->cursorX + (int)buf->rootX;
     menu.cursorY = (int)buf->cursorY + (int)buf->rootY;
@@ -43302,6 +44701,8 @@ LinkList * link_menu(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * accesskey_menu(Buffer *buf)
 
@@ -43360,7 +44761,7 @@ Anchor * accesskey_menu(Buffer *buf)
         }
       }
       label_00[nitem] = (char *)0x0;
-      new_option_menu(&menu,label_00,&key,(anon_subr_void_varargs *)0x0);
+      new_option_menu(&menu,label_00,&key,(_func_void_varargs *)0x0);
       menu.initial = 0;
       menu.cursorX = (int)buf->cursorX + (int)buf->rootX;
       menu.cursorY = (int)buf->cursorY + (int)buf->rootY;
@@ -43416,6 +44817,8 @@ Anchor * accesskey_menu(Buffer *buf)
 int lmGoto(char c)
 
 {
+  char c_local;
+  
   if (((MYCTYPE_MAP[(byte)c] & 0x11) != 0) && (-1 < CurrentMenu->keyselect[c])) {
     goto_menu(CurrentMenu,CurrentMenu->nitem + -1,-1);
     goto_menu(CurrentMenu,CurrentMenu->keyselect[c] * 0x15,1);
@@ -43429,6 +44832,7 @@ int lmSelect(char c)
 
 {
   int iVar1;
+  char c_local;
   
   if ((MYCTYPE_MAP[(byte)c] & 0x11) == 0) {
     iVar1 = -1;
@@ -43441,6 +44845,8 @@ int lmSelect(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * list_menu(Buffer *buf)
 
@@ -43516,7 +44922,7 @@ Anchor * list_menu(Buffer *buf)
       label_00[nitem] = (char *)0x0;
       set_menu_frame();
       set_menu_frame();
-      new_option_menu(&menu,label_00,&key,(anon_subr_void_varargs *)0x0);
+      new_option_menu(&menu,label_00,&key,(_func_void_varargs *)0x0);
       menu.initial = 0;
       menu.cursorX = (int)buf->cursorX + (int)buf->rootX;
       menu.cursorY = (int)buf->cursorY + (int)buf->rootY;
@@ -43566,6 +44972,8 @@ Anchor * list_menu(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int mailcapMatch(mailcap *mcap,char *type)
 
@@ -43638,6 +45046,8 @@ int mailcapMatch(mailcap *mcap,char *type)
 
 
 
+// WARNING: Unknown calling convention
+
 mailcap * searchMailcap(mailcap *table,char *type)
 
 {
@@ -43673,6 +45083,8 @@ LAB_08098684:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int matchMailcapAttr(char *p,char *attr,int len,Str *value)
 
@@ -43732,6 +45144,8 @@ int matchMailcapAttr(char *p,char *attr,int len,Str *value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
 
@@ -43853,11 +45267,13 @@ int extractMailcapEntry(char *mcap_entry,mailcap *mcap)
 
 
 
+// WARNING: Unknown calling convention
+
 mailcap * loadMailcap(char *filename)
 
 {
   char *__filename;
-  FILE *__stream;
+  FILE *f_00;
   mailcap *pmVar1;
   Str p_Var2;
   uint uVar3;
@@ -43870,21 +45286,21 @@ mailcap * loadMailcap(char *filename)
   FILE *f;
   
   __filename = expandPath(filename);
-  __stream = fopen(__filename,"r");
-  if (__stream == (FILE *)0x0) {
+  f_00 = fopen(__filename,"r");
+  if (f_00 == (FILE *)0x0) {
     pmVar1 = (mailcap *)0x0;
   }
   else {
     i = 0;
-    while (p_Var2 = Strfgets((FILE *)__stream), 0 < p_Var2->length) {
+    while (p_Var2 = Strfgets((FILE *)f_00), 0 < p_Var2->length) {
       if (*p_Var2->ptr != '#') {
         i = i + 1;
       }
     }
-    fseek(__stream,0,0);
+    fseek(f_00,0,0);
     pmVar1 = (mailcap *)GC_malloc((i + 1) * 0x18);
     i = 0;
-    while (p_Var2 = Strfgets((FILE *)__stream), 0 < p_Var2->length) {
+    while (p_Var2 = Strfgets((FILE *)f_00), 0 < p_Var2->length) {
       if (*p_Var2->ptr != '#') {
         while( true ) {
           while( true ) {
@@ -43899,7 +45315,7 @@ mailcap * loadMailcap(char *filename)
           }
           if ((p_Var2->length < 1) || (p_Var2->ptr[p_Var2->length + -1] != '\\')) break;
           Strshrink(p_Var2,1);
-          y = Strfgets((FILE *)__stream);
+          y = Strfgets((FILE *)f_00);
           Strcat(p_Var2,y);
         }
         iVar4 = extractMailcapEntry(p_Var2->ptr,pmVar1 + i);
@@ -43909,12 +45325,14 @@ mailcap * loadMailcap(char *filename)
       }
     }
     bzero(pmVar1 + i,0x18);
-    fclose(__stream);
+    fclose(f_00);
   }
   return pmVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initMailcap(void)
 
@@ -43946,6 +45364,8 @@ void initMailcap(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * acceptableMimeTypes(void)
 
@@ -44003,6 +45423,8 @@ char * acceptableMimeTypes(void)
 
 
 
+// WARNING: Unknown calling convention
+
 mailcap * searchExtViewer(char *type)
 
 {
@@ -44023,6 +45445,8 @@ mailcap * searchExtViewer(char *type)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str quote_mailcap(char *s,int flag)
 
@@ -44089,6 +45513,8 @@ switchD_08099179_caseD_1:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str unquote_mailcap_loop(char *qstr,char *type,char *name,char *attr,int *mc_stat,int flag0)
 
@@ -44259,6 +45685,8 @@ Str unquote_mailcap_loop(char *qstr,char *type,char *name,char *attr,int *mc_sta
 
 
 
+// WARNING: Unknown calling convention
+
 Str unquote_mailcap(char *qstr,char *type,char *name,char *attr,int *mc_stat)
 
 {
@@ -44269,6 +45697,8 @@ Str unquote_mailcap(char *qstr,char *type,char *name,char *attr,int *mc_stat)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initImage(void)
 
@@ -44285,6 +45715,8 @@ void initImage(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int getCharSize(void)
 
@@ -44308,7 +45740,7 @@ int getCharSize(void)
   }
   Strcat_m_charp(tmp,Imgdisplay," -test 2>/dev/null",0);
   f = (FILE *)popen(tmp->ptr,"r");
-  if ((FILE *)f == (FILE *)0x0) {
+  if (f == (FILE *)0x0) {
     iVar2 = 0;
   }
   else {
@@ -44336,6 +45768,8 @@ int getCharSize(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void termImage(void)
 
 {
@@ -44351,6 +45785,8 @@ void termImage(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int openImgdisplay(void)
 
@@ -44390,6 +45826,8 @@ int openImgdisplay(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void closeImgdisplay(void)
 
 {
@@ -44409,6 +45847,8 @@ void closeImgdisplay(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addImage(ImageCache *cache,int x,int y,int sx,int sy,int w,int h)
 
@@ -44441,6 +45881,8 @@ void addImage(ImageCache *cache,int x,int y,int sx,int sy,int w,int h)
 
 
 
+// WARNING: Unknown calling convention
+
 void syncImage(void)
 
 {
@@ -44460,12 +45902,14 @@ void syncImage(void)
     iVar1 = ferror((FILE *)Imgdisplay_wf);
   } while (iVar1 == 0);
   closeImgdisplay();
-  image_index = image_index + 1000;
   n_terminal_image = 0;
+  image_index = image_index + 1000;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void drawImage(void)
 
@@ -44523,6 +45967,8 @@ void drawImage(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clearImage(void)
 
 {
@@ -44552,6 +45998,8 @@ void clearImage(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void deleteImage(Buffer *buf)
 
 {
@@ -44577,6 +46025,8 @@ void deleteImage(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void getAllImage(Buffer *buf)
 
@@ -44615,6 +46065,8 @@ void getAllImage(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void showImageProgress(Buffer *buf)
 
@@ -44658,6 +46110,8 @@ void showImageProgress(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void loadImage(Buffer *buf,int flag)
 
@@ -44793,6 +46247,8 @@ void loadImage(Buffer *buf,int flag)
 
 
 
+// WARNING: Unknown calling convention
+
 ImageCache * getImage(Image *image,ParsedURL *current,int flag)
 
 {
@@ -44874,6 +46330,8 @@ ImageCache * getImage(Image *image,ParsedURL *current,int flag)
 
 
 
+// WARNING: Unknown calling convention
+
 int getImageSize(ImageCache *cache)
 
 {
@@ -44906,7 +46364,7 @@ int getImageSize(ImageCache *cache)
     pcVar3 = shell_quote(cache->file);
     Strcat_m_charp(tmp,Imgdisplay," -size ",pcVar3,0);
     f = (FILE *)popen(tmp->ptr,"r");
-    if ((FILE *)f == (FILE *)0x0) {
+    if (f == (FILE *)0x0) {
       iVar2 = 0;
     }
     else {
@@ -44973,6 +46431,8 @@ int getImageSize(ImageCache *cache)
 
 
 
+// WARNING: Unknown calling convention
+
 void encode_symbol(symbol_set *s)
 
 {
@@ -44996,6 +46456,8 @@ void encode_symbol(symbol_set *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char ** get_symbol(wc_ces charset,int *width)
 
@@ -45040,6 +46502,8 @@ char ** get_symbol(wc_ces charset,int *width)
 
 
 
+// WARNING: Unknown calling convention
+
 char ** set_symbol(int width)
 
 {
@@ -45076,6 +46540,7 @@ void push_symbol(Str str,char symbol,int width,int n)
 {
   char cVar1;
   Str y;
+  char symbol_local;
   int i;
   char *p;
   char buf [2];
@@ -45107,6 +46572,8 @@ void push_symbol(Str str,char symbol,int width,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * conv_entity(uint c)
 
@@ -45157,6 +46624,8 @@ char * conv_entity(uint c)
 
 
 
+// WARNING: Unknown calling convention
+
 void writestr(char *s)
 
 {
@@ -45165,6 +46634,8 @@ void writestr(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int set_tty(void)
 
@@ -45216,6 +46687,8 @@ int set_tty(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void ttymode_set(int mode,int imode)
 
 {
@@ -45245,6 +46718,8 @@ void ttymode_set(int mode,int imode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ttymode_reset(int mode,int imode)
 
@@ -45276,6 +46751,8 @@ void ttymode_reset(int mode,int imode)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_cc(int spec,int val)
 
 {
@@ -45305,6 +46782,8 @@ void set_cc(int spec,int val)
 
 
 
+// WARNING: Unknown calling convention
+
 void close_tty(void)
 
 {
@@ -45316,6 +46795,8 @@ void close_tty(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * ttyname_tty(void)
 
 {
@@ -45326,6 +46807,8 @@ char * ttyname_tty(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void reset_tty(void)
 
@@ -45349,6 +46832,8 @@ void reset_tty(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void reset_exit(int _dummy)
 
 {
@@ -45362,16 +46847,20 @@ void reset_exit(int _dummy)
 
 
 
+// WARNING: Unknown calling convention
+
 void error_dump(int _dummy)
 
 {
-  mySignal(6,(anon_subr_void_int *)0x0);
+  mySignal(6,(_func_void_int *)0x0);
   reset_tty();
                     // WARNING: Subroutine does not return
   abort();
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void set_int(void)
 
@@ -45388,6 +46877,8 @@ void set_int(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void setgraphchar(void)
 
@@ -45414,6 +46905,8 @@ void setgraphchar(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void getTCstr(void)
 
@@ -45695,6 +47188,8 @@ void getTCstr(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void setlinescols(void)
 
 {
@@ -45744,6 +47239,8 @@ void setlinescols(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void setupscreen(void)
 
 {
@@ -45784,6 +47281,8 @@ void setupscreen(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int initscr(void)
 
 {
@@ -45810,11 +47309,15 @@ int initscr(void)
 int write1(char c)
 
 {
+  char c_local;
+  
   _IO_putc((int)c,(_IO_FILE *)ttyf);
   return 0;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void move(int line,int column)
 
@@ -45834,6 +47337,8 @@ int need_redraw(char *c1,l_prop pr1,char *c2,l_prop pr2)
 
 {
   int iVar1;
+  l_prop pr2_local;
+  l_prop pr1_local;
   
   if (((c1 == (char *)0x0) || (c2 == (char *)0x0)) || (iVar1 = strcmp(c1,c2), iVar1 != 0)) {
     return 1;
@@ -45852,14 +47357,16 @@ int need_redraw(char *c1,l_prop pr1,char *c2,l_prop pr2)
 void addch(char c)
 
 {
-  char local_10 [12];
+  char c_local;
   
-  local_10[0] = c;
-  addmch(local_10,1);
+  c_local = c;
+  addmch(&c_local,1);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addmch(char *pc,size_t len)
 
@@ -46035,7 +47542,8 @@ void addmch(char *pc,size_t len)
           p[i] = pcVar7;
           memcpy(p[i],&DAT_080ceefd,1);
           p[i][1] = '\0';
-          pr[i] = pr[CurColumn] & 0xff00 | pr[CurColumn] & 0x3f | pr[i] & 0x20 | 0x80;
+          pr[i] = (ushort)CONCAT31((int3)((pr[CurColumn] & 0xffffff3f) >> 8),
+                                   (byte)(pr[CurColumn] & 0xffffff3f) | (byte)pr[i] & 0x20) | 0x80;
           touch_column(i);
         }
         for (; (i < COLS && ((pr[i] & 0xc0) == 0x80)); i = i + 1) {
@@ -46055,6 +47563,8 @@ void addmch(char *pc,size_t len)
 
 
 
+// WARNING: Unknown calling convention
+
 void wrap(void)
 
 {
@@ -46067,6 +47577,8 @@ void wrap(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void touch_column(int col)
 
 {
@@ -46077,6 +47589,8 @@ void touch_column(int col)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void touch_line(void)
 
@@ -46094,6 +47608,8 @@ void touch_line(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void standout(void)
 
 {
@@ -46103,6 +47619,8 @@ void standout(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void standend(void)
 
 {
@@ -46111,6 +47629,8 @@ void standend(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void toggle_stand(void)
 
@@ -46132,6 +47652,8 @@ void toggle_stand(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void bold(void)
 
 {
@@ -46140,6 +47662,8 @@ void bold(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void boldend(void)
 
@@ -46150,6 +47674,8 @@ void boldend(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void underline(void)
 
 {
@@ -46158,6 +47684,8 @@ void underline(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void underlineend(void)
 
@@ -46168,6 +47696,8 @@ void underlineend(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void graphstart(void)
 
 {
@@ -46177,6 +47707,8 @@ void graphstart(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void graphend(void)
 
 {
@@ -46185,6 +47717,8 @@ void graphend(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int graph_ok(void)
 
@@ -46205,6 +47739,8 @@ int graph_ok(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void setfcolor(int color)
 
 {
@@ -46217,6 +47753,8 @@ void setfcolor(int color)
 
 
 
+// WARNING: Unknown calling convention
+
 char * color_seq(int colmode)
 
 {
@@ -46225,6 +47763,8 @@ char * color_seq(int colmode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void setbcolor(int color)
 
@@ -46238,6 +47778,8 @@ void setbcolor(int color)
 
 
 
+// WARNING: Unknown calling convention
+
 char * bcolor_seq(int colmode)
 
 {
@@ -46246,6 +47788,8 @@ char * bcolor_seq(int colmode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void refresh(void)
 
@@ -46375,7 +47919,7 @@ void refresh(void)
             mode = mode | 4;
           }
           if (((plVar2[col] & 0xf00) != 0) && (((plVar2[col] ^ mode) & 0xf00) != 0)) {
-            mode = plVar2[col] & 0xf00 | mode & 0xff | ((byte)((uint)mode >> 8) & 0xf0) << 8;
+            mode = plVar2[col] & 0xf00 | mode & 0xf0ff;
             pcVar5 = color_seq((uint)(plVar2[col] & 0xf00));
             writestr(pcVar5);
           }
@@ -46435,6 +47979,8 @@ void refresh(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clear(void)
 
 {
@@ -46458,6 +48004,8 @@ void clear(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clrtoeol(void)
 
 {
@@ -46480,6 +48028,8 @@ void clrtoeol(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void clrtoeol_with_bcolor(void)
 
@@ -46511,6 +48061,8 @@ void clrtoeol_with_bcolor(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clrtoeolx(void)
 
 {
@@ -46520,7 +48072,9 @@ void clrtoeolx(void)
 
 
 
-void clrtobot_eol(anon_subr_void_varargs *clrtoeol)
+// WARNING: Unknown calling convention
+
+void clrtobot_eol(_func_void_varargs *clrtoeol)
 
 {
   int iVar1;
@@ -46542,6 +48096,8 @@ void clrtobot_eol(anon_subr_void_varargs *clrtoeol)
 
 
 
+// WARNING: Unknown calling convention
+
 void clrtobot(void)
 
 {
@@ -46551,6 +48107,8 @@ void clrtobot(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void clrtobotx(void)
 
 {
@@ -46559,6 +48117,8 @@ void clrtobotx(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addstr(char *s)
 
@@ -46574,6 +48134,8 @@ void addstr(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addnstr(char *s,int n)
 
@@ -46606,6 +48168,8 @@ void addnstr(char *s,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void addnstr_sup(char *s,int n)
 
 {
@@ -46636,6 +48200,8 @@ void addnstr_sup(char *s,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void crmode(void)
 
 {
@@ -46647,6 +48213,8 @@ void crmode(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void nocrmode(void)
 
 {
@@ -46657,6 +48225,8 @@ void nocrmode(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void term_echo(void)
 
 {
@@ -46666,6 +48236,8 @@ void term_echo(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void term_noecho(void)
 
 {
@@ -46674,6 +48246,8 @@ void term_noecho(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void term_raw(void)
 
@@ -46685,6 +48259,8 @@ void term_raw(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void term_cooked(void)
 
 {
@@ -46694,6 +48270,8 @@ void term_cooked(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void term_cbreak(void)
 
@@ -46705,6 +48283,8 @@ void term_cbreak(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void term_title(char *s)
 
 {
@@ -46715,6 +48295,8 @@ void term_title(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char getch(void)
 
@@ -46736,6 +48318,8 @@ char getch(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char wgetch(void *p)
 
 {
@@ -46756,6 +48340,8 @@ char wgetch(void *p)
 
 
 
+// WARNING: Unknown calling convention
+
 int do_getch(void)
 
 {
@@ -46774,6 +48360,8 @@ int do_getch(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void bell(void)
 
 {
@@ -46782,6 +48370,8 @@ void bell(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void skip_escseq(void)
 
@@ -46810,15 +48400,16 @@ void skip_escseq(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int sleep_till_anykey(int sec,int purge)
 
 {
-  byte bVar1;
-  char cVar2;
-  int iVar3;
-  int *piVar4;
-  int iVar5;
-  __fd_mask *p_Var6;
+  char cVar1;
+  int iVar2;
+  int *piVar3;
+  int iVar4;
+  __fd_mask *p_Var5;
   int in_GS_OFFSET;
   fd_set rfd;
   timeval tim;
@@ -46835,40 +48426,40 @@ int sleep_till_anykey(int sec,int purge)
   term_raw();
   tim.tv_sec = sec;
   tim.tv_usec = 0;
-  iVar5 = 0x20;
-  p_Var6 = rfd.__fds_bits;
-  for (; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *p_Var6 = 0;
-    p_Var6 = p_Var6 + 1;
+  iVar4 = 0x20;
+  p_Var5 = rfd.__fds_bits;
+  for (; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *p_Var5 = 0;
+    p_Var5 = p_Var5 + 1;
   }
-  iVar5 = tty;
+  iVar4 = tty;
   if (tty < 0) {
-    iVar5 = tty + 0x1f;
+    iVar4 = tty + 0x1f;
   }
-  bVar1 = (byte)(tty >> 0x37);
-  rfd.__fds_bits[iVar5 >> 5] =
-       1 << (((char)tty + (bVar1 >> 3) & 0x1f) - (bVar1 >> 3) & 0x1f) | rfd.__fds_bits[iVar5 >> 5];
-  iVar5 = select(tty + 1,(fd_set *)&rfd,(fd_set *)0x0,(fd_set *)0x0,(timeval *)&tim);
-  if ((0 < iVar5) && (purge != 0)) {
-    cVar2 = getch();
-    if (cVar2 == '\x1b') {
+  rfd.__fds_bits[iVar4 >> 5] = 1 << ((byte)(tty % 0x20) & 0x1f) | rfd.__fds_bits[iVar4 >> 5];
+  iVar4 = select(tty + 1,(fd_set *)&rfd,(fd_set *)0x0,(fd_set *)0x0,(timeval *)&tim);
+  if ((0 < iVar4) && (purge != 0)) {
+    cVar1 = getch();
+    if (cVar1 == '\x1b') {
       skip_escseq();
     }
   }
-  iVar3 = tcsetattr(tty,0,(termios *)&ioval);
-  if (iVar3 == -1) {
-    piVar4 = __errno_location();
-    printf("Error occured: errno=%d\n",*piVar4);
+  iVar2 = tcsetattr(tty,0,(termios *)&ioval);
+  if (iVar2 == -1) {
+    piVar3 = __errno_location();
+    printf("Error occured: errno=%d\n",*piVar3);
     reset_exit(0);
   }
   if (local_20 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }
-  return iVar5;
+  return iVar4;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void mouse_init(void)
 
@@ -46902,6 +48493,8 @@ void mouse_init(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void mouse_end(void)
 
 {
@@ -46920,6 +48513,8 @@ void mouse_end(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void mouse_active(void)
 
 {
@@ -46930,6 +48525,8 @@ void mouse_active(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void mouse_inactive(void)
 
@@ -46942,6 +48539,8 @@ void mouse_inactive(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void flush_tty(void)
 
 {
@@ -46952,6 +48551,8 @@ void flush_tty(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void touch_cursor(void)
 
@@ -46974,11 +48575,13 @@ void touch_cursor(void)
 
 
 
+// WARNING: Unknown calling convention
+
 table2 * loadMimeTypes(char *filename)
 
 {
   char *pcVar1;
-  FILE *__stream;
+  FILE *f_00;
   table2 *ptVar2;
   Str p_Var3;
   char *p;
@@ -46991,13 +48594,13 @@ table2 * loadMimeTypes(char *filename)
   FILE *f;
   
   pcVar1 = expandPath(filename);
-  __stream = fopen(pcVar1,"r");
-  if (__stream == (FILE *)0x0) {
+  f_00 = fopen(pcVar1,"r");
+  if (f_00 == (FILE *)0x0) {
     ptVar2 = (table2 *)0x0;
   }
   else {
     n = 0;
-    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)f_00), 0 < p_Var3->length) {
       if ((*p_Var3->ptr != '#') && (pcVar1 = strtok(p_Var3->ptr," \t\n\r"), pcVar1 != (char *)0x0))
       {
         d = strtok((char *)0x0," \t\n\r");
@@ -47009,10 +48612,10 @@ table2 * loadMimeTypes(char *filename)
         n = n + i;
       }
     }
-    fseek(__stream,0,0);
+    fseek(f_00,0,0);
     ptVar2 = (table2 *)GC_malloc((n + 1) * 8);
     i = 0;
-    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)f_00), 0 < p_Var3->length) {
       if ((*p_Var3->ptr != '#') && (pcVar1 = strtok(p_Var3->ptr," \t\n\r"), pcVar1 != (char *)0x0))
       {
         while (p = strtok((char *)0x0," \t\n\r"), p != (char *)0x0) {
@@ -47026,12 +48629,14 @@ table2 * loadMimeTypes(char *filename)
     }
     ptVar2[i].item1 = (char *)0x0;
     ptVar2[i].item2 = (char *)0x0;
-    fclose(__stream);
+    fclose(f_00);
   }
   return ptVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initMimeTypes(void)
 
@@ -47064,6 +48669,8 @@ void initMimeTypes(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * DefaultFile(int scheme)
 
 {
@@ -47090,6 +48697,8 @@ char * DefaultFile(int scheme)
 
 
 
+// WARNING: Unknown calling convention
+
 void KeyAbort(int _dummy)
 
 {
@@ -47099,18 +48708,22 @@ void KeyAbort(int _dummy)
 
 
 
-void write_from_file(int param_1,char *param_2)
+// WARNING: Unknown calling convention
+
+void write_from_file(int sock,char *file)
 
 {
   FILE *__stream;
   int iVar1;
-  undefined local_d [9];
+  int c;
+  FILE *fd;
+  char buf [1];
   
-  __stream = fopen(param_2,"r");
+  __stream = fopen(file,"r");
   if (__stream != (FILE *)0x0) {
     while (iVar1 = fgetc(__stream), iVar1 != -1) {
-      local_d[0] = (undefined)iVar1;
-      write(param_1,local_d,1);
+      buf[0] = (char)iVar1;
+      write(sock,buf,1);
     }
     fclose(__stream);
   }
@@ -47118,6 +48731,8 @@ void write_from_file(int param_1,char *param_2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 ParsedURL * baseURL(Buffer *buf)
 
@@ -47147,9 +48762,10 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
   int iVar2;
   size_t sVar3;
   size_t sVar4;
+  ushort remoteport_num_local;
   addrinfo hints;
   Str portbuf;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   char *hname;
   int error;
   addrinfo *res;
@@ -47158,7 +48774,7 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
   int sock;
   
   sock = -1;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (fmInitialized != '\0') {
     p_Var1 = Sprintf("Opening socket...");
     message(p_Var1->ptr,0,0);
@@ -47214,7 +48830,7 @@ int openSocket(char *hostname,char *remoteport_name,ushort remoteport_num)
             if (fmInitialized != '\0') {
               term_raw();
             }
-            if (prevtrap == (anon_subr_void_int *)0x0) {
+            if (prevtrap == (_func_void_int *)0x0) {
               return sock;
             }
             mySignal(2,prevtrap);
@@ -47239,7 +48855,7 @@ error:
     if (fmInitialized != '\0') {
       term_raw();
     }
-    if (prevtrap != (anon_subr_void_int *)0x0) {
+    if (prevtrap != (_func_void_int *)0x0) {
       mySignal(2,prevtrap);
     }
   }
@@ -47247,6 +48863,8 @@ error:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * copyPath(char *orgpath,int length,int option)
 
@@ -47286,6 +48904,8 @@ char * copyPath(char *orgpath,int length,int option)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void parseURL(char *url,ParsedURL *p_url,ParsedURL *current)
 
@@ -47526,6 +49146,8 @@ do_label:
 
 
 
+// WARNING: Unknown calling convention
+
 void copyParsedURL(ParsedURL *p,ParsedURL *q)
 
 {
@@ -47587,6 +49209,8 @@ void copyParsedURL(ParsedURL *p,ParsedURL *q)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void parseURL2(char *url,ParsedURL *pu,ParsedURL *current)
 
@@ -47723,6 +49347,8 @@ void parseURL2(char *url,ParsedURL *pu,ParsedURL *current)
 
 
 
+// WARNING: Unknown calling convention
+
 Str _parsedURL2Str(ParsedURL *pu,int pass)
 
 {
@@ -47848,6 +49474,8 @@ Str _parsedURL2Str(ParsedURL *pu,int pass)
 
 
 
+// WARNING: Unknown calling convention
+
 Str parsedURL2Str(ParsedURL *pu)
 
 {
@@ -47858,6 +49486,8 @@ Str parsedURL2Str(ParsedURL *pu)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int getURLScheme(char **url)
 
@@ -47893,6 +49523,8 @@ int getURLScheme(char **url)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * otherinfo(ParsedURL *target,ParsedURL *current,char *referer)
 
@@ -47958,6 +49590,8 @@ char * otherinfo(ParsedURL *target,ParsedURL *current,char *referer)
 
 
 
+// WARNING: Unknown calling convention
+
 Str HTTPrequestMethod(HRequest *hr)
 
 {
@@ -47981,6 +49615,8 @@ Str HTTPrequestMethod(HRequest *hr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str HTTPrequestURI(ParsedURL *pu,HRequest *hr)
 
@@ -48022,6 +49658,8 @@ Str HTTPrequestURI(ParsedURL *pu,HRequest *hr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str HTTPrequest(ParsedURL *pu,ParsedURL *current,HRequest *hr,TextList *extra)
 
@@ -48098,6 +49736,8 @@ Str HTTPrequest(ParsedURL *pu,ParsedURL *current,HRequest *hr,TextList *extra)
 
 
 
+// WARNING: Unknown calling convention
+
 void init_stream(URLFile *uf,int scheme,InputStream stream)
 
 {
@@ -48116,11 +49756,10 @@ void init_stream(URLFile *uf,int scheme,InputStream stream)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
-URLFile * openURL(URLFile *__return_storage_ptr__,char *url,ParsedURL *pu,ParsedURL *current,
-                 URLOption *option,FormList *request,TextList *extra_header,URLFile *ouf,
-                 HRequest *hr,uchar *status)
+URLFile * openURL(char *url,ParsedURL *pu,ParsedURL *current,URLOption *option,FormList *request,
+                 TextList *extra_header,URLFile *ouf,HRequest *hr,uchar *status)
 
 {
   Str p_Var1;
@@ -48129,6 +49768,7 @@ URLFile * openURL(URLFile *__return_storage_ptr__,char *url,ParsedURL *pu,Parsed
   FILE *__s;
   int iVar4;
   InputStream piVar5;
+  URLFile *in_stack_00000004;
   URLFile uf;
   HRequest hr0;
   FILE *ff;
@@ -48147,7 +49787,10 @@ URLFile * openURL(URLFile *__return_storage_ptr__,char *url,ParsedURL *pu,Parsed
     init_stream(&uf,0xfe,(InputStream)0x0);
   }
   else {
-    uf._0_4_ = *(uint *)ouf;
+    uf.scheme = ouf->scheme;
+    uf.is_cgi = ouf->is_cgi;
+    uf.encoding = ouf->encoding;
+    uf._3_1_ = ouf->field_0x3;
     uf.stream = ouf->stream;
     uf.ext = ouf->ext;
     uf.compression = ouf->compression;
@@ -48168,15 +49811,18 @@ retry:
   parseURL2(u,pu,current);
   if ((pu->scheme == 4) && (pu->file == (char *)0x0)) {
     if (pu->label == (char *)0x0) {
-      *(uint *)__return_storage_ptr__ = uf._0_4_;
-      __return_storage_ptr__->stream = uf.stream;
-      __return_storage_ptr__->ext = uf.ext;
-      __return_storage_ptr__->compression = uf.compression;
-      __return_storage_ptr__->content_encoding = uf.content_encoding;
-      __return_storage_ptr__->guess_type = uf.guess_type;
-      __return_storage_ptr__->url = uf.url;
-      __return_storage_ptr__->modtime = uf.modtime;
-      return __return_storage_ptr__;
+      in_stack_00000004->scheme = uf.scheme;
+      in_stack_00000004->is_cgi = uf.is_cgi;
+      in_stack_00000004->encoding = uf.encoding;
+      in_stack_00000004->field_0x3 = uf._3_1_;
+      in_stack_00000004->stream = uf.stream;
+      in_stack_00000004->ext = uf.ext;
+      in_stack_00000004->compression = uf.compression;
+      in_stack_00000004->content_encoding = uf.content_encoding;
+      in_stack_00000004->guess_type = uf.guess_type;
+      in_stack_00000004->url = uf.url;
+      in_stack_00000004->modtime = uf.modtime;
+      return in_stack_00000004;
     }
     p_Var1 = Strnew_charp("#");
     Strcat_charp(p_Var1,pu->label);
@@ -48186,7 +49832,7 @@ retry:
     pu->real_file = pcVar2;
     pu->label = (char *)0x0;
   }
-  uf._0_4_ = uf._0_4_ & 0xffffff00 | pu->scheme & 0xffU;
+  uf.scheme = (char)pu->scheme;
   p_Var1 = parsedURL2Str(pu);
   uf.url = p_Var1->ptr;
   pu->is_nocache = option->flag & 1;
@@ -48214,15 +49860,18 @@ retry:
       sock = openSocket(pu->host,schemetable[pu->scheme].cmdname,(ushort)pu->port);
       if (sock < 0) {
         *status = 0xfe;
-        *(uint *)__return_storage_ptr__ = uf._0_4_;
-        __return_storage_ptr__->stream = uf.stream;
-        __return_storage_ptr__->ext = uf.ext;
-        __return_storage_ptr__->compression = uf.compression;
-        __return_storage_ptr__->content_encoding = uf.content_encoding;
-        __return_storage_ptr__->guess_type = uf.guess_type;
-        __return_storage_ptr__->url = uf.url;
-        __return_storage_ptr__->modtime = uf.modtime;
-        return __return_storage_ptr__;
+        in_stack_00000004->scheme = uf.scheme;
+        in_stack_00000004->is_cgi = uf.is_cgi;
+        in_stack_00000004->encoding = uf.encoding;
+        in_stack_00000004->field_0x3 = uf._3_1_;
+        in_stack_00000004->stream = uf.stream;
+        in_stack_00000004->ext = uf.ext;
+        in_stack_00000004->compression = uf.compression;
+        in_stack_00000004->content_encoding = uf.content_encoding;
+        in_stack_00000004->guess_type = uf.guess_type;
+        in_stack_00000004->url = uf.url;
+        in_stack_00000004->modtime = uf.modtime;
+        return in_stack_00000004;
       }
       hr->flag = hr->flag | 1;
       tmp = HTTPrequest(pu,current,hr,extra_header);
@@ -48233,15 +49882,18 @@ retry:
       sock = openSocket(HTTP_proxy_parsed.host,schemetable[HTTP_proxy_parsed.scheme].cmdname,
                         (ushort)HTTP_proxy_parsed.port);
       if (sock < 0) {
-        *(uint *)__return_storage_ptr__ = uf._0_4_;
-        __return_storage_ptr__->stream = uf.stream;
-        __return_storage_ptr__->ext = uf.ext;
-        __return_storage_ptr__->compression = uf.compression;
-        __return_storage_ptr__->content_encoding = uf.content_encoding;
-        __return_storage_ptr__->guess_type = uf.guess_type;
-        __return_storage_ptr__->url = uf.url;
-        __return_storage_ptr__->modtime = uf.modtime;
-        return __return_storage_ptr__;
+        in_stack_00000004->scheme = uf.scheme;
+        in_stack_00000004->is_cgi = uf.is_cgi;
+        in_stack_00000004->encoding = uf.encoding;
+        in_stack_00000004->field_0x3 = uf._3_1_;
+        in_stack_00000004->stream = uf.stream;
+        in_stack_00000004->ext = uf.ext;
+        in_stack_00000004->compression = uf.compression;
+        in_stack_00000004->content_encoding = uf.content_encoding;
+        in_stack_00000004->guess_type = uf.guess_type;
+        in_stack_00000004->url = uf.url;
+        in_stack_00000004->modtime = uf.modtime;
+        return in_stack_00000004;
       }
       tmp = HTTPrequest(pu,current,hr,extra_header);
       *status = '\0';
@@ -48262,15 +49914,18 @@ retry:
        ((pu->host == (char *)0x0 || (iVar4 = check_no_proxy(pu->host), iVar4 != 0)))) {
       sock = openSocket(pu->host,schemetable[pu->scheme].cmdname,(ushort)pu->port);
       if (sock < 0) {
-        *(uint *)__return_storage_ptr__ = uf._0_4_;
-        __return_storage_ptr__->stream = uf.stream;
-        __return_storage_ptr__->ext = uf.ext;
-        __return_storage_ptr__->compression = uf.compression;
-        __return_storage_ptr__->content_encoding = uf.content_encoding;
-        __return_storage_ptr__->guess_type = uf.guess_type;
-        __return_storage_ptr__->url = uf.url;
-        __return_storage_ptr__->modtime = uf.modtime;
-        return __return_storage_ptr__;
+        in_stack_00000004->scheme = uf.scheme;
+        in_stack_00000004->is_cgi = uf.is_cgi;
+        in_stack_00000004->encoding = uf.encoding;
+        in_stack_00000004->field_0x3 = uf._3_1_;
+        in_stack_00000004->stream = uf.stream;
+        in_stack_00000004->ext = uf.ext;
+        in_stack_00000004->compression = uf.compression;
+        in_stack_00000004->content_encoding = uf.content_encoding;
+        in_stack_00000004->guess_type = uf.guess_type;
+        in_stack_00000004->url = uf.url;
+        in_stack_00000004->modtime = uf.modtime;
+        return in_stack_00000004;
       }
       if (pu->file == (char *)0x0) {
         pu->file = "1";
@@ -48290,15 +49945,18 @@ retry:
       sock = openSocket(GOPHER_proxy_parsed.host,schemetable[GOPHER_proxy_parsed.scheme].cmdname,
                         (ushort)GOPHER_proxy_parsed.port);
       if (sock < 0) {
-        *(uint *)__return_storage_ptr__ = uf._0_4_;
-        __return_storage_ptr__->stream = uf.stream;
-        __return_storage_ptr__->ext = uf.ext;
-        __return_storage_ptr__->compression = uf.compression;
-        __return_storage_ptr__->content_encoding = uf.content_encoding;
-        __return_storage_ptr__->guess_type = uf.guess_type;
-        __return_storage_ptr__->url = uf.url;
-        __return_storage_ptr__->modtime = uf.modtime;
-        return __return_storage_ptr__;
+        in_stack_00000004->scheme = uf.scheme;
+        in_stack_00000004->is_cgi = uf.is_cgi;
+        in_stack_00000004->encoding = uf.encoding;
+        in_stack_00000004->field_0x3 = uf._3_1_;
+        in_stack_00000004->stream = uf.stream;
+        in_stack_00000004->ext = uf.ext;
+        in_stack_00000004->compression = uf.compression;
+        in_stack_00000004->content_encoding = uf.content_encoding;
+        in_stack_00000004->guess_type = uf.guess_type;
+        in_stack_00000004->url = uf.url;
+        in_stack_00000004->modtime = uf.modtime;
+        return in_stack_00000004;
       }
       uf._0_4_ = uf._0_4_ & 0xffffff00;
       tmp = HTTPrequest(pu,current,hr,extra_header);
@@ -48315,30 +49973,36 @@ retry:
     if ((((iVar4 == 0) || (use_proxy == '\0')) || (pu->host == (char *)0x0)) ||
        (iVar4 = check_no_proxy(pu->host), iVar4 != 0)) {
       piVar5 = openFTPStream(pu,&uf);
-      uf._0_4_ = uf._0_4_ & 0xffffff00 | pu->scheme & 0xffU;
-      *(uint *)__return_storage_ptr__ = uf._0_4_;
-      __return_storage_ptr__->stream = piVar5;
-      __return_storage_ptr__->ext = uf.ext;
-      __return_storage_ptr__->compression = uf.compression;
-      __return_storage_ptr__->content_encoding = uf.content_encoding;
-      __return_storage_ptr__->guess_type = uf.guess_type;
-      __return_storage_ptr__->url = uf.url;
-      __return_storage_ptr__->modtime = uf.modtime;
-      return __return_storage_ptr__;
+      uf.scheme = (char)pu->scheme;
+      in_stack_00000004->scheme = uf.scheme;
+      in_stack_00000004->is_cgi = uf.is_cgi;
+      in_stack_00000004->encoding = uf.encoding;
+      in_stack_00000004->field_0x3 = uf._3_1_;
+      in_stack_00000004->stream = piVar5;
+      in_stack_00000004->ext = uf.ext;
+      in_stack_00000004->compression = uf.compression;
+      in_stack_00000004->content_encoding = uf.content_encoding;
+      in_stack_00000004->guess_type = uf.guess_type;
+      in_stack_00000004->url = uf.url;
+      in_stack_00000004->modtime = uf.modtime;
+      return in_stack_00000004;
     }
     hr->flag = hr->flag | 2;
     sock = openSocket(FTP_proxy_parsed.host,schemetable[FTP_proxy_parsed.scheme].cmdname,
                       (ushort)FTP_proxy_parsed.port);
     if (sock < 0) {
-      *(uint *)__return_storage_ptr__ = uf._0_4_;
-      __return_storage_ptr__->stream = uf.stream;
-      __return_storage_ptr__->ext = uf.ext;
-      __return_storage_ptr__->compression = uf.compression;
-      __return_storage_ptr__->content_encoding = uf.content_encoding;
-      __return_storage_ptr__->guess_type = uf.guess_type;
-      __return_storage_ptr__->url = uf.url;
-      __return_storage_ptr__->modtime = uf.modtime;
-      return __return_storage_ptr__;
+      in_stack_00000004->scheme = uf.scheme;
+      in_stack_00000004->is_cgi = uf.is_cgi;
+      in_stack_00000004->encoding = uf.encoding;
+      in_stack_00000004->field_0x3 = uf._3_1_;
+      in_stack_00000004->stream = uf.stream;
+      in_stack_00000004->ext = uf.ext;
+      in_stack_00000004->compression = uf.compression;
+      in_stack_00000004->content_encoding = uf.content_encoding;
+      in_stack_00000004->guess_type = uf.guess_type;
+      in_stack_00000004->url = uf.url;
+      in_stack_00000004->modtime = uf.modtime;
+      return in_stack_00000004;
     }
     uf._0_4_ = uf._0_4_ & 0xffffff00;
     tmp = HTTPrequest(pu,current,hr,extra_header);
@@ -48348,60 +50012,72 @@ retry:
   case 5:
     goto switchD_080a0f2d_caseD_4;
   default:
-    *(uint *)__return_storage_ptr__ = uf._0_4_;
-    __return_storage_ptr__->stream = uf.stream;
-    __return_storage_ptr__->ext = uf.ext;
-    __return_storage_ptr__->compression = uf.compression;
-    __return_storage_ptr__->content_encoding = uf.content_encoding;
-    __return_storage_ptr__->guess_type = uf.guess_type;
-    __return_storage_ptr__->url = uf.url;
-    __return_storage_ptr__->modtime = uf.modtime;
-    return __return_storage_ptr__;
+    in_stack_00000004->scheme = uf.scheme;
+    in_stack_00000004->is_cgi = uf.is_cgi;
+    in_stack_00000004->encoding = uf.encoding;
+    in_stack_00000004->field_0x3 = uf._3_1_;
+    in_stack_00000004->stream = uf.stream;
+    in_stack_00000004->ext = uf.ext;
+    in_stack_00000004->compression = uf.compression;
+    in_stack_00000004->content_encoding = uf.content_encoding;
+    in_stack_00000004->guess_type = uf.guess_type;
+    in_stack_00000004->url = uf.url;
+    in_stack_00000004->modtime = uf.modtime;
+    return in_stack_00000004;
   case 7:
   case 8:
   case 9:
   case 10:
     if ((pu->scheme == 7) || (pu->scheme == 9)) {
-      uf._0_4_ = CONCAT31(uf._1_3_,9);
+      uf.scheme = 9;
     }
     else {
-      uf._0_4_ = CONCAT31(uf._1_3_,10);
+      uf.scheme = 10;
     }
     piVar5 = openNewsStream(pu);
-    *(uint *)__return_storage_ptr__ = uf._0_4_;
-    __return_storage_ptr__->stream = piVar5;
-    __return_storage_ptr__->ext = uf.ext;
-    __return_storage_ptr__->compression = uf.compression;
-    __return_storage_ptr__->content_encoding = uf.content_encoding;
-    __return_storage_ptr__->guess_type = uf.guess_type;
-    __return_storage_ptr__->url = uf.url;
-    __return_storage_ptr__->modtime = uf.modtime;
-    return __return_storage_ptr__;
+    in_stack_00000004->scheme = uf.scheme;
+    in_stack_00000004->is_cgi = uf.is_cgi;
+    in_stack_00000004->encoding = uf.encoding;
+    in_stack_00000004->field_0x3 = uf._3_1_;
+    in_stack_00000004->stream = piVar5;
+    in_stack_00000004->ext = uf.ext;
+    in_stack_00000004->compression = uf.compression;
+    in_stack_00000004->content_encoding = uf.content_encoding;
+    in_stack_00000004->guess_type = uf.guess_type;
+    in_stack_00000004->url = uf.url;
+    in_stack_00000004->modtime = uf.modtime;
+    return in_stack_00000004;
   case 0xb:
     if (pu->file == (char *)0x0) {
-      *(uint *)__return_storage_ptr__ = uf._0_4_;
-      __return_storage_ptr__->stream = uf.stream;
-      __return_storage_ptr__->ext = uf.ext;
-      __return_storage_ptr__->compression = uf.compression;
-      __return_storage_ptr__->content_encoding = uf.content_encoding;
-      __return_storage_ptr__->guess_type = uf.guess_type;
-      __return_storage_ptr__->url = uf.url;
-      __return_storage_ptr__->modtime = uf.modtime;
-      return __return_storage_ptr__;
+      in_stack_00000004->scheme = uf.scheme;
+      in_stack_00000004->is_cgi = uf.is_cgi;
+      in_stack_00000004->encoding = uf.encoding;
+      in_stack_00000004->field_0x3 = uf._3_1_;
+      in_stack_00000004->stream = uf.stream;
+      in_stack_00000004->ext = uf.ext;
+      in_stack_00000004->compression = uf.compression;
+      in_stack_00000004->content_encoding = uf.content_encoding;
+      in_stack_00000004->guess_type = uf.guess_type;
+      in_stack_00000004->url = uf.url;
+      in_stack_00000004->modtime = uf.modtime;
+      return in_stack_00000004;
     }
     p_Var1 = Strnew_charp(pu->file);
     p = p_Var1->ptr;
     pcVar2 = strchr(p,0x2c);
     if (pcVar2 == (char *)0x0) {
-      *(uint *)__return_storage_ptr__ = uf._0_4_;
-      __return_storage_ptr__->stream = uf.stream;
-      __return_storage_ptr__->ext = uf.ext;
-      __return_storage_ptr__->compression = uf.compression;
-      __return_storage_ptr__->content_encoding = uf.content_encoding;
-      __return_storage_ptr__->guess_type = uf.guess_type;
-      __return_storage_ptr__->url = uf.url;
-      __return_storage_ptr__->modtime = uf.modtime;
-      return __return_storage_ptr__;
+      in_stack_00000004->scheme = uf.scheme;
+      in_stack_00000004->is_cgi = uf.is_cgi;
+      in_stack_00000004->encoding = uf.encoding;
+      in_stack_00000004->field_0x3 = uf._3_1_;
+      in_stack_00000004->stream = uf.stream;
+      in_stack_00000004->ext = uf.ext;
+      in_stack_00000004->compression = uf.compression;
+      in_stack_00000004->content_encoding = uf.content_encoding;
+      in_stack_00000004->guess_type = uf.guess_type;
+      in_stack_00000004->url = uf.url;
+      in_stack_00000004->modtime = uf.modtime;
+      return in_stack_00000004;
     }
     *pcVar2 = '\0';
     q = pcVar2 + 1;
@@ -48412,33 +50088,38 @@ retry:
     }
     else {
       *q = '\0';
-      uf._0_3_ = CONCAT12(1,uf._0_2_);
-      uf._0_4_ = uf._0_4_ & 0xff000000 | (uint)uf._0_3_;
+      uf.encoding = 1;
     }
     piVar5 = newStrStream(tmp);
     if (*p == '\0') {
       p = "text/plain";
     }
-    *(uint *)__return_storage_ptr__ = uf._0_4_;
-    __return_storage_ptr__->stream = piVar5;
-    __return_storage_ptr__->ext = uf.ext;
-    __return_storage_ptr__->compression = uf.compression;
-    __return_storage_ptr__->content_encoding = uf.content_encoding;
-    __return_storage_ptr__->guess_type = p;
-    __return_storage_ptr__->url = uf.url;
-    __return_storage_ptr__->modtime = uf.modtime;
-    return __return_storage_ptr__;
+    in_stack_00000004->scheme = uf.scheme;
+    in_stack_00000004->is_cgi = uf.is_cgi;
+    in_stack_00000004->encoding = uf.encoding;
+    in_stack_00000004->field_0x3 = uf._3_1_;
+    in_stack_00000004->stream = piVar5;
+    in_stack_00000004->ext = uf.ext;
+    in_stack_00000004->compression = uf.compression;
+    in_stack_00000004->content_encoding = uf.content_encoding;
+    in_stack_00000004->guess_type = p;
+    in_stack_00000004->url = uf.url;
+    in_stack_00000004->modtime = uf.modtime;
+    return in_stack_00000004;
   }
   piVar5 = newInputStream(sock);
-  *(uint *)__return_storage_ptr__ = uf._0_4_;
-  __return_storage_ptr__->stream = piVar5;
-  __return_storage_ptr__->ext = uf.ext;
-  __return_storage_ptr__->compression = uf.compression;
-  __return_storage_ptr__->content_encoding = uf.content_encoding;
-  __return_storage_ptr__->guess_type = uf.guess_type;
-  __return_storage_ptr__->url = uf.url;
-  __return_storage_ptr__->modtime = uf.modtime;
-  return __return_storage_ptr__;
+  in_stack_00000004->scheme = uf.scheme;
+  in_stack_00000004->is_cgi = uf.is_cgi;
+  in_stack_00000004->encoding = uf.encoding;
+  in_stack_00000004->field_0x3 = uf._3_1_;
+  in_stack_00000004->stream = piVar5;
+  in_stack_00000004->ext = uf.ext;
+  in_stack_00000004->compression = uf.compression;
+  in_stack_00000004->content_encoding = uf.content_encoding;
+  in_stack_00000004->guess_type = uf.guess_type;
+  in_stack_00000004->url = uf.url;
+  in_stack_00000004->modtime = uf.modtime;
+  return in_stack_00000004;
 switchD_080a0f2d_caseD_4:
   if ((request == (FormList *)0x0) || (request->body == (char *)0x0)) {
     pFVar3 = localcgi_post(pu->real_file,pu->query,(FormList *)0x0,option->referer);
@@ -48449,18 +50130,22 @@ switchD_080a0f2d_caseD_4:
     uf.stream = newFileStream(pFVar3,fclose);
   }
   if (uf.stream != (InputStream)0x0) {
-    uf._1_3_ = (uint3)(uf._0_4_ >> 8) & 0xffff00 | 1;
+    uf.scheme = '\0';
+    uf.is_cgi = '\x01';
     pu->scheme = 5;
-    uf._0_4_ = CONCAT31(uf._1_3_,5);
-    *(uint *)__return_storage_ptr__ = uf._0_4_;
-    __return_storage_ptr__->stream = uf.stream;
-    __return_storage_ptr__->ext = uf.ext;
-    __return_storage_ptr__->compression = uf.compression;
-    __return_storage_ptr__->content_encoding = uf.content_encoding;
-    __return_storage_ptr__->guess_type = uf.guess_type;
-    __return_storage_ptr__->url = uf.url;
-    __return_storage_ptr__->modtime = uf.modtime;
-    return __return_storage_ptr__;
+    uf.scheme = 5;
+    in_stack_00000004->scheme = uf.scheme;
+    in_stack_00000004->is_cgi = uf.is_cgi;
+    in_stack_00000004->encoding = uf.encoding;
+    in_stack_00000004->field_0x3 = uf._3_1_;
+    in_stack_00000004->stream = uf.stream;
+    in_stack_00000004->ext = uf.ext;
+    in_stack_00000004->compression = uf.compression;
+    in_stack_00000004->content_encoding = uf.content_encoding;
+    in_stack_00000004->guess_type = uf.guess_type;
+    in_stack_00000004->url = uf.url;
+    in_stack_00000004->modtime = uf.modtime;
+    return in_stack_00000004;
   }
   examineFile(pu->real_file,&uf);
   if (uf.stream == (InputStream)0x0) {
@@ -48494,15 +50179,18 @@ switchD_080a0f2d_caseD_4:
           pu->real_file = q;
           add_index_file(pu,&uf);
           if (uf.stream == (InputStream)0x0) {
-            *(uint *)__return_storage_ptr__ = uf._0_4_;
-            __return_storage_ptr__->stream = (InputStream)0x0;
-            __return_storage_ptr__->ext = uf.ext;
-            __return_storage_ptr__->compression = uf.compression;
-            __return_storage_ptr__->content_encoding = uf.content_encoding;
-            __return_storage_ptr__->guess_type = uf.guess_type;
-            __return_storage_ptr__->url = uf.url;
-            __return_storage_ptr__->modtime = uf.modtime;
-            return __return_storage_ptr__;
+            in_stack_00000004->scheme = uf.scheme;
+            in_stack_00000004->is_cgi = uf.is_cgi;
+            in_stack_00000004->encoding = uf.encoding;
+            in_stack_00000004->field_0x3 = uf._3_1_;
+            in_stack_00000004->stream = (InputStream)0x0;
+            in_stack_00000004->ext = uf.ext;
+            in_stack_00000004->compression = uf.compression;
+            in_stack_00000004->content_encoding = uf.content_encoding;
+            in_stack_00000004->guess_type = uf.guess_type;
+            in_stack_00000004->url = uf.url;
+            in_stack_00000004->modtime = uf.modtime;
+            return in_stack_00000004;
           }
         }
       }
@@ -48510,29 +50198,35 @@ switchD_080a0f2d_caseD_4:
     else {
       add_index_file(pu,&uf);
       if (uf.stream == (InputStream)0x0) {
-        *(uint *)__return_storage_ptr__ = uf._0_4_;
-        __return_storage_ptr__->stream = (InputStream)0x0;
-        __return_storage_ptr__->ext = uf.ext;
-        __return_storage_ptr__->compression = uf.compression;
-        __return_storage_ptr__->content_encoding = uf.content_encoding;
-        __return_storage_ptr__->guess_type = uf.guess_type;
-        __return_storage_ptr__->url = uf.url;
-        __return_storage_ptr__->modtime = uf.modtime;
-        return __return_storage_ptr__;
+        in_stack_00000004->scheme = uf.scheme;
+        in_stack_00000004->is_cgi = uf.is_cgi;
+        in_stack_00000004->encoding = uf.encoding;
+        in_stack_00000004->field_0x3 = uf._3_1_;
+        in_stack_00000004->stream = (InputStream)0x0;
+        in_stack_00000004->ext = uf.ext;
+        in_stack_00000004->compression = uf.compression;
+        in_stack_00000004->content_encoding = uf.content_encoding;
+        in_stack_00000004->guess_type = uf.guess_type;
+        in_stack_00000004->url = uf.url;
+        in_stack_00000004->modtime = uf.modtime;
+        return in_stack_00000004;
       }
     }
   }
   if (((uf.stream != (InputStream)0x0) || (retryAsHttp == 0)) ||
      ((*url == '/' || ((scheme != 0xfe && (scheme != 0xff)))))) {
-    *(uint *)__return_storage_ptr__ = uf._0_4_;
-    __return_storage_ptr__->stream = uf.stream;
-    __return_storage_ptr__->ext = uf.ext;
-    __return_storage_ptr__->compression = uf.compression;
-    __return_storage_ptr__->content_encoding = uf.content_encoding;
-    __return_storage_ptr__->guess_type = uf.guess_type;
-    __return_storage_ptr__->url = uf.url;
-    __return_storage_ptr__->modtime = uf.modtime;
-    return __return_storage_ptr__;
+    in_stack_00000004->scheme = uf.scheme;
+    in_stack_00000004->is_cgi = uf.is_cgi;
+    in_stack_00000004->encoding = uf.encoding;
+    in_stack_00000004->field_0x3 = uf._3_1_;
+    in_stack_00000004->stream = uf.stream;
+    in_stack_00000004->ext = uf.ext;
+    in_stack_00000004->compression = uf.compression;
+    in_stack_00000004->content_encoding = uf.content_encoding;
+    in_stack_00000004->guess_type = uf.guess_type;
+    in_stack_00000004->url = uf.url;
+    in_stack_00000004->modtime = uf.modtime;
+    return in_stack_00000004;
   }
   p_Var1 = Strnew_m_charp("http://",url,0);
   u = p_Var1->ptr;
@@ -48540,6 +50234,8 @@ switchD_080a0f2d_caseD_4:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void add_index_file(ParsedURL *pu,URLFile *uf)
 
@@ -48569,6 +50265,8 @@ void add_index_file(ParsedURL *pu,URLFile *uf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * guessContentTypeFromTable(table2 *table,char *filename)
 
@@ -48602,6 +50300,8 @@ char * guessContentTypeFromTable(table2 *table,char *filename)
 
 
 
+// WARNING: Unknown calling convention
+
 char * guessContentType(char *filename)
 
 {
@@ -48627,6 +50327,8 @@ char * guessContentType(char *filename)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 TextList * make_domain_list(char *domain_list)
 
@@ -48675,6 +50377,8 @@ TextList * make_domain_list(char *domain_list)
 
 
 
+// WARNING: Unknown calling convention
+
 int domain_match(char *pat,char *domain)
 
 {
@@ -48709,19 +50413,20 @@ int check_no_proxy(char *domain)
   int iVar2;
   size_t __n;
   int in_GS_OFFSET;
+  char *domain_local;
   addrinfo hints;
   int *af;
   addrinfo *res0;
   addrinfo *res;
   int error;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int ret;
   TextListItem *tl;
   char addr [64];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   ret = 0;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   if (((NO_proxy_domains == (TextList *)0x0) || (NO_proxy_domains->nitem == 0)) ||
      (domain == (char *)0x0)) {
     iVar2 = 0;
@@ -48786,7 +50491,7 @@ end:
           term_raw();
         }
         iVar2 = ret;
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
           iVar2 = ret;
         }
@@ -48802,6 +50507,8 @@ LAB_080a215d:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * filename_extension(char *path,int is_url)
 
@@ -48839,11 +50546,13 @@ char * filename_extension(char *path,int is_url)
 
 
 
+// WARNING: Unknown calling convention
+
 table2 * loadURIMethods(char *filename)
 
 {
   char *pcVar1;
-  FILE *__stream;
+  FILE *f_00;
   table2 *ptVar2;
   Str p_Var3;
   uint uVar4;
@@ -48856,21 +50565,21 @@ table2 * loadURIMethods(char *filename)
   FILE *f;
   
   pcVar1 = expandPath(filename);
-  __stream = fopen(pcVar1,"r");
-  if (__stream == (FILE *)0x0) {
+  f_00 = fopen(pcVar1,"r");
+  if (f_00 == (FILE *)0x0) {
     ptVar2 = (table2 *)0x0;
   }
   else {
     i = 0;
-    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)f_00), 0 < p_Var3->length) {
       if (*p_Var3->ptr != '#') {
         i = i + 1;
       }
     }
-    fseek(__stream,0,0);
+    fseek(f_00,0,0);
     ptVar2 = (table2 *)GC_malloc((i + 1) * 8);
     i = 0;
-    while (p_Var3 = Strfgets((FILE *)__stream), 0 < p_Var3->length) {
+    while (p_Var3 = Strfgets((FILE *)f_00), 0 < p_Var3->length) {
       if (*p_Var3->ptr != '#') {
         while( true ) {
           if (p_Var3->length < 1) {
@@ -48903,12 +50612,14 @@ table2 * loadURIMethods(char *filename)
     }
     ptVar2[i].item1 = (char *)0x0;
     ptVar2[i].item2 = (char *)0x0;
-    fclose(__stream);
+    fclose(f_00);
   }
   return ptVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void initURIMethods(void)
 
@@ -48942,6 +50653,8 @@ void initURIMethods(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str searchURIMethods(ParsedURL *pu)
 
@@ -48990,6 +50703,8 @@ Str searchURIMethods(ParsedURL *pu)
 
 
 
+// WARNING: Unknown calling convention
+
 void chkExternalURIBuffer(Buffer *buf)
 
 {
@@ -49014,6 +50729,8 @@ void chkExternalURIBuffer(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 ParsedURL * schemeToProxy(int scheme)
 
 {
@@ -49034,6 +50751,8 @@ ParsedURL * schemeToProxy(int scheme)
 
 
 
+// WARNING: Unknown calling convention
+
 void KeyAbort(int _dummy)
 
 {
@@ -49042,6 +50761,8 @@ void KeyAbort(int _dummy)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str ftp_command(FTP ftp,char *cmd,char *arg,int *status)
 
@@ -49090,12 +50811,14 @@ Str ftp_command(FTP ftp,char *cmd,char *arg,int *status)
 
 
 
+// WARNING: Unknown calling convention
+
 void ftp_close(FTP ftp)
 
 {
   if (ftp->host != (char *)0x0) {
     if (ftp->rf != (InputStream)0x0) {
-      ftp->rf->field_0x14 = ftp->rf->field_0x14 & 0xef;
+      (ftp->rf->base).type = (ftp->rf->base).type & 0xef;
       ISclose(ftp->rf);
       ftp->rf = (InputStream)0x0;
     }
@@ -49125,6 +50848,7 @@ int ftp_login(FTP ftp)
   InputStream piVar6;
   FILE *pFVar7;
   int in_GS_OFFSET;
+  FTP ftp_local;
   Str tmp;
   hostent *sockent;
   int socknamelen;
@@ -49144,7 +50868,7 @@ int ftp_login(FTP ftp)
         p_Var3 = Strnew_charp(ftp->pass);
         phVar4 = gethostbyaddr(&sockname.sin_addr,4,(uint)sockname.sin_family);
         if (phVar4 == (hostent *)0x0) {
-          pcVar5 = inet_ntoa((in_addr)sockname.sin_addr);
+          pcVar5 = inet_ntoa((in_addr)sockname.sin_addr.s_addr);
           Strcat_m_charp(p_Var3,&DAT_080cf360,pcVar5,&DAT_080cf35e,0);
         }
         else {
@@ -49159,7 +50883,7 @@ int ftp_login(FTP ftp)
     pFVar7 = fdopen(iVar2,"wb");
     ftp->wf = (FILE *)pFVar7;
     if ((ftp->rf != (InputStream)0x0) && (ftp->wf != (FILE *)0x0)) {
-      ftp->rf->field_0x14 = ftp->rf->field_0x14 | 0x10;
+      (ftp->rf->base).type = (ftp->rf->base).type | 0x10;
       ftp_command(ftp,(char *)0x0,(char *)0x0,&status);
       if (status == 0xdc) {
         if (fmInitialized != '\0') {
@@ -49196,8 +50920,6 @@ LAB_080a2cf0:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int ftp_pasv(FTP ftp)
 
 {
@@ -49205,6 +50927,7 @@ int ftp_pasv(FTP ftp)
   int iVar2;
   FILE *pFVar3;
   int in_GS_OFFSET;
+  FTP ftp_local;
   int port;
   int sockaddrlen;
   int family;
@@ -49299,6 +51022,8 @@ LAB_080a30d1:
 
 
 
+// WARNING: Unknown calling convention
+
 time_t ftp_modtime(FTP ftp,char *path)
 
 {
@@ -49343,6 +51068,8 @@ time_t ftp_modtime(FTP ftp,char *path)
 
 
 
+// WARNING: Unknown calling convention
+
 int ftp_quit(FTP ftp)
 
 {
@@ -49352,6 +51079,8 @@ int ftp_quit(FTP ftp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void closeFTPdata(FILE *f)
 
@@ -49370,6 +51099,8 @@ void closeFTPdata(FILE *f)
 
 
 
+// WARNING: Unknown calling convention
+
 void closeFTP(void)
 
 {
@@ -49378,6 +51109,8 @@ void closeFTP(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 InputStream openFTPStream(ParsedURL *pu,URLFile *uf)
 
@@ -49474,7 +51207,7 @@ InputStream openFTPStream(ParsedURL *pu,URLFile *uf)
           else {
             term_raw();
             pcVar3 = inputLineHistSearch("Password: ",(char *)0x0,0x40,(Hist *)0x0,
-                                         (anon_subr_int_int_Str_Lineprop_ptr *)0x0);
+                                         (_func_int_int_Str_Lineprop_ptr *)0x0);
             pwd = Strnew_charp(pcVar3);
             pwd = wc_Str_conv_strict(pwd,InnerCharset,SystemCharset);
             term_cbreak();
@@ -49529,6 +51262,8 @@ ftp_read:
 
 
 
+// WARNING: Unknown calling convention
+
 Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
 
 {
@@ -49549,7 +51284,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
   char *link;
   char *name;
   wc_ces doc_charset;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int nfile_max;
   int nfile;
   int i;
@@ -49562,7 +51297,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
   Str tmp;
   Str FTPDIRtmp;
   
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   doc_charset = DocumentCharset;
   *charset = 0x100;
   if (current_ftp.data == (FILE *)0x0) {
@@ -49766,7 +51501,7 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
         if (fmInitialized != '\0') {
           term_raw();
         }
-        if (prevtrap != (anon_subr_void_int *)0x0) {
+        if (prevtrap != (_func_void_int *)0x0) {
           mySignal(2,prevtrap);
         }
       }
@@ -49783,6 +51518,8 @@ Str loadFTPDir(ParsedURL *pu,wc_ces *charset)
 
 
 
+// WARNING: Unknown calling convention
+
 void disconnectFTP(void)
 
 {
@@ -49792,7 +51529,7 @@ void disconnectFTP(void)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int ex_ftpdir_name_size_date(char *line,char **name,char **link,char **date,char **sizep)
 
@@ -49954,6 +51691,7 @@ Str size_int2str(clen_t size)
 
 {
   Str p_Var1;
+  clen_t size_local;
   double dtmp;
   char *unit_str;
   char *size_format;
@@ -49995,6 +51733,7 @@ uchar c2e(char x)
 
 {
   uchar uVar1;
+  char x_local;
   
   if ((x < 'A') || ('Z' < x)) {
     if ((x < 'a') || ('z' < x)) {
@@ -50028,6 +51767,8 @@ uchar c2e(char x)
 int ha2d(char x,char y)
 
 {
+  char y_local;
+  char x_local;
   int r;
   
   r = 0;
@@ -50062,6 +51803,8 @@ int ha2d(char x,char y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str decodeB(char **ww)
 
@@ -50134,6 +51877,8 @@ LAB_080a4a63:
 
 
 
+// WARNING: Unknown calling convention
+
 Str decodeU(char **ww)
 
 {
@@ -50141,8 +51886,6 @@ Str decodeU(char **ww)
   char cVar2;
   char *pcVar3;
   int iVar4;
-  byte bVar5;
-  byte bVar6;
   Str x;
   Str a;
   int i;
@@ -50162,17 +51905,14 @@ Str decodeU(char **ww)
     i = 2;
     for (; (*w != '\0' && (n != 0)); n = n + -1) {
       cVar1 = *w;
-      bVar5 = (byte)(cVar1 + -0x20 >> 0x37);
       cVar2 = w[1];
-      bVar6 = (byte)(cVar2 + -0x20 >> 0x37);
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
       iVar4 = x->length;
       x->ptr[iVar4] =
-           (byte)((int)(uint)(byte)(((char)(cVar2 + -0x20) + (bVar6 >> 2) & 0x3f) - (bVar6 >> 2)) >>
-                 (6 - (byte)i & 0x1f)) |
-           ((char)(cVar1 + -0x20) + (bVar5 >> 2) & 0x3f) - (bVar5 >> 2) << ((byte)i & 0x1f);
+           (byte)((int)((cVar2 + -0x20) % 0x40 & 0xffU) >> (6 - (byte)i & 0x1f)) |
+           (char)((cVar1 + -0x20) % 0x40) << ((byte)i & 0x1f);
       x->length = iVar4 + 1;
       x->ptr[x->length] = '\0';
       if (i == 6) {
@@ -50189,6 +51929,8 @@ Str decodeU(char **ww)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str decodeQ(char **ww)
 
@@ -50242,12 +51984,14 @@ Str decodeQ(char **ww)
 
 
 
+// WARNING: Unknown calling convention
+
 Str decodeQP(char **ww)
 
 {
   char *pcVar1;
-  int iVar2;
-  char *pcVar3;
+  char *pcVar2;
+  int iVar3;
   size_t n;
   Str x;
   int iVar4;
@@ -50257,26 +52001,26 @@ Str decodeQP(char **ww)
   w = *ww;
   n = strlen(w);
   x = Strnew_size(n);
-  for (; pcVar3 = w, *w != '\0'; w = w + 1) {
+  for (; pcVar1 = w, *w != '\0'; w = w + 1) {
     if (*w == '=') {
-      pcVar3 = w + 1;
-      if ((((*pcVar3 == '\n') || (*pcVar3 == '\r')) || (*pcVar3 == ' ')) || (*pcVar3 == '\t')) {
-        while ((w = pcVar3, *w != '\n' && (*w != '\0'))) {
-          pcVar3 = w + 1;
+      pcVar1 = w + 1;
+      if ((((*pcVar1 == '\n') || (*pcVar1 == '\r')) || (*pcVar1 == ' ')) || (*pcVar1 == '\t')) {
+        while ((w = pcVar1, *w != '\n' && (*w != '\0'))) {
+          pcVar1 = w + 1;
         }
-        pcVar3 = w;
+        pcVar1 = w;
         if (*w == '\0') break;
       }
       else {
-        if ((*pcVar3 == '\0') || (w[2] == '\0')) break;
+        if ((*pcVar1 == '\0') || (w[2] == '\0')) break;
         if (x->area_size <= x->length + 1) {
           Strgrow(x);
         }
-        pcVar1 = x->ptr;
-        iVar2 = x->length;
-        iVar4 = ha2d(*pcVar3,w[2]);
-        pcVar1[iVar2] = (char)iVar4;
-        x->length = iVar2 + 1;
+        pcVar2 = x->ptr;
+        iVar3 = x->length;
+        iVar4 = ha2d(*pcVar1,w[2]);
+        pcVar2[iVar3] = (char)iVar4;
+        x->length = iVar3 + 1;
         x->ptr[x->length] = '\0';
         w = w + 2;
       }
@@ -50285,18 +52029,20 @@ Str decodeQP(char **ww)
       if (x->area_size <= x->length + 1) {
         Strgrow(x);
       }
-      iVar2 = x->length;
-      x->ptr[iVar2] = *w;
-      x->length = iVar2 + 1;
+      iVar3 = x->length;
+      x->ptr[iVar3] = *w;
+      x->length = iVar3 + 1;
       x->ptr[x->length] = '\0';
     }
   }
-  w = pcVar3;
+  w = pcVar1;
   *ww = w;
   return x;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str decodeWord(char **ow,wc_ces *charset)
 
@@ -50369,6 +52115,8 @@ convert_fail:
 
 
 
+// WARNING: Unknown calling convention
+
 Str decodeMIME(Str orgstr,wc_ces *charset)
 
 {
@@ -50435,6 +52183,8 @@ nextEncodeWord:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str encodeB(char *a)
 
@@ -50520,56 +52270,66 @@ Str encodeB(char *a)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
-longchar * set_longchar(longchar *__return_storage_ptr__,char *str)
+longchar * set_longchar(char *str)
 
 {
-  wc_uchar *local_34;
+  longchar *in_stack_00000004;
+  uint local_34;
   uint local_30;
   longchar r;
   uchar *p;
   
+  p = (uchar *)str;
   if (*str < '\0') {
-    wtf_parse1(&local_34);
+    wtf_parse1(&p);
     r.wch.code = local_30;
-    if ((local_34 == (wc_uchar *)0x800) || (local_34 == (wc_uchar *)0x8800)) {
-      r._0_4_ = CONCAT31(r._1_3_,4);
-      *(undefined4 *)__return_storage_ptr__ = r._0_4_;
-      (__return_storage_ptr__->wch).ccs = (wc_ccs)local_34;
-      (__return_storage_ptr__->wch).code = local_30;
-      *(uint *)&__return_storage_ptr__->ch = r._12_4_;
+    if ((local_34 == 0x800) || (local_34 == 0x8800)) {
+      r.type = 4;
+      in_stack_00000004->type = r.type;
+      *(undefined3 *)&in_stack_00000004->field_0x1 = r._1_3_;
+      (in_stack_00000004->wch).ccs = local_34;
+      (in_stack_00000004->wch).code = local_30;
+      in_stack_00000004->ch = r.ch;
+      *(undefined3 *)&in_stack_00000004->field_0xd = r._13_3_;
     }
     else {
-      if ((((uint)local_34 & 0xffff) == 0x1000) ||
-         ((((uint)local_34 & 0xffff) == 0x2000 || (((uint)local_34 & 0xffff) == 0x2001)))) {
-        if (((uint)local_34 & 0xffff) == 0x2001) {
+      if (((local_34 & 0xffff) == 0x1000) ||
+         (((local_34 & 0xffff) == 0x2000 || ((local_34 & 0xffff) == 0x2001)))) {
+        if ((local_34 & 0xffff) == 0x2001) {
           r.wch.code = local_30 & 0x1fffff;
         }
         r.wch.ccs = 0x2000;
       }
       else {
-        r.wch.ccs = (uint)local_34 & 0xffff;
+        r.wch.ccs = local_34 & 0xffff;
       }
-      r._0_4_ = CONCAT31(r._1_3_,2);
-      *(undefined4 *)__return_storage_ptr__ = r._0_4_;
-      (__return_storage_ptr__->wch).ccs = r.wch.ccs;
-      (__return_storage_ptr__->wch).code = r.wch.code;
-      *(uint *)&__return_storage_ptr__->ch = r._12_4_;
+      r.type = 2;
+      in_stack_00000004->type = r.type;
+      *(undefined3 *)&in_stack_00000004->field_0x1 = r._1_3_;
+      (in_stack_00000004->wch).ccs = r.wch.ccs;
+      (in_stack_00000004->wch).code = r.wch.code;
+      in_stack_00000004->ch = r.ch;
+      *(undefined3 *)&in_stack_00000004->field_0xd = r._13_3_;
     }
   }
   else {
-    r._12_4_ = r._12_4_ & 0xffffff00 | (uint)(byte)*str;
-    r._0_4_ = CONCAT31(r._1_3_,1);
-    *(undefined4 *)__return_storage_ptr__ = r._0_4_;
-    (__return_storage_ptr__->wch).ccs = r.wch.ccs;
-    (__return_storage_ptr__->wch).code = r.wch.code;
-    *(uint *)&__return_storage_ptr__->ch = r._12_4_;
+    r.ch = *str;
+    r.type = 1;
+    in_stack_00000004->type = r.type;
+    *(undefined3 *)&in_stack_00000004->field_0x1 = r._1_3_;
+    (in_stack_00000004->wch).ccs = r.wch.ccs;
+    (in_stack_00000004->wch).code = r.wch.code;
+    in_stack_00000004->ch = r.ch;
+    *(undefined3 *)&in_stack_00000004->field_0xd = r._13_3_;
   }
-  return __return_storage_ptr__;
+  return in_stack_00000004;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * regexCompile(char *ex,int igncase)
 
@@ -50582,12 +52342,15 @@ char * regexCompile(char *ex,int igncase)
 
 
 
+// WARNING: Unknown calling convention
+
 Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
 
 {
-  undefined4 uVar1;
-  longchar *plVar2;
-  Regex *pRVar3;
+  uchar uVar1;
+  undefined3 uVar2;
+  longchar *plVar3;
+  Regex *pRVar4;
   undefined4 local_3c;
   wc_ccs local_38;
   wc_uint32 local_34;
@@ -50606,7 +52369,7 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
   st_ptr = regex->storage;
   p = *ex;
   do {
-    plVar2 = st_ptr;
+    plVar3 = st_ptr;
     if (*p == '\0') {
       re->mode = re->mode | 7;
       if (msg != (char **)0x0) {
@@ -50618,16 +52381,16 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
     re->mode = '\0';
     switch(*p) {
     case '$':
-      re->p = 0;
+      (re->p).pattern = (longchar *)0x0;
       re->mode = re->mode & 0xf8 | 6;
       re = re + 1;
       break;
     case '(':
       re->mode = re->mode & 0xf8 | 4;
       p = p + 1;
-      pRVar3 = newRegex0(&p,igncase,(Regex *)0x0,msg,level + 1);
-      re->p = pRVar3;
-      if (re->p == 0) {
+      pRVar4 = newRegex0(&p,igncase,(Regex *)0x0,msg,level + 1);
+      (re->p).pattern = (longchar *)pRVar4;
+      if ((re->p).pattern == (longchar *)0x0) {
         return (Regex *)0x0;
       }
       re = re + 1;
@@ -50643,7 +52406,8 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       *ex = p;
       return regex;
     case '*':
-      if ((regex == (Regex *)re) || (((re[-1].mode & 7) != 1 && (re[-1].p == 0)))) {
+      if ((regex == (Regex *)re) ||
+         (((re[-1].mode & 7) != 1 && (re[-1].p.pattern == (longchar *)0x0)))) {
         if (msg != (char **)0x0) {
           *msg = "Invalid regular expression";
         }
@@ -50652,25 +52416,29 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       re[-1].mode = re[-1].mode | 0x10;
       break;
     case '+':
-      if ((regex == (Regex *)re) || (((re[-1].mode & 7) != 1 && (re[-1].p == 0)))) {
+      if ((regex == (Regex *)re) ||
+         (((re[-1].mode & 7) != 1 && (re[-1].p.pattern == (longchar *)0x0)))) {
         if (msg != (char **)0x0) {
           *msg = "Invalid regular expression";
         }
         return (Regex *)0x0;
       }
-      uVar1 = *(undefined4 *)&re[-1].mode;
+      uVar1 = re[-0xffffffff00000001].mode;
+      uVar2 = *(undefined3 *)&re[-0xffffffff00000001].field_0x5;
       re->p = re[-1].p;
-      *(undefined4 *)&re->mode = uVar1;
+      re->mode = uVar1;
+      *(undefined3 *)&re->field_0x5 = uVar2;
       re->mode = re->mode | 0x10;
       re = re + 1;
       break;
     case '.':
-      re->p = 0;
+      (re->p).pattern = (longchar *)0x0;
       re->mode = re->mode & 0xf8 | 1;
       re = re + 1;
       break;
     case '?':
-      if ((regex == (Regex *)re) || (((re[-1].mode & 7) != 1 && (re[-1].p == 0)))) {
+      if ((regex == (Regex *)re) ||
+         (((re[-1].mode & 7) != 1 && (re[-1].p.pattern == (longchar *)0x0)))) {
         if (msg != (char **)0x0) {
           *msg = "Invalid regular expression";
         }
@@ -50679,37 +52447,34 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       re[-1].mode = re[-1].mode | 8;
       break;
     case '[':
-      r = st_ptr;
       if (p[1] == '^') {
-        m = 3;
+        m._0_1_ = 3;
         p = p + 2;
       }
       else {
-        m = 2;
+        m._0_1_ = 2;
         p = p + 1;
       }
       if ((*p == '-') || (*p == ']')) {
-        set_longchar((longchar *)&local_3c,p);
-        *(undefined4 *)plVar2 = local_3c;
-        (plVar2->wch).ccs = local_38;
-        (plVar2->wch).code = local_34;
-        *(undefined4 *)&plVar2->ch = local_30;
+        set_longchar(p);
+        *(undefined4 *)st_ptr = local_3c;
+        (st_ptr->wch).ccs = local_38;
+        (st_ptr->wch).code = local_34;
+        *(undefined4 *)&st_ptr->ch = local_30;
         st_ptr = st_ptr + 1;
       }
-      while (plVar2 = st_ptr, *p != ']') {
+      while (*p != ']') {
         if (*p == '\\') {
           p = p + 1;
-          set_longchar((longchar *)&local_3c,p);
-          *(undefined4 *)plVar2 = local_3c;
-          (plVar2->wch).ccs = local_38;
-          (plVar2->wch).code = local_34;
-          *(undefined4 *)&plVar2->ch = local_30;
-          st_ptr = st_ptr + 1;
+          set_longchar(p);
+          *(undefined4 *)st_ptr = local_3c;
+          (st_ptr->wch).ccs = local_38;
+          (st_ptr->wch).code = local_34;
+          *(undefined4 *)&st_ptr->ch = local_30;
           p = p + WTF_LEN_MAP[(byte)*p];
         }
         else if ((*p == '-') && (p[1] != ']')) {
           st_ptr->type = '\x03';
-          st_ptr = st_ptr + 1;
           p = p + 1;
         }
         else {
@@ -50719,14 +52484,14 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
             }
             return (Regex *)0x0;
           }
-          set_longchar((longchar *)&local_3c,p);
-          *(undefined4 *)plVar2 = local_3c;
-          (plVar2->wch).ccs = local_38;
-          (plVar2->wch).code = local_34;
-          *(undefined4 *)&plVar2->ch = local_30;
-          st_ptr = st_ptr + 1;
+          set_longchar(p);
+          *(undefined4 *)st_ptr = local_3c;
+          (st_ptr->wch).ccs = local_38;
+          (st_ptr->wch).code = local_34;
+          *(undefined4 *)&st_ptr->ch = local_30;
           p = p + WTF_LEN_MAP[(byte)*p];
         }
+        st_ptr = st_ptr + 1;
         if (&regex->position <= st_ptr) {
           if (msg != (char **)0x0) {
             *msg = "Regular expression too long";
@@ -50736,8 +52501,8 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       }
       st_ptr->type = '\0';
       st_ptr = st_ptr + 1;
-      re->p = r;
-      re->mode = (byte)m & 7 | re->mode & 0xf8;
+      (re->p).pattern = plVar3;
+      re->mode = (byte)m | re->mode & 0xf8;
       if (igncase != 0) {
         re->mode = re->mode | 0x40;
       }
@@ -50746,13 +52511,13 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
     case '\\':
       p = p + 1;
     default:
-      set_longchar((longchar *)&local_3c,p);
-      *(undefined4 *)plVar2 = local_3c;
-      (plVar2->wch).ccs = local_38;
-      (plVar2->wch).code = local_34;
-      *(undefined4 *)&plVar2->ch = local_30;
+      set_longchar(p);
+      *(undefined4 *)st_ptr = local_3c;
+      (st_ptr->wch).ccs = local_38;
+      (st_ptr->wch).code = local_34;
+      *(undefined4 *)&st_ptr->ch = local_30;
       p = p + (WTF_LEN_MAP[(byte)*p] - 1);
-      re->p = st_ptr;
+      (re->p).pattern = st_ptr;
       st_ptr = st_ptr + 1;
       re->mode = re->mode & 0xf8;
       if (igncase != 0) {
@@ -50761,16 +52526,15 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
       re = re + 1;
       break;
     case '^':
-      re->p = 0;
+      (re->p).pattern = (longchar *)0x0;
       re->mode = re->mode & 0xf8 | 5;
       re = re + 1;
       break;
     case '|':
       re->mode = re->mode | 7;
-      re = re + 1;
       p = p + 1;
-      pRVar3 = newRegex0(&p,igncase,(Regex *)0x0,msg,level);
-      regex->alt_regex = pRVar3;
+      pRVar4 = newRegex0(&p,igncase,(Regex *)0x0,msg,level);
+      regex->alt_regex = pRVar4;
       if (regex->alt_regex == (regex *)0x0) {
         return (Regex *)0x0;
       }
@@ -50789,6 +52553,8 @@ Regex * newRegex0(char **ex,int igncase,Regex *regex,char **msg,int level)
 
 
 
+// WARNING: Unknown calling convention
+
 Regex * newRegex(char *ex,int igncase,Regex *regex,char **msg)
 
 {
@@ -50800,6 +52566,8 @@ Regex * newRegex(char *ex,int igncase,Regex *regex,char **msg)
 
 
 
+// WARNING: Unknown calling convention
+
 int regexMatch(char *str,int len,int firstp)
 
 {
@@ -50810,6 +52578,8 @@ int regexMatch(char *str,int len,int firstp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int RegexMatch(Regex *re,char *str,int len,int firstp)
 
@@ -50856,6 +52626,8 @@ int RegexMatch(Regex *re,char *str,int len,int firstp)
 
 
 
+// WARNING: Unknown calling convention
+
 void MatchedPosition(Regex *re,char **first,char **last)
 
 {
@@ -50866,6 +52638,8 @@ void MatchedPosition(Regex *re,char **first,char **last)
 
 
 
+// WARNING: Unknown calling convention
+
 void matchedPosition(char **first,char **last)
 
 {
@@ -50875,6 +52649,8 @@ void matchedPosition(char **first,char **last)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int regmatch_sub_anytime
               (MatchingContext2 *c,Regex *regex,regexchar *pat2,char *str,char *end_p,int iter_limit
@@ -50939,7 +52715,7 @@ LAB_080a5fda:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int regmatch_iter(MatchingContext1 *c,regexchar *re,char *str,char *end_p,int firstp)
 
@@ -50948,10 +52724,6 @@ int regmatch_iter(MatchingContext1 *c,regexchar *re,char *str,char *end_p,int fi
   int iVar2;
   MatchingContext2 *pMVar3;
   MatchingContext1 *pMVar4;
-  undefined4 local_3c;
-  wc_ccs local_38;
-  wc_uint32 local_34;
-  undefined4 local_30;
   longchar k;
   
   switch(c->label) {
@@ -51031,11 +52803,7 @@ label6:
               c->sub_regex = c->sub_regex->alt_regex;
             } while( true );
           }
-          set_longchar((longchar *)&local_3c,c->str);
-          k._0_4_ = local_3c;
-          k.wch.ccs = local_38;
-          k.wch.code = local_34;
-          k._12_4_ = local_30;
+          set_longchar(c->str);
           c->str = c->str + WTF_LEN_MAP[(byte)*c->str];
           iVar2 = regmatch1(c->re,&k);
           if (iVar2 == 0) {
@@ -51052,8 +52820,8 @@ LAB_080a6775:
   case 1:
 label1:
     iVar2 = regmatch_sub_anytime
-                      (c->ctx2,(Regex *)c->re->p,c->re + 1,c->str + c->n_any,c->end_p,c->iter_limit,
-                       c->firstp);
+                      (c->ctx2,(Regex *)(c->re->p).pattern,c->re + 1,c->str + c->n_any,c->end_p,
+                       c->iter_limit,c->firstp);
     if (iVar2 == 0) {
       iVar2 = 0;
     }
@@ -51084,11 +52852,7 @@ label3:
           c->ctx2->label = 0;
           goto label1;
         }
-        set_longchar((longchar *)&local_3c,c->str + c->n_any);
-        k._0_4_ = local_3c;
-        k.wch.ccs = local_38;
-        k.wch.code = local_34;
-        k._12_4_ = local_30;
+        set_longchar(c->str + c->n_any);
         iVar2 = regmatch1(c->re,&k);
         if (iVar2 == 0) {
           return 0;
@@ -51119,6 +52883,8 @@ label3:
 
 
 
+// WARNING: Unknown calling convention
+
 int regmatch(regexchar *re,char *str,char *end_p,int firstp,char **lastpos)
 
 {
@@ -51136,6 +52902,8 @@ int regmatch(regexchar *re,char *str,char *end_p,int firstp,char **lastpos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int regmatch1(regexchar *re,longchar *c)
 
@@ -51155,17 +52923,17 @@ int regmatch1(regexchar *re,longchar *c)
     else {
       if (bVar1 < 2) {
         if ((re->mode & 7) == 0) {
-          iVar2 = match_longchar((longchar *)re->p,c,re->mode & 0x40);
+          iVar2 = match_longchar((re->p).pattern,c,re->mode & 0x40);
           return iVar2;
         }
       }
       else {
         if (bVar1 == 2) {
-          iVar2 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
+          iVar2 = matchWhich((re->p).pattern,c,re->mode & 0x40);
           return iVar2;
         }
         if (bVar1 == 3) {
-          iVar2 = matchWhich((longchar *)re->p,c,re->mode & 0x40);
+          iVar2 = matchWhich((re->p).pattern,c,re->mode & 0x40);
           return (uint)(iVar2 == 0);
         }
       }
@@ -51176,6 +52944,8 @@ int regmatch1(regexchar *re,longchar *c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int matchWhich(longchar *pattern,longchar *c,int igncase)
 
@@ -51205,6 +52975,8 @@ int matchWhich(longchar *pattern,longchar *c,int igncase)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int match_longchar(longchar *a,longchar *b,int ignore)
 
@@ -51252,6 +53024,8 @@ int match_longchar(longchar *a,longchar *b,int ignore)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int match_range_longchar(longchar *a,longchar *b,longchar *c,int ignore)
 
@@ -51316,6 +53090,8 @@ LAB_080a6cb6:
 
 
 
+// WARNING: Unknown calling convention
+
 void KeyAbort(int _dummy)
 
 {
@@ -51324,6 +53100,8 @@ void KeyAbort(int _dummy)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str news_command(News *news,char *cmd,char *arg,int *status)
 
@@ -51361,12 +53139,14 @@ Str news_command(News *news,char *cmd,char *arg,int *status)
 
 
 
+// WARNING: Unknown calling convention
+
 void news_close(News *news)
 
 {
   if (news->host != (char *)0x0) {
     if (news->rf != (InputStream)0x0) {
-      news->rf->field_0x14 = news->rf->field_0x14 & 0xef;
+      (news->rf->base).type = (news->rf->base).type & 0xef;
       ISclose(news->rf);
       news->rf = (InputStream)0x0;
     }
@@ -51380,6 +53160,8 @@ void news_close(News *news)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int news_open(News *news)
 
@@ -51398,7 +53180,7 @@ int news_open(News *news)
     pFVar2 = fdopen(__fd,"wb");
     news->wf = (FILE *)pFVar2;
     if ((news->rf != (InputStream)0x0) && (news->wf != (FILE *)0x0)) {
-      news->rf->field_0x14 = news->rf->field_0x14 | 0x10;
+      (news->rf->base).type = (news->rf->base).type | 0x10;
       news_command(news,(char *)0x0,(char *)0x0,&status);
       if (((status == 200) || (status == 0xc9)) &&
          (((news->mode == (char *)0x0 ||
@@ -51413,6 +53195,8 @@ int news_open(News *news)
 
 
 
+// WARNING: Unknown calling convention
+
 void news_quit(News *news)
 
 {
@@ -51422,6 +53206,8 @@ void news_quit(News *news)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * name_from_address(char *str,int n)
 
@@ -51497,6 +53283,8 @@ LAB_080a7185:
 
 
 
+// WARNING: Unknown calling convention
+
 char * html_quote_s(char *str)
 
 {
@@ -51550,6 +53338,8 @@ LAB_080a7277:
 
 
 
+// WARNING: Unknown calling convention
+
 void add_news_message(Str str,int index,char *date,char *name,char *subject,char *mid,char *scheme,
                      char *group)
 
@@ -51584,6 +53374,8 @@ void add_news_message(Str str,int index,char *date,char *name,char *subject,char
 }
 
 
+
+// WARNING: Unknown calling convention
 
 InputStream openNewsStream(ParsedURL *pu)
 
@@ -51702,14 +53494,16 @@ InputStream openNewsStream(ParsedURL *pu)
 
 
 
+// WARNING: Unknown calling convention
+
 Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
 
 {
   wc_ces wVar1;
   Str p_Var2;
   int iVar3;
-  wc_ces *pwVar4;
-  char *pcVar5;
+  char *pcVar4;
+  wc_ces *pwVar5;
   InputStream date;
   InputStream arg;
   int *status_00;
@@ -51720,7 +53514,7 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
   URLFile f;
   wc_ces mime_charset;
   wc_ces doc_charset;
-  anon_subr_void_int *prevtrap;
+  _func_void_int *prevtrap;
   int end;
   int start;
   int flag;
@@ -51744,7 +53538,7 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
   flag = 0;
   start = 0;
   end = 0;
-  prevtrap = (anon_subr_void_int *)0x0;
+  prevtrap = (_func_void_int *)0x0;
   doc_charset = DocumentCharset;
   *charset = 0x100;
   if (((current_news.host == (char *)0x0) || (pu->file == (char *)0x0)) || (*pu->file == '\0')) {
@@ -51849,57 +53643,71 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
                    (((*tmp->ptr != '\n' && (*tmp->ptr != '\r')) && (*tmp->ptr != '\0'))))) {
               arg = (InputStream)&i;
               iVar3 = sscanf(tmp->ptr,"%d");
-              if ((iVar3 == 1) && (s = strchr(tmp->ptr,9), s != (char *)0x0)) {
-                s = s + 1;
-                n = strchr(s,9);
-                if (n != (char *)0x0) {
-                  *n = '\0';
-                  n = n + 1;
-                  t = strchr(n,9);
-                  if (t != (char *)0x0) {
-                    *t = '\0';
-                    t = t + 1;
-                    p = strchr(t,9);
-                    if (p != (char *)0x0) {
-                      *p = '\0';
-                      pcVar5 = p + 1;
-                      if (p[1] == '<') {
-                        pcVar5 = p + 2;
+              if (iVar3 == 1) {
+                pcVar4 = strchr(tmp->ptr,9);
+                if (pcVar4 == (char *)0x0) {
+                  s = (char *)0x0;
+                }
+                else {
+                  s = pcVar4 + 1;
+                  pcVar4 = strchr(s,9);
+                  if (pcVar4 == (char *)0x0) {
+                    n = (char *)0x0;
+                  }
+                  else {
+                    *pcVar4 = '\0';
+                    n = pcVar4 + 1;
+                    pcVar4 = strchr(n,9);
+                    if (pcVar4 == (char *)0x0) {
+                      t = (char *)0x0;
+                    }
+                    else {
+                      *pcVar4 = '\0';
+                      t = pcVar4 + 1;
+                      pcVar4 = strchr(t,9);
+                      if (pcVar4 == (char *)0x0) {
+                        p = (char *)0x0;
                       }
-                      p = pcVar5;
-                      q = strchr(p,0x3e);
-                      if ((q != (char *)0x0) || (q = strchr(p,9), q != (char *)0x0)) {
-                        *q = '\0';
-                        p_Var2 = Strnew_charp(s);
-                        tmp = decodeMIME(p_Var2,&mime_charset);
-                        pwVar4 = charset;
-                        wVar1 = doc_charset;
-                        if (mime_charset != 0) {
-                          pwVar4 = &mime_charset;
-                          wVar1 = mime_charset;
+                      else {
+                        *pcVar4 = '\0';
+                        p = pcVar4 + 1;
+                        if (*p == '<') {
+                          p = pcVar4 + 2;
                         }
-                        p_Var2 = convertLine(&f,tmp,3,pwVar4,wVar1);
-                        s = p_Var2->ptr;
-                        p_Var2 = Strnew_charp(n);
-                        tmp = decodeMIME(p_Var2,&mime_charset);
-                        pwVar4 = charset;
-                        wVar1 = doc_charset;
-                        if (mime_charset != 0) {
-                          pwVar4 = &mime_charset;
-                          wVar1 = mime_charset;
+                        q = strchr(p,0x3e);
+                        if ((q != (char *)0x0) || (q = strchr(p,9), q != (char *)0x0)) {
+                          *q = '\0';
+                          p_Var2 = Strnew_charp(s);
+                          tmp = decodeMIME(p_Var2,&mime_charset);
+                          pwVar5 = charset;
+                          wVar1 = doc_charset;
+                          if (mime_charset != 0) {
+                            pwVar5 = &mime_charset;
+                            wVar1 = mime_charset;
+                          }
+                          p_Var2 = convertLine(&f,tmp,3,pwVar5,wVar1);
+                          s = p_Var2->ptr;
+                          p_Var2 = Strnew_charp(n);
+                          tmp = decodeMIME(p_Var2,&mime_charset);
+                          pwVar5 = charset;
+                          wVar1 = doc_charset;
+                          if (mime_charset != 0) {
+                            pwVar5 = &mime_charset;
+                            wVar1 = mime_charset;
+                          }
+                          p_Var2 = convertLine(&f,tmp,3,pwVar5,wVar1);
+                          status_00 = (int *)p_Var2->ptr;
+                          pcVar4 = qgroup;
+                          if (pu->scheme != 8) {
+                            pcVar4 = (char *)0x0;
+                          }
+                          arg = (InputStream)t;
+                          pcVar6 = s;
+                          piVar7 = (int *)p;
+                          pcVar8 = scheme;
+                          n = (char *)status_00;
+                          add_news_message(page,i,t,(char *)status_00,s,p,scheme,pcVar4);
                         }
-                        p_Var2 = convertLine(&f,tmp,3,pwVar4,wVar1);
-                        status_00 = (int *)p_Var2->ptr;
-                        pcVar5 = qgroup;
-                        if (pu->scheme != 8) {
-                          pcVar5 = (char *)0x0;
-                        }
-                        arg = (InputStream)t;
-                        pcVar6 = s;
-                        piVar7 = (int *)p;
-                        pcVar8 = scheme;
-                        n = (char *)status_00;
-                        add_news_message(page,i,t,(char *)status_00,s,p,scheme,pcVar5);
                       }
                     }
                   }
@@ -51943,15 +53751,15 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
                   if (((s != (char *)0x0) && (n = checkHeader(buf,"From:"), n != (char *)0x0)) &&
                      (date = (InputStream)checkHeader(buf,"Date:"), t = (char *)date,
                      date != (InputStream)0x0)) {
-                    pcVar5 = qgroup;
+                    pcVar4 = qgroup;
                     if (pu->scheme != 8) {
-                      pcVar5 = (char *)0x0;
+                      pcVar4 = (char *)0x0;
                     }
                     status_00 = (int *)n;
                     pcVar6 = s;
                     piVar7 = (int *)p;
                     pcVar8 = scheme;
-                    add_news_message(page,i,(char *)date,n,s,p,scheme,pcVar5);
+                    add_news_message(page,i,(char *)date,n,s,p,scheme,pcVar4);
                     arg = date;
                   }
                 }
@@ -52028,7 +53836,7 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
       if (fmInitialized != '\0') {
         term_raw();
       }
-      if (prevtrap != (anon_subr_void_int *)0x0) {
+      if (prevtrap != (_func_void_int *)0x0) {
         mySignal(2,prevtrap);
       }
     }
@@ -52037,6 +53845,8 @@ Str loadNewsgroup(ParsedURL *pu,wc_ces *charset)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void closeNews(void)
 
@@ -52047,6 +53857,8 @@ void closeNews(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void disconnectNews(void)
 
 {
@@ -52055,6 +53867,8 @@ void disconnectNews(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void setKeymap(char *p,int lineno,int verbose)
 
@@ -52207,7 +54021,7 @@ void setKeymap(char *p,int lineno,int verbose)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 void interpret_keymap(FILE *kf,stat *current,int force)
 
@@ -52293,6 +54107,8 @@ void interpret_keymap(FILE *kf,stat *current,int force)
 
 
 
+// WARNING: Unknown calling convention
+
 void initKeymap(int force)
 
 {
@@ -52331,6 +54147,8 @@ void initKeymap(int force)
 
 
 
+// WARNING: Unknown calling convention
+
 int getFuncList(char *id)
 
 {
@@ -52341,6 +54159,8 @@ int getFuncList(char *id)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getKeyData(int key)
 
@@ -52357,6 +54177,8 @@ char * getKeyData(int key)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int getKey2(char **str)
 
@@ -52552,6 +54374,8 @@ int getKey2(char **str)
 
 
 
+// WARNING: Unknown calling convention
+
 int getKey(char *s)
 
 {
@@ -52583,6 +54407,8 @@ int getKey(char *s)
 
 
 
+// WARNING: Unknown calling convention
+
 char * getWord(char **str)
 
 {
@@ -52603,6 +54429,8 @@ char * getWord(char **str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getQWord(char **str)
 
@@ -52723,6 +54551,8 @@ char * getQWord(char **str)
 
 
 
+// WARNING: Unknown calling convention
+
 void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
 
 {
@@ -52757,7 +54587,7 @@ void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
           map[b] = pMVar3;
           x = iVar1;
           while (x = x + 1, x < *width) {
-            map[b][x].func = (anon_subr_void_varargs_for_func *)0x0;
+            map[b][x].func = (_func_void_varargs *)0x0;
             map[b][x].data = (char *)0x0;
           }
         }
@@ -52769,6 +54599,8 @@ void setMouseAction0(char **str,int *width,MouseActionMap **map,char *p)
 
 
 
+// WARNING: Unknown calling convention
+
 void setMouseAction1(MouseActionMap **map,int width,char *p)
 
 {
@@ -52777,7 +54609,7 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
   int iVar3;
   char *id;
   int iVar4;
-  anon_subr_void_varargs_for_func *paVar5;
+  _func_void_varargs *p_Var5;
   int f;
   int x2;
   int x;
@@ -52787,7 +54619,7 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
     pMVar1 = (MouseActionMap *)GC_malloc(width << 3);
     *map = pMVar1;
     for (x = 0; x < width; x = x + 1) {
-      (*map)[x].func = (anon_subr_void_varargs_for_func *)0x0;
+      (*map)[x].func = (_func_void_varargs *)0x0;
       (*map)[x].data = (char *)0x0;
     }
   }
@@ -52805,12 +54637,12 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
       }
       for (; x <= iVar3; x = x + 1) {
         if (iVar4 < 0) {
-          paVar5 = (anon_subr_void_varargs_for_func *)0x0;
+          p_Var5 = (_func_void_varargs *)0x0;
         }
         else {
-          paVar5 = w3mFuncList[iVar4].func;
+          p_Var5 = w3mFuncList[iVar4].func;
         }
-        (*map)[x].func = (anon_subr_void_varargs_for_func *)paVar5;
+        (*map)[x].func = p_Var5;
         (*map)[x].data = s;
       }
     }
@@ -52820,12 +54652,14 @@ void setMouseAction1(MouseActionMap **map,int width,char *p)
 
 
 
+// WARNING: Unknown calling convention
+
 void setMouseAction2(MouseActionMap *map,char *p)
 
 {
   char *id;
   int iVar1;
-  anon_subr_void_varargs_for_func *paVar2;
+  _func_void_varargs *p_Var2;
   int f;
   char *s;
   
@@ -52836,17 +54670,19 @@ void setMouseAction2(MouseActionMap *map,char *p)
     s = (char *)0x0;
   }
   if (iVar1 < 0) {
-    paVar2 = (anon_subr_void_varargs_for_func *)0x0;
+    p_Var2 = (_func_void_varargs *)0x0;
   }
   else {
-    paVar2 = w3mFuncList[iVar1].func;
+    p_Var2 = w3mFuncList[iVar1].func;
   }
-  map->func = (anon_subr_void_varargs_for_func *)paVar2;
+  map->func = p_Var2;
   map->data = s;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void interpret_mouse_action(FILE *mf)
 
@@ -52951,6 +54787,8 @@ void interpret_mouse_action(FILE *mf)
 
 
 
+// WARNING: Unknown calling convention
+
 void initMouseAction(void)
 
 {
@@ -52970,13 +54808,13 @@ void initMouseAction(void)
   mouse_action.lastline_str = p_Var2->ptr;
   pcVar3 = confFile("mouse");
   mf = (FILE *)fopen(pcVar3,"rt");
-  if ((FILE *)mf != (FILE *)0x0) {
+  if (mf != (FILE *)0x0) {
     interpret_mouse_action(mf);
     fclose((FILE *)mf);
   }
   pcVar3 = rcFile("mouse");
   mf = (FILE *)fopen(pcVar3,"rt");
-  if ((FILE *)mf != (FILE *)0x0) {
+  if (mf != (FILE *)0x0) {
     interpret_mouse_action(mf);
     fclose((FILE *)mf);
   }
@@ -52984,6 +54822,8 @@ void initMouseAction(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int total_dot_number(char *p,char *ep,int max_count)
 
@@ -53006,6 +54846,8 @@ int total_dot_number(char *p,char *ep,int max_count)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * domain_match(char *host,char *domain)
 
@@ -53070,6 +54912,8 @@ char * domain_match(char *host,char *domain)
 
 
 
+// WARNING: Unknown calling convention
+
 portlist * make_portlist(Str port)
 
 {
@@ -53114,6 +54958,8 @@ portlist * make_portlist(Str port)
 
 
 
+// WARNING: Unknown calling convention
+
 Str portlist2str(portlist *first)
 
 {
@@ -53132,6 +54978,8 @@ Str portlist2str(portlist *first)
 
 
 
+// WARNING: Unknown calling convention
+
 int port_match(portlist *first,int port)
 
 {
@@ -53149,6 +54997,8 @@ int port_match(portlist *first,int port)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void check_expired_cookies(void)
 
@@ -53184,6 +55034,8 @@ void check_expired_cookies(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str make_cookie(cookie *cookie)
 
 {
@@ -53204,6 +55056,8 @@ Str make_cookie(cookie *cookie)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int match_cookie(ParsedURL *pu,cookie *cookie,char *domainname)
 
@@ -53243,6 +55097,8 @@ int match_cookie(ParsedURL *pu,cookie *cookie,char *domainname)
 
 
 
+// WARNING: Unknown calling convention
+
 cookie * get_cookie_info(Str domain,Str path,Str name)
 
 {
@@ -53263,6 +55119,8 @@ cookie * get_cookie_info(Str domain,Str path,Str name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str find_cookie(ParsedURL *pu)
 
@@ -53343,6 +55201,8 @@ Str find_cookie(ParsedURL *pu)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int add_cookie(ParsedURL *pu,Str name,Str value,time_t expires,Str domain,Str path,int flag,
               Str comment,int version,Str port,Str commentURL)
@@ -53494,6 +55354,8 @@ int add_cookie(ParsedURL *pu,Str name,Str value,time_t expires,Str domain,Str pa
 
 
 
+// WARNING: Unknown calling convention
+
 cookie * nth_cookie(int n)
 
 {
@@ -53514,6 +55376,8 @@ cookie * nth_cookie(int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void save_cookies(void)
 
@@ -53582,6 +55446,8 @@ void save_cookies(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str readcol(char **p)
 
 {
@@ -53610,6 +55476,8 @@ Str readcol(char **p)
 
 
 
+// WARNING: Unknown calling convention
+
 void load_cookies(void)
 
 {
@@ -53627,7 +55495,7 @@ void load_cookies(void)
   
   __filename = rcFile("cookie");
   fp = (FILE *)fopen(__filename,"r");
-  if ((FILE *)fp != (FILE *)0x0) {
+  if (fp != (FILE *)0x0) {
     if (First_cookie == (cookie *)0x0) {
       p = (cookie *)0x0;
     }
@@ -53723,6 +55591,8 @@ void load_cookies(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void initCookie(void)
 
 {
@@ -53732,6 +55602,8 @@ void initCookie(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * cookie_list_panel(void)
 
@@ -53871,6 +55743,8 @@ Buffer * cookie_list_panel(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_cookie_flag(parsed_tagarg *arg)
 
 {
@@ -53908,6 +55782,8 @@ void set_cookie_flag(parsed_tagarg *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 int check_cookie_accept_domain(char *domain)
 
 {
@@ -53941,6 +55817,8 @@ int check_cookie_accept_domain(char *domain)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * historyBuffer(Hist *hist)
 
@@ -53980,6 +55858,8 @@ Buffer * historyBuffer(Hist *hist)
 
 
 
+// WARNING: Unknown calling convention
+
 void loadHistory(Hist *hist)
 
 {
@@ -54011,6 +55891,8 @@ void loadHistory(Hist *hist)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void saveHistory(Hist *hist,size_t size)
 
@@ -54054,6 +55936,8 @@ void saveHistory(Hist *hist,size_t size)
 
 
 
+// WARNING: Unknown calling convention
+
 Hist * newHist(void)
 
 {
@@ -54070,6 +55954,8 @@ Hist * newHist(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Hist * copyHist(Hist *hist)
 
@@ -54091,6 +55977,8 @@ Hist * copyHist(Hist *hist)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 HistItem * unshiftHist(Hist *hist,char *ptr)
 
@@ -54121,6 +56009,8 @@ HistItem * unshiftHist(Hist *hist,char *ptr)
 
 
 
+// WARNING: Unknown calling convention
+
 HistItem * pushHist(Hist *hist,char *ptr)
 
 {
@@ -54149,6 +56039,8 @@ HistItem * pushHist(Hist *hist,char *ptr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 HistItem * pushHashHist(Hist *hist,char *ptr)
 
@@ -54184,6 +56076,8 @@ HistItem * pushHashHist(Hist *hist,char *ptr)
 
 
 
+// WARNING: Unknown calling convention
+
 HistItem * getHashHist(Hist *hist,char *ptr)
 
 {
@@ -54209,6 +56103,8 @@ HistItem * getHashHist(Hist *hist,char *ptr)
 
 
 
+// WARNING: Unknown calling convention
+
 char * lastHist(Hist *hist)
 
 {
@@ -54228,6 +56124,8 @@ char * lastHist(Hist *hist)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * nextHist(Hist *hist)
 
@@ -54249,6 +56147,8 @@ char * nextHist(Hist *hist)
 
 
 
+// WARNING: Unknown calling convention
+
 char * prevHist(Hist *hist)
 
 {
@@ -54268,6 +56168,8 @@ char * prevHist(Hist *hist)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_headers(Buffer *buf,int len)
 
@@ -54299,6 +56201,8 @@ void print_headers(Buffer *buf,int len)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void internal_get(char *url,int flag,FormList *request)
 
@@ -54371,6 +56275,8 @@ void internal_get(char *url,int flag,FormList *request)
 
 
 
+// WARNING: Unknown calling convention
+
 void get(TextList *argv)
 
 {
@@ -54397,6 +56303,8 @@ void get(TextList *argv)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void post(TextList *argv)
 
@@ -54495,6 +56403,8 @@ void post(TextList *argv)
 
 
 
+// WARNING: Unknown calling convention
+
 void set(TextList *argv)
 
 {
@@ -54506,7 +56416,7 @@ void set(TextList *argv)
       iVar1 = strcasecmp(variable_table[i].name,argv->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)argv);
-        if (variable_table[i].set_func == (anon_subr_void_TextList_ptr_for_set_func *)0x0) {
+        if (variable_table[i].set_func == (_func_void_TextList_ptr *)0x0) {
           return;
         }
         (*variable_table[i].set_func)(argv);
@@ -54519,6 +56429,8 @@ void set(TextList *argv)
 
 
 
+// WARNING: Unknown calling convention
+
 void show(TextList *argv)
 
 {
@@ -54530,7 +56442,7 @@ void show(TextList *argv)
       iVar1 = strcasecmp(variable_table[i].name,argv->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)argv);
-        if (variable_table[i].show_func == (anon_subr_void_TextList_ptr_for_show_func *)0x0) {
+        if (variable_table[i].show_func == (_func_void_TextList_ptr *)0x0) {
           return;
         }
         (*variable_table[i].show_func)(argv);
@@ -54543,6 +56455,8 @@ void show(TextList *argv)
 
 
 
+// WARNING: Unknown calling convention
+
 void quit(TextList *argv)
 
 {
@@ -54552,6 +56466,8 @@ void quit(TextList *argv)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void help(TextList *argv)
 
@@ -54567,6 +56483,8 @@ void help(TextList *argv)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_column(TextList *argv)
 
 {
@@ -54578,6 +56496,8 @@ void set_column(TextList *argv)
 
 
 
+// WARNING: Unknown calling convention
+
 void show_column(TextList *argv)
 
 {
@@ -54586,6 +56506,8 @@ void show_column(TextList *argv)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void call_command_function(char *str)
 
@@ -54601,7 +56523,7 @@ void call_command_function(char *str)
       iVar1 = strcasecmp(command_table[i].name,tl->first->ptr);
       if (iVar1 == 0) {
         popValue((GeneralList *)tl);
-        if (command_table[i].func == (anon_subr_void_TextList_ptr_for_func *)0x0) {
+        if (command_table[i].func == (_func_void_TextList_ptr *)0x0) {
           return;
         }
         (*command_table[i].func)(tl);
@@ -54613,6 +56535,8 @@ void call_command_function(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int backend(void)
 
@@ -54642,6 +56566,8 @@ int backend(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * readline(char *prompt)
 
 {
@@ -54652,8 +56578,8 @@ char * readline(char *prompt)
   
   fputs(prompt,stdout);
   fflush(stdout);
-  p_Var1 = Strfgets((FILE *)stdin);
-  iVar2 = feof(stdin);
+  p_Var1 = Strfgets(stdin);
+  iVar2 = feof((FILE *)stdin);
   if ((iVar2 == 0) || (*p_Var1->ptr != '\0')) {
     pcVar3 = p_Var1->ptr;
   }
@@ -54664,6 +56590,8 @@ char * readline(char *prompt)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 TextList * split(char *p)
 
@@ -54825,8 +56753,13 @@ putAnchor(AnchorList *al,char *url,char *target,Anchor **anchor_return,char *ref
 {
   Anchor *pAVar1;
   char cVar2;
-  Anchor *pAVar3;
-  int iVar4;
+  undefined3 uVar3;
+  undefined uVar4;
+  short sVar5;
+  undefined2 uVar6;
+  Anchor *pAVar7;
+  int iVar8;
+  uchar key_local;
   BufferPoint bp;
   Anchor *a;
   int j;
@@ -54841,25 +56774,25 @@ putAnchor(AnchorList *al,char *url,char *target,Anchor **anchor_return,char *ref
     al->acache = -1;
   }
   if (al->anchormax == 0) {
-    pAVar3 = (Anchor *)GC_malloc(0x708);
-    al->anchors = pAVar3;
+    pAVar7 = (Anchor *)GC_malloc(0x708);
+    al->anchors = pAVar7;
     al->anchormax = 0x1e;
   }
   if (al->nanchor == al->anchormax) {
     al->anchormax = al->anchormax * 2;
-    pAVar3 = (Anchor *)GC_realloc(al->anchors,al->anchormax * 0x3c);
-    al->anchors = pAVar3;
+    pAVar7 = (Anchor *)GC_realloc(al->anchors,al->anchormax * 0x3c);
+    al->anchors = pAVar7;
   }
   j = al->nanchor;
   i = j;
   if (j != 0) {
     if (al->anchors[j + -1].start.line == line) {
-      iVar4 = al->anchors[j + -1].start.pos - pos;
+      iVar8 = al->anchors[j + -1].start.pos - pos;
     }
     else {
-      iVar4 = al->anchors[j + -1].start.line - line;
+      iVar8 = al->anchors[j + -1].start.line - line;
     }
-    if (-1 < iVar4) {
+    if (-1 < iVar8) {
       for (i = 0; i < j; i = i + 1) {
         if (al->anchors[i].start.line == line) {
           cVar2 = (char)((uint)(al->anchors[i].start.pos - pos) >> 0x18);
@@ -54872,43 +56805,51 @@ putAnchor(AnchorList *al,char *url,char *target,Anchor **anchor_return,char *ref
     }
   }
 LAB_080ad013:
-  pAVar3 = al->anchors + i;
-  pAVar3->url = url;
-  pAVar3->target = target;
-  pAVar3->referer = referer;
-  pAVar3->title = title;
-  pAVar3->accesskey = key;
-  pAVar3->slave = '\0';
-  (pAVar3->start).line = line;
-  (pAVar3->start).pos = pos;
-  (pAVar3->start).invalid = bp.invalid;
-  (pAVar3->end).line = line;
-  (pAVar3->end).pos = pos;
-  (pAVar3->end).invalid = bp.invalid;
+  pAVar7 = al->anchors + i;
+  pAVar7->url = url;
+  pAVar7->target = target;
+  pAVar7->referer = referer;
+  pAVar7->title = title;
+  pAVar7->accesskey = key;
+  pAVar7->slave = '\0';
+  (pAVar7->start).line = line;
+  (pAVar7->start).pos = pos;
+  (pAVar7->start).invalid = bp.invalid;
+  (pAVar7->end).line = line;
+  (pAVar7->end).pos = pos;
+  (pAVar7->end).invalid = bp.invalid;
   al->nanchor = al->nanchor + 1;
   if (anchor_return != (Anchor **)0x0) {
-    *anchor_return = pAVar3;
+    *anchor_return = pAVar7;
   }
   return al;
 LAB_080acff5:
   for (; i < j; j = j + -1) {
-    pAVar3 = al->anchors + j;
+    pAVar7 = al->anchors + j;
     pAVar1 = al->anchors + j + -1;
-    pAVar3->url = pAVar1->url;
-    pAVar3->target = pAVar1->target;
-    pAVar3->referer = pAVar1->referer;
-    pAVar3->title = pAVar1->title;
-    *(undefined4 *)&pAVar3->accesskey = *(undefined4 *)&pAVar1->accesskey;
-    (pAVar3->start).line = (pAVar1->start).line;
-    (pAVar3->start).pos = (pAVar1->start).pos;
-    (pAVar3->start).invalid = (pAVar1->start).invalid;
-    (pAVar3->end).line = (pAVar1->end).line;
-    (pAVar3->end).pos = (pAVar1->end).pos;
-    (pAVar3->end).invalid = (pAVar1->end).invalid;
-    pAVar3->hseq = pAVar1->hseq;
-    *(undefined4 *)&pAVar3->slave = *(undefined4 *)&pAVar1->slave;
-    *(undefined4 *)&pAVar3->rows = *(undefined4 *)&pAVar1->rows;
-    pAVar3->image = pAVar1->image;
+    pAVar7->url = pAVar1->url;
+    pAVar7->target = pAVar1->target;
+    pAVar7->referer = pAVar1->referer;
+    pAVar7->title = pAVar1->title;
+    uVar3 = *(undefined3 *)&pAVar1->field_0x11;
+    pAVar7->accesskey = pAVar1->accesskey;
+    *(undefined3 *)&pAVar7->field_0x11 = uVar3;
+    (pAVar7->start).line = (pAVar1->start).line;
+    (pAVar7->start).pos = (pAVar1->start).pos;
+    (pAVar7->start).invalid = (pAVar1->start).invalid;
+    (pAVar7->end).line = (pAVar1->end).line;
+    (pAVar7->end).pos = (pAVar1->end).pos;
+    (pAVar7->end).invalid = (pAVar1->end).invalid;
+    pAVar7->hseq = pAVar1->hseq;
+    uVar4 = pAVar1->field_0x31;
+    sVar5 = pAVar1->y;
+    pAVar7->slave = pAVar1->slave;
+    pAVar7->field_0x31 = uVar4;
+    pAVar7->y = sVar5;
+    uVar6 = *(undefined2 *)&pAVar1->field_0x36;
+    pAVar7->rows = pAVar1->rows;
+    *(undefined2 *)&pAVar7->field_0x36 = uVar6;
+    pAVar7->image = pAVar1->image;
   }
   goto LAB_080ad013;
 }
@@ -54920,6 +56861,7 @@ Anchor * registerHref(Buffer *buf,char *url,char *target,char *referer,char *tit
 
 {
   AnchorList *pAVar1;
+  uchar key_local;
   Anchor *a;
   
   pAVar1 = putAnchor(buf->href,url,target,&a,referer,title,key,line,pos);
@@ -54928,6 +56870,8 @@ Anchor * registerHref(Buffer *buf,char *url,char *target,char *referer,char *tit
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * registerName(Buffer *buf,char *url,int line,int pos)
 
@@ -54942,6 +56886,8 @@ Anchor * registerName(Buffer *buf,char *url,int line,int pos)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * registerImg(Buffer *buf,char *url,char *title,int line,int pos)
 
 {
@@ -54954,6 +56900,8 @@ Anchor * registerImg(Buffer *buf,char *url,char *title,int line,int pos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * registerForm(Buffer *buf,FormList *flist,parsed_tag *tag,int line,int pos)
 
@@ -54976,6 +56924,8 @@ Anchor * registerForm(Buffer *buf,FormList *flist,parsed_tag *tag,int line,int p
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int onAnchor(Anchor *a,int line,int pos)
 
@@ -55014,6 +56964,8 @@ int onAnchor(Anchor *a,int line,int pos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * retrieveAnchor(AnchorList *al,int line,int pos)
 
@@ -55056,6 +57008,8 @@ Anchor * retrieveAnchor(AnchorList *al,int line,int pos)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * retrieveCurrentAnchor(Buffer *buf)
 
 {
@@ -55071,6 +57025,8 @@ Anchor * retrieveCurrentAnchor(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * retrieveCurrentImg(Buffer *buf)
 
@@ -55088,6 +57044,8 @@ Anchor * retrieveCurrentImg(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * retrieveCurrentForm(Buffer *buf)
 
 {
@@ -55103,6 +57061,8 @@ Anchor * retrieveCurrentForm(Buffer *buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * searchAnchor(AnchorList *al,char *str)
 
@@ -55125,6 +57085,8 @@ Anchor * searchAnchor(AnchorList *al,char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * searchURLLabel(Buffer *buf,char *url)
 
 {
@@ -55135,6 +57097,8 @@ Anchor * searchURLLabel(Buffer *buf,char *url)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Anchor * _put_anchor_news(Buffer *buf,char *p1,char *p2,int line,int pos)
 
@@ -55161,6 +57125,8 @@ Anchor * _put_anchor_news(Buffer *buf,char *p1,char *p2,int line,int pos)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * _put_anchor_all(Buffer *buf,char *p1,char *p2,int line,int pos)
 
 {
@@ -55182,6 +57148,8 @@ Anchor * _put_anchor_all(Buffer *buf,char *p1,char *p2,int line,int pos)
 
 
 
+// WARNING: Unknown calling convention
+
 void reseq_anchor0(AnchorList *al,short *seqmap)
 
 {
@@ -55201,6 +57169,8 @@ void reseq_anchor0(AnchorList *al,short *seqmap)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void reseq_anchor(Buffer *buf)
 
@@ -55270,8 +57240,10 @@ void reseq_anchor(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 char * reAnchorPos(Buffer *buf,Line *l,char *p1,char *p2,
-                  anon_subr_Anchor_ptr_Buffer_ptr_char_ptr_char_ptr_int_int *anchorproc)
+                  _func_Anchor_ptr_Buffer_ptr_char_ptr_char_ptr_int_int *anchorproc)
 
 {
   int iVar1;
@@ -55323,6 +57295,8 @@ char * reAnchorPos(Buffer *buf,Line *l,char *p1,char *p2,
 
 
 
+// WARNING: Unknown calling convention
+
 void reAnchorWord(Buffer *buf,Line *l,int spos,int epos)
 
 {
@@ -55332,8 +57306,10 @@ void reAnchorWord(Buffer *buf,Line *l,int spos,int epos)
 
 
 
+// WARNING: Unknown calling convention
+
 char * reAnchorAny(Buffer *buf,char *re,
-                  anon_subr_Anchor_ptr_Buffer_ptr_char_ptr_char_ptr_int_int *anchorproc)
+                  _func_Anchor_ptr_Buffer_ptr_char_ptr_char_ptr_int_int *anchorproc)
 
 {
   char *pcVar1;
@@ -55380,6 +57356,8 @@ char * reAnchorAny(Buffer *buf,char *re,
 
 
 
+// WARNING: Unknown calling convention
+
 char * reAnchor(Buffer *buf,char *re)
 
 {
@@ -55391,6 +57369,8 @@ char * reAnchor(Buffer *buf,char *re)
 
 
 
+// WARNING: Unknown calling convention
+
 char * reAnchorNews(Buffer *buf,char *re)
 
 {
@@ -55401,6 +57381,8 @@ char * reAnchorNews(Buffer *buf,char *re)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * reAnchorNewsheader(Buffer *buf)
 
@@ -55462,6 +57444,8 @@ char * reAnchorNewsheader(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 HmarkerList * putHmarker(HmarkerList *ml,int line,int pos,int seq)
 
 {
@@ -55496,6 +57480,8 @@ HmarkerList * putHmarker(HmarkerList *ml,int line,int pos,int seq)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * closest_next_anchor(AnchorList *a,Anchor *an,int x,int y)
 
 {
@@ -55519,6 +57505,8 @@ Anchor * closest_next_anchor(AnchorList *a,Anchor *an,int x,int y)
 
 
 
+// WARNING: Unknown calling convention
+
 Anchor * closest_prev_anchor(AnchorList *a,Anchor *an,int x,int y)
 
 {
@@ -55541,6 +57529,8 @@ Anchor * closest_prev_anchor(AnchorList *a,Anchor *an,int x,int y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void shiftAnchorPosition(AnchorList *al,HmarkerList *hl,int line,int pos,int shift)
 
@@ -55584,7 +57574,7 @@ void shiftAnchorPosition(AnchorList *al,HmarkerList *hl,int line,int pos,int shi
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 void addMultirowsImg(Buffer *buf,AnchorList *al)
 
@@ -55596,7 +57586,8 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
   int pos_00;
   int pos_01;
   int iVar2;
-  AnchorList *pAVar3;
+  undefined4 uVar3;
+  AnchorList *pAVar4;
   Anchor a_form;
   Anchor a_href;
   Anchor a_img;
@@ -55620,13 +57611,16 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
       pos_00 = (pAVar1->start).pos;
       pos_01 = (pAVar1->end).pos;
       iVar2 = pAVar1->hseq;
+      uVar3._0_1_ = pAVar1->slave;
+      uVar3._1_1_ = pAVar1->field_0x31;
+      uVar3._2_2_ = pAVar1->y;
       img = pAVar1->image;
       if (((-1 < iVar2) && (img != (Image *)0x0)) && (1 < img->rows)) {
         for (l = buf->firstLine; (l != (Line *)0x0 && (l->linenumber != (int)img->y)); l = l->next)
         {
         }
         if (l != (Line *)0x0) {
-          a_img.y = (short)((uint)*(undefined4 *)&pAVar1->slave >> 0x10);
+          a_img.y = (short)((uint)uVar3 >> 0x10);
           if (a_img.y == line) {
             ls = l;
           }
@@ -55651,7 +57645,8 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
             a_href.target = a->target;
             a_href.referer = a->referer;
             a_href.title = a->title;
-            a_href._16_4_ = *(undefined4 *)&a->accesskey;
+            a_href.accesskey = a->accesskey;
+            a_href._17_3_ = *(undefined3 *)&a->field_0x11;
             a_href.hseq = a->hseq;
           }
           a = retrieveAnchor(buf->formitem,line,pos_00);
@@ -55687,9 +57682,9 @@ void addMultirowsImg(Buffer *buf,AnchorList *al)
                 }
               }
               if (a_form.url != (char *)0x0) {
-                pAVar3 = putAnchor(buf->formitem,a_form.url,a_form.target,&a,(char *)0x0,(char *)0x0
+                pAVar4 = putAnchor(buf->formitem,a_form.url,a_form.target,&a,(char *)0x0,(char *)0x0
                                    ,'\0',l->linenumber,pos);
-                buf->formitem = pAVar3;
+                buf->formitem = pAVar4;
                 a->hseq = a_form.hseq;
                 (a->end).pos = (pos + ecol) - col;
               }
@@ -55706,6 +57701,8 @@ LAB_080aeacb:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void addMultirowsForm(Buffer *buf,AnchorList *al)
 
@@ -55741,7 +57738,9 @@ void addMultirowsForm(Buffer *buf,AnchorList *al)
       pos_00 = (pAVar1->start).pos;
       pos_01 = (pAVar1->end).pos;
       iVar3 = pAVar1->hseq;
-      uVar4 = *(undefined4 *)&pAVar1->slave;
+      uVar4._0_1_ = pAVar1->slave;
+      uVar4._1_1_ = pAVar1->field_0x31;
+      uVar4._2_2_ = pAVar1->y;
       uVar5 = *(undefined4 *)&pAVar1->rows;
       al->anchors[i].rows = 1;
       if ((-1 < iVar3) && (a_form.rows = (short)uVar5, 1 < a_form.rows)) {
@@ -55797,6 +57796,8 @@ LAB_080aee53:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * getAnchorText(Buffer *buf,AnchorList *al,Anchor *a)
 
@@ -55858,6 +57859,8 @@ char * getAnchorText(Buffer *buf,AnchorList *al,Anchor *a)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Buffer * link_list_panel(Buffer *buf)
 
@@ -56043,6 +58046,8 @@ Buffer * link_list_panel(Buffer *buf)
 
 
 
+// WARNING: Unknown calling convention
+
 int noConv(char *oval,char **str)
 
 {
@@ -56051,6 +58056,8 @@ int noConv(char *oval,char **str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int toNumber(char *oval,int *num)
 
@@ -56067,6 +58074,8 @@ int toNumber(char *oval,int *num)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int toLength(char *oval,int *len)
 
@@ -56101,6 +58110,8 @@ int toLength(char *oval,int *len)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int toAlign(char *oval,int *align)
 
@@ -56147,6 +58158,8 @@ int toAlign(char *oval,int *align)
 
 
 
+// WARNING: Unknown calling convention
+
 int toVAlign(char *oval,int *valign)
 
 {
@@ -56186,6 +58199,7 @@ parsed_tag * parse_tag(char **s,int internal)
   int iVar6;
   char *pcVar7;
   int in_GS_OFFSET;
+  char **s_local;
   char *x;
   int hidden;
   int j;
@@ -56404,6 +58418,8 @@ parsed_tag * parse_tag(char **s,int internal)
 
 
 
+// WARNING: Unknown calling convention
+
 int parsedtag_set_value(parsed_tag *tag,int id,char *value)
 
 {
@@ -56435,6 +58451,8 @@ int parsedtag_set_value(parsed_tag *tag,int id,char *value)
 
 
 
+// WARNING: Unknown calling convention
+
 int parsedtag_get_value(parsed_tag *tag,int id,void *value)
 
 {
@@ -56452,6 +58470,8 @@ int parsedtag_get_value(parsed_tag *tag,int id,void *value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str parsedtag2str(parsed_tag *tag)
 
@@ -56507,6 +58527,8 @@ Str parsedtag2str(parsed_tag *tag)
 
 
 
+// WARNING: Unknown calling convention
+
 void do_update(BaseStream base)
 
 {
@@ -56527,6 +58549,8 @@ void do_update(BaseStream base)
 
 
 
+// WARNING: Unknown calling convention
+
 int buffer_read(StreamBuffer sb,char *obuf,int count)
 
 {
@@ -56544,6 +58568,8 @@ int buffer_read(StreamBuffer sb,char *obuf,int count)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_buffer(BaseStream base,char *buf,int bufsize)
 
@@ -56568,6 +58594,8 @@ void init_buffer(BaseStream base,char *buf,int bufsize)
 
 
 
+// WARNING: Unknown calling convention
+
 void init_base_stream(BaseStream base,int bufsize)
 
 {
@@ -56576,6 +58604,8 @@ void init_base_stream(BaseStream base,int bufsize)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_str_stream(BaseStream base,Str s)
 
@@ -56586,80 +58616,86 @@ void init_str_stream(BaseStream base,Str s)
 
 
 
+// WARNING: Unknown calling convention
+
 InputStream newInputStream(int des)
 
 {
-  BaseStream base;
+  InputStream base;
   void *pvVar1;
   InputStream stream;
   
   if (des < 0) {
-    base = (BaseStream)0x0;
+    base = (InputStream)0x0;
   }
   else {
-    base = (BaseStream)GC_malloc(0x20);
-    init_base_stream(base,0x2000);
-    base->type = '\0';
+    base = (InputStream)GC_malloc(0x20);
+    init_base_stream(&base->base,0x2000);
+    (base->base).type = '\0';
     pvVar1 = (void *)GC_malloc(4);
-    base->handle = pvVar1;
-    *(int *)base->handle = des;
-    base->read = basic_read;
-    base->close = basic_close;
+    (base->base).handle = pvVar1;
+    ((base->file).handle)->f = (FILE *)des;
+    (base->base).read = basic_read;
+    (base->base).close = basic_close;
   }
-  return (InputStream)base;
+  return base;
 }
 
 
 
-InputStream newFileStream(FILE *f,anon_subr_void_varargs *closep)
+// WARNING: Unknown calling convention
+
+InputStream newFileStream(FILE *f,_func_void_varargs *closep)
 
 {
-  BaseStream base;
+  InputStream base;
   void *pvVar1;
   InputStream stream;
   
   if (f == (FILE *)0x0) {
-    base = (BaseStream)0x0;
+    base = (InputStream)0x0;
   }
   else {
-    base = (BaseStream)GC_malloc(0x20);
-    init_base_stream(base,0x2000);
-    base->type = '\x01';
+    base = (InputStream)GC_malloc(0x20);
+    init_base_stream(&base->base,0x2000);
+    (base->base).type = '\x01';
     pvVar1 = (void *)GC_malloc(8);
-    base->handle = pvVar1;
-    *(FILE **)base->handle = f;
-    if (closep == (anon_subr_void_varargs *)0x0) {
-      *(code **)((int)base->handle + 4) = fclose;
+    (base->base).handle = pvVar1;
+    ((base->file).handle)->f = f;
+    if (closep == (_func_void_varargs *)0x0) {
+      ((base->file).handle)->close = fclose;
     }
     else {
-      *(anon_subr_void_varargs **)((int)base->handle + 4) = closep;
+      ((base->file).handle)->close = closep;
     }
-    base->read = file_read;
-    base->close = file_close;
+    (base->base).read = file_read;
+    (base->base).close = file_close;
   }
-  return (InputStream)base;
+  return base;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 InputStream newStrStream(Str s)
 
 {
-  BaseStream base;
+  InputStream base;
   InputStream stream;
   
   if (s == (Str)0x0) {
-    base = (BaseStream)0x0;
+    base = (InputStream)0x0;
   }
   else {
-    base = (BaseStream)GC_malloc(0x20);
-    init_str_stream(base,s);
-    base->type = '\x02';
-    base->handle = s;
-    base->read = str_read;
-    base->close = (anon_subr_void_varargs_for_close *)0x0;
+    base = (InputStream)GC_malloc(0x20);
+    init_str_stream(&base->base,s);
+    (base->base).type = '\x02';
+    (base->str).handle = s;
+    (base->base).read = str_read;
+    (base->base).close = (_func_void_varargs *)0x0;
   }
-  return (InputStream)base;
+  return base;
 }
 
 
@@ -56667,44 +58703,47 @@ InputStream newStrStream(Str s)
 InputStream newEncodedStream(InputStream is,char encoding)
 
 {
-  BaseStream base;
+  InputStream base;
   void *pvVar1;
+  char encoding_local;
   InputStream stream;
   
   if ((is != (InputStream)0x0) &&
      (((encoding == '\x02' || (encoding == '\x01')) || (encoding == '\x03')))) {
-    base = (BaseStream)GC_malloc(0x20);
-    init_base_stream(base,0x2000);
-    base->type = '\x04';
+    base = (InputStream)GC_malloc(0x20);
+    init_base_stream(&base->base,0x2000);
+    (base->base).type = '\x04';
     pvVar1 = (void *)GC_malloc(0x10);
-    base->handle = pvVar1;
-    *(InputStream *)base->handle = is;
-    *(undefined4 *)((int)base->handle + 8) = 0;
-    *(char *)((int)base->handle + 0xc) = encoding;
-    *(undefined4 *)((int)base->handle + 4) = 0;
-    base->read = ens_read;
-    base->close = ens_close;
-    is = (InputStream)base;
+    (base->base).handle = pvVar1;
+    ((base->ens).handle)->is = is;
+    ((base->str).handle)->area_size = 0;
+    ((base->ens).handle)->encoding = encoding;
+    ((base->file).handle)->close = (_func_void_varargs *)0x0;
+    (base->base).read = ens_read;
+    (base->base).close = ens_close;
+    is = base;
   }
   return is;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int ISclose(InputStream stream)
 
 {
   int iVar1;
-  anon_subr_void_int *action;
-  anon_subr_void_varargs *prevtrap;
+  _func_void_int *action;
+  _func_void_varargs *prevtrap;
   
-  if (((stream == (InputStream)0x0) || (*(int *)&stream->field_0x1c == 0)) ||
-     ((stream->field_0x14 & 0x10) != 0)) {
+  if (((stream == (InputStream)0x0) || ((stream->base).close == (_func_void_varargs *)0x0)) ||
+     (((stream->base).type & 0x10U) != 0)) {
     iVar1 = -1;
   }
   else {
-    action = mySignal(2,(anon_subr_void_int *)0x1);
-    (**(code **)&stream->field_0x1c)(*(undefined4 *)&stream->field_0x10);
+    action = mySignal(2,(_func_void_int *)0x1);
+    (*(stream->base).close)((stream->base).handle);
     mySignal(2,action);
     iVar1 = 0;
   }
@@ -56713,32 +58752,38 @@ int ISclose(InputStream stream)
 
 
 
+// WARNING: Unknown calling convention
+
 int ISgetc(InputStream stream)
 
 {
-  uint uVar1;
+  int iVar1;
+  uint uVar2;
   BaseStream base;
   
   if (stream == (InputStream)0x0) {
-    uVar1 = 0;
+    uVar2 = 0;
   }
   else {
-    if ((stream->field_0x15 == '\0') && (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc))
+    if (((stream->base).iseos == '\0') && ((stream->base).stream.cur == (stream->base).stream.next))
     {
-      do_update((BaseStream)stream);
+      do_update(&stream->base);
     }
-    if (stream->field_0x15 == '\0') {
-      uVar1 = (uint)*(byte *)(*(int *)stream + *(int *)&stream->field_0x8);
-      *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + 1;
+    if ((stream->base).iseos == '\0') {
+      iVar1 = (stream->base).stream.cur;
+      uVar2 = (uint)(stream->base).stream.buf[iVar1];
+      (stream->base).stream.cur = iVar1 + 1;
     }
     else {
-      uVar1 = 0;
+      uVar2 = 0;
     }
   }
-  return uVar1;
+  return uVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ISundogetc(InputStream stream)
 
@@ -56749,17 +58794,19 @@ int ISundogetc(InputStream stream)
   if (stream == (InputStream)0x0) {
     iVar1 = -1;
   }
-  else if (*(int *)&stream->field_0x8 < 1) {
+  else if ((stream->base).stream.cur < 1) {
     iVar1 = -1;
   }
   else {
-    *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + -1;
+    (stream->base).stream.cur = (stream->base).stream.cur + -1;
     iVar1 = 0;
   }
   return iVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str StrISgets(InputStream stream)
 
@@ -56777,28 +58824,28 @@ Str StrISgets(InputStream stream)
     s = (Str)0x0;
   }
   else {
-    while (stream->field_0x15 == '\0') {
-      if (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc) {
-        do_update((BaseStream)stream);
+    while ((stream->base).iseos == '\0') {
+      if ((stream->base).stream.cur == (stream->base).stream.next) {
+        do_update(&stream->base);
       }
       else {
-        pvVar1 = memchr((void *)(*(int *)stream + *(int *)&stream->field_0x8),10,
-                        *(int *)&stream->field_0xc - *(int *)&stream->field_0x8);
+        pvVar1 = memchr((stream->base).stream.buf + (stream->base).stream.cur,10,
+                        (stream->base).stream.next - (stream->base).stream.cur);
         if (pvVar1 != (void *)0x0) {
-          n = (int)pvVar1 + (1 - (*(int *)stream + *(int *)&stream->field_0x8));
+          n = (int)pvVar1 + (1 - (int)((stream->base).stream.buf + (stream->base).stream.cur));
           if (s == (Str)0x0) {
             s = Strnew_size(n);
           }
-          Strcat_charp_n(s,(char *)(*(int *)stream + *(int *)&stream->field_0x8),n);
-          *(int *)&stream->field_0x8 = *(int *)&stream->field_0x8 + n;
+          Strcat_charp_n(s,(char *)((stream->base).stream.buf + (stream->base).stream.cur),n);
+          (stream->base).stream.cur = (stream->base).stream.cur + n;
           return s;
         }
         if (s == (Str)0x0) {
-          s = Strnew_size((*(int *)&stream->field_0xc - *(int *)&stream->field_0x8) + 10);
+          s = Strnew_size(((stream->base).stream.next - (stream->base).stream.cur) + 10);
         }
-        Strcat_charp_n(s,(char *)(*(int *)stream + *(int *)&stream->field_0x8),
-                       *(int *)&stream->field_0xc - *(int *)&stream->field_0x8);
-        *(undefined4 *)&stream->field_0x8 = *(undefined4 *)&stream->field_0xc;
+        Strcat_charp_n(s,(char *)((stream->base).stream.buf + (stream->base).stream.cur),
+                       (stream->base).stream.next - (stream->base).stream.cur);
+        (stream->base).stream.cur = (stream->base).stream.next;
       }
     }
     if (s == (Str)0x0) {
@@ -56809,6 +58856,8 @@ Str StrISgets(InputStream stream)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str StrmyISgets(InputStream stream)
 
@@ -56830,55 +58879,57 @@ Str StrmyISgets(InputStream stream)
     do {
       while( true ) {
         while( true ) {
-          if (stream->field_0x15 != '\0') {
+          if ((stream->base).iseos != '\0') {
             if (s != (Str)0x0) {
               return s;
             }
             p_Var2 = Strnew();
             return p_Var2;
           }
-          if (*(int *)&stream->field_0x8 != *(int *)&stream->field_0xc) break;
-          do_update((BaseStream)stream);
+          if ((stream->base).stream.cur != (stream->base).stream.next) break;
+          do_update(&stream->base);
         }
         if (((s != (Str)0x0) && (0 < s->length)) && (s->ptr[s->length + -1] == '\r')) {
-          if (*(char *)(*(int *)stream + *(int *)&stream->field_0x8) != '\n') {
+          if ((stream->base).stream.buf[(stream->base).stream.cur] != '\n') {
             return s;
           }
           if (s->area_size <= s->length + 1) {
             Strgrow(s);
           }
           iVar3 = s->length;
-          iVar1 = *(int *)&stream->field_0x8;
-          s->ptr[iVar3] = *(char *)(*(int *)stream + iVar1);
+          iVar1 = (stream->base).stream.cur;
+          s->ptr[iVar3] = (stream->base).stream.buf[iVar1];
           s->length = iVar3 + 1;
-          *(int *)&stream->field_0x8 = iVar1 + 1;
+          (stream->base).stream.cur = iVar1 + 1;
           s->ptr[s->length] = '\0';
           return s;
         }
-        for (i = *(int *)&stream->field_0x8;
-            ((i < *(int *)&stream->field_0xc && (*(char *)(*(int *)stream + i) != '\n')) &&
-            (*(char *)(*(int *)stream + i) != '\r')); i = i + 1) {
+        for (i = (stream->base).stream.cur;
+            ((i < (stream->base).stream.next && ((stream->base).stream.buf[i] != '\n')) &&
+            ((stream->base).stream.buf[i] != '\r')); i = i + 1) {
         }
-        if (i < *(int *)&stream->field_0xc) break;
+        if (i < (stream->base).stream.next) break;
         if (s == (Str)0x0) {
-          s = Strnew_size((*(int *)&stream->field_0xc - *(int *)&stream->field_0x8) + 10);
+          s = Strnew_size(((stream->base).stream.next - (stream->base).stream.cur) + 10);
         }
-        Strcat_charp_n(s,(char *)(*(int *)stream + *(int *)&stream->field_0x8),
-                       *(int *)&stream->field_0xc - *(int *)&stream->field_0x8);
-        *(undefined4 *)&stream->field_0x8 = *(undefined4 *)&stream->field_0xc;
+        Strcat_charp_n(s,(char *)((stream->base).stream.buf + (stream->base).stream.cur),
+                       (stream->base).stream.next - (stream->base).stream.cur);
+        (stream->base).stream.cur = (stream->base).stream.next;
       }
-      iVar3 = i - *(int *)&stream->field_0x8;
+      iVar3 = i - (stream->base).stream.cur;
       if (s == (Str)0x0) {
         s = Strnew_size(iVar3 + 0xb);
       }
-      Strcat_charp_n(s,(char *)(*(int *)stream + *(int *)&stream->field_0x8),iVar3 + 1);
-      *(int *)&stream->field_0x8 = i + 1;
-    } while (*(char *)(*(int *)stream + i) != '\n');
+      Strcat_charp_n(s,(char *)((stream->base).stream.buf + (stream->base).stream.cur),iVar3 + 1);
+      (stream->base).stream.cur = i + 1;
+    } while ((stream->base).stream.buf[i] != '\n');
   }
   return s;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ISread(InputStream stream,Str buf,int count)
 
@@ -56888,17 +58939,16 @@ int ISread(InputStream stream,Str buf,int count)
   int len;
   int rest;
   
-  if ((stream == (InputStream)0x0) || (stream->field_0x15 != '\0')) {
+  if ((stream == (InputStream)0x0) || ((stream->base).iseos != '\0')) {
     iVar1 = 0;
   }
   else {
-    iVar1 = buffer_read((StreamBuffer)stream,buf->ptr,count);
+    iVar1 = buffer_read(&(stream->base).stream,buf->ptr,count);
     rest = count - iVar1;
-    if (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc) {
-      len = (**(code **)&stream->field_0x18)
-                      (*(undefined4 *)&stream->field_0x10,buf->ptr + iVar1,rest);
+    if ((stream->base).stream.cur == (stream->base).stream.next) {
+      len = (*(stream->base).read)((stream->base).handle,buf->ptr + iVar1,rest);
       if (len < 1) {
-        stream->field_0x15 = 1;
+        (stream->base).iseos = '\x01';
         len = 0;
       }
       rest = rest - len;
@@ -56916,47 +58966,53 @@ int ISread(InputStream stream,Str buf,int count)
 
 
 
+// WARNING: Unknown calling convention
+
 int ISfileno(InputStream stream)
 
 {
   byte bVar1;
-  int iVar2;
+  FILE *pFVar2;
   
   if (stream == (InputStream)0x0) {
-    iVar2 = -1;
+    pFVar2 = (FILE *)0xffffffff;
   }
   else {
-    bVar1 = stream->field_0x14 & 0xef;
+    bVar1 = (stream->base).type & 0xef;
     if (bVar1 == 1) {
-      iVar2 = fileno(**(FILE ***)&stream->field_0x10);
+      pFVar2 = (FILE *)fileno((FILE *)((stream->file).handle)->f);
     }
     else if (bVar1 == 4) {
-      iVar2 = ISfileno(**(InputStream **)&stream->field_0x10);
+      pFVar2 = (FILE *)ISfileno(((stream->ens).handle)->is);
     }
     else if (bVar1 == 0) {
-      iVar2 = **(int **)&stream->field_0x10;
+      pFVar2 = ((stream->file).handle)->f;
     }
     else {
-      iVar2 = -1;
+      pFVar2 = (FILE *)0xffffffff;
     }
   }
-  return iVar2;
+  return (int)pFVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ISeos(InputStream stream)
 
 {
   BaseStream base;
   
-  if ((stream->field_0x15 == '\0') && (*(int *)&stream->field_0x8 == *(int *)&stream->field_0xc)) {
-    do_update((BaseStream)stream);
+  if (((stream->base).iseos == '\0') && ((stream->base).stream.cur == (stream->base).stream.next)) {
+    do_update(&stream->base);
   }
-  return (int)(char)stream->field_0x15;
+  return (int)(stream->base).iseos;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void basic_close(int *handle)
 
@@ -56966,6 +59022,8 @@ void basic_close(int *handle)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int basic_read(int *handle,char *buf,int len)
 
@@ -56978,6 +59036,8 @@ int basic_read(int *handle,char *buf,int len)
 
 
 
+// WARNING: Unknown calling convention
+
 void file_close(file_handle *handle)
 
 {
@@ -56986,6 +59046,8 @@ void file_close(file_handle *handle)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int file_read(file_handle *handle,char *buf,int len)
 
@@ -56998,6 +59060,8 @@ int file_read(file_handle *handle,char *buf,int len)
 
 
 
+// WARNING: Unknown calling convention
+
 int str_read(Str handle,char *buf,int len)
 
 {
@@ -57005,6 +59069,8 @@ int str_read(Str handle,char *buf,int len)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ens_close(ens_handle *handle)
 
@@ -57014,6 +59080,8 @@ void ens_close(ens_handle *handle)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ens_read(ens_handle *handle,char *buf,int len)
 
@@ -57065,6 +59133,8 @@ int ens_read(ens_handle *handle,char *buf,int len)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strnew(void)
 
 {
@@ -57083,6 +59153,8 @@ Str Strnew(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strnew_size(int n)
 
 {
@@ -57100,6 +59172,8 @@ Str Strnew_size(int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Strnew_charp(char *p)
 
@@ -57129,6 +59203,8 @@ Str Strnew_charp(char *p)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strnew_m_charp(char *p,...)
 
 {
@@ -57147,6 +59223,8 @@ Str Strnew_m_charp(char *p,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Strnew_charp_n(char *p,int n)
 
@@ -57172,6 +59250,8 @@ Str Strnew_charp_n(char *p,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strdup(Str s)
 
 {
@@ -57185,6 +59265,8 @@ Str Strdup(Str s)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strclear(Str s)
 
 {
@@ -57195,6 +59277,8 @@ void Strclear(Str s)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strfree(Str x)
 
 {
@@ -57204,6 +59288,8 @@ void Strfree(Str x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strcopy(Str x,Str y)
 
@@ -57222,6 +59308,8 @@ void Strcopy(Str x,Str y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strcopy_charp(Str x,char *y)
 
@@ -57249,6 +59337,8 @@ void Strcopy_charp(Str x,char *y)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strcopy_charp_n(Str x,char *y,int n)
 
 {
@@ -57273,6 +59363,8 @@ void Strcopy_charp_n(Str x,char *y,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strcat_charp_n(Str x,char *y,int n)
 
@@ -57303,6 +59395,8 @@ void Strcat_charp_n(Str x,char *y,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strcat(Str x,Str y)
 
 {
@@ -57311,6 +59405,8 @@ void Strcat(Str x,Str y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strcat_charp(Str x,char *y)
 
@@ -57325,6 +59421,8 @@ void Strcat_charp(Str x,char *y)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strcat_m_charp(Str x,...)
 
@@ -57346,6 +59444,8 @@ void Strcat_m_charp(Str x,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strgrow(Str x)
 
@@ -57369,6 +59469,8 @@ void Strgrow(Str x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Strsubstr(Str s,int beg,int len)
 
@@ -57395,6 +59497,8 @@ Str Strsubstr(Str s,int beg,int len)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strlower(Str s)
 
 {
@@ -57414,6 +59518,8 @@ void Strlower(Str s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strupper(Str s)
 
@@ -57435,6 +59541,8 @@ void Strupper(Str s)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strchop(Str s)
 
 {
@@ -57451,6 +59559,7 @@ void Strchop(Str s)
 void Strinsert_char(Str s,int pos,char c)
 
 {
+  char c_local;
   int i;
   
   if ((-1 < pos) && (pos <= s->length)) {
@@ -57469,6 +59578,8 @@ void Strinsert_char(Str s,int pos,char c)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strinsert_charp(Str s,int pos,char *p)
 
 {
@@ -57484,6 +59595,8 @@ void Strinsert_charp(Str s,int pos,char *p)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strdelete(Str s,int pos,int n)
 
@@ -57506,6 +59619,8 @@ void Strdelete(Str s,int pos,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strtruncate(Str s,int pos)
 
 {
@@ -57515,6 +59630,8 @@ void Strtruncate(Str s,int pos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strshrink(Str s,int n)
 
@@ -57532,6 +59649,8 @@ void Strshrink(Str s,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void Strremovefirstspaces(Str s)
 
 {
@@ -57548,6 +59667,8 @@ void Strremovefirstspaces(Str s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Strremovetrailingspaces(Str s)
 
@@ -57567,6 +59688,8 @@ void Strremovetrailingspaces(Str s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Stralign_left(Str s,int width)
 
@@ -57597,6 +59720,8 @@ Str Stralign_left(Str s,int width)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Stralign_right(Str s,int width)
 
 {
@@ -57625,6 +59750,8 @@ Str Stralign_right(Str s,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Stralign_center(Str s,int width)
 
@@ -57666,6 +59793,8 @@ Str Stralign_center(Str s,int width)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Sprintf(char *fmt,...)
 
@@ -57795,6 +59924,8 @@ LAB_080b23fd:
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strfgets(FILE *f)
 
 {
@@ -57829,6 +59960,8 @@ Str Strfgets(FILE *f)
 
 
 
+// WARNING: Unknown calling convention
+
 Str Strfgetall(FILE *f)
 
 {
@@ -57860,6 +59993,8 @@ Str Strfgetall(FILE *f)
 
 
 
+// WARNING: Unknown calling convention
+
 clen_t strtoclen(char *s)
 
 {
@@ -57870,6 +60005,8 @@ clen_t strtoclen(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * allocStr(char *s,int len)
 
@@ -57898,6 +60035,8 @@ char * allocStr(char *s,int len)
 
 
 
+// WARNING: Unknown calling convention
+
 int strCmp(void *s1,void *s2)
 
 {
@@ -57911,6 +60050,8 @@ int strCmp(void *s1,void *s2)
 
 
 
+// WARNING: Unknown calling convention
+
 char * currentdir(void)
 
 {
@@ -57923,6 +60064,8 @@ char * currentdir(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * cleanupName(char *name)
 
@@ -58004,6 +60147,8 @@ char * cleanupName(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 char * expandPath(char *name)
 
 {
@@ -58055,6 +60200,8 @@ char * expandPath(char *name)
 
 
 
+// WARNING: Unknown calling convention
+
 int strcasematch(char *s1,char *s2)
 
 {
@@ -58086,6 +60233,8 @@ int strcasematch(char *s1,char *s2)
 
 
 
+// WARNING: Unknown calling convention
+
 int strcasemstr(char *str,char **srch,char **ret_ptr)
 
 {
@@ -58112,6 +60261,8 @@ int strcasemstr(char *str,char **srch,char **ret_ptr)
 
 
 
+// WARNING: Unknown calling convention
+
 char * remove_space(char *str)
 
 {
@@ -58137,6 +60288,8 @@ char * remove_space(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 int non_null(char *s)
 
 {
@@ -58151,6 +60304,8 @@ int non_null(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void cleanup_line(Str s,int mode)
 
@@ -58195,6 +60350,8 @@ void cleanup_line(Str s,int mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int getescapechar(char **str)
 
@@ -58282,6 +60439,8 @@ int getescapechar(char **str)
 
 
 
+// WARNING: Unknown calling convention
+
 char * getescapecmd(char **s)
 
 {
@@ -58310,6 +60469,8 @@ char * getescapecmd(char **s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * html_quote(char *str)
 
@@ -58348,6 +60509,8 @@ char * html_quote(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * html_unquote(char *str)
 
@@ -58388,6 +60551,8 @@ char * html_unquote(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * url_quote(char *str)
 
@@ -58444,6 +60609,8 @@ char * url_quote(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 char * file_quote(char *str)
 
 {
@@ -58480,6 +60647,8 @@ char * file_quote(char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * file_unquote(char *str)
 
@@ -58541,6 +60710,8 @@ LAB_080b36fb:
 
 
 
+// WARNING: Unknown calling convention
+
 Str Str_form_quote(Str x)
 
 {
@@ -58594,6 +60765,8 @@ Str Str_form_quote(Str x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str Str_url_unquote(Str x,int is_form,int safe)
 
@@ -58674,6 +60847,8 @@ LAB_080b3b06:
 
 
 
+// WARNING: Unknown calling convention
+
 char * shell_quote(char *str)
 
 {
@@ -58722,6 +60897,8 @@ char * shell_quote(char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 char * w3m_dir(char *name,char *dft)
 
 {
@@ -58729,6 +60906,8 @@ char * w3m_dir(char *name,char *dft)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * w3m_auxbin_dir(void)
 
@@ -58741,6 +60920,8 @@ char * w3m_auxbin_dir(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * w3m_lib_dir(void)
 
 {
@@ -58751,6 +60932,8 @@ char * w3m_lib_dir(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * w3m_etc_dir(void)
 
@@ -58763,6 +60946,8 @@ char * w3m_etc_dir(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * w3m_conf_dir(void)
 
 {
@@ -58774,6 +60959,8 @@ char * w3m_conf_dir(void)
 
 
 
+// WARNING: Unknown calling convention
+
 char * w3m_help_dir(void)
 
 {
@@ -58784,6 +60971,8 @@ char * w3m_help_dir(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 ListItem * newListItem(void *s,ListItem *n,ListItem *p)
 
@@ -58800,6 +60989,8 @@ ListItem * newListItem(void *s,ListItem *n,ListItem *p)
 
 
 
+// WARNING: Unknown calling convention
+
 GeneralList * newGeneralList(void)
 
 {
@@ -58814,6 +61005,8 @@ GeneralList * newGeneralList(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void pushValue(GeneralList *tl,void *s)
 
@@ -58838,6 +61031,8 @@ void pushValue(GeneralList *tl,void *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void * popValue(GeneralList *tl)
 
@@ -58866,6 +61061,8 @@ void * popValue(GeneralList *tl)
 
 
 
+// WARNING: Unknown calling convention
+
 void * rpopValue(GeneralList *tl)
 
 {
@@ -58893,6 +61090,8 @@ void * rpopValue(GeneralList *tl)
 
 
 
+// WARNING: Unknown calling convention
+
 void delValue(GeneralList *tl,ListItem *it)
 
 {
@@ -58913,6 +61112,8 @@ void delValue(GeneralList *tl,ListItem *it)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 GeneralList * appendGeneralList(GeneralList *tl,GeneralList *tl2)
 
@@ -58940,6 +61141,8 @@ GeneralList * appendGeneralList(GeneralList *tl,GeneralList *tl2)
 
 
 
+// WARNING: Unknown calling convention
+
 TextLine * newTextLine(Str line,int pos)
 
 {
@@ -58960,6 +61163,8 @@ TextLine * newTextLine(Str line,int pos)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void appendTextLine(TextLineList *tl,Str line,int pos)
 
@@ -58988,6 +61193,8 @@ void appendTextLine(TextLineList *tl,Str line,int pos)
 
 
 
+// WARNING: Unknown calling convention
+
 char * tag_get_value(parsed_tagarg *t,char *arg)
 
 {
@@ -59006,6 +61213,8 @@ char * tag_get_value(parsed_tagarg *t,char *arg)
 
 
 
+// WARNING: Unknown calling convention
+
 int tag_exists(parsed_tagarg *t,char *arg)
 
 {
@@ -59023,6 +61232,8 @@ int tag_exists(parsed_tagarg *t,char *arg)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 parsed_tagarg * cgistr2tagarg(char *cgistr)
 
@@ -59080,6 +61291,8 @@ parsed_tagarg * cgistr2tagarg(char *cgistr)
 
 
 
+// WARNING: Unknown calling convention
+
 uint hashfunc(char *s)
 
 {
@@ -59100,6 +61313,8 @@ uint hashfunc(char *s)
 
 
 
+// WARNING: Unknown calling convention
+
 Hash_si * newHash_si(int size)
 
 {
@@ -59119,6 +61334,8 @@ Hash_si * newHash_si(int size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 HashItem_si * lookupHash_si(Hash_si *t,char *key,int *hashval_return)
 
@@ -59143,6 +61360,8 @@ HashItem_si * lookupHash_si(Hash_si *t,char *key,int *hashval_return)
 
 
 
+// WARNING: Unknown calling convention
+
 void putHash_si(Hash_si *t,char *key,int value)
 
 {
@@ -59166,6 +61385,8 @@ void putHash_si(Hash_si *t,char *key,int value)
 
 
 
+// WARNING: Unknown calling convention
+
 int getHash_si(Hash_si *t,char *key,int failval)
 
 {
@@ -59181,6 +61402,8 @@ int getHash_si(Hash_si *t,char *key,int failval)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Hash_ss * newHash_ss(int size)
 
@@ -59201,6 +61424,8 @@ Hash_ss * newHash_ss(int size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 HashItem_ss * lookupHash_ss(Hash_ss *t,char *key,int *hashval_return)
 
@@ -59225,6 +61450,8 @@ HashItem_ss * lookupHash_ss(Hash_ss *t,char *key,int *hashval_return)
 
 
 
+// WARNING: Unknown calling convention
+
 void putHash_ss(Hash_ss *t,char *key,char *value)
 
 {
@@ -59248,6 +61475,8 @@ void putHash_ss(Hash_ss *t,char *key,char *value)
 
 
 
+// WARNING: Unknown calling convention
+
 char * getHash_ss(Hash_ss *t,char *key,char *failval)
 
 {
@@ -59263,6 +61492,8 @@ char * getHash_ss(Hash_ss *t,char *key,char *failval)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Hash_sv * newHash_sv(int size)
 
@@ -59283,6 +61514,8 @@ Hash_sv * newHash_sv(int size)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 HashItem_sv * lookupHash_sv(Hash_sv *t,char *key,int *hashval_return)
 
@@ -59307,6 +61540,8 @@ HashItem_sv * lookupHash_sv(Hash_sv *t,char *key,int *hashval_return)
 
 
 
+// WARNING: Unknown calling convention
+
 void putHash_sv(Hash_sv *t,char *key,void *value)
 
 {
@@ -59330,6 +61565,8 @@ void putHash_sv(Hash_sv *t,char *key,void *value)
 
 
 
+// WARNING: Unknown calling convention
+
 void * getHash_sv(Hash_sv *t,char *key,void *failval)
 
 {
@@ -59345,6 +61582,8 @@ void * getHash_sv(Hash_sv *t,char *key,void *failval)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Hash_iv * newHash_iv(int size)
 
@@ -59366,6 +61605,8 @@ Hash_iv * newHash_iv(int size)
 
 
 
+// WARNING: Unknown calling convention
+
 HashItem_iv * lookupHash_iv(Hash_iv *t,int key,int *hashval_return)
 
 {
@@ -59384,6 +61625,8 @@ HashItem_iv * lookupHash_iv(Hash_iv *t,int key,int *hashval_return)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void putHash_iv(Hash_iv *t,int key,void *value)
 
@@ -59408,6 +61651,8 @@ void putHash_iv(Hash_iv *t,int key,void *value)
 
 
 
+// WARNING: Unknown calling convention
+
 void * getHash_iv(Hash_iv *t,int key,void *failval)
 
 {
@@ -59424,13 +61669,15 @@ void * getHash_iv(Hash_iv *t,int key,void *failval)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_char_conv_init(wc_ces f_ces,wc_ces t_ces)
 
 {
   wc_input_init(f_ces,&char_conv_st);
-  char_conv_t_ces = t_ces;
-  char_conv_f_ces = f_ces;
   char_conv_st.state = -1;
+  char_conv_f_ces = f_ces;
+  char_conv_t_ces = t_ces;
   return;
 }
 
@@ -59441,6 +61688,7 @@ Str wc_char_conv(char c)
 {
   wc_ces t_ces;
   Str p_Var1;
+  char c_local;
   
   t_ces = char_conv_t_ces;
   p_Var1 = (*(char_conv_st.ces_info)->char_conv)((uint)(byte)c,&char_conv_st);
@@ -59449,6 +61697,8 @@ Str wc_char_conv(char c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ces wc_guess_charset(char *charset,wc_ces orig)
 
@@ -59465,6 +61715,8 @@ wc_ces wc_guess_charset(char *charset,wc_ces orig)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_ces wc_guess_charset_short(char *charset,wc_ces orig)
 
 {
@@ -59479,6 +61731,8 @@ wc_ces wc_guess_charset_short(char *charset,wc_ces orig)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ces wc_guess_locale_charset(char *locale,wc_ces orig)
 
@@ -59502,6 +61756,7 @@ wc_ces wc_charset_to_ces(char *charset)
   uint uVar2;
   wc_ces wVar3;
   int in_GS_OFFSET;
+  char *charset_local;
   int n;
   char *p;
   char buf [16];
@@ -59992,6 +62247,7 @@ wc_ces wc_charset_short_to_ces(char *charset)
   int iVar2;
   uint uVar3;
   int in_GS_OFFSET;
+  char *charset_local;
   int n;
   wc_ces ces;
   char *p;
@@ -60175,6 +62431,8 @@ LAB_080b5982:
 
 
 
+// WARNING: Unknown calling convention
+
 wc_ces wc_locale_to_ces(char *locale)
 
 {
@@ -60264,6 +62522,8 @@ wc_ces wc_locale_to_ces(char *locale)
 
 
 
+// WARNING: Unknown calling convention
+
 char * wc_ces_to_charset(wc_ces ces)
 
 {
@@ -60280,6 +62540,8 @@ char * wc_ces_to_charset(wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 char * wc_ces_to_charset_desc(wc_ces ces)
 
 {
@@ -60295,6 +62557,8 @@ char * wc_ces_to_charset_desc(wc_ces ces)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ces wc_guess_8bit_charset(wc_ces orig)
 
@@ -60320,6 +62584,8 @@ wc_ces wc_guess_8bit_charset(wc_ces orig)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_bool wc_check_ces(wc_ces ces)
 
 {
@@ -60337,6 +62603,8 @@ wc_bool wc_check_ces(wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 int wc_ces_list_cmp(void *a,void *b)
 
 {
@@ -60347,6 +62615,8 @@ int wc_ces_list_cmp(void *a,void *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ces_list * wc_get_ces_list(void)
 
@@ -60381,6 +62651,8 @@ wc_ces_list * wc_get_ces_list(void)
 
 
 
+// WARNING: Unknown calling convention
+
 Str wc_Str_conv(Str is,wc_ces f_ces,wc_ces t_ces)
 
 {
@@ -60395,14 +62667,17 @@ Str wc_Str_conv(Str is,wc_ces f_ces,wc_ces t_ces)
 
 
 
+// WARNING: Unknown calling convention
+
 Str wc_Str_conv_strict(Str is,wc_ces f_ces,wc_ces t_ces)
 
 {
   undefined4 uVar1;
-  uint uVar2;
+  undefined4 uVar2;
   undefined4 uVar3;
-  uint uVar4;
-  Str p_Var5;
+  undefined4 uVar4;
+  undefined4 uVar5;
+  Str p_Var6;
   wc_option opt;
   Str os;
   
@@ -60410,29 +62685,33 @@ Str wc_Str_conv_strict(Str is,wc_ces f_ces,wc_ces t_ces)
   uVar3 = WcOption._8_4_;
   uVar2 = WcOption._4_4_;
   uVar1 = WcOption._0_4_;
-  WcOption._12_4_ = CONCAT31(WcOption._13_3_,1);
+  WcOption.strict_iso2022 = 1;
+  uVar5 = WcOption._12_4_;
+  WcOption.use_wide = SUB41(uVar4,3);
+  WcOption._12_2_ = (undefined2)uVar5;
   WcOption._12_3_ = CONCAT12(1,WcOption._12_2_);
-  WcOption._12_4_ = uVar4 & 0xff000000 | (uint)WcOption._12_3_;
-  WcOption._4_4_ = WcOption._4_4_ & 0xffff00ff;
-  p_Var5 = wc_Str_conv(is,f_ces,t_ces);
+  WcOption._4_2_ = CONCAT11('\0',WcOption.pre_conv);
+  p_Var6 = wc_Str_conv(is,f_ces,t_ces);
   WcOption._0_4_ = uVar1;
   WcOption._4_4_ = uVar2;
   WcOption._8_4_ = uVar3;
   WcOption._12_4_ = uVar4;
-  return p_Var5;
+  return p_Var6;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 Str wc_conv_to_ces(Str is,wc_ces ces)
 
 {
-  anon_subr_void_varargs_for_push_to *paVar1;
+  _func_void_varargs *p_Var1;
   int iVar2;
   wc_status st;
-  wc_uchar *local_2c;
+  undefined4 local_2c;
   undefined4 local_28;
-  wc_uchar *local_24;
+  undefined4 local_24;
   undefined4 local_20;
   wc_uchar *p;
   wc_uchar *ep;
@@ -60472,9 +62751,9 @@ LAB_080b5f9b:
 LAB_080b6169:
       while (p < ep) {
         if (((char)*p < '\0') || (WTF_WIDTH_MAP[p[1]] == '\0')) {
-          paVar1 = (st.ces_info)->push_to;
-          wtf_parse(&local_2c);
-          (*paVar1)(os,local_2c,local_28,&st);
+          p_Var1 = (st.ces_info)->push_to;
+          wtf_parse(&p);
+          (*p_Var1)(os,local_2c,local_28,&st);
         }
         else {
           if (os->area_size <= os->length + 1) {
@@ -60492,9 +62771,9 @@ LAB_080b6169:
   }
   else if (((ces != 0x208046) && (ces != 0x308045)) && (ces != 0x20203c)) goto LAB_080b6169;
   while (p < ep) {
-    paVar1 = (st.ces_info)->push_to;
-    wtf_parse(&local_24);
-    (*paVar1)(os,local_24,local_20,&st);
+    p_Var1 = (st.ces_info)->push_to;
+    wtf_parse(&p);
+    (*p_Var1)(os,local_24,local_20,&st);
   }
 LAB_080b6175:
   wc_push_end(os,&st);
@@ -60502,6 +62781,8 @@ LAB_080b6175:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_Str_conv_with_detect(Str is,wc_ces *f_ces,wc_ces hint,wc_ces t_ces)
 
@@ -60537,6 +62818,8 @@ Str wc_Str_conv_with_detect(Str is,wc_ces *f_ces,wc_ces hint,wc_ces t_ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_end(Str os,wc_status *st)
 
 {
@@ -60562,6 +62845,7 @@ void wc_push_end(Str os,wc_status *st)
 void wc_create_detect_map(wc_ces ces,wc_bool esc)
 
 {
+  wc_bool esc_local;
   wc_uint8 *map;
   int i;
   
@@ -60600,6 +62884,8 @@ void wc_create_detect_map(wc_ces ces,wc_bool esc)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ces wc_auto_detect(char *is,size_t len,wc_ces hint)
 
@@ -61142,6 +63428,8 @@ LAB_080b6f9c:
 
 
 
+// WARNING: Unknown calling convention
+
 Str wc_conv_from_hz(Str is,wc_ces ces)
 
 {
@@ -61262,10 +63550,14 @@ Str wc_conv_from_hz(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
+  byte bVar2;
+  undefined4 uVar3;
   
   do {
     if (cc.ccs == 0x4000) {
@@ -61291,6 +63583,7 @@ void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
       }
       return;
     }
+    bVar2 = cc.code;
     if (cc.ccs < 0x4001) {
       if (cc.ccs == 0x142) {
         if (st->gl != '\0') {
@@ -61310,7 +63603,7 @@ void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
           os->ptr[os->length] = '\0';
           st->gl = '\0';
         }
-        if ((char)cc.code == '~') {
+        if (bVar2 == 0x7e) {
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
@@ -61323,7 +63616,7 @@ void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar2;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -61352,14 +63645,14 @@ void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)(cc.code >> 8) & 0x7f;
+        os->ptr[iVar1] = cc.code._1_1_ & 0x7f;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code & 0x7f;
+        os->ptr[iVar1] = bVar2 & 0x7f;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -61390,20 +63683,23 @@ void wc_push_to_hz(Str os,wc_wchar_t cc,wc_status *st)
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar3 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar3 = 0xc000;
       }
+      cc.ccs = uVar3;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&cc),(wc_status *)cc.code);
+      wc_any_to_any_ces(cc,st);
     }
   } while( true );
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_push_to_hz_end(Str os,wc_status *st)
 
@@ -61432,6 +63728,8 @@ void wc_push_to_hz_end(Str os,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 void wtf_push_iso2022(Str os,wc_ccs ccs,wc_uint32 code)
 
 {
@@ -61459,6 +63757,8 @@ LAB_080b7a56:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_iso2022(Str is,wc_ces ces)
 
@@ -61719,6 +64019,8 @@ LAB_080b8287:
 
 
 
+// WARNING: Unknown calling convention
+
 int wc_parse_iso2022_esc(wc_uchar **ptr,wc_status *st)
 
 {
@@ -61912,6 +64214,8 @@ LAB_080b85b1:
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_iso2022(Str os,wc_wchar_t cc,wc_status *st)
 
 {
@@ -61919,6 +64223,7 @@ void wc_push_to_iso2022(Str os,wc_wchar_t cc,wc_status *st)
   bool bVar2;
   bool bVar3;
   uint uVar4;
+  undefined4 uVar5;
   wc_ccs local_34;
   wc_uint32 local_30;
   wc_wchar_t cc2_1;
@@ -61931,13 +64236,15 @@ void wc_push_to_iso2022(Str os,wc_wchar_t cc,wc_status *st)
   bVar2 = false;
 LAB_080b872d:
   do {
-    while (uVar4 = cc.ccs & 0xff00, uVar4 == 0x4000) {
+    while( true ) {
+      uVar4 = cc.ccs & 0xff00;
+      if (uVar4 != 0x4000) break;
       if (WcOption.no_replace != '\0') {
         return;
       }
-      cc.ccs = 0x142;
       g = cs94_gmap[2];
-      cc.code = (wc_uint32)*WcReplace;
+      cc.code = (int)*WcReplace;
+      cc.ccs = 0x142;
 LAB_080b8a50:
       if (g != '\0') {
         wc_push_iso2022_esc(os,cc.ccs,g,'\x01',st);
@@ -61946,7 +64253,7 @@ LAB_080b8a50:
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (byte)(cc.code >> 8) & 0x7f;
+          os->ptr[iVar1] = cc.code._1_1_ & 0x7f;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
         }
@@ -61954,13 +64261,13 @@ LAB_080b8a50:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code & 0x7f;
+        os->ptr[iVar1] = cc.code & 0x7f;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
       if ((WcOption.ucs_conv == '\0') || (bVar2)) {
-        if ((cc.ccs & 0x18000) == 0) {
+        if (((ulonglong)cc & 0x18000) == 0) {
           cc.ccs = 0x4000;
         }
         else {
@@ -61968,7 +64275,7 @@ LAB_080b8a50:
         }
       }
       else {
-        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_34),(wc_status *)cc.code);
+        wc_any_to_any_ces(cc,st);
         cc.ccs = local_34;
         cc.code = local_30;
       }
@@ -62000,30 +64307,30 @@ LAB_080b8a50:
         return;
       }
       bVar3 = true;
-      cc.ccs = 0x142;
       g = cs94_gmap[2];
       cc.code = (int)WcReplaceW[1] | (int)*WcReplaceW << 8;
+      cc.ccs = 0x142;
       goto LAB_080b8a50;
     }
     if (uVar4 != 0x8100) {
 LAB_080b89be:
-      if ((cs94w_gmap[3] == '\0') ||
-         (wc_johab_to_ksx1001((wc_wchar_t)CONCAT44(cc.ccs,&cc2_1)), cc2_1.ccs != 0x8143)) {
+      if ((cs94w_gmap[3] == '\0') || (wc_johab_to_ksx1001(cc), cc2_1.ccs != 0x8143)) {
         if (WcOption.ucs_conv == '\0') {
-          if ((cc.ccs & 0x18000) == 0) {
-            cc.ccs = 0x4000;
+          if (((ulonglong)cc & 0x18000) == 0) {
+            uVar5 = 0x4000;
           }
           else {
-            cc.ccs = 0xc000;
+            uVar5 = 0xc000;
           }
+          cc.ccs = uVar5;
         }
         else {
-          wc_any_to_iso2022((wc_wchar_t)CONCAT44(cc.ccs,&cc),(wc_status *)cc.code);
+          wc_any_to_iso2022(cc,st);
         }
       }
       else {
-        cc.ccs = cc2_1.ccs;
         cc.code = cc2_1.code;
+        cc.ccs = 0x8143;
       }
       goto LAB_080b872d;
     }
@@ -62032,12 +64339,12 @@ LAB_080b89be:
       if (((0x8143 < cc.ccs) && (cc.ccs - 0x814f < 2)) &&
          ((WcOption.use_jisx0213 == '\0' &&
           ((WcOption.use_jisx0212 != '\0' && (WcOption.ucs_conv != '\0')))))) {
-        wc_jisx0213_to_jisx0212((wc_wchar_t)CONCAT44(cc.ccs,&local_34));
+        wc_jisx0213_to_jisx0212(cc);
         cc2.ccs = local_34;
         cc2.code = local_30;
         if (local_34 == 0x8144) {
-          cc.ccs = local_34;
           cc.code = local_30;
+          cc.ccs = 0x8144;
           goto LAB_080b872d;
         }
       }
@@ -62047,14 +64354,15 @@ LAB_080b88bd:
     }
     if ((((WcOption.use_jisx0212 != '\0') || (WcOption.use_jisx0213 == '\0')) ||
         (WcOption.ucs_conv == '\0')) ||
-       ((wc_jisx0212_to_jisx0213((wc_wchar_t)CONCAT44(0x8144,&cc2)), cc2.ccs != 0x814f &&
-        (cc2.ccs != 0x8150)))) goto LAB_080b88bd;
-    cc.ccs = cc2.ccs;
+       ((wc_jisx0212_to_jisx0213(cc), cc2.ccs != 0x814f && (cc2.ccs != 0x8150)))) goto LAB_080b88bd;
     cc.code = cc2.code;
+    cc.ccs = cc2.ccs;
   } while( true );
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_push_to_iso2022_end(Str os,wc_status *st)
 
@@ -62073,6 +64381,8 @@ void wc_push_iso2022_esc(Str os,wc_ccs ccs,wc_uchar g,wc_uint8 invoke,wc_status 
 {
   int iVar1;
   byte bVar2;
+  wc_uint8 invoke_local;
+  wc_uchar g_local;
   wc_uint8 g_invoke;
   
   bVar2 = g & 3;
@@ -62192,31 +64502,37 @@ void wc_push_iso2022_esc(Str os,wc_ccs ccs,wc_uchar g,wc_uint8 invoke,wc_status 
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_euc(Str os,wc_wchar_t cc,wc_status *st)
 
 {
-  int iVar1;
-  wc_ccs local_24;
-  wc_uint32 local_20;
+  wc_ccs wVar1;
+  int iVar2;
+  byte bVar3;
+  undefined4 uVar4;
+  undefined4 local_24;
+  undefined4 local_20;
   wc_ccs g1_ccs;
   
-  g1_ccs = st->ces_info->gset[1].ccs;
+  wVar1 = st->ces_info->gset[1].ccs;
   do {
     while( true ) {
-      if (cc.ccs == g1_ccs) {
+      bVar3 = cc.code;
+      if (cc.ccs == wVar1) {
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
-        iVar1 = os->length;
-        os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
-        os->length = iVar1 + 1;
+        iVar2 = os->length;
+        os->ptr[iVar2] = cc.code._1_1_ | 0x80;
+        os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
-        iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
-        os->length = iVar1 + 1;
+        iVar2 = os->length;
+        os->ptr[iVar2] = bVar3 | 0x80;
+        os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
@@ -62224,9 +64540,9 @@ void wc_push_to_euc(Str os,wc_wchar_t cc,wc_status *st)
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
-        iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
-        os->length = iVar1 + 1;
+        iVar2 = os->length;
+        os->ptr[iVar2] = bVar3 | 0x80;
+        os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
@@ -62235,9 +64551,9 @@ void wc_push_to_euc(Str os,wc_wchar_t cc,wc_status *st)
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
-        iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
-        os->length = iVar1 + 1;
+        iVar2 = os->length;
+        os->ptr[iVar2] = bVar3;
+        os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
@@ -62250,17 +64566,18 @@ void wc_push_to_euc(Str os,wc_wchar_t cc,wc_status *st)
       }
 LAB_080b92f3:
       if (WcOption.ucs_conv == '\0') {
-        if ((cc.ccs & 0x18000) == 0) {
-          cc.ccs = 0x4000;
+        if (((ulonglong)cc & 0x18000) == 0) {
+          uVar4 = 0x4000;
         }
         else {
-          cc.ccs = 0xc000;
+          uVar4 = 0xc000;
         }
+        cc.ccs = uVar4;
       }
       else {
-        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_24),(wc_status *)cc.code);
-        cc.ccs = local_24;
+        wc_any_to_any_ces(cc,st);
         cc.code = local_20;
+        cc.ccs = local_24;
       }
     }
     if (cc.ccs < 0x880f) goto LAB_080b92f3;
@@ -62275,34 +64592,38 @@ LAB_080b92f3:
       goto LAB_080b92f3;
     }
     if (st->ces_info->id != 0x301019) goto LAB_080b92f3;
-    wc_johab_to_ksx1001((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+    wc_johab_to_ksx1001(cc);
   } while( true );
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_eucjp(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
+  byte bVar2;
   wc_ccs local_14;
   wc_uint32 local_10;
   
 LAB_080b935e:
+  bVar2 = cc.code;
   if (cc.ccs == 0x8142) {
 LAB_080b97ca:
     if (os->area_size <= os->length + 1) {
       Strgrow(os);
     }
     iVar1 = os->length;
-    os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
+    os->ptr[iVar1] = cc.code._1_1_ | 0x80;
     os->length = iVar1 + 1;
     os->ptr[os->length] = '\0';
     if (os->area_size <= os->length + 1) {
       Strgrow(os);
     }
     iVar1 = os->length;
-    os->ptr[iVar1] = (byte)cc.code | 0x80;
+    os->ptr[iVar1] = bVar2 | 0x80;
     os->length = iVar1 + 1;
     os->ptr[os->length] = '\0';
     return;
@@ -62321,13 +64642,13 @@ LAB_080b97ca:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
+        os->ptr[iVar1] = bVar2 | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
       if (WcOption.fix_width_conv == '\0') {
-        wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&cc));
+        wc_jisx0201k_to_jisx0208(cc);
       }
       else {
         cc.ccs = 0x4000;
@@ -62340,7 +64661,7 @@ LAB_080b97ca:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar2;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -62359,7 +64680,7 @@ LAB_080b97ca:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
+        os->ptr[iVar1] = bVar2 | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -62373,7 +64694,7 @@ LAB_080b97ca:
         cc.ccs = 0xc000;
       }
       else {
-        wc_jisx0213_to_jisx0212((wc_wchar_t)CONCAT44(0x814f,&local_14));
+        wc_jisx0213_to_jisx0212(cc);
         cc.ccs = local_14;
         cc.code = local_10;
       }
@@ -62404,7 +64725,7 @@ LAB_080b97ca:
         cc.ccs = 0xc000;
       }
       else {
-        wc_jisx0213_to_jisx0212((wc_wchar_t)CONCAT44(0x8150,&local_14));
+        wc_jisx0213_to_jisx0212(cc);
         cc.ccs = local_14;
         cc.code = local_10;
       }
@@ -62425,7 +64746,7 @@ LAB_080b97ca:
         cc.ccs = 0xc000;
       }
       else {
-        wc_jisx0212_to_jisx0213((wc_wchar_t)CONCAT44(0x8144,&local_14));
+        wc_jisx0212_to_jisx0213(cc);
         cc.ccs = local_14;
         cc.code = local_10;
       }
@@ -62434,7 +64755,7 @@ LAB_080b97ca:
   }
 LAB_080b976a:
   if (WcOption.ucs_conv == '\0') {
-    if ((cc.ccs & 0x18000) == 0) {
+    if (((ulonglong)cc & 0x18000) == 0) {
       cc.ccs = 0x4000;
     }
     else {
@@ -62442,7 +64763,7 @@ LAB_080b976a:
     }
   }
   else {
-    wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
+    wc_any_to_any_ces(cc,st);
     cc.ccs = local_14;
     cc.code = local_10;
   }
@@ -62451,12 +64772,17 @@ LAB_080b976a:
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_euctw(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
+  undefined4 uVar2;
+  byte bVar3;
   
   do {
+    bVar3 = cc.code;
     if (cc.ccs < 0x814e) {
       if (0x8147 < cc.ccs) {
         if (os->area_size <= os->length + 1) {
@@ -62470,7 +64796,7 @@ void wc_push_to_euctw(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.ccs + 'Z';
+        os->ptr[iVar1] = cc.ccs + 'Z';
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
 LAB_080b9b7a:
@@ -62478,14 +64804,14 @@ LAB_080b9b7a:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
+        os->ptr[iVar1] = cc.code._1_1_ | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
+        os->ptr[iVar1] = bVar3 | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -62503,7 +64829,7 @@ LAB_080b9b7a:
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
+          os->ptr[iVar1] = bVar3;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
@@ -62515,7 +64841,7 @@ LAB_080b9b7a:
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (byte)cc.code | 0x80;
+          os->ptr[iVar1] = bVar3 | 0x80;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
@@ -62536,7 +64862,7 @@ LAB_080b9b7a:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.ccs + -0x5c;
+        os->ptr[iVar1] = cc.ccs + -0x5c;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         goto LAB_080b9b7a;
@@ -62549,36 +64875,42 @@ LAB_080b9b7a:
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar2 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar2 = 0xc000;
       }
+      cc.ccs = uVar2;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&cc),(wc_status *)cc.code);
+      wc_any_to_any_ces(cc,st);
     }
   } while( true );
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_iso8859(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   wc_ccs wVar1;
   int iVar2;
+  byte bVar3;
+  undefined4 uVar4;
   wc_ccs g1_ccs;
   
   wVar1 = st->ces_info->gset[1].ccs;
   do {
+    bVar3 = cc.code;
     if (cc.ccs == wVar1) {
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar2 = os->length;
-      os->ptr[iVar2] = (byte)cc.code | 0x80;
+      os->ptr[iVar2] = bVar3 | 0x80;
       os->length = iVar2 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -62596,7 +64928,7 @@ void wc_push_to_iso8859(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar2 = os->length;
-        os->ptr[iVar2] = (char)cc.code;
+        os->ptr[iVar2] = bVar3;
         os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -62608,7 +64940,7 @@ void wc_push_to_iso8859(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar2 = os->length;
-        os->ptr[iVar2] = (byte)cc.code | 0x80;
+        os->ptr[iVar2] = bVar3 | 0x80;
         os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -62622,20 +64954,23 @@ void wc_push_to_iso8859(Str os,wc_wchar_t cc,wc_status *st)
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar4 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar4 = 0xc000;
       }
+      cc.ccs = uVar4;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&cc),(wc_status *)cc.code);
+      wc_any_to_any_ces(cc,st);
     }
   } while( true );
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_create_gmap(wc_status *st)
 
@@ -62711,6 +65046,7 @@ Str wc_char_conv_from_iso2022(wc_uchar c,wc_status *st)
   Str p_Var2;
   uint ccs;
   uint uVar3;
+  wc_uchar c_local;
   wc_ccs gr_ccs;
   wc_ccs gl_ccs;
   wc_uchar *p;
@@ -63123,63 +65459,76 @@ Str wc_char_conv_from_iso2022(wc_uchar c,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_jisx0201k_to_jisx0208(wc_wchar_t cc)
 
 {
   ushort uVar1;
   undefined4 uVar2;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar3;
+  undefined4 *in_stack_00000004;
   
-  uVar1 = jisx0201k_jisx0208_map[in_stack_0000000c & 0x7f];
+  uVar1 = jisx0201k_jisx0208_map[cc.code & 0x7f];
   if (uVar1 == 0) {
     uVar2 = 0xc000;
   }
   else {
     uVar2 = 0x8142;
   }
-  *(undefined4 *)cc.ccs = uVar2;
-  *(uint *)(cc.ccs + 4) = (uint)uVar1;
-  return (wc_wchar_t)(ulonglong)CONCAT24(uVar1,cc.ccs);
+  *in_stack_00000004 = uVar2;
+  in_stack_00000004[1] = (uint)uVar1;
+  wVar3.code._0_2_ = uVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  wVar3.code._2_2_ = 0;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_jisx0212_to_jisx0213(wc_wchar_t cc)
 
 {
   wc_wchar_t wVar1;
-  wc_table *in_stack_0000000c;
+  undefined4 *in_stack_00000004;
   wc_wchar_t cc2;
   
   if (wc_jisx0212_to_jisx0213::t1 == (wc_table *)0x0) {
     wc_jisx0212_to_jisx0213::t1 = wc_get_ucs_table(0x814f);
     wc_jisx0212_to_jisx0213::t2 = wc_get_ucs_table(0x8150);
   }
-  wc_any_to_any((wc_wchar_t)((ulonglong)cc & 0xffffffff00000000 | ZEXT48(&cc2)),in_stack_0000000c);
+  wc_any_to_any(cc,wc_jisx0212_to_jisx0213::t2);
   if (cc2.ccs == 0x8144) {
-    *(undefined4 *)cc.ccs = 0x8144;
-    *(wc_uint32 *)(cc.ccs + 4) = cc2.code;
+    *in_stack_00000004 = 0x8144;
+    in_stack_00000004[1] = cc2.code;
   }
   else {
-    wVar1 = wc_any_to_any(cc,in_stack_0000000c);
-    cc2.code = (wc_uint32)((ulonglong)wVar1 >> 0x20);
+    wVar1 = wc_any_to_any(cc,wc_jisx0212_to_jisx0213::t1);
+    cc2.code = wVar1.code;
   }
-  return (wc_wchar_t)((ulonglong)cc & 0xffffffff | (ulonglong)cc2.code << 0x20);
+  wVar1.code = cc2.code;
+  wVar1.ccs = (wc_ccs)in_stack_00000004;
+  return wVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_jisx0213_to_jisx0212(wc_wchar_t cc)
 
 {
   wc_wchar_t wVar1;
-  wc_table *in_stack_0000000c;
+  undefined4 in_stack_00000004;
   
   if (wc_jisx0213_to_jisx0212::t == (wc_table *)0x0) {
     wc_jisx0213_to_jisx0212::t = wc_get_ucs_table(0x8144);
   }
-  wVar1 = wc_any_to_any(cc,in_stack_0000000c);
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cc & 0xffffffff);
+  wVar1 = wc_any_to_any(cc,wc_jisx0213_to_jisx0212::t);
+  wVar1.ccs = in_stack_00000004;
+  return wVar1;
 }
 
 
@@ -63189,6 +65538,7 @@ wc_ccs wc_jisx0208_or_jisx02131(wc_uint16 code)
 {
   wc_map *pwVar1;
   wc_ccs wVar2;
+  wc_uint16 code_local;
   
   pwVar1 = wc_map_range_search(code & 0x7f7f,jisx0208_jisx02131_map,0x12);
   if (pwVar1 == (wc_map *)0x0) {
@@ -63206,6 +65556,7 @@ wc_ccs wc_jisx0212_or_jisx02132(wc_uint16 code)
 
 {
   wc_ccs wVar1;
+  wc_uint16 code_local;
   
   if (wc_jisx0212_jisx02132_map[code >> 8 & 0x7f] == '\0') {
     wVar1 = 0x8144;
@@ -63218,111 +65569,125 @@ wc_ccs wc_jisx0212_or_jisx02132(wc_uint16 code)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_johab_to_ksx1001(wc_wchar_t cc)
 
 {
-  wc_ccs wVar1;
+  wc_wchar_t wVar1;
   wc_wchar_t wVar2;
-  wc_table *in_stack_0000000c;
-  uint local_14 [3];
+  wc_wchar_t *in_stack_00000004;
+  undefined4 local_14;
+  undefined4 local_10;
   
-  wVar1 = cc.ccs;
-  if (cc.code < 0x8812) {
-    if (cc.code < 0x8810) {
-      if (cc.code == 0x880f) {
-        wc_johab_to_cs128w((wc_wchar_t)(cc & 0xffffffff00000000 | ZEXT48(local_14)));
-        wVar2 = wc_johab_to_ksx1001((wc_wchar_t)(cc & 0xffffffff | (ulonglong)local_14[0] << 0x20));
-        in_stack_0000000c = (wc_table *)((ulonglong)wVar2 >> 0x20);
+  if (cc.ccs < 0x8812) {
+    if (cc.ccs < 0x8810) {
+      if (cc.ccs == 0x880f) {
+        wc_johab_to_cs128w(cc);
+        wVar1.code = local_10;
+        wVar1.ccs = local_14;
+        wVar1 = wc_johab_to_ksx1001(wVar1);
+        cc.code = wVar1.code;
         goto LAB_080baacc;
       }
     }
     else if (WcOption.ucs_conv == '\0') {
-      cc.code = 0xc000;
+      cc.ccs = 0xc000;
     }
     else {
       if (wc_johab_to_ksx1001::t == (wc_table *)0x0) {
         wc_johab_to_ksx1001::t = wc_get_ucs_table(0x8143);
       }
-      wc_any_to_any((wc_wchar_t)CONCAT44(cc.code,(int)&cc + 4),in_stack_0000000c);
+      wc_any_to_any(cc,wc_johab_to_ksx1001::t);
     }
   }
-  else if (cc.code == 0x8812) {
-    if (in_stack_0000000c < (wc_table *)0x2121) {
-      cc.code = 0xc000;
+  else if (cc.ccs == 0x8812) {
+    if ((ulonglong)cc < 0x212100000000) {
+      cc.ccs = 0xc000;
     }
     else {
-      cc.code = 0x8143;
+      cc.ccs = 0x8143;
     }
   }
-  *(wc_uint32 *)wVar1 = cc.code;
-  *(wc_table **)(wVar1 + 4) = in_stack_0000000c;
+  *in_stack_00000004 = cc;
 LAB_080baacc:
-  return (wc_wchar_t)(cc & 0xffffffff | ZEXT48(in_stack_0000000c) << 0x20);
+  wVar2.code = cc.code;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_ksx1001_to_johab(wc_wchar_t cc)
 
 {
-  wc_ccs wVar1;
-  uint uVar2;
-  uint in_stack_0000000c;
+  uint uVar1;
+  wc_uint32 ucs;
+  wc_ccs *in_stack_00000004;
   
-  wVar1 = cc.ccs;
-  uVar2 = in_stack_0000000c & 0x7f7f;
-  if ((((uVar2 < 0x2121) || (0x2420 < uVar2)) && ((uVar2 < 0x2454 || (0x2c7e < uVar2)))) &&
-     ((uVar2 < 0x4a21 || (0x7d7e < uVar2)))) {
+  uVar1 = cc.code & 0x7f7f;
+  if ((((uVar1 < 0x2121) || (0x2420 < uVar1)) && ((uVar1 < 0x2454 || (0x2c7e < uVar1)))) &&
+     ((uVar1 < 0x4a21 || (0x7d7e < uVar1)))) {
     if (WcOption.ucs_conv == '\0') {
-      cc.code = 0xc000;
+      cc.ccs = 0xc000;
     }
     else {
-      wc_any_to_ucs((wc_wchar_t)(CONCAT44(in_stack_0000000c,cc.code) & 0x7f7fffffffff));
-      wc_ucs_to_johab((int)&cc + 4);
+      ucs = wc_any_to_ucs((wc_wchar_t)((ulonglong)cc & 0x7f7fffffffff));
+      wc_ucs_to_johab(ucs);
     }
-    *(wc_uint32 *)wVar1 = cc.code;
-    *(uint *)(wVar1 + 4) = uVar2;
+    *in_stack_00000004 = cc.ccs;
+    in_stack_00000004[1] = uVar1;
   }
   else {
-    *(undefined4 *)cc.ccs = 0x8812;
-    *(uint *)(cc.ccs + 4) = uVar2;
+    *in_stack_00000004 = 0x8812;
+    in_stack_00000004[1] = uVar1;
   }
-  return (wc_wchar_t)(cc & 0xffffffff | ((ulonglong)in_stack_0000000c & 0x7f7f) << 0x20);
+  return (wc_wchar_t)(CONCAT44(cc.code,in_stack_00000004) & 0x7f7fffffffff);
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_ucs_to_johab(wc_uint32 ucs)
 
 {
-  wc_table *in_stack_00000008;
+  wc_table *pwVar1;
+  wc_wchar_t wVar2;
+  wc_ccs *in_stack_00000004;
   wc_ccs local_24;
   wc_uint32 local_20;
   wc_wchar_t cc;
   wc_table *t;
   
-  if ((in_stack_00000008 < (wc_table *)0xac00) || ((wc_table *)0xd7a3 < in_stack_00000008)) {
-    if ((in_stack_00000008 < (wc_table *)0x3131) || ((wc_table *)0x3163 < in_stack_00000008)) {
-      wc_get_ucs_table(0x8812);
-      wc_ucs_to_any((wc_uint32)&local_24,in_stack_00000008);
+  if ((ucs < 0xac00) || (0xd7a3 < ucs)) {
+    if ((ucs < 0x3131) || (0x3163 < ucs)) {
+      pwVar1 = wc_get_ucs_table(0x8812);
+      wc_ucs_to_any(ucs,pwVar1);
       cc.ccs = local_24;
       cc.code = local_20;
     }
     else {
-      wc_get_ucs_table(0x8811);
-      wc_ucs_to_any((wc_uint32)&cc,in_stack_00000008);
+      pwVar1 = wc_get_ucs_table(0x8811);
+      wc_ucs_to_any(ucs,pwVar1);
     }
   }
   else {
-    cc.code = wc_N_to_johab1((wc_uint32)(in_stack_00000008 + -0xac0));
+    cc.code = wc_N_to_johab1(ucs - 0xac00);
     cc.ccs = 0x880f;
   }
-  *(wc_ccs *)ucs = cc.ccs;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = cc.code;
+  wVar2.code = cc.code;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_johab1_to_N(wc_uint32 code)
 
@@ -63345,6 +65710,8 @@ wc_uint32 wc_johab1_to_N(wc_uint32 code)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_uint32 wc_N_to_johab1(wc_uint32 code)
 
 {
@@ -63352,14 +65719,13 @@ wc_uint32 wc_N_to_johab1(wc_uint32 code)
   wc_uint32 b;
   wc_uint32 a;
   
-  return (uint)N_johab1_map[1][((code >> 2) / 7) % 0x15] << 5 |
-         (uint)N_johab1_map[code / 0x24c] << 10 |
-         (uint)*(byte *)((int)N_johab1_map + code + ((code >> 2) / 7) * -0x1c + 0x40) | 0x8000;
+  return (uint)N_johab1_map[1][(code / 0x1c) % 0x15] << 5 | (uint)N_johab1_map[code / 0x24c] << 10 |
+         (uint)N_johab1_map[2][code % 0x1c] | 0x8000;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_johab_to_cs128w(wc_wchar_t cc)
 
@@ -63371,33 +65737,33 @@ wc_wchar_t wc_johab_to_cs128w(wc_wchar_t cc)
   wc_uint32 wVar5;
   int iVar6;
   uint uVar7;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar8;
+  wc_ccs *in_stack_00000004;
   wc_uint32 n;
   wc_uchar lb;
   wc_uchar ub;
   
-  if (in_stack_0000000c < 0xd800) {
-    wVar5 = wc_johab1_to_N(in_stack_0000000c);
+  if (cc.code < 0xd800) {
+    wVar5 = wc_johab1_to_N(cc.code);
     if (wVar5 == 0xffffffff) {
-      if ((in_stack_0000000c & 0xff) < 0x81) {
+      if ((cc.code & 0xff) < 0x81) {
         iVar6 = 0x41;
       }
       else {
         iVar6 = 0x43;
       }
-      uVar7 = (((in_stack_0000000c >> 8 & 0xff) * 0xbc + (in_stack_0000000c & 0xff)) - iVar6) -
-              0x60f0;
-      in_stack_0000000c = (uVar7 >> 7) * 0x100 + (uVar7 & 0x7f);
-      cc.code = 0x8811;
+      uVar7 = (((cc.code >> 8 & 0xff) * 0xbc + (cc.code & 0xff)) - iVar6) - 0x60f0;
+      cc.code = (uVar7 >> 7) * 0x100 + (uVar7 & 0x7f);
+      cc.ccs = 0x8811;
     }
     else {
-      in_stack_0000000c = ((wVar5 >> 7) + 0x21) * 0x100 + (wVar5 & 0x7f);
-      cc.code = 0x8810;
+      cc.code = ((wVar5 >> 7) + 0x21) * 0x100 + (wVar5 & 0x7f);
+      cc.ccs = 0x8810;
     }
   }
   else {
-    bVar1 = (byte)(in_stack_0000000c >> 8);
-    bVar2 = (byte)in_stack_0000000c;
+    bVar1 = cc.code._1_1_;
+    bVar2 = cc.code;
     if (bVar1 < 0xe0) {
       cVar3 = (bVar1 + 0x28) * '\x02' + '\x1f';
     }
@@ -63416,17 +65782,19 @@ wc_wchar_t wc_johab_to_cs128w(wc_wchar_t cc)
     else {
       _lb = CONCAT11(cVar3 + '\x01',bVar2 + 0x80);
     }
-    in_stack_0000000c = (uint)_lb;
-    cc.code = 0x8812;
+    cc.code = (wc_uint32)_lb;
+    cc.ccs = 0x8812;
   }
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(uint *)(cc.ccs + 4) = in_stack_0000000c;
-  return (wc_wchar_t)CONCAT44(in_stack_0000000c,cc.ccs);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = cc.code;
+  wVar8.code = cc.code;
+  wVar8.ccs = (wc_ccs)in_stack_00000004;
+  return wVar8;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_cs128w_to_johab(wc_wchar_t cc)
 
@@ -63434,25 +65802,25 @@ wc_wchar_t wc_cs128w_to_johab(wc_wchar_t cc)
   uint uVar1;
   char cVar2;
   int iVar3;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar4;
+  undefined4 *in_stack_00000004;
   wc_uint32 n;
   wc_uchar lb;
   wc_uchar ub;
   
-  if (cc.code == 0x8811) {
-    uVar1 = (in_stack_0000000c >> 8 & 0x7f) * 0x80 + (in_stack_0000000c & 0x7f);
+  if (cc.ccs == 0x8811) {
+    uVar1 = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
     if (uVar1 % 0xbc < 0x3e) {
       iVar3 = 0x41;
     }
     else {
       iVar3 = 0x43;
     }
-    in_stack_0000000c = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
+    cc.code = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
   }
-  else if (cc.code == 0x8812) {
-    ub = (byte)(in_stack_0000000c >> 8) & 0x7f;
+  else if (cc.ccs == 0x8812) {
+    _lb = cc.code & 0x7f7f;
     if (ub < 0x4a) {
-      lb = (byte)in_stack_0000000c & 0x7f;
       if ((ub - 0x1f & 1) == 0) {
         if (lb < 0x6f) {
           cVar2 = '\x10';
@@ -63467,7 +65835,6 @@ wc_wchar_t wc_cs128w_to_johab(wc_wchar_t cc)
       _lb = CONCAT11(((byte)(ub - 0x1f) >> 1) - 0x28,lb + cVar2);
     }
     else {
-      lb = (byte)in_stack_0000000c & 0x7f;
       if ((ub + 0xb6 & 1) == 0) {
         if (lb < 0x6f) {
           cVar2 = '\x10';
@@ -63481,19 +65848,21 @@ wc_wchar_t wc_cs128w_to_johab(wc_wchar_t cc)
       }
       _lb = CONCAT11(((byte)(ub + 0xb6) >> 1) - 0x20,lb + cVar2);
     }
-    in_stack_0000000c = (uint)_lb;
+    cc.code = (wc_uint32)_lb;
   }
-  else if (cc.code == 0x8810) {
-    in_stack_0000000c =
-         wc_N_to_johab1(((in_stack_0000000c >> 8 & 0x7f) + 0x1ffffdf) * 0x80 +
-                        (in_stack_0000000c & 0x7f));
+  else if (cc.ccs == 0x8810) {
+    cc.code = wc_N_to_johab1(((cc.code >> 8 & 0x7f) + 0x1ffffdf) * 0x80 + (cc.code & 0x7f));
   }
-  *(undefined4 *)cc.ccs = 0x880f;
-  *(uint *)(cc.ccs + 4) = in_stack_0000000c;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)in_stack_0000000c << 0x20);
+  *in_stack_00000004 = 0x880f;
+  in_stack_00000004[1] = cc.code;
+  wVar4.code = cc.code;
+  wVar4.ccs = (wc_ccs)in_stack_00000004;
+  return wVar4;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_johab(Str is,wc_ces ces)
 
@@ -63570,12 +65939,15 @@ Str wc_conv_from_johab(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_johab(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  undefined4 uVar2;
+  undefined4 local_14;
+  undefined4 local_10;
   
 LAB_080bb301:
   do {
@@ -63585,21 +65957,21 @@ LAB_080bb3bc:
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)(cc.code >> 8);
+      os->ptr[iVar1] = cc.code._1_1_;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)cc.code;
+      os->ptr[iVar1] = cc.code;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       return;
     }
     if (0x880f < cc.ccs) {
       if (cc.ccs < 0x8813) {
-        wc_cs128w_to_johab((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs128w_to_johab(cc);
         goto LAB_080bb3bc;
       }
       if (cc.ccs == 0xc000) {
@@ -63611,17 +65983,18 @@ LAB_080bb3bc:
       }
 LAB_080bb4d3:
       if (WcOption.ucs_conv == '\0') {
-        if ((cc.ccs & 0x18000) == 0) {
-          cc.ccs = 0x4000;
+        if (((ulonglong)cc & 0x18000) == 0) {
+          uVar2 = 0x4000;
         }
         else {
-          cc.ccs = 0xc000;
+          uVar2 = 0xc000;
         }
+        cc.ccs = uVar2;
       }
       else {
-        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-        cc.ccs = local_14;
+        wc_any_to_any_ces(cc,st);
         cc.code = local_10;
+        cc.ccs = local_14;
       }
       goto LAB_080bb301;
     }
@@ -63638,16 +66011,16 @@ LAB_080bb4d3:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
       goto LAB_080bb4d3;
     }
-    wc_ksx1001_to_johab((wc_wchar_t)CONCAT44(0x8143,&local_14));
-    cc.ccs = local_14;
+    wc_ksx1001_to_johab(cc);
     cc.code = local_10;
+    cc.ccs = local_14;
   } while( true );
 }
 
@@ -63659,6 +66032,7 @@ Str wc_char_conv_from_johab(wc_uchar c,wc_status *st)
   int iVar1;
   Str p_Var2;
   byte bVar3;
+  wc_uchar c_local;
   
   if (st->state == -1) {
     st->state = 0;
@@ -63706,6 +66080,8 @@ Str wc_char_conv_from_johab(wc_uchar c,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_putc_init(wc_ces f_ces,wc_ces t_ces)
 
 {
@@ -63718,13 +66094,15 @@ void wc_putc_init(wc_ces f_ces,wc_ces t_ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_putc(char *c,FILE *f)
 
 {
-  anon_subr_void_varargs_for_push_to *paVar1;
+  _func_void_varargs *p_Var1;
   wc_ces f_ces;
   Str p_Var2;
-  wc_uchar *local_18;
+  undefined4 local_18;
   undefined4 local_14;
   wc_uchar *p;
   
@@ -63739,15 +66117,17 @@ void wc_putc(char *c,FILE *f)
   }
   Strclear(putc_str);
   while (*p != '\0') {
-    paVar1 = (putc_st.ces_info)->push_to;
-    wtf_parse(&local_18);
-    (*paVar1)(putc_str,local_18,local_14,&putc_st);
+    p_Var1 = (putc_st.ces_info)->push_to;
+    wtf_parse(&p);
+    (*p_Var1)(putc_str,local_18,local_14,&putc_st);
   }
   fwrite(putc_str->ptr,1,putc_str->length,(FILE *)f);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_putc_end(FILE *f)
 
@@ -63761,6 +66141,8 @@ void wc_putc_end(FILE *f)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_putc_clear_status(void)
 
@@ -63779,6 +66161,8 @@ void wc_putc_clear_status(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int map_cmp(void *a,void *b)
 
 {
@@ -63789,6 +66173,8 @@ int map_cmp(void *a,void *b)
 
 
 
+// WARNING: Unknown calling convention
+
 int map3_cmp(void *a,void *b)
 
 {
@@ -63798,6 +66184,8 @@ int map3_cmp(void *a,void *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int map_range_cmp(void *a,void *b)
 
@@ -63818,6 +66206,8 @@ int map_range_cmp(void *a,void *b)
 
 
 
+// WARNING: Unknown calling convention
+
 int map2_range_cmp(void *a,void *b)
 
 {
@@ -63836,6 +66226,8 @@ int map2_range_cmp(void *a,void *b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int map3_range_cmp(void *a,void *b)
 
@@ -63860,10 +66252,10 @@ wc_map * wc_map_search(wc_uint16 code,wc_map *map,size_t n)
 
 {
   wc_map *pwVar1;
-  wc_uint16 local_10 [6];
+  wc_uint16 code_local;
   
-  local_10[0] = code;
-  pwVar1 = (wc_map *)bsearch(local_10,map,n,4,map_cmp);
+  code_local = code;
+  pwVar1 = (wc_map *)bsearch(&code_local,map,n,4,map_cmp);
   return pwVar1;
 }
 
@@ -63873,6 +66265,8 @@ wc_map3 * wc_map3_search(wc_uint16 c1,wc_uint16 c2,wc_map3 *map,size_t n)
 
 {
   wc_map3 *pwVar1;
+  wc_uint16 c2_local;
+  wc_uint16 c1_local;
   wc_uint32 code;
   
   code = CONCAT22(c1,c2);
@@ -63886,10 +66280,10 @@ wc_map * wc_map_range_search(wc_uint16 code,wc_map *map,int n)
 
 {
   wc_map *pwVar1;
-  wc_uint16 local_10 [6];
+  wc_uint16 code_local;
   
-  local_10[0] = code;
-  pwVar1 = (wc_map *)bsearch(local_10,map,n,4,map_range_cmp);
+  code_local = code;
+  pwVar1 = (wc_map *)bsearch(&code_local,map,n,4,map_range_cmp);
   return pwVar1;
 }
 
@@ -63899,10 +66293,10 @@ wc_map * wc_map2_range_search(wc_uint16 code,wc_map *map,size_t n)
 
 {
   wc_map *pwVar1;
-  wc_uint16 local_10 [6];
+  wc_uint16 code_local;
   
-  local_10[0] = code;
-  pwVar1 = (wc_map *)bsearch(local_10,map,n,4,map2_range_cmp);
+  code_local = code;
+  pwVar1 = (wc_map *)bsearch(&code_local,map,n,4,map2_range_cmp);
   return pwVar1;
 }
 
@@ -63912,16 +66306,16 @@ wc_map3 * wc_map3_range_search(wc_uint16 code,wc_map3 *map,size_t n)
 
 {
   wc_map3 *pwVar1;
-  wc_uint16 local_10 [6];
+  wc_uint16 code_local;
   
-  local_10[0] = code;
-  pwVar1 = (wc_map3 *)bsearch(local_10,map,n,6,map3_range_cmp);
+  code_local = code;
+  pwVar1 = (wc_map3 *)bsearch(&code_local,map,n,6,map3_range_cmp);
   return pwVar1;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_sjis_to_jis(wc_wchar_t cc)
 
@@ -63930,12 +66324,13 @@ wc_wchar_t wc_sjis_to_jis(wc_wchar_t cc)
   byte bVar2;
   char cVar3;
   char cVar4;
-  undefined4 in_stack_0000000c;
+  wc_wchar_t wVar5;
+  wc_ccs *in_stack_00000004;
   wc_uchar lb;
   wc_uchar ub;
   
-  bVar1 = (byte)((uint)in_stack_0000000c >> 8);
-  bVar2 = (byte)in_stack_0000000c;
+  bVar1 = cc.code._1_1_;
+  bVar2 = cc.code;
   if (bVar1 < 0xf0) {
     if (bVar1 < 0xa0) {
       cVar3 = -0x7f;
@@ -63956,7 +66351,7 @@ wc_wchar_t wc_sjis_to_jis(wc_wchar_t cc)
     else {
       _lb = CONCAT11(cVar3 + '\"',bVar2 + 0x82);
     }
-    cc.code = 0x8142;
+    cc.ccs = 0x8142;
   }
   else {
     if (bVar2 < 0x9f) {
@@ -63971,56 +66366,61 @@ wc_wchar_t wc_sjis_to_jis(wc_wchar_t cc)
     else {
       _lb = CONCAT11(N_johab1_map[bVar1],bVar2 + 0x82);
     }
-    cc.code = 0x8150;
+    cc.ccs = 0x8150;
   }
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(uint *)(cc.ccs + 4) = (uint)_lb;
-  return (wc_wchar_t)(ulonglong)CONCAT24(_lb,cc.ccs);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = (uint)_lb;
+  wVar5.code._0_2_ = _lb;
+  wVar5.ccs = (wc_ccs)in_stack_00000004;
+  wVar5.code._2_2_ = 0;
+  return wVar5;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_jis_to_sjis(wc_wchar_t cc)
 
 {
   char cVar1;
   byte bVar2;
-  uint in_stack_0000000c;
+  uint uVar3;
+  wc_wchar_t wVar4;
+  wc_ccs *in_stack_00000004;
   wc_uchar lb;
   wc_uchar ub;
   
-  bVar2 = (byte)(in_stack_0000000c >> 8);
-  lb = (byte)in_stack_0000000c & 0x7f;
-  if (cc.code == 0x8150) {
-    if ((in_stack_0000000c & 0x100) == 0) {
+  _lb = cc.code & 0x7f7f;
+  if (cc.ccs == 0x8150) {
+    if (((ulonglong)cc & 0x10000000000) == 0) {
       cVar1 = '}';
     }
     else {
       cVar1 = '\x1f';
     }
-    _lb = CONCAT11(bVar2,lb + cVar1) & 0x7fff;
+    lb = lb + cVar1;
     if (0x7e < lb) {
-      _lb = (bVar2 & 0x7f) << 8 | (ushort)(byte)(lb + 1);
+      lb = lb + 1;
     }
-    _lb = _lb & 0xff | (ushort)jisx02132_sjis_map[ub] << 8;
-    if (jisx02132_sjis_map[ub] == 0) {
-      *(undefined4 *)cc.ccs = 0xc000;
-      *(uint *)(cc.ccs + 4) = in_stack_0000000c;
+    uVar3 = (uint)ub;
+    _lb = CONCAT11(jisx02132_sjis_map[uVar3],lb);
+    if (jisx02132_sjis_map[uVar3] == '\0') {
+      *in_stack_00000004 = 0xc000;
+      in_stack_00000004[1] = cc.code;
       goto LAB_080bbc70;
     }
   }
   else {
-    if ((in_stack_0000000c & 0x100) == 0) {
+    if (((ulonglong)cc & 0x10000000000) == 0) {
       cVar1 = '}';
     }
     else {
       cVar1 = '\x1f';
     }
-    _lb = CONCAT11(bVar2,lb + cVar1) & 0x7fff;
+    lb = lb + cVar1;
     if (0x7e < lb) {
-      _lb = (bVar2 & 0x7f) << 8 | (ushort)(byte)(lb + 1);
+      lb = lb + 1;
     }
     bVar2 = (byte)((int)(ub - 0x21) >> 1);
     if (bVar2 < 0x1f) {
@@ -64029,105 +66429,115 @@ wc_wchar_t wc_jis_to_sjis(wc_wchar_t cc)
     else {
       cVar1 = -0x3f;
     }
-    _lb = _lb & 0xff | (ushort)(byte)(bVar2 + cVar1) << 8;
+    _lb = CONCAT11(bVar2 + cVar1,lb);
   }
-  in_stack_0000000c = (uint)_lb;
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(uint *)(cc.ccs + 4) = in_stack_0000000c;
+  cc.code = (wc_uint32)_lb;
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = cc.code;
 LAB_080bbc70:
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)in_stack_0000000c << 0x20);
+  wVar4.code = cc.code;
+  wVar4.ccs = (wc_ccs)in_stack_00000004;
+  return wVar4;
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_sjis_ext_to_cs94w(wc_wchar_t cc)
 
 {
   byte bVar1;
-  byte bVar2;
-  char cVar3;
-  char cVar4;
-  undefined4 in_stack_0000000c;
-  wc_uchar lb;
-  wc_uchar ub;
-  
-  bVar1 = (byte)((uint)in_stack_0000000c >> 8);
-  bVar2 = (byte)in_stack_0000000c;
-  if (bVar1 < 0xa0) {
-    cVar3 = -0x7f;
-  }
-  else {
-    cVar3 = -0x3f;
-  }
-  cVar3 = (bVar1 - cVar3) * '\x02';
-  if (bVar2 < 0x9f) {
-    if (bVar2 < 0x7f) {
-      cVar4 = '\x1f';
-    }
-    else {
-      cVar4 = ' ';
-    }
-    _lb = CONCAT11(cVar3 + '!',bVar2 - cVar4);
-  }
-  else {
-    _lb = CONCAT11(cVar3 + '\"',bVar2 + 0x82);
-  }
-  if (ub < 0x7f) {
-    cc.code = 0x8814;
-  }
-  else {
-    _lb = _lb & 0xff | (ushort)(byte)(ub + 0xa2) << 8;
-    cc.code = 0x8815;
-  }
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(uint *)(cc.ccs + 4) = (uint)_lb;
-  return (wc_wchar_t)(ulonglong)CONCAT24(_lb,cc.ccs);
-}
-
-
-
-// WARNING: Could not reconcile some variable overlaps
-
-wc_wchar_t wc_cs94w_to_sjis_ext(wc_wchar_t cc)
-
-{
-  byte bVar1;
   char cVar2;
-  byte bVar3;
-  ushort in_stack_0000000c;
+  char cVar3;
+  wc_wchar_t wVar4;
+  wc_ccs *in_stack_00000004;
   wc_uchar lb;
   wc_uchar ub;
   
-  _lb = in_stack_0000000c & 0x7f7f;
-  if (cc.code == 0x8815) {
-    _lb = in_stack_0000000c & 0x7f | (ushort)(byte)(ub + 0x5e) << 8;
-  }
-  if ((_lb & 0x100) == 0) {
-    cVar2 = '}';
-  }
-  else {
-    cVar2 = '\x1f';
-  }
-  bVar1 = lb + cVar2;
-  if (0x7e < bVar1) {
-    bVar1 = bVar1 + 1;
-  }
-  bVar3 = (byte)((int)((byte)(_lb >> 8) - 0x21) >> 1);
-  if (bVar3 < 0x1f) {
+  bVar1 = cc.code;
+  if (cc.code._1_1_ < 0xa0) {
     cVar2 = -0x7f;
   }
   else {
     cVar2 = -0x3f;
   }
-  _lb = CONCAT11(bVar3 + cVar2,bVar1);
-  *(undefined4 *)cc.ccs = 0x8813;
-  *(uint *)(cc.ccs + 4) = (uint)_lb;
-  return (wc_wchar_t)(ulonglong)CONCAT24(_lb,cc.ccs);
+  cVar2 = (cc.code._1_1_ - cVar2) * '\x02';
+  if (bVar1 < 0x9f) {
+    if (bVar1 < 0x7f) {
+      cVar3 = '\x1f';
+    }
+    else {
+      cVar3 = ' ';
+    }
+    _lb = CONCAT11(cVar2 + '!',bVar1 - cVar3);
+  }
+  else {
+    _lb = CONCAT11(cVar2 + '\"',bVar1 + 0x82);
+  }
+  if (ub < 0x7f) {
+    cc.ccs = 0x8814;
+  }
+  else {
+    _lb = CONCAT11(ub + 0xa2,lb);
+    cc.ccs = 0x8815;
+  }
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = (uint)_lb;
+  wVar4.code._0_2_ = _lb;
+  wVar4.ccs = (wc_ccs)in_stack_00000004;
+  wVar4.code._2_2_ = 0;
+  return wVar4;
 }
 
 
+
+// WARNING: Unknown calling convention
+
+wc_wchar_t wc_cs94w_to_sjis_ext(wc_wchar_t cc)
+
+{
+  char cVar1;
+  byte bVar2;
+  wc_wchar_t wVar3;
+  undefined4 *in_stack_00000004;
+  wc_uchar lb;
+  wc_uchar ub;
+  
+  ub = cc.code._1_1_ & 0x7f;
+  lb = cc.code & 0x7f;
+  if (cc.ccs == 0x8815) {
+    ub = ub + 0x5e;
+  }
+  if ((ub & 1) == 0) {
+    cVar1 = '}';
+  }
+  else {
+    cVar1 = '\x1f';
+  }
+  lb = lb + cVar1;
+  if (0x7e < lb) {
+    lb = lb + 1;
+  }
+  bVar2 = (byte)((int)(ub - 0x21) >> 1);
+  if (bVar2 < 0x1f) {
+    cVar1 = -0x7f;
+  }
+  else {
+    cVar1 = -0x3f;
+  }
+  _lb = CONCAT11(bVar2 + cVar1,lb);
+  *in_stack_00000004 = 0x8813;
+  in_stack_00000004[1] = (uint)_lb;
+  wVar3.code._0_2_ = _lb;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  wVar3.code._2_2_ = 0;
+  return wVar3;
+}
+
+
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_sjis_ext1_to_N(wc_uint32 c)
 
@@ -64152,6 +66562,8 @@ wc_uint32 wc_sjis_ext1_to_N(wc_uint32 c)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_uint32 wc_sjis_ext2_to_N(wc_uint32 c)
 
 {
@@ -64172,6 +66584,7 @@ wc_uint32 wc_sjis_ext2_to_N(wc_uint32 c)
 
 
 // WARNING: Removing unreachable block (ram,0x080bbee0)
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_sjis(Str is,wc_ces ces)
 
@@ -64291,6 +66704,7 @@ Str wc_conv_from_sjis(Str is,wc_ces ces)
 
 
 // WARNING: Removing unreachable block (ram,0x080bc270)
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_sjisx0213(Str is,wc_ces ces)
 
@@ -64419,43 +66833,46 @@ Str wc_conv_from_sjisx0213(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_sjis(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
   char cVar2;
   byte bVar3;
-  wc_ccs local_24;
-  wc_uint32 local_20;
+  undefined4 uVar4;
+  undefined4 local_24;
+  undefined4 local_20;
   wc_uchar lb;
   wc_uchar ub;
   
   do {
     while( true ) {
+      bVar3 = cc.code;
       if (cc.ccs == 0x8142) {
-        if ((cc.code & 0x100) == 0) {
+        if (((ulonglong)cc & 0x10000000000) == 0) {
           cVar2 = '}';
         }
         else {
           cVar2 = '\x1f';
         }
-        lb = ((byte)cc.code & 0x7f) + cVar2;
+        lb = (bVar3 & 0x7f) + cVar2;
         if (0x7e < lb) {
           lb = lb + 1;
         }
-        bVar3 = (byte)((int)(((byte)(cc.code >> 8) & 0x7f) - 0x21) >> 1);
+        bVar3 = (byte)((int)((cc.code._1_1_ & 0x7f) - 0x21) >> 1);
         if (bVar3 < 0x1f) {
           cVar2 = -0x7f;
         }
         else {
           cVar2 = -0x3f;
         }
-        ub = bVar3 + cVar2;
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = ub;
+        os->ptr[iVar1] = bVar3 + cVar2;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
@@ -64470,22 +66887,22 @@ void wc_push_to_sjis(Str os,wc_wchar_t cc,wc_status *st)
       if (cc.ccs < 0x8143) break;
       if (cc.ccs < 0x8816) {
         if (0x8813 < cc.ccs) {
-          wc_cs94w_to_sjis_ext((wc_wchar_t)CONCAT44(cc.ccs,&local_24));
-          cc.ccs = local_24;
+          wc_cs94w_to_sjis_ext(cc);
           cc.code = local_20;
+          cc.ccs = local_24;
 LAB_080bc807:
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 8);
+          os->ptr[iVar1] = cc.code._1_1_;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
+          os->ptr[iVar1] = cc.code;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
@@ -64501,17 +66918,18 @@ LAB_080bc807:
       }
 LAB_080bc8f0:
       if (WcOption.ucs_conv == '\0') {
-        if ((cc.ccs & 0x18000) == 0) {
-          cc.ccs = 0x4000;
+        if (((ulonglong)cc & 0x18000) == 0) {
+          uVar4 = 0x4000;
         }
         else {
-          cc.ccs = 0xc000;
+          uVar4 = 0xc000;
         }
+        cc.ccs = uVar4;
       }
       else {
-        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_24),(wc_status *)cc.code);
-        cc.ccs = local_24;
+        wc_any_to_any_ces(cc,st);
         cc.code = local_20;
+        cc.ccs = local_24;
       }
     }
     if (cc.ccs != 0x149) {
@@ -64527,7 +66945,7 @@ LAB_080bc8f0:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar3;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -64539,13 +66957,13 @@ LAB_080bc8f0:
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (byte)cc.code | 0x80;
+      os->ptr[iVar1] = bVar3 | 0x80;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       return;
     }
     if (WcOption.fix_width_conv == '\0') {
-      wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&cc));
+      wc_jisx0201k_to_jisx0208(cc);
     }
     else {
       cc.ccs = 0x4000;
@@ -64555,19 +66973,23 @@ LAB_080bc8f0:
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_sjisx0213(Str os,wc_wchar_t cc,wc_status *st)
 
 {
-  int iVar1;
-  char cVar2;
-  byte bVar3;
-  wc_ccs local_24;
-  wc_uint32 local_20;
+  wc_uchar wVar1;
+  int iVar2;
+  char cVar3;
+  byte bVar4;
+  undefined4 uVar5;
+  undefined4 local_24;
+  undefined4 local_20;
   wc_uchar lb;
   wc_uchar ub;
   
   while( true ) {
-    bVar3 = (byte)(cc.code >> 8);
+    bVar4 = cc.code;
     if (cc.ccs == 0x8142) break;
     if (cc.ccs < 0x8143) {
       if (cc.ccs == 0x149) {
@@ -64575,14 +66997,14 @@ void wc_push_to_sjisx0213(Str os,wc_wchar_t cc,wc_status *st)
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (byte)cc.code | 0x80;
-          os->length = iVar1 + 1;
+          iVar2 = os->length;
+          os->ptr[iVar2] = bVar4 | 0x80;
+          os->length = iVar2 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
         if (WcOption.fix_width_conv == '\0') {
-          wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&cc));
+          wc_jisx0201k_to_jisx0208(cc);
         }
         else {
           cc.ccs = 0x4000;
@@ -64600,55 +67022,56 @@ void wc_push_to_sjisx0213(Str os,wc_wchar_t cc,wc_status *st)
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
-          iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
-          os->length = iVar1 + 1;
+          iVar2 = os->length;
+          os->ptr[iVar2] = bVar4;
+          os->length = iVar2 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
 LAB_080bccfd:
         if (WcOption.ucs_conv == '\0') {
-          if ((cc.ccs & 0x18000) == 0) {
-            cc.ccs = 0x4000;
+          if (((ulonglong)cc & 0x18000) == 0) {
+            uVar5 = 0x4000;
           }
           else {
-            cc.ccs = 0xc000;
+            uVar5 = 0xc000;
           }
+          cc.ccs = uVar5;
         }
         else {
-          wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_24),(wc_status *)cc.code);
-          cc.ccs = local_24;
+          wc_any_to_any_ces(cc,st);
           cc.code = local_20;
+          cc.ccs = local_24;
         }
       }
     }
     else if (cc.ccs == 0x8150) {
       if (WcOption.use_jisx0213 != '\0') {
-        if ((cc.code & 0x100) == 0) {
-          cVar2 = '}';
+        if (((ulonglong)cc & 0x10000000000) == 0) {
+          cVar3 = '}';
         }
         else {
-          cVar2 = '\x1f';
+          cVar3 = '\x1f';
         }
-        lb = ((byte)cc.code & 0x7f) + cVar2;
+        lb = (bVar4 & 0x7f) + cVar3;
         if (0x7e < lb) {
           lb = lb + 1;
         }
-        ub = jisx02132_sjis_map[bVar3 & 0x7f];
-        if (ub != '\0') {
+        wVar1 = jisx02132_sjis_map[cc.code._1_1_ & 0x7f];
+        if (wVar1 != '\0') {
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
-          iVar1 = os->length;
-          os->ptr[iVar1] = ub;
-          os->length = iVar1 + 1;
+          iVar2 = os->length;
+          os->ptr[iVar2] = wVar1;
+          os->length = iVar2 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
-          iVar1 = os->length;
-          os->ptr[iVar1] = lb;
-          os->length = iVar1 + 1;
+          iVar2 = os->length;
+          os->ptr[iVar2] = lb;
+          os->length = iVar2 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
@@ -64670,37 +67093,36 @@ LAB_080bccb4:
       cc.ccs = 0xc000;
     }
   }
-  if ((cc.code & 0x100) == 0) {
-    cVar2 = '}';
+  if (((ulonglong)cc & 0x10000000000) == 0) {
+    cVar3 = '}';
   }
   else {
-    cVar2 = '\x1f';
+    cVar3 = '\x1f';
   }
-  lb = ((byte)cc.code & 0x7f) + cVar2;
+  lb = (bVar4 & 0x7f) + cVar3;
   if (0x7e < lb) {
     lb = lb + 1;
   }
-  bVar3 = (byte)((int)((bVar3 & 0x7f) - 0x21) >> 1);
-  if (bVar3 < 0x1f) {
-    cVar2 = -0x7f;
+  bVar4 = (byte)((int)((cc.code._1_1_ & 0x7f) - 0x21) >> 1);
+  if (bVar4 < 0x1f) {
+    cVar3 = -0x7f;
   }
   else {
-    cVar2 = -0x3f;
+    cVar3 = -0x3f;
   }
-  ub = bVar3 + cVar2;
   if (os->area_size <= os->length + 1) {
     Strgrow(os);
   }
-  iVar1 = os->length;
-  os->ptr[iVar1] = ub;
-  os->length = iVar1 + 1;
+  iVar2 = os->length;
+  os->ptr[iVar2] = bVar4 + cVar3;
+  os->length = iVar2 + 1;
   os->ptr[os->length] = '\0';
   if (os->area_size <= os->length + 1) {
     Strgrow(os);
   }
-  iVar1 = os->length;
-  os->ptr[iVar1] = lb;
-  os->length = iVar1 + 1;
+  iVar2 = os->length;
+  os->ptr[iVar2] = lb;
+  os->length = iVar2 + 1;
   os->ptr[os->length] = '\0';
   return;
 }
@@ -64715,6 +67137,7 @@ Str wc_char_conv_from_sjis(wc_uchar c,wc_status *st)
   Str p_Var2;
   char cVar3;
   wc_ccs wVar4;
+  wc_uchar c_local;
   wc_wchar_t cc;
   
   if (st->state == -1) {
@@ -64815,6 +67238,7 @@ Str wc_char_conv_from_sjisx0213(wc_uchar c,wc_status *st)
   Str p_Var2;
   char cVar3;
   wc_ccs ccs;
+  wc_uchar c_local;
   wc_wchar_t cc;
   
   if (st->state == -1) {
@@ -64918,6 +67342,8 @@ Str wc_char_conv_from_sjisx0213(wc_uchar c,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_input_init(wc_ces ces,wc_status *st)
 
 {
@@ -64951,42 +67377,47 @@ void wc_input_init(wc_ces ces,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_output_init(wc_ces ces,wc_status *st)
 
 {
   wc_gset *pwVar1;
   uint uVar2;
   char cVar3;
-  int iVar4;
-  wc_ccs wVar5;
-  wc_table **ppwVar6;
-  wc_table *pwVar7;
+  wc_uint8 wVar4;
+  wc_uint8 wVar5;
+  undefined uVar6;
+  int iVar7;
+  wc_ccs wVar8;
+  wc_table **ppwVar9;
+  wc_table *pwVar10;
   size_t nw;
   size_t n;
   size_t i;
   wc_gset *gset;
   
   if (((output_set == '\0') || ((output_st.ces_info)->id != ces)) ||
-     (iVar4 = memcmp(&WcOption,&output_option,0x10), iVar4 != 0)) {
+     (iVar7 = memcmp(&WcOption,&output_option,0x10), iVar7 != 0)) {
     st->state = 0;
     st->ces_info = WcCesInfo + (ces & 0xff);
     pwVar1 = st->ces_info->gset;
     if ((((ces == 0x200811) || (ces == 0x200812)) || (ces == 0x200813)) &&
-       ((char)((uint)WcOption._4_4_ >> 0x18) != '\0')) {
-      wVar5 = 0x14a;
+       (SUB41(WcOption._4_4_,3) != '\0')) {
+      wVar8 = 0x14a;
     }
     else {
-      wVar5 = pwVar1->ccs;
+      wVar8 = pwVar1->ccs;
     }
-    st->g0_ccs = wVar5;
+    st->g0_ccs = wVar8;
     if ((((ces == 0x200811) || (ces == 0x200812)) || (ces == 0x200813)) &&
        ((char)WcOption._8_4_ != '\0')) {
-      wVar5 = 0x8140;
+      wVar8 = 0x8140;
     }
     else {
-      wVar5 = pwVar1[1].ccs;
+      wVar8 = pwVar1[1].ccs;
     }
-    st->g1_ccs = wVar5;
+    st->g1_ccs = wVar8;
     st->design[0] = st->g0_ccs;
     st->design[1] = 0;
     st->design[2] = 0;
@@ -64999,7 +67430,7 @@ void wc_output_init(wc_ces ces,wc_status *st)
     }
     st->tag = (Str)0x0;
     st->ntag = 0;
-    if ((char)((uint)WcOption._0_4_ >> 0x18) == '\0') {
+    if (SUB41(WcOption._0_4_,3) == '\0') {
       st->tlist = (wc_table **)0x0;
       st->tlistw = (wc_table **)0x0;
     }
@@ -65014,45 +67445,45 @@ void wc_output_init(wc_ces ces,wc_status *st)
           nw = nw + 1;
         }
       }
-      ppwVar6 = (wc_table **)GC_malloc((n + 1) * 4);
-      st->tlist = ppwVar6;
-      ppwVar6 = (wc_table **)GC_malloc((nw + 1) * 4);
-      st->tlistw = ppwVar6;
+      ppwVar9 = (wc_table **)GC_malloc((n + 1) * 4);
+      st->tlist = ppwVar9;
+      ppwVar9 = (wc_table **)GC_malloc((nw + 1) * 4);
+      st->tlistw = ppwVar9;
       nw = 0;
       n = 0;
       for (i = 0; pwVar1[i].ccs != 0; i = i + 1) {
         if ((pwVar1[i].ccs & 0x18000) == 0) {
-          if ((pwVar1[i].ccs != 0x149) || ((char)((uint)WcOption._8_4_ >> 8) != '\0')) {
-            ppwVar6 = st->tlist;
-            pwVar7 = wc_get_ucs_table(pwVar1[i].ccs);
-            ppwVar6[n] = pwVar7;
+          if ((pwVar1[i].ccs != 0x149) || (SUB41(WcOption._8_4_,1) != '\0')) {
+            ppwVar9 = st->tlist;
+            pwVar10 = wc_get_ucs_table(pwVar1[i].ccs);
+            ppwVar9[n] = pwVar10;
             n = n + 1;
           }
         }
         else {
           uVar2 = pwVar1[i].ccs;
           if (uVar2 == 0x8144) {
-            cVar3 = (char)((uint)WcOption._8_4_ >> 0x10);
+            cVar3 = SUB41(WcOption._8_4_,2);
 joined_r0x080bd7ba:
             if (cVar3 == '\0') goto LAB_080bd887;
           }
           else if (uVar2 < 0x8145) {
-            if ((((uVar2 == 0x8141) && ((char)((uint)WcOption._4_4_ >> 0x10) != '\0')) &&
-                (ces != 0x30203a)) && (ces != 0x30203b)) {
-              ppwVar6 = st->tlistw;
-              pwVar7 = wc_get_ucs_table(0x880e);
-              ppwVar6[nw] = pwVar7;
+            if ((((uVar2 == 0x8141) && (SUB41(WcOption._4_4_,2) != '\0')) && (ces != 0x30203a)) &&
+               (ces != 0x30203b)) {
+              ppwVar9 = st->tlistw;
+              pwVar10 = wc_get_ucs_table(0x880e);
+              ppwVar9[nw] = pwVar10;
               nw = nw + 1;
               goto LAB_080bd887;
             }
           }
           else if (uVar2 - 0x814f < 2) {
-            cVar3 = (char)((uint)WcOption._8_4_ >> 0x18);
+            cVar3 = SUB41(WcOption._8_4_,3);
             goto joined_r0x080bd7ba;
           }
-          ppwVar6 = st->tlistw;
-          pwVar7 = wc_get_ucs_table(pwVar1[i].ccs);
-          ppwVar6[nw] = pwVar7;
+          ppwVar9 = st->tlistw;
+          pwVar10 = wc_get_ucs_table(pwVar1[i].ccs);
+          ppwVar9[nw] = pwVar10;
           nw = nw + 1;
         }
 LAB_080bd887:
@@ -65061,7 +67492,10 @@ LAB_080bd887:
       st->tlistw[nw] = (wc_table *)0x0;
     }
     output_st.ces_info = st->ces_info;
-    output_st._4_4_ = *(undefined4 *)&st->gr;
+    output_st.gr = st->gr;
+    output_st.gl = st->gl;
+    output_st.ss = st->ss;
+    output_st._7_1_ = st->field_0x7;
     output_st.g0_ccs = st->g0_ccs;
     output_st.g1_ccs = st->g1_ccs;
     output_st.design[0] = st->design[0];
@@ -65076,14 +67510,32 @@ LAB_080bd887:
     output_st.base = st->base;
     output_st.shift = st->shift;
     output_set = '\x01';
-    output_option._0_4_ = WcOption._0_4_;
-    output_option._4_4_ = WcOption._4_4_;
-    output_option._8_4_ = WcOption._8_4_;
-    output_option._12_4_ = WcOption._12_4_;
+    output_option.auto_detect = WcOption.auto_detect;
+    output_option.use_combining = WcOption.use_combining;
+    output_option.use_language_tag = WcOption.use_language_tag;
+    output_option.ucs_conv = WcOption.ucs_conv;
+    output_option.pre_conv = WcOption.pre_conv;
+    output_option.fix_width_conv = WcOption.fix_width_conv;
+    output_option.use_gb12345_map = WcOption.use_gb12345_map;
+    output_option.use_jisx0201 = WcOption.use_jisx0201;
+    output_option.use_jisc6226 = WcOption.use_jisc6226;
+    output_option.use_jisx0201k = WcOption.use_jisx0201k;
+    output_option.use_jisx0212 = WcOption.use_jisx0212;
+    output_option.use_jisx0213 = WcOption.use_jisx0213;
+    output_option.strict_iso2022 = WcOption.strict_iso2022;
+    output_option.gb18030_as_ucs = WcOption.gb18030_as_ucs;
+    output_option.no_replace = WcOption.no_replace;
+    output_option.use_wide = WcOption.use_wide;
   }
   else {
     st->ces_info = output_st.ces_info;
-    *(undefined4 *)&st->gr = output_st._4_4_;
+    wVar4 = output_st.gl;
+    wVar5 = output_st.ss;
+    uVar6 = output_st._7_1_;
+    st->gr = output_st.gr;
+    st->gl = wVar4;
+    st->ss = wVar5;
+    st->field_0x7 = uVar6;
     st->g0_ccs = output_st.g0_ccs;
     st->g1_ccs = output_st.g1_ccs;
     st->design[0] = output_st.design[0];
@@ -65102,6 +67554,8 @@ LAB_080bd887:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_bool wc_ces_has_ccs(wc_ccs ccs,wc_status *st)
 
@@ -65127,13 +67581,18 @@ wc_bool wc_ces_has_ccs(wc_ccs ccs,wc_status *st)
 wc_wchar_t ucs_cs94_conv(wc_ccs ccs,wc_uint16 c)
 
 {
+  wc_wchar_t wVar1;
   undefined2 in_stack_0000000a;
   ushort in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
   *(undefined4 *)ccs = _c;
   *(uint *)(ccs + 4) = (uint)in_stack_0000000c;
-  return (wc_wchar_t)(ulonglong)CONCAT24(in_stack_0000000c,ccs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = ccs;
+  wVar1.code._2_2_ = 0;
+  return wVar1;
 }
 
 
@@ -65143,6 +67602,7 @@ wc_wchar_t ucs_viet_conv(wc_ccs ccs,wc_uint16 c)
 {
   undefined2 in_stack_0000000a;
   ushort in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
   if ((in_stack_0000000c & 0x80) == 0) {
@@ -65180,7 +67640,9 @@ wc_wchar_t ucs_cp1258_conv(wc_ccs ccs,wc_uint16 c)
 
 {
   undefined4 uVar1;
+  wc_wchar_t wVar2;
   ushort in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
   if (in_stack_0000000c < 0x100) {
@@ -65191,7 +67653,10 @@ wc_wchar_t ucs_cp1258_conv(wc_ccs ccs,wc_uint16 c)
   }
   *(undefined4 *)ccs = uVar1;
   *(uint *)(ccs + 4) = (uint)in_stack_0000000c;
-  return (wc_wchar_t)(ulonglong)CONCAT24(in_stack_0000000c,ccs);
+  wVar2.code._0_2_ = in_stack_0000000c;
+  wVar2.ccs = ccs;
+  wVar2.code._2_2_ = 0;
+  return wVar2;
 }
 
 
@@ -65201,6 +67666,7 @@ wc_wchar_t ucs_cns11643_conv(wc_ccs cs,wc_uint16 c)
 {
   undefined4 uVar1;
   ushort in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
   if ((short)in_stack_0000000c < 0) {
@@ -65220,11 +67686,19 @@ wc_wchar_t ucs_big5_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_big5_to_cs94w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_big5_to_cs94w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
@@ -65233,11 +67707,19 @@ wc_wchar_t ucs_johab2_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_johab_to_cs128w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_johab_to_cs128w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
@@ -65245,8 +67727,10 @@ wc_wchar_t ucs_johab2_conv(wc_ccs cs,wc_uint16 c)
 wc_wchar_t ucs_johab3_conv(wc_ccs cs,wc_uint16 c)
 
 {
+  wc_wchar_t wVar1;
   undefined2 in_stack_0000000a;
   ushort in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
   if ((((in_stack_0000000c < 0x2121) || (0x2420 < in_stack_0000000c)) &&
@@ -65259,7 +67743,10 @@ wc_wchar_t ucs_johab3_conv(wc_ccs cs,wc_uint16 c)
   }
   *(wc_ccs *)cs = cc.ccs;
   *(uint *)(cs + 4) = (uint)in_stack_0000000c;
-  return (wc_wchar_t)(ulonglong)CONCAT24(in_stack_0000000c,cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = cs;
+  wVar1.code._2_2_ = 0;
+  return wVar1;
 }
 
 
@@ -65268,11 +67755,19 @@ wc_wchar_t ucs_sjis_ext_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_sjis_ext_to_cs94w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
@@ -65281,11 +67776,19 @@ wc_wchar_t ucs_gbk_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_gbk_to_cs128w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_gbk_to_cs128w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
@@ -65294,11 +67797,19 @@ wc_wchar_t ucs_uhc_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_uhc_to_cs128w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_uhc_to_cs128w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
@@ -65307,14 +67818,24 @@ wc_wchar_t ucs_hkscs_conv(wc_ccs cs,wc_uint16 c)
 
 {
   wc_wchar_t wVar1;
+  wc_wchar_t wVar2;
   undefined2 in_stack_0000000a;
+  undefined2 in_stack_0000000c;
+  wc_uint16 c_local;
   wc_wchar_t cc;
   
-  wVar1 = wc_hkscs_to_cs128w((wc_wchar_t)CONCAT44(_c,cs));
-  return (wc_wchar_t)((ulonglong)wVar1 & 0xffffffff00000000 | (ulonglong)cs);
+  wVar1.code._0_2_ = in_stack_0000000c;
+  wVar1.ccs = _c;
+  wVar1.code._2_2_ = 0;
+  wVar1 = wc_hkscs_to_cs128w(wVar1);
+  wVar2.code = wVar1.code;
+  wVar2.ccs = cs;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_table * wc_get_ucs_table(wc_ccs ccs)
 
@@ -65376,65 +67897,73 @@ wc_table * wc_get_ucs_table(wc_ccs ccs)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_ucs_to_any(wc_uint32 ucs,wc_table *t)
 
 {
   wc_uint16 code;
   wc_map *pwVar1;
-  wc_uint32 extraout_EDX;
-  wc_uint32 extraout_EDX_00;
-  int *in_stack_0000000c;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   wc_wchar_t cc;
   wc_map *map;
   
-  code = (wc_uint16)t;
-  if ((((in_stack_0000000c != (int *)0x0) && (in_stack_0000000c[2] != 0)) && (t != (wc_table *)0x0))
-     && (t < (wc_table *)0x10000)) {
-    pwVar1 = wc_map_search(code,(wc_map *)in_stack_0000000c[2],in_stack_0000000c[1]);
+  code = (wc_uint16)ucs;
+  if ((((t != (wc_table *)0x0) && (t->map != (wc_map *)0x0)) && (ucs != 0)) && (ucs < 0x10000)) {
+    pwVar1 = wc_map_search(code,t->map,t->n);
     if (pwVar1 != (wc_map *)0x0) {
-      (*(code *)in_stack_0000000c[3])(ucs,*in_stack_0000000c,pwVar1->code2);
-      cc.code = extraout_EDX;
+      wVar2 = (*t->conv)();
+      cc.code = wVar2.code;
       goto LAB_080be020;
     }
   }
-  if ((in_stack_0000000c != (int *)0x0) && ((uint)t >> 0x10 == 2)) {
-    if (*in_stack_0000000c == 0x814f) {
+  if ((t != (wc_table *)0x0) && (ucs >> 0x10 == 2)) {
+    if (t->ccs == 0x814f) {
       map = wc_map_search(code,ucs_p2_jisx02131_map,0x19);
     }
-    else if (*in_stack_0000000c == 0x8150) {
+    else if (t->ccs == 0x8150) {
       map = wc_map_search(code,ucs_p2_jisx02132_map,0x115);
     }
-    else if (((*in_stack_0000000c == 0x881f) || (*in_stack_0000000c == 0x8820)) ||
-            (*in_stack_0000000c == 0x8821)) {
+    else if (((t->ccs == 0x881f) || (t->ccs == 0x8820)) || (t->ccs == 0x8821)) {
       map = wc_map_search(code,ucs_p2_hkscs_map,0x439);
     }
     else {
       map = (wc_map *)0x0;
     }
     if (map != (wc_map *)0x0) {
-      (*(code *)in_stack_0000000c[3])(ucs,*in_stack_0000000c,map->code2);
-      cc.code = extraout_EDX_00;
+      wVar2 = (*t->conv)();
+      cc.code = wVar2.code;
       goto LAB_080be020;
     }
   }
-  *(undefined4 *)ucs = 0x4000;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
+  *in_stack_00000004 = 0x4000;
+  in_stack_00000004[1] = cc.code;
 LAB_080be020:
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  wVar2.code = cc.code;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
 
 {
+  wc_wchar_t cc_00;
+  wc_wchar_t cc_01;
+  wc_wchar_t cc_02;
+  wc_wchar_t cc_03;
   ushort code;
-  uint uVar1;
-  wc_map *pwVar2;
-  int iVar3;
-  wc_uint32 wVar4;
-  wc_ccs local_44;
-  wc_uint32 local_40;
+  short sVar1;
+  uint uVar2;
+  uint uVar3;
+  wc_map *pwVar4;
+  int iVar5;
+  wc_uint32 wVar6;
+  uint local_40;
   undefined4 local_30;
   undefined4 local_2c;
   undefined4 local_28;
@@ -65445,135 +67974,137 @@ wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
   wc_uint16 *map;
   int f;
   
-  map = (wc_uint16 *)0x0;
-  f = cc.ccs & 0xff;
-  uVar1 = cc.ccs & 0xff00;
-  if (uVar1 == 0x1000) {
+  uVar2 = cc.ccs & 0xff;
+  uVar3 = cc.ccs & 0xff00;
+  if (uVar3 == 0x1000) {
     if ((cc.ccs & 0xffff) != 0x1000) {
       return 0xffffffff;
     }
     return cc.code;
   }
-  code = (ushort)((ulonglong)cc >> 0x20);
-  if (uVar1 < 0x1001) {
-    if (uVar1 == 0x200) {
-      if (((uint)f < 0x40) || (0x66 < (uint)f)) {
+  code = cc.code;
+  if (uVar3 < 0x1001) {
+    if (uVar3 == 0x200) {
+      if ((uVar2 < 0x40) || (0x66 < uVar2)) {
         return 0xffffffff;
       }
-      map = cs96_ucs_map[f - 0x40];
+      map = cs96_ucs_map[uVar2 - 0x40];
       cc.code = cc.code & 0x7f;
     }
-    else if (uVar1 < 0x201) {
-      if (uVar1 != 0x100) {
+    else if (uVar3 < 0x201) {
+      if (uVar3 != 0x100) {
         return 0xffffffff;
       }
-      if (((uint)f < 0x40) || (0x54 < (uint)f)) {
+      if ((uVar2 < 0x40) || (0x54 < uVar2)) {
         return 0xffffffff;
       }
-      map = cs94_ucs_map[f - 0x40];
+      map = cs94_ucs_map[uVar2 - 0x40];
       cc.code = cc.code & 0x7f;
     }
-    else if (uVar1 == 0x400) {
-      if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
+    else if (uVar3 == 0x400) {
+      if ((uVar2 < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
         return 0xffffffff;
       }
-      map = cs942_ucs_map[f - 0x40];
+      map = cs942_ucs_map[uVar2 - 0x40];
       cc.code = cc.code & 0x7f;
     }
     else {
-      if (uVar1 != 0x800) {
+      if (uVar3 != 0x800) {
         return 0xffffffff;
       }
-      if ((((ulonglong)cc & 0xff) == 0) || (0x28 < (uint)f)) {
+      if ((((ulonglong)cc & 0xff) == 0) || (0x28 < uVar2)) {
         return 0xffffffff;
       }
       if (cc.ccs == 0x81f) {
-        wc_tcvn57123_to_tcvn5712((wc_wchar_t)CONCAT44(0x81f,&local_20));
-        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_1c,local_20));
-        return wVar4;
+        wc_tcvn57123_to_tcvn5712(cc);
+        cc_01.code = local_1c;
+        cc_01.ccs = local_20;
+        wVar6 = wc_any_to_ucs(cc_01);
+        return wVar6;
       }
       if (cc.ccs == 0x827) {
         return 0x20ac;
       }
       if (cc.ccs == 0x81c) {
-        pwVar2 = wc_map_search(code,cp12582_ucs_map,0x78);
-        if (pwVar2 == (wc_map *)0x0) {
+        pwVar4 = wc_map_search(code,cp12582_ucs_map,0x78);
+        if (pwVar4 == (wc_map *)0x0) {
           return 0xffffffff;
         }
-        return (uint)pwVar2->code2;
+        return (uint)pwVar4->code2;
       }
-      map = pcs_ucs_map[f - 1];
+      map = pcs_ucs_map[uVar2 - 1];
       cc.code = cc.code & 0x7f;
     }
   }
-  else if (uVar1 == 0x8100) {
+  else if (uVar3 == 0x8100) {
     if ((cc.ccs == 0x8141) && (WcOption.use_gb12345_map != '\0')) {
-      cc.ccs = 0x880e;
-      wVar4 = wc_any_to_ucs((wc_wchar_t)((ulonglong)cc & 0xffffffff00000000 | 0x880e));
-      return wVar4;
+      cc_00.code = cc.code;
+      cc_00.ccs = 0x880e;
+      wVar6 = wc_any_to_ucs(cc_00);
+      return wVar6;
     }
     if (cc.ccs == 0x814f) {
-      pwVar2 = wc_map_search(code & 0x7f7f,jisx02131_ucs_p2_map,0x19);
-      if (pwVar2 != (wc_map *)0x0) {
-        return pwVar2->code2 | 0x20000;
+      pwVar4 = wc_map_search(code & 0x7f7f,jisx02131_ucs_p2_map,0x19);
+      if (pwVar4 != (wc_map *)0x0) {
+        return pwVar4->code2 | 0x20000;
       }
     }
     else if ((cc.ccs == 0x8150) &&
-            (pwVar2 = wc_map_search(code & 0x7f7f,jisx02132_ucs_p2_map,0x115),
-            pwVar2 != (wc_map *)0x0)) {
-      return pwVar2->code2 | 0x20000;
+            (pwVar4 = wc_map_search(code & 0x7f7f,jisx02132_ucs_p2_map,0x115),
+            pwVar4 != (wc_map *)0x0)) {
+      return pwVar4->code2 | 0x20000;
     }
-    if ((f < 0x40) || (0x50 < f)) {
+    if ((uVar2 < 0x40) || (0x50 < uVar2)) {
       return 0;
     }
-    map = cs94w_ucs_map[f + -0x40];
+    map = cs94w_ucs_map[uVar2 - 0x40];
     cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
   }
   else {
-    if (uVar1 < 0x8101) {
-      if (uVar1 != 0x2000) {
-        if ((uVar1 == 0x4000) && (cc.ccs == 0x4001)) {
+    if (uVar3 < 0x8101) {
+      if (uVar3 != 0x2000) {
+        if ((uVar3 == 0x4000) && (cc.ccs == 0x4001)) {
           return cc.code | 0x80;
         }
         return 0xffffffff;
       }
-      uVar1 = cc.ccs & 0xffff;
-      if (uVar1 == 0x2001) {
+      uVar2 = cc.ccs & 0xffff;
+      if (uVar2 == 0x2001) {
         return cc.code & 0x1fffff;
       }
-      if (uVar1 == 0x2002) {
-        wVar4 = wc_gb18030_to_ucs(cc);
-        return wVar4;
+      if (uVar2 == 0x2002) {
+        wVar6 = wc_gb18030_to_ucs(cc);
+        return wVar6;
       }
-      if (uVar1 != 0x2000) {
+      if (uVar2 != 0x2000) {
         return 0xffffffff;
       }
       return cc.code;
     }
-    if (uVar1 == 0x8200) {
-      if (((uint)f < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
+    if (uVar3 == 0x8200) {
+      if ((uVar2 < 0x40) || (((ulonglong)cc & 0xff) != 0)) {
         return 0xffffffff;
       }
-      map = cs96w_ucs_map[f - 0x40];
+      map = cs96w_ucs_map[uVar2 - 0x40];
       cc.code = ((cc.code >> 8 & 0x7f) * 0x60 + (cc.code & 0x7f)) - 0xc20;
     }
     else {
-      if (uVar1 != 0x8800) {
+      if (uVar3 != 0x8800) {
         return 0xffffffff;
       }
-      if ((((ulonglong)cc & 0xff) == 0) || (0x21 < (uint)f)) {
+      if ((((ulonglong)cc & 0xff) == 0) || (0x21 < uVar2)) {
         return 0xffffffff;
       }
-      map = pcsw_ucs_map[f - 1];
+      map = pcsw_ucs_map[uVar2 - 1];
       switch(cc.ccs) {
       case 0x8801:
         if ((cc.code & 0xff) < 0xa1) {
-          iVar3 = 0x40;
+          iVar5 = 0x40;
         }
         else {
-          iVar3 = 0x62;
+          iVar5 = 0x62;
         }
-        cc.code = (((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar3) - 0x62bd;
+        cc.code = (((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar5) - 0x62bd;
         break;
       default:
         cc.code = ((cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f)) - 0xc3f;
@@ -65582,33 +68113,37 @@ wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
         cc.code = (cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f) + 0xc49;
         break;
       case 0x880f:
-        wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_28));
-        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_24,local_28));
-        return wVar4;
+        wc_johab_to_cs128w(cc);
+        cc_02.code = local_24;
+        cc_02.ccs = local_28;
+        wVar6 = wc_any_to_ucs(cc_02);
+        return wVar6;
       case 0x8810:
         return ((cc.code >> 8 & 0x7f) + 0x1ffffdf) * 0x80 + (cc.code & 0x7f) + 0xac00;
       case 0x8811:
-        uVar1 = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
-        if (uVar1 % 0xbc < 0x3e) {
-          iVar3 = 0x41;
+        uVar2 = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+        if (uVar2 % 0xbc < 0x3e) {
+          sVar1 = 0x41;
         }
         else {
-          iVar3 = 0x43;
+          sVar1 = 0x43;
         }
-        cc.code = (uVar1 / 0xbc + 0x84) * 0x100 + uVar1 % 0xbc + iVar3;
-        pwVar2 = wc_map_search((wc_uint16)cc.code,johab2_ucs_map,0x33);
-        if (pwVar2 == (wc_map *)0x0) {
+        pwVar4 = wc_map_search(((short)(uVar2 / 0xbc) + 0x84) * 0x100 +
+                               (short)(uVar2 % 0xbc) + sVar1,johab2_ucs_map,0x33);
+        if (pwVar4 == (wc_map *)0x0) {
           return 0xffffffff;
         }
-        return (uint)pwVar2->code2;
+        return (uint)pwVar4->code2;
       case 0x8812:
         if ((cc.code & 0x7f7f) < 0x2121) {
           return 0xffffffff;
         }
       case 0x8813:
-        wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_30));
-        wVar4 = wc_any_to_ucs((wc_wchar_t)CONCAT44(local_2c,local_30));
-        return wVar4;
+        wc_sjis_ext_to_cs94w(cc);
+        cc_03.code = local_2c;
+        cc_03.ccs = local_30;
+        wVar6 = wc_any_to_ucs(cc_03);
+        return wVar6;
       case 0x8814:
         cc.code = wc_sjis_ext1_to_N(cc.code);
         if (cc.code == 0xffffffff) {
@@ -65623,22 +68158,20 @@ wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
         break;
       case 0x8817:
       case 0x8818:
-        wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
-        cc.ccs = local_44;
-        cc.code = local_40;
+        wc_cs128w_to_gbk(cc);
+        cc = (wc_wchar_t)((ulonglong)local_40 << 0x20);
       case 0x8816:
         cc.code = wc_gbk_to_N(cc.code);
         break;
       case 0x8819:
       case 0x881a:
       case 0x881b:
-        wVar4 = wc_gb18030_to_ucs(cc);
-        return wVar4;
+        wVar6 = wc_gb18030_to_ucs(cc);
+        return wVar6;
       case 0x881d:
       case 0x881e:
-        wc_cs128w_to_uhc((wc_wchar_t)CONCAT44(cc.ccs,&local_44));
-        cc.ccs = local_44;
-        cc.code = local_40;
+        wc_cs128w_to_uhc(cc);
+        cc = (wc_wchar_t)((ulonglong)local_40 << 0x20);
       case 0x881c:
         if (0xc6fe < cc.code) {
           return 0xffffffff;
@@ -65647,466 +68180,549 @@ wc_uint32 wc_any_to_ucs(wc_wchar_t cc)
         break;
       case 0x8820:
       case 0x8821:
-        wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs128w_to_hkscs(cc);
       case 0x881f:
-        map2 = wc_map_search((wc_uint16)cc.code,hkscs_ucs_p2_map,0x439);
-        if (map2 != (wc_map *)0x0) {
-          return map2->code2 | 0x20000;
+        pwVar4 = wc_map_search(code,hkscs_ucs_p2_map,0x439);
+        if (pwVar4 != (wc_map *)0x0) {
+          return pwVar4->code2 | 0x20000;
         }
         cc.code = wc_hkscs_to_N(cc.code);
       }
     }
   }
   if (map == (wc_uint16 *)0x0) {
-    wVar4 = 0xffffffff;
+    wVar6 = 0xffffffff;
   }
   else {
-    wVar4 = (wc_uint32)map[cc.code];
-    if (wVar4 == 0) {
-      wVar4 = 0xffffffff;
+    wVar6 = (wc_uint32)map[cc.code];
+    if (wVar6 == 0) {
+      wVar6 = 0xffffffff;
     }
   }
+  return wVar6;
+}
+
+
+
+// WARNING: Unknown calling convention
+
+wc_wchar_t wc_any_to_any(wc_wchar_t cc,wc_table *t)
+
+{
+  ulonglong uVar1;
+  wc_uint32 wVar2;
+  wc_ccs wVar3;
+  wc_wchar_t wVar4;
+  wc_wchar_t *in_stack_00000004;
+  uint local_24;
+  wc_uint32 local_20;
+  wc_uint32 ucs;
+  wc_ccs is_wide;
+  
+  uVar1 = (ulonglong)cc & 0x18000;
+  wVar2 = wc_any_to_ucs(cc);
+  if (wVar2 != 0xffffffff) {
+    wc_ucs_to_any(wVar2,t);
+    if (((ulonglong)cc & 0x4000) == 0) {
+      *in_stack_00000004 = cc;
+      goto LAB_080be8d1;
+    }
+    wVar2 = wc_ucs_to_fullwidth(wVar2);
+    if (wVar2 != 0xffffffff) {
+      wc_ucs_to_any(wVar2,t);
+      cc.code = local_20;
+      if ((local_24 & 0x4000) == 0) {
+        in_stack_00000004->ccs = local_24;
+        in_stack_00000004->code = local_20;
+        goto LAB_080be8d1;
+      }
+    }
+  }
+  if (uVar1 == 0) {
+    wVar3 = 0x4000;
+  }
+  else {
+    wVar3 = 0xc000;
+  }
+  in_stack_00000004->ccs = wVar3;
+  in_stack_00000004->code = cc.code;
+LAB_080be8d1:
+  wVar4.code = cc.code;
+  wVar4.ccs = (wc_ccs)in_stack_00000004;
   return wVar4;
 }
 
 
 
-wc_wchar_t wc_any_to_any(wc_wchar_t cc,wc_table *t)
-
-{
-  wc_ccs wVar1;
-  undefined4 uVar2;
-  uint local_24;
-  wc_table *local_20;
-  wc_uint32 ucs;
-  wc_ccs is_wide;
-  
-  wVar1 = cc.ccs;
-  is_wide = cc.code & 0x18000;
-  ucs = wc_any_to_ucs((wc_wchar_t)CONCAT44(t,cc.code));
-  if ((wc_table *)ucs != (wc_table *)0xffffffff) {
-    wc_ucs_to_any((wc_uint32)&cc.code,(wc_table *)ucs);
-    if ((cc.code & 0x4000) == 0) {
-      *(wc_uint32 *)wVar1 = cc.code;
-      *(wc_table **)(wVar1 + 4) = t;
-      goto LAB_080be8d1;
-    }
-    ucs = wc_ucs_to_fullwidth(ucs);
-    if ((wc_table *)ucs != (wc_table *)0xffffffff) {
-      wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)ucs);
-      t = local_20;
-      if ((local_24 & 0x4000) == 0) {
-        *(uint *)wVar1 = local_24;
-        *(wc_table **)(wVar1 + 4) = local_20;
-        goto LAB_080be8d1;
-      }
-    }
-  }
-  if (is_wide == 0) {
-    uVar2 = 0x4000;
-  }
-  else {
-    uVar2 = 0xc000;
-  }
-  *(undefined4 *)wVar1 = uVar2;
-  *(wc_table **)(wVar1 + 4) = t;
-LAB_080be8d1:
-  return (wc_wchar_t)(cc & 0xffffffff | ZEXT48(t) << 0x20);
-}
-
-
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_ucs_to_any_list(wc_uint32 ucs,wc_table **tlist)
 
 {
-  wc_table **in_stack_0000000c;
+  wc_wchar_t wVar1;
+  wc_ccs *in_stack_00000004;
   wc_wchar_t cc;
   wc_table **t;
   
-  if (in_stack_0000000c != (wc_table **)0x0) {
-    for (t = in_stack_0000000c; *t != (wc_table *)0x0; t = t + 1) {
+  if (tlist != (wc_table **)0x0) {
+    for (t = tlist; *t != (wc_table *)0x0; t = t + 1) {
       if ((*t)->map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&cc,(wc_table *)tlist);
+        wc_ucs_to_any(ucs,*t);
         if ((cc.ccs & 0x4000) == 0) {
-          *(wc_ccs *)ucs = cc.ccs;
-          *(wc_uint32 *)(ucs + 4) = cc.code;
+          *in_stack_00000004 = cc.ccs;
+          in_stack_00000004[1] = cc.code;
           goto LAB_080be955;
         }
       }
     }
   }
-  *(undefined4 *)ucs = 0x4000;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
+  *in_stack_00000004 = 0x4000;
+  in_stack_00000004[1] = cc.code;
 LAB_080be955:
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  wVar1.code = cc.code;
+  wVar1.ccs = (wc_ccs)in_stack_00000004;
+  return wVar1;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_any_to_any_ces(wc_wchar_t cc,wc_status *st)
 
 {
-  wc_ccs wVar1;
-  wc_ccs wVar2;
-  undefined4 uVar3;
-  uint **in_stack_00000010;
+  ulonglong uVar1;
+  ulonglong uVar2;
+  ulonglong uVar3;
+  ulonglong uVar4;
+  wc_uint32 wVar5;
+  wc_ccs wVar6;
+  wc_table **ppwVar7;
+  wc_wchar_t wVar8;
+  wc_ccs *in_stack_00000004;
   uint local_24;
-  wc_status *local_20;
+  wc_uint32 local_20;
   wc_ccs is_wide;
   wc_uint32 ucs;
   
-  wVar1 = cc.ccs;
-  ucs = wc_any_to_ucs((wc_wchar_t)CONCAT44(st,cc.code));
-  is_wide = cc.code & 0x18000;
-  if (ucs < (wc_status *)0x80) {
-    *(undefined4 *)wVar1 = 0x142;
-    *(wc_uint32 *)(wVar1 + 4) = ucs;
+  wVar5 = wc_any_to_ucs(cc);
+  uVar1 = (ulonglong)cc & 0x18000;
+  uVar2 = (ulonglong)cc & 0x18000;
+  uVar3 = (ulonglong)cc & 0x18000;
+  uVar4 = (ulonglong)cc & 0x18000;
+  if (wVar5 < 0x80) {
+    *in_stack_00000004 = 0x142;
+    in_stack_00000004[1] = wVar5;
+    cc.code = wVar5;
     goto LAB_080bec9c;
   }
-  if ((wc_status *)ucs != (wc_status *)0xffffffff) {
-    if ((**in_stack_00000010 & 0x8000) != 0) {
-      wVar2 = wc_ucs_to_ccs(ucs);
-      *(wc_ccs *)wVar1 = wVar2;
-      *(wc_uint32 *)(wVar1 + 4) = ucs;
+  if (wVar5 != 0xffffffff) {
+    if ((st->ces_info->id & 0x8000) != 0) {
+      wVar6 = wc_ucs_to_ccs(wVar5);
+      *in_stack_00000004 = wVar6;
+      in_stack_00000004[1] = wVar5;
+      cc.code = wVar5;
       goto LAB_080bec9c;
     }
-    if (**in_stack_00000010 == 0x302040) {
-      wc_ucs_to_johab((wc_uint32)&cc.code);
-      if ((cc.code & 0x4000) != 0) {
-        if (is_wide == 0) {
-          cc.code = 0x4000;
+    if (st->ces_info->id == 0x302040) {
+      wc_ucs_to_johab(wVar5);
+      if (((ulonglong)cc & 0x4000) != 0) {
+        if (((ulonglong)cc & 0x18000) == 0) {
+          cc.ccs = 0x4000;
         }
         else {
-          cc.code = 0xc000;
+          cc.ccs = 0xc000;
         }
       }
-      *(wc_uint32 *)wVar1 = cc.code;
-      *(wc_status **)(wVar1 + 4) = st;
-      ucs = (wc_uint32)st;
+      *in_stack_00000004 = cc.ccs;
+      in_stack_00000004[1] = cc.code;
       goto LAB_080bec9c;
     }
-    wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-    cc.code = local_24;
+    if (((ulonglong)cc & 0x18000) == 0) {
+      ppwVar7 = st->tlist;
+    }
+    else {
+      ppwVar7 = st->tlistw;
+    }
+    wc_ucs_to_any_list(wVar5,ppwVar7);
     if ((local_24 & 0x4000) == 0) {
-      *(uint *)wVar1 = local_24;
-      *(wc_status **)(wVar1 + 4) = local_20;
-      ucs = (wc_uint32)local_20;
+      *in_stack_00000004 = local_24;
+      in_stack_00000004[1] = local_20;
+      cc.code = local_20;
       goto LAB_080bec9c;
     }
-    if ((WcOption.fix_width_conv == '\0') &&
-       (wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs), (local_24 & 0x4000) == 0)) {
-      *(uint *)wVar1 = local_24;
-      *(wc_status **)(wVar1 + 4) = local_20;
-      ucs = (wc_uint32)local_20;
-      goto LAB_080bec9c;
+    if (WcOption.fix_width_conv == '\0') {
+      if (((ulonglong)cc & 0x18000) == 0) {
+        ppwVar7 = st->tlistw;
+      }
+      else {
+        ppwVar7 = st->tlist;
+      }
+      wc_ucs_to_any_list(wVar5,ppwVar7);
+      if ((local_24 & 0x4000) == 0) {
+        *in_stack_00000004 = local_24;
+        in_stack_00000004[1] = local_20;
+        cc.code = local_20;
+        goto LAB_080bec9c;
+      }
     }
-    st = local_20;
-    if (**in_stack_00000010 == 0x30203b) {
-      wc_ucs_to_gb18030((wc_uint32)&local_24);
-      cc.code = local_24;
+    if (st->ces_info->id == 0x30203b) {
+      wc_ucs_to_gb18030(wVar5);
+      cc.ccs = local_24;
       if ((local_24 & 0x4000) != 0) {
-        if (is_wide == 0) {
-          cc.code = 0x4000;
+        if (uVar1 == 0) {
+          cc.ccs = 0x4000;
         }
         else {
-          cc.code = 0xc000;
+          cc.ccs = 0xc000;
         }
       }
-      *(wc_uint32 *)wVar1 = cc.code;
-      *(wc_status **)(wVar1 + 4) = local_20;
-      ucs = (wc_uint32)local_20;
+      *in_stack_00000004 = cc.ccs;
+      in_stack_00000004[1] = local_20;
+      cc.code = local_20;
       goto LAB_080bec9c;
     }
-    if (ucs == 0xa0) {
-      ucs = (wc_uint32)&DAT_00000020;
-      *(undefined4 *)wVar1 = 0x142;
-      *(undefined4 *)(wVar1 + 4) = 0x20;
+    if (wVar5 == 0xa0) {
+      *in_stack_00000004 = 0x142;
+      in_stack_00000004[1] = 0x20;
+      cc.code = 0x20;
       goto LAB_080bec9c;
     }
-    if ((((**in_stack_00000010 & 0x1200) != 0) && (0x7f < ucs)) && (ucs < 0xa0)) {
-      *(undefined4 *)wVar1 = 0x4001;
-      *(wc_uint32 *)(wVar1 + 4) = ucs;
+    if ((((st->ces_info->id & 0x1200) != 0) && (0x7f < wVar5)) && (wVar5 < 0xa0)) {
+      *in_stack_00000004 = 0x4001;
+      in_stack_00000004[1] = wVar5;
+      cc.code = wVar5;
       goto LAB_080bec9c;
     }
-    ucs = wc_ucs_to_fullwidth(ucs);
-    if ((wc_table **)ucs != (wc_table **)0xffffffff) {
-      wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-      cc.code = local_24;
-      st = local_20;
+    wVar5 = wc_ucs_to_fullwidth(wVar5);
+    cc.code = local_20;
+    if (wVar5 != 0xffffffff) {
+      if (uVar2 == 0) {
+        ppwVar7 = st->tlist;
+      }
+      else {
+        ppwVar7 = st->tlistw;
+      }
+      wc_ucs_to_any_list(wVar5,ppwVar7);
       if ((local_24 & 0x4000) == 0) {
-        *(uint *)wVar1 = local_24;
-        *(wc_status **)(wVar1 + 4) = local_20;
-        ucs = (wc_uint32)local_20;
+        *in_stack_00000004 = local_24;
+        in_stack_00000004[1] = local_20;
         goto LAB_080bec9c;
       }
       if (WcOption.fix_width_conv == '\0') {
-        wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-        st = local_20;
+        if (uVar3 == 0) {
+          ppwVar7 = st->tlistw;
+        }
+        else {
+          ppwVar7 = st->tlist;
+        }
+        wc_ucs_to_any_list(wVar5,ppwVar7);
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)wVar1 = local_24;
-          *(wc_status **)(wVar1 + 4) = local_20;
-          ucs = (wc_uint32)local_20;
+          *in_stack_00000004 = local_24;
+          in_stack_00000004[1] = local_20;
           goto LAB_080bec9c;
         }
       }
     }
   }
-  if (is_wide == 0) {
-    uVar3 = 0x4000;
+  if (uVar4 == 0) {
+    wVar6 = 0x4000;
   }
   else {
-    uVar3 = 0xc000;
+    wVar6 = 0xc000;
   }
-  *(undefined4 *)wVar1 = uVar3;
-  *(wc_status **)(wVar1 + 4) = st;
-  ucs = (wc_uint32)st;
+  *in_stack_00000004 = wVar6;
+  in_stack_00000004[1] = cc.code;
 LAB_080bec9c:
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)ucs << 0x20);
+  wVar8.code = cc.code;
+  wVar8.ccs = (wc_ccs)in_stack_00000004;
+  return wVar8;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_any_to_iso2022(wc_wchar_t cc,wc_status *st)
 
 {
-  wc_ccs wVar1;
-  undefined4 uVar2;
+  ulonglong uVar1;
+  ulonglong uVar2;
+  ulonglong uVar3;
+  ulonglong uVar4;
+  ulonglong uVar5;
+  ulonglong uVar6;
+  ulonglong uVar7;
+  wc_uint32 wVar8;
+  wc_table **ppwVar9;
+  wc_ccs wVar10;
+  wc_wchar_t wVar11;
+  wc_wchar_t *in_stack_00000004;
   uint local_24;
-  wc_status *local_20;
+  wc_uint32 local_20;
   wc_ccs is_wide;
   wc_uint32 ucs;
   
-  wVar1 = cc.ccs;
-  ucs = wc_any_to_ucs((wc_wchar_t)CONCAT44(st,cc.code));
-  is_wide = cc.code & 0x18000;
-  if (ucs < (wc_status *)0x80) {
-    *(undefined4 *)wVar1 = 0x142;
-    *(wc_uint32 *)(wVar1 + 4) = ucs;
-    st = (wc_status *)ucs;
+  wVar8 = wc_any_to_ucs(cc);
+  uVar1 = (ulonglong)cc & 0x18000;
+  uVar2 = (ulonglong)cc & 0x18000;
+  uVar3 = (ulonglong)cc & 0x18000;
+  uVar4 = (ulonglong)cc & 0x18000;
+  uVar5 = (ulonglong)cc & 0x18000;
+  uVar6 = (ulonglong)cc & 0x18000;
+  uVar7 = (ulonglong)cc & 0x18000;
+  if (wVar8 < 0x80) {
+    in_stack_00000004->ccs = 0x142;
+    in_stack_00000004->code = wVar8;
+    cc.code = wVar8;
     goto LAB_080bf0a6;
   }
-  if ((wc_status *)ucs != (wc_status *)0xffffffff) {
-    wc_ucs_to_any_list((wc_uint32)&cc.code,(wc_table **)ucs);
-    if ((cc.code & 0x4000) == 0) {
-      *(wc_uint32 *)wVar1 = cc.code;
-      *(wc_status **)(wVar1 + 4) = st;
+  if (wVar8 != 0xffffffff) {
+    if (((ulonglong)cc & 0x18000) == 0) {
+      ppwVar9 = st->tlist;
+    }
+    else {
+      ppwVar9 = st->tlistw;
+    }
+    wc_ucs_to_any_list(wVar8,ppwVar9);
+    if (((ulonglong)cc & 0x4000) == 0) {
+      *in_stack_00000004 = cc;
       goto LAB_080bf0a6;
     }
+    cc.code = local_20;
     if (WcOption.strict_iso2022 == '\0') {
-      if (is_wide == 0) {
-        wc_ucs_to_iso2022((wc_uint32)&local_24);
+      if (((ulonglong)cc & 0x18000) == 0) {
+        wc_ucs_to_iso2022(wVar8);
       }
       else {
-        wc_ucs_to_iso2022w((wc_uint32)&local_24);
+        wc_ucs_to_iso2022w(wVar8);
       }
-      cc.code = local_24;
-      st = local_20;
+      cc.ccs = local_24;
       if ((local_24 & 0x4000) == 0) {
-        *(uint *)wVar1 = local_24;
-        *(wc_status **)(wVar1 + 4) = local_20;
+        in_stack_00000004->ccs = local_24;
+        in_stack_00000004->code = local_20;
         goto LAB_080bf0a6;
       }
     }
     if (WcOption.fix_width_conv == '\0') {
-      wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-      cc.code = local_24;
-      st = local_20;
+      if (uVar1 == 0) {
+        ppwVar9 = st->tlistw;
+      }
+      else {
+        ppwVar9 = st->tlist;
+      }
+      wc_ucs_to_any_list(wVar8,ppwVar9);
+      cc.ccs = local_24;
       if ((local_24 & 0x4000) == 0) {
-        *(uint *)wVar1 = local_24;
-        *(wc_status **)(wVar1 + 4) = local_20;
+        in_stack_00000004->ccs = local_24;
+        in_stack_00000004->code = local_20;
         goto LAB_080bf0a6;
       }
       if (WcOption.strict_iso2022 == '\0') {
-        if (is_wide == 0) {
-          wc_ucs_to_iso2022w((wc_uint32)&local_24);
+        if (uVar2 == 0) {
+          wc_ucs_to_iso2022w(wVar8);
         }
         else {
-          wc_ucs_to_iso2022((wc_uint32)&local_24);
+          wc_ucs_to_iso2022(wVar8);
         }
-        cc.code = local_24;
-        st = local_20;
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)wVar1 = local_24;
-          *(wc_status **)(wVar1 + 4) = local_20;
+          in_stack_00000004->ccs = local_24;
+          in_stack_00000004->code = local_20;
           goto LAB_080bf0a6;
         }
       }
     }
-    if (ucs == 0xa0) {
-      st = (wc_status *)&DAT_00000020;
-      *(undefined4 *)wVar1 = 0x142;
-      *(undefined4 *)(wVar1 + 4) = 0x20;
+    if (wVar8 == 0xa0) {
+      cc.code = 0x20;
+      in_stack_00000004->ccs = 0x142;
+      in_stack_00000004->code = 0x20;
       goto LAB_080bf0a6;
     }
-    ucs = wc_ucs_to_fullwidth(ucs);
-    if ((wc_table **)ucs != (wc_table **)0xffffffff) {
-      wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-      cc.code = local_24;
+    wVar8 = wc_ucs_to_fullwidth(wVar8);
+    if (wVar8 != 0xffffffff) {
+      if (uVar3 == 0) {
+        ppwVar9 = st->tlist;
+      }
+      else {
+        ppwVar9 = st->tlistw;
+      }
+      wc_ucs_to_any_list(wVar8,ppwVar9);
       if ((local_24 & 0x4000) == 0) {
-        *(uint *)wVar1 = local_24;
-        *(wc_status **)(wVar1 + 4) = local_20;
-        st = local_20;
+        in_stack_00000004->ccs = local_24;
+        in_stack_00000004->code = local_20;
+        cc.code = local_20;
         goto LAB_080bf0a6;
       }
       if (WcOption.strict_iso2022 == '\0') {
-        if (is_wide == 0) {
-          wc_ucs_to_iso2022((wc_uint32)&local_24);
+        if (uVar4 == 0) {
+          wc_ucs_to_iso2022(wVar8);
         }
         else {
-          wc_ucs_to_iso2022w((wc_uint32)&local_24);
+          wc_ucs_to_iso2022w(wVar8);
         }
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)wVar1 = local_24;
-          *(wc_status **)(wVar1 + 4) = local_20;
-          st = local_20;
+          in_stack_00000004->ccs = local_24;
+          in_stack_00000004->code = local_20;
+          cc.code = local_20;
           goto LAB_080bf0a6;
         }
       }
-      st = local_20;
+      cc.code = local_20;
       if (WcOption.fix_width_conv == '\0') {
-        wc_ucs_to_any_list((wc_uint32)&local_24,(wc_table **)ucs);
-        cc.code = local_24;
-        st = local_20;
+        if (uVar5 == 0) {
+          ppwVar9 = st->tlistw;
+        }
+        else {
+          ppwVar9 = st->tlist;
+        }
+        wc_ucs_to_any_list(wVar8,ppwVar9);
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)wVar1 = local_24;
-          *(wc_status **)(wVar1 + 4) = local_20;
+          in_stack_00000004->ccs = local_24;
+          in_stack_00000004->code = local_20;
           goto LAB_080bf0a6;
         }
         if (WcOption.strict_iso2022 == '\0') {
-          if (is_wide == 0) {
-            wc_ucs_to_iso2022w((wc_uint32)&local_24);
-            cc.code = local_24;
-            st = local_20;
+          if (uVar6 == 0) {
+            wc_ucs_to_iso2022w(wVar8);
           }
           else {
-            wc_ucs_to_iso2022((wc_uint32)&local_24);
-            cc.code = local_24;
-            st = local_20;
+            wc_ucs_to_iso2022(wVar8);
           }
-          if ((cc.code & 0x4000) == 0) {
-            *(wc_uint32 *)wVar1 = cc.code;
-            *(wc_status **)(wVar1 + 4) = st;
+          if ((local_24 & 0x4000) == 0) {
+            in_stack_00000004->ccs = local_24;
+            in_stack_00000004->code = local_20;
             goto LAB_080bf0a6;
           }
         }
       }
     }
-    if (ucs == 0xa0) {
-      st = (wc_status *)&DAT_00000020;
-      *(undefined4 *)wVar1 = 0x142;
-      *(undefined4 *)(wVar1 + 4) = 0x20;
+    if (wVar8 == 0xa0) {
+      cc.code = 0x20;
+      in_stack_00000004->ccs = 0x142;
+      in_stack_00000004->code = 0x20;
       goto LAB_080bf0a6;
     }
   }
-  if (is_wide == 0) {
-    uVar2 = 0x4000;
+  if (uVar7 == 0) {
+    wVar10 = 0x4000;
   }
   else {
-    uVar2 = 0xc000;
+    wVar10 = 0xc000;
   }
-  *(undefined4 *)wVar1 = uVar2;
-  *(wc_status **)(wVar1 + 4) = st;
+  in_stack_00000004->ccs = wVar10;
+  in_stack_00000004->code = cc.code;
 LAB_080bf0a6:
-  return (wc_wchar_t)(cc & 0xffffffff | ZEXT48(st) << 0x20);
+  wVar11.code = cc.code;
+  wVar11.ccs = (wc_ccs)in_stack_00000004;
+  return wVar11;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_ucs_to_iso2022(wc_uint32 ucs)
 
 {
-  uint in_stack_00000008;
+  wc_wchar_t wVar1;
+  uint *in_stack_00000004;
   uint local_24;
-  wc_uint32 local_20;
+  uint local_20;
   wc_wchar_t cc;
   int f;
   wc_table *t;
   
-  if (in_stack_00000008 < 0x10000) {
+  if (ucs < 0x10000) {
     for (f = 0; f < 0x27; f = f + 1) {
       if (ucs_cs96_table[f].map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&cc,(wc_table *)(in_stack_00000008 & 0xffff));
+        wc_ucs_to_any(ucs & 0xffff,ucs_cs96_table + f);
         if ((cc.ccs & 0x4000) == 0) {
-          *(wc_ccs *)ucs = cc.ccs;
-          *(wc_uint32 *)(ucs + 4) = cc.code;
+          *in_stack_00000004 = cc.ccs;
+          in_stack_00000004[1] = cc.code;
           goto LAB_080bf224;
         }
       }
     }
     for (f = 0; f < 0x15; f = f + 1) {
       if (ucs_cs94_table[f].map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
-        cc.ccs = local_24;
+        wc_ucs_to_any(ucs & 0xffff,ucs_cs94_table + f);
         cc.code = local_20;
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)ucs = local_24;
-          *(wc_uint32 *)(ucs + 4) = local_20;
+          *in_stack_00000004 = local_24;
+          in_stack_00000004[1] = local_20;
           goto LAB_080bf224;
         }
       }
     }
     for (f = 0; f < -0x3f; f = f + 1) {
       if (ucs_cs942_table[f].map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
-        cc.ccs = local_24;
+        wc_ucs_to_any(ucs & 0xffff,ucs_cs942_table + f);
         cc.code = local_20;
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)ucs = local_24;
-          *(wc_uint32 *)(ucs + 4) = local_20;
+          *in_stack_00000004 = local_24;
+          in_stack_00000004[1] = local_20;
           goto LAB_080bf224;
         }
       }
     }
   }
-  *(undefined4 *)ucs = 0x4000;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
+  *in_stack_00000004 = 0x4000;
+  in_stack_00000004[1] = cc.code;
 LAB_080bf224:
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  wVar1.code = cc.code;
+  wVar1.ccs = (wc_ccs)in_stack_00000004;
+  return wVar1;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_ucs_to_iso2022w(wc_uint32 ucs)
 
 {
-  uint in_stack_00000008;
+  wc_wchar_t wVar1;
+  uint *in_stack_00000004;
   uint local_24;
-  wc_uint32 local_20;
+  uint local_20;
   wc_wchar_t cc;
   int f;
   wc_table *t;
   
-  if (in_stack_00000008 < 0x10000) {
+  if (ucs < 0x10000) {
     for (f = 0; f < 0x11; f = f + 1) {
       if (ucs_cs94w_table[f].map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&cc,(wc_table *)(in_stack_00000008 & 0xffff));
+        wc_ucs_to_any(ucs & 0xffff,ucs_cs94w_table + f);
         if ((cc.ccs & 0x4000) == 0) {
-          *(wc_ccs *)ucs = cc.ccs;
-          *(wc_uint32 *)(ucs + 4) = cc.code;
+          *in_stack_00000004 = cc.ccs;
+          in_stack_00000004[1] = cc.code;
           goto LAB_080bf32f;
         }
       }
     }
     for (f = 0; f < -0x3f; f = f + 1) {
       if (ucs_cs96w_table[f].map != (wc_map *)0x0) {
-        wc_ucs_to_any((wc_uint32)&local_24,(wc_table *)(in_stack_00000008 & 0xffff));
-        cc.ccs = local_24;
+        wc_ucs_to_any(ucs & 0xffff,ucs_cs96w_table + f);
         cc.code = local_20;
         if ((local_24 & 0x4000) == 0) {
-          *(uint *)ucs = local_24;
-          *(wc_uint32 *)(ucs + 4) = local_20;
+          *in_stack_00000004 = local_24;
+          in_stack_00000004[1] = local_20;
           goto LAB_080bf32f;
         }
       }
     }
   }
-  *(undefined4 *)ucs = 0xc000;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
+  *in_stack_00000004 = 0xc000;
+  in_stack_00000004[1] = cc.code;
 LAB_080bf32f:
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  wVar1.code = cc.code;
+  wVar1.ccs = (wc_ccs)in_stack_00000004;
+  return wVar1;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ccs wc_ucs_to_ccs(wc_uint32 ucs)
 
@@ -66148,6 +68764,8 @@ wc_ccs wc_ucs_to_ccs(wc_uint32 ucs)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_bool wc_is_ucs_wide(wc_uint32 ucs)
 
 {
@@ -66169,6 +68787,8 @@ wc_bool wc_is_ucs_wide(wc_uint32 ucs)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_bool wc_is_ucs_combining(wc_uint32 ucs)
 
 {
@@ -66183,6 +68803,8 @@ wc_bool wc_is_ucs_combining(wc_uint32 ucs)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_bool wc_is_ucs_hangul(wc_uint32 ucs)
 
 {
@@ -66196,6 +68818,8 @@ wc_bool wc_is_ucs_hangul(wc_uint32 ucs)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_ucs_precompose(wc_uint32 ucs1,wc_uint32 ucs2)
 
@@ -66213,6 +68837,8 @@ wc_uint32 wc_ucs_precompose(wc_uint32 ucs1,wc_uint32 ucs2)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_uint32 wc_ucs_to_fullwidth(wc_uint32 ucs)
 
 {
@@ -66227,6 +68853,8 @@ wc_uint32 wc_ucs_to_fullwidth(wc_uint32 ucs)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int wc_ucs_put_tag(char *p)
 
@@ -66258,6 +68886,8 @@ int wc_ucs_put_tag(char *p)
 
 
 
+// WARNING: Unknown calling convention
+
 char * wc_ucs_get_tag(int ntag)
 
 {
@@ -66273,6 +68903,8 @@ char * wc_ucs_get_tag(int ntag)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wtf_push_ucs(Str os,wc_uint32 ucs,wc_status *st)
 
@@ -66335,66 +68967,77 @@ void wtf_push_ucs(Str os,wc_uint32 ucs,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_uhc_to_cs128w(wc_wchar_t cc)
 
 {
-  wc_uint32 wVar1;
+  wc_ccs wVar1;
   int iVar2;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
   
-  if ((in_stack_0000000c & 0xff) < 0x61) {
+  if ((cc.code & 0xff) < 0x61) {
     iVar2 = 0x41;
   }
-  else if ((in_stack_0000000c & 0xff) < 0x81) {
+  else if ((cc.code & 0xff) < 0x81) {
     iVar2 = 0x47;
   }
   else {
     iVar2 = 0x4d;
   }
-  iVar2 = ((in_stack_0000000c >> 8 & 0xff) * 0xb2 + (in_stack_0000000c & 0xff)) - iVar2;
-  in_stack_0000000c = iVar2 - 0x59b2;
-  if (in_stack_0000000c < 0x4000) {
-    cc.code = 0x881d;
+  iVar2 = ((cc.code >> 8 & 0xff) * 0xb2 + (cc.code & 0xff)) - iVar2;
+  cc.code = iVar2 - 0x59b2;
+  if (cc.code < 0x4000) {
+    cc.ccs = 0x881d;
   }
   else {
-    cc.code = 0x881e;
-    in_stack_0000000c = iVar2 - 0x99b2;
+    cc.ccs = 0x881e;
+    cc.code = iVar2 - 0x99b2;
   }
-  wVar1 = (in_stack_0000000c >> 7) * 0x100 + (in_stack_0000000c & 0x7f);
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(wc_uint32 *)(cc.ccs + 4) = wVar1;
-  return (wc_wchar_t)CONCAT44(wVar1,cc.ccs);
+  wVar1 = (cc.code >> 7) * 0x100 + (cc.code & 0x7f);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = wVar1;
+  wVar3.code = wVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_cs128w_to_uhc(wc_wchar_t cc)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint in_stack_0000000c;
+  int iVar1;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   
-  in_stack_0000000c = (in_stack_0000000c >> 8 & 0x7f) * 0x80 + (in_stack_0000000c & 0x7f);
-  if (cc.code == 0x881e) {
-    in_stack_0000000c = in_stack_0000000c + 0x4000;
+  cc.code = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+  if (cc.ccs == 0x881e) {
+    cc.code = cc.code + 0x4000;
   }
-  if (in_stack_0000000c % 0xb2 < 0x1a) {
-    iVar2 = 0x41;
+  if (cc.code % 0xb2 < 0x1a) {
+    iVar1 = 0x41;
   }
-  else if (in_stack_0000000c % 0xb2 < 0x34) {
-    iVar2 = 0x47;
+  else if (cc.code % 0xb2 < 0x34) {
+    iVar1 = 0x47;
   }
   else {
-    iVar2 = 0x4d;
+    iVar1 = 0x4d;
   }
-  uVar1 = (in_stack_0000000c / 0xb2 + 0x81) * 0x100 + in_stack_0000000c % 0xb2 + iVar2;
-  *(undefined4 *)cc.ccs = 0x881c;
-  *(uint *)(cc.ccs + 4) = uVar1;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)uVar1 << 0x20);
+  iVar1 = (cc.code / 0xb2 + 0x81) * 0x100 + cc.code % 0xb2 + iVar1;
+  *in_stack_00000004 = 0x881c;
+  in_stack_00000004[1] = iVar1;
+  wVar2.code = iVar1;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_uhc_to_N(wc_uint32 c)
 
@@ -66445,6 +69088,8 @@ wc_uint32 wc_uhc_to_N(wc_uint32 c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_uhc(Str is,wc_ces ces)
 
@@ -66516,28 +69161,33 @@ Str wc_conv_from_uhc(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_uhc(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  undefined4 uVar2;
+  byte bVar3;
+  undefined4 local_14;
+  undefined4 local_10;
   
   do {
+    bVar3 = cc.code;
     if (cc.ccs == 0x881c) {
 LAB_080bfe88:
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)(cc.code >> 8);
+      os->ptr[iVar1] = cc.code._1_1_;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)cc.code;
+      os->ptr[iVar1] = bVar3;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -66555,14 +69205,14 @@ LAB_080bfe88:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
+        os->ptr[iVar1] = cc.code._1_1_ | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
+        os->ptr[iVar1] = bVar3 | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -66572,7 +69222,7 @@ LAB_080bfe88:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar3;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -66580,7 +69230,7 @@ LAB_080bfe88:
     }
     else {
       if (cc.ccs < 0x881f) {
-        wc_cs128w_to_uhc((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs128w_to_uhc(cc);
         goto LAB_080bfe88;
       }
       if (cc.ccs == 0xc000) {
@@ -66592,17 +69242,18 @@ LAB_080bfe88:
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar2 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar2 = 0xc000;
       }
+      cc.ccs = uVar2;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-      cc.ccs = local_14;
+      wc_any_to_any_ces(cc,st);
       cc.code = local_10;
+      cc.ccs = local_14;
     }
   } while( true );
 }
@@ -66615,6 +69266,7 @@ Str wc_char_conv_from_uhc(wc_uchar c,wc_status *st)
   int iVar1;
   Str p_Var2;
   uint code;
+  wc_uchar c_local;
   wc_uint32 uhc;
   
   if (st->state == -1) {
@@ -66653,6 +69305,8 @@ Str wc_char_conv_from_uhc(wc_uchar c,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_utf7(Str is,wc_ces ces)
 
@@ -66767,6 +69421,8 @@ LAB_080c0491:
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_ucs_to_utf7(Str os,wc_uint32 ucs,wc_status *st)
 
 {
@@ -66777,8 +69433,8 @@ void wc_push_ucs_to_utf7(Str os,wc_uint32 ucs,wc_status *st)
     return;
   }
   if (0xffff < ucs) {
-    wc_push_ucs_to_utf7(os,ucs - 0x10000 >> 10 & 0xffff | 0xd800,st);
-    wc_push_ucs_to_utf7(os,ucs - 0x10000 & 0x3ff | 0xdc00,st);
+    wc_push_ucs_to_utf7(os,(uint)(ushort)((ushort)(ucs - 0x10000 >> 10) | 0xd800),st);
+    wc_push_ucs_to_utf7(os,ucs & 0x3ff | 0xdc00,st);
     return;
   }
   if (0x7f < ucs) goto LAB_080c07d2;
@@ -66902,6 +69558,8 @@ LAB_080c0572:
 
 
 
+// WARNING: Unknown calling convention
+
 int wc_push_tag_to_utf7(Str os,int ntag,wc_status *st)
 
 {
@@ -66924,94 +69582,108 @@ int wc_push_tag_to_utf7(Str os,int ntag,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_utf7(Str os,wc_wchar_t cc,wc_status *st)
 
 {
+  wc_wchar_t cc_00;
   uint uVar1;
   int iVar2;
+  undefined4 uVar3;
   char *p;
   
-  do {
-    while (uVar1 = cc.ccs & 0xffff, uVar1 == 0x2000) {
-      if (cc.code < 0x110000) goto LAB_080c0b36;
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+  cc_00 = cc;
+  while( true ) {
+    while( true ) {
+      cc.code = cc_00.code;
+      cc.ccs = cc_00.ccs;
+      uVar1 = cc.ccs & 0xffff;
+      if (uVar1 == 0x2000) break;
+      if (uVar1 < 0x2001) {
+        if (uVar1 == 0x241) {
+          if (st->ntag != 0) {
+            iVar2 = wc_push_tag_to_utf7(os,0,st);
+            st->ntag = iVar2;
+          }
+          wc_push_ucs_to_utf7(os,cc.code | 0x80,st);
+          return;
+        }
+        if ((uVar1 == 0x1000) || (uVar1 == 0x142)) goto LAB_080c0b36;
       }
       else {
-        cc.ccs = 0xc000;
+        if (uVar1 == 0x4000) {
+          if (WcOption.no_replace != '\0') {
+            return;
+          }
+          if (st->ntag != 0) {
+            iVar2 = wc_push_tag_to_utf7(os,0,st);
+            st->ntag = iVar2;
+          }
+          for (p = WcReplace; *p != '\0'; p = p + 1) {
+            wc_push_ucs_to_utf7(os,(int)*p,st);
+          }
+          return;
+        }
+        if (uVar1 == 0xc000) {
+          if (WcOption.no_replace != '\0') {
+            return;
+          }
+          if (st->ntag != 0) {
+            iVar2 = wc_push_tag_to_utf7(os,0,st);
+            st->ntag = iVar2;
+          }
+          for (p = WcReplaceW; *p != '\0'; p = p + 1) {
+            wc_push_ucs_to_utf7(os,(int)*p,st);
+          }
+          return;
+        }
+        if (uVar1 == 0x2001) {
+          if ((WcOption.use_language_tag != '\0') && (cc.code >> 0x18 != st->ntag)) {
+            iVar2 = wc_push_tag_to_utf7(os,cc.code >> 0x18,st);
+            st->ntag = iVar2;
+          }
+          wc_push_ucs_to_utf7(os,cc.code & 0x1fffff,st);
+          return;
+        }
+      }
+      if ((WcOption.ucs_conv == '\0') || (cc.code = wc_any_to_ucs(cc_00), cc.code == 0xffffffff)) {
+        if (((ulonglong)cc_00 & 0x18000) == 0) {
+          uVar3 = 0x4000;
+        }
+        else {
+          uVar3 = 0xc000;
+        }
+        cc_00.code = cc.code;
+        cc_00.ccs = uVar3;
+      }
+      else {
+        cc_00.code = cc.code;
+        cc_00.ccs = 0x1000;
       }
     }
-    if (uVar1 < 0x2001) {
-      if (uVar1 == 0x241) {
-        if (st->ntag != 0) {
-          iVar2 = wc_push_tag_to_utf7(os,0,st);
-          st->ntag = iVar2;
-        }
-        wc_push_ucs_to_utf7(os,cc.code | 0x80,st);
-        return;
-      }
-      if ((uVar1 == 0x1000) || (uVar1 == 0x142)) {
+    if ((ulonglong)cc_00 < 0x11000000000000) break;
+    if (((ulonglong)cc_00 & 0x18000) == 0) {
+      uVar3 = 0x4000;
+    }
+    else {
+      uVar3 = 0xc000;
+    }
+    cc_00.code = cc.code;
+    cc_00.ccs = uVar3;
+  }
 LAB_080c0b36:
-        if (st->ntag != 0) {
-          iVar2 = wc_push_tag_to_utf7(os,0,st);
-          st->ntag = iVar2;
-        }
-        wc_push_ucs_to_utf7(os,cc.code,st);
-        return;
-      }
-    }
-    else {
-      if (uVar1 == 0x4000) {
-        if (WcOption.no_replace != '\0') {
-          return;
-        }
-        if (st->ntag != 0) {
-          iVar2 = wc_push_tag_to_utf7(os,0,st);
-          st->ntag = iVar2;
-        }
-        for (p = WcReplace; *p != '\0'; p = p + 1) {
-          wc_push_ucs_to_utf7(os,(int)*p,st);
-        }
-        return;
-      }
-      if (uVar1 == 0xc000) {
-        if (WcOption.no_replace != '\0') {
-          return;
-        }
-        if (st->ntag != 0) {
-          iVar2 = wc_push_tag_to_utf7(os,0,st);
-          st->ntag = iVar2;
-        }
-        for (p = WcReplaceW; *p != '\0'; p = p + 1) {
-          wc_push_ucs_to_utf7(os,(int)*p,st);
-        }
-        return;
-      }
-      if (uVar1 == 0x2001) {
-        if ((WcOption.use_language_tag != '\0') && (cc.code >> 0x18 != st->ntag)) {
-          iVar2 = wc_push_tag_to_utf7(os,cc.code >> 0x18,st);
-          st->ntag = iVar2;
-        }
-        wc_push_ucs_to_utf7(os,cc.code & 0x1fffff,st);
-        return;
-      }
-    }
-    if ((WcOption.ucs_conv == '\0') ||
-       (cc.code = wc_any_to_ucs((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), cc.code == 0xffffffff)) {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
-      }
-      else {
-        cc.ccs = 0xc000;
-      }
-    }
-    else {
-      cc.ccs = 0x1000;
-    }
-  } while( true );
+  if (st->ntag != 0) {
+    iVar2 = wc_push_tag_to_utf7(os,0,st);
+    st->ntag = iVar2;
+  }
+  wc_push_ucs_to_utf7(os,cc.code,st);
+  return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_push_to_utf7_end(Str os,wc_status *st)
 
@@ -67051,6 +69723,7 @@ Str wc_char_conv_from_utf7(wc_uchar c,wc_status *st)
   wc_uint8 wVar1;
   int iVar2;
   Str p_Var3;
+  wc_uchar c_local;
   wc_uint32 b;
   
   if (st->state == -1) {
@@ -67139,6 +69812,8 @@ LAB_080c1165:
 
 
 
+// WARNING: Unknown calling convention
+
 size_t wc_ucs_to_utf8(wc_uint32 ucs,wc_uchar *utf8)
 
 {
@@ -67204,6 +69879,8 @@ size_t wc_ucs_to_utf8(wc_uint32 ucs,wc_uchar *utf8)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_uint32 wc_utf8_to_ucs(wc_uchar *utf8)
 
 {
@@ -67254,6 +69931,8 @@ wc_uint32 wc_utf8_to_ucs(wc_uchar *utf8)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_utf8(Str is,wc_ces ces)
 
@@ -67344,6 +70023,8 @@ Str wc_conv_from_utf8(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 int wc_push_tag_to_utf8(Str os,int ntag)
 
 {
@@ -67369,13 +70050,22 @@ int wc_push_tag_to_utf8(Str os,int ntag)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_utf8(Str os,wc_wchar_t cc,wc_status *st)
 
 {
+  wc_wchar_t cc_00;
   uint uVar1;
   int iVar2;
+  undefined4 uVar3;
   
-  while (uVar1 = cc.ccs & 0xffff, uVar1 != 0x2000) {
+  cc_00 = cc;
+  while( true ) {
+    cc.code = cc_00.code;
+    cc.ccs = cc_00.ccs;
+    uVar1 = cc.ccs & 0xffff;
+    if (uVar1 == 0x2000) break;
     if (uVar1 < 0x2001) {
       if (uVar1 == 0x241) {
         if (st->ntag != 0) {
@@ -67396,7 +70086,7 @@ void wc_push_to_utf8(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar2 = os->length;
-        os->ptr[iVar2] = (byte)cc.code & 0x7f;
+        os->ptr[iVar2] = cc_00.code & 0x7f;
         os->length = iVar2 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -67435,17 +70125,19 @@ void wc_push_to_utf8(Str os,wc_wchar_t cc,wc_status *st)
         return;
       }
     }
-    if ((WcOption.ucs_conv == '\0') ||
-       (cc.code = wc_any_to_ucs((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), cc.code == 0xffffffff)) {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+    if ((WcOption.ucs_conv == '\0') || (cc.code = wc_any_to_ucs(cc_00), cc.code == 0xffffffff)) {
+      if (((ulonglong)cc_00 & 0x18000) == 0) {
+        uVar3 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar3 = 0xc000;
       }
+      cc_00.code = cc.code;
+      cc_00.ccs = uVar3;
     }
     else {
-      cc.ccs = 0x1000;
+      cc_00.code = cc.code;
+      cc_00.ccs = 0x1000;
     }
   }
   if (st->ntag != 0) {
@@ -67458,6 +70150,8 @@ void wc_push_to_utf8(Str os,wc_wchar_t cc,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wc_push_to_utf8_end(Str os,wc_status *st)
 
@@ -67479,6 +70173,7 @@ Str wc_char_conv_from_utf8(wc_uchar c,wc_status *st)
   int iVar1;
   Str p_Var2;
   wc_uint32 ucs_00;
+  wc_uchar c_local;
   wc_uint32 ucs;
   
   if (st->state == -1) {
@@ -67534,6 +70229,8 @@ wc_uint32 wc_tcvn5712_precompose(wc_uchar c1,wc_uchar c2)
 
 {
   wc_uint32 wVar1;
+  wc_uchar c2_local;
+  wc_uchar c1_local;
   
   if ((tcvn5712_precompose_map[c1] == '\x01') && (tcvn5712_precompose_map[c2] == '\x02')) {
     wVar1 = (wc_uint32)CONCAT11(c1,c2);
@@ -67546,29 +70243,34 @@ wc_uint32 wc_tcvn5712_precompose(wc_uchar c1,wc_uchar c2)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_tcvn57123_to_tcvn5712(wc_wchar_t cc)
 
 {
   wc_map *pwVar1;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar2;
+  wc_ccs *in_stack_00000004;
   wc_map *map;
   
-  pwVar1 = wc_map_search((ushort)in_stack_0000000c & 0x7f7f,tcvn57123_tcvn5712_map,0x78);
+  pwVar1 = wc_map_search(cc.code & 0x7f7f,tcvn57123_tcvn5712_map,0x78);
   if (pwVar1 == (wc_map *)0x0) {
-    cc.code = 0x4000;
+    cc.ccs = 0x4000;
   }
   else {
     if (pwVar1->code2 < 0x20) {
-      cc.code = 0x81e;
+      cc.ccs = 0x81e;
     }
     else {
-      cc.code = 0x81d;
+      cc.ccs = 0x81d;
     }
-    in_stack_0000000c = pwVar1->code2 | 0x80;
+    cc.code = pwVar1->code2 | 0x80;
   }
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(uint *)(cc.ccs + 4) = in_stack_0000000c;
-  return (wc_wchar_t)CONCAT44(in_stack_0000000c,cc.ccs);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = cc.code;
+  wVar2.code = cc.code;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
@@ -67577,6 +70279,8 @@ wc_uint32 wc_cp1258_precompose(wc_uchar c1,wc_uchar c2)
 
 {
   wc_uint32 wVar1;
+  wc_uchar c2_local;
+  wc_uchar c1_local;
   
   if ((cp1258_precompose_map[c1] == '\x01') && (cp1258_precompose_map[c2] == '\x02')) {
     wVar1 = (wc_uint32)CONCAT11(c1,c2);
@@ -67588,6 +70292,8 @@ wc_uint32 wc_cp1258_precompose(wc_uchar c1,wc_uchar c2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_viet(Str is,wc_ces ces)
 
@@ -67653,12 +70359,16 @@ Str wc_conv_from_viet(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   wc_ccs wVar1;
   uint uVar2;
   int iVar3;
+  byte bVar4;
+  undefined4 uVar5;
   wc_uint8 *map;
   wc_ccs ccs3;
   wc_ccs ccs2;
@@ -67688,12 +70398,13 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
     ccs2 = st->ces_info->gset[2].ccs;
   }
   while( true ) {
+    bVar4 = cc.code;
     if (cc.ccs == wVar1) {
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar3 = os->length;
-      os->ptr[iVar3] = (byte)cc.code | 0x80;
+      os->ptr[iVar3] = bVar4 | 0x80;
       os->length = iVar3 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -67703,7 +70414,7 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
         Strgrow(os);
       }
       iVar3 = os->length;
-      os->ptr[iVar3] = (byte)cc.code & 0x7f;
+      os->ptr[iVar3] = bVar4 & 0x7f;
       os->length = iVar3 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -67713,14 +70424,14 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
         Strgrow(os);
       }
       iVar3 = os->length;
-      os->ptr[iVar3] = (char)(cc.code >> 8);
+      os->ptr[iVar3] = cc.code._1_1_;
       os->length = iVar3 + 1;
       os->ptr[os->length] = '\0';
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar3 = os->length;
-      os->ptr[iVar3] = (char)cc.code;
+      os->ptr[iVar3] = bVar4;
       os->length = iVar3 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -67734,7 +70445,7 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
       return;
     }
     if (cc.ccs == 0x142) {
-      if (((cc.code < 0x20) && (map != (wc_uint8 *)0x0)) && (map[cc.code] != '\0')) {
+      if ((((ulonglong)cc < 0x2000000000) && (map != (wc_uint8 *)0x0)) && (map[cc.code] != '\0')) {
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
@@ -67748,21 +70459,22 @@ void wc_push_to_viet(Str os,wc_wchar_t cc,wc_status *st)
         Strgrow(os);
       }
       iVar3 = os->length;
-      os->ptr[iVar3] = (char)cc.code;
+      os->ptr[iVar3] = bVar4;
       os->length = iVar3 + 1;
       os->ptr[os->length] = '\0';
       return;
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar5 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar5 = 0xc000;
       }
+      cc.ccs = uVar5;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&cc),(wc_status *)cc.code);
+      wc_any_to_any_ces(cc,st);
     }
   }
   if (WcOption.no_replace != '\0') {
@@ -67780,6 +70492,7 @@ Str wc_char_conv_from_viet(wc_uchar c,wc_status *st)
   wc_ces wVar1;
   int iVar2;
   Str x;
+  wc_uchar c_local;
   wc_uint8 *map;
   Str os;
   
@@ -67814,6 +70527,8 @@ Str wc_char_conv_from_viet(wc_uchar c,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wtf_init(wc_ces ces1,wc_ces ces2)
 
@@ -67851,6 +70566,8 @@ void wtf_init(wc_ces ces1,wc_ces ces2)
 
 
 
+// WARNING: Unknown calling convention
+
 int wtf_strwidth(wc_uchar *p)
 
 {
@@ -67872,6 +70589,8 @@ int wtf_strwidth(wc_uchar *p)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t wtf_len(wc_uchar *p)
 
 {
@@ -67892,6 +70611,19 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
   int iVar1;
   int iVar2;
   byte bVar3;
+  wc_wchar_t cc_00;
+  wc_wchar_t cc_01;
+  wc_wchar_t cc_02;
+  wc_wchar_t cc_03;
+  wc_wchar_t cc_04;
+  wc_wchar_t cc_05;
+  wc_wchar_t cc_06;
+  wc_wchar_t cc_07;
+  wc_wchar_t cc_08;
+  wc_wchar_t cc_09;
+  wc_wchar_t cc_10;
+  wc_wchar_t cc_11;
+  wc_wchar_t cc_12;
   wc_bool wVar4;
   wc_bool wVar5;
   byte bVar6;
@@ -67900,7 +70632,7 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
   int in_GS_OFFSET;
   uint local_4c;
   wc_uint32 local_48;
-  Str local_40;
+  Str os_local;
   wc_wchar_t cc2;
   wc_wchar_t cc;
   size_t n;
@@ -67908,16 +70640,15 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
   wc_uchar s [8];
   
   wVar5 = WcOption.fix_width_conv;
-  local_40 = os;
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   if (ccs == 0x142) {
     if (os->area_size <= os->length + 1) {
       Strgrow(os);
     }
-    iVar2 = local_40->length;
-    local_40->ptr[iVar2] = (byte)code & 0x7f;
-    local_40->length = iVar2 + 1;
-    local_40->ptr[local_40->length] = '\0';
+    iVar2 = os->length;
+    os->ptr[iVar2] = (byte)code & 0x7f;
+    os->length = iVar2 + 1;
+    os->ptr[os->length] = '\0';
     goto LAB_080c30bc;
   }
   cc.ccs = ccs;
@@ -67925,7 +70656,9 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
   if ((WcOption.pre_conv != '\0') && ((ccs & 0x4000) == 0)) {
     if (((ccs == 0x880f) || (((ccs == 0x8810 || (ccs == 0x8811)) || (ccs == 0x8812)))) &&
        ((wtf_major_ces == 0x301019 || (wtf_major_ces == 0x200815)))) {
-      wc_johab_to_ksx1001((wc_wchar_t)CONCAT44(ccs,&cc2));
+      cc_02.code = code;
+      cc_02.ccs = ccs;
+      wc_johab_to_ksx1001(cc_02);
       wVar5 = WcOption.fix_width_conv;
       if ((cc2.ccs & 0x4000) == 0) {
         cc.ccs = cc2.ccs;
@@ -67933,9 +70666,9 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
       }
     }
     else if ((ccs == 0x8143) && (wtf_major_ces == 0x302040)) {
-      wc_ksx1001_to_johab((wc_wchar_t)CONCAT44(0x8143,&local_4c));
-      cc2.ccs = local_4c;
-      cc2.code = local_48;
+      cc_03.code = code;
+      cc_03.ccs = 0x8143;
+      wc_ksx1001_to_johab(cc_03);
       wVar5 = WcOption.fix_width_conv;
       if ((local_4c & 0x4000) == 0) {
         cc.ccs = local_4c;
@@ -67947,17 +70680,17 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
       wc_output_init(wtf_major_ces,&wtf_major_st);
       wVar4 = wc_ces_has_ccs(ccs & 0xffff,&wtf_major_st);
       if (wVar4 == '\0') {
-        wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_4c),(wc_status *)cc.code);
-        cc2.ccs = local_4c;
-        cc2.code = local_48;
+        cc_04.code = code;
+        cc_04.ccs = ccs;
+        wc_any_to_any_ces(cc_04,&wtf_major_st);
         if (local_4c == 0x142) {
-          if (local_40->area_size <= local_40->length + 1) {
-            Strgrow(local_40);
+          if (os->area_size <= os->length + 1) {
+            Strgrow(os);
           }
-          iVar2 = local_40->length;
-          local_40->ptr[iVar2] = (byte)cc2.code & 0x7f;
-          local_40->length = iVar2 + 1;
-          local_40->ptr[local_40->length] = '\0';
+          iVar2 = os->length;
+          os->ptr[iVar2] = (byte)local_48 & 0x7f;
+          os->length = iVar2 + 1;
+          os->ptr[os->length] = '\0';
           goto LAB_080c30bc;
         }
         if ((((local_4c & 0x4000) == 0) && (local_4c != 0x81c)) && (local_4c != 0x81f)) {
@@ -67994,9 +70727,10 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
     if (uVar7 < 0x1001) {
       if (uVar7 == 0x200) {
         if ((WcOption.use_combining == '\0') ||
-           (wVar5 = wc_is_combining((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), wVar5 == '\0')) {
+           (cc_00.code = cc.code, cc_00.ccs = cc.ccs, wVar5 = wc_is_combining(cc_00), wVar5 == '\0')
+           ) {
           if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code & 0x7f))) {
-            s[0] = (byte)cc.code | 0x80;
+            s[0] = bVar3 | 0x80;
             n = 1;
             goto LAB_080c30a3;
           }
@@ -68005,8 +70739,8 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
         else {
           s[0] = 0x92;
         }
-        s[1] = (byte)cc.ccs | 0x80;
-        s[2] = (byte)cc.code | 0x80;
+        s[1] = bVar8 | 0x80;
+        s[2] = bVar3 | 0x80;
         n = 3;
       }
       else if (uVar7 < 0x201) {
@@ -68016,18 +70750,15 @@ void wtf_push(Str os,wc_ccs ccs,wc_uint32 code)
             n = 1;
           }
           else {
-            if ((cc.ccs == 0x149) && (WcOption.use_jisx0201k == '\0')) {
-              wc_jisx0201k_to_jisx0208((wc_wchar_t)CONCAT44(0x149,&local_4c));
-              cc2.ccs = local_4c;
-              cc2.code = local_48;
-              if ((local_4c & 0x4000) == 0) {
-                wtf_push(local_40,local_4c,local_48);
-                goto LAB_080c30bc;
-              }
+            if (((cc.ccs == 0x149) && (WcOption.use_jisx0201k == '\0')) &&
+               (cc_05.code = cc.code, cc_05.ccs = 0x149, wc_jisx0201k_to_jisx0208(cc_05),
+               (local_4c & 0x4000) == 0)) {
+              wtf_push(os,local_4c,local_48);
+              goto LAB_080c30bc;
             }
             s[0] = 0x80;
-            s[1] = (byte)cc.ccs | 0x80;
-            s[2] = (byte)cc.code | 0x80;
+            s[1] = bVar8 | 0x80;
+            s[2] = bVar3 | 0x80;
             n = 3;
           }
         }
@@ -68054,9 +70785,10 @@ LAB_080c3086:
       else {
         if (uVar7 != 0x800) goto LAB_080c3086;
         if ((WcOption.use_combining == '\0') ||
-           (wVar5 = wc_is_combining((wc_wchar_t)CONCAT44(cc.code,cc.ccs)), wVar5 == '\0')) {
+           (cc_01.code = cc.code, cc_01.ccs = cc.ccs, wVar5 = wc_is_combining(cc_01), wVar5 == '\0')
+           ) {
           if ((cc.ccs == wtf_gr_ccs) && (0x20 < (cc.code & 0x7f))) {
-            s[0] = (byte)cc.code | 0x80;
+            s[0] = bVar3 | 0x80;
             n = 1;
             goto LAB_080c30a3;
           }
@@ -68065,8 +70797,8 @@ LAB_080c3086:
         else {
           s[0] = 0x96;
         }
-        s[1] = (byte)cc.ccs | 0x80;
-        s[2] = (byte)cc.code | 0x80;
+        s[1] = bVar8 | 0x80;
+        s[2] = bVar3 | 0x80;
         n = 3;
       }
     }
@@ -68126,35 +70858,49 @@ LAB_080c3086:
         if (uVar7 != 0x8800) goto LAB_080c3086;
         switch(cc.ccs) {
         case 0x8801:
-          wc_big5_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_09.code = cc.code;
+          cc_09.ccs = cc.ccs;
+          wc_big5_to_cs94w(cc_09);
           cc.ccs = local_4c;
           cc.code = local_48;
           break;
         case 0x880f:
-          wc_johab_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_11.code = cc.code;
+          cc_11.ccs = cc.ccs;
+          wc_johab_to_cs128w(cc_11);
           cc.ccs = local_4c;
           cc.code = local_48;
           break;
         case 0x8813:
-          wc_sjis_ext_to_cs94w((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+          cc_06.code = cc.code;
+          cc_06.ccs = cc.ccs;
+          wc_sjis_ext_to_cs94w(cc_06);
           break;
         case 0x8816:
-          wc_gbk_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_07.code = cc.code;
+          cc_07.ccs = cc.ccs;
+          wc_gbk_to_cs128w(cc_07);
           cc.ccs = local_4c;
           cc.code = local_48;
           break;
         case 0x8819:
-          wc_gbk_ext_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_08.code = cc.code;
+          cc_08.ccs = cc.ccs;
+          wc_gbk_ext_to_cs128w(cc_08);
           cc.ccs = local_4c;
           cc.code = local_48;
           break;
         case 0x881c:
-          wc_uhc_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_12.code = cc.code;
+          cc_12.ccs = cc.ccs;
+          wc_uhc_to_cs128w(cc_12);
           cc.ccs = local_4c;
           cc.code = local_48;
           break;
         case 0x881f:
-          wc_hkscs_to_cs128w((wc_wchar_t)CONCAT44(cc.ccs,&local_4c));
+          cc_10.code = cc.code;
+          cc_10.ccs = cc.ccs;
+          wc_hkscs_to_cs128w(cc_10);
           cc.ccs = local_4c;
           cc.code = local_48;
         }
@@ -68175,7 +70921,7 @@ LAB_080c3086:
     }
   }
 LAB_080c30a3:
-  Strcat_charp_n(local_40,(char *)s,n);
+  Strcat_charp_n(os,(char *)s,n);
 LAB_080c30bc:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
@@ -68185,6 +70931,8 @@ LAB_080c30bc:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void wtf_push_unknown(Str os,wc_uchar *p,size_t len)
 
@@ -68212,18 +70960,27 @@ void wtf_push_unknown(Str os,wc_uchar *p,size_t len)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wtf_parse1(wc_uchar **p)
 
 {
   byte *pbVar1;
+  wc_wchar_t cc_00;
+  wc_wchar_t cc_01;
+  wc_wchar_t cc_02;
+  wc_wchar_t cc_03;
+  wc_wchar_t cc_04;
+  wc_wchar_t cc_05;
   uint uVar2;
   uint uVar3;
   wc_wchar_t wVar4;
-  byte **in_stack_00000008;
+  wc_wchar_t wVar5;
+  wc_ccs *in_stack_00000004;
   wc_wchar_t cc;
   wc_uchar *q;
   
-  pbVar1 = *in_stack_00000008;
+  pbVar1 = *p;
   if (-1 < (char)*pbVar1) {
     cc.ccs = 0x142;
     cc.code = (wc_uint32)*pbVar1;
@@ -68296,64 +71053,79 @@ LAB_080c33f3:
     cc.code = 0x20;
   }
 LAB_080c3401:
-  *in_stack_00000008 = q;
+  *p = q;
   switch(cc.ccs) {
   case 0x8802:
   case 0x8803:
-    wVar4 = wc_cs94w_to_big5((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_03.code = cc.code;
+    cc_03.ccs = cc.ccs;
+    wVar4 = wc_cs94w_to_big5(cc_03);
+    cc.code = wVar4.code;
     break;
   default:
-    *p = (wc_uchar *)cc.ccs;
-    p[1] = (wc_uchar *)cc.code;
+    *in_stack_00000004 = cc.ccs;
+    in_stack_00000004[1] = cc.code;
     break;
   case 0x8810:
   case 0x8811:
   case 0x8812:
-    wVar4 = wc_cs128w_to_johab((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_04.code = cc.code;
+    cc_04.ccs = cc.ccs;
+    wVar4 = wc_cs128w_to_johab(cc_04);
+    cc.code = wVar4.code;
     break;
   case 0x8814:
   case 0x8815:
-    wVar4 = wc_cs94w_to_sjis_ext((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_00.code = cc.code;
+    cc_00.ccs = cc.ccs;
+    wVar4 = wc_cs94w_to_sjis_ext(cc_00);
+    cc.code = wVar4.code;
     break;
   case 0x8817:
   case 0x8818:
-    wVar4 = wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_01.code = cc.code;
+    cc_01.ccs = cc.ccs;
+    wVar4 = wc_cs128w_to_gbk(cc_01);
+    cc.code = wVar4.code;
     break;
   case 0x881a:
   case 0x881b:
-    wVar4 = wc_cs128w_to_gbk_ext((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_02.code = cc.code;
+    cc_02.ccs = cc.ccs;
+    wVar4 = wc_cs128w_to_gbk_ext(cc_02);
+    cc.code = wVar4.code;
     break;
   case 0x881d:
   case 0x881e:
-    wVar4 = wc_cs128w_to_uhc((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    cc_05.code = cc.code;
+    cc_05.ccs = cc.ccs;
+    wVar4 = wc_cs128w_to_uhc(cc_05);
+    cc.code = wVar4.code;
     break;
   case 0x8820:
   case 0x8821:
-    wVar4 = wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,p));
-    cc.code = (wc_uint32)((ulonglong)wVar4 >> 0x20);
+    wVar4.code = cc.code;
+    wVar4.ccs = cc.ccs;
+    wVar4 = wc_cs128w_to_hkscs(wVar4);
+    cc.code = wVar4.code;
   }
-  return (wc_wchar_t)CONCAT44(cc.code,p);
+  wVar5.code = cc.code;
+  wVar5.ccs = (wc_ccs)in_stack_00000004;
+  return wVar5;
 }
 
 
 
-// WARNING: Type propagation algorithm not settling
+// WARNING: Unknown calling convention
 
 wc_wchar_t wtf_parse(wc_uchar **p)
 
 {
-  byte *pbVar1;
-  wc_uchar *pwVar2;
-  uint ucs1;
-  wc_uint32 ucs_00;
-  byte **in_stack_00000008;
-  wc_uchar *local_34;
+  wc_uint32 wVar1;
+  uint uVar2;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
+  uint local_34;
   wc_uint32 local_30;
   wc_wchar_t cc2;
   wc_wchar_t cc;
@@ -68361,100 +71133,114 @@ wc_wchar_t wtf_parse(wc_uchar **p)
   wc_uint32 ucs;
   wc_uchar *q;
   
-  if ((char)**in_stack_00000008 < '\0') {
-    wtf_parse1((wc_uchar **)&cc);
+  if ((char)**p < '\0') {
+    wtf_parse1(p);
   }
   else {
     cc.ccs = 0x142;
-    cc.code = (wc_uint32)**in_stack_00000008;
-    *in_stack_00000008 = *in_stack_00000008 + 1;
+    cc.code = (wc_uint32)**p;
+    *p = *p + 1;
   }
-  if ((WcOption.use_combining == '\0') || (WTF_WIDTH_MAP[**in_stack_00000008] != '\0')) {
-    *p = (wc_uchar *)cc.ccs;
-    p[1] = (wc_uchar *)cc.code;
-    pwVar2 = (wc_uchar *)cc.code;
+  if ((WcOption.use_combining == '\0') || (WTF_WIDTH_MAP[**p] != '\0')) {
+    *in_stack_00000004 = cc.ccs;
+    in_stack_00000004[1] = cc.code;
+    wVar1 = cc.code;
   }
   else {
-    pbVar1 = *in_stack_00000008;
-    wtf_parse1((wc_uchar **)&cc2);
+    q = *p;
+    wtf_parse1(&q);
     if (((cc.ccs == 0x142) || (cc.ccs == 0x81b)) && ((cc2.ccs & 0xffff) == 0x81b)) {
-      pwVar2 = (wc_uchar *)wc_cp1258_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
-      if (pwVar2 != (wc_uchar *)0x0) {
-        *in_stack_00000008 = pbVar1;
-        *p = (wc_uchar *)0x81c;
-        p[1] = pwVar2;
+      wVar1 = wc_cp1258_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
+      if (wVar1 != 0) {
+        *p = q;
+        *in_stack_00000004 = 0x81c;
+        in_stack_00000004[1] = wVar1;
         goto LAB_080c37fe;
       }
     }
     else if (((cc.ccs == 0x142) || (cc.ccs == 0x81d)) && ((cc2.ccs & 0xffff) == 0x81d)) {
-      pwVar2 = (wc_uchar *)wc_tcvn5712_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
-      if (pwVar2 != (wc_uchar *)0x0) {
-        *in_stack_00000008 = pbVar1;
-        *p = (wc_uchar *)0x81f;
-        p[1] = pwVar2;
+      wVar1 = wc_tcvn5712_precompose((wc_uchar)cc.code,(wc_uchar)cc2.code);
+      if (wVar1 != 0) {
+        *p = q;
+        *in_stack_00000004 = 0x81f;
+        in_stack_00000004[1] = wVar1;
         goto LAB_080c37fe;
       }
     }
     else if (((cc.ccs == 0x142) || (cc.ccs == 0x241)) ||
             (((cc.ccs & 0xffff) == 0x1000 ||
              (((cc.ccs & 0xffff) == 0x2000 || ((cc.ccs & 0xffff) == 0x2001)))))) {
-      while (((cc2.ccs & 0xffff) == 0x1000 ||
-             (((cc2.ccs & 0xffff) == 0x2000 || ((cc2.ccs & 0xffff) == 0x2001))))) {
-        ucs1 = cc.code;
-        if ((cc.ccs & 0xffff) == 0x2001) {
-          ucs1 = cc.code & 0x1fffff;
-        }
-        if ((cc2.ccs & 0xffff) == 0x2001) {
-          cc2.code = cc2.code & 0x1fffff;
-        }
-        ucs_00 = wc_ucs_precompose(ucs1,cc2.code);
-        if (ucs_00 == 0xffffffff) break;
-        if ((cc.ccs & 0xffff) == 0x2001) {
-          cc.code = cc.code & 0xff000000 | ucs_00;
-        }
-        else {
-          cc.ccs = wc_ucs_to_ccs(ucs_00);
-          cc.code = ucs_00;
-        }
-        *in_stack_00000008 = pbVar1;
-        if (WTF_WIDTH_MAP[*pbVar1] == '\0') break;
-        wtf_parse1(&local_34);
-        cc2.ccs = (wc_ccs)local_34;
-        cc2.code = local_30;
+      if ((cc2.ccs & 0xffff) == 0x1000) goto LAB_080c36e1;
+      if ((cc2.ccs & 0xffff) == 0x2000) goto LAB_080c36e1;
+      uVar2 = cc2.ccs & 0xffff;
+      while (uVar2 == 0x2001) {
+LAB_080c36e1:
+        do {
+          uVar2 = cc.code;
+          if ((cc.ccs & 0xffff) == 0x2001) {
+            uVar2 = cc.code & 0x1fffff;
+          }
+          if ((cc2.ccs & 0xffff) == 0x2001) {
+            cc2.code = cc2.code & 0x1fffff;
+          }
+          wVar1 = wc_ucs_precompose(uVar2,cc2.code);
+          if (wVar1 == 0xffffffff) goto LAB_080c37f3;
+          if ((cc.ccs & 0xffff) == 0x2001) {
+            cc.code = cc.code & 0xff000000 | wVar1;
+          }
+          else {
+            cc.ccs = wc_ucs_to_ccs(wVar1);
+            cc.code = wVar1;
+          }
+          *p = q;
+          if (WTF_WIDTH_MAP[*q] == '\0') goto LAB_080c37f3;
+          wtf_parse1(&q);
+          cc2.ccs = local_34;
+          cc2.code = local_30;
+        } while (((local_34 & 0xffff) == 0x1000) || ((local_34 & 0xffff) == 0x2000));
+        uVar2 = local_34 & 0xffff;
       }
     }
-    *p = (wc_uchar *)cc.ccs;
-    p[1] = (wc_uchar *)cc.code;
-    pwVar2 = (wc_uchar *)cc.code;
+LAB_080c37f3:
+    *in_stack_00000004 = cc.ccs;
+    in_stack_00000004[1] = cc.code;
+    wVar1 = cc.code;
   }
 LAB_080c37fe:
-  return (wc_wchar_t)CONCAT44(pwVar2,p);
+  wVar3.code = wVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_ccs wtf_get_ccs(wc_uchar *p)
 
 {
-  wc_uchar *local_14 [4];
+  wc_ccs local_14;
   
-  wtf_parse1(local_14);
-  return (wc_ccs)local_14[0];
+  wtf_parse1(&p);
+  return local_14;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wtf_get_code(wc_uchar *p)
 
 {
-  wc_uchar *local_14;
   wc_uint32 local_10;
   
-  wtf_parse1(&local_14);
+  wtf_parse1(&p);
   return local_10;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_bool wtf_is_hangul(wc_uchar *p)
 
@@ -68505,12 +71291,12 @@ wc_bool wtf_is_hangul(wc_uchar *p)
 
 
 
+// WARNING: Unknown calling convention
+
 char * wtf_conv_fit(char *s,wc_ces ces)
 
 {
-  wc_bool wVar1;
-  wc_bool wVar2;
-  wc_ces wVar3;
+  wc_ces wVar1;
   size_t n;
   Str x;
   wc_wchar_t cc;
@@ -68529,20 +71315,20 @@ char * wtf_conv_fit(char *s,wc_ces ces)
       if (s < p) {
         Strcopy_charp_n(x,s,(int)p - (int)s);
       }
-      wVar3 = wtf_major_ces;
-      wVar2 = WcOption.pre_conv;
-      wVar1 = WcOption.ucs_conv;
+      wVar1 = wtf_major_ces;
+      pre_conv = WcOption.pre_conv;
+      ucs_conv = WcOption.ucs_conv;
       wtf_major_ces = ces;
       WcOption.pre_conv = '\x01';
       WcOption.ucs_conv = '\x01';
       while (*p != '\0') {
-        wtf_parse1((wc_uchar **)&cc);
+        wtf_parse1(&p);
         wtf_push(x,cc.ccs,cc.code);
       }
+      WcOption.pre_conv = pre_conv;
+      WcOption.ucs_conv = ucs_conv;
       s = x->ptr;
-      WcOption.ucs_conv = wVar1;
-      WcOption.pre_conv = wVar2;
-      wtf_major_ces = wVar3;
+      wtf_major_ces = wVar1;
     }
   }
   return s;
@@ -68550,61 +71336,72 @@ char * wtf_conv_fit(char *s,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_big5_to_cs94w(wc_wchar_t cc)
 
 {
   int iVar1;
-  wc_uint32 wVar2;
-  uint in_stack_0000000c;
+  wc_ccs wVar2;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
   
-  if ((in_stack_0000000c & 0xff) < 0xa1) {
+  if ((cc.code & 0xff) < 0xa1) {
     iVar1 = 0x40;
   }
   else {
     iVar1 = 0x62;
   }
-  iVar1 = ((in_stack_0000000c >> 8 & 0xff) * 0x9d + (in_stack_0000000c & 0xff)) - iVar1;
-  in_stack_0000000c = iVar1 - 0x62bd;
-  if (in_stack_0000000c < 0x1888) {
-    cc.code = 0x8802;
+  iVar1 = ((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar1;
+  cc.code = iVar1 - 0x62bd;
+  if (cc.code < 0x1888) {
+    cc.ccs = 0x8802;
   }
   else {
-    cc.code = 0x8803;
-    in_stack_0000000c = iVar1 - 0x7b45;
+    cc.ccs = 0x8803;
+    cc.code = iVar1 - 0x7b45;
   }
-  wVar2 = (in_stack_0000000c / 0x5e + 0x21) * 0x100 + in_stack_0000000c % 0x5e + 0x21;
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(wc_uint32 *)(cc.ccs + 4) = wVar2;
-  return (wc_wchar_t)CONCAT44(wVar2,cc.ccs);
+  wVar2 = (cc.code / 0x5e + 0x21) * 0x100 + cc.code % 0x5e + 0x21;
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = wVar2;
+  wVar3.code = wVar2;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_cs94w_to_big5(wc_wchar_t cc)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint in_stack_0000000c;
+  int iVar1;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   
-  iVar2 = (in_stack_0000000c >> 8 & 0x7f) * 0x5e + (in_stack_0000000c & 0x7f);
-  in_stack_0000000c = iVar2 - 0xc3f;
-  if (cc.code == 0x8803) {
-    in_stack_0000000c = iVar2 + 0xc49;
+  iVar1 = (cc.code >> 8 & 0x7f) * 0x5e + (cc.code & 0x7f);
+  cc.code = iVar1 - 0xc3f;
+  if (cc.ccs == 0x8803) {
+    cc.code = iVar1 + 0xc49;
   }
-  if (in_stack_0000000c % 0x9d < 0x3f) {
-    iVar2 = 0x40;
+  if (cc.code % 0x9d < 0x3f) {
+    iVar1 = 0x40;
   }
   else {
-    iVar2 = 0x62;
+    iVar1 = 0x62;
   }
-  uVar1 = (in_stack_0000000c / 0x9d + 0xa1) * 0x100 + in_stack_0000000c % 0x9d + iVar2;
-  *(undefined4 *)cc.ccs = 0x8801;
-  *(uint *)(cc.ccs + 4) = uVar1;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)uVar1 << 0x20);
+  iVar1 = (cc.code / 0x9d + 0xa1) * 0x100 + cc.code % 0x9d + iVar1;
+  *in_stack_00000004 = 0x8801;
+  in_stack_00000004[1] = iVar1;
+  wVar2.code = iVar1;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_big5(Str is,wc_ces ces)
 
@@ -68668,12 +71465,15 @@ Str wc_conv_from_big5(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_big5(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  undefined4 uVar2;
+  undefined4 local_14;
+  undefined4 local_10;
   
   do {
     if (cc.ccs == 0x8801) {
@@ -68682,14 +71482,14 @@ LAB_080c3f52:
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)(cc.code >> 8);
+      os->ptr[iVar1] = cc.code._1_1_;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (char)cc.code;
+      os->ptr[iVar1] = cc.code;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -68700,7 +71500,7 @@ LAB_080c3f52:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -68715,7 +71515,7 @@ LAB_080c3f52:
     }
     else {
       if (cc.ccs < 0x8804) {
-        wc_cs94w_to_big5((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs94w_to_big5(cc);
         goto LAB_080c3f52;
       }
       if (cc.ccs == 0xc000) {
@@ -68727,17 +71527,18 @@ LAB_080c3f52:
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar2 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar2 = 0xc000;
       }
+      cc.ccs = uVar2;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-      cc.ccs = local_14;
+      wc_any_to_any_ces(cc,st);
       cc.code = local_10;
+      cc.ccs = local_14;
     }
   } while( true );
 }
@@ -68749,6 +71550,7 @@ Str wc_char_conv_from_big5(wc_uchar c,wc_status *st)
 {
   int iVar1;
   Str p_Var2;
+  wc_uchar c_local;
   
   if (st->state == -1) {
     st->state = 0;
@@ -68779,6 +71581,8 @@ Str wc_char_conv_from_big5(wc_uchar c,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_bool wc_is_combining(wc_wchar_t cc)
 
@@ -68832,58 +71636,66 @@ LAB_080c42dd:
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_gbk_ext_to_cs128w(wc_wchar_t cc)
 
 {
-  wc_uint32 wVar1;
+  wc_ccs wVar1;
   int iVar2;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
   
-  if ((in_stack_0000000c & 0xff) < 0x80) {
+  if ((cc.code & 0xff) < 0x80) {
     iVar2 = 0x40;
   }
   else {
     iVar2 = 0x41;
   }
-  iVar2 = ((in_stack_0000000c >> 8 & 0xff) * 0xbe + (in_stack_0000000c & 0xff)) - iVar2;
-  in_stack_0000000c = iVar2 - 0x5fbe;
-  if (in_stack_0000000c < 0x4000) {
-    cc.code = 0x881a;
+  iVar2 = ((cc.code >> 8 & 0xff) * 0xbe + (cc.code & 0xff)) - iVar2;
+  cc.code = iVar2 - 0x5fbe;
+  if (cc.code < 0x4000) {
+    cc.ccs = 0x881a;
   }
   else {
-    cc.code = 0x881b;
-    in_stack_0000000c = iVar2 - 0x9fbe;
+    cc.ccs = 0x881b;
+    cc.code = iVar2 - 0x9fbe;
   }
-  wVar1 = (in_stack_0000000c >> 7) * 0x100 + (in_stack_0000000c & 0x7f);
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(wc_uint32 *)(cc.ccs + 4) = wVar1;
-  return (wc_wchar_t)CONCAT44(wVar1,cc.ccs);
+  wVar1 = (cc.code >> 7) * 0x100 + (cc.code & 0x7f);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = wVar1;
+  wVar3.code = wVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_cs128w_to_gbk_ext(wc_wchar_t cc)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint in_stack_0000000c;
+  int iVar1;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   
-  in_stack_0000000c = (in_stack_0000000c >> 8 & 0x7f) * 0x80 + (in_stack_0000000c & 0x7f);
-  if (cc.code == 0x881b) {
-    in_stack_0000000c = in_stack_0000000c + 0x4000;
+  cc.code = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+  if (cc.ccs == 0x881b) {
+    cc.code = cc.code + 0x4000;
   }
-  if (in_stack_0000000c + ((in_stack_0000000c >> 1) / 0x5f) * -0xbe < 0x3f) {
-    iVar2 = 0x40;
+  if (cc.code % 0xbe < 0x3f) {
+    iVar1 = 0x40;
   }
   else {
-    iVar2 = 0x41;
+    iVar1 = 0x41;
   }
-  uVar1 = ((in_stack_0000000c >> 1) / 0x5f + 0x81) * 0x100 +
-          in_stack_0000000c + ((in_stack_0000000c >> 1) / 0x5f) * -0xbe + iVar2;
-  *(undefined4 *)cc.ccs = 0x8819;
-  *(uint *)(cc.ccs + 4) = uVar1;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)uVar1 << 0x20);
+  iVar1 = (cc.code / 0xbe + 0x81) * 0x100 + cc.code % 0xbe + iVar1;
+  *in_stack_00000004 = 0x8819;
+  in_stack_00000004[1] = iVar1;
+  wVar2.code = iVar1;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
@@ -68893,6 +71705,7 @@ wc_ccs wc_gbk_or_gbk_ext(wc_uint16 code)
 {
   wc_map3 *pwVar1;
   wc_ccs wVar2;
+  wc_uint16 code_local;
   
   pwVar1 = wc_map3_range_search(code,gbk_ext_ucs_map,0x6e);
   if (pwVar1 == (wc_map3 *)0x0) {
@@ -68905,6 +71718,8 @@ wc_ccs wc_gbk_or_gbk_ext(wc_uint16 code)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_gb18030_to_ucs(wc_wchar_t cc)
 
@@ -68922,7 +71737,7 @@ wc_uint32 wc_gb18030_to_ucs(wc_wchar_t cc)
   uVar1 = cc.ccs & 0xffff;
   if (uVar1 == 0x8819) {
 LAB_080c44fb:
-    pwVar2 = wc_map3_range_search((wc_uint16)cc.code,gbk_ext_ucs_map,0x6e);
+    pwVar2 = wc_map3_range_search(cc.code,gbk_ext_ucs_map,0x6e);
     if (pwVar2 == (wc_map3 *)0x0) {
       wVar5 = 0xffffffff;
     }
@@ -68946,8 +71761,8 @@ LAB_080c44fb:
   else {
     if (uVar1 < 0x881a) {
       if (uVar1 == 0x2002) {
-        if ((cc.code < 0x81308130) || (0x8431a439 < cc.code)) {
-          if ((0x9030812f < cc.code) && (cc.code < 0xe3329a36)) {
+        if (((ulonglong)cc < 0x8130813000000000) || (0x8431a439ffffffff < (ulonglong)cc)) {
+          if ((0x9030812fffffffff < (ulonglong)cc) && ((ulonglong)cc < 0xe3329a3600000000)) {
             return ((((cc.code >> 0x18) * 10 + (cc.code >> 0x10 & 0xff)) * 0x7e +
                     (cc.code >> 8 & 0xff)) * 10 + (cc.code & 0xff)) - 0x1ba0fa;
           }
@@ -68975,7 +71790,7 @@ LAB_080c44fb:
       }
     }
     else if (uVar1 < 0x881c) {
-      wc_cs128w_to_gbk_ext((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+      wc_cs128w_to_gbk_ext(cc);
       goto LAB_080c44fb;
     }
     wVar5 = wc_any_to_ucs(cc);
@@ -68985,6 +71800,8 @@ LAB_080c44fb:
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_ucs_to_gb18030(wc_uint32 ucs)
 
 {
@@ -68992,12 +71809,13 @@ wc_wchar_t wc_ucs_to_gb18030(wc_uint32 ucs)
   int iVar2;
   wc_ccs wVar3;
   uint uVar4;
-  uint in_stack_00000008;
+  wc_wchar_t wVar5;
+  wc_ccs *in_stack_00000004;
   wc_wchar_t cc;
   wc_map3 *map;
   
-  if (in_stack_00000008 < 0x10000) {
-    pwVar1 = wc_map3_range_search((wc_uint16)in_stack_00000008,ucs_gbk_ext_map,0x6e);
+  if (ucs < 0x10000) {
+    pwVar1 = wc_map3_range_search((wc_uint16)ucs,ucs_gbk_ext_map,0x6e);
     if (pwVar1 != (wc_map3 *)0x0) {
       if ((pwVar1->code3 & 0xff) < 0x80) {
         iVar2 = 0x40;
@@ -69006,61 +71824,61 @@ wc_wchar_t wc_ucs_to_gb18030(wc_uint32 ucs)
         iVar2 = 0x41;
       }
       uVar4 = ((((uint)(pwVar1->code3 >> 8) * 0xbe + -0x5fbe + (pwVar1->code3 & 0xff)) - iVar2) +
-              in_stack_00000008) - (uint)pwVar1->code;
-      if (uVar4 + ((uVar4 >> 1) / 0x5f) * -0xbe < 0x3f) {
+              ucs) - (uint)pwVar1->code;
+      if (uVar4 % 0xbe < 0x3f) {
         iVar2 = 0x40;
       }
       else {
         iVar2 = 0x41;
       }
-      cc.code = ((uVar4 >> 1) / 0x5f + 0x81) * 0x100 + uVar4 + ((uVar4 >> 1) / 0x5f) * -0xbe + iVar2
-      ;
-      *(undefined4 *)ucs = 0x8819;
-      *(wc_uint32 *)(ucs + 4) = cc.code;
+      cc.code = (uVar4 / 0xbe + 0x81) * 0x100 + uVar4 % 0xbe + iVar2;
+      *in_stack_00000004 = 0x8819;
+      in_stack_00000004[1] = cc.code;
       goto LAB_080c4b6a;
     }
-    pwVar1 = wc_map3_range_search((wc_uint16)in_stack_00000008,ucs_gb18030_map,0xce);
+    pwVar1 = wc_map3_range_search((wc_uint16)ucs,ucs_gb18030_map,0xce);
     if (pwVar1 != (wc_map3 *)0x0) {
-      uVar4 = (pwVar1->code3 + in_stack_00000008) - (uint)pwVar1->code;
-      cc.code = ((uVar4 >> 3) / 0x627 + 0x81) * 0x1000000 +
-                (((uVar4 >> 2) / 0x13b) % 10 + 0x30) * 0x10000 +
-                (uVar4 / 10 + ((uVar4 / 10 >> 1) / 0x3f) * -0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30
-      ;
+      uVar4 = (pwVar1->code3 + ucs) - (uint)pwVar1->code;
+      cc.code = (uVar4 / 0x3138 + 0x81) * 0x1000000 + ((uVar4 / 0x4ec) % 10 + 0x30) * 0x10000 +
+                ((uVar4 / 10) % 0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30;
       if (WcOption.gb18030_as_ucs == '\0') {
         cc.ccs = 0x12002;
       }
       else {
-        wVar3 = wc_ucs_to_ccs(in_stack_00000008);
+        wVar3 = wc_ucs_to_ccs(ucs);
         cc.ccs = wVar3 & 0xffff0000 | 0x2002;
       }
-      *(wc_ccs *)ucs = cc.ccs;
-      *(wc_uint32 *)(ucs + 4) = cc.code;
+      *in_stack_00000004 = cc.ccs;
+      in_stack_00000004[1] = cc.code;
       goto LAB_080c4b6a;
     }
   }
-  else if (in_stack_00000008 < 0x110000) {
-    uVar4 = in_stack_00000008 + 0x1e248;
-    cc.code = ((uVar4 >> 3) / 0x627 + 0x81) * 0x1000000 +
-              (((uVar4 >> 2) / 0x13b) % 10 + 0x30) * 0x10000 +
-              (uVar4 / 10 + ((uVar4 / 10 >> 1) / 0x3f) * -0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30;
+  else if (ucs < 0x110000) {
+    uVar4 = ucs + 0x1e248;
+    cc.code = (uVar4 / 0x3138 + 0x81) * 0x1000000 + ((uVar4 / 0x4ec) % 10 + 0x30) * 0x10000 +
+              ((uVar4 / 10) % 0x7e + 0x81) * 0x100 + uVar4 % 10 + 0x30;
     if (WcOption.gb18030_as_ucs == '\0') {
       cc.ccs = 0x12002;
     }
     else {
-      wVar3 = wc_ucs_to_ccs(in_stack_00000008);
+      wVar3 = wc_ucs_to_ccs(ucs);
       cc.ccs = wVar3 & 0xffff0000 | 0x2002;
     }
-    *(wc_ccs *)ucs = cc.ccs;
-    *(wc_uint32 *)(ucs + 4) = cc.code;
+    *in_stack_00000004 = cc.ccs;
+    in_stack_00000004[1] = cc.code;
     goto LAB_080c4b6a;
   }
-  *(undefined4 *)ucs = 0x4000;
-  *(wc_uint32 *)(ucs + 4) = cc.code;
+  *in_stack_00000004 = 0x4000;
+  in_stack_00000004[1] = cc.code;
 LAB_080c4b6a:
-  return (wc_wchar_t)CONCAT44(cc.code,ucs);
+  wVar5.code = cc.code;
+  wVar5.ccs = (wc_ccs)in_stack_00000004;
+  return wVar5;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_gb18030(Str is,wc_ces ces)
 
@@ -69068,6 +71886,7 @@ Str wc_conv_from_gb18030(Str is,wc_ces ces)
   wc_uchar *pwVar1;
   int iVar2;
   ushort code;
+  wc_wchar_t cc_00;
   wc_uchar *pwVar3;
   Str x;
   uint uVar4;
@@ -69150,8 +71969,8 @@ Str wc_conv_from_gb18030(Str is,wc_ces ces)
         if (WC_GB18030_MAP[*p] == '\x10') {
           uVar4 = (uint)*p | (uint)p[-3] << 0x18 | (uint)p[-2] << 0x10 | (uint)p[-1] << 8;
           if ((WcOption.gb18030_as_ucs == '\0') ||
-             (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar4,0x12002)), ucs_00 == 0xffffffff)
-             ) {
+             (cc_00.code = uVar4, cc_00.ccs = 0x12002, ucs_00 = wc_gb18030_to_ucs(cc_00),
+             ucs_00 == 0xffffffff)) {
             wtf_push(x,0x12002,uVar4);
           }
           else {
@@ -69182,131 +72001,138 @@ LAB_080c4f23:
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_gb18030(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  uint uVar2;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  byte bVar2;
+  uint uVar3;
+  undefined4 uVar4;
+  byte bVar5;
+  undefined4 local_14;
+  undefined4 local_10;
   
   do {
-    uVar2 = cc.ccs & 0xffff;
-    if (uVar2 < 0x8819) {
-      if (0x8816 < uVar2) {
-        wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+    uVar3 = cc.ccs & 0xffff;
+    if (uVar3 < 0x8819) {
+      bVar2 = cc.code._1_1_;
+      bVar5 = cc.code;
+      if (0x8816 < uVar3) {
+        wc_cs128w_to_gbk(cc);
 LAB_080c5147:
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->ptr[iVar1] = bVar2;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar5;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
-      if (uVar2 == 0x4000) {
+      if (uVar3 == 0x4000) {
         if (WcOption.no_replace != '\0') {
           return;
         }
         Strcat_charp(os,WcReplace);
         return;
       }
-      if (uVar2 < 0x4001) {
-        if (uVar2 == 0x142) {
+      if (uVar3 < 0x4001) {
+        if (uVar3 == 0x142) {
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
+          os->ptr[iVar1] = bVar5;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
-        if (uVar2 == 0x2002) {
+        if (uVar3 == 0x2002) {
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 0x18);
+          os->ptr[iVar1] = cc.code._3_1_;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 0x10);
+          os->ptr[iVar1] = cc.code._2_1_;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)(cc.code >> 8);
+          os->ptr[iVar1] = bVar2;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (char)cc.code;
+          os->ptr[iVar1] = bVar5;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
       }
       else {
-        if (uVar2 == 0x8141) {
+        if (uVar3 == 0x8141) {
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
+          os->ptr[iVar1] = bVar2 | 0x80;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           if (os->area_size <= os->length + 1) {
             Strgrow(os);
           }
           iVar1 = os->length;
-          os->ptr[iVar1] = (byte)cc.code | 0x80;
+          os->ptr[iVar1] = bVar5 | 0x80;
           os->length = iVar1 + 1;
           os->ptr[os->length] = '\0';
           return;
         }
-        if (uVar2 == 0x8816) goto LAB_080c5147;
+        if (uVar3 == 0x8816) goto LAB_080c5147;
       }
     }
     else {
-      if (uVar2 < 0x881c) {
-        if (0x8819 < uVar2) {
-          wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&local_14));
-          cc.ccs = local_14;
+      if (uVar3 < 0x881c) {
+        if (0x8819 < uVar3) {
+          wc_cs128w_to_gbk(cc);
           cc.code = local_10;
+          cc.ccs = local_14;
         }
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->ptr[iVar1] = cc.code._1_1_;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
       }
-      if (uVar2 == 0xc000) {
+      if (uVar3 == 0xc000) {
         if (WcOption.no_replace == '\0') {
           Strcat_charp(os,WcReplaceW);
         }
@@ -69314,17 +72140,18 @@ LAB_080c5147:
       }
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar4 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar4 = 0xc000;
       }
+      cc.ccs = uVar4;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-      cc.ccs = local_14;
+      wc_any_to_any_ces(cc,st);
       cc.code = local_10;
+      cc.ccs = local_14;
     }
   } while( true );
 }
@@ -69335,11 +72162,13 @@ Str wc_char_conv_from_gb18030(wc_uchar c,wc_status *st)
 
 {
   int iVar1;
+  wc_wchar_t cc_00;
   ushort code;
   Str p_Var2;
   uint uVar3;
   wc_uint32 ucs_00;
   wc_ccs wVar4;
+  wc_uchar c_local;
   wc_wchar_t cc;
   wc_uint32 ucs;
   wc_uint32 gbk;
@@ -69402,7 +72231,8 @@ Str wc_char_conv_from_gb18030(wc_uchar c,wc_status *st)
                       (uint)wc_char_conv_from_gb18030::gb[1] << 0x10 |
                       (uint)wc_char_conv_from_gb18030::gb[2] << 8;
     if ((WcOption.gb18030_as_ucs == '\0') ||
-       (ucs_00 = wc_gb18030_to_ucs((wc_wchar_t)CONCAT44(uVar3,0x12002)), ucs_00 == 0xffffffff)) {
+       (cc_00.code = uVar3, cc_00.ccs = 0x12002, ucs_00 = wc_gb18030_to_ucs(cc_00),
+       ucs_00 == 0xffffffff)) {
       wtf_push(wc_char_conv_from_gb18030::os,0x12002,uVar3);
     }
     else {
@@ -69421,6 +72251,7 @@ wc_ccs wc_gb2312_or_gbk(wc_uint16 code)
 {
   wc_map *pwVar1;
   wc_ccs wVar2;
+  wc_uint16 code_local;
   
   pwVar1 = wc_map_range_search(code,gb2312_gbk_map,7);
   if (pwVar1 == (wc_map *)0x0) {
@@ -69434,61 +72265,71 @@ wc_ccs wc_gb2312_or_gbk(wc_uint16 code)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_gbk_to_cs128w(wc_wchar_t cc)
 
 {
-  wc_uint32 wVar1;
+  wc_ccs wVar1;
   int iVar2;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
   
-  if ((in_stack_0000000c & 0xff) < 0x80) {
+  if ((cc.code & 0xff) < 0x80) {
     iVar2 = 0x40;
   }
   else {
     iVar2 = 0x41;
   }
-  iVar2 = ((in_stack_0000000c >> 8 & 0xff) * 0xbe + (in_stack_0000000c & 0xff)) - iVar2;
-  in_stack_0000000c = iVar2 - 0x5fbe;
-  if (in_stack_0000000c < 0x4000) {
-    cc.code = 0x8817;
+  iVar2 = ((cc.code >> 8 & 0xff) * 0xbe + (cc.code & 0xff)) - iVar2;
+  cc.code = iVar2 - 0x5fbe;
+  if (cc.code < 0x4000) {
+    cc.ccs = 0x8817;
   }
   else {
-    cc.code = 0x8818;
-    in_stack_0000000c = iVar2 - 0x9fbe;
+    cc.ccs = 0x8818;
+    cc.code = iVar2 - 0x9fbe;
   }
-  wVar1 = (in_stack_0000000c >> 7) * 0x100 + (in_stack_0000000c & 0x7f);
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(wc_uint32 *)(cc.ccs + 4) = wVar1;
-  return (wc_wchar_t)CONCAT44(wVar1,cc.ccs);
+  wVar1 = (cc.code >> 7) * 0x100 + (cc.code & 0x7f);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = wVar1;
+  wVar3.code = wVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_cs128w_to_gbk(wc_wchar_t cc)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint in_stack_0000000c;
+  int iVar1;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   
-  in_stack_0000000c = (in_stack_0000000c >> 8 & 0x7f) * 0x80 + (in_stack_0000000c & 0x7f);
-  if (cc.code == 0x8818) {
-    in_stack_0000000c = in_stack_0000000c + 0x4000;
+  cc.code = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+  if (cc.ccs == 0x8818) {
+    cc.code = cc.code + 0x4000;
   }
-  if (in_stack_0000000c + ((in_stack_0000000c >> 1) / 0x5f) * -0xbe < 0x3f) {
-    iVar2 = 0x40;
+  if (cc.code % 0xbe < 0x3f) {
+    iVar1 = 0x40;
   }
   else {
-    iVar2 = 0x41;
+    iVar1 = 0x41;
   }
-  uVar1 = ((in_stack_0000000c >> 1) / 0x5f + 0x81) * 0x100 +
-          in_stack_0000000c + ((in_stack_0000000c >> 1) / 0x5f) * -0xbe + iVar2;
-  *(undefined4 *)cc.ccs = 0x8816;
-  *(uint *)(cc.ccs + 4) = uVar1;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)uVar1 << 0x20);
+  iVar1 = (cc.code / 0xbe + 0x81) * 0x100 + cc.code % 0xbe + iVar1;
+  *in_stack_00000004 = 0x8816;
+  in_stack_00000004[1] = iVar1;
+  wVar2.code = iVar1;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_gbk_to_N(wc_uint32 c)
 
@@ -69563,6 +72404,8 @@ wc_uint32 wc_gbk_to_N(wc_uint32 c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_gbk(Str is,wc_ces ces)
 
@@ -69643,27 +72486,32 @@ Str wc_conv_from_gbk(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_gbk(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  undefined4 uVar2;
+  byte bVar3;
+  undefined4 local_14;
+  undefined4 local_10;
   
   do {
+    bVar3 = cc.code;
     if (cc.ccs == 0x8141) {
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (byte)(cc.code >> 8) | 0x80;
+      os->ptr[iVar1] = cc.code._1_1_ | 0x80;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       if (os->area_size <= os->length + 1) {
         Strgrow(os);
       }
       iVar1 = os->length;
-      os->ptr[iVar1] = (byte)cc.code | 0x80;
+      os->ptr[iVar1] = bVar3 | 0x80;
       os->length = iVar1 + 1;
       os->ptr[os->length] = '\0';
       return;
@@ -69674,7 +72522,7 @@ void wc_push_to_gbk(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (byte)cc.code | 0x80;
+        os->ptr[iVar1] = bVar3 | 0x80;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -69691,7 +72539,7 @@ void wc_push_to_gbk(Str os,wc_wchar_t cc,wc_status *st)
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar3;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -69699,20 +72547,20 @@ void wc_push_to_gbk(Str os,wc_wchar_t cc,wc_status *st)
     }
     else if (cc.ccs < 0x8819) {
       if (0x8816 < cc.ccs) {
-        wc_cs128w_to_gbk((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs128w_to_gbk(cc);
 LAB_080c5fe5:
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->ptr[iVar1] = cc.code._1_1_;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = bVar3;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -69727,17 +72575,18 @@ LAB_080c5fe5:
       return;
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar2 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar2 = 0xc000;
       }
+      cc.ccs = uVar2;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-      cc.ccs = local_14;
+      wc_any_to_any_ces(cc,st);
       cc.code = local_10;
+      cc.ccs = local_14;
     }
   } while( true );
 }
@@ -69752,6 +72601,7 @@ Str wc_char_conv_from_gbk(wc_uchar c,wc_status *st)
   ushort code;
   Str p_Var3;
   wc_ccs ccs;
+  wc_uchar c_local;
   wc_uint32 gbk;
   
   if (st->state == -1) {
@@ -69795,60 +72645,71 @@ Str wc_char_conv_from_gbk(wc_uchar c,wc_status *st)
 
 
 
+// WARNING: Unknown calling convention
+
 wc_wchar_t wc_hkscs_to_cs128w(wc_wchar_t cc)
 
 {
-  wc_uint32 wVar1;
+  wc_ccs wVar1;
   int iVar2;
-  uint in_stack_0000000c;
+  wc_wchar_t wVar3;
+  wc_ccs *in_stack_00000004;
   
-  if ((in_stack_0000000c & 0xff) < 0xa1) {
+  if ((cc.code & 0xff) < 0xa1) {
     iVar2 = 0x40;
   }
   else {
     iVar2 = 0x62;
   }
-  iVar2 = ((in_stack_0000000c >> 8 & 0xff) * 0x9d + (in_stack_0000000c & 0xff)) - iVar2;
-  in_stack_0000000c = iVar2 - 0x5368;
-  if (in_stack_0000000c < 0x4000) {
-    cc.code = 0x8820;
+  iVar2 = ((cc.code >> 8 & 0xff) * 0x9d + (cc.code & 0xff)) - iVar2;
+  cc.code = iVar2 - 0x5368;
+  if (cc.code < 0x4000) {
+    cc.ccs = 0x8820;
   }
   else {
-    cc.code = 0x8821;
-    in_stack_0000000c = iVar2 - 0x9368;
+    cc.ccs = 0x8821;
+    cc.code = iVar2 - 0x9368;
   }
-  wVar1 = (in_stack_0000000c >> 7) * 0x100 + (in_stack_0000000c & 0x7f);
-  *(wc_uint32 *)cc.ccs = cc.code;
-  *(wc_uint32 *)(cc.ccs + 4) = wVar1;
-  return (wc_wchar_t)CONCAT44(wVar1,cc.ccs);
+  wVar1 = (cc.code >> 7) * 0x100 + (cc.code & 0x7f);
+  *in_stack_00000004 = cc.ccs;
+  in_stack_00000004[1] = wVar1;
+  wVar3.code = wVar1;
+  wVar3.ccs = (wc_ccs)in_stack_00000004;
+  return wVar3;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_wchar_t wc_cs128w_to_hkscs(wc_wchar_t cc)
 
 {
-  uint uVar1;
-  int iVar2;
-  uint in_stack_0000000c;
+  int iVar1;
+  wc_wchar_t wVar2;
+  undefined4 *in_stack_00000004;
   
-  in_stack_0000000c = (in_stack_0000000c >> 8 & 0x7f) * 0x80 + (in_stack_0000000c & 0x7f);
-  if (cc.code == 0x8821) {
-    in_stack_0000000c = in_stack_0000000c + 0x4000;
+  cc.code = (cc.code >> 8 & 0x7f) * 0x80 + (cc.code & 0x7f);
+  if (cc.ccs == 0x8821) {
+    cc.code = cc.code + 0x4000;
   }
-  if (in_stack_0000000c % 0x9d < 0x3f) {
-    iVar2 = 0x40;
+  if (cc.code % 0x9d < 0x3f) {
+    iVar1 = 0x40;
   }
   else {
-    iVar2 = 0x62;
+    iVar1 = 0x62;
   }
-  uVar1 = (in_stack_0000000c / 0x9d + 0x88) * 0x100 + in_stack_0000000c % 0x9d + iVar2;
-  *(undefined4 *)cc.ccs = 0x881f;
-  *(uint *)(cc.ccs + 4) = uVar1;
-  return (wc_wchar_t)(cc & 0xffffffff | (ulonglong)uVar1 << 0x20);
+  iVar1 = (cc.code / 0x9d + 0x88) * 0x100 + cc.code % 0x9d + iVar1;
+  *in_stack_00000004 = 0x881f;
+  in_stack_00000004[1] = iVar1;
+  wVar2.code = iVar1;
+  wVar2.ccs = (wc_ccs)in_stack_00000004;
+  return wVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 wc_uint32 wc_hkscs_to_N(wc_uint32 c)
 
@@ -69878,6 +72739,8 @@ wc_uint32 wc_hkscs_to_N(wc_uint32 c)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_hkscs(Str is,wc_ces ces)
 
@@ -69949,30 +72812,33 @@ Str wc_conv_from_hkscs(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_hkscs(Str os,wc_wchar_t cc,wc_status *st)
 
 {
   int iVar1;
-  wc_ccs local_14;
-  wc_uint32 local_10;
+  undefined4 uVar2;
+  undefined4 local_14;
+  undefined4 local_10;
   
   do {
     if (cc.ccs < 0x8804) {
       if (0x8801 < cc.ccs) {
-        wc_cs94w_to_big5((wc_wchar_t)CONCAT44(cc.ccs,&cc));
+        wc_cs94w_to_big5(cc);
 LAB_080c67e1:
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->ptr[iVar1] = cc.code._1_1_;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -69990,7 +72856,7 @@ LAB_080c67e1:
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -69998,22 +72864,22 @@ LAB_080c67e1:
     }
     else if (cc.ccs < 0x8822) {
       if (0x881f < cc.ccs) {
-        wc_cs128w_to_hkscs((wc_wchar_t)CONCAT44(cc.ccs,&local_14));
-        cc.ccs = local_14;
+        wc_cs128w_to_hkscs(cc);
         cc.code = local_10;
+        cc.ccs = local_14;
 LAB_080c68a9:
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)(cc.code >> 8);
+        os->ptr[iVar1] = cc.code._1_1_;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         if (os->area_size <= os->length + 1) {
           Strgrow(os);
         }
         iVar1 = os->length;
-        os->ptr[iVar1] = (char)cc.code;
+        os->ptr[iVar1] = cc.code;
         os->length = iVar1 + 1;
         os->ptr[os->length] = '\0';
         return;
@@ -70028,17 +72894,18 @@ LAB_080c68a9:
       return;
     }
     if (WcOption.ucs_conv == '\0') {
-      if ((cc.ccs & 0x18000) == 0) {
-        cc.ccs = 0x4000;
+      if (((ulonglong)cc & 0x18000) == 0) {
+        uVar2 = 0x4000;
       }
       else {
-        cc.ccs = 0xc000;
+        uVar2 = 0xc000;
       }
+      cc.ccs = uVar2;
     }
     else {
-      wc_any_to_any_ces((wc_wchar_t)CONCAT44(cc.ccs,&local_14),(wc_status *)cc.code);
-      cc.ccs = local_14;
+      wc_any_to_any_ces(cc,st);
       cc.code = local_10;
+      cc.ccs = local_14;
     }
   } while( true );
 }
@@ -70051,6 +72918,7 @@ Str wc_char_conv_from_hkscs(wc_uchar c,wc_status *st)
   wc_uint8 wVar1;
   int iVar2;
   Str p_Var3;
+  wc_uchar c_local;
   wc_uint32 hkscs;
   
   if (st->state == -1) {
@@ -70091,6 +72959,8 @@ Str wc_char_conv_from_hkscs(wc_uchar c,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_priv1(Str is,wc_ces ces)
 
@@ -70141,6 +73011,7 @@ Str wc_char_conv_from_priv1(wc_uchar c,wc_status *st)
 {
   int iVar1;
   Str x;
+  wc_uchar c_local;
   Str os;
   
   x = Strnew_size(1);
@@ -70160,6 +73031,8 @@ Str wc_char_conv_from_priv1(wc_uchar c,wc_status *st)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 Str wc_conv_from_ascii(Str is,wc_ces ces)
 
@@ -70202,6 +73075,8 @@ Str wc_conv_from_ascii(Str is,wc_ces ces)
 
 
 
+// WARNING: Unknown calling convention
+
 void wc_push_to_raw(Str os,wc_wchar_t cc,wc_status *st)
 
 {
@@ -70212,7 +73087,7 @@ void wc_push_to_raw(Str os,wc_wchar_t cc,wc_status *st)
       Strgrow(os);
     }
     iVar1 = os->length;
-    os->ptr[iVar1] = (char)((ulonglong)cc >> 0x20);
+    os->ptr[iVar1] = cc.code;
     os->length = iVar1 + 1;
     os->ptr[os->length] = '\0';
   }
@@ -70233,7 +73108,7 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   uint uVar7;
   uint uVar8;
   bool bVar9;
-  byte bStack28;
+  byte bStack_1c;
   uint local_18;
   uint local_14;
   uint local_10;
@@ -70274,17 +73149,17 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       }
     }
     if ((uVar8 ^ 0x1f) != 0) {
-      bStack28 = (byte)(uVar8 ^ 0x1f);
-      bVar6 = 0x20 - bStack28;
-      uVar1 = (ulonglong)(local_14 >> (bVar6 & 0x1f) | local_10 << (bStack28 & 0x1f));
+      bStack_1c = (byte)(uVar8 ^ 0x1f);
+      bVar6 = 0x20 - bStack_1c;
+      uVar1 = (ulonglong)(local_14 >> (bVar6 & 0x1f) | local_10 << (bStack_1c & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_2 << (bStack28 & 0x1f) | param_1 >> (bVar6 & 0x1f));
+                       param_2 << (bStack_1c & 0x1f) | param_1 >> (bVar6 & 0x1f));
       uVar3 = uVar2 / uVar1;
       iVar5 = (int)uVar3;
       uVar8 = (uint)(uVar2 % uVar1);
-      lVar4 = (uVar3 & 0xffffffff) * (ulonglong)(local_14 << (bStack28 & 0x1f));
+      lVar4 = (uVar3 & 0xffffffff) * (ulonglong)(local_14 << (bStack_1c & 0x1f));
       uVar7 = (uint)((ulonglong)lVar4 >> 0x20);
-      if ((uVar8 < uVar7) || ((param_1 << (bStack28 & 0x1f) < (uint)lVar4 && (uVar8 == uVar7)))) {
+      if ((uVar8 < uVar7) || ((param_1 << (bStack_1c & 0x1f) < (uint)lVar4 && (uVar8 == uVar7)))) {
         iVar5 = iVar5 + -1;
         uVar8 = 0;
       }
@@ -70311,8 +73186,6 @@ LAB_080c6f20:
 }
 
 
-
-// WARNING: Could not reconcile some variable overlaps
 
 undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
@@ -70344,6 +73217,7 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     local_24 = -param_3;
     local_20 = -(param_4 + (param_3 != 0));
   }
+  uVar4 = local_24;
   local_28 = local_24;
   if (local_20 == 0) {
     if (param_2 < local_24) {
@@ -70376,22 +73250,19 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
       else {
         local_24._0_1_ = (byte)(uVar3 ^ 0x1f);
         local_2c = 0x20 - (byte)local_24;
-        uVar3 = local_24 >> (local_2c & 0x1f) | local_20 << ((byte)local_24 & 0x1f);
-        local_24 = local_24 << ((byte)local_24 & 0x1f);
+        uVar3 = uVar4 >> (local_2c & 0x1f) | local_20 << ((byte)local_24 & 0x1f);
+        uVar4 = uVar4 << ((byte)local_24 & 0x1f);
         uVar1 = CONCAT44(param_2 >> (local_2c & 0x1f),
                          param_1 >> (local_2c & 0x1f) | param_2 << ((byte)local_24 & 0x1f));
         uVar5 = (uint)(uVar1 % (ulonglong)uVar3);
         param_1 = param_1 << ((byte)local_24 & 0x1f);
-        lVar2 = (uVar1 / uVar3 & 0xffffffff) * (ulonglong)local_24;
+        lVar2 = (uVar1 / uVar3 & 0xffffffff) * (ulonglong)uVar4;
         uVar6 = (uint)((ulonglong)lVar2 >> 0x20);
-        uVar4 = (uint)lVar2;
-        if ((uVar5 < uVar6) || ((param_1 < uVar4 && (uVar5 == uVar6)))) {
-          bVar7 = uVar4 < local_24;
-          uVar4 = uVar4 - local_24;
-          uVar6 = (uVar6 - uVar3) - (uint)bVar7;
+        if ((uVar5 < uVar6) || ((param_1 < (uint)lVar2 && (uVar5 == uVar6)))) {
+          lVar2 = lVar2 - CONCAT44(uVar3,uVar4);
         }
-        local_10 = (uVar5 - uVar6) - (uint)(param_1 < uVar4);
-        param_1 = local_10 << (local_2c & 0x1f) | param_1 - uVar4 >> ((byte)local_24 & 0x1f);
+        local_10 = (uVar5 - (int)((ulonglong)lVar2 >> 0x20)) - (uint)(param_1 < (uint)lVar2);
+        param_1 = local_10 << (local_2c & 0x1f) | param_1 - (uint)lVar2 >> ((byte)local_24 & 0x1f);
         local_10 = local_10 >> ((byte)local_24 & 0x1f);
       }
     }
@@ -70476,21 +73347,12 @@ int lstat(char *__file,stat *__buf)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080c7351)
+// WARNING: Removing unreachable block (ram,0x080c7358)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -51,7 +52,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -107,7 +108,18 @@ struct stat {
     long __unused[3];
 };
 
+typedef long __syscall_slong_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
+
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__nlink_t - /types.h/__nlink_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -120,14 +132,6 @@ typedef ulong sizetype;
 
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
-
-typedef long __syscall_slong_t;
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__nlink_t - /types.h/__nlink_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/time.h/timespec - /time.h/timespec
@@ -296,6 +300,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -324,14 +329,25 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -383,7 +399,7 @@ void FUN_00100870(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -396,7 +412,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -416,7 +432,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -429,7 +445,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -442,7 +458,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -464,7 +480,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -486,7 +502,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -497,7 +513,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -510,7 +526,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -523,7 +539,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -536,7 +552,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -548,6 +564,8 @@ int __xstat(int __ver,char *__filename,stat *__stat_buf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(int argc,char **argv)
 
@@ -570,10 +588,9 @@ int main(int argc,char **argv)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -639,30 +656,30 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100ae8)
+// WARNING: Removing unreachable block (ram,0x00100af4)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void dumpline(uchar *p,ulong offset,int cnt)
 
 {
   int iVar1;
   int iVar2;
+  int len;
   size_t sVar3;
   char *pcVar4;
   uchar uVar5;
+  int c;
   long lVar6;
   long lVar7;
   char buff [80];
@@ -673,7 +690,7 @@ void dumpline(uchar *p,ulong offset,int cnt)
   if (0x10 < cnt) {
     cnt = 0x10;
   }
-  for (; (int)lVar6 < cnt; lVar6 = lVar6 + 1) {
+  for (; c = (int)lVar6, c < cnt; lVar6 = lVar6 + 1) {
     sprintf(pcVar4," %02lX",(ulong)p[lVar6]);
     pcVar4 = pcVar4 + 3;
   }
@@ -708,11 +725,15 @@ void dumpline(uchar *p,ulong offset,int cnt)
 
 
 
+// WARNING: Unknown calling convention
+
 int hexdump(char *fname)
 
 {
+  int cnt;
   int iVar1;
   FILE *__stream;
+  FILE *fp;
   size_t sVar2;
   ulong offset;
   uchar buff [16];
@@ -724,30 +745,16 @@ int hexdump(char *fname)
     iVar1 = 1;
   }
   else {
-    for (offset = 0; offset < (ulong)st.st_size; offset = offset + (long)iVar1) {
+    for (offset = 0; offset < (ulong)st.st_size; offset = offset + (long)cnt) {
       sVar2 = fread(buff,1,0x10,__stream);
-      iVar1 = (int)sVar2;
-      if (iVar1 == 0) break;
-      dumpline(buff,offset,iVar1);
+      cnt = (int)sVar2;
+      if (cnt == 0) break;
+      dumpline(buff,offset,cnt);
     }
     fclose(__stream);
     iVar1 = 0;
   }
   return iVar1;
-}
-
-
-
-void FUN_00100d0c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x00100d0c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x100d0c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

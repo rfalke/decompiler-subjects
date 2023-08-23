@@ -51,7 +51,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -119,6 +119,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -145,6 +146,33 @@ typedef enum Elf32_DynTag_x86 {
 struct Elf32_Dyn_x86 {
     enum Elf32_DynTag_x86 d_tag;
     dword d_val;
+};
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
 };
 
 typedef struct Elf32_Sym Elf32_Sym, *PElf32_Sym;
@@ -402,11 +430,10 @@ void FUN_08048a71(undefined *param_1,undefined4 param_2)
 
 
 
-uint FUN_08048af6(char *param_1)
+undefined4 FUN_08048af6(undefined4 *param_1)
 
 {
-  return (int)param_1[3] << 0x18 |
-         ((int)param_1[2] & 0xffU) << 0x10 | ((int)param_1[1] & 0xffU) << 8 | (int)*param_1 & 0xffU;
+  return *param_1;
 }
 
 

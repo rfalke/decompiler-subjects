@@ -83,6 +83,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -196,6 +197,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -203,14 +215,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -272,7 +284,7 @@ void FUN_080482d0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -303,10 +315,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -359,6 +374,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080483f9)
+// WARNING: Removing unreachable block (ram,0x080483f0)
 
 void frame_dummy(void)
 
@@ -369,23 +385,29 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void use(double x)
 
 {
-  printf("%f",x);
+  printf("%f");
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void use_int(int x)
 
 {
-  printf("%d",x);
+  printf("%d");
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int read_ints(void)
 
@@ -398,45 +420,56 @@ int read_ints(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int write_ints(double pi)
 
 {
+  double in_stack_00000004;
   undefined4 local_14;
-  undefined4 uStack16;
+  undefined4 uStack_10;
   
-  global_int = (int)pi;
-  local_14 = (undefined4)(longlong)ROUND(pi);
-  uStack16 = (undefined4)((ulonglong)(longlong)ROUND(pi) >> 0x20);
+  global_int = (int)in_stack_00000004;
   global_char = (char)global_int;
   global_short = (short)global_int;
   global_long = global_int;
+  local_14 = (undefined4)(longlong)ROUND(in_stack_00000004);
+  uStack_10 = (undefined4)((ulonglong)(longlong)ROUND(in_stack_00000004) >> 0x20);
+  global_long_long._4_4_ = uStack_10;
   global_long_long._0_4_ = local_14;
-  global_long_long._4_4_ = uStack16;
   return 0x79;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int read_floats(void)
 
 {
-  printf("%f",(double)(global_long_double._0_10_ +
-                      (float10)((double)global_float + 0.0 + global_double)));
+  printf("%f",(double)(global_long_double + (longdouble)((double)global_float + 0.0 + global_double)
+                      ));
   return 0x7a;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void write_floats(double pi)
 
 {
-  global_float = (float)pi;
-  global_double = pi;
-  global_long_double._0_10_ = (float10)pi;
+  double in_stack_00000004;
+  
+  global_double = in_stack_00000004;
+  global_float = (float)in_stack_00000004;
+  global_long_double = (longdouble)in_stack_00000004;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void converting_between_floats_f1(void)
 
@@ -447,14 +480,18 @@ void converting_between_floats_f1(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void converting_between_floats_f2(void)
 
 {
-  global_float = (float)global_long_double._0_10_;
+  global_float = (float)global_long_double;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void converting_between_floats_d1(void)
 
@@ -465,74 +502,98 @@ void converting_between_floats_d1(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void converting_between_floats_d2(void)
 
 {
-  global_double = (double)global_long_double._0_10_;
+  global_double = (double)global_long_double;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void converting_between_floats_l1(void)
 
 {
-  global_long_double._0_10_ = (float10)global_float;
+  global_long_double = (longdouble)global_float;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void converting_between_floats_l2(void)
 
 {
-  global_long_double._0_10_ = (float10)global_double;
+  global_long_double = (longdouble)global_double;
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int basic_operations(double x,double y)
 
 {
-  printf("%f",x + y);
-  printf("%f",x - y);
-  printf("%f",y - x);
-  printf("%f",x * y);
-  printf("%f",x / y);
-  printf("%f",y / x);
-  printf("%f",(ulonglong)x ^ 0x8000000000000000);
+  double in_stack_00000004;
+  undefined4 in_stack_0000000c;
+  
+  printf("%f",in_stack_00000004 + (double)CONCAT44(x._0_4_,in_stack_0000000c));
+  printf("%f",in_stack_00000004 - (double)CONCAT44(x._0_4_,in_stack_0000000c));
+  printf("%f",(double)CONCAT44(x._0_4_,in_stack_0000000c) - in_stack_00000004);
+  printf("%f",in_stack_00000004 * (double)CONCAT44(x._0_4_,in_stack_0000000c));
+  printf("%f",in_stack_00000004 / (double)CONCAT44(x._0_4_,in_stack_0000000c));
+  printf("%f",(double)CONCAT44(x._0_4_,in_stack_0000000c) / in_stack_00000004);
+  printf("%f",(ulonglong)in_stack_00000004 ^ 0x8000000000000000);
   return 0x7b;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int compare_floats(double x,double y)
 
 {
-  printf("%d",-(uint)(x == y) & 1);
-  printf("%d",-(uint)(x != y) & 1);
-  printf("%d",(uint)(y < x));
-  printf("%d",(uint)(y <= x));
-  printf("%d",(uint)(x < y));
-  printf("%d",(uint)(x <= y));
+  bool bVar1;
+  double in_stack_00000004;
+  undefined4 in_stack_0000000c;
+  
+  printf("%d",-(uint)(in_stack_00000004 == (double)CONCAT44(x._0_4_,in_stack_0000000c)) & 1);
+  printf("%d",-(uint)(in_stack_00000004 != (double)CONCAT44(x._0_4_,in_stack_0000000c)) & 1);
+  bVar1 = (double)CONCAT44(x._0_4_,in_stack_0000000c) <= in_stack_00000004;
+  printf("%d",(uint)(bVar1 && in_stack_00000004 != (double)CONCAT44(x._0_4_,in_stack_0000000c)));
+  printf("%d",(uint)bVar1);
+  printf("%d",(uint)(in_stack_00000004 < (double)CONCAT44(x._0_4_,in_stack_0000000c)));
+  printf("%d",(uint)(in_stack_00000004 <= (double)CONCAT44(x._0_4_,in_stack_0000000c)));
   return 0x7c;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int constants(double x)
 
 {
-  printf("%f",x + x);
-  printf("%f",x * 3.0);
-  printf("%f",x * 3.141592653589793);
-  printf("%f",x * 10.0);
-  printf("%f",x * 12.345);
+  double in_stack_00000004;
+  
+  printf("%f",in_stack_00000004 + in_stack_00000004);
+  printf("%f",in_stack_00000004 * 3.0);
+  printf("%f",in_stack_00000004 * 3.141592653589793);
+  printf("%f",in_stack_00000004 * 10.0);
+  printf("%f",in_stack_00000004 * 12.345);
   return 0x7d;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 

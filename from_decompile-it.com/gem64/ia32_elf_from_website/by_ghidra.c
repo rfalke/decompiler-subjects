@@ -55,7 +55,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -114,6 +114,24 @@ struct stat {
 };
 
 
+// WARNING! conflicting data type names: /DWARF/__blkcnt_t - /types.h/__blkcnt_t
+
+
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
+
+
+// WARNING! conflicting data type names: /DWARF/__time_t - /types.h/__time_t
+
+
+// WARNING! conflicting data type names: /DWARF/__ino_t - /types.h/__ino_t
+
+
+// WARNING! conflicting data type names: /DWARF/__off_t - /types.h/__off_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
+
+
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 
@@ -140,9 +158,6 @@ typedef __gnuc_va_list va_list;
 
 typedef struct _IO_FILE FILE;
 
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
 typedef struct __dirstream __dirstream, *P__dirstream;
 
 typedef struct __dirstream DIR;
@@ -158,7 +173,6 @@ struct dirent {
     ushort d_reclen;
     uchar d_type;
     char d_name[256];
-    undefined field5_0x10b;
 };
 
 
@@ -240,6 +254,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -353,6 +368,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -360,14 +386,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -402,17 +428,27 @@ struct Elf32_Ehdr {
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_08048a74(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs(char *__s,FILE *__stream)
 
@@ -425,7 +461,7 @@ int fputs(char *__s,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int * __errno_location(void)
 
@@ -438,7 +474,7 @@ int * __errno_location(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -451,7 +487,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void srand(uint __seed)
 
@@ -462,7 +498,7 @@ void srand(uint __seed)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int open(char *__file,int __oflag,...)
 
@@ -475,7 +511,7 @@ int open(char *__file,int __oflag,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strerror(int __errnum)
 
@@ -506,7 +542,7 @@ void __isoc99_fscanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -528,7 +564,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void rewind(FILE *__stream)
 
@@ -548,7 +584,7 @@ void __isoc99_sscanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int vsprintf(char *__s,char *__format,__gnuc_va_list __arg)
 
@@ -561,7 +597,7 @@ int vsprintf(char *__s,char *__format,__gnuc_va_list __arg)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strchr(char *__s,int __c)
 
@@ -574,7 +610,7 @@ char * strchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getenv(char *__name)
 
@@ -587,7 +623,7 @@ char * getenv(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -600,7 +636,7 @@ void * calloc(size_t __nmemb,size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int system(char *__command)
 
@@ -613,7 +649,7 @@ int system(char *__command)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strncpy(char *__dest,char *__src,size_t __n)
 
@@ -626,7 +662,7 @@ char * strncpy(char *__dest,char *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * fgets(char *__s,int __n,FILE *__stream)
 
@@ -648,7 +684,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strrchr(char *__s,int __c)
 
@@ -661,7 +697,7 @@ char * strrchr(char *__s,int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 dirent * readdir(DIR *__dirp)
 
@@ -674,7 +710,7 @@ dirent * readdir(DIR *__dirp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long strtol(char *__nptr,char **__endptr,int __base)
 
@@ -687,7 +723,7 @@ long strtol(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -698,7 +734,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -711,7 +747,7 @@ int fflush(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int mkstemp(char *__template)
 
@@ -724,7 +760,7 @@ int mkstemp(char *__template)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 DIR * opendir(char *__name)
 
@@ -746,7 +782,7 @@ void getopt_long(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -759,7 +795,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -772,7 +808,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -785,7 +821,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -798,7 +834,7 @@ FILE * fopen(char *__filename,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -811,7 +847,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int chdir(char *__path)
 
@@ -824,7 +860,7 @@ int chdir(char *__path)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putenv(char *__string)
 
@@ -837,7 +873,7 @@ int putenv(char *__string)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int closedir(DIR *__dirp)
 
@@ -850,7 +886,7 @@ int closedir(DIR *__dirp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int close(int __fd)
 
@@ -863,7 +899,7 @@ int close(int __fd)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -876,7 +912,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -889,7 +925,7 @@ int fprintf(FILE *__stream,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strstr(char *__haystack,char *__needle)
 
@@ -902,7 +938,7 @@ char * strstr(char *__haystack,char *__needle)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
 
@@ -915,7 +951,7 @@ int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int remove(char *__filename)
 
@@ -928,7 +964,7 @@ int remove(char *__filename)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -950,7 +986,7 @@ void __stack_chk_fail(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputc(int __c,FILE *__stream)
 
@@ -963,7 +999,7 @@ int fputc(int __c,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strtok(char *__s,char *__delim)
 
@@ -976,7 +1012,7 @@ char * strtok(char *__s,char *__delim)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -989,7 +1025,7 @@ char * strcat(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getcwd(char *__buf,size_t __size)
 
@@ -1002,7 +1038,7 @@ char * getcwd(char *__buf,size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int rand(void)
 
@@ -1015,7 +1051,7 @@ int rand(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strdup(char *__s)
 
@@ -1028,7 +1064,7 @@ char * strdup(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *__s1,char *__s2)
 
@@ -1041,7 +1077,7 @@ int strcmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -1052,10 +1088,13 @@ void exit(int __status)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -1077,6 +1116,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08048e6f)
 // WARNING: Removing unreachable block (ram,0x08048e78)
 
 void frame_dummy(void)
@@ -1087,6 +1127,8 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void exit_env(void)
 
 {
@@ -1094,6 +1136,8 @@ void exit_env(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void exit_tmp(void)
 
@@ -1135,6 +1179,8 @@ void exit_tmp(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void exit_db(void)
 
@@ -1228,6 +1274,8 @@ void exit_db(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void exit_msg(void)
 
 {
@@ -1250,6 +1298,7 @@ void exit_msg(void)
 void print_error(int err_code,char *msg,...)
 
 {
+  char *msg_local;
   va_list ap;
   char buffer [2048];
   
@@ -1267,6 +1316,7 @@ void print_warning(char *msg,...)
 {
   int iVar1;
   int in_GS_OFFSET;
+  char *msg_local;
   va_list ap;
   char buffer [2048];
   
@@ -1283,6 +1333,8 @@ void print_warning(char *msg,...)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_done(void)
 
 {
@@ -1292,7 +1344,7 @@ void print_done(void)
 
 
 
-char * basename(char *path)
+char * basename(char *__filename)
 
 {
   char *__s;
@@ -1300,7 +1352,7 @@ char * basename(char *path)
   char *element;
   char *copy;
   
-  __s = strdup(path);
+  __s = strdup(__filename);
   element = strtok(__s,"/");
   if (element == (char *)0x0) {
     if (__s != (char *)0x0) {
@@ -1333,6 +1385,8 @@ void mkdir_s(char *pathname,char *mode)
 {
   int iVar1;
   int in_GS_OFFSET;
+  char *mode_local;
+  char *pathname_local;
   char tmp [5000];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
@@ -1346,6 +1400,8 @@ void mkdir_s(char *pathname,char *mode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int chop(char *string)
 
@@ -1382,6 +1438,8 @@ int insert_str(char *str,int pos,char **strarr)
   size_t sVar2;
   char *pcVar3;
   int in_GS_OFFSET;
+  char **strarr_local;
+  char *str_local;
   int len;
   int j;
   int n;
@@ -1434,6 +1492,8 @@ int insert_str(char *str,int pos,char **strarr)
 
 
 
+// WARNING: Unknown calling convention
+
 int delete_str(int pos,char **strarr)
 
 {
@@ -1460,6 +1520,8 @@ int delete_str(int pos,char **strarr)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int find_pos(char *str,char **strarr,int start)
 
@@ -1488,6 +1550,8 @@ int find_pos(char *str,char **strarr,int start)
 
 
 
+// WARNING: Unknown calling convention
+
 void dump_str(FILE *f,char **strarr)
 
 {
@@ -1505,23 +1569,25 @@ void get_package_name(char *path,char *name)
 
 {
   int iVar1;
-  FILE *__stream;
+  FILE *stream;
   char *pcVar2;
   int in_GS_OFFSET;
+  char *name_local;
+  char *path_local;
   FILE *f;
   char tmp [2048];
   char file [2048];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   sprintf(file,"%s/%s",path,&DAT_08054a6a);
-  __stream = fopen(file,"r");
-  if (__stream == (FILE *)0x0) {
+  stream = fopen(file,"r");
+  if (stream == (FILE *)0x0) {
     print_error(-6,"\'name\' file not readable.\n");
   }
   else {
-    pcVar2 = nc_fgets_nb(tmp,0x800,(FILE *)__stream);
+    pcVar2 = nc_fgets_nb(tmp,0x800,(FILE *)stream);
     if (pcVar2 == (char *)0x0) {
-      fclose(__stream);
+      fclose(stream);
       print_error(-6,"invalid or missing extension name.\n");
     }
     else {
@@ -1529,7 +1595,7 @@ void get_package_name(char *path,char *name)
       strcpy(name,tmp);
     }
   }
-  fclose(__stream);
+  fclose(stream);
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
@@ -1538,6 +1604,8 @@ void get_package_name(char *path,char *name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * nc_fgets(char *s,int size,FILE *stream)
 
@@ -1569,6 +1637,8 @@ char * nc_fgets(char *s,int size,FILE *stream)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * nc_fgets_html(char *s,int size,FILE *stream)
 
@@ -1681,6 +1751,8 @@ char * nc_fgets_html(char *s,int size,FILE *stream)
 
 
 
+// WARNING: Unknown calling convention
+
 int is_text(char *s)
 
 {
@@ -1699,6 +1771,8 @@ int is_text(char *s)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 char * nc_fgets_nb(char *s,int size,FILE *stream)
 
@@ -1742,26 +1816,28 @@ void dump_ascii(char *file,char *heading)
 
 {
   int iVar1;
-  FILE *__stream;
+  FILE *stream;
   char *pcVar2;
   int in_GS_OFFSET;
+  char *heading_local;
+  char *file_local;
   FILE *f;
   char tmp [2048];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   fprintf(stdout,"%s\n",heading);
-  __stream = fopen(file,"r");
-  if (__stream == (FILE *)0x0) {
+  stream = fopen(file,"r");
+  if (stream == (FILE *)0x0) {
     fwrite("  No information available.\n",1,0x1c,stdout);
   }
   else {
     while( true ) {
-      pcVar2 = nc_fgets_html(tmp,0x800,(FILE *)__stream);
+      pcVar2 = nc_fgets_html(tmp,0x800,(FILE *)stream);
       if (pcVar2 == (char *)0x0) break;
       fprintf(stdout,"  %s",tmp);
     }
     fputc(10,stdout);
-    fclose(__stream);
+    fclose(stream);
   }
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
@@ -1779,8 +1855,10 @@ void dump_plain(char *file,char *tmpfile)
   FILE *__stream;
   int *piVar2;
   char *pcVar3;
-  FILE *__stream_00;
+  FILE *stream;
   int in_GS_OFFSET;
+  char *tmpfile_local;
+  char *file_local;
   FILE *f_out;
   FILE *f_in;
   char tmp [2048];
@@ -1797,13 +1875,13 @@ void dump_plain(char *file,char *tmpfile)
                 ,tmpfile,pcVar3);
   }
   atexit(exit_db);
-  __stream_00 = fopen(file,"r");
+  stream = fopen(file,"r");
   while( true ) {
-    pcVar3 = nc_fgets(tmp,0x800,(FILE *)__stream_00);
+    pcVar3 = nc_fgets(tmp,0x800,(FILE *)stream);
     if (pcVar3 == (char *)0x0) break;
     fprintf(__stream,tmp);
   }
-  fclose(__stream_00);
+  fclose(stream);
   fclose(__stream);
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
@@ -1821,9 +1899,11 @@ void dump_html(char *file,char *tmpfile)
   FILE *__stream;
   int *piVar2;
   char *pcVar3;
-  FILE *__stream_00;
+  FILE *stream;
   int iVar4;
   int in_GS_OFFSET;
+  char *tmpfile_local;
+  char *file_local;
   int fd;
   FILE *f_out;
   FILE *f_in;
@@ -1842,9 +1922,9 @@ void dump_html(char *file,char *tmpfile)
                 ,tmpfile,pcVar3);
   }
   atexit(exit_db);
-  __stream_00 = fopen(file,"r");
+  stream = fopen(file,"r");
   while( true ) {
-    pcVar3 = nc_fgets(line,0x800,(FILE *)__stream_00);
+    pcVar3 = nc_fgets(line,0x800,(FILE *)stream);
     if (pcVar3 == (char *)0x0) break;
     chop(line);
     iVar4 = is_text(line);
@@ -1856,7 +1936,7 @@ void dump_html(char *file,char *tmpfile)
       fprintf(__stream,tmp);
     }
   }
-  fclose(__stream_00);
+  fclose(stream);
   fclose(__stream);
   close(fd);
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
@@ -1875,6 +1955,7 @@ void list_binaries(char *package)
   DIR *__dirp;
   int iVar2;
   int in_GS_OFFSET;
+  char *package_local;
   stat buf;
   int n_dirs;
   dirent *dir_entry;
@@ -1934,6 +2015,8 @@ int binaries_exist(char *package,char *binaries)
   DIR *__dirp;
   int iVar2;
   int in_GS_OFFSET;
+  char *binaries_local;
+  char *package_local;
   stat buf;
   dirent *dir_entry;
   DIR *dir;
@@ -1978,6 +2061,8 @@ LAB_0804aa95:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int check_filetype(char *myfile)
 
@@ -2033,6 +2118,7 @@ void wget_extension(char *url)
   int iVar1;
   int iVar2;
   int in_GS_OFFSET;
+  char *url_local;
   int error;
   char str [2048];
   
@@ -2069,6 +2155,8 @@ void su(char *gisbase,char *cmd)
   FILE *__stream;
   int *piVar3;
   int in_GS_OFFSET;
+  char *cmd_local;
+  char *gisbase_local;
   FILE *f;
   int error;
   char tmpfile [2048];
@@ -2101,6 +2189,8 @@ void su(char *gisbase,char *cmd)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int vercmp(int major,int minor,int revision,int major2,int minor2,int revision2)
 
@@ -2141,12 +2231,14 @@ char * depstr(char *package,char *gisbase)
 {
   int iVar1;
   bool bVar2;
-  FILE *__stream;
+  FILE *stream;
   int *piVar3;
   char *pcVar4;
   int iVar5;
   char *pcVar6;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *package_local;
   FILE *f_deps;
   int error;
   int first;
@@ -2157,8 +2249,8 @@ char * depstr(char *package,char *gisbase)
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   memcpy(file,"../depends",0xb);
-  __stream = fopen(file,"r");
-  if (__stream == (FILE *)0x0) {
+  stream = fopen(file,"r");
+  if (stream == (FILE *)0x0) {
     piVar3 = __errno_location();
     if (*piVar3 == 2) {
       pcVar4 = "";
@@ -2171,7 +2263,7 @@ char * depstr(char *package,char *gisbase)
   bVar2 = true;
   pcVar4 = (char *)malloc(0x800);
   while( true ) {
-    pcVar6 = nc_fgets_nb(line,0x800,(FILE *)__stream);
+    pcVar6 = nc_fgets_nb(line,0x800,(FILE *)stream);
     if (pcVar6 == (char *)0x0) break;
     if (line[0] != '\0') {
       iVar5 = __isoc99_sscanf(line,&DAT_08054d32,short_name);
@@ -2191,7 +2283,7 @@ char * depstr(char *package,char *gisbase)
       }
     }
   }
-  fclose(__stream);
+  fclose(stream);
 LAB_0804b001:
   if (iVar1 != *(int *)(in_GS_OFFSET + 0x14)) {
                     // WARNING: Subroutine does not return
@@ -2211,6 +2303,9 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
   char *pcVar3;
   int iVar4;
   int in_GS_OFFSET;
+  char *pkg_short_name_local;
+  char *bins_local;
+  char *gisbase_local;
   int revision;
   int minor;
   int major;
@@ -2232,7 +2327,7 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
   db_exists = 1;
   sprintf(file,"%s/etc/extensions.db",gisbase);
   f_in = (FILE *)fopen(file,"r");
-  if ((FILE *)f_in == (FILE *)0x0) {
+  if (f_in == (FILE *)0x0) {
     piVar2 = __errno_location();
     if (*piVar2 == 2) {
       db_exists = 0;
@@ -2248,7 +2343,7 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
     f_out = (FILE *)fopen(TMPDB,"w+");
-    if ((FILE *)f_out == (FILE *)0x0) {
+    if (f_out == (FILE *)0x0) {
       piVar2 = __errno_location();
       pcVar3 = strerror(*piVar2);
       print_error(-0xf,
@@ -2317,7 +2412,7 @@ void register_extension(char *gisbase,char *bins,char *pkg_short_name,int pkg_ma
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
     f_out = (FILE *)fopen(TMPDB,"w+");
-    if ((FILE *)f_out == (FILE *)0x0) {
+    if (f_out == (FILE *)0x0) {
       piVar2 = __errno_location();
       pcVar3 = strerror(*piVar2);
       print_error(-0xf,
@@ -2348,6 +2443,9 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
   char *pcVar3;
   int iVar4;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
+  char *package_local;
   int revision;
   int minor;
   int major;
@@ -2367,7 +2465,7 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
   db_exists = 0;
   sprintf(file,"%s/etc/extensions.db",gisbase);
   f_in = (FILE *)fopen(file,"r");
-  if ((FILE *)f_in == (FILE *)0x0) {
+  if (f_in == (FILE *)0x0) {
     piVar2 = __errno_location();
     if ((*piVar2 == 2) && (FORCE == 0)) {
       fclose((FILE *)f_in);
@@ -2388,7 +2486,7 @@ void deregister_extension(char *package,char *pkg_short_name,char *gisbase)
     memcpy(TMPDB,"/tmp/grass.extensions.db.XXXXXX",0x20);
     mkstemp(TMPDB);
     f_out = (FILE *)fopen(TMPDB,"w+");
-    if (((FILE *)f_out == (FILE *)0x0) && (FORCE == 0)) {
+    if ((f_out == (FILE *)0x0) && (FORCE == 0)) {
       piVar2 = __errno_location();
       pcVar3 = strerror(*piVar2);
       print_error(-0x13,
@@ -2449,6 +2547,9 @@ void check_dependencies(char *package,char *gisbase,char *grass_version)
   int iVar4;
   int in_GS_OFFSET;
   int *piVar5;
+  char *grass_version_local;
+  char *gisbase_local;
+  char *package_local;
   int dep_revision;
   int dep_minor;
   int dep_major;
@@ -2469,7 +2570,7 @@ void check_dependencies(char *package,char *gisbase,char *grass_version)
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   if (FORCE == 0) {
     f_deps = (FILE *)fopen("../depends","r");
-    if ((FILE *)f_deps == (FILE *)0x0) {
+    if (f_deps == (FILE *)0x0) {
       piVar2 = __errno_location();
       if (*piVar2 == 2) {
         fprintf(stderr,"\n%s/depends ENOENT\n",package);
@@ -2483,7 +2584,7 @@ void check_dependencies(char *package,char *gisbase,char *grass_version)
     db_exists = 1;
     sprintf(file,"%s/etc/extensions.db",gisbase);
     f_db = (FILE *)fopen(file,"r");
-    if ((FILE *)f_db == (FILE *)0x0) {
+    if (f_db == (FILE *)0x0) {
       piVar2 = __errno_location();
       if (*piVar2 == 2) {
         db_exists = 0;
@@ -2571,6 +2672,8 @@ LAB_0804be67:
 
 
 
+// WARNING: Unknown calling convention
+
 int is_submenu(char *item)
 
 {
@@ -2602,6 +2705,8 @@ int is_submenu(char *item)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int check_ext_menu(char **tcl_lines)
 
@@ -2641,6 +2746,9 @@ int new_submenu(char *pkg_short_name,char *menu,char **tcl_lines)
   char *pcVar4;
   char *pcVar5;
   int in_GS_OFFSET;
+  char **tcl_lines_local;
+  char *menu_local;
+  char *pkg_short_name_local;
   int terminator;
   int len;
   char *second_quote;
@@ -2717,6 +2825,9 @@ int new_item(char *item,char *menu,char **tcl_lines,int line_no)
   int iVar1;
   int iVar2;
   int in_GS_OFFSET;
+  char **tcl_lines_local;
+  char *menu_local;
+  char *item_local;
   int num_tokens;
   char *token;
   char tmp [2048];
@@ -2781,6 +2892,8 @@ void register_entries_gisman(char *pkg_short_name,char *gisbase)
   char *pcVar5;
   char *pcVar6;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   FILE *f_out;
   FILE *f_in;
   FILE *f_gisman;
@@ -2930,6 +3043,8 @@ void register_entries_gisman2(char *pkg_short_name,char *gisbase)
   int *piVar3;
   char *pcVar4;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   FILE *f_gisman2;
   char str [2048];
   char file [2048];
@@ -2979,6 +3094,8 @@ int deregister_entries_gisman(char *pkg_short_name,char *gisbase)
   char *pcVar6;
   int iVar7;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   int num_removed;
   char *rq;
   char *lq;
@@ -3156,6 +3273,8 @@ void deregister_entries_gisman2(char *pkg_short_name,char *gisbase)
   int *piVar3;
   char *pcVar4;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   FILE *f_gisman2;
   char str [2048];
   char file [2048];
@@ -3206,6 +3325,7 @@ int restore_entries_gisman(char *gisbase)
   char *pcVar10;
   int in_GS_OFFSET;
   char *pcVar11;
+  char *gisbase_local;
   int n_files;
   int num_restored;
   dirent *ep;
@@ -3379,6 +3499,9 @@ void new_ext_html(char *ext,char *gisbase,char **html,int major,int minor,int re
   char *pcVar4;
   char *pcVar5;
   int in_GS_OFFSET;
+  char **html_local;
+  char *gisbase_local;
+  char *ext_local;
   int len;
   char *last_char;
   char *first_char;
@@ -3456,6 +3579,9 @@ void delete_ext_html(char *ext,char *gisbase,char **html)
   int iVar3;
   int pos;
   int in_GS_OFFSET;
+  char **html_local;
+  char *gisbase_local;
+  char *ext_local;
   int i;
   int found;
   int end;
@@ -3521,6 +3647,8 @@ void register_html(char *pkg_short_name,char *gisbase,int major,int minor,int re
   char **html;
   size_t sVar4;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   FILE *f_out;
   FILE *f_in;
   int i;
@@ -3611,6 +3739,8 @@ void deregister_html(char *pkg_short_name,char *gisbase)
   char **html;
   size_t sVar4;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *pkg_short_name_local;
   FILE *f_out;
   FILE *f_in;
   int i;
@@ -3701,6 +3831,7 @@ int restore_html(char *gisbase)
   char **ppcVar6;
   int in_GS_OFFSET;
   char *pcVar7;
+  char *gisbase_local;
   int revision;
   int minor;
   int major;
@@ -3725,7 +3856,7 @@ int restore_html(char *gisbase)
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
   sprintf(idx,"%s/docs/html/index.html",gisbase);
   f_in = (FILE *)fopen(idx,"r");
-  if ((FILE *)f_in == (FILE *)0x0) {
+  if (f_in == (FILE *)0x0) {
     piVar2 = __errno_location();
     if (*piVar2 == 2) {
       iVar5 = 0;
@@ -3739,7 +3870,7 @@ int restore_html(char *gisbase)
   memcpy(TMP_HTML,"/tmp/grass.extensions.db.XXXXXX",0x20);
   mkstemp(TMP_HTML);
   f_out = (FILE *)fopen(TMP_HTML,"w+");
-  if ((FILE *)f_out == (FILE *)0x0) {
+  if (f_out == (FILE *)0x0) {
     piVar2 = __errno_location();
     pcVar3 = strerror(*piVar2);
     print_error(-0x18,
@@ -3810,7 +3941,7 @@ int restore_html(char *gisbase)
           closedir((DIR *)subdirp);
           sprintf(ext_idx,"%s/index.html",subdir);
           f_ext = (FILE *)fopen(ext_idx,"r");
-          if ((FILE *)f_ext != (FILE *)0x0) {
+          if (f_ext != (FILE *)0x0) {
             major = 0;
             minor = 0;
             revision = 0;
@@ -3856,8 +3987,6 @@ LAB_0804f7cb:
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 void check_extension(char *package,char *name,int *major,int *minor,int *revision)
 
 {
@@ -3868,13 +3997,21 @@ void check_extension(char *package,char *name,int *major,int *minor,int *revisio
   undefined4 *puVar4;
   int in_GS_OFFSET;
   char *pcVar5;
+  int *revision_local;
+  int *minor_local;
+  int *major_local;
+  char *name_local;
+  char *package_local;
   FILE *f;
   int error;
   char tmp [2048];
   int local_10;
   
   local_10 = *(int *)(in_GS_OFFSET + 0x14);
-  tmp._0_4_ = 0;
+  tmp[0] = '\0';
+  tmp[1] = '\0';
+  tmp[2] = '\0';
+  tmp[3] = '\0';
   puVar4 = (undefined4 *)(tmp + 4);
   for (iVar3 = 0x1ff; iVar3 != 0; iVar3 = iVar3 + -1) {
     *puVar4 = 0;
@@ -3939,6 +4076,7 @@ void unpack_extension(char *package)
   int *piVar3;
   char *pcVar4;
   int in_GS_OFFSET;
+  char *package_local;
   int ftype;
   int fd;
   int error;
@@ -4054,6 +4192,11 @@ void query_extension(char *package,char *name,int major,int minor,int revision,c
   char *pcVar1;
   int iVar2;
   int *piVar3;
+  char *org_name_local;
+  char *invocation_local;
+  char *short_name_local;
+  char *name_local;
+  char *package_local;
   int error;
   char tmp [2048];
   
@@ -4083,6 +4226,8 @@ void query_extension(char *package,char *name,int major,int minor,int revision,c
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void print_cfg(void)
 
@@ -4130,6 +4275,10 @@ void source_install(char *package,char *gisbase,char *pkg_short_name,int pkg_maj
   long lVar8;
   FILE *__stream;
   int in_GS_OFFSET;
+  char *grass_version_local;
+  char *pkg_short_name_local;
+  char *gisbase_local;
+  char *package_local;
   stat buf;
   int revision;
   int minor;
@@ -4320,6 +4469,11 @@ void bin_install(char *package,char *gisbase,char *bins,char *pkg_short_name,int
   long lVar8;
   FILE *__stream;
   int in_GS_OFFSET;
+  char *grass_version_local;
+  char *pkg_short_name_local;
+  char *bins_local;
+  char *gisbase_local;
+  char *package_local;
   stat buf;
   int revision;
   int minor;
@@ -4468,6 +4622,10 @@ void test_install(char *package,char *gisbase,char *pkg_short_name,int pkg_major
   long lVar6;
   FILE *__stream;
   int in_GS_OFFSET;
+  char *grass_version_local;
+  char *pkg_short_name_local;
+  char *gisbase_local;
+  char *package_local;
   stat buf;
   int revision;
   int minor;
@@ -4622,6 +4780,10 @@ void uninstall(char *package,char *pkg_short_name,char *gisbase,char *grass_vers
   int iVar5;
   int *piVar6;
   int in_GS_OFFSET;
+  char *grass_version_local;
+  char *gisbase_local;
+  char *pkg_short_name_local;
+  char *package_local;
   stat buf;
   int revision;
   int minor;
@@ -4705,6 +4867,7 @@ int source_clean(char *package)
   char *pcVar2;
   int iVar3;
   int in_GS_OFFSET;
+  char *package_local;
   int error;
   char sysstr [2048];
   char dir [2048];
@@ -4754,6 +4917,8 @@ void restore(char *gisbase,char *grass_version)
   long lVar3;
   int iVar4;
   int in_GS_OFFSET;
+  char *grass_version_local;
+  char *gisbase_local;
   int revision;
   int minor;
   int major;
@@ -4820,6 +4985,7 @@ void list_extensions(char *gisbase)
   int *piVar2;
   char *pcVar3;
   int in_GS_OFFSET;
+  char *gisbase_local;
   FILE *f_in;
   char file [2048];
   
@@ -4857,6 +5023,9 @@ void run_post(char *package,int action,char *bins,char *gisbase)
   int iVar1;
   char *pcVar2;
   int in_GS_OFFSET;
+  char *gisbase_local;
+  char *bins_local;
+  char *package_local;
   char tmp2 [2048];
   char tmp [2048];
   
@@ -4918,6 +5087,8 @@ void run_post(char *package,int action,char *bins,char *gisbase)
 
 
 
+// WARNING: Unknown calling convention
+
 void show_help(void)
 
 {
@@ -4976,6 +5147,7 @@ void show_details(char *package)
   char *pcVar1;
   int iVar2;
   int *piVar3;
+  char *package_local;
   int error;
   char tmp [2048];
   
@@ -5001,6 +5173,7 @@ void show_license(char *package)
   char *pcVar1;
   int iVar2;
   int *piVar3;
+  char *package_local;
   int error;
   char tmp [2048];
   
@@ -5020,10 +5193,12 @@ void show_license(char *package)
 
 
 
+// WARNING: Unknown calling convention
+
 void show_version(void)
 
 {
-  fprintf(stdout,"gem64 (GRASS extensions manager) %.2f\n");
+  fprintf(stdout,"gem64 (GRASS extensions manager) %.2f\n",0x3ff07ae147ae147b);
   fwrite("Written by Benjamin Ducke\n",1,0x1a,stdout);
   fwrite("\nCopyright (C) 2005 Benjamin Ducke\n",1,0x23,stdout);
   fwrite("This is free software; see the source for copying conditions.  There is NO\n",1,0x4b,
@@ -5043,6 +5218,7 @@ void get_configure_options(char *gisbase)
   FILE *stream;
   char *pcVar2;
   int in_GS_OFFSET;
+  char *gisbase_local;
   FILE *fp;
   char str [2048];
   
@@ -5069,6 +5245,8 @@ void get_configure_options(char *gisbase)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
@@ -5078,6 +5256,7 @@ int main(int argc,char **argv)
   int *piVar4;
   int iVar5;
   int in_GS_OFFSET;
+  char **in_stack_00000008;
   stat buf2;
   stat buf;
   int option_index;
@@ -5171,8 +5350,8 @@ int main(int argc,char **argv)
   memcpy(MAKE_CMD,&DAT_08057930,5);
   getcwd(CWD,0x800);
   fwrite(&DAT_08057935,1,4,stdout);
-  local_3850._20_4_ = (char *)malloc(0x800);
-  strcpy(local_3024,*argv);
+  local_3850._20_4_ = malloc(0x800);
+  strcpy(local_3024,*in_stack_00000008);
   setvbuf(stdout,(char *)0x0,2,0);
   if (argc == 1) {
     show_help();
@@ -5186,7 +5365,8 @@ int main(int argc,char **argv)
   opterr = 0;
   piVar2 = &local_388c;
   minor_00 = main::long_options;
-  local_386c = getopt_long(argc,argv,":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs",main::long_options,piVar2);
+  local_386c = getopt_long(argc,in_stack_00000008,":i:u:q:d:c:C:t:l:m:o:x:rhVg:b:fvs",
+                           main::long_options,piVar2);
   while (local_386c != -1) {
     if (local_386c == 0x3f) {
       print_error(-1,"unknown option or action specified.\n");
@@ -5257,13 +5437,13 @@ int main(int argc,char **argv)
     }
     if (local_386c == 0x67) {
       sVar1 = strlen(optarg);
-      local_3850._40_4_ = (FILE *)malloc(sVar1 + 1);
+      local_3850._40_4_ = malloc(sVar1 + 1);
       strcpy((char *)local_3850._40_4_,optarg);
     }
     if (local_386c == 0x62) {
       sVar1 = strlen(optarg);
-      local_3850._8_4_ = (char *)malloc(sVar1 + 1);
-      strcpy(local_3850._8_4_,optarg);
+      local_3850._8_4_ = malloc(sVar1 + 1);
+      strcpy((char *)local_3850._8_4_,optarg);
       local_3870 = 4;
     }
     if (local_386c == 0x78) {
@@ -5289,7 +5469,8 @@ int main(int argc,char **argv)
     }
     piVar2 = &local_388c;
     minor_00 = main::long_options;
-    local_386c = getopt_long(argc,argv,":i:u:q:d:c:t:l:o:x:rhVg:b:fvs",main::long_options,piVar2);
+    local_386c = getopt_long(argc,in_stack_00000008,":i:u:q:d:c:t:l:o:x:rhVg:b:fvs",
+                             main::long_options,piVar2);
   }
   if (local_3874 < 1) {
     print_error(-1,"please specify a valid action.\n");
@@ -5322,20 +5503,20 @@ int main(int argc,char **argv)
     }
   }
   if (local_3870 == 0xb) {
-    if ((local_3850._40_4_ == (FILE *)0x0) &&
-       (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
+    if (((FILE *)local_3850._40_4_ == (FILE *)0x0) &&
+       (local_3850._40_4_ = getenv("GISBASE"), (FILE *)local_3850._40_4_ == (FILE *)0x0)) {
       print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
     }
     if (VERBOSE != 0) {
       fprintf(stdout,"Path to GRASS is %s.\n",local_3850._40_4_);
     }
-    restore((char *)local_3850._40_4_,local_3850._36_4_);
+    restore((char *)local_3850._40_4_,(char *)local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 0xc) {
-    if ((local_3850._40_4_ == (FILE *)0x0) &&
-       (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
+    if (((FILE *)local_3850._40_4_ == (FILE *)0x0) &&
+       (local_3850._40_4_ = getenv("GISBASE"), (FILE *)local_3850._40_4_ == (FILE *)0x0)) {
       print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
     }
     if (VERBOSE != 0) {
@@ -5348,12 +5529,12 @@ int main(int argc,char **argv)
   pcVar3 = strstr(local_1024,"http://");
   if ((pcVar3 != (char *)0x0) || (pcVar3 = strstr(local_1024,"ftp://"), pcVar3 != (char *)0x0)) {
     wget_extension(local_1024);
-    local_3850._16_4_ = (char *)malloc(0x800);
-    strcpy(local_3850._16_4_,local_1024);
-    local_3850._12_4_ = strrchr(local_3850._16_4_,0x2f);
+    local_3850._16_4_ = malloc(0x800);
+    strcpy((char *)local_3850._16_4_,local_1024);
+    local_3850._12_4_ = strrchr((char *)local_3850._16_4_,0x2f);
     local_3850._12_4_ = local_3850._12_4_ + 1;
-    strcpy(local_1024,local_3850._12_4_);
-    free(local_3850._16_4_);
+    strcpy(local_1024,(char *)local_3850._12_4_);
+    free((void *)local_3850._16_4_);
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"Extension location is \'%s\'.\n",local_1024);
@@ -5385,8 +5566,8 @@ int main(int argc,char **argv)
         iVar5 = strcmp(local_3884->d_name,".");
         if ((iVar5 != 0) && (iVar5 = strcmp(local_3884->d_name,".."), iVar5 != 0)) {
           minor_00 = (option *)local_3884->d_name;
-          sprintf(local_3850._20_4_,"%s/%s",TMPDIR,minor_00);
-          stat(local_3850._20_4_,&local_393c);
+          sprintf((char *)local_3850._20_4_,"%s/%s",TMPDIR,minor_00);
+          stat((char *)local_3850._20_4_,&local_393c);
           if ((local_393c.st_mode & 0xf000) == 0x4000) {
             local_3888 = 1;
             break;
@@ -5394,7 +5575,7 @@ int main(int argc,char **argv)
         }
         local_3884 = readdir(local_3880);
       }
-      strcpy(local_1024,local_3850._20_4_);
+      strcpy(local_1024,(char *)local_3850._20_4_);
       if (local_3888 == 0) {
         print_error(-7,"no top-level directory found in extension package.\n");
       }
@@ -5407,11 +5588,11 @@ int main(int argc,char **argv)
     get_package_name(local_1024,local_2824);
   }
   if (0 < local_3874) {
-    if (local_3850._40_4_ == (FILE *)0x0) {
-      local_3850._40_4_ = (FILE *)getenv("GISBASE");
+    if ((FILE *)local_3850._40_4_ == (FILE *)0x0) {
+      local_3850._40_4_ = getenv("GISBASE");
     }
     minor_00 = (option *)local_3850._40_4_;
-    run_post(local_1024,local_3870,local_3850._8_4_,(char *)local_3850._40_4_);
+    run_post(local_1024,local_3870,(char *)local_3850._8_4_,(char *)local_3850._40_4_);
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"Extension will be installed from \'%s\'\n",local_1024);
@@ -5422,8 +5603,8 @@ int main(int argc,char **argv)
     check_extension(local_1024,local_2024,(int *)(local_3850 + 4),(int *)minor_00,piVar2);
   }
   if (local_3870 == 5) {
-    query_extension(local_1024,local_2024,(int)local_3850._4_4_,local_3850._0_4_,local_3854,
-                    local_2824,local_3024,local_1824);
+    query_extension(local_1024,local_2024,local_3850._4_4_,local_3850._0_4_,local_3854,local_2824,
+                    local_3024,local_1824);
                     // WARNING: Subroutine does not return
     exit(0);
   }
@@ -5442,22 +5623,22 @@ int main(int argc,char **argv)
                     // WARNING: Subroutine does not return
     exit(0);
   }
-  if ((local_3850._40_4_ == (FILE *)0x0) &&
-     (local_3850._40_4_ = (FILE *)getenv("GISBASE"), local_3850._40_4_ == (FILE *)0x0)) {
+  if (((FILE *)local_3850._40_4_ == (FILE *)0x0) &&
+     (local_3850._40_4_ = getenv("GISBASE"), (FILE *)local_3850._40_4_ == (FILE *)0x0)) {
     print_error(-1,"GISBASE environment variable not set and path to GRASS not given.\n");
   }
   if (VERBOSE != 0) {
     fprintf(stdout,"Path to GRASS is %s.\n",local_3850._40_4_);
   }
   local_3850._36_4_ = getenv("GRASS_VERSION");
-  if (local_3850._36_4_ == (char *)0x0) {
+  if ((char *)local_3850._36_4_ == (char *)0x0) {
     sprintf(local_824,"%s/etc/VERSIONNUMBER",local_3850._40_4_);
     local_3858 = fopen(local_824,"r");
     if (local_3858 == (FILE *)0x0) {
       print_error(-0xb,"Could not read GRASS version. Did you specify the right path?\n");
     }
     else {
-      local_3850._36_4_ = (char *)malloc(0x10);
+      local_3850._36_4_ = malloc(0x10);
       local_3878 = __isoc99_fscanf(local_3858,&DAT_08057c8b,local_3850._36_4_);
       fclose(local_3858);
       if (local_3878 < 1) {
@@ -5465,18 +5646,18 @@ int main(int argc,char **argv)
       }
     }
   }
-  if (local_3850._36_4_ != (char *)0x0) {
-    local_3850._20_4_ = strdup(local_3850._36_4_);
-    local_3850._32_4_ = strtok(local_3850._20_4_,".");
+  if ((char *)local_3850._36_4_ != (char *)0x0) {
+    local_3850._20_4_ = strdup((char *)local_3850._36_4_);
+    local_3850._32_4_ = strtok((char *)local_3850._20_4_,".");
     local_3850._28_4_ = strtok((char *)0x0,".");
     local_3850._24_4_ = strtok((char *)0x0,".");
-    local_3860 = strtol(local_3850._32_4_,(char **)0x0,10);
-    local_3864 = (FILE *)strtol(local_3850._28_4_,(char **)0x0,10);
-    local_3868 = (int *)strtol(local_3850._24_4_,(char **)0x0,10);
-    local_3850._36_4_ = (char *)malloc(0x800);
+    local_3860 = strtol((char *)local_3850._32_4_,(char **)0x0,10);
+    local_3864 = (FILE *)strtol((char *)local_3850._28_4_,(char **)0x0,10);
+    local_3868 = (int *)strtol((char *)local_3850._24_4_,(char **)0x0,10);
+    local_3850._36_4_ = malloc(0x800);
     minor_00 = (option *)local_3864;
     piVar2 = local_3868;
-    sprintf(local_3850._36_4_,"%i.%i.%i",local_3860,local_3864,local_3868);
+    sprintf((char *)local_3850._36_4_,"%i.%i.%i",local_3860,local_3864,local_3868);
     if (VERBOSE != 0) {
       fprintf(stdout,"GRASS version is %s.\n",local_3850._36_4_);
     }
@@ -5487,27 +5668,27 @@ int main(int argc,char **argv)
   sprintf(local_3850 + 0x2c,"-L%s/lib -I/usr/local/grasslib/include/ ",local_3850._40_4_,minor_00,
           piVar2);
   if (local_3870 == 3) {
-    source_install(local_1024,(char *)local_3850._40_4_,local_2824,(int)local_3850._4_4_,
-                   local_3850._0_4_,local_3854,local_3850._36_4_);
+    source_install(local_1024,(char *)local_3850._40_4_,local_2824,local_3850._4_4_,local_3850._0_4_
+                   ,local_3854,(char *)local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 10) {
-    uninstall(local_1024,local_2824,(char *)local_3850._40_4_,local_3850._36_4_);
+    uninstall(local_1024,local_2824,(char *)local_3850._40_4_,(char *)local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 8) {
-    test_install(local_1024,(char *)local_3850._40_4_,local_2824,(int)local_3850._4_4_,
-                 local_3850._0_4_,local_3854,local_3850._36_4_);
+    test_install(local_1024,(char *)local_3850._40_4_,local_2824,local_3850._4_4_,local_3850._0_4_,
+                 local_3854,(char *)local_3850._36_4_);
                     // WARNING: Subroutine does not return
     exit(0);
   }
   if (local_3870 == 4) {
-    iVar5 = binaries_exist(local_1024,local_3850._8_4_);
+    iVar5 = binaries_exist(local_1024,(char *)local_3850._8_4_);
     if (iVar5 != 0) {
-      bin_install(local_1024,(char *)local_3850._40_4_,local_3850._8_4_,local_2824,
-                  (int)local_3850._4_4_,local_3850._0_4_,local_3854,local_3850._36_4_);
+      bin_install(local_1024,(char *)local_3850._40_4_,(char *)local_3850._8_4_,local_2824,
+                  local_3850._4_4_,local_3850._0_4_,local_3854,(char *)local_3850._36_4_);
                     // WARNING: Subroutine does not return
       exit(0);
     }
@@ -5578,21 +5759,12 @@ int stat(char *__file,stat *__buf)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080547e1)
+// WARNING: Removing unreachable block (ram,0x080547e8)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

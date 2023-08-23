@@ -3,6 +3,33 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -32,7 +59,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(undefined4 param_1,char *param_2,short *param_3,int param_4)
+void processEntry entry(void)
 
 {
   byte *pbVar1;
@@ -51,34 +78,37 @@ void entry(undefined4 param_1,char *param_2,short *param_3,int param_4)
   byte **ppbVar13;
   byte **ppbVar14;
   byte **ppbVar15;
-  byte *unaff_EBP;
+  byte *unaff_retaddr;
   int iVar16;
-  undefined4 *unaff_EDI;
+  undefined4 *in_EDI;
   undefined2 in_GS;
   undefined uVar17;
   byte bVar18;
   undefined8 uVar19;
+  char *in_stack_00000008;
+  short *in_stack_0000000c;
+  int in_stack_00000010;
   
   bVar18 = 0;
   pcVar3 = (code *)swi(0x80);
   uVar4 = (*pcVar3)();
   uVar4 = uVar4 ^ 0x1b6;
   do {
-    pcVar9 = param_2;
-    param_2 = pcVar9 + 1;
-  } while (*param_2 != '\0');
+    pcVar9 = in_stack_00000008;
+    in_stack_00000008 = pcVar9 + 1;
+  } while (*in_stack_00000008 != '\0');
   if (*pcVar9 == 'o') {
-    ppbVar14 = (byte **)&param_4;
-    piVar12 = &param_4;
+    ppbVar14 = (byte **)&stack0x00000010;
+    piVar12 = &stack0x00000010;
     uVar17 = false;
-    ppbVar13 = (byte **)&param_4;
-    if (param_3 != (short *)0x0) {
-      if (*param_3 == 0x6d2d) {
-        if (*(char *)(param_3 + 1) == '\0') {
+    ppbVar13 = (byte **)&stack0x00000010;
+    if (in_stack_0000000c != (short *)0x0) {
+      if (*in_stack_0000000c == 0x6d2d) {
+        if (*(char *)(in_stack_0000000c + 1) == '\0') {
           piVar12 = (int *)&stack0x00000014;
           uVar17 = false;
           ppbVar13 = (byte **)&stack0x00000014;
-          if (param_4 == 0) goto LAB_080480cd;
+          if (in_stack_00000010 == 0) goto LAB_080480cd;
         }
                     // WARNING: Call to offcut address within same function
         piVar12[-1] = 0x80480c6;
@@ -99,17 +129,17 @@ LAB_08048117:
     }
   }
   else {
-    ppbVar11 = (byte **)&param_4;
-    piVar10 = &param_4;
+    ppbVar11 = (byte **)&stack0x00000010;
+    piVar10 = &stack0x00000010;
     uVar17 = false;
-    ppbVar13 = (byte **)&param_4;
-    if (param_3 != (short *)0x0) {
-      if (*param_3 == 0x6d2d) {
-        if (*(char *)(param_3 + 1) == '\0') {
+    ppbVar13 = (byte **)&stack0x00000010;
+    if (in_stack_0000000c != (short *)0x0) {
+      if (*in_stack_0000000c == 0x6d2d) {
+        if (*(char *)(in_stack_0000000c + 1) == '\0') {
           piVar10 = (int *)&stack0x00000014;
           uVar17 = false;
           ppbVar13 = (byte **)&stack0x00000014;
-          if (param_4 == 0) goto LAB_080480cd;
+          if (in_stack_00000010 == 0) goto LAB_080480cd;
         }
                     // WARNING: Call to offcut address within same function
         piVar10[-1] = 0x8048085;
@@ -119,22 +149,22 @@ LAB_08048117:
         ppbVar13 = (byte **)(piVar10 + 1);
         if (*piVar10 == 0) goto LAB_080480cd;
       }
-      unaff_EBP = *ppbVar11;
+      unaff_retaddr = *ppbVar11;
       ppbVar14 = ppbVar11 + 1;
       uVar17 = false;
       ppbVar13 = ppbVar11 + 1;
-      if (unaff_EBP != (byte *)0x0) {
-        if (((*unaff_EBP == 0x62) || (*unaff_EBP == 99)) || (*unaff_EBP == 0x75)) {
-          unaff_EBP = ppbVar11[1];
+      if (unaff_retaddr != (byte *)0x0) {
+        if (((*unaff_retaddr == 0x62) || (*unaff_retaddr == 99)) || (*unaff_retaddr == 0x75)) {
+          unaff_retaddr = ppbVar11[1];
           uVar17 = false;
           ppbVar13 = ppbVar11 + 2;
-          if (unaff_EBP != (byte *)0x0) {
+          if (unaff_retaddr != (byte *)0x0) {
             ppbVar11[1] = (byte *)0x8048105;
             iVar7 = FUN_08048167();
-            unaff_EBP = ppbVar11[2];
+            unaff_retaddr = ppbVar11[2];
             uVar17 = false;
             ppbVar13 = ppbVar11 + 3;
-            if (unaff_EBP != (byte *)0x0) {
+            if (unaff_retaddr != (byte *)0x0) {
               ppbVar11[2] = (byte *)(iVar7 << 8);
               ppbVar11[1] = (byte *)0x8048114;
               uVar5 = FUN_08048167();
@@ -145,9 +175,9 @@ LAB_08048117:
           }
         }
         else {
-          uVar17 = *unaff_EBP < 0x70;
+          uVar17 = *unaff_retaddr < 0x70;
           ppbVar13 = ppbVar11 + 1;
-          if (*unaff_EBP == 0x70) goto LAB_080480ef;
+          if (*unaff_retaddr == 0x70) goto LAB_080480ef;
         }
       }
     }
@@ -164,7 +194,7 @@ LAB_0804811d:
   ppbVar15[-1] = (byte *)0x1;
   pcVar3 = (code *)swi(0x80);
   uVar19 = (*pcVar3)();
-  *ppbVar15 = unaff_EBP;
+  *ppbVar15 = unaff_retaddr;
   if (!(bool)uVar17) {
     out(0x5a,(int)uVar19);
     return;
@@ -172,11 +202,11 @@ LAB_0804811d:
   segment(in_GS,(short)pcVar9 + (short)uVar4);
   uVar6 = (undefined2)((ulonglong)uVar19 >> 0x20);
   uVar8 = in(uVar6);
-  *unaff_EDI = uVar8;
+  *in_EDI = uVar8;
   iVar7 = *(int *)(uVar4 + 0x6f);
   pcVar9[0x2d] = pcVar9[0x2d] & (byte)pcVar9;
   uVar8 = in(uVar6);
-  unaff_EDI[(uint)bVar18 * -2 + 1] = uVar8;
+  in_EDI[(uint)bVar18 * -2 + 1] = uVar8;
   pbVar1 = (byte *)(iVar7 * 100 + 0x6f);
   *pbVar1 = *pbVar1 & (byte)((uint)extraout_ECX >> 8);
   iVar16 = (int)*ppbVar15;

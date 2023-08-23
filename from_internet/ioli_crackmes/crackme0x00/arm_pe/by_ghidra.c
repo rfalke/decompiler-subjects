@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    uint;
@@ -230,13 +231,13 @@ int main(int _Argc,char **_Argv,char **_Env)
 
 {
   int iVar1;
-  char acStack26 [10];
+  char acStack_1a [10];
   
   __gccmain();
   puts("IOLI Crackme Level 0x00");
   printf("Password: ");
-  scanf("%s",acStack26);
-  iVar1 = strcmp(acStack26,"250382");
+  scanf("%s",acStack_1a);
+  iVar1 = strcmp(acStack_1a,"250382");
   if (iVar1 == 0) {
     puts("Password OK :)");
   }
@@ -280,6 +281,8 @@ void _exit(int _Code)
 }
 
 
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _c_exit(void)
 
@@ -326,7 +329,7 @@ _onexit_t _onexit(_onexit_t _Func)
 
 
 
-int atexit(void *param_1)
+int atexit(_func_4879 *param_1)
 
 {
   int iVar1;
@@ -372,6 +375,8 @@ void __dll_exit(void)
 
 
 
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
 void _cexit(void)
 
 {
@@ -400,11 +405,10 @@ undefined4 __atexit_init(void)
   undefined4 *puVar1;
   
   puVar1 = (undefined4 *)malloc(0x80);
+  DAT_00014000 = puVar1;
   if (puVar1 == (undefined4 *)0x0) {
-    DAT_00014000 = puVar1;
     return 0;
   }
-  DAT_00014000 = puVar1;
   *puVar1 = 0;
   next_atexit = puVar1;
   return 1;
@@ -435,7 +439,7 @@ void __do_global_ctors(void)
       ppcVar4 = ppcVar4 + -1;
     } while (iVar3 != 0);
   }
-  atexit(&__do_global_dtors);
+  atexit((_func_4879 *)&__do_global_dtors);
   return;
 }
 
@@ -459,7 +463,7 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
 {
   char cVar1;
   DWORD DVar2;
-  LPSTR pCVar3;
+  size_t sVar3;
   char *pcVar4;
   size_t sVar5;
   char **ppcVar6;
@@ -468,15 +472,17 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
   char *_Str;
   char *pcVar9;
   int iVar10;
-  wchar_t awStack1052 [512];
+  wchar_t awStack_41c [512];
   
-  awStack1052[0] = L'\0';
-  DVar2 = GetModuleFileNameW((HMODULE)0x0,awStack1052,0x200);
-  pCVar3 = lpCmdLine;
-  if (lpCmdLine != (LPSTR)0x0) {
-    pCVar3 = (LPSTR)wcslen((wchar_t *)lpCmdLine);
+  awStack_41c[0] = L'\0';
+  DVar2 = GetModuleFileNameW((HMODULE)0x0,awStack_41c,0x200);
+  if (lpCmdLine == (LPSTR)0x0) {
+    sVar3 = 0;
   }
-  pcVar4 = (char *)malloc((size_t)(pCVar3 + DVar2 + 2));
+  else {
+    sVar3 = wcslen((wchar_t *)lpCmdLine);
+  }
+  pcVar4 = (char *)malloc(DVar2 + sVar3 + 2);
   if (pcVar4 == (char *)0x0) {
     TerminateProcess((HANDLE)0x42,0xffffffff);
     do {
@@ -491,25 +497,25 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
     } while( true );
   }
   *_argv = pcVar4;
-  sVar5 = wcslen(awStack1052);
-  wcstombs(pcVar4,awStack1052,sVar5 + 1);
+  sVar5 = wcslen(awStack_41c);
+  wcstombs(pcVar4,awStack_41c,sVar5 + 1);
   _argc = _argc + 1;
-  if (0 < (int)pCVar3) {
+  if (0 < (int)sVar3) {
     pcVar4 = *_argv;
     sVar5 = strlen(pcVar4);
     pcVar4 = pcVar4 + sVar5 + 1;
-    wcstombs(pcVar4,(wchar_t *)lpCmdLine,(size_t)(pCVar3 + 1));
-    sVar5 = strlen(pcVar4);
-    pcVar9 = pcVar4 + sVar5;
+    wcstombs(pcVar4,(wchar_t *)lpCmdLine,sVar3 + 1);
+    sVar3 = strlen(pcVar4);
+    pcVar9 = pcVar4 + sVar3;
     if (pcVar4 == (char *)0x0) {
       _argc = 1;
     }
     else {
       iVar7 = 1;
       while( true ) {
-        sVar5 = strspn(pcVar4," \t\r\n");
-        _Str = pcVar4 + sVar5;
-        cVar1 = pcVar4[sVar5];
+        sVar3 = strspn(pcVar4," \t\r\n");
+        _Str = pcVar4 + sVar3;
+        cVar1 = pcVar4[sVar3];
         iVar10 = iVar7;
         if (cVar1 == '\0') break;
         puVar8 = &DAT_0001305c;
@@ -517,8 +523,8 @@ int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nSho
           do {
             pcVar4 = puVar8 + 1;
             if (*pcVar4 == '\0') {
-              sVar5 = strcspn(_Str," \t\r\n");
-              pcVar4 = _Str + sVar5;
+              sVar3 = strcspn(_Str," \t\r\n");
+              pcVar4 = _Str + sVar3;
               goto LAB_00011564;
             }
             puVar8 = puVar8 + 1;
@@ -561,6 +567,8 @@ LAB_000115b4:
 
 
 
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
 void _fpreset(void)
 
 {
@@ -572,8 +580,6 @@ void _fpreset(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 BOOL TerminateProcess(HANDLE hProcess,UINT uExitCode)
 
 {
@@ -581,13 +587,13 @@ BOOL TerminateProcess(HANDLE hProcess,UINT uExitCode)
   
                     // WARNING: Could not recover jumptable at 0x00011630. Too many branches
                     // WARNING: Treating indirect jump as call
-  BVar1 = TerminateProcess();
+  BVar1 = TerminateProcess(hProcess,uExitCode);
   return BVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *_Str)
 
@@ -596,13 +602,13 @@ int puts(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x0001163c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = puts();
+  iVar1 = puts(_Str);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *_Str1,char *_Str2)
 
@@ -611,13 +617,13 @@ int strcmp(char *_Str1,char *_Str2)
   
                     // WARNING: Could not recover jumptable at 0x00011648. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = strcmp();
+  iVar1 = strcmp(_Str1,_Str2);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *_Format,...)
 
@@ -626,13 +632,13 @@ int scanf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00011654. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = scanf();
+  iVar1 = scanf(_Format);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *_Format,...)
 
@@ -641,13 +647,13 @@ int printf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00011660. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = printf();
+  iVar1 = printf(_Format);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t _Size)
 
@@ -656,26 +662,26 @@ void * malloc(size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x0001166c. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = malloc();
+  pvVar1 = malloc(_Size);
   return pvVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *_Memory)
 
 {
                     // WARNING: Could not recover jumptable at 0x00011678. Too many branches
                     // WARNING: Treating indirect jump as call
-  free();
+  free(_Memory);
   return;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *_File)
 
@@ -684,13 +690,13 @@ int fflush(FILE *_File)
   
                     // WARNING: Could not recover jumptable at 0x00011684. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = fflush();
+  iVar1 = fflush(_File);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * realloc(void *_Memory,size_t _NewSize)
 
@@ -699,11 +705,13 @@ void * realloc(void *_Memory,size_t _NewSize)
   
                     // WARNING: Could not recover jumptable at 0x00011690. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = realloc();
+  pvVar1 = realloc(_Memory,_NewSize);
   return pvVar1;
 }
 
 
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _fcloseall(void)
 
@@ -718,7 +726,7 @@ int _fcloseall(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strspn(char *_Str,char *_Control)
 
@@ -727,13 +735,13 @@ size_t strspn(char *_Str,char *_Control)
   
                     // WARNING: Could not recover jumptable at 0x000116a8. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strspn();
+  sVar1 = strspn(_Str,_Control);
   return sVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strchr(char *_Str,int _Val)
 
@@ -742,13 +750,13 @@ char * strchr(char *_Str,int _Val)
   
                     // WARNING: Could not recover jumptable at 0x000116b4. Too many branches
                     // WARNING: Treating indirect jump as call
-  pcVar1 = strchr();
+  pcVar1 = strchr(_Str,_Val);
   return pcVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strcspn(char *_Str,char *_Control)
 
@@ -757,13 +765,11 @@ size_t strcspn(char *_Str,char *_Control)
   
                     // WARNING: Could not recover jumptable at 0x000116c0. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strcspn();
+  sVar1 = strcspn(_Str,_Control);
   return sVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 DWORD GetModuleFileNameW(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
 
@@ -772,13 +778,13 @@ DWORD GetModuleFileNameW(HMODULE hModule,LPWSTR lpFilename,DWORD nSize)
   
                     // WARNING: Could not recover jumptable at 0x000116cc. Too many branches
                     // WARNING: Treating indirect jump as call
-  DVar1 = GetModuleFileNameW();
+  DVar1 = GetModuleFileNameW(hModule,lpFilename,nSize);
   return DVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t wcslen(wchar_t *_Str)
 
@@ -787,13 +793,13 @@ size_t wcslen(wchar_t *_Str)
   
                     // WARNING: Could not recover jumptable at 0x000116d8. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = wcslen();
+  sVar1 = wcslen(_Str);
   return sVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *_Str)
 
@@ -802,13 +808,13 @@ size_t strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x000116e4. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t wcstombs(char *_Dest,wchar_t *_Source,size_t _MaxCount)
 
@@ -817,7 +823,7 @@ size_t wcstombs(char *_Dest,wchar_t *_Source,size_t _MaxCount)
   
                     // WARNING: Could not recover jumptable at 0x000116f0. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = wcstombs();
+  sVar1 = wcstombs(_Dest,_Source,_MaxCount);
   return sVar1;
 }
 

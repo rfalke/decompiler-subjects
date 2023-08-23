@@ -285,13 +285,19 @@ ulong _sat_divu64b(ulong param_1,ulong param_2)
 long _sat_mulu64b(ulong param_1,ulong param_2)
 
 {
-  long lVar1;
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  long lVar3;
   
-  lVar1 = param_1 * param_2;
-  if (SUB168(ZEXT816(param_1) * ZEXT816(param_2) >> 0x40,0) != 0) {
-    lVar1 = -1;
+  lVar3 = param_1 * param_2;
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = param_1;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = param_2;
+  if (SUB168(auVar1 * auVar2,8) != 0) {
+    lVar3 = -1;
   }
-  return lVar1;
+  return lVar3;
 }
 
 
@@ -445,8 +451,8 @@ long _sat_muls64b(ulong param_1,ulong param_2)
   long lVar1;
   
   lVar1 = param_2 * param_1;
-  if (SUB168(SEXT816((long)param_2) * SEXT816((long)param_1) >> 0x40,0) !=
-      (long)(param_2 * param_1) >> 0x3f) {
+  if (SUB168(SEXT816((long)param_2) * SEXT816((long)param_1),8) != (long)(param_2 * param_1) >> 0x3f
+     ) {
     lVar1 = 0x7fffffffffffffff - ((long)(param_2 ^ param_1) >> 0x3f);
   }
   return lVar1;
@@ -525,27 +531,27 @@ undefined8 entry(void)
   long lVar10;
   
   _sat_addu32b(0xffffffff,3);
-  __stubs::_printf("sat_addu32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_addu32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_subu32b(1,3);
-  __stubs::_printf("sat_subu32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_subu32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_mulu32b(0xffffffff,3);
-  __stubs::_printf("sat_mulu32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_mulu32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_divu32b(0xffffffff,3);
-  __stubs::_printf("sat_divu32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_divu32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_adds32b_var1(0x7fffffff,2);
   _sat_adds32b_var2(0x7fffffff,2);
   _sat_adds32b_var3(0x7fffffff,2);
-  __stubs::_printf("sat_adds32b(0x%08x,0x%08x) = 0x%08x 0x%08x 0x%08x\n");
+  _printf("sat_adds32b(0x%08x,0x%08x) = 0x%08x 0x%08x 0x%08x\n");
   _sat_subs32b(0x80000000,2);
-  __stubs::_printf("sat_subs32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_subs32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_muls32b(0x7fffffff,2);
-  __stubs::_printf("sat_muls32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_muls32b(0x%08x,0x%08x) = 0x%08x\n");
   _sat_divs32b(0x80000000,0xffffffff);
-  __stubs::_printf("sat_divs32b(0x%08x,0x%08x) = 0x%08x\n");
+  _printf("sat_divs32b(0x%08x,0x%08x) = 0x%08x\n");
   _abs32(0xfffffff0);
-  __stubs::_printf("abs32(0x%08x) = 0x%08x\n");
+  _printf("abs32(0x%08x) = 0x%08x\n");
   _sgn32(3);
-  __stubs::_printf("sgn32(0x%08x) = 0x%08x\n");
+  _printf("sgn32(0x%08x) = 0x%08x\n");
   lVar1 = _sat_addu64b(0,0);
   lVar2 = _sat_subu64b(0,0);
   lVar3 = _sat_divu64b(0,1);
@@ -557,34 +563,34 @@ undefined8 entry(void)
   lVar9 = _abs64(0);
   lVar10 = _sgn64(0);
   if (lVar2 + lVar1 + lVar3 + lVar4 + lVar5 + lVar6 + lVar7 + lVar8 + lVar9 + lVar10 == 0x2a) {
-    __stubs::_puts("not reached");
+    _puts("not reached");
   }
   return 0;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __stubs::_printf(char *param_1,...)
+int _printf(char *param_1,...)
 
 {
   int iVar1;
   
-  iVar1 = (*(code *)__got::_printf)((int)param_1);
+  iVar1 = (*(code *)PTR__printf_100004000)((int)param_1);
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __stubs::_puts(char *param_1)
+int _puts(char *param_1)
 
 {
   int iVar1;
   
-  iVar1 = (*(code *)__got::_puts)((int)param_1);
+  iVar1 = (*(code *)PTR__puts_100004008)((int)param_1);
   return iVar1;
 }
 

@@ -1,42 +1,50 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/project_loc/project_name (DefaultProject)  
 INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
 INFO       project: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Import succeeded with language "x86:LE:32:default" and cspec "gcc" for file: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Executable and Linking Format (ELF) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:32:default:gcc (AutoImporter)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
 INFO  ANALYZING all memory and code: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=1452d6ece3f7a5914835cdc0509859d071817ea9] (ExternalDebugFilesService)  
 INFO  Unable to find DWARF information, skipping DWARF analysis (DWARFAnalyzer)  
+INFO  Applied data type archive: generic_clib (ApplyDataArchiveAnalyzer)  
 INFO  -----------------------------------------------------
     ASCII Strings                              some time
     Apply Data Archives                        some time
@@ -48,13 +56,15 @@ INFO  -----------------------------------------------------
     Data Reference                             some time
     Decompiler Switch Analysis                 some time
     Demangler GNU                              some time
-    Disassemble Entry Points                   some time
+    Disassemble Entry Points                  some time
     Disassemble Entry Points - One Time        some time
     ELF Scalar Operand References              some time
     Embedded Media                             some time
     External Entry References                  some time
     Function ID                                some time
     Function Start Search                      some time
+    Function Start Search After Code           some time
+    Function Start Search After Data           some time
     GCC Exception Handlers                     some time
     Non-Returning Functions - Discovered       some time
     Non-Returning Functions - Known            some time
@@ -71,15 +81,36 @@ INFO  -----------------------------------------------------
  (AutoAnalysisManager)  
 INFO  REPORT: Analysis succeeded for file: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  SCRIPT: SUBJECTS/scripts/ghidra_script.java (HeadlessAnalyzer)  
-WARN  Decompiling 08087435, pcode error at 0808746f: Unable to resolve constructor at 0808746f (DecompileCallback)  
-WARN  Decompiling 08087527, pcode error at 08087556: Unable to resolve constructor at 08087556 (DecompileCallback)  
+WARN  Decompiling 0804c5e5, pcode error at 0804c614: Unable to resolve constructor at 0804c614 (DecompileCallback)  
+WARN  Decompiling 0804c6cd, pcode error at 0804c6fc: Unable to resolve constructor at 0804c6fc (DecompileCallback)  
+WARN  Decompiling 0804c7b5, pcode error at 0804c7e5: Unable to resolve constructor at 0804c7e5 (DecompileCallback)  
+WARN  Decompiling 0804c4f2, pcode error at 0804c52c: Unable to resolve constructor at 0804c52c (DecompileCallback)  
+WARN  Decompiling 0804f50d, pcode error at 0804f547: Unable to resolve constructor at 0804f547 (DecompileCallback)  
+WARN  Decompiling 0804f600, pcode error at 0804f62f: Unable to resolve constructor at 0804f62f (DecompileCallback)  
+WARN  Decompiling 0804f6e8, pcode error at 0804f717: Unable to resolve constructor at 0804f717 (DecompileCallback)  
+WARN  Decompiling 0804f7d0, pcode error at 0804f800: Unable to resolve constructor at 0804f800 (DecompileCallback)  
+WARN  Decompiling 080530ae, pcode error at 080530e8: Unable to resolve constructor at 080530e8 (DecompileCallback)  
+WARN  Decompiling 08053289, pcode error at 080532b8: Unable to resolve constructor at 080532b8 (DecompileCallback)  
+WARN  Decompiling 080531a1, pcode error at 080531d0: Unable to resolve constructor at 080531d0 (DecompileCallback)  
+WARN  Decompiling 08053371, pcode error at 080533a1: Unable to resolve constructor at 080533a1 (DecompileCallback)  
 WARN  Decompiling 0808760e, pcode error at 0808763d: Unable to resolve constructor at 0808763d (DecompileCallback)  
+WARN  Decompiling 08087527, pcode error at 08087556: Unable to resolve constructor at 08087556 (DecompileCallback)  
+WARN  Decompiling 08087435, pcode error at 0808746f: Unable to resolve constructor at 0808746f (DecompileCallback)  
 WARN  Decompiling 080876f5, pcode error at 08087725: Unable to resolve constructor at 08087725 (DecompileCallback)  
-WARN  Decompiling 080878d8, pcode error at 08087907: Unable to resolve constructor at 08087907 (DecompileCallback)  
-WARN  Decompiling 080877e6, pcode error at 08087820: Unable to resolve constructor at 08087820 (DecompileCallback)  
 WARN  Decompiling 080879bf, pcode error at 080879ee: Unable to resolve constructor at 080879ee (DecompileCallback)  
+WARN  Decompiling 080878d8, pcode error at 08087907: Unable to resolve constructor at 08087907 (DecompileCallback)  
 WARN  Decompiling 08087aa6, pcode error at 08087ad6: Unable to resolve constructor at 08087ad6 (DecompileCallback)  
+WARN  Decompiling 080877e6, pcode error at 08087820: Unable to resolve constructor at 08087820 (DecompileCallback)  
+WARN  Decompiling 080917cc, pcode error at 080917fb: Unable to resolve constructor at 080917fb (DecompileCallback)  
+WARN  Decompiling 080918b4, pcode error at 080918e3: Unable to resolve constructor at 080918e3 (DecompileCallback)  
+WARN  Decompiling 0809199c, pcode error at 080919cc: Unable to resolve constructor at 080919cc (DecompileCallback)  
+WARN  Decompiling 080916d9, pcode error at 08091713: Unable to resolve constructor at 08091713 (DecompileCallback)  
+WARN  Decompiling 080c5de7, pcode error at 080c5e21: Unable to resolve constructor at 080c5e21 (DecompileCallback)  
+WARN  Decompiling 080c5eda, pcode error at 080c5f09: Unable to resolve constructor at 080c5f09 (DecompileCallback)  
+WARN  Decompiling 080c5fc2, pcode error at 080c5ff1: Unable to resolve constructor at 080c5ff1 (DecompileCallback)  
+WARN  Decompiling 080c60aa, pcode error at 080c60da: Unable to resolve constructor at 080c60da (DecompileCallback)  
 INFO  ghidra_script.java> Wrote SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/ghidra.c (GhidraScript)  
 INFO  ANALYZING changes made by post scripts: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
 INFO  REPORT: Post-analysis succeeded for file: SUBJECTS/from_holdec/all_i386_opcodes/ia32_elf/subject.exe (HeadlessAnalyzer)  
-INFO  REPORT: Save succeeded for file: /subject.exe (HeadlessAnalyzer)  
+INFO  REPORT: Save succeeded for: /subject.exe (project_name:/subject.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

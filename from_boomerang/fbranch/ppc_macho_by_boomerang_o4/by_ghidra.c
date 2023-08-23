@@ -192,16 +192,113 @@ struct dylinker_command {
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void entry(void)
 
 {
-  int in_stack_00000000;
+  longlong lVar1;
+  char cVar2;
+  char *pcVar3;
+  ulonglong uVar4;
+  undefined8 uVar5;
+  undefined4 *puVar6;
+  undefined8 uVar7;
+  int iVar8;
+  longlong lVar9;
+  longlong lVar10;
+  char *pcVar11;
+  undefined4 unaff_r28;
+  undefined4 unaff_r29;
+  int *piVar12;
+  undefined4 unaff_r30;
+  char **ppcVar13;
+  undefined4 unaff_r31;
+  undefined4 uVar14;
+  code *pcVar15;
+  uint in_stack_00000000;
   
-                    // WARNING: Subroutine does not return
-  __start(in_stack_00000000,&stack0x00000004,&stack0x00000004 + (in_stack_00000000 + 1) * 4);
+  uVar4 = ZEXT48(&stack0x00000000) - 4 & 0xffffffe0;
+  uVar5 = 0;
+  puVar6 = (undefined4 *)uVar4;
+  *puVar6 = 0;
+  puVar6[-0x10] = puVar6;
+  lVar9 = ZEXT48(&stack0x00000000) + 4;
+  lVar10 = lVar9 + ((ulonglong)in_stack_00000000 + 1 & 0x3fffffff) * 4;
+  uVar14 = 0x1810;
+  uVar7 = __start();
+  trapWord(0x1f,uVar5,uVar5);
+  puVar6[-0x14] = unaff_r28;
+  puVar6[-0x13] = unaff_r29;
+  puVar6[-0x12] = unaff_r30;
+  puVar6[-0x11] = unaff_r31;
+  puVar6[-0xe] = uVar14;
+  puVar6[-0x28] = puVar6 + -0x10;
+  __dyld_init_check();
+  __NXArgc = (undefined4)uVar7;
+  ppcVar13 = (char **)lVar9;
+  piVar12 = (int *)lVar10;
+  __NXArgv = ppcVar13;
+  __environ = piVar12;
+  if (*(code **)__nl_symbol_ptr::_mach_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::_mach_init_routine)();
+  }
+  if (*(code **)__nl_symbol_ptr::__cthread_init_routine != (code *)0x0) {
+    (**(code **)__nl_symbol_ptr::__cthread_init_routine)();
+  }
+  __picsymbol_stub::___keymgr_dwarf2_register_sections();
+  if (*(int *)_pointer_to__darwin_gcc3_preregister_frame_info != 0) {
+    (*(code *)_pointer_to__darwin_gcc3_preregister_frame_info)();
+  }
+  __call_mod_init_funcs();
+  if (*(int *)_pointer_to_objcInit != 0) {
+    (*(code *)_pointer_to_objcInit)();
+  }
+  __dyld_func_lookup("__dyld_mod_term_funcs",uVar4 - 0x60);
+  if ((void *)puVar6[-0x18] != (void *)0x0) {
+    __picsymbol_stub::_atexit((void *)puVar6[-0x18]);
+  }
+  *(undefined4 *)__nl_symbol_ptr::_errno = 0;
+  pcVar3 = *ppcVar13;
+  if (pcVar3 != (char *)0x0) {
+    pcVar11 = (char *)0x0;
+    iVar8 = 0;
+    cVar2 = *pcVar3;
+    while (cVar2 != '\0') {
+      if (pcVar3[iVar8] == '/') {
+        pcVar11 = pcVar3 + iVar8;
+      }
+      iVar8 = iVar8 + 1;
+      pcVar3 = *ppcVar13;
+      cVar2 = pcVar3[iVar8];
+    }
+    if (pcVar11 == (char *)0x0) {
+      ___progname = *ppcVar13;
+    }
+    else {
+      ___progname = pcVar11 + 1;
+    }
+  }
+  iVar8 = *piVar12;
+  lVar1 = lVar10;
+  while (iVar8 != 0) {
+    lVar1 = lVar1 + 4;
+    iVar8 = *(int *)lVar1;
+  }
+  iVar8 = _main(uVar7,lVar9,lVar10,lVar1 + 4);
+  pcVar15 = __call_mod_init_funcs;
+  __picsymbol_stub::_exit(iVar8);
+  puVar6[-0x29] = 0x1828;
+  puVar6[-0x26] = pcVar15;
+  puVar6[-0x40] = puVar6 + -0x28;
+  __dyld_func_lookup("__dyld_make_delayed_module_initializer_calls",uVar4 - 0xc0);
+  (*(code *)puVar6[-0x30])();
+  return;
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void __start(undefined8 param_1,char **param_2,int *param_3)
 
@@ -211,24 +308,17 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
   int *piVar3;
   int iVar4;
   char *pcVar5;
-  undefined8 unaff_r28;
-  undefined8 unaff_r29;
-  undefined8 unaff_r30;
-  undefined8 unaff_r31;
-  void *local_20 [4];
-  undefined4 local_10;
-  undefined4 uStack12;
-  undefined4 uStack8;
-  undefined4 uStack4;
+  code *apcStack_80 [7];
+  undefined4 uStack_64;
+  undefined *local_60;
+  code *pcStack_58;
+  void *local_20 [8];
   
-  local_10 = (undefined4)((ulonglong)unaff_r28 >> 0x20);
-  uStack12 = (undefined4)((ulonglong)unaff_r29 >> 0x20);
-  uStack8 = (undefined4)((ulonglong)unaff_r30 >> 0x20);
-  uStack4 = (undefined4)((ulonglong)unaff_r31 >> 0x20);
+  local_60 = (undefined *)register0x0000000c;
   __dyld_init_check();
-  _NXArgc = (undefined4)param_1;
-  _NXArgv = param_2;
-  _environ = param_3;
+  __NXArgc = (undefined4)param_1;
+  __NXArgv = param_2;
+  __environ = param_3;
   if (*(code **)__nl_symbol_ptr::_mach_init_routine != (code *)0x0) {
     (**(code **)__nl_symbol_ptr::_mach_init_routine)();
   }
@@ -275,8 +365,12 @@ void __start(undefined8 param_1,char **param_2,int *param_3)
     iVar4 = *piVar3;
   }
   iVar4 = _main(param_1,param_2,param_3,piVar3 + 1);
-                    // WARNING: Subroutine does not return
+  pcStack_58 = __call_mod_init_funcs;
   __picsymbol_stub::_exit(iVar4);
+  uStack_64 = 0x1828;
+  __dyld_func_lookup("__dyld_make_delayed_module_initializer_calls",apcStack_80);
+  (*apcStack_80[0])();
+  return;
 }
 
 
@@ -293,10 +387,12 @@ void __call_mod_init_funcs(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void __dyld_init_check(void)
 
 {
-  if (dyld_lazy_symbol_binding_entry_point != 0) {
+  if (_dyld_lazy_symbol_binding_entry_point != 0) {
     return;
   }
   syscall();
@@ -311,23 +407,31 @@ void __dyld_init_check(void)
 
 
 
-void dyld_stub_binding_helper(void)
-
-{
-                    // WARNING: Could not recover jumptable at 0x00001a2c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*dyld_lazy_symbol_binding_entry_point)();
-  return;
-}
-
-
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void __dyld_func_lookup(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00001a3c. Too many branches
                     // WARNING: Treating indirect jump as call
-  (*dyld_func_lookup_pointer)();
+  (*_dyld_func_lookup_pointer)();
+  return;
+}
+
+
+
+void ___darwin_gcc3_preregister_frame_info(void)
+
+{
+  __picsymbol_stub::__init_keymgr();
+  if ((*(int *)(__nl_symbol_ptr::___keymgr_global + 8) != 0) &&
+     (2 < *(ushort *)(*(int *)(__nl_symbol_ptr::___keymgr_global + 8) + 4))) {
+    return;
+  }
+  __picsymbol_stub::__dyld_register_func_for_add_image
+            (PTR__darwin_unwind_dyld_add_image_hook_0000201c);
+  __picsymbol_stub::__dyld_register_func_for_remove_image
+            (PTR__darwin_unwind_dyld_remove_image_hook_00002018);
   return;
 }
 
@@ -346,8 +450,8 @@ int _main(void)
   __picsymbol_stub::_scanf("%f",local_30);
   local_20 = (double)local_30[0];
   iVar1 = __picsymbol_stub::_printf
-                    ((char *)5.0,local_20,"a is %f, b is %f\n",0x40140000,0,
-                     (ulonglong)local_20 >> 0x20,(ulonglong)local_20 & 0xffffffff);
+                    ("a is %f, b is %f\n",5.0,local_20,0x40140000,0,(ulonglong)local_20 >> 0x20,
+                     (ulonglong)local_20 & 0xffffffff);
   dVar2 = (double)local_30[0];
   if (dVar3 == dVar2) {
     iVar1 = __picsymbol_stub::_puts("Equal");
@@ -377,8 +481,6 @@ int _main(void)
 
 
 
-// dyld info library ordinal out of range1
-
 void __picsymbol_stub::_exit(int param_1)
 
 {
@@ -389,8 +491,6 @@ void __picsymbol_stub::_exit(int param_1)
 }
 
 
-
-// dyld info library ordinal out of range1
 
 int __picsymbol_stub::_atexit(void *param_1)
 
@@ -405,8 +505,6 @@ int __picsymbol_stub::_atexit(void *param_1)
 
 
 
-// dyld info library ordinal out of range1
-
 void __picsymbol_stub::___keymgr_dwarf2_register_sections(void)
 
 {
@@ -418,7 +516,16 @@ void __picsymbol_stub::___keymgr_dwarf2_register_sections(void)
 
 
 
-// dyld info library ordinal out of range1
+void __picsymbol_stub::__dyld_register_func_for_remove_image(void)
+
+{
+                    // WARNING: Could not recover jumptable at 0x00001d88. Too many branches
+                    // WARNING: Treating indirect jump as call
+  (*(code *)__la_symbol_ptr::__dyld_register_func_for_remove_image)();
+  return;
+}
+
+
 
 void __picsymbol_stub::__dyld_register_func_for_add_image(void)
 
@@ -431,8 +538,6 @@ void __picsymbol_stub::__dyld_register_func_for_add_image(void)
 
 
 
-// dyld info library ordinal out of range1
-
 void __picsymbol_stub::__init_keymgr(void)
 
 {
@@ -443,8 +548,6 @@ void __picsymbol_stub::__init_keymgr(void)
 }
 
 
-
-// dyld info library ordinal out of range1
 
 void __picsymbol_stub::_free(void *param_1)
 
@@ -457,8 +560,6 @@ void __picsymbol_stub::_free(void *param_1)
 
 
 
-// dyld info library ordinal out of range1
-
 void __picsymbol_stub::_abort(void)
 
 {
@@ -469,8 +570,6 @@ void __picsymbol_stub::_abort(void)
 }
 
 
-
-// dyld info library ordinal out of range1
 
 void __picsymbol_stub::__keymgr_set_and_unlock_processwide_ptr(void)
 
@@ -483,8 +582,6 @@ void __picsymbol_stub::__keymgr_set_and_unlock_processwide_ptr(void)
 
 
 
-// dyld info library ordinal out of range1
-
 void __picsymbol_stub::__keymgr_get_and_lock_processwide_ptr(void)
 
 {
@@ -495,8 +592,6 @@ void __picsymbol_stub::__keymgr_get_and_lock_processwide_ptr(void)
 }
 
 
-
-// dyld info library ordinal out of range1
 
 void * __picsymbol_stub::_calloc(size_t param_1,size_t param_2)
 
@@ -511,8 +606,6 @@ void * __picsymbol_stub::_calloc(size_t param_1,size_t param_2)
 
 
 
-// dyld info library ordinal out of range1
-
 int __picsymbol_stub::_puts(char *param_1)
 
 {
@@ -526,8 +619,6 @@ int __picsymbol_stub::_puts(char *param_1)
 
 
 
-// dyld info library ordinal out of range1
-
 int __picsymbol_stub::_printf(char *param_1,...)
 
 {
@@ -540,8 +631,6 @@ int __picsymbol_stub::_printf(char *param_1,...)
 }
 
 
-
-// dyld info library ordinal out of range1
 
 int __picsymbol_stub::_scanf(char *param_1,...)
 

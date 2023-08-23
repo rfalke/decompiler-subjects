@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -72,7 +99,9 @@ void FUN_08048b47(void)
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
+void processEntry
+entry(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+     char *param_6)
 
 {
   int *piVar1;
@@ -89,27 +118,26 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_
   char *pcVar12;
   char *pcVar13;
   byte bVar14;
-  int unaff_retaddr;
   
   bVar14 = 0;
-  puVar10 = &param_1;
-  if (unaff_retaddr != 1) {
-    param_1 = 2;
-    puVar10 = &param_3;
+  puVar10 = &param_3;
+  if (param_2 != 1) {
+    param_3 = 2;
+    puVar10 = &param_5;
     pcVar2 = (code *)swi(0x80);
     iRam08048d47 = (*pcVar2)();
                     // WARNING: Read-only address (ram,0x08048d47) is written
     if (-1 < iRam08048d47) {
       if (iRam08048d47 == 0) {
-        param_2 = 0x1a;
+        param_4 = 0x1a;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        puVar10 = &param_4;
-        ppcVar9 = &param_4;
+        puVar10 = &param_6;
+        ppcVar9 = &param_6;
         iVar4 = 0;
-        if ((*param_4 != '/') && (*param_4 != '.')) {
+        if ((*param_6 != '/') && (*param_6 != '.')) {
           do {
-            piVar1 = (int *)(&param_2)[unaff_retaddr + iVar4];
+            piVar1 = (int *)(&param_4)[param_2 + iVar4];
             if (piVar1 == (int *)0x0) goto LAB_08048d3a;
             iVar4 = iVar4 + 1;
           } while ((*piVar1 != 0x48544150) ||
@@ -124,7 +152,7 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_
             pcVar13 = pcVar13 + (uint)bVar14 * -2 + 1;
           } while (cVar3 != '\0');
           iVar7 = -1;
-          pcVar13 = param_4;
+          pcVar13 = param_6;
           do {
             if (iVar7 == 0) break;
             iVar7 = iVar7 + -1;
@@ -160,18 +188,18 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_
             ppcVar9 = ppcVar9 + 1;
           } while( true );
         }
-        param_3 = 0xb;
+        param_5 = 0xb;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
         puVar10 = (undefined4 *)&stack0x00000014;
       }
       else {
-        param_2 = 0x72;
+        param_4 = 0x72;
         pcVar2 = (code *)swi(0x80);
         iVar4 = (*pcVar2)();
-        puVar10 = &param_4;
+        puVar10 = &param_6;
         if (-1 < iVar4) {
-          param_3 = 0x1a;
+          param_5 = 0x1a;
           pcVar2 = (code *)swi(0x80);
           (*pcVar2)();
           puVar8 = (undefined4 *)&stack0x00000014;
@@ -241,8 +269,8 @@ LAB_08048d3a:
   puVar10[-1] = 1;
   pcVar2 = (code *)swi(0x80);
   pbVar5 = (byte *)(*pcVar2)();
-  pcVar6 = (char *)(((uint)pbVar5 & 0xffff0000 |
-                    (uint)CONCAT11((byte)((uint)pbVar5 >> 8) | *pbVar5,(char)pbVar5)) - 0x203e);
+  pcVar6 = (char *)(CONCAT22((short)((uint)pbVar5 >> 0x10),
+                             CONCAT11((byte)((uint)pbVar5 >> 8) | *pbVar5,(char)pbVar5)) + -0x203e);
   cVar3 = (char)pcVar6;
   *pcVar6 = *pcVar6 + cVar3;
   *pcVar6 = *pcVar6 + cVar3;

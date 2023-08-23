@@ -4,6 +4,7 @@ typedef unsigned char    byte;
 typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -32,7 +33,7 @@ typedef ulong size_t;
 
 typedef long __off_t;
 
-typedef long __off64_t;
+typedef sqword __off64_t;
 
 typedef void _IO_lock_t;
 
@@ -49,10 +50,6 @@ struct _IO_wide_data {
 
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -72,10 +69,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     struct _IO_codecvt * _codecvt;
@@ -150,6 +143,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -265,6 +259,17 @@ struct Elf64_Dyn {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -273,14 +278,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -340,7 +345,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -353,10 +358,12 @@ int printf(char *__format,...)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(void)
 
 {
-  printf("in main: %d\n");
+  printf("in main: %d\n",(ulong)(uint)a_global);
   a_global = a_global + 1;
   printf("in func: %d\n");
   return 0;
@@ -364,14 +371,13 @@ int main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -442,6 +448,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void a_func(void)
 

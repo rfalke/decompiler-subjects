@@ -66,6 +66,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -179,6 +180,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -225,12 +237,22 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   FUN_080489c0();
   FUN_08049410();
-  return iStack12;
+  return iStack_c;
+}
+
+
+
+void FUN_080487a4(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
 }
 
 
@@ -361,7 +383,7 @@ void SDL_Init(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -374,12 +396,12 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 float cosf(float __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   cosf(__x);
   return (float)extraout_ST0;
@@ -441,12 +463,12 @@ void glPushMatrix(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 float sinf(float __x)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   sinf(__x);
   return (float)extraout_ST0;
@@ -481,10 +503,13 @@ void glPopMatrix(void)
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(FUN_0804922c);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(FUN_0804922c,param_2,&stack0x00000004,FUN_080493b0,FUN_080493a0,param_1,
+                    auStack_4);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -497,12 +522,12 @@ void FUN_08048990(void)
 {
   code *pcVar1;
   
-  if (DAT_0804a188 == '\0') {
+  if (__bss_start == '\0') {
     while (pcVar1 = *(code **)PTR_DAT_0804a184, pcVar1 != (code *)0x0) {
       PTR_DAT_0804a184 = PTR_DAT_0804a184 + 4;
       (*pcVar1)();
     }
-    DAT_0804a188 = '\x01';
+    __bss_start = '\x01';
   }
   return;
 }
@@ -726,13 +751,13 @@ undefined4 FUN_0804922c(void)
 {
   bool bVar1;
   int iVar2;
-  char local_34 [8];
-  int local_2c;
-  undefined local_20 [12];
-  undefined *local_14;
+  char acStack_34 [8];
+  int iStack_2c;
+  undefined auStack_20 [12];
+  undefined *puStack_14;
   
-  local_14 = &stack0x00000004;
-  memcpy(local_20,&DAT_08049460,0xc);
+  puStack_14 = &stack0x00000004;
+  memcpy(auStack_20,&DAT_08049460,0xc);
   SDL_Init(0x20);
   SDL_SetVideoMode(0x400,0x300,0x20,0xa0000013);
   SDL_ShowCursor(0);
@@ -747,13 +772,62 @@ undefined4 FUN_0804922c(void)
   glEnableClientState(0x8075);
   glOrtho(0xbfe0000000000000,0x3fe0000000000000,0xbfe0000000000000,0x3fe0000000000000,0,0xbff00000,0
           ,0x40590000);
-  glLightfv(0x4000,0x1203,local_20);
+  glLightfv(0x4000,0x1203,auStack_20);
   bVar1 = false;
   do {
     while( true ) {
-      iVar2 = SDL_PollEvent(local_34);
+      iVar2 = SDL_PollEvent(acStack_34);
       if (iVar2 == 0) break;
-      if ((local_34[0] == '\x02') && (local_2c == 0x1b)) {
+      if ((acStack_34[0] == '\x02') && (iStack_2c == 0x1b)) {
+        bVar1 = true;
+      }
+    }
+    glClear(0x4100);
+    glColor4f(0x3f800000,0x3f800000,0x3f800000,0x3f800000);
+    FUN_0804908a();
+    SDL_GL_SwapBuffers();
+  } while (!bVar1);
+  SDL_ShowCursor(1);
+  SDL_Quit();
+  return 0;
+}
+
+
+
+undefined4 FUN_08049236(void)
+
+{
+  bool bVar1;
+  int iVar2;
+  undefined4 in_ECX;
+  char local_30 [8];
+  int local_28;
+  undefined local_1c [12];
+  undefined4 local_10;
+  
+  local_10 = in_ECX;
+  memcpy(local_1c,&DAT_08049460,0xc);
+  SDL_Init(0x20);
+  SDL_SetVideoMode(0x400,0x300,0x20,0xa0000013);
+  SDL_ShowCursor(0);
+  glClearColor(0,0,0,0);
+  glMatrixMode(0x1701);
+  glLoadIdentity();
+  glEnable(0xb71);
+  glEnable(0xb50);
+  glEnable(0x4000);
+  glEnable(0xba1);
+  glEnableClientState(0x8074);
+  glEnableClientState(0x8075);
+  glOrtho(0xbfe0000000000000,0x3fe0000000000000,0xbfe0000000000000,0x3fe0000000000000,0,0xbff00000,0
+          ,0x40590000);
+  glLightfv(0x4000,0x1203,local_1c);
+  bVar1 = false;
+  do {
+    while( true ) {
+      iVar2 = SDL_PollEvent(local_30);
+      if (iVar2 == 0) break;
+      if ((local_30[0] == '\x02') && (local_28 == 0x1b)) {
         bVar1 = true;
       }
     }
@@ -813,7 +887,7 @@ void FUN_08049410(void)
     pcVar1 = DAT_0804a000;
     do {
       (*pcVar1)();
-      pcVar1 = *(code **)(&DAT_08049ffc + iVar2);
+      pcVar1 = *(code **)(iVar2 + 0x8049ffc);
       iVar2 = iVar2 + -4;
     } while (pcVar1 != (code *)0xffffffff);
   }

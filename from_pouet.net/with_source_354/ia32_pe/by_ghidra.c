@@ -1,12 +1,24 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef unsigned long long    GUID;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
+typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned int    undefined4;
+typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef ulong DWORD;
 
 typedef int (* FARPROC)(void);
@@ -261,7 +273,7 @@ void entry(void)
       }
     }
   }
-  MessageBoxA((HWND)0x0,s_ERROR________00403034,s_XOROX_KO_SETUP_00403019,0);
+  MessageBoxA((HWND)0x0,s_ERROR___>_<)_00403034,s_XOROX_KO_SETUP_00403019,0);
 LAB_004010b1:
   FreeLibrary(DAT_00403009);
                     // WARNING: Subroutine does not return
@@ -312,14 +324,13 @@ HANDLE CreateFileA(LPCSTR lpFileName,DWORD dwDesiredAccess,DWORD dwShareMode,
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void ExitProcess(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x004010d6. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  ExitProcess();
+  ExitProcess(uExitCode);
   return;
 }
 

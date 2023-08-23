@@ -2,10 +2,37 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined2;
+typedef unsigned int    word;
+typedef struct OLD_IMAGE_DOS_HEADER OLD_IMAGE_DOS_HEADER, *POLD_IMAGE_DOS_HEADER;
+
+struct OLD_IMAGE_DOS_HEADER {
+    char e_magic[2]; // Magic number
+    word e_cblp; // Bytes of last page
+    word e_cp; // Pages in file
+    word e_crlc; // Relocations
+    word e_cparhdr; // Size of header in paragraphs
+    word e_minalloc; // Minimum extra paragraphs needed
+    word e_maxalloc; // Maximum extra paragraphs needed
+    word e_ss; // Initial (relative) SS value
+    word e_sp; // Initial SP value
+    word e_csum; // Checksum
+    word e_ip; // Initial IP value
+    word e_cs; // Initial (relative) CS value
+    word e_lfarlc; // File address of relocation table
+    word e_ovno; // Overlay number
+};
+
+typedef struct OLD_IMAGE_DOS_RELOC OLD_IMAGE_DOS_RELOC, *POLD_IMAGE_DOS_RELOC;
+
+struct OLD_IMAGE_DOS_RELOC {
+    word offset;
+    word segment;
+};
 
 
 
-void __cdecl16near FUN_1e76_0061(void)
+
+void __cdecl16near FUN_1000_e7c1(void)
 
 {
   code *pcVar1;
@@ -17,7 +44,7 @@ void __cdecl16near FUN_1e76_0061(void)
 
 
 
-void __cdecl16near FUN_1e76_0068(void)
+void __cdecl16near FUN_1000_e7c8(void)
 
 {
   code *pcVar1;
@@ -29,7 +56,7 @@ void __cdecl16near FUN_1e76_0068(void)
 
 
 
-void __cdecl16near FUN_1e76_006f(void)
+void __cdecl16near FUN_1000_e7cf(void)
 
 {
   code *pcVar1;
@@ -41,7 +68,7 @@ void __cdecl16near FUN_1e76_006f(void)
 
 
 
-void __cdecl16near FUN_1e76_0084(void)
+void __cdecl16near FUN_1000_e7e4(void)
 
 {
   undefined *puVar1;
@@ -64,7 +91,7 @@ void __cdecl16near FUN_1e76_0084(void)
 
 
 
-void __cdecl16near FUN_1e76_009b(void)
+void __cdecl16near FUN_1000_e7fb(void)
 
 {
   undefined *puVar1;
@@ -96,7 +123,7 @@ void __cdecl16near FUN_1e76_009b(void)
 
 
 
-void __cdecl16near FUN_1e76_0104(void)
+void __cdecl16near FUN_1000_e864(void)
 
 {
   char cVar1;
@@ -130,7 +157,7 @@ void __cdecl16near FUN_1e76_0104(void)
 
 
 
-void FUN_1e76_0165(void)
+void FUN_1000_e8c5(void)
 
 {
   undefined *puVar1;
@@ -228,7 +255,7 @@ void FUN_1e76_0165(void)
     puVar8 = (undefined *)(iVar5 + 1);
     if (cVar3 == '\x01') break;
     puVar6 = puVar7 + 1;
-    cVar3 = FUN_1e76_0287();
+    cVar3 = FUN_1000_e9e7();
     cVar3 = cVar3 + '\x01';
     iVar5 = extraout_DX;
   }
@@ -243,7 +270,7 @@ void FUN_1e76_0165(void)
 
 
 
-void FUN_1e76_0198(void)
+void FUN_1000_e8f8(void)
 
 {
   char cVar1;
@@ -325,7 +352,7 @@ void FUN_1e76_0198(void)
     puVar6 = (undefined *)(iVar3 + 1);
     if (cVar1 == '\x01') break;
     puVar5 = puVar4 + 1;
-    cVar1 = FUN_1e76_0287();
+    cVar1 = FUN_1000_e9e7();
     cVar1 = cVar1 + '\x01';
     iVar3 = extraout_DX;
   }
@@ -340,7 +367,7 @@ void FUN_1e76_0198(void)
 
 
 
-void __cdecl16near FUN_1e76_0287(void)
+void __cdecl16near FUN_1000_e9e7(void)
 
 {
   int *piVar1;
@@ -359,46 +386,43 @@ void __cdecl16near FUN_1e76_0287(void)
 
 
 
-undefined __cdecl16near FUN_1e76_029e(void)
+undefined __cdecl16near FUN_1000_e9fe(void)
 
 {
   char *pcVar1;
   undefined uVar2;
   undefined2 unaff_DS;
   
-  if (*(char *)0xdb5d == '\x01') {
+  while( true ) {
+    while (*(char *)0xdb5d == '\x01') {
+      out(0x3c8,0xfe);
+      uVar2 = *(undefined *)0xdb5c;
+      out(0x3c9,uVar2);
+      out(0x3c9,uVar2);
+      out(0x3c9,uVar2);
+      if (*(char *)0xdb5c != '\x0f') {
+        pcVar1 = (char *)0xdb5c;
+        *pcVar1 = *pcVar1 + -1;
+        return uVar2;
+      }
+      *(undefined *)0xdb5d = 0;
+    }
     out(0x3c8,0xfe);
     uVar2 = *(undefined *)0xdb5c;
     out(0x3c9,uVar2);
     out(0x3c9,uVar2);
     out(0x3c9,uVar2);
-    if (*(char *)0xdb5c != '\x0f') {
-      pcVar1 = (char *)0xdb5c;
-      *pcVar1 = *pcVar1 + -1;
-      return uVar2;
-    }
-    *(undefined *)0xdb5d = 0;
-    uVar2 = FUN_1e76_029e();
-    return uVar2;
+    if (*(char *)0xdb5c != '?') break;
+    *(undefined *)0xdb5d = 1;
   }
-  out(0x3c8,0xfe);
-  uVar2 = *(undefined *)0xdb5c;
-  out(0x3c9,uVar2);
-  out(0x3c9,uVar2);
-  out(0x3c9,uVar2);
-  if (*(char *)0xdb5c != '?') {
-    pcVar1 = (char *)0xdb5c;
-    *pcVar1 = *pcVar1 + '\x01';
-    return uVar2;
-  }
-  *(undefined *)0xdb5d = 1;
-  uVar2 = FUN_1e76_029e();
+  pcVar1 = (char *)0xdb5c;
+  *pcVar1 = *pcVar1 + '\x01';
   return uVar2;
 }
 
 
 
-void __cdecl16near FUN_1e76_02e7(void)
+void __cdecl16near FUN_1000_ea47(void)
 
 {
   DAT_1000_db64 = *(int *)(DAT_1000_db68 + -0x2740) + 100;
@@ -420,15 +444,15 @@ void __cdecl16near FUN_1e76_02e7(void)
 
 
 
-undefined __cdecl16near FUN_1e76_0340(void)
+undefined __cdecl16near FUN_1000_eaa0(void)
 
 {
   undefined2 unaff_DS;
   
-  FUN_1e76_0061();
-  FUN_1e76_006f();
-  FUN_1e76_0084();
-  FUN_1e76_0198();
+  FUN_1000_e7c1();
+  FUN_1000_e7cf();
+  FUN_1000_e7e4();
+  FUN_1000_e8f8();
   *(undefined2 *)0xdb66 = 0;
   *(undefined2 *)0xdb68 = 0;
   out(0x3c8,0xfe);
@@ -440,7 +464,7 @@ undefined __cdecl16near FUN_1e76_0340(void)
 
 
 
-void __cdecl16near FUN_1e76_0365(void)
+void __cdecl16near FUN_1000_eac5(void)
 
 {
   byte bVar1;
@@ -453,7 +477,7 @@ void __cdecl16near FUN_1e76_0365(void)
 
 
 
-undefined __cdecl16near FUN_1e76_036e(void)
+undefined __cdecl16near FUN_1000_eace(void)
 
 {
   undefined uVar1;
@@ -469,7 +493,7 @@ undefined __cdecl16near FUN_1e76_036e(void)
 
 
 
-void __cdecl16near FUN_1e76_037c(void)
+void __cdecl16near FUN_1000_eadc(void)
 
 {
   char *pcVar1;
@@ -477,18 +501,18 @@ void __cdecl16near FUN_1e76_037c(void)
   
   if (*(char *)0xdb77 == '\x01') {
     if (*(char *)0xdb7c != '\0') {
-      FUN_1e76_036e();
+      FUN_1000_eace();
       pcVar1 = (char *)0xdb7c;
       *pcVar1 = *pcVar1 + -1;
       return;
     }
-    FUN_1e76_03bf();
+    FUN_1000_eb1f();
     return;
   }
   if (*(char *)0xdb7c != '?') {
     pcVar1 = (char *)0xdb7c;
     *pcVar1 = *pcVar1 + '\x01';
-    FUN_1e76_036e();
+    FUN_1000_eace();
     return;
   }
   if (*(char *)0xdb76 != -1) {
@@ -503,7 +527,7 @@ void __cdecl16near FUN_1e76_037c(void)
 
 
 
-void __cdecl16near FUN_1e76_03bf(void)
+void __cdecl16near FUN_1000_eb1f(void)
 
 {
   undefined *puVar1;
@@ -537,19 +561,17 @@ void __cdecl16near FUN_1e76_03bf(void)
     iVar4 = iVar4 + -1;
   } while (iVar4 != 0);
   if (DAT_1000_db7b != 0x27) {
-    DAT_1000_db78 = DAT_1000_db78 + 1;
     DAT_1000_db7b = DAT_1000_db7b + 1;
-    return;
-  }
-  if (DAT_1000_db78 < 0x4b1) {
-    DAT_1000_db77 = 0;
     DAT_1000_db78 = DAT_1000_db78 + 1;
-    DAT_1000_db7b = 0;
     return;
   }
-  DAT_1000_db77 = 0;
-  DAT_1000_db78 = 0;
   DAT_1000_db7b = 0;
+  DAT_1000_db77 = 0;
+  if (DAT_1000_db78 < 0x4b1) {
+    DAT_1000_db78 = DAT_1000_db78 + 1;
+    return;
+  }
+  DAT_1000_db78 = 0;
   return;
 }
 
@@ -572,42 +594,42 @@ void __cdecl16near entry(void)
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)();
   *(undefined2 *)(puVar4 + -2) = 0xebb1;
-  FUN_1e76_0068();
+  FUN_1000_e7c8();
   iVar3 = 100;
   do {
     *(undefined2 *)(puVar4 + -2) = 0xebb7;
-    FUN_1e76_0365();
+    FUN_1000_eac5();
     iVar3 = iVar3 + -1;
   } while (iVar3 != 0);
   *(undefined2 *)(puVar4 + -2) = 0xebbc;
-  FUN_1e76_0068();
+  FUN_1000_e7c8();
   *(undefined2 *)(puVar4 + -2) = 0x1000;
   *(undefined2 *)(puVar4 + -4) = extraout_DX;
   *(undefined2 *)(puVar4 + -6) = 0xebc1;
-  FUN_1e76_0340();
+  FUN_1000_eaa0();
   out(0x21,0x5e);
   do {
     *(undefined2 *)(puVar4 + -2) = 0xebca;
-    FUN_1e76_02e7();
+    FUN_1000_ea47();
     *(undefined2 *)(puVar4 + -2) = 0xebcd;
-    FUN_1e76_0104();
+    FUN_1000_e864();
     *(undefined2 *)(puVar4 + -2) = 0xebd0;
-    FUN_1e76_0365();
+    FUN_1000_eac5();
     puVar5 = (undefined2 *)(puVar4 + -2);
     puVar4 = puVar4 + -2;
     *puVar5 = 0xebd3;
-    FUN_1e76_0165();
+    FUN_1000_e8c5();
     *(undefined2 *)(puVar4 + -2) = 0xebd6;
-    FUN_1e76_037c();
+    FUN_1000_eadc();
     *(undefined2 *)(puVar4 + -2) = 0xebd9;
-    FUN_1e76_029e();
+    FUN_1000_e9fe();
     *(undefined2 *)(puVar4 + -2) = 0xebdc;
-    FUN_1e76_009b();
+    FUN_1000_e7fb();
     cVar2 = in(0x60);
   } while (cVar2 != '\x01');
   out(0x21,0);
   *(undefined2 *)(puVar4 + -2) = 0xebe9;
-  FUN_1e76_0068();
+  FUN_1000_e7c8();
   pcVar1 = (code *)swi(0x21);
   (*pcVar1)();
   pcVar1 = (code *)swi(0x21);

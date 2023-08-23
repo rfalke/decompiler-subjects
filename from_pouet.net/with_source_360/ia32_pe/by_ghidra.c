@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -378,122 +379,123 @@ void FUN_00401020(void)
 {
   char cVar1;
   byte bVar2;
-  ushort uVar3;
+  short sVar3;
   uint uVar4;
-  uint uVar5;
+  short sVar5;
   uint uVar6;
-  byte bVar7;
-  short sVar8;
+  short sVar7;
+  byte bVar10;
+  ushort uVar8;
   short sVar9;
-  ushort uVar10;
-  int iVar11;
+  short sVar11;
+  ushort uVar12;
+  int iVar13;
   float10 in_ST0;
-  float10 fVar12;
+  float10 fVar14;
   float10 in_ST1;
-  float10 fVar13;
+  float10 fVar15;
   float10 in_ST2;
   float10 in_ST3;
   float10 in_ST4;
   float10 in_ST5;
   float10 in_ST6;
   
-  DAT_0040213c = DAT_0040213c - 1;
-  _DAT_0040213a = _DAT_0040213a & 0xffff | (uint)DAT_0040213c << 0x10;
-  uVar6 = 0;
+  DAT_0040213c = DAT_0040213c + -1;
+  uVar4 = 0;
   do {
-    uVar10 = 0x402;
-    uVar4 = 0xf400;
-    fVar13 = in_ST0;
-    fVar12 = in_ST1;
+    uVar12 = 0x402;
+    sVar7 = -0xc00;
+    fVar15 = in_ST0;
+    fVar14 = in_ST1;
     in_ST0 = in_ST2;
     in_ST1 = in_ST3;
     in_ST2 = in_ST4;
     in_ST3 = in_ST5;
-    uVar5 = uVar6;
+    uVar6 = uVar4;
     do {
       in_ST5 = in_ST6;
       in_ST4 = in_ST3;
       in_ST3 = in_ST2;
       in_ST2 = in_ST1;
       in_ST1 = in_ST0;
-      in_ST0 = fVar12;
-      fVar12 = fVar13;
-      cVar1 = (char)uVar5 + -0x80;
-      uVar4 = (uint)(ushort)((short)uVar4 - (short)cVar1 * (short)cVar1);
-      uVar5 = uVar6 >> 8;
-      uVar10 = uVar10 + 1;
-      fVar13 = (float10)(short)cVar1;
+      in_ST0 = fVar14;
+      fVar14 = fVar15;
+      cVar1 = (char)uVar6 + -0x80;
+      sVar7 = sVar7 - (short)cVar1 * (short)cVar1;
+      uVar6 = uVar4 >> 8;
+      uVar12 = uVar12 + 1;
+      fVar15 = (float10)(short)cVar1;
       in_ST6 = in_ST4;
-    } while ((POPCOUNT(uVar10 & 0xff) & 1U) == 0);
-    fVar13 = (float10)fpatan(fVar12,(float10)(short)cVar1);
-    DAT_0040213e = (short)ROUND(fVar13 * (float10)_DAT_0040213a);
-    uVar10 = (ushort)(DAT_0040213e + _DAT_0040213b) >> 8;
-    uVar5 = (uint)uVar10 << 8;
-    bVar2 = (byte)(uVar4 >> 8);
-    uVar3 = (DAT_0040213e + _DAT_0040213b & 0xff00U | (ushort)bVar2) & 0x707;
-    cVar1 = (char)uVar3 + (char)((uint)uVar3 >> 8) + bVar2;
-    if (0xee < bVar2) {
-      uVar5 = CONCAT31((uint3)uVar10,0x50);
+    } while ((POPCOUNT(uVar12 & 0xff) & 1U) == 0);
+    fVar15 = (float10)fpatan(fVar14,(float10)(short)cVar1);
+    DAT_0040213e = (short)ROUND(fVar15 * (float10)_DAT_0040213a);
+    bVar2 = (byte)((ushort)(DAT_0040213e + _DAT_0040213b) >> 8);
+    uVar6 = (uint)bVar2 << 8;
+    bVar10 = (byte)((ushort)sVar7 >> 8);
+    uVar12 = CONCAT11(bVar2,bVar10) & 0x707;
+    cVar1 = (char)uVar12 + (char)(uVar12 >> 8) + bVar10;
+    if (0xee < bVar10) {
+      uVar6 = CONCAT31((uint3)bVar2,0x50);
     }
-    if (bVar2 < 0xeb) {
-      uVar10 = (ushort)uVar5 & 0x1fff;
-      uVar5 = (uint)uVar10;
-      if ((byte)(uVar5 >> 8) < 4) {
-        if (0xe8 < bVar2) {
-          cVar1 = (bVar2 >> 3 | bVar2 << 5) + 0x9b;
-          uVar5 = (uint)(ushort)(uVar10 - 1);
+    if (bVar10 < 0xeb) {
+      uVar12 = (ushort)uVar6 & 0x1fff;
+      uVar6 = (uint)uVar12;
+      if ((byte)(uVar12 >> 8) < 4) {
+        if (0xe8 < bVar10) {
+          cVar1 = (bVar10 >> 3 | bVar10 << 5) + 0x9b;
+          uVar6 = (uint)(ushort)(uVar12 - 1);
         }
         cVar1 = cVar1 + -0x14;
       }
-      if (bVar2 < 0xb5) {
-        uVar5 = (uint)(ushort)((short)uVar5 - 1);
+      if (bVar10 < 0xb5) {
+        uVar6 = (uint)(ushort)((short)uVar6 - 1);
       }
     }
-    *(char *)(uVar6 + DAT_0040211c) = (char)uVar5;
-    *(char *)(uVar6 + DAT_00402120) = cVar1 + -0x80;
-    uVar10 = (short)uVar6 + 1;
-    uVar6 = (uint)uVar10;
+    *(char *)(uVar4 + DAT_0040211c) = (char)uVar6;
+    *(char *)(uVar4 + DAT_00402120) = cVar1 + -0x80;
+    uVar12 = (short)uVar4 + 1;
+    uVar4 = (uint)uVar12;
     in_ST6 = in_ST5;
-  } while (uVar10 != 0);
-  iVar11 = 0x3e800;
-  sVar9 = -100;
+  } while (uVar12 != 0);
+  iVar13 = 0x3e800;
+  sVar7 = -100;
   do {
-    sVar8 = -0xa0;
+    sVar11 = -0xa0;
     do {
-      uVar6 = 0x7f40;
+      sVar5 = 0x7f40;
       bVar2 = (byte)(DAT_0040213c << 1);
       cVar1 = (bVar2 & 0x7f) - 0x40;
-      uVar10 = (short)cVar1 * (short)cVar1;
-      uVar10 = uVar10 & 0xff | (ushort)(byte)((char)((uint)uVar10 >> 8) - 0x10) << 8;
-      uVar3 = (short)(char)bVar2 >> 0xf ^ uVar10;
-      uVar10 = uVar10 * 2;
-      uVar5 = (uint)(ushort)(uVar3 & 0xff | (ushort)(byte)((char)((uint)uVar3 >> 8) + 0x24) << 8);
-      uVar10 = uVar10 & 0xff | (ushort)(byte)((char)((uint)uVar10 >> 8) - 1) << 8;
+      sVar3 = (short)cVar1 * (short)cVar1;
+      uVar12 = CONCAT11((char)((ushort)sVar3 >> 8) + -0x10,(char)sVar3);
+      uVar8 = (short)(char)bVar2 >> 0xf ^ uVar12;
+      sVar3 = uVar12 * 2;
+      sVar9 = CONCAT11((char)(uVar8 >> 8) + '$',(char)uVar8);
+      sVar3 = CONCAT11((char)((ushort)sVar3 >> 8) + -1,(char)sVar3);
 LAB_00401106:
       do {
-        uVar6 = (uint)(ushort)((short)uVar6 + sVar8);
-        uVar5 = (uint)(ushort)((short)uVar5 + sVar9);
-        uVar10 = uVar10 - 0xa0;
-        uVar4 = (uint)(ushort)(uVar10 & 0xff00 | (ushort)(byte)(uVar6 >> 8));
+        sVar5 = sVar5 + sVar11;
+        sVar9 = sVar9 + sVar7;
+        sVar3 = sVar3 + -0xa0;
+        uVar4 = (uint)CONCAT11((char)((ushort)sVar3 >> 8),(char)((ushort)sVar5 >> 8));
         bVar2 = *(byte *)(uVar4 + DAT_0040211c);
         cVar1 = *(char *)(uVar4 + DAT_00402120);
         uVar4 = (uint)CONCAT11(bVar2,cVar1);
         if ((char)bVar2 < '\0') break;
-        bVar7 = (byte)(uVar5 >> 8);
+        bVar10 = (byte)((ushort)sVar9 >> 8);
         if (bVar2 != 0) {
-          if (bVar7 < bVar2) goto LAB_00401106;
-          if ((char)bVar2 <= (char)bVar7) {
+          if (bVar10 < bVar2) goto LAB_00401106;
+          if ((char)bVar2 <= (char)bVar10) {
             uVar4 = (uint)(byte)(cVar1 + bVar2);
           }
         }
-      } while (bVar7 < 0x47);
-      *(undefined4 *)(iVar11 + (int)DAT_00402100) =
+      } while (bVar10 < 0x47);
+      *(undefined4 *)(iVar13 + (int)DAT_00402100) =
            *(undefined4 *)((uVar4 & 0xff) * 4 + DAT_00402104);
-      iVar11 = iVar11 + -4;
-      sVar8 = sVar8 + 1;
-    } while (sVar8 != 0xa0);
-    sVar9 = sVar9 + 1;
-    if (sVar9 == 100) {
+      iVar13 = iVar13 + -4;
+      sVar11 = sVar11 + 1;
+    } while (sVar11 != 0xa0);
+    sVar7 = sVar7 + 1;
+    if (sVar7 == 100) {
       GetClientRect(DAT_004020cc,(LPRECT)&DAT_004020f0);
       StretchDIBits(DAT_004020d0,0,0,DAT_004020f8,DAT_004020fc,0,0,0x140,200,DAT_00402100,
                     (BITMAPINFO *)&DAT_0040206c,0,0xcc0020);
@@ -526,7 +528,7 @@ void entry(void)
     _DAT_004020bc = LoadCursorW((HINSTANCE)0x0,(LPCWSTR)0x7f00);
     AVar1 = RegisterClassW((WNDCLASSW *)&DAT_004020a4);
     if (CONCAT22(extraout_var,AVar1) != 0) {
-      hWnd = CreateWindowExW(0,u_DEMODEMO_00402000,u____http___www_devreci_com____00402012,
+      hWnd = CreateWindowExW(0,u_DEMODEMO_00402000,u_<<_http:__www_devreci_com_>>_00402012,
                              0x10cf0000,0x8000,0x8000,0x21c,400,(HWND)0x0,(HMENU)0x0,DAT_004020b4,
                              (LPVOID)0x0);
       if (hWnd != (HWND)0x0) {

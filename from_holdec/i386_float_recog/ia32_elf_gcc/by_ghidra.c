@@ -80,6 +80,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -166,6 +167,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -200,14 +212,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -269,7 +281,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -294,22 +306,18 @@ void __libc_start_main(void)
 undefined4 main(int param_1)
 
 {
-  float10 fVar1;
-  double dVar2;
-  undefined4 uVar3;
+  longdouble lVar1;
   
   unknown_to_unknown(0xf5c28f5c,0x3ff35c28);
   double_to_unknown((double)param_1 + 1.22);
   unknown_to_double(0x7ae147ae,0x3ff3ae14);
-  dVar2 = (double)param_1 + 1.24;
-  double_to_double(dVar2);
-  uVar3 = (undefined4)((ulonglong)dVar2 >> 0x20);
+  double_to_double((double)param_1 + 1.24);
   printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",100,0x47ae147b,0x40027ae1
-         ,0x65,0xae147800,0x947ae147,0,0x66,uVar3);
-  fVar1 = (float10)2.42 + (float10)param_1;
+         ,0x65,0xae147800,0x947ae147,0x4000,0x66);
+  lVar1 = (longdouble)2.42 + (longdouble)param_1;
   printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",200,
-         (double)((float10)param_1 + (float10)2.41),0xc9,SUB104(fVar1,0),
-         (int)((unkuint10)fVar1 >> 0x20),(char)((unkuint10)fVar1 >> 0x40),0xca,uVar3);
+         (double)((longdouble)param_1 + (longdouble)2.41),0xc9,SUB104(lVar1,0),
+         (int)((unkuint10)lVar1 >> 0x20),(short)((unkuint10)lVar1 >> 0x40),0xca);
   return 0;
 }
 
@@ -317,10 +325,13 @@ undefined4 main(int param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );

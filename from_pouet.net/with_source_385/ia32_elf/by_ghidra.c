@@ -53,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -175,6 +175,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -241,6 +242,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -288,6 +300,16 @@ void _init(void)
 
 
 
+void FUN_08048814(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void XDrawString(void)
 
 {
@@ -318,7 +340,7 @@ void MikMod_RegisterAllLoaders(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -360,7 +382,7 @@ void MikMod_strerror(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -402,7 +424,7 @@ void XLoadQueryFont(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -454,7 +476,7 @@ void XSetFont(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -506,7 +528,7 @@ void Player_Load(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double sin(double __x)
 
@@ -538,10 +560,12 @@ void XOpenDisplay(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,_init,_fini,param_1,auStack_4);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -564,6 +588,7 @@ void __do_global_dtors_aux(void)
   code *pcVar1;
   
   if (completed_1 == '\0') {
+    completed_1 = 0;
     pcVar1 = *(code **)p_0;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
@@ -625,9 +650,9 @@ int init(EVP_PKEY_CTX *ctx)
   XMapWindow(dis,win);
   colormap = *(undefined4 *)(*(int *)(dis + 0x8c) + 0x30);
   green_gc = XCreateGC(dis,win,0,0);
-  XParseColor(dis,colormap,dude + 0x1338,green_col);
-  XAllocColor(dis,colormap,green_col);
-  iVar1 = XSetForeground(dis,green_gc,green_col._0_4_);
+  XParseColor(dis,colormap,dude + 0x1338,&green_col);
+  XAllocColor(dis,colormap,&green_col);
+  iVar1 = XSetForeground(dis,green_gc,green_col);
   return iVar1;
 }
 
@@ -678,8 +703,7 @@ void main(void)
     XPrint((double)(400.0 - rut / 2.0),dVar1 * 20.0 + 60.0,pcVar2);
     rut = rut + 0.1;
     tim = tim + 1.0;
-    if ((char)((uint)(ushort)((ushort)(tim < 50.0) << 8 | (ushort)(tim == 50.0) << 0xe) >> 8) ==
-        '\0') {
+    if (50.0 < tim) {
       XClearWindow(dis,win);
       tim = 0.0;
     }

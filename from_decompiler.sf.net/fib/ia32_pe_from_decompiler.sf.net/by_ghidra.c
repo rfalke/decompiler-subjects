@@ -1,11 +1,23 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef unsigned long long    GUID;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
+typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned char    undefined1;
+typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
 
 struct IMAGE_DOS_HEADER {

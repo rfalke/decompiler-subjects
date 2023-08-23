@@ -60,6 +60,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -173,14 +174,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -214,12 +215,12 @@ struct Elf32_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(void)
+void processEntry entry(void)
 
 {
-  undefined4 *unaff_EBX;
+  undefined4 *in_EBX;
   
-  *unaff_EBX = 0x11220066;
+  *in_EBX = 0x11220066;
                     // WARNING: Bad instruction - Truncating control flow here
   halt_baddata();
 }

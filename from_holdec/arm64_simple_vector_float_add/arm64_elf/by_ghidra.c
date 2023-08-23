@@ -27,9 +27,9 @@ struct fde_table_entry {
     dword data_loc; // Data location
 };
 
-typedef struct tls_module tls_module, *Ptls_module;
-
 typedef ulong size_t;
+
+typedef struct tls_module tls_module, *Ptls_module;
 
 struct tls_module {
     struct tls_module * next;
@@ -208,6 +208,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -308,7 +309,7 @@ void FUN_00100630(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -369,13 +370,14 @@ void __register_frame_info(void)
 void _start(void)
 
 {
-  undefined in_stack_00000000;
-  
-  _start_c((long *)register0x00000008);
+  _start_c((long *)&stack0x00000000);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
+// Local variable argc:int *[x0:8] conflicts with parameter, skipped.
 
 void _start_c(long *p)
 
@@ -450,59 +452,59 @@ void add_float_neon3(undefined8 param_1,undefined8 param_2,undefined8 param_3,in
   float fVar12;
   
   do {
-    cWrite_8(tmp_ldXn,param_2);
-    pfVar3 = (float *)cRead_8(tmp_ldXn);
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar5 = (float *)cRead_8(tmp_ldXn);
+    tmp_ldXn = param_2;
+    pfVar3 = (float *)tmp_ldXn;
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar5 = (float *)tmp_ldXn;
     fVar7 = *pfVar5;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar5 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar5 = (float *)tmp_ldXn;
     fVar8 = *pfVar5;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar5 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar5 = (float *)tmp_ldXn;
     fVar9 = *pfVar5;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    param_2 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,param_3);
-    pfVar5 = (float *)cRead_8(tmp_ldXn);
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar6 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    param_2 = tmp_ldXn;
+    tmp_ldXn = param_3;
+    pfVar5 = (float *)tmp_ldXn;
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar6 = (float *)tmp_ldXn;
     fVar10 = *pfVar6;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar6 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar6 = (float *)tmp_ldXn;
     fVar11 = *pfVar6;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar6 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar6 = (float *)tmp_ldXn;
     fVar12 = *pfVar6;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    param_3 = cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    param_3 = tmp_ldXn;
     iVar2 = param_4 + -4;
-    cWrite_8(tmp_ldXn,param_1);
-    pfVar6 = (float *)cRead_8(tmp_ldXn);
+    tmp_ldXn = param_1;
+    pfVar6 = (float *)tmp_ldXn;
     *pfVar6 = *pfVar3 + *pfVar5;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar3 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar3 = (float *)tmp_ldXn;
     *pfVar3 = fVar7 + fVar10;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar3 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar3 = (float *)tmp_ldXn;
     *pfVar3 = fVar8 + fVar11;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    pfVar3 = (float *)cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    pfVar3 = (float *)tmp_ldXn;
     *pfVar3 = fVar9 + fVar12;
-    lVar4 = cRead_8(tmp_ldXn);
-    cWrite_8(tmp_ldXn,lVar4 + 4);
-    param_1 = cRead_8(tmp_ldXn);
+    lVar4 = tmp_ldXn;
+    tmp_ldXn = lVar4 + 4;
+    param_1 = tmp_ldXn;
     bVar1 = 3 < param_4;
     param_4 = iVar2;
   } while (iVar2 != 0 && bVar1);
@@ -511,16 +513,18 @@ void add_float_neon3(undefined8 param_1,undefined8 param_2,undefined8 param_3,in
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 undefined8 main(void)
 
 {
   int local_3c;
   float local_38 [4];
   float local_28 [4];
-  float afStack24 [4];
+  float afStack_18 [4];
   long local_8;
   
-  local_8 = __stack_chk_guard;
+  local_8 = ___stack_chk_guard;
   local_38[0] = 1.2;
   local_38[1] = 2.3;
   local_38[2] = 3.4;
@@ -529,12 +533,12 @@ undefined8 main(void)
   local_28[1] = 0.2;
   local_28[2] = 0.3;
   local_28[3] = 0.4;
-  add_float_neon3(afStack24,local_38,local_28,4);
+  add_float_neon3(afStack_18,local_38,local_28,4);
   for (local_3c = 0; local_3c < 4; local_3c = local_3c + 1) {
-    printf((char *)(double)local_38[local_3c],(double)local_28[local_3c],(double)afStack24[local_3c]
-           ,"%f + %f = %f\n");
+    printf("%f + %f = %f\n",(double)local_38[local_3c],(double)local_28[local_3c],
+           (double)afStack_18[local_3c]);
   }
-  if (local_8 != __stack_chk_guard) {
+  if (local_8 != ___stack_chk_guard) {
                     // WARNING: Subroutine does not return
     __stack_chk_fail();
   }

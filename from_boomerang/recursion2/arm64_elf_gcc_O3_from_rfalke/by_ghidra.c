@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -13,24 +14,20 @@ typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ulong sizetype;
 
+typedef ulong size_t;
+
+typedef long __off_t;
+
+typedef sqword __off64_t;
+
 typedef void _IO_lock_t;
 
 typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef long __off64_t;
-
-typedef ulong size_t;
-
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -50,10 +47,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     void * __pad1;
@@ -69,10 +62,6 @@ struct _IO_marker {
     struct _IO_marker * _next;
     struct _IO_FILE * _sbuf;
     int _pos;
-    undefined field3_0x14;
-    undefined field4_0x15;
-    undefined field5_0x16;
-    undefined field6_0x17;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
@@ -221,6 +210,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -249,6 +239,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -260,14 +261,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -353,7 +354,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -364,7 +365,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -376,6 +377,8 @@ int printf(char *__format,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(int argc)
 
@@ -391,10 +394,9 @@ int main(int argc)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -460,21 +462,19 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100858)
+// WARNING: Removing unreachable block (ram,0x00100864)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void f(void)
 
@@ -482,22 +482,22 @@ void f(void)
   int iVar1;
   int iVar2;
   
-  iVar1 = f_g + -1;
-  if (iVar1 < 0) {
-    f_g = iVar1;
+  iVar2 = f_g;
+  f_g = f_g + -1;
+  if (f_g < 0) {
     res = res + 0xb;
     return;
   }
-  iVar2 = g_f + -1;
-  if (-1 < iVar2) {
-    iVar1 = f_g + -2;
-    if (iVar1 == -1) {
+  iVar1 = g_f + -1;
+  if (-1 < iVar1) {
+    f_g = iVar2 + -2;
+    if (f_g == -1) {
       res = res + 0xb;
     }
     else {
-      iVar2 = g_f + -2;
-      if (iVar2 != -1) {
-        f_g = f_g + -3;
+      iVar1 = g_f + -2;
+      if (iVar1 != -1) {
+        f_g = iVar2 + -3;
         if (f_g != -1) {
           g_f = g_f + -3;
           if (g_f != -1) {
@@ -506,22 +506,18 @@ void f(void)
             return;
           }
           res = res + 0xd;
-          iVar2 = g_f;
+          iVar1 = -1;
         }
-        g_f = iVar2;
+        g_f = iVar1;
         res = res + 0xb;
-        iVar1 = f_g;
-        iVar2 = g_f;
+        iVar1 = g_f;
       }
-      g_f = iVar2;
-      f_g = iVar1;
+      g_f = iVar1;
       res = res + 0x18;
-      iVar1 = f_g;
-      iVar2 = g_f;
+      iVar1 = g_f;
     }
   }
-  g_f = iVar2;
-  f_g = iVar1;
+  g_f = iVar1;
   res = res + 0x18;
   return;
 }
@@ -752,6 +748,8 @@ int c(void *param_1,void *param_2)
 
 
 
+// WARNING: Unknown calling convention
+
 void d(void)
 
 {
@@ -771,6 +769,8 @@ void d(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void b(void)
 
@@ -908,6 +908,8 @@ void b(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void e(void)
 
 {
@@ -919,10 +921,10 @@ void e(void)
   undefined **ppuVar6;
   undefined **ppuVar7;
   
+  iVar4 = e_c;
   ppuVar6 = &PTR___cxa_finalize_00112000;
-  iVar4 = e_c + -1;
-  if (iVar4 < 0) {
-    e_c = iVar4;
+  e_c = e_c + -1;
+  if (e_c < 0) {
     res = res + 7;
     return;
   }
@@ -930,18 +932,14 @@ void e(void)
   if (-1 < c_d) {
     d_e = d_e - 1;
     if (-1 < d_e) {
-      e_c = e_c + -2;
+      e_c = iVar4 + -2;
       if (e_c != -1) {
         c(&f_g,(void *)(ulong)(uint)d_e);
       }
       res = res + 7;
-      iVar4 = e_c;
     }
-    e_c = iVar4;
     res = res + 5;
-    iVar4 = e_c;
   }
-  e_c = iVar4;
   ppuVar7 = &PTR___cxa_finalize_00112000;
   iVar4 = *(int *)((long)ppuVar6 + 0x4c) + -1;
   *(int *)((long)ppuVar6 + 0x4c) = iVar4;
@@ -1049,66 +1047,65 @@ void e(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void g(void)
 
 {
   int iVar1;
   int iVar2;
   
-  iVar1 = g_f + -1;
-  if (iVar1 < 0) {
-    g_f = iVar1;
+  iVar2 = g_f;
+  g_f = g_f + -1;
+  if (g_f < 0) {
     res = res + 0xd;
     return;
   }
-  iVar2 = f_g + -1;
-  if (-1 < iVar2) {
-    iVar1 = g_f + -2;
-    if (iVar1 == -1) {
+  iVar1 = f_g + -1;
+  if (-1 < iVar1) {
+    g_f = iVar2 + -2;
+    if (g_f == -1) {
       res = res + 0xd;
     }
     else {
-      iVar2 = f_g + -2;
-      if (iVar2 != -1) {
-        iVar1 = g_f + -3;
-        if (iVar1 != -1) {
+      iVar1 = f_g + -2;
+      if (iVar1 != -1) {
+        g_f = iVar2 + -3;
+        if (g_f != -1) {
           f_g = f_g + -3;
           if (f_g == -1) {
             res = res + 0xb;
-            iVar2 = f_g;
+            iVar1 = f_g;
           }
           else {
-            g_f = g_f + -4;
+            g_f = iVar2 + -4;
             if (g_f != -1) {
               f();
               res = res + 0x55;
               return;
             }
             res = res + 0x18;
-            iVar2 = f_g;
-            iVar1 = g_f;
+            g_f = -1;
+            iVar1 = f_g;
           }
         }
-        g_f = iVar1;
-        f_g = iVar2;
+        f_g = iVar1;
         res = res + 0xd;
-        iVar2 = f_g;
-        iVar1 = g_f;
+        iVar1 = f_g;
       }
-      g_f = iVar1;
-      f_g = iVar2;
+      f_g = iVar1;
       res = res + 0x18;
-      iVar2 = f_g;
-      iVar1 = g_f;
+      iVar1 = f_g;
     }
   }
-  g_f = iVar1;
-  f_g = iVar2;
+  f_g = iVar1;
   res = res + 0x18;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void h(void)
 
@@ -1124,6 +1121,8 @@ void h(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void i(void)
 
 {
@@ -1132,6 +1131,8 @@ void i(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void j(void)
 
@@ -1157,6 +1158,8 @@ void j(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void k(void)
 
 {
@@ -1177,6 +1180,8 @@ void k(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void l(void)
 
 {
@@ -1192,20 +1197,6 @@ void l(void)
     return;
   }
   res = res + 0x1f;
-  return;
-}
-
-
-
-void FUN_001014fc(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x001014fc. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x1014fc);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 

@@ -1,32 +1,37 @@
-openjdk version "11.0.12" 2021-07-20
-OpenJDK Runtime Environment 18.9 (build 11.0.12+7)
-OpenJDK 64-Bit Server VM 18.9 (build 11.0.12+7, mixed mode)
+openjdk version "18.0.1" 2022-04-19
+OpenJDK Runtime Environment 22.3 (build 18.0.1+10)
+OpenJDK 64-Bit Server VM 22.3 (build 18.0.1+10, mixed mode)
 INFO  Using log config file: jar:file:GHIDRADIR/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
-INFO  Using log file: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/application.log (LoggingInitialization)  
-INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.1.2_PUBLIC/preferences (Preferences)  
-INFO  Loading previous preferences: HOME/.ghidra/.ghidra_10.0.4_PUBLIC/preferences (Preferences)  
+INFO  Using log file: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: HOME/.ghidra/.ghidra_10.3.2_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
 INFO  Class search complete (some time) (ClassSearcher)  
 INFO  Initializing SSL Context (SSLContextInitializer)  
 INFO  Initializing Random Number Generator... (SecureRandomFactory)  
 INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
 INFO  Trust manager disabled, cacerts have not been set (ApplicationTrustManagerFactory)  
 INFO  HEADLESS Script Paths:
-    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts
     GHIDRADIR/Ghidra/Debug/Debugger/ghidra_scripts
     GHIDRADIR/Ghidra/Features/FileFormats/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/Base/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
-    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
     GHIDRADIR/Ghidra/Features/BytePatterns/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/SystemEmulation/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/PDB/ghidra_scripts
+    GHIDRADIR/Ghidra/Debug/Debugger-agent-frida/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/Atmel/ghidra_scripts
     SUBJECTS/scripts
     HOME/ghidra_scripts
     GHIDRADIR/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/GnuDemangler/ghidra_scripts
-    GHIDRADIR/Ghidra/Features/FunctionID/ghidra_scripts
-    GHIDRADIR/Ghidra/Debug/Debugger-agent-dbgmodel-traceloader/ghidra_scripts (HeadlessAnalyzer)  
+    GHIDRADIR/Ghidra/Processors/JVM/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/PIC/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/VersionTracking/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Decompiler/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/8051/ghidra_scripts
+    GHIDRADIR/Ghidra/Processors/DATA/ghidra_scripts
+    GHIDRADIR/Ghidra/Features/Python/ghidra_scripts (HeadlessAnalyzer)  
 INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_338/ia32_pe/project_loc/project_name (HeadlessAnalyzer)  
 INFO  Creating project: SUBJECTS/from_pouet.net/with_source_338/ia32_pe/project_loc/project_name (DefaultProject)  
@@ -34,66 +39,37 @@ INFO  REPORT: Processing input files:  (HeadlessAnalyzer)
 INFO       project: SUBJECTS/from_pouet.net/with_source_338/ia32_pe/project_loc/project_name (HeadlessAnalyzer)  
 INFO  IMPORTING: SUBJECTS/from_pouet.net/with_source_338/ia32_pe/subject.exe (HeadlessAnalyzer)  
 WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl)  
+ERROR Invalid symbol table file index: 49538b44 (FileHeader)  
 WARN  Non-standard optional header size: 120 bytes (FileHeader)  
-ERROR Invalid file index 49538b44 (FileHeader)  
 WARN  DataDirectory RVA outside of image (RVA: 0x224440d4, Size: 0xdb055406).  Could be a file-only data directory. (COMDescriptorDataDirectory)  
+INFO  Using Loader: Portable Executable (PE) (AutoImporter)  
+INFO  Using Language/Compiler: x86:LE:32:default:windows (AutoImporter)  
 WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl)  
+ERROR Invalid symbol table file index: 49538b44 (FileHeader)  
 WARN  Non-standard optional header size: 120 bytes (FileHeader)  
-ERROR Invalid file index 49538b44 (FileHeader)  
-WARN  Non-standard # of data directories: 2 (OptionalHeaderImpl)  
-WARN  Non-standard optional header size: 120 bytes (FileHeader)  
-ERROR Invalid file index 49538b44 (FileHeader)  
-ERROR Invalid RVA da13a (ExportDataDirectory)  
-ERROR Invalid RVA da16a (ExportDataDirectory)  
-ERROR REPORT: EOF: unable to read 4 bytes at 992 (HeadlessAnalyzer) java.io.EOFException: EOF: unable to read 4 bytes at 992
-	at ghidra.app.util.bin.RandomAccessByteProvider.readBytes(RandomAccessByteProvider.java:148)
-	at ghidra.app.util.bin.BinaryReader.readInt(BinaryReader.java:678)
-	at ghidra.app.util.bin.format.pe.ImportDescriptor.initImportDescriptor(ImportDescriptor.java:74)
-	at ghidra.app.util.bin.format.pe.ImportDescriptor.createImportDescriptor(ImportDescriptor.java:65)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.parse(ImportDataDirectory.java:257)
+ERROR Invalid RVA 8d244bfe (ExportDataDirectory)  
+ERROR REPORT: Invalid index: 827706 (HeadlessAnalyzer) java.io.IOException: Invalid index: 827706
+	at ghidra.app.util.bin.FileByteProvider.ensureBounds(FileByteProvider.java:264)
+	at ghidra.app.util.bin.FileByteProvider.readBytes(FileByteProvider.java:121)
+	at ghidra.app.util.bin.BinaryReader.readInt(BinaryReader.java:923)
+	at ghidra.app.util.bin.format.pe.ExportDataDirectory.parse(ExportDataDirectory.java:303)
 	at ghidra.app.util.bin.format.pe.DataDirectory.processDataDirectory(DataDirectory.java:80)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.initImportDataDirectory(ImportDataDirectory.java:61)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.createImportDataDirectory(ImportDataDirectory.java:49)
-	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl.processDataDirectories(OptionalHeaderImpl.java:308)
-	at ghidra.app.util.opinion.PeLoader.load(PeLoader.java:127)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
-	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1640)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1522)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
-	at ghidra.Ghidra.main(Ghidra.java:47)
+	at ghidra.app.util.bin.format.pe.ExportDataDirectory.<init>(ExportDataDirectory.java:83)
+	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl.processDataDirectories(OptionalHeaderImpl.java:274)
+	at ghidra.app.util.opinion.PeLoader.load(PeLoader.java:124)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:811)
+	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:100)
+	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:131)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:502)
+	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:414)
+	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:86)
+	at ghidra.app.util.headless.HeadlessAnalyzer.loadPrograms(HeadlessAnalyzer.java:1638)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1517)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1662)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1727)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:448)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:127)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:77)
+	at ghidra.Ghidra.main(Ghidra.java:54)
  
-java.io.EOFException: EOF: unable to read 4 bytes at 992
-	at ghidra.app.util.bin.RandomAccessByteProvider.readBytes(RandomAccessByteProvider.java:148)
-	at ghidra.app.util.bin.BinaryReader.readInt(BinaryReader.java:678)
-	at ghidra.app.util.bin.format.pe.ImportDescriptor.initImportDescriptor(ImportDescriptor.java:74)
-	at ghidra.app.util.bin.format.pe.ImportDescriptor.createImportDescriptor(ImportDescriptor.java:65)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.parse(ImportDataDirectory.java:257)
-	at ghidra.app.util.bin.format.pe.DataDirectory.processDataDirectory(DataDirectory.java:80)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.initImportDataDirectory(ImportDataDirectory.java:61)
-	at ghidra.app.util.bin.format.pe.ImportDataDirectory.createImportDataDirectory(ImportDataDirectory.java:49)
-	at ghidra.app.util.bin.format.pe.OptionalHeaderImpl.processDataDirectories(OptionalHeaderImpl.java:308)
-	at ghidra.app.util.opinion.PeLoader.load(PeLoader.java:127)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.doLoad(AbstractLibrarySupportLoader.java:347)
-	at ghidra.app.util.opinion.AbstractLibrarySupportLoader.loadProgram(AbstractLibrarySupportLoader.java:83)
-	at ghidra.app.util.opinion.AbstractProgramLoader.load(AbstractProgramLoader.java:112)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:198)
-	at ghidra.app.util.importer.AutoImporter.importFresh(AutoImporter.java:156)
-	at ghidra.app.util.importer.AutoImporter.importByUsingBestGuess(AutoImporter.java:51)
-	at ghidra.app.util.headless.HeadlessAnalyzer.loadProgram(HeadlessAnalyzer.java:1640)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1522)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1688)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1753)
-	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:445)
-	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:121)
-	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:59)
-	at ghidra.Ghidra.main(Ghidra.java:47)
 ERROR REPORT: Import failed for file: SUBJECTS/from_pouet.net/with_source_338/ia32_pe/subject.exe (HeadlessAnalyzer)  

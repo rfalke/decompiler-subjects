@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -36,7 +63,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(char *param_1,int param_2)
+void processEntry entry(undefined4 param_1,int param_2,char *param_3,int param_4)
 
 {
   code *pcVar1;
@@ -52,19 +79,18 @@ void entry(char *param_1,int param_2)
   char **ppcVar10;
   char **ppcVar11;
   uint *puVar12;
-  undefined4 unaff_EBP;
-  int unaff_EDI;
+  undefined4 unaff_retaddr;
+  int in_EDI;
   char *pcVar13;
   byte bVar15;
   undefined8 uVar16;
-  int unaff_retaddr;
   char *pcVar14;
   
   bVar15 = 0;
-  ppcVar10 = (char **)&param_2;
+  ppcVar10 = (char **)&param_4;
   do {
-    pcVar7 = param_1;
-    param_1 = pcVar7 + 1;
+    pcVar7 = param_3;
+    param_3 = pcVar7 + 1;
   } while (*pcVar7 != '\0');
   DAT_080483bf = (code *)0x8048165;
   if (*(short *)(pcVar7 + -2) != 0x6d6e) {
@@ -72,9 +98,9 @@ void entry(char *param_1,int param_2)
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
     ppcVar10 = (char **)&stack0x0000000c;
-    unaff_retaddr = param_2;
+    param_2 = param_4;
   }
-  _DAT_080483af = unaff_retaddr + -1;
+  _DAT_080483af = param_2 + -1;
   if (_DAT_080483af != 0) goto LAB_08048151;
   pcVar7 = s_a_out_0804804c;
   ppcVar9 = ppcVar10;
@@ -99,8 +125,8 @@ void entry(char *param_1,int param_2)
       pcVar1 = (code *)swi(0x80);
       DAT_080483b7 = iVar3;
       (*pcVar1)();
-      unaff_EDI = DAT_080483b7;
-      unaff_EBP = 0;
+      in_EDI = DAT_080483b7;
+      unaff_retaddr = 0;
       ppcVar9[1] = (char *)0x2;
       ppcVar9[1] = (char *)0x1;
       pcVar1 = (code *)swi(0x80);
@@ -149,9 +175,9 @@ LAB_08048151:
           puVar12[-3] = (int)((ulonglong)uVar16 >> 0x20);
           puVar12[-4] = (uint)piVar8;
           puVar12[-5] = (uint)puVar12;
-          puVar12[-6] = unaff_EBP;
+          puVar12[-6] = unaff_retaddr;
           puVar12[-7] = (int)uVar16;
-          puVar12[-8] = unaff_EDI;
+          puVar12[-8] = in_EDI;
           iVar6 = *(int *)(DAT_080483bb + *(int *)(DAT_080483bb + 0x20) +
                            *(int *)(iVar3 + 0x18) * 0x28 + 0x10) + DAT_080483bb;
           iVar3 = *piVar8;
@@ -172,8 +198,8 @@ LAB_08048151:
           puVar12[-9] = 4;
           pcVar1 = (code *)swi(0x80);
           (*pcVar1)();
-          unaff_EDI = puVar12[-7];
-          unaff_EBP = puVar12[-5];
+          in_EDI = puVar12[-7];
+          unaff_retaddr = puVar12[-5];
           piVar8 = (int *)puVar12[-3];
           uVar16 = CONCAT44(puVar12[-2],puVar12[-6]);
           iVar5 = puVar12[-1];
@@ -311,31 +337,21 @@ void FUN_0804831c(void)
   int unaff_EDI;
   int iVar2;
   
-  do {
-    iVar2 = unaff_EDI;
-    in_ECX = in_ECX + -1;
-    if (in_ECX < 0) {
-      return;
-    }
-    iVar1 = *(int *)(iVar2 + 0x3c);
+  while (iVar2 = unaff_EDI, in_ECX = in_ECX + -1, -1 < in_ECX) {
     unaff_EDI = iVar2 + 0x28;
-  } while (iVar1 == 0);
-  if (*(int *)(iVar2 + 0x2c) == 8) {
-    DAT_080483d7 = DAT_080483d7 + iVar1;
-    FUN_0804831c();
-    return;
+    iVar1 = *(int *)(iVar2 + 0x3c);
+    if (iVar1 != 0) {
+      if (*(int *)(iVar2 + 0x2c) == 8) {
+        DAT_080483d7 = DAT_080483d7 + iVar1;
+      }
+      else if (*(int *)(iVar2 + 0x30) == 6) {
+        DAT_080483cf = DAT_080483cf + iVar1;
+      }
+      else if (*(int *)(iVar2 + 0x30) == 3) {
+        DAT_080483d3 = DAT_080483d3 + iVar1;
+      }
+    }
   }
-  if (*(int *)(iVar2 + 0x30) == 6) {
-    DAT_080483cf = DAT_080483cf + iVar1;
-    FUN_0804831c();
-    return;
-  }
-  if (*(int *)(iVar2 + 0x30) != 3) {
-    FUN_0804831c();
-    return;
-  }
-  DAT_080483d3 = DAT_080483d3 + iVar1;
-  FUN_0804831c();
   return;
 }
 

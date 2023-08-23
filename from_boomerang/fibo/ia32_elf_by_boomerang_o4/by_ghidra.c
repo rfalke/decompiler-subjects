@@ -62,6 +62,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -228,7 +229,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _cleanup(EVP_PKEY_CTX *ctx)
 
@@ -240,7 +241,7 @@ void _cleanup(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -262,7 +263,7 @@ void __fpstart(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -274,7 +275,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -286,7 +287,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -298,11 +299,10 @@ int scanf(char *__format,...)
 
 
 
-void __regparm3 _start(undefined4 param_1,__func *param_2)
+void processEntry _start(__func *param_1,EVP_PKEY_CTX *param_2)
 
 {
   int __status;
-  EVP_PKEY_CTX *unaff_retaddr;
   undefined *puVar1;
   undefined *puVar2;
   code *pcVar3;
@@ -312,14 +312,14 @@ void __regparm3 _start(undefined4 param_1,__func *param_2)
   uVar5 = 0;
   uVar4 = 0;
   atexit(_cleanup);
-  atexit(param_2);
+  atexit(param_1);
   pcVar3 = _fini;
   atexit(_fini);
-  environ = &stack0x00000008 + (int)unaff_retaddr * 4;
+  environ = &stack0x00000008 + (int)param_2 * 4;
   puVar1 = &stack0x00000004;
   puVar2 = environ;
-  _init(unaff_retaddr);
-  __fpstart(unaff_retaddr,puVar1,puVar2,pcVar3,param_2,uVar4,uVar5);
+  _init(param_2);
+  __fpstart(param_2,puVar1,puVar2,pcVar3,param_1,uVar4,uVar5);
   __status = main();
                     // WARNING: Subroutine does not return
   exit(__status);

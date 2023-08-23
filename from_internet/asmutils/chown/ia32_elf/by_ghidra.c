@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -44,7 +71,7 @@ void FUN_0804804c(void)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-int entry(undefined4 param_1,char *param_2)
+int processEntry entry(undefined4 param_1,int param_2,undefined4 param_3,char *param_4)
 
 {
   char cVar1;
@@ -54,26 +81,25 @@ int entry(undefined4 param_1,char *param_2)
   int extraout_EDX;
   char **ppcVar5;
   char **ppcVar6;
-  char *unaff_ESI;
+  char *in_ESI;
   char *pcVar7;
   byte bVar8;
-  int unaff_retaddr;
   
-  pcVar7 = param_2;
+  pcVar7 = param_4;
   bVar8 = 0;
   DAT_08048139 = (char *)0xffffffff;
-  ppcVar6 = &param_2;
-  if (unaff_retaddr != 1) {
-    param_2 = (char *)0x8048072;
+  ppcVar6 = &param_4;
+  if (param_2 != 1) {
+    param_4 = (char *)0x8048072;
     FUN_08048129();
-    unaff_ESI = pcVar7 + (uint)bVar8 * -2 + 1;
+    in_ESI = pcVar7 + (uint)bVar8 * -2 + 1;
     cVar1 = *pcVar7;
     ppcVar6 = (char **)&stack0x0000000c;
     if ((('/' < cVar1) && (ppcVar6 = (char **)&stack0x0000000c, cVar1 < ':')) &&
-       (unaff_ESI = unaff_ESI + -1, ppcVar6 = (char **)&stack0x0000000c,
-       unaff_ESI[extraout_EDX + -1] != '.')) {
+       (in_ESI = in_ESI + -1, ppcVar6 = (char **)&stack0x0000000c, in_ESI[extraout_EDX + -1] != '.')
+       ) {
       iVar4 = 0;
-      pcVar7 = unaff_ESI;
+      pcVar7 = in_ESI;
       do {
         iVar3 = iVar4;
         DAT_0804813d = pcVar7 + (uint)bVar8 * -2 + 1;
@@ -84,24 +110,24 @@ int entry(undefined4 param_1,char *param_2)
       } while (cVar1 != '.');
       _DAT_0804853d = 1;
 LAB_080480a9:
-      unaff_ESI[iVar3] = '\0';
-      param_2 = (char *)0x80480c6;
-      DAT_08048139 = unaff_ESI;
+      in_ESI[iVar3] = '\0';
+      param_4 = (char *)0x80480c6;
+      DAT_08048139 = in_ESI;
       DAT_0804813d = (char *)FUN_08048115();
-      param_2 = (char *)0x80480d6;
+      param_4 = (char *)0x80480d6;
       DAT_08048139 = (char *)FUN_08048115();
       ppcVar5 = (char **)&stack0x0000000c;
       if (_DAT_0804853d != 1) {
-        param_2 = (char *)0x80480e9;
+        param_4 = (char *)0x80480e9;
         FUN_0804804c();
         ppcVar5 = (char **)&stack0x0000000c;
       }
       while( true ) {
-        unaff_ESI = *ppcVar5;
+        in_ESI = *ppcVar5;
         ppcVar6 = ppcVar5 + 1;
-        if (unaff_ESI == (char *)0x0) break;
+        if (in_ESI == (char *)0x0) break;
         pcVar2 = (code *)swi(0x80);
-        DAT_08048141 = unaff_ESI;
+        DAT_08048141 = in_ESI;
         (*pcVar2)();
         ppcVar5 = ppcVar5 + 2;
       }
@@ -112,9 +138,9 @@ LAB_080480a9:
   (*pcVar2)();
   iVar4 = 0;
   while( true ) {
-    if (*unaff_ESI == '\0') break;
-    iVar4 = iVar4 * 10 + (uint)(byte)(*unaff_ESI - 0x30);
-    unaff_ESI = unaff_ESI + (uint)bVar8 * -2 + 1;
+    if (*in_ESI == '\0') break;
+    iVar4 = iVar4 * 10 + (uint)(byte)(*in_ESI - 0x30);
+    in_ESI = in_ESI + (uint)bVar8 * -2 + 1;
   }
   return iVar4;
 }

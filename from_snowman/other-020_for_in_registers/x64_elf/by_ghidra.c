@@ -78,14 +78,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -128,12 +128,33 @@ struct Elf64_Sym {
 
 
 
-int entry(char *__s)
+int processEntry entry(char *__s)
 
 {
   int in_EAX;
   
   return in_EAX;
+}
+
+
+
+undefined8 main(undefined8 param_1,undefined8 param_2,char *param_3)
+
+{
+  int iVar1;
+  undefined8 *puVar2;
+  undefined *puVar3;
+  undefined8 uStack_20;
+  undefined auStack_18 [16];
+  
+  puVar3 = auStack_18;
+  for (iVar1 = 0; iVar1 < 10; iVar1 = iVar1 + 1) {
+    puVar2 = (undefined8 *)(puVar3 + -8);
+    puVar3 = puVar3 + -8;
+    *puVar2 = 0x4000ee;
+    entry(param_3);
+  }
+  return 0;
 }
 
 

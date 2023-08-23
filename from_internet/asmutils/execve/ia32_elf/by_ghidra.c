@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -55,8 +82,8 @@ undefined8 __regparm3 FUN_0804805c(uint param_1,undefined4 param_2)
 {
   undefined uVar1;
   byte bVar2;
-  byte bVar3;
-  uint uVar4;
+  uint uVar3;
+  byte bVar4;
   uint uVar5;
   undefined2 *puVar6;
   undefined2 *unaff_EDI;
@@ -70,25 +97,27 @@ undefined8 __regparm3 FUN_0804805c(uint param_1,undefined4 param_2)
   local_24 = param_1;
   do {
     uVar5 = uVar5 + 1;
-    uVar4 = local_24 / 0x10;
-    bVar2 = (byte)(local_24 % 0x10);
-    bVar3 = (bVar2 + 0x97) - (bVar2 < 10);
-    in_AF = 9 < (bVar3 & 0xf) | in_AF;
-    bVar3 = bVar3 + in_AF * -6;
+    uVar3 = local_24 / 0x10;
+    bVar4 = (byte)(local_24 % 0x10);
+    bVar2 = (bVar4 + 0x97) - (bVar4 < 10);
+    in_AF = 9 < (bVar2 & 0xf) | in_AF;
+    bVar2 = bVar2 + in_AF * -6;
     puVar6 = (undefined2 *)((int)puVar7 + 1);
     *(byte *)puVar7 =
-         bVar3 + (0x9f < bVar3 |
-                 (bVar2 < 0x69 || (byte)(bVar2 + 0x97) < (bVar2 < 10)) | in_AF * (bVar3 < 6)) *
+         bVar2 + (0x9f < bVar2 |
+                 (bVar4 < 0x69 || (byte)(bVar4 + 0x97) < (bVar4 < 10)) | in_AF * (bVar2 < 6)) *
                  -0x60;
     puVar7 = puVar6;
-    local_24 = uVar4;
-  } while (uVar4 != 0);
+    local_24 = uVar3;
+  } while (uVar3 != 0);
   *(undefined *)puVar6 = 0;
   puVar7 = unaff_EDI + 1;
   for (uVar5 = uVar5 >> 1; uVar5 != 0; uVar5 = uVar5 - 1) {
     puVar6 = (undefined2 *)((int)puVar6 + -1);
+    LOCK();
     uVar1 = *(undefined *)puVar6;
     *(undefined *)puVar6 = *(undefined *)puVar7;
+    UNLOCK();
     *(undefined *)puVar7 = uVar1;
     puVar7 = (undefined2 *)((int)puVar7 + 1);
   }
@@ -141,15 +170,15 @@ void FUN_080480a7(void)
 
 // WARNING: Control flow encountered bad instruction data
 
-void __regparm3
-entry(undefined4 param_1_00,undefined4 param_2_00,undefined4 param_3,char *param_1,
-     undefined4 param_2)
+void processEntry entry(undefined4 param_1,int param_2,char *param_3,undefined4 param_4)
 
 {
   code *pcVar1;
   char cVar2;
+  undefined4 in_EAX;
   char *pcVar3;
   int *piVar4;
+  char *pcVar5;
   undefined2 in_ES;
   undefined2 in_CS;
   undefined2 in_SS;
@@ -169,7 +198,6 @@ entry(undefined4 param_1_00,undefined4 param_2_00,undefined4 param_3,char *param
   byte in_VIF;
   byte in_VIP;
   byte in_ID;
-  int unaff_retaddr;
   
                     // WARNING: Read-only address (ram,0x080482b6) is written
   uRam080482d6 = (uint)(in_NT & 1) * 0x4000 | (uint)(in_OF & 1) * 0x800 | (uint)(in_IF & 1) * 0x200
@@ -185,17 +213,18 @@ entry(undefined4 param_1_00,undefined4 param_2_00,undefined4 param_3,char *param
                     // WARNING: Read-only address (ram,0x080482ca) is written
                     // WARNING: Read-only address (ram,0x080482ce) is written
                     // WARNING: Read-only address (ram,0x080482d2) is written
-  DAT_080482f6 = param_1;
-  DAT_080482fa = param_2;
-  DAT_080482fe = *(undefined4 *)(&stack0x0000000c + unaff_retaddr * 4);
+  DAT_080482f2 = param_2;
+  DAT_080482f6 = param_3;
+  DAT_080482fa = param_4;
+  DAT_080482fe = *(undefined4 *)(&stack0x0000000c + param_2 * 4);
+  pcVar3 = param_3;
   do {
-    pcVar3 = param_1;
-    param_1 = pcVar3 + 1;
-  } while (*pcVar3 != '\0');
+    pcVar5 = pcVar3;
+    pcVar3 = pcVar5 + 1;
+  } while (*pcVar5 != '\0');
   piVar4 = (int *)register0x00000010;
-  uRam080482b6 = param_1_00;
-  piRam080482be = (int *)param_3;
-  piRam080482c2 = (int *)param_2_00;
+  uRam080482b6 = in_EAX;
+  piRam080482c2 = (int *)param_1;
   puRam080482d2 = (undefined *)register0x00000010;
   DAT_080482da = in_CS;
   DAT_080482de = in_DS;
@@ -203,8 +232,7 @@ entry(undefined4 param_1_00,undefined4 param_2_00,undefined4 param_3,char *param
   DAT_080482e6 = in_FS;
   DAT_080482ea = in_GS;
   DAT_080482ee = in_SS;
-  DAT_080482f2 = unaff_retaddr;
-  if (*(int *)(pcVar3 + -4) != 0x73676572) goto LAB_08048231;
+  if (*(int *)(pcVar5 + -4) != 0x73676572) goto LAB_08048231;
   FUN_080480a7();
   do {
     *(undefined4 *)((int)register0x00000010 + -4) = 1;

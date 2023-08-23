@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
@@ -15,13 +16,13 @@ typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef unsigned short    word;
-typedef struct _IMAGE_RUNTIME_FUNCTION_ENTRY _IMAGE_RUNTIME_FUNCTION_ENTRY, *P_IMAGE_RUNTIME_FUNCTION_ENTRY;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
 
-struct _IMAGE_RUNTIME_FUNCTION_ENTRY {
-    ImageBaseOffset32 BeginAddress;
-    ImageBaseOffset32 EndAddress;
-    ImageBaseOffset32 UnwindInfoAddressOrData;
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
 };
 
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
@@ -38,22 +39,387 @@ union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
     struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
 };
 
+typedef struct _IMAGE_RUNTIME_FUNCTION_ENTRY _IMAGE_RUNTIME_FUNCTION_ENTRY, *P_IMAGE_RUNTIME_FUNCTION_ENTRY;
+
+struct _IMAGE_RUNTIME_FUNCTION_ENTRY {
+    ImageBaseOffset32 BeginAddress;
+    ImageBaseOffset32 EndAddress;
+    ImageBaseOffset32 UnwindInfoAddressOrData;
+};
+
+typedef long LONG;
+
+typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
+
+typedef LONG (* PTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
+
+typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
+
+typedef struct _EXCEPTION_RECORD EXCEPTION_RECORD;
+
+typedef EXCEPTION_RECORD * PEXCEPTION_RECORD;
+
+typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
+
+typedef struct _CONTEXT * PCONTEXT;
+
+typedef ulong DWORD;
+
+typedef void * PVOID;
+
+typedef ulonglong ULONG_PTR;
+
+typedef ulonglong DWORD64;
+
+typedef ushort WORD;
+
+typedef union _union_54 _union_54, *P_union_54;
+
+typedef struct _M128A _M128A, *P_M128A;
+
+typedef struct _M128A M128A;
+
+typedef struct _XSAVE_FORMAT _XSAVE_FORMAT, *P_XSAVE_FORMAT;
+
+typedef struct _XSAVE_FORMAT XSAVE_FORMAT;
+
+typedef XSAVE_FORMAT XMM_SAVE_AREA32;
+
+typedef struct _struct_55 _struct_55, *P_struct_55;
+
+typedef ulonglong ULONGLONG;
+
+typedef longlong LONGLONG;
+
+typedef uchar BYTE;
+
+struct _M128A {
+    ULONGLONG Low;
+    LONGLONG High;
+};
+
+struct _XSAVE_FORMAT {
+    WORD ControlWord;
+    WORD StatusWord;
+    BYTE TagWord;
+    BYTE Reserved1;
+    WORD ErrorOpcode;
+    DWORD ErrorOffset;
+    WORD ErrorSelector;
+    WORD Reserved2;
+    DWORD DataOffset;
+    WORD DataSelector;
+    WORD Reserved3;
+    DWORD MxCsr;
+    DWORD MxCsr_Mask;
+    M128A FloatRegisters[8];
+    M128A XmmRegisters[16];
+    BYTE Reserved4[96];
+};
+
+struct _struct_55 {
+    M128A Header[2];
+    M128A Legacy[8];
+    M128A Xmm0;
+    M128A Xmm1;
+    M128A Xmm2;
+    M128A Xmm3;
+    M128A Xmm4;
+    M128A Xmm5;
+    M128A Xmm6;
+    M128A Xmm7;
+    M128A Xmm8;
+    M128A Xmm9;
+    M128A Xmm10;
+    M128A Xmm11;
+    M128A Xmm12;
+    M128A Xmm13;
+    M128A Xmm14;
+    M128A Xmm15;
+};
+
+union _union_54 {
+    XMM_SAVE_AREA32 FltSave;
+    struct _struct_55 s;
+};
+
+struct _CONTEXT {
+    DWORD64 P1Home;
+    DWORD64 P2Home;
+    DWORD64 P3Home;
+    DWORD64 P4Home;
+    DWORD64 P5Home;
+    DWORD64 P6Home;
+    DWORD ContextFlags;
+    DWORD MxCsr;
+    WORD SegCs;
+    WORD SegDs;
+    WORD SegEs;
+    WORD SegFs;
+    WORD SegGs;
+    WORD SegSs;
+    DWORD EFlags;
+    DWORD64 Dr0;
+    DWORD64 Dr1;
+    DWORD64 Dr2;
+    DWORD64 Dr3;
+    DWORD64 Dr6;
+    DWORD64 Dr7;
+    DWORD64 Rax;
+    DWORD64 Rcx;
+    DWORD64 Rdx;
+    DWORD64 Rbx;
+    DWORD64 Rsp;
+    DWORD64 Rbp;
+    DWORD64 Rsi;
+    DWORD64 Rdi;
+    DWORD64 R8;
+    DWORD64 R9;
+    DWORD64 R10;
+    DWORD64 R11;
+    DWORD64 R12;
+    DWORD64 R13;
+    DWORD64 R14;
+    DWORD64 R15;
+    DWORD64 Rip;
+    union _union_54 u;
+    M128A VectorRegister[26];
+    DWORD64 VectorControl;
+    DWORD64 DebugControl;
+    DWORD64 LastBranchToRip;
+    DWORD64 LastBranchFromRip;
+    DWORD64 LastExceptionToRip;
+    DWORD64 LastExceptionFromRip;
+};
+
+struct _EXCEPTION_RECORD {
+    DWORD ExceptionCode;
+    DWORD ExceptionFlags;
+    struct _EXCEPTION_RECORD * ExceptionRecord;
+    PVOID ExceptionAddress;
+    DWORD NumberParameters;
+    ULONG_PTR ExceptionInformation[15];
+};
+
+struct _EXCEPTION_POINTERS {
+    PEXCEPTION_RECORD ExceptionRecord;
+    PCONTEXT ContextRecord;
+};
+
+typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
+
+typedef union _LARGE_INTEGER _LARGE_INTEGER, *P_LARGE_INTEGER;
+
+typedef struct _struct_19 _struct_19, *P_struct_19;
+
+typedef struct _struct_20 _struct_20, *P_struct_20;
+
+struct _struct_20 {
+    DWORD LowPart;
+    LONG HighPart;
+};
+
+struct _struct_19 {
+    DWORD LowPart;
+    LONG HighPart;
+};
+
+union _LARGE_INTEGER {
+    struct _struct_19 s;
+    struct _struct_20 u;
+    LONGLONG QuadPart;
+};
+
+typedef union _LARGE_INTEGER LARGE_INTEGER;
+
+typedef struct _RUNTIME_FUNCTION _RUNTIME_FUNCTION, *P_RUNTIME_FUNCTION;
+
+struct _RUNTIME_FUNCTION {
+    DWORD BeginAddress;
+    DWORD EndAddress;
+    DWORD UnwindData;
+};
+
+typedef struct _IMAGE_SECTION_HEADER _IMAGE_SECTION_HEADER, *P_IMAGE_SECTION_HEADER;
+
+typedef union _union_238 _union_238, *P_union_238;
+
+union _union_238 {
+    DWORD PhysicalAddress;
+    DWORD VirtualSize;
+};
+
+struct _IMAGE_SECTION_HEADER {
+    BYTE Name[8];
+    union _union_238 Misc;
+    DWORD VirtualAddress;
+    DWORD SizeOfRawData;
+    DWORD PointerToRawData;
+    DWORD PointerToRelocations;
+    DWORD PointerToLinenumbers;
+    WORD NumberOfRelocations;
+    WORD NumberOfLinenumbers;
+    DWORD Characteristics;
+};
+
+typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
+
+typedef enum _EXCEPTION_DISPOSITION {
+    ExceptionContinueExecution=0,
+    ExceptionContinueSearch=1,
+    ExceptionNestedException=2,
+    ExceptionCollidedUnwind=3
+} _EXCEPTION_DISPOSITION;
+
+typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
+
+typedef EXCEPTION_DISPOSITION (EXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, PVOID, struct _CONTEXT *, PVOID);
+
+typedef struct _IMAGE_SECTION_HEADER * PIMAGE_SECTION_HEADER;
+
+typedef struct _M128A * PM128A;
+
+typedef struct _UNWIND_HISTORY_TABLE_ENTRY _UNWIND_HISTORY_TABLE_ENTRY, *P_UNWIND_HISTORY_TABLE_ENTRY;
+
+typedef struct _UNWIND_HISTORY_TABLE_ENTRY UNWIND_HISTORY_TABLE_ENTRY;
+
+struct _UNWIND_HISTORY_TABLE_ENTRY {
+    DWORD64 ImageBase;
+    PRUNTIME_FUNCTION FunctionEntry;
+};
+
+typedef union _union_61 _union_61, *P_union_61;
+
+typedef struct _struct_62 _struct_62, *P_struct_62;
+
+struct _struct_62 {
+    PM128A Xmm0;
+    PM128A Xmm1;
+    PM128A Xmm2;
+    PM128A Xmm3;
+    PM128A Xmm4;
+    PM128A Xmm5;
+    PM128A Xmm6;
+    PM128A Xmm7;
+    PM128A Xmm8;
+    PM128A Xmm9;
+    PM128A Xmm10;
+    PM128A Xmm11;
+    PM128A Xmm12;
+    PM128A Xmm13;
+    PM128A Xmm14;
+    PM128A Xmm15;
+};
+
+union _union_61 {
+    PM128A FloatingContext[16];
+    struct _struct_62 s;
+};
+
+typedef union _union_63 _union_63, *P_union_63;
+
+typedef ulonglong * PDWORD64;
+
+typedef struct _struct_64 _struct_64, *P_struct_64;
+
+struct _struct_64 {
+    PDWORD64 Rax;
+    PDWORD64 Rcx;
+    PDWORD64 Rdx;
+    PDWORD64 Rbx;
+    PDWORD64 Rsp;
+    PDWORD64 Rbp;
+    PDWORD64 Rsi;
+    PDWORD64 Rdi;
+    PDWORD64 R8;
+    PDWORD64 R9;
+    PDWORD64 R10;
+    PDWORD64 R11;
+    PDWORD64 R12;
+    PDWORD64 R13;
+    PDWORD64 R14;
+    PDWORD64 R15;
+};
+
+union _union_63 {
+    PDWORD64 IntegerContext[16];
+    struct _struct_64 s;
+};
+
+typedef struct _UNWIND_HISTORY_TABLE _UNWIND_HISTORY_TABLE, *P_UNWIND_HISTORY_TABLE;
+
+typedef struct _UNWIND_HISTORY_TABLE * PUNWIND_HISTORY_TABLE;
+
+struct _UNWIND_HISTORY_TABLE {
+    DWORD Count;
+    BYTE LocalHint;
+    BYTE GlobalHint;
+    BYTE Search;
+    BYTE Once;
+    DWORD64 LowAddress;
+    DWORD64 HighAddress;
+    UNWIND_HISTORY_TABLE_ENTRY Entry[12];
+};
+
+typedef void * HANDLE;
+
+typedef struct _KNONVOLATILE_CONTEXT_POINTERS _KNONVOLATILE_CONTEXT_POINTERS, *P_KNONVOLATILE_CONTEXT_POINTERS;
+
+typedef struct _KNONVOLATILE_CONTEXT_POINTERS * PKNONVOLATILE_CONTEXT_POINTERS;
+
+struct _KNONVOLATILE_CONTEXT_POINTERS {
+    union _union_61 u;
+    union _union_63 u2;
+};
+
+typedef EXCEPTION_ROUTINE * PEXCEPTION_ROUTINE;
+
+typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+
+struct IMAGE_DOS_HEADER {
+    char e_magic[2]; // Magic number
+    word e_cblp; // Bytes of last page
+    word e_cp; // Pages in file
+    word e_crlc; // Relocations
+    word e_cparhdr; // Size of header in paragraphs
+    word e_minalloc; // Minimum extra paragraphs needed
+    word e_maxalloc; // Maximum extra paragraphs needed
+    word e_ss; // Initial (relative) SS value
+    word e_sp; // Initial SP value
+    word e_csum; // Checksum
+    word e_ip; // Initial IP value
+    word e_cs; // Initial (relative) CS value
+    word e_lfarlc; // File address of relocation table
+    word e_ovno; // Overlay number
+    word e_res[4][4]; // Reserved words
+    word e_oemid; // OEM identifier (for e_oeminfo)
+    word e_oeminfo; // OEM information; e_oemid specific
+    word e_res2[10][10]; // Reserved words
+    dword e_lfanew; // File address of new exe header
+    byte e_program[64]; // Actual DOS program
+};
+
+typedef ULONG_PTR DWORD_PTR;
+
+typedef struct DotNetPdbInfo DotNetPdbInfo, *PDotNetPdbInfo;
+
+struct DotNetPdbInfo {
+    char signature[4];
+    GUID guid;
+    dword age;
+    char pdbpath[64];
+};
+
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
 
 typedef struct _FILETIME * LPFILETIME;
-
-typedef ulong DWORD;
 
 struct _FILETIME {
     DWORD dwLowDateTime;
     DWORD dwHighDateTime;
 };
 
-typedef ushort WORD;
-
 typedef int BOOL;
-
-typedef uchar BYTE;
 
 typedef uint UINT;
 
@@ -253,340 +619,11 @@ struct _iobuf {
 
 typedef struct _iobuf FILE;
 
-typedef long LONG;
-
-typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
-
-typedef LONG (* PTOP_LEVEL_EXCEPTION_FILTER)(struct _EXCEPTION_POINTERS *);
-
-typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
-
-typedef struct _EXCEPTION_RECORD EXCEPTION_RECORD;
-
-typedef EXCEPTION_RECORD * PEXCEPTION_RECORD;
-
-typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
-
-typedef struct _CONTEXT * PCONTEXT;
-
-typedef void * PVOID;
-
-typedef ulonglong ULONG_PTR;
-
-typedef ulonglong DWORD64;
-
-typedef union _union_52 _union_52, *P_union_52;
-
-typedef struct _M128A _M128A, *P_M128A;
-
-typedef struct _M128A M128A;
-
-typedef struct _XSAVE_FORMAT _XSAVE_FORMAT, *P_XSAVE_FORMAT;
-
-typedef struct _XSAVE_FORMAT XSAVE_FORMAT;
-
-typedef XSAVE_FORMAT XMM_SAVE_AREA32;
-
-typedef struct _struct_53 _struct_53, *P_struct_53;
-
-typedef ulonglong ULONGLONG;
-
-typedef longlong LONGLONG;
-
-struct _M128A {
-    ULONGLONG Low;
-    LONGLONG High;
-};
-
-struct _XSAVE_FORMAT {
-    WORD ControlWord;
-    WORD StatusWord;
-    BYTE TagWord;
-    BYTE Reserved1;
-    WORD ErrorOpcode;
-    DWORD ErrorOffset;
-    WORD ErrorSelector;
-    WORD Reserved2;
-    DWORD DataOffset;
-    WORD DataSelector;
-    WORD Reserved3;
-    DWORD MxCsr;
-    DWORD MxCsr_Mask;
-    M128A FloatRegisters[8];
-    M128A XmmRegisters[16];
-    BYTE Reserved4[96];
-};
-
-struct _struct_53 {
-    M128A Header[2];
-    M128A Legacy[8];
-    M128A Xmm0;
-    M128A Xmm1;
-    M128A Xmm2;
-    M128A Xmm3;
-    M128A Xmm4;
-    M128A Xmm5;
-    M128A Xmm6;
-    M128A Xmm7;
-    M128A Xmm8;
-    M128A Xmm9;
-    M128A Xmm10;
-    M128A Xmm11;
-    M128A Xmm12;
-    M128A Xmm13;
-    M128A Xmm14;
-    M128A Xmm15;
-};
-
-union _union_52 {
-    XMM_SAVE_AREA32 FltSave;
-    struct _struct_53 s;
-};
-
-struct _CONTEXT {
-    DWORD64 P1Home;
-    DWORD64 P2Home;
-    DWORD64 P3Home;
-    DWORD64 P4Home;
-    DWORD64 P5Home;
-    DWORD64 P6Home;
-    DWORD ContextFlags;
-    DWORD MxCsr;
-    WORD SegCs;
-    WORD SegDs;
-    WORD SegEs;
-    WORD SegFs;
-    WORD SegGs;
-    WORD SegSs;
-    DWORD EFlags;
-    DWORD64 Dr0;
-    DWORD64 Dr1;
-    DWORD64 Dr2;
-    DWORD64 Dr3;
-    DWORD64 Dr6;
-    DWORD64 Dr7;
-    DWORD64 Rax;
-    DWORD64 Rcx;
-    DWORD64 Rdx;
-    DWORD64 Rbx;
-    DWORD64 Rsp;
-    DWORD64 Rbp;
-    DWORD64 Rsi;
-    DWORD64 Rdi;
-    DWORD64 R8;
-    DWORD64 R9;
-    DWORD64 R10;
-    DWORD64 R11;
-    DWORD64 R12;
-    DWORD64 R13;
-    DWORD64 R14;
-    DWORD64 R15;
-    DWORD64 Rip;
-    union _union_52 u;
-    M128A VectorRegister[26];
-    DWORD64 VectorControl;
-    DWORD64 DebugControl;
-    DWORD64 LastBranchToRip;
-    DWORD64 LastBranchFromRip;
-    DWORD64 LastExceptionToRip;
-    DWORD64 LastExceptionFromRip;
-};
-
-struct _EXCEPTION_RECORD {
-    DWORD ExceptionCode;
-    DWORD ExceptionFlags;
-    struct _EXCEPTION_RECORD * ExceptionRecord;
-    PVOID ExceptionAddress;
-    DWORD NumberParameters;
-    ULONG_PTR ExceptionInformation[15];
-};
-
-struct _EXCEPTION_POINTERS {
-    PEXCEPTION_RECORD ExceptionRecord;
-    PCONTEXT ContextRecord;
-};
-
-typedef PTOP_LEVEL_EXCEPTION_FILTER LPTOP_LEVEL_EXCEPTION_FILTER;
-
-typedef union _LARGE_INTEGER _LARGE_INTEGER, *P_LARGE_INTEGER;
-
-typedef struct _struct_19 _struct_19, *P_struct_19;
-
-typedef struct _struct_20 _struct_20, *P_struct_20;
-
-struct _struct_20 {
-    DWORD LowPart;
-    LONG HighPart;
-};
-
-struct _struct_19 {
-    DWORD LowPart;
-    LONG HighPart;
-};
-
-union _LARGE_INTEGER {
-    struct _struct_19 s;
-    struct _struct_20 u;
-    LONGLONG QuadPart;
-};
-
-typedef union _LARGE_INTEGER LARGE_INTEGER;
-
-typedef struct _RUNTIME_FUNCTION _RUNTIME_FUNCTION, *P_RUNTIME_FUNCTION;
-
-struct _RUNTIME_FUNCTION {
-    DWORD BeginAddress;
-    DWORD EndAddress;
-    DWORD UnwindData;
-};
-
-typedef struct _RUNTIME_FUNCTION * PRUNTIME_FUNCTION;
-
-typedef enum _EXCEPTION_DISPOSITION {
-    ExceptionContinueExecution=0,
-    ExceptionContinueSearch=1,
-    ExceptionNestedException=2,
-    ExceptionCollidedUnwind=3
-} _EXCEPTION_DISPOSITION;
-
-typedef enum _EXCEPTION_DISPOSITION EXCEPTION_DISPOSITION;
-
-typedef EXCEPTION_DISPOSITION (EXCEPTION_ROUTINE)(struct _EXCEPTION_RECORD *, PVOID, struct _CONTEXT *, PVOID);
-
-typedef struct _M128A * PM128A;
-
-typedef struct _UNWIND_HISTORY_TABLE_ENTRY _UNWIND_HISTORY_TABLE_ENTRY, *P_UNWIND_HISTORY_TABLE_ENTRY;
-
-typedef struct _UNWIND_HISTORY_TABLE_ENTRY UNWIND_HISTORY_TABLE_ENTRY;
-
-struct _UNWIND_HISTORY_TABLE_ENTRY {
-    DWORD64 ImageBase;
-    PRUNTIME_FUNCTION FunctionEntry;
-};
-
-typedef union _union_61 _union_61, *P_union_61;
-
-typedef ulonglong * PDWORD64;
-
-typedef struct _struct_62 _struct_62, *P_struct_62;
-
-struct _struct_62 {
-    PDWORD64 Rax;
-    PDWORD64 Rcx;
-    PDWORD64 Rdx;
-    PDWORD64 Rbx;
-    PDWORD64 Rsp;
-    PDWORD64 Rbp;
-    PDWORD64 Rsi;
-    PDWORD64 Rdi;
-    PDWORD64 R8;
-    PDWORD64 R9;
-    PDWORD64 R10;
-    PDWORD64 R11;
-    PDWORD64 R12;
-    PDWORD64 R13;
-    PDWORD64 R14;
-    PDWORD64 R15;
-};
-
-union _union_61 {
-    PDWORD64 IntegerContext[16];
-    struct _struct_62 s;
-};
-
-typedef struct _UNWIND_HISTORY_TABLE _UNWIND_HISTORY_TABLE, *P_UNWIND_HISTORY_TABLE;
-
-typedef struct _UNWIND_HISTORY_TABLE * PUNWIND_HISTORY_TABLE;
-
-struct _UNWIND_HISTORY_TABLE {
-    DWORD Count;
-    BYTE LocalHint;
-    BYTE GlobalHint;
-    BYTE Search;
-    BYTE Once;
-    DWORD64 LowAddress;
-    DWORD64 HighAddress;
-    UNWIND_HISTORY_TABLE_ENTRY Entry[12];
-};
-
-typedef struct _struct_60 _struct_60, *P_struct_60;
-
-struct _struct_60 {
-    PM128A Xmm0;
-    PM128A Xmm1;
-    PM128A Xmm2;
-    PM128A Xmm3;
-    PM128A Xmm4;
-    PM128A Xmm5;
-    PM128A Xmm6;
-    PM128A Xmm7;
-    PM128A Xmm8;
-    PM128A Xmm9;
-    PM128A Xmm10;
-    PM128A Xmm11;
-    PM128A Xmm12;
-    PM128A Xmm13;
-    PM128A Xmm14;
-    PM128A Xmm15;
-};
-
-typedef void * HANDLE;
-
-typedef union _union_59 _union_59, *P_union_59;
-
-union _union_59 {
-    PM128A FloatingContext[16];
-    struct _struct_60 s;
-};
-
-typedef struct _KNONVOLATILE_CONTEXT_POINTERS _KNONVOLATILE_CONTEXT_POINTERS, *P_KNONVOLATILE_CONTEXT_POINTERS;
-
-typedef struct _KNONVOLATILE_CONTEXT_POINTERS * PKNONVOLATILE_CONTEXT_POINTERS;
-
-struct _KNONVOLATILE_CONTEXT_POINTERS {
-    union _union_59 u;
-    union _union_61 u2;
-};
-
-typedef EXCEPTION_ROUTINE * PEXCEPTION_ROUTINE;
-
-typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
-
-struct IMAGE_DOS_HEADER {
-    char e_magic[2]; // Magic number
-    word e_cblp; // Bytes of last page
-    word e_cp; // Pages in file
-    word e_crlc; // Relocations
-    word e_cparhdr; // Size of header in paragraphs
-    word e_minalloc; // Minimum extra paragraphs needed
-    word e_maxalloc; // Maximum extra paragraphs needed
-    word e_ss; // Initial (relative) SS value
-    word e_sp; // Initial SP value
-    word e_csum; // Checksum
-    word e_ip; // Initial IP value
-    word e_cs; // Initial (relative) CS value
-    word e_lfarlc; // File address of relocation table
-    word e_ovno; // Overlay number
-    word e_res[4][4]; // Reserved words
-    word e_oemid; // OEM identifier (for e_oeminfo)
-    word e_oeminfo; // OEM information; e_oemid specific
-    word e_res2[10][10]; // Reserved words
-    dword e_lfanew; // File address of new exe header
-    byte e_program[64]; // Actual DOS program
-};
+typedef ulonglong uintptr_t;
 
 typedef int (* _onexit_t)(void);
 
 typedef ulonglong size_t;
-
-typedef struct DotNetPdbInfo DotNetPdbInfo, *PDotNetPdbInfo;
-
-struct DotNetPdbInfo {
-    char signature[4];
-    GUID guid;
-    dword age;
-    char pdbname[16];
-};
 
 
 
@@ -604,12 +641,12 @@ void FUN_140001000(longlong param_1,undefined8 param_2,int param_3)
   undefined4 *puVar8;
   undefined4 *puVar9;
   int iVar10;
-  undefined auStack168 [32];
+  undefined auStack_a8 [32];
   undefined4 local_88 [2];
   char local_7f [71];
   ulonglong local_38;
   
-  local_38 = DAT_140003000 ^ (ulonglong)auStack168;
+  local_38 = DAT_140003000 ^ (ulonglong)auStack_a8;
   sprintf((char *)local_88,"%08lX:");
   if (0x10 < param_3) {
     param_3 = 0x10;
@@ -674,7 +711,7 @@ LAB_1400010c6:
   }
   *(undefined2 *)((longlong)local_88 + iVar10 + lVar3) = 0x7c;
   printf("%s\n");
-  FUN_140001300(local_38 ^ (ulonglong)auStack168);
+  __security_check_cookie(local_38 ^ (ulonglong)auStack_a8);
   return;
 }
 
@@ -687,18 +724,18 @@ void FUN_140001190(char *param_1)
   int extraout_EAX;
   FILE *_File;
   uint uVar3;
-  undefined auStack120 [32];
+  undefined auStack_78 [32];
   undefined local_58 [20];
   uint local_44;
   undefined local_28 [16];
   ulonglong local_18;
   size_t sVar2;
   
-  local_18 = DAT_140003000 ^ (ulonglong)auStack120;
+  local_18 = DAT_140003000 ^ (ulonglong)auStack_78;
   iVar1 = _stat64i32(param_1,local_58);
   if (iVar1 != 0) {
     perror(param_1);
-    FUN_140001300(local_18 ^ (ulonglong)auStack120);
+    __security_check_cookie(local_18 ^ (ulonglong)auStack_78);
     return;
   }
   _File = fopen(param_1,"rb");
@@ -718,7 +755,7 @@ void FUN_140001190(char *param_1)
     }
     fclose(_File);
   }
-  FUN_140001300(local_18 ^ (ulonglong)auStack120);
+  __security_check_cookie(local_18 ^ (ulonglong)auStack_78);
   return;
 }
 
@@ -745,32 +782,131 @@ int FUN_140001290(int param_1,longlong param_2)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  __security_check_cookie
+// 
+// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-void FUN_140001300(longlong param_1)
+void __cdecl __security_check_cookie(uintptr_t _StackCookie)
+
+{
+  if ((_StackCookie == DAT_140003000) && ((short)(_StackCookie >> 0x30) == 0)) {
+    return;
+  }
+                    // WARNING: Subroutine does not return
+  __report_gsfailure(_StackCookie);
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  __tmainCRTStartup
+// 
+// Library: Visual Studio 2008 Release
+
+int __tmainCRTStartup(void)
+
+{
+  bool bVar1;
+  void *pvVar2;
+  int iVar3;
+  BOOL BVar4;
+  bool bVar5;
+  
+  pvVar2 = StackBase;
+  bVar1 = false;
+  do {
+    LOCK();
+    bVar5 = DAT_1400035d8 == 0;
+    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar5 * (DAT_1400035d8 ^ (ulonglong)pvVar2);
+    UNLOCK();
+    if (bVar5) {
+LAB_1400013ce:
+      if (DAT_1400035d0 == 1) {
+        _amsg_exit(0x1f);
+      }
+      else if (DAT_1400035d0 == 0) {
+        DAT_1400035d0 = 1;
+        iVar3 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
+        if (iVar3 != 0) {
+          return 0xff;
+        }
+      }
+      else {
+        _DAT_140003044 = 1;
+      }
+      if (DAT_1400035d0 == 1) {
+        _initterm(&DAT_140002178,&DAT_140002188);
+        DAT_1400035d0 = 2;
+      }
+      if (!bVar1) {
+        LOCK();
+        DAT_1400035d8 = 0;
+        UNLOCK();
+      }
+      if ((DAT_1400035f0 != (code *)0x0) &&
+         (BVar4 = _IsNonwritableInCurrentImage((PBYTE)&DAT_1400035f0), BVar4 != 0)) {
+        (*DAT_1400035f0)(0,2);
+      }
+      *(undefined8 *)__initenv_exref = DAT_140003028;
+      DAT_140003040 = FUN_140001290(DAT_140003020,DAT_140003030);
+      if (_DAT_140003024 != 0) {
+        if (_DAT_140003044 == 0) {
+          _cexit();
+        }
+        return DAT_140003040;
+      }
+                    // WARNING: Subroutine does not return
+      exit(DAT_140003040);
+    }
+    if ((void *)(!bVar5 * DAT_1400035d8) == pvVar2) {
+      bVar1 = true;
+      goto LAB_1400013ce;
+    }
+    Sleep(1000);
+  } while( true );
+}
+
+
+
+void entry(void)
+
+{
+  __security_init_cookie();
+  __tmainCRTStartup();
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  __report_gsfailure
+// 
+// Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
+
+void __cdecl __report_gsfailure(uintptr_t _StackCookie)
 
 {
   HANDLE hProcess;
-  DWORD64 in_stack_00000000;
-  longlong local_res8 [4];
+  DWORD64 unaff_retaddr;
+  uintptr_t local_res8 [4];
   PVOID local_48;
   ulonglong local_40;
   PRUNTIME_FUNCTION local_38;
   DWORD64 local_30;
   DWORD64 local_28;
-  longlong local_20;
+  undefined8 local_20;
   undefined8 local_18;
   
-  if ((param_1 == DAT_140003000) && ((short)((ulonglong)param_1 >> 0x30) == 0)) {
-    return;
-  }
-  local_res8[0] = param_1;
+  local_res8[0] = _StackCookie;
   RtlCaptureContext(&DAT_1400030f0);
   local_30 = DAT_1400031e8;
   local_38 = RtlLookupFunctionEntry(DAT_1400031e8,&local_28,(PUNWIND_HISTORY_TABLE)0x0);
   if (local_38 == (PRUNTIME_FUNCTION)0x0) {
     _DAT_140003188 = local_res8;
-    DAT_1400031e8 = in_stack_00000000;
+    DAT_1400031e8 = unaff_retaddr;
   }
   else {
     RtlVirtualUnwind(0,local_28,local_30,local_38,(PCONTEXT)&DAT_1400030f0,&local_48,&local_40,
@@ -796,71 +932,6 @@ void FUN_140001300(longlong param_1)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
-int entry(void)
-
-{
-  bool bVar1;
-  int iVar2;
-  ulonglong uVar3;
-  longlong in_GS_OFFSET;
-  bool bVar4;
-  
-  FUN_1400019d4();
-  uVar3 = *(ulonglong *)(*(longlong *)(in_GS_OFFSET + 0x30) + 8);
-  bVar1 = false;
-  do {
-    LOCK();
-    bVar4 = DAT_1400035d8 == 0;
-    DAT_1400035d8 = DAT_1400035d8 ^ (ulonglong)bVar4 * (DAT_1400035d8 ^ uVar3);
-    if (bVar4) {
-LAB_1400013ce:
-      if (DAT_1400035d0 == 1) {
-        _amsg_exit(0x1f);
-      }
-      else if (DAT_1400035d0 == 0) {
-        DAT_1400035d0 = 1;
-        iVar2 = _initterm_e(&DAT_140002190,&DAT_1400021a8);
-        if (iVar2 != 0) {
-          return 0xff;
-        }
-      }
-      else {
-        _DAT_140003044 = 1;
-      }
-      if (DAT_1400035d0 == 1) {
-        _initterm(&DAT_140002178,&DAT_140002188);
-        DAT_1400035d0 = 2;
-      }
-      if (!bVar1) {
-        DAT_1400035d8 = 0;
-      }
-      if ((DAT_1400035f0 != (code *)0x0) &&
-         (uVar3 = FUN_140001980((longlong)&DAT_1400035f0), (int)uVar3 != 0)) {
-        (*DAT_1400035f0)(0,2);
-      }
-      *(undefined8 *)__initenv_exref = DAT_140003028;
-      DAT_140003040 = FUN_140001290(DAT_140003020,DAT_140003030);
-      if (_DAT_140003024 != 0) {
-        if (_DAT_140003044 == 0) {
-          _cexit();
-        }
-        return DAT_140003040;
-      }
-                    // WARNING: Subroutine does not return
-      exit(DAT_140003040);
-    }
-    if (!bVar4 * DAT_1400035d8 == uVar3) {
-      bVar1 = true;
-      goto LAB_1400013ce;
-    }
-    Sleep(1000);
-  } while( true );
-}
-
-
-
 undefined8 FUN_140001794(void)
 
 {
@@ -870,7 +941,7 @@ undefined8 FUN_140001794(void)
 
 
 
-void _amsg_exit(int param_1)
+void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x0001400017ac. Too many branches
@@ -886,7 +957,7 @@ void _amsg_exit(int param_1)
 // 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
 
-_onexit_t _onexit(_onexit_t _Func)
+_onexit_t __cdecl _onexit(_onexit_t _Func)
 
 {
   _onexit_t p_Var1;
@@ -918,7 +989,7 @@ _onexit_t _onexit(_onexit_t _Func)
 // 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
 
-int atexit(void *param_1)
+int __cdecl atexit(_func_5014 *param_1)
 
 {
   _onexit_t p_Var1;
@@ -944,7 +1015,7 @@ void FUN_14000187c(void)
 
 
 
-int _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
+int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 {
   int iVar1;
@@ -960,9 +1031,9 @@ int _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 // Library Function - Single Match
 //  _ValidateImageBase
 // 
-// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
-BOOL _ValidateImageBase(PBYTE pImageBase)
+BOOL __cdecl _ValidateImageBase(PBYTE pImageBase)
 
 {
   uint uVar1;
@@ -980,49 +1051,60 @@ BOOL _ValidateImageBase(PBYTE pImageBase)
 
 
 
-longlong FUN_140001930(longlong param_1,ulonglong param_2)
+// Library Function - Single Match
+//  _FindPESection
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2019 Release
+
+PIMAGE_SECTION_HEADER __cdecl _FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
-  longlong lVar1;
-  longlong lVar2;
+  int iVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
   uint uVar3;
   
+  iVar1 = *(int *)(pImageBase + 0x3c);
   uVar3 = 0;
-  lVar2 = *(int *)(param_1 + 0x3c) + param_1;
-  lVar1 = (ulonglong)*(ushort *)(lVar2 + 0x14) + 0x18 + lVar2;
-  if (*(ushort *)(lVar2 + 6) != 0) {
+  p_Var2 = (PIMAGE_SECTION_HEADER)
+           (pImageBase +
+           (ulonglong)*(ushort *)(pImageBase + (longlong)iVar1 + 0x14) + 0x18 + (longlong)iVar1);
+  if (*(ushort *)(pImageBase + (longlong)iVar1 + 6) != 0) {
     do {
-      if ((*(uint *)(lVar1 + 0xc) <= param_2) &&
-         (param_2 < *(int *)(lVar1 + 8) + *(uint *)(lVar1 + 0xc))) {
-        return lVar1;
+      if ((p_Var2->VirtualAddress <= rva) &&
+         (rva < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) {
+        return p_Var2;
       }
       uVar3 = uVar3 + 1;
-      lVar1 = lVar1 + 0x28;
-    } while (uVar3 < *(ushort *)(lVar2 + 6));
+      p_Var2 = p_Var2 + 1;
+    } while (uVar3 < *(ushort *)(pImageBase + (longlong)iVar1 + 6));
   }
-  return 0;
+  return (PIMAGE_SECTION_HEADER)0x0;
 }
 
 
 
-ulonglong FUN_140001980(longlong param_1)
+// Library Function - Single Match
+//  _IsNonwritableInCurrentImage
+// 
+// Library: Visual Studio 2008 Release
+
+BOOL __cdecl _IsNonwritableInCurrentImage(PBYTE pTarget)
 
 {
-  BOOL BVar1;
-  undefined4 extraout_var;
-  ulonglong uVar2;
-  IMAGE_DOS_HEADER *pIVar3;
+  uint uVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
+  IMAGE_DOS_HEADER *pImageBase;
   
-  pIVar3 = &IMAGE_DOS_HEADER_140000000;
-  BVar1 = _ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_140000000);
-  uVar2 = CONCAT44(extraout_var,BVar1);
-  if (BVar1 != 0) {
-    uVar2 = FUN_140001930((longlong)pIVar3,param_1 - (longlong)pIVar3);
-    if (uVar2 != 0) {
-      uVar2 = (ulonglong)(~(*(uint *)(uVar2 + 0x24) >> 0x1f) & 1);
+  pImageBase = &IMAGE_DOS_HEADER_140000000;
+  uVar1 = _ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_140000000);
+  p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)uVar1;
+  if (uVar1 != 0) {
+    p_Var2 = _FindPESection((PBYTE)pImageBase,(longlong)pTarget - (longlong)pImageBase);
+    if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
+      p_Var2 = (PIMAGE_SECTION_HEADER)(ulonglong)(~(p_Var2->Characteristics >> 0x1f) & 1);
     }
   }
-  return uVar2;
+  return (BOOL)p_Var2;
 }
 
 
@@ -1057,7 +1139,12 @@ undefined8 FUN_1400019d0(void)
 
 
 
-void FUN_1400019d4(void)
+// Library Function - Single Match
+//  __security_init_cookie
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
+
+void __cdecl __security_init_cookie(void)
 
 {
   _FILETIME _Var1;
@@ -1065,9 +1152,10 @@ void FUN_1400019d4(void)
   DWORD DVar3;
   DWORD DVar4;
   _FILETIME local_res8;
-  ulonglong local_res10;
+  LARGE_INTEGER local_res10;
   
-  local_res8 = (_FILETIME)0x0;
+  local_res8.dwLowDateTime = 0;
+  local_res8.dwHighDateTime = 0;
   if (DAT_140003000 == 0x2b992ddfa232) {
     GetSystemTimeAsFileTime(&local_res8);
     _Var1 = local_res8;
@@ -1076,8 +1164,9 @@ void FUN_1400019d4(void)
     DVar4 = GetTickCount();
     QueryPerformanceCounter(&local_res10);
     DAT_140003000 =
-         (local_res10 ^ (ulonglong)_Var1 ^ (ulonglong)DVar2 ^ (ulonglong)DVar3 ^ (ulonglong)DVar4) &
-         0xffffffffffff;
+         (local_res10.QuadPart ^
+         (ulonglong)_Var1 ^ (ulonglong)DVar2 ^ (ulonglong)DVar3 ^ (ulonglong)DVar4) & 0xffffffffffff
+    ;
     if (DAT_140003000 == 0x2b992ddfa232) {
       DAT_140003000 = 0x2b992ddfa233;
     }
@@ -1091,7 +1180,7 @@ void FUN_1400019d4(void)
 
 
 
-void __crt_debugger_hook(int param_1)
+void __cdecl __crt_debugger_hook(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x000140001a88. Too many branches
@@ -1102,9 +1191,7 @@ void __crt_debugger_hook(int param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-void terminate(void)
+void __cdecl terminate(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x000140001a8e. Too many branches
@@ -1115,7 +1202,7 @@ void terminate(void)
 
 
 
-void _unlock(int _File)
+void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x000140001a94. Too many branches
@@ -1137,7 +1224,7 @@ void __dllonexit(void)
 
 
 
-void _lock(int _File)
+void __cdecl _lock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x000140001aa0. Too many branches
@@ -1148,7 +1235,7 @@ void _lock(int _File)
 
 
 
-PEXCEPTION_ROUTINE
+PEXCEPTION_ROUTINE __stdcall
 RtlVirtualUnwind(DWORD HandlerType,DWORD64 ImageBase,DWORD64 ControlPc,
                 PRUNTIME_FUNCTION FunctionEntry,PCONTEXT ContextRecord,PVOID *HandlerData,
                 PDWORD64 EstablisherFrame,PKNONVOLATILE_CONTEXT_POINTERS ContextPointers)
@@ -1165,7 +1252,7 @@ RtlVirtualUnwind(DWORD HandlerType,DWORD64 ImageBase,DWORD64 ControlPc,
 
 
 
-PRUNTIME_FUNCTION
+PRUNTIME_FUNCTION __stdcall
 RtlLookupFunctionEntry(DWORD64 ControlPc,PDWORD64 ImageBase,PUNWIND_HISTORY_TABLE HistoryTable)
 
 {
@@ -1179,7 +1266,13 @@ RtlLookupFunctionEntry(DWORD64 ControlPc,PDWORD64 ImageBase,PUNWIND_HISTORY_TABL
 
 
 
-void FUN_140001ab4(ulonglong param_1,longlong param_2,uint *param_3)
+// Library Function - Single Match
+//  __GSHandlerCheckCommon
+// 
+// Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release, Visual Studio 2012 Release,
+// Visual Studio 2019 Release
+
+void __GSHandlerCheckCommon(ulonglong param_1,longlong param_2,uint *param_3)
 
 {
   longlong lVar1;
@@ -1193,13 +1286,13 @@ void FUN_140001ab4(ulonglong param_1,longlong param_2,uint *param_3)
   if ((*(byte *)(lVar1 + 3) & 0xf) != 0) {
     param_1 = param_1 + (longlong)(int)(*(byte *)(lVar1 + 3) & 0xfffffff0);
   }
-  FUN_140001300(param_1 ^ *(ulonglong *)((longlong)(int)(*param_3 & 0xfffffff8) + uVar2));
+  __security_check_cookie(param_1 ^ *(ulonglong *)((longlong)(int)(*param_3 & 0xfffffff8) + uVar2));
   return;
 }
 
 
 
-void * memset(void *_Dst,int _Val,size_t _Size)
+void * __cdecl memset(void *_Dst,int _Val,size_t _Size)
 
 {
   void *pvVar1;

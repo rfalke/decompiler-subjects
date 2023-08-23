@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -398,7 +399,7 @@ undefined4 FUN_00401017(void)
       if ((DAT_00402118[(ushort)((ushort)bVar6 * 0x40 + CONCAT11(bVar6,bVar4 >> 2)) - 0x21c4] & 0xfb
           ) == 0) {
         uVar3 = (ushort)uVar5 & 0xf0f;
-        cVar2 = ((char)uVar3 + (char)((uint)uVar3 >> 8)) * '\x04';
+        cVar2 = ((char)uVar3 + (char)(uVar3 >> 8)) * '\x04';
       }
     }
     *(char *)(DAT_0040211c + uVar5) = cVar2;
@@ -420,109 +421,110 @@ void FUN_00401088(void)
   uint uVar3;
   ushort uVar4;
   uint uVar5;
+  byte bVar7;
   int iVar6;
-  uint uVar7;
-  byte bVar8;
-  short sVar10;
-  byte *pbVar11;
-  uint uVar12;
-  undefined4 *puVar13;
-  bool bVar14;
+  uint uVar8;
+  char cVar9;
+  uint uVar10;
+  short sVar11;
+  byte *pbVar12;
+  uint uVar13;
+  undefined4 *puVar14;
+  bool bVar15;
   float10 in_ST0;
-  float10 fVar15;
   float10 fVar16;
-  float10 in_ST1;
   float10 fVar17;
+  float10 in_ST1;
+  float10 fVar18;
   float10 in_ST2;
   float10 in_ST3;
-  float10 fVar18;
+  float10 fVar19;
   float10 in_ST4;
-  uint uVar9;
   
   uVar5 = 0;
-  uVar9 = 0x400;
+  iVar6 = 0x400;
   do {
     uVar4 = (short)uVar5 + 1;
     uVar5 = (uint)uVar4;
-    *(ushort *)(&DAT_00402136 + uVar9) = *(short *)(&DAT_00402136 + uVar9) + uVar4;
-    fVar17 = (float10)fcos((float10)*(short *)(&DAT_00402136 + uVar9) / (float10)_DAT_00402130);
-    fVar15 = (float10)fsin((float10)*(short *)(&DAT_00402136 + uVar9) / (float10)_DAT_00402130);
-    *(float *)(uVar9 + 0x402155) = (float)fVar17;
-    *(float *)(uVar9 + 0x402159) = (float)fVar15;
-    bVar8 = (char)uVar9 + 8;
-    uVar9 = uVar9 & 0xffffff00 | (uint)bVar8;
-  } while ((POPCOUNT(bVar8) & 1U) != 0);
-  uVar9 = 0x300;
-  uVar7 = 0;
+    *(ushort *)(&DAT_00402136 + iVar6) = *(short *)(&DAT_00402136 + iVar6) + uVar4;
+    fVar18 = (float10)fcos((float10)*(short *)(&DAT_00402136 + iVar6) / (float10)_DAT_00402130);
+    fVar16 = (float10)fsin((float10)*(short *)(&DAT_00402136 + iVar6) / (float10)_DAT_00402130);
+    *(float *)(&DAT_00402155 + iVar6) = (float)fVar18;
+    *(float *)(&DAT_00402159 + iVar6) = (float)fVar16;
+    cVar9 = (char)iVar6 + '\b';
+    iVar6 = CONCAT31((int3)((uint)iVar6 >> 8),cVar9);
+  } while ((POPCOUNT(cVar9) & 1U) != 0);
+  uVar10 = 0x300;
+  uVar8 = 0;
 LAB_004010c2:
-  sVar10 = 0x80;
+  sVar11 = 0x80;
   do {
-    uVar12 = 0x41d;
-    bVar8 = (byte)(uVar5 >> 8);
-    uVar9 = uVar9 & 0xffffff00 | (uint)bVar8;
-    uVar3 = uVar7;
+    uVar13 = 0x41d;
+    cVar9 = (char)(uVar5 >> 8);
+    uVar10 = CONCAT31((int3)(uVar10 >> 8),cVar9);
+    uVar3 = uVar8;
     do {
-      *(short *)(&DAT_00402136 + uVar9) = (short)(char)((char)uVar3 + -0x80);
-      uVar3 = uVar7 >> 8;
-      uVar4 = (short)uVar9 + 2;
-      uVar9 = (uint)uVar4;
+      *(short *)(&DAT_00402136 + uVar10) = (short)(char)((char)uVar3 + -0x80);
+      uVar3 = uVar8 >> 8;
+      uVar4 = (short)uVar10 + 2;
+      uVar10 = (uint)uVar4;
       if ((POPCOUNT(uVar4 & 0xff) & 1U) == 0) {
-        uVar9 = uVar9 & 0xffffff00;
+        uVar10 = uVar4 & 0xffffff00;
       }
-      uVar4 = (short)uVar12 + 1;
-      uVar12 = (uint)uVar4;
+      uVar4 = (short)uVar13 + 1;
+      uVar13 = (uint)uVar4;
     } while ((POPCOUNT(uVar4 & 0xff) & 1U) == 0);
-    *(short *)(&DAT_00402136 + uVar9) = sVar10;
-    uVar9 = uVar9 & 0xffffff00;
-    fVar17 = in_ST0;
-    fVar15 = in_ST1;
-    fVar18 = in_ST2;
+    *(short *)(&DAT_00402136 + uVar10) = sVar11;
+    uVar10 = uVar10 & 0xffffff00;
+    fVar18 = in_ST0;
+    fVar16 = in_ST1;
+    fVar19 = in_ST2;
     do {
       in_ST2 = in_ST4;
       in_ST1 = in_ST3;
-      in_ST0 = fVar18;
-      fVar18 = fVar15;
-      fVar15 = fVar17;
-      psVar1 = (short *)(&DAT_00402136 + uVar9);
-      uVar4 = (short)uVar9 + 2;
-      uVar9 = (uint)uVar4;
-      fVar17 = (float10)*psVar1;
+      in_ST0 = fVar19;
+      fVar19 = fVar16;
+      fVar16 = fVar18;
+      psVar1 = (short *)(&DAT_00402136 + uVar10);
+      uVar4 = (short)uVar10 + 2;
+      uVar10 = (uint)uVar4;
+      fVar18 = (float10)*psVar1;
       in_ST3 = in_ST0;
       in_ST4 = in_ST1;
     } while ((POPCOUNT(uVar4 & 0xff) & 1U) != 0);
     do {
+      fVar17 = fVar18;
+      fVar18 = fVar19 * (float10)*(float *)(uVar13 + 0x40213a) +
+               fVar16 * (float10)*(float *)(&DAT_00402136 + uVar13);
+      fVar19 = fVar16 * (float10)*(float *)(uVar13 + 0x40213a) -
+               fVar19 * (float10)*(float *)(&DAT_00402136 + uVar13);
+      uVar4 = (short)uVar13 + 8;
+      uVar13 = (uint)uVar4;
       fVar16 = fVar17;
-      fVar17 = fVar18 * (float10)*(float *)(uVar12 + 0x40213a) +
-               fVar15 * (float10)*(float *)(&DAT_00402136 + uVar12);
-      fVar18 = fVar15 * (float10)*(float *)(uVar12 + 0x40213a) -
-               fVar18 * (float10)*(float *)(&DAT_00402136 + uVar12);
-      uVar4 = (short)uVar12 + 8;
-      uVar12 = (uint)uVar4;
-      fVar15 = fVar16;
     } while ((POPCOUNT(uVar4 & 0xff) & 1U) == 0);
-    fVar17 = (fVar17 + (float10)_DAT_00402132) / (float10)_DAT_00402134;
-    *(int *)(&DAT_00402136 + uVar9) = (int)ROUND(fVar16 / fVar17);
-    iVar6 = *(int *)(&DAT_00402136 + uVar9);
-    *(int *)(&DAT_00402136 + uVar9) = (int)ROUND(fVar18 / fVar17);
-    pcVar2 = (char *)(DAT_00402118 + 0x7da0 + iVar6 * 0x140 + *(int *)(&DAT_00402136 + uVar9));
-    *pcVar2 = *pcVar2 + (*(byte *)(uVar7 + DAT_0040211c) >> 5);
-    while (uVar4 = (short)uVar7 + 1, uVar7 = (uint)uVar4, in_ST3 = in_ST2, in_ST4 = in_ST2,
+    fVar18 = (fVar18 + (float10)_DAT_00402132) / (float10)_DAT_00402134;
+    *(int *)(&DAT_00402136 + uVar10) = (int)ROUND(fVar17 / fVar18);
+    iVar6 = *(int *)(&DAT_00402136 + uVar10);
+    *(int *)(&DAT_00402136 + uVar10) = (int)ROUND(fVar19 / fVar18);
+    pcVar2 = (char *)(DAT_00402118 + 0x7da0 + iVar6 * 0x140 + *(int *)(&DAT_00402136 + uVar10));
+    *pcVar2 = *pcVar2 + (*(byte *)(uVar8 + DAT_0040211c) >> 5);
+    while (uVar4 = (short)uVar8 + 1, uVar8 = (uint)uVar4, in_ST3 = in_ST2, in_ST4 = in_ST2,
           uVar4 == 0) {
-      bVar14 = sVar10 < 1;
-      sVar10 = -sVar10;
-      if (bVar14) {
-        bVar8 = bVar8 + 2;
-        uVar5 = (uint)bVar8 << 8;
-        if ((POPCOUNT(bVar8) & 1U) == 0) {
+      bVar15 = sVar11 < 1;
+      sVar11 = -sVar11;
+      if (bVar15) {
+        bVar7 = cVar9 + 2;
+        uVar5 = (uint)bVar7 << 8;
+        if ((POPCOUNT(bVar7) & 1U) == 0) {
           iVar6 = 64000;
-          pbVar11 = (byte *)(DAT_00402118 + 0x500);
-          puVar13 = (undefined4 *)((int)DAT_00402100 + 0x500);
+          pbVar12 = (byte *)(DAT_00402118 + 0x500);
+          puVar14 = (undefined4 *)((int)DAT_00402100 + 0x500);
           do {
-            bVar8 = *pbVar11;
-            *pbVar11 = 0;
-            *puVar13 = *(undefined4 *)((uint)bVar8 * 4 + DAT_00402104);
-            pbVar11 = pbVar11 + 1;
-            puVar13 = puVar13 + 1;
+            bVar7 = *pbVar12;
+            *pbVar12 = 0;
+            *puVar14 = *(undefined4 *)((uint)bVar7 * 4 + DAT_00402104);
+            pbVar12 = pbVar12 + 1;
+            puVar14 = puVar14 + 1;
             iVar6 = iVar6 + -1;
           } while (iVar6 != 0);
           GetClientRect(DAT_004020cc,(LPRECT)&DAT_004020f0);
@@ -560,7 +562,7 @@ void entry(void)
     _DAT_004020bc = LoadCursorW((HINSTANCE)0x0,(LPCWSTR)0x7f00);
     AVar1 = RegisterClassW((WNDCLASSW *)&DAT_004020a4);
     if (CONCAT22(extraout_var,AVar1) != 0) {
-      hWnd = CreateWindowExW(0,u_DEMODEMO_00402000,u____http___www_devreci_com____00402012,
+      hWnd = CreateWindowExW(0,u_DEMODEMO_00402000,u_<<_http:__www_devreci_com_>>_00402012,
                              0x10cf0000,0x8000,0x8000,0x21c,400,(HWND)0x0,(HMENU)0x0,DAT_004020b4,
                              (LPVOID)0x0);
       if (hWnd != (HWND)0x0) {

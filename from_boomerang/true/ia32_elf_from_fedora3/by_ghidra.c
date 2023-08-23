@@ -53,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -70,16 +70,16 @@ typedef void * __gnuc_va_list;
 
 typedef struct __mbstate_t __mbstate_t, *P__mbstate_t;
 
-typedef union _union_27 _union_27, *P_union_27;
+typedef union _union_54 _union_54, *P_union_54;
 
-union _union_27 {
+union _union_54 {
     uint __wch;
     char __wchb[4];
 };
 
 struct __mbstate_t {
     int __count;
-    union _union_27 __value;
+    union _union_54 __value;
 };
 
 typedef struct __mbstate_t mbstate_t;
@@ -188,6 +188,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -254,11 +255,15 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_DebugLink Gnu_DebugLink, *PGnu_DebugLink;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_DebugLink {
-    char filename[12]; // Debug file name
-    dword crc;
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
 };
 
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
@@ -266,6 +271,13 @@ typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 struct Elf32_Rel {
     dword r_offset; // location to apply the relocation action
     dword r_info; // the symbol table index and the type of relocation
+};
+
+typedef struct GnuDebugLink_12 GnuDebugLink_12, *PGnuDebugLink_12;
+
+struct GnuDebugLink_12 {
+    char filename[12];
+    dword crc;
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -308,6 +320,16 @@ void _DT_INIT(void)
 
 
 
+void FUN_080488d4(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __fpending(void)
 
 {
@@ -317,7 +339,7 @@ void __fpending(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __overflow(_IO_FILE *param_1,int param_2)
 
@@ -330,7 +352,7 @@ int __overflow(_IO_FILE *param_1,int param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs_unlocked(char *__s,FILE *__stream)
 
@@ -343,7 +365,7 @@ int fputs_unlocked(char *__s,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -356,7 +378,7 @@ int fprintf(FILE *__stream,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getenv(char *__name)
 
@@ -378,7 +400,7 @@ void dcgettext(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * setlocale(int __category,char *__locale)
 
@@ -400,7 +422,7 @@ void __cxa_atexit(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int * __errno_location(void)
 
@@ -413,7 +435,7 @@ int * __errno_location(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -426,7 +448,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -437,7 +459,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int vfprintf(FILE *__s,char *__format,__gnuc_va_list __arg)
 
@@ -459,7 +481,7 @@ void bindtextdomain(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t mbrtowc(wchar_t *__pwc,char *__s,size_t __n,mbstate_t *__p)
 
@@ -481,7 +503,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * realloc(void *__ptr,size_t __size)
 
@@ -503,7 +525,7 @@ void textdomain(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -516,7 +538,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -529,7 +551,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -542,7 +564,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t __ctype_get_mb_cur_max(void)
 
@@ -555,7 +577,7 @@ size_t __ctype_get_mb_cur_max(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -566,7 +588,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int iswprint(wint_t __wc)
 
@@ -579,7 +601,7 @@ int iswprint(wint_t __wc)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -590,7 +612,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -603,7 +625,7 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int mbsinit(mbstate_t *__ps)
 
@@ -625,7 +647,7 @@ void error(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ushort ** __ctype_b_loc(void)
 
@@ -638,10 +660,13 @@ ushort ** __ctype_b_loc(void)
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(FUN_08048c4a);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(FUN_08048c4a,param_2,&stack0x00000004,FUN_0804a008,FUN_0804a05c,param_1,
+                    auStack_4);
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -902,9 +927,9 @@ FUN_08048ff6(undefined *param_1_00,uint param_2_00,char *param_1,uint param_2,in
   uint local_34;
   wchar_t local_28;
   mbstate_t local_24 [2];
-  undefined4 uStack20;
+  undefined4 uStack_14;
   
-  uStack20 = 0x8049001;
+  uStack_14 = 0x8049001;
   local_38 = 0;
   local_3c = (char *)0x0;
   local_40 = 0;
@@ -1015,18 +1040,19 @@ LAB_08049093:
   default:
     if (sVar4 != 1) {
       local_24[0].__count = 0;
-      local_24[0].__value = 0;
+      local_24[0].__value.__wch = 0;
       local_60 = 0;
       uVar9 = 1;
-      pcVar7 = param_1;
       if (param_2 == 0xffffffff) {
+        uVar10 = 0xffffffff;
+        pcVar7 = param_1;
         do {
-          if (param_2 == 0) break;
-          param_2 = param_2 - 1;
+          if (uVar10 == 0) break;
+          uVar10 = uVar10 - 1;
           cVar1 = *pcVar7;
           pcVar7 = pcVar7 + 1;
         } while (cVar1 != '\0');
-        param_2 = ~param_2 - 1;
+        param_2 = ~uVar10 - 1;
       }
       while( true ) {
         uVar10 = local_34 + local_60;
@@ -1382,11 +1408,11 @@ FUN_08049721(uint param_1_00,undefined4 param_2_00,undefined4 param_1,undefined4
 void FUN_080498ae(void)
 
 {
-  undefined4 uStack00000004;
-  undefined4 *puStack00000008;
+  undefined4 param_1;
+  undefined4 *param_2;
   
-  puStack00000008 = &DAT_0804bb20;
-  uStack00000004 = 0xffffffff;
+  param_2 = &DAT_0804bb20;
+  param_1 = 0xffffffff;
   FUN_08049721();
   return;
 }
@@ -1449,11 +1475,11 @@ void FUN_0804995f(void)
 void FUN_0804998f(void)
 
 {
-  undefined4 in_stack_00000010;
+  undefined4 param_4;
   undefined local_3c [52];
   
   FUN_08049905();
-  FUN_08049721(in_stack_00000010,local_3c);
+  FUN_08049721(param_4,local_3c);
   return;
 }
 
@@ -1484,9 +1510,9 @@ void FUN_080499f0(undefined4 param_1,char param_2)
   undefined4 local_24;
   undefined4 local_20;
   undefined4 local_1c;
-  undefined4 uStack16;
+  undefined4 uStack_10;
   
-  uStack16 = 0x80499fa;
+  uStack_10 = 0x80499fa;
   local_3c = DAT_0804bb20;
   local_38 = DAT_0804bb24;
   local_34 = DAT_0804bb28;

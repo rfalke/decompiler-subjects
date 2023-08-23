@@ -1,13 +1,25 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef unsigned long long    GUID;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
+typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
+typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef char CHAR;
 
 typedef CHAR * LPCSTR;
@@ -235,7 +247,7 @@ FUN_0041d3b7(int param_1,int param_2,undefined param_3,undefined4 param_4,undefi
   *puVar7 = uVar2 + 0x1175d15d + uVar3;
   unaff_ESI[0x19cf93ee] =
        unaff_ESI[0x19cf93ee] + '\x06' + (0xee8a2ea2 < uVar1 || CARRY4(uVar2 + 0x1175d15d,uVar3));
-  return CONCAT44((uint)puVar7 & 0xffffff00 | (uint)(byte)((char)puVar7 + *pbVar6),pbVar6) | 0x76;
+  return CONCAT44(CONCAT31((int3)((uint)puVar7 >> 8),(char)puVar7 + *pbVar6),pbVar6) | 0x76;
 }
 
 
@@ -312,18 +324,18 @@ void entry(void)
           puVar14 = (uint *)((int)puVar14 + 1);
           uVar13 = CONCAT31((int3)uVar5 + -3,uVar2) ^ 0xffffffff;
           if (uVar13 == 0) {
-            puVar14 = (uint *)&DAT_00401000;
+            puVar15 = (undefined4 *)&DAT_00401000;
             iVar7 = 0x19;
             do {
-              cVar3 = *(char *)puVar14;
-              puVar14 = (uint *)((int)puVar14 + 1);
-              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar14 == '\0'))) {
-                uVar13 = *puVar14;
-                cVar3 = *(char *)(puVar14 + 1);
-                *puVar14 = (uint)(&DAT_00401000 +
-                                 (((uint)(CONCAT21((short)(uVar13 >> 8),(char)(uVar13 >> 0x10)) &
-                                         0xffff) << 8 | uVar13 >> 0x18) - (int)puVar14));
-                puVar14 = (uint *)((int)puVar14 + 5);
+              cVar3 = *(char *)puVar15;
+              puVar15 = (undefined4 *)((int)puVar15 + 1);
+              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar15 == '\0'))) {
+                uVar4 = *puVar15;
+                cVar3 = *(char *)(puVar15 + 1);
+                *puVar15 = &DAT_00401000 +
+                           (CONCAT31(CONCAT21((ushort)uVar4 >> 8,(char)((uint)uVar4 >> 0x10)),
+                                     (char)((uint)uVar4 >> 0x18)) - (int)puVar15);
+                puVar15 = (undefined4 *)((int)puVar15 + 5);
                 iVar7 = iVar7 + -1;
                 if (iVar7 == 0) {
                   lpProcName = &DAT_0041c000;

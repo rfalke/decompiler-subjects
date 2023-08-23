@@ -4,8 +4,6 @@ typedef unsigned char    byte;
 typedef unsigned char    dwfenc;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
-typedef unsigned char    undefined1;
-typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
 typedef enum Elf_ProgramHeaderType {
@@ -21,6 +19,14 @@ typedef enum Elf_ProgramHeaderType {
     PT_GNU_STACK=1685382481,
     PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType;
+
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
@@ -122,18 +128,10 @@ struct Elf64_Sym {
 
 
 
-void f(void)
-
-{
-  return;
-}
-
-
-
 undefined8 main(void)
 
 {
-  f(1,2,3,4,5,6,7,8,9);
+  f(3,0x400160,7,8,9);
   return 0;
 }
 

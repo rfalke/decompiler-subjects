@@ -106,14 +106,14 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -145,10 +145,9 @@ struct Elf32_Ehdr {
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
 // printf(...)
 
-void printf(void...)
+void processEntry printf(void...)
 
 {
   return;
@@ -158,14 +157,16 @@ void printf(void...)
 
 // do_switch(int)
 
-undefined * do_switch(int param_1)
+undefined * __regparm2 do_switch(int param_1)
 
 {
   undefined *puVar1;
+  undefined4 in_EDX;
+  undefined4 in_stack_00000004;
   
-  switch(param_1) {
+  switch(in_stack_00000004) {
   case 0:
-    printf("Hmm...");
+    printf(in_EDX,0x804810b,"Hmm...");
   case 1:
     puVar1 = &DAT_0804a82b;
     break;
@@ -263,7 +264,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804a87f;
     break;
   case 0x21:
-    printf("Hmm...");
+    printf(in_EDX,0x8048257,"Hmm...");
   case 0x22:
     puVar1 = &DAT_0804a882;
     break;
@@ -361,7 +362,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804a8df;
     break;
   case 0x42:
-    printf("Hmm...");
+    printf(in_EDX,0x80483a3,"Hmm...");
   case 0x43:
     puVar1 = &DAT_0804a8e2;
     break;
@@ -459,7 +460,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804a93f;
     break;
   case 99:
-    printf("Hmm...");
+    printf(in_EDX,0x80484ef,"Hmm...");
   case 100:
     puVar1 = &DAT_0804a942;
     break;
@@ -557,7 +558,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804a9be;
     break;
   case 0x84:
-    printf("Hmm...");
+    printf(in_EDX,0x804863b,"Hmm...");
   case 0x85:
     puVar1 = &DAT_0804a9c2;
     break;
@@ -655,7 +656,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804aa3e;
     break;
   case 0xa5:
-    printf("Hmm...");
+    printf(in_EDX,0x8048787,"Hmm...");
   case 0xa6:
     puVar1 = &DAT_0804aa42;
     break;
@@ -753,7 +754,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804aabe;
     break;
   case 0xc6:
-    printf("Hmm...");
+    printf(in_EDX,0x80488d3,"Hmm...");
   case 199:
     puVar1 = &DAT_0804aac2;
     break;
@@ -851,7 +852,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804ab3e;
     break;
   case 0xe7:
-    printf("Hmm...");
+    printf(in_EDX,0x8048a1f,"Hmm...");
   case 0xe8:
     puVar1 = &DAT_0804ab42;
     break;
@@ -949,7 +950,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804abbe;
     break;
   case 0x108:
-    printf("Hmm...");
+    printf(in_EDX,0x8048b6b,"Hmm...");
   case 0x109:
     puVar1 = &DAT_0804abc2;
     break;
@@ -1047,7 +1048,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804ac3e;
     break;
   case 0x129:
-    printf("Hmm...");
+    printf(in_EDX,0x8048cb7,"Hmm...");
   case 0x12a:
     puVar1 = &DAT_0804ac42;
     break;
@@ -1145,7 +1146,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804acbe;
     break;
   case 0x14a:
-    printf("Hmm...");
+    printf(in_EDX,0x8048e03,"Hmm...");
   case 0x14b:
     puVar1 = &DAT_0804acc2;
     break;
@@ -1243,7 +1244,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804ad3e;
     break;
   case 0x16b:
-    printf("Hmm...");
+    printf(in_EDX,0x8048f4f,"Hmm...");
   case 0x16c:
     puVar1 = &DAT_0804ad42;
     break;
@@ -1341,7 +1342,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804adbe;
     break;
   case 0x18c:
-    printf("Hmm...");
+    printf(in_EDX,0x804909b,"Hmm...");
   case 0x18d:
     puVar1 = &DAT_0804adc2;
     break;
@@ -1439,7 +1440,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804ae3e;
     break;
   case 0x1ad:
-    printf("Hmm...");
+    printf(in_EDX,0x80491e7,"Hmm...");
   case 0x1ae:
     puVar1 = &DAT_0804ae42;
     break;
@@ -1537,7 +1538,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804aebe;
     break;
   case 0x1ce:
-    printf("Hmm...");
+    printf(in_EDX,0x8049333,"Hmm...");
   case 0x1cf:
     puVar1 = &DAT_0804aec2;
     break;
@@ -1635,7 +1636,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804af3e;
     break;
   case 0x1ef:
-    printf("Hmm...");
+    printf(in_EDX,0x804947f,"Hmm...");
   case 0x1f0:
     puVar1 = &DAT_0804af42;
     break;
@@ -1733,7 +1734,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804afbe;
     break;
   case 0x210:
-    printf("Hmm...");
+    printf(in_EDX,0x80495cb,"Hmm...");
   case 0x211:
     puVar1 = &DAT_0804afc2;
     break;
@@ -1831,7 +1832,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b03e;
     break;
   case 0x231:
-    printf("Hmm...");
+    printf(in_EDX,0x8049717,"Hmm...");
   case 0x232:
     puVar1 = &DAT_0804b042;
     break;
@@ -1929,7 +1930,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b0be;
     break;
   case 0x252:
-    printf("Hmm...");
+    printf(in_EDX,0x8049863,"Hmm...");
   case 0x253:
     puVar1 = &DAT_0804b0c2;
     break;
@@ -2027,7 +2028,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b13e;
     break;
   case 0x273:
-    printf("Hmm...");
+    printf(in_EDX,0x80499af,"Hmm...");
   case 0x274:
     puVar1 = &DAT_0804b142;
     break;
@@ -2125,7 +2126,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b1be;
     break;
   case 0x294:
-    printf("Hmm...");
+    printf(in_EDX,0x8049afb,"Hmm...");
   case 0x295:
     puVar1 = &DAT_0804b1c2;
     break;
@@ -2223,7 +2224,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b23e;
     break;
   case 0x2b5:
-    printf("Hmm...");
+    printf(in_EDX,0x8049c47,"Hmm...");
   case 0x2b6:
     puVar1 = &DAT_0804b242;
     break;
@@ -2321,7 +2322,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b2be;
     break;
   case 0x2d6:
-    printf("Hmm...");
+    printf(in_EDX,0x8049d93,"Hmm...");
   case 0x2d7:
     puVar1 = &DAT_0804b2c2;
     break;
@@ -2419,7 +2420,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b33e;
     break;
   case 0x2f7:
-    printf("Hmm...");
+    printf(in_EDX,0x8049edf,"Hmm...");
   case 0x2f8:
     puVar1 = &DAT_0804b342;
     break;
@@ -2517,7 +2518,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b3be;
     break;
   case 0x318:
-    printf("Hmm...");
+    printf(in_EDX,0x804a02b,"Hmm...");
   case 0x319:
     puVar1 = &DAT_0804b3c2;
     break;
@@ -2615,7 +2616,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b43e;
     break;
   case 0x339:
-    printf("Hmm...");
+    printf(in_EDX,0x804a177,"Hmm...");
   case 0x33a:
     puVar1 = &DAT_0804b442;
     break;
@@ -2713,7 +2714,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b4be;
     break;
   case 0x35a:
-    printf("Hmm...");
+    printf(in_EDX,0x804a2c3,"Hmm...");
   case 0x35b:
     puVar1 = &DAT_0804b4c2;
     break;
@@ -2811,7 +2812,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b53e;
     break;
   case 0x37b:
-    printf("Hmm...");
+    printf(in_EDX,0x804a40f,"Hmm...");
   case 0x37c:
     puVar1 = &DAT_0804b542;
     break;
@@ -2909,7 +2910,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b5be;
     break;
   case 0x39c:
-    printf("Hmm...");
+    printf(in_EDX,0x804a55b,"Hmm...");
   case 0x39d:
     puVar1 = &DAT_0804b5c2;
     break;
@@ -3007,7 +3008,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b63e;
     break;
   case 0x3bd:
-    printf("Hmm...");
+    printf(in_EDX,0x804a6a7,"Hmm...");
   case 0x3be:
     puVar1 = &DAT_0804b642;
     break;
@@ -3105,7 +3106,7 @@ undefined * do_switch(int param_1)
     puVar1 = &DAT_0804b6be;
     break;
   case 0x3de:
-    printf("Hmm...");
+    printf(in_EDX,0x804a7de,"Hmm...");
   case 0x3df:
     puVar1 = &DAT_0804b6c2;
     break;

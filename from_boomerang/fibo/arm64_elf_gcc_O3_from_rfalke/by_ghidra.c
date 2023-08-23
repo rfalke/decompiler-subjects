@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -13,24 +14,20 @@ typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ulong sizetype;
 
+typedef ulong size_t;
+
+typedef long __off_t;
+
+typedef sqword __off64_t;
+
 typedef void _IO_lock_t;
 
 typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef long __off64_t;
-
-typedef ulong size_t;
-
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -50,10 +47,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     void * __pad1;
@@ -69,10 +62,6 @@ struct _IO_marker {
     struct _IO_marker * _next;
     struct _IO_FILE * _sbuf;
     int _pos;
-    undefined field3_0x14;
-    undefined field4_0x15;
-    undefined field5_0x16;
-    undefined field6_0x17;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
@@ -221,6 +210,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -260,14 +250,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -353,7 +354,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -373,7 +374,7 @@ void __isoc99_scanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -386,6 +387,8 @@ int printf(char *__format,...)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(void)
 
 {
@@ -396,8 +399,8 @@ int main(void)
   uint uVar5;
   ulong uVar6;
   ulong uVar7;
-  uint extraout_w8;
-  uint uVar8;
+  int extraout_w8;
+  int iVar8;
   int extraout_w9;
   ulong uVar9;
   ulong extraout_x10;
@@ -410,15 +413,16 @@ int main(void)
     iVar1 = 0;
   }
   else {
-    uVar2 = number - 1;
+    iVar8 = number + -1;
     uVar5 = number - 3;
     iVar1 = 0;
     do {
       uVar6 = (ulong)uVar5;
-      if (uVar2 == 1) {
+      if (iVar8 == 1) {
         number = number + -2;
         iVar3 = 0;
-        uVar8 = uVar2;
+        uVar2 = 1;
+        iVar8 = 1;
       }
       else {
         uVar7 = (ulong)(number - 2);
@@ -436,10 +440,10 @@ int main(void)
         uVar2 = uVar5 & 1;
         uVar9 = extraout_x10;
         iVar1 = extraout_w9;
-        uVar8 = extraout_w8;
+        iVar8 = extraout_w8;
       }
       iVar1 = iVar1 + uVar2 + iVar3;
-      uVar2 = uVar8 - 2;
+      iVar8 = iVar8 + -2;
       uVar5 = uVar5 - 2;
     } while (1 < number);
     number = (uint)uVar9 & 1;
@@ -453,10 +457,9 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -522,55 +525,53 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100940)
+// WARNING: Removing unreachable block (ram,0x0010094c)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int fib(int x)
 
 {
-  uint uVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  uint uVar5;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
   int iVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  uint x_00;
-  int iVar10;
-  uint uVar11;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  uint uVar10;
+  int iVar11;
   uint uVar12;
-  uint uVar13;
-  int iVar14;
+  int iVar13;
+  uint uVar14;
   int iVar15;
-  uint local_58;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
+  int iVar16;
+  int local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
   uint local_48;
-  uint local_44;
+  int local_44;
   uint local_40;
-  uint local_3c;
+  int local_3c;
   uint local_38;
-  uint local_34;
+  int local_34;
   uint local_30;
-  uint local_2c;
+  int local_2c;
   uint local_28;
-  uint local_24;
+  int local_24;
   uint local_20;
   int local_1c;
   int local_18;
@@ -584,146 +585,146 @@ int fib(int x)
   }
   else {
     local_38 = x - 3;
-    local_3c = x - 1;
-    uVar4 = local_38 - (x - 2U & 0xfffffffe);
+    local_3c = x + -1;
+    iVar5 = local_38 - (x - 2U & 0xfffffffe);
     local_8 = 0;
     do {
       if (local_3c == 1) {
         local_10 = 0;
-        uVar9 = local_3c;
+        uVar14 = 1;
       }
       else {
-        local_24 = local_3c - 1;
+        local_24 = local_3c + -1;
         local_20 = local_3c - 3;
         local_10 = 0;
         local_54 = local_3c;
         do {
           if (local_24 == 1) {
             local_18 = 0;
-            uVar9 = local_24;
+            uVar14 = 1;
           }
           else {
-            local_44 = local_54 - 2;
+            local_44 = local_54 + -2;
             local_40 = local_54 - 4;
-            uVar9 = local_40 - (local_20 & 0xfffffffe);
+            iVar6 = local_40 - (local_20 & 0xfffffffe);
             local_18 = 0;
             do {
               if (local_44 == 1) {
                 local_c = 0;
-                uVar8 = local_44;
+                uVar14 = 1;
               }
               else {
-                local_2c = local_44 - 1;
+                local_2c = local_44 + -1;
                 local_28 = local_44 - 3;
                 local_c = 0;
                 local_50 = local_44;
                 do {
                   if (local_2c == 1) {
                     local_1c = 0;
-                    uVar8 = local_2c;
+                    uVar14 = 1;
                   }
                   else {
-                    local_4c = local_50 - 2;
+                    local_4c = local_50 + -2;
                     local_48 = local_50 - 4;
-                    uVar8 = local_48 - (local_28 & 0xfffffffe);
+                    iVar7 = local_48 - (local_28 & 0xfffffffe);
                     local_1c = 0;
                     do {
                       if (local_4c == 1) {
                         local_14 = 0;
-                        uVar13 = local_4c;
+                        uVar14 = 1;
                       }
                       else {
-                        local_34 = local_4c - 1;
+                        local_34 = local_4c + -1;
                         local_30 = local_4c - 3;
                         local_14 = 0;
                         local_58 = local_4c;
                         do {
                           if (local_34 == 1) {
-                            iVar14 = 0;
-                            uVar13 = local_34;
+                            iVar15 = 0;
+                            uVar14 = 1;
                           }
                           else {
-                            uVar1 = local_58 - 2;
-                            uVar13 = local_58 - 4;
-                            uVar5 = uVar13 - (local_30 & 0xfffffffe);
-                            iVar14 = 0;
+                            iVar1 = local_58 + -2;
+                            uVar14 = local_58 - 4;
+                            iVar8 = uVar14 - (local_30 & 0xfffffffe);
+                            iVar15 = 0;
                             do {
-                              if (uVar1 == 1) {
-                                iVar15 = 0;
-                                uVar12 = uVar1;
+                              if (iVar1 == 1) {
+                                iVar16 = 0;
+                                uVar12 = 1;
                               }
                               else {
-                                uVar12 = uVar1 - 1;
-                                uVar11 = uVar1 - 3;
-                                iVar15 = 0;
-                                uVar7 = uVar1;
+                                iVar13 = iVar1 + -1;
+                                uVar12 = iVar1 - 3;
+                                iVar16 = 0;
+                                iVar2 = iVar1;
                                 do {
-                                  uVar2 = uVar7 - 2;
-                                  if (uVar12 == 1) {
-                                    iVar10 = 0;
-                                    uVar7 = uVar12;
+                                  iVar3 = iVar2 + -2;
+                                  if (iVar13 == 1) {
+                                    iVar11 = 0;
+                                    uVar10 = 1;
                                   }
                                   else {
-                                    iVar10 = 0;
-                                    x_00 = uVar2;
+                                    iVar11 = 0;
+                                    iVar9 = iVar3;
                                     do {
-                                      uVar3 = x_00 - 2;
-                                      iVar6 = fib(x_00);
-                                      iVar10 = iVar10 + iVar6;
-                                      x_00 = uVar3;
-                                    } while ((uVar7 - 4) - (uVar11 & 0xfffffffe) != uVar3);
-                                    uVar7 = uVar11 & 1;
+                                      iVar4 = iVar9 + -2;
+                                      iVar9 = fib(iVar9);
+                                      iVar11 = iVar11 + iVar9;
+                                      iVar9 = iVar4;
+                                    } while ((iVar2 + -4) - (uVar12 & 0xfffffffe) != iVar4);
+                                    uVar10 = uVar12 & 1;
                                   }
-                                  iVar15 = iVar15 + uVar7 + iVar10;
+                                  iVar16 = iVar16 + uVar10 + iVar11;
+                                  iVar13 = iVar13 + -2;
                                   uVar12 = uVar12 - 2;
-                                  uVar11 = uVar11 - 2;
-                                  uVar7 = uVar2;
-                                } while (1 < (int)uVar2);
-                                uVar12 = uVar13 & 1;
+                                  iVar2 = iVar3;
+                                } while (1 < iVar3);
+                                uVar12 = uVar14 & 1;
                               }
-                              uVar1 = uVar1 - 2;
-                              uVar13 = uVar13 - 2;
-                              iVar14 = iVar14 + uVar12 + iVar15;
-                            } while (uVar5 != uVar1);
-                            uVar13 = local_30 & 1;
+                              iVar1 = iVar1 + -2;
+                              uVar14 = uVar14 - 2;
+                              iVar15 = iVar15 + uVar12 + iVar16;
+                            } while (iVar8 != iVar1);
+                            uVar14 = local_30 & 1;
                           }
-                          local_58 = local_58 - 2;
-                          local_14 = local_14 + uVar13 + iVar14;
-                          local_34 = local_34 - 2;
+                          local_58 = local_58 + -2;
+                          local_14 = local_14 + uVar14 + iVar15;
+                          local_34 = local_34 + -2;
                           local_30 = local_30 - 2;
-                        } while (1 < (int)local_58);
-                        uVar13 = local_48 & 1;
+                        } while (1 < local_58);
+                        uVar14 = local_48 & 1;
                       }
-                      local_4c = local_4c - 2;
-                      local_1c = local_1c + local_14 + uVar13;
+                      local_4c = local_4c + -2;
+                      local_1c = local_1c + local_14 + uVar14;
                       local_48 = local_48 - 2;
-                    } while (uVar8 != local_4c);
-                    uVar8 = local_28 & 1;
+                    } while (iVar7 != local_4c);
+                    uVar14 = local_28 & 1;
                   }
-                  local_50 = local_50 - 2;
-                  local_c = local_c + local_1c + uVar8;
-                  local_2c = local_2c - 2;
+                  local_50 = local_50 + -2;
+                  local_c = local_c + local_1c + uVar14;
+                  local_2c = local_2c + -2;
                   local_28 = local_28 - 2;
-                } while (1 < (int)local_50);
-                uVar8 = local_40 & 1;
+                } while (1 < local_50);
+                uVar14 = local_40 & 1;
               }
-              local_18 = local_18 + local_c + uVar8;
-              local_44 = local_44 - 2;
+              local_18 = local_18 + local_c + uVar14;
+              local_44 = local_44 + -2;
               local_40 = local_40 - 2;
-            } while (uVar9 != local_44);
-            uVar9 = local_20 & 1;
+            } while (iVar6 != local_44);
+            uVar14 = local_20 & 1;
           }
-          local_54 = local_54 - 2;
-          local_10 = local_10 + uVar9 + local_18;
-          local_24 = local_24 - 2;
+          local_54 = local_54 + -2;
+          local_10 = local_10 + uVar14 + local_18;
+          local_24 = local_24 + -2;
           local_20 = local_20 - 2;
-        } while (1 < (int)local_54);
-        uVar9 = local_38 & 1;
+        } while (1 < local_54);
+        uVar14 = local_38 & 1;
       }
-      local_3c = local_3c - 2;
-      local_8 = local_8 + local_10 + uVar9;
+      local_3c = local_3c + -2;
+      local_8 = local_8 + local_10 + uVar14;
       local_38 = local_38 - 2;
-    } while (uVar4 != local_3c);
+    } while (iVar5 != local_3c);
     x = x - 2U & 1;
   }
   return local_8 + x;

@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -277,8 +278,6 @@ struct IMAGE_DOS_HEADER {
     byte e_program[64]; // Actual DOS program
 };
 
-typedef int (* _onexit_t)(void);
-
 typedef uint size_t;
 
 typedef struct _startupinfo _startupinfo, *P_startupinfo;
@@ -301,7 +300,7 @@ void ___mingw_CRTStartup(void)
   
   _SetUnhandledExceptionFilter_4((LPTOP_LEVEL_EXCEPTION_FILTER)&LAB_00401000);
   __fpreset();
-  local_c = 0;
+  local_c.newmode = 0;
   ___getmainargs(&__argc,&DAT_00405000,&local_10,DAT_00403000,&local_c);
   if (__CRT_fmode != 0) {
     __fmode = __CRT_fmode;
@@ -337,14 +336,31 @@ void _mainCRTStartup(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void _atexit(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x004012aa. Too many branches
                     // WARNING: Treating indirect jump as call
   atexit();
+  return;
+}
+
+
+
+void ___do_frame_init(void)
+
+{
+  ___w32_sharedptr_initialize();
+  ___register_frame_info((int *)&___EH_FRAME_BEGIN__,(undefined4 *)&_obj);
+  return;
+}
+
+
+
+void ___do_frame_fini(void)
+
+{
+  ___deregister_frame_info((int *)&___EH_FRAME_BEGIN__);
   return;
 }
 
@@ -394,16 +410,12 @@ void __cdecl __fpreset(void)
 
 
 
-void ___main(void)
+void ___do_global_ctors(void)
 
 {
   int iVar1;
   bool bVar2;
   
-  if (_initialized != 0) {
-    return;
-  }
-  _initialized = 1;
   iVar1 = 0;
   bVar2 = false;
   while (!bVar2) {
@@ -414,6 +426,19 @@ void ___main(void)
     (*(code *)(&___CTOR_LIST__)[iVar1])();
   }
   _atexit();
+  return;
+}
+
+
+
+void ___main(void)
+
+{
+  if (_initialized != 0) {
+    return;
+  }
+  _initialized = 1;
+  ___do_global_ctors();
   return;
 }
 
@@ -714,7 +739,7 @@ void __cdecl ___register_frame_info_table(undefined4 param_1,undefined4 *param_2
 
 
 
-int __cdecl ___deregister_frame_info(int *param_1)
+int __cdecl ___deregister_frame_info_bases(int *param_1)
 
 {
   LONG *lpAddend;
@@ -775,6 +800,15 @@ LAB_00401aad:
     _ReleaseSemaphore_12(*(HANDLE *)(iVar6 + 0x18),1,(LPLONG)0x0);
   }
   return iVar5;
+}
+
+
+
+void __cdecl ___deregister_frame_info(int *param_1)
+
+{
+  ___deregister_frame_info_bases(param_1);
+  return;
 }
 
 
@@ -1136,16 +1170,16 @@ int * __fastcall _search_object(uint *param_1,uint param_2)
 {
   size_t _Size;
   int iVar1;
-  uint *puVar2;
-  void *pvVar3;
+  void *pvVar2;
   uint *in_EAX;
-  int iVar4;
-  undefined4 *puVar5;
-  int *piVar6;
-  int iVar7;
+  int iVar3;
+  undefined4 *puVar4;
+  int *piVar5;
+  int iVar6;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
   uint *extraout_ECX_01;
+  uint *puVar7;
   uint *extraout_ECX_02;
   uint *extraout_ECX_03;
   undefined4 extraout_ECX_04;
@@ -1182,15 +1216,16 @@ int * __fastcall _search_object(uint *param_1,uint param_2)
       }
       else {
         ppiVar12 = (int **)in_EAX[3];
-        piVar6 = *ppiVar12;
-        puVar2 = in_EAX;
-        while (piVar6 != (int *)0x0) {
-          piVar6 = *ppiVar12;
-          ppiVar12 = ppiVar12 + 1;
-          iVar4 = _classify_object_over_fdes((uint)puVar2,piVar6);
-          local_38 = (uint *)((int)local_38 + iVar4);
-          puVar2 = extraout_ECX_02;
-          piVar6 = *ppiVar12;
+        if (*ppiVar12 != (int *)0x0) {
+          local_38 = (uint *)0x0;
+          puVar7 = in_EAX;
+          do {
+            piVar5 = *ppiVar12;
+            ppiVar12 = ppiVar12 + 1;
+            iVar3 = _classify_object_over_fdes((uint)puVar7,piVar5);
+            local_38 = (uint *)((int)local_38 + iVar3);
+            puVar7 = extraout_ECX_02;
+          } while (*ppiVar12 != (int *)0x0);
         }
       }
       if ((uint *)((uint)local_38 & 0x1fffff) == local_38) {
@@ -1217,17 +1252,17 @@ int * __fastcall _search_object(uint *param_1,uint param_2)
         }
         else {
           ppiVar12 = (int **)in_EAX[3];
-          piVar6 = *ppiVar12;
+          piVar5 = *ppiVar12;
           uVar8 = extraout_ECX_04;
-          while (piVar6 != (int *)0x0) {
+          while (piVar5 != (int *)0x0) {
             ppiVar12 = ppiVar12 + 1;
-            _add_fdes(uVar8,(int *)&local_1c,piVar6);
+            _add_fdes(uVar8,(int *)&local_1c,piVar5);
             uVar8 = extraout_ECX_05;
-            piVar6 = *ppiVar12;
+            piVar5 = *ppiVar12;
           }
         }
-        pvVar3 = local_18;
-        puVar2 = local_1c;
+        pvVar2 = local_18;
+        puVar7 = local_1c;
         if ((local_1c != (uint *)0x0) && ((uint *)local_1c[1] != local_38)) {
 LAB_00402675:
                     // WARNING: Subroutine does not return
@@ -1250,55 +1285,55 @@ LAB_00402675:
           if (uVar11 != 0) {
             do {
               while (((uint *)(___w32_sharedptr + 0x24) != puVar14 &&
-                     (iVar4 = (*local_3c)(in_EAX,puVar2[uVar13 + 2],*puVar14), iVar4 < 0))) {
-                iVar4 = (int)puVar14 - (int)puVar2;
-                puVar14 = *(uint **)((int)pvVar3 + iVar4);
-                *(undefined4 *)((int)pvVar3 + iVar4) = 0;
+                     (iVar3 = (*local_3c)(in_EAX,puVar7[uVar13 + 2],*puVar14), iVar3 < 0))) {
+                iVar3 = (int)puVar14 - (int)puVar7;
+                puVar14 = *(uint **)((int)pvVar2 + iVar3);
+                *(undefined4 *)((int)pvVar2 + iVar3) = 0;
               }
-              *(uint **)((int)pvVar3 + uVar13 * 4 + 8) = puVar14;
+              *(uint **)((int)pvVar2 + uVar13 * 4 + 8) = puVar14;
               uVar13 = uVar13 + 1;
               puVar14 = puVar15 + 2;
               puVar15 = puVar15 + 1;
             } while (uVar13 < uVar11);
           }
-          iVar4 = 0;
+          iVar3 = 0;
           uVar13 = 0;
           uVar9 = 0;
           if (uVar11 != 0) {
             do {
-              if (*(int *)((int)pvVar3 + uVar9 * 4 + 8) == 0) {
-                *(uint *)((int)pvVar3 + iVar4 * 4 + 8) = puVar2[uVar9 + 2];
-                iVar4 = iVar4 + 1;
+              if (*(int *)((int)pvVar2 + uVar9 * 4 + 8) == 0) {
+                *(uint *)((int)pvVar2 + iVar3 * 4 + 8) = puVar7[uVar9 + 2];
+                iVar3 = iVar3 + 1;
               }
               else {
-                puVar2[uVar13 + 2] = puVar2[uVar9 + 2];
+                puVar7[uVar13 + 2] = puVar7[uVar9 + 2];
                 uVar13 = uVar13 + 1;
               }
               uVar9 = uVar9 + 1;
             } while (uVar9 < uVar11);
           }
-          puVar2[1] = uVar13;
-          *(int *)((int)pvVar3 + 4) = iVar4;
+          puVar7[1] = uVar13;
+          *(int *)((int)pvVar2 + 4) = iVar3;
           if ((uint *)(*(int *)((int)local_18 + 4) + local_1c[1]) != local_38) goto LAB_00402675;
           _frame_heapsort(local_18,local_3c,(int)local_18);
-          pvVar3 = local_18;
-          puVar2 = local_1c;
-          iVar4 = *(int *)((int)local_18 + 4);
-          if (iVar4 != 0) {
+          pvVar2 = local_18;
+          puVar7 = local_1c;
+          iVar3 = *(int *)((int)local_18 + 4);
+          if (iVar3 != 0) {
             uVar11 = local_1c[1];
             do {
-              iVar4 = iVar4 + -1;
-              uVar13 = *(uint *)((int)pvVar3 + iVar4 * 4 + 8);
+              iVar3 = iVar3 + -1;
+              uVar13 = *(uint *)((int)pvVar2 + iVar3 * 4 + 8);
               while ((uVar11 != 0 &&
-                     (iVar7 = (*local_3c)(in_EAX,puVar2[uVar11 + 1],uVar13), 0 < iVar7))) {
+                     (iVar6 = (*local_3c)(in_EAX,puVar7[uVar11 + 1],uVar13), 0 < iVar6))) {
                 iVar1 = uVar11 + 1;
-                iVar7 = uVar11 + iVar4;
+                iVar6 = uVar11 + iVar3;
                 uVar11 = uVar11 - 1;
-                puVar2[iVar7 + 2] = puVar2[iVar1];
+                puVar7[iVar6 + 2] = puVar7[iVar1];
               }
-              puVar2[uVar11 + iVar4 + 2] = uVar13;
-            } while (iVar4 != 0);
-            puVar2[1] = puVar2[1] + *(int *)((int)pvVar3 + 4);
+              puVar7[uVar11 + iVar3 + 2] = uVar13;
+            } while (iVar3 != 0);
+            puVar7[1] = puVar7[1] + *(int *)((int)pvVar2 + 4);
           }
           _free(local_18);
         }
@@ -1315,13 +1350,13 @@ LAB_00402675:
   }
   if ((bVar10 & 1) == 0) {
     if ((bVar10 & 2) == 0) {
-      piVar6 = _linear_search_fdes(param_2,(int *)in_EAX[3],param_2);
-      return piVar6;
+      piVar5 = _linear_search_fdes(param_2,(int *)in_EAX[3],param_2);
+      return piVar5;
     }
     for (ppiVar12 = (int **)in_EAX[3]; *ppiVar12 != (int *)0x0; ppiVar12 = ppiVar12 + 1) {
-      piVar6 = _linear_search_fdes(in_EAX,*ppiVar12,param_2);
-      if (piVar6 != (int *)0x0) {
-        return piVar6;
+      piVar5 = _linear_search_fdes(in_EAX,*ppiVar12,param_2);
+      if (piVar5 != (int *)0x0) {
+        return piVar5;
       }
       in_EAX = extraout_ECX_01;
     }
@@ -1333,14 +1368,14 @@ LAB_00402675:
       bVar16 = (*(ushort *)(in_EAX + 4) >> 3 & 0xff) < uVar13;
       while (bVar16) {
         uVar9 = uVar11 + uVar13 >> 1;
-        piVar6 = *(int **)(in_EAX[3] + 8 + uVar9 * 4);
-        if (param_2 < (uint)piVar6[2]) {
+        piVar5 = *(int **)(in_EAX[3] + 8 + uVar9 * 4);
+        if (param_2 < (uint)piVar5[2]) {
           bVar16 = uVar11 < uVar9;
           uVar13 = uVar9;
         }
         else {
-          if (param_2 < (uint)(piVar6[2] + piVar6[3])) {
-            return piVar6;
+          if (param_2 < (uint)(piVar5[2] + piVar5[3])) {
+            return piVar5;
           }
           uVar11 = uVar9 + 1;
           bVar16 = uVar11 < uVar13;
@@ -1349,18 +1384,18 @@ LAB_00402675:
     }
     else {
       uVar11 = in_EAX[3];
-      iVar4 = _base_from_object(param_1,(int)in_EAX);
+      iVar3 = _base_from_object(param_1,(int)in_EAX);
       local_68 = 0;
       uVar13 = *(uint *)(uVar11 + 4);
       if (uVar13 != 0) {
         do {
           uVar9 = local_68 + uVar13 >> 1;
-          piVar6 = *(int **)(uVar11 + 8 + uVar9 * 4);
-          puVar5 = _read_encoded_value_with_base(&local_28,iVar4,piVar6 + 2,&local_28);
-          _read_encoded_value_with_base(extraout_ECX_06,0,puVar5,&local_2c);
+          piVar5 = *(int **)(uVar11 + 8 + uVar9 * 4);
+          puVar4 = _read_encoded_value_with_base(&local_28,iVar3,piVar5 + 2,&local_28);
+          _read_encoded_value_with_base(extraout_ECX_06,0,puVar4,&local_2c);
           if (local_28 <= param_2) {
             if (param_2 < local_28 + local_2c) {
-              return piVar6;
+              return piVar5;
             }
             local_68 = uVar9 + 1;
             uVar9 = uVar13;
@@ -1377,14 +1412,14 @@ LAB_00402675:
     if (local_58 != 0) {
       do {
         uVar13 = local_54 + local_58 >> 1;
-        piVar6 = *(int **)(uVar11 + 8 + uVar13 * 4);
+        piVar5 = *(int **)(uVar11 + 8 + uVar13 * 4);
         _get_cie_encoding();
-        iVar4 = _base_from_object(extraout_ECX,(int)in_EAX);
-        puVar5 = _read_encoded_value_with_base(extraout_ECX_00,iVar4,piVar6 + 2,&local_20);
-        _read_encoded_value_with_base(&local_24,0,puVar5,&local_24);
+        iVar3 = _base_from_object(extraout_ECX,(int)in_EAX);
+        puVar4 = _read_encoded_value_with_base(extraout_ECX_00,iVar3,piVar5 + 2,&local_20);
+        _read_encoded_value_with_base(&local_24,0,puVar4,&local_24);
         if (local_20 <= param_2) {
           if (param_2 < local_20 + local_24) {
-            return piVar6;
+            return piVar5;
           }
           local_54 = uVar13 + 1;
           uVar13 = local_58;
@@ -1412,32 +1447,32 @@ int * ___w32_sharedptr_get(void)
   int iVar6;
   int iVar7;
   int *piVar8;
-  CHAR aCStack248 [32];
-  undefined4 uStack216;
-  undefined4 uStack212;
-  undefined4 uStack208;
-  undefined4 uStack204;
-  undefined4 uStack200;
-  undefined4 uStack196;
-  undefined4 uStack192;
-  undefined uStack188;
-  undefined4 uStack184;
-  undefined4 uStack180;
-  undefined4 uStack176;
-  undefined4 uStack172;
-  undefined4 uStack168;
-  undefined4 uStack164;
-  undefined4 uStack160;
-  undefined4 uStack156;
-  undefined4 uStack152;
-  undefined4 uStack148;
-  undefined4 uStack144;
-  undefined4 uStack140;
-  undefined4 uStack136;
-  undefined4 uStack132;
-  undefined4 uStack128;
-  undefined uStack124;
-  undefined4 uStack108;
+  CHAR aCStack_f8 [32];
+  undefined4 uStack_d8;
+  undefined4 uStack_d4;
+  undefined4 uStack_d0;
+  undefined4 uStack_cc;
+  undefined4 uStack_c8;
+  undefined4 uStack_c4;
+  undefined4 uStack_c0;
+  undefined uStack_bc;
+  undefined4 uStack_b8;
+  undefined4 uStack_b4;
+  undefined4 uStack_b0;
+  undefined4 uStack_ac;
+  undefined4 uStack_a8;
+  undefined4 uStack_a4;
+  undefined4 uStack_a0;
+  undefined4 uStack_9c;
+  undefined4 uStack_98;
+  undefined4 uStack_94;
+  undefined4 uStack_90;
+  undefined4 uStack_8c;
+  undefined4 uStack_88;
+  undefined4 uStack_84;
+  undefined4 uStack_80;
+  undefined uStack_7c;
+  undefined4 uStack_6c;
   CHAR local_4c [68];
   
   piVar8 = (int *)0x0;
@@ -1462,27 +1497,48 @@ LAB_00402a0a:
     __assert();
   }
   piVar8 = (int *)__assert();
-  uStack108 = 0xf1;
+  uStack_6c = 0xf1;
   if (___w32_sharedptr != (int *)0x0) {
     return piVar8;
   }
-  uStack184 = 0x41414141;
-  uStack180 = 0x41414141;
-  uStack176 = 0x41414141;
-  uStack152 = 0x42494c2d;
-  uStack172 = 0x41414141;
-  uStack168 = 0x41414141;
-  uStack148 = 0x57434347;
-  uStack164 = 0x41414141;
-  uStack160 = 0x41414141;
-  uStack144 = 0x452d3233;
-  uStack156 = 0x41414141;
-  uStack140 = 0x2d332d48;
-  uStack136 = 0x52485447;
-  uStack132 = 0x4e494d2d;
-  uStack128 = 0x32335747;
-  uStack124 = 0;
-  AVar1 = _FindAtomA_4((LPCSTR)&uStack184);
+  uStack_b8 = 0x41414141;
+  uStack_b4 = 0x41414141;
+  uStack_b0 = 0x41414141;
+  uStack_98._0_1_ = '-';
+  uStack_98._1_1_ = 'L';
+  uStack_98._2_1_ = 'I';
+  uStack_98._3_1_ = 'B';
+  uStack_ac = 0x41414141;
+  uStack_a8 = 0x41414141;
+  uStack_94._0_1_ = 'G';
+  uStack_94._1_1_ = 'C';
+  uStack_94._2_1_ = 'C';
+  uStack_94._3_1_ = 'W';
+  uStack_a4 = 0x41414141;
+  uStack_a0 = 0x41414141;
+  uStack_90._0_1_ = '3';
+  uStack_90._1_1_ = '2';
+  uStack_90._2_1_ = '-';
+  uStack_90._3_1_ = 'E';
+  uStack_9c = 0x41414141;
+  uStack_8c._0_1_ = 'H';
+  uStack_8c._1_1_ = '-';
+  uStack_8c._2_1_ = '3';
+  uStack_8c._3_1_ = '-';
+  uStack_88._0_1_ = 'G';
+  uStack_88._1_1_ = 'T';
+  uStack_88._2_1_ = 'H';
+  uStack_88._3_1_ = 'R';
+  uStack_84._0_1_ = '-';
+  uStack_84._1_1_ = 'M';
+  uStack_84._2_1_ = 'I';
+  uStack_84._3_1_ = 'N';
+  uStack_80._0_1_ = 'G';
+  uStack_80._1_1_ = 'W';
+  uStack_80._2_1_ = '3';
+  uStack_80._3_1_ = '2';
+  uStack_7c = 0;
+  AVar1 = _FindAtomA_4((LPCSTR)&uStack_b8);
   if (AVar1 == 0) {
     piVar8 = (int *)_malloc(0x40);
     if (piVar8 == (int *)0x0) {
@@ -1520,29 +1576,50 @@ LAB_00402a0a:
     do {
       uVar3 = (uint)piVar8 & uVar5;
       uVar5 = uVar5 * 2;
-      aCStack248[iVar7] = (-(uVar3 == 0) & 0x20U) + 0x41;
+      aCStack_f8[iVar7] = (-(uVar3 == 0) & 0x20U) + 0x41;
       iVar7 = iVar7 + -1;
     } while (-1 < iVar7);
-    uStack216 = 0x42494c2d;
-    uStack212 = 0x57434347;
-    uStack208 = 0x452d3233;
-    uStack204 = 0x2d332d48;
-    uStack200 = 0x52485447;
-    uStack196 = 0x4e494d2d;
-    uStack192 = 0x32335747;
-    uStack188 = 0;
-    AVar1 = _AddAtomA_4(aCStack248);
+    uStack_d8._0_1_ = '-';
+    uStack_d8._1_1_ = 'L';
+    uStack_d8._2_1_ = 'I';
+    uStack_d8._3_1_ = 'B';
+    uStack_d4._0_1_ = 'G';
+    uStack_d4._1_1_ = 'C';
+    uStack_d4._2_1_ = 'C';
+    uStack_d4._3_1_ = 'W';
+    uStack_d0._0_1_ = '3';
+    uStack_d0._1_1_ = '2';
+    uStack_d0._2_1_ = '-';
+    uStack_d0._3_1_ = 'E';
+    uStack_cc._0_1_ = 'H';
+    uStack_cc._1_1_ = '-';
+    uStack_cc._2_1_ = '3';
+    uStack_cc._3_1_ = '-';
+    uStack_c8._0_1_ = 'G';
+    uStack_c8._1_1_ = 'T';
+    uStack_c8._2_1_ = 'H';
+    uStack_c8._3_1_ = 'R';
+    uStack_c4._0_1_ = '-';
+    uStack_c4._1_1_ = 'M';
+    uStack_c4._2_1_ = 'I';
+    uStack_c4._3_1_ = 'N';
+    uStack_c0._0_1_ = 'G';
+    uStack_c0._1_1_ = 'W';
+    uStack_c0._2_1_ = '3';
+    uStack_c0._3_1_ = '2';
+    uStack_bc = 0;
+    AVar1 = _AddAtomA_4(aCStack_f8);
     if ((AVar1 == 0) || (piVar4 = ___w32_sharedptr_get(), piVar4 != piVar8)) {
       AVar1 = 0;
     }
     if (AVar1 != 0) goto LAB_00402c46;
     _free(piVar8);
-    _FindAtomA_4((LPCSTR)&uStack184);
+    _FindAtomA_4((LPCSTR)&uStack_b8);
   }
   piVar8 = ___w32_sharedptr_get();
 LAB_00402c46:
-  ____w32_sharedptr_terminate = piVar8 + 1;
   ___w32_sharedptr = piVar8;
+  ____w32_sharedptr_terminate = piVar8 + 1;
   ____w32_sharedptr_unexpected = piVar8 + 2;
   return piVar8 + 2;
 }
@@ -1593,18 +1670,39 @@ void ___w32_sharedptr_initialize(void)
   local_5c = 0x41414141;
   local_58 = 0x41414141;
   local_54 = 0x41414141;
-  local_3c = 0x42494c2d;
+  local_3c._0_1_ = '-';
+  local_3c._1_1_ = 'L';
+  local_3c._2_1_ = 'I';
+  local_3c._3_1_ = 'B';
   local_50 = 0x41414141;
   local_4c = 0x41414141;
-  local_38 = 0x57434347;
+  local_38._0_1_ = 'G';
+  local_38._1_1_ = 'C';
+  local_38._2_1_ = 'C';
+  local_38._3_1_ = 'W';
   local_48 = 0x41414141;
   local_44 = 0x41414141;
-  local_34 = 0x452d3233;
+  local_34._0_1_ = '3';
+  local_34._1_1_ = '2';
+  local_34._2_1_ = '-';
+  local_34._3_1_ = 'E';
   local_40 = 0x41414141;
-  local_30 = 0x2d332d48;
-  local_2c = 0x52485447;
-  local_28 = 0x4e494d2d;
-  local_24 = 0x32335747;
+  local_30._0_1_ = 'H';
+  local_30._1_1_ = '-';
+  local_30._2_1_ = '3';
+  local_30._3_1_ = '-';
+  local_2c._0_1_ = 'G';
+  local_2c._1_1_ = 'T';
+  local_2c._2_1_ = 'H';
+  local_2c._3_1_ = 'R';
+  local_28._0_1_ = '-';
+  local_28._1_1_ = 'M';
+  local_28._2_1_ = 'I';
+  local_28._3_1_ = 'N';
+  local_24._0_1_ = 'G';
+  local_24._1_1_ = 'W';
+  local_24._2_1_ = '3';
+  local_24._3_1_ = '2';
   local_20 = 0;
   AVar1 = _FindAtomA_4((LPCSTR)&local_5c);
   if (AVar1 == 0) {
@@ -1647,13 +1745,34 @@ void ___w32_sharedptr_initialize(void)
       local_9c[iVar6] = (-(uVar2 == 0) & 0x20U) + 0x41;
       iVar6 = iVar6 + -1;
     } while (-1 < iVar6);
-    local_7c = 0x42494c2d;
-    local_78 = 0x57434347;
-    local_74 = 0x452d3233;
-    local_70 = 0x2d332d48;
-    local_6c = 0x52485447;
-    local_68 = 0x4e494d2d;
-    local_64 = 0x32335747;
+    local_7c._0_1_ = '-';
+    local_7c._1_1_ = 'L';
+    local_7c._2_1_ = 'I';
+    local_7c._3_1_ = 'B';
+    local_78._0_1_ = 'G';
+    local_78._1_1_ = 'C';
+    local_78._2_1_ = 'C';
+    local_78._3_1_ = 'W';
+    local_74._0_1_ = '3';
+    local_74._1_1_ = '2';
+    local_74._2_1_ = '-';
+    local_74._3_1_ = 'E';
+    local_70._0_1_ = 'H';
+    local_70._1_1_ = '-';
+    local_70._2_1_ = '3';
+    local_70._3_1_ = '-';
+    local_6c._0_1_ = 'G';
+    local_6c._1_1_ = 'T';
+    local_6c._2_1_ = 'H';
+    local_6c._3_1_ = 'R';
+    local_68._0_1_ = '-';
+    local_68._1_1_ = 'M';
+    local_68._2_1_ = 'I';
+    local_68._3_1_ = 'N';
+    local_64._0_1_ = 'G';
+    local_64._1_1_ = 'W';
+    local_64._2_1_ = '3';
+    local_64._3_1_ = '2';
     local_60 = 0;
     AVar1 = _AddAtomA_4(local_9c);
     if ((AVar1 == 0) || (piVar3 = ___w32_sharedptr_get(), piVar3 != _Memory)) {
@@ -1665,8 +1784,8 @@ void ___w32_sharedptr_initialize(void)
   }
   _Memory = ___w32_sharedptr_get();
 LAB_00402c46:
-  ____w32_sharedptr_terminate = _Memory + 1;
   ___w32_sharedptr = _Memory;
+  ____w32_sharedptr_terminate = _Memory + 1;
   ____w32_sharedptr_unexpected = _Memory + 2;
   return;
 }
@@ -1706,8 +1825,6 @@ void ___p__fmode(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl
 ___getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinfo *_StartInfo)
 
@@ -1716,13 +1833,11 @@ ___getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinf
   
                     // WARNING: Could not recover jumptable at 0x00402d10. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = __getmainargs();
+  iVar1 = __getmainargs(_Argc,_Argv,_Env,_DoWildCard,_StartInfo);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl _scanf(char *_Format,...)
 
@@ -1731,13 +1846,11 @@ int __cdecl _scanf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00402d20. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = scanf();
+  iVar1 = scanf(_Format);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl _printf(char *_Format,...)
 
@@ -1746,13 +1859,11 @@ int __cdecl _printf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00402d30. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = printf();
+  iVar1 = printf(_Format);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 size_t __cdecl _strlen(char *_Str)
 
@@ -1761,26 +1872,22 @@ size_t __cdecl _strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x00402d40. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _free(void *_Memory)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402d50. Too many branches
                     // WARNING: Treating indirect jump as call
-  free();
+  free(_Memory);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl _malloc(size_t _Size)
 
@@ -1789,18 +1896,17 @@ void * __cdecl _malloc(size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x00402d60. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)malloc();
+  pvVar1 = malloc(_Size);
   return pvVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402d70. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
   abort();
   return;
@@ -1819,14 +1925,13 @@ void __assert(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void _ExitProcess_4(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402d90. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  ExitProcess();
+  ExitProcess(uExitCode);
   return;
 }
 
@@ -1966,7 +2071,7 @@ ATOM _FindAtomA_4(LPCSTR lpString)
 void ___dereg_frame_dtor(void)
 
 {
-  ___deregister_frame_info((int *)&___EH_FRAME_BEGIN__);
+  ___do_frame_fini();
   return;
 }
 

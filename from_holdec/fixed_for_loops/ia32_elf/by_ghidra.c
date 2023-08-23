@@ -68,7 +68,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -143,6 +143,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -229,6 +230,17 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -263,14 +275,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -325,7 +337,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -347,7 +359,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -360,7 +372,7 @@ int putchar(int __c)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs(char *__s,FILE *__stream)
 
@@ -388,10 +400,13 @@ int main(int param_1,char **param_2)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -11147,9 +11162,9 @@ undefined4 var0588_0(void)
   fputs("0588 unsign start:0, iter:1, inc:+1, order:ujb cmp:< 0 exp:+48         expected=\'0\'   >",
         stdout);
   iVar1 = -1;
-  while (iVar1 + 1 == 0) {
-    putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
+  while (iVar1 == -1) {
+    putchar(0x30);
+    iVar1 = 0;
   }
   puts("<");
   return 0;
@@ -11165,9 +11180,9 @@ undefined4 var0589_0(void)
   fputs("0589 unsign start:0, iter:1, inc:+1, order:ujb cmp:<=0 exp:+48         expected=\'0\'   >",
         stdout);
   iVar1 = -1;
-  while (iVar1 + 1 == 0) {
-    putchar(iVar1 + 0x31);
-    iVar1 = iVar1 + 1;
+  while (iVar1 == -1) {
+    putchar(0x30);
+    iVar1 = 0;
   }
   puts("<");
   return 0;
@@ -12781,11 +12796,12 @@ undefined4 var0680_0(void)
   
   fputs("0680 unsign start:0, iter:1, inc:+1, order:ujb cmp:< 0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 = iVar1 + 1, iVar1 == 0) {
+  iVar1 = -1;
+  while (iVar1 == -1) {
     putchar(__c);
     __c = __c + 1;
+    iVar1 = 0;
   }
   puts("<");
   return 0;
@@ -12801,11 +12817,12 @@ undefined4 var0681_0(void)
   
   fputs("0681 unsign start:0, iter:1, inc:+1, order:ujb cmp:<=0 second:=48 +1   expected=\'0\'   >",
         stdout);
-  iVar1 = -1;
   __c = 0x30;
-  while (iVar1 = iVar1 + 1, iVar1 == 0) {
+  iVar1 = -1;
+  while (iVar1 == -1) {
     putchar(__c);
     __c = __c + 1;
+    iVar1 = 0;
   }
   puts("<");
   return 0;

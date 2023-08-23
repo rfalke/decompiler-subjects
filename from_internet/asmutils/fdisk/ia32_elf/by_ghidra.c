@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -37,44 +64,44 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(void)
 
 {
   char cVar1;
   code *pcVar2;
   int iVar3;
-  uint uVar4;
-  char *pcVar5;
-  undefined4 uVar6;
+  char *pcVar4;
+  undefined4 uVar5;
+  int *piVar6;
   int *piVar7;
   int *piVar8;
-  uint *puVar9;
-  uint uVar10;
+  int iVar9;
+  int iVar10;
   undefined *puVar11;
   
   do {
-    piVar7 = (int *)((int)register0x00000010 + 4);
+    piVar6 = (int *)((int)register0x00000010 + 4);
     if (*(int *)register0x00000010 == 2) {
-      pcVar5 = *(char **)((int)register0x00000010 + 8);
+      pcVar4 = *(char **)((int)register0x00000010 + 8);
       *(undefined4 *)((int)register0x00000010 + 8) = 5;
       pcVar2 = (code *)swi(0x80);
       iVar3 = (*pcVar2)();
-      piVar7 = (int *)((int)register0x00000010 + 0x10);
+      piVar6 = (int *)((int)register0x00000010 + 0x10);
       if (-1 < iVar3) {
         *(int *)((int)register0x00000010 + 0xc) = iVar3;
         do {
-          cVar1 = *pcVar5;
-          pcVar5 = pcVar5 + 1;
+          cVar1 = *pcVar4;
+          pcVar4 = pcVar4 + 1;
         } while (cVar1 != '\0');
         *(undefined4 *)((int)register0x00000010 + 8) = 1;
         *(undefined4 *)((int)register0x00000010 + 8) = 4;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        uVar6 = *(int *)((int)register0x00000010 + 0x10);
+        uVar5 = *(int *)((int)register0x00000010 + 0x10);
         *(undefined4 *)((int)register0x00000010 + 0x10) = 0x36;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        *(undefined4 *)((int)register0x00000010 + 0x14) = uVar6;
+        *(undefined4 *)((int)register0x00000010 + 0x14) = uVar5;
         *(undefined4 *)((int)register0x00000010 + 0x10) = 1;
         *(undefined4 *)((int)register0x00000010 + 0x10) = 4;
         pcVar2 = (code *)swi(0x80);
@@ -86,95 +113,95 @@ void entry(void)
         *(undefined4 *)((int)register0x00000010 + 0x14) = 4;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        uVar6 = *(int *)((int)register0x00000010 + 0x1c);
+        uVar5 = *(int *)((int)register0x00000010 + 0x1c);
         *(undefined4 *)((int)register0x00000010 + 0x1c) = 3;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        piVar8 = (int *)((int)register0x00000010 + 0x24);
+        piVar7 = (int *)((int)register0x00000010 + 0x24);
         puVar11 = &DAT_080486ce;
-        uVar4 = 0;
-        DAT_080484ec = uVar6;
+        iVar3 = 0;
+        DAT_080484ec = uVar5;
         do {
-          *(uint *)((int)register0x00000010 + 0x20) = uVar4;
+          *(int *)((int)register0x00000010 + 0x20) = iVar3;
           *(undefined **)((int)register0x00000010 + 0x1c) = puVar11;
           *(undefined4 *)((int)register0x00000010 + 0x18) = 0x80480da;
           FUN_080481eb();
-          uVar4 = *(uint *)((int)register0x00000010 + 0x20) & 0xffffff00 |
-                  (uint)(byte)((char)*(uint *)((int)register0x00000010 + 0x20) + 1);
+          iVar3 = CONCAT31((int3)((uint)*(int *)((int)register0x00000010 + 0x20) >> 8),
+                           (char)*(int *)((int)register0x00000010 + 0x20) + '\x01');
           puVar11 = (undefined *)(*(int *)((int)register0x00000010 + 0x1c) + 0x10);
         } while (puVar11 != &DAT_0804870e);
         if (DAT_080484f0 != 0) {
           _DAT_080484f4 = DAT_080484f0;
           *(uint *)((int)register0x00000010 + 0x20) = DAT_080484f0 >> 0x17;
-          piVar8 = (int *)((int)register0x00000010 + 0x1c);
+          piVar7 = (int *)((int)register0x00000010 + 0x1c);
           *(uint *)((int)register0x00000010 + 0x1c) = DAT_080484f0 << 9;
           do {
             pcVar2 = (code *)swi(0x80);
             (*pcVar2)();
-            *(undefined4 *)((int)piVar8 + 8) = 3;
+            *(undefined4 *)((int)piVar7 + 8) = 3;
             pcVar2 = (code *)swi(0x80);
             (*pcVar2)();
-            piVar8 = (int *)((int)piVar8 + 0x10);
+            piVar7 = (int *)((int)piVar7 + 0x10);
             puVar11 = &DAT_080486ce;
-            iVar3 = 0;
-            uVar10 = uVar4;
+            iVar10 = 0;
+            iVar9 = iVar3;
             do {
               if (((puVar11[4] == '\x05') || (puVar11[4] == '\x0f')) || (puVar11[4] == -0x7b)) {
-                iVar3 = iVar3 + 1;
+                iVar10 = iVar10 + 1;
                 _DAT_080484f4 = *(uint *)(puVar11 + 8) + DAT_080484f0;
-                uVar4 = _DAT_080484f4 * 0x200;
-                *(uint *)((int)piVar8 + -4) =
+                iVar3 = _DAT_080484f4 * 0x200;
+                *(uint *)((int)piVar7 + -4) =
                      (uint)CARRY4(*(uint *)(puVar11 + 8),DAT_080484f0) << 9 | _DAT_080484f4 >> 0x17;
-                puVar9 = (uint *)((int)piVar8 + -8);
-                piVar8 = (int *)((int)piVar8 + -8);
-                *puVar9 = uVar4;
+                piVar8 = (int *)((int)piVar7 + -8);
+                piVar7 = (int *)((int)piVar7 + -8);
+                *piVar8 = iVar3;
               }
               else if (puVar11[4] != '\0') {
-                *(uint *)((int)piVar8 + -4) = uVar4;
-                *(undefined **)((int)piVar8 + -8) = puVar11;
-                *(int *)((int)piVar8 + -0xc) = iVar3;
-                *(undefined4 *)((int)piVar8 + -0x10) = 0x804815c;
+                *(int *)((int)piVar7 + -4) = iVar3;
+                *(undefined **)((int)piVar7 + -8) = puVar11;
+                *(int *)((int)piVar7 + -0xc) = iVar10;
+                *(undefined4 *)((int)piVar7 + -0x10) = 0x804815c;
                 FUN_080481eb();
-                iVar3 = *(int *)((int)piVar8 + -0xc);
-                puVar11 = *(undefined **)((int)piVar8 + -8);
-                uVar4 = *(uint *)((int)piVar8 + -4) & 0xffffff00 |
-                        (uint)(byte)((char)*(uint *)((int)piVar8 + -4) + 1);
-                uVar10 = uVar4;
+                iVar10 = *(int *)((int)piVar7 + -0xc);
+                puVar11 = *(undefined **)((int)piVar7 + -8);
+                iVar3 = CONCAT31((int3)((uint)*(undefined4 *)((int)piVar7 + -4) >> 8),
+                                 (char)*(undefined4 *)((int)piVar7 + -4) + '\x01');
+                iVar9 = iVar3;
               }
               puVar11 = puVar11 + 0x10;
             } while (puVar11 != &DAT_0804870e);
-            uVar4 = uVar10;
-          } while (iVar3 != 0);
+            iVar3 = iVar9;
+          } while (iVar10 != 0);
         }
-        piVar8[-1] = 6;
+        piVar7[-1] = 6;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        *piVar8 = 1;
+        *piVar7 = 1;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        piVar8[1] = 0x80481b2;
+        piVar7[1] = 0x80481b2;
         FUN_080483df();
-        piVar8[1] = 1;
-        piVar8[1] = 1;
-        piVar8[1] = 4;
+        piVar7[1] = 1;
+        piVar7[1] = 1;
+        piVar7[1] = 4;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        piVar8[2] = 0x80481ce;
+        piVar7[2] = 0x80481ce;
         FUN_080483df();
-        piVar8[2] = 1;
-        piVar8[2] = 1;
-        piVar8[2] = 4;
+        piVar7[2] = 1;
+        piVar7[2] = 1;
+        piVar7[2] = 4;
         pcVar2 = (code *)swi(0x80);
         (*pcVar2)();
-        piVar8[3] = 0x80481ea;
+        piVar7[3] = 0x80481ea;
         FUN_080483df();
         return;
       }
     }
-    *(undefined4 *)((int)piVar7 + -4) = 1;
+    *(undefined4 *)((int)piVar6 + -4) = 1;
     pcVar2 = (code *)swi(0x80);
     (*pcVar2)();
-    register0x00000010 = (BADSPACEBASE *)((int)piVar7 + 4);
+    register0x00000010 = (BADSPACEBASE *)((int)piVar6 + 4);
   } while( true );
 }
 
@@ -265,10 +292,10 @@ void __regparm3 FUN_080483ff(uint param_1)
   uint *puVar4;
   undefined4 *puVar5;
   char *unaff_EDI;
-  uint auStack8 [2];
+  uint auStack_8 [2];
   
-  puVar3 = auStack8 + 1;
-  auStack8[1] = 0;
+  puVar3 = auStack_8 + 1;
+  auStack_8[1] = 0;
   do {
     uVar1 = param_1 / 10;
     puVar4 = (uint *)((int)puVar3 + -4);

@@ -81,6 +81,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -196,6 +197,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -204,14 +216,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -271,7 +283,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -316,14 +328,13 @@ undefined8 main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -396,1495 +407,1557 @@ void frame_dummy(void)
 
 
 // WARNING: Removing unreachable block (ram,0x00401be5)
-// WARNING: Removing unreachable block (ram,0x004013ac)
-// WARNING: Removing unreachable block (ram,0x0040125d)
 // WARNING: Removing unreachable block (ram,0x00401364)
+// WARNING: Removing unreachable block (ram,0x0040125d)
+// WARNING: Removing unreachable block (ram,0x004013ac)
 // WARNING: Removing unreachable block (ram,0x0040167f)
 // WARNING: Removing unreachable block (ram,0x00401f26)
 // WARNING: Removing unreachable block (ram,0x00401740)
-// WARNING: Removing unreachable block (ram,0x00401378)
 // WARNING: Removing unreachable block (ram,0x00401390)
+// WARNING: Removing unreachable block (ram,0x00401378)
 // WARNING: Removing unreachable block (ram,0x004013c4)
 
 long log_size_10_var_000(void)
 
 {
-  uint uVar1;
+  int iVar1;
   undefined auVar2 [16];
   undefined auVar3 [16];
   undefined auVar4 [16];
-  uint3 uVar5;
-  unkuint9 Var6;
-  uint uVar7;
-  uint5 uVar8;
-  char cVar9;
-  short sVar10;
-  char cVar13;
-  ushort uVar11;
-  ulong uVar12;
-  ushort uVar14;
-  uint uVar15;
-  int iVar16;
-  ulong uVar17;
-  uint6 uVar18;
-  byte bVar19;
-  char cVar20;
-  ushort uVar21;
-  ushort uVar22;
-  uint uVar23;
-  ulong uVar24;
-  ulong uVar25;
-  short sVar26;
-  uint uVar27;
-  ulong uVar28;
-  ushort uVar29;
-  uint uVar30;
-  ulong uVar31;
-  byte bVar32;
-  uint uVar33;
-  ulong uVar34;
-  byte bVar35;
-  uint uVar36;
-  ulong uVar37;
+  undefined auVar5 [16];
+  undefined auVar6 [16];
+  undefined auVar7 [16];
+  undefined auVar8 [16];
+  undefined auVar9 [16];
+  uint3 uVar10;
+  undefined2 uVar11;
+  undefined2 uVar12;
+  undefined3 uVar13;
+  unkuint9 Var14;
+  uint3 uVar15;
+  uint uVar16;
+  uint5 uVar17;
+  byte bVar18;
+  byte bVar21;
+  ushort uVar19;
+  uint7 uVar22;
+  undefined8 uVar20;
+  byte bVar23;
+  ushort uVar24;
+  int iVar25;
+  ulong uVar26;
+  short sVar27;
+  long lVar28;
+  uint6 uVar29;
+  byte bVar30;
+  ushort uVar31;
+  ushort uVar32;
+  ulong uVar33;
+  long lVar34;
+  ulong uVar35;
+  ulong uVar36;
+  undefined8 uVar37;
   uint uVar38;
-  uint uVar39;
-  byte bVar40;
-  uint uVar41;
+  int iVar39;
+  ulong uVar40;
+  byte bVar41;
   uint uVar42;
   uint uVar43;
-  ushort uVar44;
-  short sVar45;
-  ulong uVar46;
-  long lVar47;
-  byte bVar48;
-  byte bVar49;
-  ulong uVar50;
-  ushort uVar51;
-  ushort uVar52;
+  ulong uVar44;
+  undefined6 uVar45;
+  char cVar46;
+  uint uVar47;
+  ulong uVar48;
+  uint uVar49;
+  undefined6 uVar50;
+  char cVar51;
+  short sVar52;
   uint uVar53;
   uint uVar54;
-  long lVar55;
-  ulong uVar56;
-  bool bVar57;
-  bool bVar58;
+  uint uVar55;
+  long lVar56;
+  ushort uVar57;
+  int iVar58;
+  undefined8 uVar59;
+  ushort uVar60;
+  short sVar61;
+  short sVar62;
+  uint uVar63;
+  ulong uVar64;
+  ulong uVar65;
+  char cVar66;
+  ushort uVar67;
+  ushort uVar68;
+  uint uVar69;
+  long lVar70;
+  ulong uVar71;
+  bool bVar72;
+  bool bVar73;
   char in_AF;
   
-  for (uVar14 = 0; (0x419U >> uVar14 & 1) == 0; uVar14 = uVar14 + 1) {
+  for (uVar24 = 0; (0x419U >> uVar24 & 1) == 0; uVar24 = uVar24 + 1) {
   }
-  uVar21 = ~(1 << (uVar14 & 0xf)) & 0x7744;
-  uVar12 = (ulong)(uVar21 | 0x6f160000);
-  bVar32 = (byte)uVar21;
-  iVar16 = (uint)bVar32 * 0xb95c;
-  auVar2 = ZEXT416((uint)(CONCAT22(0x1140,(short)((uint)iVar16 >> 0x10)) << 0xc)) << 0x40 |
-           ZEXT216((ushort)(short)(char)iVar16);
-  auVar3 = auVar2 / ZEXT816(0xe8afda86c9dbcad7);
-  auVar2 = auVar2 % ZEXT816(0xe8afda86c9dbcad7);
-  uVar54 = SUB164(auVar3,0) >> 0xb;
-  uVar41 = uVar54 | 0x5ae00000;
-  uVar17 = SUB168(auVar3,0) & 0xffffffffffff9b0e;
-  cVar13 = (char)uVar14 + 'T';
-  cVar9 = cVar13 + (char)uVar54;
-  uVar38 = 0xffffffff;
-  if (cVar9 != -1 &&
-      (SCARRY1(cVar13,(char)uVar54) != SCARRY1(cVar9,'\x01')) == (char)(cVar9 + '\x01') < '\0') {
-    uVar38 = uVar41;
+  uVar31 = ~(1 << (uVar24 & 0xf)) & 0x7744;
+  bVar41 = (byte)uVar31;
+  iVar25 = (uint)bVar41 * 0xb95c;
+  auVar4 = ZEXT416((uint)(CONCAT22(0x1140,(short)((uint)iVar25 >> 0x10)) << 0xc)) << 0x40 |
+           ZEXT216((ushort)(short)(char)iVar25);
+  auVar8 = auVar4 / ZEXT816(0xe8afda86c9dbcad7);
+  auVar4 = auVar4 % ZEXT816(0xe8afda86c9dbcad7);
+  uVar49 = auVar8._0_4_ >> 0xb;
+  uVar53 = uVar49 | 0x5ae00000;
+  cVar51 = (char)uVar49;
+  uVar44 = auVar8._0_8_ & 0xffffffffffff9b0e;
+  cVar66 = (char)uVar24 + 'T';
+  cVar46 = cVar66 + cVar51;
+  uVar49 = 0xffffffff;
+  if (cVar46 != -1 &&
+      (SCARRY1(cVar66,cVar51) != SCARRY1(cVar46,'\x01')) == (char)(cVar46 + '\x01') < '\0') {
+    uVar49 = uVar53;
   }
-  uVar5 = CONCAT12((auVar2 & (undefined  [16])0x1) != (undefined  [16])0x0,0xd8b1) >> 5;
-  uVar54 = uVar54 | 0x25c01600 | SUB164(auVar2,0) >> 1 | 0x80000000;
-  auVar2 = ZEXT816(uVar17) * ZEXT816(uVar17);
-  bVar57 = SUB168(auVar2 >> 0x40,0) != 0;
-  if (bVar57) {
-    uVar41 = SUB164(auVar2,0);
+  uVar10 = CONCAT12((auVar4 & (undefined  [16])0x1) != (undefined  [16])0x0,0xd8b1) >> 5;
+  uVar55 = CONCAT31(0x200000,cVar51) | 0x5c01600 | auVar4._0_4_ >> 1 | 0x80000000;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = uVar44;
+  auVar8._8_8_ = 0;
+  auVar8._0_8_ = uVar44;
+  auVar4 = auVar4 * auVar8;
+  bVar72 = auVar4._8_8_ != 0;
+  if (bVar72) {
+    uVar53 = auVar4._0_4_;
   }
-  uVar14 = (ushort)(CONCAT12(bVar57,0x4e05) >> 0xc) | 0xc0a0;
-  bVar35 = (byte)uVar14;
-  uVar17 = uVar12 & 0xffffffffffffff00 | (ulong)(byte)-bVar32;
-  sVar10 = SUB162(auVar2,0);
-  lVar47 = (ulong)uVar54 + 0x5e0e92a2 + ((ulong)uVar14 | 0xffffffff8c1f0000) * 2;
-  uVar30 = (uint)(0x4000000000000 >> (bVar35 & 0x3f)) | (uint)(uVar17 << 0x40 - (bVar35 & 0x3f));
-  uVar28 = (ulong)uVar38 ^ 1 << ((ulong)(uint)(int)sVar10 & 0x3f);
-  uVar14 = (ushort)uVar17;
-  uVar17 = (ulong)(ushort)(uVar14 >> (bVar35 & 0xf) | uVar14 << 0x10 - (bVar35 & 0xf));
-  uVar41 = uVar41 << (bVar35 & 0x1f) | uVar30 >> 0x20 - (bVar35 & 0x1f);
-  uVar44 = 0xb95c >> (bVar35 >> (bVar35 & 0x1f) & 0x1f);
-  bVar48 = (byte)(((ulong)((int)sVar10 & 0xffU |
-                          (uint)(uint3)(int3)(char)((uint)(int)sVar10 >> 8) << 8) | 0xbc) >> 1);
-  uVar24 = (ulong)(ushort)(((ushort)uVar5 & 0xff00 | 0x1000 |
-                           (ushort)(byte)((byte)uVar5 >> (bVar35 & 0x1f))) + 0x5a87);
-  lVar55 = (((ulong)(CONCAT18(1,0xe7bd7ff7) >> 0x1d) | 0x7bd7ff7000000000) >> 0xc |
-           (ulong)(ushort)((((ushort)uVar41 >> ((ushort)lVar47 & 0xf) & 1) != 0) + 0xaa03)) +
-           0x497d81b2;
-  uVar38 = ((ushort)lVar55 < (ushort)(short)(char)bVar48) + 0xcd34e971;
-  uVar34 = ((uVar24 | 0x3fffffffdf530000) << 0x15 |
-           ((ulong)(CONCAT18((uVar41 & 1) != 0,uVar24) >> 8) | 0x3fffffffdf5300) >> 0x24) >>
-           (bVar48 & 0x3f) | (ulong)(uVar41 >> 1) << 0x40 - (bVar48 & 0x3f);
-  bVar32 = (char)bVar48 >> 7;
-  uVar53 = ((uint)lVar55 & 0xffff0000 | (uint)(ushort)((char)bVar48 + -0x1e83 + (short)(char)bVar48)
-           ) & ~(1 << (uVar38 & 0x1f));
-  uVar21 = (ushort)uVar34 >> (bVar32 & 0x1f);
-  uVar25 = (ulong)(uVar38 & 0xac5a4337);
-  bVar40 = (char)(uVar41 >> 1) + 1;
-  uVar24 = ((uVar12 & 0xff000000) << 8 | (uVar12 & 0xff0000) << 0x18 | (uVar17 & 0xff00) << 0x28 |
-           uVar17 << 0x38) >> (bVar32 & 0x3f);
-  uVar14 = (short)uVar54 + 0x3a2c;
-  uVar31 = (ulong)(uVar30 << 2 | 2) & 0xffffffffffffffbb;
-  bVar48 = (byte)uVar14;
-  bVar35 = bVar48 + 0x6f;
-  uVar17 = (ulong)(uVar54 & 0xffff0000 | uVar14 & 0xffffff00 | (uint)bVar35);
-  uVar12 = (ulong)(byte)(((char)bVar35 < '\0') << 7 | (bVar35 == 0) << 6 | in_AF << 4 |
-                         ((POPCOUNT(bVar35) & 1U) == 0) << 2 | 2U | bVar48 < 0x91) << 8;
-  uVar37 = uVar17 ^ (ulong)(uVar12 == uVar17) *
-                    (uVar17 ^ (uVar28 & 0xffffffffffffff00 |
-                              (ulong)(byte)((char)uVar28 >> (bVar32 & 0x1f))));
-  uVar17 = (ulong)(uVar12 != uVar17) * (uVar12 ^ uVar37);
-  uVar12 = uVar12 ^ uVar17;
-  uVar38 = (int)uVar24 * -0x3e9812ee;
-  bVar32 = (byte)uVar38;
-  lVar55 = (long)(ulong)CONCAT31((uint3)(uVar41 >> 9),bVar40) >> (bVar32 & 0x3f);
-  bVar57 = (uVar53 & 1) != 0;
-  uVar51 = (ushort)uVar53 >> 1 | (ushort)bVar57 << 0xf;
-  uVar14 = CONCAT11((char)(uVar12 >> 8) - bVar57,(char)uVar17);
-  uVar52 = uVar51 ^ (ushort)(uVar14 == uVar51) * (uVar51 ^ (ushort)lVar55);
-  uVar54 = uVar53 & 0xffff0000 | (uint)uVar52;
-  uVar14 = uVar14 ^ (ushort)(uVar14 != uVar51) * (uVar14 ^ uVar52);
-  uVar17 = uVar12 & 0xffffffffffff0000 | (ulong)uVar14;
-  bVar32 = bVar32 & 0x1f;
-  uVar54 = uVar54 >> bVar32 | uVar54 << 0x20 - bVar32;
-  uVar51 = (short)uVar54 * 0x70f4;
-  uVar12 = (ulong)(uVar54 & 0xffff0000 | (uint)uVar51);
-  if ((byte)((byte)uVar31 | 0xb8) != 0) {
-    uVar38 = (uint)bVar40 |
-             ((uint)(uVar34 >> 8) & 0xffffff00 |
-             (uint)(byte)((ushort)((uVar21 & 0xff00 | (ushort)(byte)((char)uVar21 >> 9)) << 1) >> 8)
-             ) << 8;
+  uVar24 = (ushort)(CONCAT12(bVar72,0x4e05) >> 0xc) | 0xc0a0;
+  lVar34 = CONCAT62(0xffffffff8c1f,uVar24);
+  bVar18 = (byte)uVar24;
+  iVar25 = CONCAT31((int3)(CONCAT22(0x6f16,uVar31) >> 8),-bVar41);
+  lVar28 = (ulong)uVar55 + 0x5e0e92a2 + lVar34 * 2;
+  uVar38 = (uint)(0x4000000000000 >> (bVar18 & 0x3f)) | iVar25 << 0x40 - (bVar18 & 0x3f);
+  uVar36 = (ulong)uVar49 ^ 1L << ((ulong)(uint)(int)auVar4._0_2_ & 0x3f);
+  uVar24 = (ushort)iVar25;
+  uVar24 = uVar24 >> (bVar18 & 0xf) | uVar24 << 0x10 - (bVar18 & 0xf);
+  uVar54 = uVar53 << (bVar18 & 0x1f) | uVar38 >> 0x20 - (bVar18 & 0x1f);
+  bVar23 = bVar18 >> (bVar18 & 0x1f);
+  uVar60 = 0xb95c >> (bVar23 & 0x1f);
+  bVar21 = (byte)(((ulong)CONCAT31((int3)auVar4[1],auVar4[0]) | 0xbc) >> 1);
+  lVar56 = CONCAT62(0x3fffffffdf53,
+                    (short)CONCAT71((int7)(CONCAT62(0x3fffffffdf53,(ushort)uVar10 | 0x1000) >> 8),
+                                    (byte)uVar10 >> (bVar18 & 0x1f)) + 0x5a87);
+  lVar70 = CONCAT62(((uint6)(CONCAT18(1,0xe7bd7ff7) >> 0x2d) | 0x7bd7ff700000) >> 0xc,
+                    (((ushort)uVar54 >> ((ushort)lVar28 & 0xf) & 1) != 0) + 0xaa03) + 0x497d81b2;
+  uVar49 = ((ushort)lVar70 < (ushort)(short)(char)bVar21) + 0xcd34e971;
+  uVar44 = (lVar56 << 0x15 | (ulong)(CONCAT18((uVar54 & 1) != 0,lVar56) >> 0x2c)) >> (bVar21 & 0x3f)
+           | (ulong)(uVar54 >> 1) << 0x40 - (bVar21 & 0x3f);
+  bVar41 = (char)bVar21 >> 7;
+  uVar69 = (uint)CONCAT62((int6)((ulong)lVar70 >> 0x10),(char)bVar21 + -0x1e83 + (short)(char)bVar21
+                         ) & ~(1 << (uVar49 & 0x1f));
+  uVar45 = (undefined6)(uVar44 >> 0x10);
+  uVar31 = (ushort)uVar44 >> (bVar41 & 0x1f);
+  uVar35 = (ulong)(uVar49 & 0xac5a4337);
+  cVar51 = (char)(uVar54 >> 1) + '\x01';
+  uVar33 = (((ulong)uVar24 & 0xff00) << 0x28 | 0x166f00000000 | (ulong)uVar24 << 0x38) >>
+           (bVar41 & 0x3f);
+  sVar27 = (short)uVar55 + 0x3a2c;
+  uVar40 = (ulong)(uVar38 << 2 | (uint)CONCAT71((int7)((ulong)lVar34 >> 8),bVar23) >> 0x1e) &
+           0xffffffffffffffbb;
+  bVar21 = (byte)sVar27;
+  cVar46 = bVar21 + 0x6f;
+  uVar26 = (ulong)CONCAT31((int3)(CONCAT22((short)(uVar55 >> 0x10),sVar27) >> 8),cVar46);
+  bVar21 = (cVar46 < '\0') << 7 | (cVar46 == '\0') << 6 | in_AF << 4 |
+           ((POPCOUNT(cVar46) & 1U) == 0) << 2 | 2U | bVar21 < 0x91;
+  uVar44 = (ulong)bVar21 << 8;
+  uVar48 = uVar26 ^ (ulong)(uVar44 == uVar26) *
+                    (uVar26 ^ CONCAT71((int7)(uVar36 >> 8),(char)uVar36 >> (bVar41 & 0x1f)));
+  lVar34 = (ulong)(uVar44 != uVar26) * (uVar44 ^ uVar48);
+  uVar53 = (int)uVar33 * -0x3e9812ee;
+  bVar41 = (byte)uVar53;
+  lVar56 = (long)(ulong)CONCAT31((uint3)(uVar54 >> 9),cVar51) >> (bVar41 & 0x3f);
+  bVar72 = (uVar69 & 1) != 0;
+  uVar67 = (ushort)uVar69 >> 1 | (ushort)bVar72 << 0xf;
+  uVar24 = CONCAT11((bVar21 ^ (byte)((ulong)lVar34 >> 8)) - bVar72,(char)lVar34);
+  uVar68 = uVar67 ^ (ushort)(uVar24 == uVar67) * (uVar67 ^ (ushort)lVar56);
+  uVar49 = CONCAT22((short)(uVar69 >> 0x10),uVar68);
+  uVar24 = uVar24 ^ (ushort)(uVar24 != uVar67) * (uVar24 ^ uVar68);
+  uVar44 = CONCAT62((int6)((ulong)lVar34 >> 0x10),uVar24);
+  bVar41 = bVar41 & 0x1f;
+  uVar49 = uVar49 >> bVar41 | uVar49 << 0x20 - bVar41;
+  uVar67 = (short)uVar49 * 0x70f4;
+  uVar65 = (ulong)CONCAT22((short)(uVar49 >> 0x10),uVar67);
+  uVar26 = (ulong)uVar53;
+  if ((byte)((byte)uVar40 | 0xb8) != 0) {
+    uVar26 = CONCAT71((int7)(CONCAT62(uVar45,(short)CONCAT71((int7)(CONCAT62(uVar45,uVar31) >> 8),
+                                                             (char)uVar31 >> 9) << 1) >> 8),cVar51)
+             & 0xffffffff;
   }
-  uVar51 = (ushort)uVar37 | uVar51;
-  uVar37 = uVar37 & 0xffffffffffff0000 | (ulong)uVar51;
-  uVar54 = (uVar38 & 0xffffff00 | (uint)(byte)((char)uVar38 >> 1)) + 0x9e4cf7e7;
-  bVar48 = (byte)uVar54;
-  uVar56 = uVar12 ^ (uVar17 == uVar12) * uVar12;
-  uVar34 = (uVar28 & 0xffffffffffff0000) >> (bVar48 & 0x3f) | uVar25 << 0x40 - (bVar48 & 0x3f);
-  uVar38 = (uint)CONCAT62((int6)(lVar47 >> 0x11),(short)(char)lVar55) | 0xc0000000;
-  uVar17 = (ulong)(ushort)((short)uVar14 >> 0xf) << 0x20 |
-           (uVar17 ^ (ulong)(uVar17 != uVar12) * (uVar17 ^ uVar56)) & 0xffffffff;
-  uVar12 = uVar17 / uVar38;
-  uVar28 = uVar12 & 0xffffffff;
-  uVar31 = (uVar31 | 0xb8) & uVar24;
-  bVar32 = (byte)(uVar28 >> 8);
-  uVar54 = uVar54 & 0xffff00ff;
-  if ((uVar38 >> (bVar48 & 0x1f) | 0 << 0x20 - (bVar48 & 0x1f)) == 0x50cd4ee5) {
-    uVar25 = (ulong)bVar32;
+  uVar67 = (ushort)uVar48 | uVar67;
+  uVar48 = CONCAT62((int6)(uVar48 >> 0x10),uVar67);
+  iVar25 = (int)CONCAT71((int7)(uVar26 >> 8),(char)uVar26 >> 1) + -0x61b30819;
+  bVar21 = (byte)iVar25;
+  uVar71 = uVar65 ^ (uVar44 == uVar65) * uVar65;
+  uVar36 = (uVar36 & 0xffffffffffff0000) >> (bVar21 & 0x3f) | uVar35 << 0x40 - (bVar21 & 0x3f);
+  uVar53 = (uint)CONCAT62((int6)(lVar28 >> 0x11),(short)(char)lVar56) | 0xc0000000;
+  uVar44 = (ulong)(ushort)((short)uVar24 >> 0xf) << 0x20 |
+           (uVar44 ^ (ulong)(uVar44 != uVar65) * (uVar44 ^ uVar71)) & 0xffffffff;
+  uVar26 = uVar44 / uVar53 & 0xffffffff;
+  uVar40 = (uVar40 | 0xb8) & uVar33;
+  bVar41 = (byte)(uVar26 >> 8);
+  uVar49 = CONCAT22((short)((uint)iVar25 >> 0x10),(ushort)bVar21);
+  if ((uVar53 >> (bVar21 & 0x1f) | 0 << 0x20 - (bVar21 & 0x1f)) == 0x50cd4ee5) {
+    uVar35 = (ulong)(ushort)bVar41;
   }
-  uVar41 = 0x1f;
-  if ((uint)uVar31 != 0) {
-    for (; (uint)uVar31 >> uVar41 == 0; uVar41 = uVar41 - 1) {
+  iVar25 = 0x1f;
+  if ((uint)uVar40 != 0) {
+    for (; (uint)uVar40 >> iVar25 == 0; iVar25 = iVar25 + -1) {
     }
   }
-  uVar53 = (uint)lVar55 & 0xffff0000;
-  uVar30 = (uint)uVar56 & 0x1f;
-  uVar15 = uVar54 | 1 << uVar30;
-  uVar50 = (ulong)(((uint)(0 >> (bVar48 & 0x3f)) & 0x7fff8000) << 1 | (uint)bVar32);
-  if ((uVar54 >> uVar30 & 1) != 0 || (uVar34 & 0xd6e32ba3) == 0) {
-    uVar50 = uVar31;
+  uVar55 = (uint)uVar71 & 0x1f;
+  uVar38 = uVar49 | 1 << uVar55;
+  uVar65 = (ulong)CONCAT22((short)((uint)((int)(0L >> (bVar21 & 0x3f)) << 1) >> 0x10),(ushort)bVar41
+                          );
+  if ((uVar49 >> uVar55 & 1) != 0 || (uVar36 & 0xd6e32ba3) == 0) {
+    uVar65 = uVar40;
   }
-  uVar30 = (ushort)((ushort)lVar55 << ((byte)uVar54 & 0x1f)) & 0xffffbfff;
-  bVar32 = (byte)uVar15;
-  uVar46 = (ulong)(uVar44 & 0xffffff00 | 0xdf4f0000 | (uint)(byte)((char)uVar44 + '\x15' + bVar48))
-           << (bVar32 & 0x3f);
-  bVar35 = (byte)uVar28;
-  bVar35 = bVar35 ^ (bVar35 != 0) * (bVar35 ^ (bVar35 == 0) * bVar32);
-  uVar12 = uVar12 & 0xffffff00;
-  uVar15 = uVar15 | 0x8e196487;
-  auVar2 = ZEXT116(0) << 0x40 | ZEXT416(uVar41 & 0xffffff00 | (uint)(uVar50 + uVar46 == 0));
-  auVar3 = auVar2 >> 0x1f;
-  bVar32 = (byte)uVar15;
-  uVar17 = (uVar17 % (ulong)uVar38 & 0xffffffffffff8bca) << (bVar32 & 0x3f) |
-           uVar46 >> 0x40 - (bVar32 & 0x3f);
-  bVar40 = SUB161(auVar3,0);
-  uVar28 = uVar31 & 0xffffffffffff0000 | (ulong)(ushort)((ushort)uVar31 + 0xaed9);
-  uVar17 = (uVar17 & 0xffffffffffff0000 | (ulong)CONCAT11(-(char)(uVar17 >> 8),(char)uVar17)) -
-           uVar56;
-  bVar32 = (byte)(CONCAT11((char)(uVar15 >> 8) + (char)(uVar12 >> 8) + ((ushort)uVar31 < 0x5127),
-                           bVar32) >> (bVar32 & 0x1f));
-  uVar54 = (int)uVar28 + (int)(uVar25 & 0xffff);
-  bVar48 = bVar32 & 0x3f;
-  uVar24 = (uVar24 & 0xffffffffffffff00 |
-           (ulong)(SCARRY8(uVar50,uVar46) != SCARRY8(uVar50 + uVar46,0))) << bVar48 |
-           (uVar12 | (byte)(bVar35 ^ (bVar35 != bVar40) *
-                                     (bVar35 ^ bVar40 ^ (bVar35 == bVar40) * (bVar40 ^ (byte)uVar51)
-                                     ))) >> 0x40 - bVar48;
-  uVar38 = ((uint)(uVar34 << 0x10) >> 0x11) + 0x7f07364a + ((uint)uVar56 ^ 0x1000000) * 2;
-  bVar32 = bVar32 & 0x1f;
-  uVar42 = uVar38 >> bVar32 | uVar38 << 0x20 - bVar32;
-  bVar48 = (byte)(uVar24 >> 8);
-  uVar31 = (ulong)(SUB167(auVar3 >> 8,0) | SUB167((auVar2 << 0x22) >> 8,0)) << 8 | uVar17 & 0xffff;
-  bVar32 = (byte)(uVar12 >> 0xb);
-  uVar38 = (int)(uVar28 << 0xe) << 1;
-  bVar35 = (byte)(uVar25 & 0xffff);
-  uVar15 = (uint)uVar46 | uVar53 | uVar30;
-  uVar41 = (((uint)uVar24 & 0xffff0000 | (uint)CONCAT11(bVar48 << 5 | bVar48 >> 3,(char)uVar24)) >>
-           1) << (bVar32 & 0x1f) |
-           ((uint)(uVar17 * 2) & 0xffff0000 | (uint)(ushort)((short)(uVar17 * 2) << 1)) >>
-           0x20 - (bVar32 & 0x1f);
-  uVar28 = ((uVar37 >> (bVar32 & 0x3f) | uVar37 << 0x40 - (bVar32 & 0x3f)) & 0xbfffffffffffffff) <<
-           1;
-  uVar53 = uVar53 | (ushort)((short)uVar30 << 1);
-  cVar9 = (char)(uVar41 >> 8);
-  uVar24 = (ulong)(uVar41 & 0xffff0000 | (uint)CONCAT11(cVar9 << 1,(char)uVar41)) | 0x100;
-  uVar14 = CONCAT11((char)((uVar12 >> 0xb) >> 8) << 1,bVar32);
-  uVar21 = (ushort)uVar15;
-  if ((short)(uVar14 - uVar21) < 0) {
-    uVar38 = uVar38 & 0xffff0000 | (uint)(ushort)uVar24;
+  uVar55 = (uint)CONCAT62((int6)((ulong)lVar56 >> 0x10),(ushort)lVar56 << (bVar21 & 0x1f)) &
+           0xffffbfff;
+  bVar23 = (byte)uVar38;
+  uVar64 = (ulong)CONCAT31((int3)(CONCAT22(0xdf4f,uVar60) >> 8),(char)uVar60 + '\x15' + bVar21) <<
+           (bVar23 & 0x3f);
+  bVar18 = (byte)uVar26;
+  uVar22 = (uint7)(uVar26 >> 8);
+  bVar18 = bVar18 ^ (bVar18 != 0) * (bVar18 ^ (bVar18 == 0) * bVar23);
+  uVar38 = uVar38 | 0x8e196487;
+  auVar4 = ZEXT116(0) << 0x40 | ZEXT416(CONCAT31((int3)((uint)iVar25 >> 8),uVar65 + uVar64 == 0));
+  auVar8 = auVar4 >> 0x1f;
+  bVar21 = (byte)uVar38;
+  uVar44 = (uVar44 % (ulong)uVar53 & 0xffffffffffff8bca) << (bVar21 & 0x3f) |
+           uVar64 >> 0x40 - (bVar21 & 0x3f);
+  bVar23 = auVar8[0];
+  lVar28 = CONCAT62((int6)(uVar44 >> 0x10),CONCAT11(-(char)(uVar44 >> 8),(char)uVar44)) - uVar71;
+  iVar39 = (int)CONCAT62((int6)(uVar40 >> 0x10),(ushort)uVar40 + 0xaed9);
+  uVar49 = iVar39 + (int)(uVar35 & 0xffff);
+  bVar41 = (byte)(CONCAT11((char)(uVar38 >> 8) + bVar41 + ((ushort)uVar40 < 0x5127),bVar21) >>
+                 (bVar21 & 0x1f));
+  bVar21 = bVar41 & 0x3f;
+  uVar44 = CONCAT71((int7)(uVar33 >> 8),SCARRY8(uVar65,uVar64) != SCARRY8(uVar65 + uVar64,0)) <<
+           bVar21 | CONCAT71(uVar22,bVar18 ^ (bVar18 != bVar23) *
+                                             (bVar18 ^ bVar23 ^ (bVar18 == bVar23) *
+                                                                (bVar23 ^ (byte)uVar67))) >>
+                    0x40 - bVar21;
+  uVar53 = ((uint)(uVar36 << 0x10) >> 0x11) + 0x7f07364a + ((uint)uVar71 ^ 0x1000000) * 2;
+  bVar41 = bVar41 & 0x1f;
+  uVar54 = uVar53 >> bVar41 | uVar53 << 0x20 - bVar41;
+  bVar21 = (byte)(uVar44 >> 8);
+  uVar22 = uVar22 >> 3;
+  uVar20 = CONCAT62(auVar8._2_6_ | SUB166(auVar4 << 0x22,2),(short)lVar28);
+  bVar41 = (byte)uVar22;
+  iVar39 = iVar39 << 0xf;
+  uVar38 = (uint)uVar64 | uVar55;
+  uVar53 = ((uint)(CONCAT62((int6)(uVar44 >> 0x10),CONCAT11(bVar21 << 5 | bVar21 >> 3,(char)uVar44))
+                  >> 1) & 0x7fffffff) << (bVar41 & 0x1f) |
+           (uint)CONCAT62((int6)((ulong)(lVar28 * 2) >> 0x10),(short)(lVar28 * 2) << 1) >>
+           0x20 - (bVar41 & 0x1f);
+  iVar25 = CONCAT22((short)(uVar55 >> 0x10),(short)uVar55 << 1);
+  cVar46 = (char)(uVar53 >> 8);
+  uVar44 = (ulong)CONCAT22((short)(uVar53 >> 0x10),CONCAT11(cVar46 << 1,(char)uVar53)) | 0x100;
+  bVar21 = (char)(uVar22 >> 8) << 1;
+  uVar24 = CONCAT11(bVar21,bVar41);
+  uVar31 = (ushort)uVar38;
+  if ((short)(uVar24 - uVar31) < 0) {
+    iVar39 = CONCAT22((short)((uint)iVar39 >> 0x10),(short)uVar44);
   }
-  uVar14 = CONCAT11((char)((ulong)(ushort)(uVar14 ^ (ushort)(uVar14 != uVar21) *
-                                                    (uVar14 ^ uVar21 ^ (ushort)(uVar14 == uVar21) *
-                                                                       (uVar21 ^ uVar14))) >> 8),
-                    bVar32) >> (bVar32 & 0x3f);
-  uVar34 = uVar28 & 0xffffffff;
-  uVar30 = (uVar54 >> 2 & 0xffff | (uVar54 >> 0x12) << 0x10) ^ 0x3b68;
-  lVar47 = (uVar25 & 0xfb00 |
-           (ulong)(byte)((byte)(bVar35 >> 1 | bVar35 << 7) >> 1 | (cVar9 < '\0') << 7)) << 1;
-  uVar54 = ((uint)(CONCAT18((long)uVar17 < 0,uVar31) >> (bVar32 & 0x3f)) |
-           (uint)(uVar31 << 0x41 - (bVar32 & 0x3f))) + uVar53;
-  uVar21 = uVar14 - ((ushort)((long)uVar24 >> 0x14) | (ushort)uVar34);
-  uVar17 = ((ulong)(uint6)((int6)(uint6)(ushort)(uVar15 >> 0x10) >> 1) << 0x10) >> 0x1a;
-  bVar32 = (byte)((ulong)uVar14 >> 8);
-  uVar12 = (ulong)(ushort)(uVar14 & 0xff | (ushort)(byte)(bVar32 << 3 | bVar32 >> 5) << 8);
-  uVar24 = uVar12 * (uint)(int)(char)uVar17;
-  uVar51 = (ushort)uVar30 + 0x991b;
-  cVar9 = (char)uVar34;
-  uVar53 = uVar53 * 0x16bf5e28 & 0xffff7fff;
-  bVar32 = (char)uVar54 - 1;
-  uVar41 = (uint)uVar17;
-  if ((uint)uVar24 == uVar41) {
-    uVar41 = SUB164(SEXT816((long)uVar12) * SEXT816((long)(ulong)(uint)(int)(char)uVar17) >> 0x40,0)
-    ;
-    uVar17 = uVar24;
+  uVar24 = CONCAT11(bVar21 ^ (byte)((ushort)((ushort)(uVar24 != uVar31) *
+                                            (uVar24 ^ uVar31 ^ (ushort)(uVar24 == uVar31) *
+                                                               (uVar31 ^ uVar24))) >> 8),bVar41) >>
+           (bVar41 & 0x3f);
+  lVar56 = ((uVar48 >> (bVar41 & 0x3f) | uVar48 << 0x40 - (bVar41 & 0x3f)) & 0x7fffffff) << 1;
+  lVar34 = CONCAT71((int7)((uVar35 & 0xffff) >> 8),
+                    (byte)((byte)uVar35 >> 1 | (byte)uVar35 << 7) >> 1 | (cVar46 < '\0') << 7) << 1;
+  iVar1 = ((uint)(CONCAT18(lVar28 < 0,uVar20) >> (bVar41 & 0x3f)) |
+          (int)uVar20 << 0x41 - (bVar41 & 0x3f)) + iVar25;
+  uVar40 = ((ulong)CONCAT22((ushort)(uVar49 >> 0x12),(short)(uVar49 >> 2)) ^ 0x3b68) &
+           0xfffffffffbffffff;
+  uVar31 = uVar24 - ((ushort)((long)uVar44 >> 0x14) | (ushort)lVar56);
+  uVar44 = ((ulong)(uint6)((int6)(uint6)(ushort)(uVar38 >> 0x10) >> 1) << 0x10) >> 0x1a;
+  cVar46 = (char)uVar44;
+  bVar41 = (byte)(uVar24 >> 8);
+  uVar33 = (ulong)CONCAT11(bVar41 << 3 | bVar41 >> 5,(byte)uVar24);
+  uVar36 = uVar33 * (uint)(int)cVar46;
+  uVar60 = (ushort)uVar40;
+  uVar67 = uVar60 + 0x991b;
+  uVar49 = iVar25 * 0x16bf5e28 & 0xffff7fff;
+  bVar41 = (char)iVar1 - 1;
+  uVar26 = uVar44;
+  if ((int)uVar36 == (int)uVar44) {
+    uVar44 = uVar36;
+    uVar26 = (ulong)SUB164(SEXT816((long)uVar33) * SEXT816((long)(ulong)(uint)(int)cVar46),8);
   }
-  uVar15 = uVar21 + 0x2fc2a16c;
-  uVar43 = (uVar42 & 0xffffff00 | (uint)(byte)((char)uVar42 >> ((byte)uVar21 & 0x1f))) * -0x1c979db6
-           - 1;
-  uVar42 = (uint)((uVar51 & 1) != 0) << 0x1f;
-  uVar39 = (uVar30 & 0xfbff0000 | (uint)uVar51) >> 1 | uVar42;
-  bVar48 = (byte)((uVar17 & 0xf) << 4);
-  uVar51 = (short)((ushort)(uVar53 >> 0x18) | (ushort)(uVar53 >> 8) & 0xff00) >> (bVar48 & 0x1f);
-  uVar44 = (short)(char)bVar32 + 0x7b72;
-  uVar21 = (ushort)((uVar54 & 0xffffff00 | (uint)bVar32) >> 1) ^ 0xab68;
-  uVar17 = (ulong)uVar38 & 0xffffffffffff0000 | (ulong)(ushort)(short)(char)uVar21;
-  cVar13 = (char)((ulong)uVar51 >> 8);
-  if ((char)uVar51 < cVar13) {
-    uVar39 = (uVar30 & 0xfbfe0000) >> 1 | uVar42 |
-             ((0x35cb9feb << (bVar48 & 0x1f) | 0x35cb9febU >> 0x20 - (bVar48 & 0x1f)) & 0xffff0000)
-             >> 0xe & 0xffff;
+  lVar28 = (ulong)uVar31 + 0x2fc2a16c;
+  iVar58 = CONCAT31((int3)(uVar54 >> 8),(char)uVar54 >> ((byte)uVar31 & 0x1f)) * -0x1c979db6 + -1;
+  uVar53 = (uint)CONCAT62((int6)(uVar40 >> 0x10),uVar67) >> 1 | (uint)((uVar67 & 1) != 0) << 0x1f;
+  bVar21 = (byte)(uVar44 << 4);
+  sVar27 = (short)((ushort)(byte)(uVar49 >> 0x18) | (ushort)(uVar49 >> 8) & 0xff00) >>
+           (bVar21 & 0x1f);
+  uVar68 = (short)(char)bVar41 + 0x7b72;
+  uVar31 = (ushort)(CONCAT31((int3)((uint)iVar1 >> 8),bVar41) >> 1) ^ 0xab68;
+  iVar25 = (int)CONCAT62((int6)((ulong)lVar28 >> 0x10),
+                         CONCAT11((((char)((ulong)lVar28 >> 8) + -0x6e) - ((bVar41 & 1) != 0)) *
+                                  '\x04' + '\x01',bVar21)) << 1;
+  uVar67 = (ushort)((uint)iVar39 >> 0x10);
+  cVar46 = (char)((ushort)sVar27 >> 8);
+  if ((char)sVar27 < cVar46) {
+    uVar53 = CONCAT22((short)(uVar53 >> 0x10),
+                      (short)(((uint)(ushort)((ushort)((uint)(0x35cb9feb << (bVar21 & 0x1f)) >> 0x10
+                                                      ) |
+                                             (ushort)((0x35cb9febU >> 0x20 - (bVar21 & 0x1f)) >>
+                                                     0x10)) << 0x10) >> 0xe));
   }
-  uVar42 = ((int)lVar47 + 0x66536d27) -
-           (uint)(0x43f9 < (ushort)(((ushort)((ushort)uVar28 & 0xff00 |
-                                             (ushort)(byte)(cVar9 << 5 |
-                                                           (byte)(CONCAT11((ushort)uVar30 < 0x66e5,
-                                                                           cVar9) >> 4))) >> 1) +
-                                   0x1dd3));
-  uVar12 = (uVar43 & 0xffff0000 |
-           (uint)(ushort)((byte)~((char)uVar43 * (char)lVar47) - 0xa7c & 0xff |
-                         (ushort)(byte)(cVar13 - 0x17) << 8)) * uVar17;
-  bVar35 = (byte)(uVar12 >> 0x28);
-  bVar40 = (byte)uVar12;
-  uVar21 = uVar21 & 0xff00;
-  uVar54 = ((uVar15 & 0xffff0000 |
-            CONCAT11((((char)(uVar15 >> 8) + -0x6e) - ((bVar32 & 1) != 0)) * '\x04' + '\x01',bVar48)
-            & 0x7fff8000) << 1 | (uint)(CONCAT11((char)uVar44,bVar48 << 1) & 0x6aff)) - (uint)bVar35
+  uVar38 = ((int)lVar34 + 0x66536d27) -
+           (uint)(0x43f9 < (ushort)(((ushort)CONCAT71((int7)((ulong)lVar56 >> 8),
+                                                      (char)lVar56 << 5 |
+                                                      (byte)(CONCAT11(uVar60 < 0x66e5,(char)lVar56)
+                                                            >> 4)) >> 1) + 0x1dd3));
+  uVar44 = (ulong)CONCAT22((short)((uint)iVar58 >> 0x10),
+                           CONCAT11(cVar46 + -0x17,~((char)iVar58 * (char)lVar34) + 0x84)) *
+           (ulong)CONCAT22(uVar67,(short)(char)uVar31);
+  bVar18 = (byte)(uVar44 >> 0x28);
+  uVar44 = uVar44 & 0xffffffff;
+  uVar67 = ~uVar67;
+  uVar31 = uVar31 & 0xff00;
+  iVar25 = (CONCAT22((short)((uint)iVar25 >> 0x10),CONCAT11((char)uVar68,(char)iVar25)) & 0xffff6aff
+           ) - (uint)bVar18;
+  uVar60 = (ushort)iVar25 | 1 << (uVar68 & 0xf);
+  bVar23 = (byte)uVar44;
+  bVar21 = (byte)uVar60;
+  bVar30 = bVar18 ^ (bVar23 == bVar18) * (bVar18 ^ bVar21);
+  lVar28 = CONCAT71((int7)(uVar44 >> 8),bVar23 ^ (bVar23 != bVar18) * (bVar23 ^ bVar30));
+  bVar21 = bVar21 & 0x3f;
+  auVar4 = ZEXT116(bVar23 < bVar18) << 0x40 |
+           ZEXT416(CONCAT22((short)((uint)iVar25 >> 0x10),uVar60));
+  uVar33 = (long)CONCAT22((char)bVar41 >> 7,uVar68) << 1;
+  uVar40 = uVar33 | 1;
+  lVar34 = -(ulong)(bVar30 >>
+                   ((SUB161(auVar4 >> bVar21,0) | SUB161(auVar4 << 0x41 - bVar21,0)) & 0x1f));
+  cVar46 = ((byte)lVar34 | 0xf2) - 0xd;
+  uVar44 = lVar28 * lVar28;
+  uVar36 = uVar44 & 0xffffffff;
+  uVar49 = CONCAT22(uVar67,(short)cVar46);
+  uVar55 = (uint)CONCAT71((int7)((ulong)lVar34 >> 8),cVar46) & ~(1 << ((uint)uVar40 & 0x1f));
+  sVar27 = 0xf;
+  uVar60 = (ushort)uVar55;
+  if (uVar60 != 0) {
+    for (; uVar60 >> sVar27 == 0; sVar27 = sVar27 + -1) {
+    }
+  }
+  cVar51 = (char)(uVar36 >> 8);
+  bVar41 = (byte)uVar36;
+  lVar56 = CONCAT62((int6)(uVar36 >> 0x10),CONCAT11(cVar51 << 1 | cVar51 < '\0',bVar41));
+  lVar34 = CONCAT62((int6)(uVar33 >> 0x10),~(ushort)uVar40) + lVar56;
+  uVar53 = CONCAT31((int3)(uVar53 + 0x87cf1267 >> 8),(char)uVar38);
+  if (((ushort)(short)cVar46 & 0xff) == 0x99766cce) {
+    uVar53 = uVar49;
+  }
+  bVar21 = (byte)(uint)(uVar44 >> 0x21);
+  lVar56 = CONCAT71((int7)((ulong)lVar56 >> 8),bVar41 ^ (bVar41 != bVar21) * (bVar41 ^ bVar21));
+  uVar54 = CONCAT22((ushort)(uVar26 >> 0x10) |
+                    (ushort)((ulong)(1L << ((ulong)(byte)((char)iVar39 << ((byte)uVar24 & 0x1f)) &
+                                           0x3f)) >> 0x10),
+                    uVar31 + 0xbcb5 ^ (uVar31 | (ushort)lVar28));
+  uVar53 = uVar53 ^ 0x40c0cffa;
+  uVar24 = (short)uVar38 - 1;
+  if (uVar53 == 0) {
+    uVar24 = uVar60;
+  }
+  uVar69 = CONCAT31((uint3)(uVar44 >> 0x29),bVar21) ^ uVar54;
+  lVar28 = (uVar44 >> 0x20) - (ulong)uVar49;
+  if ((POPCOUNT(uVar69 & 0xff) & 1U) != 0) {
+    lVar28 = lVar56;
+  }
+  uVar54 = uVar54 ^ 1 << (uVar53 & 0x1f);
+  lVar70 = 0;
+  if (uVar38 != 0) {
+    for (; (uVar38 >> lVar70 & 1) == 0; lVar70 = lVar70 + 1) {
+    }
+  }
+  auVar5._8_4_ = uVar69;
+  auVar5._0_8_ = lVar56;
+  auVar5._12_4_ = 0;
+  auVar4 = auVar5 / ZEXT816(0xc000000000000000);
+  auVar5 = auVar5 % ZEXT816(0xc000000000000000);
+  iVar25 = (int)lVar34 + 0x600d809c + uVar55 * 2;
+  uVar44 = 0xffffffff;
+  if (0 < (short)uVar60) {
+    uVar44 = auVar5._0_8_ & 0xffffffff;
+  }
+  uVar31 = (ushort)iVar25;
+  if ((ushort)(uVar60 - 1) != 0 && 0 < (short)uVar60) {
+    uVar24 = uVar31;
+  }
+  uVar49 = auVar4._0_4_ + auVar5._0_4_ * 2;
+  uVar69 = (uint)CONCAT62((int6)((ulong)lVar28 >> 0x10),(short)lVar28 >> 1) | uVar54;
+  uVar47 = uVar69 << 1 | (uint)((int)uVar69 < 0);
+  uVar31 = uVar31 >> 1;
+  uVar11 = (undefined2)((uint)iVar25 >> 0x10);
+  bVar41 = (byte)lVar70;
+  uVar42 = (uint)CONCAT62((int6)((ulong)lVar34 >> 0x10),0x6005);
+  uVar69 = uVar49 + uVar42;
+  if (!CARRY4(uVar49,uVar42) && uVar69 != 0) {
+    uVar24 = auVar4._0_2_;
+  }
+  uVar68 = (ushort)(uVar38 >> (bVar41 & 0x1f));
+  if ((POPCOUNT(uVar69 & 0xff) & 1U) == 0) {
+    uVar68 = uVar24;
+  }
+  uVar54 = uVar54 << 1;
+  uVar24 = (ushort)(byte)((((ushort)uVar54 >> 2 & 1) != 0) << 7) << 1 |
+           (ushort)(uVar44 <= (uVar54 | 4));
+  uVar44 = (ulong)uVar24;
+  cVar51 = (char)uVar31;
+  cVar46 = -cVar51;
+  if (cVar46 != '\0') {
+    uVar69 = CONCAT22((short)(uVar69 >> 0x10),uVar24);
+  }
+  bVar21 = (byte)((byte)uVar54 | 4) >> 1 | (cVar51 != '\0') << 7;
+  sVar27 = 0xf;
+  uVar31 = (ushort)CONCAT31((int3)(CONCAT22(uVar11,uVar31 | auVar5._0_2_ << 0xf) >> 8),cVar46);
+  if (uVar31 != 0) {
+    for (; uVar31 >> sVar27 == 0; sVar27 = sVar27 + -1) {
+    }
+  }
+  uVar67 = uVar67 >> 1 | (ushort)(((uint)((POPCOUNT(uVar60 - 1 & 0xff) & 1U) == 0) << 0x1f) >> 0x10)
   ;
-  uVar51 = (ushort)uVar54 | 1 << (uVar44 & 0xf);
-  bVar48 = (byte)uVar51;
-  bVar19 = bVar35 ^ (bVar40 == bVar35) * (bVar35 ^ bVar48);
-  uVar28 = uVar12 & 0xffffff00 | (ulong)(byte)(bVar40 ^ (bVar40 != bVar35) * (bVar40 ^ bVar19));
-  bVar48 = bVar48 & 0x3f;
-  auVar2 = ZEXT116(bVar40 < bVar35) << 0x40 | ZEXT416(uVar54 & 0xffff0000 | (uint)uVar51);
-  uVar24 = (long)CONCAT22((undefined2)((char)bVar32 >> 7),uVar44) << 1;
-  uVar31 = uVar24 | 1;
-  uVar15 = -(uint)(bVar19 >>
-                  ((SUB161(auVar2 >> bVar48,0) | SUB161(auVar2 << 0x41 - bVar48,0)) & 0x1f));
-  bVar32 = ((byte)uVar15 | 0xf2) - 0xd;
-  uVar12 = uVar28 * uVar28;
-  uVar54 = ~(uint)uVar17 & 0xffff0000;
-  uVar53 = (uint)(ushort)(short)(char)bVar32;
-  uVar30 = uVar54 | uVar53;
-  uVar15 = (uVar15 & 0xffffff00 | (uint)bVar32) & ~(1 << ((uint)uVar31 & 0x1f));
-  sVar10 = 0xf;
-  uVar51 = (ushort)uVar15;
-  if (uVar51 != 0) {
-    for (; uVar51 >> sVar10 == 0; sVar10 = sVar10 + -1) {
-    }
+  uVar49 = (uint)CONCAT62(auVar4._2_6_,auVar4._0_2_ * (short)uVar47);
+  uVar38 = uVar49 << (bVar41 & 0x1f) | uVar49 >> 0x20 - (bVar41 & 0x1f);
+  uVar53 = uVar53 << (bVar41 & 0x1f);
+  cVar46 = (char)(uVar38 >> 8);
+  uVar12 = (undefined2)(uVar38 >> 0x10);
+  cVar51 = cVar46 + '\x01';
+  uVar49 = CONCAT31((int3)(uVar42 + 0x30c8a36 >> 8),~(byte)(uVar42 + 0x30c8a36));
+  if (SCARRY1(cVar46,'\x01') != cVar51 < '\0') {
+    uVar49 = uVar53;
   }
-  cVar9 = (char)((uVar12 & 0xffffffff) >> 8);
-  bVar32 = (byte)(uVar12 & 0xffffffff);
-  uVar17 = (ulong)CONCAT11(cVar9 << 1 | cVar9 < '\0',bVar32);
-  uVar43 = (uint)(uVar12 >> 0x21);
-  lVar47 = (uVar24 & 0xffffffffffff0000 | (ulong)(ushort)~(ushort)uVar31) +
-           (uVar12 & 0xffff0000 | uVar17);
-  uVar39 = uVar39 + 0x87cf1267 & 0xffffff00 | uVar42 & 0xff;
-  if ((uVar53 & 0xff) == 0x99766cce) {
-    uVar39 = uVar30;
+  uVar38 = CONCAT31((int3)(CONCAT22(uVar12,CONCAT11(cVar51,(char)uVar38)) >> 8),
+                    (char)uVar38 + bVar41);
+  if (POPCOUNT((ushort)uVar53 & uVar24 & 0xff) == '\0') {
+    uVar44 = (ulong)uVar38;
   }
-  bVar48 = (byte)uVar43;
-  uVar17 = uVar12 & 0xffff0000 | uVar17 & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar32 ^ (bVar32 != bVar48) * (bVar32 ^ bVar48));
-  uVar38 = (uVar41 | (uint)(1 << ((ulong)(byte)((char)uVar38 << ((byte)uVar14 & 0x1f)) & 0x3f))) &
-           0xffff0000 | (uint)(ushort)(uVar21 + 0xbcb5 ^ (uVar21 | (ushort)uVar28));
-  uVar39 = uVar39 ^ 0x40c0cffa;
-  uVar14 = (short)uVar42 - 1;
-  if (uVar39 == 0) {
-    uVar14 = uVar51;
+  uVar54 = CONCAT31((int3)(uVar54 >> 8),bVar21) ^ 0x2000000;
+  bVar41 = (byte)sVar27 | 1;
+  uVar36 = (ulong)uVar49;
+  sVar52 = (short)uVar38;
+  bVar72 = sVar52 < 0;
+  uVar24 = sVar52 << 1;
+  uVar60 = uVar24 | bVar72;
+  uVar53 = CONCAT22(uVar12,uVar60);
+  uVar26 = (ulong)uVar53;
+  uVar24 = uVar24 >> 8;
+  uVar33 = (ulong)(ushort)(auVar5._2_2_ | 0x7916) << 0x10;
+  if (bVar72 != (short)uVar60 < 0) {
+    uVar33 = uVar36;
   }
-  uVar41 = (uVar43 & 0xff | (uint)(uint3)(uVar12 >> 0x29) << 8) ^ uVar38;
-  uVar12 = (uVar12 >> 0x20) - (ulong)uVar30;
-  if ((POPCOUNT(uVar41 & 0xff) & 1U) != 0) {
-    uVar12 = uVar17;
+  lVar28 = (uVar26 - 0x49551c56) + uVar36;
+  cVar46 = (char)uVar44;
+  uVar13 = (undefined3)(uVar54 >> 8);
+  uVar38 = CONCAT31(uVar13,cVar46);
+  iVar25 = CONCAT31((int3)(CONCAT22((short)(uVar55 >> 0x10),sVar27) >> 8),bVar41 + 0x67);
+  if (SBORROW1(bVar41,-0x67) == false) {
+    uVar47 = uVar38;
   }
-  uVar38 = uVar38 ^ 1 << (uVar39 & 0x1f);
-  lVar55 = 0;
-  if (uVar42 != 0) {
-    for (; (uVar42 >> lVar55 & 1) == 0; lVar55 = lVar55 + 1) {
-    }
+  uVar55 = CONCAT31((int3)(CONCAT22(uVar11,uVar31 >> 1) >> 8),cVar46);
+  bVar41 = (char)uVar49 + cVar46 * '\b';
+  uVar40 = (ulong)(uVar69 >> 1) & 0x79968f3b;
+  uVar42 = 0x13c3f5f0 << (bVar41 & 0x1f) | 0x13c3f5f0U >> 0x21 - (bVar41 & 0x1f);
+  uVar31 = (ushort)iVar25;
+  if (uVar53 != uVar42) {
+    uVar26 = (ulong)uVar42;
+    uVar36 = (ulong)uVar42;
   }
-  auVar2 = ZEXT1216(CONCAT48(uVar41,uVar17)) & (undefined  [16])0xffffffffffffffff;
-  auVar3 = auVar2 / ZEXT816(0xc000000000000000);
-  auVar2 = auVar2 % ZEXT816(0xc000000000000000);
-  uVar41 = (int)lVar47 + 0x600d809c + uVar15 * 2;
-  uVar17 = 0xffffffff;
-  if (0 < (short)uVar51) {
-    uVar17 = SUB168(auVar2,0) & 0xffffffff;
+  uVar45 = (undefined6)(uVar36 >> 0x10);
+  sVar27 = (short)uVar36 - uVar31;
+  uVar48 = (ulong)uVar47;
+  if (SBORROW2((short)uVar36,uVar31)) {
+    uVar48 = uVar40;
   }
-  uVar21 = (ushort)uVar41;
-  if ((ushort)(uVar51 - 1) != 0 && 0 < (short)uVar51) {
-    uVar14 = uVar21;
+  bVar18 = bVar41 + (char)sVar27;
+  iVar39 = -1;
+  if (SBORROW4(iVar25,iVar25) != false) {
+    iVar39 = CONCAT22(0xffff,(short)uVar48);
   }
-  uVar30 = SUB164(auVar3,0) + SUB164(auVar2,0) * 2;
-  uVar53 = (uint)uVar12 & 0xffff0000 | (uint)(ushort)((short)uVar12 >> 1) | uVar38;
-  uVar43 = uVar53 << 1 | (uint)((int)uVar53 < 0);
-  uVar21 = uVar21 >> 1;
-  bVar32 = (byte)lVar55;
-  uVar27 = (uint)CONCAT62((int6)((ulong)lVar47 >> 0x10),0x6005);
-  uVar53 = uVar30 + uVar27;
-  if (!CARRY4(uVar30,uVar27) && uVar53 != 0) {
-    uVar14 = SUB162(auVar3,0);
+  uVar60 = (short)CONCAT71((int7)(CONCAT62(uVar45,sVar27) >> 8),bVar41) << 5;
+  uVar32 = uVar60 | (ushort)((ushort)uVar40 >> 1 | 0x8000) >> 0xb;
+  uVar57 = (ushort)iVar39 >> (bVar18 & 0x1f);
+  uVar26 = CONCAT62((int6)(uVar26 >> 0x10),(short)(char)uVar26 * (short)(char)uVar26) &
+           0xffffffffffff7b2f;
+  bVar41 = bVar18 - (char)uVar26;
+  if ((SBORROW1(bVar18,(char)uVar26) != false) != (char)bVar41 < '\0') {
+    uVar26 = CONCAT62((int6)(uVar26 >> 0x10),uVar68 & ~(1 << (uVar31 & 0xf)));
   }
-  uVar44 = (ushort)(uVar42 >> (bVar32 & 0x1f));
-  if ((POPCOUNT(uVar53 & 0xff) & 1U) == 0) {
-    uVar44 = uVar14;
+  bVar18 = (byte)(uVar49 + 0xe7124603);
+  iVar25 = CONCAT31((int3)(uVar49 + 0xe7124603 >> 8),bVar18 >> 1 | bVar18 << 7);
+  uVar36 = (ulong)uVar32 & 0x3f;
+  uVar40 = (ulong)uVar55 ^ 1L << uVar36;
+  bVar73 = (uVar55 >> uVar36 & 1) != 0;
+  cVar51 = (char)uVar32;
+  sVar27 = CONCAT11(((char)(uVar60 >> 8) - cVar51) - bVar73,cVar51);
+  uVar49 = (uint)CONCAT71((int7)(uVar26 >> 8),!bVar73);
+  uVar53 = (uint)CONCAT62(uVar45,sVar27);
+  bVar73 = CARRY4(uVar53,uVar49);
+  uVar26 = lVar28 + (ulong)(uVar69 >> 1) + (ulong)bVar72 & 0xffffff00;
+  if (!bVar73 && uVar53 + uVar49 != 0) {
+    uVar26 = (ulong)(iVar39 + uVar55);
   }
-  uVar38 = uVar38 << 1;
-  uVar14 = (ushort)uVar38;
-  uVar52 = uVar14 | 4;
-  uVar38 = uVar38 & 0xffff0000;
-  uVar14 = (ushort)(byte)(((uVar14 >> 2 & 1) != 0) << 7) << 1 |
-           (ushort)(uVar17 <= (uVar38 | uVar52));
-  cVar9 = (char)uVar21;
-  bVar48 = -cVar9;
-  uVar21 = uVar21 & 0xff00 | SUB162(auVar2,0) << 0xf | (ushort)bVar48;
-  if (bVar48 != 0) {
-    uVar53 = uVar53 & 0xffff0000 | (uint)uVar14;
+  uVar17 = CONCAT14(bVar73,iVar25) >> 7;
+  iVar39 = (int)sVar27 * (int)(short)uVar57;
+  uVar29 = (uint6)(uVar33 >> 0x11);
+  bVar18 = (byte)((uint)iVar39 >> 8);
+  bVar23 = (byte)((uint)iVar39 >> 0x18);
+  uVar68 = CONCAT11(bVar18 + bVar23,(char)iVar39);
+  uVar31 = (ushort)CARRY1(bVar18,bVar23);
+  uVar60 = uVar68 - uVar57;
+  bVar73 = SBORROW2(uVar68,uVar57) != SBORROW2(uVar60,uVar31);
+  bVar72 = uVar57 <= uVar68 && uVar31 <= uVar60;
+  uVar68 = CONCAT11(bVar72,(char)((uint)iVar39 >> 0x10));
+  if (bVar73 == (short)(uVar60 - uVar31) < 0) {
+    uVar26 = CONCAT62((int6)(uVar26 >> 0x10),uVar24);
   }
-  uVar29 = 0xf;
-  if (uVar21 != 0) {
-    for (; uVar21 >> uVar29 == 0; uVar29 = uVar29 - 1) {
-    }
+  uVar31 = uVar60 - uVar31;
+  if (bVar73) {
+    uVar31 = uVar24;
   }
-  uVar54 = uVar54 >> 1;
-  uVar30 = (uint)CONCAT62(SUB166(auVar3 >> 0x10,0),SUB162(auVar3,0) * (short)uVar43);
-  uVar42 = uVar30 << (bVar32 & 0x1f) | uVar30 >> 0x20 - (bVar32 & 0x1f);
-  uVar39 = uVar39 << (bVar32 & 0x1f);
-  cVar20 = (char)(uVar42 >> 8);
-  cVar13 = cVar20 + '\x01';
-  uVar30 = uVar27 + 0x30c8a36 & 0xffffff00 | (uint)(byte)~(byte)(uVar27 + 0x30c8a36);
-  if (SCARRY1(cVar20,'\x01') != cVar13 < '\0') {
-    uVar30 = uVar39;
+  lVar28 = 1L << ((ulong)uVar57 & 0x3f);
+  sVar52 = (short)CONCAT71((int7)(uVar44 >> 8),bVar21);
+  uVar36 = (ulong)(uint)(int)sVar52;
+  sVar27 = (uVar31 - uVar68) + -1;
+  uVar33 = CONCAT62(uVar29,uVar68);
+  uVar44 = ((ulong)((uint)(uVar48 >> 1) & CONCAT22(uVar67,uVar24)) | 0xafb9) >> 1;
+  uVar31 = (ushort)uVar40;
+  uVar53 = (uint)CONCAT62((int6)((ulong)lVar28 >> 0x10),uVar57 ^ (ushort)lVar28 ^ uVar31);
+  uVar49 = uVar53 + 0x1424bd37;
+  uVar26 = (uVar26 & 0x7fffffff) << 1;
+  if (0xebdb42c8 < uVar53) {
+    uVar26 = (ulong)CONCAT22((ushort)((uint)(iVar25 << 0x1a) >> 0x10) | (ushort)(uVar17 >> 0x10),
+                             (ushort)((short)uVar17 << (bVar41 & 0x1f)) >> 0xc | uVar31 << 4);
   }
-  uVar17 = (ulong)uVar30;
-  uVar11 = CONCAT11(cVar13,(char)uVar42 + bVar32);
-  if (POPCOUNT((ushort)uVar39 & uVar14 & 0xff) == '\0') {
-    uVar14 = uVar11;
+  uVar48 = CONCAT62(uVar29,(short)((uint)iVar39 >> 0x10)) & 0xffffffffffff00ff;
+  cVar51 = (char)uVar48;
+  uVar60 = CONCAT11(bVar72,cVar51);
+  if (0xf18c < (uVar31 & 0xff)) {
+    uVar36 = (ulong)(ushort)(sVar52 >> 0xf) << 0x10;
   }
-  uVar39 = (uVar38 | uVar52 & 0xffffff00) ^ 0x2000000;
-  bVar32 = (byte)uVar29 | 1;
-  bVar57 = cVar13 < '\0';
-  uVar11 = uVar11 << 1 | (ushort)bVar57;
-  uVar38 = uVar42 & 0xffff0000 | (uint)uVar11;
-  uVar22 = (ushort)(byte)((uint)uVar11 >> 8);
-  uVar42 = uVar54 & 0xffff0000 | (uint)((POPCOUNT(uVar51 - 1 & 0xff) & 1U) == 0) << 0x1f |
-           (uint)uVar22;
-  uVar12 = (ulong)(ushort)(SUB162(auVar2 >> 0x10,0) | 0x7916) << 0x10;
-  if (bVar57 != (short)uVar11 < 0) {
-    uVar12 = uVar17;
-  }
-  iVar16 = uVar38 + 0xb6aae3aa;
-  bVar48 = (byte)uVar14;
-  uVar14 = uVar14 & 0xff00 | (ushort)(byte)((byte)uVar52 >> 1 | (cVar9 != '\0') << 7);
-  uVar27 = uVar39 | bVar48;
-  uVar15 = (uint)((uint3)(uVar15 >> 8) & 0xffff00) << 8 | uVar29 & 0xffffff00 |
-           (uint)(byte)(bVar32 + 0x67);
-  if (SBORROW1(bVar32,-0x67) == false) {
-    uVar43 = uVar27;
-  }
-  uVar41 = uVar41 & 0xffff0000 | uVar21 >> 1 & 0xffffff00 | (uint)bVar48;
-  uVar21 = (short)uVar30 + (short)uVar41 * 8;
-  uVar24 = (ulong)(uVar53 >> 1) & 0x79968f3b;
-  bVar32 = (byte)uVar21 & 0x1f;
-  uVar33 = 0x13c3f5f0 << bVar32 | 0x13c3f5f0U >> 0x21 - bVar32;
-  uVar51 = (ushort)uVar15;
-  if (uVar38 != uVar33) {
-    uVar17 = (ulong)uVar33;
-    uVar38 = uVar33;
-  }
-  uVar52 = (short)uVar17 - uVar51;
-  uVar28 = (ulong)uVar43;
-  if (SBORROW2((short)uVar17,uVar51)) {
-    uVar28 = uVar24;
-  }
-  bVar32 = (byte)uVar21 + (char)uVar52;
-  uVar43 = 0xffffffff;
-  if (SBORROW4(uVar15,uVar15) != false) {
-    uVar43 = (ushort)uVar28 | 0xffff0000;
-  }
-  uVar29 = (ushort)((ushort)uVar24 >> 1 | 0x8000) >> 0xb;
-  uVar52 = (uVar52 & 0xff00 | uVar21 & 0xff) << 5 | uVar29;
-  uVar11 = (ushort)uVar43 >> (bVar32 & 0x1f);
-  uVar15 = (ushort)((short)(char)uVar38 * (short)(char)uVar38) & 0xffff7b2f;
-  bVar35 = bVar32 - (char)uVar15;
-  if ((SBORROW1(bVar32,(char)uVar15) != false) != (char)bVar35 < '\0') {
-    uVar15 = (uint)(uVar44 & ~(1 << (uVar51 & 0xf)));
-  }
-  bVar32 = (byte)(uVar30 + 0xe7124603);
-  uVar33 = (uint)(byte)(bVar32 >> 1 | bVar32 << 7);
-  uVar24 = (ulong)uVar52 & 0x3f;
-  uVar31 = (ulong)uVar41 ^ 1 << uVar24;
-  bVar58 = (uVar41 >> uVar24 & 1) != 0;
-  uVar15 = uVar38 & 0xffff0000 | uVar15 & 0xffffff00 | (uint)!bVar58;
-  uVar21 = (uVar21 & 7) << 5 | uVar29 |
-           (ushort)(byte)(((char)((ulong)uVar52 >> 8) - (char)uVar52) - bVar58) << 8;
-  uVar23 = (uint)(uVar17 & 0xffffffffffff0000) | (uint)uVar21;
-  bVar58 = CARRY4(uVar23,uVar15);
-  uVar38 = iVar16 + uVar30 + (uVar53 >> 1) + (uint)bVar57 & 0xffffff00;
-  if (!bVar58 && uVar23 + uVar15 != 0) {
-    uVar38 = uVar43 + uVar41;
-  }
-  uVar8 = CONCAT14(bVar58,uVar30 + 0xe7124603 & 0xffffff00 | uVar33) >> 7;
-  iVar16 = (int)(short)uVar21 * (int)(short)uVar11;
-  uVar18 = (uint6)(uVar12 >> 0x11);
-  bVar32 = (byte)((ulong)(ushort)iVar16 >> 8);
-  bVar40 = (byte)((uint)iVar16 >> 0x18);
-  uVar52 = (ushort)iVar16 & 0xff | (ushort)(byte)(bVar32 + bVar40) << 8;
-  uVar21 = (ushort)CARRY1(bVar32,bVar40);
-  uVar51 = uVar52 - uVar11;
-  bVar57 = SBORROW2(uVar52,uVar11) != SBORROW2(uVar51,uVar21);
-  uVar44 = (ushort)((uint)iVar16 >> 0x10) & 0xff;
-  uVar52 = (ushort)(uVar11 <= uVar52 && uVar21 <= uVar51) << 8;
-  uVar29 = uVar44 | uVar52;
-  if (bVar57 == (short)(uVar51 - uVar21) < 0) {
-    uVar38 = uVar38 & 0xffff0000 | (uint)uVar22;
-  }
-  uVar21 = uVar51 - uVar21;
-  if (bVar57) {
-    uVar21 = uVar22;
-  }
-  uVar24 = (ulong)uVar11 ^ 1 << ((ulong)uVar11 & 0x3f);
-  uVar25 = (ulong)(uint)(int)(short)uVar14;
-  uVar12 = (ulong)(ushort)((uVar21 - uVar29) - 1);
-  uVar34 = CONCAT62(uVar18,uVar29);
-  uVar21 = (ushort)uVar31;
-  uVar30 = (uint)uVar24 & 0xffff0000 | (uint)(ushort)((ushort)uVar24 ^ uVar21);
-  uVar53 = uVar30 + 0x1424bd37;
-  uVar37 = (ulong)uVar53;
-  uVar41 = (uint)(((ulong)((uint)(uVar28 >> 1) & uVar42) | 0xafb9) >> 1);
-  uVar24 = ((ulong)uVar38 & 0x7fffffff) << 1;
-  if (0xebdb42c8 < uVar30) {
-    uVar24 = (ulong)(uVar33 << 0x1a | (uint)uVar8 & 0xffff0000 |
-                    (uint)(ushort)((ushort)((short)uVar8 << (bVar35 & 0x1f)) >> 0xc | uVar21 << 4));
-  }
-  uVar52 = uVar52 | uVar44;
-  if (0xf18c < (uVar21 & 0xff)) {
-    uVar25 = (ulong)(ushort)((short)uVar14 >> 0xf) << 0x10;
-  }
-  lVar47 = 0;
-  if (uVar34 != 0) {
-    for (; (uVar34 >> lVar47 & 1) == 0; lVar47 = lVar47 + 1) {
-    }
-  }
-  uVar14 = (short)uVar24 << 1 | (ushort)((short)uVar24 < 0);
-  uVar24 = uVar24 & 0xffffffffffff0000;
-  uVar28 = uVar24 | uVar14;
-  uVar29 = uVar29 ^ 0x2225;
-  uVar38 = (int)lVar47 - (int)uVar28;
-  bVar32 = (byte)uVar25 + 0x94;
-  if (0x6b < (byte)uVar25 && bVar32 != 0) {
-    uVar42 = uVar54 & 0xffff0000;
-  }
-  uVar34 = (uVar17 & 0xffffffffffff0000 | uVar12) ^
-           1 << ((ulong)(ushort)((short)uVar27 + 0x283b) & 0x3f);
-  uVar21 = ((short)uVar38 + 0x33be) - (ushort)(((uVar52 | (ushort)uVar53) & 1) != 0);
-  uVar17 = (ulong)(uVar38 & 0xffff0000 | (uint)uVar21);
-  if ((POPCOUNT(uVar21 & 0xff) & 1U) != 0) {
-    uVar17 = uVar28;
-  }
-  uVar28 = (ulong)(uVar41 & 0xffff0000 | (uint)uVar52) << 1;
-  cVar9 = (char)uVar34;
-  uVar50 = uVar24 | (ulong)uVar14 & 0xffffffffffffff00 | (ulong)(byte)uVar14;
-  cVar13 = ((char)uVar44 + (char)uVar31) * '\x02';
-  uVar54 = CONCAT22((ushort)(uVar39 >> 0x11),(short)((uVar39 | (byte)(bVar48 - 0x3f)) >> 1) + uVar29
-                   ) >> 1;
-  uVar56 = uVar28 & 0xffffffffffff0000 | (ulong)(ushort)((ushort)uVar28 >> 1 | 0x8000);
-  uVar38 = CONCAT22((undefined2)(cVar9 >> 7),cVar9 + 0xb58) &
-           ((int)uVar18 << 0x10 | (uint)CONCAT11((char)(uVar12 >> 8),cVar13));
-  uVar12 = uVar56 - uVar17;
-  uVar28 = 0;
-  if (uVar56 >= uVar17) {
-    uVar28 = uVar17;
-  }
-  uVar34 = uVar34 & 0xffffffffffffff00 | (ulong)(byte)(cVar13 + '^' + (uVar56 < uVar17));
-  uVar30 = (ushort)((ushort)uVar38 & 0xff | (ushort)(byte)~(byte)(uVar38 >> 8) << 8) ^ 0xe331;
-  bVar48 = (byte)(uVar30 >> 8);
-  uVar56 = (ulong)(uVar38 & 0xffff0000 | (uint)CONCAT11(bVar48 >> 5 | bVar48 << 3,(char)uVar30));
-  uVar34 = uVar34 ^ (ulong)(uVar34 != uVar56) *
-                    (uVar34 ^ uVar56 ^ (ulong)(uVar34 == uVar56) * (uVar56 ^ uVar50));
-  uVar30 = uVar54 & 0xffffff00 | 0x80000800;
-  uVar15 = ((uint)uVar31 & 0xffff0000 | uVar41 & 0xffff | 1) - 1;
-  uVar46 = (ulong)(uVar30 & 0xffff0000 |
-                  (uint)(ushort)((ushort)uVar30 | (ushort)(byte)((char)uVar54 - 1)));
-  uVar41 = (uint)uVar34 ^ 0x800;
-  uVar21 = (short)(uVar12 >> 0x20) * 0x2bc0;
-  bVar40 = (byte)(uVar37 >> 8) & 0xde;
-  uVar14 = (ushort)uVar41 ^ 0xef;
-  uVar38 = (int)(short)uVar14 * (int)(short)uVar14;
-  cVar9 = (char)uVar38;
-  uVar56 = (uVar24 | (ushort)((((short)uVar50 << 1 | 1U) << 0xb | (ushort)uVar34 >> 5) &
-                             (ushort)(uVar37 & 0x6321dee4))) ^ 0xc21e;
-  uVar31 = (ulong)(ushort)(((short)cVar9 & 0xff00U |
-                           (ushort)(byte)(cVar9 << 2 |
-                                         (byte)((ushort)((short)cVar9 & 0xffU |
-                                                        (ushort)((int)(short)uVar38 != uVar38) << 8)
-                                               >> 7))) & ~(1 << ((ushort)(uVar38 >> 0x10) & 0xf)));
-  lVar55 = ((ulong)((uint7)(uint3)((uVar42 << 1) >> 8) ^ 0xfffffffff56111) & 0xffffffffffff00) << 8;
-  uVar50 = uVar46 & 0xfffffffffffffd00 | (uVar46 & 0xfffffffffffffdff) >> 3 & 0x1f;
-  uVar54 = uVar53 >> 0x18 | (uVar53 & 0xff0000) >> 8;
-  lVar47 = uVar31 << 1;
-  bVar48 = (byte)lVar47;
-  uVar42 = (uVar15 & 0xffffff00 | uVar38 >> 0x10 & 0xff) << (bVar48 & 0x1f);
-  auVar2 = ZEXT416(uVar41 & 0xffff0000 |
-                   (uint)(ushort)((short)cVar9 * (short)(char)(uVar53 >> 0x18))) *
-           ZEXT816(uVar12 << 0x20 | uVar12 >> 0x20 & 0xffffffffffff0000 |
-                   (ulong)(ushort)(((uint)lVar55 | uVar38 & 0xff) >> 1));
-  bVar35 = SUB161(auVar2,0);
-  bVar19 = bVar40 ^ (bVar35 == bVar40) * (bVar40 ^ ((byte)((ulong)lVar47 >> 8) | bVar40));
-  bVar49 = (byte)uVar42;
-  bVar49 = bVar49 >> 3 | bVar49 << 5;
-  uVar46 = (ulong)(uVar42 & 0xffffff00 | (uint)bVar49);
-  sVar10 = (short)uVar50;
-  auVar2 = CONCAT88(CONCAT71(SUB167(auVar2 >> 0x48,0),SUB161(auVar2 >> 0x40,0) & (byte)uVar56),
-                    CONCAT71(SUB167(auVar2 >> 8,0),bVar35 ^ (bVar35 != bVar40) * (bVar35 ^ bVar19)))
-           & (undefined  [16])0xffffffffffffffff;
-  auVar3 = auVar2 / ZEXT816(uVar46 | 0xc000000000000000);
-  uVar41 = SUB164(auVar2 % ZEXT816(uVar46 | 0xc000000000000000),0) ^ 0x559d5e46;
-  uVar24 = (ulong)(uint7)((long)(uVar17 | 0x400000000) >> 9) << 8;
-  uVar34 = uVar46 & 0xff | uVar24;
-  uVar46 = uVar46 & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar49 + (char)((long)(uVar17 | 0x400000000) >> 1));
-  uVar14 = ((ushort)(CONCAT12((bVar48 + ((byte)(uVar12 >> 0x20) |
-                                        (byte)(1 << ((ushort)uVar15 & 0xf))) & 1) != 0,sVar10) >> 5)
-           | sVar10 << 0xc) & (ushort)uVar54;
-  uVar51 = uVar14 + 1;
-  uVar17 = (uVar37 & 0x63210000 | (ulong)CONCAT11(bVar19,(char)(uVar37 & 0x6321dee4))) & 0x533f8d65;
-  if (uVar51 != 0 && SCARRY2(uVar14,1) == (short)uVar51 < 0) {
-    uVar17 = SUB168(auVar3,0);
-  }
-  auVar2 = ZEXT816(uVar34 | 0xc000000000000000);
-  auVar3 = ZEXT416(uVar41 & 0xffff0000 | uVar41 >> 1 & 0x7fff) << 0x40 |
-           auVar3 & (undefined  [16])0xffffffffffffffff;
-  auVar4 = auVar3 / auVar2;
-  sVar10 = (short)uVar46;
-  uVar14 = uVar51 + sVar10 + 1;
-  uVar31 = (ulong)((CONCAT31((int3)(char)((byte)(uVar29 >> 0xc) |
-                                         (byte)((ushort)(uVar29 << 0xd) >> 8)),
-                             (byte)(uVar29 >> 4) >> 1) & ~(uint)(1 << (uVar31 & 0x3f)) & 0x2ca423df)
-                   + (int)uVar50 + 0x3707af0f);
-  lVar47 = (uVar25 & 0xffffffffffff0000 |
-           (ulong)(ushort)((ushort)((ushort)uVar25 & 0xff00 | (ushort)bVar32) >> 1 |
-                          (ushort)((bVar32 & 1) != 0) << 0xf)) + uVar31;
-  iVar16 = SUB164(auVar3 % auVar2,0) * -0xd0f639a;
-  bVar32 = SUB161(auVar4,0);
-  bVar35 = (byte)((uint)iVar16 >> 8);
-  bVar40 = bVar35 ^ (bVar32 == bVar35) * (bVar35 ^ (byte)iVar16);
-  uVar12 = CONCAT71(SUB167(auVar4 >> 8,0),bVar32 ^ (bVar32 != bVar35) * (bVar32 ^ bVar40));
-  if ((uVar14 & 0xcc91) != 0 && -1 < (short)uVar14) {
-    uVar12 = uVar17;
-  }
-  uVar37 = (ulong)((uVar30 & 0xffff0000 | (uint)uVar51) * 3 + 0x54835d6c & 0xffff0000 |
-                  (uint)(ushort)(short)(char)((uint)(ushort)(sVar10 << 6) >> 8)) + 0x21f1fc4b;
-  uVar25 = uVar17 & 0xffffffffffff0000 |
-           (ulong)(ushort)((ushort)uVar17 & ~(1 << ((ushort)uVar37 & 0xf)));
-  uVar54 = (int)(((ulong)(uVar54 | (uVar53 & 0xff00) << 8 | uVar53 * 0x1000000) & 0x7fffffff) << 1)
-           << 1;
-  bVar32 = (byte)uVar37;
-  uVar50 = -(ulong)((uint)uVar46 >> (bVar32 & 0x1f));
-  uVar31 = (long)uVar31 >> (bVar32 & 0x3f);
-  uVar51 = (ushort)(uVar25 << 1) | (ushort)(uVar31 >> 0x3f);
-  sVar10 = (short)uVar34;
-  uVar44 = sVar10 * 0x400;
-  uVar41 = (uint)uVar24;
-  bVar35 = (byte)uVar31 ^ (byte)uVar21;
-  uVar24 = uVar31 & 0xffffffffffffff00 | (ulong)bVar35;
-  uVar17 = uVar37 << (bVar32 & 0x3f) | uVar37 >> 0x40 - (bVar32 & 0x3f);
-  sVar45 = (short)lVar47;
-  uVar52 = uVar44 ^ (ushort)(uVar51 == uVar44) * (uVar44 ^ (ushort)uVar50);
-  if (SBORROW2(uVar51,uVar44)) {
-    uVar21 = (ushort)uVar17;
-  }
-  uVar29 = uVar51 ^ (ushort)(uVar51 != uVar44) * (uVar51 ^ uVar52);
-  if ((short)(uVar51 + sVar10 * -0x400) < 0) {
-    uVar29 = 0;
-  }
-  bVar32 = (byte)uVar17;
-  uVar37 = uVar56 & 0xffffffffffff0000 | (ulong)(ushort)((ushort)uVar56 ^ 1 << (uVar29 & 0xf));
-  uVar53 = ((uint)lVar47 & 0xffff0000 | (uint)(ushort)(sVar45 << 1 | (ushort)(sVar45 < 0))) << 0xe;
-  Var6 = CONCAT18(((ushort)uVar24 >> ((ushort)uVar50 & 0xf) & 1) != 0,
-                  uVar28 & 0xffffffffffff0000 | (ulong)uVar21) >> 3;
-  uVar30 = uVar41 >> 0x1b | (uVar41 & 0xffff0000 | (uint)uVar52) << 5;
-  bVar49 = (byte)Var6;
-  bVar19 = bVar49 ^ (bVar48 == bVar49) * (bVar49 ^ bVar32);
-  uVar34 = (ulong)Var6 & 0xffffffffffffff00 | (ulong)bVar19;
-  uVar41 = (uint)uVar17 & 0xd74cbe43;
-  sVar10 = (short)((int)(uVar54 | (uint)uVar25 >> 0x1f) >> 1) << 1;
-  cVar9 = (char)sVar10;
-  uVar28 = (ulong)((uint)CONCAT62((int6)(short)((ushort)((ulong)lVar55 >> 0x10) >> 1 |
-                                               (ushort)(((uint)((uVar38 & 1) != 0) << 0x1f) >> 0x10)
-                                               ),(short)(char)bVar48) & 0xffffff00 |
-                   (uint)(byte)(bVar48 ^ (bVar48 != bVar49) * (bVar48 ^ bVar19)) | 0x12959770);
-  uVar24 = uVar50 ^ (ulong)(uVar28 == uVar50) *
-                    (uVar50 ^ (ulong)((int)uVar24 + 0x90680819) - 0x6c8ff010);
-  uVar28 = uVar28 ^ (ulong)(uVar28 != uVar50) * (uVar28 ^ uVar24);
-  uVar38 = (uint)((uVar12 & 0xffff0000 |
-                  (ulong)CONCAT11(((char)((uVar12 & 0xffffffff) >> 8) - bVar32) - (uVar51 < uVar44),
-                                  (char)(uVar12 & 0xffffffff))) >> 1) | 0xa020a6b;
-  uVar21 = (ushort)uVar28;
-  uVar51 = (ushort)CONCAT31((int3)(char)((uVar31 & 0xffffffffffffff00) >> 8),bVar35 + cVar9);
-  bVar48 = (byte)uVar41;
-  bVar35 = cVar9 << (bVar48 & 0x1f);
-  uVar17 = 0;
-  if (uVar30 != 0) {
-    for (; (uVar30 >> uVar17 & 1) == 0; uVar17 = uVar17 + 1) {
-    }
-  }
-  uVar15 = (uint)uVar37 & 0x1f;
-  if ((uVar41 >> uVar15 & 1) == 0) {
-    uVar37 = uVar56 & 0xffffffffffff0000 | (ulong)(ushort)uVar30;
-  }
-  bVar48 = (bVar48 ^ (byte)(1 << uVar15)) & 0x1f;
-  uVar41 = uVar53 << bVar48 | uVar53 >> 0x20 - bVar48;
-  uVar41 = uVar41 & 0xffff0000 | (uint)(ushort)((ushort)uVar41 & (ushort)uVar34);
-  uVar12 = (uVar17 & 0xffff) - 1;
-  uVar15 = (int)uVar24 + 0xc802fe;
-  uVar52 = (short)uVar17 - (ushort)bVar35 & 0xff;
-  uVar44 = (ushort)uVar38 >> 6;
-  uVar53 = ((uint)uVar28 & 0xffff0000 |
-           (uint)(ushort)(uVar21 ^ (ushort)(uVar21 != uVar51) *
-                                   (uVar21 ^ uVar51 ^ (ushort)(uVar21 == uVar51) *
-                                                      (uVar51 ^ (uVar14 & 0xcc91 |
-                                                                (ushort)(byte)(bVar40 << 1 |
-                                                                              (char)bVar40 < '\0')
-                                                                << 8))))) + 0x6638cca8 & 0xffff0000
-           ^ 0xfa8d9330;
-  uVar17 = 0x3f;
-  if (uVar53 != 0) {
-    for (; uVar53 >> uVar17 == 0; uVar17 = uVar17 - 1) {
-    }
-  }
-  bVar40 = (byte)uVar52 & 0x1f;
-  uVar54 = CONCAT22((short)((int)uVar54 >> 0x11),sVar10) & 0xffffff00 |
-           (uint)(bVar35 & (byte)uVar44);
-  uVar42 = (int)uVar34 + 0x920db7ad;
-  bVar48 = (char)uVar30 - 0x3e;
-  uVar43 = (uVar30 ^ 0x2000) & 0xffffff00;
-  uVar39 = uVar43 | bVar48;
-  uVar12 = uVar12 & 0xffff0000 |
-           (ulong)(ushort)(CONCAT11((char)(uVar12 >> 8) * '\x02',(char)uVar12 << 1) | 1);
-  if (bVar48 == 0 || (SCARRY1((char)uVar30,-0x3e) != SCARRY1(bVar48,'\0')) != (char)bVar48 < '\0') {
-    uVar12 = (ulong)uVar39;
-  }
-  uVar41 = ((uVar41 << bVar40 | uVar41 >> 0x20 - bVar40) - (int)(uVar17 ^ 0xffffffffcaf2047e)) - 1;
-  lVar55 = (long)(uVar17 ^ 0xffffffffcaf2047e) >> 1;
-  lVar47 = 0x3f;
-  if (uVar12 != 0) {
-    for (; uVar12 >> lVar47 == 0; lVar47 = lVar47 + -1) {
-    }
-  }
-  uVar30 = (uint)lVar47;
-  cVar9 = (char)((ulong)(long)(int)(uVar53 & 0xffffff00) >> 8);
-  cVar13 = (char)((uVar38 & 0xffffff00 | (uint)(byte)~(byte)uVar38) >> 1);
-  cVar20 = cVar13 + cVar9;
-  if (cVar20 == '\0' || SCARRY1(cVar13,cVar9) != cVar20 < '\0') {
-    uVar15 = uVar15 & 0xffff0000 |
-             (0xffffffffU >> (bVar32 & 0x1f) | -1 << 0x20 - (bVar32 & 0x1f)) >> 1 & 0xffff;
-  }
-  sVar26 = (short)uVar39;
-  uVar27 = ((int)sVar26 - uVar54) - 1;
-  sVar10 = (short)((uVar53 & 0xffffff00) >> 0x10);
-  sVar45 = (short)uVar41;
-  uVar21 = sVar45 >> 1;
-  uVar33 = uVar27 & 0xffff0000 | (uint)(ushort)((ushort)uVar27 >> 1 | (short)uVar54 << 0xf);
-  uVar53 = (uint)CONCAT71((int7)(uVar12 >> 8),0xab) >> 1;
-  uVar27 = (int)sVar26 << 0x1f;
-  uVar14 = (ushort)lVar55;
-  uVar23 = (uint)lVar55;
-  if ((uVar53 | uVar27) != 0) {
-    uVar30 = uVar30 & 0xffff0000 | uVar23 & 0xffff;
-  }
-  uVar36 = uVar38 >> 0x12;
-  if (uVar39 == 0xffffffff) {
-    uVar36 = uVar15 << 1;
-  }
-  uVar7 = uVar39 + 1 & 0xffff0000 | uVar39 + 1 >> 0xe & 3;
-  uVar15 = 0;
-  if (uVar54 != 0) {
-    for (; (uVar54 >> uVar15 & 1) == 0; uVar15 = uVar15 + 1) {
-    }
-  }
-  uVar1 = 0x1f;
+  lVar28 = 0;
   if (uVar33 != 0) {
-    for (; uVar33 >> uVar1 == 0; uVar1 = uVar1 - 1) {
+    for (; (uVar33 >> lVar28 & 1) == 0; lVar28 = lVar28 + 1) {
     }
   }
-  uVar41 = (uVar41 & 0xffff0000 | uVar21 & 0xffffff00 | (uint)(byte)((char)uVar21 + 0x90)) & uVar30;
-  if (-1 < (int)uVar41) {
-    uVar41 = uVar41 & 0xffff0000 | (uint)uVar14;
+  uVar50 = (undefined6)(uVar26 >> 0x10);
+  uVar57 = (short)uVar26 << 1 | (ushort)((short)uVar26 < 0);
+  uVar35 = CONCAT62(uVar50,uVar57);
+  uVar68 = uVar68 ^ 0x2225;
+  iVar25 = (int)lVar28 - (int)uVar35;
+  bVar41 = (char)uVar36 + 0x94;
+  uVar31 = (ushort)(uVar54 >> 0x10);
+  uVar53 = CONCAT22(uVar31 >> 1,(short)(CONCAT31(uVar13,cVar46 + -0x3f) >> 1) + uVar68);
+  uVar33 = CONCAT62(uVar45,sVar27) ^ 1L << ((ulong)(ushort)((short)uVar38 + 0x283b) & 0x3f);
+  uVar32 = ((short)iVar25 + 0x33be) - (ushort)(((uVar60 | (ushort)uVar49) & 1) != 0);
+  uVar26 = (ulong)CONCAT22((short)((uint)iVar25 >> 0x10),uVar32);
+  if ((POPCOUNT(uVar32 & 0xff) & 1U) != 0) {
+    uVar26 = uVar35;
   }
-  uVar30 = uVar30 << 1;
-  cVar9 = (char)(uVar54 >> 5);
-  bVar32 = -cVar9;
-  uVar12 = (ulong)(uVar54 >> 5) & 0xffffffffffffff00 |
-           (ulong)(byte)((short)((short)(((int)sVar10 << 0x10) >> 1) * uVar21) >> 0xf) << 0x3b |
-           (ulong)bVar32;
-  uVar17 = (long)(short)uVar14;
-  if (cVar9 == '\0' && bVar32 != 0) {
-    uVar17 = (ulong)uVar39;
+  lVar28 = (ulong)CONCAT22((short)(uVar44 >> 0x10),uVar60) << 1;
+  cVar46 = (char)uVar33;
+  uVar65 = CONCAT71((int7)(uVar35 >> 8),(char)uVar57);
+  cVar51 = (cVar51 + (char)uVar40) * '\x02';
+  uVar45 = (undefined6)(uVar36 >> 0x10);
+  uVar35 = CONCAT62((int6)((ulong)lVar28 >> 0x10),(ushort)lVar28 >> 1) | 0x8000;
+  uVar55 = CONCAT22(cVar46 >> 7,cVar46 + 0xb58) &
+           (uint)CONCAT62((int6)(uVar48 >> 0x10),CONCAT11((char)((ushort)sVar27 >> 8),cVar51));
+  uVar11 = (undefined2)(uVar55 >> 0x10);
+  lVar28 = uVar35 - uVar26;
+  uVar48 = 0;
+  if (uVar35 >= uVar26) {
+    uVar48 = uVar26;
   }
-  bVar35 = (byte)uVar15 & 0x1f;
-  iVar16 = (uint)(ushort)uVar17 * (uVar30 & 0xffff);
-  uVar17 = uVar17 & 0xffffffffffff0000 | (ulong)(ushort)iVar16;
-  bVar32 = (byte)(uVar15 + 0xa816dfb7) & 0x3f;
-  uVar39 = (uint)(CONCAT18(uVar12 < 0xf93185a2,uVar17) >> bVar32) | (uint)(uVar17 << 0x41 - bVar32);
-  uVar17 = (long)(int)((int)((uVar38 & 0xfffffe00) >> 1 | (uVar44 | uVar42) << 0x1f |
-                            (uint)(byte)(cVar20 - 0x19)) >> (bVar48 & 0x1f) & 0xffffff00U |
-                      (uint)(byte)(((char)(sVar10 >> 4) + '\x13') - (uVar15 < 0x57e92049))) *
-           0x4eb0fc3f;
-  return (ulong)(uVar39 >> 0x14 | uVar39 << 0xc) + (uVar17 & 0xffffffff) +
-         (ulong)(uVar15 + 0xa816dfb7) +
-         ((ulong)(uVar53 & 0xffff0000 | uVar27) | (ulong)(ushort)((uint)iVar16 >> 0x10)) +
-         (ulong)(uVar43 | (byte)~bVar48) +
-         (((ulong)uVar30 - 0x7f79fbddd) - (ulong)((long)(int)uVar17 != uVar17)) + (ulong)uVar7 +
-         (ulong)(uVar33 ^ uVar7) + (ulong)(uVar36 >> 0x1f | uVar36 << 1) +
-         (ulong)((uVar23 >> bVar35 | uVar30 << 0x20 - bVar35) << 9 | uVar1 >> 0x17) +
-         (ulong)(uVar42 & 0xffff0000 | (ushort)(sVar45 + 0xe4 + uVar52) & 0xffffff00 |
-                (uint)((uVar15 >> (uVar36 & 0x1f) & 1) != 0 || uVar54 == 0)) +
-         (uVar37 & 0xffffffffffffff00 |
-         (ulong)(byte)((char)uVar37 + -0x47 + ((byte)((uint)(int)sVar26 >> 8) & 1))) +
-         (ulong)(uVar41 >> 0xd | uVar41 << 0x13) +
-         (ulong)(uVar1 & 0xffffff00 | (uint)(byte)((char)uVar1 - 1)) + uVar12;
+  uVar33 = CONCAT71((int7)(uVar33 >> 8),cVar51 + '^' + (uVar35 < uVar26));
+  uVar55 = CONCAT22(uVar11,CONCAT11(~(byte)(uVar55 >> 8),(char)uVar55)) ^ 0xe331;
+  bVar21 = (byte)(uVar55 >> 8);
+  uVar35 = (ulong)CONCAT22(uVar11,CONCAT11(bVar21 >> 5 | bVar21 << 3,(char)uVar55));
+  uVar33 = uVar33 ^ (ulong)(uVar33 != uVar35) *
+                    (uVar33 ^ uVar35 ^ (ulong)(uVar33 == uVar35) * (uVar35 ^ uVar65));
+  uVar60 = (ushort)uVar33;
+  iVar25 = ((uint)CONCAT62((int6)(uVar40 >> 0x10),(short)uVar44) | 1) - 1;
+  uVar44 = (ulong)uVar49 & 0x6321dee4;
+  sVar27 = (short)((ulong)lVar28 >> 0x20) * 0x2bc0;
+  uVar32 = uVar60 ^ 0x8ef;
+  uVar71 = (ulong)(CONCAT22(uVar31 >> 2,
+                            (short)CONCAT31((uint3)(uVar53 >> 9),(char)(uVar53 >> 1) + -1)) |
+                  0x80000800) & 0xfffffffffffffdff;
+  uVar55 = (int)(short)uVar32 * (int)(short)uVar32;
+  cVar46 = (char)uVar55;
+  uVar31 = (((short)uVar65 << 1 | 1U) << 0xb | uVar60 >> 5) & (ushort)uVar44 ^ 0xc21e;
+  uVar40 = (ulong)CONCAT22(0xfffc,(ushort)CONCAT31((int3)(CONCAT22(0xfffc,(short)cVar46) >> 8),
+                                                   cVar46 << 2 |
+                                                   (byte)(CONCAT11((int)(short)uVar55 != uVar55,
+                                                                   cVar46) >> 7)) &
+                                  ~(1 << (short)((uVar55 & 0xf0001) >> 0x10)));
+  uVar54 = (CONCAT22((short)((uint)(CONCAT22(uVar67,uVar24) << 1) >> 0x10),(short)uVar55) ^
+           0xf5610000) & 0xffff00ff;
+  uVar20 = CONCAT71((int7)(uVar71 >> 8),(byte)uVar71 >> 3);
+  auVar9._2_6_ = (uint6)((ulong)(lVar28 << 0x20) >> 0x10) | (uint6)(ushort)((ulong)lVar28 >> 0x30);
+  auVar9._0_2_ = (short)(uVar54 >> 1);
+  uVar53 = uVar49 >> 0x18 | (uVar49 & 0xff0000) >> 8;
+  lVar34 = uVar40 << 1;
+  bVar21 = (byte)lVar34;
+  bVar23 = (byte)(uVar44 >> 8);
+  iVar39 = CONCAT31((int3)((uint)iVar25 >> 8),(char)(uVar55 >> 0x10)) << (bVar21 & 0x1f);
+  auVar9._8_8_ = 0;
+  auVar9 = ZEXT416(CONCAT22((short)(uVar33 >> 0x10),(short)cVar46 * (short)(char)(uVar49 >> 0x18)))
+           * auVar9;
+  bVar18 = auVar9[0];
+  bVar30 = bVar23 ^ (bVar18 == bVar23) * (bVar23 ^ ((byte)((ulong)lVar34 >> 8) | bVar23));
+  auVar6._1_7_ = auVar9._1_7_;
+  auVar6[0] = bVar18 ^ (bVar18 != bVar23) * (bVar18 ^ bVar30);
+  bVar18 = (byte)iVar39;
+  bVar18 = bVar18 >> 3 | bVar18 << 5;
+  sVar52 = (short)uVar20;
+  uVar65 = (ulong)CONCAT31((int3)((uint)iVar39 >> 8),bVar18) | 0xc000000000000000;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = uVar65;
+  auVar6._8_8_ = CONCAT71(auVar9._9_7_,auVar9[8] & (byte)uVar31) & 0x3fffffffffffffff;
+  uVar33 = SUB168(auVar6 / auVar2,0);
+  uVar38 = SUB164(auVar6 % auVar2,0) ^ 0x559d5e46;
+  uVar35 = CONCAT71((int7)((long)(uVar26 | 0x400000000) >> 9),bVar18);
+  uVar37 = CONCAT71((int7)(uVar65 >> 8),bVar18 + (char)((long)(uVar26 | 0x400000000) >> 1));
+  uVar24 = ((ushort)(CONCAT12((bVar21 + ((byte)((ulong)lVar28 >> 0x20) |
+                                        (byte)(1 << ((ushort)iVar25 & 0xf))) & 1) != 0,sVar52) >> 5)
+           | sVar52 << 0xc) & (ushort)uVar53;
+  auVar7._10_2_ = (short)(uVar38 >> 0x10);
+  auVar7._8_2_ = (ushort)uVar38 >> 1;
+  sVar52 = uVar24 + 1;
+  uVar44 = CONCAT62((int6)(uVar44 >> 0x10),CONCAT11(bVar30,(char)uVar44)) & 0x533f8d65;
+  if (sVar52 != 0 && SCARRY2(uVar24,1) == sVar52 < 0) {
+    uVar44 = uVar33;
+  }
+  uVar65 = uVar35 | 0xc000000000000000;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = uVar65;
+  auVar7._0_8_ = uVar33;
+  auVar7._12_4_ = 0;
+  sVar61 = (short)uVar37;
+  uVar24 = sVar52 + sVar61 + 1;
+  uVar33 = (ulong)((CONCAT31((int3)(char)((byte)(uVar68 >> 0xc) |
+                                         (byte)((ushort)(uVar68 << 0xd) >> 8)),
+                             (byte)(uVar68 >> 4) >> 1) & ~(uint)(1L << (uVar40 & 0x3f)) & 0x2ca423df
+                   ) + (int)uVar20 + 0x3707af0f);
+  lVar28 = CONCAT62(uVar45,(ushort)CONCAT71((int7)(CONCAT62(uVar45,(short)CONCAT71((int7)(uVar36 >>
+                                                                                         8),bVar41))
+                                                  >> 8),bVar41) >> 1 |
+                           (ushort)((bVar41 & 1) != 0) << 0xf) + uVar33;
+  iVar25 = SUB164(auVar7 % auVar3,0) * -0xd0f639a;
+  bVar41 = SUB161(auVar7 / auVar3,0);
+  bVar23 = (byte)((uint)iVar25 >> 8);
+  bVar18 = bVar23 ^ (bVar41 == bVar23) * (bVar23 ^ (byte)iVar25);
+  uVar26 = CONCAT71(SUB167(auVar7 / auVar3,1),bVar41 ^ (bVar41 != bVar23) * (bVar41 ^ bVar18));
+  if (0 < (short)(uVar24 & 0xcc91)) {
+    uVar26 = uVar44;
+  }
+  uVar26 = uVar26 & 0xffffffff;
+  uVar36 = (ulong)CONCAT22((short)((uint)((int)CONCAT62((int6)(uVar71 >> 0x10),sVar52) * 3 +
+                                         0x54835d6c) >> 0x10),
+                           (short)(char)((ushort)(sVar61 << 6) >> 8)) + 0x21f1fc4b;
+  uVar68 = (ushort)uVar44 & ~(1 << ((ushort)uVar36 & 0xf));
+  uVar49 = (int)(((ulong)(uVar53 | (uVar49 & 0xff00) << 8 | uVar49 * 0x1000000) & 0x7fffffff) << 1)
+           << 1;
+  bVar41 = (byte)uVar36;
+  uVar40 = -(ulong)((uint)uVar37 >> (bVar41 & 0x1f));
+  uVar67 = (ushort)(byte)(bVar18 << 1 | (char)bVar18 < '\0') << 8;
+  lVar34 = (long)uVar33 >> (bVar41 & 0x3f);
+  uVar60 = uVar68 << 1 | (ushort)((ulong)lVar34 >> 0x3f);
+  sVar52 = (short)uVar35;
+  uVar32 = sVar52 * 0x400;
+  bVar18 = (byte)lVar34 ^ (byte)sVar27;
+  uVar20 = CONCAT71((int7)((ulong)lVar34 >> 8),bVar18);
+  uVar33 = uVar36 << (bVar41 & 0x3f) | uVar36 >> 0x40 - (bVar41 & 0x3f);
+  sVar61 = (short)lVar28;
+  uVar57 = uVar32 ^ (ushort)(uVar60 == uVar32) * (uVar32 ^ (ushort)uVar40);
+  if (SBORROW2(uVar60,uVar32)) {
+    sVar27 = (short)uVar33;
+  }
+  uVar19 = uVar60 ^ (ushort)(uVar60 != uVar32) * (uVar60 ^ uVar57);
+  if ((short)(uVar60 + sVar52 * -0x400) < 0) {
+    uVar19 = uVar67;
+  }
+  bVar41 = (byte)uVar33;
+  uVar59 = CONCAT62(uVar50,uVar31 ^ 1 << (uVar19 & 0xf));
+  uVar47 = (int)CONCAT62((int6)((ulong)lVar28 >> 0x10),sVar61 << 1 | (ushort)(sVar61 < 0)) << 0xe;
+  Var14 = CONCAT18(((ushort)uVar20 >> ((ushort)uVar40 & 0xf) & 1) != 0,
+                   CONCAT62((int6)(uVar48 >> 0x10),sVar27)) >> 3;
+  uVar38 = (uint)CONCAT62((int6)(uVar65 >> 0x10),uVar57);
+  uVar53 = uVar38 << 5;
+  uVar69 = uVar38 >> 0x1b | uVar53;
+  bVar23 = (byte)Var14;
+  bVar30 = bVar23 ^ (bVar21 == bVar23) * (bVar23 ^ bVar41);
+  uVar37 = CONCAT71((int7)(Var14 >> 8),bVar30);
+  uVar38 = (uint)uVar33 & 0xd74cbe43;
+  sVar27 = (short)((int)(uVar49 | (uint)CONCAT62((int6)(uVar44 >> 0x10),uVar68) >> 0x1f) >> 1) << 1;
+  cVar46 = (char)sVar27;
+  uVar33 = (ulong)((uint)CONCAT71((int7)(CONCAT62((int6)(short)((ushort)(uVar54 >> 0x11) |
+                                                               (ushort)(((uint)((short)(uVar55 & 
+                                                  0xf0001) != 0) << 0x1f) >> 0x10)),
+                                                  (short)(char)bVar21) >> 8),
+                                  bVar21 ^ (bVar21 != bVar23) * (bVar21 ^ bVar30)) | 0x12959770);
+  uVar36 = uVar40 ^ (ulong)(uVar33 == uVar40) *
+                    (uVar40 ^ (ulong)((int)uVar20 + 0x90680819) - 0x6c8ff010);
+  uVar33 = uVar33 ^ (ulong)(uVar33 != uVar40) * (uVar33 ^ uVar36);
+  uVar55 = (uint)(CONCAT62((int6)(uVar26 >> 0x10),
+                           CONCAT11(((char)(uVar26 >> 8) - bVar41) - (uVar60 < uVar32),(char)uVar26)
+                          ) >> 1) | 0xa020a6b;
+  uVar31 = (ushort)uVar33;
+  uVar60 = (ushort)CONCAT31((int3)(char)((ulong)lVar34 >> 8),bVar18 + cVar46);
+  bVar21 = (byte)uVar38;
+  uVar10 = (uint3)(CONCAT22((short)((int)uVar49 >> 0x11),sVar27) >> 8);
+  bVar18 = cVar46 << (bVar21 & 0x1f);
+  uVar44 = 0;
+  if (uVar69 != 0) {
+    for (; (uVar69 >> uVar44 & 1) == 0; uVar44 = uVar44 + 1) {
+    }
+  }
+  uVar49 = (uint)uVar59 & 0x1f;
+  if ((uVar38 >> uVar49 & 1) == 0) {
+    uVar59 = CONCAT62(uVar50,(short)uVar69);
+  }
+  bVar21 = (bVar21 ^ (byte)(1 << uVar49)) & 0x1f;
+  uVar49 = uVar47 << bVar21 | uVar47 >> 0x20 - bVar21;
+  uVar49 = CONCAT22((short)(uVar49 >> 0x10),(ushort)uVar49 & (ushort)uVar37);
+  lVar28 = (uVar44 & 0xffff) - 1;
+  lVar34 = uVar36 + 0xc802fe;
+  iVar25 = (int)lVar34;
+  uVar32 = (short)uVar44 - (short)CONCAT31(uVar10,bVar18) & 0xff;
+  uVar68 = (ushort)uVar55 >> 6;
+  uVar13 = (undefined3)(uVar53 >> 8);
+  uVar38 = (int)CONCAT62((int6)(uVar33 >> 0x10),
+                         uVar31 ^ (ushort)(uVar31 != uVar60) *
+                                  (uVar31 ^ uVar60 ^ (ushort)(uVar31 == uVar60) *
+                                                     (uVar60 ^ (uVar24 & 0xcc91 | uVar67)))) +
+           0x6638cca8U & 0xffff0000 ^ 0xfa8d9330;
+  uVar44 = 0x3f;
+  if (uVar38 != 0) {
+    for (; uVar38 >> uVar44 == 0; uVar44 = uVar44 - 1) {
+    }
+  }
+  bVar23 = (byte)uVar32 & 0x1f;
+  uVar54 = CONCAT31(uVar10,bVar18 & (byte)uVar68);
+  uVar47 = (int)uVar37 + 0x920db7ad;
+  bVar21 = (char)uVar69 - 0x3e;
+  uVar42 = CONCAT31(uVar13,bVar21) ^ 0x2000;
+  uVar26 = CONCAT62((int6)((ulong)lVar28 >> 0x10),
+                    CONCAT11((char)((ulong)lVar28 >> 8) * '\x02',(char)lVar28 << 1)) & 0xffffffff |
+           1;
+  if (bVar21 == 0 || (SCARRY1((char)uVar69,-0x3e) != SCARRY1(bVar21,'\0')) != (char)bVar21 < '\0') {
+    uVar26 = (ulong)uVar42;
+  }
+  iVar39 = ((uVar49 << bVar23 | uVar49 >> 0x20 - bVar23) - (int)(uVar44 ^ 0xffffffffcaf2047e)) + -1;
+  lVar56 = (long)(uVar44 ^ 0xffffffffcaf2047e) >> 1;
+  uVar15 = (uint3)(uVar55 >> 8);
+  lVar28 = 0x3f;
+  if (uVar26 != 0) {
+    for (; uVar26 >> lVar28 == 0; lVar28 = lVar28 + -1) {
+    }
+  }
+  uVar49 = (uint)lVar28;
+  cVar46 = (char)(CONCAT31(uVar15,~(byte)uVar55) >> 1);
+  if (cVar46 == 'm' || SCARRY1(cVar46,-0x6d) != (char)(cVar46 + -0x6d) < '\0') {
+    iVar25 = (int)CONCAT62((int6)((ulong)lVar34 >> 0x10),
+                           (short)((0xffffffffU >> (bVar41 & 0x1f) | -1 << 0x20 - (bVar41 & 0x1f))
+                                  >> 1));
+  }
+  lVar34 = ((long)(short)uVar42 - (ulong)uVar54) + -1;
+  sVar27 = (short)(uVar38 >> 0x10);
+  sVar52 = (short)iVar39;
+  sVar62 = sVar52 >> 1;
+  uVar38 = (uint)CONCAT71((int7)(uVar26 >> 8),0xab) >> 1 | (int)(short)uVar42 << 0x1f;
+  sVar61 = (short)lVar56;
+  if (uVar38 != 0) {
+    uVar49 = (uint)CONCAT62((int6)((ulong)lVar28 >> 0x10),sVar61);
+  }
+  uVar55 = uVar55 >> 0x12;
+  if (uVar42 == 0xffffffff) {
+    uVar55 = iVar25 << 1;
+  }
+  uVar16 = CONCAT22((short)(uVar42 + 1 >> 0x10),(ushort)(uVar42 + 1) >> 0xe);
+  uVar69 = 0;
+  if (uVar54 != 0) {
+    for (; (uVar54 >> uVar69 & 1) == 0; uVar69 = uVar69 + 1) {
+    }
+  }
+  iVar25 = 0x1f;
+  uVar43 = (uint)CONCAT62((int6)((ulong)lVar34 >> 0x10),(ushort)lVar34 >> 1 | (short)uVar54 << 0xf);
+  if (uVar43 != 0) {
+    for (; uVar43 >> iVar25 == 0; iVar25 = iVar25 + -1) {
+    }
+  }
+  uVar63 = CONCAT31((int3)(CONCAT22((short)((uint)iVar39 >> 0x10),sVar62) >> 8),(char)sVar62 + -0x70
+                   ) & uVar49;
+  if (-1 < (int)uVar63) {
+    uVar63 = CONCAT22((short)(uVar63 >> 0x10),sVar61);
+  }
+  uVar49 = uVar49 << 1;
+  cVar66 = (char)(uVar54 >> 5);
+  cVar51 = -cVar66;
+  uVar26 = CONCAT71((uint7)(uVar10 >> 5) |
+                    (uint7)(((ulong)(byte)((short)((short)(((int)sVar27 << 0x10) >> 1) * sVar62) >>
+                                          0xf) << 0x3b) >> 8),cVar51);
+  uVar44 = (long)sVar61;
+  if (cVar66 == '\0' && cVar51 != '\0') {
+    uVar44 = (ulong)uVar42;
+  }
+  bVar18 = (byte)uVar69 & 0x1f;
+  uVar10 = (uint3)((uint)iVar25 >> 8);
+  iVar39 = (uint)(ushort)uVar44 * (uVar49 & 0xffff);
+  uVar20 = CONCAT62((int6)(uVar44 >> 0x10),(short)iVar39);
+  bVar41 = (byte)(uVar69 + 0xa816dfb7) & 0x3f;
+  uVar42 = (uint)(CONCAT18(uVar26 < 0xf93185a2,uVar20) >> bVar41) | (int)uVar20 << 0x41 - bVar41;
+  uVar44 = (long)CONCAT31((int3)((uint)(CONCAT31(uVar15 >> 1 |
+                                                 (uint3)(((uVar68 | uVar47) << 0x1f) >> 8),
+                                                 cVar46 + 'z') >> (bVar21 & 0x1f)) >> 8),
+                          ((char)(sVar27 >> 4) + '\x13') - (uVar69 < 0x57e92049)) * 0x4eb0fc3f;
+  return (ulong)(uVar42 >> 0x14 | uVar42 << 0xc) + (uVar44 & 0xffffffff) +
+         (ulong)(uVar69 + 0xa816dfb7) +
+         (ulong)CONCAT22((short)(uVar38 >> 0x10),(short)((uint)iVar39 >> 0x10)) +
+         (ulong)(CONCAT31(uVar13,~bVar21) ^ 0x2000) +
+         (((ulong)uVar49 - 0x7f79fbddd) - (ulong)((long)(int)uVar44 != uVar44)) + (ulong)uVar16 +
+         (ulong)(uVar43 ^ uVar16) + (ulong)(uVar55 >> 0x1f | uVar55 << 1) +
+         (ulong)(((uint)lVar56 >> bVar18 | uVar49 << 0x20 - bVar18) << 9 | (uint)(uVar10 >> 0xf)) +
+         (ulong)CONCAT31((int3)(CONCAT22((short)(uVar47 >> 0x10),sVar52 + 0xe4 + uVar32) >> 8),
+                         (uVar69 >> (uVar55 & 0x1f) & 1) != 0 || uVar54 == 0) +
+         CONCAT71((int7)((ulong)uVar59 >> 8),(char)uVar59 + -0x47 + ((byte)(uVar53 >> 8) & 1)) +
+         (ulong)(uVar63 >> 0xd | uVar63 << 0x13) + (ulong)CONCAT31(uVar10,(char)iVar25 + -1) +
+         uVar26;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x00402d20)
-// WARNING: Removing unreachable block (ram,0x004025b3)
-// WARNING: Removing unreachable block (ram,0x00402d1c)
-// WARNING: Removing unreachable block (ram,0x00402f7f)
 // WARNING: Removing unreachable block (ram,0x00402d81)
+// WARNING: Removing unreachable block (ram,0x00402d20)
+// WARNING: Removing unreachable block (ram,0x00402d1c)
 // WARNING: Removing unreachable block (ram,0x00402241)
+// WARNING: Removing unreachable block (ram,0x004025b3)
+// WARNING: Removing unreachable block (ram,0x00402f7f)
 
 long log_size_10_var_001(void)
 
 {
   undefined auVar1 [16];
   undefined auVar2 [16];
-  uint uVar3;
-  char cVar4;
-  byte bVar11;
-  ushort uVar5;
-  ushort uVar6;
-  ushort uVar7;
-  ulong uVar8;
-  long lVar9;
-  ulong uVar10;
-  byte bVar12;
-  sbyte sVar13;
-  ushort uVar14;
-  uint uVar15;
-  int iVar16;
-  ulong uVar17;
-  byte bVar19;
-  long lVar18;
-  undefined uVar20;
-  uint uVar21;
-  ulong uVar22;
-  char cVar23;
-  ushort uVar24;
-  short sVar25;
-  uint uVar26;
+  undefined auVar3 [16];
+  undefined auVar4 [16];
+  undefined auVar5 [16];
+  undefined auVar6 [16];
+  undefined auVar7 [16];
+  undefined auVar8 [16];
+  undefined4 uVar9;
+  undefined2 uVar10;
+  undefined2 uVar11;
+  uint uVar12;
+  undefined5 uVar13;
+  char cVar14;
+  char cVar15;
+  byte bVar23;
+  short sVar16;
+  ushort uVar17;
+  ushort uVar18;
+  ulong uVar19;
+  ulong uVar20;
+  uint6 uVar24;
+  ulong uVar21;
+  undefined6 uVar25;
+  undefined8 uVar22;
+  byte bVar26;
   uint uVar27;
+  byte bVar30;
   long lVar28;
-  ushort uVar29;
-  uint uVar30;
-  uint uVar31;
+  ulong uVar29;
+  undefined uVar31;
   uint uVar32;
-  ulong uVar33;
+  int iVar33;
   ulong uVar34;
-  ushort uVar35;
-  byte bVar36;
-  ulong uVar37;
-  char cVar38;
+  byte bVar35;
+  short sVar36;
+  int iVar37;
+  short sVar38;
   uint uVar39;
-  byte bVar40;
-  ulong uVar41;
-  char cVar42;
+  long lVar40;
+  long lVar41;
+  uint uVar42;
   uint uVar43;
-  ulong uVar44;
-  int iVar45;
+  long lVar44;
+  ushort uVar45;
   uint uVar46;
-  ulong uVar47;
-  ushort uVar48;
-  uint uVar49;
-  uint uVar50;
-  ulong uVar51;
-  bool bVar52;
+  ushort uVar47;
+  uint uVar48;
+  int iVar49;
+  long lVar50;
+  byte bVar51;
+  int iVar52;
+  ulong uVar53;
+  undefined6 uVar54;
+  char cVar55;
+  short sVar56;
+  short sVar57;
+  int iVar58;
+  uint uVar59;
+  ushort uVar60;
+  ushort uVar61;
+  uint uVar62;
+  ulong uVar63;
+  bool bVar64;
   char in_AF;
   
-  bVar11 = in_AF << 4 | 0x83;
-  uVar26 = 0xdbae8300;
-  uVar5 = ((ushort)bVar11 << 8 | 0xc1) * -0xcc6;
-  if (((uint)bVar11 << 8 | 0xd8b60000) != 0x8b69063f) {
-    uVar26 = 0xdbae253c;
+  bVar23 = in_AF << 4 | 0x83;
+  uVar22 = 0xffffffffdbae8300;
+  sVar16 = ((ushort)CONCAT71((int7)(CONCAT62(0xd9cc084e9be8,CONCAT11(bVar23,0xc9)) >> 8),8) ^ 0xc9)
+           * -0xcc6;
+  if ((int)CONCAT62(0x64c5cec3d8b6,(ushort)bVar23 << 8) != -0x7496f9c1) {
+    uVar22 = 0xffffffffdbae253c;
   }
-  uVar27 = (uVar26 & 0xffffff00 | (uint)(byte)((byte)uVar26 + 0x36)) * -0x36f9a82d;
-  uVar8 = (ulong)(uVar5 & 0xffffff00 | 0x9be80000 | (uint)(byte)((char)uVar5 << 1) | 1) * 0x442066c9
-  ;
-  uVar10 = uVar8 & 0xffffffff;
-  cVar4 = (char)(uVar8 >> 0x28);
-  uVar20 = (undefined)(uVar8 >> 0x20);
-  bVar11 = -cVar4;
-  uVar31 = uVar26 + 0xd2727107 & 0xffffff00 | (uint)(byte)(uVar10 >> 8);
-  cVar23 = -0x4e - (char)uVar10;
-  uVar21 = (uint)CONCAT71(0xffffffffffffd9,cVar23);
-  if (cVar23 != '\0' && (SBORROW1(-0x4e,(char)uVar10) != false) == cVar23 < '\0') {
-    uVar21 = 0x2a657673;
+  iVar37 = (int)uVar22 + -0x2d8d8ef9;
+  uVar39 = (int)CONCAT71((int7)((ulong)uVar22 >> 8),(byte)uVar22 + 0x36) * -0x36f9a82d;
+  uVar29 = (ulong)((uint)CONCAT71((int7)(CONCAT62(0xd9cc084e9be8,sVar16) >> 8),(char)sVar16 << 1) |
+                  1) * 0x442066c9;
+  uVar19 = uVar29 & 0xffffffff;
+  cVar15 = (char)(uVar29 >> 0x28);
+  uVar31 = (undefined)(uVar29 >> 0x20);
+  bVar23 = -cVar15;
+  uVar43 = CONCAT31((int3)((uint)iVar37 >> 8),(char)(uVar19 >> 8));
+  cVar14 = -0x4e - (char)uVar19;
+  uVar32 = (uint)CONCAT71(0xffffffffffffd9,cVar14);
+  if (cVar14 != '\0' && (SBORROW1(-0x4e,(char)uVar19) != false) == cVar14 < '\0') {
+    uVar32 = 0xff7673;
   }
-  uVar10 = (ulong)(uint)((int)uVar10 << 0xb);
-  uVar10 = uVar10 & 0xffffffffffff0000 |
-           (ulong)(byte)(((byte)(uVar10 >> 8) & 0x31) >> 1 | (0xfc1122c8 < uVar21) << 7) << 8;
-  uVar21 = CONCAT22((short)(uVar8 >> 0x30),CONCAT11(cVar4 * -0x80 | bVar11 >> 2,uVar20) >> 6) ^
+  uVar19 = (ulong)(uint)((int)uVar19 << 0xb) & 0xffffffffffff318e;
+  uVar19 = (ulong)CONCAT61((int6)(uVar19 >> 0x10),
+                           (byte)(uVar19 >> 8) >> 1 | (0xfc1122c8 < uVar32) << 7) << 8;
+  uVar32 = CONCAT22((short)(uVar29 >> 0x30),CONCAT11(cVar15 * -0x80 | bVar23 >> 2,uVar31) >> 6) ^
            0x3c2ee30c;
-  uVar8 = (ulong)uVar21;
-  uVar34 = (ulong)((byte)uVar26 < 0xca) << 0x3f | 0x71bc32b7bfbeebe0;
-  uVar22 = uVar8 ^ (ulong)(uVar10 == uVar8) * (ulong)(uVar21 ^ uVar31);
-  uVar5 = (short)uVar31 << 1;
-  uVar26 = uVar26 + 0xd2727107 & 0xffff0000 | (uint)uVar5;
-  uVar8 = (uVar10 ^ (ulong)(uVar10 != uVar8) * (uVar10 ^ uVar22)) >> 5;
-  for (lVar18 = 0x3f; 0xfffff8e48b690006U >> lVar18 == 0; lVar18 = lVar18 + -1) {
+  uVar63 = (ulong)uVar32;
+  uVar29 = CONCAT62((int6)(((ulong)((byte)uVar22 < 0xca) << 0x3f) >> 0x10),0x8000);
+  uVar34 = uVar63 ^ (ulong)(uVar19 == uVar63) * (ulong)(uVar32 ^ uVar43);
+  uVar19 = uVar19 ^ (ulong)(uVar19 != uVar63) * (uVar19 ^ uVar34);
+  sVar16 = (short)uVar43;
+  sVar36 = sVar16 << 1;
+  uVar9 = CONCAT22((short)((uint)iVar37 >> 0x10),sVar36);
+  for (lVar40 = 0x3f; 0xfffff8e48b690006U >> lVar40 == 0; lVar40 = lVar40 + -1) {
   }
-  uVar10 = (uVar8 & 0xffffffffffff0000 |
-           (ulong)(ushort)((CONCAT22((ushort)uVar22 & 0xff00 |
-                                     (ushort)(byte)((char)uVar22 - (char)((uint)uVar5 >> 8)),
-                                     (short)uVar8) & 0x3fffffff) / 0xc000)) << 0x17;
-  uVar22 = CONCAT62(0x4cda08784420,
-                    (0x66c9 - CONCAT11(bVar11,uVar20)) -
-                    (ushort)(0xd3c88fefeacd264d < (ulong)uVar27)) ^ 0x1a0ddc47;
-  uVar14 = (ushort)uVar22 & 0xf;
-  uVar31 = (uint)(CONCAT14((0xc000U >> uVar14 & 1) != 0,uVar26) >> 0x19);
-  uVar26 = uVar26 << 8 | uVar31;
-  uVar8 = 0;
-  if (uVar34 != 0) {
-    for (; (uVar34 >> uVar8 & 1) == 0; uVar8 = uVar8 + 1) {
+  uVar63 = CONCAT62((uint6)(uVar19 >> 0x15),
+                    (short)((CONCAT22((short)CONCAT71((int7)(uVar34 >> 8),
+                                                      (char)uVar34 - (char)((ushort)sVar36 >> 8)),
+                                      (short)(uVar19 >> 5)) & 0x3fffffff) / 0xc000)) << 0x17;
+  uVar34 = CONCAT62(0x4cda08784420,
+                    (0x66c9 - CONCAT11(bVar23,uVar31)) -
+                    (ushort)(0xd3c88fefeacd264d < (ulong)uVar39)) ^ 0x1a0ddc47;
+  uVar45 = (ushort)uVar34 & 0xf;
+  uVar13 = CONCAT14((0xc000U >> uVar45 & 1) != 0,uVar9);
+  uVar43 = (uint)((uint5)uVar13 >> 0x19);
+  uVar19 = 0;
+  if ((uVar29 | 0x71bc32b7bfbe6be0) != 0) {
+    for (; ((uVar29 | 0x71bc32b7bfbe6be0) >> uVar19 & 1) == 0; uVar19 = uVar19 + 1) {
     }
   }
-  uVar34 = (ulong)(uVar10 != uVar8) *
-           (uVar10 ^ uVar8 ^ (ulong)(uVar10 == uVar8) * (uVar8 ^ 0x33a7cb85));
-  uVar21 = 0;
-  if ((long)uVar8 < (long)uVar10) {
-    uVar21 = (uint)uVar22;
+  uVar21 = (ulong)(uVar63 != uVar19) *
+           (uVar63 ^ uVar19 ^ (ulong)(uVar63 == uVar19) * (uVar19 ^ 0x33a7cb85));
+  uVar20 = uVar63 ^ uVar21;
+  uVar53 = 0;
+  if ((long)uVar19 < (long)uVar63) {
+    uVar53 = uVar34;
   }
-  uVar6 = (ushort)uVar34;
-  uVar48 = (ushort)(uVar6 == 0x28b5) * ((ushort)uVar26 ^ 0x28b5) ^ 0x28b5;
-  uVar6 = uVar6 ^ (ushort)(uVar6 != 0x28b5) * (uVar6 ^ uVar48);
-  uVar8 = (uVar10 ^ uVar34) & 0xffffffffffff0000;
-  uVar14 = ~(1 << uVar14) & 0xc000;
-  if (uVar48 != 0x6f81) {
-    uVar14 = uVar6;
+  uVar17 = (ushort)uVar21;
+  uVar60 = (ushort)(uVar17 == 0x28b5) * ((sVar16 << 9 | (ushort)((uint5)uVar13 >> 0x19)) ^ 0x28b5) ^
+           0x28b5;
+  uVar17 = uVar17 ^ (ushort)(uVar17 != 0x28b5) * (uVar17 ^ uVar60);
+  uVar45 = ~(1 << uVar45) & 0xc000;
+  if (uVar60 != 0x6f81) {
+    uVar45 = uVar17;
   }
-  uVar7 = (uVar6 & 0xff) * (ushort)(byte)((byte)uVar48 ^ 0x81);
-  uVar10 = uVar8 | uVar7;
-  uVar43 = (uVar48 | 0x17a30000) ^ 0x8b696f87;
-  uVar6 = 0xf;
-  sVar25 = (short)(uVar8 >> 0x10);
-  uVar48 = sVar25 >> 0xf;
-  if (sVar25 < 0) {
-    for (; uVar48 >> uVar6 == 0; uVar6 = uVar6 - 1) {
+  uVar18 = (uVar17 & 0xff) * (ushort)(byte)((byte)uVar60 ^ 0x81);
+  lVar40 = CONCAT62((int6)(uVar20 >> 0x10),uVar18);
+  uVar32 = CONCAT22(0x17a3,uVar60) ^ 0x8b696f87;
+  uVar17 = 0xf;
+  sVar16 = (short)(uVar20 >> 0x10);
+  uVar60 = sVar16 >> 0xf;
+  if (sVar16 < 0) {
+    for (; uVar60 >> uVar17 == 0; uVar17 = uVar17 - 1) {
     }
   }
-  uVar30 = (uVar6 | 0xdbae0000) * 0x20;
-  uVar26 = uVar26 ^ 2;
-  cVar23 = (char)uVar26;
-  bVar11 = cVar23 - 8;
-  uVar39 = ((ushort)(((uVar31 & 2) != 0) + 0x7087) | 0xd77d0000) + 0xf45ec191;
-  uVar31 = uVar43;
-  if (uVar48 <= uVar7) {
-    uVar31 = 0x33a7ce85;
+  uVar42 = (uVar17 | 0xdbae0000) * 0x20;
+  bVar23 = (byte)uVar43 ^ 2;
+  bVar35 = bVar23 - 8;
+  lVar50 = (ulong)CONCAT22(0xd77d,((uVar43 & 2) != 0) + 0x7087) - 0xba13e6f;
+  uVar43 = uVar32;
+  if (uVar60 <= uVar18) {
+    uVar43 = 0x33a7ce85;
   }
-  bVar40 = (char)(uVar27 >> 7) + 2;
-  uVar49 = (uint)(char)bVar40;
-  uVar14 = (uVar14 + 0x527c) * 0x1e83;
-  auVar1 = CONCAT88(((ulong)uVar30 - 0x204de81f) + uVar10 * 0x674f9d0a,uVar10 * 0x33a7ce85) &
-           (undefined  [16])0xffffffffffffffff;
-  auVar1 = ZEXT816(SUB168(auVar1 % ZEXT816(0xf1bc32b7bfbeebe0),0) & 0x3fffffffffffffff) << 0x40 |
-           auVar1 / ZEXT816(0xf1bc32b7bfbeebe0) & (undefined  [16])0xffffffffffffffff;
-  auVar2 = auVar1 / ZEXT816(0xf1bc32b7bfbeebe0);
-  uVar39 = (uVar39 & 0xffffff00 | (uint)(byte)((byte)uVar39 | (byte)uVar43)) + 1;
-  uVar27 = SUB164(auVar1 % ZEXT816(0xf1bc32b7bfbeebe0),0) | 0x2000000;
-  cVar4 = SUB161(auVar2,0) + (char)uVar5 + (uVar30 < 0x28dcf732);
-  uVar8 = CONCAT71(SUB167(auVar2 >> 8,0),cVar4);
-  bVar36 = (byte)uVar31 | bVar40;
-  if ((POPCOUNT(cVar4) & 1U) == 0) {
-    bVar36 = bVar40;
+  bVar51 = (char)(uVar39 >> 7) + 2;
+  sVar16 = (uVar45 + 0x527c) * 0x1e83;
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = uVar29 | 0xf1bc32b7bfbe6be0;
+  auVar4._8_8_ = ((ulong)uVar42 - 0x204de81f) + lVar40 * 0x674f9d0a & 0x3fffffffffffffff;
+  auVar4._0_8_ = lVar40 * 0x33a7ce85;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = uVar29 | 0xf1bc32b7bfbe6be0;
+  auVar5._8_8_ = SUB168(auVar4 % auVar1,0) & 0x3fffffffffffffff;
+  auVar5._0_8_ = SUB168(auVar4 / auVar1,0);
+  uVar11 = (undefined2)
+           ((((ulong)(((uint)(uint3)(((uint3)(uVar53 >> 8) |
+                                     (uint3)((ulong)(1L << (uVar34 & 0x3f)) >> 8)) ^ 0x7bac) << 8 ^
+                      0x3f195e09) & 0xffffff00) | 0x7698) << 5) >> 0x10);
+  uVar48 = (int)CONCAT71((int7)((ulong)lVar50 >> 8),(byte)lVar50 | (byte)uVar32) + 1;
+  uVar39 = SUB164(auVar5 % auVar2,0) | 0x2000000;
+  cVar14 = SUB161(auVar5 / auVar2,0) + (char)sVar36 + (uVar42 < 0x28dcf732);
+  uVar19 = CONCAT71(SUB167(auVar5 / auVar2,1),cVar14);
+  bVar26 = (byte)uVar43 | bVar51;
+  if ((POPCOUNT(cVar14) & 1U) == 0) {
+    bVar26 = bVar51;
   }
-  uVar31 = uVar30 + 0xd72308ce & 0x928bd803;
-  if ((uint)uVar8 != uVar39) {
-    uVar8 = (ulong)uVar39;
-    uVar27 = uVar39;
+  uVar43 = uVar42 + 0xd72308ce & 0x928bd803;
+  if ((uint)uVar19 != uVar48) {
+    uVar19 = (ulong)uVar48;
+    uVar39 = uVar48;
   }
-  bVar52 = uVar49 != 0 || 0xfffffffe < uVar49 - 1;
-  uVar21 = (uint)(((ulong)((((uVar21 | (uint)(1 << (uVar22 & 0x3f))) & 0xffffff00 ^ 0x7bac7f) &
-                            0xffffff00 ^ 0x3f195e09) & 0xffffff00) | 0x7698) << 5) & 0xffff0000;
-  bVar19 = (byte)uVar31;
-  bVar12 = bVar19 - bVar11;
-  uVar48 = (ushort)uVar31;
-  uVar7 = uVar48 & 0xff00 | (ushort)(byte)(bVar12 - bVar52);
-  iVar16 = uVar43 * 9 + 0x256be85b;
-  uVar5 = (ushort)(bVar19 < bVar11 || bVar12 < bVar52);
-  uVar6 = (ushort)uVar43 - uVar7;
-  uVar26 = uVar26 & 0xffff0000 | (uint)CONCAT11(uVar7 <= (ushort)uVar43 && uVar5 <= uVar6,bVar11);
-  uVar5 = (uVar6 - uVar5) * -0x2f10;
-  uVar27 = uVar27 + 0x8cbb157a;
-  cVar42 = (-1 - (char)uVar5) - (iVar16 != 0);
-  uVar48 = uVar48 << 1;
-  auVar1 = ZEXT816((ulong)(long)(int)(short)(((ushort)uVar8 & 0xff) * (ushort)bVar36)) *
-           ZEXT816(0x82e0000000000000);
-  uVar8 = (ulong)(SUB164(auVar1 >> 0x40,0) & 0x3fffffff) << 0x20 |
-          (ulong)(SUB168(auVar1 >> 0x40,0) == 0) << 8;
-  uVar10 = uVar8 / (uVar27 | 0xc0000000);
-  cVar4 = (char)uVar10;
-  uVar10 = uVar10 & 0xffff0000;
-  bVar11 = (byte)uVar48;
-  uVar34 = (ulong)(uVar21 | uVar14) + 0x444c1514;
-  uVar22 = (ulong)(uint)((int)(uVar43 & 0xffff0000 | (uint)uVar5) >> 1) * -0x6d023b53;
-  uVar31 = uVar30 + 0xd72308ce & 0x928b0000 | uVar48 & 0xffffff00 | (uint)(byte)((char)bVar11 >> 1);
-  cVar38 = (char)(uVar27 >> 8) >> 0x16;
-  uVar5 = (short)uVar27 >> 0x1e & 0xff00U | (ushort)(byte)(cVar38 << 1 | cVar38 < '\0');
-  uVar43 = (int)(uVar8 % (ulong)(uVar27 | 0xc0000000) >> 0x14) + 0xd3e68a92;
-  uVar43 = uVar43 & 0xffff0000 | (uint)CONCAT11((char)(uVar43 >> 8) >> 1,(char)uVar43);
-  uVar30 = (0xdb3dc88dU - iVar16 & 0xffffff00 | uVar26 + 0x662095c & 0xff) + 0x575878c;
-  if (uVar31 + 0x606bc9d9 != -1 &&
-      (SCARRY4(uVar31,0x606bc9d9) != SCARRY4(uVar31 + 0x606bc9d9,1)) ==
-      (int)(uVar31 + 0x606bc9da) < 0) {
-    uVar30 = uVar43;
+  bVar64 = (char)bVar51 != 0 || 0xfffffffe < (int)(char)bVar51 - 1U;
+  uVar42 = CONCAT22(uVar11,sVar16);
+  bVar30 = (byte)uVar43 - bVar35;
+  iVar49 = uVar32 * 9 + 0x256be85b;
+  uVar45 = (ushort)((byte)uVar43 < bVar35 || bVar30 < bVar64);
+  uVar60 = (ushort)CONCAT31((int3)(uVar43 >> 8),bVar30 - bVar64);
+  uVar17 = (ushort)uVar32 - uVar60;
+  sVar38 = (uVar17 - uVar45) * -0x2f10;
+  uVar39 = uVar39 + 0x8cbb157a;
+  cVar55 = (-1 - (char)sVar38) - (iVar49 != 0);
+  sVar36 = (short)uVar43 << 1;
+  auVar6._8_8_ = 0;
+  auVar6._0_8_ = (long)(int)(short)(((ushort)uVar19 & 0xff) * (ushort)bVar26);
+  uVar48 = uVar39 | 0xc0000000;
+  uVar19 = (ulong)(SUB164(auVar6 * ZEXT816(0x82e0000000000000),8) & 0x3fffffff) << 0x20 |
+           (ulong)(SUB168(auVar6 * ZEXT816(0x82e0000000000000),8) == 0) << 8;
+  uVar63 = uVar19 / uVar48 & 0xffffffff;
+  cVar14 = (char)uVar63;
+  uVar24 = (uint6)(uVar63 >> 0x10);
+  uVar10 = (undefined2)(uVar48 >> 0x10);
+  bVar26 = (byte)sVar36;
+  lVar50 = (ulong)uVar42 + 0x444c1514;
+  lVar40 = (ulong)(uint)(CONCAT22((short)(uVar32 >> 0x10),sVar38) >> 1) * -0x6d023b53;
+  iVar37 = CONCAT31((int3)(CONCAT22((short)(uVar43 >> 0x10),sVar36) >> 8),(char)bVar26 >> 1);
+  bVar30 = (byte)sVar16;
+  cVar15 = (char)(uVar39 >> 8) >> 7;
+  iVar33 = ((int)(uVar19 % (ulong)uVar48 >> 0x14) -
+           ((uint)(((uVar29 | 0xf1bc32b7bfbe6be0) >> 0x11) << 0x10) >> 1)) + 0x43d60a92;
+  iVar33 = CONCAT22((short)((uint)iVar33 >> 0x10),
+                    CONCAT11((char)((uint)iVar33 >> 8) >> 1,(char)iVar33));
+  iVar49 = (int)CONCAT71((int7)((ulong)(uint)-iVar49 - 0x24c23773 >> 8),bVar23 + 0x54) + 0x575878c;
+  if (iVar37 + 0x606bc9d9 != -1 &&
+      (SCARRY4(iVar37,0x606bc9d9) != SCARRY4(iVar37 + 0x606bc9d9,1)) == iVar37 + 0x606bc9da < 0) {
+    iVar49 = iVar33;
   }
-  uVar6 = ((short)(char)(cVar4 * cVar4) << bVar11 | (ushort)uVar31 >> 0x10 - bVar11) + 1;
-  uVar5 = uVar5 >> bVar11 | uVar5 << 0x10 - bVar11;
-  iVar45 = (uVar30 - ((uint)uVar10 | (uint)uVar6)) + -0x68c25a30 + (uint)((byte)uVar34 < 0x74);
-  iVar16 = 0;
-  if (-0x3b < (char)iVar45) {
-    iVar16 = iVar45;
+  uVar18 = ((short)(char)(cVar14 * cVar14) << bVar26 | (ushort)iVar37 >> 0x10 - bVar26) + 1;
+  uVar47 = (ushort)CONCAT31((int3)(CONCAT22(uVar10,(short)uVar39 >> 0x1e) >> 8),
+                            cVar15 << 1 | cVar15 < '\0');
+  uVar47 = uVar47 >> bVar26 | uVar47 << 0x10 - bVar26;
+  iVar37 = (iVar49 - (int)CONCAT62(uVar24,uVar18)) + -0x68c25a30 + (uint)((byte)lVar50 < 0x74);
+  iVar49 = 0;
+  if (-0x3b < (char)iVar37) {
+    iVar49 = iVar37;
   }
-  uVar6 = (uVar6 & 0xff) * (ushort)(byte)((ulong)uVar6 >> 8);
-  uVar48 = (ushort)(char)bVar40;
-  uVar30 = (uVar21 | (ushort)((uVar14 & 0xff00 |
-                              (ushort)(byte)((byte)uVar14 >> bVar11 | (byte)uVar14 << 8 - bVar11)) &
-                             ~(1 << ((byte)(cVar42 * '\x02' | cVar42 < '\0') & 0xf)))) ^ 0x7a32;
-  uVar34 = uVar34 & 0xffffffffffff0000 |
-           (ulong)((ushort)uVar34 & 0xff00 | (byte)-((byte)uVar34 + 0x8c) & 0xfffe);
-  uVar51 = (ulong)uVar49 & 0xffffffffffff0000 |
-           (ulong)(ushort)(uVar48 ^ (ushort)(uVar6 == uVar48) * (uVar48 ^ uVar6)) |
-           0xffffffffcc746d0c;
-  uVar21 = (uint)((uVar22 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar22 << 1)) << bVar11) >>
-           1;
-  uVar8 = (ulong)(CONCAT22(0xff,(short)iVar45 << 0xf | 0x7fc5) | 0xc0000000);
-  uVar10 = (ulong)((uVar43 << 1 ^ 0xb6bba199) & ~(uint)(1 << (uVar51 & 0x3f)) & 0x3fffffff) << 0x20
-           | uVar10;
-  uVar31 = ((uVar27 & 0xffff0000 | 0xc0000000 | uVar5 & 0xffffff00 |
-            (uint)(byte)((byte)uVar5 ^ cVar23 + 0x54U)) >> 1) - iVar45;
-  lVar18 = 0x3f;
-  if (uVar34 != 0) {
-    for (; uVar34 >> lVar18 == 0; lVar18 = lVar18 + -1) {
+  uVar18 = (uVar18 & 0xff) * (uVar18 >> 8);
+  uVar61 = (ushort)(char)bVar51;
+  uVar42 = CONCAT22(uVar11,(ushort)CONCAT31((int3)(uVar42 >> 8),
+                                            bVar30 >> bVar26 | bVar30 << 8 - bVar26) &
+                           ~(1 << ((byte)(cVar55 * '\x02' | cVar55 < '\0') & 0xf))) ^ 0x7a32;
+  uVar19 = CONCAT62((int6)((ulong)lVar50 >> 0x10),
+                    (short)CONCAT71((int7)((ulong)lVar50 >> 8),-((byte)lVar50 + 0x8c))) &
+           0xfffffffffffffffe;
+  uVar63 = (ulong)CONCAT22((char)bVar51 >> 7,uVar61 ^ (ushort)(uVar18 == uVar61) * (uVar61 ^ uVar18)
+                          ) | 0xffffffffcc746d0c;
+  uVar43 = (uint)((int)CONCAT62((int6)((ulong)lVar40 >> 0x10),(short)lVar40 << 1) << bVar26) >> 1;
+  uVar39 = CONCAT22(0xff,(short)iVar37 << 0xf | 0x7fc5) | 0xc0000000;
+  uVar29 = (ulong)((iVar33 << 1 ^ 0xb6bba199U) & ~(uint)(1L << (uVar63 & 0x3f)) & 0x3fffffff) <<
+           0x20 | (ulong)uVar24 << 0x10;
+  iVar37 = (CONCAT31((int3)(CONCAT22(uVar10,uVar47) >> 8),(byte)uVar47 ^ bVar23 + 0x54) >> 1) -
+           iVar37;
+  lVar40 = 0x3f;
+  if (uVar19 != 0) {
+    for (; uVar19 >> lVar40 == 0; lVar40 = lVar40 + -1) {
     }
   }
-  uVar27 = 0;
-  if ((uint)lVar18 != 0) {
-    for (; ((uint)lVar18 >> uVar27 & 1) == 0; uVar27 = uVar27 + 1) {
+  iVar33 = 0;
+  if ((uint)lVar40 != 0) {
+    for (; ((uint)lVar40 >> iVar33 & 1) == 0; iVar33 = iVar33 + 1) {
     }
   }
-  bVar36 = (byte)uVar27;
-  bVar40 = bVar36 ^ (bVar36 == 0x5e) * bVar36;
-  uVar22 = (ulong)(uVar21 | 0xc0000000);
-  uVar8 = ((ulong)(((uint)(uVar10 % uVar8) ^ uVar30) & 0x3fffffff) << 0x20 |
-          CONCAT62((uint6)(uVar10 / uVar8 >> 0x10) & 0xffff,0xf15e) & 0xffffffffffffff00 |
-          (ulong)(byte)((bVar36 != 0x5e) * (bVar40 ^ 0x5e) ^ 0x5e)) / uVar22;
-  lVar28 = uVar22 - 0x41979e87;
-  uVar39 = ((uint)uVar51 & 0xffff0000 | uVar21 & 0xffff) + 0xf027d5ee ^ 0x100;
-  uVar26 = uVar26 + 0x662095b;
-  lVar9 = ((uVar8 & 0xffff0000 |
-           (ulong)(ushort)(((ushort)uVar8 & 0xff00 | (ushort)(byte)((char)uVar8 - (char)uVar31)) *
-                          (short)uVar31)) + 0x5e5e1412) * lVar18;
-  bVar36 = ~(byte)uVar30 + 0x96;
-  uVar10 = lVar9 * lVar9;
-  uVar26 = uVar26 & 0xffffff00 | (uint)(byte)((char)uVar26 + bVar36 + 1);
-  uVar43 = (ushort)lVar28 & 0xffffff00;
-  uVar21 = (uint)(byte)((char)lVar28 << 1);
-  uVar8 = CONCAT71((int7)((ulong)lVar18 >> 8),0x7b);
-  iVar45 = (int)(short)uVar10 * (int)(short)uVar8;
-  uVar8 = uVar8 & 0xffffffff;
-  if ((short)(ushort)iVar45 != iVar45) {
-    uVar8 = (ulong)(uVar31 & 0xffff0000 | (uint)(ushort)((short)uVar31 + 0x9d00));
+  bVar23 = (byte)iVar33;
+  bVar51 = bVar23 ^ (bVar23 == 0x5e) * bVar23;
+  uVar19 = (ulong)(uVar43 | 0xc0000000);
+  uVar29 = ((ulong)(((uint)(uVar29 % (ulong)uVar39) ^ uVar42) & 0x3fffffff) << 0x20 |
+           CONCAT71((int7)(CONCAT62((uint6)(uVar29 / uVar39 >> 0x10) & 0xffff,0xf15e) >> 8),
+                    (bVar23 != 0x5e) * (bVar51 ^ 0x5e)) ^ 0x5e) / uVar19 & 0xffffffff;
+  lVar41 = uVar19 - 0x41979e87;
+  uVar43 = (int)CONCAT62((int6)(uVar63 >> 0x10),(short)uVar43) + 0xf027d5eeU ^ 0x100;
+  iVar52 = CONCAT22((short)((uint)uVar9 >> 8),
+                    CONCAT11(uVar60 <= (ushort)uVar32 && uVar45 <= uVar17,bVar35)) + 0x662095b;
+  lVar50 = (CONCAT62((int6)(uVar29 >> 0x10),
+                     (short)CONCAT71((int7)(uVar29 >> 8),(char)uVar29 - (char)iVar37) *
+                     (short)iVar37) + 0x5e5e1412) * lVar40;
+  bVar23 = ~(byte)uVar42 + 0x96;
+  iVar58 = CONCAT31((int3)((uint)iVar52 >> 8),(char)iVar52 + bVar23 + '\x01');
+  uVar19 = CONCAT71((int7)((ulong)lVar41 >> 8),(char)lVar41 << 1);
+  uVar24 = (uint6)((ulong)(lVar50 * lVar50) >> 0x10);
+  uVar63 = uVar19 & 0xffff;
+  uVar29 = CONCAT71((int7)((ulong)lVar40 >> 8),0x7b);
+  iVar52 = (int)(short)(lVar50 * lVar50) * (int)(short)uVar29;
+  uVar29 = uVar29 & 0xffffffff;
+  if ((short)iVar52 != iVar52) {
+    uVar29 = (ulong)CONCAT22((short)((uint)iVar37 >> 0x10),(short)iVar37 + -0x6300);
   }
-  uVar22 = (uVar10 & 0xffffffffffff0000 | (ulong)(ushort)iVar45) & (ulong)uVar39;
-  uVar31 = ~((uint)lVar28 & 0xffff0000 | uVar43 | uVar21);
-  bVar12 = (byte)(uVar8 & 0xffffffffffffff0f);
-  uVar30 = ((uint)CONCAT62((uint6)(((ulong)bVar11 << 0x1a) >> 0x12),0x100) & 0xffff0000 |
-           (uint)(ushort)(0x100 << bVar12 | (ushort)uVar26 >> 0x10 - bVar12)) -
-           (uVar27 & 0xffffff00 | (uint)bVar40);
-  uVar5 = 0xf;
-  uVar14 = (ushort)uVar39;
-  if (uVar14 != 0) {
-    for (; uVar14 >> uVar5 == 0; uVar5 = uVar5 - 1) {
-    }
-  }
-  uVar22 = (ulong)((uint)CONCAT62(SUB166(SEXT816(lVar9) * SEXT816(lVar9) >> 0x50,0),
-                                  (short)((uint)iVar45 >> 0x10)) & 0x3fffffff | 0x100) << 0x20 |
-           uVar22 & 0xffffffffffff0000 |
-           (ulong)(ushort)((ushort)uVar22 ^ 1 << ((ushort)uVar8 & 0xf));
-  uVar34 = uVar22 / (uVar31 | 0xc0000000);
-  uVar51 = uVar34 & 0xffffffff;
-  uVar14 = (ushort)(uVar8 & 0xffffffffffffff0f) >> bVar12;
-  uVar39 = ((uint)uVar34 & 0xffff0000 | (uint)(ushort)(short)(char)uVar51) + 0x2014d58e;
-  uVar26 = uVar26 * 2;
-  cVar23 = ((byte)(CONCAT11(((uint)uVar51 >> 0x1b & 1) != 0,bVar40) >> bVar12 % 9) |
-           bVar40 << 9 - bVar12 % 9) + 0x77;
-  uVar21 = uVar43 | uVar21;
-  if (-1 < cVar23) {
-    uVar21 = uVar31 & 0xffff0000 | (uint)(ushort)((ushort)uVar31 >> 8 | (ushort)uVar31 << 8);
-  }
-  uVar6 = CONCAT11((char)(uVar39 >> 8) - (char)(uVar22 % (ulong)(uVar31 | 0xc0000000) >> 8),
-                   (char)uVar39);
-  uVar48 = uVar6 | 1 << (uVar5 & 0xf);
-  uVar7 = ((ushort)(byte)(-(bVar36 ^ (byte)(1 << (SUB168(SEXT816(lVar9) * SEXT816(lVar9) >> 0x40,0)
-                                                 & 0x3f)) | 1) - 1) -
-          (short)(CONCAT22(0xff,(short)(char)((byte)iVar16 & 0xa0)) >> 1)) -
-          (ushort)((uVar6 >> (uVar5 & 0xf) & 1) != 0);
-  sVar25 = 0;
-  uVar6 = (ushort)uVar26;
-  if (uVar6 != 0) {
-    for (; (uVar6 >> sVar25 & 1) == 0; sVar25 = sVar25 + 1) {
-    }
-  }
-  uVar31 = (uVar27 & 0xffff0000 | (uint)uVar7) + 0x50;
-  uVar8 = (ulong)(((uint)uVar8 & 0xffff0000 | (uint)uVar14) >> ((byte)uVar14 & 0x1f)) | 0x7210;
-  uVar21 = (uVar21 & 0xffff0000 | (uint)(ushort)((short)uVar21 + 0x74b5)) >> 1;
-  bVar11 = (char)uVar7 - cVar23;
-  uVar27 = 0;
-  if (uVar30 != 0) {
-    for (; (uVar30 >> uVar27 & 1) == 0; uVar27 = uVar27 + 1) {
-    }
-  }
-  uVar10 = CONCAT62((uint6)(uVar10 >> 0x10) & 0xffff,0x3bb6) & 0xfffffffffbffffff;
-  lVar18 = 0x3f;
-  if (uVar8 != 0) {
-    for (; uVar8 >> lVar18 == 0; lVar18 = lVar18 + -1) {
-    }
-  }
-  uVar14 = uVar48 & 0xff |
-           (ushort)(byte)((byte)((uint)uVar48 >> 8) ^ (byte)((int)(uVar39 & 0xffff0000) >> 0x27)) <<
-           8;
-  uVar6 = uVar6 - uVar14;
-  uVar26 = uVar26 & 0xffff0000 | (uint)uVar6;
-  iVar16 = (uint)uVar14 * (uint)uVar5;
-  uVar14 = (ushort)iVar16 ^ 1 << (uVar6 & 0xf);
-  lVar9 = (ulong)(((uint)uVar10 & 0xffff0000 | (uint)(ushort)((short)uVar10 + uVar5)) >> 1 |
-                 uVar30 * -0x80000000) + 0xa0 + (ulong)uVar31 * 0x10;
-  bVar36 = (byte)uVar14;
-  uVar22 = (ulong)uVar31 << 1 | 1;
-  iVar16 = SUB164((ZEXT816(((ulong)(uint3)((int3)((uint3)((uVar39 & 0xffff0000) >> 8) |
-                                                 (uint3)(byte)(uVar48 >> 8)) >> 0x1f) &
-                           0xffffffffffff00) << 8 |
-                           (ulong)(ushort)((uint)iVar16 >> 0x10) & 0xffffffffffffff00 |
-                           (ulong)(byte)((byte)((uint)iVar16 >> 0x10) >> 1)) << 0x40 |
-                  ZEXT416(CONCAT22((short)(ushort)iVar16 >> 0xf,uVar14) & 0xffffff00 |
-                          (uint)(byte)(bVar36 ^ (bVar36 != bVar11) *
-                                                (bVar36 ^ bVar11 ^ (bVar36 == bVar11) *
-                                                                   (bVar11 ^ (byte)uVar21))))) /
-                  ZEXT816((ulong)uVar26 | 0xc000000000000000),0);
-  uVar10 = (ulong)uVar27 + 0x579368be >> 1 & 0x7fff;
-  uVar43 = (uint)((ulong)uVar27 + 0x579368be) & 0xffff0000 | (uint)uVar10 & 0xffffff00 |
-           (uint)(byte)((char)uVar10 + 0x31);
-  uVar27 = ((uint)lVar9 & 0xffff0000 |
-           (uint)CONCAT11((byte)((ulong)lVar9 >> 8) >> ((byte)uVar8 & 0x1f),(char)lVar9)) ^ uVar26;
-  uVar10 = (long)iVar16 << 3;
-  uVar34 = (ulong)(long)iVar16 >> 0x3d | uVar10;
-  bVar36 = (byte)(uVar8 * 0x5f8f1e61);
-  uVar14 = (short)uVar22 + 0xda3dU & 0xff00;
-  uVar48 = (ushort)bVar36;
-  uVar17 = (ulong)(((uint)uVar22 & 0xffffff00 | 0x80) >> 1 | 0x80000000);
-  uVar22 = (ulong)uVar26 & 0xffffffffffff0000;
-  uVar51 = (ulong)(uVar31 + uVar21 * 8) & 0xffffffffffffff00 ^ uVar17;
-  uVar26 = uVar43 + uVar27;
-  uVar21 = uVar26 + 1;
-  lVar9 = uVar17 + 0x2d21bcfa;
-  uVar5 = (uVar6 - 1 &
-          ~(1 << (~(ushort)(byte)((char)lVar18 + '\b' + bVar36 + (char)uVar27 +
-                                 (CARRY4(uVar43,uVar27) || 0xfffffffe < uVar26)) & 0xf))) + 0xc84b;
-  uVar26 = uVar30 >> 0x18 | (uVar30 & 0xff0000) >> 8 | (uVar30 & 0xff00) << 8 | uVar30 * 0x1000000;
-  bVar11 = (bVar36 & 0x1f) % 0x11;
-  uVar7 = uVar5 >> bVar11 | uVar5 << 0x11 - bVar11;
-  uVar17 = uVar22 | 0xc000000000000000 | (ulong)uVar7;
-  uVar26 = uVar26 >> (bVar36 & 0x1f) | uVar26 << 0x20 - (bVar36 & 0x1f);
-  uVar5 = 0xf;
-  uVar6 = (ushort)uVar34;
-  if (uVar6 != 0) {
-    for (; uVar6 >> uVar5 == 0; uVar5 = uVar5 - 1) {
-    }
-  }
-  uVar43 = (uint)uVar10;
-  lVar18 = (((ulong)(uint3)(uVar31 >> 8) & 0xffffffffffff00) << 8 | (ulong)uVar5) - 0xae44398c;
-  uVar5 = -(short)(char)(((char)uVar21 - (char)uVar7) + -1);
-  lVar28 = 0x3f;
+  uVar34 = CONCAT62(uVar24,(short)iVar52) & (ulong)uVar43;
+  uVar32 = ~(uint)uVar19;
+  uVar19 = uVar29 & 0xffffffffffffff0f;
+  bVar35 = (byte)uVar19;
+  uVar42 = (int)CONCAT62((uint6)(((ulong)bVar26 << 0x1a) >> 0x12),
+                         0x100 << bVar35 | (ushort)iVar58 >> 0x10 - bVar35) -
+           CONCAT31((int3)((uint)iVar33 >> 8),bVar51);
+  uVar45 = 0xf;
+  uVar17 = (ushort)uVar43;
   if (uVar17 != 0) {
-    for (; uVar17 >> lVar28 == 0; lVar28 = lVar28 + -1) {
+    for (; uVar17 >> uVar45 == 0; uVar45 = uVar45 - 1) {
     }
   }
-  uVar31 = (uVar43 & 0xffff0000 |
-           (ushort)((ushort)(byte)((char)uVar34 + (char)lVar9) * (ushort)(byte)uVar26) & 0xffffff0f)
-           + 0xda9b8fa6 >> 1;
-  uVar24 = (ushort)((ulong)lVar28 >> 0x30);
-  uVar29 = uVar7 << 1 & ~(1 << (uVar24 & 0xf));
-  uVar34 = uVar51 & 0xffffffffffffff00;
-  uVar33 = (ulong)((uint)(ushort)((uVar14 | uVar48) >> 1) | (uint)(uVar14 | uVar48) << 0x1f);
-  uVar6 = uVar14 | uVar48 & 0xffc4;
-  uVar44 = uVar33 * -0x130676ca;
-  uVar10 = (ulong)((((int)lVar18 * 0x100000 | (uint)((ulong)lVar18 >> 0x2c)) ^ 0x1c) + uVar26) << 1;
-  uVar17 = (ulong)(uVar31 | uVar26 << 0x1f) << ((byte)uVar31 & 0x3f);
-  uVar7 = (short)uVar17 - 0x714;
-  uVar31 = (uVar27 & (uint)uVar51 & 0xffff0000 ^ 0xf6af9e98) & 0xffff0000 |
-           (uint)(ushort)((ushort)uVar44 + 0xcf4c);
-  bVar11 = (byte)uVar7 & 0x3f;
-  uVar51 = (uVar17 & 0xffffffffffff0000 | (ulong)uVar7) >> bVar11 |
-           (uVar22 | uVar29) << 0x40 - bVar11;
-  uVar17 = lVar28 >> 0x30 & 0xffffffffffff0000U | (ulong)(ushort)(uVar24 - 0x81);
-  if ((short)(uVar24 + 0x2f81) < 0) {
-    uVar34 = (ulong)uVar31;
+  uVar43 = uVar32 | 0xc0000000;
+  uVar29 = (ulong)((uint)CONCAT62(SUB166(SEXT816(lVar50) * SEXT816(lVar50),10),
+                                  (short)((uint)iVar52 >> 0x10)) & 0x3fffffff | 0x100) << 0x20 |
+           CONCAT62((int6)(uVar34 >> 0x10),(ushort)uVar34 ^ 1 << ((ushort)uVar29 & 0xf));
+  uVar34 = uVar29 / uVar43 & 0xffffffff;
+  uVar60 = (ushort)uVar32;
+  uVar17 = (ushort)uVar19 >> bVar35;
+  iVar37 = (int)CONCAT62((int6)(uVar34 >> 0x10),(short)(char)uVar34) + 0x2014d58e;
+  iVar58 = iVar58 * 2;
+  cVar14 = ((byte)(CONCAT11(((uint)uVar34 >> 0x1b & 1) != 0,bVar51) >> bVar35 % 9) |
+           bVar51 << 9 - bVar35 % 9) + 0x77;
+  if (-1 < cVar14) {
+    uVar63 = (ulong)CONCAT22((short)(uVar43 >> 0x10),uVar60 >> 8 | uVar60 << 8);
   }
-  bVar11 = (byte)uVar51;
-  uVar47 = (ulong)uVar26 << (bVar11 & 0x3f) | (ulong)(uVar26 >> 0x40 - (bVar11 & 0x3f));
-  uVar41 = ((ulong)uVar29 & 0xfe) >> 1;
-  uVar30 = (uint)uVar22 | uVar29 & 0xffffff00 | (uint)uVar41;
-  uVar37 = (uVar34 >> 0x1d | (ulong)(uint)(int)(short)uVar5 << 0x23) - 0x3c55ce9a;
-  uVar27 = ((uint)lVar9 & 0xffffff00 | (uint)(iVar16 >> 0x1f) >> 0x1d | uVar43 & 0xff) * 0x3247861c
-           & 0xd20f8e8d;
-  uVar7 = (short)uVar5 >> 0xf;
-  uVar34 = (ulong)CONCAT22(uVar7,(uVar5 & 0xff) * (ushort)(byte)uVar41) |
-           1 << ((ulong)uVar27 + 1 & 0x3f);
-  uVar29 = uVar7 << 1 & 0xff | 1 |
-           (ushort)(byte)((byte)((ushort)(uVar7 << 1) >> 8) | (byte)(uVar31 + 0x7787d2b5 >> 8)) << 8
-  ;
-  lVar18 = (ulong)(uVar14 | uVar48 & 0xfffe) << 1;
-  uVar26 = (uint)lVar18 & 0x1f;
-  uVar49 = uVar27 ^ 1 << uVar26;
-  uVar41 = (ulong)(CONCAT18((uVar27 >> uVar26 & 1) != 0,uVar17) >> 0x32) | uVar17 << 0xf;
-  uVar5 = (ushort)uVar34;
-  uVar14 = uVar29 ^ (ushort)(uVar5 == uVar29) * (uVar29 ^ (ushort)uVar44);
-  uVar5 = uVar5 ^ (ushort)(uVar5 != uVar29) * (uVar5 ^ uVar14);
-  uVar17 = uVar34 & 0xffffffffffff0000 | (ulong)uVar5 & 0xffffffffffffff00 |
-           (ulong)(byte)((byte)uVar5 | (byte)(uVar47 << 1) | (long)uVar47 < 0);
-  uVar26 = (uint)(uVar8 * 0x5f8f1e61) & 0xffff0000 |
-           (uint)(ushort)(uVar6 << (bVar11 & 0xf) | uVar6 >> 0x10 - (bVar11 & 0xf));
-  uVar22 = uVar41 & 0xffffffffffff0000;
-  uVar43 = (uint)uVar22 |
-           (uint)(ushort)(((ushort)uVar41 & 0xff00 | 0xff) + (short)uVar17 +
-                         (ushort)((uVar7 >> 0xb & 1) != 0));
-  bVar36 = (byte)(uVar14 >> 8);
-  uVar27 = (CONCAT22(uVar7,uVar14) ^ 0x8000000) & 0xffff0000 |
-           (uint)(ushort)(uVar14 & 0xff | (ushort)(byte)(bVar36 >> 6 | bVar36 << 2) << 8);
-  uVar8 = ((uVar10 & 0xffffffffffff0000 |
-           uVar10 & 0xffff |
-           (ulong)(SEXT816((long)uVar44) != SEXT816((long)uVar33) * SEXT416(-0x130676ca))) ^ 0xbfed)
-          << 1;
-  uVar14 = (short)(char)(uVar48 & 0xffc4) << (bVar11 & 0x1f);
-  uVar5 = (ushort)uVar51 | (ushort)lVar18;
-  uVar31 = (uint)uVar17;
-  uVar39 = uVar26 + uVar31;
-  uVar10 = uVar44 & 0xffffffffffffff00;
-  if (!CARRY4(uVar26,uVar31)) {
-    uVar10 = uVar8;
-  }
-  uVar31 = 0;
-  if (uVar43 != 0) {
-    for (; (uVar43 >> uVar31 & 1) == 0; uVar31 = uVar31 + 1) {
+  uVar60 = CONCAT11((char)((uint)iVar37 >> 8) - (char)(uVar29 % (ulong)uVar43 >> 8),(char)iVar37);
+  uVar18 = uVar60 | 1 << (uVar45 & 0xf);
+  sVar36 = ((ushort)(byte)(-(bVar23 ^ (byte)(1L << (SUB168(SEXT816(lVar50) * SEXT816(lVar50),8) &
+                                                   0x3f)) | 1) - 1) -
+           (short)(CONCAT22((short)(uVar39 >> 0x10),(short)(char)((byte)iVar49 & 0xa0)) >> 1)) -
+           (ushort)((uVar60 >> (uVar45 & 0xf) & 1) != 0);
+  sVar16 = 0;
+  uVar60 = (ushort)iVar58;
+  if (uVar60 != 0) {
+    for (; (uVar60 >> sVar16 & 1) == 0; sVar16 = sVar16 + 1) {
     }
   }
-  uVar17 = ((uVar10 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar8 * 5000)) ^ 0x40) -
+  uVar43 = CONCAT22((short)((uint)iVar33 >> 0x10),sVar36) + 0x50;
+  uVar29 = (ulong)((uint)CONCAT62((int6)(uVar19 >> 0x10),uVar17) >> ((byte)uVar17 & 0x1f)) | 0x7210;
+  uVar32 = (uint)CONCAT62((int6)(uVar63 >> 0x10),(short)uVar63 + 0x74b5) >> 1;
+  bVar23 = (char)sVar36 - cVar14;
+  uVar39 = 0;
+  if (uVar42 != 0) {
+    for (; (uVar42 >> uVar39 & 1) == 0; uVar39 = uVar39 + 1) {
+    }
+  }
+  uVar19 = CONCAT62(uVar24 & 0xffff,0x3bb6) & 0xfffffffffbffffff;
+  lVar40 = 0x3f;
+  if (uVar29 != 0) {
+    for (; uVar29 >> lVar40 == 0; lVar40 = lVar40 + -1) {
+    }
+  }
+  uVar17 = CONCAT11((byte)(uVar18 >> 8) ^ (byte)(iVar37 >> 0x1f),(char)uVar18);
+  lVar41 = (ulong)uVar43 << 1;
+  uVar60 = uVar60 - uVar17;
+  uVar48 = CONCAT22((short)((uint)iVar58 >> 0x10),uVar60);
+  iVar33 = (uint)uVar17 * (uint)uVar45;
+  uVar17 = (ushort)iVar33 ^ 1 << (uVar60 & 0xf);
+  lVar50 = (ulong)((uint)CONCAT62((int6)(uVar19 >> 0x10),(short)uVar19 + uVar45) >> 1 |
+                  uVar42 * -0x80000000) + 0xa0 + (ulong)uVar43 * 0x10;
+  bVar35 = (byte)uVar17;
+  uVar34 = (ulong)uVar48 | 0xc000000000000000;
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = uVar34;
+  uVar63 = (ulong)SUB164((ZEXT516(CONCAT41((int)(CONCAT32((uint3)((int)CONCAT22((short)((uint)iVar37
+                                                                                       >> 0x10),
+                                                                                uVar18) >> 0x1f) >>
+                                                          8,(short)((uint)iVar33 >> 0x10)) >> 8),
+                                           (byte)((uint)iVar33 >> 0x10) >> 1)) << 0x40 |
+                         ZEXT416(CONCAT31((int3)(CONCAT22((short)(ushort)iVar33 >> 0xf,uVar17) >> 8)
+                                          ,bVar35 ^ (bVar35 != bVar23) *
+                                                    (bVar35 ^ bVar23 ^ (bVar35 == bVar23) *
+                                                                       (bVar23 ^ (byte)uVar32))))) /
+                         auVar3,0);
+  uVar45 = (ushort)((ulong)uVar39 + 0x579368be) >> 1;
+  uVar48 = (uint)CONCAT62((int6)((ulong)lVar50 >> 0x10),
+                          CONCAT11((byte)((ulong)lVar50 >> 8) >> ((byte)uVar29 & 0x1f),(char)lVar50)
+                         ) ^ uVar48;
+  uVar19 = uVar63 << 3;
+  uVar63 = uVar63 >> 0x3d | uVar19;
+  bVar35 = (byte)(uVar29 * 0x5f8f1e61);
+  uVar17 = CONCAT11((char)((ushort)(((ushort)lVar41 | 1) + 0xda3d) >> 8),bVar35);
+  uVar62 = ((uint)lVar41 & 0xffffff00) >> 1 | 0x80000000;
+  uVar32 = uVar43 + uVar32 * 8 & 0xffffff00 ^ uVar62;
+  uVar46 = (uint)CONCAT71((int7)(CONCAT62((int6)((ulong)uVar39 + 0x579368be >> 0x10),uVar45) >> 8),
+                          (char)uVar45 + '1');
+  uVar39 = uVar46 + uVar48;
+  iVar37 = uVar39 + 1;
+  lVar50 = (ulong)uVar62 + 0x2d21bcfa;
+  uVar45 = (uVar60 - 1 &
+           ~(1 << (~(ushort)(byte)((char)lVar40 + '\b' + bVar35 + (char)uVar48 +
+                                  (CARRY4(uVar46,uVar48) || 0xfffffffe < uVar39)) & 0xf))) + 0xc84b;
+  uVar39 = uVar42 >> 0x18 | (uVar42 & 0xff0000) >> 8 | (uVar42 & 0xff00) << 8 | uVar42 * 0x1000000;
+  bVar23 = (bVar35 & 0x1f) % 0x11;
+  uVar60 = uVar45 >> bVar23 | uVar45 << 0x11 - bVar23;
+  uVar34 = CONCAT62((int6)(uVar34 >> 0x10),uVar60);
+  uVar39 = uVar39 >> (bVar35 & 0x1f) | uVar39 << 0x20 - (bVar35 & 0x1f);
+  sVar16 = 0xf;
+  uVar45 = (ushort)uVar63;
+  if (uVar45 != 0) {
+    for (; uVar45 >> sVar16 == 0; sVar16 = sVar16 + -1) {
+    }
+  }
+  cVar14 = (char)uVar63;
+  sVar36 = (ushort)(byte)(cVar14 + (char)lVar50) * (ushort)(byte)uVar39;
+  lVar40 = (ulong)CONCAT22((short)(uVar43 >> 0x10),sVar16) - 0xae44398c;
+  uVar60 = -(short)(char)(((char)iVar37 - (char)uVar60) + -1);
+  uVar45 = (ushort)((uint)iVar37 >> 0x10);
+  lVar41 = 0x3f;
+  if (uVar34 != 0) {
+    for (; uVar34 >> lVar41 == 0; lVar41 = lVar41 + -1) {
+    }
+  }
+  uVar43 = ((uint)CONCAT71((int7)(CONCAT62((int6)(uVar19 >> 0x10),sVar36) >> 8),(char)sVar36) &
+           0xffffff0f) + 0xda9b8fa6 >> 1;
+  uVar47 = (ushort)((ulong)lVar41 >> 0x30);
+  uVar18 = (short)(uVar34 & 0xffffffff) << 1 & ~(1 << (uVar47 & 0xf));
+  lVar44 = CONCAT62((int6)((uVar34 & 0xffffffff) >> 0x10),uVar18);
+  uVar19 = (ulong)((uint)(uVar17 >> 1) | (uint)uVar17 << 0x1f);
+  uVar63 = CONCAT71((int7)(CONCAT62((int6)(uVar29 * 0x5f8f1e61 >> 0x10),uVar17) >> 8),bVar35) &
+           0xffffffffffffffc4;
+  uVar34 = uVar19 * -0x130676ca;
+  lVar40 = (ulong)((((int)lVar40 * 0x100000 | (uint)((ulong)lVar40 >> 0x2c)) ^ 0x1c) + uVar39) << 1;
+  lVar28 = (ulong)(uVar43 | uVar39 << 0x1f) << ((byte)uVar43 & 0x3f);
+  sVar16 = (short)lVar28 + -0x714;
+  uVar42 = CONCAT22((ushort)(uVar48 >> 0x10) & (ushort)(uVar32 >> 0x10),(ushort)uVar34 + 0xcf4c) ^
+           0xf6af0000;
+  bVar23 = (byte)sVar16 & 0x3f;
+  uVar29 = CONCAT62((int6)((ulong)lVar28 >> 0x10),sVar16) >> bVar23 | lVar44 << 0x40 - bVar23;
+  lVar41 = CONCAT62((int6)(lVar41 >> 0x3f),uVar47 - 0x81);
+  uVar43 = uVar32 & 0xffffff00;
+  if ((short)(uVar47 + 0x2f81) < 0) {
+    uVar43 = uVar42;
+  }
+  bVar35 = (byte)uVar29;
+  uVar20 = (ulong)uVar39 << (bVar35 & 0x3f) | (ulong)(uVar39 >> 0x40 - (bVar35 & 0x3f));
+  bVar23 = (byte)uVar18 >> 1;
+  lVar28 = ((ulong)(uVar43 >> 0x1d) | (ulong)(uint)(int)(short)uVar60 << 0x23) - 0x3c55ce9a;
+  uVar39 = (int)CONCAT71((int7)((ulong)lVar50 >> 8),cVar14) * 0x3247861c & 0xd20f8e8d;
+  uVar18 = (short)uVar60 >> 0xf;
+  uVar21 = (ulong)CONCAT22(uVar18,(uVar60 & 0xff) * (ushort)bVar23) |
+           1L << ((ulong)uVar39 + 1 & 0x3f);
+  uVar60 = CONCAT11((byte)((ushort)(uVar18 << 1) >> 8) | (byte)(uVar42 + 0x7787d2b5 >> 8),
+                    (char)(uVar18 << 1)) | 1;
+  lVar50 = (ulong)(uVar17 & 0xfffe) << 1;
+  uVar43 = (uint)lVar50 & 0x1f;
+  uVar48 = uVar39 ^ 1 << uVar43;
+  uVar53 = (ulong)(CONCAT18((uVar39 >> uVar43 & 1) != 0,lVar41) >> 0x32) | lVar41 << 0xf;
+  uVar17 = (ushort)uVar21;
+  uVar47 = uVar60 ^ (ushort)(uVar17 == uVar60) * (uVar60 ^ (ushort)uVar34);
+  uVar25 = (undefined6)(uVar21 >> 0x10);
+  uVar17 = uVar17 ^ (ushort)(uVar17 != uVar60) * (uVar17 ^ uVar47);
+  iVar37 = (int)CONCAT71((int7)((ulong)lVar44 >> 8),bVar23);
+  uVar22 = CONCAT71((int7)(CONCAT62(uVar25,uVar17) >> 8),
+                    (byte)uVar17 | (byte)(uVar20 << 1) | (long)uVar20 < 0);
+  uVar54 = (undefined6)(uVar53 >> 0x10);
+  bVar23 = (byte)(uVar47 >> 8);
+  uVar32 = CONCAT22(uVar18,CONCAT11(bVar23 >> 6 | bVar23 << 2,(char)uVar47)) ^ 0x8000000;
+  uVar19 = (CONCAT62((int6)((ulong)lVar40 >> 0x10),
+                     (ushort)lVar40 |
+                     (ushort)(SEXT816((long)uVar34) != SEXT816((long)uVar19) * SEXT416(-0x130676ca))
+                    ) ^ 0xbfed) << 1;
+  uVar60 = (short)(char)uVar63 << (bVar35 & 0x1f);
+  uVar17 = (ushort)uVar29 | (ushort)lVar50;
+  uVar43 = (uint)CONCAT62((int6)(uVar63 >> 0x10),
+                          (ushort)uVar63 << (bVar35 & 0xf) | (ushort)uVar63 >> 0x10 - (bVar35 & 0xf)
+                         );
+  uVar39 = (uint)uVar22;
+  uVar42 = uVar43 + uVar39;
+  uVar63 = uVar34 & 0xffffffffffffff00;
+  if (!CARRY4(uVar43,uVar39)) {
+    uVar63 = uVar19;
+  }
+  sVar16 = (short)uVar19 * 5000;
+  uVar39 = 0;
+  uVar46 = (uint)CONCAT62(uVar54,(short)CONCAT71((int7)(uVar53 >> 8),0xff) + (short)uVar22 +
+                                 (ushort)((uVar18 >> 0xb & 1) != 0));
+  if (uVar46 != 0) {
+    for (; (uVar46 >> uVar39 & 1) == 0; uVar39 = uVar39 + 1) {
+    }
+  }
+  uVar63 = (CONCAT71((int7)(CONCAT62((int6)(uVar63 >> 0x10),sVar16) >> 8),(char)sVar16) ^ 0x40) -
            0x4774450e;
-  uVar10 = (ulong)(ushort)((byte)(((char)(uVar37 >> 8) >> 4) << 1) + 0x6a48);
-  uVar33 = uVar37 & 0xffffffffffff0000 | uVar10;
-  uVar6 = uVar5 + 0x80cd;
-  uVar51 = uVar51 & 0xffffffffffff0000 | (ulong)uVar6;
-  iVar16 = 0x1f;
-  if (uVar39 != 0) {
-    for (; uVar39 >> iVar16 == 0; iVar16 = iVar16 + -1) {
+  uVar34 = CONCAT62((int6)((ulong)lVar28 >> 0x10),
+                    (byte)(((char)((ulong)lVar28 >> 8) >> 4) << 1) + 0x6a48);
+  sVar16 = uVar17 + 0x80cd;
+  uVar29 = CONCAT62((int6)(uVar29 >> 0x10),sVar16);
+  iVar33 = 0x1f;
+  if (uVar42 != 0) {
+    for (; uVar42 >> iVar33 == 0; iVar33 = iVar33 + -1) {
     }
   }
-  uVar50 = (uVar49 & 0xffff0000 |
-           (uint)((ushort)((ushort)uVar49 & 0xff00 |
-                          (ushort)(byte)((byte)uVar49 &
-                                        ((byte)(uVar30 << 1) | (int)uVar30 < 0) &
-                                        ~(byte)(1 << ((ulong)uVar49 & 0x3f)))) >>
-                 ((byte)uVar5 & 0x1f))) - (int)uVar51;
-  uVar43 = uVar50 & 0xfffffffe;
-  uVar30 = uVar21 & 0xffff0000 | (uint)uVar14 | 0xc0000000;
-  uVar49 = (uint)uVar8 & 0xffffff00 | (uint)(byte)((char)uVar8 >> 9);
-  uVar5 = 0xf;
-  if (uVar14 != 0) {
-    for (; uVar14 >> uVar5 == 0; uVar5 = uVar5 - 1) {
+  uVar48 = CONCAT22((short)(uVar48 >> 0x10),
+                    (ushort)CONCAT31((int3)(uVar48 >> 8),
+                                     (byte)uVar48 &
+                                     ((byte)(iVar37 << 1) | iVar37 < 0) &
+                                     ~(byte)(1L << ((ulong)uVar48 & 0x3f))) >> ((byte)uVar17 & 0x1f)
+                   ) - (int)uVar29 & 0xfffffffe;
+  uVar46 = CONCAT22(uVar45,uVar60) | 0xc0000000;
+  uVar62 = (uint)CONCAT71((int7)(uVar19 >> 8),(char)uVar19 >> 9);
+  sVar36 = 0xf;
+  if (uVar60 != 0) {
+    for (; uVar60 >> sVar36 == 0; sVar36 = sVar36 + -1) {
     }
   }
-  bVar36 = (byte)uVar6;
-  bVar11 = bVar36 & 0x1f;
-  lVar18 = (ulong)(uint)((int)uVar33 + -0x7dd1e502 +
-                        (int)(((ulong)((((uVar27 << 1 | uVar21 >> 0x1f) - uVar26) -
-                                       (uint)((int)uVar27 < 0)) - (int)uVar51 & 0x3fffffff) << 0x20
-                              | uVar34 & 0xffff0000 | (ulong)(ushort)(short)(char)(byte)uVar39) %
-                             (ulong)uVar30)) << 1;
-  iVar16 = (int)(uVar17 >> 0xe);
-  bVar36 = bVar36 & 0x3f;
-  uVar51 = uVar51 ^ (ulong)((int)lVar18 * uVar43 == uVar51) * (uVar51 ^ (uVar22 | (byte)uVar39));
-  bVar40 = (byte)uVar51;
-  uVar27 = (iVar16 << 1 | (uint)(iVar16 < 0)) << (bVar40 & 0x1f);
-  uVar26 = uVar49 + (int)uVar51 * 4;
-  uVar10 = (uVar33 >> 0xc | uVar10 << 0x34) >> (bVar40 & 0x3f);
-  uVar14 = (ushort)uVar10 & 0xff00 | (ushort)(byte)((char)uVar10 * '\x02');
-  uVar26 = uVar26 & 0xffff0000 |
-           (uint)(ushort)(((ushort)uVar26 & 0xfed9) << 1 |
-                         (ushort)((ushort)(uVar17 >> bVar36) | (ushort)(lVar18 << 0x40 - bVar36)) >>
-                         0xf);
-  bVar36 = (byte)uVar27;
-  bVar36 = bVar36 >> 6 | bVar36 << 2;
-  uVar27 = uVar27 & 0xffffff00 | (uint)bVar36;
-  uVar21 = uVar26 * 0x39e432a8;
-  uVar22 = (ulong)uVar21;
-  iVar45 = -((int)uVar39 >> 0x1f) + 0x4584ff9e;
-  uVar10 = (ulong)uVar5 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar5 << 1);
-  iVar16 = (uint)(ushort)uVar10 * 0xfed9;
-  uVar5 = (ushort)((uint)iVar16 >> 0x10);
-  if (uVar5 == 0) {
-    uVar14 = (ushort)(uVar30 << bVar11) |
-             (ushort)((((uVar31 ^ 0x8ec01210) & 0xffff0000 |
-                       (uint)(ushort)((short)(uVar31 ^ 0x8ec01210) + 0x3b59)) >> 1 &
-                      ~(1 << (uVar39 & 0x1f))) >> 0x20 - bVar11);
+  bVar35 = (byte)sVar16;
+  bVar23 = bVar35 & 0x1f;
+  uVar17 = (ushort)(uVar46 << bVar23) |
+           (ushort)(((uint)CONCAT62((int6)(((ulong)uVar39 ^ 0xffffffff8ec01210) >> 0x10),
+                                    (short)((ulong)uVar39 ^ 0xffffffff8ec01210) + 0x3b59) >> 1 &
+                    ~(1 << (uVar42 & 0x1f))) >> 0x20 - bVar23);
+  lVar40 = (ulong)(uint)((int)uVar34 + -0x7dd1e502 +
+                        (int)(((ulong)((((uVar32 << 1 | (uint)(uVar45 >> 0xf)) - uVar43) -
+                                       (uint)((int)uVar32 < 0)) - (int)uVar29 & 0x3fffffff) << 0x20
+                              | CONCAT62(uVar25,(short)(char)(byte)uVar42) & 0xffffffff) %
+                             (ulong)uVar46)) << 1;
+  iVar37 = (int)(uVar63 >> 0xe);
+  bVar35 = bVar35 & 0x3f;
+  uVar29 = uVar29 ^ (ulong)((int)lVar40 * uVar48 == uVar29) *
+                    (uVar29 ^ CONCAT62(uVar54,(ushort)(byte)uVar42));
+  bVar23 = (byte)uVar29;
+  iVar49 = (iVar37 << 1 | (uint)(iVar37 < 0)) << (bVar23 & 0x1f);
+  iVar37 = uVar62 + (int)uVar29 * 4;
+  uVar34 = (uVar34 >> 0xc | uVar34 << 0x34) >> (bVar23 & 0x3f);
+  uVar11 = (undefined2)((uint)iVar37 >> 0x10);
+  uVar60 = ((ushort)iVar37 & 0xfed9) << 1 |
+           (ushort)((ushort)(uVar63 >> bVar35) | (ushort)(lVar40 << 0x40 - bVar35)) >> 0xf;
+  iVar33 = CONCAT22(uVar11,uVar60);
+  bVar23 = (byte)iVar49;
+  bVar23 = bVar23 >> 6 | bVar23 << 2;
+  uVar43 = CONCAT31((int3)((uint)iVar49 >> 8),bVar23);
+  uVar39 = iVar33 * 0x39e432a8;
+  uVar29 = (ulong)uVar39;
+  iVar49 = 0x4584ff9e - ((int)uVar42 >> 0x1f);
+  uVar45 = CONCAT11((char)((ushort)sVar36 >> 8),(char)sVar36 << 1);
+  iVar37 = (uint)uVar45 * 0xfed9;
+  sVar16 = (short)((uint)iVar37 >> 0x10);
+  if (sVar16 != 0) {
+    uVar17 = (ushort)CONCAT71((int7)(uVar34 >> 8),(char)uVar34 * '\x02');
   }
-  bVar11 = (byte)iVar16;
-  bVar12 = (byte)((uint)iVar45 >> 8);
-  bVar40 = (byte)iVar45;
-  bVar19 = bVar12 ^ (bVar11 == bVar12) * (bVar12 ^ bVar40);
-  uVar34 = CONCAT62(0x4584,(short)iVar16) & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar11 ^ (bVar11 != bVar12) * (bVar11 ^ bVar19));
-  if (bVar12 < bVar11) {
-    uVar49 = (uint)uVar8 & 0xffff0000 | uVar39 >> 0x1f;
+  bVar35 = (byte)iVar37;
+  bVar51 = (byte)((uint)iVar49 >> 8);
+  bVar26 = (byte)iVar49;
+  bVar30 = bVar51 ^ (bVar35 == bVar51) * (bVar51 ^ bVar26);
+  uVar63 = CONCAT71((int7)(CONCAT62(0x4584,(short)iVar37) >> 8),
+                    bVar35 ^ (bVar35 != bVar51) * (bVar35 ^ bVar30));
+  if (bVar51 < bVar35) {
+    uVar62 = (uint)CONCAT62((int6)(uVar19 >> 0x10),(ushort)(uVar42 >> 0x1f));
   }
-  uVar6 = CONCAT11(bVar19,bVar40);
-  if ((char)bVar11 <= (char)bVar12) {
-    uVar6 = uVar5;
+  sVar36 = CONCAT11(bVar30,bVar26);
+  if ((char)bVar35 <= (char)bVar51) {
+    sVar36 = sVar16;
   }
-  uVar8 = uVar22 ^ (ulong)(uVar34 == uVar22) * (ulong)(uVar21 ^ uVar27);
-  uVar24 = (short)uVar8 << ((byte)uVar6 & 0x1f);
-  uVar5 = uVar5 & 0xff | (ushort)(byte)((byte)((ulong)uVar5 >> 8) >> 5) << 8;
-  uVar8 = uVar34 ^ (ulong)(uVar34 != uVar22) * (uVar34 ^ uVar8) | 1 << ((ulong)uVar5 & 0x3f);
-  uVar7 = (ushort)(CONCAT12((byte)((ulong)uVar24 >> 8) < (byte)((ulong)uVar5 >> 8),uVar6) >> 0xb) |
-          uVar6 << 6;
-  cVar23 = (char)uVar8 + bVar36;
-  uVar31 = uVar26 * 0x23faeb45 >> 1;
-  uVar21 = -((int)uVar39 >> 0x1f) & 0xffff0000;
-  uVar48 = ~(uVar5 ^ 1 << ((ushort)uVar27 & 0xf));
-  bVar11 = (byte)uVar7 & 0x3f;
-  uVar8 = uVar8 & 0xffffffffffffff00 | (ulong)(byte)(cVar23 * '\x02' | cVar23 < '\0');
-  bVar40 = (byte)uVar7 ^ (byte)((ulong)uVar7 >> 8);
-  uVar5 = uVar14 >> 1;
-  iVar16 = (int)(short)-(short)uVar8 *
-           (int)(short)(uVar48 >> 1 | (ushort)((uVar48 & 1) != 0) << 0xf);
-  uVar29 = (ushort)((uint)iVar16 >> 0x10);
-  uVar48 = (ushort)iVar16;
-  uVar48 = uVar48 & 0xff |
-           (ushort)(byte)((char)((ulong)uVar48 >> 8) + (char)((ulong)uVar29 >> 8)) << 8;
-  uVar27 = uVar21 << (bVar40 & 0x1f) | uVar21 >> 0x20 - (bVar40 & 0x1f) | 0x242f9c53;
-  uVar35 = (uVar7 << bVar11 | (ushort)((uVar49 << 0xe | uVar49 >> 0x12) >> 0x40 - bVar11)) * 2 +
-           uVar48;
-  uVar21 = ((ushort)(((uVar24 & 0xff | 0x5a00) - ((ushort)uVar43 >> ((byte)uVar6 & 0x1f))) -
-                    (ushort)(uVar8 != 0)) | 0xbaac0000) & ~(1 << (uVar5 & 0x1f)) |
-           (uint)(1 << ((ulong)(uVar29 & 0xff) & 0x3f));
-  uVar43 = uVar21 + 0x9913c8b7;
-  uVar8 = (ulong)uVar31 & 0xffffffffffff0000 | (ulong)((uVar26 * 0x23faeb45 & 1) != 0) << 0x3f |
-          (ulong)(ushort)((short)uVar31 << 1 | (ushort)(0x66ec3748 < uVar21));
-  iVar16 = (uint)uVar48 * (uVar43 & 0xffff);
-  uVar24 = (ushort)((uint)iVar16 >> 0x10);
-  uVar10 = uVar10 * 2;
-  uVar48 = (ushort)iVar16 ^ (ushort)(1 << (uVar10 & 0x3f));
-  lVar18 = uVar10 - 0x2399b507;
-  bVar11 = (byte)lVar18 & 7;
-  uVar7 = (ushort)lVar18;
-  uVar29 = uVar7 ^ (ushort)(uVar48 == uVar7) * (uVar7 ^ uVar5);
-  uVar48 = uVar48 ^ (ushort)(uVar48 != uVar7) * (uVar48 ^ uVar29);
-  bVar36 = (byte)((ulong)uVar48 >> 8);
-  bVar12 = (byte)((ulong)uVar29 >> 8);
-  cVar23 = bVar36 - bVar12;
-  uVar48 = uVar48 & 0xff;
-  if ((SBORROW1(bVar36,bVar12) != SBORROW1(cVar23,'\x01')) == (char)(cVar23 - 1U) < '\0') {
-    uVar27 = uVar27 & 0xffff0000 | (uint)uVar24;
+  uVar32 = iVar33 * 0x23faeb45;
+  uVar19 = uVar29 ^ (ulong)(uVar63 == uVar29) * (ulong)(uVar39 ^ uVar43);
+  sVar16 = (short)uVar19 << ((byte)sVar36 & 0x1f);
+  bVar35 = (byte)((uint)iVar37 >> 0x1d);
+  uVar47 = CONCAT11(bVar35,(char)((uint)iVar37 >> 0x10));
+  uVar29 = uVar63 ^ (ulong)(uVar63 != uVar29) * (uVar63 ^ uVar19) | 1L << ((ulong)uVar47 & 0x3f);
+  uVar18 = (ushort)(CONCAT12((byte)((ushort)sVar16 >> 8) < bVar35,sVar36) >> 0xb) | sVar36 << 6;
+  cVar14 = (char)uVar29 + bVar23;
+  uVar47 = ~(uVar47 ^ 1 << ((ushort)uVar43 & 0xf));
+  bVar26 = (byte)uVar18;
+  bVar23 = bVar26 & 0x3f;
+  lVar40 = CONCAT71((int7)(uVar29 >> 8),cVar14 * '\x02' | cVar14 < '\0');
+  uVar19 = (ulong)CONCAT22(uVar11,uVar60) ^ 0xedb0;
+  bVar51 = (byte)((ushort)(sVar36 << 6) >> 8);
+  bVar26 = bVar26 ^ bVar51;
+  uVar17 = uVar17 >> 1;
+  iVar37 = (int)(short)-(short)lVar40 *
+           (int)(short)(uVar47 >> 1 | (ushort)((uVar47 & 1) != 0) << 0xf);
+  uVar60 = CONCAT11((char)((uint)iVar37 >> 8) + (char)((uint)iVar37 >> 0x18),(char)iVar37);
+  uVar43 = 0 << (bVar26 & 0x1f) | 0U >> 0x20 - (bVar26 & 0x1f) | 0x242f9c53;
+  lVar50 = (ulong)(ushort)((uVar18 << bVar23 |
+                           (ushort)((uVar62 << 0xe | uVar62 >> 0x12) >> 0x40 - bVar23)) << 1) +
+           (ulong)uVar60;
+  uVar39 = ((ushort)(((short)CONCAT31(0x5a,(char)sVar16) - ((ushort)uVar48 >> ((byte)sVar36 & 0x1f))
+                     ) - (ushort)(lVar40 != 0)) | 0xbaac0000) & ~(1 << (uVar17 & 0x1f)) |
+           (uint)(1L << ((ulong)((ushort)((uint)iVar37 >> 0x10) & 0xff) & 0x3f));
+  uVar42 = uVar39 + 0x9913c8b7;
+  lVar41 = CONCAT62((uint6)(ushort)(uVar32 >> 0x11) |
+                    (uint6)(((ulong)((uVar32 & 1) != 0) << 0x3f) >> 0x10),
+                    (short)(uVar32 >> 1) << 1 | (ushort)(0x66ec3748 < uVar39));
+  iVar37 = (uint)uVar60 * (uVar42 & 0xffff);
+  uVar47 = (ushort)((uint)iVar37 >> 0x10);
+  uVar29 = (ulong)uVar45 * 2;
+  uVar45 = (ushort)iVar37 ^ (ushort)(1L << (uVar29 & 0x3f));
+  lVar40 = uVar29 - 0x2399b507;
+  bVar23 = (byte)lVar40 & 7;
+  uVar60 = (ushort)lVar40;
+  uVar18 = uVar60 ^ (ushort)(uVar45 == uVar60) * (uVar60 ^ uVar17);
+  uVar45 = uVar45 ^ (ushort)(uVar45 != uVar60) * (uVar45 ^ uVar18);
+  bVar35 = (byte)(uVar45 >> 8);
+  bVar30 = (byte)(uVar18 >> 8);
+  cVar14 = bVar35 - bVar30;
+  cVar15 = (char)uVar45;
+  if ((SBORROW1(bVar35,bVar30) != SBORROW1(cVar14,'\x01')) == (char)(cVar14 + -1) < '\0') {
+    uVar43 = CONCAT22((short)(uVar43 >> 0x10),uVar47);
   }
-  sVar25 = CONCAT11(0x72U >> bVar11 | 'r' << 8 - bVar11,0x6b) +
-           ((ushort)(uVar6 << 6 & 0xff00 | (ushort)(byte)(bVar40 << 1)) >> 1 |
-           (ushort)((char)bVar40 < '\0') << 0xf) + (ushort)(bVar36 < bVar12 || cVar23 == '\0');
-  uVar30 = (char)uVar5 + -0x576a684f + (uint)CARRY1((byte)(uVar24 >> 1),bVar12);
-  uVar7 = (uVar35 & 0xff) * 2 + (ushort)uVar43 + 1;
-  uVar21 = ((uint)CONCAT71((int7)((long)uVar8 >> 9),(char)((long)uVar8 >> 1) + (char)uVar29) |
-           uVar43) - uVar43;
-  uVar31 = uVar21 + 4;
-  bVar36 = (byte)sVar25 | (byte)((ushort)sVar25 >> 8);
-  uVar8 = CONCAT62(0x6096,sVar25) & 0xffffffffffffff00;
-  uVar3 = (uint)(ushort)(((ushort)uVar21 ^ 0x62d7) + 0x8722);
-  uVar5 = (ushort)(uVar50 >> 0x1c);
-  bVar11 = (byte)uVar31;
-  uVar46 = (uVar30 & 0xffffff00 | (uint)(byte)(((char)uVar30 - (char)uVar48) - 1)) * 2;
-  uVar6 = ((uVar35 & 0xfe00) >> 1) + 0xb;
-  sVar25 = uVar6 << (bVar11 & 0x1f);
-  uVar10 = (ulong)CONCAT22((short)uVar6 >> 0xf,sVar25);
-  iVar16 = uVar46 + (uint)(ushort)((ushort)(CONCAT12(bVar11 < bVar36,uVar5) >> 7) | uVar5 << 10) * 8
-           + 0x10a9b4e4;
-  uVar5 = (short)(char)(((byte)uVar14 & 0xfe | (byte)(uVar43 >> 0x1f)) ^ bVar36) *
-          (short)(char)((uint)iVar16 >> 8);
-  uVar32 = (uVar26 ^ 0xedb0) & 0xffffff00 | (uVar26 ^ 0xedb0) >> 1 & 0x7f;
-  iVar45 = (uVar31 & 0xffff0000 | (uint)(ushort)((short)uVar46 << (bVar11 & 0x1f))) + 0xb3f7f102;
-  uVar15 = CONCAT31(CONCAT21((short)((uint)iVar45 >> 0x10),(char)iVar45),
-                    (char)iVar45 + (char)((uint)iVar45 >> 8));
-  uVar30 = uVar32 & 0xf73d | 0xc000;
-  uVar39 = CONCAT22((short)iVar16,uVar5) & 0x3fffffff;
-  uVar49 = uVar39 / uVar30;
-  uVar50 = (uint)(ushort)(uVar48 | (ushort)(byte)(cVar23 - 1U) << 8) << 0x11 | uVar49 & 0xffff;
-  uVar31 = uVar46 & 0xffff0000 | (uint)(ushort)((ushort)uVar31 | (ushort)uVar15);
-  uVar26 = 0;
-  if (uVar50 != 0) {
-    for (; (uVar50 >> uVar26 & 1) == 0; uVar26 = uVar26 + 1) {
+  sVar36 = CONCAT11(0x72U >> bVar23 | 'r' << 8 - bVar23,0x6b) +
+           (CONCAT11(bVar51,bVar26 << 1) >> 1 | (ushort)((char)bVar26 < '\0') << 0xf) +
+           (ushort)(bVar35 < bVar30 || cVar14 == '\0');
+  iVar49 = (char)uVar17 + -0x576a684f + (uint)CARRY1((byte)(uVar47 >> 1),bVar30);
+  sVar57 = (ushort)(byte)lVar50 * 2 + (ushort)uVar42 + 1;
+  iVar33 = ((uint)CONCAT71((int7)(lVar41 >> 9),(char)(lVar41 >> 1) + (char)uVar18) | uVar42) -
+           uVar42;
+  iVar37 = iVar33 + 4;
+  bVar35 = (byte)sVar36 | (byte)((ushort)sVar36 >> 8);
+  uVar60 = ((ushort)iVar33 ^ 0x62d7) + 0x8722;
+  uVar62 = CONCAT22((short)((uint)iVar33 >> 0x10),uVar60);
+  uVar45 = (ushort)(uVar48 >> 0x1c);
+  bVar23 = (byte)iVar37;
+  iVar58 = CONCAT31((int3)((uint)iVar49 >> 8),((char)iVar49 - cVar15) + -1) * 2;
+  sVar56 = ((ushort)((ushort)((byte)((ulong)lVar50 >> 8) & 0xfe) << 8) >> 1) + 0xb;
+  sVar38 = sVar56 << (bVar23 & 0x1f);
+  uVar63 = (ulong)CONCAT22(sVar56 >> 0xf,sVar38);
+  iVar52 = CONCAT22(CONCAT11(cVar14 + -1,cVar15),uVar17) << 1;
+  iVar33 = iVar58 + (uint)(ushort)((ushort)(CONCAT12(bVar23 < bVar35,uVar45) >> 7) | uVar45 << 10) *
+                    8 + 0x10a9b4e4;
+  sVar16 = (short)(char)(((byte)iVar52 | (byte)(uVar42 >> 0x1f)) ^ bVar35) *
+           (short)(char)((uint)iVar33 >> 8);
+  iVar49 = CONCAT22((short)((uint)iVar37 >> 0x10),(short)iVar58 << (bVar23 & 0x1f)) + -0x4c080efe;
+  uVar27 = CONCAT31(CONCAT21((short)((uint)iVar49 >> 0x10),(char)iVar49),
+                    (char)iVar49 + (char)((uint)iVar49 >> 8));
+  uVar29 = CONCAT71((int7)(uVar19 >> 8),(byte)uVar19 >> 1) & 0xffffffffae31f73d | 0xc000;
+  uVar32 = (uint)(ushort)uVar29;
+  uVar48 = CONCAT22((short)iVar33,sVar16) & 0x3fffffff;
+  uVar46 = uVar48 / uVar32;
+  uVar12 = CONCAT22((short)((uint)iVar52 >> 0x10),(short)uVar46);
+  uVar19 = (ulong)CONCAT22((short)((uint)iVar58 >> 0x10),(ushort)iVar37 | (ushort)uVar27);
+  uVar39 = 0;
+  if (uVar12 != 0) {
+    for (; (uVar12 >> uVar39 & 1) == 0; uVar39 = uVar39 + 1) {
     }
   }
-  uVar14 = (uVar7 & 0xff00 | (ushort)(byte)((char)uVar7 << 3)) & (ushort)uVar43;
-  uVar15 = uVar15 & ~(1 << ((uVar3 & 0xf8) >> 3));
-  uVar46 = uVar31 + 0x411cc0df;
-  uVar22 = (ulong)(uVar31 < 0xbee33f21) << 0x20 |
-           uVar8 | (byte)((bVar36 - (char)((ulong)(ushort)(uVar39 % uVar30) >> 8)) - 1);
-  uVar31 = (uint)(uVar22 >> 0x18);
-  uVar43 = (uint)(uVar22 << 9);
-  uVar34 = (ulong)(uVar31 | uVar43);
-  bVar11 = (byte)uVar15;
-  uVar30 = (uVar32 & 0xae31f73d | 0xc000) << (bVar11 & 0x1f);
-  uVar5 = (short)(char)((uint)uVar5 >> 8) & uVar14;
-  uVar22 = (ulong)uVar27 << 0x20 | (ulong)uVar6;
-  if ((POPCOUNT(uVar5 & 0xff) & 1U) != 0) {
-    uVar22 = (ulong)uVar15;
+  uVar17 = CONCAT11((char)((ushort)sVar57 >> 8),(char)sVar57 << 3) & (ushort)uVar42;
+  uVar27 = uVar27 & ~(1 << ((uVar60 & 0xf8) >> 3));
+  lVar50 = uVar19 - 0xbee33f21;
+  uVar59 = (uint)lVar50;
+  uVar19 = (ulong)(uVar19 < 0xbee33f21) << 0x20 |
+           CONCAT71((int7)(CONCAT62(0x6096,sVar36) >> 8),
+                    (bVar35 - (char)(uVar48 % uVar32 >> 8)) + -1);
+  lVar40 = uVar19 << 9;
+  uVar32 = (uint)(uVar19 >> 0x18);
+  uVar42 = (uint)lVar40;
+  uVar48 = uVar32 | uVar42;
+  bVar23 = (byte)uVar27;
+  iVar37 = (int)uVar29 << (bVar23 & 0x1f);
+  uVar45 = (short)(char)((ushort)sVar16 >> 8) & uVar17;
+  uVar29 = CONCAT62((int6)(((ulong)uVar43 << 0x20) >> 0x10),sVar56);
+  if ((POPCOUNT(uVar45 & 0xff) & 1U) != 0) {
+    uVar29 = (ulong)uVar27;
   }
-  uVar14 = uVar14 & uVar5;
-  if ((uVar49 & 0x100) == 0 && (uVar49 & 0x4000) == 0) {
-    uVar46 = uVar46 & 0xffff0000 | (uint)uVar22 & 0xffff;
+  uVar17 = uVar17 & uVar45;
+  if ((uVar46 & 0x100) == 0 && (uVar46 & 0x4000) == 0) {
+    uVar59 = (uint)CONCAT62((int6)((ulong)lVar50 >> 0x10),(short)uVar29);
   }
-  uVar27 = uVar30 & 0xffff0000 |
-           (uint)(ushort)(((short)uVar30 + -0x9a5) - (ushort)((ushort)uVar46 < 0x45f4));
-  auVar1 = ZEXT816((ulong)uVar50) * ZEXT816((ulong)uVar50);
-  uVar22 = uVar22 & 0xffffffffffff0000 | (ulong)(ushort)(uVar14 + sVar25 * 8);
-  bVar40 = SUB161(auVar1 >> 8,0);
-  bVar36 = bVar11 + bVar40;
-  bVar52 = SCARRY1(bVar11,bVar40) != SCARRY1(bVar36,'\0');
-  uVar30 = uVar15 & 0xffffff00 | (uint)bVar36;
-  if (bVar52 != (char)bVar36 < '\0') {
-    uVar30 = uVar15 & 0xffff0000 | uVar31 | uVar43 & 0xffff;
+  uVar43 = CONCAT22((short)((uint)iVar37 >> 0x10),
+                    ((short)iVar37 + -0x9a5) - (ushort)((ushort)uVar59 < 0x45f4));
+  auVar7._8_8_ = 0;
+  auVar7._0_8_ = CONCAT44(0,uVar12);
+  auVar8._8_8_ = 0;
+  auVar8._0_8_ = CONCAT44(0,uVar12);
+  lVar50 = (ulong)uVar39 - (ulong)uVar48;
+  uVar29 = CONCAT62((int6)(uVar29 >> 0x10),uVar17 + sVar38 * 8);
+  bVar35 = SUB161(auVar7 * auVar8,1);
+  cVar14 = bVar23 + bVar35;
+  bVar64 = SCARRY1(bVar23,bVar35) != SCARRY1(cVar14,'\0');
+  uVar39 = CONCAT31((int3)(uVar27 >> 8),cVar14);
+  if (bVar64 != cVar14 < '\0') {
+    uVar39 = CONCAT22((short)(uVar27 >> 0x10),(short)uVar48);
   }
-  uVar51 = (ulong)uVar30;
-  uVar17 = (ulong)(uVar3 << 0x1d | (uVar21 & 0xffff0000 | uVar3) >> 3);
-  if (!bVar52) {
-    uVar51 = uVar51 & 0xffffffffffff0000 | (ulong)uVar5;
-    uVar17 = uVar34;
+  uVar19 = (ulong)(uVar62 << 0x1d | uVar62 >> 3);
+  if (!bVar64) {
+    uVar39 = CONCAT22((short)(uVar39 >> 0x10),uVar45);
+    uVar19 = (ulong)uVar48;
   }
-  uVar21 = (uint)uVar5;
-  if (bVar36 == 0 || bVar52 != (char)bVar36 < '\0') {
-    uVar21 = uVar27;
+  uVar46 = (uint)uVar45;
+  if (cVar14 == '\0' || bVar64 != cVar14 < '\0') {
+    uVar46 = uVar43;
   }
-  bVar36 = (byte)uVar51;
-  uVar33 = (ulong)(0xffffffff36875639 < uVar22 ||
-                  CARRY8(uVar22 + 0xc978a9c6,(ulong)CARRY1(bVar11,bVar40))) << 0x20 |
-           uVar26 - uVar34 & 0xffff0000 | (ulong)(ushort)((short)(uVar26 - uVar34) << 1 | 1);
-  uVar44 = uVar17 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar17 >> (bVar36 & 0x1f));
-  uVar26 = (uint)(uVar51 >> (bVar36 & 0x3f));
-  uVar30 = uVar31 | uVar43 & 0xffff | 0x32d7e7c4;
-  iVar16 = uVar26 + 0x405ddd7c;
-  if (uVar26 < 0xbfa22284) {
-    uVar27 = (uint)uVar44;
+  bVar26 = (byte)uVar39;
+  uVar34 = (ulong)(0xffffffff36875639 < uVar29 ||
+                  CARRY8(uVar29 + 0xc978a9c6,(ulong)CARRY1(bVar23,bVar35))) << 0x20 |
+           CONCAT62((int6)((ulong)lVar50 >> 0x10),(short)lVar50 << 1) & 0xffffffff | 1;
+  uVar22 = CONCAT71((int7)(uVar19 >> 8),(char)uVar19 >> (bVar26 & 0x1f));
+  uVar39 = uVar39 >> (bVar26 & 0x3f);
+  uVar62 = uVar32 | uVar42 & 0xffff | 0x32d7e7c4;
+  iVar37 = uVar39 + 0x405ddd7c;
+  if (uVar39 < 0xbfa22284) {
+    uVar43 = (uint)uVar22;
   }
-  uVar26 = ((uint)(uVar33 >> (bVar36 & 0x1f)) | (uint)(uVar33 << 0x21 - (bVar36 & 0x1f))) +
+  iVar33 = ((uint)(uVar34 >> (bVar26 & 0x1f)) | (uint)(uVar34 << 0x21 - (bVar26 & 0x1f))) +
            0xc44eab2a;
-  uVar39 = (uVar31 | uVar43 & 0xffff) + (int)uVar22 | uVar21;
-  uVar51 = (long)(int)uVar30 * (long)(int)uVar30;
-  bVar11 = (byte)iVar16;
-  uVar31 = (int)(uint)uVar14 >> (bVar11 & 0x1f);
-  bVar11 = bVar11 & 0x1f;
-  uVar30 = iVar16 << bVar11 | uVar46 >> 0x20 - bVar11;
-  sVar25 = (short)uVar44;
-  uVar48 = sVar25 << 1 | (ushort)(sVar25 < 0);
-  uVar44 = uVar10 - 1;
-  uVar6 = CONCAT11((char)(uVar26 >> 8) << 1,uVar44 != 0 && uVar10 != 0) & 0x3fff;
-  uVar5 = (ushort)(byte)((byte)((ulong)uVar30 >> 8) | 0xc0);
-  uVar31 = uVar31 & 0xffff0000 | (uint)(ushort)((short)uVar31 << ((byte)uVar30 & 0x1f));
-  uVar33 = -((ulong)~uVar27 - SUB168(auVar1 >> 0x40,0) & 0xffffffffffff0000 |
-            uVar51 >> 0x20 & 0xffff);
-  uVar14 = (byte)uVar30 & 0xff0f;
-  sVar13 = (sbyte)uVar14;
-  uVar14 = (ushort)((ushort)uVar30 & 0xff00 | 0xc000 | uVar14) >> sVar13 | 0x6da4 << 0x10 - sVar13;
-  uVar10 = (ulong)uVar30 & 0xffffffffffff0000 | (ulong)uVar14;
-  bVar11 = (byte)((ulong)uVar14 >> 8);
-  uVar5 = -(uVar6 / uVar5 & 0xff |
-           (ushort)(byte)(((char)((ulong)(ushort)(uVar6 % uVar5 << 8) >> 8) - bVar11) - 1) << 8);
-  uVar41 = uVar33 & 0xffff;
-  bVar36 = (byte)(uVar8 >> 0x18);
-  uVar27 = (uint)CONCAT11(((char)(uVar34 >> 8) - (char)uVar5) + -1,bVar36);
-  uVar34 = (ulong)uVar39 * 2 + (ulong)(uVar26 & 0xffff0000 | (uint)uVar5);
-  uVar8 = (ulong)uVar21 & 0xffffffffffff0000 |
-          (ulong)(ushort)((ushort)uVar21 & ~(1 << ((short)(uVar22 >> 1) + (short)uVar26 & 0xfU)));
-  if (-1 < (char)((char)((ulong)uVar5 >> 8) - (char)uVar5)) {
-    uVar8 = (ulong)(uVar43 & 0xffff0000 | uVar27);
+  uVar32 = (uVar32 | uVar42 & 0xffff) + (int)uVar29 | uVar46;
+  lVar50 = (long)(int)uVar62 * (long)(int)uVar62;
+  bVar23 = (byte)iVar37;
+  iVar49 = (int)(uint)uVar17 >> (bVar23 & 0x1f);
+  bVar23 = bVar23 & 0x1f;
+  uVar39 = iVar37 << bVar23 | uVar59 >> 0x20 - bVar23;
+  sVar16 = (short)uVar22;
+  uVar18 = sVar16 << 1 | (ushort)(sVar16 < 0);
+  uVar11 = (undefined2)((uint)iVar33 >> 0x10);
+  lVar28 = uVar63 - 1;
+  uVar34 = (ulong)uVar39 | 0xc000;
+  uVar63 = (ulong)CONCAT22(uVar11,(short)CONCAT31(CONCAT21(uVar11,(char)((uint)iVar33 >> 8) << 1),
+                                                  lVar28 != 0 && uVar63 != 0)) & 0xffffffffffff3fff;
+  uVar45 = (ushort)(byte)(uVar34 >> 8);
+  uVar17 = (ushort)uVar63;
+  bVar23 = (byte)uVar39;
+  uVar39 = CONCAT22((short)((uint)iVar49 >> 0x10),(short)iVar49 << (bVar23 & 0x1f));
+  uVar21 = -CONCAT62((int6)((ulong)~uVar43 - SUB168(auVar7 * auVar8,8) >> 0x10),
+                     (short)((ulong)lVar50 >> 0x20));
+  uVar34 = CONCAT71((int7)(uVar34 >> 8),bVar23) & 0xffffffffffffff0f;
+  uVar60 = (ushort)uVar34 >> (sbyte)uVar34 | 0x6da4 << 0x10 - (sbyte)uVar34;
+  lVar41 = CONCAT62((int6)(uVar34 >> 0x10),uVar60);
+  bVar23 = (byte)(uVar60 >> 8);
+  sVar16 = -CONCAT11(((char)(uVar17 % uVar45) - bVar23) + -1,(char)(uVar17 / uVar45));
+  uVar34 = uVar21 & 0xffff;
+  uVar43 = CONCAT22((short)((ulong)lVar40 >> 0x10),
+                    CONCAT11(((char)(uVar48 >> 8) - (char)sVar16) + -1,0x60));
+  lVar40 = (ulong)uVar32 * 2 + CONCAT62((int6)(uVar63 >> 0x10),sVar16);
+  uVar42 = CONCAT22((short)(uVar46 >> 0x10),
+                    (ushort)uVar46 & ~(1 << ((short)(uVar29 >> 1) + (short)iVar33 & 0xfU)));
+  if (-1 < (char)((char)((ushort)sVar16 >> 8) - (char)sVar16)) {
+    uVar42 = uVar43;
   }
-  uVar26 = (uint)((uVar44 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar44 << 1)) >> 1);
-  bVar12 = (byte)uVar34;
-  bVar40 = (byte)uVar14 & 7;
-  uVar6 = (ushort)uVar34 & 0xff00 | (ushort)(byte)(bVar12 >> bVar40 | bVar12 << 8 - bVar40);
-  uVar5 = CONCAT11(bVar11,bVar12 + 1);
-  bVar40 = (byte)uVar14 & 0xf;
-  return (ulong)uVar5 + (uVar41 >> 1) + uVar10 + (ulong)(byte)(0x5f - CARRY1(bVar36,bVar11)) * 0x100
-         + uVar8 + uVar33 + (long)(int)uVar31 * 0x7d724300 +
-         (uVar17 & 0xffffffffffff0000 | (ulong)uVar48 & 0xffffffffffffff00 |
-         (ulong)(byte)((char)uVar48 - (char)uVar39)) +
-         (ulong)(uVar26 >> 0x18 | (uVar26 & 0xff0000) >> 8 | (uVar26 & 0xff00) << 8 | uVar26 << 0x18
-                ) +
-         (uVar34 & 0xffffffffffff0000 | (ulong)(ushort)(uVar6 << bVar40 | uVar6 >> 0x10 - bVar40)) +
-         (ulong)(uint)((int)((int)uVar41 +
-                            (uVar43 & 0xffff0000 | uVar27 & 0xffffff00 |
-                            (uint)(byte)(bVar36 + bVar11))) >> 1) + (ulong)uVar31 +
-         (ulong)(uVar5 + 0x2e3dfe50 + (int)uVar10) +
-         (ulong)((int)(uVar51 >> 0x20) << 1 | (uint)uVar8 >> 0x1f) + 0x7d6dfd92aa39;
+  uVar48 = (uint)(CONCAT62((int6)((ulong)lVar28 >> 0x10),(short)lVar28 << 1) >> 1);
+  bVar51 = (byte)lVar40;
+  bVar26 = (byte)uVar60 & 7;
+  uVar45 = CONCAT11(bVar23,bVar51 + 1);
+  bVar35 = (byte)uVar60 & 0xf;
+  uVar17 = (ushort)CONCAT71((int7)((ulong)lVar40 >> 8),bVar51 >> bVar26 | bVar51 << 8 - bVar26);
+  return (ulong)uVar45 + (uVar34 >> 1) + lVar41 + (ulong)(byte)(0x5f - (0x9f < bVar23)) * 0x100 +
+         (ulong)uVar42 + uVar21 + (long)(int)uVar39 * 0x7d724300 +
+         CONCAT71((int7)(CONCAT62((int6)(uVar19 >> 0x10),uVar18) >> 8),(char)uVar18 - (char)uVar32)
+         + (ulong)(uVar48 >> 0x18 | (uVar48 & 0xff0000) >> 8 | (uVar48 & 0xff00) << 8 |
+                  uVar48 << 0x18) +
+         CONCAT62((int6)((ulong)lVar40 >> 0x10),uVar17 << bVar35 | uVar17 >> 0x10 - bVar35) +
+         (ulong)(uint)((int)uVar34 + CONCAT31((int3)(uVar43 >> 8),bVar23 + 0x60) >> 1) +
+         (ulong)uVar39 + (ulong)(uVar45 + 0x2e3dfe50 + (int)lVar41) +
+         (ulong)((int)((ulong)lVar50 >> 0x20) << 1 | uVar42 >> 0x1f) + 0x7d6dfd92aa39;
 }
 
 
@@ -1903,675 +1976,705 @@ long log_size_10_var_002(void)
   undefined auVar1 [16];
   undefined auVar2 [16];
   undefined auVar3 [16];
-  short sVar4;
-  uint uVar5;
-  ushort uVar6;
-  byte bVar7;
-  char cVar10;
-  uint uVar8;
-  ulong uVar9;
-  sbyte sVar11;
-  byte bVar12;
-  byte bVar13;
-  ushort uVar14;
-  short sVar15;
-  uint uVar16;
-  ulong uVar17;
-  char cVar18;
-  ushort uVar19;
-  ushort uVar20;
-  ulong uVar21;
-  ushort uVar22;
-  uint uVar23;
-  uint uVar24;
-  uint uVar25;
-  ulong uVar26;
-  ulong uVar27;
-  uint7 uVar28;
+  undefined auVar4 [16];
+  undefined auVar5 [16];
+  long lVar6;
+  undefined3 uVar7;
+  uint3 uVar8;
+  uint6 uVar9;
+  byte bVar10;
+  ushort uVar11;
+  int iVar12;
+  uint uVar13;
+  ulong uVar14;
+  undefined6 uVar15;
+  byte bVar16;
+  byte bVar17;
+  byte bVar18;
+  sbyte sVar19;
+  short sVar20;
+  uint uVar21;
+  ulong uVar22;
+  char cVar23;
+  ulong uVar24;
+  undefined8 uVar25;
+  char cVar26;
+  ushort uVar27;
+  short sVar28;
   uint uVar29;
-  int iVar30;
-  uint uVar31;
+  uint uVar30;
+  ulong uVar31;
   ulong uVar32;
-  byte bVar33;
-  uint uVar34;
-  ulong uVar35;
-  ulong uVar36;
-  byte bVar37;
-  uint uVar38;
-  int iVar39;
+  ulong uVar33;
+  undefined8 uVar34;
+  ushort uVar35;
+  uint uVar36;
+  uint uVar37;
+  ulong uVar38;
+  uint7 uVar39;
   uint uVar40;
   uint uVar41;
-  ulong uVar42;
-  ushort uVar43;
-  long lVar44;
-  long lVar45;
+  int iVar42;
+  uint uVar43;
+  int iVar44;
+  undefined7 uVar45;
   ulong uVar46;
   byte bVar47;
-  ushort uVar48;
-  ulong uVar49;
-  bool bVar50;
-  bool bVar51;
+  long lVar48;
+  ushort uVar49;
+  ushort uVar50;
+  long lVar51;
+  ushort uVar52;
+  ulong uVar53;
+  long lVar54;
+  long lVar55;
+  undefined8 uVar56;
+  ulong uVar57;
+  byte bVar58;
+  char cVar59;
+  bool bVar60;
+  bool bVar61;
   
-  for (lVar45 = 0; (0x1c53e29bU >> lVar45 & 1) == 0; lVar45 = lVar45 + 1) {
+  for (lVar48 = 0; (0x1c53e29bUL >> lVar48 & 1) == 0; lVar48 = lVar48 + 1) {
   }
-  for (sVar15 = 0xf; 0xa94fU >> sVar15 == 0; sVar15 = sVar15 + -1) {
+  for (sVar28 = 0xf; 0xa94fU >> sVar28 == 0; sVar28 = sVar28 + -1) {
   }
-  uVar46 = ((ulong)(((uint7)(CONCAT18(1,lVar45) >> 0x10) & 0xffffffffffff) >> 0x19) &
-           0xffffffffffff00) << 8;
-  uVar43 = sVar15 >> 0x10;
-  uVar32 = (uVar46 | uVar43) - 0x5ee75fcd;
-  uVar40 = (uint)(short)uVar43;
-  uVar48 = 0;
-  if (uVar43 != 0) {
-    for (; (uVar43 >> uVar48 & 1) == 0; uVar48 = uVar48 + 1) {
+  uVar14 = CONCAT62((uint6)(CONCAT18(1,lVar48) >> 0x31),sVar28 >> 0x10);
+  lVar48 = uVar14 - 0x5ee75fcd;
+  uVar14 = uVar14 & 0xffffffff;
+  uVar35 = (ushort)uVar14;
+  sVar28 = 0;
+  if (uVar35 != 0) {
+    for (; (uVar35 >> sVar28 & 1) == 0; sVar28 = sVar28 + 1) {
     }
   }
-  bVar7 = (byte)uVar32;
-  bVar47 = bVar7 ^ (bVar7 == 0x47) * (bVar7 ^ (byte)(sVar15 >> 0x10));
-  uVar42 = (ulong)(byte)((bVar7 != 0x47) * (bVar47 ^ 0x47) ^ 0x47) | 0x1ce8fe00;
-  lVar45 = 0;
-  if (uVar42 != 0) {
-    for (; (uVar42 >> lVar45 & 1) == 0; lVar45 = lVar45 + 1) {
+  bVar10 = (byte)lVar48;
+  bVar58 = bVar10 ^ (bVar10 == 0x47) * (bVar10 ^ (byte)uVar14);
+  uVar33 = CONCAT71(0x1ce8fe,(bVar10 != 0x47) * (bVar58 ^ 0x47)) ^ 0x47;
+  iVar12 = (short)uVar35 * 0x200;
+  lVar55 = 0;
+  if (uVar33 != 0) {
+    for (; (uVar33 >> lVar55 & 1) == 0; lVar55 = lVar55 + 1) {
     }
   }
-  uVar42 = (ulong)(SEXT816((long)(uVar42 * 0x60daad9d)) !=
-                  SEXT816((long)uVar42) * SEXT416(0x60daad9d)) << 0x20 |
-           uVar42 * 0x60daad9d & 0xffffffff;
-  uVar8 = (uint)(uVar42 << 0xe);
-  uVar23 = (uint)(uVar42 >> 0x13) | uVar8;
-  uVar25 = (uint)bVar47 << 10;
-  if ((uVar40 & 0x7fffff) == 0) {
-    uVar25 = uVar40 * -0x200;
+  lVar51 = (CONCAT71((int7)((ulong)lVar48 >> 8),bVar58) & 0x3fffff) << 10;
+  uVar33 = (ulong)(SEXT816((long)(uVar33 * 0x60daad9d)) !=
+                  SEXT816((long)uVar33) * SEXT416(0x60daad9d)) << 0x20 |
+           uVar33 * 0x60daad9d & 0xffffffff;
+  lVar48 = uVar33 << 0xe;
+  uVar36 = (uint)(uVar33 >> 0x13) | (uint)lVar48;
+  sVar20 = (short)lVar51;
+  if (iVar12 == 0) {
+    sVar20 = -(short)iVar12;
   }
-  if (-1 < (int)(uVar40 * -0x400 | (uint)((uVar32 & 0x3fff00) << 10) >> 0x1f)) {
-    uVar23 = uVar8 & 0xffff0000 | uVar25 & 0xffff;
+  uVar29 = (uint)uVar14 & 0xc256437c;
+  if (-1 < (int)((short)uVar35 * -0x400 | (uint)lVar51 >> 0x1f)) {
+    uVar36 = CONCAT22((short)((ulong)lVar48 >> 0x10),sVar20);
   }
-  iVar39 = 0;
-  if ((int)(short)uVar25 != 0) {
-    for (; ((uint)(int)(short)uVar25 >> iVar39 & 1) == 0; iVar39 = iVar39 + 1) {
+  iVar12 = 0;
+  if ((int)sVar20 != 0) {
+    for (; ((uint)(int)sVar20 >> iVar12 & 1) == 0; iVar12 = iVar12 + 1) {
     }
   }
-  uVar22 = (short)uVar23 >> 2;
-  bVar7 = (byte)(uVar43 & 0xc256437c);
-  auVar3 = ZEXT216(uVar22) * ZEXT816(0xc256437f);
-  uVar40 = (uint)SUB162(auVar3,0) * 0xf;
-  uVar8 = (int)CONCAT62(SUB166(auVar3 >> 0x10,0),(short)uVar40) * 0x3da9a9d9;
-  if (((ulong)(uVar48 | 0x3000000) << 0x24 | 0xf) == 0xffffffffffffffff) {
-    uVar8 = uVar8 & 0xffff0000 | 0x832c;
+  uVar35 = (short)uVar36 >> 2;
+  auVar5 = ZEXT216(uVar35) * ZEXT816(0xc256437f);
+  uVar13 = (uint)auVar5._0_2_ * 0xf;
+  iVar12 = (int)CONCAT62(auVar5._2_6_,(short)uVar13) * 0x3da9a9d9;
+  if (CONCAT62((int6)(((ulong)CONCAT22(0x300,sVar28) << 0x24) >> 0x10),0xf) == -1) {
+    iVar12 = CONCAT22((short)((uint)iVar12 >> 0x10),0x832c);
   }
-  uVar48 = (ushort)uVar8 | 0xc000;
-  uVar32 = (long)(int)(uVar8 & 0xffff0000 |
-                      (uint)(ushort)((short)((uVar40 & 0x3fff0000 | (uint)uVar48) / (uint)uVar48) >>
-                                    0xd)) * -0x4000000;
-  uVar8 = 0x1fff3;
-  if ((long)(int)uVar32 != uVar32) {
-    uVar8 = 0;
+  uVar14 = (long)CONCAT22((short)((uint)iVar12 >> 0x10),
+                          (short)((CONCAT22((short)(uVar13 >> 0x10),(ushort)iVar12) | 0xc000) /
+                                 (uint)(ushort)((ushort)iVar12 | 0xc000)) >> 0xd) * -0x4000000;
+  uVar40 = 0x1fff3;
+  if ((long)(int)uVar14 != uVar14) {
+    uVar40 = 0;
   }
-  uVar25 = (int)lVar45 + 0xa12b4cd1;
-  uVar8 = uVar8 ^ (uVar23 & 0xffff0000 | (uint)(ushort)((ushort)(uVar22 - 0x7f) >> 0xc | 0xff30));
-  uVar23 = uVar25 & 0xffffff00 | uVar25 >> 1 & 0x7f;
-  cVar10 = (bVar7 << 2 | bVar7 >> 6) + 0x2c;
-  uVar32 = (ulong)((uint)(uVar32 >> 0x20) & 0x3fffffff) << 0x20 |
-           (uVar32 & 0xffffffff) + 0x3f4ac851 & 0xffffffff;
-  uVar42 = uVar32 / 0xe12b21bf;
-  bVar7 = (byte)(uVar42 >> 8);
-  uVar32 = uVar32 % 0xe12b21bf;
-  lVar44 = (ulong)(uVar23 + 0xd7990616) * 2;
-  lVar45 = 0xe12b21bf;
-  if (0xa3ac98fa < uVar8) {
-    lVar45 = lVar44;
+  iVar12 = (int)lVar55 + -0x5ed4b32f;
+  uVar40 = uVar40 ^ (CONCAT22((short)(uVar36 >> 0x10),(ushort)(uVar35 - 0x7f) >> 0xc) | 0xff30);
+  iVar44 = CONCAT31((int3)((uint)iVar12 >> 8),(byte)iVar12 >> 1);
+  cVar23 = ((byte)uVar29 << 2 | (byte)uVar29 >> 6) + 0x2c;
+  uVar14 = (ulong)((uint)(uVar14 >> 0x20) & 0x3fffffff) << 0x20 |
+           (uVar14 & 0xffffffff) + 0x3f4ac851 & 0xffffffff;
+  uVar33 = uVar14 / 0xe12b21bf;
+  uVar14 = uVar14 % 0xe12b21bf;
+  lVar55 = (ulong)(iVar44 + 0xd7990616) * 2;
+  bVar10 = (byte)(uVar33 >> 8);
+  lVar48 = 0xe12b21bf;
+  if (0xa3ac98fa < uVar40) {
+    lVar48 = lVar55;
   }
-  bVar47 = (bVar7 & 0x1f) % 9;
-  uVar29 = (uVar8 + 0x5c536705) * -0x7472935a;
-  uVar48 = (short)uVar23 + 0x5f8;
-  uVar43 = CONCAT11((char)((uVar43 & 0xc256437c) >> 8) + (char)uVar32 + ((uVar40 & 0x10000) != 0),
-                    cVar10);
-  uVar40 = ((uint)uVar42 & 0xffff0000 |
-           (uint)(byte)(bVar7 << bVar47 | (byte)(CONCAT11(uVar8 < 0xa3ac98fb,bVar7) >> 9 - bVar47))
-           << 8) ^ 0x1593918c;
-  uVar23 = uVar40 & 0xffffff00;
-  uVar38 = uVar40 >> 8 & 0xff;
-  uVar16 = (int)(char)bVar7 & ((uint)uVar46 & 0xc2560000 | (uint)uVar43);
-  uVar31 = (uint)lVar45;
-  uVar40 = ((uint)uVar32 & 0xffff0000 | (uint)((ushort)uVar32 & 0xfdff)) + 0xf0d6d370 + uVar31 * 4;
-  uVar32 = (ulong)uVar16 & 0xffffffffffffff0f;
-  sVar11 = (sbyte)uVar32;
-  uVar22 = (ushort)uVar40 >> sVar11 | ((ushort)uVar23 | (ushort)uVar38) << 0x10 - sVar11;
-  uVar40 = uVar40 & 0xffff0000 | (uint)uVar22;
-  bVar47 = (byte)uVar38;
-  bVar12 = (byte)(uVar32 >> 8);
-  uVar38 = SUB164(auVar3 >> 0x6b,0) + uVar40;
-  uVar43 = ((ushort)uVar16 & 0xf) - (uVar43 & 0x7fff);
-  uVar32 = 0x3f;
-  if (uVar29 != 0) {
-    for (; uVar29 >> uVar32 == 0; uVar32 = uVar32 - 1) {
+  bVar58 = (bVar10 & 0x1f) % 9;
+  uVar41 = (uVar40 + 0x5c536705) * -0x7472935a;
+  sVar28 = (short)iVar44 + 0x5f8;
+  uVar11 = CONCAT11((char)(uVar29 >> 8) + (char)uVar14 + ((uVar13 & 0x10000) != 0),cVar23);
+  uVar36 = (int)CONCAT61((int6)(uVar33 >> 0x10),
+                         bVar10 << bVar58 |
+                         (byte)(CONCAT11(uVar40 < 0xa3ac98fb,bVar10) >> 9 - bVar58)) << 8 ^
+           0x1593918c;
+  bVar58 = (byte)(uVar36 >> 8);
+  uVar7 = (undefined3)(uVar36 >> 8);
+  uVar13 = (uint)lVar48;
+  iVar44 = ((uint)uVar14 & 0xfffffdff) + 0xf0d6d370 + uVar13 * 4;
+  uVar14 = (ulong)((int)(char)bVar10 & CONCAT22((short)(uVar29 >> 0x10),uVar11)) &
+           0xffffffffffffff0f;
+  bVar17 = (byte)uVar14;
+  uVar35 = (ushort)iVar44 >> bVar17 | (short)CONCAT31(uVar7,bVar58) << 0x10 - bVar17;
+  iVar44 = CONCAT22((short)((uint)iVar44 >> 0x10),uVar35);
+  bVar16 = (byte)(uVar14 >> 8);
+  uVar15 = (undefined6)(uVar14 >> 0x10);
+  uVar36 = (auVar5._12_4_ >> 0xb) + iVar44;
+  sVar20 = (ushort)bVar17 - (uVar11 & 0x7fff);
+  uVar14 = 0x3f;
+  if (uVar41 != 0) {
+    for (; uVar41 >> uVar14 == 0; uVar14 = uVar14 - 1) {
     }
   }
-  bVar33 = (byte)((ushort)((ushort)((uVar38 & 1) != 0) << 8) >> 2);
-  uVar34 = (uint)uVar43 << 0x1f;
-  uVar5 = (uVar31 | 0xd69b5e81) >> 0xc;
-  uVar38 = (uVar38 & 0xffff0000 | uVar38 >> 1 & 0x7fff) + 1;
-  bVar50 = (uVar31 + 1 & 1) != 0;
-  uVar42 = (long)(ulong)(uVar31 + 1) >> 1;
-  uVar46 = uVar42 - 0x167c9fe5;
-  bVar7 = (((char)uVar48 << (bVar7 & 0x3f) |
-           (byte)((uVar25 & 0xffff0000 | (uint)uVar48) >> 0x40 - (bVar7 & 0x3f))) + cVar10 + 'u') -
-          (uVar42 < 0x167c9fe5 || uVar46 < bVar50);
-  uVar25 = (int)uVar46 - (uint)bVar50 & 0xffff0000 | (uint)(ushort)(short)(char)bVar7;
-  uVar40 = -(-uVar40 | 0xd2);
-  uVar19 = (ushort)uVar32 >> 1 | (ushort)((uVar32 & 1) != 0) << 0xf;
-  bVar37 = (byte)uVar29;
-  uVar48 = uVar19 + 0x86c9;
-  uVar20 = uVar48 + (bVar7 < bVar37);
-  uVar46 = (ulong)(0x7936 < uVar19 || CARRY2(uVar48,(ushort)(bVar7 < bVar37))) << 0x20 |
-           ((ulong)(uVar23 | (byte)(bVar47 ^ (bVar47 != bVar12) *
-                                             (bVar47 ^ bVar12 ^ (bVar47 == bVar12) *
-                                                                (bVar12 ^ (byte)uVar22)))) &
-           0x7fffff80) << 1 | (ulong)(byte)(bVar7 ^ (bVar7 != bVar37) * (bVar7 ^ bVar37));
-  uVar42 = uVar32 & 0xffffffffffff0000 |
-           (ulong)(ushort)(uVar20 & 0xff | (ushort)(byte)((char)((ulong)uVar20 >> 8) + 1) << 8) |
-           0x72c75da3;
-  uVar32 = (ulong)uVar16 & 0xffffffffffff0000 |
-           (ulong)(ushort)(uVar43 & 0xff | (ushort)((int)uVar34 < 0) << 8);
-  if ((ulong)bVar33 < 0xffffffffa1fb9402) {
-    uVar32 = uVar42;
+  uVar32 = (ulong)CONCAT31(0xfc0000,(char)((ushort)((ushort)((uVar36 & 1) != 0) << 8) >> 2)) &
+           0xffff;
+  uVar29 = (int)CONCAT62(uVar15,sVar20) << 0x1f;
+  lVar48 = (ulong)CONCAT22((short)(uVar36 >> 0x10),(ushort)uVar36 >> 1) + 1;
+  uVar53 = (long)(ulong)(uVar13 + 1) >> 1;
+  uVar33 = (ulong)((uVar13 + 1 & 1) != 0);
+  uVar57 = uVar53 - 0x167c9fe5;
+  bVar10 = (((char)sVar28 << (bVar10 & 0x3f) |
+            (byte)(CONCAT22((short)((uint)iVar12 >> 0x10),sVar28) >> 0x40 - (bVar10 & 0x3f))) +
+            cVar23 + 'u') - (uVar53 < 0x167c9fe5 || uVar57 < uVar33);
+  cVar23 = (char)((uVar13 | 0xd69b5e81) >> 0xc);
+  iVar12 = -(-iVar44 | 0xd2U);
+  uVar27 = (ushort)uVar14 >> 1 | (ushort)((uVar14 & 1) != 0) << 0xf;
+  bVar17 = (byte)uVar41;
+  uVar11 = uVar27 + 0x86c9;
+  sVar28 = uVar11 + (bVar10 < bVar17);
+  uVar53 = (ulong)(0x7936 < uVar27 || CARRY2(uVar11,(ushort)(bVar10 < bVar17))) << 0x20 |
+           CONCAT71((int7)(((ulong)CONCAT31(uVar7,bVar58 ^ (bVar58 != bVar16) *
+                                                           (bVar58 ^ bVar16 ^ (bVar58 == bVar16) *
+                                                                              (bVar16 ^ (byte)uVar35
+                                                                              ))) << 1) >> 8),
+                    bVar10 ^ (bVar10 != bVar17) * (bVar10 ^ bVar17));
+  uVar31 = CONCAT62((int6)(uVar14 >> 0x10),
+                    CONCAT11((char)((ushort)sVar28 >> 8) + '\x01',(char)sVar28)) | 0x72c75da3;
+  uVar14 = CONCAT62(uVar15,CONCAT11((int)uVar29 < 0,(char)sVar20));
+  if (uVar32 < 0xffffffffa1fb9402) {
+    uVar14 = uVar31;
   }
-  bVar7 = ((byte)uVar32 & 0x1f) % 0x11;
-  lVar45 = (long)(int)((uint)(uVar46 >> 0x1d) | (uint)(uVar46 << 4)) *
-           (long)(int)(uVar40 & 0xffff0000 |
-                      (uint)CONCAT11((byte)(uVar40 >> 8) | (byte)uVar40,(byte)uVar40));
-  uVar16 = (int)uVar32 + 1;
-  uVar23 = (int)(short)lVar45 * (int)(short)uVar42;
-  uVar41 = uVar25 >> 1;
-  uVar40 = (uint)(ushort)((ushort)uVar23 | 0xc000);
-  uVar23 = uVar23 & 0xffff | (uint)((ushort)(uVar23 >> 0x10) & 0x3fff) << 0x10 | 0xc000;
-  uVar40 = (uVar23 / uVar40 & 0xffff) * (uVar23 % uVar40);
-  bVar47 = (byte)uVar16 & 0x1f;
-  uVar24 = bVar33 + 0x5e046bfe << bVar47 |
-           ((uint)((ulong)lVar45 >> 0x20) & 0xffff0000 | uVar40 >> 0x10) >> 0x20 - bVar47;
-  uVar23 = ((ushort)(0x7c14 << bVar7 | (ushort)(0x17c14 >> 0x11 - bVar7)) | 0xe59f0000) +
-           ((uint)((ulong)(lVar44 + -0x7cdc75b8) >> 0x25) << 0x10 | (uint)uVar42 >> 0x10);
-  uVar40 = (uVar40 & 0xffff) + uVar24;
-  uVar31 = uVar34 ^ 0x400;
-  if ((POPCOUNT(uVar40 & 0xff) & 1U) == 0) {
-    uVar31 = uVar23;
+  bVar58 = ((byte)uVar14 & 0x1f) % 0x11;
+  lVar51 = (long)(int)((uint)(uVar53 >> 0x1d) | (uint)(uVar53 << 4)) *
+           (long)CONCAT22((short)((uint)iVar12 >> 0x10),
+                          CONCAT11((byte)((uint)iVar12 >> 8) | (byte)iVar12,(byte)iVar12));
+  uVar21 = (int)uVar14 + 1;
+  iVar12 = (int)(short)lVar51 * (int)(short)uVar31;
+  uVar35 = (ushort)iVar12;
+  uVar33 = CONCAT62((int6)(uVar57 - uVar33 >> 0x10),(short)(char)bVar10) >> 1 & 0x7fffffff;
+  uVar14 = (ulong)CONCAT22((short)((ulong)lVar51 >> 0x30),(short)((uint)iVar12 >> 0x10)) &
+           0xffff3fff;
+  uVar36 = (uint)(uVar35 | 0xc000);
+  uVar40 = CONCAT22((short)uVar14,uVar35) | 0xc000;
+  uVar36 = (uVar40 / uVar36 & 0xffff) * (uVar40 % uVar36);
+  bVar10 = (byte)uVar21 & 0x1f;
+  uVar37 = (int)uVar32 + 0x5e046bfe << bVar10 |
+           (uint)CONCAT62((int6)(uVar14 >> 0x10),(short)(uVar36 >> 0x10)) >> 0x20 - bVar10;
+  uVar40 = (CONCAT22(0x7c9f,0x7c14 << bVar58 | (ushort)(0x17c14 >> 0x11 - bVar58)) & 0xffffff |
+           0xe5000000) +
+           ((uint)((ulong)(lVar55 + -0x7cdc75b8) >> 0x25) << 0x10 | (uint)uVar31 >> 0x10);
+  uVar36 = (uVar36 & 0xffff) + uVar37;
+  uVar29 = uVar29 ^ 0x400;
+  if ((POPCOUNT(uVar36 & 0xff) & 1U) == 0) {
+    uVar29 = uVar40;
   }
-  uVar16 = uVar16 & 0xffffff0f;
-  sVar11 = (sbyte)uVar16;
-  uVar48 = (ushort)uVar31 >> sVar11 | (short)uVar41 << 0x10 - sVar11;
-  bVar50 = (short)((uVar40 & 0xffff) * (uVar29 & 0xffff) >> 0x10) != 0;
-  bVar47 = (byte)uVar42;
-  uVar32 = (ulong)CONCAT11(-bVar50,bVar47);
-  uVar8 = (uVar23 + (uVar8 + 0x5c536705) * 0x7472935a) - (uint)bVar50;
-  uVar16 = uVar16 >> 1;
-  uVar40 = CONCAT31((uint3)(uVar25 >> 9),(byte)uVar41 >> 1);
-  uVar24 = uVar24 ^ 1 << (uVar48 & 0x1f);
-  bVar12 = (byte)(uVar32 >> 8);
-  bVar7 = bVar47 + bVar12;
-  uVar32 = uVar42 & 0xffffffffffff0000 | uVar32 & 0xffffffffffffff00 | (ulong)(byte)(bVar7 + 1);
-  uVar46 = (ulong)((uVar5 & 0xffffff00 | (uint)(byte)((char)uVar5 + (char)uVar38)) >> 1 | 0x80000000
-                  ) << 1 | (ulong)(CARRY1(bVar47,bVar12) || 0xfe < bVar7);
-  lVar45 = 0x3f;
-  if (uVar46 != 0) {
-    for (; uVar46 >> lVar45 == 0; lVar45 = lVar45 + -1) {
+  uVar14 = (ulong)uVar21 & 0xffffffffffffff0f;
+  uVar35 = (ushort)uVar29 >> (sbyte)uVar14 | (short)uVar33 << 0x10 - (sbyte)uVar14;
+  bVar60 = (short)((uVar36 & 0xffff) * (uVar41 & 0xffff) >> 0x10) != 0;
+  bVar58 = (byte)uVar31;
+  bVar10 = -bVar60;
+  lVar51 = ((ulong)uVar40 - (ulong)uVar41) - (ulong)bVar60;
+  uVar36 = (uint)uVar14 >> 1;
+  lVar54 = CONCAT71((int7)(uVar33 >> 8),(byte)uVar33 >> 1);
+  uVar37 = uVar37 ^ 1 << (uVar35 & 0x1f);
+  uVar33 = CONCAT71((int7)(CONCAT62((int6)(uVar31 >> 0x10),CONCAT11(bVar10,bVar58)) >> 8),
+                    bVar58 + bVar10 + 1);
+  uVar57 = (ulong)(CONCAT31((uint3)((uVar13 | 0xd69b5e81) >> 0x14),cVar23 + (char)lVar48) >> 1 |
+                  0x80000000) << 1 |
+           (ulong)(CARRY1(bVar58,bVar10) || 0xfe < (byte)(bVar58 + bVar10));
+  lVar55 = 0x3f;
+  if (uVar57 != 0) {
+    for (; uVar57 >> lVar55 == 0; lVar55 = lVar55 + -1) {
     }
   }
-  bVar12 = (byte)uVar16;
-  uVar21 = uVar32 << (bVar12 & 0x3f) | uVar32 >> 0x40 - (bVar12 & 0x3f);
-  uVar25 = (uVar24 & 0xffff0000 | (uint)(ushort)((ushort)uVar24 | uVar48)) - 1;
-  uVar23 = (int)lVar45 - (uint)uVar21;
-  lVar45 = (ulong)uVar23 * (ulong)uVar23;
-  bVar7 = (char)uVar21 << 1;
-  uVar23 = uVar25 >> 0xc;
-  uVar34 = 0x1faf268c << (bVar12 & 0x1f);
-  auVar3 = ZEXT116(0) << 0x40 |
-           ZEXT416(uVar25 * 0x200000 | uVar23 & 0xffff0000 | (uint)(ushort)((ushort)uVar23 | 1));
-  uVar26 = SUB168(auVar3 >> (bVar12 & 0x3f),0) | SUB168(auVar3 << 0x41 - (bVar12 & 0x3f),0);
-  uVar32 = (ulong)((uVar31 & 0xffff0000 | (uint)uVar48) << (bVar12 & 0x1f) |
-                  ((uint)(uVar21 & 0xffffffffffffff00) | (uint)bVar7) >> 0x20 - (bVar12 & 0x1f));
-  uVar19 = (ushort)uVar34 >> (bVar12 & 0xf) | (ushort)uVar34 << 0x10 - (bVar12 & 0xf);
-  uVar20 = (short)uVar8 >> (bVar12 & 0x1f);
-  lVar44 = uVar26 + ((uVar38 & 0xffffff00 | uVar5 & 0xff) >> 1 | 0x80000000);
-  uVar43 = (short)uVar16 << 7;
-  uVar22 = CONCAT11((char)((uint)uVar43 >> 8),bVar7);
-  bVar47 = (byte)(ushort)(CONCAT12(0x5d < (byte)((char)uVar34 + 0x67U),(short)uVar16) >> 10);
-  uVar46 = uVar32 - 0xc87ffa36;
-  bVar50 = uVar46 == 0;
-  uVar42 = (ulong)uVar40 - 0xc16500b6;
-  uVar48 = ((ushort)(uVar29 >> 0x17) ^ 1 << ((ushort)uVar26 & 0xf)) + 0x57e2;
-  uVar32 = (uVar32 - 0xc87ffa18) + uVar42 * 2;
-  bVar7 = (bVar47 | (byte)uVar43) - bVar50;
-  uVar23 = uVar16 & 0xffff0000 | 0x80000000 | (uint)(byte)((uVar21 & 0xffffffffffffff00) >> 8) << 8
-           | (uint)bVar7;
-  uVar17 = lVar44 * 2;
-  uVar35 = (ulong)(lVar44 < 0);
-  uVar27 = uVar17 | uVar35;
-  uVar9 = uVar27 * 0x7acb03cc;
-  uVar25 = (uint)(ushort)(uVar48 << (bVar7 & 0xf) | uVar48 >> 0x10 - (bVar7 & 0xf)) |
-           uVar8 & 0xffff0000 |
-           (uint)(ushort)(uVar20 >> (bVar12 & 0xf) | uVar20 << 0x10 - (bVar12 & 0xf));
-  uVar48 = (short)uVar42 + 0x60 + (short)uVar23 * 8;
-  uVar36 = CONCAT62((undefined6)((char)bVar12 >> 7),uVar48);
-  uVar8 = uVar23 + uVar25;
-  bVar12 = (byte)uVar8 | (byte)(uVar8 >> 8);
-  if (-1 < (char)bVar12) {
-    uVar9 = uVar9 & 0xffffffffffff0000 | uVar17 & 0xffff | uVar35;
+  bVar17 = (byte)uVar36;
+  uVar32 = uVar33 << (bVar17 & 0x3f) | uVar33 >> 0x40 - (bVar17 & 0x3f);
+  uVar40 = CONCAT22((short)(uVar37 >> 0x10),(ushort)uVar37 | uVar35) - 1;
+  uVar13 = (int)lVar55 - (int)uVar32;
+  lVar55 = (ulong)uVar13 * (ulong)uVar13;
+  cVar26 = (char)uVar32 << 1;
+  iVar44 = 0x1faf268c << (bVar17 & 0x1f);
+  auVar5 = ZEXT116(0) << 0x40 |
+           ZEXT416(CONCAT22((ushort)(uVar40 * 0x200000 >> 0x10) | (ushort)(uVar40 >> 0x1c),
+                            (short)(uVar40 >> 0xc)) | 1);
+  uVar31 = SUB168(auVar5 >> (bVar17 & 0x3f),0) | SUB168(auVar5 << 0x41 - (bVar17 & 0x3f),0);
+  uVar33 = (ulong)(CONCAT22((short)(uVar29 >> 0x10),uVar35) << (bVar17 & 0x1f) |
+                  (uint)CONCAT71((int7)(uVar32 >> 8),cVar26) >> 0x20 - (bVar17 & 0x1f));
+  uVar27 = (ushort)iVar44 >> (bVar17 & 0xf) | (ushort)iVar44 << 0x10 - (bVar17 & 0xf);
+  uVar49 = (short)lVar51 >> (bVar17 & 0x1f);
+  lVar6 = uVar31 + ((uint)CONCAT71((int7)((ulong)lVar48 >> 8),cVar23) >> 1 | 0x80000000);
+  sVar20 = (short)uVar36;
+  sVar28 = sVar20 << 7;
+  bVar58 = (byte)(ushort)(CONCAT12(0x5d < (byte)((char)iVar44 + 0x67U),sVar20) >> 10);
+  bVar16 = bVar58 | (byte)sVar28;
+  uVar11 = CONCAT11((char)((ushort)sVar28 >> 8),cVar26);
+  uVar53 = uVar33 - 0xc87ffa36;
+  lVar48 = lVar54 + -0xc16500b6;
+  uVar35 = ((ushort)(uVar41 >> 0x17) ^ 1 << ((ushort)uVar31 & 0xf)) + 0x57e2;
+  uVar33 = (uVar33 - 0xc87ffa18) + lVar48 * 2;
+  bVar10 = bVar16 - (uVar53 == 0);
+  uVar29 = CONCAT31((int3)(CONCAT22((ushort)(uVar14 >> 0x10) >> 1,
+                                    CONCAT11((char)(uVar32 >> 8),bVar16)) >> 8),bVar10);
+  uVar36 = uVar29 | 0x80000000;
+  uVar38 = lVar6 * 2 | (ulong)(lVar6 < 0);
+  uVar14 = uVar38 * 0x7acb03cc;
+  uVar13 = (uint)(ushort)(uVar35 << (bVar10 & 0xf) | uVar35 >> 0x10 - (bVar10 & 0xf)) |
+           (uint)CONCAT62((int6)((ulong)lVar51 >> 0x10),
+                          uVar49 >> (bVar17 & 0xf) | uVar49 << 0x10 - (bVar17 & 0xf));
+  uVar35 = (short)lVar48 + 0x60 + (short)uVar29 * 8;
+  uVar46 = CONCAT62((char)bVar17 >> 7,uVar35);
+  iVar12 = uVar36 + uVar13;
+  bVar17 = (byte)iVar12 | (byte)((uint)iVar12 >> 8);
+  if (-1 < (char)bVar17) {
+    uVar14 = CONCAT62((int6)(uVar14 >> 0x10),(short)uVar38);
   }
-  lVar44 = -uVar27;
-  uVar17 = (uVar8 & 0xffffff00 | (uint)bVar12) & uVar9;
-  if (uVar17 != 0) {
-    uVar46 = uVar32 & 0xffff;
-  }
-  uVar38 = (-((uint)((ulong)lVar45 >> 0x20) & 0xffff0000 |
-             (uint)CONCAT11((char)((ulong)lVar45 >> 0x28) + '2',(char)((ulong)lVar45 >> 0x20))) &
-            0xffff0000 | (uint)(byte)(bVar50 + bVar7 + 1)) >> (bVar12 & 0x1f) & 0xffffff00;
-  uVar8 = (uint)(ushort)((short)uVar40 + 0x99 +
-                         (((ushort)((uVar34 & 0xffff0000 | uVar19 & 0xffffff00 |
-                                    (uint)(byte)((char)uVar19 << (bVar47 & 0x1f))) >> (bVar7 & 0x1f)
-                                   ) | (ushort)(uVar23 << 0x20 - (bVar7 & 0x1f))) & 0xff00 |
-                         (ushort)((long)uVar27 < 1)) * 4 | 0xc000);
-  uVar23 = CONCAT22((short)uVar38,(ushort)((int)uVar9 << 1) & (ushort)lVar44) & 0x3fffffff;
-  uVar35 = (ulong)(ushort)(uVar23 % uVar8);
-  uVar9 = (ulong)uVar38 & 0xffffffffffff0000 | uVar35;
-  uVar17 = (ulong)CONCAT31((int3)((uint3)(uVar17 >> 8) & 0xffff00 |
-                                 (uint3)(byte)((char)(uVar17 >> 8) << ((byte)uVar17 & 0x1f))) >>
-                           0x13,!SBORROW2((short)((int)lVar44 >> 1),0x7f15)) << 1;
-  bVar7 = (char)(uVar32 >> 0x18) + (char)(uVar17 >> 8) + 1;
-  sVar15 = (short)((int)uVar26 + -0x28f3dffd << (sbyte)(uVar17 | 1));
-  uVar19 = sVar15 << 1;
-  bVar47 = (byte)uVar19 | sVar15 < 0;
-  uVar43 = ((ushort)uVar46 >> 3 |
-           (ushort)(byte)((byte)uVar42 >> (bVar12 & 7) | (byte)uVar42 << 8 - (bVar12 & 7)) << 0xd) +
-           0x4ec2;
-  uVar46 = uVar17 & 0xffff0000 | (ulong)(ushort)(short)(char)(uVar35 >> 8);
-  if (uVar43 == 0) {
-    uVar46 = uVar9;
-  }
-  bVar12 = bVar47 ^ (bVar7 == bVar47) * (bVar47 ^ 8);
-  bVar7 = bVar7 ^ (bVar7 != bVar47) * (bVar7 ^ bVar12);
-  uVar38 = ((uint)uVar21 & 0xffff0000 | (uint)(ushort)(uVar22 + 0x1008)) + (int)uVar9 +
-           (uint)(0xeff7 < uVar22);
-  iVar39 = 0x63edee48;
-  if (uVar38 == 0) {
-    iVar39 = (int)(uVar17 | 1) * 2;
-  }
-  uVar20 = (ushort)uVar46 + 0x4856;
-  uVar17 = uVar46 & 0xffffffffffff0000 | (ulong)uVar20;
-  iVar39 = (iVar39 - (int)uVar9) - (uint)((ushort)uVar46 < 0xb7aa);
-  uVar42 = (uVar42 & 0xffffffffffff0000 |
-           (ulong)(ushort)((ushort)(uVar40 | 0x69c5a947) & 0xff00 |
-                          (ushort)(byte)((char)(uVar40 | 0x69c5a947) << 1))) - 0x548467fc;
-  bVar33 = (byte)uVar32;
-  bVar47 = bVar7 - bVar33;
-  uVar46 = (ulong)((uVar25 & 0xffffff00) - 1);
-  if ((POPCOUNT(bVar47) & 1U) != 0) {
-    uVar46 = uVar42;
-  }
-  uVar6 = (ushort)uVar42 & 0xff;
-  uVar14 = uVar6 | (ushort)(uVar9 < uVar36 || uVar9 - uVar36 < (ulong)(bVar7 < bVar33)) << 8;
-  iVar30 = 0x1f;
-  if ((uint)uVar17 != 0) {
-    for (; (uint)uVar17 >> iVar30 == 0; iVar30 = iVar30 + -1) {
-    }
-  }
-  bVar13 = (byte)uVar20;
-  bVar37 = bVar13 & 0x1f;
-  uVar35 = CONCAT62((uint6)(ushort)((short)((ulong)lVar44 >> 0x10) >> 1),0xb7aa) * 2;
-  uVar21 = (ulong)((uint)(CONCAT14(((ushort)uVar38 >> ((ushort)uVar38 & 0xf) & 1) != 0,iVar39) >>
-                         bVar37) | iVar39 << 0x21 - bVar37);
-  if ((char)((ushort)(uVar19 & 0xff00 | (ushort)bVar12) >> 3) < '^') {
-    uVar21 = uVar36;
-  }
-  bVar13 = bVar13 & 0xf;
-  uVar26 = ((ulong)uVar22 | 0xc4bd0000) ^ 1 << ((ulong)uVar48 & 0x3f);
-  if (-1 < (char)((byte)iVar30 ^ 0x3a)) {
-    uVar17 = (ulong)(uint)(int)(char)((char)(uVar9 - uVar36) - (bVar7 < bVar33) |
-                                     (byte)(1 << ((ulong)(ushort)(uVar23 / uVar8) & 0x3f)));
-  }
-  uVar48 = (short)uVar17 + 0x5387;
-  uVar20 = ((ushort)iVar30 ^ 0x3a) << 4 | uVar48 >> 0xc;
-  lVar45 = (ulong)(((uint)uVar32 & 0xffff00) << 8 | (uint)CONCAT11(bVar33 ^ bVar47,bVar47)) *
-           (ulong)(uVar38 & 0xffff0000 | (uint)uVar14);
-  sVar15 = (short)lVar45;
-  uVar32 = (uVar42 & 0xffffffffffff0000 | uVar26) >> 10;
-  uVar22 = (short)((ulong)lVar45 >> 0x20) + uVar48 + 0x58 + uVar20;
-  uVar19 = (ushort)uVar21 & 0xfdff;
-  uVar48 = 0xf;
-  if (uVar14 != 0) {
-    for (; uVar14 >> uVar48 == 0; uVar48 = uVar48 - 1) {
-    }
-  }
-  bVar7 = (byte)uVar20 | (byte)uVar22;
-  uVar42 = uVar32 & 0xffffffffffff0000;
-  uVar8 = CONCAT22((short)(ushort)uVar35 >> 0xf,(short)uVar32) >> 0xb;
-  bVar47 = bVar7 & 0xf;
-  sVar4 = sVar15 >> 0xf;
-  uVar20 = sVar15 << bVar47 | uVar22 >> 0x10 - bVar47;
-  uVar14 = (uVar20 & 0xff00 | bVar7 & 0xff0f) >> bVar47;
-  uVar20 = uVar20 + 0xe0ce;
-  uVar48 = (ushort)uVar26 & (uVar48 | (ushort)uVar35);
-  uVar9 = (ulong)(ushort)(uVar43 << bVar13 | uVar43 >> 0x10 - bVar13) - 0x698ffe8e;
-  iVar30 = (((uint)uVar46 & 0x7fff8000) << 1 | (uint)(ushort)(uVar22 + 0x37c)) * -0x25658eee;
-  uVar32 = uVar9 & 0xff;
-  uVar46 = (ulong)((uint7)((uVar35 >> bVar47) >> 8) | (uint7)(((ulong)uVar8 << 0x40 - bVar47) >> 8))
-           << 8;
-  uVar17 = uVar32 | uVar46;
-  cVar10 = (char)uVar14;
-  bVar7 = cVar10 + (char)((short)uVar20 >> 0xf);
-  iVar39 = (int)uVar17;
-  uVar40 = iVar30 + iVar39;
-  if (uVar40 == 0 || SCARRY4(iVar30,iVar39) != (int)uVar40 < 0) {
-    cVar10 = (char)uVar19;
-  }
-  uVar43 = (ushort)uVar17;
-  bVar7 = bVar7 & 0xf;
-  bVar12 = bVar7 + cVar10;
-  uVar23 = (int)CONCAT62((uint6)(uVar42 >> 0x11),(ushort)((uVar42 | uVar35 & 0xffff) >> 1) >> 1) <<
-           1;
-  iVar39 = CONCAT11((char)((ulong)uVar14 >> 8) + (char)uVar6 * '\x02' +
-                    (CONCAT22(sVar4,uVar20) < 0x22922899),bVar12) * 0x9e2;
-  bVar33 = (char)uVar23 + (char)uVar48 + ((short)iVar39 != iVar39);
-  uVar25 = uVar23 & 0xffffff00 | (uint)bVar33;
-  uVar32 = -(ulong)(uVar40 & 0xffff0000 | (uint)(ushort)((short)(char)uVar32 + 0x11fd));
-  uVar22 = uVar48 & 0xff00 | (ushort)(byte)((char)uVar48 << (bVar12 & 0x1f));
-  iVar39 = 0;
-  if (uVar25 >> 1 != 0) {
-    for (; ((uVar25 >> 1) >> iVar39 & 1) == 0; iVar39 = iVar39 + 1) {
-    }
-  }
-  uVar40 = uVar25 >> 2;
-  iVar39 = (int)(short)((uVar20 & 0xff) * (uVar48 & 0xff) *
-                       ~(uVar19 + uVar43 * 8 + -0x6c47 << bVar7 | uVar19 >> 0x10 - bVar7) * 2) *
-           (int)(short)uVar40;
-  uVar19 = (ushort)((uint)iVar39 >> 0x10);
-  uVar48 = (ushort)iVar39;
-  sVar15 = 0xf;
-  if (uVar19 != 0) {
-    for (; uVar19 >> sVar15 == 0; sVar15 = sVar15 + -1) {
-    }
-  }
-  uVar46 = uVar46 & 0xffffffffffff0000 | (ulong)(ushort)(uVar43 >> 1 | 0x8000);
-  if (((ushort)((sVar15 + 0x1e40) - (ushort)((uVar9 & 1) != 0)) >> 2 & 1) == 0) {
-    uVar46 = (ulong)uVar25;
-  }
-  uVar19 = (ushort)((uVar21 & 0xffffffffffff0000) >> 1);
-  uVar20 = (uVar48 & 0xff) * (ushort)(byte)((char)((uint6)(int6)sVar4 >> 8) >> 7);
-  uVar25 = (uint)bVar12;
-  bVar50 = uVar22 <= uVar20;
-  uVar43 = uVar20 - uVar22;
-  uVar22 = uVar22 ^ (ushort)(uVar43 == 0) *
-                    (uVar22 ^ (uVar19 << (bVar12 & 0xf) | uVar19 >> 0x10 - (bVar12 & 0xf)));
-  uVar28 = (uint7)(uVar26 >> 8) & 0xffffffffffff00 | (uint7)(byte)(uVar22 >> 8);
-  if ((POPCOUNT(uVar43 & 0xff) & 1U) != 0) {
-    uVar25 = (uint)CONCAT71(uVar28,bVar50);
-  }
-  uVar38 = (uint)(uVar32 >> 0xb) & 0x1f0000 | (uint)(ushort)((short)(uVar32 >> 0xb) << 1 | 1);
-  uVar42 = (ulong)(uVar40 & 0xff | (uVar23 >> 10) << 8) & 0xffffffffffffff0f;
-  bVar37 = ((char)uVar40 + -0x34) * '\x04' + 0x95;
-  uVar29 = ((int)CONCAT62((int6)sVar4,uVar48) >> 0x1f) - 1;
-  uVar35 = uVar32 & 0xff00 | (ulong)(byte)((char)uVar32 - 0x33);
-  cVar10 = bVar50 + (char)uVar25;
-  bVar12 = (byte)(uVar42 >> 1);
-  bVar7 = bVar12 & 0x1f;
-  uVar31 = uVar38 << bVar7 | uVar38 >> 0x20 - bVar7;
-  uVar46 = (CONCAT71((int7)(uVar46 >> 8),0xc) & 0xffff | uVar46 & 0xffffffffffff0000) ^ 0x100;
-  uVar38 = uVar31 >> 1;
-  uVar16 = (uint)bVar37 << 0x1f;
-  uVar34 = uVar38 | uVar16;
-  bVar51 = (POPCOUNT(uVar38 & 0xff) & 1U) != 0;
-  uVar17 = uVar46 >> 1;
-  sVar15 = CONCAT11(!bVar51 * bVar51 * bVar37,bVar12 - 0x2f) + 0x36b8;
-  uVar32 = CONCAT62((uint6)(uVar42 >> 0x11) | (uint6)(((ulong)((bVar33 & 4) != 0) << 0x3f) >> 0x10),
-                    sVar15);
-  uVar38 = (int)CONCAT71(uVar28,cVar10) + 1;
-  uVar42 = -(ulong)(((uVar23 & 0xffff0000 |
-                     (uint)(ushort)((short)(char)uVar40 << (sbyte)uVar42 |
-                                   (ushort)(uVar20 ^ (ushort)(uVar43 != 0) * (uVar20 ^ uVar22)) >>
-                                   0x10 - (sbyte)uVar42)) ^ 0xd902 |
-                    (uint)(1 << ((ulong)uVar29 & 0x3f))) >> 1);
-  lVar45 = ((ulong)(((int)uVar8 >> bVar47 & 0xffff0000U) << 3) << 1 |
-           (ulong)(byte)((((SCARRY1(bVar50,(char)uVar25) != SCARRY1(cVar10,'\0')) == cVar10 < '\0')
-                         + '\x11') -
-                        (((uVar29 & 0xffff0000 |
-                          (uint)(uVar34 != 0 && ((int)uVar31 < 0 != (uVar16 != 0)) == (uVar16 != 0))
-                          ) >> ((uint)uVar17 & 0x1f) & 1) != 0))) - 0x4f16de94;
-  bVar7 = (byte)uVar17 >> 1;
-  uVar28 = (uint7)(uVar46 >> 9);
-  uVar40 = (uint)CONCAT71(uVar28,bVar7);
-  uVar8 = (uint)lVar45 & 0xffff0000 | (uint)(ushort)((ushort)lVar45 >> 1);
-  bVar47 = (byte)sVar15 & 0x3f;
-  iVar39 = 0;
-  if (uVar8 != 0) {
-    for (; (uVar8 >> iVar39 & 1) == 0; iVar39 = iVar39 + 1) {
-    }
-  }
-  uVar16 = 0x2864;
-  uVar48 = (short)uVar38 - 1;
-  uVar23 = (uint)(CONCAT14((bVar7 & 1) != 0,iVar39) >> 0x1e);
-  bVar7 = (byte)uVar48;
-  uVar46 = (ulong)(uVar38 & 0xffff0000 | uVar48 & 0xffffff00 | (uint)(byte)(bVar7 >> 2 | bVar7 << 6)
-                  );
-  uVar17 = uVar46 * -0x6bc638f5;
-  bVar50 = SEXT816((long)uVar17) != SEXT816((long)uVar46) * SEXT416(-0x6bc638f5);
-  uVar46 = uVar32 - 0x6ecbd071;
-  bVar51 = uVar32 < 0x6ecbd071 || uVar46 < bVar50;
-  uVar8 = ((int)uVar46 - (uint)bVar50) * 2;
-  bVar7 = (byte)uVar8 | bVar51;
-  bVar50 = (short)uVar17 < 0;
-  if (bVar50) {
-    uVar16 = uVar23 | iVar39 << 3 & 0xffffU;
-  }
-  bVar12 = ((byte)uVar8 & 0x1f | bVar51) % 9;
-  bVar7 = bVar7 << bVar12 | (byte)(CONCAT11(bVar50,bVar7) >> 9 - bVar12);
-  iVar30 = 0;
-  if (uVar16 != 0) {
-    for (; (uVar16 >> iVar30 & 1) == 0; iVar30 = iVar30 + 1) {
-    }
-  }
-  uVar32 = uVar17 >> 0x38 | (uVar17 & 0xff000000000000) >> 0x28 | (uVar17 & 0xff0000000000) >> 0x18
-           | (uVar17 & 0xff00000000) >> 8;
-  uVar46 = (ulong)((uint)uVar32 | 0xc0000000);
-  uVar32 = uVar32 | ((ulong)(uVar29 & 0xffff0000 |
-                            (uint)(ushort)((short)uVar17 << 1 | (ushort)bVar50) *
-                            ((uVar40 & 0x1fffe) >> 1) >> 0x10) & 0x3fffffff) << 0x20 | 0xc0000000;
-  uVar17 = uVar32 / uVar46;
-  sVar15 = (short)(char)(uVar40 >> 1);
-  uVar26 = (ulong)CONCAT22((ushort)(uVar28 >> 8) >> 1,sVar15);
-  uVar48 = ((short)uVar17 - sVar15) - 1;
-  uVar17 = uVar17 & 0xffff0000;
-  uVar9 = uVar17 | uVar48;
-  uVar27 = uVar9 * 0x7f62377b;
-  uVar17 = uVar17 | (ushort)(uVar48 & 0xff |
-                            (ushort)(byte)((byte)(uVar32 % uVar46) | (byte)((ulong)uVar48 >> 8)) <<
-                            8);
-  uVar21 = uVar17 * uVar26;
-  uVar32 = (ulong)(-uVar25 & 0xffffff00 |
-                  (uint)(-1 < (int)((uVar34 << bVar47 | (uint)(uVar42 >> 0x40 - bVar47)) +
-                                   0x7ed71ac6))) << 0x17;
-  uVar46 = uVar27 >> 0x29;
-  uVar43 = 1 << ((ushort)uVar35 & 0xf) ^ 0x2e47;
-  uVar29 = 0x40c96952U >> (bVar7 & 0x1f) ^ 1;
-  uVar9 = uVar9 * 0xfec46ef6;
-  bVar47 = (byte)((uVar8 & 0xffffff00) >> 8);
-  lVar45 = -(uVar42 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar42 << 1));
-  uVar25 = (int)uVar35 + 0x46fcc4ad;
-  uVar40 = (uVar43 | 0xa6a60000) + 0xc7053b5e + ((uint)uVar32 | (uint)(uVar27 >> 0x29)) * 8;
-  uVar38 = uVar8 & 0xffffff00 |
-           (uint)(byte)((byte)(uVar16 >> (bVar7 & 0x1f)) | (byte)(uVar16 << 0x20 - (bVar7 & 0x1f)));
-  uVar43 = ~uVar43;
-  iVar30 = (int)CONCAT11((char)(uVar21 >> 8) >> 0x1d,(char)uVar21) *
-           (int)CONCAT11(bVar47 + 1,(bVar7 - (char)uVar21) - (0xfe < bVar47));
-  bVar7 = (byte)((ushort)(uVar43 & 0xff | (ushort)((short)iVar30 != iVar30) << 8) >> 5) |
-          (char)uVar43 << 4;
-  uVar48 = (ushort)((uint)iVar30 >> 0x10) ^ (ushort)uVar9;
-  bVar47 = bVar7 << 1;
-  if (-1 < (char)bVar7) {
-    uVar38 = uVar8 & 0xffff0000 | uVar40 & 0xffff;
-  }
-  uVar43 = (uVar43 & 0xff00 | (ushort)bVar47) << 1 | (ushort)uVar40 >> 0xf;
-  bVar7 = (byte)uVar46;
-  bVar12 = bVar7 >> 3 | bVar7 << 5;
-  uVar42 = uVar32 | uVar46 & 0xffffffffffffff00 | (ulong)bVar12;
-  uVar16 = (uint)lVar45 ^ 1 << ((int)(char)uVar43 & 0x1fU);
-  uVar46 = ((uVar21 & 0xffffffffffff0000 | (ulong)(ushort)(short)(char)iVar30) ^ 0x266d) +
-           (ulong)uVar29 + lVar45 + 1;
-  uVar32 = uVar46 & 0xffffffffffffff00;
-  uVar8 = ((uVar23 | iVar39 << 3) >> 1) + ~(uint)bVar47;
-  bVar7 = (byte)(uVar32 >> 8);
-  bVar47 = (byte)uVar38;
-  bVar33 = (byte)uVar9 >> (bVar47 & 7) | (byte)uVar9 << 8 - (bVar47 & 7);
-  uVar35 = (ulong)((uVar29 & 0xffff0000 |
-                   (uint)(ushort)((ushort)uVar29 >> 1 | (ushort)((uVar29 & 1) != 0) << 0xf)) <<
-                  (bVar47 & 0x1f)) | 0xc000000000000000;
-  if ((char)uVar25 < (char)bVar12) {
-    uVar25 = uVar25 & 0xffff0000 | (uint)(ushort)uVar42;
-  }
-  auVar3 = ((CONCAT88(CONCAT62(SUB166(SEXT816((long)uVar17) * SEXT816((long)uVar26) >> 0x50,0),
-                               uVar48 & 0xff |
-                               (ushort)(byte)((((char)((ulong)uVar48 >> 8) + bVar47) - bVar7) - 1)
-                               << 8),uVar32 | (byte)(((byte)uVar46 | (byte)uVar48) ^ bVar7)) &
-            (undefined  [16])0xffffffffffffffff) / ZEXT816(uVar35) &
-           (undefined  [16])0xffffffffffffffff) * ZEXT816((ulong)uVar25);
-  uVar32 = SUB168(auVar3 >> 0x40,0);
-  cVar10 = SUB161(auVar3 >> 8,0);
-  cVar18 = SUB161(auVar3 >> 0x48,0);
-  if (SBORROW1(cVar10,cVar18) != SBORROW1(cVar10 - cVar18,'\x01')) {
-    uVar32 = uVar9 & 0xff00 | (ulong)bVar33 | (ulong)SUB166(auVar3 >> 0x50,0) << 0x10;
-  }
-  uVar29 = uVar8 << (bVar47 & 0x1f) | uVar8 >> 0x20 - (bVar47 & 0x1f);
-  uVar8 = (uint)uVar42;
-  uVar16 = (uVar16 & 0xffff0000 | (uint)(ushort)((ushort)uVar16 | 0x8000)) << (bVar47 & 0x1f);
-  uVar23 = uVar8 | 0x5596c267;
-  uVar16 = uVar16 >> (bVar47 & 0x1f) | uVar16 << 0x21 - (bVar47 & 0x1f);
-  uVar21 = ((ulong)uVar25 & 0xffffffffffff0000 |
-            (ulong)(ushort)((ushort)uVar25 | 0x1000) & 0xffffffffffffff00 |
-           (ulong)(byte)((char)uVar25 - 0x11)) ^ 0x2e47498f;
-  uVar22 = CONCAT11(uVar21 == 0,(char)uVar16);
-  uVar17 = (ulong)((uVar43 | 0xa6a60000 | uVar40) + 0x45b27b19 +
-                  ((uint)uVar9 & 0xffffff00 | (uint)bVar33) * 2) + 0x341fdf6a;
-  uVar42 = (ulong)(uVar40 >> (bVar47 & 0x3f)) | uVar35 << 0x40 - (bVar47 & 0x3f);
-  cVar10 = (char)uVar32;
-  uVar48 = (short)uVar23 + 0x30cf;
-  uVar46 = (ulong)uVar38 |
-           uVar32 & 0xffffffffffff0000 | (ulong)CONCAT11((char)(uVar32 >> 8) + -0x3f,cVar10);
-  uVar42 = uVar42 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar42 + cVar10 + 1);
-  uVar40 = uVar48 & 0xff;
-  uVar43 = 0;
+  lVar51 = -uVar38;
+  uVar29 = ((uint)CONCAT71((int7)(-(ulong)CONCAT22((short)((ulong)lVar55 >> 0x30),
+                                                   CONCAT11((char)((ulong)lVar55 >> 0x28) + '2',
+                                                            (char)((ulong)lVar55 >> 0x20))) >> 8),
+                           (uVar53 == 0) + bVar10 + '\x01') & 0xffff00ff) >> (bVar17 & 0x1f);
+  uVar22 = CONCAT31((int3)((uint)iVar12 >> 8),bVar17) & uVar14;
   if (uVar22 != 0) {
-    for (; (uVar22 >> uVar43 & 1) == 0; uVar43 = uVar43 + 1) {
+    uVar53 = uVar33 & 0xffff;
+  }
+  uVar24 = (ulong)CONCAT22((short)(uVar29 >> 0x10),(short)(uVar29 >> 8) << 8) & 0xffffffffffff3fff;
+  uVar36 = (uint)(ushort)((short)lVar54 + 0x99 +
+                          (short)CONCAT31((uint3)((CONCAT31((int3)(CONCAT22((short)((uint)iVar44 >>
+                                                                                   0x10),uVar27) >>
+                                                                  8),(char)uVar27 << (bVar58 & 0x1f)
+                                                           ) >> (bVar10 & 0x1f)) >> 8) |
+                                          (uint3)((uVar36 << 0x20 - (bVar10 & 0x1f)) >> 8),
+                                          (long)uVar38 < 1) * 4 | 0xc000);
+  uVar29 = CONCAT22((short)uVar24,(ushort)((int)uVar14 << 1) & (ushort)lVar51);
+  uVar40 = uVar29 % uVar36;
+  uVar38 = CONCAT62((int6)(uVar24 >> 0x10),(short)uVar40);
+  uVar14 = (ulong)CONCAT31((int3)(CONCAT62((int6)(uVar22 >> 0x10),
+                                           CONCAT11((char)(uVar22 >> 8) << ((byte)uVar22 & 0x1f),
+                                                    (byte)uVar22)) >> 8) >> 0x13,
+                           !SBORROW2((short)((int)lVar51 >> 1),0x7f15)) << 1;
+  bVar10 = (char)(uVar33 >> 0x18) + (char)(uVar14 >> 8) + 1;
+  uVar41 = (uint)lVar54 | 0x69c5a947;
+  sVar20 = (short)((int)uVar31 + -0x28f3dffd << (sbyte)(uVar14 | 1));
+  sVar28 = sVar20 << 1;
+  bVar58 = (byte)sVar28 | sVar20 < 0;
+  uVar27 = ((ushort)uVar53 >> 3 |
+           (ushort)(byte)((byte)lVar48 >> (bVar17 & 7) | (byte)lVar48 << 8 - (bVar17 & 7)) << 0xd) +
+           0x4ec2;
+  uVar53 = CONCAT62((int6)(uVar14 >> 0x10),(short)(char)(uVar40 >> 8)) & 0xffffffff;
+  if (uVar27 == 0) {
+    uVar53 = uVar38;
+  }
+  bVar17 = bVar58 ^ (bVar10 == bVar58) * (bVar58 ^ 8);
+  bVar10 = bVar10 ^ (bVar10 != bVar58) * (bVar10 ^ bVar17);
+  iVar44 = (int)CONCAT62((int6)(uVar32 >> 0x10),uVar11 + 0x1008) + (int)uVar38 +
+           (uint)(0xeff7 < uVar11);
+  iVar12 = 0x63edee48;
+  if (iVar44 == 0) {
+    iVar12 = (CONCAT22(0x7c9f,(short)uVar57 + 0x165b) * 0x8000000 + (int)(uVar14 | 1)) * 2;
+  }
+  sVar20 = (ushort)uVar53 + 0x4856;
+  uVar14 = CONCAT62((int6)(uVar53 >> 0x10),sVar20);
+  iVar12 = (iVar12 - (int)uVar38) - (uint)((ushort)uVar53 < 0xb7aa);
+  uVar53 = CONCAT62((int6)((ulong)lVar48 >> 0x10),
+                    (short)CONCAT31((int3)(uVar41 >> 8),(char)uVar41 << 1)) - 0x548467fc;
+  bVar16 = (byte)uVar33;
+  bVar58 = bVar10 - bVar16;
+  uVar57 = (ulong)((uVar13 & 0xffffff00) - 1);
+  if ((POPCOUNT(bVar58) & 1U) != 0) {
+    uVar57 = uVar53;
+  }
+  uVar49 = CONCAT11(uVar38 < uVar46 || uVar38 - uVar46 < (ulong)(bVar10 < bVar16),(char)uVar53);
+  iVar42 = 0x1f;
+  if ((uint)uVar14 != 0) {
+    for (; (uint)uVar14 >> iVar42 == 0; iVar42 = iVar42 + -1) {
     }
   }
-  uVar48 = uVar43 + uVar48;
-  bVar7 = (byte)uVar46 & 0x1f;
-  uVar25 = (uint)uVar46;
-  uVar25 = uVar25 >> bVar7 | uVar25 << 0x20 - bVar7;
-  bVar7 = (byte)uVar25 & 0xf;
-  uVar38 = ((uint)uVar42 & 0xffff0000 | (uint)(ushort)((short)uVar42 + 0xc9cf)) + 0x8eb9c6e9;
-  uVar42 = uVar17 & 0xffffffff9553ee00 |
-           (ulong)(byte)((char)(uVar17 & 0xffffffff9553ee24) + (cVar10 + -0x46) * '\x12');
-  uVar31 = (int)((uVar8 + 0x4dc7e9d2 + (int)uVar32 * 8) * 0x6a24b602) >> 0xf;
-  uVar8 = uVar38 >> 7;
-  uVar34 = -(uVar23 & 0xffff0000 | (uint)uVar43);
-  uVar32 = (long)(int)((uVar16 & 0xffff0000 | (uint)uVar22) << bVar7) * (long)(int)uVar34;
-  uVar43 = (short)(char)(uVar32 & 0xffffffff) * (short)(char)((uVar32 & 0xffffffff) >> 8);
-  uVar46 = (uVar38 * 0x2000000 | uVar8 & 0xffff0000 |
-           (uint)CONCAT11((byte)(uVar8 >> 8) ^ (byte)uVar8,(byte)uVar8)) | uVar42;
-  cVar10 = (char)uVar43 + (char)uVar31;
-  uVar22 = (short)uVar46 + 0x9a6;
-  uVar46 = uVar46 & 0xffffffffffff0000;
-  uVar23 = (uint)uVar46;
-  bVar47 = (bVar7 - cVar10) * '\x02';
-  uVar8 = ((uint)((uVar32 >> 0x20) >> bVar7) | uVar23 | uVar22) ^ uVar34;
-  bVar7 = bVar47 & 0x1f;
-  uVar38 = ((((uint)uVar21 >> 1 | (uint)((uVar21 & 1) != 0) << 0x1f) >> 0x1e |
-            (int)(uVar17 & 0xffffffff9553ee24) << 2) << bVar7 | uVar31 >> 0x20 - bVar7) & 0xb91ad5d0
+  bVar18 = (byte)sVar20;
+  bVar47 = bVar18 & 0x1f;
+  uVar32 = CONCAT62((uint6)(ushort)((short)((ulong)lVar51 >> 0x10) >> 1),0xb7aa) * 2;
+  uVar31 = (ulong)((uint)(CONCAT14(((ushort)iVar44 >> ((ushort)iVar44 & 0xf) & 1) != 0,iVar12) >>
+                         bVar47) | iVar12 << 0x21 - bVar47);
+  if ((char)(CONCAT11((char)((ushort)sVar28 >> 8),bVar17) >> 3) < '^') {
+    uVar31 = uVar46;
+  }
+  bVar18 = bVar18 & 0xf;
+  bVar17 = (byte)(uVar27 << bVar18) | (byte)(uVar27 >> 0x10 - bVar18);
+  uVar22 = CONCAT62(0xc4bd,uVar11) ^ 1L << ((ulong)uVar35 & 0x3f);
+  if (-1 < (char)((byte)iVar42 ^ 0x3a)) {
+    uVar14 = (ulong)(uint)(int)(char)((char)(uVar38 - uVar46) - (bVar10 < bVar16) |
+                                     (byte)(1L << ((ulong)(ushort)(uVar29 / uVar36) & 0x3f)));
+  }
+  uVar38 = uVar53 & 0xffffffffffff0000 | uVar22;
+  uVar35 = (short)uVar14 + 0x5387;
+  uVar52 = ((ushort)iVar42 ^ 0x3a) << 4 | uVar35 >> 0xc;
+  lVar48 = (ulong)CONCAT22((short)(uVar33 >> 8),CONCAT11(bVar16 ^ bVar58,bVar58)) *
+           (ulong)CONCAT22((short)((uint)iVar44 >> 0x10),uVar49);
+  uVar27 = (short)((ulong)lVar48 >> 0x20) + uVar35 + 0x58 + uVar52;
+  uVar50 = (ushort)uVar31 & 0xfdff;
+  uVar11 = (ushort)uVar32;
+  uVar35 = 0xf;
+  if (uVar49 != 0) {
+    for (; uVar49 >> uVar35 == 0; uVar35 = uVar35 - 1) {
+    }
+  }
+  bVar10 = (byte)uVar52 | (byte)uVar27;
+  uVar9 = (uint6)(uVar38 >> 0x10);
+  uVar36 = CONCAT22((short)uVar11 >> 0xf,(short)(uVar38 >> 10)) >> 0xb;
+  bVar58 = bVar10 & 0xf;
+  sVar28 = (short)lVar48 >> 0xf;
+  uVar49 = (short)lVar48 << bVar58 | uVar27 >> 0x10 - bVar58;
+  uVar39 = (uint7)((uVar32 >> bVar58) >> 8) | (uint7)(((ulong)uVar36 << 0x40 - bVar58) >> 8);
+  uVar52 = (CONCAT11((char)(uVar49 >> 8),bVar10) & 0xff0f) >> bVar58;
+  uVar49 = uVar49 + 0xe0ce;
+  uVar15 = (undefined6)(uVar22 >> 0x10);
+  uVar35 = (ushort)uVar22 & (uVar35 | uVar11);
+  cVar59 = bVar17 + 0x72;
+  iVar44 = CONCAT22((short)((((uint)uVar57 & 0xffffff00) << 1) >> 0x10),uVar27 + 0x37c) *
+           -0x25658eee;
+  uVar34 = CONCAT71(uVar39,cVar59);
+  cVar26 = (char)uVar52;
+  cVar23 = cVar26 + (char)((short)uVar49 >> 0xf);
+  iVar12 = (int)uVar34;
+  iVar42 = iVar44 + iVar12;
+  if (iVar42 == 0 || SCARRY4(iVar44,iVar12) != iVar42 < 0) {
+    cVar26 = (char)uVar50;
+  }
+  uVar14 = (ulong)CONCAT11((char)(uVar52 >> 8) + (char)uVar53 * '\x02' +
+                           (CONCAT22(sVar28,uVar49) < 0x22922899),cVar23) & 0xffffffffffffff0f;
+  sVar19 = (sbyte)uVar14;
+  bVar10 = sVar19 + cVar26;
+  iVar44 = (int)CONCAT62(uVar9 >> 0xb,
+                         (ushort)(CONCAT71((int7)(CONCAT62(uVar9 >> 10,uVar11) >> 8),(char)uVar32)
+                                 >> 1) >> 1) << 1;
+  iVar12 = (short)CONCAT71((int7)(uVar14 >> 8),bVar10) * 0x9e2;
+  uVar8 = (uint3)((uint)iVar44 >> 8);
+  bVar16 = (char)iVar44 + (char)uVar35 + ((short)iVar12 != iVar12);
+  uVar29 = CONCAT31(uVar8,bVar16);
+  bVar17 = bVar17 + 0x72;
+  uVar14 = -(ulong)CONCAT22((short)((uint)iVar42 >> 0x10),cVar59 + 0x11fd);
+  iVar12 = 0;
+  if (uVar29 >> 1 != 0) {
+    for (; ((uVar29 >> 1) >> iVar12 & 1) == 0; iVar12 = iVar12 + 1) {
+    }
+  }
+  iVar12 = (int)(short)((uVar49 & 0xff) * (uVar35 & 0xff) *
+                       ~(uVar50 + (short)uVar34 * 8 + -0x6c47 << sVar19 | uVar50 >> 0x10 - sVar19) *
+                       2) * (int)(short)(uVar29 >> 2);
+  uVar27 = (ushort)((uint)iVar12 >> 0x10);
+  uVar11 = (ushort)iVar12;
+  sVar20 = 0xf;
+  if (uVar27 != 0) {
+    for (; uVar27 >> sVar20 == 0; sVar20 = sVar20 + -1) {
+    }
+  }
+  uVar33 = CONCAT62((int6)(uVar39 >> 8),(ushort)CONCAT71(uVar39,bVar17) >> 1) | 0x8000;
+  if (((ushort)((sVar20 + 0x1e40) - (ushort)((bVar17 & 1) != 0)) >> 2 & 1) == 0) {
+    uVar33 = (ulong)uVar29;
+  }
+  uVar27 = (ushort)((uVar31 & 0xffffffffffff0000) >> 1);
+  uVar57 = uVar14 & 0xffff;
+  uVar14 = uVar14 >> 0xb & 0x1fffff;
+  uVar49 = (uVar11 & 0xff) * (ushort)(byte)((char)((ulong)lVar48 >> 8) >> 7);
+  cVar23 = (char)(uVar29 >> 2);
+  uVar29 = (uint)bVar10;
+  uVar50 = (ushort)CONCAT71((int7)(CONCAT62(uVar15,uVar35) >> 8),(char)uVar35 << (bVar10 & 0x1f));
+  bVar60 = uVar50 <= uVar49;
+  uVar35 = uVar49 - uVar50;
+  uVar50 = uVar50 ^ (ushort)(uVar35 == 0) *
+                    (uVar50 ^ (uVar27 << (bVar10 & 0xf) | uVar27 >> 0x10 - (bVar10 & 0xf)));
+  uVar45 = (undefined7)(CONCAT62(uVar15,uVar50) >> 8);
+  if ((POPCOUNT(uVar35 & 0xff) & 1U) != 0) {
+    uVar29 = (uint)CONCAT71(uVar45,bVar60);
+  }
+  uVar13 = (uint)CONCAT62((int6)(uVar14 >> 0x10),(short)uVar14 << 1) | 1;
+  uVar14 = (ulong)CONCAT31(uVar8 >> 2,cVar23) & 0xffffffffffffff0f;
+  bVar47 = (cVar23 + -0x34) * '\x04' + 0x95;
+  uVar41 = ((int)CONCAT62((int6)sVar28,uVar11) >> 0x1f) - 1;
+  uVar34 = CONCAT71((int7)(uVar57 >> 8),(char)uVar57 + -0x33);
+  uVar11 = (ushort)(uVar41 >> 0x10);
+  cVar26 = bVar60 + (char)uVar29;
+  bVar17 = (byte)(uVar14 >> 1);
+  bVar10 = bVar17 & 0x1f;
+  uVar21 = uVar13 << bVar10 | uVar13 >> 0x20 - bVar10;
+  uVar57 = CONCAT62((int6)(uVar33 >> 0x10),(short)CONCAT71((int7)(uVar33 >> 8),0xc)) ^ 0x100;
+  uVar13 = uVar21 >> 1;
+  uVar40 = (uint)bVar47 << 0x1f;
+  uVar37 = uVar13 | uVar40;
+  bVar61 = (POPCOUNT(uVar13 & 0xff) & 1U) != 0;
+  uVar53 = uVar57 >> 1;
+  sVar28 = CONCAT11(!bVar61 * bVar61 * bVar47,bVar17 - 0x2f) + 0x36b8;
+  uVar33 = CONCAT62((uint6)(uVar14 >> 0x11) | (uint6)(((ulong)((bVar16 & 4) != 0) << 0x3f) >> 0x10),
+                    sVar28);
+  iVar42 = (int)CONCAT71(uVar45,cVar26) + 1;
+  uVar14 = -(ulong)((CONCAT22((short)((uint)iVar44 >> 0x10),
+                              (short)cVar23 << (sbyte)uVar14 |
+                              (ushort)(uVar49 ^ (ushort)(uVar35 != 0) * (uVar49 ^ uVar50)) >>
+                              0x10 - (sbyte)uVar14) ^ 0xd902 | (uint)(1L << ((ulong)uVar41 & 0x3f)))
+                   >> 1);
+  lVar48 = CONCAT71((int7)(((ulong)CONCAT22((short)((((int)uVar36 >> bVar58 & 0xffff0000U) << 3) >>
+                                                   0x10),0xd) << 1) >> 8),
+                    (((SCARRY1(bVar60,(char)uVar29) != SCARRY1(cVar26,'\0')) == cVar26 < '\0') +
+                    '\x11') - ((CONCAT31((int3)(((uint)uVar11 << 0x10) >> 8),
+                                         uVar37 != 0 &&
+                                         ((int)uVar21 < 0 != (uVar40 != 0)) == (uVar40 != 0)) >>
+                                ((uint)uVar53 & 0x1f) & 1) != 0)) + -0x4f16de94;
+  bVar10 = (byte)uVar53 >> 1;
+  uVar39 = (uint7)(uVar57 >> 9);
+  uVar36 = (uint)CONCAT71(uVar39,bVar10);
+  bVar58 = (byte)sVar28 & 0x3f;
+  iVar12 = 0;
+  uVar13 = (uint)CONCAT62((int6)((ulong)lVar48 >> 0x10),(ushort)lVar48 >> 1);
+  if (uVar13 != 0) {
+    for (; (uVar13 >> iVar12 & 1) == 0; iVar12 = iVar12 + 1) {
+    }
+  }
+  uVar40 = 0x2864;
+  sVar28 = (short)iVar42 + -1;
+  uVar13 = (uint)(CONCAT14((bVar10 & 1) != 0,iVar12) >> 0x1e);
+  bVar10 = (byte)sVar28;
+  uVar57 = (ulong)CONCAT31((int3)(CONCAT22((short)((uint)iVar42 >> 0x10),sVar28) >> 8),
+                           bVar10 >> 2 | bVar10 << 6);
+  lVar48 = uVar57 * -0x6bc638f5;
+  bVar60 = SEXT816(lVar48) != SEXT816((long)uVar57) * SEXT416(-0x6bc638f5);
+  uVar57 = uVar33 - 0x6ecbd071;
+  bVar61 = uVar33 < 0x6ecbd071 || uVar57 < bVar60;
+  iVar44 = ((int)uVar57 - (uint)bVar60) * 2;
+  bVar10 = (byte)iVar44 | bVar61;
+  bVar60 = (short)lVar48 < 0;
+  if (bVar60) {
+    uVar40 = uVar13 | iVar12 << 3 & 0xffffU;
+  }
+  bVar17 = ((byte)iVar44 & 0x1f | bVar61) % 9;
+  bVar10 = bVar10 << bVar17 | (byte)(CONCAT11(bVar60,bVar10) >> 9 - bVar17);
+  iVar42 = 0;
+  if (uVar40 != 0) {
+    for (; (uVar40 >> iVar42 & 1) == 0; iVar42 = iVar42 + 1) {
+    }
+  }
+  uVar41 = (uint)(byte)((ulong)lVar48 >> 0x38) | ((uint)((ulong)lVar48 >> 0x20) & 0xff0000) >> 8 |
+           (uint)((ulong)lVar48 >> 0x18) & 0xff0000 | (uint)((ulong)lVar48 >> 8) & 0xff000000;
+  uVar33 = (ulong)(uVar41 | 0xc0000000);
+  uVar57 = CONCAT44(CONCAT22(uVar11,(short)((uint)(ushort)((short)lVar48 << 1 | (ushort)bVar60) *
+                                            ((uVar36 & 0x1fffe) >> 1) >> 0x10)),uVar41) &
+           0x3fffffffffffffff | 0xc0000000;
+  uVar53 = uVar57 / uVar33 & 0xffffffff;
+  sVar28 = (short)(char)(uVar36 >> 1);
+  uVar32 = (ulong)CONCAT22((ushort)(uVar39 >> 8) >> 1,sVar28);
+  uVar15 = (undefined6)(uVar53 >> 0x10);
+  sVar28 = ((short)uVar53 - sVar28) + -1;
+  lVar48 = CONCAT62(uVar15,sVar28);
+  lVar55 = CONCAT62(uVar15,CONCAT11((byte)(uVar57 % uVar33) | (byte)((ushort)sVar28 >> 8),
+                                    (char)sVar28));
+  lVar51 = lVar55 * uVar32;
+  uVar33 = (ulong)(lVar48 * 0x7f62377b) >> 0x29;
+  uVar57 = (ulong)CONCAT31((int3)(-uVar29 >> 8),
+                           -1 < (int)((uVar37 << bVar58 | (uint)(uVar14 >> 0x40 - bVar58)) +
+                                     0x7ed71ac6)) << 0x17 | uVar33;
+  bVar17 = (byte)(uVar40 >> (bVar10 & 0x1f)) | (byte)(uVar40 << 0x20 - (bVar10 & 0x1f));
+  uVar11 = 1 << ((ushort)uVar34 & 0xf) ^ 0x2e47;
+  uVar41 = 0x40c96952 >> (bVar10 & 0x1f);
+  uVar15 = SUB166(SEXT816(lVar55) * SEXT816((long)uVar32),10);
+  uVar21 = uVar41 ^ 1;
+  lVar48 = lVar48 * 0xfec46ef6;
+  bVar58 = (byte)((uint)iVar44 >> 8);
+  lVar55 = -CONCAT62((int6)(uVar14 >> 0x10),(short)uVar14 << 1);
+  uVar29 = (int)uVar34 + 0x46fcc4ad;
+  uVar36 = (int)CONCAT62(0x67853dcba6a6,uVar11) + -0x38fac4a2 + (int)uVar57 * 8;
+  uVar40 = CONCAT31((int3)((uint)iVar44 >> 8),bVar17);
+  uVar11 = ~uVar11;
+  iVar42 = (int)CONCAT11((char)((ulong)lVar51 >> 8) >> 0x1d,(char)lVar51) *
+           (int)(short)CONCAT71((int7)(CONCAT62(uVar15,CONCAT11(bVar58 + 1,bVar17)) >> 8),
+                                (bVar10 - (char)lVar51) - (0xfe < bVar58));
+  cVar23 = (char)uVar11;
+  bVar10 = (byte)(CONCAT11((short)iVar42 != iVar42,cVar23) >> 5) | cVar23 << 4;
+  uVar35 = (ushort)((uint)iVar42 >> 0x10) ^ (ushort)lVar48;
+  bVar58 = bVar10 << 1;
+  if (-1 < (char)bVar10) {
+    uVar40 = CONCAT22((short)((uint)iVar44 >> 0x10),(ushort)uVar36);
+  }
+  uVar11 = (short)CONCAT71((int7)(CONCAT62(0x67853dcba6a6,uVar11) >> 8),bVar58) << 1 |
+           (ushort)uVar36 >> 0xf;
+  bVar10 = (byte)uVar33;
+  bVar16 = bVar10 >> 3 | bVar10 << 5;
+  uVar34 = CONCAT71((int7)(uVar57 >> 8),bVar16);
+  lVar51 = (CONCAT62((int6)((ulong)lVar51 >> 0x10),(short)(char)iVar42) ^ 0x266d) +
+           (ulong)uVar21 + lVar55 + 1;
+  bVar17 = (byte)uVar35;
+  uVar13 = ((uVar13 | iVar12 << 3) >> 1) + ~(uint)bVar58;
+  bVar10 = (byte)((ulong)lVar51 >> 8);
+  auVar2._1_7_ = (int7)((ulong)lVar51 >> 8);
+  auVar2[0] = ((byte)lVar51 | bVar17) ^ bVar10;
+  bVar58 = (byte)uVar40;
+  uVar56 = CONCAT71((int7)((ulong)lVar48 >> 8),
+                    (byte)lVar48 >> (bVar58 & 7) | (byte)lVar48 << 8 - (bVar58 & 7));
+  uVar14 = (ulong)(uint)(CONCAT22((short)(uVar41 >> 0x10),
+                                  (ushort)uVar21 >> 1 | (ushort)((uVar21 & 1) != 0) << 0xf) <<
+                        (bVar58 & 0x1f)) | 0xc000000000000000;
+  auVar5._8_8_ = 0;
+  auVar5._0_8_ = uVar14;
+  auVar2._8_8_ = CONCAT62(uVar15,CONCAT11((((char)(uVar35 >> 8) + bVar58) - bVar10) + -1,bVar17)) &
+                 0x3fffffffffffffff;
+  if ((char)uVar29 < (char)bVar16) {
+    uVar29 = CONCAT22((short)(uVar29 >> 0x10),(short)uVar34);
+  }
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = SUB168(auVar2 / auVar5,0);
+  auVar4 = auVar4 * ZEXT416(uVar29);
+  uVar25 = auVar4._8_8_;
+  if (SBORROW1(auVar4[1],auVar4[9]) != SBORROW1(auVar4[1] - auVar4[9],'\x01')) {
+    uVar25 = CONCAT62(auVar4._10_6_,(short)uVar56);
+  }
+  uVar37 = uVar13 << (bVar58 & 0x1f) | uVar13 >> 0x20 - (bVar58 & 0x1f);
+  uVar13 = (uint)uVar34;
+  uVar21 = ((uint)lVar55 ^ 1 << ((int)(char)uVar11 & 0x1fU) | 0x8000) << (bVar58 & 0x1f);
+  uVar41 = uVar13 | 0x5596c267;
+  uVar21 = uVar21 >> (bVar58 & 0x1f) | uVar21 << 0x21 - (bVar58 & 0x1f);
+  uVar29 = (CONCAT31((int3)(uVar29 >> 8),(char)uVar29 + -0x11) | 0x1000) ^ 0x2e47498f;
+  uVar27 = CONCAT11(uVar29 == 0,(char)uVar21);
+  uVar33 = (ulong)(uVar36 >> (bVar58 & 0x3f)) | uVar14 << 0x40 - (bVar58 & 0x3f);
+  cVar23 = (char)uVar25;
+  uVar57 = (ulong)(((uint)CONCAT62(0x67853dcba6a6,uVar11) | uVar36) + 0x45b27b19 + (int)uVar56 * 2)
+           + 0x341fdf6a & 0xffffffff9553ee24;
+  uVar35 = (short)uVar41 + 0x30cf;
+  uVar14 = (ulong)uVar40 |
+           CONCAT62((int6)((ulong)uVar25 >> 0x10),
+                    CONCAT11((char)((ulong)uVar25 >> 8) + -0x3f,cVar23));
+  uVar36 = uVar35 & 0xff;
+  sVar28 = 0;
+  if (uVar27 != 0) {
+    for (; (uVar27 >> sVar28 & 1) == 0; sVar28 = sVar28 + 1) {
+    }
+  }
+  uVar35 = sVar28 + uVar35;
+  bVar10 = (byte)uVar14 & 0x1f;
+  uVar40 = (uint)uVar14;
+  uVar40 = uVar40 >> bVar10 | uVar40 << 0x20 - bVar10;
+  uVar53 = (ulong)uVar40 & 0xffffffffffffff0f;
+  uVar30 = (int)CONCAT62((int6)(uVar33 >> 0x10),
+                         (short)CONCAT71((int7)(uVar33 >> 8),(char)uVar33 + cVar23 + '\x01') +
+                         -0x3631) + 0x8eb9c6e9;
+  uVar31 = CONCAT71((int7)(uVar57 >> 8),(char)uVar57 + (cVar23 + -0x46) * '\x12');
+  uVar43 = (int)((uVar13 + 0x4dc7e9d2 + (int)uVar25 * 8) * 0x6a24b602) >> 0xf;
+  bVar10 = (byte)(uVar30 >> 7);
+  uVar41 = -CONCAT22((short)(uVar41 >> 0x10),sVar28);
+  sVar19 = (sbyte)uVar53;
+  uVar14 = (long)(CONCAT22((short)(uVar21 >> 0x10),uVar27) << sVar19) * (long)(int)uVar41;
+  uVar33 = uVar14 & 0xffffffff;
+  sVar28 = (short)(char)uVar33 * (short)(char)(uVar33 >> 8);
+  uVar32 = CONCAT22((ushort)(uVar30 * 0x2000000 >> 0x10) | (ushort)(uVar30 >> 0x17),
+                    CONCAT11((byte)((uVar30 >> 7) >> 8) ^ bVar10,bVar10)) | uVar31;
+  cVar23 = (char)sVar28 + (char)uVar43;
+  uVar15 = (undefined6)(uVar32 >> 0x10);
+  sVar20 = (short)uVar32 + 0x9a6;
+  bVar58 = (sVar19 - cVar23) * '\x02';
+  uVar13 = ((uint)((uVar14 >> 0x20) >> sVar19) | (uint)CONCAT62(uVar15,sVar20)) ^ uVar41;
+  bVar10 = bVar58 & 0x1f;
+  uVar29 = (((uVar29 >> 1 | (uint)((uVar29 & 1) != 0) << 0x1f) >> 0x1e | (int)uVar57 << 2) << bVar10
+           | uVar43 >> 0x20 - bVar10) & 0xb91ad5d0;
+  uVar11 = (short)uVar31 >> 9;
+  lVar48 = CONCAT62((int6)(uVar57 >> 0x10),uVar11);
+  uVar14 = CONCAT71((int7)(CONCAT62((int6)(uVar33 >> 0x10),sVar28) >> 8),cVar23 + '\x01');
+  if ((uint)uVar14 != uVar13) {
+    uVar14 = (ulong)uVar13;
+  }
+  bVar10 = (byte)(uVar53 >> 8);
+  cVar23 = (char)((ushort)sVar20 >> 8);
+  lVar55 = CONCAT62((int6)(uVar14 >> 0x10),(short)(char)uVar14 * (short)cVar23);
+  bVar58 = bVar58 & 0x1f;
+  uVar27 = (ushort)(char)(bVar10 | 8);
+  iVar12 = (int)uVar29 >> 1;
+  uVar14 = (ulong)uVar35;
+  if (iVar12 <= (int)(uint)uVar35) {
+    uVar14 = (ulong)uVar37;
+  }
+  uVar35 = CONCAT11(cVar23 << 1 | sVar20 < 0,(char)sVar20) & ~(1 << (uVar27 & 0xf));
+  uVar34 = CONCAT62(uVar15,uVar35);
+  uVar53 = (ulong)(CONCAT31((int3)(CONCAT22((short)(uVar53 >> 0x10),uVar27) >> 8),bVar10) | 8) &
+           0xffffffffffffff0f;
+  bVar10 = (byte)uVar53;
+  uVar32 = CONCAT62((int6)(uVar53 >> 0x10),
+                    CONCAT11((ulong)(uVar37 + 0x83c76b7c) != 0xffffffff6e6ba890,bVar10));
+  iVar44 = (int)lVar48;
+  uVar13 = iVar44 + 0x260e0026;
+  uVar46 = (ulong)uVar13;
+  lVar51 = lVar55 * 2;
+  uVar33 = lVar51 * uVar46;
+  uVar57 = ~(uVar33 >> 1 & 0x7fffffff);
+  uVar22 = (ulong)CONCAT22((short)((int)uVar29 >> 0x11),
+                           (short)iVar12 << bVar10 | 0x576fU >> 0x10 - bVar10) << bVar10;
+  uVar31 = (ulong)(uint)((int)CONCAT62((int6)(uVar57 >> 0x10),(ushort)(byte)uVar57) >> 0x1f);
+  uVar53 = ((ulong)CONCAT22((short)(uVar41 >> 0x10),
+                            ((short)(uVar41 >> 8) << 8 ^ 1 << ((ushort)uVar53 & 0xf)) & 0xff00U &
+                            ~(1 << ((ushort)uVar36 & 0xf))) | 0x800000000000000) ^
+           1L << (uVar31 & 0x3f);
+  uVar38 = uVar53 ^ 4;
+  lVar51 = CONCAT71((int7)((ulong)(uint3)(uVar41 >> 8) * 0x65a01c939a326700 >> 8),
+                    '\0' << bVar10 % 9 |
+                    (byte)((ushort)((ushort)(SEXT816((long)uVar33) !=
+                                            SEXT816(lVar51) * SEXT816((long)uVar46)) << 8) >>
+                          9 - bVar10 % 9)) + uVar46 + (ulong)(((ushort)uVar53 >> 2 & 1) != 0);
+  if (lVar51 == 0) {
+    uVar31 = (ulong)((int)(short)uVar43 << bVar58 | (uint)lVar55 >> 0x20 - bVar58);
+  }
+  uVar29 = uVar13 & 0xffff | 0xc000;
+  uVar21 = CONCAT22((short)(uVar31 & 0xffffffffffff3fff),(ushort)(byte)uVar57);
+  auVar3._2_6_ = (int6)(short)(uVar57 >> 0x10);
+  auVar3._0_2_ = (short)(uVar21 / uVar29);
+  auVar3._10_6_ = (int6)((uVar31 & 0xffffffffffff3fff) >> 0x10);
+  auVar3._8_2_ = (short)(uVar21 % uVar29);
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = uVar32 | 0xc000000000000000;
+  uVar29 = (uVar13 | 0xc000) >> bVar10 | (uVar13 | 0xc000) << 0x20 - bVar10;
+  iVar12 = (int)SUB162(auVar3 / auVar1,0) * (int)SUB162(auVar3 % auVar1,0);
+  uVar33 = uVar22;
+  if ((short)iVar12 != iVar12) {
+    uVar33 = uVar38;
+  }
+  uVar13 = (uVar36 - iVar44) - 1 & (uint)uVar14;
+  uVar36 = (uint)CONCAT62(SUB166(auVar3 % auVar1,2),(short)((uint)iVar12 >> 0x10) << 1) & 0xfffbffff
   ;
-  uVar19 = (short)uVar42 >> 9;
-  uVar42 = uVar17 & 0xffffffff95530000 | (ulong)uVar19;
-  uVar32 = uVar32 & 0xffff0000 | (ulong)uVar43 & 0xffffffffffffff00 | (ulong)(byte)(cVar10 + 1);
-  if ((uint)uVar32 != uVar8) {
-    uVar32 = (ulong)uVar8;
+  bVar58 = (byte)uVar13;
+  bVar60 = 0xd2 < bVar58;
+  cVar23 = bVar58 + 0x2d;
+  uVar57 = (ulong)((int)(short)iVar12 + 1);
+  if (!bVar60 && cVar23 != '\0') {
+    uVar57 = uVar38 & 0xffffffff;
   }
-  cVar10 = (char)((ulong)uVar22 >> 8);
-  uVar17 = uVar32 & 0xffffffffffff0000 | (ulong)(ushort)((short)(char)uVar32 * (short)cVar10);
-  bVar47 = bVar47 & 0x1f;
-  uVar43 = (ushort)(char)((byte)(uVar25 >> 8) | 8);
-  iVar39 = (int)uVar38 >> 1;
-  uVar32 = (ulong)uVar48;
-  if (iVar39 <= (int)(uint)uVar48) {
-    uVar32 = (ulong)uVar29;
+  uVar53 = uVar32 | 0xc000008000000000;
+  if (bVar60) {
+    uVar53 = 0xffffffff;
   }
-  uVar22 = (uVar22 & 0xff | (ushort)(byte)(cVar10 << 1 | cVar10 < '\0') << 8) &
-           ~(1 << (uVar43 & 0xf));
-  uVar35 = (ulong)(uVar25 & 0xffff0000 | (uint)uVar43);
-  uVar9 = uVar35 & 0xffffffffffffff0f;
-  bVar7 = (byte)uVar9;
-  uVar21 = uVar35 & 0xffffffffffff0000 |
-           (ulong)CONCAT11((ulong)(uVar29 + 0x83c76b7c) != 0xffffffff6e6ba890,bVar7);
-  iVar30 = (int)uVar42;
-  uVar8 = iVar30 + 0x260e0026;
-  uVar36 = (ulong)uVar8;
-  lVar45 = uVar17 * 2;
-  lVar44 = lVar45 * uVar36;
-  uVar16 = ~((uint)lVar44 >> 1);
-  uVar48 = (ushort)(byte)uVar16;
-  uVar16 = uVar16 & 0xffff0000;
-  uVar49 = (ulong)CONCAT22((short)((int)uVar38 >> 0x11),
-                           (short)iVar39 << bVar7 | 0x576fU >> 0x10 - bVar7) << bVar7;
-  uVar26 = (ulong)(uint)((int)(uVar16 | uVar48) >> 0x1f);
-  uVar9 = ((ulong)(uVar34 & 0xffff0000) | 0x800000000000000 |
-          (ulong)(((ushort)(uVar34 & 0xffffff00) ^ 1 << ((ushort)uVar9 & 0xf)) & 0xff00 &
-                 ~(1 << ((ushort)uVar40 & 0xf)))) ^ 1 << (uVar26 & 0x3f);
-  uVar35 = (ulong)(ushort)((ushort)uVar9 ^ 4);
-  uVar27 = uVar9 & 0xffffffffffff0000 | uVar35;
-  lVar45 = ((ulong)(uVar34 & 0xffffff00) * 0xc65a01c939a3267 |
-           (ulong)(byte)('\0' << bVar7 % 9 |
-                        (byte)((ushort)((ushort)(SEXT816(lVar44) !=
-                                                SEXT816(lVar45) * SEXT816((long)uVar36)) << 8) >>
-                              9 - bVar7 % 9))) + uVar36 + (ulong)(((ushort)uVar9 >> 2 & 1) != 0);
-  if (lVar45 == 0) {
-    uVar26 = (ulong)((int)(short)uVar31 << bVar47 | (uint)uVar17 >> 0x20 - bVar47);
-  }
-  uVar38 = uVar8 & 0xffff | 0xc000;
-  uVar31 = CONCAT22((short)uVar26,uVar48) & 0x3fffffff;
-  auVar3 = ZEXT816(uVar21 | 0xc000000000000000);
-  auVar1 = CONCAT88(uVar26 & 0xffffffffffff0000 | (ulong)(ushort)(uVar31 % uVar38),
-                    CONCAT62((int6)(short)(uVar16 >> 0x10),(short)(uVar31 / uVar38))) &
-           (undefined  [16])0xffffffffffffffff;
-  auVar2 = auVar1 % auVar3;
-  uVar8 = (uVar8 | 0xc000) >> bVar7 | (uVar8 | 0xc000) << 0x20 - bVar7;
-  iVar39 = (int)SUB162(auVar1 / auVar3,0) * (int)SUB162(auVar2,0);
-  sVar15 = (short)((uint)iVar39 >> 0x10);
-  uVar17 = uVar49;
-  if ((short)iVar39 != iVar39) {
-    uVar17 = uVar27;
-  }
-  sVar4 = sVar15 << 1;
-  uVar40 = (uVar40 - iVar30) - 1 & (uint)uVar32;
-  bVar47 = (byte)uVar40;
-  bVar50 = 0xd2 < bVar47;
-  bVar47 = bVar47 + 0x2d;
-  uVar26 = (ulong)((int)(short)iVar39 + 1);
-  if (!bVar50 && bVar47 != 0) {
-    uVar26 = uVar9 & 0xffff0000 | uVar35;
-  }
-  uVar35 = uVar21 | 0xc000008000000000;
-  if (bVar50) {
-    uVar35 = 0xffffffff;
-  }
-  uVar19 = uVar19 | 0xc000;
-  uVar38 = CONCAT22(sVar15 << 10 | (ushort)(CONCAT12(bVar50,sVar4) >> 8),(short)uVar26) & 0x3fffffff
-  ;
-  uVar9 = (ulong)(((uVar25 & 0xff0f ^ uVar34) + uVar29 + 1) * 0x400000 | (uint)uVar19) | 0xc000;
-  uVar25 = (uint)(ushort)uVar9;
-  uVar38 = uVar38 / uVar19 & 0xffff | (uVar38 % (uint)uVar19 & 0x3fff) << 0x10;
-  return (uVar26 & 0xffffffffffff0000 | (ulong)(ushort)(uVar38 / uVar25)) +
-         (uVar46 | (ulong)uVar22 & 0xffffffffffffff00 | (ulong)(byte)((byte)uVar22 & (byte)uVar49))
-         + uVar35 +
-         ((ulong)((uint)CONCAT62(SUB166(auVar2 >> 0x10,0),sVar4) & 0xfffb0000) |
-         (ulong)(ushort)(uVar38 % uVar25)) + (ulong)(uVar40 & 0xffffff00 | (uint)bVar47) +
-         ((long)(ulong)(uVar29 + 0xb3 + (uVar23 | uVar22) * 4) >> bVar7) * 0x443f2bfd + uVar27 +
-         (ulong)(uVar8 << 0x10 | uVar8 >> 0x11) + lVar45 + uVar32 + uVar42 + uVar9 + uVar17 +
+  sVar28 = (short)uVar36;
+  uVar32 = (ulong)CONCAT22((short)(uVar36 >> 0x10),
+                           sVar28 << 9 | (ushort)(CONCAT12(bVar60,sVar28) >> 8)) &
+           0xffffffffffff3fff;
+  uVar21 = CONCAT22((short)uVar32,(short)uVar57);
+  uVar31 = (ulong)(CONCAT22((short)(((uVar40 & 0xff0f ^ uVar41) + uVar37 + 1) * 0x400000 >> 0x10),
+                            uVar11) | 0xc000) | 0xc000;
+  uVar32 = CONCAT62((int6)(uVar32 >> 0x10),(short)(uVar21 % (uint)(uVar11 | 0xc000))) &
+           0xffffffffffff3fff;
+  uVar36 = (uint)(ushort)uVar31;
+  uVar40 = CONCAT22((short)uVar32,(short)(uVar21 / (uVar11 | 0xc000)));
+  return CONCAT62((int6)(uVar57 >> 0x10),(short)(uVar40 / uVar36)) +
+         CONCAT71((int7)((ulong)uVar34 >> 8),(byte)uVar35 & (byte)uVar22) + uVar53 +
+         CONCAT62((int6)(uVar32 >> 0x10),(short)(uVar40 % uVar36)) +
+         (ulong)CONCAT31((int3)(uVar13 >> 8),cVar23) +
+         ((long)(ulong)(uVar37 + 0xb3 + (int)uVar34 * 4) >> bVar10) * 0x443f2bfd + uVar38 +
+         (ulong)(uVar29 << 0x10 | uVar29 >> 0x11) + lVar51 + uVar14 + lVar48 + uVar31 + uVar33 +
          -0x666e265a15440761;
 }
 
@@ -2590,1626 +2693,1696 @@ long log_size_10_var_003(void)
 {
   undefined auVar1 [16];
   undefined auVar2 [16];
-  ushort uVar3;
-  ushort uVar4;
-  uint uVar5;
-  long lVar6;
-  ulong uVar7;
-  sbyte sVar8;
-  uint uVar9;
-  uint uVar10;
-  int iVar11;
-  short sVar12;
-  uint uVar13;
-  ulong uVar14;
+  undefined auVar3 [16];
+  undefined auVar4 [16];
+  undefined auVar5 [16];
+  undefined auVar6 [16];
+  undefined auVar7 [16];
+  undefined5 uVar8;
+  uint3 uVar9;
+  undefined3 uVar10;
+  byte bVar11;
+  ushort uVar12;
+  int iVar13;
+  undefined8 uVar14;
   ulong uVar15;
-  byte bVar17;
   ulong uVar16;
-  char cVar18;
+  long lVar17;
+  sbyte sVar18;
   byte bVar19;
-  ulong uVar20;
-  byte bVar21;
+  byte bVar20;
+  ushort uVar21;
   uint uVar22;
-  long lVar23;
-  uint uVar24;
-  uint uVar25;
-  ushort uVar26;
-  ushort uVar27;
-  uint uVar28;
-  ulong uVar29;
-  byte bVar30;
+  undefined6 uVar23;
+  short sVar24;
+  short sVar25;
+  char cVar29;
+  long lVar26;
+  ulong uVar27;
+  uint6 uVar30;
+  undefined8 uVar28;
   byte bVar31;
-  short sVar32;
-  ushort uVar33;
-  uint uVar34;
-  ulong uVar35;
+  uint uVar32;
+  long lVar33;
+  ulong uVar34;
+  uint6 uVar35;
   ushort uVar36;
-  ushort uVar37;
-  uint uVar38;
-  ulong uVar39;
-  undefined8 uVar40;
-  ulong uVar41;
-  int iVar42;
-  uint uVar43;
-  ulong uVar44;
-  byte bVar45;
-  ushort uVar46;
+  uint uVar37;
+  ulong uVar38;
+  undefined8 uVar39;
+  byte bVar40;
+  byte bVar41;
+  undefined7 uVar42;
+  ushort uVar43;
+  uint uVar44;
+  ulong uVar45;
+  uint uVar46;
   uint uVar47;
-  bool bVar48;
+  ushort uVar48;
+  byte bVar49;
+  short sVar50;
+  int iVar51;
+  ulong uVar52;
+  uint7 uVar53;
+  undefined6 uVar54;
+  ushort uVar55;
+  uint uVar56;
+  int iVar57;
+  uint uVar58;
+  ulong uVar59;
+  uint uVar60;
+  long lVar61;
+  char cVar62;
+  ushort uVar63;
+  uint uVar64;
+  bool bVar65;
   char in_AF;
   
-  uVar20 = (ulong)CONCAT11(in_AF << 4,0x73) & 0x272f;
-  uVar28 = (uint)CONCAT11(((byte)(uVar20 >> 8) | 2) + 0x69,(char)uVar20) * 0x3223;
-  sVar12 = (short)(uVar28 >> 0x10);
-  uVar10 = uVar28 & 0xffff | 0xac920000;
-  uVar28 = 0x152cfbf0;
-  if (sVar12 != 0) {
-    uVar28 = 0x40394238;
+  uVar38 = CONCAT62(0xeb8cef9ac92,CONCAT11(in_AF << 4,0x73) | 0x200) & 0xffffffffffff272f;
+  iVar13 = (uint)CONCAT11((char)(uVar38 >> 8) + 'i',(char)uVar38) * 0x3223;
+  sVar24 = (short)((uint)iVar13 >> 0x10);
+  uVar14 = CONCAT62((int6)(uVar38 >> 0x10),(short)iVar13);
+  uVar58 = 0x152cfbf0;
+  if (sVar24 != 0) {
+    uVar58 = 0x40394238;
   }
-  uVar20 = 0x9b3831b8c004baca - (ulong)(sVar12 != 0);
-  if (uVar10 != 0x6bd83580) {
-    uVar10 = 0x6bd83580;
+  uVar38 = 0x9b3831b8c004baca - (ulong)(sVar24 != 0);
+  if ((int)uVar14 != 0x6bd83580) {
+    uVar14 = 0x6bd83580;
   }
-  uVar14 = CONCAT62(0xe34a07cf36af,sVar12) + 0x8470ffff;
-  uVar26 = 0x8b5b;
-  uVar15 = (uVar14 & 0xffffffffffff0000 |
-           (ulong)CONCAT11((byte)(uVar14 >> 8) & (byte)uVar14,(byte)uVar14)) & 0xffffe8ed;
-  uVar35 = (ulong)(ushort)(0x609f - (0xc52c767b7f2e6110 < uVar20)) << 0x1d | 0x18a58ecf;
-  uVar14 = 0x3f;
-  if (uVar15 != 0) {
-    for (; uVar15 >> uVar14 == 0; uVar14 = uVar14 - 1) {
+  uVar55 = 0x4faf;
+  lVar26 = CONCAT62(0xe34a07cf36af,sVar24) + 0x8470ffff;
+  uVar16 = CONCAT62(0xc52c767b7f2e,0x609f - (ushort)(0xc52c767b7f2e6110 < uVar38));
+  uVar27 = CONCAT62((int6)((ulong)lVar26 >> 0x10),
+                    CONCAT11((byte)((ulong)lVar26 >> 8) & (byte)lVar26,(byte)lVar26)) & 0xffffe8ed;
+  uVar15 = uVar16 >> 0x23;
+  uVar52 = uVar15 | uVar16 << 0x1d;
+  uVar16 = 0x3f;
+  if (uVar27 != 0) {
+    for (; uVar27 >> uVar16 == 0; uVar16 = uVar16 - 1) {
     }
   }
-  uVar47 = (ushort)((ushort)(uVar14 < 0xffffe8ed || uVar14 - 0xffffe8ed == 0) << 0xf | 0x7fff) |
-           0x84700000;
-  uVar13 = (uint)(uVar15 << 1) | 1;
-  if (uVar10 != 0x54faf) {
-    uVar10 = 0x54faf;
-    uVar26 = 0x4faf;
+  uVar64 = CONCAT22(0x8470,(ushort)(uVar16 < 0xffffe8ed || uVar16 - 0xffffe8ed == 0) << 0xf | 0x7fff
+                   );
+  uVar45 = (ulong)uVar64;
+  uVar27 = uVar27 << 1 | 1;
+  if ((int)uVar14 == 0x54faf) {
+    uVar55 = 0x8b5b;
   }
-  uVar5 = (uint)(short)uVar10;
-  uVar10 = uVar28 >> 1;
-  uVar34 = uVar47;
-  if (uVar5 != uVar13) {
-    uVar5 = uVar13;
-    uVar34 = uVar13;
+  else {
+    uVar14 = 0x54faf;
   }
-  uVar3 = (short)uVar5 >> 1;
-  uVar28 = uVar28 >> 0xd;
-  uVar47 = uVar47 ^ 0x6a456c44;
-  iVar42 = (uint)(ushort)(uVar3 * -0x7131) * (uVar10 & 0xffff);
-  bVar48 = (short)((uint)iVar42 >> 0x10) != 0;
-  uVar37 = ((short)(uVar14 - 0xffffe8ed) + -1) * 2 | 1;
-  if (bVar48) {
-    uVar37 = uVar3 & 0xff;
+  iVar13 = (int)(short)uVar14;
+  uVar44 = uVar58 >> 1;
+  iVar57 = (int)uVar27;
+  if (iVar13 != iVar57) {
+    uVar45 = uVar27;
+    iVar13 = iVar57;
   }
-  iVar11 = ((byte)uVar3 | 0xfff00000) + 0xe12e9d80 + (uint)bVar48;
-  sVar12 = uVar37 + (ushort)uVar10;
-  uVar13 = (uint)uVar20;
-  if (!CARRY2(uVar37,(ushort)uVar10) && sVar12 != -1) {
-    uVar13 = uVar28 | 0x7800000;
+  uVar12 = (short)iVar13 >> 1;
+  bVar19 = (byte)uVar12;
+  uVar60 = uVar58 >> 0xd | 0x7800000;
+  uVar64 = uVar64 ^ 0x6a456c44;
+  iVar13 = (uint)(ushort)(uVar12 * (short)uVar15) * (uVar44 & 0xffff);
+  bVar65 = (short)((uint)iVar13 >> 0x10) != 0;
+  uVar43 = ((short)(uVar16 - 0xffffe8ed) + -1) * 2 | 1;
+  if (bVar65) {
+    uVar43 = uVar12 & 0xff;
   }
-  cVar18 = (char)iVar42;
-  sVar32 = (short)(uVar35 >> 1);
-  uVar13 = uVar13 ^ 1 << ((ushort)(sVar12 + 1) & 0x1f);
-  uVar5 = iVar11 * 2;
-  uVar37 = (uVar26 & 0xff00) + 0x474e + (ushort)(iVar11 < 0);
-  uVar9 = uVar47 >> 1;
-  uVar26 = uVar37 + 0xbfbf;
-  uVar24 = (uVar5 & 0xffffff00 | (uint)(byte)(((byte)uVar5 | (byte)(uVar13 >> 0x1f)) + 0x95)) &
-           ~(1 << ((7 < (byte)(cVar18 - 1U) || CARRY1(cVar18 - 9,0x4040 < uVar37)) | 0x10));
-  uVar37 = (ushort)(byte)((char)((ulong)uVar26 >> 8) + 0x52) << 8;
-  uVar5 = (uint)(uVar26 & 0xff | uVar37);
-  uVar38 = uVar28 & 0xffff0000 | 0x7800000 | (uint)(ushort)((short)uVar28 * 0x73d4);
-  sVar12 = sVar32 + 0x1890;
-  uVar28 = uVar9 << 0x1f;
-  cVar18 = (char)uVar10 + -0x7c;
-  bVar48 = SCARRY1((char)uVar10,-0x7c) != SCARRY1(cVar18,'\0');
-  uVar10 = uVar24;
-  if (cVar18 == '\0' || bVar48 != cVar18 < '\0') {
-    uVar10 = uVar28 | 0x797181cb;
+  iVar57 = (bVar19 | 0xfff00000) + 0xe12e9d80 + (uint)bVar65;
+  sVar24 = uVar43 + (ushort)uVar44;
+  uVar37 = (uint)uVar38;
+  if (!CARRY2(uVar43,(ushort)uVar44) && sVar24 != -1) {
+    uVar37 = uVar60;
   }
-  uVar34 = uVar34 & 0xffff0000 | (uint)(byte)(0xaf - ((ushort)(sVar32 + 0xa8bcU) < 0x2320)) << 8 |
-           (uint)(byte)(uVar3 & 0xff);
-  if (bVar48) {
-    uVar34 = 0x96;
+  cVar62 = (char)iVar13;
+  sVar25 = (short)(uVar52 >> 1);
+  uVar35 = (uint6)(uVar52 >> 0x11);
+  uVar37 = uVar37 ^ 1 << ((ushort)(sVar24 + 1) & 0x1f);
+  iVar13 = iVar57 * 2;
+  uVar55 = (uVar55 & 0xff00) + 0x474e + (ushort)(iVar57 < 0);
+  uVar22 = uVar64 >> 1;
+  sVar24 = uVar55 + 0xbfbf;
+  uVar46 = CONCAT31((int3)((uint)iVar13 >> 8),((byte)iVar13 | (byte)(uVar37 >> 0x1f)) + 0x95) &
+           ~(1 << ((7 < (byte)(cVar62 - 1U) || CARRY1(cVar62 - 9,0x4040 < uVar55)) | 0x10));
+  bVar41 = (byte)sVar24;
+  uVar58 = CONCAT22((short)(uVar60 >> 0x10),(short)(uVar58 >> 0xd) * 0x73d4);
+  sVar50 = sVar25 + 0x1890;
+  uVar60 = uVar22 << 0x1f | 0x797181cb;
+  cVar62 = (char)uVar44 + -0x7c;
+  bVar65 = SCARRY1((char)uVar44,-0x7c) != SCARRY1(cVar62,'\0');
+  uVar44 = uVar46;
+  if (cVar62 == '\0' || bVar65 != cVar62 < '\0') {
+    uVar44 = uVar60;
   }
-  uVar34 = uVar34 + (uVar13 & 0xffffff00 | (uint)(byte)((char)uVar13 - (byte)uVar3));
-  bVar45 = (byte)uVar24 >> 4;
-  uVar20 = CONCAT62((uint6)(uVar35 >> 0x11),sVar12) ^ 0xc288;
-  if (sVar12 == -0x3d78) {
-    uVar9 = uVar9 & 0xffff | (uVar47 >> 0x11) << 0x10;
+  iVar13 = (int)CONCAT71((int7)(CONCAT62((int6)(uVar45 >> 0x10),
+                                         CONCAT11(-0x51 - ((ushort)(sVar25 + 0xa8bcU) < 0x2320),
+                                                  bVar19)) >> 8),bVar19);
+  if (bVar65) {
+    iVar13 = 0x96;
   }
-  uVar14 = (ulong)(uVar34 >> 0x17 |
-                  (uVar34 & 0xffff0000 |
-                  (uint)(ushort)(CONCAT11((byte)(uVar34 >> 8) >> 1,(char)uVar34) | 0x8000)) << 9) <<
-           1;
-  lVar6 = 0x3f;
-  if ((ulong)uVar9 != 0) {
-    for (; uVar9 >> lVar6 == 0; lVar6 = lVar6 + -1) {
+  iVar13 = iVar13 + CONCAT31((int3)(uVar37 >> 8),(char)uVar37 - bVar19);
+  uVar55 = (ushort)((uint)iVar13 >> 0x10);
+  bVar19 = (byte)uVar46 >> 4;
+  uVar38 = CONCAT62(uVar35,sVar50) ^ 0xc288;
+  if (sVar50 == -0x3d78) {
+    uVar22 = CONCAT22((ushort)(uVar64 >> 0x11),(short)uVar22);
+  }
+  uVar64 = (uint)CONCAT62(0xffffffffffff,CONCAT11((char)((ushort)sVar24 >> 8) + 'R',bVar41)) |
+           0x1000;
+  lVar33 = (ulong)((uint)(uVar55 >> 7) |
+                  (CONCAT22(uVar55,CONCAT11((byte)((uint)iVar13 >> 8) >> 1,(char)iVar13)) | 0x8000)
+                  << 9) << 1;
+  lVar26 = 0x3f;
+  if (uVar22 != 0) {
+    for (; uVar22 >> lVar26 == 0; lVar26 = lVar26 + -1) {
     }
   }
-  cVar18 = (char)(uint)(CONCAT14(uVar10 < 0xcd0d82d8,uVar10 + 0x32f27d28) >> 0x19);
-  uVar35 = (ulong)((uVar10 + 0x32f27d28) * 0x100 | (uint)(byte)(cVar18 << 1));
-  uVar28 = uVar28 | 0x79710000 | (uint)(ushort)(0x81cb - (short)uVar9);
-  bVar21 = (char)uVar20 >> 0x19;
-  iVar42 = uVar38 - uVar28;
-  uVar15 = (ulong)(uVar5 | 0xffff1000) + (ulong)(cVar18 < '\0' | 0xffffb5de);
-  if (uVar28 <= uVar38 && iVar42 != 0) {
-    uVar15 = uVar14 >> 0x15 | (uVar14 & 0xffffffffffff00ff) << 0x2b;
+  uVar30 = (uint6)((ulong)lVar33 >> 0x10);
+  cVar62 = (char)(uint)(CONCAT14(uVar44 < 0xcd0d82d8,uVar44 + 0x32f27d28) >> 0x19);
+  uVar15 = (ulong)CONCAT31((int3)(uVar44 + 0x32f27d28),cVar62 << 1);
+  uVar44 = CONCAT22((short)(uVar60 >> 0x10),-0x7e35 - (short)uVar22);
+  bVar40 = (char)uVar38 >> 0x19;
+  iVar13 = uVar58 - uVar44;
+  uVar16 = (ulong)uVar64 + (ulong)(cVar62 < '\0' | 0xffffb5de);
+  if (uVar44 <= uVar58 && iVar13 != 0) {
+    uVar16 = (ulong)(uVar30 >> 5) | CONCAT62(uVar30,(ushort)(byte)lVar33) << 0x2b;
   }
-  uVar26 = (short)iVar42 + 0x46;
-  uVar34 = -~(uint)uVar20;
-  bVar31 = (byte)uVar15;
-  lVar6 = (ulong)uVar28 * 2 * lVar6;
-  bVar17 = (bVar45 | bVar31) & 7;
-  uVar14 = uVar35 << 1;
-  bVar45 = (char)uVar9 >> (bVar45 | bVar31 & 0x1f);
-  uVar29 = (ulong)uVar9 & 0xffffffffffffff00;
-  uVar10 = (((ushort)((uVar37 | 0x1000 | (ushort)((uVar5 & 0xfe) >> 1)) ^ 0x400) | 0xffff0000) +
-           0x8a2b9d1f) * 8;
-  uVar47 = uVar34 >> 0x1d;
-  auVar1 = SEXT816(lVar6) * SEXT816(0x2a1d8476167680cb);
-  lVar6 = lVar6 * 0x2a1d8476167680cb;
-  uVar13 = iVar42 + 0x1098f4d5U >> 0xb;
-  uVar28 = 0;
-  if ((uVar26 | 0x81c00000) != 0) {
-    for (; ((uVar26 | 0x81c00000) >> uVar28 & 1) == 0; uVar28 = uVar28 + 1) {
+  sVar24 = (short)iVar13 + 0x46;
+  bVar31 = (byte)uVar16;
+  lVar26 = (ulong)uVar44 * 2 * lVar26;
+  bVar49 = (bVar19 | bVar31) & 7;
+  uVar27 = uVar15 << 1;
+  uVar10 = (undefined3)(uVar22 >> 8);
+  cVar62 = (char)uVar22 >> (bVar19 | bVar31 & 0x1f);
+  uVar64 = ((CONCAT22(0xffff,(short)CONCAT31((int3)(uVar64 >> 8),bVar41 >> 1)) ^ 0x400) + 0x8a2b9d1f
+           ) * 8;
+  uVar44 = -~(uint)uVar38 >> 0x1d;
+  auVar4 = SEXT816(lVar26) * SEXT816(0x2a1d8476167680cb);
+  lVar26 = lVar26 * 0x2a1d8476167680cb;
+  uVar60 = iVar13 + 0x1098f4d5U >> 0xb;
+  uVar58 = 0;
+  if (CONCAT22(0x81c0,sVar24) != 0) {
+    for (; (CONCAT22(0x81c0,sVar24) >> uVar58 & 1) == 0; uVar58 = uVar58 + 1) {
     }
   }
-  uVar37 = ~((ushort)uVar20 & 0xff00 | (ushort)(byte)((char)(bVar21 << 3 | bVar21 >> 5) >> 0x1a));
-  uVar24 = (uint)uVar20 & 0xffff0000 | (uint)uVar37;
-  uVar9 = uVar28 | uVar24;
-  uVar3 = uVar26 * 2 | (ushort)((short)uVar26 < 0);
-  uVar5 = 0xe3fb58f5 - uVar13;
-  sVar12 = (short)uVar34;
-  uVar26 = (ushort)uVar5 >> 1 | sVar12 << 0xf;
-  if (uVar26 == 0) {
-    uVar13 = uVar13 & 0xffff0000 | (uint)(ushort)((ushort)uVar29 | (ushort)bVar45);
+  uVar55 = ~(ushort)CONCAT71((int7)(uVar38 >> 8),(char)(bVar40 << 3 | bVar40 >> 5) >> 0x1a);
+  uVar46 = (uint)CONCAT62(uVar35,uVar55);
+  uVar22 = uVar58 | uVar46;
+  uVar12 = sVar24 * 2 | (ushort)(sVar24 < 0);
+  uVar37 = 0xe3fb58f5 - uVar60;
+  sVar24 = (short)-~(uint)uVar38;
+  uVar43 = (ushort)uVar37 >> 1 | sVar24 << 0xf;
+  if (uVar43 == 0) {
+    uVar60 = CONCAT22((ushort)(iVar13 + 0x1098f4d5U >> 0x1b),(short)CONCAT31(uVar10,cVar62));
   }
-  uVar38 = 0x167680ca - (uVar5 & 0xffff0000 | (uint)uVar26);
-  uVar34 = ((uint)lVar6 & 0xffff0000 | (uint)(ushort)((short)(char)lVar6 * (short)(char)bVar45)) *
+  uVar56 = 0x167680ca - CONCAT22((short)(uVar37 >> 0x10),uVar43);
+  uVar32 = (int)CONCAT62((int6)((ulong)lVar26 >> 0x10),(short)(char)lVar26 * (short)cVar62) *
            0x276e6623;
-  if (sVar12 != 0) {
-    uVar34 = uVar10 | uVar47;
+  if (sVar24 != 0) {
+    uVar32 = uVar64 | uVar44;
   }
-  uVar20 = 0;
-  if (uVar35 != 0) {
-    for (; (uVar14 >> uVar20 & 1) == 0; uVar20 = uVar20 + 1) {
+  lVar26 = 0;
+  if (uVar15 != 0) {
+    for (; (uVar27 >> lVar26 & 1) == 0; lVar26 = lVar26 + 1) {
     }
   }
-  uVar35 = (ulong)(uVar24 >> 1 | (uint)((uVar37 & 1) != 0) << 0x1f) +
-           CONCAT62(SUB166(auVar1 >> 0x50,0),
-                    CONCAT11(SUB161(auVar1 >> 0x48,0) + (char)uVar28 +
-                             ((0xe3fb58f5U >> (uVar10 & 0x1f | uVar47) & 1) != 0),
-                             SUB161(auVar1 >> 0x40,0)));
-  uVar29 = uVar29 | (byte)(bVar45 << 1);
-  uVar37 = (ushort)uVar9 | (ushort)uVar38;
-  uVar10 = (ushort)(uVar3 + 0xc6c1) | 0x81c00000;
-  uVar26 = (ushort)uVar20 >> 1;
-  iVar42 = (int)uVar14;
-  uVar28 = uVar10 + 0x1157ddd9 + iVar42;
-  bVar19 = (byte)uVar37;
-  uVar7 = (ulong)uVar34 << (bVar19 & 0x3f) | (ulong)(uVar34 >> 0x40 - (bVar19 & 0x3f));
-  bVar30 = (char)uVar26 << 7;
-  uVar14 = (((uVar15 & 0xffffffffffffff00 | (ulong)(byte)(bVar31 << bVar17 | bVar31 >> 8 - bVar17))
-             << 1 | (ulong)((uVar5 & 1) != 0)) - 0x74fdece4) + (ulong)((uVar7 & 1) != 0);
-  bVar21 = (bVar19 & 0x1f) % 9;
-  uVar15 = uVar20 & 0xffffffffffff0000 |
-           (ulong)(ushort)(uVar26 | (ushort)(uVar3 < 0x393f) << 0xf) & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar30 >> bVar21 | bVar30 << 9 - bVar21);
-  uVar26 = (ushort)uVar14 & ~(1 << (uVar37 & 0xf));
-  uVar14 = uVar14 & 0xffffffffffff0000;
-  uVar20 = uVar14 | uVar26;
-  lVar6 = 0;
-  if (uVar20 != 0) {
-    for (; (uVar20 >> lVar6 & 1) == 0; lVar6 = lVar6 + 1) {
+  uVar38 = (ulong)(uVar46 >> 1 | (uint)((uVar55 & 1) != 0) << 0x1f) +
+           CONCAT62(auVar4._10_6_,
+                    CONCAT11(auVar4[9] + (char)uVar58 +
+                             ((0xe3fb58f5U >> (uVar64 & 0x1f | uVar44) & 1) != 0),auVar4[8]));
+  uVar44 = CONCAT31(uVar10,cVar62 << 1);
+  uVar43 = (ushort)uVar22 | (ushort)uVar56;
+  uVar64 = CONCAT22(0x81c0,uVar12 + 0xc6c1);
+  uVar55 = (ushort)lVar26 >> 1;
+  iVar13 = (int)uVar27;
+  uVar58 = uVar64 + 0x1157ddd9 + iVar13;
+  bVar41 = (byte)uVar43;
+  uVar15 = (ulong)uVar32 << (bVar41 & 0x3f) | (ulong)(uVar32 >> 0x40 - (bVar41 & 0x3f));
+  bVar40 = (char)uVar55 << 7;
+  lVar33 = ((CONCAT71((int7)(uVar16 >> 8),bVar31 << bVar49 | bVar31 >> 8 - bVar49) << 1 |
+            (ulong)((uVar37 & 1) != 0)) - 0x74fdece4) + (ulong)((uVar15 & 1) != 0);
+  bVar19 = (bVar41 & 0x1f) % 9;
+  uVar27 = CONCAT71((int7)(CONCAT62((int6)((ulong)lVar26 >> 0x10),
+                                    uVar55 | (ushort)(uVar12 < 0x393f) << 0xf) >> 8),
+                    bVar40 >> bVar19 | bVar40 << 9 - bVar19);
+  uVar23 = (undefined6)((ulong)lVar33 >> 0x10);
+  uVar16 = CONCAT62(uVar23,(ushort)lVar33 & ~(1 << (uVar43 & 0xf)));
+  lVar26 = 0;
+  if (uVar16 != 0) {
+    for (; (uVar16 >> lVar26 & 1) == 0; lVar26 = lVar26 + 1) {
     }
   }
-  uVar10 = uVar10 >> 0xc;
-  uVar34 = uVar10 | iVar42 << 0x14;
-  uVar47 = -(uVar38 & 0xeabfc66);
-  uVar7 = (uVar7 >> 1) << 6 | uVar35 >> 0x3a;
-  bVar48 = (ushort)((ushort)uVar35 & 0xff00 | (ushort)(byte)((char)uVar35 >> (bVar19 & 0x1f))) <
-           (ushort)uVar13;
-  bVar30 = (byte)uVar10;
-  iVar42 = (uint)(ushort)(uVar26 & 0xff00 | (ushort)(byte)-bVar48) * (uVar13 & 0xffff);
-  uVar3 = (ushort)((uint)iVar42 >> 0x10);
-  uVar24 = (uint)uVar15;
-  bVar17 = (byte)(uVar37 & 0xff);
-  iVar42 = (int)(short)iVar42 * (int)(short)uVar3;
-  uVar26 = (ushort)iVar42;
-  uVar14 = uVar14 | uVar26;
-  bVar21 = (bVar17 & 0x1f) % 9;
-  cVar18 = (char)uVar47;
-  uVar10 = uVar47 & 0xffffff00 |
-           (uint)(byte)((byte)(CONCAT11((short)uVar26 != iVar42,cVar18) >> bVar21) |
-                       cVar18 << 9 - bVar21);
-  uVar20 = (ulong)uVar10;
-  uVar39 = uVar20 ^ (ulong)(uVar14 == uVar20) * (ulong)(uVar10 ^ uVar13);
-  uVar14 = uVar14 ^ (ulong)(uVar14 != uVar20) * (uVar14 ^ uVar39);
-  uVar10 = (uVar9 & 0xffff0000 |
-           (uint)(ushort)(uVar37 & 0xff |
-                         (ushort)(byte)((byte)((uint)uVar37 >> 8) >> 1 | (uVar3 != 0) << 7) << 8))
-           << (bVar17 & 0x1f);
-  bVar21 = (byte)(uVar14 >> 8);
-  bVar31 = (byte)(uVar10 >> 8);
-  uVar26 = CONCAT11(bVar31,(char)uVar14);
-  uVar47 = (uint)uVar14 & 0xffff0000 | (uint)uVar26;
-  uVar5 = (uVar13 - (((uint)lVar6 & 0xffff0000 | (uint)uVar3) + uVar24 * 2)) -
-          (uint)CARRY1(bVar31,bVar21);
-  uVar20 = (ulong)(uVar10 & 0xffff0000 | (uint)CONCAT11(bVar31 + bVar21,(char)uVar10)) +
-           ((ulong)uVar28 | 0x40000);
-  uVar10 = ((uint)(CONCAT14(bVar48,uVar34) >> (bVar19 & 0x1f)) | uVar34 << 0x21 - (bVar19 & 0x1f)) &
-           0xffffff00;
-  if (-1 < (int)(uVar24 & (int)uVar47 >> 0x1f)) {
-    uVar10 = (uint)uVar39;
+  uVar64 = uVar64 >> 0xc;
+  uVar46 = uVar64 | iVar13 << 0x14;
+  iVar57 = -(uVar56 & 0xeabfc66);
+  lVar33 = (uVar15 >> 1) << 6;
+  bVar65 = (ushort)CONCAT71((int7)((uVar38 & 0xffff) >> 8),
+                            (char)(uVar38 & 0xffff) >> (bVar41 & 0x1f)) < (ushort)uVar60;
+  bVar49 = (byte)uVar64;
+  iVar13 = (uint)(ushort)CONCAT71((int7)(uVar16 >> 8),-bVar65) * (uVar60 & 0xffff);
+  sVar25 = (short)((uint)iVar13 >> 0x10);
+  uVar32 = (uint)uVar27;
+  iVar13 = (int)(short)iVar13 * (int)sVar25;
+  sVar24 = (short)iVar13;
+  uVar16 = CONCAT62(uVar23,sVar24);
+  bVar19 = (bVar41 & 0x1f) % 9;
+  cVar29 = (char)iVar57;
+  uVar64 = CONCAT31((int3)((uint)iVar57 >> 8),
+                    (byte)(CONCAT11(sVar24 != iVar13,cVar29) >> bVar19) | cVar29 << 9 - bVar19);
+  uVar15 = (ulong)uVar64;
+  uVar52 = uVar15 ^ (ulong)(uVar16 == uVar15) * (ulong)(uVar64 ^ uVar60);
+  uVar16 = uVar16 ^ (ulong)(uVar16 != uVar15) * (uVar16 ^ uVar52);
+  iVar13 = CONCAT22((short)(uVar22 >> 0x10),
+                    CONCAT11((byte)(uVar43 >> 9) | (sVar25 != 0) << 7,bVar41)) << (bVar41 & 0x1f);
+  bVar19 = (byte)(uVar16 >> 8);
+  bVar40 = (byte)((uint)iVar13 >> 8);
+  uVar16 = CONCAT62((int6)(uVar16 >> 0x10),CONCAT11(bVar40,(char)uVar16));
+  uVar22 = (uVar60 - ((int)CONCAT62((int6)((ulong)lVar26 >> 0x10),sVar25) + uVar32 * 2)) -
+           (uint)CARRY1(bVar40,bVar19);
+  uVar37 = (uint)uVar16;
+  lVar26 = (ulong)CONCAT22((short)((uint)iVar13 >> 0x10),CONCAT11(bVar40 + bVar19,(char)iVar13)) +
+           ((ulong)uVar58 | 0x40000);
+  uVar64 = (uint)(uint3)((uint3)((CONCAT14(bVar65,uVar46) >> (bVar41 & 0x1f)) >> 8) |
+                        (uint3)((uVar46 << 0x21 - (bVar41 & 0x1f)) >> 8)) << 8;
+  if (-1 < (int)(uVar32 & (int)uVar37 >> 0x1f)) {
+    uVar64 = (uint)uVar52;
   }
-  uVar9 = ((uint)uVar7 & 0xffffff00 | (uint)(byte)~(byte)uVar7) ^
-          (uint)(1 << ((ulong)(byte)(bVar45 << 1) & 0x3f));
-  uVar34 = uVar9 & 0x7fffffff;
-  uVar35 = (uVar35 & 0xffffffffffff0000 |
-           (ulong)(byte)(bVar30 >> (bVar17 & 7) | bVar30 << 8 - (bVar17 & 7))) + 0x60c3a993;
-  bVar48 = CARRY4(uVar47,uVar10 & 0xe6e7dc28);
-  iVar42 = uVar47 + (uVar10 & 0xe6e7dc28);
-  if (!bVar48 && iVar42 != 0) {
-    uVar39 = uVar39 & 0xffffffffffff0000 | (ulong)uVar28 & 0xffff;
+  uVar32 = (uint)CONCAT71((int7)((ulong)lVar33 >> 8),~((byte)lVar33 | (byte)(uVar38 >> 0x3a))) ^
+           (uint)(1L << ((ulong)(byte)(cVar62 << 1) & 0x3f));
+  uVar46 = uVar32 & 0x7fffffff;
+  lVar33 = (CONCAT71((int7)(uVar38 >> 8),bVar49 >> (bVar41 & 7) | bVar49 << 8 - (bVar41 & 7)) &
+           0xffffffffffff00ff) + 0x60c3a993;
+  bVar65 = CARRY4(uVar37,uVar64 & 0xe6e7dc28);
+  iVar13 = uVar37 + (uVar64 & 0xe6e7dc28);
+  uVar16 = uVar16 & 0xffffffff;
+  sVar24 = (short)uVar58;
+  if (!bVar65 && iVar13 != 0) {
+    uVar52 = CONCAT62((int6)(uVar52 >> 0x10),sVar24);
   }
-  uVar10 = CONCAT22((short)(ushort)(uVar5 >> 0x11) >> 1,(ushort)((int)(uVar5 >> 1) >> 1) & uVar26);
-  bVar45 = (byte)uVar20 & 0x3f;
-  uVar7 = (ulong)(uVar10 >> bVar45) | (ulong)uVar10 << 0x40 - bVar45;
-  lVar6 = 0x3f;
-  if (uVar29 != 0) {
-    for (; uVar29 >> lVar6 == 0; lVar6 = lVar6 + -1) {
+  uVar58 = CONCAT22((short)(ushort)(uVar22 >> 0x11) >> 1,
+                    (ushort)((int)(uVar22 >> 1) >> 1) & (ushort)uVar16);
+  bVar19 = (byte)lVar26;
+  uVar38 = (ulong)(uVar58 >> (bVar19 & 0x3f)) | (ulong)uVar58 << 0x40 - (bVar19 & 0x3f);
+  uVar23 = (undefined6)((ulong)lVar33 >> 0x10);
+  lVar17 = 0x3f;
+  if (uVar44 != 0) {
+    for (; uVar44 >> lVar17 == 0; lVar17 = lVar17 + -1) {
     }
   }
-  uVar44 = (ulong)((uVar13 + 0xe169a1fc) - (uint)bVar48) + 0x245ec30;
-  bVar21 = (byte)((uint)iVar42 >> 0x18);
-  uVar16 = uVar35 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar35 >> 0x1d) & 0xffffffffffffff00
-  ;
-  uVar13 = (uint)uVar16 | (uint)(byte)(((char)(uVar35 >> 8) >> 0x15) + 0x31);
-  uVar35 = (ulong)((uint)uVar29 - uVar34);
-  bVar45 = bVar21 >> 3;
-  auVar1 = ZEXT116(0) << 0x40 | ZEXT816(uVar15);
-  auVar2 = auVar1 >> 0x13;
-  bVar17 = (byte)(uVar20 & 0xff);
-  cVar18 = (byte)uVar34 + (char)uVar39 << (bVar17 & 0x1f);
-  uVar47 = CONCAT31((uint3)((uVar9 << 1) >> 9),cVar18);
-  uVar10 = 1 << (uVar26 & 0x1f);
-  lVar23 = (uVar7 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar7 << 1)) + uVar35 +
-           (ulong)((uVar10 & 1) != 0);
-  bVar31 = ~SUB161(auVar2,0);
-  uVar15 = SUB168(auVar2,0) & 0xffffffffffffff00 | SUB168(auVar1 << 0x2e,0);
-  uVar13 = (((int)lVar6 + ((uint)uVar14 & 0xffff0000 | (uint)uVar26) + (uint)((uint)uVar29 < uVar34)
-             >> (bVar17 & 0x1f) | uVar13 << 0x20 - (bVar17 & 0x1f)) & 0xffffffb8) - uVar13;
-  uVar14 = (uVar15 | bVar31) >> 1;
-  if (((uVar15 & 0x8000000000000000) != 0) == ((bVar31 & 1) != 0)) {
-    uVar35 = (ulong)uVar13;
+  lVar61 = (ulong)((uVar60 + 0xe169a1fc) - (uint)bVar65) + 0x245ec30;
+  uVar14 = CONCAT71((int7)(CONCAT62(uVar23,(short)lVar33 >> 0x1d) >> 8),
+                    ((char)((ulong)lVar33 >> 8) >> 7) + '1');
+  uVar60 = (uint)uVar16;
+  bVar40 = (byte)((uint)iVar13 >> 0x18);
+  bVar41 = bVar40 >> 3;
+  auVar4._8_8_ = 0;
+  auVar4._0_8_ = uVar27;
+  auVar4 = ZEXT116(0) << 0x40 | auVar4;
+  auVar7 = auVar4 >> 0x13;
+  uVar53 = auVar7._1_7_ | SUB167(auVar4 << 0x2e,1);
+  cVar62 = (char)uVar46 + (char)uVar52 << (bVar19 & 0x1f);
+  uVar64 = CONCAT31((uint3)((uVar32 << 1) >> 9),cVar62);
+  uVar58 = 1 << (uVar60 & 0x1f);
+  uVar28 = CONCAT62(uVar23,(short)uVar14);
+  lVar33 = CONCAT62((int6)(uVar38 >> 0x10),(short)uVar38 << 1) + (ulong)(uVar44 - uVar46) +
+           (ulong)((uVar58 & 1) != 0);
+  bVar49 = ~auVar7[0];
+  uVar60 = (((int)lVar17 + uVar60 + (uint)(uVar44 < uVar46) >> (bVar19 & 0x1f) |
+            (int)uVar14 << 0x20 - (bVar19 & 0x1f)) & 0xffffffb8) - (int)uVar28;
+  uVar38 = CONCAT71(uVar53,bVar49) >> 1;
+  uVar16 = (ulong)(uVar44 - uVar46);
+  if (((uVar53 & 0x80000000000000) != 0) == ((bVar49 & 1) != 0)) {
+    uVar16 = (ulong)uVar60;
   }
-  uVar5 = (uint)(uVar44 * 0x200) | (uint)(byte)('\0' >> (bVar17 & 0x1f));
-  lVar6 = (ulong)CONCAT11(bVar21 >> 4 | bVar45 << 7,bVar45) * lVar23;
-  uVar7 = uVar44 & 0xffffffffffff0000 | (ulong)(ushort)((ushort)uVar44 & (ushort)uVar14);
-  uVar40 = CONCAT71((uint7)(byte)((ushort)((short)uVar28 - (short)(uVar20 & 0xff)) >> 8),0x6d);
-  uVar15 = (long)(int)((uint)lVar6 & 0xffffff00 | (uint)(byte)((char)lVar6 + cVar18 + 1)) *
-           (long)(int)uVar7;
-  uVar29 = uVar15 & 0xffffffff;
-  uVar9 = uVar13 * 8 >> (bVar17 & 0x3f) | uVar47 << 0x40 - (bVar17 & 0x3f);
-  uVar28 = (uint)uVar14;
-  if (CARRY8(uVar7,uVar35)) {
-    uVar28 = uVar9;
+  lVar17 = (ulong)CONCAT11(bVar40 >> 4 | bVar41 << 7,bVar41) * lVar33;
+  uVar45 = CONCAT62((int6)((ulong)lVar61 >> 0x10),(ushort)lVar61 & (ushort)uVar38);
+  uVar15 = (long)(int)CONCAT71((int7)((ulong)lVar17 >> 8),(char)lVar17 + cVar62 + '\x01') *
+           (long)(int)uVar45;
+  uVar27 = uVar15 & 0xffffffff;
+  uVar37 = uVar60 * 8 >> (bVar19 & 0x3f) | uVar64 << 0x40 - (bVar19 & 0x3f);
+  uVar44 = (uint)uVar38;
+  if (CARRY8(uVar45,uVar16)) {
+    uVar44 = uVar37;
   }
-  iVar42 = uVar9 - uVar5;
-  uVar3 = (short)(uVar7 + uVar35) + (short)uVar29 + 1;
-  uVar26 = (short)(char)uVar29 * (short)(char)iVar42;
-  uVar14 = (ulong)uVar47 << (bVar17 & 0x3f) | (ulong)(uVar47 >> 0x40 - (bVar17 & 0x3f));
-  uVar37 = (ushort)lVar23 - (ushort)uVar14;
-  uVar47 = uVar28 + 0xa4468e02 & 0xffff0000;
-  bVar48 = (ushort)uVar14 <= (ushort)lVar23 && uVar37 != 0;
-  bVar21 = (byte)uVar26;
-  bVar31 = bVar17 ^ (bVar21 == bVar17) * (bVar17 ^ bVar48);
-  uVar20 = uVar20 & 0xffffffffffff0000 |
-           (ulong)CONCAT11(-1 >> (bVar17 & 0x1f),bVar17) & 0xffffffffffffff00 | (ulong)bVar31;
-  lVar6 = uVar20 * 0x4e014301;
-  bVar45 = ((byte)lVar6 & 0x1f) % 0x11;
-  uVar20 = (ulong)(ushort)(CONCAT11(SEXT816(lVar6) != SEXT816((long)uVar20) * SEXT416(0x4e014301),
-                                    (char)uVar14) ^ 1 << ((ushort)(uVar15 >> 0x21) & 0xf));
-  uVar14 = uVar14 & 0xffffffffffff0000 | uVar20;
-  uVar46 = ((ushort)uVar35 & 0xff00 | (ushort)bVar48) ^ (ushort)uVar40;
-  uVar38 = (uint)lVar23 >> 0x18 | ((uint)lVar23 & 0xff0000) >> 8 | (uVar37 & 0xff00) << 8 |
-           (uint)uVar37 << 0x18;
-  auVar1 = ZEXT816(uVar15 & 0xffff0000 | (ulong)uVar26 & 0xffffffffffffff00 |
-                   (ulong)(byte)(bVar21 ^ (bVar21 != bVar17) * (bVar21 ^ bVar31))) * ZEXT416(uVar38)
-  ;
-  uVar26 = (ushort)~(uint)lVar6;
-  uVar3 = (uVar3 >> bVar45 | uVar3 << 0x11 - bVar45) + uVar26;
-  bVar45 = (byte)~(uint)lVar6;
-  uVar9 = ((uint)(((ulong)(uint3)((uint)iVar42 >> 8) & 0xffffffffffff00) << 8) | (uint)uVar40) >>
-          (bVar45 & 0x1f);
-  uVar41 = (ulong)(short)uVar3;
-  uVar15 = ((ulong)(uint)((int)uVar29 + 0x66 + (int)(uVar15 >> 0x20)) - 0x1223dd24c) -
-           (ulong)(0xfffffffff8ce9108 < uVar41 || 0xfffffffffffffffe < uVar41 + 0x7316ef7);
-  uVar37 = (ushort)((ushort)(uVar44 * 0x200 >> 0x10) >> 1 | 0x8000) >> 0xd;
-  uVar43 = (uint)(ushort)(uVar37 + 0x897e);
-  uVar24 = uVar9 << 0xc;
-  uVar9 = (uint)(CONCAT14(uVar37 < 0x7682,uVar9) >> 0x15);
-  uVar25 = (uint)uVar15 & 0xffff0000 | (uint)(uVar15 >> 1) & 0x7fff;
-  uVar15 = uVar41 + 0x7316ef8 >> 1 | uVar20 << 0x3f;
-  uVar37 = uVar26 << 1 | (ushort)((short)uVar26 < 0);
-  uVar20 = uVar14 << 1;
-  uVar38 = uVar38 + 0xe5c87b0d << (bVar45 & 0x1f);
-  if ((long)uVar14 < 0 != (long)uVar20 < 0) {
-    uVar38 = uVar47 | (ushort)((short)(uVar5 >> 1) + (short)(uVar28 + 0xa4468e02) * 8);
+  uVar22 = (uint)CONCAT71((int7)((ulong)(lVar61 * 0x200) >> 8),'\0' >> (bVar19 & 0x1f));
+  iVar13 = uVar37 - uVar22;
+  uVar12 = (short)(uVar45 + uVar16) + (short)uVar27 + 1;
+  sVar25 = (short)(char)uVar27 * (short)(char)iVar13;
+  iVar51 = uVar44 + 0xa4468e02;
+  uVar38 = (ulong)uVar64 << (bVar19 & 0x3f) | (ulong)(uVar64 >> 0x40 - (bVar19 & 0x3f));
+  uVar43 = (ushort)CONCAT71((uint7)(byte)((ushort)(sVar24 - (ushort)bVar19) >> 8),0x6d);
+  sVar24 = (ushort)lVar33 - (ushort)uVar38;
+  bVar65 = (ushort)uVar38 <= (ushort)lVar33 && sVar24 != 0;
+  bVar41 = (byte)sVar25;
+  bVar40 = bVar19 ^ (bVar41 == bVar19) * (bVar19 ^ bVar65);
+  lVar26 = CONCAT71((int7)(CONCAT62((int6)((ulong)lVar26 >> 0x10),
+                                    CONCAT11(-1 >> (bVar19 & 0x1f),bVar19)) >> 8),bVar40);
+  auVar7._1_7_ = (int7)(CONCAT62((int6)(uVar27 >> 0x10),sVar25) >> 8);
+  auVar7[0] = bVar41 ^ (bVar41 != bVar19) * (bVar41 ^ bVar40);
+  lVar17 = lVar26 * 0x4e014301;
+  bVar19 = ((byte)lVar17 & 0x1f) % 0x11;
+  lVar26 = CONCAT62((int6)(uVar38 >> 0x10),
+                    CONCAT11(SEXT816(lVar17) != SEXT816(lVar26) * SEXT416(0x4e014301),(char)uVar38)
+                    ^ 1 << ((ushort)(uVar15 >> 0x21) & 0xf));
+  uVar63 = (ushort)CONCAT71((int7)(uVar16 >> 8),bVar65) ^ uVar43;
+  uVar64 = (uint)CONCAT62((int6)((ulong)lVar33 >> 0x10),sVar24);
+  uVar44 = uVar64 >> 0x18 | (uVar64 & 0xff0000) >> 8 | (uVar64 & 0xff00) << 8 | uVar64 << 0x18;
+  auVar7._8_8_ = 0;
+  auVar7 = auVar7 * ZEXT416(uVar44);
+  uVar55 = (ushort)~(uint)lVar17;
+  uVar12 = (uVar12 >> bVar19 | uVar12 << 0x11 - bVar19) + uVar55;
+  bVar19 = (byte)~(uint)lVar17;
+  uVar37 = CONCAT22((short)((uint)iVar13 >> 0x10),uVar43) >> (bVar19 & 0x1f);
+  uVar59 = (ulong)(short)uVar12;
+  lVar33 = ((ulong)(uint)((int)uVar27 + 0x66 + (int)(uVar15 >> 0x20)) - 0x1223dd24c) -
+           (ulong)(0xfffffffff8ce9108 < uVar59 || 0xfffffffffffffffe < uVar59 + 0x7316ef7);
+  uVar43 = (ushort)((ushort)((ulong)(lVar61 * 0x200) >> 0x10) >> 1 | 0x8000) >> 0xd;
+  uVar64 = (uint)(ushort)(uVar43 + 0x897e);
+  uVar8 = CONCAT14(uVar43 < 0x7682,uVar37);
+  iVar13 = uVar37 << 0xc;
+  uVar15 = uVar59 + 0x7316ef8 >> 1 | lVar26 << 0x3f;
+  uVar43 = uVar55 << 1 | (ushort)((short)uVar55 < 0);
+  lVar26 = lVar26 << 1;
+  iVar57 = uVar44 + 0xe5c87b0d << (bVar19 & 0x1f);
+  if ((long)uVar38 < 0 != lVar26 < 0) {
+    iVar57 = CONCAT22((short)((uint)iVar51 >> 0x10),(short)(uVar22 >> 1) + (short)iVar51 * 8);
   }
-  bVar45 = (byte)uVar37;
-  bVar31 = (byte)uVar20 ^ bVar45;
-  uVar28 = uVar25 << (bVar45 & 0x1f) | uVar25 >> 0x20 - (bVar45 & 0x1f);
-  uVar5 = uVar37 ^ uVar28;
-  lVar6 = (long)(uVar20 & 0xffffffffffffff00 | (ulong)bVar31) >> 1;
-  bVar21 = (byte)uVar5 & 0xf;
-  uVar37 = (short)uVar28 << bVar21 | (ushort)lVar6 >> 0x10 - bVar21;
-  uVar28 = uVar28 & 0xffff0000 | (uint)uVar37;
-  bVar17 = (char)((ulong)(ushort)((short)(((ushort)CONCAT71(SUB167(auVar1 >> 0x48,0),
-                                                            SUB161(auVar1 >> 0x40,0) &
-                                                            ~(byte)(1 << (ulong)bVar48) & 0x2b) |
-                                          uVar26) << 7) >> 0x13) >> 8) + SUB161(auVar1,0) + 1;
-  uVar25 = uVar43 << 0x11;
-  uVar38 = uVar38 & 0xffffff00 | uVar38 >> 1 & 0x7f;
-  uVar5 = uVar5 & 0xffffff0f;
-  sVar8 = (sbyte)uVar5;
-  uVar5 = (uVar24 & 0xffff0000 |
-          (uint)(ushort)(((ushort)uVar9 & 0xff00 | (ushort)uVar24 |
-                         (ushort)(byte)((char)uVar9 + (char)uVar3)) << sVar8 |
-                        (ushort)uVar5 >> 0x10 - sVar8)) >> 1;
-  uVar22 = uVar38 << sVar8 | uVar38 >> 0x20 - sVar8;
-  uVar14 = (ulong)uVar22;
-  uVar9 = (uint)((uVar16 | (byte)((bVar31 == 0) + 0xbb)) << (bVar45 & 0x3f)) & 0xffffff00 &
-          ~(1 << (uVar37 & 0x1f));
-  uVar25 = uVar25 >> sVar8 | uVar25 << 0x20 - sVar8;
-  uVar38 = uVar9 >> sVar8 | uVar9 << 0x20 - sVar8;
-  uVar20 = (ulong)uVar43 ^ 0xffffffff84e5ea14;
-  uVar26 = (ushort)CARRY1((byte)uVar37,bVar17);
-  uVar37 = uVar46 + 0xd9b9;
-  bVar21 = (sVar8 + -0x4f) - (uVar46 < 0x2647 || uVar37 < uVar26) & 8;
-  uVar43 = ~((int)(uVar7 + uVar35 >> 0x1d) + 0x2060d13bU);
-  uVar9 = -((byte)((byte)lVar6 ^ SUB161(auVar1,0)) + uVar5 + 1 & 0xff);
-  uVar46 = (ushort)uVar5;
-  uVar46 = uVar46 << bVar21 % 0x11 | uVar46 >> 0x11 - bVar21 % 0x11;
-  uVar10 = ~((int)(((((uint)((uVar39 & 0xffffffffffffff00 | (ulong)(byte)uVar34) << 0xb) | uVar10)
-                    >> 1) - uVar13) - 1 & 0xffff0000 | (uint)(uVar3 >> (bVar45 & 0x1f))) >> 0xf &
-            uVar28);
-  uVar3 = ((ushort)(uVar47 >> 0x10) & 0xff00 | 1) ^ 1 << ((ushort)uVar43 & 0xf);
-  if ((uVar24 & 0x1000000) != 0) {
-    uVar10 = uVar10 & 0xffff0000;
+  bVar19 = (byte)uVar43;
+  bVar49 = (byte)lVar26 ^ bVar19;
+  uVar44 = (uint)CONCAT62((int6)((ulong)lVar33 >> 0x10),(ushort)lVar33 >> 1);
+  uVar44 = uVar44 << (bVar19 & 0x1f) | uVar44 >> 0x20 - (bVar19 & 0x1f);
+  uVar37 = uVar43 ^ uVar44;
+  lVar26 = CONCAT71((int7)((ulong)lVar26 >> 8),bVar49) >> 1;
+  bVar41 = (byte)uVar37 & 0xf;
+  uVar43 = (short)uVar44 << bVar41 | (ushort)lVar26 >> 0x10 - bVar41;
+  uVar44 = CONCAT22((short)(uVar44 >> 0x10),uVar43);
+  bVar40 = ((char)(((uint)(ushort)((ushort)CONCAT71(auVar7._9_7_,
+                                                    auVar7[8] & ~(byte)(1L << bVar65) & 0x2b) |
+                                  uVar55) << 7) >> 8) >> 7) + auVar7[0] + 1;
+  uVar22 = uVar64 << 0x11;
+  uVar32 = CONCAT31((int3)((uint)iVar57 >> 8),(byte)iVar57 >> 1);
+  uVar37 = uVar37 & 0xffffff0f;
+  sVar18 = (sbyte)uVar37;
+  uVar21 = (ushort)((uint)iVar13 >> 0x10);
+  uVar37 = CONCAT22(uVar21,(short)CONCAT31((uint3)((uint5)uVar8 >> 0x1d) |
+                                           (uint3)((uint)iVar13 >> 8),
+                                           (char)(uint)((uint5)uVar8 >> 0x15) + (char)uVar12) <<
+                           sVar18 | (ushort)uVar37 >> 0x10 - sVar18) >> 1;
+  uVar56 = uVar32 << sVar18 | uVar32 >> 0x20 - sVar18;
+  uVar27 = (ulong)uVar56;
+  uVar32 = (int)CONCAT71((int7)((ulong)uVar28 >> 8),(bVar49 == 0) + -0x45) << (bVar19 & 0x3f) &
+           0xffffff00U & ~(1 << (uVar43 & 0x1f));
+  uVar47 = uVar22 >> sVar18 | uVar22 << 0x20 - sVar18;
+  uVar22 = uVar32 >> sVar18 | uVar32 << 0x20 - sVar18;
+  uVar38 = (ulong)uVar64 ^ 0xffffffff84e5ea14;
+  uVar55 = (ushort)CARRY1((byte)uVar43,bVar40);
+  uVar43 = uVar63 + 0xd9b9;
+  bVar41 = (sVar18 + -0x4f) - (uVar63 < 0x2647 || uVar43 < uVar55) & 8;
+  uVar32 = ~((int)(uint6)(uVar45 + uVar16 >> 0x1d) + 0x2060d13bU);
+  uVar64 = -((byte)((byte)lVar26 ^ auVar7[0]) + uVar37 + 1 & 0xff);
+  uVar15 = (uVar15 << bVar41 | uVar15 >> 0x40 - bVar41) >> 1;
+  uVar63 = (ushort)uVar37;
+  uVar21 = uVar21 >> 1;
+  uVar58 = ~(CONCAT22((short)(((((int)CONCAT71((int7)(uVar52 >> 8),(char)uVar46) << 0xb | uVar58) >>
+                               1) - uVar60) + -1 >> 0x10),uVar12 >> (bVar19 & 0x1f)) >> 0xf & uVar44
+            );
+  uVar43 = (ushort)(uVar43 - uVar55) >> 1;
+  uVar55 = (ushort)CONCAT31((uint3)(byte)((uint)iVar51 >> 0x18),1) ^ 1 << ((ushort)uVar32 & 0xf);
+  uVar60 = CONCAT22(uVar21,uVar63 << bVar41 % 0x11 | uVar63 >> 0x11 - bVar41 % 0x11) & 0xff7fffff;
+  if ((uVar21 & 0x80) != 0) {
+    uVar58 = CONCAT22((short)(uVar58 >> 0x10),uVar43);
   }
-  uVar4 = uVar3 * 0x2beb;
-  uVar29 = (ulong)(ushort)(uVar4 & 0xff | (ushort)(byte)((byte)(uVar4 >> 8) ^ bVar17) << 8);
-  uVar7 = uVar14 ^ (ulong)(uVar29 == uVar14) * (ulong)(uVar22 ^ uVar43);
-  uVar35 = uVar35 & 0xffffffffffff0000 | ((ulong)(ushort)(uVar37 - uVar26) & 0xfe00) >> 1 |
-           uVar20 & 0xff;
-  if ((uVar3 >> 9 & 1) != 0) {
-    uVar35 = (ulong)uVar25;
+  sVar24 = uVar55 * 0x2beb;
+  uVar52 = (ulong)CONCAT11((byte)((ushort)sVar24 >> 8) ^ bVar40,(char)sVar24);
+  uVar45 = uVar27 ^ (ulong)(uVar52 == uVar27) * (ulong)(uVar56 ^ uVar32);
+  uVar16 = CONCAT71((int7)(CONCAT62((int6)(uVar16 >> 0x10),uVar43) >> 8),(char)uVar38);
+  if ((uVar55 >> 9 & 1) != 0) {
+    uVar16 = (ulong)uVar47;
   }
-  uVar28 = ((uint)(((ulong)uVar28 & 0xffff) << 1) & 0xffff0000 | (uint)(byte)((ulong)uVar9 >> 8)) +
-           (int)uVar35;
-  bVar45 = (byte)uVar28;
-  uVar39 = ((ulong)uVar9 + 0x2a6abdd5 << (bVar45 & 0x3f) |
-           (ulong)((((uVar24 & 0xfffe0000) >> 1 | (uint)uVar46) & 0xff7fff00 |
-                   (uint)(byte)((char)uVar46 + 1)) >> 0x40 - (bVar45 & 0x3f))) >> 1;
-  uVar16 = (ulong)(long)(short)uVar9 >> (bVar45 & 0x3f);
-  uVar28 = uVar28 >> 1;
-  uVar34 = (uVar24 & 0xfefe0000) >> 1;
-  lVar6 = (long)(((uVar20 & 0xffffffffffffff00 | uVar39 & 0xff) - 0xca9c81ef) -
-                (ulong)((uVar38 >> 0x18 & 1) != 0)) >> ((byte)uVar28 & 0x3f);
-  uVar26 = (ushort)uVar16 |
-           1 << (((short)uVar25 << (bVar45 & 0x3f) | (ushort)(uVar35 >> 0x40 - (bVar45 & 0x3f))) &
+  uVar9 = (uint3)(uVar22 >> 8);
+  uVar44 = (int)CONCAT62((int6)((((ulong)uVar44 & 0xffff) << 1) >> 0x10),(ushort)(byte)(uVar64 >> 8)
+                        ) + (int)uVar16;
+  bVar19 = (byte)uVar44;
+  uVar34 = (ulong)uVar64 + 0x2a6abdd5 << (bVar19 & 0x3f) |
+           (ulong)(CONCAT31((int3)(uVar60 >> 8),(char)uVar60 + '\x01') >> 0x40 - (bVar19 & 0x3f));
+  uVar59 = (ulong)(long)(short)uVar64 >> (bVar19 & 0x3f);
+  uVar55 = (ushort)(uVar60 >> 0x10);
+  bVar41 = (byte)(uVar44 >> 1);
+  lVar26 = (long)((CONCAT71((int7)(uVar38 >> 8),(char)(uVar34 >> 1)) + -0xca9c81ef) -
+                 (ulong)((uVar9 >> 0x10 & 1) != 0)) >> (bVar41 & 0x3f);
+  uVar43 = (ushort)uVar59 |
+           1 << (((short)uVar47 << (bVar19 & 0x3f) | (ushort)(uVar16 >> 0x40 - (bVar19 & 0x3f))) &
                 0xf);
-  uVar5 = (uint)((uVar15 << bVar21 | uVar15 >> 0x40 - bVar21) >> 1);
-  uVar13 = uVar5 & 0xffff;
-  bVar45 = (byte)(uVar28 >> 8);
-  uVar47 = (uint)CONCAT11(bVar45 >> 1 | bVar45 << 7,(byte)uVar28);
-  uVar20 = uVar29 ^ (ulong)(uVar29 != uVar14) * (uVar29 ^ uVar7);
-  if (CARRY4(uVar10 & 0xffff0000,uVar10 & 0xffff0000)) {
-    uVar20 = (ulong)uVar34;
+  uVar35 = (uint6)(uVar34 >> 0x11);
+  bVar19 = (byte)((uVar44 >> 1) >> 8);
+  uVar38 = uVar52 ^ (ulong)(uVar52 != uVar27) * (uVar52 ^ uVar45);
+  if (CARRY4(uVar58 & 0xffff0000,uVar58 & 0xffff0000)) {
+    uVar38 = (ulong)uVar55 << 0x10;
   }
-  iVar42 = uVar47 << 1;
-  bVar45 = (byte)iVar42;
-  bVar21 = (byte)(uVar39 >> 0x18) >> 7;
-  cVar18 = (char)lVar6;
-  uVar3 = (short)uVar7 >> 7;
-  uVar14 = uVar7 & 0xffffffffffff0000 | (ulong)uVar3;
-  uVar37 = 0;
-  if (uVar26 != 0) {
-    for (; (uVar26 >> uVar37 & 1) == 0; uVar37 = uVar37 + 1) {
+  iVar13 = (CONCAT22((ushort)(uVar44 >> 0x11),CONCAT11(bVar19 >> 1 | bVar19 << 7,bVar41)) |
+           (uint)uVar55 * 0x10000) << 1;
+  bVar19 = (byte)(uVar35 >> 8) >> 7;
+  cVar62 = (char)lVar26;
+  sVar25 = (short)uVar45 >> 7;
+  uVar14 = CONCAT62((int6)(uVar45 >> 0x10),sVar25);
+  sVar24 = 0;
+  if (uVar43 != 0) {
+    for (; (uVar43 >> sVar24 & 1) == 0; sVar24 = sVar24 + 1) {
     }
   }
-  bVar31 = (byte)((uint)iVar42 >> 8) & (byte)uVar20;
-  uVar15 = uVar20 & 0x3fff | 0xc0;
-  uVar46 = (ushort)(byte)uVar15;
-  uVar4 = (ushort)uVar15;
-  uVar46 = uVar4 / uVar46 & 0xff | uVar4 % uVar46 << 8;
-  uVar4 = (short)lVar6 - 1;
-  uVar10 = (uint)uVar4;
-  bVar30 = (byte)uVar3 >> 3 | (byte)uVar3 << 5;
-  uVar44 = (ulong)((uint)lVar6 & 0xffff0000 | uVar10 | 0xc0000000);
-  uVar15 = (ulong)(((uint)uVar16 & 0xffff0000 | (uint)uVar26) * -0x33fa521e & 0x3fffffff) << 0x20 |
-           uVar20 & 0xffff0000 | (ulong)uVar46;
-  uVar29 = uVar15 % uVar44;
-  bVar17 = bVar45 & 7 | bVar21;
-  bVar19 = (byte)(uVar13 >> 8);
-  uVar9 = uVar38 & 0xffffff00 | (uint)(byte)((char)uVar38 + 0x19) | 0x100946f;
-  uVar7 = uVar29 & 0x5955d500 | (ulong)(byte)(((byte)uVar29 & 0x15) - 0x26);
-  uVar29 = uVar14 & 0xffffff00 | (ulong)bVar30;
-  if ((ushort)(uVar3 & 0xff00 | (ushort)bVar30) != 0) {
-    uVar29 = uVar35 & 0xffffffffffff0000 | (ulong)uVar37;
+  bVar40 = (byte)((uint)iVar13 >> 8) & (byte)uVar38;
+  uVar27 = uVar38 & 0xffffffffffff3fff | 0xc0;
+  uVar55 = (ushort)(byte)uVar27;
+  uVar12 = (ushort)uVar27;
+  uVar52 = CONCAT62((int6)((uVar38 & 0xffffffffffff3fff) >> 0x10),
+                    CONCAT11((char)(uVar12 % uVar55),(char)(uVar12 / uVar55)));
+  sVar50 = (short)lVar26 + -1;
+  uVar39 = CONCAT62((int6)((ulong)lVar26 >> 0x10),sVar50);
+  bVar41 = (byte)sVar25;
+  uVar34 = CONCAT71((int7)((ulong)uVar14 >> 8),bVar41 >> 3 | bVar41 << 5);
+  uVar58 = (uint)uVar39;
+  uVar45 = (ulong)(uVar58 | 0xc0000000);
+  uVar38 = (ulong)((int)CONCAT62((int6)(uVar59 >> 0x10),uVar43) * -0x33fa521e & 0x3fffffff) << 0x20
+           | uVar52 & 0xffffffff;
+  bVar41 = (byte)iVar13 & 7 | bVar19;
+  bVar49 = (byte)(uVar15 >> 8);
+  uVar59 = (ulong)CONCAT31(uVar9,(char)uVar22 + '\x19') | 0x100946f;
+  uVar27 = uVar38 % uVar45 & 0x5955d515;
+  uVar28 = CONCAT71((int7)(uVar27 >> 8),(char)uVar27 + -0x26);
+  uVar27 = uVar34 & 0xffffffff;
+  if ((short)uVar34 != 0) {
+    uVar27 = CONCAT62((int6)(uVar16 >> 0x10),sVar24);
   }
-  uVar47 = ((uVar28 & 0xffff0000 | uVar47 & 0x7fff8000 | uVar34) << 1 |
-           (uint)CONCAT11(bVar31 << 2 | bVar31 >> 7,bVar45 | bVar21)) & ~(1 << ((uint)uVar7 & 0x1f))
+  uVar64 = CONCAT22((short)((uint)iVar13 >> 0x10),
+                    CONCAT11(bVar40 << 2 | bVar40 >> 7,(byte)iVar13 | bVar19)) &
+           ~(1 << ((uint)uVar28 & 0x1f));
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = (ulong)uVar32 | 0xc000000000000000;
+  auVar3._8_8_ = uVar28;
+  auVar3._0_8_ = uVar38 / uVar45 << 0x35;
+  uVar9 = (uint3)((ushort)((ulong)lVar26 >> 0x10) & 0xff) | (uint3)uVar39 & 0xff00 |
+          (uint3)((uVar58 << 0x18) >> 8);
+  uVar45 = 1L << ((ulong)uVar64 & 0x3f) ^ 0x3fffffffffffffff;
+  iVar13 = (int)CONCAT62(uVar35,CONCAT11(bVar49 >> bVar41 | bVar49 << 8 - bVar41,(char)uVar15)) +
+           0x4f8c61d1;
+  uVar42 = (undefined7)(uVar59 >> 8);
+  bVar41 = (char)uVar59 << 1;
+  uVar43 = (short)(ushort)uVar32 >> 1;
+  sVar24 = SUB162(auVar3 % auVar1,0);
+  uVar44 = CONCAT31((int3)((uint)((int)uVar52 + (int)uVar14) >> 8),(char)sVar50 != 'j') | 0x1ff38473
   ;
-  auVar1 = (CONCAT88(uVar7,uVar15 / uVar44 << 0x35) & (undefined  [16])0xffffffffffffffff) %
-           ZEXT816((ulong)uVar43 | 0xc000000000000000);
-  uVar15 = 1 << ((ulong)uVar47 & 0x3f) ^ 0x3fffffffffffffff;
-  uVar13 = ((uint)uVar39 & 0xffff0000 |
-           (uint)CONCAT11(bVar19 >> bVar17 | bVar19 << 8 - bVar17,(char)uVar13)) + 0x4f8c61d1;
-  bVar21 = (char)uVar9 << 1;
-  uVar3 = (short)(ushort)uVar43 >> 1;
-  sVar12 = SUB162(auVar1,0);
-  uVar10 = ((uint)lVar6 & 0xff0000) >> 8 | (uVar10 & 0xff00) << 8 | uVar10 << 0x18;
-  uVar24 = ((uint)uVar20 & 0xffff0000 | (uint)uVar46) + (int)uVar14 & 0xffffff00 |
-           (uint)((char)uVar4 != 'j') | 0x1ff38473;
-  uVar20 = ~CONCAT62(SUB166(auVar1 >> 0x10,0),
-                     (short)((uint)((int)(short)((cVar18 - sVar12) - (ushort)((uVar43 & 1) != 0)) *
-                                   (int)sVar12) >> 0x10));
-  uVar28 = bVar21 & 0x1f;
-  bVar45 = ((byte)uVar47 & 0x1f) % 0x11;
-  sVar12 = (short)uVar15;
-  uVar37 = (ushort)(short)cVar18 >> 0xc | (short)cVar18 << 4;
-  uVar34 = uVar9 & 0xffffff00 | (uint)(bVar21 & (byte)uVar20);
-  uVar28 = ~(((uint)uVar15 & 0xffff0000 |
-             (uint)(ushort)(sVar12 << bVar45 |
-                           (ushort)(CONCAT12((uVar24 >> uVar28 & 1) != 0,sVar12) >> 0x11 - bVar45)))
-            & uVar24 & ~(1 << uVar28));
-  uVar14 = ((ulong)(ushort)((short)(char)(uVar13 >> 8) & 0xffU |
-                           (ushort)(byte)(((uVar34 & 0x9db) == 0) << 6 |
-                                         ((POPCOUNT((ushort)uVar34 & 0xdb) & 1U) == 0) << 2) << 8) |
-           0x200) * uVar20;
-  uVar20 = (ulong)((uVar13 & 0x7fff8000) << 1 |
-                  (uint)(ushort)((short)uVar20 + 0xe6 + ((short)cVar18 + uVar37 + 1) * 4)) << 1;
-  uVar15 = uVar20 | ((ulong)uVar10 << 0x35) >> 0x3f;
-  uVar35 = (ulong)(uVar10 >> 0xb) + 1;
-  bVar21 = (byte)uVar15;
-  bVar45 = (byte)(uVar47 - uVar34) | bVar21;
-  uVar5 = (uVar5 & 0xffff | (uint)(ushort)(cVar18 >> 7) << 0x10) ^ 0xc265e644;
-  iVar42 = (int)(short)uVar14 * (int)(short)uVar37;
-  uVar26 = (ushort)iVar42;
-  uVar13 = (uint)(uVar35 << (bVar45 & 0x1f)) | (uint)(uVar35 >> 0x21 - (bVar45 & 0x1f));
-  lVar6 = uVar29 << (bVar45 & 0x3f);
-  uVar10 = (uVar47 - uVar34 & 0xffffff00 | (uint)bVar45) << (bVar45 & 0x1f);
-  bVar45 = (byte)((ulong)(ushort)((uint)iVar42 >> 0x10) >> 8);
-  uVar14 = uVar14 & 0xffffffffffff0000 | (ulong)(ushort)(uVar26 & 0xff | (ushort)bVar45 << 8);
-  if ((POPCOUNT(bVar45 + (char)((ulong)uVar26 >> 8)) & 1U) != 0) {
-    uVar28 = uVar28 & 0xffff0000 | (uint)(ushort)lVar6;
+  uVar38 = ~CONCAT62(SUB166(auVar3 % auVar1,2),
+                     (short)((uint)((int)(short)((cVar62 - sVar24) - (ushort)((uVar32 & 1) != 0)) *
+                                   (int)sVar24) >> 0x10));
+  uVar58 = (uint)CONCAT71(uVar42,bVar41) & 0x1f;
+  bVar19 = ((byte)uVar64 & 0x1f) % 0x11;
+  sVar24 = (short)uVar45;
+  uVar55 = (ushort)(short)cVar62 >> 0xc | (short)cVar62 << 4;
+  uVar16 = CONCAT71(uVar42,bVar41 & (byte)uVar38);
+  uVar58 = ~((uint)CONCAT62((int6)(uVar45 >> 0x10),
+                            sVar24 << bVar19 |
+                            (ushort)(CONCAT12((uVar44 >> uVar58 & 1) != 0,sVar24) >> 0x11 - bVar19))
+            & uVar44 & ~(1 << uVar58));
+  lVar26 = ((ulong)CONCAT11(((uVar16 & 0x9db) == 0) << 6 |
+                            ((POPCOUNT((ushort)uVar16 & 0xdb) & 1U) == 0) << 2,
+                            (char)((uint)iVar13 >> 8)) | 0x200) * uVar38;
+  iVar57 = uVar64 - (int)uVar16;
+  uVar38 = (ulong)CONCAT22((short)((uint)(iVar13 * 2) >> 0x10),
+                           (short)uVar38 + 0xe6 + ((short)cVar62 + uVar55 + 1) * 4) << 1;
+  bVar41 = (byte)uVar38 | (byte)(((ulong)uVar9 << 0x3d) >> 0x3f);
+  uVar52 = (ulong)(uVar9 >> 3) + 1;
+  bVar19 = (byte)iVar57 | bVar41;
+  uVar44 = CONCAT22(cVar62 >> 7,(short)uVar15) ^ 0xc265e644;
+  iVar13 = (int)(short)lVar26 * (int)(short)uVar55;
+  uVar64 = (uint)(uVar52 << (bVar19 & 0x1f)) | (uint)(uVar52 >> 0x21 - (bVar19 & 0x1f));
+  lVar33 = uVar27 << (bVar19 & 0x3f);
+  iVar57 = CONCAT31((int3)((uint)iVar57 >> 8),bVar19) << (bVar19 & 0x1f);
+  cVar29 = (char)((uint)iVar13 >> 0x18);
+  lVar26 = CONCAT62((int6)((ulong)lVar26 >> 0x10),CONCAT11(cVar29,(char)iVar13));
+  if ((POPCOUNT(cVar29 + (char)((uint)iVar13 >> 8)) & 1U) != 0) {
+    uVar58 = CONCAT22((short)(uVar58 >> 0x10),(short)lVar33);
   }
-  uVar35 = (ulong)(uVar10 & 0xffff0000 | (uint)(ushort)((short)uVar10 + 0x2b9e));
-  uVar10 = (uint)lVar6 ^ uVar13;
-  uVar47 = (int)(((uVar43 & 0xffff0000 | (uint)uVar3) & ~(uint)(1 << ((ulong)uVar3 & 0x3f))) +
-                0x747e84d7) >> 1;
-  lVar6 = 0x3f;
-  if (uVar47 != 0) {
-    for (; uVar47 >> lVar6 == 0; lVar6 = lVar6 + -1) {
+  uVar15 = (ulong)CONCAT22((short)((uint)iVar57 >> 0x10),(short)iVar57 + 0x2b9e);
+  uVar60 = (int)(((uint)CONCAT62((int6)(((ulong)uVar32 | 0xc000000000000000) >> 0x10),uVar43) &
+                 ~(uint)(1L << ((ulong)uVar43 & 0x3f))) + 0x747e84d7) >> 1;
+  lVar17 = 0x3f;
+  if (uVar60 != 0) {
+    for (; uVar60 >> lVar17 == 0; lVar17 = lVar17 + -1) {
     }
   }
-  auVar1 = SEXT816((long)uVar14) * SEXT816((long)(ulong)uVar5);
-  uVar14 = uVar14 * uVar5;
-  bVar45 = (byte)uVar14;
-  if (!SCARRY8((ulong)uVar28,(ulong)uVar28)) {
-    uVar10 = (uint)uVar15;
+  auVar4 = SEXT816(lVar26) * SEXT816((long)(ulong)uVar44);
+  lVar26 = lVar26 * (ulong)uVar44;
+  bVar19 = (byte)lVar26;
+  uVar27 = (ulong)((uint)lVar33 ^ uVar64);
+  if (!SCARRY8((ulong)uVar58,(ulong)uVar58)) {
+    uVar27 = uVar38 & 0xffffffff;
   }
-  uVar15 = (ulong)(CONCAT18(SEXT816(lVar6 * -0x3e42a425) != SEXT816(lVar6) * SEXT416(-0x3e42a425),
-                            uVar35) >> 0x1b);
-  bVar17 = (byte)uVar15;
-  uVar24 = (uint)uVar15;
-  uVar29 = (uVar13 - uVar35) - 0x264f52ba;
-  bVar31 = SUB161(auVar1 >> 0x40,0);
-  uVar28 = (uVar5 & 0xffffff00 | (uint)(byte)((char)uVar5 >> bVar17)) >> 1;
-  uVar20 = uVar20 & 0xffffffffffffff00 | (ulong)(bVar21 & bVar31);
-  uVar20 = uVar20 << bVar17 | uVar20 >> 0x40 - bVar17;
-  uVar5 = (uint)uVar20 & 0xffffff00 | (uint)(byte)((char)uVar20 - 1);
-  iVar42 = 0;
-  if (uVar5 != 0) {
-    for (; (uVar5 >> iVar42 & 1) == 0; iVar42 = iVar42 + 1) {
+  uVar52 = (ulong)(CONCAT18(SEXT816(lVar17 * -0x3e42a425) != SEXT816(lVar17) * SEXT416(-0x3e42a425),
+                            uVar15) >> 0x1b);
+  bVar40 = (byte)uVar52;
+  uVar37 = (uint)uVar52;
+  uVar45 = (uVar64 - uVar15) - 0x264f52ba;
+  bVar49 = auVar4[8];
+  uVar58 = CONCAT31((int3)(uVar44 >> 8),(char)uVar44 >> bVar40) >> 1;
+  uVar38 = CONCAT71((int7)(uVar38 >> 8),bVar41 & bVar49);
+  uVar38 = uVar38 << bVar40 | uVar38 >> 0x40 - bVar40;
+  iVar13 = 0;
+  uVar22 = (uint)CONCAT71((int7)(uVar38 >> 8),(char)uVar38 + -1);
+  if (uVar22 != 0) {
+    for (; (uVar22 >> iVar13 & 1) == 0; iVar13 = iVar13 + 1) {
     }
   }
-  lVar23 = SUB168(auVar1 >> 0x40,0) * 0x52c811a0;
-  uVar5 = CONCAT22((undefined2)(cVar18 >> 7),uVar37) & 0xffffff00 |
-          (uint)(byte)((byte)uVar37 << (bVar17 & 7) | (byte)uVar37 >> 8 - (bVar17 & 7));
-  cVar18 = (char)lVar23;
-  lVar6 = -(uVar14 & 0xffffffffffff0000 |
-            (ulong)CONCAT11(!SBORROW8((ulong)uVar13,uVar35),bVar45) & 0xffffffffffffff00 |
-           (ulong)(bVar45 | bVar31));
-  uVar20 = (ulong)uVar5;
-  if ((uint)(int)(short)uVar5 < 0x52c4cc6c) {
-    uVar20 = uVar29;
+  lVar33 = auVar4._8_8_ * 0x52c811a0;
+  uVar22 = CONCAT31((int3)(CONCAT22(cVar62 >> 7,uVar55) >> 8),
+                    (byte)uVar55 << (bVar40 & 7) | (byte)uVar55 >> 8 - (bVar40 & 7));
+  cVar62 = (char)lVar33;
+  lVar26 = -CONCAT71((int7)(CONCAT62((int6)((ulong)lVar26 >> 0x10),
+                                     CONCAT11(!SBORROW8((ulong)uVar64,uVar15),bVar19)) >> 8),
+                     bVar19 | bVar49);
+  uVar38 = (ulong)uVar22;
+  if ((uint)(int)(short)uVar22 < 0x52c4cc6c) {
+    uVar38 = uVar45;
   }
-  uVar35 = (ulong)(uVar28 & 0xffff | 0x61320000) | 0xffffffffefbcc356;
+  uVar15 = (ulong)CONCAT22((ushort)(uVar44 >> 0x11),(ushort)uVar58) | 0xffffffffefbcc356;
   uVar14 = 0;
-  if ((POPCOUNT(uVar35 & 0xff) & 1U) != 0) {
-    uVar14 = (ulong)(uVar10 & 0xffffff00 | uVar10 >> 1 & 0x7f);
+  if ((POPCOUNT(uVar15 & 0xff) & 1U) != 0) {
+    uVar14 = CONCAT71((int7)(uVar27 >> 8),(byte)uVar27 >> 1);
   }
-  uVar26 = (ushort)uVar28 & 0xff;
-  uVar14 = uVar14 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar14 << 10 | uVar26 >> 6);
-  uVar13 = (uint)uVar29;
-  uVar10 = (uint)lVar6 & 0xffff0000 | (uint)(ushort)((short)lVar6 - (short)uVar35);
-  iVar42 = 0x1f;
-  if ((uVar15 & 0xff) != 0) {
-    for (; uVar24 >> iVar42 == 0; iVar42 = iVar42 + -1) {
+  uVar55 = (ushort)uVar58 & 0xff;
+  lVar17 = CONCAT62((int6)((ulong)uVar14 >> 0x10),(short)uVar14 << 10 | uVar55 >> 6);
+  uVar64 = (uint)uVar45;
+  iVar13 = 0x1f;
+  if ((uVar52 & 0xff) != 0) {
+    for (; uVar37 >> iVar13 == 0; iVar13 = iVar13 + -1) {
     }
   }
-  sVar12 = 0xf;
-  if ((uVar28 & 0xff) != 0) {
-    for (; uVar26 >> sVar12 == 0; sVar12 = sVar12 + -1) {
+  sVar24 = 0xf;
+  if ((uVar58 & 0xff) != 0) {
+    for (; uVar55 >> sVar24 == 0; sVar24 = sVar24 + -1) {
     }
   }
-  uVar46 = CONCAT11((char)((ulong)lVar23 >> 8) * '\x02',cVar18) + sVar12 * 4;
-  uVar29 = uVar35 & 0xffffffffffff0000 | (ulong)uVar46;
-  bVar45 = ((char)(uVar24 >> 1) + '\v') -
-           (SEXT816((long)(uVar29 * 0x725232a3)) != SEXT816((long)uVar29) * SEXT416(0x725232a3));
-  uVar15 = (ulong)(uVar24 << 0x1f) | (ulong)bVar45;
-  uVar28 = (uVar28 & 0xffff) << 1;
-  uVar37 = (ushort)uVar28;
-  uVar4 = uVar37 | 1;
-  uVar5 = uVar10 << (bVar45 & 0x1f) | uVar10 >> 0x20 - (bVar45 & 0x1f);
-  uVar35 = (ulong)uVar5;
-  uVar47 = ((((uVar9 & 0xffff0000 | (uint)(ushort)((ushort)uVar34 >> 1)) + uVar47) * 2 ^ 0x3a01bc8d)
-           & (uVar13 << 2 | uVar13 >> 0x1e)) >> (bVar45 & 0x1f) |
-           (int)uVar15 << 0x20 - (bVar45 & 0x1f);
-  uVar15 = uVar15 << (bVar45 & 0x3f);
-  bVar45 = (char)uVar15 + (char)(uVar15 >> 8);
-  uVar3 = (ushort)uVar15 & 0xff00 | (ushort)bVar45;
-  bVar45 = bVar45 & 0xf;
-  uVar15 = uVar15 & 0xffffffffffff0000;
-  uVar10 = ((uint)uVar29 & 0xffff0000 | (uint)(ushort)(uVar46 + (byte)((char)uVar26 << 1 | 1))) >> 1
-  ;
-  uVar26 = (uVar3 << bVar45 | uVar3 >> 0x10 - bVar45) + 0x318a;
-  uVar29 = (uVar47 * -0x2fc71c46 | uVar47 >> 0x1f) - uVar14;
-  sVar12 = 0xf;
-  if (uVar4 != 0) {
-    for (; uVar4 >> sVar12 == 0; sVar12 = sVar12 + -1) {
+  sVar24 = CONCAT11((char)((ulong)lVar33 >> 8) * '\x02',cVar62) + sVar24 * 4;
+  uVar54 = (undefined6)(uVar15 >> 0x10);
+  lVar33 = CONCAT62(uVar54,sVar24);
+  bVar19 = ((char)(uVar37 >> 1) + '\v') -
+           (SEXT816(lVar33 * 0x725232a3) != SEXT816(lVar33) * SEXT416(0x725232a3));
+  uVar44 = CONCAT31((int3)((uVar37 << 0x1f) >> 8),bVar19);
+  iVar13 = (uVar58 & 0xffff) << 1;
+  uVar12 = (ushort)iVar13;
+  uVar63 = uVar12 | 1;
+  uVar58 = (uint)CONCAT62((int6)((ulong)lVar26 >> 0x10),(short)lVar26 - (short)uVar15);
+  uVar58 = uVar58 << (bVar19 & 0x1f) | uVar58 >> 0x20 - (bVar19 & 0x1f);
+  uVar15 = (ulong)uVar58;
+  uVar64 = ((((int)CONCAT62((int6)(uVar59 >> 0x10),(ushort)uVar16 >> 1) + uVar60) * 2 ^ 0x3a01bc8d)
+           & (uVar64 << 2 | uVar64 >> 0x1e)) >> (bVar19 & 0x1f) | uVar44 << 0x20 - (bVar19 & 0x1f);
+  lVar26 = (ulong)uVar44 << (bVar19 & 0x3f);
+  bVar19 = (char)lVar26 + (char)((ulong)lVar26 >> 8);
+  bVar41 = bVar19 & 0xf;
+  uVar43 = (ushort)CONCAT71((int7)((ulong)lVar26 >> 8),bVar19);
+  uVar23 = (undefined6)((ulong)lVar26 >> 0x10);
+  cVar29 = (char)(uVar58 >> 8) >> 7;
+  uVar58 = (uint)CONCAT62(uVar54,sVar24 + (ushort)(byte)((char)uVar55 << 1 | 1)) >> 1;
+  uVar43 = (uVar43 << bVar41 | uVar43 >> 0x10 - bVar41) + 0x318a;
+  uVar16 = CONCAT62(uVar23,uVar43);
+  uVar27 = (ulong)(uVar64 * -0x2fc71c46 | uVar64 >> 0x1f) - lVar17;
+  sVar24 = 0xf;
+  if (uVar63 != 0) {
+    for (; uVar63 >> sVar24 == 0; sVar24 = sVar24 + -1) {
     }
   }
-  uVar7 = uVar29 ^ (ulong)(uVar35 == uVar29) * (uVar29 ^ (uVar15 | uVar26));
-  uVar35 = uVar35 ^ (ulong)(uVar35 != uVar29) * (uVar35 ^ uVar7);
-  bVar45 = (byte)uVar26;
-  uVar44 = uVar20 & 0xffffffffffff0000 |
-           (ulong)(ushort)((ushort)uVar20 >> (bVar45 & 0xf) |
-                          (ushort)uVar20 << 0x10 - (bVar45 & 0xf));
-  uVar29 = uVar35 >> (bVar45 & 0x3f) | uVar35 << 0x40 - (bVar45 & 0x3f);
-  uVar14 = uVar14 ^ 0x81;
-  uVar34 = (uint)(uVar37 >> 6);
-  uVar24 = (int)uVar7 + uVar47;
-  uVar20 = (ulong)uVar34 & 0x3f;
-  uVar35 = 1 << uVar20;
-  uVar41 = uVar14 ^ uVar35;
-  uVar39 = (ulong)((uint)((CONCAT14((uVar14 >> uVar20 & 1) != 0,uVar10) | 0x80000000) >> 5) |
-                  uVar10 << 0x1c) & (uVar15 | uVar26);
-  uVar46 = (short)uVar41 << (bVar45 & 0x1f);
-  bVar19 = cVar18 + '%' +
-           ((byte)((long)((ulong)(ushort)((short)uVar5 >> 0xf) ^ 0x100) >> 1) ^ bVar45);
-  uVar26 = uVar26 >> 1;
-  uVar7 = uVar15 | uVar26;
-  uVar3 = (ushort)uVar24;
-  uVar13 = (int)(short)uVar29 * (int)(short)uVar3;
-  uVar5 = (uint)uVar29;
-  uVar37 = ~(uVar46 + ~(ushort)uVar39);
-  uVar4 = uVar37 << 6 | (ushort)(CONCAT12((int)(short)uVar13 != uVar13,uVar37) >> 0xb);
-  uVar47 = uVar47 & 0xffff0000 | (uint)((ushort)((short)uVar47 << (bVar45 & 0x1f)) >> 1);
-  uVar9 = (uint)uVar7;
-  uVar10 = uVar47 - uVar9;
-  uVar16 = (ulong)(uVar28 & 0xffff0000 | uVar34 & 0xffffff00 |
-                  (uint)((SBORROW4(uVar47,uVar9) != false) == (int)uVar10 < 0));
-  uVar28 = (uVar5 & 0xffff0000 | uVar13 & 0xff00 | 0xe2) >> 1;
-  uVar20 = (ulong)uVar10 + 0x8e785eaddc7459db;
-  lVar23 = uVar20 + (uVar3 < uVar4);
-  bVar17 = (byte)uVar28;
-  bVar31 = (byte)(uVar28 >> 8);
-  bVar45 = (byte)uVar26 >> 1;
-  uVar29 = uVar16 | 0xc000000000000000;
-  bVar21 = bVar45 & 0xf;
-  uVar37 = SUB162((ZEXT116(0x7187a152238ba624 < (ulong)uVar10 ||
-                           CARRY8(uVar20,(ulong)(uVar3 < uVar4))) << 0x40 |
+  uVar45 = uVar27 ^ (ulong)(uVar15 == uVar27) * (uVar27 ^ uVar16);
+  uVar15 = uVar15 ^ (ulong)(uVar15 != uVar27) * (uVar15 ^ uVar45);
+  bVar19 = (byte)uVar43;
+  uVar34 = CONCAT62((int6)(uVar38 >> 0x10),
+                    (ushort)uVar38 >> (bVar19 & 0xf) | (ushort)uVar38 << 0x10 - (bVar19 & 0xf));
+  uVar52 = uVar15 >> (bVar19 & 0x3f) | uVar15 << 0x40 - (bVar19 & 0x3f);
+  uVar15 = CONCAT71((int7)((ulong)lVar17 >> 8),(char)(uVar55 >> 6)) ^ 0x81;
+  uVar60 = CONCAT22((short)((uint)iVar13 >> 0x10),uVar12 >> 6);
+  iVar57 = (int)uVar45 + uVar64;
+  uVar38 = (ulong)uVar60 & 0x3f;
+  uVar27 = uVar15 ^ 1L << uVar38;
+  uVar16 = ((uint)((CONCAT14((uVar15 >> uVar38 & 1) != 0,uVar58) | 0x80000000) >> 5) |
+           uVar58 << 0x1c) & uVar16;
+  uVar35 = (uint6)(uVar27 >> 0x10);
+  sVar24 = (short)uVar27 << (bVar19 & 0x1f);
+  bVar31 = cVar62 + '%' + ((byte)((long)((ulong)CONCAT11(cVar29,cVar29) ^ 0x100) >> 1) ^ bVar19);
+  uVar15 = CONCAT62(uVar23,uVar43 >> 1);
+  uVar12 = (ushort)iVar57;
+  uVar44 = (int)(short)uVar52 * (int)(short)uVar12;
+  uVar55 = ~(sVar24 + ~(ushort)uVar16);
+  uVar63 = uVar55 << 6 | (ushort)(CONCAT12((int)(short)uVar44 != uVar44,uVar55) >> 0xb);
+  iVar13 = CONCAT22((short)(uVar64 >> 0x10),(ushort)((short)uVar64 << (bVar19 & 0x1f)) >> 1);
+  uVar37 = (uint)uVar15;
+  uVar58 = iVar13 - uVar37;
+  uVar59 = (ulong)CONCAT31((int3)(uVar60 >> 8),(SBORROW4(iVar13,uVar37) != false) == (int)uVar58 < 0
+                          );
+  uVar64 = (uint)CONCAT71((int7)(CONCAT62((int6)(uVar52 >> 0x10),(short)uVar44) >> 8),0xe2) >> 1;
+  uVar38 = (ulong)uVar58 + 0x8e785eaddc7459db;
+  lVar33 = uVar38 + (uVar12 < uVar63);
+  bVar40 = (byte)uVar64;
+  bVar49 = (byte)(uVar64 >> 8);
+  bVar19 = (byte)(uVar43 >> 1) >> 1;
+  uVar27 = uVar59 | 0xc000000000000000;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = uVar27;
+  bVar41 = bVar19 & 0xf;
+  uVar55 = SUB162((ZEXT116(0x7187a152238ba624 < (ulong)uVar58 ||
+                           CARRY8(uVar38,(ulong)(uVar12 < uVar63))) << 0x40 |
                   ZEXT816(0x8e785eaddc7459db)) >> 0x26,0);
-  uVar14 = (uVar15 | (ulong)uVar26 & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar45 | (bVar31 < bVar17) << 7)) << 0x14;
-  uVar15 = uVar14 | uVar35 >> 0x2c;
-  lVar6 = uVar15 + 0x3d7c25ce + (uVar39 & 0xffffffffffff0000 | (ulong)uVar46) * 8;
-  bVar45 = SUB161((ZEXT416((uVar13 >> 0x10) + 1) << 0x40 |
-                  ZEXT416((uVar5 & 0xfffe0000) >> 1 | (uint)CONCAT11(bVar31 - bVar17,bVar17))) %
-                  ZEXT816(uVar29) >> 8,0);
-  uVar28 = (uint)lVar6 & 0xffff0000 | (uint)(ushort)((ushort)(byte)lVar6 * (ushort)bVar45);
-  uVar20 = uVar44 - 0x45c02fef;
-  if (0x45c02fee < uVar44) {
-    uVar15 = uVar14 | (uVar41 & 0xf000000000000000) >> 0x2c |
-             (ulong)(ushort)((((ushort)lVar23 & 0xff00 | (ushort)(byte)((char)lVar23 + 0x3e)) &
-                             ~(ushort)(1 << (uVar13 & 0x1f))) * 0x4513);
+  uVar45 = CONCAT71((int7)(uVar15 >> 8),bVar19 | (bVar49 < bVar40) << 7) << 0x14 |
+           (ulong)(uVar35 >> 0x1c);
+  lVar26 = uVar45 + 0x3d7c25ce + CONCAT62((int6)(uVar16 >> 0x10),sVar24) * 8;
+  bVar19 = SUB161((ZEXT416((uVar44 >> 0x10) + 1) << 0x40 |
+                  ZEXT416(CONCAT22((ushort)(uVar52 >> 0x10) >> 1,CONCAT11(bVar49 - bVar40,bVar40))))
+                  % auVar2,1);
+  uVar38 = uVar34 - 0x45c02fef;
+  if (0x45c02fee < uVar34) {
+    uVar45 = CONCAT62((int6)(uVar45 >> 0x10),
+                      ((ushort)CONCAT71((int7)((ulong)lVar33 >> 8),(char)lVar33 + '>') &
+                      ~(ushort)(1 << (uVar44 & 0x1f))) * 0x4513);
   }
-  uVar46 = 0xf;
-  if (bVar19 != 0) {
-    for (; bVar19 >> uVar46 == 0; uVar46 = uVar46 - 1) {
+  uVar43 = 0xf;
+  if (bVar31 != 0) {
+    for (; bVar31 >> uVar43 == 0; uVar43 = uVar43 - 1) {
     }
   }
-  bVar17 = (byte)(uVar3 - uVar4);
-  uVar14 = 1 << (uVar16 & 0x3f) ^ 0x3fffffffffffff45;
-  bVar45 = (bVar19 - bVar45) - ((int)uVar28 < 0);
-  auVar1 = ZEXT416(uVar28 << 1 | 1) * ZEXT816(uVar15);
-  uVar27 = (ushort)((ulong)uVar46 << 1);
-  if ((ushort)uVar15 <= uVar27) {
-    uVar29 = uVar7;
+  bVar40 = (byte)(uVar12 - uVar63);
+  uVar16 = 1L << (uVar59 & 0x3f) ^ 0x3fffffffffffff45;
+  iVar13 = (int)CONCAT62((int6)((ulong)lVar26 >> 0x10),(ushort)(byte)lVar26 * (ushort)bVar19);
+  bVar19 = (bVar31 - bVar19) - (iVar13 < 0);
+  auVar5._8_8_ = 0;
+  auVar5._0_8_ = uVar45;
+  auVar5 = ZEXT416(iVar13 << 1 | 1) * auVar5;
+  uVar21 = (ushort)((ulong)uVar43 << 1);
+  if ((ushort)uVar45 <= uVar21) {
+    uVar27 = uVar15;
   }
-  bVar31 = (byte)(SUB162(auVar1,0) >> 6);
-  uVar35 = uVar15 & 0xffffffffffffff00 | (ulong)bVar31;
-  uVar29 = uVar29 >> (bVar31 & 0x3f);
-  sVar12 = (short)uVar20;
-  sVar32 = sVar12 * 5;
-  uVar10 = (uVar24 & 0xffff0000 | (ushort)(uVar3 - uVar4) & 0xffffff00 |
-           (uint)(byte)(bVar17 >> 1 | bVar17 << 7)) ^ 1 << ((uint)uVar14 & 0x1f);
-  uVar35 = uVar35 >> (bVar31 & 0x3f) | uVar35 << 0x40 - (bVar31 & 0x3f);
-  iVar42 = (int)sVar32 * (int)(short)uVar35;
-  uVar28 = (uint)uVar14 & 0xffff0000 |
-           (uint)(ushort)((((ushort)uVar14 >> 1 | (ushort)((uVar14 & 1) != 0) << 0xf) - sVar12) - 1)
-  ;
-  uVar3 = (ushort)(uVar35 & 0xffffffffffffff00) |
-          (ushort)(byte)((char)(byte)uVar35 >> ((byte)uVar35 & 0x1f));
-  uVar14 = 0x80;
-  sVar12 = 0xf;
-  if (uVar3 != 0) {
-    for (; uVar3 >> sVar12 == 0; sVar12 = sVar12 + -1) {
+  bVar49 = (byte)(auVar5._0_2_ >> 6);
+  uVar52 = CONCAT71((int7)(uVar45 >> 8),bVar49);
+  uVar27 = uVar27 >> (bVar49 & 0x3f);
+  sVar25 = (short)uVar38;
+  uVar58 = CONCAT31((int3)(CONCAT22((short)((uint)iVar57 >> 0x10),uVar12 - uVar63) >> 8),
+                    bVar40 >> 1 | bVar40 << 7) ^ 1 << ((uint)uVar16 & 0x1f);
+  uVar52 = uVar52 >> (bVar49 & 0x3f) | uVar52 << 0x40 - (bVar49 & 0x3f);
+  iVar13 = (int)(short)(sVar25 * 5) * (int)(short)uVar52;
+  sVar24 = 0xf;
+  uVar12 = (ushort)CONCAT71((int7)(uVar52 >> 8),(char)(byte)uVar52 >> ((byte)uVar52 & 0x1f));
+  if (uVar12 != 0) {
+    for (; uVar12 >> sVar24 == 0; sVar24 = sVar24 + -1) {
     }
   }
-  bVar17 = (byte)((uint)iVar42 >> 0x10);
-  uVar7 = ((uint)(ushort)(uVar37 << bVar21 | uVar37 >> 0x10 - bVar21) << 0x1c) - uVar29;
-  uVar37 = (ushort)((short)(ulong)(CONCAT18(CARRY4((uint)(byte)(bVar45 >> 1 | bVar45 * -0x80),
-                                                   (uint)uVar29),
-                                            (ulong)uVar46 << 1 & 0xffffffffffff0000 |
-                                            (ulong)(ushort)(uVar27 - (ushort)uVar15)) >> 9) + sVar12
-                   ) >> 1;
-  iVar11 = (int)CONCAT62((int6)((uVar35 & 0xffffffffffffff00) >> 0x10),0x8ba1) >> 1;
-  bVar45 = (byte)iVar11;
-  uVar47 = (uint)CONCAT62(SUB166(auVar1 >> 0x50,0),(short)((uint)iVar42 >> 0x10));
-  uVar20 = (ulong)((char)((byte)((uVar47 << (bVar45 & 0x1f)) >> 8) |
-                         (byte)((uVar47 >> 0x20 - (bVar45 & 0x1f)) >> 8)) < '\0') << 0x20 |
-           uVar20 & 0xffffffff;
-  uVar5 = (uint)(uVar20 << (bVar45 & 0x1f)) | (uint)(uVar20 >> 0x21 - (bVar45 & 0x1f));
-  uVar3 = (short)uVar10 * -0x2265;
-  bVar31 = (byte)uVar37;
-  bVar21 = bVar31 >> 1 |
-           ((ulong)(long)(int)CONCAT71((uint7)(CONCAT62(SUB166(auVar1 >> 0x10,0),sVar32) >> 8) &
-                                       0xffffffffffff00 | (uint7)(byte)((uint)iVar42 >> 8),
-                                       (short)iVar42 != iVar42) < (ulong)uVar5) << 7;
-  uVar13 = uVar37 & 0xffffff00;
-  uVar47 = uVar13 | 0x80000000 | (uint)bVar21;
-  if ((int)uVar28 < 0) {
-    uVar3 = (ushort)(uVar7 & 0xffffffff);
+  uVar43 = (short)(ulong)(CONCAT18(CARRY4((uint)(byte)(bVar19 >> 1 | bVar19 * -0x80),(uint)uVar27),
+                                   CONCAT62((int6)(((ulong)uVar43 << 1) >> 0x10),
+                                            uVar21 - (ushort)uVar45)) >> 9) + sVar24;
+  bVar40 = (byte)((uint)iVar13 >> 0x10);
+  uVar45 = ((uint)(ushort)(uVar55 << bVar41 | uVar55 >> 0x10 - bVar41) << 0x1c) - uVar27;
+  bVar19 = (byte)(uVar43 >> 9);
+  iVar57 = (int)CONCAT62((int6)(uVar52 >> 0x10),0x8ba1) >> 1;
+  bVar41 = (byte)iVar57;
+  uVar64 = (uint)CONCAT62(auVar5._10_6_,(short)((uint)iVar13 >> 0x10));
+  uVar38 = (ulong)((char)((byte)((uVar64 << (bVar41 & 0x1f)) >> 8) |
+                         (byte)((uVar64 >> 0x20 - (bVar41 & 0x1f)) >> 8)) < '\0') << 0x20 |
+           uVar38 & 0xffffffff;
+  uVar60 = (uint)(uVar38 << (bVar41 & 0x1f)) | (uint)(uVar38 >> 0x21 - (bVar41 & 0x1f));
+  sVar24 = (short)uVar58 * -0x2265;
+  bVar31 = (byte)(uVar43 >> 1);
+  bVar49 = bVar31 >> 1 |
+           ((ulong)(long)(int)CONCAT71((int7)(CONCAT62(auVar5._2_6_,(short)iVar13) >> 8),
+                                       (short)iVar13 != iVar13) < (ulong)uVar60) << 7;
+  uVar64 = CONCAT11(bVar19,bVar49) | 0x80000000;
+  uVar44 = (uint)CONCAT62((int6)(uVar16 >> 0x10),
+                          (((ushort)uVar16 >> 1 | (ushort)((uVar16 & 1) != 0) << 0xf) - sVar25) + -1
+                         );
+  if ((int)uVar44 < 0) {
+    sVar24 = (short)(uVar45 & 0xffffffff);
   }
-  uVar37 = CONCAT11((char)((uint)iVar11 >> 8),bVar17);
-  uVar10 = (uVar10 & 0xffff0000 | (uint)uVar3) + 1;
-  sVar12 = (uVar26 & 0xcc00 | (ushort)(((byte)uVar26 & 0xa2) >> 1)) + 0x274c;
-  if (sVar12 == 0) {
-    uVar14 = (ulong)uVar10;
+  uVar55 = CONCAT11((char)((uint)iVar57 >> 8),bVar40);
+  uVar58 = CONCAT22((short)(uVar58 >> 0x10),sVar24) + 1;
+  sVar24 = (short)CONCAT71((int7)((uVar15 & 0x6a96cca2) >> 8),(byte)(uVar15 & 0x6a96cca2) >> 1) +
+           0x274c;
+  uVar38 = 0x80;
+  if (sVar24 == 0) {
+    uVar38 = (ulong)uVar58;
   }
-  uVar26 = (short)uVar14 << 1 | (ushort)((short)uVar14 < 0);
-  uVar34 = (uVar10 - iVar11) - 1;
-  uVar10 = 0x1f;
-  if (uVar5 != 0) {
-    for (; uVar5 >> uVar10 == 0; uVar10 = uVar10 - 1) {
+  uVar43 = (short)uVar38 << 1 | (ushort)((short)uVar38 < 0);
+  uVar58 = (uVar58 - iVar57) - 1;
+  iVar13 = 0x1f;
+  if (uVar60 != 0) {
+    for (; uVar60 >> iVar13 == 0; iVar13 = iVar13 + -1) {
     }
   }
-  uVar10 = uVar10 & 0xffff0000 | (uint)(ushort)((short)uVar10 << 1 | (ushort)uVar29 >> 0xf);
-  uVar24 = (uint)(bVar17 >> (bVar45 & 0x1f)) | uVar47 << 0x20 - (bVar45 & 0x1f);
-  if ((uVar7 & 0xffffffff) <= (ulong)uVar47) {
-    uVar24 = uVar10;
+  uVar12 = (short)iVar13 << 1 | (ushort)uVar27 >> 0xf;
+  uVar22 = (uint)(bVar40 >> (bVar41 & 0x1f)) | uVar64 << 0x20 - (bVar41 & 0x1f);
+  if ((uVar45 & 0xffffffff) <= (ulong)uVar64) {
+    uVar22 = CONCAT22((short)((uint)iVar13 >> 0x10),uVar12);
   }
-  uVar47 = uVar24 + 0x4caf3bec + (uint)((int)uVar10 < 0);
-  uVar3 = (ushort)uVar7;
-  uVar27 = (ushort)uVar34;
-  uVar46 = uVar3 ^ (ushort)(uVar37 == uVar3) * (uVar3 ^ uVar27);
-  uVar37 = uVar37 ^ (ushort)(uVar37 != uVar3) * (uVar37 ^ uVar46);
-  uVar20 = uVar29 >> 0x25;
-  uVar3 = (ushort)iVar11;
-  bVar19 = bVar45 + (char)sVar12;
-  bVar17 = (byte)uVar37 & bVar19;
-  uVar37 = uVar37 & 0xff00;
-  if ((char)bVar17 < '\0') {
-    uVar29 = uVar29 & 0xffffffffffff0000 |
-             (ulong)(ushort)((ushort)(uVar10 << 1) | (ushort)CARRY1(bVar21,bVar21));
+  uVar64 = uVar22 + 0x4caf3bec + (uint)(iVar13 < 0);
+  uVar21 = (ushort)uVar45;
+  uVar48 = (ushort)uVar58;
+  uVar23 = (undefined6)(uVar45 >> 0x10);
+  uVar36 = uVar21 ^ (ushort)(uVar55 == uVar21) * (uVar21 ^ uVar48);
+  uVar55 = uVar55 ^ (ushort)(uVar55 != uVar21) * (uVar55 ^ uVar36);
+  uVar16 = uVar27 >> 0x25;
+  uVar21 = (ushort)iVar57;
+  bVar40 = (byte)(uVar55 >> 8);
+  bVar20 = (byte)(uVar21 + sVar24);
+  bVar11 = (byte)uVar55 & bVar20;
+  if ((char)bVar11 < '\0') {
+    uVar27 = CONCAT62((int6)(uVar27 >> 0x10),uVar12 << 1 | (ushort)CARRY1(bVar49,bVar49));
   }
-  uVar15 = (ulong)(uVar47 >> (bVar45 & 0x1f) | uVar47 << 0x20 - (bVar45 & 0x1f)) + 1;
-  uVar10 = ((int)(char)bVar45 << 0x1b | (uint)uVar20) + 0x900a1c66;
-  uVar35 = (ulong)((((uint)uVar41 & 0xffff0000 | (uint)(ushort)((short)uVar4 >> 0x17)) << 3 |
-                   uVar9 >> 0x1d) & 0xa886862b) | 1 << (uVar15 & 0x3f);
-  uVar33 = (ushort)(char)uVar10;
-  bVar21 = bVar19 ^ (bVar17 == bVar19) * (bVar19 ^ (byte)((ulong)uVar37 >> 8));
-  uVar4 = (ushort)uVar10;
-  uVar36 = (short)uVar29 - 1;
-  uVar20 = uVar15 & 0xffffffffffffff00;
-  if (!SCARRY2(uVar33,uVar3)) {
-    uVar34 = uVar34 & 0xffff0000 | uVar5 & 0xffff;
+  uVar15 = (ulong)(uVar64 >> (bVar41 & 0x1f) | uVar64 << 0x20 - (bVar41 & 0x1f)) + 1;
+  iVar13 = ((int)(char)bVar41 << 0x1b | (uint)uVar16) + 0x900a1c66;
+  uVar16 = (ulong)(((int)CONCAT62(uVar35,(short)uVar63 >> 0x17) << 3 | uVar37 >> 0x1d) & 0xa886862b)
+           | 1L << (uVar15 & 0x3f);
+  uVar12 = (ushort)(char)iVar13;
+  bVar49 = bVar20 ^ (bVar11 == bVar20) * (bVar20 ^ bVar40);
+  uVar55 = (ushort)iVar13;
+  uVar63 = (short)uVar27 - 1;
+  if (!SCARRY2(uVar12,uVar21)) {
+    uVar58 = CONCAT22((short)(uVar58 >> 0x10),(short)uVar60);
   }
-  uVar16 = (ulong)CONCAT22((short)uVar27 >> 0xf,(uVar27 + 0xd25a) - (ushort)CARRY2(uVar33,uVar3));
-  uVar28 = (uVar28 >> 1 | 0x80000000) & ~(1 << (uVar34 & 0x1f));
-  uVar39 = (ulong)((uVar34 & 0xffffff00 | (uint)(byte)((char)uVar34 + (char)uVar36)) >> 1 |
-                  uVar28 << 0x1f);
-  if (uVar16 == 0) {
-    uVar20 = uVar15 & 0xffffffffffff0000;
+  uVar59 = (ulong)CONCAT22((short)uVar48 >> 0xf,(uVar48 + 0xd25a) - (ushort)CARRY2(uVar12,uVar21));
+  uVar64 = (uVar44 >> 1 | 0x80000000) & ~(1 << (uVar58 & 0x1f));
+  uVar52 = uVar15 & 0xffffffffffffff00;
+  uVar45 = CONCAT44(0,CONCAT31((int3)(uVar58 >> 8),(char)uVar58 + (char)uVar63) >> 1 |
+                      uVar64 << 0x1f);
+  if (uVar59 == 0) {
+    uVar52 = uVar15 & 0xffffffffffff0000;
   }
-  auVar1 = ZEXT416((uint)(int)(short)(uVar37 | (byte)(bVar17 ^ (bVar17 != bVar19) *
-                                                               (bVar17 ^ bVar21)) | uVar27)) *
-           ZEXT816(uVar39);
-  uVar15 = (ulong)(uVar4 & 0xff | 0x2000);
-  uVar20 = (uVar20 << 1 & 0xffffffffffff0000 | (uVar20 << 1) >> 10 & 0x3f) + 0x5e3212a8;
-  if (0x14ad6ed9 < uVar28) {
-    uVar20 = uVar15;
+  auVar6._8_8_ = 0;
+  auVar6._0_8_ = uVar45;
+  auVar6 = ZEXT416((uint)(int)(short)(CONCAT11(bVar40,bVar11 ^ (bVar11 != bVar20) *
+                                                               (bVar11 ^ bVar49)) | uVar48)) *
+           auVar6;
+  uVar34 = (ulong)(uVar55 & 0xff | 0x2000);
+  uVar15 = CONCAT62((int6)((uVar52 << 1) >> 0x10),(ushort)(uVar52 << 1) >> 10) + 0x5e3212a8;
+  if (0x14ad6ed9 < uVar64) {
+    uVar15 = uVar34;
   }
-  return SUB168(auVar1,0) + uVar20 + (ulong)(uVar5 * 0x240c8c2a) + SUB168(auVar1 >> 0x40,0) +
-         (ulong)((int)((long)(uVar7 & 0xffffffffffff0000 |
-                             (ulong)(ushort)((uVar46 & 0xff00 | (ushort)(byte)((char)uVar46 << 1)) &
-                                            ~(1 << (uVar4 & 0xf)))) >> 1) + 0x1687f373U >> 1) +
-         uVar15 + (ulong)(uVar10 & 0xfff7ff00 |
-                         (uint)(byte)((char)uVar10 + bVar17 + 0x88 + bVar45 * '\x04')) +
-         (ulong)(uint)((int)uVar28 >> 0x15) + uVar39 * 2 +
-         CONCAT62((uint6)((ulong)(((long)(uVar14 & 0xffffffffffff0000 |
-                                          (ulong)uVar26 & 0xffffffffffffff00 |
-                                         (ulong)(byte)((char)uVar26 - 1)) >> 1) << 0x13) >> 0x11),
-                  (short)(uVar33 + uVar3) >> 0x18) +
-         (uVar29 & 0xffffffffffff0000 |
-         (ulong)(ushort)(uVar36 >> 1 | (ushort)((uVar36 & 1) != 0) << 0xf)) + (ulong)uVar5 +
-         (uVar35 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar35 << (bVar21 & 0x1f))) +
-         (-uVar16 & 0xffffffffffff0000 | (ulong)(ushort)(uVar4 * 0x20b8)) +
-         (ulong)(((ushort)((ushort)uVar13 & 0xbfff | (ushort)(bVar31 & 0xfe)) | 0x80000000) +
-                0x20e916ad) + 0x40156acb01da3258;
+  return auVar6._0_8_ + uVar15 + (ulong)(uVar60 * 0x240c8c2a) + auVar6._8_8_ +
+         (ulong)((int)(CONCAT62(uVar23,(ushort)CONCAT71((int7)(CONCAT62(uVar23,uVar36) >> 8),
+                                                        (char)uVar36 << 1) & ~(1 << (uVar55 & 0xf)))
+                      >> 1) + 0x1687f373U >> 1) + uVar34 +
+         (ulong)(CONCAT31((int3)((uint)iVar13 >> 8),(char)iVar13 + bVar11 + 0x88 + bVar41 * '\x04')
+                & 0xfff7ffff) + (ulong)(uint)((int)uVar64 >> 0x15) + uVar45 * 2 +
+         CONCAT62((uint6)((ulong)((CONCAT71((int7)(CONCAT62((int6)(uVar38 >> 0x10),uVar43) >> 8),
+                                            (char)uVar43 + -1) >> 1) << 0x13) >> 0x11),
+                  (short)(uVar12 + uVar21) >> 0x18) +
+         CONCAT62((int6)(uVar27 >> 0x10),uVar63 >> 1 | (ushort)((uVar63 & 1) != 0) << 0xf) +
+         (ulong)uVar60 + CONCAT62((int6)(uVar16 >> 0x10),(short)uVar16 << (bVar49 & 0x1f)) +
+         CONCAT62((int6)(-uVar59 >> 0x10),uVar55 * 0x20b8) +
+         (ulong)((CONCAT11(bVar19,bVar31) & 0xffffbffe | 0x80000000) + 0x20e916ad) +
+         0x40156acb01da3258;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x004052bd)
-// WARNING: Removing unreachable block (ram,0x004050ae)
 // WARNING: Removing unreachable block (ram,0x004050cb)
+// WARNING: Removing unreachable block (ram,0x004050ae)
+// WARNING: Removing unreachable block (ram,0x004052bd)
 // WARNING: Removing unreachable block (ram,0x00405661)
-// WARNING: Removing unreachable block (ram,0x004051ea)
 // WARNING: Removing unreachable block (ram,0x004050e3)
-// WARNING: Removing unreachable block (ram,0x00405d50)
+// WARNING: Removing unreachable block (ram,0x004051ea)
 
 long log_size_10_var_004(void)
 
 {
   long lVar1;
-  int iVar2;
+  undefined auVar2 [16];
   undefined auVar3 [16];
-  uint3 uVar4;
-  char cVar5;
-  byte bVar6;
-  ushort uVar7;
-  ushort uVar8;
-  short sVar9;
-  char cVar14;
-  uint uVar10;
-  ulong uVar11;
-  ulong uVar12;
-  ulong uVar13;
-  sbyte sVar15;
-  byte bVar16;
-  byte bVar17;
-  ushort uVar18;
-  ushort uVar19;
-  uint uVar20;
-  ulong uVar21;
-  ulong uVar23;
-  ulong uVar24;
-  byte bVar25;
-  ulong uVar26;
-  byte bVar27;
-  short sVar28;
-  byte bVar30;
-  uint uVar29;
-  uint uVar31;
-  ushort uVar32;
-  ulong uVar33;
-  char cVar34;
-  ulong uVar35;
-  ulong uVar36;
-  byte bVar37;
+  undefined auVar4 [16];
+  undefined auVar5 [16];
+  undefined auVar6 [16];
+  undefined auVar7 [16];
+  undefined auVar8 [16];
+  undefined2 uVar9;
+  undefined3 uVar10;
+  uint3 uVar11;
+  undefined2 uVar12;
+  undefined4 uVar13;
+  ushort uVar14;
+  ushort uVar15;
+  byte bVar18;
+  short sVar16;
+  long lVar17;
+  sbyte sVar19;
+  byte bVar20;
+  undefined uVar21;
+  short sVar22;
+  ushort uVar23;
+  ushort uVar24;
+  short sVar25;
+  uint uVar26;
+  ulong uVar27;
+  ulong uVar29;
+  uint6 uVar31;
+  ulong uVar30;
+  byte bVar32;
+  uint uVar33;
+  int6 iVar35;
+  uint7 uVar34;
+  byte bVar36;
+  char cVar37;
   byte bVar38;
-  ushort uVar39;
-  uint uVar40;
-  uint uVar41;
-  uint uVar42;
-  ulong uVar43;
-  long lVar44;
-  uint uVar45;
-  ushort uVar46;
-  uint uVar47;
-  ulong uVar49;
+  int iVar39;
+  short sVar40;
+  undefined6 uVar41;
+  byte bVar42;
+  uint uVar43;
+  uint uVar44;
+  ushort uVar45;
+  ulong uVar46;
+  ulong uVar47;
+  byte bVar48;
+  char cVar49;
   ulong uVar50;
-  uint uVar51;
-  ulong uVar52;
-  bool bVar53;
+  long lVar51;
+  long lVar52;
+  char cVar53;
+  ushort uVar54;
+  uint uVar55;
+  ulong uVar56;
+  ulong uVar57;
+  int iVar58;
+  ulong uVar59;
+  uint uVar60;
+  int iVar61;
+  uint uVar62;
+  long lVar63;
+  ushort uVar64;
+  ulong uVar65;
+  long lVar66;
+  short sVar67;
+  int iVar68;
+  ulong uVar69;
+  bool bVar70;
+  bool bVar71;
   char in_AF;
-  ulong uVar22;
-  int iVar48;
+  undefined8 uVar28;
   
-  for (lVar44 = 0x3f; 0x9638161f78676efeU >> lVar44 == 0; lVar44 = lVar44 + -1) {
+  for (lVar17 = 0x3f; 0x9638161f78676efeU >> lVar17 == 0; lVar17 = lVar17 + -1) {
   }
-  uVar7 = (ushort)(lVar44 + 0x40b1);
-  uVar18 = uVar7 + 0x179;
-  bVar16 = (byte)uVar18;
-  uVar41 = (byte)(-7 >> (bVar16 & 0x1f)) | 0x5442d000;
-  bVar16 = bVar16 & 0x1f;
-  uVar40 = uVar41 >> bVar16 | uVar41 << 0x20 - bVar16;
-  uVar20 = (uVar18 | 0xe4ae0000) + 0x5a158cce;
-  bVar16 = (byte)uVar20;
-  uVar41 = (int)((uVar7 >> 9 & 1) != 0 | 0x1ae) >> (bVar16 & 0x1f);
-  uVar18 = 0 >> (bVar16 & 0x1f);
-  sVar9 = 0xf;
-  uVar7 = (ushort)uVar40 >> 1;
-  if (uVar7 != 0) {
-    for (; uVar7 >> sVar9 == 0; sVar9 = sVar9 + -1) {
+  uVar15 = (ushort)(lVar17 + 0x40b1);
+  sVar22 = uVar15 + 0x179;
+  bVar20 = (byte)sVar22;
+  uVar26 = CONCAT31(0x5442d0,-7 >> (bVar20 & 0x1f));
+  bVar20 = bVar20 & 0x1f;
+  uVar55 = uVar26 >> bVar20 | uVar26 << 0x20 - bVar20;
+  uVar26 = (int)CONCAT62(0xe5a63cd3e4ae,sVar22) + 0x5a158cce;
+  bVar20 = (byte)uVar26;
+  iVar58 = (int)((uVar15 >> 9 & 1) != 0 | 0x1ae) >> (bVar20 & 0x1f);
+  uVar64 = 0 >> (bVar20 & 0x1f);
+  sVar22 = 0xf;
+  uVar15 = (ushort)uVar55 >> 1;
+  if (uVar15 != 0) {
+    for (; uVar15 >> sVar22 == 0; sVar22 = sVar22 + -1) {
     }
   }
-  uVar7 = (ushort)uVar41 >> 1;
-  uVar41 = uVar41 & 0xffff0000;
-  uVar40 = -((uVar40 << 0x10) >> 0x11);
-  bVar53 = (POPCOUNT(uVar7 & 0xd4) & 1U) != 0;
-  bVar37 = (char)uVar40 + 0x5b;
-  uVar23 = 0x92b20f83;
-  if (bVar37 != 0) {
-    uVar23 = 0x15dd1bdf;
+  uVar15 = (ushort)iVar58 >> 1;
+  uVar9 = (undefined2)((uint)iVar58 >> 0x10);
+  bVar36 = (byte)uVar15;
+  uVar55 = -((uVar55 << 0x10) >> 0x11);
+  uVar56 = (ulong)uVar55 | 0xc000000000000000;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = uVar56;
+  auVar4._8_8_ = 0x78;
+  auVar4._0_8_ = 0xdfe10f83;
+  bVar71 = (POPCOUNT(uVar15 & 0xd4) & 1U) != 0;
+  cVar53 = (char)uVar55 + '[';
+  uVar29 = 0x92b20f83;
+  if (cVar53 != '\0') {
+    uVar29 = 0x15dd1bdf;
   }
-  uVar43 = 1 << bVar53 ^ 0x15dd1bdf;
-  uVar46 = uVar18 | 1 << ((ushort)uVar43 & 0xf);
-  uVar51 = uVar46 & 0x1f;
-  uVar21 = (ulong)(uVar20 ^ 1 << uVar51) + 0xaa522ab56f08825b;
-  for (uVar10 = 0; (0xffffd0c9U >> uVar10 & 1) == 0; uVar10 = uVar10 + 1) {
+  uVar59 = 1L << bVar71 ^ 0x15dd1bdf;
+  uVar62 = (uint)CONCAT62(0xffc4b3448db6,uVar64 | 1 << ((ushort)uVar59 & 0xf));
+  uVar55 = uVar62 & 0x1f;
+  for (iVar39 = 0; (0xffffd0c9U >> iVar39 & 1) == 0; iVar39 = iVar39 + 1) {
   }
-  uVar47 = uVar41 | (uint)(byte)((char)((uint)(ushort)(uVar7 | uVar18 << 0xf) >> 8) + 0xf) << 8;
-  if ((uVar46 >> 2 & 1) != 0) {
-    bVar16 = (byte)uVar43;
+  uVar10 = (undefined3)
+           (CONCAT22(uVar9,CONCAT11(((byte)((uint)iVar58 >> 8) >> 1 |
+                                    (byte)((ushort)(uVar64 << 0xf) >> 8)) + 0xf,bVar36)) >> 8);
+  bVar36 = ~bVar36;
+  if ((uVar62 >> 2 & 1) != 0) {
+    bVar20 = (byte)uVar59;
   }
-  lVar1 = 0x3f;
-  if (uVar23 != 0) {
-    for (; uVar23 >> lVar1 == 0; lVar1 = lVar1 + -1) {
+  lVar66 = 0x3f;
+  if (uVar29 != 0) {
+    for (; uVar29 >> lVar66 == 0; lVar66 = lVar66 + -1) {
     }
   }
-  uVar13 = uVar21 & 0xffffffffffffff0f;
-  uVar18 = 0;
-  uVar46 = (ushort)uVar13;
-  if (uVar46 != 0) {
-    for (; (uVar46 >> uVar18 & 1) == 0; uVar18 = uVar18 + 1) {
+  uVar27 = (ulong)(uVar26 ^ 1 << uVar55) + 0xaa522ab56f08825b & 0xffffffffffffff0f;
+  sVar22 = 0;
+  uVar15 = (ushort)uVar27;
+  if (uVar15 != 0) {
+    for (; (uVar15 >> sVar22 & 1) == 0; sVar22 = sVar22 + 1) {
     }
   }
-  uVar11 = ((((ulong)uVar40 & 0xffffffffffffff00 | 0xc000000000000000 | (ulong)bVar37) -
-            CONCAT71(SUB167(((CONCAT88(0x12,0x12dfe10f83) & (undefined  [16])0xffffffffffffffff ^
-                             (undefined  [16])0x6a) & (undefined  [16])0xffffffffffffffff) %
-                            ZEXT816((ulong)uVar40 | 0xc000000000000000) >> 8,0),bVar53)) -
-            (ulong)((uVar20 >> uVar51 & 1) != 0) >> 8 & 0xffffffffffff00) << 8;
-  uVar20 = ((uint)lVar1 & 0xffffff00 | (uint)(byte)((byte)lVar1 + 0x26)) + 0xc8b1feae +
-           (uint)((byte)lVar1 < 0xda);
-  sVar15 = (sbyte)uVar13;
-  uVar8 = 0;
-  uVar19 = (ushort)uVar20;
-  if (uVar19 != 0) {
-    for (; (uVar19 >> uVar8 & 1) == 0; uVar8 = uVar8 + 1) {
+  iVar58 = (int)CONCAT71((int7)((ulong)lVar66 >> 8),(byte)lVar66 + 0x26) + -0x374e0152 +
+           (uint)((byte)lVar66 < 0xda);
+  sVar19 = (sbyte)uVar27;
+  sVar16 = 0;
+  uVar64 = (ushort)iVar58;
+  if (uVar64 != 0) {
+    for (; (uVar64 >> sVar16 & 1) == 0; sVar16 = sVar16 + 1) {
     }
   }
-  uVar35 = ((ulong)(uVar47 | (byte)~(byte)uVar7) << 4 | 3) ^ 0xffffffffcd675f34;
-  bVar37 = -~(byte)uVar7;
-  uVar47 = uVar47 | bVar37;
-  uVar13 = 0xffffffffffffffc1;
-  if ((uVar19 >> (uVar46 & 0xf) & 1) == 0 && bVar37 != 0) {
-    uVar13 = uVar23;
+  uVar50 = ((ulong)CONCAT31(uVar10,bVar36) << 4 | 3) ^ 0xffffffffcd675f34;
+  cVar37 = -bVar36;
+  uVar62 = CONCAT31(uVar10,cVar37);
+  uVar69 = 0xffffffffffffffc1;
+  if ((uVar64 >> (uVar15 & 0xf) & 1) == 0 && cVar37 != '\0') {
+    uVar69 = uVar29;
   }
-  bVar53 = (uVar13 & 1) != 0;
-  if (!bVar53) {
-    uVar47 = uVar41 | (ushort)uVar23;
+  bVar70 = (uVar69 & 1) != 0;
+  if (!bVar70) {
+    uVar62 = CONCAT22(uVar9,(short)uVar29);
   }
-  if ((POPCOUNT((char)(uVar10 >> 8) + bVar16 + bVar53) & 1U) != 0) {
-    uVar18 = 0x87c1;
+  if ((POPCOUNT((char)((uint)iVar39 >> 8) + bVar20 + bVar70) & 1U) != 0) {
+    sVar22 = -0x783f;
   }
-  uVar24 = (ulong)uVar18;
-  uVar51 = (uint)((uVar13 & 0xffffffff) >> 1);
-  uVar52 = (uVar11 | uVar24) >> 4;
-  uVar41 = (uVar10 & 0xffff0000 |
-            (uint)(ushort)((short)(char)uVar8 & 0xffU |
-                          (ushort)(byte)((uint)(ushort)(short)(char)uVar8 >> 8) << 8) | 0xdb00) * 3;
-  uVar41 = uVar41 & 0xffff0000 | (uint)CONCAT11(~(byte)(uVar41 >> 8),(char)uVar41);
-  bVar37 = sVar15 + 0x8aU ^ 0x7a;
-  uVar33 = (ulong)((ushort)((short)(char)bVar16 << sVar15 |
-                           (ushort)(short)(char)bVar16 >> 0x10 - sVar15) >> (bVar37 & 0x3f));
-  uVar13 = (long)(int)uVar41 * (long)(int)uVar41;
-  uVar4 = CONCAT12((long)(int)uVar13 != uVar13,(short)uVar13) >> 2;
-  uVar7 = (ushort)uVar4 | (short)uVar13 << 0xf;
-  uVar36 = uVar13 & 0xffff0000;
-  bVar17 = (byte)uVar47;
-  uVar39 = (ushort)uVar35;
-  uVar50 = (ulong)uVar47 + (long)(int)uVar51;
-  uVar18 = (short)uVar50 * 0x485b;
-  uVar21 = uVar21 & 0xffffffffffff0000 |
-           (ulong)(ushort)(uVar18 & 0xff |
-                          (ushort)(byte)((char)((ulong)uVar18 >> 8) + (char)uVar50) << 8);
-  uVar45 = ((uint)(lVar44 + 0x40b1) >> 1 | 0x80000000) ^ 0x80000000;
-  uVar12 = uVar21 << 0x14;
-  uVar26 = (ulong)(CONCAT18(uVar45 < 0x59fc8758,uVar21) >> 0x2d);
-  uVar10 = (uint)(ushort)(uVar19 & ~(1 << (uVar46 & 0xf)) | 0x8000);
-  uVar21 = uVar33 << 1;
-  bVar16 = (byte)uVar26 ^ (char)(uVar36 >> 0x18) >> 7;
-  uVar22 = uVar26 & 0xffffffffffffff00 | uVar12 | (ulong)bVar16;
-  uVar35 = (uVar35 & 0xffffffffffff0000 | (ulong)(ushort)(uVar39 >> 6 | uVar39 << 10)) +
-           (ulong)(uint)((int)((uint)uVar36 | (uint)uVar7) >> 0x1f);
-  uVar49 = (ulong)((uint)uVar23 ^
-                  1 << ((byte)(((bVar37 + bVar17 + (uVar13 >> 0x20 < 0x6e0cd358)) - (char)uVar4) - 1
-                              ) & 0x1f)) | 0xc000;
-  uVar41 = (uint)(ushort)uVar49;
-  uVar40 = CONCAT22((short)(uVar36 >> 0x10) >> 0xf,uVar7) & 0x3fffffff;
-  uVar7 = (ushort)(uVar40 / uVar41);
-  uVar40 = uVar40 % uVar41;
-  bVar37 = (byte)uVar40;
-  uVar23 = (uVar11 | uVar24 & 0xfffffffffffff000) >> 4 | uVar24 << 0x3c;
-  uVar13 = uVar23 | bVar37;
-  uVar29 = uVar45 + 0xcf08ee97 + (uint)CARRY1(bVar37,(byte)uVar52);
-  uVar42 = 0 >> (bVar16 & 0x1f);
-  uVar45 = (int)uVar43 >> sVar15 & 0x4d49;
-  uVar20 = uVar10 << 0x1e | (uVar20 & 0xffff0000 | uVar10) >> 2;
-  uVar18 = (ushort)uVar45;
-  uVar41 = (uint)(ushort)((short)uVar7 >> 0xf) << 0x10;
-  bVar16 = SCARRY2(uVar18,uVar7) + bVar17;
-  uVar43 = uVar35 & 0xffffffffffffff00 |
-           (ulong)(byte)((char)uVar35 << 1 |
-                        (CARRY1(SCARRY2(uVar18,uVar7),bVar17) || CARRY1(bVar16,CARRY2(uVar18,uVar7))
-                        ));
-  if (0x57efdd66 < (uVar45 | uVar41)) {
-    uVar22 = uVar26 & 0xffffffffffff0000 | uVar12 | uVar52 & 0xff00 | (ulong)bVar37;
-  }
-  uVar51 = ((uVar8 | 0x15dd0000) << 7 | uVar51 >> 0x19) + 1;
-  lVar44 = (ulong)uVar47 + (uVar49 >> 1);
-  uVar40 = (int)(short)uVar18 *
-           (int)(short)((int)((uint)(uVar50 & 0xffffffffffffff00) & 0xffff0000 |
-                             (uint)CONCAT11((char)((uVar50 & 0xffffffffffffff00) >> 8) +
-                                            (char)(uVar40 >> 8),uVar33 != 0)) >> 10);
-  uVar10 = uVar41 | uVar40 & 0xffff | 0x750275bc;
-  cVar14 = (char)uVar42;
-  uVar10 = uVar10 ^ (uint)(uVar10 != uVar20) *
-                    (uVar10 ^ uVar20 ^ (uint)(uVar10 == uVar20) *
-                                       (uVar20 ^ (uVar42 & 0xffffff00 |
-                                                 (uint)(byte)(cVar14 << 1 | cVar14 < '\0'))));
-  bVar37 = (char)uVar22 + 8;
-  uVar41 = (uint)((uVar23 & 0x7fffffffffff8000) << 1);
-  uVar46 = (short)((ushort)uVar22 & 0xff00 | (ushort)bVar37) >> (bVar37 & 0x1f);
-  uVar23 = uVar22 & 0xffffffffffff0000 | (ulong)uVar46;
-  lVar1 = 0x3f;
-  if (uVar43 != 0) {
-    for (; uVar43 >> lVar1 == 0; lVar1 = lVar1 + -1) {
-    }
-  }
-  bVar17 = (byte)uVar46;
-  bVar37 = (bVar17 & 0x1f) % 0x11;
-  uVar8 = (ushort)uVar21;
-  uVar21 = uVar21 & 0xffffffffffff0000 | (ulong)(ushort)(uVar8 >> bVar37 | uVar8 << 0x11 - bVar37);
-  uVar20 = (byte)(uVar18 + uVar7) | 0xf98d0000;
-  iVar48 = 0;
-  if (uVar20 != 0) {
-    for (; (uVar20 >> iVar48 & 1) == 0; iVar48 = iVar48 + 1) {
-    }
-  }
-  uVar20 = uVar29 & 0xffff0000 |
-           (uint)(ushort)((ushort)uVar29 & 0xff00 |
-                          (ushort)(byte)(bVar16 + CARRY2(uVar18,uVar7) ^ 0x97) |
-                         1 << ((ushort)lVar44 & 0xf));
-  uVar11 = (ulong)((uVar10 & 0xffff0000 | (uint)(ushort)((short)uVar10 * (short)(uVar40 >> 0x10))) *
-                  uVar20);
-  auVar3 = SEXT816((long)uVar11) * SEXT816((long)uVar21);
-  uVar11 = uVar11 * uVar21;
-  uVar8 = 0;
-  uVar19 = (ushort)lVar1;
-  if (uVar19 != 0) {
-    for (; (uVar19 >> uVar8 & 1) == 0; uVar8 = uVar8 + 1) {
-    }
-  }
-  uVar40 = (uint)(ushort)(uVar18 + uVar7 | 0xc000);
-  uVar10 = CONCAT22(SUB162(auVar3 >> 0x40,0),(short)uVar11) & 0x3fffffff;
-  uVar52 = SUB168(auVar3 >> 0x40,0) & 0xffffffffffff0000;
-  uVar7 = uVar8 ^ 1 << (uVar19 & 0xf);
-  uVar47 = (uint)lVar44 & 0xffff0000 | (uint)uVar7;
-  uVar36 = (ulong)(uVar51 & 0xffffff00 |
-                  (uint)(byte)((char)uVar51 + (char)uVar7 + ((uVar8 >> (uVar19 & 0xf) & 1) != 0)));
-  uVar50 = (ulong)(ushort)(uVar8 & 0xff | (ushort)SCARRY4(uVar47,1) << 8);
-  uVar20 = (int)uVar20 >> (bVar17 & 0x1f) |
-           uVar41 | (ushort)(((ushort)(uVar13 << 1) | (ushort)((long)uVar13 < 0)) - 1);
-  if ((int)uVar20 < 1) {
-    uVar36 = uVar22 & 0xffff0000 | (ulong)uVar46;
-  }
-  uVar7 = ((short)(uVar10 / uVar40) << 1 | 1U) + 0xaa3b;
-  uVar13 = CONCAT62((int6)((long)uVar52 >> 0x11),
-                    (ushort)((long)(uVar52 | (ushort)(uVar10 % uVar40)) >> 1) >> 1);
-  if (-1 < (short)uVar7) {
-    uVar13 = uVar23;
-  }
-  uVar52 = (ulong)CONCAT11((char)((uVar13 & 0xffffffff) >> 8) - bVar17,(char)(uVar13 & 0xffffffff));
-  uVar26 = uVar13 & 0xffff0000 | uVar52;
-  uVar13 = ((uVar11 & 0xffffffffffff0000 | (ulong)uVar7) ^ 0x2634) & 0xffffffff;
-  if ((short)(uVar7 ^ 0x2634) < 0) {
-    uVar13 = uVar50;
-  }
-  uVar40 = uVar41 | (uint)lVar1 & 0xffff | 0x400000;
-  lVar44 = 0x3f;
-  if (uVar26 != 0) {
-    for (; uVar26 >> lVar44 == 0; lVar44 = lVar44 + -1) {
-    }
-  }
-  uVar23 = uVar23 | 1 << (uVar52 & 0x3f);
-  uVar18 = (short)uVar36 << 1;
-  uVar8 = ((short)(((ulong)((uint)uVar26 & 0x3fffffff) << 0x20 | uVar13) / 0xc0000000) -
-          (short)lVar44) - 1;
-  uVar39 = (ushort)(uVar21 - 0xcb61b0a);
-  uVar7 = uVar39 & 0xf;
-  uVar19 = (ushort)uVar23 ^ 1 << uVar7;
-  uVar13 = uVar23 & 0xffffffffffff0000;
-  uVar11 = (ulong)uVar19;
-  if (uVar8 == 0) {
-    uVar8 = uVar18;
-  }
-  if (((ushort)uVar23 >> uVar7 & 1) != 0) {
-    uVar40 = uVar41 | 0x400000 | (uint)uVar39;
-  }
-  uVar22 = (ulong)uVar40;
-  uVar46 = (ushort)uVar20 & ~(1 << (uVar46 & 0xf)) ^ 0x80;
-  uVar52 = (long)(int)(uVar47 + 1) * 0x4dd9e487;
-  uVar49 = uVar52 & 0xffffffff;
-  uVar12 = (ulong)(uint)(int)(short)(uVar8 >> 0xc | 0x80);
-  uVar26 = 0;
-  uVar7 = ((ushort)uVar43 & 0xff00 ^ 1 << ((ushort)iVar48 & 0xf)) + 0xaf + (short)uVar40 * 2;
-  uVar24 = uVar13 | uVar11 & 0xffffffffffffff00 | (ulong)(byte)uVar19;
-  uVar33 = uVar22 ^ (ulong)(uVar12 == uVar22) *
-                    (ulong)(uVar40 ^ (uVar20 & 0xffff0000 | (uint)uVar46));
-  uVar43 = uVar33;
-  if (uVar12 >= uVar22) {
-    uVar43 = uVar24;
-  }
-  uVar21 = (uVar21 - 0xcb61b0a & 0xffffffffffffff00 | uVar11 & 0xff) + 0x795e097d +
-           (ulong)(uVar12 < uVar22);
-  uVar19 = (short)uVar24 + 1;
-  uVar39 = (short)uVar43 * -0x3333;
-  uVar43 = uVar43 & 0xffff0000 | (ulong)uVar39;
-  bVar16 = ((byte)uVar19 & 0x1f) % 9;
-  bVar37 = (byte)((ulong)uVar19 >> 8);
-  uVar8 = 0xf;
-  if (uVar39 != 0) {
-    for (; uVar39 >> uVar8 == 0; uVar8 = uVar8 - 1) {
-    }
-  }
-  uVar24 = uVar21 & 0xffffffffffff0000 | (ulong)uVar8;
-  uVar46 = uVar46 | 0x1000;
-  uVar35 = (uVar12 ^ (ulong)(uVar12 != uVar22) * (uVar12 ^ uVar33)) *
-           (((uint)uVar35 & 0xffff0000 | (uint)uVar7) + (int)uVar49 * 4 & uVar21);
-  bVar17 = (byte)(uVar19 & 0xff) & 0x3f;
-  uVar21 = (uVar49 << bVar17 | uVar49 >> 0x40 - bVar17) >> 1;
-  uVar8 = 0xf;
-  if (uVar46 != 0) {
-    for (; uVar46 >> uVar8 == 0; uVar8 = uVar8 - 1) {
-    }
-  }
-  lVar44 = CONCAT71((int7)((long)uVar24 >> 0x36),(char)((long)uVar24 >> 0x2e) + -0x7d);
-  uVar12 = ((uVar36 & 0xffffffffffff0000 | (ulong)uVar18) << 0x23 | uVar23 >> 0x1d) - uVar43 &
-           0xffffffffffff0000 | (ulong)uVar8 & 0xffffffffffffff00;
-  uVar36 = (uVar13 | (ushort)(uVar19 & 0xff |
-                             (ushort)(byte)(bVar37 << bVar16 | bVar37 >> 9 - bVar16) << 8)) >> 1;
-  uVar24 = uVar21 & 0xffffffff;
-  uVar7 = uVar7 | (ushort)uVar21;
-  uVar21 = (uVar35 & 0xffff0000 |
-           (ulong)(ushort)((ushort)(byte)uVar35 * (ushort)(byte)(uVar50 >> 8))) *
-           (uVar21 & 0xffffffff);
-  uVar35 = ((ulong)(ushort)((ushort)((long)(int)uVar52 != uVar52) << 0xf) | 0xc0000000) ^ 0x4b ^
-           uVar24;
-  bVar16 = (byte)uVar36;
-  uVar41 = (uint)lVar44 | 0xc0000000;
-  uVar20 = (int)(((ulong)((uint)(uVar21 >> 0x20) & 0x3fffffff) << 0x20 | uVar21 & 0xffffffff) /
-                (ulong)uVar41) << (bVar16 & 0x1f) |
-           ((uint)uVar12 | (uint)(byte)((char)uVar8 << 1) | 1) >> 0x20 - (bVar16 & 0x1f);
-  uVar18 = (ushort)uVar35;
-  uVar41 = uVar41 * -0x28388f15 >> 1;
-  auVar3 = ZEXT416(uVar20 & 0xffff0000 | (uint)(ushort)((short)uVar20 * uVar18)) * ZEXT816(uVar36);
-  uVar46 = (short)(lVar44 + -0x16587c82) + 0xd4d8;
-  uVar20 = (uint)(lVar44 + -0x16587c82) & 0xffff0000 | (uint)uVar46;
-  if (uVar46 == 0) {
-    uVar26 = (ulong)(ushort)((ushort)lVar44 & ~(1 << (uVar18 & 0xf)));
-  }
-  uVar21 = (uVar23 & 0xffff0000 | uVar11) & uVar43;
-  uVar51 = SUB164(auVar3,0);
-  bVar37 = (bVar16 & 0x1f) % 9;
-  bVar17 = (byte)(uVar36 >> 8);
-  uVar40 = uVar51 >> 1;
-  uVar10 = 0 >> (bVar16 & 0x3f);
-  uVar23 = (ulong)(uVar40 & 0xffffff00 | uVar41 << 0x1f |
-                  (uint)(byte)((char)uVar40 << (bVar16 & 0x1f))) + 1;
-  sVar9 = 0xf;
-  uVar18 = (ushort)uVar41;
-  if (uVar18 != 0) {
-    for (; uVar18 >> sVar9 == 0; sVar9 = sVar9 + -1) {
-    }
-  }
-  bVar6 = (byte)(uVar23 >> 8);
-  bVar38 = (byte)((ulong)uVar10 >> 8);
-  sVar28 = CONCAT11(bVar38 - bVar6,(char)uVar10);
-  uVar40 = ((uint)uVar43 & 0xffffff00 | (uint)(byte)((byte)uVar39 >> 4 | (byte)uVar39 << 4)) +
-           0xce1b30e1 + (uint)(bVar38 < bVar6);
-  bVar6 = (char)uVar23 << 1;
-  uVar41 = uVar20 + 0x9ecff9f7;
-  if (0x61300608 < uVar20) {
-    uVar26 = (ulong)uVar40;
-  }
-  uVar46 = (short)uVar41 + sVar28;
-  uVar41 = uVar41 & 0xffff0000;
-  uVar43 = uVar21 & 0xffffffffffff0000;
-  uVar21 = (ulong)(ushort)((short)uVar21 << 1);
-  uVar20 = (SUB164(auVar3 >> 0x40,0) & ~(1 << (uVar51 & 0x1f)) & 0xffff0000 |
-           (uint)CONCAT11((bVar17 << bVar37 | bVar17 >> 9 - bVar37) + 0x5d,bVar16)) <<
-           (bVar16 & 0x3f) | uVar40 >> 0x40 - (bVar16 & 0x3f);
-  bVar17 = (byte)(uVar40 >> 0x1b);
-  bVar38 = -bVar17;
-  bVar37 = (bVar16 & 0x1f) % 0x11;
-  uVar18 = sVar28 << bVar37 | (ushort)(CONCAT12(bVar17 != 0,sVar28) >> 0x11 - bVar37);
-  uVar35 = uVar35 & (uVar23 & 0xffffffffffffff00 | (ulong)bVar6);
-  sVar28 = 0xf;
-  if ((ushort)uVar26 != 0) {
-    for (; (ushort)((ushort)uVar26 >> sVar28) == 0; sVar28 = sVar28 + -1) {
-    }
-  }
-  uVar11 = uVar35 & (uVar41 | uVar46);
-  uVar11 = uVar23 & 0xffffffffffff0000 |
-           (ulong)CONCAT11((uVar11 == 0) << 6 | in_AF << 4 |
-                           ((POPCOUNT(uVar11 & 0xff) & 1U) == 0) << 2,bVar6) | 0x200;
-  uVar23 = (ulong)(byte)((char)uVar18 - (char)(uVar11 >> 8));
-  uVar52 = (ulong)uVar10 & 0xffffffffffff0000 | (ulong)uVar18 & 0xffffffffffffff00 | uVar23;
-  uVar8 = uVar7 ^ 0x2b28;
-  uVar40 = uVar20 - bVar38;
-  uVar13 = CONCAT62((uint6)(uVar13 >> 0x11),sVar28) + uVar52 * 8;
-  if (SBORROW4(uVar20,(uint)bVar38) == false) {
-    uVar13 = CONCAT62((int6)((uint6)((uVar24 >> (bVar16 & 0x3f)) >> 0x10) |
-                            (uint6)((uVar24 << 0x40 - (bVar16 & 0x3f)) >> 0x10)) >> 0x1e,sVar9);
-  }
-  bVar16 = (byte)uVar35;
-  uVar35 = uVar13 & 0xffffff00 | (ulong)(byte)((byte)uVar13 - bVar16);
-  uVar20 = uVar40 & 0xffffff00 | (uint)(byte)((byte)uVar40 >> 1 | ((byte)uVar13 < bVar16) << 7);
-  bVar16 = (byte)sVar28 & 0x3f;
-  uVar13 = uVar11 >> bVar16 | uVar11 << 0x40 - bVar16;
-  uVar39 = (ushort)uVar35;
-  uVar19 = uVar8 + uVar39;
-  uVar10 = uVar19 | 0xdb5d0000;
-  uVar51 = uVar20 << 1 | (uint)CARRY2(uVar8,uVar39);
-  if ((int)uVar20 < 0 == (int)uVar51 < 0) {
-    uVar21 = (ulong)uVar18 & 0xff00 | uVar23;
-  }
-  uVar50 = uVar43 | uVar21;
-  bVar16 = ((byte)sVar28 & 0x1f) % 9;
-  uVar35 = uVar35 - bVar38;
-  uVar18 = (short)uVar51 + 0xe442;
-  uVar11 = uVar52 + uVar50 + 1;
-  uVar41 = uVar41 | uVar46 & 0xffffff00 |
-           (uint)((byte)((byte)((ushort)(uVar46 & 0xff | (ushort)((uVar13 & 1) != 0) << 8) >> bVar16
-                               ) | (char)uVar46 << 9 - bVar16) >> 1);
-  uVar23 = uVar26 & 0xffffffffffffff00 | (ulong)(byte)-(char)uVar26;
-  if ((short)uVar7 < (short)uVar11) {
-    uVar23 = 0xffffffff;
-  }
-  lVar44 = CONCAT62((int6)((long)uVar13 >> 0x11),
-                    (short)(char)((long)uVar13 >> 1) * (short)(char)uVar35);
-  uVar7 = (ushort)uVar35 | 0x1b9;
-  uVar13 = (ulong)bVar38;
-  if (-1 < (short)uVar7) {
-    uVar13 = uVar50;
-  }
-  uVar20 = (uVar40 & 0x7fff8000) << 1 | uVar18 & 0xffffff00 | (uint)(byte)((char)uVar18 + 4);
-  if ((POPCOUNT(uVar7 & 0xff) & 1U) != 0) {
-    uVar20 = uVar41;
-  }
-  uVar52 = uVar12 >> 7;
-  if ((short)uVar7 < 1) {
-    uVar52 = 0xffffffff;
-  }
-  uVar50 = lVar44 - uVar52;
-  uVar52 = uVar52 ^ (ulong)(uVar50 == 0) * (uVar52 ^ (uVar35 | 0x1b9));
-  uVar40 = (uint)lVar44;
-  uVar40 = uVar40 ^ (uint)(uVar50 != 0) * (uVar40 ^ (uint)uVar52);
-  if ((POPCOUNT(uVar50 & 0xff) & 1U) != 0) {
-    uVar23 = (ulong)uVar19;
-  }
-  iVar48 = (int)(uVar35 | 0x1b9);
-  bVar53 = SCARRY4(iVar48,(int)uVar11);
-  uVar47 = iVar48 + (int)uVar11;
-  uVar51 = (uint)uVar13;
-  if (bVar53 == (int)uVar47 < 0) {
-    uVar51 = uVar20;
-  }
-  uVar41 = uVar41 * 0x100;
-  uVar45 = (uVar41 - 1) + (uint)(uVar51 < 0x7ecbeb5e);
-  lVar44 = 0;
-  if (uVar10 != 0) {
-    for (; (uVar10 >> lVar44 & 1) == 0; lVar44 = lVar44 + 1) {
-    }
-  }
-  uVar10 = uVar45 >> 1;
-  uVar13 = (ulong)((uVar45 & 1) != 0);
-  uVar35 = (ulong)uVar41 - 0xb5a3ec37;
-  uVar50 = uVar35 - uVar13;
-  bVar16 = (byte)uVar52 & 0x3f;
-  uVar11 = (ulong)uVar20 & 0xff |
-           (ulong)((uint7)((uVar11 >> bVar16) >> 8) | (uint7)((uVar11 << 0x40 - bVar16) >> 8)) << 8;
-  uVar36 = uVar52 >> 0x1f & 1;
-  bVar16 = ~(byte)uVar52;
-  uVar43 = uVar43 | (ushort)(((ushort)uVar21 & 0xff00 | (ushort)(byte)((byte)uVar21 ^ (byte)uVar10))
-                            & ~(1 << ((ushort)uVar11 & 0xf)));
-  uVar45 = (ushort)((bVar53 | 0xff00) + 0x5aa) | 0xffff0000;
-  uVar31 = (uint)uVar43;
-  uVar42 = uVar45 << 1 | uVar31 >> 0x1f;
-  uVar29 = (uint)uVar11;
-  if ((int)uVar45 < 0 == (int)uVar42 < 0) {
-    uVar29 = (uint)(uVar52 & 0xff00) | (uint)bVar16;
-  }
-  uVar11 = (ulong)(uVar47 ^ 0x10) + 0x36cd7731 + (ulong)((int)uVar45 < 0);
-  uVar21 = (ulong)(ushort)-(short)uVar11;
-  auVar3 = (ZEXT1216(CONCAT48(uVar20,CONCAT62((int6)(short)(uVar40 >> 0x10),-(short)(char)uVar40)))
-           & (undefined  [16])0xffffffffffffffff) / ZEXT816(uVar43 | 0xc000000000000000);
-  sVar9 = SUB162(auVar3,0);
-  uVar20 = (int)sVar9 * (int)sVar9;
-  uVar43 = CONCAT62(SUB166(auVar3 >> 0x10,0),(short)uVar20);
-  uVar13 = (uVar50 & 0xffffffffffff0000 |
-            (ulong)(ushort)((ushort)uVar50 >> 1 |
-                           (ushort)((ulong)uVar41 < 0xb5a3ec37 || uVar35 < uVar13) << 0xf) &
-            0xffffffffffffff00 | 0xff) >> 1;
-  bVar37 = (byte)(uVar20 >> 8) | 0x8f;
-  if (bVar37 == 0) {
-    uVar42 = uVar45 << 1 & 0xffff0000 |
-             (uint)(ushort)((short)(uVar51 + 0x813414a2) << (bVar16 & 0x1f));
-  }
-  uVar50 = uVar13 ^ (ulong)(uVar43 == uVar13) * (uVar13 ^ uVar36);
-  uVar41 = (uint)uVar43 ^ (uint)(uVar43 != uVar13) * ((uint)uVar43 ^ (uint)uVar50);
-  uVar40 = (uVar29 * 0x20000 + 0x8d293d00 | (uint)(byte)(bVar37 << 1)) ^ 0x9f26d2d7;
-  uVar43 = (long)(int)uVar31 * -0x5ab5c818;
-  cVar14 = (char)uVar41;
-  bVar37 = (byte)(CONCAT11((long)(int)uVar43 != uVar43,cVar14) >> 5) | cVar14 << 4;
-  uVar35 = (ulong)uVar10;
-  if ((POPCOUNT((ulong)bVar37 & 0x37) & 1U) != 0) {
-    uVar35 = uVar50;
-  }
-  uVar47 = (int)(uint)CONCAT11(bVar16,(char)((uVar52 & 0xff00) >> 8)) >> 1;
-  uVar10 = uVar47 * 2;
-  uVar52 = CONCAT71((int7)(int3)(uVar41 >> 8),bVar37);
-  if (!CARRY4(uVar47,uVar47)) {
-    uVar52 = uVar50;
-  }
-  uVar45 = (uint)uVar52 ^ 1 << (uVar42 & 0x1f);
-  uVar35 = uVar35 & 0xffffffff | (ulong)uVar40;
-  bVar37 = (byte)(uVar10 >> 8);
-  bVar16 = (byte)uVar10 - bVar37;
-  bVar37 = (char)uVar35 << 1 | (byte)uVar10 < bVar37;
-  uVar35 = uVar35 & 0xffffffffffffff00;
-  uVar52 = uVar35 | bVar37;
-  uVar47 = (uint)uVar52;
-  uVar41 = (uVar10 & 0xffffff00 | (uint)bVar16) >> 1;
-  lVar44 = (long)(int)uVar36 * -0x531863aa;
-  uVar7 = (ushort)lVar44;
-  uVar21 = ((uVar11 & 0xffffffffffff0000 | uVar21 & 0x7fffffffffffff80) << 1 |
-           (uVar21 & 0x7f) << 1 | (ulong)((bVar16 & 1) != 0)) ^ 0x2d;
-  if ((int)(uint)lVar44 == lVar44) {
-    uVar21 = (ulong)(uVar42 << 1 | (uint)((int)uVar42 < 0));
-  }
-  uVar11 = (uVar50 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar50 >> 9)) >> 1;
-  uVar18 = (ushort)(byte)((byte)uVar21 << 4 | (byte)uVar21 >> 4);
-  uVar10 = (uint)(ushort)((ushort)uVar52 >> 1 | uVar18 << 0xf);
-  bVar16 = ((char)uVar43 * -2 | '\0' < (char)uVar43) - 1;
-  uVar43 = uVar43 & 0xffffff00 | (ulong)bVar16;
-  uVar51 = (uVar51 + 0x813414a2 & 0xffff0000 | (uint)(ushort)((short)uVar45 * 4)) + 1;
-  if (bVar16 != 0) {
-    uVar51 = uVar47;
-  }
-  uVar13 = uVar13 & 0xffff | 0x5b;
-  auVar3 = ZEXT816((ulong)(long)(int)(uVar45 & 0xffffff00 |
-                                     ((uVar20 >> 0x10) + 0xca7ff322) - uVar40 & 0xff)) *
-           ZEXT816(uVar43);
-  uVar20 = (int)(short)uVar41 & 0xfffffffe;
-  iVar48 = (int)uVar13 + 0xbd + (int)uVar43 * 8;
-  uVar19 = (ushort)uVar13;
-  uVar8 = uVar19 & 0x7fff;
-  uVar39 = (short)((ushort)(uVar21 & 0xffffffffffffff00) | uVar18) >> 0x11;
-  uVar46 = CONCAT11(0xa3 >> ((byte)uVar41 & 0x1e),0xff);
-  uVar18 = uVar19 & 0xff | 0x100;
-  uVar41 = uVar42 << 1 & 0xe46de1d7 | (uint)((int)uVar42 < 0);
-  uVar40 = uVar20 + 0xde704b1a;
-  bVar17 = (byte)(uVar40 >> 8);
-  bVar16 = bVar17 + 0x27;
-  cVar14 = (char)uVar40;
-  uVar43 = (ulong)(uVar47 >> 0x18 | (uVar47 & 0xff0000) >> 8 | (uVar10 & 0xff00) << 8 |
-                  uVar10 << 0x18);
-  if (bVar17 >= 0xd9 && bVar16 != 0) {
-    uVar43 = uVar52;
-  }
-  uVar10 = ((((int)(uVar23 << 0x10) + 1) * 2 & (uint)uVar11) -
-           (uVar40 & 0xffff0000 | (uint)CONCAT11(bVar16,cVar14))) - (uint)(bVar17 < 0xd9);
-  uVar40 = (uint)(byte)((char)uVar10 + (char)uVar41);
-  bVar17 = cVar14 + (char)((uint)CONCAT11(bVar16,cVar14) >> 8);
-  if (SCARRY1(cVar14,bVar16) == (char)bVar17 < '\0') {
-    uVar47 = uVar47 & 0xffff | (int)(short)(uVar35 >> 0x10) << 0x10;
-  }
-  uVar51 = -(((uVar51 & 0xffffff00 |
-              (uint)(byte)(((byte)uVar51 | (char)((uVar21 & 0xffffffffffffff00) >> 8) >> 9) + 0x52))
-             - ((uVar8 & 0xffffff00 | (uint)(byte)((char)uVar8 + SUB161(auVar3,0))) + 0xdbcc1c31)) -
-            (uint)(0xe245 < uVar46 || 0xfffe < (ushort)(uVar46 + 0x1dba)));
-  uVar46 = bVar17 & 0xff0f;
-  sVar15 = (sbyte)uVar46;
-  uVar8 = (short)uVar11 << sVar15 | uVar18 >> 0x10 - sVar15;
-  iVar2 = (int)(short)uVar18 * (int)(short)uVar39;
-  uVar23 = uVar21 & 0xffffffffffff0000 | (ulong)uVar39;
-  if (0x7bd30fa9 < uVar51) {
-    uVar23 = (ulong)(uVar10 & 0xffffff00 | uVar40);
-  }
-  if (-1 < (short)((((ushort)iVar48 & 0xff00 | (ushort)(byte)((char)iVar48 >> 1)) + 0x7444 +
-                   (ushort)(uVar20 + 0x550298e9 < 0x76924dcf)) - uVar7)) {
-    uVar41 = uVar47;
-  }
-  uVar41 = uVar41 | 0xc0000000;
-  uVar21 = ((ulong)((uint)CONCAT62(SUB166(auVar3 >> 0x50,0),(short)((uint)iVar2 >> 0x10)) &
-                   0x3fffffff) << 0x20 |
-           CONCAT62(SUB166(auVar3 >> 0x10,0),(short)iVar2) >> 1 & 0xffffffff) / (ulong)uVar41;
-  bVar17 = (byte)uVar21;
-  bVar6 = (byte)uVar43;
-  bVar25 = (byte)uVar47;
-  bVar38 = bVar6 ^ (bVar17 == bVar6) * (bVar6 ^ bVar25);
-  uVar13 = uVar43 & 0xffffffffffffff00 | (ulong)bVar38;
-  uVar21 = uVar21 & 0xffffff00;
-  uVar18 = (ushort)uVar21 | (ushort)(byte)(bVar17 ^ (bVar17 != bVar6) * (bVar17 ^ bVar38));
-  sVar9 = (short)uVar13;
-  cVar14 = (char)(uVar21 >> 0x18);
-  uVar46 = ((((ushort)bVar16 << 8 | uVar46) + sVar9 + 0x2bec) - uVar18) -
-           (ushort)CARRY1(cVar14 >> 7,cVar14 >> 0xf);
-  if ((short)uVar46 < 0) {
-    uVar51 = uVar51 & 0xffff0000 | (uint)uVar8;
-  }
-  bVar17 = bVar25 << 5 | bVar25 >> 3;
-  uVar47 = uVar47 & 0xffffff00;
-  bVar16 = (byte)uVar46;
-  lVar1 = 0;
-  if (uVar23 != 0) {
-    for (; (uVar23 >> lVar1 & 1) == 0; lVar1 = lVar1 + 1) {
-    }
-  }
-  uVar19 = (ushort)(byte)((byte)uVar8 >> 1 | (char)uVar23 << 7);
-  uVar11 = (ulong)(uint)((int)CONCAT71((int7)(int3)(uVar35 >> 8),~bVar37) >> 0xd) + 0x17c90fe4 ^
-           0xffffffffbdb12441;
-  uVar21 = uVar11 & 0xff;
-  if ((long)uVar11 < 0) {
-    uVar11 = uVar11 & 0xffffffffffff0000 | (ulong)uVar46;
-  }
-  uVar20 = (uint)lVar1;
-  if ((POPCOUNT(uVar21) & 1U) != 0) {
-    uVar20 = (uint)uVar23 & 0xffffff00 | (uint)(byte)((char)uVar23 >> 1);
-  }
-  uVar51 = (uVar51 & 0xffffff00 | (uint)(byte)((char)uVar51 >> 0x11)) << 0xe;
-  uVar40 = uVar51 | ((((uVar10 >> 0x18 | (uVar10 & 0xff0000) >> 8 | (uVar10 & 0xff00) << 8 |
-                       uVar40 << 0x18) >> (bVar16 & 0x3f)) >> 0x10 |
-                     (uint)((ulong)((long)(int)(uVar47 | bVar17) << 0x40 - (bVar16 & 0x3f)) >> 0x10)
-                     ) << 0x10) >> 0x12;
-  uVar23 = (ulong)(uVar20 << 7);
-  uVar46 = uVar8 & 0xbf00 | uVar19;
-  uVar10 = (uint)uVar11 | (uint)bVar16;
-  uVar20 = ((uint)lVar44 & 0xffff0000 |
-           (uint)(ushort)((uVar7 << (bVar16 & 0xf) | uVar7 >> 0x10 - (bVar16 & 0xf)) + 0x715e)) +
-           0x8cc787d1;
-  if (uVar10 != 0) {
-    uVar20 = uVar40;
-  }
-  uVar10 = CONCAT31((int3)(uVar11 >> 8),~(byte)uVar10);
-  uVar7 = ~(ushort)uVar40;
-  uVar45 = (int)((uint)((uVar50 & 0xfffffffffffe0000) >> 1) | (uint)uVar46) >> 6 ^ 0xb83e0c28;
-  uVar40 = (int)CONCAT71((int7)(int3)(uVar47 >> 8),bVar17 - 1) * -0x32075b17;
-  uVar23 = ((uVar23 & 0xff000000) << 8 | (uVar23 & 0xff0000) << 0x18 | (uVar23 & 0xff00) << 0x28 |
-           uVar23 << 0x38) >> 1;
-  uVar11 = uVar23 | 0x8000000000000000;
-  uVar21 = (ulong)(ushort)((((short)CONCAT31((uint3)(uVar41 >> 9),(char)(uVar41 >> 1) + '\x01') -
-                            sVar9) - (ushort)((uVar8 >> 0xe & 1) != 0)) + uVar18 + 0x64ba) -
-           0x6e87bde2;
-  sVar9 = 0;
-  uVar18 = (ushort)uVar45;
-  if (uVar18 != 0) {
-    for (; (uVar18 >> sVar9 & 1) == 0; sVar9 = sVar9 + 1) {
-    }
-  }
-  uVar41 = uVar40 & 0xffffff00 | (uint)(byte)((char)uVar40 << 1);
-  uVar39 = 0xf;
-  uVar32 = (ushort)uVar41;
-  if (uVar32 != 0) {
-    for (; uVar32 >> uVar39 == 0; uVar39 = uVar39 - 1) {
-    }
-  }
-  uVar40 = (uint)CONCAT62((int6)(short)(uVar47 >> 0x10),(short)((uVar13 & 0xffffffffc0278201) == 0))
+  uVar56 = CONCAT62((int6)((CONCAT71((int7)(uVar56 >> 8),cVar53) -
+                           CONCAT71(SUB167(auVar4 % auVar2,1),bVar71)) -
+                           (ulong)((uVar26 >> uVar55 & 1) != 0) >> 0x10),sVar22);
+  uVar44 = (uint)((uVar69 & 0xffffffff) >> 1);
+  uVar69 = uVar56 >> 4;
+  uVar57 = uVar69 | uVar56 << 0x3c;
+  iVar39 = (CONCAT22((short)((uint)iVar39 >> 0x10),(short)(char)sVar16) | 0xdb00) * 3;
+  iVar39 = CONCAT22((short)((uint)iVar39 >> 0x10),CONCAT11(~(byte)((uint)iVar39 >> 8),(char)iVar39))
   ;
-  if (uVar40 != 0) {
-    uVar20 = uVar40;
+  bVar36 = sVar19 + 0x8aU ^ 0x7a;
+  uVar46 = (ulong)((ushort)((short)(char)bVar20 << sVar19 |
+                           (ushort)(short)(char)bVar20 >> 0x10 - sVar19) >> (bVar36 & 0x3f));
+  uVar56 = (long)iVar39 * (long)iVar39;
+  uVar30 = uVar56 & 0xffffffff;
+  uVar11 = CONCAT12((long)(int)uVar56 != uVar56,(short)uVar30) >> 2;
+  uVar14 = (ushort)uVar11 | (short)uVar30 << 0xf;
+  uVar23 = (ushort)((int)uVar59 >> sVar19);
+  bVar48 = (byte)uVar62;
+  uVar24 = (ushort)uVar50;
+  lVar52 = (ulong)uVar62 + (long)(int)uVar44;
+  sVar22 = (short)lVar52 * 0x485b;
+  lVar66 = CONCAT62((int6)(uVar27 >> 0x10),
+                    CONCAT11((char)((ushort)sVar22 >> 8) + (char)lVar52,(char)sVar22));
+  uVar60 = ((uint)(lVar17 + 0x40b1) >> 1 | 0x80000000) ^ 0x80000000;
+  uVar59 = (ulong)(CONCAT18(uVar60 < 0x59fc8758,lVar66) >> 0x2d);
+  uVar27 = uVar59 | lVar66 << 0x14;
+  uVar33 = CONCAT22((short)((uint)iVar58 >> 0x10),uVar64 & ~(1 << (uVar15 & 0xf)));
+  lVar66 = uVar46 << 1;
+  bVar20 = (byte)uVar59 ^ (char)(uVar30 >> 0x18) >> 7;
+  uVar28 = CONCAT71((int7)(uVar27 >> 8),bVar20);
+  lVar51 = CONCAT62((int6)(uVar50 >> 0x10),uVar24 >> 6 | uVar24 << 10) +
+           (ulong)(uint)((int)CONCAT62((int6)(uVar30 >> 0x10),uVar14) >> 0x1f);
+  uVar59 = (ulong)((uint)uVar29 ^
+                  1 << ((byte)(((bVar36 + bVar48 + (uVar56 >> 0x20 < 0x6e0cd358)) - (char)uVar11) -
+                              1) & 0x1f)) | 0xc000;
+  uVar26 = (uint)(ushort)uVar59;
+  uVar55 = CONCAT22((short)(uVar30 >> 0x10) >> 0xf,uVar14) & 0x3fffffff;
+  uVar15 = (ushort)(uVar55 / uVar26);
+  uVar55 = uVar55 % uVar26;
+  bVar36 = (byte)uVar55;
+  lVar17 = CONCAT71((int7)(uVar57 >> 8),bVar36);
+  lVar63 = (ulong)(uVar60 + 0xa60378a8) + 0x290575ef + (ulong)CARRY1(bVar36,(byte)uVar69);
+  iVar58 = 0 >> (bVar20 & 0x1f);
+  uVar64 = uVar23 & 0x4d49;
+  uVar26 = uVar33 << 0x1e | (uVar33 | 0x8000) >> 2;
+  uVar29 = (ulong)uVar26;
+  bVar20 = SCARRY2(uVar64,uVar15) + bVar48;
+  uVar56 = CONCAT71((int7)((ulong)lVar51 >> 8),
+                    (char)lVar51 << 1 |
+                    (CARRY1(SCARRY2(uVar64,uVar15),bVar48) || CARRY1(bVar20,CARRY2(uVar64,uVar15))))
+  ;
+  if (0x57efdd66 < (CONCAT22((short)uVar15 >> 0xf,uVar23) & 0xffff4d49)) {
+    uVar28 = CONCAT62((int6)(uVar27 >> 0x10),(short)lVar17);
   }
-  uVar18 = uVar18 & 0xff00;
-  uVar35 = (long)(int)uVar20 * 0x5217e8f1;
-  uVar52 = (ulong)((ushort)((short)uVar10 << 1 | (ushort)((short)uVar10 < 0)) >>
-                  ((byte)uVar21 & 0x1f));
-  uVar40 = uVar20 & 0xffff0000 | (uint)(ushort)(short)(char)uVar7;
-  uVar13 = 0;
-  if (uVar11 != 0) {
-    for (; (uVar11 >> uVar13 & 1) == 0; uVar13 = uVar13 + 1) {
+  lVar17 = lVar17 << 1;
+  iVar68 = ((int)CONCAT62(0x87cf5dc915dd,sVar16) << 7 | uVar44 >> 0x19) + 1;
+  lVar1 = (ulong)uVar62 + (uVar59 >> 1);
+  iVar39 = (int)(short)uVar64 *
+           (int)(short)((int)CONCAT62((int6)((ulong)lVar52 >> 0x10),
+                                      CONCAT11((char)((ulong)lVar52 >> 8) + (char)(uVar55 >> 8),
+                                               uVar46 != 0)) >> 10);
+  uVar59 = (ulong)(CONCAT22((short)uVar15 >> 0xf,(short)iVar39) | 0x750275bc);
+  cVar53 = (char)iVar58;
+  uVar59 = uVar59 ^ (ulong)(uVar59 != uVar29) *
+                    (uVar59 ^ uVar29 ^ (ulong)(uVar59 == uVar29) *
+                                       (ulong)(uVar26 ^ CONCAT31((int3)((uint)iVar58 >> 8),
+                                                                 cVar53 << 1 | cVar53 < '\0')));
+  bVar36 = (char)uVar28 + 8;
+  uVar41 = (undefined6)((ulong)lVar17 >> 0x10);
+  uVar23 = (short)CONCAT71((int7)((ulong)uVar28 >> 8),bVar36) >> (bVar36 & 0x1f);
+  uVar29 = CONCAT62((int6)((ulong)uVar28 >> 0x10),uVar23);
+  lVar52 = 0x3f;
+  if (uVar56 != 0) {
+    for (; uVar56 >> lVar52 == 0; lVar52 = lVar52 + -1) {
     }
   }
-  uVar42 = (uint)uVar13;
-  uVar11 = uVar35 & 0xffffffff & ~(1 << (uVar21 & 0x3f));
-  iVar48 = (int)uVar21 - (uVar42 & 0x5d4f3ffa);
-  uVar7 = -uVar7;
-  uVar47 = (uint)(((ulong)uVar10 & 0xffffffffffff0000 | uVar52 & 0xfffffffffffffe00) >> 1) |
-           uVar39 & 0xff;
-  uVar21 = (long)(int)uVar41 * 0x45613a4f;
-  lVar44 = ((uVar43 >> 8 & 0xffffffffffff00) << 8 | (ulong)uVar39 & 0xffffffffffffff00 |
-           (uVar52 & 0x1fe) >> 1) + (uVar21 & 0xffffffff) + (ulong)((long)(int)uVar21 != uVar21);
-  uVar41 = (uint)((ulong)lVar44 >> 0x18) & 0xffffff00 |
-           (uint)(byte)((char)((ulong)lVar44 >> 0x18) + 0x4b);
-  if ((SBORROW2(uVar18,0x6f7b) != SBORROW2(uVar18 + 0x9085,1)) != (short)(uVar18 + 0x9084) < 0) {
-    uVar47 = (uint)(((ulong)uVar10 & 0xfffffffffffe0000) >> 1) | uVar42 & 0xffff;
+  bVar48 = (byte)uVar23;
+  bVar36 = (bVar48 & 0x1f) % 0x11;
+  uVar14 = (ushort)lVar66;
+  lVar66 = CONCAT62((int6)((ulong)lVar66 >> 0x10),uVar14 >> bVar36 | uVar14 << 0x11 - bVar36);
+  uVar26 = CONCAT31(0xf98d00,(char)(uVar64 + uVar15));
+  iVar58 = 0;
+  if (uVar26 != 0) {
+    for (; (uVar26 >> iVar58 & 1) == 0; iVar58 = iVar58 + 1) {
+    }
   }
-  bVar37 = (byte)iVar48;
-  uVar39 = (short)uVar47 + 0xef22;
-  uVar43 = (long)(int)(uVar47 & 0xffff0000 | (uint)uVar39) * 0x192ee299;
-  bVar16 = (bVar37 & 0x1f) % 0x11;
-  bVar17 = (byte)((ulong)(ushort)((uint)((int)(short)(CONCAT11((char)(uVar11 >> 8) + -1,(char)uVar11
-                                                              ) & uVar7) * (int)(short)uVar46) >>
-                                 0x10) >> 8);
-  bVar6 = (byte)uVar39;
-  uVar47 = (uint)((byte)(bVar17 - bVar6) != 0 && (char)bVar6 <= (char)bVar17);
-  uVar40 = ((uVar40 << 1 | (uint)((int)uVar40 < 0)) ^ 0xa67a52e9) << 1;
-  uVar10 = uVar40 & 0xffff0000;
-  uVar40 = uVar40 & 0xffff | (uint)(bVar17 < bVar6);
-  uVar21 = (ulong)(uVar42 & 0x5d4f0000 |
-                  (uint)(ushort)((short)-((ushort)uVar13 & 0x3f00 |
-                                         (ushort)(byte)((char)(uVar42 & 0x5d4f3ffa) << 1 |
-                                                       (uVar20 & 0x20000000) != 0)) >> 8)) +
-           0x5a4ddc75;
-  if ((int)uVar41 < (int)(uVar10 | uVar40 | 0xc000)) {
-    uVar41 = (((uint)uVar23 >> 1) + 0x81c02874) * 2;
+  iVar61 = (int)CONCAT62((int6)((ulong)lVar63 >> 0x10),
+                         (ushort)CONCAT71((int7)((ulong)lVar63 >> 8),bVar20 + CARRY2(uVar64,uVar15))
+                         ^ 0x97 | 1 << ((ushort)lVar1 & 0xf));
+  uVar56 = (ulong)(uint)((int)CONCAT62((int6)(uVar59 >> 0x10),
+                                       (short)uVar59 * (short)((uint)iVar39 >> 0x10)) * iVar61);
+  lVar63 = uVar56 * lVar66;
+  uVar14 = 0;
+  uVar24 = (ushort)lVar52;
+  if (uVar24 != 0) {
+    for (; (uVar24 >> uVar14 & 1) == 0; uVar14 = uVar14 + 1) {
+    }
   }
-  uVar39 = (short)uVar41 - (short)uVar21;
-  bVar37 = ((bVar37 - bVar6) -
-            (((((uint)(uVar35 >> 0x20) & 0xffffff00 |
-               (uint)(byte)((byte)(uVar35 >> 0x20) | (byte)uVar13)) + 0x798023ab & 0xffff0000 |
-               (uint)(byte)(bVar17 - bVar6) << 8 | (uint)(byte)((uVar43 & 0xffffffff) >> 8)) >>
-              ((byte)(uVar43 & 0xffffffff) & 0x1f) & 1) != 0) & 0x1f) % 9;
-  bVar37 = (char)uVar21 << bVar37 |
-           (byte)(CONCAT11((uVar41 & 0xffff0000 | (uint)uVar39) < 0xf59385b9,(char)uVar21) >>
-                 9 - bVar37);
-  bVar38 = bVar37 ^ (bVar37 == 0x29) * (bVar37 ^ (byte)uVar40);
-  uVar20 = ((int)(short)(((uint)uVar43 & 0xffff0000) >> 1) | 0x9e164a00U) & 0xffff0000 |
-           (uint)(ushort)(short)(char)((bVar37 != 0x29) * (bVar38 ^ 0x29) ^ 0x29);
-  bVar17 = ((char)((uint)iVar48 >> 8) >> 7) * '\x02' + ((short)(uVar13 & 0xffffffff) < 0);
-  uVar42 = (uVar41 & 0xffff0000 | uVar39 & 0xffffff00 |
-           (uint)(byte)((byte)uVar39 >> 1 | (byte)uVar39 << 7)) & ~(1 << (uVar47 << 1));
-  bVar37 = bVar17 & 0x3f;
-  uVar11 = (ulong)uVar20 << bVar37 | (ulong)(uVar20 >> 0x40 - bVar37);
-  bVar37 = (byte)((ulong)(long)(int)(uint)uVar11 >> 8);
-  iVar48 = (uint)(ushort)uVar11 * (uVar42 & 0xffff);
-  sVar9 = (short)iVar48;
-  uVar39 = CONCAT11(bVar37 + ((char)bVar17 >> 7 & bVar37) + '\x01',(char)uVar11) + -0x7714 +
-           (ushort)(sVar9 != 0);
-  uVar4 = (uint3)(uVar42 >> 8);
-  uVar20 = (uVar45 & 0xffff0000 | (uint)(ushort)(uVar18 + 0x9000 ^ 1 << (uVar39 & 0xf))) >> 1;
-  uVar41 = (int)(uVar13 & 0xffffffff) << 1;
-  uVar40 = uVar41 & 0xffffff00 |
-           (uint)(byte)(((byte)uVar41 | ((ushort)((uint)iVar48 >> 0x12) & 1) != 0) + (char)uVar7) |
-           0xf6c4;
-  uVar35 = (ulong)(uVar42 & 0xffffff00 | (uint)(byte)((char)uVar42 >> 0x12));
-  uVar23 = 1 << (uVar35 & 0x3f);
-  bVar6 = (byte)((uVar42 >> 1) >> 8) & 0x7f;
-  lVar44 = (long)(int)(((uint)uVar11 & 0xffff0000 | (uint)(ushort)-sVar9) >> 1 | 0x80000000) *
+  uVar56 = SUB168(SEXT816((long)uVar56) * SEXT816(lVar66),8) & 0xffffffffffff3fff;
+  uVar26 = (uint)(ushort)(uVar64 + uVar15 | 0xc000);
+  uVar55 = CONCAT22((short)uVar56,(short)lVar63);
+  iVar35 = (int6)(uVar56 >> 0x10);
+  uVar15 = uVar14 ^ 1 << (uVar24 & 0xf);
+  uVar56 = (ulong)CONCAT31((int3)((uint)iVar68 >> 8),
+                           (char)iVar68 + (char)uVar15 + ((uVar14 >> (uVar24 & 0xf) & 1) != 0));
+  iVar39 = (int)CONCAT62((int6)((ulong)lVar1 >> 0x10),uVar15);
+  bVar71 = SCARRY4(iVar39,1);
+  uVar62 = iVar61 >> (bVar48 & 0x1f) |
+           (uint)CONCAT62(uVar41,((ushort)lVar17 | (ushort)((long)uVar57 < 0)) - 1);
+  if ((int)uVar62 < 1) {
+    uVar56 = uVar29 & 0xffffffff;
+  }
+  uVar64 = (ushort)uVar62 & ~(1 << (uVar23 & 0xf));
+  uVar15 = ((short)(uVar55 / uVar26) << 1 | 1U) + 0xaa3b;
+  uVar59 = CONCAT62(iVar35 >> 1,(ushort)(CONCAT62(iVar35,(short)(uVar55 % uVar26)) >> 1) >> 1);
+  if (-1 < (short)uVar15) {
+    uVar59 = uVar29;
+  }
+  uVar59 = uVar59 & 0xffffffff;
+  uVar23 = CONCAT11((char)(uVar59 >> 8) - bVar48,(char)uVar59);
+  uVar27 = CONCAT62((int6)(uVar59 >> 0x10),uVar23);
+  uVar59 = (CONCAT62((int6)((ulong)lVar63 >> 0x10),uVar15) ^ 0x2634) & 0xffffffff;
+  if ((short)(uVar15 ^ 0x2634) < 0) {
+    uVar59 = (ulong)CONCAT11(bVar71,(char)uVar14);
+  }
+  uVar26 = (uint)CONCAT62(uVar41,uVar24) | 0x400000;
+  lVar17 = 0x3f;
+  if (uVar27 != 0) {
+    for (; uVar27 >> lVar17 == 0; lVar17 = lVar17 + -1) {
+    }
+  }
+  uVar29 = uVar29 | 1L << ((ulong)uVar23 & 0x3f);
+  uVar23 = (short)uVar56 << 1;
+  uVar14 = ((short)(((ulong)((uint)uVar27 & 0x3fffffff) << 0x20 | uVar59) / 0xc0000000) -
+           (short)lVar17) - 1;
+  uVar45 = (ushort)(lVar66 + -0xcb61b0a);
+  uVar15 = uVar45 & 0xf;
+  uVar54 = (ushort)uVar29;
+  uVar31 = (uint6)(uVar29 >> 0x10);
+  uVar24 = uVar54 ^ 1 << uVar15;
+  uVar29 = CONCAT62(uVar31,uVar24);
+  if (uVar14 == 0) {
+    uVar14 = uVar23;
+  }
+  if ((uVar54 >> uVar15 & 1) != 0) {
+    uVar26 = CONCAT22((short)(uVar26 >> 0x10),uVar45);
+  }
+  uVar46 = (ulong)uVar26;
+  uVar21 = (undefined)uVar24;
+  uVar59 = (long)(iVar39 + 1) * 0x4dd9e487;
+  uVar65 = uVar59 & 0xffffffff;
+  uVar50 = (ulong)(uint)(int)(short)(uVar14 >> 0xc | 0x80);
+  uVar69 = 0;
+  uVar15 = ((short)((ulong)lVar51 >> 8) << 8 ^ 1 << ((ushort)iVar58 & 0xf)) + 0xafU +
+           (short)uVar26 * 2;
+  uVar30 = CONCAT71((int7)(uVar29 >> 8),uVar21);
+  uVar57 = uVar46 ^ (ulong)(uVar50 == uVar46) *
+                    (ulong)(uVar26 ^ CONCAT22((short)(uVar62 >> 0x10),uVar64) ^ 0x80);
+  uVar27 = uVar57;
+  if (uVar50 >= uVar46) {
+    uVar27 = uVar30;
+  }
+  uVar47 = CONCAT71((int7)((ulong)(lVar66 + -0xcb61b0a) >> 8),uVar21) + 0x795e097d +
+           (ulong)(uVar50 < uVar46);
+  sVar22 = (short)uVar30 + 1;
+  uVar14 = (short)(uVar27 & 0xffffffff) * -0x3333;
+  uVar27 = CONCAT62((int6)((uVar27 & 0xffffffff) >> 0x10),uVar14);
+  bVar36 = (byte)sVar22;
+  bVar20 = (bVar36 & 0x1f) % 9;
+  bVar48 = (byte)((ushort)sVar22 >> 8);
+  sVar22 = 0xf;
+  if (uVar14 != 0) {
+    for (; uVar14 >> sVar22 == 0; sVar22 = sVar22 + -1) {
+    }
+  }
+  iVar35 = (int6)(uVar47 >> 0x10);
+  uVar64 = uVar64 ^ 0x80 | 0x1000;
+  lVar17 = (uVar50 ^ (ulong)(uVar50 != uVar46) * (uVar50 ^ uVar57)) *
+           ((uint)((int)CONCAT62((int6)((ulong)lVar51 >> 0x10),uVar15) + (int)uVar65 * 4) & uVar47);
+  uVar50 = (uVar65 << (bVar36 & 0x3f) | uVar65 >> 0x40 - (bVar36 & 0x3f)) >> 1;
+  sVar16 = 0xf;
+  if (uVar64 != 0) {
+    for (; uVar64 >> sVar16 == 0; sVar16 = sVar16 + -1) {
+    }
+  }
+  lVar66 = CONCAT71((int7)((long)CONCAT62(iVar35,sVar22) >> 0x36),
+                    (char)((long)iVar35 >> 0x1e) + -0x7d);
+  uVar34 = (uint7)(CONCAT62((int6)((CONCAT62((int6)(uVar56 >> 0x10),uVar23) << 0x23 |
+                                   (ulong)(uVar31 >> 0xd)) - uVar27 >> 0x10),sVar16) >> 8);
+  uVar30 = CONCAT62(uVar31,CONCAT11(bVar48 << bVar20 | bVar48 >> 9 - bVar20,bVar36)) >> 1;
+  uVar46 = uVar50 & 0xffffffff;
+  uVar15 = uVar15 | (ushort)uVar50;
+  uVar56 = (CONCAT62((int6)((ulong)lVar17 >> 0x10),(ushort)(byte)lVar17 * (ushort)bVar71) &
+           0xffffffff) * (uVar50 & 0xffffffff);
+  uVar59 = (ulong)CONCAT22(0xc000,(ushort)((long)(int)uVar59 != uVar59) << 0xf) ^ 0x4b ^ uVar46;
+  bVar20 = (byte)uVar30;
+  uVar26 = (uint)lVar66 | 0xc0000000;
+  uVar55 = (int)(((ulong)((uint)(uVar56 >> 0x20) & 0x3fffffff) << 0x20 | uVar56 & 0xffffffff) /
+                (ulong)uVar26) << (bVar20 & 0x1f) |
+           ((uint)CONCAT71(uVar34,(char)sVar16 << 1) | 1) >> 0x20 - (bVar20 & 0x1f);
+  uVar64 = (ushort)uVar59;
+  uVar26 = uVar26 * -0x28388f15 >> 1;
+  auVar7._8_8_ = 0;
+  auVar7._0_8_ = uVar30;
+  auVar7 = ZEXT416(CONCAT22((short)(uVar55 >> 0x10),(short)uVar55 * uVar64)) * auVar7;
+  sVar22 = (short)(lVar66 + -0x16587c82) + -0x2b28;
+  if (sVar22 == 0) {
+    uVar69 = (ulong)(ushort)((ushort)lVar66 & ~(1 << (uVar64 & 0xf)));
+  }
+  uVar29 = uVar29 & 0xffffffff & uVar27;
+  bVar36 = (bVar20 & 0x1f) % 9;
+  bVar48 = (byte)(uVar30 >> 8);
+  uVar55 = 0 >> (bVar20 & 0x3f);
+  lVar17 = (ulong)CONCAT31(auVar7._1_3_ >> 1 | (uint3)((uVar26 << 0x1f) >> 8),
+                           (char)(auVar7._0_4_ >> 1) << (bVar20 & 0x1f)) + 1;
+  sVar16 = 0xf;
+  uVar64 = (ushort)uVar26;
+  if (uVar64 != 0) {
+    for (; uVar64 >> sVar16 == 0; sVar16 = sVar16 + -1) {
+    }
+  }
+  bVar18 = (byte)((ulong)lVar17 >> 8);
+  bVar42 = (byte)(uVar55 >> 8);
+  sVar25 = CONCAT11(bVar42 - bVar18,(char)uVar55);
+  uVar26 = (int)CONCAT71((int7)(uVar27 >> 8),(byte)uVar14 >> 4 | (byte)uVar14 << 4) + -0x31e4cf1f +
+           (uint)(bVar42 < bVar18);
+  cVar53 = (char)lVar17 << 1;
+  uVar62 = (uint)CONCAT62((int6)((ulong)(lVar66 + -0x16587c82) >> 0x10),sVar22);
+  iVar58 = uVar62 + 0x9ecff9f7;
+  if (0x61300608 < uVar62) {
+    uVar69 = (ulong)uVar26;
+  }
+  sVar67 = (short)iVar58 + sVar25;
+  uVar62 = CONCAT22((short)((uint)iVar58 >> 0x10),sVar67);
+  uVar41 = (undefined6)(uVar29 >> 0x10);
+  sVar40 = (short)uVar29 << 1;
+  uVar33 = CONCAT22(auVar7._10_2_ & ~(ushort)((uint)(1 << (auVar7._0_4_ & 0x1f)) >> 0x10),
+                    CONCAT11((bVar48 << bVar36 | bVar48 >> 9 - bVar36) + 0x5d,bVar20)) <<
+           (bVar20 & 0x3f) | uVar26 >> 0x40 - (bVar20 & 0x3f);
+  bVar48 = (byte)(uVar26 >> 0x1b);
+  uVar26 = (uint)(byte)-bVar48;
+  bVar36 = (bVar20 & 0x1f) % 0x11;
+  uVar64 = sVar25 << bVar36 | (ushort)(CONCAT12(bVar48 != 0,sVar25) >> 0x11 - bVar36);
+  uVar59 = uVar59 & CONCAT71((int7)((ulong)lVar17 >> 8),cVar53);
+  sVar22 = 0xf;
+  if ((ushort)uVar69 != 0) {
+    for (; (ushort)((ushort)uVar69 >> sVar22) == 0; sVar22 = sVar22 + -1) {
+    }
+  }
+  uVar29 = uVar59 & uVar62;
+  uVar56 = CONCAT62((int6)((ulong)lVar17 >> 0x10),
+                    CONCAT11((uVar29 == 0) << 6 | in_AF << 4 |
+                             ((POPCOUNT(uVar29 & 0xff) & 1U) == 0) << 2,cVar53)) | 0x200;
+  uVar55 = CONCAT31((int3)(CONCAT22((short)(uVar55 >> 0x10),uVar64) >> 8),
+                    (char)uVar64 - (char)(uVar56 >> 8));
+  uVar64 = uVar15 ^ 0x2b28;
+  iVar58 = uVar33 - uVar26;
+  uVar29 = CONCAT62(uVar31 >> 1,sVar22) + (ulong)uVar55 * 8;
+  if (SBORROW4(uVar33,uVar26) == false) {
+    uVar29 = CONCAT62((int6)((uint6)((uVar46 >> (bVar20 & 0x3f)) >> 0x10) |
+                            (uint6)((uVar46 << 0x40 - (bVar20 & 0x3f)) >> 0x10)) >> 0x1e,sVar16);
+  }
+  bVar36 = (byte)uVar59;
+  bVar48 = (byte)(uVar29 & 0xffffffff);
+  lVar17 = CONCAT71((int7)((uVar29 & 0xffffffff) >> 8),bVar48 - bVar36);
+  bVar20 = (byte)sVar22 & 0x3f;
+  uVar29 = uVar56 >> bVar20 | uVar56 << 0x40 - bVar20;
+  uVar14 = (ushort)lVar17;
+  uVar23 = uVar64 + uVar14;
+  uVar44 = CONCAT22(0xdb5d,uVar23);
+  uVar33 = CONCAT31((int3)((uint)iVar58 >> 8),(byte)iVar58 >> 1 | (bVar48 < bVar36) << 7) << 1;
+  uVar60 = uVar33 | CARRY2(uVar64,uVar14);
+  if (iVar58 < 0 == (int)uVar60 < 0) {
+    sVar40 = (short)uVar55;
+  }
+  uVar59 = CONCAT62(uVar41,sVar40);
+  bVar20 = ((byte)sVar22 & 0x1f) % 9;
+  cVar53 = (char)sVar67;
+  uVar50 = lVar17 - (ulong)uVar26;
+  sVar22 = (short)uVar60 + -0x1bbe;
+  uVar56 = uVar55 + uVar59 + 1;
+  uVar55 = CONCAT31((int3)(uVar62 >> 8),
+                    (byte)((byte)(CONCAT11((uVar29 & 1) != 0,cVar53) >> bVar20) |
+                          cVar53 << 9 - bVar20) >> 1);
+  uVar27 = CONCAT71((int7)(uVar69 >> 8),-(char)uVar69);
+  if ((short)uVar15 < (short)uVar56) {
+    uVar27 = 0xffffffff;
+  }
+  lVar17 = CONCAT62((int6)((long)uVar29 >> 0x11),
+                    (short)(char)((long)uVar29 >> 1) * (short)(char)uVar50);
+  uVar15 = (ushort)uVar50 | 0x1b9;
+  uVar29 = (ulong)uVar26;
+  if (-1 < (short)uVar15) {
+    uVar29 = uVar59;
+  }
+  uVar26 = CONCAT31((int3)(CONCAT22((short)(uVar33 >> 0x10),sVar22) >> 8),(char)sVar22 + '\x04');
+  if ((POPCOUNT(uVar15 & 0xff) & 1U) != 0) {
+    uVar26 = uVar55;
+  }
+  uVar69 = ((ulong)uVar34 << 8) >> 7;
+  if ((short)uVar15 < 1) {
+    uVar69 = 0xffffffff;
+  }
+  uVar30 = lVar17 - uVar69;
+  uVar69 = uVar69 ^ (ulong)(uVar30 == 0) * (uVar69 ^ (uVar50 | 0x1b9));
+  uVar62 = (uint)lVar17;
+  uVar62 = uVar62 ^ (uint)(uVar30 != 0) * (uVar62 ^ (uint)uVar69);
+  if ((POPCOUNT(uVar30 & 0xff) & 1U) != 0) {
+    uVar27 = (ulong)uVar23;
+  }
+  iVar58 = (int)(uVar50 | 0x1b9);
+  bVar71 = SCARRY4(iVar58,(int)uVar56);
+  uVar60 = iVar58 + (int)uVar56;
+  uVar33 = (uint)uVar29;
+  if (bVar71 == (int)uVar60 < 0) {
+    uVar33 = uVar26;
+  }
+  auVar5[9] = 0;
+  auVar5[8] = (byte)uVar26;
+  auVar5._10_2_ = (short)(uVar26 >> 0x10);
+  uVar55 = uVar55 * 0x100;
+  uVar43 = (uVar55 - 1) + (uint)(uVar33 < 0x7ecbeb5e);
+  lVar17 = 0;
+  if (uVar44 != 0) {
+    for (; (uVar44 >> lVar17 & 1) == 0; lVar17 = lVar17 + 1) {
+    }
+  }
+  uVar44 = uVar43 >> 1;
+  uVar29 = (ulong)((uVar43 & 1) != 0);
+  uVar50 = (ulong)uVar55 - 0xb5a3ec37;
+  lVar17 = uVar50 - uVar29;
+  uVar30 = uVar69 & 0xffff;
+  bVar20 = (byte)uVar30 & 0x3f;
+  uVar28 = CONCAT71((uint7)((uVar56 >> bVar20) >> 8) | (uint7)((uVar56 << 0x40 - bVar20) >> 8),
+                    (byte)uVar26);
+  iVar39 = (int)uVar28;
+  uVar69 = uVar69 >> 0x1f & 1;
+  auVar5._2_6_ = (int6)(short)(uVar62 >> 0x10);
+  auVar5._0_2_ = -(short)(char)uVar62;
+  bVar20 = ~(byte)uVar30;
+  uVar56 = CONCAT62(uVar41,(ushort)CONCAT71((int7)(uVar59 >> 8),(byte)sVar40 ^ (byte)uVar44) &
+                           ~(1 << ((ushort)uVar28 & 0xf)));
+  iVar58 = CONCAT22(0xffff,(short)CONCAT31(0xffffff,bVar71) + 0x5aa);
+  uVar62 = (uint)uVar56;
+  uVar26 = iVar58 << 1 | uVar62 >> 0x1f;
+  if (iVar58 < 0 == (int)uVar26 < 0) {
+    iVar39 = (int)CONCAT71((int7)(uVar30 >> 8),bVar20);
+  }
+  lVar66 = (ulong)(uVar60 ^ 0x10) + 0x36cd7731 + (ulong)(iVar58 < 0);
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = uVar56 | 0xc000000000000000;
+  auVar5._12_4_ = 0;
+  sVar22 = SUB162(auVar5 / auVar3,0);
+  iVar68 = (int)sVar22 * (int)sVar22;
+  uVar56 = CONCAT62(SUB166(auVar5 / auVar3,2),(short)iVar68);
+  uVar29 = CONCAT71((int7)(CONCAT62((int6)((ulong)lVar17 >> 0x10),
+                                    (ushort)lVar17 >> 1 |
+                                    (ushort)((ulong)uVar55 < 0xb5a3ec37 || uVar50 < uVar29) << 0xf)
+                          >> 8),0xff) >> 1;
+  iVar39 = iVar39 * 0x20000 + -0x72d6c271;
+  bVar36 = (byte)iVar39 | (byte)((uint)iVar68 >> 8);
+  if (bVar36 == 0) {
+    uVar26 = CONCAT22((short)((uint)(iVar58 << 1) >> 0x10),
+                      (short)(uVar33 + 0x813414a2) << (bVar20 & 0x1f));
+  }
+  uVar50 = uVar29 ^ (ulong)(uVar56 == uVar29) * (uVar29 ^ uVar69);
+  uVar55 = (uint)uVar56 ^ (uint)(uVar56 != uVar29) * ((uint)uVar56 ^ (uint)uVar50);
+  uVar60 = CONCAT31((int3)((uint)iVar39 >> 8),bVar36 << 1) ^ 0x9f26d2d7;
+  uVar56 = (long)(int)uVar62 * -0x5ab5c818;
+  cVar53 = (char)uVar55;
+  bVar36 = (byte)(CONCAT11((long)(int)uVar56 != uVar56,cVar53) >> 5) | cVar53 << 4;
+  uVar59 = (ulong)uVar44;
+  if ((POPCOUNT((ulong)bVar36 & 0x37) & 1U) != 0) {
+    uVar59 = uVar50;
+  }
+  uVar62 = (int)(uint)CONCAT11(bVar20,(char)(uVar30 >> 8)) >> 1;
+  iVar58 = uVar62 * 2;
+  uVar30 = CONCAT71((int7)(int3)(uVar55 >> 8),bVar36);
+  if (!CARRY4(uVar62,uVar62)) {
+    uVar30 = uVar50;
+  }
+  uVar62 = (uint)uVar30 ^ 1 << (uVar26 & 0x1f);
+  cVar53 = (char)(uVar56 & 0xffffffff);
+  uVar30 = uVar59 & 0xffffffff | (ulong)uVar60;
+  bVar36 = (byte)((uint)iVar58 >> 8);
+  bVar20 = (byte)iVar58 - bVar36;
+  bVar36 = (char)uVar30 << 1 | (byte)iVar58 < bVar36;
+  uVar46 = CONCAT71((int7)(uVar30 >> 8),bVar36);
+  lVar52 = (long)(int)uVar46;
+  uVar55 = CONCAT31((int3)((uint)iVar58 >> 8),bVar20) >> 1;
+  lVar17 = CONCAT62((int6)((ulong)lVar66 >> 0x10),-(short)lVar66) << 1;
+  uVar31 = (uint6)(uVar50 >> 0x10);
+  uVar59 = (long)(int)uVar69 * -0x531863aa;
+  uVar69 = CONCAT71((int7)((ulong)lVar17 >> 8),(byte)lVar17 | (bVar20 & 1) != 0) ^ 0x2d;
+  if ((long)(int)uVar59 == uVar59) {
+    uVar69 = (ulong)(uVar26 << 1 | (uint)((int)uVar26 < 0));
+  }
+  uVar50 = CONCAT62(uVar31,(short)uVar50 >> 9) >> 1;
+  sVar22 = (short)CONCAT71((int7)(uVar69 >> 8),(byte)uVar69 << 4 | (byte)uVar69 >> 4);
+  uVar44 = (uint)CONCAT62((int6)(uVar30 >> 0x10),(ushort)uVar46 >> 1 | sVar22 << 0xf);
+  cVar53 = (cVar53 * -2 | '\0' < cVar53) - 1;
+  uVar56 = CONCAT71((int7)((uVar56 & 0xffffffff) >> 8),cVar53);
+  lVar17 = (ulong)CONCAT22((short)(uVar33 + 0x813414a2 >> 0x10),(short)uVar62 * 4) + 1;
+  if (cVar53 != '\0') {
+    lVar17 = lVar52;
+  }
+  uVar29 = uVar29 & 0xffff | 0x5b;
+  auVar6._8_8_ = 0;
+  auVar6._0_8_ = (long)CONCAT31((int3)(uVar62 >> 8),
+                                ((char)((uint)iVar68 >> 0x10) + '\"') - (char)uVar60);
+  auVar8._8_8_ = 0;
+  auVar8._0_8_ = uVar56;
+  auVar6 = auVar6 * auVar8;
+  uVar62 = (int)(short)uVar55 & 0xfffffffe;
+  iVar58 = (int)uVar29 + 0xbd + (int)uVar56 * 8;
+  uVar64 = (ushort)uVar29 & 0x7fff;
+  sVar22 = sVar22 >> 0x11;
+  uVar15 = CONCAT11(0xa3 >> ((byte)uVar55 & 0x1e),0xff);
+  cVar49 = (char)uVar64;
+  uVar26 = uVar26 << 1 & 0xe46de1d7 | (uint)((int)uVar26 < 0);
+  iVar39 = uVar62 + 0xde704b1a;
+  bVar20 = (byte)((uint)iVar39 >> 8);
+  cVar53 = bVar20 + 0x27;
+  cVar37 = (char)iVar39;
+  iVar39 = CONCAT22((short)((uint)iVar39 >> 0x10),CONCAT11(cVar53,cVar37));
+  uVar29 = (ulong)(uVar44 >> 0x18 | (uVar44 & 0xff0000) >> 8 | (uVar44 & 0xff00) << 8 |
+                  uVar44 << 0x18);
+  if (bVar20 >= 0xd9 && cVar53 != '\0') {
+    uVar29 = uVar46;
+  }
+  iVar68 = ((((int)(uVar27 << 0x10) + 1) * 2 & (uint)uVar50) - iVar39) - (uint)(bVar20 < 0xd9);
+  uVar11 = (uint3)((uint)iVar68 >> 8);
+  uVar55 = CONCAT31(uVar11,(char)iVar68 + (char)uVar26);
+  if (SCARRY1(cVar37,cVar53) == (char)(cVar37 + cVar53) < '\0') {
+    lVar52 = CONCAT62((int6)(short)(uVar30 >> 0x10),(ushort)uVar46);
+  }
+  lVar17 = -((CONCAT71((int7)((ulong)lVar17 >> 8),((byte)lVar17 | (char)(uVar69 >> 8) >> 7) + 0x52)
+             - (ulong)(CONCAT11((char)(uVar64 >> 8),cVar49 + auVar6[0]) + 0xdbcc1c31)) -
+            (ulong)(0xe245 < uVar15 || 0xfffe < (ushort)(uVar15 + 0x1dba)));
+  uVar33 = CONCAT31((int3)((uint)iVar39 >> 8),cVar37 + cVar53) & 0xffffff0f;
+  sVar19 = (sbyte)uVar33;
+  uVar15 = (ushort)CONCAT71((int7)(CONCAT62(auVar6._2_6_,CONCAT11(1,auVar6[0])) >> 8),cVar49);
+  uVar31 = uVar31 >> 1;
+  uVar64 = (short)uVar50 << sVar19 | uVar15 >> 0x10 - sVar19;
+  iVar39 = (int)(short)uVar15 * (int)sVar22;
+  uVar56 = CONCAT62((int6)(uVar69 >> 0x10),sVar22);
+  if (0x7bd30fa9 < (uint)lVar17) {
+    uVar56 = (ulong)uVar55;
+  }
+  uVar15 = (ushort)(uVar59 & 0xffffffff);
+  if (-1 < (short)(((short)CONCAT31((int3)((uint)iVar58 >> 8),(char)iVar58 >> 1) + 0x7444 +
+                   (ushort)(uVar62 + 0x550298e9 < 0x76924dcf)) - uVar15)) {
+    uVar26 = (uint)lVar52;
+  }
+  uVar26 = uVar26 | 0xc0000000;
+  uVar27 = ((ulong)((uint)CONCAT62(auVar6._10_6_,(short)((uint)iVar39 >> 0x10)) & 0x3fffffff) <<
+            0x20 | CONCAT62(auVar6._2_6_,(short)iVar39) >> 1 & 0xffffffff) / (ulong)uVar26 &
+           0xffffffff;
+  bVar20 = (byte)uVar27;
+  bVar18 = (byte)uVar29;
+  bVar38 = (byte)lVar52;
+  bVar42 = bVar18 ^ (bVar20 == bVar18) * (bVar18 ^ bVar38);
+  uVar69 = CONCAT71((int7)(uVar29 >> 8),bVar42);
+  sVar22 = (short)uVar69;
+  bVar48 = (char)(uVar27 >> 0x18) >> 7;
+  sVar16 = (short)CONCAT71((int7)(uVar27 >> 8),bVar20 ^ (bVar20 != bVar18) * (bVar20 ^ bVar42));
+  sVar25 = (((short)uVar33 + sVar22 + 0x2bec) - sVar16) - (ushort)CARRY1(bVar48,bVar48);
+  if (sVar25 < 0) {
+    lVar17 = CONCAT62((int6)((ulong)lVar17 >> 0x10),uVar64);
+  }
+  bVar48 = bVar38 << 5 | bVar38 >> 3;
+  bVar20 = (byte)sVar25;
+  lVar66 = 0;
+  if (uVar56 != 0) {
+    for (; (uVar56 >> lVar66 & 1) == 0; lVar66 = lVar66 + 1) {
+    }
+  }
+  uVar50 = (ulong)(uint)((int)CONCAT71((int7)(int3)(uVar30 >> 8),~bVar36) >> 0xd) + 0x17c90fe4 ^
+           0xffffffffbdb12441;
+  uVar27 = uVar50 & 0xff;
+  if ((long)uVar50 < 0) {
+    uVar50 = CONCAT62((int6)(uVar50 >> 0x10),sVar25);
+  }
+  iVar58 = (int)lVar66;
+  if ((POPCOUNT(uVar27) & 1U) != 0) {
+    iVar58 = (int)CONCAT71((int7)(uVar56 >> 8),(char)uVar56 >> 1);
+  }
+  uVar62 = (int)CONCAT71((int7)((ulong)lVar17 >> 8),(char)lVar17 >> 0x11) << 0xe;
+  uVar55 = uVar62 | (((((uint)(uVar11 >> 0x10) | uVar11 & 0xff00 | (uVar11 & 0xff) << 0x10 |
+                       uVar55 << 0x18) >> (bVar20 & 0x3f)) >> 0x10 |
+                     (uint)((ulong)((long)(int)CONCAT71((int7)((ulong)lVar52 >> 8),bVar48) <<
+                                   0x40 - (bVar20 & 0x3f)) >> 0x10)) << 0x10) >> 0x12;
+  uVar27 = (ulong)(uint)(iVar58 << 7);
+  uVar64 = (ushort)CONCAT71((int7)(CONCAT62(uVar31,uVar64) >> 8),
+                            (byte)uVar64 >> 1 | (char)uVar56 << 7);
+  uVar33 = (uint)uVar50 | (uint)bVar20;
+  uVar56 = CONCAT62((int6)((uVar59 & 0xffffffff) >> 0x10),
+                    (uVar15 << (bVar20 & 0xf) | uVar15 >> 0x10 - (bVar20 & 0xf)) + 0x715e) -
+           0x7338782f;
+  if (uVar33 != 0) {
+    uVar56 = (ulong)uVar55;
+  }
+  uVar23 = ~(ushort)uVar55;
+  sVar25 = (short)CONCAT31((int3)(uVar50 >> 8),~(byte)uVar33);
+  uVar15 = (ushort)(uVar50 >> 0x10);
+  uVar55 = (int)((uint)CONCAT62(uVar31,uVar64) & 0xffffbfff) >> 6 ^ 0xb83e0c28;
+  iVar58 = (int)CONCAT71((int7)(int3)((ulong)lVar52 >> 8),bVar48 - 1) * -0x32075b17;
+  uVar59 = ((uVar27 & 0xff000000) << 8 | (uVar27 & 0xff0000) << 0x18 | (uVar27 & 0xff00) << 0x28 |
+           uVar27 << 0x38) >> 1;
+  uVar50 = uVar59 | 0x8000000000000000;
+  uVar27 = (ulong)(ushort)((((short)CONCAT31((uint3)(uVar26 >> 9),(char)(uVar26 >> 1) + '\x01') -
+                            sVar22) - (ushort)((uVar64 >> 0xe & 1) != 0)) + sVar16 + 0x64ba) -
+           0x6e87bde2;
+  sVar22 = 0;
+  if ((ushort)uVar55 != 0) {
+    for (; ((ushort)uVar55 >> sVar22 & 1) == 0; sVar22 = sVar22 + 1) {
+    }
+  }
+  iVar58 = CONCAT31((int3)((uint)iVar58 >> 8),(char)iVar58 << 1);
+  sVar22 = 0xf;
+  uVar14 = (ushort)iVar58;
+  if (uVar14 != 0) {
+    for (; uVar14 >> sVar22 == 0; sVar22 = sVar22 + -1) {
+    }
+  }
+  uVar69 = CONCAT62((int6)(short)((ulong)lVar52 >> 0x10),(short)((uVar69 & 0xffffffffc0278201) == 0)
+                   );
+  if ((int)uVar69 == 0) {
+    uVar69 = uVar56 & 0xffffffff;
+  }
+  sVar16 = (short)(uVar55 >> 8) * 0x100;
+  uVar30 = (long)(int)uVar69 * 0x5217e8f1;
+  uVar26 = CONCAT22(uVar15,(ushort)(sVar25 << 1 | (ushort)(sVar25 < 0)) >> ((byte)uVar27 & 0x1f));
+  uVar56 = 0;
+  if (uVar50 != 0) {
+    for (; (uVar50 >> uVar56 & 1) == 0; uVar56 = uVar56 + 1) {
+    }
+  }
+  iVar68 = (int)CONCAT62((int6)(uVar69 >> 0x10),(short)(char)uVar23);
+  uVar33 = iVar68 << 1;
+  uVar44 = (uint)uVar56 & 0x5d4f3ffa;
+  uVar69 = uVar30 & 0xffffffff & ~(1L << (uVar27 & 0x3f));
+  iVar39 = (int)uVar27 - uVar44;
+  uVar23 = -uVar23;
+  lVar17 = (ulong)(((uint)uVar59 >> 1) + 0x81c02874) << 1;
+  uVar13 = CONCAT31((uint3)(uVar26 >> 9),(char)sVar22);
+  uVar50 = CONCAT71((int7)(CONCAT62((int6)(uVar29 >> 0x10),sVar22) >> 8),(char)(uVar26 >> 1));
+  uVar29 = (long)iVar58 * 0x45613a4f;
+  uVar27 = uVar29 & 0xffffffff;
+  uVar29 = (ulong)((long)(int)uVar29 != uVar29);
+  uVar59 = uVar50 + uVar27;
+  lVar66 = uVar59 + uVar29;
+  lVar66 = CONCAT71((uint7)(CONCAT18(CARRY8(uVar50,uVar27) || CARRY8(uVar59,uVar29),lVar66) >> 0x20)
+                    ,(char)((ulong)lVar66 >> 0x18) + 'K');
+  uVar14 = (uVar64 & 0xbfff) >> 1;
+  uVar9 = (undefined2)(uVar55 >> 0x10);
+  sVar22 = (short)(uVar56 & 0xffffffff);
+  if ((SBORROW2(sVar16,0x6f7b) != SBORROW2(sVar16 + -0x6f7b,1)) != (short)(sVar16 + -0x6f7c) < 0) {
+    uVar13 = CONCAT22(uVar15 >> 1,sVar22);
+  }
+  bVar36 = (byte)iVar39;
+  sVar25 = (short)uVar13 + -0x10de;
+  uVar29 = (long)CONCAT22((short)((uint)uVar13 >> 0x10),sVar25) * 0x192ee299;
+  bVar20 = (bVar36 & 0x1f) % 0x11;
+  bVar48 = (byte)((uint)((int)(short)(CONCAT11((char)(uVar69 >> 8) + -1,(char)uVar69) & uVar23) *
+                        (int)(short)(uVar64 & 0xbfff)) >> 0x18);
+  bVar18 = (byte)sVar25;
+  iVar58 = ((uVar33 | iVar68 < 0) ^ 0xa67a52e9) << 1;
+  uVar15 = (ushort)iVar58 | (ushort)(bVar48 < bVar18);
+  lVar52 = (ulong)CONCAT22((short)(uVar44 >> 0x10),
+                           (short)-(short)CONCAT31((int3)(uVar44 >> 8),
+                                                   (char)uVar44 << 1 | (uVar33 & 0x40000000) != 0)
+                           >> 8) + 0x5a4ddc75;
+  if ((int)lVar66 < (int)(CONCAT22((short)((uint)iVar58 >> 0x10),uVar15) | 0xc000)) {
+    lVar66 = lVar17;
+  }
+  sVar25 = (short)lVar66 - (short)lVar52;
+  uVar28 = CONCAT62((int6)((ulong)lVar66 >> 0x10),sVar25);
+  bVar36 = ((bVar36 - bVar18) -
+            (((uint)CONCAT71(CONCAT61((int6)((ulong)(CONCAT71((uint7)(uVar30 >> 0x28),
+                                                              (byte)(uVar30 >> 0x20) | (byte)uVar56)
+                                                    + 0x798023ab) >> 0x10),bVar48 - bVar18),
+                             (char)((uVar29 & 0xffffffff) >> 8)) >>
+              ((byte)(uVar29 & 0xffffffff) & 0x1f) & 1) != 0) & 0x1f) % 9;
+  bVar42 = (char)lVar52 << bVar36 |
+           (byte)(CONCAT11((uint)uVar28 < 0xf59385b9,(char)lVar52) >> 9 - bVar36);
+  bVar38 = (byte)sVar25;
+  bVar36 = ((char)((uint)iVar39 >> 8) >> 7) * '\x02' + (sVar22 < 0);
+  uVar26 = (int)CONCAT71((int7)(CONCAT62((short)uVar64 >> 0xf,
+                                         (ushort)((uint3)(CONCAT12((long)(int)uVar29 != uVar29,
+                                                                   uVar14) | 0x8000) >> bVar20) |
+                                         (uVar14 | 0x8000) << 0x11 - bVar20) >> 8),
+                         (byte)(bVar48 - bVar18) != '\0' && (char)bVar18 <= (char)bVar48) << 1;
+  uVar29 = CONCAT71((int7)((ulong)lVar17 >> 8),(char)uVar27) & 0xffff00ff;
+  uVar44 = (uint)CONCAT71((int7)((ulong)uVar28 >> 8),bVar38 >> 1 | bVar38 << 7) &
+           ~(1 << (uVar26 & 0x1f));
+  bVar20 = bVar36 & 0x3f;
+  uVar27 = uVar29 << bVar20 | uVar29 >> 0x40 - bVar20;
+  bVar20 = (byte)(uVar27 >> 8);
+  iVar39 = (uint)(ushort)uVar27 * (uVar44 & 0xffff);
+  sVar22 = (short)iVar39;
+  iVar35 = (int6)(short)(uVar27 >> 0x10);
+  uVar64 = CONCAT11(bVar20 + ((char)bVar36 >> 7 & bVar20) + '\x01',(char)uVar27) + -0x7714 +
+           (ushort)(sVar22 != 0);
+  uVar12 = (undefined2)(uVar44 >> 0x10);
+  uVar55 = CONCAT22(uVar9,(short)(CONCAT22(uVar9,sVar16 + -0x6f7c) >> 8) << 8 ^ 1 << (uVar64 & 0xf))
+           >> 1;
+  iVar68 = (int)(uVar56 & 0xffffffff) << 1;
+  uVar59 = (ulong)CONCAT22((short)((uint)iVar68 >> 0x10),
+                           (short)CONCAT31((int3)((uint)iVar68 >> 8),
+                                           ((byte)iVar68 | ((ushort)((uint)iVar39 >> 0x12) & 1) != 0
+                                           ) + (char)uVar23)) | 0xf6c4;
+  uVar69 = (ulong)CONCAT31((int3)(uVar44 >> 8),(char)uVar44 >> 0x12);
+  uVar29 = 1L << (uVar69 & 0x3f);
+  uVar33 = CONCAT22(uVar12,(ushort)uVar44 >> 1) & 0xffffff00;
+  uVar56 = (long)(int)((uint)CONCAT62((int6)(uVar27 >> 0x10),-sVar22) >> 1 | 0x80000000) *
            0x23b50b52;
-  sVar9 = uVar39 * 4;
-  uVar50 = uVar35 | uVar23 & 0xffffffff;
-  bVar27 = (char)sVar9 - 0x3c;
-  uVar13 = CONCAT62((int6)(short)(uVar11 >> 0x10),sVar9) & 0xffffffffffffff00;
-  uVar35 = (uVar35 | uVar23) & 0xff;
-  uVar23 = (long)(int)(uVar41 & 0xffff0000 | (uint)(ushort)((short)((short)uVar40 * -0x673c) >> 2))
-           * (long)(int)((uint)uVar13 | (uint)bVar27);
-  uVar11 = uVar23 & 0xffffffff;
-  uVar52 = ((uVar23 >> 0x20) - 0x49c6bd03) - (ulong)(((ushort)uVar20 >> 6 & 1) != 0);
-  uVar41 = (int)(((uVar21 & 0xfffffffffffe0000) >> 1 |
-                 (uVar21 & 0xffffffffffffff00 | (ulong)bVar38) >> 2 & 0x7fff) >> 1) << 1;
-  bVar30 = (byte)(uVar13 >> 8);
-  bVar17 = bVar27 + bVar30;
-  bVar38 = (byte)uVar35;
-  bVar37 = (bVar38 & 0x1f) % 9;
-  uVar23 = ((ulong)CONCAT61((int6)(uVar13 >> 0x10),bVar27) & 0xffffffffffff00) << 8;
-  uVar20 = uVar40 + (uVar20 | uVar42 << 0x1f) + 1;
-  bVar25 = (char)(uVar11 >> 8) >> 7;
-  bVar25 = bVar25 << (bVar38 & 7) | bVar25 >> 8 - (bVar38 & 7);
-  uVar21 = (ulong)CONCAT11((bVar27 << bVar37 |
-                           (byte)(CONCAT11(CARRY1(bVar27,bVar30),bVar27) >> 9 - bVar37)) ^ bVar25,
-                           bVar17);
-  uVar7 = (ushort)uVar50;
-  if (SBORROW4((uint)((byte)((byte)(uVar10 >> 0x1c) + (char)((ulong)lVar44 >> 0x20) +
-                             ((int)lVar44 != lVar44) & (byte)uVar11) >> 1),-0x49869cce)) {
-    bVar6 = (byte)((uint)uVar7 >> 8);
+  sVar22 = uVar64 * 4;
+  iVar39 = (int)uVar59;
+  if ((int)uVar56 != (int)(uVar56 & 0xffffffff)) {
+    uVar59 = uVar56 & 0xffffffff;
   }
-  uVar13 = 0xd2a69862;
-  uVar18 = (ushort)(short)(char)(byte)uVar11 >> 1;
-  uVar7 = uVar7 << (bVar38 & 0xf) | uVar7 >> 0x10 - (bVar38 & 0xf);
-  uVar50 = uVar50 & 0xffffffffffff0000 | (ulong)uVar7;
-  bVar37 = (byte)uVar18;
-  bVar27 = bVar25 ^ (bVar37 == bVar25) * bVar25;
-  bVar37 = bVar37 ^ (bVar37 != bVar25) * (bVar37 ^ bVar27);
-  sVar9 = (short)uVar41;
-  uVar40 = (ushort)(0x16a5U - sVar9) | 0x476a0000;
-  if ((SBORROW2(0x16a5,sVar9) != false) != (short)(0x16a5U - sVar9) < 0) {
-    uVar40 = (uint)uVar50;
+  uVar50 = uVar69 | uVar29 & 0xffffffff;
+  bVar38 = (char)sVar22 - 0x3c;
+  uVar27 = (uVar69 | uVar29) & 0xff;
+  uVar29 = (long)(int)CONCAT62((int6)(uVar59 >> 0x10),(short)((short)uVar59 * -0x673c) >> 2) *
+           (long)(int)CONCAT71((int7)(CONCAT62(iVar35,sVar22) >> 8),bVar38);
+  uVar59 = uVar29 & 0xffffffff;
+  iVar68 = (int)(CONCAT62((uint6)((ulong)lVar52 >> 0x11),
+                          (ushort)(CONCAT71((int7)((ulong)lVar52 >> 8),
+                                            bVar42 ^ (bVar42 == 0x29) * (bVar42 ^ (byte)uVar15)) >>
+                                  1) >> 1) >> 1) << 1;
+  bVar48 = (byte)uVar59;
+  uVar31 = (uint6)(((uVar29 >> 0x20) - 0x49c6bd03) - (ulong)(((ushort)uVar55 >> 6 & 1) != 0) >> 0x10
+                  );
+  bVar32 = (byte)((ushort)sVar22 >> 8);
+  bVar36 = bVar38 + bVar32;
+  bVar18 = (byte)uVar27;
+  bVar20 = (bVar18 & 0x1f) % 9;
+  uVar55 = iVar39 + (uVar55 | uVar44 << 0x1f) + 1;
+  bVar42 = (char)(uVar59 >> 8) >> 7;
+  bVar42 = bVar42 << (bVar18 & 7) | bVar42 >> 8 - (bVar18 & 7);
+  bVar20 = (bVar38 << bVar20 | (byte)(CONCAT11(CARRY1(bVar38,bVar32),bVar38) >> 9 - bVar20)) ^
+           bVar42;
+  uVar15 = (ushort)uVar50;
+  if (SBORROW4((uint)(byte)(((byte)((uint)iVar58 >> 0x1c) + (char)(uVar56 >> 0x20) +
+                             ((long)(int)uVar56 != uVar56) & bVar48) >> 1),-0x49869cce)) {
+    uVar33 = CONCAT22(uVar12,uVar15);
   }
-  uVar10 = (uint)uVar35 & 0x1f;
-  cVar14 = ((char)((ulong)(uVar18 & 0xff00) >> 8) - bVar37) - ((uVar40 >> uVar10 & 1) != 0);
-  if (cVar14 == '\0') {
-    uVar13 = uVar23 & 0xffffffff | uVar21;
+  uVar29 = 0xd2a69862;
+  uVar15 = uVar15 << (bVar18 & 0xf) | uVar15 >> 0x10 - (bVar18 & 0xf);
+  lVar17 = CONCAT62((int6)(uVar50 >> 0x10),uVar15);
+  bVar38 = (byte)((ushort)(short)(char)bVar48 >> 1);
+  uVar34 = (uint7)(CONCAT62(uVar31,CONCAT11(bVar42,bVar42)) >> 8);
+  bVar32 = bVar42 ^ (bVar38 == bVar42) * bVar42;
+  bVar38 = bVar38 ^ (bVar38 != bVar42) * (bVar38 ^ bVar32);
+  sVar22 = (short)iVar68;
+  uVar44 = (uint)CONCAT62(0x2a4c24aa476a,0x16a5 - sVar22);
+  if ((SBORROW2(0x16a5,sVar22) != false) != (short)(0x16a5 - sVar22) < 0) {
+    uVar44 = (uint)lVar17;
   }
-  uVar35 = uVar52 >> 0x21;
-  cVar5 = (char)uVar7;
-  cVar34 = (char)((uVar40 & ~(1 << uVar10)) >> 1) - cVar5;
-  uVar52 = (uVar52 & 0xffffffffffff0000 | (ulong)CONCAT11(bVar25,bVar25) & 0xffffffffffffff00 |
-           (ulong)bVar37) << 0x1f | uVar35 & 0xffffffffffff0000;
-  lVar44 = (ulong)(((uint)CONCAT62((undefined6)((short)(uVar8 & 0xff00 | uVar19) >> 0xf),
-                                   (ushort)((uint3)(CONCAT12((long)(int)(uint)uVar43 != uVar43,
-                                                             uVar46 >> 1) | 0x8000) >> bVar16) |
-                                   (uVar46 >> 1 | 0x8000) << 0x11 - bVar16) & 0xffffff00 | uVar47)
-                   << 1 | (uint)uVar11) * 2;
-  uVar46 = (ushort)((uint)CONCAT11(cVar14,(bVar27 - cVar34) -
-                                          (((ushort)((short)uVar35 << ((bVar38 ^ bVar17) & 0x1f)) >>
-                                            0xd & 1) != 0)) * (uVar20 & 0xffff) >> 0x10);
-  uVar7 = (ushort)(short)cVar34 >> 1 | 0x8000;
-  uVar47 = (uint)lVar44;
-  uVar35 = (((ulong)(uVar51 & 0xffff0000) ^ 0x4000000000000000) + 0x16a5) * 2 + 0x55f877c;
-  uVar43 = uVar13 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar13 - cVar5);
-  uVar18 = -uVar7;
-  uVar40 = CONCAT22((undefined2)(cVar34 >> 7),uVar18);
-  bVar16 = (byte)uVar18;
-  uVar45 = uVar47 << (bVar16 & 0x1f) | uVar47 >> 0x20 - (bVar16 & 0x1f);
-  uVar10 = CONCAT31(uVar4 >> 8,~((bVar6 - (char)uVar35) - 1) + 1);
-  uVar11 = (ulong)uVar10;
-  uVar51 = (uVar20 - uVar45 ^ 0x31dfa813) >> 10;
-  uVar20 = 0;
-  if (uVar51 != 0) {
-    for (; (uVar51 >> uVar20 & 1) == 0; uVar20 = uVar20 + 1) {
+  uVar60 = (uint)uVar27 & 0x1f;
+  cVar53 = (((byte)((char)bVar48 >> 7) >> 1) - bVar38) - ((uVar44 >> uVar60 & 1) != 0);
+  if (cVar53 == '\0') {
+    uVar29 = CONCAT62(iVar35,CONCAT11(bVar20,bVar36)) & 0xffffffff;
+  }
+  cVar37 = (char)uVar15;
+  cVar49 = (char)((uVar44 & ~(1 << uVar60)) >> 1) - cVar37;
+  lVar52 = (ulong)(uVar26 | (uint)uVar59) * 2;
+  iVar39 = (uint)CONCAT11(cVar53,(bVar32 - cVar49) -
+                                 (((ushort)((short)(uVar34 >> 0x19) << ((bVar18 ^ bVar36) & 0x1f))
+                                   >> 0xd & 1) != 0)) * (uVar55 & 0xffff);
+  uVar28 = CONCAT62((uint6)((ulong)(CONCAT71(uVar34,bVar38) << 0x1f) >> 0x10) | uVar31 >> 0x21,
+                    (short)((uint)iVar39 >> 0x10));
+  uVar64 = (ushort)(short)cVar49 >> 1 | 0x8000;
+  uVar44 = (uint)lVar52;
+  lVar51 = ((ulong)((uint6)(ushort)(uVar62 >> 0x10) ^ 0x400000000000) * 0x10000 + 0x16a5) * 2 +
+           0x55f877c;
+  lVar66 = CONCAT71((int7)(uVar29 >> 8),(char)uVar29 - cVar37);
+  uVar15 = (ushort)(uVar33 >> 0x10);
+  uVar23 = -uVar64;
+  uVar26 = CONCAT22(cVar49 >> 7,uVar23);
+  bVar48 = (byte)uVar23;
+  uVar60 = uVar44 << (bVar48 & 0x1f) | uVar44 >> 0x20 - (bVar48 & 0x1f);
+  uVar11 = CONCAT21(uVar15,~(((char)(uVar33 >> 8) - (char)lVar51) - 1U) + 1);
+  uVar56 = (ulong)uVar11;
+  uVar55 = uVar55 - uVar60 ^ 0x31dfa813;
+  uVar62 = uVar55 >> 10;
+  iVar58 = 0;
+  if (uVar62 != 0) {
+    for (; (uVar62 >> iVar58 & 1) == 0; iVar58 = iVar58 + 1) {
     }
   }
-  bVar37 = (bVar16 & 0x1f) % 0x11;
-  uVar8 = ((ushort)uVar10 ^ 0xdc42) << 2;
-  uVar19 = (ushort)uVar43 + 0x16b5;
-  uVar36 = (ulong)bVar16;
-  if (uVar19 != 0) {
-    uVar36 = uVar11;
+  bVar18 = (bVar48 & 0x1f) % 0x11;
+  uVar24 = (((short)iVar58 << bVar18 |
+            (ushort)(CONCAT12((uint)uVar28 < 0xa09ebd71,(short)iVar58) >> 0x11 - bVar18)) & 0xff) *
+           (ushort)bVar20;
+  uVar14 = ((ushort)uVar11 ^ 0xdc42) << 2;
+  uVar54 = (ushort)lVar66 + 0x16b5;
+  uVar59 = (ulong)bVar48;
+  if (uVar54 != 0) {
+    uVar59 = uVar56;
   }
-  uVar39 = (ushort)((((short)uVar20 << bVar37 |
-                     (ushort)(CONCAT12(((uint)uVar52 | (uint)uVar46) < 0xa09ebd71,(short)uVar20) >>
-                             0x11 - bVar37)) & 0xff) * (ushort)(byte)(uVar21 >> 8)) >> 1;
-  uVar50 = uVar50 + lVar44 & 0xffffffffffffdfc3;
-  return (ulong)(uVar20 & 0xffff0000 | (uint)(ushort)(uVar39 & 0xff | uVar46 << 8)) +
-         (uVar23 | uVar21 & 0xffffffffffff00ff) +
-         (CONCAT71((uint7)(uint3)(uVar40 >> 9) | (uint7)(((ulong)((uVar18 & 1) != 0) << 0x3f) >> 8),
-                   (char)(uVar40 >> 1)) & 0xffffffffffffff62) +
-         (uVar52 | (ulong)uVar46 & 0xffffffffffffff00 |
-         (ulong)((ushort)(uVar39 | uVar19 * -0x8000) >> 8)) + uVar43 +
-         (ulong)(uVar51 & 0xffff0000 |
-                (uint)(ushort)((short)uVar51 >> 0x11 | 1 << ((ushort)uVar45 & 0xf))) +
-         (((ulong)(((uVar47 - (int)uVar43) * 0x40000 | (uint)(uVar4 >> 0xe)) >> (bVar16 & 0x3f)) |
-          uVar11 << 0x40 - (bVar16 & 0x3f)) >> 0x18 | uVar50 << 0x28) + uVar36 +
-         (ulong)((uint)uVar19 << 1 | 1) +
-         (ulong)(((uVar41 & 0xffff0000 |
-                  (uint)(ushort)((ushort)(CONCAT12(uVar7 != 0,sVar9) >> 3) | sVar9 << 0xe)) ^
-                 0x10000000) & 0xfeffffff | 0x80) + uVar11 + uVar50 +
-         (ulong)(byte)((byte)uVar8 | (byte)((uVar13 & 0xffffffffffffff00) >> 8) >> 6) +
-         (ulong)uVar45 +
-         (uVar35 & 0xffffffffffff0000 |
-         (ulong)(ushort)((ushort)uVar35 & ~(1 << (uVar8 & 0xf | (ushort)uVar43 >> 0xe)))) +
+  uVar27 = lVar17 + lVar52 & 0xffffffffffffdfc3;
+  return (ulong)CONCAT22((short)((uint)iVar58 >> 0x10),
+                         CONCAT11((char)((uint)iVar39 >> 0x10),(char)(uVar24 >> 1))) +
+         CONCAT62(iVar35,(ushort)bVar36) +
+         (CONCAT71((uint7)(uint3)(uVar26 >> 9) | (uint7)(((ulong)((uVar23 & 1) != 0) << 0x3f) >> 8),
+                   (char)(uVar26 >> 1)) & 0xffffffffffffff62) +
+         CONCAT71((int7)((ulong)uVar28 >> 8),
+                  (byte)(uVar24 >> 9) | (byte)((ushort)(uVar54 * -0x8000) >> 8)) + lVar66 +
+         (ulong)CONCAT22((ushort)(uVar55 >> 0x1a),
+                         (short)uVar62 >> 0x11 | 1 << ((ushort)uVar60 & 0xf)) +
+         (((ulong)(((uVar44 - (int)lVar66) * 0x40000 | (uint)(uVar15 >> 6)) >> (bVar48 & 0x3f)) |
+          uVar56 << 0x40 - (bVar48 & 0x3f)) >> 0x18 | uVar27 << 0x28) + uVar59 +
+         (ulong)((uint)uVar54 << 1 | 1) +
+         (ulong)((CONCAT22((short)((uint)iVar68 >> 0x10),
+                           (ushort)(CONCAT12(uVar64 != 0,sVar22) >> 3) | sVar22 << 0xe) ^ 0x10000000
+                 ) & 0xfeffffff | 0x80) + uVar56 + uVar27 +
+         (ulong)(byte)((byte)uVar14 | (byte)(uVar29 >> 8) >> 6) + (ulong)uVar60 +
+         CONCAT62((int6)((ulong)lVar51 >> 0x10),
+                  (ushort)lVar51 & ~(1 << (uVar14 & 0xf | (ushort)lVar66 >> 0xe))) +
          -0x5b65c3051f295f2f;
 }
 
@@ -4231,678 +4404,702 @@ long log_size_10_var_004(void)
 long log_size_10_var_005(void)
 
 {
-  undefined2 uVar1;
-  byte bVar2;
-  byte bVar3;
-  ushort uVar4;
-  ushort uVar5;
-  int iVar6;
-  int iVar7;
-  int6 iVar8;
-  byte bVar14;
-  char cVar15;
-  uint uVar9;
-  int iVar10;
-  uint uVar11;
-  ulong uVar12;
-  ulong uVar13;
-  char cVar16;
-  byte bVar18;
-  ushort uVar17;
-  byte bVar19;
-  byte bVar21;
-  long lVar20;
-  short sVar22;
-  ushort uVar23;
-  ushort uVar24;
-  uint uVar25;
-  ulong uVar26;
-  ushort uVar27;
-  uint uVar28;
-  char cVar29;
-  short sVar30;
-  uint uVar31;
-  ushort uVar32;
-  ushort uVar33;
-  ulong uVar34;
-  ushort uVar35;
-  ulong uVar36;
+  ulong uVar1;
+  ulong uVar2;
+  undefined auVar3 [16];
+  undefined auVar4 [16];
+  short sVar5;
+  undefined2 uVar6;
+  undefined3 uVar7;
+  uint3 uVar8;
+  byte bVar9;
+  char cVar10;
+  ushort uVar11;
+  ushort uVar12;
+  ushort uVar13;
+  uint uVar14;
+  int6 iVar17;
+  undefined6 uVar18;
+  undefined7 uVar16;
+  undefined8 uVar15;
+  sbyte sVar19;
+  byte bVar25;
+  uint uVar20;
+  int iVar21;
+  uint uVar22;
+  ulong uVar23;
+  char cVar26;
+  ulong uVar24;
+  byte bVar29;
+  undefined2 uVar27;
+  ushort uVar28;
+  byte bVar30;
+  byte bVar31;
+  byte bVar33;
+  int iVar32;
+  short sVar34;
+  long lVar35;
+  uint uVar36;
   ulong uVar37;
-  uint7 uVar38;
-  uint uVar39;
-  uint uVar40;
-  ulong uVar41;
-  uint uVar42;
-  ulong uVar43;
+  ushort uVar38;
+  int iVar40;
+  char cVar41;
+  uint6 uVar42;
+  short sVar43;
   uint uVar44;
-  uint uVar45;
+  ulong uVar45;
   ulong uVar46;
-  ulong uVar47;
-  bool bVar48;
-  bool bVar49;
+  ushort uVar47;
+  ulong uVar48;
+  long lVar49;
+  ushort uVar50;
+  uint uVar51;
+  ulong uVar52;
+  int iVar53;
+  ulong uVar54;
+  ushort uVar55;
+  uint uVar56;
+  int iVar57;
+  ulong uVar58;
+  bool bVar59;
+  ushort uVar39;
   
-  for (lVar20 = 0x3f; 0x120845e2bU >> lVar20 == 0; lVar20 = lVar20 + -1) {
+  for (lVar35 = 0x3f; 0x120845e2bU >> lVar35 == 0; lVar35 = lVar35 + -1) {
   }
-  for (lVar20 = 0; (0xa914f5beU >> lVar20 & 1) == 0; lVar20 = lVar20 + 1) {
+  for (lVar35 = 0; (0xa914f5beU >> lVar35 & 1) == 0; lVar35 = lVar35 + 1) {
   }
-  for (uVar17 = 0; (0x8d9aU >> uVar17 & 1) == 0; uVar17 = uVar17 + 1) {
+  for (sVar43 = 0; (0x8d9aU >> sVar43 & 1) == 0; sVar43 = sVar43 + 1) {
   }
-  uVar11 = (uVar17 | 0xf6a10000) ^ 0x13100000;
-  uVar25 = (uVar11 & 0xffffff00 | (uint)(byte)((char)uVar17 - 0xb)) >> 1;
-  uVar9 = 0;
-  uVar25 = (uVar11 & 0xfffe0000) >> 1 | 0x80000000 |
-           (uint)CONCAT11((char)(uVar25 >> 8) + '\x06',(char)uVar25);
-  uVar31 = uVar25 + 0xcc563908;
-  if (0x33a9c6f7 < uVar25) {
-    uVar31 = uVar9;
+  uVar45 = CONCAT62(0xf6a1,sVar43) ^ 0x13100000;
+  uVar36 = (uint)CONCAT71((int7)(uVar45 >> 8),(char)sVar43 + -0xb) >> 1;
+  uVar22 = 0;
+  uVar50 = (ushort)((ulong)(lVar35 << 0xd) >> 0x10);
+  uVar36 = CONCAT22((ushort)(uVar45 >> 0x10) >> 1,
+                    CONCAT11((char)(uVar36 >> 8) + '\x06',(char)uVar36)) | 0x80000000;
+  uVar20 = uVar36 + 0xcc563908;
+  if (0x33a9c6f7 < uVar36) {
+    uVar20 = uVar22;
   }
-  uVar23 = (ushort)(0xf8db9f8 - uVar11 >> 0x10);
-  uVar17 = uVar23 >> 6;
-  uVar34 = (ulong)((uint)(lVar20 << 0xd) & 0xfffd0000 | 0xc669);
-  bVar2 = (byte)uVar31;
-  bVar2 = bVar2 ^ (bVar2 != 0xff) * (bVar2 ^ (bVar2 == 0xff) * -0x6a ^ 0xffU);
-  for (sVar22 = 0xf; 0xc563U >> sVar22 == 0; sVar22 = sVar22 + -1) {
+  uVar55 = (ushort)((uint)(0xf8db9f8 - (int)uVar45) >> 0x10);
+  uVar12 = uVar55 >> 6;
+  uVar8 = (uint3)(((uVar50 & 0xfffd) << 0x10) >> 8) | 0xc6;
+  bVar9 = (byte)uVar20;
+  bVar9 = bVar9 ^ (bVar9 != 0xff) * (bVar9 ^ (bVar9 == 0xff) * -0x6a ^ 0xffU);
+  for (sVar43 = 0xf; 0xc563U >> sVar43 == 0; sVar43 = sVar43 + -1) {
   }
-  iVar8 = (int6)(short)(uVar31 >> 0x10);
-  uVar36 = uVar34 & 0xffffffffffffff00;
-  for (iVar7 = 0x1f; 0x33a9c669U >> iVar7 == 0; iVar7 = iVar7 + -1) {
+  iVar17 = (int6)(short)(uVar20 >> 0x10);
+  for (iVar53 = 0x1f; 0x33a9c669U >> iVar53 == 0; iVar53 = iVar53 + -1) {
   }
-  uVar33 = (short)(char)bVar2 & 0xff;
-  uVar25 = ((uint)uVar36 | 0xd2) ^ 1;
-  if ((int)uVar25 < 0) {
-    uVar9 = (uint)CONCAT62(iVar8,uVar33 | (ushort)(byte)(((char)bVar2 >> 7) + 0x17) << 8);
+  uVar36 = CONCAT31(uVar8,0xd2) ^ 1;
+  if ((int)uVar36 < 0) {
+    uVar22 = (uint)CONCAT62(iVar17,CONCAT11(((char)bVar9 >> 7) + '\x17',bVar9));
   }
-  uVar36 = CONCAT71((int7)(uVar36 >> 8),0x27);
-  uVar4 = (char)uVar33 * 0x27;
-  uVar9 = uVar9 | 0x1409;
-  for (uVar33 = 0xf; 0x1409U >> uVar33 == 0; uVar33 = uVar33 - 1) {
+  uVar45 = CONCAT71((uint7)uVar8,0x27);
+  uVar20 = uVar22 | 0x1409;
+  for (sVar43 = 0xf; 0x1409U >> sVar43 == 0; sVar43 = sVar43 + -1) {
   }
-  bVar2 = (byte)uVar9;
-  uVar31 = (uint)(ushort)(0 >> (bVar2 & 0x1f));
-  if (((uint)(0x33a9c669 << (bVar2 & 0x1f)) >> 0x11 & 1) != 0) {
-    uVar36 = uVar34 & 0xffffffffffff0000;
+  bVar25 = (byte)uVar20;
+  uVar48 = CONCAT62(iVar17,(short)CONCAT71((int7)(CONCAT62(iVar17,(char)bVar9 * 0x27) >> 8),
+                                           (char)((char)bVar9 * 0x27))) & 0xffffffffffff3fff;
+  uVar37 = uVar48 | 0xc0;
+  uVar48 = CONCAT62((int6)(uVar48 >> 0x10),(ushort)uVar37 / (ushort)(byte)uVar37) &
+           0xffffffffffff00ff;
+  if (((uint)(0x33a9c669 << (bVar25 & 0x1f)) >> 0x11 & 1) != 0) {
+    uVar45 = (ulong)((uVar50 & 0xfffd) << 0x10);
   }
-  bVar48 = (CONCAT22(uVar17,0x1b96) | 0x800) != 0;
-  cVar16 = (char)((uint)uVar33 >> 8);
-  bVar14 = cVar16 - 1;
-  bVar18 = bVar14 - bVar48;
-  uVar33 = uVar33 & 0xff | (ushort)bVar18 << 8;
-  bVar3 = (bVar2 & 0x1f) % 9;
-  bVar2 = (byte)(CONCAT11(cVar16 == '\0' || bVar14 < bVar48,bVar2) >> bVar3) | bVar2 << 9 - bVar3;
-  uVar11 = uVar9 & 0xffffff00;
-  iVar10 = (short)(uVar25 << 1) * 0x4ff4;
-  uVar25 = 0x43073ff8;
-  if ((short)(ushort)iVar10 != iVar10) {
-    uVar25 = uVar11;
+  uVar51 = (uint)(ushort)(0 >> (bVar25 & 0x1f));
+  bVar59 = (CONCAT22(uVar12,0x1b96) | 0x800) != 0;
+  cVar26 = (char)((ushort)sVar43 >> 8);
+  bVar9 = cVar26 - 1;
+  bVar29 = bVar9 - bVar59;
+  uVar50 = CONCAT11(bVar29,(char)sVar43);
+  bVar30 = (bVar25 & 0x1f) % 9;
+  bVar9 = (byte)(CONCAT11(cVar26 == '\0' || bVar9 < bVar59,bVar25) >> bVar30) | bVar25 << 9 - bVar30
+  ;
+  iVar40 = (short)(uVar36 << 1) * 0x4ff4;
+  uVar7 = 0x43073f;
+  if ((short)iVar40 != iVar40) {
+    uVar7 = (int3)(uVar20 >> 8);
   }
-  uVar36 = uVar36 & 0xffffffffffffff00 | (ulong)(byte)((byte)uVar36 >> 2 | (byte)uVar36 << 6);
-  uVar44 = uVar31 + 0x65f8aef1;
-  uVar31 = 0x1408 - uVar31 >> 1;
-  uVar34 = 0;
+  uVar37 = CONCAT71((int7)(uVar45 >> 8),(byte)uVar45 >> 2 | (byte)uVar45 << 6);
+  uVar56 = uVar51 + 0x65f8aef1;
+  uVar36 = 0x1408 - uVar51 >> 1;
+  uVar45 = 0;
+  if (uVar37 != 0) {
+    for (; (uVar37 >> uVar45 & 1) == 0; uVar45 = uVar45 + 1) {
+    }
+  }
+  uVar18 = (undefined6)(uVar48 >> 0x10);
+  lVar35 = CONCAT62(uVar18,(short)(char)uVar48 * (short)(char)uVar36);
+  uVar51 = iVar53 * -0x856ed44;
+  uVar23 = (ulong)uVar51;
+  bVar25 = bVar9 & 0x3f;
+  uVar48 = uVar37 >> bVar25 | lVar35 << 0x40 - bVar25;
+  iVar53 = uVar56 + (int)lVar35 + 1;
+  sVar43 = 0;
+  uVar12 = (ushort)(CONCAT22(uVar12,0x1b96) >> 2);
+  if (uVar12 != 0) {
+    for (; (uVar12 >> sVar43 & 1) == 0; sVar43 = sVar43 + 1) {
+    }
+  }
+  uVar27 = (undefined2)((uint)iVar53 >> 0x10);
+  uVar14 = CONCAT22(uVar27,sVar43);
+  sVar34 = uVar12 + (short)CONCAT31((int3)((uint)iVar40 >> 8),~(byte)iVar40) + -0x4bd6;
+  bVar25 = (byte)(uVar22 >> 0x10);
+  uVar11 = (ushort)bVar25;
+  uVar39 = (ushort)uVar48;
+  uVar12 = uVar39 >> 1;
+  uVar28 = uVar11 << 0xf;
+  uVar47 = uVar12 | uVar28;
+  uVar13 = CONCAT11(bVar29 >> 1,(char)(uVar50 >> 1) + 'v');
+  if (uVar47 == 0 || ((short)uVar39 < 0 != (uVar28 != 0)) != (uVar28 != 0)) {
+    uVar13 = uVar11;
+  }
+  uVar48 = CONCAT62((int6)(uVar48 >> 0x10),uVar47) & 0xffffffff;
+  if ((POPCOUNT(uVar12 & 0xff) & 1U) == 0) {
+    uVar48 = 0xbed8a57e;
+  }
+  uVar56 = (uint)(ushort)((ushort)CONCAT31(0x2b2ffa,(char)iVar53 + -0x40 +
+                                                    CARRY4(uVar56,(uint)uVar50)) | 0xc000);
+  uVar44 = CONCAT22(uVar13,uVar11) & 0x3fffffff;
+  uVar24 = CONCAT62(uVar18,(short)(uVar44 / uVar56));
+  uVar44 = uVar44 % uVar56;
+  bVar30 = (byte)(uVar22 >> 0x18);
+  bVar25 = bVar25 >> (bVar30 & 7) | bVar25 << 8 - (bVar30 & 7);
+  uVar37 = (ulong)CONCAT31(uVar7,0xbed8a57e < uVar14);
+  if (uVar14 < 0xbed8a57f) {
+    uVar37 = 0xbed8a57e;
+  }
+  cVar26 = (char)(uVar44 >> 8);
+  bVar29 = (byte)uVar44;
+  uVar45 = (uVar45 ^ 0x61b6) & 0xffffffff;
+  if (uVar24 + uVar23 != 0 && SCARRY8(uVar24,uVar23) == (long)(uVar24 + uVar23) < 0) {
+    uVar45 = (ulong)CONCAT22(uVar55 >> 8,sVar34);
+  }
+  uVar46 = uVar45 >> 0xd | uVar45 << 0x33;
+  uVar45 = (ulong)CONCAT11(bVar25,bVar29);
+  iVar53 = 0;
+  uVar22 = (uint)CONCAT62((int6)(uVar37 >> 0x10),(ushort)CARRY8(uVar24,uVar23) | (short)uVar37 << 1)
+  ;
+  if (uVar22 != 0) {
+    for (; (uVar22 >> iVar53 & 1) == 0; iVar53 = iVar53 + 1) {
+    }
+  }
+  uVar36 = uVar36 << ((bVar30 | 0x65) & 0x1f);
+  uVar37 = uVar45 * 0x1812860d;
+  bVar31 = (bVar30 | 0x65) & 0x3f;
+  uVar23 = (ulong)(CONCAT22((ushort)(uVar20 >> 8) & 0xff | (ushort)(((uint)bVar9 << 0x18) >> 0x10),
+                            CONCAT11(bVar25 + (cVar26 << 6 |
+                                              (byte)(CONCAT11(0xbed8a57d < uVar14,cVar26) >> 3)),
+                                     bVar30)) | 0x65) << bVar31 | (ulong)(uVar51 >> 0x40 - bVar31);
+  iVar40 = (uVar22 << 1 |
+           (uint)(SEXT816((long)uVar37) != SEXT816((long)uVar45) * SEXT416(0x1812860d))) - uVar14;
+  bVar29 = bVar29 | 0xa8;
+  if (sVar43 != -0x3969) {
+    uVar37 = uVar48;
+  }
+  uVar50 = (ushort)uVar48;
+  uVar22 = 0x1f;
   if (uVar36 != 0) {
-    for (; (uVar36 >> uVar34 & 1) == 0; uVar34 = uVar34 + 1) {
+    for (; uVar36 >> uVar22 == 0; uVar22 = uVar22 - 1) {
     }
   }
-  lVar20 = CONCAT62(iVar8,(short)(char)((uVar4 & 0x3fff | 0xc0) / (uVar4 & 0xff | 0xc0)) *
-                          (short)(char)uVar31);
-  uVar39 = iVar7 * -0x856ed44;
-  uVar37 = (ulong)uVar39;
-  bVar14 = bVar2 & 0x3f;
-  uVar36 = uVar36 >> bVar14 | lVar20 << 0x40 - bVar14;
-  uVar42 = uVar44 + (int)lVar20 + 1;
-  uVar4 = 0;
-  uVar17 = (ushort)(CONCAT22(uVar17,0x1b96) >> 2);
-  if (uVar17 != 0) {
-    for (; (uVar17 >> uVar4 & 1) == 0; uVar4 = uVar4 + 1) {
-    }
+  iVar21 = (int)CONCAT71((int7)(CONCAT62((int6)(uVar23 >> 0x10),0xa57e) >> 8),0x7e) - uVar36;
+  bVar25 = ('~' - (char)(uVar23 >> 8)) - (0x4666 < uVar50 || 0xfffe < (ushort)(uVar50 + 0xb999));
+  uVar20 = iVar21 * 0x20;
+  bVar9 = (bVar25 == 0xa5) * (bVar29 ^ 0xa5);
+  uVar56 = (uint)bVar29;
+  if (bVar25 < 0xa6) {
+    uVar56 = uVar20;
   }
-  uVar45 = uVar42 & 0xffff0000 | (uint)uVar4;
-  sVar22 = uVar17 + ((ushort)iVar10 & 0xff00 | (ushort)(byte)~(byte)iVar10) + 0xb42a;
-  bVar14 = (byte)(uVar11 >> 0x10);
-  uVar27 = (ushort)uVar36;
-  uVar17 = uVar27 >> 1;
-  uVar32 = (ushort)bVar14;
-  uVar5 = uVar32 << 0xf;
-  uVar35 = uVar17 | uVar5;
-  uVar24 = CONCAT11(bVar18 >> 1,(char)(uVar33 >> 1) + 'v');
-  if (uVar35 == 0 || ((short)uVar27 < 0 != (uVar5 != 0)) != (uVar5 != 0)) {
-    uVar24 = uVar32;
+  bVar30 = (byte)iVar21;
+  uVar14 = (int)(uint)(ushort)(CONCAT11(bVar25 ^ (bVar25 != 0xa5) * (bVar25 ^ bVar9 ^ 0xa5),bVar9) ^
+                              0xa5) >> (bVar30 & 0x1f);
+  uVar45 = (ulong)uVar14;
+  uVar23 = (ulong)(uVar22 >> 1) ^ 0x7e6c4760;
+  if (uVar14 != (uint)(uVar48 << 0x19)) {
+    uVar45 = 0;
   }
-  uVar36 = uVar36 & 0xffff0000 | (ulong)uVar35;
-  if ((POPCOUNT(uVar17 & 0xff) & 1U) == 0) {
-    uVar36 = 0xbed8a57e;
-  }
-  uVar44 = (uint)(ushort)((byte)((char)uVar42 + -0x40 + CARRY4(uVar44,(uint)uVar33)) | 64000);
-  uVar42 = CONCAT22(uVar24,uVar32) & 0x3fffffff;
-  uVar26 = CONCAT62(iVar8,(short)(uVar42 / uVar44));
-  uVar17 = (ushort)(uVar42 % uVar44);
-  bVar18 = (byte)(uVar11 >> 0x18);
-  bVar3 = bVar18 & 7;
-  bVar14 = bVar14 >> bVar3 | bVar14 << 8 - bVar3;
-  uVar25 = uVar25 & 0xffffff00 | (uint)(0xbed8a57e < uVar45);
-  if (uVar45 < 0xbed8a57f) {
-    uVar25 = 0xbed8a57e;
-  }
-  cVar16 = (char)((ulong)uVar17 >> 8);
-  uVar17 = uVar17 & 0xff;
-  uVar34 = (uVar34 ^ 0x61b6) & 0xffffffff;
-  if (uVar26 + uVar37 != 0 && SCARRY8(uVar26,uVar37) == (long)(uVar26 + uVar37) < 0) {
-    uVar34 = (ulong)CONCAT22(uVar23 >> 8,sVar22);
-  }
-  uVar25 = uVar25 & 0xffff0000 |
-           (uint)(ushort)((ushort)(CONCAT12(CARRY8(uVar26,uVar37),(short)uVar25) >> 0x10) |
-                         (short)uVar25 << 1);
-  uVar37 = (ulong)(ushort)(uVar17 | (ushort)bVar14 << 8);
-  uVar23 = CONCAT11(bVar14 + (cVar16 << 6 | (byte)(CONCAT11(0xbed8a57d < uVar45,cVar16) >> 3)),
-                    bVar18) | 0x65;
-  iVar7 = 0;
-  if (uVar25 != 0) {
-    for (; (uVar25 >> iVar7 & 1) == 0; iVar7 = iVar7 + 1) {
-    }
-  }
-  bVar14 = (byte)uVar23;
-  uVar31 = uVar31 << (bVar14 & 0x1f);
-  uVar26 = uVar37 * 0x1812860d;
-  bVar14 = bVar14 & 0x3f;
-  uVar12 = (ulong)((uVar9 & 0xff00) << 8 | (uint)bVar2 << 0x18 | (uint)uVar23) << bVar14 |
-           (ulong)(uVar39 >> 0x40 - bVar14);
-  uVar25 = (uVar25 << 1 |
-           (uint)(SEXT816((long)uVar26) != SEXT816((long)uVar37) * SEXT416(0x1812860d))) - uVar45;
-  bVar2 = (byte)uVar17 | 0xa8;
-  if (uVar4 != 0xc697) {
-    uVar26 = uVar36;
-  }
-  uVar17 = (ushort)uVar36;
-  uVar9 = 0x1f;
-  if (uVar31 != 0) {
-    for (; uVar31 >> uVar9 == 0; uVar9 = uVar9 - 1) {
-    }
-  }
-  iVar10 = ((uint)uVar12 & 0xffff0000 | 0xa57e) - uVar31;
-  bVar3 = ('~' - (char)(uVar12 >> 8)) - (0x4666 < uVar17 || 0xfffe < (ushort)(uVar17 + 0xb999));
-  uVar11 = iVar10 * 0x20;
-  bVar14 = (bVar3 == 0xa5) * (bVar2 ^ 0xa5);
-  uVar44 = (uint)bVar2;
-  if (bVar3 < 0xa6) {
-    uVar44 = uVar11;
-  }
-  bVar2 = (byte)iVar10;
-  uVar42 = (int)(uint)(ushort)(CONCAT11(bVar3 ^ (bVar3 != 0xa5) * (bVar3 ^ bVar14 ^ 0xa5),bVar14) ^
-                              0xa5) >> (bVar2 & 0x1f);
-  uVar37 = (ulong)uVar42;
-  uVar12 = (ulong)(uVar9 >> 1) ^ 0x7e6c4760;
-  if (uVar42 != (uint)(uVar36 << 0x19)) {
-    uVar37 = 0;
-  }
-  bVar14 = (byte)(uVar17 + 0xb99a) & (byte)iVar7;
-  uVar42 = uVar25 & 0xffff0000 | (ushort)(uVar17 + 0xb99a) & 0xffffff00 | (uint)bVar14;
-  uVar17 = CONCAT11('\0' < (char)bVar14,(byte)((byte)uVar25 & (byte)sVar22) == 0);
-  bVar2 = (bVar2 & 0x1f) % 0x11;
-  uVar23 = (ushort)uVar12;
-  uVar23 = uVar23 >> bVar2 | uVar23 << 0x11 - bVar2;
-  uVar47 = uVar34 >> 0xd | uVar34 << 0x33 | 0xb148;
-  cVar15 = (char)uVar47;
-  bVar2 = (char)uVar23 * '\x02' + cVar15;
-  uVar25 = ((uint)uVar26 ^ uVar45 ^ 0xc697) & 0xffffff00 | (uint)(byte)((char)uVar44 - 1);
-  cVar16 = (char)((iVar7 - (uVar17 | 0xbed80000)) - 1 >> 0xd);
-  uVar36 = (uVar12 & 0xffffffffffff0000 | (ulong)uVar23 & 0x7fffffffffffff80) << 1 |
-           (ulong)(byte)(bVar2 * '\x04' | bVar2 >> 6);
-  sVar22 = (short)uVar25;
-  uVar45 = (uint)uVar36;
-  uVar9 = (uVar39 + 1 >> 1 & 0xffffff00 | (uint)((uVar39 + 1 & 1) != 0) << 0x1f |
-          (uint)((char)bVar14 < '\x01')) + 1 >> 1;
-  uVar12 = -(ulong)((((ushort)(uVar17 + 0x5c9f) | 0xbed80000) + 0x2f5ec3b7) - uVar45);
-  bVar14 = (byte)(uVar47 * -0x3c0b6074);
-  uVar26 = (ulong)((uVar44 >> 0x11) << 0x10) << 1;
-  bVar2 = bVar14 & 0xf;
-  uVar17 = (ushort)uVar9;
-  uVar17 = uVar17 << bVar2 | uVar17 >> 0x10 - bVar2;
-  uVar44 = uVar9 & 0xffff0000 | (int)sVar22 << 0x1f | (uint)uVar17;
-  uVar9 = (int)uVar12 + (uVar45 & 0xffff0000 | (uint)(ushort)((short)uVar36 >> (bVar14 & 0x1f)));
-  cVar29 = (char)uVar17;
-  uVar36 = (ulong)(uVar31 & 0xffff0000 |
-                  (uint)(ushort)((ushort)uVar31 & (short)(uVar11 >> 0x10) << 8)) * 2 & 0xffffffff;
-  if (!SBORROW1(cVar16,cVar29)) {
-    uVar36 = uVar26;
-  }
-  uVar33 = (ushort)uVar47 & 0xff00 | (ushort)(byte)(cVar15 << 1 | cVar15 < '\0');
-  uVar47 = (uVar47 * -0x3c0b6074 ^ (ulong)uVar42) & 0xffffffffffffff0f;
-  uVar23 = (ushort)uVar42 >> (sbyte)uVar47 | 0x22f9 << 0x10 - (sbyte)uVar47;
-  uVar25 = uVar25 + 0x77cdd4d3;
-  uVar13 = uVar47 - 0x5ecb5ba;
-  uVar43 = -(ulong)((int)uVar26 + 0xda8b9ac5);
-  bVar2 = (byte)uVar13 & 0x3f;
-  uVar41 = (ulong)uVar44 << bVar2 | (ulong)(uVar44 >> 0x40 - bVar2);
-  uVar26 = (ulong)(ushort)uVar9;
-  uVar46 = uVar36 & 0xffffffffffff0000 | uVar26;
-  uVar31 = (byte)((byte)uVar13 & (byte)uVar23) & 0xffffff0f;
-  bVar3 = (byte)uVar31;
-  uVar17 = (ushort)((ushort)(0x5ecb5b9 < uVar47) << 8) >> bVar3 | (short)uVar25 << 0x10 - bVar3;
-  uVar12 = (uVar12 & 0xffffffff) - 1;
-  bVar14 = ((POPCOUNT(uVar13 & 0xff) & 1U) == 0) * '8';
-  uVar42 = (uint)uVar23 | (uint)uVar12;
-  uVar23 = (ushort)(char)((uVar13 & 0xffffffffffffff00) >> 8);
-  uVar39 = ((uVar25 >> 0x18 | uVar25 * 0x100) >> (uVar42 & 0x1f) & 1) != 0 | 0xfdca22f8;
-  uVar36 = CONCAT62(((uint6)(uVar37 >> 8) & 0xff0000) >> 1,
-                    (ushort)(uVar17 & 0xff | (ushort)(byte)((byte)((ulong)uVar17 >> 8) >> 1) << 8)
-                    >> 1 & 0xff |
-                    (ushort)((POPCOUNT(uVar39 & (byte)-(cVar16 - cVar29)) & 1U) != 0) << 8);
-  uVar11 = ((uint)(uVar13 & 0xffffffffffffff00) | uVar31) ^ 0x9429f7bf;
-  bVar2 = (byte)uVar11 & 0x3f;
-  uVar45 = CONCAT22(sVar22 >> 0xf,sVar22 + 1) << bVar2 | (uint)(uVar43 >> 0x40 - bVar2);
-  uVar11 = uVar11 & 0xffff0000;
-  uVar31 = uVar11 | bVar14;
-  uVar44 = (uint)uVar43;
-  uVar25 = uVar44 & 0xffffff00 | uVar25 & 0xff;
-  cVar15 = (char)(uVar23 >> 1);
-  cVar29 = (char)uVar42;
-  cVar16 = cVar15 + cVar29;
-  if (SCARRY1(cVar15,cVar29) == SCARRY1(cVar16,'\0')) {
-    uVar25 = uVar44 & 0xffff0000 | (uint)bVar14;
-  }
-  uVar37 = (ulong)(int)uVar45;
-  uVar36 = (uVar36 & 0xffffffff) * (uVar36 & 0xffffffff);
-  bVar2 = (char)uVar36 + (char)uVar41 + ((int)(uVar36 >> 0x20) != 0);
-  uVar44 = uVar25 + 0xd2a8b933;
-  if ((SBORROW4(uVar25,0x2d5746cc) != SBORROW4(uVar25 + 0xd2a8b934,1)) == (int)uVar44 < 0) {
-    uVar37 = uVar36 & 0xff00 | (ulong)bVar2 | (ulong)(uint6)(int6)(short)(uVar45 >> 0x10) << 0x10;
-  }
-  uVar47 = uVar36 & 0xffffff00 | (ulong)(byte)(bVar2 + 0x36);
-  uVar4 = (short)uVar12 + (short)uVar41;
-  uVar13 = uVar41 & 0xffffffffffff0000 | uVar12 & 0xffff;
-  iVar7 = 0;
-  if (uVar31 != 0) {
-    for (; (uVar31 >> iVar7 & 1) == 0; iVar7 = iVar7 + 1) {
-    }
-  }
-  uVar1 = (undefined2)(uVar36 >> 0x30);
-  iVar6 = (int)uVar47;
-  iVar10 = iVar6 << 1;
-  uVar31 = iVar7 + uVar39;
-  uVar24 = (short)uVar31 - 1;
-  uVar25 = uVar31 & 0xffff0000 | (uint)uVar24;
-  uVar5 = (ushort)iVar10;
-  uVar32 = (ushort)(uVar5 == 0x8d98) * ((ushort)uVar44 ^ 0x8d98) ^ 0x8d98;
-  uVar5 = uVar5 ^ (ushort)(uVar5 != 0x8d98) * (uVar5 ^ uVar32);
-  uVar9 = uVar9 & 0xffff0000 | (uVar23 & 0xfe00) >> 1 | (uint)(byte)((cVar16 + '$') - (iVar6 < 0));
-  if (-0x708c < (short)uVar24) {
-    uVar9 = uVar44;
-  }
-  uVar36 = (long)(int)(uVar11 | (ushort)uVar37) * 0x13e1ff78;
-  bVar48 = (long)(int)uVar36 != uVar36;
-  bVar18 = (byte)((uVar36 & 0xffffffff) >> 8);
-  bVar2 = bVar18 + 0xb4;
-  cVar16 = (char)(uVar36 & 0xffffffff);
-  cVar15 = bVar2 + bVar48;
-  uVar41 = (ulong)uVar44;
-  if ((0x4b < bVar18 || CARRY1(bVar2,bVar48)) || cVar15 == '\0') {
-    uVar41 = uVar46;
-  }
-  uVar35 = (ushort)((byte)(bVar14 - 1) >> 1) | (ushort)((bVar14 - 1 & 1) != 0) << 0xf;
-  uVar23 = (ushort)uVar39;
-  uVar27 = uVar23 ^ (ushort)(uVar5 == uVar23) * (uVar23 ^ uVar35);
-  iVar8 = (int6)(short)((uint)iVar10 >> 0x10);
-  uVar43 = (ulong)uVar35;
-  if ((short)uVar23 < (short)uVar5) {
-    uVar43 = uVar26;
-  }
-  uVar43 = uVar37 & 0xffffffffffff0000 | uVar43;
-  if ((short)uVar23 <= (short)uVar5) {
-    uVar41 = uVar43;
-  }
-  uVar39 = (int)uVar41 << 1 | (uint)((int)uVar41 < 0);
-  uVar42 = (uVar32 | 0x5aae0000) ^ 1 << ((uint)uVar46 & 0x1f);
-  uVar11 = (uint)(ushort)(uVar5 ^ (ushort)(uVar5 != uVar23) * (uVar5 ^ uVar27)) *
-           (uint)(ushort)((short)uVar47 >> 0xf);
-  uVar23 = (ushort)(uVar11 >> 0x10);
-  uVar26 = (ulong)CONCAT22(uVar1,uVar23);
-  uVar44 = uVar11;
-  if (uVar46 + uVar26 == 0 || SCARRY8(uVar46,uVar26) != false) {
-    uVar44 = (uint)(uVar46 + uVar26);
-  }
-  uVar26 = (ulong)uVar27 & 0xffffffffffffff00 | 0xfdca0000 |
-           (ulong)(byte)((byte)((ushort)(uVar27 & 0xff | (ushort)CARRY8(uVar46,uVar26) << 8) >> 4) |
-                        (char)uVar27 << 5);
-  bVar2 = cVar16 << 1;
-  uVar34 = uVar34 >> 0xd & 0xffffffffffff0000 | uVar34 << 0x33 |
-           (ulong)(ushort)(uVar33 << bVar3 % 0x11 |
-                          (ushort)(CONCAT12((uVar17 & 1) != 0,uVar33) >> 0x11 - bVar3 % 0x11)) |
-           0xc000;
-  uVar11 = (uint)(uVar23 & 0x3fff) << 0x10 | uVar11 & 0xffff;
-  sVar22 = (short)(uVar11 / (ushort)uVar34);
-  uVar44 = uVar44 & 0xffff;
-  if ((POPCOUNT(uVar24 & 0xda) & 1U) != 0) {
-    uVar44 = (uint)CONCAT62(iVar8,sVar22);
-  }
-  uVar47 = 0;
-  if (uVar13 != 0) {
-    for (; (uVar13 >> uVar47 & 1) == 0; uVar47 = uVar47 + 1) {
-    }
-  }
-  bVar14 = bVar2 & 0x3f;
-  uVar26 = uVar26 << bVar14 | uVar26 >> 0x40 - bVar14;
-  bVar2 = bVar2 & 0x3f;
-  uVar46 = 0x865d5c7f88e24f10U >> bVar2 | -0x79a2a380771db0f0 << 0x40 - bVar2;
-  uVar38 = (uint7)(uVar43 >> 9);
-  uVar13 = CONCAT71(uVar38,(byte)(uVar43 >> 1) >> 1);
-  uVar45 = (int)sVar22 * (int)(short)uVar39;
-  uVar17 = ((ushort)uVar9 & 0xff00 | (ushort)(byte)((byte)uVar9 << 1 | (byte)uVar9 >> 7)) << 1;
-  uVar36 = (uVar36 & 0x7fff0000 | (ulong)CONCAT11(cVar15,cVar16)) << 1;
-  if (uVar34 <= uVar13) {
-    uVar36 = (ulong)uVar25;
-  }
-  uVar28 = ((uint)uVar26 & 0xffffff00 | (uint)(byte)((char)uVar26 - 1)) + 1;
-  uVar33 = ((ushort)uVar42 & 0xff00 | (ushort)(byte)((byte)uVar42 >> 1 | 0x80)) + 0xc2e7 +
-           (ushort)(0x1402d1eb < uVar34);
-  if (-1 < (short)uVar33) {
-    uVar39 = (uint)uVar12 & 0xffff0000 | (uint)(uVar4 | 0x400);
-  }
-  uVar26 = (uVar47 & ~(1 << ((ulong)uVar25 & 0x3f))) - (ulong)(uVar42 & 0xffff0000 | (uint)uVar33);
-  sVar22 = (short)uVar13 + -0x17f0;
-  uVar42 = (uint)CONCAT62((uint6)((uVar37 & 0xffffffffffff0000) >> 0x11),sVar22);
-  uVar25 = -(((uint)CONCAT61((int6)(((ulong)((uint7)(uint3)(CONCAT22(uVar1,uVar23) >> 8) &
-                                            0xffffffffffff00) << 8) >> 0x10),
-                             (char)(uVar11 % (uint)(ushort)uVar34 >> 8) >> 1) & 0x7fff80) << 9 |
-            uVar45 >> 0x10);
-  uVar23 = (ushort)uVar25;
-  uVar23 = uVar23 | 1 << (uVar23 & 0xf);
-  uVar25 = uVar25 & 0xffff0000;
-  cVar16 = (char)uVar23 + 'J';
-  uVar33 = (ushort)uVar46 & (ushort)uVar36;
-  bVar2 = (byte)uVar36 & 0x3f;
-  uVar37 = (ulong)(uVar31 >> 0x18) - 0x464d2c4b;
-  uVar23 = CONCAT11((char)((uint)uVar23 >> 8) + (char)uVar17,cVar16) << 1;
-  uVar34 = uVar36 << bVar2 | uVar36 >> 0x40 - bVar2;
-  uVar31 = uVar28 & 0xffff0000 |
-           (uint)(ushort)(((ushort)uVar28 & 0xff00 |
-                          (ushort)(byte)(((char)uVar28 << 1 | 1U) + cVar16 +
-                                        ((uVar17 >> 8 & 1) != 0))) ^ 0x400);
-  if ((uVar33 & 0x1000) != 0 || (uVar44 | (uint)uVar26) == 0x9ab684bf) {
-    uVar34 = uVar37;
-    uVar31 = uVar25 | uVar23;
-  }
-  iVar7 = (int)CONCAT62(iVar8,(short)uVar45) + 0x558996ff;
-  uVar11 = ((uVar9 & 0xffff0000 | (uint)(uVar17 | 0x100)) + 0x54512ac1) * 2;
-  uVar17 = (ushort)uVar39 & 0xff00 | (ushort)(byte)((char)uVar39 >> 0x1c) | 1;
-  uVar44 = (uint)(uVar13 & 0xffffffff);
-  uVar31 = uVar31 + uVar44 + 1;
-  uVar36 = (ulong)(uVar42 >> 0x17 | (uVar42 & 0xffffff00 | (uint)(byte)((byte)sVar22 >> 1)) << 9) ^
-           0x80;
-  uVar9 = uVar31 + (uint)uVar26 * 4;
-  uVar12 = -((uVar46 & 0xffffffffffff0000 | (ulong)uVar33) ^ 0x1000);
-  bVar2 = (byte)uVar12 | (byte)uVar4;
-  uVar47 = uVar12 & 0xffffffffffffff00 | (ulong)bVar2;
-  if ((char)bVar2 < '\x01') {
-    uVar47 = uVar12 & 0xffffffffffff0000 | (ulong)uVar17;
-  }
-  bVar2 = (byte)(uVar34 & 0xffffffff);
-  uVar39 = uVar39 & 0xffff0000 | (uint)(ushort)(uVar17 * 0x6ad);
-  uVar17 = CONCAT11((char)((uVar34 & 0xffffffff) >> 8) >> (bVar2 & 0x1f),bVar2) << 1;
-  uVar33 = uVar17 | 1;
-  iVar10 = 0;
-  if (uVar39 != 0) {
-    for (; (uVar39 >> iVar10 & 1) == 0; iVar10 = iVar10 + 1) {
-    }
-  }
-  bVar14 = (byte)uVar33;
-  bVar2 = bVar14 & 0x1f;
-  uVar42 = uVar9 >> bVar2 | uVar9 << 0x20 - bVar2;
-  uVar45 = (uint)(ushort)(short)(char)((char)uVar31 + '\x01');
-  uVar9 = (uint)((uVar37 >> 8 & 0xffffffffffff00) << 8) | uVar45;
-  cVar16 = (char)uVar42;
-  uVar42 = uVar42 & 0xffffff00 | (uint)(byte)(cVar16 << 1 | cVar16 < '\0');
-  uVar37 = uVar34 & 0xffff0000 | (ulong)(ushort)((short)uVar33 >> 8);
-  uVar46 = (ulong)(uVar42 + 0x3d09442e + uVar9 * 4);
-  uVar12 = (ulong)uVar42 * 0x1000000;
-  bVar2 = (byte)(uVar17 >> 8);
-  uVar39 = uVar39 << (bVar2 & 0x1f) | uVar39 >> 0x20 - (bVar2 & 0x1f);
-  uVar9 = uVar9 << 1;
-  uVar41 = uVar46 + uVar12;
-  uVar34 = (ulong)(uVar39 & 0xffffbfff);
-  if (uVar41 != 0) {
-    uVar34 = uVar37;
-  }
-  uVar43 = uVar41;
-  if (SCARRY8(uVar46,uVar12) != false) {
-    uVar43 = uVar12;
-  }
-  uVar46 = (ulong)(uVar9 >> 0x18 | (uVar9 & 0xff0000) >> 8 | (uVar45 & 0x7f80) << 9 |
-                  (uVar9 | (uVar39 >> 0xe & 1) != 0) << 0x18);
-  if (uVar41 != 0) {
-    uVar46 = uVar37;
-  }
-  uVar9 = 0;
-  uVar39 = (uint)uVar46;
-  if (uVar39 != 0) {
-    for (; (uVar39 >> uVar9 & 1) == 0; uVar9 = uVar9 + 1) {
-    }
-  }
-  iVar7 = SUB164((ZEXT1216(CONCAT48(uVar25 | (ushort)(uVar23 & 0xff00 |
-                                                     (ushort)(byte)((char)uVar23 -
-                                                                   (char)((uint)uVar23 >> 8))) >>
-                                             (bVar14 & 0x1f),
-                                    CONCAT62((int6)(short)((uint)iVar7 >> 0x10),
-                                             CONCAT11((char)((ulong)(long)iVar7 >> 8) << 1,
-                                                      (char)iVar7)))) &
-                 (undefined  [16])0xffffffffffffffff) % ZEXT816(uVar47 | 0xc000000000000000),0) << 1
+  bVar25 = (byte)(uVar50 + 0xb99a) & (byte)iVar53;
+  uVar22 = CONCAT31((int3)(CONCAT22((short)((uint)iVar40 >> 0x10),uVar50 + 0xb99a) >> 8),bVar25);
+  sVar34 = CONCAT11('\0' < (char)bVar25,(byte)((byte)iVar40 & (byte)sVar34) == 0);
+  bVar9 = (bVar30 & 0x1f) % 0x11;
+  uVar50 = (ushort)uVar23;
+  lVar35 = CONCAT62((int6)(uVar23 >> 0x10),uVar50 >> bVar9 | uVar50 << 0x11 - bVar9) << 1;
+  uVar23 = uVar46 | 0xb148;
+  cVar10 = (char)uVar23;
+  bVar9 = (char)lVar35 + cVar10;
+  iVar40 = CONCAT31((uint3)(uVar37 >> 8) ^ (uint3)(CONCAT22(uVar27,sVar43) >> 8) ^ 0xc6,
+                    (char)uVar56 + -1);
+  uVar42 = (uint6)(uVar45 >> 8);
+  cVar26 = (char)((iVar53 - (int)CONCAT62(0xbed8,sVar34)) - 1U >> 0xd);
+  uVar15 = CONCAT71((int7)((ulong)lVar35 >> 8),bVar9 * '\x04' | bVar9 >> 6);
+  uVar51 = CONCAT31((uint3)(uVar51 + 1 >> 9) | (uint3)(((uint)((uVar51 + 1 & 1) != 0) << 0x1f) >> 8)
+                    ,(char)bVar25 < '\x01') + 1;
+  sVar43 = (short)iVar40;
+  uVar37 = -(ulong)(uint)(((int)CONCAT62(0xbed8,sVar34 + 0x5c9f) + 0x2f5ec3b7) - (int)uVar15);
+  bVar25 = (byte)(uVar23 * -0x3c0b6074);
+  uVar48 = (ulong)((uVar56 >> 0x11) << 0x10) << 1;
+  bVar9 = bVar25 & 0xf;
+  uVar50 = (ushort)(uVar51 >> 1);
+  uVar50 = uVar50 << bVar9 | uVar50 >> 0x10 - bVar9;
+  uVar51 = CONCAT22((ushort)(uVar51 >> 0x11) | (ushort)((uint)((int)sVar43 << 0x1f) >> 0x10),uVar50)
   ;
-  uVar17 = (ushort)iVar7 | (ushort)(uVar43 >> 0x10) >> 0xf;
-  bVar14 = ((char)(uVar11 >> 8) >> 0xd) + (char)((uint)iVar7 >> 8) + 1;
-  uVar25 = uVar39 & 0x3f5f0000 | (uint)(ushort)(((ushort)uVar46 & 0xb021) + 0x94ed);
-  if ((char)bVar14 < '\0') {
-    uVar25 = (uint)uVar37;
+  iVar53 = (int)uVar37 +
+           (int)CONCAT62((int6)((ulong)lVar35 >> 0x10),(short)uVar15 >> (bVar25 & 0x1f));
+  cVar41 = (char)uVar50;
+  uVar45 = (ulong)CONCAT22((short)(uVar36 >> 0x10),(ushort)uVar36 & (short)(uVar20 >> 0x10) << 8) *
+           2 & 0xffffffff;
+  if (!SBORROW1(cVar26,cVar41)) {
+    uVar45 = uVar48;
   }
-  sVar30 = (short)(uVar13 & 0xffffffff);
-  uVar23 = sVar30 + uVar17;
-  uVar39 = (uint)(((ulong)uVar38 & 0xffff00) << 8);
-  uVar25 = (uVar25 << (bVar2 & 0x1f)) + 0xde63b492;
-  uVar47 = (uVar47 & 0xffffffffffff0000 | 0xc000000000000000 |
-           (ulong)(ushort)((ushort)uVar47 >> 1 | (ushort)((uVar47 & 1) != 0) << 0xf)) ^ uVar43;
-  uVar26 = (uVar26 & 0xffffffffffff0000 |
-           (ulong)(ushort)(((ushort)uVar26 & 0xff00 | (ushort)(byte)-((uVar36 & 1) != 0)) + 0x2882 ^
-                          0x7fff)) ^ 0x2585a6f;
-  sVar22 = 0xf;
-  uVar33 = (ushort)uVar25;
-  if (uVar33 != 0) {
-    for (; uVar33 >> sVar22 == 0; sVar22 = sVar22 + -1) {
+  uVar24 = (uVar23 * -0x3c0b6074 ^ (ulong)uVar22) & 0xffffffffffffff0f;
+  uVar50 = (ushort)uVar22 >> (sbyte)uVar24 | 0x22f9 << 0x10 - (sbyte)uVar24;
+  uVar36 = iVar40 + 0x77cdd4d3;
+  uVar18 = (undefined6)(uVar45 >> 0x10);
+  uVar45 = uVar24 - 0x5ecb5ba;
+  uVar54 = -(ulong)((int)uVar48 + 0xda8b9ac5);
+  bVar9 = (byte)uVar45 & 0x3f;
+  uVar52 = (ulong)uVar51 << bVar9 | (ulong)(uVar51 >> 0x40 - bVar9);
+  uVar55 = (ushort)iVar53;
+  uVar48 = CONCAT71((int7)(uVar45 >> 8),(byte)uVar45 & (byte)uVar50) & 0xffffffffffffff0f;
+  bVar30 = (byte)uVar48;
+  uVar12 = (ushort)((ushort)(0x5ecb5b9 < uVar24) << 8) >> bVar30 | (short)uVar36 << 0x10 - bVar30;
+  lVar35 = (uVar37 & 0xffffffff) - 1;
+  bVar25 = ((POPCOUNT(uVar45 & 0xff) & 1U) == 0) * '8';
+  uVar51 = (uint)uVar50 | (uint)lVar35;
+  sVar34 = (short)CONCAT71((int7)(uVar23 >> 8),cVar10 << 1 | cVar10 < '\0');
+  uVar20 = ((uVar36 >> 0x18 | uVar36 * 0x100) >> (uVar51 & 0x1f) & 1) != 0 | 0xfdca22f8;
+  uVar45 = CONCAT62((uVar42 & 0xff0000) >> 1,
+                    CONCAT11((POPCOUNT(uVar20 & (byte)-(cVar26 - cVar41)) & 1U) != 0,
+                             (char)((CONCAT62(uVar42,CONCAT11((byte)(uVar12 >> 9),(char)uVar12)) &
+                                    0xff0000ffff) >> 1)));
+  uVar50 = (ushort)(short)(char)(uVar48 >> 8) >> 1;
+  uVar22 = (uint)uVar48 ^ 0x9429f7bf;
+  bVar9 = (byte)uVar22 & 0x3f;
+  uVar56 = CONCAT22(sVar43 >> 0xf,sVar43 + 1) << bVar9 | (uint)(uVar54 >> 0x40 - bVar9);
+  uVar27 = (undefined2)(uVar22 >> 0x10);
+  uVar22 = CONCAT22(uVar27,(ushort)bVar25);
+  iVar40 = (int)CONCAT71((int7)(uVar54 >> 8),(char)uVar36);
+  cVar10 = (char)uVar50;
+  cVar41 = (char)uVar51;
+  cVar26 = cVar10 + cVar41;
+  if (SCARRY1(cVar10,cVar41) == SCARRY1(cVar26,'\0')) {
+    iVar40 = (int)CONCAT62((int6)(uVar54 >> 0x10),(ushort)bVar25);
+  }
+  lVar49 = (long)(int)uVar56;
+  uVar45 = (uVar45 & 0xffffffff) * (uVar45 & 0xffffffff);
+  uVar16 = (undefined7)((uVar45 & 0xffffffff) >> 8);
+  cVar10 = (char)(uVar45 & 0xffffffff) + (char)uVar52 + ((int)(uVar45 >> 0x20) != 0);
+  uVar36 = iVar40 + 0xd2a8b933;
+  if ((SBORROW4(iVar40,0x2d5746cc) != SBORROW4(iVar40 + -0x2d5746cc,1)) == (int)uVar36 < 0) {
+    lVar49 = CONCAT62((int6)(short)(uVar56 >> 0x10),(short)CONCAT71(uVar16,cVar10));
+  }
+  uVar15 = CONCAT71(uVar16,cVar10 + '6');
+  sVar43 = (short)lVar35 + (short)uVar52;
+  uVar48 = CONCAT62((int6)(uVar52 >> 0x10),(short)lVar35);
+  iVar40 = 0;
+  if (uVar22 != 0) {
+    for (; (uVar22 >> iVar40 & 1) == 0; iVar40 = iVar40 + 1) {
     }
   }
-  uVar39 = uVar39 >> 0x18 | (uVar39 & 0xff0000) >> 8 | (uVar23 & 0xff00) << 8 | (uint)uVar23 << 0x18
-  ;
-  uVar13 = (ulong)(uVar9 >> 1 & 0xff | 0xffff7f00) << (bVar2 & 0x3f);
-  lVar20 = uVar39 + uVar37;
-  cVar16 = (char)lVar20;
-  uVar42 = (uint)lVar20 & 0xffffff00 | (uint)(byte)(cVar16 << 1);
-  uVar40 = (uint)uVar26 & 0xffff0000 |
-           (uint)(ushort)((short)uVar26 + (ushort)uVar34 + (ushort)(cVar16 < '\0'));
-  uVar37 = uVar43 & 0xffffffffffff0000 | uVar43 >> 1 & 0x7fff;
-  bVar18 = (char)((uVar44 & 0xffff) >> 1) << 1 | 0xc0;
-  uVar11 = ((uint)(((ulong)(uVar11 & 0xffff0000 | (ushort)((short)uVar11 >> 0x15) & 0xffffff00 |
-                           (uint)bVar14) << (bVar2 & 0x3f) |
-                   (uVar36 & 0xffffffffffff0000 | uVar36 >> 1 & 0x7fff) >> 0x40 - (bVar2 & 0x3f)) >>
-                  2) & 0x7fffffff) * -0x5b152ab2;
-  iVar7 = (uVar9 & 0xffff0000 | uVar9 >> 1 & 0x7f00 | 0xff) + 1 + uVar39;
-  uVar44 = ((uint)uVar37 & 0xffff0000 | (uint)(uVar37 >> 0xd) & 7) ^ 0xfefe84be;
-  uVar25 = uVar25 ^ 0x40000;
-  uVar9 = uVar11 & 0xffff0000 | (uint)(ushort)((short)uVar11 + (short)uVar44 + 1);
-  uVar36 = (ulong)uVar39 - 1;
-  uVar33 = ((ushort)(uVar43 >> 1) & 0xff) << 1;
-  bVar3 = (byte)uVar36;
-  bVar14 = bVar3 & 0x1f;
-  uVar45 = uVar9 >> bVar14 | uVar9 << 0x20 - bVar14;
-  bVar3 = bVar3 & 0x3f;
-  uVar37 = uVar36 >> bVar3 |
-           ((uVar47 & 0xffffffffffff0000 | (ulong)((ushort)uVar47 & 0xfbff | 1)) << (bVar2 & 0x3f) |
-           uVar43 >> 0x40 - (bVar2 & 0x3f)) << 0x40 - bVar3;
-  uVar28 = ~CONCAT31((uint3)(uVar44 >> 9),(char)uVar34);
-  bVar14 = (byte)uVar37;
-  uVar39 = iVar7 << (bVar14 & 0x1f) | (uint)(CONCAT14(uVar42 != 0,iVar7) >> 0x21 - (bVar14 & 0x1f));
-  uVar44 = ((uint)uVar12 | (uint)(ushort)(0U % (ushort)bVar18 << 8) | 0xe5861937) * uVar39;
-  bVar19 = (byte)(uVar40 >> 0xe);
-  uVar11 = uVar44 & 0xffff0000;
-  bVar48 = (int)uVar25 < 0;
-  uVar9 = (((uVar31 & 0xff80) << 1 |
-           (uint)(uVar23 == 0 || SCARRY2(sVar30,uVar17) != (short)uVar23 < 0)) >> (bVar2 & 0x3f) &
-           0xffff0000 | uVar33 & 0xffffff00 | (uint)(byte)~(byte)uVar33) * 0x76f3dbe4;
-  uVar23 = (ushort)uVar9 | (ushort)bVar48;
-  sVar30 = (short)uVar13;
-  uVar4 = sVar22 << 1 | (ushort)(sVar22 < 0);
-  uVar31 = -uVar42 & 0xffff0000 | (uint)uVar4;
-  uVar26 = uVar37 >> (bVar14 & 0x3f);
-  uVar33 = (short)uVar39 + 1;
-  uVar12 = (ulong)(uVar39 & 0xffff0000 | (uint)uVar33);
-  bVar2 = (byte)uVar26 & 0x1f;
-  uVar44 = (uint)(uVar33 != 0 && SCARRY2((short)uVar39,1) == (short)uVar33 < 0) << bVar2 |
-           (uVar11 | (uVar44 & 0xffff) * (uVar25 & 0xffff) & 0xffff) >> 0x20 - bVar2;
-  bVar2 = (byte)uVar44;
-  bVar3 = bVar14 & bVar2;
-  uVar4 = ((ushort)uVar28 >> 1 | (short)uVar37 << 0xf) - uVar4;
-  uVar25 = uVar28 & 0xffff0000 | (uint)uVar4;
-  uVar17 = sVar30 - uVar23;
-  uVar36 = uVar13 & 0xffffffffffff0000;
-  if (SBORROW2(sVar30,uVar23) != false) {
-    uVar26 = uVar26 & 0xffffffffffff0000 | (ulong)uVar25 & 0xffff;
+  uVar6 = (undefined2)(uVar45 >> 0x30);
+  iVar32 = (int)uVar15;
+  iVar21 = iVar32 << 1;
+  uVar28 = (ushort)(iVar40 + uVar20 >> 0x10);
+  uVar11 = (short)(iVar40 + uVar20) - 1;
+  uVar22 = CONCAT22(uVar28,uVar11);
+  uVar13 = (ushort)iVar21;
+  uVar47 = (ushort)(uVar13 == 0x8d98) * ((ushort)uVar36 ^ 0x8d98) ^ 0x8d98;
+  uVar13 = uVar13 ^ (ushort)(uVar13 != 0x8d98) * (uVar13 ^ uVar47);
+  uVar42 = (uint6)((ulong)lVar49 >> 0x10);
+  uVar51 = CONCAT31((int3)(CONCAT22((short)((uint)iVar53 >> 0x10),uVar50) >> 8),
+                    (cVar26 + '$') - (iVar32 < 0));
+  if (-0x708c < (short)uVar11) {
+    uVar51 = uVar36;
   }
-  bVar21 = (byte)(uVar37 >> 8);
-  uVar23 = (ushort)(byte)(bVar2 << 1) * (ushort)bVar21;
-  uVar24 = (ushort)(uVar44 << ((byte)uVar26 & 0x1f));
-  uVar5 = uVar24 ^ (ushort)(uVar23 == uVar24) * (uVar24 ^ (ushort)uVar26);
-  uVar47 = (ulong)(uVar11 | (ushort)(uVar23 ^ (ushort)(uVar23 != uVar24) * (uVar23 ^ uVar5)));
-  uVar41 = ((ulong)uVar31 & 0x7f) << 1 | 1;
-  uVar46 = (ulong)uVar45;
-  if ((short)(uVar23 - uVar24) < 0) {
-    uVar46 = (ulong)uVar9 | (ulong)bVar48;
+  uVar45 = (long)CONCAT22(uVar27,(short)lVar49) * 0x13e1ff78;
+  uVar37 = uVar45 & 0xffffffff;
+  bVar59 = (long)(int)uVar45 != uVar45;
+  bVar29 = (byte)(uVar37 >> 8);
+  bVar9 = bVar29 + 0xb4;
+  cVar26 = bVar9 + bVar59;
+  uVar45 = (ulong)uVar36;
+  if ((0x4b < bVar29 || CARRY1(bVar9,bVar59)) || cVar26 == '\0') {
+    uVar45 = CONCAT62(uVar18,uVar55);
   }
-  bVar49 = (uVar33 >> (uVar33 & 0xf) & 1) != 0;
-  uVar43 = uVar47 - 0x5d46dd1d;
-  uVar11 = (int)uVar43 - (uint)bVar49;
-  if ('\0' < (char)((uint)uVar5 >> 8)) {
-    uVar11 = uVar11 & 0xffff0000 | (uint)CONCAT71((int7)(int3)(uVar37 >> 8),bVar3) & 0xffff;
+  uVar50 = (ushort)((byte)(bVar25 - 1) >> 1) | (ushort)((bVar25 - 1 & 1) != 0) << 0xf;
+  uVar39 = (ushort)uVar20;
+  uVar38 = uVar39 ^ (ushort)(uVar13 == uVar39) * (uVar39 ^ uVar50);
+  iVar17 = (int6)(short)((uint)iVar21 >> 0x10);
+  if ((short)uVar39 < (short)uVar13) {
+    uVar50 = uVar55;
   }
-  iVar7 = (int)((uVar34 & 0xffffffffffff0000 |
-                (ulong)(ushort)(((ushort)uVar34 & 0xff00 |
-                                (ushort)(byte)(((SBORROW1(bVar18,'3') != false) ==
-                                               (char)(bVar18 - 0x33) < '\0') << 1)) << 1)) >> 1);
-  uVar34 = uVar26 - 1 | 0x4ef9e65e;
-  uVar11 = (uVar11 & 0xffff0000 | (uint)(((ushort)uVar11 ^ (ushort)uVar41) & 0xff7f)) + 0xba65582b;
-  bVar2 = (byte)uVar11;
-  uVar44 = (char)uVar45 + iVar7 +
-           ((uint)uVar36 | uVar17 & 0xffffff00 |
-           (uint)(byte)((char)uVar17 << 1 | (uVar47 < 0x5d46dd1d || uVar43 < bVar49))) + 2;
-  uVar46 = uVar46 ^ 0x25e5;
-  bVar18 = (char)(bVar21 + 0x6d) >> 1;
-  uVar47 = 1 << (uVar12 & 0x3f) & 0xffU |
-           (ulong)((uint7)(uVar34 >> 8) & 0xffffffffffff00 |
-                  (uint7)(byte)((ushort)((short)uVar34 + -0x50e) >> 8)) << 8;
-  uVar17 = -((short)CONCAT31((uint3)(uVar40 >> 0x16),
-                             bVar19 << (bVar14 & 7) | bVar19 >> 8 - (bVar14 & 7)) + sVar30);
-  uVar43 = (ulong)(uVar9 & 0xffff0000 | uVar9 & 0xc3f3 | (uint)bVar48);
-  uVar34 = (long)(int)(uVar11 & 0xffffff00 |
-                      (uint)(byte)(bVar2 ^ (bVar2 != (byte)uVar5) * (bVar2 ^ (byte)uVar5))) *
-           (long)(int)uVar41;
-  uVar9 = (uint)(uVar34 >> 0x20);
-  lVar20 = uVar47 + uVar43;
-  uVar26 = uVar47;
-  if (CARRY8(uVar47,uVar43) || lVar20 == 0) {
-    uVar26 = uVar12;
+  uVar23 = CONCAT62(uVar42,uVar50);
+  if ((short)uVar39 <= (short)uVar13) {
+    uVar45 = uVar23;
   }
-  bVar2 = (byte)lVar20 & 7;
-  uVar42 = (int)lVar20 - uVar25;
-  uVar39 = uVar44 + (int)uVar41;
-  uVar11 = (uint)!CARRY8((ulong)uVar44,uVar41);
-  uVar44 = uVar9 - uVar39;
-  if ((uVar9 < uVar39 || uVar44 < uVar11) || uVar44 == uVar11) {
-    uVar17 = (ushort)uVar46;
+  uVar24 = CONCAT62(uVar18,uVar55);
+  uVar14 = (int)uVar45 << 1 | (uint)((int)uVar45 < 0);
+  uVar56 = (uint)CONCAT62(0xa0e452e5aae,uVar47) ^ 1 << ((uint)uVar24 & 0x1f);
+  uVar36 = (uint)(ushort)(uVar13 ^ (ushort)(uVar13 != uVar39) * (uVar13 ^ uVar38)) *
+           (uint)(ushort)((short)uVar15 >> 0xf);
+  uVar27 = (undefined2)(uVar36 >> 0x10);
+  uVar45 = (ulong)CONCAT22(uVar6,uVar27);
+  uVar20 = uVar36;
+  if (uVar24 + uVar45 == 0 || SCARRY8(uVar24,uVar45) != false) {
+    uVar20 = (uint)(uVar24 + uVar45);
   }
-  bVar14 = (byte)uVar42 & 0xf;
-  uVar33 = (ushort)(uVar46 * 2);
-  uVar12 = (uVar13 & 0xff0000000000) >> 0x18 | (uVar13 & 0xff00000000) >> 8 |
-           (ulong)(ushort)((ushort)((ushort)(uVar36 >> 0x38) | (ushort)(uVar36 >> 0x28) & 0xff00) >>
-                           bVar14 | uVar33 << 0x10 - bVar14);
-  uVar11 = (uint)(uVar26 >> 1);
-  uVar9 = (uint)(ushort)uVar34 * (uint)uVar17;
-  uVar34 = uVar34 & 0xffff0000 | (ulong)(ushort)uVar9;
-  uVar44 = (uint)uVar12;
-  uVar39 = iVar7 + -0x4a0784fd + (uint)(0x60e0526e < uVar11);
-  lVar20 = CONCAT62((int6)(short)(uVar37 >> 0x10),
-                    CONCAT11(bVar18 >> bVar2 | bVar18 << 8 - bVar2,bVar3 << 1)) + 0x24d0a6d1;
-  uVar23 = (short)(ushort)uVar41 >> bVar14;
-  bVar3 = (byte)(uVar9 >> 0x10);
-  bVar18 = (byte)((ulong)lVar20 >> 8);
-  bVar2 = bVar18 + bVar3;
-  cVar16 = bVar2 + 1;
-  uVar36 = (ulong)uVar23 << 0x19;
-  uVar37 = (ulong)(CONCAT18((uVar9 & 0x100) != 0,uVar34) >> 0x13) | uVar34 << 0x2e;
-  bVar2 = (char)uVar39 + ((CARRY1(bVar18,bVar3) || 0xfe < bVar2) || cVar16 == '\0');
-  uVar5 = (short)uVar17 >> 1;
-  uVar9 = CONCAT22((short)uVar17 >> 0xf,uVar5);
-  uVar34 = ((ulong)(((uVar11 & 0xff) >> bVar14 | uVar44 << 0x20 - bVar14) & 0xfbffffff) - 0x453f12c7
-           ) + uVar46 * 0x10;
-  uVar11 = (int)CONCAT61((int6)((ulong)lVar20 >> 0x10),cVar16) << 8 | 1 << (uVar23 & 0x1f);
-  if ((bVar2 & 0x46) != 0) {
-    uVar11 = uVar9;
+  uVar24 = CONCAT71((int7)(CONCAT62(0xfdca,uVar38) >> 8),
+                    (byte)(CONCAT11(CARRY8(uVar24,uVar45),(char)uVar38) >> 4) | (char)uVar38 << 5);
+  uVar45 = CONCAT62((int6)(uVar37 >> 0x10),CONCAT11(cVar26,(char)uVar37)) << 1;
+  uVar46 = CONCAT62((int6)(uVar46 >> 0x10),
+                    sVar34 << bVar30 % 0x11 |
+                    (ushort)(CONCAT12((uVar12 & 1) != 0,sVar34) >> 0x11 - bVar30 % 0x11)) | 0xc000;
+  uVar37 = (ulong)CONCAT22(uVar6,uVar27) & 0xffffffffffff3fff;
+  uVar36 = (uint)(ushort)uVar37 << 0x10 | uVar36 & 0xffff;
+  sVar34 = (short)(uVar36 / (ushort)uVar46);
+  uVar20 = uVar20 & 0xffff;
+  if ((POPCOUNT(uVar11 & 0xda) & 1U) != 0) {
+    uVar20 = (uint)CONCAT62(iVar17,sVar34);
   }
-  uVar26 = uVar34 ^ (ulong)(uVar37 == uVar34) * (uVar34 ^ (ushort)(uVar4 * 0x800));
-  uVar34 = (ulong)(uVar37 != uVar34) * (uVar37 ^ uVar26);
-  uVar37 = uVar37 ^ uVar34;
-  uVar45 = (uint)uVar26;
-  uVar28 = ((uVar31 << 1 | 1) + (int)uVar47) - 1;
-  uVar31 = 0;
-  if (uVar9 != 0) {
-    for (; (uVar9 >> uVar31 & 1) == 0; uVar31 = uVar31 + 1) {
+  uVar52 = 0;
+  if (uVar48 != 0) {
+    for (; (uVar48 >> uVar52 & 1) == 0; uVar52 = uVar52 + 1) {
     }
   }
-  bVar18 = (byte)(uVar36 >> 0x1d);
-  iVar7 = (uVar11 & 0xffffff00 | uVar45 & 0xff) + 0x85d3bda5 + (uint)(bVar18 & 1);
-  iVar10 = (int)(uVar44 + uVar25 * 2) >> 1;
-  uVar25 = iVar7 * 2;
-  bVar3 = (byte)uVar25 | (uVar33 >> 0xb & 1) != 0;
-  uVar11 = (uVar39 & 0xffffff00 | (uint)bVar2) >> 1;
-  uVar26 = (ulong)uVar11;
-  uVar47 = uVar26 | (ulong)(iVar7 < 0) << 0x3f;
-  cVar16 = (char)uVar5;
-  uVar39 = uVar31;
-  if (SBORROW1(cVar16,-0x34) != false) {
-    uVar39 = uVar31 & 0xffff0000 | (uint)uVar5;
-    uVar45 = uVar31;
+  bVar25 = (byte)uVar45;
+  bVar9 = bVar25 & 0x3f;
+  uVar48 = uVar24 << bVar9 | uVar24 >> 0x40 - bVar9;
+  bVar25 = bVar25 & 0x3f;
+  uVar54 = 0x865d5c7f88e24f10U >> bVar25 | -0x79a2a380771db0f0 << 0x40 - bVar25;
+  uVar24 = CONCAT71((uint7)(uVar23 >> 9),(byte)(uVar23 >> 1) >> 1);
+  uVar23 = uVar24 & 0xffffffff;
+  iVar53 = (int)sVar34 * (int)(short)uVar14;
+  uVar50 = (short)CONCAT31((int3)(uVar51 >> 8),(byte)uVar51 << 1 | (byte)uVar51 >> 7) << 1;
+  uVar45 = uVar45 & 0xffffffff;
+  if (uVar46 <= uVar24) {
+    uVar45 = (ulong)uVar22;
   }
-  uVar31 = (int)CONCAT11(-1 < (int)(uVar42 & 0xffffff00 | 0x10000 |
-                                   (uint)(byte)(bVar14 | (byte)(uVar37 >> 8))),(char)uVar37) *
-           (int)(short)uVar11;
-  uVar23 = (ushort)(uVar31 >> 0x10);
-  bVar2 = (byte)uVar31;
-  uVar17 = (ushort)uVar31 & 0xff | (ushort)(byte)((char)(uVar31 >> 8) + 9) << 8;
-  uVar34 = CONCAT62((int6)(short)(uVar34 >> 0x10),uVar17);
-  if ((uint)uVar34 == uVar11) {
-    uVar47 = (ulong)(uVar9 & 0xffffff00 | (uint)(byte)(cVar16 + 0x34U));
-    uVar26 = uVar34;
+  iVar40 = (int)CONCAT71((int7)(uVar48 >> 8),(char)uVar48 + -1) + 1;
+  sVar34 = ((ushort)CONCAT31((int3)(uVar56 >> 8),(byte)uVar56 >> 1) | 0x80) + 0xc2e7 +
+           (ushort)(0x1402d1eb < uVar46);
+  uVar48 = (ulong)uVar14;
+  if (-1 < sVar34) {
+    uVar48 = CONCAT62((int6)((ulong)lVar35 >> 0x10),sVar43) | 0x400;
   }
-  uVar34 = (ulong)((ushort)((ushort)(((uint)(uVar47 >> (bVar2 & 0x3f)) |
-                                     (uint)(uVar47 << 0x40 - (bVar2 & 0x3f))) << (bVar2 & 0x1f)) |
-                           (ushort)((uVar45 & 0xffff0000 | (uint)uVar23) >> 0x20 - (bVar2 & 0x1f)))
-                  < uVar17) << 0x20 | (ulong)uVar39 & 0xffffffffffffff64;
-  uVar37 = uVar46 * 2 & 0xffffffffffff0000 | (ulong)(ushort)((uVar33 ^ 0x800) << 1 | 1) | 0x20b8;
-  bVar21 = (byte)(uVar25 >> 8);
-  uVar11 = uVar23 & 0xffffffc8;
-  bVar14 = (byte)uVar26;
-  bVar19 = bVar3 ^ (bVar14 == bVar3) * (bVar3 ^ (byte)uVar11);
-  uVar11 = -(uVar45 & 0xffff0000 | uVar11);
-  return (uVar26 & 0xffffffffffffff00 |
-         (ulong)(byte)(bVar14 ^ (bVar14 != bVar3) * (bVar14 ^ bVar19))) +
-         (ulong)(uVar25 & 0xffff0000 |
-                 CONCAT11(bVar21 << (bVar2 & 7) | bVar21 >> 8 - (bVar2 & 7),bVar3) & 0xffffff00 |
-                (uint)bVar19) + ((ulong)(uVar42 & 0xffff0000 | 0x10000 | uVar31 & 0xff) | 0x2e00) +
-         (ulong)(uVar11 & 0xffff0000 | (uint)(ushort)((short)uVar11 >> 0x10)) +
-         CONCAT62((uint6)(ushort)(-(int)CONCAT71((uint7)(uVar36 >> 0x25),bVar18 >> 1) >> 0x16),
-                  0xddb9) + (ulong)((uVar31 & 0xffff ^ 0x84) >> 1 | iVar10 << 0x1f) * -0x49044844 +
-         (ulong)CONCAT22((undefined2)((char)bVar2 >> 7),((short)(char)bVar2 << (bVar2 & 0x1f)) + 1)
-         + (ulong)CONCAT31((uint3)(uVar12 >> 8) >> 0xc,(char)(uVar44 >> 0xc) << 2) +
-         (ulong)(uVar28 & 0xffff0000 | (uint)(ushort)((short)uVar28 << 1)) + uVar37 +
-         (ulong)(((uVar9 & 0xffffff00 | (uint)(byte)(cVar16 << (bVar2 & 0x1f))) << (bVar2 & 0x1f) |
-                 (uint)uVar37 >> 0x20 - (bVar2 & 0x1f)) >> (bVar2 & 0x1f)) +
-         (ulong)(uVar9 & 0xffffff00 | (uint)(byte)((char)(cVar16 + 0x34U) >> (bVar2 & 0x1f))) * 2 +
-         (ulong)((uint)(uVar34 << (bVar2 & 0x1f)) | (uint)(uVar34 >> 0x21 - (bVar2 & 0x1f))) +
-         (ulong)(iVar10 + 0x5c20cf71) + 0x13c9982e76a;
+  lVar35 = (uVar52 & ~(1L << ((ulong)uVar22 & 0x3f))) -
+           (ulong)CONCAT22((short)(uVar56 >> 0x10),sVar34);
+  sVar34 = (short)uVar24 + -0x17f0;
+  iVar21 = -(int)CONCAT62((int6)(((ulong)CONCAT61((int6)(uVar37 >> 0x10),
+                                                  (char)(uVar36 % (uint)(ushort)uVar46 >> 8) >> 1)
+                                 << 9) >> 0x10),(short)((uint)iVar53 >> 0x10));
+  uVar12 = (ushort)iVar21;
+  uVar27 = (undefined2)((uint)iVar21 >> 0x10);
+  uVar12 = uVar12 | 1 << (uVar12 & 0xf);
+  uVar14 = (uint)CONCAT71((int7)(CONCAT62(uVar42 >> 1,sVar34) >> 8),(byte)sVar34 >> 1);
+  uVar36 = uVar14 << 9;
+  cVar26 = (char)uVar12 + 'J';
+  uVar55 = (ushort)uVar54 & (ushort)uVar45;
+  bVar9 = (byte)uVar45 & 0x3f;
+  uVar37 = (ulong)(uVar28 >> 8) - 0x464d2c4b;
+  sVar34 = CONCAT11((char)(uVar12 >> 8) + (char)uVar50,cVar26) << 1;
+  uVar22 = CONCAT22(uVar27,sVar34);
+  uVar45 = uVar45 << bVar9 | uVar45 >> 0x40 - bVar9;
+  uVar56 = CONCAT22((short)((uint)iVar40 >> 0x10),
+                    (short)CONCAT31((int3)((uint)iVar40 >> 8),
+                                    ((char)iVar40 << 1 | 1U) + cVar26 + ((uVar50 >> 8 & 1) != 0))) ^
+           0x400;
+  if ((uVar55 & 0x1000) != 0 || (uVar20 | (uint)lVar35) == 0x9ab684bf) {
+    uVar45 = uVar37;
+    uVar56 = uVar22;
+  }
+  uVar45 = uVar45 & 0xffffffff;
+  iVar40 = (int)CONCAT62(iVar17,(short)iVar53) + 0x558996ff;
+  iVar53 = ((CONCAT22((short)(uVar51 >> 0x10),uVar50) | 0x100) + 0x54512ac1) * 2;
+  uVar50 = (ushort)CONCAT71((int7)(uVar48 >> 8),(char)uVar48 >> 0x1c);
+  uVar51 = uVar56 + (uint)uVar23 + 1;
+  uVar56 = (uVar14 >> 0x17 | uVar36) ^ 0x80;
+  uVar20 = uVar51 + (uint)lVar35 * 4;
+  lVar49 = -(CONCAT62((int6)(uVar54 >> 0x10),uVar55) ^ 0x1000);
+  bVar9 = (byte)lVar49 | (byte)sVar43;
+  uVar24 = CONCAT71((int7)((ulong)lVar49 >> 8),bVar9);
+  if ((char)bVar9 < '\x01') {
+    uVar24 = CONCAT62((int6)((ulong)lVar49 >> 0x10),uVar50) | 1;
+  }
+  auVar4[1] = (char)((uint)iVar40 >> 8) << 1;
+  auVar4[0] = (char)iVar40;
+  auVar4._2_6_ = (int6)(short)((uint)iVar40 >> 0x10);
+  uVar12 = CONCAT11((char)(uVar45 >> 8) >> ((byte)uVar45 & 0x1f),(byte)uVar45) << 1;
+  uVar55 = uVar12 | 1;
+  iVar40 = 0;
+  uVar14 = (uint)CONCAT62((int6)(uVar48 >> 0x10),(uVar50 | 1) * 0x6ad);
+  if (uVar14 != 0) {
+    for (; (uVar14 >> iVar40 & 1) == 0; iVar40 = iVar40 + 1) {
+    }
+  }
+  bVar9 = (byte)uVar55;
+  auVar4._10_2_ = uVar27;
+  auVar4._8_2_ = (ushort)CONCAT31((int3)(uVar22 >> 8),(char)sVar34 - (char)((ushort)sVar34 >> 8)) >>
+                 (bVar9 & 0x1f);
+  auVar3._8_8_ = 0;
+  auVar3._0_8_ = uVar24 | 0xc000000000000000;
+  auVar4._12_4_ = 0;
+  bVar9 = bVar9 & 0x1f;
+  uVar22 = uVar20 >> bVar9 | uVar20 << 0x20 - bVar9;
+  cVar26 = (char)uVar22;
+  uVar22 = CONCAT31((int3)(uVar22 >> 8),cVar26 << 1 | cVar26 < '\0');
+  uVar48 = CONCAT62((int6)(uVar45 >> 0x10),(short)uVar55 >> 8);
+  iVar40 = (int)CONCAT62((int6)(uVar37 >> 0x10),(short)(char)((char)uVar51 + '\x01'));
+  uVar46 = (ulong)(uVar22 + 0x3d09442e + iVar40 * 4);
+  uVar37 = (ulong)uVar22 * 0x1000000;
+  bVar9 = (byte)(uVar12 >> 8);
+  uVar20 = uVar14 << (bVar9 & 0x1f) | uVar14 >> 0x20 - (bVar9 & 0x1f);
+  uVar22 = iVar40 << 1;
+  uVar52 = uVar46 + uVar37;
+  uVar45 = (ulong)(uVar20 & 0xffffbfff);
+  if (uVar52 != 0) {
+    uVar45 = uVar48;
+  }
+  uVar54 = uVar52;
+  if (SCARRY8(uVar46,uVar37) != false) {
+    uVar54 = uVar37;
+  }
+  uVar46 = (ulong)(uVar22 >> 0x18 | (uVar22 & 0xff0000) >> 8 | (uVar22 & 0xff00) << 8 |
+                  (uVar22 | (uVar20 >> 0xe & 1) != 0) << 0x18);
+  if (uVar52 != 0) {
+    uVar46 = uVar48;
+  }
+  iVar40 = 0;
+  uVar22 = (uint)uVar46;
+  if (uVar22 != 0) {
+    for (; (uVar22 >> iVar40 & 1) == 0; iVar40 = iVar40 + 1) {
+    }
+  }
+  iVar21 = SUB164(auVar4 % auVar3,0) << 1;
+  uVar50 = (ushort)iVar21 | (ushort)(uVar54 >> 0x10) >> 0xf;
+  iVar32 = CONCAT22((short)((uVar22 & 0x3f5fb021) >> 0x10),(short)(uVar22 & 0x3f5fb021) + -0x6b13);
+  cVar26 = ((char)((uint)iVar53 >> 8) >> 7) + (char)((uint)iVar21 >> 8) + '\x01';
+  if (cVar26 < '\0') {
+    iVar32 = (int)uVar48;
+  }
+  sVar34 = (short)uVar23 + uVar50;
+  uVar12 = (ushort)iVar40 >> 1;
+  uVar22 = (iVar32 << (bVar9 & 0x1f)) + 0xde63b492;
+  uVar46 = CONCAT62((int6)((ulong)lVar35 >> 0x10),
+                    (short)CONCAT71((int7)((ulong)lVar35 >> 8),-((uVar56 & 1) != 0)) + 0x2882) ^
+           0x2582590;
+  sVar43 = 0xf;
+  uVar55 = (ushort)uVar22;
+  if (uVar55 != 0) {
+    for (; uVar55 >> sVar43 == 0; sVar43 = sVar43 + -1) {
+    }
+  }
+  uVar20 = (uint)CONCAT62((int6)(uVar23 >> 0x10),sVar34);
+  uVar20 = uVar20 >> 0x18 | (uVar20 & 0xff0000) >> 8 | (uVar20 & 0xff00) << 8 | uVar20 << 0x18;
+  lVar49 = (ulong)CONCAT31(0xffff7f,(char)uVar12) << (bVar9 & 0x3f);
+  lVar35 = uVar20 + uVar48;
+  cVar10 = (char)lVar35;
+  bVar29 = (char)(((uint)uVar23 & 0xffff) >> 1) << 1 | 0xc0;
+  iVar21 = ((uint)(((ulong)CONCAT31((int3)(CONCAT22((short)((uint)iVar53 >> 0x10),
+                                                    (short)iVar53 >> 0x15) >> 8),cVar26) <<
+                    (bVar9 & 0x3f) |
+                   (ulong)(CONCAT22((short)(uVar36 >> 0x10),(ushort)uVar56 >> 1) >>
+                          0x40 - (bVar9 & 0x3f))) >> 2) & 0x7fffffff) * -0x5b152ab2;
+  iVar53 = CONCAT31((int3)(CONCAT22((short)((uint)iVar40 >> 0x10),uVar12) >> 8),0xff) + 1 + uVar20;
+  uVar46 = CONCAT62((int6)(uVar46 >> 0x10),(short)uVar46 + (short)uVar45 + (ushort)(cVar10 < '\0'))
+           >> 0xe & 0x3ffff;
+  uVar56 = (uint)CONCAT62((int6)(uVar54 >> 0x10),(ushort)uVar54 >> 0xe) ^ 0xfefe84be;
+  uVar22 = uVar22 ^ 0x40000;
+  uVar36 = CONCAT22((short)((uint)iVar21 >> 0x10),(short)iVar21 + (short)uVar56 + 1);
+  uVar48 = (ulong)uVar20 - 1;
+  sVar5 = ((ushort)uVar54 >> 1 & 0xff) << 1;
+  bVar30 = (byte)uVar48;
+  bVar25 = bVar30 & 0x1f;
+  uVar14 = uVar36 >> bVar25 | uVar36 << 0x20 - bVar25;
+  bVar30 = bVar30 & 0x3f;
+  uVar24 = uVar48 >> bVar30 |
+           (((CONCAT62((int6)((uVar24 | 0xc000000000000000) >> 0x10),
+                       (ushort)uVar24 >> 1 | (ushort)((uVar24 & 1) != 0) << 0xf) ^ uVar54) &
+             0xfffffffffffffbff | 1) << (bVar9 & 0x3f) | uVar54 >> 0x40 - (bVar9 & 0x3f)) <<
+           0x40 - bVar30;
+  uVar44 = ~CONCAT31((uint3)(uVar56 >> 9),(char)uVar45);
+  iVar40 = (int)CONCAT71((int7)((ulong)lVar35 >> 8),cVar10 << 1);
+  bVar25 = (byte)uVar24;
+  uVar56 = iVar53 << (bVar25 & 0x1f) |
+           (uint)(CONCAT14(iVar40 != 0,iVar53) >> 0x21 - (bVar25 & 0x1f));
+  uVar20 = ((uint)CONCAT71(CONCAT61((int6)(uVar37 >> 0x10),(char)(0 % (ushort)bVar29)),0x26) |
+           0xe5861937) * uVar56;
+  bVar31 = (byte)uVar46;
+  uVar27 = (undefined2)(uVar20 >> 0x10);
+  uVar48 = (ulong)CONCAT31((int3)(CONCAT22((short)((CONCAT31((int3)(((uVar51 & 0xffff) << 1) >> 8),
+                                                             sVar34 == 0 ||
+                                                             SCARRY2((short)uVar23,uVar50) !=
+                                                             sVar34 < 0) >> (bVar9 & 0x3f)) >> 0x10)
+                                           ,sVar5) >> 8),~(byte)sVar5) * 0x76f3dbe4;
+  uVar50 = (ushort)uVar48 | (ushort)((int)uVar22 < 0);
+  sVar34 = (short)lVar49;
+  uVar55 = sVar43 << 1 | (ushort)(sVar43 < 0);
+  uVar36 = CONCAT22((short)((uint)-iVar40 >> 0x10),uVar55);
+  uVar37 = uVar24 >> (bVar25 & 0x3f);
+  uVar12 = (short)uVar56 + 1;
+  uVar23 = (ulong)CONCAT22((short)(uVar56 >> 0x10),uVar12);
+  bVar9 = (byte)uVar37 & 0x1f;
+  uVar20 = (uint)(uVar12 != 0 && SCARRY2((short)uVar56,1) == (short)uVar12 < 0) << bVar9 |
+           CONCAT22(uVar27,(short)((uVar20 & 0xffff) * (uVar22 & 0xffff))) >> 0x20 - bVar9;
+  bVar9 = (byte)uVar20;
+  bVar30 = bVar25 & bVar9;
+  sVar43 = ((ushort)uVar44 >> 1 | (short)uVar24 << 0xf) - uVar55;
+  iVar53 = CONCAT22((short)(uVar44 >> 0x10),sVar43);
+  uVar42 = (uint6)((ulong)lVar49 >> 0x10);
+  if (SBORROW2(sVar34,uVar50) != false) {
+    uVar37 = CONCAT62((int6)(uVar37 >> 0x10),sVar43);
+  }
+  bVar33 = (byte)(uVar24 >> 8);
+  uVar55 = (ushort)(byte)(bVar9 << 1) * (ushort)bVar33;
+  uVar28 = (ushort)(uVar20 << ((byte)uVar37 & 0x1f));
+  uVar13 = uVar28 ^ (ushort)(uVar55 == uVar28) * (uVar28 ^ (ushort)uVar37);
+  uVar52 = (ulong)CONCAT22(uVar27,uVar55 ^ (ushort)(uVar55 != uVar28) * (uVar55 ^ uVar13));
+  uVar58 = ((ulong)uVar36 & 0x7f) << 1 | 1;
+  uVar54 = (ulong)uVar14;
+  if ((short)(uVar55 - uVar28) < 0) {
+    uVar54 = uVar48 & 0xffffffff | (ulong)((int)uVar22 < 0);
+  }
+  uVar1 = (ulong)((uVar12 >> (uVar12 & 0xf) & 1) != 0);
+  uVar2 = uVar52 - 0x5d46dd1d;
+  lVar35 = uVar2 - uVar1;
+  if ((char)(uVar13 >> 8) != '\0' && -1 < (short)uVar13) {
+    lVar35 = CONCAT62((int6)((ulong)lVar35 >> 0x10),
+                      (short)CONCAT71((int7)(int3)(uVar24 >> 8),bVar30));
+  }
+  iVar40 = (int)(CONCAT62((int6)(uVar45 >> 0x10),
+                          (short)CONCAT71((int7)(uVar45 >> 8),
+                                          ((SBORROW1(bVar29,'3') != false) ==
+                                          (char)(bVar29 - 0x33) < '\0') << 1) << 1) >> 1);
+  uVar45 = uVar37 - 1 | 0x4ef9e65e;
+  iVar21 = ((uint)CONCAT62((int6)((ulong)lVar35 >> 0x10),(ushort)lVar35 ^ (ushort)uVar58) &
+           0xffffff7f) + 0xba65582b;
+  bVar9 = (byte)iVar21;
+  uVar20 = (char)uVar14 + iVar40 +
+           (int)CONCAT71((int7)(CONCAT62(uVar42,sVar34 - uVar50) >> 8),
+                         (char)(sVar34 - uVar50) << 1 | (uVar52 < 0x5d46dd1d || uVar2 < uVar1)) + 2;
+  uVar54 = uVar54 ^ 0x25e5;
+  bVar29 = (char)(bVar33 + 0x6d) >> 1;
+  uVar37 = CONCAT71((int7)(CONCAT62((int6)(uVar45 >> 0x10),(short)uVar45 + -0x50e) >> 8),
+                    (char)(1L << (uVar23 & 0x3f)));
+  uVar12 = -((short)CONCAT71((int7)(uVar46 >> 8),bVar31 << (bVar25 & 7) | bVar31 >> 8 - (bVar25 & 7)
+                            ) + sVar34);
+  uVar46 = (ulong)((uint)CONCAT62((int6)(uVar48 >> 0x10),uVar50) & 0xffffc3f3);
+  uVar45 = (long)CONCAT31((int3)((uint)iVar21 >> 8),
+                          bVar9 ^ (bVar9 != (byte)uVar13) * (bVar9 ^ (byte)uVar13)) *
+           (long)(int)uVar58;
+  uVar22 = (uint)(uVar45 >> 0x20);
+  uVar45 = uVar45 & 0xffffffff;
+  lVar35 = uVar37 + uVar46;
+  uVar48 = uVar37;
+  if (CARRY8(uVar37,uVar46) || lVar35 == 0) {
+    uVar48 = uVar23;
+  }
+  bVar9 = (byte)lVar35 & 7;
+  uVar56 = uVar20 + (int)uVar58;
+  uVar20 = (uint)!CARRY8((ulong)uVar20,uVar58);
+  uVar51 = uVar22 - uVar56;
+  if ((uVar22 < uVar56 || uVar51 < uVar20) || uVar51 == uVar20) {
+    uVar12 = (ushort)uVar54;
+  }
+  uVar46 = (ulong)(uint)((int)lVar35 - iVar53) & 0xffffffffffffff0f;
+  sVar19 = (sbyte)uVar46;
+  uVar28 = (ushort)(uVar54 * 2);
+  uVar15 = CONCAT62((uVar42 & 0xff000000) >> 0x18 | uVar42 >> 8 & 0xff00,
+                    (ushort)((ushort)(byte)((ulong)lVar49 >> 0x38) |
+                            (ushort)((ulong)lVar49 >> 0x28) & 0xff00) >> sVar19 |
+                    uVar28 << 0x10 - sVar19);
+  uVar20 = (uint)(uVar48 >> 1);
+  uVar22 = (uint)(ushort)uVar45 * (uint)uVar12;
+  lVar35 = CONCAT62((int6)(uVar45 >> 0x10),(short)uVar22);
+  uVar51 = (uint)uVar15;
+  iVar40 = iVar40 + -0x4a0784fd + (uint)(0x60e0526e < uVar20);
+  lVar49 = CONCAT62((int6)(short)(uVar24 >> 0x10),
+                    CONCAT11(bVar29 >> bVar9 | bVar29 << 8 - bVar9,bVar30 << 1)) + 0x24d0a6d1;
+  uVar55 = (short)(ushort)uVar58 >> sVar19;
+  bVar25 = (byte)(uVar22 >> 0x10);
+  bVar30 = (byte)((ulong)lVar49 >> 8);
+  bVar9 = bVar30 + bVar25;
+  cVar26 = bVar9 + 1;
+  uVar48 = (ulong)uVar55 << 0x19;
+  uVar23 = (ulong)(CONCAT18((uVar22 & 0x100) != 0,lVar35) >> 0x13);
+  uVar24 = uVar23 | lVar35 << 0x2e;
+  uVar50 = (ushort)(uVar46 >> 0x10);
+  bVar9 = (char)iVar40 + ((CARRY1(bVar30,bVar25) || 0xfe < bVar9) || cVar26 == '\0');
+  sVar34 = (short)uVar12 >> 1;
+  uVar22 = CONCAT22((short)uVar12 >> 0xf,sVar34);
+  uVar45 = ((ulong)(((uVar20 & 0xff) >> sVar19 | uVar51 << 0x20 - sVar19) & 0xfbffffff) - 0x453f12c7
+           ) + uVar54 * 0x10;
+  uVar20 = (int)CONCAT61((int6)((ulong)lVar49 >> 0x10),cVar26) << 8 | 1 << (uVar55 & 0x1f);
+  if ((bVar9 & 0x46) != 0) {
+    uVar20 = uVar22;
+  }
+  uVar46 = uVar45 ^ (ulong)(uVar24 == uVar45) * (uVar45 ^ (ushort)(sVar43 * 0x800));
+  lVar35 = (ulong)(uVar24 != uVar45) * (uVar24 ^ uVar46);
+  iVar21 = (uVar36 << 1 | 1) + (int)uVar37 + -1;
+  uVar36 = 0;
+  if (uVar22 != 0) {
+    for (; (uVar22 >> uVar36 & 1) == 0; uVar36 = uVar36 + 1) {
+    }
+  }
+  bVar30 = (byte)(uVar48 >> 0x1d);
+  iVar32 = CONCAT31((int3)(uVar20 >> 8),(char)uVar46) + -0x7a2c425b + (uint)(bVar30 & 1);
+  iVar57 = (int)(uVar51 + iVar53 * 2) >> 1;
+  iVar53 = iVar32 * 2;
+  bVar25 = (byte)iVar53 | (uVar28 >> 0xb & 1) != 0;
+  uVar20 = CONCAT31((int3)((uint)iVar40 >> 8),bVar9) >> 1;
+  uVar45 = (ulong)uVar20;
+  uVar24 = uVar45 | (ulong)(iVar32 < 0) << 0x3f;
+  cVar26 = (char)sVar34;
+  uVar7 = (undefined3)(uVar22 >> 8);
+  uVar37 = (ulong)uVar36;
+  if (SBORROW1(cVar26,-0x34) != false) {
+    uVar37 = (ulong)CONCAT22((short)(uVar36 >> 0x10),sVar34);
+    uVar46 = (ulong)uVar36;
+  }
+  uVar36 = (int)CONCAT11(-1 < (short)(uVar50 | 1),(byte)uVar23 ^ (byte)lVar35) * (int)(short)uVar20;
+  uVar18 = (undefined6)(uVar46 >> 0x10);
+  uVar27 = (undefined2)(uVar36 >> 0x10);
+  bVar9 = (byte)uVar36;
+  uVar12 = CONCAT11((char)(uVar36 >> 8) + '\t',bVar9);
+  uVar23 = CONCAT62((int6)(short)((ulong)lVar35 >> 0x10),uVar12);
+  if ((uint)uVar23 == uVar20) {
+    uVar24 = (ulong)CONCAT31(uVar7,cVar26 + '4');
+    uVar45 = uVar23;
+  }
+  uVar37 = (ulong)((ushort)((ushort)(((uint)(uVar24 >> (bVar9 & 0x3f)) |
+                                     (uint)(uVar24 << 0x40 - (bVar9 & 0x3f))) << (bVar9 & 0x1f)) |
+                           (ushort)((uint)CONCAT62(uVar18,uVar27) >> 0x20 - (bVar9 & 0x1f))) <
+                  uVar12) << 0x20 | uVar37 & 0xffffffffffffff64;
+  uVar24 = CONCAT62((int6)(uVar54 * 2 >> 0x10),(uVar28 ^ 0x800) << 1) | 0x20b9;
+  bVar33 = (byte)((uint)iVar53 >> 8);
+  uVar23 = CONCAT71((int7)(CONCAT62(uVar18,uVar27) >> 8),(char)(uVar36 >> 0x10)) &
+           0xffffffffffffffc8;
+  bVar29 = (byte)uVar45;
+  bVar31 = bVar25 ^ (bVar29 == bVar25) * (bVar25 ^ (byte)uVar23);
+  iVar40 = -(int)uVar23;
+  return CONCAT71((int7)(uVar45 >> 8),bVar29 ^ (bVar29 != bVar25) * (bVar29 ^ bVar31)) +
+         (ulong)CONCAT31((int3)(CONCAT22((short)((uint)iVar53 >> 0x10),
+                                         CONCAT11(bVar33 << (bVar9 & 7) | bVar33 >> 8 - (bVar9 & 7),
+                                                  bVar25)) >> 8),bVar31) +
+         ((ulong)(CONCAT22(uVar50,(ushort)bVar9) | 0x10000) | 0x2e00) +
+         (ulong)CONCAT22((short)((uint)iVar40 >> 0x10),(short)iVar40 >> 0x10) +
+         CONCAT62((uint6)(ushort)((short)((ulong)-CONCAT71((uint7)(uVar48 >> 0x25),bVar30 >> 1) >>
+                                         0x10) >> 6),0xddb9) +
+         (ulong)((uVar36 & 0xffff ^ 0x84) >> 1 | iVar57 << 0x1f) * -0x49044844 +
+         (ulong)CONCAT22((char)bVar9 >> 7,((short)(char)bVar9 << (bVar9 & 0x1f)) + 1) +
+         (ulong)CONCAT31((uint3)((ulong)uVar15 >> 8) >> 0xc,(char)(uVar51 >> 0xc) << 2) +
+         (ulong)CONCAT22((short)((uint)iVar21 >> 0x10),(short)iVar21 << 1) + uVar24 +
+         (ulong)((CONCAT31(uVar7,cVar26 << (bVar9 & 0x1f)) << (bVar9 & 0x1f) |
+                 (uint)uVar24 >> 0x20 - (bVar9 & 0x1f)) >> (bVar9 & 0x1f)) +
+         (ulong)CONCAT31(uVar7,(char)(cVar26 + '4') >> (bVar9 & 0x1f)) * 2 +
+         (ulong)((uint)(uVar37 << (bVar9 & 0x1f)) | (uint)(uVar37 >> 0x21 - (bVar9 & 0x1f))) +
+         (ulong)(iVar57 + 0x5c20cf71) + 0x13c9982e76a;
 }
 
 
@@ -4917,737 +5114,727 @@ long log_size_10_var_006(void)
   undefined auVar2 [16];
   undefined auVar3 [16];
   undefined auVar4 [16];
-  undefined uVar5;
-  byte bVar6;
-  char cVar7;
+  undefined auVar5 [16];
+  undefined2 uVar6;
+  undefined3 uVar7;
   byte bVar8;
-  char cVar15;
   short sVar9;
-  ushort uVar10;
-  int iVar11;
-  ulong uVar12;
+  undefined8 uVar10;
+  ulong uVar11;
+  long lVar12;
+  uint7 uVar14;
   ulong uVar13;
-  ulong uVar14;
-  sbyte sVar16;
-  byte bVar19;
+  sbyte sVar15;
+  byte bVar16;
   ushort uVar17;
-  ulong uVar18;
-  byte bVar20;
-  ushort uVar21;
+  short sVar18;
+  uint uVar19;
+  ulong uVar20;
+  char cVar21;
+  byte bVar22;
   byte bVar23;
-  uint uVar22;
-  uint uVar24;
+  short sVar24;
+  byte bVar26;
   uint uVar25;
-  ulong uVar26;
-  uint uVar27;
-  uint uVar28;
-  ushort uVar29;
-  long lVar30;
+  undefined6 uVar27;
+  byte bVar28;
+  undefined uVar29;
+  byte bVar34;
+  ushort uVar30;
   int iVar31;
-  byte bVar32;
-  ushort uVar33;
-  ulong uVar34;
-  ulong uVar35;
-  uint uVar36;
-  ulong uVar37;
-  uint uVar38;
-  uint uVar39;
-  ushort uVar40;
+  byte bVar33;
+  ulong uVar32;
+  ushort uVar35;
+  undefined7 uVar36;
+  undefined2 uVar37;
+  int iVar38;
+  ulong uVar39;
+  short sVar40;
   ushort uVar41;
-  short sVar42;
-  uint uVar43;
+  long lVar42;
+  long lVar43;
   uint uVar44;
-  int iVar45;
-  ulong uVar46;
-  long lVar47;
+  char cVar45;
+  int iVar46;
+  uint uVar47;
   ulong uVar48;
-  uint7 uVar49;
-  byte bVar50;
+  int iVar49;
+  ulong uVar50;
+  ushort uVar51;
   short sVar52;
   uint uVar53;
-  bool bVar54;
-  bool bVar55;
-  byte bVar51;
+  ulong uVar54;
+  ushort uVar55;
+  uint uVar56;
+  int iVar57;
+  long lVar58;
+  uint7 uVar59;
+  byte bVar60;
+  int iVar61;
+  uint uVar62;
+  ulong uVar63;
+  bool bVar64;
+  bool bVar65;
   
-  auVar4 = (ZEXT116(0) << 0x40 | ZEXT816(0x447bee4c2634519f)) >> 0x19;
-  for (uVar26 = 0; (0x56a497da9a5610e4U >> uVar26 & 1) == 0; uVar26 = uVar26 + 1) {
+  auVar5 = (ZEXT116(0) << 0x40 | ZEXT816(0x447bee4c2634519f)) >> 0x19;
+  for (lVar58 = 0; (0x56a497da9a5610e4U >> lVar58 & 1) == 0; lVar58 = lVar58 + 1) {
   }
-  uVar26 = uVar26 >> 2 ^ 0x51c5f3f2;
-  uVar49 = (uint7)(uVar26 >> 8) & 0xffffffffffff00 | (uint7)(byte)((byte)(uVar26 >> 8) | 0xbf);
-  lVar30 = 0x64d7c2fec9d9f307 - ((ulong)(ushort)((short)uVar49 * 0x1400) | 0x3da100ff);
-  uVar43 = -((SUB164(auVar4,0) & 0xffff0000 | 0x80) >> 1 |
-            (uint)((SUB168(auVar4,0) >> 0xc & 0xf) != 0) << 0x1f) - 1;
-  iVar11 = (((uint)(((ulong)uVar49 & 0xffffff) << 8) & 0xffff0000 | 0xb0b0) >> 1) + 0xaf2d45c9;
-  uVar12 = (ulong)iVar11;
-  uVar26 = 0x3f;
-  if (uVar12 != 0) {
-    for (; uVar12 >> uVar26 == 0; uVar26 = uVar26 - 1) {
+  bVar8 = auVar5[1] >> 5;
+  lVar42 = 0x64d7c2fec9d9f307 -
+           CONCAT71((int7)(CONCAT62(0x3da1,((short)(uint7)((ulong)lVar58 >> 10) << 8 ^ 0xf300U |
+                                           0xbf00) * 0x5714) >> 8),0xff);
+  uVar56 = -(((uint)CONCAT71(auVar5._1_7_,bVar8) & 0xffff00ff) >> 1 | (uint)(bVar8 != 0) << 0x1f) -
+           1;
+  iVar31 = (((uint)CONCAT71((int7)(CONCAT62(((uint6)((ulong)lVar58 >> 0x12) ^ 0x51c5) & 0xffff,
+                                            0xb062) >> 8),0xd2) ^ 0x62) >> 1) + 0xaf2d45c9;
+  uVar39 = 0x3f;
+  if ((long)iVar31 != 0) {
+    for (; (ulong)(long)iVar31 >> uVar39 == 0; uVar39 = uVar39 - 1) {
     }
   }
-  bVar6 = (char)((uint)iVar11 >> 8) >> 7;
-  uVar24 = ((((uint)lVar30 & 0xffff | (int)(short)((ulong)lVar30 >> 0x10) << 0x10) ^ 0x8000) +
+  cVar45 = (char)((uint)iVar31 >> 8);
+  bVar8 = cVar45 >> 7;
+  uVar44 = (((uint)CONCAT62((int6)(short)((ulong)lVar42 >> 0x10),(short)lVar42) ^ 0x8000) +
             0x5caf4208 >> 1) * 8 + 0x4b4ce1e1;
-  uVar28 = 0;
-  if ((int)(char)bVar6 != 0) {
-    for (; ((uint)(int)(char)bVar6 >> uVar28 & 1) == 0; uVar28 = uVar28 + 1) {
+  uVar25 = 0;
+  if ((int)(char)bVar8 != 0) {
+    for (; ((uint)(int)(char)bVar8 >> uVar25 & 1) == 0; uVar25 = uVar25 + 1) {
     }
   }
-  uVar14 = (ulong)uVar28;
-  if (0xda < (byte)uVar24) {
-    uVar14 = 0x7086efc3;
+  uVar54 = (ulong)uVar25;
+  if (0xda < (byte)uVar44) {
+    uVar54 = 0x7086efc3;
   }
-  uVar40 = (ushort)uVar43 ^ 0x40da;
-  uVar43 = uVar43 & 0xffff0000;
-  uVar28 = (uVar43 | uVar40) ^ 0x534a681c;
-  uVar41 = (uVar40 >> 1 | (short)uVar14 << 0xf) ^ (ushort)uVar28;
-  bVar32 = (bVar6 & 0x1f) % 0x11;
-  bVar8 = bVar6 >> 2;
-  uVar13 = CONCAT62((int6)(short)((uint)iVar11 >> 0x10),
-                    CONCAT11((char)(uVar12 >> 8) + '\x01',(char)iVar11)) & 0xffffffffffffff00 |
-           (ulong)(byte)((char)iVar11 >> 0xc);
-  uVar40 = (ushort)uVar28 + 0x7d95 + (short)uVar26 * 2;
-  uVar37 = -(ulong)uVar24;
-  uVar12 = 0xd52620c9df4340da;
-  if ((POPCOUNT(uVar37 & 0xff) & 1U) == 0) {
-    uVar12 = uVar26;
+  uVar41 = (ushort)(uVar56 ^ 0x534a28c6);
+  uVar55 = ((ushort)((ushort)uVar56 ^ 0x40da) >> 1 | (short)uVar54 << 0xf) ^ uVar41;
+  bVar33 = (bVar8 & 0x1f) % 0x11;
+  uVar13 = CONCAT71((int7)(CONCAT62((int6)(short)((uint)iVar31 >> 0x10),
+                                    CONCAT11(cVar45 + '\x01',(char)iVar31)) >> 8),
+                    (char)iVar31 >> 0xc);
+  sVar24 = uVar41 + 0x7d95 + (short)uVar39 * 2;
+  uVar50 = -(ulong)uVar44;
+  uVar20 = 0xd52620c9df4340da;
+  if ((POPCOUNT(uVar50 & 0xff) & 1U) == 0) {
+    uVar20 = uVar39;
   }
-  uVar24 = ((int)((uVar14 & 0xffffffffffff0000 | 0x1820) >> 1) + -0x64427c7e) -
-           (uint)((ulong)uVar24 != 0);
-  auVar4 = ZEXT116((uVar26 & 1) != 0) << 0x40 |
-           ZEXT416(uVar43 | (ushort)(uVar41 << bVar32 | uVar41 >> 0x11 - bVar32));
-  uVar43 = ((uint)uVar26 & 0xffffff00 | (uint)(byte)((byte)uVar26 >> 1 | 0x80)) * -0x71ae25f5;
-  uVar25 = (uint)uVar12;
-  if ((uint)uVar13 == uVar25) {
-    uVar25 = 0xa210b1ed;
+  iVar31 = ((int)(CONCAT62((int6)(uVar54 >> 0x10),0x1820) >> 1) + -0x64427c7e) -
+           (uint)((ulong)uVar44 != 0);
+  auVar5 = ZEXT116((uVar39 & 1) != 0) << 0x40 |
+           ZEXT416(CONCAT22((short)(uVar56 >> 0x10),uVar55 << bVar33 | uVar55 >> 0x11 - bVar33));
+  iVar46 = ((uint)CONCAT71((int7)(uVar39 >> 8),(byte)uVar39 >> 1) | 0x80) * -0x71ae25f5;
+  iVar38 = (int)uVar20;
+  if ((int)uVar13 == iVar38) {
+    iVar38 = -0x5def4e13;
   }
   else {
-    uVar13 = uVar12 & 0xffffffff;
+    uVar13 = uVar20 & 0xffffffff;
   }
-  uVar38 = (int)((byte)(0x93 - bVar6) | 0xe0001700) >> 0xe;
-  lVar30 = (long)((ulong)(byte)(bVar6 << 6 | bVar8) | 0xd34d0000) >> 0x1f;
-  uVar36 = (uint)uVar13;
-  if (uVar36 != uVar38) {
-    uVar13 = (ulong)uVar38;
-    uVar36 = uVar38;
+  if ((int)uVar13 != -0x8000) {
+    uVar13 = 0xffff8000;
   }
-  sVar16 = (sbyte)lVar30;
-  sVar52 = (short)(uVar24 & 0xffffff00);
-  iVar11 = (int)(short)uVar13 * (int)sVar52;
-  auVar1 = ZEXT816((ulong)(uVar28 << sVar16 | uVar28 >> 0x20 - sVar16) | 0xc000000000000000);
-  auVar2 = CONCAT88(((ulong)(ushort)(uVar40 & 0xff | (ushort)(byte)((short)uVar40 >> 9) << 8) |
-                    0xa330000) - 0x78d2ae45 & 0xffffffffffff0000 |
-                    (ulong)(ushort)((uint)iVar11 >> 0x10),
-                    uVar13 & 0xffffffffffff0000 | (ulong)(ushort)iVar11) &
-           (undefined  [16])0xffffffffffffffff;
-  auVar3 = auVar2 % auVar1;
-  uVar28 = SUB164(auVar3,0);
-  bVar32 = (byte)uVar43;
-  uVar43 = uVar43 & 0xffffff00 | (uint)(byte)(bVar32 >> sVar16 | bVar32 << 8 - sVar16);
-  uVar38 = uVar28 ^ (uint)(SUB168(auVar2 / auVar1,0) == SUB168(auVar3,0)) * (uVar28 ^ (uint)lVar30)
-           | 0x54;
-  uVar28 = uVar43 << sVar16 |
-           (uint)(CONCAT14(((ushort)lVar30 >> ((ushort)uVar25 & 0xf) & 1) != 0,uVar43) >>
-                 0x21 - sVar16);
-  uVar39 = (uint)uVar37 & 0xffff0000 | (uint)(ushort)((ushort)uVar25 + 0x84);
-  uVar40 = (ushort)lVar30 + 0x57c7;
-  bVar32 = (byte)uVar40;
-  bVar23 = (byte)(uVar38 * 0xd968641 >> 0x10);
-  uVar43 = uVar38 * -0x79bf0000 | uVar38 * 0xd968641 >> 0x10 & 0xffffff00 |
-           (uint)(byte)(bVar23 << (bVar32 & 7) | bVar23 >> 8 - (bVar32 & 7));
-  cVar15 = (char)((ulong)uVar40 >> 8);
-  bVar23 = bVar32 & 0xf;
-  cVar7 = (char)((ulong)(ushort)~((short)(uVar24 >> 8) << 8) >> 8);
+  lVar58 = (ulong)(uint3)((uint)iVar31 >> 8) * 0x100;
+  iVar57 = (int)(short)uVar13 * (int)(short)lVar58;
+  auVar2._2_6_ = (int6)(uVar13 >> 0x10);
+  auVar2._0_2_ = (short)iVar57;
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = (ulong)((uVar56 ^ 0x534a28c6) << 1 | uVar56 >> 0x1f) | 0xc000000000000000;
+  auVar2._8_8_ = CONCAT62((int6)((ulong)(CONCAT62(0xa33,CONCAT11((char)(sVar24 >> 9),(char)sVar24))
+                                        + -0x78d2ae45) >> 0x10),(short)((uint)iVar57 >> 0x10)) &
+                 0x3fffffffffffffff;
+  uVar56 = SUB164(auVar2 % auVar1,0);
+  bVar33 = (byte)iVar46;
+  uVar56 = uVar56 ^ (uint)(SUB168(auVar2 / auVar1,0) == SUB168(auVar2 % auVar1,0)) * (uVar56 ^ 1) |
+           0x54;
+  iVar46 = CONCAT31((int3)((uint)iVar46 >> 8),bVar33 >> 1 | bVar33 << 7) << 1;
+  uVar44 = uVar56 * -0x79bf0000 | uVar56 * 0xd968641 >> 0x10;
+  bVar33 = ~(byte)((uint)iVar31 >> 8);
   uVar41 = 0;
-  if ((short)cVar7 != 0) {
-    for (; ((ushort)(short)cVar7 >> uVar41 & 1) == 0; uVar41 = uVar41 + 1) {
+  if ((short)(char)bVar33 != 0) {
+    for (; ((ushort)(short)(char)bVar33 >> uVar41 & 1) == 0; uVar41 = uVar41 + 1) {
     }
   }
-  uVar26 = (ulong)CONCAT22((undefined2)(cVar7 >> 7),(short)cVar7) ^ 64000;
-  iVar11 = (uVar24 & 0xffff0000 | (uint)(ushort)(sVar52 << (bVar32 & 0x1f))) * uVar43;
-  uVar33 = (short)uVar28 >> bVar23;
-  uVar28 = uVar28 & 0xffff0000;
-  uVar44 = uVar25 << bVar23 | uVar25 >> 0x20 - bVar23;
-  uVar27 = 0xfffffffd;
-  sVar52 = (short)((uint)iVar11 >> 0x10);
-  uVar21 = sVar52 >> 0xf;
-  uVar21 = uVar21 << bVar23 | uVar21 >> 0x10 - bVar23;
-  cVar7 = (char)uVar21;
-  bVar19 = cVar15 - cVar7;
-  uVar25 = (uint)uVar26;
-  if (bVar19 == 0 || cVar15 < cVar7) {
-    uVar25 = uVar43 + 0x7c56e8d6;
+  uVar39 = (ulong)CONCAT22((char)bVar33 >> 7,(short)(char)bVar33) ^ 64000;
+  uVar25 = (uint)uVar39;
+  iVar31 = (uint)(ushort)((ulong)lVar58 >> 0x10) * 0x10000 * uVar44;
+  uVar37 = 0xfffd;
+  uVar55 = (ushort)(iVar31 >> 0x1f);
+  cVar21 = (char)(iVar31 >> 0x1f);
+  cVar45 = -cVar21;
+  if (cVar45 == -0x57 || 'W' < cVar21) {
+    uVar25 = uVar44 + 0x7c56e8d6;
   }
-  uVar53 = uVar44 & 0xffff0000;
-  uVar43 = uVar53 | uVar44 >> 1 & 0x7fff;
-  uVar13 = (ulong)(uVar28 | uVar33 | 0xc0000000);
-  uVar12 = CONCAT44(CONCAT22(sVar52 >> 0x1f,uVar21),iVar11) & 0x3fffffffffffffff;
-  uVar14 = uVar12 / uVar13;
-  sVar52 = (short)uVar14;
-  uVar21 = sVar52 + 0x92df;
-  if ((SBORROW2(sVar52,0x6d21) != false) != (short)uVar21 < 0) {
-    uVar27 = uVar25 & 0xffff | 0xffff0000;
+  uVar6 = (undefined2)((uint)iVar38 >> 8);
+  uVar44 = CONCAT22(uVar6,(ushort)((ushort)(iVar38 << 8) | (ushort)(byte)((uint)iVar38 >> 0x18)) >>
+                          1);
+  uVar47 = CONCAT22((short)((uint)iVar46 >> 0x10),
+                    (short)((ushort)iVar46 | (ushort)((1U >> ((ushort)iVar38 & 0xf) & 1) != 0)) >> 8
+                   ) | 0xc0000000;
+  uVar54 = CONCAT44(CONCAT22(uVar55,uVar55 << 8 | uVar55 >> 8),iVar31) & 0x3fffffffffffffff;
+  uVar20 = uVar54 / uVar47 & 0xffffffff;
+  sVar18 = (short)uVar20;
+  sVar24 = sVar18 + -0x6d21;
+  uVar10 = CONCAT62((int6)(uVar20 >> 0x10),sVar24);
+  if ((SBORROW2(sVar18,0x6d21) != false) != sVar24 < 0) {
+    uVar37 = (undefined2)uVar25;
   }
-  uVar36 = 1 << ((uVar36 >> (bVar32 & 0x1f) | uVar39 << 0x20 - (bVar32 & 0x1f)) & 0x1f);
-  uVar44 = (ushort)(uVar40 & 0xf | (ushort)bVar19 << 8) | uVar36;
-  lVar30 = 0x3f;
-  if (uVar43 != 0) {
-    for (; uVar43 >> lVar30 == 0; lVar30 = lVar30 + -1) {
+  lVar42 = 0x3f;
+  if (uVar44 != 0) {
+    for (; uVar44 >> lVar42 == 0; lVar42 = lVar42 + -1) {
     }
   }
-  bVar32 = (byte)uVar44;
-  uVar40 = CONCAT11((char)(uVar44 >> 8) + -1,bVar32);
-  uVar44 = (uint)(uVar12 % uVar13) ^
-           1 << ((byte)(bVar6 << 7 | bVar6 >> 1) >> (bVar32 & 0x1f) & 0x1f);
-  uVar25 = uVar25 >> (bVar32 & 0x1f);
-  lVar47 = (ulong)(uVar41 >> 1) << 0xc;
-  uVar43 = uVar28 | uVar33 & 0xffffff00 | 0xc0000000 | (uint)(byte)((char)uVar33 << 1);
-  sVar9 = (short)lVar47;
-  uVar29 = sVar9 + 1;
-  uVar28 = (uint)lVar47 & 0xffff0000 | (uint)uVar29;
-  uVar12 = (ulong)uVar43 << (bVar32 & 0x3f) | (ulong)(uVar43 >> 0x40 - (bVar32 & 0x3f));
-  uVar33 = uVar41 >> 2 | (short)lVar30 << 0xf;
-  sVar52 = 0xf;
+  uVar55 = CONCAT11(cVar45 + 'V',9);
+  uVar44 = (uint)(uVar54 % (ulong)uVar47) ^ 1;
+  lVar12 = (ulong)(uVar41 >> 1) << 0xc;
+  sVar18 = (short)lVar12;
+  sVar40 = sVar18 + 1;
+  uVar54 = (ulong)CONCAT31((int3)(uVar47 >> 8),(char)((uint)iVar46 >> 8) << 1) << 9;
+  uVar35 = uVar41 >> 2 | (short)lVar42 << 0xf;
+  sVar24 = 0xf;
   uVar41 = (ushort)uVar44;
   if (uVar41 != 0) {
-    for (; uVar41 >> sVar52 == 0; sVar52 = sVar52 + -1) {
+    for (; uVar41 >> sVar24 == 0; sVar24 = sVar24 + -1) {
     }
   }
-  uVar35 = CONCAT62((int6)(short)(SUB162((auVar4 >> bVar8) >> 0x10,0) |
-                                 SUB162((auVar4 << 0x41 - bVar8) >> 0x10,0)),sVar52);
-  uVar37 = (ulong)(uVar25 & 0xffff0000 | uVar25 >> 1 & 0x7fff);
-  uVar37 = uVar37 & ~(1 << (uVar37 & 0x3f));
-  uVar41 = (ushort)((char)uVar37 < '\0');
-  uVar10 = uVar40 + 0x82fe;
-  uVar17 = uVar10 - uVar41;
-  uVar14 = (ulong)(uVar40 < 0x7d02 || uVar10 < uVar41) << 0x20 |
-           uVar14 & 0xffff0000 | (ulong)uVar21 & 0xffffffffffffff00 |
-           (ulong)(uVar29 != 0 && SCARRY2(sVar9,1) == (short)uVar29 < 0);
-  uVar14 = (ulong)((uint)(uVar14 << 0xc) | (uint)(uVar14 >> 0x15));
-  uVar25 = ~-uVar28;
-  uVar22 = uVar44 * -0x106a8c05 ^ (uint)uVar33;
-  uVar34 = uVar12 ^ (ulong)(uVar14 == uVar12) * (uVar12 ^ uVar22);
-  uVar13 = uVar14 ^ (ulong)(uVar14 != uVar12) * (uVar14 ^ uVar34);
-  uVar43 = (uint)uVar35;
-  uVar44 = (int)lVar30 + uVar27 + 1;
-  if ((long)uVar12 < (long)uVar14) {
-    uVar44 = uVar43;
+  uVar63 = CONCAT62((int6)(short)(SUB162(auVar5 >> (bVar8 >> 2),2) |
+                                 SUB162(auVar5 << 0x41 - (bVar8 >> 2),2)),sVar24);
+  uVar32 = (ulong)CONCAT22((ushort)(uVar25 >> 0x19),(ushort)(uVar25 >> 9) >> 1);
+  uVar32 = uVar32 & ~(1L << (uVar32 & 0x3f));
+  iVar31 = (int)CONCAT62((int6)((ulong)lVar12 >> 0x10),sVar40);
+  uVar41 = (ushort)((char)uVar32 < '\0');
+  uVar30 = uVar55 + 0x82fe;
+  uVar17 = uVar30 - uVar41;
+  uVar20 = (ulong)(uVar55 < 0x7d02 || uVar30 < uVar41) << 0x20 |
+           CONCAT71((int7)((ulong)uVar10 >> 8),sVar40 != 0 && SCARRY2(sVar18,1) == sVar40 < 0);
+  uVar13 = (ulong)((uint)(uVar20 << 0xc) | (uint)(uVar20 >> 0x15));
+  uVar47 = ~-iVar31;
+  uVar25 = uVar44 * -0x106a8c05 ^ (uint)uVar35;
+  uVar20 = (ulong)(uVar13 == uVar54) * (uVar54 ^ uVar25);
+  uVar48 = uVar54 ^ uVar20;
+  uVar11 = uVar13 ^ (ulong)(uVar13 != uVar54) * (uVar13 ^ uVar48);
+  uVar19 = (uint)uVar63;
+  uVar44 = (int)lVar42 + (int)CONCAT62(0xffffffffffff,uVar37) + 1;
+  if (uVar54 < uVar13) {
+    uVar44 = uVar19;
   }
-  lVar30 = (uVar53 | 0xffff) + uVar13;
-  bVar54 = (uVar44 & 1) != 0;
-  uVar26 = (ushort)(0 << bVar23 | 0xfffeU >> 0x10 - bVar23) + uVar26 + 1;
-  if (bVar54) {
-    uVar26 = uVar13;
+  uVar54 = (ulong)(CONCAT22((short)(uVar50 >> 0x10),0x1fe) & 0xf3ceffff) & 0xffffffffbe6effff;
+  lVar42 = CONCAT22(uVar6,0xffff) + uVar11;
+  bVar64 = (uVar44 & 1) != 0;
+  uVar39 = uVar39 + 0x3cba80fe00000100;
+  if (bVar64) {
+    uVar39 = uVar11;
   }
-  bVar6 = ((byte)uVar17 & 0x1f) % 0x11;
-  sVar52 = (short)uVar25;
-  uVar40 = (ushort)(CONCAT12(bVar54,sVar52) >> bVar6) | sVar52 << 0x11 - bVar6;
-  uVar25 = uVar25 & 0xffff0000;
-  auVar4 = (ZEXT1216(CONCAT48(uVar22,uVar13)) & (undefined  [16])0xffffffffffffffff) /
-           ZEXT816(uVar35 | 0xc000000000000000);
-  uVar53 = (int)uVar26 << 0x14 | (uint)uVar34 >> 0xc;
-  uVar43 = uVar43 + 0xaa654822;
-  sVar52 = (short)lVar30;
-  uVar38 = (((uVar38 + 0xb8 + (uVar24 & 0xffffff00) | 1 << (uVar21 & 0x1f)) + 0xfa63eb43) *
-            0x9300000 | uVar43 & 0xffff) + 1;
-  bVar6 = SUB161(auVar4,0) | (byte)((uint)uVar17 >> 8);
-  lVar47 = CONCAT71(SUB167(auVar4 >> 8,0),bVar6);
-  uVar24 = uVar36 & 0xffff0000 | (uint)uVar17;
-  if (bVar6 != 0) {
-    uVar24 = uVar38 & 0xffff0000 |
-             (uint)(ushort)((ushort)uVar38 >> 0xd |
-                           ((ushort)(uVar37 & 0xffffffffffffff00) |
-                           (ushort)(byte)((char)uVar37 << 1 | uVar28 != 0)) << 3);
+  bVar8 = ((byte)uVar17 & 0x1f) % 0x11;
+  sVar24 = (short)uVar47;
+  uVar41 = (ushort)(CONCAT12(bVar64,sVar24) >> bVar8) | sVar24 << 0x11 - bVar8;
+  uVar37 = (undefined2)(uVar47 >> 0x10);
+  auVar5._8_8_ = 0;
+  auVar5._0_8_ = uVar63 | 0xc000000000000000;
+  auVar3._8_4_ = uVar25;
+  auVar3._0_8_ = uVar11;
+  auVar3._12_4_ = 0;
+  uVar25 = (int)uVar39 << 0x14 | (uint)uVar48 >> 0xc;
+  iVar46 = uVar19 + 0xaa654822;
+  sVar18 = (short)iVar46;
+  sVar24 = (short)lVar42;
+  iVar38 = CONCAT22((short)(((uVar56 + 0xb8 + (int)lVar58 | 1 << ((uint)uVar10 & 0x1f)) + 0xfa63eb43
+                            ) * 0x9300000 >> 0x10),sVar18) + 1;
+  bVar8 = SUB161(auVar3 / auVar5,0) | (byte)(uVar17 >> 8);
+  lVar58 = CONCAT71(SUB167(auVar3 / auVar5,1),bVar8);
+  uVar56 = (uint)uVar17;
+  if (bVar8 != 0) {
+    uVar56 = CONCAT22((short)((uint)iVar38 >> 0x10),
+                      (ushort)iVar38 >> 0xd |
+                      (short)CONCAT71((int7)(uVar32 >> 8),(char)uVar32 << 1 | iVar31 != 0) << 3);
   }
-  bVar6 = (byte)uVar24;
-  uVar46 = lVar30 >> (bVar6 & 0x3f);
-  uVar35 = (ulong)(uint)((int)(uVar44 | 1) >> 0xc);
-  uVar28 = (uVar39 & 0xb24e3000) >> 0x13;
-  bVar32 = (char)uVar34 + bVar6;
-  uVar34 = uVar34 & 0xffffffffffffff00 | (ulong)bVar32;
-  uVar14 = lVar47 * uVar34;
-  uVar12 = uVar35 << 1;
-  uVar36 = CONCAT22(sVar52 >> 0xf,sVar52 << 1) | 1;
-  uVar13 = uVar37 & 0xffffffffffff0000 |
-           (ulong)(byte)(((char)((uVar37 & 0xffffffffffffff00) >> 8) - (byte)uVar14) -
-                        ((byte)(uVar14 >> 8) < 0xcd)) << 8;
-  uVar26 = 0x3f;
-  if (uVar35 != 0) {
-    for (; uVar12 >> uVar26 == 0; uVar26 = uVar26 - 1) {
+  bVar8 = (byte)uVar56;
+  uVar50 = (ulong)(uint)((int)(uVar44 | 1) >> 0xc);
+  uVar13 = uVar54 >> 0x13;
+  uVar36 = (undefined7)(uVar48 >> 8);
+  cVar45 = (char)uVar20 + bVar8;
+  lVar43 = CONCAT71(uVar36,cVar45);
+  lVar12 = lVar58 * lVar43;
+  uVar20 = uVar50 << 1;
+  uVar44 = CONCAT22(sVar24 >> 0xf,sVar24 << 1) | 1;
+  uVar39 = 0x3f;
+  if (uVar50 != 0) {
+    for (; uVar20 >> uVar39 == 0; uVar39 = uVar39 - 1) {
     }
   }
-  uVar38 = ((uint)uVar13 & 0xffff0000 | (uint)(uVar13 >> 0xc) & 0xf) << (bVar6 & 0x1f) |
-           uVar53 >> 0x20 - (bVar6 & 0x1f);
-  uVar41 = (ushort)uVar38 >> 1;
-  lVar30 = (uVar14 & 0xffffffffffffff00 | (ulong)(byte)((byte)uVar14 >> 1 | 0x80)) << 1;
-  bVar6 = (byte)lVar30 | SUB161(SEXT816(lVar47) * SEXT816((long)uVar34) >> 0x7f,0);
-  if (!SBORROW2((short)uVar43,-0x3025)) {
-    uVar53 = uVar25 | uVar40;
+  uVar39 = uVar39 & 0xfeffffffffffffff;
+  uVar47 = (int)CONCAT62((int6)(uVar32 >> 0x10),
+                         (ushort)((byte)(((char)(uVar32 >> 8) - (byte)lVar12) -
+                                        ((byte)((ulong)lVar12 >> 8) < 0xcd)) >> 4)) <<
+           (bVar8 & 0x1f) | uVar25 >> 0x20 - (bVar8 & 0x1f);
+  uVar6 = (undefined2)(uVar47 >> 0x10);
+  bVar34 = (byte)(uVar47 >> 8) >> 1 | (byte)((ushort)((ushort)((uVar47 & 1) != 0) << 0xf) >> 8);
+  iVar31 = ((uint)CONCAT71((int7)((ulong)lVar12 >> 8),(byte)lVar12 >> 1) | 0x80) << 1;
+  bVar33 = (byte)iVar31 | SUB161(SEXT816(lVar58) * SEXT816(lVar43),0xf) >> 7;
+  if (!SBORROW2(sVar18,-0x3025)) {
+    uVar25 = CONCAT22(uVar37,uVar41);
   }
-  uVar40 = uVar40 + 0x16e3;
-  sVar16 = (sbyte)(uVar24 & 0xffffbf0f);
-  uVar43 = (uVar24 & 0xffffbf0f | 0x2d52679) - uVar43;
-  bVar8 = (byte)((uint)(ushort)(uVar41 | (ushort)((uVar38 & 1) != 0) << 0xf) >> 8);
-  lVar47 = (long)(uVar46 & 0xffffffffffffff00 | uVar46 >> 1 & 0x7f) >> 0x11;
-  uVar39 = ((uint)uVar12 | 0x9d7f) << 1 | (uint)lVar47 >> 0x1f;
-  uVar41 = CONCAT11(bVar8,(char)uVar41 + '\r');
-  uVar49 = (uint7)(int3)((ulong)lVar30 >> 8);
-  uVar24 = uVar43;
-  if (bVar6 <= bVar8) {
-    uVar24 = uVar25 | uVar40;
+  uVar41 = uVar41 + 0x16e3;
+  sVar15 = (sbyte)(uVar56 & 0xffffbf0f);
+  uVar19 = (uVar56 & 0xffffbf0f | 0x2d52679) - iVar46;
+  lVar58 = (long)(int7)((ulong)(lVar42 >> (bVar8 & 0x3f)) >> 8) >> 9;
+  uVar53 = ((uint)uVar20 | 0x9d7f) << 1 | (uint)lVar58 >> 0x1f;
+  uVar55 = CONCAT11(bVar34,(char)((ushort)uVar47 >> 1) + '\r');
+  uVar14 = (uint7)(int3)((uint)iVar31 >> 8);
+  uVar56 = uVar19;
+  if (bVar33 <= bVar34) {
+    uVar56 = CONCAT22(uVar37,uVar41);
   }
-  sVar52 = (short)uVar39 + 0xcb;
-  uVar21 = 0x2655;
-  if (bVar8 < bVar6) {
-    uVar21 = uVar41;
+  sVar24 = (short)uVar53 + 0xcb;
+  uVar30 = 0x2655;
+  if (bVar34 < bVar33) {
+    uVar30 = uVar55;
   }
-  if ((uVar49 & 1) != 0) {
-    uVar41 = (ushort)(CONCAT12(bVar6 < bVar8,uVar21) >> 0xe) | uVar21 << 3;
+  if ((uVar14 & 1) != 0) {
+    uVar55 = (ushort)(CONCAT12(bVar33 < bVar34,uVar30) >> 0xe) | uVar30 << 3;
   }
-  uVar39 = uVar39 - 1;
-  uVar26 = uVar26 & 0xfeffffffffff0000 |
-           (ulong)(ushort)((((ushort)uVar26 >> sVar16 |
-                            ((ushort)(uVar33 + 0x1dcf) >> 1) << 0x10 - sVar16) - uVar41) - 1);
-  lVar30 = (long)(int)CONCAT71(uVar49,bVar6 ^ (bVar6 != bVar8) * (bVar6 ^ bVar8)) *
-           (long)(int)uVar28;
-  cVar15 = (char)((ulong)lVar30 >> 0x28);
-  uVar21 = (ushort)uVar34 & 0xff00 | (ushort)(byte)((char)bVar32 >> ((byte)uVar43 & 0x1f));
-  if (0x48da829f < uVar36) {
-    uVar21 = uVar40;
+  iVar31 = uVar53 - 1;
+  lVar42 = (long)(int)CONCAT71(uVar14,bVar33 ^ (bVar33 != bVar34) * (bVar33 ^ bVar34)) *
+           (long)(int)uVar13;
+  cVar21 = (char)((ulong)lVar42 >> 0x28);
+  uVar30 = (ushort)CONCAT71(uVar36,cVar45 >> ((byte)uVar19 & 0x1f));
+  if (0x48da829f < uVar44) {
+    uVar30 = uVar41;
   }
-  uVar14 = lVar47 + (ulong)(uVar38 & 0xffff0000 | (uint)uVar41) + (ulong)(uVar36 < 0x48da82a0);
-  uVar43 = uVar24 >> 0xb;
-  uVar12 = (ulong)((uVar43 | uVar24 << 0x15) << 5);
-  if (cVar15 != '\0') {
-    uVar12 = uVar14;
+  uVar50 = lVar58 + (ulong)CONCAT22(uVar6,uVar55) + (ulong)(uVar44 < 0x48da82a0);
+  uVar47 = uVar56 >> 0xb | uVar56 << 0x15;
+  uVar20 = (ulong)(uVar47 << 5);
+  if (cVar21 != '\0') {
+    uVar20 = uVar50;
   }
-  uVar25 = uVar39 & 0xffffff00 | (uint)(byte)((char)uVar39 + (char)uVar21 + (cVar15 != '\0'));
-  uVar33 = (short)uVar43 + 0xbf89;
-  uVar13 = (ulong)(uVar43 & 0xffff0000 | uVar24 << 0x15 |
-                  (uint)(ushort)(sVar52 * 2 | (ushort)(sVar52 < 0))) - (ulong)uVar25;
-  uVar41 = uVar41 << ((byte)uVar13 & 0x1f);
-  uVar24 = (uint)(uVar40 >> 1) << 0x1f;
-  uVar44 = (uint)uVar14;
-  sVar52 = (short)uVar25;
-  uVar29 = sVar52 << 1 | (ushort)(sVar52 < 0);
-  uVar43 = uVar39 & 0xffff0000 | (uint)uVar29;
-  iVar11 = CONCAT11(0xec,(byte)lVar30 & uVar36 != 0x48da82a0) * uVar43;
-  bVar6 = (byte)uVar28;
-  uVar14 = (ulong)((uVar38 & 0xffff0000 | uVar41 & 0xfffffe00) >> 1 | uVar24 |
-                  (uint)(byte)((char)(uVar41 >> 1) + -0x73 +
-                              (0x62 < bVar6 || 0xfe < (byte)(bVar6 + 0x9d))));
-  iVar45 = (uVar44 << 10 | uVar44 >> 0x16) << 4;
-  uVar12 = (long)((int)CONCAT71((uint7)(uVar12 >> 8) & 0xffffffffffff00 | (uint7)(byte)(uVar21 >> 8)
-                                ,-1 < (long)uVar26) + 0x55073a79) * 0x286d2712;
-  iVar31 = CONCAT31((uint3)(uVar43 >> 0x1f),(long)(int)uVar12 != uVar12);
-  uVar28 = iVar45 >> 0x1d;
-  uVar41 = (ushort)(iVar45 >> 0x1d);
-  uVar40 = (uVar33 & 0xff) + 0xe53 & 0xff00;
-  for (uVar43 = 0x1f; 0x953f8402U >> uVar43 == 0; uVar43 = uVar43 - 1) {
+  uVar19 = CONCAT31((int3)((uint)iVar31 >> 8),(char)iVar31 + (char)uVar30 + (cVar21 != '\0'));
+  uVar17 = (short)(uVar56 >> 0xb) + 0xbf89;
+  lVar58 = (ulong)CONCAT22((short)(uVar47 >> 0x10),sVar24 * 2 | (ushort)(sVar24 < 0)) -
+           (ulong)uVar19;
+  uVar56 = CONCAT22(uVar6,uVar55 << ((byte)lVar58 & 0x1f)) >> 1;
+  uVar53 = uVar56 | CONCAT22(uVar37,uVar41 >> 1) << 0x1f;
+  uVar47 = (uint)uVar50;
+  sVar24 = (short)uVar19;
+  uVar37 = (undefined2)((uint)iVar31 >> 0x10);
+  uVar51 = sVar24 << 1 | (ushort)(sVar24 < 0);
+  iVar31 = CONCAT22(uVar37,uVar51);
+  iVar46 = (uint)CONCAT11(0xec,(byte)lVar42 & uVar44 != 0x48da82a0) * iVar31;
+  bVar8 = (byte)uVar13;
+  uVar13 = (ulong)CONCAT31((int3)(uVar53 >> 8),
+                           (char)uVar56 + -0x73 + (0x62 < bVar8 || 0xfe < (byte)(bVar8 + 0x9d)));
+  iVar57 = (uVar47 << 10 | uVar47 >> 0x16) << 4;
+  uVar20 = (long)((int)CONCAT71((int7)(CONCAT62((int6)(uVar20 >> 0x10),uVar30) >> 8),
+                                -1 < (long)uVar39) + 0x55073a79) * 0x286d2712;
+  iVar38 = CONCAT31((uint3)((uint)iVar31 >> 0x1f),(long)(int)uVar20 != uVar20);
+  sVar24 = (short)((uint)iVar57 >> 0x10);
+  sVar18 = (short)lVar58 + 0x1fcc;
+  uVar41 = CONCAT11((char)((ushort)((uVar17 & 0xff) + 0xe53) >> 8),
+                    SCARRY4(iVar38,0x64ebf2cd) != SCARRY4(iVar38 + 0x64ebf2cd,1));
+  for (iVar31 = 0x1f; 0x953f8402U >> iVar31 == 0; iVar31 = iVar31 + -1) {
   }
-  uVar37 = (ulong)(ushort)((short)uVar13 + 0x1fcc) & 0xffffffffffffff0f;
-  uVar34 = uVar13 & 0xffffffffffff0000 | uVar37;
-  sVar16 = (sbyte)uVar37;
-  uVar49 = (uint7)(((ulong)(ushort)(uVar27 >> 0x18) << 0x2e) >> 0x17);
-  cVar15 = (char)((uint)iVar11 >> 8);
-  bVar54 = (char)(cVar15 + '\x01') < '\0';
-  uVar37 = (ulong)(uint)(int)(char)iVar11;
-  uVar13 = uVar12 & 0xffffffff;
-  if (SCARRY1(cVar15,'\x01') != bVar54) {
-    uVar13 = uVar34;
+  uVar11 = CONCAT71((int7)(CONCAT62((int6)((ulong)lVar58 >> 0x10),sVar18) >> 8),(char)sVar18) &
+           0xffffffffffffff0f;
+  uVar14 = (uint7)(((uVar54 >> 1) << 0x2e) >> 0x17);
+  cVar45 = (char)((uint)iVar46 >> 8);
+  bVar64 = (char)(cVar45 + '\x01') < '\0';
+  uVar50 = (ulong)(uint)(int)(char)iVar46;
+  uVar54 = uVar20 & 0xffffffff;
+  if (SCARRY1(cVar45,'\x01') != bVar64) {
+    uVar54 = uVar11;
   }
-  uVar35 = uVar13 ^ (ulong)(uVar37 == uVar13) * (uVar13 ^ uVar14);
-  uVar37 = uVar37 ^ (ulong)(uVar37 != uVar13) * (uVar37 ^ uVar35);
-  lVar30 = CONCAT71(0x953f84,(char)uVar35 + '\x02');
-  bVar6 = (byte)(uVar34 >> 1);
-  uVar13 = uVar14 << 0x40 - (bVar6 & 0x3f);
-  uVar25 = (ushort)(0 << (bVar6 & 0x1f)) & 0xffff68e5;
-  if ((POPCOUNT((char)uVar25) & 1U) == 0) {
-    uVar14 = (ulong)((uVar38 & 0xfffe0000) >> 1 | uVar24 | (uint)uVar40);
+  uVar32 = uVar54 ^ (ulong)(uVar50 == uVar54) * (uVar54 ^ uVar13);
+  uVar50 = uVar50 ^ (ulong)(uVar50 != uVar54) * (uVar50 ^ uVar32);
+  lVar58 = CONCAT71(0x953f84,(char)uVar32 + '\x02');
+  bVar8 = (byte)(uVar11 >> 1);
+  uVar54 = uVar13 << 0x40 - (bVar8 & 0x3f);
+  uVar56 = CONCAT22((short)((uint)iVar31 >> 0x10),0 << (bVar8 & 0x1f)) & 0xffff68e5;
+  if ((POPCOUNT((char)uVar56) & 1U) == 0) {
+    uVar13 = (ulong)CONCAT22((short)(uVar53 >> 0x10),uVar41);
   }
-  lVar47 = (ulong)(uint)((int)(short)((ushort)uVar37 & 0xff00 | (ushort)(byte)((char)uVar37 + 0xb7))
-                        + (int)CONCAT71(uVar49,bVar54)) * lVar30;
-  uVar37 = (ulong)(ushort)((ushort)uVar14 >> 1 | 0x8000);
-  uVar14 = uVar14 & 0xffffffffffff0000 | uVar37;
-  uVar24 = (uint)lVar47;
-  if ((int)(((uint)((ulong)lVar47 >> 0x21) | uVar28 << 0x1f) - 1) < 0) {
-    uVar24 = iVar31 + 0x64ebf2ceU & 0xffff0000 |
-             (uint)(ushort)~((short)(iVar31 + 0x64ebf2ceU) << sVar16 |
-                            (ushort)(uVar12 & 0xffffffff) >> 0x10 - sVar16);
+  lVar42 = (ulong)(uint)((int)(short)CONCAT71((int7)(uVar50 >> 8),(char)uVar50 + -0x49) +
+                        (int)CONCAT71(uVar14,bVar64)) * lVar58;
+  uVar30 = (ushort)uVar13 >> 1;
+  uVar13 = CONCAT62((int6)(uVar13 >> 0x10),uVar30) | 0x8000;
+  iVar31 = (int)lVar42;
+  if ((int)(((uint)((ulong)lVar42 >> 0x21) | (iVar57 >> 0x1d) << 0x1f) - 1) < 0) {
+    iVar31 = CONCAT22((short)((uint)(iVar38 + 0x64ebf2ce) >> 0x10),
+                      ~((short)(iVar38 + 0x64ebf2ce) << (sbyte)uVar11 |
+                       (ushort)(uVar20 & 0xffffffff) >> 0x10 - (sbyte)uVar11));
   }
-  uVar34 = (ulong)((uVar43 & 0xffff0000 | uVar25) >> 4 | 0xf0000000);
-  uVar24 = uVar24 * ((uVar53 + 0x354b8e68 & 0xffff0000 | (uint)uVar33) + 0xc5d86109 & 0xffff0000 |
-                    (uint)(ushort)((ushort)(SCARRY4(iVar31,0x64ebf2cd) !=
-                                           SCARRY4(iVar31 + 0x64ebf2cd,1)) << 9 | uVar40 >> 7));
-  bVar32 = (byte)uVar24;
-  bVar55 = 0x27 < bVar32 || 0xfe < (byte)(bVar32 - 0x28);
-  cVar7 = bVar32 - 0x27;
-  cVar15 = (char)(uVar24 >> 8);
-  uVar12 = (uVar39 & 0xffff0000 | (uint)(uVar29 | uVar41)) >> (bVar6 & 0x3f) | uVar13;
-  if (cVar7 != '\0' && (SCARRY1(bVar32,-0x28) != SCARRY1(bVar32 - 0x28,'\x01')) == cVar7 < '\0') {
-    uVar12 = uVar14;
+  uVar20 = (ulong)(uVar56 >> 4 | 0xf0000000);
+  iVar31 = iVar31 * (int)CONCAT62((int6)((ulong)CONCAT22((short)(uVar25 + 0x354b8e68 >> 0x10),uVar17
+                                                        ) - 0x3a279ef7 >> 0x10),
+                                  uVar41 << 9 | uVar41 >> 7);
+  bVar33 = (byte)iVar31;
+  bVar65 = 0x27 < bVar33 || 0xfe < (byte)(bVar33 - 0x28);
+  cVar45 = bVar33 - 0x27;
+  uVar54 = CONCAT22(uVar37,uVar51 | sVar24 >> 0xd) >> (bVar8 & 0x3f) | uVar54;
+  if (cVar45 != '\0' && (SCARRY1(bVar33,-0x28) != SCARRY1(bVar33 - 0x28,'\x01')) == cVar45 < '\0') {
+    uVar54 = uVar13;
   }
-  iVar11 = 0;
-  if ((uint)uVar12 != 0) {
-    for (; ((uint)uVar12 >> iVar11 & 1) == 0; iVar11 = iVar11 + 1) {
+  iVar46 = 0;
+  if ((uint)uVar54 != 0) {
+    for (; ((uint)uVar54 >> iVar46 & 1) == 0; iVar46 = iVar46 + 1) {
     }
   }
-  uVar21 = (short)lVar30 << bVar55 |
-           ((ushort)((short)(uVar26 >> 1) + 0xbfU) >> (bVar6 & 0x1f)) >> 0x10 - bVar55;
-  uVar26 = uVar12 << 4 | uVar12 >> 0x3c;
-  iVar31 = (int)(short)uVar26;
-  uVar38 = (uint)uVar26;
-  lVar30 = (long)(int)uVar38 * -0x118fc552;
-  bVar6 = (byte)lVar30 & 0x3f;
-  iVar45 = (int)uVar14;
-  uVar36 = (int)CONCAT71(uVar49,bVar54 << 1) - iVar45;
-  uVar43 = (uint)(CONCAT14(1,iVar31) >> 0x16);
-  uVar28 = uVar28 & 0xffff0000 |
-           (uint)(ushort)((uVar41 & 0xff00 | (ushort)((uVar41 & 0xfe) >> 1)) + 1);
-  uVar25 = (uint)CONCAT11(cVar15 * '\x02',cVar7);
-  bVar8 = (byte)uVar43;
-  uVar26 = ((ulong)uVar36 & 0xffffffffffff0000 | (ulong)(uVar36 >> 1) & 0x7fff) >> 1;
-  uVar37 = uVar37 & 0xff;
-  uVar39 = iVar45 << (bVar8 & 0x1f) | uVar28 >> 0x20 - (bVar8 & 0x1f);
-  uVar41 = CONCAT11((cVar15 >> 0xf) << 1,cVar15 >> 7) * -0xf29;
-  uVar38 = uVar38 | uVar28;
-  uVar14 = (uVar34 << bVar6 | (ulong)(CONCAT18((int)lVar30 != lVar30,uVar34) >> 0x41 - bVar6)) ^
+  uVar54 = uVar54 << 4 | uVar54 >> 0x3c;
+  iVar38 = (int)(short)uVar54;
+  uVar47 = (uint)uVar54;
+  uVar54 = (long)(int)uVar47 * -0x118fc552;
+  bVar34 = (byte)(uVar54 & 0xffffffff) & 0x3f;
+  cVar21 = (char)((uint)iVar31 >> 8);
+  bVar26 = cVar21 >> 7;
+  iVar61 = (int)uVar13;
+  iVar49 = (int)CONCAT71(uVar14,bVar64 << 1) - iVar61;
+  uVar56 = (uint)(CONCAT14(1,iVar38) >> 0x16);
+  uVar44 = CONCAT22(sVar24 >> 0xf,
+                    (short)CONCAT31((int3)(iVar57 >> 0x1f),(byte)(iVar57 >> 0x1d) >> 1) + 1);
+  uVar41 = (ushort)((uint)iVar49 >> 0x10);
+  uVar53 = (uint)CONCAT62(0x953f,(short)lVar58 << bVar65 |
+                                 ((ushort)((short)(CONCAT62((int6)(uVar39 >> 0x10),
+                                                            (((ushort)uVar39 >> sVar15 |
+                                                             ((ushort)(uVar35 + 0x1dcf) >> 1) <<
+                                                             0x10 - sVar15) - uVar55) + -1) >> 1) +
+                                          0xbfU) >> (bVar8 & 0x1f)) >> 0x10 - bVar65) & 0xfffffffe;
+  uVar25 = CONCAT22((short)((uint)iVar31 >> 0x10),CONCAT11(cVar21 * '\x02',cVar45));
+  bVar8 = (byte)uVar56;
+  uVar19 = CONCAT22(uVar41,(ushort)iVar49 >> 1) >> 1;
+  uVar62 = iVar61 << (bVar8 & 0x1f) | uVar44 >> 0x20 - (bVar8 & 0x1f);
+  uVar35 = CONCAT11(bVar26 << 1,
+                    bVar26 | (POPCOUNT(((byte)((uVar54 & 0xffffffff) >> 8) >> 1) - 0xb) & 1U) != 0)
+           * -0xf29;
+  uVar47 = uVar47 | uVar44;
+  uVar54 = (uVar20 << bVar34 |
+           (ulong)(CONCAT18((long)(int)uVar54 != uVar54,uVar20) >> 0x41 - bVar34)) ^
            0x800000000000000;
-  uVar36 = uVar38 & 0xffff0000;
-  uVar12 = uVar37 >> 1;
-  uVar38 = uVar36 | (ushort)((short)uVar26 << 8) | (uint)(byte)(((char)(uVar38 >> 8) - cVar7) - 1);
-  uVar40 = (ushort)(iVar11 << 1) >> 1 | 0x8000;
-  if ((uVar41 & 0xe73f) == 0 || (short)uVar41 < 0) {
-    uVar40 = CONCAT11(0x23,bVar8);
+  uVar37 = (undefined2)(uVar47 >> 0x10);
+  uVar39 = ((ulong)uVar30 & 0xff) >> 1;
+  uVar47 = CONCAT31((int3)(CONCAT22(uVar37,(short)uVar19 << 8) >> 8),
+                    ((char)(uVar47 >> 8) - cVar45) + -1);
+  uVar55 = (ushort)(iVar46 << 1) >> 1 | 0x8000;
+  if ((uVar35 & 0xe73f) == 0 || (short)uVar35 < 0) {
+    uVar55 = CONCAT11(0x23,bVar8);
   }
-  uVar28 = uVar28 | uVar24 & 0xffff0000 | uVar25;
-  uVar13 = (ulong)(uVar24 & 0xffff0000 | uVar25 & 0xffffff00 | (uint)(byte)(bVar32 + 0xb5));
-  uVar24 = (uint)uVar26;
-  uVar24 = uVar24 << 0xd | uVar24 >> 0x13;
-  uVar34 = uVar14 >> 1;
-  uVar26 = 0;
-  if (uVar38 != 0) {
-    for (; (uVar38 >> uVar26 & 1) == 0; uVar26 = uVar26 + 1) {
+  uVar44 = uVar44 | uVar25;
+  uVar13 = (ulong)CONCAT31((int3)(uVar25 >> 8),bVar33 + 0xb5);
+  uVar25 = uVar19 << 0xd | (uint)(uVar41 >> 4);
+  uVar50 = uVar54 >> 1;
+  uVar20 = 0;
+  if (uVar47 != 0) {
+    for (; (uVar47 >> uVar20 & 1) == 0; uVar20 = uVar20 + 1) {
     }
   }
-  sVar52 = uVar40 - (short)uVar12;
-  uVar41 = sVar52 - 1;
-  uVar39 = (uVar39 & 0xffff0000 |
-           (uint)(ushort)(((ushort)uVar39 & 0xff00 |
-                          (ushort)(byte)((byte)uVar39 >> 7 | (byte)uVar39 << 2)) + 0x7f6b)) -
-           (((uint)CONCAT62(0x953f,uVar21) & 0xffffff00 | (uint)(byte)(((byte)uVar21 & 0xfe) << 1) |
-            1) + 0xc6578433);
-  uVar46 = uVar26 ^ (ulong)(uVar13 == uVar26) * (uVar26 ^ 0xbd1e75aeeeaf2bd3);
-  uVar13 = uVar13 ^ (ulong)(uVar13 != uVar26) * (uVar13 ^ uVar46);
-  uVar35 = uVar13 & 0xffffffffffff0000;
-  uVar33 = (short)uVar38 - CONCAT11(0x23,bVar8);
-  sVar9 = (short)(uVar35 >> 0x10);
-  uVar40 = sVar9 >> 0x1f;
-  uVar48 = (((ulong)uVar28 << 0x22) >> 0x24 | (ulong)(uVar28 >> 0x1e) << 0x1c) -
-           (ulong)(uVar36 | uVar33);
-  uVar26 = (ulong)(uVar43 | iVar31 << 0xb) << 1;
-  uVar36 = ((uint)uVar46 & 0xffff0000 | (uint)(ushort)((short)uVar46 << 1)) & (uint)uVar48;
-  uVar25 = (uint)CONCAT62((uint6)uVar40,0xc126);
-  uVar43 = uVar24 + uVar25;
-  bVar32 = (bVar8 - 0x3f & 0x1f) % 0x11;
-  sVar42 = (short)(uVar37 >> 2);
-  uVar21 = (short)uVar13 + 0xa875;
-  bVar6 = (char)uVar43 + (char)uVar41;
-  uVar28 = uVar43 & 0xffffff00 | (uint)bVar6;
-  uVar13 = (ulong)(ushort)(sVar42 << bVar32 |
-                          (ushort)(CONCAT12(CARRY4(uVar24,uVar25),sVar42) >> 0x11 - bVar32));
-  if (bVar6 != 0) {
-    uVar13 = uVar34;
+  sVar24 = uVar55 - (short)uVar39;
+  sVar18 = sVar24 + -1;
+  uVar19 = CONCAT22((short)(uVar62 >> 0x10),
+                    (short)CONCAT31((int3)(uVar62 >> 8),(byte)uVar62 >> 7 | (byte)uVar62 << 2) +
+                    0x7f6b) - ((CONCAT31((int3)(uVar53 >> 8),(char)uVar53 << 1) | 1) + 0xc6578433);
+  uVar11 = uVar20 ^ (ulong)(uVar13 == uVar20) * (uVar20 ^ 0xbd1e75aeeeaf2bd3);
+  uVar13 = uVar13 ^ (ulong)(uVar13 != uVar20) * (uVar13 ^ uVar11);
+  bVar33 = (byte)uVar39;
+  sVar52 = (short)uVar47 - CONCAT11(0x23,bVar8);
+  uVar41 = (short)(uVar13 >> 0x10) >> 0xf;
+  lVar42 = (((ulong)uVar44 << 0x22) >> 0x24 | (ulong)(uVar44 >> 0x1e) << 0x1c) -
+           (ulong)CONCAT22(uVar37,sVar52);
+  lVar58 = (ulong)(uVar56 | iVar38 << 0xb) << 1;
+  uVar47 = (uint)CONCAT62((int6)(uVar11 >> 0x10),(short)uVar11 << 1) & (uint)lVar42;
+  uVar44 = (uint)CONCAT62((uint6)uVar41,0xc126);
+  iVar31 = uVar25 + uVar44;
+  bVar8 = (bVar8 - 0x3f & 0x1f) % 0x11;
+  uVar55 = (ushort)(bVar33 >> 1);
+  sVar40 = (short)uVar13 + -0x578b;
+  cVar45 = (char)iVar31 + (char)sVar18;
+  uVar56 = CONCAT31((int3)((uint)iVar31 >> 8),cVar45);
+  uVar39 = (ulong)(ushort)(uVar55 << bVar8 |
+                          (ushort)(CONCAT12(CARRY4(uVar25,uVar44),uVar55) >> 0x11 - bVar8));
+  if (cVar45 != '\0') {
+    uVar39 = uVar50;
   }
-  uVar24 = uVar39;
-  if (!SBORROW2((short)uVar28,uVar21)) {
-    uVar24 = uVar36 & 0xffff8294 ^ 1 << (uVar36 & 0x14);
+  uVar44 = uVar19;
+  if (!SBORROW2((short)uVar56,sVar40)) {
+    uVar44 = uVar47 & 0xffff8294 ^ 1 << (uVar47 & 0x14);
   }
-  sVar42 = (short)uVar26;
-  uVar29 = sVar42 << 1;
-  lVar30 = (uVar13 - (uVar26 & 0xffffffffffff0000 | (ulong)uVar29)) - (ulong)(sVar42 < 0);
-  uVar25 = (uint)(uVar29 | 0xc000);
-  uVar36 = CONCAT22(sVar9 >> 0xf,(sVar52 + -0x6947) - (ushort)((uVar39 >> 7 & 1) != 0)) & 0x3fffffff
+  sVar9 = (short)lVar58;
+  uVar55 = sVar9 << 1;
+  lVar58 = (uVar39 - CONCAT62((int6)((ulong)lVar58 >> 0x10),uVar55)) - (ulong)(sVar9 < 0);
+  uVar20 = (ulong)CONCAT22(uVar41,uVar41) & 0xffffffffffff3fff;
+  uVar25 = (uint)(uVar55 | 0xc000);
+  uVar47 = CONCAT22((short)uVar20,(sVar24 + -0x6947) - (ushort)((uVar19 >> 7 & 1) != 0));
+  sVar9 = (short)(uVar47 / uVar25);
+  uVar27 = (undefined6)(uVar20 >> 0x10);
+  uVar41 = (ushort)((byte)lVar42 < 0xe6);
+  sVar24 = sVar9 + (short)uVar44;
+  uVar20 = -(uVar39 & 0xffffffff);
+  if ((uVar39 & 0xffffffff) != 0) {
+    uVar56 = CONCAT22((short)((uint)iVar31 >> 0x10),(short)uVar20);
+  }
+  uVar53 = (uint)lVar58;
+  iVar31 = (int)CONCAT62((int6)(uVar13 >> 0x10),sVar24 + uVar41) + uVar53;
+  uVar39 = uVar20 & 0xffffffffffffff0f;
+  bVar34 = (byte)uVar39;
+  bVar34 = bVar34 ^ ((byte)iVar31 == bVar34) *
+                    (bVar34 ^ ((byte)(sVar52 << bVar34) | (byte)((ushort)uVar39 >> 0x10 - bVar34)));
+  lVar12 = (long)(ulong)(ushort)(((byte)(bVar33 - (char)((ushort)sVar18 >> 8)) & 0x490f) +
+                                 (short)uVar50 + 1) >> 1;
+  bVar8 = (byte)lVar12;
+  bVar33 = -(char)((ulong)lVar12 >> 8);
+  uVar19 = uVar53 + 0xbabcaf4c;
+  sVar18 = 0xf;
+  uVar55 = (ushort)lVar58;
+  if (uVar55 != 0) {
+    for (; uVar55 >> sVar18 == 0; sVar18 = sVar18 + -1) {
+    }
+  }
+  iVar46 = (int)uVar44 >> (bVar34 & 0x1f);
+  uVar41 = ((short)CONCAT71((uint7)(uint3)((uint)iVar31 >> 8),1) -
+           (short)CONCAT71((int7)(CONCAT62(uVar27,(short)(uVar47 % uVar25)) >> 8),
+                           ((SCARRY2(sVar9,(short)uVar44) == SCARRY2(sVar24,uVar41)) - (char)uVar20)
+                           + -1)) - 1;
+  bVar34 = bVar34 - (char)(uVar41 >> 8);
+  if (uVar19 != CONCAT11(bVar33,bVar8)) {
+    iVar46 = CONCAT22((short)((uint)iVar46 >> 0x10),sVar40);
+  }
+  iVar38 = (uint)uVar41 * (uVar56 & 0xffff);
+  uVar41 = (ushort)((uint)iVar38 >> 0x10);
+  uVar20 = ~(ulong)CONCAT22((short)((uint)iVar31 >> 0x10),(short)iVar38);
+  uVar13 = (ulong)~CONCAT22((short)((uint)iVar46 >> 0x10),
+                            (ushort)iVar46 >> 0xf | (ushort)iVar46 << 1);
+  uVar50 = (ulong)CONCAT31((int3)(uVar19 >> 8),~(byte)uVar19) - 0x6ecb58e3 ^
+           1L << (((ulong)uVar41 & 0x7e) >> 1);
+  bVar64 = CONCAT71((int7)(CONCAT62((int6)(uVar20 >> 0x10),(ushort)(byte)uVar20 * (ushort)bVar8) >>
+                          8),bVar8) == uVar13;
+  uVar13 = uVar13 ^ (ulong)bVar64 * (uVar13 ^ CONCAT62(uVar27,uVar41) >> 1);
+  iVar57 = (int)uVar13;
+  bVar8 = bVar8 ^ !bVar64 * (bVar8 ^ (byte)uVar13);
+  lVar58 = (ulong)bVar33 << 8;
+  uVar44 = (int)CONCAT71((int7)(uVar39 >> 8),(char)bVar34 >> 1) >> ((char)bVar34 >> 1 & 0x1fU);
+  uVar39 = CONCAT62(uVar27,CONCAT11((char)((uint)iVar38 >> 0x18),
+                                    (char)((uint)iVar38 >> 0x10) + (char)((uVar53 >> 5) << 1))) &
+           0xffffffffffff75ff;
+  bVar33 = (byte)uVar44 & 0xf;
+  uVar25 = ~(uint)CONCAT62((int6)(uVar39 >> 0x10),
+                           (short)CONCAT71((int7)(uVar39 >> 8),bVar8) << bVar33 |
+                           ((ushort)((short)CONCAT71((int7)((ulong)lVar42 >> 8),(byte)lVar42 + 0x1a)
+                                    << 1) >> (bVar34 & 0x1f) & 0xefff) >> 0x10 - bVar33);
+  bVar33 = (byte)(uVar44 >> 0x11);
+  uVar20 = CONCAT62((char)uVar56 >> 7,((short)(char)uVar56 | 0x4000U) ^ 1 << ((ushort)uVar50 & 0xf))
+           + 0x397c41c8;
+  uVar41 = (ushort)(CONCAT62((uint6)(uVar54 >> 0x11),sVar18) >> (bVar34 & 0x3f));
+  uVar44 = (uint)uVar50;
+  iVar46 = uVar25 + uVar44;
+  bVar34 = bVar33 - 1;
+  bVar64 = (POPCOUNT((ushort)bVar34) & 1U) != 0;
+  iVar31 = ((uint)CONCAT71(0x711b02,!SCARRY1(bVar8,(char)uVar39)) & 0xffff) + 0x6b83909a;
+  iVar38 = ((uint)(ushort)((short)lVar58 >> 7) << (bVar33 & 0x3f)) + -0x6db0dc5;
+  if (-1 < iVar38) {
+    uVar20 = (ulong)CONCAT22((short)(uVar56 >> 0x10),(short)uVar56 * -0x3e0d);
+  }
+  sVar24 = CONCAT11((char)((uint)iVar46 >> 8) + (char)iVar38,
+                    (byte)iVar46 >> 1 | CARRY4(uVar25,uVar44) << 7);
+  if (-1 < (short)((short)iVar31 -
+                  (short)CONCAT31((int3)((uVar53 ^ 0xa848bf4a) >> 8),
+                                  (byte)((char)((byte)(uVar53 ^ 0xa848bf4a) >> 1 | 0x80) >> 1) >>
+                                  (bVar34 & 0x1f)))) {
+    iVar57 = (int)CONCAT62((int6)(uVar13 >> 0x10),
+                           uVar41 << (bVar33 & 0xf) | uVar41 >> 0x10 - (bVar33 & 0xf));
+  }
+  sVar18 = sVar24 * -0x5496;
+  uVar39 = (ulong)(iVar57 + 0x9e6788afU ^ 0xdd4a);
+  uVar54 = uVar39 & 0xffffffffffff4a3a;
+  uVar41 = (ushort)(byte)(bVar34 >> 3 | bVar34 * ' ' | 0xc0);
+  bVar8 = (byte)(0x1e5f / uVar41);
+  bVar33 = (byte)(0x1e5f % uVar41);
+  lVar42 = CONCAT62(0xfffffffff840,CONCAT11(bVar33,bVar8));
+  if ((POPCOUNT((uint)uVar20 & (uint)lVar42 & 0xff) & 1U) == 0) {
+    sVar24 = sVar18;
+  }
+  bVar34 = bVar34 >> 3 | bVar34 * ' ' & 0x3f;
+  uVar13 = (ulong)(CONCAT22((short)((uint)iVar46 >> 0x10),sVar24) >> bVar34) |
+           lVar42 << 0x40 - bVar34;
+  iVar46 = (uint)uVar20 << 2;
+  uVar41 = (ushort)iVar46;
+  uVar36 = (undefined7)(uVar13 >> 8);
+  bVar34 = (byte)uVar54;
+  bVar26 = -(char)(uVar54 >> 8);
+  uVar54 = CONCAT62((int6)(uVar54 >> 0x10),CONCAT11(bVar26,bVar34));
+  iVar38 = CONCAT22(0x14c1,(ushort)CONCAT31(0x14c172,bVar64) >> 1);
+  iVar57 = 0;
+  if (!bVar64) {
+    iVar57 = iVar38;
+  }
+  sVar24 = (short)((char)bVar33 >> 7);
+  uVar11 = (ulong)(iVar38 << 0xf | (uint)uVar54 >> 0x11);
+  uVar55 = uVar41 >> 0xb | 0xa0;
+  uVar35 = (ushort)(iVar31 >> 0x15);
+  uVar50 = (ulong)(long)sVar18 >> (bVar33 & 0x3f) | (long)sVar18 << 0x40 - (bVar33 & 0x3f);
+  uVar39 = (uVar39 & 0x4a3a) << (bVar33 & 0x3f) | uVar54 >> 0x40 - (bVar33 & 0x3f);
+  uVar56 = (uint)((long)uVar20 >> (bVar33 & 0x3f)) & 0xffffff00;
+  if (-1 < (char)(bVar8 | bVar26)) {
+    uVar56 = CONCAT22((short)((uint)((int)lVar58 << 0xf) >> 0x10),(short)(char)bVar33);
+  }
+  uVar30 = uVar55 | 1 << (bVar34 & 0xf);
+  bVar33 = (bVar33 + (char)uVar30 & 3) << 2 | (byte)(uVar39 >> 8) >> 6;
+  uVar25 = (uint)CONCAT62(0xffffffff928b,uVar30) & 0xffffffdf;
+  uVar30 = (short)CONCAT31((int3)(CONCAT22(sVar24,CONCAT11(1,bVar8)) >> 8),bVar8 | bVar26) << bVar33
+           | uVar35 >> 0x10 - bVar33;
+  uVar30 = uVar30 << 1 | (ushort)((short)uVar30 < 0);
+  cVar45 = (char)uVar30;
+  uVar30 = (ushort)CONCAT31((int3)(CONCAT22(sVar24,uVar30) >> 8),
+                            (byte)(CONCAT11(bVar26 < bVar34,cVar45) >> 7) | cVar45 << 2);
+  uVar54 = (ulong)CONCAT22(sVar24,(short)((CONCAT22(CONCAT11((byte)(bVar26 - bVar34) >> 1,bVar34),
+                                                    uVar30) & 0x3fffffff | 0xc000) /
+                                         (uint)(uVar30 | 0xc000)));
+  lVar58 = ((uVar54 ^ (ulong)(uVar54 != uVar11) *
+                      (uVar54 ^ uVar11 ^ (ulong)(uVar54 == uVar11) * (uVar11 ^ uVar50))) &
+           0xffffffff) * (ulong)uVar25;
+  uVar14 = (uint7)(uVar50 >> 8);
+  lVar43 = CONCAT71(uVar14,(byte)uVar50 + (char)uVar35);
+  cVar45 = (char)((ushort)(0xcc5 << bVar33 | 0xcc5U >> 0x10 - bVar33) >> 1);
+  uVar44 = CONCAT31((int3)((ulong)lVar58 >> 0x28),cVar45);
+  lVar12 = (ulong)((int)lVar58 + 0x1858ab2a) << 1;
+  iVar31 = CONCAT31((uint3)(uVar56 >> 9) |
+                    (uint3)((uint)((int)CONCAT71(uVar36,(char)uVar13 + '\x01') << 0x1f) >> 8),
+                    (char)(CONCAT11((uVar55 >> (bVar34 & 0xf) & 1) != 0,(char)(uVar56 >> 1)) >> 1))
+           + 0x833ea67;
+  lVar42 = CONCAT62((uint6)(ushort)(uVar25 >> 0x10),0x9436) << 3;
+  bVar8 = (byte)((uint)iVar57 >> 0x18) &
+          ~(byte)((uint)(1 << ((byte)(cVar45 + (char)((ulong)lVar58 >> 0x20)) & 0x1f)) >> 0x18);
+  if (SBORROW4((int)lVar43,-0x695efcfb)) {
+    bVar8 = 0xee;
+  }
+  uVar55 = (ushort)iVar31;
+  bVar34 = (byte)((uVar44 >> 2) >> 8) >> 3 | (byte)(uVar55 << 5);
+  auVar5 = ZEXT116(0) << 0x40 | ZEXT416(0xad806464);
+  uVar59 = SUB167(auVar5 << 0x1e,1) | SUB167(auVar5 >> 0x23,1);
+  uVar56 = (uint)CONCAT71(uVar36,(char)uVar39 + '!') >> 1;
+  uVar44 = CONCAT22((ushort)((ulong)lVar58 >> 0x32) | (ushort)((uVar44 << 0x1e) >> 0x10),
+                    (ushort)bVar34);
+  bVar33 = (byte)lVar12 & (byte)uVar50;
+  uVar54 = CONCAT71((int7)((ulong)lVar12 >> 8),bVar33);
+  iVar38 = 0x1f;
+  uVar25 = (uint)uVar54;
+  if (uVar25 != 0) {
+    for (; uVar25 >> iVar38 == 0; iVar38 = iVar38 + -1) {
+    }
+  }
+  uVar20 = (ulong)uVar56 | 0xe814;
+  bVar64 = -1 < (short)((ushort)uVar56 | 0xe814);
+  uVar39 = CONCAT62((int6)(uVar39 >> 0x10),(ushort)uVar39 >> 1);
+  if (bVar64) {
+    uVar39 = uVar54;
+  }
+  bVar22 = (byte)iVar38;
+  bVar26 = (byte)((ulong)lVar42 >> 8) >> 1;
+  uVar27 = (undefined6)((ulong)lVar42 >> 0x10);
+  bVar34 = (byte)((ulong)lVar12 >> 8) | bVar34;
+  uVar54 = CONCAT62((int6)((ulong)lVar12 >> 0x10),CONCAT11(bVar34,bVar33));
+  uVar56 = CONCAT22((short)((uint)iVar31 >> 0x10),(short)(uVar55 >> 0xd | uVar55 << 3) >> 0x10);
+  bVar28 = (byte)lVar42 >> (bVar22 & 0x1f) ^ bVar22;
+  uVar13 = CONCAT62((int6)(uVar59 >> 8),
+                    (ushort)CONCAT71(uVar59,(char)bVar34 < '\0') >> (bVar22 & 0x1f));
+  uVar7 = (undefined3)(CONCAT22((short)((uint)iVar38 >> 0x10),bVar22 + 1) >> 8);
+  uVar50 = uVar13 ^ (ulong)(uVar54 == uVar13) *
+                    (uVar13 ^ ((ulong)(CONCAT31((int3)(CONCAT22((short)((uint)iVar46 >> 0x10),
+                                                                uVar41 << 1) >> 8),bVar64) >> 1) |
+                              (ulong)bVar64 << 0x3f));
+  uVar54 = uVar54 ^ (ulong)(uVar54 != uVar13) * (uVar54 ^ uVar50);
+  bVar34 = (byte)(bVar22 + 1);
+  bVar33 = bVar34 & 0x1f;
+  uVar25 = (uint)uVar50;
+  uVar25 = uVar25 << bVar33 | uVar25 >> 0x20 - bVar33;
+  auVar4._2_6_ = (int6)(uVar54 >> 0x10);
+  auVar4._0_2_ = (ushort)(byte)uVar54 * (ushort)bVar26;
+  lVar58 = 0;
+  if (uVar20 != 0) {
+    for (; (uVar20 >> lVar58 & 1) == 0; lVar58 = lVar58 + 1) {
+    }
+  }
+  if (uVar20 == 0) {
+    uVar39 = lVar43 << 0x15 | (ulong)(uVar14 >> 0x23);
+  }
+  bVar34 = bVar34 << 1;
+  uVar19 = CONCAT31(uVar7,bVar34) | 0x400000;
+  iVar46 = (int)lVar58 + uVar19;
+  uVar47 = uVar56 * 9 + 0x1a;
+  uVar25 = (uint)(ushort)((ushort)(uVar25 >> 8) & 0xff | (ushort)((uVar25 << 0x18) >> 0x10)) << 0x10
   ;
-  sVar9 = (short)(uVar36 / uVar25);
-  uVar29 = (ushort)((byte)uVar48 < 0xe6);
-  sVar52 = sVar9 + (short)uVar24;
-  uVar26 = -(uVar13 & 0xffffffff);
-  if ((uVar13 & 0xffffffff) != 0) {
-    uVar28 = uVar43 & 0xffff0000 | (uint)(ushort)uVar26;
+  uVar53 = (int)(char)uVar20 - 1;
+  auVar4._8_8_ = 0;
+  uVar47 = (uint)CONCAT62((int6)(uint6)(ushort)(uVar47 >> 0x10) >> 1,
+                          (short)((long)(ulong)uVar47 >> 1) << (bVar34 & 0x1f));
+  uVar47 = uVar47 >> (bVar34 & 0x1f) | uVar47 << 0x20 - (bVar34 & 0x1f);
+  uVar39 = uVar39 & SUB168(auVar4 * ZEXT416(uVar44 << 0x17 | uVar44 >> 9),8);
+  bVar33 = (byte)uVar39;
+  uVar44 = uVar25 >> (bVar34 & 0x1f) | uVar25 << 0x20 - (bVar34 & 0x1f);
+  iVar31 = (uVar53 >> (bVar34 & 0x3f) | uVar53 << 0x40 - (bVar34 & 0x3f)) + 0x98030a3e + uVar44 * 8;
+  uVar37 = (undefined2)((uint)iVar46 >> 0x10);
+  uVar41 = (ushort)iVar46 >> 0xf;
+  uVar54 = (ulong)CONCAT22(uVar37,uVar41);
+  uVar20 = (long)((int)CONCAT71((int7)(CONCAT62(uVar27,CONCAT11(bVar26,(byte)lVar42)) >> 8),bVar28)
+                 * -0x345f254d) * (long)(int)uVar19;
+  uVar44 = uVar44 & 0xa62c4f49;
+  uVar13 = uVar20 & 0xffffffff;
+  if ((int)uVar44 < 0) {
+    uVar13 = uVar54;
   }
-  uVar39 = (uint)lVar30;
-  uVar38 = ((uint)uVar35 | (uint)(ushort)(sVar52 + uVar29)) + uVar39;
-  bVar6 = (byte)(uVar26 & 0xffffffffffffff0f);
-  bVar6 = bVar6 ^ ((byte)uVar38 == bVar6) *
-                  (bVar6 ^ ((byte)(uVar33 << bVar6) |
-                           (byte)((ushort)(uVar26 & 0xffffffffffffff0f) >> 0x10 - bVar6)));
-  lVar47 = (long)(ulong)(ushort)(((byte)((char)uVar12 - (char)((ulong)uVar41 >> 8)) & 0x490f) +
-                                 (short)uVar34 + 1) >> 1;
-  bVar32 = (byte)lVar47;
-  uVar41 = CONCAT11(-(char)((ulong)lVar47 >> 8),bVar32);
-  uVar43 = uVar39 + 0xbabcaf4c;
-  sVar42 = 0xf;
-  uVar33 = (ushort)lVar30;
-  if (uVar33 != 0) {
-    for (; uVar33 >> sVar42 == 0; sVar42 = sVar42 + -1) {
-    }
+  lVar58 = CONCAT62(uVar27,CONCAT11(uVar44 != 0,bVar28));
+  uVar54 = uVar56 + uVar54;
+  sVar24 = (short)iVar31 + (ushort)bVar26;
+  uVar6 = (undefined2)(uVar20 >> 0x30);
+  bVar22 = (byte)(uVar20 >> 0x20);
+  bVar22 = bVar22 << (bVar34 & 7) | bVar22 >> 8 - (bVar34 & 7);
+  uVar55 = (ushort)uVar13 >> 1;
+  uVar13 = CONCAT62((int6)(uVar13 >> 0x10),uVar55 | (ushort)((uVar13 & 1) != 0) << 0xf);
+  cVar45 = (char)((char)(uVar20 >> 0x28) << 1 | 1U) >> 0x15;
+  uVar50 = (ulong)CONCAT22(uVar6,CONCAT11(cVar45,bVar22));
+  uVar20 = (ulong)(CONCAT31(uVar7,bVar34) | 0x400000) & 0xffffffffffffff0f;
+  sVar15 = (sbyte)uVar20;
+  if (SBORROW8(uVar50,0x4fd5d62c)) {
+    uVar20 = uVar54 & 0xffffffff;
   }
-  uVar27 = (int)uVar24 >> (bVar6 & 0x1f);
-  uVar33 = ((short)CONCAT71((uint7)(uint3)(uVar38 >> 8),1) -
-           CONCAT11((char)(uVar36 % uVar25 >> 8),
-                    ((SCARRY2(sVar9,(short)uVar24) == SCARRY2(sVar52,uVar29)) - (char)uVar26) + -1))
-           - 1;
-  bVar6 = bVar6 - (char)(uVar33 >> 8);
-  if (uVar43 != uVar41) {
-    uVar27 = uVar27 & 0xffff0000 | (uint)uVar21;
+  uVar35 = (short)uVar44 - 1;
+  if (0x4fd5d62b < uVar50) {
+    uVar35 = (ushort)uVar47 | 1;
   }
-  uVar24 = (uint)uVar33 * (uVar28 & 0xffff);
-  uVar21 = (ushort)(uVar24 >> 0x10);
-  uVar25 = CONCAT22(uVar40,uVar21);
-  uVar12 = ~(ulong)(uVar38 & 0xffff0000 | uVar24 & 0xffff);
-  uVar12 = (ulong)uVar41 & 0xff |
-           (ulong)((uint7)(uVar12 >> 8) & 0xffffffffffff00 |
-                  (uint7)(byte)((ushort)((ushort)(byte)uVar12 * (ushort)bVar32) >> 8)) << 8;
-  uVar36 = ~(uVar27 & 0xffff0000 | (uint)(ushort)((ushort)uVar27 >> 0xf | (ushort)uVar27 << 1));
-  uVar13 = (ulong)uVar36;
-  uVar34 = (ulong)(uVar43 & 0xffffff00 | (uint)(byte)~(byte)uVar43) - 0x6ecb58e3 ^
-           1 << (((ulong)uVar21 & 0x7e) >> 1);
-  uVar37 = uVar13 ^ (ulong)(uVar12 == uVar13) * (ulong)(uVar36 ^ uVar25 >> 1);
-  uVar38 = (uint)uVar37;
-  uVar12 = uVar12 ^ (ulong)(uVar12 != uVar13) * (uVar12 ^ uVar37);
-  uVar43 = (int)((uint)uVar26 & 0xffffff00 | (uint)(byte)((char)bVar6 >> 1)) >>
-           ((char)bVar6 >> 1 & 0x1fU);
-  uVar26 = (ulong)uVar25 & 0xffffffffffff7500 | uVar12 & 0xff;
-  bVar32 = (byte)uVar43 & 0xf;
-  uVar25 = ~((uint)uVar26 & 0xffff0000 |
-            (uint)(ushort)((short)uVar26 << bVar32 |
-                          ((ushort)((uVar48 & 0xffffffffffffff00 |
-                                    (ulong)(byte)((byte)uVar48 + 0x1a)) << 1) >> (bVar6 & 0x1f) &
-                          0xefff) >> 0x10 - bVar32));
-  uVar43 = uVar43 >> 0x11 & 0xffff00ff;
-  bVar8 = (byte)uVar43;
-  uVar26 = CONCAT62((undefined6)((char)uVar28 >> 7),
-                    ((short)(char)uVar28 | 0x4000U) ^ 1 << ((ushort)uVar34 & 0xf)) + 0x397c41c8;
-  bVar32 = bVar8 & 0xf;
-  uVar21 = (ushort)(CONCAT62((uint6)(uVar14 >> 0x11),sVar42) >> (bVar6 & 0x3f));
-  uVar27 = (uint)uVar34;
-  uVar36 = uVar25 + uVar27;
-  uVar40 = (short)uVar43 - 1;
-  uVar43 = ((uint)CONCAT71(0x711b02,!SCARRY1((char)uVar12,
-                                             (char)(uVar24 >> 0x10) + (char)((uVar39 >> 5) << 1))) &
-           0xffff) + 0x6b83909a;
-  bVar6 = (byte)uVar40;
-  iVar11 = ((uint)(ushort)((short)(uVar41 & 0xffffff00) >> 7) << (bVar8 & 0x3f)) + -0x6db0dc5;
-  if (-1 < iVar11) {
-    uVar26 = (ulong)(uVar28 & 0xffff0000 | (uint)(ushort)((short)uVar28 * -0x3e0d));
-  }
-  uVar29 = CONCAT11((char)(uVar36 >> 8) + (char)iVar11,
-                    (byte)uVar36 >> 1 | CARRY4(uVar25,uVar27) << 7);
-  uVar33 = (short)uVar43 -
-           ((ushort)(uVar39 ^ 0xa848bf4a) & 0xff00 |
-           (ushort)((byte)((char)((byte)(uVar39 ^ 0xa848bf4a) >> 1 | 0x80) >> 1) >> (bVar6 & 0x1f)))
-  ;
-  uVar43 = uVar43 & 0xffff0000;
-  if (-1 < (short)uVar33) {
-    uVar38 = uVar38 & 0xffff0000 | (uint)(ushort)(uVar21 << bVar32 | uVar21 >> 0x10 - bVar32);
-  }
-  uVar17 = uVar29 * -0x5496;
-  uVar12 = (ulong)(uVar38 + 0x9e6788af & 0xffff0000 |
-                  (uint)(ushort)((ushort)(uVar38 + 0x9e6788af) ^ 0xdd4a));
-  uVar21 = (ushort)(byte)(bVar6 >> 3 | bVar6 << 5 | 0xc0);
-  uVar10 = 0x1e5f / uVar21 & 0xff;
-  uVar14 = (ulong)(ushort)(uVar10 | 0x1e5fU % uVar21 << 8);
-  uVar13 = uVar14 | 0xfffffffff8400000;
-  if ((POPCOUNT((uint)uVar26 & (uint)uVar13 & 0xff) & 1U) == 0) {
-    uVar29 = uVar17;
-  }
-  bVar6 = bVar6 >> 3 | bVar6 << 5 & 0x3f;
-  uVar37 = (ulong)((uVar36 & 0xffff0000 | (uint)uVar29) >> bVar6) | uVar13 << 0x40 - bVar6;
-  iVar11 = (uint)uVar26 << 2;
-  uVar21 = (ushort)iVar11;
-  bVar6 = (byte)(uVar14 >> 8);
-  bVar32 = (byte)(uVar12 & 0xffffffffffff4a3a);
-  uVar14 = (ulong)CONCAT11(-(char)((uVar12 & 0xffffffffffff4a3a) >> 8),bVar32);
-  uVar13 = uVar12 & 0xffffffffffff0000 | uVar14;
-  uVar29 = 0;
-  if ((POPCOUNT(uVar40 & 0xff) & 1U) == 0) {
-    uVar29 = 0x14c1;
-  }
-  uVar35 = (ulong)((uint)uVar13 >> 0x11 | 0x9c800000);
-  uVar40 = uVar21 >> 0xb | 0xa0;
-  uVar34 = (ulong)(long)(short)uVar17 >> (bVar6 & 0x3f) |
-           (long)(short)uVar17 << 0x40 - (bVar6 & 0x3f);
-  uVar12 = (uVar12 & 0x4a3a) << (bVar6 & 0x3f) | uVar13 >> 0x40 - (bVar6 & 0x3f);
-  bVar23 = (byte)(uVar14 >> 8);
-  bVar8 = (byte)uVar10 | bVar23;
-  uVar24 = (uint)((long)uVar26 >> (bVar6 & 0x3f)) & 0xffffff00;
-  if (-1 < (char)bVar8) {
-    uVar24 = (uVar41 & 0xffffff00) << 0xf | (uint)(ushort)(short)(char)bVar6;
-  }
-  uVar41 = uVar40 | 1 << (bVar32 & 0xf);
-  bVar19 = (bVar6 + (char)uVar41 & 3) << 2 | (byte)(uVar12 >> 8) >> 6;
-  uVar28 = uVar41 & 0xffffffdf | 0x928b0000;
-  uVar10 = (bVar8 | 0x100) << bVar19 | (ushort)((int)uVar43 >> 0x15) >> 0x10 - bVar19;
-  uVar41 = uVar10 << 1;
-  uVar10 = uVar41 | (short)uVar10 < 0;
-  bVar8 = (byte)((ushort)(uVar41 & 0xff | (ushort)(bVar23 < bVar32) << 8) >> 7) | (char)uVar10 << 2;
-  uVar26 = (ulong)((uint)(ushort)((char)bVar6 >> 7) << 0x10 |
-                  (uVar10 & 0xff00 | (uint)bVar8 |
-                   (CONCAT11((byte)(bVar23 - bVar32) >> 1,bVar32) & 0x3fff) << 0x10 | 0xc000) /
-                  (uint)(ushort)(uVar41 & 0xff00 | (ushort)bVar8 | 0xc000) & 0xffff);
-  lVar30 = ((uVar26 ^ (ulong)(uVar26 != uVar35) *
-                      (uVar26 ^ uVar35 ^ (ulong)(uVar26 == uVar35) * (uVar35 ^ uVar34))) &
-           0xffffffff) * (ulong)uVar28;
-  uVar41 = (ushort)(0xcc5 << bVar19 | 0xcc5U >> 0x10 - bVar19) >> 1;
-  uVar13 = uVar34 & 0xffffffffffffff00 |
-           (ulong)(byte)((byte)uVar34 + (char)((int)(uVar43 | uVar33) >> 0x15));
-  uVar43 = (uint)(uint3)((ulong)lVar30 >> 0x28) << 8;
-  uVar14 = (ulong)((int)lVar30 + 0x1858ab2a) << 1;
-  uVar24 = (uVar24 >> 1 & 0xffffff00 | (uint)(byte)((char)uVar37 + 1) << 0x1f |
-           (uint)(byte)(CONCAT11((uVar40 >> (bVar32 & 0xf) & 1) != 0,(char)(uVar24 >> 1)) >> 1)) +
-           0x833ea67;
-  uVar26 = CONCAT62((int6)(((ulong)(uint3)(uVar28 >> 8) << 8) >> 0x10),0x9436) << 3;
-  uVar40 = uVar29 & ~(ushort)((uint)(1 << ((byte)((char)uVar41 + (char)((ulong)lVar30 >> 0x20)) &
-                                          0x1f)) >> 0x10);
-  if (SBORROW4((int)uVar13,-0x695efcfb)) {
-    uVar40 = 0xee00;
-  }
-  uVar29 = (ushort)uVar24;
-  auVar4 = ZEXT116(0) << 0x40 | ZEXT416(0xad806464);
-  uVar49 = SUB167((auVar4 << 0x1e) >> 8,0) | SUB167((auVar4 >> 0x23) >> 8,0);
-  uVar25 = ((uint)uVar37 & 0xffffff00 | (uint)(byte)((char)uVar12 + 0x21)) >> 1;
-  uVar33 = (ushort)(uVar43 >> 2) >> 0xb | (uVar29 & 7) << 5;
-  bVar6 = (byte)uVar14 & (byte)uVar34;
-  uVar37 = uVar14 & 0xffffffffffffff00 | (ulong)bVar6;
-  uVar28 = 0x1f;
-  uVar36 = (uint)uVar37;
-  if (uVar36 != 0) {
-    for (; uVar36 >> uVar28 == 0; uVar28 = uVar28 - 1) {
-    }
-  }
-  uVar35 = (ulong)uVar25 | 0xe814;
-  bVar54 = -1 < (short)((ushort)uVar25 | 0xe814);
-  uVar12 = uVar12 & 0xffffffffffff0000 | uVar12 >> 1 & 0x7fff;
-  if (bVar54) {
-    uVar12 = uVar37;
-  }
-  bVar32 = (byte)((uVar14 & 0xffffffffffffff00) >> 8) | (byte)uVar33;
-  uVar14 = uVar14 & 0xffffffffffff0000 | (ulong)CONCAT11(bVar32,bVar6);
-  uVar24 = uVar24 & 0xffff0000 | (uint)(ushort)((short)(uVar29 >> 0xd | uVar29 << 3) >> 0x10);
-  bVar6 = (byte)(uVar28 & 0xffff00ff);
-  uVar25 = CONCAT11((byte)(uVar26 >> 8) >> 1,(byte)uVar26) & 0xffffff00;
-  bVar8 = (byte)uVar26 >> (bVar6 & 0x1f) ^ bVar6;
-  uVar37 = CONCAT62((int6)(uVar49 >> 8),
-                    (ushort)CONCAT71(uVar49,(char)bVar32 < '\0') >> (bVar6 & 0x1f));
-  uVar29 = (short)(uVar28 & 0xffff00ff) + 1;
-  uVar46 = uVar37 ^ (ulong)(uVar14 == uVar37) *
-                    (uVar37 ^ ((ulong)(CONCAT31((uint3)((uint)iVar11 >> 8) & 0xffff00 |
-                                                (uint3)(byte)((ushort)(uVar21 << 1) >> 8),bVar54) >>
-                                      1) | (ulong)bVar54 << 0x3f));
-  uVar14 = uVar14 ^ (ulong)(uVar14 != uVar37) * (uVar14 ^ uVar46);
-  bVar32 = (byte)uVar29;
-  bVar6 = bVar32 & 0x1f;
-  uVar36 = (uint)uVar46;
-  uVar36 = uVar36 << bVar6 | uVar36 >> 0x20 - bVar6;
-  bVar6 = (byte)(uVar25 >> 8);
-  lVar30 = 0;
+  uVar44 = CONCAT22((short)(uVar44 >> 0x10),uVar35);
+  uVar56 = (int)lVar58 + (int)uVar13 * 8;
+  bVar28 = (char)(byte)uVar20 >> ((byte)uVar20 & 0x1f);
+  lVar58 = lVar58 + -0x7d39fdf7;
+  bVar34 = (byte)uVar55;
+  bVar23 = bVar22 ^ (bVar34 == bVar22) * (bVar22 ^ (byte)sVar24);
+  bVar60 = (byte)uVar56;
+  uVar27 = (undefined6)((ulong)lVar58 >> 0x10);
+  uVar29 = (undefined)lVar58;
+  uVar13 = uVar13 >> 0xb;
+  uVar55 = (ushort)CONCAT71((int7)(uVar20 >> 8),bVar28);
+  uVar55 = uVar55 << (bVar28 & 0xf) | uVar55 >> 0x10 - (bVar28 & 0xf);
+  uVar25 = (uVar44 | (uint)(1L << ((ulong)uVar56 & 0x3f))) - 1;
+  bVar16 = (byte)uVar55;
+  sVar18 = 0xf;
+  uVar35 = (ushort)uVar25;
   if (uVar35 != 0) {
-    for (; (uVar35 >> lVar30 & 1) == 0; lVar30 = lVar30 + 1) {
+    for (; uVar35 >> sVar18 == 0; sVar18 = sVar18 + -1) {
     }
   }
-  if (uVar35 == 0) {
-    uVar12 = uVar13 << 0x15 | uVar34 >> 0x2b;
+  uVar50 = ~(ulong)CONCAT22((short)(((CONCAT22(uVar37,uVar41 >> sVar15 |
+                                                      (short)uVar54 << 0x10 - sVar15) | 0x2eb497c2)
+                                    << 0xf) >> 0x10),sVar18);
+  uVar54 = 0;
+  if (-1 < (long)(uVar50 & CONCAT62(uVar27,CONCAT11(cVar45,uVar29)))) {
+    uVar54 = (ulong)bVar26;
   }
-  bVar32 = bVar32 << 1;
-  uVar39 = uVar28 & 0xffff0000 | uVar29 & 0xffffff00 | 0x400000 | (uint)bVar32;
-  uVar38 = (int)lVar30 + uVar39;
-  uVar28 = uVar24 * 9 + 0x1a;
-  uVar36 = (uVar36 & 0xff00) << 8 | uVar36 << 0x18;
-  uVar27 = (int)(char)uVar35 - 1;
-  uVar28 = (uint)CONCAT62((int6)(uint6)(ushort)(uVar28 >> 0x10) >> 1,
-                          (short)((long)(ulong)uVar28 >> 1) << (bVar32 & 0x1f));
-  uVar44 = uVar28 >> (bVar32 & 0x1f) | uVar28 << 0x20 - (bVar32 & 0x1f);
-  uVar12 = uVar12 & SUB168(ZEXT816(uVar14 & 0xffffffffffff0000 |
-                                   (ulong)(ushort)((ushort)(byte)uVar14 * (ushort)bVar6)) *
-                           ZEXT416((uint)uVar33 << 0x17 |
-                                   ((uVar43 & 0xfffc0000) >> 2 | (uint)uVar41 << 0x1e) >> 9) >> 0x40
-                           ,0);
-  bVar23 = (byte)uVar12;
-  uVar53 = uVar36 >> (bVar32 & 0x1f) | uVar36 << 0x20 - (bVar32 & 0x1f);
-  uVar43 = (uVar27 >> (bVar32 & 0x3f) | uVar27 << 0x40 - (bVar32 & 0x3f)) + 0x98030a3e + uVar53 * 8;
-  uVar28 = uVar38 & 0xffff0000;
-  uVar36 = uVar38 >> 0xf & 1;
-  uVar14 = (ulong)(uVar28 | uVar36);
-  uVar13 = (long)(int)(((uint)(uVar26 & 0xffffffffffff0000) | uVar25 | (uint)bVar8) * -0x345f254d) *
-           (long)(int)uVar39;
-  uVar25 = uVar53 & 0xa62c4f49;
-  uVar37 = uVar13 & 0xffffffff;
-  if ((int)uVar25 < 0) {
-    uVar37 = uVar14;
-  }
-  uVar46 = uVar26 & 0xffffffffffff0000 | (ulong)CONCAT11(uVar25 != 0,bVar8);
-  uVar14 = uVar24 + uVar14;
-  sVar52 = (short)uVar43 + (ushort)bVar6;
-  bVar8 = (byte)(uVar13 >> 0x20);
-  uVar26 = uVar13 >> 0x20 & 0xffff0000;
-  bVar32 = bVar8 << (bVar32 & 7) | bVar8 >> 8 - (bVar32 & 7);
-  uVar41 = (ushort)uVar37 >> 1;
-  uVar21 = uVar41 | (ushort)((uVar37 & 1) != 0) << 0xf;
-  uVar34 = (ulong)CONCAT11((char)((char)(uVar13 >> 0x28) << 1 | 1U) >> 0x15,bVar32);
-  uVar35 = uVar26 | uVar34;
-  uVar13 = (ulong)uVar39 & 0xffffffffffffff0f;
-  sVar16 = (sbyte)uVar13;
-  uVar24 = (uint)(ushort)((short)uVar25 - 1);
-  if (SBORROW8(uVar35,0x4fd5d62c)) {
-    uVar13 = uVar14 & 0xffffffff;
-  }
-  if (0x4fd5d62b < uVar35) {
-    uVar24 = uVar44 & 0xffff | 1;
-  }
-  uVar24 = uVar53 & 0xa62c0000 | uVar24;
-  uVar25 = (int)uVar46 + ((uint)(uVar37 & 0xffffffffffff0000) | (uint)uVar21) * 8;
-  bVar19 = (char)(byte)uVar13 >> ((byte)uVar13 & 0x1f);
-  uVar33 = (ushort)uVar13 & 0xff00 | (ushort)bVar19;
-  uVar46 = uVar46 - 0x7d39fdf7;
-  uVar38 = uVar44 & 0xffffff00 | (uint)((uVar24 >> ((ulong)uVar25 & 0x3f) & 1) != 0);
-  bVar8 = (byte)uVar41;
-  bVar20 = bVar32 ^ (bVar8 == bVar32) * (bVar32 ^ (byte)sVar52);
-  bVar8 = bVar8 ^ (bVar8 != bVar32) * (bVar8 ^ bVar20);
-  uVar35 = uVar37 & 0xffffffffffff0000 | (ulong)uVar21 & 0xffffffffffffff00;
-  bVar51 = (byte)uVar25;
-  bVar50 = bVar51 ^ (bVar8 == bVar51) * (bVar51 ^ bVar6);
-  uVar48 = uVar46 & 0xffffffffffff0000;
-  uVar5 = (undefined)uVar46;
-  uVar37 = uVar35 >> 0xb;
-  uVar21 = uVar33 << (bVar19 & 0xf) | uVar33 >> 0x10 - (bVar19 & 0xf);
-  uVar24 = (uVar24 | (uint)(1 << ((ulong)uVar25 & 0x3f))) - 1;
-  bVar32 = (byte)uVar21;
-  uVar41 = 0xf;
-  uVar33 = (ushort)uVar24;
-  if (uVar33 != 0) {
-    for (; uVar33 >> uVar41 == 0; uVar41 = uVar41 - 1) {
-    }
-  }
-  uVar46 = ~(ulong)(((uVar28 | (ushort)((ushort)uVar36 >> sVar16 | (short)uVar14 << 0x10 - sVar16) |
-                     0x2eb497c2) & 0x1fffe) << 0xf | (uint)uVar41);
-  cVar15 = (char)(uVar34 >> 8);
-  uVar14 = (ulong)CONCAT11(cVar15,uVar5);
-  uVar34 = 0;
-  if (-1 < (long)(uVar46 & (uVar48 | uVar14))) {
-    uVar34 = (ulong)bVar6;
-  }
-  uVar41 = CONCAT11(cVar15 + (char)((ulong)uVar21 >> 8),bVar20 - (char)uVar37) >> (bVar32 & 0x1f);
-  uVar18 = uVar13 & 0xffffffffffff0000 | (ulong)(ushort)((short)uVar38 << 0xf);
-  return (uVar37 | (uVar35 | (byte)(bVar8 ^ (bVar8 != bVar51) * (bVar8 ^ bVar50))) << 0x35) +
-         (uVar48 | CONCAT11((char)(uVar14 >> 8) + (char)(uVar41 >> 8),uVar5)) + uVar18 +
-         (uVar26 | uVar41) + (uVar13 >> 8 & 0xff) +
-         (ulong)((uint)((ushort)((ushort)uVar34 << (bVar32 & 0xf) |
-                                (ushort)uVar34 >> 0x10 - (bVar32 & 0xf)) >> 1) | (uint)uVar18) +
-         (ulong)bVar6 + (ulong)uVar38 + (ulong)(byte)((uVar40 >> 8) << 1) + uVar46 +
-         (ulong)(ushort)(sVar52 >> (bVar19 & 0x1f)) +
-         (ulong)(uVar43 & 0xffff0000 | (uint)(ushort)(sVar52 * 2)) + (ulong)uVar24 +
-         (ulong)((uVar25 & 0xffffff00 | (uint)bVar50) >> (bVar32 & 0x3f)) +
-         (uVar12 & 0xffffffffffffff00 | (ulong)(byte)(bVar23 << 6 | bVar23 >> 2)) + -0x6345b3981;
+  uVar41 = CONCAT11(cVar45 + (char)(uVar55 >> 8),bVar23 - (char)uVar13) >> (bVar16 & 0x1f);
+  lVar58 = CONCAT62((int6)(uVar20 >> 0x10),(short)uVar13 << 0xf);
+  return (ulong)CONCAT31((int3)(uVar47 >> 8),(uVar44 >> ((ulong)uVar56 & 0x3f) & 1) != 0) +
+         CONCAT62(uVar27,CONCAT11(cVar45 + (char)(uVar41 >> 8),uVar29)) + lVar58 +
+         (ulong)CONCAT22(uVar6,uVar41) + (uVar20 >> 8 & 0xff) +
+         (ulong)((uint)((ushort)((ushort)uVar54 << (bVar16 & 0xf) |
+                                (ushort)uVar54 >> 0x10 - (bVar16 & 0xf)) >> 1) | (uint)lVar58) +
+         (ulong)bVar26 + uVar13 + (ulong)(byte)(bVar8 << 1) + uVar50 +
+         (ulong)(ushort)(sVar24 >> (bVar28 & 0x1f)) +
+         (ulong)CONCAT22((short)((uint)iVar31 >> 0x10),sVar24 * 2) + (ulong)uVar25 +
+         (ulong)(CONCAT31((int3)(uVar56 >> 8),
+                          bVar60 ^ ((byte)(bVar34 ^ (bVar34 != bVar22) * (bVar34 ^ bVar23)) ==
+                                   bVar60) * (bVar60 ^ bVar26)) >> (bVar16 & 0x3f)) +
+         CONCAT71((int7)(uVar39 >> 8),bVar33 << 6 | bVar33 >> 2) + -0x6345b3981;
 }
 
 
@@ -5665,8 +5852,8 @@ Cause: Exception while decompiling 00408d62: process: timeout
 
 
 // WARNING: Removing unreachable block (ram,0x00409e50)
-// WARNING: Removing unreachable block (ram,0x00409dcc)
 // WARNING: Removing unreachable block (ram,0x00409de7)
+// WARNING: Removing unreachable block (ram,0x00409dcc)
 // WARNING: Removing unreachable block (ram,0x00409f83)
 // WARNING: Removing unreachable block (ram,0x0040a3c5)
 // WARNING: Removing unreachable block (ram,0x0040a4fb)
@@ -5675,808 +5862,846 @@ Cause: Exception while decompiling 00408d62: process: timeout
 long log_size_10_var_009(void)
 
 {
-  short sVar1;
-  long lVar2;
-  undefined auVar3 [16];
-  char cVar4;
-  byte bVar5;
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  undefined2 uVar3;
+  uint3 uVar4;
+  uint6 uVar5;
   byte bVar6;
-  ulong uVar7;
-  sbyte sVar8;
-  byte bVar9;
-  short sVar10;
-  byte bVar12;
-  ulong uVar11;
-  byte bVar13;
-  ushort uVar14;
-  uint uVar15;
-  byte bVar18;
-  uint uVar16;
-  ulong uVar17;
-  uint uVar19;
-  ulong uVar20;
-  ulong uVar21;
+  char cVar7;
+  long lVar8;
+  undefined7 uVar11;
+  ulong uVar9;
+  undefined8 uVar10;
+  undefined6 uVar12;
+  sbyte sVar13;
+  byte bVar14;
+  ushort uVar15;
+  byte bVar17;
+  ulong uVar16;
+  ushort uVar18;
+  byte bVar20;
+  byte bVar21;
+  ulong uVar19;
   uint uVar22;
-  int iVar23;
+  ulong uVar23;
   long lVar24;
-  byte bVar25;
-  ushort uVar26;
-  ushort uVar27;
-  ushort uVar28;
+  uint6 uVar25;
+  byte bVar26;
+  uint uVar27;
+  int iVar28;
   ulong uVar29;
-  uint7 uVar31;
-  ulong uVar30;
-  byte bVar32;
-  int iVar33;
-  ulong uVar34;
+  ushort uVar30;
+  short sVar31;
+  undefined2 uVar32;
+  ulong uVar33;
+  long lVar34;
+  uint7 uVar36;
+  uint7 uVar37;
   ulong uVar35;
-  uint uVar36;
-  uint uVar37;
-  undefined8 uVar38;
-  ushort uVar39;
-  byte bVar40;
-  uint uVar41;
+  byte bVar38;
+  short sVar40;
+  long lVar41;
   ulong uVar42;
-  ushort uVar43;
-  uint uVar44;
-  uint uVar45;
+  ulong uVar43;
+  ulong uVar44;
+  undefined6 uVar45;
   uint uVar46;
   ushort uVar47;
-  ulong uVar48;
-  ushort uVar49;
+  int iVar48;
+  byte bVar49;
+  uint uVar50;
   uint uVar51;
-  ushort uVar52;
-  uint uVar53;
-  ulong uVar54;
-  long lVar55;
-  byte bVar56;
-  bool bVar57;
-  bool bVar58;
-  bool bVar59;
-  bool bVar60;
-  ushort uVar50;
+  ulong uVar52;
+  ushort uVar53;
+  ushort uVar54;
+  uint uVar55;
+  ushort uVar56;
+  ulong uVar57;
+  ulong uVar58;
+  short sVar59;
+  ushort uVar60;
+  uint uVar61;
+  byte bVar62;
+  ushort uVar63;
+  uint uVar64;
+  uint uVar65;
+  bool bVar66;
+  bool bVar67;
+  bool bVar68;
+  byte bVar39;
   
-  for (sVar10 = 0; (0x1989U >> sVar10 & 1) == 0; sVar10 = sVar10 + 1) {
+  for (sVar40 = 0; (0x1989U >> sVar40 & 1) == 0; sVar40 = sVar40 + 1) {
   }
-  uVar17 = CONCAT62(0x5d0feb477bfc,sVar10) ^ 0xde5d376bdad4b765;
-  for (uVar37 = 0; (0x9978202aU >> uVar37 & 1) == 0; uVar37 = uVar37 + 1) {
+  uVar19 = CONCAT62(0x5d0feb477bfc,sVar40) ^ 0xde5d376bdad4b765;
+  for (iVar48 = 0; (0x9978202aU >> iVar48 & 1) == 0; iVar48 = iVar48 + 1) {
   }
-  uVar21 = 0x60e8c1e1;
-  bVar56 = (byte)uVar17;
-  uVar44 = (uint)(byte)((char)uVar37 - 0xd);
-  uVar41 = uVar37 & 0xffffff00 | uVar44;
-  uVar17 = (uVar17 & 0xffffffffffff0000 |
-            (ulong)CONCAT11((char)(uVar17 >> 8) + 'V',bVar56) & 0xffffffffffffff00 |
-           (ulong)(byte)(bVar56 + 0x16)) & 0x53e0289d;
-  if (uVar17 == 0) {
-    uVar21 = 0x60e81097;
+  uVar57 = 0x60e8c1e1;
+  bVar20 = (byte)uVar19;
+  bVar49 = (char)iVar48 - 0xd;
+  uVar65 = CONCAT31((int3)((uint)iVar48 >> 8),bVar49);
+  uVar19 = CONCAT71((int7)(CONCAT62((int6)(uVar19 >> 0x10),
+                                    CONCAT11((char)(uVar19 >> 8) + 'V',bVar20)) >> 8),bVar20 + 0x16)
+           & 0x53e0289d;
+  if (uVar19 == 0) {
+    uVar57 = 0x60e81097;
   }
-  uVar26 = 0x710b - (0xbdcc636d9978000a <
-                    ((ulong)(ushort)((ushort)(CONCAT12(0xe9 < bVar56,0xf1b) >> 0xb) | 0xc6c0) |
-                    0x80161aed310b0000));
+  uVar30 = 0x710b - (0xbdcc636d9978000a <
+                    CONCAT62(0x80161aed310b,(ushort)(CONCAT12(0xe9 < bVar20,0xf1b) >> 0xb) | 0xc6c0)
+                    );
   lVar24 = 0x3f;
-  if (uVar41 != 0) {
-    for (; uVar41 >> lVar24 == 0; lVar24 = lVar24 + -1) {
+  if (uVar65 != 0) {
+    for (; uVar65 >> lVar24 == 0; lVar24 = lVar24 + -1) {
     }
   }
-  uVar34 = uVar21 >> 9;
-  auVar3 = (ZEXT116(uVar41 < 0x133b0b8a) << 0x40 | ZEXT816(0xde5d376bdad4b765)) >> 0xb;
-  cVar4 = ((byte)(((uint)(ushort)uVar17 << 0x10 | (1 << (uVar26 & 0x1f) ^ 1U) & 0xffff) / 0xdc1a) ^
-          (byte)(1 << (uVar44 & 0x1f))) * (char)uVar34;
-  uVar43 = (bVar56 | 0xd200) ^ SUB162(auVar3,0);
-  sVar10 = (short)(char)(cVar4 * cVar4) + (short)(uVar41 + 0xecc4f476);
-  uVar14 = sVar10 >> 0xf | 0xab00;
-  uVar17 = (ulong)(uVar41 + 0xecc4f476 & 0xffff0000 | 0x98fb);
-  uVar41 = (uVar37 & 0xffff0000 | (uint)SUB161(auVar3,0)) * 0x800 + 0x6a42a24d;
-  uVar48 = uVar17 << 0xd;
-  uVar37 = ((ushort)((short)(uVar26 & 0xff00 |
-                            (ushort)(byte)((byte)((ushort)(uVar26 & 0xff |
-                                                          (ushort)((byte)sVar10 < 0x73) << 8) >> 2)
-                                          | (char)uVar26 << 7)) >> 0x13) | 0xaa8f0000) >> 0xb;
-  uVar26 = ((ushort)uVar34 >> 0xd | uVar43 << 3) + 0xb93e +
-           (ushort)(0xecc9 < uVar14 || 0xfffe < (ushort)(uVar14 + 0x1336));
-  lVar55 = 0x3f;
-  if (uVar17 != 0) {
-    for (; uVar48 >> lVar55 == 0; lVar55 = lVar55 + -1) {
+  uVar35 = uVar57 >> 9;
+  uVar15 = (ushort)((uVar57 << 0x18) >> 0x10) | (ushort)(uVar35 >> 0x10);
+  auVar2 = (ZEXT116(uVar65 < 0x133b0b8a) << 0x40 | ZEXT816(0xde5d376bdad4b765)) >> 0xb;
+  cVar7 = ((byte)(((uint)(ushort)uVar19 << 0x10 | (1 << (uVar30 & 0x1f) ^ 1U) & 0xffff) / 0xdc1a) ^
+          (byte)(1 << (bVar49 & 0x1f))) * (char)uVar35;
+  uVar53 = (ushort)CONCAT71(0x46eddd486bcd2,bVar20) ^ auVar2._0_2_;
+  sVar40 = (short)(char)(cVar7 * cVar7) + (short)(uVar65 + 0xecc4f476);
+  uVar18 = sVar40 >> 0xf | 0xab00;
+  uVar19 = (ulong)CONCAT22((short)(uVar65 + 0xecc4f476 >> 0x10),0x98fb);
+  uVar50 = CONCAT22((short)((uint)iVar48 >> 0x10),(ushort)auVar2[0]) * 0x800 + 0x6a42a24d;
+  uVar57 = uVar19 << 0xd;
+  uVar65 = CONCAT22(0xaa8f,(short)CONCAT31((int3)(CONCAT22(0xaa8f,uVar30) >> 8),
+                                           (byte)(CONCAT11((byte)sVar40 < 0x73,(char)uVar30) >> 2) |
+                                           (char)uVar30 << 7) >> 0x13) >> 0xb;
+  sVar40 = ((ushort)uVar35 >> 0xd | uVar53 << 3) + 0xb93e +
+           (ushort)(0xecc9 < uVar18 || 0xfffe < (ushort)(uVar18 + 0x1336));
+  lVar34 = 0x3f;
+  if (uVar19 != 0) {
+    for (; uVar57 >> lVar34 == 0; lVar34 = lVar34 + -1) {
     }
   }
-  uVar14 = uVar14 + 0x1337 | 0x38fa;
-  sVar10 = 0xf;
-  if (uVar14 != 0) {
-    for (; uVar14 >> sVar10 == 0; sVar10 = sVar10 + -1) {
+  uVar30 = uVar18 + 0x1337 | 0x38fa;
+  sVar31 = 0xf;
+  if (uVar30 != 0) {
+    for (; uVar30 >> sVar31 == 0; sVar31 = sVar31 + -1) {
     }
   }
-  bVar56 = (byte)uVar37;
-  uVar28 = (byte)(-bVar56 - 5) | 0xb600;
-  uVar47 = (ushort)uVar48 >> (bVar56 & 0xf) | (ushort)uVar48 << 0x10 - (bVar56 & 0xf);
-  uVar30 = uVar48 & 0xffffffffffff0000 | (ulong)uVar47 & 0xffffffffffffff00 |
-           (ulong)(byte)((char)uVar47 + (char)sVar10);
-  uVar44 = (int)uVar48 << 0x10 | (uint)(ushort)(uVar28 << 1 | 1);
-  uVar15 = ((ushort)(1 << (uVar43 & 0xf) | 0x4000) | 0xa92b0000) + 1 & uVar44;
-  iVar23 = (uint)(ushort)(bVar56 | 0x9800) * 0x98fe;
-  uVar48 = (ulong)((uVar37 | 0xf9a00000) >> 9) & ~(1 << ((ulong)(uVar43 ^ 0x4000) & 0x3f));
-  uVar22 = (((uint)lVar24 & 0x7fff0000) << 1 | 0xc524) - uVar41 | 0x8354477b;
-  sVar10 = (short)uVar30;
-  uVar34 = (ulong)((uint)(uVar21 << 0x18) | (uint)uVar34 & 0xffff0000 |
-                  (uint)(ushort)((ushort)(uVar26 & 0xff00 | (ushort)(byte)~(byte)uVar26) >> 1 |
-                                0x8000)) - (ulong)uVar41;
-  uVar52 = (short)uVar22 + -0x504a + (ushort)(uVar48 >> 0x16 != 0);
-  uVar39 = (ushort)(sVar10 << 0xf | 0x4c7fU) >> 1 | 0x8000;
-  uVar37 = uVar41 + (uVar39 | 0x39cf0000);
-  uVar17 = (ulong)uVar44 << 1;
-  bVar5 = -(byte)uVar48;
-  uVar53 = 0;
-  bVar56 = (byte)uVar48 & 0xf;
-  uVar44 = (uint)(ushort)(uVar39 << bVar56 | uVar39 >> 0x10 - bVar56);
-  uVar51 = (uint)(ushort)(((uVar43 ^ 0x4000) >> 5 | uVar52 * 0x800) + 0xea9);
-  uVar36 = uVar15 & 0xffff0000;
-  uVar43 = (short)((ushort)uVar48 ^ 0x1000) >> 1;
-  uVar27 = (ushort)uVar37;
-  bVar56 = (byte)uVar34 & 1;
-  uVar21 = (ulong)(byte)((byte)uVar34 >> 1 | bVar56 << 7);
-  uVar50 = (ushort)uVar17;
-  uVar26 = uVar50 + 0xda0;
-  uVar49 = uVar26 - bVar56;
-  uVar17 = uVar17 & 0xffffffffffff0000;
-  uVar14 = 0xf;
-  if (uVar52 != 0) {
-    for (; uVar52 >> uVar14 == 0; uVar14 = uVar14 - 1) {
+  cVar7 = (char)uVar65;
+  uVar19 = (ulong)(uVar65 | 0xf9a00000) & 0xffffffffffffff0f;
+  sVar13 = (sbyte)uVar19;
+  uVar30 = (ushort)uVar57;
+  uVar12 = (undefined6)(uVar57 >> 0x10);
+  uVar56 = uVar30 >> sVar13 | uVar30 << 0x10 - sVar13;
+  sVar59 = (short)CONCAT31(0xb6,-5 - cVar7);
+  uVar55 = CONCAT22(uVar30,sVar59 << 1) | 1;
+  uVar46 = (int)CONCAT62(0xa92b,1 << (uVar53 & 0xf) | 0x4000) + 1U & uVar55;
+  iVar48 = (uint)(ushort)CONCAT71(0x39cf98,cVar7) * 0x98fe;
+  uVar19 = (ulong)(uint)(uint7)(uVar19 >> 9) & ~(1L << ((ulong)(uVar53 ^ 0x4000) & 0x3f));
+  uVar32 = (undefined2)(uVar46 >> 0x10);
+  uVar27 = CONCAT22((short)((uint)((int)CONCAT62((int6)((ulong)lVar24 >> 0x10),0x40) << 1) >> 0x10),
+                    0xc524) - uVar50 | 0x8354477b;
+  sVar31 = (short)CONCAT71((int7)(CONCAT62(uVar12,uVar56) >> 8),(char)uVar56 + (char)sVar31);
+  lVar41 = (ulong)(CONCAT22(uVar15,(ushort)CONCAT31((int3)(CONCAT22(uVar15,sVar40) >> 8),
+                                                    ~(byte)sVar40) >> 1) | 0x8000) - (ulong)uVar50;
+  uVar63 = (short)uVar27 + -0x504a + (ushort)(uVar19 >> 0x16 != 0);
+  uVar47 = (ushort)(sVar31 << 0xf | 0x4c7fU) >> 1 | 0x8000;
+  uVar65 = uVar50 + CONCAT22(0x39cf,uVar47);
+  lVar24 = (ulong)((uint)(CONCAT14(sVar59 < 0,0x3ef) >> 0x1d) | 0x3ef0) << 0xd;
+  lVar34 = (ulong)uVar55 << 1;
+  uVar10 = CONCAT71((int7)((ulong)lVar24 >> 8),-(byte)uVar19);
+  uVar61 = (uint)uVar10;
+  bVar20 = (byte)uVar19 & 0xf;
+  uVar55 = CONCAT22(0x39cf,uVar47 << bVar20 | uVar47 >> 0x10 - bVar20);
+  uVar54 = ((uVar53 ^ 0x4000) >> 5 | uVar63 * 0x800) + 0xea9;
+  uVar15 = (ushort)uVar19 ^ 0x1000;
+  uVar53 = (ushort)uVar65;
+  uVar18 = (ushort)uVar10;
+  bVar20 = (byte)lVar41;
+  bVar49 = bVar20 & 1;
+  uVar19 = CONCAT71((int7)((ulong)lVar41 >> 8),bVar20 >> 1 | bVar49 << 7);
+  uVar60 = (ushort)lVar34;
+  uVar30 = uVar60 + 0xda0;
+  uVar57 = CONCAT62((int6)((ulong)lVar34 >> 0x10),uVar30 - bVar49);
+  sVar40 = 0xf;
+  if (uVar63 != 0) {
+    for (; uVar63 >> sVar40 == 0; sVar40 = sVar40 + -1) {
     }
   }
-  uVar45 = uVar22 & 0xffff0000 | (uint)uVar14;
-  uVar19 = 0x1f;
-  if (uVar45 != 0) {
-    for (; uVar45 >> uVar19 == 0; uVar19 = uVar19 - 1) {
+  uVar64 = CONCAT22((short)(uVar27 >> 0x10),sVar40);
+  uVar51 = 0x1f;
+  if (uVar64 != 0) {
+    for (; uVar64 >> uVar51 == 0; uVar51 = uVar51 - 1) {
     }
   }
-  uVar14 = (short)(char)uVar15 | (uVar47 & 0xff) * 2 - 0x38d;
-  lVar24 = (ulong)(uVar44 | 0x39cf0000) + (ulong)(uVar36 | uVar14) * 8;
-  uVar54 = (ulong)(uVar44 << 0x1a);
-  bVar12 = (byte)((ulong)uVar43 >> 8);
-  bVar6 = (byte)((ulong)(ushort)((uint)iVar23 >> 0x10) - 0x481cfa8a >> 8);
-  bVar9 = (byte)uVar43;
-  uVar44 = (int)uVar51 >> (bVar9 & 0x1f);
-  uVar29 = -(ulong)uVar19;
-  uVar48 = ((ulong)(ushort)((ushort)iVar23 & 0xff |
-                           (ushort)(uVar37 == 0 ||
-                                   (SCARRY4(uVar41,uVar39 | 0x39cf0000) != SCARRY4(uVar37,0)) !=
-                                   (int)uVar37 < 0) << 8) | 0x39cf0000) *
-           (uVar34 & 0xffffff00 | uVar21);
-  bVar25 = (byte)(uVar48 >> 0x20);
-  lVar55 = uVar54 - 0x39679c89;
-  uVar43 = (short)lVar55 - 1;
-  bVar9 = bVar9 & 7;
-  uVar7 = uVar48 & 0xffff0000 | (ulong)(ushort)((short)uVar48 - uVar27);
-  if ((short)uVar48 < (short)uVar27) {
-    uVar7 = uVar17 | uVar49;
+  uVar56 = (short)(char)uVar46 | (uVar56 & 0xff) * 2 - 0x38d;
+  lVar34 = (ulong)uVar55 + (ulong)CONCAT22(uVar32,uVar56) * 8;
+  uVar58 = (ulong)(uVar55 << 0x1a);
+  bVar6 = (byte)((short)uVar15 >> 9);
+  bVar17 = (byte)((ulong)(ushort)((uint)iVar48 >> 0x10) - 0x481cfa8a >> 8);
+  bVar20 = (byte)((short)uVar15 >> 1);
+  cVar7 = (char)uVar56;
+  uVar55 = (int)(uint)uVar54 >> (bVar20 & 0x1f);
+  uVar33 = -(ulong)uVar51;
+  uVar35 = CONCAT62(0x39cf,CONCAT11(uVar65 == 0 ||
+                                    (SCARRY4(uVar50,CONCAT22(0x39cf,uVar47)) != SCARRY4(uVar65,0))
+                                    != (int)uVar65 < 0,(char)iVar48)) * (uVar19 & 0xffffffff);
+  lVar41 = uVar58 - 0x39679c89;
+  uVar15 = (short)lVar41 - 1;
+  bVar20 = bVar20 & 7;
+  bVar21 = (byte)(uVar35 >> 0x20);
+  sVar40 = (short)(uVar35 & 0xffffffff);
+  uVar43 = CONCAT62((int6)((uVar35 & 0xffffffff) >> 0x10),sVar40 - uVar53);
+  if (sVar40 < (short)uVar53) {
+    uVar43 = uVar57;
   }
-  uVar47 = (ushort)lVar24;
-  uVar39 = uVar47 & 0xf;
-  uVar52 = uVar43 & ~(1 << uVar39);
-  uVar42 = ((ulong)uVar37 - lVar24) - (ulong)((uVar43 >> uVar39 & 1) != 0);
-  sVar1 = SCARRY1(bVar12,bVar6) + uVar52;
-  uVar43 = sVar1 + 1;
-  uVar37 = ((uint)uVar30 & 0xffff0000 |
-           (uint)(ushort)(sVar10 + (ushort)bVar5 + (ushort)((bVar5 >> (uVar27 & 0xf) & 1) != 0))) +
-           (uVar51 | 0x86bc0000) + (uint)(uVar50 < 0xf260 || uVar26 < bVar56);
-  if (uVar43 == 0 ||
-      (SCARRY2((ushort)SCARRY1(bVar12,bVar6),uVar52) != SCARRY2(sVar1,1)) != (short)uVar43 < 0) {
-    uVar37 = uVar44;
+  uVar56 = (ushort)lVar34;
+  uVar47 = uVar56 & 0xf;
+  uVar63 = uVar15 & ~(1 << uVar47);
+  uVar52 = ((ulong)uVar65 - lVar34) - (ulong)((uVar15 >> uVar47 & 1) != 0);
+  sVar40 = SCARRY1(bVar6,bVar17) + uVar63;
+  uVar15 = sVar40 + 1;
+  uVar65 = (int)CONCAT62(uVar12,sVar31 + uVar18 + (ushort)((uVar18 >> (uVar53 & 0xf) & 1) != 0)) +
+           (int)CONCAT62(0x46eddd486bc,uVar54) + (uint)(uVar60 < 0xf260 || uVar30 < bVar49);
+  if (uVar15 == 0 ||
+      (SCARRY2((ushort)SCARRY1(bVar6,bVar17),uVar63) != SCARRY2(sVar40,1)) != (short)uVar15 < 0) {
+    uVar65 = uVar55;
   }
-  uVar47 = uVar47 & 0x9dea;
-  lVar24 = (uVar34 & 0xffffffffffffff00 | uVar21) << 1;
-  uVar34 = ((uVar7 >> 1 | (ulong)uVar44 << 0x3f) - uVar42) - 1;
-  uVar21 = 0;
-  if ((long)(short)uVar47 != 0) {
-    for (; ((ulong)(long)(short)uVar47 >> uVar21 & 1) == 0; uVar21 = uVar21 + 1) {
+  uVar56 = uVar56 & 0x9dea;
+  lVar34 = uVar19 << 1;
+  lVar8 = ((uVar43 >> 1 | (ulong)uVar55 << 0x3f) - uVar52) + -1;
+  uVar19 = 0;
+  if ((long)(short)uVar56 != 0) {
+    for (; ((ulong)(long)(short)uVar56 >> uVar19 & 1) == 0; uVar19 = uVar19 + 1) {
     }
   }
-  uVar41 = uVar36 | (uint)(!CARRY1(bVar12,bVar6) && (byte)(bVar12 + bVar6) != '\0') << 8 |
-           (uint)(byte)((char)uVar14 - (char)uVar37);
-  uVar44 = (int)(char)uVar37 >> ((byte)uVar21 & 1);
-  sVar10 = (short)uVar44;
-  uVar26 = -sVar10;
-  if (sVar10 != 0 || uVar26 == 0) {
-    uVar37 = uVar41;
+  uVar50 = CONCAT31((int3)(CONCAT22(uVar32,CONCAT11(!CARRY1(bVar6,bVar17) &&
+                                                    (byte)(bVar6 + bVar17) != '\0',cVar7)) >> 8),
+                    cVar7 - (char)uVar65);
+  uVar19 = uVar19 & 0xffffffffffff89a1;
+  iVar48 = (int)(char)uVar65 >> ((byte)uVar19 & 0x1f);
+  sVar40 = (short)iVar48;
+  uVar32 = (undefined2)((uint)iVar48 >> 0x10);
+  uVar30 = -sVar40;
+  if (sVar40 != 0 || uVar30 == 0) {
+    uVar65 = uVar50;
   }
-  uVar30 = (ulong)uVar41;
-  if ((POPCOUNT(uVar26 & 0xff) & 1U) == 0) {
-    uVar30 = uVar42;
+  uVar43 = (ulong)uVar50;
+  if ((POPCOUNT(uVar30 & 0xff) & 1U) == 0) {
+    uVar43 = uVar52;
   }
-  iVar23 = (int)(uVar22 << 0x1c) >> 2;
-  bVar12 = ((byte)(uVar21 >> 8) & 0x89) - (char)uVar30;
-  bVar5 = (byte)uVar34 | bVar12;
-  bVar6 = (byte)(lVar24 >> 1);
-  lVar24 = CONCAT71((int7)(lVar24 >> 9),bVar6 + 0x87);
-  bVar56 = (byte)uVar42 & 0x1f;
-  uVar48 = (ulong)(0x79 < bVar6 || 0xfe < (byte)(bVar6 + 0x86)) << 0x20 |
-           uVar48 >> 0x20 & 0xffffff00 | (ulong)(byte)(bVar25 << bVar9 | bVar25 >> 8 - bVar9);
-  uVar15 = (uint)(uVar48 >> bVar56) | (uint)(uVar48 << 0x21 - bVar56);
-  uVar14 = (ushort)uVar15 ^ 1 << (bVar5 & 0xf);
-  uVar36 = (uint)uVar42 & 0xffffff00 | (uint)uVar21 & 0xa0;
-  uVar35 = lVar24 << 0x2d | (ulong)(CONCAT18((uVar14 & 1) != 0,lVar24) >> 0x14);
-  uVar41 = (int)uVar30 - 1;
-  bVar57 = (uVar43 & 1) != 0;
-  bVar12 = bVar12 - 1;
-  uVar30 = uVar34 & 0xffffffffffffff00 | (ulong)bVar12;
-  bVar60 = bVar57 || bVar12 == 0;
-  uVar48 = uVar35 ^ (ulong)(uVar30 == uVar35) * (uVar35 ^ uVar37 + (int)(short)uVar47);
-  uVar7 = uVar30 ^ (ulong)(uVar30 != uVar35) * (uVar30 ^ uVar48);
-  uVar37 = uVar37 + (int)(short)uVar47 & 0xffffff00 | (uint)(uVar35 < uVar30);
-  uVar34 = (ulong)uVar37;
-  uVar39 = uVar26 & 0xff00 | (ushort)(byte)((char)uVar26 << 1 | (char)uVar26 < '\0');
-  uVar26 = CONCAT11(bVar5 >> 1 | ((int)uVar36 < 0) << 7,bVar60);
-  uVar11 = uVar21 & 0xffffffffffff0000 | (ulong)uVar26;
-  bVar56 = (byte)(uVar41 >> 8);
-  uVar41 = uVar41 & 0xffff0000 |
-           (uint)CONCAT11(bVar56 >> bVar60 | bVar56 << 8 - bVar60,(char)uVar41);
-  uVar21 = (ulong)(iVar23 != 0);
-  lVar24 = (ulong)uVar41 + 0x10f9bbf1;
-  uVar20 = lVar24 + uVar21;
-  if (SCARRY8((ulong)uVar41,0x10f9bbf1) != SCARRY8(lVar24,uVar21)) {
-    uVar48 = uVar20;
+  uVar29 = (ulong)(uint)((int)(uVar27 << 0x1c) >> 2);
+  bVar17 = (char)(uVar19 >> 8) - (char)uVar43;
+  uVar11 = (undefined7)((ulong)lVar8 >> 8);
+  bVar6 = (byte)lVar8 | bVar17;
+  bVar14 = (byte)(lVar34 >> 1);
+  lVar34 = CONCAT71((int7)(lVar34 >> 9),bVar14 + 0x87);
+  bVar49 = (byte)uVar52 & 0x1f;
+  uVar35 = (ulong)(0x79 < bVar14 || 0xfe < (byte)(bVar14 + 0x86)) << 0x20 |
+           CONCAT71((uint7)(uVar35 >> 0x28),bVar21 << bVar20 | bVar21 >> 8 - bVar20);
+  uVar55 = (uint)(uVar35 >> bVar49) | (uint)(uVar35 << 0x21 - bVar49);
+  uVar53 = (ushort)uVar55 ^ 1 << ((ushort)CONCAT71(uVar11,bVar6) & 0xf);
+  uVar46 = (uint)CONCAT71((int7)(uVar52 >> 8),(byte)uVar19) & 0xfffffffe;
+  uVar42 = lVar34 << 0x2d | (ulong)(CONCAT18((uVar53 & 1) != 0,lVar34) >> 0x14);
+  iVar48 = (int)uVar43 + -1;
+  bVar66 = (uVar15 & 1) != 0;
+  cVar7 = bVar17 - 1;
+  uVar44 = CONCAT71(uVar11,cVar7);
+  bVar68 = bVar66 || cVar7 == '\0';
+  uVar43 = uVar42 ^ (ulong)(uVar44 == uVar42) * (uVar42 ^ uVar65 + (int)(short)uVar56);
+  uVar9 = uVar44 ^ (ulong)(uVar44 != uVar42) * (uVar44 ^ uVar43);
+  uVar65 = CONCAT31((int3)(uVar65 + (int)(short)uVar56 >> 8),uVar42 < uVar44);
+  uVar35 = (ulong)uVar65;
+  uVar18 = CONCAT11(bVar6 >> 1 | ((int)uVar46 < 0) << 7,bVar68);
+  uVar16 = CONCAT62((int6)(uVar19 >> 0x10),uVar18);
+  bVar20 = (byte)((uint)iVar48 >> 8);
+  uVar50 = CONCAT22((short)((uint)iVar48 >> 0x10),
+                    CONCAT11(bVar20 >> bVar68 | bVar20 << 8 - bVar68,(char)iVar48));
+  uVar19 = (ulong)(uVar29 != 0);
+  lVar34 = (ulong)uVar50 + 0x10f9bbf1;
+  uVar23 = lVar34 + uVar19;
+  if (SCARRY8((ulong)uVar50,0x10f9bbf1) != SCARRY8(lVar34,uVar19)) {
+    uVar43 = uVar23;
   }
-  bVar56 = (byte)(uVar7 >> 8) | 0xd2;
-  uVar51 = (uint)(uVar42 * 2) & 0xffff0000 | (uint)(ushort)((ushort)(uVar42 * 2) >> 1);
-  bVar5 = (byte)(uVar20 >> 8);
-  bVar58 = bVar56 < bVar5;
-  cVar4 = bVar56 - bVar5;
-  uVar21 = uVar7 & 0xffffffffffff0000 | (ulong)CONCAT11(cVar4,(char)uVar7);
-  uVar17 = uVar17 | (ulong)uVar49 & 0xffffffffffffff00 | (ulong)bVar58;
-  if (bVar58 || cVar4 == '\0') {
-    uVar53 = uVar49 & 0xff00;
+  bVar20 = (byte)(uVar9 >> 8) | 0xd2;
+  bVar49 = (byte)(uVar23 >> 8);
+  bVar67 = bVar20 < bVar49;
+  cVar7 = bVar20 - bVar49;
+  uVar19 = CONCAT62((int6)(uVar9 >> 0x10),CONCAT11(cVar7,(char)uVar9));
+  uVar57 = CONCAT71((int7)(uVar57 >> 8),bVar67);
+  if (bVar67 || cVar7 == '\0') {
+    uVar61 = (uint)CONCAT62((int6)((ulong)lVar24 >> 0x10),(ushort)uVar57);
   }
-  uVar53 = ((uint)(CONCAT14((short)uVar28 < 0,0x3ef) >> 0x1d) | 0x3ef0) << 0xd | uVar53;
-  if (bVar58) {
-    uVar53 = (uint)uVar17;
+  if (bVar67) {
+    uVar61 = (uint)uVar57;
   }
-  uVar7 = 0x3f;
-  if (uVar11 != 0) {
-    for (; uVar11 >> uVar7 == 0; uVar7 = uVar7 - 1) {
+  iVar48 = (int)CONCAT62((int6)(uVar52 * 2 >> 0x10),(ushort)(uVar52 * 2) >> 1);
+  uVar52 = 0x3f;
+  if (uVar16 != 0) {
+    for (; uVar16 >> uVar52 == 0; uVar52 = uVar52 - 1) {
     }
   }
-  uVar22 = (uint)(uVar35 < uVar30);
-  bVar56 = (byte)((uint)uVar14 >> 8) & ((byte)(uVar51 << 1) | (int)uVar51 < 0) << 3;
-  uVar27 = (ushort)uVar17 & 0xf;
-  uVar42 = (ulong)(uVar44 & 0xffff0000 | (uint)(ushort)(uVar39 | 1 << uVar27));
-  uVar30 = uVar48;
-  if ((uVar39 >> uVar27 & 1) == 0 && bVar56 != 0) {
-    uVar30 = uVar17;
+  uVar27 = (uint)(uVar42 < uVar44);
+  bVar20 = (byte)(uVar53 >> 8) & ((byte)(iVar48 << 1) | iVar48 < 0) << 3;
+  uVar47 = (ushort)uVar57 & 0xf;
+  uVar30 = (ushort)CONCAT31((int3)(CONCAT22(uVar32,uVar30) >> 8),
+                            (char)uVar30 << 1 | (char)uVar30 < '\0');
+  uVar9 = (ulong)CONCAT22(uVar32,uVar30 | 1 << uVar47);
+  uVar44 = uVar43;
+  if ((uVar30 >> uVar47 & 1) == 0 && bVar20 != 0) {
+    uVar44 = uVar57;
   }
-  bVar59 = (uVar29 & 2) != 0;
-  uVar48 = (ulong)(uVar26 & ~(1 << ((ushort)uVar48 & 0xf)));
-  if (!bVar59) {
-    uVar48 = uVar42;
+  uVar30 = (uVar15 ^ 1) + uVar56 + (ushort)bVar66 + 1;
+  bVar66 = (uVar33 & 2) != 0;
+  uVar43 = (ulong)(uVar18 & ~(1 << ((ushort)uVar43 & 0xf)));
+  if (!bVar66) {
+    uVar43 = uVar9;
   }
-  uVar11 = uVar34;
-  if ((uint)uVar21 == uVar37) {
-    uVar34 = uVar21;
-    uVar11 = (ulong)uVar22;
+  uVar16 = uVar35;
+  if ((uint)uVar19 == uVar65) {
+    uVar35 = uVar19;
+    uVar16 = (ulong)uVar27;
   }
-  uVar44 = (uint)(uVar7 >> 0x1b) & 0x1f ^ 0xa22de8ad;
-  uVar22 = uVar22 & uVar44;
-  uVar42 = uVar42 - 0x77ef848a;
-  iVar33 = (int)(short)uVar34 * (int)(short)(uVar14 & 0xff | (ushort)(byte)(bVar56 - 1) << 8);
-  uVar26 = (ushort)iVar33;
-  uVar34 = uVar42 & 0x71b67a1b;
-  bVar56 = (byte)uVar48;
-  bVar5 = (byte)(uVar53 >> 0xb);
-  uVar37 = uVar53 >> 0xb & 0xffffff00 | (int)uVar11 << 0x15 |
-           (uint)(byte)(bVar5 >> (bVar56 & 7) | bVar5 << 8 - (bVar56 & 7));
-  uVar14 = (short)uVar37 + 0xb4 + uVar26 * 2;
-  uVar44 = uVar44 & 0xffffff00 |
-           (uint)(byte)((char)uVar44 << 1 | (byte)((uint)iVar33 >> 0x10) < bVar58);
-  uVar21 = (ulong)uVar37 * -0x68181f7a;
-  if (SEXT816((long)uVar21) == SEXT816((long)(ulong)uVar37) * SEXT416(-0x68181f7a)) {
-    uVar21 = uVar21 & 0xffffffffffff0000 | (ulong)(ushort)uVar44;
+  uVar51 = (uint)(uVar52 >> 0x1b) & 0x1f ^ 0xa22de8ad;
+  uVar27 = uVar27 & uVar51;
+  uVar9 = uVar9 - 0x77ef848a;
+  iVar48 = (int)(short)uVar35 * (int)CONCAT11(bVar20 - 1,(char)uVar53);
+  uVar19 = uVar9 & 0x71b67a1b;
+  bVar20 = (byte)uVar43;
+  bVar49 = (byte)(uVar61 >> 0xb);
+  uVar65 = CONCAT31((uint3)(uVar61 >> 0x13) | (uint3)((uint)((int)uVar16 << 0x15) >> 8),
+                    bVar49 >> (bVar20 & 7) | bVar49 << 8 - (bVar20 & 7));
+  uVar15 = (short)uVar65 + 0xb4 + (short)iVar48 * 2;
+  uVar61 = CONCAT31(0xa22de8,(char)uVar51 << 1 | (byte)((uint)iVar48 >> 0x10) < bVar67);
+  lVar24 = (ulong)uVar65 * -0x68181f7a;
+  if (SEXT816(lVar24) == SEXT816((long)(ulong)uVar65) * SEXT416(-0x68181f7a)) {
+    lVar24 = CONCAT62((int6)((ulong)lVar24 >> 0x10),(short)uVar61);
   }
-  uVar51 = (uint)uVar14 << (bVar56 & 0x3f);
-  uVar7 = ((uVar29 & 0xffffffffffff0000 |
-           (ulong)(ushort)(CONCAT12(uVar54 < 0x39679c89 || lVar55 == 0,(short)uVar29) >> 1)) >> 1 |
-          (ulong)bVar59 << 0x3f) + 1;
-  uVar43 = (ushort)((uVar43 ^ 1) + uVar47 + (ushort)bVar57 + 1) >> 1;
-  uVar53 = ((uVar43 | 0x8000) & 0xffffff00 | (uint)(byte)((char)uVar43 * '\x02' + 1)) >>
-           (bVar56 & 0x1f) | (uVar51 | uVar14 >> 0x40 - (bVar56 & 0x3f)) << 0x20 - (bVar56 & 0x1f);
-  sVar8 = (sbyte)(uVar48 & 0xffffffffffffff0f);
-  uVar21 = uVar21 & 0xffff0000 |
-           (ulong)(ushort)((short)uVar21 << sVar8 | (ushort)uVar34 >> 0x10 - sVar8);
-  uVar19 = (uint)(uVar21 >> sVar8) | (uint)(uVar21 << 0x21 - sVar8);
-  uVar43 = (ushort)(uVar48 & 0xffffffffffffff0f) | 0x36f2;
-  uVar14 = uVar26 & 0xff | ((byte)((byte)((ulong)uVar26 >> 8) >> 1) & 0x3f) << 8;
-  uVar26 = (ushort)(byte)((char)((uint)iVar33 >> 0x18) << 1 | iVar33 < 0 | 0xc0);
-  uVar38 = CONCAT71((uint7)(uint3)(((uVar36 * 2 + 0x49fb5c51 >> bVar60 | uVar41 << 0x20 - bVar60) >>
-                                    1 | uVar22) - (int)uVar34 >> 8),0x33);
-  bVar5 = (byte)(uVar7 >> 0x38);
-  uVar21 = (uVar7 & 0xff000000000000) >> 0x28 | (uVar7 & 0xff0000000000) >> 0x18 |
-           (uVar7 & 0xff00000000) >> 8 | (uVar7 & 0xff000000) << 8;
-  uVar37 = (int)(short)(uVar14 / uVar26 & 0xff | uVar14 % uVar26 << 8) * (int)(short)uVar53;
-  uVar41 = (int)uVar38 << 1;
-  uVar15 = uVar15 & 0xffff0000 | uVar37 >> 0x10;
-  if ((uVar19 & 1) != 0) {
-    uVar15 = uVar41;
+  uVar51 = (uint)uVar15 << (bVar20 & 0x3f);
+  lVar34 = (CONCAT62((int6)(uVar33 >> 0x10),
+                     (short)(CONCAT12(uVar58 < 0x39679c89 || lVar41 == 0,(short)uVar33) >> 1)) >> 1
+           | (ulong)bVar66 << 0x3f) + 1;
+  uVar64 = (CONCAT11((byte)(uVar30 >> 9),(char)(uVar30 >> 1) * '\x02' + '\x01') | 0x8000) >>
+           (bVar20 & 0x1f) | (uVar51 | uVar15 >> 0x40 - (bVar20 & 0x3f)) << 0x20 - (bVar20 & 0x1f);
+  sVar13 = (sbyte)(uVar43 & 0xffffffffffffff0f);
+  uVar37 = (uint7)((ulong)lVar34 >> 8) & 0xff000000;
+  uVar36 = (uint7)((ushort)((ulong)lVar34 >> 0x30) & 0xff) |
+           (uint7)((uint)((ulong)lVar34 >> 0x20) & 0xff00) | uVar37 >> 8 |
+           (uint7)lVar34 & 0xff000000;
+  uVar35 = CONCAT62((int6)((ulong)lVar24 >> 0x10),
+                    (short)lVar24 << sVar13 | (ushort)uVar19 >> 0x10 - sVar13) & 0xffffffff;
+  uVar22 = (uint)(uVar35 >> sVar13) | (uint)(uVar35 << 0x21 - sVar13);
+  uVar18 = (ushort)(uVar43 & 0xffffffffffffff0f) | 0x36f2;
+  uVar15 = CONCAT11((byte)((uint)iVar48 >> 8) >> 1,(char)iVar48) & 0x3fff;
+  uVar30 = (ushort)(byte)((char)((uint)iVar48 >> 0x18) << 1 | iVar48 < 0 | 0xc0);
+  uVar10 = CONCAT71((uint7)(uint3)(((uVar46 * 2 + 0x49fb5c51 >> bVar68 | uVar50 << 0x20 - bVar68) >>
+                                    1 | uVar27) - (int)uVar19 >> 8),0x33);
+  bVar49 = (byte)((ulong)lVar34 >> 0x38);
+  iVar48 = (int)CONCAT11((char)(uVar15 % uVar30),(char)(uVar15 / uVar30)) * (int)(short)uVar64;
+  uVar65 = (int)uVar10 << 1;
+  uVar50 = CONCAT22((short)(uVar55 >> 0x10),(short)((uint)iVar48 >> 0x10));
+  if ((uVar22 & 1) != 0) {
+    uVar50 = uVar65;
   }
-  lVar24 = uVar11 - uVar41;
-  uVar41 = (-iVar23 | (uint)(ushort)((short)uVar22 * 0x4313)) + 0x651806d1;
-  uVar34 = 1 << ((ulong)uVar43 & 0x3f);
-  bVar9 = (byte)((ulong)uVar43 >> 8);
-  if (((char)((byte)uVar37 | (byte)(uVar51 >> 0x18) | (byte)((uVar7 & 0xff00000000) >> 0x20)) >> 7 &
-      0x88U) != 0) {
-    uVar53 = uVar15;
+  lVar24 = uVar16 - uVar65;
+  iVar28 = (int)CONCAT62((int6)(-uVar29 >> 0x10),(short)uVar27 * 0x4313) + 0x651806d1;
+  uVar19 = (ulong)(uVar22 >> 1) | 1L << ((ulong)uVar18 & 0x3f);
+  bVar6 = (byte)(uVar18 >> 8);
+  if (((char)((byte)iVar48 | (byte)(uVar51 >> 0x18) | (byte)(uVar37 >> 0x18)) >> 7 & 0x88U) != 0) {
+    uVar64 = uVar50;
   }
-  uVar14 = (ushort)uVar38;
-  sVar10 = (short)uVar41;
-  uVar37 = uVar41 & 0xffff0000 | (uint)(ushort)(sVar10 << 1);
-  uVar26 = 0;
-  if (uVar14 != 0) {
-    for (; (uVar14 >> uVar26 & 1) == 0; uVar26 = uVar26 + 1) {
+  uVar30 = (ushort)uVar10;
+  sVar31 = (short)iVar28;
+  uVar65 = CONCAT22((short)((uint)iVar28 >> 0x10),sVar31 << 1);
+  sVar40 = 0;
+  if (uVar30 != 0) {
+    for (; (uVar30 >> sVar40 & 1) == 0; sVar40 = sVar40 + 1) {
     }
   }
-  uVar29 = (ulong)uVar44 << 0x28 | (ulong)uVar26;
-  uVar54 = ((ulong)(uVar53 & 0xffffff00 | (uint)(byte)((byte)uVar53 + (byte)uVar15)) -
-           (ulong)(((uint)uVar17 << 1 | (uint)uVar7 >> 0x1f) ^ 0x800000)) -
-           (ulong)CARRY1((byte)uVar53,(byte)uVar15);
-  uVar7 = lVar24 << (bVar9 & 0x3f) | (ulong)(CONCAT18(sVar10 < 0,lVar24) >> 0x41 - (bVar9 & 0x3f));
-  uVar15 = ((uint)uVar30 & 0xff00 | (uint)((POPCOUNT((char)uVar11 - bVar56) & 1U) != 0) |
-            (int)(uVar30 >> 0x10) << 0x10 | 0x13c8) - 1;
-  uVar44 = ((int)(char)bVar9 ^ 0xa560fc4U) & 0xffff0000 |
-           (uint)(ushort)((ushort)(byte)((int)(char)bVar9 ^ 0xa560fc4U) * (ushort)(byte)uVar7);
-  sVar10 = CONCAT11((char)uVar43,bVar9) + -0x46b2;
-  uVar17 = uVar54 & 0xffffffffffffff00;
-  auVar3 = SEXT816((long)(int)uVar44) * SEXT816((long)uVar17);
-  uVar36 = (uint)((uVar42 & 0x71060802) << 1) | 0x1236cd7b;
-  bVar9 = (byte)(uVar37 >> 1);
-  uVar31 = (uint7)(uVar21 >> 9);
-  bVar25 = (char)((uVar21 | (byte)(bVar5 << 7 | bVar5 >> 1)) >> 1) + bVar9 + 1;
-  uVar30 = CONCAT71(uVar31,bVar25);
-  uVar41 = uVar36 >> 1;
-  uVar48 = (ulong)CONCAT31((uint3)(uVar37 >> 9),bVar9 + bVar25);
-  bVar56 = ((byte)sVar10 & 0x1f) % 0x11;
-  uVar14 = (ushort)(CONCAT12((ushort)uVar17 < 0xfbbb,sVar10) >> bVar56) | sVar10 << 0x11 - bVar56;
-  bVar56 = ((byte)uVar14 & 0x1f) % 0x11;
-  uVar43 = (ushort)uVar15;
-  iVar23 = (int)uVar30 + 0x20;
-  bVar5 = (byte)iVar23 & 0x3f;
-  uVar21 = uVar29 << bVar5 | uVar29 >> 0x40 - bVar5;
-  if ((char)uVar21 == (char)(uVar41 | 1)) {
-    uVar21 = uVar30;
+  uVar33 = CONCAT62((int6)(((ulong)uVar61 << 0x28) >> 0x10),sVar40);
+  uVar52 = ((ulong)CONCAT31((int3)(uVar64 >> 8),(byte)uVar64 + (byte)uVar50) -
+           (ulong)(((uint)uVar57 << 1 | (uint)lVar34 >> 0x1f) ^ 0x800000)) -
+           (ulong)CARRY1((byte)uVar64,(byte)uVar50);
+  uVar58 = lVar24 << (bVar6 & 0x3f) | (ulong)(CONCAT18(sVar31 < 0,lVar24) >> 0x41 - (bVar6 & 0x3f));
+  iVar28 = ((uint)CONCAT62((int6)(uVar44 >> 0x10),
+                           (short)CONCAT71((int7)(uVar44 >> 8),
+                                           (POPCOUNT((char)uVar16 - bVar20) & 1U) != 0)) | 0x13c8) -
+           1;
+  lVar24 = (long)(int)CONCAT62((int6)(((ulong)(uint)(int)(char)bVar6 ^ 0xa560fc4) >> 0x10),
+                               (ushort)(byte)((ulong)(uint)(int)(char)bVar6 ^ 0xa560fc4) *
+                               (ushort)(byte)uVar58);
+  sVar40 = CONCAT11((char)uVar18,bVar6) + -0x46b2;
+  uVar44 = uVar52 & 0xffffffffffffff00;
+  auVar2 = SEXT816(lVar24) * SEXT816((long)uVar44);
+  uVar50 = (uint)((uVar9 & 0x71060802) << 1) | 0x1236cd7b;
+  bVar21 = (byte)(uVar65 >> 1);
+  uVar37 = uVar36 >> 1;
+  bVar17 = (char)(CONCAT71(uVar36,bVar49 << 7 | bVar49 >> 1) >> 1) + bVar21 + 1;
+  uVar43 = CONCAT71(uVar37,bVar17);
+  uVar35 = (ulong)CONCAT31((uint3)(uVar65 >> 9),bVar21 + bVar17);
+  bVar20 = ((byte)sVar40 & 0x1f) % 0x11;
+  uVar30 = (ushort)(CONCAT12((ushort)uVar44 < 0xfbbb,sVar40) >> bVar20) | sVar40 << 0x11 - bVar20;
+  bVar20 = ((byte)uVar30 & 0x1f) % 0x11;
+  uVar15 = (ushort)iVar28;
+  iVar48 = (int)uVar43 + 0x20;
+  uVar65 = uVar50 >> 1 | 1;
+  bVar6 = (byte)iVar48;
+  bVar49 = bVar6 & 0x3f;
+  uVar57 = uVar33 << bVar49 | uVar33 >> 0x40 - bVar49;
+  if ((char)uVar57 == (char)uVar65) {
+    uVar57 = uVar43;
   }
-  sVar10 = (short)iVar23 * 2;
-  uVar39 = sVar10 + 0x1b9b + (ushort)(byte)-((uVar14 >> ((ushort)uVar7 & 0xf) & 1) != 0) * 2;
-  uVar37 = ((uVar44 * (int)uVar17 * 2 & 0xffff0000 ^ 1 << (uVar26 & 0x1f)) & 0xffff0000) >> 1 &
-           0xffff00ff | (uVar19 >> 1 | (uint)uVar34) << 0x1f;
-  bVar5 = (byte)sVar10;
-  uVar29 = uVar54 & 0xffffffffffff0000 | (ulong)(ushort)(short)(char)bVar5;
-  uVar30 = (ulong)uVar37;
-  uVar17 = uVar48 + uVar29;
-  uVar44 = (uint)CARRY8(uVar48,uVar29);
-  uVar27 = (ushort)uVar17;
-  uVar47 = uVar27 + 0x634f;
-  uVar17 = uVar17 & 0xffffffffffff0000;
-  uVar7 = uVar17 | uVar47;
-  sVar10 = (short)(uVar36 >> 0xc);
-  uVar48 = (ulong)((uVar41 | 1) << 0x15 | (uVar41 & 0xf8000000) >> 0xb |
-                  (uint)(ushort)(sVar10 << 3 | (ushort)(CONCAT12(0x9cb0 < uVar27,sVar10) >> 0xe)));
-  iVar33 = (uVar15 & 0xffff0000 | (uint)(ushort)(uVar43 >> bVar56 | uVar43 << 0x11 - bVar56)) <<
-           (bVar5 & 0x1f);
-  lVar24 = (ulong)(uVar30 != uVar48) *
-           (uVar30 ^ uVar48 ^ (ulong)(uVar30 == uVar48) * (uVar48 ^ uVar7));
-  uVar43 = (short)CONCAT71(uVar31,bVar25 >> 3 | bVar25 * ' ') + 0x4f2;
-  sVar10 = ((ushort)uVar21 & 0xff00 | (ushort)(byte)((char)uVar21 << 1)) + uVar43 * 8;
-  uVar21 = (ulong)(byte)sVar10;
-  uVar48 = CONCAT62((int6)(uint6)(ushort)((uint)iVar23 >> 0x10) >> 0xe,sVar10) & 0xffffffffffffff00
-           | uVar21 | 0xc0;
-  uVar26 = CONCAT11((byte)((ulong)lVar24 >> 8) >> 1,(char)lVar24) & 0x3fff;
-  bVar5 = (byte)uVar48;
-  uVar37 = ((uVar37 ^ (uint)lVar24) & 0xffff0000 |
-           (uint)(ushort)(uVar26 / bVar5 & 0xff | uVar26 % (ushort)bVar5 << 8)) * iVar33;
-  uVar14 = (ushort)uVar37;
-  bVar12 = (byte)uVar47;
-  lVar55 = CONCAT71(0x5561a5ad9addba,bVar12 + 0x7d);
-  uVar26 = (uVar14 ^ (ushort)(uVar14 != uVar43) *
-                     (uVar14 ^ uVar43 ^ (ushort)(uVar14 == uVar43) *
-                                        (uVar43 ^ (ushort)(iVar33 * -0x59f077a3)))) + 0xc351;
-  bVar56 = (byte)((ulong)uVar26 >> 8);
-  uVar44 = ((uint)uVar29 >> 1 | uVar44 << 0x1f) >> 1 | (uint)(uVar14 < uVar43) << 0x1f | 1 << uVar44
+  uVar25 = (uint6)(uVar19 >> 0x10);
+  bVar6 = bVar6 * '\x02';
+  uVar18 = (ushort)((ushort)(lVar24 * uVar44 * 2 >> 0x10) ^
+                   (ushort)((uint)(1 << ((uint)uVar33 & 0x1f)) >> 0x10)) >> 1 |
+           (ushort)((uint)((int)CONCAT62(uVar25,(ushort)(byte)uVar19) << 0x1f) >> 0x10);
+  uVar52 = CONCAT62((int6)(uVar52 >> 0x10),(short)(char)bVar6);
+  lVar24 = uVar35 + uVar52;
+  uVar55 = (uint)CARRY8(uVar35,uVar52);
+  uVar53 = (ushort)lVar24;
+  uVar12 = (undefined6)((ulong)lVar24 >> 0x10);
+  uVar43 = CONCAT62(uVar12,uVar53 + 0x634f);
+  sVar40 = (short)(uVar50 >> 0xc);
+  uVar33 = (ulong)CONCAT22((ushort)((uVar65 << 0x15) >> 0x10) | (ushort)(uVar50 >> 0x1c),
+                           sVar40 << 3 | (ushort)(CONCAT12(0x9cb0 < uVar53,sVar40) >> 0xe));
+  iVar28 = CONCAT22((short)((uint)iVar28 >> 0x10),uVar15 >> bVar20 | uVar15 << 0x11 - bVar20) <<
+           (bVar6 & 0x1f);
+  uVar35 = (ulong)uVar18 << 0x10;
+  lVar24 = (ulong)(uVar35 != uVar33) *
+           (uVar35 ^ uVar33 ^ (ulong)(uVar35 == uVar33) * (uVar33 ^ uVar43));
+  uVar47 = (short)CONCAT71(uVar37,bVar17 >> 3 | bVar17 * ' ') + 0x4f2;
+  sVar40 = (short)CONCAT71((int7)((uVar57 & 0xffffffff) >> 8),(char)(uVar57 & 0xffffffff) << 1) +
+           uVar47 * 8;
+  bVar49 = (byte)sVar40;
+  uVar35 = CONCAT71((int7)(CONCAT62((int6)(uint6)(ushort)((uint)iVar48 >> 0x10) >> 0xe,sVar40) >> 8)
+                    ,bVar49) | 0xc0;
+  uVar57 = CONCAT62((uint6)uVar18 ^ (uint6)((ulong)lVar24 >> 0x10),
+                    CONCAT11((byte)((ulong)lVar24 >> 8) >> 1,(char)lVar24)) & 0xffffffffffff3fff;
+  bVar14 = (byte)uVar35;
+  uVar15 = (ushort)uVar57;
+  uVar57 = (long)(int)CONCAT62((int6)(uVar57 >> 0x10),
+                               CONCAT11((char)(uVar15 % (ushort)bVar14),(char)(uVar15 / bVar14))) *
+           (long)iVar28 & 0xffffffff;
+  bVar26 = (byte)(uVar53 + 0x634f);
+  lVar34 = CONCAT71(0x5561a5ad9addba,bVar26 + 0x7d);
+  uVar15 = (ushort)uVar57;
+  sVar40 = (uVar15 ^ (ushort)(uVar15 != uVar47) *
+                     (uVar15 ^ uVar47 ^ (ushort)(uVar15 == uVar47) *
+                                        (uVar47 ^ (ushort)(iVar28 * -0x59f077a3)))) + 0xc351;
+  bVar20 = (byte)((ushort)sVar40 >> 8);
+  uVar65 = ((uint)uVar52 >> 1 | uVar55 << 0x1f) >> 1 | (uint)(uVar15 < uVar47) << 0x1f | 1 << uVar55
   ;
   lVar24 = 0x3f;
-  if (uVar48 != 0) {
-    for (; uVar48 >> lVar24 == 0; lVar24 = lVar24 + -1) {
+  if (uVar35 != 0) {
+    for (; uVar35 >> lVar24 == 0; lVar24 = lVar24 + -1) {
     }
   }
-  uVar14 = -(short)lVar24;
-  uVar15 = ((short)lVar24 != 0) + 0x6d0a8dd6;
-  uVar43 = (ushort)uVar15 ^ uVar14;
-  bVar6 = (byte)uVar26;
-  bVar13 = (byte)iVar33;
-  bVar32 = bVar13 + 0xb1;
-  uVar26 = 0xf;
-  if (uVar43 != 0) {
-    for (; uVar43 >> uVar26 == 0; uVar26 = uVar26 - 1) {
+  uVar15 = -(short)lVar24;
+  lVar41 = (ulong)((short)lVar24 != 0) + 0x6d0a8dd6;
+  uVar18 = (ushort)lVar41 ^ uVar15;
+  uVar43 = uVar43 & 0xffffffff;
+  bVar62 = (byte)sVar40;
+  bVar39 = (byte)iVar28;
+  bVar38 = bVar39 + 0xb1;
+  sVar40 = 0xf;
+  if (uVar18 != 0) {
+    for (; uVar18 >> sVar40 == 0; sVar40 = sVar40 + -1) {
     }
   }
-  uVar53 = (uVar37 & 0xffff0000 | (uint)uVar26) *
-           (((uint)uVar7 & 0xffff0000 |
-            (uint)(ushort)(uVar47 & 0xff |
-                          (ushort)(byte)((char)((ulong)uVar47 >> 8) + bVar12 +
-                                        (0x4f < bVar13 || 0xfe < (byte)(bVar13 + 0xb0))) << 8)) &
-           0x25db68e4);
-  uVar22 = (((uint)lVar24 & 0xffff0000 | (uint)uVar14) - (int)lVar55) - 1;
-  uVar51 = (uint)CONCAT11(bVar6 ^ (bVar6 != bVar56) *
-                                  (bVar6 ^ bVar56 ^ (bVar6 == bVar56) * (bVar56 ^ bVar5)),
-                          (char)uVar39 << 7 |
-                          (byte)((ushort)(uVar39 & 0xff | (ushort)(0x82 < bVar12) << 8) >> 2)) <<
-           0x13;
-  uVar37 = iVar33 + (((int)CONCAT71(SUB167(auVar3 >> 0x48,0),
-                                    (SUB161(auVar3 >> 0x40,0) - (char)uVar41) - CARRY1(bVar9,bVar25)
-                                   ) + 0x1e418814U >> 0x11) * 0x10000 + -1) * 2 + 0x81;
-  uVar14 = (ushort)(uVar22 >> 2) & 0x3fff;
-  uVar39 = (short)uVar14 >> 1;
-  bVar60 = (uVar37 & 1) != 0;
-  uVar19 = (((uVar15 & 0xffff0000 | (uint)uVar43) & 0xe143825a) + 0xf4546485) - (uint)bVar60;
-  uVar26 = ((ushort)uVar37 >> 1 | (ushort)bVar60 << 0xf) + uVar39;
-  uVar41 = uVar37 & 0xffff0000 | (uint)uVar26;
-  bVar56 = (char)(uVar34 >> 0x2d) - (byte)uVar53;
-  uVar36 = (uint)((uVar34 & 0xffe0000000000000) >> 0x2d);
-  uVar17 = (uVar17 | (ushort)(uVar27 + 0x634e)) << (bVar5 & 0x3f);
-  uVar15 = uVar22 & 0xffff0000 | uVar39 & 0xffffff00 | (uVar39 & 0xfe) >> 1;
-  uVar22 = uVar53 & 0xffffff00 |
-           (uint)(byte)((byte)uVar53 & (byte)(((uVar34 & 0xffe0000000000000) >> 0x2d) >> 8));
-  uVar21 = uVar21 & 0x3f;
-  uVar30 = (ulong)uVar15 | 1 << uVar21;
-  lVar24 = ((uVar17 & 0xffffffffffff0000 |
-            (ulong)(ushort)((ushort)uVar17 >> 6 | (short)uVar19 << 10)) - 0x9f32ce85) -
-           (ulong)((uVar15 >> uVar21 & 1) != 0);
-  if ((uVar19 * 0x10 | uVar19 >> 0x1c) ==
-      (iVar33 * -0x59f077a3 & 0xffff0000U | (uint)(ushort)(uVar14 * -0x5b31))) {
-    uVar22 = uVar53 & 0xffff0000 | (uint)uVar30 & 0xffff;
+  lVar8 = CONCAT62((int6)(uVar57 >> 0x10),sVar40) *
+          (ulong)((uint)CONCAT62((int6)(uVar43 >> 0x10),
+                                 CONCAT11((char)(uVar43 >> 8) + (char)uVar43 +
+                                          (0x4f < bVar39 || 0xfe < (byte)(bVar39 + 0xb0)),
+                                          (char)uVar43)) & 0x25db68e4);
+  iVar48 = ((int)CONCAT62((int6)((ulong)lVar24 >> 0x10),uVar15) - (int)lVar34) + -1;
+  uVar5 = uVar25 >> 0x1d;
+  uVar50 = iVar28 + (((int)CONCAT71(auVar2._9_7_,
+                                    (auVar2[8] - (char)(uVar50 >> 1)) - CARRY1(bVar21,bVar17)) +
+                      0x1e418814U >> 0x11) * 0x10000 + -1) * 2 + 0x81;
+  uVar15 = (ushort)iVar48 >> 2;
+  sVar31 = (short)uVar15 >> 1;
+  bVar68 = (uVar50 & 1) != 0;
+  uVar46 = (((uint)CONCAT62((int6)((ulong)lVar41 >> 0x10),uVar18) & 0xe143825a) + 0xf4546485) -
+           (uint)bVar68;
+  sVar40 = ((ushort)uVar50 >> 1 | (ushort)bVar68 << 0xf) + sVar31;
+  uVar50 = CONCAT22((short)(uVar50 >> 0x10),sVar40);
+  uVar43 = CONCAT71((uint7)(uint5)(uVar19 >> 0x35) |
+                    (uint7)(((CONCAT62(uVar25,CONCAT11(bVar62 ^ (bVar62 != bVar20) *
+                                                                (bVar62 ^ bVar20 ^ (bVar62 == bVar20
+                                                                                   ) * (bVar20 ^ 
+                                                  bVar14)),(char)(CONCAT11(0x82 < bVar26,
+                                                                           bVar6 + 0x9b +
+                                                                           ((uVar30 >> ((ushort)
+                                                  uVar58 & 0xf) & 1) != 0) * -2) >> 2))) | 0x80) <<
+                            0x13) >> 8),(char)uVar5 - (byte)lVar8);
+  lVar24 = CONCAT62(uVar12,uVar53 + 0x634e) << (bVar14 & 0x3f);
+  uVar55 = CONCAT31((int3)(CONCAT22((short)((uint)iVar48 >> 0x10),sVar31) >> 8),(byte)sVar31 >> 1);
+  uVar10 = CONCAT71((int7)((ulong)lVar8 >> 8),(byte)lVar8 & (byte)(uVar5 >> 8));
+  uVar57 = (ulong)bVar49 & 0x3f;
+  uVar19 = (ulong)uVar55 | 1L << uVar57;
+  lVar24 = (CONCAT62((int6)((ulong)lVar24 >> 0x10),(ushort)lVar24 >> 6 | (short)uVar46 << 10) +
+           -0x9f32ce85) - (ulong)((uVar55 >> uVar57 & 1) != 0);
+  uVar32 = (undefined2)uVar19;
+  if ((uVar46 * 0x10 | uVar46 >> 0x1c) ==
+      CONCAT22((short)((uint)(iVar28 * -0x59f077a3) >> 0x10),uVar15 * -0x5b31)) {
+    uVar10 = CONCAT62((int6)((ulong)lVar8 >> 0x10),uVar32);
   }
-  lVar55 = lVar55 + 0x285cba59;
-  uVar44 = CONCAT22((ushort)(uVar44 >> 0x11),(short)(uVar44 >> 1) >> (bVar5 & 0x1f));
-  lVar2 = 0;
-  if (uVar41 != 0) {
-    for (; (uVar41 >> lVar2 & 1) == 0; lVar2 = lVar2 + 1) {
+  lVar34 = lVar34 + 0x285cba59;
+  uVar30 = (ushort)(uVar65 >> 0x10);
+  uVar65 = CONCAT22(uVar30 >> 1,(short)(uVar65 >> 1) >> (bVar14 & 0x1f));
+  lVar41 = 0;
+  if (uVar50 != 0) {
+    for (; (uVar50 >> lVar41 & 1) == 0; lVar41 = lVar41 + 1) {
     }
   }
-  uVar37 = uVar37 & 0xffff0000 | uVar26 & 0xffffff00 | (uint)(byte)((char)uVar26 >> 0xc);
-  uVar41 = (uint)lVar2;
-  if ((POPCOUNT(bVar5 & (byte)uVar22) & 1U) == 0) {
-    uVar41 = uVar44;
+  uVar50 = CONCAT31((int3)(uVar50 >> 8),(char)sVar40 >> 0xc);
+  uVar55 = (uint)lVar41;
+  if ((POPCOUNT(bVar14 & (byte)uVar10) & 1U) == 0) {
+    uVar55 = uVar65;
   }
-  uVar15 = 0x1f;
-  if ((uint)uVar48 != 0) {
-    for (; (uint)uVar48 >> uVar15 == 0; uVar15 = uVar15 - 1) {
+  uVar57 = uVar43 & 0xffffffff;
+  iVar48 = 0x1f;
+  if ((uint)uVar35 != 0) {
+    for (; (uint)uVar35 >> iVar48 == 0; iVar48 = iVar48 + -1) {
     }
   }
-  uVar53 = uVar36 & 0xffff0000 | uVar51 |
-           (uint)(ushort)((ushort)bVar56 * (ushort)(byte)((ulong)lVar24 >> 0x38));
-  uVar19 = uVar44;
-  if (uVar53 != uVar41) {
-    uVar53 = uVar41;
-    uVar19 = uVar41;
+  uVar46 = (uint)CONCAT62((int6)(uVar57 >> 0x10),
+                          (ushort)(byte)uVar57 * (ushort)(byte)((ulong)lVar24 >> 0x38));
+  uVar61 = uVar65;
+  if (uVar46 != uVar55) {
+    uVar46 = uVar55;
+    uVar61 = uVar55;
   }
-  bVar5 = (byte)uVar15 & 0x1f;
-  uVar45 = (uint)lVar55;
-  uVar41 = uVar15 >> 1 & 0x7fff;
-  uVar53 = (uVar53 ^ uVar37) * (int)(char)bVar32 * (uVar15 & 0xffff0000 | uVar41);
-  uVar17 = (ulong)((uVar36 | uVar51 | (uint)bVar56) +
-                  (uVar22 & 0xffff0000 |
-                  (uint)(ushort)(((short)uVar22 * (short)lVar55 & 0xffU) * (ushort)bVar32))) + 1;
-  iVar23 = uVar19 << ((byte)uVar41 & 0x1f);
-  uVar21 = (ulong)(lVar24 * 0x100) >> 0x19 & 0x7f;
-  lVar24 = 0;
-  if (uVar17 != 0) {
-    for (; (uVar17 >> lVar24 & 1) == 0; lVar24 = lVar24 + 1) {
-    }
-  }
-  for (uVar26 = 0xf; 0xb7ebU >> uVar26 == 0; uVar26 = uVar26 - 1) {
-  }
-  uVar36 = (uVar53 & 0xffff | ((ushort)uVar30 & 0x3fff) << 0x10) / 0xf7eb;
-  uVar51 = uVar15 >> 1 & 0x7f0f;
-  sVar8 = (sbyte)uVar51;
-  uVar48 = (long)(int)(uVar53 & 0xffff0000 | uVar36) * (long)(int)uVar21;
-  uVar14 = (ushort)((uVar44 & 0xffffff00) >> 0x10);
-  iVar33 = iVar23 + 1;
-  bVar60 = iVar33 == 0 || SCARRY4(iVar23,1) != iVar33 < 0;
-  uVar53 = (int)uVar48 * (int)(uVar48 >> 0x20);
-  uVar41 = (uVar45 >> bVar5 | uVar45 << 0x20 - bVar5) + iVar33;
-  uVar43 = (ushort)((POPCOUNT(uVar41 & 0xff) & 1U) != 0);
-  uVar51 = CONCAT22(uVar14 >> 10,
-                    (short)(CONCAT22(uVar14 >> 1,
-                                     (ushort)((uVar44 & 0xffffff00) >> 1) ^ (ushort)(uVar34 >> 0x2d)
-                                    ) >> 9) - (short)uVar51) + -0x7a7af73b + (uint)(iVar33 < 0);
-  bVar56 = bVar60 * '\x02';
-  uVar14 = CONCAT11((char)(uVar53 >> 8) * '\x02' + '\x01',(char)uVar53) | 0x20;
-  uVar44 = (uint)(uVar30 >> 0x19) >> 1;
-  bVar57 = (uVar30 >> 0x19 & 1) != 0;
-  uVar27 = (short)uVar44 << 1 | (ushort)(((ulong)uVar37 + (uVar48 >> 0x20) >> 3 & 1) != 0);
-  uVar44 = uVar44 & 0xffff0000 | (uint)uVar14 << 0x1f;
-  uVar37 = uVar44 | uVar27;
-  bVar5 = ((byte)(uVar21 << 1) | 1) ^ (byte)uVar14;
-  uVar34 = (ulong)bVar5;
-  auVar3 = ZEXT116(0) << 0x40 |
-           ZEXT416(((uint)CONCAT62((undefined6)((char)bVar32 >> 7),
-                                   (ushort)((short)(char)bVar32 << 1) >> sVar8 |
-                                   (short)uVar36 << 0x10 - sVar8) & 0x7fffff80) << 1 |
-                   (uint)(byte)-bVar57);
-  uVar30 = SUB168(auVar3 >> bVar56,0) | SUB168(auVar3 << bVar60 * -2 + 0x41,0);
-  uVar39 = 0xe128U >> bVar56 | uVar27 << bVar60 * -2 + 0x10;
-  uVar21 = (ulong)(uVar53 & 0xffff0000 | (uint)uVar14) * (ulong)uVar37;
-  uVar36 = (uint)(uVar21 >> 0x20);
-  uVar48 = 0;
-  if (uVar36 != 0) {
-    uVar48 = (ulong)uVar37;
-  }
-  uVar14 = (short)((ushort)(uVar41 >> 1) & 0x7fff) >> 1;
-  uVar53 = uVar15 & 0xffff0000 | (uint)uVar39 | 0xc0000000;
-  uVar21 = (ulong)(uVar36 & 0x3fffffff) << 0x20 | uVar21 & 0xffffffff;
-  uVar29 = uVar21 / uVar53 & 0xffffffff;
-  uVar15 = (int)uVar29 - (uint)bVar5;
-  uVar7 = uVar34;
-  if (uVar15 == 0) {
-    uVar34 = uVar29;
-    uVar7 = (ulong)uVar53;
-  }
-  uVar36 = (uint)bVar56;
-  if ((POPCOUNT(uVar15 & 0xff) & 1U) != 0) {
-    uVar36 = uVar51;
-  }
-  uVar47 = (ushort)uVar7 >> 1;
-  uVar37 = (((byte)(-0x15 << bVar56 % 9 | (byte)(CONCAT11(bVar57,0xeb) >> 9 - bVar56 % 9)) |
-            0x7d48ff00) - 1) + uVar37;
-  uVar29 = uVar30 & 0xffffffffffff0000;
-  bVar9 = (char)uVar36 + 0x5f;
-  bVar5 = (byte)((ulong)(ushort)(uVar47 | (ushort)((uVar7 & 1) != 0) << 0xf) >> 8);
-  bVar56 = (byte)uVar47;
-  bVar25 = (byte)uVar14;
-  uVar15 = uVar41 & 0xffff0000 | uVar14 & 0xffffff00 | (uint)(byte)(bVar25 + (byte)uVar37);
-  uVar14 = (short)uVar30 + 0x29f2 + (ushort)CARRY1(bVar25,(byte)uVar37);
-  uVar51 = uVar51 >> 0x1d;
-  bVar12 = (byte)(uVar21 % (ulong)uVar53 >> 8);
-  bVar25 = bVar12 ^ (bVar56 == bVar12) *
-                    (bVar12 ^ (byte)((uint)(ushort)((uVar26 + 1 & 0xff00 | uVar43) * -0x2161) >> 8))
+  bVar20 = (byte)iVar48 & 0x1f;
+  uVar27 = (uint)lVar34;
+  uVar15 = (ushort)iVar48 >> 1;
+  uVar55 = CONCAT22((short)((uint)iVar48 >> 0x10),uVar15);
+  lVar41 = (ulong)((uVar46 ^ uVar50) * (int)(char)bVar38) * (ulong)uVar55;
+  uVar57 = (ulong)(uint)((int)uVar43 +
+                        (int)CONCAT62((int6)((ulong)uVar10 >> 0x10),
+                                      ((short)uVar10 * (short)lVar34 & 0xffU) * (ushort)bVar38)) + 1
   ;
-  uVar44 = (uVar44 | uVar27 & 0xffffff00 |
-           (uint)(byte)((byte)uVar27 << (bVar9 & 7) | (byte)uVar27 >> 8 - (bVar9 & 7))) + 1;
-  uVar41 = uVar51 + 0x10f4e08;
-  uVar21 = (ulong)bVar25 << 8;
-  if (uVar51 < 0xfef0b1f8) {
-    uVar21 = uVar29 | uVar14;
-  }
-  uVar41 = uVar41 & 0xffff0000 | (uint)((ushort)uVar41 & 0x7fff);
-  bVar5 = SUB161(ZEXT816(uVar7 & 0xffffffffffff0000 |
-                         (ulong)(byte)(bVar5 << (bVar9 & 7) | bVar5 >> 8 - (bVar9 & 7)) << 8 |
-                         (ulong)(byte)((bVar56 ^ (bVar56 != bVar12) * (bVar56 ^ bVar25)) +
-                                      (char)(uVar21 >> 8))) * ZEXT816((ulong)uVar15) >> 0x48,0);
-  uVar36 = uVar44 >> 1 & 0xffff | (uVar44 >> 0x11) << 0x10 | 0xc000;
-  lVar55 = (uVar48 & 0xffffffffffffff00 | (ulong)(byte)((char)uVar48 << 1 | (char)uVar48 < '\0')) -
-           (ulong)(uint)(int)(char)bVar5;
-  uVar30 = (ulong)uVar15 << (bVar5 & 0x3f) | (ulong)(uVar15 >> 0x40 - (bVar5 & 0x3f));
-  uVar27 = (short)(char)bVar5 ^ 1 << uVar43;
-  uVar47 = (ushort)lVar55;
-  uVar28 = (ushort)uVar30;
-  uVar43 = uVar28 + uVar47;
-  bVar56 = (byte)uVar27 & 0x1f;
-  uVar15 = (uint)(CONCAT14(CARRY2(uVar28,uVar47),uVar41) >> bVar56) | uVar41 << 0x21 - bVar56;
-  bVar25 = (byte)uVar14 & 0xc5;
-  uVar44 = uVar37 & 0xffff0000 |
-           (ushort)((short)uVar37 << (bVar9 & 0xf) | uVar39 >> 0x10 - (bVar9 & 0xf)) & 0xffffff00 |
-           (uint)((uVar14 & 0x78c5) != 0);
-  uVar48 = (uVar29 | uVar14) - 0x36db4c27;
-  lVar24 = (((ulong)(uint3)(CONCAT22((undefined2)((char)bVar5 >> 7),uVar27) >> 8) & 0xffffffffffff00
-            ) << 8 | (ulong)(ushort)(uVar14 * 0x2581)) + (ulong)uVar44;
-  uVar39 = (ushort)uVar48 | (ushort)uVar15;
-  bVar56 = bVar25 * '\x02';
-  bVar9 = (byte)lVar24;
-  bVar5 = (bVar9 & 0x1f) % 9;
-  uVar21 = uVar34 & 0xffffffffffffff00 |
-           (ulong)(byte)((byte)(CONCAT11((char)bVar25 < '\0',(char)uVar34) >> bVar5) |
-                        (char)uVar34 << 9 - bVar5);
-  uVar41 = 0;
-  if (uVar15 != 0) {
-    for (; (uVar15 >> uVar41 & 1) == 0; uVar41 = uVar41 + 1) {
+  bVar49 = (byte)uVar15;
+  iVar48 = uVar61 << (bVar49 & 0x1f);
+  uVar35 = (ulong)(lVar24 * 0x100) >> 0x19 & 0x7f;
+  lVar24 = 0;
+  if (uVar57 != 0) {
+    for (; (uVar57 >> lVar24 & 1) == 0; lVar24 = lVar24 + 1) {
     }
   }
-  uVar34 = (ulong)uVar41;
-  uVar17 = (ulong)((uint3)((((uint)uVar17 & 0xffff0000 | (uint)uVar26) ^ 0xac) + 0x381833fc >> 8) &
-                  0xffff00) << 8;
-  uVar26 = (short)(uVar14 & 0xff) >> 1;
-  uVar41 = ((uint)uVar48 & 0xffff0000 | (uint)uVar39) +
-           ((uint)uVar21 & 0xffff0000 | (uint)(ushort)((short)uVar21 << (bVar9 & 0x1f)));
-  uVar27 = (short)uVar44 - (short)uVar41;
-  uVar44 = ((uint)lVar55 & 0xffff0000 | (uint)uVar30 & 0xffff) + 1;
-  iVar23 = 0;
-  if (uVar36 != 0) {
-    for (; (uVar36 >> iVar23 & 1) == 0; iVar23 = iVar23 + 1) {
+  for (sVar40 = 0xf; 0xb7ebU >> sVar40 == 0; sVar40 = sVar40 + -1) {
+  }
+  sVar31 = (short)((CONCAT22(uVar32,(short)lVar41) & 0x3fffffff) / 0xf7eb);
+  uVar33 = (ulong)CONCAT31((int3)(uVar55 >> 8),bVar49) & 0xffffffffffffff0f;
+  uVar43 = (long)(int)CONCAT62((int6)((ulong)lVar41 >> 0x10),sVar31) * (long)(int)uVar35;
+  uVar19 = uVar19 >> 0x19;
+  iVar28 = iVar48 + 1;
+  bVar68 = iVar28 == 0 || SCARRY4(iVar48,1) != iVar28 < 0;
+  iVar48 = (int)uVar43 * (int)(uVar43 >> 0x20);
+  uVar55 = (uVar27 >> bVar20 | uVar27 << 0x20 - bVar20) + iVar28;
+  bVar67 = (POPCOUNT(uVar55 & 0xff) & 1U) != 0;
+  uVar61 = CONCAT22(uVar30 >> 0xb,
+                    (short)(CONCAT22(uVar30 >> 2,
+                                     (ushort)((uVar65 & 0xffffff00) >> 1) ^ (ushort)uVar5) >> 9) -
+                    (short)uVar33) + -0x7a7af73b + (uint)(iVar28 < 0);
+  bVar20 = bVar68 * '\x02';
+  uVar32 = (undefined2)
+           (((uint)CONCAT71((int7)(CONCAT62((int6)(uVar57 >> 0x10),sVar40) >> 8),(char)sVar40) ^
+            0xac) + 0x381833fc >> 0x10);
+  uVar46 = CONCAT22((short)((uint)iVar48 >> 0x10),
+                    CONCAT11((char)((uint)iVar48 >> 8) * '\x02' + '\x01',(byte)iVar48));
+  bVar66 = (uVar19 & 1) != 0;
+  uVar15 = (short)((uint)uVar19 >> 1) << 1 |
+           (ushort)(((ulong)uVar50 + (uVar43 >> 0x20) >> 3 & 1) != 0);
+  uVar65 = CONCAT22((ushort)(uVar19 >> 0x10) >> 1 | (ushort)((uVar46 << 0x1f) >> 0x10),uVar15);
+  bVar49 = ((byte)(uVar35 << 1) | 1) ^ ((byte)iVar48 | 0x20);
+  uVar57 = (ulong)bVar49;
+  auVar2 = ZEXT116(0) << 0x40 |
+           ZEXT416(CONCAT31((int3)((uint)((int)CONCAT62((char)bVar38 >> 7,
+                                                        (ushort)((short)(char)bVar38 << 1) >>
+                                                        (sbyte)uVar33 |
+                                                        sVar31 << 0x10 - (sbyte)uVar33) << 1) >> 8),
+                            -bVar66));
+  uVar43 = SUB168(auVar2 >> bVar20,0) | SUB168(auVar2 << bVar68 * -2 + 0x41,0);
+  uVar30 = 0xe128U >> bVar20 | uVar15 << bVar68 * -2 + 0x10;
+  uVar19 = (ulong)(uVar46 | 0x20) * (ulong)uVar65;
+  uVar50 = (uint)(uVar19 >> 0x20);
+  uVar35 = 0;
+  if (uVar50 != 0) {
+    uVar35 = (ulong)uVar65;
+  }
+  sVar31 = (short)((ushort)uVar55 >> 1) >> 1;
+  uVar46 = (uint)CONCAT62((int6)(uVar33 >> 0x10),uVar30) | 0xc0000000;
+  uVar19 = (ulong)(uVar50 & 0x3fffffff) << 0x20 | uVar19 & 0xffffffff;
+  uVar58 = uVar19 / uVar46 & 0xffffffff;
+  uVar50 = (int)uVar58 - (uint)bVar49;
+  uVar33 = uVar57;
+  if (uVar50 == 0) {
+    uVar57 = uVar58;
+    uVar33 = (ulong)uVar46;
+  }
+  uVar27 = (uint)bVar20;
+  if ((POPCOUNT(uVar50 & 0xff) & 1U) != 0) {
+    uVar27 = uVar61;
+  }
+  bVar49 = (byte)(uVar33 >> 8) >> 1 | (byte)((ushort)((ushort)((uVar33 & 1) != 0) << 0xf) >> 8);
+  iVar48 = (int)CONCAT71(0x72076277d48ff,
+                         -0x15 << bVar20 % 9 | (byte)(CONCAT11(bVar66,0xeb) >> 9 - bVar20 % 9)) + -1
+           + uVar65;
+  uVar12 = (undefined6)(uVar43 >> 0x10);
+  bVar6 = (char)uVar27 + 0x5f;
+  bVar20 = (byte)((ushort)uVar33 >> 1);
+  bVar21 = (byte)sVar31;
+  uVar50 = CONCAT31((int3)(CONCAT22((short)(uVar55 >> 0x10),sVar31) >> 8),bVar21 + (byte)iVar48);
+  uVar18 = (short)uVar43 + 0x29f2 + (ushort)CARRY1(bVar21,(byte)iVar48);
+  lVar34 = CONCAT62(uVar12,uVar18);
+  uVar61 = uVar61 >> 0x1d;
+  bVar17 = (byte)(uVar19 % (ulong)uVar46 >> 8);
+  bVar21 = bVar17 ^ (bVar20 == bVar17) *
+                    (bVar17 ^ (byte)((ushort)(CONCAT11((char)((ushort)(sVar40 + 1) >> 8),bVar67) *
+                                             -0x2161) >> 8));
+  uVar55 = CONCAT31((int3)(uVar65 >> 8),
+                    (byte)uVar15 << (bVar6 & 7) | (byte)uVar15 >> 8 - (bVar6 & 7)) + 1;
+  uVar65 = uVar61 + 0x10f4e08;
+  lVar24 = (ulong)bVar21 << 8;
+  if (uVar61 < 0xfef0b1f8) {
+    lVar24 = lVar34;
+  }
+  uVar3 = (undefined2)((uint)iVar48 >> 0x10);
+  auVar2._1_7_ = (int7)(CONCAT62((int6)(uVar33 >> 0x10),
+                                 CONCAT11(bVar49 << (bVar6 & 7) | bVar49 >> 8 - (bVar6 & 7),bVar20))
+                       >> 8);
+  auVar2[0] = (bVar20 ^ (bVar20 != bVar17) * (bVar20 ^ bVar21)) + (char)((ulong)lVar24 >> 8);
+  auVar2._8_8_ = 0;
+  bVar49 = SUB161(auVar2 * ZEXT416(uVar50),9);
+  uVar55 = CONCAT22((ushort)(uVar55 >> 0x11),(short)(uVar55 >> 1)) | 0xc000;
+  lVar24 = CONCAT71((int7)(uVar35 >> 8),(char)uVar35 << 1 | (char)uVar35 < '\0') -
+           (ulong)(uint)(int)(char)bVar49;
+  uVar47 = (short)uVar50 << (bVar49 & 0x3f) | (ushort)(uVar50 >> 0x40 - (bVar49 & 0x3f));
+  uVar53 = (ushort)lVar24;
+  uVar15 = uVar47 + uVar53;
+  bVar20 = (bVar49 ^ (byte)(1 << bVar67)) & 0x1f;
+  uVar46 = (uint)((CONCAT14(CARRY2(uVar47,uVar53),uVar65) & 0xffffff7fff) >> bVar20) |
+           (uVar65 & 0xffff7fff) << 0x21 - bVar20;
+  uVar35 = CONCAT62(uVar12,uVar18) & 0xffffffffffff78c5;
+  iVar48 = CONCAT31((int3)(CONCAT22(uVar3,(short)iVar48 << (bVar6 & 0xf) |
+                                          uVar30 >> 0x10 - (bVar6 & 0xf)) >> 8),
+                    (uVar18 & 0x78c5) != 0);
+  lVar34 = lVar34 + -0x36db4c27;
+  uVar65 = CONCAT22((char)bVar49 >> 7,uVar18 * 0x2581) + iVar48;
+  uVar19 = CONCAT62((int6)((ulong)lVar34 >> 0x10),(ushort)lVar34 | (ushort)uVar46);
+  cVar7 = (char)uVar35;
+  bVar20 = cVar7 * '\x02';
+  bVar6 = (byte)uVar65;
+  bVar49 = (bVar6 & 0x1f) % 9;
+  uVar50 = 0;
+  if (uVar46 != 0) {
+    for (; (uVar46 >> uVar50 & 1) == 0; uVar50 = uVar50 + 1) {
     }
   }
-  uVar44 = uVar44 & 0xffff0000 | (uint)(ushort)~(ushort)uVar44;
-  uVar30 = (ulong)uVar44;
-  uVar15 = (uint)lVar24 >> (bVar9 & 0x1f) | ((uint)uVar17 | (uint)uVar26) << 0x20 - (bVar9 & 0x1f);
-  uVar22 = iVar23 + 0xc9cb307a;
-  uVar53 = (uint)uVar29 | uVar14 & 0xffff7800 | (uint)(byte)(bVar56 + 0x51);
-  uVar21 = (ulong)(0xae < bVar56) << 0x20 | uVar48 & 0xffff0000 | (ulong)uVar39;
-  uVar17 = uVar17 | uVar26 ^ 8;
-  uVar21 = ((ulong)((uint)(uVar21 >> 0x13) | (uint)(uVar21 << 0xe)) - 0x23006b8c) +
-           (ulong)((uVar26 >> 3 & 1) != 0);
-  bVar56 = (byte)uVar15;
-  uVar26 = (ushort)uVar21;
-  uVar26 = uVar26 >> (bVar56 & 0xf) | uVar26 << 0x10 - (bVar56 & 0xf);
-  uVar21 = uVar21 & 0xffffffffffff0000;
-  uVar51 = (uint)uVar21 | (uint)uVar26;
-  uVar7 = uVar30 ^ (ulong)(uVar34 == uVar30) * (ulong)(uVar44 ^ uVar15);
-  uVar34 = uVar34 ^ (ulong)(uVar34 != uVar30) * (uVar34 ^ uVar7);
-  uVar53 = uVar53 >> (bVar56 & 0x1f) | uVar53 << 0x20 - (bVar56 & 0x1f);
-  bVar56 = ((byte)(uVar15 >> (bVar56 & 0x1f)) | (byte)((int)uVar17 << 0x20 - (bVar56 & 0x1f))) & 0xf
+  uVar33 = (ulong)uVar50;
+  uVar30 = (short)(uVar18 & 0xff) >> 1;
+  uVar46 = (int)uVar19 +
+           (int)CONCAT62((int6)(uVar57 >> 0x10),
+                         (short)CONCAT71((int7)(uVar57 >> 8),
+                                         (byte)(CONCAT11(cVar7 < '\0',(char)uVar57) >> bVar49) |
+                                         (char)uVar57 << 9 - bVar49) << (bVar6 & 0x1f));
+  uVar53 = (short)iVar48 - (short)uVar46;
+  iVar48 = (int)CONCAT62((int6)((ulong)lVar24 >> 0x10),uVar47) + 1;
+  uVar50 = 0;
+  if (uVar55 != 0) {
+    for (; (uVar55 >> uVar50 & 1) == 0; uVar50 = uVar50 + 1) {
+    }
+  }
+  uVar61 = CONCAT22((short)((uint)iVar48 >> 0x10),~(ushort)iVar48);
+  uVar58 = (ulong)uVar61;
+  uVar65 = uVar65 >> (bVar6 & 0x1f) | CONCAT22(uVar32,uVar30) << 0x20 - (bVar6 & 0x1f);
+  lVar34 = (ulong)uVar50 - 0x3634cf86;
+  uVar19 = (ulong)(0xae < bVar20) << 0x20 | uVar19 & 0xffffffff;
+  uVar57 = (ulong)CONCAT22(uVar32,uVar30) ^ 8;
+  lVar24 = ((ulong)((uint)(uVar19 >> 0x13) | (uint)(uVar19 << 0xe)) - 0x23006b8c) +
+           (ulong)((uVar30 >> 3 & 1) != 0);
+  bVar49 = (byte)uVar65;
+  uVar30 = (ushort)lVar24;
+  uVar30 = uVar30 >> (bVar49 & 0xf) | uVar30 << 0x10 - (bVar49 & 0xf);
+  uVar19 = uVar58 ^ (ulong)(uVar33 == uVar58) * (ulong)(uVar61 ^ uVar65);
+  uVar33 = uVar33 ^ (ulong)(uVar33 != uVar58) * (uVar33 ^ uVar19);
+  uVar50 = (uint)CONCAT71((int7)(uVar35 >> 8),bVar20 + 0x51);
+  uVar61 = uVar50 >> (bVar49 & 0x1f) | uVar50 << 0x20 - (bVar49 & 0x1f);
+  bVar20 = ((byte)(uVar65 >> (bVar49 & 0x1f)) | (byte)((int)uVar57 << 0x20 - (bVar49 & 0x1f))) & 0xf
   ;
-  uVar48 = (ulong)(ushort)((ushort)uVar7 << bVar56 | (ushort)uVar7 >> 0x10 - bVar56);
-  uVar54 = uVar7 & 0xffffffffffff0000 | uVar48;
-  uVar30 = uVar17 ^ (ulong)(uVar34 == uVar17) *
-                    (uVar17 ^ CONCAT62((int6)(short)(uVar29 >> 0x10),uVar14 + 0x9cc3));
-  uVar34 = uVar34 ^ (ulong)(uVar34 != uVar17) * (uVar34 ^ uVar30);
-  uVar17 = uVar34 & 0xffffffffffff0000;
-  uVar15 = (int)uVar30 + 0x8fd38db4;
-  uVar44 = 0x1f;
-  if (uVar51 != 0) {
-    for (; uVar51 >> uVar44 == 0; uVar44 = uVar44 - 1) {
+  uVar35 = CONCAT62((int6)(uVar19 >> 0x10),
+                    (ushort)uVar19 << bVar20 | (ushort)uVar19 >> 0x10 - bVar20);
+  uVar19 = uVar57 ^ (ulong)(uVar33 == uVar57) *
+                    (uVar57 ^ CONCAT62((int6)(short)(uVar43 >> 0x10),uVar18 + 0x9cc3));
+  uVar33 = uVar33 ^ (ulong)(uVar33 != uVar57) * (uVar33 ^ uVar19);
+  uVar12 = (undefined6)(uVar33 >> 0x10);
+  iVar48 = (int)uVar19 + -0x702c724c;
+  uVar65 = 0x1f;
+  uVar50 = (uint)CONCAT62((int6)((ulong)lVar24 >> 0x10),uVar30);
+  if (uVar50 != 0) {
+    for (; uVar50 >> uVar65 == 0; uVar65 = uVar65 - 1) {
     }
   }
-  bVar56 = ((byte)uVar44 & 0x1f) % 0x11;
-  uVar51 = (uint)((uVar43 + (short)uVar34 + 0x23f5 & 1) != 0) << 0x10 | uVar41 & 0xffff;
-  bVar56 = (byte)(uVar51 << bVar56) | (byte)(uVar51 >> 0x11 - bVar56);
-  uVar51 = ((uint)uVar17 | (uint)uVar43) + 0x9a + uVar44 * 4;
-  uVar14 = uVar26 ^ (ushort)(uVar43 == uVar26) * (uVar26 ^ uVar27);
-  uVar17 = uVar17 | (ushort)(uVar43 ^ (ushort)(uVar43 != uVar26) * (uVar43 ^ uVar14));
-  uVar17 = (long)((int)uVar17 * (int)uVar54) *
-           (long)SUB164(SEXT816((long)uVar17) * SEXT816((long)uVar54) >> 0x40,0);
-  uVar29 = uVar17 & 0xffffffff;
-  uVar34 = (uVar17 >> 0x20) + (ulong)uVar51 >> ((byte)uVar44 & 0x3f);
-  uVar42 = (ulong)((uVar36 + 0xa852b96d & 0xffff0000 | uVar22 & 0xffff) +
-                   (uVar22 & 0xffff0000 | (uint)(ushort)((short)uVar22 + 0x82a0)) +
-                  (uint)((uVar44 >> 0x19 & 1) != 0));
-  uVar30 = (ulong)uVar44;
-  if (SBORROW8(uVar42,uVar29) != false) {
-    uVar30 = uVar54;
+  bVar20 = ((byte)uVar65 & 0x1f) % 0x11;
+  uVar50 = (uint)((uVar15 + (short)uVar33 + 0x23f5 & 1) != 0) << 0x10 | uVar46 & 0xffff;
+  uVar47 = (ushort)(uVar50 << bVar20) | (ushort)(uVar50 >> 0x11 - bVar20);
+  uVar57 = (ulong)CONCAT22((short)(uVar46 >> 0x10),uVar47);
+  uVar50 = (int)CONCAT62(uVar12,uVar15) + 0x9a + uVar65 * 4;
+  uVar18 = uVar30 ^ (ushort)(uVar15 == uVar30) * (uVar30 ^ uVar53);
+  lVar24 = CONCAT62(uVar12,uVar15 ^ (ushort)(uVar15 != uVar30) * (uVar15 ^ uVar18));
+  uVar19 = (long)((int)lVar24 * (int)uVar35) *
+           (long)SUB164(SEXT816(lVar24) * SEXT816((long)uVar35),8);
+  uVar43 = uVar19 & 0xffffffff;
+  uVar33 = (uVar19 >> 0x20) + (ulong)uVar50 >> ((byte)uVar65 & 0x3f);
+  uVar58 = (ulong)(CONCAT22((short)(uVar55 + 0xa852b96d >> 0x10),(short)lVar34) +
+                   (int)CONCAT62((int6)((ulong)lVar34 >> 0x10),(short)lVar34 + -0x7d60) +
+                  (uint)((uVar65 >> 0x19 & 1) != 0));
+  uVar19 = (ulong)uVar65;
+  if (SBORROW8(uVar58,uVar43) != false) {
+    uVar19 = uVar35;
   }
-  uVar47 = (ushort)uVar51 & 0xff00 | (ushort)(uVar51 >> 1) & 0x7f;
-  bVar9 = (byte)uVar29;
-  uVar26 = (short)uVar15 + 0xa01d;
-  uVar44 = uVar15 & 0xffff0000 | uVar26 & 0xffffff00 |
-           (uint)(byte)((char)uVar26 + ((char)uVar22 + 1U | 0x93));
-  bVar25 = (byte)uVar30 << ((byte)uVar30 & 0x1f);
-  uVar39 = ((ushort)((uVar53 & 0xffff0000 |
-                     (uint)(ushort)(((short)uVar53 + -0x3872) - (ushort)(uVar42 < uVar29))) >>
-                    (bVar25 & 0x3f)) | (ushort)((uVar21 | uVar14) << 0x40 - (bVar25 & 0x3f))) -
-           uVar47;
-  bVar40 = (byte)uVar39;
-  bVar12 = bVar25 ^ (bVar9 == bVar25) * (bVar25 ^ bVar40);
-  uVar54 = uVar30 & 0xffffffffffffff00 | (ulong)bVar12 | 1 << ((ulong)uVar14 & 0x3f);
-  bVar13 = (char)uVar34 + -0x6e + ((char)(bVar56 ^ bVar9) < '\0');
-  uVar34 = uVar34 & 0xffffffffffffff00;
-  bVar6 = (byte)uVar54;
-  bVar18 = (byte)(uVar34 >> 8);
-  uVar42 = (ulong)uVar44 << (bVar6 & 0x3f) | (ulong)(uVar44 >> 0x40 - (bVar6 & 0x3f));
-  uVar21 = (uVar7 & 0x7f0000 | uVar48) << 9;
-  uVar44 = (uint)(uVar21 << (bVar6 & 0x1f)) | (uint)(uVar21 >> 0x21 - (bVar6 & 0x1f));
-  bVar5 = (bVar6 & 0x1f) % 0x11;
-  sVar10 = (short)uVar44;
-  uVar43 = (ushort)(char)bVar56;
-  uVar21 = (ulong)(uVar41 & 0xffff0000) & 0xfffffffffff70000;
-  uVar47 = (uVar47 | 1) << (bVar6 & 0x1f);
-  bVar32 = bVar6 + (char)uVar14;
-  uVar14 = (short)((ushort)uVar34 | (ushort)bVar13) >> (bVar32 & 0x1f);
-  uVar34 = (ulong)((byte)(bVar9 ^ (bVar9 != bVar25) * (bVar9 ^ bVar12) ^ bVar13) + 0xe0223518) *
-           -0x37e26697;
-  lVar24 = (ulong)CONCAT11(0xff,bVar32) << 1;
-  uVar26 = (short)(char)bVar56 + 0xed6e;
-  if (-1 < (short)(uVar14 & 0xff |
-                  (ushort)(byte)((char)((ulong)uVar14 >> 8) -
-                                (char)((ulong)(ushort)((ushort)(((byte)(((char)(uVar29 >> 8) -
-                                                                        (char)(uVar30 >> 8)) + -1 +
-                                                                       bVar18) & 0x3f) << 8 |
-                                                               uVar43 & 0xff) %
-                                                       (ushort)(byte)((byte)(uVar42 >> 8) | 0xc0) <<
-                                                      8) >> 8)) << 8)) {
-    uVar26 = uVar39 & 0xff00 | (ushort)(byte)(bVar40 + 0x17);
+  bVar62 = (byte)uVar50 >> 1;
+  bVar20 = (byte)uVar43;
+  sVar40 = (short)iVar48 + -0x5fe3;
+  uVar65 = CONCAT31((int3)(CONCAT22((short)((uint)iVar48 >> 0x10),sVar40) >> 8),
+                    (char)sVar40 + ((char)lVar34 + 1U | 0x93));
+  uVar12 = (undefined6)(uVar43 >> 0x10);
+  bVar49 = (byte)uVar19 << ((byte)uVar19 & 0x1f);
+  uVar30 = (ushort)CONCAT31((int3)(uVar50 >> 8),bVar62);
+  sVar31 = ((ushort)(CONCAT22((short)(uVar61 >> 0x10),
+                              ((short)uVar61 + -0x3872) - (ushort)(uVar58 < uVar43)) >>
+                    (bVar49 & 0x3f)) | uVar18 << 0x40 - (bVar49 & 0x3f)) - uVar30;
+  bVar26 = (byte)sVar31;
+  bVar6 = bVar49 ^ (bVar20 == bVar49) * (bVar49 ^ bVar26);
+  bVar49 = bVar20 ^ (bVar20 != bVar49) * (bVar20 ^ bVar6);
+  uVar58 = CONCAT71((int7)(uVar19 >> 8),bVar6) | 1L << ((ulong)uVar18 & 0x3f);
+  bVar17 = (char)uVar33 + -0x6e + ((char)((byte)uVar47 ^ bVar20) < '\0');
+  bVar6 = (byte)uVar58;
+  bVar14 = (byte)(uVar33 >> 8);
+  uVar52 = (ulong)uVar65 << (bVar6 & 0x3f) | (ulong)(uVar65 >> 0x40 - (bVar6 & 0x3f));
+  uVar44 = uVar57 & 0xfffffffffff7ffff;
+  uVar35 = (uVar35 & 0x7fffff) << 9;
+  uVar65 = (uint)(uVar35 << (bVar6 & 0x1f)) | (uint)(uVar35 >> 0x21 - (bVar6 & 0x1f));
+  bVar20 = (bVar6 & 0x1f) % 0x11;
+  sVar40 = (short)uVar65;
+  cVar7 = (char)uVar44;
+  uVar45 = (undefined6)(uVar44 >> 0x10);
+  uVar15 = (uVar30 | 1) << (bVar6 & 0x1f);
+  bVar21 = bVar6 + (char)uVar18;
+  uVar35 = CONCAT62((int6)(uVar58 >> 0x10),CONCAT11((byte)(uVar58 >> 8) >> 1,bVar6)) & 0xffffffff;
+  uVar58 = (ulong)((bVar49 ^ bVar17) + 0xe0223518) * -0x37e26697;
+  uVar19 = CONCAT62(uVar12,(short)CONCAT71((int7)(CONCAT62(uVar12,CONCAT11(((char)(uVar43 >> 8) -
+                                                                           (char)(uVar19 >> 8)) + -1
+                                                                           + bVar14,bVar49)) >> 8),
+                                           cVar7)) & 0xffffffffffff3fff;
+  lVar24 = (ulong)CONCAT11(0xff,bVar21) << 1;
+  uVar30 = (short)cVar7 + 0xed6e;
+  if (-1 < (char)((char)((ushort)((short)CONCAT71((int7)(uVar33 >> 8),bVar17) >> (bVar21 & 0x1f)) >>
+                        8) - (char)((ushort)uVar19 % (ushort)(byte)((byte)(uVar52 >> 8) | 0xc0)))) {
+    uVar30 = CONCAT11((char)((ushort)sVar31 >> 8),bVar26 + 0x17);
   }
-  uVar14 = CONCAT11((byte)((ulong)lVar24 >> 8) ^ (byte)uVar42 & bVar18,(char)lVar24) + 0xebb4;
-  uVar39 = CONCAT11((byte)(uVar54 >> 8) >> 1,bVar6) * -0x5afe;
-  uVar44 = uVar44 & 0xffff0000 |
-           (uint)(ushort)((sVar10 << bVar5 |
-                          (ushort)(CONCAT12((uVar51 >> 1 & 1) != 0,sVar10) >> 0x11 - bVar5)) << 1 |
-                         uVar14 >> 0xf);
-  uVar28 = (ushort)uVar34 & 0xffdf;
-  uVar34 = uVar34 & 0xffffffffffff0000;
-  uVar17 = CONCAT71((uint7)(uint6)(int6)(short)(uVar17 >> 0x10) << 8,0x53);
-  uVar17 = (uVar17 & 0xffffffff) * (uVar17 & 0xffffffff);
-  uVar41 = ((uint)uVar21 | (uint)uVar43) + 0xa244c772;
-  uVar49 = (ushort)uVar41 & 0xff00 | (ushort)(byte)((char)uVar41 - (char)uVar26);
-  uVar15 = (uint)(uVar17 >> 0x20);
-  if (!SBORROW1((char)uVar41,(char)uVar26)) {
-    uVar15 = (uint)uVar34 | uVar28 & 0xffffff00 | (uint)(((ulong)uVar28 & 0xfe | 0x40) >> 1);
+  uVar55 = CONCAT11((byte)((ulong)lVar24 >> 8) ^ (byte)uVar52 & bVar14,(char)lVar24) + 0x2a00ebb4;
+  uVar47 = (short)uVar35 * -0x5afe;
+  uVar18 = (ushort)uVar55;
+  uVar65 = CONCAT22((short)(uVar65 >> 0x10),
+                    (sVar40 << bVar20 |
+                    (ushort)(CONCAT12((bVar62 & 1) != 0,sVar40) >> 0x11 - bVar20)) << 1 |
+                    uVar18 >> 0xf);
+  uVar33 = uVar58 & 0xffffffffffffffdf;
+  uVar19 = CONCAT71((uint7)(uint6)(int6)(short)(uVar19 >> 0x10) << 8,0x53);
+  uVar19 = (uVar19 & 0xffffffff) * (uVar19 & 0xffffffff);
+  uVar57 = uVar57 & 0xff;
+  iVar48 = (int)CONCAT62(uVar45,(short)cVar7) + -0x5dbb388e;
+  uVar43 = uVar19 >> 0x20;
+  if (!SBORROW1((char)iVar48,(char)uVar30)) {
+    uVar43 = CONCAT71((int7)(uVar33 >> 8),(byte)((byte)uVar33 | 0x40) >> 1);
   }
-  uVar17 = uVar17 & 0xffffffff ^ (ulong)uVar43 & 0xff;
-  uVar27 = (ushort)((int)(uVar37 & 0xffff0000 | (uint)uVar27) >> 2);
-  uVar37 = (uint)((ulong)uVar43 & 0xff);
-  if (uVar27 != uVar49 && (SBORROW2(uVar27,uVar49) != false) == (short)(uVar27 - uVar49) < 0) {
-    uVar37 = uVar15;
+  uVar19 = uVar19 & 0xffffffff ^ uVar57;
+  sVar40 = (short)(CONCAT22(uVar3,uVar53) >> 2);
+  sVar31 = (short)CONCAT31((int3)((uint)iVar48 >> 8),(char)iVar48 - (char)uVar30);
+  if (sVar40 != sVar31 && (SBORROW2(sVar40,sVar31) != false) == (short)(sVar40 - sVar31) < 0) {
+    uVar57 = uVar43;
   }
-  if ((uint)uVar17 != uVar44) {
-    uVar17 = (ulong)uVar44;
+  if ((uint)uVar19 != uVar65) {
+    uVar19 = (ulong)uVar65;
   }
-  uVar27 = uVar49 << 1 | (ushort)((short)uVar49 < 0);
-  uVar41 = uVar41 & 0xffff0000 | (uint)uVar27;
-  bVar56 = (byte)uVar14 & 0xf;
-  if ((short)uVar49 < 0 != (short)uVar27 < 0) {
-    bVar56 = (byte)uVar17;
+  auVar1._2_6_ = uVar45;
+  auVar1._0_2_ = (short)cVar7 | 1 << (uVar18 & 0xf);
+  uVar18 = sVar31 << 1 | (ushort)(sVar31 < 0);
+  iVar48 = CONCAT22((short)((uint)iVar48 >> 0x10),uVar18);
+  uVar33 = (ulong)uVar55 & 0xffffffffffffff0f;
+  if (sVar31 < 0 != (short)uVar18 < 0) {
+    uVar33 = uVar19;
   }
-  uVar36 = uVar37 & 0xffff0000 | (uint)((ushort)uVar37 & uVar47) | 0xc0000000;
-  uVar37 = (uint)(((ulong)((uVar15 | 0xbbaeafb3) & 0x3fffffff) << 0x20 | uVar17) / (ulong)uVar36);
-  auVar3 = (ZEXT116(0) << 0x40 | ZEXT816(uVar21 | (ushort)(uVar43 | 1 << (uVar14 & 0xf)))) >> 0xf;
-  uVar44 = uVar37 >> (bVar56 & 0x1f) | uVar37 << 0x20 - (bVar56 & 0x1f);
-  uVar17 = (ulong)uVar36 << (bVar56 & 0x3f) | (ulong)(uVar36 >> 0x40 - (bVar56 & 0x3f));
-  bVar56 = SUB161(auVar3,0) & 0xdf;
-  uVar37 = uVar44 & 0xffff0000;
-  if (SCARRY2((short)uVar44,uVar26 | uVar39)) {
-    uVar34 = uVar17;
+  uVar55 = (uint)CONCAT62((int6)(uVar57 >> 0x10),(ushort)uVar57 & uVar15) | 0xc0000000;
+  uVar65 = (uint)(((ulong)(((uint)uVar43 | 0xbbaeafb3) & 0x3fffffff) << 0x20 | uVar19) /
+                 (ulong)uVar55);
+  auVar1._8_8_ = 0;
+  bVar20 = (byte)uVar33 & 0x1f;
+  uVar65 = uVar65 >> bVar20 | uVar65 << 0x20 - bVar20;
+  bVar20 = (byte)uVar33 & 0x3f;
+  uVar57 = (ulong)uVar55 << bVar20 | (ulong)(uVar55 >> 0x40 - bVar20);
+  uVar53 = SUB162((ZEXT116(0) << 0x40 | auVar1) >> 0xf,0) & 0xffdf;
+  uVar18 = (ushort)(uVar65 >> 0x10);
+  uVar19 = uVar58 & 0xffffffffffff0000;
+  if (SCARRY2((short)uVar65,uVar30 | uVar47)) {
+    uVar19 = uVar57;
   }
   lVar24 = 0;
-  if (uVar17 != 0) {
-    for (; (uVar17 >> lVar24 & 1) == 0; lVar24 = lVar24 + 1) {
+  if (uVar57 != 0) {
+    for (; (uVar57 >> lVar24 & 1) == 0; lVar24 = lVar24 + 1) {
     }
   }
-  bVar60 = (auVar3 & (undefined  [16])0xdf) == (undefined  [16])0x0;
-  bVar56 = bVar56 ^ bVar60 * bVar56;
-  uVar44 = (uVar37 | (byte)(!bVar60 * bVar56)) - 1;
-  uVar41 = (uVar41 << 1) >> 0x14 | uVar41 << 0xd;
-  for (lVar55 = 0; (0x382aU >> lVar55 & 1) == 0; lVar55 = lVar55 + 1) {
+  bVar6 = (byte)uVar53;
+  bVar20 = (byte)(uVar53 >> 8);
+  bVar49 = bVar6 ^ (bVar6 == 0) * bVar6;
+  iVar28 = CONCAT31((int3)(((uint)uVar18 << 0x10) >> 8),(bVar6 != 0) * bVar49) + -1;
+  uVar65 = (uint)(iVar48 << 1) >> 0x14 | iVar48 << 0xd;
+  uVar4 = (uint3)((uint)iVar28 >> 8);
+  for (lVar34 = 0; (0x382aU >> lVar34 & 1) == 0; lVar34 = lVar34 + 1) {
   }
-  uVar15 = (uVar44 & 0xff0000) >> 8;
-  uVar36 = (uVar44 & 0xff00) << 8;
-  uVar26 = (ushort)(SUB162(auVar3,0) & 0xff00 | (ushort)bVar56) >> 1;
-  uVar19 = (uint)(uVar39 - (short)(uVar37 >> 9) & uVar26);
-  uVar45 = (uint)lVar24 & 0xffff0000 | (ushort)lVar24 & 0xffffff00 | (uint)(byte)lVar24;
-  uVar37 = (uVar44 >> 0x18 | uVar15 | uVar36) + 0x39dd33b6 +
-           (uint)(byte)((ulong)(uVar49 << 1 & 0xff00) >> 8) * 0x800;
-  uVar22 = uVar26 & 0xffffff00 | uVar44 >> 0x18;
-  uVar34 = (uVar34 & 0xffffff00 | (ulong)(byte)((char)uVar34 >> 6)) & 0xffffffffd6a00ef3;
-  uVar21 = (ulong)uVar37 & 0xffffffffffffffa3;
-  uVar53 = (uint)uVar34 & 0x1f;
-  uVar46 = uVar45 ^ 1 << uVar53;
-  bVar56 = (byte)uVar21 & 0x1f;
-  uVar21 = uVar21 >> 1;
-  uVar44 = uVar41 + 0xd5 + uVar19;
-  if ((byte)uVar34 != 0xe7) {
-    uVar21 = (ulong)(uVar37 >> 0x11) << 0x10;
+  uVar61 = (uint)(uVar4 >> 0x10) | uVar4 & 0xff00 | (uVar4 & 0xff) << 0x10;
+  uVar30 = CONCAT11(bVar20,bVar49) >> 1;
+  uVar64 = (uint)CONCAT62((int6)(uVar35 >> 0x10),uVar47 - (short)(((uint)uVar18 << 0x10) >> 9)) &
+           (uint)uVar30;
+  uVar55 = uVar61 + 0x39dd33b6 + (uint)(sVar31 << 1 & 0xff00) * 8;
+  uVar51 = (uint)CONCAT11(bVar20 >> 1,(char)((uint)iVar28 >> 0x18));
+  uVar35 = CONCAT71((int7)((uVar19 & 0xffffffff) >> 8),(char)(uVar19 & 0xffffffff) >> 6) &
+           0xffffffffd6a00ef3;
+  uVar19 = (ulong)uVar55 & 0xffffffffffffffa3;
+  uVar27 = (uint)uVar35 & 0x1f;
+  uVar22 = (uint)lVar24 ^ 1 << uVar27;
+  bVar20 = (byte)uVar19 & 0x1f;
+  uVar19 = uVar19 >> 1;
+  uVar46 = uVar65 + 0xd5 + uVar64;
+  if ((byte)uVar35 != 0xe7) {
+    uVar19 = (ulong)(uVar55 >> 0x11) << 0x10;
   }
-  uVar48 = 0x9d800000;
-  if ((byte)uVar34 < 0xe8) {
-    uVar48 = uVar34;
+  uVar43 = 0x9d800000;
+  if ((byte)uVar35 < 0xe8) {
+    uVar43 = uVar35;
   }
-  uVar15 = (uVar15 | uVar26 & 0xff) * (uVar44 & 0xffff);
-  uVar16 = (uint)uVar34 & 0xffff0000 | uVar15 >> 0x10;
-  uVar26 = (ushort)uVar15;
-  uVar37 = ((uVar37 * 0x2d695007 ^ (uint)(1 << ((ulong)uVar37 & 0x23))) << 1 | 1) &
-           ~(1 << (uVar46 & 0x1f));
-  uVar14 = (short)uVar37 + uVar26;
-  sVar8 = (sbyte)(uVar21 & 0xffffffffffffff0f);
-  uVar48 = uVar48 & 0xffffffffffff0000 |
-           (ulong)(ushort)((short)uVar48 << sVar8 |
-                          (ushort)(uVar21 & 0xffffffffffffff0f) >> 0x10 - sVar8);
-  uVar26 = uVar26 & 0x3583;
-  uVar34 = (ulong)uVar36 | (ulong)(ushort)(uVar26 / 0xc9 | uVar26 % 0xc9 << 8);
-  bVar5 = (byte)((uVar21 & 0xffffffffffffff00) >> 8);
-  return uVar34 + ((ulong)(ushort)(short)(char)bVar5 & 0xffffffffffffff00 | 0x36a3feae43650000 |
-                  (ulong)(byte)(bVar5 >> 4 | bVar5 << 4)) +
-         (uVar21 & 0xffffffffffffff00 | (ulong)(byte)((uVar16 < uVar14) << 7)) +
-         (ulong)(uVar16 - uVar14 ^ 1 << ((uint)uVar48 & 0x1f)) +
-         (ulong)(uint)((int)uVar19 >> ((byte)uVar21 & 0x1f)) +
-         (ulong)((uint)uVar14 << 0x1e | (uint)uVar34 >> 2) +
-         (ulong)((uint)(CONCAT14((uVar45 >> uVar53 & 1) != 0,uVar22) >> bVar56) |
-                uVar22 << 0x21 - bVar56) + (ulong)uVar37 + uVar48 + (uVar17 >> 10 | uVar17 << 0x36)
-         + (ulong)uVar46 + (ulong)(uVar44 & 0xffff0000 | (uint)(ushort)((short)uVar44 << 0xd)) +
-         (ulong)uVar41 +
-         ((ulong)((uVar51 & 0xffff0000 | (uVar47 | 0xc000) >> 0xf) - 1 & 0xffffff00) << 0x1f | 1) +
-         -0x50be7eb0a20e3663;
+  iVar48 = (CONCAT31((int3)(uVar61 >> 8),(char)uVar30) & 0xffff) * (uVar46 & 0xffff);
+  sVar40 = (short)iVar48;
+  uVar61 = ((uVar55 * 0x2d695007 ^ (uint)(1L << ((ulong)uVar55 & 0x23))) << 1 | 1) &
+           ~(1 << (uVar22 & 0x1f));
+  uVar18 = (short)uVar61 + sVar40;
+  uVar33 = uVar19 & 0xffffffffffffff0f;
+  lVar41 = CONCAT62((int6)(uVar43 >> 0x10),
+                    (short)uVar43 << (sbyte)uVar33 | (ushort)uVar33 >> 0x10 - (sbyte)uVar33);
+  uVar55 = (uint)CONCAT62((int6)(uVar35 >> 0x10),(short)((uint)iVar48 >> 0x10));
+  uVar35 = (ulong)CONCAT22((short)(uVar4 & 0xff),sVar40) & 0xffffffffffff3583;
+  uVar30 = (ushort)uVar35;
+  lVar34 = CONCAT62((int6)(uVar35 >> 0x10),CONCAT11((char)(uVar30 % 0xc9),(char)(uVar30 / 0xc9)));
+  bVar49 = (byte)(uVar33 >> 8);
+  return lVar34 + CONCAT71((int7)(CONCAT62(0x36a3feae4365,(short)(char)bVar49) >> 8),
+                           bVar49 >> 4 | bVar49 << 4) +
+         CONCAT71((int7)(uVar33 >> 8),(uVar55 < uVar18) << 7) +
+         (ulong)(uVar55 - uVar18 ^ 1 << ((uint)lVar41 & 0x1f)) +
+         (ulong)(uint)((int)uVar64 >> ((byte)uVar19 & 0x1f)) +
+         (ulong)((uint)uVar18 << 0x1e | (uint)lVar34 >> 2) +
+         (ulong)((uint)(CONCAT14(((uint)lVar24 >> uVar27 & 1) != 0,uVar51) >> bVar20) |
+                uVar51 << 0x21 - bVar20) + (ulong)uVar61 + lVar41 + (uVar57 >> 10 | uVar57 << 0x36)
+         + (ulong)uVar22 + (ulong)CONCAT22((short)(uVar46 >> 0x10),(short)uVar46 << 0xd) +
+         (ulong)uVar65 +
+         CONCAT71((int7)(((ulong)(CONCAT22((short)(uVar50 >> 0x10),(uVar15 | 0xc000) >> 0xf) - 1U &
+                                 0xffffff00) << 0x1f) >> 8),1) + -0x50be7eb0a20e3663;
 }
 
 

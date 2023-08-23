@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -10,27 +11,6 @@ typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
-typedef struct _s_HandlerType _s_HandlerType, *P_s_HandlerType;
-
-typedef struct _s_HandlerType HandlerType;
-
-typedef struct TypeDescriptor TypeDescriptor, *PTypeDescriptor;
-
-typedef int ptrdiff_t;
-
-struct TypeDescriptor {
-    dword hash;
-    void * spare;
-    char name[0];
-};
-
-struct _s_HandlerType {
-    uint adjectives;
-    struct TypeDescriptor * pType;
-    ptrdiff_t dispCatchObj;
-    void * addressOfHandler;
-};
-
 typedef unsigned short    wchar16;
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
 
@@ -46,191 +26,6 @@ union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
     struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
 };
 
-typedef struct _s_TryBlockMapEntry _s_TryBlockMapEntry, *P_s_TryBlockMapEntry;
-
-typedef int __ehstate_t;
-
-struct _s_TryBlockMapEntry {
-    __ehstate_t tryLow;
-    __ehstate_t tryHigh;
-    __ehstate_t catchHigh;
-    int nCatches;
-    HandlerType * pHandlerArray;
-};
-
-typedef struct _s_FuncInfo _s_FuncInfo, *P_s_FuncInfo;
-
-typedef struct _s_FuncInfo FuncInfo;
-
-typedef struct _s_UnwindMapEntry _s_UnwindMapEntry, *P_s_UnwindMapEntry;
-
-typedef struct _s_UnwindMapEntry UnwindMapEntry;
-
-typedef struct _s_TryBlockMapEntry TryBlockMapEntry;
-
-struct _s_FuncInfo {
-    uint magicNumber_and_bbtFlags;
-    __ehstate_t maxState;
-    UnwindMapEntry * pUnwindMap;
-    uint nTryBlocks;
-    TryBlockMapEntry * pTryBlockMap;
-    uint nIPMapEntries;
-    void * pIPToStateMap;
-};
-
-struct _s_UnwindMapEntry {
-    __ehstate_t toState;
-    void (* action)(void);
-};
-
-typedef struct _STARTUPINFOA _STARTUPINFOA, *P_STARTUPINFOA;
-
-typedef ulong DWORD;
-
-typedef char CHAR;
-
-typedef CHAR * LPSTR;
-
-typedef ushort WORD;
-
-typedef uchar BYTE;
-
-typedef BYTE * LPBYTE;
-
-typedef void * HANDLE;
-
-struct _STARTUPINFOA {
-    DWORD cb;
-    LPSTR lpReserved;
-    LPSTR lpDesktop;
-    LPSTR lpTitle;
-    DWORD dwX;
-    DWORD dwY;
-    DWORD dwXSize;
-    DWORD dwYSize;
-    DWORD dwXCountChars;
-    DWORD dwYCountChars;
-    DWORD dwFillAttribute;
-    DWORD dwFlags;
-    WORD wShowWindow;
-    WORD cbReserved2;
-    LPBYTE lpReserved2;
-    HANDLE hStdInput;
-    HANDLE hStdOutput;
-    HANDLE hStdError;
-};
-
-typedef struct _STARTUPINFOA * LPSTARTUPINFOA;
-
-typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
-
-typedef struct _CONTEXT CONTEXT;
-
-typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA, *P_FLOATING_SAVE_AREA;
-
-typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
-
-struct _FLOATING_SAVE_AREA {
-    DWORD ControlWord;
-    DWORD StatusWord;
-    DWORD TagWord;
-    DWORD ErrorOffset;
-    DWORD ErrorSelector;
-    DWORD DataOffset;
-    DWORD DataSelector;
-    BYTE RegisterArea[80];
-    DWORD Cr0NpxState;
-};
-
-struct _CONTEXT {
-    DWORD ContextFlags;
-    DWORD Dr0;
-    DWORD Dr1;
-    DWORD Dr2;
-    DWORD Dr3;
-    DWORD Dr6;
-    DWORD Dr7;
-    FLOATING_SAVE_AREA FloatSave;
-    DWORD SegGs;
-    DWORD SegFs;
-    DWORD SegEs;
-    DWORD SegDs;
-    DWORD Edi;
-    DWORD Esi;
-    DWORD Ebx;
-    DWORD Edx;
-    DWORD Ecx;
-    DWORD Eax;
-    DWORD Ebp;
-    DWORD Eip;
-    DWORD SegCs;
-    DWORD EFlags;
-    DWORD Esp;
-    DWORD SegSs;
-    BYTE ExtendedRegisters[512];
-};
-
-typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
-
-typedef struct _EXCEPTION_RECORD EXCEPTION_RECORD;
-
-typedef EXCEPTION_RECORD * PEXCEPTION_RECORD;
-
-typedef void * PVOID;
-
-typedef ulong ULONG_PTR;
-
-struct _EXCEPTION_RECORD {
-    DWORD ExceptionCode;
-    DWORD ExceptionFlags;
-    struct _EXCEPTION_RECORD * ExceptionRecord;
-    PVOID ExceptionAddress;
-    DWORD NumberParameters;
-    ULONG_PTR ExceptionInformation[15];
-};
-
-typedef CHAR * LPCSTR;
-
-typedef CONTEXT * PCONTEXT;
-
-typedef long LONG;
-
-typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
-
-struct IMAGE_DOS_HEADER {
-    char e_magic[2]; // Magic number
-    word e_cblp; // Bytes of last page
-    word e_cp; // Pages in file
-    word e_crlc; // Relocations
-    word e_cparhdr; // Size of header in paragraphs
-    word e_minalloc; // Minimum extra paragraphs needed
-    word e_maxalloc; // Maximum extra paragraphs needed
-    word e_ss; // Initial (relative) SS value
-    word e_sp; // Initial SP value
-    word e_csum; // Checksum
-    word e_ip; // Initial IP value
-    word e_cs; // Initial (relative) CS value
-    word e_lfarlc; // File address of relocation table
-    word e_ovno; // Overlay number
-    word e_res[4][4]; // Reserved words
-    word e_oemid; // OEM identifier (for e_oeminfo)
-    word e_oeminfo; // OEM information; e_oemid specific
-    word e_res2[10][10]; // Reserved words
-    dword e_lfanew; // File address of new exe header
-    byte e_program[64]; // Actual DOS program
-};
-
-typedef uint UINT_PTR;
-
-typedef long LONG_PTR;
-
-typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
-
-struct _EXCEPTION_POINTERS {
-    PEXCEPTION_RECORD ExceptionRecord;
-    PCONTEXT ContextRecord;
-};
-
 typedef struct HFONT__ HFONT__, *PHFONT__;
 
 typedef struct HFONT__ * HFONT;
@@ -242,6 +37,8 @@ struct HFONT__ {
 typedef struct tagRECT tagRECT, *PtagRECT;
 
 typedef struct tagRECT RECT;
+
+typedef long LONG;
 
 struct tagRECT {
     LONG left;
@@ -270,7 +67,13 @@ struct HDC__ {
     int unused;
 };
 
+typedef uchar BYTE;
+
+typedef uint UINT_PTR;
+
 typedef UINT_PTR WPARAM;
+
+typedef long LONG_PTR;
 
 typedef LONG_PTR LRESULT;
 
@@ -293,6 +96,8 @@ struct tagSIZE {
     LONG cy;
 };
 
+typedef ushort WORD;
+
 typedef struct HINSTANCE__ * HINSTANCE;
 
 typedef struct HWND__ HWND__, *PHWND__;
@@ -303,6 +108,8 @@ struct HWND__ {
     int unused;
 };
 
+typedef ulong DWORD;
+
 typedef HINSTANCE HMODULE;
 
 typedef int BOOL;
@@ -310,6 +117,8 @@ typedef int BOOL;
 typedef struct HBRUSH__ * HBRUSH;
 
 typedef struct tagSIZE * LPSIZE;
+
+typedef BYTE * LPBYTE;
 
 typedef uint UINT;
 
@@ -540,6 +349,133 @@ struct StringFileInfo {
     word wType;
 };
 
+typedef struct _STARTUPINFOA _STARTUPINFOA, *P_STARTUPINFOA;
+
+typedef char CHAR;
+
+typedef CHAR * LPSTR;
+
+typedef void * HANDLE;
+
+struct _STARTUPINFOA {
+    DWORD cb;
+    LPSTR lpReserved;
+    LPSTR lpDesktop;
+    LPSTR lpTitle;
+    DWORD dwX;
+    DWORD dwY;
+    DWORD dwXSize;
+    DWORD dwYSize;
+    DWORD dwXCountChars;
+    DWORD dwYCountChars;
+    DWORD dwFillAttribute;
+    DWORD dwFlags;
+    WORD wShowWindow;
+    WORD cbReserved2;
+    LPBYTE lpReserved2;
+    HANDLE hStdInput;
+    HANDLE hStdOutput;
+    HANDLE hStdError;
+};
+
+typedef struct _STARTUPINFOA * LPSTARTUPINFOA;
+
+typedef struct _CONTEXT _CONTEXT, *P_CONTEXT;
+
+typedef struct _CONTEXT CONTEXT;
+
+typedef struct _FLOATING_SAVE_AREA _FLOATING_SAVE_AREA, *P_FLOATING_SAVE_AREA;
+
+typedef struct _FLOATING_SAVE_AREA FLOATING_SAVE_AREA;
+
+struct _FLOATING_SAVE_AREA {
+    DWORD ControlWord;
+    DWORD StatusWord;
+    DWORD TagWord;
+    DWORD ErrorOffset;
+    DWORD ErrorSelector;
+    DWORD DataOffset;
+    DWORD DataSelector;
+    BYTE RegisterArea[80];
+    DWORD Cr0NpxState;
+};
+
+struct _CONTEXT {
+    DWORD ContextFlags;
+    DWORD Dr0;
+    DWORD Dr1;
+    DWORD Dr2;
+    DWORD Dr3;
+    DWORD Dr6;
+    DWORD Dr7;
+    FLOATING_SAVE_AREA FloatSave;
+    DWORD SegGs;
+    DWORD SegFs;
+    DWORD SegEs;
+    DWORD SegDs;
+    DWORD Edi;
+    DWORD Esi;
+    DWORD Ebx;
+    DWORD Edx;
+    DWORD Ecx;
+    DWORD Eax;
+    DWORD Ebp;
+    DWORD Eip;
+    DWORD SegCs;
+    DWORD EFlags;
+    DWORD Esp;
+    DWORD SegSs;
+    BYTE ExtendedRegisters[512];
+};
+
+typedef struct _EXCEPTION_RECORD _EXCEPTION_RECORD, *P_EXCEPTION_RECORD;
+
+typedef struct _EXCEPTION_RECORD EXCEPTION_RECORD;
+
+typedef EXCEPTION_RECORD * PEXCEPTION_RECORD;
+
+typedef void * PVOID;
+
+typedef ulong ULONG_PTR;
+
+struct _EXCEPTION_RECORD {
+    DWORD ExceptionCode;
+    DWORD ExceptionFlags;
+    struct _EXCEPTION_RECORD * ExceptionRecord;
+    PVOID ExceptionAddress;
+    DWORD NumberParameters;
+    ULONG_PTR ExceptionInformation[15];
+};
+
+typedef CHAR * LPCSTR;
+
+typedef CONTEXT * PCONTEXT;
+
+typedef struct IMAGE_DOS_HEADER IMAGE_DOS_HEADER, *PIMAGE_DOS_HEADER;
+
+struct IMAGE_DOS_HEADER {
+    char e_magic[2]; // Magic number
+    word e_cblp; // Bytes of last page
+    word e_cp; // Pages in file
+    word e_crlc; // Relocations
+    word e_cparhdr; // Size of header in paragraphs
+    word e_minalloc; // Minimum extra paragraphs needed
+    word e_maxalloc; // Maximum extra paragraphs needed
+    word e_ss; // Initial (relative) SS value
+    word e_sp; // Initial SP value
+    word e_csum; // Checksum
+    word e_ip; // Initial IP value
+    word e_cs; // Initial (relative) CS value
+    word e_lfarlc; // File address of relocation table
+    word e_ovno; // Overlay number
+    word e_res[4][4]; // Reserved words
+    word e_oemid; // OEM identifier (for e_oeminfo)
+    word e_oeminfo; // OEM information; e_oemid specific
+    word e_res2[10][10]; // Reserved words
+    dword e_lfanew; // File address of new exe header
+    byte e_program[64]; // Actual DOS program
+};
+
 typedef struct CDC CDC, *PCDC;
 
 struct CDC { // PlaceHolder Structure
@@ -735,6 +671,13 @@ typedef struct CPoint CPoint, *PCPoint;
 struct CPoint { // PlaceHolder Structure
 };
 
+typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
+
+struct _EXCEPTION_POINTERS {
+    PEXCEPTION_RECORD ExceptionRecord;
+    PCONTEXT ContextRecord;
+};
+
 typedef int (* _onexit_t)(void);
 
 typedef struct _startupinfo _startupinfo, *P_startupinfo;
@@ -759,7 +702,7 @@ undefined4 * __fastcall FUN_00401020(undefined4 *param_1)
 CWinApp * __thiscall FUN_00401040(void *this,byte param_1)
 
 {
-  CWinApp::_CWinApp((CWinApp *)this);
+  CWinApp::~CWinApp((CWinApp *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
   }
@@ -768,14 +711,12 @@ CWinApp * __thiscall FUN_00401040(void *this,byte param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-void __thiscall CWinApp::_CWinApp(CWinApp *this)
+void __thiscall CWinApp::~CWinApp(CWinApp *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401824. Too many branches
                     // WARNING: Treating indirect jump as call
-  _CWinApp();
+  ~CWinApp(this);
   return;
 }
 
@@ -790,40 +731,47 @@ void FUN_00401080(void)
 
 
 
+void FUN_00401090(void)
+
+{
+  FUN_004019a0((_onexit_t)&LAB_004010a0);
+  return;
+}
+
+
+
 undefined4 __fastcall FUN_004010b0(CWinApp *param_1)
 
 {
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   CDialog local_70 [100];
   undefined4 local_c;
-  undefined *puStack8;
+  undefined *puStack_8;
   undefined4 local_4;
   
   local_4 = 0xffffffff;
-  puStack8 = &LAB_00401c78;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
+  puStack_8 = &LAB_00401c78;
+  local_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &local_c;
   CWinApp::Enable3dControls(param_1);
   FUN_00401150(local_70,(CWnd *)0x0);
   local_4 = 0;
   *(CDialog **)(param_1 + 0x20) = local_70;
   CDialog::DoModal(local_70);
   local_4 = 0xffffffff;
-  CDialog::_CDialog(local_70);
-  *in_FS_OFFSET = local_c;
+  CDialog::~CDialog(local_70);
+  *unaff_FS_OFFSET = local_c;
   return 0;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-void __thiscall CDialog::_CDialog(CDialog *this)
+void __thiscall CDialog::~CDialog(CDialog *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040182a. Too many branches
                     // WARNING: Treating indirect jump as call
-  _CDialog();
+  ~CDialog(this);
   return;
 }
 
@@ -834,16 +782,16 @@ undefined4 * __thiscall FUN_00401150(void *this,CWnd *param_1)
 {
   HINSTANCE__ *hInstance;
   HICON pHVar1;
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   LPCSTR lpIconName;
-  undefined4 local_c;
-  undefined *puStack8;
+  undefined4 uStack_c;
+  undefined *puStack_8;
   undefined4 local_4;
   
   local_4 = 0xffffffff;
-  puStack8 = &LAB_00401c98;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
+  puStack_8 = &LAB_00401c98;
+  uStack_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_c;
   CDialog::CDialog((CDialog *)this,0x66,param_1);
   local_4 = 0;
   *(undefined ***)this = &PTR_LAB_00402138;
@@ -852,7 +800,7 @@ undefined4 * __thiscall FUN_00401150(void *this,CWnd *param_1)
   hInstance = AfxFindResourceHandle((char *)0x80,(char *)0xe);
   pHVar1 = LoadIconA(hInstance,lpIconName);
   *(HICON *)((int)this + 0x60) = pHVar1;
-  *in_FS_OFFSET = local_c;
+  *unaff_FS_OFFSET = uStack_c;
   return (undefined4 *)this;
 }
 
@@ -861,7 +809,7 @@ undefined4 * __thiscall FUN_00401150(void *this,CWnd *param_1)
 CDialog * __thiscall FUN_004011c0(void *this,byte param_1)
 
 {
-  CDialog::_CDialog((CDialog *)this);
+  CDialog::~CDialog((CDialog *)this);
   if ((param_1 & 1) != 0) {
     operator_delete(this);
   }
@@ -881,8 +829,6 @@ undefined4 __fastcall FUN_00401210(CDialog *param_1)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 void __fastcall FUN_00401250(CWnd *param_1)
 
 {
@@ -890,7 +836,7 @@ void __fastcall FUN_00401250(CWnd *param_1)
   int iVar2;
   int iVar3;
   int iVar4;
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   int cWidth;
   int cEscapement;
   int cOrientation;
@@ -904,66 +850,62 @@ void __fastcall FUN_00401250(CWnd *param_1)
   DWORD iQuality;
   DWORD iPitchAndFamily;
   char *pszFaceName;
-  undefined **appuStack148 [2];
-  CFont *pCStack140;
+  undefined **appuStack_94 [2];
+  CFont *pCStack_8c;
   CBrush local_88 [4];
   undefined **local_84;
-  CPen local_80 [4];
-  undefined8 uStack124;
-  undefined local_70 [4];
-  LONG local_6c;
-  HDC local_68;
-  HDC local_64;
+  CPen aCStack_80 [4];
+  undefined8 uStack_7c;
+  RECT local_70;
   CPaintDC local_60 [4];
   HDC local_5c;
-  undefined4 uStack24;
-  undefined4 local_10;
-  undefined4 local_c;
-  undefined *puStack8;
+  undefined4 uStack_18;
+  undefined4 uStack_10;
+  undefined4 uStack_c;
+  undefined *puStack_8;
   undefined4 local_4;
   
   local_4 = 0xffffffff;
-  puStack8 = &LAB_00401cf4;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
+  puStack_8 = &LAB_00401cf4;
+  uStack_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_c;
   CPaintDC::CPaintDC(local_60,param_1);
   local_4 = 0;
   CDC::SetMapMode((CDC *)local_60,2);
   CBrush::CBrush(local_88,0xc0ffff);
   local_4 = CONCAT31(local_4._1_3_,1);
-  local_70 = 100;
-  local_6c = -100;
-  local_68 = (HDC)0x258;
-  local_64 = (HDC)0xfffffda8;
-  FillRect(local_5c,(RECT *)local_70,
-           (HBRUSH)(-(uint)((undefined *)register0x00000010 != (undefined *)0x88) & (uint)local_84))
-  ;
+  local_70.left = 100;
+  local_70.top = -100;
+  local_70.right = 600;
+  local_70.bottom = -600;
+  FillRect(local_5c,&local_70,
+           (HBRUSH)(-(uint)(&stack0x00000000 != (undefined *)0x88) & (uint)local_84));
   iVar3 = 100;
   iVar4 = -100;
   iVar2 = 0xb;
   do {
-    CDC::MoveTo((CDC *)local_60,(int)local_70,iVar3);
-    CDC::LineTo((CDC *)(local_70 + 0xc),iVar4 + 700,-100);
-    CDC::MoveTo((CDC *)(local_70 + 0xc),(int)&stack0xffffff68,100);
-    CDC::LineTo((CDC *)(local_70 + 8),600,iVar3 + -700);
+    CDC::MoveTo((CDC *)local_60,(int)&local_70,iVar3);
+    CDC::LineTo((CDC *)&local_70.bottom,iVar4 + 700,-100);
+    CDC::MoveTo((CDC *)&local_70.bottom,(int)&stack0xffffff68,100);
+    CDC::LineTo((CDC *)&local_70.right,600,iVar3 + -700);
     iVar3 = iVar3 + 0x32;
     iVar4 = iVar4 + -0x32;
     iVar2 = iVar2 + -1;
   } while (iVar2 != 0);
-  CPen::CPen(local_80,0,0x1e,0xff);
-  local_c = CONCAT31(local_c._1_3_,2);
-  local_84 = (undefined **)CDC::SelectObject((CDC *)(local_70 + 8),local_80);
-  CDC::MoveTo((CDC *)(local_70 + 8),(int)&uStack124 + 4,100);
-  CDC::LineTo((CDC *)(local_70 + 4),100,-600);
-  CDC::LineTo((CDC *)(local_70 + 4),600,-600);
-  CDC::LineTo((CDC *)(local_70 + 4),600,-100);
-  CDC::LineTo((CDC *)(local_70 + 4),100,-100);
-  if ((undefined *)register0x00000010 != (undefined *)0x88) {
-    SelectObject(local_68,local_88);
+  CPen::CPen(aCStack_80,0,0x1e,0xff);
+  uStack_c = CONCAT31(uStack_c._1_3_,2);
+  local_84 = (undefined **)CDC::SelectObject((CDC *)&local_70.right,aCStack_80);
+  CDC::MoveTo((CDC *)&local_70.right,(int)&uStack_7c + 4,100);
+  CDC::LineTo((CDC *)&local_70.top,100,-600);
+  CDC::LineTo((CDC *)&local_70.top,600,-600);
+  CDC::LineTo((CDC *)&local_70.top,600,-100);
+  CDC::LineTo((CDC *)&local_70.top,100,-100);
+  if (&stack0x00000000 != (undefined *)0x88) {
+    SelectObject((HDC)local_70.right,local_88);
   }
   iVar3 = 700;
-  CDC::SetTextAlign((CDC *)(local_70 + 4),0x18);
-  CDC::SetBkMode((CDC *)(local_70 + 4),1);
+  CDC::SetTextAlign((CDC *)&local_70.top,0x18);
+  CDC::SetBkMode((CDC *)&local_70.top,1);
   iVar2 = 0;
   do {
     pszFaceName = s_Arial_0040302c;
@@ -978,35 +920,35 @@ void __fastcall FUN_00401250(CWnd *param_1)
     cWeight = 0;
     cOrientation = 0;
     cEscapement = 0;
-    local_10 = CONCAT31(local_10._1_3_,3);
+    uStack_10 = CONCAT31(uStack_10._1_3_,3);
     cWidth = 0;
     iVar4 = _ftol();
     pHVar1 = CreateFontA(iVar4,cWidth,cEscapement,cOrientation,cWeight,bItalic,bUnderline,bStrikeOut
                          ,iCharSet,iOutPrecision,iClipPrecision,iQuality,iPitchAndFamily,pszFaceName
                         );
     CGdiObject::Attach((CGdiObject *)&stack0xffffff60,pHVar1);
-    pCStack140 = CDC::SelectObject((CDC *)(local_70 + 4),(CFont *)&stack0xffffff60);
-    TextOutA(local_68,iVar3,-600,s_Fading____00403020 + iVar2,1);
-    GetTextExtentPointA(local_64,s_Fading____00403020 + iVar2,1,(LPSIZE)&uStack124);
-    iVar3 = iVar3 + (int)uStack124;
-    if ((undefined *)register0x00000010 != (undefined *)0x8c) {
-      SelectObject(local_68,&pCStack140);
+    pCStack_8c = CDC::SelectObject((CDC *)&local_70.top,(CFont *)&stack0xffffff60);
+    TextOutA((HDC)local_70.right,iVar3,-600,s_Fading____00403020 + iVar2,1);
+    GetTextExtentPointA((HDC)local_70.bottom,s_Fading____00403020 + iVar2,1,(LPSIZE)&uStack_7c);
+    iVar3 = iVar3 + (int)uStack_7c;
+    if (&stack0x00000000 != (undefined *)0x8c) {
+      SelectObject((HDC)local_70.right,&pCStack_8c);
     }
-    local_10 = CONCAT31(local_10._1_3_,4);
+    uStack_10 = CONCAT31(uStack_10._1_3_,4);
     CGdiObject::DeleteObject((CGdiObject *)&stack0xffffff60);
     iVar2 = iVar2 + 1;
   } while (iVar2 < 9);
   local_84 = &PTR_LAB_00402228;
-  local_10._0_1_ = 5;
+  uStack_10._0_1_ = 5;
   CGdiObject::DeleteObject((CGdiObject *)&local_84);
-  appuStack148[0] = &PTR_LAB_00402228;
+  appuStack_94[0] = &PTR_LAB_00402228;
   local_84 = &PTR_LAB_00402210;
-  local_10 = CONCAT31(local_10._1_3_,6);
-  CGdiObject::DeleteObject((CGdiObject *)appuStack148);
-  appuStack148[0] = &PTR_LAB_00402210;
-  local_10 = 0xffffffff;
-  CPaintDC::_CPaintDC((CPaintDC *)(local_70 + 4));
-  *in_FS_OFFSET = uStack24;
+  uStack_10 = CONCAT31(uStack_10._1_3_,6);
+  CGdiObject::DeleteObject((CGdiObject *)appuStack_94);
+  appuStack_94[0] = &PTR_LAB_00402210;
+  uStack_10 = 0xffffffff;
+  CPaintDC::~CPaintDC((CPaintDC *)&local_70.top);
+  *unaff_FS_OFFSET = uStack_18;
   return;
 }
 
@@ -1027,19 +969,61 @@ undefined4 * __thiscall FUN_004015a0(void *this,byte param_1)
 void __fastcall FUN_004015c0(undefined4 *param_1)
 
 {
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   undefined4 local_c;
-  undefined *puStack8;
+  undefined *puStack_8;
   undefined4 local_4;
   
-  puStack8 = &LAB_00401d08;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
+  puStack_8 = &LAB_00401d08;
+  local_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &local_c;
   *param_1 = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)param_1);
   *param_1 = &PTR_LAB_00402210;
-  *in_FS_OFFSET = local_c;
+  *unaff_FS_OFFSET = local_c;
+  return;
+}
+
+
+
+void __fastcall FUN_00401610(undefined4 *param_1)
+
+{
+  undefined4 *unaff_FS_OFFSET;
+  undefined4 local_c;
+  undefined *puStack_8;
+  undefined4 local_4;
+  
+  puStack_8 = &LAB_00401d28;
+  local_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &local_c;
+  *param_1 = &PTR_LAB_00402228;
+  local_4 = 0;
+  CGdiObject::DeleteObject((CGdiObject *)param_1);
+  *param_1 = &PTR_LAB_00402210;
+  *unaff_FS_OFFSET = local_c;
+  return;
+}
+
+
+
+void __fastcall FUN_00401660(undefined4 *param_1)
+
+{
+  undefined4 *unaff_FS_OFFSET;
+  undefined4 local_c;
+  undefined *puStack_8;
+  undefined4 local_4;
+  
+  puStack_8 = &LAB_00401d48;
+  local_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &local_c;
+  *param_1 = &PTR_LAB_00402228;
+  local_4 = 0;
+  CGdiObject::DeleteObject((CGdiObject *)param_1);
+  *param_1 = &PTR_LAB_00402210;
+  *unaff_FS_OFFSET = local_c;
   return;
 }
 
@@ -1060,77 +1044,67 @@ undefined4 * __thiscall FUN_004016b0(void *this,byte param_1)
 void __fastcall FUN_004016d0(undefined4 *param_1)
 
 {
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   undefined4 local_c;
-  undefined *puStack8;
+  undefined *puStack_8;
   undefined4 local_4;
   
-  puStack8 = &LAB_00401d68;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
+  puStack_8 = &LAB_00401d68;
+  local_c = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &local_c;
   *param_1 = &PTR_LAB_00402228;
   local_4 = 0;
   CGdiObject::DeleteObject((CGdiObject *)param_1);
   *param_1 = &PTR_LAB_00402210;
-  *in_FS_OFFSET = local_c;
+  *unaff_FS_OFFSET = local_c;
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CWinApp::CWinApp(CWinApp *this,char *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401818. Too many branches
                     // WARNING: Treating indirect jump as call
-  CWinApp();
+  CWinApp(this,param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl operator_delete(void *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040181e. Too many branches
                     // WARNING: Treating indirect jump as call
-  operator_delete();
+  operator_delete(param_1);
   return;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-void __thiscall CWinApp::_CWinApp(CWinApp *this)
+void __thiscall CWinApp::~CWinApp(CWinApp *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401824. Too many branches
                     // WARNING: Treating indirect jump as call
-  _CWinApp();
+  ~CWinApp(this);
   return;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-void __thiscall CDialog::_CDialog(CDialog *this)
+void __thiscall CDialog::~CDialog(CDialog *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040182a. Too many branches
                     // WARNING: Treating indirect jump as call
-  _CDialog();
+  ~CDialog(this);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CDialog::DoModal(CDialog *this)
 
@@ -1139,13 +1113,11 @@ int __thiscall CDialog::DoModal(CDialog *this)
   
                     // WARNING: Could not recover jumptable at 0x00401830. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = DoModal();
+  iVar1 = DoModal(this);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CWinApp::Enable3dControls(CWinApp *this)
 
@@ -1154,7 +1126,7 @@ int __thiscall CWinApp::Enable3dControls(CWinApp *this)
   
                     // WARNING: Could not recover jumptable at 0x00401836. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = Enable3dControls();
+  iVar1 = Enable3dControls(this);
   return iVar1;
 }
 
@@ -1186,20 +1158,16 @@ AFX_MODULE_STATE * AfxGetModuleState(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __thiscall CDialog::CDialog(CDialog *this,uint param_1,CWnd *param_2)
 
 {
                     // WARNING: Could not recover jumptable at 0x004018fc. Too many branches
                     // WARNING: Treating indirect jump as call
-  CDialog();
+  CDialog(this,param_1,param_2);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CDialog::OnInitDialog(CDialog *this)
 
@@ -1208,26 +1176,22 @@ int __thiscall CDialog::OnInitDialog(CDialog *this)
   
                     // WARNING: Could not recover jumptable at 0x00401902. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = OnInitDialog();
+  iVar1 = OnInitDialog(this);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
-void __thiscall CPaintDC::_CPaintDC(CPaintDC *this)
+void __thiscall CPaintDC::~CPaintDC(CPaintDC *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040191a. Too many branches
                     // WARNING: Treating indirect jump as call
-  _CPaintDC();
+  ~CPaintDC(this);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CGdiObject::DeleteObject(CGdiObject *this)
 
@@ -1236,13 +1200,11 @@ int __thiscall CGdiObject::DeleteObject(CGdiObject *this)
   
                     // WARNING: Could not recover jumptable at 0x00401920. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = DeleteObject();
+  iVar1 = DeleteObject(this);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 CFont * __thiscall CDC::SelectObject(CDC *this,CFont *param_1)
 
@@ -1251,13 +1213,11 @@ CFont * __thiscall CDC::SelectObject(CDC *this,CFont *param_1)
   
                     // WARNING: Could not recover jumptable at 0x00401926. Too many branches
                     // WARNING: Treating indirect jump as call
-  pCVar1 = (CFont *)SelectObject();
+  pCVar1 = SelectObject(this,param_1);
   return pCVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CGdiObject::Attach(CGdiObject *this,void *param_1)
 
@@ -1266,13 +1226,11 @@ int __thiscall CGdiObject::Attach(CGdiObject *this,void *param_1)
   
                     // WARNING: Could not recover jumptable at 0x0040192c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = Attach();
+  iVar1 = Attach(this,param_1);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CDC::SetBkMode(CDC *this,int param_1)
 
@@ -1281,13 +1239,11 @@ int __thiscall CDC::SetBkMode(CDC *this,int param_1)
   
                     // WARNING: Could not recover jumptable at 0x00401932. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = SetBkMode();
+  iVar1 = SetBkMode(this,param_1);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 uint __thiscall CDC::SetTextAlign(CDC *this,uint param_1)
 
@@ -1296,13 +1252,11 @@ uint __thiscall CDC::SetTextAlign(CDC *this,uint param_1)
   
                     // WARNING: Could not recover jumptable at 0x00401938. Too many branches
                     // WARNING: Treating indirect jump as call
-  uVar1 = SetTextAlign();
+  uVar1 = SetTextAlign(this,param_1);
   return uVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 CPen * __thiscall CDC::SelectObject(CDC *this,CPen *param_1)
 
@@ -1311,26 +1265,22 @@ CPen * __thiscall CDC::SelectObject(CDC *this,CPen *param_1)
   
                     // WARNING: Could not recover jumptable at 0x0040193e. Too many branches
                     // WARNING: Treating indirect jump as call
-  pCVar1 = (CPen *)SelectObject();
+  pCVar1 = SelectObject(this,param_1);
   return pCVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CPen::CPen(CPen *this,int param_1,int param_2,ulong param_3)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401944. Too many branches
                     // WARNING: Treating indirect jump as call
-  CPen();
+  CPen(this,param_1,param_2,param_3);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CDC::LineTo(CDC *this,int param_1,int param_2)
 
@@ -1339,13 +1289,11 @@ int __thiscall CDC::LineTo(CDC *this,int param_1,int param_2)
   
                     // WARNING: Could not recover jumptable at 0x0040194a. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = LineTo();
+  iVar1 = LineTo(this,param_1,param_2);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 CPoint __thiscall CDC::MoveTo(CDC *this,int param_1,int param_2)
 
@@ -1354,26 +1302,22 @@ CPoint __thiscall CDC::MoveTo(CDC *this,int param_1,int param_2)
   
                     // WARNING: Could not recover jumptable at 0x00401950. Too many branches
                     // WARNING: Treating indirect jump as call
-  CVar1 = (CPoint)MoveTo();
+  CVar1 = MoveTo(this,param_1,param_2);
   return CVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CBrush::CBrush(CBrush *this,ulong param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401956. Too many branches
                     // WARNING: Treating indirect jump as call
-  CBrush();
+  CBrush(this,param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __thiscall CDC::SetMapMode(CDC *this,int param_1)
 
@@ -1382,20 +1326,18 @@ int __thiscall CDC::SetMapMode(CDC *this,int param_1)
   
                     // WARNING: Could not recover jumptable at 0x0040195c. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = SetMapMode();
+  iVar1 = SetMapMode(this,param_1);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __thiscall CPaintDC::CPaintDC(CPaintDC *this,CWnd *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401962. Too many branches
                     // WARNING: Treating indirect jump as call
-  CPaintDC();
+  CPaintDC(this,param_1);
   return;
 }
 
@@ -1447,25 +1389,25 @@ void entry(void)
   byte **ppbVar2;
   HMODULE pHVar3;
   byte *pbVar4;
-  undefined4 *in_FS_OFFSET;
+  undefined4 *unaff_FS_OFFSET;
   HINSTANCE__ *pHVar6;
   char **local_74;
   _startupinfo local_70;
   int local_6c;
   char **local_68;
   int local_64;
-  undefined local_60 [68];
+  _STARTUPINFOA local_60;
   undefined *local_1c;
-  undefined4 uStack20;
-  undefined *puStack16;
-  undefined *puStack12;
+  undefined4 uStack_14;
+  undefined *puStack_10;
+  undefined *puStack_c;
   undefined4 local_8;
   byte *pbVar5;
   
-  puStack12 = &DAT_00402258;
-  puStack16 = &DAT_00401bf0;
-  uStack20 = *in_FS_OFFSET;
-  *in_FS_OFFSET = &uStack20;
+  puStack_c = &DAT_00402258;
+  puStack_10 = &DAT_00401bf0;
+  uStack_14 = *unaff_FS_OFFSET;
+  *unaff_FS_OFFSET = &uStack_14;
   local_1c = &stack0xffffff78;
   local_8 = 0;
   __set_app_type(2);
@@ -1482,7 +1424,7 @@ void entry(void)
   }
   FUN_00401bb0();
   _initterm(&DAT_00403010,&DAT_00403014);
-  local_70 = (int)DAT_00403118;
+  local_70.newmode = DAT_00403118;
   __getmainargs(&local_64,&local_74,&local_68,DAT_00403114,&local_70);
   _initterm(&DAT_00403000,&DAT_0040300c);
   ppbVar2 = (byte **)__p__acmdln();
@@ -1503,9 +1445,9 @@ void entry(void)
   }
   for (; (*pbVar4 != 0 && (*pbVar4 < 0x21)); pbVar4 = pbVar4 + 1) {
   }
-  local_60._44_4_ = 0;
-  GetStartupInfoA((LPSTARTUPINFOA)local_60);
-  if ((local_60._44_4_ & 1) == 0) {
+  local_60.dwFlags = 0;
+  GetStartupInfoA(&local_60);
+  if ((local_60.dwFlags & 1) == 0) {
     local_60._48_4_ = 10;
   }
   else {
@@ -1531,8 +1473,6 @@ void __dllonexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 {
@@ -1540,7 +1480,7 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
   
                     // WARNING: Could not recover jumptable at 0x00401b96. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = _XcptFilter();
+  iVar1 = _XcptFilter(_ExceptionNum,_ExceptionPtr);
   return iVar1;
 }
 
@@ -1574,8 +1514,6 @@ void FUN_00401be0(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 uint __cdecl _controlfp(uint _NewValue,uint _Mask)
 
 {
@@ -1583,7 +1521,7 @@ uint __cdecl _controlfp(uint _NewValue,uint _Mask)
   
                     // WARNING: Could not recover jumptable at 0x00401bf6. Too many branches
                     // WARNING: Treating indirect jump as call
-  uVar1 = _controlfp();
+  uVar1 = _controlfp(_NewValue,_Mask);
   return uVar1;
 }
 
@@ -1623,175 +1561,6 @@ int AfxWinMain(HINSTANCE__ *param_1,HINSTANCE__ *param_2,char *param_3,int param
                     // WARNING: Treating indirect jump as call
   iVar1 = AfxWinMain(param_1,param_2,param_3,param_4);
   return iVar1;
-}
-
-
-
-void Unwind_00401c70(void)
-
-{
-  int unaff_EBP;
-  
-  CDialog::_CDialog((CDialog *)(unaff_EBP + -0x70));
-  return;
-}
-
-
-
-void Unwind_00401c90(void)
-
-{
-  int unaff_EBP;
-  
-  CDialog::_CDialog(*(CDialog **)(unaff_EBP + -0x10));
-  return;
-}
-
-
-
-void Unwind_00401cb0(void)
-
-{
-  int unaff_EBP;
-  
-  CPaintDC::_CPaintDC((CPaintDC *)(unaff_EBP + -0x60));
-  return;
-}
-
-
-
-void Unwind_00401cb8(void)
-
-{
-  undefined4 *this;
-  int unaff_EBP;
-  undefined4 *in_FS_OFFSET;
-  undefined4 local_c;
-  undefined *puStack8;
-  undefined4 local_4;
-  
-  this = (undefined4 *)(unaff_EBP + -0x88);
-  puStack8 = &LAB_00401d48;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
-  *this = &PTR_LAB_00402228;
-  local_4 = 0;
-  CGdiObject::DeleteObject((CGdiObject *)this);
-  *this = &PTR_LAB_00402210;
-  *in_FS_OFFSET = local_c;
-  return;
-}
-
-
-
-void Unwind_00401cc3(void)
-
-{
-  undefined4 *this;
-  int unaff_EBP;
-  undefined4 *in_FS_OFFSET;
-  undefined4 local_c;
-  undefined *puStack8;
-  undefined4 local_4;
-  
-  this = (undefined4 *)(unaff_EBP + -0x78);
-  puStack8 = &LAB_00401d28;
-  local_c = *in_FS_OFFSET;
-  *in_FS_OFFSET = &local_c;
-  *this = &PTR_LAB_00402228;
-  local_4 = 0;
-  CGdiObject::DeleteObject((CGdiObject *)this);
-  *this = &PTR_LAB_00402210;
-  *in_FS_OFFSET = local_c;
-  return;
-}
-
-
-
-void Unwind_00401ccb(void)
-
-{
-  int unaff_EBP;
-  
-  FUN_004016d0((undefined4 *)(unaff_EBP + -0x94));
-  return;
-}
-
-
-
-void Unwind_00401cd6(void)
-
-{
-  int unaff_EBP;
-  
-  *(undefined ***)(unaff_EBP + -0x94) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401ce1(void)
-
-{
-  int unaff_EBP;
-  
-  *(undefined ***)(unaff_EBP + -0x78) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401ce9(void)
-
-{
-  int unaff_EBP;
-  
-  *(undefined ***)(unaff_EBP + -0x88) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401d00(void)
-
-{
-  int unaff_EBP;
-  
-  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401d20(void)
-
-{
-  int unaff_EBP;
-  
-  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401d40(void)
-
-{
-  int unaff_EBP;
-  
-  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
-  return;
-}
-
-
-
-void Unwind_00401d60(void)
-
-{
-  int unaff_EBP;
-  
-  **(undefined4 **)(unaff_EBP + -0x10) = &PTR_LAB_00402210;
-  return;
 }
 
 

@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -11,8 +12,16 @@ typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned long long    undefined8;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef short    wchar_t;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
 
 typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
@@ -27,7 +36,6 @@ union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
     struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
 };
 
-typedef unsigned short    wchar16;
 typedef long LONG;
 
 typedef struct _EXCEPTION_POINTERS _EXCEPTION_POINTERS, *P_EXCEPTION_POINTERS;
@@ -234,7 +242,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[16];
+    char pdbpath[58];
 };
 
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
@@ -467,9 +475,6 @@ typedef struct _iobuf FILE;
 
 typedef uint uintptr_t;
 
-
-// WARNING! conflicting data type names: /Demangler/wchar_t - /wchar_t
-
 typedef struct _RTC_ALLOCA_NODE _RTC_ALLOCA_NODE, *P_RTC_ALLOCA_NODE;
 
 struct _RTC_ALLOCA_NODE { // PlaceHolder Structure
@@ -520,13 +525,121 @@ int __cdecl FID_conflict___wsetargv(void)
 
 
 
+void __fastcall ___security_check_cookie_4(int param_1)
+
+{
+  if (param_1 == DAT_00417000) {
+    return;
+  }
+                    // WARNING: Subroutine does not return
+  ___report_gsfailure();
+}
+
+
+
+undefined4 thunk_FUN_00412ca0(void)
+
+{
+  return DAT_0041753c;
+}
+
+
+
+void __cdecl ___security_init_cookie(void)
+
+{
+  DWORD DVar1;
+  LARGE_INTEGER LStack_1c;
+  uint uStack_10;
+  _FILETIME _Stack_c;
+  
+  _Stack_c.dwLowDateTime = 0;
+  _Stack_c.dwHighDateTime = 0;
+  if ((DAT_00417000 == 0xbb40e64e) || ((DAT_00417000 & 0xffff0000) == 0)) {
+    GetSystemTimeAsFileTime(&_Stack_c);
+    uStack_10 = _Stack_c.dwLowDateTime ^ _Stack_c.dwHighDateTime;
+    DVar1 = GetCurrentProcessId();
+    uStack_10 = DVar1 ^ uStack_10;
+    DVar1 = GetCurrentThreadId();
+    uStack_10 = DVar1 ^ uStack_10;
+    DVar1 = GetTickCount();
+    uStack_10 = DVar1 ^ uStack_10;
+    QueryPerformanceCounter(&LStack_1c);
+    uStack_10 = uStack_10 ^ LStack_1c.s.LowPart ^ LStack_1c.s.HighPart;
+    if (uStack_10 == 0xbb40e64e) {
+      uStack_10 = 0xbb40e64f;
+    }
+    else if ((uStack_10 & 0xffff0000) == 0) {
+      uStack_10 = uStack_10 << 0x10 | uStack_10;
+    }
+    DAT_00417000 = uStack_10;
+    DAT_00417004 = ~uStack_10;
+  }
+  else {
+    DAT_00417004 = ~DAT_00417000;
+  }
+  return;
+}
+
+
+
+int __cdecl _atexit(_func_4879 *param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = __onexit((_onexit_t)param_1);
+  return (iVar1 != 0) - 1;
+}
+
+
+
+void __cdecl _lock(int _File)
+
+{
+                    // WARNING: Could not recover jumptable at 0x004139da. Too many branches
+                    // WARNING: Treating indirect jump as call
+  _lock(_File);
+  return;
+}
+
+
+
+void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  void *unaff_retaddr;
+  int iStack_8;
+  
+  iVar2 = 0;
+  iStack_8 = 0;
+  if (0 < *param_2) {
+    do {
+      iVar1 = *(int *)(param_2[1] + iVar2);
+      if ((*(int *)(iVar1 + -4 + param_1) != -0x33333334) ||
+         (*(int *)(*(int *)(param_2[1] + iVar2 + 4) + iVar1 + param_1) != -0x33333334)) {
+        _RTC_StackFailure(unaff_retaddr,*(char **)(param_2[1] + 8 + iVar2));
+      }
+      iStack_8 = iStack_8 + 1;
+      iVar2 = iVar2 + 0xc;
+    } while (iStack_8 < *param_2);
+  }
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __fastcall thunk_FUN_00411970(int param_1,undefined4 param_2,undefined param_3)
+void __cdecl ___report_gsfailure(void)
 
 {
   undefined4 in_EAX;
   HANDLE hProcess;
+  undefined4 in_ECX;
+  undefined4 in_EDX;
   undefined4 unaff_EBX;
   undefined4 unaff_EBP;
   undefined4 unaff_ESI;
@@ -547,25 +660,22 @@ void __fastcall thunk_FUN_00411970(int param_1,undefined4 param_2,undefined para
   byte in_ID;
   undefined4 unaff_retaddr;
   UINT uExitCode;
-  int iStack812;
-  undefined4 uStack808;
+  undefined4 uStack_32c;
+  undefined4 uStack_328;
   
-  if (param_1 == DAT_00417000) {
-    return;
-  }
   _DAT_00417288 =
        (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
-       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&iStack812 < 0) * 0x80 |
-       (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&iStack812 & 0xff) & 1U) == 0) * 4 |
+       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&uStack_32c < 0) * 0x80 |
+       (uint)(&stack0x00000000 == (undefined *)0x32c) * 0x40 | (uint)(in_AF & 1) * 0x10 |
+       (uint)((POPCOUNT((uint)&uStack_32c & 0xff) & 1U) == 0) * 4 |
        (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
        (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
-  _DAT_0041728c = &param_3;
+  _DAT_0041728c = &stack0x00000004;
   _DAT_004171c8 = 0x10001;
   _DAT_00417170 = 0xc0000409;
   _DAT_00417174 = 1;
-  iStack812 = DAT_00417000;
-  uStack808 = DAT_00417004;
+  uStack_32c = DAT_00417000;
+  uStack_328 = DAT_00417004;
   _DAT_0041717c = unaff_retaddr;
   _DAT_00417254 = in_GS;
   _DAT_00417258 = in_FS;
@@ -574,8 +684,8 @@ void __fastcall thunk_FUN_00411970(int param_1,undefined4 param_2,undefined para
   _DAT_00417264 = unaff_EDI;
   _DAT_00417268 = unaff_ESI;
   _DAT_0041726c = unaff_EBX;
-  _DAT_00417270 = param_2;
-  _DAT_00417274 = param_1;
+  _DAT_00417270 = in_EDX;
+  _DAT_00417274 = in_ECX;
   _DAT_00417278 = in_EAX;
   _DAT_0041727c = unaff_EBP;
   DAT_00417280 = unaff_retaddr;
@@ -596,105 +706,6 @@ void __fastcall thunk_FUN_00411970(int param_1,undefined4 param_2,undefined para
 
 
 
-undefined4 thunk_FUN_00412ca0(void)
-
-{
-  return DAT_0041753c;
-}
-
-
-
-void __cdecl ___security_init_cookie(void)
-
-{
-  DWORD DVar1;
-  uint uStack28;
-  uint uStack24;
-  uint uStack16;
-  _FILETIME _Stack12;
-  
-  _Stack12.dwLowDateTime = 0;
-  _Stack12.dwHighDateTime = 0;
-  if ((DAT_00417000 == 0xbb40e64e) || ((DAT_00417000 & 0xffff0000) == 0)) {
-    GetSystemTimeAsFileTime(&_Stack12);
-    uStack16 = _Stack12.dwLowDateTime ^ _Stack12.dwHighDateTime;
-    DVar1 = GetCurrentProcessId();
-    uStack16 = DVar1 ^ uStack16;
-    DVar1 = GetCurrentThreadId();
-    uStack16 = DVar1 ^ uStack16;
-    DVar1 = GetTickCount();
-    uStack16 = DVar1 ^ uStack16;
-    QueryPerformanceCounter((LARGE_INTEGER *)&uStack28);
-    uStack16 = uStack16 ^ uStack28 ^ uStack24;
-    if (uStack16 == 0xbb40e64e) {
-      uStack16 = 0xbb40e64f;
-    }
-    else if ((uStack16 & 0xffff0000) == 0) {
-      uStack16 = uStack16 << 0x10 | uStack16;
-    }
-    DAT_00417000 = uStack16;
-    DAT_00417004 = ~uStack16;
-  }
-  else {
-    DAT_00417004 = ~DAT_00417000;
-  }
-  return;
-}
-
-
-
-int __cdecl _atexit(void *param_1)
-
-{
-  _onexit_t p_Var1;
-  
-  p_Var1 = __onexit((_onexit_t)param_1);
-  return (p_Var1 != (_onexit_t)0x0) - 1;
-}
-
-
-
-// WARNING: Exceeded maximum restarts with more pending
-
-void __cdecl _lock(int _File)
-
-{
-                    // WARNING: Could not recover jumptable at 0x004139da. Too many branches
-                    // WARNING: Treating indirect jump as call
-  _lock();
-  return;
-}
-
-
-
-void __fastcall __RTC_CheckStackVars_8(int param_1,int *param_2)
-
-{
-  int iVar1;
-  int iVar2;
-  void *unaff_retaddr;
-  int iStack8;
-  
-  iVar2 = 0;
-  iStack8 = 0;
-  if (0 < *param_2) {
-    do {
-      iVar1 = *(int *)(param_2[1] + iVar2);
-      if ((*(int *)(iVar1 + -4 + param_1) != -0x33333334) ||
-         (*(int *)(*(int *)(param_2[1] + iVar2 + 4) + iVar1 + param_1) != -0x33333334)) {
-        _RTC_StackFailure(unaff_retaddr,*(char **)(param_2[1] + 8 + iVar2));
-      }
-      iStack8 = iStack8 + 1;
-      iVar2 = iVar2 + 0xc;
-    } while (iStack8 < *param_2);
-  }
-  return;
-}
-
-
-
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl terminate(void)
 
 {
@@ -706,8 +717,6 @@ void __cdecl terminate(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 char * __cdecl strcat(char *_Dest,char *_Source)
 
 {
@@ -715,7 +724,7 @@ char * __cdecl strcat(char *_Dest,char *_Source)
   
                     // WARNING: Could not recover jumptable at 0x0041195e. Too many branches
                     // WARNING: Treating indirect jump as call
-  pcVar1 = (char *)strcat();
+  pcVar1 = strcat(_Dest,_Source);
   return pcVar1;
 }
 
@@ -732,8 +741,6 @@ void _initterm(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 size_t __cdecl strlen(char *_Str)
 
 {
@@ -741,7 +748,7 @@ size_t __cdecl strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x00411958. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
@@ -750,7 +757,7 @@ size_t __cdecl strlen(char *_Str)
 undefined8 __cdecl thunk_FUN_00411410(int param_1,undefined4 param_2,int param_3)
 
 {
-  size_t sVar1;
+  int iVar1;
   int iVar2;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
@@ -758,65 +765,67 @@ undefined8 __cdecl thunk_FUN_00411410(int param_1,undefined4 param_2,int param_3
   undefined4 extraout_ECX_02;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  uint uVar3;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
-  undefined4 *puVar4;
-  undefined8 uVar5;
-  undefined uVar6;
-  int iStack104;
-  char acStack92 [9];
-  char acStack83 [75];
-  uint uStack8;
+  uint *puVar3;
+  undefined8 uVar4;
+  uint auStack_13c [50];
+  size_t sStack_74;
+  int iStack_68;
+  char acStack_5c [9];
+  char acStack_53 [75];
+  uint uStack_8;
   
-  puVar4 = (undefined4 *)&stack0xfffffec4;
+  puVar3 = auStack_13c;
   for (iVar2 = 0x4e; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = 0xcccccccc;
-    puVar4 = puVar4 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
-  uStack8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  sprintf(acStack92,"%08lX:",param_2);
+  uStack_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
+  sprintf(acStack_5c,"%08lX:");
   __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   if (0x10 < param_3) {
     param_3 = 0x10;
   }
-  for (iStack104 = 0; iStack104 < param_3; iStack104 = iStack104 + 1) {
-    sprintf(acStack83 + iStack104 * 3," %02lX",(uint)*(byte *)(param_1 + iStack104));
+  for (iStack_68 = 0; iStack_68 < param_3; iStack_68 = iStack_68 + 1) {
+    sprintf(acStack_53 + iStack_68 * 3," %02lX");
     __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
   }
   while( true ) {
-    uVar3 = (uint)(iStack104 < 0x10);
-    if (uVar3 == 0) break;
-    strcat(acStack92,"   ");
-    iStack104 = iStack104 + 1;
+    auStack_13c[0] = (uint)(iStack_68 < 0x10);
+    if (auStack_13c[0] == 0) break;
+    iStack_68 = iStack_68 + 1;
+    strcat(acStack_5c,"   ");
   }
-  sVar1 = strlen(acStack92);
-  strcpy(acStack92 + sVar1,"  |");
-  for (iStack104 = 0; uVar6 = (undefined)uVar3, iStack104 < param_3; iStack104 = iStack104 + 1) {
-    if ((*(byte *)(param_1 + iStack104) < 0x20) || (0x7e < *(byte *)(param_1 + iStack104))) {
-      uVar3 = 0x2e;
+  iStack_68 = iStack_68 + 1;
+  sStack_74 = strlen(acStack_5c);
+  strcpy(acStack_5c + sStack_74,"  |");
+  iVar2 = sStack_74 + 3;
+  for (iStack_68 = 0; iStack_68 < param_3; iStack_68 = iStack_68 + 1) {
+    if ((*(byte *)(param_1 + iStack_68) < 0x20) || (0x7e < *(byte *)(param_1 + iStack_68))) {
+      auStack_13c[0] = 0x2e;
     }
     else {
-      uVar3 = (uint)*(byte *)(param_1 + iStack104);
+      auStack_13c[0] = (uint)*(byte *)(param_1 + iStack_68);
     }
-    acStack92[sVar1 + 3 + iStack104] = (char)uVar3;
+    acStack_5c[iVar2 + iStack_68] = (char)auStack_13c[0];
   }
-  for (; iStack104 < 0x10; iStack104 = iStack104 + 1) {
-    acStack92[sVar1 + 3 + iStack104] = ' ';
+  for (; iStack_68 < 0x10; iStack_68 = iStack_68 + 1) {
+    acStack_5c[iVar2 + iStack_68] = ' ';
   }
-  strcpy(acStack92 + iStack104 + sVar1 + 3,"|");
-  printf("%s\n",acStack92);
-  uVar5 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+  iVar1 = iStack_68 + sStack_74;
+  sStack_74 = iVar2;
+  strcpy(acStack_5c + iVar1 + 3,"|");
+  printf("%s\n");
+  __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&LAB_00411600);
-  thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,(int)((ulonglong)uVar5 >> 0x20),uVar6);
-  uStack8 = 0x4115f9;
-  uVar5 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
-  return uVar5;
+  ___security_check_cookie_4(uStack_8 ^ (uint)&stack0xfffffffc);
+  uStack_8 = 0x4115f9;
+  uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+  return uVar4;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 char * __cdecl strcpy(char *_Dest,char *_Source)
 
@@ -825,7 +834,7 @@ char * __cdecl strcpy(char *_Dest,char *_Source)
   
                     // WARNING: Could not recover jumptable at 0x00411952. Too many branches
                     // WARNING: Treating indirect jump as call
-  pcVar1 = (char *)strcpy();
+  pcVar1 = strcpy(_Dest,_Source);
   return pcVar1;
 }
 
@@ -835,23 +844,23 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 
 {
   int iVar1;
-  PIMAGE_SECTION_HEADER p_Stack16;
-  uint uStack12;
+  PIMAGE_SECTION_HEADER p_Stack_10;
+  uint uStack_c;
   
   iVar1 = *(int *)(pImageBase + 0x3c);
-  uStack12 = 0;
-  p_Stack16 = (PIMAGE_SECTION_HEADER)
-              (pImageBase + (uint)*(ushort *)(pImageBase + iVar1 + 0x14) + iVar1 + 0x18);
+  uStack_c = 0;
+  p_Stack_10 = (PIMAGE_SECTION_HEADER)
+               (pImageBase + (uint)*(ushort *)(pImageBase + iVar1 + 0x14) + iVar1 + 0x18);
   while( true ) {
-    if (*(ushort *)(pImageBase + iVar1 + 6) <= uStack12) {
+    if (*(ushort *)(pImageBase + iVar1 + 6) <= uStack_c) {
       return (PIMAGE_SECTION_HEADER)0x0;
     }
-    if ((p_Stack16->VirtualAddress <= rva) && (rva < p_Stack16->VirtualAddress + p_Stack16->Misc))
-    break;
-    uStack12 = uStack12 + 1;
-    p_Stack16 = p_Stack16 + 1;
+    if ((p_Stack_10->VirtualAddress <= rva) &&
+       (rva < p_Stack_10->VirtualAddress + (p_Stack_10->Misc).PhysicalAddress)) break;
+    uStack_c = uStack_c + 1;
+    p_Stack_10 = p_Stack_10 + 1;
   }
-  return p_Stack16;
+  return p_Stack_10;
 }
 
 
@@ -866,16 +875,14 @@ void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
   char *pcVar5;
   int iVar6;
   uint uVar7;
-  undefined4 in_EDX;
-  undefined4 extraout_EDX;
   undefined4 *puVar8;
   undefined4 *puVar9;
-  void *pvStack1036;
-  undefined4 uStack1033;
-  uint uStack8;
+  undefined auStack_40c [4];
+  char acStack_408 [1024];
+  uint uStack_8;
   
-  uStack8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  pvStack1036 = param_1;
+  uStack_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
+  auStack_40c = (undefined  [4])param_1;
   if (DAT_00417010 == -1) goto LAB_0041283e;
   if (*param_2 == '\0') {
 LAB_0041281f:
@@ -888,11 +895,11 @@ LAB_0041281f:
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
     if ((char *)0x400 < pcVar5 + (0x2d - (int)(param_2 + 1))) goto LAB_0041281f;
-    pcVar5 = (char *)((int)&uStack1033 + 1);
+    pcVar5 = acStack_408;
     iVar6 = 0;
     do {
       cVar1 = "Stack around the variable \'"[iVar6];
-      *(char *)((int)&uStack1033 + iVar6 + 1) = cVar1;
+      acStack_408[iVar6] = cVar1;
       iVar6 = iVar6 + 1;
       pcVar2 = param_2;
     } while (cVar1 != '\0');
@@ -901,7 +908,7 @@ LAB_0041281f:
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
     uVar3 = (int)pcVar2 - (int)param_2;
-    puVar9 = &uStack1033;
+    puVar9 = (undefined4 *)(auStack_40c + 3);
     do {
       pcVar2 = (char *)((int)puVar9 + 1);
       puVar9 = (undefined4 *)((int)puVar9 + 1);
@@ -920,7 +927,7 @@ LAB_0041281f:
       pcVar4 = pcVar2;
       pcVar2 = pcVar4 + 1;
     } while (*pcVar4 != '\0');
-    puVar9 = &uStack1033;
+    puVar9 = (undefined4 *)(auStack_40c + 3);
     do {
       pcVar2 = (char *)((int)puVar9 + 1);
       puVar9 = (undefined4 *)((int)puVar9 + 1);
@@ -938,22 +945,19 @@ LAB_0041281f:
     }
   }
   failwithmessage(param_1,DAT_00417010,2,pcVar5);
-  in_EDX = extraout_EDX;
 LAB_0041283e:
-  thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,in_EDX,(char)pvStack1036);
+  ___security_check_cookie_4(uStack_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _crt_debugger_hook(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x004133f4. Too many branches
                     // WARNING: Treating indirect jump as call
-  _crt_debugger_hook();
+  _crt_debugger_hook(param_1);
   return;
 }
 
@@ -985,56 +989,53 @@ BOOL __cdecl __ValidateImageBase(PBYTE pImageBase)
 
 
 
-_onexit_t __cdecl __onexit(_onexit_t param_1)
+void __onexit(_onexit_t param_1)
 
 {
   uint uVar1;
   undefined4 uVar2;
-  int **in_FS_OFFSET;
-  undefined4 uStack40;
-  _onexit_t p_Stack36;
-  int aiStack32 [3];
-  int *piStack20;
-  undefined *puStack16;
-  uint uStack12;
-  undefined4 uStack8;
+  undefined4 uStack_28;
+  undefined4 uStack_24;
+  int aiStack_20 [3];
+  void *pvStack_14;
+  undefined *puStack_10;
+  uint uStack_c;
+  undefined4 uStack_8;
   
-  uStack8 = 0xfffffffe;
-  puStack16 = &LAB_00411087;
-  piStack20 = *in_FS_OFFSET;
-  uStack12 = DAT_00417000 ^ 0x416b18;
+  uStack_8 = 0xfffffffe;
+  puStack_10 = &LAB_00411087;
+  pvStack_14 = ExceptionList;
+  uStack_c = DAT_00417000 ^ 0x416b18;
   uVar1 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  *in_FS_OFFSET = (int *)&piStack20;
-  aiStack32[0] = _decode_pointer(DAT_00417584,uVar1);
-  if (aiStack32[0] == -1) {
-    p_Stack36 = _onexit(param_1);
+  ExceptionList = &pvStack_14;
+  aiStack_20[0] = _decode_pointer(DAT_00417584,uVar1);
+  if (aiStack_20[0] == -1) {
+    _onexit(param_1);
+    ExceptionList = pvStack_14;
+    return;
   }
-  else {
-    _lock(8);
-    uStack8 = 0;
-    aiStack32[0] = _decode_pointer(DAT_00417584,uVar1);
-    uStack40 = _decode_pointer(DAT_00417574);
-    uVar2 = _encode_pointer(param_1,aiStack32,&uStack40);
-    p_Stack36 = (_onexit_t)__dllonexit(uVar2);
-    DAT_00417584 = _encode_pointer(aiStack32[0]);
-    DAT_00417574 = _encode_pointer(uStack40);
-    uStack8 = 0xfffffffe;
-    FUN_00412f55();
-  }
-  *in_FS_OFFSET = piStack20;
-  return p_Stack36;
+  _lock(8);
+  uStack_8 = 0;
+  aiStack_20[0] = _decode_pointer(DAT_00417584,uVar1);
+  uStack_28 = _decode_pointer(DAT_00417574);
+  uVar2 = _encode_pointer(param_1,aiStack_20,&uStack_28);
+  uStack_24 = __dllonexit(uVar2);
+  DAT_00417584 = _encode_pointer(aiStack_20[0]);
+  DAT_00417574 = _encode_pointer(uStack_28);
+  uStack_8 = 0xfffffffe;
+  FUN_00412f55();
+  FUN_00412f60();
+  return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 _TEB * _NtCurrentTeb(void)
 
 {
-  int in_FS_OFFSET;
-  
-  return *(_TEB **)(in_FS_OFFSET + 0x18);
+  return (_TEB *)&ExceptionList;
 }
 
 
@@ -1064,14 +1065,12 @@ void entry(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x004139ce. Too many branches
                     // WARNING: Treating indirect jump as call
-  _unlock();
+  _unlock(_File);
   return;
 }
 
@@ -1088,61 +1087,58 @@ undefined8 __cdecl thunk_FUN_004116a0(char *param_1)
   undefined4 extraout_ECX_03;
   undefined4 extraout_ECX_04;
   undefined4 extraout_EDX;
-  undefined4 uVar2;
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
   undefined4 extraout_EDX_03;
   undefined4 extraout_EDX_04;
-  undefined4 *puVar3;
-  undefined8 uVar4;
-  undefined in_stack_fffffec4;
-  undefined auStack108 [20];
-  uint uStack88;
-  FILE *pFStack52;
-  uint uStack40;
-  undefined auStack28 [20];
-  uint uStack8;
+  undefined4 *puVar2;
+  undefined8 uVar3;
+  undefined4 auStack_13c [49];
+  int iStack_78;
+  undefined auStack_6c [20];
+  uint uStack_58;
+  FILE *pFStack_34;
+  uint uStack_28;
+  undefined auStack_1c [20];
+  uint uStack_8;
   
-  puVar3 = (undefined4 *)&stack0xfffffec4;
+  puVar2 = auStack_13c;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = 0xcccccccc;
-    puVar3 = puVar3 + 1;
+    *puVar2 = 0xcccccccc;
+    puVar2 = puVar2 + 1;
   }
-  uStack8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  uVar4 = FUN_00411860(param_1,auStack108);
-  if ((int)uVar4 == 0) {
+  uStack_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
+  uVar3 = FUN_00411860(param_1,auStack_6c);
+  if ((int)uVar3 == 0) {
     fopen(param_1,"rb");
-    uVar4 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
-    pFStack52 = (FILE *)uVar4;
-    if (pFStack52 == (FILE *)0x0) {
+    uVar3 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
+    pFStack_34 = (FILE *)uVar3;
+    if (pFStack_34 == (FILE *)0x0) {
       perror(param_1);
-      uVar4 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
-      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
     }
     else {
-      for (uStack40 = 0; uStack40 < uStack88; uStack40 = uStack40 + iVar1) {
-        fread(auStack28,1,0x10,pFStack52);
-        uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
-        iVar1 = (int)uVar4;
-        if (iVar1 == 0) break;
-        thunk_FUN_00411410((int)auStack28,uStack40,iVar1);
+      for (uStack_28 = 0; uStack_28 < uStack_58; uStack_28 = uStack_28 + iStack_78) {
+        fread(auStack_1c,1,0x10,pFStack_34);
+        uVar3 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+        iStack_78 = (int)uVar3;
+        if (iStack_78 == 0) break;
+        thunk_FUN_00411410((int)auStack_1c,uStack_28,iStack_78);
       }
-      fclose(pFStack52);
-      uVar4 = __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
-      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      fclose(pFStack_34);
+      __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
     }
   }
   else {
     perror(param_1);
-    uVar4 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
-    uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+    __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   }
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_004117dc);
-  thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,uVar2,in_stack_fffffec4);
-  uStack8 = 0x4117d7;
-  uVar4 = __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
-  return uVar4;
+  ___security_check_cookie_4(uStack_8 ^ (uint)&stack0xfffffffc);
+  uStack_8 = 0x4117d7;
+  uVar3 = __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
+  return uVar3;
 }
 
 
@@ -1168,29 +1164,31 @@ thunk_FUN_004118c0(undefined4 param_1,undefined4 param_2,int param_3,int param_4
 
 {
   int iVar1;
-  int extraout_ECX;
-  undefined4 *puVar2;
-  undefined8 uVar3;
-  undefined4 auStack220 [49];
-  int iStack24;
-  int iStack12;
-  undefined4 uStack8;
+  undefined4 uVar2;
+  undefined4 extraout_ECX;
+  undefined4 *puVar3;
+  undefined8 uVar4;
+  undefined4 auStack_dc [49];
+  int iStack_18;
+  int iStack_c;
+  undefined4 uStack_8;
   
-  puVar2 = auStack220;
+  puVar3 = auStack_dc;
   for (iVar1 = 0x36; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
-  iStack24 = 0;
-  for (iStack12 = 1; iStack12 < param_3; iStack12 = iStack12 + 1) {
-    uVar3 = thunk_FUN_004116a0(*(char **)(param_4 + iStack12 * 4));
-    param_2 = (undefined4)((ulonglong)uVar3 >> 0x20);
-    iStack24 = (int)uVar3 + iStack24;
-    iVar1 = extraout_ECX;
+  iStack_18 = 0;
+  uVar2 = 0;
+  for (iStack_c = 1; iStack_c < param_3; iStack_c = iStack_c + 1) {
+    uVar4 = thunk_FUN_004116a0(*(char **)(param_4 + iStack_c * 4));
+    param_2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+    iStack_18 = (int)uVar4 + iStack_18;
+    uVar2 = extraout_ECX;
   }
-  uStack8 = 0x41192c;
-  uVar3 = __RTC_CheckEsp(iVar1,param_2);
-  return uVar3;
+  uStack_8 = 0x41192c;
+  uVar4 = __RTC_CheckEsp(uVar2,param_2);
+  return uVar4;
 }
 
 
@@ -1212,8 +1210,6 @@ void __RTC_Initialize(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
 
 {
@@ -1221,21 +1217,20 @@ errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
   
                     // WARNING: Could not recover jumptable at 0x004139c2. Too many branches
                     // WARNING: Treating indirect jump as call
-  eVar1 = _controlfp_s();
+  eVar1 = _controlfp_s(_CurrentState,_NewValue,_Mask);
   return eVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl
 _invoke_watson(wchar_t *param_1,wchar_t *param_2,wchar_t *param_3,uint param_4,uintptr_t param_5)
 
 {
                     // WARNING: Could not recover jumptable at 0x004139c8. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  _invoke_watson();
+  _invoke_watson(param_1,param_2,param_3,param_4,param_5);
   return;
 }
 
@@ -1259,33 +1254,33 @@ _RTC_GetSrcLine(uchar *param_1,wchar_t *param_2,ulong param_3,int *param_4,wchar
   uchar *lpAddress;
   uint uVar11;
   uint uVar12;
-  _MEMORY_BASIC_INFORMATION _Stack72;
-  undefined auStack44 [4];
-  undefined4 uStack40;
-  int iStack36;
-  int iStack32;
-  int *piStack28;
-  uint uStack24;
-  int *piStack20;
-  int *piStack16;
-  uint uStack12;
-  int *piStack8;
+  _MEMORY_BASIC_INFORMATION _Stack_48;
+  undefined auStack_2c [4];
+  undefined4 uStack_28;
+  int iStack_24;
+  int iStack_20;
+  int *piStack_1c;
+  uint uStack_18;
+  int *piStack_14;
+  int *piStack_10;
+  uint uStack_c;
+  int *piStack_8;
   
   *param_4 = 0;
   lpAddress = param_1 + -1;
-  *(undefined2 *)param_2 = 0;
-  SVar2 = VirtualQuery(lpAddress,&_Stack72,0x1c);
+  *param_2 = L'\0';
+  SVar2 = VirtualQuery(lpAddress,&_Stack_48,0x1c);
   if ((((SVar2 == 0) ||
-       (DVar3 = GetModuleFileNameW((HMODULE)_Stack72.AllocationBase,(LPWSTR)param_5,param_6),
-       DVar3 == 0)) || (*(short *)(int *)_Stack72.AllocationBase != 0x5a4d)) ||
-     ((((HMODULE)((int)_Stack72.AllocationBase + 0x3c))->unused < 1 ||
-      (piVar4 = (int *)((int)(int *)_Stack72.AllocationBase +
-                       ((HMODULE)((int)_Stack72.AllocationBase + 0x3c))->unused), *piVar4 != 0x4550)
-      ))) {
+       (DVar3 = GetModuleFileNameW((HMODULE)_Stack_48.AllocationBase,param_5,param_6), DVar3 == 0))
+      || (*(short *)(int *)_Stack_48.AllocationBase != 0x5a4d)) ||
+     ((((HMODULE)((int)_Stack_48.AllocationBase + 0x3c))->unused < 1 ||
+      (piVar4 = (int *)((int)(int *)_Stack_48.AllocationBase +
+                       ((HMODULE)((int)_Stack_48.AllocationBase + 0x3c))->unused), *piVar4 != 0x4550
+      )))) {
     return 0;
   }
   uVar9 = (uint)*(ushort *)((int)piVar4 + 6);
-  uVar11 = (int)lpAddress - (int)_Stack72.AllocationBase;
+  uVar11 = (int)lpAddress - (int)_Stack_48.AllocationBase;
   uVar12 = 0;
   uVar10 = 0;
   if (uVar9 != 0) {
@@ -1314,68 +1309,68 @@ _RTC_GetSrcLine(uchar *param_1,wchar_t *param_2,ulong param_3,int *param_4,wchar
   if (pFVar6 == (FARPROC)0x0) {
     return 0;
   }
-  iVar7 = (*pFVar6)(param_5,0,0,0,auStack44,0,0,&piStack20);
+  iVar7 = (*pFVar6)(param_5,0,0,0,auStack_2c,0,0,&piStack_14);
   if (iVar7 == 0) {
     return 0;
   }
-  iStack32 = 0;
-  iVar7 = (**(code **)*piStack20)();
+  iStack_20 = 0;
+  iVar7 = (**(code **)*piStack_14)();
   if ((iVar7 != 0x131a5b5) ||
-     (iVar7 = (**(code **)(*piStack20 + 0x1c))(0,&DAT_00416154,&piStack28), iVar7 == 0))
+     (iVar7 = (**(code **)(*piStack_14 + 0x1c))(0,&DAT_00416154,&piStack_1c), iVar7 == 0))
   goto LAB_004136ac;
-  iVar7 = (**(code **)(*piStack28 + 0x20))(uVar10 + 1,uVar12,&piStack16,0,0,0);
+  iVar7 = (**(code **)(*piStack_1c + 0x20))(uVar10 + 1,uVar12,&piStack_10,0,0,0);
   if (iVar7 != 0) {
-    piStack8 = (int *)0x0;
-    cVar1 = (**(code **)(*piStack16 + 0x68))(&piStack8);
-    if ((cVar1 != '\0') && (piStack8 != (int *)0x0)) {
-      iVar7 = (**(code **)(*piStack8 + 8))();
+    piStack_8 = (int *)0x0;
+    cVar1 = (**(code **)(*piStack_10 + 0x68))(&piStack_8);
+    if ((cVar1 != '\0') && (piStack_8 != (int *)0x0)) {
+      iVar7 = (**(code **)(*piStack_8 + 8))();
       while (iVar7 != 0) {
-        cVar1 = (**(code **)(*piStack8 + 0xc))(0,&uStack24,&param_1,&iStack36,&uStack12,0);
+        cVar1 = (**(code **)(*piStack_8 + 0xc))(0,&uStack_18,&param_1,&iStack_24,&uStack_c,0);
         if (cVar1 == '\0') goto LAB_0041368f;
-        if (((((uint)param_1 & 0xffff) == uVar10 + 1) && (uStack24 <= uVar12)) &&
-           (uVar12 < uStack24 + iStack36)) {
-          if ((uStack12 == 0) || (0x1ffffffe < uStack12)) goto LAB_0041368f;
-          SVar2 = uStack12 * 8;
+        if (((((uint)param_1 & 0xffff) == uVar10 + 1) && (uStack_18 <= uVar12)) &&
+           (uVar12 < uStack_18 + iStack_24)) {
+          if ((uStack_c == 0) || (0x1ffffffe < uStack_c)) goto LAB_0041368f;
+          SVar2 = uStack_c * 8;
           DVar3 = 0;
           pvVar8 = GetProcessHeap();
           puVar5 = (uint *)HeapAlloc(pvVar8,DVar3,SVar2);
           if (puVar5 == (uint *)0x0) goto LAB_0041368f;
-          cVar1 = (**(code **)(*piStack8 + 0xc))(&uStack40,0,0,0,&uStack12,puVar5);
-          if ((cVar1 == '\0') || (uVar12 - uStack24 < *puVar5)) break;
+          cVar1 = (**(code **)(*piStack_8 + 0xc))(&uStack_28,0,0,0,&uStack_c,puVar5);
+          if ((cVar1 == '\0') || (uVar12 - uStack_18 < *puVar5)) break;
           uVar9 = 1;
-          if (1 < uStack12) goto LAB_00413640;
+          if (1 < uStack_c) goto LAB_00413640;
           goto LAB_0041364a;
         }
-        iVar7 = (**(code **)(*piStack8 + 8))();
+        iVar7 = (**(code **)(*piStack_8 + 8))();
       }
       goto LAB_0041367f;
     }
     goto LAB_00413698;
   }
   goto LAB_004136a2;
-  while (uVar9 = uVar9 + 1, uVar9 < uStack12) {
+  while (uVar9 = uVar9 + 1, uVar9 < uStack_c) {
 LAB_00413640:
-    if (uVar12 - uStack24 < puVar5[uVar9 * 2]) break;
+    if (uVar12 - uStack_18 < puVar5[uVar9 * 2]) break;
   }
 LAB_0041364a:
   *param_4 = puVar5[uVar9 * 2 + -1] & 0xffffff;
-  cVar1 = (**(code **)(*piStack16 + 0x70))(uStack40,param_2,&param_3,0,0,0);
+  cVar1 = (**(code **)(*piStack_10 + 0x70))(uStack_28,param_2,&param_3,0,0,0);
   if (cVar1 != '\0') {
-    iStack32 = 1;
+    iStack_20 = 1;
   }
 LAB_0041367f:
   DVar3 = 0;
   pvVar8 = GetProcessHeap();
   HeapFree(pvVar8,DVar3,puVar5);
 LAB_0041368f:
-  (**(code **)*piStack8)();
+  (**(code **)*piStack_8)();
 LAB_00413698:
-  (**(code **)(*piStack16 + 0x40))();
+  (**(code **)(*piStack_10 + 0x40))();
 LAB_004136a2:
-  (**(code **)(*piStack28 + 0x38))();
+  (**(code **)(*piStack_1c + 0x38))();
 LAB_004136ac:
-  (**(code **)(*piStack20 + 0x28))();
-  return iStack32;
+  (**(code **)(*piStack_14 + 0x28))();
+  return iStack_20;
 }
 
 
@@ -1386,17 +1381,16 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   BOOL BVar1;
   PIMAGE_SECTION_HEADER p_Var2;
   uint uVar3;
-  int **in_FS_OFFSET;
-  int *piStack20;
-  undefined *puStack16;
-  uint uStack12;
-  undefined4 uStack8;
+  void *pvStack_14;
+  undefined *puStack_10;
+  uint uStack_c;
+  undefined4 uStack_8;
   
-  puStack16 = &LAB_00411087;
-  piStack20 = *in_FS_OFFSET;
-  uStack12 = DAT_00417000 ^ 0x416b38;
-  *in_FS_OFFSET = (int *)&piStack20;
-  uStack8 = 0;
+  puStack_10 = &LAB_00411087;
+  pvStack_14 = ExceptionList;
+  uStack_c = DAT_00417000 ^ 0x416b38;
+  ExceptionList = &pvStack_14;
+  uStack_8 = 0;
   BVar1 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
   if (BVar1 == 0) {
     uVar3 = 0;
@@ -1410,26 +1404,22 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
       uVar3 = (uint)((p_Var2->Characteristics & 0x80000000) == 0);
     }
   }
-  *in_FS_OFFSET = piStack20;
+  ExceptionList = pvStack_14;
   return uVar3;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00412ff0. Too many branches
                     // WARNING: Treating indirect jump as call
-  _amsg_exit();
+  _amsg_exit(param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
@@ -1438,7 +1428,7 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
   
                     // WARNING: Could not recover jumptable at 0x00413118. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = _XcptFilter();
+  iVar1 = _XcptFilter(_ExceptionNum,_ExceptionPtr);
   return iVar1;
 }
 
@@ -1477,51 +1467,45 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
   int iVar1;
   HMODULE hModule;
   int iVar2;
-  undefined4 in_EDX;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
   char *pcVar3;
   char *pcVar4;
   undefined *puVar5;
   char *pcVar6;
   undefined *puVar7;
-  void *pvVar8;
-  CHAR aCStack324 [244];
-  char acStack80 [52];
-  char acStack28 [20];
-  uint uStack8;
+  CHAR aCStack_144 [244];
+  char acStack_50 [52];
+  char acStack_1c [20];
+  uint uStack_8;
   
   iVar1 = DAT_00417018;
-  uStack8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  pvVar8 = param_1;
+  uStack_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
   if (DAT_00417018 != -1) {
     hModule = LoadLibraryA("user32.dll");
     if (hModule != (HMODULE)0x0) {
       DAT_00417534 = GetProcAddress(hModule,"wsprintfA");
       if ((param_2 != (_RTC_ALLOCA_NODE *)0x0) && (DAT_00417534 != (FARPROC)0x0)) {
-        (*DAT_00417534)(aCStack324,"%s%s%p%s%ld%s%d%s",
+        (*DAT_00417534)(aCStack_144,"%s%s%p%s%ld%s%d%s",
                         "Stack area around _alloca memory reserved by this function is corrupted",
                         "\nAddress: 0x",param_2 + 0x20,"\nSize: ",*(int *)(param_2 + 0xc) + -0x24,
                         "\nAllocation number within this function: ",param_3,"\nData: <");
         _getMemBlockDataString
-                  (acStack28,acStack80,(char *)(param_2 + 0x20),*(int *)(param_2 + 0xc) - 0x24);
+                  (acStack_1c,acStack_50,(char *)(param_2 + 0x20),*(int *)(param_2 + 0xc) - 0x24);
         puVar7 = &DAT_00415de8;
-        pcVar6 = acStack80;
+        pcVar6 = acStack_50;
         puVar5 = &DAT_00415de4;
-        pcVar4 = acStack28;
+        pcVar4 = acStack_1c;
         pcVar3 = "%s%s%s%s";
-        iVar2 = lstrlenA(aCStack324);
-        (*DAT_00417534)(aCStack324 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
-        failwithmessage(pvVar8,iVar1,4,aCStack324);
-        thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,extraout_EDX,(char)pvVar8);
+        iVar2 = lstrlenA(aCStack_144);
+        (*DAT_00417534)(aCStack_144 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
+        failwithmessage(param_1,iVar1,4,aCStack_144);
+        ___security_check_cookie_4(uStack_8 ^ (uint)&stack0xfffffffc);
         return;
       }
     }
     failwithmessage(param_1,iVar1,4,
                     "Stack area around _alloca memory reserved by this function is corrupted\n");
-    in_EDX = extraout_EDX_00;
   }
-  thunk_FUN_00411970(uStack8 ^ (uint)&stack0xfffffffc,in_EDX,(char)pvVar8);
+  ___security_check_cookie_4(uStack_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
@@ -1560,7 +1544,7 @@ undefined4 thunk_FUN_00412c90(void)
 undefined8 __cdecl FUN_00411410(int param_1,undefined4 param_2,int param_3)
 
 {
-  size_t sVar1;
+  int iVar1;
   int iVar2;
   undefined4 extraout_ECX;
   undefined4 extraout_ECX_00;
@@ -1568,60 +1552,64 @@ undefined8 __cdecl FUN_00411410(int param_1,undefined4 param_2,int param_3)
   undefined4 extraout_ECX_02;
   undefined4 extraout_EDX;
   undefined4 extraout_EDX_00;
-  uint uVar3;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
-  undefined4 *puVar4;
-  undefined8 uVar5;
-  undefined uVar6;
+  uint *puVar3;
+  undefined8 uVar4;
+  uint local_13c [50];
+  size_t local_74;
   int local_68;
   char local_5c [9];
-  char acStack83 [75];
+  char acStack_53 [75];
   uint local_8;
   
-  puVar4 = (undefined4 *)&stack0xfffffec4;
+  puVar3 = local_13c;
   for (iVar2 = 0x4e; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar4 = 0xcccccccc;
-    puVar4 = puVar4 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  sprintf(local_5c,"%08lX:",param_2);
+  sprintf(local_5c,"%08lX:");
   __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   if (0x10 < param_3) {
     param_3 = 0x10;
   }
   for (local_68 = 0; local_68 < param_3; local_68 = local_68 + 1) {
-    sprintf(acStack83 + local_68 * 3," %02lX",(uint)*(byte *)(param_1 + local_68));
+    sprintf(acStack_53 + local_68 * 3," %02lX");
     __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
   }
   while( true ) {
-    uVar3 = (uint)(local_68 < 0x10);
-    if (uVar3 == 0) break;
-    strcat(local_5c,"   ");
+    local_13c[0] = (uint)(local_68 < 0x10);
+    if (local_13c[0] == 0) break;
     local_68 = local_68 + 1;
+    strcat(local_5c,"   ");
   }
-  sVar1 = strlen(local_5c);
-  strcpy(local_5c + sVar1,"  |");
-  for (local_68 = 0; uVar6 = (undefined)uVar3, local_68 < param_3; local_68 = local_68 + 1) {
+  local_68 = local_68 + 1;
+  local_74 = strlen(local_5c);
+  strcpy(local_5c + local_74,"  |");
+  iVar2 = local_74 + 3;
+  for (local_68 = 0; local_68 < param_3; local_68 = local_68 + 1) {
     if ((*(byte *)(param_1 + local_68) < 0x20) || (0x7e < *(byte *)(param_1 + local_68))) {
-      uVar3 = 0x2e;
+      local_13c[0] = 0x2e;
     }
     else {
-      uVar3 = (uint)*(byte *)(param_1 + local_68);
+      local_13c[0] = (uint)*(byte *)(param_1 + local_68);
     }
-    local_5c[sVar1 + 3 + local_68] = (char)uVar3;
+    local_5c[iVar2 + local_68] = (char)local_13c[0];
   }
   for (; local_68 < 0x10; local_68 = local_68 + 1) {
-    local_5c[sVar1 + 3 + local_68] = ' ';
+    local_5c[iVar2 + local_68] = ' ';
   }
-  strcpy(local_5c + local_68 + sVar1 + 3,"|");
-  printf("%s\n",local_5c);
-  uVar5 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
+  iVar1 = local_68 + local_74;
+  local_74 = iVar2;
+  strcpy(local_5c + iVar1 + 3,"|");
+  printf("%s\n");
+  __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&LAB_00411600);
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,(int)((ulonglong)uVar5 >> 0x20),uVar6);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   local_8 = 0x4115f9;
-  uVar5 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
-  return uVar5;
+  uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+  return uVar4;
 }
 
 
@@ -1637,15 +1625,15 @@ undefined8 __cdecl FUN_004116a0(char *param_1)
   undefined4 extraout_ECX_03;
   undefined4 extraout_ECX_04;
   undefined4 extraout_EDX;
-  undefined4 uVar2;
   undefined4 extraout_EDX_00;
   undefined4 extraout_EDX_01;
   undefined4 extraout_EDX_02;
   undefined4 extraout_EDX_03;
   undefined4 extraout_EDX_04;
-  undefined4 *puVar3;
-  undefined8 uVar4;
-  undefined in_stack_fffffec4;
+  undefined4 *puVar2;
+  undefined8 uVar3;
+  undefined4 local_13c [49];
+  int local_78;
   undefined local_6c [20];
   uint local_58;
   FILE *local_34;
@@ -1653,45 +1641,42 @@ undefined8 __cdecl FUN_004116a0(char *param_1)
   undefined local_1c [20];
   uint local_8;
   
-  puVar3 = (undefined4 *)&stack0xfffffec4;
+  puVar2 = local_13c;
   for (iVar1 = 0x4e; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = 0xcccccccc;
-    puVar3 = puVar3 + 1;
+    *puVar2 = 0xcccccccc;
+    puVar2 = puVar2 + 1;
   }
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  uVar4 = FUN_00411860(param_1,local_6c);
-  if ((int)uVar4 == 0) {
+  uVar3 = FUN_00411860(param_1,local_6c);
+  if ((int)uVar3 == 0) {
     fopen(param_1,"rb");
-    uVar4 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
-    local_34 = (FILE *)uVar4;
+    uVar3 = __RTC_CheckEsp(extraout_ECX_00,extraout_EDX_00);
+    local_34 = (FILE *)uVar3;
     if (local_34 == (FILE *)0x0) {
       perror(param_1);
-      uVar4 = __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
-      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      __RTC_CheckEsp(extraout_ECX_01,extraout_EDX_01);
     }
     else {
-      for (local_28 = 0; local_28 < local_58; local_28 = local_28 + iVar1) {
+      for (local_28 = 0; local_28 < local_58; local_28 = local_28 + local_78) {
         fread(local_1c,1,0x10,local_34);
-        uVar4 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
-        iVar1 = (int)uVar4;
-        if (iVar1 == 0) break;
-        thunk_FUN_00411410((int)local_1c,local_28,iVar1);
+        uVar3 = __RTC_CheckEsp(extraout_ECX_02,extraout_EDX_02);
+        local_78 = (int)uVar3;
+        if (local_78 == 0) break;
+        thunk_FUN_00411410((int)local_1c,local_28,local_78);
       }
       fclose(local_34);
-      uVar4 = __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
-      uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+      __RTC_CheckEsp(extraout_ECX_03,extraout_EDX_03);
     }
   }
   else {
     perror(param_1);
-    uVar4 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
-    uVar2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+    __RTC_CheckEsp(extraout_ECX,extraout_EDX);
   }
   __RTC_CheckStackVars_8((int)&stack0xfffffffc,(int *)&DAT_004117dc);
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,uVar2,in_stack_fffffec4);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   local_8 = 0x4117d7;
-  uVar4 = __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
-  return uVar4;
+  uVar3 = __RTC_CheckEsp(extraout_ECX_04,extraout_EDX_04);
+  return uVar3;
 }
 
 
@@ -1706,7 +1691,7 @@ undefined8 __cdecl FUN_00411860(undefined4 param_1,undefined4 param_2)
   undefined4 *puVar2;
   undefined8 uVar3;
   undefined4 local_c4 [47];
-  undefined4 uStack8;
+  undefined4 uStack_8;
   
   puVar2 = local_c4;
   for (iVar1 = 0x30; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -1715,7 +1700,7 @@ undefined8 __cdecl FUN_00411860(undefined4 param_1,undefined4 param_2)
   }
   _stat64i32(param_1,param_2);
   uVar3 = __RTC_CheckEsp(extraout_ECX,extraout_EDX);
-  uStack8 = 0x4118a8;
+  uStack_8 = 0x4118a8;
   uVar3 = __RTC_CheckEsp(extraout_ECX_00,(int)((ulonglong)uVar3 >> 0x20));
   return uVar3;
 }
@@ -1726,34 +1711,34 @@ undefined8 __fastcall FUN_004118c0(undefined4 param_1,undefined4 param_2,int par
 
 {
   int iVar1;
-  int extraout_ECX;
-  undefined4 *puVar2;
-  undefined8 uVar3;
+  undefined4 uVar2;
+  undefined4 extraout_ECX;
+  undefined4 *puVar3;
+  undefined8 uVar4;
   undefined4 local_dc [49];
   int local_18;
   int local_c;
-  undefined4 uStack8;
+  undefined4 uStack_8;
   
-  puVar2 = local_dc;
+  puVar3 = local_dc;
   for (iVar1 = 0x36; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar2 = 0xcccccccc;
-    puVar2 = puVar2 + 1;
+    *puVar3 = 0xcccccccc;
+    puVar3 = puVar3 + 1;
   }
   local_18 = 0;
+  uVar2 = 0;
   for (local_c = 1; local_c < param_3; local_c = local_c + 1) {
-    uVar3 = thunk_FUN_004116a0(*(char **)(param_4 + local_c * 4));
-    param_2 = (undefined4)((ulonglong)uVar3 >> 0x20);
-    local_18 = (int)uVar3 + local_18;
-    iVar1 = extraout_ECX;
+    uVar4 = thunk_FUN_004116a0(*(char **)(param_4 + local_c * 4));
+    param_2 = (undefined4)((ulonglong)uVar4 >> 0x20);
+    local_18 = (int)uVar4 + local_18;
+    uVar2 = extraout_ECX;
   }
-  uStack8 = 0x41192c;
-  uVar3 = __RTC_CheckEsp(iVar1,param_2);
-  return uVar3;
+  uStack_8 = 0x41192c;
+  uVar4 = __RTC_CheckEsp(uVar2,param_2);
+  return uVar4;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 char * __cdecl strcpy(char *_Dest,char *_Source)
 
@@ -1762,13 +1747,11 @@ char * __cdecl strcpy(char *_Dest,char *_Source)
   
                     // WARNING: Could not recover jumptable at 0x00411952. Too many branches
                     // WARNING: Treating indirect jump as call
-  pcVar1 = (char *)strcpy();
+  pcVar1 = strcpy(_Dest,_Source);
   return pcVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 size_t __cdecl strlen(char *_Str)
 
@@ -1777,13 +1760,11 @@ size_t __cdecl strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x00411958. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 char * __cdecl strcat(char *_Dest,char *_Source)
 
@@ -1792,84 +1773,25 @@ char * __cdecl strcat(char *_Dest,char *_Source)
   
                     // WARNING: Could not recover jumptable at 0x0041195e. Too many branches
                     // WARNING: Treating indirect jump as call
-  pcVar1 = (char *)strcat();
+  pcVar1 = strcat(_Dest,_Source);
   return pcVar1;
 }
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  @__security_check_cookie@4
+// 
+// Libraries: Visual Studio 2005 Debug, Visual Studio 2008 Debug, Visual Studio 2010 Debug
 
-void __fastcall FUN_00411970(int param_1,undefined4 param_2,undefined param_3)
+void __fastcall ___security_check_cookie_4(int param_1)
 
 {
-  undefined4 in_EAX;
-  HANDLE hProcess;
-  undefined4 unaff_EBX;
-  undefined4 unaff_EBP;
-  undefined4 unaff_ESI;
-  undefined4 unaff_EDI;
-  undefined2 in_ES;
-  undefined2 in_CS;
-  undefined2 in_SS;
-  undefined2 in_DS;
-  undefined2 in_FS;
-  undefined2 in_GS;
-  byte in_AF;
-  byte in_TF;
-  byte in_IF;
-  byte in_NT;
-  byte in_AC;
-  byte in_VIF;
-  byte in_VIP;
-  byte in_ID;
-  undefined4 unaff_retaddr;
-  UINT uExitCode;
-  int local_32c;
-  undefined4 local_328;
-  
   if (param_1 == DAT_00417000) {
     return;
   }
-  _DAT_00417288 =
-       (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
-       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
-       (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
-       (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
-       (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
-  _DAT_0041728c = &param_3;
-  _DAT_004171c8 = 0x10001;
-  _DAT_00417170 = 0xc0000409;
-  _DAT_00417174 = 1;
-  local_32c = DAT_00417000;
-  local_328 = DAT_00417004;
-  _DAT_0041717c = unaff_retaddr;
-  _DAT_00417254 = in_GS;
-  _DAT_00417258 = in_FS;
-  _DAT_0041725c = in_ES;
-  _DAT_00417260 = in_DS;
-  _DAT_00417264 = unaff_EDI;
-  _DAT_00417268 = unaff_ESI;
-  _DAT_0041726c = unaff_EBX;
-  _DAT_00417270 = param_2;
-  _DAT_00417274 = param_1;
-  _DAT_00417278 = in_EAX;
-  _DAT_0041727c = unaff_EBP;
-  DAT_00417280 = unaff_retaddr;
-  _DAT_00417284 = in_CS;
-  _DAT_00417290 = in_SS;
-  _DAT_004171c0 = IsDebuggerPresent();
-  _crt_debugger_hook(1);
-  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);
-  UnhandledExceptionFilter((_EXCEPTION_POINTERS *)&PTR_DAT_00415838);
-  if (_DAT_004171c0 == 0) {
-    _crt_debugger_hook(1);
-  }
-  uExitCode = 0xc0000409;
-  hProcess = GetCurrentProcess();
-  TerminateProcess(hProcess,uExitCode);
-  return;
+                    // WARNING: Subroutine does not return
+  ___report_gsfailure();
 }
 
 
@@ -2048,7 +1970,7 @@ undefined4 _pre_c_init(void)
 void _pre_cpp_init(void)
 
 {
-  _atexit(&LAB_0041102d);
+  _atexit((_func_4879 *)&LAB_0041102d);
   _DAT_00417158 = DAT_00417550;
   _DAT_00417154 =
        __getmainargs(&DAT_00417144,(char ***)&DAT_0041714c,(char ***)&DAT_00417148,DAT_0041754c,
@@ -2092,81 +2014,81 @@ int ___tmainCRTStartup(void)
   LONG LVar4;
   int iVar5;
   BOOL BVar6;
-  int **in_FS_OFFSET;
   undefined8 uVar7;
-  int *local_14;
-  undefined *puStack16;
+  void *local_14;
+  undefined *puStack_10;
   uint local_c;
   undefined4 local_8;
   
-  puStack16 = &LAB_00411087;
-  local_14 = *in_FS_OFFSET;
+  puStack_10 = &LAB_00411087;
+  local_14 = ExceptionList;
   local_c = DAT_00417000 ^ 0x416ab8;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_8 = 0;
   p_Var3 = _NtCurrentTeb();
   iVar5 = *(int *)(p_Var3 + 4);
   bVar2 = false;
-  while (LVar4 = InterlockedCompareExchange((LONG *)&DAT_00417570,iVar5,0), LVar4 != 0) {
+  do {
+    LVar4 = InterlockedCompareExchange((LONG *)&DAT_00417570,iVar5,0);
+    if (LVar4 == 0) {
+LAB_00411dfd:
+      if (_DAT_00417560 == 1) {
+        _amsg_exit(0x1f);
+      }
+      else if (_DAT_00417560 == 0) {
+        _DAT_00417560 = 1;
+        iVar5 = _initterm_e(&DAT_0041530c,&DAT_00415618);
+        if (iVar5 != 0) {
+          ExceptionList = local_14;
+          return 0xff;
+        }
+      }
+      else {
+        _DAT_00417160 = 1;
+      }
+      if (_DAT_00417560 == 1) {
+        _initterm(&DAT_00415000,&DAT_00415208);
+        _DAT_00417560 = 2;
+      }
+      if ((_DAT_00417560 != 2) &&
+         (iVar5 = _CrtDbgReportW(2,L"f:\\dd\\vctools\\crt_bld\\self_x86\\crt\\src\\crtexe.c",500,0,
+                                 L"__native_startup_state == __initialized"), iVar5 == 1)) {
+        pcVar1 = (code *)swi(3);
+        iVar5 = (*pcVar1)();
+        return iVar5;
+      }
+      if (!bVar2) {
+        InterlockedExchange((LONG *)&DAT_00417570,0);
+      }
+      if ((DAT_00417594 != (code *)0x0) &&
+         (BVar6 = __IsNonwritableInCurrentImage((PBYTE)&DAT_00417594), BVar6 != 0)) {
+        (*DAT_00417594)(0,2,0);
+      }
+      _CrtSetCheckCount(1);
+      *(undefined4 *)__initenv_exref = DAT_00417148;
+      uVar7 = thunk_FUN_004118c0(DAT_0041714c,DAT_00417144,DAT_00417144,DAT_0041714c);
+      DAT_0041715c = (int)uVar7;
+      if (_DAT_00417150 != 0) {
+        if (_DAT_00417160 == 0) {
+          _cexit();
+        }
+        ExceptionList = local_14;
+        return DAT_0041715c;
+      }
+                    // WARNING: Subroutine does not return
+      exit(DAT_0041715c);
+    }
     if (LVar4 == iVar5) {
       bVar2 = true;
-      break;
+      goto LAB_00411dfd;
     }
     Sleep(1000);
-  }
-  if (_DAT_00417560 == 1) {
-    _amsg_exit(0x1f);
-  }
-  else if (_DAT_00417560 == 0) {
-    _DAT_00417560 = 1;
-    iVar5 = _initterm_e(&DAT_0041530c,&DAT_00415618);
-    if (iVar5 != 0) {
-      iVar5 = 0xff;
-      goto LAB_00411fa4;
-    }
-  }
-  else {
-    _DAT_00417160 = 1;
-  }
-  if (_DAT_00417560 == 1) {
-    _initterm(&DAT_00415000,&DAT_00415208);
-    _DAT_00417560 = 2;
-  }
-  if ((_DAT_00417560 != 2) &&
-     (iVar5 = _CrtDbgReportW(2,L"f:\\dd\\vctools\\crt_bld\\self_x86\\crt\\src\\crtexe.c",500,0,
-                             L"__native_startup_state == __initialized"), iVar5 == 1)) {
-    pcVar1 = (code *)swi(3);
-    iVar5 = (*pcVar1)();
-    return iVar5;
-  }
-  if (!bVar2) {
-    InterlockedExchange((LONG *)&DAT_00417570,0);
-  }
-  if ((DAT_00417594 != (code *)0x0) &&
-     (BVar6 = __IsNonwritableInCurrentImage((PBYTE)&DAT_00417594), BVar6 != 0)) {
-    (*DAT_00417594)(0,2,0);
-  }
-  _CrtSetCheckCount(1);
-  *(undefined4 *)__initenv_exref = DAT_00417148;
-  uVar7 = thunk_FUN_004118c0(DAT_0041714c,DAT_00417144,DAT_00417144,DAT_0041714c);
-  DAT_0041715c = (int)uVar7;
-  if (_DAT_00417150 == 0) {
-                    // WARNING: Subroutine does not return
-    exit(DAT_0041715c);
-  }
-  iVar5 = DAT_0041715c;
-  if (_DAT_00417160 == 0) {
-    _cexit();
-    iVar5 = DAT_0041715c;
-  }
-LAB_00411fa4:
-  *in_FS_OFFSET = local_14;
-  return iVar5;
+  } while( true );
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 // Library Function - Single Match
 //  _NtCurrentTeb
 // 
@@ -2175,9 +2097,7 @@ LAB_00411fa4:
 _TEB * _NtCurrentTeb(void)
 
 {
-  int in_FS_OFFSET;
-  
-  return *(_TEB **)(in_FS_OFFSET + 0x18);
+  return (_TEB *)&ExceptionList;
 }
 
 
@@ -2203,6 +2123,85 @@ undefined _check_managed_app(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  ___report_gsfailure
+// 
+// Libraries: Visual Studio 2005 Debug, Visual Studio 2008 Debug, Visual Studio 2010 Debug
+
+void __cdecl ___report_gsfailure(void)
+
+{
+  undefined4 in_EAX;
+  HANDLE hProcess;
+  undefined4 in_ECX;
+  undefined4 in_EDX;
+  undefined4 unaff_EBX;
+  undefined4 unaff_EBP;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
+  undefined2 in_ES;
+  undefined2 in_CS;
+  undefined2 in_SS;
+  undefined2 in_DS;
+  undefined2 in_FS;
+  undefined2 in_GS;
+  byte in_AF;
+  byte in_TF;
+  byte in_IF;
+  byte in_NT;
+  byte in_AC;
+  byte in_VIF;
+  byte in_VIP;
+  byte in_ID;
+  undefined4 unaff_retaddr;
+  UINT uExitCode;
+  undefined4 local_32c;
+  undefined4 local_328;
+  
+  _DAT_00417288 =
+       (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
+       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
+       (uint)(&stack0x00000000 == (undefined *)0x32c) * 0x40 | (uint)(in_AF & 1) * 0x10 |
+       (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
+       (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
+       (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
+  _DAT_0041728c = &stack0x00000004;
+  _DAT_004171c8 = 0x10001;
+  _DAT_00417170 = 0xc0000409;
+  _DAT_00417174 = 1;
+  local_32c = DAT_00417000;
+  local_328 = DAT_00417004;
+  _DAT_0041717c = unaff_retaddr;
+  _DAT_00417254 = in_GS;
+  _DAT_00417258 = in_FS;
+  _DAT_0041725c = in_ES;
+  _DAT_00417260 = in_DS;
+  _DAT_00417264 = unaff_EDI;
+  _DAT_00417268 = unaff_ESI;
+  _DAT_0041726c = unaff_EBX;
+  _DAT_00417270 = in_EDX;
+  _DAT_00417274 = in_ECX;
+  _DAT_00417278 = in_EAX;
+  _DAT_0041727c = unaff_EBP;
+  DAT_00417280 = unaff_retaddr;
+  _DAT_00417284 = in_CS;
+  _DAT_00417290 = in_SS;
+  _DAT_004171c0 = IsDebuggerPresent();
+  _crt_debugger_hook(1);
+  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);
+  UnhandledExceptionFilter((_EXCEPTION_POINTERS *)&PTR_DAT_00415838);
+  if (_DAT_004171c0 == 0) {
+    _crt_debugger_hook(1);
+  }
+  uExitCode = 0xc0000409;
+  hProcess = GetCurrentProcess();
+  TerminateProcess(hProcess,uExitCode);
+  return;
+}
+
+
+
 // Library Function - Single Match
 //  int __cdecl DebuggerProbe(unsigned long)
 // 
@@ -2211,31 +2210,30 @@ undefined _check_managed_app(void)
 int __cdecl DebuggerProbe(ulong param_1)
 
 {
-  int **in_FS_OFFSET;
-  uint uStack72;
+  uint uStack_48;
   ULONG_PTR local_38;
   ulong local_34;
   byte *local_30;
   byte local_1d;
   uint *local_1c;
-  int *local_14;
-  undefined *puStack16;
+  void *local_14;
+  undefined *puStack_10;
   uint local_c;
   undefined4 local_8;
   
-  puStack16 = &LAB_00411087;
-  local_14 = *in_FS_OFFSET;
+  puStack_10 = &LAB_00411087;
+  local_14 = ExceptionList;
   local_c = DAT_00417000 ^ 0x416ad8;
-  uStack72 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  local_1c = &uStack72;
-  *in_FS_OFFSET = (int *)&local_14;
+  uStack_48 = DAT_00417000 ^ (uint)&stack0xfffffffc;
+  local_1c = &uStack_48;
+  ExceptionList = &local_14;
   local_1d = 0;
   local_38 = 0x1001;
   local_34 = param_1;
   local_30 = &local_1d;
   local_8 = 0;
   RaiseException(0x406d1388,0,6,&local_38);
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return (uint)local_1d;
 }
 
@@ -2275,26 +2273,20 @@ void __cdecl failwithmessage(void *param_1,int param_2,int param_3,char *param_4
   uint cchWideChar;
   int iVar3;
   BOOL BVar4;
-  undefined4 extraout_EDX;
-  undefined4 uVar5;
-  undefined4 extraout_EDX_00;
+  char *pcVar5;
   char *pcVar6;
-  char *pcVar7;
-  undefined8 uVar8;
-  char *pcVar9;
   code *local_e3c;
   wchar_t *local_e38;
   code *local_e34;
   WCHAR local_e30 [512];
   CHAR local_a30 [780];
   CHAR local_724 [780];
-  WCHAR local_418 [260];
-  WCHAR local_210 [260];
+  wchar_t local_418 [260];
+  wchar_t local_210 [260];
   uint local_8;
   
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
   local_e3c = (code *)0x0;
-  pcVar9 = param_4;
   local_e34 = (code *)thunk_FUN_00412ca0();
   if (local_e34 == (code *)0x0) {
     local_e3c = (code *)thunk_FUN_00412c90();
@@ -2314,9 +2306,7 @@ LAB_00412483:
     bVar1 = true;
   }
   else {
-    iVar3 = DebuggerRuntime(param_3,*(int *)(&DAT_00415b7c + param_3 * 4),param_1,
-                            (wchar_t *)local_e38);
-    uVar5 = extraout_EDX;
+    iVar3 = DebuggerRuntime(param_3,*(int *)(&DAT_00415b7c + param_3 * 4),param_1,local_e38);
     if (iVar3 != 0) goto LAB_004125e6;
     bVar1 = false;
   }
@@ -2326,34 +2316,31 @@ LAB_00412483:
       BVar4 = IsDebuggerPresent();
       if (BVar4 != 0) goto LAB_004125e0;
     }
-    _RTC_GetSrcLine((uchar *)((int)param_1 + -5),(wchar_t *)local_210,0x104,(int *)&local_e34,
-                    (wchar_t *)local_418,0x104);
+    _RTC_GetSrcLine((uchar *)((int)param_1 + -5),local_210,0x104,(int *)&local_e34,local_418,0x104);
     if (pcVar2 == (code *)0x0) {
-      pcVar6 = "Unknown Filename";
+      pcVar5 = "Unknown Filename";
       iVar3 = WideCharToMultiByte(0xfde9,0,local_210,-1,local_a30,0x30a,(LPCSTR)0x0,(LPBOOL)0x0);
       if (iVar3 != 0) {
-        pcVar6 = local_a30;
+        pcVar5 = local_a30;
       }
-      pcVar7 = "Unknown Module Name";
+      pcVar6 = "Unknown Module Name";
       iVar3 = WideCharToMultiByte(0xfde9,0,local_418,-1,local_724,0x30a,(LPCSTR)0x0,(LPBOOL)0x0);
       if (iVar3 != 0) {
-        pcVar7 = local_724;
+        pcVar6 = local_724;
       }
-      uVar8 = (*local_e3c)(param_2,pcVar6,local_e34,pcVar7,"Run-Time Check Failure #%d - %s",param_3
-                           ,pcVar9);
+      iVar3 = (*local_e3c)(param_2,pcVar5,local_e34,pcVar6,"Run-Time Check Failure #%d - %s",param_3
+                           ,param_4);
     }
     else {
-      uVar8 = (*pcVar2)(param_2,local_210,local_e34,local_418,L"Run-Time Check Failure #%d - %s",
+      iVar3 = (*pcVar2)(param_2,local_210,local_e34,local_418,L"Run-Time Check Failure #%d - %s",
                         param_3,local_e38);
     }
-    uVar5 = (undefined4)((ulonglong)uVar8 >> 0x20);
-    if ((int)uVar8 != 1) goto LAB_004125e6;
+    if (iVar3 != 1) goto LAB_004125e6;
   }
 LAB_004125e0:
   DebugBreak();
-  uVar5 = extraout_EDX_00;
 LAB_004125e6:
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,uVar5,(char)pcVar9);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
@@ -2367,8 +2354,7 @@ LAB_004125e6:
 int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *param_4)
 
 {
-  int **in_FS_OFFSET;
-  uint uStack72;
+  uint uStack_48;
   ULONG_PTR local_38;
   ulong local_34;
   int local_30;
@@ -2377,17 +2363,17 @@ int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *par
   wchar_t *local_24;
   byte local_1d;
   uint *local_1c;
-  int *local_14;
-  undefined *puStack16;
+  void *local_14;
+  undefined *puStack_10;
   uint local_c;
   undefined4 local_8;
   
-  puStack16 = &LAB_00411087;
-  local_14 = *in_FS_OFFSET;
+  puStack_10 = &LAB_00411087;
+  local_14 = ExceptionList;
   local_c = DAT_00417000 ^ 0x416af8;
-  uStack72 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  local_1c = &uStack72;
-  *in_FS_OFFSET = (int *)&local_14;
+  uStack_48 = DAT_00417000 ^ (uint)&stack0xfffffffc;
+  local_1c = &uStack_48;
+  ExceptionList = &local_14;
   local_1d = 0;
   local_38 = 0x1002;
   local_34 = param_1;
@@ -2397,7 +2383,7 @@ int __cdecl DebuggerRuntime(ulong param_1,int param_2,void *param_3,wchar_t *par
   local_24 = param_4;
   local_8 = 0;
   RaiseException(0x406d1388,0,6,&local_38);
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return (uint)local_1d;
 }
 
@@ -2418,16 +2404,14 @@ void __cdecl _RTC_StackFailure(void *param_1,char *param_2)
   char *pcVar5;
   int iVar6;
   uint uVar7;
-  undefined4 in_EDX;
-  undefined4 extraout_EDX;
   undefined4 *puVar8;
   undefined4 *puVar9;
-  void *pvStack1036;
-  undefined4 uStack1033;
+  undefined local_40c [4];
+  char local_408 [1024];
   uint local_8;
   
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  pvStack1036 = param_1;
+  local_40c = (undefined  [4])param_1;
   if (DAT_00417010 == -1) goto LAB_0041283e;
   if (*param_2 == '\0') {
 LAB_0041281f:
@@ -2440,11 +2424,11 @@ LAB_0041281f:
       pcVar5 = pcVar5 + 1;
     } while (cVar1 != '\0');
     if ((char *)0x400 < pcVar5 + (0x2d - (int)(param_2 + 1))) goto LAB_0041281f;
-    pcVar5 = (char *)((int)&uStack1033 + 1);
+    pcVar5 = local_408;
     iVar6 = 0;
     do {
       cVar1 = "Stack around the variable \'"[iVar6];
-      *(char *)((int)&uStack1033 + iVar6 + 1) = cVar1;
+      local_408[iVar6] = cVar1;
       iVar6 = iVar6 + 1;
       pcVar2 = param_2;
     } while (cVar1 != '\0');
@@ -2453,7 +2437,7 @@ LAB_0041281f:
       pcVar2 = pcVar2 + 1;
     } while (cVar1 != '\0');
     uVar3 = (int)pcVar2 - (int)param_2;
-    puVar9 = &uStack1033;
+    puVar9 = (undefined4 *)(local_40c + 3);
     do {
       pcVar2 = (char *)((int)puVar9 + 1);
       puVar9 = (undefined4 *)((int)puVar9 + 1);
@@ -2472,7 +2456,7 @@ LAB_0041281f:
       pcVar4 = pcVar2;
       pcVar2 = pcVar4 + 1;
     } while (*pcVar4 != '\0');
-    puVar9 = &uStack1033;
+    puVar9 = (undefined4 *)(local_40c + 3);
     do {
       pcVar2 = (char *)((int)puVar9 + 1);
       puVar9 = (undefined4 *)((int)puVar9 + 1);
@@ -2490,9 +2474,8 @@ LAB_0041281f:
     }
   }
   failwithmessage(param_1,DAT_00417010,2,pcVar5);
-  in_EDX = extraout_EDX;
 LAB_0041283e:
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,in_EDX,(char)pvStack1036);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
@@ -2509,15 +2492,11 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
   int iVar1;
   HMODULE hModule;
   int iVar2;
-  undefined4 in_EDX;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
   char *pcVar3;
   char *pcVar4;
   undefined *puVar5;
   char *pcVar6;
   undefined *puVar7;
-  void *pvVar8;
   CHAR local_144 [244];
   char local_50 [52];
   char local_1c [20];
@@ -2525,7 +2504,6 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
   
   iVar1 = DAT_00417018;
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  pvVar8 = param_1;
   if (DAT_00417018 != -1) {
     hModule = LoadLibraryA("user32.dll");
     if (hModule != (HMODULE)0x0) {
@@ -2544,16 +2522,15 @@ void __cdecl _RTC_AllocaFailure(void *param_1,_RTC_ALLOCA_NODE *param_2,int para
         pcVar3 = "%s%s%s%s";
         iVar2 = lstrlenA(local_144);
         (*DAT_00417534)(local_144 + iVar2,pcVar3,pcVar4,puVar5,pcVar6,puVar7);
-        failwithmessage(pvVar8,iVar1,4,local_144);
-        thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,extraout_EDX,(char)pvVar8);
+        failwithmessage(param_1,iVar1,4,local_144);
+        ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
         return;
       }
     }
     failwithmessage(param_1,iVar1,4,
                     "Stack area around _alloca memory reserved by this function is corrupted\n");
-    in_EDX = extraout_EDX_00;
   }
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,in_EDX,(char)pvVar8);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
@@ -2601,7 +2578,7 @@ void __cdecl _getMemBlockDataString(char *param_1,char *param_2,char *param_3,ui
 // 
 // Libraries: Visual Studio 2008 Debug, Visual Studio 2008 Release
 
-void __fastcall __RTC_UninitUse(undefined4 param_1,undefined4 param_2,undefined4 *param_3)
+void __cdecl __RTC_UninitUse(undefined4 *param_1)
 
 {
   char *pcVar1;
@@ -2611,53 +2588,52 @@ void __fastcall __RTC_UninitUse(undefined4 param_1,undefined4 param_2,undefined4
   undefined4 *puVar5;
   int iVar6;
   uint uVar7;
-  undefined4 extraout_EDX;
   char *pcVar8;
   undefined4 *puVar9;
   void *unaff_retaddr;
-  char in_stack_fffffbf8;
+  char local_408 [1024];
   uint local_8;
   
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
   if (DAT_00417014 == -1) goto LAB_00412b7b;
-  if (param_3 == (undefined4 *)0x0) {
+  if (param_1 == (undefined4 *)0x0) {
 LAB_00412b5f:
     pcVar8 = "A variable is being used without being initialized.";
   }
   else {
-    puVar5 = param_3;
+    puVar5 = param_1;
     do {
       cVar2 = *(char *)puVar5;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     } while (cVar2 != '\0');
-    if ((char *)0x400 < (char *)((int)puVar5 + (0x3a - ((int)param_3 + 1)))) goto LAB_00412b5f;
-    pcVar8 = &stack0xfffffbf8;
+    if ((char *)0x400 < (char *)((int)puVar5 + (0x3a - ((int)param_1 + 1)))) goto LAB_00412b5f;
+    pcVar8 = local_408;
     iVar6 = 0;
     do {
       cVar2 = "The variable \'"[iVar6];
-      (&stack0xfffffbf8)[iVar6] = cVar2;
+      local_408[iVar6] = cVar2;
       iVar6 = iVar6 + 1;
-      puVar5 = param_3;
+      puVar5 = param_1;
     } while (cVar2 != '\0');
     do {
       cVar2 = *(char *)puVar5;
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     } while (cVar2 != '\0');
-    uVar3 = (int)puVar5 - (int)param_3;
+    uVar3 = (int)puVar5 - (int)param_1;
     puVar5 = (undefined4 *)&stack0xfffffbf7;
     do {
       pcVar1 = (char *)((int)puVar5 + 1);
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     } while (*pcVar1 != '\0');
     for (uVar7 = uVar3 >> 2; uVar7 != 0; uVar7 = uVar7 - 1) {
-      *puVar5 = *param_3;
-      param_3 = param_3 + 1;
+      *puVar5 = *param_1;
+      param_1 = param_1 + 1;
       puVar5 = puVar5 + 1;
     }
     for (uVar3 = uVar3 & 3; pcVar1 = "\' is being used without being initialized.", uVar3 != 0;
         uVar3 = uVar3 - 1) {
-      *(undefined *)puVar5 = *(undefined *)param_3;
-      param_3 = (undefined4 *)((int)param_3 + 1);
+      *(undefined *)puVar5 = *(undefined *)param_1;
+      param_1 = (undefined4 *)((int)param_1 + 1);
       puVar5 = (undefined4 *)((int)puVar5 + 1);
     }
     do {
@@ -2682,9 +2658,8 @@ LAB_00412b5f:
     }
   }
   failwithmessage(unaff_retaddr,DAT_00417014,3,pcVar8);
-  param_2 = extraout_EDX;
 LAB_00412b7b:
-  thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,param_2,in_stack_fffffbf8);
+  ___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   return;
 }
 
@@ -2740,8 +2715,8 @@ undefined4 __cdecl FUN_00412c60(undefined4 param_1)
   undefined4 uVar1;
   
   uVar1 = DAT_0041753c;
-  DAT_00417538 = 0;
   DAT_0041753c = param_1;
+  DAT_00417538 = 0;
   return uVar1;
 }
 
@@ -2896,44 +2871,43 @@ void __RTC_Initialize(void)
 // 
 // Library: Visual Studio 2008 Debug
 
-_onexit_t __cdecl __onexit(_onexit_t param_1)
+void __onexit(_onexit_t param_1)
 
 {
   uint uVar1;
   undefined4 uVar2;
-  int **in_FS_OFFSET;
   undefined4 local_28;
-  _onexit_t local_24;
+  undefined4 local_24;
   int local_20 [3];
-  int *local_14;
-  undefined *puStack16;
+  void *local_14;
+  undefined *puStack_10;
   uint local_c;
   undefined4 local_8;
   
   local_8 = 0xfffffffe;
-  puStack16 = &LAB_00411087;
-  local_14 = *in_FS_OFFSET;
+  puStack_10 = &LAB_00411087;
+  local_14 = ExceptionList;
   local_c = DAT_00417000 ^ 0x416b18;
   uVar1 = DAT_00417000 ^ (uint)&stack0xfffffffc;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_20[0] = _decode_pointer(DAT_00417584,uVar1);
   if (local_20[0] == -1) {
-    local_24 = _onexit(param_1);
+    _onexit(param_1);
+    ExceptionList = local_14;
+    return;
   }
-  else {
-    _lock(8);
-    local_8 = 0;
-    local_20[0] = _decode_pointer(DAT_00417584,uVar1);
-    local_28 = _decode_pointer(DAT_00417574);
-    uVar2 = _encode_pointer(param_1,local_20,&local_28);
-    local_24 = (_onexit_t)__dllonexit(uVar2);
-    DAT_00417584 = _encode_pointer(local_20[0]);
-    DAT_00417574 = _encode_pointer(local_28);
-    local_8 = 0xfffffffe;
-    FUN_00412f55();
-  }
-  *in_FS_OFFSET = local_14;
-  return local_24;
+  _lock(8);
+  local_8 = 0;
+  local_20[0] = _decode_pointer(DAT_00417584,uVar1);
+  local_28 = _decode_pointer(DAT_00417574);
+  uVar2 = _encode_pointer(param_1,local_20,&local_28);
+  local_24 = __dllonexit(uVar2);
+  DAT_00417584 = _encode_pointer(local_20[0]);
+  DAT_00417574 = _encode_pointer(local_28);
+  local_8 = 0xfffffffe;
+  FUN_00412f55();
+  FUN_00412f60();
+  return;
 }
 
 
@@ -2947,30 +2921,39 @@ void FUN_00412f55(void)
 
 
 
+undefined4 FUN_00412f60(void)
+
+{
+  int unaff_EBP;
+  
+  ExceptionList = *(void **)(unaff_EBP + -0x10);
+  return *(undefined4 *)(unaff_EBP + -0x20);
+}
+
+
+
 // Library Function - Single Match
 //  _atexit
 // 
 // Library: Visual Studio 2008 Debug
 
-int __cdecl _atexit(void *param_1)
+int __cdecl _atexit(_func_4879 *param_1)
 
 {
-  _onexit_t p_Var1;
+  int iVar1;
   
-  p_Var1 = __onexit((_onexit_t)param_1);
-  return (p_Var1 != (_onexit_t)0x0) - 1;
+  iVar1 = __onexit((_onexit_t)param_1);
+  return (iVar1 != 0) - 1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00412ff0. Too many branches
                     // WARNING: Treating indirect jump as call
-  _amsg_exit();
+  _amsg_exit(param_1);
   return;
 }
 
@@ -2985,8 +2968,7 @@ void __cdecl ___security_init_cookie(void)
 
 {
   DWORD DVar1;
-  uint local_1c;
-  uint local_18;
+  LARGE_INTEGER local_1c;
   uint local_10;
   _FILETIME local_c;
   
@@ -3001,8 +2983,8 @@ void __cdecl ___security_init_cookie(void)
     local_10 = DVar1 ^ local_10;
     DVar1 = GetTickCount();
     local_10 = DVar1 ^ local_10;
-    QueryPerformanceCounter((LARGE_INTEGER *)&local_1c);
-    local_10 = local_10 ^ local_1c ^ local_18;
+    QueryPerformanceCounter(&local_1c);
+    local_10 = local_10 ^ local_1c.s.LowPart ^ local_1c.s.HighPart;
     if (local_10 == 0xbb40e64e) {
       local_10 = 0xbb40e64f;
     }
@@ -3020,8 +3002,6 @@ void __cdecl ___security_init_cookie(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
 
 {
@@ -3029,7 +3009,7 @@ int __cdecl _XcptFilter(ulong _ExceptionNum,_EXCEPTION_POINTERS *_ExceptionPtr)
   
                     // WARNING: Could not recover jumptable at 0x00413118. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = _XcptFilter();
+  iVar1 = _XcptFilter(_ExceptionNum,_ExceptionPtr);
   return iVar1;
 }
 
@@ -3086,8 +3066,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
     if (*(ushort *)(pImageBase + iVar1 + 6) <= local_c) {
       return (PIMAGE_SECTION_HEADER)0x0;
     }
-    if ((local_10->VirtualAddress <= rva) && (rva < local_10->VirtualAddress + local_10->Misc))
-    break;
+    if ((local_10->VirtualAddress <= rva) &&
+       (rva < local_10->VirtualAddress + (local_10->Misc).PhysicalAddress)) break;
     local_c = local_c + 1;
     local_10 = local_10 + 1;
   }
@@ -3107,16 +3087,15 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
   BOOL BVar1;
   PIMAGE_SECTION_HEADER p_Var2;
   uint uVar3;
-  int **in_FS_OFFSET;
-  int *local_14;
-  undefined *puStack16;
+  void *local_14;
+  undefined *puStack_10;
   uint local_c;
   undefined4 local_8;
   
-  puStack16 = &LAB_00411087;
-  local_14 = *in_FS_OFFSET;
+  puStack_10 = &LAB_00411087;
+  local_14 = ExceptionList;
   local_c = DAT_00417000 ^ 0x416b38;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_8 = 0;
   BVar1 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
   if (BVar1 == 0) {
@@ -3131,7 +3110,7 @@ BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
       uVar3 = (uint)((p_Var2->Characteristics & 0x80000000) == 0);
     }
   }
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return uVar3;
 }
 
@@ -3168,20 +3147,18 @@ void __cdecl
 __except_handler4(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  _except_handler4_common(&DAT_00417000,thunk_FUN_00411970,param_1,param_2,param_3,param_4);
+  _except_handler4_common(&DAT_00417000,___security_check_cookie_4,param_1,param_2,param_3,param_4);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _crt_debugger_hook(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x004133f4. Too many branches
                     // WARNING: Treating indirect jump as call
-  _crt_debugger_hook();
+  _crt_debugger_hook(param_1);
   return;
 }
 
@@ -3225,11 +3202,11 @@ _RTC_GetSrcLine(uchar *param_1,wchar_t *param_2,ulong param_3,int *param_4,wchar
   
   *param_4 = 0;
   lpAddress = param_1 + -1;
-  *(undefined2 *)param_2 = 0;
+  *param_2 = L'\0';
   SVar2 = VirtualQuery(lpAddress,&local_48,0x1c);
   if ((((SVar2 == 0) ||
-       (DVar3 = GetModuleFileNameW((HMODULE)local_48.AllocationBase,(LPWSTR)param_5,param_6),
-       DVar3 == 0)) || (*(short *)(int *)local_48.AllocationBase != 0x5a4d)) ||
+       (DVar3 = GetModuleFileNameW((HMODULE)local_48.AllocationBase,param_5,param_6), DVar3 == 0))
+      || (*(short *)(int *)local_48.AllocationBase != 0x5a4d)) ||
      ((((HMODULE)((int)local_48.AllocationBase + 0x3c))->unused < 1 ||
       (piVar4 = (int *)((int)(int *)local_48.AllocationBase +
                        ((HMODULE)((int)local_48.AllocationBase + 0x3c))->unused), *piVar4 != 0x4550)
@@ -3345,19 +3322,9 @@ HINSTANCE__ * __cdecl GetPdbDll(void)
   HMODULE pHVar2;
   FARPROC pFVar3;
   FARPROC pFVar4;
-  FARPROC pFVar5;
-  int iVar6;
-  undefined4 in_EDX;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
-  undefined4 extraout_EDX_01;
-  undefined4 extraout_EDX_02;
-  undefined4 extraout_EDX_03;
-  undefined4 extraout_EDX_04;
-  undefined4 extraout_EDX_05;
-  undefined4 extraout_EDX_06;
-  undefined4 uVar7;
-  undefined in_stack_fffffee4;
+  int iVar5;
+  undefined local_11c [4];
+  FARPROC local_118;
   undefined4 local_114;
   undefined4 local_110;
   CHAR local_10c [260];
@@ -3365,75 +3332,60 @@ HINSTANCE__ * __cdecl GetPdbDll(void)
   
   local_8 = DAT_00417000 ^ (uint)&stack0xfffffffc;
   if (_DAT_0041755c != 0) {
-    pHVar1 = (HINSTANCE__ *)
-             thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,in_EDX,in_stack_fffffee4);
+    pHVar1 = (HINSTANCE__ *)___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
     return pHVar1;
   }
   _DAT_0041755c = 1;
   pHVar2 = LoadLibraryA(PTR_s_MSPDB80_DLL_00417034);
-  uVar7 = extraout_EDX;
   if (pHVar2 == (HMODULE)0x0) {
     pHVar2 = LoadLibraryA("ADVAPI32.DLL");
     if (pHVar2 == (HMODULE)0x0) {
-      pHVar1 = (HINSTANCE__ *)
-               thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,extraout_EDX_00,in_stack_fffffee4
-                                 );
+      pHVar1 = (HINSTANCE__ *)___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
       return pHVar1;
     }
-    pFVar3 = GetProcAddress(pHVar2,"RegOpenKeyExA");
-    if (pFVar3 == (FARPROC)0x0) {
-      pHVar1 = (HINSTANCE__ *)
-               thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,extraout_EDX_01,in_stack_fffffee4
-                                 );
+    local_118 = GetProcAddress(pHVar2,"RegOpenKeyExA");
+    if (local_118 == (FARPROC)0x0) {
+      pHVar1 = (HINSTANCE__ *)___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
       return pHVar1;
     }
-    pFVar4 = GetProcAddress(pHVar2,"RegQueryValueExA");
-    uVar7 = extraout_EDX_02;
-    if ((pFVar4 != (FARPROC)0x0) &&
-       (pFVar5 = GetProcAddress(pHVar2,"RegCloseKey"), uVar7 = extraout_EDX_03,
-       pFVar5 != (FARPROC)0x0)) {
-      iVar6 = (*pFVar3)(0x80000002,"SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS",0,1,
-                        &local_114);
-      if ((iVar6 == 0) &&
-         (((iVar6 = (*pFVar4)(local_114,"EnvironmentDirectory",0,&stack0xfffffee4,0,&local_110),
-           iVar6 == 0 && (0xc < 0x7fffffffU - local_110)) && (local_110 + 0xdU < 0x104)))) {
-        iVar6 = (*pFVar4)(local_114,"EnvironmentDirectory",0,&stack0xfffffee4,local_10c,&local_110);
-        (*pFVar5)(local_114);
+    pFVar3 = GetProcAddress(pHVar2,"RegQueryValueExA");
+    if ((pFVar3 != (FARPROC)0x0) &&
+       (pFVar4 = GetProcAddress(pHVar2,"RegCloseKey"), pFVar4 != (FARPROC)0x0)) {
+      iVar5 = (*local_118)(0x80000002,"SOFTWARE\\Microsoft\\VisualStudio\\9.0\\Setup\\VS",0,1,
+                           &local_114);
+      if ((iVar5 == 0) &&
+         (((iVar5 = (*pFVar3)(local_114,"EnvironmentDirectory",0,local_11c,0,&local_110), iVar5 == 0
+           && (0xc < 0x7fffffffU - local_110)) && (local_110 + 0xdU < 0x104)))) {
+        iVar5 = (*pFVar3)(local_114,"EnvironmentDirectory",0,local_11c,local_10c,&local_110);
+        (*pFVar4)(local_114);
         FreeLibrary(pHVar2);
-        uVar7 = extraout_EDX_04;
-        if (iVar6 == 0) {
+        if (iVar5 == 0) {
           if (local_10c[local_110 + -2] == '\\') {
             local_110 = local_110 + -1;
           }
           else {
             local_10c[local_110 + -1] = '\\';
           }
-          iVar6 = 0;
+          iVar5 = 0;
           do {
-            local_10c[iVar6 + local_110] = PTR_s_MSPDB80_DLL_00417034[iVar6];
-            iVar6 = iVar6 + 1;
-          } while (iVar6 < 0xc);
+            local_10c[iVar5 + local_110] = PTR_s_MSPDB80_DLL_00417034[iVar5];
+            iVar5 = iVar5 + 1;
+          } while (iVar5 < 0xc);
           LoadLibraryA(local_10c);
-          pHVar1 = (HINSTANCE__ *)
-                   thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,extraout_EDX_05,
-                                      in_stack_fffffee4);
+          pHVar1 = (HINSTANCE__ *)___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
           return pHVar1;
         }
       }
       else {
         FreeLibrary(pHVar2);
-        uVar7 = extraout_EDX_06;
       }
     }
   }
-  pHVar1 = (HINSTANCE__ *)
-           thunk_FUN_00411970(local_8 ^ (uint)&stack0xfffffffc,uVar7,in_stack_fffffee4);
+  pHVar1 = (HINSTANCE__ *)___security_check_cookie_4(local_8 ^ (uint)&stack0xfffffffc);
   return pHVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl terminate(void)
 
@@ -3446,8 +3398,6 @@ void __cdecl terminate(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
 
 {
@@ -3455,34 +3405,31 @@ errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
   
                     // WARNING: Could not recover jumptable at 0x004139c2. Too many branches
                     // WARNING: Treating indirect jump as call
-  eVar1 = _controlfp_s();
+  eVar1 = _controlfp_s(_CurrentState,_NewValue,_Mask);
   return eVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl
 _invoke_watson(wchar_t *param_1,wchar_t *param_2,wchar_t *param_3,uint param_4,uintptr_t param_5)
 
 {
                     // WARNING: Could not recover jumptable at 0x004139c8. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  _invoke_watson();
+  _invoke_watson(param_1,param_2,param_3,param_4,param_5);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x004139ce. Too many branches
                     // WARNING: Treating indirect jump as call
-  _unlock();
+  _unlock(_File);
   return;
 }
 
@@ -3499,14 +3446,12 @@ void __dllonexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _lock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x004139da. Too many branches
                     // WARNING: Treating indirect jump as call
-  _lock();
+  _lock(_File);
   return;
 }
 

@@ -20,6 +20,14 @@ typedef enum Elf_ProgramHeaderType {
     PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType;
 
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
@@ -120,14 +128,6 @@ struct Elf64_Sym {
 
 
 
-void g(void)
-
-{
-  return;
-}
-
-
-
 void h(void)
 
 {
@@ -143,7 +143,7 @@ void f(int param_1,int param_2,int param_3)
     h();
   }
   else {
-    g();
+    g(param_3,0x400121);
   }
   return;
 }

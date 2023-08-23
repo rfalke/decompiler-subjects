@@ -6,13 +6,6 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
-typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
-
-struct fde_table_entry {
-    dword initial_loc; // Initial Location
-    dword data_loc; // Data location
-};
-
 typedef struct eh_frame_hdr eh_frame_hdr, *Peh_frame_hdr;
 
 struct eh_frame_hdr {
@@ -20,6 +13,13 @@ struct eh_frame_hdr {
     dwfenc eh_frame_pointer_encoding; // Exception Handler Frame Pointer Encoding
     dwfenc eh_frame_desc_entry_count_encoding; // Encoding of # of Exception Handler FDEs
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
+};
+
+typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
+
+struct fde_table_entry {
+    dword initial_loc; // Initial Location
+    dword data_loc; // Data location
 };
 
 typedef struct Elf32_Dyn_x86 Elf32_Dyn_x86, *PElf32_Dyn_x86;
@@ -79,6 +79,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -165,6 +166,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef enum Elf_ProgramHeaderType_x86 {
     PT_NULL=0,
     PT_LOAD=1,
@@ -199,14 +211,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -294,10 +306,13 @@ undefined4 main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );

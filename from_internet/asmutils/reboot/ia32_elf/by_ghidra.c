@@ -3,6 +3,33 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -32,46 +59,46 @@ struct Elf32_Ehdr {
 
 
 
-void __regparm1 entry(short *param_1,byte *param_2)
+void processEntry entry(undefined4 param_1,int param_2,char *param_3)
 
 {
   code *pcVar1;
+  short *in_EAX;
   undefined4 uVar2;
   undefined4 extraout_ECX;
   undefined4 uVar3;
   short **ppsVar4;
   short **ppsVar5;
   short **ppsVar6;
-  byte *pbVar7;
+  char *pcVar7;
   int iVar8;
   undefined8 uVar9;
-  int unaff_retaddr;
   
   iVar8 = 0;
   ppsVar4 = (short **)&stack0x00000008;
   do {
-    pbVar7 = param_2;
-    param_2 = pbVar7 + 1;
-    param_1 = (short *)((uint)param_1 & 0xffffff00 | (uint)*pbVar7);
-  } while (*pbVar7 != 0);
+    pcVar7 = param_3;
+    param_3 = pcVar7 + 1;
+    in_EAX = (short *)CONCAT31((int3)((uint)in_EAX >> 8),*pcVar7);
+  } while (*pcVar7 != '\0');
   uVar3 = 0xfee1dead;
   uVar2 = 0x28121969;
-  while (unaff_retaddr = unaff_retaddr + -1, ppsVar6 = ppsVar4, unaff_retaddr != 0) {
-    param_1 = *ppsVar4;
+  while (param_2 = param_2 + -1, ppsVar6 = ppsVar4, param_2 != 0) {
+    in_EAX = *ppsVar4;
     ppsVar6 = ppsVar4 + 1;
     ppsVar5 = ppsVar4 + 1;
     ppsVar4 = ppsVar4 + 1;
-    if (*param_1 == 0x702d) goto LAB_08048091;
+    if (*in_EAX == 0x702d) goto LAB_08048091;
     ppsVar6 = ppsVar5;
-    if (*param_1 != 0x662d) break;
+    if (*in_EAX != 0x662d) break;
     iVar8 = iVar8 + 1;
   }
-  uVar9 = CONCAT44(0x1234567,param_1);
-  if (*(int *)(pbVar7 + -4) == 0x746c6168) {
+  uVar9 = CONCAT44(0x1234567,in_EAX);
+  if (*(int *)(pcVar7 + -4) == 0x746c6168) {
     uVar2 = 0xcdef0123;
   }
   else {
-    if (*(short *)(pbVar7 + -2) != 0x6666) goto LAB_080480ae;
+    if (*(short *)(pcVar7 + -2) != 0x6666) goto LAB_080480ae;
 LAB_08048091:
     uVar2 = 0x4321fedc;
   }
@@ -97,8 +124,8 @@ LAB_080480ae:
     *(int *)((int)ppsVar6 + -0xc) = (int)((ulonglong)uVar9 >> 0x20);
     *(undefined4 *)((int)ppsVar6 + -0x10) = uVar3;
     *(short ***)((int)ppsVar6 + -0x14) = ppsVar6;
-    *(int *)((int)ppsVar6 + -0x18) = unaff_retaddr;
-    *(byte **)((int)ppsVar6 + -0x1c) = param_2;
+    *(int *)((int)ppsVar6 + -0x18) = param_2;
+    *(char **)((int)ppsVar6 + -0x1c) = param_3;
     *(undefined4 *)((int)ppsVar6 + -0x20) = 0;
     *(undefined4 *)((int)ppsVar6 + -0x24) = 2;
     *(undefined4 *)((int)ppsVar6 + -0x24) = 1;
@@ -108,8 +135,8 @@ LAB_080480ae:
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
     iVar8 = *(int *)((int)ppsVar6 + -0x18);
-    param_2 = *(byte **)((int)ppsVar6 + -0x14);
-    unaff_retaddr = *(int *)((int)ppsVar6 + -0x10);
+    param_3 = *(char **)((int)ppsVar6 + -0x14);
+    param_2 = *(int *)((int)ppsVar6 + -0x10);
     *(undefined4 *)((int)ppsVar6 + 4) = 0x24;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();

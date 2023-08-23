@@ -79,6 +79,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -194,6 +195,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -202,14 +214,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -269,7 +281,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -289,35 +301,33 @@ undefined8 main(int param_1)
   undefined8 in_R9;
   double dVar1;
   undefined8 local_28;
-  undefined2 uStack32;
-  undefined2 uStack30;
+  undefined2 uStack_20;
+  undefined2 uStack_1e;
   
   unknown_to_unknown(0x3ff35c28f5c28f5c);
   dVar1 = (double)param_1;
   double_to_unknown(dVar1 + 1.22);
   unknown_to_double(0x3ff3ae147ae147ae);
   double_to_double(dVar1 + 1.24);
-  local_28 = SUB108((float10)2.32,0);
-  uStack32 = (undefined2)((unkuint10)(float10)2.32 >> 0x40);
-  printf((char *)0x40027ae147ae147b,
-         "unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",100,0x65,0x66,in_R8,in_R9
-         ,local_28,(ulong)CONCAT22(uStack30,uStack32));
-  printf((char *)(dVar1 + 2.41),"double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",200
-         ,0xc9,0xca,in_R8,in_R9,SUB108((float10)(dVar1 + 2.42),0),
-         (char)((unkuint10)(float10)(dVar1 + 2.42) >> 0x40));
+  local_28 = SUB108((longdouble)2.32,0);
+  uStack_20 = (undefined2)((unkuint10)(longdouble)2.32 >> 0x40);
+  printf("unknown: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",0x40027ae147ae147b,100,
+         0x65,0x66,in_R8,in_R9,local_28,(ulong)CONCAT22(uStack_1e,uStack_20));
+  printf("double: int-a=%d double=%f int-b=%d long double=%Lf int-c=%d\n",dVar1 + 2.41,200,0xc9,0xca
+         ,in_R8,in_R9,SUB108((longdouble)(dVar1 + 2.42),0),
+         (short)((unkuint10)(longdouble)(dVar1 + 2.42) >> 0x40));
   return 0;
 }
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -395,10 +405,9 @@ undefined8 unknown_to_unknown(void)
   undefined in_XMM0 [16];
   
   printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
-         SUB168(in_XMM0,0) >> 0x38,(ulong)SUB161(in_XMM0 >> 0x30,0),(ulong)SUB161(in_XMM0 >> 0x28,0)
-         ,(ulong)SUB161(in_XMM0 >> 0x20,0),(ulong)(SUB164(in_XMM0,0) >> 0x18),
-         (ulong)SUB161(in_XMM0 >> 0x10,0),(ulong)(SUB164(in_XMM0,0) >> 8 & 0xff),
-         SUB168(in_XMM0,0) & 0xff);
+         in_XMM0._0_8_ >> 0x38,(ulong)in_XMM0[6],(ulong)in_XMM0[5],(ulong)in_XMM0[4],
+         (ulong)(in_XMM0._0_4_ >> 0x18),(ulong)in_XMM0[2],(ulong)(in_XMM0._0_4_ >> 8 & 0xff),
+         in_XMM0._0_8_ & 0xff);
   return 0;
 }
 
@@ -410,10 +419,9 @@ undefined8 double_to_unknown(void)
   undefined in_XMM0 [16];
   
   printf("got a double with      0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n",
-         SUB168(in_XMM0,0) >> 0x38,(ulong)SUB161(in_XMM0 >> 0x30,0),(ulong)SUB161(in_XMM0 >> 0x28,0)
-         ,(ulong)SUB161(in_XMM0 >> 0x20,0),(ulong)(SUB164(in_XMM0,0) >> 0x18),
-         (ulong)SUB161(in_XMM0 >> 0x10,0),(ulong)(SUB164(in_XMM0,0) >> 8 & 0xff),
-         SUB168(in_XMM0,0) & 0xff);
+         in_XMM0._0_8_ >> 0x38,(ulong)in_XMM0[6],(ulong)in_XMM0[5],(ulong)in_XMM0[4],
+         (ulong)(in_XMM0._0_4_ >> 0x18),(ulong)in_XMM0[2],(ulong)(in_XMM0._0_4_ >> 8 & 0xff),
+         in_XMM0._0_8_ & 0xff);
   return 0;
 }
 
@@ -422,7 +430,7 @@ undefined8 double_to_unknown(void)
 undefined8 unknown_to_double(double param_1)
 
 {
-  printf((char *)(param_1 + param_1),"got 2*x=%f\n");
+  printf("got 2*x=%f\n",param_1 + param_1);
   return 0;
 }
 
@@ -431,7 +439,7 @@ undefined8 unknown_to_double(double param_1)
 undefined8 double_to_double(double param_1)
 
 {
-  printf((char *)(param_1 + param_1),"got 2*x=%f\n");
+  printf("got 2*x=%f\n",param_1 + param_1);
   return 0;
 }
 

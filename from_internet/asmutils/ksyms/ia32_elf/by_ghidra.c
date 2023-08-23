@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,13 +61,14 @@ struct Elf32_Ehdr {
 
 
 
-undefined8 entry(undefined4 param_1,short *param_2,char *param_3)
+undefined4 processEntry
+entry(undefined4 param_1,char param_2,undefined4 param_3,short *param_4,short *param_5)
 
 {
-  byte bVar1;
+  char cVar1;
   code *pcVar2;
-  uint uVar3;
-  int iVar4;
+  int iVar3;
+  uint uVar4;
   int extraout_ECX;
   undefined4 extraout_ECX_00;
   int extraout_ECX_01;
@@ -48,80 +76,79 @@ undefined8 entry(undefined4 param_1,short *param_2,char *param_3)
   int *piVar6;
   int *piVar7;
   short *psVar8;
-  undefined4 *unaff_EDI;
+  short *psVar9;
+  undefined4 *in_EDI;
   byte bVar10;
   undefined8 uVar11;
-  char unaff_retaddr;
-  short *psVar9;
   
   bVar10 = 0;
   puVar5 = &stack0xfffffffc;
-  if (unaff_retaddr < '\x02') {
+  if (param_2 < '\x02') {
 LAB_0804809f:
-    unaff_EDI = &DAT_080a82ce;
+    in_EDI = &DAT_080a82ce;
     pcVar2 = (code *)swi(0x80);
     uVar11 = (*pcVar2)();
     psVar8 = (short *)((ulonglong)uVar11 >> 0x20);
-    uVar3 = (uint)uVar11;
-    param_3 = (char *)(short *)0x20000;
-    if ((int)uVar3 < 0) goto LAB_080480ea;
+    iVar3 = (int)uVar11;
+    psVar9 = (short *)0x20000;
+    if (iVar3 < 0) goto LAB_080480ea;
     do {
-      uVar3 = FUN_080480f1();
+      iVar3 = FUN_080480f1();
       psVar9 = psVar8;
       do {
         psVar8 = (short *)((int)psVar9 + (uint)bVar10 * -2 + 1);
-        bVar1 = *(byte *)psVar9;
-        uVar3 = uVar3 & 0xffffff00 | (uint)bVar1;
+        cVar1 = *(char *)psVar9;
+        iVar3 = CONCAT31((int3)((uint)iVar3 >> 8),cVar1);
         psVar9 = psVar8;
-      } while (bVar1 != 0);
+      } while (cVar1 != '\0');
     } while (extraout_ECX != 1);
-    param_3 = (char *)psVar8;
-    if (unaff_retaddr < '\x02') goto LAB_080480ea;
-    param_3 = (char *)param_2;
-    if (*param_2 == 0x612d) {
-      param_3 = (char *)0x0;
+    if (param_2 < '\x02') goto LAB_080480ea;
+    psVar9 = param_4;
+    if (*param_4 == 0x612d) {
+      psVar9 = (short *)0x0;
       FUN_080480f1();
     }
   }
-  else if (*param_2 == 0x562d) {
-    param_3 = s_hackers__ksyms_v_0_1_0804826b;
+  else if (*param_4 == 0x562d) {
     FUN_0804824a();
     register0x00000010 = (BADSPACEBASE *)&stack0xfffffffc;
+    psVar9 = (short *)s_hackers__ksyms_v_0_1_0804826b;
   }
   else {
-    if (*param_2 != 0x682d) {
+    if (*param_4 != 0x682d) {
       FUN_0804824a();
     }
-    if (*param_2 != 0x6f2d) goto LAB_0804809f;
-    if (unaff_retaddr < '\x03') {
-      param_3 = (char *)0x0;
+    psVar9 = param_5;
+    if (*param_4 != 0x6f2d) goto LAB_0804809f;
+    if (param_2 < '\x03') {
       FUN_080480f1();
       register0x00000010 = (BADSPACEBASE *)&stack0xfffffffc;
+      psVar9 = (short *)0x0;
     }
     else {
       FUN_080480f1();
       register0x00000010 = (BADSPACEBASE *)&stack0xfffffffc;
     }
   }
-  uVar3 = 0;
+  iVar3 = 0;
 LAB_080480ea:
   *(undefined4 *)((int)register0x00000010 + -4) = 1;
   pcVar2 = (code *)swi(0x80);
   uVar11 = (*pcVar2)();
   *(undefined **)register0x00000010 = puVar5;
-  *(char **)((int)register0x00000010 + -4) = param_3;
+  *(short **)((int)register0x00000010 + -4) = psVar9;
   *(int *)((int)register0x00000010 + -0x10) = (int)uVar11;
   *(undefined4 *)((int)register0x00000010 + -0x14) = extraout_ECX_00;
   *(int *)((int)register0x00000010 + -0x18) = (int)((ulonglong)uVar11 >> 0x20);
-  *(uint *)((int)register0x00000010 + -0x1c) = uVar3;
+  *(int *)((int)register0x00000010 + -0x1c) = iVar3;
   *(undefined **)((int)register0x00000010 + -0x20) = (undefined *)((int)register0x00000010 + -0xc);
   *(BADSPACEBASE **)((int)register0x00000010 + -0x24) = register0x00000010;
-  *(char **)((int)register0x00000010 + -0x28) = param_3;
-  *(undefined4 **)((int)register0x00000010 + -0x2c) = unaff_EDI;
+  *(short **)((int)register0x00000010 + -0x28) = psVar9;
+  *(undefined4 **)((int)register0x00000010 + -0x2c) = in_EDI;
   *(undefined4 *)((int)register0x00000010 + -0x30) = 4;
   pcVar2 = (code *)swi(0x80);
-  iVar4 = (*pcVar2)();
-  if (iVar4 < 0) {
+  iVar3 = (*pcVar2)();
+  if (iVar3 < 0) {
     *(undefined4 *)((int)register0x00000010 + -0x2c) = 0x8048129;
     FUN_08048214();
     *(undefined4 *)((int)register0x00000010 + -0x2c) = 8;
@@ -142,10 +169,10 @@ LAB_080480ea:
   else {
     *(undefined4 **)((int)register0x00000010 + -8) = &DAT_080882ca;
     *(undefined4 **)((int)register0x00000010 + -0xc) = &DAT_080882ca;
-    iVar4 = DAT_080a82ca;
+    iVar3 = DAT_080a82ca;
     piVar7 = (int *)((int)register0x00000010 + -0x28);
     do {
-      piVar7[-1] = iVar4;
+      piVar7[-1] = iVar3;
       piVar7[-2] = 0x804818a;
       FUN_08048214();
       piVar7[-2] = 8;
@@ -156,9 +183,9 @@ LAB_080480ea:
       piVar7[-1] = 0x80481a4;
       FUN_0804824a();
       piVar7[-1] = 0x80481b2;
-      uVar3 = FUN_0804824a();
+      uVar4 = FUN_0804824a();
       if (*(int *)((int)register0x00000010 + -4) != 0) {
-        if (uVar3 < 0x20) {
+        if (uVar4 < 0x20) {
           do {
             piVar7[-1] = 0x80481cc;
             FUN_0804824a();
@@ -177,11 +204,11 @@ LAB_080480ea:
       FUN_0804824a();
       *(int *)((int)register0x00000010 + -8) = *(int *)((int)register0x00000010 + -8) + 8;
       piVar6 = piVar7 + 1;
-      iVar4 = *piVar7 + -1;
+      iVar3 = *piVar7 + -1;
       piVar7 = piVar7 + 1;
-    } while (iVar4 != 0);
+    } while (iVar3 != 0);
   }
-  return CONCAT44(*(undefined4 *)((int)piVar6 + 0x14),*(undefined4 *)((int)piVar6 + 0x1c));
+  return *(undefined4 *)((int)piVar6 + 0x1c);
 }
 
 
@@ -196,21 +223,21 @@ undefined8 FUN_080480f1(void)
   int *piVar4;
   undefined **ppuVar5;
   int unaff_ESI;
-  int iStack52;
-  undefined *puStack40;
-  undefined4 **ppuStack36;
+  int iStack_34;
+  undefined *puStack_28;
+  undefined4 **ppuStack_24;
   undefined4 *local_10;
   undefined4 *local_c;
   
-  puStack40 = &stack0xfffffffc;
-  ppuStack36 = &local_10;
+  puStack_28 = &stack0xfffffffc;
+  ppuStack_24 = &local_10;
   pcVar1 = (code *)swi(0x80);
   iVar2 = (*pcVar1)();
   if (iVar2 < 0) {
     FUN_08048214();
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    ppuVar5 = &puStack40;
+    ppuVar5 = &puStack_28;
     FUN_0804824a();
     FUN_0804824a();
     FUN_0804824a();

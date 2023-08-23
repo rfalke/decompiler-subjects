@@ -105,14 +105,14 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -144,7 +144,7 @@ struct Elf32_Ehdr {
 
 
 
-void f(void)
+void processEntry f(void)
 
 {
   return;
@@ -152,10 +152,10 @@ void f(void)
 
 
 
-void g(void)
+void __regparm3 g(undefined4 param_1,undefined4 param_2)
 
 {
-  f(1,2,3,4,5,6,7,8,9,10,0xb,0xc);
+  f(param_2,0x80480ff,1,2,3,4,5,6,7,8,9,10,0xb,0xc);
   return;
 }
 

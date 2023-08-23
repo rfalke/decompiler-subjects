@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -38,17 +65,18 @@ undefined8 __regparm3 FUN_0804804c(uint param_1,undefined4 param_2)
 
 {
   ulonglong uVar1;
+  ushort uVar2;
   ushort unaff_BX;
   
+  uVar2 = (ushort)(param_1 >> 0x10);
   if (param_1 == 0) {
-    param_1 = (uint)unaff_BX;
+    param_1 = CONCAT22(uVar2,unaff_BX);
   }
   else if (unaff_BX != 0) {
-    uVar1 = CONCAT44(param_1,(param_1 & 0xffff) * (uint)unaff_BX) & 0xffff0000ffffffff;
-    return CONCAT44(param_2,(uint)(uVar1 % 0x10001) & 0xffff |
-                            (uint)(ushort)(uVar1 / 0x10001 >> 0x10) << 0x10);
+    uVar1 = CONCAT44((uint)uVar2 << 0x10,(param_1 & 0xffff) * (uint)unaff_BX);
+    return CONCAT44(param_2,CONCAT22((short)(uVar1 / 0x10001 >> 0x10),(short)(uVar1 % 0x10001)));
   }
-  return CONCAT44(param_2,param_1 & 0xffff0000 | (uint)(ushort)(1 - (short)param_1));
+  return CONCAT44(param_2,CONCAT22((short)(param_1 >> 0x10),1 - (short)param_1));
 }
 
 
@@ -218,11 +246,11 @@ void __regparm3 FUN_0804820a(undefined4 param_1)
   undefined4 *puVar5;
   undefined4 unaff_EDI;
   undefined8 uVar6;
-  undefined4 auStack12 [3];
+  undefined4 auStack_c [3];
   
-  auStack12[2] = param_1;
-  puVar4 = auStack12 + 1;
-  auStack12[1] = param_1;
+  auStack_c[2] = param_1;
+  puVar4 = auStack_c + 1;
+  auStack_c[1] = param_1;
   while( true ) {
     *(undefined4 *)((int)puVar4 + -4) = 7;
     iVar3 = *(int *)((int)puVar4 + -4);
@@ -264,7 +292,7 @@ void __regparm3 FUN_0804820a(undefined4 param_1)
 // WARNING: Instruction at (ram,0x08048305) overlaps instruction at (ram,0x08048304)
 // 
 
-void entry(undefined4 param_1,char *param_2,char *param_3,int param_4)
+void processEntry entry(void)
 
 {
   byte *pbVar1;
@@ -279,12 +307,15 @@ void entry(undefined4 param_1,char *param_2,char *param_3,int param_4)
   int *piVar10;
   undefined4 *puVar11;
   int *piVar12;
+  char *in_stack_00000008;
+  char *in_stack_0000000c;
+  int in_stack_00000010;
   char *pcVar8;
   
-  puVar11 = &param_3;
-  if ((param_2 == (char *)0x0) ||
-     (((cVar2 = *param_2, cVar2 != 'e' && (puVar11 = &param_3, cVar2 != 'd')) ||
-      (puVar11 = &param_4, DAT_080483cf = cVar2, param_3 == (char *)0x0)))) {
+  puVar11 = &stack0x0000000c;
+  if ((in_stack_00000008 == (char *)0x0) ||
+     (((cVar2 = *in_stack_00000008, cVar2 != 'e' && (puVar11 = &stack0x0000000c, cVar2 != 'd')) ||
+      (puVar11 = &stack0x00000010, DAT_080483cf = cVar2, in_stack_0000000c == (char *)0x0)))) {
     *(undefined4 *)((int)puVar11 + -4) = 0x19;
     *(undefined4 *)((int)puVar11 + -4) = 2;
     *(undefined4 *)((int)puVar11 + -4) = 4;
@@ -296,21 +327,21 @@ void entry(undefined4 param_1,char *param_2,char *param_3,int param_4)
     iVar9 = 0x10;
     pcVar8 = "";
     do {
-      if (*param_3 == '\0') break;
-      *pcVar8 = *param_3;
+      if (*in_stack_0000000c == '\0') break;
+      *pcVar8 = *in_stack_0000000c;
       iVar9 = iVar9 + -1;
-      param_3 = param_3 + 1;
+      in_stack_0000000c = in_stack_0000000c + 1;
       pcVar8 = pcVar8 + 1;
     } while (iVar9 != 0);
-    param_3 = (char *)0x8048282;
+    in_stack_0000000c = (char *)0x8048282;
     FUN_0804809c();
     if (DAT_080483cf != 'e') {
-      param_3 = (char *)0x8048297;
+      in_stack_0000000c = (char *)0x8048297;
       FUN_080480e3();
     }
-    piVar4 = &param_4;
-    piVar10 = &param_4;
-    if (param_4 == 0) goto LAB_080482b1;
+    piVar4 = &stack0x00000010;
+    piVar10 = &stack0x00000010;
+    if (in_stack_00000010 == 0) goto LAB_080482b1;
     do {
       iVar9 = *piVar10;
       piVar12 = piVar10 + 1;
@@ -442,7 +473,7 @@ LAB_080482b1:
     halt_baddata();
   }
   bVar5 = bVar5 | *pbVar7;
-  pcVar8 = (char *)(uVar6 & 0xffffff00 | (uint)bVar5);
+  pcVar8 = (char *)CONCAT31((int3)((uint)pbVar7 >> 8),bVar5);
   *pcVar8 = *pcVar8 + bVar5;
   *pcVar8 = *pcVar8 + bVar5;
   *pcVar8 = *pcVar8 + bVar5;

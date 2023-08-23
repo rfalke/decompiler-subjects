@@ -96,14 +96,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -146,7 +146,7 @@ struct Elf64_Sym {
 
 
 
-undefined8 h(void)
+undefined8 processEntry h(void)
 
 {
   return 1;
@@ -162,20 +162,21 @@ int g(int param_1,int param_2,int param_3,int param_4)
 
 
 
-void f(void)
+void f(undefined8 param_1,undefined8 param_2,undefined8 param_3)
 
 {
   int iVar1;
-  int local_c;
+  undefined *puVar2;
   
-  local_c = 0x14;
-  iVar1 = h();
+  puVar2 = &stack0xfffffffffffffff8;
+  iVar1 = h(param_3,0x40018c);
   if (iVar1 != 0) {
-    local_c = g(1,2,3,4);
-    local_c = local_c + 0x14;
+    iVar1 = g(1,2,3,4);
+    *(int *)(puVar2 + -4) = *(int *)(puVar2 + -4) + iVar1;
   }
-  local_c = local_c + 10;
-  g(local_c,local_c,local_c,local_c);
+  *(int *)(puVar2 + -4) = *(int *)(puVar2 + -4) + 10;
+  g(*(undefined4 *)(puVar2 + -4),*(undefined4 *)(puVar2 + -4),*(undefined4 *)(puVar2 + -4),
+    *(undefined4 *)(puVar2 + -4));
   return;
 }
 

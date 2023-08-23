@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    uint;
@@ -269,6 +270,72 @@ void __cdecl ___w32_eh_shared_initialize(undefined4 *param_1)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void ___w32_sharedptr_initialize(void)
+
+{
+  ATOM AVar1;
+  int *_Memory;
+  int iVar2;
+  undefined4 *puVar3;
+  undefined4 *puVar4;
+  undefined4 local_4c;
+  undefined4 local_48;
+  undefined4 local_44;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  undefined4 local_30;
+  undefined4 local_2c;
+  
+  if (___w32_sharedptr != (int *)0x0) {
+    return;
+  }
+  local_4c = 0x41414141;
+  local_48 = 0x41414141;
+  local_44 = 0x41414141;
+  local_40 = 0x41414141;
+  local_3c = 0x41414141;
+  local_38 = 0x41414141;
+  local_34 = 0x41414141;
+  local_30 = 0x41414141;
+  puVar3 = (undefined4 *)&_w32_atom_suffix;
+  puVar4 = &local_2c;
+  for (iVar2 = 7; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *puVar4 = *puVar3;
+    puVar3 = puVar3 + 1;
+    puVar4 = puVar4 + 1;
+  }
+  *(undefined2 *)puVar4 = 0x4e49;
+  *(undefined *)((int)puVar4 + 2) = 0;
+  AVar1 = _FindAtomA_4((LPCSTR)&local_4c);
+  if (AVar1 == 0) {
+    _Memory = (int *)_malloc(0x30);
+    if (_Memory == (int *)0x0) {
+                    // WARNING: Subroutine does not return
+      _abort();
+    }
+    ___w32_eh_shared_initialize(_Memory);
+    AVar1 = ___w32_sharedptr_set(_Memory);
+    if (AVar1 != 0) {
+      _pthread_atfork(0,0,&___w32_sharedptr_fixup_after_fork);
+      goto LAB_004012b0;
+    }
+    _free(_Memory);
+    AVar1 = _FindAtomA_4((LPCSTR)&local_4c);
+  }
+  _Memory = ___w32_sharedptr_get(AVar1);
+LAB_004012b0:
+  ____w32_sharedptr_unexpected = _Memory + 2;
+  ___w32_sharedptr = _Memory;
+  ____w32_sharedptr_terminate = _Memory + 1;
+  return;
+}
+
+
+
 ATOM __cdecl ___w32_sharedptr_set(int *param_1)
 
 {
@@ -369,13 +436,13 @@ void _cygwin_crt0(undefined4 param_1)
 {
   int iVar1;
   undefined4 local_c4 [41];
-  undefined4 uStack32;
+  undefined4 uStack_20;
   
-  uStack32 = 0x40148f;
+  uStack_20 = 0x40148f;
   iVar1 = __cygwin_crt0_common_8(param_1,(undefined4 *)0x0);
   if (iVar1 == 0) goto LAB_004014a3;
   do {
-    uStack32 = 0x4014a3;
+    uStack_20 = 0x4014a3;
     dll_crt0__FP11per_process();
 LAB_004014a3:
     local_c4[0] = 0;
@@ -396,8 +463,6 @@ void ___main(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl _puts(char *_Str)
 
 {
@@ -405,20 +470,18 @@ int __cdecl _puts(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x004014e0. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = puts();
+  iVar1 = puts(_Str);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _free(void *_Memory)
 
 {
                     // WARNING: Could not recover jumptable at 0x004014f0. Too many branches
                     // WARNING: Treating indirect jump as call
-  free();
+  free(_Memory);
   return;
 }
 
@@ -435,8 +498,6 @@ void _pthread_atfork(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void * __cdecl _malloc(size_t _Size)
 
 {
@@ -444,18 +505,17 @@ void * __cdecl _malloc(size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x00401510. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)malloc();
+  pvVar1 = malloc(_Size);
   return pvVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401520. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
   abort();
   return;

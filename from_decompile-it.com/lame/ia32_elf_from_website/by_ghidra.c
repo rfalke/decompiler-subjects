@@ -57,7 +57,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -119,6 +119,25 @@ struct stat64 {
 };
 
 
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
+
+
+// WARNING! conflicting data type names: /DWARF/__time_t - /types.h/__time_t
+
+typedef int __suseconds_t;
+
+typedef int __clock_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__ino_t - /types.h/__ino_t
+
+
+// WARNING! conflicting data type names: /DWARF/__off_t - /types.h/__off_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
+
+
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 typedef struct IFF_AIFF_struct IFF_AIFF_struct, *PIFF_AIFF_struct;
@@ -134,12 +153,8 @@ struct blockAlign_struct {
 
 struct IFF_AIFF_struct {
     short numChannels;
-    undefined field1_0x2;
-    undefined field2_0x3;
     ulong numSampleFrames;
     short sampleSize;
-    undefined field5_0xa;
-    undefined field6_0xb;
     double sampleRate;
     ulong sampleType;
     blockAlign blkAlgn;
@@ -169,8 +184,6 @@ typedef struct stat stat, *Pstat;
 struct stat {
     __dev_t st_dev;
     ushort __pad1;
-    undefined field2_0xa;
-    undefined field3_0xb;
     __ino_t __st_ino;
     __mode_t st_mode;
     __nlink_t st_nlink;
@@ -178,8 +191,6 @@ struct stat {
     __gid_t st_gid;
     __dev_t st_rdev;
     ushort __pad2;
-    undefined field11_0x2a;
-    undefined field12_0x2b;
     __off64_t st_size;
     __blksize_t st_blksize;
     __blkcnt64_t st_blocks;
@@ -233,9 +244,9 @@ struct get_audio_global_data {
 
 typedef char * __gnuc_va_list;
 
-typedef struct anon_struct.conflict5012 anon_struct.conflict5012, *Panon_struct.conflict5012;
+typedef struct anon_struct_2120_8_a9f09aea anon_struct_2120_8_a9f09aea, *Panon_struct_2120_8_a9f09aea;
 
-struct anon_struct.conflict5012 {
+struct anon_struct_2120_8_a9f09aea {
     int vbr_bitrate_min_index;
     int vbr_bitrate_max_index;
     int kbps[14];
@@ -248,14 +259,10 @@ struct anon_struct.conflict5012 {
 
 typedef struct timeval timeval, *Ptimeval;
 
-typedef long __suseconds_t;
-
 struct timeval {
     __time_t tv_sec;
     __suseconds_t tv_usec;
 };
-
-typedef long __clock_t;
 
 typedef __clock_t clock_t;
 
@@ -348,9 +355,6 @@ typedef __gnuc_va_list va_list;
 
 typedef __off64_t off_t;
 
-
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
-
 typedef enum TextEncoding {
     TENC_RAW=0,
     TENC_LATIN1=1,
@@ -378,6 +382,12 @@ struct timestatus_t {
 };
 
 
+// WARNING! conflicting data type names: /types.h/__suseconds_t - /DWARF/__suseconds_t
+
+
+// WARNING! conflicting data type names: /types.h/__clock_t - /DWARF/__clock_t
+
+
 // WARNING! conflicting data type names: /stdarg.h/__gnuc_va_list - /DWARF/stdarg.h/__gnuc_va_list
 
 
@@ -391,6 +401,9 @@ struct timezone {
     int tz_minuteswest;
     int tz_dsttime;
 };
+
+
+// WARNING! conflicting data type names: /time.h/clock_t - /DWARF/time.h/clock_t
 
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
@@ -496,6 +509,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -562,6 +576,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -569,14 +594,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -611,17 +636,27 @@ struct Elf32_Ehdr {
 undefined4 _init(void)
 
 {
-  undefined4 uStack12;
+  undefined4 uStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return uStack12;
+  return uStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_0804a03c(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fileno(FILE *__stream)
 
@@ -634,12 +669,12 @@ int fileno(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double ldexp(double __x,int __exponent)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   ldexp(__x,__exponent);
   return (double)extraout_ST0;
@@ -656,7 +691,7 @@ void lame_get_in_samplerate(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs(char *__s,FILE *__stream)
 
@@ -678,7 +713,7 @@ void get_lame_version(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -691,7 +726,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * popen(char *__command,char *__modes)
 
@@ -740,7 +775,7 @@ void id3tag_set_albumart(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int memcmp(void *__s1,void *__s2,size_t __n)
 
@@ -780,7 +815,7 @@ void lame_set_scale_right(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int getchar(void)
 
@@ -847,7 +882,7 @@ void __isoc99_sscanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat64(int __ver,char *__filename,stat64 *__stat_buf)
 
@@ -878,7 +913,7 @@ void get_lame_os_bitness(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * getenv(char *__name)
 
@@ -891,7 +926,7 @@ char * getenv(char *__name)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strncpy(char *__dest,char *__src,size_t __n)
 
@@ -958,7 +993,7 @@ void lame_get_VBR_max_bitrate_kbps(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -971,7 +1006,7 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen64(char *__filename,char *__modes)
 
@@ -1047,7 +1082,7 @@ void lame_set_decode_on_the_fly(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _IO_getc(_IO_FILE *__fp)
 
@@ -1123,7 +1158,7 @@ void lame_set_compression_ratio(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int gettimeofday(timeval *__tv,__timezone_ptr_t __tz)
 
@@ -1136,7 +1171,7 @@ int gettimeofday(timeval *__tv,__timezone_ptr_t __tz)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -1201,7 +1236,7 @@ void tgetent(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -1223,7 +1258,7 @@ void lame_get_encoder_delay(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fseek(FILE *__stream,long __off,int __whence)
 
@@ -1254,7 +1289,7 @@ void lame_set_free_format(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -1294,7 +1329,7 @@ void lame_set_exp_nspsytune(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 clock_t clock(void)
 
@@ -1307,7 +1342,7 @@ clock_t clock(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -1329,7 +1364,7 @@ void lame_get_decode_on_the_fly(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -1414,7 +1449,7 @@ void lame_set_athaa_sensitivity(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int feof(FILE *__stream)
 
@@ -1427,7 +1462,7 @@ int feof(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -1440,7 +1475,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long ftell(FILE *__stream)
 
@@ -1507,7 +1542,7 @@ void lame_set_brate(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atoi(char *__nptr)
 
@@ -1547,12 +1582,12 @@ void lame_get_framesize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 double atof(char *__nptr)
 
 {
-  float10 extraout_ST0;
+  longdouble extraout_ST0;
   
   atof(__nptr);
   return (double)extraout_ST0;
@@ -1587,7 +1622,7 @@ void lame_set_highpassfreq(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -1600,7 +1635,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fprintf(FILE *__stream,char *__format,...)
 
@@ -1631,7 +1666,7 @@ void lame_set_quality(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
 
@@ -1644,7 +1679,7 @@ int setvbuf(FILE *__stream,char *__buf,int __modes,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strncat(char *__dest,char *__src,size_t __n)
 
@@ -1693,7 +1728,7 @@ void id3tag_set_album(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -1742,7 +1777,7 @@ void lame_encode_flush_nogap(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputc(int __c,FILE *__stream)
 
@@ -1845,7 +1880,7 @@ void lame_set_bWriteVbrTag(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -1894,7 +1929,7 @@ void id3tag_set_track(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __fxstat64(int __ver,int __fildes,stat64 *__stat_buf)
 
@@ -1997,7 +2032,7 @@ void lame_print_internals(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int vfprintf(FILE *__s,char *__format,__gnuc_va_list __arg)
 
@@ -2019,7 +2054,7 @@ void lame_set_experimentalY(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _IO_putc(int __c,_IO_FILE *__fp)
 
@@ -2059,7 +2094,7 @@ void lame_set_in_samplerate(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -2153,7 +2188,7 @@ void lame_set_highpasswidth(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strdup(char *__s)
 
@@ -2184,7 +2219,7 @@ void lame_set_scale(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ferror(FILE *__stream)
 
@@ -2206,7 +2241,7 @@ void hip_decode1_headersB(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int tolower(int __c)
 
@@ -2237,7 +2272,7 @@ void lame_set_lowpasswidth(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *__s1,char *__s2)
 
@@ -2250,7 +2285,7 @@ int strcmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -2279,7 +2314,7 @@ void lame_get_VBR_q(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pclose(FILE *__stream)
 
@@ -2301,10 +2336,13 @@ void lame_get_VBR_mean_bitrate_kbps(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -2326,6 +2364,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0804ab6f)
 // WARNING: Removing unreachable block (ram,0x0804ab78)
 
 void frame_dummy(void)
@@ -2335,6 +2374,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int parse_args_from_string(lame_global_flags *gfp,char *p,char *inPath,char *outPath)
 
@@ -2375,6 +2416,8 @@ int parse_args_from_string(lame_global_flags *gfp,char *p,char *inPath,char *out
 
 
 
+// WARNING: Unknown calling convention
+
 FILE * init_files(lame_global_flags *gf,char *inPath,char *outPath,int *enc_delay,int *enc_padding)
 
 {
@@ -2401,6 +2444,8 @@ FILE * init_files(lame_global_flags *gf,char *inPath,char *outPath,int *enc_dela
 
 
 
+// WARNING: Unknown calling convention
+
 int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,char *outPath,
                 int *enc_delay,int *enc_padding)
 
@@ -2416,7 +2461,7 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
   short Buffer [2] [1152];
   double wavsize;
   int tmp_num_channels;
-  anon_subr_void_FILE_ptr_char_ptr_int *WriteFunction;
+  _func_void_FILE_ptr_char_ptr_int *WriteFunction;
   int i;
   int skip_end;
   int iread;
@@ -2489,7 +2534,7 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
         puVar7 = &DAT_080548b4;
       }
       iVar1 = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7,&DAT_08054921);
     }
     break;
   case sf_mp2:
@@ -2503,7 +2548,7 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
         puVar7 = &DAT_080548b4;
       }
       iVar1 = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7,&DAT_0805491e);
     }
     break;
   case sf_mp3:
@@ -2533,7 +2578,7 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
         puVar7 = &DAT_080548b4;
       }
       iVar1 = lame_get_version(gfp);
-      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7);
+      console_printf("MPEG-%u%s Layer %s",2 - iVar1,puVar7,&DAT_08054907);
     }
     break;
   case sf_mp123:
@@ -2647,6 +2692,8 @@ int lame_decoder(lame_global_flags *gfp,FILE *outf,int skip_start,char *inPath,c
 
 
 
+// WARNING: Unknown calling convention
+
 void print_lame_tag_leading_info(lame_global_flags *gf)
 
 {
@@ -2661,51 +2708,51 @@ void print_lame_tag_leading_info(lame_global_flags *gf)
 
 
 
+// WARNING: Unknown calling convention
+
 void print_trailing_info(lame_global_flags *gf)
 
 {
-  double dVar1;
-  float fVar2;
-  int iVar3;
-  undefined *puVar4;
-  float10 fVar5;
-  undefined4 uVar6;
-  undefined4 uVar7;
+  float fVar1;
+  int iVar2;
+  undefined *puVar3;
+  longdouble lVar4;
+  double dVar5;
   float noclipScale;
   float noclipGainChange;
   int RadioGain;
   
-  iVar3 = lame_get_bWriteVbrTag(gf);
-  if (iVar3 != 0) {
+  iVar2 = lame_get_bWriteVbrTag(gf);
+  if (iVar2 != 0) {
     console_printf("done\n");
   }
-  iVar3 = lame_get_findReplayGain(gf);
-  if (iVar3 != 0) {
-    iVar3 = lame_get_RadioGain(gf);
-    if (iVar3 < 1) {
-      puVar4 = &DAT_080548b4;
+  iVar2 = lame_get_findReplayGain(gf);
+  if (iVar2 != 0) {
+    iVar2 = lame_get_RadioGain(gf);
+    if (iVar2 < 1) {
+      puVar3 = &DAT_080548b4;
     }
     else {
-      puVar4 = &DAT_08054a92;
+      puVar3 = &DAT_08054a92;
     }
-    console_printf("ReplayGain: %s%.1fdB\n",puVar4,SUB84((double)iVar3 / 10.0,0),
-                   (int)((ulonglong)((double)iVar3 / 10.0) >> 0x20));
-    if ((0x1fe < iVar3) || (iVar3 < -0x1fe)) {
+    console_printf("ReplayGain: %s%.1fdB\n",puVar3,SUB84((double)iVar2 / 10.0,0),
+                   (int)((ulonglong)((double)iVar2 / 10.0) >> 0x20));
+    if ((0x1fe < iVar2) || (iVar2 < -0x1fe)) {
       error_printf(
                   "WARNING: ReplayGain exceeds the -51dB to +51dB range. Such a result is too\n         high to be stored in the header.\n"
                   );
     }
   }
   if (print_clipping_info != 0) {
-    iVar3 = lame_get_decode_on_the_fly(gf);
-    if (iVar3 != 0) {
-      iVar3 = lame_get_noclipGainChange(gf);
-      fVar2 = (float)iVar3 / 10.0;
-      fVar5 = (float10)lame_get_noclipScale(gf);
-      if (fVar2 <= 0.0) {
-        if (fVar2 <= -0.1) {
+    iVar2 = lame_get_decode_on_the_fly(gf);
+    if (iVar2 != 0) {
+      iVar2 = lame_get_noclipGainChange(gf);
+      fVar1 = (float)iVar2 / 10.0;
+      lVar4 = (longdouble)lame_get_noclipScale(gf);
+      if (fVar1 <= 0.0) {
+        if (fVar1 <= -0.1) {
           console_printf("\nThe waveform does not clip and is at least %.1fdB away from full scale.\n"
-                         ,SUB84((double)-fVar2,0),(int)((ulonglong)(double)-fVar2 >> 0x20));
+                         ,SUB84((double)-fVar1,0),(int)((ulonglong)(double)-fVar1 >> 0x20));
         }
         else {
           console_printf(
@@ -2714,17 +2761,16 @@ void print_trailing_info(lame_global_flags *gf)
         }
       }
       else {
-        uVar6 = SUB84((double)fVar2,0);
-        uVar7 = (undefined4)((ulonglong)(double)fVar2 >> 0x20);
+        dVar5 = (double)fVar1;
         console_printf("WARNING: clipping occurs at the current gain. Set your decoder to decrease\n         the  gain  by  at least %.1fdB or encode again "
-                       ,uVar6,uVar7);
-        if ((float)fVar5 <= 0.0) {
+                       ,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
+        if ((float)lVar4 <= 0.0) {
           console_printf("using --scale <arg>\n         (For   a   suggestion  on  the  optimal  value  of  <arg>  encode\n         with  --scale 1  first)\n"
-                         ,uVar6,uVar7);
+                         ,SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
         }
         else {
-          dVar1 = (double)(float)fVar5;
-          console_printf("using  --scale %.2f\n",SUB84(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
+          dVar5 = (double)(float)lVar4;
+          console_printf("using  --scale %.2f\n",SUB84(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));
           console_printf("         or less (the value under --scale is approximate).\n");
         }
       }
@@ -2742,6 +2788,8 @@ int write_xing_frame(lame_global_flags *gf,FILE *outf)
   uint __n;
   size_t sVar2;
   int in_GS_OFFSET;
+  FILE *outf_local;
+  lame_global_flags *gf_local;
   size_t owrite;
   size_t imp3;
   uchar mp3buffer [147456];
@@ -2789,6 +2837,10 @@ int lame_encoder(lame_global_flags *gf,FILE *outf,int nogap,char *inPath,char *o
   size_t sVar4;
   uint __n_00;
   int in_GS_OFFSET;
+  char *outPath_local;
+  char *inPath_local;
+  FILE *outf_local;
+  lame_global_flags *gf_local;
   int Buffer [2] [1152];
   int id3v2_size;
   int owrite;
@@ -2914,6 +2966,8 @@ LAB_0804bc72:
 
 
 
+// WARNING: Unknown calling convention
+
 void brhist_init_package(lame_global_flags *gf)
 
 {
@@ -2935,6 +2989,8 @@ void brhist_init_package(lame_global_flags *gf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void parse_nogap_filenames(int nogapout,char *inPath,char *outPath,char *outdir)
 
@@ -2998,6 +3054,8 @@ void parse_nogap_filenames(int nogapout,char *inPath,char *outPath,char *outdir)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
@@ -3005,6 +3063,7 @@ int main(int argc,char **argv)
   int iVar1;
   uint uVar2;
   int in_GS_OFFSET;
+  char **in_stack_00000008;
   char nogap_inPath_ [200] [4097];
   char *nogap_inPath [200];
   int use_flush_nogap;
@@ -3019,7 +3078,7 @@ int main(int argc,char **argv)
   char inPath [4097];
   char nogapdir [4097];
   char outPath [4097];
-  char acStack832564 [819400];
+  char acStack_cb434 [819400];
   char *local_336c [200];
   uint local_304c;
   FILE *local_3048;
@@ -3040,9 +3099,9 @@ int main(int argc,char **argv)
   local_3038 = -1;
   local_303c = 0;
   local_3040 = 200;
-  memset(acStack832564,0,0xc80c8);
+  memset(acStack_cb434,0,0xc80c8);
   for (local_3044 = 0; (int)local_3044 < 200; local_3044 = local_3044 + 1) {
-    local_336c[local_3044] = acStack832564 + local_3044 * 0x1001;
+    local_336c[local_3044] = acStack_cb434 + local_3044 * 0x1001;
   }
   memset(local_3027,0,0x1001);
   frontend_open_console();
@@ -3058,7 +3117,7 @@ int main(int argc,char **argv)
     lame_set_debugf(local_3030,frontend_debugf);
     lame_set_msgf(local_3030,frontend_msgf);
     if (argc < 2) {
-      usage(stderr,*argv);
+      usage(stderr,*in_stack_00000008);
       lame_close(local_3030);
       frontend_close_console();
       uVar2 = 1;
@@ -3066,7 +3125,8 @@ int main(int argc,char **argv)
     else {
       p = getenv("LAMEOPT");
       parse_args_from_string(local_3030,p,local_3027,local_1025);
-      local_302c = parse_args(local_3030,argc,argv,local_3027,local_1025,local_336c,&local_3040);
+      local_302c = parse_args(local_3030,argc,in_stack_00000008,local_3027,local_1025,local_336c,
+                              &local_3040);
       if ((int)local_302c < 0) {
         lame_close(local_3030);
         frontend_close_console();
@@ -3081,12 +3141,11 @@ int main(int argc,char **argv)
           local_303c = 1;
         }
         if (local_3040 < 1) {
-          local_3048 = (FILE *)init_files(local_3030,local_3027,local_1025,&local_3034,&local_3038);
+          local_3048 = init_files(local_3030,local_3027,local_1025,&local_3034,&local_3038);
         }
         else {
           parse_nogap_filenames(local_303c,local_336c[0],local_1025,local_2026);
-          local_3048 = (FILE *)init_files(local_3030,local_336c[0],local_1025,&local_3034,
-                                          &local_3038);
+          local_3048 = init_files(local_3030,local_336c[0],local_1025,&local_3034,&local_3038);
         }
         if (local_3048 == (FILE *)0x0) {
           lame_close(local_3030);
@@ -3113,8 +3172,8 @@ int main(int argc,char **argv)
             if (iVar1 == 0) {
               if (local_3040 < 1) {
                 brhist_init_package(local_3030);
-                local_302c = lame_encoder(local_3030,(FILE *)local_3048,0,local_3027,local_1025);
-                fclose(local_3048);
+                local_302c = lame_encoder(local_3030,local_3048,0,local_3027,local_1025);
+                fclose((FILE *)local_3048);
                 close_infile();
               }
               else {
@@ -3122,27 +3181,26 @@ int main(int argc,char **argv)
                   local_304c = (uint)(local_3040 - 1U != local_3044);
                   if (0 < (int)local_3044) {
                     parse_nogap_filenames(local_303c,local_336c[local_3044],local_1025,local_2026);
-                    local_3048 = (FILE *)init_files(local_3030,local_336c[local_3044],local_1025,
-                                                    &local_3034,&local_3038);
+                    local_3048 = init_files(local_3030,local_336c[local_3044],local_1025,&local_3034
+                                            ,&local_3038);
                     lame_init_bitstream(local_3030);
                   }
                   brhist_init_package(local_3030);
                   lame_set_nogap_total(local_3030,local_3040);
                   lame_set_nogap_currentindex(local_3030,local_3044);
-                  local_302c = lame_encoder(local_3030,(FILE *)local_3048,local_304c,
-                                            local_336c[local_3044],local_1025);
-                  fclose(local_3048);
+                  local_302c = lame_encoder(local_3030,local_3048,local_304c,local_336c[local_3044],
+                                            local_1025);
+                  fclose((FILE *)local_3048);
                   close_infile();
                 }
               }
             }
             else if (mp3_delay_set == 0) {
-              lame_decoder(local_3030,(FILE *)local_3048,0,local_3027,local_1025,&local_3034,
-                           &local_3038);
+              lame_decoder(local_3030,local_3048,0,local_3027,local_1025,&local_3034,&local_3038);
             }
             else {
-              lame_decoder(local_3030,(FILE *)local_3048,mp3_delay,local_3027,local_1025,&local_3034
-                           ,&local_3038);
+              lame_decoder(local_3030,local_3048,mp3_delay,local_3027,local_1025,&local_3034,
+                           &local_3038);
             }
             lame_close(local_3030);
             frontend_close_console();
@@ -3161,6 +3219,8 @@ int main(int argc,char **argv)
 
 
 
+// WARNING: Unknown calling convention
+
 int my_console_printing(FILE *fp,char *format,va_list ap)
 
 {
@@ -3177,6 +3237,8 @@ int my_console_printing(FILE *fp,char *format,va_list ap)
 
 
 
+// WARNING: Unknown calling convention
+
 int my_error_printing(FILE *fp,char *format,va_list ap)
 
 {
@@ -3192,6 +3254,8 @@ int my_error_printing(FILE *fp,char *format,va_list ap)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int my_report_printing(FILE *fp,char *format,va_list ap)
 
@@ -3215,6 +3279,7 @@ void apply_termcap_settings(Console_IO_t *mfp)
   int iVar1;
   int iVar2;
   int in_GS_OFFSET;
+  Console_IO_t *mfp_local;
   int val;
   char *tp;
   char *term_name;
@@ -3266,6 +3331,8 @@ void apply_termcap_settings(Console_IO_t *mfp)
 
 
 
+// WARNING: Unknown calling convention
+
 int init_console(Console_IO_t *mfp)
 
 {
@@ -3284,6 +3351,8 @@ int init_console(Console_IO_t *mfp)
 
 
 
+// WARNING: Unknown calling convention
+
 void deinit_console(Console_IO_t *mfp)
 
 {
@@ -3299,6 +3368,8 @@ void deinit_console(Console_IO_t *mfp)
 
 
 
+// WARNING: Unknown calling convention
+
 int frontend_open_console(void)
 
 {
@@ -3310,6 +3381,8 @@ int frontend_open_console(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void frontend_close_console(void)
 
 {
@@ -3318,6 +3391,8 @@ void frontend_close_console(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void frontend_debugf(char *format,va_list ap)
 
@@ -3328,6 +3403,8 @@ void frontend_debugf(char *format,va_list ap)
 
 
 
+// WARNING: Unknown calling convention
+
 void frontend_msgf(char *format,va_list ap)
 
 {
@@ -3337,6 +3414,8 @@ void frontend_msgf(char *format,va_list ap)
 
 
 
+// WARNING: Unknown calling convention
+
 void frontend_errorf(char *format,va_list ap)
 
 {
@@ -3345,6 +3424,8 @@ void frontend_errorf(char *format,va_list ap)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int console_printf(char *format,...)
 
@@ -3359,6 +3440,8 @@ int console_printf(char *format,...)
 
 
 
+// WARNING: Unknown calling convention
+
 int error_printf(char *format,...)
 
 {
@@ -3371,6 +3454,8 @@ int error_printf(char *format,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int report_printf(char *format,...)
 
@@ -3385,6 +3470,8 @@ int report_printf(char *format,...)
 
 
 
+// WARNING: Unknown calling convention
+
 void console_flush(void)
 
 {
@@ -3393,6 +3480,8 @@ void console_flush(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void error_flush(void)
 
@@ -3403,6 +3492,8 @@ void error_flush(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void report_flush(void)
 
 {
@@ -3411,6 +3502,8 @@ void report_flush(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void console_up(int n_lines)
 
@@ -3426,12 +3519,14 @@ void console_up(int n_lines)
 
 
 
+// WARNING: Unknown calling convention
+
 void set_debug_file(char *fn)
 
 {
   if (Console_IO.Report_fp == (FILE *)0x0) {
     Console_IO.Report_fp = (FILE *)fopen64(fn,"a");
-    if ((FILE *)Console_IO.Report_fp == (FILE *)0x0) {
+    if (Console_IO.Report_fp == (FILE *)0x0) {
       error_printf("Error: can\'t open for debug info: %s\n",fn);
     }
     else {
@@ -3443,6 +3538,8 @@ void set_debug_file(char *fn)
 
 
 
+// WARNING: Unknown calling convention
+
 size_t min_size_t(size_t a,size_t b)
 
 {
@@ -3453,6 +3550,8 @@ size_t min_size_t(size_t a,size_t b)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 ByteOrder machine_byte_order(void)
 
@@ -3472,6 +3571,7 @@ int fskip(FILE *fp,long offset,int whence)
   size_t sVar3;
   size_t sVar4;
   int in_GS_OFFSET;
+  FILE *fp_local;
   stat file_stat;
   size_t read_1;
   size_t bytes_to_skip_1;
@@ -3534,6 +3634,8 @@ LAB_0804ce7a:
 
 
 
+// WARNING: Unknown calling convention
+
 FILE * init_outfile(char *outPath,int decode)
 
 {
@@ -3544,18 +3646,20 @@ FILE * init_outfile(char *outPath,int decode)
   iVar1 = strcmp(outPath,"-");
   pFVar2 = stdout;
   if (iVar1 == 0) {
-    lame_set_stream_binary_mode((FILE *)stdout);
+    lame_set_stream_binary_mode(stdout);
   }
   else {
-    pFVar2 = fopen64(outPath,"w+b");
+    pFVar2 = (FILE *)fopen64(outPath,"w+b");
     if (pFVar2 == (FILE *)0x0) {
       pFVar2 = (FILE *)0x0;
     }
   }
-  return (FILE *)pFVar2;
+  return pFVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void init_infile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_padding)
 
@@ -3571,6 +3675,8 @@ void init_infile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_pad
 
 
 
+// WARNING: Unknown calling convention
+
 void close_infile(void)
 
 {
@@ -3579,6 +3685,8 @@ void close_infile(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void SwapBytesInWords(short *ptr,int short_words)
 
@@ -3593,13 +3701,15 @@ void SwapBytesInWords(short *ptr,int short_words)
   }
   ptr = (short *)p;
   for (; 0 < short_words; short_words = short_words + -1) {
-    *ptr = (ushort)((uint)(int)*ptr >> 8) & 0xff | (ushort)((int)*ptr << 8);
+    *ptr = (ushort)*ptr >> 8 | (ushort)((int)*ptr << 8);
     ptr = ptr + 1;
   }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int get_audio(lame_global_flags *gfp,int (*buffer) [1152])
 
@@ -3612,6 +3722,8 @@ int get_audio(lame_global_flags *gfp,int (*buffer) [1152])
 
 
 
+// WARNING: Unknown calling convention
+
 int get_audio16(lame_global_flags *gfp,short (*buffer) [1152])
 
 {
@@ -3622,6 +3734,8 @@ int get_audio16(lame_global_flags *gfp,short (*buffer) [1152])
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer16) [1152])
 
@@ -3734,6 +3848,8 @@ int get_audio_common(lame_global_flags *gfp,int (*buffer) [1152],short (*buffer1
 
 
 
+// WARNING: Unknown calling convention
+
 int read_samples_mp3(lame_global_flags *gfp,FILE *musicin,short (*mpg123pcm) [1152])
 
 {
@@ -3765,6 +3881,8 @@ int read_samples_mp3(lame_global_flags *gfp,FILE *musicin,short (*mpg123pcm) [11
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int WriteWaveHeader(FILE *fp,int pcmbytes,int freq,int channels,int bits)
 
@@ -3799,6 +3917,8 @@ int WriteWaveHeader(FILE *fp,int pcmbytes,int freq,int channels,int bits)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int unpack_read_samples(int samples_to_read,int bytes_per_sample,int swap_order,int *sample_buffer,
                        FILE *pcm_in)
@@ -3896,6 +4016,8 @@ int unpack_read_samples(int samples_to_read,int bytes_per_sample,int swap_order,
 
 
 
+// WARNING: Unknown calling convention
+
 int read_samples_pcm(FILE *musicin,int *sample_buffer,int samples_to_read)
 
 {
@@ -3947,6 +4069,8 @@ LAB_0804daad:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int parse_wave_header(lame_global_flags *gfp,FILE *sf)
 
@@ -4053,6 +4177,8 @@ int parse_wave_header(lame_global_flags *gfp,FILE *sf)
 
 
 
+// WARNING: Unknown calling convention
+
 int aiff_check2(IFF_AIFF *pcm_aiff_data)
 
 {
@@ -4098,6 +4224,8 @@ int aiff_check2(IFF_AIFF *pcm_aiff_data)
 
 
 
+// WARNING: Unknown calling convention
+
 long make_even_number_of_bytes_in_length(long x)
 
 {
@@ -4108,6 +4236,8 @@ long make_even_number_of_bytes_in_length(long x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int parse_aiff_header(lame_global_flags *gfp,FILE *sf)
 
@@ -4239,6 +4369,8 @@ LAB_0804e172:
 
 
 
+// WARNING: Unknown calling convention
+
 int parse_file_header(lame_global_flags *gfp,FILE *sf)
 
 {
@@ -4278,6 +4410,8 @@ int parse_file_header(lame_global_flags *gfp,FILE *sf)
 
 
 
+// WARNING: Unknown calling convention
+
 void CloseSndFile(sound_file_format input,FILE *musicin)
 
 {
@@ -4295,6 +4429,8 @@ void CloseSndFile(sound_file_format input,FILE *musicin)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_padding)
 
@@ -4317,7 +4453,7 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
   }
   else {
     musicin = (FILE *)fopen64(inPath,"rb");
-    if ((FILE *)musicin == (FILE *)0x0) {
+    if (musicin == (FILE *)0x0) {
       if (silent < 10) {
         error_printf("Could not find \"%s\".\n",inPath);
       }
@@ -4399,6 +4535,8 @@ FILE * OpenSndFile(lame_global_flags *gfp,char *inPath,int *enc_delay,int *enc_p
 
 
 
+// WARNING: Unknown calling convention
+
 int check_aid(uchar *header)
 
 {
@@ -4409,6 +4547,8 @@ int check_aid(uchar *header)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int is_syncword_mp123(void *headerptr)
 
@@ -4481,8 +4621,6 @@ int is_syncword_mp123(void *headerptr)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int lame_decode_initfile(FILE *fd,mp3data_struct *mp3data,int *enc_delay,int *enc_padding)
 
 {
@@ -4490,6 +4628,10 @@ int lame_decode_initfile(FILE *fd,mp3data_struct *mp3data,int *enc_delay,int *en
   size_t sVar2;
   int iVar3;
   int in_GS_OFFSET;
+  int *enc_padding_local;
+  int *enc_delay_local;
+  mp3data_struct *mp3data_local;
+  FILE *fd_local;
   short pcm_r [1152];
   short pcm_l [1152];
   uint i;
@@ -4540,9 +4682,9 @@ int lame_decode_initfile(FILE *fd,mp3data_struct *mp3data,int *enc_delay,int *en
         goto LAB_0804ee55;
       }
       if (silent < 10) {
-        console_printf("Album ID found.  length=%i \n",(uint)buf._0_2_);
+        console_printf("Album ID found.  length=%i \n",(uint)(ushort)buf._0_2_);
       }
-      fskip(fd,buf._0_2_ - 6,1);
+      fskip(fd,(ushort)buf._0_2_ - 6,1);
       sVar2 = fread(buf,1,4,(FILE *)fd);
       if (sVar2 != 4) {
         iVar3 = -1;
@@ -4617,6 +4759,10 @@ int lame_decode_fromfile(FILE *fd,short *pcm_l,short *pcm_r,mp3data_struct *mp3d
   int iVar2;
   size_t sVar3;
   int in_GS_OFFSET;
+  mp3data_struct *mp3data_local;
+  short *pcm_r_local;
+  short *pcm_l_local;
+  FILE *fd_local;
   size_t len;
   int ret;
   uchar buf [1024];
@@ -4653,6 +4799,8 @@ int lame_decode_fromfile(FILE *fd,short *pcm_l,short *pcm_r,mp3data_struct *mp3d
 
 
 
+// WARNING: Unknown calling convention
+
 int is_mpeg_file_format(int input_file_format)
 
 {
@@ -4677,6 +4825,8 @@ int is_mpeg_file_format(int input_file_format)
 
 
 
+// WARNING: Unknown calling convention
+
 double GetCPUTime(void)
 
 {
@@ -4689,6 +4839,8 @@ double GetCPUTime(void)
 
 
 
+// WARNING: Unknown calling convention
+
 double GetRealTime(void)
 
 {
@@ -4700,6 +4852,8 @@ double GetRealTime(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int lame_set_stream_binary_mode(FILE *fp)
 
 {
@@ -4707,6 +4861,8 @@ int lame_set_stream_binary_mode(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 off_t lame_get_file_size(char *filename)
 
@@ -4723,6 +4879,8 @@ off_t lame_get_file_size(char *filename)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int set_id3tag(lame_global_flags *gfp,int type,char *str)
 
@@ -4767,6 +4925,8 @@ int set_id3tag(lame_global_flags *gfp,int type,char *str)
 
 
 
+// WARNING: Unknown calling convention
+
 int id3_tag(lame_global_flags *gfp,int type,TextEncoding enc,char *str)
 
 {
@@ -4782,6 +4942,8 @@ int id3_tag(lame_global_flags *gfp,int type,TextEncoding enc,char *str)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int lame_version_print(FILE *fp)
 
@@ -4827,6 +4989,8 @@ int lame_version_print(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 int print_license(FILE *fp)
 
 {
@@ -4848,6 +5012,8 @@ int print_license(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 int usage(FILE *fp,char *ProgramName)
 
 {
@@ -4859,6 +5025,8 @@ int usage(FILE *fp,char *ProgramName)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int short_help(lame_global_flags *gfp,FILE *fp,char *ProgramName)
 
@@ -4882,6 +5050,8 @@ int short_help(lame_global_flags *gfp,FILE *fp,char *ProgramName)
 
 
 
+// WARNING: Unknown calling convention
+
 void wait_for(FILE *fp,int lessmode)
 
 {
@@ -4897,6 +5067,8 @@ void wait_for(FILE *fp,int lessmode)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int long_help(lame_global_flags *gfp,FILE *fp,char *ProgramName,int lessmode)
 
@@ -4965,6 +5137,8 @@ int long_help(lame_global_flags *gfp,FILE *fp,char *ProgramName,int lessmode)
 
 
 
+// WARNING: Unknown calling convention
+
 void display_bitrate(FILE *fp,char *version,int d,int indx)
 
 {
@@ -4994,6 +5168,8 @@ void display_bitrate(FILE *fp,char *version,int d,int indx)
 
 
 
+// WARNING: Unknown calling convention
+
 int display_bitrates(FILE *fp)
 
 {
@@ -5006,6 +5182,8 @@ int display_bitrates(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void presets_longinfo_dm(FILE *msgfp)
 
@@ -5037,6 +5215,8 @@ void presets_longinfo_dm(FILE *msgfp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int presets_set(lame_t gfp,int fast,int cbr,char *preset_name,char *ProgramName)
 
@@ -5172,6 +5352,8 @@ int presets_set(lame_t gfp,int fast,int cbr,char *preset_name,char *ProgramName)
 
 
 
+// WARNING: Unknown calling convention
+
 void genre_list_handler(int num,char *name,void *cookie)
 
 {
@@ -5180,6 +5362,8 @@ void genre_list_handler(int num,char *name,void *cookie)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int local_strcasecmp(char *s1,char *s2)
 
@@ -5200,6 +5384,8 @@ int local_strcasecmp(char *s1,char *s2)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int filename_to_type(char *FileName)
 
@@ -5274,18 +5460,18 @@ int resample_rate(double freq)
 
 {
   int iVar1;
-  double local_14;
+  double freq_local;
   
-  local_14 = freq;
+  freq_local = freq;
   if (1000.0 <= freq) {
-    local_14 = freq * 0.001;
+    freq_local = freq * 0.001;
   }
-  switch((int)ROUND(local_14)) {
+  switch((int)ROUND(freq_local)) {
   case 8:
     iVar1 = 8000;
     break;
   default:
-    error_printf("Illegal resample frequency: %.3f kHz\n",local_14);
+    error_printf("Illegal resample frequency: %.3f kHz\n",freq_local);
     iVar1 = 0;
     break;
   case 0xb:
@@ -5316,6 +5502,8 @@ int resample_rate(double freq)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int set_id3_albumart(lame_t gfp,char *file_name)
 
@@ -5384,6 +5572,8 @@ int set_id3_albumart(lame_t gfp,char *file_name)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *outPath,
               char **nogap_inPath,int *num_nogap)
@@ -5756,6 +5946,7 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
           argUsed = 0;
         }
       }
+      c = '\0';
     }
     token = token + 1;
     iVar7 = local_strcasecmp(token,"resample");
@@ -6548,6 +6739,8 @@ int parse_args(lame_global_flags *gfp,int argc,char **argv,char *inPath,char *ou
 
 
 
+// WARNING: Unknown calling convention
+
 int ReadByte(FILE *fp)
 
 {
@@ -6563,6 +6756,8 @@ int ReadByte(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int Read16BitsLowHigh(FILE *fp)
 
@@ -6584,6 +6779,8 @@ int Read16BitsLowHigh(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 int Read16BitsHighLow(FILE *fp)
 
 {
@@ -6604,6 +6801,8 @@ int Read16BitsHighLow(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 void Write8Bits(FILE *fp,int i)
 
 {
@@ -6612,6 +6811,8 @@ void Write8Bits(FILE *fp,int i)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Write16BitsLowHigh(FILE *fp,int i)
 
@@ -6623,6 +6824,8 @@ void Write16BitsLowHigh(FILE *fp,int i)
 
 
 
+// WARNING: Unknown calling convention
+
 void Write16BitsHighLow(FILE *fp,int i)
 
 {
@@ -6632,6 +6835,8 @@ void Write16BitsHighLow(FILE *fp,int i)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int Read24BitsHighLow(FILE *fp)
 
@@ -6656,6 +6861,8 @@ int Read24BitsHighLow(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 int Read32Bits(FILE *fp)
 
 {
@@ -6671,6 +6878,8 @@ int Read32Bits(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int Read32BitsHighLow(FILE *fp)
 
@@ -6688,6 +6897,8 @@ int Read32BitsHighLow(FILE *fp)
 
 
 
+// WARNING: Unknown calling convention
+
 void Write32Bits(FILE *fp,int i)
 
 {
@@ -6697,6 +6908,8 @@ void Write32Bits(FILE *fp,int i)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void Write32BitsLowHigh(FILE *fp,int i)
 
@@ -6708,6 +6921,8 @@ void Write32BitsLowHigh(FILE *fp,int i)
 
 
 
+// WARNING: Unknown calling convention
+
 void Write32BitsHighLow(FILE *fp,int i)
 
 {
@@ -6717,6 +6932,8 @@ void Write32BitsHighLow(FILE *fp,int i)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ReadBytes(FILE *fp,char *p,int n)
 
@@ -6738,12 +6955,15 @@ void ReadBytes(FILE *fp,char *p,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void ReadBytesSwapped(FILE *fp,char *p,int n)
 
 {
   char cVar1;
   bool bVar2;
   int iVar3;
+  char *q;
   char *pcVar4;
   
   pcVar4 = p;
@@ -6766,6 +6986,8 @@ void ReadBytesSwapped(FILE *fp,char *p,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 void WriteBytes(FILE *fp,char *p,int n)
 
 {
@@ -6781,6 +7003,8 @@ void WriteBytes(FILE *fp,char *p,int n)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void WriteBytesSwapped(FILE *fp,char *p,int n)
 
@@ -6799,6 +7023,8 @@ void WriteBytesSwapped(FILE *fp,char *p,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 double ConvertFromIeeeExtended(char *bytes)
 
 {
@@ -6812,11 +7038,11 @@ double ConvertFromIeeeExtended(char *bytes)
   ulong hiMant;
   long expon;
   
-  uVar1 = (int)bytes[1] & 0xffU | ((int)*bytes & 0x7fU) << 8;
-  uVar2 = (int)bytes[5] & 0xffU |
-          (int)bytes[2] << 0x18 | ((int)bytes[3] & 0xffU) << 0x10 | ((int)bytes[4] & 0xffU) << 8;
-  uVar3 = (int)bytes[9] & 0xffU |
-          (int)bytes[6] << 0x18 | ((int)bytes[7] & 0xffU) << 0x10 | ((int)bytes[8] & 0xffU) << 8;
+  uVar1 = (uint)(byte)bytes[1] | ((int)*bytes & 0x7fU) << 8;
+  uVar2 = (uint)(byte)bytes[5] |
+          (int)bytes[2] << 0x18 | (uint)(byte)bytes[3] << 0x10 | (uint)(byte)bytes[4] << 8;
+  uVar3 = (uint)(byte)bytes[9] |
+          (int)bytes[6] << 0x18 | (uint)(byte)bytes[7] << 0x10 | (uint)(byte)bytes[8] << 8;
   if (((uVar1 == 0) && (uVar2 == 0)) && (uVar3 == 0)) {
     f = 0.0;
   }
@@ -6842,6 +7068,7 @@ double ReadIeeeExtendedHighLow(FILE *fp)
   int iVar1;
   int in_GS_OFFSET;
   double dVar2;
+  FILE *fp_local;
   char bytes [10];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
@@ -6855,6 +7082,8 @@ double ReadIeeeExtendedHighLow(FILE *fp)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void ts_calc_times(timestatus_t *tstime,int sample_freq,int frameNum,int totalframes,int framesize)
 
@@ -6878,6 +7107,7 @@ void ts_time_decompose(ulong time_in_sec,char padded_char)
 {
   uint uVar1;
   uint uVar2;
+  char padded_char_local;
   uint sec;
   uint min;
   ulong hour;
@@ -6897,6 +7127,8 @@ void ts_time_decompose(ulong time_in_sec,char padded_char)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void timestatus(lame_global_flags *gfp)
 
@@ -6960,14 +7192,14 @@ void timestatus(lame_global_flags *gfp)
     else {
       percent = 100;
     }
-    console_printf("\r%6i/%-6i");
+    console_printf("\r%6i/%-6i",frameNum_00);
     if (percent < 100) {
       pcVar1 = " (%2d%%)|";
     }
     else {
       pcVar1 = "(%3.3d%%)|";
     }
-    console_printf(pcVar1);
+    console_printf(pcVar1,percent);
     local_4c = (ulong)(longlong)ROUND(timestatus::proc_time.elapsed_time);
     ts_time_decompose(local_4c,'/');
     local_4c = (ulong)(longlong)ROUND(timestatus::proc_time.estimated_time);
@@ -6982,7 +7214,7 @@ void timestatus(lame_global_flags *gfp)
     else {
       pcVar1 = "%9.4fx|";
     }
-    console_printf(pcVar1);
+    console_printf(pcVar1,timestatus::proc_time.speed_index);
     local_4c = (ulong)(longlong)
                       ROUND(timestatus::real_time.estimated_time -
                             timestatus::real_time.elapsed_time);
@@ -6993,6 +7225,8 @@ void timestatus(lame_global_flags *gfp)
 
 
 
+// WARNING: Unknown calling convention
+
 void timestatus_finish(void)
 
 {
@@ -7001,6 +7235,8 @@ void timestatus_finish(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
 
@@ -7016,7 +7252,7 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
   char *pcVar9;
   char *pcVar10;
   undefined *puVar11;
-  float10 fVar12;
+  longdouble lVar12;
   
   if (9 < silent) {
     return;
@@ -7045,7 +7281,7 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
   uVar4 = lame_get_VBR(gf);
   if (uVar4 == 2) {
     uVar5 = lame_get_quality(gf);
-    fVar12 = (float10)lame_get_VBR_quality(gf);
+    lVar12 = (longdouble)lame_get_VBR_quality(gf);
     iVar1 = lame_get_out_samplerate(gf);
     if (iVar1 < 16000) {
       puVar11 = &DAT_080599b1;
@@ -7058,13 +7294,13 @@ void encoder_progress_begin(lame_global_flags *gf,char *inPath,char *outPath)
     iVar8 = lame_get_mode(gf);
     console_printf("%s MPEG-%u%s Layer III VBR(q=%g) qval=%i\n",
                    encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
-                   puVar11,(double)fVar12,uVar5);
+                   puVar11,(double)lVar12,uVar5);
     goto LAB_080537a1;
   }
   if (uVar4 < 3) {
     if (uVar4 == 1) {
 LAB_08053539:
-      fVar12 = (float10)lame_get_VBR_quality(gf);
+      lVar12 = (longdouble)lame_get_VBR_quality(gf);
       iVar1 = lame_get_out_samplerate(gf);
       if (iVar1 < 16000) {
         puVar11 = &DAT_080599b1;
@@ -7077,7 +7313,7 @@ LAB_08053539:
       iVar8 = lame_get_mode(gf);
       console_printf("%s MPEG-%u%s Layer III VBR(q=%g)\n",
                      encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
-                     puVar11,(double)fVar12);
+                     puVar11,(double)lVar12);
       goto LAB_080537a1;
     }
   }
@@ -7085,7 +7321,7 @@ LAB_08053539:
     if (uVar4 == 3) {
       uVar5 = lame_get_quality(gf);
       uVar6 = lame_get_VBR_mean_bitrate_kbps(gf);
-      fVar12 = (float10)lame_get_compression_ratio(gf);
+      lVar12 = (longdouble)lame_get_compression_ratio(gf);
       iVar1 = lame_get_out_samplerate(gf);
       if (iVar1 < 16000) {
         puVar11 = &DAT_080599b1;
@@ -7098,15 +7334,15 @@ LAB_08053539:
       iVar8 = lame_get_mode(gf);
       console_printf("%s MPEG-%u%s Layer III (%gx) average %d kbps qval=%i\n",
                      encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,
-                     puVar11,(double)(int)ROUND((float10)0.5 + (float10)10.0 * fVar12) * 0.1,uVar6,
-                     uVar5);
+                     puVar11,(double)(int)ROUND((longdouble)0.5 + (longdouble)10.0 * lVar12) * 0.1,
+                     uVar6,uVar5);
       goto LAB_080537a1;
     }
     if (uVar4 == 4) goto LAB_08053539;
   }
   uVar5 = lame_get_quality(gf);
   uVar6 = lame_get_brate(gf);
-  fVar12 = (float10)lame_get_compression_ratio(gf);
+  lVar12 = (longdouble)lame_get_compression_ratio(gf);
   iVar1 = lame_get_out_samplerate(gf);
   if (iVar1 < 16000) {
     puVar11 = &DAT_080599b1;
@@ -7119,7 +7355,8 @@ LAB_08053539:
   iVar8 = lame_get_mode(gf);
   console_printf("%s MPEG-%u%s Layer III (%gx) %3d kbps qval=%i\n",
                  encoder_progress_begin::lexical_block_0::mode_names[iVar7][iVar8],2 - iVar1,puVar11
-                 ,(double)(int)ROUND((float10)0.5 + (float10)10.0 * fVar12) * 0.1,uVar6,uVar5);
+                 ,(double)(int)ROUND((longdouble)0.5 + (longdouble)10.0 * lVar12) * 0.1,uVar6,uVar5)
+  ;
 LAB_080537a1:
   if (silent < -9) {
     lame_print_internals(gf);
@@ -7128,6 +7365,8 @@ LAB_080537a1:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void encoder_progress(lame_global_flags *gf)
 
@@ -7168,6 +7407,8 @@ void encoder_progress(lame_global_flags *gf)
 
 
 
+// WARNING: Unknown calling convention
+
 void encoder_progress_end(lame_global_flags *gf)
 
 {
@@ -7185,6 +7426,8 @@ void encoder_progress_end(lame_global_flags *gf)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void decoder_progress(mp3data_struct *mp3data)
 
@@ -7242,6 +7485,8 @@ void decoder_progress(mp3data_struct *mp3data)
 
 
 
+// WARNING: Unknown calling convention
+
 void decoder_progress_finish(void)
 
 {
@@ -7250,6 +7495,8 @@ void decoder_progress_finish(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int calculate_index(int *array,int len,int value)
 
@@ -7268,6 +7515,8 @@ int calculate_index(int *array,int len,int value)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int brhist_init(lame_global_flags *gf,int bitrate_kbps_min,int bitrate_kbps_max)
 
@@ -7295,6 +7544,8 @@ int brhist_init(lame_global_flags *gf,int bitrate_kbps_min,int bitrate_kbps_max)
 
 
 
+// WARNING: Unknown calling convention
+
 int digits(uint number)
 
 {
@@ -7320,6 +7571,8 @@ int digits(uint number)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void brhist_disp_line(int i,int br_hist_TOT,int br_hist_LR,int full,int frames)
 
@@ -7366,8 +7619,6 @@ void brhist_disp_line(int i,int br_hist_TOT,int br_hist_LR,int full,int frames)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 void progress_line(lame_global_flags *gf,int full,int frames)
 
 {
@@ -7378,6 +7629,7 @@ void progress_line(lame_global_flags *gf,int full,int frames)
   int iVar4;
   int in_GS_OFFSET;
   ulonglong local_5c;
+  lame_global_flags *gf_local;
   int srate;
   int fsize;
   uint sec;
@@ -7391,12 +7643,26 @@ void progress_line(lame_global_flags *gf,int full,int frames)
   char rst [20];
   
   iVar1 = *(int *)(in_GS_OFFSET + 0x14);
-  rst._0_2_ = 0;
-  rst._2_4_ = 0;
-  rst._6_4_ = 0;
-  rst._10_4_ = 0;
-  rst._14_4_ = 0;
-  rst._18_2_ = 0;
+  rst[0] = '\0';
+  rst[1] = '\0';
+  rst[2] = '\0';
+  rst[3] = '\0';
+  rst[4] = '\0';
+  rst[5] = '\0';
+  rst[6] = '\0';
+  rst[7] = '\0';
+  rst[8] = '\0';
+  rst[9] = '\0';
+  rst[10] = '\0';
+  rst[11] = '\0';
+  rst[12] = '\0';
+  rst[13] = '\0';
+  rst[14] = '\0';
+  rst[15] = '\0';
+  rst[16] = '\0';
+  rst[17] = '\0';
+  rst[18] = '\0';
+  rst[19] = '\0';
   res = 1;
   time_in_sec = 0.0;
   iVar3 = lame_get_framesize(gf);
@@ -7459,6 +7725,7 @@ int stats_value(double x)
 
 {
   int iVar1;
+  double x_local;
   
   if (x <= 0.0) {
     iVar1 = 0;
@@ -7476,6 +7743,7 @@ int stats_head(double x,char *txt)
 
 {
   int iVar1;
+  double x_local;
   
   if (x <= 0.0) {
     iVar1 = 0;
@@ -7488,6 +7756,8 @@ int stats_head(double x,char *txt)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void stats_line(double *stat)
 
@@ -7546,6 +7816,8 @@ void stats_line(double *stat)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void brhist_disp(lame_global_flags *gf)
 
@@ -7628,6 +7900,8 @@ void brhist_disp(lame_global_flags *gf)
 
 
 
+// WARNING: Unknown calling convention
+
 void brhist_jump_back(void)
 
 {
@@ -7695,21 +7969,12 @@ int fstat64(int __fd,stat64 *__buf)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08054821)
+// WARNING: Removing unreachable block (ram,0x08054828)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

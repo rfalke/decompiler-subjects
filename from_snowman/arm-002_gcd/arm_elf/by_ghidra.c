@@ -96,6 +96,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef enum Elf32_DynTag_ARM {
     DT_NULL=0,
     DT_NEEDED=1,
@@ -151,6 +162,7 @@ typedef enum Elf32_DynTag_ARM {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -235,7 +247,7 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int raise(int __sig)
 
@@ -259,7 +271,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -271,13 +283,10 @@ void abort(void)
 
 
 
-void _start(undefined4 param_1)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 in_stack_00000000;
-  
-  __libc_start_main(main,in_stack_00000000,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -367,11 +376,11 @@ undefined4 main(void)
 uint __aeabi_idiv(uint param_1,uint param_2)
 
 {
-  int iVar1;
-  uint uVar2;
-  int iVar3;
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
+  bool bVar5;
   bool bVar6;
   bool bVar7;
   bool bVar8;
@@ -402,198 +411,194 @@ uint __aeabi_idiv(uint param_1,uint param_2)
   bool bVar33;
   bool bVar34;
   bool bVar35;
-  bool bVar36;
   
   if (param_2 == 0) {
-    bVar6 = (int)param_1 < 0;
+    bVar5 = (int)param_1 < 0;
     if (0 < (int)param_1) {
       param_1 = 0x7fffffff;
     }
-    if (bVar6) {
+    if (bVar5) {
       param_1 = 0x80000000;
     }
-    uVar2 = __aeabi_idiv0(param_1);
-    return uVar2;
+    uVar1 = __aeabi_idiv0(param_1);
+    return uVar1;
   }
-  uVar5 = param_1 ^ param_2;
-  uVar2 = param_2;
+  uVar4 = param_1 ^ param_2;
+  uVar1 = param_2;
   if ((int)param_2 < 0) {
-    uVar2 = -param_2;
+    uVar1 = -param_2;
   }
-  if (uVar2 - 1 == 0) {
+  if (uVar1 - 1 == 0) {
     if ((int)param_2 < 0) {
       param_1 = -param_1;
     }
     return param_1;
   }
-  uVar4 = param_1;
+  uVar3 = param_1;
   if ((int)param_1 < 0) {
-    uVar4 = -param_1;
+    uVar3 = -param_1;
   }
-  if (uVar4 <= uVar2) {
-    if (uVar4 < uVar2) {
+  if (uVar3 <= uVar1) {
+    if (uVar3 < uVar1) {
       param_1 = 0;
     }
-    if (uVar4 == uVar2) {
-      param_1 = (int)uVar5 >> 0x1f | 1;
+    if (uVar3 == uVar1) {
+      param_1 = (int)uVar4 >> 0x1f | 1;
     }
     return param_1;
   }
-  if ((uVar2 & uVar2 - 1) == 0) {
-    iVar1 = count_leading_zeroes(uVar2);
-    uVar4 = uVar4 >> (0x1fU - iVar1 & 0xff);
-    if ((int)uVar5 < 0) {
-      uVar4 = -uVar4;
+  if ((uVar1 & uVar1 - 1) == 0) {
+    uVar3 = uVar3 >> (0x1fU - LZCOUNT(uVar1) & 0xff);
+    if ((int)uVar4 < 0) {
+      uVar3 = -uVar3;
     }
-    return uVar4;
+    return uVar3;
   }
-  iVar3 = count_leading_zeroes(uVar4);
-  iVar1 = count_leading_zeroes(uVar2);
-  iVar1 = 0x1f - (iVar1 - iVar3);
-  if (iVar1 == 0) {
-    bVar6 = uVar2 << 0x1f <= uVar4;
+  iVar2 = 0x1f - (LZCOUNT(uVar1) - LZCOUNT(uVar3));
+  if (iVar2 == 0) {
+    bVar5 = uVar1 << 0x1f <= uVar3;
+    if (bVar5) {
+      uVar3 = uVar3 + uVar1 * -0x80000000;
+    }
+    bVar6 = uVar1 << 0x1e <= uVar3;
     if (bVar6) {
-      uVar4 = uVar4 + uVar2 * -0x80000000;
+      uVar3 = uVar3 + uVar1 * -0x40000000;
     }
-    bVar7 = uVar2 << 0x1e <= uVar4;
+    bVar7 = uVar1 << 0x1d <= uVar3;
     if (bVar7) {
-      uVar4 = uVar4 + uVar2 * -0x40000000;
+      uVar3 = uVar3 + uVar1 * -0x20000000;
     }
-    bVar8 = uVar2 << 0x1d <= uVar4;
+    bVar8 = uVar1 << 0x1c <= uVar3;
     if (bVar8) {
-      uVar4 = uVar4 + uVar2 * -0x20000000;
+      uVar3 = uVar3 + uVar1 * -0x10000000;
     }
-    bVar9 = uVar2 << 0x1c <= uVar4;
+    bVar9 = uVar1 << 0x1b <= uVar3;
     if (bVar9) {
-      uVar4 = uVar4 + uVar2 * -0x10000000;
+      uVar3 = uVar3 + uVar1 * -0x8000000;
     }
-    bVar10 = uVar2 << 0x1b <= uVar4;
+    bVar10 = uVar1 << 0x1a <= uVar3;
     if (bVar10) {
-      uVar4 = uVar4 + uVar2 * -0x8000000;
+      uVar3 = uVar3 + uVar1 * -0x4000000;
     }
-    bVar11 = uVar2 << 0x1a <= uVar4;
+    bVar11 = uVar1 << 0x19 <= uVar3;
     if (bVar11) {
-      uVar4 = uVar4 + uVar2 * -0x4000000;
+      uVar3 = uVar3 + uVar1 * -0x2000000;
     }
-    bVar12 = uVar2 << 0x19 <= uVar4;
+    bVar12 = uVar1 << 0x18 <= uVar3;
     if (bVar12) {
-      uVar4 = uVar4 + uVar2 * -0x2000000;
+      uVar3 = uVar3 + uVar1 * -0x1000000;
     }
-    bVar13 = uVar2 << 0x18 <= uVar4;
+    bVar13 = uVar1 << 0x17 <= uVar3;
     if (bVar13) {
-      uVar4 = uVar4 + uVar2 * -0x1000000;
+      uVar3 = uVar3 + uVar1 * -0x800000;
     }
-    bVar14 = uVar2 << 0x17 <= uVar4;
+    bVar14 = uVar1 << 0x16 <= uVar3;
     if (bVar14) {
-      uVar4 = uVar4 + uVar2 * -0x800000;
+      uVar3 = uVar3 + uVar1 * -0x400000;
     }
-    bVar15 = uVar2 << 0x16 <= uVar4;
+    bVar15 = uVar1 << 0x15 <= uVar3;
     if (bVar15) {
-      uVar4 = uVar4 + uVar2 * -0x400000;
+      uVar3 = uVar3 + uVar1 * -0x200000;
     }
-    bVar16 = uVar2 << 0x15 <= uVar4;
+    bVar16 = uVar1 << 0x14 <= uVar3;
     if (bVar16) {
-      uVar4 = uVar4 + uVar2 * -0x200000;
+      uVar3 = uVar3 + uVar1 * -0x100000;
     }
-    bVar17 = uVar2 << 0x14 <= uVar4;
+    bVar17 = uVar1 << 0x13 <= uVar3;
     if (bVar17) {
-      uVar4 = uVar4 + uVar2 * -0x100000;
+      uVar3 = uVar3 + uVar1 * -0x80000;
     }
-    bVar18 = uVar2 << 0x13 <= uVar4;
+    bVar18 = uVar1 << 0x12 <= uVar3;
     if (bVar18) {
-      uVar4 = uVar4 + uVar2 * -0x80000;
+      uVar3 = uVar3 + uVar1 * -0x40000;
     }
-    bVar19 = uVar2 << 0x12 <= uVar4;
+    bVar19 = uVar1 << 0x11 <= uVar3;
     if (bVar19) {
-      uVar4 = uVar4 + uVar2 * -0x40000;
+      uVar3 = uVar3 + uVar1 * -0x20000;
     }
-    bVar20 = uVar2 << 0x11 <= uVar4;
+    bVar20 = uVar1 << 0x10 <= uVar3;
     if (bVar20) {
-      uVar4 = uVar4 + uVar2 * -0x20000;
+      uVar3 = uVar3 + uVar1 * -0x10000;
     }
-    bVar21 = uVar2 << 0x10 <= uVar4;
+    bVar21 = uVar1 << 0xf <= uVar3;
     if (bVar21) {
-      uVar4 = uVar4 + uVar2 * -0x10000;
+      uVar3 = uVar3 + uVar1 * -0x8000;
     }
-    bVar22 = uVar2 << 0xf <= uVar4;
+    bVar22 = uVar1 << 0xe <= uVar3;
     if (bVar22) {
-      uVar4 = uVar4 + uVar2 * -0x8000;
+      uVar3 = uVar3 + uVar1 * -0x4000;
     }
-    bVar23 = uVar2 << 0xe <= uVar4;
+    bVar23 = uVar1 << 0xd <= uVar3;
     if (bVar23) {
-      uVar4 = uVar4 + uVar2 * -0x4000;
+      uVar3 = uVar3 + uVar1 * -0x2000;
     }
-    bVar24 = uVar2 << 0xd <= uVar4;
+    bVar24 = uVar1 << 0xc <= uVar3;
     if (bVar24) {
-      uVar4 = uVar4 + uVar2 * -0x2000;
+      uVar3 = uVar3 + uVar1 * -0x1000;
     }
-    bVar25 = uVar2 << 0xc <= uVar4;
+    bVar25 = uVar1 << 0xb <= uVar3;
     if (bVar25) {
-      uVar4 = uVar4 + uVar2 * -0x1000;
+      uVar3 = uVar3 + uVar1 * -0x800;
     }
-    bVar26 = uVar2 << 0xb <= uVar4;
+    bVar26 = uVar1 << 10 <= uVar3;
     if (bVar26) {
-      uVar4 = uVar4 + uVar2 * -0x800;
+      uVar3 = uVar3 + uVar1 * -0x400;
     }
-    bVar27 = uVar2 << 10 <= uVar4;
+    bVar27 = uVar1 << 9 <= uVar3;
     if (bVar27) {
-      uVar4 = uVar4 + uVar2 * -0x400;
+      uVar3 = uVar3 + uVar1 * -0x200;
     }
-    bVar28 = uVar2 << 9 <= uVar4;
+    bVar28 = uVar1 << 8 <= uVar3;
     if (bVar28) {
-      uVar4 = uVar4 + uVar2 * -0x200;
+      uVar3 = uVar3 + uVar1 * -0x100;
     }
-    bVar29 = uVar2 << 8 <= uVar4;
+    bVar29 = uVar1 << 7 <= uVar3;
     if (bVar29) {
-      uVar4 = uVar4 + uVar2 * -0x100;
+      uVar3 = uVar3 + uVar1 * -0x80;
     }
-    bVar30 = uVar2 << 7 <= uVar4;
+    bVar30 = uVar1 << 6 <= uVar3;
     if (bVar30) {
-      uVar4 = uVar4 + uVar2 * -0x80;
+      uVar3 = uVar3 + uVar1 * -0x40;
     }
-    bVar31 = uVar2 << 6 <= uVar4;
+    bVar31 = uVar1 << 5 <= uVar3;
     if (bVar31) {
-      uVar4 = uVar4 + uVar2 * -0x40;
+      uVar3 = uVar3 + uVar1 * -0x20;
     }
-    bVar32 = uVar2 << 5 <= uVar4;
+    bVar32 = uVar1 << 4 <= uVar3;
     if (bVar32) {
-      uVar4 = uVar4 + uVar2 * -0x20;
+      uVar3 = uVar3 + uVar1 * -0x10;
     }
-    bVar33 = uVar2 << 4 <= uVar4;
+    bVar33 = uVar1 << 3 <= uVar3;
     if (bVar33) {
-      uVar4 = uVar4 + uVar2 * -0x10;
+      uVar3 = uVar3 + uVar1 * -8;
     }
-    bVar34 = uVar2 << 3 <= uVar4;
+    bVar34 = uVar1 << 2 <= uVar3;
     if (bVar34) {
-      uVar4 = uVar4 + uVar2 * -8;
+      uVar3 = uVar3 + uVar1 * -4;
     }
-    bVar35 = uVar2 << 2 <= uVar4;
+    bVar35 = uVar1 << 1 <= uVar3;
     if (bVar35) {
-      uVar4 = uVar4 + uVar2 * -4;
+      uVar3 = uVar3 + uVar1 * -2;
     }
-    bVar36 = uVar2 << 1 <= uVar4;
-    if (bVar36) {
-      uVar4 = uVar4 + uVar2 * -2;
+    uVar1 = (((((((((((((((((((((((((((((((uint)bVar5 * 2 + (uint)bVar6) * 2 + (uint)bVar7) * 2 +
+                                       (uint)bVar8) * 2 + (uint)bVar9) * 2 + (uint)bVar10) * 2 +
+                                    (uint)bVar11) * 2 + (uint)bVar12) * 2 + (uint)bVar13) * 2 +
+                                 (uint)bVar14) * 2 + (uint)bVar15) * 2 + (uint)bVar16) * 2 +
+                              (uint)bVar17) * 2 + (uint)bVar18) * 2 + (uint)bVar19) * 2 +
+                           (uint)bVar20) * 2 + (uint)bVar21) * 2 + (uint)bVar22) * 2 + (uint)bVar23)
+                        * 2 + (uint)bVar24) * 2 + (uint)bVar25) * 2 + (uint)bVar26) * 2 +
+                    (uint)bVar27) * 2 + (uint)bVar28) * 2 + (uint)bVar29) * 2 + (uint)bVar30) * 2 +
+                (uint)bVar31) * 2 + (uint)bVar32) * 2 + (uint)bVar33) * 2 + (uint)bVar34) * 2 +
+            (uint)bVar35) * 2 + (uint)(uVar1 <= uVar3);
+    if ((int)uVar4 < 0) {
+      uVar1 = -uVar1;
     }
-    uVar2 = (((((((((((((((((((((((((((((((uint)bVar6 * 2 + (uint)bVar7) * 2 + (uint)bVar8) * 2 +
-                                       (uint)bVar9) * 2 + (uint)bVar10) * 2 + (uint)bVar11) * 2 +
-                                    (uint)bVar12) * 2 + (uint)bVar13) * 2 + (uint)bVar14) * 2 +
-                                 (uint)bVar15) * 2 + (uint)bVar16) * 2 + (uint)bVar17) * 2 +
-                              (uint)bVar18) * 2 + (uint)bVar19) * 2 + (uint)bVar20) * 2 +
-                           (uint)bVar21) * 2 + (uint)bVar22) * 2 + (uint)bVar23) * 2 + (uint)bVar24)
-                        * 2 + (uint)bVar25) * 2 + (uint)bVar26) * 2 + (uint)bVar27) * 2 +
-                    (uint)bVar28) * 2 + (uint)bVar29) * 2 + (uint)bVar30) * 2 + (uint)bVar31) * 2 +
-                (uint)bVar32) * 2 + (uint)bVar33) * 2 + (uint)bVar34) * 2 + (uint)bVar35) * 2 +
-            (uint)bVar36) * 2 + (uint)(uVar2 <= uVar4);
-    if ((int)uVar5 < 0) {
-      uVar2 = -uVar2;
-    }
-    return uVar2;
+    return uVar1;
   }
                     // WARNING: Could not recover jumptable at 0x000084b0. Too many branches
                     // WARNING: Treating indirect jump as call
-  uVar2 = (*(code *)(iVar1 * 0xc + 0x84b8))();
-  return uVar2;
+  uVar1 = (*(code *)(iVar2 * 0xc + 0x84b8))();
+  return uVar1;
 }
 
 
@@ -601,12 +606,12 @@ uint __aeabi_idiv(uint param_1,uint param_2)
 uint _divsi3_skip_div0_test(uint param_1,uint param_2)
 
 {
-  int iVar1;
-  uint uVar2;
-  int iVar3;
+  uint uVar1;
+  int iVar2;
+  uint uVar3;
   uint uVar4;
-  uint uVar5;
   bool in_NG;
+  bool bVar5;
   bool bVar6;
   bool bVar7;
   bool bVar8;
@@ -637,187 +642,183 @@ uint _divsi3_skip_div0_test(uint param_1,uint param_2)
   bool bVar33;
   bool bVar34;
   bool bVar35;
-  bool bVar36;
   
-  uVar5 = param_1 ^ param_2;
-  uVar2 = param_2;
+  uVar4 = param_1 ^ param_2;
+  uVar1 = param_2;
   if (in_NG) {
-    uVar2 = -param_2;
+    uVar1 = -param_2;
   }
-  if (uVar2 - 1 == 0) {
+  if (uVar1 - 1 == 0) {
     if ((int)param_2 < 0) {
       param_1 = -param_1;
     }
     return param_1;
   }
-  uVar4 = param_1;
+  uVar3 = param_1;
   if ((int)param_1 < 0) {
-    uVar4 = -param_1;
+    uVar3 = -param_1;
   }
-  if (uVar4 <= uVar2) {
-    if (uVar4 < uVar2) {
+  if (uVar3 <= uVar1) {
+    if (uVar3 < uVar1) {
       param_1 = 0;
     }
-    if (uVar4 == uVar2) {
-      param_1 = (int)uVar5 >> 0x1f | 1;
+    if (uVar3 == uVar1) {
+      param_1 = (int)uVar4 >> 0x1f | 1;
     }
     return param_1;
   }
-  if ((uVar2 & uVar2 - 1) == 0) {
-    iVar1 = count_leading_zeroes(uVar2);
-    uVar4 = uVar4 >> (0x1fU - iVar1 & 0xff);
-    if ((int)uVar5 < 0) {
-      uVar4 = -uVar4;
+  if ((uVar1 & uVar1 - 1) == 0) {
+    uVar3 = uVar3 >> (0x1fU - LZCOUNT(uVar1) & 0xff);
+    if ((int)uVar4 < 0) {
+      uVar3 = -uVar3;
     }
-    return uVar4;
+    return uVar3;
   }
-  iVar3 = count_leading_zeroes(uVar4);
-  iVar1 = count_leading_zeroes(uVar2);
-  iVar1 = 0x1f - (iVar1 - iVar3);
-  if (iVar1 == 0) {
-    bVar6 = uVar2 << 0x1f <= uVar4;
+  iVar2 = 0x1f - (LZCOUNT(uVar1) - LZCOUNT(uVar3));
+  if (iVar2 == 0) {
+    bVar5 = uVar1 << 0x1f <= uVar3;
+    if (bVar5) {
+      uVar3 = uVar3 + uVar1 * -0x80000000;
+    }
+    bVar6 = uVar1 << 0x1e <= uVar3;
     if (bVar6) {
-      uVar4 = uVar4 + uVar2 * -0x80000000;
+      uVar3 = uVar3 + uVar1 * -0x40000000;
     }
-    bVar7 = uVar2 << 0x1e <= uVar4;
+    bVar7 = uVar1 << 0x1d <= uVar3;
     if (bVar7) {
-      uVar4 = uVar4 + uVar2 * -0x40000000;
+      uVar3 = uVar3 + uVar1 * -0x20000000;
     }
-    bVar8 = uVar2 << 0x1d <= uVar4;
+    bVar8 = uVar1 << 0x1c <= uVar3;
     if (bVar8) {
-      uVar4 = uVar4 + uVar2 * -0x20000000;
+      uVar3 = uVar3 + uVar1 * -0x10000000;
     }
-    bVar9 = uVar2 << 0x1c <= uVar4;
+    bVar9 = uVar1 << 0x1b <= uVar3;
     if (bVar9) {
-      uVar4 = uVar4 + uVar2 * -0x10000000;
+      uVar3 = uVar3 + uVar1 * -0x8000000;
     }
-    bVar10 = uVar2 << 0x1b <= uVar4;
+    bVar10 = uVar1 << 0x1a <= uVar3;
     if (bVar10) {
-      uVar4 = uVar4 + uVar2 * -0x8000000;
+      uVar3 = uVar3 + uVar1 * -0x4000000;
     }
-    bVar11 = uVar2 << 0x1a <= uVar4;
+    bVar11 = uVar1 << 0x19 <= uVar3;
     if (bVar11) {
-      uVar4 = uVar4 + uVar2 * -0x4000000;
+      uVar3 = uVar3 + uVar1 * -0x2000000;
     }
-    bVar12 = uVar2 << 0x19 <= uVar4;
+    bVar12 = uVar1 << 0x18 <= uVar3;
     if (bVar12) {
-      uVar4 = uVar4 + uVar2 * -0x2000000;
+      uVar3 = uVar3 + uVar1 * -0x1000000;
     }
-    bVar13 = uVar2 << 0x18 <= uVar4;
+    bVar13 = uVar1 << 0x17 <= uVar3;
     if (bVar13) {
-      uVar4 = uVar4 + uVar2 * -0x1000000;
+      uVar3 = uVar3 + uVar1 * -0x800000;
     }
-    bVar14 = uVar2 << 0x17 <= uVar4;
+    bVar14 = uVar1 << 0x16 <= uVar3;
     if (bVar14) {
-      uVar4 = uVar4 + uVar2 * -0x800000;
+      uVar3 = uVar3 + uVar1 * -0x400000;
     }
-    bVar15 = uVar2 << 0x16 <= uVar4;
+    bVar15 = uVar1 << 0x15 <= uVar3;
     if (bVar15) {
-      uVar4 = uVar4 + uVar2 * -0x400000;
+      uVar3 = uVar3 + uVar1 * -0x200000;
     }
-    bVar16 = uVar2 << 0x15 <= uVar4;
+    bVar16 = uVar1 << 0x14 <= uVar3;
     if (bVar16) {
-      uVar4 = uVar4 + uVar2 * -0x200000;
+      uVar3 = uVar3 + uVar1 * -0x100000;
     }
-    bVar17 = uVar2 << 0x14 <= uVar4;
+    bVar17 = uVar1 << 0x13 <= uVar3;
     if (bVar17) {
-      uVar4 = uVar4 + uVar2 * -0x100000;
+      uVar3 = uVar3 + uVar1 * -0x80000;
     }
-    bVar18 = uVar2 << 0x13 <= uVar4;
+    bVar18 = uVar1 << 0x12 <= uVar3;
     if (bVar18) {
-      uVar4 = uVar4 + uVar2 * -0x80000;
+      uVar3 = uVar3 + uVar1 * -0x40000;
     }
-    bVar19 = uVar2 << 0x12 <= uVar4;
+    bVar19 = uVar1 << 0x11 <= uVar3;
     if (bVar19) {
-      uVar4 = uVar4 + uVar2 * -0x40000;
+      uVar3 = uVar3 + uVar1 * -0x20000;
     }
-    bVar20 = uVar2 << 0x11 <= uVar4;
+    bVar20 = uVar1 << 0x10 <= uVar3;
     if (bVar20) {
-      uVar4 = uVar4 + uVar2 * -0x20000;
+      uVar3 = uVar3 + uVar1 * -0x10000;
     }
-    bVar21 = uVar2 << 0x10 <= uVar4;
+    bVar21 = uVar1 << 0xf <= uVar3;
     if (bVar21) {
-      uVar4 = uVar4 + uVar2 * -0x10000;
+      uVar3 = uVar3 + uVar1 * -0x8000;
     }
-    bVar22 = uVar2 << 0xf <= uVar4;
+    bVar22 = uVar1 << 0xe <= uVar3;
     if (bVar22) {
-      uVar4 = uVar4 + uVar2 * -0x8000;
+      uVar3 = uVar3 + uVar1 * -0x4000;
     }
-    bVar23 = uVar2 << 0xe <= uVar4;
+    bVar23 = uVar1 << 0xd <= uVar3;
     if (bVar23) {
-      uVar4 = uVar4 + uVar2 * -0x4000;
+      uVar3 = uVar3 + uVar1 * -0x2000;
     }
-    bVar24 = uVar2 << 0xd <= uVar4;
+    bVar24 = uVar1 << 0xc <= uVar3;
     if (bVar24) {
-      uVar4 = uVar4 + uVar2 * -0x2000;
+      uVar3 = uVar3 + uVar1 * -0x1000;
     }
-    bVar25 = uVar2 << 0xc <= uVar4;
+    bVar25 = uVar1 << 0xb <= uVar3;
     if (bVar25) {
-      uVar4 = uVar4 + uVar2 * -0x1000;
+      uVar3 = uVar3 + uVar1 * -0x800;
     }
-    bVar26 = uVar2 << 0xb <= uVar4;
+    bVar26 = uVar1 << 10 <= uVar3;
     if (bVar26) {
-      uVar4 = uVar4 + uVar2 * -0x800;
+      uVar3 = uVar3 + uVar1 * -0x400;
     }
-    bVar27 = uVar2 << 10 <= uVar4;
+    bVar27 = uVar1 << 9 <= uVar3;
     if (bVar27) {
-      uVar4 = uVar4 + uVar2 * -0x400;
+      uVar3 = uVar3 + uVar1 * -0x200;
     }
-    bVar28 = uVar2 << 9 <= uVar4;
+    bVar28 = uVar1 << 8 <= uVar3;
     if (bVar28) {
-      uVar4 = uVar4 + uVar2 * -0x200;
+      uVar3 = uVar3 + uVar1 * -0x100;
     }
-    bVar29 = uVar2 << 8 <= uVar4;
+    bVar29 = uVar1 << 7 <= uVar3;
     if (bVar29) {
-      uVar4 = uVar4 + uVar2 * -0x100;
+      uVar3 = uVar3 + uVar1 * -0x80;
     }
-    bVar30 = uVar2 << 7 <= uVar4;
+    bVar30 = uVar1 << 6 <= uVar3;
     if (bVar30) {
-      uVar4 = uVar4 + uVar2 * -0x80;
+      uVar3 = uVar3 + uVar1 * -0x40;
     }
-    bVar31 = uVar2 << 6 <= uVar4;
+    bVar31 = uVar1 << 5 <= uVar3;
     if (bVar31) {
-      uVar4 = uVar4 + uVar2 * -0x40;
+      uVar3 = uVar3 + uVar1 * -0x20;
     }
-    bVar32 = uVar2 << 5 <= uVar4;
+    bVar32 = uVar1 << 4 <= uVar3;
     if (bVar32) {
-      uVar4 = uVar4 + uVar2 * -0x20;
+      uVar3 = uVar3 + uVar1 * -0x10;
     }
-    bVar33 = uVar2 << 4 <= uVar4;
+    bVar33 = uVar1 << 3 <= uVar3;
     if (bVar33) {
-      uVar4 = uVar4 + uVar2 * -0x10;
+      uVar3 = uVar3 + uVar1 * -8;
     }
-    bVar34 = uVar2 << 3 <= uVar4;
+    bVar34 = uVar1 << 2 <= uVar3;
     if (bVar34) {
-      uVar4 = uVar4 + uVar2 * -8;
+      uVar3 = uVar3 + uVar1 * -4;
     }
-    bVar35 = uVar2 << 2 <= uVar4;
+    bVar35 = uVar1 << 1 <= uVar3;
     if (bVar35) {
-      uVar4 = uVar4 + uVar2 * -4;
+      uVar3 = uVar3 + uVar1 * -2;
     }
-    bVar36 = uVar2 << 1 <= uVar4;
-    if (bVar36) {
-      uVar4 = uVar4 + uVar2 * -2;
+    uVar1 = (((((((((((((((((((((((((((((((uint)bVar5 * 2 + (uint)bVar6) * 2 + (uint)bVar7) * 2 +
+                                       (uint)bVar8) * 2 + (uint)bVar9) * 2 + (uint)bVar10) * 2 +
+                                    (uint)bVar11) * 2 + (uint)bVar12) * 2 + (uint)bVar13) * 2 +
+                                 (uint)bVar14) * 2 + (uint)bVar15) * 2 + (uint)bVar16) * 2 +
+                              (uint)bVar17) * 2 + (uint)bVar18) * 2 + (uint)bVar19) * 2 +
+                           (uint)bVar20) * 2 + (uint)bVar21) * 2 + (uint)bVar22) * 2 + (uint)bVar23)
+                        * 2 + (uint)bVar24) * 2 + (uint)bVar25) * 2 + (uint)bVar26) * 2 +
+                    (uint)bVar27) * 2 + (uint)bVar28) * 2 + (uint)bVar29) * 2 + (uint)bVar30) * 2 +
+                (uint)bVar31) * 2 + (uint)bVar32) * 2 + (uint)bVar33) * 2 + (uint)bVar34) * 2 +
+            (uint)bVar35) * 2 + (uint)(uVar1 <= uVar3);
+    if ((int)uVar4 < 0) {
+      uVar1 = -uVar1;
     }
-    uVar2 = (((((((((((((((((((((((((((((((uint)bVar6 * 2 + (uint)bVar7) * 2 + (uint)bVar8) * 2 +
-                                       (uint)bVar9) * 2 + (uint)bVar10) * 2 + (uint)bVar11) * 2 +
-                                    (uint)bVar12) * 2 + (uint)bVar13) * 2 + (uint)bVar14) * 2 +
-                                 (uint)bVar15) * 2 + (uint)bVar16) * 2 + (uint)bVar17) * 2 +
-                              (uint)bVar18) * 2 + (uint)bVar19) * 2 + (uint)bVar20) * 2 +
-                           (uint)bVar21) * 2 + (uint)bVar22) * 2 + (uint)bVar23) * 2 + (uint)bVar24)
-                        * 2 + (uint)bVar25) * 2 + (uint)bVar26) * 2 + (uint)bVar27) * 2 +
-                    (uint)bVar28) * 2 + (uint)bVar29) * 2 + (uint)bVar30) * 2 + (uint)bVar31) * 2 +
-                (uint)bVar32) * 2 + (uint)bVar33) * 2 + (uint)bVar34) * 2 + (uint)bVar35) * 2 +
-            (uint)bVar36) * 2 + (uint)(uVar2 <= uVar4);
-    if ((int)uVar5 < 0) {
-      uVar2 = -uVar2;
-    }
-    return uVar2;
+    return uVar1;
   }
                     // WARNING: Could not recover jumptable at 0x000084b0. Too many branches
                     // WARNING: Treating indirect jump as call
-  uVar2 = (*(code *)(iVar1 * 0xc + 0x84b8))();
-  return uVar2;
+  uVar1 = (*(code *)(iVar2 * 0xc + 0x84b8))();
+  return uVar1;
 }
 
 

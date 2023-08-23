@@ -204,14 +204,14 @@ void entry(void)
 {
   int iVar1;
   long *plVar2;
-  int in_stack_00000000;
+  int unaff_retaddr;
   
-  for (plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8)); *plVar2 != 0;
+  for (plVar2 = (long *)(&stack0x00000008 + (uint)((unaff_retaddr + 1) * 8)); *plVar2 != 0;
       plVar2 = plVar2 + 1) {
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return
-  __symbol_stub1::_exit(iVar1);
+  _exit(iVar1);
 }
 
 
@@ -233,10 +233,10 @@ void _func(undefined4 *param_1)
 void _func2(void)
 
 {
-  _gs1 = 3;
   DAT_100001108 = &_gs1;
   DAT_100001110 = 0x6b;
   DAT_100001118 = 10;
+  _gs1 = 3;
   return;
 }
 
@@ -252,34 +252,12 @@ void _main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-void __symbol_stub1::_exit(int param_1)
-
-{
-                    // WARNING: Could not recover jumptable at 0x000100000ede. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::_exit)();
-  return;
-}
-
-
-
-void stub_helpers(void)
+void _exit(int param_1)
 
 {
-  (*(code *)PTR_dyld_stub_binder_100001000)();
-  return;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-void __stub_helper::_exit(int param_1)
-
-{
-  stub_helpers();
+  (*(code *)PTR__exit_100001010)();
   return;
 }
 

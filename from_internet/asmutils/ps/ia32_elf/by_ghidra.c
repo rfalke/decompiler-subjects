@@ -3,8 +3,34 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    undefined1;
-typedef unsigned short    undefined2;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,7 +60,7 @@ struct Elf32_Ehdr {
 
 
 
-undefined8 entry(void)
+undefined4 processEntry entry(void)
 
 {
   char cVar1;
@@ -48,9 +74,9 @@ undefined8 entry(void)
   char **ppcVar7;
   char **ppcVar8;
   undefined4 *puVar9;
-  int unaff_EBP;
-  undefined4 unaff_ESI;
-  char *unaff_EDI;
+  int unaff_retaddr;
+  undefined4 in_ESI;
+  char *in_EDI;
   char *pcVar10;
   byte bVar11;
   undefined8 uVar12;
@@ -68,7 +94,7 @@ undefined8 entry(void)
       uVar4 = (uint)uVar12;
       ppcVar7 = (char **)((int)ppcVar6 + 4);
       puVar9 = (undefined4 *)((int)ppcVar6 + 4);
-      unaff_EBP = iVar3;
+      unaff_retaddr = iVar3;
       if (((int)uVar4 < 0) ||
          (iVar5 = extraout_ECX, puVar9 = (undefined4 *)((int)ppcVar6 + 4), uVar4 == 0)) break;
       do {
@@ -78,9 +104,9 @@ undefined8 entry(void)
         *(int *)((int)ppcVar7 + -0x10) = iVar5;
         *(char ***)((int)ppcVar7 + -0x14) = ppcVar7;
         *(int *)((int)ppcVar7 + -0x18) = iVar3;
-        *(undefined4 *)((int)ppcVar7 + -0x1c) = unaff_ESI;
+        *(undefined4 *)((int)ppcVar7 + -0x1c) = in_ESI;
         ppcVar8 = (char **)((int)ppcVar7 + -0x20);
-        *(char **)((int)ppcVar7 + -0x20) = unaff_EDI;
+        *(char **)((int)ppcVar7 + -0x20) = in_EDI;
         *(undefined4 *)((int)ppcVar7 + -0x24) = 0x8048098;
         iVar3 = FUN_0804815a();
         if (iVar3 == 0) {
@@ -112,8 +138,8 @@ undefined8 entry(void)
             }
           }
         }
-        unaff_EDI = *ppcVar8;
-        unaff_ESI = ppcVar8[1];
+        in_EDI = *ppcVar8;
+        in_ESI = ppcVar8[1];
         iVar3 = (int)ppcVar8[2];
         ppcVar6 = ppcVar8 + 8;
         ppcVar7 = ppcVar8 + 8;
@@ -131,21 +157,21 @@ undefined8 entry(void)
   puVar9[-2] = (int)((ulonglong)uVar12 >> 0x20);
   puVar9[-3] = 0;
   puVar9[-4] = puVar9 + 1;
-  puVar9[-5] = unaff_EBP;
-  puVar9[-6] = unaff_ESI;
-  puVar9[-7] = unaff_EDI;
+  puVar9[-5] = unaff_retaddr;
+  puVar9[-6] = in_ESI;
+  puVar9[-7] = in_EDI;
   iVar3 = extraout_ECX_00;
   do {
     puVar9[-8] = iVar3;
     iVar3 = -1;
-    pcVar10 = unaff_EDI;
+    pcVar10 = in_EDI;
     do {
-      unaff_EDI = pcVar10;
+      in_EDI = pcVar10;
       if (iVar3 == 0) break;
       iVar3 = iVar3 + -1;
-      unaff_EDI = pcVar10 + (uint)bVar11 * -2 + 1;
+      in_EDI = pcVar10 + (uint)bVar11 * -2 + 1;
       cVar1 = *pcVar10;
-      pcVar10 = unaff_EDI;
+      pcVar10 = in_EDI;
     } while (cVar1 != '\0');
     iVar3 = puVar9[-8] + -1;
     if (iVar3 == 0) {
@@ -153,7 +179,7 @@ undefined8 entry(void)
       FUN_08048176();
       puVar9[-8] = 0x8048130;
       FUN_08048176();
-      return CONCAT44(puVar9[-2],*puVar9);
+      return *puVar9;
     }
   } while( true );
 }
@@ -217,26 +243,24 @@ undefined8 __regparm3 FUN_08048132(undefined4 param_1,undefined4 param_2)
 
 
 
-uint FUN_0804815a(void)
+void FUN_0804815a(void)
 
 {
   byte bVar1;
-  uint uVar2;
   byte *unaff_ESI;
   
-  do {
+  while( true ) {
     bVar1 = *unaff_ESI;
-    uVar2 = 0;
-    if (bVar1 == 0) goto LAB_08048170;
-    if (bVar1 < 0x30) {
-      uVar2 = (uint)CONCAT11(1,bVar1);
-      goto LAB_08048170;
+    if (bVar1 == 0) {
+      return;
     }
+    if (bVar1 < 0x30) break;
     unaff_ESI = unaff_ESI + 1;
-  } while ((char)bVar1 < ':');
-  uVar2 = (uint)CONCAT11(1,bVar1);
-LAB_08048170:
-  return uVar2 >> 8;
+    if ('9' < (char)bVar1) {
+      return;
+    }
+  }
+  return;
 }
 
 

@@ -96,14 +96,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -146,7 +146,7 @@ struct Elf64_Sym {
 
 
 
-void f(void)
+void processEntry f(void)
 
 {
   return;
@@ -157,7 +157,7 @@ void f(void)
 void g(void)
 
 {
-  f(1,2,3,4,5,6,7,8,9,10,0xb,0xc);
+  f(3,0x400193,7,8,9,10,0xb,0xc);
   return;
 }
 

@@ -95,14 +95,14 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -155,7 +155,7 @@ void main(void)
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   __start_main();
@@ -703,10 +703,10 @@ int __regparm2 sprintf(char *__s,char *__format,...)
   byte bVar6;
   char *in_stack_00000004;
   char *in_stack_00000008;
-  char *pcStack36;
+  char *pcStack_24;
   
   ppcVar3 = (char **)&stack0x0000000c;
-  pcStack36 = in_stack_00000004;
+  pcStack_24 = in_stack_00000004;
   bVar6 = 0;
   do {
     while( true ) {
@@ -714,7 +714,7 @@ int __regparm2 sprintf(char *__s,char *__format,...)
       cVar1 = *in_stack_00000008;
       if (cVar1 == '\0') {
         *in_stack_00000004 = '\0';
-        return (int)(in_stack_00000004 + ((uint)bVar6 * -2 - (int)pcStack36));
+        return (int)(in_stack_00000004 + ((uint)bVar6 * -2 - (int)pcStack_24));
       }
       in_stack_00000008 = pcVar5;
       if (cVar1 == '%') break;
@@ -729,7 +729,8 @@ sprintf_store:
     if ((((cVar1 == 'd') || (uVar2 = 0x10, cVar1 == 'x')) || (uVar2 = 8, cVar1 == 'o')) ||
        (uVar2 = 2, cVar1 == 'b')) {
       pcVar5 = in_stack_00000004;
-      itoa_printB(in_stack_00000004,in_stack_00000008,unaff_EBP,&pcStack36,pcVar4,ppcVar3,uVar2);
+      itoa_printB(in_stack_00000004,in_stack_00000008,unaff_EBP,&pcStack_24,pcVar4,ppcVar3,uVar2,
+                  cVar1);
       *in_stack_00000004 = '\0';
       do {
         in_stack_00000004 = pcVar5;

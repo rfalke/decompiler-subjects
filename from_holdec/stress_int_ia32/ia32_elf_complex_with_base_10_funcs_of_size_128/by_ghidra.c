@@ -81,6 +81,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -167,6 +168,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -201,14 +213,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -279,7 +291,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -326,10 +338,13 @@ undefined4 main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -449,41 +464,49 @@ int log_size_7_var_001(void)
   ulonglong uVar1;
   byte bVar2;
   int iVar3;
-  uint uVar4;
+  ushort uVar4;
   uint uVar5;
-  uint uVar6;
-  uint uVar7;
+  ushort uVar6;
+  short sVar7;
   uint uVar8;
-  uint uVar9;
+  int iVar9;
+  uint uVar11;
+  uint uVar12;
+  int iVar10;
   
-  for (uVar5 = 0x1f; 0xffff006bU >> uVar5 == 0; uVar5 = uVar5 - 1) {
+  for (uVar11 = 0x1f; 0xffff006bU >> uVar11 == 0; uVar11 = uVar11 - 1) {
   }
-  uVar8 = uVar5 | 0xc0000000;
-  uVar1 = 0x7dbbc140 / (ulonglong)uVar8;
-  iVar3 = (int)uVar1;
-  uVar7 = (uint)(0x7dbbc140 % (ulonglong)uVar8);
-  uVar6 = 0;
-  if (uVar7 != 0) {
-    for (; (uVar7 >> uVar6 & 1) == 0; uVar6 = uVar6 + 1) {
+  uVar11 = uVar11 | 0xc0000000;
+  uVar1 = 0x7dbbc140 / (ulonglong)uVar11;
+  uVar8 = (uint)(0x7dbbc140 % (ulonglong)uVar11);
+  iVar9 = 0;
+  if (uVar8 != 0) {
+    for (; (uVar8 >> iVar9 & 1) == 0; iVar9 = iVar9 + 1) {
     }
   }
-  uVar7 = iVar3 + 0x2210c080;
-  if ((POPCOUNT(uVar7 & 0xff) & 1U) != 0) {
-    uVar8 = uVar5 & 0xffff0000 | 0xc0000000;
+  uVar8 = (int)uVar1 + 0x2210c080;
+  if ((POPCOUNT(uVar8 & 0xff) & 1U) != 0) {
+    uVar11 = CONCAT22((short)(uVar11 >> 0x10),0xe800);
   }
-  uVar4 = iVar3 << 1;
-  uVar5 = uVar6 & 0xff | 0xffff0000;
-  uVar9 = uVar5 + 0xd000e801;
-  uVar5 = (uint)CONCAT11(uVar5 < 0x2fff17ff && uVar9 != 0,(char)(uVar6 & 0xff));
-  uVar6 = (uVar5 | 0xffff0000) << 1;
-  uVar8 = uVar8 & 0xffff0000 | (uint)CONCAT11(0x3559 < (ushort)uVar1,(char)uVar8 + '\x1f') | uVar9;
-  bVar2 = ((byte)(uVar6 >> 0x18) & 0x1f) % 0x11;
-  return (uVar4 & 0xffff0000 | (uint)(ushort)((ushort)(byte)uVar4 * (ushort)(byte)(uVar8 >> 8))) +
-         uVar8 + (uVar6 >> 0x18 | 0xfe00 | uVar5 << 0x19) +
-         (uVar9 & 0xffff0000 |
-         (uint)(ushort)((ushort)((uVar9 & 0xffff) << bVar2) |
-                       (ushort)((uVar9 & 0xffff) >> 0x11 - bVar2))) + uVar7 +
-         ((ushort)((short)uVar6 + 0xc080) | 0x22100000 | uVar9) + 0x41ee92d3;
+  iVar3 = (int)uVar1 << 1;
+  uVar5 = CONCAT31(0xffff00,(char)iVar9);
+  uVar12 = uVar5 + 0xd000e801;
+  uVar4 = CONCAT11(uVar5 < 0x2fff17ff && uVar12 != 0,(char)iVar9);
+  iVar9 = -(CONCAT31((int3)((uint)iVar9 >> 8),(uVar1 & 0x100) != 0) & 0x5a28e0bd);
+  sVar7 = (short)iVar9 + -0x3f7f;
+  iVar10 = CONCAT22((short)((uint)iVar9 >> 0x10),sVar7);
+  iVar9 = CONCAT22(0xffff,uVar4) << 1;
+  uVar11 = CONCAT22((short)(uVar11 >> 0x10),CONCAT11(0x3559 < (ushort)uVar1,(char)uVar11 + '\x1f'))
+           | uVar12;
+  uVar6 = (ushort)((uint)iVar9 >> 0x10);
+  bVar2 = ((byte)((uint)iVar9 >> 0x18) & 0x1f) % 0x11;
+  return CONCAT22((short)((uint)iVar3 >> 0x10),(ushort)(byte)iVar3 * (ushort)(byte)(uVar11 >> 8)) +
+         uVar11 + ((uint)(uVar6 >> 8) | ((uVar6 & 0xff) << 0x10) >> 8 | (uint)uVar4 << 0x19) +
+         CONCAT31((int3)((uint)iVar10 >> 8),(char)sVar7) +
+         CONCAT22((short)(uVar12 >> 0x10),
+                  (ushort)((uVar12 & 0xffff) << bVar2) | (ushort)((uVar12 & 0xffff) >> 0x11 - bVar2)
+                 ) + (uVar8 - iVar10) + (CONCAT22(0x2210,(short)iVar9 + -0x3f80) | uVar12) +
+         0x41ee92d3;
 }
 
 
@@ -505,63 +528,67 @@ undefined4 log_size_7_var_002(void)
 int log_size_7_var_003(void)
 
 {
-  ushort uVar1;
-  byte bVar2;
-  byte bVar3;
-  uint uVar4;
-  uint uVar5;
-  ushort uVar6;
-  int iVar7;
-  uint uVar8;
-  int iVar9;
-  ushort uVar10;
-  uint uVar11;
-  uint uVar12;
-  bool bVar13;
+  int iVar1;
+  undefined5 uVar2;
+  ushort uVar3;
+  short sVar4;
+  byte bVar5;
+  byte bVar6;
+  uint uVar7;
+  int iVar8;
+  undefined2 uVar9;
+  uint uVar10;
+  short sVar11;
+  ushort uVar12;
+  uint uVar13;
+  uint uVar14;
+  bool bVar15;
   
-  for (iVar7 = 0; (0xc7d500ceU >> iVar7 & 1) == 0; iVar7 = iVar7 + 1) {
+  for (iVar1 = 0; (0xc7d500ceU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
-  uVar5 = iVar7 + 0xacc684b;
-  uVar4 = (uint)(CONCAT14(0x9c30797a < (uVar5 & 0xffff0000 | (uint)(ushort)((short)uVar5 >> 0xd)),
-                          0x7498531) >> 0xe);
-  uVar10 = (ushort)uVar4 ^ 0x86d8;
-  bVar13 = (POPCOUNT(uVar10 & 0xff) & 1U) == 0;
-  iVar7 = (uint)(ushort)((ushort)((POPCOUNT(uVar5 & 0xff) & 1U) != 0) << 8 | 8) * (uint)bVar13;
-  uVar1 = (short)iVar7 * 2 - 1;
-  iVar7 = iVar7 * 4;
-  uVar1 = (ushort)(uVar1 & 0xff | (ushort)(byte)((char)((uint)uVar1 >> 8) << 1) << 8) >> 1;
-  uVar6 = CONCAT11((char)((uint)iVar7 >> 8) << 1,(char)iVar7) | 0xf27;
-  uVar11 = (uVar4 & 0xffff0000 | 0x29880000 | (uint)(ushort)(uVar10 + 0x8b0c)) + (uint)uVar1 + 1;
-  uVar10 = CONCAT11((POPCOUNT((0x89U >> bVar13 | 0x89 << 0x10 - bVar13) + 0xbd49 & 0xff) & 1U) != 0,
-                    bVar13 << 7) + 0x75db;
-  uVar5 = uVar10 & 0x1f;
-  uVar12 = uVar11 ^ 1 << uVar5;
-  bVar2 = (byte)uVar10;
-  bVar3 = bVar2 << 1 | bVar2 >> 7;
-  uVar4 = uVar10 & 0xffffff00 | 0xffe90000 | uVar6 & 0xff;
-  uVar5 = (short)((ushort)(byte)(((char)uVar1 + -0x69) - ((uVar11 >> uVar5 & 1) != 0)) << 0xe) *
-          -0x545f;
-  uVar11 = uVar5 & 0xffff | 0x70780000;
-  if ((int)(short)uVar5 != uVar5) {
-    uVar4 = uVar12 & 0xffff | 0xffe90000;
+  uVar7 = iVar1 + 0xacc684b;
+  uVar2 = CONCAT14(0x9c30797a < CONCAT22((short)(uVar7 >> 0x10),(short)uVar7 >> 0xd),0x7498531);
+  uVar12 = (ushort)(uint)((uint5)uVar2 >> 0xe) ^ 0x86d8;
+  bVar15 = (POPCOUNT(uVar12 & 0xff) & 1U) == 0;
+  sVar11 = CONCAT11((POPCOUNT(uVar7 & 0xff) & 1U) != 0,8) * (ushort)bVar15 * 2;
+  sVar4 = sVar11 + -1;
+  iVar8 = CONCAT22(0x7e3b,sVar11) << 1;
+  uVar9 = (undefined2)((uint)iVar8 >> 0x10);
+  uVar3 = CONCAT11((char)((ushort)sVar4 >> 8) << 1,(char)sVar4) >> 1;
+  uVar13 = (CONCAT22((ushort)((uint5)uVar2 >> 0x1e),uVar12 + 0x8b0c) | 0x29880000) + (uint)uVar3 + 1
+  ;
+  uVar12 = (short)CONCAT31((int3)(CONCAT22(0xffe9,CONCAT11((POPCOUNT((0x89U >> bVar15 |
+                                                                     0x89 << 0x10 - bVar15) + 0xbd49
+                                                                     & 0xff) & 1U) != 0,bVar15)) >>
+                                 8),bVar15 << 7) + 0x75db;
+  uVar14 = uVar13 ^ 1 << (uVar12 & 0x1f);
+  bVar5 = (byte)uVar12;
+  bVar6 = bVar5 << 1 | bVar5 >> 7;
+  uVar7 = CONCAT31((int3)(CONCAT22(0xffe9,uVar12) >> 8),(char)iVar8) | 0x27;
+  iVar1 = (short)((ushort)(byte)(((char)uVar3 + -0x69) - ((uVar13 >> (uVar12 & 0x1f) & 1) != 0)) <<
+                 0xe) * -0x545f;
+  sVar11 = (short)iVar1;
+  uVar13 = CONCAT22(0x7078,sVar11);
+  if (sVar11 != iVar1) {
+    uVar7 = CONCAT22(0xffe9,(short)uVar14);
   }
-  uVar8 = 0x51f40f27 << (bVar2 & 0x1f) | 1 << (bVar3 & 0x1f);
-  uVar5 = uVar4 & 0xffff0000 | (uint)(ushort)((ushort)uVar4 >> ((byte)uVar4 & 0x1f));
-  if (((ushort)-(uVar6 & 0xff00 | (ushort)bVar3) | 0xfc760000) == uVar12) {
-    uVar5 = uVar12;
+  uVar10 = 0x51f40f27 << (bVar5 & 0x1f) | 1 << (bVar6 & 0x1f);
+  uVar7 = CONCAT22((short)(uVar7 >> 0x10),(ushort)uVar7 >> ((byte)uVar7 & 0x1f));
+  if (CONCAT22(uVar9,-((ushort)CONCAT31((int3)(CONCAT22(uVar9,CONCAT11((char)((uint)iVar8 >> 8) << 1
+                                                                       ,(char)iVar8)) >> 8),bVar6) |
+                      0xf00)) == uVar14) {
+    uVar7 = uVar14;
   }
-  uVar4 = ((uint)(byte)('\0' << ((byte)uVar5 & 0x1f)) << 8) >> 1;
-  iVar9 = CONCAT31((uint3)((uint3)(uVar8 >> 8) & 0xffff00 |
-                          (uint3)(byte)((ushort)-(short)uVar8 >> 8)) >> 4,1);
-  uVar5 = uVar5 & 0xffff0000 | (uint)CONCAT11((-1 < (int)uVar4) << 1,(byte)uVar5 - 1);
-  iVar7 = 0;
-  if (uVar5 != 0) {
-    for (; (uVar5 >> iVar7 & 1) == 0; iVar7 = iVar7 + 1) {
+  uVar14 = (uint)((ushort)((ushort)(byte)('\0' << ((byte)uVar7 & 0x1f)) << 8) >> 1);
+  iVar8 = CONCAT31((uint3)(CONCAT22((short)(uVar10 >> 0x10),-(short)uVar10) >> 0xc),1);
+  uVar7 = CONCAT22((short)(uVar7 >> 0x10),CONCAT11((-1 < (int)uVar14) << 1,(byte)uVar7 - 1));
+  iVar1 = 0;
+  if (uVar7 != 0) {
+    for (; (uVar7 >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
     }
   }
-  return (iVar9 << 0x16 | (uint)(CONCAT14(CARRY4(uVar11,uVar11),iVar9) >> 0xb)) + iVar7 +
-         (uVar11 * 2 & 0xffff0000 | (uint)(ushort)((short)(uVar11 * 2) * -0x51f1)) + uVar4 +
-         0x1ecf0efd;
+  return (iVar8 << 0x16 | (uint)(CONCAT14(CARRY4(uVar13,uVar13),iVar8) >> 0xb)) + iVar1 +
+         CONCAT22((short)(uVar13 * 2 >> 0x10),(short)(uVar13 * 2) * -0x51f1) + uVar14 + 0x1ecf0efd;
 }
 
 
@@ -583,9 +610,9 @@ undefined4 log_size_7_var_005(void)
 {
   int iVar1;
   
-  for (iVar1 = 0; (0xffee94baU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
+  for (iVar1 = 0; (0x94baU >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
-  return 0;
+  return 0xf4f80000;
 }
 
 
@@ -596,52 +623,50 @@ undefined4 log_size_7_var_005(void)
 int log_size_7_var_006(void)
 
 {
-  ushort uVar1;
+  int iVar1;
   uint uVar2;
-  ushort uVar3;
-  uint uVar4;
+  uint uVar3;
+  short sVar4;
   uint uVar5;
-  ushort uVar6;
-  uint uVar7;
-  uint uVar8;
+  uint uVar6;
+  ushort uVar7;
+  short sVar8;
+  uint uVar9;
   
-  for (uVar4 = 0; (0x65b98078U >> uVar4 & 1) == 0; uVar4 = uVar4 + 1) {
+  for (iVar1 = 0; (0x65b98078U >> iVar1 & 1) == 0; iVar1 = iVar1 + 1) {
   }
-  uVar2 = ((ushort)(CONCAT11(0x10,(char)uVar4) | 0x400) & 0x242b) * 0x100f0;
-  uVar6 = (ushort)(uVar2 >> 0x10);
-  uVar4 = uVar2 & 0xffff | (uVar4 & 0x7fff0000) << 1;
-  uVar6 = uVar6 & 0xff | (ushort)(uVar6 == 0) << 8;
-  if (uVar4 != 0x65b98078) {
-    uVar4 = 0x65b98078;
+  iVar1 = ((ushort)(CONCAT11(0x10,(char)iVar1) | 0x400) & 0x242b) * 0x100f0;
+  uVar7 = CONCAT11((short)((uint)iVar1 >> 0x10) == 0,(char)((uint)iVar1 >> 0x10));
+  sVar4 = uVar7 + 0x78;
+  sVar8 = sVar4;
+  if (0xff87 < uVar7 || sVar4 == 0) {
+    sVar8 = 0x438;
   }
-  uVar3 = (char)uVar4 * 9;
-  uVar1 = uVar6 + 0x78;
-  if (uVar6 < 0xff88 && uVar1 != 0) {
-    uVar6 = (ushort)uVar4;
-    uVar3 = uVar1;
+  if (0xff87 >= uVar7 && sVar4 != 0) {
+    uVar7 = 0x8078;
   }
-  uVar5 = ((uint)(uVar6 & 0x3fff) << 0x10 | 0x753f) / 0xc008;
-  uVar7 = (uVar3 | 0x80560000) >> 4;
+  uVar6 = ((uint)(uVar7 & 0x3fff) << 0x10 | 0x753f) / 0xc008;
+  uVar5 = CONCAT22(0x1c3a,(short)uVar6);
+  uVar3 = CONCAT22(0x8056,sVar8) >> 4;
   uVar2 = 0;
-  if ((uVar5 | 0x1c3a0000) != 0) {
-    for (; ((uVar5 | 0x1c3a0000) >> uVar2 & 1) == 0; uVar2 = uVar2 + 1) {
+  if (uVar5 != 0) {
+    for (; (uVar5 >> uVar2 & 1) == 0; uVar2 = uVar2 + 1) {
     }
   }
-  uVar6 = (short)(char)uVar5 * (short)(char)(uVar5 >> 8);
-  uVar1 = uVar6 & 0x3fff | 0xc0;
-  uVar6 = uVar6 & 0xff | 0xc0;
-  uVar3 = (ushort)uVar2;
-  uVar8 = uVar4 + 1 & 0xffff0000 | (uint)(ushort)((short)(uVar4 + 1) << 1 | uVar3 >> 0xf);
-  uVar4 = uVar7 & 0xffff;
-  uVar5 = ((ushort)(uVar1 / uVar6 & 0xff | uVar1 % uVar6 << 8) | 0x1c3a0000) & uVar8;
-  uVar6 = ((short)uVar7 * -0x7b4e - (short)uVar4) - (ushort)((uVar3 >> 10 & 1) != 0);
-  uVar7 = uVar6 | 0x89890000;
-  if ((uVar7 & 0x6883be94) == 0) {
-    uVar5 = uVar5 & 0xffff0000 | 0x6014;
+  sVar4 = (short)(char)uVar6 * (short)(char)(uVar6 >> 8);
+  uVar6 = CONCAT22(0x1c3a,(ushort)CONCAT31((int3)(CONCAT22(0x1c3a,sVar4) >> 8),(char)sVar4) | 0xc0)
+          & 0xffff3fff;
+  uVar9 = CONCAT22(0x65b9,(ushort)uVar2 >> 0xf | 0xf2);
+  uVar6 = CONCAT22((short)(uVar6 >> 0x10),
+                   CONCAT11((char)((ushort)uVar6 % (ushort)(byte)uVar6),
+                            (char)((ushort)uVar6 / (ushort)(byte)uVar6))) & uVar9;
+  sVar4 = (short)uVar3 * -0x7b4f - (ushort)(((ushort)uVar2 >> 10 & 1) != 0);
+  uVar5 = CONCAT22(0x8000,sVar4) | 0x9890000;
+  if ((uVar5 & 0x6883be94) == 0) {
+    uVar6 = CONCAT22((short)(uVar6 >> 0x10),0x6014);
   }
-  return (uVar5 & 0xffff0000 | (uint)(ushort)((short)uVar5 + uVar6)) +
-         (uVar2 & 0xffff0000 | (uint)(uVar3 & 0xfbff)) + uVar7 + (uVar4 | 0x48050000) + uVar8 +
-         -0x3b7f62ac;
+  return CONCAT22((short)(uVar6 >> 0x10),(short)uVar6 + sVar4) + (uVar2 & 0xfffffbff) + uVar5 +
+         (uVar3 | 0x40000000) + uVar9 + -0x3b7f62ac;
 }
 
 
@@ -663,39 +688,40 @@ undefined4 log_size_7_var_007(void)
 int log_size_7_var_008(void)
 
 {
-  uint uVar1;
-  int iVar2;
-  byte bVar3;
-  uint5 uVar4;
-  uint uVar5;
+  int iVar1;
+  byte bVar2;
+  uint5 uVar3;
+  ushort uVar4;
+  ushort uVar5;
   ushort uVar6;
   ushort uVar7;
-  ushort uVar8;
+  uint uVar8;
   uint uVar9;
   uint uVar10;
   bool bVar11;
   
-  for (iVar2 = 0x1f; 0x5af56cU >> iVar2 == 0; iVar2 = iVar2 + -1) {
+  for (iVar1 = 0x1f; 0x5af56cU >> iVar1 == 0; iVar1 = iVar1 + -1) {
   }
-  uVar10 = iVar2 << 1;
-  uVar1 = 0x649d4cae - (uVar10 | 1);
-  uVar4 = (CONCAT14(0x649d4cae < (uVar10 | 1),0x11e) | 0xd0110000) >> 3;
-  uVar6 = (ushort)uVar4;
-  uVar5 = (uint)uVar4 & 0xffff0000 | 0x80000000;
-  uVar9 = uVar10 & 0xff | 0x26906901;
-  uVar7 = (ushort)uVar1;
-  uVar8 = (ushort)uVar9;
-  bVar11 = CARRY2(uVar7,uVar8);
-  uVar7 = uVar7 + uVar8;
-  if (!bVar11 && uVar7 != 0) {
-    uVar9 = uVar10 & 0xffffff00;
+  uVar9 = iVar1 << 1 | 1;
+  uVar3 = CONCAT14(0x649d4cae < uVar9,0xd011011e) >> 3;
+  uVar4 = (ushort)(uVar3 >> 0x10);
+  uVar5 = (ushort)uVar3;
+  uVar8 = CONCAT31(0x269069,(char)uVar9);
+  uVar6 = (ushort)(0x649d4cae - uVar9);
+  uVar7 = (ushort)uVar8;
+  bVar11 = CARRY2(uVar6,uVar7);
+  uVar6 = uVar6 + uVar7;
+  if (!bVar11 && uVar6 != 0) {
+    uVar8 = iVar1 << 1 & 0xffffff00;
   }
-  uVar10 = ((ushort)(bVar11 + 0xcf2a) | 0xd0110000) - (uVar5 | (ushort)(uVar6 << 0xe | uVar6 >> 2));
-  bVar3 = (byte)(uVar7 >> 1) & 0x1f;
-  return (CONCAT22((short)(uVar5 >> 0x10),0xb17a) & 0xffff7200 | 0x3d) +
-         ((CONCAT11(-1 << ((byte)uVar7 & 0x1f),0xfe) | 0xffff0000) << 7 |
-         (uint)(byte)('\0' >> ((byte)uVar7 & 0x1f))) + (uVar1 & 0xffff0000 | (uint)(uVar7 >> 1)) +
-         uVar9 + (uVar10 >> bVar3 | uVar10 << 0x21 - bVar3) + -0x3a3c9280;
+  uVar10 = CONCAT22(0xd011,bVar11 + 0xcf2a) -
+           (CONCAT22(uVar4,uVar5 << 0xe | uVar5 >> 2) | 0x80000000);
+  bVar2 = (byte)(uVar6 >> 1) & 0x1f;
+  return (CONCAT22(uVar4 | 0x8000,0xb13d) & 0xffff72ff) +
+         CONCAT31((int3)((uint)(CONCAT22(0xffff,CONCAT11(-1 << ((byte)uVar6 & 0x1f),0xfe)) << 7) >>
+                        8),'\0' >> ((byte)uVar6 & 0x1f)) +
+         CONCAT22((short)(0x649d4cae - uVar9 >> 0x10),uVar6 >> 1) + uVar8 +
+         (uVar10 >> bVar2 | uVar10 << 0x21 - bVar2) + -0x3a3c9280;
 }
 
 
@@ -706,60 +732,61 @@ int log_size_7_var_008(void)
 int log_size_7_var_009(void)
 
 {
-  uint uVar1;
+  int iVar1;
   int iVar2;
   byte bVar3;
-  uint uVar4;
   uint uVar5;
   byte bVar6;
   byte bVar7;
-  byte bVar8;
+  undefined2 uVar8;
   uint uVar9;
-  uint uVar10;
+  char cVar10;
   uint uVar11;
-  short sVar12;
-  ushort uVar13;
+  uint uVar12;
+  short sVar13;
   ushort uVar14;
+  ushort uVar15;
+  byte bVar4;
   
-  for (uVar4 = 0x1f; 0xffff8e8eU >> uVar4 == 0; uVar4 = uVar4 - 1) {
+  for (uVar5 = 0x1f; 0xffff8e8eU >> uVar5 == 0; uVar5 = uVar5 - 1) {
   }
-  uVar1 = 0x1f;
-  if (uVar4 != 0) {
-    for (; uVar4 >> uVar1 == 0; uVar1 = uVar1 - 1) {
+  iVar1 = 0x1f;
+  if (uVar5 != 0) {
+    for (; uVar5 >> iVar1 == 0; iVar1 = iVar1 + -1) {
     }
   }
-  sVar12 = (short)uVar1 * 2;
-  uVar13 = sVar12 + 0x77da;
-  bVar8 = -(char)(sVar12 + 0x6e3fU);
-  uVar9 = ((uint)((ushort)(sVar12 + 0x6e3fU) >> 9) << 8 | 0xaf6d0000 | (uint)bVar8) ^ 0xf300;
-  uVar11 = ((ushort)(0xa6d4 - ((short)uVar1 < 0)) | 0xa0000000) & 0xddc09ccc;
-  uVar14 = uVar13 | (ushort)uVar9;
-  bVar6 = 0xe - (char)((int)(uVar1 & 0xffff0000) >> 0x1f);
-  uVar4 = (uVar13 & 0xffffff00 | (uint)(byte)((char)uVar13 + 1)) ^ 0x1d;
+  sVar13 = (short)iVar1 * 2;
+  uVar14 = sVar13 + 0x77da;
+  cVar10 = -(char)(sVar13 + 0x6e3f);
+  uVar9 = CONCAT22(0xaf6d,CONCAT11((byte)((ushort)(sVar13 + 0x6e3f) >> 9),cVar10)) ^ 0xf300;
+  uVar12 = CONCAT22(0xa000,-0x592c - (ushort)((short)iVar1 < 0)) & 0xddc09ccc;
+  uVar15 = uVar14 | (ushort)uVar9;
+  bVar6 = 0xe - (char)(iVar1 >> 0x1f);
+  uVar5 = CONCAT11((char)(uVar14 >> 8),(char)uVar14 + '\x01') ^ 0x1d;
   bVar3 = bVar6 % 0x11;
-  uVar4 = (uint)(ushort)((ushort)(uVar4 >> bVar3) | (ushort)(uVar4 << 0x11 - bVar3));
-  uVar5 = uVar4 | 0x80000000;
-  bVar6 = bVar6 & (byte)(uVar4 >> 8);
-  uVar10 = uVar9 & 0xffffff00 | 0x4000 | (uint)(byte)(bVar8 + 0x65);
-  uVar4 = CONCAT22((short)((uint)(ushort)(sVar12 + 0x6dc0) * -2 + 0x3b800000 >> 0x10),0xd1e9);
-  iVar2 = uVar5 - uVar4;
-  if (uVar5 != uVar4) {
-    uVar5 = uVar4;
+  uVar14 = (ushort)(uVar5 >> bVar3) | (ushort)(uVar5 << 0x11 - bVar3);
+  uVar5 = uVar14 | 0x80000000;
+  bVar6 = bVar6 & (byte)(uVar14 >> 8);
+  uVar11 = CONCAT31((int3)(uVar9 >> 8),cVar10 + 'e') | 0x4000;
+  uVar9 = CONCAT22((short)((uint)(ushort)(sVar13 + 0x6dc0) * -2 + 0x3b800000 >> 0x10),0xd1e9);
+  iVar2 = uVar5 - uVar9;
+  if (uVar5 != uVar9) {
+    uVar5 = uVar9;
   }
   if (-1 < iVar2) {
-    uVar10 = uVar9 & 0xffff0000 | uVar5 & 0xffff;
+    uVar11 = CONCAT22(0xaf6d,(short)uVar5);
   }
-  bVar8 = (byte)uVar5;
-  bVar7 = bVar6 ^ (bVar8 == bVar6) * (bVar6 ^ (byte)(uVar10 >> 8));
-  bVar3 = bVar8 ^ (bVar8 != bVar6) * (bVar8 ^ bVar7);
-  uVar4 = (uint)CONCAT11(0x9c,bVar7);
+  bVar4 = (byte)uVar5;
+  bVar7 = bVar6 ^ (bVar4 == bVar6) * (bVar6 ^ (byte)(uVar11 >> 8));
+  bVar3 = bVar4 ^ (bVar4 != bVar6) * (bVar4 ^ bVar7);
+  uVar8 = CONCAT11(0x9c,bVar7);
   if ((uVar5 >> (uVar5 & 0x1f) & 1) == 0) {
-    uVar11 = uVar4 | 0x80000000;
+    uVar12 = CONCAT22((short)(uVar12 >> 0x10),uVar8);
   }
-  return (uVar5 & 0xffffff00 | (uint)bVar3) +
-         (uVar10 & 0xffffff00 | (uint)(byte)((char)uVar10 + bVar3 + (bVar8 < bVar6))) +
-         (uVar4 | 0x77010000) + uVar5 + uVar11 +
-         (uVar1 & 0xffff0000 | (uint)(ushort)((uVar14 << 1 | (ushort)((short)uVar14 < 0)) + 0x7df7))
+  return CONCAT31((int3)(uVar5 >> 8),bVar3) +
+         CONCAT31((int3)(uVar11 >> 8),(char)uVar11 + bVar3 + (bVar4 < bVar6)) +
+         CONCAT22(0x7701,uVar8) + uVar5 + uVar12 +
+         CONCAT22((short)((uint)iVar1 >> 0x10),(uVar15 << 1 | (ushort)((short)uVar15 < 0)) + 0x7df7)
          + -0x1d701af8;
 }
 

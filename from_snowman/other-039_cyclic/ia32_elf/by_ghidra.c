@@ -106,14 +106,14 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -145,7 +145,7 @@ struct Elf32_Ehdr {
 
 
 
-void g(void)
+void processEntry g(void)
 
 {
   return;
@@ -164,45 +164,93 @@ void h(void)
 // WARNING: Removing unreachable block (ram,0x080480f6)
 // WARNING: Removing unreachable block (ram,0x080481c5)
 
-void f(int param_1,int param_2,undefined4 param_3,undefined4 param_4)
+void f(int param_1)
 
 {
   int iVar1;
+  undefined4 uVar2;
+  undefined *puVar3;
+  undefined4 *puVar4;
+  undefined4 *puVar5;
+  undefined4 *puVar6;
+  undefined *puVar7;
+  undefined4 local_24 [2];
+  undefined local_1c [24];
   
-  while (param_1 != 0) {
-    param_2 = param_2 + 1;
-  }
-  while (iVar1 = h(), iVar1 != 0) {
-    param_1 = param_1 + 1;
-  }
-  while ((iVar1 = g(), iVar1 != 0 && (iVar1 = h(), iVar1 != 0))) {
-    param_1 = param_1 + 1;
+  puVar7 = &stack0xfffffffc;
+  puVar3 = local_1c;
+  do {
+  } while (param_1 != 0);
+  do {
+    iVar1 = h();
+  } while (iVar1 != 0);
+  while( true ) {
+    *(undefined4 *)(puVar3 + -4) = 0x8048126;
+    iVar1 = g();
+    puVar6 = (undefined4 *)(puVar3 + -4);
+    if (iVar1 == 0) break;
+    *(undefined4 *)(puVar3 + -8) = 0x804812f;
+    iVar1 = h();
+    puVar6 = (undefined4 *)(puVar3 + -4);
+    if (iVar1 == 0) break;
+    *(int *)(puVar7 + 8) = *(int *)(puVar7 + 8) + 1;
+    puVar3 = puVar3 + -4;
   }
   do {
-    f(param_4,param_1,param_2,param_3);
+    puVar4 = puVar6;
+    puVar4[3] = *(undefined4 *)(puVar7 + 0x10);
+    puVar4[2] = *(undefined4 *)(puVar7 + 0xc);
+    puVar4[1] = *(undefined4 *)(puVar7 + 8);
+    *puVar4 = *(undefined4 *)(puVar7 + 0x14);
+    puVar4[-1] = 0x8048153;
+    f();
+    puVar4[-1] = 0x8048158;
     iVar1 = g();
+    puVar6 = puVar4 + -1;
+    puVar5 = puVar4;
   } while (iVar1 != 0);
-  if (param_1 == 0) {
-    iVar1 = g();
-    if (iVar1 != 0) {
-      h();
+  while( true ) {
+    if (*(int *)(puVar7 + 8) != 0) {
+      puVar5[2] = *(undefined4 *)(puVar7 + 8);
+      puVar5[1] = *(undefined4 *)(puVar7 + 0xc);
+      *puVar5 = *(undefined4 *)(puVar7 + 0x10);
+      puVar5[-1] = *(undefined4 *)(puVar7 + 0x14);
+      puVar5[-2] = 0x8048182;
+      f();
+      return;
     }
-    do {
-      iVar1 = g();
-      if (iVar1 != param_2) {
-        return;
+    puVar6 = puVar5 + -2;
+    puVar5[-2] = 0x8048189;
+    uVar2 = g();
+    *(undefined4 *)(puVar7 + 0x14) = uVar2;
+    if (*(int *)(puVar7 + 0x14) != 0) break;
+    puVar5 = puVar5 + -1;
+    if (*(int *)(puVar7 + 8) == 0) {
+LAB_0804819f:
+      while( true ) {
+        *(undefined4 *)((int)puVar6 + -4) = 0x80481a4;
+        iVar1 = g();
+        *(int *)(puVar7 + 8) = iVar1 - *(int *)(puVar7 + 0xc);
+        if (*(int *)(puVar7 + 8) != 0) {
+          return;
+        }
+        *(undefined4 *)((int)puVar6 + -8) = 0x80481b5;
+        iVar1 = g();
+        if (iVar1 == 0) break;
+        *(undefined4 *)((int)puVar6 + -0xc) = 0x80481be;
+        iVar1 = h();
+        puVar6 = (undefined4 *)((int)puVar6 + -8);
+        if (iVar1 == 0) {
+          return;
+        }
       }
-      iVar1 = g();
-      if (iVar1 == 0) {
-        return;
-      }
-      iVar1 = h();
-    } while (iVar1 != 0);
+      return;
+    }
   }
-  else {
-    f(param_4,param_3,param_2,param_1);
-  }
-  return;
+  puVar5[-3] = 0x8048197;
+  h();
+  puVar6 = puVar5 + -2;
+  goto LAB_0804819f;
 }
 
 

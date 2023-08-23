@@ -69,7 +69,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -144,6 +144,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -230,6 +231,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -264,14 +276,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -326,7 +338,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -339,7 +351,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -361,7 +373,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putc(int __c,FILE *__stream)
 
@@ -373,6 +385,8 @@ int putc(int __c,FILE *__stream)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 main(void)
 
@@ -387,74 +401,74 @@ undefined4 main(void)
     uVar1 = uVar2;
   } while (uVar2 != 0x1e);
   puts("");
-  buffer._28_2_ = 0x5f5f;
-  buffer._0_4_ = 0x5f5f5f5f;
-  buffer._4_4_ = 0x5f5f5f5f;
-  buffer._8_4_ = 0x5f5f5f5f;
-  buffer._12_4_ = 0x5f5f5f5f;
-  buffer._16_4_ = 0x5f5f5f5f;
-  buffer._20_4_ = 0x5f5f5f5f;
-  buffer._24_4_ = 0x5f5f5f5f;
+  _DAT_0804c044 = 0x5f5f;
+  _buffer = 0x5f5f5f5f;
+  _DAT_0804c02c = 0x5f5f5f5f;
+  _DAT_0804c030 = 0x5f5f5f5f;
+  _DAT_0804c034 = 0x5f5f5f5f;
+  _DAT_0804c038 = 0x5f5f5f5f;
+  _DAT_0804c03c = 0x5f5f5f5f;
+  _DAT_0804c040 = 0x5f5f5f5f;
   print("initial");
-  i386_memset_forward_b(0x804c02b,0x78,5);
+  i386_memset_forward_b(&DAT_0804c02b,0x78,5);
   print("5 \'x\' from 3");
-  i386_memset_forward_w(0x804c032,0x2928,3);
+  i386_memset_forward_w(&DAT_0804c032,0x2928,3);
   print("3 \'()\' from 10");
-  i386_memset_forward_l(0x804c03c,0x3e62613c,2);
+  i386_memset_forward_l(&DAT_0804c03c,0x3e62613c,2);
   print("2 \'<ab>\' from 20");
-  buffer._28_2_ = 0x5f5f;
-  buffer._0_4_ = 0x5f5f5f5f;
-  buffer._4_4_ = 0x5f5f5f5f;
-  buffer._8_4_ = 0x5f5f5f5f;
-  buffer._12_4_ = 0x5f5f5f5f;
-  buffer._16_4_ = 0x5f5f5f5f;
-  buffer._20_4_ = 0x5f5f5f5f;
-  buffer._24_4_ = 0x5f5f5f5f;
+  _DAT_0804c044 = 0x5f5f;
+  _buffer = 0x5f5f5f5f;
+  _DAT_0804c02c = 0x5f5f5f5f;
+  _DAT_0804c030 = 0x5f5f5f5f;
+  _DAT_0804c034 = 0x5f5f5f5f;
+  _DAT_0804c038 = 0x5f5f5f5f;
+  _DAT_0804c03c = 0x5f5f5f5f;
+  _DAT_0804c040 = 0x5f5f5f5f;
   print("reset for following backward tests");
-  i386_memset_backward_b(0x804c02f,0x78,5);
+  i386_memset_backward_b(&DAT_0804c02f,0x78,5);
   print("5 \'x\' from 3");
-  i386_memset_backward_w(0x804c036,0x2928,3);
+  i386_memset_backward_w(&DAT_0804c036,0x2928,3);
   print("3 \'()\' from 10");
-  i386_memset_backward_l(0x804c040,0x3e62613c,2);
+  i386_memset_backward_l(&DAT_0804c040,0x3e62613c,2);
   print("2 \'<ab>\' from 20");
-  buffer._28_2_ = 0x5f5f;
-  buffer._0_4_ = 0x5f5f5f5f;
-  buffer._4_4_ = 0x5f5f5f5f;
-  buffer._8_4_ = 0x5f5f5f5f;
-  buffer._12_4_ = 0x5f5f5f5f;
-  buffer._16_4_ = 0x5f5f5f5f;
-  buffer._20_4_ = 0x5f5f5f5f;
-  buffer._24_4_ = 0x5f5f5f5f;
+  _DAT_0804c044 = 0x5f5f;
+  _buffer = 0x5f5f5f5f;
+  _DAT_0804c02c = 0x5f5f5f5f;
+  _DAT_0804c030 = 0x5f5f5f5f;
+  _DAT_0804c034 = 0x5f5f5f5f;
+  _DAT_0804c038 = 0x5f5f5f5f;
+  _DAT_0804c03c = 0x5f5f5f5f;
+  _DAT_0804c040 = 0x5f5f5f5f;
   print("reset for following bi directional tests");
-  i386_memset_both_b(0x804c02b,0x78,5,0);
+  i386_memset_both_b(&DAT_0804c02b,0x78,5,0);
   print("5 \'x\' from 3");
-  i386_memset_both_b(0x804c02f,0x79,5,1);
+  i386_memset_both_b(&DAT_0804c02f,0x79,5,1);
   print("5 \'y\' from 3");
-  buffer._28_2_ = 0x5f5f;
-  buffer._0_4_ = 0x5f5f5f5f;
-  buffer._4_4_ = 0x5f5f5f5f;
-  buffer._8_4_ = 0x5f5f5f5f;
-  buffer._12_4_ = 0x5f5f5f5f;
-  buffer._16_4_ = 0x5f5f5f5f;
-  buffer._20_4_ = 0x5f5f5f5f;
-  buffer._24_4_ = 0x5f5f5f5f;
+  _DAT_0804c044 = 0x5f5f;
+  _buffer = 0x5f5f5f5f;
+  _DAT_0804c02c = 0x5f5f5f5f;
+  _DAT_0804c030 = 0x5f5f5f5f;
+  _DAT_0804c034 = 0x5f5f5f5f;
+  _DAT_0804c038 = 0x5f5f5f5f;
+  _DAT_0804c03c = 0x5f5f5f5f;
+  _DAT_0804c040 = 0x5f5f5f5f;
   print("reset for following bi directional tests");
-  i386_memset_both_w(0x804c032,0x2928,3,0);
+  i386_memset_both_w(&DAT_0804c032,0x2928,3,0);
   print("3 \'()\' from 10");
-  i386_memset_both_w(0x804c036,0x7d7b,3,1);
+  i386_memset_both_w(&DAT_0804c036,0x7d7b,3,1);
   print("3 \'{}\' from 10");
-  buffer._28_2_ = 0x5f5f;
-  buffer._0_4_ = 0x5f5f5f5f;
-  buffer._4_4_ = 0x5f5f5f5f;
-  buffer._8_4_ = 0x5f5f5f5f;
-  buffer._12_4_ = 0x5f5f5f5f;
-  buffer._16_4_ = 0x5f5f5f5f;
-  buffer._20_4_ = 0x5f5f5f5f;
-  buffer._24_4_ = 0x5f5f5f5f;
+  _DAT_0804c044 = 0x5f5f;
+  _buffer = 0x5f5f5f5f;
+  _DAT_0804c02c = 0x5f5f5f5f;
+  _DAT_0804c030 = 0x5f5f5f5f;
+  _DAT_0804c034 = 0x5f5f5f5f;
+  _DAT_0804c038 = 0x5f5f5f5f;
+  _DAT_0804c03c = 0x5f5f5f5f;
+  _DAT_0804c040 = 0x5f5f5f5f;
   print("reset for following bi directional tests");
-  i386_memset_both_l(0x804c03c,0x3e62613c,2,0);
+  i386_memset_both_l(&DAT_0804c03c,0x3e62613c,2,0);
   print("2 \'<ab>\' from 20");
-  i386_memset_both_l(0x804c040,0x5d42415b,2,1);
+  i386_memset_both_l(&DAT_0804c040,0x5d42415b,2,1);
   print("2 \'[AB]\' from 20");
   return 0;
 }
@@ -463,10 +477,13 @@ undefined4 main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -566,7 +583,7 @@ void print(undefined4 param_1)
   
   iVar2 = 0;
   do {
-    pcVar1 = buffer + iVar2;
+    pcVar1 = &buffer + iVar2;
     iVar2 = iVar2 + 1;
     putc((int)*pcVar1,stdout);
   } while (iVar2 != 0x1e);

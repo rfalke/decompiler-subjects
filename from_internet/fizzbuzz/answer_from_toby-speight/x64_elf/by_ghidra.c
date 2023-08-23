@@ -6,6 +6,7 @@ typedef unsigned int    dword;
 typedef unsigned long    qword;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
+typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    word;
@@ -16,6 +17,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_pointer_encoding; // Exception Handler Frame Pointer Encoding
     dwfenc eh_frame_desc_entry_count_encoding; // Encoding of # of Exception Handler FDEs
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
+};
+
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
 };
 
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
@@ -86,6 +95,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -201,6 +211,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -209,14 +230,23 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -276,7 +306,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t write(int __fd,void *__buf,size_t __n)
 
@@ -307,7 +337,7 @@ void omp_get_num_threads(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -338,7 +368,7 @@ void main(int __status)
   int iVar4;
   char *pcVar5;
   long lVar6;
-  undefined1 *__s;
+  undefined8 *__s;
   char *pcVar7;
   char **ppcVar8;
   char **ppcVar9;
@@ -348,45 +378,45 @@ void main(int __status)
   
   iVar10 = 1;
   do {
-    nl._0_8_ = format;
+    nl = &format;
     lVar6 = 0;
-    __s = format;
+    __s = (undefined8 *)&format;
     do {
       iVar4 = iVar10 + (int)lVar6;
       if ((uint)(iVar4 * -0x11111111) < 0x11111112) {
-        *(undefined8 *)__s = 0x7a7a75427a7a6946;
-        *(undefined2 *)((long)__s + 8) = 10;
-        __s = (undefined1 *)((long)__s + 9);
+        *__s = 0x7a7a75427a7a6946;
+        *(undefined2 *)(__s + 1) = 10;
+        __s = (undefined8 *)((long)__s + 9);
       }
       else if ((uint)(iVar4 * -0x33333333) < 0x33333334) {
         *(undefined4 *)__s = 0x7a7a7542;
         *(undefined2 *)((long)__s + 4) = 10;
-        __s = (undefined1 *)((long)__s + 5);
+        __s = (undefined8 *)((long)__s + 5);
       }
       else if ((uint)(iVar4 * -0x55555555) < 0x55555556) {
         *(undefined4 *)__s = 0x7a7a6946;
         *(undefined2 *)((long)__s + 4) = 10;
-        __s = (undefined1 *)((long)__s + 5);
+        __s = (undefined8 *)((long)__s + 5);
       }
       else {
-        iVar4 = sprintf(__s,"%d\n");
-        __s = (undefined1 *)((long)__s + (long)iVar4);
+        iVar4 = sprintf((char *)__s,"%d\n");
+        __s = (undefined8 *)((long)__s + (long)iVar4);
       }
-      *(undefined1 **)(nl + lVar6 * 8) = __s;
+      (&nl)[lVar6] = (undefined4 *)__s;
       lVar6 = lVar6 + 1;
     } while (lVar6 != 0x1771);
     iVar10 = iVar10 + 0x1771;
-    write(1,format,(size_t)(nl._48000_8_ + -0x40fc20));
+    write(1,&format,(size_t)(DAT_0040fc00 + -0x40fc20));
   } while (iVar10 != 0x2ee3);
   local_34 = 0;
   do {
     local_30[0] = &local_34;
-    GOMP_parallel(main__omp_fn_0,local_30,0);
+    GOMP_parallel(main__omp_fn_0,local_30,0,0);
     if (local_34 != 0) {
-      pcVar2 = nl._48000_8_;
-      pcVar5 = nl._48000_8_ + local_34;
-      ppcVar9 = (char **)(nl + 48000);
-      if (nl._48000_8_ < nl._48000_8_ + local_34) {
+      pcVar2 = DAT_0040fc00;
+      pcVar5 = DAT_0040fc00 + local_34;
+      ppcVar9 = &DAT_0040fc00;
+      if (DAT_0040fc00 < DAT_0040fc00 + local_34) {
         do {
           while (cVar1 = *pcVar2, cVar1 != '\n') {
             pcVar7 = pcVar5;
@@ -415,22 +445,23 @@ void main(int __status)
         } while (pcVar3 < pcVar7);
       }
 LAB_00401253:
+      LOCK();
       local_34 = 0;
+      UNLOCK();
     }
-    write(1,format,(size_t)(nl._48000_8_ + -0x40fc20));
+    write(1,&format,(size_t)(DAT_0040fc00 + -0x40fc20));
   } while( true );
 }
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -513,7 +544,7 @@ void main__omp_fn_0(int **param_1)
   if (iVar3 < iVar5 + iVar3) {
     lVar7 = (long)iVar3;
     do {
-      lVar1 = *(long *)(nl + lVar7 * 8 + 8);
+      lVar1 = *(long *)(&DAT_00404088 + lVar7 * 8);
       if (*(char *)(lVar1 + -2) != 'z') {
         cVar6 = *(char *)(lVar1 + -5) + '\x06';
         *(char *)(lVar1 + -5) = cVar6;
@@ -524,9 +555,10 @@ void main__omp_fn_0(int **param_1)
           pcVar2[-1] = cVar6;
           pcVar2 = pcVar2 + -1;
         }
-        if (pcVar2 <= *(char **)(nl + lVar7 * 8) && *(char **)(nl + lVar7 * 8) != pcVar2) {
+        if (pcVar2 <= (char *)(&nl)[lVar7] && (char *)(&nl)[lVar7] != pcVar2) {
           LOCK();
           **param_1 = **param_1 + 1;
+          UNLOCK();
         }
       }
       lVar7 = lVar7 + 1;

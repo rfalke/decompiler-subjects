@@ -2,8 +2,34 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef unsigned char    undefined1;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -37,13 +63,13 @@ void FUN_0804804c(void)
 
 {
   int *unaff_EDI;
-  float10 in_ST0;
-  float10 fVar1;
-  float10 extraout_ST1;
+  longdouble in_ST0;
+  longdouble lVar1;
+  longdouble extraout_ST1;
   
-  fVar1 = (float10)*unaff_EDI;
-  while (ROUND(in_ST0 / fVar1) == in_ST0 / fVar1) {
-    fVar1 = (float10)FUN_0804814f();
+  lVar1 = (longdouble)*unaff_EDI;
+  while (ROUND(in_ST0 / lVar1) == in_ST0 / lVar1) {
+    lVar1 = (longdouble)FUN_0804814f();
     in_ST0 = extraout_ST1;
   }
   return;
@@ -65,68 +91,73 @@ int FUN_08048068(void)
   uint uVar7;
   byte *unaff_ESI;
   uint uVar8;
-  uint *unaff_EDI;
-  float10 fVar9;
-  float10 fVar10;
-  float10 extraout_ST1;
+  longlong *unaff_EDI;
+  longdouble lVar9;
+  longdouble lVar10;
+  longdouble lVar11;
   
-  fVar9 = (float10)_DAT_080481fd;
-  fVar10 = (float10)0;
+  lVar9 = (longdouble)_DAT_080481fd;
+  lVar10 = (longdouble)0;
   while( true ) {
     bVar4 = *unaff_ESI;
     if (bVar4 == 0) break;
     uVar7 = (uint)(byte)(bVar4 - 0x30);
     if ((bVar4 < 0x30) || (9 < (byte)(bVar4 - 0x30))) goto LAB_08048089;
-    unaff_EDI[3] = uVar7;
-    fVar10 = fVar10 * fVar9 + (float10)unaff_EDI[3];
+    *(uint *)((int)unaff_EDI + 0xc) = uVar7;
+    lVar10 = lVar10 * lVar9 + (longdouble)*(uint *)((int)unaff_EDI + 0xc);
     unaff_ESI = unaff_ESI + 1;
   }
-  *(float10 *)(unaff_EDI + 3) = fVar10;
-  uVar7 = unaff_EDI[5];
+  *(longdouble *)((int)unaff_EDI + 0xc) = lVar10;
+  uVar7 = *(uint *)((int)unaff_EDI + 0x14);
   if (0x403e < (short)uVar7) {
 LAB_08048089:
     return CONCAT31((int3)(uVar7 >> 8),1);
   }
-  fVar10 = (float10)FUN_08048151();
-  if ((char)((uint)(ushort)((ushort)((float10)1 < fVar10) << 8 |
-                           (ushort)((float10)1 == fVar10) << 0xe) >> 8) == '\x01') {
-    *unaff_EDI = 2;
+  lVar10 = (longdouble)FUN_08048151();
+  if ((byte)((longdouble)1 < lVar10 |
+            (byte)((ushort)((ushort)((longdouble)1 == lVar10) << 0xe) >> 8)) == 1) {
+    *(uint *)unaff_EDI = 2;
     FUN_0804804c();
-    *unaff_EDI = *unaff_EDI + 1;
+    *(uint *)unaff_EDI = *(uint *)unaff_EDI + 1;
     FUN_0804804c();
     *(undefined *)unaff_EDI = 5;
-    fVar9 = (float10)FUN_0804804c();
-    fVar10 = (float10)1;
-    if (fVar10 == fVar9) goto LAB_08048118;
+    lVar10 = (longdouble)FUN_0804804c();
+    if ((longdouble)1 == lVar10) goto LAB_08048118;
     *(undefined *)unaff_EDI = 7;
     uVar7 = 0x42424626;
+    lVar9 = lVar10 / (longdouble)*unaff_EDI;
     while( true ) {
-      uVar8 = *unaff_EDI;
+      lVar11 = lVar9;
+      uVar8 = *(uint *)unaff_EDI;
       uVar6 = uVar7 >> 0x1c;
       uVar7 = uVar7 << 4 | uVar6;
-      uVar3 = *unaff_EDI;
-      *unaff_EDI = *unaff_EDI + uVar6;
+      uVar3 = *(uint *)unaff_EDI;
+      *(uint *)unaff_EDI = *(uint *)unaff_EDI + uVar6;
       if (CARRY4(uVar3,uVar6)) break;
       while( true ) {
-        *(float10 *)(unaff_EDI + 3) = fVar10;
-        iVar5 = 0x401e - unaff_EDI[5];
-        if ((-1 < iVar5) && (unaff_EDI[4] >> ((byte)iVar5 & 0x1f) < uVar8)) goto LAB_0804810f;
+        *(longdouble *)((int)unaff_EDI + 0xc) = lVar11;
+        iVar5 = 0x401e - *(uint *)((int)unaff_EDI + 0x14);
+        if ((-1 < iVar5) && (*(uint *)(unaff_EDI + 2) >> ((byte)iVar5 & 0x1f) < uVar8))
+        goto LAB_0804810f;
         bVar4 = -(byte)iVar5;
-        uVar3 = unaff_EDI[3];
-        uVar6 = unaff_EDI[4];
+        uVar3 = *(uint *)((int)unaff_EDI + 0xc);
+        uVar6 = *(uint *)(unaff_EDI + 2);
         if (iVar5 < 1) {
           uVar3 = 0;
-          uVar6 = unaff_EDI[3];
+          uVar6 = *(uint *)((int)unaff_EDI + 0xc);
         }
         bVar2 = bVar4 & 0x1f;
+        lVar9 = lVar10 / (longdouble)*unaff_EDI;
         if ((uVar3 << (bVar4 & 0x1f) | uVar6 << bVar2 | uVar3 >> 0x20 - bVar2) != 0) break;
-        if (*unaff_EDI != uVar8) {
+        if (*(uint *)unaff_EDI != uVar8) {
           uVar7 = uVar7 >> 4 | uVar7 << 0x1c;
-          *unaff_EDI = uVar8;
+          *(uint *)unaff_EDI = uVar8;
         }
-        FUN_0804814f();
-        uVar8 = *unaff_EDI;
-        fVar10 = extraout_ST1;
+        ffree(lVar10);
+        lVar10 = lVar11;
+        lVar11 = (longdouble)FUN_0804814f();
+        lVar11 = lVar10 / lVar11;
+        uVar8 = *(uint *)unaff_EDI;
       }
     }
   }
@@ -150,20 +181,20 @@ int FUN_0804814f(void)
   int iVar2;
   char *pcVar3;
   int unaff_EDI;
-  float10 in_ST0;
-  float10 fVar4;
-  float10 fVar5;
+  longdouble in_ST0;
+  longdouble lVar4;
+  longdouble lVar5;
   
-  fVar4 = (float10)_DAT_080481fd;
+  lVar4 = (longdouble)_DAT_080481fd;
   pcVar3 = (char *)(unaff_EDI + 0x37);
   do {
-    fVar5 = in_ST0 - (in_ST0 / fVar4) * fVar4;
-    *(int *)(unaff_EDI + 0x38) = (int)ROUND(fVar5);
-    fVar5 = in_ST0 - fVar5;
-    in_ST0 = fVar5 / fVar4;
+    lVar5 = in_ST0 - (in_ST0 / lVar4) * lVar4;
+    *(int *)(unaff_EDI + 0x38) = (int)ROUND(lVar5);
+    lVar5 = in_ST0 - lVar5;
+    in_ST0 = lVar5 / lVar4;
     *pcVar3 = *(char *)(int *)(unaff_EDI + 0x38) + '0';
     pcVar3 = pcVar3 + -1;
-  } while (fVar5 != (float10)0);
+  } while (lVar5 != (longdouble)0);
   *pcVar3 = ' ';
   pcVar1 = (code *)swi(0x80);
   iVar2 = (*pcVar1)();
@@ -183,21 +214,21 @@ int FUN_08048151(void)
   char *pcVar4;
   char unaff_BL;
   int unaff_EDI;
-  float10 in_ST0;
-  float10 fVar5;
-  float10 fVar6;
+  longdouble in_ST0;
+  longdouble lVar5;
+  longdouble lVar6;
   
-  fVar5 = (float10)_DAT_080481fd;
+  lVar5 = (longdouble)_DAT_080481fd;
   piVar1 = (int *)(unaff_EDI + 0x38);
   pcVar4 = (char *)(unaff_EDI + 0x37);
   do {
-    fVar6 = in_ST0 - (in_ST0 / fVar5) * fVar5;
-    *piVar1 = (int)ROUND(fVar6);
-    fVar6 = in_ST0 - fVar6;
-    in_ST0 = fVar6 / fVar5;
+    lVar6 = in_ST0 - (in_ST0 / lVar5) * lVar5;
+    *piVar1 = (int)ROUND(lVar6);
+    lVar6 = in_ST0 - lVar6;
+    in_ST0 = lVar6 / lVar5;
     *pcVar4 = *(char *)piVar1 + '0';
     pcVar4 = pcVar4 + -1;
-  } while (fVar6 != (float10)0);
+  } while (lVar6 != (longdouble)0);
   *pcVar4 = unaff_BL;
   if (unaff_BL != ' ') {
     *(char *)piVar1 = unaff_BL;
@@ -209,7 +240,7 @@ int FUN_08048151(void)
 
 
 
-void entry(undefined4 param_1,int param_2)
+void processEntry entry(void)
 
 {
   byte bVar1;
@@ -225,13 +256,14 @@ void entry(undefined4 param_1,int param_2)
   undefined *puVar11;
   undefined *puVar12;
   int iVar14;
+  int in_stack_00000008;
   undefined *puVar9;
   undefined *puVar10;
   undefined *puVar13;
   
   puVar6 = (undefined4 *)&stack0x0000000c;
   piVar3 = (int *)&stack0x0000000c;
-  if (param_2 == 0) goto LAB_080481b1;
+  if (in_stack_00000008 == 0) goto LAB_080481b1;
   do {
     piVar7 = piVar3;
     piVar7[-1] = 0x80481a6;

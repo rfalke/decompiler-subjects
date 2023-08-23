@@ -25,19 +25,8 @@ typedef struct s1 s1, *Ps1;
 
 struct s1 {
     int f1;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     struct s1 * sp;
     char f3;
-    undefined field7_0x11;
-    undefined field8_0x12;
-    undefined field9_0x13;
-    undefined field10_0x14;
-    undefined field11_0x15;
-    undefined field12_0x16;
-    undefined field13_0x17;
     long f4;
 };
 
@@ -185,6 +174,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -213,6 +203,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -221,14 +222,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -305,7 +306,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -319,10 +320,9 @@ void abort(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -374,8 +374,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400568)
 // WARNING: Removing unreachable block (ram,0x00400570)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -385,6 +385,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void func(s1 *s1p)
 
@@ -397,25 +399,29 @@ void func(s1 *s1p)
 
 
 
+// WARNING: Unknown calling convention
+
 void func2(void)
 
 {
-  gs1.f1 = 3;
   gs1.sp = &gs1;
   gs1.f3 = 'k';
   gs1.f4 = 10;
+  gs1.f1 = 3;
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int main(void)
 
 {
-  gs1.f1 = 3;
   gs1.sp = &gs1;
   gs1.f3 = 'k';
   gs1.f4 = 10;
+  gs1.f1 = 3;
   return 0;
 }
 

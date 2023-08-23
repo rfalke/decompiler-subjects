@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -10,6 +11,7 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef short    wchar_t;
 typedef unsigned short    word;
 typedef struct _s__RTTIBaseClassDescriptor _s__RTTIBaseClassDescriptor, *P_s__RTTIBaseClassDescriptor;
@@ -51,6 +53,13 @@ struct _s__RTTIClassHierarchyDescriptor {
     dword attributes; // bit flags
     dword numBaseClasses; // number of base classes (i.e. rtti1Count)
     RTTIBaseClassDescriptor * * pBaseClassArray; // ref to BaseClassArray (RTTI 2)
+};
+
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
 };
 
 typedef struct _s__RTTICompleteObjectLocator _s__RTTICompleteObjectLocator, *P_s__RTTICompleteObjectLocator;
@@ -247,7 +256,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[24];
+    char pdbpath[24];
 };
 
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
@@ -538,8 +547,6 @@ void thunk_FUN_004011b0(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 undefined4 thunk_FUN_004012f0(void)
 
 {
@@ -556,7 +563,7 @@ undefined4 thunk_FUN_004012f0(void)
     (**(code **)puVar1[4])();
     return 0;
   }
-  (**_DAT_00000010)();
+  (**ppcRam00000010)();
   return 0;
 }
 
@@ -676,8 +683,6 @@ undefined4 * __thiscall FUN_004012b0(void *this,byte param_1)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
-
 undefined4 FUN_004012f0(void)
 
 {
@@ -694,7 +699,7 @@ undefined4 FUN_004012f0(void)
     (**(code **)puVar1[4])();
     return 0;
   }
-  (**_DAT_00000010)();
+  (**ppcRam00000010)();
   return 0;
 }
 
@@ -734,20 +739,16 @@ int * __thiscall FID_conflict__vector_deleting_destructor_(void *this,byte param
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl operator_delete(void *param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x004013b2. Too many branches
                     // WARNING: Treating indirect jump as call
-  operator_delete();
+  operator_delete(param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl operator_new(uint param_1)
 
@@ -756,7 +757,7 @@ void * __cdecl operator_new(uint param_1)
   
                     // WARNING: Could not recover jumptable at 0x004013b8. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)operator_new();
+  pvVar1 = operator_new(param_1);
   return pvVar1;
 }
 
@@ -765,25 +766,28 @@ void * __cdecl operator_new(uint param_1)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  ___tmainCRTStartup
+// 
+// Library: Visual Studio 2010 Release
 
-int entry(void)
+int ___tmainCRTStartup(void)
 
 {
   bool bVar1;
-  LONG LVar2;
+  void *Exchange;
+  void *pvVar2;
   int iVar3;
   BOOL BVar4;
-  int in_FS_OFFSET;
   
-  ___security_init_cookie();
   if (_DAT_0040550c == 0) {
     HeapSetInformation((HANDLE)0x0,HeapEnableTerminationOnCorruption,(PVOID)0x0,0);
   }
-  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  Exchange = StackBase;
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_004054f4,iVar3,0);
-    if (LVar2 == 0) {
+    pvVar2 = (void *)InterlockedCompareExchange((LONG *)&DAT_004054f4,(LONG)Exchange,0);
+    if (pvVar2 == (void *)0x0) {
 LAB_0040146e:
       if (DAT_004054e4 == 1) {
         _amsg_exit(0x1f);
@@ -820,12 +824,22 @@ LAB_0040146e:
                     // WARNING: Subroutine does not return
       exit(DAT_004051a8);
     }
-    if (LVar2 == iVar3) {
+    if (pvVar2 == Exchange) {
       bVar1 = true;
       goto LAB_0040146e;
     }
     Sleep(1000);
   } while( true );
+}
+
+
+
+void entry(void)
+
+{
+  ___security_init_cookie();
+  ___tmainCRTStartup();
+  return;
 }
 
 
@@ -837,7 +851,7 @@ LAB_0040146e:
 // 
 // Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef10 *param_4)
+void __ArrayUnwind(void *param_1,uint param_2,int param_3,_func_void_void_ptr *param_4)
 
 {
   void *in_stack_ffffffc8;
@@ -860,7 +874,8 @@ void __ArrayUnwind(void *param_1,uint param_2,int param_3,FuncDef10 *param_4)
 // 
 // Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void _eh_vector_destructor_iterator_(void *param_1,uint param_2,int param_3,FuncDef11 *param_4)
+void _eh_vector_destructor_iterator_
+               (void *param_1,uint param_2,int param_3,_func_void_void_ptr *param_4)
 
 {
   void *in_stack_ffffffd0;
@@ -883,7 +898,7 @@ void FUN_0040175f(void)
   
   if (*(int *)(unaff_EBP + -0x1c) == 0) {
     __ArrayUnwind(*(void **)(unaff_EBP + 8),*(uint *)(unaff_EBP + 0xc),*(int *)(unaff_EBP + 0x10),
-                  *(FuncDef10 **)(unaff_EBP + 0x14));
+                  *(_func_void_void_ptr **)(unaff_EBP + 0x14));
   }
   return;
 }
@@ -912,14 +927,12 @@ long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x004017c8. Too many branches
                     // WARNING: Treating indirect jump as call
-  _amsg_exit();
+  _amsg_exit(param_1);
   return;
 }
 
@@ -941,11 +954,11 @@ _onexit_t __cdecl __onexit(_onexit_t param_1)
   PVOID *ppvVar4;
   PVOID local_24;
   PVOID local_20 [5];
-  undefined4 uStack12;
+  undefined4 uStack_c;
   undefined *local_8;
   
   local_8 = &DAT_00404318;
-  uStack12 = 0x4017e0;
+  uStack_c = 0x4017e0;
   local_20[0] = DecodePointer(DAT_00405508);
   if (local_20[0] == (PVOID)0xffffffff) {
     p_Var1 = _onexit(param_1);
@@ -983,7 +996,7 @@ void FUN_0040186c(void)
 // 
 // Library: Visual Studio 2010 Release
 
-int __cdecl _atexit(void *param_1)
+int __cdecl _atexit(_func_4879 *param_1)
 
 {
   _onexit_t p_Var1;
@@ -1042,7 +1055,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
            (pImageBase + *(ushort *)(pImageBase + iVar1 + 0x14) + 0x18 + iVar1);
   if (*(ushort *)(pImageBase + iVar1 + 6) != 0) {
     do {
-      if ((p_Var2->VirtualAddress <= rva) && (rva < p_Var2->Misc + p_Var2->VirtualAddress)) {
+      if ((p_Var2->VirtualAddress <= rva) &&
+         (rva < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) {
         return p_Var2;
       }
       uVar3 = uVar3 + 1;
@@ -1062,30 +1076,27 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
 
 {
-  uint uVar1;
-  BOOL BVar2;
-  PIMAGE_SECTION_HEADER p_Var3;
-  int **in_FS_OFFSET;
-  int *local_14;
-  code *pcStack16;
+  BOOL BVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
+  void *local_14;
+  code *pcStack_10;
   uint local_c;
   undefined4 local_8;
   
-  pcStack16 = FUN_00401aa9;
-  local_14 = *in_FS_OFFSET;
+  pcStack_10 = FUN_00401aa9;
+  local_14 = ExceptionList;
   local_c = DAT_00405078 ^ 0x404338;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_8 = 0;
-  BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
-  if (BVar2 != 0) {
-    p_Var3 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
-    if (p_Var3 != (PIMAGE_SECTION_HEADER)0x0) {
-      uVar1 = p_Var3->Characteristics;
-      *in_FS_OFFSET = local_14;
-      return ~(uVar1 >> 0x1f) & 1;
+  BVar1 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
+  if (BVar1 != 0) {
+    p_Var2 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
+    if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
+      ExceptionList = local_14;
+      return ~(p_Var2->Characteristics >> 0x1f) & 1;
     }
   }
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return 0;
 }
 
@@ -1128,18 +1139,17 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
-  int *in_FS_OFFSET;
   undefined4 unaff_retaddr;
-  uint auStack28 [5];
+  uint auStack_1c [5];
   undefined local_8 [8];
   
   iVar1 = -param_2;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00405078 ^ (uint)&param_2;
-  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
-  *in_FS_OFFSET = (int)local_8;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack_1c + iVar1 + 4) = DAT_00405078 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack_1c + iVar1) = unaff_retaddr;
+  ExceptionList = local_8;
   return;
 }
 
@@ -1155,10 +1165,9 @@ void __SEH_epilog4(void)
 
 {
   undefined4 *unaff_EBP;
-  undefined4 *in_FS_OFFSET;
   undefined4 unaff_retaddr;
   
-  *in_FS_OFFSET = unaff_EBP[-4];
+  ExceptionList = (void *)unaff_EBP[-4];
   *unaff_EBP = unaff_retaddr;
   return;
 }
@@ -1188,8 +1197,7 @@ void __cdecl ___security_init_cookie(void)
   DWORD DVar2;
   DWORD DVar3;
   uint uVar4;
-  uint local_14;
-  uint local_10;
+  LARGE_INTEGER local_14;
   _FILETIME local_c;
   
   local_c.dwLowDateTime = 0;
@@ -1200,8 +1208,8 @@ void __cdecl ___security_init_cookie(void)
     DVar1 = GetCurrentProcessId();
     DVar2 = GetCurrentThreadId();
     DVar3 = GetTickCount();
-    QueryPerformanceCounter((LARGE_INTEGER *)&local_14);
-    DAT_00405078 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_10 ^ local_14;
+    QueryPerformanceCounter(&local_14);
+    DAT_00405078 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_14.s.HighPart ^ local_14.s.LowPart;
     if (DAT_00405078 == 0xbb40e64e) {
       DAT_00405078 = 0xbb40e64f;
     }
@@ -1218,8 +1226,6 @@ void __cdecl ___security_init_cookie(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl terminate(void)
 
 {
@@ -1231,27 +1237,23 @@ void __cdecl terminate(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __thiscall type_info::_type_info_dtor_internal_method(type_info *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bd2. Too many branches
                     // WARNING: Treating indirect jump as call
-  _type_info_dtor_internal_method();
+  _type_info_dtor_internal_method(this);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401bd8. Too many branches
                     // WARNING: Treating indirect jump as call
-  _unlock();
+  _unlock(_File);
   return;
 }
 
@@ -1268,14 +1270,12 @@ void __dllonexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _lock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401be4. Too many branches
                     // WARNING: Treating indirect jump as call
-  _lock();
+  _lock(_File);
   return;
 }
 

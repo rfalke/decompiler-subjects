@@ -155,6 +155,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -183,6 +184,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -194,14 +206,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -287,7 +299,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -297,6 +309,8 @@ void abort(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -349,10 +363,9 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -418,21 +431,19 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100db8)
+// WARNING: Removing unreachable block (ram,0x00100dc4)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_char_add(void)
 
@@ -1466,6 +1477,8 @@ void signed_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_mult(void)
 
 {
@@ -2221,6 +2234,7 @@ void signed_char_mult(void)
   signed_char_dest[749] = signed_char_src[749] * -0x12;
   signed_char_dest[750] = signed_char_src[750] * -0x11;
   signed_char_dest[751] = signed_char_src[751] * -0x10;
+  signed_char_dest[767] = '\0';
   signed_char_dest[752] = signed_char_src[752] + (signed_char_src[752] & 0xfU) * -0x10;
   signed_char_dest[753] = signed_char_src[753] * -0xe;
   signed_char_dest[754] = signed_char_src[754] * -0xd;
@@ -2236,7 +2250,6 @@ void signed_char_mult(void)
   signed_char_dest[764] = signed_char_src[764] + (signed_char_src[764] & 0x3fU) * -4;
   signed_char_dest[765] = signed_char_src[765] * -2;
   signed_char_dest[766] = -signed_char_src[766];
-  signed_char_dest[767] = '\0';
   signed_char_dest[768] = signed_char_src[768];
   signed_char_dest[769] = (char)(((byte)signed_char_src[769] & 0x7f) << 1);
   signed_char_dest[770] = signed_char_src[770] * '\x03';
@@ -2490,13 +2503,15 @@ void signed_char_mult(void)
   signed_char_dest[1018] = signed_char_src[1018] * -5;
   signed_char_dest[1019] = signed_char_src[1019] * -4;
   signed_char_dest[1020] = signed_char_src[1020] + (signed_char_src[1020] & 0x3fU) * -4;
-  signed_char_dest[1021] = signed_char_src[1021] * -2;
   signed_char_dest[1022] = -signed_char_src[1022];
+  signed_char_dest[1021] = signed_char_src[1021] * -2;
   signed_char_dest[1023] = '\0';
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_char_div(void)
 
@@ -2628,7 +2643,6 @@ void signed_char_div(void)
   signed_char_dest[124] = signed_char_src[124] / '}';
   signed_char_dest[125] = signed_char_src[125] / '~';
   signed_char_dest[126] = signed_char_src[126] / '\x7f';
-  signed_char_dest[127] = (char)((int)signed_char_src[127] / 0x80);
   signed_char_dest[128] = '\0';
   signed_char_dest[129] = '\0';
   signed_char_dest[130] = '\0';
@@ -2636,6 +2650,7 @@ void signed_char_div(void)
   signed_char_dest[132] = '\0';
   signed_char_dest[133] = '\0';
   signed_char_dest[134] = '\0';
+  signed_char_dest[127] = (char)((int)signed_char_src[127] / 0x80);
   signed_char_dest[135] = '\0';
   signed_char_dest[136] = '\0';
   signed_char_dest[137] = '\0';
@@ -3530,6 +3545,8 @@ void signed_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_modulo(void)
 
 {
@@ -3537,39 +3554,23 @@ void signed_char_modulo(void)
   if (-1 < signed_char_src[1]) {
     signed_char_dest[1] = signed_char_src[1] & 1U;
   }
-  signed_char_dest[3] = signed_char_src[3] & 3;
-  if (signed_char_src[3] < '\x01') {
-    signed_char_dest[3] = -(-signed_char_src[3] & 3U);
-  }
-  signed_char_dest[7] = signed_char_src[7] & 7;
-  if (signed_char_src[7] < '\x01') {
-    signed_char_dest[7] = -(-signed_char_src[7] & 7U);
-  }
-  signed_char_dest[15] = signed_char_src[15] & 0xf;
-  if (signed_char_src[15] < '\x01') {
-    signed_char_dest[15] = -(-signed_char_src[15] & 0xfU);
-  }
-  signed_char_dest[31] = signed_char_src[31] & 0x1f;
-  if (signed_char_src[31] < '\x01') {
-    signed_char_dest[31] = -(-signed_char_src[31] & 0x1fU);
-  }
-  signed_char_dest[63] = signed_char_src[63] & 0x3f;
-  if (signed_char_src[63] < '\x01') {
-    signed_char_dest[63] = -(-signed_char_src[63] & 0x3fU);
-  }
-  signed_char_dest[127] = signed_char_src[127] & 0x7f;
-  if (signed_char_src[127] < '\x01') {
-    signed_char_dest[127] = -(-signed_char_src[127] & 0x7fU);
-  }
   signed_char_dest[0] = '\0';
   signed_char_dest[2] =
        signed_char_src[2] -
        ((char)((int)signed_char_src[2] / 3) + (char)((int)signed_char_src[2] / 3 << 1));
+  signed_char_dest[3] = signed_char_src[3] & 3;
+  if (signed_char_src[3] < '\x01') {
+    signed_char_dest[3] = -(-signed_char_src[3] & 3U);
+  }
   signed_char_dest[4] =
        signed_char_src[4] -
        ((char)((int)signed_char_src[4] / 5) + (char)((int)signed_char_src[4] / 5 << 2));
   signed_char_dest[5] = signed_char_src[5] % '\x06';
   signed_char_dest[6] = signed_char_src[6] % '\a';
+  signed_char_dest[7] = signed_char_src[7] & 7;
+  if (signed_char_src[7] < '\x01') {
+    signed_char_dest[7] = -(-signed_char_src[7] & 7U);
+  }
   signed_char_dest[8] =
        signed_char_src[8] -
        ((char)((int)signed_char_src[8] / 9) + (char)((int)signed_char_src[8] / 9 << 3));
@@ -3579,6 +3580,10 @@ void signed_char_modulo(void)
   signed_char_dest[12] = signed_char_src[12] % '\r';
   signed_char_dest[13] = signed_char_src[13] % '\x0e';
   signed_char_dest[14] = signed_char_src[14] % '\x0f';
+  signed_char_dest[15] = signed_char_src[15] & 0xf;
+  if (signed_char_src[15] < '\x01') {
+    signed_char_dest[15] = -(-signed_char_src[15] & 0xfU);
+  }
   signed_char_dest[16] =
        signed_char_src[16] -
        ((char)((int)signed_char_src[16] / 0x11) + (char)((int)signed_char_src[16] / 0x11 << 4));
@@ -3596,6 +3601,10 @@ void signed_char_modulo(void)
   signed_char_dest[28] = signed_char_src[28] % '\x1d';
   signed_char_dest[29] = signed_char_src[29] % '\x1e';
   signed_char_dest[30] = signed_char_src[30] % '\x1f';
+  signed_char_dest[31] = signed_char_src[31] & 0x1f;
+  if (signed_char_src[31] < '\x01') {
+    signed_char_dest[31] = -(-signed_char_src[31] & 0x1fU);
+  }
   signed_char_dest[32] =
        signed_char_src[32] -
        ((char)((int)signed_char_src[32] / 0x21) + (char)((int)signed_char_src[32] / 0x21 << 5));
@@ -3629,6 +3638,10 @@ void signed_char_modulo(void)
   signed_char_dest[60] = signed_char_src[60] % '=';
   signed_char_dest[61] = signed_char_src[61] % '>';
   signed_char_dest[62] = signed_char_src[62] % '?';
+  signed_char_dest[63] = signed_char_src[63] & 0x3f;
+  if (signed_char_src[63] < '\x01') {
+    signed_char_dest[63] = -(-signed_char_src[63] & 0x3fU);
+  }
   signed_char_dest[64] =
        signed_char_src[64] -
        ((char)((int)signed_char_src[64] / 0x41) + (char)((int)signed_char_src[64] / 0x41 << 6));
@@ -3694,6 +3707,10 @@ void signed_char_modulo(void)
   signed_char_dest[124] = signed_char_src[124] % '}';
   signed_char_dest[125] = signed_char_src[125] % '~';
   signed_char_dest[126] = signed_char_src[126] % '\x7f';
+  signed_char_dest[127] = signed_char_src[127] & 0x7f;
+  if (signed_char_src[127] < '\x01') {
+    signed_char_dest[127] = -(-signed_char_src[127] & 0x7fU);
+  }
   signed_char_dest[128] = signed_char_src[128];
   signed_char_dest[129] = signed_char_src[129];
   signed_char_dest[130] = signed_char_src[130];
@@ -4594,6 +4611,8 @@ void signed_char_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_char_add(void)
 
@@ -5627,6 +5646,8 @@ void unsigned_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_mult(void)
 
 {
@@ -6382,6 +6403,7 @@ void unsigned_char_mult(void)
   unsigned_char_dest[749] = unsigned_char_src[749] * -0x12;
   unsigned_char_dest[750] = unsigned_char_src[750] * -0x11;
   unsigned_char_dest[751] = unsigned_char_src[751] * -0x10;
+  unsigned_char_dest[767] = '\0';
   unsigned_char_dest[752] = unsigned_char_src[752] + (unsigned_char_src[752] & 0xf) * -0x10;
   unsigned_char_dest[753] = unsigned_char_src[753] * -0xe;
   unsigned_char_dest[754] = unsigned_char_src[754] * -0xd;
@@ -6397,7 +6419,6 @@ void unsigned_char_mult(void)
   unsigned_char_dest[764] = unsigned_char_src[764] + (unsigned_char_src[764] & 0x3f) * -4;
   unsigned_char_dest[765] = unsigned_char_src[765] * -2;
   unsigned_char_dest[766] = -unsigned_char_src[766];
-  unsigned_char_dest[767] = '\0';
   unsigned_char_dest[768] = unsigned_char_src[768];
   unsigned_char_dest[769] = (uchar)((unsigned_char_src[769] & 0x7f) << 1);
   unsigned_char_dest[770] = unsigned_char_src[770] * '\x03';
@@ -6651,13 +6672,15 @@ void unsigned_char_mult(void)
   unsigned_char_dest[1018] = unsigned_char_src[1018] * -5;
   unsigned_char_dest[1019] = unsigned_char_src[1019] * -4;
   unsigned_char_dest[1020] = unsigned_char_src[1020] + (unsigned_char_src[1020] & 0x3f) * -4;
-  unsigned_char_dest[1021] = unsigned_char_src[1021] * -2;
   unsigned_char_dest[1022] = -unsigned_char_src[1022];
+  unsigned_char_dest[1021] = unsigned_char_src[1021] * -2;
   unsigned_char_dest[1023] = '\0';
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_char_div(void)
 
@@ -7691,11 +7714,13 @@ void unsigned_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_modulo(void)
 
 {
-  unsigned_char_dest[0] = '\0';
   unsigned_char_dest[1] = unsigned_char_src[1] & 1;
+  unsigned_char_dest[0] = '\0';
   unsigned_char_dest[2] =
        unsigned_char_src[2] -
        ((char)(unsigned_char_src[2] / 3) + (char)(unsigned_char_src[2] / 3 << 1));
@@ -8737,6 +8762,8 @@ void unsigned_char_modulo(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_add(void)
 
 {
@@ -9769,6 +9796,8 @@ void signed_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_mult(void)
 
 {
@@ -10794,12 +10823,14 @@ void signed_short_mult(void)
   signed_short_dest[1019] = signed_short_src[1019] * 0x3fc;
   signed_short_dest[1020] = signed_short_src[1020] * 0x3fd;
   signed_short_dest[1021] = signed_short_src[1021] * 0x3fe;
-  signed_short_dest[1022] = signed_short_src[1022] * 0x3ff;
   signed_short_dest[1023] = (short)(((ushort)signed_short_src[1023] & 0x3f) << 10);
+  signed_short_dest[1022] = signed_short_src[1022] * 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_short_div(void)
 
@@ -11833,6 +11864,8 @@ void signed_short_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_modulo(void)
 
 {
@@ -11840,51 +11873,23 @@ void signed_short_modulo(void)
   if (-1 < signed_short_src[1]) {
     signed_short_dest[1] = signed_short_src[1] & 1U;
   }
-  signed_short_dest[3] = signed_short_src[3] & 3;
-  if (signed_short_src[3] < 1) {
-    signed_short_dest[3] = -(-signed_short_src[3] & 3U);
-  }
-  signed_short_dest[7] = signed_short_src[7] & 7;
-  if (signed_short_src[7] < 1) {
-    signed_short_dest[7] = -(-signed_short_src[7] & 7U);
-  }
-  signed_short_dest[15] = signed_short_src[15] & 0xf;
-  if (signed_short_src[15] < 1) {
-    signed_short_dest[15] = -(-signed_short_src[15] & 0xfU);
-  }
-  signed_short_dest[31] = signed_short_src[31] & 0x1f;
-  if (signed_short_src[31] < 1) {
-    signed_short_dest[31] = -(-signed_short_src[31] & 0x1fU);
-  }
-  signed_short_dest[63] = signed_short_src[63] & 0x3f;
-  if (signed_short_src[63] < 1) {
-    signed_short_dest[63] = -(-signed_short_src[63] & 0x3fU);
-  }
-  signed_short_dest[127] = signed_short_src[127] & 0x7f;
-  if (signed_short_src[127] < 1) {
-    signed_short_dest[127] = -(-signed_short_src[127] & 0x7fU);
-  }
-  signed_short_dest[255] = signed_short_src[255] & 0xff;
-  if (signed_short_src[255] < 1) {
-    signed_short_dest[255] = -(-signed_short_src[255] & 0xffU);
-  }
-  signed_short_dest[511] = signed_short_src[511] & 0x1ff;
-  if (signed_short_src[511] < 1) {
-    signed_short_dest[511] = -(-signed_short_src[511] & 0x1ffU);
-  }
-  signed_short_dest[1023] = signed_short_src[1023] & 0x3ff;
-  if (signed_short_src[1023] < 1) {
-    signed_short_dest[1023] = -(-signed_short_src[1023] & 0x3ffU);
-  }
   signed_short_dest[0] = 0;
   signed_short_dest[2] =
        signed_short_src[2] -
        ((short)((int)signed_short_src[2] / 3) + (short)((int)signed_short_src[2] / 3 << 1));
+  signed_short_dest[3] = signed_short_src[3] & 3;
+  if (signed_short_src[3] < 1) {
+    signed_short_dest[3] = -(-signed_short_src[3] & 3U);
+  }
   signed_short_dest[4] =
        signed_short_src[4] -
        ((short)((int)signed_short_src[4] / 5) + (short)((int)signed_short_src[4] / 5 << 2));
   signed_short_dest[5] = signed_short_src[5] % 6;
   signed_short_dest[6] = signed_short_src[6] % 7;
+  signed_short_dest[7] = signed_short_src[7] & 7;
+  if (signed_short_src[7] < 1) {
+    signed_short_dest[7] = -(-signed_short_src[7] & 7U);
+  }
   signed_short_dest[8] =
        signed_short_src[8] -
        ((short)((int)signed_short_src[8] / 9) + (short)((int)signed_short_src[8] / 9 << 3));
@@ -11894,6 +11899,10 @@ void signed_short_modulo(void)
   signed_short_dest[12] = signed_short_src[12] % 0xd;
   signed_short_dest[13] = signed_short_src[13] % 0xe;
   signed_short_dest[14] = signed_short_src[14] % 0xf;
+  signed_short_dest[15] = signed_short_src[15] & 0xf;
+  if (signed_short_src[15] < 1) {
+    signed_short_dest[15] = -(-signed_short_src[15] & 0xfU);
+  }
   signed_short_dest[16] =
        signed_short_src[16] -
        ((short)((int)signed_short_src[16] / 0x11) + (short)((int)signed_short_src[16] / 0x11 << 4));
@@ -11911,6 +11920,10 @@ void signed_short_modulo(void)
   signed_short_dest[28] = signed_short_src[28] % 0x1d;
   signed_short_dest[29] = signed_short_src[29] % 0x1e;
   signed_short_dest[30] = signed_short_src[30] % 0x1f;
+  signed_short_dest[31] = signed_short_src[31] & 0x1f;
+  if (signed_short_src[31] < 1) {
+    signed_short_dest[31] = -(-signed_short_src[31] & 0x1fU);
+  }
   signed_short_dest[32] =
        signed_short_src[32] -
        ((short)((int)signed_short_src[32] / 0x21) + (short)((int)signed_short_src[32] / 0x21 << 5));
@@ -11944,6 +11957,10 @@ void signed_short_modulo(void)
   signed_short_dest[60] = signed_short_src[60] % 0x3d;
   signed_short_dest[61] = signed_short_src[61] % 0x3e;
   signed_short_dest[62] = signed_short_src[62] % 0x3f;
+  signed_short_dest[63] = signed_short_src[63] & 0x3f;
+  if (signed_short_src[63] < 1) {
+    signed_short_dest[63] = -(-signed_short_src[63] & 0x3fU);
+  }
   signed_short_dest[64] =
        signed_short_src[64] -
        ((short)((int)signed_short_src[64] / 0x41) + (short)((int)signed_short_src[64] / 0x41 << 6));
@@ -12009,6 +12026,10 @@ void signed_short_modulo(void)
   signed_short_dest[124] = signed_short_src[124] % 0x7d;
   signed_short_dest[125] = signed_short_src[125] % 0x7e;
   signed_short_dest[126] = signed_short_src[126] % 0x7f;
+  signed_short_dest[127] = signed_short_src[127] & 0x7f;
+  if (signed_short_src[127] < 1) {
+    signed_short_dest[127] = -(-signed_short_src[127] & 0x7fU);
+  }
   signed_short_dest[128] =
        signed_short_src[128] -
        ((short)((int)signed_short_src[128] / 0x81) + (short)((int)signed_short_src[128] / 0x81 << 7)
@@ -12139,6 +12160,10 @@ void signed_short_modulo(void)
   signed_short_dest[252] = signed_short_src[252] % 0xfd;
   signed_short_dest[253] = signed_short_src[253] % 0xfe;
   signed_short_dest[254] = signed_short_src[254] % 0xff;
+  signed_short_dest[255] = signed_short_src[255] & 0xff;
+  if (signed_short_src[255] < 1) {
+    signed_short_dest[255] = -(-signed_short_src[255] & 0xffU);
+  }
   signed_short_dest[256] =
        signed_short_src[256] -
        ((short)((int)signed_short_src[256] / 0x101) +
@@ -12397,6 +12422,10 @@ void signed_short_modulo(void)
   signed_short_dest[508] = signed_short_src[508] % 0x1fd;
   signed_short_dest[509] = signed_short_src[509] % 0x1fe;
   signed_short_dest[510] = signed_short_src[510] % 0x1ff;
+  signed_short_dest[511] = signed_short_src[511] & 0x1ff;
+  if (signed_short_src[511] < 1) {
+    signed_short_dest[511] = -(-signed_short_src[511] & 0x1ffU);
+  }
   signed_short_dest[512] =
        signed_short_src[512] -
        ((short)((int)signed_short_src[512] / 0x201) +
@@ -12911,10 +12940,16 @@ void signed_short_modulo(void)
   signed_short_dest[1020] = signed_short_src[1020] % 0x3fd;
   signed_short_dest[1021] = signed_short_src[1021] % 0x3fe;
   signed_short_dest[1022] = signed_short_src[1022] % 0x3ff;
+  signed_short_dest[1023] = signed_short_src[1023] & 0x3ff;
+  if (signed_short_src[1023] < 1) {
+    signed_short_dest[1023] = -(-signed_short_src[1023] & 0x3ffU);
+  }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_short_add(void)
 
@@ -13948,6 +13983,8 @@ void unsigned_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_mult(void)
 
 {
@@ -14973,12 +15010,14 @@ void unsigned_short_mult(void)
   unsigned_short_dest[1019] = unsigned_short_src[1019] * 0x3fc;
   unsigned_short_dest[1020] = unsigned_short_src[1020] * 0x3fd;
   unsigned_short_dest[1021] = unsigned_short_src[1021] * 0x3fe;
-  unsigned_short_dest[1022] = unsigned_short_src[1022] * 0x3ff;
   unsigned_short_dest[1023] = (ushort)((unsigned_short_src[1023] & 0x3f) << 10);
+  unsigned_short_dest[1022] = unsigned_short_src[1022] * 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_short_div(void)
 
@@ -16005,18 +16044,20 @@ void unsigned_short_div(void)
   unsigned_short_dest[1019] = unsigned_short_src[1019] / 0x3fc;
   unsigned_short_dest[1020] = unsigned_short_src[1020] / 0x3fd;
   unsigned_short_dest[1021] = unsigned_short_src[1021] / 0x3fe;
-  unsigned_short_dest[1022] = unsigned_short_src[1022] / 0x3ff;
   unsigned_short_dest[1023] = unsigned_short_src[1023] >> 10;
+  unsigned_short_dest[1022] = unsigned_short_src[1022] / 0x3ff;
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_modulo(void)
 
 {
-  unsigned_short_dest[0] = 0;
   unsigned_short_dest[1] = unsigned_short_src[1] & 1;
+  unsigned_short_dest[0] = 0;
   unsigned_short_dest[2] =
        unsigned_short_src[2] -
        ((short)(unsigned_short_src[2] / 3) + (short)(unsigned_short_src[2] / 3 << 1));
@@ -17055,12 +17096,14 @@ void unsigned_short_modulo(void)
   unsigned_short_dest[1019] = unsigned_short_src[1019] % 0x3fc;
   unsigned_short_dest[1020] = unsigned_short_src[1020] % 0x3fd;
   unsigned_short_dest[1021] = unsigned_short_src[1021] % 0x3fe;
-  unsigned_short_dest[1022] = unsigned_short_src[1022] % 0x3ff;
   unsigned_short_dest[1023] = unsigned_short_src[1023] & 0x3ff;
+  unsigned_short_dest[1022] = unsigned_short_src[1022] % 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_int_add(void)
 
@@ -18094,6 +18137,8 @@ void signed_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_mult(void)
 
 {
@@ -19125,6 +19170,8 @@ void signed_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_int_div(void)
 
@@ -20158,6 +20205,8 @@ void signed_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_modulo(void)
 
 {
@@ -20165,47 +20214,19 @@ void signed_int_modulo(void)
   if (-1 < signed_int_src[1]) {
     signed_int_dest[1] = signed_int_src[1] & 1U;
   }
+  signed_int_dest[0] = 0;
+  signed_int_dest[2] = signed_int_src[2] % 3;
   signed_int_dest[3] = signed_int_src[3] & 3;
   if (signed_int_src[3] < 1) {
     signed_int_dest[3] = -(-signed_int_src[3] & 3U);
   }
+  signed_int_dest[4] = signed_int_src[4] % 5;
+  signed_int_dest[5] = signed_int_src[5] % 6;
+  signed_int_dest[6] = signed_int_src[6] % 7;
   signed_int_dest[7] = signed_int_src[7] & 7;
   if (signed_int_src[7] < 1) {
     signed_int_dest[7] = -(-signed_int_src[7] & 7U);
   }
-  signed_int_dest[15] = signed_int_src[15] & 0xf;
-  if (signed_int_src[15] < 1) {
-    signed_int_dest[15] = -(-signed_int_src[15] & 0xfU);
-  }
-  signed_int_dest[31] = signed_int_src[31] & 0x1f;
-  if (signed_int_src[31] < 1) {
-    signed_int_dest[31] = -(-signed_int_src[31] & 0x1fU);
-  }
-  signed_int_dest[63] = signed_int_src[63] & 0x3f;
-  if (signed_int_src[63] < 1) {
-    signed_int_dest[63] = -(-signed_int_src[63] & 0x3fU);
-  }
-  signed_int_dest[127] = signed_int_src[127] & 0x7f;
-  if (signed_int_src[127] < 1) {
-    signed_int_dest[127] = -(-signed_int_src[127] & 0x7fU);
-  }
-  signed_int_dest[255] = signed_int_src[255] & 0xff;
-  if (signed_int_src[255] < 1) {
-    signed_int_dest[255] = -(-signed_int_src[255] & 0xffU);
-  }
-  signed_int_dest[511] = signed_int_src[511] & 0x1ff;
-  if (signed_int_src[511] < 1) {
-    signed_int_dest[511] = -(-signed_int_src[511] & 0x1ffU);
-  }
-  signed_int_dest[1023] = signed_int_src[1023] & 0x3ff;
-  if (signed_int_src[1023] < 1) {
-    signed_int_dest[1023] = -(-signed_int_src[1023] & 0x3ffU);
-  }
-  signed_int_dest[0] = 0;
-  signed_int_dest[2] = signed_int_src[2] % 3;
-  signed_int_dest[4] = signed_int_src[4] % 5;
-  signed_int_dest[5] = signed_int_src[5] % 6;
-  signed_int_dest[6] = signed_int_src[6] % 7;
   signed_int_dest[8] = signed_int_src[8] % 9;
   signed_int_dest[9] = signed_int_src[9] % 10;
   signed_int_dest[10] = signed_int_src[10] % 0xb;
@@ -20213,6 +20234,10 @@ void signed_int_modulo(void)
   signed_int_dest[12] = signed_int_src[12] % 0xd;
   signed_int_dest[13] = signed_int_src[13] % 0xe;
   signed_int_dest[14] = signed_int_src[14] % 0xf;
+  signed_int_dest[15] = signed_int_src[15] & 0xf;
+  if (signed_int_src[15] < 1) {
+    signed_int_dest[15] = -(-signed_int_src[15] & 0xfU);
+  }
   signed_int_dest[16] = signed_int_src[16] % 0x11;
   signed_int_dest[17] = signed_int_src[17] % 0x12;
   signed_int_dest[18] = signed_int_src[18] % 0x13;
@@ -20228,6 +20253,10 @@ void signed_int_modulo(void)
   signed_int_dest[28] = signed_int_src[28] % 0x1d;
   signed_int_dest[29] = signed_int_src[29] % 0x1e;
   signed_int_dest[30] = signed_int_src[30] % 0x1f;
+  signed_int_dest[31] = signed_int_src[31] & 0x1f;
+  if (signed_int_src[31] < 1) {
+    signed_int_dest[31] = -(-signed_int_src[31] & 0x1fU);
+  }
   signed_int_dest[32] = signed_int_src[32] % 0x21;
   signed_int_dest[33] = signed_int_src[33] % 0x22;
   signed_int_dest[34] = signed_int_src[34] % 0x23;
@@ -20259,6 +20288,10 @@ void signed_int_modulo(void)
   signed_int_dest[60] = signed_int_src[60] % 0x3d;
   signed_int_dest[61] = signed_int_src[61] % 0x3e;
   signed_int_dest[62] = signed_int_src[62] % 0x3f;
+  signed_int_dest[63] = signed_int_src[63] & 0x3f;
+  if (signed_int_src[63] < 1) {
+    signed_int_dest[63] = -(-signed_int_src[63] & 0x3fU);
+  }
   signed_int_dest[64] = signed_int_src[64] % 0x41;
   signed_int_dest[65] = signed_int_src[65] % 0x42;
   signed_int_dest[66] = signed_int_src[66] % 0x43;
@@ -20322,6 +20355,10 @@ void signed_int_modulo(void)
   signed_int_dest[124] = signed_int_src[124] % 0x7d;
   signed_int_dest[125] = signed_int_src[125] % 0x7e;
   signed_int_dest[126] = signed_int_src[126] % 0x7f;
+  signed_int_dest[127] = signed_int_src[127] & 0x7f;
+  if (signed_int_src[127] < 1) {
+    signed_int_dest[127] = -(-signed_int_src[127] & 0x7fU);
+  }
   signed_int_dest[128] = signed_int_src[128] % 0x81;
   signed_int_dest[129] = signed_int_src[129] % 0x82;
   signed_int_dest[130] = signed_int_src[130] % 0x83;
@@ -20449,6 +20486,10 @@ void signed_int_modulo(void)
   signed_int_dest[252] = signed_int_src[252] % 0xfd;
   signed_int_dest[253] = signed_int_src[253] % 0xfe;
   signed_int_dest[254] = signed_int_src[254] % 0xff;
+  signed_int_dest[255] = signed_int_src[255] & 0xff;
+  if (signed_int_src[255] < 1) {
+    signed_int_dest[255] = -(-signed_int_src[255] & 0xffU);
+  }
   signed_int_dest[256] = signed_int_src[256] % 0x101;
   signed_int_dest[257] = signed_int_src[257] % 0x102;
   signed_int_dest[258] = signed_int_src[258] % 0x103;
@@ -20704,6 +20745,10 @@ void signed_int_modulo(void)
   signed_int_dest[508] = signed_int_src[508] % 0x1fd;
   signed_int_dest[509] = signed_int_src[509] % 0x1fe;
   signed_int_dest[510] = signed_int_src[510] % 0x1ff;
+  signed_int_dest[511] = signed_int_src[511] & 0x1ff;
+  if (signed_int_src[511] < 1) {
+    signed_int_dest[511] = -(-signed_int_src[511] & 0x1ffU);
+  }
   signed_int_dest[512] = signed_int_src[512] % 0x201;
   signed_int_dest[513] = signed_int_src[513] % 0x202;
   signed_int_dest[514] = signed_int_src[514] % 0x203;
@@ -21215,10 +21260,16 @@ void signed_int_modulo(void)
   signed_int_dest[1020] = signed_int_src[1020] % 0x3fd;
   signed_int_dest[1021] = signed_int_src[1021] % 0x3fe;
   signed_int_dest[1022] = signed_int_src[1022] % 0x3ff;
+  signed_int_dest[1023] = signed_int_src[1023] & 0x3ff;
+  if (signed_int_src[1023] < 1) {
+    signed_int_dest[1023] = -(-signed_int_src[1023] & 0x3ffU);
+  }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_add(void)
 
@@ -22252,6 +22303,8 @@ void unsigned_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_mult(void)
 
 {
@@ -23284,6 +23337,8 @@ void unsigned_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_div(void)
 
 {
@@ -24309,12 +24364,14 @@ void unsigned_int_div(void)
   unsigned_int_dest[1019] = unsigned_int_src[1019] / 0x3fc;
   unsigned_int_dest[1020] = unsigned_int_src[1020] / 0x3fd;
   unsigned_int_dest[1021] = unsigned_int_src[1021] / 0x3fe;
-  unsigned_int_dest[1022] = unsigned_int_src[1022] / 0x3ff;
   unsigned_int_dest[1023] = unsigned_int_src[1023] >> 10;
+  unsigned_int_dest[1022] = unsigned_int_src[1022] / 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_modulo(void)
 
@@ -25341,12 +25398,14 @@ void unsigned_int_modulo(void)
   unsigned_int_dest[1019] = unsigned_int_src[1019] % 0x3fc;
   unsigned_int_dest[1020] = unsigned_int_src[1020] % 0x3fd;
   unsigned_int_dest[1021] = unsigned_int_src[1021] % 0x3fe;
-  unsigned_int_dest[1022] = unsigned_int_src[1022] % 0x3ff;
   unsigned_int_dest[1023] = unsigned_int_src[1023] & 0x3ff;
+  unsigned_int_dest[1022] = unsigned_int_src[1022] % 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_int_add(void)
 
@@ -26380,6 +26439,8 @@ void signed_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_mult(void)
 
 {
@@ -27411,6 +27472,8 @@ void signed_long_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_int_div(void)
 
@@ -28444,6 +28507,8 @@ void signed_long_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_modulo(void)
 
 {
@@ -28451,47 +28516,19 @@ void signed_long_int_modulo(void)
   if (-1 < signed_long_int_src[1]) {
     signed_long_int_dest[1] = signed_long_int_src[1] & 1U;
   }
+  signed_long_int_dest[0] = 0;
+  signed_long_int_dest[2] = signed_long_int_src[2] % 3;
   signed_long_int_dest[3] = signed_long_int_src[3] & 3;
   if (signed_long_int_src[3] < 1) {
     signed_long_int_dest[3] = -(-signed_long_int_src[3] & 3U);
   }
+  signed_long_int_dest[4] = signed_long_int_src[4] % 5;
+  signed_long_int_dest[5] = signed_long_int_src[5] % 6;
+  signed_long_int_dest[6] = signed_long_int_src[6] % 7;
   signed_long_int_dest[7] = signed_long_int_src[7] & 7;
   if (signed_long_int_src[7] < 1) {
     signed_long_int_dest[7] = -(-signed_long_int_src[7] & 7U);
   }
-  signed_long_int_dest[15] = signed_long_int_src[15] & 0xf;
-  if (signed_long_int_src[15] < 1) {
-    signed_long_int_dest[15] = -(-signed_long_int_src[15] & 0xfU);
-  }
-  signed_long_int_dest[31] = signed_long_int_src[31] & 0x1f;
-  if (signed_long_int_src[31] < 1) {
-    signed_long_int_dest[31] = -(-signed_long_int_src[31] & 0x1fU);
-  }
-  signed_long_int_dest[63] = signed_long_int_src[63] & 0x3f;
-  if (signed_long_int_src[63] < 1) {
-    signed_long_int_dest[63] = -(-signed_long_int_src[63] & 0x3fU);
-  }
-  signed_long_int_dest[127] = signed_long_int_src[127] & 0x7f;
-  if (signed_long_int_src[127] < 1) {
-    signed_long_int_dest[127] = -(-signed_long_int_src[127] & 0x7fU);
-  }
-  signed_long_int_dest[255] = signed_long_int_src[255] & 0xff;
-  if (signed_long_int_src[255] < 1) {
-    signed_long_int_dest[255] = -(-signed_long_int_src[255] & 0xffU);
-  }
-  signed_long_int_dest[511] = signed_long_int_src[511] & 0x1ff;
-  if (signed_long_int_src[511] < 1) {
-    signed_long_int_dest[511] = -(-signed_long_int_src[511] & 0x1ffU);
-  }
-  signed_long_int_dest[1023] = signed_long_int_src[1023] & 0x3ff;
-  if (signed_long_int_src[1023] < 1) {
-    signed_long_int_dest[1023] = -(-signed_long_int_src[1023] & 0x3ffU);
-  }
-  signed_long_int_dest[0] = 0;
-  signed_long_int_dest[2] = signed_long_int_src[2] % 3;
-  signed_long_int_dest[4] = signed_long_int_src[4] % 5;
-  signed_long_int_dest[5] = signed_long_int_src[5] % 6;
-  signed_long_int_dest[6] = signed_long_int_src[6] % 7;
   signed_long_int_dest[8] = signed_long_int_src[8] % 9;
   signed_long_int_dest[9] = signed_long_int_src[9] % 10;
   signed_long_int_dest[10] = signed_long_int_src[10] % 0xb;
@@ -28499,6 +28536,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[12] = signed_long_int_src[12] % 0xd;
   signed_long_int_dest[13] = signed_long_int_src[13] % 0xe;
   signed_long_int_dest[14] = signed_long_int_src[14] % 0xf;
+  signed_long_int_dest[15] = signed_long_int_src[15] & 0xf;
+  if (signed_long_int_src[15] < 1) {
+    signed_long_int_dest[15] = -(-signed_long_int_src[15] & 0xfU);
+  }
   signed_long_int_dest[16] = signed_long_int_src[16] % 0x11;
   signed_long_int_dest[17] = signed_long_int_src[17] % 0x12;
   signed_long_int_dest[18] = signed_long_int_src[18] % 0x13;
@@ -28514,6 +28555,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[28] = signed_long_int_src[28] % 0x1d;
   signed_long_int_dest[29] = signed_long_int_src[29] % 0x1e;
   signed_long_int_dest[30] = signed_long_int_src[30] % 0x1f;
+  signed_long_int_dest[31] = signed_long_int_src[31] & 0x1f;
+  if (signed_long_int_src[31] < 1) {
+    signed_long_int_dest[31] = -(-signed_long_int_src[31] & 0x1fU);
+  }
   signed_long_int_dest[32] = signed_long_int_src[32] % 0x21;
   signed_long_int_dest[33] = signed_long_int_src[33] % 0x22;
   signed_long_int_dest[34] = signed_long_int_src[34] % 0x23;
@@ -28545,6 +28590,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[60] = signed_long_int_src[60] % 0x3d;
   signed_long_int_dest[61] = signed_long_int_src[61] % 0x3e;
   signed_long_int_dest[62] = signed_long_int_src[62] % 0x3f;
+  signed_long_int_dest[63] = signed_long_int_src[63] & 0x3f;
+  if (signed_long_int_src[63] < 1) {
+    signed_long_int_dest[63] = -(-signed_long_int_src[63] & 0x3fU);
+  }
   signed_long_int_dest[64] = signed_long_int_src[64] % 0x41;
   signed_long_int_dest[65] = signed_long_int_src[65] % 0x42;
   signed_long_int_dest[66] = signed_long_int_src[66] % 0x43;
@@ -28608,6 +28657,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[124] = signed_long_int_src[124] % 0x7d;
   signed_long_int_dest[125] = signed_long_int_src[125] % 0x7e;
   signed_long_int_dest[126] = signed_long_int_src[126] % 0x7f;
+  signed_long_int_dest[127] = signed_long_int_src[127] & 0x7f;
+  if (signed_long_int_src[127] < 1) {
+    signed_long_int_dest[127] = -(-signed_long_int_src[127] & 0x7fU);
+  }
   signed_long_int_dest[128] = signed_long_int_src[128] % 0x81;
   signed_long_int_dest[129] = signed_long_int_src[129] % 0x82;
   signed_long_int_dest[130] = signed_long_int_src[130] % 0x83;
@@ -28735,6 +28788,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[252] = signed_long_int_src[252] % 0xfd;
   signed_long_int_dest[253] = signed_long_int_src[253] % 0xfe;
   signed_long_int_dest[254] = signed_long_int_src[254] % 0xff;
+  signed_long_int_dest[255] = signed_long_int_src[255] & 0xff;
+  if (signed_long_int_src[255] < 1) {
+    signed_long_int_dest[255] = -(-signed_long_int_src[255] & 0xffU);
+  }
   signed_long_int_dest[256] = signed_long_int_src[256] % 0x101;
   signed_long_int_dest[257] = signed_long_int_src[257] % 0x102;
   signed_long_int_dest[258] = signed_long_int_src[258] % 0x103;
@@ -28990,6 +29047,10 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[508] = signed_long_int_src[508] % 0x1fd;
   signed_long_int_dest[509] = signed_long_int_src[509] % 0x1fe;
   signed_long_int_dest[510] = signed_long_int_src[510] % 0x1ff;
+  signed_long_int_dest[511] = signed_long_int_src[511] & 0x1ff;
+  if (signed_long_int_src[511] < 1) {
+    signed_long_int_dest[511] = -(-signed_long_int_src[511] & 0x1ffU);
+  }
   signed_long_int_dest[512] = signed_long_int_src[512] % 0x201;
   signed_long_int_dest[513] = signed_long_int_src[513] % 0x202;
   signed_long_int_dest[514] = signed_long_int_src[514] % 0x203;
@@ -29501,10 +29562,16 @@ void signed_long_int_modulo(void)
   signed_long_int_dest[1020] = signed_long_int_src[1020] % 0x3fd;
   signed_long_int_dest[1021] = signed_long_int_src[1021] % 0x3fe;
   signed_long_int_dest[1022] = signed_long_int_src[1022] % 0x3ff;
+  signed_long_int_dest[1023] = signed_long_int_src[1023] & 0x3ff;
+  if (signed_long_int_src[1023] < 1) {
+    signed_long_int_dest[1023] = -(-signed_long_int_src[1023] & 0x3ffU);
+  }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_add(void)
 
@@ -30538,6 +30605,8 @@ void unsigned_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_mult(void)
 
 {
@@ -31570,6 +31639,8 @@ void unsigned_long_int_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_div(void)
 
 {
@@ -32595,12 +32666,14 @@ void unsigned_long_int_div(void)
   unsigned_long_int_dest[1019] = unsigned_long_int_src[1019] / 0x3fc;
   unsigned_long_int_dest[1020] = unsigned_long_int_src[1020] / 0x3fd;
   unsigned_long_int_dest[1021] = unsigned_long_int_src[1021] / 0x3fe;
-  unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] / 0x3ff;
   unsigned_long_int_dest[1023] = unsigned_long_int_src[1023] >> 10;
+  unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] / 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_modulo(void)
 
@@ -33627,12 +33700,14 @@ void unsigned_long_int_modulo(void)
   unsigned_long_int_dest[1019] = unsigned_long_int_src[1019] % 0x3fc;
   unsigned_long_int_dest[1020] = unsigned_long_int_src[1020] % 0x3fd;
   unsigned_long_int_dest[1021] = unsigned_long_int_src[1021] % 0x3fe;
-  unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] % 0x3ff;
   unsigned_long_int_dest[1023] = unsigned_long_int_src[1023] & 0x3ff;
+  unsigned_long_int_dest[1022] = unsigned_long_int_src[1022] % 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_long_add(void)
 
@@ -34666,6 +34741,8 @@ void signed_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_long_mult(void)
 
 {
@@ -35697,6 +35774,8 @@ void signed_long_long_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_long_div(void)
 
@@ -36730,6 +36809,8 @@ void signed_long_long_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_long_modulo(void)
 
 {
@@ -36737,47 +36818,19 @@ void signed_long_long_modulo(void)
   if (-1 < signed_long_long_src[1]) {
     signed_long_long_dest[1] = signed_long_long_src[1] & 1U;
   }
+  signed_long_long_dest[0] = 0;
+  signed_long_long_dest[2] = signed_long_long_src[2] % 3;
   signed_long_long_dest[3] = signed_long_long_src[3] & 3;
   if (signed_long_long_src[3] < 1) {
     signed_long_long_dest[3] = -(-signed_long_long_src[3] & 3U);
   }
+  signed_long_long_dest[4] = signed_long_long_src[4] % 5;
+  signed_long_long_dest[5] = signed_long_long_src[5] % 6;
+  signed_long_long_dest[6] = signed_long_long_src[6] % 7;
   signed_long_long_dest[7] = signed_long_long_src[7] & 7;
   if (signed_long_long_src[7] < 1) {
     signed_long_long_dest[7] = -(-signed_long_long_src[7] & 7U);
   }
-  signed_long_long_dest[15] = signed_long_long_src[15] & 0xf;
-  if (signed_long_long_src[15] < 1) {
-    signed_long_long_dest[15] = -(-signed_long_long_src[15] & 0xfU);
-  }
-  signed_long_long_dest[31] = signed_long_long_src[31] & 0x1f;
-  if (signed_long_long_src[31] < 1) {
-    signed_long_long_dest[31] = -(-signed_long_long_src[31] & 0x1fU);
-  }
-  signed_long_long_dest[63] = signed_long_long_src[63] & 0x3f;
-  if (signed_long_long_src[63] < 1) {
-    signed_long_long_dest[63] = -(-signed_long_long_src[63] & 0x3fU);
-  }
-  signed_long_long_dest[127] = signed_long_long_src[127] & 0x7f;
-  if (signed_long_long_src[127] < 1) {
-    signed_long_long_dest[127] = -(-signed_long_long_src[127] & 0x7fU);
-  }
-  signed_long_long_dest[255] = signed_long_long_src[255] & 0xff;
-  if (signed_long_long_src[255] < 1) {
-    signed_long_long_dest[255] = -(-signed_long_long_src[255] & 0xffU);
-  }
-  signed_long_long_dest[511] = signed_long_long_src[511] & 0x1ff;
-  if (signed_long_long_src[511] < 1) {
-    signed_long_long_dest[511] = -(-signed_long_long_src[511] & 0x1ffU);
-  }
-  signed_long_long_dest[1023] = signed_long_long_src[1023] & 0x3ff;
-  if (signed_long_long_src[1023] < 1) {
-    signed_long_long_dest[1023] = -(-signed_long_long_src[1023] & 0x3ffU);
-  }
-  signed_long_long_dest[0] = 0;
-  signed_long_long_dest[2] = signed_long_long_src[2] % 3;
-  signed_long_long_dest[4] = signed_long_long_src[4] % 5;
-  signed_long_long_dest[5] = signed_long_long_src[5] % 6;
-  signed_long_long_dest[6] = signed_long_long_src[6] % 7;
   signed_long_long_dest[8] = signed_long_long_src[8] % 9;
   signed_long_long_dest[9] = signed_long_long_src[9] % 10;
   signed_long_long_dest[10] = signed_long_long_src[10] % 0xb;
@@ -36785,6 +36838,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[12] = signed_long_long_src[12] % 0xd;
   signed_long_long_dest[13] = signed_long_long_src[13] % 0xe;
   signed_long_long_dest[14] = signed_long_long_src[14] % 0xf;
+  signed_long_long_dest[15] = signed_long_long_src[15] & 0xf;
+  if (signed_long_long_src[15] < 1) {
+    signed_long_long_dest[15] = -(-signed_long_long_src[15] & 0xfU);
+  }
   signed_long_long_dest[16] = signed_long_long_src[16] % 0x11;
   signed_long_long_dest[17] = signed_long_long_src[17] % 0x12;
   signed_long_long_dest[18] = signed_long_long_src[18] % 0x13;
@@ -36800,6 +36857,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[28] = signed_long_long_src[28] % 0x1d;
   signed_long_long_dest[29] = signed_long_long_src[29] % 0x1e;
   signed_long_long_dest[30] = signed_long_long_src[30] % 0x1f;
+  signed_long_long_dest[31] = signed_long_long_src[31] & 0x1f;
+  if (signed_long_long_src[31] < 1) {
+    signed_long_long_dest[31] = -(-signed_long_long_src[31] & 0x1fU);
+  }
   signed_long_long_dest[32] = signed_long_long_src[32] % 0x21;
   signed_long_long_dest[33] = signed_long_long_src[33] % 0x22;
   signed_long_long_dest[34] = signed_long_long_src[34] % 0x23;
@@ -36831,6 +36892,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[60] = signed_long_long_src[60] % 0x3d;
   signed_long_long_dest[61] = signed_long_long_src[61] % 0x3e;
   signed_long_long_dest[62] = signed_long_long_src[62] % 0x3f;
+  signed_long_long_dest[63] = signed_long_long_src[63] & 0x3f;
+  if (signed_long_long_src[63] < 1) {
+    signed_long_long_dest[63] = -(-signed_long_long_src[63] & 0x3fU);
+  }
   signed_long_long_dest[64] = signed_long_long_src[64] % 0x41;
   signed_long_long_dest[65] = signed_long_long_src[65] % 0x42;
   signed_long_long_dest[66] = signed_long_long_src[66] % 0x43;
@@ -36894,6 +36959,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[124] = signed_long_long_src[124] % 0x7d;
   signed_long_long_dest[125] = signed_long_long_src[125] % 0x7e;
   signed_long_long_dest[126] = signed_long_long_src[126] % 0x7f;
+  signed_long_long_dest[127] = signed_long_long_src[127] & 0x7f;
+  if (signed_long_long_src[127] < 1) {
+    signed_long_long_dest[127] = -(-signed_long_long_src[127] & 0x7fU);
+  }
   signed_long_long_dest[128] = signed_long_long_src[128] % 0x81;
   signed_long_long_dest[129] = signed_long_long_src[129] % 0x82;
   signed_long_long_dest[130] = signed_long_long_src[130] % 0x83;
@@ -37021,6 +37090,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[252] = signed_long_long_src[252] % 0xfd;
   signed_long_long_dest[253] = signed_long_long_src[253] % 0xfe;
   signed_long_long_dest[254] = signed_long_long_src[254] % 0xff;
+  signed_long_long_dest[255] = signed_long_long_src[255] & 0xff;
+  if (signed_long_long_src[255] < 1) {
+    signed_long_long_dest[255] = -(-signed_long_long_src[255] & 0xffU);
+  }
   signed_long_long_dest[256] = signed_long_long_src[256] % 0x101;
   signed_long_long_dest[257] = signed_long_long_src[257] % 0x102;
   signed_long_long_dest[258] = signed_long_long_src[258] % 0x103;
@@ -37276,6 +37349,10 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[508] = signed_long_long_src[508] % 0x1fd;
   signed_long_long_dest[509] = signed_long_long_src[509] % 0x1fe;
   signed_long_long_dest[510] = signed_long_long_src[510] % 0x1ff;
+  signed_long_long_dest[511] = signed_long_long_src[511] & 0x1ff;
+  if (signed_long_long_src[511] < 1) {
+    signed_long_long_dest[511] = -(-signed_long_long_src[511] & 0x1ffU);
+  }
   signed_long_long_dest[512] = signed_long_long_src[512] % 0x201;
   signed_long_long_dest[513] = signed_long_long_src[513] % 0x202;
   signed_long_long_dest[514] = signed_long_long_src[514] % 0x203;
@@ -37787,10 +37864,16 @@ void signed_long_long_modulo(void)
   signed_long_long_dest[1020] = signed_long_long_src[1020] % 0x3fd;
   signed_long_long_dest[1021] = signed_long_long_src[1021] % 0x3fe;
   signed_long_long_dest[1022] = signed_long_long_src[1022] % 0x3ff;
+  signed_long_long_dest[1023] = signed_long_long_src[1023] & 0x3ff;
+  if (signed_long_long_src[1023] < 1) {
+    signed_long_long_dest[1023] = -(-signed_long_long_src[1023] & 0x3ffU);
+  }
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_long_add(void)
 
@@ -38824,6 +38907,8 @@ void unsigned_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_long_mult(void)
 
 {
@@ -39856,6 +39941,8 @@ void unsigned_long_long_mult(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_long_div(void)
 
 {
@@ -40881,12 +40968,14 @@ void unsigned_long_long_div(void)
   unsigned_long_long_dest[1019] = unsigned_long_long_src[1019] / 0x3fc;
   unsigned_long_long_dest[1020] = unsigned_long_long_src[1020] / 0x3fd;
   unsigned_long_long_dest[1021] = unsigned_long_long_src[1021] / 0x3fe;
-  unsigned_long_long_dest[1022] = unsigned_long_long_src[1022] / 0x3ff;
   unsigned_long_long_dest[1023] = unsigned_long_long_src[1023] >> 10;
+  unsigned_long_long_dest[1022] = unsigned_long_long_src[1022] / 0x3ff;
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_long_modulo(void)
 
@@ -41913,22 +42002,8 @@ void unsigned_long_long_modulo(void)
   unsigned_long_long_dest[1019] = unsigned_long_long_src[1019] % 0x3fc;
   unsigned_long_long_dest[1020] = unsigned_long_long_src[1020] % 0x3fd;
   unsigned_long_long_dest[1021] = unsigned_long_long_src[1021] % 0x3fe;
-  unsigned_long_long_dest[1022] = unsigned_long_long_src[1022] % 0x3ff;
   unsigned_long_long_dest[1023] = unsigned_long_long_src[1023] & 0x3ff;
-  return;
-}
-
-
-
-void FUN_0019780c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0019780c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x19780c);
-  (*UNRECOVERED_JUMPTABLE)();
+  unsigned_long_long_dest[1022] = unsigned_long_long_src[1022] % 0x3ff;
   return;
 }
 

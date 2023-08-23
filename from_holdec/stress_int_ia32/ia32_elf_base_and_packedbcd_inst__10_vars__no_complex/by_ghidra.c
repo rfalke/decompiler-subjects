@@ -81,6 +81,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -167,6 +168,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -201,14 +213,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -279,7 +291,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -298,10 +310,13 @@ Cause: Exception while decompiling 08049060: process: timeout
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -396,9 +411,11 @@ void frame_dummy(void)
 int inst_0_values_var_0(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + 'd',in_AF * '\x06' + 'D') & 0xff0f | 0x12ba0000) + 0xed459af6;
+  uVar1 = CONCAT31(0x12ba64,in_AF * '\x06' + 'D') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + 'd',(char)uVar1)) + -0x12ba650a;
 }
 
 
@@ -421,10 +438,11 @@ int inst_0_flags_var_0(void)
 int inst_0_values_var_1(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11((in_AF | 1) - 0xe,(in_AF | 1) * '\x06' + '\x1d') & 0xff0f | 0xae9d0000) +
-         0x51620cfd;
+  uVar1 = CONCAT31(0xae9df2,(in_AF | 1) * '\x06' + '\x1d') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11((in_AF | 1) - 0xe,(char)uVar1)) + 0x51620cfd;
 }
 
 
@@ -447,9 +465,11 @@ int inst_0_flags_var_1(void)
 int inst_0_values_var_2(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + '\x03',in_AF * '\x06' + -0x5b) & 0xff0f | 0x7b8a0000) + 0x8475fbf5;
+  uVar1 = CONCAT31(0x7b8a03,in_AF * '\x06' + -0x5b) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + '\x03',(char)uVar1)) + -0x7b8a040b;
 }
 
 
@@ -472,9 +492,11 @@ int inst_0_flags_var_2(void)
 int inst_0_values_var_3(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + -0x59,in_AF * '\x06' + '5') & 0xff0f | 0x3e400000) + 0xc1bf57f5;
+  uVar1 = CONCAT31(0x3e40a7,in_AF * '\x06' + '5') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + -0x59,(char)uVar1)) + -0x3e40a80b;
 }
 
 
@@ -497,10 +519,11 @@ int inst_0_flags_var_3(void)
 int inst_0_values_var_4(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11((in_AF | 1) + 0x87,(in_AF | 1) * '\x06' + -0x56) & 0xff0f | 0xcc4f0000) +
-         0x33b07800;
+  uVar1 = CONCAT31(0xcc4f87,(in_AF | 1) * '\x06' + -0x56) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11((in_AF | 1) + 0x87,(char)uVar1)) + 0x33b07800;
 }
 
 
@@ -523,9 +546,11 @@ char inst_0_flags_var_4(void)
 int inst_0_values_var_5(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + -0x53,in_AF * '\x06' + '1') & 0xff0f | 0xb6fb0000) + 0x490451f9;
+  uVar1 = CONCAT31(0xb6fbad,in_AF * '\x06' + '1') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + -0x53,(char)uVar1)) + 0x490451f9;
 }
 
 
@@ -548,9 +573,11 @@ char inst_0_flags_var_5(void)
 int inst_0_values_var_6(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + '\x1f',in_AF * '\x06' + -0x3a) & 0xff0f | 0x3fd50000) + 0xc02adff4;
+  uVar1 = CONCAT31(0x3fd51f,in_AF * '\x06' + -0x3a) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + '\x1f',(char)uVar1)) + -0x3fd5200c;
 }
 
 
@@ -573,9 +600,11 @@ int inst_0_flags_var_6(void)
 int inst_0_values_var_7(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(in_AF + '\"',in_AF * '\x06' + -0x6d) & 0xff0f | 0x44400000) + 0xbbbfdcf7;
+  uVar1 = CONCAT31(0x444022,in_AF * '\x06' + -0x6d) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(in_AF + '\"',(char)uVar1)) + -0x44402309;
 }
 
 
@@ -598,10 +627,11 @@ int inst_0_flags_var_7(void)
 int inst_0_values_var_8(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11((in_AF | 1) + 99,(in_AF | 1) * '\x06' + -0x31) & 0xff0f | 0x88a80000) +
-         0x77579bfb;
+  uVar1 = CONCAT31(0x88a863,(in_AF | 1) * '\x06' + -0x31) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11((in_AF | 1) + 99,(char)uVar1)) + 0x77579bfb;
 }
 
 
@@ -624,10 +654,11 @@ int inst_0_flags_var_8(void)
 int inst_0_values_var_9(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11((in_AF | 1) + 0xa4,(in_AF | 1) * '\x06' + -0x56) & 0xff0f | 0x2720000) +
-         0xfd8d5b00;
+  uVar1 = CONCAT31(0x272a4,(in_AF | 1) * '\x06' + -0x56) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11((in_AF | 1) + 0xa4,(char)uVar1)) + -0x272a500;
 }
 
 
@@ -1016,10 +1047,11 @@ undefined4 inst_2_flags_var_9(void)
 int inst_3_values_var_0(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11(-0x12 - (in_AF | 1),(in_AF | 1) * -6 + -0x13) & 0xff0f | 0x4f9d0000) + 0xb06212f9
-  ;
+  uVar1 = CONCAT31(0x4f9dee,(in_AF | 1) * -6 + -0x13) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x12 - (in_AF | 1),(char)uVar1)) + -0x4f9ded07;
 }
 
 
@@ -1042,9 +1074,11 @@ int inst_3_flags_var_0(void)
 int inst_3_values_var_1(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(-0x3a - in_AF,in_AF * -6 + 'V') & 0xff0f | 0x9b9c0000) + 0x64633b00;
+  uVar1 = CONCAT31(0x9b9cc6,in_AF * -6 + 'V') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x3a - in_AF,(char)uVar1)) + 0x64633b00;
 }
 
 
@@ -1067,9 +1101,11 @@ int inst_3_flags_var_1(void)
 int inst_3_values_var_2(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(-0x43 - in_AF,in_AF * -6 + -0x7c) & 0xff0f | 0x8b5f0000) + 0x74a043f2;
+  uVar1 = CONCAT31(0x8b5fbd,in_AF * -6 + -0x7c) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x43 - in_AF,(char)uVar1)) + 0x74a043f2;
 }
 
 
@@ -1092,9 +1128,11 @@ int inst_3_flags_var_2(void)
 int inst_3_values_var_3(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11('\x06' - in_AF,in_AF * -6 + 'w') & 0xff0f | 0xc5b50000) + 0x3a4afaff;
+  uVar1 = CONCAT31(0xc5b506,in_AF * -6 + 'w') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11('\x06' - in_AF,(char)uVar1)) + 0x3a4afaff;
 }
 
 
@@ -1117,9 +1155,11 @@ int inst_3_flags_var_3(void)
 int inst_3_values_var_4(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11('\x01' - in_AF,in_AF * -6 + -0x6b) & 0xff0f | 0xec990000) + 0x1366fff1;
+  uVar1 = CONCAT31(0xec9901,in_AF * -6 + -0x6b) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11('\x01' - in_AF,(char)uVar1)) + 0x1366fff1;
 }
 
 
@@ -1142,9 +1182,11 @@ int inst_3_flags_var_4(void)
 int inst_3_values_var_5(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11(-0x20 - in_AF,in_AF * -6 + -0x6d) & 0xff0f | 0x41490000) + 0xbeb620f3;
+  uVar1 = CONCAT31(0x4149e0,in_AF * -6 + -0x6d) & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x20 - in_AF,(char)uVar1)) + -0x4149df0d;
 }
 
 
@@ -1167,9 +1209,11 @@ int inst_3_flags_var_5(void)
 int inst_3_values_var_6(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11('\t' - in_AF,in_AF * -6 + 'f') & 0xff0f | 0xe33e0000) + 0x1cc1f800;
+  uVar1 = CONCAT31(0xe33e09,in_AF * -6 + 'f') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11('\t' - in_AF,(char)uVar1)) + 0x1cc1f800;
 }
 
 
@@ -1192,9 +1236,11 @@ int inst_3_flags_var_6(void)
 int inst_3_values_var_7(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11(-0x50 - (in_AF | 1),(in_AF | 1) * -6 + ':') & 0xff0f | 0xa3580000) + 0x5ca750fc;
+  uVar1 = CONCAT31(0xa358b0,(in_AF | 1) * -6 + ':') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(-0x50 - (in_AF | 1),(char)uVar1)) + 0x5ca750fc;
 }
 
 
@@ -1217,9 +1263,11 @@ int inst_3_flags_var_7(void)
 int inst_3_values_var_8(void)
 
 {
+  uint uVar1;
   char in_AF;
   
-  return (CONCAT11('\x1c' - in_AF,in_AF * -6 + ')') & 0xff0f | 0x7cab0000) + 0x8354e4fd;
+  uVar1 = CONCAT31(0x7cab1c,in_AF * -6 + ')') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11('\x1c' - in_AF,(char)uVar1)) + -0x7cab1b03;
 }
 
 
@@ -1242,9 +1290,11 @@ int inst_3_flags_var_8(void)
 int inst_3_values_var_9(void)
 
 {
+  uint uVar1;
   byte in_AF;
   
-  return (CONCAT11(',' - (in_AF | 1),(in_AF | 1) * -6 + '~') & 0xff0f | 0x429e0000) + 0xbd61d4f8;
+  uVar1 = CONCAT31(0x429e2c,(in_AF | 1) * -6 + '~') & 0xffffff0f;
+  return CONCAT22((short)(uVar1 >> 0x10),CONCAT11(',' - (in_AF | 1),(char)uVar1)) + -0x429e2b08;
 }
 
 
@@ -25547,7 +25597,7 @@ int inst_121_values_var_0(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x80,0xf1) | 0x300) | 0xec290000) + 0x13d66c0f;
+  return (CONCAT22(0xec29,CONCAT11(in_AF << 4 | 0x80,0xf1)) | 0x300) + 0x13d66c0f;
 }
 
 
@@ -25565,7 +25615,7 @@ int inst_121_values_var_1(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 4,0x4b) | 0x300) | 0x8e40000) + 0xf71be8b5;
+  return (CONCAT22(0x8e4,CONCAT11(in_AF << 4 | 4,0x4b)) | 0x300) + 0xf71be8b5;
 }
 
 
@@ -25583,7 +25633,7 @@ int inst_121_values_var_2(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x80,4) | 0x300) | 0xa5430000) + 0x5abc6cfc;
+  return (CONCAT22(0xa543,CONCAT11(in_AF << 4 | 0x80,4)) | 0x300) + 0x5abc6cfc;
 }
 
 
@@ -25601,7 +25651,7 @@ int inst_121_values_var_3(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 4,0xca) | 0x300) | 0x22860000) + 0xdd79e836;
+  return (CONCAT22(0x2286,CONCAT11(in_AF << 4 | 4,0xca)) | 0x300) + 0xdd79e836;
 }
 
 
@@ -25619,7 +25669,7 @@ int inst_121_values_var_4(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 4,0xc5) | 0x300) | 0x655d0000) + 0x9aa2e83b;
+  return (CONCAT22(0x655d,CONCAT11(in_AF << 4 | 4,0xc5)) | 0x300) + 0x9aa2e83b;
 }
 
 
@@ -25637,7 +25687,7 @@ int inst_121_values_var_5(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4,0xd5) | 0x300) | 0x70620000) + 0x8f9dec2b;
+  return (CONCAT22(0x7062,CONCAT11(in_AF << 4,0xd5)) | 0x300) + 0x8f9dec2b;
 }
 
 
@@ -25655,7 +25705,7 @@ int inst_121_values_var_6(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 4,0xd1) | 0x300) | 0x54c20000) + 0xab3de82f;
+  return (CONCAT22(0x54c2,CONCAT11(in_AF << 4 | 4,0xd1)) | 0x300) + 0xab3de82f;
 }
 
 
@@ -25673,7 +25723,7 @@ int inst_121_values_var_7(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x84,0x3f) | 0x300) | 0x89990000) + 0x766668c1;
+  return (CONCAT22(0x8999,CONCAT11(in_AF << 4 | 0x84,0x3f)) | 0x300) + 0x766668c1;
 }
 
 
@@ -25691,7 +25741,7 @@ int inst_121_values_var_8(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x80,0xf1) | 0x300) | 0xcc220000) + 0x33dd6c0f;
+  return (CONCAT22(0xcc22,CONCAT11(in_AF << 4 | 0x80,0xf1)) | 0x300) + 0x33dd6c0f;
 }
 
 
@@ -25709,7 +25759,7 @@ int inst_121_values_var_9(void)
 {
   char in_AF;
   
-  return ((ushort)(CONCAT11(in_AF << 4 | 0x80,0x3d) | 0x300) | 0x8d120000) + 0x72ed6cc3;
+  return (CONCAT22(0x8d12,CONCAT11(in_AF << 4 | 0x80,0x3d)) | 0x300) + 0x72ed6cc3;
 }
 
 

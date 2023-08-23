@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -33,7 +60,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,int param_2)
 
 {
   byte bVar1;
@@ -52,15 +79,14 @@ void entry(void)
   int *piVar8;
   int iVar9;
   char *pcVar10;
-  char *unaff_EDI;
+  char *in_EDI;
   undefined8 uVar11;
-  int unaff_retaddr;
   
   bVar1 = 0;
   piVar7 = (int *)&stack0x00000008;
   piVar5 = (int *)&stack0x00000008;
   iVar4 = 0;
-  if (unaff_retaddr == 1) goto LAB_08048064;
+  if (param_2 == 1) goto LAB_08048064;
   while (piVar8 = piVar7 + 1, *piVar7 != 0) {
     *piVar7 = 5;
     pcVar3 = (code *)swi(0x80);
@@ -72,10 +98,10 @@ LAB_08048064:
     iVar9 = 0;
     do {
       piVar5[-1] = 0x33;
-      unaff_EDI = &DAT_080480f0;
+      in_EDI = &DAT_080480f0;
       for (iVar2 = piVar5[-1]; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *unaff_EDI = ' ';
-        unaff_EDI = unaff_EDI + (uint)bVar1 * -2 + 1;
+        *in_EDI = ' ';
+        in_EDI = in_EDI + (uint)bVar1 * -2 + 1;
       }
       piVar5[-1] = 0x10;
       piVar5[-1] = 3;
@@ -93,7 +119,7 @@ LAB_08048064:
       piVar5[-4] = (int)(piVar5 + 1);
       piVar5[-5] = iVar9;
       piVar5[-6] = (int)&DAT_080480f0;
-      piVar5[-7] = (int)unaff_EDI;
+      piVar5[-7] = (int)in_EDI;
       piVar5[-8] = iVar9;
       piVar5[-9] = 0x8048091;
       FUN_080480d8();
@@ -102,18 +128,18 @@ LAB_08048064:
       DAT_080480f0 = 0x3a;
       pcVar3 = extraout_ECX_01;
       do {
-        pcVar10 = unaff_EDI + (uint)bVar1 * -2 + 1;
-        if ((*unaff_EDI == '\x7f') || (*unaff_EDI < ' ')) {
+        pcVar10 = in_EDI + (uint)bVar1 * -2 + 1;
+        if ((*in_EDI == '\x7f') || (*in_EDI < ' ')) {
           pcVar10[-1] = '.';
         }
         piVar5[-8] = 0x80480ad;
         (*pcVar3)();
         iVar2 = iVar2 + -1;
         pcVar3 = extraout_ECX_02;
-        unaff_EDI = pcVar10;
+        in_EDI = pcVar10;
       } while (iVar2 != 0);
       *pcVar10 = '\n';
-      unaff_EDI = (char *)piVar5[-7];
+      in_EDI = (char *)piVar5[-7];
       iVar9 = piVar5[-5] + *piVar5;
       *piVar5 = piVar5[-3];
       piVar5[-1] = 1;
@@ -139,29 +165,13 @@ LAB_080480d3:
   if (9 < bVar1) {
     bVar1 = bVar1 + 7;
   }
-  *unaff_EDI = bVar1 + 0x30;
+  *in_EDI = bVar1 + 0x30;
   return;
 }
 
 
 
 void __regparm3 FUN_080480d8(undefined4 param_1)
-
-{
-  byte bVar1;
-  char *unaff_EDI;
-  
-  bVar1 = (byte)((uint)param_1 >> 0x18) / 0x10;
-  if (9 < bVar1) {
-    bVar1 = bVar1 + 7;
-  }
-  *unaff_EDI = bVar1 + 0x30;
-  return;
-}
-
-
-
-void __regparm3 FUN_080480da(undefined4 param_1)
 
 {
   byte bVar1;

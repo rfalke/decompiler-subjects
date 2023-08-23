@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -53,8 +80,9 @@ void FUN_08048054(void)
 
 
 
-void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-          undefined param_5)
+void processEntry
+entry(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+     undefined4 param_6)
 
 {
   char cVar1;
@@ -71,29 +99,28 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
   char *pcVar12;
   char *pcVar13;
   byte bVar14;
-  int unaff_retaddr;
   
   bVar14 = 0;
-  puVar7 = &param_2;
-  if (unaff_retaddr != 1) {
+  puVar7 = &param_4;
+  if (param_2 != 1) {
     pcVar3 = (code *)swi(0x80);
     (*pcVar3)();
-    param_2 = 5;
+    param_4 = 5;
     pcVar3 = (code *)swi(0x80);
     iVar5 = (*pcVar3)();
-    puVar8 = &param_4;
+    puVar8 = &param_6;
     if (iVar5 < 0) {
       iVar5 = 0;
       do {
         do {
-          iVar6 = unaff_retaddr + iVar5;
+          iVar6 = param_2 + iVar5;
           iVar5 = iVar5 + 1;
-        } while (*(int *)(&param_2)[iVar6] != 0x454d4f48);
-      } while (*(char *)((int *)(&param_2)[iVar6] + (uint)bVar14 * -2 + 1) != '=');
-      param_3 = 0xc;
+        } while (*(int *)(&param_4)[iVar6] != 0x454d4f48);
+      } while (*(char *)((int *)(&param_4)[iVar6] + (uint)bVar14 * -2 + 1) != '=');
+      param_5 = 0xc;
       pcVar3 = (code *)swi(0x80);
       (*pcVar3)();
-      param_4 = 5;
+      param_6 = 5;
       pcVar3 = (code *)swi(0x80);
       iVar5 = (*pcVar3)();
       puVar8 = (undefined4 *)&stack0x00000018;
@@ -112,7 +139,7 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
     ppcVar9 = (char **)((int)puVar8 + 4);
     iVar5 = 0;
     do {
-      piVar2 = (int *)(&param_2)[unaff_retaddr + iVar5];
+      piVar2 = (int *)(&param_4)[param_2 + iVar5];
       if (piVar2 == (int *)0x0) goto LAB_0804804c;
       iVar5 = iVar5 + 1;
     } while ((*piVar2 != 0x48544150) ||

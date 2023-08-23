@@ -81,6 +81,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -196,6 +197,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -204,14 +216,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -271,7 +283,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -472,14 +484,13 @@ undefined8 main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -889,7 +900,7 @@ undefined8 inst_15_flags_var_0(void)
 long inst_16_values_var_0(void)
 
 {
-  return SUB168(ZEXT816(0x5afe1679c5efdc13) * ZEXT816(0xda34b06ef1aaf00a) >> 0x40,0) +
+  return SUB168(ZEXT816(0x5afe1679c5efdc13) * ZEXT816(0xda34b06ef1aaf00a),8) +
          SUB168(ZEXT816(0x5afe1679c5efdc13) * ZEXT816(0xda34b06ef1aaf00a),0) + -0x76fc03690320347c;
 }
 
@@ -1365,17 +1376,10 @@ undefined8 inst_38_flags_var_0(void)
 
 
 
-long inst_39_values_var_0(void)
+undefined8 inst_39_values_var_0(void)
 
 {
-  ushort uVar1;
-  ushort uVar2;
-  
-  uVar1 = 0;
-  for (uVar2 = 0xa0a5; (uVar2 & 0x8000) == 0; uVar2 = uVar2 << 1 | 1) {
-    uVar1 = uVar1 + 1;
-  }
-  return ((ulong)uVar1 | 0xe6df100b47a00000) + 0x1920eff4b8600000;
+  return 0;
 }
 
 
@@ -1383,26 +1387,15 @@ long inst_39_values_var_0(void)
 undefined8 inst_39_flags_var_0(void)
 
 {
-  ushort uVar1;
-  
-  for (uVar1 = 0x5e1b; (uVar1 & 0x8000) == 0; uVar1 = uVar1 << 1 | 1) {
-  }
   return 0;
 }
 
 
 
-long inst_40_values_var_0(void)
+undefined8 inst_40_values_var_0(void)
 
 {
-  uint uVar1;
-  uint uVar2;
-  
-  uVar1 = 0;
-  for (uVar2 = 0x69eb4bdc; (uVar2 & 0x80000000) == 0; uVar2 = uVar2 << 1 | 1) {
-    uVar1 = uVar1 + 1;
-  }
-  return (ulong)uVar1 - 1;
+  return 0;
 }
 
 
@@ -1410,26 +1403,15 @@ long inst_40_values_var_0(void)
 undefined8 inst_40_flags_var_0(void)
 
 {
-  uint uVar1;
-  
-  for (uVar1 = 0x381306f3; (uVar1 & 0x80000000) == 0; uVar1 = uVar1 << 1 | 1) {
-  }
   return 0;
 }
 
 
 
-long inst_41_values_var_0(void)
+undefined8 inst_41_values_var_0(void)
 
 {
-  long lVar1;
-  ulong uVar2;
-  
-  lVar1 = 0;
-  for (uVar2 = 0x5c4e22e4ab990592; (uVar2 & 0x8000000000000000) == 0; uVar2 = uVar2 << 1 | 1) {
-    lVar1 = lVar1 + 1;
-  }
-  return lVar1 + -1;
+  return 0;
 }
 
 
@@ -1437,10 +1419,6 @@ long inst_41_values_var_0(void)
 undefined8 inst_41_flags_var_0(void)
 
 {
-  ulong uVar1;
-  
-  for (uVar1 = 0x480cec9ce834b9c7; (uVar1 & 0x8000000000000000) == 0; uVar1 = uVar1 << 1 | 1) {
-  }
   return 0;
 }
 

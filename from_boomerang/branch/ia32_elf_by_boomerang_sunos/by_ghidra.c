@@ -114,6 +114,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -233,7 +234,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _cleanup(EVP_PKEY_CTX *ctx)
 
@@ -245,7 +246,7 @@ void _cleanup(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -267,7 +268,7 @@ void __fpstart(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -279,7 +280,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -291,7 +292,7 @@ int scanf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -303,7 +304,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -315,7 +316,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -327,7 +328,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -339,7 +340,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -351,11 +352,10 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-void __regparm3 _start(undefined4 param_1,__func *param_2)
+void processEntry _start(__func *param_1,EVP_PKEY_CTX *param_2)
 
 {
   int __status;
-  EVP_PKEY_CTX *unaff_retaddr;
   undefined *puVar1;
   undefined *puVar2;
   code *pcVar3;
@@ -365,14 +365,14 @@ void __regparm3 _start(undefined4 param_1,__func *param_2)
   uVar5 = 0;
   uVar4 = 0;
   atexit(_cleanup);
-  atexit(param_2);
+  atexit(param_1);
   pcVar3 = _fini;
   atexit(_fini);
-  environ = &stack0x00000008 + (int)unaff_retaddr * 4;
+  environ = &stack0x00000008 + (int)param_2 * 4;
   puVar1 = &stack0x00000004;
   puVar2 = environ;
-  _init(unaff_retaddr);
-  __fpstart(unaff_retaddr,puVar1,puVar2,pcVar3,param_2,uVar4,uVar5);
+  _init(param_2);
+  __fpstart(param_2,puVar1,puVar2,pcVar3,param_1,uVar4,uVar5);
   __status = main();
                     // WARNING: Subroutine does not return
   exit(__status);
@@ -764,8 +764,6 @@ byte * extract_cie_info(int param_1,char **param_2)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int * execute_cfa_insn(int *param_1,undefined4 *param_2,int param_3,int *param_4)
 
 {
@@ -1052,443 +1050,6 @@ void _fini(void)
 
 {
   gcc2_compiled_();
-  return;
-}
-
-
-
-// WARNING: Type propagation algorithm not settling
-
-void __regparm3 __DTOR_END__(char **param_1,int param_2,byte *param_3)
-
-{
-  undefined uVar1;
-  undefined2 uVar2;
-  uint uVar3;
-  uint uVar4;
-  byte bVar5;
-  byte bVar6;
-  byte bVar7;
-  char cVar8;
-  char *pcVar9;
-  char *pcVar10;
-  byte *pbVar11;
-  char **ppcVar12;
-  uint **ppuVar13;
-  undefined2 *puVar14;
-  int *piVar15;
-  uint *puVar16;
-  byte **ppbVar17;
-  char cVar18;
-  char cVar20;
-  byte bVar21;
-  uint *puVar19;
-  char **unaff_EBX;
-  uint *unaff_EBP;
-  byte *unaff_ESI;
-  char **unaff_EDI;
-  ushort in_CS;
-  undefined2 in_DS;
-  uint uStack4;
-  
-  bVar7 = (byte)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar7;
-  bVar5 = *(byte *)param_1;
-  *(byte *)param_1 = *(char *)param_1 + bVar7;
-  *(byte *)param_1 = *(char *)param_1 + bVar7 + CARRY1(bVar5,bVar7);
-  *(byte *)param_1 = *(char *)param_1 + bVar7;
-  *(byte *)param_1 = *(char *)param_1 + bVar7;
-  *(byte *)param_1 = *(char *)param_1 + bVar7;
-  *param_1 = *param_1 + (int)param_1;
-  *(int *)((int)(param_1 + 3) + (int)param_3) =
-       (int)(*(int *)((int)(param_1 + 3) + (int)param_3) + (int)unaff_EDI);
-  bVar5 = bVar7 + 4;
-  uVar3 = (uint)param_1 & 0xffffff00;
-  pcVar9 = (char *)(uVar3 | bVar5);
-  *param_3 = bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *pcVar9 = *pcVar9 + (char)unaff_EBX;
-  *pcVar9 = *pcVar9 + bVar5;
-  cVar18 = (char)param_3;
-  pcVar9[-0x77] = pcVar9[-0x77] + cVar18;
-  bVar6 = bVar7 + 0xc;
-  *param_3 = *param_3 + bVar6 + (0xf7 < bVar5);
-  *(char *)(uVar3 | bVar6) = *(char *)(uVar3 | bVar6) + bVar6;
-  bVar7 = bVar7 + 0xd;
-  pcVar9 = (char *)(uVar3 | bVar7);
-  *pcVar9 = *pcVar9 + bVar7;
-  *unaff_ESI = *unaff_ESI + cVar18;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar7;
-  *pcVar9 = *pcVar9 + bVar7;
-  pcVar9 = (char *)((uint)pcVar9 | 0x40405);
-  *pcVar9 = *pcVar9 + (char)pcVar9;
-  uVar3 = (uint)pcRam00000104;
-  pcRam00000104 = (char *)((uint)pcRam00000104 & 0xffffff00 | (uint)pcVar9 & 0xff);
-  pcVar10 = (char *)((uint)pcVar9 & 0xffffff00 | uVar3 & 0xff);
-  cVar8 = (char)(uVar3 & 0xff);
-  *(char *)((int)unaff_EBX + 0xb0406) = *(char *)((int)unaff_EBX + 0xb0406) + cVar8;
-  *pcVar10 = *pcVar10 + cVar8;
-  pcVar9 = (char *)(((uint)pcVar9 & 0xffffff00 | (uint)(byte)(cVar8 + 4)) + 0x2e000000);
-  *(byte *)((int)param_3 * 2) = *(byte *)((int)param_3 * 2) | (byte)pcVar9;
-  *pcVar9 = *pcVar9 + (byte)pcVar9;
-  cVar20 = (char)((uint)param_3 >> 8);
-  *unaff_ESI = *unaff_ESI + cVar20;
-  pcVar10 = (char *)(((uint)pcVar9 | 4) + 0x2e000000);
-  cVar8 = (char)pcVar10;
-  pcVar10[(int)param_3] = pcVar10[(int)param_3] + cVar8 + (0xd1ffffff < ((uint)pcVar9 | 4));
-  *pcVar10 = *pcVar10 + cVar8;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  param_3[param_2] = param_3[param_2] + cVar8;
-  *pcVar10 = *pcVar10 + cVar8;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 4;
-  uVar3 = (uint)pcVar10 & 0xffffff00;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 8;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0xc;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x10;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x14;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x18;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x1c;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x20;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x24;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[param_2] = param_3[param_2] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x28;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[(int)&stack0x00000000] = param_3[(int)&stack0x00000000] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar5 = cVar8 + 0x2c;
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  param_3[(int)&stack0x00000000] = param_3[(int)&stack0x00000000] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  bVar6 = cVar8 + 0x30;
-  ppcVar12 = (char **)(uVar3 | bVar6);
-  uVar4 = uStack4 & 0xffff0000;
-  uStack4 = uVar4 | in_CS;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  *unaff_ESI = *unaff_ESI + cVar20;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  bVar5 = *(byte *)ppcVar12;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6 + CARRY1(bVar5,bVar6);
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar6;
-  *ppcVar12 = *ppcVar12 + (int)ppcVar12;
-  *(int *)((int)(ppcVar12 + 3) + (int)param_3) =
-       (int)(*(int *)((int)(ppcVar12 + 3) + (int)param_3) + (int)unaff_EDI);
-  bVar6 = cVar8 + 0x34;
-  pbVar11 = (byte *)(uVar3 | bVar6);
-  *param_3 = bVar6;
-  *pbVar11 = *pbVar11 + bVar6;
-  bVar5 = *pbVar11;
-  *pbVar11 = *pbVar11 + bVar6;
-  *pbVar11 = (*pbVar11 - bVar6) - CARRY1(bVar5,bVar6);
-  *pbVar11 = *pbVar11 + bVar6;
-  bVar5 = param_3[uStack4];
-  uVar4 = uVar4 | in_CS & 0xffffff00;
-  pcVar9 = (char *)(uVar4 | bVar5);
-  *pcVar9 = *pcVar9 + bVar5;
-  bVar5 = bVar5 + 1;
-  pcVar10 = (char *)(uVar4 | bVar5);
-  *pcVar10 = *pcVar10 + bVar5;
-  *unaff_ESI = *unaff_ESI + cVar18;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar10 = *pcVar10 + bVar5;
-  pcVar10 = (char *)((uint)pcVar10 | 0x10405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  pcVar9 = *unaff_EBX;
-  *unaff_EBX = pcVar10;
-  bVar5 = (char)pcVar9 + 1;
-  ppuVar13 = (uint **)((uint)pcVar9 & 0xffffff00 | (uint)bVar5);
-  *(byte *)ppuVar13 = *(char *)ppuVar13 + bVar5;
-  unaff_ESI[0x2c000004] = unaff_ESI[0x2c000004] + bVar5;
-  *(byte *)ppuVar13 = *(char *)ppuVar13 + bVar5;
-  *(char *)ppuVar13 = *(char *)ppuVar13 + cVar18;
-  *(byte *)ppuVar13 = *(char *)ppuVar13 + bVar5;
-  bVar5 = param_3[(int)&stack0x00000000];
-  pcVar9 = (char *)((uint)register0x00000010 | (uint)bVar5);
-  puVar19 = *ppuVar13;
-  *pcVar9 = *pcVar9 + bVar5;
-  *(char *)((int)puVar19 + (int)pcVar9) = *(char *)((int)puVar19 + (int)pcVar9) + bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  bVar7 = (byte)puVar19;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  pcVar9 = (char *)((uint)pcVar9 | 0x40405);
-  *pcVar9 = *pcVar9 + (char)pcVar9;
-  ppcVar12 = *(char ***)(char **)((int)(ppuVar13 + 1) + (int)pcVar9);
-  *(char **)((int)(ppuVar13 + 1) + (int)pcVar9) = pcVar9;
-  *ppcVar12 = *ppcVar12 + (int)ppcVar12;
-  *(char *)ppcVar12 = *(char *)ppcVar12 + (char)ppcVar12;
-  bVar5 = bRam002c0000;
-  pcVar9 = (char *)((uint)ppcVar12 & 0xffffff00 | (uint)bRam002c0000);
-  cVar8 = *pcVar9 + bRam002c0000;
-  bRam002c0000 = (char)ppcVar12;
-  *pcVar9 = cVar8;
-  *pcVar9 = *pcVar9 + bVar5;
-  LOCK();
-  bVar5 = pcVar9[(int)puVar19];
-  pcVar10 = (char *)((uint)ppcVar12 & 0xffffff00 | (uint)bVar5);
-  *ppuVar13 = unaff_EBP;
-  *pcVar10 = *pcVar10 + bVar5;
-  *(char *)((int)puVar19 + (int)pcVar10) = *(char *)((int)puVar19 + (int)pcVar10) + bVar5;
-  *pcVar10 = *pcVar10 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar10 = *pcVar10 + bVar5;
-  pcVar10 = (char *)((uint)pcVar10 | 0x40405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  pcVar9 = pcRam00000104;
-  cVar8 = (char)pcRam00000104;
-  pcRam00000104 = pcVar10;
-  unaff_ESI[0x1c000006] = unaff_ESI[0x1c000006] + cVar8;
-  *pcVar9 = *pcVar9 + cVar8;
-  bVar21 = (byte)((uint)puVar19 >> 8);
-  pcVar9[0x48000000] = pcVar9[0x48000000] + bVar21;
-  pcVar9 = *(char **)(pcVar9 + (int)puVar19);
-  bVar5 = (byte)pcVar9;
-  *pcVar9 = *pcVar9 + bVar5;
-  *(char *)((int)puVar19 + (int)pcVar9) = *(char *)((int)puVar19 + (int)pcVar9) + bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  bVar5 = (char)((uint)pcVar9 | 0x5005) + bVar7;
-  uVar3 = ((uint)pcVar9 | 0x5005) & 0xffffff00;
-  pcVar9 = (char *)(uVar3 | bVar5);
-  *pcVar9 = *pcVar9 + bVar5;
-  pcVar9[-0x75] = pcVar9[-0x75] + (char)((uint)unaff_EBX >> 8);
-  puVar14 = (undefined2 *)(uVar3 | (byte)(bVar5 + 8));
-  uVar2 = *puVar14;
-  *(byte *)puVar14 = *(char *)puVar14 + bVar5 + 8;
-  bVar5 = bVar5 + 9;
-  pcVar10 = (char *)(uVar3 | bVar5);
-  *pcVar10 = *pcVar10 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar10 = *pcVar10 + bVar5;
-  pcVar10 = (char *)((uint)pcVar10 | 0x40405);
-  *pcVar10 = *pcVar10 + (char)pcVar10;
-  pcVar9 = pcRam00000104;
-  cVar8 = (char)pcRam00000104;
-  pcRam00000104 = pcVar10;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar8;
-  *pcVar9 = *pcVar9 + cVar8;
-  *unaff_EDI = *unaff_EDI + 4;
-  *pcVar9 = *pcVar9 + cVar8;
-  bVar5 = cVar8 + 4;
-  ppcVar12 = (char **)((uint)pcVar9 & 0xffffff00 | (uint)bVar5);
-  *ppcVar12 = *ppcVar12 + (int)ppcVar12;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar5;
-  *(byte *)((int)ppuVar13 + (int)ppcVar12) = *(byte *)((int)ppuVar13 + (int)ppcVar12) | bVar5;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  pcVar9 = (char *)((uint)(uint *)((uint)ppcVar12 | 4) | *(uint *)((uint)ppcVar12 | 4));
-  cVar8 = (char)pcVar9;
-  *pcVar9 = *pcVar9 + cVar8;
-  *pcVar9 = *pcVar9 + cVar8;
-  *pcVar9 = *pcVar9 + cVar8;
-  *(undefined *)((uint)pcVar9 & 0xffffff00) = *(undefined *)((uint)pcVar9 & 0xffffff00);
-  pcVar10 = (char *)((uint)pcVar9 & 0xffffff00 | 0xff);
-  *pcVar10 = *pcVar10 + -1;
-  *(byte *)((int)(ppuVar13 + 0x3a42) + (int)pcVar10) =
-       *(byte *)((int)(ppuVar13 + 0x3a42) + (int)pcVar10) | bVar7;
-  *(char *)((int)puVar19 + (int)pcVar10) = *(char *)((int)puVar19 + (int)pcVar10) + -1;
-  *pcVar10 = *pcVar10 + -1;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(undefined *)((int)unaff_EBP + 0x20402) = 0xff;
-  *pcVar10 = *pcVar10 + -1;
-  pcVar10 = (char *)((uint)pcVar9 & 0xffffff00 | 0x404ff);
-  *pcVar10 = *pcVar10 + -1;
-  pcVar9 = *unaff_EDI;
-  *unaff_EDI = pcVar10;
-  cVar8 = (char)pcVar9;
-  bVar5 = cVar8 + 1;
-  uVar3 = (uint)pcVar9 & 0xffffff00;
-  piVar15 = (int *)(uVar3 | bVar5);
-  *(byte *)piVar15 = *(char *)piVar15 + bVar5;
-  unaff_ESI[0x10408] = unaff_ESI[0x10408] + bVar5;
-  *(byte *)piVar15 = *(char *)piVar15 + bVar5;
-  *puVar19 = *puVar19 | 4;
-  *piVar15 = *piVar15 - (int)piVar15;
-  *(byte *)piVar15 = *(char *)piVar15 + bVar5;
-  puVar16 = (uint *)(uVar3 | (byte)(cVar8 + 5));
-  pcVar9 = (char *)((uint)puVar16 | *puVar16);
-  cVar8 = (char)pcVar9;
-  *pcVar9 = *pcVar9 + cVar8;
-  *(char *)((int)puVar19 + param_2) = *(char *)((int)puVar19 + param_2) + cVar8;
-  *pcVar9 = *pcVar9 + cVar8;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  puVar16 = (uint *)((uint)pcVar9 & 0xffffff00 | (uint)(byte)(cVar8 + 4));
-  pcVar9 = (char *)((uint)puVar16 | *puVar16);
-  bVar6 = (byte)pcVar9;
-  *pcVar9 = *pcVar9 + bVar6;
-  *(byte *)(puVar19 + 0xb800000) = *(char *)(puVar19 + 0xb800000) + bVar6;
-  bVar5 = bVar6 + 4;
-  uVar3 = (uint)pcVar9 & 0xffffff00;
-  piVar15 = (int *)(uVar3 | bVar5);
-  *piVar15 = (*piVar15 - (int)piVar15) - (uint)(0xfb < bVar6);
-  *(byte *)piVar15 = *(char *)piVar15 + bVar5;
-  *(char *)((int)ppuVar13 + (int)unaff_EBX) = *(char *)((int)ppuVar13 + (int)unaff_EBX) + bVar5;
-  *(byte *)piVar15 = *(char *)piVar15 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar6 = bVar6 + 8;
-  pcVar9 = (char *)(uVar3 | bVar6);
-  *pcVar9 = *pcVar9 + bVar6;
-  *(byte *)((int)ppuVar13 + (int)pcVar9) = *(byte *)((int)ppuVar13 + (int)pcVar9) | bVar6;
-  *pcVar9 = *pcVar9 + bVar6;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  ppbVar17 = (byte **)((uint)pcVar9 | 4);
-  *ppbVar17 = *ppbVar17 + (int)ppbVar17;
-  bVar5 = *(byte *)ppbVar17;
-  bVar6 = (byte)ppbVar17;
-  *(byte *)ppbVar17 = *(byte *)ppbVar17 + bVar6;
-  *(byte *)(param_2 + (int)ppbVar17) =
-       *(byte *)(param_2 + (int)ppbVar17) + bVar6 + CARRY1(bVar5,bVar6);
-  *(byte *)ppbVar17 = *(byte *)ppbVar17 + bVar6;
-  bVar5 = *unaff_ESI;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar5 = bVar6 + 4 + CARRY1(bVar5,bVar21);
-  pbVar11 = (byte *)(uVar3 | bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  unaff_ESI[(int)puVar19] = unaff_ESI[(int)puVar19] + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar5 = bVar5 + 4;
-  pcVar9 = (char *)(uVar3 | bVar5);
-  *pcVar9 = *pcVar9 + bVar5;
-  *(byte *)((int)ppuVar13 + (int)pcVar9) = *(byte *)((int)ppuVar13 + (int)pcVar9) | bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  ppbVar17 = (byte **)((uint)pcVar9 | 4);
-  *ppbVar17 = *ppbVar17 + (int)ppbVar17;
-  bVar5 = *(byte *)ppbVar17;
-  bVar6 = (byte)ppbVar17;
-  *(byte *)ppbVar17 = *(byte *)ppbVar17 + bVar6;
-  unaff_ESI[(int)ppbVar17] = unaff_ESI[(int)ppbVar17] + bVar6 + CARRY1(bVar5,bVar6);
-  *(byte *)ppbVar17 = *(byte *)ppbVar17 + bVar6;
-  bVar5 = *unaff_ESI;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  bVar5 = bVar6 + 4 + CARRY1(bVar5,bVar21);
-  pcVar9 = (char *)(uVar3 | bVar5);
-  *(undefined2 *)(ppuVar13 + -1) = in_DS;
-  *pcVar9 = *pcVar9 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar21;
-  *pcVar9 = *pcVar9 + bVar5;
-  pcVar9 = pcVar9 + 1;
-  *pcVar9 = *pcVar9 + (char)pcVar9;
-  bVar5 = (char)pcVar9 + (char)param_2;
-  piVar15 = (int *)((uint)pcVar9 & 0xffffff00 | (uint)bVar5);
-  *piVar15 = *piVar15 + (int)piVar15;
-  pcVar9 = (char *)((uint)pcVar9 & 0xffff0000 |
-                   (uint)CONCAT11((char)(((uint)pcVar9 & 0xffffff00) >> 8) +
-                                  (char)((uint)param_2 >> 8),bVar5));
-  *(undefined2 *)(pcVar9 + (int)puVar19) = uVar2;
-  *pcVar9 = *pcVar9 + bVar5;
-  *(char *)((int)puVar19 + (int)pcVar9) = *(char *)((int)puVar19 + (int)pcVar9) + bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  pcVar9 = (char *)((uint)pcVar9 | 0x40405);
-  *pcVar9 = *pcVar9 + (char)pcVar9;
-  pcVar10 = pcRam00000104;
-  cVar8 = (char)pcRam00000104;
-  pcRam00000104 = pcVar9;
-  unaff_ESI[0x10406] = unaff_ESI[0x10406] + cVar8;
-  *pcVar10 = *pcVar10 + cVar8;
-  pcVar9 = *unaff_EDI;
-  *unaff_EDI = *unaff_EDI + 4;
-  bVar5 = (char)(pcVar10 + (-0x2e000000 - (uint)((char *)0xfffffffb < pcVar9))) + 4;
-  pbVar11 = (byte *)((uint)(pcVar10 + (-0x2e000000 - (uint)((char *)0xfffffffb < pcVar9))) &
-                     0xffffff00 | (uint)bVar5);
-  *pbVar11 = *pbVar11 | bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  *pbVar11 = *pbVar11 + bVar5;
-  uVar1 = in((short)param_2);
-  *(undefined *)unaff_EDI = uVar1;
-  *pbVar11 = *pbVar11 + bVar5;
-  pbVar11[param_2] = pbVar11[param_2] + (char)param_2;
-  *pbVar11 = *pbVar11 + bVar5;
-  ppcVar12 = (char **)((int)ppuVar13 + (int)puVar19);
-  *ppcVar12 = (char *)((int)*ppcVar12 + (int)ppcVar12);
-  bVar5 = (byte)ppcVar12;
-  *(char *)((int)puVar19 + (int)ppcVar12) = *(char *)((int)puVar19 + (int)ppcVar12) + bVar5;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar5;
-  *unaff_ESI = *unaff_ESI + bVar7;
-  *(byte *)((int)unaff_EBP + 0x20402) = *(byte *)((int)unaff_EBP + 0x20402) | bVar5;
-  *(byte *)ppcVar12 = *(char *)ppcVar12 + bVar5;
-  pcVar9 = (char *)((uint)ppcVar12 | 0x40405);
-  *pcVar9 = *pcVar9 + (char)pcVar9;
-  *puVar19 = (uint)puVar19;
-  bVar5 = (char)pcVar9 + 1;
-  pcVar9 = (char *)((uint)pcVar9 & 0xffffff00 | (uint)bVar5);
-  *pcVar9 = *pcVar9 + bVar5;
-  unaff_ESI[0x1040a] = unaff_ESI[0x1040a] + bVar5;
-  *pcVar9 = *pcVar9 + bVar5;
-  *unaff_EBX = (char *)((uint)*unaff_EBX | 4);
   return;
 }
 

@@ -3,16 +3,22 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned long long    ulonglong;
 typedef unsigned char    undefined1;
-typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ulong sizetype;
+
+typedef ulong size_t;
+
+typedef long __off_t;
+
+typedef sqword __off64_t;
 
 typedef void _IO_lock_t;
 
@@ -20,18 +26,8 @@ typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef long __off64_t;
-
-typedef ulong size_t;
-
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -51,10 +47,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     void * __pad1;
@@ -70,10 +62,6 @@ struct _IO_marker {
     struct _IO_marker * _next;
     struct _IO_FILE * _sbuf;
     int _pos;
-    undefined field3_0x14;
-    undefined field4_0x15;
-    undefined field5_0x16;
-    undefined field6_0x17;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
@@ -222,6 +210,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -261,14 +250,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -354,7 +354,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -365,7 +365,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -381,10 +381,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -450,16 +449,12 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100818)
+// WARNING: Removing unreachable block (ram,0x00100824)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
@@ -469,6 +464,8 @@ void frame_dummy(void)
 uint test_1(uint x)
 
 {
+  uint x_local;
+  
   return x / 7;
 }
 
@@ -477,6 +474,7 @@ uint test_1(uint x)
 uint test_2(uint x)
 
 {
+  uint x_local;
   uint b;
   ulonglong a;
   
@@ -488,12 +486,15 @@ uint test_2(uint x)
 uint test_3(uint x)
 
 {
+  uint x_local;
   ulonglong a;
   
   return (uint)((ulong)x * 0x24924925 >> 0x20);
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -522,20 +523,6 @@ int main(void)
     i = i + 1000000;
   }
   return 0;
-}
-
-
-
-void FUN_001009dc(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x001009dc. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x1009dc);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

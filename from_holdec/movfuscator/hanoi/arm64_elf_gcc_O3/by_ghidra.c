@@ -4,6 +4,7 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -54,7 +55,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -68,6 +69,9 @@ typedef struct _IO_FILE FILE;
 typedef ulong sizetype;
 
 
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
+
+
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 
@@ -78,10 +82,6 @@ typedef struct tower tower, *Ptower;
 struct tower {
     int * x;
     int n;
-    undefined field2_0xc;
-    undefined field3_0xd;
-    undefined field4_0xe;
-    undefined field5_0xf;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
@@ -231,6 +231,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -278,14 +279,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -355,7 +367,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -377,7 +389,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -388,7 +400,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -401,7 +413,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long strtol(char *__nptr,char **__endptr,int __base)
 
@@ -414,7 +426,7 @@ long strtol(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fflush(FILE *__stream)
 
@@ -427,7 +439,7 @@ int fflush(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int usleep(__useconds_t __useconds)
 
@@ -440,7 +452,7 @@ int usleep(__useconds_t __useconds)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -454,7 +466,10 @@ int printf(char *__format,...)
 
 
 // WARNING: Heritage AFTER dead removal. Example location: r0x00112080 : 0x00100978
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 // WARNING: Restarted to delay deadcode elimination for space: ram
+// WARNING: Unknown calling convention
+// Local variable t:tower *[x0:8] conflicts with parameter, skipped.
 
 int main(int c,char **v)
 
@@ -496,14 +511,14 @@ LAB_00100964:
       if (iVar7 != 0) break;
       iVar7 = -1;
       usleep(100000);
-      fflush(stdout);
+      fflush(_stdout);
     }
     do {
       printf("%s",&DAT_00101078);
       iVar1 = iVar1 + -1;
     } while (iVar1 != 0);
     usleep(100000);
-    fflush(stdout);
+    fflush(_stdout);
   }
   move(height,0,2,1);
   text(1,0,1,"\n");
@@ -515,10 +530,9 @@ LAB_00100964:
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -584,21 +598,20 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100c08)
+// WARNING: Removing unreachable block (ram,0x00100c14)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
+// Local variable t:tower *[x0:8] conflicts with parameter, skipped.
 
 tower * new_tower(int cap)
 
@@ -611,6 +624,8 @@ tower * new_tower(int cap)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void text(int y,int i,int d,char *s)
 
@@ -627,6 +642,9 @@ void text(int y,int i,int d,char *s)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Unknown calling convention
 
 void add_disk(int i,int d)
 
@@ -647,11 +665,13 @@ void add_disk(int i,int d)
     } while (d != 0);
   }
   usleep(100000);
-  fflush(stdout);
+  fflush(_stdout);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int remove_disk(int i)
 
@@ -660,6 +680,7 @@ int remove_disk(int i)
   int iVar2;
   int iVar3;
   tower *ptVar4;
+  int d;
   
   ptVar4 = t[i];
   iVar1 = height + 1;
@@ -675,6 +696,8 @@ int remove_disk(int i)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void FUN_00100e34(int param_1,int param_2,int param_3,int param_4)
 
@@ -715,7 +738,7 @@ void FUN_00100e34(int param_1,int param_2,int param_3,int param_4)
         printf("%s",&DAT_00101078);
       }
       usleep(100000);
-      fflush(stdout);
+      fflush(_stdout);
       param_2 = param_4;
       param_4 = from;
     } while (param_1 != 0);
@@ -724,6 +747,9 @@ void FUN_00100e34(int param_1,int param_2,int param_3,int param_4)
 }
 
 
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Unknown calling convention
 
 void move(int n,int from,int to,int via)
 
@@ -735,6 +761,7 @@ void move(int n,int from,int to,int via)
   int from_00;
   int iVar5;
   tower *ptVar6;
+  int d;
   
   if (n != 0) {
     iVar1 = to * 2 + 1;
@@ -764,25 +791,11 @@ void move(int n,int from,int to,int via)
         printf("%s",&DAT_00101078);
       }
       usleep(100000);
-      fflush(stdout);
+      fflush(_stdout);
       from = via;
       via = from_00;
     } while (n != 0);
   }
-  return;
-}
-
-
-
-void FUN_00100fc4(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x00100fc4. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x100fc4);
-  (*UNRECOVERED_JUMPTABLE)();
   return;
 }
 

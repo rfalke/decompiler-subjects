@@ -2,9 +2,35 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,7 +60,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,int param_2)
 
 {
   code *pcVar1;
@@ -47,7 +73,6 @@ void entry(void)
   int iVar7;
   int iVar8;
   short *psVar9;
-  int unaff_retaddr;
   
   DAT_0804811e = 0;
   DAT_0804811a = 10;
@@ -55,7 +80,7 @@ void entry(void)
   iVar7 = 0;
   ppsVar6 = (short **)&stack0x00000008;
   ppsVar4 = (short **)&stack0x00000008;
-  if (unaff_retaddr == 1) goto LAB_080480ba;
+  if (param_2 == 1) goto LAB_080480ba;
 LAB_0804808d:
   do {
     while( true ) {

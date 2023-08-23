@@ -257,14 +257,14 @@ void entry(void)
 {
   int iVar1;
   long *plVar2;
-  int in_stack_00000000;
+  int unaff_retaddr;
   
-  for (plVar2 = (long *)(&stack0x00000008 + (uint)((in_stack_00000000 + 1) * 8)); *plVar2 != 0;
+  for (plVar2 = (long *)(&stack0x00000008 + (uint)((unaff_retaddr + 1) * 8)); *plVar2 != 0;
       plVar2 = plVar2 + 1) {
   }
   iVar1 = _main();
                     // WARNING: Subroutine does not return
-  __symbol_stub1::_exit(iVar1);
+  _exit(iVar1);
 }
 
 
@@ -283,11 +283,11 @@ void _dumpline(byte *param_1,undefined8 param_2,int param_3)
   int iVar9;
   int iVar10;
   undefined4 local_98 [2];
-  char acStack143 [79];
+  char acStack_8f [79];
   long local_40;
   
-  local_40 = *(long *)__nl_symbol_ptr::___stack_chk_guard;
-  __symbol_stub1::___sprintf_chk(local_98,0,0x50,"%08lX:");
+  local_40 = *(long *)PTR____stack_chk_guard_100001010;
+  ___sprintf_chk(local_98,0,0x50,"%08lX:",param_2);
   iVar5 = 0x10;
   if (param_3 < 0x11) {
     iVar5 = param_3;
@@ -296,7 +296,7 @@ void _dumpline(byte *param_1,undefined8 param_2,int param_3)
   if (iVar5 < 1) {
 LAB_100000ba4:
     do {
-      __symbol_stub1::___strcat_chk(local_98,"   ",0x50);
+      ___strcat_chk(local_98,"   ",0x50);
       bVar2 = iVar9 < 0x10;
       iVar9 = iVar9 + 1;
     } while (bVar2);
@@ -319,7 +319,7 @@ LAB_100000ba4:
     iVar9 = 0;
     pbVar6 = param_1;
     do {
-      __symbol_stub1::_sprintf(acStack143 + iVar9," %02lX",(ulong)*pbVar6);
+      _sprintf(acStack_8f + iVar9," %02lX",(ulong)*pbVar6);
       iVar10 = iVar10 + 1;
       pbVar6 = pbVar6 + 1;
       iVar9 = iVar9 + 3;
@@ -362,12 +362,12 @@ LAB_100000c0a:
   } while (iVar5 < 0x10);
 LAB_100000c99:
   *(undefined2 *)((long)local_98 + (long)iVar7 + (long)iVar10) = 0x7c;
-  __symbol_stub1::_puts((char *)local_98);
-  if (local_40 == *(long *)__nl_symbol_ptr::___stack_chk_guard) {
+  _puts((char *)local_98);
+  if (local_40 == *(long *)PTR____stack_chk_guard_100001010) {
     return;
   }
                     // WARNING: Subroutine does not return
-  __symbol_stub1::___stack_chk_fail();
+  ___stack_chk_fail();
 }
 
 
@@ -385,37 +385,37 @@ undefined8 _hexdump(char *param_1)
   undefined local_48 [24];
   long local_30;
   
-  local_30 = *(long *)__nl_symbol_ptr::___stack_chk_guard;
-  iVar1 = __symbol_stub1::_stat_INODE64(param_1,local_d8,0);
+  local_30 = *(long *)PTR____stack_chk_guard_100001010;
+  iVar1 = _stat_INODE64(param_1,local_d8,0);
   if (iVar1 == 0) {
-    pFVar3 = __symbol_stub1::_fopen(param_1,"rb");
+    pFVar3 = _fopen(param_1,"rb");
     if (pFVar3 == (FILE *)0x0) {
-      __symbol_stub1::_perror(param_1);
+      _perror(param_1);
       uVar2 = 1;
     }
     else {
       uVar5 = 0;
       if (local_78 != 0) {
         do {
-          sVar4 = __symbol_stub1::_fread(local_48,1,0x10,pFVar3);
+          sVar4 = _fread(local_48,1,0x10,pFVar3);
           if ((int)sVar4 == 0) break;
           _dumpline(local_48,uVar5,sVar4 & 0xffffffff);
           uVar5 = uVar5 + (long)(int)sVar4;
         } while (uVar5 < local_78);
       }
-      __symbol_stub1::_fclose(pFVar3);
+      _fclose(pFVar3);
       uVar2 = 0;
     }
   }
   else {
-    __symbol_stub1::_perror(param_1);
+    _perror(param_1);
     uVar2 = 1;
   }
-  if (local_30 == *(long *)__nl_symbol_ptr::___stack_chk_guard) {
+  if (local_30 == *(long *)PTR____stack_chk_guard_100001010) {
     return uVar2;
   }
                     // WARNING: Subroutine does not return
-  __symbol_stub1::___stack_chk_fail();
+  ___stack_chk_fail();
 }
 
 
@@ -443,278 +443,124 @@ int _main(int param_1,long param_2)
 
 
 
-void __symbol_stub1::___sprintf_chk(void)
+void ___sprintf_chk(void)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e08. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::___sprintf_chk)();
+  (*(code *)PTR____sprintf_chk_100001018)();
   return;
 }
 
 
 
-void __symbol_stub1::___stack_chk_fail(void)
+void ___stack_chk_fail(void)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e0e. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::___stack_chk_fail)();
+  (*(code *)PTR____stack_chk_fail_100001020)();
   return;
 }
 
 
 
-void __symbol_stub1::___strcat_chk(void)
+void ___strcat_chk(void)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e14. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::___strcat_chk)();
+  (*(code *)PTR____strcat_chk_100001028)();
   return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-void __symbol_stub1::_exit(int param_1)
+void _exit(int param_1)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e1a. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::_exit)();
+  (*(code *)PTR__exit_100001030)();
   return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __symbol_stub1::_fclose(FILE *param_1)
+int _fclose(FILE *param_1)
 
 {
   int iVar1;
   
-                    // WARNING: Could not recover jumptable at 0x000100000e20. Too many branches
-                    // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)__la_symbol_ptr::_fclose)();
+  iVar1 = (*(code *)PTR__fclose_100001038)();
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-FILE * __symbol_stub1::_fopen(char *param_1,char *param_2)
+FILE * _fopen(char *param_1,char *param_2)
 
 {
   FILE *pFVar1;
   
-                    // WARNING: Could not recover jumptable at 0x000100000e26. Too many branches
-                    // WARNING: Treating indirect jump as call
-  pFVar1 = (FILE *)(*(code *)__la_symbol_ptr::_fopen)();
+  pFVar1 = (FILE *)(*(code *)PTR__fopen_100001040)();
   return pFVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-size_t __symbol_stub1::_fread(void *param_1,size_t param_2,size_t param_3,FILE *param_4)
+size_t _fread(void *param_1,size_t param_2,size_t param_3,FILE *param_4)
 
 {
   size_t sVar1;
   
-                    // WARNING: Could not recover jumptable at 0x000100000e2c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  sVar1 = (*(code *)__la_symbol_ptr::_fread)();
+  sVar1 = (*(code *)PTR__fread_100001048)();
   return sVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-void __symbol_stub1::_perror(char *param_1)
+void _perror(char *param_1)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e32. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::_perror)();
+  (*(code *)PTR__perror_100001050)();
   return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __symbol_stub1::_puts(char *param_1)
+int _puts(char *param_1)
 
 {
   int iVar1;
   
-                    // WARNING: Could not recover jumptable at 0x000100000e38. Too many branches
-                    // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)__la_symbol_ptr::_puts)();
+  iVar1 = (*(code *)PTR__puts_100001058)();
   return iVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
-int __symbol_stub1::_sprintf(char *param_1,char *param_2,...)
+int _sprintf(char *param_1,char *param_2,...)
 
 {
   int iVar1;
   
-                    // WARNING: Could not recover jumptable at 0x000100000e3e. Too many branches
-                    // WARNING: Treating indirect jump as call
-  iVar1 = (*(code *)__la_symbol_ptr::_sprintf)();
+  iVar1 = (*(code *)PTR__sprintf_100001060)();
   return iVar1;
 }
 
 
 
-void __symbol_stub1::_stat_INODE64(void)
+void _stat_INODE64(void)
 
 {
-                    // WARNING: Could not recover jumptable at 0x000100000e44. Too many branches
-                    // WARNING: Treating indirect jump as call
-  (*(code *)__la_symbol_ptr::_stat_INODE64)();
-  return;
-}
-
-
-
-void stub_helpers(void)
-
-{
-  (*(code *)PTR_dyld_stub_binder_100001000)();
-  return;
-}
-
-
-
-void __stub_helper::___sprintf_chk(void)
-
-{
-  stub_helpers();
-  return;
-}
-
-
-
-void __stub_helper::___stack_chk_fail(void)
-
-{
-  stub_helpers();
-  return;
-}
-
-
-
-void __stub_helper::___strcat_chk(void)
-
-{
-  stub_helpers();
-  return;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-void __stub_helper::_exit(int param_1)
-
-{
-  stub_helpers();
-  return;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-int __stub_helper::_fclose(FILE *param_1)
-
-{
-  int iVar1;
-  
-  iVar1 = stub_helpers();
-  return iVar1;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-FILE * __stub_helper::_fopen(char *param_1,char *param_2)
-
-{
-  FILE *pFVar1;
-  
-  pFVar1 = (FILE *)stub_helpers();
-  return pFVar1;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-size_t __stub_helper::_fread(void *param_1,size_t param_2,size_t param_3,FILE *param_4)
-
-{
-  size_t sVar1;
-  
-  sVar1 = stub_helpers();
-  return sVar1;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-void __stub_helper::_perror(char *param_1)
-
-{
-  stub_helpers();
-  return;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-int __stub_helper::_puts(char *param_1)
-
-{
-  int iVar1;
-  
-  iVar1 = stub_helpers();
-  return iVar1;
-}
-
-
-
-// WARNING: Unknown calling convention yet parameter storage is locked
-
-int __stub_helper::_sprintf(char *param_1,char *param_2,...)
-
-{
-  int iVar1;
-  
-  iVar1 = stub_helpers();
-  return iVar1;
-}
-
-
-
-void __stub_helper::_stat_INODE64(void)
-
-{
-  stub_helpers();
+  (*(code *)PTR__stat_INODE64_100001068)();
   return;
 }
 

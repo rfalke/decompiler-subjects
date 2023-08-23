@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -33,7 +60,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   char cVar1;
@@ -243,18 +270,12 @@ undefined8 __regparm3 FUN_0804819a(undefined4 param_1,undefined4 param_2)
     puVar8 = puVar8 + 1;
   }
   uVar6 = 0;
-  uVar5 = DAT_08048313;
-  uVar3 = DAT_0804831b;
-  uVar2 = DAT_0804831f;
   do {
-    DAT_0804831f = uVar2;
-    DAT_0804831b = uVar3;
-    DAT_08048313 = uVar5;
     uVar5 = uVar6 & 0xf;
     if (0xf < uVar6) {
-      uVar3 = (&DAT_08048327)[uVar5 + 0xd & 0xf] ^ (&DAT_08048327)[uVar5 + 8 & 0xf] ^
+      uVar2 = (&DAT_08048327)[uVar5 + 0xd & 0xf] ^ (&DAT_08048327)[uVar5 + 8 & 0xf] ^
               (&DAT_08048327)[uVar5 + 2 & 0xf] ^ (&DAT_08048327)[uVar5];
-      (&DAT_08048327)[uVar5] = uVar3 << 1 | (uint)((int)uVar3 < 0);
+      (&DAT_08048327)[uVar5] = uVar2 << 1 | (uint)((int)uVar2 < 0);
     }
     if (uVar6 < 0x3c) {
       if (uVar6 < 0x28) {
@@ -272,23 +293,22 @@ undefined8 __regparm3 FUN_0804819a(undefined4 param_1,undefined4 param_2)
     else {
       uVar9 = FUN_08048157();
     }
-    DAT_08048323 = DAT_0804831f;
+    uVar1 = DAT_0804831f;
     uVar2 = DAT_0804831b;
-    uVar1 = DAT_08048313;
-    uVar5 = (int)uVar9 + (int)((ulonglong)uVar9 >> 0x20);
-    uVar3 = DAT_08048317 << 0x1e | DAT_08048317 >> 2;
+    uVar5 = DAT_08048313;
+    uVar3 = (int)uVar9 + (int)((ulonglong)uVar9 >> 0x20);
+    DAT_08048323 = DAT_0804831f;
+    DAT_0804831f = DAT_0804831b;
+    DAT_0804831b = DAT_08048317 << 0x1e | DAT_08048317 >> 2;
     DAT_08048317 = DAT_08048313;
+    DAT_08048313 = uVar3;
     uVar6 = uVar6 + 1;
   } while (uVar6 < 0x50);
-  DAT_080482f7 = DAT_080482f7 + uVar5;
-  DAT_080482fb = DAT_080482fb + DAT_08048313;
-  DAT_080482ff = DAT_080482ff + uVar3;
-  DAT_08048303 = DAT_08048303 + DAT_0804831b;
-  DAT_08048307 = DAT_08048307 + DAT_0804831f;
-  DAT_08048313 = uVar5;
-  DAT_08048317 = uVar1;
-  DAT_0804831b = uVar3;
-  DAT_0804831f = uVar2;
+  DAT_080482f7 = DAT_080482f7 + uVar3;
+  DAT_080482fb = DAT_080482fb + uVar5;
+  DAT_080482ff = DAT_080482ff + DAT_0804831b;
+  DAT_08048303 = DAT_08048303 + uVar2;
+  DAT_08048307 = DAT_08048307 + uVar1;
   return CONCAT44(param_2,param_1);
 }
 

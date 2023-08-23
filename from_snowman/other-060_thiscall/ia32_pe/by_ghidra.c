@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    bool;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
@@ -12,6 +13,7 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef short    wchar_t;
 typedef unsigned short    word;
 typedef struct _s_HandlerType _s_HandlerType, *P_s_HandlerType;
@@ -33,6 +35,13 @@ struct _s_HandlerType {
     struct TypeDescriptor * pType;
     ptrdiff_t dispCatchObj;
     void * addressOfHandler;
+};
+
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
 };
 
 typedef struct _s_UnwindMapEntry _s_UnwindMapEntry, *P_s_UnwindMapEntry;
@@ -265,7 +274,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[16];
+    char pdbpath[16];
 };
 
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
@@ -487,12 +496,12 @@ void thunk_FUN_00401110(void)
 
 {
   int *this;
-  FuncDef0 *pFVar1;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *unaff_EBP;
   
-  pFVar1 = endl_exref;
   this = thunk_FUN_00401190((int *)cout_exref,"MyClass::~MyClass()");
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-            ((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+            ((basic_ostream<char,struct_std::char_traits<char>_> *)this,unaff_EBP);
   return;
 }
 
@@ -526,15 +535,16 @@ bool __cdecl thunk_FUN_00401550(int *param_1,int *param_2)
 void __thiscall thunk_FUN_00401150(void *this,int param_1)
 
 {
-  basic_ostream_char_struct_std__char_traits_char___ *this_00;
-  FuncDef0 *pFVar1;
+  basic_ostream<char,struct_std::char_traits<char>_> *this_00;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *p_Var1;
   
                     // WARNING: Load size is inaccurate
-  pFVar1 = endl_exref;
-  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-                      ((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
+  p_Var1 = endl_exref;
+  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+                      ((basic_ostream<char,struct_std::char_traits<char>_> *)cout_exref,
                        *this + param_1);
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__(this_00,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<(this_00,p_Var1);
   return;
 }
 
@@ -554,9 +564,9 @@ void __fastcall thunk_FUN_00401620(int **param_1)
   bool bVar1;
   
   bVar1 = std::uncaught_exception();
-  if (bVar1 == false) {
+  if (!bVar1) {
     std::basic_ostream<char,struct_std::char_traits<char>_>::_Osfx
-              ((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
+              ((basic_ostream<char,struct_std::char_traits<char>_> *)*param_1);
   }
   thunk_FUN_00401700(param_1);
   return;
@@ -565,122 +575,128 @@ void __fastcall thunk_FUN_00401620(int **param_1)
 
 
 // WARNING: Removing unreachable block (ram,0x004012c7)
-// WARNING: Removing unreachable block (ram,0x0040121d)
-// WARNING: Removing unreachable block (ram,0x004011f6)
 // WARNING: Removing unreachable block (ram,0x00401398)
-// WARNING: Could not reconcile some variable overlaps
 
-int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
+int * thunk_FUN_00401190(int *param_1,char *param_2)
 
 {
   char cVar1;
   bool bVar2;
   int iVar3;
   uint uVar4;
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar5;
-  int **in_FS_OFFSET;
-  __int64 _Var6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  uint uStack120;
-  int iStack68;
-  int iStack64;
-  int iStack60;
-  int iStack56;
-  int *apiStack52 [2];
-  undefined8 uStack44;
-  undefined4 uStack36;
-  undefined4 uStack32;
-  uint uStack24;
-  uint *puStack20;
-  int *piStack16;
-  undefined *puStack12;
-  undefined4 uStack8;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar5;
+  int *piVar6;
+  __int64 _Var7;
+  uint uStack_78;
+  uint uStack_68;
+  int iStack_64;
+  uint uStack_58;
+  int iStack_54;
+  int iStack_50;
+  int iStack_4c;
+  int iStack_44;
+  int iStack_40;
+  int iStack_3c;
+  int iStack_38;
+  int *apiStack_34 [2];
+  undefined8 uStack_2c;
+  uint uStack_24;
+  int iStack_20;
+  uint uStack_18;
+  uint *puStack_14;
+  void *pvStack_10;
+  undefined *puStack_c;
+  undefined4 uStack_8;
   
-  uStack8 = 0xffffffff;
-  puStack12 = &LAB_004032f0;
-  piStack16 = *in_FS_OFFSET;
-  uStack120 = DAT_00407000 ^ (uint)&stack0xfffffffc;
-  puStack20 = &uStack120;
-  *in_FS_OFFSET = (int *)&piStack16;
-  uStack24 = 0;
-  uStack36 = thunk_FUN_00401530(param_2);
-  uStack32 = 0;
-  _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if ((_Var6 < 1) ||
-     (_Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4))),
-     _Var6 <= CONCAT44(uStack32,uStack36))) {
-    uStack44 = 0;
+  uStack_8 = 0xffffffff;
+  puStack_c = &LAB_004032f0;
+  pvStack_10 = ExceptionList;
+  uStack_78 = DAT_00407000 ^ (uint)&stack0xfffffffc;
+  puStack_14 = &uStack_78;
+  ExceptionList = &pvStack_10;
+  uStack_18 = 0;
+  uStack_24 = thunk_FUN_00401530(param_2);
+  iStack_20 = 0;
+  _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  iStack_4c = (int)((ulonglong)_Var7 >> 0x20);
+  if ((-1 < _Var7) && ((0 < iStack_4c || (iStack_50 = (int)_Var7, iStack_50 != 0)))) {
+    _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    iStack_54 = (int)((ulonglong)_Var7 >> 0x20);
+    if ((iStack_20 <= iStack_54) &&
+       ((iStack_20 < iStack_54 || (uStack_58 = (uint)_Var7, uStack_24 < uStack_58)))) {
+      _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+      uStack_2c = _Var7 - CONCAT44(iStack_20,uStack_24);
+      goto LAB_00401252;
+    }
   }
-  else {
-    _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    uStack44 = _Var6 - CONCAT44(uStack32,uStack36);
-  }
-  thunk_FUN_00401580(apiStack52,param_1);
-  iVar3 = thunk_FUN_00401660((int)apiStack52);
+  uStack_2c = 0;
+LAB_00401252:
+  thunk_FUN_00401580(apiStack_34,param_1);
+  iVar3 = thunk_FUN_00401660((int)apiStack_34);
   if (iVar3 == -1) {
-    uStack24 = uStack24 | 4;
+    uStack_18 = uStack_18 | 4;
+    std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+              ((basic_ios<char,struct_std::char_traits<char>_> *)
+               ((int)param_1 + *(int *)(*param_1 + 4)),uStack_18,false);
+    thunk_FUN_00401620(apiStack_34);
+    ExceptionList = pvStack_10;
+    return param_1;
   }
-  else {
-    uStack8 = 0;
-    uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if ((uVar4 & 0x1c0) != 0x40) {
-      while (0 < uStack44) {
-        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
-                          ((basic_ios_char_struct_std__char_traits_char___ *)
-                           ((int)param_1 + *(int *)(*param_1 + 4)));
-        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                           ((basic_ios_char_struct_std__char_traits_char___ *)
-                            ((int)param_1 + *(int *)(*param_1 + 4)));
-        iStack56 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
-        iStack60 = thunk_FUN_00401570();
-        bVar2 = thunk_FUN_00401550(&iStack60,&iStack56);
-        if (bVar2 != false) {
-          uStack24 = uStack24 | 4;
-          break;
-        }
-        uStack44 = CONCAT44(uStack44._4_4_ - (uint)((int)uStack44 == 0),(int)uStack44 + -1);
-      }
-    }
-    if (uStack24 == 0) {
-      uVar7 = uStack36;
-      uVar8 = uStack32;
+  uStack_8 = 0;
+  uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  if ((uVar4 & 0x1c0) != 0x40) {
+    while (0 < uStack_2c) {
+      cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                        ((basic_ios<char,struct_std::char_traits<char>_> *)
+                         ((int)param_1 + *(int *)(*param_1 + 4)));
       pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
-      _Var6 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
-                        (pbVar5,param_2,CONCAT44(uVar8,uVar7));
-      if (_Var6 != CONCAT44(uStack32,uStack36)) {
-        uStack24 = uStack24 | 4;
+      iStack_38 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
+      iStack_3c = thunk_FUN_00401570();
+      bVar2 = thunk_FUN_00401550(&iStack_3c,&iStack_38);
+      if (bVar2) {
+        uStack_18 = uStack_18 | 4;
+        break;
       }
+      uStack_2c = CONCAT44(uStack_2c._4_4_ - (uint)((int)uStack_2c == 0),(int)uStack_2c + -1);
     }
-    if (uStack24 == 0) {
-      while (0 < uStack44) {
-        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
-                          ((basic_ios_char_struct_std__char_traits_char___ *)
-                           ((int)param_1 + *(int *)(*param_1 + 4)));
-        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                           ((basic_ios_char_struct_std__char_traits_char___ *)
-                            ((int)param_1 + *(int *)(*param_1 + 4)));
-        iStack64 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
-        iStack68 = thunk_FUN_00401570();
-        bVar2 = thunk_FUN_00401550(&iStack68,&iStack64);
-        if (bVar2 != false) {
-          uStack24 = uStack24 | 4;
-          break;
-        }
-        uStack44 = CONCAT44(uStack44._4_4_ - (uint)((int)uStack44 == 0),(int)uStack44 + -1);
-      }
-    }
-    std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
-    uStack8 = 0xffffffff;
   }
-  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
-            ((basic_ios_char_struct_std__char_traits_char___ *)
-             ((int)param_1 + *(int *)(*param_1 + 4)),uStack24,false);
-  thunk_FUN_00401620(apiStack52);
-  *in_FS_OFFSET = piStack16;
-  return param_1;
+  if (uStack_18 == 0) {
+    uVar4 = uStack_24;
+    iVar3 = iStack_20;
+    pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                       ((basic_ios<char,struct_std::char_traits<char>_> *)
+                        ((int)param_1 + *(int *)(*param_1 + 4)));
+    _Var7 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                      (pbVar5,param_2,CONCAT44(iVar3,uVar4));
+    uStack_68 = (uint)_Var7;
+    if ((uStack_68 != uStack_24) ||
+       (iStack_64 = (int)((ulonglong)_Var7 >> 0x20), iStack_64 != iStack_20)) {
+      uStack_18 = uStack_18 | 4;
+    }
+  }
+  if (uStack_18 == 0) {
+    while (0 < uStack_2c) {
+      cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                        ((basic_ios<char,struct_std::char_traits<char>_> *)
+                         ((int)param_1 + *(int *)(*param_1 + 4)));
+      pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      iStack_40 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
+      iStack_44 = thunk_FUN_00401570();
+      bVar2 = thunk_FUN_00401550(&iStack_44,&iStack_40);
+      if (bVar2) {
+        uStack_18 = uStack_18 | 4;
+        break;
+      }
+      uStack_2c = CONCAT44(uStack_2c._4_4_ - (uint)((int)uStack_2c == 0),(int)uStack_2c + -1);
+    }
+  }
+  std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
+  piVar6 = (int *)FUN_00401434();
+  return piVar6;
 }
 
 
@@ -688,15 +704,15 @@ int * __cdecl thunk_FUN_00401190(int *param_1,char *param_2)
 void __fastcall thunk_FUN_00401700(int **param_1)
 
 {
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar1;
   int *piVar2;
   
   pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                     ((basic_ios<char,struct_std::char_traits<char>_> *)
                       ((int)*param_1 + *(int *)(**param_1 + 4)));
-  if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
+  if (pbVar1 != (basic_streambuf<char,struct_std::char_traits<char>_> *)0x0) {
     piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                              ((basic_ios<char,struct_std::char_traits<char>_> *)
                                ((int)*param_1 + *(int *)(**param_1 + 4)));
     (**(code **)(*piVar2 + 8))();
   }
@@ -708,28 +724,28 @@ void __fastcall thunk_FUN_00401700(int **param_1)
 undefined4 thunk_FUN_00401090(void)
 
 {
-  undefined auStack8 [4];
+  undefined auStack_8 [4];
   
-  thunk_FUN_004010c0(auStack8,10);
-  thunk_FUN_00401150(auStack8,0x14);
+  thunk_FUN_004010c0(auStack_8,10);
+  thunk_FUN_00401150(auStack_8,0x14);
   thunk_FUN_00401110();
   return 0;
 }
 
 
 
-undefined4 * __thiscall thunk_FUN_004010c0(void *this,undefined4 param_1)
+undefined4 __thiscall thunk_FUN_004010c0(void *this,undefined4 param_1)
 
 {
   int *this_00;
-  FuncDef0 *pFVar1;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *unaff_EBP;
   
   *(undefined4 *)this = param_1;
-  pFVar1 = endl_exref;
   this_00 = thunk_FUN_00401190((int *)cout_exref,"MyClass::MyClass()");
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-            ((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
-  return (undefined4 *)this;
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+            ((basic_ostream<char,struct_std::char_traits<char>_> *)this_00,unaff_EBP);
+  return 0x4010f1;
 }
 
 
@@ -738,17 +754,17 @@ void * __thiscall thunk_FUN_00401580(void *this,int *param_1)
 
 {
   bool bVar1;
-  basic_ostream_char_struct_std__char_traits_char___ *pbVar2;
+  basic_ostream<char,struct_std::char_traits<char>_> *pbVar2;
   
   thunk_FUN_00401690(this,param_1);
   bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if (bVar1 != false) {
+  if (bVar1) {
     pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
-                       ((basic_ios_char_struct_std__char_traits_char___ *)
+                       ((basic_ios<char,struct_std::char_traits<char>_> *)
                         ((int)param_1 + *(int *)(*param_1 + 4)));
-    if (pbVar2 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
+    if (pbVar2 != (basic_ostream<char,struct_std::char_traits<char>_> *)0x0) {
       pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
-                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
       std::basic_ostream<char,struct_std::char_traits<char>_>::flush(pbVar2);
     }
@@ -763,20 +779,20 @@ void * __thiscall thunk_FUN_00401580(void *this,int *param_1)
 int ** __thiscall thunk_FUN_00401690(void *this,int *param_1)
 
 {
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar1;
   int *piVar2;
   
   *(int **)this = param_1;
                     // WARNING: Load size is inaccurate
                     // WARNING: Load size is inaccurate
   pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                     ((basic_ios<char,struct_std::char_traits<char>_> *)
                       (*this + *(int *)(**this + 4)));
-  if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
+  if (pbVar1 != (basic_streambuf<char,struct_std::char_traits<char>_> *)0x0) {
                     // WARNING: Load size is inaccurate
                     // WARNING: Load size is inaccurate
     piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                              ((basic_ios<char,struct_std::char_traits<char>_> *)
                                (*this + *(int *)(**this + 4)));
     (**(code **)(*piVar2 + 4))();
   }
@@ -798,18 +814,18 @@ undefined4 FUN_00401090(void)
 
 
 
-undefined4 * __thiscall FUN_004010c0(void *this,undefined4 param_1)
+undefined4 __thiscall FUN_004010c0(void *this,undefined4 param_1)
 
 {
   int *this_00;
-  FuncDef0 *pFVar1;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *unaff_EBP;
   
   *(undefined4 *)this = param_1;
-  pFVar1 = endl_exref;
   this_00 = thunk_FUN_00401190((int *)cout_exref,"MyClass::MyClass()");
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-            ((basic_ostream_char_struct_std__char_traits_char___ *)this_00,pFVar1);
-  return (undefined4 *)this;
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+            ((basic_ostream<char,struct_std::char_traits<char>_> *)this_00,unaff_EBP);
+  return 0x4010f1;
 }
 
 
@@ -818,12 +834,12 @@ void FUN_00401110(void)
 
 {
   int *this;
-  FuncDef0 *pFVar1;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *unaff_EBP;
   
-  pFVar1 = endl_exref;
   this = thunk_FUN_00401190((int *)cout_exref,"MyClass::~MyClass()");
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-            ((basic_ostream_char_struct_std__char_traits_char___ *)this,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+            ((basic_ostream<char,struct_std::char_traits<char>_> *)this,unaff_EBP);
   return;
 }
 
@@ -832,137 +848,144 @@ void FUN_00401110(void)
 void __thiscall FUN_00401150(void *this,int param_1)
 
 {
-  basic_ostream_char_struct_std__char_traits_char___ *this_00;
-  FuncDef0 *pFVar1;
+  basic_ostream<char,struct_std::char_traits<char>_> *this_00;
+  _func_basic_ostream<char,struct_std::char_traits<char>_>_ptr_basic_ostream<char,struct_std::char_traits<char>_>_ptr
+  *p_Var1;
   
                     // WARNING: Load size is inaccurate
-  pFVar1 = endl_exref;
-  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator__
-                      ((basic_ostream_char_struct_std__char_traits_char___ *)cout_exref,
+  p_Var1 = endl_exref;
+  this_00 = std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<
+                      ((basic_ostream<char,struct_std::char_traits<char>_> *)cout_exref,
                        *this + param_1);
-  std::basic_ostream<char,struct_std::char_traits<char>_>::operator__(this_00,pFVar1);
+  std::basic_ostream<char,struct_std::char_traits<char>_>::operator<<(this_00,p_Var1);
   return;
 }
 
 
 
 // WARNING: Removing unreachable block (ram,0x004012c7)
-// WARNING: Removing unreachable block (ram,0x0040121d)
-// WARNING: Removing unreachable block (ram,0x004011f6)
 // WARNING: Removing unreachable block (ram,0x00401398)
-// WARNING: Could not reconcile some variable overlaps
 
-int * __cdecl FUN_00401190(int *param_1,char *param_2)
+int * FUN_00401190(int *param_1,char *param_2)
 
 {
   char cVar1;
   bool bVar2;
   int iVar3;
   uint uVar4;
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar5;
-  int **in_FS_OFFSET;
-  __int64 _Var6;
-  undefined4 uVar7;
-  undefined4 uVar8;
-  uint uStack120;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar5;
+  int *piVar6;
+  __int64 _Var7;
+  uint uStack_78;
+  uint local_68;
+  int local_64;
+  uint local_58;
+  int local_54;
+  int local_50;
+  int local_4c;
   int local_44;
   int local_40;
   int local_3c;
   int local_38;
   int *local_34 [2];
   undefined8 local_2c;
-  undefined4 local_24;
-  undefined4 local_20;
+  uint local_24;
+  int local_20;
   uint local_18;
   uint *local_14;
-  int *local_10;
-  undefined *puStack12;
+  void *local_10;
+  undefined *puStack_c;
   undefined4 local_8;
   
   local_8 = 0xffffffff;
-  puStack12 = &LAB_004032f0;
-  local_10 = *in_FS_OFFSET;
-  uStack120 = DAT_00407000 ^ (uint)&stack0xfffffffc;
-  local_14 = &uStack120;
-  *in_FS_OFFSET = (int *)&local_10;
+  puStack_c = &LAB_004032f0;
+  local_10 = ExceptionList;
+  uStack_78 = DAT_00407000 ^ (uint)&stack0xfffffffc;
+  local_14 = &uStack_78;
+  ExceptionList = &local_10;
   local_18 = 0;
   local_24 = thunk_FUN_00401530(param_2);
   local_20 = 0;
-  _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if ((_Var6 < 1) ||
-     (_Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4))),
-     _Var6 <= CONCAT44(local_20,local_24))) {
-    local_2c = 0;
+  _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  local_4c = (int)((ulonglong)_Var7 >> 0x20);
+  if ((-1 < _Var7) && ((0 < local_4c || (local_50 = (int)_Var7, local_50 != 0)))) {
+    _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+    local_54 = (int)((ulonglong)_Var7 >> 0x20);
+    if ((local_20 <= local_54) &&
+       ((local_20 < local_54 || (local_58 = (uint)_Var7, local_24 < local_58)))) {
+      _Var7 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+      local_2c = _Var7 - CONCAT44(local_20,local_24);
+      goto LAB_00401252;
+    }
   }
-  else {
-    _Var6 = std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    local_2c = _Var6 - CONCAT44(local_20,local_24);
-  }
+  local_2c = 0;
+LAB_00401252:
   thunk_FUN_00401580(local_34,param_1);
   iVar3 = thunk_FUN_00401660((int)local_34);
   if (iVar3 == -1) {
     local_18 = local_18 | 4;
+    std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+              ((basic_ios<char,struct_std::char_traits<char>_> *)
+               ((int)param_1 + *(int *)(*param_1 + 4)),local_18,false);
+    thunk_FUN_00401620(local_34);
+    ExceptionList = local_10;
+    return param_1;
   }
-  else {
-    local_8 = 0;
-    uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-    if ((uVar4 & 0x1c0) != 0x40) {
-      while (0 < local_2c) {
-        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
-                          ((basic_ios_char_struct_std__char_traits_char___ *)
-                           ((int)param_1 + *(int *)(*param_1 + 4)));
-        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                           ((basic_ios_char_struct_std__char_traits_char___ *)
-                            ((int)param_1 + *(int *)(*param_1 + 4)));
-        local_38 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
-        local_3c = thunk_FUN_00401570();
-        bVar2 = thunk_FUN_00401550(&local_3c,&local_38);
-        if (bVar2 != false) {
-          local_18 = local_18 | 4;
-          break;
-        }
-        local_2c = CONCAT44(local_2c._4_4_ - (uint)((int)local_2c == 0),(int)local_2c + -1);
-      }
-    }
-    if (local_18 == 0) {
-      uVar7 = local_24;
-      uVar8 = local_20;
+  local_8 = 0;
+  uVar4 = std::ios_base::flags((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
+  if ((uVar4 & 0x1c0) != 0x40) {
+    while (0 < local_2c) {
+      cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                        ((basic_ios<char,struct_std::char_traits<char>_> *)
+                         ((int)param_1 + *(int *)(*param_1 + 4)));
       pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
-      _Var6 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
-                        (pbVar5,param_2,CONCAT44(uVar8,uVar7));
-      if (_Var6 != CONCAT44(local_20,local_24)) {
+      local_38 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
+      local_3c = thunk_FUN_00401570();
+      bVar2 = thunk_FUN_00401550(&local_3c,&local_38);
+      if (bVar2) {
         local_18 = local_18 | 4;
+        break;
       }
+      local_2c = CONCAT44(local_2c._4_4_ - (uint)((int)local_2c == 0),(int)local_2c + -1);
     }
-    if (local_18 == 0) {
-      while (0 < local_2c) {
-        cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
-                          ((basic_ios_char_struct_std__char_traits_char___ *)
-                           ((int)param_1 + *(int *)(*param_1 + 4)));
-        pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                           ((basic_ios_char_struct_std__char_traits_char___ *)
-                            ((int)param_1 + *(int *)(*param_1 + 4)));
-        local_40 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
-        local_44 = thunk_FUN_00401570();
-        bVar2 = thunk_FUN_00401550(&local_44,&local_40);
-        if (bVar2 != false) {
-          local_18 = local_18 | 4;
-          break;
-        }
-        local_2c = CONCAT44(local_2c._4_4_ - (uint)((int)local_2c == 0),(int)local_2c + -1);
-      }
-    }
-    std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
-    local_8 = 0xffffffff;
   }
-  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
-            ((basic_ios_char_struct_std__char_traits_char___ *)
-             ((int)param_1 + *(int *)(*param_1 + 4)),local_18,false);
-  thunk_FUN_00401620(local_34);
-  *in_FS_OFFSET = local_10;
-  return param_1;
+  if (local_18 == 0) {
+    uVar4 = local_24;
+    iVar3 = local_20;
+    pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                       ((basic_ios<char,struct_std::char_traits<char>_> *)
+                        ((int)param_1 + *(int *)(*param_1 + 4)));
+    _Var7 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputn
+                      (pbVar5,param_2,CONCAT44(iVar3,uVar4));
+    local_68 = (uint)_Var7;
+    if ((local_68 != local_24) || (local_64 = (int)((ulonglong)_Var7 >> 0x20), local_64 != local_20)
+       ) {
+      local_18 = local_18 | 4;
+    }
+  }
+  if (local_18 == 0) {
+    while (0 < local_2c) {
+      cVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::fill
+                        ((basic_ios<char,struct_std::char_traits<char>_> *)
+                         ((int)param_1 + *(int *)(*param_1 + 4)));
+      pbVar5 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
+                          ((int)param_1 + *(int *)(*param_1 + 4)));
+      local_40 = std::basic_streambuf<char,struct_std::char_traits<char>_>::sputc(pbVar5,cVar1);
+      local_44 = thunk_FUN_00401570();
+      bVar2 = thunk_FUN_00401550(&local_44,&local_40);
+      if (bVar2) {
+        local_18 = local_18 | 4;
+        break;
+      }
+      local_2c = CONCAT44(local_2c._4_4_ - (uint)((int)local_2c == 0),(int)local_2c + -1);
+    }
+  }
+  std::ios_base::width((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)),0);
+  piVar6 = (int *)FUN_00401434();
+  return piVar6;
 }
 
 
@@ -973,10 +996,28 @@ undefined4 Catch_00401412(void)
   int unaff_EBP;
   
   std::basic_ios<char,struct_std::char_traits<char>_>::setstate
-            ((basic_ios_char_struct_std__char_traits_char___ *)
+            ((basic_ios<char,struct_std::char_traits<char>_> *)
              (*(int *)(unaff_EBP + 8) + *(int *)(**(int **)(unaff_EBP + 8) + 4)),4,true);
   *(undefined4 *)(unaff_EBP + -4) = 0xffffffff;
   return 0x40143b;
+}
+
+
+
+undefined4 FUN_00401434(void)
+
+{
+  int unaff_EBP;
+  
+  *(undefined4 *)(unaff_EBP + -4) = 0xffffffff;
+  std::basic_ios<char,struct_std::char_traits<char>_>::setstate
+            ((basic_ios<char,struct_std::char_traits<char>_> *)
+             (*(int *)(unaff_EBP + 8) + *(int *)(**(int **)(unaff_EBP + 8) + 4)),
+             *(int *)(unaff_EBP + -0x14),false);
+  *(undefined4 *)(unaff_EBP + -0x44) = *(undefined4 *)(unaff_EBP + 8);
+  thunk_FUN_00401620((int **)(unaff_EBP + -0x30));
+  ExceptionList = *(void **)(unaff_EBP + -0xc);
+  return *(undefined4 *)(unaff_EBP + -0x44);
 }
 
 
@@ -1010,17 +1051,17 @@ void * __thiscall FUN_00401580(void *this,int *param_1)
 
 {
   bool bVar1;
-  basic_ostream_char_struct_std__char_traits_char___ *pbVar2;
+  basic_ostream<char,struct_std::char_traits<char>_> *pbVar2;
   
   thunk_FUN_00401690(this,param_1);
   bVar1 = std::ios_base::good((ios_base *)((int)param_1 + *(int *)(*param_1 + 4)));
-  if (bVar1 != false) {
+  if (bVar1) {
     pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
-                       ((basic_ios_char_struct_std__char_traits_char___ *)
+                       ((basic_ios<char,struct_std::char_traits<char>_> *)
                         ((int)param_1 + *(int *)(*param_1 + 4)));
-    if (pbVar2 != (basic_ostream_char_struct_std__char_traits_char___ *)0x0) {
+    if (pbVar2 != (basic_ostream<char,struct_std::char_traits<char>_> *)0x0) {
       pbVar2 = std::basic_ios<char,struct_std::char_traits<char>_>::tie
-                         ((basic_ios_char_struct_std__char_traits_char___ *)
+                         ((basic_ios<char,struct_std::char_traits<char>_> *)
                           ((int)param_1 + *(int *)(*param_1 + 4)));
       std::basic_ostream<char,struct_std::char_traits<char>_>::flush(pbVar2);
     }
@@ -1038,9 +1079,9 @@ void __fastcall FUN_00401620(int **param_1)
   bool bVar1;
   
   bVar1 = std::uncaught_exception();
-  if (bVar1 == false) {
+  if (!bVar1) {
     std::basic_ostream<char,struct_std::char_traits<char>_>::_Osfx
-              ((basic_ostream_char_struct_std__char_traits_char___ *)*param_1);
+              ((basic_ostream<char,struct_std::char_traits<char>_> *)*param_1);
   }
   thunk_FUN_00401700(param_1);
   return;
@@ -1059,20 +1100,20 @@ int __fastcall FUN_00401660(int param_1)
 int ** __thiscall FUN_00401690(void *this,int *param_1)
 
 {
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar1;
   int *piVar2;
   
   *(int **)this = param_1;
                     // WARNING: Load size is inaccurate
                     // WARNING: Load size is inaccurate
   pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                     ((basic_ios<char,struct_std::char_traits<char>_> *)
                       (*this + *(int *)(**this + 4)));
-  if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
+  if (pbVar1 != (basic_streambuf<char,struct_std::char_traits<char>_> *)0x0) {
                     // WARNING: Load size is inaccurate
                     // WARNING: Load size is inaccurate
     piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                              ((basic_ios<char,struct_std::char_traits<char>_> *)
                                (*this + *(int *)(**this + 4)));
     (**(code **)(*piVar2 + 4))();
   }
@@ -1084,15 +1125,15 @@ int ** __thiscall FUN_00401690(void *this,int *param_1)
 void __fastcall FUN_00401700(int **param_1)
 
 {
-  basic_streambuf_char_struct_std__char_traits_char___ *pbVar1;
+  basic_streambuf<char,struct_std::char_traits<char>_> *pbVar1;
   int *piVar2;
   
   pbVar1 = std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                     ((basic_ios_char_struct_std__char_traits_char___ *)
+                     ((basic_ios<char,struct_std::char_traits<char>_> *)
                       ((int)*param_1 + *(int *)(**param_1 + 4)));
-  if (pbVar1 != (basic_streambuf_char_struct_std__char_traits_char___ *)0x0) {
+  if (pbVar1 != (basic_streambuf<char,struct_std::char_traits<char>_> *)0x0) {
     piVar2 = (int *)std::basic_ios<char,struct_std::char_traits<char>_>::rdbuf
-                              ((basic_ios_char_struct_std__char_traits_char___ *)
+                              ((basic_ios<char,struct_std::char_traits<char>_> *)
                                ((int)*param_1 + *(int *)(**param_1 + 4)));
     (**(code **)(*piVar2 + 8))();
   }
@@ -1112,13 +1153,11 @@ void __fastcall ___security_check_cookie_4(int param_1)
   if (param_1 == DAT_00407000) {
     return;
   }
+                    // WARNING: Subroutine does not return
   ___report_gsfailure();
-  return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 size_t __cdecl strlen(char *_Str)
 
@@ -1127,7 +1166,7 @@ size_t __cdecl strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x004017d4. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
@@ -1136,25 +1175,28 @@ size_t __cdecl strlen(char *_Str)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  ___tmainCRTStartup
+// 
+// Library: Visual Studio 2010 Release
 
-int entry(void)
+int ___tmainCRTStartup(void)
 
 {
   bool bVar1;
-  LONG LVar2;
+  void *Exchange;
+  void *pvVar2;
   int iVar3;
   BOOL BVar4;
-  int in_FS_OFFSET;
   
-  ___security_init_cookie();
   if (_DAT_0040749c == 0) {
     HeapSetInformation((HANDLE)0x0,HeapEnableTerminationOnCorruption,(PVOID)0x0,0);
   }
-  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  Exchange = StackBase;
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00407484,iVar3,0);
-    if (LVar2 == 0) {
+    pvVar2 = (void *)InterlockedCompareExchange((LONG *)&DAT_00407484,(LONG)Exchange,0);
+    if (pvVar2 == (void *)0x0) {
 LAB_0040188a:
       if (DAT_00407474 == 1) {
         _amsg_exit(0x1f);
@@ -1191,12 +1233,22 @@ LAB_0040188a:
                     // WARNING: Subroutine does not return
       exit(DAT_00407138);
     }
-    if (LVar2 == iVar3) {
+    if (pvVar2 == Exchange) {
       bVar1 = true;
       goto LAB_0040188a;
     }
     Sleep(1000);
   } while( true );
+}
+
+
+
+void entry(void)
+
+{
+  ___security_init_cookie();
+  ___tmainCRTStartup();
+  return;
 }
 
 
@@ -1240,8 +1292,8 @@ void __cdecl ___report_gsfailure(void)
   _DAT_00407258 =
        (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
        (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
-       (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
+       (uint)(&stack0x00000000 == (undefined *)0x32c) * 0x40 | (uint)(in_AF & 1) * 0x10 |
+       (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
        (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
        (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
   _DAT_0040725c = &stack0x00000004;
@@ -1302,14 +1354,12 @@ long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401c16. Too many branches
                     // WARNING: Treating indirect jump as call
-  _amsg_exit();
+  _amsg_exit(param_1);
   return;
 }
 
@@ -1331,11 +1381,11 @@ _onexit_t __cdecl __onexit(_onexit_t param_1)
   PVOID *ppvVar4;
   PVOID local_24;
   PVOID local_20 [5];
-  undefined4 uStack12;
+  undefined4 uStack_c;
   undefined *local_8;
   
   local_8 = &DAT_004060f0;
-  uStack12 = 0x401c2e;
+  uStack_c = 0x401c2e;
   local_20[0] = DecodePointer(DAT_00407498);
   if (local_20[0] == (PVOID)0xffffffff) {
     p_Var1 = _onexit(param_1);
@@ -1373,7 +1423,7 @@ void FUN_00401cba(void)
 // 
 // Library: Visual Studio 2010 Release
 
-int __cdecl _atexit(void *param_1)
+int __cdecl _atexit(_func_4879 *param_1)
 
 {
   _onexit_t p_Var1;
@@ -1432,7 +1482,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
            (pImageBase + *(ushort *)(pImageBase + iVar1 + 0x14) + 0x18 + iVar1);
   if (*(ushort *)(pImageBase + iVar1 + 6) != 0) {
     do {
-      if ((p_Var2->VirtualAddress <= rva) && (rva < p_Var2->Misc + p_Var2->VirtualAddress)) {
+      if ((p_Var2->VirtualAddress <= rva) &&
+         (rva < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) {
         return p_Var2;
       }
       uVar3 = uVar3 + 1;
@@ -1452,30 +1503,27 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
 
 {
-  uint uVar1;
-  BOOL BVar2;
-  PIMAGE_SECTION_HEADER p_Var3;
-  int **in_FS_OFFSET;
-  int *local_14;
-  code *pcStack16;
+  BOOL BVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
+  void *local_14;
+  code *pcStack_10;
   uint local_c;
   undefined4 local_8;
   
-  pcStack16 = FUN_00401ef9;
-  local_14 = *in_FS_OFFSET;
+  pcStack_10 = FUN_00401ef9;
+  local_14 = ExceptionList;
   local_c = DAT_00407000 ^ 0x406110;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_8 = 0;
-  BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
-  if (BVar2 != 0) {
-    p_Var3 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
-    if (p_Var3 != (PIMAGE_SECTION_HEADER)0x0) {
-      uVar1 = p_Var3->Characteristics;
-      *in_FS_OFFSET = local_14;
-      return ~(uVar1 >> 0x1f) & 1;
+  BVar1 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
+  if (BVar1 != 0) {
+    p_Var2 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
+    if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
+      ExceptionList = local_14;
+      return ~(p_Var2->Characteristics >> 0x1f) & 1;
     }
   }
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return 0;
 }
 
@@ -1518,18 +1566,17 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
-  int *in_FS_OFFSET;
   undefined4 unaff_retaddr;
-  uint auStack28 [5];
+  uint auStack_1c [5];
   undefined local_8 [8];
   
   iVar1 = -param_2;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00407000 ^ (uint)&param_2;
-  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
-  *in_FS_OFFSET = (int)local_8;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack_1c + iVar1 + 4) = DAT_00407000 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack_1c + iVar1) = unaff_retaddr;
+  ExceptionList = local_8;
   return;
 }
 
@@ -1545,10 +1592,9 @@ void __SEH_epilog4(void)
 
 {
   undefined4 *unaff_EBP;
-  undefined4 *in_FS_OFFSET;
   undefined4 unaff_retaddr;
   
-  *in_FS_OFFSET = unaff_EBP[-4];
+  ExceptionList = (void *)unaff_EBP[-4];
   *unaff_EBP = unaff_retaddr;
   return;
 }
@@ -1577,8 +1623,7 @@ void __cdecl ___security_init_cookie(void)
   DWORD DVar2;
   DWORD DVar3;
   uint uVar4;
-  uint local_14;
-  uint local_10;
+  LARGE_INTEGER local_14;
   _FILETIME local_c;
   
   local_c.dwLowDateTime = 0;
@@ -1589,8 +1634,8 @@ void __cdecl ___security_init_cookie(void)
     DVar1 = GetCurrentProcessId();
     DVar2 = GetCurrentThreadId();
     DVar3 = GetTickCount();
-    QueryPerformanceCounter((LARGE_INTEGER *)&local_14);
-    DAT_00407000 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_10 ^ local_14;
+    QueryPerformanceCounter(&local_14);
+    DAT_00407000 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_14.s.HighPart ^ local_14.s.LowPart;
     if (DAT_00407000 == 0xbb40e64e) {
       DAT_00407000 = 0xbb40e64f;
     }
@@ -1607,20 +1652,16 @@ void __cdecl ___security_init_cookie(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _crt_debugger_hook(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040201c. Too many branches
                     // WARNING: Treating indirect jump as call
-  _crt_debugger_hook();
+  _crt_debugger_hook(param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl terminate(void)
 
@@ -1633,14 +1674,12 @@ void __cdecl terminate(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402028. Too many branches
                     // WARNING: Treating indirect jump as call
-  _unlock();
+  _unlock(_File);
   return;
 }
 
@@ -1657,14 +1696,12 @@ void __dllonexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _lock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402034. Too many branches
                     // WARNING: Treating indirect jump as call
-  _lock();
+  _lock(_File);
   return;
 }
 

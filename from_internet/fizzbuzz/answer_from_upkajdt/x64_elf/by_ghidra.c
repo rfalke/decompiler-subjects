@@ -18,6 +18,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
+};
+
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
 struct fde_table_entry {
@@ -141,6 +149,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -264,14 +273,34 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -324,7 +353,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * operator_new__(ulong param_1)
 
@@ -337,7 +366,7 @@ void * operator_new__(ulong param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::terminate(void)
 
@@ -348,7 +377,7 @@ void std::terminate(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t write(int __fd,void *__buf,size_t __n)
 
@@ -370,16 +399,16 @@ void __cxa_begin_catch(void)
 
 
 
-void __thiscall std::thread::_State::__State(_State *this)
+void __thiscall std::thread::_State::~_State(_State *this)
 
 {
-  __State(this);
+  ~_State(this);
   return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::__throw_length_error(char *param_1)
 
@@ -390,7 +419,7 @@ void std::__throw_length_error(char *param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pthread_create(pthread_t *__newthread,pthread_attr_t *__attr,__start_routine *__start_routine,
                   void *__arg)
@@ -403,21 +432,21 @@ int pthread_create(pthread_t *__newthread,pthread_attr_t *__attr,__start_routine
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 basic_ostream *
-std::basic_ostream<char,std::char_traits<char>>::_M_insert_unsigned_long_(ulong param_1)
+std::basic_ostream<char,std::char_traits<char>>::_M_insert<unsigned_long>(ulong param_1)
 
 {
   basic_ostream *pbVar1;
   
-  pbVar1 = _M_insert_unsigned_long_(param_1);
+  pbVar1 = _M_insert<unsigned_long>(param_1);
   return pbVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -430,9 +459,18 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void __cxa_atexit(void)
 
-void std::thread::_M_start_thread(unique_ptr param_1,FuncDef1 *param_2)
+{
+  __cxa_atexit();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+void std::thread::_M_start_thread(unique_ptr param_1,_func_void *param_2)
 
 {
   _M_start_thread(param_1,param_2);
@@ -441,7 +479,7 @@ void std::thread::_M_start_thread(unique_ptr param_1,FuncDef1 *param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * operator_new(ulong param_1)
 
@@ -454,7 +492,7 @@ void * operator_new(ulong param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void operator_delete(void *param_1,ulong param_2)
 
@@ -465,22 +503,22 @@ void operator_delete(void *param_1,ulong param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 basic_ostream *
-std::__ostream_insert_char_std__char_traits_char__
+std::__ostream_insert<char,std::char_traits<char>>
           (basic_ostream *param_1,char *param_2,long param_3)
 
 {
   basic_ostream *pbVar1;
   
-  pbVar1 = __ostream_insert_char_std__char_traits_char__(param_1,param_2,param_3);
+  pbVar1 = __ostream_insert<char,std::char_traits<char>>(param_1,param_2,param_3);
   return pbVar1;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::thread::hardware_concurrency(void)
 
@@ -509,7 +547,7 @@ void __thiscall std::ios_base::Init::Init(Init *this)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memmove(void *__dest,void *__src,size_t __n)
 
@@ -541,7 +579,7 @@ void __gxx_personality_v0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::thread::join(void)
 
@@ -563,7 +601,7 @@ void _Unwind_Resume(void)
 
 // std::ios_base::Init::~Init()
 
-void __thiscall std::ios_base::Init::_Init(Init *this)
+void __thiscall std::ios_base::Init::~Init(Init *this)
 
 {
   do {
@@ -577,12 +615,12 @@ void main_cold(void)
 
 {
   void *unaff_RBP;
-  void *in_stack_00000020;
-  long in_stack_00000030;
+  void *param_10;
+  long param_11;
   
   operator_delete(unaff_RBP,0x28);
-  if (in_stack_00000020 != (void *)0x0) {
-    operator_delete(in_stack_00000020,in_stack_00000030 - (long)in_stack_00000020);
+  if (param_10 != (void *)0x0) {
+    operator_delete(param_10,param_11 - (long)param_10);
   }
                     // WARNING: Subroutine does not return
   _Unwind_Resume();
@@ -590,135 +628,71 @@ void main_cold(void)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
-void _annobin_lto_startup(int __status)
+void FUN_004011cf(void)
 
 {
-  long **pplVar1;
-  long **pplVar2;
-  uint uVar3;
-  long *plVar4;
-  void *pvVar5;
-  ulong uVar6;
-  basic_ostream *pbVar7;
-  long **pplVar8;
-  long lVar9;
-  long lVar10;
-  long *plStack136;
-  long *plStack128;
-  long **pplStack120;
-  long **pplStack112;
-  long **pplStack104;
-  undefined auStack88 [16];
-  long *plStack72;
+  long *plVar1;
+  long *param_9;
+  void *in_stack_00000020;
+  long in_stack_00000030;
+  long *in_stack_00000040;
+  long *in_stack_00000048;
+  long in_stack_00000050;
   
-  uVar3 = std::thread::hardware_concurrency();
-  pplStack104 = (long **)0x0;
-  pplStack120 = (long **)0x0;
-  pplStack112 = (long **)0x0;
-  if ((ulong)uVar3 != 0) {
-    lVar10 = 0;
-    while( true ) {
-      pplVar1 = pplStack104;
-      plVar4 = (long *)operator_new(0x28);
-      plVar4[2] = 10000000;
-      pvVar5 = operator_new__(400000000);
-      plVar4[3] = (long)pvVar5;
-      auStack88 = CONCAT88(auStack88._8_8_,plVar4);
-      if (pplStack112 == pplVar1) {
-        std::vector<worker*,std::allocator<worker*>>::_M_realloc_insert_worker__
-                  ((vector_worker__std__allocator_worker___ *)&pplStack120,
-                   (__normal_iterator)pplVar1,(worker **)auStack88);
-      }
-      else {
-        *pplStack112 = plVar4;
-        pplStack112 = pplStack112 + 1;
-      }
-      if ((ulong)uVar3 == lVar10 + 1U) break;
-      lVar10 = lVar10 + 1;
-    }
+  plVar1 = in_stack_00000040;
+  if (param_9 != (long *)0x0) {
+    (**(code **)(*param_9 + 8))();
   }
-  pplVar2 = pplStack112;
-  pplVar1 = pplStack120;
-  lVar10 = 0;
-  uVar6 = (long)pplStack112 + (-8 - (long)pplStack120);
-LAB_004012e8:
-  pplVar8 = pplVar1;
-  lVar9 = lVar10;
-  if (pplVar2 == pplVar1) goto LAB_00401481;
-  do {
-    do {
-      plVar4 = *pplVar8;
-      pplVar8 = pplVar8 + 1;
-      *plVar4 = lVar10;
-      plVar4[1] = lVar10 + 10000000;
-      lVar10 = lVar10 + 10000000;
-    } while (pplVar8 != pplVar2);
-    lVar10 = lVar9 + ((uVar6 >> 3) + 1) * 10000000;
-    plStack72 = (long *)0x0;
-    auStack88._8_8_ = (long *)0x0;
-    auStack88 = (undefined  [16])0x0;
-    pplVar8 = pplVar1;
-    while( true ) {
-      plVar4 = *pplVar8;
-      plStack136 = plVar4;
-      if (auStack88._8_8_ == plStack72) {
-        std::vector<std::thread,std::allocator<std::thread>>::
-        _M_realloc_insert_void____worker___worker___
-                  ((vector_std__thread_std__allocator_std__thread__ *)auStack88,
-                   (unique_ptr)auStack88._8_8_,task,(worker **)&plStack136);
+  while( true ) {
+    if (in_stack_00000048 == plVar1) {
+      if (in_stack_00000040 != (long *)0x0) {
+        operator_delete(in_stack_00000040,in_stack_00000050 - (long)in_stack_00000040);
       }
-      else {
-        *auStack88._8_8_ = 0;
-        plStack128 = (long *)operator_new(0x18);
-        *plStack128 = (long)&PTR___State_impl_004030b0;
-        plStack128[1] = (long)plVar4;
-        plStack128[2] = (long)task;
-        std::thread::_M_start_thread((unique_ptr)auStack88._8_8_,(FuncDef1 *)&plStack128);
-        if (plStack128 != (long *)0x0) {
-          (**(code **)(*plStack128 + 8))();
-        }
-        auStack88._8_8_ = auStack88._8_8_ + 1;
+      if (in_stack_00000020 != (void *)0x0) {
+        operator_delete(in_stack_00000020,in_stack_00000030 - (long)in_stack_00000020);
       }
-      if (pplVar2 == pplVar8 + 1) break;
-      pplVar8 = pplVar8 + 1;
-    }
-    for (plVar4 = auStack88._0_8_; pplVar8 = pplVar1, plVar4 != auStack88._8_8_; plVar4 = plVar4 + 1
-        ) {
-      std::thread::join();
-    }
-    do {
-      write(1,(void *)(*pplVar8)[3],(*pplVar8)[4]);
-      pplVar8 = pplVar8 + 1;
-    } while (pplVar2 != pplVar8);
-    while( true ) {
-      pbVar7 = std::basic_ostream<char,std::char_traits<char>>::_M_insert_unsigned_long_
-                         ((ulong)std::cerr);
-      std::__ostream_insert_char_std__char_traits_char__(pbVar7,"\n",1);
-      for (plVar4 = auStack88._0_8_; auStack88._8_8_ != plVar4; plVar4 = plVar4 + 1) {
-        if (*plVar4 != 0) {
                     // WARNING: Subroutine does not return
-          std::terminate();
-        }
-      }
-      if (auStack88._0_8_ == (long *)0x0) goto LAB_004012e8;
-      operator_delete(auStack88._0_8_,(long)plStack72 - (long)auStack88._0_8_);
-      pplVar8 = pplVar1;
-      lVar9 = lVar10;
-      if (pplVar2 != pplVar1) break;
-LAB_00401481:
-      auStack88._0_8_ = (long *)0x0;
-      auStack88._8_8_ = (long *)0x0;
-      plStack72 = (long *)0x0;
-      auStack88 = (undefined  [16])0x0;
+      _Unwind_Resume();
     }
-  } while( true );
+    if (*plVar1 != 0) break;
+    plVar1 = plVar1 + 1;
+  }
+                    // WARNING: Subroutine does not return
+  std::terminate();
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
+void FUN_004011df(void)
+
+{
+  long *plVar1;
+  void *param_10;
+  long in_stack_00000030;
+  long *param_11;
+  long *param_12;
+  long param_13;
+  
+  plVar1 = param_11;
+  while( true ) {
+    if (param_12 == plVar1) {
+      if (param_11 != (long *)0x0) {
+        operator_delete(param_11,param_13 - (long)param_11);
+      }
+      if (param_10 != (void *)0x0) {
+        operator_delete(param_10,in_stack_00000030 - (long)param_10);
+      }
+                    // WARNING: Subroutine does not return
+      _Unwind_Resume();
+    }
+    if (*plVar1 != 0) break;
+    plVar1 = plVar1 + 1;
+  }
+                    // WARNING: Subroutine does not return
+  std::terminate();
+}
+
+
 
 void main(void)
 
@@ -731,12 +705,14 @@ void main(void)
   ulong uVar6;
   basic_ostream *pbVar7;
   long **pplVar8;
-  long lVar9;
+  long *plVar9;
   long lVar10;
+  long lVar11;
+  long *plVar12;
   long *local_88;
   long *local_80;
   long **local_78;
-  long **pplStack112;
+  long **pplStack_70;
   long **local_68;
   undefined local_58 [16];
   long *local_48;
@@ -744,9 +720,9 @@ void main(void)
   uVar3 = std::thread::hardware_concurrency();
   local_68 = (long **)0x0;
   local_78 = (long **)0x0;
-  pplStack112 = (long **)0x0;
+  pplStack_70 = (long **)0x0;
   if ((ulong)uVar3 != 0) {
-    lVar10 = 0;
+    lVar11 = 0;
     while( true ) {
       pplVar1 = local_68;
                     // try { // try from 00401273 to 00401277 has its CatchHandler @ 0040149f
@@ -755,70 +731,73 @@ void main(void)
                     // try { // try from 00401288 to 0040128c has its CatchHandler @ 004014b7
       pvVar5 = operator_new__(400000000);
       plVar4[3] = (long)pvVar5;
-      local_58 = CONCAT88(local_58._8_8_,plVar4);
-      if (pplStack112 == pplVar1) {
+      local_58._0_8_ = plVar4;
+      if (pplStack_70 == pplVar1) {
                     // try { // try from 004012ad to 004012b1 has its CatchHandler @ 0040149f
-        std::vector<worker*,std::allocator<worker*>>::_M_realloc_insert_worker__
-                  ((vector_worker__std__allocator_worker___ *)&local_78,(__normal_iterator)pplVar1,
+        std::vector<worker*,std::allocator<worker*>>::_M_realloc_insert<worker*>
+                  ((vector<worker*,std::allocator<worker*>> *)&local_78,(__normal_iterator)pplVar1,
                    (worker **)local_58);
       }
       else {
-        *pplStack112 = plVar4;
-        pplStack112 = pplStack112 + 1;
+        *pplStack_70 = plVar4;
+        pplStack_70 = pplStack_70 + 1;
       }
-      if ((ulong)uVar3 == lVar10 + 1U) break;
-      lVar10 = lVar10 + 1;
+      if ((ulong)uVar3 == lVar11 + 1U) break;
+      lVar11 = lVar11 + 1;
     }
   }
-  pplVar2 = pplStack112;
+  pplVar2 = pplStack_70;
   pplVar1 = local_78;
-  lVar10 = 0;
-  uVar6 = (long)pplStack112 + (-8 - (long)local_78);
+  lVar11 = 0;
+  uVar6 = (long)pplStack_70 + (-8 - (long)local_78);
 LAB_004012e8:
   pplVar8 = pplVar1;
-  lVar9 = lVar10;
+  lVar10 = lVar11;
   if (pplVar2 == pplVar1) goto LAB_00401481;
   do {
     do {
       plVar4 = *pplVar8;
       pplVar8 = pplVar8 + 1;
-      *plVar4 = lVar10;
-      plVar4[1] = lVar10 + 10000000;
-      lVar10 = lVar10 + 10000000;
+      *plVar4 = lVar11;
+      plVar4[1] = lVar11 + 10000000;
+      lVar11 = lVar11 + 10000000;
     } while (pplVar8 != pplVar2);
-    lVar10 = lVar9 + ((uVar6 >> 3) + 1) * 10000000;
+    lVar11 = lVar10 + ((uVar6 >> 3) + 1) * 10000000;
     local_48 = (long *)0x0;
-    local_58._8_8_ = (long *)0x0;
+    plVar4 = (long *)0x0;
     local_58 = (undefined  [16])0x0;
     pplVar8 = pplVar1;
     while( true ) {
-      plVar4 = *pplVar8;
-      local_88 = plVar4;
-      if (local_58._8_8_ == local_48) {
+      plVar9 = *pplVar8;
+      local_88 = plVar9;
+      if (plVar4 == local_48) {
                     // try { // try from 004013ca to 00401444 has its CatchHandler @ 004014af
         std::vector<std::thread,std::allocator<std::thread>>::
-        _M_realloc_insert_void____worker___worker___
-                  ((vector_std__thread_std__allocator_std__thread__ *)local_58,
-                   (unique_ptr)local_58._8_8_,task,(worker **)&local_88);
+        _M_realloc_insert<void(&)(worker*),worker*&>
+                  ((vector<std::thread,std::allocator<std::thread>> *)local_58,(unique_ptr)plVar4,
+                   task,(worker **)&local_88);
+        plVar4 = (long *)local_58._8_8_;
       }
       else {
-        *local_58._8_8_ = 0;
+        *plVar4 = 0;
                     // try { // try from 00401355 to 00401359 has its CatchHandler @ 004014af
         local_80 = (long *)operator_new(0x18);
         *local_80 = (long)&PTR___State_impl_004030b0;
-        local_80[1] = (long)plVar4;
+        local_80[1] = (long)plVar9;
         local_80[2] = (long)task;
                     // try { // try from 0040137f to 00401383 has its CatchHandler @ 004014a7
-        std::thread::_M_start_thread((unique_ptr)local_58._8_8_,(FuncDef1 *)&local_80);
+        std::thread::_M_start_thread((unique_ptr)plVar4,(_func_void *)&local_80);
         if (local_80 != (long *)0x0) {
           (**(code **)(*local_80 + 8))();
         }
-        local_58._8_8_ = local_58._8_8_ + 1;
+        local_58._8_8_ = plVar4 + 1;
+        plVar4 = plVar4 + 1;
       }
       if (pplVar2 == pplVar8 + 1) break;
       pplVar8 = pplVar8 + 1;
     }
-    for (plVar4 = local_58._0_8_; pplVar8 = pplVar1, plVar4 != local_58._8_8_; plVar4 = plVar4 + 1)
+    plVar12 = (long *)local_58._0_8_;
+    for (plVar9 = (long *)local_58._0_8_; pplVar8 = pplVar1, plVar9 != plVar4; plVar9 = plVar9 + 1)
     {
       std::thread::join();
     }
@@ -827,23 +806,23 @@ LAB_004012e8:
       pplVar8 = pplVar8 + 1;
     } while (pplVar2 != pplVar8);
     while( true ) {
-      pbVar7 = std::basic_ostream<char,std::char_traits<char>>::_M_insert_unsigned_long_
+      pbVar7 = std::basic_ostream<char,std::char_traits<char>>::_M_insert<unsigned_long>
                          ((ulong)std::cerr);
-      std::__ostream_insert_char_std__char_traits_char__(pbVar7,"\n",1);
-      for (plVar4 = local_58._0_8_; local_58._8_8_ != plVar4; plVar4 = plVar4 + 1) {
-        if (*plVar4 != 0) {
+      std::__ostream_insert<char,std::char_traits<char>>(pbVar7,"\n",1);
+      for (plVar9 = plVar12; plVar4 != plVar9; plVar9 = plVar9 + 1) {
+        if (*plVar9 != 0) {
                     // WARNING: Subroutine does not return
           std::terminate();
         }
       }
-      if (local_58._0_8_ == (long *)0x0) goto LAB_004012e8;
-      operator_delete(local_58._0_8_,(long)local_48 - (long)local_58._0_8_);
+      if (plVar12 == (long *)0x0) goto LAB_004012e8;
+      operator_delete(plVar12,(long)local_48 - (long)plVar12);
       pplVar8 = pplVar1;
-      lVar9 = lVar10;
+      lVar10 = lVar11;
       if (pplVar2 != pplVar1) break;
 LAB_00401481:
-      local_58._0_8_ = (long *)0x0;
-      local_58._8_8_ = (long *)0x0;
+      plVar12 = (long *)0x0;
+      plVar4 = (long *)0x0;
       local_48 = (long *)0x0;
       local_58 = (undefined  [16])0x0;
     }
@@ -852,27 +831,26 @@ LAB_00401481:
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 // task(worker*)
 
 void _GLOBAL__sub_I_task(void)
 
 {
   std::ios_base::Init::Init((Init *)&std::__ioinit);
-  __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
+  __cxa_atexit(std::ios_base::Init::~Init,&std::__ioinit,&__dso_handle);
   return;
 }
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -932,28 +910,29 @@ void frame_dummy(void)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
 // task(worker*)
 
 void task(worker *param_1)
 
 {
-  char cVar1;
-  char cVar2;
-  ulong uVar3;
-  undefined8 *puVar4;
-  uint uVar5;
-  ulong uVar6;
-  long lVar7;
-  uint uVar8;
-  ulong uVar9;
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  char cVar3;
+  char cVar4;
+  ulong uVar5;
+  undefined8 *puVar6;
+  uint uVar7;
+  ulong uVar8;
+  long lVar9;
+  uint uVar10;
+  ulong uVar11;
   int unaff_EBP;
-  undefined8 *puVar10;
-  char cVar11;
+  undefined8 *puVar12;
+  char cVar13;
   long in_R11;
-  ulong uVar12;
+  ulong uVar14;
   undefined8 local_60;
-  undefined8 uStack88;
+  undefined8 uStack_58;
   char local_50;
   char local_4f;
   char local_4e;
@@ -963,179 +942,183 @@ void task(worker *param_1)
   char local_4a;
   char local_49;
   
-  puVar10 = *(undefined8 **)(param_1 + 0x18);
+  puVar12 = *(undefined8 **)(param_1 + 0x18);
   local_60 = *(ulong *)param_1;
   if (*(ulong *)(param_1 + 8) <= local_60) {
     *(undefined8 *)(param_1 + 0x20) = 0;
     return;
   }
-  cVar11 = '\0';
-  uVar9 = 0xffffffffffffff9c;
+  cVar13 = '\0';
+  uVar11 = 0xffffffffffffff9c;
   do {
     while( true ) {
-      uVar12 = local_60 -
-               ((SUB168(ZEXT816(local_60) * ZEXT816(0xaaaaaaaaaaaaaaab) >> 0x40,0) &
-                0xfffffffffffffffe) + local_60 / 3);
-      uVar3 = local_60 -
-              ((SUB168(ZEXT816(local_60) * ZEXT816(0xcccccccccccccccd) >> 0x40,0) &
-               0xfffffffffffffffc) + local_60 / 5);
-      if ((uVar12 | uVar3) == 0) {
-        puVar4 = puVar10 + 1;
-        *puVar10 = 0x7a7a75427a7a6946;
+      auVar1._8_8_ = 0;
+      auVar1._0_8_ = local_60;
+      uVar14 = local_60 -
+               ((SUB168(auVar1 * ZEXT816(0xaaaaaaaaaaaaaaab),8) & 0xfffffffffffffffe) + local_60 / 3
+               );
+      auVar2._8_8_ = 0;
+      auVar2._0_8_ = local_60;
+      uVar5 = local_60 -
+              ((SUB168(auVar2 * ZEXT816(0xcccccccccccccccd),8) & 0xfffffffffffffffc) + local_60 / 5)
+      ;
+      if ((uVar14 | uVar5) == 0) {
+        puVar6 = puVar12 + 1;
+        *puVar12 = 0x7a7a75427a7a6946;
       }
-      else if (uVar12 == 0) {
-        *(undefined4 *)puVar10 = 0x7a7a6946;
-        puVar4 = (undefined8 *)((long)puVar10 + 4);
+      else if (uVar14 == 0) {
+        *(undefined4 *)puVar12 = 0x7a7a6946;
+        puVar6 = (undefined8 *)((long)puVar12 + 4);
       }
-      else if (uVar3 == 0) {
-        *(undefined4 *)puVar10 = 0x7a7a7542;
-        puVar4 = (undefined8 *)((long)puVar10 + 4);
+      else if (uVar5 == 0) {
+        *(undefined4 *)puVar12 = 0x7a7a7542;
+        puVar6 = (undefined8 *)((long)puVar12 + 4);
       }
-      else if ((local_60 - uVar9 < 10) && ((int)(char)unaff_EBP + (int)cVar11 < 10)) {
+      else if ((local_60 - uVar11 < 10) && ((int)(char)unaff_EBP + (int)cVar13 < 10)) {
         if (in_R11 != 0xf) {
-          uVar3 = 0xf - in_R11;
-          puVar4 = (undefined8 *)((long)&uStack88 + in_R11);
-          uVar5 = (uint)uVar3;
-          if (uVar5 < 8) {
-            if ((uVar3 & 4) == 0) {
-              if ((uVar5 != 0) && (*(undefined *)puVar10 = *(undefined *)puVar4, (uVar3 & 2) != 0))
+          uVar5 = 0xf - in_R11;
+          puVar6 = (undefined8 *)((long)&uStack_58 + in_R11);
+          uVar7 = (uint)uVar5;
+          if (uVar7 < 8) {
+            if ((uVar5 & 4) == 0) {
+              if ((uVar7 != 0) && (*(undefined *)puVar12 = *(undefined *)puVar6, (uVar5 & 2) != 0))
               {
-                *(undefined2 *)((long)puVar10 + ((uVar3 & 0xffffffff) - 2)) =
-                     *(undefined2 *)((long)&uStack88 + (uVar3 & 0xffffffff) + in_R11 + -2);
+                *(undefined2 *)((long)puVar12 + ((uVar5 & 0xffffffff) - 2)) =
+                     *(undefined2 *)((long)&uStack_58 + (uVar5 & 0xffffffff) + in_R11 + -2);
               }
             }
             else {
-              *(undefined4 *)puVar10 = *(undefined4 *)puVar4;
-              *(undefined4 *)((long)puVar10 + ((uVar3 & 0xffffffff) - 4)) =
-                   *(undefined4 *)((long)&uStack88 + (uVar3 & 0xffffffff) + in_R11 + -4);
+              *(undefined4 *)puVar12 = *(undefined4 *)puVar6;
+              *(undefined4 *)((long)puVar12 + ((uVar5 & 0xffffffff) - 4)) =
+                   *(undefined4 *)((long)&uStack_58 + (uVar5 & 0xffffffff) + in_R11 + -4);
             }
           }
           else {
-            *puVar10 = *puVar4;
-            *(undefined8 *)((long)puVar10 + ((uVar3 & 0xffffffff) - 8)) =
-                 *(undefined8 *)((long)&uStack88 + (uVar3 & 0xffffffff) + in_R11 + -8);
-            lVar7 = (long)puVar10 - ((ulong)(puVar10 + 1) & 0xfffffffffffffff8);
-            uVar5 = (int)lVar7 + uVar5 & 0xfffffff8;
-            if (7 < uVar5) {
-              uVar8 = 0;
+            *puVar12 = *puVar6;
+            *(undefined8 *)((long)puVar12 + ((uVar5 & 0xffffffff) - 8)) =
+                 *(undefined8 *)((long)&uStack_58 + (uVar5 & 0xffffffff) + in_R11 + -8);
+            lVar9 = (long)puVar12 - ((ulong)(puVar12 + 1) & 0xfffffffffffffff8);
+            uVar7 = (int)lVar9 + uVar7 & 0xfffffff8;
+            if (7 < uVar7) {
+              uVar10 = 0;
               do {
-                uVar12 = (ulong)uVar8;
-                uVar8 = uVar8 + 8;
-                *(undefined8 *)(((ulong)(puVar10 + 1) & 0xfffffffffffffff8) + uVar12) =
-                     *(undefined8 *)((long)puVar4 + (uVar12 - lVar7));
-              } while (uVar8 < uVar5);
+                uVar14 = (ulong)uVar10;
+                uVar10 = uVar10 + 8;
+                *(undefined8 *)(((ulong)(puVar12 + 1) & 0xfffffffffffffff8) + uVar14) =
+                     *(undefined8 *)((long)puVar6 + (uVar14 - lVar9));
+              } while (uVar10 < uVar7);
             }
           }
-          puVar10 = (undefined8 *)((long)puVar10 + uVar3);
+          puVar12 = (undefined8 *)((long)puVar12 + uVar5);
         }
-        puVar4 = (undefined8 *)((long)puVar10 + 1);
-        *(char *)puVar10 = (cVar11 - (char)unaff_EBP) + local_49;
+        puVar6 = (undefined8 *)((long)puVar12 + 1);
+        *(char *)puVar12 = (cVar13 - (char)unaff_EBP) + local_49;
       }
       else {
-        uVar9 = local_60 / 10;
-        unaff_EBP = (int)local_60 + (int)uVar9 * -10;
+        uVar11 = local_60 / 10;
+        unaff_EBP = (int)local_60 + (int)uVar11 * -10;
         local_49 = (char)unaff_EBP + '0';
         if (local_60 < 10) {
           in_R11 = 0xf;
         }
         else {
-          uVar3 = uVar9 / 10;
-          local_4a = (char)uVar9 + (char)uVar3 * -10 + '0';
+          uVar5 = uVar11 / 10;
+          local_4a = (char)uVar11 + (char)uVar5 * -10 + '0';
           if (local_60 < 100) {
             in_R11 = 0xe;
           }
           else {
-            uVar12 = uVar3 / 10;
-            local_4b = (char)uVar3 + (char)uVar12 * -10 + '0';
+            uVar14 = uVar5 / 10;
+            local_4b = (char)uVar5 + (char)uVar14 * -10 + '0';
             if (local_60 < 1000) {
               in_R11 = 0xd;
             }
             else {
-              cVar1 = (char)(uVar12 / 10);
-              local_4c = (char)uVar12 + cVar1 * -10 + '0';
+              cVar3 = (char)(uVar14 / 10);
+              local_4c = (char)uVar14 + cVar3 * -10 + '0';
               if (local_60 < 10000) {
                 in_R11 = 0xc;
               }
               else {
-                uVar6 = (uVar12 / 10) / 10;
-                cVar2 = (char)uVar6;
-                local_4d = cVar1 + cVar2 * -10 + '0';
+                uVar8 = (uVar14 / 10) / 10;
+                cVar4 = (char)uVar8;
+                local_4d = cVar3 + cVar4 * -10 + '0';
                 if (local_60 < 100000) {
                   in_R11 = 0xb;
                 }
                 else {
-                  uVar6 = uVar6 / 10;
-                  cVar1 = (char)uVar6;
-                  local_4e = cVar2 + cVar1 * -10 + '0';
+                  uVar8 = uVar8 / 10;
+                  cVar3 = (char)uVar8;
+                  local_4e = cVar4 + cVar3 * -10 + '0';
                   if (local_60 < 1000000) {
                     in_R11 = 10;
                   }
                   else {
-                    uVar6 = uVar6 / 10;
-                    cVar2 = (char)uVar6;
-                    local_4f = cVar1 + cVar2 * -10 + '0';
+                    uVar8 = uVar8 / 10;
+                    cVar4 = (char)uVar8;
+                    local_4f = cVar3 + cVar4 * -10 + '0';
                     if (local_60 < 10000000) {
                       in_R11 = 9;
                     }
                     else {
-                      uVar6 = uVar6 / 10;
-                      cVar1 = (char)uVar6;
-                      local_50 = cVar2 + cVar1 * -10 + '0';
+                      uVar8 = uVar8 / 10;
+                      cVar3 = (char)uVar8;
+                      local_50 = cVar4 + cVar3 * -10 + '0';
                       if (local_60 < 100000000) {
                         in_R11 = 8;
                       }
                       else {
-                        uVar6 = uVar6 / 10;
-                        cVar2 = (char)uVar6;
-                        uStack88._7_1_ = cVar1 + cVar2 * -10 + '0';
+                        uVar8 = uVar8 / 10;
+                        cVar4 = (char)uVar8;
+                        uStack_58._7_1_ = cVar3 + cVar4 * -10 + '0';
                         if (local_60 < 1000000000) {
                           in_R11 = 7;
                         }
                         else {
-                          uVar6 = uVar6 / 10;
-                          cVar1 = (char)uVar6;
-                          uStack88._6_1_ = cVar2 + cVar1 * -10 + '0';
+                          uVar8 = uVar8 / 10;
+                          cVar3 = (char)uVar8;
+                          uStack_58._6_1_ = cVar4 + cVar3 * -10 + '0';
                           if (local_60 < 10000000000) {
                             in_R11 = 6;
                           }
                           else {
-                            uVar6 = uVar6 / 10;
-                            cVar2 = (char)uVar6;
-                            uStack88._5_1_ = cVar1 + cVar2 * -10 + '0';
+                            uVar8 = uVar8 / 10;
+                            cVar4 = (char)uVar8;
+                            uStack_58._5_1_ = cVar3 + cVar4 * -10 + '0';
                             if (local_60 < 100000000000) {
                               in_R11 = 5;
                             }
                             else {
-                              uVar6 = uVar6 / 10;
-                              cVar1 = (char)uVar6;
-                              uStack88._4_1_ = cVar2 + cVar1 * -10 + '0';
+                              uVar8 = uVar8 / 10;
+                              cVar3 = (char)uVar8;
+                              uStack_58._4_1_ = cVar4 + cVar3 * -10 + '0';
                               if (local_60 < 1000000000000) {
                                 in_R11 = 4;
                               }
                               else {
-                                uVar6 = uVar6 / 10;
-                                cVar2 = (char)uVar6;
-                                uStack88._3_1_ = cVar1 + cVar2 * -10 + '0';
-                                if (uVar9 < 1000000000000) {
+                                uVar8 = uVar8 / 10;
+                                cVar4 = (char)uVar8;
+                                uStack_58._3_1_ = cVar3 + cVar4 * -10 + '0';
+                                if (uVar11 < 1000000000000) {
                                   in_R11 = 3;
                                 }
                                 else {
-                                  uVar6 = uVar6 / 10;
-                                  cVar1 = (char)uVar6;
-                                  uStack88._2_1_ = cVar2 + cVar1 * -10 + '0';
-                                  if (uVar3 < 1000000000000) {
+                                  uVar8 = uVar8 / 10;
+                                  cVar3 = (char)uVar8;
+                                  uStack_58._2_1_ = cVar4 + cVar3 * -10 + '0';
+                                  if (uVar5 < 1000000000000) {
                                     in_R11 = 2;
                                   }
                                   else {
-                                    uVar6 = uVar6 / 10;
-                                    cVar2 = (char)uVar6;
-                                    uStack88._1_1_ = cVar1 + cVar2 * -10 + '0';
-                                    if (uVar12 < 1000000000000) {
+                                    uVar8 = uVar8 / 10;
+                                    cVar4 = (char)uVar8;
+                                    uStack_58._1_1_ = cVar3 + cVar4 * -10 + '0';
+                                    if (uVar14 < 1000000000000) {
                                       in_R11 = 1;
                                     }
                                     else {
                                       in_R11 = 0;
-                                      uStack88._0_1_ = cVar2 + (char)(uVar6 / 10) * -10 + '0';
+                                      uStack_58._0_1_ = cVar4 + (char)(uVar8 / 10) * -10 + '0';
                                     }
                                   }
                                 }
@@ -1151,66 +1134,67 @@ void task(worker *param_1)
             }
           }
         }
-        uVar9 = 0x10 - in_R11;
+        uVar11 = 0x10 - in_R11;
         if (0x10 < in_R11 + 1U) {
-          uVar9 = 1;
+          uVar11 = 1;
         }
-        puVar4 = (undefined8 *)((long)&uStack88 + in_R11);
-        uVar5 = (uint)uVar9;
-        if (uVar5 < 8) {
-          if ((uVar9 & 4) == 0) {
-            if ((uVar5 != 0) && (*(undefined *)puVar10 = *(undefined *)puVar4, (uVar9 & 2) != 0)) {
-              *(undefined2 *)((long)puVar10 + ((uVar9 & 0xffffffff) - 2)) =
-                   *(undefined2 *)((long)&uStack88 + (uVar9 & 0xffffffff) + in_R11 + -2);
+        puVar6 = (undefined8 *)((long)&uStack_58 + in_R11);
+        uVar7 = (uint)uVar11;
+        if (uVar7 < 8) {
+          if ((uVar11 & 4) == 0) {
+            if ((uVar7 != 0) && (*(undefined *)puVar12 = *(undefined *)puVar6, (uVar11 & 2) != 0)) {
+              *(undefined2 *)((long)puVar12 + ((uVar11 & 0xffffffff) - 2)) =
+                   *(undefined2 *)((long)&uStack_58 + (uVar11 & 0xffffffff) + in_R11 + -2);
             }
           }
           else {
-            *(undefined4 *)puVar10 = *(undefined4 *)puVar4;
-            *(undefined4 *)((long)puVar10 + ((uVar9 & 0xffffffff) - 4)) =
-                 *(undefined4 *)((long)&uStack88 + (uVar9 & 0xffffffff) + in_R11 + -4);
+            *(undefined4 *)puVar12 = *(undefined4 *)puVar6;
+            *(undefined4 *)((long)puVar12 + ((uVar11 & 0xffffffff) - 4)) =
+                 *(undefined4 *)((long)&uStack_58 + (uVar11 & 0xffffffff) + in_R11 + -4);
           }
         }
         else {
-          *puVar10 = *puVar4;
-          *(undefined8 *)((long)puVar10 + ((uVar9 & 0xffffffff) - 8)) =
-               *(undefined8 *)((long)&uStack88 + (uVar9 & 0xffffffff) + in_R11 + -8);
-          lVar7 = (long)puVar10 - ((ulong)(puVar10 + 1) & 0xfffffffffffffff8);
-          uVar5 = (int)lVar7 + uVar5 & 0xfffffff8;
-          if (7 < uVar5) {
-            uVar8 = 0;
+          *puVar12 = *puVar6;
+          *(undefined8 *)((long)puVar12 + ((uVar11 & 0xffffffff) - 8)) =
+               *(undefined8 *)((long)&uStack_58 + (uVar11 & 0xffffffff) + in_R11 + -8);
+          lVar9 = (long)puVar12 - ((ulong)(puVar12 + 1) & 0xfffffffffffffff8);
+          uVar7 = (int)lVar9 + uVar7 & 0xfffffff8;
+          if (7 < uVar7) {
+            uVar10 = 0;
             do {
-              uVar3 = (ulong)uVar8;
-              uVar8 = uVar8 + 8;
-              *(undefined8 *)(((ulong)(puVar10 + 1) & 0xfffffffffffffff8) + uVar3) =
-                   *(undefined8 *)((long)puVar4 + (uVar3 - lVar7));
-            } while (uVar8 < uVar5);
+              uVar5 = (ulong)uVar10;
+              uVar10 = uVar10 + 8;
+              *(undefined8 *)(((ulong)(puVar12 + 1) & 0xfffffffffffffff8) + uVar5) =
+                   *(undefined8 *)((long)puVar6 + (uVar5 - lVar9));
+            } while (uVar10 < uVar7);
           }
         }
-        puVar4 = (undefined8 *)(uVar9 + (long)puVar10);
-        uVar9 = local_60;
+        puVar6 = (undefined8 *)(uVar11 + (long)puVar12);
+        uVar11 = local_60;
       }
-      cVar11 = cVar11 + '\x01';
-      *(undefined *)puVar4 = 10;
-      puVar10 = (undefined8 *)((long)puVar4 + 1);
+      cVar13 = cVar13 + '\x01';
+      *(undefined *)puVar6 = 10;
+      puVar12 = (undefined8 *)((long)puVar6 + 1);
       local_60 = local_60 + 1;
-      if (cVar11 != '\n') break;
+      if (cVar13 != '\n') break;
       if (*(ulong *)(param_1 + 8) < local_60 || *(ulong *)(param_1 + 8) == local_60)
       goto LAB_00401683;
-      cVar11 = '\0';
+      cVar13 = '\0';
     }
   } while (local_60 < *(ulong *)(param_1 + 8));
 LAB_00401683:
-  *(long *)(param_1 + 0x20) = (long)puVar10 - *(long *)(param_1 + 0x18);
+  *(long *)(param_1 + 0x20) = (long)puVar12 - *(long *)(param_1 + 0x18);
   return;
 }
 
 
 
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*>>>::_M_run()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> >
+// >::_M_run()
 
 void __thiscall
 std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>>::_M_run
-          (_State_impl_std__thread___Invoker_std__tuple_void____worker___worker____ *this)
+          (_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>> *this)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401c4b. Too many branches
@@ -1221,45 +1205,45 @@ std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worke
 
 
 
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*),
-// worker*>>>::~_State_impl()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> >
+// >::~_State_impl()
 
 void __thiscall
-std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>>::__State_impl
-          (_State_impl_std__thread___Invoker_std__tuple_void____worker___worker____ *this)
+std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>>::~_State_impl
+          (_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>> *this)
 
 {
   *(undefined ***)this = &PTR___State_impl_004030b0;
-  std::thread::_State::__State((_State *)this);
+  std::thread::_State::~_State((_State *)this);
   return;
 }
 
 
 
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*),
-// worker*>>>::~_State_impl()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<void (*)(worker*), worker*> >
+// >::~_State_impl()
 
 void __thiscall
-std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>>::__State_impl
-          (_State_impl_std__thread___Invoker_std__tuple_void____worker___worker____ *this)
+std::thread::_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>>::~_State_impl
+          (_State_impl<std::thread::_Invoker<std::tuple<void(*)(worker*),worker*>>> *this)
 
 {
   *(undefined ***)this = &PTR___State_impl_004030b0;
-  std::thread::_State::__State((_State *)this);
+  std::thread::_State::~_State((_State *)this);
   operator_delete(this,0x18);
   return;
 }
 
 
 
-// void std::vector<std::thread, std::allocator<std::thread>>::_M_realloc_insert<void (&)(worker*),
+// void std::vector<std::thread, std::allocator<std::thread> >::_M_realloc_insert<void (&)(worker*),
 // worker*&>(__gnu_cxx::__normal_iterator<std::thread*, std::vector<std::thread,
-// std::allocator<std::thread>>>, void (&)(worker*), worker*&)
+// std::allocator<std::thread> > >, void (&)(worker*), worker*&)
 
 void __thiscall
-std::vector<std::thread,std::allocator<std::thread>>::_M_realloc_insert_void____worker___worker___
-          (vector_std__thread_std__allocator_std__thread__ *this,__normal_iterator param_1,
-          FuncDef0 *param_2,worker **param_3)
+std::vector<std::thread,std::allocator<std::thread>>::_M_realloc_insert<void(&)(worker*),worker*&>
+          (vector<std::thread,std::allocator<std::thread>> *this,__normal_iterator param_1,
+          _func_void_worker_ptr *param_2,worker **param_3)
 
 {
   undefined8 *puVar1;
@@ -1305,18 +1289,19 @@ LAB_00401e5e:
   if (CARRY8(uVar9,uVar4) == false) {
     if (uVar10 == 0) {
       puVar7 = (undefined8 *)0x0;
+      uVar9 = 0;
       goto LAB_00401cf6;
     }
     uVar9 = 0xfffffffffffffff;
     if (uVar10 < 0x1000000000000000) {
       uVar9 = uVar10;
     }
-    uVar10 = uVar9 * 8;
+    uVar9 = uVar9 * 8;
   }
   else {
-    uVar10 = 0x7ffffffffffffff8;
+    uVar9 = 0x7ffffffffffffff8;
   }
-  puVar7 = (undefined8 *)operator_new(uVar10);
+  puVar7 = (undefined8 *)operator_new(uVar9);
 LAB_00401cf6:
   puVar11 = (undefined8 *)(((long)__src - (long)puVar2) + (long)puVar7);
   *puVar11 = 0;
@@ -1327,7 +1312,7 @@ LAB_00401cf6:
   local_40[0][2] = (long)param_2;
   local_40[0][1] = (long)pwVar3;
                     // try { // try from 00401d38 to 00401d3c has its CatchHandler @ 00401e34
-  std::thread::_M_start_thread((unique_ptr)puVar11,(FuncDef1 *)local_40);
+  std::thread::_M_start_thread((unique_ptr)puVar11,(_func_void *)local_40);
   if (local_40[0] != (long *)0x0) {
     (**(code **)(*local_40[0] + 8))();
   }
@@ -1352,85 +1337,81 @@ LAB_00401cf6:
   }
   *(undefined8 **)this = puVar7;
   *(undefined8 **)(this + 8) = puVar11;
-  *(ulong *)(this + 0x10) = (long)puVar7 + uVar10;
+  *(ulong *)(this + 0x10) = (long)puVar7 + uVar9;
   return;
 }
 
 
 
-// void std::vector<worker*,
-// std::allocator<worker*>>::_M_realloc_insert<worker*>(__gnu_cxx::__normal_iterator<worker**,
-// std::vector<worker*, std::allocator<worker*>>>, worker*&&)
+// void std::vector<worker*, std::allocator<worker*>
+// >::_M_realloc_insert<worker*>(__gnu_cxx::__normal_iterator<worker**, std::vector<worker*,
+// std::allocator<worker*> > >, worker*&&)
 
 void __thiscall
-std::vector<worker*,std::allocator<worker*>>::_M_realloc_insert_worker__
-          (vector_worker__std__allocator_worker___ *this,__normal_iterator param_1,worker **param_2)
+std::vector<worker*,std::allocator<worker*>>::_M_realloc_insert<worker*>
+          (vector<worker*,std::allocator<worker*>> *this,__normal_iterator param_1,worker **param_2)
 
 {
   void *__dest;
   void *__src;
-  long lVar1;
+  ulong uVar1;
   ulong uVar2;
-  ulong uVar3;
   void *__dest_00;
-  ulong uVar4;
+  ulong uVar3;
   size_t __n;
   undefined8 extraout_RDX;
+  long lVar4;
   long lVar5;
-  long lVar6;
   undefined4 in_register_00000034;
   void *__src_00;
   char *ctx;
   size_t __n_00;
   undefined4 local_58;
-  undefined4 uStack84;
-  undefined4 uStack80;
-  undefined4 uStack76;
+  undefined4 uStack_54;
   
   __src_00 = (void *)CONCAT44(in_register_00000034,param_1);
-  lVar6 = *(long *)(this + 8);
+  lVar5 = *(long *)(this + 8);
   __src = *(void **)this;
-  uVar2 = lVar6 - (long)__src >> 3;
-  if (uVar2 == 0xfffffffffffffff) {
+  uVar1 = lVar5 - (long)__src >> 3;
+  if (uVar1 == 0xfffffffffffffff) {
     ctx = "vector::_M_realloc_insert";
     std::__throw_length_error("vector::_M_realloc_insert");
     _init((EVP_PKEY_CTX *)ctx);
-    lVar6 = 0;
+    lVar5 = 0;
     do {
-      (*(code *)(&__frame_dummy_init_array_entry)[lVar6])
+      (*(code *)(&__frame_dummy_init_array_entry)[lVar5])
                 ((ulong)ctx & 0xffffffff,__src_00,extraout_RDX);
-      lVar6 = lVar6 + 1;
-    } while (lVar6 != 2);
+      lVar5 = lVar5 + 1;
+    } while (lVar5 != 2);
     return;
   }
-  uVar4 = 1;
-  if (uVar2 != 0) {
-    uVar4 = uVar2;
+  uVar3 = 1;
+  if (uVar1 != 0) {
+    uVar3 = uVar1;
   }
-  uVar3 = uVar2 + uVar4;
+  uVar2 = uVar1 + uVar3;
   __n = (long)__src_00 - (long)__src;
-  if (CARRY8(uVar2,uVar4) == false) {
-    if (uVar3 != 0) {
-      if (0xfffffffffffffff < uVar3) {
-        uVar3 = 0xfffffffffffffff;
+  if (CARRY8(uVar1,uVar3) == false) {
+    if (uVar2 != 0) {
+      if (0xfffffffffffffff < uVar2) {
+        uVar2 = 0xfffffffffffffff;
       }
-      uVar3 = uVar3 * 8;
+      uVar2 = uVar2 * 8;
       goto LAB_00401fa2;
     }
-    lVar5 = 0;
+    lVar4 = 0;
     __dest_00 = (void *)0x0;
   }
   else {
-    uVar3 = 0x7ffffffffffffff8;
+    uVar2 = 0x7ffffffffffffff8;
 LAB_00401fa2:
-    __dest_00 = operator_new(uVar3);
-    lVar5 = uVar3 + (long)__dest_00;
+    __dest_00 = operator_new(uVar2);
+    lVar4 = uVar2 + (long)__dest_00;
   }
   __dest = (void *)((long)__dest_00 + __n + 8);
-  __n_00 = lVar6 - (long)__src_00;
-  lVar1 = *(long *)(this + 0x10);
+  __n_00 = lVar5 - (long)__src_00;
+  lVar5 = *(long *)(this + 0x10);
   *(worker **)((long)__dest_00 + __n) = *param_2;
-  lVar6 = (long)__dest + __n_00;
   if ((long)__n < 1) {
     if (0 < (long)__n_00) {
 LAB_00401f80:
@@ -1442,17 +1423,14 @@ LAB_00401f80:
     memmove(__dest_00,__src,__n);
     if (0 < (long)__n_00) goto LAB_00401f80;
   }
-  operator_delete(__src,lVar1 - (long)__src);
+  operator_delete(__src,lVar5 - (long)__src);
 LAB_00401f33:
   local_58 = SUB84(__dest_00,0);
-  uStack84 = (undefined4)((ulong)__dest_00 >> 0x20);
-  uStack80 = (undefined4)lVar6;
-  uStack76 = (undefined4)((ulong)lVar6 >> 0x20);
-  *(long *)(this + 0x10) = lVar5;
+  uStack_54 = (undefined4)((ulong)__dest_00 >> 0x20);
+  *(long *)(this + 0x10) = lVar4;
   *(undefined4 *)this = local_58;
-  *(undefined4 *)(this + 4) = uStack84;
-  *(undefined4 *)(this + 8) = uStack80;
-  *(undefined4 *)(this + 0xc) = uStack76;
+  *(undefined4 *)(this + 4) = uStack_54;
+  *(size_t *)(this + 8) = (long)__dest + __n_00;
   return;
 }
 

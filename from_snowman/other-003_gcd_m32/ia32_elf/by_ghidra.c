@@ -2,7 +2,6 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef unsigned int    undefined4;
 typedef unsigned short    word;
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
@@ -89,6 +88,13 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
+typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
+
+struct Elf32_Rel {
+    dword r_offset; // location to apply the relocation action
+    dword r_info; // the symbol table index and the type of relocation
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -115,16 +121,5 @@ struct Elf32_Ehdr {
     word e_shstrndx;
 };
 
-
-
-
-int gcd(int param_1,int param_2)
-
-{
-  if (param_2 != 0) {
-    param_1 = gcd(param_2,param_1 % param_2);
-  }
-  return param_1;
-}
 
 

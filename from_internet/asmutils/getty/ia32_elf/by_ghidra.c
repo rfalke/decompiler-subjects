@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -128,11 +155,12 @@ LAB_08048131:
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-          undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
-          undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,
-          undefined4 param_13,char *param_14,undefined *param_15,undefined1 *param_16,
-          undefined4 param_17)
+void processEntry
+entry(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+     undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,undefined4 param_10
+     ,undefined4 param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,
+     undefined4 param_15,char *param_16,undefined *param_17,undefined1 *param_18,undefined4 param_19
+     )
 
 {
   code *pcVar1;
@@ -140,74 +168,73 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
   int iVar3;
   char *pcVar4;
   undefined4 *puVar5;
-  int unaff_retaddr;
   
-  puRam0804826f = &param_2 + unaff_retaddr;
+  puRam0804826f = &param_4 + param_2;
                     // WARNING: Read-only address (ram,0x0804826f) is written
-  puVar5 = &param_1;
-  if (unaff_retaddr != 1) {
+  puVar5 = &param_3;
+  if (param_2 != 1) {
                     // WARNING: Read-only address (ram,0x0804826b) is written
-    uRam0804826b = param_2;
-    param_2 = 0x7a;
+    uRam0804826b = param_4;
+    param_4 = 0x7a;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    param_3 = 0x30;
+    param_5 = 0x30;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    param_4 = 0x6f;
-    pcVar1 = (code *)swi(0x80);
-    (*pcVar1)();
-    param_5 = 6;
-    pcVar1 = (code *)swi(0x80);
-    (*pcVar1)();
-    param_6 = 6;
+    param_6 = 0x6f;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
     param_7 = 6;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    param_8 = 0xc;
+    param_8 = 6;
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
-    param_9 = 5;
+    param_9 = 6;
+    pcVar1 = (code *)swi(0x80);
+    (*pcVar1)();
+    param_10 = 0xc;
+    pcVar1 = (code *)swi(0x80);
+    (*pcVar1)();
+    param_11 = 5;
     pcVar1 = (code *)swi(0x80);
     iVar3 = (*pcVar1)();
-    puVar5 = &param_11;
-    if ((-1 < iVar3) && (puVar5 = &param_11, iVar3 == 0)) {
-      param_10 = 0x29;
+    puVar5 = &param_13;
+    if ((-1 < iVar3) && (puVar5 = &param_13, iVar3 == 0)) {
+      param_12 = 0x29;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_11 = 0x29;
+      param_13 = 0x29;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_12 = 0x5e;
+      param_14 = 0x5e;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_13 = 4;
+      param_15 = 4;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_14 = (char *)0x8048202;
+      param_16 = (char *)0x8048202;
       FUN_08048070();
-      param_14 = (char *)0x4;
+      param_16 = (char *)0x4;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_15 = (undefined *)0x42;
+      param_17 = (undefined *)0x42;
       pcVar1 = (code *)swi(0x80);
       (*pcVar1)();
-      param_16 = (undefined1 *)0x3;
+      param_18 = (undefined1 *)0x3;
       pcVar1 = (code *)swi(0x80);
       iVar3 = (*pcVar1)();
       puVar5 = (undefined4 *)&stack0x00000048;
       if (-1 < iVar3) {
         (&DAT_080483f8)[iVar3] = 0;
-        param_17 = 0;
-        param_16 = &DAT_080483f9;
-        param_15 = &DAT_08048067;
-        param_14 = s__bin_login_0804805c;
-        param_13 = 0xb;
+        param_19 = 0;
+        param_18 = &DAT_080483f9;
+        param_17 = &DAT_08048067;
+        param_16 = s__bin_login_0804805c;
+        param_15 = 0xb;
         pcVar1 = (code *)swi(0x80);
         (*pcVar1)();
-        puVar5 = &param_15;
+        puVar5 = &param_17;
       }
     }
   }

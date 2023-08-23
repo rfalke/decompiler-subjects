@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -34,14 +61,14 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;
   char cVar2;
   int iVar3;
   undefined4 uVar4;
-  int unaff_EBX;
+  int in_EBX;
   short **ppsVar5;
   short **ppsVar7;
   short **ppsVar8;
@@ -139,13 +166,13 @@ LAB_08048214:
       *(undefined4 *)((int)ppsVar12 + -4) = 0x80480b3;
       FUN_08048298();
       DAT_0804843d = 1;
-      DAT_08048439 = unaff_EBX;
+      DAT_08048439 = in_EBX;
       if (*(char *)psVar13 == '-') {
         *(undefined4 *)((int)ppsVar12 + -4) = 0x80480ce;
         FUN_08048298();
-        if (unaff_EBX - DAT_08048439 < 0) goto LAB_0804823d;
-        unaff_EBX = (unaff_EBX - DAT_08048439) + 1;
-        DAT_0804843d = unaff_EBX;
+        if (in_EBX - DAT_08048439 < 0) goto LAB_0804823d;
+        in_EBX = (in_EBX - DAT_08048439) + 1;
+        DAT_0804843d = in_EBX;
       }
       goto LAB_08048055;
     }
@@ -202,8 +229,8 @@ LAB_0804823d:
         ppsVar12 = ppsVar11;
         *(undefined4 *)((int)ppsVar12 + -4) = 0x8048125;
         FUN_08048298();
-        if (unaff_EBX < 0x100) {
-          (&DAT_08048339)[unaff_EBX] = 1;
+        if (in_EBX < 0x100) {
+          (&DAT_08048339)[in_EBX] = 1;
         }
         cVar2 = *(char *)psVar14;
         ppsVar11 = ppsVar12;
@@ -215,11 +242,11 @@ LAB_0804823d:
 
 
 
-undefined8 __regparm2 FUN_08048246(uint param_1,undefined1 *param_2,undefined param_3)
+undefined8 __regparm3 FUN_08048246(undefined4 param_1,undefined1 *param_2)
 
 {
   code *pcVar1;
-  byte *unaff_EBX;
+  undefined1 *unaff_EBX;
   undefined *puVar2;
   undefined *unaff_EBP;
   undefined8 uVar3;
@@ -227,8 +254,8 @@ undefined8 __regparm2 FUN_08048246(uint param_1,undefined1 *param_2,undefined pa
   if ((int)param_2 <= (int)unaff_EBX) {
     pcVar1 = (code *)swi(0x80);
     uVar3 = (*pcVar1)();
-    param_1 = (uint)((ulonglong)uVar3 >> 0x20);
-    puVar2 = &param_3;
+    param_1 = (undefined4)((ulonglong)uVar3 >> 0x20);
+    puVar2 = &stack0x00000004;
     if ((int)uVar3 == 0) {
       if (unaff_EBP != &DAT_08048c45) {
         pcVar1 = (code *)swi(0x80);
@@ -245,7 +272,7 @@ undefined8 __regparm2 FUN_08048246(uint param_1,undefined1 *param_2,undefined pa
     unaff_EBX = &DAT_08048445;
     param_2 = &DAT_08048445 + (int)uVar3;
   }
-  return CONCAT44(param_2,param_1 & 0xffffff00 | (uint)*unaff_EBX);
+  return CONCAT44(param_2,CONCAT31((int3)((uint)param_1 >> 8),*unaff_EBX));
 }
 
 

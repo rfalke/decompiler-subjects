@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -39,9 +66,10 @@ struct Elf32_Ehdr {
 // 
 // WARNING: Removing unreachable block (ram,0x08048212)
 
-void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
-          undefined4 param_5,undefined4 param_6,undefined4 param_7,uint param_8,undefined4 param_9,
-          undefined4 param_10,undefined4 param_11,uint param_12)
+void processEntry
+entry(undefined4 param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+     undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9,uint param_10,
+     undefined4 param_11,undefined4 param_12_00,undefined4 param_12,uint param_13)
 
 {
   byte *pbVar1;
@@ -61,32 +89,31 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
   undefined4 *puVar14;
   undefined *puVar15;
   byte bVar16;
-  int unaff_retaddr;
-  undefined uStack00000036;
+  undefined param_15;
   
   bVar16 = 0;
-  piVar13 = &param_1;
-  if (unaff_retaddr != 1) {
-    param_2 = 0x30;
+  piVar13 = &param_3;
+  if (param_2 != 1) {
+    param_4 = 0x30;
     pcVar3 = (code *)swi(0x80);
     (*pcVar3)();
-    param_3 = 5;
+    param_5 = 5;
     pcVar3 = (code *)swi(0x80);
     iVar6 = (*pcVar3)();
     if (-1 < iVar6) {
                     // WARNING: Read-only address (ram,0x0804826c) is written
-      param_4 = 0x36;
+      param_6 = 0x36;
       pcVar3 = (code *)swi(0x80);
       iRam0804826c = iVar6;
       (*pcVar3)();
-      param_8 = param_8 & 0xffffeff0 | 0xd;
-      param_5 = 0x36;
-      pcVar3 = (code *)swi(0x80);
-      (*pcVar3)();
-      param_6 = 0x36;
-      pcVar3 = (code *)swi(0x80);
-      (*pcVar3)();
+      param_10 = param_10 & 0xffffeff0 | 0xd;
       param_7 = 0x36;
+      pcVar3 = (code *)swi(0x80);
+      (*pcVar3)();
+      param_8 = 0x36;
+      pcVar3 = (code *)swi(0x80);
+      (*pcVar3)();
+      param_9 = 0x36;
       pcVar3 = (code *)swi(0x80);
       (*pcVar3)();
       puVar15 = &stack0x00000035;
@@ -94,19 +121,19 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
         *puVar15 = 0;
         puVar15 = puVar15 + (uint)bVar16 * -2 + 1;
       }
-      uStack00000036 = 0x1c;
-      param_12 = param_12 & 0xfffffff5;
-      param_8 = 0x36;
+      param_15 = 0x1c;
+      param_13 = param_13 & 0xfffffff5;
+      param_10 = 0x36;
       pcVar3 = (code *)swi(0x80);
       (*pcVar3)();
-      param_9 = 4;
+      param_11 = 4;
       pcVar3 = (code *)swi(0x80);
       (*pcVar3)();
+      param_12_00 = 1;
+      param_11 = 0;
       param_10 = 1;
       param_9 = 0;
-      param_8 = 1;
-      param_7 = 0;
-      puVar14 = &param_7;
+      puVar14 = &param_9;
       do {
         do {
           while( true ) {
@@ -137,13 +164,13 @@ void entry(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 p
         puVar14 = puVar12 + 3;
       } while( true );
     }
-    param_4 = 4;
+    param_6 = 4;
     pcVar3 = (code *)swi(0x80);
     (*pcVar3)();
-    param_5 = 1;
+    param_7 = 1;
     pcVar3 = (code *)swi(0x80);
     (*pcVar3)();
-    piVar13 = &param_7;
+    piVar13 = &param_9;
   }
   piVar13[-1] = 1;
   piVar13[-1] = 4;
@@ -233,7 +260,7 @@ LAB_0804825a_1:
       if ((char)*pbVar1 < '\0') {
         *pbVar8 = *pbVar8 ^ bVar9;
         bVar4 = bVar4 | *(byte *)(iVar6 + 0x72);
-        pcVar7 = (char *)((uint)pcVar7 & 0xffffff00 | (uint)bVar4);
+        pcVar7 = (char *)CONCAT31((int3)((uint)pcVar7 >> 8),bVar4);
         out(*puVar14,uVar10);
         out(*(undefined *)(puVar14 + (uint)bVar16 * -2 + 1),uVar10);
         *pcVar7 = *pcVar7 + bVar4;

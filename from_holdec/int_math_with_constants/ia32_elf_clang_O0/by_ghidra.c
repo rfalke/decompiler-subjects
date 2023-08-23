@@ -134,6 +134,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -200,6 +201,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -207,14 +219,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -294,10 +306,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -350,6 +365,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080483c9)
+// WARNING: Removing unreachable block (ram,0x080483c0)
 
 void frame_dummy(void)
 
@@ -359,6 +375,8 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_char_add(void)
 
@@ -1392,6 +1410,8 @@ void signed_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_mult(void)
 
 {
@@ -2423,6 +2443,8 @@ void signed_char_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_char_div(void)
 
@@ -3456,6 +3478,8 @@ void signed_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_char_modulo(void)
 
 {
@@ -4487,6 +4511,8 @@ void signed_char_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_char_add(void)
 
@@ -5520,6 +5546,8 @@ void unsigned_char_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_mult(void)
 
 {
@@ -6551,6 +6579,8 @@ void unsigned_char_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_char_div(void)
 
@@ -7584,6 +7614,8 @@ void unsigned_char_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_char_modulo(void)
 
 {
@@ -8615,6 +8647,8 @@ void unsigned_char_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_short_add(void)
 
@@ -9648,6 +9682,8 @@ void signed_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_mult(void)
 
 {
@@ -10679,6 +10715,8 @@ void signed_short_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_short_div(void)
 
@@ -11712,6 +11750,8 @@ void signed_short_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_short_modulo(void)
 
 {
@@ -12743,6 +12783,8 @@ void signed_short_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_short_add(void)
 
@@ -13776,6 +13818,8 @@ void unsigned_short_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_mult(void)
 
 {
@@ -14807,6 +14851,8 @@ void unsigned_short_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_short_div(void)
 
@@ -15840,6 +15886,8 @@ void unsigned_short_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_short_modulo(void)
 
 {
@@ -16871,6 +16919,8 @@ void unsigned_short_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_int_add(void)
 
@@ -17904,6 +17954,8 @@ void signed_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_mult(void)
 
 {
@@ -18935,6 +18987,8 @@ void signed_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_int_div(void)
 
@@ -19968,6 +20022,8 @@ void signed_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_int_modulo(void)
 
 {
@@ -20999,6 +21055,8 @@ void signed_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_add(void)
 
@@ -22032,6 +22090,8 @@ void unsigned_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_mult(void)
 
 {
@@ -23063,6 +23123,8 @@ void unsigned_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_int_div(void)
 
@@ -24096,6 +24158,8 @@ void unsigned_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_int_modulo(void)
 
 {
@@ -25127,6 +25191,8 @@ void unsigned_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_int_add(void)
 
@@ -26160,6 +26226,8 @@ void signed_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_mult(void)
 
 {
@@ -27191,6 +27259,8 @@ void signed_long_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_int_div(void)
 
@@ -28224,6 +28294,8 @@ void signed_long_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_int_modulo(void)
 
 {
@@ -29255,6 +29327,8 @@ void signed_long_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_add(void)
 
@@ -30288,6 +30362,8 @@ void unsigned_long_int_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_mult(void)
 
 {
@@ -31319,6 +31395,8 @@ void unsigned_long_int_mult(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_int_div(void)
 
@@ -32352,6 +32430,8 @@ void unsigned_long_int_div(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_int_modulo(void)
 
 {
@@ -33383,6 +33463,8 @@ void unsigned_long_int_modulo(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void signed_long_long_add(void)
 
@@ -36464,20 +36546,22 @@ void signed_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void signed_long_long_mult(void)
 
 {
   signed_long_long_dest[0] = signed_long_long_src[0];
-  signed_long_long_dest[1]._0_4_ = (uint)signed_long_long_src[1] * 2;
   signed_long_long_dest[1]._4_4_ =
        signed_long_long_src[1]._4_4_ << 1 | (uint)signed_long_long_src[1] >> 0x1f;
+  signed_long_long_dest[1]._0_4_ = (uint)signed_long_long_src[1] * 2;
   signed_long_long_dest[2]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[2] * 3);
   signed_long_long_dest[2]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[2] * 3 >> 0x20) +
        signed_long_long_src[2]._4_4_ * 3;
-  signed_long_long_dest[3]._0_4_ = (uint)signed_long_long_src[3] << 2;
   signed_long_long_dest[3]._4_4_ =
        signed_long_long_src[3]._4_4_ << 2 | (uint)signed_long_long_src[3] >> 0x1e;
+  signed_long_long_dest[3]._0_4_ = (uint)signed_long_long_src[3] << 2;
   signed_long_long_dest[4]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[4] * 5);
   signed_long_long_dest[4]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[4] * 5 >> 0x20) +
@@ -36490,9 +36574,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[6]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[6] * 7 >> 0x20) +
        signed_long_long_src[6]._4_4_ * 7;
-  signed_long_long_dest[7]._0_4_ = (uint)signed_long_long_src[7] << 3;
   signed_long_long_dest[7]._4_4_ =
        signed_long_long_src[7]._4_4_ << 3 | (uint)signed_long_long_src[7] >> 0x1d;
+  signed_long_long_dest[7]._0_4_ = (uint)signed_long_long_src[7] << 3;
   signed_long_long_dest[8]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[8] * 9);
   signed_long_long_dest[8]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[8] * 9 >> 0x20) +
@@ -36521,9 +36605,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[14]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[14] * 0xf >> 0x20) +
        signed_long_long_src[14]._4_4_ * 0xf;
-  signed_long_long_dest[15]._0_4_ = (uint)signed_long_long_src[15] << 4;
   signed_long_long_dest[15]._4_4_ =
        signed_long_long_src[15]._4_4_ << 4 | (uint)signed_long_long_src[15] >> 0x1c;
+  signed_long_long_dest[15]._0_4_ = (uint)signed_long_long_src[15] << 4;
   signed_long_long_dest[16]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[16] * 0x11);
   signed_long_long_dest[16]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[16] * 0x11 >> 0x20) +
@@ -36584,9 +36668,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[30]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[30] * 0x1f >> 0x20) +
        signed_long_long_src[30]._4_4_ * 0x1f;
-  signed_long_long_dest[31]._0_4_ = (uint)signed_long_long_src[31] << 5;
   signed_long_long_dest[31]._4_4_ =
        signed_long_long_src[31]._4_4_ << 5 | (uint)signed_long_long_src[31] >> 0x1b;
+  signed_long_long_dest[31]._0_4_ = (uint)signed_long_long_src[31] << 5;
   signed_long_long_dest[32]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[32] * 0x21);
   signed_long_long_dest[32]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[32] * 0x21 >> 0x20) +
@@ -36711,9 +36795,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[62]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[62] * 0x3f >> 0x20) +
        signed_long_long_src[62]._4_4_ * 0x3f;
-  signed_long_long_dest[63]._0_4_ = (uint)signed_long_long_src[63] << 6;
   signed_long_long_dest[63]._4_4_ =
        signed_long_long_src[63]._4_4_ << 6 | (uint)signed_long_long_src[63] >> 0x1a;
+  signed_long_long_dest[63]._0_4_ = (uint)signed_long_long_src[63] << 6;
   signed_long_long_dest[64]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[64] * 0x41);
   signed_long_long_dest[64]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[64] * 0x41 >> 0x20) +
@@ -36966,9 +37050,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[126]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[126] * 0x7f >> 0x20) +
        signed_long_long_src[126]._4_4_ * 0x7f;
-  signed_long_long_dest[127]._0_4_ = (uint)signed_long_long_src[127] << 7;
   signed_long_long_dest[127]._4_4_ =
        signed_long_long_src[127]._4_4_ << 7 | (uint)signed_long_long_src[127] >> 0x19;
+  signed_long_long_dest[127]._0_4_ = (uint)signed_long_long_src[127] << 7;
   signed_long_long_dest[128]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[128] * 0x81);
   signed_long_long_dest[128]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[128] * 0x81 >> 0x20) +
@@ -37477,9 +37561,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[254]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[254] * 0xff >> 0x20) +
        signed_long_long_src[254]._4_4_ * 0xff;
-  signed_long_long_dest[255]._0_4_ = (uint)signed_long_long_src[255] << 8;
   signed_long_long_dest[255]._4_4_ =
        signed_long_long_src[255]._4_4_ << 8 | (uint)signed_long_long_src[255] >> 0x18;
+  signed_long_long_dest[255]._0_4_ = (uint)signed_long_long_src[255] << 8;
   signed_long_long_dest[256]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[256] * 0x101);
   signed_long_long_dest[256]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[256] * 0x101 >> 0x20) +
@@ -38500,9 +38584,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[510]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[510] * 0x1ff >> 0x20) +
        signed_long_long_src[510]._4_4_ * 0x1ff;
-  signed_long_long_dest[511]._0_4_ = (uint)signed_long_long_src[511] << 9;
   signed_long_long_dest[511]._4_4_ =
        signed_long_long_src[511]._4_4_ << 9 | (uint)signed_long_long_src[511] >> 0x17;
+  signed_long_long_dest[511]._0_4_ = (uint)signed_long_long_src[511] << 9;
   signed_long_long_dest[512]._0_4_ = (int)((ulonglong)(uint)signed_long_long_src[512] * 0x201);
   signed_long_long_dest[512]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[512] * 0x201 >> 0x20) +
@@ -40547,9 +40631,9 @@ void signed_long_long_mult(void)
   signed_long_long_dest[1022]._4_4_ =
        (int)((ulonglong)(uint)signed_long_long_src[1022] * 0x3ff >> 0x20) +
        signed_long_long_src[1022]._4_4_ * 0x3ff;
-  signed_long_long_dest[1023]._0_4_ = (uint)signed_long_long_src[1023] << 10;
   signed_long_long_dest[1023]._4_4_ =
        signed_long_long_src[1023]._4_4_ << 10 | (uint)signed_long_long_src[1023] >> 0x16;
+  signed_long_long_dest[1023]._0_4_ = (uint)signed_long_long_src[1023] << 10;
   return;
 }
 
@@ -40566,6 +40650,8 @@ Cause: Exception while decompiling 08137e10: process: timeout
 
 */
 
+
+// WARNING: Unknown calling convention
 
 void unsigned_long_long_add(void)
 
@@ -43647,20 +43733,22 @@ void unsigned_long_long_add(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void unsigned_long_long_mult(void)
 
 {
   unsigned_long_long_dest[0] = unsigned_long_long_src[0];
-  unsigned_long_long_dest[1]._0_4_ = (uint)unsigned_long_long_src[1] * 2;
   unsigned_long_long_dest[1]._4_4_ =
        unsigned_long_long_src[1]._4_4_ << 1 | (uint)unsigned_long_long_src[1] >> 0x1f;
+  unsigned_long_long_dest[1]._0_4_ = (uint)unsigned_long_long_src[1] * 2;
   unsigned_long_long_dest[2]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[2] * 3);
   unsigned_long_long_dest[2]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[2] * 3 >> 0x20) +
        unsigned_long_long_src[2]._4_4_ * 3;
-  unsigned_long_long_dest[3]._0_4_ = (uint)unsigned_long_long_src[3] << 2;
   unsigned_long_long_dest[3]._4_4_ =
        unsigned_long_long_src[3]._4_4_ << 2 | (uint)unsigned_long_long_src[3] >> 0x1e;
+  unsigned_long_long_dest[3]._0_4_ = (uint)unsigned_long_long_src[3] << 2;
   unsigned_long_long_dest[4]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[4] * 5);
   unsigned_long_long_dest[4]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[4] * 5 >> 0x20) +
@@ -43673,9 +43761,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[6]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[6] * 7 >> 0x20) +
        unsigned_long_long_src[6]._4_4_ * 7;
-  unsigned_long_long_dest[7]._0_4_ = (uint)unsigned_long_long_src[7] << 3;
   unsigned_long_long_dest[7]._4_4_ =
        unsigned_long_long_src[7]._4_4_ << 3 | (uint)unsigned_long_long_src[7] >> 0x1d;
+  unsigned_long_long_dest[7]._0_4_ = (uint)unsigned_long_long_src[7] << 3;
   unsigned_long_long_dest[8]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[8] * 9);
   unsigned_long_long_dest[8]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[8] * 9 >> 0x20) +
@@ -43704,9 +43792,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[14]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[14] * 0xf >> 0x20) +
        unsigned_long_long_src[14]._4_4_ * 0xf;
-  unsigned_long_long_dest[15]._0_4_ = (uint)unsigned_long_long_src[15] << 4;
   unsigned_long_long_dest[15]._4_4_ =
        unsigned_long_long_src[15]._4_4_ << 4 | (uint)unsigned_long_long_src[15] >> 0x1c;
+  unsigned_long_long_dest[15]._0_4_ = (uint)unsigned_long_long_src[15] << 4;
   unsigned_long_long_dest[16]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[16] * 0x11);
   unsigned_long_long_dest[16]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[16] * 0x11 >> 0x20) +
@@ -43767,9 +43855,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[30]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[30] * 0x1f >> 0x20) +
        unsigned_long_long_src[30]._4_4_ * 0x1f;
-  unsigned_long_long_dest[31]._0_4_ = (uint)unsigned_long_long_src[31] << 5;
   unsigned_long_long_dest[31]._4_4_ =
        unsigned_long_long_src[31]._4_4_ << 5 | (uint)unsigned_long_long_src[31] >> 0x1b;
+  unsigned_long_long_dest[31]._0_4_ = (uint)unsigned_long_long_src[31] << 5;
   unsigned_long_long_dest[32]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[32] * 0x21);
   unsigned_long_long_dest[32]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[32] * 0x21 >> 0x20) +
@@ -43894,9 +43982,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[62]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[62] * 0x3f >> 0x20) +
        unsigned_long_long_src[62]._4_4_ * 0x3f;
-  unsigned_long_long_dest[63]._0_4_ = (uint)unsigned_long_long_src[63] << 6;
   unsigned_long_long_dest[63]._4_4_ =
        unsigned_long_long_src[63]._4_4_ << 6 | (uint)unsigned_long_long_src[63] >> 0x1a;
+  unsigned_long_long_dest[63]._0_4_ = (uint)unsigned_long_long_src[63] << 6;
   unsigned_long_long_dest[64]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[64] * 0x41);
   unsigned_long_long_dest[64]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[64] * 0x41 >> 0x20) +
@@ -44149,9 +44237,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[126]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[126] * 0x7f >> 0x20) +
        unsigned_long_long_src[126]._4_4_ * 0x7f;
-  unsigned_long_long_dest[127]._0_4_ = (uint)unsigned_long_long_src[127] << 7;
   unsigned_long_long_dest[127]._4_4_ =
        unsigned_long_long_src[127]._4_4_ << 7 | (uint)unsigned_long_long_src[127] >> 0x19;
+  unsigned_long_long_dest[127]._0_4_ = (uint)unsigned_long_long_src[127] << 7;
   unsigned_long_long_dest[128]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[128] * 0x81);
   unsigned_long_long_dest[128]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[128] * 0x81 >> 0x20) +
@@ -44660,9 +44748,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[254]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[254] * 0xff >> 0x20) +
        unsigned_long_long_src[254]._4_4_ * 0xff;
-  unsigned_long_long_dest[255]._0_4_ = (uint)unsigned_long_long_src[255] << 8;
   unsigned_long_long_dest[255]._4_4_ =
        unsigned_long_long_src[255]._4_4_ << 8 | (uint)unsigned_long_long_src[255] >> 0x18;
+  unsigned_long_long_dest[255]._0_4_ = (uint)unsigned_long_long_src[255] << 8;
   unsigned_long_long_dest[256]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[256] * 0x101);
   unsigned_long_long_dest[256]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[256] * 0x101 >> 0x20) +
@@ -45683,9 +45771,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[510]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[510] * 0x1ff >> 0x20) +
        unsigned_long_long_src[510]._4_4_ * 0x1ff;
-  unsigned_long_long_dest[511]._0_4_ = (uint)unsigned_long_long_src[511] << 9;
   unsigned_long_long_dest[511]._4_4_ =
        unsigned_long_long_src[511]._4_4_ << 9 | (uint)unsigned_long_long_src[511] >> 0x17;
+  unsigned_long_long_dest[511]._0_4_ = (uint)unsigned_long_long_src[511] << 9;
   unsigned_long_long_dest[512]._0_4_ = (int)((ulonglong)(uint)unsigned_long_long_src[512] * 0x201);
   unsigned_long_long_dest[512]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[512] * 0x201 >> 0x20) +
@@ -47753,9 +47841,9 @@ void unsigned_long_long_mult(void)
   unsigned_long_long_dest[1022]._4_4_ =
        (int)((ulonglong)(uint)unsigned_long_long_src[1022] * 0x3ff >> 0x20) +
        unsigned_long_long_src[1022]._4_4_ * 0x3ff;
-  unsigned_long_long_dest[1023]._0_4_ = (uint)unsigned_long_long_src[1023] << 10;
   unsigned_long_long_dest[1023]._4_4_ =
        unsigned_long_long_src[1023]._4_4_ << 10 | (uint)unsigned_long_long_src[1023] >> 0x16;
+  unsigned_long_long_dest[1023]._0_4_ = (uint)unsigned_long_long_src[1023] << 10;
   return;
 }
 
@@ -47772,6 +47860,8 @@ Cause: Exception while decompiling 08164150: process: timeout
 
 */
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -47876,14 +47966,14 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; local_28 >> uVar9 == 0; uVar9 = uVar9 - 1) {
       }
     }
-    uVar9 = uVar9 ^ 0x1f;
-    if (uVar9 == 0) {
+    if ((uVar9 ^ 0x1f) == 0) {
+      uVar9 = 0;
       if ((local_28 < param_2) || (iVar6 = 0, local_2c <= param_1)) {
         iVar6 = 1;
       }
     }
     else {
-      bVar5 = (byte)uVar9;
+      bVar5 = (byte)(uVar9 ^ 0x1f);
       bVar7 = 0x20 - bVar5;
       uVar1 = (ulonglong)(local_2c >> (bVar7 & 0x1f) | local_28 << (bVar5 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar7 & 0x1f),
@@ -47912,19 +48002,18 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08170429)
+
 undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
-  byte bVar3;
-  uint uVar4;
+  byte bVar2;
+  uint uVar3;
+  byte bVar4;
   uint uVar5;
-  byte bVar6;
-  uint uVar7;
-  uint uVar8;
-  uint uVar9;
-  bool bVar10;
+  int iVar6;
+  bool bVar7;
   uint local_3c;
   uint local_38;
   int local_30;
@@ -47933,10 +48022,10 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
   local_3c = param_3;
   local_38 = param_4;
   if ((int)param_2 < 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
     local_30 = -1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   if ((int)param_4 < 0) {
     local_3c = -param_3;
@@ -47957,44 +48046,40 @@ undefined8 __moddi3(uint param_1,uint param_2,uint param_3,uint param_4)
     param_1 = local_3c;
   }
   else if (local_38 <= param_2) {
-    uVar4 = 0x1f;
+    uVar3 = 0x1f;
     if (local_38 != 0) {
-      for (; local_38 >> uVar4 == 0; uVar4 = uVar4 - 1) {
+      for (; local_38 >> uVar3 == 0; uVar3 = uVar3 - 1) {
       }
     }
-    if ((uVar4 ^ 0x1f) == 0) {
+    if ((uVar3 ^ 0x1f) == 0) {
       if ((local_38 < param_2) || (local_3c <= param_1)) {
-        bVar10 = param_1 < local_3c;
+        bVar7 = param_1 < local_3c;
         param_1 = param_1 - local_3c;
-        param_2 = (param_2 - local_38) - (uint)bVar10;
+        param_2 = (param_2 - local_38) - (uint)bVar7;
       }
     }
     else {
-      bVar3 = (byte)(uVar4 ^ 0x1f);
-      bVar6 = 0x20 - bVar3;
-      uVar7 = local_3c >> (bVar6 & 0x1f) | local_38 << (bVar3 & 0x1f);
-      local_3c = local_3c << (bVar3 & 0x1f);
-      uVar4 = param_1 << (bVar3 & 0x1f);
-      uVar1 = CONCAT44(param_2 >> (bVar6 & 0x1f),
-                       param_2 << (bVar3 & 0x1f) | param_1 >> (bVar6 & 0x1f));
-      uVar8 = (uint)(uVar1 % (ulonglong)uVar7);
-      lVar2 = (uVar1 / uVar7 & 0xffffffff) * (ulonglong)local_3c;
-      uVar9 = (uint)((ulonglong)lVar2 >> 0x20);
-      uVar5 = (uint)lVar2;
-      if ((uVar8 < uVar9) || ((uVar8 == uVar9 && (uVar4 < uVar5)))) {
-        bVar10 = uVar5 < local_3c;
-        uVar5 = uVar5 - local_3c;
-        uVar9 = (uVar9 - uVar7) - (uint)bVar10;
+      bVar2 = (byte)(uVar3 ^ 0x1f);
+      bVar4 = 0x20 - bVar2;
+      uVar5 = local_3c >> (bVar4 & 0x1f) | local_38 << (bVar2 & 0x1f);
+      local_3c = local_3c << (bVar2 & 0x1f);
+      uVar3 = param_1 << (bVar2 & 0x1f);
+      uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),
+                       param_2 << (bVar2 & 0x1f) | param_1 >> (bVar4 & 0x1f));
+      iVar6 = (int)(uVar1 % (ulonglong)uVar5);
+      uVar1 = (uVar1 / uVar5 & 0xffffffff) * (ulonglong)local_3c;
+      if (CONCAT44(iVar6,uVar3) < uVar1) {
+        uVar1 = uVar1 - CONCAT44(uVar5,local_3c);
       }
-      param_2 = (uVar8 - uVar9) - (uint)(uVar4 < uVar5);
-      param_1 = param_2 << (bVar6 & 0x1f) | uVar4 - uVar5 >> (bVar3 & 0x1f);
-      param_2 = param_2 >> (bVar3 & 0x1f);
+      param_2 = (iVar6 - (int)(uVar1 >> 0x20)) - (uint)(uVar3 < (uint)uVar1);
+      param_1 = param_2 << (bVar4 & 0x1f) | uVar3 - (uint)uVar1 >> (bVar2 & 0x1f);
+      param_2 = param_2 >> (bVar2 & 0x1f);
     }
   }
   if (local_30 != 0) {
-    bVar10 = param_1 != 0;
+    bVar7 = param_1 != 0;
     param_1 = -param_1;
-    param_2 = -(param_2 + bVar10);
+    param_2 = -(param_2 + bVar7);
   }
   return CONCAT44(param_2,param_1);
 }
@@ -48036,9 +48121,8 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; param_4 >> uVar6 == 0; uVar6 = uVar6 - 1) {
       }
     }
-    uVar6 = uVar6 ^ 0x1f;
-    if (uVar6 != 0) {
-      bVar5 = (byte)uVar6;
+    if ((uVar6 ^ 0x1f) != 0) {
+      bVar5 = (byte)(uVar6 ^ 0x1f);
       bVar8 = 0x20 - bVar5;
       uVar1 = (ulonglong)(param_4 << (bVar5 & 0x1f) | param_3 >> (bVar8 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar8 & 0x1f),
@@ -48053,6 +48137,7 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       }
       return (ulonglong)uVar6;
     }
+    uVar6 = 0;
     if ((param_4 < param_2) || (uVar7 = 0, param_3 <= param_1)) {
       uVar7 = 1;
     }
@@ -48062,66 +48147,60 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 
 
+// WARNING: Removing unreachable block (ram,0x081706aa)
+
 ulonglong __umoddi3(uint param_1,uint param_2,uint param_3,uint param_4)
 
 {
   ulonglong uVar1;
-  longlong lVar2;
+  byte bVar2;
   byte bVar3;
-  byte bVar4;
-  uint uVar5;
-  uint uVar6;
-  uint uVar7;
-  uint uVar8;
-  bool bVar9;
+  uint uVar4;
+  int iVar5;
   uint local_28;
   
   local_28 = param_1;
   if (param_4 == 0) {
     if (param_2 < param_3) {
-      uVar5 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
+      uVar4 = (uint)(CONCAT44(param_2,param_1) % (ulonglong)param_3);
     }
     else {
       if (param_3 == 0) {
         param_3 = (uint)(1 / 0);
       }
-      uVar5 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
+      uVar4 = (uint)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) %
                     (ulonglong)param_3);
     }
-    return (ulonglong)uVar5;
+    return (ulonglong)uVar4;
   }
   if (param_4 <= param_2) {
-    uVar5 = 0x1f;
+    uVar4 = 0x1f;
     if (param_4 != 0) {
-      for (; param_4 >> uVar5 == 0; uVar5 = uVar5 - 1) {
+      for (; param_4 >> uVar4 == 0; uVar4 = uVar4 - 1) {
       }
     }
-    if ((uVar5 ^ 0x1f) == 0) {
+    if ((uVar4 ^ 0x1f) == 0) {
       if ((param_4 < param_2) || (param_3 <= param_1)) {
         local_28 = param_1 - param_3;
         param_2 = (param_2 - param_4) - (uint)(param_1 < param_3);
       }
       return CONCAT44(param_2,local_28);
     }
-    bVar3 = (byte)(uVar5 ^ 0x1f);
-    bVar4 = 0x20 - bVar3;
-    uVar6 = param_3 >> (bVar4 & 0x1f) | param_4 << (bVar3 & 0x1f);
-    param_3 = param_3 << (bVar3 & 0x1f);
-    uVar1 = CONCAT44(param_2 >> (bVar4 & 0x1f),param_1 >> (bVar4 & 0x1f) | param_2 << (bVar3 & 0x1f)
+    bVar2 = (byte)(uVar4 ^ 0x1f);
+    bVar3 = 0x20 - bVar2;
+    uVar4 = param_3 >> (bVar3 & 0x1f) | param_4 << (bVar2 & 0x1f);
+    param_3 = param_3 << (bVar2 & 0x1f);
+    uVar1 = CONCAT44(param_2 >> (bVar3 & 0x1f),param_1 >> (bVar3 & 0x1f) | param_2 << (bVar2 & 0x1f)
                     );
-    uVar7 = (uint)(uVar1 % (ulonglong)uVar6);
-    param_1 = param_1 << (bVar3 & 0x1f);
-    lVar2 = (uVar1 / uVar6 & 0xffffffff) * (ulonglong)param_3;
-    uVar8 = (uint)((ulonglong)lVar2 >> 0x20);
-    uVar5 = (uint)lVar2;
-    if ((uVar7 < uVar8) || ((uVar7 == uVar8 && (param_1 < uVar5)))) {
-      bVar9 = uVar5 < param_3;
-      uVar5 = uVar5 - param_3;
-      uVar8 = (uVar8 - uVar6) - (uint)bVar9;
+    iVar5 = (int)(uVar1 % (ulonglong)uVar4);
+    param_1 = param_1 << (bVar2 & 0x1f);
+    uVar1 = (uVar1 / uVar4 & 0xffffffff) * (ulonglong)param_3;
+    if (CONCAT44(iVar5,param_1) < uVar1) {
+      uVar1 = uVar1 - CONCAT44(uVar4,param_3);
     }
-    uVar8 = (uVar7 - uVar8) - (uint)(param_1 < uVar5);
-    return CONCAT44(uVar8 >> (bVar3 & 0x1f),
-                    uVar8 << (bVar4 & 0x1f) | param_1 - uVar5 >> (bVar3 & 0x1f));
+    uVar4 = (iVar5 - (int)(uVar1 >> 0x20)) - (uint)(param_1 < (uint)uVar1);
+    return CONCAT44(uVar4 >> (bVar2 & 0x1f),
+                    uVar4 << (bVar3 & 0x1f) | param_1 - (uint)uVar1 >> (bVar2 & 0x1f));
   }
   return CONCAT44(param_2,param_1);
 }

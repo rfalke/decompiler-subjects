@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -175,7 +202,7 @@ LAB_0804816b:
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;
@@ -306,12 +333,12 @@ undefined8 FUN_08048289(void)
   int *piVar5;
   undefined4 *puVar6;
   undefined1 *puVar7;
-  int aiStack44 [2];
-  undefined *puStack36;
+  int aiStack_2c [2];
+  undefined *puStack_24;
   
   puVar6 = (undefined4 *)&DAT_0804a45d;
-  ppuVar3 = &puStack36;
-  puStack36 = &DAT_0804a45d;
+  ppuVar3 = &puStack_24;
+  puStack_24 = &DAT_0804a45d;
   do {
     ((int *)ppuVar3)[-1] = 3;
     pcVar1 = (code *)swi(0x80);
@@ -355,7 +382,7 @@ undefined8 FUN_080482d0(void)
   char *pcVar7;
   char **ppcVar8;
   byte bVar9;
-  undefined4 uStack36;
+  undefined4 uStack_24;
   
   puVar5 = &stack0xffffffe0;
   bVar9 = 0;
@@ -406,7 +433,7 @@ void FUN_0804831e(void)
   uint uVar3;
   int iVar4;
   int iVar5;
-  int aiStack16 [4];
+  int aiStack_10 [4];
   
   iVar4 = DAT_08048459 * 4;
   iVar5 = DAT_08048451 + iVar4;
@@ -446,14 +473,14 @@ void __regparm3 FUN_0804836c(uint param_1)
   uint *puVar4;
   undefined4 *puVar5;
   undefined *unaff_EDI;
-  undefined4 uStack4;
+  undefined4 uStack_4;
   
-  uStack4 = 10;
+  uStack_4 = 10;
   iVar2 = 0;
   if (param_1 == 0) {
-    uStack4 = 0x30;
+    uStack_4 = 0x30;
     iVar2 = 1;
-    puVar1 = &uStack4;
+    puVar1 = &uStack_4;
     iVar3 = iVar2;
   }
   else {

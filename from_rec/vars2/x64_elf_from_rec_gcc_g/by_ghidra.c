@@ -42,13 +42,6 @@ struct s1 {
     int f1;
     int f2;
     char f3;
-    undefined field3_0x9;
-    undefined field4_0xa;
-    undefined field5_0xb;
-    undefined field6_0xc;
-    undefined field7_0xd;
-    undefined field8_0xe;
-    undefined field9_0xf;
     long f4;
 };
 
@@ -134,6 +127,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -222,6 +216,17 @@ struct Elf64_Sym {
     qword st_size;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -279,6 +284,16 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
+void FUN_004003a0(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __libc_start_main(void)
 
 {
@@ -288,14 +303,13 @@ void __libc_start_main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -325,8 +339,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x0040048e)
 // WARNING: Removing unreachable block (ram,0x00400498)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -339,6 +353,8 @@ void frame_dummy(void)
 void func(s1 *s1p)
 
 {
+  s1 *s1p_local;
+  
   s1p->f1 = 1;
   s1p->f3 = 'k';
   s1p->f4 = 10;
@@ -346,6 +362,8 @@ void func(s1 *s1p)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -378,21 +396,12 @@ void __libc_csu_init(EVP_PKEY_CTX *param_1)
 
 
 
+// WARNING: Removing unreachable block (ram,0x004005a6)
+// WARNING: Removing unreachable block (ram,0x004005b0)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffffffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffffffffffff);
-  }
   return;
 }
 

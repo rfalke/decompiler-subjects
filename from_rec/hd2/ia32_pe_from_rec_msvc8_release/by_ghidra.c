@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -10,8 +11,16 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef short    wchar_t;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
 
 typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
@@ -199,7 +208,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[16];
+    char pdbpath[60];
 };
 
 typedef struct _FILETIME _FILETIME, *P_FILETIME;
@@ -460,20 +469,19 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
   char cVar1;
   int iVar2;
   byte bVar3;
-  undefined4 extraout_EDX;
   int iVar4;
   int iVar5;
   char *pcVar6;
   undefined4 *puVar7;
-  int iStack88;
-  undefined4 uStack85;
-  undefined2 local_50 [2];
+  undefined local_58 [4];
+  char local_54;
+  undefined auStack_53 [8];
   char local_4b [71];
   uint local_4;
   
-  local_4 = DAT_00403000 ^ (uint)&stack0xffffffa8;
-  iStack88 = param_1;
-  sprintf((char *)((int)&uStack85 + 1),"%08lX:",this);
+  local_4 = DAT_00403000 ^ (uint)local_58;
+  local_58 = (undefined  [4])param_1;
+  sprintf(&local_54,"%08lX:",this);
   if (0x10 < param_2) {
     param_2 = 0x10;
   }
@@ -482,7 +490,7 @@ void __thiscall FUN_00401000(void *this,int param_1,int param_2)
 LAB_00401071:
     iVar4 = 0x10 - iVar4;
     do {
-      puVar7 = &uStack85;
+      puVar7 = (undefined4 *)(local_58 + 3);
       do {
         pcVar6 = (char *)((int)puVar7 + 1);
         puVar7 = (undefined4 *)((int)puVar7 + 1);
@@ -494,39 +502,38 @@ LAB_00401071:
   else {
     pcVar6 = local_4b;
     do {
-      sprintf(pcVar6," %02lX",(uint)*(byte *)(iStack88 + iVar4));
+      sprintf(pcVar6," %02lX",(uint)*(byte *)((int)local_58 + iVar4));
       iVar4 = iVar4 + 1;
       pcVar6 = pcVar6 + 3;
     } while (iVar4 < param_2);
     if (iVar4 < 0x10) goto LAB_00401071;
   }
-  pcVar6 = (char *)((int)&uStack85 + 1);
+  pcVar6 = &local_54;
   do {
     cVar1 = *pcVar6;
     pcVar6 = pcVar6 + 1;
   } while (cVar1 != '\0');
-  *(undefined4 *)(pcVar6 + (int)((int)&uStack85 + (1 - (int)(undefined *)((int)&uStack85 + 2)))) =
-       0x7c2020;
-  iVar2 = -(int)(undefined *)((int)&uStack85 + 2);
+  *(undefined4 *)(pcVar6 + (int)(&local_54 + -(int)(&local_54 + 1))) = 0x7c2020;
+  iVar2 = -(int)(&local_54 + 1);
   iVar4 = iVar2 + 3;
   iVar5 = 0;
   if (0 < param_2) {
     do {
-      bVar3 = *(byte *)(iStack88 + iVar5);
+      bVar3 = *(byte *)((int)local_58 + iVar5);
       if ((bVar3 < 0x20) || (0x7e < bVar3)) {
         bVar3 = 0x2e;
       }
-      pcVar6[(int)((int)&uStack85 + iVar5 + iVar2 + 4)] = bVar3;
+      pcVar6[(int)(&local_54 + iVar5 + iVar2 + 3)] = bVar3;
       iVar5 = iVar5 + 1;
     } while (iVar5 < param_2);
     if (0xf < iVar5) goto LAB_00401100;
   }
-  memset(pcVar6 + (int)((int)&uStack85 + iVar5 + iVar4 + 1),0x20,0x10U - iVar5);
+  memset(pcVar6 + (int)(&local_54 + iVar5 + iVar4),0x20,0x10U - iVar5);
   iVar5 = iVar5 + (0x10U - iVar5);
 LAB_00401100:
-  *(undefined2 *)(pcVar6 + (int)((int)&uStack85 + iVar5 + iVar4 + 1)) = 0x7c;
-  printf("%s\n",(undefined *)((int)&uStack85 + 1));
-  FUN_0040123b(local_4 ^ (uint)&stack0xffffffa8,extraout_EDX,(char)iStack88);
+  *(undefined2 *)(pcVar6 + (int)(&local_54 + iVar5 + iVar4)) = 0x7c;
+  printf("%s\n",&local_54);
+  ___security_check_cookie_4(local_4 ^ (uint)local_58);
   return;
 }
 
@@ -538,32 +545,30 @@ void __fastcall FUN_00401140(char *param_1)
   int iVar1;
   FILE *_File;
   size_t sVar2;
-  undefined4 extraout_EDX;
-  undefined4 extraout_EDX_00;
   void *this;
-  undefined in_stack_ffffffb4;
-  void *pvStack56;
-  undefined auStack24 [16];
+  undefined local_4c [20];
+  void *pvStack_38;
+  undefined auStack_18 [16];
   uint local_8;
   
-  local_8 = DAT_00403000 ^ (uint)&stack0xffffffb4;
-  iVar1 = _stat64i32(param_1,&stack0xffffffb4);
+  local_8 = DAT_00403000 ^ (uint)local_4c;
+  iVar1 = _stat64i32(param_1,local_4c);
   if ((iVar1 != 0) || (_File = fopen(param_1,"rb"), _File == (FILE *)0x0)) {
     perror(param_1);
-    FUN_0040123b(local_8 ^ (uint)&stack0xffffffb4,extraout_EDX,in_stack_ffffffb4);
+    ___security_check_cookie_4(local_8 ^ (uint)local_4c);
     return;
   }
   this = (void *)0x0;
-  if (pvStack56 != (void *)0x0) {
+  if (pvStack_38 != (void *)0x0) {
     do {
-      sVar2 = fread(auStack24,1,0x10,_File);
+      sVar2 = fread(auStack_18,1,0x10,_File);
       if (sVar2 == 0) break;
-      FUN_00401000(this,(int)auStack24,sVar2);
+      FUN_00401000(this,(int)auStack_18,sVar2);
       this = (void *)((int)this + sVar2);
-    } while (this < pvStack56);
+    } while (this < pvStack_38);
   }
   fclose(_File);
-  FUN_0040123b(local_8 ^ (uint)&stack0xffffffb4,extraout_EDX_00,in_stack_ffffffb4);
+  ___security_check_cookie_4(local_8 ^ (uint)local_4c);
   return;
 }
 
@@ -590,78 +595,19 @@ int __cdecl FUN_00401200(int param_1,int param_2)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  @__security_check_cookie@4
+// 
+// Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
 
-void __fastcall FUN_0040123b(int param_1,undefined4 param_2,undefined param_3)
+void __fastcall ___security_check_cookie_4(int param_1)
 
 {
-  undefined4 in_EAX;
-  HANDLE hProcess;
-  undefined4 unaff_EBX;
-  undefined4 unaff_EBP;
-  undefined4 unaff_ESI;
-  undefined4 unaff_EDI;
-  undefined2 in_ES;
-  undefined2 in_CS;
-  undefined2 in_SS;
-  undefined2 in_DS;
-  undefined2 in_FS;
-  undefined2 in_GS;
-  byte in_AF;
-  byte in_TF;
-  byte in_IF;
-  byte in_NT;
-  byte in_AC;
-  byte in_VIF;
-  byte in_VIP;
-  byte in_ID;
-  undefined4 unaff_retaddr;
-  UINT uExitCode;
-  int local_32c;
-  undefined4 local_328;
-  
   if (param_1 == DAT_00403000) {
     return;
   }
-  _DAT_00403150 =
-       (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
-       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
-       (uint)((undefined *)register0x00000010 == (undefined *)0x32c) * 0x40 |
-       (uint)(in_AF & 1) * 0x10 | (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
-       (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
-       (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
-  _DAT_00403154 = &param_3;
-  _DAT_00403090 = 0x10001;
-  _DAT_00403038 = 0xc0000409;
-  _DAT_0040303c = 1;
-  local_32c = DAT_00403000;
-  local_328 = DAT_00403004;
-  _DAT_00403044 = unaff_retaddr;
-  _DAT_0040311c = in_GS;
-  _DAT_00403120 = in_FS;
-  _DAT_00403124 = in_ES;
-  _DAT_00403128 = in_DS;
-  _DAT_0040312c = unaff_EDI;
-  _DAT_00403130 = unaff_ESI;
-  _DAT_00403134 = unaff_EBX;
-  _DAT_00403138 = param_2;
-  _DAT_0040313c = param_1;
-  _DAT_00403140 = in_EAX;
-  _DAT_00403144 = unaff_EBP;
-  DAT_00403148 = unaff_retaddr;
-  _DAT_0040314c = in_CS;
-  _DAT_00403158 = in_SS;
-  _DAT_00403088 = IsDebuggerPresent();
-  _crt_debugger_hook(1);
-  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);
-  UnhandledExceptionFilter((_EXCEPTION_POINTERS *)&PTR_DAT_004020fc);
-  if (_DAT_00403088 == 0) {
-    _crt_debugger_hook(1);
-  }
-  uExitCode = 0xc0000409;
-  hProcess = GetCurrentProcess();
-  TerminateProcess(hProcess,uExitCode);
-  return;
+                    // WARNING: Subroutine does not return
+  ___report_gsfailure();
 }
 
 
@@ -669,22 +615,25 @@ void __fastcall FUN_0040123b(int param_1,undefined4 param_2,undefined param_3)
 // WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4
 // WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  ___tmainCRTStartup
+// 
+// Library: Visual Studio 2008 Release
 
-int entry(void)
+int ___tmainCRTStartup(void)
 
 {
   bool bVar1;
-  LONG LVar2;
+  void *Exchange;
+  void *pvVar2;
   int iVar3;
   BOOL BVar4;
-  int in_FS_OFFSET;
   
-  ___security_init_cookie();
-  iVar3 = *(int *)(*(int *)(in_FS_OFFSET + 0x18) + 4);
+  Exchange = StackBase;
   bVar1 = false;
   do {
-    LVar2 = InterlockedCompareExchange((LONG *)&DAT_00403374,iVar3,0);
-    if (LVar2 == 0) {
+    pvVar2 = (void *)InterlockedCompareExchange((LONG *)&DAT_00403374,(LONG)Exchange,0);
+    if (pvVar2 == (void *)0x0) {
 LAB_004012e0:
       if (DAT_00403370 == 1) {
         _amsg_exit(0x1f);
@@ -721,12 +670,101 @@ LAB_004012e0:
                     // WARNING: Subroutine does not return
       exit(DAT_00403030);
     }
-    if (LVar2 == iVar3) {
+    if (pvVar2 == Exchange) {
       bVar1 = true;
       goto LAB_004012e0;
     }
     Sleep(1000);
   } while( true );
+}
+
+
+
+void entry(void)
+
+{
+  ___security_init_cookie();
+  ___tmainCRTStartup();
+  return;
+}
+
+
+
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// Library Function - Single Match
+//  ___report_gsfailure
+// 
+// Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
+
+void __cdecl ___report_gsfailure(void)
+
+{
+  undefined4 in_EAX;
+  HANDLE hProcess;
+  undefined4 in_ECX;
+  undefined4 in_EDX;
+  undefined4 unaff_EBX;
+  undefined4 unaff_EBP;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
+  undefined2 in_ES;
+  undefined2 in_CS;
+  undefined2 in_SS;
+  undefined2 in_DS;
+  undefined2 in_FS;
+  undefined2 in_GS;
+  byte in_AF;
+  byte in_TF;
+  byte in_IF;
+  byte in_NT;
+  byte in_AC;
+  byte in_VIF;
+  byte in_VIP;
+  byte in_ID;
+  undefined4 unaff_retaddr;
+  UINT uExitCode;
+  undefined4 local_32c;
+  undefined4 local_328;
+  
+  _DAT_00403150 =
+       (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
+       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
+       (uint)(&stack0x00000000 == (undefined *)0x32c) * 0x40 | (uint)(in_AF & 1) * 0x10 |
+       (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
+       (uint)(&stack0xfffffffc < (undefined *)0x328) | (uint)(in_ID & 1) * 0x200000 |
+       (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
+  _DAT_00403154 = &stack0x00000004;
+  _DAT_00403090 = 0x10001;
+  _DAT_00403038 = 0xc0000409;
+  _DAT_0040303c = 1;
+  local_32c = DAT_00403000;
+  local_328 = DAT_00403004;
+  _DAT_00403044 = unaff_retaddr;
+  _DAT_0040311c = in_GS;
+  _DAT_00403120 = in_FS;
+  _DAT_00403124 = in_ES;
+  _DAT_00403128 = in_DS;
+  _DAT_0040312c = unaff_EDI;
+  _DAT_00403130 = unaff_ESI;
+  _DAT_00403134 = unaff_EBX;
+  _DAT_00403138 = in_EDX;
+  _DAT_0040313c = in_ECX;
+  _DAT_00403140 = in_EAX;
+  _DAT_00403144 = unaff_EBP;
+  DAT_00403148 = unaff_retaddr;
+  _DAT_0040314c = in_CS;
+  _DAT_00403158 = in_SS;
+  _DAT_00403088 = IsDebuggerPresent();
+  _crt_debugger_hook(1);
+  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);
+  UnhandledExceptionFilter((_EXCEPTION_POINTERS *)&PTR_DAT_004020fc);
+  if (_DAT_00403088 == 0) {
+    _crt_debugger_hook(1);
+  }
+  uExitCode = 0xc0000409;
+  hProcess = GetCurrentProcess();
+  TerminateProcess(hProcess,uExitCode);
+  return;
 }
 
 
@@ -753,14 +791,12 @@ long __CxxUnhandledExceptionFilter(_EXCEPTION_POINTERS *param_1)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _amsg_exit(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x0040164c. Too many branches
                     // WARNING: Treating indirect jump as call
-  _amsg_exit();
+  _amsg_exit(param_1);
   return;
 }
 
@@ -780,11 +816,11 @@ _onexit_t __cdecl __onexit(_onexit_t param_1)
   undefined4 uVar2;
   undefined4 local_24;
   int local_20 [5];
-  undefined4 uStack12;
+  undefined4 uStack_c;
   undefined *local_8;
   
   local_8 = &DAT_004021f8;
-  uStack12 = 0x40165e;
+  uStack_c = 0x40165e;
   local_20[0] = _decode_pointer(DAT_0040337c);
   if (local_20[0] == -1) {
     p_Var1 = _onexit(param_1);
@@ -820,7 +856,7 @@ void FUN_004016ee(void)
 // 
 // Library: Visual Studio 2008 Release
 
-int __cdecl _atexit(void *param_1)
+int __cdecl _atexit(_func_4879 *param_1)
 
 {
   _onexit_t p_Var1;
@@ -888,7 +924,8 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
            (pImageBase + *(ushort *)(pImageBase + iVar1 + 0x14) + 0x18 + iVar1);
   if (*(ushort *)(pImageBase + iVar1 + 6) != 0) {
     do {
-      if ((p_Var2->VirtualAddress <= rva) && (rva < p_Var2->Misc + p_Var2->VirtualAddress)) {
+      if ((p_Var2->VirtualAddress <= rva) &&
+         (rva < (p_Var2->Misc).PhysicalAddress + p_Var2->VirtualAddress)) {
         return p_Var2;
       }
       uVar3 = uVar3 + 1;
@@ -908,30 +945,27 @@ PIMAGE_SECTION_HEADER __cdecl __FindPESection(PBYTE pImageBase,DWORD_PTR rva)
 BOOL __cdecl __IsNonwritableInCurrentImage(PBYTE pTarget)
 
 {
-  uint uVar1;
-  BOOL BVar2;
-  PIMAGE_SECTION_HEADER p_Var3;
-  int **in_FS_OFFSET;
-  int *local_14;
-  code *pcStack16;
+  BOOL BVar1;
+  PIMAGE_SECTION_HEADER p_Var2;
+  void *local_14;
+  code *pcStack_10;
   uint local_c;
   undefined4 local_8;
   
-  pcStack16 = FUN_00401915;
-  local_14 = *in_FS_OFFSET;
+  pcStack_10 = FUN_00401915;
+  local_14 = ExceptionList;
   local_c = DAT_00403000 ^ 0x402218;
-  *in_FS_OFFSET = (int *)&local_14;
+  ExceptionList = &local_14;
   local_8 = 0;
-  BVar2 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
-  if (BVar2 != 0) {
-    p_Var3 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
-    if (p_Var3 != (PIMAGE_SECTION_HEADER)0x0) {
-      uVar1 = p_Var3->Characteristics;
-      *in_FS_OFFSET = local_14;
-      return ~(uVar1 >> 0x1f) & 1;
+  BVar1 = __ValidateImageBase((PBYTE)&IMAGE_DOS_HEADER_00400000);
+  if (BVar1 != 0) {
+    p_Var2 = __FindPESection((PBYTE)&IMAGE_DOS_HEADER_00400000,(DWORD_PTR)(pTarget + -0x400000));
+    if (p_Var2 != (PIMAGE_SECTION_HEADER)0x0) {
+      ExceptionList = local_14;
+      return ~(p_Var2->Characteristics >> 0x1f) & 1;
     }
   }
-  *in_FS_OFFSET = local_14;
+  ExceptionList = local_14;
   return 0;
 }
 
@@ -974,18 +1008,17 @@ void __cdecl __SEH_prolog4(undefined4 param_1,int param_2)
   undefined4 unaff_EBX;
   undefined4 unaff_ESI;
   undefined4 unaff_EDI;
-  int *in_FS_OFFSET;
   undefined4 unaff_retaddr;
-  uint auStack28 [5];
+  uint auStack_1c [5];
   undefined local_8 [8];
   
   iVar1 = -param_2;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0x10) = unaff_EBX;
-  *(undefined4 *)((int)auStack28 + iVar1 + 0xc) = unaff_ESI;
-  *(undefined4 *)((int)auStack28 + iVar1 + 8) = unaff_EDI;
-  *(uint *)((int)auStack28 + iVar1 + 4) = DAT_00403000 ^ (uint)&param_2;
-  *(undefined4 *)((int)auStack28 + iVar1) = unaff_retaddr;
-  *in_FS_OFFSET = (int)local_8;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack_1c + iVar1 + 4) = DAT_00403000 ^ (uint)&param_2;
+  *(undefined4 *)((int)auStack_1c + iVar1) = unaff_retaddr;
+  ExceptionList = local_8;
   return;
 }
 
@@ -1001,10 +1034,9 @@ void __SEH_epilog4(void)
 
 {
   undefined4 *unaff_EBP;
-  undefined4 *in_FS_OFFSET;
   undefined4 unaff_retaddr;
   
-  *in_FS_OFFSET = unaff_EBP[-4];
+  ExceptionList = (void *)unaff_EBP[-4];
   *unaff_EBP = unaff_retaddr;
   return;
 }
@@ -1015,18 +1047,13 @@ void __cdecl
 FUN_00401915(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  _except_handler4_common(&DAT_00403000,FUN_0040123b,param_1,param_2,param_3,param_4);
+  _except_handler4_common(&DAT_00403000,___security_check_cookie_4,param_1,param_2,param_3,param_4);
   return;
 }
 
 
 
-// Library Function - Single Match
-//  __setdefaultprecision
-// 
-// Library: Visual Studio 2010 Release
-
-void __setdefaultprecision(void)
+void FUN_0040193a(void)
 
 {
   errno_t eVar1;
@@ -1061,8 +1088,7 @@ void __cdecl ___security_init_cookie(void)
   DWORD DVar2;
   DWORD DVar3;
   uint uVar4;
-  uint local_14;
-  uint local_10;
+  LARGE_INTEGER local_14;
   _FILETIME local_c;
   
   local_c.dwLowDateTime = 0;
@@ -1073,8 +1099,8 @@ void __cdecl ___security_init_cookie(void)
     DVar1 = GetCurrentProcessId();
     DVar2 = GetCurrentThreadId();
     DVar3 = GetTickCount();
-    QueryPerformanceCounter((LARGE_INTEGER *)&local_14);
-    DAT_00403000 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_10 ^ local_14;
+    QueryPerformanceCounter(&local_14);
+    DAT_00403000 = uVar4 ^ DVar1 ^ DVar2 ^ DVar3 ^ local_14.s.HighPart ^ local_14.s.LowPart;
     if (DAT_00403000 == 0xbb40e64e) {
       DAT_00403000 = 0xbb40e64f;
     }
@@ -1091,20 +1117,16 @@ void __cdecl ___security_init_cookie(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _crt_debugger_hook(int param_1)
 
 {
                     // WARNING: Could not recover jumptable at 0x004019fe. Too many branches
                     // WARNING: Treating indirect jump as call
-  _crt_debugger_hook();
+  _crt_debugger_hook(param_1);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl terminate(void)
 
@@ -1117,14 +1139,12 @@ void __cdecl terminate(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _unlock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401a0a. Too many branches
                     // WARNING: Treating indirect jump as call
-  _unlock();
+  _unlock(_File);
   return;
 }
 
@@ -1141,14 +1161,12 @@ void __dllonexit(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl _lock(int _File)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401a16. Too many branches
                     // WARNING: Treating indirect jump as call
-  _lock();
+  _lock(_File);
   return;
 }
 
@@ -1165,21 +1183,18 @@ void _except_handler4_common(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl
 _invoke_watson(wchar_t *param_1,wchar_t *param_2,wchar_t *param_3,uint param_4,uintptr_t param_5)
 
 {
                     // WARNING: Could not recover jumptable at 0x00401a22. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  _invoke_watson();
+  _invoke_watson(param_1,param_2,param_3,param_4,param_5);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
 
@@ -1188,13 +1203,11 @@ errno_t __cdecl _controlfp_s(uint *_CurrentState,uint _NewValue,uint _Mask)
   
                     // WARNING: Could not recover jumptable at 0x00401a28. Too many branches
                     // WARNING: Treating indirect jump as call
-  eVar1 = _controlfp_s();
+  eVar1 = _controlfp_s(_CurrentState,_NewValue,_Mask);
   return eVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl memset(void *_Dst,int _Val,size_t _Size)
 
@@ -1203,7 +1216,7 @@ void * __cdecl memset(void *_Dst,int _Val,size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x00401a2e. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)memset();
+  pvVar1 = memset(_Dst,_Val,_Size);
   return pvVar1;
 }
 

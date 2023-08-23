@@ -62,6 +62,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -160,6 +161,17 @@ typedef enum Elf_SectionHeaderType_x86 {
     SHT_GNU_versym=1879048191
 } Elf_SectionHeaderType_x86;
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 struct Elf32_Shdr {
@@ -231,6 +243,16 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
+void FUN_080482ec(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
 void __libc_start_main(void)
 
 {
@@ -240,7 +262,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -253,7 +275,7 @@ int scanf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -266,10 +288,13 @@ int printf(char *__format,...)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -303,6 +328,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080483bf)
 // WARNING: Removing unreachable block (ram,0x080483c8)
 
 void frame_dummy(void)
@@ -370,16 +396,16 @@ undefined4 __do_global_ctors_aux(void)
 {
   code *pcVar1;
   code **ppcVar2;
-  undefined4 uStack12;
+  undefined4 uStack_c;
   
-  ppcVar2 = &__CTOR_LIST__;
-  pcVar1 = __CTOR_LIST__;
+  ppcVar2 = (code **)&__CTOR_LIST__;
+  pcVar1 = (code *)0xffffffff;
   while (pcVar1 != (code *)0xffffffff) {
     ppcVar2 = ppcVar2 + -1;
     (*pcVar1)();
     pcVar1 = *ppcVar2;
   }
-  return uStack12;
+  return uStack_c;
 }
 
 

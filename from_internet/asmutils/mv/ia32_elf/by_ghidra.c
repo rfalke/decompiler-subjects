@@ -4,6 +4,33 @@ typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned short    undefined2;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -33,7 +60,7 @@ struct Elf32_Ehdr {
 
 
 
-undefined8 entry(void)
+undefined4 processEntry entry(undefined4 param_1,int param_2)
 
 {
   char cVar1;
@@ -43,23 +70,24 @@ undefined8 entry(void)
   int extraout_EDX;
   int *piVar4;
   int *piVar5;
-  undefined4 unaff_EBP;
-  int unaff_ESI;
-  undefined4 unaff_EDI;
+  undefined4 unaff_retaddr;
+  int in_ESI;
+  undefined4 in_EDI;
   char *pcVar6;
   undefined uVar7;
   undefined8 uVar8;
-  int unaff_retaddr;
   
   piVar5 = (int *)&stack0x00000004;
-  if (2 < unaff_retaddr) {
-    unaff_EDI = *(undefined4 *)(&stack0x00000008 + (unaff_retaddr + -2) * 4);
-    *(undefined4 *)(&stack0x00000008 + (unaff_retaddr + -2) * 4) = 0;
+  if (2 < param_2) {
+    LOCK();
+    in_EDI = *(undefined4 *)(&stack0x00000008 + (param_2 + -2) * 4);
+    *(undefined4 *)(&stack0x00000008 + (param_2 + -2) * 4) = 0;
+    UNLOCK();
     piVar4 = (int *)&stack0x00000008;
     while( true ) {
-      unaff_ESI = *piVar4;
+      in_ESI = *piVar4;
       piVar5 = piVar4 + 1;
-      if (unaff_ESI == 0) break;
+      if (in_ESI == 0) break;
       *piVar4 = 0x8048065;
       FUN_08048071();
       piVar4 = piVar4 + 1;
@@ -74,16 +102,16 @@ undefined8 entry(void)
   piVar5[-2] = (int)((ulonglong)uVar8 >> 0x20);
   piVar5[-3] = 0;
   piVar5[-4] = (int)(piVar5 + 1);
-  piVar5[-5] = unaff_EBP;
-  piVar5[-6] = unaff_ESI;
-  piVar5[-7] = unaff_EDI;
+  piVar5[-5] = unaff_retaddr;
+  piVar5[-6] = in_ESI;
+  piVar5[-7] = in_EDI;
   piVar5[-8] = 0x8048077;
   FUN_080480e7();
   if ((bool)uVar7) {
-    piVar5[-8] = unaff_EDI;
+    piVar5[-8] = in_EDI;
     piVar5[-9] = 0x804807f;
     FUN_0804810e();
-    pcVar6 = (char *)(unaff_ESI + extraout_EDX + -1);
+    pcVar6 = (char *)(in_ESI + extraout_EDX + -1);
     iVar3 = extraout_EDX;
     if (*pcVar6 == '/') {
       *pcVar6 = '\0';
@@ -100,7 +128,7 @@ undefined8 entry(void)
   piVar5[-8] = 0x26;
   pcVar2 = (code *)swi(0x80);
   (*pcVar2)();
-  return CONCAT44(piVar5[-1],piVar5[1]);
+  return piVar5[1];
 }
 
 

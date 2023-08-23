@@ -68,7 +68,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -82,6 +82,13 @@ typedef struct _IO_FILE __FILE;
 typedef struct _IO_FILE FILE;
 
 typedef void (* __sighandler_t)(int);
+
+typedef struct evp_pkey_ctx_st evp_pkey_ctx_st, *Pevp_pkey_ctx_st;
+
+struct evp_pkey_ctx_st {
+};
+
+typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 
 typedef struct Elf64_Phdr Elf64_Phdr, *PElf64_Phdr;
 
@@ -167,6 +174,13 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
+typedef struct GnuDebugLink_32 GnuDebugLink_32, *PGnuDebugLink_32;
+
+struct GnuDebugLink_32 {
+    char filename[32];
+    dword crc;
+};
+
 typedef struct Elf64_Dyn_AARCH64 Elf64_Dyn_AARCH64, *PElf64_Dyn_AARCH64;
 
 typedef enum Elf64_DynTag_AARCH64 {
@@ -224,6 +238,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -252,11 +267,15 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
-typedef struct Gnu_DebugLink Gnu_DebugLink, *PGnu_DebugLink;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_DebugLink {
-    char filename[32]; // Debug file name
-    dword crc;
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
 };
 
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
@@ -270,14 +289,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -309,11 +328,13 @@ struct Elf64_Ehdr {
 
 
 
-void _DT_INIT(void)
+int _init(EVP_PKEY_CTX *ctx)
 
 {
-  FUN_00101498();
-  return;
+  int iVar1;
+  
+  iVar1 = call_weak_fn((int)ctx);
+  return iVar1;
 }
 
 
@@ -327,7 +348,7 @@ void FUN_00100da0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -338,7 +359,7 @@ void _exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputs(char *__s,FILE *__stream)
 
@@ -351,7 +372,7 @@ int fputs(char *__s,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -380,7 +401,7 @@ void __cxa_atexit(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputc(int __c,FILE *__stream)
 
@@ -402,7 +423,7 @@ void __fpending(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 __sighandler_t signal(int __sig,__sighandler_t __handler)
 
@@ -415,7 +436,7 @@ __sighandler_t signal(int __sig,__sighandler_t __handler)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -428,7 +449,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -468,7 +489,7 @@ void __printf_chk(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t wcslen(wchar_t *__s)
 
@@ -481,7 +502,7 @@ size_t wcslen(wchar_t *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * realloc(void *__ptr,size_t __size)
 
@@ -503,7 +524,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -514,7 +535,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int feof(FILE *__stream)
 
@@ -563,7 +584,7 @@ void warn(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -574,7 +595,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen64(char *__filename,char *__modes)
 
@@ -596,7 +617,7 @@ void warnx(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fputws(wchar_t *__ws,__FILE *__stream)
 
@@ -618,7 +639,7 @@ void dcgettext(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int * __errno_location(void)
 
@@ -640,7 +661,7 @@ void err(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * setlocale(int __category,char *__locale)
 
@@ -653,7 +674,7 @@ char * setlocale(int __category,char *__locale)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int ferror(FILE *__stream)
 
@@ -666,7 +687,7 @@ int ferror(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 wchar_t * fgetws(wchar_t *__ws,int __n,__FILE *__stream)
 
@@ -679,7 +700,9 @@ wchar_t * fgetws(wchar_t *__ws,int __n,__FILE *__stream)
 
 
 
-undefined4 FUN_00100fc0(undefined4 param_1,long param_2)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+undefined4 main(undefined4 param_1,long param_2)
 
 {
   wchar_t wVar1;
@@ -699,16 +722,16 @@ undefined4 FUN_00100fc0(undefined4 param_1,long param_2)
   char *local_10;
   char **local_8;
   
-  pFVar6 = stdin;
+  pFVar6 = _stdin;
   setlocale(6,"");
   bindtextdomain("util-linux","/usr/share/locale");
   textdomain("util-linux");
-  FUN_00101740(FUN_00101580);
-  signal(2,FUN_00101570);
-  signal(0xf,FUN_00101570);
+  atexit(close_stdout);
+  signal(2,sig_handler);
+  signal(0xf,sig_handler);
   iVar3 = getopt_long(param_1,param_2,&DAT_001017c0,&PTR_s_version_0011fc28,0);
   if (iVar3 == -1) {
-    lVar12 = (long)optind;
+    lVar12 = (long)_optind;
     pwVar5 = (wchar_t *)malloc(0x8000);
     local_8 = (char **)(param_2 + lVar12 * 8);
     if (pwVar5 != (wchar_t *)0x0) {
@@ -791,7 +814,7 @@ LAB_00101204:
             pwVar9 = pwVar10;
           } while (pwVar10 != pwVar5 + (sVar8 >> 1));
         }
-        fputws(pwVar5,stdout);
+        fputws(pwVar5,_stdout);
       } while( true );
     }
     err(1,"cannot allocate %zu bytes",0x8000);
@@ -799,22 +822,22 @@ LAB_00101204:
   else {
     if (iVar3 == 0x56) {
       uVar4 = dcgettext(0,"%s from %s\n",5);
-      __printf_chk(1,uVar4,program_invocation_short_name,"util-linux 2.30.2");
+      __printf_chk(1,uVar4,_program_invocation_short_name,"util-linux 2.30.2");
                     // WARNING: Subroutine does not return
       exit(0);
     }
 LAB_00101304:
-    pFVar6 = stderr;
+    pFVar6 = _stderr;
     if (iVar3 != 0x68) {
       uVar4 = dcgettext(0,"Try \'%s --help\' for more information.\n",5);
-      __fprintf_chk(pFVar6,1,uVar4,program_invocation_short_name);
+      __fprintf_chk(pFVar6,1,uVar4,_program_invocation_short_name);
                     // WARNING: Subroutine does not return
       exit(1);
     }
   }
-  pFVar6 = stdout;
+  pFVar6 = _stdout;
   uVar4 = dcgettext(0,"Usage: %s [options] [file ...]\n",5);
-  __fprintf_chk(pFVar6,1,uVar4,program_invocation_short_name);
+  __fprintf_chk(pFVar6,1,uVar4,_program_invocation_short_name);
   fputc(10,pFVar6);
   pcVar11 = (char *)dcgettext(0,"Reverse lines characterwise.\n",5);
   fputs(pcVar11,pFVar6);
@@ -827,18 +850,17 @@ LAB_00101304:
   uVar4 = dcgettext(0,"\nFor more details see %s.\n",5);
   __fprintf_chk(pFVar6,1,uVar4,"rev(1)");
                     // WARNING: Subroutine does not return
-  exit((uint)(stderr == pFVar6));
+  exit((uint)(_stderr == pFVar6));
 }
 
 
 
-void entry(undefined8 param_1)
+void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(FUN_00100fc0,in_stack_00000000,&stack0x00000008,FUN_001016b8,FUN_00101738,
-                    param_1);
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -847,7 +869,7 @@ void entry(undefined8 param_1)
 
 // WARNING: Removing unreachable block (ram,0x001014a8)
 
-void FUN_00101498(void)
+void call_weak_fn(void)
 
 {
   __gmon_start__();
@@ -859,7 +881,7 @@ void FUN_00101498(void)
 // WARNING: Removing unreachable block (ram,0x001014c8)
 // WARNING: Removing unreachable block (ram,0x001014d4)
 
-void FUN_001014b0(void)
+void deregister_tm_clones(void)
 
 {
   return;
@@ -870,7 +892,7 @@ void FUN_001014b0(void)
 // WARNING: Removing unreachable block (ram,0x00101504)
 // WARNING: Removing unreachable block (ram,0x00101510)
 
-void FUN_001014e0(void)
+void register_tm_clones(void)
 
 {
   return;
@@ -883,7 +905,7 @@ void FUN_0010151c(void)
 {
   if (DAT_00120008 == '\0') {
     __cxa_finalize(&PTR_LOOP_0011fc20);
-    FUN_001014b0();
+    deregister_tm_clones();
     DAT_00120008 = '\x01';
   }
   return;
@@ -891,12 +913,12 @@ void FUN_0010151c(void)
 
 
 
-void _FINI_0(void)
+void __do_global_dtors_aux(void)
 
 {
   if (DAT_00120008 == '\0') {
     __cxa_finalize(&PTR_LOOP_0011fc20);
-    FUN_001014b0();
+    deregister_tm_clones();
     DAT_00120008 = '\x01';
   }
   return;
@@ -907,7 +929,7 @@ void _FINI_0(void)
 // WARNING: Removing unreachable block (ram,0x00101504)
 // WARNING: Removing unreachable block (ram,0x00101510)
 
-void _INIT_0(void)
+void frame_dummy(void)
 
 {
   return;
@@ -915,21 +937,7 @@ void _INIT_0(void)
 
 
 
-void FUN_0010156c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0010156c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x10156c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
-}
-
-
-
-void FUN_00101570(void)
+void sig_handler(void)
 
 {
                     // WARNING: Subroutine does not return
@@ -938,7 +946,9 @@ void FUN_00101570(void)
 
 
 
-void FUN_00101580(void)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
+void close_stdout(void)
 
 {
   FILE *pFVar1;
@@ -947,8 +957,8 @@ void FUN_00101580(void)
   long lVar4;
   int *piVar5;
   
-  pFVar1 = stdout;
-  lVar4 = __fpending(stdout);
+  pFVar1 = _stdout;
+  lVar4 = __fpending(_stdout);
   iVar2 = ferror(pFVar1);
   iVar3 = fclose(pFVar1);
   if (iVar2 == 0) {
@@ -958,8 +968,8 @@ void FUN_00101580(void)
       if ((lVar4 != 0) || (iVar2 != 9)) goto LAB_001015dc;
     }
 LAB_0010161c:
-    pFVar1 = stderr;
-    lVar4 = __fpending(stderr);
+    pFVar1 = _stderr;
+    lVar4 = __fpending(_stderr);
     iVar2 = ferror(pFVar1);
     iVar3 = fclose(pFVar1);
     if (iVar2 == 0) {
@@ -997,25 +1007,26 @@ LAB_00101664:
 
 
 
-void FUN_001016b8(undefined4 param_1,undefined8 param_2,undefined8 param_3)
+undefined8 __libc_csu_init(EVP_PKEY_CTX *param_1,undefined8 param_2,undefined8 param_3)
 
 {
   code **ppcVar1;
-  long lVar2;
+  undefined8 uVar2;
+  long lVar3;
   
-  _DT_INIT();
-  lVar2 = 0;
+  _init(param_1);
+  lVar3 = 0;
   do {
-    ppcVar1 = (code **)(&__DT_INIT_ARRAY + lVar2);
-    lVar2 = lVar2 + 1;
-    (**ppcVar1)(param_1,param_2,param_3);
-  } while (lVar2 != 1);
-  return;
+    ppcVar1 = (code **)(&__DT_INIT_ARRAY + lVar3);
+    lVar3 = lVar3 + 1;
+    uVar2 = (**ppcVar1)((ulong)param_1 & 0xffffffff,param_2,param_3);
+  } while (lVar3 != 1);
+  return uVar2;
 }
 
 
 
-void FUN_00101738(void)
+void __libc_csu_fini(void)
 
 {
   return;
@@ -1023,16 +1034,18 @@ void FUN_00101738(void)
 
 
 
-void FUN_00101740(undefined8 param_1)
+int atexit(__func *__func)
 
 {
-  __cxa_atexit(param_1,0,PTR_LOOP_0011fc20);
-  return;
+  int iVar1;
+  
+  iVar1 = __cxa_atexit((int)__func,0,&PTR_LOOP_0011fc20);
+  return iVar1;
 }
 
 
 
-void _DT_FINI(void)
+void _fini(void)
 
 {
   return;

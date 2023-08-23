@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -52,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -64,6 +65,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -224,6 +228,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -252,6 +257,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -263,14 +279,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -331,7 +347,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -344,7 +360,7 @@ FILE * fopen(char *__filename,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isspace(int param_1)
 
@@ -375,7 +391,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fgetc(FILE *__stream)
 
@@ -388,7 +404,7 @@ int fgetc(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * calloc(size_t __nmemb,size_t __size)
 
@@ -410,7 +426,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -421,7 +437,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 long strtol(char *__nptr,char **__endptr,int __base)
 
@@ -434,7 +450,7 @@ long strtol(char *__nptr,char **__endptr,int __base)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strstr(char *__haystack,char *__needle)
 
@@ -447,7 +463,7 @@ char * strstr(char *__haystack,char *__needle)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int isalnum(int param_1)
 
@@ -463,10 +479,9 @@ int isalnum(int param_1)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -532,16 +547,12 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100e38)
+// WARNING: Removing unreachable block (ram,0x00100e44)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
@@ -553,6 +564,7 @@ int E(int e)
 {
   int iVar1;
   undefined *puVar2;
+  int e_local;
   
   iVar1 = D;
   puVar2 = (undefined *)(long)D;
@@ -562,6 +574,8 @@ int E(int e)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int o(void)
 
@@ -587,6 +601,8 @@ int o(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int X(void)
 
 {
@@ -597,6 +613,8 @@ int X(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int Y(void)
 
@@ -616,6 +634,8 @@ int Y(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int ad(void)
 
@@ -741,14 +761,14 @@ int ae(int g)
 
 {
   undefined *puVar1;
-  int local_4;
+  int g_local;
   
-  for (local_4 = g; (local_4 != 0 && (local_4 != -1)); local_4 = local_4 >> 8) {
+  for (g_local = g; (g_local != 0 && (g_local != -1)); g_local = g_local >> 8) {
     puVar1 = (undefined *)(long)q;
     q = q + 1;
-    *puVar1 = (char)local_4;
+    *puVar1 = (char)g_local;
   }
-  return local_4;
+  return g_local;
 }
 
 
@@ -757,14 +777,14 @@ int A(int e)
 
 {
   int iVar1;
-  int local_14;
+  int e_local;
   int g;
   
-  local_14 = e;
-  while (local_14 != 0) {
-    iVar1 = *(int *)(long)local_14;
-    *(int *)(long)local_14 = (q - local_14) + -4;
-    local_14 = iVar1;
+  e_local = e;
+  while (e_local != 0) {
+    iVar1 = *(int *)(long)e_local;
+    *(int *)(long)e_local = (q - e_local) + -4;
+    e_local = iVar1;
   }
   return 0;
 }
@@ -775,6 +795,8 @@ int s(int g,int e)
 
 {
   int iVar1;
+  int e_local;
+  int g_local;
   
   ae(g);
   *(int *)(long)q = e;
@@ -789,6 +811,7 @@ int H(int e)
 
 {
   int iVar1;
+  int e_local;
   
   iVar1 = s(0xb8,e);
   return iVar1;
@@ -800,6 +823,7 @@ int B(int e)
 
 {
   int iVar1;
+  int e_local;
   
   iVar1 = s(0xe9,e);
   return iVar1;
@@ -811,6 +835,8 @@ int S(int j,int e)
 
 {
   int iVar1;
+  int e_local;
+  int j_local;
   
   ae(0xfc085);
   iVar1 = s(j + 0x84,e);
@@ -823,6 +849,7 @@ int Z(int e)
 
 {
   int iVar1;
+  int e_local;
   
   ae(0xc139);
   H(0);
@@ -838,6 +865,8 @@ int N(int j,int e)
 
 {
   int iVar1;
+  int e_local;
+  int j_local;
   
   ae(j + 0x83);
   if (e < 0x200) {
@@ -859,7 +888,7 @@ int T(int j)
   int iVar1;
   int iVar2;
   undefined *puVar3;
-  int local_14;
+  int j_local;
   int m;
   int aa;
   int e;
@@ -963,40 +992,40 @@ int T(int j)
       }
     }
   }
-  local_14 = d;
+  j_local = d;
   if (d == 0x28) {
     if (g == 1) {
       ae(0x50);
     }
     iVar2 = s(0xec81,0);
     ad();
-    local_14 = 0;
+    j_local = 0;
     while (d != 0x29) {
       w();
-      s(0x248489,local_14);
+      s(0x248489,j_local);
       if (d == 0x2c) {
         ad();
       }
-      local_14 = local_14 + 4;
+      j_local = j_local + 4;
     }
-    *(int *)(long)iVar2 = local_14;
+    *(int *)(long)iVar2 = j_local;
     ad();
     if (g == 0) {
       iVar2 = s(0xe8,*(int *)(long)(e + 4));
       *(int *)(long)(e + 4) = iVar2;
     }
     else if (g == 1) {
-      s(0x2494ff,local_14);
-      local_14 = local_14 + 4;
+      s(0x2494ff,j_local);
+      j_local = j_local + 4;
     }
     else {
       s(0xe8,(g - q) + -5);
     }
-    if (local_14 != 0) {
-      local_14 = s(0xc481,local_14);
+    if (j_local != 0) {
+      j_local = s(0xc481,j_local);
     }
   }
-  return local_14;
+  return j_local;
 }
 
 
@@ -1007,6 +1036,7 @@ int O(int j)
   int g_00;
   int iVar1;
   int iVar2;
+  int j_local;
   int g;
   int m;
   int e;
@@ -1054,6 +1084,8 @@ int O(int j)
 
 
 
+// WARNING: Unknown calling convention
+
 int w(void)
 
 {
@@ -1064,6 +1096,8 @@ int w(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int U(void)
 
@@ -1081,33 +1115,33 @@ int I(int j)
 
 {
   int iVar1;
-  int iVar2;
+  int j_local;
   int m;
   int e;
   int g;
   
-  iVar1 = d;
   if (d == 0x120) {
     ad();
     ad();
-    iVar1 = U();
+    m = U();
     ad();
     I(j);
     if (d == 0x138) {
       ad();
-      iVar2 = B(0);
-      A(iVar1);
+      g = B(0);
+      A(m);
       I(j);
-      iVar1 = A(iVar2);
+      iVar1 = A(g);
     }
     else {
-      iVar1 = A(iVar1);
+      iVar1 = A(m);
     }
   }
   else if (d == 0x160 || d == 0x1f8) {
+    e = d;
     ad();
     ad();
-    if (iVar1 == 0x160) {
+    if (e == 0x160) {
       g = q;
       m = U();
     }
@@ -1116,7 +1150,6 @@ int I(int j)
         w();
       }
       ad();
-      iVar1 = q;
       g = q;
       m = 0;
       if (d != 0x3b) {
@@ -1124,15 +1157,15 @@ int I(int j)
       }
       ad();
       if (d != 0x29) {
-        iVar2 = B(0);
+        e = B(0);
         w();
-        B((iVar1 - q) + -5);
-        A(iVar2);
-        g = iVar2 + 4;
+        B((g - q) + -5);
+        A(e);
+        g = e + 4;
       }
     }
     ad();
-    I((int)register0x00000008 + -0xc);
+    I((int)&m);
     B((g - q) + -5);
     iVar1 = A(m);
   }
@@ -1171,6 +1204,7 @@ int ab(int j)
 
 {
   int iVar1;
+  int j_local;
   int m;
   
   while (d == 0x100 || d != -1 && j == 0) {
@@ -1222,6 +1256,8 @@ int ab(int j)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 int main(int g,int e)
 
 {
@@ -1229,13 +1265,14 @@ int main(int g,int e)
   FILE *pFVar2;
   void *pvVar3;
   undefined8 *puVar4;
-  int local_8;
+  int e_local;
+  int g_local;
   
-  Q = (int)stdin;
-  local_8 = e;
+  Q = (int)_stdin;
+  e_local = e;
   if (1 < g) {
-    local_8 = e + 4;
-    pFVar2 = fopen((char *)(long)*(int *)(long)local_8,"r");
+    e_local = e + 4;
+    pFVar2 = fopen((char *)(long)*(int *)(long)e_local,"r");
     Q = (int)pFVar2;
   }
   pvVar3 = calloc(1,99999);
@@ -1260,22 +1297,8 @@ int main(int g,int e)
   o();
   ad();
   ab(0);
-  iVar1 = (*(code *)(long)*(int *)(long)(P + 0x250))(g + -1,local_8);
+  iVar1 = (*(code *)(long)*(int *)(long)(P + 0x250))(g + -1,e_local);
   return iVar1;
-}
-
-
-
-void FUN_0010251c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0010251c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x10251c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

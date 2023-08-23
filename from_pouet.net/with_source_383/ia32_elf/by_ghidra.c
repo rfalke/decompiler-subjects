@@ -64,6 +64,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -168,6 +169,17 @@ typedef ulong size_t;
 
 
 
+void FUN_080486ec(void)
+
+{
+                    // WARNING: Could not recover jumptable at 0x080486f2. Too many branches
+                    // WARNING: Treating indirect jump as call
+  (*(code *)PTR_0804a0c0)();
+  return;
+}
+
+
+
 void glTranslated(void)
 
 {
@@ -186,7 +198,7 @@ void glEnd(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void srand(uint __seed)
 
@@ -323,7 +335,7 @@ void glTranslatef(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -417,7 +429,7 @@ void SDL_Quit(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int rand(void)
 
@@ -426,6 +438,15 @@ int rand(void)
   
   iVar1 = rand();
   return iVar1;
+}
+
+
+
+void glPopMatrix(void)
+
+{
+  glPopMatrix();
+  return;
 }
 
 
@@ -1020,19 +1041,18 @@ undefined4 FUN_080492d1(undefined4 param_1,int param_2,undefined4 param_3)
 
 
 
-undefined8 FUN_08049330(char param_1,undefined4 param_2,int param_3)
+undefined4 FUN_08049330(char param_1,undefined4 param_2,int param_3)
 
 {
   int iVar1;
-  undefined4 uStack12;
   
   do {
     iVar1 = SDL_PollEvent(&param_1);
-    if (iVar1 == 0) goto LAB_0804935f;
+    if (iVar1 == 0) {
+      return 0;
+    }
   } while ((param_1 != '\x02') || (param_3 != 0x1b));
-  iVar1 = 1;
-LAB_0804935f:
-  return CONCAT44(uStack12,iVar1);
+  return 1;
 }
 
 
@@ -1227,7 +1247,7 @@ void FUN_0804993d(int param_1)
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;
@@ -1237,81 +1257,81 @@ void entry(void)
   undefined4 *puVar5;
   undefined4 *puVar6;
   byte bVar7;
-  undefined4 uStack364;
-  undefined4 uStack360;
-  undefined4 uStack356;
-  undefined4 uStack352;
+  undefined4 uStack_16c;
+  undefined4 uStack_168;
+  undefined4 uStack_164;
+  undefined4 uStack_160;
   undefined4 *local_14c;
   undefined4 *local_148;
   undefined4 *local_144;
   undefined4 *local_140;
   int local_130;
-  undefined4 auStack288 [60];
-  undefined4 local_30 [8];
+  undefined4 auStack_120 [60];
+  undefined4 local_30 [11];
   
   bVar7 = 0;
-  uStack352 = 0x8049b38;
+  uStack_160 = 0x8049b38;
   SDL_SetVideoMode();
-  uStack352 = 0x8049b44;
+  uStack_160 = 0x8049b44;
   SDL_ShowCursor();
-  uStack352 = 0x8049b50;
+  uStack_160 = 0x8049b50;
   glShadeModel();
-  uStack352 = 0x3f000000;
-  uStack356 = 0x3f4ccccd;
-  uStack360 = 0x3f4ccccd;
-  uStack364 = 0x3f4ccccd;
+  uStack_160 = 0x3f000000;
+  uStack_164 = 0x3f4ccccd;
+  uStack_168 = 0x3f4ccccd;
+  uStack_16c = 0x3f4ccccd;
   glClearColor();
-  uStack352 = 0x8049b78;
+  uStack_160 = 0x8049b78;
   glClearDepth();
-  uStack352 = 0x8049b84;
+  uStack_160 = 0x8049b84;
   glEnable();
-  uStack352 = 0x8049b90;
+  uStack_160 = 0x8049b90;
   glDepthFunc();
-  uStack352 = 0x8049ba1;
+  uStack_160 = 0x8049ba1;
   glHint();
-  uStack352 = 800;
-  uStack356 = 0x500;
-  uStack360 = 0;
-  uStack364 = 0;
+  uStack_160 = 800;
+  uStack_164 = 0x500;
+  uStack_168 = 0;
+  uStack_16c = 0;
   glViewport();
-  uStack352 = 0x8049bc1;
+  uStack_160 = 0x8049bc1;
   glMatrixMode();
-  uStack352 = 0x8049bc6;
+  uStack_160 = 0x8049bc6;
   glLoadIdentity();
-  uStack352 = 0x40590000;
-  uStack356 = 0;
-  uStack360 = 0x3ff80000;
-  uStack364 = 0;
+  uStack_160 = 0x40590000;
+  uStack_164 = 0;
+  uStack_168 = 0x3ff80000;
+  uStack_16c = 0;
   glFrustum(0x147ae148,0xbff547ae,0x147ae148,0x3ff547ae,0,0xbff00000,0,0x3ff00000);
-  uStack352 = 0x8049c08;
+  uStack_160 = 0x8049c08;
   glMatrixMode();
-  uStack352 = 0x8049c0d;
+  uStack_160 = 0x8049c0d;
   glLoadIdentity();
-  uStack352 = 0x8049c19;
+  uStack_160 = 0x8049c19;
   glClear();
-  uStack352 = 0x8049c1e;
+  uStack_160 = 0x8049c1e;
   glLoadIdentity();
   iVar4 = 0;
-  uStack352 = 0;
-  uStack356 = 0;
-  uStack360 = 0;
-  uStack364 = 0;
+  uStack_160 = 0;
+  uStack_164 = 0;
+  uStack_168 = 0;
+  uStack_16c = 0;
   glTranslated();
-  uStack352 = 0x8049c4c;
+  uStack_160 = 0x8049c4c;
   glRotatef();
-  uStack352 = 0;
-  uStack356 = 0x3f800000;
-  uStack360 = 0;
-  uStack364 = 0x42700000;
+  uStack_160 = 0;
+  uStack_164 = 0x3f800000;
+  uStack_168 = 0;
+  uStack_16c = 0x42700000;
   glRotatef();
   FUN_08049394();
-  uStack352 = 0x8049c76;
+  uStack_160 = 0x8049c76;
   srand(100000000);
   local_130 = 0;
   local_140 = local_30;
   do {
     puVar5 = local_140;
-    puVar6 = &uStack364;
+    puVar6 = &uStack_16c;
     for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
@@ -1326,24 +1346,24 @@ void entry(void)
       iVar4 = iVar4 + -1;
     }
     else {
-      uStack352 = 0x8049cd5;
+      uStack_160 = 0x8049cd5;
       uVar2 = FUN_08049363();
-      auStack288[iVar4] = uVar2;
-      uStack352 = 0x8049ce5;
+      auStack_120[iVar4] = uVar2;
+      uStack_160 = 0x8049ce5;
       FUN_080492d1();
       local_130 = iVar3;
     }
     iVar4 = iVar4 + 1;
   } while (iVar4 < 0x3c);
   iVar4 = 0;
-  uStack352 = 0x8049cfd;
+  uStack_160 = 0x8049cfd;
   FUN_0804993d();
-  uStack352 = 0x8049d02;
+  uStack_160 = 0x8049d02;
   SDL_GL_SwapBuffers();
   local_144 = local_30;
   do {
     puVar5 = local_144;
-    puVar6 = &uStack364;
+    puVar6 = &uStack_16c;
     for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
@@ -1352,17 +1372,17 @@ void entry(void)
     iVar3 = FUN_08049330();
     if (iVar3 == 1) goto LAB_08049e43;
     iVar4 = iVar4 + 1;
-    uStack352 = 0x8049d46;
+    uStack_160 = 0x8049d46;
     glRotatef();
-    uStack352 = 0x8049d52;
+    uStack_160 = 0x8049d52;
     glClear();
-    uStack352 = 0x8049d57;
+    uStack_160 = 0x8049d57;
     glFlush();
-    uStack352 = 0x8049d5f;
+    uStack_160 = 0x8049d5f;
     FUN_0804993d();
-    uStack352 = 0x8049d64;
+    uStack_160 = 0x8049d64;
     SDL_GL_SwapBuffers();
-    uStack352 = 0x8049d70;
+    uStack_160 = 0x8049d70;
     SDL_Delay();
   } while (iVar4 != 200);
   local_148 = local_30;
@@ -1371,7 +1391,7 @@ void entry(void)
     local_130 = 0;
     do {
       puVar5 = local_148;
-      puVar6 = &uStack364;
+      puVar6 = &uStack_16c;
       for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
         *puVar6 = *puVar5;
         puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
@@ -1379,19 +1399,19 @@ void entry(void)
       }
       iVar3 = FUN_08049330();
       if (iVar3 == 1) goto LAB_08049e43;
-      uStack352 = 0x8049dc2;
+      uStack_160 = 0x8049dc2;
       glRotatef();
-      uStack352 = 0x8049dd1;
+      uStack_160 = 0x8049dd1;
       FUN_080492d1();
-      uStack352 = 0x8049ddd;
+      uStack_160 = 0x8049ddd;
       glClear();
-      uStack352 = 0x8049de2;
+      uStack_160 = 0x8049de2;
       glFlush();
-      uStack352 = 0x8049dea;
+      uStack_160 = 0x8049dea;
       FUN_0804993d();
-      uStack352 = 0x8049def;
+      uStack_160 = 0x8049def;
       SDL_GL_SwapBuffers();
-      uStack352 = 0x8049dfb;
+      uStack_160 = 0x8049dfb;
       SDL_Delay();
       local_130 = local_130 + 1;
     } while (local_130 != 0x12);
@@ -1401,7 +1421,7 @@ void entry(void)
   iVar4 = 0;
   while( true ) {
     puVar5 = local_14c;
-    puVar6 = &uStack364;
+    puVar6 = &uStack_16c;
     for (iVar3 = 5; iVar3 != 0; iVar3 = iVar3 + -1) {
       *puVar6 = *puVar5;
       puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
@@ -1410,17 +1430,17 @@ void entry(void)
     iVar3 = FUN_08049330();
     if (iVar3 == 1) break;
     iVar4 = iVar4 + 1;
-    uStack352 = 0x8049e69;
+    uStack_160 = 0x8049e69;
     glRotatef();
-    uStack352 = 0x8049e75;
+    uStack_160 = 0x8049e75;
     glClear();
-    uStack352 = 0x8049e7a;
+    uStack_160 = 0x8049e7a;
     glFlush();
-    uStack352 = 0x8049e82;
+    uStack_160 = 0x8049e82;
     FUN_0804993d();
-    uStack352 = 0x8049e87;
+    uStack_160 = 0x8049e87;
     SDL_GL_SwapBuffers();
-    uStack352 = 0x8049e93;
+    uStack_160 = 0x8049e93;
     SDL_Delay();
     if (iVar4 == 0x15e) {
       SDL_Quit();

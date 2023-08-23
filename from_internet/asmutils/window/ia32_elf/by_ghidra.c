@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -35,7 +62,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;
@@ -47,7 +74,7 @@ void entry(void)
   undefined2 *puVar6;
   undefined *puVar7;
   byte bVar9;
-  int iStack4;
+  int iStack_4;
   undefined2 *puVar8;
   
   bVar9 = 0;
@@ -218,8 +245,7 @@ FUN_080481fe(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4
     pcVar1 = (code *)swi(0x80);
     uVar9 = extraout_var;
     (*pcVar1)();
-    DAT_08048343 = (uint)(ushort)((*extraout_ECX & 0xff) * (ushort)(byte)((uint)*extraout_ECX >> 8))
-    ;
+    DAT_08048343 = (uint)(ushort)((*extraout_ECX & 0xff) * (*extraout_ECX >> 8));
     pcVar1 = (code *)swi(0x80);
     (*pcVar1)();
     pcVar1 = (code *)swi(0x80);
@@ -302,30 +328,30 @@ undefined8 __regparm3 FUN_080482c6(undefined4 param_1,undefined4 param_2)
 {
   byte bVar1;
   uint uVar2;
-  uint uVar3;
+  int iVar3;
   byte *unaff_ESI;
   byte *pbVar4;
   undefined2 *unaff_EDI;
   byte bVar5;
   
   bVar5 = 0;
-  uVar3 = 0x700;
+  iVar3 = 0x700;
   while( true ) {
     pbVar4 = unaff_ESI + (uint)bVar5 * -2 + 1;
     bVar1 = *unaff_ESI;
-    uVar3 = uVar3 & 0xffffff00 | (uint)bVar1;
+    iVar3 = CONCAT31((int3)((uint)iVar3 >> 8),bVar1);
     if (bVar1 == 0) break;
     if (bVar1 == 1) {
       unaff_ESI = pbVar4 + (uint)bVar5 * -2 + 1;
-      uVar3 = (uint)*pbVar4 << 8;
+      iVar3 = (uint)*pbVar4 << 8;
     }
     else if (bVar1 == 2) {
       uVar2 = (uint)bVar5;
-      FUN_080482f0();
+      FUN_080482f0(iVar3);
       unaff_ESI = pbVar4 + uVar2 * -4 + 2;
     }
     else {
-      *unaff_EDI = (short)uVar3;
+      *unaff_EDI = (short)iVar3;
       unaff_ESI = pbVar4;
       unaff_EDI = unaff_EDI + (uint)bVar5 * -2 + 1;
     }

@@ -5,6 +5,33 @@ typedef unsigned int    dword;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -36,11 +63,12 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void __regparm3 entry(uint param_1)
+void processEntry entry(void)
 
 {
   code *pcVar1;
   int iVar2;
+  byte in_AL;
   int iVar3;
   int *piVar4;
   short **ppsVar5;
@@ -60,24 +88,24 @@ code_r0x08048057:
       ppsVar6 = ppsVar5 + 1;
       ppsVar5 = ppsVar5 + 1;
       if (*psVar8 == 0x712d) {
-        param_1 = param_1 | 1;
+        in_AL = in_AL | 1;
       }
       else if (*psVar8 == 0x632d) {
-        param_1 = param_1 | 4;
+        in_AL = in_AL | 4;
       }
       else if (*psVar8 == 0x622d) {
-        param_1 = param_1 | 0x80;
+        in_AL = in_AL | 0x80;
       }
       else {
         if (*psVar8 != 0x762d) goto LAB_08048093;
-        param_1 = param_1 | 2;
+        in_AL = in_AL | 2;
       }
       iVar3 = iVar3 + -1;
     } while( true );
   }
   goto LAB_0804804c;
 LAB_08048093:
-  _DAT_08048274 = _DAT_08048274 & 0xffffff00 | param_1 & 0xff;
+  DAT_08048274 = CONCAT31(DAT_08048274._1_3_,in_AL);
   iVar2 = iVar3 + -1;
   if (iVar3 + -1 == 0) goto LAB_080480c5;
   while( true ) {
@@ -102,9 +130,9 @@ LAB_080480c5:
         if (DAT_08048273 != '\0') break;
         *(undefined4 *)((int)ppsVar7 + -4) = 0x80480f2;
         iVar3 = FUN_0804821c();
-        if (((((_DAT_08048274 & 2) == 0) != (iVar3 == 0)) &&
-            (DAT_0804826f._0_1_ = 0, (_DAT_08048274 & 1) == 0)) &&
-           (DAT_08048263 = DAT_08048263 + 1, (_DAT_08048274 & 4) == 0)) {
+        if (((((DAT_08048274 & 2) == 0) != (iVar3 == 0)) &&
+            (DAT_0804826f._0_1_ = 0, (DAT_08048274 & 1) == 0)) &&
+           (DAT_08048263 = DAT_08048263 + 1, (DAT_08048274 & 4) == 0)) {
           *(undefined4 *)((int)ppsVar7 + -4) = 0x8048123;
           FUN_0804813b();
           *(undefined4 *)((int)ppsVar7 + -4) = 0x8048128;
@@ -120,7 +148,7 @@ LAB_080480c5:
       }
       ppsVar6 = ppsVar7;
       iVar2 = _DAT_0804825b;
-      if ((_DAT_08048274 & 4) != 0) {
+      if ((DAT_08048274 & 4) != 0) {
         *(undefined4 *)((int)ppsVar7 + -4) = 0x80480e6;
         FUN_0804813b();
         *(undefined4 *)((int)ppsVar7 + -4) = 0x80480eb;
@@ -132,7 +160,7 @@ LAB_080480c5:
 LAB_0804804c:
   *(undefined4 *)((int)piVar4 + -4) = 1;
   pcVar1 = (code *)swi(0x80);
-  param_1 = (*pcVar1)();
+  in_AL = (*pcVar1)();
   register0x00000010 = (BADSPACEBASE *)((int)piVar4 + 4);
   goto code_r0x08048057;
 }
@@ -169,7 +197,7 @@ undefined8 __regparm3 FUN_08048168(undefined4 param_1,undefined4 param_2,undefin
   undefined *unaff_EDI;
   undefined4 unaff_retaddr;
   
-  if ((DAT_08048274 & 0x80) != 0) {
+  if (((byte)DAT_08048274 & 0x80) != 0) {
     FUN_080481af();
     *unaff_EDI = 0x3a;
     pcVar1 = (code *)swi(0x80);
@@ -208,9 +236,9 @@ void __regparm3 FUN_080481af(uint param_1)
     FUN_080481b9();
   }
   cVar1 = (char)(param_1 % 10);
-  DAT_08048275 = cVar1 + 0x30;
-  if (0x39 < DAT_08048275) {
-    DAT_08048275 = cVar1 + 0x57;
+  DAT_08048274._1_1_ = cVar1 + 0x30;
+  if (0x39 < DAT_08048274._1_1_) {
+    DAT_08048274._1_1_ = cVar1 + 0x57;
   }
   return;
 }
@@ -247,8 +275,8 @@ undefined8 FUN_080481d7(void)
   undefined *puVar4;
   char *unaff_ESI;
   undefined8 uVar5;
-  undefined4 uStack36;
-  undefined4 auStack8 [2];
+  undefined4 uStack_24;
+  undefined4 auStack_8 [2];
   
   DAT_08048273 = '\x01';
   DAT_0804826b = DAT_08048267;

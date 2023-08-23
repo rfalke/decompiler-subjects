@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef long long    longlong;
+typedef long long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -11,15 +12,15 @@ typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
+typedef int __off_t;
+
+typedef sqword __off64_t;
+
 typedef void _IO_lock_t;
 
 typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
-
-typedef long __off_t;
-
-typedef longlong __off64_t;
 
 struct _IO_FILE {
     int _flags;
@@ -202,6 +203,7 @@ typedef enum Elf32_DynTag_PPC {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -230,6 +232,17 @@ typedef enum Elf32_DynTag_PPC {
 struct Elf32_Dyn_PPC {
     enum Elf32_DynTag_PPC d_tag;
     dword d_val;
+};
+
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
 };
 
 typedef struct Elf32_Rela Elf32_Rela, *PElf32_Rela;
@@ -339,6 +352,7 @@ void call___do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x10000404)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -356,21 +370,26 @@ void call_frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int fib(int x)
 
 {
+  int in_r3;
   int iVar1;
   int iVar2;
   
-  if (x < 2) {
-    return x;
+  if (in_r3 < 2) {
+    return in_r3;
   }
-  iVar1 = fib(x + -1);
-  iVar2 = fib(x + -2);
+  iVar1 = fib(in_r3);
+  iVar2 = fib(in_r3);
   return iVar1 + iVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -387,8 +406,8 @@ int main(void)
     printf("fibonacci(%d) = %d\n",local_18[0],local_18[0]);
     return 0;
   }
-  iVar1 = fib(local_18[0] + -1);
-  iVar2 = fib(iVar2 + -2);
+  iVar1 = fib(local_18[0]);
+  iVar2 = fib(iVar2);
   printf("fibonacci(%d) = %d\n",local_18[0],iVar1 + iVar2);
   return 0;
 }
@@ -2039,14 +2058,16 @@ void _restgpr_31_x(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void __do_global_ctors_aux(void)
 
 {
   code *pcVar1;
   code **ppcVar2;
   
-  ppcVar2 = &__CTOR_LIST__;
-  pcVar1 = __CTOR_LIST__;
+  ppcVar2 = (code **)&__CTOR_LIST__;
+  pcVar1 = ___CTOR_LIST__;
   while (pcVar1 != (code *)0xffffffff) {
     (*pcVar1)();
     ppcVar2 = ppcVar2 + -1;
@@ -2074,7 +2095,7 @@ void _fini(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -2096,7 +2117,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 

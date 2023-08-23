@@ -79,6 +79,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -165,6 +166,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef enum Elf_ProgramHeaderType_x86 {
     PT_NULL=0,
     PT_LOAD=1,
@@ -199,14 +211,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -279,10 +291,13 @@ void __libc_start_main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -392,6 +407,7 @@ undefined4 bswap_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 =
        _DAT_00001000 >> 0x18 | (_DAT_00001000 & 0xff0000) >> 8 | (_DAT_00001000 & 0xff00) << 8 |
        _DAT_00001000 << 0x18;
@@ -401,15 +417,6 @@ undefined4 bswap_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -421,6 +428,14 @@ undefined4 bswap_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -431,6 +446,23 @@ undefined4 bswap_allregs(void)
 undefined4 bswap_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 0x2000000;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -438,25 +470,24 @@ undefined4 bswap_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -467,6 +498,23 @@ undefined4 bswap_constant_simple(void)
 undefined4 bswap_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 0x8479b1a3;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -474,25 +522,24 @@ undefined4 bswap_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -503,6 +550,7 @@ undefined4 bswap_constant_complex1(void)
 undefined4 bswap_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0xe8c03e31;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -510,9 +558,6 @@ undefined4 bswap_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -529,6 +574,8 @@ undefined4 bswap_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -552,6 +599,7 @@ undefined4 cmpxchg1_mv_allregs(void)
   byte bVar3;
   byte bVar4;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   bVar4 = (byte)_DAT_00001004;
   DAT_00002202 = bVar2 < bVar4;
@@ -561,23 +609,14 @@ undefined4 cmpxchg1_mv_allregs(void)
   DAT_00002204 = cVar1 == '\0';
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   bVar3 = bVar4 ^ DAT_00002204 * (bVar4 ^ bVar2);
-  _DAT_00002000 = _DAT_00001000 & 0xffffff00 | (uint)(byte)(bVar2 ^ !DAT_00002204 * (bVar2 ^ bVar3))
+  _DAT_00002000 = CONCAT31((int3)((uint)_DAT_00001000 >> 8),bVar2 ^ !DAT_00002204 * (bVar2 ^ bVar3))
   ;
-  _DAT_00002004 = _DAT_00001004 & 0xffffff00 | (uint)bVar3;
+  _DAT_00002004 = CONCAT31((int3)((uint)_DAT_00001004 >> 8),bVar3);
   _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -589,6 +628,14 @@ undefined4 cmpxchg1_mv_allregs(void)
   DAT_0000220d = (char)bVar4 <= (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < (char)bVar4;
   DAT_0000220f = !DAT_00002204 && (char)bVar4 <= (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -599,6 +646,18 @@ undefined4 cmpxchg1_mv_allregs(void)
 undefined4 cmpxchg1_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 3;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -606,9 +665,6 @@ undefined4 cmpxchg1_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x85;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -625,6 +681,11 @@ undefined4 cmpxchg1_mv_constant_simple(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 5;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -635,6 +696,18 @@ undefined4 cmpxchg1_mv_constant_simple(void)
 undefined4 cmpxchg1_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0xa3b179d7;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -642,9 +715,6 @@ undefined4 cmpxchg1_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x81;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -661,6 +731,11 @@ undefined4 cmpxchg1_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 1;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -671,6 +746,7 @@ undefined4 cmpxchg1_mv_constant_complex1(void)
 undefined4 cmpxchg1_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313ec0c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -678,9 +754,6 @@ undefined4 cmpxchg1_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4610;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -697,6 +770,8 @@ undefined4 cmpxchg1_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  _DAT_00002100 = 0x4610;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -719,6 +794,7 @@ undefined4 cmpxchg2_mv_allregs(void)
   ushort uVar2;
   ushort uVar3;
   
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = (ushort)_DAT_00001000;
   uVar3 = (ushort)_DAT_00001004;
   DAT_00002202 = uVar1 < uVar3;
@@ -729,22 +805,14 @@ undefined4 cmpxchg2_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
   uVar2 = uVar3 ^ (ushort)DAT_00002204 * (uVar3 ^ uVar1);
   _DAT_00002000 =
-       _DAT_00001000 & 0xffff0000 | (uint)(ushort)(uVar1 ^ (ushort)!DAT_00002204 * (uVar1 ^ uVar2));
-  _DAT_00002004 = _DAT_00001004 & 0xffff0000 | (uint)uVar2;
+       CONCAT22((short)((uint)_DAT_00001000 >> 0x10),uVar1 ^ (ushort)!DAT_00002204 * (uVar1 ^ uVar2)
+               );
+  _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),uVar2);
   _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -756,6 +824,14 @@ undefined4 cmpxchg2_mv_allregs(void)
   DAT_0000220d = (short)uVar3 <= (short)uVar1;
   DAT_0000220e = DAT_00002204 || (short)uVar1 < (short)uVar3;
   DAT_0000220f = !DAT_00002204 && (short)uVar3 <= (short)uVar1;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -766,6 +842,18 @@ undefined4 cmpxchg2_mv_allregs(void)
 undefined4 cmpxchg2_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 3;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -773,9 +861,6 @@ undefined4 cmpxchg2_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x85;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -792,6 +877,11 @@ undefined4 cmpxchg2_mv_constant_simple(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 5;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -802,6 +892,18 @@ undefined4 cmpxchg2_mv_constant_simple(void)
 undefined4 cmpxchg2_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0xa3b11ad7;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -809,9 +911,6 @@ undefined4 cmpxchg2_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -828,6 +927,11 @@ undefined4 cmpxchg2_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -838,6 +942,7 @@ undefined4 cmpxchg2_mv_constant_complex1(void)
 undefined4 cmpxchg2_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313e81c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -845,9 +950,6 @@ undefined4 cmpxchg2_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4610;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -864,6 +966,8 @@ undefined4 cmpxchg2_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  _DAT_00002100 = 0x4610;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -884,6 +988,7 @@ undefined4 cmpxchg3_allregs(void)
 {
   uint uVar1;
   
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002202 = _DAT_00001000 < _DAT_00001008;
   DAT_00002200 = SBORROW4(_DAT_00001000,_DAT_00001008);
   uVar1 = _DAT_00001000 - _DAT_00001008;
@@ -901,15 +1006,6 @@ undefined4 cmpxchg3_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -921,6 +1017,14 @@ undefined4 cmpxchg3_allregs(void)
   DAT_0000220d = (int)_DAT_00001008 <= (int)_DAT_00001000;
   DAT_0000220e = DAT_00002204 || (int)_DAT_00001000 < (int)_DAT_00001008;
   DAT_0000220f = !DAT_00002204 && (int)_DAT_00001008 <= (int)_DAT_00001000;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -932,6 +1036,18 @@ undefined4 cmpxchg3_allregs(void)
 undefined4 cmpxchg3_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 4;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -939,9 +1055,6 @@ undefined4 cmpxchg3_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x81;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -958,6 +1071,11 @@ undefined4 cmpxchg3_constant_simple(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 1;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -969,6 +1087,18 @@ undefined4 cmpxchg3_constant_simple(void)
 undefined4 cmpxchg3_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0x46685248;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -976,9 +1106,6 @@ undefined4 cmpxchg3_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x804;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 0;
@@ -995,6 +1122,11 @@ undefined4 cmpxchg3_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -1006,6 +1138,7 @@ undefined4 cmpxchg3_constant_complex1(void)
 undefined4 cmpxchg3_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x1e3f6cb2;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -1013,9 +1146,6 @@ undefined4 cmpxchg3_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4614;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -1032,6 +1162,8 @@ undefined4 cmpxchg3_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  _DAT_00002100 = 0x4614;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1091,12 +1223,6 @@ undefined4 cmpxchg4_mv_allregs(void)
   else {
     _DAT_00002000 = *_DAT_00001004;
   }
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
-       (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar6 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1108,6 +1234,12 @@ undefined4 cmpxchg4_mv_allregs(void)
   DAT_0000220d = (int)uVar1 <= (int)uVar8;
   DAT_0000220e = DAT_00002204 || (int)uVar8 < (int)uVar1;
   DAT_0000220f = !DAT_00002204 && (int)uVar1 <= (int)uVar8;
+  _DAT_00002100 =
+       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
+       (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar6 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -1118,42 +1250,55 @@ undefined4 cmpxchg4_mv_allregs(void)
 undefined4 cmpxchg4_mv_constant_simple(void)
 
 {
-  uint uVar1;
+  undefined2 *puVar1;
   uint uVar2;
+  uint uVar3;
+  short sVar4;
+  undefined2 in_SS;
+  ushort uVar6;
+  ushort *puVar5;
   
-  uVar2 = uRam00000003;
+  sVar4 = (short)&stack0x00000000 + -2;
+  puVar5 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar4);
+  puVar1 = (undefined2 *)segment(in_SS,sVar4);
+  *puVar1 = 0;
+  uVar3 = uRam00000003;
+  uVar6 = *puVar5;
+  _DAT_00002050 = puVar5 + 1;
   DAT_00002202 = 2 < uRam00000003;
   DAT_00002200 = SBORROW4(2,uRam00000003);
-  uVar1 = 2 - uRam00000003;
-  DAT_00002208 = (int)uVar1 < 0;
-  DAT_00002204 = uVar1 == 0;
-  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
-  if (DAT_00002204) {
+  uVar2 = 2 - uRam00000003;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  if ((bool)DAT_00002204) {
     uRam00000003 = 2;
   }
-  _DAT_00002000 = uRam00000003;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
-  DAT_0000220c = 2 < (int)uVar2;
-  DAT_0000220d = (int)uVar2 < 3;
-  DAT_0000220e = DAT_00002204 || 2 < (int)uVar2;
-  DAT_0000220f = !DAT_00002204 && (int)uVar2 < 3;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = 2 < (int)uVar3;
+  DAT_0000220d = (int)uVar3 < 3;
+  DAT_0000220e = (bool)DAT_00002204 || 2 < (int)uVar3;
+  DAT_0000220f = !(bool)DAT_00002204 && (int)uVar3 < 3;
+  _DAT_00002000 = uRam00000003;
+  *puVar5 = (ushort)((uVar6 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar6 & 0x400) != 0) * 0x400 | (ushort)((uVar6 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar6 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar6 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar5 + 1);
   return 0;
 }
 
@@ -1164,42 +1309,55 @@ undefined4 cmpxchg4_mv_constant_simple(void)
 undefined4 cmpxchg4_mv_constant_complex1(void)
 
 {
-  uint uVar1;
-  undefined *puVar2;
+  undefined2 *puVar1;
+  uint uVar2;
+  undefined *puVar3;
+  short sVar4;
+  undefined2 in_SS;
+  ushort uVar6;
+  ushort *puVar5;
   
-  puVar2 = _DAT_06671ad7;
+  sVar4 = (short)&stack0x00000000 + -2;
+  puVar5 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar4);
+  puVar1 = (undefined2 *)segment(in_SS,sVar4);
+  *puVar1 = 0;
+  puVar3 = _DAT_06671ad7;
+  uVar6 = *puVar5;
+  _DAT_00002050 = puVar5 + 1;
   DAT_00002202 = &DAT_a3b17984 < _DAT_06671ad7;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_06671ad7);
-  uVar1 = (int)&DAT_a3b17984 - (int)_DAT_06671ad7;
-  DAT_00002208 = (int)uVar1 < 0;
-  DAT_00002204 = uVar1 == 0;
-  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
-  if (DAT_00002204) {
+  uVar2 = (int)&DAT_a3b17984 - (int)_DAT_06671ad7;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  if ((bool)DAT_00002204) {
     _DAT_06671ad7 = &DAT_a3b17984;
   }
-  _DAT_00002000 = _DAT_06671ad7;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
-  DAT_0000220c = -0x5c4e867c < (int)puVar2;
-  DAT_0000220d = (int)puVar2 < -0x5c4e867b;
-  DAT_0000220e = DAT_00002204 || -0x5c4e867c < (int)puVar2;
-  DAT_0000220f = !DAT_00002204 && (int)puVar2 < -0x5c4e867b;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = -0x5c4e867c < (int)puVar3;
+  DAT_0000220d = (int)puVar3 < -0x5c4e867b;
+  DAT_0000220e = (bool)DAT_00002204 || -0x5c4e867c < (int)puVar3;
+  DAT_0000220f = !(bool)DAT_00002204 && (int)puVar3 < -0x5c4e867b;
+  _DAT_00002000 = _DAT_06671ad7;
+  *puVar5 = (ushort)((uVar6 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar6 & 0x400) != 0) * 0x400 | (ushort)((uVar6 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar6 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar6 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar5 + 1);
   return 0;
 }
 
@@ -1214,6 +1372,7 @@ undefined4 cmpxchg4_mv_constant_complex2(void)
   undefined *puVar2;
   
   puVar2 = _DAT_496e81c3;
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002202 = &DAT_313ec0e8 < _DAT_496e81c3;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_496e81c3);
   uVar1 = (int)&DAT_313ec0e8 - (int)_DAT_496e81c3;
@@ -1230,11 +1389,6 @@ undefined4 cmpxchg4_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1246,6 +1400,10 @@ undefined4 cmpxchg4_mv_constant_complex2(void)
   DAT_0000220d = (int)puVar2 < 0x313ec0e9;
   DAT_0000220e = DAT_00002204 || 0x313ec0e8 < (int)puVar2;
   DAT_0000220f = !DAT_00002204 && (int)puVar2 < 0x313ec0e9;
+  _DAT_00002100 =
+       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1264,6 +1422,7 @@ undefined4 cmpxchg5_mv_plain(void)
 undefined4 cmpxchg5_mv_allregs(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002200 = SBORROW1((char)_DAT_00001000,(char)_DAT_00001000);
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
@@ -1272,14 +1431,6 @@ undefined4 cmpxchg5_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | 0x40 |
-       (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 | 4;
   DAT_00002201 = !DAT_00002200;
   DAT_00002202 = 0;
   DAT_00002203 = 1;
@@ -1295,6 +1446,13 @@ undefined4 cmpxchg5_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == false;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | 0x40 |
+       (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1305,6 +1463,18 @@ undefined4 cmpxchg5_mv_allregs(void)
 undefined4 cmpxchg5_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -1312,9 +1482,6 @@ undefined4 cmpxchg5_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -1331,6 +1498,11 @@ undefined4 cmpxchg5_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -1341,6 +1513,18 @@ undefined4 cmpxchg5_mv_constant_simple(void)
 undefined4 cmpxchg5_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -1348,9 +1532,6 @@ undefined4 cmpxchg5_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -1367,6 +1548,11 @@ undefined4 cmpxchg5_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -1377,6 +1563,7 @@ undefined4 cmpxchg5_mv_constant_complex1(void)
 undefined4 cmpxchg5_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -1384,9 +1571,6 @@ undefined4 cmpxchg5_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4654;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -1403,6 +1587,8 @@ undefined4 cmpxchg5_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4654;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1417,6 +1603,7 @@ undefined4 __regparm3 cmpxchg_locked_mv_plain(int param_1)
   if (param_1 == *unaff_EBX) {
     *unaff_EBX = param_1;
   }
+  UNLOCK();
   return 0;
 }
 
@@ -1464,12 +1651,7 @@ undefined4 cmpxchg_locked_mv_allregs(void)
   else {
     _DAT_00002000 = *_DAT_00001004;
   }
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
-       (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar6 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
+  UNLOCK();
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1481,6 +1663,12 @@ undefined4 cmpxchg_locked_mv_allregs(void)
   DAT_0000220d = (int)uVar1 <= (int)uVar8;
   DAT_0000220e = DAT_00002204 || (int)uVar8 < (int)uVar1;
   DAT_0000220f = !DAT_00002204 && (int)uVar1 <= (int)uVar8;
+  _DAT_00002100 =
+       (ushort)(uVar2 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar3 != 0) * 0x400 |
+       (ushort)(uVar4 != 0) * 0x200 | (ushort)(uVar5 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar6 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -1491,43 +1679,57 @@ undefined4 cmpxchg_locked_mv_allregs(void)
 undefined4 cmpxchg_locked_mv_constant_simple(void)
 
 {
-  uint uVar1;
+  undefined2 *puVar1;
   uint uVar2;
+  uint uVar3;
+  short sVar4;
+  undefined2 in_SS;
+  ushort uVar6;
+  ushort *puVar5;
   
-  uVar2 = uRam00000003;
+  sVar4 = (short)&stack0x00000000 + -2;
+  puVar5 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar4);
+  puVar1 = (undefined2 *)segment(in_SS,sVar4);
+  *puVar1 = 0;
+  uVar3 = uRam00000003;
+  uVar6 = *puVar5;
+  _DAT_00002050 = puVar5 + 1;
   LOCK();
   DAT_00002202 = 2 < uRam00000003;
   DAT_00002200 = SBORROW4(2,uRam00000003);
-  uVar1 = 2 - uRam00000003;
-  DAT_00002208 = (int)uVar1 < 0;
-  DAT_00002204 = uVar1 == 0;
-  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
-  if (DAT_00002204) {
+  uVar2 = 2 - uRam00000003;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  if ((bool)DAT_00002204) {
     uRam00000003 = 2;
   }
-  _DAT_00002000 = uRam00000003;
+  UNLOCK();
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
-  DAT_0000220c = 2 < (int)uVar2;
-  DAT_0000220d = (int)uVar2 < 3;
-  DAT_0000220e = DAT_00002204 || 2 < (int)uVar2;
-  DAT_0000220f = !DAT_00002204 && (int)uVar2 < 3;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = 2 < (int)uVar3;
+  DAT_0000220d = (int)uVar3 < 3;
+  DAT_0000220e = (bool)DAT_00002204 || 2 < (int)uVar3;
+  DAT_0000220f = !(bool)DAT_00002204 && (int)uVar3 < 3;
+  _DAT_00002000 = uRam00000003;
+  *puVar5 = (ushort)((uVar6 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar6 & 0x400) != 0) * 0x400 | (ushort)((uVar6 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar6 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar6 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar5 + 1);
   return 0;
 }
 
@@ -1538,43 +1740,57 @@ undefined4 cmpxchg_locked_mv_constant_simple(void)
 undefined4 cmpxchg_locked_mv_constant_complex1(void)
 
 {
-  uint uVar1;
-  undefined *puVar2;
+  undefined2 *puVar1;
+  uint uVar2;
+  undefined *puVar3;
+  short sVar4;
+  undefined2 in_SS;
+  ushort uVar6;
+  ushort *puVar5;
   
-  puVar2 = _DAT_06671ad7;
+  sVar4 = (short)&stack0x00000000 + -2;
+  puVar5 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar4);
+  puVar1 = (undefined2 *)segment(in_SS,sVar4);
+  *puVar1 = 0;
+  puVar3 = _DAT_06671ad7;
+  uVar6 = *puVar5;
+  _DAT_00002050 = puVar5 + 1;
   LOCK();
   DAT_00002202 = &DAT_a3b17984 < _DAT_06671ad7;
   DAT_00002200 = SBORROW4(-0x5c4e867c,(int)_DAT_06671ad7);
-  uVar1 = (int)&DAT_a3b17984 - (int)_DAT_06671ad7;
-  DAT_00002208 = (int)uVar1 < 0;
-  DAT_00002204 = uVar1 == 0;
-  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
-  if (DAT_00002204) {
+  uVar2 = (int)&DAT_a3b17984 - (int)_DAT_06671ad7;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  if ((bool)DAT_00002204) {
     _DAT_06671ad7 = &DAT_a3b17984;
   }
-  _DAT_00002000 = _DAT_06671ad7;
+  UNLOCK();
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
-  DAT_0000220c = -0x5c4e867c < (int)puVar2;
-  DAT_0000220d = (int)puVar2 < -0x5c4e867b;
-  DAT_0000220e = DAT_00002204 || -0x5c4e867c < (int)puVar2;
-  DAT_0000220f = !DAT_00002204 && (int)puVar2 < -0x5c4e867b;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = -0x5c4e867c < (int)puVar3;
+  DAT_0000220d = (int)puVar3 < -0x5c4e867b;
+  DAT_0000220e = (bool)DAT_00002204 || -0x5c4e867c < (int)puVar3;
+  DAT_0000220f = !(bool)DAT_00002204 && (int)puVar3 < -0x5c4e867b;
+  _DAT_00002000 = _DAT_06671ad7;
+  *puVar5 = (ushort)((uVar6 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar6 & 0x400) != 0) * 0x400 | (ushort)((uVar6 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar6 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar6 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar5;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar5 + 1);
   return 0;
 }
 
@@ -1589,6 +1805,7 @@ undefined4 cmpxchg_locked_mv_constant_complex2(void)
   undefined *puVar2;
   
   puVar2 = _DAT_496e81c3;
+  _DAT_00002050 = &stack0x00000000;
   LOCK();
   DAT_00002202 = &DAT_313ec0e8 < _DAT_496e81c3;
   DAT_00002200 = SBORROW4(0x313ec0e8,(int)_DAT_496e81c3);
@@ -1599,6 +1816,7 @@ undefined4 cmpxchg_locked_mv_constant_complex2(void)
   if (DAT_00002204) {
     _DAT_496e81c3 = &DAT_313ec0e8;
   }
+  UNLOCK();
   _DAT_00002000 = _DAT_496e81c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -1606,11 +1824,6 @@ undefined4 cmpxchg_locked_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1622,6 +1835,10 @@ undefined4 cmpxchg_locked_mv_constant_complex2(void)
   DAT_0000220d = (int)puVar2 < 0x313ec0e9;
   DAT_0000220e = DAT_00002204 || 0x313ec0e8 < (int)puVar2;
   DAT_0000220f = !DAT_00002204 && (int)puVar2 < 0x313ec0e9;
+  _DAT_00002100 =
+       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1700,6 +1917,7 @@ undefined4 cpuid_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   if (_DAT_00001000 == 0) {
     puVar1 = (undefined4 *)cpuid_basic_info(0);
   }
@@ -1758,15 +1976,6 @@ undefined4 cpuid_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1778,6 +1987,14 @@ undefined4 cpuid_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1789,35 +2006,50 @@ undefined4 cpuid_allregs(void)
 undefined4 cpuid_constant_simple(void)
 
 {
-  undefined4 *puVar1;
+  undefined2 *puVar1;
+  undefined4 *puVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  puVar1 = (undefined4 *)cpuid_cache_tlb_info(2);
-  _DAT_00002000 = *puVar1;
-  _DAT_00002004 = puVar1[1];
-  _DAT_00002008 = puVar1[3];
-  _DAT_0000200c = puVar1[2];
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  puVar2 = (undefined4 *)cpuid_cache_tlb_info(2);
+  _DAT_00002000 = *puVar2;
+  _DAT_00002004 = puVar2[1];
+  _DAT_0000200c = puVar2[2];
+  _DAT_00002008 = puVar2[3];
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -1829,35 +2061,50 @@ undefined4 cpuid_constant_simple(void)
 undefined4 cpuid_constant_complex1(void)
 
 {
-  undefined4 *puVar1;
+  undefined2 *puVar1;
+  undefined4 *puVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  puVar1 = (undefined4 *)cpuid(0xa3b17984);
-  _DAT_00002000 = *puVar1;
-  _DAT_00002004 = puVar1[1];
-  _DAT_00002008 = puVar1[3];
-  _DAT_0000200c = puVar1[2];
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  puVar2 = (undefined4 *)cpuid(0xa3b17984);
+  _DAT_00002000 = *puVar2;
+  _DAT_00002004 = puVar2[1];
+  _DAT_0000200c = puVar2[2];
+  _DAT_00002008 = puVar2[3];
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -1871,6 +2118,7 @@ undefined4 cpuid_constant_complex2(void)
 {
   undefined4 *puVar1;
   
+  _DAT_00002050 = &stack0x00000000;
   puVar1 = (undefined4 *)cpuid(0x313ec0e8);
   _DAT_00002000 = *puVar1;
   _DAT_00002004 = puVar1[1];
@@ -1879,9 +2127,6 @@ undefined4 cpuid_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -1898,6 +2143,8 @@ undefined4 cpuid_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1921,6 +2168,7 @@ undefined4 invd_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002008 = _DAT_00001008;
@@ -1928,15 +2176,6 @@ undefined4 invd_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -1948,6 +2187,14 @@ undefined4 invd_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -1958,6 +2205,23 @@ undefined4 invd_allregs(void)
 undefined4 invd_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -1965,25 +2229,24 @@ undefined4 invd_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -1994,6 +2257,23 @@ undefined4 invd_constant_simple(void)
 undefined4 invd_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -2001,25 +2281,24 @@ undefined4 invd_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2030,6 +2309,7 @@ undefined4 invd_constant_complex1(void)
 undefined4 invd_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -2037,9 +2317,6 @@ undefined4 invd_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -2056,6 +2333,8 @@ undefined4 invd_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2080,6 +2359,7 @@ undefined4 invlpg_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   invlpg(_DAT_00001000);
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
@@ -2088,15 +2368,6 @@ undefined4 invlpg_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2108,6 +2379,14 @@ undefined4 invlpg_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2118,6 +2397,23 @@ undefined4 invlpg_allregs(void)
 undefined4 invlpg_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   invlpg(2);
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
@@ -2126,25 +2422,24 @@ undefined4 invlpg_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2155,6 +2450,23 @@ undefined4 invlpg_constant_simple(void)
 undefined4 invlpg_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   invlpg(0xa3b17984);
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
@@ -2163,25 +2475,24 @@ undefined4 invlpg_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2192,6 +2503,7 @@ undefined4 invlpg_constant_complex1(void)
 undefined4 invlpg_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   invlpg(0x313ec0e8);
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
@@ -2200,9 +2512,6 @@ undefined4 invlpg_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -2219,6 +2528,8 @@ undefined4 invlpg_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2242,6 +2553,7 @@ undefined4 wbinvd_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002008 = _DAT_00001008;
@@ -2249,15 +2561,6 @@ undefined4 wbinvd_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2269,6 +2572,14 @@ undefined4 wbinvd_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2279,6 +2590,23 @@ undefined4 wbinvd_allregs(void)
 undefined4 wbinvd_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -2286,25 +2614,24 @@ undefined4 wbinvd_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2315,6 +2642,23 @@ undefined4 wbinvd_constant_simple(void)
 undefined4 wbinvd_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -2322,25 +2666,24 @@ undefined4 wbinvd_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2351,6 +2694,7 @@ undefined4 wbinvd_constant_complex1(void)
 undefined4 wbinvd_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -2358,9 +2702,6 @@ undefined4 wbinvd_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -2377,6 +2718,8 @@ undefined4 wbinvd_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2395,33 +2738,26 @@ undefined4 xadd1_mv_plain(void)
 undefined4 xadd1_mv_allregs(void)
 
 {
-  byte bVar1;
+  char cVar1;
   byte bVar2;
+  byte bVar3;
   
-  bVar1 = (byte)_DAT_00001000;
-  bVar2 = (byte)_DAT_00001004;
-  DAT_00002202 = CARRY1(bVar2,bVar1);
-  DAT_00002200 = SCARRY1(bVar2,bVar1);
-  bVar2 = bVar2 + bVar1;
-  DAT_00002208 = (char)bVar2 < '\0';
-  DAT_00002204 = bVar2 == 0;
-  DAT_0000220a = (POPCOUNT(bVar2) & 1U) == 0;
-  _DAT_00002000 = _DAT_00001000 & 0xffffff00 | _DAT_00001004 & 0xff;
-  _DAT_00002004 = _DAT_00001004 & 0xffffff00 | (uint)bVar2;
+  _DAT_00002050 = &stack0x00000000;
+  bVar2 = (byte)_DAT_00001000;
+  bVar3 = (byte)_DAT_00001004;
+  DAT_00002202 = CARRY1(bVar3,bVar2);
+  DAT_00002200 = SCARRY1(bVar3,bVar2);
+  cVar1 = bVar3 + bVar2;
+  DAT_00002208 = cVar1 < '\0';
+  DAT_00002204 = cVar1 == '\0';
+  DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
+  _DAT_00002000 = CONCAT31((int3)((uint)_DAT_00001000 >> 8),bVar3);
+  _DAT_00002004 = CONCAT31((int3)((uint)_DAT_00001004 >> 8),cVar1);
   _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2433,6 +2769,14 @@ undefined4 xadd1_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2443,6 +2787,18 @@ undefined4 xadd1_mv_allregs(void)
 undefined4 xadd1_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 3;
   _DAT_00002004 = 5;
   _DAT_00002008 = 4;
@@ -2450,9 +2806,6 @@ undefined4 xadd1_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 4;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -2469,6 +2822,11 @@ undefined4 xadd1_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2479,6 +2837,18 @@ undefined4 xadd1_mv_constant_simple(void)
 undefined4 xadd1_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0xa3b179d7;
   _DAT_00002004 = 0x6671a5b;
   _DAT_00002008 = 0x46685248;
@@ -2486,9 +2856,6 @@ undefined4 xadd1_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x801;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -2505,6 +2872,11 @@ undefined4 xadd1_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)((uVar4 & 0x10) != 0) * 0x10 | 1;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2515,6 +2887,7 @@ undefined4 xadd1_mv_constant_complex1(void)
 undefined4 xadd1_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313ec0c3;
   _DAT_00002004 = 0x496e81ab;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -2522,9 +2895,6 @@ undefined4 xadd1_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4691;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -2541,6 +2911,8 @@ undefined4 xadd1_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4691;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2562,30 +2934,22 @@ undefined4 xadd2_mv_allregs(void)
   ushort uVar1;
   ushort uVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = (ushort)_DAT_00001000;
   uVar2 = (ushort)_DAT_00001004;
   DAT_00002202 = CARRY2(uVar2,uVar1);
   DAT_00002200 = SCARRY2(uVar2,uVar1);
-  uVar2 = uVar2 + uVar1;
-  DAT_00002208 = (short)uVar2 < 0;
-  DAT_00002204 = uVar2 == 0;
-  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
-  _DAT_00002000 = _DAT_00001000 & 0xffff0000 | _DAT_00001004 & 0xffff;
-  _DAT_00002004 = _DAT_00001004 & 0xffff0000 | (uint)uVar2;
+  uVar1 = uVar2 + uVar1;
+  DAT_00002208 = (short)uVar1 < 0;
+  DAT_00002204 = uVar1 == 0;
+  DAT_0000220a = (POPCOUNT(uVar1 & 0xff) & 1U) == 0;
+  _DAT_00002000 = CONCAT22((short)((uint)_DAT_00001000 >> 0x10),uVar2);
+  _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),uVar1);
   _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2597,6 +2961,14 @@ undefined4 xadd2_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2607,6 +2979,18 @@ undefined4 xadd2_mv_allregs(void)
 undefined4 xadd2_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 3;
   _DAT_00002004 = 5;
   _DAT_00002008 = 4;
@@ -2614,9 +2998,6 @@ undefined4 xadd2_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 4;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -2633,6 +3014,11 @@ undefined4 xadd2_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2643,6 +3029,18 @@ undefined4 xadd2_mv_constant_simple(void)
 undefined4 xadd2_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0xa3b11ad7;
   _DAT_00002004 = 0x667945b;
   _DAT_00002008 = 0x46685248;
@@ -2650,9 +3048,6 @@ undefined4 xadd2_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x880;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 0;
@@ -2669,6 +3064,11 @@ undefined4 xadd2_mv_constant_complex1(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 | (ushort)((uVar4 & 0x10) != 0) * 0x10;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2679,6 +3079,7 @@ undefined4 xadd2_mv_constant_complex1(void)
 undefined4 xadd2_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313e81c3;
   _DAT_00002004 = 0x496e42ab;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -2686,9 +3087,6 @@ undefined4 xadd2_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4e11;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -2705,6 +3103,8 @@ undefined4 xadd2_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4e11;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2723,6 +3123,7 @@ undefined4 xadd3_plain(void)
 undefined4 xadd3_allregs(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002202 = CARRY4(_DAT_00001004,_DAT_00001000);
   DAT_00002200 = SCARRY4(_DAT_00001004,_DAT_00001000);
   _DAT_00002004 = _DAT_00001004 + _DAT_00001000;
@@ -2735,15 +3136,6 @@ undefined4 xadd3_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2755,6 +3147,14 @@ undefined4 xadd3_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2765,6 +3165,18 @@ undefined4 xadd3_allregs(void)
 undefined4 xadd3_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 3;
   _DAT_00002004 = 5;
   _DAT_00002008 = 4;
@@ -2772,9 +3184,6 @@ undefined4 xadd3_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 4;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -2791,6 +3200,11 @@ undefined4 xadd3_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2801,6 +3215,18 @@ undefined4 xadd3_constant_simple(void)
 undefined4 xadd3_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_06671ad7;
   _DAT_00002004 = 0xaa18945b;
   _DAT_00002008 = 0x46685248;
@@ -2808,9 +3234,6 @@ undefined4 xadd3_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x80;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -2827,6 +3250,11 @@ undefined4 xadd3_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -2837,6 +3265,7 @@ undefined4 xadd3_constant_complex1(void)
 undefined4 xadd3_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_496e81c3;
   _DAT_00002004 = 0x7aad42ab;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -2844,9 +3273,6 @@ undefined4 xadd3_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4610;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -2863,6 +3289,8 @@ undefined4 xadd3_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  _DAT_00002100 = 0x4610;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -2911,12 +3339,6 @@ undefined4 xadd4_mv_allregs(void)
   DAT_00002208 = (int)uVar6 < 0;
   DAT_00002204 = uVar6 == 0;
   DAT_0000220a = (POPCOUNT(uVar6 & 0xff) & 1U) == 0;
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
-       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -2928,6 +3350,12 @@ undefined4 xadd4_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -2938,35 +3366,51 @@ undefined4 xadd4_mv_allregs(void)
 undefined4 xadd4_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = uRam00000003;
+  undefined2 *puVar1;
+  uint uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
+  
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
   DAT_00002202 = 0xfffffffd < uRam00000003;
   DAT_00002200 = SCARRY4(uRam00000003,2);
-  uRam00000003 = uRam00000003 + 2;
-  DAT_00002208 = (int)uRam00000003 < 0;
-  DAT_00002204 = uRam00000003 == 0;
-  DAT_0000220a = (POPCOUNT(uRam00000003 & 0xff) & 1U) == 0;
+  uVar2 = uRam00000003 + 2;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  _DAT_00002000 = uRam00000003;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
   DAT_0000220c = DAT_00002200 != DAT_00002208;
   DAT_0000220d = DAT_00002200 == DAT_00002208;
-  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
-  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  uRam00000003 = uVar2;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -2977,14 +3421,25 @@ undefined4 xadd4_mv_constant_simple(void)
 undefined4 xadd4_mv_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  undefined2 *puVar1;
+  undefined *puVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
   DAT_00002202 = 0x5c4e867b < _DAT_06671ad7;
   DAT_00002200 = SCARRY4((int)_DAT_06671ad7,-0x5c4e867c);
-  puVar1 = &DAT_a3b17984 + (int)_DAT_06671ad7;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  puVar2 = &DAT_a3b17984 + (int)_DAT_06671ad7;
+  DAT_00002208 = (int)puVar2 < 0;
+  DAT_00002204 = puVar2 == (undefined *)0x0;
+  DAT_0000220a = (POPCOUNT((uint)puVar2 & 0xff) & 1U) == 0;
   _DAT_00002000 = (uint)_DAT_06671ad7;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -2992,23 +3447,25 @@ undefined4 xadd4_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
   DAT_0000220c = DAT_00002200 != DAT_00002208;
   DAT_0000220d = DAT_00002200 == DAT_00002208;
-  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
-  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
-  _DAT_06671ad7 = puVar1;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_06671ad7 = puVar2;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -3019,26 +3476,20 @@ undefined4 xadd4_mv_constant_complex1(void)
 undefined4 xadd4_mv_constant_complex2(void)
 
 {
-  undefined *puVar1;
-  
+  _DAT_00002000 = (uint)_DAT_496e81c3;
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002202 = 0xcec13f17 < _DAT_496e81c3;
   DAT_00002200 = SCARRY4((int)_DAT_496e81c3,0x313ec0e8);
-  puVar1 = &DAT_313ec0e8 + (int)_DAT_496e81c3;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
-  _DAT_00002000 = (uint)_DAT_496e81c3;
+  _DAT_496e81c3 = &DAT_313ec0e8 + (int)_DAT_496e81c3;
+  DAT_00002208 = (int)_DAT_496e81c3 < 0;
+  DAT_00002204 = _DAT_496e81c3 == (undefined *)0x0;
+  DAT_0000220a = (POPCOUNT((uint)_DAT_496e81c3 & 0xff) & 1U) == 0;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3050,7 +3501,10 @@ undefined4 xadd4_mv_constant_complex2(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
-  _DAT_496e81c3 = puVar1;
+  _DAT_00002100 =
+       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3069,31 +3523,24 @@ undefined4 xadd5_mv_plain(void)
 undefined4 xadd5_mv_allregs(void)
 
 {
-  byte bVar1;
+  char cVar1;
+  byte bVar2;
   
-  bVar1 = (byte)_DAT_00001000;
-  DAT_00002202 = CARRY1(bVar1,bVar1);
-  DAT_00002200 = SCARRY1(bVar1,bVar1);
-  bVar1 = bVar1 * '\x02';
-  DAT_00002208 = (char)bVar1 < '\0';
-  DAT_00002204 = bVar1 == 0;
-  DAT_0000220a = (POPCOUNT(bVar1) & 1U) == 0;
-  _DAT_00002000 = _DAT_00001000 & 0xffffff00 | (uint)bVar1;
+  _DAT_00002050 = &stack0x00000000;
+  bVar2 = (byte)_DAT_00001000;
+  DAT_00002202 = CARRY1(bVar2,bVar2);
+  DAT_00002200 = SCARRY1(bVar2,bVar2);
+  cVar1 = bVar2 * '\x02';
+  DAT_00002208 = cVar1 < '\0';
+  DAT_00002204 = cVar1 == '\0';
+  DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
+  _DAT_00002000 = CONCAT31((int3)((uint)_DAT_00001000 >> 8),cVar1);
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002008 = _DAT_00001008;
   _DAT_0000200c = _DAT_0000100c;
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3105,6 +3552,14 @@ undefined4 xadd5_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3115,6 +3570,18 @@ undefined4 xadd5_mv_allregs(void)
 undefined4 xadd5_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 4;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -3122,9 +3589,6 @@ undefined4 xadd5_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -3141,6 +3605,11 @@ undefined4 xadd5_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 0;
   DAT_0000220f = 1;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3151,6 +3620,18 @@ undefined4 xadd5_mv_constant_simple(void)
 undefined4 xadd5_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 0xa3b17908;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -3158,9 +3639,6 @@ undefined4 xadd5_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x801;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -3177,6 +3655,11 @@ undefined4 xadd5_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)((uVar4 & 0x10) != 0) * 0x10 | 1;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3187,6 +3670,7 @@ undefined4 xadd5_mv_constant_complex1(void)
 undefined4 xadd5_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313ec0d0;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -3194,9 +3678,6 @@ undefined4 xadd5_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4691;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 1;
@@ -3213,6 +3694,8 @@ undefined4 xadd5_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4691;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3225,6 +3708,7 @@ undefined4 __regparm3 xadd_locked_mv_plain(int param_1)
   
   LOCK();
   *unaff_EBX = *unaff_EBX + param_1;
+  UNLOCK();
   return 0;
 }
 
@@ -3263,12 +3747,7 @@ undefined4 xadd_locked_mv_allregs(void)
   DAT_00002208 = (int)uVar6 < 0;
   DAT_00002204 = uVar6 == 0;
   DAT_0000220a = (POPCOUNT(uVar6 & 0xff) & 1U) == 0;
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
-       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
+  UNLOCK();
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3280,6 +3759,12 @@ undefined4 xadd_locked_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -3290,36 +3775,53 @@ undefined4 xadd_locked_mv_allregs(void)
 undefined4 xadd_locked_mv_constant_simple(void)
 
 {
-  _DAT_00002000 = uRam00000003;
+  undefined2 *puVar1;
+  uint uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
+  
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
   LOCK();
   DAT_00002202 = 0xfffffffd < uRam00000003;
   DAT_00002200 = SCARRY4(uRam00000003,2);
-  uRam00000003 = uRam00000003 + 2;
-  DAT_00002208 = (int)uRam00000003 < 0;
-  DAT_00002204 = uRam00000003 == 0;
-  DAT_0000220a = (POPCOUNT(uRam00000003 & 0xff) & 1U) == 0;
+  uVar2 = uRam00000003 + 2;
+  DAT_00002208 = (int)uVar2 < 0;
+  DAT_00002204 = uVar2 == 0;
+  DAT_0000220a = (POPCOUNT(uVar2 & 0xff) & 1U) == 0;
+  UNLOCK();
+  _DAT_00002000 = uRam00000003;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
   DAT_0000220c = DAT_00002200 != DAT_00002208;
   DAT_0000220d = DAT_00002200 == DAT_00002208;
-  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
-  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  uRam00000003 = uVar2;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -3330,15 +3832,27 @@ undefined4 xadd_locked_mv_constant_simple(void)
 undefined4 xadd_locked_mv_constant_complex1(void)
 
 {
-  undefined *puVar1;
+  undefined2 *puVar1;
+  undefined *puVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
   LOCK();
   DAT_00002202 = 0x5c4e867b < _DAT_06671ad7;
   DAT_00002200 = SCARRY4((int)_DAT_06671ad7,-0x5c4e867c);
-  puVar1 = &DAT_a3b17984 + (int)_DAT_06671ad7;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
+  puVar2 = &DAT_a3b17984 + (int)_DAT_06671ad7;
+  DAT_00002208 = (int)puVar2 < 0;
+  DAT_00002204 = puVar2 == (undefined *)0x0;
+  DAT_0000220a = (POPCOUNT((uint)puVar2 & 0xff) & 1U) == 0;
+  UNLOCK();
   _DAT_00002000 = (uint)_DAT_06671ad7;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -3346,23 +3860,25 @@ undefined4 xadd_locked_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | (ushort)DAT_00002208 * 0x80 | (ushort)DAT_00002204 * 0x40 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
-  DAT_00002201 = !DAT_00002200;
-  DAT_00002203 = !DAT_00002202;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002202 || DAT_00002204;
-  DAT_00002207 = !DAT_00002202 && !DAT_00002204;
-  DAT_00002209 = !DAT_00002208;
-  DAT_0000220b = !DAT_0000220a;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
   DAT_0000220c = DAT_00002200 != DAT_00002208;
   DAT_0000220d = DAT_00002200 == DAT_00002208;
-  DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
-  DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
-  _DAT_06671ad7 = puVar1;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_06671ad7 = puVar2;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -3373,27 +3889,22 @@ undefined4 xadd_locked_mv_constant_complex1(void)
 undefined4 xadd_locked_mv_constant_complex2(void)
 
 {
-  undefined *puVar1;
-  
+  _DAT_00002000 = (uint)_DAT_496e81c3;
+  _DAT_00002050 = &stack0x00000000;
   LOCK();
   DAT_00002202 = 0xcec13f17 < _DAT_496e81c3;
   DAT_00002200 = SCARRY4((int)_DAT_496e81c3,0x313ec0e8);
-  puVar1 = &DAT_313ec0e8 + (int)_DAT_496e81c3;
-  DAT_00002208 = (int)puVar1 < 0;
-  DAT_00002204 = puVar1 == (undefined *)0x0;
-  DAT_0000220a = (POPCOUNT((uint)puVar1 & 0xff) & 1U) == 0;
-  _DAT_00002000 = (uint)_DAT_496e81c3;
+  _DAT_496e81c3 = &DAT_313ec0e8 + (int)_DAT_496e81c3;
+  DAT_00002208 = (int)_DAT_496e81c3 < 0;
+  DAT_00002204 = _DAT_496e81c3 == (undefined *)0x0;
+  DAT_0000220a = (POPCOUNT((uint)_DAT_496e81c3 & 0xff) & 1U) == 0;
+  UNLOCK();
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
   _DAT_0000200c = 0x4e6925b3;
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3405,7 +3916,10 @@ undefined4 xadd_locked_mv_constant_complex2(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
-  _DAT_496e81c3 = puVar1;
+  _DAT_00002100 =
+       (ushort)DAT_00002200 * 0x800 | 0x4600 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | 0x10 | (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3463,12 +3977,6 @@ undefined4 cmpxchg8b_allregs(void)
     _DAT_0000200c = (undefined4)((ulonglong)*_DAT_00001000 >> 0x20);
     _DAT_00002000 = *(longlong **)_DAT_00001000;
   }
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
-       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3480,6 +3988,12 @@ undefined4 cmpxchg8b_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -3490,39 +4004,55 @@ undefined4 cmpxchg8b_allregs(void)
 undefined4 cmpxchg8b_constant_simple(void)
 
 {
-  lRam00000002._0_4_ = 2;
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
+  _DAT_00002000 = 2;
   _DAT_0000200c = 5;
   DAT_00002204 = lRam00000002 == 0x500000002;
-  if (DAT_00002204) {
+  if ((bool)DAT_00002204) {
     lRam00000002 = 0x400000003;
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)lRam00000002 >> 0x20);
+    _DAT_00002000 = (undefined4)lRam00000002;
   }
-  _DAT_00002000 = (undefined4)lRam00000002;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002204;
-  DAT_00002207 = !DAT_00002204;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = DAT_00002204;
-  DAT_0000220f = !DAT_00002204;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3533,39 +4063,55 @@ undefined4 cmpxchg8b_constant_simple(void)
 undefined4 cmpxchg8b_constant_complex1(void)
 
 {
-  _DAT_a3b17984 = &DAT_a3b17984;
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
+  _DAT_00002000 = &DAT_a3b17984;
   _DAT_0000200c = 0x392456c4;
   DAT_00002204 = _DAT_a3b17984 == 0x392456c4a3b17984;
-  if (DAT_00002204) {
+  if ((bool)DAT_00002204) {
     _DAT_a3b17984 = 0x4668524806671ad7;
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)_DAT_a3b17984 >> 0x20);
+    _DAT_00002000 = _DAT_a3b17984;
   }
-  _DAT_00002000 = _DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002204;
-  DAT_00002207 = !DAT_00002204;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = DAT_00002204;
-  DAT_0000220f = !DAT_00002204;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3576,24 +4122,22 @@ undefined4 cmpxchg8b_constant_complex1(void)
 undefined4 cmpxchg8b_constant_complex2(void)
 
 {
-  _DAT_313ec0e8 = &DAT_313ec0e8;
+  _DAT_00002000 = &DAT_313ec0e8;
   _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002050 = &stack0x00000000;
   DAT_00002204 = _DAT_313ec0e8 == 0x4e6925b3313ec0e8;
   if (DAT_00002204) {
     _DAT_313ec0e8 = 0x1e3f6cb2496e81c3;
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)_DAT_313ec0e8 >> 0x20);
+    _DAT_00002000 = _DAT_313ec0e8;
   }
-  _DAT_00002000 = _DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40 | 0x4e95;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -3609,6 +4153,8 @@ undefined4 cmpxchg8b_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = DAT_00002204;
   DAT_0000220f = !DAT_00002204;
+  _DAT_00002100 = (ushort)DAT_00002204 * 0x40 | 0x4e95;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3626,6 +4172,7 @@ longlong __regparm3 cmpxchg8b_locked_mv_plain(longlong *param_1,uint param_2,und
   else {
     param_2 = (uint)((ulonglong)*param_1 >> 0x20);
   }
+  UNLOCK();
   return (ulonglong)param_2 << 0x20;
 }
 
@@ -3668,12 +4215,7 @@ undefined4 cmpxchg8b_locked_mv_allregs(void)
     _DAT_0000200c = (undefined4)((ulonglong)*_DAT_00001000 >> 0x20);
     _DAT_00002000 = *(longlong **)_DAT_00001000;
   }
-  _DAT_00002020 = (int)_DAT_00002050 - (int)register0x00000010;
-  _DAT_00002100 =
-       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
-       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
-       (ushort)DAT_00002202;
+  UNLOCK();
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3685,6 +4227,12 @@ undefined4 cmpxchg8b_locked_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)(uVar1 != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 | (ushort)(uVar2 != 0) * 0x400 |
+       (ushort)(uVar3 != 0) * 0x200 | (ushort)(uVar4 != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)(uVar5 != 0) * 0x10 | (ushort)DAT_0000220a * 4 |
+       (ushort)DAT_00002202;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)&stack0x00000000;
   return 0;
 }
 
@@ -3695,40 +4243,57 @@ undefined4 cmpxchg8b_locked_mv_allregs(void)
 undefined4 cmpxchg8b_locked_mv_constant_simple(void)
 
 {
-  lRam00000002._0_4_ = 2;
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
+  _DAT_00002000 = 2;
   _DAT_0000200c = 5;
   LOCK();
   DAT_00002204 = lRam00000002 == 0x500000002;
-  if (DAT_00002204) {
+  if ((bool)DAT_00002204) {
     lRam00000002 = 0x400000003;
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)lRam00000002 >> 0x20);
+    _DAT_00002000 = (undefined4)lRam00000002;
   }
-  _DAT_00002000 = (undefined4)lRam00000002;
+  UNLOCK();
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002204;
-  DAT_00002207 = !DAT_00002204;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = DAT_00002204;
-  DAT_0000220f = !DAT_00002204;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3739,40 +4304,57 @@ undefined4 cmpxchg8b_locked_mv_constant_simple(void)
 undefined4 cmpxchg8b_locked_mv_constant_complex1(void)
 
 {
-  _DAT_a3b17984 = &DAT_a3b17984;
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
+  _DAT_00002000 = &DAT_a3b17984;
   _DAT_0000200c = 0x392456c4;
   LOCK();
   DAT_00002204 = _DAT_a3b17984 == 0x392456c4a3b17984;
-  if (DAT_00002204) {
+  if ((bool)DAT_00002204) {
     _DAT_a3b17984 = 0x4668524806671ad7;
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)_DAT_a3b17984 >> 0x20);
+    _DAT_00002000 = _DAT_a3b17984;
   }
-  _DAT_00002000 = _DAT_a3b17984;
+  UNLOCK();
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002205 = !DAT_00002204;
-  DAT_00002206 = DAT_00002204;
-  DAT_00002207 = !DAT_00002204;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = DAT_00002204;
-  DAT_0000220f = !DAT_00002204;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -3783,8 +4365,9 @@ undefined4 cmpxchg8b_locked_mv_constant_complex1(void)
 undefined4 cmpxchg8b_locked_mv_constant_complex2(void)
 
 {
-  _DAT_313ec0e8 = &DAT_313ec0e8;
+  _DAT_00002000 = &DAT_313ec0e8;
   _DAT_0000200c = 0x4e6925b3;
+  _DAT_00002050 = &stack0x00000000;
   LOCK();
   DAT_00002204 = _DAT_313ec0e8 == 0x4e6925b3313ec0e8;
   if (DAT_00002204) {
@@ -3792,16 +4375,14 @@ undefined4 cmpxchg8b_locked_mv_constant_complex2(void)
   }
   else {
     _DAT_0000200c = (undefined4)((ulonglong)_DAT_313ec0e8 >> 0x20);
+    _DAT_00002000 = _DAT_313ec0e8;
   }
-  _DAT_00002000 = _DAT_313ec0e8;
+  UNLOCK();
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = (ushort)DAT_00002204 * 0x40 | 0x4e95;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -3817,6 +4398,8 @@ undefined4 cmpxchg8b_locked_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = DAT_00002204;
   DAT_0000220f = !DAT_00002204;
+  _DAT_00002100 = (ushort)DAT_00002204 * 0x40 | 0x4e95;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3845,6 +4428,7 @@ undefined4 rdtsc_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = rdtsc();
   _DAT_00002000 = (int)uVar1;
   _DAT_00002004 = _DAT_00001004;
@@ -3853,15 +4437,6 @@ undefined4 rdtsc_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -3873,6 +4448,14 @@ undefined4 rdtsc_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -3883,35 +4466,50 @@ undefined4 rdtsc_allregs(void)
 undefined4 rdtsc_constant_simple(void)
 
 {
-  undefined8 uVar1;
+  undefined2 *puVar1;
+  undefined8 uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  uVar1 = rdtsc();
-  _DAT_00002000 = (int)uVar1;
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  uVar2 = rdtsc();
+  _DAT_0000200c = (undefined4)((ulonglong)uVar2 >> 0x20);
+  _DAT_00002000 = (undefined4)uVar2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
-  _DAT_0000200c = (int)((ulonglong)uVar1 >> 0x20);
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -3922,35 +4520,50 @@ undefined4 rdtsc_constant_simple(void)
 undefined4 rdtsc_constant_complex1(void)
 
 {
-  undefined8 uVar1;
+  undefined2 *puVar1;
+  undefined8 uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  uVar1 = rdtsc();
-  _DAT_00002000 = (int)uVar1;
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  uVar2 = rdtsc();
+  _DAT_0000200c = (undefined4)((ulonglong)uVar2 >> 0x20);
+  _DAT_00002000 = (undefined4)uVar2;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
-  _DAT_0000200c = (int)((ulonglong)uVar1 >> 0x20);
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -3963,6 +4576,7 @@ undefined4 rdtsc_constant_complex2(void)
 {
   undefined8 uVar1;
   
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = rdtsc();
   _DAT_00002000 = (int)uVar1;
   _DAT_00002004 = &DAT_496e81c3;
@@ -3971,9 +4585,6 @@ undefined4 rdtsc_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -3990,6 +4601,8 @@ undefined4 rdtsc_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4019,6 +4632,7 @@ undefined4 rdmsr_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = rdmsr(_DAT_00001008);
   _DAT_00002000 = (int)uVar1;
   _DAT_00002004 = _DAT_00001004;
@@ -4027,15 +4641,6 @@ undefined4 rdmsr_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4047,6 +4652,14 @@ undefined4 rdmsr_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4057,35 +4670,50 @@ undefined4 rdmsr_allregs(void)
 undefined4 rdmsr_constant_simple(void)
 
 {
-  undefined8 uVar1;
+  undefined2 *puVar1;
+  undefined8 uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  uVar1 = rdmsr(4);
-  _DAT_00002000 = (int)uVar1;
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  uVar2 = rdmsr(4);
+  _DAT_0000200c = (undefined4)((ulonglong)uVar2 >> 0x20);
+  _DAT_00002000 = (undefined4)uVar2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
-  _DAT_0000200c = (int)((ulonglong)uVar1 >> 0x20);
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -4096,35 +4724,50 @@ undefined4 rdmsr_constant_simple(void)
 undefined4 rdmsr_constant_complex1(void)
 
 {
-  undefined8 uVar1;
+  undefined2 *puVar1;
+  undefined8 uVar2;
+  short sVar3;
+  undefined2 in_SS;
+  ushort uVar5;
+  ushort *puVar4;
   
-  uVar1 = rdmsr(0x46685248);
-  _DAT_00002000 = (int)uVar1;
+  sVar3 = (short)&stack0x00000000 + -2;
+  puVar4 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar3);
+  puVar1 = (undefined2 *)segment(in_SS,sVar3);
+  *puVar1 = 0;
+  uVar5 = *puVar4;
+  _DAT_00002050 = puVar4 + 1;
+  DAT_00002200 = (uVar5 & 0x800) != 0;
+  DAT_00002208 = (uVar5 & 0x80) != 0;
+  DAT_00002204 = (uVar5 & 0x40) != 0;
+  DAT_0000220a = (uVar5 & 4) != 0;
+  DAT_00002202 = (uVar5 & 1) != 0;
+  uVar2 = rdmsr(0x46685248);
+  _DAT_0000200c = (undefined4)((ulonglong)uVar2 >> 0x20);
+  _DAT_00002000 = (undefined4)uVar2;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
-  _DAT_0000200c = (int)((ulonglong)uVar1 >> 0x20);
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar4 = (ushort)((uVar5 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar5 & 0x400) != 0) * 0x400 | (ushort)((uVar5 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar5 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar5 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar4;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar4 + 1);
   return 0;
 }
 
@@ -4137,6 +4780,7 @@ undefined4 rdmsr_constant_complex2(void)
 {
   undefined8 uVar1;
   
+  _DAT_00002050 = &stack0x00000000;
   uVar1 = rdmsr(0x1e3f6cb2);
   _DAT_00002000 = (int)uVar1;
   _DAT_00002004 = &DAT_496e81c3;
@@ -4145,9 +4789,6 @@ undefined4 rdmsr_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4164,6 +4805,8 @@ undefined4 rdmsr_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4188,6 +4831,7 @@ undefined4 wrmsr_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   wrmsr(_DAT_00001008,CONCAT44(_DAT_0000100c,_DAT_00001000));
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002004 = _DAT_00001004;
@@ -4196,15 +4840,6 @@ undefined4 wrmsr_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4216,6 +4851,14 @@ undefined4 wrmsr_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4226,6 +4869,23 @@ undefined4 wrmsr_allregs(void)
 undefined4 wrmsr_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   wrmsr(4,0x500000002);
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
@@ -4234,25 +4894,24 @@ undefined4 wrmsr_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4263,6 +4922,23 @@ undefined4 wrmsr_constant_simple(void)
 undefined4 wrmsr_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   wrmsr(0x46685248,0x392456c4a3b17984);
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
@@ -4271,25 +4947,24 @@ undefined4 wrmsr_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4300,6 +4975,7 @@ undefined4 wrmsr_constant_complex1(void)
 undefined4 wrmsr_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   wrmsr(0x1e3f6cb2,0x4e6925b3313ec0e8);
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
@@ -4308,9 +4984,6 @@ undefined4 wrmsr_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4327,6 +5000,8 @@ undefined4 wrmsr_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4350,9 +5025,10 @@ undefined4 cmov1_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   if (DAT_00002204) {
-    _DAT_00002000 = _DAT_00001000 & 0xffff0000 | _DAT_00001004 & 0xffff;
+    _DAT_00002000 = CONCAT22((short)((uint)_DAT_00001000 >> 0x10),(short)_DAT_00001004);
   }
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002008 = _DAT_00001008;
@@ -4360,15 +5036,6 @@ undefined4 cmov1_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4380,80 +5047,124 @@ undefined4 cmov1_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804e3be)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov1_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = 3;
+  }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804e4a6)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov1_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = (undefined *)0xa3b11ad7;
+  }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4464,6 +5175,7 @@ undefined4 cmov1_mv_constant_complex1(void)
 undefined4 cmov1_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = 0x313e81c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -4471,9 +5183,6 @@ undefined4 cmov1_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4490,6 +5199,8 @@ undefined4 cmov1_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4513,6 +5224,7 @@ undefined4 cmov2_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   if (DAT_00002204) {
     _DAT_00002000 = _DAT_00001004;
@@ -4523,15 +5235,6 @@ undefined4 cmov2_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4543,80 +5246,124 @@ undefined4 cmov2_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804e772)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov2_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = 3;
+  }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804e859)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov2_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = &DAT_06671ad7;
+  }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4627,6 +5374,7 @@ undefined4 cmov2_mv_constant_complex1(void)
 undefined4 cmov2_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_496e81c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -4634,9 +5382,6 @@ undefined4 cmov2_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4653,6 +5398,8 @@ undefined4 cmov2_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4676,6 +5423,7 @@ undefined4 cmov3_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   if (DAT_00002204) {
     _DAT_00002000 = _DAT_00001004;
@@ -4686,15 +5434,6 @@ undefined4 cmov3_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4706,80 +5445,124 @@ undefined4 cmov3_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804eb23)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov3_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = 3;
+  }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804ec0a)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov3_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = &DAT_06671ad7;
+  }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4790,6 +5573,7 @@ undefined4 cmov3_constant_complex1(void)
 undefined4 cmov3_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_496e81c3;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -4797,9 +5581,6 @@ undefined4 cmov3_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4816,6 +5597,8 @@ undefined4 cmov3_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -4839,9 +5622,11 @@ undefined4 cmov4_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   if (DAT_00002204) {
-    _DAT_00002000 = _DAT_00001000 & 0xffff0000 | (uint)*(ushort *)(_DAT_00001004 + 0xc);
+    _DAT_00002000 =
+         CONCAT22((short)((uint)_DAT_00001000 >> 0x10),*(undefined2 *)(_DAT_00001004 + 0xc));
   }
   _DAT_00002004 = _DAT_00001004;
   _DAT_00002008 = _DAT_00001008;
@@ -4849,15 +5634,6 @@ undefined4 cmov4_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -4869,80 +5645,124 @@ undefined4 cmov4_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804eed8)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov4_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = (uint)_DAT_0000000f;
+  }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804efc1)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov4_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = (undefined *)CONCAT22(0xa3b1,_DAT_06671ae3);
+  }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -4953,6 +5773,7 @@ undefined4 cmov4_mv_constant_complex1(void)
 undefined4 cmov4_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = CONCAT22(0x313e,_DAT_496e81cf);
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -4960,9 +5781,6 @@ undefined4 cmov4_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -4979,6 +5797,8 @@ undefined4 cmov4_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5002,6 +5822,7 @@ undefined4 cmov5_mv_allregs(void)
   DAT_00002204 = (_DAT_00001100 & 0x40) != 0;
   DAT_0000220a = (_DAT_00001100 & 4) != 0;
   DAT_00002202 = (_DAT_00001100 & 1) != 0;
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_00001000;
   if (DAT_00002204) {
     _DAT_00002000 = *(undefined4 *)(_DAT_00001004 + 0x22);
@@ -5012,15 +5833,6 @@ undefined4 cmov5_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5032,80 +5844,124 @@ undefined4 cmov5_mv_allregs(void)
   DAT_0000220d = DAT_00002200 == DAT_00002208;
   DAT_0000220e = DAT_00002204 || DAT_00002200 != DAT_00002208;
   DAT_0000220f = !DAT_00002204 && DAT_00002200 == DAT_00002208;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804f291)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov5_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = 2;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = _DAT_00000025;
+  }
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
   _DAT_0000200c = 5;
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
 
 
-// WARNING: Removing unreachable block (ram,0x0804f379)
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 undefined4 cmov5_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
+  DAT_00002200 = (uVar4 & 0x800) != 0;
+  DAT_00002208 = (uVar4 & 0x80) != 0;
+  DAT_00002204 = (uVar4 & 0x40) != 0;
+  DAT_0000220a = (uVar4 & 4) != 0;
+  DAT_00002202 = (uVar4 & 1) != 0;
   _DAT_00002000 = &DAT_a3b17984;
+  if ((bool)DAT_00002204) {
+    _DAT_00002000 = _DAT_06671af9;
+  }
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
   _DAT_0000200c = 0x392456c4;
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0;
-  DAT_00002200 = 0;
-  DAT_00002201 = 1;
-  DAT_00002202 = 0;
-  DAT_00002203 = 1;
-  DAT_00002204 = 0;
-  DAT_00002205 = 1;
-  DAT_00002206 = 0;
-  DAT_00002207 = 1;
-  DAT_00002208 = 0;
-  DAT_00002209 = 1;
-  DAT_0000220a = 0;
-  DAT_0000220b = 1;
-  DAT_0000220c = 0;
-  DAT_0000220d = 1;
-  DAT_0000220e = 0;
-  DAT_0000220f = 1;
+  DAT_00002201 = !(bool)DAT_00002200;
+  DAT_00002203 = !(bool)DAT_00002202;
+  DAT_00002205 = !(bool)DAT_00002204;
+  DAT_00002206 = (bool)DAT_00002202 || (bool)DAT_00002204;
+  DAT_00002207 = !(bool)DAT_00002202 && !(bool)DAT_00002204;
+  DAT_00002209 = !(bool)DAT_00002208;
+  DAT_0000220b = !(bool)DAT_0000220a;
+  DAT_0000220c = DAT_00002200 != DAT_00002208;
+  DAT_0000220d = DAT_00002200 == DAT_00002208;
+  DAT_0000220e = (bool)DAT_00002204 || DAT_00002200 != DAT_00002208;
+  DAT_0000220f = !(bool)DAT_00002204 && DAT_00002200 == DAT_00002208;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)(byte)DAT_00002200 * 0x800 |
+            (ushort)((uVar4 & 0x400) != 0) * 0x400 | (ushort)((uVar4 & 0x200) != 0) * 0x200 |
+            (ushort)((uVar4 & 0x100) != 0) * 0x100 | (ushort)(byte)DAT_00002208 * 0x80 |
+            (ushort)(byte)DAT_00002204 * 0x40 | (ushort)((uVar4 & 0x10) != 0) * 0x10 |
+            (ushort)(byte)DAT_0000220a * 4 | (ushort)(byte)DAT_00002202;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5116,6 +5972,7 @@ undefined4 cmov5_mv_constant_complex1(void)
 undefined4 cmov5_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = _DAT_496e81e5;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5123,9 +5980,6 @@ undefined4 cmov5_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4ed5;
   DAT_00002200 = 1;
   DAT_00002201 = 0;
   DAT_00002202 = 1;
@@ -5142,6 +5996,8 @@ undefined4 cmov5_mv_constant_complex2(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4ed5;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5163,6 +6019,7 @@ undefined4 cmov_w_with_code_0_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -5172,7 +6029,7 @@ undefined4 cmov_w_with_code_0_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002200) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -5180,15 +6037,6 @@ undefined4 cmov_w_with_code_0_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5200,6 +6048,14 @@ undefined4 cmov_w_with_code_0_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5211,6 +6067,18 @@ undefined4 cmov_w_with_code_0_allregs(void)
 undefined4 cmov_w_with_code_0_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -5218,9 +6086,6 @@ undefined4 cmov_w_with_code_0_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5237,6 +6102,11 @@ undefined4 cmov_w_with_code_0_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5248,6 +6118,18 @@ undefined4 cmov_w_with_code_0_constant_simple(void)
 undefined4 cmov_w_with_code_0_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -5255,9 +6137,6 @@ undefined4 cmov_w_with_code_0_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5274,6 +6153,11 @@ undefined4 cmov_w_with_code_0_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5285,6 +6169,7 @@ undefined4 cmov_w_with_code_0_constant_complex1(void)
 undefined4 cmov_w_with_code_0_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5292,9 +6177,6 @@ undefined4 cmov_w_with_code_0_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5311,6 +6193,8 @@ undefined4 cmov_w_with_code_0_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5332,6 +6216,7 @@ undefined4 cmov_w_with_code_1_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -5341,7 +6226,7 @@ undefined4 cmov_w_with_code_1_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002200) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -5349,15 +6234,6 @@ undefined4 cmov_w_with_code_1_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5369,6 +6245,14 @@ undefined4 cmov_w_with_code_1_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5379,6 +6263,18 @@ undefined4 cmov_w_with_code_1_mv_allregs(void)
 undefined4 cmov_w_with_code_1_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -5386,9 +6282,6 @@ undefined4 cmov_w_with_code_1_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5405,6 +6298,11 @@ undefined4 cmov_w_with_code_1_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5415,6 +6313,18 @@ undefined4 cmov_w_with_code_1_mv_constant_simple(void)
 undefined4 cmov_w_with_code_1_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -5422,9 +6332,6 @@ undefined4 cmov_w_with_code_1_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5441,6 +6348,11 @@ undefined4 cmov_w_with_code_1_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5451,6 +6363,7 @@ undefined4 cmov_w_with_code_1_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_1_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5458,9 +6371,6 @@ undefined4 cmov_w_with_code_1_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5477,6 +6387,8 @@ undefined4 cmov_w_with_code_1_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5498,6 +6410,7 @@ undefined4 cmov_w_with_code_2_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -5507,7 +6420,7 @@ undefined4 cmov_w_with_code_2_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002202) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -5515,15 +6428,6 @@ undefined4 cmov_w_with_code_2_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5535,6 +6439,14 @@ undefined4 cmov_w_with_code_2_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5546,6 +6458,18 @@ undefined4 cmov_w_with_code_2_mv_allregs(void)
 undefined4 cmov_w_with_code_2_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -5553,9 +6477,6 @@ undefined4 cmov_w_with_code_2_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5572,6 +6493,11 @@ undefined4 cmov_w_with_code_2_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5583,6 +6509,18 @@ undefined4 cmov_w_with_code_2_mv_constant_simple(void)
 undefined4 cmov_w_with_code_2_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -5590,9 +6528,6 @@ undefined4 cmov_w_with_code_2_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5609,6 +6544,11 @@ undefined4 cmov_w_with_code_2_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5620,6 +6560,7 @@ undefined4 cmov_w_with_code_2_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_2_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5627,9 +6568,6 @@ undefined4 cmov_w_with_code_2_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5646,6 +6584,8 @@ undefined4 cmov_w_with_code_2_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5667,6 +6607,7 @@ undefined4 cmov_w_with_code_3_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -5676,7 +6617,7 @@ undefined4 cmov_w_with_code_3_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002202) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -5684,15 +6625,6 @@ undefined4 cmov_w_with_code_3_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5704,6 +6636,14 @@ undefined4 cmov_w_with_code_3_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5714,6 +6654,18 @@ undefined4 cmov_w_with_code_3_mv_allregs(void)
 undefined4 cmov_w_with_code_3_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -5721,9 +6673,6 @@ undefined4 cmov_w_with_code_3_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5740,6 +6689,11 @@ undefined4 cmov_w_with_code_3_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5750,6 +6704,18 @@ undefined4 cmov_w_with_code_3_mv_constant_simple(void)
 undefined4 cmov_w_with_code_3_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -5757,9 +6723,6 @@ undefined4 cmov_w_with_code_3_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5776,6 +6739,11 @@ undefined4 cmov_w_with_code_3_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5786,6 +6754,7 @@ undefined4 cmov_w_with_code_3_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_3_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5793,9 +6762,6 @@ undefined4 cmov_w_with_code_3_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5812,6 +6778,8 @@ undefined4 cmov_w_with_code_3_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5833,6 +6801,7 @@ undefined4 cmov_w_with_code_4_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -5842,7 +6811,7 @@ undefined4 cmov_w_with_code_4_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002204) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -5850,15 +6819,6 @@ undefined4 cmov_w_with_code_4_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -5870,6 +6830,14 @@ undefined4 cmov_w_with_code_4_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -5880,6 +6848,18 @@ undefined4 cmov_w_with_code_4_mv_allregs(void)
 undefined4 cmov_w_with_code_4_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -5887,9 +6867,6 @@ undefined4 cmov_w_with_code_4_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5906,6 +6883,11 @@ undefined4 cmov_w_with_code_4_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5917,6 +6899,18 @@ undefined4 cmov_w_with_code_4_mv_constant_simple(void)
 undefined4 cmov_w_with_code_4_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -5924,9 +6918,6 @@ undefined4 cmov_w_with_code_4_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5943,6 +6934,11 @@ undefined4 cmov_w_with_code_4_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -5954,6 +6950,7 @@ undefined4 cmov_w_with_code_4_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_4_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -5961,9 +6958,6 @@ undefined4 cmov_w_with_code_4_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -5980,6 +6974,8 @@ undefined4 cmov_w_with_code_4_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6001,6 +6997,7 @@ undefined4 cmov_w_with_code_5_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6010,7 +7007,7 @@ undefined4 cmov_w_with_code_5_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002204) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6018,15 +7015,6 @@ undefined4 cmov_w_with_code_5_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6038,6 +7026,14 @@ undefined4 cmov_w_with_code_5_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6049,6 +7045,18 @@ undefined4 cmov_w_with_code_5_mv_allregs(void)
 undefined4 cmov_w_with_code_5_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -6056,9 +7064,6 @@ undefined4 cmov_w_with_code_5_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6075,6 +7080,11 @@ undefined4 cmov_w_with_code_5_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6085,6 +7095,18 @@ undefined4 cmov_w_with_code_5_mv_constant_simple(void)
 undefined4 cmov_w_with_code_5_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -6092,9 +7114,6 @@ undefined4 cmov_w_with_code_5_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6111,6 +7130,11 @@ undefined4 cmov_w_with_code_5_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6121,6 +7145,7 @@ undefined4 cmov_w_with_code_5_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_5_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6128,9 +7153,6 @@ undefined4 cmov_w_with_code_5_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6147,6 +7169,8 @@ undefined4 cmov_w_with_code_5_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6168,6 +7192,7 @@ undefined4 cmov_w_with_code_6_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6177,7 +7202,7 @@ undefined4 cmov_w_with_code_6_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002202 || DAT_00002204) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6185,15 +7210,6 @@ undefined4 cmov_w_with_code_6_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6205,6 +7221,14 @@ undefined4 cmov_w_with_code_6_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6215,6 +7239,18 @@ undefined4 cmov_w_with_code_6_mv_allregs(void)
 undefined4 cmov_w_with_code_6_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -6222,9 +7258,6 @@ undefined4 cmov_w_with_code_6_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6241,6 +7274,11 @@ undefined4 cmov_w_with_code_6_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6252,6 +7290,18 @@ undefined4 cmov_w_with_code_6_mv_constant_simple(void)
 undefined4 cmov_w_with_code_6_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -6259,9 +7309,6 @@ undefined4 cmov_w_with_code_6_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6278,6 +7325,11 @@ undefined4 cmov_w_with_code_6_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6289,6 +7341,7 @@ undefined4 cmov_w_with_code_6_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_6_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6296,9 +7349,6 @@ undefined4 cmov_w_with_code_6_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6315,6 +7365,8 @@ undefined4 cmov_w_with_code_6_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6336,6 +7388,7 @@ undefined4 cmov_w_with_code_7_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6345,7 +7398,7 @@ undefined4 cmov_w_with_code_7_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002202 && !DAT_00002204) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6353,15 +7406,6 @@ undefined4 cmov_w_with_code_7_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6373,6 +7417,14 @@ undefined4 cmov_w_with_code_7_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6384,6 +7436,18 @@ undefined4 cmov_w_with_code_7_mv_allregs(void)
 undefined4 cmov_w_with_code_7_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -6391,9 +7455,6 @@ undefined4 cmov_w_with_code_7_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6410,6 +7471,11 @@ undefined4 cmov_w_with_code_7_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6420,6 +7486,18 @@ undefined4 cmov_w_with_code_7_mv_constant_simple(void)
 undefined4 cmov_w_with_code_7_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -6427,9 +7505,6 @@ undefined4 cmov_w_with_code_7_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6446,6 +7521,11 @@ undefined4 cmov_w_with_code_7_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6456,6 +7536,7 @@ undefined4 cmov_w_with_code_7_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_7_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6463,9 +7544,6 @@ undefined4 cmov_w_with_code_7_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6482,6 +7560,8 @@ undefined4 cmov_w_with_code_7_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6503,6 +7583,7 @@ undefined4 cmov_w_with_code_8_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6512,7 +7593,7 @@ undefined4 cmov_w_with_code_8_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002208) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6520,15 +7601,6 @@ undefined4 cmov_w_with_code_8_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6540,6 +7612,14 @@ undefined4 cmov_w_with_code_8_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6551,6 +7631,18 @@ undefined4 cmov_w_with_code_8_mv_allregs(void)
 undefined4 cmov_w_with_code_8_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -6558,9 +7650,6 @@ undefined4 cmov_w_with_code_8_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6577,6 +7666,11 @@ undefined4 cmov_w_with_code_8_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6587,6 +7681,18 @@ undefined4 cmov_w_with_code_8_mv_constant_simple(void)
 undefined4 cmov_w_with_code_8_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -6594,9 +7700,6 @@ undefined4 cmov_w_with_code_8_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6613,6 +7716,11 @@ undefined4 cmov_w_with_code_8_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6623,6 +7731,7 @@ undefined4 cmov_w_with_code_8_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_8_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6630,9 +7739,6 @@ undefined4 cmov_w_with_code_8_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6649,6 +7755,8 @@ undefined4 cmov_w_with_code_8_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6670,6 +7778,7 @@ undefined4 cmov_w_with_code_9_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6679,7 +7788,7 @@ undefined4 cmov_w_with_code_9_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002208) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6687,15 +7796,6 @@ undefined4 cmov_w_with_code_9_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6707,6 +7807,14 @@ undefined4 cmov_w_with_code_9_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6717,6 +7825,18 @@ undefined4 cmov_w_with_code_9_mv_allregs(void)
 undefined4 cmov_w_with_code_9_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -6724,9 +7844,6 @@ undefined4 cmov_w_with_code_9_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6743,6 +7860,11 @@ undefined4 cmov_w_with_code_9_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6754,6 +7876,18 @@ undefined4 cmov_w_with_code_9_mv_constant_simple(void)
 undefined4 cmov_w_with_code_9_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -6761,9 +7895,6 @@ undefined4 cmov_w_with_code_9_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6780,6 +7911,11 @@ undefined4 cmov_w_with_code_9_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6791,6 +7927,7 @@ undefined4 cmov_w_with_code_9_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_9_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6798,9 +7935,6 @@ undefined4 cmov_w_with_code_9_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6817,6 +7951,8 @@ undefined4 cmov_w_with_code_9_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6838,6 +7974,7 @@ undefined4 cmov_w_with_code_a_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -6847,7 +7984,7 @@ undefined4 cmov_w_with_code_a_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_0000220a) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -6855,15 +7992,6 @@ undefined4 cmov_w_with_code_a_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -6875,6 +8003,14 @@ undefined4 cmov_w_with_code_a_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -6885,6 +8021,18 @@ undefined4 cmov_w_with_code_a_mv_allregs(void)
 undefined4 cmov_w_with_code_a_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -6892,9 +8040,6 @@ undefined4 cmov_w_with_code_a_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6911,6 +8056,11 @@ undefined4 cmov_w_with_code_a_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6921,6 +8071,18 @@ undefined4 cmov_w_with_code_a_mv_constant_simple(void)
 undefined4 cmov_w_with_code_a_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -6928,9 +8090,6 @@ undefined4 cmov_w_with_code_a_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6947,6 +8106,11 @@ undefined4 cmov_w_with_code_a_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -6958,6 +8122,7 @@ undefined4 cmov_w_with_code_a_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_a_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -6965,9 +8130,6 @@ undefined4 cmov_w_with_code_a_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -6984,6 +8146,8 @@ undefined4 cmov_w_with_code_a_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7005,6 +8169,7 @@ undefined4 cmov_w_with_code_b_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7014,7 +8179,7 @@ undefined4 cmov_w_with_code_b_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_0000220a) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -7022,15 +8187,6 @@ undefined4 cmov_w_with_code_b_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7042,6 +8198,14 @@ undefined4 cmov_w_with_code_b_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7053,6 +8217,18 @@ undefined4 cmov_w_with_code_b_mv_allregs(void)
 undefined4 cmov_w_with_code_b_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -7060,9 +8236,6 @@ undefined4 cmov_w_with_code_b_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7079,6 +8252,11 @@ undefined4 cmov_w_with_code_b_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7090,6 +8268,18 @@ undefined4 cmov_w_with_code_b_mv_constant_simple(void)
 undefined4 cmov_w_with_code_b_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -7097,9 +8287,6 @@ undefined4 cmov_w_with_code_b_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7116,6 +8303,11 @@ undefined4 cmov_w_with_code_b_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7126,6 +8318,7 @@ undefined4 cmov_w_with_code_b_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_b_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7133,9 +8326,6 @@ undefined4 cmov_w_with_code_b_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7152,6 +8342,8 @@ undefined4 cmov_w_with_code_b_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7173,6 +8365,7 @@ undefined4 cmov_w_with_code_c_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7182,7 +8375,7 @@ undefined4 cmov_w_with_code_c_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if ((char)bVar2 < '\x02') {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -7190,15 +8383,6 @@ undefined4 cmov_w_with_code_c_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7210,6 +8394,14 @@ undefined4 cmov_w_with_code_c_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7221,6 +8413,18 @@ undefined4 cmov_w_with_code_c_mv_allregs(void)
 undefined4 cmov_w_with_code_c_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -7228,9 +8432,6 @@ undefined4 cmov_w_with_code_c_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7247,6 +8448,11 @@ undefined4 cmov_w_with_code_c_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7257,6 +8463,18 @@ undefined4 cmov_w_with_code_c_mv_constant_simple(void)
 undefined4 cmov_w_with_code_c_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -7264,9 +8482,6 @@ undefined4 cmov_w_with_code_c_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7283,6 +8498,11 @@ undefined4 cmov_w_with_code_c_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7293,6 +8513,7 @@ undefined4 cmov_w_with_code_c_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_c_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7300,9 +8521,6 @@ undefined4 cmov_w_with_code_c_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7319,6 +8537,8 @@ undefined4 cmov_w_with_code_c_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7340,6 +8560,7 @@ undefined4 cmov_w_with_code_d_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7349,7 +8570,7 @@ undefined4 cmov_w_with_code_d_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if ('\x01' < (char)bVar2) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -7357,15 +8578,6 @@ undefined4 cmov_w_with_code_d_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7377,6 +8589,14 @@ undefined4 cmov_w_with_code_d_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7387,6 +8607,18 @@ undefined4 cmov_w_with_code_d_mv_allregs(void)
 undefined4 cmov_w_with_code_d_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -7394,9 +8626,6 @@ undefined4 cmov_w_with_code_d_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7413,6 +8642,11 @@ undefined4 cmov_w_with_code_d_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7424,6 +8658,18 @@ undefined4 cmov_w_with_code_d_mv_constant_simple(void)
 undefined4 cmov_w_with_code_d_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -7431,9 +8677,6 @@ undefined4 cmov_w_with_code_d_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7450,6 +8693,11 @@ undefined4 cmov_w_with_code_d_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7461,6 +8709,7 @@ undefined4 cmov_w_with_code_d_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_d_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7468,9 +8717,6 @@ undefined4 cmov_w_with_code_d_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7487,6 +8733,8 @@ undefined4 cmov_w_with_code_d_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7508,6 +8756,7 @@ undefined4 cmov_w_with_code_e_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7517,7 +8766,7 @@ undefined4 cmov_w_with_code_e_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (DAT_00002204 || (char)bVar2 < '\x02') {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -7525,15 +8774,6 @@ undefined4 cmov_w_with_code_e_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7545,6 +8785,14 @@ undefined4 cmov_w_with_code_e_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7555,6 +8803,18 @@ undefined4 cmov_w_with_code_e_mv_allregs(void)
 undefined4 cmov_w_with_code_e_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -7562,9 +8822,6 @@ undefined4 cmov_w_with_code_e_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7581,6 +8838,11 @@ undefined4 cmov_w_with_code_e_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7591,6 +8853,18 @@ undefined4 cmov_w_with_code_e_mv_constant_simple(void)
 undefined4 cmov_w_with_code_e_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = 0x6677984;
   _DAT_00002008 = 0x46685248;
@@ -7598,9 +8872,6 @@ undefined4 cmov_w_with_code_e_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7617,6 +8888,11 @@ undefined4 cmov_w_with_code_e_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7627,6 +8903,7 @@ undefined4 cmov_w_with_code_e_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_e_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = 0x496ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7634,9 +8911,6 @@ undefined4 cmov_w_with_code_e_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7653,6 +8927,8 @@ undefined4 cmov_w_with_code_e_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7674,6 +8950,7 @@ undefined4 cmov_w_with_code_f_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7683,7 +8960,7 @@ undefined4 cmov_w_with_code_f_mv_allregs(void)
   DAT_0000220a = (POPCOUNT(cVar1) & 1U) == 0;
   _DAT_00002004 = _DAT_00001004;
   if (!DAT_00002204 && '\x01' < (char)bVar2) {
-    _DAT_00002004 = _DAT_00001004 & 0xffff0000 | _DAT_00001000 & 0xffff;
+    _DAT_00002004 = CONCAT22((short)((uint)_DAT_00001004 >> 0x10),(short)_DAT_00001000);
   }
   _DAT_00002000 = _DAT_00001000;
   _DAT_00002008 = _DAT_00001008;
@@ -7691,15 +8968,6 @@ undefined4 cmov_w_with_code_f_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7711,6 +8979,14 @@ undefined4 cmov_w_with_code_f_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7722,6 +8998,18 @@ undefined4 cmov_w_with_code_f_mv_allregs(void)
 undefined4 cmov_w_with_code_f_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -7729,9 +9017,6 @@ undefined4 cmov_w_with_code_f_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7748,6 +9033,11 @@ undefined4 cmov_w_with_code_f_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7759,6 +9049,18 @@ undefined4 cmov_w_with_code_f_mv_constant_simple(void)
 undefined4 cmov_w_with_code_f_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -7766,9 +9068,6 @@ undefined4 cmov_w_with_code_f_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7785,6 +9084,11 @@ undefined4 cmov_w_with_code_f_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7796,6 +9100,7 @@ undefined4 cmov_w_with_code_f_mv_constant_complex1(void)
 undefined4 cmov_w_with_code_f_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7803,9 +9108,6 @@ undefined4 cmov_w_with_code_f_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7822,6 +9124,8 @@ undefined4 cmov_w_with_code_f_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7843,6 +9147,7 @@ undefined4 cmov_l_with_code_0_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -7860,15 +9165,6 @@ undefined4 cmov_l_with_code_0_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -7880,6 +9176,14 @@ undefined4 cmov_l_with_code_0_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -7891,6 +9195,18 @@ undefined4 cmov_l_with_code_0_allregs(void)
 undefined4 cmov_l_with_code_0_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -7898,9 +9214,6 @@ undefined4 cmov_l_with_code_0_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7917,6 +9230,11 @@ undefined4 cmov_l_with_code_0_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7928,6 +9246,18 @@ undefined4 cmov_l_with_code_0_constant_simple(void)
 undefined4 cmov_l_with_code_0_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -7935,9 +9265,6 @@ undefined4 cmov_l_with_code_0_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7954,6 +9281,11 @@ undefined4 cmov_l_with_code_0_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -7965,6 +9297,7 @@ undefined4 cmov_l_with_code_0_constant_complex1(void)
 undefined4 cmov_l_with_code_0_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -7972,9 +9305,6 @@ undefined4 cmov_l_with_code_0_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -7991,6 +9321,8 @@ undefined4 cmov_l_with_code_0_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8012,6 +9344,7 @@ undefined4 cmov_l_with_code_1_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8029,15 +9362,6 @@ undefined4 cmov_l_with_code_1_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8049,6 +9373,14 @@ undefined4 cmov_l_with_code_1_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8059,6 +9391,18 @@ undefined4 cmov_l_with_code_1_mv_allregs(void)
 undefined4 cmov_l_with_code_1_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -8066,9 +9410,6 @@ undefined4 cmov_l_with_code_1_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8085,6 +9426,11 @@ undefined4 cmov_l_with_code_1_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8095,6 +9441,18 @@ undefined4 cmov_l_with_code_1_mv_constant_simple(void)
 undefined4 cmov_l_with_code_1_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -8102,9 +9460,6 @@ undefined4 cmov_l_with_code_1_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8121,6 +9476,11 @@ undefined4 cmov_l_with_code_1_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8131,6 +9491,7 @@ undefined4 cmov_l_with_code_1_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_1_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8138,9 +9499,6 @@ undefined4 cmov_l_with_code_1_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8157,6 +9515,8 @@ undefined4 cmov_l_with_code_1_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8178,6 +9538,7 @@ undefined4 cmov_l_with_code_2_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8195,15 +9556,6 @@ undefined4 cmov_l_with_code_2_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8215,6 +9567,14 @@ undefined4 cmov_l_with_code_2_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8226,6 +9586,18 @@ undefined4 cmov_l_with_code_2_mv_allregs(void)
 undefined4 cmov_l_with_code_2_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -8233,9 +9605,6 @@ undefined4 cmov_l_with_code_2_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8252,6 +9621,11 @@ undefined4 cmov_l_with_code_2_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8263,6 +9637,18 @@ undefined4 cmov_l_with_code_2_mv_constant_simple(void)
 undefined4 cmov_l_with_code_2_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -8270,9 +9656,6 @@ undefined4 cmov_l_with_code_2_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8289,6 +9672,11 @@ undefined4 cmov_l_with_code_2_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8300,6 +9688,7 @@ undefined4 cmov_l_with_code_2_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_2_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8307,9 +9696,6 @@ undefined4 cmov_l_with_code_2_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8326,6 +9712,8 @@ undefined4 cmov_l_with_code_2_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8347,6 +9735,7 @@ undefined4 cmov_l_with_code_3_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8364,15 +9753,6 @@ undefined4 cmov_l_with_code_3_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8384,6 +9764,14 @@ undefined4 cmov_l_with_code_3_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8394,6 +9782,18 @@ undefined4 cmov_l_with_code_3_mv_allregs(void)
 undefined4 cmov_l_with_code_3_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -8401,9 +9801,6 @@ undefined4 cmov_l_with_code_3_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8420,6 +9817,11 @@ undefined4 cmov_l_with_code_3_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8430,6 +9832,18 @@ undefined4 cmov_l_with_code_3_mv_constant_simple(void)
 undefined4 cmov_l_with_code_3_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -8437,9 +9851,6 @@ undefined4 cmov_l_with_code_3_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8456,6 +9867,11 @@ undefined4 cmov_l_with_code_3_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8466,6 +9882,7 @@ undefined4 cmov_l_with_code_3_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_3_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8473,9 +9890,6 @@ undefined4 cmov_l_with_code_3_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8492,6 +9906,8 @@ undefined4 cmov_l_with_code_3_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8513,6 +9929,7 @@ undefined4 cmov_l_with_code_4_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8530,15 +9947,6 @@ undefined4 cmov_l_with_code_4_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8550,6 +9958,14 @@ undefined4 cmov_l_with_code_4_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8560,6 +9976,18 @@ undefined4 cmov_l_with_code_4_mv_allregs(void)
 undefined4 cmov_l_with_code_4_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -8567,9 +9995,6 @@ undefined4 cmov_l_with_code_4_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8586,6 +10011,11 @@ undefined4 cmov_l_with_code_4_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8597,6 +10027,18 @@ undefined4 cmov_l_with_code_4_mv_constant_simple(void)
 undefined4 cmov_l_with_code_4_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -8604,9 +10046,6 @@ undefined4 cmov_l_with_code_4_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8623,6 +10062,11 @@ undefined4 cmov_l_with_code_4_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8634,6 +10078,7 @@ undefined4 cmov_l_with_code_4_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_4_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8641,9 +10086,6 @@ undefined4 cmov_l_with_code_4_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8660,6 +10102,8 @@ undefined4 cmov_l_with_code_4_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8681,6 +10125,7 @@ undefined4 cmov_l_with_code_5_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8698,15 +10143,6 @@ undefined4 cmov_l_with_code_5_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8718,6 +10154,14 @@ undefined4 cmov_l_with_code_5_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8729,6 +10173,18 @@ undefined4 cmov_l_with_code_5_mv_allregs(void)
 undefined4 cmov_l_with_code_5_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -8736,9 +10192,6 @@ undefined4 cmov_l_with_code_5_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8755,6 +10208,11 @@ undefined4 cmov_l_with_code_5_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8765,6 +10223,18 @@ undefined4 cmov_l_with_code_5_mv_constant_simple(void)
 undefined4 cmov_l_with_code_5_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -8772,9 +10242,6 @@ undefined4 cmov_l_with_code_5_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8791,6 +10258,11 @@ undefined4 cmov_l_with_code_5_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8801,6 +10273,7 @@ undefined4 cmov_l_with_code_5_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_5_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8808,9 +10281,6 @@ undefined4 cmov_l_with_code_5_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8827,6 +10297,8 @@ undefined4 cmov_l_with_code_5_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8848,6 +10320,7 @@ undefined4 cmov_l_with_code_6_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -8865,15 +10338,6 @@ undefined4 cmov_l_with_code_6_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -8885,6 +10349,14 @@ undefined4 cmov_l_with_code_6_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -8895,6 +10367,18 @@ undefined4 cmov_l_with_code_6_mv_allregs(void)
 undefined4 cmov_l_with_code_6_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -8902,9 +10386,6 @@ undefined4 cmov_l_with_code_6_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8921,6 +10402,11 @@ undefined4 cmov_l_with_code_6_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8932,6 +10418,18 @@ undefined4 cmov_l_with_code_6_mv_constant_simple(void)
 undefined4 cmov_l_with_code_6_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -8939,9 +10437,6 @@ undefined4 cmov_l_with_code_6_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8958,6 +10453,11 @@ undefined4 cmov_l_with_code_6_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -8969,6 +10469,7 @@ undefined4 cmov_l_with_code_6_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_6_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -8976,9 +10477,6 @@ undefined4 cmov_l_with_code_6_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -8995,6 +10493,8 @@ undefined4 cmov_l_with_code_6_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9016,6 +10516,7 @@ undefined4 cmov_l_with_code_7_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9033,15 +10534,6 @@ undefined4 cmov_l_with_code_7_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9053,6 +10545,14 @@ undefined4 cmov_l_with_code_7_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9064,6 +10564,18 @@ undefined4 cmov_l_with_code_7_mv_allregs(void)
 undefined4 cmov_l_with_code_7_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -9071,9 +10583,6 @@ undefined4 cmov_l_with_code_7_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9090,6 +10599,11 @@ undefined4 cmov_l_with_code_7_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9100,6 +10614,18 @@ undefined4 cmov_l_with_code_7_mv_constant_simple(void)
 undefined4 cmov_l_with_code_7_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -9107,9 +10633,6 @@ undefined4 cmov_l_with_code_7_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9126,6 +10649,11 @@ undefined4 cmov_l_with_code_7_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9136,6 +10664,7 @@ undefined4 cmov_l_with_code_7_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_7_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9143,9 +10672,6 @@ undefined4 cmov_l_with_code_7_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9162,6 +10688,8 @@ undefined4 cmov_l_with_code_7_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9183,6 +10711,7 @@ undefined4 cmov_l_with_code_8_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9200,15 +10729,6 @@ undefined4 cmov_l_with_code_8_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9220,6 +10740,14 @@ undefined4 cmov_l_with_code_8_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9231,6 +10759,18 @@ undefined4 cmov_l_with_code_8_mv_allregs(void)
 undefined4 cmov_l_with_code_8_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -9238,9 +10778,6 @@ undefined4 cmov_l_with_code_8_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9257,6 +10794,11 @@ undefined4 cmov_l_with_code_8_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9267,6 +10809,18 @@ undefined4 cmov_l_with_code_8_mv_constant_simple(void)
 undefined4 cmov_l_with_code_8_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -9274,9 +10828,6 @@ undefined4 cmov_l_with_code_8_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9293,6 +10844,11 @@ undefined4 cmov_l_with_code_8_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9303,6 +10859,7 @@ undefined4 cmov_l_with_code_8_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_8_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9310,9 +10867,6 @@ undefined4 cmov_l_with_code_8_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9329,6 +10883,8 @@ undefined4 cmov_l_with_code_8_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9350,6 +10906,7 @@ undefined4 cmov_l_with_code_9_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9367,15 +10924,6 @@ undefined4 cmov_l_with_code_9_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9387,6 +10935,14 @@ undefined4 cmov_l_with_code_9_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9397,6 +10953,18 @@ undefined4 cmov_l_with_code_9_mv_allregs(void)
 undefined4 cmov_l_with_code_9_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -9404,9 +10972,6 @@ undefined4 cmov_l_with_code_9_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9423,6 +10988,11 @@ undefined4 cmov_l_with_code_9_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9434,6 +11004,18 @@ undefined4 cmov_l_with_code_9_mv_constant_simple(void)
 undefined4 cmov_l_with_code_9_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -9441,9 +11023,6 @@ undefined4 cmov_l_with_code_9_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9460,6 +11039,11 @@ undefined4 cmov_l_with_code_9_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9471,6 +11055,7 @@ undefined4 cmov_l_with_code_9_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_9_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9478,9 +11063,6 @@ undefined4 cmov_l_with_code_9_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9497,6 +11079,8 @@ undefined4 cmov_l_with_code_9_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9518,6 +11102,7 @@ undefined4 cmov_l_with_code_a_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9535,15 +11120,6 @@ undefined4 cmov_l_with_code_a_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9555,6 +11131,14 @@ undefined4 cmov_l_with_code_a_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9565,6 +11149,18 @@ undefined4 cmov_l_with_code_a_mv_allregs(void)
 undefined4 cmov_l_with_code_a_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -9572,9 +11168,6 @@ undefined4 cmov_l_with_code_a_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9591,6 +11184,11 @@ undefined4 cmov_l_with_code_a_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9601,6 +11199,18 @@ undefined4 cmov_l_with_code_a_mv_constant_simple(void)
 undefined4 cmov_l_with_code_a_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -9608,9 +11218,6 @@ undefined4 cmov_l_with_code_a_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9627,6 +11234,11 @@ undefined4 cmov_l_with_code_a_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9638,6 +11250,7 @@ undefined4 cmov_l_with_code_a_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_a_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9645,9 +11258,6 @@ undefined4 cmov_l_with_code_a_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9664,6 +11274,8 @@ undefined4 cmov_l_with_code_a_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9685,6 +11297,7 @@ undefined4 cmov_l_with_code_b_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9702,15 +11315,6 @@ undefined4 cmov_l_with_code_b_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9722,6 +11326,14 @@ undefined4 cmov_l_with_code_b_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9733,6 +11345,18 @@ undefined4 cmov_l_with_code_b_mv_allregs(void)
 undefined4 cmov_l_with_code_b_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -9740,9 +11364,6 @@ undefined4 cmov_l_with_code_b_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9759,6 +11380,11 @@ undefined4 cmov_l_with_code_b_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9770,6 +11396,18 @@ undefined4 cmov_l_with_code_b_mv_constant_simple(void)
 undefined4 cmov_l_with_code_b_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -9777,9 +11415,6 @@ undefined4 cmov_l_with_code_b_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9796,6 +11431,11 @@ undefined4 cmov_l_with_code_b_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9806,6 +11446,7 @@ undefined4 cmov_l_with_code_b_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_b_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9813,9 +11454,6 @@ undefined4 cmov_l_with_code_b_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9832,6 +11470,8 @@ undefined4 cmov_l_with_code_b_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9853,6 +11493,7 @@ undefined4 cmov_l_with_code_c_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -9870,15 +11511,6 @@ undefined4 cmov_l_with_code_c_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -9890,6 +11522,14 @@ undefined4 cmov_l_with_code_c_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -9901,6 +11541,18 @@ undefined4 cmov_l_with_code_c_mv_allregs(void)
 undefined4 cmov_l_with_code_c_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -9908,9 +11560,6 @@ undefined4 cmov_l_with_code_c_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9927,6 +11576,11 @@ undefined4 cmov_l_with_code_c_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9937,6 +11591,18 @@ undefined4 cmov_l_with_code_c_mv_constant_simple(void)
 undefined4 cmov_l_with_code_c_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -9944,9 +11610,6 @@ undefined4 cmov_l_with_code_c_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9963,6 +11626,11 @@ undefined4 cmov_l_with_code_c_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -9973,6 +11641,7 @@ undefined4 cmov_l_with_code_c_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_c_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -9980,9 +11649,6 @@ undefined4 cmov_l_with_code_c_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -9999,6 +11665,8 @@ undefined4 cmov_l_with_code_c_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10020,6 +11688,7 @@ undefined4 cmov_l_with_code_d_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -10037,15 +11706,6 @@ undefined4 cmov_l_with_code_d_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -10057,6 +11717,14 @@ undefined4 cmov_l_with_code_d_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10067,6 +11735,18 @@ undefined4 cmov_l_with_code_d_mv_allregs(void)
 undefined4 cmov_l_with_code_d_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -10074,9 +11754,6 @@ undefined4 cmov_l_with_code_d_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10093,6 +11770,11 @@ undefined4 cmov_l_with_code_d_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10104,6 +11786,18 @@ undefined4 cmov_l_with_code_d_mv_constant_simple(void)
 undefined4 cmov_l_with_code_d_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -10111,9 +11805,6 @@ undefined4 cmov_l_with_code_d_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10130,6 +11821,11 @@ undefined4 cmov_l_with_code_d_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10141,6 +11837,7 @@ undefined4 cmov_l_with_code_d_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_d_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -10148,9 +11845,6 @@ undefined4 cmov_l_with_code_d_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10167,6 +11861,8 @@ undefined4 cmov_l_with_code_d_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10188,6 +11884,7 @@ undefined4 cmov_l_with_code_e_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -10205,15 +11902,6 @@ undefined4 cmov_l_with_code_e_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -10225,6 +11913,14 @@ undefined4 cmov_l_with_code_e_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10235,6 +11931,18 @@ undefined4 cmov_l_with_code_e_mv_allregs(void)
 undefined4 cmov_l_with_code_e_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 2;
   _DAT_00002008 = 4;
@@ -10242,9 +11950,6 @@ undefined4 cmov_l_with_code_e_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10261,6 +11966,11 @@ undefined4 cmov_l_with_code_e_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10271,6 +11981,18 @@ undefined4 cmov_l_with_code_e_mv_constant_simple(void)
 undefined4 cmov_l_with_code_e_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_a3b17984;
   _DAT_00002008 = 0x46685248;
@@ -10278,9 +12000,6 @@ undefined4 cmov_l_with_code_e_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10297,6 +12016,11 @@ undefined4 cmov_l_with_code_e_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10307,6 +12031,7 @@ undefined4 cmov_l_with_code_e_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_e_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_313ec0e8;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -10314,9 +12039,6 @@ undefined4 cmov_l_with_code_e_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10333,6 +12055,8 @@ undefined4 cmov_l_with_code_e_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10354,6 +12078,7 @@ undefined4 cmov_l_with_code_f_mv_allregs(void)
   char cVar1;
   byte bVar2;
   
+  _DAT_00002050 = &stack0x00000000;
   bVar2 = (byte)_DAT_00001000;
   DAT_00002202 = bVar2 < 2;
   DAT_00002200 = SBORROW1(bVar2,'\x02');
@@ -10371,15 +12096,6 @@ undefined4 cmov_l_with_code_f_mv_allregs(void)
   _DAT_00002010 = _DAT_00001010;
   _DAT_00002014 = _DAT_00001014;
   _DAT_00002018 = _DAT_00001018;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 =
-       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
-       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
-       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
-       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
-       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
-       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
   DAT_00002201 = !DAT_00002200;
   DAT_00002203 = !DAT_00002202;
   DAT_00002205 = !DAT_00002204;
@@ -10391,6 +12107,14 @@ undefined4 cmov_l_with_code_f_mv_allregs(void)
   DAT_0000220d = '\x01' < (char)bVar2;
   DAT_0000220e = DAT_00002204 || (char)bVar2 < '\x02';
   DAT_0000220f = !DAT_00002204 && '\x01' < (char)bVar2;
+  _DAT_00002100 =
+       (ushort)((_DAT_00001100 & 0x4000) != 0) * 0x4000 | (ushort)DAT_00002200 * 0x800 |
+       (ushort)((_DAT_00001100 & 0x400) != 0) * 0x400 |
+       (ushort)((_DAT_00001100 & 0x200) != 0) * 0x200 |
+       (ushort)((_DAT_00001100 & 0x100) != 0) * 0x100 | (ushort)DAT_00002208 * 0x80 |
+       (ushort)DAT_00002204 * 0x40 | (ushort)((_DAT_00001100 & 0x10) != 0) * 0x10 |
+       (ushort)DAT_0000220a * 4 | (ushort)DAT_00002202;
+  _DAT_00002020 = 0;
   return 0;
 }
 
@@ -10402,6 +12126,18 @@ undefined4 cmov_l_with_code_f_mv_allregs(void)
 undefined4 cmov_l_with_code_f_mv_constant_simple(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = 2;
   _DAT_00002004 = 3;
   _DAT_00002008 = 4;
@@ -10409,9 +12145,6 @@ undefined4 cmov_l_with_code_f_mv_constant_simple(void)
   _DAT_00002010 = 6;
   _DAT_00002014 = 7;
   _DAT_00002018 = 8;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x44;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10428,6 +12161,11 @@ undefined4 cmov_l_with_code_f_mv_constant_simple(void)
   DAT_0000220d = 1;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x40 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10439,6 +12177,18 @@ undefined4 cmov_l_with_code_f_mv_constant_simple(void)
 undefined4 cmov_l_with_code_f_mv_constant_complex1(void)
 
 {
+  undefined2 *puVar1;
+  short sVar2;
+  undefined2 in_SS;
+  ushort uVar4;
+  ushort *puVar3;
+  
+  sVar2 = (short)&stack0x00000000 + -2;
+  puVar3 = (ushort *)CONCAT22((short)((uint)&stack0x00000000 >> 0x10),sVar2);
+  puVar1 = (undefined2 *)segment(in_SS,sVar2);
+  *puVar1 = 0;
+  uVar4 = *puVar3;
+  _DAT_00002050 = puVar3 + 1;
   _DAT_00002000 = &DAT_a3b17984;
   _DAT_00002004 = &DAT_06671ad7;
   _DAT_00002008 = 0x46685248;
@@ -10446,9 +12196,6 @@ undefined4 cmov_l_with_code_f_mv_constant_complex1(void)
   _DAT_00002010 = 0xbc8960a4;
   _DAT_00002014 = 0xad3c2d78;
   _DAT_00002018 = 0xe465e152;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x84;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10465,6 +12212,11 @@ undefined4 cmov_l_with_code_f_mv_constant_complex1(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  *puVar3 = (ushort)((uVar4 & 0x4000) != 0) * 0x4000 | (ushort)((uVar4 & 0x400) != 0) * 0x400 |
+            (ushort)((uVar4 & 0x200) != 0) * 0x200 | (ushort)((uVar4 & 0x100) != 0) * 0x100 | 0x80 |
+            (ushort)((uVar4 & 0x10) != 0) * 0x10 | 4;
+  _DAT_00002100 = *puVar3;
+  _DAT_00002020 = (int)_DAT_00002050 - (int)(puVar3 + 1);
   return 0;
 }
 
@@ -10476,6 +12228,7 @@ undefined4 cmov_l_with_code_f_mv_constant_complex1(void)
 undefined4 cmov_l_with_code_f_mv_constant_complex2(void)
 
 {
+  _DAT_00002050 = &stack0x00000000;
   _DAT_00002000 = &DAT_313ec0e8;
   _DAT_00002004 = &DAT_496e81c3;
   _DAT_00002008 = 0x1e3f6cb2;
@@ -10483,9 +12236,6 @@ undefined4 cmov_l_with_code_f_mv_constant_complex2(void)
   _DAT_00002010 = 0x4f312610;
   _DAT_00002014 = 0x2f37a4a5;
   _DAT_00002018 = 0x91a917b4;
-  _DAT_00002020 = 0;
-  _DAT_00002050 = (undefined *)register0x00000010;
-  _DAT_00002100 = 0x4690;
   DAT_00002200 = 0;
   DAT_00002201 = 1;
   DAT_00002202 = 0;
@@ -10502,6 +12252,8 @@ undefined4 cmov_l_with_code_f_mv_constant_complex2(void)
   DAT_0000220d = 0;
   DAT_0000220e = 1;
   DAT_0000220f = 0;
+  _DAT_00002100 = 0x4690;
+  _DAT_00002020 = 0;
   return 0;
 }
 

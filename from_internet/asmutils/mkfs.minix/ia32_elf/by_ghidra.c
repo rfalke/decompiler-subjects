@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -37,7 +64,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+int processEntry entry(void)
 
 {
   char cVar1;
@@ -153,8 +180,8 @@ LAB_0804808a:
   uVar2 = (ulonglong)(DAT_0804880d + 0x2000) / 0x2000;
   _DAT_08048831 = (short)uVar2;
   DAT_08048815 = (int)uVar2 * 0x400;
-  uVar9 = (DAT_08048811 - (*puVar17 >> 5)) - 2;
-  uVar9 = uVar9 & 0xffff0000 | (uint)(ushort)((short)uVar9 - _DAT_08048831);
+  iVar8 = (DAT_08048811 - (*puVar17 >> 5)) + -2;
+  uVar9 = CONCAT22((short)((uint)iVar8 >> 0x10),(short)iVar8 - _DAT_08048831);
   *puVar17 = uVar9;
   uVar2 = (ulonglong)uVar9 * 0x1fff;
   DAT_0804881d = (int)((uVar2 & 0xffffffff00000000 | (ulonglong)((int)uVar2 + 1)) / 0x2001);
@@ -206,9 +233,8 @@ LAB_0804808a:
     puVar20 = puVar21;
   } while (puVar21 < puVar14);
   puVar17[5] = 2;
-  DAT_08048829 = (puVar17[5] & 0xffff0000 |
-                 (uint)(ushort)((short)puVar17[5] + _DAT_08048831 + _DAT_08048833)) +
-                 (DAT_0804880d >> 5);
+  DAT_08048829 = CONCAT22((short)(puVar17[5] >> 0x10),
+                          (short)puVar17[5] + _DAT_08048831 + _DAT_08048833) + (DAT_0804880d >> 5);
   _DAT_08048835 = (undefined2)DAT_08048829;
   *DAT_08048825 = 3;
   puVar17[5] = 8;
@@ -295,11 +321,14 @@ LAB_0804835a:
   pcVar3 = (code *)swi(0x80);
   (*pcVar3)();
   ppcVar19[1] = (char *)0xa;
-  do {
+  iVar8 = 0;
+  while( true ) {
     cVar1 = *pcVar15;
     pcVar15 = pcVar15 + 1;
-  } while (-1 < (char)(cVar1 + -0x30));
-  return;
+    if ((char)(cVar1 - 0x30U) < '\0') break;
+    iVar8 = iVar8 * (int)ppcVar19[1] + (uint)(byte)(cVar1 - 0x30U);
+  }
+  return iVar8;
 }
 
 

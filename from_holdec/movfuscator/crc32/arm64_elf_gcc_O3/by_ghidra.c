@@ -3,14 +3,26 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
+typedef unsigned int    undefined4;
 typedef unsigned long    undefined8;
 typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ulong sizetype;
+
+typedef dword uint32_t;
+
+typedef uchar uint8_t;
+
+typedef ulong size_t;
+
+typedef long __off_t;
+
+typedef sqword __off64_t;
 
 typedef void _IO_lock_t;
 
@@ -18,18 +30,8 @@ typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef long __off64_t;
-
-typedef ulong size_t;
-
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -49,10 +51,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     void * __pad1;
@@ -68,20 +66,12 @@ struct _IO_marker {
     struct _IO_marker * _next;
     struct _IO_FILE * _sbuf;
     int _pos;
-    undefined field3_0x14;
-    undefined field4_0x15;
-    undefined field5_0x16;
-    undefined field6_0x17;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
 
 struct _IO_FILE_plus {
 };
-
-typedef uint uint32_t;
-
-typedef uchar uint8_t;
 
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
@@ -224,6 +214,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -252,6 +243,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -263,14 +265,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -356,7 +358,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -367,7 +369,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -380,7 +382,9 @@ int printf(char *__format,...)
 
 
 
-undefined8 main(void)
+// WARNING: Unknown calling convention
+
+int main(void)
 
 {
   uint32_t uVar1;
@@ -395,10 +399,9 @@ undefined8 main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -464,375 +467,481 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100850)
+// WARNING: Removing unreachable block (ram,0x0010085c)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 uint32_t rc_crc32(uint32_t crc,char *buf,size_t len)
 
 {
-  byte *pbVar1;
-  uint uVar2;
-  uint uVar3;
-  uint uVar4;
-  ulong uVar5;
-  ulong uVar6;
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  undefined auVar3 [16];
+  undefined auVar4 [16];
+  undefined auVar5 [16];
+  undefined auVar6 [16];
   uint uVar7;
-  byte *pbVar8;
-  undefined8 *puVar9;
-  undefined8 *puVar10;
-  undefined auVar11 [16];
-  undefined8 uVar12;
-  uint uVar13;
-  undefined uVar14;
-  undefined8 uVar15;
-  uint uVar16;
-  byte bVar17;
-  undefined uVar18;
-  undefined uVar19;
-  byte bVar20;
-  undefined uVar21;
-  undefined uVar22;
-  byte bVar23;
-  undefined uVar24;
-  undefined uVar25;
-  byte bVar26;
+  uint uVar8;
+  undefined3 uVar9;
+  uint uVar10;
+  char *p;
+  uint8_t *octet;
+  undefined8 *puVar11;
+  undefined8 *puVar12;
+  char *q;
+  undefined auVar13 [16];
+  undefined auVar14 [16];
+  undefined auVar15 [16];
+  undefined auVar16 [16];
+  undefined auVar17 [16];
+  undefined auVar18 [16];
+  undefined auVar19 [16];
+  undefined auVar20 [16];
+  undefined auVar21 [16];
+  undefined auVar22 [16];
+  undefined auVar23 [16];
+  undefined auVar24 [16];
+  undefined auVar25 [16];
+  undefined auVar26 [16];
+  undefined auVar27 [16];
+  undefined auVar28 [16];
+  undefined auVar29 [16];
+  undefined auVar30 [16];
+  uint uVar31;
+  undefined8 uVar32;
+  uint uVar33;
+  undefined8 uVar34;
+  uint uVar35;
+  byte bVar36;
+  undefined uVar37;
+  undefined uVar38;
+  byte bVar39;
+  byte bVar40;
+  byte bVar41;
+  byte bVar42;
+  byte bVar43;
+  byte bVar44;
+  byte bVar45;
   
-  if (rc_crc32::have_table == 0) {
-    uVar15 = 0x300000002;
-    uVar12 = 0x100000000;
-    puVar9 = (undefined8 *)rc_crc32::table;
+  if (have_table_3572 == 0) {
+    uVar34 = 0x300000002;
+    uVar32 = 0x100000000;
+    puVar11 = (undefined8 *)table_3571;
     do {
-      uVar7 = (uint)uVar12 >> 1;
-      bVar17 = (byte)((ulong)uVar12 >> 0x18) >> 1;
-      uVar13 = (uint)((ulong)uVar12 >> 0x20);
-      uVar2 = uVar13 >> 1;
-      uVar18 = (undefined)(uVar2 >> 8);
-      uVar19 = (undefined)(uVar2 >> 0x10);
-      bVar20 = (byte)((ulong)uVar12 >> 0x39);
-      uVar3 = (uint)uVar15 >> 1;
-      uVar21 = (undefined)(uVar3 >> 8);
-      uVar22 = (undefined)(uVar3 >> 0x10);
-      bVar23 = (byte)((ulong)uVar15 >> 0x18) >> 1;
-      uVar16 = (uint)((ulong)uVar15 >> 0x20);
-      uVar4 = uVar16 >> 1;
-      uVar24 = (undefined)(uVar4 >> 8);
-      uVar25 = (undefined)(uVar4 >> 0x10);
-      bVar26 = (byte)((ulong)uVar15 >> 0x39);
-      uVar5 = (ulong)uVar12 >> 0x20;
-      uVar14 = (undefined)uVar15;
-      uVar6 = (ulong)uVar15 >> 0x20;
-      uVar12 = CONCAT44(uVar13 + 4,(uint)uVar12 + 4);
-      uVar15 = CONCAT44(uVar16 + 4,(uint)uVar15 + 4);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112((char)uVar6,
-                                             ZEXT912(CONCAT18(uVar14,(ulong)(((uint5)(byte)uVar5 & 1
-                                                                             ) << 0x20)) &
-                                                     0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar25,CONCAT113(uVar24,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar22,CONCAT19(
-                                                  uVar21,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar19,
-                                                  CONCAT15(uVar18,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar25,CONCAT113(uVar24,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar22,CONCAT19(uVar21,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar19,CONCAT15(uVar18,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      uVar7 = SUB164(auVar11,0) >> 1;
-      bVar17 = SUB161(auVar11 >> 0x18,0) >> 1;
-      uVar2 = SUB164(auVar11 >> 0x20,0) >> 1;
-      uVar14 = (undefined)(uVar2 >> 8);
-      uVar18 = (undefined)(uVar2 >> 0x10);
-      bVar20 = SUB161(auVar11 >> 0x38,0) >> 1;
-      uVar3 = SUB164(auVar11 >> 0x40,0) >> 1;
-      uVar19 = (undefined)(uVar3 >> 8);
-      uVar21 = (undefined)(uVar3 >> 0x10);
-      bVar23 = SUB161(auVar11 >> 0x58,0) >> 1;
-      uVar4 = SUB164(auVar11 >> 0x61,0);
-      uVar22 = (undefined)(uVar4 >> 8);
-      uVar24 = (undefined)(uVar4 >> 0x10);
-      bVar26 = SUB161(auVar11 >> 0x79,0);
-      auVar11 = NEON_cmeq(ZEXT1316(CONCAT112(SUB161(auVar11 >> 0x60,0),
-                                             ZEXT912(CONCAT18(SUB161(auVar11 >> 0x40,0),
-                                                              (ulong)(CONCAT14(SUB161(auVar11 >>
-                                                                                      0x20,0),
-                                                                               (uint)(SUB161(auVar11
-                                                  ,0) & 1)) & 0x1ffffffff)) & 0xffffffffffffffff)) &
-                                   (undefined  [13])0xffffffffffffffff),0,2);
-      auVar11 = NEON_bsl(auVar11,CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)
-                                                  uVar4,CONCAT111(bVar23,CONCAT110(uVar21,CONCAT19(
-                                                  uVar19,CONCAT18((char)uVar3,
-                                                                  CONCAT17(bVar20,CONCAT16(uVar18,
-                                                  CONCAT15(uVar14,CONCAT14((char)uVar2,
-                                                                           uVar7 & 0xffffff |
-                                                                           (uint)bVar17 << 0x18)))))
-                                                  ))))))),
-                         CONCAT115(bVar26,CONCAT114(uVar24,CONCAT113(uVar22,CONCAT112((char)uVar4,
-                                                                                      CONCAT111(
-                                                  bVar23,CONCAT110(uVar21,CONCAT19(uVar19,CONCAT18((
-                                                  char)uVar3,
-                                                  CONCAT17(bVar20,CONCAT16(uVar18,CONCAT15(uVar14,
-                                                  CONCAT14((char)uVar2,
-                                                           uVar7 & 0xffffff | (uint)bVar17 << 0x18))
-                                                  )))))))))),1);
-      puVar10 = puVar9 + 2;
-      puVar9[1] = SUB168(auVar11 >> 0x40,0);
-      *puVar9 = SUB168(auVar11,0);
-      puVar9 = puVar10;
-    } while (puVar10 != (undefined8 *)&_bss_end__);
-    rc_crc32::have_table = 1;
+      uVar31 = (uint)uVar32;
+      bVar36 = (byte)((ulong)uVar32 >> 0x18) >> 1;
+      uVar33 = (uint)((ulong)uVar32 >> 0x20);
+      uVar10 = uVar33 >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = (byte)((ulong)uVar32 >> 0x39);
+      uVar7 = (uint)uVar34 >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = (byte)((ulong)uVar34 >> 0x18) >> 1;
+      uVar35 = (uint)((ulong)uVar34 >> 0x20);
+      uVar8 = uVar35 >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = (byte)((ulong)uVar34 >> 0x39);
+      auVar13._0_5_ = ((uint5)(byte)((ulong)uVar32 >> 0x20) & 1) << 0x20;
+      auVar13._5_7_ = 0;
+      auVar13[12] = (byte)((ulong)uVar34 >> 0x20) & 1;
+      auVar13._13_3_ = 0;
+      uVar32 = CONCAT44(uVar33 + 4,uVar31 + 4);
+      uVar34 = CONCAT44(uVar35 + 4,(uint)uVar34 + 4);
+      uVar9 = (undefined3)(uVar31 >> 1);
+      auVar23._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar23[8] = (byte)uVar7 ^ 0x20;
+      auVar23[9] = bVar40 ^ 0x83;
+      auVar23[10] = bVar41 ^ 0xb8;
+      auVar23[11] = bVar42 ^ 0xed;
+      auVar23[12] = (byte)uVar8 ^ 0x20;
+      auVar23[13] = bVar43 ^ 0x83;
+      auVar23[14] = bVar44 ^ 0xb8;
+      auVar23[15] = bVar45 ^ 0xed;
+      auVar14 = NEON_cmeq(auVar13,0,2);
+      auVar15[3] = bVar36;
+      auVar15._0_3_ = uVar9;
+      auVar15[4] = (char)uVar10;
+      auVar15[5] = uVar37;
+      auVar15[6] = uVar38;
+      auVar15[7] = bVar39;
+      auVar15[8] = (byte)uVar7;
+      auVar15[9] = bVar40;
+      auVar15[10] = bVar41;
+      auVar15[11] = bVar42;
+      auVar15[12] = (byte)uVar8;
+      auVar15[13] = bVar43;
+      auVar15[14] = bVar44;
+      auVar15[15] = bVar45;
+      auVar15 = NEON_bsl(auVar14,auVar15,auVar23,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar24._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar24._5_3_ = 0;
+      auVar24[8] = auVar15[8] & 1;
+      auVar24._9_3_ = 0;
+      auVar24[12] = auVar15[12] & 1;
+      auVar24._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar16._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar16[8] = (byte)uVar7 ^ 0x20;
+      auVar16[9] = bVar40 ^ 0x83;
+      auVar16[10] = bVar41 ^ 0xb8;
+      auVar16[11] = bVar42 ^ 0xed;
+      auVar16[12] = (byte)uVar8 ^ 0x20;
+      auVar16[13] = bVar43 ^ 0x83;
+      auVar16[14] = bVar44 ^ 0xb8;
+      auVar16[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar24,0,2);
+      auVar14[3] = bVar36;
+      auVar14._0_3_ = uVar9;
+      auVar14[4] = (char)uVar10;
+      auVar14[5] = uVar37;
+      auVar14[6] = uVar38;
+      auVar14[7] = bVar39;
+      auVar14[8] = (byte)uVar7;
+      auVar14[9] = bVar40;
+      auVar14[10] = bVar41;
+      auVar14[11] = bVar42;
+      auVar14[12] = (byte)uVar8;
+      auVar14[13] = bVar43;
+      auVar14[14] = bVar44;
+      auVar14[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar14,auVar16,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar17._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar17._5_3_ = 0;
+      auVar17[8] = auVar15[8] & 1;
+      auVar17._9_3_ = 0;
+      auVar17[12] = auVar15[12] & 1;
+      auVar17._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar25._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar25[8] = (byte)uVar7 ^ 0x20;
+      auVar25[9] = bVar40 ^ 0x83;
+      auVar25[10] = bVar41 ^ 0xb8;
+      auVar25[11] = bVar42 ^ 0xed;
+      auVar25[12] = (byte)uVar8 ^ 0x20;
+      auVar25[13] = bVar43 ^ 0x83;
+      auVar25[14] = bVar44 ^ 0xb8;
+      auVar25[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar17,0,2);
+      auVar1[3] = bVar36;
+      auVar1._0_3_ = uVar9;
+      auVar1[4] = (char)uVar10;
+      auVar1[5] = uVar37;
+      auVar1[6] = uVar38;
+      auVar1[7] = bVar39;
+      auVar1[8] = (byte)uVar7;
+      auVar1[9] = bVar40;
+      auVar1[10] = bVar41;
+      auVar1[11] = bVar42;
+      auVar1[12] = (byte)uVar8;
+      auVar1[13] = bVar43;
+      auVar1[14] = bVar44;
+      auVar1[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar1,auVar25,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar26._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar26._5_3_ = 0;
+      auVar26[8] = auVar15[8] & 1;
+      auVar26._9_3_ = 0;
+      auVar26[12] = auVar15[12] & 1;
+      auVar26._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar18._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar18[8] = (byte)uVar7 ^ 0x20;
+      auVar18[9] = bVar40 ^ 0x83;
+      auVar18[10] = bVar41 ^ 0xb8;
+      auVar18[11] = bVar42 ^ 0xed;
+      auVar18[12] = (byte)uVar8 ^ 0x20;
+      auVar18[13] = bVar43 ^ 0x83;
+      auVar18[14] = bVar44 ^ 0xb8;
+      auVar18[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar26,0,2);
+      auVar2[3] = bVar36;
+      auVar2._0_3_ = uVar9;
+      auVar2[4] = (char)uVar10;
+      auVar2[5] = uVar37;
+      auVar2[6] = uVar38;
+      auVar2[7] = bVar39;
+      auVar2[8] = (byte)uVar7;
+      auVar2[9] = bVar40;
+      auVar2[10] = bVar41;
+      auVar2[11] = bVar42;
+      auVar2[12] = (byte)uVar8;
+      auVar2[13] = bVar43;
+      auVar2[14] = bVar44;
+      auVar2[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar2,auVar18,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar19._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar19._5_3_ = 0;
+      auVar19[8] = auVar15[8] & 1;
+      auVar19._9_3_ = 0;
+      auVar19[12] = auVar15[12] & 1;
+      auVar19._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar27._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar27[8] = (byte)uVar7 ^ 0x20;
+      auVar27[9] = bVar40 ^ 0x83;
+      auVar27[10] = bVar41 ^ 0xb8;
+      auVar27[11] = bVar42 ^ 0xed;
+      auVar27[12] = (byte)uVar8 ^ 0x20;
+      auVar27[13] = bVar43 ^ 0x83;
+      auVar27[14] = bVar44 ^ 0xb8;
+      auVar27[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar19,0,2);
+      auVar3[3] = bVar36;
+      auVar3._0_3_ = uVar9;
+      auVar3[4] = (char)uVar10;
+      auVar3[5] = uVar37;
+      auVar3[6] = uVar38;
+      auVar3[7] = bVar39;
+      auVar3[8] = (byte)uVar7;
+      auVar3[9] = bVar40;
+      auVar3[10] = bVar41;
+      auVar3[11] = bVar42;
+      auVar3[12] = (byte)uVar8;
+      auVar3[13] = bVar43;
+      auVar3[14] = bVar44;
+      auVar3[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar3,auVar27,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar28._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar28._5_3_ = 0;
+      auVar28[8] = auVar15[8] & 1;
+      auVar28._9_3_ = 0;
+      auVar28[12] = auVar15[12] & 1;
+      auVar28._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar20._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar20[8] = (byte)uVar7 ^ 0x20;
+      auVar20[9] = bVar40 ^ 0x83;
+      auVar20[10] = bVar41 ^ 0xb8;
+      auVar20[11] = bVar42 ^ 0xed;
+      auVar20[12] = (byte)uVar8 ^ 0x20;
+      auVar20[13] = bVar43 ^ 0x83;
+      auVar20[14] = bVar44 ^ 0xb8;
+      auVar20[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar28,0,2);
+      auVar4[3] = bVar36;
+      auVar4._0_3_ = uVar9;
+      auVar4[4] = (char)uVar10;
+      auVar4[5] = uVar37;
+      auVar4[6] = uVar38;
+      auVar4[7] = bVar39;
+      auVar4[8] = (byte)uVar7;
+      auVar4[9] = bVar40;
+      auVar4[10] = bVar41;
+      auVar4[11] = bVar42;
+      auVar4[12] = (byte)uVar8;
+      auVar4[13] = bVar43;
+      auVar4[14] = bVar44;
+      auVar4[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar4,auVar20,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar21._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar21._5_3_ = 0;
+      auVar21[8] = auVar15[8] & 1;
+      auVar21._9_3_ = 0;
+      auVar21[12] = auVar15[12] & 1;
+      auVar21._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar29._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar29[8] = (byte)uVar7 ^ 0x20;
+      auVar29[9] = bVar40 ^ 0x83;
+      auVar29[10] = bVar41 ^ 0xb8;
+      auVar29[11] = bVar42 ^ 0xed;
+      auVar29[12] = (byte)uVar8 ^ 0x20;
+      auVar29[13] = bVar43 ^ 0x83;
+      auVar29[14] = bVar44 ^ 0xb8;
+      auVar29[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar21,0,2);
+      auVar5[3] = bVar36;
+      auVar5._0_3_ = uVar9;
+      auVar5[4] = (char)uVar10;
+      auVar5[5] = uVar37;
+      auVar5[6] = uVar38;
+      auVar5[7] = bVar39;
+      auVar5[8] = (byte)uVar7;
+      auVar5[9] = bVar40;
+      auVar5[10] = bVar41;
+      auVar5[11] = bVar42;
+      auVar5[12] = (byte)uVar8;
+      auVar5[13] = bVar43;
+      auVar5[14] = bVar44;
+      auVar5[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar5,auVar29,1);
+      bVar36 = auVar15[3] >> 1;
+      uVar10 = auVar15._4_4_ >> 1;
+      uVar37 = (undefined)(uVar10 >> 8);
+      uVar38 = (undefined)(uVar10 >> 0x10);
+      bVar39 = auVar15[7] >> 1;
+      uVar7 = auVar15._8_4_ >> 1;
+      bVar40 = (byte)(uVar7 >> 8);
+      bVar41 = (byte)(uVar7 >> 0x10);
+      bVar42 = auVar15[11] >> 1;
+      uVar8 = auVar15._12_4_ >> 1;
+      bVar43 = (byte)(uVar8 >> 8);
+      bVar44 = (byte)(uVar8 >> 0x10);
+      bVar45 = auVar15[15] >> 1;
+      auVar22._0_5_ = CONCAT14(auVar15[4],(uint)(auVar15[0] & 1)) & 0x1ffffffff;
+      auVar22._5_3_ = 0;
+      auVar22[8] = auVar15[8] & 1;
+      auVar22._9_3_ = 0;
+      auVar22[12] = auVar15[12] & 1;
+      auVar22._13_3_ = 0;
+      uVar9 = (undefined3)(auVar15._0_4_ >> 1);
+      auVar30._0_8_ =
+           CONCAT17(bVar39,CONCAT16(uVar38,CONCAT15(uVar37,CONCAT14((char)uVar10,
+                                                                    CONCAT13(bVar36,uVar9))))) ^
+           0xedb88320edb88320;
+      auVar30[8] = (byte)uVar7 ^ 0x20;
+      auVar30[9] = bVar40 ^ 0x83;
+      auVar30[10] = bVar41 ^ 0xb8;
+      auVar30[11] = bVar42 ^ 0xed;
+      auVar30[12] = (byte)uVar8 ^ 0x20;
+      auVar30[13] = bVar43 ^ 0x83;
+      auVar30[14] = bVar44 ^ 0xb8;
+      auVar30[15] = bVar45 ^ 0xed;
+      auVar15 = NEON_cmeq(auVar22,0,2);
+      auVar6[3] = bVar36;
+      auVar6._0_3_ = uVar9;
+      auVar6[4] = (char)uVar10;
+      auVar6[5] = uVar37;
+      auVar6[6] = uVar38;
+      auVar6[7] = bVar39;
+      auVar6[8] = (byte)uVar7;
+      auVar6[9] = bVar40;
+      auVar6[10] = bVar41;
+      auVar6[11] = bVar42;
+      auVar6[12] = (byte)uVar8;
+      auVar6[13] = bVar43;
+      auVar6[14] = bVar44;
+      auVar6[15] = bVar45;
+      auVar15 = NEON_bsl(auVar15,auVar6,auVar30,1);
+      puVar12 = puVar11 + 2;
+      puVar11[1] = auVar15._8_8_;
+      *puVar11 = auVar15._0_8_;
+      puVar11 = puVar12;
+    } while (puVar12 != (undefined8 *)&_bss_end__);
+    have_table_3572 = 1;
   }
-  pbVar1 = (byte *)(buf + len);
-  uVar7 = ~crc;
-  if (buf < pbVar1) {
+  uVar10 = ~crc;
+  octet = (uint8_t *)buf;
+  if (buf < buf + len) {
     do {
-      pbVar8 = (byte *)buf + 1;
-      uVar7 = rc_crc32::table[(byte)((byte)uVar7 ^ *buf)] ^ uVar7 >> 8;
-      buf = (char *)pbVar8;
-    } while (pbVar1 != pbVar8);
+      octet = octet + 1;
+      uVar10 = *(uint *)(table_3571 + (ulong)(byte)((byte)uVar10 ^ *octet) * 4) ^ uVar10 >> 8;
+      octet = octet;
+    } while ((uint8_t *)(buf + len) != octet);
   }
-  return ~uVar7;
+  return ~uVar10;
 }
 
 

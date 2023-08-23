@@ -53,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -177,6 +177,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -290,6 +291,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -297,14 +309,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -339,17 +351,27 @@ struct Elf32_Ehdr {
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_08048480(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -389,7 +411,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -409,7 +431,7 @@ void __strcat_chk(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -422,7 +444,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -453,7 +475,7 @@ void __sprintf_chk(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -466,10 +488,13 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -491,6 +516,7 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x080485df)
 // WARNING: Removing unreachable block (ram,0x080485e8)
 
 void frame_dummy(void)
@@ -513,13 +539,13 @@ void dumpline(int param_1,undefined4 param_2,int param_3)
   int in_GS_OFFSET;
   byte bVar7;
   int local_80;
-  undefined4 uStack113;
+  undefined4 uStack_71;
   undefined local_67 [71];
   int local_20;
   
   bVar7 = 0;
   local_20 = *(int *)(in_GS_OFFSET + 0x14);
-  __sprintf_chk((int)&uStack113 + 1,1,0x50,"%08lX:",param_2);
+  __sprintf_chk((int)&uStack_71 + 1,1,0x50,"%08lX:",param_2);
   if (0x10 < param_3) {
     param_3 = 0x10;
   }
@@ -527,19 +553,19 @@ void dumpline(int param_1,undefined4 param_2,int param_3)
   if (param_3 < 1) {
 LAB_080486ac:
     do {
-      __strcat_chk((int)&uStack113 + 1,&DAT_080489ae,0x50);
+      __strcat_chk((int)&uStack_71 + 1,&DAT_080489ae,0x50);
       bVar1 = iVar6 < 0x10;
       iVar6 = iVar6 + 1;
     } while (bVar1);
     uVar3 = 0xffffffff;
-    pcVar4 = (char *)((int)&uStack113 + 1);
+    pcVar4 = (char *)((int)&uStack_71 + 1);
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
       cVar2 = *pcVar4;
       pcVar4 = pcVar4 + (uint)bVar7 * -2 + 1;
     } while (cVar2 != '\0');
-    *(undefined4 *)((int)&uStack113 + ~uVar3) = 0x7c2020;
+    *(undefined4 *)((int)&uStack_71 + ~uVar3) = 0x7c2020;
     local_80 = ~uVar3 + 2;
     if (0 < param_3) goto LAB_08048707;
     param_3 = 0;
@@ -557,17 +583,17 @@ LAB_080486ac:
       goto LAB_080486ac;
     }
     uVar3 = 0xffffffff;
-    pcVar4 = (char *)((int)&uStack113 + 1);
+    pcVar4 = (char *)((int)&uStack_71 + 1);
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
       cVar2 = *pcVar4;
       pcVar4 = pcVar4 + (uint)bVar7 * -2 + 1;
     } while (cVar2 != '\0');
-    *(undefined4 *)((int)&uStack113 + ~uVar3) = 0x7c2020;
+    *(undefined4 *)((int)&uStack_71 + ~uVar3) = 0x7c2020;
     local_80 = ~uVar3 + 2;
 LAB_08048707:
-    pcVar4 = (char *)((int)&uStack113 + local_80 + 1);
+    pcVar4 = (char *)((int)&uStack_71 + local_80 + 1);
     iVar6 = 0;
     do {
       cVar2 = *(char *)(param_1 + iVar6);
@@ -580,15 +606,15 @@ LAB_08048707:
     } while (iVar6 != param_3);
     if (0xf < param_3) goto LAB_08048747;
   }
-  puVar5 = (undefined *)((int)&uStack113 + local_80 + param_3 + 1);
+  puVar5 = (undefined *)((int)&uStack_71 + local_80 + param_3 + 1);
   do {
     *puVar5 = 0x20;
     param_3 = param_3 + 1;
     puVar5 = puVar5 + 1;
   } while (param_3 < 0x10);
 LAB_08048747:
-  *(undefined2 *)((int)&uStack113 + 1 + param_3 + local_80) = 0x7c;
-  __printf_chk(1,&DAT_080489b2,(int)&uStack113 + 1);
+  *(undefined2 *)((int)&uStack_71 + 1 + param_3 + local_80) = 0x7c;
+  __printf_chk(1,&DAT_080489b2,(int)&uStack_71 + 1);
   if (local_20 == *(int *)(in_GS_OFFSET + 0x14)) {
     return;
   }
@@ -700,21 +726,12 @@ void __i686_get_pc_thunk_bx(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x08048961)
+// WARNING: Removing unreachable block (ram,0x08048968)
+
 void __do_global_ctors_aux(void)
 
 {
-  code *pcVar1;
-  code **ppcVar2;
-  
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
-    ppcVar2 = &__CTOR_LIST__;
-    pcVar1 = __CTOR_LIST__;
-    do {
-      ppcVar2 = ppcVar2 + -1;
-      (*pcVar1)();
-      pcVar1 = *ppcVar2;
-    } while (pcVar1 != (code *)0xffffffff);
-  }
   return;
 }
 

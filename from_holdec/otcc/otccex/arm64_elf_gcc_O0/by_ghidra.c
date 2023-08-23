@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -52,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -64,6 +65,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -216,6 +220,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -252,6 +257,17 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -263,14 +279,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -331,7 +347,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atoi(char *__nptr)
 
@@ -344,7 +360,7 @@ int atoi(char *__nptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -375,7 +391,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -386,7 +402,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -399,7 +415,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -410,7 +426,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -423,7 +439,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -436,7 +452,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -452,10 +468,9 @@ int putchar(int __c)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -521,16 +536,12 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100a48)
+// WARNING: Removing unreachable block (ram,0x00100a54)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
@@ -542,6 +553,7 @@ int fib(int n)
 {
   int iVar1;
   int iVar2;
+  int n_local;
   
   if (n < 3) {
     iVar1 = 1;
@@ -559,6 +571,7 @@ int fib(int n)
 int fact(int n)
 
 {
+  int n_local;
   int r;
   int i;
   
@@ -571,8 +584,6 @@ int fact(int n)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-
 int print_num(int n,int b)
 
 {
@@ -580,21 +591,22 @@ int print_num(int n,int b)
   char cVar2;
   int iVar3;
   void *pvVar4;
-  int local_14;
+  int b_local;
+  int n_local;
   int tab;
   int c;
   int p;
   
   pvVar4 = malloc(0x100);
   iVar3 = (int)pvVar4;
-  local_14 = n;
+  n_local = n;
   p = iVar3;
   do {
     iVar1 = 0;
     if (b != 0) {
-      iVar1 = local_14 / b;
+      iVar1 = n_local / b;
     }
-    iVar1 = local_14 - iVar1 * b;
+    iVar1 = n_local - iVar1 * b;
     cVar2 = (char)iVar1;
     if (iVar1 < 10) {
       c._0_1_ = cVar2 + '0';
@@ -606,9 +618,9 @@ int print_num(int n,int b)
     p = p + 1;
     iVar1 = 0;
     if (b != 0) {
-      iVar1 = local_14 / b;
+      iVar1 = n_local / b;
     }
-    local_14 = iVar1;
+    n_local = iVar1;
   } while (iVar1 != 0);
   while (p != iVar3) {
     p = p + -1;
@@ -621,11 +633,15 @@ int print_num(int n,int b)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 int main(int argc,int argv)
 
 {
   uint n_00;
   int iVar1;
+  int argv_local;
+  int argc_local;
   int f;
   int n;
   int s;
@@ -635,7 +651,7 @@ int main(int argc,int argv)
     base = 10;
     if ((2 < argc) &&
        ((base = atoi((char *)(ulong)*(uint *)(long)(argv + 8)), base < 2 || (0x24 < base)))) {
-      fwrite("Invalid base\n",1,0xd,stderr);
+      fwrite("Invalid base\n",1,0xd,_stderr);
       return 1;
     }
     printf("fib(%d) = ",(ulong)n_00);
@@ -666,24 +682,11 @@ int help(int name)
 
 {
   int iVar1;
+  int name_local;
   
   printf("usage: %s n [base]\n",(ulong)(uint)name);
   iVar1 = puts("Compute fib(n) and fact(n) and output the result in base \'base\'");
   return iVar1;
-}
-
-
-
-void FUN_00100dcc(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x00100dcc. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x100dcc);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

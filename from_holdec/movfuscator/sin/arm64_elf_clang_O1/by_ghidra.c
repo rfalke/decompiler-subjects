@@ -140,6 +140,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -168,6 +169,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -187,14 +199,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -271,7 +283,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -282,7 +294,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 float sinf(float __x)
 
@@ -295,7 +307,7 @@ float sinf(float __x)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -311,10 +323,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -366,8 +377,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400708)
 // WARNING: Removing unreachable block (ram,0x00400710)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -378,16 +389,19 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(void)
 
 {
   float fVar1;
   float __x;
+  float f;
   
   __x = -3.141593;
   do {
     fVar1 = sinf(__x);
-    printf((char *)(double)__x,(double)fVar1,"sin(%.4f): %.4f\n");
+    printf("sin(%.4f): %.4f\n",(double)__x,(double)fVar1);
     __x = __x + 0.1963495;
   } while (__x <= 3.151593);
   return 0;
@@ -395,34 +409,32 @@ int main(void)
 
 
 
-float sin(float x)
+double sin(double __x)
 
 {
   float fVar1;
+  float x5;
   float fVar2;
+  float x9;
+  float t3;
+  float t4;
   float fVar3;
+  float x2;
+  float fVar4;
+  float x4;
+  float x13;
+  float result;
+  float t1;
+  float t2;
   
-  fVar2 = x * x;
-  fVar3 = fVar2 * fVar2;
-  fVar1 = fVar3 * fVar3 * x;
-  return (fVar2 / -6.0 + 1.0) * x +
-         (fVar3 * x * (fVar2 / -42.0 + 1.0)) / 120.0 +
-         ((fVar2 / -110.0 + 1.0) * fVar1) / 362880.0 +
-         ((fVar2 / -210.0 + 1.0) * fVar3 * fVar1) / 6.227021e+09;
-}
-
-
-
-void FUN_0040083c(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x0040083c. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x40083c);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
+  fVar1 = SUB84(__x,0);
+  fVar3 = fVar1 * fVar1;
+  fVar4 = fVar3 * fVar3;
+  fVar2 = fVar4 * fVar4 * fVar1;
+  return (double)(ulong)(uint)((fVar3 / -6.0 + 1.0) * fVar1 +
+                              (fVar4 * fVar1 * (fVar3 / -42.0 + 1.0)) / 120.0 +
+                              ((fVar3 / -110.0 + 1.0) * fVar2) / 362880.0 +
+                              ((fVar3 / -210.0 + 1.0) * fVar4 * fVar2) / 6.227021e+09);
 }
 
 

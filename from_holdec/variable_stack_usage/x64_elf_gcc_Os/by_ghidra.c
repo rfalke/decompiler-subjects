@@ -110,6 +110,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -187,6 +188,17 @@ struct Elf64_Dyn {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -206,14 +218,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -263,27 +275,25 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
-  ulong uVar1;
-  
-  uVar1 = (ulong)(uint)argc;
   with_alloca(argc);
-  with_array(uVar1 & 0xffffffff);
+  with_array(argc);
   return 0;
 }
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -326,6 +336,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x004004ba)
+// WARNING: Removing unreachable block (ram,0x004004b0)
 
 void frame_dummy(void)
 
@@ -336,6 +347,8 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void use(int *x)
 
 {
@@ -344,6 +357,8 @@ void use(int *x)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void fill(int *dest,int n)
 
@@ -359,50 +374,55 @@ void fill(int *dest,int n)
 
 
 
-void with_array(int param_1)
+// WARNING: Unknown calling convention
+
+void with_array(int n)
 
 {
   long lVar1;
-  undefined8 uStack32;
-  int aiStack24 [2];
+  undefined8 uStack_20;
+  int aiStack_18 [2];
   int fixed1;
-  int local_c;
+  int fixed2;
   
   fixed1 = 7;
-  local_c = 8;
-  lVar1 = -((long)param_1 * 4 + 0x12U & 0xfffffffffffffff0);
-  *(undefined8 *)((long)&uStack32 + lVar1) = 0x40050e;
-  fill((int *)((long)aiStack24 + lVar1),param_1);
-  *(undefined8 *)((long)&uStack32 + lVar1) = 0x400517;
+  fixed2 = 8;
+  lVar1 = -((long)n * 4 + 0x12U & 0xfffffffffffffff0);
+  *(undefined8 *)((long)&uStack_20 + lVar1) = 0x40050e;
+  fill((int *)((long)aiStack_18 + lVar1),n);
+  *(undefined8 *)((long)&uStack_20 + lVar1) = 0x400517;
   use(&fixed1);
-  *(undefined8 *)((long)&uStack32 + lVar1) = 0x40051f;
-  use((int *)((long)aiStack24 + lVar1));
-  *(undefined8 *)((long)&uStack32 + lVar1) = 0x400528;
-  use(&local_c);
+  *(undefined8 *)((long)&uStack_20 + lVar1) = 0x40051f;
+  use((int *)((long)aiStack_18 + lVar1));
+  *(undefined8 *)((long)&uStack_20 + lVar1) = 0x400528;
+  use(&fixed2);
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 void with_alloca(int n)
 
 {
   long lVar1;
+  int *dynamic;
   int *x;
-  undefined8 auStack32 [2];
+  undefined8 auStack_20 [2];
   int fixed1;
   int fixed2;
   
   fixed1 = 7;
   fixed2 = 8;
   lVar1 = -((long)n * 4 + 0x1eU & 0xfffffffffffffff0);
-  *(undefined8 *)((long)auStack32 + lVar1) = 0x400566;
+  *(undefined8 *)((long)auStack_20 + lVar1) = 0x400566;
   fill((int *)((long)&fixed1 + lVar1),n);
-  *(undefined8 *)((long)auStack32 + lVar1) = 0x40056f;
+  *(undefined8 *)((long)auStack_20 + lVar1) = 0x40056f;
   use(&fixed1);
-  *(undefined8 *)((long)auStack32 + lVar1) = 0x400577;
+  *(undefined8 *)((long)auStack_20 + lVar1) = 0x400577;
   use(x);
-  *(undefined8 *)((long)auStack32 + lVar1) = 0x400580;
+  *(undefined8 *)((long)auStack_20 + lVar1) = 0x400580;
   use(&fixed2);
   return;
 }

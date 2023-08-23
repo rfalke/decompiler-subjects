@@ -81,6 +81,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -167,6 +168,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -201,14 +213,14 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -270,7 +282,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -296,19 +308,18 @@ undefined4 main(int param_1)
 
 {
   float fVar1;
-  float10 fVar2;
+  longdouble lVar2;
   
   fVar1 = (float)param_1 + 1.23;
   print_char(0x61);
   print_short(0x2a);
   print_float_as_hex(fVar1);
-  print_double_as_hex(SUB84((double)param_1 + 4.56,0),
-                      (int)((ulonglong)((double)param_1 + 4.56) >> 0x20));
-  fVar2 = (float10)param_1 + (float10)7.89;
+  print_double_as_hex((double)param_1 + 4.56);
+  lVar2 = (longdouble)param_1 + (longdouble)7.89;
   print_long_double_as_hex
-            (SUB104(fVar2,0),(int)((unkuint10)fVar2 >> 0x20),(short)((unkuint10)fVar2 >> 0x40));
+            (SUB104(lVar2,0),(int)((unkuint10)lVar2 >> 0x20),(short)((unkuint10)lVar2 >> 0x40));
   print_varargs("dummy",SUB84((double)fVar1,0),(short)((ulonglong)(double)fVar1 >> 0x20));
-  print_without_prototype(SUB84((double)fVar1,0),(int)((ulonglong)(double)fVar1 >> 0x20));
+  print_without_prototype((double)fVar1);
   return 0;
 }
 
@@ -316,10 +327,13 @@ undefined4 main(int param_1)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -453,30 +467,30 @@ undefined4 print_double_as_hex(uint param_1,uint param_2)
 undefined4 print_long_double_as_hex(unkbyte10 param_1)
 
 {
-  byte bStack163;
-  byte bStack148;
-  byte bStack133;
-  byte bStack118;
-  byte bStack103;
-  byte bStack88;
-  byte bStack73;
-  byte bStack58;
-  byte bStack43;
+  byte bStack_a3;
+  byte bStack_94;
+  byte bStack_85;
+  byte bStack_76;
+  byte bStack_67;
+  byte bStack_58;
+  byte bStack_49;
+  byte bStack_3a;
+  byte bStack_2b;
   byte local_1c;
   
   local_1c = (byte)param_1;
-  bStack43 = (byte)((unkuint10)param_1 >> 8);
-  bStack58 = (byte)((unkuint10)param_1 >> 0x10);
-  bStack73 = (byte)((unkuint10)param_1 >> 0x18);
-  bStack88 = (byte)((unkuint10)param_1 >> 0x20);
-  bStack103 = (byte)((unkuint10)param_1 >> 0x28);
-  bStack118 = (byte)((unkuint10)param_1 >> 0x30);
-  bStack133 = (byte)((unkuint10)param_1 >> 0x38);
-  bStack148 = (byte)((unkuint10)param_1 >> 0x40);
-  bStack163 = (byte)((unkuint10)param_1 >> 0x48);
+  bStack_2b = (byte)((unkuint10)param_1 >> 8);
+  bStack_3a = (byte)((unkuint10)param_1 >> 0x10);
+  bStack_49 = (byte)((unkuint10)param_1 >> 0x18);
+  bStack_58 = (byte)((unkuint10)param_1 >> 0x20);
+  bStack_67 = (byte)((unkuint10)param_1 >> 0x28);
+  bStack_76 = (byte)((unkuint10)param_1 >> 0x30);
+  bStack_85 = (byte)((unkuint10)param_1 >> 0x38);
+  bStack_94 = (byte)((unkuint10)param_1 >> 0x40);
+  bStack_a3 = (byte)((unkuint10)param_1 >> 0x48);
   printf("got a long double with 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x 0x%02x\n"
-         ,(uint)bStack163,(uint)bStack148,(uint)bStack133,(uint)bStack118,(uint)bStack103,
-         (uint)bStack88,(uint)bStack73,(uint)bStack58,(uint)bStack43,(uint)local_1c);
+         ,(uint)bStack_a3,(uint)bStack_94,(uint)bStack_85,(uint)bStack_76,(uint)bStack_67,
+         (uint)bStack_58,(uint)bStack_49,(uint)bStack_3a,(uint)bStack_2b,(uint)local_1c);
   return 0;
 }
 

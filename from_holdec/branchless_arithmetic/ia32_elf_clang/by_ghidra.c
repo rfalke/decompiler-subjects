@@ -15,6 +15,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
+};
+
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
 struct fde_table_entry {
@@ -79,6 +87,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -165,6 +174,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -199,14 +219,23 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -268,7 +297,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -281,7 +310,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -305,7 +334,7 @@ void __libc_start_main(void)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(int __status)
+void processEntry _start(int __status)
 
 {
   __libc_start_main(main);
@@ -662,7 +691,7 @@ undefined4 main(void)
 
 {
   undefined4 uVar1;
-  longlong lVar2;
+  undefined4 uVar2;
   longlong lVar3;
   longlong lVar4;
   longlong lVar5;
@@ -670,38 +699,39 @@ undefined4 main(void)
   longlong lVar7;
   longlong lVar8;
   longlong lVar9;
+  longlong lVar10;
   
-  sat_addu32b();
+  sat_addu32b(0xffffffff);
   printf("sat_addu32b(0x%08x,0x%08x) = 0x%08x\n");
-  sat_subu32b();
+  sat_subu32b(1);
   printf("sat_subu32b(0x%08x,0x%08x) = 0x%08x\n");
-  sat_mulu32b();
+  sat_mulu32b(0xffffffff);
   printf("sat_mulu32b(0x%08x,0x%08x) = 0x%08x\n");
-  sat_divu32b();
+  sat_divu32b(0xffffffff);
   printf("sat_divu32b(0x%08x,0x%08x) = 0x%08x\n");
-  uVar1 = sat_adds32b_var1();
-  sat_adds32b_var2();
-  sat_adds32b_var3();
-  printf("sat_adds32b(0x%08x,0x%08x) = 0x%08x 0x%08x 0x%08x\n",0x7fffffff,2,uVar1);
-  sat_subs32b();
+  uVar1 = sat_adds32b_var1(0x7fffffff);
+  uVar2 = sat_adds32b_var2(0x7fffffff);
+  sat_adds32b_var3(0x7fffffff);
+  printf("sat_adds32b(0x%08x,0x%08x) = 0x%08x 0x%08x 0x%08x\n",0x7fffffff,2,uVar1,uVar2);
+  sat_subs32b(0x80000000);
   printf("sat_subs32b(0x%08x,0x%08x) = 0x%08x\n");
-  sat_muls32b();
+  sat_muls32b(0x7fffffff);
   printf("sat_muls32b(0x%08x,0x%08x) = 0x%08x\n");
-  sat_divs32b();
+  sat_divs32b(0x80000000);
   printf("sat_divs32b(0x%08x,0x%08x) = 0x%08x\n");
-  abs32();
+  abs32(0xfffffff0);
   printf("abs32(0x%08x) = 0x%08x\n");
-  sgn32();
+  sgn32(3);
   printf("sgn32(0x%08x) = 0x%08x\n");
-  lVar2 = sat_addu64b(ZEXT816(0));
-  lVar3 = sat_subu64b(ZEXT816(0));
-  lVar4 = sat_divu64b(1,0);
-  lVar5 = sat_adds64b(ZEXT816(0));
-  lVar6 = sat_subs64b();
-  lVar7 = sat_divs64b();
-  lVar8 = abs64();
-  lVar9 = sgn64();
-  if (lVar2 + lVar3 + lVar4 + lVar5 + lVar6 + lVar7 + lVar8 + lVar9 == 0x2a) {
+  lVar3 = sat_addu64b(ZEXT816(0));
+  lVar4 = sat_subu64b(ZEXT816(0));
+  lVar5 = sat_divu64b();
+  lVar6 = sat_adds64b(ZEXT816(0));
+  lVar7 = sat_subs64b(ZEXT816(0));
+  lVar8 = sat_divs64b();
+  lVar9 = abs64(0);
+  lVar10 = sgn64(0);
+  if (lVar3 + lVar4 + lVar5 + lVar6 + lVar7 + lVar8 + lVar9 + lVar10 == 0x2a) {
     puts("not reached");
   }
   return 0;
@@ -762,14 +792,14 @@ undefined8 __divdi3(uint param_1,uint param_2,uint param_3,uint param_4)
       for (; param_4 >> uVar9 == 0; uVar9 = uVar9 - 1) {
       }
     }
-    uVar9 = uVar9 ^ 0x1f;
-    if (uVar9 == 0) {
+    if ((uVar9 ^ 0x1f) == 0) {
+      uVar9 = 0;
       if ((param_4 < param_2) || (iVar6 = 0, param_3 <= local_2c)) {
         iVar6 = 1;
       }
     }
     else {
-      bVar5 = (byte)uVar9;
+      bVar5 = (byte)(uVar9 ^ 0x1f);
       bVar7 = 0x20 - bVar5;
       uVar1 = (ulonglong)(param_3 >> (bVar7 & 0x1f) | param_4 << (bVar5 & 0x1f));
       uVar2 = CONCAT44(param_2 >> (bVar7 & 0x1f),
@@ -803,58 +833,53 @@ ulonglong __udivdi3(uint param_1,uint param_2,uint param_3,uint param_4)
   ulonglong uVar3;
   longlong lVar4;
   byte bVar5;
-  int iVar6;
+  uint uVar6;
   byte bVar7;
   uint uVar8;
   uint uVar9;
   
   if (param_4 != 0) {
     if (param_2 < param_4) {
-      uVar9 = 0;
-      iVar6 = 0;
+      uVar6 = 0;
     }
     else {
-      uVar9 = 0x1f;
+      uVar6 = 0x1f;
       if (param_4 != 0) {
-        for (; param_4 >> uVar9 == 0; uVar9 = uVar9 - 1) {
+        for (; param_4 >> uVar6 == 0; uVar6 = uVar6 - 1) {
         }
       }
-      uVar9 = uVar9 ^ 0x1f;
-      if (uVar9 == 0) {
-        if ((param_4 < param_2) || (iVar6 = 0, param_3 <= param_1)) {
-          iVar6 = 1;
+      if ((uVar6 ^ 0x1f) == 0) {
+        if ((param_4 < param_2) || (uVar6 = 0, param_3 <= param_1)) {
+          uVar6 = 1;
         }
       }
       else {
-        bVar5 = (byte)uVar9;
+        bVar5 = (byte)(uVar6 ^ 0x1f);
         bVar7 = 0x20 - bVar5;
         uVar1 = (ulonglong)(param_4 << (bVar5 & 0x1f) | param_3 >> (bVar7 & 0x1f));
         uVar2 = CONCAT44(param_2 >> (bVar7 & 0x1f),
                          param_1 >> (bVar7 & 0x1f) | param_2 << (bVar5 & 0x1f));
         uVar3 = uVar2 / uVar1;
-        iVar6 = (int)uVar3;
-        uVar9 = (uint)(uVar2 % uVar1);
+        uVar6 = (uint)uVar3;
+        uVar8 = (uint)(uVar2 % uVar1);
         lVar4 = (uVar3 & 0xffffffff) * (ulonglong)(param_3 << (bVar5 & 0x1f));
-        uVar8 = (uint)((ulonglong)lVar4 >> 0x20);
-        if ((uVar9 < uVar8) || ((param_1 << (bVar5 & 0x1f) < (uint)lVar4 && (uVar9 == uVar8)))) {
-          iVar6 = iVar6 + -1;
-          uVar9 = 0;
-        }
-        else {
-          uVar9 = 0;
+        uVar9 = (uint)((ulonglong)lVar4 >> 0x20);
+        if ((uVar8 < uVar9) || ((param_1 << (bVar5 & 0x1f) < (uint)lVar4 && (uVar8 == uVar9)))) {
+          uVar6 = uVar6 - 1;
         }
       }
     }
-    return CONCAT44(uVar9,iVar6);
+    return (ulonglong)uVar6;
   }
-  if (param_2 < param_3) {
-    return CONCAT44(param_2,param_1) / (ulonglong)param_3 & 0xffffffff;
+  if (param_3 <= param_2) {
+    if (param_3 == 0) {
+      param_3 = (uint)(1 / 0);
+    }
+    return CONCAT44(param_2 / param_3,
+                    (int)(((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) /
+                         (ulonglong)param_3));
   }
-  if (param_3 == 0) {
-    param_3 = (uint)(1 / 0);
-  }
-  return ((ulonglong)param_2 % (ulonglong)param_3 << 0x20 | (ulonglong)param_1) / (ulonglong)param_3
-         & 0xffffffff | (ulonglong)param_2 / (ulonglong)param_3 << 0x20;
+  return CONCAT44(param_2,param_1) / (ulonglong)param_3 & 0xffffffff;
 }
 
 

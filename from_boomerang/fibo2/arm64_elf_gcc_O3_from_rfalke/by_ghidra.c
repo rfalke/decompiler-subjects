@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -13,24 +14,20 @@ typedef unsigned short    ushort;
 typedef unsigned short    word;
 typedef ulong sizetype;
 
+typedef ulong size_t;
+
+typedef long __off_t;
+
+typedef sqword __off64_t;
+
 typedef void _IO_lock_t;
 
 typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef long __off64_t;
-
-typedef ulong size_t;
-
 struct _IO_FILE {
     int _flags;
-    undefined field1_0x4;
-    undefined field2_0x5;
-    undefined field3_0x6;
-    undefined field4_0x7;
     char * _IO_read_ptr;
     char * _IO_read_end;
     char * _IO_read_base;
@@ -50,10 +47,6 @@ struct _IO_FILE {
     ushort _cur_column;
     char _vtable_offset;
     char _shortbuf[1];
-    undefined field24_0x84;
-    undefined field25_0x85;
-    undefined field26_0x86;
-    undefined field27_0x87;
     _IO_lock_t * _lock;
     __off64_t _offset;
     void * __pad1;
@@ -69,10 +62,6 @@ struct _IO_marker {
     struct _IO_marker * _next;
     struct _IO_FILE * _sbuf;
     int _pos;
-    undefined field3_0x14;
-    undefined field4_0x15;
-    undefined field5_0x16;
-    undefined field6_0x17;
 };
 
 typedef struct _IO_FILE_plus _IO_FILE_plus, *P_IO_FILE_plus;
@@ -221,6 +210,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -260,14 +250,25 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -353,7 +354,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -373,7 +374,7 @@ void __isoc99_scanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -385,6 +386,8 @@ int printf(char *__format,...)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -407,10 +410,9 @@ int main(void)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -476,21 +478,19 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x001008c8)
+// WARNING: Removing unreachable block (ram,0x001008d4)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int fib2(int x)
 
@@ -778,6 +778,8 @@ LAB_00100de0:
 
 
 
+// WARNING: Unknown calling convention
+
 int fib1(int x)
 
 {
@@ -789,7 +791,6 @@ int fib1(int x)
   int iVar5;
   int iVar6;
   int iVar7;
-  int iVar8;
   int extraout_w8;
   int extraout_w8_00;
   int extraout_w8_01;
@@ -895,14 +896,16 @@ int fib1(int x)
   if (x == 2) {
     return 1;
   }
-  iVar2 = x + -2;
-  iVar6 = x + -3;
-  iVar8 = iVar2;
-  iVar7 = iVar6;
-  if (iVar2 != 1) {
+  iVar7 = x + -2;
+  iVar2 = x + -3;
+  iVar6 = iVar2;
+  if (iVar7 == 1) {
+    iVar4 = 1;
+  }
+  else {
     iVar4 = x + -4;
-    iVar5 = iVar6;
-    if (1 < iVar6) {
+    iVar5 = iVar2;
+    if (1 < iVar2) {
       x_00 = x + -5;
       iVar3 = x_00;
       iVar1 = iVar4;
@@ -912,8 +915,7 @@ int fib1(int x)
           iVar3 = extraout_w10;
           iVar4 = extraout_w9;
           iVar5 = extraout_w8;
-          iVar8 = iVar2;
-          iVar7 = iVar6;
+          iVar6 = iVar2;
         }
         iVar1 = x + -6;
         if (1 < iVar1) {
@@ -943,308 +945,310 @@ int fib1(int x)
         }
         iVar3 = iVar3 + iVar2;
       }
-      iVar6 = iVar3 + iVar1;
+      iVar2 = iVar3 + iVar1;
     }
     if (1 < iVar4) {
-      iVar2 = x + -5;
-      iVar1 = x + -6;
-      iVar4 = iVar1;
-      if (1 < iVar2) {
-        if (1 < iVar1) {
-          iVar1 = fib2(iVar1);
+      iVar1 = x + -5;
+      iVar3 = x + -6;
+      iVar4 = iVar3;
+      if (1 < iVar1) {
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
           iVar4 = extraout_w9_03;
-          iVar6 = extraout_w10_02;
+          iVar2 = extraout_w10_02;
           iVar5 = extraout_w8_03;
         }
-        iVar2 = x + -7;
-        if (1 < iVar2) {
-          iVar2 = fib2(iVar2);
-          iVar1 = extraout_w11_02;
-          iVar4 = extraout_w9_04;
-          iVar6 = extraout_w10_03;
-          iVar5 = extraout_w8_04;
-        }
-        iVar2 = iVar2 + iVar1;
-      }
-      if (1 < iVar4) {
         iVar1 = x + -7;
         if (1 < iVar1) {
           iVar1 = fib2(iVar1);
-          iVar2 = extraout_w11_03;
-          iVar6 = extraout_w10_04;
+          iVar3 = extraout_w11_02;
+          iVar4 = extraout_w9_04;
+          iVar2 = extraout_w10_03;
+          iVar5 = extraout_w8_04;
+        }
+        iVar1 = iVar1 + iVar3;
+      }
+      if (1 < iVar4) {
+        iVar3 = x + -7;
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar1 = extraout_w11_03;
+          iVar2 = extraout_w10_04;
           iVar5 = extraout_w8_05;
         }
         iVar4 = x + -8;
         if (1 < iVar4) {
           iVar4 = fib2(iVar4);
-          iVar1 = extraout_w9_05;
-          iVar2 = extraout_w11_04;
-          iVar6 = extraout_w10_05;
+          iVar3 = extraout_w9_05;
+          iVar1 = extraout_w11_04;
+          iVar2 = extraout_w10_05;
           iVar5 = extraout_w8_06;
         }
-        iVar4 = iVar4 + iVar1;
+        iVar4 = iVar4 + iVar3;
       }
-      iVar4 = iVar4 + iVar2;
+      iVar4 = iVar4 + iVar1;
     }
-    iVar2 = iVar4 + iVar6;
-    iVar6 = iVar5;
+    iVar4 = iVar4 + iVar2;
+    iVar2 = iVar5;
   }
-  if (1 < iVar7) {
-    iVar4 = x + -4;
-    iVar6 = x + -5;
-    if (1 < iVar4) {
-      iVar1 = x + -6;
-      iVar4 = iVar1;
-      iVar5 = iVar6;
-      if (1 < iVar6) {
-        if (1 < iVar1) {
-          iVar1 = fib2(iVar1);
-          iVar4 = extraout_w8_07;
-          iVar6 = extraout_w9_06;
-          iVar2 = extraout_w10_06;
+  if (1 < iVar6) {
+    iVar5 = x + -4;
+    iVar2 = x + -5;
+    if (1 < iVar5) {
+      iVar3 = x + -6;
+      iVar5 = iVar3;
+      iVar1 = iVar2;
+      if (1 < iVar2) {
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar5 = extraout_w8_07;
+          iVar2 = extraout_w9_06;
+          iVar4 = extraout_w10_06;
         }
-        iVar5 = x + -7;
-        if (1 < iVar5) {
-          iVar5 = fib2(iVar5);
-          iVar1 = extraout_w11_05;
-          iVar4 = extraout_w8_08;
-          iVar6 = extraout_w9_07;
-          iVar2 = extraout_w10_07;
-        }
-        iVar5 = iVar5 + iVar1;
-      }
-      if (1 < iVar4) {
         iVar1 = x + -7;
         if (1 < iVar1) {
           iVar1 = fib2(iVar1);
-          iVar5 = extraout_w11_06;
-          iVar6 = extraout_w9_08;
-          iVar2 = extraout_w10_08;
+          iVar3 = extraout_w11_05;
+          iVar5 = extraout_w8_08;
+          iVar2 = extraout_w9_07;
+          iVar4 = extraout_w10_07;
         }
-        iVar4 = x + -8;
-        if (1 < iVar4) {
-          iVar4 = fib2(iVar4);
-          iVar1 = extraout_w8_09;
-          iVar5 = extraout_w11_07;
-          iVar6 = extraout_w9_09;
-          iVar2 = extraout_w10_09;
-        }
-        iVar4 = iVar4 + iVar1;
+        iVar1 = iVar1 + iVar3;
       }
-      iVar4 = iVar4 + iVar5;
-    }
-    if (1 < iVar6) {
-      iVar5 = x + -6;
-      iVar1 = x + -7;
-      iVar6 = iVar1;
       if (1 < iVar5) {
-        if (1 < iVar1) {
-          iVar1 = fib2(iVar1);
-          iVar6 = extraout_w9_10;
-          iVar4 = extraout_w8_10;
-          iVar2 = extraout_w10_10;
+        iVar3 = x + -7;
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar1 = extraout_w11_06;
+          iVar2 = extraout_w9_08;
+          iVar4 = extraout_w10_08;
         }
         iVar5 = x + -8;
         if (1 < iVar5) {
           iVar5 = fib2(iVar5);
-          iVar1 = extraout_w11_08;
-          iVar6 = extraout_w9_11;
-          iVar4 = extraout_w8_11;
-          iVar2 = extraout_w10_11;
+          iVar3 = extraout_w8_09;
+          iVar1 = extraout_w11_07;
+          iVar2 = extraout_w9_09;
+          iVar4 = extraout_w10_09;
         }
-        iVar5 = iVar5 + iVar1;
+        iVar5 = iVar5 + iVar3;
       }
-      if (1 < iVar6) {
+      iVar5 = iVar5 + iVar1;
+    }
+    if (1 < iVar2) {
+      iVar1 = x + -6;
+      iVar3 = x + -7;
+      iVar2 = iVar3;
+      if (1 < iVar1) {
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar2 = extraout_w9_10;
+          iVar5 = extraout_w8_10;
+          iVar4 = extraout_w10_10;
+        }
         iVar1 = x + -8;
         if (1 < iVar1) {
           iVar1 = fib2(iVar1);
-          iVar5 = extraout_w11_09;
-          iVar4 = extraout_w8_12;
-          iVar2 = extraout_w10_12;
+          iVar3 = extraout_w11_08;
+          iVar2 = extraout_w9_11;
+          iVar5 = extraout_w8_11;
+          iVar4 = extraout_w10_11;
         }
-        iVar6 = x + -9;
-        if (1 < iVar6) {
-          iVar6 = fib2(iVar6);
-          iVar1 = extraout_w9_12;
-          iVar5 = extraout_w11_10;
-          iVar4 = extraout_w8_13;
-          iVar2 = extraout_w10_13;
-        }
-        iVar6 = iVar6 + iVar1;
+        iVar1 = iVar1 + iVar3;
       }
-      iVar6 = iVar6 + iVar5;
-    }
-    iVar6 = iVar6 + iVar4;
-  }
-  iVar6 = iVar6 + iVar2;
-  if (iVar8 != 1) {
-    iVar8 = x + -4;
-    if (1 < iVar7) {
-      iVar7 = x + -5;
-      iVar2 = iVar8;
-      if (1 < iVar8) {
-        iVar5 = x + -6;
-        iVar2 = iVar5;
-        iVar4 = iVar7;
-        if (1 < iVar7) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar2 = extraout_w9_13;
-            iVar6 = extraout_w8_14;
-          }
-          iVar4 = x + -7;
-          if (1 < iVar4) {
-            iVar4 = fib2(iVar4);
-            iVar5 = extraout_w10_14;
-            iVar2 = extraout_w9_14;
-            iVar6 = extraout_w8_15;
-          }
-          iVar4 = iVar4 + iVar5;
+      if (1 < iVar2) {
+        iVar3 = x + -8;
+        if (1 < iVar3) {
+          iVar3 = fib2(iVar3);
+          iVar1 = extraout_w11_09;
+          iVar5 = extraout_w8_12;
+          iVar4 = extraout_w10_12;
         }
+        iVar2 = x + -9;
         if (1 < iVar2) {
+          iVar2 = fib2(iVar2);
+          iVar3 = extraout_w9_12;
+          iVar1 = extraout_w11_10;
+          iVar5 = extraout_w8_13;
+          iVar4 = extraout_w10_13;
+        }
+        iVar2 = iVar2 + iVar3;
+      }
+      iVar2 = iVar2 + iVar1;
+    }
+    iVar2 = iVar2 + iVar5;
+  }
+  iVar2 = iVar2 + iVar4;
+  if (iVar7 != 1) {
+    iVar7 = x + -4;
+    if (1 < iVar6) {
+      iVar6 = x + -5;
+      iVar4 = iVar7;
+      if (1 < iVar7) {
+        iVar1 = x + -6;
+        iVar4 = iVar1;
+        iVar5 = iVar6;
+        if (1 < iVar6) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w9_13;
+            iVar2 = extraout_w8_14;
+          }
           iVar5 = x + -7;
           if (1 < iVar5) {
             iVar5 = fib2(iVar5);
-            iVar4 = extraout_w10_15;
-            iVar6 = extraout_w8_16;
+            iVar1 = extraout_w10_14;
+            iVar4 = extraout_w9_14;
+            iVar2 = extraout_w8_15;
           }
-          iVar2 = x + -8;
-          if (1 < iVar2) {
-            iVar2 = fib2(iVar2);
-            iVar5 = extraout_w9_15;
-            iVar4 = extraout_w10_16;
-            iVar6 = extraout_w8_17;
-          }
-          iVar2 = iVar2 + iVar5;
+          iVar5 = iVar5 + iVar1;
         }
-        iVar2 = iVar2 + iVar4;
-      }
-      if (1 < iVar7) {
-        iVar4 = x + -6;
-        iVar5 = x + -7;
-        iVar7 = iVar5;
         if (1 < iVar4) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar2 = extraout_w9_16;
-            iVar6 = extraout_w8_18;
+          iVar1 = x + -7;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar5 = extraout_w10_15;
+            iVar2 = extraout_w8_16;
           }
           iVar4 = x + -8;
           if (1 < iVar4) {
             iVar4 = fib2(iVar4);
-            iVar5 = extraout_w10_17;
-            iVar2 = extraout_w9_17;
-            iVar6 = extraout_w8_19;
+            iVar1 = extraout_w9_15;
+            iVar5 = extraout_w10_16;
+            iVar2 = extraout_w8_17;
           }
-          iVar4 = iVar4 + iVar5;
+          iVar4 = iVar4 + iVar1;
         }
-        if (1 < iVar7) {
+        iVar4 = iVar4 + iVar5;
+      }
+      if (1 < iVar6) {
+        iVar5 = x + -6;
+        iVar1 = x + -7;
+        iVar6 = iVar1;
+        if (1 < iVar5) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w9_16;
+            iVar2 = extraout_w8_18;
+          }
           iVar5 = x + -8;
           if (1 < iVar5) {
             iVar5 = fib2(iVar5);
-            iVar4 = extraout_w10_18;
-            iVar2 = extraout_w9_18;
-            iVar6 = extraout_w8_20;
+            iVar1 = extraout_w10_17;
+            iVar4 = extraout_w9_17;
+            iVar2 = extraout_w8_19;
           }
-          iVar7 = x + -9;
-          if (1 < iVar7) {
-            iVar7 = fib2(iVar7);
-            iVar4 = extraout_w10_19;
-            iVar2 = extraout_w9_19;
-            iVar6 = extraout_w8_21;
-          }
-          iVar7 = iVar7 + iVar5;
+          iVar5 = iVar5 + iVar1;
         }
-        iVar7 = iVar7 + iVar4;
+        if (1 < iVar6) {
+          iVar1 = x + -8;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar5 = extraout_w10_18;
+            iVar4 = extraout_w9_18;
+            iVar2 = extraout_w8_20;
+          }
+          iVar6 = x + -9;
+          if (1 < iVar6) {
+            iVar6 = fib2(iVar6);
+            iVar5 = extraout_w10_19;
+            iVar4 = extraout_w9_19;
+            iVar2 = extraout_w8_21;
+          }
+          iVar6 = iVar6 + iVar1;
+        }
+        iVar6 = iVar6 + iVar5;
       }
-      iVar7 = iVar7 + iVar2;
+      iVar6 = iVar6 + iVar4;
     }
-    if (1 < iVar8) {
-      iVar2 = x + -5;
-      iVar8 = x + -6;
-      if (1 < iVar2) {
-        iVar5 = x + -7;
-        iVar2 = iVar5;
-        iVar4 = iVar8;
-        if (1 < iVar8) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar2 = extraout_w9_20;
-            iVar6 = extraout_w8_22;
+    if (1 < iVar7) {
+      iVar4 = x + -5;
+      iVar7 = x + -6;
+      if (1 < iVar4) {
+        iVar1 = x + -7;
+        iVar4 = iVar1;
+        iVar5 = iVar7;
+        if (1 < iVar7) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w9_20;
+            iVar2 = extraout_w8_22;
           }
-          iVar4 = x + -8;
-          if (1 < iVar4) {
-            iVar4 = fib2(iVar4);
-            iVar5 = extraout_w10_20;
-            iVar2 = extraout_w9_21;
-            iVar6 = extraout_w8_23;
-          }
-          iVar4 = iVar4 + iVar5;
-        }
-        if (1 < iVar2) {
           iVar5 = x + -8;
           if (1 < iVar5) {
             iVar5 = fib2(iVar5);
-            iVar4 = extraout_w10_21;
-            iVar6 = extraout_w8_24;
+            iVar1 = extraout_w10_20;
+            iVar4 = extraout_w9_21;
+            iVar2 = extraout_w8_23;
           }
-          iVar2 = x + -9;
-          if (1 < iVar2) {
-            iVar2 = fib2(iVar2);
-            iVar5 = extraout_w9_22;
-            iVar4 = extraout_w10_22;
-            iVar6 = extraout_w8_25;
-          }
-          iVar2 = iVar2 + iVar5;
+          iVar5 = iVar5 + iVar1;
         }
-        iVar2 = iVar2 + iVar4;
-      }
-      if (1 < iVar8) {
-        iVar4 = x + -7;
-        iVar5 = x + -8;
-        iVar8 = iVar5;
         if (1 < iVar4) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar2 = extraout_w9_23;
-            iVar6 = extraout_w8_26;
+          iVar1 = x + -8;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar5 = extraout_w10_21;
+            iVar2 = extraout_w8_24;
           }
           iVar4 = x + -9;
           if (1 < iVar4) {
             iVar4 = fib2(iVar4);
-            iVar5 = extraout_w10_23;
-            iVar2 = extraout_w9_24;
-            iVar6 = extraout_w8_27;
+            iVar1 = extraout_w9_22;
+            iVar5 = extraout_w10_22;
+            iVar2 = extraout_w8_25;
           }
-          iVar4 = iVar4 + iVar5;
+          iVar4 = iVar4 + iVar1;
         }
-        if (1 < iVar8) {
+        iVar4 = iVar4 + iVar5;
+      }
+      if (1 < iVar7) {
+        iVar5 = x + -7;
+        iVar1 = x + -8;
+        iVar7 = iVar1;
+        if (1 < iVar5) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w9_23;
+            iVar2 = extraout_w8_26;
+          }
           iVar5 = x + -9;
           if (1 < iVar5) {
             iVar5 = fib2(iVar5);
-            iVar4 = extraout_w10_24;
-            iVar2 = extraout_w9_25;
-            iVar6 = extraout_w8_28;
+            iVar1 = extraout_w10_23;
+            iVar4 = extraout_w9_24;
+            iVar2 = extraout_w8_27;
           }
-          iVar8 = x + -10;
-          if (1 < iVar8) {
-            iVar8 = fib2(iVar8);
-            iVar4 = extraout_w10_25;
-            iVar2 = extraout_w9_26;
-            iVar6 = extraout_w8_29;
-          }
-          iVar8 = iVar8 + iVar5;
+          iVar5 = iVar5 + iVar1;
         }
-        iVar8 = iVar8 + iVar4;
+        if (1 < iVar7) {
+          iVar1 = x + -9;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar5 = extraout_w10_24;
+            iVar4 = extraout_w9_25;
+            iVar2 = extraout_w8_28;
+          }
+          iVar7 = x + -10;
+          if (1 < iVar7) {
+            iVar7 = fib2(iVar7);
+            iVar5 = extraout_w10_25;
+            iVar4 = extraout_w9_26;
+            iVar2 = extraout_w8_29;
+          }
+          iVar7 = iVar7 + iVar1;
+        }
+        iVar7 = iVar7 + iVar5;
       }
-      iVar8 = iVar8 + iVar2;
+      iVar7 = iVar7 + iVar4;
     }
-    iVar8 = iVar8 + iVar7;
+    iVar7 = iVar7 + iVar6;
   }
-  return iVar8 + iVar6;
+  return iVar7 + iVar2;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int fib2(int x)
 
@@ -1258,7 +1262,6 @@ int fib2(int x)
   int iVar6;
   int iVar7;
   int iVar8;
-  int iVar9;
   int extraout_w8;
   int extraout_w8_00;
   int extraout_w8_01;
@@ -1527,38 +1530,39 @@ int fib2(int x)
   if (x == 2) {
     return 1;
   }
-  iVar2 = x + -2;
-  iVar4 = x + -3;
-  iVar8 = iVar4;
-  iVar9 = iVar2;
-  if (iVar2 != 1) {
-    iVar6 = x + -4;
-    iVar7 = iVar4;
-    if (1 < iVar4) {
-      iVar5 = x + -5;
-      iVar3 = iVar6;
-      if (1 < iVar6) {
+  iVar8 = x + -2;
+  iVar2 = x + -3;
+  iVar7 = iVar2;
+  if (iVar8 == 1) {
+    iVar5 = 1;
+  }
+  else {
+    iVar5 = x + -4;
+    iVar6 = iVar2;
+    if (1 < iVar2) {
+      iVar4 = x + -5;
+      iVar3 = iVar5;
+      if (1 < iVar5) {
         x_00 = x + -6;
         iVar3 = x_00;
-        iVar1 = iVar5;
-        if (1 < iVar5) {
+        iVar1 = iVar4;
+        if (1 < iVar4) {
           if (1 < x_00) {
             x_00 = fib2(x_00);
             iVar3 = extraout_w11;
-            iVar5 = extraout_w10;
-            iVar6 = extraout_w8;
-            iVar7 = extraout_w9;
-            iVar8 = iVar4;
-            iVar9 = iVar2;
+            iVar4 = extraout_w10;
+            iVar5 = extraout_w8;
+            iVar6 = extraout_w9;
+            iVar7 = iVar2;
           }
           iVar1 = x + -7;
           if (1 < iVar1) {
             iVar1 = fib2(iVar1);
             x_00 = extraout_w12;
             iVar3 = extraout_w11_00;
-            iVar5 = extraout_w10_00;
-            iVar6 = extraout_w8_00;
-            iVar7 = extraout_w9_00;
+            iVar4 = extraout_w10_00;
+            iVar5 = extraout_w8_00;
+            iVar6 = extraout_w9_00;
           }
           iVar1 = iVar1 + x_00;
         }
@@ -1567,732 +1571,732 @@ int fib2(int x)
           if (1 < iVar2) {
             iVar2 = fib2(iVar2);
             iVar1 = extraout_w12_00;
-            iVar5 = extraout_w10_01;
-            iVar6 = extraout_w8_01;
-            iVar7 = extraout_w9_01;
+            iVar4 = extraout_w10_01;
+            iVar5 = extraout_w8_01;
+            iVar6 = extraout_w9_01;
           }
           iVar3 = x + -8;
           if (1 < iVar3) {
             iVar3 = fib2(iVar3);
             iVar2 = extraout_w11_01;
             iVar1 = extraout_w12_01;
-            iVar5 = extraout_w10_02;
-            iVar6 = extraout_w8_02;
-            iVar7 = extraout_w9_02;
+            iVar4 = extraout_w10_02;
+            iVar5 = extraout_w8_02;
+            iVar6 = extraout_w9_02;
           }
           iVar3 = iVar3 + iVar2;
         }
         iVar3 = iVar3 + iVar1;
       }
-      if (1 < iVar5) {
+      if (1 < iVar4) {
         iVar2 = x + -6;
-        iVar4 = x + -7;
-        iVar5 = iVar4;
+        iVar1 = x + -7;
+        iVar4 = iVar1;
         if (1 < iVar2) {
-          if (1 < iVar4) {
-            iVar4 = fib2(iVar4);
-            iVar5 = extraout_w11_02;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w11_02;
             iVar3 = extraout_w12_02;
-            iVar6 = extraout_w8_03;
-            iVar7 = extraout_w9_03;
+            iVar5 = extraout_w8_03;
+            iVar6 = extraout_w9_03;
           }
           iVar2 = x + -8;
           if (1 < iVar2) {
             iVar2 = fib2(iVar2);
-            iVar4 = extraout_w10_03;
-            iVar5 = extraout_w11_03;
+            iVar1 = extraout_w10_03;
+            iVar4 = extraout_w11_03;
             iVar3 = extraout_w12_03;
-            iVar6 = extraout_w8_04;
-            iVar7 = extraout_w9_04;
+            iVar5 = extraout_w8_04;
+            iVar6 = extraout_w9_04;
           }
-          iVar2 = iVar2 + iVar4;
+          iVar2 = iVar2 + iVar1;
         }
+        if (1 < iVar4) {
+          iVar1 = x + -8;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar2 = extraout_w10_04;
+            iVar3 = extraout_w12_04;
+            iVar5 = extraout_w8_05;
+            iVar6 = extraout_w9_05;
+          }
+          iVar4 = x + -9;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar1 = extraout_w11_04;
+            iVar2 = extraout_w10_05;
+            iVar3 = extraout_w12_05;
+            iVar5 = extraout_w8_06;
+            iVar6 = extraout_w9_06;
+          }
+          iVar4 = iVar4 + iVar1;
+        }
+        iVar4 = iVar4 + iVar2;
+      }
+      iVar2 = iVar4 + iVar3;
+    }
+    if (1 < iVar5) {
+      iVar3 = x + -5;
+      iVar5 = x + -6;
+      if (1 < iVar3) {
+        iVar1 = x + -7;
+        iVar3 = iVar1;
+        iVar4 = iVar5;
         if (1 < iVar5) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar3 = extraout_w11_05;
+            iVar5 = extraout_w8_07;
+            iVar2 = extraout_w10_06;
+            iVar6 = extraout_w9_07;
+          }
           iVar4 = x + -8;
           if (1 < iVar4) {
             iVar4 = fib2(iVar4);
-            iVar2 = extraout_w10_04;
-            iVar3 = extraout_w12_04;
-            iVar6 = extraout_w8_05;
-            iVar7 = extraout_w9_05;
+            iVar1 = extraout_w12_06;
+            iVar3 = extraout_w11_06;
+            iVar5 = extraout_w8_08;
+            iVar2 = extraout_w10_07;
+            iVar6 = extraout_w9_08;
           }
-          iVar5 = x + -9;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar4 = extraout_w11_04;
-            iVar2 = extraout_w10_05;
-            iVar3 = extraout_w12_05;
-            iVar6 = extraout_w8_06;
-            iVar7 = extraout_w9_06;
-          }
-          iVar5 = iVar5 + iVar4;
+          iVar4 = iVar4 + iVar1;
         }
-        iVar5 = iVar5 + iVar2;
-      }
-      iVar4 = iVar5 + iVar3;
-    }
-    if (1 < iVar6) {
-      iVar2 = x + -5;
-      iVar6 = x + -6;
-      if (1 < iVar2) {
-        iVar5 = x + -7;
-        iVar2 = iVar5;
-        iVar3 = iVar6;
-        if (1 < iVar6) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar2 = extraout_w11_05;
-            iVar6 = extraout_w8_07;
-            iVar4 = extraout_w10_06;
-            iVar7 = extraout_w9_07;
-          }
-          iVar3 = x + -8;
-          if (1 < iVar3) {
-            iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_06;
-            iVar2 = extraout_w11_06;
-            iVar6 = extraout_w8_08;
-            iVar4 = extraout_w10_07;
-            iVar7 = extraout_w9_08;
-          }
-          iVar3 = iVar3 + iVar5;
-        }
-        if (1 < iVar2) {
-          iVar5 = x + -8;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_07;
-            iVar6 = extraout_w8_09;
-            iVar4 = extraout_w10_08;
-            iVar7 = extraout_w9_09;
-          }
-          iVar2 = x + -9;
-          if (1 < iVar2) {
-            iVar2 = fib2(iVar2);
-            iVar5 = extraout_w11_07;
-            iVar3 = extraout_w12_08;
-            iVar6 = extraout_w8_10;
-            iVar4 = extraout_w10_09;
-            iVar7 = extraout_w9_10;
-          }
-          iVar2 = iVar2 + iVar5;
-        }
-        iVar2 = iVar2 + iVar3;
-      }
-      if (1 < iVar6) {
-        iVar3 = x + -7;
-        iVar5 = x + -8;
-        iVar6 = iVar5;
         if (1 < iVar3) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar6 = extraout_w8_11;
-            iVar2 = extraout_w11_08;
-            iVar4 = extraout_w10_10;
-            iVar7 = extraout_w9_11;
+          iVar1 = x + -8;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_07;
+            iVar5 = extraout_w8_09;
+            iVar2 = extraout_w10_08;
+            iVar6 = extraout_w9_09;
           }
           iVar3 = x + -9;
           if (1 < iVar3) {
             iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_09;
-            iVar6 = extraout_w8_12;
-            iVar2 = extraout_w11_09;
-            iVar4 = extraout_w10_11;
-            iVar7 = extraout_w9_12;
+            iVar1 = extraout_w11_07;
+            iVar4 = extraout_w12_08;
+            iVar5 = extraout_w8_10;
+            iVar2 = extraout_w10_09;
+            iVar6 = extraout_w9_10;
           }
-          iVar3 = iVar3 + iVar5;
+          iVar3 = iVar3 + iVar1;
         }
-        if (1 < iVar6) {
-          iVar5 = x + -9;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_10;
-            iVar2 = extraout_w11_10;
-            iVar4 = extraout_w10_12;
-            iVar7 = extraout_w9_13;
-          }
-          iVar6 = x + -10;
-          if (1 < iVar6) {
-            iVar6 = fib2(iVar6);
-            iVar5 = extraout_w8_13;
-            iVar3 = extraout_w12_11;
-            iVar2 = extraout_w11_11;
-            iVar4 = extraout_w10_13;
-            iVar7 = extraout_w9_14;
-          }
-          iVar6 = iVar6 + iVar5;
-        }
-        iVar6 = iVar6 + iVar3;
+        iVar3 = iVar3 + iVar4;
       }
-      iVar6 = iVar6 + iVar2;
-    }
-    iVar2 = iVar6 + iVar4;
-    iVar4 = iVar7;
-  }
-  if (1 < iVar8) {
-    iVar6 = x + -4;
-    iVar4 = x + -5;
-    if (1 < iVar6) {
-      iVar6 = x + -6;
-      iVar7 = iVar4;
-      if (1 < iVar4) {
-        iVar5 = x + -7;
-        iVar7 = iVar5;
-        iVar3 = iVar6;
-        if (1 < iVar6) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar7 = extraout_w11_12;
-            iVar6 = extraout_w9_15;
-            iVar4 = extraout_w8_14;
-            iVar2 = extraout_w10_14;
-          }
-          iVar3 = x + -8;
-          if (1 < iVar3) {
-            iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_12;
-            iVar7 = extraout_w11_13;
-            iVar6 = extraout_w9_16;
-            iVar4 = extraout_w8_15;
-            iVar2 = extraout_w10_15;
-          }
-          iVar3 = iVar3 + iVar5;
-        }
-        if (1 < iVar7) {
-          iVar5 = x + -8;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_13;
-            iVar6 = extraout_w9_17;
-            iVar4 = extraout_w8_16;
-            iVar2 = extraout_w10_16;
-          }
-          iVar7 = x + -9;
-          if (1 < iVar7) {
-            iVar7 = fib2(iVar7);
-            iVar5 = extraout_w11_14;
-            iVar3 = extraout_w12_14;
-            iVar6 = extraout_w9_18;
-            iVar4 = extraout_w8_17;
-            iVar2 = extraout_w10_17;
-          }
-          iVar7 = iVar7 + iVar5;
-        }
-        iVar7 = iVar7 + iVar3;
-      }
-      if (1 < iVar6) {
-        iVar3 = x + -7;
-        iVar5 = x + -8;
-        iVar6 = iVar5;
-        if (1 < iVar3) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar6 = extraout_w9_19;
-            iVar7 = extraout_w11_15;
-            iVar4 = extraout_w8_18;
-            iVar2 = extraout_w10_18;
-          }
-          iVar3 = x + -9;
-          if (1 < iVar3) {
-            iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_15;
-            iVar6 = extraout_w9_20;
-            iVar7 = extraout_w11_16;
-            iVar4 = extraout_w8_19;
-            iVar2 = extraout_w10_19;
-          }
-          iVar3 = iVar3 + iVar5;
-        }
-        if (1 < iVar6) {
-          iVar5 = x + -9;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_16;
-            iVar7 = extraout_w11_17;
-            iVar4 = extraout_w8_20;
-            iVar2 = extraout_w10_20;
-          }
-          iVar6 = x + -10;
-          if (1 < iVar6) {
-            iVar6 = fib2(iVar6);
-            iVar5 = extraout_w9_21;
-            iVar3 = extraout_w12_17;
-            iVar7 = extraout_w11_18;
-            iVar4 = extraout_w8_21;
-            iVar2 = extraout_w10_21;
-          }
-          iVar6 = iVar6 + iVar5;
-        }
-        iVar6 = iVar6 + iVar3;
-      }
-      iVar6 = iVar6 + iVar7;
-    }
-    if (1 < iVar4) {
-      iVar7 = x + -6;
-      iVar4 = x + -7;
-      if (1 < iVar7) {
-        iVar5 = x + -8;
-        iVar7 = iVar5;
-        iVar3 = iVar4;
+      if (1 < iVar5) {
+        iVar4 = x + -7;
+        iVar1 = x + -8;
+        iVar5 = iVar1;
         if (1 < iVar4) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar5 = extraout_w8_11;
+            iVar3 = extraout_w11_08;
+            iVar2 = extraout_w10_10;
+            iVar6 = extraout_w9_11;
+          }
+          iVar4 = x + -9;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar1 = extraout_w12_09;
+            iVar5 = extraout_w8_12;
+            iVar3 = extraout_w11_09;
+            iVar2 = extraout_w10_11;
+            iVar6 = extraout_w9_12;
+          }
+          iVar4 = iVar4 + iVar1;
+        }
+        if (1 < iVar5) {
+          iVar1 = x + -9;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_10;
+            iVar3 = extraout_w11_10;
+            iVar2 = extraout_w10_12;
+            iVar6 = extraout_w9_13;
+          }
+          iVar5 = x + -10;
           if (1 < iVar5) {
             iVar5 = fib2(iVar5);
-            iVar7 = extraout_w11_19;
-            iVar4 = extraout_w8_22;
-            iVar6 = extraout_w9_22;
-            iVar2 = extraout_w10_22;
+            iVar1 = extraout_w8_13;
+            iVar4 = extraout_w12_11;
+            iVar3 = extraout_w11_11;
+            iVar2 = extraout_w10_13;
+            iVar6 = extraout_w9_14;
+          }
+          iVar5 = iVar5 + iVar1;
+        }
+        iVar5 = iVar5 + iVar4;
+      }
+      iVar5 = iVar5 + iVar3;
+    }
+    iVar5 = iVar5 + iVar2;
+    iVar2 = iVar6;
+  }
+  if (1 < iVar7) {
+    iVar6 = x + -4;
+    iVar2 = x + -5;
+    if (1 < iVar6) {
+      iVar6 = x + -6;
+      iVar3 = iVar2;
+      if (1 < iVar2) {
+        iVar1 = x + -7;
+        iVar3 = iVar1;
+        iVar4 = iVar6;
+        if (1 < iVar6) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar3 = extraout_w11_12;
+            iVar6 = extraout_w9_15;
+            iVar2 = extraout_w8_14;
+            iVar5 = extraout_w10_14;
+          }
+          iVar4 = x + -8;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar1 = extraout_w12_12;
+            iVar3 = extraout_w11_13;
+            iVar6 = extraout_w9_16;
+            iVar2 = extraout_w8_15;
+            iVar5 = extraout_w10_15;
+          }
+          iVar4 = iVar4 + iVar1;
+        }
+        if (1 < iVar3) {
+          iVar1 = x + -8;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_13;
+            iVar6 = extraout_w9_17;
+            iVar2 = extraout_w8_16;
+            iVar5 = extraout_w10_16;
           }
           iVar3 = x + -9;
           if (1 < iVar3) {
             iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_18;
-            iVar7 = extraout_w11_20;
-            iVar4 = extraout_w8_23;
-            iVar6 = extraout_w9_23;
-            iVar2 = extraout_w10_23;
+            iVar1 = extraout_w11_14;
+            iVar4 = extraout_w12_14;
+            iVar6 = extraout_w9_18;
+            iVar2 = extraout_w8_17;
+            iVar5 = extraout_w10_17;
           }
-          iVar3 = iVar3 + iVar5;
+          iVar3 = iVar3 + iVar1;
         }
-        if (1 < iVar7) {
-          iVar5 = x + -9;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_19;
-            iVar4 = extraout_w8_24;
-            iVar6 = extraout_w9_24;
-            iVar2 = extraout_w10_24;
-          }
-          iVar7 = x + -10;
-          if (1 < iVar7) {
-            iVar7 = fib2(iVar7);
-            iVar5 = extraout_w11_21;
-            iVar3 = extraout_w12_20;
-            iVar4 = extraout_w8_25;
-            iVar6 = extraout_w9_25;
-            iVar2 = extraout_w10_25;
-          }
-          iVar7 = iVar7 + iVar5;
-        }
-        iVar7 = iVar7 + iVar3;
+        iVar3 = iVar3 + iVar4;
       }
-      if (1 < iVar4) {
-        iVar3 = x + -8;
-        iVar5 = x + -9;
-        iVar4 = iVar5;
+      if (1 < iVar6) {
+        iVar4 = x + -7;
+        iVar1 = x + -8;
+        iVar6 = iVar1;
+        if (1 < iVar4) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar6 = extraout_w9_19;
+            iVar3 = extraout_w11_15;
+            iVar2 = extraout_w8_18;
+            iVar5 = extraout_w10_18;
+          }
+          iVar4 = x + -9;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar1 = extraout_w12_15;
+            iVar6 = extraout_w9_20;
+            iVar3 = extraout_w11_16;
+            iVar2 = extraout_w8_19;
+            iVar5 = extraout_w10_19;
+          }
+          iVar4 = iVar4 + iVar1;
+        }
+        if (1 < iVar6) {
+          iVar1 = x + -9;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_16;
+            iVar3 = extraout_w11_17;
+            iVar2 = extraout_w8_20;
+            iVar5 = extraout_w10_20;
+          }
+          iVar6 = x + -10;
+          if (1 < iVar6) {
+            iVar6 = fib2(iVar6);
+            iVar1 = extraout_w9_21;
+            iVar4 = extraout_w12_17;
+            iVar3 = extraout_w11_18;
+            iVar2 = extraout_w8_21;
+            iVar5 = extraout_w10_21;
+          }
+          iVar6 = iVar6 + iVar1;
+        }
+        iVar6 = iVar6 + iVar4;
+      }
+      iVar6 = iVar6 + iVar3;
+    }
+    if (1 < iVar2) {
+      iVar3 = x + -6;
+      iVar2 = x + -7;
+      if (1 < iVar3) {
+        iVar1 = x + -8;
+        iVar3 = iVar1;
+        iVar4 = iVar2;
+        if (1 < iVar2) {
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar3 = extraout_w11_19;
+            iVar2 = extraout_w8_22;
+            iVar6 = extraout_w9_22;
+            iVar5 = extraout_w10_22;
+          }
+          iVar4 = x + -9;
+          if (1 < iVar4) {
+            iVar4 = fib2(iVar4);
+            iVar1 = extraout_w12_18;
+            iVar3 = extraout_w11_20;
+            iVar2 = extraout_w8_23;
+            iVar6 = extraout_w9_23;
+            iVar5 = extraout_w10_23;
+          }
+          iVar4 = iVar4 + iVar1;
+        }
         if (1 < iVar3) {
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar4 = extraout_w8_26;
-            iVar7 = extraout_w11_22;
-            iVar6 = extraout_w9_26;
-            iVar2 = extraout_w10_26;
+          iVar1 = x + -9;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_19;
+            iVar2 = extraout_w8_24;
+            iVar6 = extraout_w9_24;
+            iVar5 = extraout_w10_24;
           }
           iVar3 = x + -10;
           if (1 < iVar3) {
             iVar3 = fib2(iVar3);
-            iVar5 = extraout_w12_21;
-            iVar4 = extraout_w8_27;
-            iVar7 = extraout_w11_23;
-            iVar6 = extraout_w9_27;
-            iVar2 = extraout_w10_27;
+            iVar1 = extraout_w11_21;
+            iVar4 = extraout_w12_20;
+            iVar2 = extraout_w8_25;
+            iVar6 = extraout_w9_25;
+            iVar5 = extraout_w10_25;
           }
-          iVar3 = iVar3 + iVar5;
+          iVar3 = iVar3 + iVar1;
         }
+        iVar3 = iVar3 + iVar4;
+      }
+      if (1 < iVar2) {
+        iVar4 = x + -8;
+        iVar1 = x + -9;
+        iVar2 = iVar1;
         if (1 < iVar4) {
-          iVar5 = x + -10;
-          if (1 < iVar5) {
-            iVar5 = fib2(iVar5);
-            iVar3 = extraout_w12_22;
-            iVar7 = extraout_w11_24;
-            iVar6 = extraout_w9_28;
-            iVar2 = extraout_w10_28;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar2 = extraout_w8_26;
+            iVar3 = extraout_w11_22;
+            iVar6 = extraout_w9_26;
+            iVar5 = extraout_w10_26;
           }
-          iVar4 = x + -0xb;
+          iVar4 = x + -10;
           if (1 < iVar4) {
             iVar4 = fib2(iVar4);
-            iVar5 = extraout_w8_28;
-            iVar3 = extraout_w12_23;
-            iVar7 = extraout_w11_25;
-            iVar6 = extraout_w9_29;
-            iVar2 = extraout_w10_29;
+            iVar1 = extraout_w12_21;
+            iVar2 = extraout_w8_27;
+            iVar3 = extraout_w11_23;
+            iVar6 = extraout_w9_27;
+            iVar5 = extraout_w10_27;
           }
-          iVar4 = iVar4 + iVar5;
+          iVar4 = iVar4 + iVar1;
         }
-        iVar4 = iVar4 + iVar3;
-      }
-      iVar4 = iVar4 + iVar7;
-    }
-    iVar4 = iVar4 + iVar6;
-  }
-  iVar4 = iVar4 + iVar2;
-  if (iVar9 != 1) {
-    iVar9 = x + -4;
-    if (1 < iVar8) {
-      iVar8 = x + -5;
-      iVar2 = iVar9;
-      if (1 < iVar9) {
-        iVar2 = x + -6;
-        iVar6 = iVar8;
-        if (1 < iVar8) {
-          iVar3 = x + -7;
-          iVar6 = iVar3;
-          iVar7 = iVar2;
-          if (1 < iVar2) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar6 = extraout_w10_30;
-              iVar2 = extraout_w8_29;
-              iVar4 = extraout_w9_30;
-            }
-            iVar7 = x + -8;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w11_26;
-              iVar6 = extraout_w10_31;
-              iVar2 = extraout_w8_30;
-              iVar4 = extraout_w9_31;
-            }
-            iVar7 = iVar7 + iVar3;
+        if (1 < iVar2) {
+          iVar1 = x + -10;
+          if (1 < iVar1) {
+            iVar1 = fib2(iVar1);
+            iVar4 = extraout_w12_22;
+            iVar3 = extraout_w11_24;
+            iVar6 = extraout_w9_28;
+            iVar5 = extraout_w10_28;
           }
-          if (1 < iVar6) {
+          iVar2 = x + -0xb;
+          if (1 < iVar2) {
+            iVar2 = fib2(iVar2);
+            iVar1 = extraout_w8_28;
+            iVar4 = extraout_w12_23;
+            iVar3 = extraout_w11_25;
+            iVar6 = extraout_w9_29;
+            iVar5 = extraout_w10_29;
+          }
+          iVar2 = iVar2 + iVar1;
+        }
+        iVar2 = iVar2 + iVar4;
+      }
+      iVar2 = iVar2 + iVar3;
+    }
+    iVar2 = iVar2 + iVar6;
+  }
+  iVar2 = iVar2 + iVar5;
+  if (iVar8 != 1) {
+    iVar8 = x + -4;
+    if (1 < iVar7) {
+      iVar7 = x + -5;
+      iVar5 = iVar8;
+      if (1 < iVar8) {
+        iVar5 = x + -6;
+        iVar6 = iVar7;
+        if (1 < iVar7) {
+          iVar4 = x + -7;
+          iVar6 = iVar4;
+          iVar3 = iVar5;
+          if (1 < iVar5) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar6 = extraout_w10_30;
+              iVar5 = extraout_w8_29;
+              iVar2 = extraout_w9_30;
+            }
             iVar3 = x + -8;
             if (1 < iVar3) {
               iVar3 = fib2(iVar3);
-              iVar7 = extraout_w11_27;
-              iVar2 = extraout_w8_31;
-              iVar4 = extraout_w9_32;
+              iVar4 = extraout_w11_26;
+              iVar6 = extraout_w10_31;
+              iVar5 = extraout_w8_30;
+              iVar2 = extraout_w9_31;
+            }
+            iVar3 = iVar3 + iVar4;
+          }
+          if (1 < iVar6) {
+            iVar4 = x + -8;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w11_27;
+              iVar5 = extraout_w8_31;
+              iVar2 = extraout_w9_32;
             }
             iVar6 = x + -9;
             if (1 < iVar6) {
               iVar6 = fib2(iVar6);
-              iVar3 = extraout_w10_32;
-              iVar7 = extraout_w11_28;
-              iVar2 = extraout_w8_32;
-              iVar4 = extraout_w9_33;
+              iVar4 = extraout_w10_32;
+              iVar3 = extraout_w11_28;
+              iVar5 = extraout_w8_32;
+              iVar2 = extraout_w9_33;
             }
-            iVar6 = iVar6 + iVar3;
+            iVar6 = iVar6 + iVar4;
           }
-          iVar6 = iVar6 + iVar7;
+          iVar6 = iVar6 + iVar3;
         }
-        if (1 < iVar2) {
-          iVar7 = x + -7;
-          iVar3 = x + -8;
-          iVar2 = iVar3;
-          if (1 < iVar7) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar2 = extraout_w10_33;
+        if (1 < iVar5) {
+          iVar3 = x + -7;
+          iVar4 = x + -8;
+          iVar5 = iVar4;
+          if (1 < iVar3) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar5 = extraout_w10_33;
               iVar6 = extraout_w11_29;
-              iVar4 = extraout_w9_34;
+              iVar2 = extraout_w9_34;
             }
-            iVar7 = x + -9;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w8_33;
-              iVar2 = extraout_w10_34;
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar4 = extraout_w8_33;
+              iVar5 = extraout_w10_34;
               iVar6 = extraout_w11_30;
-              iVar4 = extraout_w9_35;
+              iVar2 = extraout_w9_35;
             }
-            iVar7 = iVar7 + iVar3;
+            iVar3 = iVar3 + iVar4;
           }
-          if (1 < iVar2) {
-            iVar3 = x + -9;
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar7 = extraout_w8_34;
+          if (1 < iVar5) {
+            iVar4 = x + -9;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w8_34;
               iVar6 = extraout_w11_31;
-              iVar4 = extraout_w9_36;
+              iVar2 = extraout_w9_36;
             }
-            iVar2 = x + -10;
-            if (1 < iVar2) {
-              iVar2 = fib2(iVar2);
-              iVar3 = extraout_w10_35;
-              iVar7 = extraout_w8_35;
+            iVar5 = x + -10;
+            if (1 < iVar5) {
+              iVar5 = fib2(iVar5);
+              iVar4 = extraout_w10_35;
+              iVar3 = extraout_w8_35;
               iVar6 = extraout_w11_32;
-              iVar4 = extraout_w9_37;
+              iVar2 = extraout_w9_37;
             }
-            iVar2 = iVar2 + iVar3;
+            iVar5 = iVar5 + iVar4;
           }
-          iVar2 = iVar2 + iVar7;
+          iVar5 = iVar5 + iVar3;
         }
-        iVar2 = iVar2 + iVar6;
+        iVar5 = iVar5 + iVar6;
       }
-      if (1 < iVar8) {
+      if (1 < iVar7) {
         iVar6 = x + -6;
-        iVar8 = x + -7;
+        iVar7 = x + -7;
         if (1 < iVar6) {
-          iVar3 = x + -8;
-          iVar6 = iVar3;
-          iVar7 = iVar8;
-          if (1 < iVar8) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
+          iVar4 = x + -8;
+          iVar6 = iVar4;
+          iVar3 = iVar7;
+          if (1 < iVar7) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
               iVar6 = extraout_w10_36;
-              iVar2 = extraout_w8_36;
-              iVar4 = extraout_w9_38;
+              iVar5 = extraout_w8_36;
+              iVar2 = extraout_w9_38;
             }
-            iVar7 = x + -9;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w11_33;
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar4 = extraout_w11_33;
               iVar6 = extraout_w10_37;
-              iVar2 = extraout_w8_37;
-              iVar4 = extraout_w9_39;
+              iVar5 = extraout_w8_37;
+              iVar2 = extraout_w9_39;
             }
-            iVar7 = iVar7 + iVar3;
+            iVar3 = iVar3 + iVar4;
           }
           if (1 < iVar6) {
-            iVar3 = x + -9;
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar7 = extraout_w11_34;
-              iVar2 = extraout_w8_38;
-              iVar4 = extraout_w9_40;
+            iVar4 = x + -9;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w11_34;
+              iVar5 = extraout_w8_38;
+              iVar2 = extraout_w9_40;
             }
             iVar6 = x + -10;
             if (1 < iVar6) {
               iVar6 = fib2(iVar6);
-              iVar3 = extraout_w10_38;
-              iVar7 = extraout_w11_35;
-              iVar2 = extraout_w8_39;
-              iVar4 = extraout_w9_41;
+              iVar4 = extraout_w10_38;
+              iVar3 = extraout_w11_35;
+              iVar5 = extraout_w8_39;
+              iVar2 = extraout_w9_41;
             }
-            iVar6 = iVar6 + iVar3;
+            iVar6 = iVar6 + iVar4;
           }
-          iVar6 = iVar6 + iVar7;
+          iVar6 = iVar6 + iVar3;
         }
-        if (1 < iVar8) {
-          iVar7 = x + -8;
-          iVar3 = x + -9;
-          iVar8 = iVar3;
-          if (1 < iVar7) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar6 = extraout_w10_39;
-              iVar2 = extraout_w8_40;
-              iVar4 = extraout_w9_42;
-            }
-            iVar7 = x + -10;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w11_36;
-              iVar6 = extraout_w10_40;
-              iVar2 = extraout_w8_41;
-              iVar4 = extraout_w9_43;
-            }
-            iVar7 = iVar7 + iVar3;
-          }
-          if (1 < iVar8) {
-            iVar3 = x + -10;
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar7 = extraout_w11_37;
-              iVar6 = extraout_w10_41;
-              iVar2 = extraout_w8_42;
-              iVar4 = extraout_w9_44;
-            }
-            iVar8 = x + -0xb;
-            if (1 < iVar8) {
-              iVar8 = fib2(iVar8);
-              iVar7 = extraout_w11_38;
-              iVar6 = extraout_w10_42;
-              iVar2 = extraout_w8_43;
-              iVar4 = extraout_w9_45;
-            }
-            iVar8 = iVar8 + iVar3;
-          }
-          iVar8 = iVar8 + iVar7;
-        }
-        iVar8 = iVar8 + iVar6;
-      }
-      iVar8 = iVar8 + iVar2;
-    }
-    if (1 < iVar9) {
-      iVar2 = x + -5;
-      iVar9 = x + -6;
-      if (1 < iVar2) {
-        iVar2 = x + -7;
-        iVar6 = iVar9;
-        if (1 < iVar9) {
+        if (1 < iVar7) {
           iVar3 = x + -8;
-          iVar6 = iVar3;
-          iVar7 = iVar2;
-          if (1 < iVar2) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar2 = extraout_w10_43;
-              iVar8 = extraout_w8_44;
-              iVar4 = extraout_w9_46;
+          iVar4 = x + -9;
+          iVar7 = iVar4;
+          if (1 < iVar3) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar6 = extraout_w10_39;
+              iVar5 = extraout_w8_40;
+              iVar2 = extraout_w9_42;
             }
-            iVar7 = x + -9;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w11_39;
-              iVar2 = extraout_w10_44;
-              iVar8 = extraout_w8_45;
-              iVar4 = extraout_w9_47;
-            }
-            iVar7 = iVar7 + iVar3;
-          }
-          if (1 < iVar6) {
-            iVar3 = x + -9;
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar7 = extraout_w11_40;
-              iVar2 = extraout_w10_45;
-              iVar8 = extraout_w8_46;
-              iVar4 = extraout_w9_48;
-            }
-            iVar6 = x + -10;
-            if (1 < iVar6) {
-              iVar6 = fib2(iVar6);
-              iVar7 = extraout_w11_41;
-              iVar2 = extraout_w10_46;
-              iVar8 = extraout_w8_47;
-              iVar4 = extraout_w9_49;
-            }
-            iVar6 = iVar6 + iVar3;
-          }
-          iVar6 = iVar6 + iVar7;
-        }
-        if (1 < iVar2) {
-          iVar7 = x + -8;
-          iVar3 = x + -9;
-          iVar2 = iVar3;
-          if (1 < iVar7) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar2 = extraout_w10_47;
-              iVar8 = extraout_w8_48;
-              iVar4 = extraout_w9_50;
-            }
-            iVar7 = x + -10;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar3 = extraout_w11_42;
-              iVar2 = extraout_w10_48;
-              iVar8 = extraout_w8_49;
-              iVar4 = extraout_w9_51;
-            }
-            iVar7 = iVar7 + iVar3;
-          }
-          if (1 < iVar2) {
             iVar3 = x + -10;
             if (1 < iVar3) {
               iVar3 = fib2(iVar3);
-              iVar7 = extraout_w11_43;
-              iVar8 = extraout_w8_50;
-              iVar4 = extraout_w9_52;
+              iVar4 = extraout_w11_36;
+              iVar6 = extraout_w10_40;
+              iVar5 = extraout_w8_41;
+              iVar2 = extraout_w9_43;
             }
-            iVar2 = x + -0xb;
-            if (1 < iVar2) {
-              iVar2 = fib2(iVar2);
-              iVar3 = extraout_w10_49;
-              iVar7 = extraout_w11_44;
-              iVar8 = extraout_w8_51;
-              iVar4 = extraout_w9_53;
-            }
-            iVar2 = iVar2 + iVar3;
+            iVar3 = iVar3 + iVar4;
           }
-          iVar2 = iVar2 + iVar7;
-        }
-        iVar2 = iVar2 + iVar6;
-      }
-      if (1 < iVar9) {
-        iVar6 = x + -7;
-        iVar9 = x + -8;
-        if (1 < iVar6) {
-          iVar3 = x + -9;
-          iVar6 = iVar3;
-          iVar7 = iVar9;
-          if (1 < iVar9) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar6 = extraout_w11_45;
-              iVar2 = extraout_w10_50;
-              iVar8 = extraout_w8_52;
-              iVar4 = extraout_w9_54;
-            }
-            iVar7 = x + -10;
-            if (1 < iVar7) {
-              iVar7 = fib2(iVar7);
-              iVar6 = extraout_w11_46;
-              iVar2 = extraout_w10_51;
-              iVar8 = extraout_w8_53;
-              iVar4 = extraout_w9_55;
-            }
-            iVar7 = iVar7 + iVar3;
-          }
-          if (1 < iVar6) {
-            iVar3 = x + -10;
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar2 = extraout_w10_52;
-              iVar8 = extraout_w8_54;
-              iVar4 = extraout_w9_56;
-            }
-            iVar6 = x + -0xb;
-            if (1 < iVar6) {
-              iVar6 = fib2(iVar6);
-              iVar3 = extraout_w11_47;
-              iVar2 = extraout_w10_53;
-              iVar8 = extraout_w8_55;
-              iVar4 = extraout_w9_57;
-            }
-            iVar6 = iVar6 + iVar3;
-          }
-          iVar6 = iVar6 + iVar7;
-        }
-        if (1 < iVar9) {
-          iVar7 = x + -9;
-          iVar3 = x + -10;
-          iVar9 = iVar3;
           if (1 < iVar7) {
-            if (1 < iVar3) {
-              iVar3 = fib2(iVar3);
-              iVar6 = extraout_w11_48;
-              iVar2 = extraout_w10_54;
-              iVar8 = extraout_w8_56;
-              iVar4 = extraout_w9_58;
+            iVar4 = x + -10;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w11_37;
+              iVar6 = extraout_w10_41;
+              iVar5 = extraout_w8_42;
+              iVar2 = extraout_w9_44;
             }
             iVar7 = x + -0xb;
             if (1 < iVar7) {
               iVar7 = fib2(iVar7);
-              iVar6 = extraout_w11_49;
-              iVar2 = extraout_w10_55;
-              iVar8 = extraout_w8_57;
-              iVar4 = extraout_w9_59;
+              iVar3 = extraout_w11_38;
+              iVar6 = extraout_w10_42;
+              iVar5 = extraout_w8_43;
+              iVar2 = extraout_w9_45;
             }
-            iVar7 = iVar7 + iVar3;
+            iVar7 = iVar7 + iVar4;
           }
-          if (1 < iVar9) {
+          iVar7 = iVar7 + iVar3;
+        }
+        iVar7 = iVar7 + iVar6;
+      }
+      iVar7 = iVar7 + iVar5;
+    }
+    if (1 < iVar8) {
+      iVar5 = x + -5;
+      iVar8 = x + -6;
+      if (1 < iVar5) {
+        iVar5 = x + -7;
+        iVar6 = iVar8;
+        if (1 < iVar8) {
+          iVar4 = x + -8;
+          iVar6 = iVar4;
+          iVar3 = iVar5;
+          if (1 < iVar5) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar5 = extraout_w10_43;
+              iVar7 = extraout_w8_44;
+              iVar2 = extraout_w9_46;
+            }
+            iVar3 = x + -9;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar4 = extraout_w11_39;
+              iVar5 = extraout_w10_44;
+              iVar7 = extraout_w8_45;
+              iVar2 = extraout_w9_47;
+            }
+            iVar3 = iVar3 + iVar4;
+          }
+          if (1 < iVar6) {
+            iVar4 = x + -9;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w11_40;
+              iVar5 = extraout_w10_45;
+              iVar7 = extraout_w8_46;
+              iVar2 = extraout_w9_48;
+            }
+            iVar6 = x + -10;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar3 = extraout_w11_41;
+              iVar5 = extraout_w10_46;
+              iVar7 = extraout_w8_47;
+              iVar2 = extraout_w9_49;
+            }
+            iVar6 = iVar6 + iVar4;
+          }
+          iVar6 = iVar6 + iVar3;
+        }
+        if (1 < iVar5) {
+          iVar3 = x + -8;
+          iVar4 = x + -9;
+          iVar5 = iVar4;
+          if (1 < iVar3) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar5 = extraout_w10_47;
+              iVar7 = extraout_w8_48;
+              iVar2 = extraout_w9_50;
+            }
+            iVar3 = x + -10;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar4 = extraout_w11_42;
+              iVar5 = extraout_w10_48;
+              iVar7 = extraout_w8_49;
+              iVar2 = extraout_w9_51;
+            }
+            iVar3 = iVar3 + iVar4;
+          }
+          if (1 < iVar5) {
+            iVar4 = x + -10;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar3 = extraout_w11_43;
+              iVar7 = extraout_w8_50;
+              iVar2 = extraout_w9_52;
+            }
+            iVar5 = x + -0xb;
+            if (1 < iVar5) {
+              iVar5 = fib2(iVar5);
+              iVar4 = extraout_w10_49;
+              iVar3 = extraout_w11_44;
+              iVar7 = extraout_w8_51;
+              iVar2 = extraout_w9_53;
+            }
+            iVar5 = iVar5 + iVar4;
+          }
+          iVar5 = iVar5 + iVar3;
+        }
+        iVar5 = iVar5 + iVar6;
+      }
+      if (1 < iVar8) {
+        iVar6 = x + -7;
+        iVar8 = x + -8;
+        if (1 < iVar6) {
+          iVar4 = x + -9;
+          iVar6 = iVar4;
+          iVar3 = iVar8;
+          if (1 < iVar8) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar6 = extraout_w11_45;
+              iVar5 = extraout_w10_50;
+              iVar7 = extraout_w8_52;
+              iVar2 = extraout_w9_54;
+            }
+            iVar3 = x + -10;
+            if (1 < iVar3) {
+              iVar3 = fib2(iVar3);
+              iVar6 = extraout_w11_46;
+              iVar5 = extraout_w10_51;
+              iVar7 = extraout_w8_53;
+              iVar2 = extraout_w9_55;
+            }
+            iVar3 = iVar3 + iVar4;
+          }
+          if (1 < iVar6) {
+            iVar4 = x + -10;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar5 = extraout_w10_52;
+              iVar7 = extraout_w8_54;
+              iVar2 = extraout_w9_56;
+            }
+            iVar6 = x + -0xb;
+            if (1 < iVar6) {
+              iVar6 = fib2(iVar6);
+              iVar4 = extraout_w11_47;
+              iVar5 = extraout_w10_53;
+              iVar7 = extraout_w8_55;
+              iVar2 = extraout_w9_57;
+            }
+            iVar6 = iVar6 + iVar4;
+          }
+          iVar6 = iVar6 + iVar3;
+        }
+        if (1 < iVar8) {
+          iVar3 = x + -9;
+          iVar4 = x + -10;
+          iVar8 = iVar4;
+          if (1 < iVar3) {
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar6 = extraout_w11_48;
+              iVar5 = extraout_w10_54;
+              iVar7 = extraout_w8_56;
+              iVar2 = extraout_w9_58;
+            }
             iVar3 = x + -0xb;
             if (1 < iVar3) {
               iVar3 = fib2(iVar3);
-              iVar6 = extraout_w11_50;
-              iVar2 = extraout_w10_56;
-              iVar8 = extraout_w8_58;
-              iVar4 = extraout_w9_60;
+              iVar6 = extraout_w11_49;
+              iVar5 = extraout_w10_55;
+              iVar7 = extraout_w8_57;
+              iVar2 = extraout_w9_59;
             }
-            iVar9 = x + -0xc;
-            if (1 < iVar9) {
-              iVar9 = fib2(iVar9);
-              iVar6 = extraout_w11_51;
-              iVar2 = extraout_w10_57;
-              iVar8 = extraout_w8_59;
-              iVar4 = extraout_w9_61;
-            }
-            iVar9 = iVar9 + iVar3;
+            iVar3 = iVar3 + iVar4;
           }
-          iVar9 = iVar9 + iVar7;
+          if (1 < iVar8) {
+            iVar4 = x + -0xb;
+            if (1 < iVar4) {
+              iVar4 = fib2(iVar4);
+              iVar6 = extraout_w11_50;
+              iVar5 = extraout_w10_56;
+              iVar7 = extraout_w8_58;
+              iVar2 = extraout_w9_60;
+            }
+            iVar8 = x + -0xc;
+            if (1 < iVar8) {
+              iVar8 = fib2(iVar8);
+              iVar6 = extraout_w11_51;
+              iVar5 = extraout_w10_57;
+              iVar7 = extraout_w8_59;
+              iVar2 = extraout_w9_61;
+            }
+            iVar8 = iVar8 + iVar4;
+          }
+          iVar8 = iVar8 + iVar3;
         }
-        iVar9 = iVar9 + iVar6;
+        iVar8 = iVar8 + iVar6;
       }
-      iVar9 = iVar9 + iVar2;
+      iVar8 = iVar8 + iVar5;
     }
-    iVar9 = iVar9 + iVar8;
+    iVar8 = iVar8 + iVar7;
   }
-  return iVar9 + iVar4;
+  return iVar8 + iVar2;
 }
 
 

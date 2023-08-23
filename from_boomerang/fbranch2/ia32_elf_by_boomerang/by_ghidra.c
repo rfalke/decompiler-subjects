@@ -110,6 +110,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -176,6 +177,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -232,7 +244,17 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_080482e0(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -245,7 +267,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -267,7 +289,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -289,10 +311,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -346,17 +371,16 @@ undefined4 main(void)
   
   local_8 = 5.0;
   scanf("%f",&local_c);
-  printf("a is %f, b is %f\n",(double)local_8);
-  if ((char)((uint)(ushort)((ushort)(local_8 < local_c) << 8 | (ushort)(local_8 == local_c) << 0xe)
-            >> 8) == '@') {
+  printf("a is %f, b is %f\n",(double)local_8,(double)local_c);
+  if ((byte)(local_8 < local_c | (byte)((ushort)((ushort)(local_8 == local_c) << 0xe) >> 8)) == 0x40
+     ) {
     puts("Equal");
   }
-  if ((char)((uint)(ushort)((ushort)(local_8 < local_c) << 8 | (ushort)(local_8 == local_c) << 0xe)
-            >> 8) != '@') {
+  if ((byte)(local_8 < local_c | (byte)((ushort)((ushort)(local_8 == local_c) << 0xe) >> 8)) != 0x40
+     ) {
     puts("Not Equal");
   }
-  if ((char)((uint)(ushort)((ushort)(local_8 < local_c) << 8 | (ushort)(local_8 == local_c) << 0xe)
-            >> 8) == '\0') {
+  if (local_c < local_8) {
     puts("Greater");
   }
   if (local_8 <= local_c) {
@@ -365,8 +389,7 @@ undefined4 main(void)
   if (local_c <= local_8) {
     puts("Greater or Equal");
   }
-  if ((char)((uint)(ushort)((ushort)(local_c < local_8) << 8 | (ushort)(local_c == local_8) << 0xe)
-            >> 8) == '\0') {
+  if (local_8 < local_c) {
     puts("Less");
   }
   return 0;

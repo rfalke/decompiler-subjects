@@ -147,6 +147,7 @@ typedef enum Elf32_DynTag_PPC {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -175,6 +176,17 @@ typedef enum Elf32_DynTag_PPC {
 struct Elf32_Dyn_PPC {
     enum Elf32_DynTag_PPC d_tag;
     dword d_val;
+};
+
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
 };
 
 typedef struct Elf32_Rela Elf32_Rela, *PElf32_Rela;
@@ -264,6 +276,7 @@ void __do_global_dtors_aux(void)
   code *pcVar1;
   
   if (completed_1 == '\0') {
+    completed_1 = 0;
     pcVar1 = *(code **)p_0;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
@@ -286,6 +299,7 @@ void call___do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x10000410)
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -1985,15 +1999,17 @@ void _restgpr_31_x(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void __do_global_ctors_aux(void)
 
 {
   code *pcVar1;
   code **ppcVar2;
   
-  ppcVar2 = &__CTOR_LIST__;
-  pcVar1 = __CTOR_LIST__;
-  if (__CTOR_LIST__ != (code *)0xffffffff) {
+  ppcVar2 = (code **)&__CTOR_LIST__;
+  pcVar1 = ___CTOR_LIST__;
+  if (___CTOR_LIST__ != (code *)0xffffffff) {
     do {
       (*pcVar1)();
       ppcVar2 = ppcVar2 + -1;
@@ -2022,7 +2038,7 @@ void _fini(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -2044,7 +2060,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 

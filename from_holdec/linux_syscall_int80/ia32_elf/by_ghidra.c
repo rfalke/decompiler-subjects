@@ -108,7 +108,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Control flow encountered bad instruction data
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;

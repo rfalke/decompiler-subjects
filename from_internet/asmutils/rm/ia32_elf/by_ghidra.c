@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -35,7 +62,7 @@ struct Elf32_Ehdr {
 
 
 
-void entry(undefined4 param_1,short *param_2)
+void processEntry entry(undefined4 param_1,int param_2,undefined4 param_3,short *param_4)
 
 {
   ushort *puVar1;
@@ -49,24 +76,23 @@ void entry(undefined4 param_1,short *param_2)
   int *piVar6;
   undefined4 *puVar7;
   int *piVar8;
-  int unaff_EBP;
+  int unaff_retaddr;
   int *piVar9;
   int iVar10;
   int iVar11;
   bool bVar12;
   undefined uVar13;
   undefined8 uVar14;
-  int unaff_retaddr;
   
-  piVar9 = &param_1;
-  if (1 < unaff_retaddr) {
-    unaff_EBP = 0;
-    if (*param_2 == 0x722d) {
-      unaff_EBP = 1;
+  piVar9 = &param_3;
+  if (1 < param_2) {
+    unaff_retaddr = 0;
+    if (*param_4 == 0x722d) {
+      unaff_retaddr = 1;
       piVar9 = (int *)&stack0x0000000c;
     }
     else {
-      piVar9 = (int *)&param_2;
+      piVar9 = (int *)&param_4;
     }
     while( true ) {
       piVar6 = piVar9;
@@ -78,7 +104,7 @@ void entry(undefined4 param_1,short *param_2)
       FUN_08048177();
       if (bVar12) {
         piVar9 = piVar6 + 1;
-        if (unaff_EBP != 0) {
+        if (unaff_retaddr != 0) {
           *piVar6 = iVar10;
           piVar6[-1] = 0x804807c;
           FUN_08048094();
@@ -99,7 +125,7 @@ void entry(undefined4 param_1,short *param_2)
   piVar9[-1] = 1;
   pcVar3 = (code *)swi(0x80);
   (*pcVar3)();
-  *piVar9 = unaff_EBP;
+  *piVar9 = unaff_retaddr;
   bVar12 = piVar9 == (int *)0x110e;
   *(undefined4 *)((int)piVar9 + -0x1112) = 0x80480a5;
   FUN_08048177();
@@ -196,17 +222,17 @@ void FUN_08048094(void)
   bool bVar11;
   undefined uVar12;
   undefined8 uVar13;
-  int aiStack4406 [1099];
+  int aiStack_1136 [1099];
   int local_8;
   
   puVar9 = &stack0xfffffffc;
-  bVar11 = (undefined *)register0x00000010 == (undefined *)0x1112;
+  bVar11 = &stack0x00000000 == (undefined *)0x1112;
   FUN_08048177();
   if (bVar11) {
     pcVar3 = (code *)swi(0x80);
     local_8 = (*pcVar3)();
     if (-1 < local_8) {
-      piVar7 = aiStack4406 + 10;
+      piVar7 = aiStack_1136 + 10;
       while( true ) {
         puVar5 = *(undefined **)(puVar9 + -4);
         pcVar3 = (code *)swi(0x80);

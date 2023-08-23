@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -300,7 +301,7 @@ void FUN_00401140(void)
   
   SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)&LAB_00401000);
   FUN_00401580();
-  local_c = 0;
+  local_c.newmode = 0;
   __getmainargs(&DAT_00406004,(char ***)&DAT_00406000,&local_10,DAT_00404000,&local_c);
   if (DAT_00406040 != 0) {
     DAT_00404010 = DAT_00406040;
@@ -336,14 +337,31 @@ void entry(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void FUN_004012a0(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x004012aa. Too many branches
                     // WARNING: Treating indirect jump as call
   atexit();
+  return;
+}
+
+
+
+void FUN_004012c0(void)
+
+{
+  FUN_00402c00();
+  FUN_004019f0((int *)&DAT_00405160,(undefined4 *)&DAT_00406010);
+  return;
+}
+
+
+
+void FUN_004012f0(void)
+
+{
+  FUN_00401d50((int *)&DAT_00405160);
   return;
 }
 
@@ -486,16 +504,12 @@ void FUN_00401580(void)
 
 
 
-void FUN_00401620(void)
+void FUN_004015c0(void)
 
 {
   int iVar1;
   bool bVar2;
   
-  if (DAT_00406050 != 0) {
-    return;
-  }
-  DAT_00406050 = 1;
   iVar1 = 0;
   bVar2 = false;
   while (!bVar2) {
@@ -506,6 +520,19 @@ void FUN_00401620(void)
     (*(code *)(&DAT_00403030)[iVar1])();
   }
   FUN_004012a0();
+  return;
+}
+
+
+
+void FUN_00401620(void)
+
+{
+  if (DAT_00406050 != 0) {
+    return;
+  }
+  DAT_00406050 = 1;
+  FUN_004015c0();
   return;
 }
 
@@ -653,7 +680,7 @@ void __cdecl FUN_004019f0(int *param_1,undefined4 *param_2)
 
 
 
-int __cdecl FUN_00401d50(int *param_1)
+int __cdecl FUN_00401bc0(int *param_1)
 
 {
   LONG *lpAddend;
@@ -718,6 +745,15 @@ LAB_00401c4d:
 
 
 
+void __cdecl FUN_00401d50(int *param_1)
+
+{
+  FUN_00401bc0(param_1);
+  return;
+}
+
+
+
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 int * FUN_00402b60(void)
@@ -732,32 +768,32 @@ int * FUN_00402b60(void)
   int iVar6;
   int iVar7;
   int *piVar8;
-  CHAR aCStack248 [32];
-  undefined4 uStack216;
-  undefined4 uStack212;
-  undefined4 uStack208;
-  undefined4 uStack204;
-  undefined4 uStack200;
-  undefined4 uStack196;
-  undefined4 uStack192;
-  undefined uStack188;
-  undefined4 uStack184;
-  undefined4 uStack180;
-  undefined4 uStack176;
-  undefined4 uStack172;
-  undefined4 uStack168;
-  undefined4 uStack164;
-  undefined4 uStack160;
-  undefined4 uStack156;
-  undefined4 uStack152;
-  undefined4 uStack148;
-  undefined4 uStack144;
-  undefined4 uStack140;
-  undefined4 uStack136;
-  undefined4 uStack132;
-  undefined4 uStack128;
-  undefined uStack124;
-  undefined4 uStack108;
+  CHAR aCStack_f8 [32];
+  undefined4 uStack_d8;
+  undefined4 uStack_d4;
+  undefined4 uStack_d0;
+  undefined4 uStack_cc;
+  undefined4 uStack_c8;
+  undefined4 uStack_c4;
+  undefined4 uStack_c0;
+  undefined uStack_bc;
+  undefined4 uStack_b8;
+  undefined4 uStack_b4;
+  undefined4 uStack_b0;
+  undefined4 uStack_ac;
+  undefined4 uStack_a8;
+  undefined4 uStack_a4;
+  undefined4 uStack_a0;
+  undefined4 uStack_9c;
+  undefined4 uStack_98;
+  undefined4 uStack_94;
+  undefined4 uStack_90;
+  undefined4 uStack_8c;
+  undefined4 uStack_88;
+  undefined4 uStack_84;
+  undefined4 uStack_80;
+  undefined uStack_7c;
+  undefined4 uStack_6c;
   CHAR local_4c [68];
   
   piVar8 = (int *)0x0;
@@ -782,27 +818,48 @@ LAB_00402baa:
     _assert();
   }
   piVar8 = (int *)_assert();
-  uStack108 = 0xf1;
+  uStack_6c = 0xf1;
   if (DAT_004060c0 != (int *)0x0) {
     return piVar8;
   }
-  uStack184 = 0x41414141;
-  uStack180 = 0x41414141;
-  uStack176 = 0x41414141;
-  uStack152 = 0x42494c2d;
-  uStack172 = 0x41414141;
-  uStack168 = 0x41414141;
-  uStack148 = 0x57434347;
-  uStack164 = 0x41414141;
-  uStack160 = 0x41414141;
-  uStack144 = 0x452d3233;
-  uStack156 = 0x41414141;
-  uStack140 = 0x2d332d48;
-  uStack136 = 0x52485447;
-  uStack132 = 0x4e494d2d;
-  uStack128 = 0x32335747;
-  uStack124 = 0;
-  AVar1 = FindAtomA((LPCSTR)&uStack184);
+  uStack_b8 = 0x41414141;
+  uStack_b4 = 0x41414141;
+  uStack_b0 = 0x41414141;
+  uStack_98._0_1_ = '-';
+  uStack_98._1_1_ = 'L';
+  uStack_98._2_1_ = 'I';
+  uStack_98._3_1_ = 'B';
+  uStack_ac = 0x41414141;
+  uStack_a8 = 0x41414141;
+  uStack_94._0_1_ = 'G';
+  uStack_94._1_1_ = 'C';
+  uStack_94._2_1_ = 'C';
+  uStack_94._3_1_ = 'W';
+  uStack_a4 = 0x41414141;
+  uStack_a0 = 0x41414141;
+  uStack_90._0_1_ = '3';
+  uStack_90._1_1_ = '2';
+  uStack_90._2_1_ = '-';
+  uStack_90._3_1_ = 'E';
+  uStack_9c = 0x41414141;
+  uStack_8c._0_1_ = 'H';
+  uStack_8c._1_1_ = '-';
+  uStack_8c._2_1_ = '3';
+  uStack_8c._3_1_ = '-';
+  uStack_88._0_1_ = 'G';
+  uStack_88._1_1_ = 'T';
+  uStack_88._2_1_ = 'H';
+  uStack_88._3_1_ = 'R';
+  uStack_84._0_1_ = '-';
+  uStack_84._1_1_ = 'M';
+  uStack_84._2_1_ = 'I';
+  uStack_84._3_1_ = 'N';
+  uStack_80._0_1_ = 'G';
+  uStack_80._1_1_ = 'W';
+  uStack_80._2_1_ = '3';
+  uStack_80._3_1_ = '2';
+  uStack_7c = 0;
+  AVar1 = FindAtomA((LPCSTR)&uStack_b8);
   if (AVar1 == 0) {
     piVar8 = (int *)malloc(0x40);
     if (piVar8 == (int *)0x0) {
@@ -840,29 +897,50 @@ LAB_00402baa:
     do {
       uVar3 = (uint)piVar8 & uVar5;
       uVar5 = uVar5 * 2;
-      aCStack248[iVar7] = (-(uVar3 == 0) & 0x20U) + 0x41;
+      aCStack_f8[iVar7] = (-(uVar3 == 0) & 0x20U) + 0x41;
       iVar7 = iVar7 + -1;
     } while (-1 < iVar7);
-    uStack216 = 0x42494c2d;
-    uStack212 = 0x57434347;
-    uStack208 = 0x452d3233;
-    uStack204 = 0x2d332d48;
-    uStack200 = 0x52485447;
-    uStack196 = 0x4e494d2d;
-    uStack192 = 0x32335747;
-    uStack188 = 0;
-    AVar1 = AddAtomA(aCStack248);
+    uStack_d8._0_1_ = '-';
+    uStack_d8._1_1_ = 'L';
+    uStack_d8._2_1_ = 'I';
+    uStack_d8._3_1_ = 'B';
+    uStack_d4._0_1_ = 'G';
+    uStack_d4._1_1_ = 'C';
+    uStack_d4._2_1_ = 'C';
+    uStack_d4._3_1_ = 'W';
+    uStack_d0._0_1_ = '3';
+    uStack_d0._1_1_ = '2';
+    uStack_d0._2_1_ = '-';
+    uStack_d0._3_1_ = 'E';
+    uStack_cc._0_1_ = 'H';
+    uStack_cc._1_1_ = '-';
+    uStack_cc._2_1_ = '3';
+    uStack_cc._3_1_ = '-';
+    uStack_c8._0_1_ = 'G';
+    uStack_c8._1_1_ = 'T';
+    uStack_c8._2_1_ = 'H';
+    uStack_c8._3_1_ = 'R';
+    uStack_c4._0_1_ = '-';
+    uStack_c4._1_1_ = 'M';
+    uStack_c4._2_1_ = 'I';
+    uStack_c4._3_1_ = 'N';
+    uStack_c0._0_1_ = 'G';
+    uStack_c0._1_1_ = 'W';
+    uStack_c0._2_1_ = '3';
+    uStack_c0._3_1_ = '2';
+    uStack_bc = 0;
+    AVar1 = AddAtomA(aCStack_f8);
     if ((AVar1 == 0) || (piVar4 = FUN_00402b60(), piVar4 != piVar8)) {
       AVar1 = 0;
     }
     if (AVar1 != 0) goto LAB_00402de6;
     free(piVar8);
-    FindAtomA((LPCSTR)&uStack184);
+    FindAtomA((LPCSTR)&uStack_b8);
   }
   piVar8 = FUN_00402b60();
 LAB_00402de6:
-  _DAT_004060b0 = piVar8 + 1;
   DAT_004060c0 = piVar8;
+  _DAT_004060b0 = piVar8 + 1;
   _DAT_004060d0 = piVar8 + 2;
   return piVar8 + 2;
 }
@@ -913,18 +991,39 @@ void FUN_00402c00(void)
   local_5c = 0x41414141;
   local_58 = 0x41414141;
   local_54 = 0x41414141;
-  local_3c = 0x42494c2d;
+  local_3c._0_1_ = '-';
+  local_3c._1_1_ = 'L';
+  local_3c._2_1_ = 'I';
+  local_3c._3_1_ = 'B';
   local_50 = 0x41414141;
   local_4c = 0x41414141;
-  local_38 = 0x57434347;
+  local_38._0_1_ = 'G';
+  local_38._1_1_ = 'C';
+  local_38._2_1_ = 'C';
+  local_38._3_1_ = 'W';
   local_48 = 0x41414141;
   local_44 = 0x41414141;
-  local_34 = 0x452d3233;
+  local_34._0_1_ = '3';
+  local_34._1_1_ = '2';
+  local_34._2_1_ = '-';
+  local_34._3_1_ = 'E';
   local_40 = 0x41414141;
-  local_30 = 0x2d332d48;
-  local_2c = 0x52485447;
-  local_28 = 0x4e494d2d;
-  local_24 = 0x32335747;
+  local_30._0_1_ = 'H';
+  local_30._1_1_ = '-';
+  local_30._2_1_ = '3';
+  local_30._3_1_ = '-';
+  local_2c._0_1_ = 'G';
+  local_2c._1_1_ = 'T';
+  local_2c._2_1_ = 'H';
+  local_2c._3_1_ = 'R';
+  local_28._0_1_ = '-';
+  local_28._1_1_ = 'M';
+  local_28._2_1_ = 'I';
+  local_28._3_1_ = 'N';
+  local_24._0_1_ = 'G';
+  local_24._1_1_ = 'W';
+  local_24._2_1_ = '3';
+  local_24._3_1_ = '2';
   local_20 = 0;
   AVar1 = FindAtomA((LPCSTR)&local_5c);
   if (AVar1 == 0) {
@@ -967,13 +1066,34 @@ void FUN_00402c00(void)
       local_9c[iVar6] = (-(uVar2 == 0) & 0x20U) + 0x41;
       iVar6 = iVar6 + -1;
     } while (-1 < iVar6);
-    local_7c = 0x42494c2d;
-    local_78 = 0x57434347;
-    local_74 = 0x452d3233;
-    local_70 = 0x2d332d48;
-    local_6c = 0x52485447;
-    local_68 = 0x4e494d2d;
-    local_64 = 0x32335747;
+    local_7c._0_1_ = '-';
+    local_7c._1_1_ = 'L';
+    local_7c._2_1_ = 'I';
+    local_7c._3_1_ = 'B';
+    local_78._0_1_ = 'G';
+    local_78._1_1_ = 'C';
+    local_78._2_1_ = 'C';
+    local_78._3_1_ = 'W';
+    local_74._0_1_ = '3';
+    local_74._1_1_ = '2';
+    local_74._2_1_ = '-';
+    local_74._3_1_ = 'E';
+    local_70._0_1_ = 'H';
+    local_70._1_1_ = '-';
+    local_70._2_1_ = '3';
+    local_70._3_1_ = '-';
+    local_6c._0_1_ = 'G';
+    local_6c._1_1_ = 'T';
+    local_6c._2_1_ = 'H';
+    local_6c._3_1_ = 'R';
+    local_68._0_1_ = '-';
+    local_68._1_1_ = 'M';
+    local_68._2_1_ = 'I';
+    local_68._3_1_ = 'N';
+    local_64._0_1_ = 'G';
+    local_64._1_1_ = 'W';
+    local_64._2_1_ = '3';
+    local_64._3_1_ = '2';
     local_60 = 0;
     AVar1 = AddAtomA(local_9c);
     if ((AVar1 == 0) || (piVar3 = FUN_00402b60(), piVar3 != _Memory)) {
@@ -985,8 +1105,8 @@ void FUN_00402c00(void)
   }
   _Memory = FUN_00402b60();
 LAB_00402de6:
-  _DAT_004060b0 = _Memory + 1;
   DAT_004060c0 = _Memory;
+  _DAT_004060b0 = _Memory + 1;
   _DAT_004060d0 = _Memory + 2;
   return;
 }
@@ -1025,8 +1145,6 @@ void __p__fmode(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 int __cdecl
 __getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinfo *_StartInfo)
 
@@ -1035,13 +1153,11 @@ __getmainargs(int *_Argc,char ***_Argv,char ***_Env,int _DoWildCard,_startupinfo
   
                     // WARNING: Could not recover jumptable at 0x00402eb0. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = __getmainargs();
+  iVar1 = __getmainargs(_Argc,_Argv,_Env,_DoWildCard,_StartInfo);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl scanf(char *_Format,...)
 
@@ -1050,13 +1166,11 @@ int __cdecl scanf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00402ec0. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = scanf();
+  iVar1 = scanf(_Format);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 size_t __cdecl strlen(char *_Str)
 
@@ -1065,13 +1179,11 @@ size_t __cdecl strlen(char *_Str)
   
                     // WARNING: Could not recover jumptable at 0x00402ed0. Too many branches
                     // WARNING: Treating indirect jump as call
-  sVar1 = strlen();
+  sVar1 = strlen(_Str);
   return sVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl sscanf(char *_Src,char *_Format,...)
 
@@ -1080,13 +1192,11 @@ int __cdecl sscanf(char *_Src,char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00402ee0. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = sscanf();
+  iVar1 = sscanf(_Src,_Format);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl printf(char *_Format,...)
 
@@ -1095,26 +1205,23 @@ int __cdecl printf(char *_Format,...)
   
                     // WARNING: Could not recover jumptable at 0x00402ef0. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = printf();
+  iVar1 = printf(_Format);
   return iVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl exit(int _Code)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402f00. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  exit();
+  exit(_Code);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 int __cdecl strncmp(char *_Str1,char *_Str2,size_t _MaxCount)
 
@@ -1123,26 +1230,22 @@ int __cdecl strncmp(char *_Str1,char *_Str2,size_t _MaxCount)
   
                     // WARNING: Could not recover jumptable at 0x00402f10. Too many branches
                     // WARNING: Treating indirect jump as call
-  iVar1 = strncmp();
+  iVar1 = strncmp(_Str1,_Str2,_MaxCount);
   return iVar1;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void __cdecl free(void *_Memory)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402f20. Too many branches
                     // WARNING: Treating indirect jump as call
-  free();
+  free(_Memory);
   return;
 }
 
 
-
-// WARNING: Exceeded maximum restarts with more pending
 
 void * __cdecl malloc(size_t _Size)
 
@@ -1151,18 +1254,17 @@ void * __cdecl malloc(size_t _Size)
   
                     // WARNING: Could not recover jumptable at 0x00402f30. Too many branches
                     // WARNING: Treating indirect jump as call
-  pvVar1 = (void *)malloc();
+  pvVar1 = malloc(_Size);
   return pvVar1;
 }
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void __cdecl abort(void)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402f40. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
   abort();
   return;
@@ -1181,14 +1283,13 @@ void _assert(void)
 
 
 
-// WARNING: Exceeded maximum restarts with more pending
-
 void ExitProcess(UINT uExitCode)
 
 {
                     // WARNING: Could not recover jumptable at 0x00402f60. Too many branches
+                    // WARNING: Subroutine does not return
                     // WARNING: Treating indirect jump as call
-  ExitProcess();
+  ExitProcess(uExitCode);
   return;
 }
 
@@ -1327,7 +1428,7 @@ ATOM FindAtomA(LPCSTR lpString)
 void FUN_00403020(void)
 
 {
-  FUN_00401d50((int *)&DAT_00405160);
+  FUN_004012f0();
   return;
 }
 

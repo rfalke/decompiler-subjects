@@ -81,6 +81,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -196,6 +197,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -204,14 +216,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -271,7 +283,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -2068,14 +2080,13 @@ undefined8 main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -5071,9 +5082,12 @@ undefined8 inst_156_flags_var_0(void)
 long inst_157_values_var_0(void)
 
 {
-  return SUB168(CONCAT88(0x1c07051faa1c4e79,0x75b800dfac5f90e6) / ZEXT816(0xdc11658cef0813fd),0) +
-         SUB168(CONCAT88(0x1c07051faa1c4e79,0x75b800dfac5f90e6) % ZEXT816(0xdc11658cef0813fd),0) +
-         0x78d0c9d9dc8a946e;
+  undefined auVar1 [16];
+  
+  auVar1._8_8_ = 0x1c07051faa1c4e79;
+  auVar1._0_8_ = 0x75b800dfac5f90e6;
+  return SUB168(auVar1 / ZEXT816(0xdc11658cef0813fd),0) +
+         SUB168(auVar1 % ZEXT816(0xdc11658cef0813fd),0) + 0x78d0c9d9dc8a946e;
 }
 
 
@@ -5140,8 +5154,7 @@ undefined8 inst_160_flags_var_0(void)
 long inst_161_values_var_0(void)
 
 {
-  return SUB168(SEXT816(-0x748a3affd30653fb) * SEXT816(0x3218d496f43541da) >> 0x40,0) +
-         0x16ce4d42b039707b;
+  return SUB168(SEXT816(-0x748a3affd30653fb) * SEXT816(0x3218d496f43541da),8) + 0x16ce4d42b039707b;
 }
 
 
@@ -5327,8 +5340,7 @@ long inst_171_values_var_0(void)
 
 {
   return SUB168(ZEXT816(0x2c254f2bf50e43ff) * ZEXT816(0xc882714b4bc43872),0) +
-         SUB168(ZEXT816(0x2c254f2bf50e43ff) * ZEXT816(0xc882714b4bc43872) >> 0x40,0) +
-         -0x49a4cb11032d0376;
+         SUB168(ZEXT816(0x2c254f2bf50e43ff) * ZEXT816(0xc882714b4bc43872),8) + -0x49a4cb11032d0376;
 }
 
 
@@ -5339,7 +5351,7 @@ long inst_171_flags_var_0(void)
   long lVar1;
   bool bVar2;
   
-  bVar2 = SUB168(ZEXT816(0x117652fb15044a09) * ZEXT816(0x7e9f718a618dd6d8) >> 0x40,0) != 0;
+  bVar2 = SUB168(ZEXT816(0x117652fb15044a09) * ZEXT816(0x7e9f718a618dd6d8),8) != 0;
   lVar1 = 0;
   if (bVar2) {
     lVar1 = 2;
@@ -5354,8 +5366,7 @@ long inst_172_values_var_0(void)
 {
   char in_AF;
   
-  return ((ulong)(ushort)(CONCAT11(in_AF << 4 | 4,0x9a) | 0x300) | 0x39a4a8b4870c0000) +
-         0xc65b574b78f3e866;
+  return (CONCAT62(0x39a4a8b4870c,CONCAT11(in_AF << 4 | 4,0x9a)) | 0x300) + 0xc65b574b78f3e866;
 }
 
 
@@ -7822,7 +7833,7 @@ long inst_317_values_var_0(void)
   undefined auVar1 [16];
   
   auVar1 = ZEXT116(1) << 0x40 | ZEXT816(0x2000c7eb49807be1);
-  return (SUB168(auVar1 << 9,0) | SUB168(auVar1 >> 0x38,0)) + 0xfe70296cff083ce0;
+  return (SUB168(auVar1 << 9,0) | auVar1._7_8_) + 0xfe70296cff083ce0;
 }
 
 

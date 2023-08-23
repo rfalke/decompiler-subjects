@@ -3,6 +3,33 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -32,12 +59,12 @@ struct Elf32_Ehdr {
 
 
 
-void entry(void)
+void processEntry entry(undefined4 param_1,int param_2)
 
 {
   char cVar1;
   code *pcVar2;
-  uint uVar3;
+  int iVar3;
   byte bVar4;
   int extraout_EDX;
   short *psVar5;
@@ -51,12 +78,11 @@ void entry(void)
   byte *pbVar13;
   bool bVar14;
   byte bVar15;
-  int unaff_retaddr;
   
   bVar15 = 0;
   ppsVar6 = (short **)&stack0x00000004;
   ppsVar8 = (short **)&stack0x00000004;
-  if (unaff_retaddr != 1) goto LAB_08048057;
+  if (param_2 != 1) goto LAB_08048057;
 LAB_08048050:
   do {
     *(undefined4 *)((int)ppsVar8 + -4) = 1;
@@ -84,18 +110,18 @@ LAB_08048057:
       pbVar12 = (byte *)ppsVar7[1];
       ppsVar8 = ppsVar7 + 2;
       if (pbVar12 == (byte *)0x0) break;
-      uVar3 = 0;
+      iVar3 = 0;
       ppsVar7[1] = (short *)0x8;
       pbVar13 = pbVar12;
       while( true ) {
         bVar4 = *pbVar13 - 0x30;
         if ((*pbVar13 < 0x30) || (7 < bVar4)) break;
-        uVar3 = (uVar3 & 0xffff0000 | (uint)(ushort)((ushort)(byte)uVar3 * (ushort)(byte)ppsVar7[1])
-                ) + (uint)bVar4;
+        iVar3 = CONCAT22((short)((uint)iVar3 >> 0x10),(ushort)(byte)iVar3 * (ushort)(byte)ppsVar7[1]
+                        ) + (uint)bVar4;
         pbVar13 = pbVar13 + 1;
       }
       ppsVar8 = ppsVar7 + 2;
-      if ((pbVar12 == pbVar13) || (ppsVar8 = ppsVar7 + 2, ppsVar7 = ppsVar7 + 2, uVar3 == 0)) break;
+      if ((pbVar12 == pbVar13) || (ppsVar8 = ppsVar7 + 2, ppsVar7 = ppsVar7 + 2, iVar3 == 0)) break;
     }
   } while( true );
 LAB_080480a8:
@@ -143,19 +169,24 @@ LAB_080480cc:
 
 
 
-undefined4 __regparm3 FUN_080480ee(undefined4 param_1)
+uint __regparm3 FUN_080480ee(uint param_1)
 
 {
   char cVar1;
+  uint uVar2;
+  int iVar3;
   char *unaff_ESI;
   
+  iVar3 = (param_1 & 0xff) << 8;
   do {
     cVar1 = *unaff_ESI;
     if (cVar1 == '\0') {
       return param_1;
     }
+    uVar2 = (uint)iVar3 >> 8;
+    iVar3 = CONCAT31((int3)((uint)iVar3 >> 8),cVar1);
     unaff_ESI = unaff_ESI + 1;
-  } while (cVar1 != (char)param_1);
+  } while (cVar1 != (char)uVar2);
   return param_1;
 }
 

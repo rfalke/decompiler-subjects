@@ -32,19 +32,19 @@ struct fde_table_entry {
     dword data_loc; // Data location
 };
 
+typedef uint size_t;
+
+typedef int __off_t;
+
+typedef longlong __quad_t;
+
 typedef void _IO_lock_t;
 
 typedef struct _IO_marker _IO_marker, *P_IO_marker;
 
 typedef struct _IO_FILE _IO_FILE, *P_IO_FILE;
 
-typedef long __off_t;
-
-typedef longlong __quad_t;
-
 typedef __quad_t __off64_t;
-
-typedef uint size_t;
 
 struct _IO_FILE {
     int _flags;
@@ -141,6 +141,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -254,6 +255,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -261,14 +273,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -310,12 +322,22 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
+}
+
+
+
+void FUN_0804831c(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
 }
 
 
@@ -338,7 +360,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
@@ -349,7 +371,7 @@ void __assert_fail(char *__assertion,char *__file,uint __line,char *__function)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -362,10 +384,13 @@ int printf(char *__format,...)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -808,20 +833,25 @@ undefined8 __regparm3 integer_sqrt_in_asm(undefined4 param_1,undefined4 param_2)
 
 
 
+// WARNING: Unknown calling convention
+
 uint integer_sqrt_in_c(uint n)
 
 {
   ushort uVar1;
   ushort uVar2;
+  ushort ax;
+  ushort dx;
   ushort uVar3;
-  uint uVar4;
   ushort uVar5;
   ushort uVar6;
   bool bVar7;
+  ushort tmp;
   ushort local_1a;
   int local_18;
   ushort local_14;
   ushort local_12;
+  uint uVar4;
   
   uVar1 = 0;
   local_18 = 0;
@@ -864,6 +894,8 @@ uint integer_sqrt_in_c(uint n)
 
 
 
+// WARNING: Unknown calling convention
+
 uint integer_sqrt_in_c_cleaned_up(uint n)
 
 {
@@ -872,6 +904,7 @@ uint integer_sqrt_in_c_cleaned_up(uint n)
   uint uVar3;
   int iVar4;
   bool bVar5;
+  ulonglong cmp;
   
   uVar2 = 0;
   uVar1 = 0;
@@ -895,16 +928,22 @@ uint integer_sqrt_in_c_cleaned_up(uint n)
 
 
 
-undefined4 main(void)
+// WARNING: Unknown calling convention
+
+int main(void)
 
 {
   uint uVar1;
+  int y;
   uint uVar2;
+  int c1;
   uint uVar3;
   uint uVar4;
   uint uVar5;
+  int c2;
   uint uVar6;
   bool bVar7;
+  int check;
   int local_54;
   int local_50;
   uint local_44;
@@ -933,8 +972,8 @@ undefined4 main(void)
       uVar3 = uVar3 << 2;
     }
     printf("f(%3u) = %d | c1=%d | c2=%d | using-float=%d\n",local_44,uVar1,uVar2,uVar4 & 0xffff,
-           (int)ROUND(SQRT((float10)(ulonglong)local_44)));
-    if ((int)ROUND(SQRT((float10)(ulonglong)local_44)) != uVar1) {
+           (int)ROUND(SQRT((longdouble)(ulonglong)local_44)));
+    if ((int)ROUND(SQRT((longdouble)(ulonglong)local_44)) != uVar1) {
                     // WARNING: Subroutine does not return
       __assert_fail("check == y","source/main.c",0x4f,"main");
     }

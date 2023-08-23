@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
@@ -51,7 +52,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -65,6 +66,9 @@ typedef struct _IO_FILE FILE;
 typedef ulong sizetype;
 
 
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
+
+
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
 
 
@@ -73,9 +77,9 @@ typedef ulong sizetype;
 
 // WARNING! conflicting data type names: /DWARF/stdio.h/FILE - /stdio.h/FILE
 
-typedef struct anon_struct.conflict91 anon_struct.conflict91, *Panon_struct.conflict91;
+typedef struct anon_struct_32_6_756537f9 anon_struct_32_6_756537f9, *Panon_struct_32_6_756537f9;
 
-struct anon_struct.conflict91 {
+struct anon_struct_32_6_756537f9 {
     int cresult;
     int iresult;
     int cprsult;
@@ -224,6 +228,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -252,6 +257,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -271,14 +287,14 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -330,7 +346,7 @@ void FUN_00400560(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -341,7 +357,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -354,7 +370,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -385,7 +401,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -396,7 +412,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int _IO_putc(int __c,_IO_FILE *__fp)
 
@@ -409,7 +425,7 @@ int _IO_putc(int __c,_IO_FILE *__fp)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -425,10 +441,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -480,8 +495,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400728)
 // WARNING: Removing unreachable block (ram,0x00400730)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -493,29 +508,37 @@ void frame_dummy(void)
 
 
 // WARNING: Variable defined which should be unmapped: buf1
-// WARNING: Could not reconcile some variable overlaps
+// WARNING: Unknown calling convention
 
 int main(void)
 
 {
-  long lVar1;
-  char *__format;
+  int iVar1;
+  long lVar2;
+  double dVar3;
   double dmath;
   long square;
   int i;
   char buf2 [100];
+  int in_stack_fffffffffffffec8;
+  int in_stack_fffffffffffffecc;
+  int in_stack_fffffffffffffed8;
+  int in_stack_fffffffffffffedc;
   int local_f0;
-  char acStack236 [100];
-  char acStack136 [16];
+  char acStack_ec [100];
+  char acStack_88 [16];
   char buf1 [100];
   
-  buf1._84_4_ = 0;
+  buf1[84] = '\0';
+  buf1[85] = '\0';
+  buf1[86] = '\0';
+  buf1[87] = '\0';
   local_f0 = 0;
   printf("Start...%c\n\n",7);
   do {
     switch(local_f0) {
     case 0:
-      results.cresult = stest(acStack136,acStack236);
+      results.cresult = stest(acStack_88,acStack_ec);
       printf("\ncresult = %d\n",(ulong)(uint)results.cresult);
       break;
     case 1:
@@ -523,28 +546,32 @@ int main(void)
       printf("\niresult = %d\n",(ulong)(uint)results.iresult);
       break;
     case 2:
-      results.uresult = fib(0x18);
+      results.uresult = fib(in_stack_fffffffffffffec8);
       printf("\nuresult = %u\n",(ulong)results.uresult);
       break;
     case 3:
-      results.lresult = sq(0);
-      lVar1 = sq(results.lresult);
-      printf("\nlresult = %ld",results.lresult);
-      printf("\n square = %ld\n",lVar1);
+      results.lresult = sq(CONCAT44(in_stack_fffffffffffffecc,in_stack_fffffffffffffec8));
+      lVar2 = sq(CONCAT44(in_stack_fffffffffffffecc,in_stack_fffffffffffffec8));
+      in_stack_fffffffffffffedc = printf("\nlresult = %ld",results.lresult);
+      in_stack_fffffffffffffed8 = printf("\n square = %ld\n",lVar2);
       break;
     case 4:
       results.dresult = sroot((double)results.lresult);
-      printf((char *)results.dresult,"\ndresult = %f\n");
-      __format = (char *)dply(results.dresult);
-      printf(__format,"  dmath = %f\n");
+      printf("\ndresult = %f\n",results.dresult);
+      dVar3 = dply((double)CONCAT44(in_stack_fffffffffffffedc,in_stack_fffffffffffffed8));
+      printf("  dmath = %f\n",dVar3);
       break;
     case 5:
       results.cprsult = mcopy();
-      printf("\b   copy = %d",(ulong)(uint)results.cprsult);
+      in_stack_fffffffffffffecc = printf("\b   copy = %d",(ulong)(uint)results.cprsult);
       break;
     default:
       printf("\n\n...End%c",7);
-      return buf1._84_4_;
+      iVar1._0_1_ = buf1[84];
+      iVar1._1_1_ = buf1[85];
+      iVar1._2_1_ = buf1[86];
+      iVar1._3_1_ = buf1[87];
+      return iVar1;
     case -0x452e541f:
       break;
     }
@@ -554,15 +581,18 @@ int main(void)
 
 
 
+// WARNING: Unknown calling convention
+
 long sq(long big)
 
 {
+  long in_x0;
   int i;
   int local_c;
   long local_8;
   
-  local_8 = big;
-  if (big == 0) {
+  local_8 = in_x0;
+  if (in_x0 == 0) {
     for (local_c = 0; local_c < 9000; local_c = local_c + 1) {
       local_8 = local_8 + sq::j;
       sq::j = sq::j + 2;
@@ -579,41 +609,43 @@ long sq(long big)
 
 
 
+// WARNING: Variable defined which should be unmapped: num-local
+
 double sroot(double num)
 
 {
+  int in_w0;
   double temp2;
   double temp1;
   double local_28;
   double local_20;
+  double num_local;
   
   local_20 = num;
   for (local_28 = num / 2.0; local_28 * 1e-06 < local_20;
       local_28 = (num / local_28 + local_28) / 2.0) {
-    local_20 = abs(num / local_28 - local_28);
+    local_20 = num / local_28 - local_28;
+    in_w0 = abs(in_w0);
   }
   return local_28;
 }
 
 
 
-double abs(double x)
+int abs(int __x)
 
 {
-  double local_10;
-  
-  local_10 = x;
-  if (x < 0.0) {
-    local_10 = -x;
-  }
-  return local_10;
+  return __x;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 double dply(double x)
 
 {
+  double in_d0;
   double y;
   int i;
   double local_18;
@@ -621,8 +653,9 @@ double dply(double x)
   
   local_c = 100;
   while (local_c != 0) {
-    local_18 = ((((((((((((x * x * x * x * x * x * x) / x) / x) / x) / x) / x) / x + x + x + x + x +
-                     x + x) - x) - x) - x) - x) - x) - x;
+    local_18 = ((((((((((((in_d0 * in_d0 * in_d0 * in_d0 * in_d0 * in_d0 * in_d0) / in_d0) / in_d0)
+                       / in_d0) / in_d0) / in_d0) / in_d0 + in_d0 + in_d0 + in_d0 + in_d0 + in_d0 +
+                    in_d0) - in_d0) - in_d0) - in_d0) - in_d0) - in_d0) - in_d0;
     local_c = local_c + -1;
   }
   return local_18;
@@ -630,18 +663,21 @@ double dply(double x)
 
 
 
+// WARNING: Unknown calling convention
+
 uint fib(int x)
 
 {
+  int in_w0;
   uint uVar1;
   uint local_14;
   
-  if (x < 3) {
+  if (in_w0 < 3) {
     local_14 = 1;
   }
   else {
-    local_14 = fib(x + -1);
-    uVar1 = fib(x + -2);
+    local_14 = fib(in_w0);
+    uVar1 = fib(in_w0);
     local_14 = local_14 + uVar1;
   }
   return local_14;
@@ -649,35 +685,43 @@ uint fib(int x)
 
 
 
+// WARNING: Variable defined which should be unmapped: b1-local
+
 int stest(char *b1,char *b2)
 
 {
   int iVar1;
   int j;
   int i;
-  int local_28;
-  int local_24;
+  char *in_stack_ffffffffffffffd0;
+  int iVar2;
+  int iVar3;
+  char *b1_local;
   
-  local_28 = 0;
-  for (local_24 = 0; local_24 < 9000; local_24 = local_24 + 1) {
-    mstrcpy(b1,"0123456789abcdef");
-    mstrcpy(b2,"0123456789abcdee");
-    iVar1 = mstrcmp(b1,b2);
-    local_28 = local_28 + iVar1;
+  iVar2 = 0;
+  for (iVar3 = 0; iVar3 < 9000; iVar3 = iVar3 + 1) {
+    mstrcpy((char *)CONCAT44(iVar3,iVar2),in_stack_ffffffffffffffd0);
+    mstrcpy((char *)CONCAT44(iVar3,iVar2),in_stack_ffffffffffffffd0);
+    iVar1 = mstrcmp(b2,(char *)CONCAT44(iVar3,iVar2));
+    iVar2 = iVar2 + iVar1;
   }
-  return local_28;
+  return iVar2;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int mstrcmp(char *c,char *d)
 
 {
+  byte *in_x0;
+  byte *in_x1;
   byte *local_18;
   byte *local_10;
   
-  local_18 = (byte *)d;
-  local_10 = (byte *)c;
+  local_18 = in_x1;
+  local_10 = in_x0;
   while( true ) {
     if (*local_10 != *local_18) {
       return (uint)*local_10 - (uint)*local_18;
@@ -691,15 +735,19 @@ int mstrcmp(char *c,char *d)
 
 
 
+// WARNING: Unknown calling convention
+
 void mstrcpy(char *c,char *d)
 
 {
   char cVar1;
+  char *in_x0;
+  char *in_x1;
   char *local_10;
   char *local_8;
   
-  local_10 = d;
-  local_8 = c;
+  local_10 = in_x1;
+  local_8 = in_x0;
   do {
     cVar1 = *local_10;
     *local_8 = cVar1;
@@ -712,6 +760,7 @@ void mstrcpy(char *c,char *d)
 
 
 // WARNING: Variable defined which should be unmapped: fp
+// WARNING: Unknown calling convention
 
 int mcopy(void)
 
@@ -719,19 +768,24 @@ int mcopy(void)
   int j;
   int i;
   char buf [100];
-  int local_84;
+  undefined4 in_stack_ffffffffffffff70;
+  undefined4 in_stack_ffffffffffffff74;
+  undefined4 in_stack_ffffffffffffff78;
+  undefined4 in_stack_ffffffffffffff7c;
+  int iVar1;
   int local_80;
-  byte abStack124 [100];
+  byte abStack_7c [100];
   FILE *local_18;
   FILE *fp;
   
-  mstrcpy((char *)abStack124,"Disk I/O test");
+  mstrcpy((char *)CONCAT44(in_stack_ffffffffffffff7c,in_stack_ffffffffffffff78),
+          (char *)CONCAT44(in_stack_ffffffffffffff74,in_stack_ffffffffffffff70));
   local_18 = fopen("zyxw.vut","w");
   if (local_18 != (FILE *)0x0) {
     local_80 = 0;
     while (local_80 = local_80 + 1, local_80 < 1000) {
-      for (local_84 = 0; abStack124[local_84] != 0; local_84 = local_84 + 1) {
-        _IO_putc((uint)abStack124[local_84],local_18);
+      for (iVar1 = 0; abStack_7c[iVar1] != 0; iVar1 = iVar1 + 1) {
+        _IO_putc((uint)abStack_7c[iVar1],local_18);
       }
     }
     fclose(local_18);
@@ -743,6 +797,8 @@ int mcopy(void)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int intest(void)
 

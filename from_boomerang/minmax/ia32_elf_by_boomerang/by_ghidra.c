@@ -110,6 +110,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -229,7 +230,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -251,7 +252,7 @@ void __fpstart(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -263,7 +264,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -275,25 +276,24 @@ int printf(char *__format,...)
 
 
 
-void __regparm3 _start(undefined4 param_1,__func *param_2)
+void processEntry _start(__func *param_1,EVP_PKEY_CTX *param_2)
 
 {
   int __status;
-  EVP_PKEY_CTX *unaff_retaddr;
   code *pcVar1;
   undefined4 uVar2;
   undefined4 uVar3;
   
   uVar3 = 0;
   uVar2 = 0;
-  atexit(param_2);
+  atexit(param_1);
   pcVar1 = _fini;
   atexit(_fini);
-  environ = &stack0x00000008 + (int)unaff_retaddr * 4;
+  environ = &stack0x00000008 + (int)param_2 * 4;
   ___Argv = &stack0x00000004;
-  __fpstart(unaff_retaddr,___Argv,environ,pcVar1,param_2,uVar2,uVar3);
+  __fpstart(param_2,___Argv,environ,pcVar1,param_1,uVar2,uVar3);
   __fsr();
-  _init(unaff_retaddr);
+  _init(param_2);
   __status = main();
                     // WARNING: Subroutine does not return
   exit(__status);

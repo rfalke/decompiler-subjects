@@ -152,6 +152,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -180,6 +181,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -188,14 +200,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -254,7 +266,7 @@ void FUN_004004c0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -283,7 +295,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -303,7 +315,7 @@ void __isoc99_scanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -319,10 +331,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -374,8 +385,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400668)
 // WARNING: Removing unreachable block (ram,0x00400670)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -388,11 +399,13 @@ void frame_dummy(void)
 
 // WARNING: Variable defined which should be unmapped: number
 // WARNING: Variable defined which should be unmapped: i
+// WARNING: Unknown calling convention
 
 int main(void)
 
 {
   uint uVar1;
+  int in_stack_ffffffffffffffc8;
   uint local_20;
   int local_1c;
   int local_18;
@@ -407,8 +420,8 @@ int main(void)
   for (local_18 = 1; local_18 <= local_1c; local_18 = local_18 + 1) {
     printf("Input number: ");
     __isoc99_scanf(&DAT_0040085d,&local_20);
-    uVar1 = fib(local_20);
-    printf("fibonacci(%d) = %u\n",(ulong)local_20,(ulong)uVar1);
+    uVar1 = fib(in_stack_ffffffffffffffc8);
+    in_stack_ffffffffffffffc8 = printf("fibonacci(%d) = %u\n",(ulong)local_20,(ulong)uVar1);
   }
                     // WARNING: Subroutine does not return
   exit(0);
@@ -416,18 +429,21 @@ int main(void)
 
 
 
+// WARNING: Unknown calling convention
+
 uint fib(int x)
 
 {
+  int in_w0;
   uint uVar1;
   uint local_14;
   
-  if (x < 3) {
+  if (in_w0 < 3) {
     local_14 = 1;
   }
   else {
-    local_14 = fib(x + -1);
-    uVar1 = fib(x + -2);
+    local_14 = fib(in_w0);
+    uVar1 = fib(in_w0);
     local_14 = local_14 + uVar1;
   }
   return local_14;

@@ -96,14 +96,14 @@ struct Elf64_Phdr {
     qword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -146,7 +146,7 @@ struct Elf64_Sym {
 
 
 
-void g(void)
+void processEntry g(void)
 
 {
   return;
@@ -162,45 +162,77 @@ void h(void)
 
 
 
-void f(int param_1,int param_2,int param_3,int param_4)
+void f(int param_1,int param_2,int param_3,undefined4 param_4)
 
 {
   int iVar1;
-  int local_18;
+  undefined *puVar2;
+  undefined *puVar3;
+  undefined *puVar4;
+  undefined4 *puVar5;
+  undefined *puVar6;
+  undefined8 auStack_28 [2];
+  undefined4 local_18;
+  int local_14;
   int local_10;
   int local_c;
   
+  puVar6 = &stack0xfffffffffffffff8;
+  local_c = param_1;
   local_10 = param_2;
-  do {
-    local_18 = param_4;
-    local_c = param_1;
-    if (param_1 == 0) {
-      while (local_10 + local_c != param_3) {
-        while (iVar1 = h(), iVar1 != 0) {
-          do {
-            if (local_c != 0) {
-              local_18 = param_3;
-            }
-            iVar1 = g();
-          } while ((iVar1 != 0) && (iVar1 = h(), iVar1 != 0));
-          local_c = local_c + -1;
-        }
-        while (((iVar1 = g(), iVar1 != 0 && (iVar1 = h(), iVar1 != 0)) &&
-               (local_c = local_c + 1, local_18 != 0))) {
-          if (local_c == 0) {
-            local_18 = 0x14;
-          }
-        }
-      }
-      return;
-    }
+  local_14 = param_3;
+  local_18 = param_4;
+  while (puVar5 = &local_18, local_c != 0) {
     while (iVar1 = h(), iVar1 != 0) {
       local_10 = local_10 + 1;
-      if (local_10 == param_3) {
+      if (local_10 == local_14) {
         return;
       }
     }
     local_10 = local_10 + 1;
+  }
+  do {
+    puVar3 = (undefined *)puVar5;
+    if (*(int *)(puVar6 + -8) + *(int *)(puVar6 + -4) == *(int *)(puVar6 + -0xc)) {
+      return;
+    }
+    while( true ) {
+      *(undefined8 *)(puVar3 + -8) = 0x4001cc;
+      iVar1 = h();
+      puVar2 = puVar3;
+      if (iVar1 == 0) break;
+      do {
+        if (*(int *)(puVar6 + -4) != 0) {
+          *(undefined4 *)(puVar6 + -0x10) = *(undefined4 *)(puVar6 + -0xc);
+        }
+        puVar3 = puVar2 + -8;
+        *(undefined8 *)(puVar2 + -8) = 0x4001a9;
+        iVar1 = g();
+        if (iVar1 == 0) break;
+        *(undefined8 *)(puVar2 + -0x10) = 0x4001b7;
+        iVar1 = h();
+        puVar2 = puVar2 + -8;
+      } while (iVar1 != 0);
+      *(int *)(puVar6 + -4) = *(int *)(puVar6 + -4) + -1;
+    }
+    while( true ) {
+      puVar4 = puVar3 + -8;
+      *(undefined8 *)(puVar3 + -8) = 0x4001f6;
+      iVar1 = g();
+      puVar5 = (undefined4 *)(puVar3 + -8);
+      if (iVar1 == 0) break;
+      *(undefined8 *)(puVar3 + -0x10) = 0x400204;
+      iVar1 = h();
+      puVar5 = (undefined4 *)(puVar3 + -8);
+      if ((iVar1 == 0) ||
+         (*(int *)(puVar6 + -4) = *(int *)(puVar6 + -4) + 1, puVar5 = (undefined4 *)(puVar3 + -8),
+         *(int *)(puVar6 + -0x10) == 0)) break;
+      puVar3 = puVar3 + -8;
+      if (*(int *)(puVar6 + -4) == 0) {
+        *(undefined4 *)(puVar6 + -0x10) = 0x14;
+        puVar3 = puVar4;
+      }
+    }
   } while( true );
 }
 

@@ -20,6 +20,14 @@ typedef enum Elf_ProgramHeaderType {
     PT_GNU_RELRO=1685382482
 } Elf_ProgramHeaderType;
 
+typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
+
+struct Elf64_Rela {
+    qword r_offset; // location to apply the relocation action
+    qword r_info; // the symbol table index and the type of relocation
+    qword r_addend; // a constant addend used to compute the relocatable field value
+};
+
 typedef struct Elf64_Shdr Elf64_Shdr, *PElf64_Shdr;
 
 typedef enum Elf_SectionHeaderType {
@@ -120,29 +128,27 @@ struct Elf64_Sym {
 
 
 
-ulong gcd(uint param_1,int param_2)
-
-{
-  ulong uVar1;
-  
-  if (param_2 == 0) {
-    uVar1 = (ulong)param_1;
-  }
-  else {
-    uVar1 = gcd(param_2,(long)(int)param_1 % (long)param_2 & 0xffffffff);
-  }
-  return uVar1;
-}
-
-
-
 undefined8 main(void)
 
 {
-  int local_c;
+  int iVar1;
+  undefined8 *puVar2;
+  undefined *puVar3;
+  undefined *puVar4;
+  undefined8 uStack_20;
+  undefined auStack_18 [12];
+  undefined4 local_c;
   
-  for (local_c = 0; local_c < 10; local_c = local_c + 1) {
-    gcd(local_c,local_c * 2 + 1);
+  puVar4 = &stack0xfffffffffffffff8;
+  puVar3 = auStack_18;
+  local_c = 0;
+  while (*(int *)(puVar4 + -4) < 10) {
+    iVar1 = *(int *)(puVar4 + -4);
+    puVar2 = (undefined8 *)(puVar3 + -8);
+    puVar3 = puVar3 + -8;
+    *puVar2 = 0x40013f;
+    gcd(iVar1 * 2 + 1);
+    *(int *)(puVar4 + -4) = *(int *)(puVar4 + -4) + 1;
   }
   return 0;
 }

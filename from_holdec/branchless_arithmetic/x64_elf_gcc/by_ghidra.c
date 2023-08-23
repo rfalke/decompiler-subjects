@@ -17,6 +17,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
+};
+
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
 struct fde_table_entry {
@@ -79,6 +87,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -194,6 +203,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -202,14 +222,23 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -269,7 +298,7 @@ void FUN_00401020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -282,7 +311,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -338,11 +367,11 @@ void main(int __status)
   lVar3 = sat_muls64b();
   lVar3 = lVar3 + lVar2;
   auVar4 = sat_adds64b(0);
-  sat_subs64b(0,0,SUB168(auVar4 >> 0x40,0),lVar3 + SUB168(auVar4,0));
+  sat_subs64b(0,0,auVar4._8_8_,lVar3 + auVar4._0_8_);
   sat_divs64b(0,1);
   abs64();
   auVar4 = sgn64();
-  if (SUB168(auVar4,0) + SUB168(auVar4 >> 0x40,0) == 0x2a) {
+  if (auVar4._0_8_ + auVar4._8_8_ == 0x2a) {
     puts("not reached");
   }
   return;
@@ -350,14 +379,13 @@ void main(int __status)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -436,8 +464,11 @@ uint sat_subu32b(uint param_1,uint param_2)
 undefined  [16] sat_divu32b(uint param_1,uint param_2)
 
 {
-  return CONCAT88((ulong)param_1 % (ulong)param_2,(ulong)param_1 / (ulong)param_2) &
-         (undefined  [16])0xffffffffffffffff;
+  undefined auVar1 [16];
+  
+  auVar1._8_8_ = (ulong)param_1 % (ulong)param_2;
+  auVar1._0_8_ = (ulong)param_1 / (ulong)param_2;
+  return auVar1;
 }
 
 
@@ -478,8 +509,14 @@ ulong sat_divu64b(ulong param_1,ulong param_2)
 ulong sat_mulu64b(ulong param_1,ulong param_2)
 
 {
-  return SUB168(ZEXT816(param_1) * ZEXT816(param_2),0) |
-         (long)(int)-(uint)(SUB168(ZEXT816(param_1) * ZEXT816(param_2) >> 0x40,0) != 0);
+  undefined auVar1 [16];
+  undefined auVar2 [16];
+  
+  auVar1._8_8_ = 0;
+  auVar1._0_8_ = param_1;
+  auVar2._8_8_ = 0;
+  auVar2._0_8_ = param_2;
+  return SUB168(auVar1 * auVar2,0) | (long)(int)-(uint)(SUB168(auVar1 * auVar2,8) != 0);
 }
 
 
@@ -548,10 +585,12 @@ undefined  [16] sat_divs32b(int param_1,int param_2)
 
 {
   long lVar1;
+  undefined auVar2 [16];
   
   lVar1 = (long)(int)(param_1 + (uint)((param_2 + 1U | param_1 + 0x80000000U) == 0));
-  return CONCAT88(lVar1 % (long)param_2,lVar1 / (long)param_2) & (undefined  [16])0xffffffffffffffff
-  ;
+  auVar2._0_8_ = lVar1 / (long)param_2 & 0xffffffff;
+  auVar2._8_8_ = lVar1 % (long)param_2 & 0xffffffff;
+  return auVar2;
 }
 
 
@@ -618,7 +657,7 @@ long sat_muls64b(ulong param_1,ulong param_2)
   long lVar1;
   
   lVar1 = param_1 * param_2;
-  if (lVar1 >> 0x3f != SUB168(SEXT816((long)param_1) * SEXT816((long)param_2) >> 0x40,0)) {
+  if (lVar1 >> 0x3f != SUB168(SEXT816((long)param_1) * SEXT816((long)param_2),8)) {
     lVar1 = 0x7fffffffffffffff - ((long)(param_1 ^ param_2) >> 0x3f);
   }
   return lVar1;

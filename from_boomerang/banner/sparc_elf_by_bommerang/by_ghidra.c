@@ -148,6 +148,7 @@ typedef enum Elf32_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -234,16 +235,16 @@ void _start(void)
   EVP_PKEY_CTX *ctx;
   int __status;
   int local_res40;
-  undefined auStackX68 [4];
-  undefined auStackX72 [20];
+  undefined auStackX_44 [4];
+  undefined auStackX_48 [20];
   
   if (unaff_g1 != (__func *)0x0) {
     atexit(unaff_g1);
   }
   ctx = (EVP_PKEY_CTX *)atexit(_fini);
   _init(ctx);
-  environ = auStackX68 + local_res40 * 4 + 4;
-  __status = main(local_res40,auStackX68);
+  environ = auStackX_44 + local_res40 * 4 + 4;
+  __status = main(local_res40,auStackX_44);
                     // WARNING: Subroutine does not return
   exit(__status);
 }
@@ -271,6 +272,7 @@ undefined4 __do_global_dtors_aux(undefined4 param_1)
   code *pcVar1;
   
   if (completed_1 == '\0') {
+    completed_1 = 0;
     pcVar1 = *(code **)p_0;
     while (pcVar1 != (code *)0x0) {
       p_0 = p_0 + 4;
@@ -339,8 +341,8 @@ undefined4 call_frame_dummy(undefined4 param_1)
 undefined4 main(void)
 
 {
-  char acStack128 [7];
-  undefined auStack121 [77];
+  char acStack_80 [7];
+  undefined auStack_79 [77];
   int local_2c;
   size_t local_28;
   int local_24;
@@ -367,20 +369,20 @@ undefined4 main(void)
           local_2c = 0;
         }
         for (local_24 = 0; local_24 < 7; local_24 = local_24 + 1) {
-          acStack128[local_24 + local_20 * 8] =
+          acStack_80[local_24 + local_20 * 8] =
                *(char *)((local_2c +
                          ((int)(local_2c + ((uint)(local_2c >> 0x1f) >> 0x1d)) >> 3) * -8) * 7 +
                          local_24 +
                         *(int *)(glyphs + (((int)(local_2c + ((uint)(local_2c >> 0x1f) >> 0x1d)) >>
                                            3) * 7 + local_1c) * 4));
         }
-        auStack121[local_20 * 8] = 0x20;
+        auStack_79[local_20 * 8] = 0x20;
       }
-      for (local_20 = local_28 * 8 + -1; (-1 < local_20 && (acStack128[local_20] == ' '));
+      for (local_20 = local_28 * 8 + -1; (-1 < local_20 && (acStack_80[local_20] == ' '));
           local_20 = local_20 + -1) {
-        acStack128[local_20] = '\0';
+        acStack_80[local_20] = '\0';
       }
-      puts(acStack128);
+      puts(acStack_80);
     }
     puts("");
   }
@@ -471,7 +473,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -482,7 +484,7 @@ int atexit(__func *__func)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -493,7 +495,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -531,7 +533,7 @@ void FUN_00021fc0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -542,7 +544,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -553,7 +555,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 

@@ -31,7 +31,7 @@ struct fde_table_entry {
 typedef ulong size_t;
 
 
-// WARNING! conflicting data type names: /DWARF/stddef.h/size_t - /stddef.h/size_t
+// WARNING! conflicting data type names: /DWARF/size_t - /stddef.h/size_t
 
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
@@ -137,6 +137,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -203,6 +204,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -210,14 +222,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -259,12 +271,22 @@ typedef struct evp_pkey_ctx_st EVP_PKEY_CTX;
 int _init(EVP_PKEY_CTX *ctx)
 
 {
-  int iStack12;
+  int iStack_c;
   
   __gmon_start__();
   frame_dummy();
   __do_global_ctors_aux();
-  return iStack12;
+  return iStack_c;
+}
+
+
+
+void FUN_080482c4(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
 }
 
 
@@ -287,7 +309,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -300,10 +322,13 @@ void * malloc(size_t __size)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -335,31 +360,30 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void copy1_four_times(short *to,short *from,int count)
 
 {
   short sVar1;
-  uint uVar2;
-  int iVar3;
-  short *psVar4;
-  int iVar5;
-  uint uVar6;
+  int iVar2;
+  short *psVar3;
+  int iVar4;
+  int n;
   
-  iVar5 = count + 3;
+  iVar4 = count + 3;
   if (count + 3 < 0) {
-    iVar5 = count + 6;
+    iVar4 = count + 6;
   }
-  uVar6 = (uint)(count >> 0x1f) >> 0x1e;
-  uVar2 = count + uVar6 & 3;
-  iVar3 = uVar2 - uVar6;
-  iVar5 = iVar5 >> 2;
-  if (iVar3 == 1) goto LAB_08048430;
-  if (iVar3 < 2) {
-    if (uVar2 == uVar6) goto LAB_08048443;
+  iVar2 = count % 4;
+  iVar4 = iVar4 >> 2;
+  if (iVar2 == 1) goto LAB_08048430;
+  if (iVar2 < 2) {
+    if (iVar2 == 0) goto LAB_08048443;
   }
   else {
-    if (iVar3 != 2) {
-      if (iVar3 != 3) {
+    if (iVar2 != 2) {
+      if (iVar2 != 3) {
         return;
       }
       sVar1 = *from;
@@ -373,16 +397,16 @@ void copy1_four_times(short *to,short *from,int count)
       *to = sVar1;
       to = to + 1;
 LAB_08048430:
-      iVar5 = iVar5 + -1;
+      iVar4 = iVar4 + -1;
       *to = *from;
-      if (iVar5 < 1) break;
+      if (iVar4 < 1) break;
       to = to + 1;
       from = from + 1;
 LAB_08048443:
-      psVar4 = from + 1;
+      psVar3 = from + 1;
       *to = *from;
       from = from + 2;
-      to[1] = *psVar4;
+      to[1] = *psVar3;
       to = to + 2;
     }
   }
@@ -391,20 +415,21 @@ LAB_08048443:
 
 
 
+// WARNING: Unknown calling convention
+
 void copy1_eight_times(short *to,short *from,int count)
 
 {
   short sVar1;
   int iVar2;
-  uint uVar3;
+  int n;
   
   iVar2 = count + 7;
   if (count + 7 < 0) {
     iVar2 = count + 0xe;
   }
-  uVar3 = (uint)(count >> 0x1f) >> 0x1d;
   iVar2 = iVar2 >> 3;
-  switch((count + uVar3 & 7) - uVar3) {
+  switch(count % 8) {
   case 0:
     while( true ) {
       sVar1 = *from;
@@ -469,6 +494,8 @@ switchD_080484a8_caseD_1:
 
 
 
+// WARNING: Unknown calling convention
+
 void copy2_four_times(short *to,short *from,int n)
 
 {
@@ -511,6 +538,8 @@ DUFF_2:
 }
 
 
+
+// WARNING: Unknown calling convention
 
 void copy2_eight_times(short *to,short *from,int n)
 
@@ -575,11 +604,14 @@ void copy2_eight_times(short *to,short *from,int n)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
   short *from;
-  short *to;
+  short *src;
+  short *dest;
   int iVar1;
   undefined uVar2;
   undefined uVar3;
@@ -587,21 +619,21 @@ int main(int argc,char **argv)
   
   bVar4 = 0;
   uVar2 = &stack0xffffffe8 < (undefined *)0x18;
-  uVar3 = (undefined *)register0x00000010 == (undefined *)0x30;
+  uVar3 = &stack0x00000000 == (undefined *)0x30;
   from = (short *)malloc(200);
-  to = (short *)malloc(200);
-  copy1_four_times(to,from,100);
-  copy1_eight_times(to,from,100);
-  copy2_four_times(to,from,100);
-  copy2_eight_times(to,from,100);
+  src = (short *)malloc(200);
+  copy1_four_times(src,from,100);
+  copy1_eight_times(src,from,100);
+  copy2_four_times(src,from,100);
+  copy2_eight_times(src,from,100);
   iVar1 = 200;
   do {
     if (iVar1 == 0) break;
     iVar1 = iVar1 + -1;
-    uVar2 = *(byte *)from < *(byte *)to;
-    uVar3 = *(byte *)from == *(byte *)to;
+    uVar2 = *(byte *)from < *(byte *)src;
+    uVar3 = *(byte *)from == *(byte *)src;
     from = (short *)((int)from + (uint)bVar4 * -2 + 1);
-    to = (short *)((int)to + (uint)bVar4 * -2 + 1);
+    src = (short *)((int)src + (uint)bVar4 * -2 + 1);
   } while ((bool)uVar3);
   return (int)(char)((!(bool)uVar2 && !(bool)uVar3) - uVar2);
 }

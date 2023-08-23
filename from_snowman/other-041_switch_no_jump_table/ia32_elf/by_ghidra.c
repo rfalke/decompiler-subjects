@@ -105,14 +105,14 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -146,53 +146,55 @@ struct Elf32_Ehdr {
 
 // do_switch(int)
 
-char * do_switch(int param_1)
+char * processEntry do_switch(int param_1)
 
 {
-  if (param_1 == 5) {
+  int in_stack_00000004;
+  
+  if (in_stack_00000004 == 5) {
     return "five";
   }
-  if (param_1 < 6) {
-    if (param_1 == 2) {
+  if (in_stack_00000004 < 6) {
+    if (in_stack_00000004 == 2) {
       return "two";
     }
-    if (param_1 < 3) {
-      if (param_1 == 0) {
+    if (in_stack_00000004 < 3) {
+      if (in_stack_00000004 == 0) {
         return "zero";
       }
-      if (param_1 == 1) {
+      if (in_stack_00000004 == 1) {
         return "one";
       }
     }
     else {
-      if (param_1 == 3) {
+      if (in_stack_00000004 == 3) {
         return "three";
       }
-      if (param_1 == 4) {
+      if (in_stack_00000004 == 4) {
         return "four";
       }
     }
   }
   else {
-    if (param_1 == 8) {
+    if (in_stack_00000004 == 8) {
       return "eight";
     }
-    if (param_1 < 9) {
-      if (param_1 == 6) {
+    if (in_stack_00000004 < 9) {
+      if (in_stack_00000004 == 6) {
         return "six";
       }
-      if (param_1 == 7) {
+      if (in_stack_00000004 == 7) {
         return "seven";
       }
     }
     else {
-      if (param_1 == 10) {
+      if (in_stack_00000004 == 10) {
         return "ten";
       }
-      if (param_1 < 10) {
+      if (in_stack_00000004 < 10) {
         return "nine";
       }
-      if (param_1 == 0x18894) {
+      if (in_stack_00000004 == 0x18894) {
         return "stopyatsot";
       }
     }

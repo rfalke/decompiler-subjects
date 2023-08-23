@@ -79,6 +79,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -192,6 +193,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -199,14 +211,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -268,7 +280,7 @@ void FUN_080482d0(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -299,10 +311,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -355,6 +370,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080483f9)
+// WARNING: Removing unreachable block (ram,0x080483f0)
 
 void frame_dummy(void)
 
@@ -382,22 +398,31 @@ void __regparm3 initConditions(int param_1)
 
 
 
-undefined4 test_1_blocks_variant_0_edges_2(void)
+void test_1_blocks_variant_0_edges_2(void)
 
 {
   puts("block 2");
+  FUN_08048439();
+  return;
+}
+
+
+
+undefined4 FUN_08048439(void)
+
+{
   puts("exit block");
   return 0;
 }
 
 
 
-undefined4 FUN_0804844c(void)
+void FUN_0804844c(void)
 
 {
   puts("block 2");
-  puts("exit block");
-  return 0;
+  FUN_08048439();
+  return;
 }
 
 
@@ -405,13 +430,9 @@ undefined4 FUN_0804844c(void)
 undefined4 test_1_blocks_variant_1_edges_3(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_08048470();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -421,13 +442,9 @@ undefined4 test_1_blocks_variant_1_edges_3(void)
 undefined4 FUN_08048470(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_08048470();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -459,14 +476,10 @@ undefined4 FUN_0804849d(void)
 undefined4 test_2_blocks_variant_1_edges_4(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_080484d0();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    puts("block 3");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -476,14 +489,10 @@ undefined4 test_2_blocks_variant_1_edges_4(void)
 undefined4 FUN_080484d0(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_080484d0();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    puts("block 3");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -545,13 +554,10 @@ undefined4 FUN_08048548(void)
 undefined4 test_2_blocks_variant_4_edges_4(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    uVar1 = FUN_08048584();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -562,13 +568,10 @@ undefined4 test_2_blocks_variant_4_edges_4(void)
 undefined4 FUN_08048584(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    uVar1 = FUN_08048584();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -669,16 +672,11 @@ undefined4 FUN_08048638(void)
 undefined4 test_2_blocks_variant_8_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804867d();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -688,16 +686,11 @@ undefined4 test_2_blocks_variant_8_edges_5(void)
 undefined4 FUN_0804867d(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804867d();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -769,16 +762,12 @@ undefined4 FUN_08048707(void)
 undefined4 test_2_blocks_variant_11_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804874c();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -788,16 +777,12 @@ undefined4 test_2_blocks_variant_11_edges_5(void)
 undefined4 FUN_0804874c(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804874c();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -867,18 +852,15 @@ LAB_080487c3:
 undefined4 test_2_blocks_variant_14_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0804881b();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -886,18 +868,15 @@ undefined4 test_2_blocks_variant_14_edges_5(void)
 undefined4 FUN_0804881b(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0804881b();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -1009,18 +988,10 @@ undefined4 FUN_080488f3(void)
 undefined4 test_2_blocks_variant_18_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804892e;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08048941();
-    return uVar1;
-  }
-LAB_0804892e:
+    if (conditions._100_4_ == 0) break;
+  } while ((conditions._104_4_ == 0) || (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -1030,18 +1001,10 @@ LAB_0804892e:
 undefined4 FUN_08048941(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804892e;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08048941();
-    return uVar1;
-  }
-LAB_0804892e:
+    if (conditions._100_4_ == 0) break;
+  } while ((conditions._104_4_ == 0) || (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -1181,15 +1144,11 @@ undefined4 FUN_08048a82(void)
 undefined4 test_3_blocks_variant_1_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  puts("block 4");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_08048ac4();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -1199,15 +1158,11 @@ undefined4 test_3_blocks_variant_1_edges_5(void)
 undefined4 FUN_08048ac4(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  puts("block 4");
-  if (conditions._100_4_ != 0) {
-    uVar1 = FUN_08048ac4();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._100_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -1301,14 +1256,11 @@ undefined4 FUN_08048ba5(void)
 undefined4 test_3_blocks_variant_5_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    puts("block 3");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08048bf0();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -1319,14 +1271,11 @@ undefined4 test_3_blocks_variant_5_edges_5(void)
 undefined4 FUN_08048bf0(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    puts("block 3");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08048bf0();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -1483,14 +1432,11 @@ undefined4 FUN_08048d67(void)
 undefined4 test_3_blocks_variant_11_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
     puts("block 4");
-    uVar1 = FUN_08048db2();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -1501,14 +1447,11 @@ undefined4 test_3_blocks_variant_11_edges_5(void)
 undefined4 FUN_08048db2(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
     puts("block 4");
-    uVar1 = FUN_08048db2();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -1643,13 +1586,10 @@ undefined4 FUN_08048ede(void)
 undefined4 test_3_blocks_variant_16_edges_5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08048f29();
-    return uVar1;
   }
   puts("block 3");
   puts("exit block");
@@ -1661,13 +1601,10 @@ undefined4 test_3_blocks_variant_16_edges_5(void)
 undefined4 FUN_08048f29(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08048f29();
-    return uVar1;
   }
   puts("block 3");
   puts("exit block");
@@ -1847,17 +1784,12 @@ undefined4 FUN_080490b2(void)
 undefined4 test_3_blocks_variant_22_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    puts("block 3");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_08049106();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -1867,17 +1799,12 @@ undefined4 test_3_blocks_variant_22_edges_6(void)
 undefined4 FUN_08049106(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  puts("block 3");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    puts("block 3");
+    if (conditions._100_4_ == 0) break;
     puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_08049106();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2053,17 +1980,13 @@ undefined4 FUN_080492aa(void)
 undefined4 test_3_blocks_variant_28_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    puts("block 3");
-  } while (conditions._100_4_ == 0);
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080492fe();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      puts("block 3");
+    } while (conditions._100_4_ == 0);
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2073,17 +1996,13 @@ undefined4 test_3_blocks_variant_28_edges_6(void)
 undefined4 FUN_080492fe(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    puts("block 3");
-  } while (conditions._100_4_ == 0);
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080492fe();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      puts("block 3");
+    } while (conditions._100_4_ == 0);
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2159,17 +2078,13 @@ undefined4 FUN_080493a6(void)
 undefined4 test_3_blocks_variant_31_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-  } while (conditions._100_4_ == 0);
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080493fa();
-    return uVar1;
-  }
+    puts("block 2");
+    do {
+      puts("block 3");
+    } while (conditions._100_4_ == 0);
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2179,17 +2094,13 @@ undefined4 test_3_blocks_variant_31_edges_6(void)
 undefined4 FUN_080493fa(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-  } while (conditions._100_4_ == 0);
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080493fa();
-    return uVar1;
-  }
+    puts("block 2");
+    do {
+      puts("block 3");
+    } while (conditions._100_4_ == 0);
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2295,19 +2206,16 @@ LAB_080494e3:
 undefined4 test_3_blocks_variant_35_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
     puts("block 3");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804954a();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -2315,19 +2223,16 @@ undefined4 test_3_blocks_variant_35_edges_6(void)
 undefined4 FUN_0804954a(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
     puts("block 3");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804954a();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -2441,19 +2346,17 @@ LAB_08049633:
 undefined4 test_3_blocks_variant_39_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804969a();
-  return uVar1;
+    puts("block 2");
+    do {
+      puts("block 3");
+      if (conditions._100_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -2461,19 +2364,17 @@ undefined4 test_3_blocks_variant_39_edges_6(void)
 undefined4 FUN_0804969a(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804969a();
-  return uVar1;
+    puts("block 2");
+    do {
+      puts("block 3");
+      if (conditions._100_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -2589,17 +2490,12 @@ undefined4 FUN_08049796(void)
 undefined4 test_3_blocks_variant_43_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
     puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_080497ea();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2609,17 +2505,12 @@ undefined4 test_3_blocks_variant_43_edges_6(void)
 undefined4 FUN_080497ea(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
     puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_080497ea();
-      return uVar1;
-    }
-  }
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -2825,16 +2716,12 @@ undefined4 FUN_080499e2(void)
 undefined4 test_3_blocks_variant_50_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      uVar1 = FUN_08049a36();
-      return uVar1;
-    }
+    if (conditions._104_4_ == 0) break;
+    puts("block 4");
   }
   puts("exit block");
   return 0;
@@ -2845,16 +2732,12 @@ undefined4 test_3_blocks_variant_50_edges_6(void)
 undefined4 FUN_08049a36(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      uVar1 = FUN_08049a36();
-      return uVar1;
-    }
+    if (conditions._104_4_ == 0) break;
+    puts("block 4");
   }
   puts("exit block");
   return 0;
@@ -2957,19 +2840,16 @@ LAB_08049b1f:
 undefined4 test_3_blocks_variant_54_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_08049b86();
-  return uVar1;
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+    }
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -2977,19 +2857,16 @@ undefined4 test_3_blocks_variant_54_edges_6(void)
 undefined4 FUN_08049b86(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_08049b86();
-  return uVar1;
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+    }
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3093,19 +2970,14 @@ undefined4 FUN_08049c82(void)
 undefined4 test_3_blocks_variant_58_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    do {
+      puts("block 3");
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
   }
-  do {
-    puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_08049cd6();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3113,19 +2985,14 @@ undefined4 test_3_blocks_variant_58_edges_6(void)
 undefined4 FUN_08049cd6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    do {
+      puts("block 3");
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
   }
-  do {
-    puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_08049cd6();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3205,17 +3072,13 @@ undefined4 FUN_08049d7e(void)
 undefined4 test_3_blocks_variant_61_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_08049dd2();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3225,17 +3088,13 @@ undefined4 test_3_blocks_variant_61_edges_6(void)
 undefined4 FUN_08049dd2(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_08049dd2();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3341,16 +3200,13 @@ undefined4 FUN_08049ece(void)
 undefined4 test_3_blocks_variant_65_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08049f22();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -3361,16 +3217,13 @@ undefined4 test_3_blocks_variant_65_edges_6(void)
 undefined4 FUN_08049f22(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_08049f22();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -3511,19 +3364,14 @@ undefined4 FUN_0804a072(void)
 undefined4 test_3_blocks_variant_70_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-  }
-  else {
-    puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804a0c6();
-      return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("block 3");
+      break;
     }
-  }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3533,19 +3381,14 @@ undefined4 test_3_blocks_variant_70_edges_6(void)
 undefined4 FUN_0804a0c6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-  }
-  else {
-    puts("block 4");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804a0c6();
-      return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("block 3");
+      break;
     }
-  }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3713,19 +3556,12 @@ undefined4 FUN_0804a26a(void)
 undefined4 test_3_blocks_variant_76_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_0804a2be();
-    return uVar1;
-  }
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804a2be();
-    return uVar1;
-  }
+  do {
+    while (puts("block 2"), conditions._100_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3735,19 +3571,12 @@ undefined4 test_3_blocks_variant_76_edges_6(void)
 undefined4 FUN_0804a2be(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_0804a2be();
-    return uVar1;
-  }
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804a2be();
-    return uVar1;
-  }
+  do {
+    while (puts("block 2"), conditions._100_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3757,16 +3586,11 @@ undefined4 FUN_0804a2be(void)
 undefined4 test_3_blocks_variant_77_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) && (puts("block 4"), conditions._104_4_ == 0)) {
-    puts("exit block");
-    return 0;
+  while ((puts("block 2"), conditions._100_4_ == 0 || (puts("block 4"), conditions._104_4_ != 0))) {
+    puts("block 3");
   }
-  puts("block 3");
-  uVar1 = FUN_0804a312();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3774,16 +3598,11 @@ undefined4 test_3_blocks_variant_77_edges_6(void)
 undefined4 FUN_0804a312(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) && (puts("block 4"), conditions._104_4_ == 0)) {
-    puts("exit block");
-    return 0;
+  while ((puts("block 2"), conditions._100_4_ == 0 || (puts("block 4"), conditions._104_4_ != 0))) {
+    puts("block 3");
   }
-  puts("block 3");
-  uVar1 = FUN_0804a312();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3791,13 +3610,8 @@ undefined4 FUN_0804a312(void)
 undefined4 test_3_blocks_variant_78_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
+  while (puts("block 2"), conditions._100_4_ == 0) {
     puts("block 3");
-    uVar1 = FUN_0804a366();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -3811,13 +3625,8 @@ undefined4 test_3_blocks_variant_78_edges_6(void)
 undefined4 FUN_0804a366(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
+  while (puts("block 2"), conditions._100_4_ == 0) {
     puts("block 3");
-    uVar1 = FUN_0804a366();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -3831,19 +3640,15 @@ undefined4 FUN_0804a366(void)
 undefined4 test_3_blocks_variant_79_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    do {
-      puts("block 3");
-    } while( true );
-  }
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804a3ba();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      do {
+        puts("block 3");
+      } while( true );
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3853,19 +3658,15 @@ undefined4 test_3_blocks_variant_79_edges_6(void)
 undefined4 FUN_0804a3ba(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    do {
-      puts("block 3");
-    } while( true );
-  }
-  puts("block 4");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0804a3ba();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      do {
+        puts("block 3");
+      } while( true );
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -3941,19 +3742,15 @@ undefined4 FUN_0804a462(void)
 undefined4 test_3_blocks_variant_82_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804a4b6();
-  return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -3961,19 +3758,15 @@ undefined4 test_3_blocks_variant_82_edges_6(void)
 undefined4 FUN_0804a4b6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804a4b6();
-  return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._104_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -4075,19 +3868,16 @@ LAB_0804a59f:
 undefined4 test_3_blocks_variant_86_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  uVar1 = FUN_0804a606();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -4095,19 +3885,16 @@ undefined4 test_3_blocks_variant_86_edges_6(void)
 undefined4 FUN_0804a606(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  uVar1 = FUN_0804a606();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -4223,19 +4010,19 @@ undefined4 FUN_0804a702(void)
 undefined4 test_3_blocks_variant_90_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      uVar1 = FUN_0804a756();
-      return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_0804a743:
+      puts("exit block");
+      return 0;
     }
-    puts("block 3");
-  }
-  puts("exit block");
-  return 0;
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+      goto LAB_0804a743;
+    }
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -4243,19 +4030,19 @@ undefined4 test_3_blocks_variant_90_edges_6(void)
 undefined4 FUN_0804a756(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      uVar1 = FUN_0804a756();
-      return uVar1;
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_0804a743:
+      puts("exit block");
+      return 0;
     }
-    puts("block 3");
-  }
-  puts("exit block");
-  return 0;
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+      goto LAB_0804a743;
+    }
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -4331,21 +4118,18 @@ undefined4 FUN_0804a7fe(void)
 undefined4 test_3_blocks_variant_93_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+    }
+    else {
+      puts("block 4");
+    }
   }
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804a852();
-    return uVar1;
-  }
-  puts("block 3");
-  uVar1 = FUN_0804a852();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -4353,21 +4137,18 @@ undefined4 test_3_blocks_variant_93_edges_6(void)
 undefined4 FUN_0804a852(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+    }
+    else {
+      puts("block 4");
+    }
   }
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804a852();
-    return uVar1;
-  }
-  puts("block 3");
-  uVar1 = FUN_0804a852();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -4375,16 +4156,13 @@ undefined4 FUN_0804a852(void)
 undefined4 test_3_blocks_variant_94_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ != 0) {
       puts("block 4");
     }
     puts("block 3");
-    uVar1 = FUN_0804a8a6();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -4395,16 +4173,13 @@ undefined4 test_3_blocks_variant_94_edges_6(void)
 undefined4 FUN_0804a8a6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ != 0) {
       puts("block 4");
     }
     puts("block 3");
-    uVar1 = FUN_0804a8a6();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -4415,17 +4190,14 @@ undefined4 FUN_0804a8a6(void)
 undefined4 test_3_blocks_variant_95_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  if (conditions._104_4_ == 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("exit block");
+      return 0;
+    }
+    if (conditions._104_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804a8fa();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -4437,17 +4209,14 @@ undefined4 test_3_blocks_variant_95_edges_6(void)
 undefined4 FUN_0804a8fa(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  if (conditions._104_4_ == 0) {
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+      puts("exit block");
+      return 0;
+    }
+    if (conditions._104_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804a8fa();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -4607,15 +4376,12 @@ undefined4 FUN_0804aa4a(void)
 undefined4 test_3_blocks_variant_100_edges_6(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_0804aa9e();
-    return uVar1;
   }
   puts("block 3");
   puts("exit block");
@@ -4627,15 +4393,12 @@ undefined4 test_3_blocks_variant_100_edges_6(void)
 undefined4 FUN_0804aa9e(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    uVar1 = FUN_0804aa9e();
-    return uVar1;
   }
   puts("block 3");
   puts("exit block");
@@ -5137,19 +4900,11 @@ undefined4 FUN_0804af3c(void)
 undefined4 test_3_blocks_variant_114_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
     puts("block 3");
-    if (conditions._100_4_ == 0) goto LAB_0804af86;
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804af99();
-    return uVar1;
-  }
-LAB_0804af86:
+    if (conditions._100_4_ == 0) break;
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -5159,19 +4914,11 @@ LAB_0804af86:
 undefined4 FUN_0804af99(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
     puts("block 3");
-    if (conditions._100_4_ == 0) goto LAB_0804af86;
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804af99();
-    return uVar1;
-  }
-LAB_0804af86:
+    if (conditions._100_4_ == 0) break;
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -5377,18 +5124,14 @@ undefined4 FUN_0804b16a(void)
 undefined4 test_3_blocks_variant_120_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-    if (conditions._100_4_ == 0) goto LAB_0804b1b4;
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804b1c7();
-    return uVar1;
-  }
+    puts("block 2");
+    do {
+      puts("block 3");
+      if (conditions._100_4_ == 0) goto LAB_0804b1b4;
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
 LAB_0804b1b4:
   puts("exit block");
   return 0;
@@ -5399,18 +5142,14 @@ LAB_0804b1b4:
 undefined4 FUN_0804b1c7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
   do {
-    puts("block 3");
-    if (conditions._100_4_ == 0) goto LAB_0804b1b4;
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804b1c7();
-    return uVar1;
-  }
+    puts("block 2");
+    do {
+      puts("block 3");
+      if (conditions._100_4_ == 0) goto LAB_0804b1b4;
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
 LAB_0804b1b4:
   puts("exit block");
   return 0;
@@ -5595,22 +5334,17 @@ undefined4 FUN_0804b398(void)
 undefined4 test_3_blocks_variant_126_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0804b3f5:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
-      if (conditions._100_4_ == 0) break;
-      if (conditions._104_4_ != 0) {
-        puts("block 4");
-        if (conditions._108_4_ != 0) {
-          uVar1 = FUN_0804b3f5();
-          return uVar1;
-        }
-        puts("exit block");
-        return 0;
-      }
+      if (conditions._100_4_ == 0) goto FUN_0804b3f5;
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+    if (conditions._108_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
   } while( true );
 }
@@ -5620,22 +5354,17 @@ undefined4 test_3_blocks_variant_126_edges_7(void)
 undefined4 FUN_0804b3f5(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0804b3f5:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
-      if (conditions._100_4_ == 0) break;
-      if (conditions._104_4_ != 0) {
-        puts("block 4");
-        if (conditions._108_4_ != 0) {
-          uVar1 = FUN_0804b3f5();
-          return uVar1;
-        }
-        puts("exit block");
-        return 0;
-      }
+      if (conditions._100_4_ == 0) goto code_r0x0804b3f5;
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+    if (conditions._108_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
   } while( true );
 }
@@ -5757,23 +5486,18 @@ LAB_0804b4f9:
 undefined4 test_3_blocks_variant_130_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0804b569:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._100_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._104_4_ == 0) break;
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804b569();
-        return uVar1;
-      }
-    }
+      if (conditions._104_4_ == 0) goto FUN_0804b569;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -5782,23 +5506,18 @@ undefined4 test_3_blocks_variant_130_edges_7(void)
 undefined4 FUN_0804b569(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0804b569:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._100_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._104_4_ == 0) break;
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804b569();
-        return uVar1;
-      }
-    }
+      if (conditions._104_4_ == 0) goto code_r0x0804b569;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -6043,19 +5762,11 @@ code_r0x0804b797:
 undefined4 test_3_blocks_variant_137_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    puts("block 3");
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_0804b7f4();
-        return uVar1;
-      }
-    }
-  }
+  do {
+    puts("block 2");
+    if ((conditions._100_4_ == 0) || (puts("block 3"), conditions._104_4_ == 0)) break;
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -6065,19 +5776,11 @@ undefined4 test_3_blocks_variant_137_edges_7(void)
 undefined4 FUN_0804b7f4(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    puts("block 3");
-    if (conditions._104_4_ != 0) {
-      puts("block 4");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_0804b7f4();
-        return uVar1;
-      }
-    }
-  }
+  do {
+    puts("block 2");
+    if ((conditions._100_4_ == 0) || (puts("block 3"), conditions._104_4_ == 0)) break;
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -6257,19 +5960,11 @@ undefined4 FUN_0804b9c5(void)
 undefined4 test_3_blocks_variant_143_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804ba0f;
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804ba22();
-    return uVar1;
-  }
-LAB_0804ba0f:
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -6279,19 +5974,11 @@ LAB_0804ba0f:
 undefined4 FUN_0804ba22(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804ba0f;
+    if (conditions._100_4_ == 0) break;
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804ba22();
-    return uVar1;
-  }
-LAB_0804ba0f:
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -6477,19 +6164,14 @@ undefined4 FUN_0804bbf3(void)
 undefined4 test_3_blocks_variant_149_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     do {
       puts("block 3");
     } while (conditions._104_4_ == 0);
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804bc50();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -6499,19 +6181,14 @@ undefined4 test_3_blocks_variant_149_edges_7(void)
 undefined4 FUN_0804bc50(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     do {
       puts("block 3");
     } while (conditions._104_4_ == 0);
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804bc50();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -6739,8 +6416,6 @@ LAB_0804be6b:
 undefined4 test_3_blocks_variant_156_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     puts("block 2");
     if (conditions._100_4_ == 0) break;
@@ -6748,8 +6423,6 @@ undefined4 test_3_blocks_variant_156_edges_7(void)
     if (conditions._104_4_ == 0) break;
     if (conditions._108_4_ != 0) {
       puts("block 4");
-      uVar1 = FUN_0804bedb();
-      return uVar1;
     }
   }
   puts("exit block");
@@ -6761,8 +6434,6 @@ undefined4 test_3_blocks_variant_156_edges_7(void)
 undefined4 FUN_0804bedb(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     puts("block 2");
     if (conditions._100_4_ == 0) break;
@@ -6770,8 +6441,6 @@ undefined4 FUN_0804bedb(void)
     if (conditions._104_4_ == 0) break;
     if (conditions._108_4_ != 0) {
       puts("block 4");
-      uVar1 = FUN_0804bedb();
-      return uVar1;
     }
   }
   puts("exit block");
@@ -6887,18 +6556,14 @@ LAB_0804bfdf:
 undefined4 test_3_blocks_variant_160_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804c04f();
-        return uVar1;
-      }
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_0804c03c;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   }
+LAB_0804c03c:
   puts("exit block");
   return 0;
 }
@@ -6908,18 +6573,14 @@ undefined4 test_3_blocks_variant_160_edges_7(void)
 undefined4 FUN_0804c04f(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804c04f();
-        return uVar1;
-      }
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_0804c03c;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   }
+LAB_0804c03c:
   puts("exit block");
   return 0;
 }
@@ -7043,21 +6704,18 @@ LAB_0804c153:
 undefined4 test_3_blocks_variant_164_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0804c1c3:
   do {
     puts("block 2");
     if (conditions._100_4_ == 0) {
       puts("exit block");
       return 0;
     }
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804c1c3();
-        return uVar1;
-      }
-    }
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto FUN_0804c1c3;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -7066,21 +6724,18 @@ undefined4 test_3_blocks_variant_164_edges_7(void)
 undefined4 FUN_0804c1c3(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0804c1c3:
   do {
     puts("block 2");
     if (conditions._100_4_ == 0) {
       puts("exit block");
       return 0;
     }
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_0804c1c3();
-        return uVar1;
-      }
-    }
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto code_r0x0804c1c3;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -7283,19 +6938,12 @@ undefined4 FUN_0804c394(void)
 undefined4 test_3_blocks_variant_170_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804c3f1();
-      return uVar1;
-    }
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -7305,19 +6953,12 @@ undefined4 test_3_blocks_variant_170_edges_7(void)
 undefined4 FUN_0804c3f1(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804c3f1();
-      return uVar1;
-    }
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    puts("block 3");
+  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -7513,19 +7154,12 @@ undefined4 FUN_0804c5c2(void)
 undefined4 test_3_blocks_variant_176_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804c61f();
-    return uVar1;
-  }
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -7535,19 +7169,12 @@ undefined4 test_3_blocks_variant_176_edges_7(void)
 undefined4 FUN_0804c61f(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
     puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804c61f();
-    return uVar1;
-  }
+  } while ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -7631,21 +7258,17 @@ undefined4 FUN_0804c6d9(void)
 undefined4 test_3_blocks_variant_179_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804c736();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -7653,21 +7276,17 @@ undefined4 test_3_blocks_variant_179_edges_7(void)
 undefined4 FUN_0804c736(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._104_4_ == 0);
-  puts("block 4");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804c736();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+    } while (conditions._104_4_ == 0);
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -7783,8 +7402,6 @@ LAB_0804c83a:
 undefined4 test_3_blocks_variant_183_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     do {
       puts("block 2");
@@ -7793,8 +7410,6 @@ undefined4 test_3_blocks_variant_183_edges_7(void)
     if (conditions._104_4_ == 0) break;
     if (conditions._108_4_ != 0) {
       puts("block 4");
-      uVar1 = FUN_0804c8aa();
-      return uVar1;
     }
   }
   puts("exit block");
@@ -7806,8 +7421,6 @@ undefined4 test_3_blocks_variant_183_edges_7(void)
 undefined4 FUN_0804c8aa(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     do {
       puts("block 2");
@@ -7816,8 +7429,6 @@ undefined4 FUN_0804c8aa(void)
     if (conditions._104_4_ == 0) break;
     if (conditions._108_4_ != 0) {
       puts("block 4");
-      uVar1 = FUN_0804c8aa();
-      return uVar1;
     }
   }
   puts("exit block");
@@ -7949,21 +7560,19 @@ LAB_0804c9ae:
 undefined4 test_3_blocks_variant_187_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._104_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804ca1e();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -7971,21 +7580,19 @@ undefined4 test_3_blocks_variant_187_edges_7(void)
 undefined4 FUN_0804ca1e(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._104_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804ca1e();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -8247,20 +7854,21 @@ LAB_0804cc96:
 undefined4 test_3_blocks_variant_195_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-    if (conditions._104_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._108_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0804cd06();
-  return uVar1;
+FUN_0804cd06:
+  puts("block 2");
+  if (conditions._100_4_ != 0) goto LAB_0804cd2d;
+  goto LAB_0804cd1e;
+LAB_0804cd2d:
+  puts("block 4");
+  if (conditions._104_4_ == 0) {
+    puts("exit block");
+    return 0;
+  }
+  if (conditions._108_4_ != 0) {
+LAB_0804cd1e:
+    puts("block 3");
+  }
+  goto FUN_0804cd06;
 }
 
 
@@ -8268,20 +7876,21 @@ undefined4 test_3_blocks_variant_195_edges_7(void)
 undefined4 FUN_0804cd06(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-    if (conditions._104_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._108_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0804cd06();
-  return uVar1;
+code_r0x0804cd06:
+  puts("block 2");
+  if (conditions._100_4_ != 0) goto LAB_0804cd2d;
+  goto LAB_0804cd1e;
+LAB_0804cd2d:
+  puts("block 4");
+  if (conditions._104_4_ == 0) {
+    puts("exit block");
+    return 0;
+  }
+  if (conditions._108_4_ != 0) {
+LAB_0804cd1e:
+    puts("block 3");
+  }
+  goto code_r0x0804cd06;
 }
 
 
@@ -8289,14 +7898,9 @@ undefined4 FUN_0804cd06(void)
 undefined4 test_3_blocks_variant_196_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while (puts("block 2"), conditions._100_4_ == 0) {
       puts("block 3");
-      uVar1 = FUN_0804cd63();
-      return uVar1;
     }
     do {
       puts("block 4");
@@ -8313,14 +7917,9 @@ undefined4 test_3_blocks_variant_196_edges_7(void)
 undefined4 FUN_0804cd63(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while (puts("block 2"), conditions._100_4_ == 0) {
       puts("block 3");
-      uVar1 = FUN_0804cd63();
-      return uVar1;
     }
     do {
       puts("block 4");
@@ -8338,21 +7937,20 @@ undefined4 test_3_blocks_variant_197_edges_7(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
   do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      uVar2 = FUN_0804cdc0();
-      return uVar2;
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+      if (conditions._104_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
     }
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ != 0);
-  puts("exit block");
-  return 0;
+    puts("block 3");
+  } while( true );
 }
 
 
@@ -8361,21 +7959,20 @@ undefined4 FUN_0804cdc0(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
   do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      uVar2 = FUN_0804cdc0();
-      return uVar2;
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+      if (conditions._104_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
     }
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ != 0);
-  puts("exit block");
-  return 0;
+    puts("block 3");
+  } while( true );
 }
 
 
@@ -8631,23 +8228,14 @@ undefined4 FUN_0804cfee(void)
 undefined4 test_3_blocks_variant_204_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804d04b();
-      return uVar1;
+  do {
+    while (puts("block 2"), conditions._100_4_ == 0) {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_0804d038;
     }
-  }
-  else {
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804d04b();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
+LAB_0804d038:
   puts("exit block");
   return 0;
 }
@@ -8657,23 +8245,14 @@ undefined4 test_3_blocks_variant_204_edges_7(void)
 undefined4 FUN_0804d04b(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
-    puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804d04b();
-      return uVar1;
+  do {
+    while (puts("block 2"), conditions._100_4_ == 0) {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_0804d038;
     }
-  }
-  else {
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804d04b();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
+LAB_0804d038:
   puts("exit block");
   return 0;
 }
@@ -8683,14 +8262,11 @@ undefined4 FUN_0804d04b(void)
 undefined4 test_3_blocks_variant_205_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (((conditions._100_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0)) &&
-     (puts("block 3"), conditions._104_4_ != 0)) {
-    uVar1 = FUN_0804d0a8();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    if ((conditions._100_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) break;
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -8700,14 +8276,11 @@ undefined4 test_3_blocks_variant_205_edges_7(void)
 undefined4 FUN_0804d0a8(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (((conditions._100_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0)) &&
-     (puts("block 3"), conditions._104_4_ != 0)) {
-    uVar1 = FUN_0804d0a8();
-    return uVar1;
-  }
+  do {
+    puts("block 2");
+    if ((conditions._100_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) break;
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -8717,23 +8290,19 @@ undefined4 FUN_0804d0a8(void)
 undefined4 test_3_blocks_variant_206_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ != 0) goto LAB_0804d135;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804d105();
-      return uVar1;
-    }
-  }
-  else {
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
-  }
+  } while (conditions._104_4_ != 0);
+LAB_0804d0f2:
   puts("exit block");
   return 0;
+LAB_0804d135:
+  do {
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  goto LAB_0804d0f2;
 }
 
 
@@ -8741,23 +8310,19 @@ undefined4 test_3_blocks_variant_206_edges_7(void)
 undefined4 FUN_0804d105(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ == 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ != 0) goto LAB_0804d135;
     puts("block 3");
-    if (conditions._104_4_ != 0) {
-      uVar1 = FUN_0804d105();
-      return uVar1;
-    }
-  }
-  else {
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
-  }
+  } while (conditions._104_4_ != 0);
+LAB_0804d0f2:
   puts("exit block");
   return 0;
+LAB_0804d135:
+  do {
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  goto LAB_0804d0f2;
 }
 
 
@@ -8765,20 +8330,19 @@ undefined4 FUN_0804d105(void)
 undefined4 test_3_blocks_variant_207_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0804d162:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-  } while (conditions._108_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804d162();
-  return uVar1;
+    if (conditions._100_4_ != 0) {
+      puts("block 4");
+      if (conditions._108_4_ == 0) goto FUN_0804d162;
+    }
+    puts("block 3");
+    if (conditions._104_4_ == 0) {
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -8786,20 +8350,19 @@ undefined4 test_3_blocks_variant_207_edges_7(void)
 undefined4 FUN_0804d162(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0804d162:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-  } while (conditions._108_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804d162();
-  return uVar1;
+    if (conditions._100_4_ != 0) {
+      puts("block 4");
+      if (conditions._108_4_ == 0) goto code_r0x0804d162;
+    }
+    puts("block 3");
+    if (conditions._104_4_ == 0) {
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -8807,20 +8370,16 @@ undefined4 FUN_0804d162(void)
 undefined4 test_3_blocks_variant_208_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804d1bf();
-  return uVar1;
+  do {
+    while (puts("block 2"), conditions._100_4_ != 0) {
+      do {
+        puts("block 4");
+      } while (conditions._108_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -8828,20 +8387,16 @@ undefined4 test_3_blocks_variant_208_edges_7(void)
 undefined4 FUN_0804d1bf(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804d1bf();
-  return uVar1;
+  do {
+    while (puts("block 2"), conditions._100_4_ != 0) {
+      do {
+        puts("block 4");
+      } while (conditions._108_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -8850,19 +8405,16 @@ undefined4 test_3_blocks_variant_209_edges_7(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  }
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar2 = FUN_0804d21c();
-    return uVar2;
-  }
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -8873,19 +8425,16 @@ undefined4 FUN_0804d21c(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  }
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar2 = FUN_0804d21c();
-    return uVar2;
-  }
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -9219,18 +8768,14 @@ LAB_0804d579:
 undefined4 test_3_blocks_variant_219_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804d5ab;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804d5be();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0804d5ab;
+    } while (conditions._104_4_ == 0);
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
 LAB_0804d5ab:
   puts("exit block");
   return 0;
@@ -9241,18 +8786,14 @@ LAB_0804d5ab:
 undefined4 FUN_0804d5be(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804d5ab;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  puts("block 4");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_0804d5be();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0804d5ab;
+    } while (conditions._104_4_ == 0);
+    puts("block 3");
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
 LAB_0804d5ab:
   puts("exit block");
   return 0;
@@ -9481,19 +9022,15 @@ LAB_0804d7d9:
 undefined4 test_3_blocks_variant_226_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804d836;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804d849();
-    return uVar1;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      if (conditions._108_4_ == 0) break;
+      puts("block 4");
+    }
   }
-LAB_0804d836:
   puts("exit block");
   return 0;
 }
@@ -9503,19 +9040,15 @@ LAB_0804d836:
 undefined4 FUN_0804d849(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804d836;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804d849();
-    return uVar1;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      if (conditions._108_4_ == 0) break;
+      puts("block 4");
+    }
   }
-LAB_0804d836:
   puts("exit block");
   return 0;
 }
@@ -9635,21 +9168,18 @@ LAB_0804d94d:
 undefined4 test_3_blocks_variant_230_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-        puts("exit block");
-        return 0;
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      if (conditions._108_4_ != 0) {
+        puts("block 4");
       }
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804d9bd();
-  return uVar1;
+    }
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -9657,21 +9187,18 @@ undefined4 test_3_blocks_variant_230_edges_7(void)
 undefined4 FUN_0804d9bd(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-        puts("exit block");
-        return 0;
+  while( true ) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      puts("block 3");
+      if (conditions._108_4_ != 0) {
+        puts("block 4");
       }
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804d9bd();
-  return uVar1;
+    }
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -9781,21 +9308,16 @@ LAB_0804dac1:
 undefined4 test_3_blocks_variant_234_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+      } while (conditions._108_4_ == 0);
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804db31();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -9803,21 +9325,16 @@ undefined4 test_3_blocks_variant_234_edges_7(void)
 undefined4 FUN_0804db31(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+      } while (conditions._108_4_ == 0);
+      puts("block 4");
     }
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  uVar1 = FUN_0804db31();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -9905,21 +9422,15 @@ undefined4 FUN_0804dbeb(void)
 undefined4 test_3_blocks_variant_237_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       puts("block 3");
+      break;
     }
-    else {
-      puts("block 4");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_0804dc48();
-        return uVar1;
-      }
-    }
-  }
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -9929,21 +9440,15 @@ undefined4 test_3_blocks_variant_237_edges_7(void)
 undefined4 FUN_0804dc48(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       puts("block 3");
+      break;
     }
-    else {
-      puts("block 4");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_0804dc48();
-        return uVar1;
-      }
-    }
-  }
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -10135,21 +9640,16 @@ undefined4 FUN_0804de19(void)
 undefined4 test_3_blocks_variant_243_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
+  do {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0804de63;
+      if (conditions._104_4_ != 0) break;
       puts("block 3");
-      uVar1 = FUN_0804de76();
-      return uVar1;
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804de76();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
+LAB_0804de63:
   puts("exit block");
   return 0;
 }
@@ -10159,21 +9659,16 @@ undefined4 test_3_blocks_variant_243_edges_7(void)
 undefined4 FUN_0804de76(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
+  do {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0804de63;
+      if (conditions._104_4_ != 0) break;
       puts("block 3");
-      uVar1 = FUN_0804de76();
-      return uVar1;
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804de76();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
+LAB_0804de63:
   puts("exit block");
   return 0;
 }
@@ -10183,14 +9678,9 @@ undefined4 FUN_0804de76(void)
 undefined4 test_3_blocks_variant_244_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) &&
-     ((conditions._104_4_ == 0 || (puts("block 4"), conditions._108_4_ != 0)))) {
+  while ((puts("block 2"), conditions._100_4_ != 0 &&
+         ((conditions._104_4_ == 0 || (puts("block 4"), conditions._108_4_ != 0))))) {
     puts("block 3");
-    uVar1 = FUN_0804ded3();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -10201,14 +9691,9 @@ undefined4 test_3_blocks_variant_244_edges_7(void)
 undefined4 FUN_0804ded3(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) &&
-     ((conditions._104_4_ == 0 || (puts("block 4"), conditions._108_4_ != 0)))) {
+  while ((puts("block 2"), conditions._100_4_ != 0 &&
+         ((conditions._104_4_ == 0 || (puts("block 4"), conditions._108_4_ != 0))))) {
     puts("block 3");
-    uVar1 = FUN_0804ded3();
-    return uVar1;
   }
   puts("exit block");
   return 0;
@@ -10219,21 +9704,18 @@ undefined4 FUN_0804ded3(void)
 undefined4 test_3_blocks_variant_245_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      uVar1 = FUN_0804df30();
-      return uVar1;
-    }
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) goto LAB_0804df60;
+    puts("block 3");
   }
+LAB_0804df1d:
   puts("exit block");
   return 0;
+LAB_0804df60:
+  do {
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  goto LAB_0804df1d;
 }
 
 
@@ -10241,21 +9723,18 @@ undefined4 test_3_blocks_variant_245_edges_7(void)
 undefined4 FUN_0804df30(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      uVar1 = FUN_0804df30();
-      return uVar1;
-    }
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) goto LAB_0804df60;
+    puts("block 3");
   }
+LAB_0804df1d:
   puts("exit block");
   return 0;
+LAB_0804df60:
+  do {
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  goto LAB_0804df1d;
 }
 
 
@@ -10263,18 +9742,13 @@ undefined4 FUN_0804df30(void)
 undefined4 test_3_blocks_variant_246_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0)) {
+      puts("block 3");
     }
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0));
-  puts("block 3");
-  uVar1 = FUN_0804df8d();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10282,18 +9756,13 @@ undefined4 test_3_blocks_variant_246_edges_7(void)
 undefined4 FUN_0804df8d(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ == 0) || (puts("block 4"), conditions._108_4_ != 0)) {
+      puts("block 3");
     }
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0));
-  puts("block 3");
-  uVar1 = FUN_0804df8d();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10301,22 +9770,18 @@ undefined4 FUN_0804df8d(void)
 undefined4 test_3_blocks_variant_247_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
     }
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
+    else {
+      do {
+        puts("block 4");
+      } while (conditions._108_4_ != 0);
+    }
   }
-  puts("block 3");
-  uVar1 = FUN_0804dfea();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10324,22 +9789,18 @@ undefined4 test_3_blocks_variant_247_edges_7(void)
 undefined4 FUN_0804dfea(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
     }
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._108_4_ != 0);
+    else {
+      do {
+        puts("block 4");
+      } while (conditions._108_4_ != 0);
+    }
   }
-  puts("block 3");
-  uVar1 = FUN_0804dfea();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10348,21 +9809,16 @@ undefined4 test_3_blocks_variant_248_edges_7(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+    }
+    puts("block 3");
   }
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  }
-  puts("block 3");
-  uVar2 = FUN_0804e047();
-  return uVar2;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10371,21 +9827,16 @@ undefined4 FUN_0804e047(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  if (conditions._100_4_ == 0) {
-    puts("exit block");
-    return 0;
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._108_4_;
+    }
+    puts("block 3");
   }
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._108_4_;
-  }
-  puts("block 3");
-  uVar2 = FUN_0804e047();
-  return uVar2;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -10393,21 +9844,16 @@ undefined4 FUN_0804e047(void)
 undefined4 test_3_blocks_variant_249_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       do {
         puts("block 3");
       } while( true );
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e0a4();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -10417,21 +9863,16 @@ undefined4 test_3_blocks_variant_249_edges_7(void)
 undefined4 FUN_0804e0a4(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       do {
         puts("block 3");
       } while( true );
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e0a4();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -10633,19 +10074,14 @@ undefined4 FUN_0804e275(void)
 undefined4 test_3_blocks_variant_255_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       puts("block 3");
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e2d2();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -10655,19 +10091,14 @@ undefined4 test_3_blocks_variant_255_edges_7(void)
 undefined4 FUN_0804e2d2(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
     if (conditions._104_4_ == 0) {
       puts("block 3");
     }
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e2d2();
-      return uVar1;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -10853,23 +10284,20 @@ LAB_0804e4c4:
 undefined4 test_3_blocks_variant_261_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-  }
-  else {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e500();
-      return uVar1;
+    if (conditions._108_4_ == 0) {
+LAB_0804e4ed:
+      puts("exit block");
+      return 0;
     }
   }
-  puts("exit block");
-  return 0;
+  puts("block 3");
+  goto LAB_0804e4ed;
 }
 
 
@@ -10877,23 +10305,20 @@ undefined4 test_3_blocks_variant_261_edges_7(void)
 undefined4 FUN_0804e500(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-  }
-  else {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e500();
-      return uVar1;
+    if (conditions._108_4_ == 0) {
+LAB_0804e4ed:
+      puts("exit block");
+      return 0;
     }
   }
-  puts("exit block");
-  return 0;
+  puts("block 3");
+  goto LAB_0804e4ed;
 }
 
 
@@ -11079,23 +10504,18 @@ undefined4 FUN_0804e6d1(void)
 undefined4 test_3_blocks_variant_267_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e72e();
-      return uVar1;
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
     }
-    puts("exit block");
-    return 0;
-  }
-  puts("block 3");
-  uVar1 = FUN_0804e72e();
-  return uVar1;
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11103,23 +10523,18 @@ undefined4 test_3_blocks_variant_267_edges_7(void)
 undefined4 FUN_0804e72e(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
-    puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e72e();
-      return uVar1;
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
     }
-    puts("exit block");
-    return 0;
-  }
-  puts("block 3");
-  uVar1 = FUN_0804e72e();
-  return uVar1;
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11127,18 +10542,15 @@ undefined4 FUN_0804e72e(void)
 undefined4 test_3_blocks_variant_268_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) {
-    puts("exit block");
-    return 0;
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) break;
+    puts("block 3");
   }
-  puts("block 3");
-  uVar1 = FUN_0804e78b();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11146,18 +10558,15 @@ undefined4 test_3_blocks_variant_268_edges_7(void)
 undefined4 FUN_0804e78b(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) {
-    puts("exit block");
-    return 0;
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if ((conditions._104_4_ != 0) && (puts("block 4"), conditions._108_4_ == 0)) break;
+    puts("block 3");
   }
-  puts("block 3");
-  uVar1 = FUN_0804e78b();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11165,15 +10574,12 @@ undefined4 FUN_0804e78b(void)
 undefined4 test_3_blocks_variant_269_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804e7e8();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -11187,15 +10593,12 @@ undefined4 test_3_blocks_variant_269_edges_7(void)
 undefined4 FUN_0804e7e8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804e7e8();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -11209,19 +10612,16 @@ undefined4 FUN_0804e7e8(void)
 undefined4 test_3_blocks_variant_270_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e845();
-      return uVar1;
+    if (conditions._108_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
-    puts("exit block");
-    return 0;
   }
   do {
     puts("block 3");
@@ -11233,19 +10633,16 @@ undefined4 test_3_blocks_variant_270_edges_7(void)
 undefined4 FUN_0804e845(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ != 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) break;
     puts("block 4");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_0804e845();
-      return uVar1;
+    if (conditions._108_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
-    puts("exit block");
-    return 0;
   }
   do {
     puts("block 3");
@@ -11331,21 +10728,17 @@ undefined4 FUN_0804e8ff(void)
 undefined4 test_3_blocks_variant_273_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804e95c();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11353,21 +10746,17 @@ undefined4 test_3_blocks_variant_273_edges_7(void)
 undefined4 FUN_0804e95c(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_0804e95c();
-  return uVar1;
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11485,21 +10874,21 @@ LAB_0804ea60:
 undefined4 test_3_blocks_variant_277_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804eabd;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804ead0();
-    return uVar1;
-  }
-  puts("block 3");
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
 LAB_0804eabd:
-  puts("exit block");
-  return 0;
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+      goto LAB_0804eabd;
+    }
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -11507,21 +10896,21 @@ LAB_0804eabd:
 undefined4 FUN_0804ead0(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804eabd;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804ead0();
-    return uVar1;
-  }
-  puts("block 3");
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
 LAB_0804eabd:
-  puts("exit block");
-  return 0;
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+      goto LAB_0804eabd;
+    }
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -11605,23 +10994,20 @@ LAB_0804eb77:
 undefined4 test_3_blocks_variant_280_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ == 0) {
+        puts("block 3");
+      }
+      else {
+        puts("block 4");
+      }
     }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804ebe7();
-    return uVar1;
   }
-  puts("block 3");
-  uVar1 = FUN_0804ebe7();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11629,23 +11015,20 @@ undefined4 test_3_blocks_variant_280_edges_7(void)
 undefined4 FUN_0804ebe7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ == 0) {
+        puts("block 3");
+      }
+      else {
+        puts("block 4");
+      }
     }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    uVar1 = FUN_0804ebe7();
-    return uVar1;
   }
-  puts("block 3");
-  uVar1 = FUN_0804ebe7();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11653,21 +11036,18 @@ undefined4 FUN_0804ebe7(void)
 undefined4 test_3_blocks_variant_281_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ != 0) {
+        puts("block 4");
+      }
+      puts("block 3");
     }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
   }
-  puts("block 3");
-  uVar1 = FUN_0804ec44();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11675,21 +11055,18 @@ undefined4 test_3_blocks_variant_281_edges_7(void)
 undefined4 FUN_0804ec44(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
+  while( true ) {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ != 0) {
+        puts("block 4");
+      }
+      puts("block 3");
     }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
   }
-  puts("block 3");
-  uVar1 = FUN_0804ec44();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -11697,19 +11074,16 @@ undefined4 FUN_0804ec44(void)
 undefined4 test_3_blocks_variant_282_edges_7(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804eca1();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -11721,19 +11095,16 @@ undefined4 test_3_blocks_variant_282_edges_7(void)
 undefined4 FUN_0804eca1(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
+  while( true ) {
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ != 0) break;
     puts("block 3");
-    uVar1 = FUN_0804eca1();
-    return uVar1;
   }
   do {
     puts("block 4");
@@ -12481,26 +11852,19 @@ undefined4 FUN_0804f343(void)
 undefined4 test_3_blocks_variant_300_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0804f3a9:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._100_4_ == 0) goto LAB_0804f396;
-      if (conditions._104_4_ == 0) break;
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ != 0) {
-          uVar1 = FUN_0804f3a9();
-          return uVar1;
-        }
+      if (conditions._104_4_ == 0) goto FUN_0804f3a9;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_0804f396:
-        puts("exit block");
-        return 0;
-      }
-    }
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -12508,26 +11872,19 @@ LAB_0804f396:
 undefined4 FUN_0804f3a9(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0804f3a9:
   do {
     puts("block 2");
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._100_4_ == 0) goto LAB_0804f396;
-      if (conditions._104_4_ == 0) break;
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ != 0) {
-          uVar1 = FUN_0804f3a9();
-          return uVar1;
-        }
+      if (conditions._104_4_ == 0) goto code_r0x0804f3a9;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_0804f396:
-        puts("exit block");
-        return 0;
-      }
-    }
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -13263,20 +12620,10 @@ code_r0x0804fad5:
 undefined4 test_3_blocks_variant_319_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804fb28;
-    puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_0804fb28;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_0804fb3b();
-    return uVar1;
-  }
-LAB_0804fb28:
+    if ((conditions._100_4_ == 0) || (puts("block 3"), conditions._104_4_ == 0)) break;
+  } while ((conditions._108_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -13286,20 +12633,10 @@ LAB_0804fb28:
 undefined4 FUN_0804fb3b(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0804fb28;
-    puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_0804fb28;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_0804fb3b();
-    return uVar1;
-  }
-LAB_0804fb28:
+    if ((conditions._100_4_ == 0) || (puts("block 3"), conditions._104_4_ == 0)) break;
+  } while ((conditions._108_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -13489,19 +12826,13 @@ LAB_0804fd26:
 undefined4 test_3_blocks_variant_325_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while (puts("block 2"), conditions._100_4_ != 0) {
     do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_0804fd8c;
     } while (conditions._108_4_ == 0);
     puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_0804fd9f();
-      return uVar1;
-    }
+    if (conditions._112_4_ == 0) break;
   }
 LAB_0804fd8c:
   puts("exit block");
@@ -13513,19 +12844,13 @@ LAB_0804fd8c:
 undefined4 FUN_0804fd9f(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
+  while (puts("block 2"), conditions._100_4_ != 0) {
     do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_0804fd8c;
     } while (conditions._108_4_ == 0);
     puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_0804fd9f();
-      return uVar1;
-    }
+    if (conditions._112_4_ == 0) break;
   }
 LAB_0804fd8c:
   puts("exit block");
@@ -13731,26 +13056,18 @@ undefined4 FUN_0804ff9d(void)
 undefined4 test_3_blocks_variant_331_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08050003:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-LAB_0804fff0:
-      puts("exit block");
-      return 0;
-    }
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ != 0) {
-          uVar1 = FUN_08050003();
-          return uVar1;
-        }
-        goto LAB_0804fff0;
-      }
-    }
-  } while( true );
+    if (conditions._100_4_ == 0) break;
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto FUN_08050003;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -13758,26 +13075,18 @@ LAB_0804fff0:
 undefined4 FUN_08050003(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08050003:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) {
-LAB_0804fff0:
-      puts("exit block");
-      return 0;
-    }
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ != 0) {
-          uVar1 = FUN_08050003();
-          return uVar1;
-        }
-        goto LAB_0804fff0;
-      }
-    }
-  } while( true );
+    if (conditions._100_4_ == 0) break;
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto code_r0x08050003;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -14017,23 +13326,21 @@ LAB_08050254:
 undefined4 test_3_blocks_variant_338_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+FUN_080502cd:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_080502ba:
+      puts("exit block");
+      return 0;
+    }
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_080502ba;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_080502cd();
-        return uVar1;
-      }
-    }
-  }
-LAB_080502ba:
-  puts("exit block");
-  return 0;
+      if (conditions._108_4_ == 0) goto FUN_080502cd;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -14041,23 +13348,21 @@ LAB_080502ba:
 undefined4 FUN_080502cd(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+code_r0x080502cd:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_080502ba:
+      puts("exit block");
+      return 0;
+    }
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_080502ba;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_080502cd();
-        return uVar1;
-      }
-    }
-  }
-LAB_080502ba:
-  puts("exit block");
-  return 0;
+      if (conditions._108_4_ == 0) goto code_r0x080502cd;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while( true );
 }
 
 
@@ -14615,21 +13920,13 @@ undefined4 FUN_080507fb(void)
 undefined4 test_3_blocks_variant_352_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
     puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_0805084e;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08050861();
-    return uVar1;
-  }
-LAB_0805084e:
+  } while ((conditions._104_4_ != 0) &&
+          ((conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0))));
   puts("exit block");
   return 0;
 }
@@ -14639,21 +13936,13 @@ LAB_0805084e:
 undefined4 FUN_08050861(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
     puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_0805084e;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08050861();
-    return uVar1;
-  }
-LAB_0805084e:
+  } while ((conditions._104_4_ != 0) &&
+          ((conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0))));
   puts("exit block");
   return 0;
 }
@@ -14879,20 +14168,16 @@ undefined4 FUN_08050a5f(void)
 undefined4 test_3_blocks_variant_358_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_08050ab2;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08050ac5();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_08050ab2;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08050ab2:
   puts("exit block");
   return 0;
@@ -14903,20 +14188,16 @@ LAB_08050ab2:
 undefined4 FUN_08050ac5(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._104_4_ == 0) goto LAB_08050ab2;
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08050ac5();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto LAB_08050ab2;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08050ab2:
   puts("exit block");
   return 0;
@@ -15121,22 +14402,19 @@ undefined4 FUN_08050cc3(void)
 undefined4 test_3_blocks_variant_364_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08050d29:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ == 0) {
-          puts("exit block");
-          return 0;
-        }
-        uVar1 = FUN_08050d29();
-        return uVar1;
-      }
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto FUN_08050d29;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+    if (conditions._112_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
   } while( true );
 }
@@ -15146,22 +14424,19 @@ undefined4 test_3_blocks_variant_364_edges_8(void)
 undefined4 FUN_08050d29(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08050d29:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while (puts("block 3"), conditions._104_4_ != 0) {
-      if (conditions._108_4_ != 0) {
-        puts("block 4");
-        if (conditions._112_4_ == 0) {
-          puts("exit block");
-          return 0;
-        }
-        uVar1 = FUN_08050d29();
-        return uVar1;
-      }
+    do {
+      puts("block 3");
+      if (conditions._104_4_ == 0) goto code_r0x08050d29;
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+    if (conditions._112_4_ == 0) {
+      puts("exit block");
+      return 0;
     }
   } while( true );
 }
@@ -15295,25 +14570,20 @@ LAB_08050e48:
 undefined4 test_3_blocks_variant_368_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08050ec1:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_08050ec1();
-        return uVar1;
-      }
-    }
+      if (conditions._108_4_ == 0) goto FUN_08050ec1;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -15322,25 +14592,20 @@ undefined4 test_3_blocks_variant_368_edges_8(void)
 undefined4 FUN_08050ec1(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08050ec1:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_08050ec1();
-        return uVar1;
-      }
-    }
+      if (conditions._108_4_ == 0) goto code_r0x08050ec1;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -15485,23 +14750,24 @@ LAB_08050fe0:
 undefined4 test_3_blocks_variant_372_edges_8(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        break;
+      }
       puts("block 4");
       if (conditions._104_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ == 0) goto LAB_08051071;
-    }
-  }
-LAB_08051071:
-  puts("block 3");
-  uVar1 = FUN_08051059();
-  return uVar1;
+      iVar1 = conditions._112_4_;
+    } while (conditions._108_4_ != 0);
+  } while( true );
 }
 
 
@@ -15509,23 +14775,24 @@ LAB_08051071:
 undefined4 FUN_08051059(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        break;
+      }
       puts("block 4");
       if (conditions._104_4_ == 0) {
         puts("exit block");
         return 0;
       }
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ == 0) goto LAB_08051071;
-    }
-  }
-LAB_08051071:
-  puts("block 3");
-  uVar1 = FUN_08051059();
-  return uVar1;
+      iVar1 = conditions._112_4_;
+    } while (conditions._108_4_ != 0);
+  } while( true );
 }
 
 
@@ -15625,22 +14892,21 @@ undefined4 FUN_08051125(void)
 undefined4 test_3_blocks_variant_375_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0805118b:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-    if (conditions._108_4_ == 0) goto LAB_08051178;
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0805118b();
-    return uVar1;
-  }
+    if (conditions._100_4_ != 0) {
+      puts("block 4");
+      if (conditions._108_4_ == 0) goto LAB_08051178;
+      if (conditions._112_4_ == 0) goto FUN_0805118b;
+    }
+    puts("block 3");
+    if (conditions._104_4_ == 0) {
 LAB_08051178:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -15648,22 +14914,21 @@ LAB_08051178:
 undefined4 FUN_0805118b(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0805118b:
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) break;
-    puts("block 4");
-    if (conditions._108_4_ == 0) goto LAB_08051178;
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_0805118b();
-    return uVar1;
-  }
+    if (conditions._100_4_ != 0) {
+      puts("block 4");
+      if (conditions._108_4_ == 0) goto LAB_08051178;
+      if (conditions._112_4_ == 0) goto code_r0x0805118b;
+    }
+    puts("block 3");
+    if (conditions._104_4_ == 0) {
 LAB_08051178:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -15671,19 +14936,15 @@ LAB_08051178:
 undefined4 test_3_blocks_variant_376_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    do {
-      puts("block 4");
-      if (conditions._108_4_ == 0) goto LAB_080511de;
-    } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080511f1();
-    return uVar1;
-  }
+  do {
+    while (puts("block 2"), conditions._100_4_ != 0) {
+      do {
+        puts("block 4");
+        if (conditions._108_4_ == 0) goto LAB_080511de;
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
 LAB_080511de:
   puts("exit block");
   return 0;
@@ -15694,19 +14955,15 @@ LAB_080511de:
 undefined4 FUN_080511f1(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    do {
-      puts("block 4");
-      if (conditions._108_4_ == 0) goto LAB_080511de;
-    } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_080511f1();
-    return uVar1;
-  }
+  do {
+    while (puts("block 2"), conditions._100_4_ != 0) {
+      do {
+        puts("block 4");
+        if (conditions._108_4_ == 0) goto LAB_080511de;
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
 LAB_080511de:
   puts("exit block");
   return 0;
@@ -15718,22 +14975,18 @@ undefined4 test_3_blocks_variant_377_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
   do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._104_4_ != 0) {
-        uVar2 = FUN_08051257();
-        return uVar2;
-      }
-      break;
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) goto LAB_08051244;
     }
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  } while (conditions._108_4_ != 0);
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
+LAB_08051244:
   puts("exit block");
   return 0;
 }
@@ -15744,22 +14997,18 @@ undefined4 FUN_08051257(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._100_4_;
   do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._104_4_ != 0) {
-        uVar2 = FUN_08051257();
-        return uVar2;
-      }
-      break;
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) goto LAB_08051244;
     }
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  } while (conditions._108_4_ != 0);
+    puts("block 3");
+  } while (conditions._104_4_ != 0);
+LAB_08051244:
   puts("exit block");
   return 0;
 }
@@ -15769,21 +15018,24 @@ undefined4 FUN_08051257(void)
 undefined4 test_3_blocks_variant_378_edges_8(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while (puts("block 4"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ == 0) goto LAB_080512d5;
-    }
-  }
-LAB_080512d5:
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_080512bd();
-  return uVar1;
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        if (conditions._104_4_ == 0) {
+          puts("exit block");
+          return 0;
+        }
+        break;
+      }
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+    } while (conditions._108_4_ != 0);
+  } while( true );
 }
 
 
@@ -15791,21 +15043,24 @@ LAB_080512d5:
 undefined4 FUN_080512bd(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while (puts("block 4"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ == 0) goto LAB_080512d5;
-    }
-  }
-LAB_080512d5:
-  puts("block 3");
-  if (conditions._104_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_080512bd();
-  return uVar1;
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        if (conditions._104_4_ == 0) {
+          puts("exit block");
+          return 0;
+        }
+        break;
+      }
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+    } while (conditions._108_4_ != 0);
+  } while( true );
 }
 
 
@@ -16711,21 +15966,11 @@ code_r0x08051b1b:
 undefined4 test_3_blocks_variant_400_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08051b6e;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08051b81();
-      return uVar1;
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((puts("block 3"), conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ == 0))))
+    break;
   }
-LAB_08051b6e:
   puts("exit block");
   return 0;
 }
@@ -16735,21 +15980,11 @@ LAB_08051b6e:
 undefined4 FUN_08051b81(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08051b6e;
-  } while (conditions._104_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08051b81();
-      return uVar1;
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((puts("block 3"), conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ == 0))))
+    break;
   }
-LAB_08051b6e:
   puts("exit block");
   return 0;
 }
@@ -16955,21 +16190,11 @@ LAB_08051d6c:
 undefined4 test_3_blocks_variant_406_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) goto LAB_08051dd2;
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08051de5();
-    return uVar1;
-  }
-LAB_08051dd2:
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+  } while (((conditions._104_4_ == 0) || (puts("block 3"), conditions._108_4_ == 0)) ||
+          (puts("block 4"), conditions._112_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -16979,21 +16204,11 @@ LAB_08051dd2:
 undefined4 FUN_08051de5(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) goto LAB_08051dd2;
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08051de5();
-    return uVar1;
-  }
-LAB_08051dd2:
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+  } while (((conditions._104_4_ == 0) || (puts("block 3"), conditions._108_4_ == 0)) ||
+          (puts("block 4"), conditions._112_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -17193,20 +16408,16 @@ undefined4 FUN_08051fe3(void)
 undefined4 test_3_blocks_variant_412_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052036;
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08052049();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052036;
+    } while (conditions._104_4_ == 0);
+    do {
+      puts("block 3");
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08052036:
   puts("exit block");
   return 0;
@@ -17217,20 +16428,16 @@ LAB_08052036:
 undefined4 FUN_08052049(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052036;
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-  } while (conditions._108_4_ == 0);
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08052049();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052036;
+    } while (conditions._104_4_ == 0);
+    do {
+      puts("block 3");
+    } while (conditions._108_4_ == 0);
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08052036:
   puts("exit block");
   return 0;
@@ -17481,8 +16688,6 @@ LAB_0805229a:
 undefined4 test_3_blocks_variant_419_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     puts("block 2");
     if (conditions._100_4_ == 0) break;
@@ -17491,8 +16696,6 @@ undefined4 test_3_blocks_variant_419_edges_8(void)
       if (conditions._108_4_ == 0) break;
       if (conditions._112_4_ != 0) {
         puts("block 4");
-        uVar1 = FUN_08052313();
-        return uVar1;
       }
     }
   }
@@ -17505,8 +16708,6 @@ undefined4 test_3_blocks_variant_419_edges_8(void)
 undefined4 FUN_08052313(void)
 
 {
-  undefined4 uVar1;
-  
   while( true ) {
     puts("block 2");
     if (conditions._100_4_ == 0) break;
@@ -17515,8 +16716,6 @@ undefined4 FUN_08052313(void)
       if (conditions._108_4_ == 0) break;
       if (conditions._112_4_ != 0) {
         puts("block 4");
-        uVar1 = FUN_08052313();
-        return uVar1;
       }
     }
   }
@@ -17647,17 +16846,13 @@ LAB_08052432:
 undefined4 test_3_blocks_variant_423_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052498;
-  } while (conditions._104_4_ == 0);
-  while (puts("block 3"), conditions._108_4_ != 0) {
-    if (conditions._112_4_ != 0) {
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+        if (conditions._108_4_ == 0) goto LAB_08052498;
+      } while (conditions._112_4_ == 0);
       puts("block 4");
-      uVar1 = FUN_080524ab();
-      return uVar1;
     }
   }
 LAB_08052498:
@@ -17670,17 +16865,13 @@ LAB_08052498:
 undefined4 FUN_080524ab(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052498;
-  } while (conditions._104_4_ == 0);
-  while (puts("block 3"), conditions._108_4_ != 0) {
-    if (conditions._112_4_ != 0) {
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+        if (conditions._108_4_ == 0) goto LAB_08052498;
+      } while (conditions._112_4_ == 0);
       puts("block 4");
-      uVar1 = FUN_080524ab();
-      return uVar1;
     }
   }
 LAB_08052498:
@@ -17819,8 +17010,7 @@ LAB_080525ca:
 undefined4 test_3_blocks_variant_427_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08052643:
   do {
     do {
       puts("block 2");
@@ -17829,13 +17019,11 @@ undefined4 test_3_blocks_variant_427_edges_8(void)
         return 0;
       }
     } while (conditions._104_4_ == 0);
-    while (puts("block 3"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_08052643();
-        return uVar1;
-      }
-    }
+    do {
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto FUN_08052643;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -17844,8 +17032,7 @@ undefined4 test_3_blocks_variant_427_edges_8(void)
 undefined4 FUN_08052643(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08052643:
   do {
     do {
       puts("block 2");
@@ -17854,13 +17041,11 @@ undefined4 FUN_08052643(void)
         return 0;
       }
     } while (conditions._104_4_ == 0);
-    while (puts("block 3"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        uVar1 = FUN_08052643();
-        return uVar1;
-      }
-    }
+    do {
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto code_r0x08052643;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
   } while( true );
 }
 
@@ -18139,22 +17324,21 @@ LAB_08052894:
 undefined4 test_3_blocks_variant_434_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-LAB_080528fa:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) break;
+FUN_0805290d:
+  puts("block 2");
+  if (conditions._100_4_ != 0) {
+    if (conditions._104_4_ == 0) goto LAB_0805292e;
     puts("block 4");
-    if (conditions._108_4_ == 0) goto LAB_080528fa;
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0805290d();
-  return uVar1;
+    if (conditions._108_4_ != 0) goto code_r0x08052953;
+  }
+  puts("exit block");
+  return 0;
+code_r0x08052953:
+  if (conditions._112_4_ != 0) {
+LAB_0805292e:
+    puts("block 3");
+  }
+  goto FUN_0805290d;
 }
 
 
@@ -18162,22 +17346,21 @@ LAB_080528fa:
 undefined4 FUN_0805290d(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-LAB_080528fa:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) break;
+code_r0x0805290d:
+  puts("block 2");
+  if (conditions._100_4_ != 0) {
+    if (conditions._104_4_ == 0) goto LAB_0805292e;
     puts("block 4");
-    if (conditions._108_4_ == 0) goto LAB_080528fa;
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_0805290d();
-  return uVar1;
+    if (conditions._108_4_ != 0) goto code_r0x08052953;
+  }
+  puts("exit block");
+  return 0;
+code_r0x08052953:
+  if (conditions._112_4_ != 0) {
+LAB_0805292e:
+    puts("block 3");
+  }
+  goto code_r0x0805290d;
 }
 
 
@@ -18185,18 +17368,16 @@ LAB_080528fa:
 undefined4 test_3_blocks_variant_435_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   while (puts("block 2"), conditions._100_4_ != 0) {
     if (conditions._104_4_ == 0) {
       puts("block 3");
-      uVar1 = FUN_08052973();
-      return uVar1;
     }
-    do {
-      puts("block 4");
-      if (conditions._108_4_ == 0) goto LAB_08052960;
-    } while (conditions._112_4_ != 0);
+    else {
+      do {
+        puts("block 4");
+        if (conditions._108_4_ == 0) goto LAB_08052960;
+      } while (conditions._112_4_ != 0);
+    }
   }
 LAB_08052960:
   puts("exit block");
@@ -18208,18 +17389,16 @@ LAB_08052960:
 undefined4 FUN_08052973(void)
 
 {
-  undefined4 uVar1;
-  
   while (puts("block 2"), conditions._100_4_ != 0) {
     if (conditions._104_4_ == 0) {
       puts("block 3");
-      uVar1 = FUN_08052973();
-      return uVar1;
     }
-    do {
-      puts("block 4");
-      if (conditions._108_4_ == 0) goto LAB_08052960;
-    } while (conditions._112_4_ != 0);
+    else {
+      do {
+        puts("block 4");
+        if (conditions._108_4_ == 0) goto LAB_08052960;
+      } while (conditions._112_4_ != 0);
+    }
   }
 LAB_08052960:
   puts("exit block");
@@ -18232,25 +17411,18 @@ undefined4 test_3_blocks_variant_436_edges_8(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  iVar2 = conditions._100_4_;
-  while( true ) {
-    if (iVar2 == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) goto LAB_080529c6;
     }
-    if (iVar1 == 0) break;
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-    iVar2 = conditions._108_4_;
+    puts("block 3");
   }
-  puts("block 3");
-  uVar3 = FUN_080529d9();
-  return uVar3;
+LAB_080529c6:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -18259,25 +17431,18 @@ undefined4 FUN_080529d9(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  iVar2 = conditions._100_4_;
-  while( true ) {
-    if (iVar2 == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) goto LAB_080529c6;
     }
-    if (iVar1 == 0) break;
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-    iVar2 = conditions._108_4_;
+    puts("block 3");
   }
-  puts("block 3");
-  uVar3 = FUN_080529d9();
-  return uVar3;
+LAB_080529c6:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -18286,7 +17451,6 @@ undefined4 test_3_blocks_variant_437_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -18298,8 +17462,7 @@ undefined4 test_3_blocks_variant_437_edges_8(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_08052a3f();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._112_4_;
@@ -18313,7 +17476,6 @@ undefined4 FUN_08052a3f(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -18325,8 +17487,7 @@ undefined4 FUN_08052a3f(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_08052a3f();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._112_4_;
@@ -18691,25 +17852,17 @@ undefined4 FUN_08052d6f(void)
 undefined4 test_3_blocks_variant_446_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052dd5();
-        return uVar1;
-      }
-    }
-    else {
+  do {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052dc2;
+      if (conditions._104_4_ == 0) break;
       puts("block 4");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_08052dd5();
-        return uVar1;
-      }
+      if (conditions._112_4_ == 0) goto LAB_08052dc2;
     }
-  }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08052dc2:
   puts("exit block");
   return 0;
 }
@@ -18719,25 +17872,17 @@ undefined4 test_3_blocks_variant_446_edges_8(void)
 undefined4 FUN_08052dd5(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052dd5();
-        return uVar1;
-      }
-    }
-    else {
+  do {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052dc2;
+      if (conditions._104_4_ == 0) break;
       puts("block 4");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_08052dd5();
-        return uVar1;
-      }
+      if (conditions._112_4_ == 0) goto LAB_08052dc2;
     }
-  }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08052dc2:
   puts("exit block");
   return 0;
 }
@@ -18747,14 +17892,9 @@ undefined4 FUN_08052dd5(void)
 undefined4 test_3_blocks_variant_447_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) &&
-     (((conditions._104_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0)) &&
-      (puts("block 3"), conditions._108_4_ != 0)))) {
-    uVar1 = FUN_08052e3b();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+       (puts("block 3"), conditions._108_4_ == 0)) break;
   }
   puts("exit block");
   return 0;
@@ -18765,14 +17905,9 @@ undefined4 test_3_blocks_variant_447_edges_8(void)
 undefined4 FUN_08052e3b(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if ((conditions._100_4_ != 0) &&
-     (((conditions._104_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0)) &&
-      (puts("block 3"), conditions._108_4_ != 0)))) {
-    uVar1 = FUN_08052e3b();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+       (puts("block 3"), conditions._108_4_ == 0)) break;
   }
   puts("exit block");
   return 0;
@@ -18783,25 +17918,20 @@ undefined4 FUN_08052e3b(void)
 undefined4 test_3_blocks_variant_448_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052ea1();
-        return uVar1;
-      }
-    }
-    else {
-      do {
-        puts("block 4");
-      } while (conditions._112_4_ != 0);
-    }
-  }
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) goto LAB_08052eda;
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08052e8e:
   puts("exit block");
   return 0;
+LAB_08052eda:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08052e8e;
 }
 
 
@@ -18809,25 +17939,20 @@ undefined4 test_3_blocks_variant_448_edges_8(void)
 undefined4 FUN_08052ea1(void)
 
 {
-  undefined4 uVar1;
-  
-  puts("block 2");
-  if (conditions._100_4_ != 0) {
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052ea1();
-        return uVar1;
-      }
-    }
-    else {
-      do {
-        puts("block 4");
-      } while (conditions._112_4_ != 0);
-    }
-  }
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) break;
+    if (conditions._104_4_ != 0) goto LAB_08052eda;
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08052e8e:
   puts("exit block");
   return 0;
+LAB_08052eda:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08052e8e;
 }
 
 
@@ -18835,18 +17960,11 @@ undefined4 FUN_08052ea1(void)
 undefined4 test_3_blocks_variant_449_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052ef4;
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0));
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08052f07();
-    return uVar1;
-  }
-LAB_08052ef4:
+    if (conditions._100_4_ == 0) break;
+  } while (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+          (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -18856,18 +17974,11 @@ LAB_08052ef4:
 undefined4 FUN_08052f07(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08052ef4;
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0));
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08052f07();
-    return uVar1;
-  }
-LAB_08052ef4:
+    if (conditions._100_4_ == 0) break;
+  } while (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+          (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -18877,27 +17988,20 @@ LAB_08052ef4:
 undefined4 test_3_blocks_variant_450_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052f5a;
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_08052f5a:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052f6d();
-        return uVar1;
-      }
-      goto LAB_08052f5a;
-    }
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -18905,27 +18009,20 @@ LAB_08052f5a:
 undefined4 FUN_08052f6d(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08052f5a;
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_08052f5a:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08052f6d();
-        return uVar1;
-      }
-      goto LAB_08052f5a;
-    }
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -18934,21 +18031,17 @@ undefined4 test_3_blocks_variant_451_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._104_4_;
+    if (conditions._100_4_ == 0) break;
     while (iVar1 != 0) {
       puts("block 4");
       iVar1 = conditions._112_4_;
     }
     puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar2 = FUN_08052fd3();
-      return uVar2;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -18959,21 +18052,17 @@ undefined4 FUN_08052fd3(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  if (conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._104_4_;
+    if (conditions._100_4_ == 0) break;
     while (iVar1 != 0) {
       puts("block 4");
       iVar1 = conditions._112_4_;
     }
     puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar2 = FUN_08052fd3();
-      return uVar2;
-    }
-  }
+  } while (conditions._108_4_ != 0);
   puts("exit block");
   return 0;
 }
@@ -19759,22 +18848,23 @@ undefined4 FUN_08053765(void)
 undefined4 test_3_blocks_variant_471_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_080537cb:
   do {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._108_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_080537cb();
-  return uVar1;
+    puts("block 2");
+  } while (conditions._100_4_ == 0);
+  if (conditions._104_4_ != 0) goto LAB_080537fb;
+  goto LAB_080537ec;
+LAB_080537fb:
+  puts("block 4");
+  if (conditions._108_4_ == 0) {
+    puts("exit block");
+    return 0;
+  }
+  if (conditions._112_4_ != 0) {
+LAB_080537ec:
+    puts("block 3");
+  }
+  goto FUN_080537cb;
 }
 
 
@@ -19782,22 +18872,23 @@ undefined4 test_3_blocks_variant_471_edges_8(void)
 undefined4 FUN_080537cb(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x080537cb:
   do {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._108_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
-  } while (conditions._112_4_ == 0);
-  puts("block 3");
-  uVar1 = FUN_080537cb();
-  return uVar1;
+    puts("block 2");
+  } while (conditions._100_4_ == 0);
+  if (conditions._104_4_ != 0) goto LAB_080537fb;
+  goto LAB_080537ec;
+LAB_080537fb:
+  puts("block 4");
+  if (conditions._108_4_ == 0) {
+    puts("exit block");
+    return 0;
+  }
+  if (conditions._112_4_ != 0) {
+LAB_080537ec:
+    puts("block 3");
+  }
+  goto code_r0x080537cb;
 }
 
 
@@ -19805,13 +18896,14 @@ undefined4 FUN_080537cb(void)
 undefined4 test_3_blocks_variant_472_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
+    }
     do {
       puts("block 4");
       if (conditions._108_4_ == 0) {
@@ -19819,10 +18911,7 @@ undefined4 test_3_blocks_variant_472_edges_8(void)
         return 0;
       }
     } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  uVar1 = FUN_08053831();
-  return uVar1;
+  } while( true );
 }
 
 
@@ -19830,13 +18919,14 @@ undefined4 test_3_blocks_variant_472_edges_8(void)
 undefined4 FUN_08053831(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
+    }
     do {
       puts("block 4");
       if (conditions._108_4_ == 0) {
@@ -19844,10 +18934,7 @@ undefined4 FUN_08053831(void)
         return 0;
       }
     } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  uVar1 = FUN_08053831();
-  return uVar1;
+  } while( true );
 }
 
 
@@ -19856,23 +18943,22 @@ undefined4 test_3_blocks_variant_473_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      uVar2 = FUN_08053897();
-      return uVar2;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
     }
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  } while (conditions._108_4_ != 0);
-  puts("exit block");
-  return 0;
+    puts("block 3");
+  } while( true );
 }
 
 
@@ -19881,23 +18967,22 @@ undefined4 FUN_08053897(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      uVar2 = FUN_08053897();
-      return uVar2;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+      if (conditions._108_4_ == 0) {
+        puts("exit block");
+        return 0;
+      }
     }
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  } while (conditions._108_4_ != 0);
-  puts("exit block");
-  return 0;
+    puts("block 3");
+  } while( true );
 }
 
 
@@ -20175,25 +19260,18 @@ undefined4 FUN_08053afb(void)
 undefined4 test_3_blocks_variant_480_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_08053b61();
-      return uVar1;
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto LAB_08053b4e;
     }
-  }
-  else {
     puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08053b61();
-      return uVar1;
-    }
-  }
+  } while (conditions._112_4_ != 0);
+LAB_08053b4e:
   puts("exit block");
   return 0;
 }
@@ -20203,25 +19281,18 @@ undefined4 test_3_blocks_variant_480_edges_8(void)
 undefined4 FUN_08053b61(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_08053b61();
-      return uVar1;
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ != 0) break;
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto LAB_08053b4e;
     }
-  }
-  else {
     puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08053b61();
-      return uVar1;
-    }
-  }
+  } while (conditions._112_4_ != 0);
+LAB_08053b4e:
   puts("exit block");
   return 0;
 }
@@ -20231,16 +19302,12 @@ undefined4 FUN_08053b61(void)
 undefined4 test_3_blocks_variant_481_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (((conditions._104_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) &&
-     (puts("block 3"), conditions._108_4_ != 0)) {
-    uVar1 = FUN_08053bc7();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+  } while (((conditions._104_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) &&
+          (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -20250,16 +19317,12 @@ undefined4 test_3_blocks_variant_481_edges_8(void)
 undefined4 FUN_08053bc7(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (((conditions._104_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) &&
-     (puts("block 3"), conditions._108_4_ != 0)) {
-    uVar1 = FUN_08053bc7();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+  } while (((conditions._104_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) &&
+          (puts("block 3"), conditions._108_4_ != 0));
   puts("exit block");
   return 0;
 }
@@ -20269,25 +19332,21 @@ undefined4 FUN_08053bc7(void)
 undefined4 test_3_blocks_variant_482_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_08053c2d();
-      return uVar1;
-    }
-  }
-  else {
     do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  }
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ != 0) goto LAB_08053c66;
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08053c1a:
   puts("exit block");
   return 0;
+LAB_08053c66:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08053c1a;
 }
 
 
@@ -20295,25 +19354,21 @@ undefined4 test_3_blocks_variant_482_edges_8(void)
 undefined4 FUN_08053c2d(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-  } while (conditions._100_4_ == 0);
-  if (conditions._104_4_ == 0) {
-    puts("block 3");
-    if (conditions._108_4_ != 0) {
-      uVar1 = FUN_08053c2d();
-      return uVar1;
-    }
-  }
-  else {
     do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  }
+      puts("block 2");
+    } while (conditions._100_4_ == 0);
+    if (conditions._104_4_ != 0) goto LAB_08053c66;
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08053c1a:
   puts("exit block");
   return 0;
+LAB_08053c66:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08053c1a;
 }
 
 
@@ -20321,20 +19376,14 @@ undefined4 FUN_08053c2d(void)
 undefined4 test_3_blocks_variant_483_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0));
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_08053c93();
-  return uVar1;
+  } while (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+          (puts("block 3"), conditions._108_4_ != 0));
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20342,20 +19391,14 @@ undefined4 test_3_blocks_variant_483_edges_8(void)
 undefined4 FUN_08053c93(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-  } while ((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0));
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_08053c93();
-  return uVar1;
+  } while (((conditions._104_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) ||
+          (puts("block 3"), conditions._108_4_ != 0));
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20363,24 +19406,20 @@ undefined4 FUN_08053c93(void)
 undefined4 test_3_blocks_variant_484_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_08053cf9();
-  return uVar1;
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20388,24 +19427,20 @@ undefined4 test_3_blocks_variant_484_edges_8(void)
 undefined4 FUN_08053cf9(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar1 = FUN_08053cf9();
-  return uVar1;
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._112_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20414,23 +19449,20 @@ undefined4 test_3_blocks_variant_485_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  }
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar2 = FUN_08053d5f();
-  return uVar2;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20439,23 +19471,20 @@ undefined4 FUN_08053d5f(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._112_4_;
-  }
-  puts("block 3");
-  if (conditions._108_4_ == 0) {
-    puts("exit block");
-    return 0;
-  }
-  uVar2 = FUN_08053d5f();
-  return uVar2;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._112_4_;
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+  puts("exit block");
+  return 0;
 }
 
 
@@ -20827,22 +19856,17 @@ LAB_08054116:
 undefined4 test_3_blocks_variant_495_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054148;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-  }
-  else {
-    puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_0805415b();
-      return uVar1;
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054148;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+      break;
     }
-  }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054148:
   puts("exit block");
   return 0;
@@ -20853,22 +19877,17 @@ LAB_08054148:
 undefined4 FUN_0805415b(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054148;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-  }
-  else {
-    puts("block 4");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_0805415b();
-      return uVar1;
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054148;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+      break;
     }
-  }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054148:
   puts("exit block");
   return 0;
@@ -21081,22 +20100,17 @@ LAB_08054346:
 undefined4 test_3_blocks_variant_501_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_080543ac;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_080543bf();
-    return uVar1;
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_080543bf();
-    return uVar1;
-  }
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_080543ac;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ != 0) break;
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_080543ac:
   puts("exit block");
   return 0;
@@ -21107,22 +20121,17 @@ LAB_080543ac:
 undefined4 FUN_080543bf(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_080543ac;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_080543bf();
-    return uVar1;
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_080543bf();
-    return uVar1;
-  }
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_080543ac;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ != 0) break;
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_080543ac:
   puts("exit block");
   return 0;
@@ -21133,18 +20142,12 @@ LAB_080543ac:
 undefined4 test_3_blocks_variant_502_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054412;
-  } while (conditions._104_4_ == 0);
-  if ((conditions._108_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) {
-    puts("block 3");
-    uVar1 = FUN_08054425();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if ((conditions._108_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) break;
+      puts("block 3");
+    }
   }
-LAB_08054412:
   puts("exit block");
   return 0;
 }
@@ -21154,18 +20157,12 @@ LAB_08054412:
 undefined4 FUN_08054425(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054412;
-  } while (conditions._104_4_ == 0);
-  if ((conditions._108_4_ == 0) || (puts("block 4"), conditions._112_4_ != 0)) {
-    puts("block 3");
-    uVar1 = FUN_08054425();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if ((conditions._108_4_ != 0) && (puts("block 4"), conditions._112_4_ == 0)) break;
+      puts("block 3");
+    }
   }
-LAB_08054412:
   puts("exit block");
   return 0;
 }
@@ -21175,23 +20172,20 @@ LAB_08054412:
 undefined4 test_3_blocks_variant_503_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054478;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_0805448b();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ != 0) goto LAB_080544c4;
+      puts("block 3");
+    }
   }
-  do {
-    puts("block 4");
-  } while (conditions._112_4_ != 0);
 LAB_08054478:
   puts("exit block");
   return 0;
+LAB_080544c4:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08054478;
 }
 
 
@@ -21199,23 +20193,20 @@ LAB_08054478:
 undefined4 FUN_0805448b(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054478;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    uVar1 = FUN_0805448b();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ != 0) goto LAB_080544c4;
+      puts("block 3");
+    }
   }
-  do {
-    puts("block 4");
-  } while (conditions._112_4_ != 0);
 LAB_08054478:
   puts("exit block");
   return 0;
+LAB_080544c4:
+  do {
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
+  goto LAB_08054478;
 }
 
 
@@ -21223,19 +20214,14 @@ LAB_08054478:
 undefined4 test_3_blocks_variant_504_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0)))) {
+      puts("block 3");
     }
-  } while ((conditions._104_4_ == 0) ||
-          ((conditions._108_4_ != 0 && (puts("block 4"), conditions._112_4_ == 0))));
-  puts("block 3");
-  uVar1 = FUN_080544f1();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21243,19 +20229,14 @@ undefined4 test_3_blocks_variant_504_edges_8(void)
 undefined4 FUN_080544f1(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((conditions._108_4_ == 0 || (puts("block 4"), conditions._112_4_ != 0)))) {
+      puts("block 3");
     }
-  } while ((conditions._104_4_ == 0) ||
-          ((conditions._108_4_ != 0 && (puts("block 4"), conditions._112_4_ == 0))));
-  puts("block 3");
-  uVar1 = FUN_080544f1();
-  return uVar1;
+  }
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21263,24 +20244,20 @@ undefined4 FUN_080544f1(void)
 undefined4 test_3_blocks_variant_505_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-        puts("exit block");
-        return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ == 0) {
+        puts("block 3");
       }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
+      else {
+        do {
+          puts("block 4");
+        } while (conditions._112_4_ != 0);
+      }
+    }
   }
-  puts("block 3");
-  uVar1 = FUN_08054557();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21288,24 +20265,20 @@ undefined4 test_3_blocks_variant_505_edges_8(void)
 undefined4 FUN_08054557(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-        puts("exit block");
-        return 0;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      if (conditions._108_4_ == 0) {
+        puts("block 3");
       }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
-    do {
-      puts("block 4");
-    } while (conditions._112_4_ != 0);
+      else {
+        do {
+          puts("block 4");
+        } while (conditions._112_4_ != 0);
+      }
+    }
   }
-  puts("block 3");
-  uVar1 = FUN_08054557();
-  return uVar1;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21314,23 +20287,19 @@ undefined4 test_3_blocks_variant_506_edges_8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._112_4_;
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._112_4_;
+      }
+      puts("block 3");
+    }
   }
-  puts("block 3");
-  uVar2 = FUN_080545bd();
-  return uVar2;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21339,23 +20308,19 @@ undefined4 FUN_080545bd(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
-      puts("exit block");
-      return 0;
-    }
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._112_4_;
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._112_4_;
+      }
+      puts("block 3");
+    }
   }
-  puts("block 3");
-  uVar2 = FUN_080545bd();
-  return uVar2;
+  puts("exit block");
+  return 0;
 }
 
 
@@ -21363,22 +20328,18 @@ undefined4 FUN_080545bd(void)
 undefined4 test_3_blocks_variant_507_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054610;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
     do {
-      puts("block 3");
-    } while( true );
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08054623();
-    return uVar1;
-  }
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054610;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      do {
+        puts("block 3");
+      } while( true );
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054610:
   puts("exit block");
   return 0;
@@ -21389,22 +20350,18 @@ LAB_08054610:
 undefined4 FUN_08054623(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054610;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
     do {
-      puts("block 3");
-    } while( true );
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08054623();
-    return uVar1;
-  }
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054610;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      do {
+        puts("block 3");
+      } while( true );
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054610:
   puts("exit block");
   return 0;
@@ -21627,20 +20584,16 @@ undefined4 FUN_08054821(void)
 undefined4 test_3_blocks_variant_513_edges_8(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054874;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08054887();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054874;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054874:
   puts("exit block");
   return 0;
@@ -21651,20 +20604,16 @@ LAB_08054874:
 undefined4 FUN_08054887(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08054874;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-  }
-  puts("block 4");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_08054887();
-    return uVar1;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08054874;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ == 0) {
+      puts("block 3");
+    }
+    puts("block 4");
+  } while (conditions._112_4_ != 0);
 LAB_08054874:
   puts("exit block");
   return 0;
@@ -22887,26 +21836,22 @@ code_r0x08055406:
 undefined4 test_3_blocks_variant_541_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+FUN_08055475:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_08055462:
+      puts("exit block");
+      return 0;
+    }
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_08055462;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08055475();
-          return uVar1;
-        }
-        goto LAB_08055462;
-      }
-    }
-  }
-LAB_08055462:
-  puts("exit block");
-  return 0;
+      if (conditions._108_4_ == 0) goto FUN_08055475;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+    if (conditions._116_4_ == 0) goto LAB_08055462;
+  } while( true );
 }
 
 
@@ -22914,26 +21859,22 @@ LAB_08055462:
 undefined4 FUN_08055475(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+code_r0x08055475:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_08055462:
+      puts("exit block");
+      return 0;
+    }
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_08055462;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08055475();
-          return uVar1;
-        }
-        goto LAB_08055462;
-      }
-    }
-  }
-LAB_08055462:
-  puts("exit block");
-  return 0;
+      if (conditions._108_4_ == 0) goto code_r0x08055475;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+    if (conditions._116_4_ == 0) goto LAB_08055462;
+  } while( true );
 }
 
 
@@ -23823,28 +22764,21 @@ undefined4 FUN_08055cb2(void)
 undefined4 test_3_blocks_variant_561_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08055d21:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_08055d0e;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08055d21();
-          return uVar1;
-        }
+      if (conditions._108_4_ == 0) goto FUN_08055d21;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
 LAB_08055d0e:
-        puts("exit block");
-        return 0;
-      }
-    }
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -23852,28 +22786,21 @@ LAB_08055d0e:
 undefined4 FUN_08055d21(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08055d21:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    while( true ) {
+    do {
       puts("block 3");
       if (conditions._104_4_ == 0) goto LAB_08055d0e;
-      if (conditions._108_4_ == 0) break;
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08055d21();
-          return uVar1;
-        }
+      if (conditions._108_4_ == 0) goto code_r0x08055d21;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
 LAB_08055d0e:
-        puts("exit block");
-        return 0;
-      }
-    }
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -24117,25 +23044,26 @@ undefined4 FUN_08055f4c(void)
 undefined4 test_3_blocks_variant_567_edges_9(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        if (conditions._104_4_ == 0) {
+LAB_08055fa8:
+          puts("exit block");
+          return 0;
+        }
+        break;
+      }
       puts("block 4");
       if (conditions._108_4_ == 0) goto LAB_08055fa8;
-      if (conditions._112_4_ == 0) break;
-      if (conditions._116_4_ == 0) goto LAB_08055fd3;
-    }
-  }
-LAB_08055fd3:
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_08055fbb();
-    return uVar1;
-  }
-LAB_08055fa8:
-  puts("exit block");
-  return 0;
+      iVar1 = conditions._116_4_;
+    } while (conditions._112_4_ != 0);
+  } while( true );
 }
 
 
@@ -24143,25 +23071,26 @@ LAB_08055fa8:
 undefined4 FUN_08055fbb(void)
 
 {
-  undefined4 uVar1;
+  int iVar1;
   
-  while (puts("block 2"), conditions._100_4_ != 0) {
-    while( true ) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._100_4_;
+    do {
+      if (iVar1 == 0) {
+        puts("block 3");
+        if (conditions._104_4_ == 0) {
+LAB_08055fa8:
+          puts("exit block");
+          return 0;
+        }
+        break;
+      }
       puts("block 4");
       if (conditions._108_4_ == 0) goto LAB_08055fa8;
-      if (conditions._112_4_ == 0) break;
-      if (conditions._116_4_ == 0) goto LAB_08055fd3;
-    }
-  }
-LAB_08055fd3:
-  puts("block 3");
-  if (conditions._104_4_ != 0) {
-    uVar1 = FUN_08055fbb();
-    return uVar1;
-  }
-LAB_08055fa8:
-  puts("exit block");
-  return 0;
+      iVar1 = conditions._116_4_;
+    } while (conditions._112_4_ != 0);
+  } while( true );
 }
 
 
@@ -25429,22 +24358,11 @@ code_r0x08056b70:
 undefined4 test_3_blocks_variant_595_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) goto LAB_08056bcc;
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-    if (conditions._108_4_ == 0) goto LAB_08056bcc;
-  } while (conditions._112_4_ == 0);
-  puts("block 4");
-  if (conditions._116_4_ != 0) {
-    uVar1 = FUN_08056bdf();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((puts("block 3"), conditions._108_4_ == 0 ||
+        ((conditions._112_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)))))) break;
   }
-LAB_08056bcc:
   puts("exit block");
   return 0;
 }
@@ -25454,22 +24372,11 @@ LAB_08056bcc:
 undefined4 FUN_08056bdf(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) goto LAB_08056bcc;
-    } while (conditions._104_4_ == 0);
-    puts("block 3");
-    if (conditions._108_4_ == 0) goto LAB_08056bcc;
-  } while (conditions._112_4_ == 0);
-  puts("block 4");
-  if (conditions._116_4_ != 0) {
-    uVar1 = FUN_08056bdf();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       ((puts("block 3"), conditions._108_4_ == 0 ||
+        ((conditions._112_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)))))) break;
   }
-LAB_08056bcc:
   puts("exit block");
   return 0;
 }
@@ -25701,20 +24608,15 @@ LAB_08056df7:
 undefined4 test_3_blocks_variant_601_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08056e66;
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._108_4_ == 0) goto LAB_08056e66;
-  } while (conditions._112_4_ == 0);
-  puts("block 4");
-  if (conditions._116_4_ != 0) {
-    uVar1 = FUN_08056e79();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+        if (conditions._108_4_ == 0) goto LAB_08056e66;
+      } while (conditions._112_4_ == 0);
+      puts("block 4");
+      if (conditions._116_4_ == 0) break;
+    }
   }
 LAB_08056e66:
   puts("exit block");
@@ -25726,20 +24628,15 @@ LAB_08056e66:
 undefined4 FUN_08056e79(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08056e66;
-  } while (conditions._104_4_ == 0);
-  do {
-    puts("block 3");
-    if (conditions._108_4_ == 0) goto LAB_08056e66;
-  } while (conditions._112_4_ == 0);
-  puts("block 4");
-  if (conditions._116_4_ != 0) {
-    uVar1 = FUN_08056e79();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if (conditions._104_4_ != 0) {
+      do {
+        puts("block 3");
+        if (conditions._108_4_ == 0) goto LAB_08056e66;
+      } while (conditions._112_4_ == 0);
+      puts("block 4");
+      if (conditions._116_4_ == 0) break;
+    }
   }
 LAB_08056e66:
   puts("exit block");
@@ -25959,28 +24856,21 @@ LAB_08057091:
 undefined4 test_3_blocks_variant_607_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08057113:
   do {
     do {
       puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_08057100:
-        puts("exit block");
-        return 0;
-      }
+      if (conditions._100_4_ == 0) goto LAB_08057100;
     } while (conditions._104_4_ == 0);
-    while (puts("block 3"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08057113();
-          return uVar1;
-        }
-        goto LAB_08057100;
-      }
-    }
-  } while( true );
+    do {
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto FUN_08057113;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
+LAB_08057100:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -25988,28 +24878,21 @@ LAB_08057100:
 undefined4 FUN_08057113(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08057113:
   do {
     do {
       puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_08057100:
-        puts("exit block");
-        return 0;
-      }
+      if (conditions._100_4_ == 0) goto LAB_08057100;
     } while (conditions._104_4_ == 0);
-    while (puts("block 3"), conditions._108_4_ != 0) {
-      if (conditions._112_4_ != 0) {
-        puts("block 4");
-        if (conditions._116_4_ != 0) {
-          uVar1 = FUN_08057113();
-          return uVar1;
-        }
-        goto LAB_08057100;
-      }
-    }
-  } while( true );
+    do {
+      puts("block 3");
+      if (conditions._108_4_ == 0) goto code_r0x08057113;
+    } while (conditions._112_4_ == 0);
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
+LAB_08057100:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -26273,25 +25156,23 @@ LAB_0805739a:
 undefined4 test_3_blocks_variant_614_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
+FUN_0805741c:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_08057409:
+      puts("exit block");
+      return 0;
+    }
     if (conditions._104_4_ != 0) {
-      while( true ) {
+      do {
         puts("block 3");
         if (conditions._108_4_ == 0) goto LAB_08057409;
-        if (conditions._112_4_ == 0) break;
-        if (conditions._116_4_ != 0) {
-          puts("block 4");
-          uVar1 = FUN_0805741c();
-          return uVar1;
-        }
-      }
+        if (conditions._112_4_ == 0) goto FUN_0805741c;
+      } while (conditions._116_4_ == 0);
+      puts("block 4");
     }
-  }
-LAB_08057409:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -26299,25 +25180,23 @@ LAB_08057409:
 undefined4 FUN_0805741c(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
+code_r0x0805741c:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_08057409:
+      puts("exit block");
+      return 0;
+    }
     if (conditions._104_4_ != 0) {
-      while( true ) {
+      do {
         puts("block 3");
         if (conditions._108_4_ == 0) goto LAB_08057409;
-        if (conditions._112_4_ == 0) break;
-        if (conditions._116_4_ != 0) {
-          puts("block 4");
-          uVar1 = FUN_0805741c();
-          return uVar1;
-        }
-      }
+        if (conditions._112_4_ == 0) goto code_r0x0805741c;
+      } while (conditions._116_4_ == 0);
+      puts("block 4");
     }
-  }
-LAB_08057409:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -26472,23 +25351,25 @@ undefined4 test_3_blocks_variant_618_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._104_4_;
+    if (conditions._100_4_ == 0) {
+LAB_080575c5:
+      puts("exit block");
+      return 0;
+    }
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_080575d8();
-        return uVar2;
+        break;
       }
       puts("block 4");
       if (conditions._108_4_ == 0) goto LAB_080575c5;
       iVar1 = conditions._116_4_;
     } while (conditions._112_4_ != 0);
-  }
-LAB_080575c5:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -26497,23 +25378,25 @@ undefined4 FUN_080575d8(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+  do {
+    puts("block 2");
+    iVar1 = conditions._104_4_;
+    if (conditions._100_4_ == 0) {
+LAB_080575c5:
+      puts("exit block");
+      return 0;
+    }
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_080575d8();
-        return uVar2;
+        break;
       }
       puts("block 4");
       if (conditions._108_4_ == 0) goto LAB_080575c5;
       iVar1 = conditions._116_4_;
     } while (conditions._112_4_ != 0);
-  }
-LAB_080575c5:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -26613,23 +25496,22 @@ LAB_080576a3:
 undefined4 test_3_blocks_variant_621_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08057725:
   do {
     puts("block 2");
     if (conditions._100_4_ == 0) goto LAB_08057712;
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._112_4_ == 0) goto LAB_08057712;
-  } while (conditions._116_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08057725();
-    return uVar1;
-  }
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+      if (conditions._112_4_ == 0) goto LAB_08057712;
+      if (conditions._116_4_ == 0) goto FUN_08057725;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) {
 LAB_08057712:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -26637,23 +25519,22 @@ LAB_08057712:
 undefined4 FUN_08057725(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08057725:
   do {
     puts("block 2");
     if (conditions._100_4_ == 0) goto LAB_08057712;
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._112_4_ == 0) goto LAB_08057712;
-  } while (conditions._116_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08057725();
-    return uVar1;
-  }
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+      if (conditions._112_4_ == 0) goto LAB_08057712;
+      if (conditions._116_4_ == 0) goto code_r0x08057725;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) {
 LAB_08057712:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -26661,28 +25542,21 @@ LAB_08057712:
 undefined4 test_3_blocks_variant_622_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08057781;
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._112_4_ == 0) goto LAB_08057781;
+      } while (conditions._116_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_08057781:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08057794();
-        return uVar1;
-      }
-      goto LAB_08057781;
-    }
-    do {
-      puts("block 4");
-      if (conditions._112_4_ == 0) goto LAB_08057781;
-    } while (conditions._116_4_ != 0);
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -26690,28 +25564,21 @@ LAB_08057781:
 undefined4 FUN_08057794(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) {
+    while( true ) {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_08057781;
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._112_4_ == 0) goto LAB_08057781;
+      } while (conditions._116_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_08057781:
-      puts("exit block");
-      return 0;
-    }
-    if (conditions._104_4_ == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar1 = FUN_08057794();
-        return uVar1;
-      }
-      goto LAB_08057781;
-    }
-    do {
-      puts("block 4");
-      if (conditions._112_4_ == 0) goto LAB_08057781;
-    } while (conditions._116_4_ != 0);
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -26720,30 +25587,19 @@ undefined4 test_3_blocks_variant_623_edges_9(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  iVar2 = conditions._100_4_;
-  do {
-    if (iVar2 == 0) {
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+      if (conditions._112_4_ == 0) goto LAB_080577f0;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) break;
+  }
 LAB_080577f0:
-      puts("exit block");
-      return 0;
-    }
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar3 = FUN_08057803();
-        return uVar3;
-      }
-      goto LAB_080577f0;
-    }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-    iVar2 = conditions._112_4_;
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -26752,30 +25608,19 @@ undefined4 FUN_08057803(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  puts("block 2");
-  iVar1 = conditions._104_4_;
-  iVar2 = conditions._100_4_;
-  do {
-    if (iVar2 == 0) {
+  while (puts("block 2"), iVar1 = conditions._104_4_, conditions._100_4_ != 0) {
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+      if (conditions._112_4_ == 0) goto LAB_080577f0;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) break;
+  }
 LAB_080577f0:
-      puts("exit block");
-      return 0;
-    }
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar3 = FUN_08057803();
-        return uVar3;
-      }
-      goto LAB_080577f0;
-    }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-    iVar2 = conditions._112_4_;
-  } while( true );
+  puts("exit block");
+  return 0;
 }
 
 
@@ -26784,7 +25629,6 @@ undefined4 test_3_blocks_variant_624_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -26797,11 +25641,8 @@ LAB_0805785f:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_08057872();
-          return uVar2;
-        }
-        goto LAB_0805785f;
+        if (conditions._108_4_ == 0) goto LAB_0805785f;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -26815,7 +25656,6 @@ undefined4 FUN_08057872(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -26828,11 +25668,8 @@ LAB_0805785f:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_08057872();
-          return uVar2;
-        }
-        goto LAB_0805785f;
+        if (conditions._108_4_ == 0) goto LAB_0805785f;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -27800,7 +26637,6 @@ undefined4 test_3_blocks_variant_646_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -27810,8 +26646,7 @@ undefined4 test_3_blocks_variant_646_edges_9(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_080581fc();
-        return uVar2;
+        break;
       }
       puts("block 4");
       if (conditions._108_4_ == 0) {
@@ -27829,7 +26664,6 @@ undefined4 FUN_080581fc(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -27839,8 +26673,7 @@ undefined4 FUN_080581fc(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_080581fc();
-        return uVar2;
+        break;
       }
       puts("block 4");
       if (conditions._108_4_ == 0) {
@@ -27965,24 +26798,23 @@ undefined4 FUN_080582da(void)
 undefined4 test_3_blocks_variant_649_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08058349:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._112_4_ == 0) goto LAB_08058336;
-  } while (conditions._116_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08058349();
-    return uVar1;
-  }
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+      if (conditions._112_4_ == 0) goto LAB_08058336;
+      if (conditions._116_4_ == 0) goto FUN_08058349;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) {
 LAB_08058336:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -27990,24 +26822,23 @@ LAB_08058336:
 undefined4 FUN_08058349(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08058349:
   do {
     do {
       puts("block 2");
     } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    puts("block 4");
-    if (conditions._112_4_ == 0) goto LAB_08058336;
-  } while (conditions._116_4_ == 0);
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_08058349();
-    return uVar1;
-  }
+    if (conditions._104_4_ != 0) {
+      puts("block 4");
+      if (conditions._112_4_ == 0) goto LAB_08058336;
+      if (conditions._116_4_ == 0) goto code_r0x08058349;
+    }
+    puts("block 3");
+    if (conditions._108_4_ == 0) {
 LAB_08058336:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -28015,23 +26846,19 @@ LAB_08058336:
 undefined4 test_3_blocks_variant_650_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-      if (conditions._112_4_ == 0) goto LAB_080583a5;
-    } while (conditions._116_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_080583b8();
-    return uVar1;
-  }
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._112_4_ == 0) goto LAB_080583a5;
+      } while (conditions._116_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_080583a5:
   puts("exit block");
   return 0;
@@ -28042,23 +26869,19 @@ LAB_080583a5:
 undefined4 FUN_080583b8(void)
 
 {
-  undefined4 uVar1;
-  
-  while( true ) {
-    do {
-      puts("block 2");
-    } while (conditions._100_4_ == 0);
-    if (conditions._104_4_ == 0) break;
-    do {
-      puts("block 4");
-      if (conditions._112_4_ == 0) goto LAB_080583a5;
-    } while (conditions._116_4_ != 0);
-  }
-  puts("block 3");
-  if (conditions._108_4_ != 0) {
-    uVar1 = FUN_080583b8();
-    return uVar1;
-  }
+  do {
+    while( true ) {
+      do {
+        puts("block 2");
+      } while (conditions._100_4_ == 0);
+      if (conditions._104_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._112_4_ == 0) goto LAB_080583a5;
+      } while (conditions._116_4_ != 0);
+    }
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
 LAB_080583a5:
   puts("exit block");
   return 0;
@@ -28070,24 +26893,20 @@ undefined4 test_3_blocks_variant_651_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar2 = FUN_08058427();
-        return uVar2;
-      }
-      break;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+      if (conditions._112_4_ == 0) goto LAB_08058414;
     }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  } while (conditions._112_4_ != 0);
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08058414:
   puts("exit block");
   return 0;
 }
@@ -28098,24 +26917,20 @@ undefined4 FUN_08058427(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    iVar1 = conditions._104_4_;
-  } while (conditions._100_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._108_4_ != 0) {
-        uVar2 = FUN_08058427();
-        return uVar2;
-      }
-      break;
+    do {
+      puts("block 2");
+      iVar1 = conditions._104_4_;
+    } while (conditions._100_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+      if (conditions._112_4_ == 0) goto LAB_08058414;
     }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  } while (conditions._112_4_ != 0);
+    puts("block 3");
+  } while (conditions._108_4_ != 0);
+LAB_08058414:
   puts("exit block");
   return 0;
 }
@@ -28126,7 +26941,6 @@ undefined4 test_3_blocks_variant_652_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -28140,8 +26954,7 @@ undefined4 test_3_blocks_variant_652_edges_9(void)
           puts("exit block");
           return 0;
         }
-        uVar2 = FUN_08058496();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -28155,7 +26968,6 @@ undefined4 FUN_08058496(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -28169,8 +26981,7 @@ undefined4 FUN_08058496(void)
           puts("exit block");
           return 0;
         }
-        uVar2 = FUN_08058496();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -29189,24 +28000,22 @@ LAB_08058d9e:
 undefined4 test_3_blocks_variant_674_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_08058e20:
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
 LAB_08058e0d:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
+      puts("exit block");
+      return 0;
+    }
+  } while (conditions._104_4_ == 0);
+  if (conditions._108_4_ != 0) {
     puts("block 4");
     if (conditions._112_4_ == 0) goto LAB_08058e0d;
-  } while (conditions._116_4_ == 0);
+    if (conditions._116_4_ == 0) goto FUN_08058e20;
+  }
   puts("block 3");
-  uVar1 = FUN_08058e20();
-  return uVar1;
+  goto FUN_08058e20;
 }
 
 
@@ -29214,24 +28023,22 @@ LAB_08058e0d:
 undefined4 FUN_08058e20(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x08058e20:
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
 LAB_08058e0d:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
+      puts("exit block");
+      return 0;
+    }
+  } while (conditions._104_4_ == 0);
+  if (conditions._108_4_ != 0) {
     puts("block 4");
     if (conditions._112_4_ == 0) goto LAB_08058e0d;
-  } while (conditions._116_4_ == 0);
+    if (conditions._116_4_ == 0) goto code_r0x08058e20;
+  }
   puts("block 3");
-  uVar1 = FUN_08058e20();
-  return uVar1;
+  goto code_r0x08058e20;
 }
 
 
@@ -29239,19 +28046,17 @@ LAB_08058e0d:
 undefined4 test_3_blocks_variant_675_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   while (puts("block 2"), conditions._100_4_ != 0) {
     if (conditions._104_4_ != 0) {
       if (conditions._108_4_ == 0) {
         puts("block 3");
-        uVar1 = FUN_08058e8f();
-        return uVar1;
       }
-      do {
-        puts("block 4");
-        if (conditions._112_4_ == 0) goto LAB_08058e7c;
-      } while (conditions._116_4_ != 0);
+      else {
+        do {
+          puts("block 4");
+          if (conditions._112_4_ == 0) goto LAB_08058e7c;
+        } while (conditions._116_4_ != 0);
+      }
     }
   }
 LAB_08058e7c:
@@ -29264,19 +28069,17 @@ LAB_08058e7c:
 undefined4 FUN_08058e8f(void)
 
 {
-  undefined4 uVar1;
-  
   while (puts("block 2"), conditions._100_4_ != 0) {
     if (conditions._104_4_ != 0) {
       if (conditions._108_4_ == 0) {
         puts("block 3");
-        uVar1 = FUN_08058e8f();
-        return uVar1;
       }
-      do {
-        puts("block 4");
-        if (conditions._112_4_ == 0) goto LAB_08058e7c;
-      } while (conditions._116_4_ != 0);
+      else {
+        do {
+          puts("block 4");
+          if (conditions._112_4_ == 0) goto LAB_08058e7c;
+        } while (conditions._116_4_ != 0);
+      }
     }
   }
 LAB_08058e7c:
@@ -29290,22 +28093,18 @@ undefined4 test_3_blocks_variant_676_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08058eeb;
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  do {
-    if (iVar1 == 0) {
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._116_4_;
+        if (conditions._112_4_ == 0) goto LAB_08058eeb;
+      }
       puts("block 3");
-      uVar2 = FUN_08058efe();
-      return uVar2;
     }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  } while (conditions._112_4_ != 0);
+  }
 LAB_08058eeb:
   puts("exit block");
   return 0;
@@ -29317,22 +28116,18 @@ undefined4 FUN_08058efe(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08058eeb;
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  do {
-    if (iVar1 == 0) {
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._116_4_;
+        if (conditions._112_4_ == 0) goto LAB_08058eeb;
+      }
       puts("block 3");
-      uVar2 = FUN_08058efe();
-      return uVar2;
     }
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  } while (conditions._112_4_ != 0);
+  }
 LAB_08058eeb:
   puts("exit block");
   return 0;
@@ -29344,7 +28139,6 @@ undefined4 test_3_blocks_variant_677_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -29358,8 +28152,7 @@ undefined4 test_3_blocks_variant_677_edges_9(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_08058f6d();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -29373,7 +28166,6 @@ undefined4 FUN_08058f6d(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -29387,8 +28179,7 @@ undefined4 FUN_08058f6d(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar2 = FUN_08058f6d();
-        return uVar2;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._116_4_;
@@ -29781,26 +28572,18 @@ undefined4 FUN_080592e5(void)
 undefined4 test_3_blocks_variant_686_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08059341;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_08059341;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      puts("block 4");
+      if (conditions._116_4_ == 0) goto LAB_08059341;
+    }
     puts("block 3");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08059354();
-      return uVar1;
-    }
-  }
-  else {
-    puts("block 4");
-    if (conditions._116_4_ != 0) {
-      uVar1 = FUN_08059354();
-      return uVar1;
-    }
-  }
+  } while (conditions._112_4_ != 0);
 LAB_08059341:
   puts("exit block");
   return 0;
@@ -29811,26 +28594,18 @@ LAB_08059341:
 undefined4 FUN_08059354(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_08059341;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_08059341;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      puts("block 4");
+      if (conditions._116_4_ == 0) goto LAB_08059341;
+    }
     puts("block 3");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08059354();
-      return uVar1;
-    }
-  }
-  else {
-    puts("block 4");
-    if (conditions._116_4_ != 0) {
-      uVar1 = FUN_08059354();
-      return uVar1;
-    }
-  }
+  } while (conditions._112_4_ != 0);
 LAB_08059341:
   puts("exit block");
   return 0;
@@ -29841,18 +28616,11 @@ LAB_08059341:
 undefined4 test_3_blocks_variant_687_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_080593b0;
-  } while (conditions._104_4_ == 0);
-  if (((conditions._108_4_ == 0) || (puts("block 4"), conditions._116_4_ != 0)) &&
-     (puts("block 3"), conditions._112_4_ != 0)) {
-    uVar1 = FUN_080593c3();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       (((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)) ||
+        (puts("block 3"), conditions._112_4_ == 0)))) break;
   }
-LAB_080593b0:
   puts("exit block");
   return 0;
 }
@@ -29862,18 +28630,11 @@ LAB_080593b0:
 undefined4 FUN_080593c3(void)
 
 {
-  undefined4 uVar1;
-  
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_080593b0;
-  } while (conditions._104_4_ == 0);
-  if (((conditions._108_4_ == 0) || (puts("block 4"), conditions._116_4_ != 0)) &&
-     (puts("block 3"), conditions._112_4_ != 0)) {
-    uVar1 = FUN_080593c3();
-    return uVar1;
+  while (puts("block 2"), conditions._100_4_ != 0) {
+    if ((conditions._104_4_ != 0) &&
+       (((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)) ||
+        (puts("block 3"), conditions._112_4_ == 0)))) break;
   }
-LAB_080593b0:
   puts("exit block");
   return 0;
 }
@@ -29883,27 +28644,22 @@ LAB_080593b0:
 undefined4 test_3_blocks_variant_688_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805941f;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08059432();
-      return uVar1;
-    }
-  }
-  else {
     do {
-      puts("block 4");
-    } while (conditions._116_4_ != 0);
-  }
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0805941f;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ != 0) goto LAB_08059474;
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
 LAB_0805941f:
   puts("exit block");
   return 0;
+LAB_08059474:
+  do {
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
+  goto LAB_0805941f;
 }
 
 
@@ -29911,27 +28667,22 @@ LAB_0805941f:
 undefined4 FUN_08059432(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805941f;
-  } while (conditions._104_4_ == 0);
-  if (conditions._108_4_ == 0) {
-    puts("block 3");
-    if (conditions._112_4_ != 0) {
-      uVar1 = FUN_08059432();
-      return uVar1;
-    }
-  }
-  else {
     do {
-      puts("block 4");
-    } while (conditions._116_4_ != 0);
-  }
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0805941f;
+    } while (conditions._104_4_ == 0);
+    if (conditions._108_4_ != 0) goto LAB_08059474;
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
 LAB_0805941f:
   puts("exit block");
   return 0;
+LAB_08059474:
+  do {
+    puts("block 4");
+  } while (conditions._116_4_ != 0);
+  goto LAB_0805941f;
 }
 
 
@@ -29939,19 +28690,12 @@ LAB_0805941f:
 undefined4 test_3_blocks_variant_689_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805948e;
+    if (conditions._100_4_ == 0) break;
   } while ((conditions._104_4_ == 0) ||
-          ((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0))));
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_080594a1();
-    return uVar1;
-  }
-LAB_0805948e:
+          (((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)) ||
+           (puts("block 3"), conditions._112_4_ != 0))));
   puts("exit block");
   return 0;
 }
@@ -29961,19 +28705,12 @@ LAB_0805948e:
 undefined4 FUN_080594a1(void)
 
 {
-  undefined4 uVar1;
-  
   do {
     puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805948e;
+    if (conditions._100_4_ == 0) break;
   } while ((conditions._104_4_ == 0) ||
-          ((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0))));
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_080594a1();
-    return uVar1;
-  }
-LAB_0805948e:
+          (((conditions._108_4_ != 0 && (puts("block 4"), conditions._116_4_ == 0)) ||
+           (puts("block 3"), conditions._112_4_ != 0))));
   puts("exit block");
   return 0;
 }
@@ -29983,29 +28720,22 @@ LAB_0805948e:
 undefined4 test_3_blocks_variant_690_edges_9(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_080594fd:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_08059510();
-        return uVar1;
-      }
-      goto LAB_080594fd;
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_080594fd;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._116_4_ != 0);
     }
-    do {
-      puts("block 4");
-    } while (conditions._116_4_ != 0);
-  } while( true );
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
+LAB_080594fd:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -30013,29 +28743,22 @@ LAB_080594fd:
 undefined4 FUN_08059510(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_080594fd:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_08059510();
-        return uVar1;
-      }
-      goto LAB_080594fd;
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_080594fd;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      do {
+        puts("block 4");
+      } while (conditions._116_4_ != 0);
     }
-    do {
-      puts("block 4");
-    } while (conditions._116_4_ != 0);
-  } while( true );
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
+LAB_080594fd:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -30044,22 +28767,19 @@ undefined4 test_3_blocks_variant_691_edges_9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805956c;
-    iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  }
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar2 = FUN_0805957f();
-    return uVar2;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0805956c;
+      iVar1 = conditions._108_4_;
+    } while (conditions._104_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+    }
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
 LAB_0805956c:
   puts("exit block");
   return 0;
@@ -30071,22 +28791,19 @@ undefined4 FUN_0805957f(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805956c;
-    iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  while (iVar1 != 0) {
-    puts("block 4");
-    iVar1 = conditions._116_4_;
-  }
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar2 = FUN_0805957f();
-    return uVar2;
-  }
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) goto LAB_0805956c;
+      iVar1 = conditions._108_4_;
+    } while (conditions._104_4_ == 0);
+    while (iVar1 != 0) {
+      puts("block 4");
+      iVar1 = conditions._116_4_;
+    }
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
 LAB_0805956c:
   puts("exit block");
   return 0;
@@ -32505,28 +31222,24 @@ code_r0x0805abe7:
 undefined4 test_3_blocks_variant_741_edges_10(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
+FUN_0805ac5f:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_0805ac4c:
+      puts("exit block");
+      return 0;
+    }
     if (conditions._104_4_ != 0) {
-      while( true ) {
+      do {
         puts("block 3");
         if (conditions._108_4_ == 0) goto LAB_0805ac4c;
-        if (conditions._112_4_ == 0) break;
-        if (conditions._116_4_ != 0) {
-          puts("block 4");
-          if (conditions._120_4_ != 0) {
-            uVar1 = FUN_0805ac5f();
-            return uVar1;
-          }
-          goto LAB_0805ac4c;
-        }
-      }
+        if (conditions._112_4_ == 0) goto FUN_0805ac5f;
+      } while (conditions._116_4_ == 0);
+      puts("block 4");
+      if (conditions._120_4_ == 0) goto LAB_0805ac4c;
     }
-  }
-LAB_0805ac4c:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -32534,28 +31247,24 @@ LAB_0805ac4c:
 undefined4 FUN_0805ac5f(void)
 
 {
-  undefined4 uVar1;
-  
-  while (puts("block 2"), conditions._100_4_ != 0) {
+code_r0x0805ac5f:
+  do {
+    puts("block 2");
+    if (conditions._100_4_ == 0) {
+LAB_0805ac4c:
+      puts("exit block");
+      return 0;
+    }
     if (conditions._104_4_ != 0) {
-      while( true ) {
+      do {
         puts("block 3");
         if (conditions._108_4_ == 0) goto LAB_0805ac4c;
-        if (conditions._112_4_ == 0) break;
-        if (conditions._116_4_ != 0) {
-          puts("block 4");
-          if (conditions._120_4_ != 0) {
-            uVar1 = FUN_0805ac5f();
-            return uVar1;
-          }
-          goto LAB_0805ac4c;
-        }
-      }
+        if (conditions._112_4_ == 0) goto code_r0x0805ac5f;
+      } while (conditions._116_4_ == 0);
+      puts("block 4");
+      if (conditions._120_4_ == 0) goto LAB_0805ac4c;
     }
-  }
-LAB_0805ac4c:
-  puts("exit block");
-  return 0;
+  } while( true );
 }
 
 
@@ -32816,7 +31525,6 @@ undefined4 test_3_blocks_variant_747_edges_10(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -32829,11 +31537,8 @@ LAB_0805af1c:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_0805af2f();
-          return uVar2;
-        }
-        goto LAB_0805af1c;
+        if (conditions._108_4_ == 0) goto LAB_0805af1c;
+        break;
       }
       puts("block 4");
       if (conditions._112_4_ == 0) goto LAB_0805af1c;
@@ -32848,7 +31553,6 @@ undefined4 FUN_0805af2f(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     puts("block 2");
@@ -32861,11 +31565,8 @@ LAB_0805af1c:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_0805af2f();
-          return uVar2;
-        }
-        goto LAB_0805af1c;
+        if (conditions._108_4_ == 0) goto LAB_0805af1c;
+        break;
       }
       puts("block 4");
       if (conditions._112_4_ == 0) goto LAB_0805af1c;
@@ -33622,7 +32323,6 @@ undefined4 test_3_blocks_variant_763_edges_10(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -33632,13 +32332,12 @@ undefined4 test_3_blocks_variant_763_edges_10(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_0805b6af();
-          return uVar2;
-        }
+        if (conditions._108_4_ == 0) {
 LAB_0805b69c:
-        puts("exit block");
-        return 0;
+          puts("exit block");
+          return 0;
+        }
+        break;
       }
       puts("block 4");
       if (conditions._112_4_ == 0) goto LAB_0805b69c;
@@ -33653,7 +32352,6 @@ undefined4 FUN_0805b6af(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -33663,13 +32361,12 @@ undefined4 FUN_0805b6af(void)
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._108_4_ != 0) {
-          uVar2 = FUN_0805b6af();
-          return uVar2;
-        }
+        if (conditions._108_4_ == 0) {
 LAB_0805b69c:
-        puts("exit block");
-        return 0;
+          puts("exit block");
+          return 0;
+        }
+        break;
       }
       puts("block 4");
       if (conditions._112_4_ == 0) goto LAB_0805b69c;
@@ -34492,26 +33189,27 @@ undefined4 test_3_blocks_variant_779_edges_10(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  while (puts("block 2"), iVar1 = conditions._108_4_, iVar2 = conditions._104_4_,
-        conditions._100_4_ != 0) {
-    while (iVar2 != 0) {
+  do {
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
+LAB_0805be1c:
+        puts("exit block");
+        return 0;
+      }
+      iVar1 = conditions._108_4_;
+    } while (conditions._104_4_ == 0);
+    do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar3 = FUN_0805be2f();
-        return uVar3;
+        break;
       }
       puts("block 4");
-      iVar1 = conditions._120_4_;
-      iVar2 = conditions._116_4_;
       if (conditions._112_4_ == 0) goto LAB_0805be1c;
-    }
-  }
-LAB_0805be1c:
-  puts("exit block");
-  return 0;
+      iVar1 = conditions._120_4_;
+    } while (conditions._116_4_ != 0);
+  } while( true );
 }
 
 
@@ -34520,26 +33218,27 @@ undefined4 FUN_0805be2f(void)
 
 {
   int iVar1;
-  int iVar2;
-  undefined4 uVar3;
   
-  while (puts("block 2"), iVar1 = conditions._108_4_, iVar2 = conditions._104_4_,
-        conditions._100_4_ != 0) {
-    while (iVar2 != 0) {
+  do {
+    do {
+      puts("block 2");
+      if (conditions._100_4_ == 0) {
+LAB_0805be1c:
+        puts("exit block");
+        return 0;
+      }
+      iVar1 = conditions._108_4_;
+    } while (conditions._104_4_ == 0);
+    do {
       if (iVar1 == 0) {
         puts("block 3");
-        uVar3 = FUN_0805be2f();
-        return uVar3;
+        break;
       }
       puts("block 4");
-      iVar1 = conditions._120_4_;
-      iVar2 = conditions._116_4_;
       if (conditions._112_4_ == 0) goto LAB_0805be1c;
-    }
-  }
-LAB_0805be1c:
-  puts("exit block");
-  return 0;
+      iVar1 = conditions._120_4_;
+    } while (conditions._116_4_ != 0);
+  } while( true );
 }
 
 
@@ -34651,25 +33350,24 @@ LAB_0805bf0c:
 undefined4 test_3_blocks_variant_782_edges_10(void)
 
 {
-  undefined4 uVar1;
-  
+FUN_0805bf97:
   do {
     do {
       puts("block 2");
       if (conditions._100_4_ == 0) goto LAB_0805bf84;
     } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
-    puts("block 4");
-    if (conditions._116_4_ == 0) goto LAB_0805bf84;
-  } while (conditions._120_4_ == 0);
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_0805bf97();
-    return uVar1;
-  }
+    if (conditions._108_4_ != 0) {
+      puts("block 4");
+      if (conditions._116_4_ == 0) goto LAB_0805bf84;
+      if (conditions._120_4_ == 0) goto FUN_0805bf97;
+    }
+    puts("block 3");
+    if (conditions._112_4_ == 0) {
 LAB_0805bf84:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -34677,25 +33375,24 @@ LAB_0805bf84:
 undefined4 FUN_0805bf97(void)
 
 {
-  undefined4 uVar1;
-  
+code_r0x0805bf97:
   do {
     do {
       puts("block 2");
       if (conditions._100_4_ == 0) goto LAB_0805bf84;
     } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) break;
-    puts("block 4");
-    if (conditions._116_4_ == 0) goto LAB_0805bf84;
-  } while (conditions._120_4_ == 0);
-  puts("block 3");
-  if (conditions._112_4_ != 0) {
-    uVar1 = FUN_0805bf97();
-    return uVar1;
-  }
+    if (conditions._108_4_ != 0) {
+      puts("block 4");
+      if (conditions._116_4_ == 0) goto LAB_0805bf84;
+      if (conditions._120_4_ == 0) goto code_r0x0805bf97;
+    }
+    puts("block 3");
+    if (conditions._112_4_ == 0) {
 LAB_0805bf84:
-  puts("exit block");
-  return 0;
+      puts("exit block");
+      return 0;
+    }
+  } while( true );
 }
 
 
@@ -34703,30 +33400,23 @@ LAB_0805bf84:
 undefined4 test_3_blocks_variant_783_edges_10(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_0805bffc:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_0805c00f();
-        return uVar1;
-      }
-      goto LAB_0805bffc;
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_0805bffc;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._116_4_ == 0) goto LAB_0805bffc;
+      } while (conditions._120_4_ != 0);
     }
-    do {
-      puts("block 4");
-      if (conditions._116_4_ == 0) goto LAB_0805bffc;
-    } while (conditions._120_4_ != 0);
-  } while( true );
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
+LAB_0805bffc:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -34734,30 +33424,23 @@ LAB_0805bffc:
 undefined4 FUN_0805c00f(void)
 
 {
-  undefined4 uVar1;
-  
   do {
-    do {
-      puts("block 2");
-      if (conditions._100_4_ == 0) {
-LAB_0805bffc:
-        puts("exit block");
-        return 0;
-      }
-    } while (conditions._104_4_ == 0);
-    if (conditions._108_4_ == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar1 = FUN_0805c00f();
-        return uVar1;
-      }
-      goto LAB_0805bffc;
+    while( true ) {
+      do {
+        puts("block 2");
+        if (conditions._100_4_ == 0) goto LAB_0805bffc;
+      } while (conditions._104_4_ == 0);
+      if (conditions._108_4_ == 0) break;
+      do {
+        puts("block 4");
+        if (conditions._116_4_ == 0) goto LAB_0805bffc;
+      } while (conditions._120_4_ != 0);
     }
-    do {
-      puts("block 4");
-      if (conditions._116_4_ == 0) goto LAB_0805bffc;
-    } while (conditions._120_4_ != 0);
-  } while( true );
+    puts("block 3");
+  } while (conditions._112_4_ != 0);
+LAB_0805bffc:
+  puts("exit block");
+  return 0;
 }
 
 
@@ -34766,25 +33449,19 @@ undefined4 test_3_blocks_variant_784_edges_10(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805c074;
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar2 = FUN_0805c087();
-        return uVar2;
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._120_4_;
+        if (conditions._116_4_ == 0) goto LAB_0805c074;
       }
-      break;
+      puts("block 3");
+      if (conditions._112_4_ == 0) break;
     }
-    puts("block 4");
-    iVar1 = conditions._120_4_;
-  } while (conditions._116_4_ != 0);
+  }
 LAB_0805c074:
   puts("exit block");
   return 0;
@@ -34796,25 +33473,19 @@ undefined4 FUN_0805c087(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
-  do {
-    puts("block 2");
-    if (conditions._100_4_ == 0) goto LAB_0805c074;
+  while (puts("block 2"), conditions._100_4_ != 0) {
     iVar1 = conditions._108_4_;
-  } while (conditions._104_4_ == 0);
-  do {
-    if (iVar1 == 0) {
-      puts("block 3");
-      if (conditions._112_4_ != 0) {
-        uVar2 = FUN_0805c087();
-        return uVar2;
+    if (conditions._104_4_ != 0) {
+      while (iVar1 != 0) {
+        puts("block 4");
+        iVar1 = conditions._120_4_;
+        if (conditions._116_4_ == 0) goto LAB_0805c074;
       }
-      break;
+      puts("block 3");
+      if (conditions._112_4_ == 0) break;
     }
-    puts("block 4");
-    iVar1 = conditions._120_4_;
-  } while (conditions._116_4_ != 0);
+  }
 LAB_0805c074:
   puts("exit block");
   return 0;
@@ -34826,7 +33497,6 @@ undefined4 test_3_blocks_variant_785_edges_10(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -34841,11 +33511,8 @@ LAB_0805c0ec:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._112_4_ != 0) {
-          uVar2 = FUN_0805c0ff();
-          return uVar2;
-        }
-        goto LAB_0805c0ec;
+        if (conditions._112_4_ == 0) goto LAB_0805c0ec;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._120_4_;
@@ -34859,7 +33526,6 @@ undefined4 FUN_0805c0ff(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -34874,11 +33540,8 @@ LAB_0805c0ec:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._112_4_ != 0) {
-          uVar2 = FUN_0805c0ff();
-          return uVar2;
-        }
-        goto LAB_0805c0ec;
+        if (conditions._112_4_ == 0) goto LAB_0805c0ec;
+        break;
       }
       puts("block 4");
       iVar1 = conditions._120_4_;
@@ -36888,7 +35551,6 @@ undefined4 test_3_blocks_variant_824_edges_11(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -36903,11 +35565,8 @@ LAB_0805d3d6:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._112_4_ != 0) {
-          uVar2 = FUN_0805d3e9();
-          return uVar2;
-        }
-        goto LAB_0805d3d6;
+        if (conditions._112_4_ == 0) goto LAB_0805d3d6;
+        break;
       }
       puts("block 4");
       if (conditions._116_4_ == 0) goto LAB_0805d3d6;
@@ -36922,7 +35581,6 @@ undefined4 FUN_0805d3e9(void)
 
 {
   int iVar1;
-  undefined4 uVar2;
   
   do {
     do {
@@ -36937,11 +35595,8 @@ LAB_0805d3d6:
     do {
       if (iVar1 == 0) {
         puts("block 3");
-        if (conditions._112_4_ != 0) {
-          uVar2 = FUN_0805d3e9();
-          return uVar2;
-        }
-        goto LAB_0805d3d6;
+        if (conditions._112_4_ == 0) goto LAB_0805d3d6;
+        break;
       }
       puts("block 4");
       if (conditions._116_4_ == 0) goto LAB_0805d3d6;
@@ -38121,15 +36776,15 @@ undefined4 test_3_blocks_variant_846_edges_12(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  undefined4 uVar3;
   
 FUN_0805df35:
   puts("block 2");
   iVar1 = conditions._104_4_;
   iVar2 = conditions._108_4_;
-  iVar3 = conditions._100_4_;
+  uVar3 = conditions._100_4_;
   do {
-    if (iVar3 == 0) {
+    if (uVar3 == 0) {
       puts("exit block");
       return 0;
     }
@@ -38143,7 +36798,7 @@ FUN_0805df35:
     puts("block 4");
     iVar1 = conditions._124_4_;
     iVar2 = conditions._128_4_;
-    iVar3 = conditions._120_4_;
+    uVar3 = conditions._120_4_;
   } while( true );
 }
 
@@ -38156,15 +36811,15 @@ undefined4 FUN_0805df35(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  undefined4 uVar3;
   
 code_r0x0805df35:
   puts("block 2");
   iVar1 = conditions._104_4_;
   iVar2 = conditions._108_4_;
-  iVar3 = conditions._100_4_;
+  uVar3 = conditions._100_4_;
   do {
-    if (iVar3 == 0) {
+    if (uVar3 == 0) {
       puts("exit block");
       return 0;
     }
@@ -38178,7 +36833,7 @@ code_r0x0805df35:
     puts("block 4");
     iVar1 = conditions._124_4_;
     iVar2 = conditions._128_4_;
-    iVar3 = conditions._120_4_;
+    uVar3 = conditions._120_4_;
   } while( true );
 }
 
@@ -38191,14 +36846,14 @@ undefined4 test_3_blocks_variant_847_edges_13(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  undefined4 uVar3;
   
 FUN_0805dfbf:
   puts("block 2");
   iVar1 = conditions._104_4_;
   iVar2 = conditions._108_4_;
-  iVar3 = conditions._100_4_;
-  while (iVar3 != 0) {
+  uVar3 = conditions._100_4_;
+  while (uVar3 != 0) {
     while( true ) {
       if (iVar1 == 0) goto FUN_0805dfbf;
       if (iVar2 != 0) break;
@@ -38210,7 +36865,7 @@ FUN_0805dfbf:
     puts("block 4");
     iVar1 = conditions._128_4_;
     iVar2 = conditions._132_4_;
-    iVar3 = conditions._124_4_;
+    uVar3 = conditions._124_4_;
   }
 LAB_0805dfac:
   puts("exit block");
@@ -38226,14 +36881,14 @@ undefined4 FUN_0805dfbf(void)
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  undefined4 uVar3;
   
 code_r0x0805dfbf:
   puts("block 2");
   iVar1 = conditions._104_4_;
   iVar2 = conditions._108_4_;
-  iVar3 = conditions._100_4_;
-  while (iVar3 != 0) {
+  uVar3 = conditions._100_4_;
+  while (uVar3 != 0) {
     while( true ) {
       if (iVar1 == 0) goto code_r0x0805dfbf;
       if (iVar2 != 0) break;
@@ -38245,7 +36900,7 @@ code_r0x0805dfbf:
     puts("block 4");
     iVar1 = conditions._128_4_;
     iVar2 = conditions._132_4_;
-    iVar3 = conditions._124_4_;
+    uVar3 = conditions._124_4_;
   }
 LAB_0805dfac:
   puts("exit block");

@@ -54,7 +54,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[40];
 };
 
 struct _IO_marker {
@@ -225,6 +225,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -338,7 +339,17 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void FUN_080484a8(void)
+
+{
+                    // WARNING: Treating indirect jump as call
+  (*(code *)(undefined *)0x0)();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -350,7 +361,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -362,7 +373,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -394,7 +405,7 @@ void __libc_init(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -406,7 +417,7 @@ char * strcat(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -418,7 +429,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -430,7 +441,7 @@ FILE * fopen(char *__filename,char *__modes)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -442,7 +453,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -454,7 +465,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -466,7 +477,7 @@ int atexit(__func *__func)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -488,7 +499,7 @@ void __setfpucw(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -500,21 +511,20 @@ size_t strlen(char *__s)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,int param_2)
 
 {
   code *pcVar1;
   undefined4 uVar2;
   int __status;
-  int unaff_retaddr;
   EVP_PKEY_CTX *ctx;
   
   ctx = (EVP_PKEY_CTX *)&stack0x00000004;
   pcVar1 = (code *)swi(0x80);
   uVar2 = 0;
-  (*pcVar1)(&stack0x00000004,&stack0x00000008 + unaff_retaddr * 4,0,0,0);
+  (*pcVar1)(&stack0x00000004,&stack0x00000008 + param_2 * 4,0,0,0);
   environ = uVar2;
-  __setfpucw(__fpu_control);
+  __setfpucw(_edata);
   __libc_init();
   atexit(_fini);
   _init(ctx);
@@ -557,14 +567,14 @@ void dumpline(int param_1,undefined4 param_2,int param_3)
   char cVar2;
   int local_58;
   char local_54 [9];
-  char acStack75 [71];
+  char acStack_4b [71];
   
   sprintf(local_54,"%08lX:",param_2);
   if (0x10 < param_3) {
     param_3 = 0x10;
   }
   for (local_58 = 0; local_58 < param_3; local_58 = local_58 + 1) {
-    sprintf(acStack75 + local_58 * 3," %02lX",(uint)*(byte *)(param_1 + local_58));
+    sprintf(acStack_4b + local_58 * 3," %02lX",(uint)*(byte *)(param_1 + local_58));
   }
   while (local_58 < 0x10) {
     strcat(local_54,"   ");
@@ -606,18 +616,18 @@ undefined4 hexdump(char *param_1)
   }
   else {
     local_5c._64_4_ = fopen(param_1,"rb");
-    if (local_5c._64_4_ == (FILE *)0x0) {
+    if ((FILE *)local_5c._64_4_ == (FILE *)0x0) {
       perror(param_1);
       uVar2 = 1;
     }
     else {
       local_5c._68_4_ = 0;
-      while ((local_5c._68_4_ < local_5c._20_4_ &&
-             (sVar3 = fread(local_5c + 0x48,1,0x10,local_5c._64_4_), sVar3 != 0))) {
+      while (((uint)local_5c._68_4_ < (uint)local_5c._20_4_ &&
+             (sVar3 = fread(local_5c + 0x48,1,0x10,(FILE *)local_5c._64_4_), sVar3 != 0))) {
         dumpline(local_5c + 0x48,local_5c._68_4_,sVar3);
         local_5c._68_4_ = local_5c._68_4_ + sVar3;
       }
-      fclose(local_5c._64_4_);
+      fclose((FILE *)local_5c._64_4_);
       uVar2 = 0;
     }
   }

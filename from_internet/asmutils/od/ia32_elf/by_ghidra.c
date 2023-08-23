@@ -6,6 +6,33 @@ typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -37,7 +64,7 @@ struct Elf32_Ehdr {
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(int param_1)
+void processEntry entry(undefined4 param_1,int param_2,int param_3)
 
 {
   byte bVar1;
@@ -53,10 +80,9 @@ void entry(int param_1)
   short **ppsVar11;
   undefined4 *puVar12;
   uint uVar13;
-  int unaff_retaddr;
   char *pcVar8;
   
-  pcVar7 = (char *)(param_1 + -1);
+  pcVar7 = (char *)(param_3 + -1);
   do {
     pcVar8 = pcVar7;
     pcVar7 = pcVar8 + 1;
@@ -72,8 +98,8 @@ void entry(int param_1)
       while( true ) {
         while( true ) {
           ram0x080483bb = iVar4;
-          unaff_retaddr = unaff_retaddr + -1;
-          if (unaff_retaddr == 0) {
+          param_2 = param_2 + -1;
+          if (param_2 == 0) {
             if (DAT_0804881c == '\x01') {
               do {
                 ppsVar10[-1] = (short *)0x80480b6;
@@ -160,7 +186,7 @@ void entry(int param_1)
     }
     uVar6 = puVar12[3];
     do {
-      bVar1 = (&DAT_080483cb)[uVar13];
+      bVar1 = *(byte *)((int)&DAT_080483cb + uVar13);
       if ((char)bVar1 < ' ') {
         if (((((bVar1 != 10) && (bVar1 != 9)) && (bVar1 != 10)) && ((bVar1 != 0 && (bVar1 != 0xc))))
            && (bVar1 != 8)) goto LAB_08048208;
@@ -180,7 +206,7 @@ LAB_08048208:
         FUN_08048138();
       }
       else {
-        puVar12[3] = uVar6 & 0xffffff00 | (uint)bVar1;
+        puVar12[3] = CONCAT31((int3)(uVar6 >> 8),bVar1);
         puVar12[2] = 0x80481aa;
         FUN_08048138();
         puVar12[3] = 0x80481b0;
@@ -256,7 +282,7 @@ void FUN_080480f8(void)
     }
     uVar5 = *(uint *)((int)register0x00000010 + 4);
     do {
-      bVar1 = (&DAT_080483cb)[uVar6];
+      bVar1 = *(byte *)((int)&DAT_080483cb + uVar6);
       if ((char)bVar1 < ' ') {
         if (((((bVar1 != 10) && (bVar1 != 9)) && (bVar1 != 10)) && ((bVar1 != 0 && (bVar1 != 0xc))))
            && (bVar1 != 8)) goto LAB_08048208;
@@ -276,7 +302,7 @@ LAB_08048208:
         FUN_08048138();
       }
       else {
-        *(uint *)((int)register0x00000010 + 4) = uVar5 & 0xffffff00 | (uint)bVar1;
+        *(uint *)((int)register0x00000010 + 4) = CONCAT31((int3)(uVar5 >> 8),bVar1);
         *(undefined4 *)register0x00000010 = 0x80481aa;
         FUN_08048138();
         *(undefined4 *)((int)register0x00000010 + 4) = 0x80481b0;
@@ -367,7 +393,7 @@ void __regparm3 FUN_08048138(char param_1)
     }
     uVar5 = *puVar6;
     do {
-      bVar1 = (&DAT_080483cb)[uVar7];
+      bVar1 = *(byte *)((int)&DAT_080483cb + uVar7);
       if ((char)bVar1 < ' ') {
         if (((((bVar1 != 10) && (bVar1 != 9)) && (bVar1 != 10)) && ((bVar1 != 0 && (bVar1 != 0xc))))
            && (bVar1 != 8)) goto LAB_08048208;
@@ -387,7 +413,7 @@ LAB_08048208:
         FUN_08048138();
       }
       else {
-        *puVar6 = uVar5 & 0xffffff00 | (uint)bVar1;
+        *puVar6 = CONCAT31((int3)(uVar5 >> 8),bVar1);
         puVar6[-1] = 0x80481aa;
         FUN_08048138();
         *puVar6 = 0x80481b0;
@@ -413,43 +439,41 @@ LAB_08048208:
 void FUN_0804817c(void)
 
 {
-  byte bVar1;
+  char cVar1;
   char extraout_AH;
   uint uVar2;
-  uint uVar3;
   
-  uVar3 = 0;
+  uVar2 = 0;
   do {
-    uVar2 = DAT_080483bf + uVar3;
-    if ((uVar2 & 0xf) == 0) {
-      uVar2 = FUN_08048264();
+    if ((DAT_080483bf + uVar2 & 0xf) == 0) {
+      FUN_08048264();
     }
     do {
-      bVar1 = (&DAT_080483cb)[uVar3];
-      if ((char)bVar1 < ' ') {
-        if (((((bVar1 != 10) && (bVar1 != 9)) && (bVar1 != 10)) && ((bVar1 != 0 && (bVar1 != 0xc))))
-           && (bVar1 != 8)) goto LAB_08048208;
+      cVar1 = *(char *)((int)&DAT_080483cb + uVar2);
+      if (cVar1 < ' ') {
+        if (((((cVar1 != '\n') && (cVar1 != '\t')) && (cVar1 != '\n')) &&
+            ((cVar1 != '\0' && (cVar1 != '\f')))) && (cVar1 != '\b')) goto LAB_08048208;
         do {
           FUN_08048138();
         } while (extraout_AH != '\x01');
       }
-      else if (bVar1 == 0x7f) {
+      else if (cVar1 == '\x7f') {
 LAB_08048208:
         FUN_08048138();
         FUN_08048138();
         FUN_08048138();
       }
       else {
-        FUN_08048138(uVar2 & 0xffffff00 | (uint)bVar1);
+        FUN_08048138(cVar1);
         FUN_08048138();
         FUN_08048138();
         FUN_08048138();
       }
-      uVar3 = uVar3 + 1;
-    } while ((uVar3 != DAT_080483c7) && (uVar2 = uVar3 & 0xffffff0f, (char)uVar2 != '\0'));
+      uVar2 = uVar2 + 1;
+    } while ((uVar2 != DAT_080483c7) && ((uVar2 & 0xf) != 0));
     FUN_08048138();
-    if (uVar3 == DAT_080483c7) {
-      DAT_080483bf = DAT_080483bf + uVar3;
+    if (uVar2 == DAT_080483c7) {
+      DAT_080483bf = DAT_080483bf + uVar2;
       return;
     }
   } while( true );
@@ -479,7 +503,7 @@ void FUN_08048281(void)
   int iVar1;
   int iVar2;
   
-  (&DAT_080483cb)[DAT_080483c7] = 0;
+  *(undefined *)((int)&DAT_080483cb + DAT_080483c7) = 0;
   iVar1 = 0;
   do {
     iVar2 = iVar1;
@@ -511,7 +535,7 @@ void FUN_080482f0(void)
   int iVar1;
   int iVar2;
   
-  (&DAT_080483cb)[DAT_080483c7] = 0;
+  *(undefined *)((int)&DAT_080483cb + DAT_080483c7) = 0;
   iVar1 = 0;
   do {
     iVar2 = iVar1;

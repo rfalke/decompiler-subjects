@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -52,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -64,6 +65,9 @@ struct _IO_marker {
 typedef struct _IO_FILE FILE;
 
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -216,6 +220,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -263,14 +268,25 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -331,7 +347,7 @@ void __cxa_finalize(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atoi(char *__nptr)
 
@@ -344,7 +360,7 @@ int atoi(char *__nptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -375,7 +391,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -386,7 +402,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -399,7 +415,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -410,7 +426,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
@@ -423,7 +439,7 @@ size_t fwrite(void *__ptr,size_t __size,size_t __n,FILE *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -436,7 +452,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -449,11 +465,15 @@ int putchar(int __c)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Unknown calling convention
+
 int main(int argc,int argv)
 
 {
   uint uVar1;
-  uint n;
+  uint n_00;
+  int n;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -468,21 +488,21 @@ int main(int argc,int argv)
     puts("Compute fib(n) and fact(n) and output the result in base \'base\'");
     return 1;
   }
-  n = atoi((char *)(ulong)*(uint *)(long)(argv + 4));
+  n_00 = atoi((char *)(ulong)*(uint *)(long)(argv + 4));
   base = 10;
   if ((argc == 3) && (base = atoi((char *)(ulong)*(uint *)(long)(argv + 8)), 0x22 < base - 2U)) {
-    fwrite("Invalid base\n",1,0xd,stderr);
+    fwrite("Invalid base\n",1,0xd,_stderr);
     return 1;
   }
-  printf("fib(%d) = ",(ulong)n);
-  if ((int)n < 3) {
+  printf("fib(%d) = ",(ulong)n_00);
+  if ((int)n_00 < 3) {
     print_num(1,base);
     putchar(10);
-    printf("fact(%d) = ",(ulong)n);
+    printf("fact(%d) = ",(ulong)n_00);
   }
   else {
     uVar9 = 0;
-    uVar5 = n;
+    uVar5 = n_00;
     do {
       iVar3 = (int)uVar9;
       if (uVar5 == 3) {
@@ -508,13 +528,13 @@ int main(int argc,int argv)
     } while (2 < (int)uVar5);
     print_num(uVar1 + 1,base);
     putchar(10);
-    printf("fact(%d) = ",(ulong)n);
-    if (0xc < (int)n) {
+    printf("fact(%d) = ",(ulong)n_00);
+    if (0xc < (int)n_00) {
       printf("Overflow");
       goto LAB_00100a48;
     }
   }
-  iVar3 = fact(n);
+  iVar3 = fact(n_00);
   print_num(iVar3,base);
 LAB_00100a48:
   putchar(10);
@@ -526,10 +546,9 @@ LAB_00100a48:
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -595,99 +614,105 @@ void __do_global_dtors_aux(void)
 
 
 
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Removing unreachable block (ram,0x00100c20)
+// WARNING: Removing unreachable block (ram,0x00100c2c)
 
 void frame_dummy(void)
 
 {
-  if (___JCR_END__ == 0) {
-    register_tm_clones();
-    return;
-  }
-  _Jv_RegisterClasses();
   register_tm_clones();
   return;
 }
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+// WARNING: Unknown calling convention
+
 int fact(int n)
 
 {
   uint uVar1;
   int iVar2;
-  uint uVar3;
-  int iVar4;
+  undefined auVar3 [16];
+  uint uVar4;
   int iVar5;
   int iVar6;
   int iVar7;
+  int iVar8;
   int iVar9;
   int iVar10;
   int iVar11;
-  undefined auVar8 [16];
-  undefined auVar12 [16];
+  int iVar12;
+  undefined auVar13 [16];
   
   if (n < 2) {
-    iVar4 = 1;
+    iVar5 = 1;
   }
   else {
     uVar1 = (n - 5U >> 2) + 1;
     iVar2 = uVar1 * 4;
     if (n - 2U < 9) {
-      iVar4 = 1;
-      iVar9 = 2;
+      iVar5 = 1;
+      iVar11 = 2;
     }
     else {
-      iVar4 = 1;
       iVar5 = 1;
       iVar6 = 1;
       iVar7 = 1;
-      uVar3 = 0;
-      auVar8 = CONCAT88(0x500000004,0x300000002);
+      iVar8 = 1;
+      uVar4 = 0;
+      iVar9 = 2;
+      iVar10 = 3;
+      iVar11 = _fib;
+      iVar12 = iRam0000000000100d84;
       do {
-        iVar4 = iVar4 * SUB164(auVar8,0);
-        iVar9 = SUB164(auVar8 >> 0x20,0);
         iVar5 = iVar5 * iVar9;
-        iVar10 = SUB164(auVar8 >> 0x40,0);
         iVar6 = iVar6 * iVar10;
-        iVar11 = SUB164(auVar8 >> 0x60,0);
         iVar7 = iVar7 * iVar11;
-        uVar3 = uVar3 + 1;
-        auVar8 = CONCAT412(iVar11 + 4,CONCAT48(iVar10 + 4,CONCAT44(iVar9 + 4,SUB164(auVar8,0) + 4)))
-        ;
-      } while (uVar3 < uVar1);
-      iVar9 = iVar2 + 2;
-      auVar12 = NEON_ext(CONCAT412(iVar7,CONCAT48(iVar6,CONCAT44(iVar5,iVar4))),
-                         auVar8 & (undefined  [16])0x0,8,1);
-      iVar4 = iVar4 * SUB164(auVar12,0);
-      auVar8 = NEON_ext(CONCAT412(iVar7 * SUB164(auVar12 >> 0x60,0),
-                                  CONCAT48(iVar6 * SUB164(auVar12 >> 0x40,0),
-                                           CONCAT44(iVar5 * SUB164(auVar12 >> 0x20,0),iVar4))),
-                        auVar8 & (undefined  [16])0x0,4,1);
-      iVar4 = iVar4 * SUB164(auVar8,0);
+        iVar8 = iVar8 * iVar12;
+        uVar4 = uVar4 + 1;
+        iVar9 = iVar9 + 4;
+        iVar10 = iVar10 + 4;
+        iVar11 = iVar11 + 4;
+        iVar12 = iVar12 + 4;
+      } while (uVar4 < uVar1);
+      iVar11 = iVar2 + 2;
+      auVar13._4_4_ = iVar6;
+      auVar13._0_4_ = iVar5;
+      auVar13._8_4_ = iVar7;
+      auVar13._12_4_ = iVar8;
+      auVar13 = NEON_ext(auVar13,ZEXT816(0),8,1);
+      iVar5 = iVar5 * auVar13._0_4_;
+      auVar3._4_4_ = iVar6 * auVar13._4_4_;
+      auVar3._0_4_ = iVar5;
+      auVar3._8_4_ = iVar7 * auVar13._8_4_;
+      auVar3._12_4_ = iVar8 * auVar13._12_4_;
+      auVar13 = NEON_ext(auVar3,ZEXT816(0),4,1);
+      iVar5 = iVar5 * auVar13._0_4_;
       if (n + -1 == iVar2) {
-        return iVar4;
+        return iVar5;
       }
     }
-    iVar4 = iVar4 * iVar9;
-    if (iVar9 + 1 <= n) {
-      iVar4 = iVar4 * (iVar9 + 1);
-      if (iVar9 + 2 <= n) {
-        iVar4 = iVar4 * (iVar9 + 2);
-        if (iVar9 + 3 <= n) {
-          iVar4 = iVar4 * (iVar9 + 3);
-          if (iVar9 + 4 <= n) {
-            iVar4 = iVar4 * (iVar9 + 4);
-            if (iVar9 + 5 <= n) {
-              iVar4 = iVar4 * (iVar9 + 5);
-              if (iVar9 + 6 <= n) {
-                iVar4 = iVar4 * (iVar9 + 6);
-                if (iVar9 + 7 <= n) {
-                  iVar4 = iVar4 * (iVar9 + 7);
-                  if (iVar9 + 8 <= n) {
-                    return iVar4 * (iVar9 + 8);
+    iVar5 = iVar5 * iVar11;
+    if (iVar11 + 1 <= n) {
+      iVar5 = iVar5 * (iVar11 + 1);
+      if (iVar11 + 2 <= n) {
+        iVar5 = iVar5 * (iVar11 + 2);
+        if (iVar11 + 3 <= n) {
+          iVar5 = iVar5 * (iVar11 + 3);
+          if (iVar11 + 4 <= n) {
+            iVar5 = iVar5 * (iVar11 + 4);
+            if (iVar11 + 5 <= n) {
+              iVar5 = iVar5 * (iVar11 + 5);
+              if (iVar11 + 6 <= n) {
+                iVar5 = iVar5 * (iVar11 + 6);
+                if (iVar11 + 7 <= n) {
+                  iVar5 = iVar5 * (iVar11 + 7);
+                  if (iVar11 + 8 <= n) {
+                    return iVar5 * (iVar11 + 8);
                   }
-                  return iVar4;
+                  return iVar5;
                 }
               }
             }
@@ -696,10 +721,12 @@ int fact(int n)
       }
     }
   }
-  return iVar4;
+  return iVar5;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int fib(int n)
 
@@ -845,6 +872,8 @@ int fib(int n)
 
 
 
+// WARNING: Unknown calling convention
+
 int print_num(int n,int b)
 
 {
@@ -852,45 +881,47 @@ int print_num(int n,int b)
   int iVar2;
   int iVar3;
   char cVar4;
-  uint uVar5;
-  uint uVar6;
-  void *pvVar7;
-  long lVar8;
+  int tab;
+  int iVar5;
+  void *pvVar6;
+  long lVar7;
+  byte *pbVar8;
   byte *pbVar9;
-  byte *pbVar10;
   
-  pvVar7 = malloc(0x100);
-  uVar5 = (uint)pvVar7;
-  lVar8 = (long)(int)(uVar5 + 1);
+  pvVar6 = malloc(0x100);
+  tab = (int)pvVar6;
+  lVar7 = (long)(tab + 1);
   do {
     iVar3 = 0;
     if (b != 0) {
       iVar3 = n / b;
     }
-    uVar6 = (uint)lVar8;
+    iVar5 = (int)lVar7;
     iVar2 = n - iVar3 * b;
     cVar4 = (char)iVar2;
     cVar1 = cVar4 + 'W';
     if (iVar2 < 10) {
       cVar1 = cVar4 + '0';
     }
-    *(char *)(lVar8 + -1) = cVar1;
-    lVar8 = lVar8 + 1;
+    *(char *)(lVar7 + -1) = cVar1;
+    lVar7 = lVar7 + 1;
     n = iVar3;
   } while (iVar3 != 0);
-  if (uVar5 != uVar6) {
-    pbVar10 = (byte *)((long)(int)uVar6 + -1);
+  if (tab != iVar5) {
+    pbVar9 = (byte *)((long)iVar5 + -1);
     do {
-      pbVar9 = pbVar10 + -1;
-      putchar((uint)*pbVar10);
-      pbVar10 = pbVar9;
-    } while ((byte *)(((long)(int)uVar6 + -2) - (ulong)(~uVar5 + uVar6)) != pbVar9);
+      pbVar8 = pbVar9 + -1;
+      putchar((uint)*pbVar9);
+      pbVar9 = pbVar8;
+    } while ((byte *)(((long)iVar5 + -2) - (ulong)(uint)(~tab + iVar5)) != pbVar8);
   }
-  free((void *)(long)(int)uVar5);
+  free((void *)(long)tab);
   return 0;
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int help(int name)
 

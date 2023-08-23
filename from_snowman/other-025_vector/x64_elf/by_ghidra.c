@@ -91,6 +91,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -206,6 +207,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -214,14 +226,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -283,7 +295,7 @@ void FUN_00400530(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::__throw_length_error(char *param_1)
 
@@ -294,7 +306,7 @@ void std::__throw_length_error(char *param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void operator_delete(void *param_1)
 
@@ -314,7 +326,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memmove(void *__dest,void *__src,size_t __n)
 
@@ -327,7 +339,7 @@ void * memmove(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * operator_new(ulong param_1)
 
@@ -348,14 +360,13 @@ undefined8 main(void)
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -397,13 +408,13 @@ void frame_dummy(void)
 
 
 
-// f(std::vector<int, std::allocator<int>>&, std::vector<int, std::allocator<int>>&)
+// f(std::vector<int, std::allocator<int> >&, std::vector<int, std::allocator<int> >&)
 
 void f(vector *param_1,vector *param_2)
 
 {
   std::vector<int,std::allocator<int>>::
-  _M_range_insert___gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
+  _M_range_insert<__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>>
             ((__normal_iterator)param_1,(__normal_iterator)*(undefined8 *)(param_1 + 8),
              (__normal_iterator)*(undefined8 *)param_2,
              (forward_iterator_tag)*(undefined8 *)(param_2 + 8));
@@ -412,14 +423,14 @@ void f(vector *param_1,vector *param_2)
 
 
 
-// void std::vector<int, std::allocator<int>>::_M_range_insert<__gnu_cxx::__normal_iterator<int*,
-// std::vector<int, std::allocator<int>>>>(__gnu_cxx::__normal_iterator<int*, std::vector<int,
-// std::allocator<int>>>, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int>>>,
-// __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int>>>,
+// void std::vector<int, std::allocator<int> >::_M_range_insert<__gnu_cxx::__normal_iterator<int*,
+// std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int,
+// std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int>
+// > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >,
 // std::forward_iterator_tag)
 
 void std::vector<int,std::allocator<int>>::
-     _M_range_insert___gnu_cxx____normal_iterator_int__std__vector_int_std__allocator_int____
+     _M_range_insert<__gnu_cxx::__normal_iterator<int*,std::vector<int,std::allocator<int>>>>
                (__normal_iterator param_1,__normal_iterator param_2,__normal_iterator param_3,
                forward_iterator_tag param_4)
 

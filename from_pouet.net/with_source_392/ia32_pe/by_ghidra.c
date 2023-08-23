@@ -1,6 +1,7 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned int    uint;
@@ -263,18 +264,18 @@ void entry(void)
           puVar14 = (uint *)((int)puVar14 + 1);
           uVar13 = CONCAT31((int3)uVar5 + -3,uVar2) ^ 0xffffffff;
           if (uVar13 == 0) {
-            puVar14 = (uint *)&DAT_00401000;
+            puVar15 = (undefined4 *)&DAT_00401000;
             iVar7 = 0x18b;
             do {
-              cVar3 = *(char *)puVar14;
-              puVar14 = (uint *)((int)puVar14 + 1);
-              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar14 == '\a'))) {
-                uVar13 = *puVar14;
-                cVar3 = *(char *)(puVar14 + 1);
-                *puVar14 = (uint)(&DAT_00401000 +
-                                 (((uint)(CONCAT21((short)(uVar13 >> 8),(char)(uVar13 >> 0x10)) &
-                                         0xffff) << 8 | uVar13 >> 0x18) - (int)puVar14));
-                puVar14 = (uint *)((int)puVar14 + 5);
+              cVar3 = *(char *)puVar15;
+              puVar15 = (undefined4 *)((int)puVar15 + 1);
+              while (((byte)(cVar3 + 0x18U) < 2 && (*(char *)puVar15 == '\a'))) {
+                uVar4 = *puVar15;
+                cVar3 = *(char *)(puVar15 + 1);
+                *puVar15 = &DAT_00401000 +
+                           (CONCAT31(CONCAT21((ushort)uVar4 >> 8,(char)((uint)uVar4 >> 0x10)),
+                                     (char)((uint)uVar4 >> 0x18)) - (int)puVar15);
+                puVar15 = (undefined4 *)((int)puVar15 + 5);
                 iVar7 = iVar7 + -1;
                 if (iVar7 == 0) {
                   lpProcName = &DAT_00926000;

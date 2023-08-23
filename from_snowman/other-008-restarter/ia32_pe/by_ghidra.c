@@ -1,7 +1,8 @@
 typedef unsigned char   undefined;
 
 typedef unsigned long long    GUID;
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned char    uchar;
@@ -10,8 +11,16 @@ typedef unsigned long    ulong;
 typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
+typedef unsigned short    wchar16;
 typedef short    wchar_t;
 typedef unsigned short    word;
+typedef struct CLIENT_ID CLIENT_ID, *PCLIENT_ID;
+
+struct CLIENT_ID {
+    void * UniqueProcess;
+    void * UniqueThread;
+};
+
 typedef union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion;
 
 typedef struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct, *PIMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
@@ -26,7 +35,6 @@ union IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryUnion {
     struct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct IMAGE_RESOURCE_DIRECTORY_ENTRY_DirectoryStruct;
 };
 
-typedef unsigned short    wchar16;
 typedef ushort WORD;
 
 typedef void * LPCVOID;
@@ -350,7 +358,7 @@ struct DotNetPdbInfo {
     char signature[4];
     GUID guid;
     dword age;
-    char pdbname[19];
+    char pdbpath[67];
 };
 
 
@@ -431,18 +439,18 @@ int entry(void)
   LPWSTR *ppWVar2;
   LPWSTR pWVar3;
   uint uVar4;
+  HANDLE hProcess;
   BOOL BVar5;
-  int iVar6;
-  _STARTUPINFOW *p_Var7;
-  _PROCESS_INFORMATION *p_Var8;
+  _STARTUPINFOW *p_Var6;
+  _PROCESS_INFORMATION *p_Var7;
   DWORD dwProcessId;
   DWORD extraout_ECX;
-  uint uVar9;
-  HANDLE hProcess;
+  uint uVar8;
+  int iVar9;
   int *pNumArgs;
   int local_64;
-  _PROCESS_INFORMATION local_60;
-  _STARTUPINFOW local_50;
+  _PROCESS_INFORMATION _Stack_60;
+  _STARTUPINFOW _Stack_50;
   
   pNumArgs = &local_64;
   pWVar1 = GetCommandLineW();
@@ -456,24 +464,24 @@ int entry(void)
   pWVar1 = ppWVar2[1];
   dwProcessId = 0;
   if (pWVar1 != (LPWSTR)0x0) {
-    hProcess = (HANDLE)0x14;
+    iVar9 = 0x14;
     pWVar3 = pWVar1;
     do {
       if (*pWVar3 == L'\0') goto LAB_004011cf;
       pWVar3 = pWVar3 + 1;
-      hProcess = (HANDLE)((int)hProcess + -1);
-    } while (hProcess != (HANDLE)0x0);
+      iVar9 = iVar9 + -1;
+    } while (iVar9 != 0);
   }
   do {
-    uVar9 = 0;
+    uVar8 = 0;
     while( true ) {
       uVar4 = 0;
-      if (uVar9 != 0) {
+      if (uVar8 != 0) {
         do {
           pWVar3 = pWVar1 + uVar4;
           uVar4 = uVar4 + 1;
           dwProcessId = ((ushort)*pWVar3 - 0x30) + dwProcessId * 10;
-        } while (uVar4 < uVar9);
+        } while (uVar4 < uVar8);
       }
       hProcess = OpenProcess(1,0,dwProcessId);
       if (hProcess != (HANDLE)0x0) {
@@ -482,8 +490,8 @@ int entry(void)
           FUN_00401000(&DAT_0040207c);
         }
         CloseHandle(hProcess);
-        iVar6 = FUN_004010a0();
-        if (iVar6 == 0) {
+        iVar9 = FUN_004010a0();
+        if (iVar9 == 0) {
           pWVar1 = ppWVar2[4];
         }
         else {
@@ -493,41 +501,42 @@ int entry(void)
         if (BVar5 == 0) {
           FUN_00401000(ppWVar2[2]);
         }
-        iVar6 = 0x44;
-        p_Var7 = &local_50;
+        iVar9 = 0x44;
+        p_Var6 = &_Stack_50;
         do {
-          *(undefined *)&p_Var7->cb = 0;
-          p_Var7 = (_STARTUPINFOW *)((int)&p_Var7->cb + 1);
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
-        local_50.cb = 0x44;
-        iVar6 = 0x10;
-        p_Var8 = &local_60;
+          *(undefined *)&p_Var6->cb = 0;
+          p_Var6 = (_STARTUPINFOW *)((int)&p_Var6->cb + 1);
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
+        _Stack_50.cb = 0x44;
+        iVar9 = 0x10;
+        p_Var7 = &_Stack_60;
         do {
-          *(undefined *)&p_Var8->hProcess = 0;
-          p_Var8 = (_PROCESS_INFORMATION *)((int)&p_Var8->hProcess + 1);
-          iVar6 = iVar6 + -1;
-        } while (iVar6 != 0);
+          *(undefined *)&p_Var7->hProcess = 0;
+          p_Var7 = (_PROCESS_INFORMATION *)((int)&p_Var7->hProcess + 1);
+          iVar9 = iVar9 + -1;
+        } while (iVar9 != 0);
         BVar5 = CreateProcessW((LPCWSTR)0x0,pWVar1,(LPSECURITY_ATTRIBUTES)0x0,
-                               (LPSECURITY_ATTRIBUTES)0x0,0,0,(LPVOID)0x0,(LPCWSTR)0x0,&local_50,
-                               &local_60);
+                               (LPSECURITY_ATTRIBUTES)0x0,0,0,(LPVOID)0x0,(LPCWSTR)0x0,&_Stack_50,
+                               &_Stack_60);
         if (BVar5 == 0) {
           FUN_00401000(pWVar1);
         }
         if (pWVar1 != ppWVar2[3]) {
-          iVar6 = 100;
+          iVar9 = 100;
           do {
             FUN_004010a0();
-            iVar6 = iVar6 + -1;
-          } while (iVar6 != 0);
+            iVar9 = iVar9 + -1;
+          } while (iVar9 != 0);
         }
         return 0;
       }
       FUN_00401000(ppWVar2[1]);
+      iVar9 = 0;
       dwProcessId = extraout_ECX;
 LAB_004011cf:
-      if (hProcess == (HANDLE)0x0) break;
-      uVar9 = 0x14 - (int)hProcess;
+      if (iVar9 == 0) break;
+      uVar8 = 0x14 - iVar9;
     }
   } while( true );
 }

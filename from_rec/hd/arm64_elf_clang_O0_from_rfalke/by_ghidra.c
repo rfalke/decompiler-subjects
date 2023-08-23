@@ -3,6 +3,7 @@ typedef unsigned char   undefined;
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 typedef unsigned long    qword;
+typedef long    sqword;
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
@@ -52,7 +53,7 @@ struct _IO_FILE {
     void * __pad4;
     size_t __pad5;
     int _mode;
-    char _unused2[56];
+    char _unused2[20];
 };
 
 struct _IO_marker {
@@ -108,7 +109,18 @@ struct stat {
     long __unused[3];
 };
 
+typedef long __syscall_slong_t;
+
+
+// WARNING! conflicting data type names: /DWARF/__off64_t - /types.h/__off64_t
+
 typedef ulong sizetype;
+
+
+// WARNING! conflicting data type names: /DWARF/__nlink_t - /types.h/__nlink_t
+
+
+// WARNING! conflicting data type names: /DWARF/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/libio.h/_IO_marker - /libio.h/_IO_marker
@@ -121,14 +133,6 @@ typedef ulong sizetype;
 
 
 // WARNING! conflicting data type names: /DWARF/stat.h/stat - /stat.h/stat
-
-typedef long __syscall_slong_t;
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__nlink_t - /types.h/__nlink_t
-
-
-// WARNING! conflicting data type names: /DWARF/types.h/__blksize_t - /types.h/__blksize_t
 
 
 // WARNING! conflicting data type names: /DWARF/time.h/timespec - /time.h/timespec
@@ -284,6 +288,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -320,14 +325,25 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
 
-struct Gnu_BuildId {
+struct NoteAbiTag {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
+
+struct GnuBuildId {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -379,7 +395,7 @@ void FUN_00400680(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -392,7 +408,7 @@ size_t strlen(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void perror(char *__s)
 
@@ -403,7 +419,7 @@ void perror(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int sprintf(char *__s,char *__format,...)
 
@@ -416,7 +432,7 @@ int sprintf(char *__s,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int fclose(FILE *__stream)
 
@@ -429,7 +445,7 @@ int fclose(FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 FILE * fopen(char *__filename,char *__modes)
 
@@ -451,7 +467,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcat(char *__dest,char *__src)
 
@@ -473,7 +489,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -484,7 +500,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
@@ -497,7 +513,7 @@ size_t fread(void *__ptr,size_t __size,size_t __n,FILE *__stream)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 char * strcpy(char *__dest,char *__src)
 
@@ -510,7 +526,7 @@ char * strcpy(char *__dest,char *__src)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -523,7 +539,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int __xstat(int __ver,char *__filename,stat *__stat_buf)
 
@@ -539,10 +555,9 @@ int __xstat(int __ver,char *__filename,stat *__stat_buf)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -594,8 +609,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400898)
 // WARNING: Removing unreachable block (ram,0x004008a0)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -605,6 +620,9 @@ void frame_dummy(void)
 }
 
 
+
+// WARNING: Variable defined which should be unmapped: offset-local
+// WARNING: Variable defined which should be unmapped: p-local
 
 void dumpline(uchar *p,ulong offset,int cnt)
 
@@ -616,51 +634,54 @@ void dumpline(uchar *p,ulong offset,int cnt)
   int c;
   char buff [80];
   int local_78;
-  uchar auStack116 [9];
-  char acStack107 [71];
+  uchar auStack_74 [9];
+  char acStack_6b [71];
   int local_24;
   ulong local_20;
-  uchar *local_18;
+  uchar *puStack_18;
+  int cnt_local;
+  ulong offset_local;
+  uchar *p_local;
   
   local_24 = cnt;
   local_20 = offset;
-  local_18 = p;
-  sprintf((char *)auStack116,"%08lX:",offset);
+  puStack_18 = p;
+  sprintf((char *)auStack_74,"%08lX:",offset);
   if (0x10 < local_24) {
     local_24 = 0x10;
   }
   for (local_78 = 0; local_78 < local_24; local_78 = local_78 + 1) {
-    sprintf(acStack107 + local_78 * 3," %02lX",(ulong)local_18[local_78]);
+    sprintf(acStack_6b + local_78 * 3," %02lX",(ulong)puStack_18[local_78]);
   }
   while (local_78 < 0x10) {
-    strcat((char *)auStack116,"   ");
+    strcat((char *)auStack_74,"   ");
     local_78 = local_78 + 1;
   }
-  sVar3 = strlen((char *)auStack116);
+  sVar3 = strlen((char *)auStack_74);
   iVar2 = (int)sVar3;
-  strcpy((char *)(auStack116 + iVar2),"  |");
+  strcpy((char *)(auStack_74 + iVar2),"  |");
   for (local_78 = 0; local_78 < local_24; local_78 = local_78 + 1) {
-    if ((local_18[local_78] < 0x20) || (0x7e < local_18[local_78])) {
+    if ((puStack_18[local_78] < 0x20) || (0x7e < puStack_18[local_78])) {
       uVar1 = '.';
     }
     else {
-      uVar1 = local_18[local_78];
+      uVar1 = puStack_18[local_78];
     }
-    auStack116[iVar2 + local_78] = uVar1;
+    auStack_74[iVar2 + local_78] = uVar1;
   }
   while (local_78 < 0x10) {
-    auStack116[iVar2 + local_78] = ' ';
+    auStack_74[iVar2 + local_78] = ' ';
     local_78 = local_78 + 1;
   }
-  strcpy((char *)(auStack116 + (long)local_78 + (long)iVar2),"|");
-  printf("%s\n",auStack116);
+  strcpy((char *)(auStack_74 + (long)local_78 + (long)iVar2),"|");
+  printf("%s\n",auStack_74);
   return;
 }
 
 
 
+// WARNING: Variable defined which should be unmapped: fname-local
 // WARNING: Heritage AFTER dead removal. Example location: s0xffffffffffffffe0 : 0x00400b5c
-// WARNING: Could not reconcile some variable overlaps
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
 int hexdump(char *fname)
@@ -670,39 +691,55 @@ int hexdump(char *fname)
   size_t sVar2;
   int cnt;
   stat st;
-  stat sStack192;
+  stat sStack_c0;
   FILE *fp;
   ulong offset;
   uchar buff [16];
+  char *fname_local;
   
   buff._0_8_ = fname;
-  iVar1 = stat(fname,&sStack192);
+  iVar1 = stat(fname,&sStack_c0);
   if (iVar1 == 0) {
-    perror(buff._0_8_);
-    buff._12_4_ = 1;
+    perror((char *)buff._0_8_);
+    buff[12] = '\x01';
+    buff[13] = '\0';
+    buff[14] = '\0';
+    buff[15] = '\0';
   }
   else {
-    sStack192.__unused[1] = (long)fopen(buff._0_8_,"rb");
-    if ((FILE *)sStack192.__unused[1] == (FILE *)0x0) {
-      perror(buff._0_8_);
-      buff._12_4_ = 1;
+    sStack_c0.__unused[1] = (long)fopen((char *)buff._0_8_,"rb");
+    if ((FILE *)sStack_c0.__unused[1] == (FILE *)0x0) {
+      perror((char *)buff._0_8_);
+      buff[12] = '\x01';
+      buff[13] = '\0';
+      buff[14] = '\0';
+      buff[15] = '\0';
     }
     else {
-      for (sStack192.__unused[2] = 0; (ulong)sStack192.__unused[2] < (ulong)sStack192.st_size;
-          sStack192.__unused[2] = sStack192.__unused[2] + iVar1) {
-        sVar2 = fread(&fp,1,0x10,(FILE *)sStack192.__unused[1]);
+      for (sStack_c0.__unused[2] = 0; (ulong)sStack_c0.__unused[2] < (ulong)sStack_c0.st_size;
+          sStack_c0.__unused[2] = sStack_c0.__unused[2] + iVar1) {
+        sVar2 = fread(&fp,1,0x10,(FILE *)sStack_c0.__unused[1]);
         iVar1 = (int)sVar2;
         if (iVar1 == 0) break;
-        dumpline((uchar *)&fp,sStack192.__unused[2],iVar1);
+        dumpline((uchar *)&fp,sStack_c0.__unused[2],iVar1);
       }
-      fclose((FILE *)sStack192.__unused[1]);
-      buff._12_4_ = 0;
+      fclose((FILE *)sStack_c0.__unused[1]);
+      buff[12] = '\0';
+      buff[13] = '\0';
+      buff[14] = '\0';
+      buff[15] = '\0';
     }
   }
-  return buff._12_4_;
+  iVar1._0_1_ = buff[12];
+  iVar1._1_1_ = buff[13];
+  iVar1._2_1_ = buff[14];
+  iVar1._3_1_ = buff[15];
+  return iVar1;
 }
 
 
+
+// WARNING: Variable defined which should be unmapped: argc-local
 
 int main(int argc,char **argv)
 
@@ -712,6 +749,7 @@ int main(int argc,char **argv)
   int i;
   int local_28;
   int local_24;
+  int argc_local;
   
   local_28 = 0;
   for (local_24 = 1; local_24 < argc; local_24 = local_24 + 1) {
@@ -719,20 +757,6 @@ int main(int argc,char **argv)
     local_28 = local_28 + iVar1;
   }
   return local_28;
-}
-
-
-
-void FUN_00400c84(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x00400c84. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x400c84);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

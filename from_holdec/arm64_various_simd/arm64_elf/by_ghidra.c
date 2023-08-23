@@ -27,9 +27,9 @@ struct fde_table_entry {
     dword data_loc; // Data location
 };
 
-typedef struct tls_module tls_module, *Ptls_module;
-
 typedef ulong size_t;
+
+typedef struct tls_module tls_module, *Ptls_module;
 
 struct tls_module {
     struct tls_module * next;
@@ -208,6 +208,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -308,7 +309,7 @@ void FUN_00100640(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -321,7 +322,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -373,13 +374,14 @@ void __register_frame_info(void)
 void _start(void)
 
 {
-  undefined in_stack_00000000;
-  
-  _start_c((long *)register0x00000008);
+  _start_c((long *)&stack0x00000000);
   return;
 }
 
 
+
+// WARNING: Unknown calling convention
+// Local variable argc:int *[x0:8] conflicts with parameter, skipped.
 
 void _start_c(long *p)
 
@@ -440,6 +442,7 @@ void frame_dummy(void)
 void dump(char *msg)
 
 {
+  char *msg_local;
   int i;
   int i_1;
   int i_2;
@@ -458,12 +461,12 @@ void dump(char *msg)
   puts("");
   printf("as float (s, 4 byte):   ");
   for (i_1 = 0; i_1 < 4; i_1 = i_1 + 1) {
-    printf((char *)(double)*(float *)(buffer + (long)i_1 * 4),"[%d]=%f ",(ulong)(uint)i_1);
+    printf("[%d]=%f ",(double)*(float *)(buffer + (long)i_1 * 4),(ulong)(uint)i_1);
   }
   puts("");
   printf("as double (d, 8 byte):  ");
   for (i_2 = 0; i_2 < 2; i_2 = i_2 + 1) {
-    printf(*(char **)(buffer + (long)i_2 * 8),"[%d]=%f ",(ulong)(uint)i_2);
+    printf("[%d]=%f ",*(undefined8 *)(buffer + (long)i_2 * 8),(ulong)(uint)i_2);
   }
   puts("");
   puts("");
@@ -471,6 +474,8 @@ void dump(char *msg)
 }
 
 
+
+// WARNING: Unknown calling convention
 
 int main(void)
 
@@ -544,14 +549,12 @@ undefined8 cmp_bytes(undefined8 *param_1,undefined8 *param_2,undefined8 *param_3
 
 {
   undefined auVar1 [16];
-  undefined8 uVar2;
   
   auVar1 = NEON_cmeq(input2._0_16_,input1._0_16_,1);
-  uVar2 = SUB168(auVar1 >> 0x40,0);
-  param_3[1] = uVar2;
-  *param_3 = SUB168(auVar1,0);
-  *param_1 = uVar2;
-  *param_2 = SUB168(auVar1,0);
+  param_3[1] = auVar1._8_8_;
+  *param_3 = auVar1._0_8_;
+  *param_1 = auVar1._8_8_;
+  *param_2 = auVar1._0_8_;
   return 0;
 }
 

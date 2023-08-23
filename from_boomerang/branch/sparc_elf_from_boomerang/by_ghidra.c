@@ -159,6 +159,7 @@ typedef enum Elf32_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -237,16 +238,16 @@ void _start(void)
   EVP_PKEY_CTX *ctx;
   int __status;
   int local_res40;
-  undefined auStackX68 [4];
-  undefined auStackX72 [20];
+  undefined auStackX_44 [4];
+  undefined auStackX_48 [20];
   
   if (unaff_g1 != (__func *)0x0) {
     atexit(unaff_g1);
   }
   ctx = (EVP_PKEY_CTX *)atexit(_fini);
   _init(ctx);
-  environ = auStackX68 + local_res40 * 4 + 4;
-  __status = main(local_res40,auStackX68);
+  environ = auStackX_44 + local_res40 * 4 + 4;
+  __status = main(local_res40,auStackX_44);
                     // WARNING: Subroutine does not return
   exit(__status);
 }
@@ -621,6 +622,7 @@ int find_fde(uint param_1)
       uVar1 = *puVar5;
     }
     bVar7 = true;
+    puVar5 = (uint *)0x0;
   }
   if (!bVar7) {
     uVar1 = puVar5[4];
@@ -716,47 +718,47 @@ byte * extract_cie_info(int param_1,char **param_2)
 // WARNING: Removing unreachable block (ram,0x00011390)
 // WARNING: Removing unreachable block (ram,0x000110c4)
 
-void execute_cfa_insn(void)
+ushort * execute_cfa_insn(void)
 
 {
   byte bVar1;
-  int iVar2;
-  byte *pbVar3;
+  byte *pbVar2;
+  int iVar3;
   uint uVar4;
+  undefined4 uVar5;
   undefined8 in_o0_1;
   void *__dest;
   uint *in_o3;
-  void *pvVar5;
-  ushort *puVar6;
+  void *pvVar6;
+  ushort *puVar7;
   undefined4 local_1c;
   undefined2 local_18;
-  undefined2 uStack22;
-  undefined4 uStack20;
+  undefined2 uStack_16;
+  undefined4 uStack_14;
   
-  pbVar3 = (byte *)((ulonglong)in_o0_1 >> 0x20);
+  pbVar2 = (byte *)((ulonglong)in_o0_1 >> 0x20);
   __dest = (void *)in_o0_1;
-  bVar1 = *pbVar3;
-  puVar6 = (ushort *)(pbVar3 + 1);
+  bVar1 = *pbVar2;
+  puVar7 = (ushort *)(pbVar2 + 1);
   if ((bVar1 & 0x40) != 0) {
-    uVar4 = bVar1 & 0x3f;
-    _umul();
-    *in_o3 = *in_o3 + uVar4;
-    return;
+    iVar3 = _umul(bVar1 & 0x3f);
+    *in_o3 = *in_o3 + iVar3;
+    return puVar7;
   }
   uVar4 = bVar1 & 0x3f;
   if ((bVar1 & 0x80) != 0) {
     local_18 = 0;
-    uStack22 = (undefined2)uVar4;
+    uStack_16 = (undefined2)uVar4;
 LAB_00011298:
-    decode_uleb128();
-    _umul();
-    *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 1;
-    *(undefined4 *)((int)__dest + CONCAT22(local_18,uStack22) * 4 + 0x10) = uStack20;
-    return;
+    puVar7 = (ushort *)decode_uleb128();
+    uVar5 = _umul(uStack_14);
+    *(undefined *)((int)__dest + CONCAT22(local_18,uStack_16) + 0x1ac) = 1;
+    *(undefined4 *)((int)__dest + CONCAT22(local_18,uStack_16) * 4 + 0x10) = uVar5;
+    return puVar7;
   }
   if ((bVar1 & 0xc0) != 0) {
     *(undefined *)((int)__dest + uVar4 + 0x1ac) = 0;
-    return;
+    return puVar7;
   }
   switch(bVar1) {
   case 0:
@@ -764,80 +766,79 @@ LAB_00011298:
   case 8:
     break;
   case 1:
-    uVar4 = (uint)pbVar3[4] |
-            (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar6 << 0x18;
+    uVar4 = (uint)pbVar2[4] |
+            (uint)pbVar2[3] << 8 | (uint)pbVar2[2] << 0x10 | (uint)*(byte *)puVar7 << 0x18;
     goto LAB_00011280;
   case 2:
-    *in_o3 = *in_o3 + (uint)*(byte *)puVar6;
+    *in_o3 = *in_o3 + (uint)*(byte *)puVar7;
+    puVar7 = (ushort *)(pbVar2 + 2);
     break;
   case 3:
-    *in_o3 = *in_o3 + (uint)*puVar6;
+    *in_o3 = *in_o3 + (uint)*puVar7;
+    puVar7 = (ushort *)(pbVar2 + 3);
     break;
   case 4:
-    uVar4 = *in_o3 + ((uint)pbVar3[4] |
-                     (uint)pbVar3[3] << 8 | (uint)pbVar3[2] << 0x10 | (uint)*(byte *)puVar6 << 0x18)
+    uVar4 = *in_o3 + ((uint)pbVar2[4] |
+                     (uint)pbVar2[3] << 8 | (uint)pbVar2[2] << 0x10 | (uint)*(byte *)puVar7 << 0x18)
     ;
 LAB_00011280:
     *in_o3 = uVar4;
+    puVar7 = (ushort *)(pbVar2 + 5);
     break;
   case 5:
-    decode_uleb128();
+    decode_uleb128(puVar7);
     goto LAB_00011298;
   case 6:
-    decode_uleb128();
-    *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 0;
+    puVar7 = (ushort *)decode_uleb128(puVar7);
+    *(undefined *)((int)__dest + CONCAT22(local_18,uStack_16) + 0x1ac) = 0;
     break;
   case 9:
-    decode_uleb128();
-    decode_uleb128();
-    *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 2;
-    *(undefined4 *)((int)__dest + (int)CONCAT62(CONCAT42(local_1c,local_18),uStack22) * 4 + 0x10) =
+    decode_uleb128(puVar7);
+    puVar7 = (ushort *)decode_uleb128();
+    *(undefined *)((int)__dest + CONCAT22(local_18,uStack_16) + 0x1ac) = 2;
+    *(undefined4 *)((int)__dest + (int)CONCAT62(CONCAT42(local_1c,local_18),uStack_16) * 4 + 0x10) =
          local_1c;
     break;
   case 10:
-    pvVar5 = malloc(0x218);
-    memcpy(pvVar5,__dest,0x218);
-    *(void **)((int)__dest + 0x214) = pvVar5;
+    pvVar6 = malloc(0x218);
+    memcpy(pvVar6,__dest,0x218);
+    *(void **)((int)__dest + 0x214) = pvVar6;
     break;
   case 0xb:
-    pvVar5 = *(void **)((int)__dest + 0x214);
-    memcpy(__dest,pvVar5,0x218);
-    free(pvVar5);
+    pvVar6 = *(void **)((int)__dest + 0x214);
+    memcpy(__dest,pvVar6,0x218);
+    free(pvVar6);
     break;
   case 0xc:
-    decode_uleb128();
-    decode_uleb128();
-    *(undefined2 *)((int)__dest + 0x1a8) = uStack22;
-    *(undefined4 *)((int)__dest + 8) = uStack20;
+    decode_uleb128(puVar7);
+    puVar7 = (ushort *)decode_uleb128();
+    *(undefined2 *)((int)__dest + 0x1a8) = uStack_16;
+    *(undefined4 *)((int)__dest + 8) = uStack_14;
     break;
   case 0xd:
-    decode_uleb128();
-    *(undefined2 *)((int)__dest + 0x1a8) = uStack22;
+    puVar7 = (ushort *)decode_uleb128(puVar7);
+    *(undefined2 *)((int)__dest + 0x1a8) = uStack_16;
     break;
   case 0xe:
-    decode_uleb128();
-    *(undefined4 *)((int)__dest + 8) = uStack20;
+    puVar7 = (ushort *)decode_uleb128(puVar7);
+    *(undefined4 *)((int)__dest + 8) = uStack_14;
     break;
   default:
                     // WARNING: Subroutine does not return
     abort();
   case 0x2d:
-    local_18 = 0;
-    uStack22 = 0x10;
+    uVar4 = 0x10;
     do {
-      *(undefined *)((int)__dest + CONCAT22(local_18,uStack22) + 0x1ac) = 1;
-      iVar2 = CONCAT22(local_18,uStack22);
-      *(int *)((int)__dest + iVar2 * 4 + 0x10) = (iVar2 + -0x10) * 4;
-      uVar4 = iVar2 + 1;
-      local_18 = (undefined2)(uVar4 >> 0x10);
-      uStack22 = (undefined2)uVar4;
+      *(undefined *)((int)__dest + uVar4 + 0x1ac) = 1;
+      *(uint *)((int)__dest + uVar4 * 4 + 0x10) = (uVar4 - 0x10) * 4;
+      uVar4 = uVar4 + 1;
     } while (uVar4 < 0x20);
     break;
   case 0x2e:
-    decode_uleb128();
-    *(undefined4 *)((int)__dest + 0xc) = uStack20;
+    puVar7 = (ushort *)decode_uleb128(puVar7);
+    *(undefined4 *)((int)__dest + 0xc) = uStack_14;
   }
-  return;
+  return puVar7;
 }
 
 
@@ -927,18 +928,18 @@ void * __frame_state_for(uint param_1,void *param_2)
   int iVar4;
   uint local_248;
   int local_244;
-  undefined auStack576 [536];
+  undefined auStack_240 [536];
   char *local_28 [10];
   
   piVar1 = (int *)find_fde(param_1);
   if (piVar1 != (int *)0x0) {
     uVar2 = extract_cie_info(piVar1,local_28);
     if (uVar2 != 0) {
-      memset(auStack576,0,0x218);
+      memset(auStack_240,0,0x218);
       piVar3 = (int *)((int)piVar1 - (piVar1[1] + -4));
       iVar4 = *piVar3;
       for (; uVar2 < (uint)((int)piVar3 + iVar4 + 4);
-          uVar2 = execute_cfa_insn(uVar2,auStack576,local_28,0)) {
+          uVar2 = execute_cfa_insn(uVar2,auStack_240,local_28,0)) {
       }
       piVar3 = piVar1 + 4;
       if (*local_28[0] == 'z') {
@@ -948,9 +949,9 @@ void * __frame_state_for(uint param_1,void *param_2)
       iVar4 = *piVar1;
       local_248 = piVar1[2];
       while ((piVar3 < (int *)((int)piVar1 + iVar4 + 4) && (local_248 <= param_1))) {
-        piVar3 = (int *)execute_cfa_insn(piVar3,auStack576,local_28,&local_248);
+        piVar3 = (int *)execute_cfa_insn(piVar3,auStack_240,local_28,&local_248);
       }
-      memcpy(param_2,auStack576,0x214);
+      memcpy(param_2,auStack_240,0x214);
       return param_2;
     }
   }
@@ -1027,7 +1028,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -1038,7 +1039,7 @@ int atexit(__func *__func)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -1049,7 +1050,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -1060,7 +1061,7 @@ void _exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int scanf(char *__format,...)
 
@@ -1071,7 +1072,7 @@ int scanf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -1082,7 +1083,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * malloc(size_t __size)
 
@@ -1093,7 +1094,7 @@ void * malloc(size_t __size)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int strcmp(char *__s1,char *__s2)
 
@@ -1104,7 +1105,7 @@ int strcmp(char *__s1,char *__s2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 size_t strlen(char *__s)
 
@@ -1124,7 +1125,7 @@ void _umul(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -1135,7 +1136,7 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void free(void *__ptr)
 
@@ -1146,7 +1147,7 @@ void free(void *__ptr)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -1157,22 +1158,13 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
 {
   IllegalInstructionTrap(0x218d4);
   return __s;
-}
-
-
-
-void __DTOR_END__(void)
-
-{
-  IllegalInstructionTrap(0);
-  return;
 }
 
 

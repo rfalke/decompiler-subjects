@@ -82,6 +82,17 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Shdr Elf32_Shdr, *PElf32_Shdr;
 
 struct Elf32_Shdr {
@@ -152,6 +163,7 @@ typedef enum Elf32_DynTag_ARM {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -236,7 +248,7 @@ int _init(EVP_PKEY_CTX *ctx)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -258,13 +270,10 @@ void __libc_start_main(void)
 
 
 
-void _start(undefined4 param_1)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  undefined4 in_stack_00000000;
-  
-  __libc_start_main(main,in_stack_00000000,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -329,7 +338,7 @@ void frame_dummy(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 // f()
 
 undefined4 f(void)

@@ -19,6 +19,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
+};
+
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
 struct fde_table_entry {
@@ -211,6 +219,7 @@ typedef enum Elf64_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -323,6 +332,17 @@ struct Elf64_Shdr {
     qword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Sym Elf64_Sym, *PElf64_Sym;
 
 struct Elf64_Sym {
@@ -334,14 +354,23 @@ struct Elf64_Sym {
     qword st_size;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -394,7 +423,7 @@ void FUN_00402020(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int get_nprocs(void)
 
@@ -407,7 +436,7 @@ int get_nprocs(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::terminate(void)
 
@@ -418,7 +447,7 @@ void std::terminate(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t write(int __fd,void *__buf,size_t __n)
 
@@ -431,7 +460,7 @@ ssize_t write(int __fd,void *__buf,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::__throw_bad_alloc(void)
 
@@ -442,16 +471,16 @@ void std::__throw_bad_alloc(void)
 
 
 
-void __thiscall std::thread::_State::__State(_State *this)
+void __thiscall std::thread::_State::~_State(_State *this)
 
 {
-  __State(this);
+  ~_State(this);
   return;
 }
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::condition_variable::notify_one(void)
 
@@ -462,7 +491,7 @@ void std::condition_variable::notify_one(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::__throw_length_error(char *param_1)
 
@@ -473,7 +502,7 @@ void std::__throw_length_error(char *param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 ssize_t writev(int __fd,iovec *__iovec,int __count)
 
@@ -486,7 +515,7 @@ ssize_t writev(int __fd,iovec *__iovec,int __count)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -499,7 +528,7 @@ void * memset(void *__s,int __c,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pthread_create(pthread_t *__newthread,pthread_attr_t *__attr,__start_routine *__start_routine,
                   void *__arg)
@@ -512,7 +541,7 @@ int pthread_create(pthread_t *__newthread,pthread_attr_t *__attr,__start_routine
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::__throw_system_error(int param_1)
 
@@ -523,7 +552,7 @@ void std::__throw_system_error(int param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::basic_ostream<char,std::char_traits<char>>::flush(void)
 
@@ -534,7 +563,7 @@ void std::basic_ostream<char,std::char_traits<char>>::flush(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pthread_mutex_unlock(pthread_mutex_t *__mutex)
 
@@ -547,7 +576,7 @@ int pthread_mutex_unlock(pthread_mutex_t *__mutex)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memcpy(void *__dest,void *__src,size_t __n)
 
@@ -560,9 +589,18 @@ void * memcpy(void *__dest,void *__src,size_t __n)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+void __cxa_atexit(void)
 
-void std::thread::_M_start_thread(unique_ptr param_1,FuncDef0 *param_2)
+{
+  __cxa_atexit();
+  return;
+}
+
+
+
+// WARNING: Unknown calling convention -- yet parameter storage is locked
+
+void std::thread::_M_start_thread(unique_ptr param_1,_func_void *param_2)
 
 {
   _M_start_thread(param_1,param_2);
@@ -571,7 +609,7 @@ void std::thread::_M_start_thread(unique_ptr param_1,FuncDef0 *param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * operator_new(ulong param_1)
 
@@ -584,7 +622,7 @@ void * operator_new(ulong param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void operator_delete(void *param_1,ulong param_2)
 
@@ -595,16 +633,16 @@ void operator_delete(void *param_1,ulong param_2)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 basic_ostream *
-std::__ostream_insert_char_std__char_traits_char__
+std::__ostream_insert<char,std::char_traits<char>>
           (basic_ostream *param_1,char *param_2,long param_3)
 
 {
   basic_ostream *pbVar1;
   
-  pbVar1 = __ostream_insert_char_std__char_traits_char__(param_1,param_2,param_3);
+  pbVar1 = __ostream_insert<char,std::char_traits<char>>(param_1,param_2,param_3);
   return pbVar1;
 }
 
@@ -619,7 +657,7 @@ void __thiscall std::condition_variable::condition_variable(condition_variable *
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int pthread_mutex_lock(pthread_mutex_t *__mutex)
 
@@ -641,7 +679,7 @@ void __thiscall std::ios_base::Init::Init(Init *this)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::condition_variable::wait(unique_lock *param_1)
 
@@ -652,7 +690,7 @@ void std::condition_variable::wait(unique_lock *param_1)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int snprintf(char *__s,size_t __maxlen,char *__format,...)
 
@@ -665,7 +703,7 @@ int snprintf(char *__s,size_t __maxlen,char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memmove(void *__dest,void *__src,size_t __n)
 
@@ -688,7 +726,7 @@ void __pthread_key_create(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void std::thread::join(void)
 
@@ -700,20 +738,20 @@ void std::thread::join(void)
 
 
 void __thiscall
-std::basic_ostream<char,std::char_traits<char>>::operator__
-          (basic_ostream_char_std__char_traits_char__ *this,int param_1)
+std::basic_ostream<char,std::char_traits<char>>::operator<<
+          (basic_ostream<char,std::char_traits<char>> *this,int param_1)
 
 {
-  operator__(this,param_1);
+  operator<<(this,param_1);
   return;
 }
 
 
 
-void __thiscall std::condition_variable::_condition_variable(condition_variable *this)
+void __thiscall std::condition_variable::~condition_variable(condition_variable *this)
 
 {
-  _condition_variable(this);
+  ~condition_variable(this);
   return;
 }
 
@@ -721,7 +759,7 @@ void __thiscall std::condition_variable::_condition_variable(condition_variable 
 
 // std::ios_base::Init::~Init()
 
-void __thiscall std::ios_base::Init::_Init(Init *this)
+void __thiscall std::ios_base::Init::~Init(Init *this)
 
 {
   do {
@@ -730,8 +768,6 @@ void __thiscall std::ios_base::Init::_Init(Init *this)
 }
 
 
-
-// WARNING: Could not reconcile some variable overlaps
 
 void main(int __status)
 
@@ -743,331 +779,354 @@ void main(int __status)
   void **ppvVar5;
   bool bVar6;
   undefined auVar7 [16];
-  char cVar8;
-  int iVar9;
-  int iVar10;
-  basic_ostream *pbVar11;
-  undefined8 *puVar12;
-  worker *this;
-  long *plVar13;
+  void **ppvVar8;
+  long **pplVar9;
+  char cVar10;
+  int iVar11;
+  int iVar12;
+  basic_ostream *pbVar13;
   undefined8 *puVar14;
-  undefined8 *puVar15;
-  uint uVar16;
-  ulong uVar17;
-  ulong uVar18;
-  undefined8 *puVar19;
-  int iVar20;
-  uint uVar21;
-  uint uVar22;
-  ulong uVar23;
-  ulong uVar24;
+  worker *this;
+  long *plVar15;
+  long *plVar16;
+  undefined8 *puVar17;
+  undefined8 *puVar18;
+  uint uVar19;
+  ulong uVar20;
+  ulong uVar21;
+  undefined8 *puVar22;
+  int iVar23;
+  uint uVar24;
   uint uVar25;
-  ulong uVar26;
-  long lVar27;
-  undefined auVar28 [16];
-  undefined in_YMM0 [32];
-  undefined auVar29 [32];
+  long **pplVar26;
+  void **ppvVar27;
+  ulong uVar28;
+  ulong uVar29;
+  uint uVar30;
+  ulong uVar31;
+  long lVar32;
+  undefined auVar33 [16];
+  undefined auVar34 [32];
+  undefined auVar35 [32];
+  undefined auVar36 [32];
   long *local_80;
   undefined local_78 [16];
   worker **local_68;
   undefined local_58 [8];
-  long **pplStack80;
+  long **pplStack_50;
   undefined8 local_48;
+  undefined extraout_var [24];
+  undefined extraout_var_00 [24];
+  undefined extraout_var_01 [24];
   
-  lVar27 = 1000;
-  iVar20 = 4;
-  iVar9 = get_nprocs();
-  uVar23 = (ulong)iVar9;
+  lVar32 = 1000;
+  iVar23 = 4;
+  iVar11 = get_nprocs();
+  uVar28 = (ulong)iVar11;
   do {
-    uVar24 = lVar27 * 3;
-    iVar10 = snprintf((char *)0x0,0,"%zu",lVar27);
-    lVar3 = (long)iVar10 * 8 + 0x27;
-    if (((0x10000 < ((lVar3 * uVar24) / 0xf) / uVar23) ||
-        (uVar24 = lVar27 * 6, 0x10000 < ((lVar3 * uVar24) / 0xf) / uVar23)) ||
-       (uVar24 = lVar27 * 9, 0x10000 < ((lVar3 * uVar24) / 0xf) / uVar23)) goto LAB_004022d6;
-    lVar27 = lVar27 * 10;
-    iVar20 = iVar20 + -1;
-  } while (iVar20 != 0);
-  uVar24 = 9000000;
+    uVar29 = lVar32 * 3;
+    iVar12 = snprintf((char *)0x0,0,"%zu",lVar32);
+    lVar3 = (long)iVar12 * 8 + 0x27;
+    if (((0x10000 < ((lVar3 * uVar29) / 0xf) / uVar28) ||
+        (uVar29 = lVar32 * 6, 0x10000 < ((lVar3 * uVar29) / 0xf) / uVar28)) ||
+       (uVar29 = lVar32 * 9, 0x10000 < ((lVar3 * uVar29) / 0xf) / uVar28)) goto LAB_004022d6;
+    lVar32 = lVar32 * 10;
+    iVar23 = iVar23 + -1;
+  } while (iVar23 != 0);
+  uVar29 = 9000000;
 LAB_004022d6:
-  std::__cxx11::to_string((__cxx11 *)local_58,uVar24);
-  uVar18 = (ulong)pplStack80;
-  if (local_58 != (long **)&local_48) {
-    operator_delete(local_58,(long)local_48 + 1);
+  std::__cxx11::to_string((__cxx11 *)local_58,uVar29);
+  uVar21 = (ulong)pplStack_50;
+  if (local_58 != (undefined  [8])&local_48) {
+    operator_delete((void *)local_58,(long)local_48 + 1);
   }
-  uVar26 = 1;
-  uVar25 = 1;
+  uVar31 = 1;
+  uVar30 = 1;
 LAB_004024cd:
-  uVar22 = 0;
+  uVar25 = 0;
 LAB_004025da:
-  local_58 = (long **)&local_48;
+  local_58 = (undefined  [8])&local_48;
   local_48 = (long **)CONCAT71(local_48._1_7_,0x2d);
-  uVar17 = 1;
+  uVar20 = 1;
 LAB_004023c4:
-  _local_58 = CONCAT88(uVar17,local_58);
-  *(char *)((long)local_58 + uVar17) = '\0';
-  uVar21 = uVar25;
-  uVar16 = uVar25;
-  if (99 < uVar26) {
+  pplStack_50 = (long **)uVar20;
+  *(char *)((long)local_58 + uVar20) = '\0';
+  uVar24 = uVar30;
+  uVar19 = uVar30;
+  if (99 < uVar31) {
     do {
-      uVar16 = uVar21 / 100;
-      uVar1 = (uVar21 % 100) * 2;
-      cVar8 = std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
-              __digits[uVar1];
-      *(undefined1 *)((long)local_58 + (ulong)uVar22) =
-           std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
-           __digits[uVar1 + 1];
-      uVar1 = uVar22 - 1;
-      uVar22 = uVar22 - 2;
-      *(char *)((long)local_58 + (ulong)uVar1) = cVar8;
-      bVar6 = 9999 < uVar21;
-      uVar21 = uVar16;
+      uVar19 = uVar24 / 100;
+      uVar1 = (uVar24 % 100) * 2;
+      cVar10 = (&std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
+                 __digits)[uVar1];
+      *(undefined1 *)((long)local_58 + (ulong)uVar25) =
+           (&std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
+             __digits)[uVar1 + 1];
+      uVar1 = uVar25 - 1;
+      uVar25 = uVar25 - 2;
+      *(char *)((long)local_58 + (ulong)uVar1) = cVar10;
+      bVar6 = 9999 < uVar24;
+      uVar24 = uVar19;
     } while (bVar6);
   }
-  cVar8 = (char)uVar16 + '0';
-  if (9 < uVar16) {
+  cVar10 = (char)uVar19 + '0';
+  if (9 < uVar19) {
     *(undefined1 *)((long)local_58 + 1) =
-         std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::__digits
-         [uVar16 * 2 + 1];
-    cVar8 = std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
-            __digits[uVar16 * 2];
+         (&std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
+           __digits)[uVar19 * 2 + 1];
+    cVar10 = (&std::__detail::__to_chars_10_impl<unsigned_int>(char*,unsigned_int,unsigned_int)::
+               __digits)[uVar19 * 2];
   }
-  *(char *)local_58 = cVar8;
-  if (local_58 != (long **)&local_48) {
-    operator_delete(local_58,(long)local_48 + 1);
+  *(char *)local_58 = cVar10;
+  if (local_58 != (undefined  [8])&local_48) {
+    operator_delete((void *)local_58,(long)local_48 + 1);
   }
-  auVar28 = SUB3216(in_YMM0,0);
-  if (uVar17 <= uVar18) {
-    if (uVar25 * -0x11111111 < 0x11111112) {
-      std::__ostream_insert_char_std__char_traits_char__((basic_ostream *)std::cout,"FizzBuzz\n",9);
+  if (uVar20 <= uVar21) {
+    if (uVar30 * -0x11111111 < 0x11111112) {
+      std::__ostream_insert<char,std::char_traits<char>>((basic_ostream *)std::cout,"FizzBuzz\n",9);
     }
-    else if (uVar25 * -0x33333333 < 0x33333334) {
-      std::__ostream_insert_char_std__char_traits_char__((basic_ostream *)std::cout,"Buzz\n",5);
+    else if (uVar30 * -0x33333333 < 0x33333334) {
+      std::__ostream_insert<char,std::char_traits<char>>((basic_ostream *)std::cout,"Buzz\n",5);
     }
-    else if (uVar25 * -0x55555555 < 0x55555556) {
-      std::__ostream_insert_char_std__char_traits_char__((basic_ostream *)std::cout,"Fizz\n",5);
+    else if (uVar30 * -0x55555555 < 0x55555556) {
+      std::__ostream_insert<char,std::char_traits<char>>((basic_ostream *)std::cout,"Fizz\n",5);
     }
     else {
-      pbVar11 = (basic_ostream *)
-                std::basic_ostream<char,std::char_traits<char>>::operator__
-                          ((basic_ostream_char_std__char_traits_char__ *)std::cout,uVar25);
-      _local_58 = CONCAT151(stack0xffffffffffffffa9,10);
-      std::__ostream_insert_char_std__char_traits_char__(pbVar11,local_58,1);
+      pbVar13 = (basic_ostream *)
+                std::basic_ostream<char,std::char_traits<char>>::operator<<
+                          ((basic_ostream<char,std::char_traits<char>> *)std::cout,uVar30);
+      local_58[0] = 10;
+      std::__ostream_insert<char,std::char_traits<char>>(pbVar13,local_58,1);
     }
-    uVar26 = uVar26 + 1;
-    uVar25 = (uint)uVar26;
-    if (9 < uVar26) {
-      if (uVar25 < 100) {
-        uVar21 = 1;
+    uVar31 = uVar31 + 1;
+    uVar30 = (uint)uVar31;
+    if (9 < uVar31) {
+      if (uVar30 < 100) {
+        uVar24 = 1;
 LAB_00402550:
-        uVar16 = uVar21 + 1;
-        uVar22 = uVar21;
+        uVar19 = uVar24 + 1;
+        uVar25 = uVar24;
       }
-      else if (uVar25 < 1000) {
-        uVar21 = 1;
+      else if (uVar30 < 1000) {
+        uVar24 = 1;
 LAB_00402560:
-        uVar16 = uVar21 + 2;
-        uVar22 = uVar21 + 1;
+        uVar19 = uVar24 + 2;
+        uVar25 = uVar24 + 1;
       }
       else {
-        if (uVar25 < 10000) {
-          uVar21 = 1;
+        if (uVar30 < 10000) {
+          uVar24 = 1;
         }
         else {
-          uVar17 = uVar26;
-          uVar22 = 1;
+          uVar20 = uVar31;
+          uVar25 = 1;
           do {
-            uVar21 = uVar22 + 4;
-            if (uVar17 < 100000) {
-              uVar22 = uVar22 + 3;
-              uVar16 = uVar21;
+            uVar24 = uVar25 + 4;
+            if (uVar20 < 100000) {
+              uVar25 = uVar25 + 3;
+              uVar19 = uVar24;
               goto LAB_004023a1;
             }
-            uVar16 = (uint)(uVar17 / 10000);
-            if (uVar16 < 100) goto LAB_00402550;
-            if (uVar16 < 1000) goto LAB_00402560;
-            uVar17 = uVar17 / 10000;
-            uVar22 = uVar21;
-          } while (9999 < uVar16);
+            uVar19 = (uint)(uVar20 / 10000);
+            if (uVar19 < 100) goto LAB_00402550;
+            if (uVar19 < 1000) goto LAB_00402560;
+            uVar20 = uVar20 / 10000;
+            uVar25 = uVar24;
+          } while (9999 < uVar19);
         }
-        uVar16 = uVar21 + 3;
-        uVar22 = uVar21 + 2;
+        uVar19 = uVar24 + 3;
+        uVar25 = uVar24 + 2;
       }
 LAB_004023a1:
-      local_58 = (long **)&local_48;
-      uVar17 = (ulong)uVar16;
-      if (uVar16 < 0x10) goto code_r0x004023b6;
-      local_58 = (long **)operator_new(uVar17 + 1);
-      local_48 = (long **)uVar17;
+      local_58 = (undefined  [8])&local_48;
+      uVar20 = (ulong)uVar19;
+      if (uVar19 < 0x10) goto code_r0x004023b6;
+      local_58 = (undefined  [8])operator_new(uVar20 + 1);
+      local_48 = (long **)uVar20;
       goto LAB_00402508;
     }
     goto LAB_004024cd;
   }
-  std::basic_ostream<char,std::char_traits<char>>::flush();
-  auVar28 = vpxor_avx(auVar28,auVar28);
+  auVar34._0_8_ = std::basic_ostream<char,std::char_traits<char>>::flush();
+  auVar34._8_24_ = extraout_var;
+  auVar33 = vpxor_avx(auVar34._0_16_,auVar34._0_16_);
   local_68 = (worker **)0x0;
-  local_78 = auVar28;
-  if (uVar23 >> 0x3c != 0) {
+  local_78 = auVar33;
+  if (uVar28 >> 0x3c != 0) {
                     // WARNING: Subroutine does not return
     std::__throw_length_error("vector::reserve");
   }
-  if (uVar23 == 0) {
-    local_78._0_8_ = SUB168(auVar28,0);
-    local_78._8_8_ = SUB168(auVar28 >> 0x40,0);
-    *(void **)(*(long *)((long)local_78._8_8_ + -8) + 0xb8) = *local_78._0_8_;
+  if (uVar28 == 0) {
+    local_78._0_8_ = auVar33._0_8_;
+    local_78._8_8_ = auVar33._8_8_;
+    *(undefined8 *)(*(long *)(local_78._8_8_ + -8) + 0xb8) = *(undefined8 *)local_78._0_8_;
+    auVar7 = auVar33;
     goto LAB_00402827;
   }
-  puVar12 = (undefined8 *)operator_new(uVar23 * 8);
-  auVar28 = vmovq_avx(puVar12);
-  auVar28 = vpunpcklqdq_avx(auVar28,auVar28);
-  if (local_78._8_8_ != (worker **)local_78._0_8_) {
-    uVar18 = (long)local_78._8_8_ + (-8 - (long)local_78._0_8_);
-    puVar15 = local_78._0_8_;
-    puVar19 = puVar12;
-    if (((void **)puVar12 != local_78._0_8_ + 1) && (0x10 < uVar18)) {
-      lVar27 = 0;
-      uVar18 = (uVar18 >> 3) + 1;
+  puVar14 = (undefined8 *)operator_new(uVar28 * 8);
+  auVar33 = vmovq_avx(puVar14);
+  auVar33 = vpunpcklqdq_avx(auVar33,auVar33);
+  if (local_78._8_8_ != local_78._0_8_) {
+    uVar21 = local_78._8_8_ + (-8 - local_78._0_8_);
+    puVar18 = (undefined8 *)local_78._0_8_;
+    puVar22 = puVar14;
+    if ((puVar14 != (undefined8 *)(local_78._0_8_ + 8)) && (0x10 < uVar21)) {
+      lVar32 = 0;
+      uVar21 = (uVar21 >> 3) + 1;
       do {
-        auVar7 = vmovdqu_avx(*(undefined (*) [16])((long)local_78._0_8_ + lVar27));
+        auVar7 = vmovdqu_avx(*(undefined (*) [16])(local_78._0_8_ + lVar32));
         auVar7 = vmovdqu_avx(auVar7);
-        *(undefined (*) [16])((long)puVar12 + lVar27) = auVar7;
-        lVar27 = lVar27 + 0x10;
-      } while (lVar27 != (uVar18 >> 1) * 0x10);
-      uVar26 = uVar18 & 0xfffffffffffffffe;
-      if (uVar26 != uVar18) {
-        puVar12[uVar26] = local_78._0_8_[uVar26];
+        *(undefined (*) [16])((long)puVar14 + lVar32) = auVar7;
+        lVar32 = lVar32 + 0x10;
+      } while (lVar32 != (uVar21 >> 1) * 0x10);
+      uVar31 = uVar21 & 0xfffffffffffffffe;
+      if (uVar31 != uVar21) {
+        puVar14[uVar31] = *(undefined8 *)(local_78._0_8_ + uVar31 * 8);
       }
       goto LAB_004026c4;
     }
     do {
-      puVar14 = puVar15 + 1;
-      *puVar19 = *puVar15;
-      puVar15 = puVar14;
-      puVar19 = puVar19 + 1;
-    } while (local_78._8_8_ != (worker **)puVar14);
+      puVar17 = puVar18 + 1;
+      *puVar22 = *puVar18;
+      puVar18 = puVar17;
+      puVar22 = puVar22 + 1;
+    } while ((undefined8 *)local_78._8_8_ != puVar17);
   }
-  if (local_78._0_8_ != (void **)0x0) {
+  if ((undefined8 *)local_78._0_8_ != (undefined8 *)0x0) {
 LAB_004026c4:
-    operator_delete(local_78._0_8_,(long)local_68 - (long)local_78._0_8_);
+    operator_delete((void *)local_78._0_8_,(long)local_68 - local_78._0_8_);
   }
-  auVar29 = ZEXT1632(auVar28);
-  local_68 = (worker **)(puVar12 + uVar23);
-  local_78 = auVar28;
-  if (iVar9 < 1) goto LAB_004027e4;
-  iVar20 = 0;
-  uVar18 = 0;
+  local_68 = (worker **)(puVar14 + uVar28);
+  local_78 = auVar33;
+  if (iVar11 < 1) goto LAB_004027e4;
+  iVar23 = 0;
+  uVar21 = 0;
   do {
     while( true ) {
-      uVar26 = uVar18 + uVar24;
-      iVar20 = iVar20 + 1;
+      uVar31 = uVar21 + uVar29;
+      iVar23 = iVar23 + 1;
       this = (worker *)operator_new(0xc0);
-      worker::worker(this,uVar18 / uVar23 + (long)(int)uVar25,uVar26 / uVar23 - uVar18 / uVar23,
-                     uVar24);
-      _local_58 = CONCAT88(pplStack80,this);
-      uVar18 = uVar26;
-      if (local_78._8_8_ == local_68) break;
-      *local_78._8_8_ = this;
-      local_78 = CONCAT88(local_78._8_8_ + 1,local_78._0_8_);
+      auVar35._0_8_ =
+           worker::worker(this,uVar21 / uVar28 + (long)(int)uVar30,uVar31 / uVar28 - uVar21 / uVar28
+                          ,uVar29);
+      auVar35._8_24_ = extraout_var_00;
+      auVar33 = auVar35._0_16_;
+      local_58 = (undefined  [8])this;
+      uVar21 = uVar31;
+      if ((worker **)local_78._8_8_ == local_68) break;
+      *(worker **)local_78._8_8_ = this;
+      local_78._8_8_ = (worker **)(local_78._8_8_ + 8);
 LAB_0040271c:
-      auVar28 = SUB3216(auVar29,0);
-      if (iVar20 == iVar9) goto LAB_004027e4;
+      if (iVar23 == iVar11) goto LAB_004027e4;
     }
     std::
     vector<std::unique_ptr<worker,std::default_delete<worker>>,std::allocator<std::unique_ptr<worker,std::default_delete<worker>>>>
-    ::_M_realloc_insert_std__unique_ptr_worker_std__default_delete_worker___
-              ((vector_std__unique_ptr_worker_std__default_delete_worker___std__allocator_std__unique_ptr_worker_std__default_delete_worker____
-                *)local_78,SUB164(local_78 >> 0x40,0),(unique_ptr *)local_58);
-    if (local_58 == (long **)0x0) goto LAB_0040271c;
-    std::condition_variable::_condition_variable((condition_variable *)(local_58 + 0xd));
-    pvVar4 = local_58[4];
+    ::_M_realloc_insert<std::unique_ptr<worker,std::default_delete<worker>>>
+              ((vector<std::unique_ptr<worker,std::default_delete<worker>>,std::allocator<std::unique_ptr<worker,std::default_delete<worker>>>>
+                *)local_78,local_78._8_4_,(unique_ptr *)local_58);
+    ppvVar27 = (void **)local_58;
+    if (local_58 == (undefined  [8])0x0) goto LAB_0040271c;
+    auVar36._0_8_ =
+         std::condition_variable::~condition_variable((condition_variable *)((long)local_58 + 0x68))
+    ;
+    auVar36._8_24_ = extraout_var_01;
+    auVar33 = auVar36._0_16_;
+    pvVar4 = ppvVar27[4];
     if (pvVar4 != (void *)0x0) {
-      operator_delete(pvVar4,(long)local_58[6] - (long)pvVar4);
+      operator_delete(pvVar4,(long)ppvVar27[6] - (long)pvVar4);
     }
-    if ((long **)*local_58 != local_58 + 2) {
-      operator_delete(*local_58,(long)local_58[2] + 1);
+    if ((void **)*ppvVar27 != ppvVar27 + 2) {
+      operator_delete(*ppvVar27,(long)ppvVar27[2] + 1);
     }
-    operator_delete(local_58,0xc0);
-    auVar28 = SUB3216(auVar29,0);
-  } while (iVar20 != iVar9);
+    operator_delete(ppvVar27,0xc0);
+  } while (iVar23 != iVar11);
 LAB_004027e4:
-  *(void **)(*(long *)((long)local_78._8_8_ + -8) + 0xb8) = *local_78._0_8_;
-  if (1 < iVar9) {
-    plVar13 = (long *)local_78._0_8_ + (ulong)(iVar9 - 2) + 1;
+  *(long *)(*(long *)(local_78._8_8_ + -8) + 0xb8) = *(long *)local_78._0_8_;
+  auVar7 = local_78;
+  if (1 < iVar11) {
+    plVar15 = (long *)local_78._0_8_;
     do {
-      plVar2 = (long *)local_78._0_8_ + 1;
-      lVar27 = (long)*local_78._0_8_;
-      local_78._0_8_ = (void **)((long *)local_78._0_8_ + 1);
-      *(long *)(lVar27 + 0xb8) = *plVar2;
-    } while (local_78._0_8_ != (void **)plVar13);
+      plVar2 = plVar15 + 1;
+      lVar32 = *plVar15;
+      plVar15 = plVar15 + 1;
+      *(long *)(lVar32 + 0xb8) = *plVar2;
+    } while (plVar15 != (long *)(local_78._0_8_ + ((ulong)(iVar11 - 2) + 1) * 8));
   }
 LAB_00402827:
-  _local_58 = vpxor_avx(auVar28,auVar28);
+  local_78 = auVar7;
+  _local_58 = vpxor_avx(auVar33,auVar33);
   local_48 = (long **)0x0;
-  if (uVar23 != 0) {
-    puVar12 = (undefined8 *)operator_new(uVar23 * 8);
-    auVar28 = vmovq_avx(puVar12);
-    auVar28 = vpunpcklqdq_avx(auVar28,auVar28);
-    if (pplStack80 == local_58) {
+  if (uVar28 != 0) {
+    puVar14 = (undefined8 *)operator_new(uVar28 * 8);
+    auVar33 = vmovq_avx(puVar14);
+    auVar33 = vpunpcklqdq_avx(auVar33,auVar33);
+    if ((undefined  [8])pplStack_50 == local_58) {
 LAB_00402b6d:
-      if (local_58 != (long **)0x0) goto LAB_004028d4;
+      if (local_58 != (undefined  [8])0x0) goto LAB_004028d4;
     }
     else {
-      uVar24 = (long)pplStack80 + (-8 - (long)local_58);
-      puVar15 = local_58;
-      puVar19 = puVar12;
-      if (((long **)puVar12 == local_58 + 1) || (uVar24 < 0x11)) {
+      uVar29 = (long)pplStack_50 + (-8 - (long)local_58);
+      puVar18 = (undefined8 *)local_58;
+      puVar22 = puVar14;
+      if ((puVar14 == (undefined8 *)((long)local_58 + 8)) || (uVar29 < 0x11)) {
         do {
-          puVar14 = puVar15 + 1;
-          *puVar19 = *puVar15;
-          puVar15 = puVar14;
-          puVar19 = puVar19 + 1;
-        } while (pplStack80 != (long **)puVar14);
+          puVar17 = puVar18 + 1;
+          *puVar22 = *puVar18;
+          puVar18 = puVar17;
+          puVar22 = puVar22 + 1;
+        } while (pplStack_50 != (long **)puVar17);
         goto LAB_00402b6d;
       }
-      lVar27 = 0;
-      uVar24 = (uVar24 >> 3) + 1;
+      lVar32 = 0;
+      uVar29 = (uVar29 >> 3) + 1;
       do {
-        auVar7 = vmovdqu_avx(*(undefined (*) [16])((long)local_58 + lVar27));
+        auVar7 = vmovdqu_avx(*(undefined (*) [16])((long)local_58 + lVar32));
         auVar7 = vmovdqu_avx(auVar7);
-        *(undefined (*) [16])((long)puVar12 + lVar27) = auVar7;
-        lVar27 = lVar27 + 0x10;
-      } while ((uVar24 >> 1) * 0x10 != lVar27);
-      uVar18 = uVar24 & 0xfffffffffffffffe;
-      if (uVar18 != uVar24) {
-        puVar12[uVar18] = local_58[uVar18];
+        *(undefined (*) [16])((long)puVar14 + lVar32) = auVar7;
+        lVar32 = lVar32 + 0x10;
+      } while ((uVar29 >> 1) * 0x10 != lVar32);
+      uVar21 = uVar29 & 0xfffffffffffffffe;
+      if (uVar21 != uVar29) {
+        puVar14[uVar21] = *(undefined8 *)((long)local_58 + uVar21 * 8);
       }
 LAB_004028d4:
-      operator_delete(local_58,(long)local_48 - (long)local_58);
+      operator_delete((void *)local_58,(long)local_48 - (long)local_58);
     }
-    local_48 = (long **)(puVar12 + uVar23);
-    _local_58 = auVar28;
+    local_48 = (long **)(puVar14 + uVar28);
+    _local_58 = auVar33;
   }
+  plVar2 = (long *)local_78._8_8_;
+  plVar15 = (long *)local_78._0_8_;
 joined_r0x00402906:
   do {
-    if (local_78._8_8_ == (worker **)local_78._0_8_) {
-      lVar27 = (long)*local_78._0_8_;
-      iVar9 = pthread_mutex_lock((pthread_mutex_t *)(lVar27 + 0x40));
-      if (iVar9 != 0) {
-        std::__throw_system_error(iVar9);
+    if (plVar2 == plVar15) {
+      plVar15 = (long *)local_78._0_8_;
+      lVar32 = *(long *)local_78._0_8_;
+      iVar11 = pthread_mutex_lock((pthread_mutex_t *)(lVar32 + 0x40));
+      if (iVar11 != 0) {
+        std::__throw_system_error(iVar11);
         std::ios_base::Init::Init((Init *)&std::__ioinit);
-        __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
+        __cxa_atexit(std::ios_base::Init::~Init,&std::__ioinit,&__dso_handle);
         return;
       }
-      puVar12 = (undefined8 *)*local_78._0_8_;
-      puVar12[0x14] = 0;
-      puVar12[0x13] = *puVar12;
-      pthread_mutex_unlock((pthread_mutex_t *)(lVar27 + 0x40));
+      puVar14 = (undefined8 *)*plVar15;
+      puVar14[0x14] = 0;
+      puVar14[0x13] = *puVar14;
+      pthread_mutex_unlock((pthread_mutex_t *)(lVar32 + 0x40));
       std::condition_variable::notify_one();
       std::thread::join();
+      pplVar9 = pplStack_50;
+      pplVar26 = (long **)local_58;
       do {
-        if (pplStack80 == local_58) {
-          if (local_58 != (long **)0x0) {
-            operator_delete(local_58,(long)local_48 - (long)local_58);
+        if (pplVar9 == pplVar26) {
+          if (local_58 != (undefined  [8])0x0) {
+            operator_delete((void *)local_58,(long)local_48 - (long)local_58);
           }
-          for (; local_78._8_8_ != (worker **)local_78._0_8_; local_78._0_8_ = local_78._0_8_ + 1) {
-            ppvVar5 = (void **)*local_78._0_8_;
+          ppvVar8 = (void **)local_78._8_8_;
+          for (ppvVar27 = (void **)local_78._0_8_; ppvVar8 != ppvVar27; ppvVar27 = ppvVar27 + 1) {
+            ppvVar5 = (void **)*ppvVar27;
             if (ppvVar5 != (void **)0x0) {
-              std::condition_variable::_condition_variable((condition_variable *)(ppvVar5 + 0xd));
+              std::condition_variable::~condition_variable((condition_variable *)(ppvVar5 + 0xd));
               pvVar4 = ppvVar5[4];
               if (pvVar4 != (void *)0x0) {
                 operator_delete(pvVar4,(long)ppvVar5[6] - (long)pvVar4);
@@ -1078,58 +1137,58 @@ joined_r0x00402906:
               operator_delete(ppvVar5,0xc0);
             }
           }
-          if (local_78._0_8_ != (void **)0x0) {
-            operator_delete(local_78._0_8_,(long)local_68 - (long)local_78._0_8_);
+          if ((void *)local_78._0_8_ != (void *)0x0) {
+            operator_delete((void *)local_78._0_8_,(long)local_68 - local_78._0_8_);
           }
           return;
         }
-        plVar13 = *local_58;
-        if (plVar13 != (long *)0x0) {
-          if (*plVar13 != 0) goto LAB_00402b8f;
-          operator_delete(plVar13,8);
+        plVar15 = *pplVar26;
+        if (plVar15 != (long *)0x0) {
+          if (*plVar15 != 0) goto LAB_00402b8f;
+          operator_delete(plVar15,8);
         }
-        local_58 = local_58 + 1;
+        pplVar26 = pplVar26 + 1;
       } while( true );
     }
-    lVar27 = (long)*local_78._0_8_;
-    plVar13 = (long *)operator_new(8);
-    *plVar13 = 0;
+    lVar32 = *plVar15;
+    plVar16 = (long *)operator_new(8);
+    *plVar16 = 0;
     local_80 = (long *)operator_new(0x10);
     *local_80 = (long)&PTR___State_impl_00405120;
-    local_80[1] = lVar27;
-    std::thread::_M_start_thread(SUB81(plVar13,0),(FuncDef0 *)&local_80);
+    local_80[1] = lVar32;
+    std::thread::_M_start_thread(SUB81(plVar16,0),(_func_void *)&local_80);
     if (local_80 != (long *)0x0) {
       (**(code **)(*local_80 + 8))();
     }
-    local_80 = plVar13;
-    if (pplStack80 == local_48) {
+    local_80 = plVar16;
+    if (pplStack_50 == local_48) {
       std::
       vector<std::unique_ptr<std::thread,std::default_delete<std::thread>>,std::allocator<std::unique_ptr<std::thread,std::default_delete<std::thread>>>>
-      ::_M_realloc_insert_std__unique_ptr_std__thread_std__default_delete_std__thread___
-                ((vector_std__unique_ptr_std__thread_std__default_delete_std__thread___std__allocator_std__unique_ptr_std__thread_std__default_delete_std__thread____
-                  *)local_58,SUB164(_local_58 >> 0x40,0),(unique_ptr *)&local_80);
+      ::_M_realloc_insert<std::unique_ptr<std::thread,std::default_delete<std::thread>>>
+                ((vector<std::unique_ptr<std::thread,std::default_delete<std::thread>>,std::allocator<std::unique_ptr<std::thread,std::default_delete<std::thread>>>>
+                  *)local_58,SUB164(_local_58,8),(unique_ptr *)&local_80);
       if (local_80 != (long *)0x0) {
         if (*local_80 != 0) {
 LAB_00402b8f:
                     // WARNING: Subroutine does not return
           std::terminate();
         }
-        local_78._0_8_ = (void **)((long *)local_78._0_8_ + 1);
         operator_delete(local_80,8);
+        plVar15 = plVar15 + 1;
         goto joined_r0x00402906;
       }
     }
     else {
-      *pplStack80 = plVar13;
-      _local_58 = CONCAT88(pplStack80 + 1,local_58);
+      *pplStack_50 = plVar16;
+      pplStack_50 = pplStack_50 + 1;
     }
-    local_78._0_8_ = (void **)((long *)local_78._0_8_ + 1);
+    plVar15 = plVar15 + 1;
   } while( true );
 code_r0x004023b6:
-  if (uVar17 != 0) {
-    if (uVar17 != 1) {
+  if (uVar20 != 0) {
+    if (uVar20 != 1) {
 LAB_00402508:
-      memset(local_58,0x2d,uVar17);
+      memset((void *)local_58,0x2d,uVar20);
       goto LAB_004023c4;
     }
     goto LAB_004025da;
@@ -1143,20 +1202,19 @@ void _GLOBAL__sub_I_main(void)
 
 {
   std::ios_base::Init::Init((Init *)&std::__ioinit);
-  __cxa_atexit(std::ios_base::Init::_Init,&std::__ioinit,&__dso_handle);
+  __cxa_atexit(std::ios_base::Init::~Init,&std::__ioinit,&__dso_handle);
   return;
 }
 
 
 
-void _start(undefined8 param_1,undefined8 param_2,undefined8 param_3)
+void processEntry _start(undefined8 param_1,undefined8 param_2)
 
 {
-  undefined8 in_stack_00000000;
-  undefined auStack8 [8];
+  undefined auStack_8 [8];
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_3,
-                    auStack8);
+  __libc_start_main(main,param_2,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1,auStack_8)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -1216,768 +1274,764 @@ void frame_dummy(void)
 
 
 
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},
-// worker*>>>::~_State_impl()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1}, worker*> >
+// >::~_State_impl()
 
 void __thiscall
 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},worker*>>>::
-__State_impl(_State_impl_std__thread___Invoker_std__tuple_main___lambda_worker___1__worker____ *this
+~_State_impl(_State_impl<std::thread::_Invoker<std::tuple<main::_lambda(worker*)_1_,worker*>>> *this
             )
 
 {
   *(undefined ***)this = &PTR___State_impl_00405120;
-  std::thread::_State::__State((_State *)this);
+  std::thread::_State::~_State((_State *)this);
   return;
 }
 
 
 
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},
-// worker*>>>::~_State_impl()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1}, worker*> >
+// >::~_State_impl()
 
 void __thiscall
 std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},worker*>>>::
-__State_impl(_State_impl_std__thread___Invoker_std__tuple_main___lambda_worker___1__worker____ *this
+~_State_impl(_State_impl<std::thread::_Invoker<std::tuple<main::_lambda(worker*)_1_,worker*>>> *this
             )
 
 {
   *(undefined ***)this = &PTR___State_impl_00405120;
-  std::thread::_State::__State((_State *)this);
+  std::thread::_State::~_State((_State *)this);
   operator_delete(this,0x10);
   return;
 }
 
 
 
-// WARNING: Type propagation algorithm not settling
-// WARNING: Could not reconcile some variable overlaps
 // worker::loop()
 
 void worker::loop(void)
 
 {
   long **pplVar1;
-  pthread_mutex_t *ppVar2;
-  pthread_mutex_t *ppVar3;
-  long lVar4;
-  pthread_mutex_t *ppVar5;
-  bool bVar6;
-  undefined auVar7 [16];
-  void **ppvVar8;
-  char cVar9;
-  uint uVar10;
-  iovec *piVar11;
+  undefined auVar2 [16];
+  long lVar3;
+  bool bVar4;
+  undefined auVar5 [16];
+  pthread_mutex_t *ppVar6;
+  char cVar7;
+  uint uVar8;
+  pthread_mutex_t *ppVar9;
+  pthread_mutex_t *ppVar10;
+  pthread_mutex_t *ppVar11;
   long *plVar12;
   long *plVar13;
   long *plVar14;
   undefined4 *puVar15;
   undefined8 *puVar16;
   char **ppcVar17;
-  iovec *in_RCX;
-  iovec *piVar18;
+  pthread_mutex_t *in_RCX;
+  pthread_mutex_t *ppVar18;
   char *pcVar19;
   char *pcVar20;
-  iovec *piVar21;
   ulong extraout_RDX;
+  long *plVar21;
   long *plVar22;
-  long *plVar23;
-  iovec *piVar24;
-  uint uVar25;
-  int iVar26;
-  iovec *in_RSI;
-  size_t sVar27;
+  uint uVar23;
+  int iVar24;
+  pthread_mutex_t *in_RSI;
+  size_t sVar25;
   pthread_mutex_t **in_RDI;
   long **this;
-  long **pplVar28;
-  ulong uVar29;
-  long lVar30;
-  long *plVar31;
+  long **pplVar26;
+  ulong uVar27;
+  long lVar28;
+  long *plVar29;
   pthread_mutex_t *unaff_R14;
   pthread_mutex_t *unaff_R15;
-  undefined auVar32 [16];
-  undefined in_YMM0 [32];
-  undefined8 *puStack272;
-  undefined8 *puStack248;
-  size_t sStack240;
-  undefined8 uStack232;
-  char **ppcStack216;
-  char *pcStack208;
-  undefined auStack200 [16];
-  undefined8 *puStack184;
-  ulong uStack176;
-  undefined8 uStack168;
-  pthread_mutex_t **pppStack144;
-  code *pcStack136;
-  pthread_mutex_t *ppStack128;
-  pthread_mutex_t *ppStack112;
-  pthread_mutex_t *ppStack104;
-  undefined8 uStack96;
-  iovec *local_50;
-  pthread_mutex_t *local_48;
-  char local_40;
+  undefined auVar30 [32];
+  undefined8 *puStack_110;
+  undefined8 *puStack_f8;
+  size_t sStack_f0;
+  undefined8 uStack_e8;
+  char **ppcStack_d8;
+  char *pcStack_d0;
+  undefined auStack_c8 [16];
+  undefined8 *puStack_b8;
+  ulong uStack_b0;
+  undefined8 uStack_a8;
+  pthread_mutex_t **pppStack_90;
+  code *pcStack_88;
+  pthread_mutex_t *ppStack_80;
+  pthread_mutex_t *ppStack_70;
+  pthread_mutex_t *ppStack_68;
+  undefined8 uStack_60;
+  pthread_mutex_t *local_50;
+  undefined8 local_48;
+  undefined local_40;
+  undefined extraout_var [24];
   
-  ppStack128 = (pthread_mutex_t *)(in_RDI + 8);
-  pppStack144 = in_RDI + 0xd;
+  ppStack_80 = (pthread_mutex_t *)(in_RDI + 8);
+  pppStack_90 = in_RDI + 0xd;
 LAB_00402d10:
   local_40 = '\0';
-  uStack96 = 0x402d27;
-  local_48 = ppStack128;
-  uVar10 = pthread_mutex_lock(ppStack128);
-  auVar32 = SUB3216(in_YMM0,0);
-  if (uVar10 == 0) {
-    ppVar5 = in_RDI[0x13];
+  uStack_60 = 0x402d27;
+  local_48 = (long)ppStack_80;
+  uVar8 = pthread_mutex_lock(ppStack_80);
+  if (uVar8 == 0) {
+    ppVar11 = in_RDI[0x13];
     local_40 = '\x01';
-    while (ppVar5 == (pthread_mutex_t *)0x0) {
-      uStack96 = 0x402d5b;
-      std::condition_variable::wait((unique_lock *)pppStack144);
-      ppVar5 = in_RDI[0x13];
+    while (ppVar11 == (pthread_mutex_t *)0x0) {
+      uStack_60 = 0x402d5b;
+      std::condition_variable::wait((unique_lock *)pppStack_90);
+      ppVar11 = in_RDI[0x13];
     }
-    in_RSI = (iovec *)(in_RDI + 0x13);
+    in_RSI = (pthread_mutex_t *)(in_RDI + 0x13);
     in_RDI[0x16] = (pthread_mutex_t *)(0x10000 - (long)in_RDI[0x14]);
-    uStack96 = 0x402d8e;
-    writev(1,in_RSI,2);
+    uStack_60 = 0x402d8e;
+    writev(1,(iovec *)&in_RSI->__data,2);
     in_RDI[0x13] = (pthread_mutex_t *)0x0;
-    if ((local_40 != '\0') && (local_48 != (pthread_mutex_t *)0x0)) {
-      uStack96 = 0x402feb;
-      pthread_mutex_unlock(local_48);
+    if ((local_40 != '\0') && ((pthread_mutex_t *)local_48 != (pthread_mutex_t *)0x0)) {
+      uStack_60 = 0x402feb;
+      pthread_mutex_unlock((pthread_mutex_t *)local_48);
     }
-    uStack96 = 0x402dac;
+    uStack_60 = 0x402dac;
     std::condition_variable::notify_one();
-    unaff_R14 = (pthread_mutex_t *)((long)&in_RDI[0x16]->field_0x0 + (long)&(*in_RDI)->field_0x0);
-    ppVar5 = (pthread_mutex_t *)(undefined8 *)((long)(unaff_R14 + 0x666) + 0x10U);
-    if ((undefined8 *)((long)(unaff_R14 + 0x666) + 0x10U) <
-        (undefined8 *)((long)&(*in_RDI)->field_0x0 + (long)&in_RDI[1]->field_0x0)) {
+    unaff_R14 = (pthread_mutex_t *)(in_RDI[0x16]->__size + (long)(*in_RDI)->__size);
+    ppVar11 = (pthread_mutex_t *)((long)unaff_R14 + 0x10000);
+    if ((pthread_mutex_t *)((long)unaff_R14 + 0x10000) <
+        (pthread_mutex_t *)((*in_RDI)->__size + (long)in_RDI[1]->__size)) {
       do {
-        unaff_R14 = ppVar5;
-        in_RSI = (iovec *)((long)(unaff_R14 + 0xfffffffffffff999) + 0x18);
-        uStack96 = 0x402fb5;
+        unaff_R14 = ppVar11;
+        in_RSI = (pthread_mutex_t *)((long)unaff_R14 + -0x10000);
+        uStack_60 = 0x402fb5;
         write(1,in_RSI,0x10000);
-        ppVar5 = (pthread_mutex_t *)(undefined8 *)((long)(unaff_R14 + 0x666) + 0x10U);
-      } while ((undefined8 *)((long)(unaff_R14 + 0x666) + 0x10U) <
-               (undefined8 *)((long)&in_RDI[1]->field_0x0 + (long)&(*in_RDI)->field_0x0));
+        ppVar11 = (pthread_mutex_t *)((long)unaff_R14 + 0x10000);
+      } while ((pthread_mutex_t *)((long)unaff_R14 + 0x10000) <
+               (pthread_mutex_t *)(in_RDI[1]->__size + (long)(*in_RDI)->__size));
     }
-    unaff_R15 = (pthread_mutex_t *)((long)(in_RDI[0x17] + 1) + 0x18);
-    uStack96 = 0x402de6;
-    uVar10 = pthread_mutex_lock(unaff_R15);
-    auVar32 = SUB3216(in_YMM0,0);
-    if (uVar10 != 0) goto LAB_00403068;
-    ppVar5 = in_RDI[1];
-    ppVar2 = *in_RDI;
-    ppVar3 = in_RDI[0x17];
-    *(pthread_mutex_t **)((long)(ppVar3 + 3) + 0x20) = unaff_R14;
-    *(long *)(ppVar3 + 4) = (long)ppVar2 + ((long)ppVar5 - (long)unaff_R14);
-    uStack96 = 0x402e1b;
+    unaff_R15 = (pthread_mutex_t *)((long)in_RDI[0x17] + 0x40);
+    uStack_60 = 0x402de6;
+    uVar8 = pthread_mutex_lock(unaff_R15);
+    if (uVar8 != 0) goto LAB_00403068;
+    ppVar11 = in_RDI[1];
+    ppVar9 = *in_RDI;
+    ppVar18 = in_RDI[0x17];
+    *(pthread_mutex_t **)((long)ppVar18 + 0x98) = unaff_R14;
+    ppVar18[4].__align = (long)(ppVar11->__size + (long)ppVar9->__size) - (long)unaff_R14;
+    uStack_60 = 0x402e1b;
     pthread_mutex_unlock(unaff_R15);
-    uStack96 = 0x402e2b;
+    uStack_60 = 0x402e2b;
     std::condition_variable::notify_one();
     local_40 = '\0';
-    local_48 = (pthread_mutex_t *)((long)(in_RDI[0x17] + 1) + 0x18);
-    uStack96 = 0x402e4a;
-    uVar10 = pthread_mutex_lock(local_48);
-    auVar32 = SUB3216(in_YMM0,0);
-    if (uVar10 != 0) goto LAB_00403068;
+    local_48 = (long)in_RDI[0x17] + 0x40;
+    uStack_60 = 0x402e4a;
+    uVar8 = pthread_mutex_lock((pthread_mutex_t *)local_48);
+    if (uVar8 != 0) goto LAB_00403068;
     local_40 = '\x01';
-    unaff_R15 = (pthread_mutex_t *)((long)(in_RDI[0x17] + 2) + 0x18);
-    unaff_R14 = (pthread_mutex_t *)&local_48;
-    if (*(long *)((long)(in_RDI[0x17] + 3) + 0x20) == 0) {
+    unaff_R15 = (pthread_mutex_t *)((long)in_RDI[0x17] + 0x68);
+    unaff_R14 = (pthread_mutex_t *)&stack0xffffffffffffffb8;
+    if (*(long *)((long)in_RDI[0x17] + 0x98) == 0) {
 LAB_00402ff0:
-      if (local_48 != (pthread_mutex_t *)0x0) {
-        uStack96 = 0x40300c;
-        pthread_mutex_unlock(local_48);
+      if ((pthread_mutex_t *)local_48 != (pthread_mutex_t *)0x0) {
+        uStack_60 = 0x40300c;
+        pthread_mutex_unlock((pthread_mutex_t *)local_48);
       }
     }
     else {
       do {
-        uStack96 = 0x402e8b;
-        std::condition_variable::wait((unique_lock *)unaff_R15);
-      } while (*(long *)((long)(in_RDI[0x17] + 3) + 0x20) != 0);
+        uStack_60 = 0x402e8b;
+        std::condition_variable::wait((unique_lock *)&unaff_R15->__data);
+      } while (*(long *)((long)in_RDI[0x17] + 0x98) != 0);
       if (local_40 != '\0') goto LAB_00402ff0;
     }
-    piVar24 = (iovec *)in_RDI[5];
-    in_RCX = (iovec *)in_RDI[4];
-    in_RSI = (iovec *)0x0;
-    if (piVar24 != in_RCX) {
+    ppVar11 = in_RDI[5];
+    in_RCX = in_RDI[4];
+    in_RSI = (pthread_mutex_t *)0x0;
+    if (ppVar11 != in_RCX) {
       do {
-        if (*(char *)((long)in_RCX->iov_base + -2) != 'z') {
-          pcVar19 = (char *)((long)in_RCX->iov_base - (long)*(int *)(in_RDI + 7));
-          cVar9 = *(char *)((long)in_RDI + 0x3c) + *pcVar19;
-          *pcVar19 = cVar9;
-          while ('9' < cVar9) {
+        if (*(char *)(in_RCX->__align + -2) != 'z') {
+          pcVar19 = (char *)(in_RCX->__align - (long)*(int *)(in_RDI + 7));
+          cVar7 = *(char *)((long)in_RDI + 0x3c) + *pcVar19;
+          *pcVar19 = cVar7;
+          while ('9' < cVar7) {
             pcVar20 = pcVar19 + -1;
-            *pcVar19 = cVar9 + -10;
-            cVar9 = *pcVar20 + '\x01';
-            *pcVar20 = cVar9;
+            *pcVar19 = cVar7 + -10;
+            cVar7 = *pcVar20 + '\x01';
+            *pcVar20 = cVar7;
             pcVar19 = pcVar20;
           }
-          in_RSI = (iovec *)(ulong)((int)in_RSI + (uint)(cVar9 == '\v'));
+          in_RSI = (pthread_mutex_t *)(ulong)((int)in_RSI + (uint)(cVar7 == '\v'));
         }
-        in_RCX = (iovec *)&in_RCX->iov_len;
-      } while (piVar24 != in_RCX);
+        in_RCX = (pthread_mutex_t *)&(in_RCX->__data).__owner;
+      } while (ppVar11 != in_RCX);
       if ((int)in_RSI != 0) {
-        piVar24 = (iovec *)in_RDI[1];
+        ppVar11 = in_RDI[1];
         unaff_R14 = in_RDI[5];
         unaff_R15 = *in_RDI;
-        piVar18 = (iovec *)((long)&piVar24->iov_base + (long)&in_RSI->iov_base);
-        if (piVar24 < piVar18) {
-          uStack96 = 0x403026;
-          local_50 = piVar24;
+        ppVar9 = (pthread_mutex_t *)(in_RSI->__size + (long)ppVar11->__size);
+        if (ppVar11 < ppVar9) {
+          uStack_60 = 0x403026;
+          local_50 = ppVar11;
           std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::
-          _M_replace_aux((basic_string_char_std__char_traits_char__std__allocator_char__ *)in_RDI,
-                         (ulong)piVar24,0,(ulong)in_RSI,'\0');
-          in_RCX = (iovec *)((long)&in_RDI[1]->field_0x0 + (long)&(*in_RDI)->field_0x0);
-          in_RSI = piVar24;
-          piVar24 = local_50;
+          _M_replace_aux((basic_string<char,std::char_traits<char>,std::allocator<char>> *)in_RDI,
+                         (ulong)ppVar11,0,(ulong)in_RSI,'\0');
+          in_RCX = (pthread_mutex_t *)(in_RDI[1]->__size + (long)(*in_RDI)->__size);
+          in_RSI = ppVar11;
+          ppVar11 = local_50;
         }
         else {
-          in_RCX = (iovec *)((long)&piVar24->iov_base + (long)unaff_R15);
-          if (CARRY8((ulong)in_RSI,(ulong)piVar24) != false) {
-            in_RDI[1] = (pthread_mutex_t *)piVar18;
-            *(undefined *)((long)&piVar18->iov_base + (long)unaff_R15) = 0;
-            in_RCX = (iovec *)((long)&in_RDI[1]->field_0x0 + (long)&(*in_RDI)->field_0x0);
+          in_RCX = (pthread_mutex_t *)(unaff_R15->__size + (long)ppVar11->__size);
+          if (CARRY8((ulong)in_RSI,(ulong)ppVar11) != false) {
+            in_RDI[1] = ppVar9;
+            unaff_R15->__size[(long)ppVar9->__size] = '\0';
+            in_RCX = (pthread_mutex_t *)(in_RDI[1]->__size + (long)(*in_RDI)->__size);
           }
         }
-        piVar18 = (iovec *)((long)&in_RCX[-1].iov_len + 7);
-        piVar11 = (iovec *)((undefined *)((long)(unaff_R15 + 0xffffffffffffffff) + 0x27) +
-                           (long)piVar24);
-        piVar21 = in_RCX;
-        ppVar5 = unaff_R14;
-        if ((iovec *)((undefined *)((long)(unaff_R15 + 0xffffffffffffffff) + 0x27) + (long)piVar24)
-            < piVar18) {
+        ppVar9 = (pthread_mutex_t *)((long)in_RCX + -1);
+        ppVar10 = (pthread_mutex_t *)(ppVar11->__size + (long)unaff_R15 + -1);
+        ppVar18 = in_RCX;
+        ppVar6 = unaff_R14;
+        if ((pthread_mutex_t *)(ppVar11->__size + (long)unaff_R15 + -1) < ppVar9) {
           do {
             while( true ) {
-              unaff_R14 = ppVar5;
-              in_RCX = piVar21;
-              cVar9 = *(char *)&piVar11->iov_base;
-              piVar21 = piVar18;
-              if (cVar9 == '\v') {
-                *(undefined *)&piVar11->iov_base = 10;
-                *(undefined *)((long)&in_RCX[-1].iov_len + 7) = 0x31;
-                cVar9 = *(char *)&piVar11->iov_base;
-                piVar21 = (iovec *)((long)&in_RCX[-1].iov_len + 6);
+              unaff_R14 = ppVar6;
+              in_RCX = ppVar18;
+              cVar7 = ppVar10->__size[0];
+              ppVar18 = ppVar9;
+              if (cVar7 == '\v') {
+                ppVar10->__size[0] = '\n';
+                *(undefined *)((long)in_RCX + -1) = 0x31;
+                cVar7 = ppVar10->__size[0];
+                ppVar18 = (pthread_mutex_t *)((long)in_RCX + -2);
               }
-              if (cVar9 != '\n') break;
-              piVar24 = (iovec *)((long)&piVar11[-1].iov_len + 7);
-              in_RCX = (iovec *)((long)(unaff_R14 + 0xffffffffffffffff) + 0x20);
-              *(undefined **)unaff_R14 = (undefined *)((long)&piVar21->iov_base + 1);
-              *(undefined *)&piVar21->iov_base = *(undefined *)&piVar11->iov_base;
-              piVar18 = (iovec *)((long)&piVar21[-1].iov_len + 7);
-              piVar11 = piVar24;
-              in_RSI = piVar18;
-              ppVar5 = (pthread_mutex_t *)in_RCX;
-              if (piVar18 <= piVar24) goto LAB_00402d10;
+              if (cVar7 != '\n') break;
+              ppVar11 = (pthread_mutex_t *)((long)ppVar10 + -1);
+              in_RCX = (pthread_mutex_t *)((long)unaff_R14 + -8);
+              unaff_R14->__align = (long)((long)&(ppVar18->__data).__lock + 1);
+              ppVar18->__size[0] = ppVar10->__size[0];
+              ppVar9 = (pthread_mutex_t *)((long)ppVar18 + -1);
+              ppVar10 = ppVar11;
+              in_RSI = ppVar9;
+              ppVar6 = in_RCX;
+              if (ppVar9 <= ppVar11) goto LAB_00402d10;
             }
-            *(char *)&piVar21->iov_base = cVar9;
-            piVar11 = (iovec *)((long)&piVar11[-1].iov_len + 7);
-            piVar18 = (iovec *)((long)&piVar21[-1].iov_len + 7);
-            in_RSI = piVar18;
-            ppVar5 = unaff_R14;
-          } while (piVar11 < piVar18);
+            ppVar18->__size[0] = cVar7;
+            ppVar10 = (pthread_mutex_t *)((long)ppVar10 + -1);
+            ppVar9 = (pthread_mutex_t *)((long)ppVar18 + -1);
+            in_RSI = ppVar9;
+            ppVar6 = unaff_R14;
+          } while (ppVar10 < ppVar9);
         }
       }
     }
     goto LAB_00402d10;
   }
 LAB_00403068:
-  uVar29 = (ulong)uVar10;
-  uStack96 = 0x40306f;
-  std::__throw_system_error(uVar10);
-  this = *(long ***)(uVar29 + 8);
-  ppStack104 = (pthread_mutex_t *)0x40307d;
-  loop();
-  auVar7 = vpxor_avx(auVar32,auVar32);
+  uVar27 = (ulong)uVar8;
+  uStack_60 = 0x40306f;
+  std::__throw_system_error(uVar8);
+  this = *(long ***)(uVar27 + 8);
+  ppStack_68 = (pthread_mutex_t *)0x40307d;
+  auVar30._0_8_ = loop();
+  auVar30._8_24_ = extraout_var;
+  auVar5 = vpxor_avx(auVar30._0_16_,auVar30._0_16_);
   pplVar1 = this + 2;
-  pcStack136 = __pthread_key_create;
-  auVar32 = vmovdqu_avx(auVar7);
-  *(undefined (*) [16])(this + 4) = auVar32;
-  auVar7 = vpxor_avx(auVar7,auVar7);
+  pcStack_88 = __pthread_key_create;
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 4) = auVar2;
+  auVar5 = vpxor_avx(auVar5,auVar5);
   *this = (long *)pplVar1;
   this[1] = (long *)0x0;
   *(undefined *)(this + 2) = 0;
   this[6] = (long *)0x0;
   *(undefined4 *)(this + 7) = 0;
   *(undefined *)((long)this + 0x3c) = 0;
-  auVar32 = vmovdqu_avx(auVar7);
-  *(undefined (*) [16])(this + 8) = auVar32;
-  auVar32 = vmovdqu_avx(auVar7);
-  *(undefined (*) [16])(this + 10) = auVar32;
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 8) = auVar2;
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 10) = auVar2;
   this[0xc] = (long *)0x0;
-  ppStack112 = unaff_R14;
-  ppStack104 = unaff_R15;
+  ppStack_70 = unaff_R14;
+  ppStack_68 = unaff_R15;
   std::condition_variable::condition_variable((condition_variable *)(this + 0xd));
   this[0x13] = (long *)0x0;
   this[0x14] = (long *)0x0;
   this[0x15] = (long *)0x0;
   this[0x16] = (long *)0x0;
   this[0x17] = (long *)0x0;
-  if (in_RCX < (iovec *)0xa) {
+  if (in_RCX < (pthread_mutex_t *)0xa) {
 LAB_00403a76:
-    puStack272 = &uStack232;
-    uStack232 = (ulong)uStack232._1_7_ << 8;
-    sStack240 = 1;
-    puStack248 = puStack272;
+    puStack_110 = &uStack_e8;
+    uStack_e8 = (ulong)uStack_e8._1_7_ << 8;
+    sStack_f0 = 1;
+    puStack_f8 = puStack_110;
 LAB_00403985:
-    *(char *)((long)puStack248 + sStack240) = '\0';
-    uVar10 = (int)sStack240 - 1;
-    piVar24 = in_RCX;
-    if (in_RCX < (iovec *)0x64) goto LAB_0040324b;
+    *(char *)((long)puStack_f8 + sStack_f0) = '\0';
+    uVar8 = (int)sStack_f0 - 1;
+    ppVar11 = in_RCX;
+    if (in_RCX < (pthread_mutex_t *)0x64) goto LAB_0040324b;
   }
   else {
-    if (in_RCX < (iovec *)0x64) {
-      puStack248 = &uStack232;
-      sStack240 = 2;
+    if (in_RCX < (pthread_mutex_t *)0x64) {
+      puStack_f8 = &uStack_e8;
+      sStack_f0 = 2;
 LAB_00403976:
-      memset(puStack248,0,sStack240);
+      memset(puStack_f8,0,sStack_f0);
       goto LAB_00403985;
     }
-    if (in_RCX < (iovec *)0x3e8) {
-      puStack248 = &uStack232;
-      sStack240 = 3;
+    if (in_RCX < (pthread_mutex_t *)0x3e8) {
+      puStack_f8 = &uStack_e8;
+      sStack_f0 = 3;
       goto LAB_00403976;
     }
-    piVar24 = in_RCX;
-    uVar10 = 1;
-    if (in_RCX < (iovec *)0x2710) {
-      puStack248 = &uStack232;
-      sStack240 = 4;
+    ppVar11 = in_RCX;
+    uVar8 = 1;
+    if (in_RCX < (pthread_mutex_t *)0x2710) {
+      puStack_f8 = &uStack_e8;
+      sStack_f0 = 4;
       goto LAB_00403976;
     }
     do {
-      uVar25 = uVar10;
-      if (piVar24 < (iovec *)0x186a0) {
-        sStack240 = (size_t)(uVar25 + 4);
+      uVar23 = uVar8;
+      if (ppVar11 < (pthread_mutex_t *)0x186a0) {
+        sStack_f0 = (size_t)(uVar23 + 4);
         goto LAB_004031b5;
       }
-      if (piVar24 < (iovec *)0xf4240) {
-        sStack240 = (size_t)(uVar25 + 5);
+      if (ppVar11 < (pthread_mutex_t *)0xf4240) {
+        sStack_f0 = (size_t)(uVar23 + 5);
         goto LAB_004031b5;
       }
-      if (piVar24 < (iovec *)0x989680) {
-        sStack240 = (size_t)(uVar25 + 6);
+      if (ppVar11 < (pthread_mutex_t *)0x989680) {
+        sStack_f0 = (size_t)(uVar23 + 6);
         goto LAB_004031b5;
       }
-      bVar6 = (iovec *)0x5f5e0ff < piVar24;
-      piVar24 = (iovec *)((ulong)piVar24 / 10000);
-      uVar10 = uVar25 + 4;
-    } while (bVar6);
-    sStack240 = (size_t)(uVar25 + 7);
+      bVar4 = (pthread_mutex_t *)0x5f5e0ff < ppVar11;
+      ppVar11 = (pthread_mutex_t *)((ulong)ppVar11 / 10000);
+      uVar8 = uVar23 + 4;
+    } while (bVar4);
+    sStack_f0 = (size_t)(uVar23 + 7);
 LAB_004031b5:
-    puStack248 = &uStack232;
-    if (0xf < sStack240) {
-      puStack248 = (undefined8 *)operator_new(sStack240 + 1);
-      uStack232 = sStack240;
+    puStack_f8 = &uStack_e8;
+    if (0xf < sStack_f0) {
+      puStack_f8 = (undefined8 *)operator_new(sStack_f0 + 1);
+      uStack_e8 = sStack_f0;
       goto LAB_00403976;
     }
-    if (sStack240 != 0) {
-      if (sStack240 == 1) goto LAB_00403a76;
+    if (sStack_f0 != 0) {
+      if (sStack_f0 == 1) goto LAB_00403a76;
       goto LAB_00403976;
     }
-    sStack240 = 0;
-    uStack232 = (ulong)uStack232._1_7_ << 8;
-    uVar10 = 0xffffffff;
-    piVar24 = in_RCX;
+    sStack_f0 = 0;
+    uStack_e8 = (ulong)uStack_e8._1_7_ << 8;
+    uVar8 = 0xffffffff;
+    ppVar11 = in_RCX;
   }
   do {
-    in_RCX = (iovec *)(((ulong)piVar24 >> 2) / 0x19);
-    lVar30 = (long)((long)piVar24 + (long)in_RCX * -100) * 2;
-    cVar9 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-            __digits[lVar30];
-    *(undefined1 *)((long)puStack248 + (ulong)uVar10) =
+    in_RCX = (pthread_mutex_t *)((ulong)ppVar11 / 100);
+    lVar28 = ((ulong)ppVar11 % 100) * 2;
+    cVar7 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
+            __digits[lVar28];
+    *(undefined1 *)((long)puStack_f8 + (ulong)uVar8) =
          std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-         __digits[lVar30 + 1];
-    uVar25 = uVar10 - 1;
-    uVar10 = uVar10 - 2;
-    *(char *)((long)puStack248 + (ulong)uVar25) = cVar9;
-    bVar6 = (iovec *)0x270f < piVar24;
-    piVar24 = in_RCX;
-  } while (bVar6);
+         __digits[lVar28 + 1];
+    uVar23 = uVar8 - 1;
+    uVar8 = uVar8 - 2;
+    *(char *)((long)puStack_f8 + (ulong)uVar23) = cVar7;
+    bVar4 = (pthread_mutex_t *)0x270f < ppVar11;
+    ppVar11 = in_RCX;
+  } while (bVar4);
 LAB_0040324b:
-  puStack272 = &uStack232;
-  cVar9 = (char)in_RCX + '0';
-  if ((iovec *)0x9 < in_RCX) {
-    *(undefined1 *)((long)puStack248 + 1) =
+  puStack_110 = &uStack_e8;
+  cVar7 = (char)in_RCX + '0';
+  if ((pthread_mutex_t *)0x9 < in_RCX) {
+    *(undefined1 *)((long)puStack_f8 + 1) =
          std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
          __digits[(long)in_RCX * 2 + 1];
-    cVar9 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
+    cVar7 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
             __digits[(long)in_RCX * 2];
   }
-  *(char *)puStack248 = cVar9;
-  *(int *)(this + 7) = (int)sStack240 + 1;
-  *(char *)((long)this + 0x3c) = *(char *)puStack248 + -0x30;
-  plVar22 = (long *)((extraout_RDX * 0xef) / 0xf + 1);
+  *(char *)puStack_f8 = cVar7;
+  *(int *)(this + 7) = (int)sStack_f0 + 1;
+  *(char *)((long)this + 0x3c) = *(char *)puStack_f8 + -0x30;
+  plVar21 = (long *)((extraout_RDX * 0xef) / 0xf + 1);
   if ((long **)*this == pplVar1) {
-    plVar31 = (long *)0xf;
+    plVar29 = (long *)0xf;
   }
   else {
-    plVar31 = this[2];
+    plVar29 = this[2];
   }
-  if (plVar31 < plVar22) {
-    plVar12 = (long *)((long)plVar31 * 2);
-    if ((long *)((long)plVar31 * 2) < plVar22) {
-      plVar12 = plVar22;
+  if (plVar29 < plVar21) {
+    plVar12 = (long *)((long)plVar29 * 2);
+    if ((long *)((long)plVar29 * 2) < plVar21) {
+      plVar12 = plVar21;
     }
-    plVar22 = (long *)operator_new((long)plVar12 + 1);
-    pplVar28 = (long **)*this;
-    sVar27 = (long)this[1] + 1;
+    plVar21 = (long *)operator_new((long)plVar12 + 1);
+    pplVar26 = (long **)*this;
+    sVar25 = (long)this[1] + 1;
     if (this[1] == (long *)0x0) {
-      *(undefined *)plVar22 = *(undefined *)pplVar28;
+      *(undefined *)plVar21 = *(undefined *)pplVar26;
     }
-    else if (sVar27 != 0) {
-      memcpy(plVar22,pplVar28,sVar27);
+    else if (sVar25 != 0) {
+      memcpy(plVar21,pplVar26,sVar25);
     }
-    if (pplVar28 != pplVar1) {
-      operator_delete(pplVar28,(long)this[2] + 1);
+    if (pplVar26 != pplVar1) {
+      operator_delete(pplVar26,(long)this[2] + 1);
     }
-    *this = plVar22;
+    *this = plVar21;
     this[2] = plVar12;
   }
   if (extraout_RDX >> 0x3c != 0) {
                     // WARNING: Subroutine does not return
     std::__throw_length_error("vector::reserve");
   }
-  plVar22 = this[4];
-  uVar29 = (long)this[6] - (long)plVar22;
-  if ((ulong)((long)uVar29 >> 3) < extraout_RDX) {
-    plVar31 = this[5];
+  plVar21 = this[4];
+  uVar27 = (long)this[6] - (long)plVar21;
+  if ((ulong)((long)uVar27 >> 3) < extraout_RDX) {
+    plVar29 = this[5];
     plVar12 = (long *)0x0;
-    lVar30 = (long)plVar31 - (long)plVar22;
+    lVar28 = (long)plVar29 - (long)plVar21;
     if (extraout_RDX != 0) {
       plVar12 = (long *)operator_new(extraout_RDX * 8);
-      plVar22 = this[4];
-      plVar31 = this[5];
-      uVar29 = (long)this[6] - (long)plVar22;
+      plVar21 = this[4];
+      plVar29 = this[5];
+      uVar27 = (long)this[6] - (long)plVar21;
     }
-    if (plVar22 != plVar31) {
+    if (plVar21 != plVar29) {
       plVar13 = plVar12;
-      plVar23 = plVar22;
+      plVar22 = plVar21;
       do {
-        lVar4 = *plVar23;
+        lVar3 = *plVar22;
         plVar14 = plVar13 + 1;
-        plVar23 = plVar23 + 1;
-        *plVar13 = lVar4;
+        plVar22 = plVar22 + 1;
+        *plVar13 = lVar3;
         plVar13 = plVar14;
-      } while (plVar14 != (long *)(((long)plVar31 - (long)plVar22) + (long)plVar12));
+      } while (plVar14 != (long *)(((long)plVar29 - (long)plVar21) + (long)plVar12));
     }
-    if (plVar22 != (long *)0x0) {
-      operator_delete(plVar22,uVar29);
+    if (plVar21 != (long *)0x0) {
+      operator_delete(plVar21,uVar27);
     }
-    auVar32 = vmovq_avx(plVar12);
-    auVar32 = vpinsrq_avx(auVar32,lVar30 + (long)plVar12,1);
+    auVar2 = vmovq_avx(plVar12);
+    auVar2 = vpinsrq_avx(auVar2,lVar28 + (long)plVar12,1);
     this[6] = plVar12 + extraout_RDX;
-    auVar32 = vmovdqu_avx(auVar32);
-    *(undefined (*) [16])(this + 4) = auVar32;
+    auVar2 = vmovdqu_avx(auVar2);
+    *(undefined (*) [16])(this + 4) = auVar2;
   }
-  ppvVar8 = &in_RSI->iov_base;
+  ppVar11 = (pthread_mutex_t *)(in_RSI->__size + extraout_RDX);
+  uVar27 = uStack_a8;
   do {
-    if ((iovec *)((long)ppvVar8 + extraout_RDX) <= in_RSI) {
+    uStack_a8 = uVar27;
+    if (ppVar11 <= in_RSI) {
       this[0x15] = *this;
-      if (puStack248 != puStack272) {
-        operator_delete(puStack248,uStack232 + 1);
+      if (puStack_f8 != puStack_110) {
+        operator_delete(puStack_f8,uStack_e8 + 1);
       }
       return;
     }
     if ((ulong)((long)in_RSI * -0x1111111111111111) < 0x1111111111111112) {
-      plVar22 = this[1];
-      if (0x7fffffffffffffffU - (long)plVar22 < 9) {
+      plVar21 = this[1];
+      if (0x7fffffffffffffffU - (long)plVar21 < 9) {
 LAB_00403b4e:
                     // WARNING: Subroutine does not return
         std::__throw_length_error("basic_string::append");
       }
-      plVar31 = (long *)((long)plVar22 + 9);
+      plVar29 = (long *)((long)plVar21 + 9);
       if (pplVar1 == (long **)*this) {
         plVar12 = (long *)0xf;
       }
       else {
         plVar12 = this[2];
       }
-      if (plVar12 < plVar31) {
+      if (plVar12 < plVar29) {
         std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                  ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                   (ulong)plVar22,0,"FizzBuzz\n",9);
+                  ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                   (ulong)plVar21,0,"FizzBuzz\n",9);
       }
       else {
-        puVar16 = (undefined8 *)((long)*this + (long)plVar22);
+        puVar16 = (undefined8 *)((long)*this + (long)plVar21);
         *puVar16 = 0x7a7a75427a7a6946;
         *(undefined *)(puVar16 + 1) = 10;
       }
 LAB_00403480:
-      this[1] = plVar31;
-      *(undefined *)((long)*this + (long)plVar31) = 0;
+      this[1] = plVar29;
+      *(undefined *)((long)*this + (long)plVar29) = 0;
     }
     else {
       if ((ulong)((long)in_RSI * -0x3333333333333333) < 0x3333333333333334) {
-        plVar22 = this[1];
-        if (0x7fffffffffffffffU - (long)plVar22 < 5) goto LAB_00403b4e;
-        plVar31 = (long *)((long)plVar22 + 5);
+        plVar21 = this[1];
+        if (0x7fffffffffffffffU - (long)plVar21 < 5) goto LAB_00403b4e;
+        plVar29 = (long *)((long)plVar21 + 5);
         if (pplVar1 == (long **)*this) {
           plVar12 = (long *)0xf;
         }
         else {
           plVar12 = this[2];
         }
-        if (plVar12 < plVar31) {
+        if (plVar12 < plVar29) {
           std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                     (ulong)plVar22,0,"Buzz\n",5);
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                     (ulong)plVar21,0,"Buzz\n",5);
         }
         else {
-          puVar15 = (undefined4 *)((long)*this + (long)plVar22);
+          puVar15 = (undefined4 *)((long)*this + (long)plVar21);
           *puVar15 = 0x7a7a7542;
           *(undefined *)(puVar15 + 1) = 10;
         }
         goto LAB_00403480;
       }
       if ((ulong)((long)in_RSI * -0x5555555555555555) < 0x5555555555555556) {
-        plVar22 = this[1];
-        if (0x7fffffffffffffffU - (long)plVar22 < 5) goto LAB_00403b4e;
-        plVar31 = (long *)((long)plVar22 + 5);
+        plVar21 = this[1];
+        if (0x7fffffffffffffffU - (long)plVar21 < 5) goto LAB_00403b4e;
+        plVar29 = (long *)((long)plVar21 + 5);
         if (pplVar1 == (long **)*this) {
           plVar12 = (long *)0xf;
         }
         else {
           plVar12 = this[2];
         }
-        if (plVar12 < plVar31) {
+        if (plVar12 < plVar29) {
           std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                     (ulong)plVar22,0,"Fizz\n",5);
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                     (ulong)plVar21,0,"Fizz\n",5);
         }
         else {
-          puVar15 = (undefined4 *)((long)*this + (long)plVar22);
+          puVar15 = (undefined4 *)((long)*this + (long)plVar21);
           *puVar15 = 0x7a7a6946;
           *(undefined *)(puVar15 + 1) = 10;
         }
         goto LAB_00403480;
       }
-      uStack168._1_7_ = (uint7)(uStack168 >> 8);
-      if (in_RSI < (iovec *)0xa) {
+      uStack_a8._1_7_ = (uint7)(uVar27 >> 8);
+      ppVar9 = in_RSI;
+      if (in_RSI < (pthread_mutex_t *)0xa) {
 LAB_00403a4a:
-        puStack184 = &uStack168;
-        uStack168 = (ulong)uStack168._1_7_ << 8;
-        sVar27 = 1;
+        puStack_b8 = &uStack_a8;
+        uStack_a8 = (ulong)uStack_a8._1_7_ << 8;
+        sVar25 = 1;
 LAB_004038e6:
-        *(char *)((long)puStack184 + sVar27) = '\0';
-        uStack176._0_4_ = (int)sVar27;
-        uVar29 = (ulong)((int)uStack176 - 1);
-        piVar24 = in_RSI;
-        piVar18 = in_RSI;
-        uStack176 = sVar27;
-        if ((iovec *)0x63 < in_RSI) goto LAB_00403640;
+        *(char *)((long)puStack_b8 + sVar25) = '\0';
+        uStack_b0._0_4_ = (int)sVar25;
+        uVar27 = (ulong)((int)uStack_b0 - 1);
+        ppVar18 = in_RSI;
+        uStack_b0 = sVar25;
+        if ((pthread_mutex_t *)0x63 < in_RSI) goto LAB_00403640;
       }
       else {
-        if (in_RSI < (iovec *)0x64) {
-          puStack184 = &uStack168;
-          sVar27 = 2;
+        if (in_RSI < (pthread_mutex_t *)0x64) {
+          puStack_b8 = &uStack_a8;
+          sVar25 = 2;
 LAB_004038d0:
-          memset(puStack184,0,sVar27);
+          uStack_a8 = uVar27;
+          memset(puStack_b8,0,sVar25);
           goto LAB_004038e6;
         }
-        if (in_RSI < (iovec *)0x3e8) {
-          puStack184 = &uStack168;
-          sVar27 = 3;
+        if (in_RSI < (pthread_mutex_t *)0x3e8) {
+          puStack_b8 = &uStack_a8;
+          sVar25 = 3;
           goto LAB_004038d0;
         }
-        sVar27 = 1;
-        piVar24 = in_RSI;
-        if (in_RSI < (iovec *)0x2710) {
-          puStack184 = &uStack168;
-          sVar27 = 4;
+        sVar25 = 1;
+        ppVar18 = in_RSI;
+        if (in_RSI < (pthread_mutex_t *)0x2710) {
+          puStack_b8 = &uStack_a8;
+          sVar25 = 4;
           goto LAB_004038d0;
         }
         do {
-          iVar26 = (int)sVar27;
-          sVar27 = (size_t)(iVar26 + 4);
-          if (piVar24 < (iovec *)0x186a0) goto LAB_004035f4;
-          if (piVar24 < (iovec *)0xf4240) {
-            sVar27 = (size_t)(iVar26 + 5);
+          iVar24 = (int)sVar25;
+          sVar25 = (size_t)(iVar24 + 4);
+          if (ppVar18 < (pthread_mutex_t *)0x186a0) goto LAB_004035f4;
+          if (ppVar18 < (pthread_mutex_t *)0xf4240) {
+            sVar25 = (size_t)(iVar24 + 5);
             goto LAB_004035f4;
           }
-          if (piVar24 < (iovec *)0x989680) {
-            sVar27 = (size_t)(iVar26 + 6);
+          if (ppVar18 < (pthread_mutex_t *)0x989680) {
+            sVar25 = (size_t)(iVar24 + 6);
             goto LAB_004035f4;
           }
-          bVar6 = (iovec *)0x5f5e0ff < piVar24;
-          piVar24 = (iovec *)((ulong)piVar24 / 10000);
-        } while (bVar6);
-        sVar27 = (size_t)(iVar26 + 7);
+          bVar4 = (pthread_mutex_t *)0x5f5e0ff < ppVar18;
+          ppVar18 = (pthread_mutex_t *)((ulong)ppVar18 / 10000);
+        } while (bVar4);
+        sVar25 = (size_t)(iVar24 + 7);
 LAB_004035f4:
-        puStack184 = &uStack168;
-        if (0xf < sVar27) {
-          puStack184 = (undefined8 *)operator_new(sVar27 + 1);
-          uStack168 = sVar27;
+        puStack_b8 = &uStack_a8;
+        if (0xf < sVar25) {
+          puStack_b8 = (undefined8 *)operator_new(sVar25 + 1);
+          uVar27 = sVar25;
           goto LAB_004038d0;
         }
-        if (sVar27 != 0) {
-          if (sVar27 == 1) goto LAB_00403a4a;
+        if (sVar25 != 0) {
+          if (sVar25 == 1) goto LAB_00403a4a;
           goto LAB_004038d0;
         }
-        uStack176 = 0;
-        uStack168 = (ulong)uStack168._1_7_ << 8;
-        uVar29 = 0xffffffff;
-        piVar18 = in_RSI;
+        uStack_b0 = 0;
+        uStack_a8 = (ulong)uStack_a8._1_7_ << 8;
+        uVar27 = 0xffffffff;
 LAB_00403640:
         do {
-          piVar24 = (iovec *)(((ulong)piVar18 >> 2) / 0x19);
-          iVar26 = (int)uVar29;
-          lVar30 = ((long)piVar18 + (long)piVar24 * -100) * 2;
-          cVar9 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)
-                  ::__digits[lVar30];
-          *(undefined1 *)((long)puStack184 + uVar29) =
+          iVar24 = (int)uVar27;
+          lVar28 = ((ulong)ppVar9 % 100) * 2;
+          cVar7 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)
+                  ::__digits[lVar28];
+          *(undefined1 *)((long)puStack_b8 + uVar27) =
                std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-               __digits[lVar30 + 1];
-          uVar29 = (ulong)(iVar26 - 2);
-          *(char *)((long)puStack184 + (ulong)(iVar26 - 1)) = cVar9;
-          bVar6 = (iovec *)0x270f < piVar18;
-          piVar18 = piVar24;
-        } while (bVar6);
+               __digits[lVar28 + 1];
+          uVar27 = (ulong)(iVar24 - 2);
+          *(char *)((long)puStack_b8 + (ulong)(iVar24 - 1)) = cVar7;
+          bVar4 = (pthread_mutex_t *)0x270f < ppVar9;
+          ppVar18 = (pthread_mutex_t *)((ulong)ppVar9 / 100);
+          ppVar9 = (pthread_mutex_t *)((ulong)ppVar9 / 100);
+        } while (bVar4);
       }
-      cVar9 = (char)piVar24 + '0';
-      if ((iovec *)0x9 < piVar24) {
-        *(undefined1 *)((long)puStack184 + 1) =
+      cVar7 = (char)ppVar18 + '0';
+      if ((pthread_mutex_t *)0x9 < ppVar18) {
+        *(undefined1 *)((long)puStack_b8 + 1) =
              std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-             __digits[(long)piVar24 * 2 + 1];
-        cVar9 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-                __digits[(long)piVar24 * 2];
+             __digits[(long)ppVar18 * 2 + 1];
+        cVar7 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
+                __digits[(long)ppVar18 * 2];
       }
-      *(char *)puStack184 = cVar9;
+      *(char *)puStack_b8 = cVar7;
       ppcVar17 = (char **)std::__cxx11::
                           basic_string<char,std::char_traits<char>,std::allocator<char>>::
-                          _M_replace_aux((basic_string_char_std__char_traits_char__std__allocator_char__
-                                          *)&puStack184,uStack176,0,1,'\n');
-      ppcStack216 = (char **)auStack200;
+                          _M_replace_aux((basic_string<char,std::char_traits<char>,std::allocator<char>>
+                                          *)&puStack_b8,uStack_b0,0,1,'\n');
+      ppcStack_d8 = (char **)auStack_c8;
       if ((char **)*ppcVar17 == ppcVar17 + 2) {
-        auStack200 = vmovdqu_avx(*(undefined (*) [16])(ppcVar17 + 2));
+        auStack_c8 = vmovdqu_avx(*(undefined (*) [16])(ppcVar17 + 2));
       }
       else {
-        auStack200 = CONCAT88(auStack200._8_8_,ppcVar17[2]);
-        ppcStack216 = (char **)*ppcVar17;
+        auStack_c8._0_8_ = ppcVar17[2];
+        ppcStack_d8 = (char **)*ppcVar17;
       }
-      pcStack208 = ppcVar17[1];
+      pcStack_d0 = ppcVar17[1];
       *(undefined *)(ppcVar17 + 2) = 0;
       ppcVar17[1] = (char *)0x0;
-      plVar31 = this[1];
+      plVar29 = this[1];
       *ppcVar17 = (char *)(ppcVar17 + 2);
-      pplVar28 = (long **)*this;
-      plVar22 = (long *)(pcStack208 + (long)plVar31);
-      if (pplVar1 == pplVar28) {
+      pplVar26 = (long **)*this;
+      plVar21 = (long *)(pcStack_d0 + (long)plVar29);
+      if (pplVar1 == pplVar26) {
         plVar12 = (long *)0xf;
       }
       else {
         plVar12 = this[2];
       }
-      if (plVar12 < plVar22) {
+      if (plVar12 < plVar21) {
         std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                  ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                   (ulong)plVar31,0,(char *)ppcStack216,(ulong)pcStack208);
-        pplVar28 = (long **)*this;
+                  ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                   (ulong)plVar29,0,(char *)ppcStack_d8,(ulong)pcStack_d0);
+        pplVar26 = (long **)*this;
       }
-      else if (pcStack208 != (char *)0x0) {
-        if (pcStack208 == (char *)0x1) {
-          *(char *)((long)pplVar28 + (long)plVar31) = *(char *)ppcStack216;
-          pplVar28 = (long **)*this;
+      else if (pcStack_d0 != (char *)0x0) {
+        if (pcStack_d0 == (char *)0x1) {
+          *(char *)((long)pplVar26 + (long)plVar29) = *(char *)ppcStack_d8;
+          pplVar26 = (long **)*this;
         }
         else {
-          memcpy((char *)((long)pplVar28 + (long)plVar31),ppcStack216,(size_t)pcStack208);
-          pplVar28 = (long **)*this;
+          memcpy((char *)((long)pplVar26 + (long)plVar29),ppcStack_d8,(size_t)pcStack_d0);
+          pplVar26 = (long **)*this;
         }
       }
-      this[1] = plVar22;
-      *(undefined *)((long)pplVar28 + (long)plVar22) = 0;
-      if (ppcStack216 != (char **)auStack200) {
-        operator_delete(ppcStack216,auStack200._0_8_ + 1);
+      this[1] = plVar21;
+      *(undefined *)((long)pplVar26 + (long)plVar21) = 0;
+      if (ppcStack_d8 != (char **)auStack_c8) {
+        operator_delete(ppcStack_d8,auStack_c8._0_8_ + 1);
       }
-      if (puStack184 != &uStack168) {
-        operator_delete(puStack184,uStack168 + 1);
+      if (puStack_b8 != &uStack_a8) {
+        operator_delete(puStack_b8,uStack_a8 + 1);
       }
     }
-    puStack184 = (undefined8 *)((long)this[1] + (long)*this);
-    plVar22 = this[5];
-    if (plVar22 == this[6]) {
-      in_RSI = (iovec *)((long)&in_RSI->iov_base + 1);
+    puStack_b8 = (undefined8 *)((long)this[1] + (long)*this);
+    plVar21 = this[5];
+    if (plVar21 == this[6]) {
+      in_RSI = (pthread_mutex_t *)((long)&(in_RSI->__data).__lock + 1);
       std::
       vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
       ::
-      _M_realloc_insert___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____
-                ((vector___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____std__allocator___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char_____
-                  *)(this + 4),(__normal_iterator)plVar22,(__normal_iterator *)&puStack184);
+      _M_realloc_insert<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>
+                ((vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
+                  *)(this + 4),(__normal_iterator)plVar21,(__normal_iterator *)&puStack_b8);
+      uVar27 = uStack_a8;
     }
     else {
-      *plVar22 = (long)puStack184;
-      in_RSI = (iovec *)((long)&in_RSI->iov_base + 1);
-      this[5] = plVar22 + 1;
+      *plVar21 = (long)puStack_b8;
+      in_RSI = (pthread_mutex_t *)((long)&(in_RSI->__data).__lock + 1);
+      this[5] = plVar21 + 1;
+      uVar27 = uStack_a8;
     }
   } while( true );
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
-// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},
-// worker*>>>::_M_run()
+// std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1}, worker*> >
+// >::_M_run()
 
 void std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(worker*)#1},worker*>>>
      ::_M_run(void)
 
 {
   long **pplVar1;
-  long lVar2;
-  bool bVar3;
-  undefined auVar4 [16];
-  char cVar5;
-  long *plVar6;
+  undefined auVar2 [16];
+  long lVar3;
+  bool bVar4;
+  undefined auVar5 [16];
+  char cVar6;
   long *plVar7;
   long *plVar8;
-  undefined4 *puVar9;
-  undefined8 *puVar10;
-  char **ppcVar11;
-  uint uVar12;
+  long *plVar9;
+  undefined4 *puVar10;
+  undefined8 *puVar11;
+  char **ppcVar12;
+  uint uVar13;
   ulong in_RCX;
-  ulong uVar13;
+  ulong uVar14;
   ulong extraout_RDX;
-  long *plVar14;
   long *plVar15;
-  ulong uVar16;
-  uint uVar17;
-  int iVar18;
+  long *plVar16;
+  ulong uVar17;
+  uint uVar18;
+  int iVar19;
   ulong in_RSI;
-  size_t sVar19;
-  ulong uVar20;
+  size_t sVar20;
+  ulong uVar21;
   long in_RDI;
   long **this;
-  long **pplVar21;
-  ulong uVar22;
-  long lVar23;
-  long *plVar24;
-  undefined auVar25 [16];
-  undefined in_YMM0 [32];
-  undefined8 *puStack184;
-  undefined8 *puStack160;
-  size_t sStack152;
-  undefined8 uStack144;
-  char **ppcStack128;
-  char *pcStack120;
-  undefined auStack112 [16];
-  undefined8 *puStack96;
-  ulong uStack88;
-  undefined8 uStack80;
+  long **pplVar22;
+  ulong uVar23;
+  long lVar24;
+  long *plVar25;
+  undefined auVar26 [32];
+  undefined8 *puStack_b8;
+  undefined8 *puStack_a0;
+  size_t sStack_98;
+  undefined8 uStack_90;
+  char **ppcStack_80;
+  char *pcStack_78;
+  undefined auStack_70 [16];
+  undefined8 *puStack_60;
+  ulong uStack_58;
+  undefined8 uStack_50;
+  undefined extraout_var [24];
   
-  auVar25 = SUB3216(in_YMM0,0);
   this = *(long ***)(in_RDI + 8);
-  worker::loop();
-  auVar4 = vpxor_avx(auVar25,auVar25);
+  auVar26._0_8_ = worker::loop();
+  auVar26._8_24_ = extraout_var;
+  auVar5 = vpxor_avx(auVar26._0_16_,auVar26._0_16_);
   pplVar1 = this + 2;
-  auVar25 = vmovdqu_avx(auVar4);
-  *(undefined (*) [16])(this + 4) = auVar25;
-  auVar4 = vpxor_avx(auVar4,auVar4);
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 4) = auVar2;
+  auVar5 = vpxor_avx(auVar5,auVar5);
   *this = (long *)pplVar1;
   this[1] = (long *)0x0;
   *(undefined *)(this + 2) = 0;
   this[6] = (long *)0x0;
   *(undefined4 *)(this + 7) = 0;
   *(undefined *)((long)this + 0x3c) = 0;
-  auVar25 = vmovdqu_avx(auVar4);
-  *(undefined (*) [16])(this + 8) = auVar25;
-  auVar25 = vmovdqu_avx(auVar4);
-  *(undefined (*) [16])(this + 10) = auVar25;
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 8) = auVar2;
+  auVar2 = vmovdqu_avx(auVar5);
+  *(undefined (*) [16])(this + 10) = auVar2;
   this[0xc] = (long *)0x0;
   std::condition_variable::condition_variable((condition_variable *)(this + 0xd));
   this[0x13] = (long *)0x0;
@@ -1987,404 +2041,407 @@ void std::thread::_State_impl<std::thread::_Invoker<std::tuple<main::{lambda(wor
   this[0x17] = (long *)0x0;
   if (in_RCX < 10) {
 LAB_00403a76:
-    puStack184 = &uStack144;
-    uStack144 = (ulong)uStack144._1_7_ << 8;
-    sStack152 = 1;
-    puStack160 = puStack184;
+    puStack_b8 = &uStack_90;
+    uStack_90 = (ulong)uStack_90._1_7_ << 8;
+    sStack_98 = 1;
+    puStack_a0 = puStack_b8;
 LAB_00403985:
-    *(char *)((long)puStack160 + sStack152) = '\0';
-    uVar12 = (int)sStack152 - 1;
-    uVar22 = in_RCX;
+    *(char *)((long)puStack_a0 + sStack_98) = '\0';
+    uVar13 = (int)sStack_98 - 1;
+    uVar23 = in_RCX;
     if (in_RCX < 100) goto LAB_0040324b;
   }
   else {
     if (in_RCX < 100) {
-      puStack160 = &uStack144;
-      sStack152 = 2;
+      puStack_a0 = &uStack_90;
+      sStack_98 = 2;
 LAB_00403976:
-      memset(puStack160,0,sStack152);
+      memset(puStack_a0,0,sStack_98);
       goto LAB_00403985;
     }
     if (in_RCX < 1000) {
-      puStack160 = &uStack144;
-      sStack152 = 3;
+      puStack_a0 = &uStack_90;
+      sStack_98 = 3;
       goto LAB_00403976;
     }
-    uVar22 = in_RCX;
-    uVar12 = 1;
+    uVar23 = in_RCX;
+    uVar13 = 1;
     if (in_RCX < 10000) {
-      puStack160 = &uStack144;
-      sStack152 = 4;
+      puStack_a0 = &uStack_90;
+      sStack_98 = 4;
       goto LAB_00403976;
     }
     do {
-      uVar17 = uVar12;
-      if (uVar22 < 100000) {
-        sStack152 = (size_t)(uVar17 + 4);
+      uVar18 = uVar13;
+      if (uVar23 < 100000) {
+        sStack_98 = (size_t)(uVar18 + 4);
         goto LAB_004031b5;
       }
-      if (uVar22 < 1000000) {
-        sStack152 = (size_t)(uVar17 + 5);
+      if (uVar23 < 1000000) {
+        sStack_98 = (size_t)(uVar18 + 5);
         goto LAB_004031b5;
       }
-      if (uVar22 < 10000000) {
-        sStack152 = (size_t)(uVar17 + 6);
+      if (uVar23 < 10000000) {
+        sStack_98 = (size_t)(uVar18 + 6);
         goto LAB_004031b5;
       }
-      bVar3 = 99999999 < uVar22;
-      uVar22 = uVar22 / 10000;
-      uVar12 = uVar17 + 4;
-    } while (bVar3);
-    sStack152 = (size_t)(uVar17 + 7);
+      bVar4 = 99999999 < uVar23;
+      uVar23 = uVar23 / 10000;
+      uVar13 = uVar18 + 4;
+    } while (bVar4);
+    sStack_98 = (size_t)(uVar18 + 7);
 LAB_004031b5:
-    puStack160 = &uStack144;
-    if (0xf < sStack152) {
-      puStack160 = (undefined8 *)operator_new(sStack152 + 1);
-      uStack144 = sStack152;
+    puStack_a0 = &uStack_90;
+    if (0xf < sStack_98) {
+      puStack_a0 = (undefined8 *)operator_new(sStack_98 + 1);
+      uStack_90 = sStack_98;
       goto LAB_00403976;
     }
-    if (sStack152 != 0) {
-      if (sStack152 == 1) goto LAB_00403a76;
+    if (sStack_98 != 0) {
+      if (sStack_98 == 1) goto LAB_00403a76;
       goto LAB_00403976;
     }
-    sStack152 = 0;
-    uStack144 = (ulong)uStack144._1_7_ << 8;
-    uVar12 = 0xffffffff;
-    uVar22 = in_RCX;
+    sStack_98 = 0;
+    uStack_90 = (ulong)uStack_90._1_7_ << 8;
+    uVar13 = 0xffffffff;
+    uVar23 = in_RCX;
   }
   do {
-    in_RCX = (uVar22 >> 2) / 0x19;
-    lVar23 = (uVar22 + in_RCX * -100) * 2;
-    cVar5 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
-            [lVar23];
-    *(undefined1 *)((long)puStack160 + (ulong)uVar12) =
+    in_RCX = uVar23 / 100;
+    lVar24 = (uVar23 % 100) * 2;
+    cVar6 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
+            [lVar24];
+    *(undefined1 *)((long)puStack_a0 + (ulong)uVar13) =
          __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
-         [lVar23 + 1];
-    uVar17 = uVar12 - 1;
-    uVar12 = uVar12 - 2;
-    *(char *)((long)puStack160 + (ulong)uVar17) = cVar5;
-    bVar3 = 9999 < uVar22;
-    uVar22 = in_RCX;
-  } while (bVar3);
+         [lVar24 + 1];
+    uVar18 = uVar13 - 1;
+    uVar13 = uVar13 - 2;
+    *(char *)((long)puStack_a0 + (ulong)uVar18) = cVar6;
+    bVar4 = 9999 < uVar23;
+    uVar23 = in_RCX;
+  } while (bVar4);
 LAB_0040324b:
-  puStack184 = &uStack144;
-  cVar5 = (char)in_RCX + '0';
+  puStack_b8 = &uStack_90;
+  cVar6 = (char)in_RCX + '0';
   if (9 < in_RCX) {
-    *(undefined1 *)((long)puStack160 + 1) =
+    *(undefined1 *)((long)puStack_a0 + 1) =
          __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
          [in_RCX * 2 + 1];
-    cVar5 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
+    cVar6 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
             [in_RCX * 2];
   }
-  *(char *)puStack160 = cVar5;
-  *(int *)(this + 7) = (int)sStack152 + 1;
-  *(char *)((long)this + 0x3c) = *(char *)puStack160 + -0x30;
-  plVar14 = (long *)((extraout_RDX * 0xef) / 0xf + 1);
+  *(char *)puStack_a0 = cVar6;
+  *(int *)(this + 7) = (int)sStack_98 + 1;
+  *(char *)((long)this + 0x3c) = *(char *)puStack_a0 + -0x30;
+  plVar15 = (long *)((extraout_RDX * 0xef) / 0xf + 1);
   if ((long **)*this == pplVar1) {
-    plVar24 = (long *)0xf;
+    plVar25 = (long *)0xf;
   }
   else {
-    plVar24 = this[2];
+    plVar25 = this[2];
   }
-  if (plVar24 < plVar14) {
-    plVar6 = (long *)((long)plVar24 * 2);
-    if ((long *)((long)plVar24 * 2) < plVar14) {
-      plVar6 = plVar14;
+  if (plVar25 < plVar15) {
+    plVar7 = (long *)((long)plVar25 * 2);
+    if ((long *)((long)plVar25 * 2) < plVar15) {
+      plVar7 = plVar15;
     }
-    plVar14 = (long *)operator_new((long)plVar6 + 1);
-    pplVar21 = (long **)*this;
-    sVar19 = (long)this[1] + 1;
+    plVar15 = (long *)operator_new((long)plVar7 + 1);
+    pplVar22 = (long **)*this;
+    sVar20 = (long)this[1] + 1;
     if (this[1] == (long *)0x0) {
-      *(undefined *)plVar14 = *(undefined *)pplVar21;
+      *(undefined *)plVar15 = *(undefined *)pplVar22;
     }
-    else if (sVar19 != 0) {
-      memcpy(plVar14,pplVar21,sVar19);
+    else if (sVar20 != 0) {
+      memcpy(plVar15,pplVar22,sVar20);
     }
-    if (pplVar21 != pplVar1) {
-      operator_delete(pplVar21,(long)this[2] + 1);
+    if (pplVar22 != pplVar1) {
+      operator_delete(pplVar22,(long)this[2] + 1);
     }
-    *this = plVar14;
-    this[2] = plVar6;
+    *this = plVar15;
+    this[2] = plVar7;
   }
   if (extraout_RDX >> 0x3c != 0) {
                     // WARNING: Subroutine does not return
     std::__throw_length_error("vector::reserve");
   }
-  plVar14 = this[4];
-  uVar22 = (long)this[6] - (long)plVar14;
-  if ((ulong)((long)uVar22 >> 3) < extraout_RDX) {
-    plVar24 = this[5];
-    plVar6 = (long *)0x0;
-    lVar23 = (long)plVar24 - (long)plVar14;
+  plVar15 = this[4];
+  uVar23 = (long)this[6] - (long)plVar15;
+  if ((ulong)((long)uVar23 >> 3) < extraout_RDX) {
+    plVar25 = this[5];
+    plVar7 = (long *)0x0;
+    lVar24 = (long)plVar25 - (long)plVar15;
     if (extraout_RDX != 0) {
-      plVar6 = (long *)operator_new(extraout_RDX * 8);
-      plVar14 = this[4];
-      plVar24 = this[5];
-      uVar22 = (long)this[6] - (long)plVar14;
+      plVar7 = (long *)operator_new(extraout_RDX * 8);
+      plVar15 = this[4];
+      plVar25 = this[5];
+      uVar23 = (long)this[6] - (long)plVar15;
     }
-    if (plVar14 != plVar24) {
-      plVar7 = plVar6;
-      plVar15 = plVar14;
+    if (plVar15 != plVar25) {
+      plVar8 = plVar7;
+      plVar16 = plVar15;
       do {
-        lVar2 = *plVar15;
-        plVar8 = plVar7 + 1;
-        plVar15 = plVar15 + 1;
-        *plVar7 = lVar2;
-        plVar7 = plVar8;
-      } while (plVar8 != (long *)(((long)plVar24 - (long)plVar14) + (long)plVar6));
+        lVar3 = *plVar16;
+        plVar9 = plVar8 + 1;
+        plVar16 = plVar16 + 1;
+        *plVar8 = lVar3;
+        plVar8 = plVar9;
+      } while (plVar9 != (long *)(((long)plVar25 - (long)plVar15) + (long)plVar7));
     }
-    if (plVar14 != (long *)0x0) {
-      operator_delete(plVar14,uVar22);
+    if (plVar15 != (long *)0x0) {
+      operator_delete(plVar15,uVar23);
     }
-    auVar25 = vmovq_avx(plVar6);
-    auVar25 = vpinsrq_avx(auVar25,lVar23 + (long)plVar6,1);
-    this[6] = plVar6 + extraout_RDX;
-    auVar25 = vmovdqu_avx(auVar25);
-    *(undefined (*) [16])(this + 4) = auVar25;
+    auVar2 = vmovq_avx(plVar7);
+    auVar2 = vpinsrq_avx(auVar2,lVar24 + (long)plVar7,1);
+    this[6] = plVar7 + extraout_RDX;
+    auVar2 = vmovdqu_avx(auVar2);
+    *(undefined (*) [16])(this + 4) = auVar2;
   }
-  uVar22 = extraout_RDX + in_RSI;
+  uVar17 = extraout_RDX + in_RSI;
+  uVar23 = uStack_50;
   do {
-    if (uVar22 <= in_RSI) {
+    uStack_50 = uVar23;
+    if (uVar17 <= in_RSI) {
       this[0x15] = *this;
-      if (puStack160 != puStack184) {
-        operator_delete(puStack160,uStack144 + 1);
+      if (puStack_a0 != puStack_b8) {
+        operator_delete(puStack_a0,uStack_90 + 1);
       }
       return;
     }
     if (in_RSI * -0x1111111111111111 < 0x1111111111111112) {
-      plVar14 = this[1];
-      if (0x7fffffffffffffffU - (long)plVar14 < 9) {
+      plVar15 = this[1];
+      if (0x7fffffffffffffffU - (long)plVar15 < 9) {
 LAB_00403b4e:
                     // WARNING: Subroutine does not return
         std::__throw_length_error("basic_string::append");
       }
-      plVar24 = (long *)((long)plVar14 + 9);
+      plVar25 = (long *)((long)plVar15 + 9);
       if (pplVar1 == (long **)*this) {
-        plVar6 = (long *)0xf;
+        plVar7 = (long *)0xf;
       }
       else {
-        plVar6 = this[2];
+        plVar7 = this[2];
       }
-      if (plVar6 < plVar24) {
+      if (plVar7 < plVar25) {
         __cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                  ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                   (ulong)plVar14,0,"FizzBuzz\n",9);
+                  ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                   (ulong)plVar15,0,"FizzBuzz\n",9);
       }
       else {
-        puVar10 = (undefined8 *)((long)*this + (long)plVar14);
-        *puVar10 = 0x7a7a75427a7a6946;
-        *(undefined *)(puVar10 + 1) = 10;
+        puVar11 = (undefined8 *)((long)*this + (long)plVar15);
+        *puVar11 = 0x7a7a75427a7a6946;
+        *(undefined *)(puVar11 + 1) = 10;
       }
 LAB_00403480:
-      this[1] = plVar24;
-      *(undefined *)((long)*this + (long)plVar24) = 0;
+      this[1] = plVar25;
+      *(undefined *)((long)*this + (long)plVar25) = 0;
     }
     else {
       if (in_RSI * -0x3333333333333333 < 0x3333333333333334) {
-        plVar14 = this[1];
-        if (0x7fffffffffffffffU - (long)plVar14 < 5) goto LAB_00403b4e;
-        plVar24 = (long *)((long)plVar14 + 5);
+        plVar15 = this[1];
+        if (0x7fffffffffffffffU - (long)plVar15 < 5) goto LAB_00403b4e;
+        plVar25 = (long *)((long)plVar15 + 5);
         if (pplVar1 == (long **)*this) {
-          plVar6 = (long *)0xf;
+          plVar7 = (long *)0xf;
         }
         else {
-          plVar6 = this[2];
+          plVar7 = this[2];
         }
-        if (plVar6 < plVar24) {
+        if (plVar7 < plVar25) {
           __cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                     (ulong)plVar14,0,"Buzz\n",5);
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                     (ulong)plVar15,0,"Buzz\n",5);
         }
         else {
-          puVar9 = (undefined4 *)((long)*this + (long)plVar14);
-          *puVar9 = 0x7a7a7542;
-          *(undefined *)(puVar9 + 1) = 10;
+          puVar10 = (undefined4 *)((long)*this + (long)plVar15);
+          *puVar10 = 0x7a7a7542;
+          *(undefined *)(puVar10 + 1) = 10;
         }
         goto LAB_00403480;
       }
       if (in_RSI * -0x5555555555555555 < 0x5555555555555556) {
-        plVar14 = this[1];
-        if (0x7fffffffffffffffU - (long)plVar14 < 5) goto LAB_00403b4e;
-        plVar24 = (long *)((long)plVar14 + 5);
+        plVar15 = this[1];
+        if (0x7fffffffffffffffU - (long)plVar15 < 5) goto LAB_00403b4e;
+        plVar25 = (long *)((long)plVar15 + 5);
         if (pplVar1 == (long **)*this) {
-          plVar6 = (long *)0xf;
+          plVar7 = (long *)0xf;
         }
         else {
-          plVar6 = this[2];
+          plVar7 = this[2];
         }
-        if (plVar6 < plVar24) {
+        if (plVar7 < plVar25) {
           __cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                     (ulong)plVar14,0,"Fizz\n",5);
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                     (ulong)plVar15,0,"Fizz\n",5);
         }
         else {
-          puVar9 = (undefined4 *)((long)*this + (long)plVar14);
-          *puVar9 = 0x7a7a6946;
-          *(undefined *)(puVar9 + 1) = 10;
+          puVar10 = (undefined4 *)((long)*this + (long)plVar15);
+          *puVar10 = 0x7a7a6946;
+          *(undefined *)(puVar10 + 1) = 10;
         }
         goto LAB_00403480;
       }
-      uStack80._1_7_ = (uint7)(uStack80 >> 8);
+      uStack_50._1_7_ = (uint7)(uVar23 >> 8);
+      uVar14 = in_RSI;
       if (in_RSI < 10) {
 LAB_00403a4a:
-        puStack96 = &uStack80;
-        uStack80 = (ulong)uStack80._1_7_ << 8;
-        sVar19 = 1;
+        puStack_60 = &uStack_50;
+        uStack_50 = (ulong)uStack_50._1_7_ << 8;
+        sVar20 = 1;
 LAB_004038e6:
-        *(char *)((long)puStack96 + sVar19) = '\0';
-        uStack88._0_4_ = (int)sVar19;
-        uVar20 = (ulong)((int)uStack88 - 1);
-        uVar16 = in_RSI;
-        uVar13 = in_RSI;
-        uStack88 = sVar19;
+        *(char *)((long)puStack_60 + sVar20) = '\0';
+        uStack_58._0_4_ = (int)sVar20;
+        uVar21 = (ulong)((int)uStack_58 - 1);
+        uVar23 = in_RSI;
+        uStack_58 = sVar20;
         if (99 < in_RSI) goto LAB_00403640;
       }
       else {
         if (in_RSI < 100) {
-          puStack96 = &uStack80;
-          sVar19 = 2;
+          puStack_60 = &uStack_50;
+          sVar20 = 2;
 LAB_004038d0:
-          memset(puStack96,0,sVar19);
+          uStack_50 = uVar23;
+          memset(puStack_60,0,sVar20);
           goto LAB_004038e6;
         }
         if (in_RSI < 1000) {
-          puStack96 = &uStack80;
-          sVar19 = 3;
+          puStack_60 = &uStack_50;
+          sVar20 = 3;
           goto LAB_004038d0;
         }
-        sVar19 = 1;
-        uVar16 = in_RSI;
+        sVar20 = 1;
+        uVar21 = in_RSI;
         if (in_RSI < 10000) {
-          puStack96 = &uStack80;
-          sVar19 = 4;
+          puStack_60 = &uStack_50;
+          sVar20 = 4;
           goto LAB_004038d0;
         }
         do {
-          iVar18 = (int)sVar19;
-          sVar19 = (size_t)(iVar18 + 4);
-          if (uVar16 < 100000) goto LAB_004035f4;
-          if (uVar16 < 1000000) {
-            sVar19 = (size_t)(iVar18 + 5);
+          iVar19 = (int)sVar20;
+          sVar20 = (size_t)(iVar19 + 4);
+          if (uVar21 < 100000) goto LAB_004035f4;
+          if (uVar21 < 1000000) {
+            sVar20 = (size_t)(iVar19 + 5);
             goto LAB_004035f4;
           }
-          if (uVar16 < 10000000) {
-            sVar19 = (size_t)(iVar18 + 6);
+          if (uVar21 < 10000000) {
+            sVar20 = (size_t)(iVar19 + 6);
             goto LAB_004035f4;
           }
-          bVar3 = 99999999 < uVar16;
-          uVar16 = uVar16 / 10000;
-        } while (bVar3);
-        sVar19 = (size_t)(iVar18 + 7);
+          bVar4 = 99999999 < uVar21;
+          uVar21 = uVar21 / 10000;
+        } while (bVar4);
+        sVar20 = (size_t)(iVar19 + 7);
 LAB_004035f4:
-        puStack96 = &uStack80;
-        if (0xf < sVar19) {
-          puStack96 = (undefined8 *)operator_new(sVar19 + 1);
-          uStack80 = sVar19;
+        puStack_60 = &uStack_50;
+        if (0xf < sVar20) {
+          puStack_60 = (undefined8 *)operator_new(sVar20 + 1);
+          uVar23 = sVar20;
           goto LAB_004038d0;
         }
-        if (sVar19 != 0) {
-          if (sVar19 == 1) goto LAB_00403a4a;
+        if (sVar20 != 0) {
+          if (sVar20 == 1) goto LAB_00403a4a;
           goto LAB_004038d0;
         }
-        uStack88 = 0;
-        uStack80 = (ulong)uStack80._1_7_ << 8;
-        uVar20 = 0xffffffff;
-        uVar13 = in_RSI;
+        uStack_58 = 0;
+        uStack_50 = (ulong)uStack_50._1_7_ << 8;
+        uVar21 = 0xffffffff;
 LAB_00403640:
         do {
-          uVar16 = (uVar13 >> 2) / 0x19;
-          iVar18 = (int)uVar20;
-          lVar23 = (uVar13 + uVar16 * -100) * 2;
-          cVar5 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-                  __digits[lVar23];
-          *(undefined1 *)((long)puStack96 + uVar20) =
+          iVar19 = (int)uVar21;
+          lVar24 = (uVar14 % 100) * 2;
+          cVar6 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
+                  __digits[lVar24];
+          *(undefined1 *)((long)puStack_60 + uVar21) =
                __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-               __digits[lVar23 + 1];
-          uVar20 = (ulong)(iVar18 - 2);
-          *(char *)((long)puStack96 + (ulong)(iVar18 - 1)) = cVar5;
-          bVar3 = 9999 < uVar13;
-          uVar13 = uVar16;
-        } while (bVar3);
+               __digits[lVar24 + 1];
+          uVar21 = (ulong)(iVar19 - 2);
+          *(char *)((long)puStack_60 + (ulong)(iVar19 - 1)) = cVar6;
+          bVar4 = 9999 < uVar14;
+          uVar23 = uVar14 / 100;
+          uVar14 = uVar14 / 100;
+        } while (bVar4);
       }
-      cVar5 = (char)uVar16 + '0';
-      if (9 < uVar16) {
-        *(undefined1 *)((long)puStack96 + 1) =
+      cVar6 = (char)uVar23 + '0';
+      if (9 < uVar23) {
+        *(undefined1 *)((long)puStack_60 + 1) =
              __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
-             [uVar16 * 2 + 1];
-        cVar5 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-                __digits[uVar16 * 2];
+             [uVar23 * 2 + 1];
+        cVar6 = __detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
+                __digits[uVar23 * 2];
       }
-      *(char *)puStack96 = cVar5;
-      ppcVar11 = (char **)__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::
-                          _M_replace_aux((basic_string_char_std__char_traits_char__std__allocator_char__
-                                          *)&puStack96,uStack88,0,1,'\n');
-      ppcStack128 = (char **)auStack112;
-      if ((char **)*ppcVar11 == ppcVar11 + 2) {
-        auStack112 = vmovdqu_avx(*(undefined (*) [16])(ppcVar11 + 2));
-      }
-      else {
-        auStack112 = CONCAT88(auStack112._8_8_,ppcVar11[2]);
-        ppcStack128 = (char **)*ppcVar11;
-      }
-      pcStack120 = ppcVar11[1];
-      *(undefined *)(ppcVar11 + 2) = 0;
-      ppcVar11[1] = (char *)0x0;
-      plVar24 = this[1];
-      *ppcVar11 = (char *)(ppcVar11 + 2);
-      pplVar21 = (long **)*this;
-      plVar14 = (long *)(pcStack120 + (long)plVar24);
-      if (pplVar1 == pplVar21) {
-        plVar6 = (long *)0xf;
+      *(char *)puStack_60 = cVar6;
+      ppcVar12 = (char **)__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::
+                          _M_replace_aux((basic_string<char,std::char_traits<char>,std::allocator<char>>
+                                          *)&puStack_60,uStack_58,0,1,'\n');
+      ppcStack_80 = (char **)auStack_70;
+      if ((char **)*ppcVar12 == ppcVar12 + 2) {
+        auStack_70 = vmovdqu_avx(*(undefined (*) [16])(ppcVar12 + 2));
       }
       else {
-        plVar6 = this[2];
+        auStack_70._0_8_ = ppcVar12[2];
+        ppcStack_80 = (char **)*ppcVar12;
       }
-      if (plVar6 < plVar14) {
+      pcStack_78 = ppcVar12[1];
+      *(undefined *)(ppcVar12 + 2) = 0;
+      ppcVar12[1] = (char *)0x0;
+      plVar25 = this[1];
+      *ppcVar12 = (char *)(ppcVar12 + 2);
+      pplVar22 = (long **)*this;
+      plVar15 = (long *)(pcStack_78 + (long)plVar25);
+      if (pplVar1 == pplVar22) {
+        plVar7 = (long *)0xf;
+      }
+      else {
+        plVar7 = this[2];
+      }
+      if (plVar7 < plVar15) {
         __cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                  ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,
-                   (ulong)plVar24,0,(char *)ppcStack128,(ulong)pcStack120);
-        pplVar21 = (long **)*this;
+                  ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,
+                   (ulong)plVar25,0,(char *)ppcStack_80,(ulong)pcStack_78);
+        pplVar22 = (long **)*this;
       }
-      else if (pcStack120 != (char *)0x0) {
-        if (pcStack120 == (char *)0x1) {
-          *(char *)((long)pplVar21 + (long)plVar24) = *(char *)ppcStack128;
-          pplVar21 = (long **)*this;
+      else if (pcStack_78 != (char *)0x0) {
+        if (pcStack_78 == (char *)0x1) {
+          *(char *)((long)pplVar22 + (long)plVar25) = *(char *)ppcStack_80;
+          pplVar22 = (long **)*this;
         }
         else {
-          memcpy((char *)((long)pplVar21 + (long)plVar24),ppcStack128,(size_t)pcStack120);
-          pplVar21 = (long **)*this;
+          memcpy((char *)((long)pplVar22 + (long)plVar25),ppcStack_80,(size_t)pcStack_78);
+          pplVar22 = (long **)*this;
         }
       }
-      this[1] = plVar14;
-      *(undefined *)((long)pplVar21 + (long)plVar14) = 0;
-      if (ppcStack128 != (char **)auStack112) {
-        operator_delete(ppcStack128,auStack112._0_8_ + 1);
+      this[1] = plVar15;
+      *(undefined *)((long)pplVar22 + (long)plVar15) = 0;
+      if (ppcStack_80 != (char **)auStack_70) {
+        operator_delete(ppcStack_80,auStack_70._0_8_ + 1);
       }
-      if (puStack96 != &uStack80) {
-        operator_delete(puStack96,uStack80 + 1);
+      if (puStack_60 != &uStack_50) {
+        operator_delete(puStack_60,uStack_50 + 1);
       }
     }
-    puStack96 = (undefined8 *)((long)this[1] + (long)*this);
-    plVar14 = this[5];
-    if (plVar14 == this[6]) {
+    puStack_60 = (undefined8 *)((long)this[1] + (long)*this);
+    plVar15 = this[5];
+    if (plVar15 == this[6]) {
       in_RSI = in_RSI + 1;
       vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
       ::
-      _M_realloc_insert___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____
-                ((vector___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____std__allocator___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char_____
-                  *)(this + 4),(__normal_iterator)plVar14,(__normal_iterator *)&puStack96);
+      _M_realloc_insert<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>
+                ((vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
+                  *)(this + 4),(__normal_iterator)plVar15,(__normal_iterator *)&puStack_60);
+      uVar23 = uStack_50;
     }
     else {
-      *plVar14 = (long)puStack96;
+      *plVar15 = (long)puStack_60;
       in_RSI = in_RSI + 1;
-      this[5] = plVar14 + 1;
+      this[5] = plVar15 + 1;
+      uVar23 = uStack_50;
     }
   } while( true );
 }
 
 
 
-// WARNING: Could not reconcile some variable overlaps
 // worker::worker(unsigned long, unsigned long, unsigned long)
 
 void __thiscall worker::worker(worker *this,ulong param_1,ulong param_2,ulong param_3)
@@ -2411,12 +2468,12 @@ void __thiscall worker::worker(worker *this,ulong param_1,ulong param_2,ulong pa
   ulong uVar19;
   undefined8 *puVar20;
   ulong uVar21;
-  ulong uVar22;
-  uint uVar23;
-  int iVar24;
-  undefined8 *puVar25;
-  size_t sVar26;
-  long lVar27;
+  uint uVar22;
+  int iVar23;
+  undefined8 *puVar24;
+  size_t sVar25;
+  long lVar26;
+  ulong uVar27;
   undefined in_YMM0 [32];
   undefined8 *local_b0;
   undefined8 *local_98;
@@ -2429,7 +2486,7 @@ void __thiscall worker::worker(worker *this,ulong param_1,ulong param_2,ulong pa
   size_t local_50;
   undefined8 local_48;
   
-  auVar7 = vpxor_avx(SUB3216(in_YMM0,0),SUB3216(in_YMM0,0));
+  auVar7 = vpxor_avx(in_YMM0._0_16_,in_YMM0._0_16_);
   pwVar1 = this + 0x10;
   auVar2 = vmovdqu_avx(auVar7);
   *(undefined (*) [16])(this + 0x20) = auVar2;
@@ -2484,24 +2541,24 @@ LAB_00403976:
       goto LAB_00403976;
     }
     do {
-      uVar23 = uVar17;
+      uVar22 = uVar17;
       if (uVar19 < 100000) {
-        local_90 = (size_t)(uVar23 + 4);
+        local_90 = (size_t)(uVar22 + 4);
         goto LAB_004031b5;
       }
       if (uVar19 < 1000000) {
-        local_90 = (size_t)(uVar23 + 5);
+        local_90 = (size_t)(uVar22 + 5);
         goto LAB_004031b5;
       }
       if (uVar19 < 10000000) {
-        local_90 = (size_t)(uVar23 + 6);
+        local_90 = (size_t)(uVar22 + 6);
         goto LAB_004031b5;
       }
       bVar6 = 99999999 < uVar19;
       uVar19 = uVar19 / 10000;
-      uVar17 = uVar23 + 4;
+      uVar17 = uVar22 + 4;
     } while (bVar6);
-    local_90 = (size_t)(uVar23 + 7);
+    local_90 = (size_t)(uVar22 + 7);
 LAB_004031b5:
     local_98 = &local_88;
     if (0xf < local_90) {
@@ -2519,16 +2576,16 @@ LAB_004031b5:
     uVar19 = param_3;
   }
   do {
-    param_3 = (uVar19 >> 2) / 0x19;
-    lVar27 = (uVar19 + param_3 * -100) * 2;
+    param_3 = uVar19 / 100;
+    lVar26 = (uVar19 % 100) * 2;
     cVar8 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-            __digits[lVar27];
+            __digits[lVar26];
     *(undefined1 *)((long)local_98 + (ulong)uVar17) =
          std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-         __digits[lVar27 + 1];
-    uVar23 = uVar17 - 1;
+         __digits[lVar26 + 1];
+    uVar22 = uVar17 - 1;
     uVar17 = uVar17 - 2;
-    *(char *)((long)local_98 + (ulong)uVar23) = cVar8;
+    *(char *)((long)local_98 + (ulong)uVar22) = cVar8;
     bVar6 = 9999 < uVar19;
     uVar19 = param_3;
   } while (bVar6);
@@ -2547,24 +2604,24 @@ LAB_0040324b:
   this[0x3c] = (worker)(*(char *)local_98 + -0x30);
   uVar19 = (param_2 * 0xef) / 0xf + 1;
   if (*(worker **)this == pwVar1) {
-    uVar21 = 0xf;
+    uVar27 = 0xf;
   }
   else {
-    uVar21 = *(ulong *)(this + 0x10);
+    uVar27 = *(ulong *)(this + 0x10);
   }
-  if (uVar21 < uVar19) {
-    uVar18 = uVar21 * 2;
-    if (uVar21 * 2 < uVar19) {
+  if (uVar27 < uVar19) {
+    uVar18 = uVar27 * 2;
+    if (uVar27 * 2 < uVar19) {
       uVar18 = uVar19;
     }
     pwVar9 = (worker *)operator_new(uVar18 + 1);
     pwVar3 = *(worker **)this;
-    sVar26 = *(long *)(this + 8) + 1;
+    sVar25 = *(long *)(this + 8) + 1;
     if (*(long *)(this + 8) == 0) {
       *pwVar9 = *pwVar3;
     }
-    else if (sVar26 != 0) {
-      memcpy(pwVar9,pwVar3,sVar26);
+    else if (sVar25 != 0) {
+      memcpy(pwVar9,pwVar3,sVar25);
     }
     if (pwVar3 != pwVar1) {
       operator_delete(pwVar3,*(long *)(this + 0x10) + 1);
@@ -2579,16 +2636,16 @@ LAB_0040324b:
   puVar14 = *(undefined8 **)(this + 0x20);
   uVar19 = *(long *)(this + 0x30) - (long)puVar14;
   if ((ulong)((long)uVar19 >> 3) < param_2) {
-    puVar25 = *(undefined8 **)(this + 0x28);
+    puVar24 = *(undefined8 **)(this + 0x28);
     puVar10 = (undefined8 *)0x0;
-    lVar27 = (long)puVar25 - (long)puVar14;
+    lVar26 = (long)puVar24 - (long)puVar14;
     if (param_2 != 0) {
       puVar10 = (undefined8 *)operator_new(param_2 * 8);
       puVar14 = *(undefined8 **)(this + 0x20);
-      puVar25 = *(undefined8 **)(this + 0x28);
+      puVar24 = *(undefined8 **)(this + 0x28);
       uVar19 = *(long *)(this + 0x30) - (long)puVar14;
     }
-    if (puVar14 != puVar25) {
+    if (puVar14 != puVar24) {
       puVar11 = puVar10;
       puVar20 = puVar14;
       do {
@@ -2597,13 +2654,13 @@ LAB_0040324b:
         puVar20 = puVar20 + 1;
         *puVar11 = uVar4;
         puVar11 = puVar12;
-      } while (puVar12 != (undefined8 *)(((long)puVar25 - (long)puVar14) + (long)puVar10));
+      } while (puVar12 != (undefined8 *)(((long)puVar24 - (long)puVar14) + (long)puVar10));
     }
     if (puVar14 != (undefined8 *)0x0) {
       operator_delete(puVar14,uVar19);
     }
     auVar2 = vmovq_avx(puVar10);
-    auVar2 = vpinsrq_avx(auVar2,lVar27 + (long)puVar10,1);
+    auVar2 = vpinsrq_avx(auVar2,lVar26 + (long)puVar10,1);
     *(undefined8 **)(this + 0x30) = puVar10 + param_2;
     auVar2 = vmovdqu_avx(auVar2);
     *(undefined (*) [16])(this + 0x20) = auVar2;
@@ -2613,26 +2670,26 @@ LAB_0040324b:
 LAB_004033e0:
     do {
       if (param_1 * -0x1111111111111111 < 0x1111111111111112) {
-        uVar21 = *(ulong *)(this + 8);
-        if (0x7fffffffffffffff - uVar21 < 9) {
+        uVar27 = *(ulong *)(this + 8);
+        if (0x7fffffffffffffff - uVar27 < 9) {
 LAB_00403b4e:
                     // WARNING: Subroutine does not return
           std::__throw_length_error("basic_string::append");
         }
-        uVar18 = uVar21 + 9;
+        uVar18 = uVar27 + 9;
         if (pwVar1 == *(worker **)this) {
-          uVar22 = 0xf;
+          uVar21 = 0xf;
         }
         else {
-          uVar22 = *(ulong *)(this + 0x10);
+          uVar21 = *(ulong *)(this + 0x10);
         }
-        if (uVar22 < uVar18) {
+        if (uVar21 < uVar18) {
           std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,uVar21,0
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,uVar27,0
                      ,"FizzBuzz\n",9);
         }
         else {
-          puVar14 = (undefined8 *)(*(worker **)this + uVar21);
+          puVar14 = (undefined8 *)(*(worker **)this + uVar27);
           *puVar14 = 0x7a7a75427a7a6946;
           *(undefined *)(puVar14 + 1) = 10;
         }
@@ -2642,159 +2699,158 @@ LAB_00403480:
       }
       else {
         if (param_1 * -0x3333333333333333 < 0x3333333333333334) {
-          uVar21 = *(ulong *)(this + 8);
-          if (0x7fffffffffffffff - uVar21 < 5) goto LAB_00403b4e;
-          uVar18 = uVar21 + 5;
+          uVar27 = *(ulong *)(this + 8);
+          if (0x7fffffffffffffff - uVar27 < 5) goto LAB_00403b4e;
+          uVar18 = uVar27 + 5;
           if (pwVar1 == *(worker **)this) {
-            uVar22 = 0xf;
+            uVar21 = 0xf;
           }
           else {
-            uVar22 = *(ulong *)(this + 0x10);
+            uVar21 = *(ulong *)(this + 0x10);
           }
-          if (uVar22 < uVar18) {
+          if (uVar21 < uVar18) {
             std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                      ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,uVar21
+                      ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,uVar27
                        ,0,"Buzz\n",5);
           }
           else {
-            puVar13 = (undefined4 *)(*(worker **)this + uVar21);
+            puVar13 = (undefined4 *)(*(worker **)this + uVar27);
             *puVar13 = 0x7a7a7542;
             *(undefined *)(puVar13 + 1) = 10;
           }
           goto LAB_00403480;
         }
         if (param_1 * -0x5555555555555555 < 0x5555555555555556) {
-          uVar21 = *(ulong *)(this + 8);
-          if (0x7fffffffffffffff - uVar21 < 5) goto LAB_00403b4e;
-          uVar18 = uVar21 + 5;
+          uVar27 = *(ulong *)(this + 8);
+          if (0x7fffffffffffffff - uVar27 < 5) goto LAB_00403b4e;
+          uVar18 = uVar27 + 5;
           if (pwVar1 == *(worker **)this) {
-            uVar22 = 0xf;
+            uVar21 = 0xf;
           }
           else {
-            uVar22 = *(ulong *)(this + 0x10);
+            uVar21 = *(ulong *)(this + 0x10);
           }
-          if (uVar22 < uVar18) {
+          if (uVar21 < uVar18) {
             std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                      ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,uVar21
+                      ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,uVar27
                        ,0,"Fizz\n",5);
           }
           else {
-            puVar13 = (undefined4 *)(*(worker **)this + uVar21);
+            puVar13 = (undefined4 *)(*(worker **)this + uVar27);
             *puVar13 = 0x7a7a6946;
             *(undefined *)(puVar13 + 1) = 10;
           }
           goto LAB_00403480;
         }
+        uVar27 = param_1;
         if (param_1 < 10) {
 LAB_00403a4a:
           local_58 = &local_48;
           local_48 = (ulong)local_48._1_7_ << 8;
-          sVar26 = 1;
+          sVar25 = 1;
 LAB_004038e6:
-          *(char *)((long)local_58 + sVar26) = '\0';
-          local_50._0_4_ = (int)sVar26;
-          uVar22 = (ulong)((int)local_50 - 1);
-          uVar21 = param_1;
+          *(char *)((long)local_58 + sVar25) = '\0';
+          local_50._0_4_ = (int)sVar25;
+          uVar21 = (ulong)((int)local_50 - 1);
           uVar18 = param_1;
-          local_50 = sVar26;
+          local_50 = sVar25;
           if (99 < param_1) goto LAB_00403640;
         }
         else {
           if (param_1 < 100) {
             local_58 = &local_48;
-            sVar26 = 2;
+            sVar25 = 2;
 LAB_004038d0:
-            memset(local_58,0,sVar26);
+            memset(local_58,0,sVar25);
             goto LAB_004038e6;
           }
           if (param_1 < 1000) {
             local_58 = &local_48;
-            sVar26 = 3;
+            sVar25 = 3;
             goto LAB_004038d0;
           }
-          sVar26 = 1;
-          uVar21 = param_1;
+          sVar25 = 1;
+          uVar18 = param_1;
           if (param_1 < 10000) {
             local_58 = &local_48;
-            sVar26 = 4;
+            sVar25 = 4;
             goto LAB_004038d0;
           }
           do {
-            iVar24 = (int)sVar26;
-            sVar26 = (size_t)(iVar24 + 4);
-            if (uVar21 < 100000) goto LAB_004035f4;
-            if (uVar21 < 1000000) {
-              sVar26 = (size_t)(iVar24 + 5);
+            iVar23 = (int)sVar25;
+            sVar25 = (size_t)(iVar23 + 4);
+            if (uVar18 < 100000) goto LAB_004035f4;
+            if (uVar18 < 1000000) {
+              sVar25 = (size_t)(iVar23 + 5);
               goto LAB_004035f4;
             }
-            if (uVar21 < 10000000) {
-              sVar26 = (size_t)(iVar24 + 6);
+            if (uVar18 < 10000000) {
+              sVar25 = (size_t)(iVar23 + 6);
               goto LAB_004035f4;
             }
-            bVar6 = 99999999 < uVar21;
-            uVar21 = uVar21 / 10000;
+            bVar6 = 99999999 < uVar18;
+            uVar18 = uVar18 / 10000;
           } while (bVar6);
-          sVar26 = (size_t)(iVar24 + 7);
+          sVar25 = (size_t)(iVar23 + 7);
 LAB_004035f4:
           local_58 = &local_48;
-          if (0xf < sVar26) {
-            local_58 = (undefined8 *)operator_new(sVar26 + 1);
-            local_48 = sVar26;
+          if (0xf < sVar25) {
+            local_58 = (undefined8 *)operator_new(sVar25 + 1);
+            local_48 = sVar25;
             goto LAB_004038d0;
           }
-          if (sVar26 != 0) {
-            if (sVar26 == 1) goto LAB_00403a4a;
+          if (sVar25 != 0) {
+            if (sVar25 == 1) goto LAB_00403a4a;
             goto LAB_004038d0;
           }
           local_50 = 0;
           local_48 = (ulong)local_48._1_7_ << 8;
-          uVar22 = 0xffffffff;
-          uVar18 = param_1;
+          uVar21 = 0xffffffff;
 LAB_00403640:
           do {
-            uVar21 = (uVar18 >> 2) / 0x19;
-            iVar24 = (int)uVar22;
-            lVar27 = (uVar18 + uVar21 * -100) * 2;
+            iVar23 = (int)uVar21;
+            lVar26 = (uVar27 % 100) * 2;
             cVar8 = std::__detail::
                     __to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::__digits
-                    [lVar27];
-            *(undefined1 *)((long)local_58 + uVar22) =
+                    [lVar26];
+            *(undefined1 *)((long)local_58 + uVar21) =
                  std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)
-                 ::__digits[lVar27 + 1];
-            uVar22 = (ulong)(iVar24 - 2);
-            *(char *)((long)local_58 + (ulong)(iVar24 - 1)) = cVar8;
-            bVar6 = 9999 < uVar18;
-            uVar18 = uVar21;
+                 ::__digits[lVar26 + 1];
+            uVar21 = (ulong)(iVar23 - 2);
+            *(char *)((long)local_58 + (ulong)(iVar23 - 1)) = cVar8;
+            bVar6 = 9999 < uVar27;
+            uVar18 = uVar27 / 100;
+            uVar27 = uVar27 / 100;
           } while (bVar6);
         }
-        cVar8 = (char)uVar21 + '0';
-        if (9 < uVar21) {
+        cVar8 = (char)uVar18 + '0';
+        if (9 < uVar18) {
           *(undefined1 *)((long)local_58 + 1) =
                std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
-               __digits[uVar21 * 2 + 1];
+               __digits[uVar18 * 2 + 1];
           cVar8 = std::__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)
-                  ::__digits[uVar21 * 2];
+                  ::__digits[uVar18 * 2];
         }
         *(char *)local_58 = cVar8;
         ppwVar15 = (worker **)
                    std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::
-                   _M_replace_aux((basic_string_char_std__char_traits_char__std__allocator_char__ *)
+                   _M_replace_aux((basic_string<char,std::char_traits<char>,std::allocator<char>> *)
                                   &local_58,local_50,0,1,'\n');
         local_78 = (worker **)local_68;
         if ((worker **)*ppwVar15 == ppwVar15 + 2) {
           local_68 = vmovdqu_avx(*(undefined (*) [16])(ppwVar15 + 2));
         }
         else {
-          local_68 = CONCAT88(local_68._8_8_,ppwVar15[2]);
+          local_68._0_8_ = ppwVar15[2];
           local_78 = (worker **)*ppwVar15;
         }
         local_70 = ppwVar15[1];
         *(undefined *)(ppwVar15 + 2) = 0;
         ppwVar15[1] = (worker *)0x0;
-        uVar21 = *(ulong *)(this + 8);
+        uVar27 = *(ulong *)(this + 8);
         *ppwVar15 = (worker *)(ppwVar15 + 2);
         pwVar9 = *(worker **)this;
-        pwVar3 = local_70 + uVar21;
+        pwVar3 = local_70 + uVar27;
         if (pwVar1 == pwVar9) {
           pwVar16 = (worker *)0xf;
         }
@@ -2803,17 +2859,17 @@ LAB_00403640:
         }
         if (pwVar16 < pwVar3) {
           std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-                    ((basic_string_char_std__char_traits_char__std__allocator_char__ *)this,uVar21,0
+                    ((basic_string<char,std::char_traits<char>,std::allocator<char>> *)this,uVar27,0
                      ,(char *)local_78,(ulong)local_70);
           pwVar9 = *(worker **)this;
         }
         else if (local_70 != (worker *)0x0) {
           if (local_70 == (worker *)0x1) {
-            pwVar9[uVar21] = *(worker *)local_78;
+            pwVar9[uVar27] = *(worker *)local_78;
             pwVar9 = *(worker **)this;
           }
           else {
-            memcpy(pwVar9 + uVar21,local_78,(size_t)local_70);
+            memcpy(pwVar9 + uVar27,local_78,(size_t)local_70);
             pwVar9 = *(worker **)this;
           }
         }
@@ -2833,8 +2889,8 @@ LAB_00403640:
         std::
         vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
         ::
-        _M_realloc_insert___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____
-                  ((vector___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____std__allocator___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char_____
+        _M_realloc_insert<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>
+                  ((vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
                     *)(this + 0x20),(__normal_iterator)plVar5,(__normal_iterator *)&local_58);
         if (uVar19 <= param_1) break;
         goto LAB_004033e0;
@@ -2938,8 +2994,8 @@ LAB_00403c04:
     uVar6 = param_1;
   }
   do {
-    param_1 = (uVar6 >> 2) / 0x19;
-    lVar4 = (uVar6 + param_1 * -100) * 2;
+    param_1 = uVar6 / 100;
+    lVar4 = (uVar6 % 100) * 2;
     _Var3 = *(__cxx11 *)
              (__detail::__to_chars_10_impl<unsigned_long>(char*,unsigned_int,unsigned_long)::
               __digits + lVar4);
@@ -2968,19 +3024,19 @@ LAB_00403c8b:
 
 
 
-// void std::vector<std::unique_ptr<worker, std::default_delete<worker>>,
-// std::allocator<std::unique_ptr<worker,
-// std::default_delete<worker>>>>::_M_realloc_insert<std::unique_ptr<worker,
-// std::default_delete<worker>>>(__gnu_cxx::__normal_iterator<std::unique_ptr<worker,
-// std::default_delete<worker>>*, std::vector<std::unique_ptr<worker, std::default_delete<worker>>,
-// std::allocator<std::unique_ptr<worker, std::default_delete<worker>>>>>, std::unique_ptr<worker,
-// std::default_delete<worker>>&&)
+// void std::vector<std::unique_ptr<worker, std::default_delete<worker> >,
+// std::allocator<std::unique_ptr<worker, std::default_delete<worker> > >
+// >::_M_realloc_insert<std::unique_ptr<worker, std::default_delete<worker> >
+// >(__gnu_cxx::__normal_iterator<std::unique_ptr<worker, std::default_delete<worker> >*,
+// std::vector<std::unique_ptr<worker, std::default_delete<worker> >,
+// std::allocator<std::unique_ptr<worker, std::default_delete<worker> > > > >,
+// std::unique_ptr<worker, std::default_delete<worker> >&&)
 
 void __thiscall
 std::
 vector<std::unique_ptr<worker,std::default_delete<worker>>,std::allocator<std::unique_ptr<worker,std::default_delete<worker>>>>
-::_M_realloc_insert_std__unique_ptr_worker_std__default_delete_worker___
-          (vector_std__unique_ptr_worker_std__default_delete_worker___std__allocator_std__unique_ptr_worker_std__default_delete_worker____
+::_M_realloc_insert<std::unique_ptr<worker,std::default_delete<worker>>>
+          (vector<std::unique_ptr<worker,std::default_delete<worker>>,std::allocator<std::unique_ptr<worker,std::default_delete<worker>>>>
            *this,__normal_iterator param_1,unique_ptr *param_2)
 
 {
@@ -3017,7 +3073,7 @@ vector<std::unique_ptr<worker,std::default_delete<worker>>,std::allocator<std::u
   uVar5 = uVar14 + uVar10;
   if (CARRY8(uVar14,uVar10) == false) {
     if (uVar5 == 0) {
-      puVar11 = (undefined8 *)&DAT_00000008;
+      puVar11 = (undefined8 *)0x8;
       lVar15 = 0;
       puVar8 = (undefined8 *)0x0;
       goto LAB_00403e01;
@@ -3083,20 +3139,19 @@ LAB_00403e01:
 
 
 
-// void std::vector<std::unique_ptr<std::thread, std::default_delete<std::thread>>,
-// std::allocator<std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>>>::_M_realloc_insert<std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>>(__gnu_cxx::__normal_iterator<std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>*, std::vector<std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>, std::allocator<std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>>>>, std::unique_ptr<std::thread,
-// std::default_delete<std::thread>>&&)
+// void std::vector<std::unique_ptr<std::thread, std::default_delete<std::thread> >,
+// std::allocator<std::unique_ptr<std::thread, std::default_delete<std::thread> > >
+// >::_M_realloc_insert<std::unique_ptr<std::thread, std::default_delete<std::thread> >
+// >(__gnu_cxx::__normal_iterator<std::unique_ptr<std::thread, std::default_delete<std::thread> >*,
+// std::vector<std::unique_ptr<std::thread, std::default_delete<std::thread> >,
+// std::allocator<std::unique_ptr<std::thread, std::default_delete<std::thread> > > > >,
+// std::unique_ptr<std::thread, std::default_delete<std::thread> >&&)
 
 void __thiscall
 std::
 vector<std::unique_ptr<std::thread,std::default_delete<std::thread>>,std::allocator<std::unique_ptr<std::thread,std::default_delete<std::thread>>>>
-::_M_realloc_insert_std__unique_ptr_std__thread_std__default_delete_std__thread___
-          (vector_std__unique_ptr_std__thread_std__default_delete_std__thread___std__allocator_std__unique_ptr_std__thread_std__default_delete_std__thread____
+::_M_realloc_insert<std::unique_ptr<std::thread,std::default_delete<std::thread>>>
+          (vector<std::unique_ptr<std::thread,std::default_delete<std::thread>>,std::allocator<std::unique_ptr<std::thread,std::default_delete<std::thread>>>>
            *this,__normal_iterator param_1,unique_ptr *param_2)
 
 {
@@ -3133,7 +3188,7 @@ vector<std::unique_ptr<std::thread,std::default_delete<std::thread>>,std::alloca
   uVar6 = uVar5 + uVar15;
   if (CARRY8(uVar5,uVar15) == false) {
     if (uVar6 == 0) {
-      puVar11 = (undefined8 *)&DAT_00000008;
+      puVar11 = (undefined8 *)0x8;
       lVar14 = 0;
       puVar9 = (undefined8 *)0x0;
       goto LAB_00403fec;
@@ -3200,25 +3255,25 @@ LAB_00403fec:
 
 
 // void std::vector<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char,
-// std::char_traits<char>, std::allocator<char>>>,
+// std::char_traits<char>, std::allocator<char> > >,
 // std::allocator<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char,
-// std::char_traits<char>,
-// std::allocator<char>>>>>::_M_realloc_insert<__gnu_cxx::__normal_iterator<char*,
-// std::__cxx11::basic_string<char, std::char_traits<char>,
-// std::allocator<char>>>>(__gnu_cxx::__normal_iterator<__gnu_cxx::__normal_iterator<char*,
-// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>*,
+// std::char_traits<char>, std::allocator<char> > > >
+// >::_M_realloc_insert<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char,
+// std::char_traits<char>, std::allocator<char> > >
+// >(__gnu_cxx::__normal_iterator<__gnu_cxx::__normal_iterator<char*,
+// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >*,
 // std::vector<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char,
-// std::char_traits<char>, std::allocator<char>>>,
+// std::char_traits<char>, std::allocator<char> > >,
 // std::allocator<__gnu_cxx::__normal_iterator<char*, std::__cxx11::basic_string<char,
-// std::char_traits<char>, std::allocator<char>>>>>>, __gnu_cxx::__normal_iterator<char*,
-// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>>>&&)
+// std::char_traits<char>, std::allocator<char> > > > > >, __gnu_cxx::__normal_iterator<char*,
+// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >&&)
 
 void __thiscall
 std::
 vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
 ::
-_M_realloc_insert___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____
-          (vector___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char____std__allocator___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_char_std__char_traits_char__std__allocator_char_____
+_M_realloc_insert<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>
+          (vector<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>,std::allocator<__gnu_cxx::__normal_iterator<char*,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>>>>
            *this,__normal_iterator param_1,__normal_iterator *param_2)
 
 {
@@ -3254,7 +3309,7 @@ _M_realloc_insert___gnu_cxx____normal_iterator_char__std____cxx11__basic_string_
   uVar6 = uVar5 + uVar11;
   if (CARRY8(uVar5,uVar11) == false) {
     if (uVar6 == 0) {
-      puVar12 = (undefined8 *)&DAT_00000008;
+      puVar12 = (undefined8 *)0x8;
       lVar14 = 0;
       puVar10 = (undefined8 *)0x0;
       goto LAB_004041dc;
@@ -3302,17 +3357,17 @@ LAB_004041dc:
 
 
 
-// std::__cxx11::basic_string<char, std::char_traits<char>,
-// std::allocator<char>>::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
+// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>
+// >::_M_mutate(unsigned long, unsigned long, char const*, unsigned long)
 
 void __thiscall
 std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_mutate
-          (basic_string_char_std__char_traits_char__std__allocator_char__ *this,ulong param_1,
+          (basic_string<char,std::char_traits<char>,std::allocator<char>> *this,ulong param_1,
           ulong param_2,char *param_3,ulong param_4)
 
 {
-  basic_string_char_std__char_traits_char__std__allocator_char__ *__src;
-  basic_string_char_std__char_traits_char__std__allocator_char__ *__dest;
+  basic_string<char,std::char_traits<char>,std::allocator<char>> *__src;
+  basic_string<char,std::char_traits<char>,std::allocator<char>> *__dest;
   ulong uVar1;
   ulong uVar2;
   ulong uVar3;
@@ -3320,7 +3375,7 @@ std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M
   
   uVar2 = (param_4 - param_2) + *(long *)(this + 8);
   __n = *(long *)(this + 8) - (param_1 + param_2);
-  if (this + 0x10 == *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this)
+  if (this + 0x10 == *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this)
   goto LAB_00404440;
   uVar1 = *(ulong *)(this + 0x10);
   while( true ) {
@@ -3335,9 +3390,9 @@ std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M
 LAB_00404440:
     uVar1 = 0xf;
   }
-  __dest = (basic_string_char_std__char_traits_char__std__allocator_char__ *)operator_new(uVar3 + 1)
+  __dest = (basic_string<char,std::char_traits<char>,std::allocator<char>> *)operator_new(uVar3 + 1)
   ;
-  __src = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+  __src = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
   if (param_1 != 0) {
     if (param_1 == 1) {
       *__dest = *__src;
@@ -3346,10 +3401,10 @@ LAB_00404440:
       memcpy(__dest,__src,param_1);
     }
   }
-  if (((basic_string_char_std__char_traits_char__std__allocator_char__ *)param_3 !=
-       (basic_string_char_std__char_traits_char__std__allocator_char__ *)0x0) && (param_4 != 0)) {
+  if (((basic_string<char,std::char_traits<char>,std::allocator<char>> *)param_3 !=
+       (basic_string<char,std::char_traits<char>,std::allocator<char>> *)0x0) && (param_4 != 0)) {
     if (param_4 == 1) {
-      __dest[param_1] = (basic_string_char_std__char_traits_char__std__allocator_char__)*param_3;
+      __dest[param_1] = (basic_string<char,std::char_traits<char>,std::allocator<char>>)*param_3;
     }
     else {
       memcpy(__dest + param_1,param_3,param_4);
@@ -3366,19 +3421,19 @@ LAB_00404440:
   if (__src != this + 0x10) {
     operator_delete(__src,*(long *)(this + 0x10) + 1);
   }
-  *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this = __dest;
+  *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this = __dest;
   *(ulong *)(this + 0x10) = uVar3;
   return;
 }
 
 
 
-// std::__cxx11::basic_string<char, std::char_traits<char>,
-// std::allocator<char>>::_M_replace_aux(unsigned long, unsigned long, unsigned long, char)
+// std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char>
+// >::_M_replace_aux(unsigned long, unsigned long, unsigned long, char)
 
-basic_string_char_std__char_traits_char__std__allocator_char__ * __thiscall
+basic_string<char,std::char_traits<char>,std::allocator<char>> * __thiscall
 std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M_replace_aux
-          (basic_string_char_std__char_traits_char__std__allocator_char__ *this,ulong param_1,
+          (basic_string<char,std::char_traits<char>,std::allocator<char>> *this,ulong param_1,
           ulong param_2,ulong param_3,char param_4)
 
 {
@@ -3386,11 +3441,11 @@ std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M
   ulong uVar2;
   size_t __n;
   ulong uVar3;
-  basic_string_char_std__char_traits_char__std__allocator_char__ *pbVar4;
+  basic_string<char,std::char_traits<char>,std::allocator<char>> *pbVar4;
   
   lVar1 = *(long *)(this + 8);
   if (param_3 <= (param_2 + 0x7fffffffffffffff) - lVar1) {
-    pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+    pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
     uVar3 = (param_3 - param_2) + lVar1;
     if (pbVar4 == this + 0x10) {
       uVar2 = 0xf;
@@ -3400,33 +3455,33 @@ std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>>::_M
     }
     if (uVar2 < uVar3) {
       _M_mutate(this,param_1,param_2,(char *)0x0,param_3);
-      pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+      pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
     }
     else {
       __n = lVar1 - (param_2 + param_1);
       if ((__n != 0) && (param_2 != param_3)) {
         if (__n == 1) {
           pbVar4[param_3 + param_1] = pbVar4[param_2 + param_1];
-          pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+          pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
         }
         else {
           memmove(pbVar4 + param_3 + param_1,pbVar4 + param_2 + param_1,__n);
-          pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+          pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
         }
       }
     }
     if (param_3 != 0) {
       if (param_3 == 1) {
-        pbVar4[param_1] = (basic_string_char_std__char_traits_char__std__allocator_char__)param_4;
-        pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+        pbVar4[param_1] = (basic_string<char,std::char_traits<char>,std::allocator<char>>)param_4;
+        pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
       }
       else {
         memset(pbVar4 + param_1,(int)param_4,param_3);
-        pbVar4 = *(basic_string_char_std__char_traits_char__std__allocator_char__ **)this;
+        pbVar4 = *(basic_string<char,std::char_traits<char>,std::allocator<char>> **)this;
       }
     }
     *(ulong *)(this + 8) = uVar3;
-    pbVar4[uVar3] = (basic_string_char_std__char_traits_char__std__allocator_char__)0x0;
+    pbVar4[uVar3] = (basic_string<char,std::char_traits<char>,std::allocator<char>>)0x0;
     return this;
   }
                     // WARNING: Subroutine does not return

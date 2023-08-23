@@ -2,9 +2,35 @@ typedef unsigned char   undefined;
 
 typedef unsigned char    byte;
 typedef unsigned int    dword;
-typedef unsigned char    undefined1;
 typedef unsigned int    undefined4;
 typedef unsigned short    word;
+typedef struct Elf32_Phdr Elf32_Phdr, *PElf32_Phdr;
+
+typedef enum Elf_ProgramHeaderType_x86 {
+    PT_NULL=0,
+    PT_LOAD=1,
+    PT_DYNAMIC=2,
+    PT_INTERP=3,
+    PT_NOTE=4,
+    PT_SHLIB=5,
+    PT_PHDR=6,
+    PT_TLS=7,
+    PT_GNU_EH_FRAME=1685382480,
+    PT_GNU_STACK=1685382481,
+    PT_GNU_RELRO=1685382482
+} Elf_ProgramHeaderType_x86;
+
+struct Elf32_Phdr {
+    enum Elf_ProgramHeaderType_x86 p_type;
+    dword p_offset;
+    dword p_vaddr;
+    dword p_paddr;
+    dword p_filesz;
+    dword p_memsz;
+    dword p_flags;
+    dword p_align;
+};
+
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
 
 struct Elf32_Ehdr {
@@ -49,7 +75,7 @@ void FUN_0804805c(void)
 // WARNING: Control flow encountered bad instruction data
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-void entry(void)
+void processEntry entry(void)
 
 {
   code *pcVar1;
@@ -59,11 +85,10 @@ void entry(void)
   uint uVar5;
   undefined4 *puVar6;
   undefined *puVar7;
-  undefined4 uStack4;
+  undefined4 uStack_4;
   
-  uStack4 = 0x80480fe;
-  puVar6 = (undefined4 *)
-           ((uint)&uStack4 & 0xffff0000 | (uint)(ushort)((short)register0x00000010 - 8));
+  uStack_4 = 0x80480fe;
+  puVar6 = (undefined4 *)CONCAT22((short)((uint)&uStack_4 >> 0x10),(short)&uStack_4 + -4);
   puVar6[-1] = 0x8048079;
   FUN_0804805c();
   *puVar6 = &DAT_08048122;

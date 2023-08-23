@@ -85,6 +85,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -198,6 +199,17 @@ struct Elf32_Shdr {
     dword sh_entsize;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf32_Rel Elf32_Rel, *PElf32_Rel;
 
 struct Elf32_Rel {
@@ -205,14 +217,14 @@ struct Elf32_Rel {
     dword r_info; // the symbol table index and the type of relocation
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -283,7 +295,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void * memset(void *__s,int __c,size_t __n)
 
@@ -305,10 +317,13 @@ void __gmon_start__(void)
 
 
 
-void _start(void)
+void processEntry _start(undefined4 param_1,undefined4 param_2)
 
 {
-  __libc_start_main(main);
+  undefined auStack_4 [4];
+  
+  __libc_start_main(main,param_2,&stack0x00000004,__libc_csu_init,__libc_csu_fini,param_1,auStack_4)
+  ;
   do {
                     // WARNING: Do nothing block with infinite loop
   } while( true );
@@ -361,6 +376,7 @@ void __do_global_dtors_aux(void)
 
 
 // WARNING: Removing unreachable block (ram,0x080483f9)
+// WARNING: Removing unreachable block (ram,0x080483f0)
 
 void frame_dummy(void)
 
@@ -371,6 +387,8 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 void use(int *x)
 
 {
@@ -380,10 +398,15 @@ void use(int *x)
 
 
 
+// WARNING: Unknown calling convention
+
 void fill(int *dest,int n)
 
 {
-  memset(dest,0x78,n << 2);
+  void *in_stack_00000004;
+  int in_stack_00000008;
+  
+  memset(in_stack_00000004,0x78,in_stack_00000008 << 2);
   return;
 }
 
@@ -393,28 +416,28 @@ void with_array(int n)
 
 {
   int iVar1;
-  int *apiStack48 [2];
-  int aiStack40 [3];
-  undefined auStack28 [4];
-  undefined4 local_18;
-  undefined4 local_14;
+  int_0_ *dynamic;
+  int *apiStack_30 [2];
+  int aiStack_28 [2];
+  int *piStack_20;
+  int aiStack_1c [3];
   
-  local_14 = 7;
+  aiStack_1c[2] = 7;
   iVar1 = -(n * 4 + 0xfU & 0xfffffff0);
-  local_18 = 8;
-  *(int *)((int)aiStack40 + iVar1) = n;
-  *(undefined **)((int)apiStack48 + iVar1 + 4) = auStack28 + iVar1;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x8048470;
-  fill(*(int **)((int)apiStack48 + iVar1 + 4),*(int *)((int)aiStack40 + iVar1));
-  *(undefined4 **)((int)apiStack48 + iVar1 + 4) = &local_14;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x804847c;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
-  *(undefined **)((int)apiStack48 + iVar1 + 4) = auStack28 + iVar1;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x8048485;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
-  *(undefined4 **)((int)apiStack48 + iVar1 + 4) = &local_18;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x804848e;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
+  aiStack_1c[1] = 8;
+  *(int *)((int)aiStack_28 + iVar1) = n;
+  *(int *)((int)apiStack_30 + iVar1 + 4) = (int)aiStack_1c + iVar1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x8048470;
+  fill(*(int **)((int)&piStack_20 + iVar1),*(int *)((int)aiStack_1c + iVar1));
+  *(int **)((int)apiStack_30 + iVar1 + 4) = aiStack_1c + 2;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x804847c;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
+  *(int *)((int)apiStack_30 + iVar1 + 4) = (int)aiStack_1c + iVar1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x8048485;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
+  *(int **)((int)apiStack_30 + iVar1 + 4) = aiStack_1c + 1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x804848e;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
   return;
 }
 
@@ -424,38 +447,42 @@ void with_alloca(int n)
 
 {
   int iVar1;
-  int *apiStack48 [2];
-  int aiStack40 [3];
-  undefined auStack28 [4];
-  undefined4 local_18;
-  undefined4 local_14;
+  int *dynamic;
+  int *apiStack_30 [2];
+  int aiStack_28 [2];
+  int *piStack_20;
+  int aiStack_1c [3];
   
-  local_18 = 7;
+  aiStack_1c[1] = 7;
   iVar1 = -(n * 4 + 0xfU & 0xfffffff0);
-  local_14 = 8;
-  *(int *)((int)aiStack40 + iVar1) = n;
-  *(undefined **)((int)apiStack48 + iVar1 + 4) = auStack28 + iVar1;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x80484d3;
-  fill(*(int **)((int)apiStack48 + iVar1 + 4),*(int *)((int)aiStack40 + iVar1));
-  *(undefined4 **)((int)apiStack48 + iVar1 + 4) = &local_18;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x80484dc;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
-  *(undefined **)((int)apiStack48 + iVar1 + 4) = auStack28 + iVar1;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x80484e5;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
-  *(undefined4 **)((int)apiStack48 + iVar1 + 4) = &local_14;
-  *(undefined4 *)((int)apiStack48 + iVar1) = 0x80484ee;
-  use(*(int **)((int)apiStack48 + iVar1 + 4));
+  aiStack_1c[2] = 8;
+  *(int *)((int)aiStack_28 + iVar1) = n;
+  *(int *)((int)apiStack_30 + iVar1 + 4) = (int)aiStack_1c + iVar1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x80484d3;
+  fill(*(int **)((int)&piStack_20 + iVar1),*(int *)((int)aiStack_1c + iVar1));
+  *(int **)((int)apiStack_30 + iVar1 + 4) = aiStack_1c + 1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x80484dc;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
+  *(int *)((int)apiStack_30 + iVar1 + 4) = (int)aiStack_1c + iVar1;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x80484e5;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
+  *(int **)((int)apiStack_30 + iVar1 + 4) = aiStack_1c + 2;
+  *(undefined4 *)((int)apiStack_30 + iVar1) = 0x80484ee;
+  use(*(int **)((int)apiStack_30 + iVar1 + 4));
   return;
 }
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int argc,char **argv)
 
 {
-  with_alloca(argc);
-  with_array(argc);
+  int in_stack_00000004;
+  
+  with_alloca(in_stack_00000004);
+  with_array(in_stack_00000004);
   return 0;
 }
 

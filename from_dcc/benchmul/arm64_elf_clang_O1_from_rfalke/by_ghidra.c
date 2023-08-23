@@ -151,6 +151,7 @@ typedef enum Elf64_DynTag_AARCH64 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -179,6 +180,17 @@ struct Elf64_Dyn_AARCH64 {
     qword d_val;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef struct Elf64_Rela Elf64_Rela, *PElf64_Rela;
 
 struct Elf64_Rela {
@@ -187,14 +199,14 @@ struct Elf64_Rela {
     qword r_addend; // a constant addend used to compute the relocatable field value
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
 };
 
 typedef struct Elf64_Ehdr Elf64_Ehdr, *PElf64_Ehdr;
@@ -271,7 +283,7 @@ void __gmon_start__(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void abort(void)
 
@@ -282,7 +294,7 @@ void abort(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -304,7 +316,7 @@ void __isoc99_scanf(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -320,10 +332,9 @@ int printf(char *__format,...)
 void _start(undefined8 param_1)
 
 {
-  undefined8 in_stack_00000000;
+  undefined8 param_9;
   
-  __libc_start_main(main,in_stack_00000000,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1)
-  ;
+  __libc_start_main(main,param_9,&stack0x00000008,__libc_csu_init,__libc_csu_fini,param_1);
                     // WARNING: Subroutine does not return
   abort();
 }
@@ -375,8 +386,8 @@ void __do_global_dtors_aux(void)
 
 
 
+// WARNING: Removing unreachable block (ram,0x00400668)
 // WARNING: Removing unreachable block (ram,0x00400670)
-// WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
 void frame_dummy(void)
 
@@ -387,24 +398,28 @@ void frame_dummy(void)
 
 
 
+// WARNING: Unknown calling convention
+
 int main(int ac,char **av)
 
 {
   bool bVar1;
   int iVar2;
+  long *major;
+  int *a;
+  int *b;
   long lVar3;
   int iVar4;
-  undefined local_30;
-  undefined7 uStack47;
-  undefined auStack40 [4];
+  long local_30;
+  undefined auStack_28 [4];
   uint local_24;
   
   puts("enter number of iterations");
   __isoc99_scanf(&DAT_00400820,&local_30);
-  printf("executing %ld iterations\n",CONCAT71(uStack47,local_30));
+  printf("executing %ld iterations\n",local_30);
   __isoc99_scanf(&DAT_0040083e,&local_24);
-  __isoc99_scanf(&DAT_0040083e,auStack40);
-  if (0 < CONCAT71(uStack47,local_30)) {
+  __isoc99_scanf(&DAT_0040083e,auStack_28);
+  if (0 < local_30) {
     lVar3 = 1;
     do {
       iVar4 = 0x28;
@@ -415,26 +430,12 @@ int main(int ac,char **av)
         local_24 = local_24 * iVar2 * iVar2 * 3;
         iVar4 = iVar4 + -1;
       } while (iVar4 != 0);
-      bVar1 = lVar3 < CONCAT71(uStack47,local_30);
+      bVar1 = lVar3 < local_30;
       lVar3 = lVar3 + 1;
     } while (bVar1);
   }
   printf("a=%d\n",(ulong)local_24);
   return 0;
-}
-
-
-
-void FUN_00400764(void)
-
-{
-  code *UNRECOVERED_JUMPTABLE;
-  
-                    // WARNING: Could not recover jumptable at 0x00400764. Too many branches
-                    // WARNING: Treating indirect jump as call
-  UNRECOVERED_JUMPTABLE = (code *)UndefinedInstructionException(0,0x400764);
-  (*UNRECOVERED_JUMPTABLE)();
-  return;
 }
 
 

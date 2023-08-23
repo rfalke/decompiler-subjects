@@ -18,6 +18,14 @@ struct eh_frame_hdr {
     dwfenc eh_frame_table_encoding; // Exception Handler Table Encoding
 };
 
+typedef struct NoteGnuPropertyElement_4 NoteGnuPropertyElement_4, *PNoteGnuPropertyElement_4;
+
+struct NoteGnuPropertyElement_4 {
+    dword prType;
+    dword prDatasz;
+    byte data[4];
+};
+
 typedef struct fde_table_entry fde_table_entry, *Pfde_table_entry;
 
 struct fde_table_entry {
@@ -82,6 +90,7 @@ typedef enum Elf32_DynTag_x86 {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -168,6 +177,17 @@ struct Elf32_Sym {
     word st_shndx;
 };
 
+typedef struct NoteAbiTag NoteAbiTag, *PNoteAbiTag;
+
+struct NoteAbiTag {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
+    dword abiType; // 0 == Linux
+    dword requiredKernelVersion[3]; // Major.minor.patch
+};
+
 typedef enum Elf_ProgramHeaderType_x86 {
     PT_NULL=0,
     PT_LOAD=1,
@@ -202,14 +222,23 @@ struct Elf32_Phdr {
     dword p_align;
 };
 
-typedef struct Gnu_BuildId Gnu_BuildId, *PGnu_BuildId;
+typedef struct GnuBuildId GnuBuildId, *PGnuBuildId;
 
-struct Gnu_BuildId {
+struct GnuBuildId {
     dword namesz; // Length of name field
     dword descsz; // Length of description field
     dword type; // Vendor specific type
-    char name[4]; // Build-id vendor name
-    byte description[20]; // Build-id value
+    char name[4]; // Vendor name
+    byte hash[20];
+};
+
+typedef struct NoteGnuProperty_4 NoteGnuProperty_4, *PNoteGnuProperty_4;
+
+struct NoteGnuProperty_4 {
+    dword namesz; // Length of name field
+    dword descsz; // Length of description field
+    dword type; // Vendor specific type
+    char name[4]; // Vendor name
 };
 
 typedef struct Elf32_Ehdr Elf32_Ehdr, *PElf32_Ehdr;
@@ -271,7 +300,7 @@ void FUN_08049030(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 
@@ -284,7 +313,7 @@ int printf(char *__format,...)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int puts(char *__s)
 
@@ -297,7 +326,7 @@ int puts(char *__s)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -317,7 +346,7 @@ void __libc_start_main(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int putchar(int __c)
 
@@ -332,7 +361,7 @@ int putchar(int __c)
 
 // WARNING: Function: __i686.get_pc_thunk.bx replaced with injection: get_pc_thunk_bx
 
-void _start(int __status)
+void processEntry _start(int __status)
 
 {
   __libc_start_main(main);
@@ -458,15 +487,19 @@ void main(void)
   undefined4 uVar4;
   undefined4 uVar5;
   longlong lVar6;
-  ulonglong uVar7;
-  longlong lVar8;
+  longlong lVar7;
+  ulonglong uVar8;
   double dVar9;
   double dVar10;
   undefined4 uVar11;
   undefined4 local_68;
-  undefined4 uStack100;
-  undefined4 local_48;
-  undefined4 uStack68;
+  undefined4 uStack_64;
+  uint local_58;
+  uint local_54;
+  uint local_50;
+  uint local_4c;
+  uint local_48;
+  uint uStack_44;
   
   puts("*** It\'s test for new mathlib *** !!!\n");
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805203a,&DAT_08052037,0,0,0,0);
@@ -480,17 +513,15 @@ void main(void)
          0x40051242,0x71980435,0x40051242);
   dVar9 = acosh(INFINITY);
   dVar10 = acosh(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = acosh(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = acosh(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","acosh",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","acosh",puVar1,local_68,uStack_64,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052079,&DAT_08052037,0,0,0,0);
@@ -504,17 +535,15 @@ void main(void)
          0x3fe4e2a4,0xfe9085dd,0x3fe4e2a4);
   dVar9 = asinh(INFINITY);
   dVar10 = asinh(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = asinh(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = asinh(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","asinh",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","asinh",puVar1,local_68,uStack_64,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052084,&DAT_08052037,0,0,0,0);
@@ -535,9 +564,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,0,0);
   dVar9 = atan2(-3.0,INFINITY);
   dVar10 = atan2(-3.0,INFINITY);
   if ((dVar10 < -1e-09) || (dVar10 = atan2(-3.0,INFINITY), 1e-09 < dVar10)) {
@@ -546,9 +575,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,0,
          0x80000000);
   dVar9 = atan2(3.0,-INFINITY);
   dVar10 = atan2(3.0,-INFINITY);
@@ -558,9 +587,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0x400921fb);
   dVar9 = atan2(-3.0,-INFINITY);
   dVar10 = atan2(-3.0,-INFINITY);
@@ -571,9 +600,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0xc00921fb);
   dVar9 = atan2(INFINITY,2.0);
   dVar10 = atan2(INFINITY,2.0);
@@ -583,9 +612,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0x3ff921fb);
   dVar9 = atan2(-INFINITY,-3.0);
   dVar10 = atan2(-INFINITY,-3.0);
@@ -596,9 +625,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0xbff921fb);
   dVar9 = atan2(INFINITY,INFINITY);
   dVar10 = atan2(INFINITY,INFINITY);
@@ -609,9 +638,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0x3fe921fb);
   dVar9 = atan2(-INFINITY,INFINITY);
   dVar10 = atan2(-INFINITY,INFINITY);
@@ -622,9 +651,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x54442d18,0xbfe921fb);
   dVar9 = atan2(INFINITY,-INFINITY);
   dVar10 = atan2(INFINITY,-INFINITY);
@@ -635,9 +664,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x7f3321d2,0x4002d97c);
   dVar9 = atan2(-INFINITY,-INFINITY);
   dVar10 = atan2(-INFINITY,-INFINITY);
@@ -648,9 +677,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","atan2",puVar1,local_68,uStack_64,
          0x7f3321d2,0xc002d97c);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","atanh",&DAT_08052037,0,0,0,0);
@@ -669,32 +698,27 @@ void main(void)
          ,0xc0000000);
   dVar9 = cbrt(INFINITY);
   dVar10 = cbrt(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = cbrt(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = cbrt(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052095,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052095,puVar1,local_68,uStack_64,0,
          0x7ff00000);
   dVar9 = cbrt(-INFINITY);
   dVar10 = cbrt(-INFINITY);
-  if ((dVar10 < -INFINITY) ||
-     (dVar10 = cbrt(-INFINITY),
-     (char)((uint)(ushort)((ushort)(-1.797693134862316e+308 < dVar10) << 8 |
-                          (ushort)(dVar10 == -1.797693134862316e+308) << 0xe) >> 8) != '\0')) {
+  if ((dVar10 < -INFINITY) || (dVar10 = cbrt(-INFINITY), -1.797693134862316e+308 <= dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052095,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052095,puVar1,local_68,uStack_64,0,
          0xfff00000);
   cbrt(NAN);
   cbrt(NAN);
@@ -740,23 +764,18 @@ void main(void)
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520c3,&DAT_08052037,0x1862342f,
          0x3ff4152c,0x1862342f,0x3ff4152c);
   dVar9 = cosh(INFINITY);
-  if ((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                           (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) == '\0') {
-    if (0.0 <= dVar9) {
-      uVar4 = 1;
-    }
-    else {
-      uVar4 = 0xffffffff;
-    }
+  if (dVar9 <= 1.797693134862316e+308) {
+    uVar4 = 0;
+  }
+  else if (0.0 <= dVar9) {
+    uVar4 = 1;
   }
   else {
-    uVar4 = 0;
+    uVar4 = 0xffffffff;
   }
   uVar11 = 0x7ff00000;
   dVar9 = cosh(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar9 < 0.0)) {
+  if ((dVar9 <= 1.797693134862316e+308) || (dVar9 < 0.0)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -764,22 +783,17 @@ void main(void)
   }
   printf("%s - %s computed: %i should be: %i\n",&DAT_080520c3,puVar1,uVar4,1,uVar11,uVar5);
   dVar9 = cosh(-INFINITY);
-  if ((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                           (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) == '\0') {
-    if (0.0 <= dVar9) {
-      uVar5 = 1;
-    }
-    else {
-      uVar5 = 0xffffffff;
-    }
-  }
-  else {
+  if (dVar9 <= 1.797693134862316e+308) {
     uVar5 = 0;
   }
+  else if (0.0 <= dVar9) {
+    uVar5 = 1;
+  }
+  else {
+    uVar5 = 0xffffffff;
+  }
   dVar9 = cosh(-INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar9 < 0.0)) {
+  if ((dVar9 <= 1.797693134862316e+308) || (dVar9 < 0.0)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -795,23 +809,18 @@ void main(void)
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520ec,&DAT_08052037,0x61268987,
          0x40001c2a,0x61268987,0x40001c2a);
   dVar9 = exp(INFINITY);
-  if ((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                           (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) == '\0') {
-    if (0.0 <= dVar9) {
-      uVar4 = 1;
-    }
-    else {
-      uVar4 = 0xffffffff;
-    }
+  if (dVar9 <= 1.797693134862316e+308) {
+    uVar4 = 0;
+  }
+  else if (0.0 <= dVar9) {
+    uVar4 = 1;
   }
   else {
-    uVar4 = 0;
+    uVar4 = 0xffffffff;
   }
   uVar11 = 0x7ff00000;
   dVar9 = exp(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar9 < 0.0)) {
+  if ((dVar9 <= 1.797693134862316e+308) || (dVar9 < 0.0)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -826,9 +835,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520ec,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520ec,puVar1,local_68,uStack_64,0,
          0);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","exp10",&DAT_08052037,0,0x3ff00000,0,
@@ -839,23 +848,18 @@ void main(void)
   printf("%s - %s computed: %10.15e should be: %10.15e\n","exp10",&DAT_08052037,0x430012e6,
          0x40140c28,0x430012e7,0x40140c28);
   dVar9 = exp10(INFINITY);
-  if ((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                           (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) == '\0') {
-    if (0.0 <= dVar9) {
-      uVar4 = 1;
-    }
-    else {
-      uVar4 = 0xffffffff;
-    }
+  if (dVar9 <= 1.797693134862316e+308) {
+    uVar4 = 0;
+  }
+  else if (0.0 <= dVar9) {
+    uVar4 = 1;
   }
   else {
-    uVar4 = 0;
+    uVar4 = 0xffffffff;
   }
   uVar11 = 0x7ff00000;
   dVar9 = exp10(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar9 < 0.0)) {
+  if ((dVar9 <= 1.797693134862316e+308) || (dVar9 < 0.0)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -870,9 +874,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","exp10",puVar1,local_68,uStack100,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","exp10",puVar1,local_68,uStack_64,0,0);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520f6,&DAT_08052037,0,0x3ff00000,0
          ,0x3ff00000);
@@ -882,23 +886,18 @@ void main(void)
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520f6,&DAT_08052037,0xbcce533d,
          0x3ff9fdf8,0xbcce533d,0x3ff9fdf8);
   dVar9 = exp2(INFINITY);
-  if ((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                           (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) == '\0') {
-    if (0.0 <= dVar9) {
-      uVar4 = 1;
-    }
-    else {
-      uVar4 = 0xffffffff;
-    }
+  if (dVar9 <= 1.797693134862316e+308) {
+    uVar4 = 0;
+  }
+  else if (0.0 <= dVar9) {
+    uVar4 = 1;
   }
   else {
-    uVar4 = 0;
+    uVar4 = 0xffffffff;
   }
   uVar11 = 0x7ff00000;
   dVar9 = exp2(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar9 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar9 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar9 < 0.0)) {
+  if ((dVar9 <= 1.797693134862316e+308) || (dVar9 < 0.0)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -913,25 +912,23 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520f6,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080520f6,puVar1,local_68,uStack_64,0,
          0);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",&DAT_08052037,0,0,0,0);
   dVar9 = expm1(INFINITY);
   dVar10 = expm1(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = expm1(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = expm1(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",puVar1,local_68,uStack_64,0,
          0x7ff00000);
   dVar9 = expm1(-INFINITY);
   dVar10 = expm1(-INFINITY);
@@ -941,9 +938,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",puVar1,local_68,uStack_64,0,
          0xbff00000);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","expm1",&DAT_08052037,0x1628aed3,
          0x3ffb7e15,0x1628aed2,0x3ffb7e15);
@@ -990,17 +987,15 @@ void main(void)
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,&DAT_08052037,0,0,0,0);
   dVar9 = fmax(9.0,INFINITY);
   dVar10 = fmax(9.0,INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = fmax(9.0,INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = fmax(9.0,INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,puVar1,local_68,uStack_64,0,
          0x7ff00000);
   dVar9 = fmax(0.0,-INFINITY);
   dVar10 = fmax(0.0,-INFINITY);
@@ -1010,9 +1005,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,puVar1,local_68,uStack_64,0,
          0);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052115,&DAT_08052037,0,0x40220000,0
          ,0x40220000);
@@ -1035,24 +1030,21 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211a,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211a,puVar1,local_68,uStack_64,0,
          0x40220000);
   dVar9 = fmin(0.0,-INFINITY);
   dVar10 = fmin(0.0,-INFINITY);
-  if ((dVar10 < -INFINITY) ||
-     (dVar10 = fmin(0.0,-INFINITY),
-     (char)((uint)(ushort)((ushort)(-1.797693134862316e+308 < dVar10) << 8 |
-                          (ushort)(dVar10 == -1.797693134862316e+308) << 0xe) >> 8) != '\0')) {
+  if ((dVar10 < -INFINITY) || (dVar10 = fmin(0.0,-INFINITY), -1.797693134862316e+308 <= dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211a,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211a,puVar1,local_68,uStack_64,0,
          0xfff00000);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211a,&DAT_08052037,0,0x40220000,0
          ,0x40220000);
@@ -1071,9 +1063,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,
          0x66666666,0x3ffe6666);
   dVar9 = fmod(-6.5,2.3);
   dVar10 = fmod(-6.5,2.3);
@@ -1083,9 +1075,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,
          0x66666666,0xbffe6666);
   dVar9 = fmod(6.5,-2.3);
   dVar10 = fmod(6.5,-2.3);
@@ -1095,9 +1087,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,
          0x66666666,0x3ffe6666);
   dVar9 = fmod(-6.5,-2.3);
   dVar10 = fmod(-6.5,-2.3);
@@ -1107,9 +1099,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,
          0x66666666,0xbffe6666);
   dVar9 = fmod(6.5,INFINITY);
   dVar10 = fmod(6.5,INFINITY);
@@ -1119,9 +1111,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,0,
          0x401a0000);
   dVar9 = fmod(-6.5,-INFINITY);
   dVar10 = fmod(-6.5,-INFINITY);
@@ -1131,9 +1123,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805211f,puVar1,local_68,uStack_64,0,
          0xc01a0000);
   putchar(10);
   uVar5 = 0x3d70a3d7;
@@ -1161,31 +1153,27 @@ void main(void)
          0x3ff63a58,0x55b9eafb,0x3ff63a58);
   dVar9 = hypot(INFINITY,NAN);
   dVar10 = hypot(INFINITY,NAN);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = hypot(INFINITY,NAN), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = hypot(INFINITY,NAN), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","hypot",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","hypot",puVar1,local_68,uStack_64,0,
          0x7ff00000);
   dVar9 = hypot(-INFINITY,NAN);
   dVar10 = hypot(-INFINITY,NAN);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = hypot(-INFINITY,NAN), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = hypot(-INFINITY,NAN), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack100 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_64 = (undefined4)((ulonglong)dVar9 >> 0x20);
   local_68 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","hypot",puVar1,local_68,uStack100,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","hypot",puVar1,local_68,uStack_64,0,
          0x7ff00000);
   hypot(NAN,NAN);
   printf("%s - %s (NAN version)\n","hypot",&DAT_08052074);
@@ -1228,9 +1216,10 @@ void main(void)
   printf("%s - %s (NAN version)\n","ldexp",&DAT_08052074);
   putchar(10);
   lVar6 = llrint(0.0);
-  uVar7 = llrint(0.0);
-  if (((uint)((uVar7 & 0xffff0000ffff0000) >> 0x20) | (uint)(ushort)(uVar7 >> 0x20) |
-      (uint)(uVar7 & 0xffff0000ffff0000) | (uint)(ushort)uVar7) == 0) {
+  lVar7 = llrint(0.0);
+  local_48 = (uint)lVar7;
+  uStack_44 = (uint)((ulonglong)lVar7 >> 0x20);
+  if ((uStack_44 | local_48) == 0) {
     puVar1 = &DAT_08052037;
   }
   else {
@@ -1239,9 +1228,10 @@ void main(void)
   printf("%s - %s computed: %lli should be: %lli\n","llrint",puVar1,(int)lVar6,
          (int)((ulonglong)lVar6 >> 0x20),0,0);
   lVar6 = llrint(-0.2);
-  uVar7 = llrint(-0.2);
-  if (((uint)((uVar7 & 0xffff0000ffff0000) >> 0x20) | (uint)(ushort)(uVar7 >> 0x20) |
-      (uint)(uVar7 & 0xffff0000ffff0000) | (uint)(ushort)uVar7) == 0) {
+  lVar7 = llrint(-0.2);
+  local_50 = (uint)lVar7;
+  local_4c = (uint)((ulonglong)lVar7 >> 0x20);
+  if ((local_4c | local_50) == 0) {
     puVar1 = &DAT_08052037;
   }
   else {
@@ -1250,8 +1240,10 @@ void main(void)
   printf("%s - %s computed: %lli should be: %lli\n","llrint",puVar1,(int)lVar6,
          (int)((ulonglong)lVar6 >> 0x20),0,0);
   lVar6 = llrint(-1.4);
-  lVar8 = llrint(-1.4);
-  if (lVar8 == -1) {
+  uVar8 = llrint(-1.4);
+  local_58 = (uint)(uVar8 ^ 0xffffffffffffffff);
+  local_54 = (uint)((uVar8 ^ 0xffffffffffffffff) >> 0x20);
+  if ((local_54 | local_58) == 0) {
     puVar1 = &DAT_08052037;
   }
   else {
@@ -1260,9 +1252,8 @@ void main(void)
   printf("%s - %s computed: %lli should be: %lli\n","llrint",puVar1,(int)lVar6,
          (int)((ulonglong)lVar6 >> 0x20),0xffffffff,0xffffffff);
   lVar6 = llrint(7.205759403792794e+16);
-  lVar8 = llrint(7.205759403792794e+16);
-  if (((uint)((ulonglong)lVar8 >> 0x20) ^ 0x1000000 | (uint)lVar8 & 0xffff0000 | (uint)(ushort)lVar8
-      ) == 0) {
+  lVar7 = llrint(7.205759403792794e+16);
+  if (lVar7 == 0x100000000000000) {
     puVar1 = &DAT_08052037;
   }
   else {
@@ -1281,17 +1272,15 @@ void main(void)
          0x40026bb1,0xbbb55516,0x40026bb1);
   dVar9 = log(INFINITY);
   dVar10 = log(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = log(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = log(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052180,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052180,puVar1,local_48,uStack_44,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","log10",&DAT_08052037,0,0xbff00000,0,
@@ -1304,17 +1293,15 @@ void main(void)
          0x40100000);
   dVar9 = log10(INFINITY);
   dVar10 = log10(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = log10(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = log10(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","log10",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","log10",puVar1,local_48,uStack_44,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805218a,&DAT_08052037,0,0,0,0);
@@ -1326,17 +1313,15 @@ void main(void)
          ,0x40100000);
   dVar9 = log2(INFINITY);
   dVar10 = log2(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = log2(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = log2(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805218a,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_0805218a,puVar1,local_48,uStack_44,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","log1p",&DAT_08052037,0,0,0,0);
@@ -1346,17 +1331,15 @@ void main(void)
          0xbfd6d3c3,0x24e13f4f,0xbfd6d3c3);
   dVar9 = log1p(INFINITY);
   dVar10 = log1p(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = log1p(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = log1p(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","log1p",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","log1p",puVar1,local_48,uStack_44,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_08052195,&DAT_08052037,0,0,0,0);
@@ -1378,9 +1361,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052074;
   }
-  uStack68 = (undefined4)((ulonglong)(double)lVar2 >> 0x20);
+  uStack_44 = (uint)((ulonglong)(double)lVar2 >> 0x20);
   local_48 = SUB84((double)lVar2,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack68,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack_44,0,0);
   lVar2 = lrint(0.4);
   lrint(0.4);
   lVar3 = lrint(0.4);
@@ -1390,9 +1373,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052074;
   }
-  uStack68 = (undefined4)((ulonglong)(double)lVar2 >> 0x20);
+  uStack_44 = (uint)((ulonglong)(double)lVar2 >> 0x20);
   local_48 = SUB84((double)lVar2,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack68,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack_44,0,0);
   lVar2 = lrint(1.4);
   lVar3 = lrint(1.4);
   if ((lVar3 < 1) || (lVar3 = lrint(1.4), 1 < lVar3)) {
@@ -1401,9 +1384,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)(double)lVar2 >> 0x20);
+  uStack_44 = (uint)((ulonglong)(double)lVar2 >> 0x20);
   local_48 = SUB84((double)lVar2,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack_44,0,
          0x3ff00000);
   lVar2 = lrint(-1.4);
   lVar3 = lrint(-1.4);
@@ -1413,9 +1396,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)(double)lVar2 >> 0x20);
+  uStack_44 = (uint)((ulonglong)(double)lVar2 >> 0x20);
   local_48 = SUB84((double)lVar2,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","lrint",puVar1,local_48,uStack_44,0,
          0xbff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,&DAT_08052037,0,0,0,0);
@@ -1438,17 +1421,15 @@ void main(void)
          ,0x7ff00000);
   dVar9 = pow(INFINITY,INFINITY);
   dVar10 = pow(INFINITY,INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = pow(INFINITY,INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = pow(INFINITY,INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,puVar1,local_48,uStack_44,0,
          0x7ff00000);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,&DAT_08052037,0,0x3ff00000,0
          ,0x3ff00000);
@@ -1460,10 +1441,10 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,puVar1,local_48,uStack68,0,0
-        );
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521a0,puVar1,local_48,uStack_44,0,
+         0);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","pow10",&DAT_08052037,0,0x3ff00000,0,
          0x3ff00000);
@@ -1492,22 +1473,22 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,
          0x9999999a,0x40299999);
   dVar9 = scalb(-0.854375,5.0);
   dVar10 = scalb(-0.854375,5.0);
-  if (((float10)dVar10 < _DAT_08052590) ||
-     (dVar10 = scalb(-0.854375,5.0), _DAT_080525a0 < (float10)dVar10)) {
+  if (((longdouble)dVar10 < _DAT_08052590) ||
+     (dVar10 = scalb(-0.854375,5.0), _DAT_080525a0 < (longdouble)dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,
          0x3d70a3d7,0xc03b570a);
   dVar9 = scalb(0.0,2.0);
   dVar10 = scalb(0.0,2.0);
@@ -1517,41 +1498,36 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,0,0);
   scalb(3.0,-2.5);
   printf("%s - %s (NAN version)\n","scalb",&DAT_08052074);
   scalb(2.0,0.5);
   printf("%s - %s (NAN version)\n","scalb",&DAT_08052074);
   dVar9 = scalb(INFINITY,0.0);
   dVar10 = scalb(INFINITY,0.0);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = scalb(INFINITY,0.0), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = scalb(INFINITY,0.0), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,0,
          0x7ff00000);
   dVar9 = scalb(-INFINITY,0.0);
   dVar10 = scalb(-INFINITY,0.0);
-  if ((dVar10 < -INFINITY) ||
-     (dVar10 = scalb(-INFINITY,0.0),
-     (char)((uint)(ushort)((ushort)(-1.797693134862316e+308 < dVar10) << 8 |
-                          (ushort)(dVar10 == -1.797693134862316e+308) << 0xe) >> 8) != '\0')) {
+  if ((dVar10 < -INFINITY) || (dVar10 = scalb(-INFINITY,0.0), -1.797693134862316e+308 <= dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,0,
          0xfff00000);
   scalb(INFINITY,-INFINITY);
   printf("%s - %s (NAN version)\n","scalb",&DAT_08052074);
@@ -1565,9 +1541,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,0,0);
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,0,0);
   dVar9 = scalb(-2.0,-INFINITY);
   dVar10 = scalb(-2.0,-INFINITY);
   if ((dVar10 < -1e-09) || (dVar10 = scalb(-2.0,-INFINITY), 1e-09 < dVar10)) {
@@ -1576,9 +1552,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n","scalb",puVar1,local_48,uStack_44,0,
          0x80000000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","scalbn",&DAT_08052037,0,0,0,0);
@@ -1608,8 +1584,8 @@ void main(void)
          0x3ff00000);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","sincos",&DAT_08052037,0x33145c07,
          0x3c91a626,0,0);
-  if (((float10)0.644217687237691 < _DAT_080525d0) || (_DAT_080525e0 < (float10)0.644217687237691))
-  {
+  if (((longdouble)0.644217687237691 < _DAT_080525d0) ||
+     (_DAT_080525e0 < (longdouble)0.644217687237691)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -1617,8 +1593,8 @@ void main(void)
   }
   printf("%s - %s computed: %10.15e should be: %10.15e\n","sincos",puVar1,0x694619b8,0x3fe49d6e,
          0x694619b8,0x3fe49d6e);
-  if (((float10)0.7648421872844885 < _DAT_080525f0) || (_DAT_08052600 < (float10)0.7648421872844885)
-     ) {
+  if (((longdouble)0.7648421872844885 < _DAT_080525f0) ||
+     (_DAT_08052600 < (longdouble)0.7648421872844885)) {
     puVar1 = &DAT_08052074;
   }
   else {
@@ -1632,32 +1608,27 @@ void main(void)
          0x3fe84651,0x53d5bdbd,0x3fe84651);
   dVar9 = sinh(INFINITY);
   dVar10 = sinh(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = sinh(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = sinh(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d1,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d1,puVar1,local_48,uStack_44,0,
          0x7ff00000);
   dVar9 = sinh(-INFINITY);
   dVar10 = sinh(-INFINITY);
-  if ((dVar10 < -INFINITY) ||
-     (dVar10 = sinh(-INFINITY),
-     (char)((uint)(ushort)((ushort)(-1.797693134862316e+308 < dVar10) << 8 |
-                          (ushort)(dVar10 == -1.797693134862316e+308) << 0xe) >> 8) != '\0')) {
+  if ((dVar10 < -INFINITY) || (dVar10 = sinh(-INFINITY), -1.797693134862316e+308 <= dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d1,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d1,puVar1,local_48,uStack_44,0,
          0xfff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d6,&DAT_08052037,0,0x40080000,0
@@ -1670,17 +1641,15 @@ void main(void)
   printf("%s - %s (NAN version)\n",&DAT_080521d6,&DAT_08052074);
   dVar9 = sqrt(INFINITY);
   dVar10 = sqrt(INFINITY);
-  if (((char)((uint)(ushort)((ushort)(dVar10 < 1.797693134862316e+308) << 8 |
-                            (ushort)(dVar10 == 1.797693134862316e+308) << 0xe) >> 8) != '\0') ||
-     (dVar10 = sqrt(INFINITY), INFINITY < dVar10)) {
+  if ((dVar10 <= 1.797693134862316e+308) || (dVar10 = sqrt(INFINITY), INFINITY < dVar10)) {
     puVar1 = &DAT_08052074;
   }
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d6,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521d6,puVar1,local_48,uStack_44,0,
          0x7ff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521db,&DAT_08052037,0,0x80000000,0
@@ -1701,9 +1670,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521df,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521df,puVar1,local_48,uStack_44,0,
          0x3ff00000);
   dVar9 = tanh(-INFINITY);
   dVar10 = tanh(-INFINITY);
@@ -1713,9 +1682,9 @@ void main(void)
   else {
     puVar1 = &DAT_08052037;
   }
-  uStack68 = (undefined4)((ulonglong)dVar9 >> 0x20);
+  uStack_44 = (uint)((ulonglong)dVar9 >> 0x20);
   local_48 = SUB84(dVar9,0);
-  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521df,puVar1,local_48,uStack68,0,
+  printf("%s - %s computed: %10.15e should be: %10.15e\n",&DAT_080521df,puVar1,local_48,uStack_44,0,
          0xbff00000);
   putchar(10);
   printf("%s - %s computed: %10.15e should be: %10.15e\n","trunc",&DAT_08052037,0,0,0,0);
@@ -1752,11 +1721,11 @@ int isnan(double __value)
 
 
 
-bool isnanl(float10 param_1)
+bool isnanl(longdouble param_1)
 
 {
-  return (ushort)((ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe) ==
-         0x100;
+  return (ushort)((ushort)(param_1 != (longdouble)0) << 10 |
+                 (ushort)(param_1 == (longdouble)0) << 0xe) == 0x100;
 }
 
 
@@ -1798,13 +1767,13 @@ undefined4 isfinite(undefined4 param_1,undefined4 param_2)
 
 
 
-undefined4 isfinitel(float10 param_1)
+undefined4 isfinitel(longdouble param_1)
 
 {
   undefined4 uVar1;
   ushort uVar2;
   
-  uVar2 = (ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe;
+  uVar2 = (ushort)(param_1 != (longdouble)0) << 10 | (ushort)(param_1 == (longdouble)0) << 0xe;
   if ((uVar2 == 0x400) || (uVar2 == 0x4000)) {
     uVar1 = 1;
   }
@@ -1833,11 +1802,11 @@ bool isnormal(undefined4 param_1,undefined4 param_2)
 
 
 
-bool isnormall(float10 param_1)
+bool isnormall(longdouble param_1)
 
 {
-  return (ushort)((ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe) ==
-         0x400;
+  return (ushort)((ushort)(param_1 != (longdouble)0) << 10 |
+                 (ushort)(param_1 == (longdouble)0) << 0xe) == 0x400;
 }
 
 
@@ -1872,16 +1841,16 @@ int isinf(double __value)
 
 
 
-uint isinfl(float10 param_1)
+uint isinfl(longdouble param_1)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   uint uVar2;
   
-  fVar1 = (float10)0;
-  uVar2 = (uint)((ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) ==
+  lVar1 = (longdouble)0;
+  uVar2 = (uint)((ushort)((ushort)(param_1 != lVar1) << 10 | (ushort)(param_1 == lVar1) << 0xe) ==
                 0x500);
-  if (param_1 < fVar1) {
+  if (param_1 < lVar1) {
     uVar2 = -uVar2;
   }
   return uVar2;
@@ -1952,197 +1921,214 @@ int __fpclassify(double __value)
 undefined4 __fpclassifyl(undefined param_1 [12])
 
 {
-  undefined4 uVar1;
-  ushort uVar2;
+  longdouble lVar1;
+  undefined4 uVar2;
+  ushort uVar3;
   
-  uVar2 = (ushort)(param_1._0_10_ != (float10)0) << 10 |
-          (ushort)(param_1._0_10_ == (float10)0) << 0xe;
-  if (uVar2 == 0x100) {
-    uVar1 = 0;
+  lVar1 = (longdouble)param_1._0_10_;
+  uVar3 = (ushort)(lVar1 != (longdouble)0) << 10 | (ushort)(lVar1 == (longdouble)0) << 0xe;
+  if (uVar3 == 0x100) {
+    uVar2 = 0;
   }
-  else if (uVar2 == 0x500) {
-    uVar1 = 1;
+  else if (uVar3 == 0x500) {
+    uVar2 = 1;
   }
-  else if (uVar2 == 0x4000) {
-    uVar1 = 2;
+  else if (uVar3 == 0x4000) {
+    uVar2 = 2;
   }
-  else if ((SUB124(param_1 >> 0x40,0) == 0) && (-1 < param_1._4_4_)) {
-    uVar1 = 3;
+  else if ((param_1._8_4_ == 0) && (-1 < (int)param_1._4_4_)) {
+    uVar2 = 3;
   }
   else {
-    uVar1 = 4;
+    uVar2 = 4;
   }
-  return uVar1;
+  return uVar2;
 }
 
 
 
-uint isgreaterf(float param_1,float param_2)
+undefined4 __regparm1 isgreaterf(undefined4 param_1_00,float param_1,float param_2)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe);
-  return uVar1 | (char)(uVar1 >> 8) == '\0';
+  uVar1 = (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-uint isgreater(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4 isgreater(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)((double)CONCAT44(param_2,param_1) <
-                                 (double)CONCAT44(param_4,param_3)) << 8 |
-                        (ushort)((double)CONCAT44(param_2,param_1) ==
-                                (double)CONCAT44(param_4,param_3)) << 0xe);
-  return param_4 & 0xffff0000 | uVar1 | (uint)((char)(uVar1 >> 8) == '\0');
+  uVar1 = (ushort)((double)CONCAT44(param_2,param_1) < (double)CONCAT44(param_4,param_3)) << 8 |
+          (ushort)((double)CONCAT44(param_2,param_1) == (double)CONCAT44(param_4,param_3)) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_4 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-uint isgreaterl(float10 param_1,float10 param_2)
+undefined4 __regparm1 isgreaterl(undefined4 param_1_00,longdouble param_1,longdouble param_2)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe);
-  return uVar1 | (char)(uVar1 >> 8) == '\0';
+  uVar1 = (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-ushort isgreaterequalf(float param_1,float param_2)
+undefined4 __regparm1 isgreaterequalf(undefined4 param_1_00,float param_1,float param_2)
 
 {
-  return (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe |
-         (ushort)(param_1 >= param_2);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_1 < param_2) << 8 |
+                                  (ushort)(param_1 == param_2) << 0xe) >> 8),param_1 < param_2 == 0)
+  ;
 }
 
 
 
-uint isgreaterequal(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4
+isgreaterequal(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  double dVar1;
-  double dVar2;
+  ushort uVar1;
   
-  dVar1 = (double)CONCAT44(param_4,param_3);
-  dVar2 = (double)CONCAT44(param_2,param_1);
-  return param_4 & 0xffff0000 |
-         (uint)(ushort)((ushort)(dVar2 < dVar1) << 8 | (ushort)(dVar2 == dVar1) << 0xe) |
-         (uint)(dVar2 >= dVar1);
+  uVar1 = (ushort)((double)CONCAT44(param_2,param_1) < (double)CONCAT44(param_4,param_3));
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_4 >> 0x10),
+                                  uVar1 << 8 |
+                                  (ushort)((double)CONCAT44(param_2,param_1) ==
+                                          (double)CONCAT44(param_4,param_3)) << 0xe) >> 8),
+                  uVar1 == 0);
 }
 
 
 
-ushort isgreaterequall(float10 param_1,float10 param_2)
+undefined4 __regparm1 isgreaterequall(undefined4 param_1_00,longdouble param_1,longdouble param_2)
 
 {
-  return (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe |
-         (ushort)(param_1 >= param_2);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_1 < param_2) << 8 |
+                                  (ushort)(param_1 == param_2) << 0xe) >> 8),param_1 < param_2 == 0)
+  ;
 }
 
 
 
-uint islessf(float param_1,float param_2)
+undefined4 __regparm1 islessf(undefined4 param_1_00,float param_1,float param_2)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe);
-  return uVar1 | (char)(uVar1 >> 8) == '\0';
+  uVar1 = (ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-uint isless(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4 isless(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)((double)CONCAT44(param_4,param_3) <
-                                 (double)CONCAT44(param_2,param_1)) << 8 |
-                        (ushort)((double)CONCAT44(param_4,param_3) ==
-                                (double)CONCAT44(param_2,param_1)) << 0xe);
-  return param_4 & 0xffff0000 | uVar1 | (uint)((char)(uVar1 >> 8) == '\0');
+  uVar1 = (ushort)((double)CONCAT44(param_4,param_3) < (double)CONCAT44(param_2,param_1)) << 8 |
+          (ushort)((double)CONCAT44(param_4,param_3) == (double)CONCAT44(param_2,param_1)) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_4 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-uint islessl(float10 param_1,float10 param_2)
+undefined4 __regparm1 islessl(undefined4 param_1_00,longdouble param_1,longdouble param_2)
 
 {
-  uint uVar1;
+  ushort uVar1;
   
-  uVar1 = (uint)(ushort)((ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe);
-  return uVar1 | (char)(uVar1 >> 8) == '\0';
+  uVar1 = (ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe;
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),uVar1) >> 8),
+                  (char)(uVar1 >> 8) == '\0');
 }
 
 
 
-ushort islessequalf(float param_1,float param_2)
+undefined4 __regparm1 islessequalf(undefined4 param_1_00,float param_1,float param_2)
 
 {
-  return (ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe |
-         (ushort)(param_2 >= param_1);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_2 < param_1) << 8 |
+                                  (ushort)(param_2 == param_1) << 0xe) >> 8),param_2 < param_1 == 0)
+  ;
 }
 
 
 
-uint islessequal(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4 islessequal(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  double dVar1;
-  double dVar2;
+  ushort uVar1;
   
-  dVar2 = (double)CONCAT44(param_2,param_1);
-  dVar1 = (double)CONCAT44(param_4,param_3);
-  return param_4 & 0xffff0000 |
-         (uint)(ushort)((ushort)(dVar1 < dVar2) << 8 | (ushort)(dVar1 == dVar2) << 0xe) |
-         (uint)(dVar1 >= dVar2);
+  uVar1 = (ushort)((double)CONCAT44(param_4,param_3) < (double)CONCAT44(param_2,param_1));
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_4 >> 0x10),
+                                  uVar1 << 8 |
+                                  (ushort)((double)CONCAT44(param_4,param_3) ==
+                                          (double)CONCAT44(param_2,param_1)) << 0xe) >> 8),
+                  uVar1 == 0);
 }
 
 
 
-ushort islessequall(float10 param_1,float10 param_2)
+undefined4 __regparm1 islessequall(undefined4 param_1_00,longdouble param_1,longdouble param_2)
 
 {
-  return (ushort)(param_2 < param_1) << 8 | (ushort)(param_2 == param_1) << 0xe |
-         (ushort)(param_2 >= param_1);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_2 < param_1) << 8 |
+                                  (ushort)(param_2 == param_1) << 0xe) >> 8),param_2 < param_1 == 0)
+  ;
 }
 
 
 
-ushort islessgreaterf(float param_1,float param_2)
+undefined4 __regparm1 islessgreaterf(undefined4 param_1_00,float param_1,float param_2)
 
 {
-  return (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe |
-         (ushort)((param_1 == param_2) == 0);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_1 < param_2) << 8 |
+                                  (ushort)(param_1 == param_2) << 0xe) >> 8),
+                  (param_1 == param_2) == 0);
 }
 
 
 
-uint islessgreater(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+undefined4
+islessgreater(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
   ushort uVar1;
   
   uVar1 = (ushort)((double)CONCAT44(param_2,param_1) == (double)CONCAT44(param_4,param_3));
-  return param_4 & 0xffff0000 |
-         (uint)(ushort)((ushort)((double)CONCAT44(param_2,param_1) <
-                                (double)CONCAT44(param_4,param_3)) << 8 | uVar1 << 0xe) |
-         (uint)(uVar1 == 0);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_4 >> 0x10),
+                                  (ushort)((double)CONCAT44(param_2,param_1) <
+                                          (double)CONCAT44(param_4,param_3)) << 8 | uVar1 << 0xe) >>
+                        8),uVar1 == 0);
 }
 
 
 
-ushort islessgreaterl(float10 param_1,float10 param_2)
+undefined4 __regparm1 islessgreaterl(undefined4 param_1_00,longdouble param_1,longdouble param_2)
 
 {
-  return (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe |
-         (ushort)((param_1 == param_2) == 0);
+  return CONCAT31((int3)(CONCAT22((short)((uint)param_1_00 >> 0x10),
+                                  (ushort)(param_1 < param_2) << 8 |
+                                  (ushort)(param_1 == param_2) << 0xe) >> 8),
+                  (param_1 == param_2) == 0);
 }
 
 
@@ -2155,19 +2141,16 @@ ushort isunorderedf(float param_1,float param_2)
 
 
 
-uint isunordered(undefined4 param_1,undefined4 param_2,undefined4 param_3,uint param_4)
+ushort isunordered(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
 
 {
-  return param_4 & 0xffff0000 |
-         (uint)(ushort)((ushort)((double)CONCAT44(param_2,param_1) <
-                                (double)CONCAT44(param_4,param_3)) << 8 |
-                       (ushort)((double)CONCAT44(param_2,param_1) ==
-                               (double)CONCAT44(param_4,param_3)) << 0xe);
+  return (ushort)((double)CONCAT44(param_2,param_1) < (double)CONCAT44(param_4,param_3)) << 8 |
+         (ushort)((double)CONCAT44(param_2,param_1) == (double)CONCAT44(param_4,param_3)) << 0xe;
 }
 
 
 
-ushort isunorderedl(float10 param_1,float10 param_2)
+ushort isunorderedl(longdouble param_1,longdouble param_2)
 
 {
   return (ushort)(param_1 < param_2) << 8 | (ushort)(param_1 == param_2) << 0xe;
@@ -2178,11 +2161,11 @@ ushort isunorderedl(float10 param_1,float10 param_2)
 float acosf(float __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)__x;
-  fVar1 = (float10)fpatan(SQRT((float10)1 - fVar1 * fVar1),fVar1);
-  return (float)fVar1;
+  lVar1 = (longdouble)__x;
+  lVar1 = (longdouble)fpatan(SQRT((longdouble)1 - lVar1 * lVar1),lVar1);
+  return (float)lVar1;
 }
 
 
@@ -2190,21 +2173,21 @@ float acosf(float __x)
 double acos(double __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)__x;
-  fVar1 = (float10)fpatan(SQRT((float10)1 - fVar1 * fVar1),fVar1);
-  return (double)fVar1;
+  lVar1 = (longdouble)__x;
+  lVar1 = (longdouble)fpatan(SQRT((longdouble)1 - lVar1 * lVar1),lVar1);
+  return (double)lVar1;
 }
 
 
 
-unkbyte10 acosl(float10 param_1)
+unkbyte10 acosl(longdouble param_1)
 
 {
   unkbyte10 Var1;
   
-  Var1 = fpatan(SQRT((float10)1 - param_1 * param_1),param_1);
+  Var1 = fpatan(SQRT((longdouble)1 - param_1 * param_1),param_1);
   return Var1;
 }
 
@@ -2213,11 +2196,11 @@ unkbyte10 acosl(float10 param_1)
 float asinf(float __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)__x;
-  fVar1 = (float10)fpatan(fVar1,SQRT((float10)1 - fVar1 * fVar1));
-  return (float)fVar1;
+  lVar1 = (longdouble)__x;
+  lVar1 = (longdouble)fpatan(lVar1,SQRT((longdouble)1 - lVar1 * lVar1));
+  return (float)lVar1;
 }
 
 
@@ -2225,21 +2208,21 @@ float asinf(float __x)
 double asin(double __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)__x;
-  fVar1 = (float10)fpatan(fVar1,SQRT((float10)1 - fVar1 * fVar1));
-  return (double)fVar1;
+  lVar1 = (longdouble)__x;
+  lVar1 = (longdouble)fpatan(lVar1,SQRT((longdouble)1 - lVar1 * lVar1));
+  return (double)lVar1;
 }
 
 
 
-unkbyte10 asinl(float10 param_1)
+unkbyte10 asinl(longdouble param_1)
 
 {
   unkbyte10 Var1;
   
-  Var1 = fpatan(param_1,SQRT((float10)1 - param_1 * param_1));
+  Var1 = fpatan(param_1,SQRT((longdouble)1 - param_1 * param_1));
   return Var1;
 }
 
@@ -2248,10 +2231,10 @@ unkbyte10 asinl(float10 param_1)
 float atan2f(float __y,float __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fpatan((float10)__y,(float10)__x);
-  return (float)fVar1;
+  lVar1 = (longdouble)fpatan((longdouble)__y,(longdouble)__x);
+  return (float)lVar1;
 }
 
 
@@ -2259,10 +2242,10 @@ float atan2f(float __y,float __x)
 double atan2(double __y,double __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fpatan((float10)__y,(float10)__x);
-  return (double)fVar1;
+  lVar1 = (longdouble)fpatan((longdouble)__y,(longdouble)__x);
+  return (double)lVar1;
 }
 
 
@@ -2281,23 +2264,23 @@ unkbyte10 atan2l(unkbyte10 param_1,unkbyte10 param_2)
 float expf(float __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
     if (0.0 <= __x) {
-      fVar1 = (float10)__x;
+      lVar1 = (longdouble)__x;
     }
     else {
-      fVar1 = (float10)0;
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar1 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar1);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -2305,43 +2288,43 @@ float expf(float __x)
 double exp(double __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
     if (0.0 <= __x) {
-      fVar1 = (float10)__x;
+      lVar1 = (longdouble)__x;
     }
     else {
-      fVar1 = (float10)0;
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar1 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar1);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 expl(float10 param_1)
+longdouble expl(longdouble param_1)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)0;
-  if ((ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) == 0x500) {
-    if (param_1 < fVar1) {
-      param_1 = (float10)0;
+  lVar1 = (longdouble)0;
+  if ((ushort)((ushort)(param_1 != lVar1) << 10 | (ushort)(param_1 == lVar1) << 0xe) == 0x500) {
+    if (param_1 < lVar1) {
+      param_1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    param_1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar1 = ROUND(param_1 * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1(param_1 * (longdouble)1.442695040888963 - lVar1);
+    param_1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
   }
   return param_1;
 }
@@ -2351,23 +2334,24 @@ float10 expl(float10 param_1)
 float exp10f(float __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
     if (0.0 <= __x) {
-      fVar1 = (float10)__x;
+      lVar1 = (longdouble)__x;
     }
     else {
-      fVar1 = (float10)0;
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar2 = ROUND((longdouble)__x * (longdouble)3.321928094887362);
+    lVar1 = (longdouble)f2xm1((longdouble)__x * (longdouble)3.321928094887362 - lVar2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,lVar2);
+    ffree(lVar2);
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -2375,43 +2359,45 @@ float exp10f(float __x)
 double exp10(double __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
     if (0.0 <= __x) {
-      fVar1 = (float10)__x;
+      lVar1 = (longdouble)__x;
     }
     else {
-      fVar1 = (float10)0;
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar2 = ROUND((longdouble)__x * (longdouble)3.321928094887362);
+    lVar1 = (longdouble)f2xm1((longdouble)__x * (longdouble)3.321928094887362 - lVar2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,lVar2);
+    ffree(lVar2);
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 exp10l(float10 param_1)
+longdouble exp10l(longdouble param_1)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)0;
-  if ((ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) == 0x500) {
-    if (param_1 < fVar1) {
-      param_1 = (float10)0;
+  lVar1 = (longdouble)0;
+  if ((ushort)((ushort)(param_1 != lVar1) << 10 | (ushort)(param_1 == lVar1) << 0xe) == 0x500) {
+    if (param_1 < lVar1) {
+      param_1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    param_1 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar1 = ROUND(param_1 * (longdouble)3.321928094887362);
+    lVar2 = (longdouble)f2xm1(param_1 * (longdouble)3.321928094887362 - lVar1);
+    param_1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
+    ffree(lVar1);
   }
   return param_1;
 }
@@ -2444,7 +2430,7 @@ double fmod(double __x,double __y)
 
 
 
-float10 fmodl(float10 param_1,float10 param_2)
+longdouble fmodl(longdouble param_1,longdouble param_2)
 
 {
   ushort in_FPUStatusWord;
@@ -2476,8 +2462,6 @@ float hypotf(float __x,float __y)
 // WARNING: Removing unreachable block (ram,0x0804f113)
 // WARNING: Removing unreachable block (ram,0x0804f119)
 // WARNING: Removing unreachable block (ram,0x0804f129)
-// WARNING: Removing unreachable block (ram,0x0804f12d)
-// WARNING: Removing unreachable block (ram,0x0804f12f)
 // WARNING: Removing unreachable block (ram,0x0804f121)
 // WARNING: Removing unreachable block (ram,0x0804f123)
 
@@ -2497,7 +2481,7 @@ double hypot(double __x,double __y)
 // WARNING: Removing unreachable block (ram,0x0804f16f)
 // WARNING: Removing unreachable block (ram,0x0804f171)
 
-float10 hypotl(float10 param_1,float10 param_2)
+longdouble hypotl(longdouble param_1,longdouble param_2)
 
 {
   return SQRT(param_2 * param_2 + param_1 * param_1);
@@ -2521,10 +2505,10 @@ double log(double __x)
 
 
 
-float10 logl(float10 param_1)
+longdouble logl(longdouble param_1)
 
 {
-  return (float10)0.6931471805599453 * param_1;
+  return (longdouble)0.6931471805599453 * param_1;
 }
 
 
@@ -2545,10 +2529,10 @@ double log10(double __x)
 
 
 
-float10 log10l(float10 param_1)
+longdouble log10l(longdouble param_1)
 
 {
-  return (float10)0.3010299956639812 * param_1;
+  return (longdouble)0.3010299956639812 * param_1;
 }
 
 
@@ -2579,7 +2563,7 @@ double remainder(double __x,double __y)
 
 
 
-float10 remainderl(float10 param_1,float10 param_2)
+longdouble remainderl(longdouble param_1,longdouble param_2)
 
 {
   ushort in_FPUStatusWord;
@@ -2618,7 +2602,7 @@ double drem(double __x,double __y)
 
 
 
-float10 dreml(float10 param_1,float10 param_2)
+longdouble dreml(longdouble param_1,longdouble param_2)
 
 {
   ushort in_FPUStatusWord;
@@ -2647,7 +2631,7 @@ double sqrt(double __x)
 
 
 
-float10 sqrtl(float10 param_1)
+longdouble sqrtl(longdouble param_1)
 
 {
   return SQRT(param_1);
@@ -2658,10 +2642,10 @@ float10 sqrtl(float10 param_1)
 float atanf(float __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fpatan((float10)__x,(float10)1);
-  return (float)fVar1;
+  lVar1 = (longdouble)fpatan((longdouble)__x,(longdouble)1);
+  return (float)lVar1;
 }
 
 
@@ -2669,10 +2653,10 @@ float atanf(float __x)
 double atan(double __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fpatan((float10)__x,(float10)1);
-  return (double)fVar1;
+  lVar1 = (longdouble)fpatan((longdouble)__x,(longdouble)1);
+  return (double)lVar1;
 }
 
 
@@ -2682,7 +2666,7 @@ unkbyte10 atanl(unkbyte10 param_1)
 {
   unkbyte10 Var1;
   
-  Var1 = fpatan(param_1,(float10)1);
+  Var1 = fpatan(param_1,(longdouble)1);
   return Var1;
 }
 
@@ -2704,7 +2688,7 @@ double ceil(double __x)
 
 
 
-float10 ceill(float10 param_1)
+longdouble ceill(longdouble param_1)
 
 {
   return ROUND(param_1);
@@ -2728,7 +2712,6 @@ float copysignf(float __x,float __y)
 
 
 
-// WARNING: Could not reconcile some variable overlaps
 // WARNING: Restarted to delay deadcode elimination for space: stack
 
 double copysign(double __x,double __y)
@@ -2750,6 +2733,8 @@ double copysign(double __x,double __y)
 
 
 
+// WARNING: Restarted to delay deadcode elimination for space: stack
+
 unkbyte10 copysignl(unkbyte10 param_1)
 
 {
@@ -2762,18 +2747,18 @@ float cosf(float __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fcos((float10)__x);
+  lVar1 = (longdouble)fcos((longdouble)__x);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fcos(fVar1);
+    lVar1 = (longdouble)fcos(lVar1);
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -2782,38 +2767,38 @@ double cos(double __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fcos((float10)__x);
+  lVar1 = (longdouble)fcos((longdouble)__x);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fcos(fVar1);
+    lVar1 = (longdouble)fcos(lVar1);
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 cosl(unkbyte10 param_1)
+longdouble cosl(unkbyte10 param_1)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fcos(param_1);
+  lVar1 = (longdouble)fcos(param_1);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fcos(fVar1);
+    lVar1 = (longdouble)fcos(lVar1);
   }
-  return fVar1;
+  return lVar1;
 }
 
 
@@ -2822,18 +2807,18 @@ float sinf(float __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fsin((float10)__x);
+  lVar1 = (longdouble)fsin((longdouble)__x);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fsin(fVar1);
+    lVar1 = (longdouble)fsin(lVar1);
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -2842,184 +2827,173 @@ double sin(double __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fsin((float10)__x);
+  lVar1 = (longdouble)fsin((longdouble)__x);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fsin(fVar1);
+    lVar1 = (longdouble)fsin(lVar1);
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 sinl(unkbyte10 param_1)
+longdouble sinl(unkbyte10 param_1)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fsin(param_1);
+  lVar1 = (longdouble)fsin(param_1);
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar2 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar1 = fVar1 - (fVar1 / fVar2) * fVar2;
+      lVar1 = lVar1 - (lVar1 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fVar1 = (float10)fsin(fVar1);
+    lVar1 = (longdouble)fsin(lVar1);
   }
-  return fVar1;
+  return lVar1;
 }
 
 
-
-// WARNING: Control flow encountered bad instruction data
 
 float tanf(float __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fptan((float10)__x);
-  fVar2 = (float10)1;
+  lVar1 = (longdouble)fptan((longdouble)__x);
+  lVar2 = (longdouble)1;
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar1 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar1 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar2 = fVar2 - (fVar2 / fVar1) * fVar1;
+      lVar2 = lVar2 - (lVar2 / lVar1) * lVar1;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fptan(fVar2);
+    lVar1 = (longdouble)fptan(lVar2);
   }
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  ffree((longdouble)1);
+  return (float)lVar1;
 }
 
 
-
-// WARNING: Control flow encountered bad instruction data
 
 double tan(double __x)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fptan((float10)__x);
-  fVar2 = (float10)1;
+  lVar1 = (longdouble)fptan((longdouble)__x);
+  lVar2 = (longdouble)1;
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar1 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar1 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar2 = fVar2 - (fVar2 / fVar1) * fVar1;
+      lVar2 = lVar2 - (lVar2 / lVar1) * lVar1;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fptan(fVar2);
+    lVar1 = (longdouble)fptan(lVar2);
   }
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  ffree((longdouble)1);
+  return (double)lVar1;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-void tanl(unkbyte10 param_1)
+unkbyte10 tanl(unkbyte10 param_1)
 
 {
   ushort in_FPUStatusWord;
-  float10 fVar1;
-  float10 fVar2;
+  unkbyte10 Var1;
+  longdouble lVar2;
+  longdouble lVar3;
   
-  fptan(param_1);
-  fVar2 = (float10)1;
+  Var1 = fptan(param_1);
+  lVar3 = (longdouble)1;
   if ((in_FPUStatusWord & 0x400) != 0) {
-    fVar1 = (float10)3.141592653589793 + (float10)3.141592653589793;
+    lVar2 = (longdouble)3.141592653589793 + (longdouble)3.141592653589793;
     do {
-      fVar2 = fVar2 - (fVar2 / fVar1) * fVar1;
+      lVar3 = lVar3 - (lVar3 / lVar2) * lVar2;
     } while ((in_FPUStatusWord & 0x400) != 0);
-    fptan(fVar2);
+    Var1 = fptan(lVar3);
   }
-                    // WARNING: Bad instruction - Truncating control flow here
-  halt_baddata();
+  ffree((longdouble)1);
+  return Var1;
 }
 
 
-
-// WARNING: Control flow encountered bad instruction data
 
 float exp2f(float __x)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)__x;
-  fVar2 = (float10)0;
-  if ((char)((uint)(ushort)((ushort)(fVar1 != fVar2) << 10 | (ushort)(fVar1 == fVar2) << 0xe) >> 8)
-      == '\x05') {
-    if (fVar1 < fVar2) {
-                    // WARNING: Bad instruction - Truncating control flow here
-      halt_baddata();
+  lVar1 = (longdouble)__x;
+  lVar2 = (longdouble)0;
+  if ((byte)((byte)((ushort)((ushort)(lVar1 != lVar2) << 10) >> 8) |
+            (byte)((ushort)((ushort)(lVar1 == lVar2) << 0xe) >> 8)) == 5) {
+    if (lVar1 < lVar2) {
+      ffree(lVar1);
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar2 = (float10)f2xm1(fVar1 - ROUND(fVar1));
-    fVar1 = (float10)fscale((float10)1 + fVar2,ROUND(fVar1));
+    lVar2 = (longdouble)f2xm1(lVar1 - ROUND(lVar1));
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,ROUND(lVar1));
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
-
-// WARNING: Control flow encountered bad instruction data
 
 double exp2(double __x)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)__x;
-  fVar2 = (float10)0;
-  if ((char)((uint)(ushort)((ushort)(fVar1 != fVar2) << 10 | (ushort)(fVar1 == fVar2) << 0xe) >> 8)
-      == '\x05') {
-    if (fVar1 < fVar2) {
-                    // WARNING: Bad instruction - Truncating control flow here
-      halt_baddata();
+  lVar1 = (longdouble)__x;
+  lVar2 = (longdouble)0;
+  if ((byte)((byte)((ushort)((ushort)(lVar1 != lVar2) << 10) >> 8) |
+            (byte)((ushort)((ushort)(lVar1 == lVar2) << 0xe) >> 8)) == 5) {
+    if (lVar1 < lVar2) {
+      ffree(lVar1);
+      lVar1 = (longdouble)0;
     }
   }
   else {
-    fVar2 = (float10)f2xm1(fVar1 - ROUND(fVar1));
-    fVar1 = (float10)fscale((float10)1 + fVar2,ROUND(fVar1));
+    lVar2 = (longdouble)f2xm1(lVar1 - ROUND(lVar1));
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,ROUND(lVar1));
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-float10 exp2l(float10 param_1)
+longdouble exp2l(longdouble param_1)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)0;
-  if ((char)((uint)(ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) >>
-            8) == '\x05') {
-    if (param_1 < fVar1) {
-                    // WARNING: Bad instruction - Truncating control flow here
-      halt_baddata();
+  lVar1 = (longdouble)0;
+  if ((byte)((byte)((ushort)((ushort)(param_1 != lVar1) << 10) >> 8) |
+            (byte)((ushort)((ushort)(param_1 == lVar1) << 0xe) >> 8)) == 5) {
+    if (param_1 < lVar1) {
+      ffree(param_1);
+      param_1 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(param_1 - ROUND(param_1));
-    param_1 = (float10)fscale((float10)1 + fVar1,ROUND(param_1));
+    lVar1 = (longdouble)f2xm1(param_1 - ROUND(param_1));
+    param_1 = (longdouble)fscale((longdouble)1 + lVar1,ROUND(param_1));
   }
   return param_1;
 }
@@ -3042,7 +3016,7 @@ double fdim(double __x,double __y)
 
 
 
-float10 fdiml(float10 param_1,float10 param_2)
+longdouble fdiml(longdouble param_1,longdouble param_2)
 
 {
   return ABS(param_2 - param_1);
@@ -3066,7 +3040,7 @@ double floor(double __x)
 
 
 
-float10 floorl(float10 param_1)
+longdouble floorl(longdouble param_1)
 
 {
   return ROUND(param_1);
@@ -3090,7 +3064,7 @@ double fma(double __x,double __y,double __z)
 
 
 
-float10 fmal(float10 param_1,float10 param_2,float10 param_3)
+longdouble fmal(longdouble param_1,longdouble param_2,longdouble param_3)
 
 {
   return param_3 + param_2 * param_1;
@@ -3113,8 +3087,8 @@ float fmaxf(float __x,float __y)
 double fmax(double __x,double __y)
 
 {
-  if (((char)((uint)(ushort)((ushort)(__y != 0.0) << 10 | (ushort)(__y == 0.0) << 0xe) >> 8) !=
-       '\x01') && (__x < __y)) {
+  if (((byte)((byte)((ushort)((ushort)(__y != 0.0) << 10) >> 8) |
+             (byte)((ushort)((ushort)(__y == 0.0) << 0xe) >> 8)) != 1) && (__x < __y)) {
     __x = __y;
   }
   return __x;
@@ -3145,8 +3119,8 @@ float fminf(float __x,float __y)
 double fmin(double __x,double __y)
 
 {
-  if (((char)((uint)(ushort)((ushort)(__y != 0.0) << 10 | (ushort)(__y == 0.0) << 0xe) >> 8) ==
-       '\x01') || (__x <= __y)) {
+  if (((byte)((byte)((ushort)((ushort)(__y != 0.0) << 10) >> 8) |
+             (byte)((ushort)((ushort)(__y == 0.0) << 0xe) >> 8)) == 1) || (__x <= __y)) {
     __y = __x;
   }
   return __y;
@@ -3165,17 +3139,17 @@ void fminl(void)
 float frexpf(float __x,int *__exponent)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
   *__exponent = 0;
-  fVar1 = (float10)__x;
-  if ((char)((uint)(ushort)((ushort)(fVar1 < (float10)0) << 8 | (ushort)(fVar1 == (float10)0) << 0xe
-                           ) >> 8) != '@') {
-    *__exponent = (int)ROUND(fVar1);
-    fVar1 = (float10)fscale(fVar1,-(float10)1);
+  lVar1 = (longdouble)__x;
+  if ((byte)(lVar1 < (longdouble)0 | (byte)((ushort)((ushort)(lVar1 == (longdouble)0) << 0xe) >> 8))
+      != 0x40) {
+    *__exponent = (int)ROUND(lVar1);
+    lVar1 = (longdouble)fscale(lVar1,-(longdouble)1);
     *__exponent = *__exponent + 1;
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -3183,29 +3157,29 @@ float frexpf(float __x,int *__exponent)
 double frexp(double __x,int *__exponent)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
   *__exponent = 0;
-  fVar1 = (float10)__x;
-  if ((char)((uint)(ushort)((ushort)(fVar1 < (float10)0) << 8 | (ushort)(fVar1 == (float10)0) << 0xe
-                           ) >> 8) != '@') {
-    *__exponent = (int)ROUND(fVar1);
-    fVar1 = (float10)fscale(fVar1,-(float10)1);
+  lVar1 = (longdouble)__x;
+  if ((byte)(lVar1 < (longdouble)0 | (byte)((ushort)((ushort)(lVar1 == (longdouble)0) << 0xe) >> 8))
+      != 0x40) {
+    *__exponent = (int)ROUND(lVar1);
+    lVar1 = (longdouble)fscale(lVar1,-(longdouble)1);
     *__exponent = *__exponent + 1;
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 frexpl(float10 param_1,int *param_2)
+longdouble frexpl(longdouble param_1,int *param_2)
 
 {
   *param_2 = 0;
-  if ((char)((uint)(ushort)((ushort)(param_1 < (float10)0) << 8 |
-                           (ushort)(param_1 == (float10)0) << 0xe) >> 8) != '@') {
+  if ((byte)(param_1 < (longdouble)0 |
+            (byte)((ushort)((ushort)(param_1 == (longdouble)0) << 0xe) >> 8)) != 0x40) {
     *param_2 = (int)ROUND(param_1);
-    param_1 = (float10)fscale(param_1,-(float10)1);
+    param_1 = (longdouble)fscale(param_1,-(longdouble)1);
     *param_2 = *param_2 + 1;
   }
   return param_1;
@@ -3229,7 +3203,7 @@ int ilogb(double __x)
 
 
 
-int ilogbl(float10 param_1)
+int ilogbl(longdouble param_1)
 
 {
   return (int)ROUND(param_1);
@@ -3253,7 +3227,7 @@ longlong llrint(double __x)
 
 
 
-longlong llrintl(float10 param_1)
+longlong llrintl(longdouble param_1)
 
 {
   return (longlong)ROUND(param_1);
@@ -3277,10 +3251,10 @@ double log1p(double __x)
 
 
 
-float10 log1pl(float10 param_1)
+longdouble log1pl(longdouble param_1)
 
 {
-  return (float10)0.6931471805599453 * ((float10)1 + param_1);
+  return (longdouble)0.6931471805599453 * ((longdouble)1 + param_1);
 }
 
 
@@ -3301,10 +3275,10 @@ double log2(double __x)
 
 
 
-float10 log2l(float10 param_1)
+longdouble log2l(longdouble param_1)
 
 {
-  return (float10)1 * param_1;
+  return (longdouble)1 * param_1;
 }
 
 
@@ -3349,7 +3323,7 @@ long lrint(double __x)
 
 
 
-int lrintl(float10 param_1)
+int lrintl(longdouble param_1)
 
 {
   return (int)ROUND(param_1);
@@ -3373,7 +3347,7 @@ double rint(double __x)
 
 
 
-float10 rintl(float10 param_1)
+longdouble rintl(longdouble param_1)
 
 {
   return ROUND(param_1);
@@ -3384,10 +3358,10 @@ float10 rintl(float10 param_1)
 float scalbnf(float __x,int __n)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fscale((float10)__x,(float10)__n);
-  return (float)fVar1;
+  lVar1 = (longdouble)fscale((longdouble)__x,(longdouble)__n);
+  return (float)lVar1;
 }
 
 
@@ -3395,10 +3369,10 @@ float scalbnf(float __x,int __n)
 double scalbn(double __x,int __n)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fscale((float10)__x,(float10)__n);
-  return (double)fVar1;
+  lVar1 = (longdouble)fscale((longdouble)__x,(longdouble)__n);
+  return (double)lVar1;
 }
 
 
@@ -3408,7 +3382,7 @@ unkbyte10 scalbnl(unkbyte10 param_1,int param_2)
 {
   unkbyte10 Var1;
   
-  Var1 = fscale(param_1,(float10)param_2);
+  Var1 = fscale(param_1,(longdouble)param_2);
   return Var1;
 }
 
@@ -3417,10 +3391,10 @@ unkbyte10 scalbnl(unkbyte10 param_1,int param_2)
 float ldexpf(float __x,int __exponent)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fscale((float10)__x,(float10)__exponent);
-  return (float)fVar1;
+  lVar1 = (longdouble)fscale((longdouble)__x,(longdouble)__exponent);
+  return (float)lVar1;
 }
 
 
@@ -3428,10 +3402,10 @@ float ldexpf(float __x,int __exponent)
 double ldexp(double __x,int __exponent)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   
-  fVar1 = (float10)fscale((float10)__x,(float10)__exponent);
-  return (double)fVar1;
+  lVar1 = (longdouble)fscale((longdouble)__x,(longdouble)__exponent);
+  return (double)lVar1;
 }
 
 
@@ -3441,7 +3415,7 @@ unkbyte10 ldexpl(unkbyte10 param_1,int param_2)
 {
   unkbyte10 Var1;
   
-  Var1 = fscale(param_1,(float10)param_2);
+  Var1 = fscale(param_1,(longdouble)param_2);
   return Var1;
 }
 
@@ -3474,13 +3448,13 @@ unkbyte10 significandl(unkbyte10 param_1)
 void sincosf(float __x,float *__sinx,float *__cosx)
 
 {
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fcos((float10)__x);
-  fVar2 = (float10)fsin((float10)__x);
-  *__cosx = (float)fVar1;
-  *__sinx = (float)fVar2;
+  lVar1 = (longdouble)fcos((longdouble)__x);
+  lVar2 = (longdouble)fsin((longdouble)__x);
+  *__cosx = (float)lVar1;
+  *__sinx = (float)lVar2;
   return;
 }
 
@@ -3489,21 +3463,13 @@ void sincosf(float __x,float *__sinx,float *__cosx)
 void sincos(double __x,double *__sinx,double *__cosx)
 
 {
-  float10 fVar1;
-  float10 fVar2;
-  undefined4 local_1c;
-  undefined4 uStack24;
+  longdouble lVar1;
+  longdouble lVar2;
   
-  fVar1 = (float10)fcos((float10)__x);
-  fVar2 = (float10)fsin((float10)__x);
-  local_1c = SUB84((double)fVar1,0);
-  uStack24 = (undefined4)((ulonglong)(double)fVar1 >> 0x20);
-  *(undefined4 *)__cosx = local_1c;
-  *(undefined4 *)((int)__cosx + 4) = uStack24;
-  local_1c = SUB84((double)fVar2,0);
-  uStack24 = (undefined4)((ulonglong)(double)fVar2 >> 0x20);
-  *(undefined4 *)__sinx = local_1c;
-  *(undefined4 *)((int)__sinx + 4) = uStack24;
+  lVar1 = (longdouble)fcos((longdouble)__x);
+  lVar2 = (longdouble)fsin((longdouble)__x);
+  *__cosx = (double)lVar1;
+  *__sinx = (double)lVar2;
   return;
 }
 
@@ -3540,7 +3506,7 @@ double trunc(double __x)
 
 
 
-float10 truncl(float10 param_1)
+longdouble truncl(longdouble param_1)
 
 {
   return ROUND(param_1);
@@ -3564,7 +3530,7 @@ double fabs(double __x)
 
 
 
-float10 fabsl(float10 param_1)
+longdouble fabsl(longdouble param_1)
 
 {
   return ABS(param_1);
@@ -3572,10 +3538,10 @@ float10 fabsl(float10 param_1)
 
 
 
-float10 frac(void)
+longdouble frac(void)
 
 {
-  float10 in_ST0;
+  longdouble in_ST0;
   
   return in_ST0 - ROUND(in_ST0);
 }
@@ -3586,12 +3552,12 @@ unkbyte10 Lpow2(void)
 
 {
   unkbyte10 Var1;
-  float10 fVar2;
+  longdouble lVar2;
   unkbyte10 extraout_ST1;
   
   Var1 = frac();
-  fVar2 = (float10)f2xm1(Var1);
-  Var1 = fscale((float10)1 + fVar2,extraout_ST1);
+  lVar2 = (longdouble)f2xm1(Var1);
+  Var1 = fscale((longdouble)1 + lVar2,extraout_ST1);
   return Var1;
 }
 
@@ -3600,53 +3566,52 @@ unkbyte10 Lpow2(void)
 float powf(float __x,float __y)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
+  longdouble in_ST0;
+  longdouble lVar1;
   unkbyte10 Var2;
   unkbyte10 extraout_ST1;
-  float10 extraout_ST1_00;
+  longdouble extraout_ST1_00;
   
   if (((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) ||
-     ((char)((uint)(ushort)((ushort)(__x < 1.0) << 8 | (ushort)(__x == 1.0) << 0xe) >> 8) == '@')) {
-    fVar1 = (float10)__x;
+     ((byte)(__x < 1.0 | (byte)((ushort)((ushort)(__x == 1.0) << 0xe) >> 8)) == 0x40)) {
+    lVar1 = (longdouble)__x;
   }
-  else if ((char)((uint)(ushort)((ushort)(__x < 10.0) << 8 | (ushort)(__x == 10.0) << 0xe) >> 8) ==
-           '@') {
+  else if ((byte)(__x < 10.0 | (byte)((ushort)((ushort)(__x == 10.0) << 0xe) >> 8)) == 0x40) {
     Var2 = frac();
-    fVar1 = (float10)f2xm1(Var2);
-    fVar1 = (float10)fscale((float10)1 + fVar1,extraout_ST1);
+    lVar1 = (longdouble)f2xm1(Var2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,extraout_ST1);
   }
   else {
-    fVar1 = (float10)__y;
+    lVar1 = (longdouble)__y;
     if (__x <= 0.0) {
       if (__x < 0.0) {
-        fVar1 = (float10)frac();
-        if (fVar1 == (float10)0) {
-          fVar1 = (float10)Lpow2();
+        lVar1 = (longdouble)frac();
+        if (lVar1 == (longdouble)0) {
+          lVar1 = (longdouble)Lpow2();
           if (((int)ROUND(extraout_ST1_00) & 1U) != 0) {
-            fVar1 = -fVar1;
+            lVar1 = -lVar1;
           }
           goto LAB_0804fe0d;
         }
-        fVar1 = -in_ST0;
+        lVar1 = -in_ST0;
       }
       else {
-        if ((float10)0 < fVar1) {
-          fVar1 = (float10)0;
+        if ((longdouble)0 < lVar1) {
+          lVar1 = (longdouble)0;
           goto LAB_0804fe0d;
         }
-        if ((float10)0 <= fVar1) {
-          fVar1 = -(float10)1;
+        if ((longdouble)0 <= lVar1) {
+          lVar1 = -(longdouble)1;
         }
       }
-      fVar1 = SQRT(fVar1);
+      lVar1 = SQRT(lVar1);
     }
     else {
-      fVar1 = (float10)Lpow2();
+      lVar1 = (longdouble)Lpow2();
     }
   }
 LAB_0804fe0d:
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -3654,102 +3619,101 @@ LAB_0804fe0d:
 double pow(double __x,double __y)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
+  longdouble in_ST0;
+  longdouble lVar1;
   unkbyte10 Var2;
   unkbyte10 extraout_ST1;
-  float10 extraout_ST1_00;
+  longdouble extraout_ST1_00;
   
   if (((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) ||
-     ((char)((uint)(ushort)((ushort)(__x < 1.0) << 8 | (ushort)(__x == 1.0) << 0xe) >> 8) == '@')) {
-    fVar1 = (float10)__x;
+     ((byte)(__x < 1.0 | (byte)((ushort)((ushort)(__x == 1.0) << 0xe) >> 8)) == 0x40)) {
+    lVar1 = (longdouble)__x;
   }
-  else if ((char)((uint)(ushort)((ushort)(__x < 10.0) << 8 | (ushort)(__x == 10.0) << 0xe) >> 8) ==
-           '@') {
+  else if ((byte)(__x < 10.0 | (byte)((ushort)((ushort)(__x == 10.0) << 0xe) >> 8)) == 0x40) {
     Var2 = frac();
-    fVar1 = (float10)f2xm1(Var2);
-    fVar1 = (float10)fscale((float10)1 + fVar1,extraout_ST1);
+    lVar1 = (longdouble)f2xm1(Var2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,extraout_ST1);
   }
   else {
-    fVar1 = (float10)__y;
+    lVar1 = (longdouble)__y;
     if (__x <= 0.0) {
       if (__x < 0.0) {
-        fVar1 = (float10)frac();
-        if (fVar1 == (float10)0) {
-          fVar1 = (float10)Lpow2();
+        lVar1 = (longdouble)frac();
+        if (lVar1 == (longdouble)0) {
+          lVar1 = (longdouble)Lpow2();
           if (((int)ROUND(extraout_ST1_00) & 1U) != 0) {
-            fVar1 = -fVar1;
+            lVar1 = -lVar1;
           }
           goto LAB_0804feef;
         }
-        fVar1 = -in_ST0;
+        lVar1 = -in_ST0;
       }
       else {
-        if ((float10)0 < fVar1) {
-          fVar1 = (float10)0;
+        if ((longdouble)0 < lVar1) {
+          lVar1 = (longdouble)0;
           goto LAB_0804feef;
         }
-        if ((float10)0 <= fVar1) {
-          fVar1 = -(float10)1;
+        if ((longdouble)0 <= lVar1) {
+          lVar1 = -(longdouble)1;
         }
       }
-      fVar1 = SQRT(fVar1);
+      lVar1 = SQRT(lVar1);
     }
     else {
-      fVar1 = (float10)Lpow2();
+      lVar1 = (longdouble)Lpow2();
     }
   }
 LAB_0804feef:
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 powl(float10 param_1,float10 param_2)
+longdouble powl(longdouble param_1,longdouble param_2)
 
 {
-  float10 in_ST0;
+  longdouble in_ST0;
   unkbyte10 Var1;
-  float10 fVar2;
+  longdouble lVar2;
   unkbyte10 extraout_ST1;
-  float10 extraout_ST1_00;
+  longdouble extraout_ST1_00;
   
-  if (((ushort)((ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe) !=
-       0x500) &&
-     ((char)((uint)(ushort)((ushort)(param_1 < (float10)1) << 8 |
-                           (ushort)(param_1 == (float10)1) << 0xe) >> 8) != '@')) {
-    if ((char)((uint)(ushort)((ushort)(param_1 < _DAT_08052660) << 8 |
-                             (ushort)(param_1 == _DAT_08052660) << 0xe) >> 8) == '@') {
+  if (((ushort)((ushort)(param_1 != (longdouble)0) << 10 | (ushort)(param_1 == (longdouble)0) << 0xe
+               ) != 0x500) &&
+     ((byte)(param_1 < (longdouble)1 |
+            (byte)((ushort)((ushort)(param_1 == (longdouble)1) << 0xe) >> 8)) != 0x40)) {
+    if ((byte)(param_1 < _DAT_08052660 |
+              (byte)((ushort)((ushort)(param_1 == _DAT_08052660) << 0xe) >> 8)) == 0x40) {
       Var1 = frac();
-      fVar2 = (float10)f2xm1(Var1);
-      param_1 = (float10)fscale((float10)1 + fVar2,extraout_ST1);
+      lVar2 = (longdouble)f2xm1(Var1);
+      param_1 = (longdouble)fscale((longdouble)1 + lVar2,extraout_ST1);
     }
-    else if (param_1 <= (float10)0) {
-      if (param_1 < (float10)0) {
-        fVar2 = (float10)frac();
-        if (fVar2 == (float10)0) {
-          fVar2 = (float10)Lpow2();
+    else if (param_1 <= (longdouble)0) {
+      if (param_1 < (longdouble)0) {
+        lVar2 = (longdouble)frac();
+        if (lVar2 == (longdouble)0) {
+          lVar2 = (longdouble)Lpow2();
           if (((int)ROUND(extraout_ST1_00) & 1U) == 0) {
-            return fVar2;
+            return lVar2;
           }
-          return -fVar2;
+          return -lVar2;
         }
         param_2 = -in_ST0;
       }
       else {
-        if ((float10)0 < param_2) {
-          return (float10)0;
+        if ((longdouble)0 < param_2) {
+          return (longdouble)0;
         }
-        if ((float10)0 <= param_2) {
-          param_2 = -(float10)1;
+        if ((longdouble)0 <= param_2) {
+          param_2 = -(longdouble)1;
         }
       }
       param_1 = SQRT(param_2);
     }
     else {
-      param_1 = (float10)Lpow2();
+      param_1 = (longdouble)Lpow2();
     }
   }
                     // WARNING: Read-only address (ram,0x08052660) is written
@@ -3761,19 +3725,19 @@ float10 powl(float10 param_1,float10 param_2)
 float pow10f(float __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   unkbyte10 Var2;
   unkbyte10 extraout_ST1;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
-    fVar1 = (float10)__x;
+    lVar1 = (longdouble)__x;
   }
   else {
     Var2 = frac();
-    fVar1 = (float10)f2xm1(Var2);
-    fVar1 = (float10)fscale((float10)1 + fVar1,extraout_ST1);
+    lVar1 = (longdouble)f2xm1(Var2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,extraout_ST1);
   }
-  return (float)fVar1;
+  return (float)lVar1;
 }
 
 
@@ -3781,35 +3745,35 @@ float pow10f(float __x)
 double pow10(double __x)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   unkbyte10 Var2;
   unkbyte10 extraout_ST1;
   
   if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
-    fVar1 = (float10)__x;
+    lVar1 = (longdouble)__x;
   }
   else {
     Var2 = frac();
-    fVar1 = (float10)f2xm1(Var2);
-    fVar1 = (float10)fscale((float10)1 + fVar1,extraout_ST1);
+    lVar1 = (longdouble)f2xm1(Var2);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar1,extraout_ST1);
   }
-  return (double)fVar1;
+  return (double)lVar1;
 }
 
 
 
-float10 pow10l(float10 param_1)
+longdouble pow10l(longdouble param_1)
 
 {
   unkbyte10 Var1;
-  float10 fVar2;
+  longdouble lVar2;
   unkbyte10 extraout_ST1;
   
-  if ((ushort)((ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe) !=
-      0x500) {
+  if ((ushort)((ushort)(param_1 != (longdouble)0) << 10 | (ushort)(param_1 == (longdouble)0) << 0xe)
+      != 0x500) {
     Var1 = frac();
-    fVar2 = (float10)f2xm1(Var1);
-    param_1 = (float10)fscale((float10)1 + fVar2,extraout_ST1);
+    lVar2 = (longdouble)f2xm1(Var1);
+    param_1 = (longdouble)fscale((longdouble)1 + lVar2,extraout_ST1);
   }
   return param_1;
 }
@@ -3860,37 +3824,37 @@ unkbyte10 cbrtl(undefined4 param_1,undefined4 param_2,undefined4 param_3)
 
 {
   unkbyte10 Var1;
-  float10 fVar2;
+  longdouble lVar2;
   undefined4 local_14;
-  undefined4 uStack16;
-  undefined2 uStack12;
-  undefined2 uStack10;
+  undefined4 uStack_10;
+  undefined2 uStack_c;
+  undefined2 uStack_a;
   
-  fVar2 = (float10)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1));
+  lVar2 = (longdouble)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1));
   local_14 = param_1;
-  uStack16 = param_2;
-  uStack12 = (undefined2)param_3;
-  if ((ushort)((ushort)(fVar2 != (float10)0) << 10 | (ushort)(fVar2 == (float10)0) << 0xe) != 0x500)
-  {
-    if ((float10)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1)) < (float10)0) {
-      fVar2 = -(float10)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1));
-      local_14 = SUB104(fVar2,0);
-      uStack16 = (undefined4)((unkuint10)fVar2 >> 0x20);
-      uStack12 = (undefined2)((unkuint10)fVar2 >> 0x40);
-      fVar2 = (float10)powl(local_14,uStack16,CONCAT22(uStack10,uStack12),_DAT_08052680);
-      fVar2 = -fVar2;
-      local_14 = SUB104(fVar2,0);
-      uStack16 = (undefined4)((unkuint10)fVar2 >> 0x20);
-      uStack12 = (undefined2)((unkuint10)fVar2 >> 0x40);
+  uStack_10 = param_2;
+  uStack_c = (undefined2)param_3;
+  if ((ushort)((ushort)(lVar2 != (longdouble)0) << 10 | (ushort)(lVar2 == (longdouble)0) << 0xe) !=
+      0x500) {
+    if ((longdouble)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1)) < (longdouble)0) {
+      lVar2 = -(longdouble)CONCAT28((undefined2)param_3,CONCAT44(param_2,param_1));
+      local_14 = SUB104(lVar2,0);
+      uStack_10 = (undefined4)((unkuint10)lVar2 >> 0x20);
+      uStack_c = (undefined2)((unkuint10)lVar2 >> 0x40);
+      lVar2 = (longdouble)powl(local_14,uStack_10,CONCAT22(uStack_a,uStack_c),_DAT_08052680);
+      lVar2 = -lVar2;
+      local_14 = SUB104(lVar2,0);
+      uStack_10 = (undefined4)((unkuint10)lVar2 >> 0x20);
+      uStack_c = (undefined2)((unkuint10)lVar2 >> 0x40);
     }
     else {
       Var1 = powl(param_1,param_2,param_3,_DAT_08052680);
       local_14 = (undefined4)Var1;
-      uStack16 = (undefined4)((unkuint10)Var1 >> 0x20);
-      uStack12 = (undefined2)((unkuint10)Var1 >> 0x40);
+      uStack_10 = (undefined4)((unkuint10)Var1 >> 0x20);
+      uStack_c = (undefined2)((unkuint10)Var1 >> 0x40);
     }
   }
-  return CONCAT28(uStack12,CONCAT44(uStack16,local_14));
+  return CONCAT28(uStack_c,CONCAT44(uStack_10,local_14));
 }
 
 
@@ -3911,10 +3875,10 @@ double acosh(double __x)
 
 
 
-float10 acoshl(float10 param_1)
+longdouble acoshl(longdouble param_1)
 
 {
-  return (float10)0.6931471805599453 * (SQRT(param_1 * param_1 - (float10)1) + param_1);
+  return (longdouble)0.6931471805599453 * (SQRT(param_1 * param_1 - (longdouble)1) + param_1);
 }
 
 
@@ -3926,11 +3890,11 @@ float asinhf(float __x)
   float local_8;
   
   fVar1 = SQRT(__x * __x + 1.0);
-  if ((byte)(__x < 0.0 | (byte)((ushort)((ushort)(__x == 0.0) << 0xe) >> 8)) == 0) {
-    local_8 = (__x + fVar1) * 0.6931472;
+  if (__x <= 0.0) {
+    local_8 = -((fVar1 - __x) * 0.6931472);
   }
   else {
-    local_8 = -((fVar1 - __x) * 0.6931472);
+    local_8 = (__x + fVar1) * 0.6931472;
   }
   return local_8;
 }
@@ -3944,46 +3908,45 @@ double asinh(double __x)
   double local_c;
   
   dVar1 = SQRT(__x * __x + 1.0);
-  if ((char)((uint)(ushort)((ushort)(__x < 0.0) << 8 | (ushort)(__x == 0.0) << 0xe) >> 8) == '\0') {
-    local_c = (__x + dVar1) * 0.6931471805599453;
+  if (__x <= 0.0) {
+    local_c = -((dVar1 - __x) * 0.6931471805599453);
   }
   else {
-    local_c = -((dVar1 - __x) * 0.6931471805599453);
+    local_c = (__x + dVar1) * 0.6931471805599453;
   }
   return local_c;
 }
 
 
 
-unkbyte10 asinhl(float10 param_1)
+unkbyte10 asinhl(longdouble param_1)
 
 {
-  float10 fVar1;
+  longdouble lVar1;
   undefined4 local_20;
-  undefined4 uStack28;
-  undefined2 uStack24;
+  undefined4 uStack_1c;
+  undefined2 uStack_18;
   undefined4 local_10;
-  undefined4 uStack12;
-  undefined2 uStack8;
+  undefined4 uStack_c;
+  undefined2 uStack_8;
   
-  fVar1 = SQRT((float10)1 + param_1 * param_1);
-  if ((char)((uint)(ushort)((ushort)(param_1 < (float10)0) << 8 |
-                           (ushort)(param_1 == (float10)0) << 0xe) >> 8) == '\0') {
-    fVar1 = (float10)0.6931471805599453 * (fVar1 + param_1);
-    local_10 = SUB104(fVar1,0);
-    uStack12 = (undefined4)((unkuint10)fVar1 >> 0x20);
-    uStack8 = (undefined2)((unkuint10)fVar1 >> 0x40);
+  lVar1 = SQRT((longdouble)1 + param_1 * param_1);
+  if (param_1 <= (longdouble)0) {
+    lVar1 = -((longdouble)0.6931471805599453 * (lVar1 - param_1));
+    local_20 = SUB104(lVar1,0);
+    uStack_1c = (undefined4)((unkuint10)lVar1 >> 0x20);
+    uStack_18 = (undefined2)((unkuint10)lVar1 >> 0x40);
+    local_10 = local_20;
+    uStack_c = uStack_1c;
+    uStack_8 = uStack_18;
   }
   else {
-    fVar1 = -((float10)0.6931471805599453 * (fVar1 - param_1));
-    local_20 = SUB104(fVar1,0);
-    uStack28 = (undefined4)((unkuint10)fVar1 >> 0x20);
-    uStack24 = (undefined2)((unkuint10)fVar1 >> 0x40);
-    local_10 = local_20;
-    uStack12 = uStack28;
-    uStack8 = uStack24;
+    lVar1 = (longdouble)0.6931471805599453 * (lVar1 + param_1);
+    local_10 = SUB104(lVar1,0);
+    uStack_c = (undefined4)((unkuint10)lVar1 >> 0x20);
+    uStack_8 = (undefined2)((unkuint10)lVar1 >> 0x40);
   }
-  return CONCAT28(uStack8,CONCAT44(uStack12,local_10));
+  return CONCAT28(uStack_8,CONCAT44(uStack_c,local_10));
 }
 
 
@@ -4006,11 +3969,11 @@ double atanh(double __x)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 atanhl(float10 param_1)
+longdouble atanhl(longdouble param_1)
 
 {
-  return ((float10)0.6931471805599453 * (((float10)1 + param_1) / ((float10)1 - param_1))) /
-         _DAT_080526a0;
+  return ((longdouble)0.6931471805599453 * (((longdouble)1 + param_1) / ((longdouble)1 - param_1)))
+         / _DAT_080526a0;
 }
 
 
@@ -4018,9 +3981,8 @@ float10 atanhl(float10 param_1)
 float coshf(float __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   float local_10;
   
   local_10 = ABS(__x);
@@ -4030,9 +3992,10 @@ float coshf(float __x)
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
-    local_10 = (float)fVar1;
+    lVar1 = ROUND((longdouble)local_10 * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1((longdouble)local_10 * (longdouble)1.442695040888963 - lVar1);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
+    local_10 = (float)lVar1;
   }
   return (1.0 / local_10 + local_10) / 2.0;
 }
@@ -4042,9 +4005,8 @@ float coshf(float __x)
 double cosh(double __x)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
+  longdouble lVar1;
+  longdouble lVar2;
   double local_14;
   
   local_14 = ABS(__x);
@@ -4054,9 +4016,10 @@ double cosh(double __x)
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    fVar1 = (float10)fscale((float10)1 + fVar1,in_ST1);
-    local_14 = (double)fVar1;
+    lVar1 = ROUND((longdouble)local_14 * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1((longdouble)local_14 * (longdouble)1.442695040888963 - lVar1);
+    lVar1 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
+    local_14 = (double)lVar1;
   }
   return (1.0 / local_14 + local_14) / 2.0;
 }
@@ -4065,26 +4028,26 @@ double cosh(double __x)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 coshl(float10 param_1)
+longdouble coshl(longdouble param_1)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
-  float10 local_14;
+  longdouble lVar1;
+  longdouble lVar2;
+  longdouble local_14;
   
   local_14 = ABS(param_1);
-  fVar1 = (float10)0;
-  if ((ushort)((ushort)(local_14 != fVar1) << 10 | (ushort)(local_14 == fVar1) << 0xe) == 0x500) {
-    if (local_14 < fVar1) {
-      local_14 = (float10)0;
+  lVar1 = (longdouble)0;
+  if ((ushort)((ushort)(local_14 != lVar1) << 10 | (ushort)(local_14 == lVar1) << 0xe) == 0x500) {
+    if (local_14 < lVar1) {
+      local_14 = (longdouble)0;
     }
   }
   else {
-    fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-    local_14 = (float10)fscale((float10)1 + fVar1,in_ST1);
+    lVar1 = ROUND(local_14 * (longdouble)1.442695040888963);
+    lVar2 = (longdouble)f2xm1(local_14 * (longdouble)1.442695040888963 - lVar1);
+    local_14 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
   }
-  return (local_14 + (float10)1 / local_14) / _DAT_080526a0;
+  return (local_14 + (longdouble)1 / local_14) / _DAT_080526a0;
 }
 
 
@@ -4093,9 +4056,8 @@ float sinhf(float __x)
 
 {
   float fVar1;
-  float10 in_ST0;
-  float10 fVar2;
-  float10 in_ST1;
+  longdouble lVar2;
+  longdouble lVar3;
   float local_20;
   float local_14;
   float local_10;
@@ -4111,9 +4073,10 @@ float sinhf(float __x)
       }
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_14 = (float)fVar2;
+      lVar2 = ROUND(-(longdouble)__x * (longdouble)1.442695040888963);
+      lVar3 = (longdouble)f2xm1(-(longdouble)__x * (longdouble)1.442695040888963 - lVar2);
+      lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+      local_14 = (float)lVar2;
     }
     local_10 = 1.0 / local_14 - local_14;
   }
@@ -4127,9 +4090,10 @@ float sinhf(float __x)
       }
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_10 = (float)fVar2;
+      lVar2 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+      lVar3 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar2);
+      lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+      local_10 = (float)lVar2;
     }
     local_10 = local_10 - 1.0 / local_10;
   }
@@ -4143,9 +4107,8 @@ double sinh(double __x)
 
 {
   double dVar1;
-  float10 in_ST0;
-  float10 fVar2;
-  float10 in_ST1;
+  longdouble lVar2;
+  longdouble lVar3;
   double local_1c;
   double local_14;
   
@@ -4160,9 +4123,10 @@ double sinh(double __x)
       }
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_1c = (double)fVar2;
+      lVar2 = ROUND((longdouble)-__x * (longdouble)1.442695040888963);
+      lVar3 = (longdouble)f2xm1((longdouble)-__x * (longdouble)1.442695040888963 - lVar2);
+      lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+      local_1c = (double)lVar2;
     }
     local_14 = 1.0 / local_1c - local_1c;
   }
@@ -4176,9 +4140,10 @@ double sinh(double __x)
       }
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_14 = (double)fVar2;
+      lVar2 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+      lVar3 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar2);
+      lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+      local_14 = (double)lVar2;
     }
     local_14 = local_14 - 1.0 / local_14;
   }
@@ -4189,67 +4154,67 @@ double sinh(double __x)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 sinhl(float10 param_1)
+longdouble sinhl(longdouble param_1)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 fVar2;
+  longdouble lVar1;
+  longdouble lVar2;
   unkbyte10 Var3;
-  float10 in_ST1;
   undefined4 local_34;
-  undefined4 uStack48;
-  undefined2 uStack44;
+  undefined4 uStack_30;
+  undefined2 uStack_2c;
   undefined4 local_20;
-  undefined4 uStack28;
-  undefined2 uStack24;
-  float10 local_14;
+  undefined4 uStack_1c;
+  undefined2 uStack_18;
+  longdouble local_14;
   
-  if (param_1 < (float10)0) {
-    fVar2 = -param_1;
-    fVar1 = (float10)0;
-    if ((ushort)((ushort)(fVar2 != fVar1) << 10 | (ushort)(fVar2 == fVar1) << 0xe) == 0x500) {
-      if (fVar1 <= fVar2) {
+  if (param_1 < (longdouble)0) {
+    lVar2 = -param_1;
+    lVar1 = (longdouble)0;
+    if ((ushort)((ushort)(lVar2 != lVar1) << 10 | (ushort)(lVar2 == lVar1) << 0xe) == 0x500) {
+      if (lVar1 <= lVar2) {
         param_1 = -param_1;
         local_34 = SUB104(param_1,0);
-        uStack48 = (undefined4)((unkuint10)param_1 >> 0x20);
-        uStack44 = (undefined2)((unkuint10)param_1 >> 0x40);
+        uStack_30 = (undefined4)((unkuint10)param_1 >> 0x20);
+        uStack_2c = (undefined2)((unkuint10)param_1 >> 0x40);
         local_20 = local_34;
-        uStack28 = uStack48;
-        uStack24 = uStack44;
+        uStack_1c = uStack_30;
+        uStack_18 = uStack_2c;
       }
       else {
-        fVar1 = (float10)0;
-        local_20 = SUB104(fVar1,0);
-        uStack28 = (undefined4)((unkuint10)fVar1 >> 0x20);
-        uStack24 = (undefined2)((unkuint10)fVar1 >> 0x40);
+        lVar1 = (longdouble)0;
+        local_20 = SUB104(lVar1,0);
+        uStack_1c = (undefined4)((unkuint10)lVar1 >> 0x20);
+        uStack_18 = (undefined2)((unkuint10)lVar1 >> 0x40);
       }
     }
     else {
-      fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-      Var3 = fscale((float10)1 + fVar1,in_ST1);
+      lVar1 = ROUND(-param_1 * (longdouble)1.442695040888963);
+      lVar2 = (longdouble)f2xm1(-param_1 * (longdouble)1.442695040888963 - lVar1);
+      Var3 = fscale((longdouble)1 + lVar2,lVar1);
       local_20 = (undefined4)Var3;
-      uStack28 = (undefined4)((unkuint10)Var3 >> 0x20);
-      uStack24 = (undefined2)((unkuint10)Var3 >> 0x40);
+      uStack_1c = (undefined4)((unkuint10)Var3 >> 0x20);
+      uStack_18 = (undefined2)((unkuint10)Var3 >> 0x40);
     }
-    local_14 = (float10)1 / (float10)CONCAT28(uStack24,CONCAT44(uStack28,local_20)) -
-               (float10)CONCAT28(uStack24,CONCAT44(uStack28,local_20));
+    local_14 = (longdouble)1 / (longdouble)CONCAT28(uStack_18,CONCAT44(uStack_1c,local_20)) -
+               (longdouble)CONCAT28(uStack_18,CONCAT44(uStack_1c,local_20));
   }
   else {
-    fVar1 = (float10)0;
-    if ((ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) == 0x500) {
-      if (fVar1 <= param_1) {
+    lVar1 = (longdouble)0;
+    if ((ushort)((ushort)(param_1 != lVar1) << 10 | (ushort)(param_1 == lVar1) << 0xe) == 0x500) {
+      if (lVar1 <= param_1) {
         local_14 = param_1;
       }
       else {
-        local_14 = (float10)0;
+        local_14 = (longdouble)0;
       }
     }
     else {
-      fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-      local_14 = (float10)fscale((float10)1 + fVar1,in_ST1);
+      lVar1 = ROUND(param_1 * (longdouble)1.442695040888963);
+      lVar2 = (longdouble)f2xm1(param_1 * (longdouble)1.442695040888963 - lVar1);
+      local_14 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
     }
-    local_14 = local_14 - (float10)1 / local_14;
+    local_14 = local_14 - (longdouble)1 / local_14;
   }
   return local_14 / _DAT_080526a0;
 }
@@ -4260,34 +4225,34 @@ float tanhf(float __x)
 
 {
   float fVar1;
-  float10 in_ST0;
-  float10 fVar2;
-  float10 in_ST1;
+  longdouble lVar2;
+  longdouble lVar3;
   float local_c;
   
-  if ((char)((uint)(ushort)((ushort)(__x < 50.0) << 8 | (ushort)(__x == 50.0) << 0xe) >> 8) == '\0')
-  {
-    fVar1 = 1.0;
-  }
-  else if ((char)((uint)(ushort)((ushort)(-50.0 < __x) << 8 | (ushort)(__x == -50.0) << 0xe) >> 8)
-           == '\0') {
-    fVar1 = -1.0;
-  }
-  else {
-    if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
-      if (0.0 <= __x) {
-        local_c = __x;
+  if (__x <= 50.0) {
+    if (-50.0 <= __x) {
+      if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
+        if (0.0 <= __x) {
+          local_c = __x;
+        }
+        else {
+          local_c = 0.0;
+        }
       }
       else {
-        local_c = 0.0;
+        lVar2 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+        lVar3 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar2);
+        lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+        local_c = (float)lVar2;
       }
+      fVar1 = (local_c - 1.0 / local_c) / (local_c + 1.0 / local_c);
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_c = (float)fVar2;
+      fVar1 = -1.0;
     }
-    fVar1 = (local_c - 1.0 / local_c) / (local_c + 1.0 / local_c);
+  }
+  else {
+    fVar1 = 1.0;
   }
   return fVar1;
 }
@@ -4298,34 +4263,34 @@ double tanh(double __x)
 
 {
   double dVar1;
-  float10 in_ST0;
-  float10 fVar2;
-  float10 in_ST1;
+  longdouble lVar2;
+  longdouble lVar3;
   double local_14;
   
-  if ((char)((uint)(ushort)((ushort)(__x < 50.0) << 8 | (ushort)(__x == 50.0) << 0xe) >> 8) == '\0')
-  {
-    dVar1 = 1.0;
-  }
-  else if ((char)((uint)(ushort)((ushort)(-50.0 < __x) << 8 | (ushort)(__x == -50.0) << 0xe) >> 8)
-           == '\0') {
-    dVar1 = -1.0;
-  }
-  else {
-    if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
-      if (0.0 <= __x) {
-        local_14 = __x;
+  if (__x <= 50.0) {
+    if (-50.0 <= __x) {
+      if ((ushort)((ushort)(__x != 0.0) << 10 | (ushort)(__x == 0.0) << 0xe) == 0x500) {
+        if (0.0 <= __x) {
+          local_14 = __x;
+        }
+        else {
+          local_14 = 0.0;
+        }
       }
       else {
-        local_14 = 0.0;
+        lVar2 = ROUND((longdouble)__x * (longdouble)1.442695040888963);
+        lVar3 = (longdouble)f2xm1((longdouble)__x * (longdouble)1.442695040888963 - lVar2);
+        lVar2 = (longdouble)fscale((longdouble)1 + lVar3,lVar2);
+        local_14 = (double)lVar2;
       }
+      dVar1 = (local_14 - 1.0 / local_14) / (local_14 + 1.0 / local_14);
     }
     else {
-      fVar2 = (float10)f2xm1(in_ST0 - in_ST1);
-      fVar2 = (float10)fscale((float10)1 + fVar2,in_ST1);
-      local_14 = (double)fVar2;
+      dVar1 = -1.0;
     }
-    dVar1 = (local_14 - 1.0 / local_14) / (local_14 + 1.0 / local_14);
+  }
+  else {
+    dVar1 = 1.0;
   }
   return dVar1;
 }
@@ -4334,39 +4299,39 @@ double tanh(double __x)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 tanhl(float10 param_1)
+longdouble tanhl(longdouble param_1)
 
 {
-  float10 in_ST0;
-  float10 fVar1;
-  float10 in_ST1;
-  float10 local_14;
+  longdouble lVar1;
+  longdouble lVar2;
+  longdouble local_14;
   
-  if ((char)((uint)(ushort)((ushort)(param_1 < _DAT_080526d0) << 8 |
-                           (ushort)(param_1 == _DAT_080526d0) << 0xe) >> 8) == '\0') {
-    fVar1 = (float10)1;
-  }
-  else if ((char)((uint)(ushort)((ushort)(_DAT_080526e0 < param_1) << 8 |
-                                (ushort)(_DAT_080526e0 == param_1) << 0xe) >> 8) == '\0') {
-    fVar1 = -(float10)1;
-  }
-  else {
-    fVar1 = (float10)0;
-    if ((ushort)((ushort)(param_1 != fVar1) << 10 | (ushort)(param_1 == fVar1) << 0xe) == 0x500) {
-      if (fVar1 <= param_1) {
-        local_14 = param_1;
+  if (param_1 <= _DAT_080526d0) {
+    if (_DAT_080526e0 <= param_1) {
+      lVar1 = (longdouble)0;
+      if ((ushort)((ushort)(param_1 != lVar1) << 10 | (ushort)(param_1 == lVar1) << 0xe) == 0x500) {
+        if (lVar1 <= param_1) {
+          local_14 = param_1;
+        }
+        else {
+          local_14 = (longdouble)0;
+        }
       }
       else {
-        local_14 = (float10)0;
+        lVar1 = ROUND(param_1 * (longdouble)1.442695040888963);
+        lVar2 = (longdouble)f2xm1(param_1 * (longdouble)1.442695040888963 - lVar1);
+        local_14 = (longdouble)fscale((longdouble)1 + lVar2,lVar1);
       }
+      lVar1 = (local_14 - (longdouble)1 / local_14) / ((longdouble)1 / local_14 + local_14);
     }
     else {
-      fVar1 = (float10)f2xm1(in_ST0 - in_ST1);
-      local_14 = (float10)fscale((float10)1 + fVar1,in_ST1);
+      lVar1 = -(longdouble)1;
     }
-    fVar1 = (local_14 - (float10)1 / local_14) / ((float10)1 / local_14 + local_14);
   }
-  return fVar1;
+  else {
+    lVar1 = (longdouble)1;
+  }
+  return lVar1;
 }
 
 
@@ -4387,7 +4352,7 @@ double nearbyint(double __x)
 
 
 
-float10 nearbyintl(float10 param_1)
+longdouble nearbyintl(longdouble param_1)
 
 {
   return ROUND(param_1);
@@ -4395,99 +4360,93 @@ float10 nearbyintl(float10 param_1)
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
 float expm1f(float __x)
 
 {
   byte bVar1;
-  float10 fVar2;
-  float10 fVar3;
+  longdouble lVar2;
+  longdouble lVar3;
   unkbyte10 Var4;
   
-  fVar2 = (float10)__x;
-  fVar3 = (float10)0;
-  bVar1 = (byte)((ushort)((ushort)(fVar2 != fVar3) << 10) >> 8) |
-          (byte)((ushort)((ushort)(fVar2 == fVar3) << 0xe) >> 8);
+  lVar2 = (longdouble)__x;
+  lVar3 = (longdouble)0;
+  bVar1 = (byte)((ushort)((ushort)(lVar2 != lVar3) << 10) >> 8) |
+          (byte)((ushort)((ushort)(lVar2 == lVar3) << 0xe) >> 8);
   if (bVar1 != 0x40) {
     if (bVar1 == 5) {
-      if (fVar2 < fVar3) {
-                    // WARNING: Bad instruction - Truncating control flow here
-        halt_baddata();
+      if (lVar2 < lVar3) {
+        ffree(lVar2);
+        lVar2 = -(longdouble)1;
       }
     }
     else {
-      fVar3 = ROUND((float10)1.442695040888963 * fVar2);
-      Var4 = f2xm1((float10)1.442695040888963 * fVar2 - fVar3);
-      fVar2 = (float10)fscale(Var4,fVar3);
-      fVar3 = (float10)fscale((float10)1,fVar3);
-      fVar2 = fVar2 - ((float10)1 - fVar3);
+      lVar3 = ROUND((longdouble)1.442695040888963 * lVar2);
+      Var4 = f2xm1((longdouble)1.442695040888963 * lVar2 - lVar3);
+      lVar2 = (longdouble)fscale(Var4,lVar3);
+      lVar3 = (longdouble)fscale((longdouble)1,lVar3);
+      lVar2 = lVar2 - ((longdouble)1 - lVar3);
     }
   }
-  return (float)fVar2;
+  return (float)lVar2;
 }
 
 
-
-// WARNING: Control flow encountered bad instruction data
 
 double expm1(double __x)
 
 {
-  char cVar1;
-  float10 fVar2;
-  float10 fVar3;
+  byte bVar1;
+  longdouble lVar2;
+  longdouble lVar3;
   unkbyte10 Var4;
   
-  fVar2 = (float10)__x;
-  fVar3 = (float10)0;
-  cVar1 = (char)((uint)(ushort)((ushort)(fVar2 != fVar3) << 10 | (ushort)(fVar2 == fVar3) << 0xe) >>
-                8);
-  if (cVar1 != '@') {
-    if (cVar1 == '\x05') {
-      if (fVar2 < fVar3) {
-                    // WARNING: Bad instruction - Truncating control flow here
-        halt_baddata();
+  lVar2 = (longdouble)__x;
+  lVar3 = (longdouble)0;
+  bVar1 = (byte)((ushort)((ushort)(lVar2 != lVar3) << 10) >> 8) |
+          (byte)((ushort)((ushort)(lVar2 == lVar3) << 0xe) >> 8);
+  if (bVar1 != 0x40) {
+    if (bVar1 == 5) {
+      if (lVar2 < lVar3) {
+        ffree(lVar2);
+        lVar2 = -(longdouble)1;
       }
     }
     else {
-      fVar3 = ROUND((float10)1.442695040888963 * fVar2);
-      Var4 = f2xm1((float10)1.442695040888963 * fVar2 - fVar3);
-      fVar2 = (float10)fscale(Var4,fVar3);
-      fVar3 = (float10)fscale((float10)1,fVar3);
-      fVar2 = fVar2 - ((float10)1 - fVar3);
+      lVar3 = ROUND((longdouble)1.442695040888963 * lVar2);
+      Var4 = f2xm1((longdouble)1.442695040888963 * lVar2 - lVar3);
+      lVar2 = (longdouble)fscale(Var4,lVar3);
+      lVar3 = (longdouble)fscale((longdouble)1,lVar3);
+      lVar2 = lVar2 - ((longdouble)1 - lVar3);
     }
   }
-  return (double)fVar2;
+  return (double)lVar2;
 }
 
 
 
-// WARNING: Control flow encountered bad instruction data
-
-float10 expm1l(float10 param_1)
+longdouble expm1l(longdouble param_1)
 
 {
   byte bVar1;
-  float10 fVar2;
+  longdouble lVar2;
   unkbyte10 Var3;
   
-  fVar2 = (float10)0;
-  bVar1 = (byte)((ushort)((ushort)(param_1 != fVar2) << 10) >> 8) |
-          (byte)((ushort)((ushort)(param_1 == fVar2) << 0xe) >> 8);
+  lVar2 = (longdouble)0;
+  bVar1 = (byte)((ushort)((ushort)(param_1 != lVar2) << 10) >> 8) |
+          (byte)((ushort)((ushort)(param_1 == lVar2) << 0xe) >> 8);
   if (bVar1 != 0x40) {
     if (bVar1 == 5) {
-      if (param_1 < fVar2) {
-                    // WARNING: Bad instruction - Truncating control flow here
-        halt_baddata();
+      if (param_1 < lVar2) {
+        ffree(param_1);
+        param_1 = -(longdouble)1;
       }
     }
     else {
-      fVar2 = ROUND((float10)1.442695040888963 * param_1);
-      Var3 = f2xm1((float10)1.442695040888963 * param_1 - fVar2);
-      param_1 = (float10)fscale(Var3,fVar2);
-      fVar2 = (float10)fscale((float10)1,fVar2);
-      param_1 = param_1 - ((float10)1 - fVar2);
+      lVar2 = ROUND((longdouble)1.442695040888963 * param_1);
+      Var3 = f2xm1((longdouble)1.442695040888963 * param_1 - lVar2);
+      param_1 = (longdouble)fscale(Var3,lVar2);
+      lVar2 = (longdouble)fscale((longdouble)1,lVar2);
+      param_1 = param_1 - ((longdouble)1 - lVar2);
     }
   }
   return param_1;
@@ -4524,39 +4483,39 @@ float scalbf(float __x,float __n)
     }
     if (bVar1) {
       dVar4 = rint((double)__n);
-      if ((char)((uint)(ushort)((ushort)(dVar4 < (double)__n) << 8 |
-                               (ushort)(dVar4 == (double)__n) << 0xe) >> 8) == '@') {
-        if ((char)((uint)(ushort)((ushort)(__n < 65000.0) << 8 | (ushort)(__n == 65000.0) << 0xe) >>
-                  8) == '\0') {
+      if ((byte)(dVar4 < (double)__n | (byte)((ushort)((ushort)(dVar4 == (double)__n) << 0xe) >> 8))
+          == 0x40) {
+        if (__n <= 65000.0) {
+          if (-65000.0 <= __n) {
+            dVar4 = scalbn((double)__x,(int)ROUND(__n));
+            __x = (float)dVar4;
+          }
+          else {
+            dVar4 = scalbn((double)__x,-65000);
+            __x = (float)dVar4;
+          }
+        }
+        else {
           dVar4 = scalbn((double)__x,65000);
           __x = (float)dVar4;
         }
-        else if ((char)((uint)(ushort)((ushort)(-65000.0 < __n) << 8 |
-                                      (ushort)(__n == -65000.0) << 0xe) >> 8) == '\0') {
-          dVar4 = scalbn((double)__x,-65000);
-          __x = (float)dVar4;
+      }
+      else {
+        __x = -NAN;
+      }
+    }
+    else if (__n <= 0.0) {
+      if ((byte)(__x < 0.0 | (byte)((ushort)((ushort)(__x == 0.0) << 0xe) >> 8)) != 0x40) {
+        if (bVar2) {
+          __x = -__x / __n;
         }
         else {
-          dVar4 = scalbn((double)__x,(int)ROUND(__n));
-          __x = (float)dVar4;
+          __x = -NAN;
         }
       }
-      else {
-        __x = -NAN;
-      }
     }
-    else if ((char)((uint)(ushort)((ushort)(__n < 0.0) << 8 | (ushort)(__n == 0.0) << 0xe) >> 8) ==
-             '\0') {
+    else {
       __x = __x * __n;
-    }
-    else if ((char)((uint)(ushort)((ushort)(__x < 0.0) << 8 | (ushort)(__x == 0.0) << 0xe) >> 8) !=
-             '@') {
-      if (bVar2) {
-        __x = -__x / __n;
-      }
-      else {
-        __x = -NAN;
-      }
     }
   }
   return __x;
@@ -4593,36 +4552,35 @@ double scalb(double __x,double __n)
     }
     if (bVar1) {
       dVar4 = rint(__n);
-      if ((char)((uint)(ushort)((ushort)(__n < dVar4) << 8 | (ushort)(__n == dVar4) << 0xe) >> 8) ==
-          '@') {
-        if ((char)((uint)(ushort)((ushort)(__n < 65000.0) << 8 | (ushort)(__n == 65000.0) << 0xe) >>
-                  8) == '\0') {
-          __x = scalbn(__x,65000);
-        }
-        else if ((char)((uint)(ushort)((ushort)(-65000.0 < __n) << 8 |
-                                      (ushort)(__n == -65000.0) << 0xe) >> 8) == '\0') {
-          __x = scalbn(__x,-65000);
+      if ((byte)(__n < dVar4 | (byte)((ushort)((ushort)(__n == dVar4) << 0xe) >> 8)) == 0x40) {
+        if (__n <= 65000.0) {
+          if (-65000.0 <= __n) {
+            __x = scalbn(__x,(int)ROUND(__n));
+          }
+          else {
+            __x = scalbn(__x,-65000);
+          }
         }
         else {
-          __x = scalbn(__x,(int)ROUND(__n));
+          __x = scalbn(__x,65000);
         }
       }
       else {
         __x = -NAN;
       }
     }
-    else if ((char)((uint)(ushort)((ushort)(__n < 0.0) << 8 | (ushort)(__n == 0.0) << 0xe) >> 8) ==
-             '\0') {
-      __x = __x * __n;
+    else if (__n <= 0.0) {
+      if ((byte)(__x < 0.0 | (byte)((ushort)((ushort)(__x == 0.0) << 0xe) >> 8)) != 0x40) {
+        if (bVar2) {
+          __x = -__x / __n;
+        }
+        else {
+          __x = -NAN;
+        }
+      }
     }
-    else if ((char)((uint)(ushort)((ushort)(__x < 0.0) << 8 | (ushort)(__x == 0.0) << 0xe) >> 8) !=
-             '@') {
-      if (bVar2) {
-        __x = -__x / __n;
-      }
-      else {
-        __x = -NAN;
-      }
+    else {
+      __x = __x * __n;
     }
   }
   return __x;
@@ -4632,7 +4590,7 @@ double scalb(double __x,double __n)
 
 // WARNING: Globals starting with '_' overlap smaller symbols at the same address
 
-float10 scalbl(float10 param_1,float10 param_2)
+longdouble scalbl(longdouble param_1,longdouble param_2)
 
 {
   bool bVar1;
@@ -4640,21 +4598,21 @@ float10 scalbl(float10 param_1,float10 param_2)
   ushort uVar3;
   double dVar4;
   
-  if (((ushort)((ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe) ==
-       0x100) ||
-     ((ushort)((ushort)(param_2 != (float10)0) << 10 | (ushort)(param_2 == (float10)0) << 0xe) ==
-      0x100)) {
+  if (((ushort)((ushort)(param_1 != (longdouble)0) << 10 | (ushort)(param_1 == (longdouble)0) << 0xe
+               ) == 0x100) ||
+     ((ushort)((ushort)(param_2 != (longdouble)0) << 10 | (ushort)(param_2 == (longdouble)0) << 0xe)
+      == 0x100)) {
     param_1 = param_2 * param_1;
   }
   else {
-    uVar3 = (ushort)(param_1 != (float10)0) << 10 | (ushort)(param_1 == (float10)0) << 0xe;
+    uVar3 = (ushort)(param_1 != (longdouble)0) << 10 | (ushort)(param_1 == (longdouble)0) << 0xe;
     if ((uVar3 == 0x400) || (uVar3 == 0x4000)) {
       bVar2 = true;
     }
     else {
       bVar2 = false;
     }
-    uVar3 = (ushort)(param_2 != (float10)0) << 10 | (ushort)(param_2 == (float10)0) << 0xe;
+    uVar3 = (ushort)(param_2 != (longdouble)0) << 10 | (ushort)(param_2 == (longdouble)0) << 0xe;
     if ((uVar3 == 0x400) || (uVar3 == 0x4000)) {
       bVar1 = true;
     }
@@ -4663,39 +4621,40 @@ float10 scalbl(float10 param_1,float10 param_2)
     }
     if (bVar1) {
       dVar4 = rint((double)param_2);
-      if ((char)((uint)(ushort)((ushort)(param_2 < (float10)dVar4) << 8 |
-                               (ushort)(param_2 == (float10)dVar4) << 0xe) >> 8) == '@') {
-        if ((char)((uint)(ushort)((ushort)(param_2 < _DAT_08052710) << 8 |
-                                 (ushort)(param_2 == _DAT_08052710) << 0xe) >> 8) == '\0') {
-          dVar4 = scalbn((double)param_1,65000);
-          param_1 = (float10)dVar4;
-        }
-        else if ((char)((uint)(ushort)((ushort)(_DAT_08052720 < param_2) << 8 |
-                                      (ushort)(_DAT_08052720 == param_2) << 0xe) >> 8) == '\0') {
-          dVar4 = scalbn((double)param_1,-65000);
-          param_1 = (float10)dVar4;
+      if ((byte)(param_2 < (longdouble)dVar4 |
+                (byte)((ushort)((ushort)(param_2 == (longdouble)dVar4) << 0xe) >> 8)) == 0x40) {
+        if (param_2 <= _DAT_08052710) {
+          if (_DAT_08052720 <= param_2) {
+            dVar4 = scalbn((double)param_1,(int)ROUND(param_2));
+            param_1 = (longdouble)dVar4;
+          }
+          else {
+            dVar4 = scalbn((double)param_1,-65000);
+            param_1 = (longdouble)dVar4;
+          }
         }
         else {
-          dVar4 = scalbn((double)param_1,(int)ROUND(param_2));
-          param_1 = (float10)dVar4;
+          dVar4 = scalbn((double)param_1,65000);
+          param_1 = (longdouble)dVar4;
         }
       }
       else {
-        param_1 = (float10)0 / (float10)0;
+        param_1 = (longdouble)0 / (longdouble)0;
       }
     }
-    else if ((char)((uint)(ushort)((ushort)(param_2 < (float10)0) << 8 |
-                                  (ushort)(param_2 == (float10)0) << 0xe) >> 8) == '\0') {
+    else if (param_2 <= (longdouble)0) {
+      if ((byte)(param_1 < (longdouble)0 |
+                (byte)((ushort)((ushort)(param_1 == (longdouble)0) << 0xe) >> 8)) != 0x40) {
+        if (bVar2) {
+          param_1 = -param_1 / param_2;
+        }
+        else {
+          param_1 = (longdouble)0 / (longdouble)0;
+        }
+      }
+    }
+    else {
       param_1 = param_2 * param_1;
-    }
-    else if ((char)((uint)(ushort)((ushort)(param_1 < (float10)0) << 8 |
-                                  (ushort)(param_1 == (float10)0) << 0xe) >> 8) != '@') {
-      if (bVar2) {
-        param_1 = -param_1 / param_2;
-      }
-      else {
-        param_1 = (float10)0 / (float10)0;
-      }
     }
   }
   return param_1;

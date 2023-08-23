@@ -145,6 +145,7 @@ typedef enum Elf32_DynTag {
     DT_POSFLAG_1=1879047677,
     DT_SYMINSZ=1879047678,
     DT_SYMINENT=1879047679,
+    DT_GNU_XHASH=1879047924,
     DT_GNU_HASH=1879047925,
     DT_TLSDESC_PLT=1879047926,
     DT_TLSDESC_GOT=1879047927,
@@ -233,18 +234,18 @@ void _start(void)
   int __status;
   undefined *puVar1;
   int local_res40;
-  undefined auStackX68 [4];
-  undefined auStackX72 [20];
+  undefined auStackX_44 [4];
+  undefined auStackX_48 [20];
   
-  puVar1 = auStackX68 + local_res40 * 4 + 4;
+  puVar1 = auStackX_44 + local_res40 * 4 + 4;
   environ = puVar1;
-  ___Argv = auStackX68;
+  ___Argv = auStackX_44;
   if (unaff_g1 != (__func *)0x0) {
     atexit(unaff_g1);
   }
   ctx = (EVP_PKEY_CTX *)atexit(_fini);
   _init(ctx);
-  __status = main(local_res40,auStackX68,puVar1,0x20800);
+  __status = main(local_res40,auStackX_44,puVar1,0x20800);
                     // WARNING: Subroutine does not return
   exit(__status);
 }
@@ -350,7 +351,7 @@ void _PROCEDURE_LINKAGE_TABLE_(void)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int atexit(__func *__func)
 
@@ -361,7 +362,7 @@ int atexit(__func *__func)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void exit(int __status)
 
@@ -372,7 +373,7 @@ void exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 void _exit(int __status)
 
@@ -383,7 +384,7 @@ void _exit(int __status)
 
 
 
-// WARNING: Unknown calling convention yet parameter storage is locked
+// WARNING: Unknown calling convention -- yet parameter storage is locked
 
 int printf(char *__format,...)
 

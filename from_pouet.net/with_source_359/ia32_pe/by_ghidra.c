@@ -1,12 +1,14 @@
 typedef unsigned char   undefined;
 
-typedef unsigned int    ImageBaseOffset32;
+typedef pointer32 ImageBaseOffset32;
+
 typedef unsigned char    byte;
 typedef unsigned int    dword;
 float10
 typedef unsigned char    uchar;
 typedef unsigned int    uint;
 typedef unsigned long    ulong;
+typedef unsigned char    undefined1;
 typedef unsigned short    undefined2;
 typedef unsigned int    undefined4;
 typedef unsigned short    ushort;
@@ -368,6 +370,8 @@ void FUN_00401000(void)
 
 
 
+// WARNING: Globals starting with '_' overlap smaller symbols at the same address
+
 void FUN_0040101b(void)
 
 {
@@ -376,47 +380,47 @@ void FUN_0040101b(void)
   char extraout_DH;
   char extraout_DH_00;
   ushort uVar3;
-  undefined4 *puVar4;
+  undefined2 uVar4;
   undefined4 *puVar5;
-  char cVar6;
-  float10 fVar7;
+  undefined4 *puVar6;
+  char cVar7;
   float10 fVar8;
+  float10 fVar9;
   float10 extraout_ST1;
-  char cVar9;
-  uint uVar10;
+  char cVar10;
+  uint uVar11;
   
-  puVar4 = (undefined4 *)((int)DAT_004020d6 + 0x3e300);
-  DAT_004020ee = DAT_004020ee + 2;
-  fcos((float10)DAT_004020ee / (float10)DAT_004020f0);
-  fsin((float10)DAT_004020ee / (float10)DAT_004020f0);
-  sVar2 = 0x140;
+  puVar5 = (undefined4 *)((int)DAT_004020d6 + 0x3e300);
+  unique0x00003f00 = ram0x004020ee + 2;
+  fcos((float10)unique0x00003f00 / (float10)DAT_004020f0);
+  fsin((float10)unique0x00003f00 / (float10)DAT_004020f0);
   uVar3 = 0xff38;
   do {
-    sVar2 = -sVar2;
-    uVar10 = (uint)uVar3;
+    sVar2 = -0x140;
+    uVar11 = (uint)uVar3;
     do {
       FUN_0040114a();
-      fVar7 = FUN_0040114a();
       fVar8 = FUN_0040114a();
+      fVar9 = FUN_0040114a();
       DAT_004020f6 = (short)ROUND(extraout_ST1);
-      DAT_004020f8 = (short)ROUND(fVar7);
-      uVar3 = (ushort)puVar4;
-      DAT_004020f4 = (short)ROUND(-ABS(fVar8)) + -1;
+      DAT_004020f8 = (short)ROUND(fVar8);
+      uVar4 = SUB42(puVar5,0);
+      DAT_004020f4 = (short)ROUND(-ABS(fVar9)) + -1;
       do {
         FUN_0040115f();
-        cVar6 = '\0';
-        cVar9 = extraout_DH;
+        cVar7 = '\0';
+        cVar10 = extraout_DH;
         bVar1 = FUN_0040115f();
-        if ((char)(extraout_DH_00 + cVar9 + cVar6) == '\0') break;
+        if ((char)(extraout_DH_00 + cVar10 + cVar7) == '\0') break;
         bVar1 = bVar1 - 1;
       } while (bVar1 != 0);
-      puVar5 = (undefined4 *)((uint)puVar4 & 0xffff0000 | (uint)uVar3);
-      puVar4 = puVar5 + 1;
-      *puVar5 = *(undefined4 *)(DAT_004020da + (uint)bVar1 * 8);
+      puVar6 = (undefined4 *)CONCAT22((short)((uint)puVar5 >> 0x10),uVar4);
+      puVar5 = puVar6 + 1;
+      *puVar6 = *(undefined4 *)(DAT_004020da + (uint)bVar1 * 8);
       sVar2 = sVar2 + 2;
     } while (sVar2 != 0x140);
-    puVar4 = puVar5 + -0x27f;
-    uVar3 = (short)uVar10 + 2;
+    puVar5 = puVar6 + -0x27f;
+    uVar3 = (short)uVar11 + 2;
     if (uVar3 == 200) {
       GetClientRect(DAT_004020a2,(LPRECT)&DAT_004020c6);
       StretchDIBits(DAT_004020a6,0,0,DAT_004020ce,DAT_004020d2,0,0,0x140,200,DAT_004020d6,
