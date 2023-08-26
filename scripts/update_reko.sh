@@ -11,7 +11,7 @@ ulimit -Ht unlimited
 ulimit -v 8000000
 
 if test -z "$REKODIR" -a -z "$REKOSRCDIR"; then
-    echo "Neither \$REKODIR nor \$REKOSRCDIR is set. Either the executable \$REKODIR/decompile.exe or \$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease/decompile.exe will be used by mono."
+    echo "Neither \$REKODIR nor \$REKOSRCDIR is set. Either the executable \$REKODIR/reko.dll or \$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease/reko.dll will be used by this script."
     exit 1
 fi
 
@@ -19,8 +19,8 @@ if test -z "$REKODIR"; then
 	REKODIR="$REKOSRCDIR/src/Drivers/CmdLine/bin/x64/UnixRelease"
 fi
 
-if ! test -f "$REKODIR/decompile.dll"; then
-    echo "The file \$REKODIR/decompile.dll ($REKODIR/decompile.dll) does not exists."
+if ! test -f "$REKODIR/reko.dll"; then
+    echo "The file \$REKODIR/reko.dll ($REKODIR/reko.dll) does not exist."
     exit 1
 fi
 
@@ -52,7 +52,7 @@ do
   fi
 
   echo "=== Using options:$OPTS" >out
-  (dotnet decompile.dll "$line" $OPTS >>out 2>&1 ; echo "$?" >error_code) || true
+  (dotnet reko.dll decompile "$line" $OPTS >>out 2>&1 ; echo "$?" >error_code) || true
   if test "$(cat error_code)" -eq 152 ; then
     echo "=== Killed because of CPU time limit" >>out
   fi
